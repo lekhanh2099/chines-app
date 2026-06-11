@@ -1,13 +1,7 @@
 "use client";
 
 import { useMemo, useState, type ReactNode } from "react";
-import {
- BookOpenCheck,
- Database,
- GraduationCap,
- Tags,
- type LucideIcon,
-} from "lucide-react";
+import { BookOpenCheck, Database, GraduationCap, Tags, type LucideIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -25,11 +19,7 @@ import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 
 import { BookSectionContent } from "./BookSectionContent";
 import { sectionIcons } from "./section-icons";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type BookSection,
- type LessonDisplayMode,
-} from "./types";
+import { DEFAULT_LESSON_DISPLAY_MODE, type BookSection, type LessonDisplayMode } from "./types";
 import { arrayValue, asRecord, getBookSections, stringValue } from "./utils";
 
 type LessonOverviewProps = {
@@ -43,10 +33,7 @@ type LessonOverviewMode = "study" | "debug";
 export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
  const [overviewMode] = useState<LessonOverviewMode>("study");
  const fallbackMarkdown = lesson.notes?.overviewMarkdown?.trim();
- const sourceSections = useMemo(
-  () => getBookSections(lesson.sourceLesson),
-  [lesson.sourceLesson],
- );
+ const sourceSections = useMemo(() => getBookSections(lesson.sourceLesson), [lesson.sourceLesson]);
  const showDebug = overviewMode === "debug";
 
  return (
@@ -54,11 +41,7 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
    {showDebug && sourceSections.length > 0 ? (
     <LessonSourceDataOverview lesson={lesson} sections={sourceSections} />
    ) : (
-    <LessonStudyDashboard
-     lesson={lesson}
-     sections={sourceSections}
-     onOpenModule={onOpenModule}
-    />
+    <LessonStudyDashboard lesson={lesson} sections={sourceSections} onOpenModule={onOpenModule} />
    )}
 
    {fallbackMarkdown && !lesson.sourceLesson && (
@@ -93,9 +76,7 @@ function LessonStudyDashboard({
    <div className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="min-w-0">
-      <p className="text-xs font-black uppercase tracking-wide text-primary">
-       Bài học
-      </p>
+      <p className="text-xs font-black uppercase tracking-wide text-primary">Bài học</p>
       <h2 className="text-2xl font-black leading-tight text-text-primary">
        {stats.zhTitle || lesson.title}
       </h2>
@@ -175,16 +156,9 @@ function LessonStudyDashboard({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Lộ trình bài này
        </p>
-       <h2 className="text-lg font-black text-text-primary">
-        Học theo đúng cấu trúc sách
-       </h2>
+       <h2 className="text-lg font-black text-text-primary">Học theo đúng cấu trúc sách</h2>
       </div>
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       onClick={() => onOpenModule("lessonText")}
-      >
+      <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("lessonText")}>
        Mở bài khóa
       </Button>
      </div>
@@ -200,13 +174,7 @@ function LessonStudyDashboard({
  );
 }
 
-function StudyPathRow({
- section,
- index,
-}: {
- section: BookSection;
- index: number;
-}) {
+function StudyPathRow({ section, index }: { section: BookSection; index: number }) {
  const SectionIcon = sectionIcons[section.type] ?? BookOpenCheck;
 
  return (
@@ -219,9 +187,7 @@ function StudyPathRow({
      {index + 1}. {section.title}
     </p>
     {section.subtitle && (
-     <p className="truncate text-xs font-semibold text-text-muted">
-      {section.subtitle}
-     </p>
+     <p className="truncate text-xs font-semibold text-text-muted">{section.subtitle}</p>
     )}
    </div>
   </div>
@@ -261,17 +227,10 @@ function getLessonSourceStats({
  );
 
  return {
-  title:
-   stringValue(title, "vi") ||
-   stringValue(title, "zh") ||
-   lesson.title ||
-   "Bài học",
+  title: stringValue(title, "vi") || stringValue(title, "zh") || lesson.title || "Bài học",
   zhTitle: stringValue(title, "zh"),
   pinyinTitle: stringValue(title, "pinyin"),
-  volume:
-   stringValue(source, "volume_vi") ||
-   stringValue(source, "volume") ||
-   "Không rõ quyển",
+  volume: stringValue(source, "volume_vi") || stringValue(source, "volume") || "Không rõ quyển",
   sourceFiles,
   sectionCount: sections.length,
   payloadCount,
@@ -299,9 +258,7 @@ function LessonSourceDataOverview({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Static lesson data
        </p>
-       <h2 className="text-lg font-black text-text-primary">
-        Render theo dữ liệu gốc của bài
-       </h2>
+       <h2 className="text-lg font-black text-text-primary">Render theo dữ liệu gốc của bài</h2>
        <div className="mt-1 grid gap-1">
         <p className="text-sm font-semibold text-text-muted">
          {stats.volume} · {stats.title}
@@ -363,13 +320,7 @@ function OverviewStatPill({ label }: { label: string }) {
  );
 }
 
-function OverviewBookSection({
- section,
- index,
-}: {
- section: BookSection;
- index: number;
-}) {
+function OverviewBookSection({ section, index }: { section: BookSection; index: number }) {
  const SectionIcon = sectionIcons[section.type] ?? BookOpenCheck;
  const payloadCount = getSectionPayloadCount(section);
 
@@ -384,13 +335,9 @@ function OverviewBookSection({
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
        Phần {index + 1} · {section.type}
       </p>
-      <h3 className="text-base font-black text-text-primary">
-       {section.title}
-      </h3>
+      <h3 className="text-base font-black text-text-primary">{section.title}</h3>
       {section.subtitle && (
-       <p className="text-sm font-semibold text-text-muted">
-        {section.subtitle}
-       </p>
+       <p className="text-sm font-semibold text-text-muted">{section.subtitle}</p>
       )}
      </div>
     </div>
@@ -400,11 +347,7 @@ function OverviewBookSection({
     </span>
    </div>
 
-   <BookSectionContent
-    section={section.section}
-    displayMode={OVERVIEW_DISPLAY_MODE}
-    debugMode
-   />
+   <BookSectionContent section={section.section} displayMode={OVERVIEW_DISPLAY_MODE} debugMode />
   </article>
  );
 }
@@ -433,9 +376,7 @@ function LessonPreviewCard({
        <Icon className="h-5 w-5" />
       </span>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {eyebrow}
-       </p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        <h2 className="text-lg font-black text-text-primary">{title}</h2>
       </div>
      </div>
@@ -455,15 +396,10 @@ function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
  return (
   <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3">
    <div className="flex min-w-0 items-baseline gap-2">
-    <span
-     className="truncate text-lg font-black text-text-primary"
-     lang="zh-CN"
-    >
+    <span className="truncate text-lg font-black text-text-primary" lang="zh-CN">
      {word.hanzi}
     </span>
-    <span className="truncate text-sm font-bold text-primary">
-     {word.pinyin}
-    </span>
+    <span className="truncate text-sm font-bold text-primary">{word.pinyin}</span>
    </div>
 
    <p className="mt-1 truncate text-xs font-bold uppercase tracking-wide text-text-muted">
@@ -477,22 +413,12 @@ function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
  );
 }
 
-function GrammarPreviewRow({
- point,
- index,
-}: {
- point: GrammarViewModel;
- index: number;
-}) {
+function GrammarPreviewRow({ point, index }: { point: GrammarViewModel; index: number }) {
  return (
   <div className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-    Điểm {index + 1}
-   </p>
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Điểm {index + 1}</p>
 
-   <h3 className="mt-1 truncate text-base font-black text-text-primary">
-    {point.cleanTitle}
-   </h3>
+   <h3 className="mt-1 truncate text-base font-black text-text-primary">{point.cleanTitle}</h3>
 
    <p className="mt-1 line-clamp-2 text-sm font-semibold text-text-secondary">
     {point.core || point.structuresView[0] || "Chưa có mô tả"}

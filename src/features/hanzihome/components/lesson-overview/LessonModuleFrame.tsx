@@ -1,10 +1,11 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 type LessonModuleFrameProps = {
@@ -18,6 +19,7 @@ type LessonModuleFrameProps = {
  actions?: ReactNode;
  children: ReactNode;
  compact?: boolean;
+ sidebarSelectionKey?: string | null;
 };
 
 export function LessonModuleFrame({
@@ -31,7 +33,19 @@ export function LessonModuleFrame({
  actions,
  children,
  compact = false,
+ sidebarSelectionKey,
 }: LessonModuleFrameProps) {
+ const [sidebarSheetOpen, setSidebarSheetOpen] = useState(false);
+ const previousSelectionKey = useRef(sidebarSelectionKey);
+
+ useEffect(() => {
+  if (previousSelectionKey.current !== sidebarSelectionKey && sidebarSelectionKey !== undefined) {
+   setSidebarSheetOpen(false);
+  }
+
+  previousSelectionKey.current = sidebarSelectionKey;
+ }, [sidebarSelectionKey]);
+
  return (
   <div className="grid gap-3">
    <Card
@@ -47,7 +61,17 @@ export function LessonModuleFrame({
        type="button"
        variant="outline"
        size="sm"
-       className="h-8 px-2.5 text-xs"
+       className={cn("h-8 px-2.5 text-xs", compact ? "flex" : "xl:hidden")}
+       onClick={() => setSidebarSheetOpen(true)}
+      >
+       <PanelLeftOpen className="h-4 w-4" />
+       <span>{sidebarLabel}</span>
+      </Button>
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       className={cn("h-8 px-2.5 text-xs", compact ? "hidden" : "hidden xl:flex")}
        onClick={() => onSidebarOpenChange(!sidebarOpen)}
       >
        {sidebarOpen ? (
@@ -55,15 +79,13 @@ export function LessonModuleFrame({
        ) : (
         <PanelLeftOpen className="h-4 w-4" />
        )}
-       <span className="hidden sm:inline">
-        {sidebarOpen ? "Ẩn mục" : sidebarLabel}
-       </span>
+       <span>{sidebarOpen ? "Ẩn mục" : sidebarLabel}</span>
       </Button>
 
       <div className="min-w-0">
-       <p className="truncate text-sm font-black text-text-primary">{title}</p>
+       <p className="line-clamp-2 text-sm font-black text-text-primary">{title}</p>
        {subtitle && (
-        <p className="hidden truncate text-xs font-semibold text-text-muted sm:block">
+        <p className="hidden line-clamp-2 text-xs font-semibold text-text-muted sm:block">
          {subtitle}
         </p>
        )}
@@ -84,20 +106,17 @@ export function LessonModuleFrame({
    <div
     className={cn(
      "grid min-w-0 gap-3",
-     sidebarOpen && "lg:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]",
+     sidebarOpen && !compact && "xl:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]",
     )}
    >
-    {sidebarOpen && (
+    {sidebarOpen && !compact && (
      <aside
       className={cn(
-       "min-w-0 lg:sticky lg:self-start",
-       compact ? "lg:top-14" : "lg:top-24",
-     )}
-    >
-      <Card
-       padding="sm"
-       className="max-w-full overflow-hidden rounded-xl border-border-default"
-      >
+       "hidden min-w-0 xl:sticky xl:block xl:self-start",
+       compact ? "xl:top-14" : "xl:top-24",
+      )}
+     >
+      <Card padding="sm" className="max-w-full overflow-hidden rounded-xl border-border-default">
        {sidebar}
       </Card>
      </aside>
@@ -105,6 +124,16 @@ export function LessonModuleFrame({
 
     <div className="min-w-0">{children}</div>
    </div>
+
+   <Sheet
+    open={sidebarSheetOpen}
+    onOpenChange={setSidebarSheetOpen}
+    side="right"
+    className="p-4 sm:max-w-md"
+   >
+    <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
+    {sidebar}
+   </Sheet>
   </div>
  );
 }
@@ -139,11 +168,9 @@ export function LessonModuleSidebarItem({
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
    <span className="min-w-0 flex-1">
-    <span className="block truncate text-sm font-black">{title}</span>
+    <span className="block line-clamp-2 text-sm font-black">{title}</span>
     {subtitle && (
-     <span className="mt-0.5 block truncate text-xs font-semibold opacity-80">
-      {subtitle}
-     </span>
+     <span className="mt-0.5 block line-clamp-2 text-xs font-semibold opacity-80">{subtitle}</span>
     )}
    </span>
    {marker && <span className="shrink-0 text-xs font-bold">{marker}</span>}

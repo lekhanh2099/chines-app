@@ -1,9 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
 import {
  GrammarPointReader,
@@ -16,10 +14,7 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 import { LessonModuleFrame } from "./lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
@@ -67,17 +62,13 @@ function getReadingPreview(contentMd: string) {
   .find(Boolean);
 }
 
-function extractGrammarReading(
- points: GrammarViewModel[],
-): GrammarReading | null {
+function extractGrammarReading(points: GrammarViewModel[]): GrammarReading | null {
  for (const point of points) {
   const contentMd = point.contentMd?.trim();
   if (!contentMd) continue;
 
   const lines = normalizeNewlines(contentMd).split("\n");
-  const headingIndex = lines.findIndex((line) =>
-   readingHeadingPattern.test(line.trim()),
-  );
+  const headingIndex = lines.findIndex((line) => readingHeadingPattern.test(line.trim()));
 
   if (headingIndex === -1) continue;
 
@@ -87,9 +78,7 @@ function extractGrammarReading(
    return topLevelHeadingPattern.test(line.trim());
   });
   const bodyLines =
-   endIndex === -1
-    ? lines.slice(headingIndex + 1)
-    : lines.slice(headingIndex + 1, endIndex);
+   endIndex === -1 ? lines.slice(headingIndex + 1) : lines.slice(headingIndex + 1, endIndex);
   const readingContentMd = bodyLines.join("\n").trim();
 
   if (!readingContentMd) continue;
@@ -109,9 +98,7 @@ function extractReadingFromMarkdown(contentMd?: string): GrammarReading | null {
  if (!normalizedContent) return null;
 
  const lines = normalizeNewlines(normalizedContent).split("\n");
- const headingIndex = lines.findIndex((line) =>
-  readingHeadingPattern.test(line.trim()),
- );
+ const headingIndex = lines.findIndex((line) => readingHeadingPattern.test(line.trim()));
 
  if (headingIndex === -1) {
   return {
@@ -153,29 +140,20 @@ export function GrammarWorkspace({
   grammarPoints[0]?.id || null,
  );
  const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(true);
- const [isGrammarSidebarSheetOpen, setIsGrammarSidebarSheetOpen] =
-  useState(false);
 
  const reading = useMemo(
   () =>
    extractReadingFromMarkdown(lesson.notes?.applicationMarkdown) ??
    extractReadingFromMarkdown(lesson.notes?.overviewMarkdown) ??
    extractGrammarReading(grammarPoints),
-  [
-   grammarPoints,
-   lesson.notes?.applicationMarkdown,
-   lesson.notes?.overviewMarkdown,
-  ],
+  [grammarPoints, lesson.notes?.applicationMarkdown, lesson.notes?.overviewMarkdown],
  );
  const effectiveSelectedPointId = useMemo(() => {
   if (selectedPointId === ALL_GRAMMAR_POINTS_ID) return ALL_GRAMMAR_POINTS_ID;
   if (selectedPointId === READING_VIEW_ID) {
    return reading ? READING_VIEW_ID : grammarPoints[0]?.id || null;
   }
-  if (
-   selectedPointId &&
-   grammarPoints.some((point) => point.id === selectedPointId)
-  ) {
+  if (selectedPointId && grammarPoints.some((point) => point.id === selectedPointId)) {
    return selectedPointId;
   }
 
@@ -187,10 +165,10 @@ export function GrammarWorkspace({
  const selectedPoint = useMemo(
   () =>
    isAllView || isReadingView
-   ? null
-   : grammarPoints.find((point) => point.id === effectiveSelectedPointId) ||
-     grammarPoints[0] ||
-     null,
+    ? null
+    : grammarPoints.find((point) => point.id === effectiveSelectedPointId) ||
+      grammarPoints[0] ||
+      null,
   [effectiveSelectedPointId, grammarPoints, isAllView, isReadingView],
  );
 
@@ -221,14 +199,11 @@ export function GrammarWorkspace({
    <GrammarPointList
     points={grammarPoints}
     selectedPointId={
-     isAllView || isReadingView
-      ? effectiveSelectedPointId
-      : selectedPoint?.id || null
+     isAllView || isReadingView ? effectiveSelectedPointId : selectedPoint?.id || null
     }
     progress={progress}
     onSelectPoint={(pointId) => {
      setSelectedPointId(pointId);
-     setIsGrammarSidebarSheetOpen(false);
     }}
     allPointId={ALL_GRAMMAR_POINTS_ID}
    />
@@ -267,9 +242,7 @@ export function GrammarWorkspace({
    relatedVocab={relatedVocab}
    lessonId={lesson.id}
    onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
-   onMarkStatus={(status) =>
-    selectedPoint && onMarkStatus(selectedPoint.id, status)
-   }
+   onMarkStatus={(status) => selectedPoint && onMarkStatus(selectedPoint.id, status)}
   />
  );
 
@@ -278,42 +251,18 @@ export function GrammarWorkspace({
    <LessonModuleFrame
     title="Ngữ pháp"
     subtitle={
-     selectedPoint?.cleanTitle ||
-     (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
+     selectedPoint?.cleanTitle || (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
     }
     sidebarLabel="Điểm ngữ pháp"
     sidebarSummary={`${grammarPoints.length} mục`}
     sidebarOpen={isGrammarSidebarOpen}
     onSidebarOpenChange={setIsGrammarSidebarOpen}
     sidebar={renderGrammarSidebar()}
+    sidebarSelectionKey={effectiveSelectedPointId}
     compact={compact}
-    actions={
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="lg:hidden"
-      onClick={() => setIsGrammarSidebarSheetOpen(true)}
-     >
-      Mở danh sách
-     </Button>
-    }
    >
     {readerContent}
    </LessonModuleFrame>
-
-   <Sheet
-    open={isGrammarSidebarSheetOpen}
-    onOpenChange={setIsGrammarSidebarSheetOpen}
-    side="right"
-    className="p-4 sm:max-w-md"
-   >
-    <SheetHeader
-     title="Điểm ngữ pháp"
-     onClose={() => setIsGrammarSidebarSheetOpen(false)}
-    />
-    {renderGrammarSidebar()}
-   </Sheet>
   </div>
  );
 }
@@ -326,12 +275,8 @@ function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
   >
    <article className="grid gap-3">
     <div className="grid gap-1">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-      {reading.title}
-     </p>
-     <h2 className="text-2xl font-black tracking-normal text-text-primary">
-      Bài đọc áp dụng
-     </h2>
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{reading.title}</p>
+     <h2 className="text-2xl font-black tracking-normal text-text-primary">Bài đọc áp dụng</h2>
     </div>
 
     <MarkdownContent content={reading.contentMd} className="gap-3" />
@@ -355,9 +300,7 @@ function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
          Điểm ngữ pháp {index + 1}
         </p>
 
-        <h2 className="text-xl font-black text-text-primary">
-         {point.cleanTitle}
-        </h2>
+        <h2 className="text-xl font-black text-text-primary">{point.cleanTitle}</h2>
        </div>
       </div>
 
