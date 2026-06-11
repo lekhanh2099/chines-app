@@ -3060,7 +3060,7 @@
         "id": "cd5df31d-ccbb-452f-a6ef-3c265cce79b1",
         "order": 2,
         "blank_marker": "2",
-        "answer": "望",
+        "answer": "过",
         "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
@@ -3069,7 +3069,7 @@
         "id": "6f8caccf-6fa4-491f-a5d9-7ae329639604",
         "order": 3,
         "blank_marker": "3",
-        "answer": "刚",
+        "answer": "一",
         "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
@@ -3096,7 +3096,7 @@
         "id": "5517b91a-0bb1-4eee-8615-a7638c987f86",
         "order": 6,
         "blank_marker": "6",
-        "answer": "点儿",
+        "answer": "了",
         "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
