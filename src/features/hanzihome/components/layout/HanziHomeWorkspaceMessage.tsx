@@ -26,6 +26,7 @@ export function HanziHomeWorkspaceMessage({
       {showLibraryLink ? (
        <Link
         href="/"
+        prefetch={false}
         className="w-fit rounded-xl bg-bg-inverse px-4 py-2  font-black text-text-inverse"
        >
         Về thư viện học liệu

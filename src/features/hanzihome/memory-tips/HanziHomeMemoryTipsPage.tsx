@@ -74,8 +74,8 @@ export function HanziHomeMemoryTipsPage() {
      </div>
 
      <div className="flex flex-wrap gap-2">
-      <Button type="button" variant="outline" asChild>
-       <Link href="/">
+     <Button type="button" variant="outline" asChild>
+       <Link href="/" prefetch={false}>
         <ArrowLeft className="h-4 w-4" />
         Về thư viện
        </Link>

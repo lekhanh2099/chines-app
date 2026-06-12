@@ -16,8 +16,8 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { hanzihomeCourses } from "@/features/hanzihome/courses/course-catalog";
-import { getHanziHomeCourseLessonSummaries } from "@/features/hanzihome/static-db-data";
+import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import {
  findLessonByRouteParam,
  getLessonRouteValue,
@@ -33,19 +33,21 @@ export function Header({ user }: { user?: User | null }) {
  const searchParams = useSearchParams();
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
+ const isHanziHomeRoute = pathname === "/hanzihome";
+ const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeRoute });
+ const selectedCourseId =
+  isHanziHomeRoute && catalogData.courses.length > 0
+   ? searchParams.get("courseId") || catalogData.courses[0]?.id || ""
+   : "";
+ const courseLessonsQuery = useHanziHomeCourseLessons(selectedCourseId, {
+  enabled: isHanziHomeRoute && Boolean(selectedCourseId),
+ });
  const hanzihomeBreadcrumb = useMemo(() => {
-  if (pathname !== "/hanzihome") return null;
+  if (!isHanziHomeRoute) return null;
 
-  const courses = hanzihomeCourses
-   .map((course) => ({
-    id: course.id,
-    title: course.title,
-    lessons: getHanziHomeCourseLessonSummaries(course.id),
-   }))
-   .filter((course) => course.lessons.length > 0);
-  const selectedCourseId = searchParams.get("courseId") || courses[0]?.id || "";
+  const courses = catalogData.courses;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? courses[0];
-  const lessons = selectedCourse?.lessons ?? [];
+  const lessons = courseLessonsQuery.lessons;
   const lessonFromUrl = searchParams.get("lesson");
   const legacyLessonIdFromUrl = searchParams.get("lessonId");
   const selectedLesson =
@@ -59,7 +61,13 @@ export function Header({ user }: { user?: User | null }) {
    selectedLesson,
    lessons,
   };
- }, [pathname, searchParams]);
+ }, [
+  catalogData.courses,
+  courseLessonsQuery.lessons,
+  isHanziHomeRoute,
+  searchParams,
+  selectedCourseId,
+ ]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -103,13 +111,12 @@ export function Header({ user }: { user?: User | null }) {
      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
     >
      <Select
-      value={hanzihomeBreadcrumb.selectedCourse.id}
-      onValueChange={(courseId) => {
-       const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
-       const lessonNumber = course?.lessons[0]?.lessonNumber;
+     value={hanzihomeBreadcrumb.selectedCourse.id}
+     onValueChange={(courseId) => {
+      const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
 
-       if (course && typeof lessonNumber === "number") {
-        navigateHanziHome(course.id, lessonNumber);
+       if (course) {
+        navigateHanziHome(course.id, 1);
        }
       }}
      >

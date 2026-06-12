@@ -152,7 +152,7 @@ export function LessonLinkedRichContentCard({
 
      {note ? (
       <Button asChild variant="outline">
-       <Link href={`/notes/${note.id}`}>
+       <Link href={`/notes/${note.id}`} prefetch={false}>
         <ExternalLink className="h-4 w-4" />
         Mở note
        </Link>

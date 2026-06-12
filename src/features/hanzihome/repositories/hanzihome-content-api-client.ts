@@ -23,6 +23,10 @@ type CatalogApiResponse = {
  catalog: HanziHomeCatalogData;
 };
 
+type CourseLessonsApiResponse = {
+ lessons: HanziHomeLesson[];
+};
+
 type LessonApiResponse = {
  lesson: HanziHomeLesson;
 };
@@ -79,6 +83,16 @@ export async function fetchHanziHomeCatalog(options: {
  const payload = await fetchJson<CatalogApiResponse>(url);
 
  return payload.catalog;
+}
+
+export async function fetchHanziHomeCourseLessons(courseId: string): Promise<HanziHomeLesson[]> {
+ if (!courseId) return [];
+
+ const payload = await fetchJson<CourseLessonsApiResponse>(
+  `/api/hanzihome/catalog?courseId=${encodeURIComponent(courseId)}`,
+ );
+
+ return payload.lessons;
 }
 
 export async function fetchHanziHomeLessonDetail(

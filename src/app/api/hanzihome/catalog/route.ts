@@ -10,6 +10,21 @@ function parseBooleanParam(value: string | null) {
 
 export async function GET(request: Request) {
  const url = new URL(request.url);
+ const courseId = url.searchParams.get("courseId")?.trim();
+
+ if (courseId) {
+  const lessons = hanzihomeContentRepository.getCourseLessonSummaries(courseId);
+
+  return NextResponse.json(
+   { lessons },
+   {
+    headers: {
+     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+    },
+   },
+  );
+ }
+
  const includeLessons = parseBooleanParam(url.searchParams.get("includeLessons"));
  const catalog = hanzihomeContentRepository.getCatalogSummary({
   includeLessons,

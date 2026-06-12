@@ -114,7 +114,7 @@ export function CourseCard({ course, stats }: { course: HanziHomeCatalogCourse; 
 
     <div className="flex flex-wrap gap-2 md:justify-end">
      <Button asChild>
-      <Link href={href}>
+      <Link href={href} prefetch={false}>
        <Sparkles className="h-4 w-4" />
        Vào học
       </Link>

@@ -31,13 +31,16 @@ const emptyCatalogData: HanziHomeCatalogData = {
 
 export function useHanziHomeCatalogData({
  includeLessons = false,
+ enabled = true,
 }: {
  includeLessons?: boolean;
+ enabled?: boolean;
 } = {}) {
  const query = useQuery({
   queryKey: ["hanzihome", "catalog", { includeLessons }],
   queryFn: () => fetchHanziHomeCatalog({ includeLessons }),
   staleTime: catalogStaleTime,
+  enabled,
  });
 
  return query.data ?? emptyCatalogData;

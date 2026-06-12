@@ -102,6 +102,7 @@ function NavRow({
  return (
   <Link
    href={item.href}
+   prefetch={false}
    title={collapsed ? item.name : undefined}
    className={cn(
     "group flex h-10 items-center gap-3 rounded-lg border  font-semibold transition-colors",
@@ -161,7 +162,7 @@ export function Sidebar() {
       effectiveCollapsed ? "justify-center px-3" : "px-4",
      )}
     >
-     <Link href="/" className="flex min-w-0 items-center gap-3">
+     <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-accent-subtle text-accent-text">
        <span className="text-2xl leading-none">汉</span>
       </div>
@@ -267,9 +268,10 @@ export function Sidebar() {
       const active = isActive(pathname, searchParams, item.href);
       return (
        <Link
-        key={item.name}
-        href={item.href}
-        className={cn(
+       key={item.name}
+       href={item.href}
+       prefetch={false}
+       className={cn(
          "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
          active ? "bg-accent-subtle text-accent-text" : "text-text-muted hover:bg-bg-subtle",
         )}

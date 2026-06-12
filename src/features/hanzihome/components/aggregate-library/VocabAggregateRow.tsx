@@ -11,6 +11,7 @@ export function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
     lessonNumber: item.lessonNumber,
     module: "vocab",
    })}
+   prefetch={false}
    className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-border-hover hover:bg-bg-elevated sm:grid-cols-[7rem_minmax(0,1fr)_auto] sm:items-center"
   >
    <div className="min-w-0">

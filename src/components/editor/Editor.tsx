@@ -73,11 +73,7 @@ function Placeholder() {
 }
 
 /* ── Restore initial editor state from JSON ── */
-function RestoreStatePlugin({
- initialState,
-}: {
- initialState?: Record<string, unknown> | null;
-}) {
+function RestoreStatePlugin({ initialState }: { initialState?: Record<string, unknown> | null }) {
  const [editor] = useLexicalComposerContext();
  const hasRestored = useRef(false);
 

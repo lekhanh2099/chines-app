@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
@@ -43,6 +43,13 @@ export function HanziHomeWorkspace() {
  const searchParams = useSearchParams();
  const catalogData = useHanziHomeCatalogData({ includeLessons: false });
  const learning = useLearningState();
+ const moduleFromUrl = parseModule(searchParams.get("module"));
+ const searchParamsString = searchParams.toString();
+ const lessonNumberFromUrl = searchParams.get("lesson");
+ const legacyLessonIdFromUrl = searchParams.get("lessonId");
+ const [activeModule, setActiveModule] = useState<HanziHomeModule>(
+  () => moduleFromUrl || learning.state.settings.lastModule || "overview",
+ );
  const courseCatalog = useMemo(
   () => ({
    courses: catalogData.courses.length > 0 ? catalogData.courses : hanzihomeCourses,
@@ -78,8 +85,6 @@ export function HanziHomeWorkspace() {
   [lessons, courseCatalog.courses, selectedCourseId],
  );
 
- const lessonNumberFromUrl = searchParams.get("lesson");
- const legacyLessonIdFromUrl = searchParams.get("lessonId");
  const lastLessonId = learning.state.settings.lastLessonId;
  const lessonFromUrl = findLessonByRouteParam(
   courseLessons,
@@ -93,24 +98,29 @@ export function HanziHomeWorkspace() {
  const selectedLesson = lessonFromUrl || lessonFromLastState || fallbackLesson;
  const lessonId = selectedLesson?.id || "";
 
- const activeModule =
-  parseModule(searchParams.get("module")) || learning.state.settings.lastModule || "overview";
-
  useEffect(() => {
   if (!selectedLesson || activeModule === "radicals") return;
 
   const hasCanonicalLesson =
-   searchParams.get("lesson") === getLessonRouteValue(selectedLesson.lessonNumber);
-  const hasLegacyLessonId = searchParams.has("lessonId");
+   lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
+  const hasLegacyLessonId = Boolean(legacyLessonIdFromUrl);
 
   if (hasCanonicalLesson && !hasLegacyLessonId) return;
 
-  const nextParams = new URLSearchParams(searchParams.toString());
+  const nextParams = new URLSearchParams(searchParamsString);
   nextParams.set("courseId", selectedCourseId);
   nextParams.set("lesson", getLessonRouteValue(selectedLesson.lessonNumber));
   nextParams.delete("lessonId");
   router.replace(`/hanzihome?${nextParams.toString()}`);
- }, [activeModule, router, searchParams, selectedCourseId, selectedLesson]);
+ }, [
+  activeModule,
+  legacyLessonIdFromUrl,
+  lessonNumberFromUrl,
+  router,
+  searchParamsString,
+  selectedCourseId,
+  selectedLesson,
+ ]);
 
  const activeLessonModule: StudyModule = activeModule === "radicals" ? "overview" : activeModule;
 
@@ -118,25 +128,8 @@ export function HanziHomeWorkspace() {
  const lesson = activeModule === "radicals" ? null : activeLessonDetail.lesson;
  const selectedCourse = courseCatalog.courses.find((course) => course.id === selectedCourseId);
 
- const replaceWorkspaceParams = (
-  updates: Partial<Record<"courseId" | "lesson" | "module", string>>,
- ) => {
-  const nextParams = new URLSearchParams(searchParams.toString());
-
-  Object.entries(updates).forEach(([key, value]) => {
-   if (value) nextParams.set(key, value);
-   else nextParams.delete(key);
-  });
-
-  if ("courseId" in updates || "lesson" in updates) {
-   nextParams.delete("lessonId");
-  }
-
-  router.replace(`/hanzihome?${nextParams.toString()}`);
- };
-
  const selectModule = (nextModule: HanziHomeModule) => {
-  replaceWorkspaceParams({ module: nextModule });
+  setActiveModule(nextModule);
   learning.updateSettings({ lastModule: nextModule });
  };
 
@@ -200,14 +193,6 @@ export function HanziHomeWorkspace() {
  return (
   <main className="hanzihome-static-page">
    <div className="flex w-full max-w-full flex-col gap-2.5">
-    {learning.isSaving && (
-     <div className="flex justify-end">
-      <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
-       Đang lưu...
-      </span>
-     </div>
-    )}
-
     {activeModule === "radicals" ? (
      <RadicalWorkspace radicals={catalogData.radicals} />
     ) : (

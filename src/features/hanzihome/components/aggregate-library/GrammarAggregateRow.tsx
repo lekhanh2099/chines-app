@@ -11,6 +11,7 @@ export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
     lessonNumber: item.lessonNumber,
     module: "grammar",
    })}
+   prefetch={false}
    className="grid gap-1 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-border-hover hover:bg-bg-elevated"
   >
    <h3 className="line-clamp-1 font-black text-text-primary sm:text-base">
