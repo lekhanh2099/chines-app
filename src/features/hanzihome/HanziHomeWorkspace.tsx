@@ -12,6 +12,10 @@ import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHo
 import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
+ clearHanziHomeSearchNavigationIntent,
+ useHanziHomeSearchNavigationIntent,
+} from "@/features/hanzihome/search/searchNavigationStore";
+import {
  hanzihomeCourseBooks,
  hanzihomeCourses,
  sortLessonsByCourseBookOrder,
@@ -43,6 +47,7 @@ export function HanziHomeWorkspace() {
  const searchParams = useSearchParams();
  const catalogData = useHanziHomeCatalogData({ includeLessons: false });
  const learning = useLearningState();
+ const searchNavigationIntent = useHanziHomeSearchNavigationIntent();
  const moduleFromUrl = parseModule(searchParams.get("module"));
  const searchParamsString = searchParams.toString();
  const lessonNumberFromUrl = searchParams.get("lesson");
@@ -97,9 +102,17 @@ export function HanziHomeWorkspace() {
 
  const selectedLesson = lessonFromUrl || lessonFromLastState || fallbackLesson;
  const lessonId = selectedLesson?.id || "";
+ const matchingSearchIntent =
+  searchNavigationIntent &&
+  (searchNavigationIntent.lessonId === lessonId ||
+   (searchNavigationIntent.courseId === selectedCourseId &&
+    searchNavigationIntent.lessonNumber === selectedLesson?.lessonNumber))
+   ? searchNavigationIntent
+   : null;
+ const resolvedActiveModule = matchingSearchIntent?.module ?? activeModule;
 
  useEffect(() => {
-  if (!selectedLesson || activeModule === "radicals") return;
+  if (!selectedLesson || resolvedActiveModule === "radicals") return;
 
   const hasCanonicalLesson =
    lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
@@ -113,7 +126,7 @@ export function HanziHomeWorkspace() {
   nextParams.delete("lessonId");
   router.replace(`/hanzihome?${nextParams.toString()}`);
  }, [
-  activeModule,
+  resolvedActiveModule,
   legacyLessonIdFromUrl,
   lessonNumberFromUrl,
   router,
@@ -122,13 +135,15 @@ export function HanziHomeWorkspace() {
   selectedLesson,
  ]);
 
- const activeLessonModule: StudyModule = activeModule === "radicals" ? "overview" : activeModule;
+ const activeLessonModule: StudyModule =
+  resolvedActiveModule === "radicals" ? "overview" : resolvedActiveModule;
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
- const lesson = activeModule === "radicals" ? null : activeLessonDetail.lesson;
+ const lesson = resolvedActiveModule === "radicals" ? null : activeLessonDetail.lesson;
  const selectedCourse = courseCatalog.courses.find((course) => course.id === selectedCourseId);
 
  const selectModule = (nextModule: HanziHomeModule) => {
+  clearHanziHomeSearchNavigationIntent();
   setActiveModule(nextModule);
   learning.updateSettings({ lastModule: nextModule });
  };
@@ -157,10 +172,10 @@ export function HanziHomeWorkspace() {
  };
 
  const isLessonWorkspaceLoading =
-  activeModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
+  resolvedActiveModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
 
  const hasLessonWorkspaceError =
-  activeModule !== "radicals" &&
+  resolvedActiveModule !== "radicals" &&
   (isCourseLessonsError ||
    activeLessonDetail.isError ||
    (!isCourseLessonsLoading && !selectedCourse));
@@ -179,7 +194,7 @@ export function HanziHomeWorkspace() {
   );
  }
 
- if (!lesson && activeModule !== "radicals") {
+ if (!lesson && resolvedActiveModule !== "radicals") {
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
@@ -193,12 +208,15 @@ export function HanziHomeWorkspace() {
  return (
   <main className="hanzihome-static-page">
    <div className="flex w-full max-w-full flex-col gap-2.5">
-    {activeModule === "radicals" ? (
-     <RadicalWorkspace radicals={catalogData.radicals} />
+    {resolvedActiveModule === "radicals" ? (
+     <RadicalWorkspace
+      key={matchingSearchIntent?.id ?? "radicals"}
+      radicals={catalogData.radicals}
+     />
     ) : (
      lesson && (
       <ModuleSplitWorkspace
-       key={lesson.id}
+       key={`${lesson.id}:${matchingSearchIntent?.id ?? "default"}`}
        lesson={lesson}
        learningState={learning.state}
        activeModule={activeLessonModule}

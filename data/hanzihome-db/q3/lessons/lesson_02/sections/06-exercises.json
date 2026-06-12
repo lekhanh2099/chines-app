@@ -29,46 +29,59 @@
           "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
           "type": "minimal_pair_group",
           "title": "辨音辨调",
+          "title_vi": "Phân biệt âm và thanh điệu",
           "items": [
             {
               "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
               "left": "个子 gèzi",
+              "left_vi": "vóc dáng; chiều cao thân người",
               "right": "各自 gèzì",
+              "right_vi": "mỗi người tự; từng bên tự",
               "source_origin": "textbook",
               "check_needed": false
             },
             {
               "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
               "left": "放心 fàngxīn",
+              "left_vi": "yên tâm",
               "right": "烦心 fánxīn",
+              "right_vi": "phiền lòng; lo phiền",
               "source_origin": "textbook",
               "check_needed": false
             },
             {
               "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
               "left": "柔和 róuhé",
+              "left_vi": "dịu nhẹ; mềm mại",
               "right": "如何 rúhé",
+              "right_vi": "như thế nào",
               "source_origin": "textbook",
               "check_needed": false
             },
             {
               "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
               "left": "体质 tǐzhì",
+              "left_vi": "thể chất",
               "right": "抵制 dǐzhì",
+              "right_vi": "chống lại; tẩy chay",
               "source_origin": "textbook",
               "check_needed": false
             },
             {
               "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
               "left": "预防 yùfáng",
+              "left_vi": "phòng ngừa",
               "right": "乙方 yǐfāng",
+              "right_vi": "bên B",
               "source_origin": "textbook",
               "check_needed": false
             },
             {
               "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
               "left": "竹子 zhúzi",
+              "left_vi": "cây tre; tre",
               "right": "出自 chūzì",
+              "right_vi": "xuất phát từ; trích từ",
               "source_origin": "textbook",
               "check_needed": false
             }
@@ -78,6 +91,7 @@
           "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
           "type": "proverb_reading",
           "title": "朗读",
+          "title_vi": "Đọc thành tiếng",
           "items": [
             {
               "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
@@ -113,7 +127,7 @@
           "id": "029b6888-951c-4d78-8e81-67211d2f2178",
           "text": "上星期",
           "pinyin": "Shàng xīngqī",
-          "vi": "",
+          "vi": "tuần trước",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -121,7 +135,7 @@
           "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
           "text": "上月",
           "pinyin": "Shàng yuè",
-          "vi": "",
+          "vi": "tháng trước",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -129,7 +143,7 @@
           "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
           "text": "上周",
           "pinyin": "Shàng zhōu",
-          "vi": "",
+          "vi": "tuần trước",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -137,7 +151,7 @@
           "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
           "text": "上学期",
           "pinyin": "Shàng xuéqī",
-          "vi": "",
+          "vi": "học kỳ trước",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -145,7 +159,7 @@
           "id": "9e310873-3483-4086-91b4-53e6c4982438",
           "text": "学习上",
           "pinyin": "Xuéxí shang",
-          "vi": "",
+          "vi": "về mặt học tập; trong học tập",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -153,7 +167,7 @@
           "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
           "text": "工作上",
           "pinyin": "Gōngzuò shang",
-          "vi": "",
+          "vi": "về mặt công việc; trong công việc",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -161,7 +175,7 @@
           "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
           "text": "生活上",
           "pinyin": "Shēnghuó shang",
-          "vi": "",
+          "vi": "về mặt đời sống; trong đời sống",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -169,7 +183,7 @@
           "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
           "text": "班上",
           "pinyin": "Bān shang",
-          "vi": "",
+          "vi": "trong lớp; ở lớp",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -177,7 +191,7 @@
           "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
           "text": "发微信",
           "pinyin": "Fā Wēixìn",
-          "vi": "",
+          "vi": "gửi WeChat",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -185,7 +199,7 @@
           "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
           "text": "发照片",
           "pinyin": "Fā zhàopiàn",
-          "vi": "",
+          "vi": "gửi ảnh",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -193,7 +207,7 @@
           "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
           "text": "发邮件",
           "pinyin": "Fā yóujiàn",
-          "vi": "",
+          "vi": "gửi email",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -201,7 +215,7 @@
           "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
           "text": "发短信",
           "pinyin": "Fā duǎnxìn",
-          "vi": "",
+          "vi": "gửi tin nhắn",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -209,7 +223,7 @@
           "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
           "text": "起床后",
           "pinyin": "Qǐchuáng hòu",
-          "vi": "",
+          "vi": "sau khi thức dậy",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -217,7 +231,7 @@
           "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
           "text": "下课后",
           "pinyin": "Xiàkè hòu",
-          "vi": "",
+          "vi": "sau khi tan học",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -225,7 +239,7 @@
           "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
           "text": "吃饭后",
           "pinyin": "Chīfàn hòu",
-          "vi": "",
+          "vi": "sau khi ăn cơm",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -233,7 +247,7 @@
           "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
           "text": "回学校后",
           "pinyin": "Huí xuéxiào hòu",
-          "vi": "",
+          "vi": "sau khi về trường",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -241,7 +255,7 @@
           "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
           "text": "来自美国",
           "pinyin": "Láizì Měiguó",
-          "vi": "",
+          "vi": "đến từ Mỹ",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -249,7 +263,7 @@
           "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
           "text": "来自亚洲",
           "pinyin": "Láizì Yàzhōu",
-          "vi": "",
+          "vi": "đến từ châu Á",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -257,7 +271,7 @@
           "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
           "text": "来自各国",
           "pinyin": "Láizì gèguó",
-          "vi": "",
+          "vi": "đến từ các nước",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -265,7 +279,7 @@
           "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
           "text": "来自上海",
           "pinyin": "Láizì Shànghǎi",
-          "vi": "",
+          "vi": "đến từ Thượng Hải",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -273,7 +287,7 @@
           "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
           "text": "动作柔和",
           "pinyin": "Dòngzuò róuhé",
-          "vi": "",
+          "vi": "động tác dịu nhẹ",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -281,7 +295,7 @@
           "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
           "text": "动作缓慢",
           "pinyin": "Dòngzuò huǎnmàn",
-          "vi": "",
+          "vi": "động tác chậm rãi",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -289,7 +303,7 @@
           "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
           "text": "动作优美",
           "pinyin": "Dòngzuò yōuměi",
-          "vi": "",
+          "vi": "động tác đẹp, thanh nhã",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -297,7 +311,7 @@
           "id": "71556026-f031-4d36-9a7e-7abd82202c42",
           "text": "动作舒展",
           "pinyin": "Dòngzuò shūzhǎn",
-          "vi": "",
+          "vi": "động tác khoáng đạt, duỗi mở",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -305,7 +319,7 @@
           "id": "965e382b-b48f-4509-8334-176e1557db63",
           "text": "预防疾病",
           "pinyin": "Yùfáng jíbìng",
-          "vi": "",
+          "vi": "phòng ngừa bệnh tật",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -313,7 +327,7 @@
           "id": "a27a4c14-22fa-4283-97bb-71ff4a0bd654",
           "text": "预防感冒",
           "pinyin": "Yùfáng gǎnmào",
-          "vi": "",
+          "vi": "phòng ngừa cảm cúm",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -321,7 +335,7 @@
           "id": "7bc00e0d-b3d9-4033-a317-4c5513bee328",
           "text": "有作用",
           "pinyin": "Yǒu zuòyòng",
-          "vi": "",
+          "vi": "có tác dụng",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -329,7 +343,7 @@
           "id": "86c957fe-e4e2-4542-b48f-e9331f30ff82",
           "text": "没有作用",
           "pinyin": "Méiyǒu zuòyòng",
-          "vi": "",
+          "vi": "không có tác dụng",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -337,7 +351,7 @@
           "id": "f14081ee-14f0-4cc8-8da4-b8aae17138b5",
           "text": "表示感谢",
           "pinyin": "Biǎoshì gǎnxiè",
-          "vi": "",
+          "vi": "bày tỏ lời cảm ơn",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -345,7 +359,7 @@
           "id": "2cc03948-7d65-4b1b-affd-6d8065e879ea",
           "text": "表示满意",
           "pinyin": "Biǎoshì mǎnyì",
-          "vi": "",
+          "vi": "bày tỏ sự hài lòng",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -353,7 +367,7 @@
           "id": "7cc7ef90-1d4c-440e-a5f4-e613aafea114",
           "text": "没有表示",
           "pinyin": "Méiyǒu biǎoshì",
-          "vi": "",
+          "vi": "không tỏ thái độ; không có biểu hiện gì",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -361,7 +375,7 @@
           "id": "78eef1b5-c1f9-44e0-ae63-2ba2b01b8661",
           "text": "爱的表示",
           "pinyin": "Ài de biǎoshì",
-          "vi": "",
+          "vi": "biểu hiện của tình yêu",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -369,7 +383,7 @@
           "id": "02bf1efd-f2d4-491e-88fc-e567a02c9624",
           "text": "很好玩儿",
           "pinyin": "Hěn hǎowánr",
-          "vi": "",
+          "vi": "rất vui; rất thú vị",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -377,7 +391,7 @@
           "id": "3f902b6b-f41a-4dcb-a607-86fd510228bc",
           "text": "不好玩儿",
           "pinyin": "Bù hǎowánr",
-          "vi": "",
+          "vi": "không vui; không thú vị",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -385,7 +399,7 @@
           "id": "438cd3ac-6cc1-4f81-9dda-88b93408924f",
           "text": "不太适应",
           "pinyin": "Bù tài shìyìng",
-          "vi": "",
+          "vi": "không thích nghi lắm",
           "source_origin": "textbook",
           "check_needed": false
         },
@@ -393,7 +407,7 @@
           "id": "9ff93f62-c0da-4c7a-89e5-9c64e5d880c1",
           "text": "很难适应",
           "pinyin": "Hěn nán shìyìng",
-          "vi": "",
+          "vi": "rất khó thích nghi",
           "source_origin": "textbook",
           "check_needed": false
         }
@@ -424,12 +438,28 @@
         "分别",
         "好玩儿"
       ],
+      "word_bank_vi": [
+        "ngoại khóa; ngoài giờ học",
+        "gửi",
+        "đẹp; thanh nhã",
+        "bày tỏ; biểu thị",
+        "dịu nhẹ; mềm mại",
+        "yên tâm",
+        "thích nghi",
+        "lượng từ cho bài thơ/bài hát",
+        "tác dụng",
+        "phòng ngừa",
+        "lần lượt; riêng rẽ",
+        "vui; thú vị"
+      ],
       "questions": [
         {
           "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
           "type": "fill_blank",
           "prompt": "我在这里一切都很好，请爸爸妈妈______。",
+          "prompt_vi": "Ở đây con đều ổn cả, xin bố mẹ ______.",
           "answer": "放心",
+          "answer_vi": "yên tâm",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -438,7 +468,9 @@
           "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
           "type": "fill_blank",
           "prompt": "我给你们______过去了几张照片，是我在长城、颐和园照的。",
+          "prompt_vi": "Con đã ______ sang cho bố mẹ mấy tấm ảnh, là ảnh con chụp ở Trường Thành và Di Hòa Viên.",
           "answer": "发",
+          "answer_vi": "gửi",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -447,7 +479,9 @@
           "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
           "type": "fill_blank",
           "prompt": "我们班的学生，______来自七个国家。",
+          "prompt_vi": "Học sinh lớp chúng tôi ______ đến từ bảy quốc gia.",
           "answer": "分别",
+          "answer_vi": "lần lượt",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -456,7 +490,9 @@
           "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
           "type": "fill_blank",
           "prompt": "她不太喜欢参加这些______活动。",
+          "prompt_vi": "Cô ấy không thích lắm việc tham gia các hoạt động ______ này.",
           "answer": "课外",
+          "answer_vi": "ngoại khóa",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -465,7 +501,9 @@
           "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
           "type": "fill_blank",
           "prompt": "她说话的声音很______，很好听。",
+          "prompt_vi": "Giọng nói của cô ấy rất ______, nghe rất hay.",
           "answer": "柔和",
+          "answer_vi": "dịu nhẹ",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -474,7 +512,9 @@
           "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
           "type": "fill_blank",
           "prompt": "我们学校就在风景______的西山下。",
+          "prompt_vi": "Trường chúng tôi ở ngay dưới núi Tây Sơn, nơi có phong cảnh ______.",
           "answer": "优美",
+          "answer_vi": "đẹp; thanh nhã",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -483,7 +523,9 @@
           "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
           "type": "fill_blank",
           "prompt": "打太极拳可以锻炼身体，增强体质，______疾病。",
+          "prompt_vi": "Tập Thái Cực Quyền có thể rèn luyện thân thể, tăng cường thể chất, ______ bệnh tật.",
           "answer": "预防",
+          "answer_vi": "phòng ngừa",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -492,7 +534,9 @@
           "id": "105a0775-7adb-418e-b770-133481e26360",
           "type": "fill_blank",
           "prompt": "针灸和按摩对于这些慢性病有很好的治疗______。",
+          "prompt_vi": "Châm cứu và xoa bóp có ______ trị liệu rất tốt đối với các bệnh mãn tính này.",
           "answer": "作用",
+          "answer_vi": "tác dụng",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -501,7 +545,9 @@
           "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
           "type": "fill_blank",
           "prompt": "这是一______非常有名的唐诗。",
+          "prompt_vi": "Đây là một ______ thơ Đường rất nổi tiếng.",
           "answer": "首",
+          "answer_vi": "bài; lượng từ cho thơ",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -510,7 +556,9 @@
           "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
           "type": "fill_blank",
           "prompt": "他一次又一次向我______他喜欢我，可是我已经有男朋友了。",
+          "prompt_vi": "Anh ấy hết lần này đến lần khác ______ với tôi rằng anh ấy thích tôi, nhưng tôi đã có bạn trai rồi.",
           "answer": "表示",
+          "answer_vi": "bày tỏ",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -519,7 +567,9 @@
           "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
           "type": "fill_blank",
           "prompt": "那是一个非常______的地方，这个星期我们去那儿玩儿玩儿吧。",
+          "prompt_vi": "Đó là một nơi rất ______, tuần này chúng ta đến đó chơi một chút nhé.",
           "answer": "好玩儿",
+          "answer_vi": "vui; thú vị",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -528,7 +578,9 @@
           "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
           "type": "fill_blank",
           "prompt": "我还不______这里的气候，冬天太冷，夏天太热。",
+          "prompt_vi": "Tôi vẫn chưa ______ khí hậu ở đây, mùa đông quá lạnh, mùa hè quá nóng.",
           "answer": "适应",
+          "answer_vi": "thích nghi",
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "pdf_crosschecked_answer"
@@ -553,11 +605,16 @@
           "id": "668ef942-39b3-4816-be06-f347b64fa456",
           "type": "complete_sentence",
           "prompt": "我刚来中国时，觉得________________________。（一切）",
+          "prompt_vi": "Khi tôi mới đến Trung Quốc, tôi cảm thấy ________________________。（一切）",
           "answer": "我刚来中国时，觉得对一切都不习惯。",
+          "answer_vi": "Khi tôi mới đến Trung Quốc, tôi cảm thấy mình chưa quen với mọi thứ.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我刚来中国时，觉得一切都很新鲜。"
+          ],
+          "alternative_answers_vi": [
+            "Khi tôi mới đến Trung Quốc, tôi cảm thấy mọi thứ đều rất mới mẻ."
           ],
           "answer_note_vi": "Đáp án mẫu đã chỉnh cho tự nhiên hơn: 对一切都不习惯. Đây là dạng mở, không phải đáp án duy nhất.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -566,11 +623,16 @@
           "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
           "type": "complete_sentence",
           "prompt": "我们________________________，也许能找到。（分别）",
+          "prompt_vi": "Chúng ta ________________________, có lẽ sẽ tìm được.（分别）",
           "answer": "我们分别去找，也许能找到。",
+          "answer_vi": "Chúng ta chia nhau đi tìm, có lẽ sẽ tìm được.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我们分别找找，也许能找到。"
+          ],
+          "alternative_answers_vi": [
+            "Chúng ta chia nhau tìm thử, có lẽ sẽ tìm được."
           ],
           "answer_note_vi": "Đáp án mẫu; dùng 分别 để chia nhau đi tìm.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -579,11 +641,16 @@
           "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
           "type": "complete_sentence",
           "prompt": "________________________，我才找到这个地方。（靠）",
+          "prompt_vi": "________________________, tôi mới tìm được nơi này.（靠）",
           "answer": "靠朋友的帮助，我才找到这个地方。",
+          "answer_vi": "Nhờ sự giúp đỡ của bạn bè, tôi mới tìm được nơi này.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "靠朋友帮忙，我才找到这个地方。"
+          ],
+          "alternative_answers_vi": [
+            "Nhờ bạn bè giúp đỡ, tôi mới tìm được nơi này."
           ],
           "answer_note_vi": "Đáp án mẫu; 靠 + danh từ/cụm danh từ.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -592,11 +659,16 @@
           "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
           "type": "complete_sentence",
           "prompt": "这个暑假我一定________________________。（各）",
+          "prompt_vi": "Kỳ nghỉ hè này tôi nhất định ________________________。（各）",
           "answer": "这个暑假我一定去各地旅行。",
+          "answer_vi": "Kỳ nghỉ hè này tôi nhất định sẽ đi du lịch khắp nơi.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "这个暑假我一定去各地看看。"
+          ],
+          "alternative_answers_vi": [
+            "Kỳ nghỉ hè này tôi nhất định sẽ đi khắp nơi xem thử."
           ],
           "answer_note_vi": "Đáp án mẫu; 各地 tự nhiên hơn 各个地方 trong câu ngắn.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -605,11 +677,16 @@
           "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
           "type": "complete_sentence",
           "prompt": "________________________打太极拳。（每）",
+          "prompt_vi": "________________________ tập Thái Cực Quyền.（每）",
           "answer": "我每天都打太极拳。",
+          "answer_vi": "Mỗi ngày tôi đều tập Thái Cực Quyền.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我每天都练太极拳。"
+          ],
+          "alternative_answers_vi": [
+            "Mỗi ngày tôi đều luyện Thái Cực Quyền."
           ],
           "answer_note_vi": "Đáp án mẫu; 打太极拳 / 练太极拳 đều tự nhiên.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -618,11 +695,16 @@
           "id": "9002df8c-125f-489d-9396-d008958aa6b9",
           "type": "complete_sentence",
           "prompt": "他对我的帮助很大，我真应该________________________。（表示）",
+          "prompt_vi": "Anh ấy giúp tôi rất nhiều, tôi thật sự nên ________________________。（表示）",
           "answer": "他对我的帮助很大，我真应该向他表示感谢。",
+          "answer_vi": "Anh ấy giúp tôi rất nhiều, tôi thật sự nên bày tỏ lời cảm ơn với anh ấy.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "他对我的帮助很大，我真应该表示感谢。"
+          ],
+          "alternative_answers_vi": [
+            "Anh ấy giúp tôi rất nhiều, tôi thật sự nên bày tỏ lời cảm ơn."
           ],
           "answer_note_vi": "Đáp án mẫu đã thêm 向他 để câu đầy đủ và tự nhiên hơn.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -646,9 +728,12 @@
         {
           "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
           "keyword": "一切",
+          "keyword_vi": "tất cả; mọi thứ",
           "type": "complete_dialogue",
           "prompt": "A：我只对新的东西感兴趣。你呢？\nB：我对这里的________________________。",
+          "prompt_vi": "A: Tôi chỉ hứng thú với những thứ mới. Còn bạn?\nB: Tôi đối với ________________________ ở đây.",
           "answer": "我对这里的一切都感兴趣。",
+          "answer_vi": "Tôi hứng thú với tất cả mọi thứ ở đây.",
           "answer_verified": true,
           "check_needed": false,
           "answer_note_vi": "Đáp án mẫu; bám đúng 一切.",
@@ -657,13 +742,19 @@
         {
           "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
           "keyword": "分别",
+          "keyword_vi": "lần lượt; riêng rẽ",
           "type": "complete_dialogue",
           "prompt": "A：你们班的学生来自多少个国家？\nB：我们班的同学________________________。",
+          "prompt_vi": "A: Học sinh lớp bạn đến từ bao nhiêu quốc gia?\nB: Các bạn trong lớp chúng tôi ________________________.",
           "answer": "我们班的同学分别来自十一个国家。",
+          "answer_vi": "Các bạn trong lớp chúng tôi lần lượt đến từ mười một quốc gia.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我们班的同学分别来自不同的国家。"
+          ],
+          "alternative_answers_vi": [
+            "Các bạn trong lớp chúng tôi lần lượt đến từ các quốc gia khác nhau."
           ],
           "answer_note_vi": "Đáp án mẫu; số 十一个 bám bài khóa.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -671,13 +762,19 @@
         {
           "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
           "keyword": "讲课",
+          "keyword_vi": "giảng bài",
           "type": "complete_dialogue",
           "prompt": "A：你觉得________________________？\nB：很好。他讲得又清楚又有意思。",
+          "prompt_vi": "A: Bạn thấy ________________________?\nB: Rất tốt. Anh ấy/cô ấy giảng vừa rõ ràng vừa thú vị.",
           "answer": "你觉得他讲课怎么样？",
+          "answer_vi": "Bạn thấy anh ấy/cô ấy giảng bài thế nào?",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "你觉得他讲课讲得怎么样？"
+          ],
+          "alternative_answers_vi": [
+            "Bạn thấy anh ấy/cô ấy giảng bài giảng thế nào?"
           ],
           "answer_note_vi": "Đáp án mẫu; 讲课怎么样 tự nhiên.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -685,13 +782,19 @@
         {
           "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
           "keyword": "作用",
+          "keyword_vi": "tác dụng",
           "type": "complete_dialogue",
           "prompt": "A：中药________________________？\nB：当然有作用。我的病就是喝中药以后才好的。",
+          "prompt_vi": "A: Trung y ________________________?\nB: Tất nhiên là có tác dụng. Bệnh của tôi chính là khỏi sau khi uống thuốc Đông y.",
           "answer": "中药有作用吗？",
+          "answer_vi": "Trung y có tác dụng không?",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "中药有没有作用？"
+          ],
+          "alternative_answers_vi": [
+            "Trung y có tác dụng hay không?"
           ],
           "answer_note_vi": "Đáp án mẫu; hai dạng nghi vấn đều được.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -699,13 +802,19 @@
         {
           "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
           "keyword": "靠",
+          "keyword_vi": "dựa vào; nhờ vào",
           "type": "complete_dialogue",
           "prompt": "A：出国以后才知道，还是在家好。\nB：可是，一个人不能________________________。",
+          "prompt_vi": "A: Sau khi ra nước ngoài mới biết, vẫn là ở nhà tốt.\nB: Nhưng một người không thể ________________________.",
           "answer": "可是，一个人不能总靠父母。",
+          "answer_vi": "Nhưng một người không thể cứ dựa mãi vào bố mẹ.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "可是，一个人不能只靠父母。"
+          ],
+          "alternative_answers_vi": [
+            "Nhưng một người không thể chỉ dựa vào bố mẹ."
           ],
           "answer_note_vi": "Đáp án mẫu; 总靠/只靠 đều tự nhiên tùy sắc thái.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -713,13 +822,19 @@
         {
           "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
           "keyword": "表示",
+          "keyword_vi": "bày tỏ; biểu thị",
           "type": "complete_dialogue",
           "prompt": "A：你把礼物送给她以后，________________________？\nB：她很高兴，向我表示了感谢。",
+          "prompt_vi": "A: Sau khi bạn tặng quà cho cô ấy, ________________________?\nB: Cô ấy rất vui, đã bày tỏ lời cảm ơn với tôi.",
           "answer": "她有什么表示？",
+          "answer_vi": "Cô ấy có biểu hiện gì không?",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "她有没有什么表示？"
+          ],
+          "alternative_answers_vi": [
+            "Cô ấy có biểu hiện gì không?"
           ],
           "answer_note_vi": "Đáp án mẫu; 有什么表示 khớp câu trả lời phía sau.",
           "source_origin": "sample_answer_verified_not_unique"
@@ -749,6 +864,12 @@
             "因此，翻相册、看照片成了我生活中的一大乐趣。",
             "一拿起相册就要翻来翻去看半天。"
           ],
+          "items_vi": [
+            "Những bức ảnh của mỗi chúng ta đều ghi lại một quãng thời gian trong hành trình đời mình, lưu giữ niềm vui của cuộc sống.",
+            "Vừa xem, vừa hồi tưởng lại những người và sự việc trong ảnh, nhớ lại quãng thời gian đẹp đã qua.",
+            "Vì vậy, lật album ảnh, xem ảnh đã trở thành một niềm vui lớn trong cuộc sống của tôi.",
+            "Cứ cầm album ảnh lên là lại lật đi lật lại xem cả nửa ngày."
+          ],
           "answer_order": [
             1,
             4,
@@ -768,6 +889,13 @@
             "语言是在社会生活中产生的。",
             "人在社会生活中跟别人交往需要语言。",
             "你要想把一种语言学好，就要勇敢地去用语言跟别人交际。"
+          ],
+          "items_vi": [
+            "Vì vậy có thể nói, ngôn ngữ là công cụ giao tiếp xã hội.",
+            "Không có đời sống xã hội thì sẽ không có ngôn ngữ.",
+            "Ngôn ngữ được sinh ra trong đời sống xã hội.",
+            "Con người trong đời sống xã hội cần ngôn ngữ để giao tiếp với người khác.",
+            "Nếu bạn muốn học tốt một ngôn ngữ, thì phải dũng cảm dùng ngôn ngữ đó để giao tiếp với người khác."
           ],
           "answer_order": [
             3,
@@ -800,7 +928,9 @@
           "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
           "type": "error_correction",
           "wrong": "一切的困难我都不怕。",
+          "wrong_vi": "Tôi không sợ tất cả những khó khăn.",
           "answer": "一切困难我都不怕。",
+          "answer_vi": "Tôi không sợ mọi khó khăn.",
           "explanation_vi": "一切 làm định ngữ tổng quát thường trực tiếp đứng trước danh từ: 一切困难、一切问题、一切办法. Không cần 的 trong mẫu này.",
           "answer_verified": true,
           "check_needed": false,
@@ -810,7 +940,9 @@
           "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
           "type": "error_correction",
           "wrong": "我昨天表示她别去，可是今天她还是去了。",
+          "wrong_vi": "Hôm qua tôi bày tỏ cô ấy đừng đi, nhưng hôm nay cô ấy vẫn đi.",
           "answer": "我昨天劝她别去，可是今天她还是去了。",
+          "answer_vi": "Hôm qua tôi khuyên cô ấy đừng đi, nhưng hôm nay cô ấy vẫn đi.",
           "explanation_vi": "表示 nghĩa là bày tỏ/thể hiện thái độ, ý kiến, tình cảm; không trực tiếp mang nghĩa “khuyên ai đừng làm gì”. Với 她别去, động từ tự nhiên là 劝/告诉. Nếu vẫn dùng 表示 thì phải đổi cấu trúc: 我昨天表示不希望她去.",
           "answer_verified": true,
           "check_needed": false,
@@ -818,18 +950,27 @@
             "我昨天告诉她别去，可是今天她还是去了。",
             "我昨天表示不希望她去，可是今天她还是去了。"
           ],
+          "alternative_answers_vi": [
+            "Hôm qua tôi bảo cô ấy đừng đi, nhưng hôm nay cô ấy vẫn đi.",
+            "Hôm qua tôi bày tỏ rằng mình không mong cô ấy đi, nhưng hôm nay cô ấy vẫn đi."
+          ],
           "source_origin": "grammar_usage_crosschecked"
         },
         {
           "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
           "type": "error_correction",
           "wrong": "他每天早上在公园里打太极拳和气功。",
+          "wrong_vi": "Sáng nào anh ấy cũng đánh Thái Cực Quyền và khí công trong công viên.",
           "answer": "他每天早上在公园里打太极拳、练气功。",
+          "answer_vi": "Sáng nào anh ấy cũng tập Thái Cực Quyền, luyện khí công trong công viên.",
           "explanation_vi": "太极拳 có thể nói 打太极拳 hoặc 练太极拳; 气功 thường nói 练气功. Không nói 打气功.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "他每天早上在公园里练太极拳和气功。"
+          ],
+          "alternative_answers_vi": [
+            "Sáng nào anh ấy cũng luyện Thái Cực Quyền và khí công trong công viên."
           ],
           "source_origin": "grammar_usage_crosschecked"
         },
@@ -837,12 +978,17 @@
           "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
           "type": "error_correction",
           "wrong": "各个国都有不同的习惯和想法。",
+          "wrong_vi": "Mỗi quốc đều có thói quen và cách nghĩ khác nhau.",
           "answer": "各国都有不同的习惯和想法。",
+          "answer_vi": "Các nước đều có thói quen và cách nghĩ khác nhau.",
           "explanation_vi": "各国 là cách nói gọn và tự nhiên. Nếu dùng 各个 thì danh từ phía sau nên là 国家: 各个国家. Không nói 各个国 trong 普通话 tự nhiên.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "各个国家都有不同的习惯和想法。"
+          ],
+          "alternative_answers_vi": [
+            "Mỗi quốc gia đều có thói quen và cách nghĩ khác nhau."
           ],
           "source_origin": "grammar_usage_crosschecked"
         },
@@ -850,12 +996,17 @@
           "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
           "type": "error_correction",
           "wrong": "我躺在床上翻来倒去不睡着。",
+          "wrong_vi": "Tôi nằm trên giường lật qua lật lại mà không ngủ được.",
           "answer": "我躺在床上翻来覆去睡不着。",
+          "answer_vi": "Tôi nằm trên giường trằn trọc, không ngủ được.",
           "explanation_vi": "固定搭配 là 翻来覆去, không phải 翻来倒去. “Không ngủ được” dùng bổ ngữ khả năng phủ định 睡不着, không nói 不睡着.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我躺在床上翻来覆去，睡不着。"
+          ],
+          "alternative_answers_vi": [
+            "Tôi nằm trên giường trằn trọc, không ngủ được."
           ],
           "source_origin": "grammar_usage_crosschecked"
         },
@@ -863,12 +1014,17 @@
           "id": "6db3da52-2247-4991-a1d3-225528d56fff",
           "type": "error_correction",
           "wrong": "我把这里的美景拍照了下来。",
+          "wrong_vi": "Tôi đã chụp ảnh xuống cảnh đẹp ở đây.",
           "answer": "我把这里的美景拍了下来。",
+          "answer_vi": "Tôi đã chụp lại cảnh đẹp ở đây.",
           "explanation_vi": "拍照 là “chụp ảnh” nói chung, không tách thành 拍照了下来. Với 把 + cảnh/vật + V下来, cách nói tự nhiên là 把美景拍下来 hoặc 把美景照下来.",
           "answer_verified": true,
           "check_needed": false,
           "alternative_answers": [
             "我把这里的美景照了下来。"
+          ],
+          "alternative_answers_vi": [
+            "Tôi đã chụp lại cảnh đẹp ở đây."
           ],
           "source_origin": "grammar_usage_crosschecked"
         }
@@ -892,27 +1048,33 @@
           "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
           "type": "situation_use",
           "prompt": "这就是我要告诉你的一切。",
+          "prompt_vi": "Đây là tất cả những gì tôi muốn nói với bạn.",
           "answer": "Dùng khi đã kể xong toàn bộ sự việc, muốn nói: đây là tất cả những gì tôi muốn nói với bạn.",
           "answer_verified": true,
           "check_needed": false,
           "answer_note_vi": "Đáp án tình huống là đáp án mẫu; có thể có cách diễn đạt khác đúng.",
-          "answer_zh": "说完所有要说的内容时可以用这句话。"
+          "answer_zh": "说完所有要说的内容时可以用这句话。",
+          "answer_zh_vi": "Có thể dùng câu này khi đã nói xong tất cả nội dung cần nói."
         },
         {
           "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
           "type": "situation_use",
           "prompt": "我还不太适应。",
+          "prompt_vi": "Tôi vẫn chưa thích nghi lắm.",
           "answer": "Dùng khi mới đến một nơi/môi trường/khí hậu/cách sống mới và vẫn chưa quen hoàn toàn.",
           "answer_verified": true,
           "check_needed": false,
           "answer_note_vi": "Đáp án tình huống là đáp án mẫu; có thể có cách diễn đạt khác đúng.",
-          "answer_zh": "刚到一个新地方，还没有完全习惯时可以用这句话。"
+          "answer_zh": "刚到一个新地方，还没有完全习惯时可以用这句话。",
+          "answer_zh_vi": "Có thể dùng câu này khi vừa đến một nơi mới và vẫn chưa hoàn toàn quen."
         },
         {
           "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
           "type": "situation_expression",
           "prompt": "说一下儿太极拳的动作。",
+          "prompt_vi": "Hãy nói một chút về động tác của Thái Cực Quyền.",
           "answer": "太极拳的动作柔和缓慢，优美舒展。",
+          "answer_vi": "Động tác của Thái Cực Quyền dịu nhẹ, chậm rãi, đẹp và khoáng đạt.",
           "answer_verified": true,
           "check_needed": false,
           "answer_note_vi": "Đáp án mẫu: 太极拳的动作柔和缓慢，优美舒展."
@@ -921,7 +1083,9 @@
           "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
           "type": "situation_expression",
           "prompt": "说明打太极拳的作用。",
+          "prompt_vi": "Hãy nói rõ tác dụng của việc tập Thái Cực Quyền.",
           "answer": "打太极拳可以增强体质、预防疾病。",
+          "answer_vi": "Tập Thái Cực Quyền có thể tăng cường thể chất, phòng ngừa bệnh tật.",
           "answer_verified": true,
           "check_needed": false,
           "answer_note_vi": "Đáp án mẫu: 打太极拳可以增强体质、预防疾病."
@@ -946,7 +1110,7 @@
         "title": "雪后爬长城",
         "title_vi": "Sau khi tuyết rơi leo Trường Thành",
         "zh": "星期六夜里，下了一场大雪。第二天早上起床一看，外边的雪景很美。这时我突然想带女朋友去长城看雪景。我给她打了个电话，问她愿意不愿意去长城。她说她也正要给我打电话，问我想不想去呢。\n\n太阳①______了，是个好天气。吃了早饭我们就坐车出发了。\n\n只用了两个多小时，我们②______到了长城。女朋友说：“不到长城非好汉”，今天我们到了长城，也算是好汉了。长城上没有人，很静。几个工作人员看见我们都笑③______，我不知道他们为什么笑。大概他们觉得下这么大的雪还来爬长城很奇怪④______。买了票我们就往上爬，因为有雪，爬不上⑤______。我们刚爬上去几步又滑下来，滑下来再爬上去，很有意思。长城上只有我和女朋友。爬了快一个小时了，我女朋友累⑥______有点儿爬不动了。我要拉她，她不让，一定要自己爬上去。我们爬了差不多两个小时，终于爬到了长城最⑦______的地方。站在上边往下看，眼前是一片白色的世界，真美啊！我们在长城上照了很多相，⑧______在长城上边堆了一个大雪人。\n\n下来的时候，我们一会儿扶着墙走，一会儿坐在地上往下滑，很好玩儿。\n\n今天，虽然很累，但是我们玩儿得非常高兴。\n\n你要是去长城，最好也在下雪以后去。",
-        "vi": "Bài đọc kể việc người kể chuyện và bạn gái đi Trường Thành sau một trận tuyết lớn. Hai người vừa leo vừa trượt vì tuyết, cuối cùng lên đến nơi cao nhất, chụp ảnh và đắp người tuyết.",
+        "vi": "Đêm thứ Bảy, tuyết rơi một trận lớn. Sáng hôm sau thức dậy nhìn ra, cảnh tuyết bên ngoài rất đẹp. Lúc đó tôi bỗng muốn đưa bạn gái đi Trường Thành ngắm cảnh tuyết. Tôi gọi điện cho cô ấy, hỏi cô ấy có muốn đi Trường Thành không. Cô ấy nói cô ấy cũng đang định gọi cho tôi để hỏi tôi có muốn đi không.\n\nMặt trời ①______ rồi, là một ngày thời tiết đẹp. Ăn sáng xong chúng tôi liền ngồi xe xuất phát.\n\nChỉ mất hơn hai tiếng, chúng tôi ②______ đến Trường Thành. Bạn gái tôi nói: “Chưa đến Trường Thành thì chưa phải hảo hán”, hôm nay chúng tôi đã đến Trường Thành, cũng coi như là hảo hán rồi. Trên Trường Thành không có ai, rất yên tĩnh. Mấy nhân viên nhìn thấy chúng tôi đều cười ③______, tôi không biết vì sao họ cười. Đại khái họ thấy tuyết rơi lớn như vậy mà chúng tôi vẫn đến leo Trường Thành nên rất lạ ④______. Mua vé xong chúng tôi liền leo lên, vì có tuyết nên leo không lên ⑤______. Chúng tôi vừa leo lên được mấy bước lại trượt xuống, trượt xuống rồi lại leo lên, rất thú vị. Trên Trường Thành chỉ có tôi và bạn gái. Leo gần một tiếng rồi, bạn gái tôi mệt ⑥______ hơi leo không nổi. Tôi muốn kéo cô ấy, cô ấy không cho, nhất định muốn tự mình leo lên. Chúng tôi leo gần hai tiếng, cuối cùng leo đến nơi ⑦______ nhất của Trường Thành. Đứng ở trên đó nhìn xuống, trước mắt là một thế giới màu trắng, đẹp thật! Chúng tôi chụp rất nhiều ảnh trên Trường Thành, ⑧______ còn đắp một người tuyết lớn ở trên Trường Thành.\n\nKhi xuống, chúng tôi lúc thì vịn tường đi, lúc thì ngồi trên đất trượt xuống, rất vui.\n\nHôm nay, tuy rất mệt, nhưng chúng tôi chơi vô cùng vui.\n\nNếu bạn đi Trường Thành, tốt nhất cũng nên đi sau khi tuyết rơi.",
         "pinyin": "Xīngqīliù yèlǐ, xià le yì cháng dà xuě. Dì-èr tiān zǎoshang qǐchuáng yí kàn, wàibian de xuějǐng hěn měi. Zhè shí wǒ tūrán xiǎng dài nǚpéngyou qù Chángchéng kàn xuějǐng. Wǒ gěi tā dǎ le ge diànhuà, wèn tā yuànyì bu yuànyì qù Chángchéng. Tā shuō tā yě zhèng yào gěi wǒ dǎ diànhuà, wèn wǒ xiǎng bu xiǎng qù ne.\n\nTàiyáng ①______ le, shì ge hǎo tiānqì. Chī le zǎofàn wǒmen jiù zuò chē chūfā le.\n\nZhǐ yòng le liǎng ge duō xiǎoshí, wǒmen ②______ dào le Chángchéng. Nǚpéngyou shuō: “Bú dào Chángchéng fēi hǎohàn”, jīntiān wǒmen dào le Chángchéng, yě suàn shì hǎohàn le. Chángchéng shang méiyǒu rén, hěn jìng. Jǐ ge gōngzuò rényuán kànjiàn wǒmen dōu xiào ③______, wǒ bù zhīdào tāmen wèishénme xiào. Dàgài tāmen juéde xià zhème dà de xuě hái lái pá Chángchéng hěn qíguài ④______. Mǎi le piào wǒmen jiù wǎng shàng pá, yīnwèi yǒu xuě, pá bù shàng ⑤______. Wǒmen gāng pá shàngqu jǐ bù yòu huá xiàlai, huá xiàlai zài pá shàngqu, hěn yǒuyìsi. Chángchéng shang zhǐ yǒu wǒ hé nǚpéngyou. Pá le kuài yí ge xiǎoshí le, wǒ nǚpéngyou lèi ⑥______ yǒudiǎnr pá bu dòng le. Wǒ yào lā tā, tā bú ràng, yídìng yào zìjǐ pá shàngqu. Wǒmen pá le chàbuduō liǎng ge xiǎoshí, zhōngyú pá dào le Chángchéng zuì ⑦______ de dìfang. Zhàn zài shàngbian wǎng xià kàn, yǎnqián shì yí piàn báisè de shìjiè, zhēn měi a! Wǒmen zài Chángchéng shang zhào le hěn duō xiàng, ⑧______ zài Chángchéng shàngbian duī le yí ge dà xuěrén.\n\nXiàlai de shíhou, wǒmen yíhuìr fúzhe qiáng zǒu, yíhuìr zuò zài dì shang wǎng xià huá, hěn hǎowánr.\n\nJīntiān, suīrán hěn lèi, dànshì wǒmen wánr de fēicháng gāoxìng.\n\nNǐ yàoshi qù Chángchéng, zuìhǎo yě zài xià xuě yǐhòu qù."
       },
       "blanks": [
@@ -954,6 +1118,7 @@
           "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
           "blank_number": 1,
           "answer": "出来",
+          "answer_vi": "mọc ra / xuất hiện; trong câu này là mặt trời ló ra",
           "answer_verified": true,
           "check_needed": false
         },
@@ -961,6 +1126,7 @@
           "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
           "blank_number": 2,
           "answer": "就",
+          "answer_vi": "liền; đã; nhấn kết quả xảy ra ngay sau quá trình",
           "answer_verified": true,
           "check_needed": false
         },
@@ -968,6 +1134,7 @@
           "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
           "blank_number": 3,
           "answer": "了",
+          "answer_vi": "rồi; trợ từ trạng thái/kết quả",
           "answer_verified": true,
           "check_needed": false
         },
@@ -975,6 +1142,7 @@
           "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
           "blank_number": 4,
           "answer": "吧",
+          "answer_vi": "nhỉ/chứ nhỉ; trợ từ ngữ khí",
           "answer_verified": true,
           "check_needed": false
         },
@@ -982,6 +1150,7 @@
           "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
           "blank_number": 5,
           "answer": "去",
+          "answer_vi": "đi; bổ ngữ xu hướng trong 爬不上去",
           "answer_verified": true,
           "check_needed": false
         },
@@ -989,6 +1158,7 @@
           "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
           "blank_number": 6,
           "answer": "得",
+          "answer_vi": "đến mức; dùng trong 累得有点儿爬不动了",
           "answer_verified": true,
           "check_needed": false
         },
@@ -996,6 +1166,7 @@
           "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
           "blank_number": 7,
           "answer": "高",
+          "answer_vi": "cao",
           "answer_verified": true,
           "check_needed": false
         },
@@ -1003,6 +1174,7 @@
           "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
           "blank_number": 8,
           "answer": "还",
+          "answer_vi": "còn; còn nữa",
           "answer_verified": true,
           "check_needed": false
         }
@@ -1020,7 +1192,7 @@
             "schema_compatible_pos": "adverb",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Không phải từ li hợp; 突然 là phó từ/tính từ đơn, thường đứng trước động từ hoặc trước cả mệnh đề.",
             "usage_note_vi": "Đột nhiên, bất ngờ.",
             "notes": []
           },
@@ -1038,7 +1210,7 @@
             "schema_compatible_pos": "phrase",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Câu cố định: 不到 + 长城 + 非 + 好汉; không phân tích như động từ li hợp.",
             "usage_note_vi": "Câu cố định; không phải động từ li hợp.",
             "notes": []
           },
@@ -1056,7 +1228,7 @@
             "schema_compatible_pos": "adjective",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Không phải từ li hợp; 奇怪 là tính từ hoặc động từ tâm lý, có thể nói 觉得奇怪.",
             "usage_note_vi": "Kỳ lạ; thấy lạ.",
             "notes": []
           },
@@ -1074,7 +1246,7 @@
             "schema_compatible_pos": "adjective",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Không phải từ li hợp; 滑 là tính từ/động từ đơn, chỉ trơn hoặc trượt.",
             "usage_note_vi": "Trơn; trượt.",
             "notes": []
           },
@@ -1092,7 +1264,7 @@
             "schema_compatible_pos": "verb",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Không phải từ li hợp; 堆 có thể làm động từ, danh từ hoặc lượng từ, ví dụ 堆雪人儿, 一堆书.",
             "usage_note_vi": "Chất đống, đắp; một đống.",
             "notes": []
           },
@@ -1110,7 +1282,7 @@
             "schema_compatible_pos": "verb",
             "is_separable_verb": false,
             "separable_type": "",
-            "structure_vi": "",
+            "structure_vi": "Không phải từ li hợp; 扶 là động từ đơn, thường đi với người/vật được đỡ: 扶老人, 扶着墙.",
             "usage_note_vi": "Đỡ, dìu, vịn bằng tay.",
             "notes": []
           },
@@ -1132,7 +1304,9 @@
         "vi": "Luyện hội thoại giao tiếp theo chủ đề bàn bạc."
       },
       "topic": "商量",
+      "topic_vi": "bàn bạc; trao đổi để cùng quyết định",
       "key_sentence": "我跟你商量一件事儿。",
+      "key_sentence_vi": "Tôi muốn bàn với bạn/mẹ một chuyện.",
       "dialogue_lines": [
         {
           "speaker": "A",

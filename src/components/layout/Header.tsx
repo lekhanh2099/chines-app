@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { BookOpenCheck, ChevronRight, Moon, Search, Sun } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -22,12 +22,18 @@ import {
  findLessonByRouteParam,
  getLessonRouteValue,
 } from "@/features/hanzihome/utils/lesson-route";
+import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
+import {
+ clearHanziHomeSearchNavigationIntent,
+ setHanziHomeSearchNavigationIntent,
+} from "@/features/hanzihome/search/searchNavigationStore";
+import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
  const [searchValue, setSearchValue] = useState("");
- const inputRef = useRef<HTMLInputElement>(null);
+ const [searchOpen, setSearchOpen] = useState(false);
  const pathname = usePathname();
  const router = useRouter();
  const searchParams = useSearchParams();
@@ -73,7 +79,7 @@ export function Header({ user }: { user?: User | null }) {
   const handleKeyDown = (event: KeyboardEvent) => {
    if ((event.metaKey || event.ctrlKey) && event.key === "k") {
     event.preventDefault();
-    inputRef.current?.focus();
+    setSearchOpen(true);
    }
   };
   document.addEventListener("keydown", handleKeyDown);
@@ -82,13 +88,33 @@ export function Header({ user }: { user?: User | null }) {
 
  const handleSearch = (event: FormEvent) => {
   event.preventDefault();
-  const trimmed = searchValue.trim();
-  if (!trimmed) return;
-  if (containsChinese(trimmed)) {
-   openInspector(trimmed);
-   setSearchValue("");
-   inputRef.current?.blur();
+  setSearchOpen(true);
+ };
+
+ const handleDirectLookup = (query: string) => {
+  const trimmed = query.trim();
+  if (!containsChinese(trimmed)) return;
+
+  openInspector(trimmed);
+  setSearchOpen(false);
+  setSearchValue("");
+ };
+
+ const handleOpenSearchResult = (item: HanziHomeSearchIndexItem) => {
+  clearHanziHomeSearchNavigationIntent();
+  if (item.module || item.targetId) {
+   setHanziHomeSearchNavigationIntent({
+    courseId: item.courseId,
+    lessonId: item.lessonId,
+    lessonNumber: item.lessonNumber,
+    module: item.module,
+    targetId: item.targetId,
+   });
   }
+
+  if (item.href) router.push(item.href);
+  setSearchOpen(false);
+  setSearchValue("");
  };
 
  const navigateHanziHome = (courseId: string, lessonNumber: number) => {
@@ -111,9 +137,9 @@ export function Header({ user }: { user?: User | null }) {
      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
     >
      <Select
-     value={hanzihomeBreadcrumb.selectedCourse.id}
-     onValueChange={(courseId) => {
-      const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
+      value={hanzihomeBreadcrumb.selectedCourse.id}
+      onValueChange={(courseId) => {
+       const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
 
        if (course) {
         navigateHanziHome(course.id, 1);
@@ -171,10 +197,15 @@ export function Header({ user }: { user?: User | null }) {
    <form onSubmit={handleSearch} className="relative min-w-0 flex-1 lg:max-w-[34rem]">
     <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
     <input
-     ref={inputRef}
      value={searchValue}
-     onChange={(event) => setSearchValue(event.target.value)}
-     placeholder="Từ điển"
+     onFocus={() => setSearchOpen(true)}
+     onClick={() => setSearchOpen(true)}
+     onChange={(event) => {
+      setSearchValue(event.target.value);
+      setSearchOpen(true);
+     }}
+     placeholder="Tìm toàn bộ HanziHome"
+     aria-label="Tìm toàn bộ HanziHome"
      className="h-10 w-full rounded-lg border border-border-default bg-bg-card pl-10 pr-3  font-medium text-text-primary outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
     />
    </form>
@@ -213,6 +244,16 @@ export function Header({ user }: { user?: User | null }) {
      </div>
     </div>
    </div>
+   <GlobalSearchDialog
+    open={searchOpen}
+    query={searchValue}
+    courseId={hanzihomeBreadcrumb?.selectedCourse.id}
+    lessonId={hanzihomeBreadcrumb?.selectedLesson.id}
+    onOpenChange={setSearchOpen}
+    onQueryChange={setSearchValue}
+    onOpenResult={handleOpenSearchResult}
+    onDirectLookup={handleDirectLookup}
+   />
   </header>
  );
 }

@@ -1,0 +1,28 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
+
+import type { HanziHomeSearchIndexItem } from "./types";
+
+type SearchIndexResponse = {
+ items: HanziHomeSearchIndexItem[];
+};
+
+async function fetchSearchIndex() {
+ const response = await fetch("/api/hanzihome/search-index?v=2");
+ if (!response.ok) throw new Error("Không thể tải chỉ mục tìm kiếm HanziHome.");
+
+ const payload = (await response.json()) as SearchIndexResponse;
+ return payload.items;
+}
+
+export function useHanziHomeSearchIndex(enabled: boolean) {
+ return useQuery({
+  queryKey: ["hanzihome", "search-index", "v2"],
+  queryFn: fetchSearchIndex,
+  enabled,
+  staleTime: Number.POSITIVE_INFINITY,
+  gcTime: Number.POSITIVE_INFINITY,
+  refetchOnWindowFocus: false,
+ });
+}

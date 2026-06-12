@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
+import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import { RadicalSection } from "./RadicalSection";
 
 type RadicalWorkspaceProps = {
@@ -14,7 +15,11 @@ type RadicalWorkspaceProps = {
 };
 
 export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
- const [selectedId, setSelectedId] = useState<string | null>(radicals[0]?.id || null);
+ const searchIntent = useHanziHomeSearchNavigationIntent();
+ const [selectedId, setSelectedId] = useState<string | null>(
+  () =>
+   (searchIntent?.module === "radicals" ? searchIntent.targetId : null) ?? radicals[0]?.id ?? null,
+ );
  const [searchValue, setSearchValue] = useState("");
  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
  const visibleRadicals = useMemo(() => {

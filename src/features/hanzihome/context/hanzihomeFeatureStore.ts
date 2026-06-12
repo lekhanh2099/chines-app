@@ -30,7 +30,16 @@ export type HanziHomeFeatureState = {
  lessonTextDisplayMode: LessonDisplayMode;
 };
 
-export function createHanziHomeFeatureStore() {
+type HanziHomeFeatureInitialSelections = Partial<
+ Pick<
+  HanziHomeFeatureState,
+  "vocabSelectedWordId" | "grammarSelectedPointId" | "lessonTextSelectedSectionId"
+ >
+>;
+
+export function createHanziHomeFeatureStore(
+ initialSelections: HanziHomeFeatureInitialSelections = {},
+) {
  const preferences = readWorkspacePreferences();
 
  return createStore<HanziHomeFeatureState>({
@@ -41,12 +50,13 @@ export function createHanziHomeFeatureStore() {
   draggedModule: null,
   viewMode: preferences.viewMode,
   splitPaneSize: preferences.splitPaneSize,
-  vocabSelectedWordId: null,
+  vocabSelectedWordId: initialSelections.vocabSelectedWordId ?? null,
   vocabSearchValue: "",
   vocabStatusFilter: "all",
-  grammarSelectedPointId: null,
+  grammarSelectedPointId: initialSelections.grammarSelectedPointId ?? null,
   grammarSidebarOpen: true,
-  lessonTextSelectedSectionId: "__all_lesson_sections__",
+  lessonTextSelectedSectionId:
+   initialSelections.lessonTextSelectedSectionId ?? "__all_lesson_sections__",
   lessonTextSidebarOpen: true,
   lessonTextSettingsOpen: false,
   lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE,

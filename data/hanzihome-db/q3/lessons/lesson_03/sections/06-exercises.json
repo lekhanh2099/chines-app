@@ -144,7 +144,7 @@
           "id": "029b6888-951c-4d78-8e81-67211d2f2178",
           "text": "大部分",
           "pinyin": "dà bùfen",
-          "vi": "",
+          "vi": "phần lớn",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -153,7 +153,7 @@
           "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
           "text": "一部分",
           "pinyin": "yí bùfen",
-          "vi": "",
+          "vi": "một phần",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -162,7 +162,7 @@
           "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
           "text": "部分地区",
           "pinyin": "bùfen dìqū",
-          "vi": "",
+          "vi": "một số khu vực",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -171,7 +171,7 @@
           "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
           "text": "部分学校",
           "pinyin": "bùfen xuéxiào",
-          "vi": "",
+          "vi": "một số trường học",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -180,7 +180,7 @@
           "id": "9e310873-3483-4086-91b4-53e6c4982438",
           "text": "充满信心",
           "pinyin": "chōngmǎn xìnxīn",
-          "vi": "",
+          "vi": "tràn đầy tự tin",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -189,7 +189,7 @@
           "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
           "text": "充满希望",
           "pinyin": "chōngmǎn xīwàng",
-          "vi": "",
+          "vi": "tràn đầy hy vọng",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -198,7 +198,7 @@
           "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
           "text": "充满欢乐",
           "pinyin": "chōngmǎn huānlè",
-          "vi": "",
+          "vi": "tràn đầy niềm vui",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -207,7 +207,7 @@
           "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
           "text": "充满感情",
           "pinyin": "chōngmǎn gǎnqíng",
-          "vi": "",
+          "vi": "tràn đầy tình cảm",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -216,7 +216,7 @@
           "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
           "text": "显得很轻松",
           "pinyin": "xiǎnde hěn qīngsōng",
-          "vi": "",
+          "vi": "trông có vẻ rất thoải mái",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -225,7 +225,7 @@
           "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
           "text": "显得很高兴",
           "pinyin": "xiǎnde hěn gāoxìng",
-          "vi": "",
+          "vi": "trông có vẻ rất vui",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -234,7 +234,7 @@
           "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
           "text": "显得很愉快",
           "pinyin": "xiǎnde hěn yúkuài",
-          "vi": "",
+          "vi": "trông có vẻ rất vui vẻ",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -243,7 +243,7 @@
           "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
           "text": "显得很失望",
           "pinyin": "xiǎnde hěn shīwàng",
-          "vi": "",
+          "vi": "trông có vẻ rất thất vọng",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -252,7 +252,7 @@
           "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
           "text": "向往北京",
           "pinyin": "xiàngwǎng Běijīng",
-          "vi": "",
+          "vi": "hướng về / khao khát được đến Bắc Kinh",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -261,7 +261,7 @@
           "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
           "text": "向往幸福生活",
           "pinyin": "xiàngwǎng xìngfú shēnghuó",
-          "vi": "",
+          "vi": "khao khát cuộc sống hạnh phúc",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -270,7 +270,7 @@
           "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
           "text": "向往美好爱情",
           "pinyin": "xiàngwǎng měihǎo àiqíng",
-          "vi": "",
+          "vi": "khao khát một tình yêu đẹp",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -279,7 +279,7 @@
           "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
           "text": "向往美好未来",
           "pinyin": "xiàngwǎng měihǎo wèilái",
-          "vi": "",
+          "vi": "khao khát một tương lai tốt đẹp",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -288,7 +288,7 @@
           "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
           "text": "数得上",
           "pinyin": "shǔ de shàng",
-          "vi": "",
+          "vi": "có thể kể là / được tính là",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -297,7 +297,7 @@
           "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
           "text": "数不上",
           "pinyin": "shǔ bu shàng",
-          "vi": "",
+          "vi": "không thể kể là / chưa đáng được tính là",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -306,7 +306,7 @@
           "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
           "text": "数他最高",
           "pinyin": "shǔ tā zuì gāo",
-          "vi": "",
+          "vi": "kể ra thì cậu ấy là cao nhất",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -315,7 +315,7 @@
           "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
           "text": "数玛丽考得好",
           "pinyin": "shǔ Mǎlì kǎo de hǎo",
-          "vi": "",
+          "vi": "kể ra thì Mary thi tốt nhất",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -324,7 +324,7 @@
           "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
           "text": "美丽的姑娘",
           "pinyin": "měilì de gūniang",
-          "vi": "",
+          "vi": "cô gái xinh đẹp",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -333,7 +333,7 @@
           "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
           "text": "美丽的地方",
           "pinyin": "měilì de dìfang",
-          "vi": "",
+          "vi": "nơi đẹp",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -342,7 +342,7 @@
           "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
           "text": "美丽的景色",
           "pinyin": "měilì de jǐngsè",
-          "vi": "",
+          "vi": "phong cảnh đẹp",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -351,7 +351,7 @@
           "id": "71556026-f031-4d36-9a7e-7abd82202c42",
           "text": "美丽的故事",
           "pinyin": "měilì de gùshi",
-          "vi": "",
+          "vi": "câu chuyện đẹp / cảm động",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -360,7 +360,7 @@
           "id": "965e382b-b48f-4509-8334-176e1557db63",
           "text": "多么热情",
           "pinyin": "duōme rèqíng",
-          "vi": "",
+          "vi": "nhiệt tình biết bao",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -369,7 +369,7 @@
           "id": "a27a4c14-22fa-4283-97bb-71ff4a0bd654",
           "text": "多么美好",
           "pinyin": "duōme měihǎo",
-          "vi": "",
+          "vi": "tốt đẹp biết bao",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -378,7 +378,7 @@
           "id": "7bc00e0d-b3d9-4033-a317-4c5513bee328",
           "text": "多么善良",
           "pinyin": "duōme shànliáng",
-          "vi": "",
+          "vi": "lương thiện biết bao / tốt bụng biết bao",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -387,7 +387,7 @@
           "id": "86c957fe-e4e2-4542-b48f-e9331f30ff82",
           "text": "多么勤劳",
           "pinyin": "duōme qínláo",
-          "vi": "",
+          "vi": "chăm chỉ biết bao",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -396,7 +396,7 @@
           "id": "f14081ee-14f0-4cc8-8da4-b8aae17138b5",
           "text": "热爱和平",
           "pinyin": "rè'ài hépíng",
-          "vi": "",
+          "vi": "yêu chuộng hòa bình",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -405,7 +405,7 @@
           "id": "2cc03948-7d65-4b1b-affd-6d8065e879ea",
           "text": "热爱工作",
           "pinyin": "rè'ài gōngzuò",
-          "vi": "",
+          "vi": "yêu công việc",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -414,7 +414,7 @@
           "id": "7cc7ef90-1d4c-440e-a5f4-e613aafea114",
           "text": "热爱祖国",
           "pinyin": "rè'ài zǔguó",
-          "vi": "",
+          "vi": "yêu Tổ quốc",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -423,7 +423,7 @@
           "id": "78eef1b5-c1f9-44e0-ae63-2ba2b01b8661",
           "text": "热爱人民",
           "pinyin": "rè'ài rénmín",
-          "vi": "",
+          "vi": "yêu nhân dân",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
@@ -473,7 +473,9 @@
           "prompt": "进屋要______鞋，觉得特别麻烦。",
           "answer": "脱",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Khi vào nhà phải ______ giày, thấy đặc biệt phiền phức.",
+          "answer_vi": "cởi"
         },
         {
           "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
@@ -481,7 +483,9 @@
           "prompt": "星期天我们去公园______吧。",
           "answer": "划船",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Chủ nhật chúng ta đi công viên ______ nhé.",
+          "answer_vi": "chèo thuyền"
         },
         {
           "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
@@ -489,7 +493,9 @@
           "prompt": "她对自己的未来______信心。",
           "answer": "充满",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Cô ấy ______ niềm tin vào tương lai của mình.",
+          "answer_vi": "tràn đầy"
         },
         {
           "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
@@ -497,7 +503,9 @@
           "prompt": "那是个让世界各国的人都十分______的地方。",
           "answer": "向往",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Đó là một nơi khiến người dân các nước trên thế giới đều vô cùng ______.",
+          "answer_vi": "khao khát / hướng về"
         },
         {
           "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
@@ -505,7 +513,9 @@
           "prompt": "我的手已经______得没有感觉了。",
           "answer": "冻",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Tay tôi đã ______ đến mức không còn cảm giác nữa.",
+          "answer_vi": "lạnh cóng"
         },
         {
           "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
@@ -513,7 +523,9 @@
           "prompt": "要说个子高，张东还______不上，他只是中等个子。",
           "answer": "数",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Nếu nói về vóc dáng cao, Trương Đông còn chưa ______ được; anh ấy chỉ cao trung bình.",
+          "answer_vi": "kể / tính"
         },
         {
           "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
@@ -521,7 +533,9 @@
           "prompt": "没有去过云南的人，就不会知道那是一个______美丽的地方。",
           "answer": "多么",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Người chưa từng đi Vân Nam sẽ không biết đó là một nơi đẹp ______.",
+          "answer_vi": "biết bao"
         },
         {
           "id": "105a0775-7adb-418e-b770-133481e26360",
@@ -529,7 +543,9 @@
           "prompt": "我们的人民______和平，希望和世界各国人民友好相处。",
           "answer": "热爱",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Nhân dân chúng tôi ______ hòa bình, hy vọng chung sống hữu nghị với nhân dân các nước trên thế giới.",
+          "answer_vi": "yêu chuộng"
         },
         {
           "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
@@ -537,7 +553,9 @@
           "prompt": "刚去时当然会感到寂寞，会想家。但是，如果你语言通了，再交一些好朋友，______你就不想回来了。",
           "answer": "也许",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Lúc mới đi đương nhiên sẽ thấy cô đơn, sẽ nhớ nhà. Nhưng nếu ngôn ngữ của bạn thông rồi, lại kết thêm vài người bạn tốt, ______ bạn sẽ không muốn về nữa.",
+          "answer_vi": "có lẽ"
         },
         {
           "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
@@ -545,7 +563,9 @@
           "prompt": "中国的春节跟我们的圣诞节一样，也是一个全家______的节日。",
           "answer": "团圆",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Tết Xuân của Trung Quốc giống Giáng sinh của chúng tôi, cũng là một ngày lễ để cả nhà ______.",
+          "answer_vi": "đoàn viên / sum họp"
         }
       ]
     },
@@ -579,7 +599,9 @@
           "given_word": "拿",
           "answer": "拿我自己",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "______ mà nói, lúc mới đến Trung Quốc, tôi cũng đặc biệt nhớ nhà.",
+          "answer_vi": "lấy chính tôi"
         },
         {
           "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
@@ -588,7 +610,9 @@
           "given_word": "充满",
           "answer": "充满了歌声和笑声",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Trong buổi dạ hội ______, các bạn chơi rất vui.",
+          "answer_vi": "tràn đầy tiếng hát và tiếng cười"
         },
         {
           "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
@@ -597,7 +621,9 @@
           "given_word": "动词 + 下",
           "answer": "脱下",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "______ áo khoác ra đi, tôi treo ở đây cho ngài.",
+          "answer_vi": "cởi ra"
         },
         {
           "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
@@ -606,7 +632,9 @@
           "given_word": "动词 + 上",
           "answer": "爱上她",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Có phải bạn đã ______ rồi không? Nếu không thì tại sao thường xuyên đi tìm cô ấy?",
+          "answer_vi": "yêu cô ấy mất rồi"
         },
         {
           "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
@@ -615,7 +643,9 @@
           "given_word": "动词 + 上",
           "answer": "考上",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Em trai tôi năm nay đã ______ Đại học Bắc Kinh.",
+          "answer_vi": "thi đỗ / vào được"
         },
         {
           "id": "9002df8c-125f-489d-9396-d008958aa6b9",
@@ -624,7 +654,9 @@
           "given_word": "多么",
           "answer": "多么高兴",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Bạn không biết đâu, bố mẹ tôi nghe được tin này thì ______.",
+          "answer_vi": "vui biết bao"
         },
         {
           "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
@@ -633,7 +665,9 @@
           "given_word": "数",
           "answer": "数他",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Họ đều rất cao, ______ là cao nhất.",
+          "answer_vi": "kể ra thì cậu ấy"
         },
         {
           "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
@@ -642,7 +676,9 @@
           "given_word": "也许",
           "answer": "也许他一会儿就来了",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Chúng ta đợi cậu ấy thêm một lát đi, ______.",
+          "answer_vi": "có lẽ cậu ấy lát nữa sẽ đến"
         }
       ]
     },
@@ -676,7 +712,9 @@
           "given_word": "数",
           "answer": "要说学习，我们班数他最好。",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Cậu ấy học hành thế nào?\nB: ______.",
+          "answer_vi": "Nếu nói về học tập, lớp chúng tôi phải kể cậu ấy là giỏi nhất."
         },
         {
           "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
@@ -685,7 +723,9 @@
           "given_word": "向往",
           "answer": "那是一个大家都很向往的地方。",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Đó là một nơi như thế nào?\nB: ______.",
+          "answer_vi": "Đó là một nơi mà mọi người đều rất hướng về / khao khát được đến."
         },
         {
           "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
@@ -694,7 +734,9 @@
           "given_word": "也许",
           "answer": "也许他生病了。",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Không biết vì sao, cậu ấy đã ba ngày không đến lớp rồi.\nB: ______.",
+          "answer_vi": "Có lẽ cậu ấy bị bệnh rồi."
         },
         {
           "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
@@ -703,7 +745,9 @@
           "given_word": "大部分",
           "answer": "大部分同学都考得不错。",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Lần thi này lớp bạn thi thế nào?\nB: ______.",
+          "answer_vi": "Phần lớn các bạn đều thi khá tốt."
         },
         {
           "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
@@ -712,7 +756,9 @@
           "given_word": "动词 + 上",
           "answer": "早习惯了，我已经爱上这里的生活了。",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Bây giờ bạn đã quen với cuộc sống ở đây chưa?\nB: Quen từ lâu rồi, tôi ______.",
+          "answer_vi": "Quen từ lâu rồi, tôi đã yêu cuộc sống ở đây mất rồi."
         },
         {
           "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
@@ -721,7 +767,9 @@
           "given_word": "动词 + 下",
           "answer": "流下了眼泪",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "A: Bộ phim này thế nào? Bạn xem chưa?\nB: Xem rồi, rất hay. Nhiều người cảm động đến mức ______.",
+          "answer_vi": "rơi nước mắt"
         }
       ]
     },
@@ -754,19 +802,23 @@
           "items": [
             {
               "key": "A",
-              "text": "让你感到既新奇又有点儿担心。"
+              "text": "让你感到既新奇又有点儿担心。",
+              "vi": "khiến bạn cảm thấy vừa mới lạ vừa hơi lo."
             },
             {
               "key": "B",
-              "text": "我们这些老外一到北京就会看到很多很多电动车。"
+              "text": "我们这些老外一到北京就会看到很多很多电动车。",
+              "vi": "Những người nước ngoài như chúng tôi vừa đến Bắc Kinh là sẽ thấy rất rất nhiều xe điện."
             },
             {
               "key": "C",
-              "text": "那么多的电动车在小汽车、公共汽车和行人中间穿来穿去，来来往往。"
+              "text": "那么多的电动车在小汽车、公共汽车和行人中间穿来穿去，来来往往。",
+              "vi": "Nhiều xe điện như vậy len lỏi qua lại giữa ô tô con, xe buýt và người đi bộ."
             },
             {
               "key": "D",
-              "text": "特别是上下班的时候。"
+              "text": "特别是上下班的时候。",
+              "vi": "Đặc biệt là vào lúc đi làm và tan tầm."
             }
           ],
           "answer_order": [
@@ -776,7 +828,8 @@
             "A"
           ],
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Những người nước ngoài như chúng tôi vừa đến Bắc Kinh là sẽ thấy rất rất nhiều xe điện, đặc biệt là vào lúc đi làm và tan tầm. Nhiều xe điện như vậy len lỏi qua lại giữa ô tô con, xe buýt và người đi bộ, khiến bạn cảm thấy vừa mới lạ vừa hơi lo."
         },
         {
           "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
@@ -784,19 +837,23 @@
           "items": [
             {
               "key": "A",
-              "text": "而是那些随处可见、满街跑的出租车。"
+              "text": "而是那些随处可见、满街跑的出租车。",
+              "vi": "mà là những chiếc taxi có thể thấy khắp nơi, chạy đầy đường."
             },
             {
               "key": "B",
-              "text": "但我要说的是，最吸引我的还不是这些电动车。"
+              "text": "但我要说的是，最吸引我的还不是这些电动车。",
+              "vi": "Nhưng điều tôi muốn nói là, thứ thu hút tôi nhất vẫn chưa phải là những chiếc xe điện này."
             },
             {
               "key": "C",
-              "text": "因为我下边要讲的这个故事跟这出租车有关系。"
+              "text": "因为我下边要讲的这个故事跟这出租车有关系。",
+              "vi": "Bởi vì câu chuyện tôi sắp kể dưới đây có liên quan đến taxi."
             },
             {
               "key": "D",
-              "text": "虽然那满大街的电动车能把我吓了一跳。"
+              "text": "虽然那满大街的电动车能把我吓了一跳。",
+              "vi": "Tuy những chiếc xe điện đầy đường kia có thể làm tôi giật mình."
             }
           ],
           "answer_order": [
@@ -806,7 +863,8 @@
             "C"
           ],
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "vi": "Tuy những chiếc xe điện đầy đường kia có thể làm tôi giật mình, nhưng điều tôi muốn nói là, thứ thu hút tôi nhất vẫn chưa phải là những chiếc xe điện này, mà là những chiếc taxi có thể thấy khắp nơi, chạy đầy đường. Bởi vì câu chuyện tôi sắp kể dưới đây có liên quan đến taxi."
         }
       ]
     },
@@ -840,7 +898,10 @@
           "correct": "我很喜欢北京，大街上有很多树，很绿。",
           "explanation_vi": "绿色 là danh từ/màu sắc; vị ngữ tính từ nên dùng 很绿.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "Tôi rất thích Bắc Kinh, trên phố có rất nhiều cây, rất “màu xanh”.",
+          "correct_vi": "Tôi rất thích Bắc Kinh, trên phố có rất nhiều cây, rất xanh.",
+          "vi": "Tôi rất thích Bắc Kinh, trên phố có rất nhiều cây, rất xanh."
         },
         {
           "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
@@ -849,7 +910,10 @@
           "correct": "中国的大街上到处都是电动车。",
           "explanation_vi": "充满 thường đi với không gian/trạng thái kiểu 充满信心、充满欢乐; câu này tả “đâu đâu cũng có”, dùng 到处都是 tự nhiên hơn.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "Trên đường phố Trung Quốc đâu đâu cũng “tràn đầy” xe điện.",
+          "correct_vi": "Trên đường phố Trung Quốc đâu đâu cũng là xe điện.",
+          "vi": "Trên đường phố Trung Quốc đâu đâu cũng là xe điện."
         },
         {
           "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
@@ -858,7 +922,10 @@
           "correct": "我把房间打扫干净了。",
           "explanation_vi": "把字句 cần động tác xử lý rõ: 打扫干净.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "Tôi làm căn phòng sạch rồi.",
+          "correct_vi": "Tôi đã dọn căn phòng sạch sẽ rồi.",
+          "vi": "Tôi đã dọn căn phòng sạch sẽ rồi."
         },
         {
           "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
@@ -867,7 +934,10 @@
           "correct": "她生病了，可是她不想去医院打针。",
           "explanation_vi": "生病 là bị bệnh; 不想 là không muốn.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "Cô ấy “bị tật/bị lỗi” rồi, nhưng cô ấy không muốn đi bệnh viện tiêm.",
+          "correct_vi": "Cô ấy bị bệnh rồi, nhưng cô ấy không muốn đi bệnh viện tiêm.",
+          "vi": "Cô ấy bị bệnh rồi, nhưng cô ấy không muốn đi bệnh viện tiêm."
         },
         {
           "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
@@ -876,7 +946,10 @@
           "correct": "这个周末你想不想去旅行？",
           "explanation_vi": "周末 là cách nói chuẩn/tự nhiên cho “cuối tuần”; 星期末 không phải cách dùng thông dụng trong 普通话.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "“Cuối tuần” này bạn có muốn đi du lịch không?",
+          "correct_vi": "Cuối tuần này bạn có muốn đi du lịch không?",
+          "vi": "Cuối tuần này bạn có muốn đi du lịch không?"
         },
         {
           "id": "6db3da52-2247-4991-a1d3-225528d56fff",
@@ -885,7 +958,10 @@
           "correct": "我非常爱我的女朋友。",
           "explanation_vi": "热爱 thường dùng với hòa bình, tổ quốc, công việc; người yêu dùng 爱.",
           "answer_verified": false,
-          "check_needed": false
+          "check_needed": false,
+          "wrong_vi": "Tôi vô cùng “yêu chuộng” bạn gái của tôi.",
+          "correct_vi": "Tôi vô cùng yêu bạn gái của tôi.",
+          "vi": "Tôi vô cùng yêu bạn gái của tôi."
         }
       ]
     },
@@ -920,21 +996,28 @@
               "id": "e153a336-0c80-4c03-bc8c-a42b5cb4e3f8",
               "prompt": "我们热爱和平。",
               "answer": "Khi nói về thái độ của một dân tộc/quốc gia/người dân đối với hòa bình.",
-              "answer_verified": true
+              "answer_verified": true,
+              "vi": "Chúng tôi yêu chuộng hòa bình.",
+              "answer_vi": "Khi nói về thái độ của một dân tộc/quốc gia/người dân đối với hòa bình."
             },
             {
               "id": "844b39af-7051-4014-8901-a7f34aed7c1b",
               "prompt": "真是“瑞雪兆丰年”啊！",
               "answer": "Khi mùa đông có tuyết lớn và mọi người tin rằng năm sau mùa màng sẽ tốt.",
-              "answer_verified": true
+              "answer_verified": true,
+              "vi": "Đúng là “tuyết lành báo hiệu năm được mùa” mà!",
+              "answer_vi": "Khi mùa đông có tuyết lớn và mọi người tin rằng năm sau mùa màng sẽ tốt."
             },
             {
               "id": "24ff3215-cc4c-4ac5-b0c3-4877d86a4067",
               "prompt": "我真羡慕他。",
               "answer": "Khi thấy người khác có điều kiện, thành tích, cuộc sống hoặc trải nghiệm tốt mà mình mong muốn.",
-              "answer_verified": true
+              "answer_verified": true,
+              "vi": "Tôi thật sự ngưỡng mộ anh ấy/cô ấy.",
+              "answer_vi": "Khi thấy người khác có điều kiện, thành tích, cuộc sống hoặc trải nghiệm tốt mà mình mong muốn."
             }
-          ]
+          ],
+          "title_vi": "Các câu sau được nói trong tình huống nào?"
         },
         {
           "id": "742741f0-877e-42e4-adb2-aadeec833ad8",
@@ -944,15 +1027,20 @@
               "id": "bead905c-4803-4752-9c21-19a5b716136f",
               "prompt": "你和他/她在一个班学习了半年多，非常喜欢他/她。用：爱上",
               "answer": "我爱上他/她了。",
-              "answer_verified": true
+              "answer_verified": true,
+              "vi": "Bạn và anh ấy/cô ấy học cùng một lớp hơn nửa năm, bạn rất thích anh ấy/cô ấy. Dùng: 爱上",
+              "answer_vi": "Tôi đã yêu anh ấy/cô ấy mất rồi."
             },
             {
               "id": "c457575b-1dbe-452c-ae9d-473bf34d5b28",
               "prompt": "你很喜欢一个地方 / 一份工作 / 一个学校。用：向往",
               "answer": "我很向往那个地方 / 那份工作 / 那所学校。",
-              "answer_verified": true
+              "answer_verified": true,
+              "vi": "Bạn rất thích một nơi / một công việc / một trường học. Dùng: 向往",
+              "answer_vi": "Tôi rất hướng về / khao khát nơi đó / công việc đó / ngôi trường đó."
             }
-          ]
+          ],
+          "title_vi": "Các tình huống sau nên nói thế nào?"
         }
       ]
     },
@@ -1009,51 +1097,61 @@
             "blank": 1,
             "answer": "的",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "trợ từ 的, nối định ngữ 刚刚两岁 với 儿子"
           },
           {
             "blank": 2,
             "answer": "了",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "trợ từ 了, báo sự xuất hiện/thay đổi: mây đen đã nổi lên"
           },
           {
             "blank": 3,
             "answer": "雨",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "mưa"
           },
           {
             "blank": 4,
             "answer": "着",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "trợ từ 着, chỉ trạng thái đang bế con"
           },
           {
             "blank": 5,
             "answer": "把",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "lượng từ 把, dùng cho 雨伞"
           },
           {
             "blank": 6,
             "answer": "把",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "giới từ 把, đưa chiếc ô cho chúng tôi"
           },
           {
             "blank": 7,
             "answer": "他们",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "họ / hai người họ"
           },
           {
             "blank": 8,
             "answer": "所以",
             "answer_verified": true,
-            "check_needed": false
+            "check_needed": false,
+            "answer_vi": "cho nên / vì vậy"
           }
-        ]
+        ],
+        "title_vi": "Một chiếc ô",
+        "vi": "Vào một ngày Chủ nhật mùa thu năm ngoái, tôi và vợ/chồng đưa con đi leo núi. Đứa con trai vừa tròn hai tuổi của chúng tôi chơi rất vui. Lúc đó, một cơn gió thổi tới; ngẩng đầu nhìn lên, trên bầu trời vừa nãy còn xanh biếc không biết từ lúc nào đã nổi mây đen, rất nhanh sau đó bắt đầu có hạt mưa rơi. Tôi và vợ/chồng lập tức lo lắng. Đi tiếp về phía trước thì còn xa trạm xe, quay lại cũng phải gần một tiếng, mà chúng tôi lại không mang ô. Mưa càng lúc càng lớn, tôi bế con trai, không biết nên làm thế nào. Đúng lúc ấy, một đôi bạn trẻ che một chiếc ô đi về phía chúng tôi; thấy dáng vẻ của chúng tôi, hai người mỉm cười, lập tức đưa chiếc ô cho chúng tôi và nói: “Đứa bé còn nhỏ, dầm mưa sẽ bị cảm đấy.” Sau đó, hai người họ vừa nói vừa cười, dầm mưa chạy xa. Trải nghiệm trong mưa ấy khiến tôi thường nhớ đến hai bạn trẻ không biết tên đó. Tôi chỉ biết họ làm việc ở Bắc Kinh, nhưng vì lúc đó không để lại họ tên và địa chỉ, nên đến giờ chiếc ô ấy vẫn còn để ở nhà chúng tôi."
       }
     },
     {
@@ -1081,39 +1179,48 @@
       "dialogue": [
         {
           "speaker": "A",
-          "zh": "啊——，好冷啊！"
+          "zh": "啊——，好冷啊！",
+          "vi": "Ái chà, lạnh quá!"
         },
         {
           "speaker": "B",
-          "zh": "冷在三九嘛，现在才是头九，冷的时候还在后面呢。"
+          "zh": "冷在三九嘛，现在才是头九，冷的时候还在后面呢。",
+          "vi": "Cái lạnh nhất là vào “tam cửu” mà, bây giờ mới là “đầu cửu”; lúc lạnh thật sự còn ở phía sau cơ."
         },
         {
           "speaker": "A",
-          "zh": "什么？什么？你说的我怎么听不懂啊。什么“三九”“头九”？"
+          "zh": "什么？什么？你说的我怎么听不懂啊。什么“三九”“头九”？",
+          "vi": "Gì cơ? Gì cơ? Bạn nói gì mà tôi nghe không hiểu. “Tam cửu”, “đầu cửu” là gì?"
         },
         {
           "speaker": "B",
-          "zh": "啊，中国人把冬天最冷的时候，叫作三九天。从冬至开始，每九天算一九。今天是12月25号，算头九。"
+          "zh": "啊，中国人把冬天最冷的时候，叫作三九天。从冬至开始，每九天算一九。今天是12月25号，算头九。",
+          "vi": "À, người Trung Quốc gọi thời điểm lạnh nhất trong mùa đông là “tam cửu thiên”. Bắt đầu từ Đông chí, cứ mỗi chín ngày tính là một “cửu”. Hôm nay là ngày 25 tháng 12, tính là “đầu cửu”."
         },
         {
           "speaker": "A",
-          "zh": "这样啊。这么说，以后还会更冷啊。"
+          "zh": "这样啊。这么说，以后还会更冷啊。",
+          "vi": "Ra là vậy. Nói như thế thì sau này còn lạnh hơn nữa à."
         },
         {
           "speaker": "B",
-          "zh": "当然。"
+          "zh": "当然。",
+          "vi": "Tất nhiên."
         },
         {
           "speaker": "A",
-          "zh": "我最怕冷了。每天早上都不想起床，所以常常迟到。"
+          "zh": "我最怕冷了。每天早上都不想起床，所以常常迟到。",
+          "vi": "Tôi sợ lạnh nhất. Sáng nào cũng không muốn dậy, nên thường xuyên đi muộn."
         },
         {
           "speaker": "B",
-          "zh": "我怕热，但不怕冷。我喜欢冬天，也喜欢滑冰滑雪。"
+          "zh": "我怕热，但不怕冷。我喜欢冬天，也喜欢滑冰滑雪。",
+          "vi": "Tôi sợ nóng, nhưng không sợ lạnh. Tôi thích mùa đông, cũng thích trượt băng và trượt tuyết."
         },
         {
           "speaker": "A",
-          "zh": "难怪你每天一早就出去锻炼。我可起不来。"
+          "zh": "难怪你每天一早就出去锻炼。我可起不来。",
+          "vi": "Thảo nào ngày nào bạn cũng ra ngoài tập thể dục từ sáng sớm. Tôi thì không dậy nổi."
         }
       ]
     }
