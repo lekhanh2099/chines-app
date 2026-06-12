@@ -1,5 +1,15 @@
-import q2Manifest from "../../../../data/hanzihome/q2/manifest.json";
-import q3Manifest from "../../../../data/hanzihome/q3/manifest.json";
+import {
+ DEFAULT_HANYU_COURSE_ID,
+ HANYU_Q3_COURSE_ID,
+ hanzihomeCourses,
+} from "@/features/hanzihome/courses/course-catalog";
+import {
+ requireHanziHomeDbJson,
+} from "@/features/hanzihome/static-json/hanzihome-db-static-json";
+import type {
+ DbDatasetManifest,
+ HanziHomeDbDataset,
+} from "@/features/hanzihome/static-json/hanzihome-db.types";
 
 type HeaderLessonNavItem = {
  id: string;
@@ -14,36 +24,31 @@ type HeaderCourseNavItem = {
  lessons: HeaderLessonNavItem[];
 };
 
-type Q2Manifest = typeof q2Manifest;
-type Q3Manifest = typeof q3Manifest;
-
-function getQ2Course(manifest: Q2Manifest): HeaderCourseNavItem {
- return {
-  id: manifest.course.id,
-  title: manifest.course.title,
-  lessons: manifest.lessons.map((lesson) => ({
-   id: lesson.id,
-   lessonNumber: lesson.lessonNumber,
-   titleZh: lesson.titleZh,
-   titleVi: lesson.titleVi,
-  })),
- };
+function datasetToCourseId(dataset: HanziHomeDbDataset) {
+ return dataset === "q3" ? HANYU_Q3_COURSE_ID : DEFAULT_HANYU_COURSE_ID;
 }
 
-function getQ3Course(manifest: Q3Manifest): HeaderCourseNavItem {
+function getCourse(dataset: HanziHomeDbDataset): HeaderCourseNavItem {
+ const manifest = requireHanziHomeDbJson<DbDatasetManifest>(
+  `${dataset}/manifest.json`,
+ );
+ const courseId = datasetToCourseId(dataset);
+
  return {
-  id: manifest.course.id,
-  title: manifest.course.title,
+  id: courseId,
+  title:
+   hanzihomeCourses.find((course) => course.id === courseId)?.title ??
+   manifest.dataset,
   lessons: manifest.lessons.map((lesson) => ({
    id: lesson.id,
-   lessonNumber: lesson.lessonNumber,
-   titleZh: lesson.titleZh,
-   titleVi: lesson.titleVi,
+   lessonNumber: lesson.lessonIndex,
+   titleZh: lesson.title.zh,
+   titleVi: lesson.title.vi,
   })),
  };
 }
 
 export const hanzihomeHeaderNavigation = [
- getQ2Course(q2Manifest),
- getQ3Course(q3Manifest),
+ getCourse("q2"),
+ getCourse("q3"),
 ] satisfies HeaderCourseNavItem[];

@@ -3,7 +3,7 @@ import {
  getHanziHomeCourseLessonSummaries,
  getHanziHomeData,
  getHanziHomeLessonDetail,
-} from "@/features/hanzihome/static-data";
+} from "@/features/hanzihome/static-db-data";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type {
  GrammarViewModel,

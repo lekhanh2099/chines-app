@@ -1,4 +1,4 @@
-import type radicalsData from "../../../data/hanzihome/hanzihome_radicals_clean.json";
+import type radicalsData from "../../../data/hanzihome-db/radicals.json";
 import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
@@ -97,6 +97,14 @@ export type LessonNotesViewModel = {
 export type HanziHomeLesson = {
  id: string;
  legacyLessonId?: string;
+ dbSource?: {
+  dataset: "q2" | "q3";
+  lessonFolder: string;
+  lessonMeta: unknown;
+  sectionFilesById: Record<string, string>;
+  vocabularyItemFilesByRuntimeId: Record<string, string>;
+  vocabularyItemPayloadsByRuntimeId: Record<string, unknown>;
+ };
  lessonNumber: number;
  titleZh: string;
  title: string;

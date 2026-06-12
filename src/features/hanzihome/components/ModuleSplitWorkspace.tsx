@@ -438,7 +438,7 @@ export function ModuleSplitWorkspace({
     {developerToolsEnabled ? (
      <div className="hidden items-center justify-end gap-2 rounded-lg border border-dashed border-border-default bg-bg-subtle p-1.5 xl:flex">
       <LessonViewModeToggle mode={activeViewMode} onChange={updateViewMode} />
-      <HanziHomeEditingTools lessonId={lesson.id} />
+      <HanziHomeEditingTools lesson={lesson} />
      </div>
     ) : null}
 
@@ -460,7 +460,7 @@ export function ModuleSplitWorkspace({
     {developerToolsEnabled ? (
      <div className="hidden items-center gap-2 xl:flex">
       <LessonViewModeToggle mode={activeViewMode} onChange={updateViewMode} />
-      <HanziHomeEditingTools lessonId={lesson.id} />
+      <HanziHomeEditingTools lesson={lesson} />
      </div>
     ) : null}
     <Button

@@ -17,7 +17,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { hanzihomeCourses } from "@/features/hanzihome/courses/course-catalog";
-import { getHanziHomeCourseLessonSummaries } from "@/features/hanzihome/static-data";
+import { getHanziHomeCourseLessonSummaries } from "@/features/hanzihome/static-db-data";
 import {
  findLessonByRouteParam,
  getLessonRouteValue,
@@ -123,7 +123,7 @@ export function Header({ user }: { user?: User | null }) {
       >
        <SelectValue />
       </SelectTrigger>
-      <SelectContent align="start">
+      <SelectContent align="start" position="popper" sideOffset={6} className="min-w-[min(28rem,calc(100vw-2rem))]">
        {hanzihomeBreadcrumb.courses.map((course, index) => (
         <SelectItem key={course.id + index} value={course.id}>
          {course.title}
@@ -147,7 +147,7 @@ export function Header({ user }: { user?: User | null }) {
       >
        <SelectValue />
       </SelectTrigger>
-      <SelectContent align="start">
+      <SelectContent align="start" position="popper" sideOffset={6} className="min-w-[min(28rem,calc(100vw-2rem))]">
        {hanzihomeBreadcrumb.lessons.map((lesson) => (
         <SelectItem
          key={lesson.id}
