@@ -25,4 +25,3 @@ The current contract is:
 This repository uses Next.js App Router, not TanStack Router. The
 `HanziHomeFeatureProvider` therefore acts as the route-level dependency
 injection boundary for feature services and the TanStack Store-backed UI state.
-

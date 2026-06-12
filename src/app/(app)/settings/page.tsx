@@ -29,14 +29,9 @@ type AiPromptSettingsResponse = {
 };
 
 export default function SettingsPage() {
- const [wordLookupPrompt, setWordLookupPrompt] = useState(
-  DEFAULT_WORD_LOOKUP_PROMPT,
- );
- const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(
-  DEFAULT_SENTENCE_LOOKUP_PROMPT,
- );
- const [geminiModel, setGeminiModel] =
-  useState<GeminiModelId>(DEFAULT_GEMINI_MODEL);
+ const [wordLookupPrompt, setWordLookupPrompt] = useState(DEFAULT_WORD_LOOKUP_PROMPT);
+ const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(DEFAULT_SENTENCE_LOOKUP_PROMPT);
+ const [geminiModel, setGeminiModel] = useState<GeminiModelId>(DEFAULT_GEMINI_MODEL);
  const [savedSettings, setSavedSettings] = useState<{
   wordLookupPrompt: string;
   sentenceLookupPrompt: string;
@@ -67,20 +62,16 @@ export default function SettingsPage() {
 
     const merged = saveClientAiPromptSettings({
      wordLookupPrompt: data.wordLookupPrompt || localSettings.wordLookupPrompt,
-     sentenceLookupPrompt:
-      data.sentenceLookupPrompt || localSettings.sentenceLookupPrompt,
+     sentenceLookupPrompt: data.sentenceLookupPrompt || localSettings.sentenceLookupPrompt,
      geminiModel: data.geminiModel || localSettings.geminiModel,
     });
 
     setWordLookupPrompt(merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT);
-    setSentenceLookupPrompt(
-     merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
-    );
+    setSentenceLookupPrompt(merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT);
     setGeminiModel(merged.geminiModel || DEFAULT_GEMINI_MODEL);
     setSavedSettings({
      wordLookupPrompt: merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT,
-     sentenceLookupPrompt:
-      merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
+     sentenceLookupPrompt: merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
      geminiModel: merged.geminiModel || DEFAULT_GEMINI_MODEL,
     });
     setHasLoaded(true);
@@ -167,12 +158,9 @@ export default function SettingsPage() {
  const hasUnsavedWordPrompt =
   !!savedSettings && wordLookupPrompt !== savedSettings.wordLookupPrompt;
  const hasUnsavedSentencePrompt =
-  !!savedSettings &&
-  sentenceLookupPrompt !== savedSettings.sentenceLookupPrompt;
- const hasUnsavedPromptChanges =
-  hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
- const hasUnsavedModelChange =
-  !!savedSettings && geminiModel !== savedSettings.geminiModel;
+  !!savedSettings && sentenceLookupPrompt !== savedSettings.sentenceLookupPrompt;
+ const hasUnsavedPromptChanges = hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
+ const hasUnsavedModelChange = !!savedSettings && geminiModel !== savedSettings.geminiModel;
  const hasUnsavedChanges = hasUnsavedPromptChanges || hasUnsavedModelChange;
 
  return (
@@ -184,13 +172,11 @@ export default function SettingsPage() {
        <Bot className="h-3.5 w-3.5" />
        AI Prompt Settings
       </div>
-      <h1 className="text-3xl font-bold text-text-primary">
-       Cache từ vựng và prompt tra cứu
-      </h1>
-      <p className="text-sm leading-6 text-text-secondary">
-       Hai prompt dưới đây điều khiển cách app gọi AI cho tra từ và phân tích
-       câu. Word lookup được dùng cho cache dictionary trong bảng vocabularies;
-       sentence lookup dùng cho dịch nghĩa và grammar points.
+      <h1 className="text-3xl font-bold text-text-primary">Cache từ vựng và prompt tra cứu</h1>
+      <p className=" leading-6 text-text-secondary">
+       Hai prompt dưới đây điều khiển cách app gọi AI cho tra từ và phân tích câu. Word lookup được
+       dùng cho cache dictionary trong bảng vocabularies; sentence lookup dùng cho dịch nghĩa và
+       grammar points.
       </p>
       <div className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-1 text-xs text-text-secondary">
        <span className="font-semibold text-text-primary">Model hiện tại</span>
@@ -231,22 +217,20 @@ export default function SettingsPage() {
    <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
     <div className="mb-4 space-y-2">
      <h2 className="text-xl font-bold text-text-primary">Gemini Model</h2>
-     <p className="max-w-3xl text-sm leading-6 text-text-secondary">
-      Chọn model Gemini cho các request tra từ và phân tích câu. Nếu một model
-      đang bị rate limit thì bạn có thể đổi sang model khác ngay tại đây.
+     <p className="max-w-3xl  leading-6 text-text-secondary">
+      Chọn model Gemini cho các request tra từ và phân tích câu. Nếu một model đang bị rate limit
+      thì bạn có thể đổi sang model khác ngay tại đây.
      </p>
     </div>
 
     <div className="grid gap-4 lg:grid-cols-[minmax(0,340px),minmax(0,1fr)] lg:items-start">
      <label className="space-y-2">
-      <span className="text-sm font-semibold text-text-primary">
-       Model text
-      </span>
+      <span className=" font-semibold text-text-primary">Model text</span>
       <select
        value={geminiModel}
        onChange={(event) => setGeminiModel(event.target.value as GeminiModelId)}
        disabled={isLoading || isSaving}
-       className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
+       className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4  text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
       >
        {GEMINI_TEXT_MODEL_OPTIONS.map((option) => (
         <option key={option.value} value={option.value}>
@@ -257,16 +241,14 @@ export default function SettingsPage() {
      </label>
 
      <div className="rounded-2xl -xl border border-border-default bg-bg-primary p-4">
-      <p className="text-sm font-semibold text-text-primary">
-       {getGeminiModelLabel(geminiModel)}
-      </p>
-      <p className="mt-2 text-sm leading-6 text-text-secondary">
-       {GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === geminiModel)
-        ?.description || "Model text dùng cho generateContent."}
+      <p className=" font-semibold text-text-primary">{getGeminiModelLabel(geminiModel)}</p>
+      <p className="mt-2  leading-6 text-text-secondary">
+       {GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === geminiModel)?.description ||
+        "Model text dùng cho generateContent."}
       </p>
       <p className="mt-3 text-xs leading-5 text-text-muted">
-       Gợi ý: `Gemini 2.5 Flash` là lựa chọn mặc định. Nếu một model bị quota,
-       thử `Gemini 2.5 Flash-Lite`, `Gemini Flash Latest` hoặc một model Gemma.
+       Gợi ý: `Gemini 2.5 Flash` là lựa chọn mặc định. Nếu một model bị quota, thử `Gemini 2.5
+       Flash-Lite`, `Gemini Flash Latest` hoặc một model Gemma.
       </p>
      </div>
     </div>
@@ -278,9 +260,9 @@ export default function SettingsPage() {
     <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
      <div className="space-y-2">
       <h2 className="text-xl font-bold text-text-primary">Lookup Prompts</h2>
-      <p className="max-w-3xl text-sm leading-6 text-text-secondary">
-       Chỉnh prompt xong bạn có thể lưu ngay tại đây, không cần kéo lên đầu
-       trang. Hai block này ảnh hưởng trực tiếp tới tra từ và phân tích câu.
+      <p className="max-w-3xl  leading-6 text-text-secondary">
+       Chỉnh prompt xong bạn có thể lưu ngay tại đây, không cần kéo lên đầu trang. Hai block này ảnh
+       hưởng trực tiếp tới tra từ và phân tích câu.
       </p>
      </div>
 
@@ -288,15 +270,11 @@ export default function SettingsPage() {
       <span
        className={`rounded-2xl -full px-3 py-1 text-xs font-semibold ${hasUnsavedPromptChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
       >
-       {hasUnsavedPromptChanges
-        ? "Prompt có thay đổi chưa lưu"
-        : "Prompt đã đồng bộ"}
+       {hasUnsavedPromptChanges ? "Prompt có thay đổi chưa lưu" : "Prompt đã đồng bộ"}
       </span>
       <Button
        onClick={handleSave}
-       disabled={
-        isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges
-       }
+       disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
        isLoading={isSaving}
       >
        <Save className="h-4 w-4" />
@@ -359,7 +337,7 @@ function PromptPanel({
    <div className="mb-4 flex items-start justify-between gap-4">
     <div className="space-y-2">
      <h2 className="text-xl font-bold text-text-primary">{title}</h2>
-     <p className="text-sm leading-6 text-text-secondary">{description}</p>
+     <p className=" leading-6 text-text-secondary">{description}</p>
     </div>
 
     <div className="flex items-center gap-2">
@@ -368,12 +346,7 @@ function PromptPanel({
      >
       {isDirty ? "Chưa lưu" : "Đã lưu"}
      </span>
-     <Button
-      size="sm"
-      variant="ghost"
-      onClick={() => onChange(defaultValue)}
-      disabled={disabled}
-     >
+     <Button size="sm" variant="ghost" onClick={() => onChange(defaultValue)} disabled={disabled}>
       Khôi phục block
      </Button>
     </div>
@@ -395,7 +368,7 @@ function PromptPanel({
     onChange={(event) => onChange(event.target.value)}
     disabled={disabled}
     spellCheck={false}
-    className="min-h-90 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 py-4 font-mono text-sm leading-6 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
+    className="min-h-90 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 py-4 font-mono  leading-6 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
    />
   </div>
  );

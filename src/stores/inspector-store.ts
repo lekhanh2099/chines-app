@@ -12,11 +12,7 @@ import {
  hasInspectorDeepDiveData,
  classifyVocabType,
 } from "@/services/vocab.service";
-import type {
- VocabData,
- AiAnalysis,
- VocabWithProgress,
-} from "@/types/database";
+import type { VocabData, AiAnalysis, VocabWithProgress } from "@/types/database";
 
 const RECENT_LOOKUPS_KEY = "recent-lookups";
 const MAX_RECENT_LOOKUPS = 10;
@@ -118,10 +114,7 @@ function updateRecentLookups(
  return updated;
 }
 
-function mergeVocabData(
- current: VocabData | null,
- incoming: VocabData,
-): VocabData {
+function mergeVocabData(current: VocabData | null, incoming: VocabData): VocabData {
  return {
   ...(current || {}),
   ...incoming,
@@ -168,22 +161,15 @@ function parseLookupResponse(payload: {
   pinyin: payload.data.pinyin || "",
   sino_vietnamese: payload.data.sino_vietnamese || undefined,
   meaning: payload.data.meaning || "",
-  ai_analysis: (payload.data.analysis ||
-   payload.data.ai_analysis ||
-   {}) as AiAnalysis,
+  ai_analysis: (payload.data.analysis || payload.data.ai_analysis || {}) as AiAnalysis,
  };
 }
 
 function hasTrackableLookupData(vocabData: VocabData): boolean {
- return !!(
-  vocabData.hanzi &&
-  (vocabData.pinyin || vocabData.meaning || vocabData.sino_vietnamese)
- );
+ return !!(vocabData.hanzi && (vocabData.pinyin || vocabData.meaning || vocabData.sino_vietnamese));
 }
 
-function buildTrackedVocabListItem(
- vocabData: VocabData,
-): VocabWithProgress | null {
+function buildTrackedVocabListItem(vocabData: VocabData): VocabWithProgress | null {
  if (!vocabData.id) {
   return null;
  }
@@ -271,9 +257,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
 
     queryClient.setQueryData<VocabWithProgress[]>(["vocab-list"], (current) => {
      const existing = current || [];
-     const withoutDuplicate = existing.filter(
-      (item) => item.id !== listItem.id,
-     );
+     const withoutDuplicate = existing.filter((item) => item.id !== listItem.id);
      return [listItem, ...withoutDuplicate];
     });
    } catch (error) {
@@ -470,11 +454,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
    return;
   }
 
-  const updated = updateRecentLookups(
-   get().recentLookups,
-   resolvedVocab,
-   loadRecentLookups(),
-  );
+  const updated = updateRecentLookups(get().recentLookups, resolvedVocab, loadRecentLookups());
 
   set({
    vocabData: resolvedVocab,

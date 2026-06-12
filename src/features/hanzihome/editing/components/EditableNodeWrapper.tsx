@@ -8,10 +8,7 @@ import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanziho
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { HanziHomeDbEditTarget } from "@/features/hanzihome/editor/hanzihome-db-edit.types";
 
-import type {
- DraftPatchPath,
- EditableEntityType,
-} from "../store/types";
+import type { DraftPatchPath, EditableEntityType } from "../store/types";
 import { EditButton } from "./EditButton";
 
 type EditableNodeWrapperProps = {
@@ -69,8 +66,7 @@ export function EditableNodeWrapper({
   openEditableNode({
    ...baseNode,
    target: resolved?.target ?? baseNode.target,
-   targetRelativePath:
-    resolved?.targetRelativePath ?? baseNode.targetRelativePath,
+   targetRelativePath: resolved?.targetRelativePath ?? baseNode.targetRelativePath,
   });
  };
 

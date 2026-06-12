@@ -72,13 +72,9 @@ export function QuickNoteButton({
    <button
     onClick={handleCreate}
     disabled={isCreating}
-    className={`w-full py-4 border-2 border-dashed border-border-default rounded-2xl  text-text-muted hover:  hover:border-accent/40 transition-colors flex items-center justify-center gap-2 text-sm font-medium disabled:opacity-50 ${className}`}
+    className={`w-full py-4 border-2 border-dashed border-border-default rounded-2xl  text-text-muted hover:  hover:border-accent/40 transition-colors flex items-center justify-center gap-2  font-medium disabled:opacity-50 ${className}`}
    >
-    {isCreating ? (
-     <Loader2 className="w-4 h-4 animate-spin" />
-    ) : (
-     <Zap className="w-4 h-4" />
-    )}
+    {isCreating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
     Ghi Chú Nhanh
    </button>
   );
@@ -93,8 +89,7 @@ export function QuickNoteButton({
  const variantClasses = {
   default:
    "bg-bg-elevated border border-border-default hover:border-accent/40 hover:bg-accent/5 text-text-primary",
-  outline:
-   "border border-border-default hover:border-accent/40 text-text-secondary hover: ",
+  outline: "border border-border-default hover:border-accent/40 text-text-secondary hover: ",
   ghost: "text-text-secondary hover:  hover:bg-accent/5",
  };
 
@@ -104,11 +99,7 @@ export function QuickNoteButton({
    disabled={isCreating}
    className={`inline-flex items-center gap-2 rounded-2xl  font-semibold transition-colors disabled:opacity-50 shadow-sm ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
   >
-   {isCreating ? (
-    <Loader2 className="w-4 h-4 animate-spin" />
-   ) : (
-    <Zap className="w-4 h-4" />
-   )}
+   {isCreating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
    Ghi Chú Nhanh
   </button>
  );

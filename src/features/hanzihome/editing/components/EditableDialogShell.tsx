@@ -36,9 +36,7 @@ export function EditableDialogShell() {
 
  const draftBase = useMemo(
   () =>
-   activeNode
-    ? createHanziHomeUpdatePatch({ node: activeNode, after: activeNode.value })
-    : null,
+   activeNode ? createHanziHomeUpdatePatch({ node: activeNode, after: activeNode.value }) : null,
   [activeNode],
  );
 
@@ -74,7 +72,7 @@ export function EditableDialogShell() {
        onDraftChange={setDraftAfter}
        onValidityChange={setIsValid}
       />
-     {previewPatch ? <PatchPreview patch={previewPatch} /> : null}
+      {previewPatch ? <PatchPreview patch={previewPatch} /> : null}
      </DialogBody>
      <DialogFooter>
       <Button type="button" variant="ghost" onClick={closeEditableNode}>

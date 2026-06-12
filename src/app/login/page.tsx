@@ -87,7 +87,7 @@ export default function LoginPage() {
     <h2 className="text-center text-2xl font-bold tracking-tight text-text-primary">
      {isLogin ? "Đăng nhập vào Hệ thống" : "Tạo tài khoản mới"}
     </h2>
-    <p className="mt-2 text-center text-sm text-text-secondary">
+    <p className="mt-2 text-center  text-text-secondary">
      {isLogin
       ? "Vui lòng nhập email và mật khẩu để tiếp tục."
       : "Nhập email và mật khẩu để đăng ký tài khoản."}
@@ -127,9 +127,7 @@ export default function LoginPage() {
        )}
       </form.AppField>
 
-      <form.Subscribe
-       selector={(state) => [state.canSubmit, state.isSubmitting]}
-      >
+      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
        {([canSubmit, isSubmitting]) => (
         <Button
          type="submit"
@@ -147,7 +145,7 @@ export default function LoginPage() {
        )}
       </form.Subscribe>
 
-      <div className="text-center text-sm text-text-muted mt-6 border-t border-border-default pt-6 space-y-2">
+      <div className="text-center  text-text-muted mt-6 border-t border-border-default pt-6 space-y-2">
        <p>
         {isLogin ? "Chưa có tài khoản?" : "Đã có tài khoản?"}{" "}
         <button
@@ -161,9 +159,7 @@ export default function LoginPage() {
          {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
         </button>
        </p>
-       <p className="text-xs opacity-70">
-        *Tài khoản thử nghiệm sẽ được cung cấp bởi Admin.
-       </p>
+       <p className="text-xs opacity-70">*Tài khoản thử nghiệm sẽ được cung cấp bởi Admin.</p>
       </div>
      </form>
     </div>

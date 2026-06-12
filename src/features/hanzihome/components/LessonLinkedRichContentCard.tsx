@@ -10,8 +10,7 @@ import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
 import type { LessonNoteRelationType } from "@/services/notes.service";
-import { useNoteTabsStore } from "@/stores/note-tabs-store";
-import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
+import { InlineRichContent } from "./InlineRichContent";
 
 type LessonLinkedRichContentCardProps = {
  lesson: HanziHomeLesson;
@@ -21,7 +20,6 @@ type LessonLinkedRichContentCardProps = {
  description: string;
  emptyText: string;
  createButtonLabel: string;
- editButtonLabel: string;
  toastSuccessText: string;
  toastErrorText: string;
  noteTitle: string;
@@ -89,28 +87,6 @@ function createInitialContent({
  };
 }
 
-function InlineRichContent({ }: {
- noteId: string;
- editTitle: string;
- editDescription: string;
- editButtonLabel: string;
-}) {
- const tabs = useNoteTabsStore((s) => s.tabs);
- const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
-
- return (
-  <div >
-   {tabs.map((tab) => (
-    <NoteEditorPanel
-     key={tab.noteId}
-     noteId={tab.noteId}
-     isVisible={tab.noteId === activeNoteId}
-    />
-   ))}
-  </div>
- );
-}
-
 export function LessonLinkedRichContentCard({
  lesson,
  relationType,
@@ -118,7 +94,6 @@ export function LessonLinkedRichContentCard({
  eyebrow,
  emptyText,
  createButtonLabel,
- editButtonLabel,
  toastSuccessText,
  toastErrorText,
  noteTitle,
@@ -170,9 +145,7 @@ export function LessonLinkedRichContentCard({
       </span>
 
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {eyebrow}
-       </p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        <h2 className="text-xl font-black text-text-primary">{title}</h2>
       </div>
      </div>
@@ -201,18 +174,13 @@ export function LessonLinkedRichContentCard({
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
       Đang kiểm tra nội dung...
      </div>
     ) : note ? (
-     <InlineRichContent
-      noteId={note.id}
-      editTitle={`Sửa ${title.toLowerCase()}`}
-      editDescription="Sửa trực tiếp bằng hệ rich editor chính. Nội dung autosave sau khi nhập."
-      editButtonLabel={editButtonLabel}
-     />
+     <InlineRichContent />
     ) : (
-     <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
       {emptyText}
      </div>
     )}

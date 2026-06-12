@@ -28,13 +28,9 @@ export function TextbookSectionCard({
      <p className="text-[0.7rem] font-black uppercase tracking-wide text-text-muted">
       {section.type.replaceAll("_", " ")}
      </p>
-     <h2 className="text-lg font-black text-text-primary sm:text-xl">
-      {sectionTitle(section)}
-     </h2>
+     <h2 className="text-lg font-black text-text-primary sm:text-xl">{sectionTitle(section)}</h2>
      {sectionSubtitle(section) && (
-      <p className="text-sm font-semibold text-text-muted">
-       {sectionSubtitle(section)}
-      </p>
+      <p className=" font-semibold text-text-muted">{sectionSubtitle(section)}</p>
      )}
     </div>
 

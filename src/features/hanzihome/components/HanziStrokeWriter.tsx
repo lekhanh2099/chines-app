@@ -12,10 +12,8 @@ type HanziWriterInstance = {
  showOutline: () => Promise<unknown> | void;
 };
 
-type HanziWriterModule = typeof import("hanzi-writer")["default"];
-type HanziCharacterData = Awaited<
- ReturnType<HanziWriterModule["loadCharacterData"]>
->;
+type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
+type HanziCharacterData = Awaited<ReturnType<HanziWriterModule["loadCharacterData"]>>;
 
 type HanziStrokeWriterProps = {
  character: string;
@@ -28,10 +26,7 @@ type HanziStrokeWriterProps = {
 
 const characterDataCache = new Map<string, Promise<HanziCharacterData>>();
 
-function loadCharacterData(
- HanziWriter: HanziWriterModule,
- character: string,
-) {
+function loadCharacterData(HanziWriter: HanziWriterModule, character: string) {
  const cached = characterDataCache.get(character);
 
  if (cached) return cached;
@@ -134,20 +129,12 @@ export function HanziStrokeWriter({
 
    {showActions && (
     <div className="grid grid-cols-2 gap-2">
-     <Button
-      type="button"
-      variant="outline"
-      onClick={() => writerRef.current?.animateCharacter()}
-     >
+     <Button type="button" variant="outline" onClick={() => writerRef.current?.animateCharacter()}>
       <Play className="h-4 w-4" />
       Nét viết
      </Button>
 
-     <Button
-      type="button"
-      variant="outline"
-      onClick={() => writerRef.current?.quiz()}
-     >
+     <Button type="button" variant="outline" onClick={() => writerRef.current?.quiz()}>
       <PenLine className="h-4 w-4" />
       Tập viết
      </Button>

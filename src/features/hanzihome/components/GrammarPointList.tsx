@@ -39,7 +39,7 @@ export function GrammarPointList({
       onClick={() => onSelectPoint(allPointId)}
      >
       <span className="min-w-0 flex-1">
-       <span className="block line-clamp-2 text-sm font-black">Xem toàn bộ</span>
+       <span className="block line-clamp-2  font-black">Xem toàn bộ</span>
        <span className="block line-clamp-2 text-xs font-semibold opacity-80">
         Hiển thị tất cả điểm ngữ pháp trong một trang
        </span>
@@ -60,7 +60,7 @@ export function GrammarPointList({
       onClick={() => onSelectPoint(point.id)}
      >
       <span className="min-w-0 flex-1">
-       <span className="block line-clamp-2 text-sm font-black">{point.cleanTitle}</span>
+       <span className="block line-clamp-2  font-black">{point.cleanTitle}</span>
        <span className="block line-clamp-2 text-xs font-semibold opacity-80">
         {point.core || point.structuresView[0] || "Chưa có mô tả"}
        </span>

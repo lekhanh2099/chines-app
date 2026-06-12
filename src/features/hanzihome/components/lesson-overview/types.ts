@@ -10,12 +10,7 @@ export type LessonDisplayMode = {
  hanziSize: HanziReaderSize;
 };
 
-export type HanziReaderFont =
- | "system"
- | "songti"
- | "kai"
- | "pinyin"
- | "mengshen";
+export type HanziReaderFont = "system" | "songti" | "kai" | "pinyin" | "mengshen";
 export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
 
 export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {

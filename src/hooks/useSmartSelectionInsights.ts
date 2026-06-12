@@ -7,11 +7,7 @@ import {
 } from "@/lib/ai-prompt-settings-client";
 import { extractChinese, isChineseOnlyText } from "@/lib/chinese-utils";
 import { enqueueSelectionLookup } from "@/lib/selection-lookup-queue";
-import type {
- PersonalNoteMode,
- SmartSelectionMode,
- SmartSelectionResult,
-} from "@/types/database";
+import type { PersonalNoteMode, SmartSelectionMode, SmartSelectionResult } from "@/types/database";
 
 function resolveMode(selection: string): SmartSelectionMode {
  return selection.length <= 2 ? "word" : "sentence";
@@ -33,8 +29,7 @@ export function useSmartSelectionInsights(
  const mode = options?.mode || resolveMode(lookupKey);
  const enabled = options?.enabled ?? true;
  const promptSettings = loadClientAiPromptSettings();
- const settingsFingerprint =
-  getClientAiPromptSettingsFingerprint(promptSettings);
+ const settingsFingerprint = getClientAiPromptSettingsFingerprint(promptSettings);
  const cacheVersion = "smart-selection-v3";
 
  const query = useQuery<SmartSelectionResult>({
@@ -73,10 +68,7 @@ export function useSmartSelectionInsights(
  });
 
  const saveMutation = useMutation({
-  mutationFn: async (payload?: {
-   personalNote?: string;
-   personalNoteMode?: PersonalNoteMode;
-  }) => {
+  mutationFn: async (payload?: { personalNote?: string; personalNoteMode?: PersonalNoteMode }) => {
    if (!query.data) {
     throw new Error("Không có dữ liệu để lưu");
    }
@@ -85,22 +77,14 @@ export function useSmartSelectionInsights(
   },
   onSuccess: (_result, payload) => {
    queryClient.setQueryData<SmartSelectionResult | undefined>(
-    [
-     "editor-smart-selection",
-     cacheVersion,
-     lookupKey,
-     contextSentence,
-     mode,
-     settingsFingerprint,
-    ],
+    ["editor-smart-selection", cacheVersion, lookupKey, contextSentence, mode, settingsFingerprint],
     (old) =>
      old
       ? {
          ...old,
          isSaved: true,
          personal_note: payload?.personalNote ?? old.personal_note,
-         personal_note_mode:
-          payload?.personalNoteMode ?? old.personal_note_mode,
+         personal_note_mode: payload?.personalNoteMode ?? old.personal_note_mode,
         }
       : old,
    );

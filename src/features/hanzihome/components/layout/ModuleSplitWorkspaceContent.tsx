@@ -1,35 +1,25 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
- ResizableHandle,
- ResizablePanel,
- ResizablePanelGroup,
-} from "@/components/ui/resizable";
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
 import { flatTabs } from "@/features/hanzihome/components/layout/moduleMeta";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
-import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/StudySection";
+import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeWorkspaceLayout } from "@/features/hanzihome/context/selectors";
-import {
- developerToolsEnabled,
- setPaneActive,
-} from "@/features/hanzihome/context/workspaceLayout";
+import { developerToolsEnabled, setPaneActive } from "@/features/hanzihome/context/workspaceLayout";
 
 export function ModuleSplitWorkspaceContent() {
  const runtime = useHanziHomeRuntime();
- const { splitEnabled, paneLayout, viewMode, splitPaneSize } =
-  useHanziHomeWorkspaceLayout();
+ const { splitEnabled, paneLayout, viewMode, splitPaneSize } = useHanziHomeWorkspaceLayout();
  const actions = useHanziHomeFeatureActions();
 
  const debugPanel =
-  developerToolsEnabled &&
-  viewMode === "debug" &&
-  runtime.activeModule !== "overview" ? (
+  developerToolsEnabled && viewMode === "debug" && runtime.activeModule !== "overview" ? (
    <div className="hidden xl:block">
     <DebugRawDataPanel
      title="Raw lesson JSON"
@@ -58,7 +48,7 @@ export function ModuleSplitWorkspaceContent() {
       type="button"
       variant="outline"
       size="sm"
-      className="hidden h-8 shrink-0 px-2.5 text-sm xl:flex"
+      className="hidden h-8 shrink-0 px-2.5  xl:flex"
       onClick={() => actions.setSplitEnabled(true)}
      >
       Mở split
@@ -75,9 +65,7 @@ export function ModuleSplitWorkspaceContent() {
   <div className="grid gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)] xl:overflow-hidden">
    <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-lg border border-border-default bg-bg-card/95 p-1 shadow-theme-sm backdrop-blur">
     <div className="min-w-0 px-2">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-      Split mode
-     </p>
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Split mode</p>
      <p className="hidden text-xs font-bold text-text-muted sm:block">
       Kéo tab giữa hai pane, kéo divider để đổi kích thước.
      </p>
@@ -125,4 +113,3 @@ export function ModuleSplitWorkspaceContent() {
   </div>
  );
 }
-

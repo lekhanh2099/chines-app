@@ -20,11 +20,7 @@ import {
  findLessonByRouteParam,
  getLessonRouteValue,
 } from "@/features/hanzihome/utils/lesson-route";
-import type {
- HanziHomeModule,
- LearningStatus,
- ReviewResult,
-} from "@/features/hanzihome/types";
+import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/hanzihome/types";
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 
@@ -39,9 +35,7 @@ const moduleValues = [
 ] as const;
 
 function parseModule(value: string | null | undefined): HanziHomeModule | null {
- return moduleValues.some((item) => item === value)
-  ? (value as HanziHomeModule)
-  : null;
+ return moduleValues.some((item) => item === value) ? (value as HanziHomeModule) : null;
 }
 
 export function HanziHomeWorkspace() {
@@ -78,8 +72,7 @@ export function HanziHomeWorkspace() {
   () =>
    lessons.filter(
     (item) =>
-     (item.courseId ||
-      (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
+     (item.courseId || (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
      selectedCourseId,
    ),
   [lessons, courseCatalog.courses, selectedCourseId],
@@ -93,9 +86,7 @@ export function HanziHomeWorkspace() {
   lessonNumberFromUrl,
   legacyLessonIdFromUrl,
  );
- const lessonFromLastState = courseLessons.find(
-  (item) => item.id === lastLessonId,
- );
+ const lessonFromLastState = courseLessons.find((item) => item.id === lastLessonId);
 
  const fallbackLesson = courseLessons[0] ?? null;
 
@@ -103,9 +94,7 @@ export function HanziHomeWorkspace() {
  const lessonId = selectedLesson?.id || "";
 
  const activeModule =
-  parseModule(searchParams.get("module")) ||
-  learning.state.settings.lastModule ||
-  "overview";
+  parseModule(searchParams.get("module")) || learning.state.settings.lastModule || "overview";
 
  useEffect(() => {
   if (!selectedLesson || activeModule === "radicals") return;
@@ -123,15 +112,11 @@ export function HanziHomeWorkspace() {
   router.replace(`/hanzihome?${nextParams.toString()}`);
  }, [activeModule, router, searchParams, selectedCourseId, selectedLesson]);
 
- const activeLessonModule: StudyModule =
-  activeModule === "radicals" ? "overview" : activeModule;
+ const activeLessonModule: StudyModule = activeModule === "radicals" ? "overview" : activeModule;
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
- const lesson =
-  activeModule === "radicals" ? null : activeLessonDetail.lesson;
- const selectedCourse = courseCatalog.courses.find(
-  (course) => course.id === selectedCourseId,
- );
+ const lesson = activeModule === "radicals" ? null : activeLessonDetail.lesson;
+ const selectedCourse = courseCatalog.courses.find((course) => course.id === selectedCourseId);
 
  const replaceWorkspaceParams = (
   updates: Partial<Record<"courseId" | "lesson" | "module", string>>,
@@ -170,23 +155,16 @@ export function HanziHomeWorkspace() {
   learning.appendReviewHistory(item, result);
 
   if (item.type === "vocab") {
-   markVocab(
-    item.id,
-    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
-   );
+   markVocab(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
   }
 
   if (item.type === "grammar") {
-   markGrammar(
-    item.id,
-    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
-   );
+   markGrammar(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
   }
  };
 
  const isLessonWorkspaceLoading =
-  activeModule !== "radicals" &&
-  (isCourseLessonsLoading || activeLessonDetail.isLoading);
+  activeModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
 
  const hasLessonWorkspaceError =
   activeModule !== "radicals" &&

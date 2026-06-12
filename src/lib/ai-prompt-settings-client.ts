@@ -29,9 +29,7 @@ function normalizeSettings(
 ): ClientAiPromptSettings {
  return {
   wordLookupPrompt: getWordLookupPromptTemplate(settings?.wordLookupPrompt),
-  sentenceLookupPrompt: getSentenceLookupPromptTemplate(
-   settings?.sentenceLookupPrompt,
-  ),
+  sentenceLookupPrompt: getSentenceLookupPromptTemplate(settings?.sentenceLookupPrompt),
   geminiModel: normalizeGeminiModel(settings?.geminiModel),
  };
 }
@@ -59,10 +57,7 @@ export function saveClientAiPromptSettings(
  const normalized = normalizeSettings(settings);
 
  if (typeof window !== "undefined") {
-  window.localStorage.setItem(
-   AI_PROMPT_SETTINGS_STORAGE_KEY,
-   JSON.stringify(normalized),
-  );
+  window.localStorage.setItem(AI_PROMPT_SETTINGS_STORAGE_KEY, JSON.stringify(normalized));
  }
 
  return normalized;
@@ -78,14 +73,8 @@ function hashString(input: string): string {
  return (hash >>> 0).toString(36);
 }
 
-export function getClientAiPromptSettingsFingerprint(
- settings: ClientAiPromptSettings,
-): string {
+export function getClientAiPromptSettingsFingerprint(settings: ClientAiPromptSettings): string {
  return hashString(
-  [
-   settings.geminiModel,
-   settings.wordLookupPrompt,
-   settings.sentenceLookupPrompt,
-  ].join("||"),
+  [settings.geminiModel, settings.wordLookupPrompt, settings.sentenceLookupPrompt].join("||"),
  );
 }

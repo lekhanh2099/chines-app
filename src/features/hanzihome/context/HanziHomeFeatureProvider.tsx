@@ -77,9 +77,5 @@ export function HanziHomeFeatureProvider({
   [actions, runtime, services, store],
  );
 
- return (
-  <HanziHomeFeatureStoreProvider value={value}>
-   {children}
-  </HanziHomeFeatureStoreProvider>
- );
+ return <HanziHomeFeatureStoreProvider value={value}>{children}</HanziHomeFeatureStoreProvider>;
 }

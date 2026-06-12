@@ -44,14 +44,12 @@ export function Header({ user }: { user?: User | null }) {
    }))
    .filter((course) => course.lessons.length > 0);
   const selectedCourseId = searchParams.get("courseId") || courses[0]?.id || "";
-  const selectedCourse =
-   courses.find((course) => course.id === selectedCourseId) ?? courses[0];
+  const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? courses[0];
   const lessons = selectedCourse?.lessons ?? [];
   const lessonFromUrl = searchParams.get("lesson");
   const legacyLessonIdFromUrl = searchParams.get("lessonId");
   const selectedLesson =
-   findLessonByRouteParam(lessons, lessonFromUrl, legacyLessonIdFromUrl) ??
-   lessons[0];
+   findLessonByRouteParam(lessons, lessonFromUrl, legacyLessonIdFromUrl) ?? lessons[0];
 
   if (!selectedCourse || !selectedLesson) return null;
 
@@ -102,14 +100,12 @@ export function Header({ user }: { user?: User | null }) {
    {hanzihomeBreadcrumb && (
     <nav
      aria-label="Chuyển nhanh bài HanziHome"
-     className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1 text-sm font-semibold text-text-secondary lg:flex"
+     className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
     >
      <Select
       value={hanzihomeBreadcrumb.selectedCourse.id}
       onValueChange={(courseId) => {
-       const course = hanzihomeBreadcrumb.courses.find(
-       (item) => item.id === courseId,
-       );
+       const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
        const lessonNumber = course?.lessons[0]?.lessonNumber;
 
        if (course && typeof lessonNumber === "number") {
@@ -119,11 +115,16 @@ export function Header({ user }: { user?: User | null }) {
      >
       <SelectTrigger
        size="sm"
-       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5 text-sm font-semibold text-text-primary shadow-none"
+       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5  font-semibold text-text-primary shadow-none"
       >
        <SelectValue />
       </SelectTrigger>
-      <SelectContent align="start" position="popper" sideOffset={6} className="min-w-[min(28rem,calc(100vw-2rem))]">
+      <SelectContent
+       align="start"
+       position="popper"
+       sideOffset={6}
+       className="min-w-[min(28rem,calc(100vw-2rem))]"
+      >
        {hanzihomeBreadcrumb.courses.map((course, index) => (
         <SelectItem key={course.id + index} value={course.id}>
          {course.title}
@@ -135,24 +136,23 @@ export function Header({ user }: { user?: User | null }) {
      <Select
       value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
       onValueChange={(lessonNumber) => {
-       navigateHanziHome(
-        hanzihomeBreadcrumb.selectedCourse.id,
-        Number(lessonNumber),
-       );
+       navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
       }}
      >
       <SelectTrigger
        size="sm"
-       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5 text-sm font-semibold text-text-primary shadow-none"
+       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5  font-semibold text-text-primary shadow-none"
       >
        <SelectValue />
       </SelectTrigger>
-      <SelectContent align="start" position="popper" sideOffset={6} className="min-w-[min(28rem,calc(100vw-2rem))]">
+      <SelectContent
+       align="start"
+       position="popper"
+       sideOffset={6}
+       className="min-w-[min(28rem,calc(100vw-2rem))]"
+      >
        {hanzihomeBreadcrumb.lessons.map((lesson) => (
-        <SelectItem
-         key={lesson.id}
-         value={getLessonRouteValue(lesson.lessonNumber)}
-        >
+        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
         </SelectItem>
        ))}
@@ -161,17 +161,14 @@ export function Header({ user }: { user?: User | null }) {
     </nav>
    )}
 
-   <form
-    onSubmit={handleSearch}
-    className="relative min-w-0 flex-1 lg:max-w-[34rem]"
-   >
+   <form onSubmit={handleSearch} className="relative min-w-0 flex-1 lg:max-w-[34rem]">
     <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
     <input
      ref={inputRef}
      value={searchValue}
      onChange={(event) => setSearchValue(event.target.value)}
      placeholder="Từ điển"
-     className="h-10 w-full rounded-lg border border-border-default bg-bg-card pl-10 pr-3 text-sm font-medium text-text-primary outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
+     className="h-10 w-full rounded-lg border border-border-default bg-bg-card pl-10 pr-3  font-medium text-text-primary outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
     />
    </form>
 
@@ -185,9 +182,7 @@ export function Header({ user }: { user?: User | null }) {
      title="Bật/Tắt tra từ tự động"
     >
      <BookOpenCheck className="h-5 w-5" />
-     <span className="hidden sm:inline">
-      {lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}
-     </span>
+     <span className="hidden sm:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
     </Button>
 
     <Button
@@ -197,23 +192,17 @@ export function Header({ user }: { user?: User | null }) {
      size="icon-lg"
      className="h-9 w-9"
     >
-     {theme === "light" ? (
-      <Moon className="h-5 w-5" />
-     ) : (
-      <Sun className="h-5 w-5" />
-     )}
+     {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
     </Button>
 
-    <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5 text-sm font-bold text-text-secondary lg:flex">
+    <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary lg:flex">
      <span className="text-lg">🇻🇳</span>
      Tiếng Việt
     </div>
 
     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
-     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle text-sm font-bold text-accent-text">
-      {(user?.user_metadata?.display_name || user?.email || "B")
-       .slice(0, 1)
-       .toUpperCase()}
+     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle  font-bold text-accent-text">
+      {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
      </div>
     </div>
    </div>

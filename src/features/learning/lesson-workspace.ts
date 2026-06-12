@@ -38,10 +38,7 @@ export type LessonWorkspaceContext = {
  summary: LessonWorkspaceSummary;
 };
 
-function withParams(
- path: string,
- params: Record<string, string | number | null | undefined>,
-) {
+function withParams(path: string, params: Record<string, string | number | null | undefined>) {
  const search = new URLSearchParams();
  Object.entries(params).forEach(([key, value]) => {
   if (value === null || value === undefined || value === "") return;
@@ -70,9 +67,7 @@ export const learningRoutes = {
  },
 };
 
-export function parseLearningSource(
- value: string | null | undefined,
-): LearningSource {
+export function parseLearningSource(value: string | null | undefined): LearningSource {
  return value === "hsk" ? "hsk" : "hanyu";
 }
 
@@ -88,9 +83,7 @@ function sameLesson(
  lessonNumber?: number | null,
 ) {
  if (lessonKey && lesson.lesson_key === lessonKey) return true;
- return (
-  typeof lessonNumber === "number" && lesson.lesson_number === lessonNumber
- );
+ return typeof lessonNumber === "number" && lesson.lesson_number === lessonNumber;
 }
 
 export function findVocabLessonForGrammar({
@@ -128,9 +121,7 @@ export function findGrammarLessonFromQuery(
  lessonNumber?: number | null,
  lessonKey?: string | null,
 ) {
- return (
-  lessons.find((lesson) => sameLesson(lesson, lessonKey, lessonNumber)) || null
- );
+ return lessons.find((lesson) => sameLesson(lesson, lessonKey, lessonNumber)) || null;
 }
 
 export function findVocabLessonFromQuery(
@@ -138,9 +129,7 @@ export function findVocabLessonFromQuery(
  lessonNumber?: number | null,
  lessonKey?: string | null,
 ) {
- return (
-  lessons.find((lesson) => sameLesson(lesson, lessonKey, lessonNumber)) || null
- );
+ return lessons.find((lesson) => sameLesson(lesson, lessonKey, lessonNumber)) || null;
 }
 
 export function getLessonWorkspaceContext({
@@ -161,19 +150,15 @@ export function getLessonWorkspaceContext({
  vocabularyEntries?: VocabEntryWithProgress[];
  pointId?: string | null;
 }): LessonWorkspaceContext {
- const lessonNumber =
-  grammarLesson?.lesson_number ?? vocabularyLesson?.lesson_number ?? null;
- const lessonKey =
-  grammarLesson?.lesson_key ?? vocabularyLesson?.lesson_key ?? null;
+ const lessonNumber = grammarLesson?.lesson_number ?? vocabularyLesson?.lesson_number ?? null;
+ const lessonKey = grammarLesson?.lesson_key ?? vocabularyLesson?.lesson_key ?? null;
  const lessonTitle =
   grammarLesson?.title ||
   vocabularyLesson?.title ||
   (lessonNumber ? `Bài ${lessonNumber}` : "Bài đang học");
  const entries =
   vocabularyLesson?.entries ||
-  vocabularyEntries.filter(
-   (entry) => entry.source.lessonNumber === lessonNumber,
-  );
+  vocabularyEntries.filter((entry) => entry.source.lessonNumber === lessonNumber);
  const grammarPoints = grammarLesson?.points || [];
 
  return {
@@ -204,12 +189,8 @@ export function getLessonWorkspaceContext({
    wordCount: entries.length,
    learnedCount: entries.filter((entry) => entry.status === "mastered").length,
    weakCount: entries.filter((entry) => entry.status === "learning").length,
-   pointCount: grammarLesson
-    ? grammarPoints.length
-    : grammarCourse?.points.length || 0,
-   grammarWeakCount: grammarPoints.filter(
-    (point) => point.status === "learning",
-   ).length,
+   pointCount: grammarLesson ? grammarPoints.length : grammarCourse?.points.length || 0,
+   grammarWeakCount: grammarPoints.filter((point) => point.status === "learning").length,
   },
  };
 }

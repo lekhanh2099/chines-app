@@ -24,14 +24,10 @@ export const defaultUserAiPromptSettings: UserAiPromptSettings = {
  geminiModel: DEFAULT_GEMINI_MODEL,
 };
 
-function normalizeRow(
- row?: Partial<DbUserAiPromptSettings> | null,
-): UserAiPromptSettings {
+function normalizeRow(row?: Partial<DbUserAiPromptSettings> | null): UserAiPromptSettings {
  return {
   wordLookupPrompt: getWordLookupPromptTemplate(row?.word_lookup_prompt),
-  sentenceLookupPrompt: getSentenceLookupPromptTemplate(
-   row?.sentence_lookup_prompt,
-  ),
+  sentenceLookupPrompt: getSentenceLookupPromptTemplate(row?.sentence_lookup_prompt),
   geminiModel: normalizeGeminiModel(row?.gemini_model),
  };
 }
@@ -63,9 +59,7 @@ export async function upsertUserAiPromptSettings(
  const payload = {
   user_id: userId,
   word_lookup_prompt: getWordLookupPromptTemplate(settings.wordLookupPrompt),
-  sentence_lookup_prompt: getSentenceLookupPromptTemplate(
-   settings.sentenceLookupPrompt,
-  ),
+  sentence_lookup_prompt: getSentenceLookupPromptTemplate(settings.sentenceLookupPrompt),
   gemini_model: normalizeGeminiModel(settings.geminiModel),
   updated_at: new Date().toISOString(),
  };

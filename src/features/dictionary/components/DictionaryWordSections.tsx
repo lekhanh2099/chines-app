@@ -21,10 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { IconButton } from "@/components/ui/icon-button";
 import { Textarea } from "@/components/ui/textarea";
-import type {
- DictionaryWordReadyViewModel,
- ExampleItem,
-} from "@/features/dictionary/types";
+import type { DictionaryWordReadyViewModel, ExampleItem } from "@/features/dictionary/types";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { useTTS } from "@/hooks/useTTS";
 import { getNormalizedRadicals } from "@/services/vocab.service";
@@ -69,21 +66,15 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
        )}
       </IconButton>
       {(viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese) && (
-       <Badge size="md">
-        {viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese}
-       </Badge>
+       <Badge size="md">{viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese}</Badge>
       )}
-      {viewModel.ai?.word_type && (
-       <Badge size="md">{viewModel.ai.word_type}</Badge>
-      )}
+      {viewModel.ai?.word_type && <Badge size="md">{viewModel.ai.word_type}</Badge>}
      </div>
 
      <div className="flex flex-wrap items-center gap-2.5">
       [
       {viewModel.vocabData.pinyin && (
-       <p className="text-lg font-semibold   sm:text-xl">
-        {viewModel.vocabData.pinyin}
-       </p>
+       <p className="text-lg font-semibold   sm:text-xl">{viewModel.vocabData.pinyin}</p>
       )}
       {viewModel.ai?.hsk_level && (
        <Badge size="sm" variant="info">
@@ -103,17 +94,11 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {radicals.map((radical, index) => (
          <div key={`${radical.char || radical.meaning || "radical"}-${index}`}>
           <div className="flex items-start gap-1">
-           <span className="shrink-0 text-2xl font-black text-text-primary">
-            {radical.char}
-           </span>
+           <span className="shrink-0 text-2xl font-black text-text-primary">{radical.char}</span>
            <div className="min-w-0 flex gap-1">
-            {radical.pinyin && (
-             <p className="text-xs font-semibold  ">{radical.pinyin}</p>
-            )}
+            {radical.pinyin && <p className="text-xs font-semibold  ">{radical.pinyin}</p>}
             {radical.meaning && (
-             <p className="text-sm leading-relaxed text-text-primary">
-              {radical.meaning}
-             </p>
+             <p className=" leading-relaxed text-text-primary">{radical.meaning}</p>
             )}
            </div>
           </div>
@@ -124,17 +109,14 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      </div>
 
      {viewModel.meaningSummary && (
-      <p className="max-w-3xl text-sm leading-relaxed text-text-secondary sm:text-base">
+      <p className="max-w-3xl  leading-relaxed text-text-secondary sm:text-base">
        [{viewModel.meaningSummary}]
       </p>
      )}
      {viewModel.ai?.source_metadata && (
       <p className="mt-3 text-xs font-bold uppercase tracking-wide text-text-muted">
-       {viewModel.ai.source_metadata.lesson_title ||
-        viewModel.ai.source_metadata.lesson_key}
-       {viewModel.ai.source_metadata.category
-        ? ` · ${viewModel.ai.source_metadata.category}`
-        : ""}
+       {viewModel.ai.source_metadata.lesson_title || viewModel.ai.source_metadata.lesson_key}
+       {viewModel.ai.source_metadata.category ? ` · ${viewModel.ai.source_metadata.category}` : ""}
       </p>
      )}
     </div>
@@ -159,11 +141,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
 
 function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
  const ai = viewModel.ai || {};
- const hanViet =
-  ai.han_viet ||
-  ai.sino_vietnamese ||
-  viewModel.vocabData.sino_vietnamese ||
-  "";
+ const hanViet = ai.han_viet || ai.sino_vietnamese || viewModel.vocabData.sino_vietnamese || "";
  const meaningDetail =
   ai.meaning_detail ||
   viewModel.meaningItems[0]?.meaning ||
@@ -181,17 +159,14 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
      <div className="space-y-2">
       {hanViet && (
-       <p className="text-sm leading-relaxed text-text-secondary">
-        <span className="font-bold text-text-primary">Âm Hán Việt:</span>{" "}
-        {hanViet}
+       <p className=" leading-relaxed text-text-secondary">
+        <span className="font-bold text-text-primary">Âm Hán Việt:</span> {hanViet}
        </p>
       )}
       {ai.han_viet_note && (
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {ai.han_viet_note}
-       </p>
+       <p className=" leading-relaxed text-text-secondary">{ai.han_viet_note}</p>
       )}
-      <p className="text-sm leading-relaxed text-text-secondary">
+      <p className=" leading-relaxed text-text-secondary">
        <span className="font-bold text-text-primary">Nghĩa:</span>{" "}
        {meaningDetail || "Chưa có nghĩa chi tiết."}
       </p>
@@ -199,17 +174,13 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     </DocSection>
 
     <DocSection index={2} title="Chiết tự">
-     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+     <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
       {ai.decomposition || "Chưa có chiết tự."}
      </p>
     </DocSection>
 
     <DocSection index={3} title="So sánh từ gần nghĩa">
-     {ai.comparisons?.length ? (
-      <BulletList items={ai.comparisons} />
-     ) : (
-      <EmptyDocText />
-     )}
+     {ai.comparisons?.length ? <BulletList items={ai.comparisons} /> : <EmptyDocText />}
     </DocSection>
 
     <DocSection index={4} title="Cụm từ cố định">
@@ -218,7 +189,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
        {ai.collocations.map((item, index) => (
         <div
          key={`${item}-${index}`}
-         className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 text-sm font-semibold text-text-secondary"
+         className="rounded-2xl border border-border-default bg-bg-card px-3 py-2  font-semibold text-text-secondary"
         >
          {item}
         </div>
@@ -233,10 +204,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
      {viewModel.extraExamples.length ? (
       <div className="grid gap-3">
        {viewModel.extraExamples.map((example, index) => (
-        <ExampleCard
-         key={`${example.zh}-${example.pinyin}-doc-${index}`}
-         example={example}
-        />
+        <ExampleCard key={`${example.zh}-${example.pinyin}-doc-${index}`} example={example} />
        ))}
       </div>
      ) : (
@@ -245,13 +213,13 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     </DocSection>
 
     <DocSection index={6} title="Trung Việt / văn hóa">
-     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+     <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
       {ai.cultural_note || "Chưa có ghi chú văn hóa."}
      </p>
     </DocSection>
 
     <DocSection index={7} title="Lưu ý">
-     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+     <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
       {ai.usage_note || "Chưa có lưu ý riêng."}
      </p>
     </DocSection>
@@ -276,9 +244,7 @@ function DocSection({
      <Badge variant="accent" size="sm">
       {index}
      </Badge>
-     <p className="text-sm font-black uppercase tracking-wide text-text-primary">
-      {title}
-     </p>
+     <p className=" font-black uppercase tracking-wide text-text-primary">{title}</p>
     </div>
     {children}
    </div>
@@ -287,9 +253,7 @@ function DocSection({
 }
 
 function EmptyDocText() {
- return (
-  <p className="text-sm text-text-muted">Chưa có dữ liệu cho phần này.</p>
- );
+ return <p className=" text-text-muted">Chưa có dữ liệu cho phần này.</p>;
 }
 
 function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
@@ -326,7 +290,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
            {meaning.pos && <Badge size="sm">{meaning.pos}</Badge>}
           </div>
 
-          <p className="text-sm font-semibold leading-relaxed text-text-primary sm:text-base">
+          <p className=" font-semibold leading-relaxed text-text-primary sm:text-base">
            {meaning.meaning}
           </p>
 
@@ -346,9 +310,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
       </div>
      ) : (
       <Card variant="subtle" padding="sm">
-       <p className="text-sm text-text-muted">
-        Chưa có dữ liệu nghĩa để hiển thị.
-       </p>
+       <p className=" text-text-muted">Chưa có dữ liệu nghĩa để hiển thị.</p>
       </Card>
      )}
 
@@ -357,20 +319,14 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
        <SectionHeader title="Ví dụ mở rộng" />
        <div className="grid gap-3">
         {viewModel.extraExamples.slice(0, 8).map((example, index) => (
-         <ExampleCard
-          key={`${example.zh}-${example.pinyin}-extra-${index}`}
-          example={example}
-         />
+         <ExampleCard key={`${example.zh}-${example.pinyin}-extra-${index}`} example={example} />
         ))}
        </div>
       </div>
      )}
     </div>
    ) : (
-    <NoDataPlaceholder
-     onRequest={viewModel.requestAiAnalysis}
-     loading={viewModel.isAiLoading}
-    />
+    <NoDataPlaceholder onRequest={viewModel.requestAiAnalysis} loading={viewModel.isAiLoading} />
    )}
   </SectionWrapper>
  );
@@ -390,9 +346,7 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
     trailing={
      hasAnyRelation ? (
       <Badge size="sm">
-       {viewModel.relatedCompounds.length +
-        viewModel.synonyms.length +
-        viewModel.antonyms.length}{" "}
+       {viewModel.relatedCompounds.length + viewModel.synonyms.length + viewModel.antonyms.length}{" "}
        mục
       </Badge>
      ) : null
@@ -419,16 +373,14 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
     </div>
    ) : (
     <Card variant="subtle" padding="sm">
-     <p className="text-sm text-text-muted">Chưa có dữ liệu từ liên quan.</p>
+     <p className=" text-text-muted">Chưa có dữ liệu từ liên quan.</p>
     </Card>
    )}
   </SectionWrapper>
  );
 }
 
-function DictionaryLearningInsightsSection({
- viewModel,
-}: DictionarySectionProps) {
+function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps) {
  if (!viewModel.hasLearningInsights) {
   return null;
  }
@@ -444,11 +396,8 @@ function DictionaryLearningInsightsSection({
     {viewModel.ai?.decomposition && (
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
-       <SectionHeader
-        title="Chiết tự"
-        trailing={<Layers3 className="h-4 w-4  " />}
-       />
-       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+       <SectionHeader title="Chiết tự" trailing={<Layers3 className="h-4 w-4  " />} />
+       <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
         {viewModel.ai.decomposition}
        </p>
       </div>
@@ -475,7 +424,7 @@ function DictionaryLearningInsightsSection({
         {viewModel.ai.collocations.map((item, index) => (
          <div
           key={`${item}-${index}`}
-          className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 text-sm font-semibold text-text-secondary"
+          className="rounded-2xl border border-border-default bg-bg-card px-3 py-2  font-semibold text-text-secondary"
          >
           {item}
          </div>
@@ -488,11 +437,8 @@ function DictionaryLearningInsightsSection({
     {viewModel.ai?.cultural_note && (
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
-       <SectionHeader
-        title="Trung Việt"
-        trailing={<Globe2 className="h-4 w-4  " />}
-       />
-       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+       <SectionHeader title="Trung Việt" trailing={<Globe2 className="h-4 w-4  " />} />
+       <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
         {viewModel.ai.cultural_note}
        </p>
       </div>
@@ -503,7 +449,7 @@ function DictionaryLearningInsightsSection({
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Lưu ý" />
-       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+       <p className="whitespace-pre-line  leading-relaxed text-text-secondary">
         {viewModel.ai.usage_note}
        </p>
       </div>
@@ -514,9 +460,7 @@ function DictionaryLearningInsightsSection({
      <Card variant="subtle" padding="sm" className="rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Ghi chú dùng từ" />
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {viewModel.ai.notes}
-       </p>
+       <p className=" leading-relaxed text-text-secondary">{viewModel.ai.notes}</p>
       </div>
      </Card>
     )}
@@ -527,17 +471,10 @@ function DictionaryLearningInsightsSection({
      <div className="flex flex-col gap-2">
       <SectionHeader title="Tư duy cốt lõi" />
       {viewModel.ai.usage_logic.map((item, index) => (
-       <Card
-        key={`${item}-${index}`}
-        variant="default"
-        padding="sm"
-        className="rounded-2xl -xl"
-       >
+       <Card key={`${item}-${index}`} variant="default" padding="sm" className="rounded-2xl -xl">
         <div className="flex items-start gap-2">
          <span className="mt-0.5 text-xs  ">●</span>
-         <span className="text-sm leading-relaxed text-text-secondary">
-          {item}
-         </span>
+         <span className=" leading-relaxed text-text-secondary">{item}</span>
         </div>
        </Card>
       ))}
@@ -583,18 +520,10 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
 function ExampleRow({ example }: { example: ExampleItem }) {
  return (
   <div className="flex flex-col gap-1">
-   <p className="text-sm font-medium text-text-primary">{example.zh}</p>
-   {example.pinyin && (
-    <p className="text-xs font-semibold  ">{example.pinyin}</p>
-   )}
-   {example.vi && (
-    <p className="text-xs italic text-text-muted">{example.vi}</p>
-   )}
-   {example.note && (
-    <p className="text-xs leading-relaxed text-text-secondary">
-     → {example.note}
-    </p>
-   )}
+   <p className=" font-medium text-text-primary">{example.zh}</p>
+   {example.pinyin && <p className="text-xs font-semibold  ">{example.pinyin}</p>}
+   {example.vi && <p className="text-xs italic text-text-muted">{example.vi}</p>}
+   {example.note && <p className="text-xs leading-relaxed text-text-secondary">→ {example.note}</p>}
   </div>
  );
 }
@@ -613,7 +542,7 @@ function BulletList({ items }: { items: string[] }) {
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-2xl -full bg-accent" />
-     <span className="text-sm leading-relaxed text-text-secondary">{item}</span>
+     <span className=" leading-relaxed text-text-secondary">{item}</span>
     </div>
    ))}
   </div>
@@ -646,10 +575,7 @@ function WordRelationGrid({
       }
 
       return (
-       <Link
-        key={`${title}-${word}-${index}`}
-        href={`/dictionary/${encodeURIComponent(word)}`}
-       >
+       <Link key={`${title}-${word}-${index}`} href={`/dictionary/${encodeURIComponent(word)}`}>
         <Card
          variant="subtle"
          padding="sm"
@@ -658,13 +584,9 @@ function WordRelationGrid({
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
            <p className="text-base font-bold text-text-primary">{word}</p>
-           {item.pinyin && (
-            <p className="text-xs font-semibold  ">{item.pinyin}</p>
-           )}
+           {item.pinyin && <p className="text-xs font-semibold  ">{item.pinyin}</p>}
           </div>
-          <p className="text-sm leading-relaxed text-text-secondary">
-           {item.meaning || "Chưa có nghĩa."}
-          </p>
+          <p className=" leading-relaxed text-text-secondary">{item.meaning || "Chưa có nghĩa."}</p>
          </div>
         </Card>
        </Link>
@@ -673,7 +595,7 @@ function WordRelationGrid({
     </div>
    ) : (
     <Card variant="subtle" padding="sm">
-     <p className="text-sm text-text-muted">{emptyText}</p>
+     <p className=" text-text-muted">{emptyText}</p>
     </Card>
    )}
   </div>
@@ -699,32 +621,16 @@ function AiLoadingState() {
  );
 }
 
-function NoDataPlaceholder({
- onRequest,
- loading,
-}: {
- onRequest: () => void;
- loading: boolean;
-}) {
+function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; loading: boolean }) {
  return (
   <Card variant="subtle" padding="sm">
    <div className="flex flex-col items-center gap-4 text-center">
     <div className="space-y-2">
-     <p className="text-sm font-semibold text-text-primary">
-      Chưa có phân tích chuyên sâu cho mục này.
-     </p>
-     <p className="text-sm text-text-muted">
-      Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.
-     </p>
+     <p className=" font-semibold text-text-primary">Chưa có phân tích chuyên sâu cho mục này.</p>
+     <p className=" text-text-muted">Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.</p>
     </div>
 
-    <Button
-     variant="outline"
-     size="sm"
-     onClick={onRequest}
-     disabled={loading}
-     isLoading={loading}
-    >
+    <Button variant="outline" size="sm" onClick={onRequest} disabled={loading} isLoading={loading}>
      <Sparkles className="h-4 w-4" />
      Phân tích bằng AI
     </Button>

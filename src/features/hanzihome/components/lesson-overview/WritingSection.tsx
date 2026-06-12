@@ -1,8 +1,5 @@
 import type { CharacterWritingItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "./types";
 
@@ -27,9 +24,7 @@ export function WritingCard({
    {displayMode.showPinyin && item.pinyin && (
     <p className="font-bold text-accent-text">{item.pinyin}</p>
    )}
-   {item.radical && (
-    <p className="text-sm font-semibold text-text-muted">Bộ: {item.radical}</p>
-   )}
+   {item.radical && <p className=" font-semibold text-text-muted">Bộ: {item.radical}</p>}
   </div>
  );
 

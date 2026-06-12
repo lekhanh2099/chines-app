@@ -5,11 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-import type {
- EditAdapter,
- EditFieldDefinition,
- EditFieldKind,
-} from "../../adapters/types";
+import type { EditAdapter, EditFieldDefinition, EditFieldKind } from "../../adapters/types";
 
 export type StructuredNodeFormProps = {
  value: unknown;
@@ -25,9 +21,7 @@ type FormFieldDefinition = EditFieldDefinition & {
 };
 
 function asEditableRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function getAutoFieldKind(value: unknown): EditFieldKind {
@@ -36,10 +30,7 @@ function getAutoFieldKind(value: unknown): EditFieldKind {
  if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
   return "string-list";
  }
- if (
-  value &&
-  (typeof value === "object" || Array.isArray(value))
- ) {
+ if (value && (typeof value === "object" || Array.isArray(value))) {
   return "json";
  }
  return "textarea";
@@ -76,10 +67,7 @@ export function StructuredNodeForm({
  onValidityChange,
  onDraftChange,
 }: StructuredNodeFormProps) {
- const autoFields = useMemo(
-  () => buildAutoFields(value, adapter.fields),
-  [adapter.fields, value],
- );
+ const autoFields = useMemo(() => buildAutoFields(value, adapter.fields), [adapter.fields, value]);
  const editableFields = useMemo(
   () => adapter.fields.filter((field) => field.kind !== "json"),
   [adapter.fields],
@@ -97,10 +85,7 @@ export function StructuredNodeForm({
   ],
   [adapter.fields, autoFields],
  );
- const initialValues = useMemo(
-  () => adapter.toValues(value),
-  [adapter, value],
- );
+ const initialValues = useMemo(() => adapter.toValues(value), [adapter, value]);
  const [values, setValues] = useState(initialValues);
  const invalidFields = editableFields.filter(
   (field) => field.required && !(values[field.key] ?? "").trim(),
@@ -119,9 +104,7 @@ export function StructuredNodeForm({
   setValues((current) => {
    const next = { ...current, [key]: nextValue };
    onValidityChange?.(
-    editableFields.every(
-     (field) => !field.required || Boolean((next[field.key] ?? "").trim()),
-    ),
+    editableFields.every((field) => !field.required || Boolean((next[field.key] ?? "").trim())),
    );
    onDraftChange?.(buildNode(next));
    return next;
@@ -147,14 +130,12 @@ export function StructuredNodeForm({
 
     return (
      <label key={field.key} htmlFor={inputId} className="grid gap-1.5">
-      <span className="text-sm font-black text-text-primary">
+      <span className="font-black text-text-primary">
        {field.label}
        {field.required ? " *" : ""}
       </span>
       {field.description ? (
-       <span className="text-xs font-semibold text-text-muted">
-        {field.description}
-       </span>
+       <span className="text-xs font-semibold text-text-muted">{field.description}</span>
       ) : null}
       {field.kind === "textarea" || field.kind === "string-list" ? (
        <Textarea
@@ -169,7 +150,7 @@ export function StructuredNodeForm({
         id={inputId}
         value={fieldValue}
         aria-invalid={hasError}
-        className="h-10 rounded-lg border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary"
+        className="h-10 rounded-lg border border-border-default bg-bg-primary px-3  font-semibold text-text-primary"
         onChange={(event) => updateValue(field.key, event.target.value)}
        >
         <option value="true">true</option>
@@ -185,14 +166,10 @@ export function StructuredNodeForm({
        />
       )}
       {field.kind === "string-list" ? (
-       <span className="text-xs font-semibold text-text-muted">
-        Mỗi dòng là một giá trị.
-       </span>
+       <span className="text-xs font-semibold text-text-muted">Mỗi dòng là một giá trị.</span>
       ) : null}
       {hasError ? (
-       <span className="text-xs font-bold text-danger-text">
-        Trường này không được để trống.
-       </span>
+       <span className="text-xs font-bold text-danger-text">Trường này không được để trống.</span>
       ) : null}
      </label>
     );
@@ -204,10 +181,7 @@ export function StructuredNodeForm({
      </p>
      <div className="grid gap-1">
       {unsupportedFields.map((field) => (
-       <p
-        key={field.key}
-        className="text-xs font-semibold leading-relaxed text-text-secondary"
-       >
+       <p key={field.key} className="text-xs font-semibold leading-relaxed text-text-secondary">
         <span className="font-black text-text-primary">{field.label}</span>
         {" · "}
         {field.reason}

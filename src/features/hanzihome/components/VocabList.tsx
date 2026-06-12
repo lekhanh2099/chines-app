@@ -14,10 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import type {
- HanziHomeVocabItem,
- LearningStatus,
-} from "@/features/hanzihome/types";
+import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { cn } from "@/lib/utils";
@@ -67,12 +64,8 @@ export function VocabList({
    <div className="grid gap-2">
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div>
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Từ vựng bài này
-      </p>
-      <p className="text-sm font-bold text-text-secondary">
-       {words.length} từ đang hiển thị
-      </p>
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ vựng bài này</p>
+      <p className=" font-bold text-text-secondary">{words.length} từ đang hiển thị</p>
      </div>
 
      <div className="flex flex-wrap items-center gap-1">
@@ -119,18 +112,18 @@ export function VocabList({
        value={searchValue}
        onChange={(event) => onSearchChange(event.target.value)}
        placeholder="Tìm từ, pinyin, nghĩa..."
-       className="h-9 rounded-xl bg-bg-primary pl-9 text-sm font-bold"
+       className="h-9 rounded-xl bg-bg-primary pl-9  font-bold"
       />
      </label>
 
      <p className="hidden items-center rounded-xl border border-border-default bg-bg-subtle px-3 text-xs font-bold text-text-muted md:flex">
-      Tab / Shift+Tab để chuyển từ nhanh. Dùng search để lọc theo Hán tự,
-      pinyin, Hán Việt hoặc nghĩa.
+      Tab / Shift+Tab để chuyển từ nhanh. Dùng search để lọc theo Hán tự, pinyin, Hán Việt hoặc
+      nghĩa.
      </p>
     </div>
 
     {words.length === 0 ? (
-     <p className="rounded-xl bg-bg-subtle p-3 text-sm font-semibold text-text-muted">
+     <p className="rounded-xl bg-bg-subtle p-3  font-semibold text-text-muted">
       Không có từ phù hợp bộ lọc.
      </p>
     ) : isWordPickerOpen ? (

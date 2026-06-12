@@ -49,12 +49,8 @@ export function LessonNoteAccessCard() {
        <FileText className="h-5 w-5" />
       </span>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Lesson note
-       </p>
-       <h2 className="text-xl font-black text-text-primary">
-        Ghi chú riêng của bài
-       </h2>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Lesson note</p>
+       <h2 className="text-xl font-black text-text-primary">Ghi chú riêng của bài</h2>
       </div>
      </div>
      {!note ? (
@@ -74,7 +70,7 @@ export function LessonNoteAccessCard() {
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
       Đang kiểm tra note...
      </div>
     ) : note ? (
@@ -84,7 +80,7 @@ export function LessonNoteAccessCard() {
       type="button"
       onClick={handleCreate}
       disabled={isCreating}
-      className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left text-sm font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left  font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
      >
       Chưa có note cho bài này. Bấm để tạo split note.
      </button>

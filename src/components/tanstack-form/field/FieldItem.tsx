@@ -21,13 +21,11 @@ export function FieldItem({
  return (
   <div className="flex flex-col">
    {label && (
-    <label className="text-sm font-semibold text-text-secondary mb-2">
+    <label className=" font-semibold text-text-secondary mb-2">
      {label} {required && <span className="text-danger-text">*</span>}
     </label>
    )}
-   {description && (
-    <p className="text-xs text-text-muted mb-2">{description}</p>
-   )}
+   {description && <p className="text-xs text-text-muted mb-2">{description}</p>}
    {children}
    <FieldInfo field={field} helperText={helperText} />
   </div>

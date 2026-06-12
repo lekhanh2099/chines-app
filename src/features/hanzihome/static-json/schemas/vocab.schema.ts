@@ -151,34 +151,28 @@ export const PartOfSpeechSchema = z.enum([
  "unknown",
 ]);
 
-export const PosSchema = z.preprocess((value) => {
- if (typeof value === "string") {
-  return {
-   raw_vi: value,
-   raw_cn: "",
-   normalized: value,
-   notes: [],
-  };
- }
+export const PosSchema = z.preprocess(
+ (value) => {
+  if (typeof value === "string") {
+   return {
+    raw_vi: value,
+    raw_cn: "",
+    normalized: value,
+    notes: [],
+   };
+  }
 
- return value;
-}, z.object({
- raw_vi: OptionalStringSchema,
- raw_cn: OptionalStringSchema,
- normalized: PartOfSpeechSchema.default("unknown"),
- notes: z.array(NoteSchema).default([]),
-}));
+  return value;
+ },
+ z.object({
+  raw_vi: OptionalStringSchema,
+  raw_cn: OptionalStringSchema,
+  normalized: PartOfSpeechSchema.default("unknown"),
+  notes: z.array(NoteSchema).default([]),
+ }),
+);
 
-export const ImportanceLevelSchema = z.enum([
- "A+++",
- "A++",
- "A+",
- "A",
- "B+",
- "B",
- "C",
- "unknown",
-]);
+export const ImportanceLevelSchema = z.enum(["A+++", "A++", "A+", "A", "B+", "B", "C", "unknown"]);
 
 /* -------------------------------------------------------------------------- */
 /* Lesson overview groups                                                     */
@@ -322,66 +316,72 @@ export const WordFormationSchema = z.object({
 /* Comparisons                                                                */
 /* -------------------------------------------------------------------------- */
 
-export const RelatedWordSchema = z.preprocess((value) => {
- if (Array.isArray(value)) {
-  const [word, pinyin, meaningVi, differenceVi] = value;
+export const RelatedWordSchema = z.preprocess(
+ (value) => {
+  if (Array.isArray(value)) {
+   const [word, pinyin, meaningVi, differenceVi] = value;
 
-  return {
-   word,
-   pinyin,
-   meaning_vi: meaningVi,
-   difference_vi: differenceVi,
-  };
- }
-
- if (value && typeof value === "object" && "word" in value) {
-  const record = value as { word?: unknown };
-  if (Array.isArray(record.word)) {
    return {
-    ...value,
-    word: record.word.map(String).join("、"),
+    word,
+    pinyin,
+    meaning_vi: meaningVi,
+    difference_vi: differenceVi,
    };
   }
- }
 
- return value;
-}, z.object({
- word: NonEmptyStringSchema,
- pinyin: OptionalStringSchema,
+  if (value && typeof value === "object" && "word" in value) {
+   const record = value as { word?: unknown };
+   if (Array.isArray(record.word)) {
+    return {
+     ...value,
+     word: record.word.map(String).join("、"),
+    };
+   }
+  }
 
- meaning_vi: OptionalStringSchema,
- difference_vi: OptionalStringSchema,
+  return value;
+ },
+ z.object({
+  word: NonEmptyStringSchema,
+  pinyin: OptionalStringSchema,
 
- register_vi: OptionalStringSchema,
- example_zh: OptionalStringSchema,
- example_vi: OptionalStringSchema,
+  meaning_vi: OptionalStringSchema,
+  difference_vi: OptionalStringSchema,
 
- notes: z.array(NoteSchema).default([]),
- check_needed: z.boolean().default(false),
-}));
+  register_vi: OptionalStringSchema,
+  example_zh: OptionalStringSchema,
+  example_vi: OptionalStringSchema,
 
-export const ContrastPairSchema = z.preprocess((value) => {
- if (Array.isArray(value)) {
-  const [left, right, meaningVi, noteVi] = value;
+  notes: z.array(NoteSchema).default([]),
+  check_needed: z.boolean().default(false),
+ }),
+);
 
-  return {
-   left,
-   right,
-   meaning_vi: meaningVi,
-   note_vi: noteVi,
-  };
- }
+export const ContrastPairSchema = z.preprocess(
+ (value) => {
+  if (Array.isArray(value)) {
+   const [left, right, meaningVi, noteVi] = value;
 
- return value;
-}, z.object({
- left: NonEmptyStringSchema,
- right: NonEmptyStringSchema,
+   return {
+    left,
+    right,
+    meaning_vi: meaningVi,
+    note_vi: noteVi,
+   };
+  }
 
- meaning_vi: OptionalStringSchema,
- note_vi: OptionalStringSchema,
+  return value;
+ },
+ z.object({
+  left: NonEmptyStringSchema,
+  right: NonEmptyStringSchema,
 
- notes: z.array(NoteSchema).default([]),
-}));
+  meaning_vi: OptionalStringSchema,
+  note_vi: OptionalStringSchema,
+
+  notes: z.array(NoteSchema).default([]),
+ }),
+);
 
 export const ComparisonSchema = z.object({
  near_synonyms: z.array(RelatedWordSchema).default([]),
@@ -416,21 +416,16 @@ export const CollocationSchema = z.object({
 /* Examples                                                                   */
 /* -------------------------------------------------------------------------- */
 
-export const ExampleLevelSchema = z.preprocess((value) => {
- if (value === "application" || value === "lesson" || value === "lesson_context") {
-  return "applied";
- }
+export const ExampleLevelSchema = z.preprocess(
+ (value) => {
+  if (value === "application" || value === "lesson" || value === "lesson_context") {
+   return "applied";
+  }
 
- return value;
-}, z.enum([
- "basic",
- "core",
- "standard",
- "intermediate",
- "applied",
- "expanded",
- "complex",
-]));
+  return value;
+ },
+ z.enum(["basic", "core", "standard", "intermediate", "applied", "expanded", "complex"]),
+);
 
 export const VocabularyExampleSchema = z.object({
  id: IdSchema,
@@ -633,9 +628,7 @@ export const ParseMetaSchema = z.object({
 
 export const DeepVocabularyLessonSchema = z.object({
  schema_version: z.literal("deep_vocab_v2.1.0").default("deep_vocab_v2.1.0"),
- content_type: z
-  .literal("hanyu_deep_vocabulary_lesson")
-  .default("hanyu_deep_vocabulary_lesson"),
+ content_type: z.literal("hanyu_deep_vocabulary_lesson").default("hanyu_deep_vocabulary_lesson"),
 
  source: LessonSourceSchema,
 

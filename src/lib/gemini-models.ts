@@ -61,18 +61,14 @@ export const GEMINI_TEXT_MODEL_OPTIONS = [
 export type GeminiModelId = (typeof GEMINI_TEXT_MODEL_OPTIONS)[number]["value"];
 
 export function normalizeGeminiModel(model?: string | null): GeminiModelId {
- const matched = GEMINI_TEXT_MODEL_OPTIONS.find(
-  (option) => option.value === model,
- );
+ const matched = GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model);
  return matched?.value || DEFAULT_GEMINI_MODEL;
 }
 
 export function getGeminiModelLabel(model?: string | null): string {
  return (
   GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model)?.label ||
-  GEMINI_TEXT_MODEL_OPTIONS.find(
-   (option) => option.value === DEFAULT_GEMINI_MODEL,
-  )?.label ||
+  GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === DEFAULT_GEMINI_MODEL)?.label ||
   DEFAULT_GEMINI_MODEL
  );
 }

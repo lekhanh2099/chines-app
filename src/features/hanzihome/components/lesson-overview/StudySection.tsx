@@ -40,16 +40,10 @@ export function StudySectionCard({
       )}
       <div className="min-w-0">
        {eyebrow && (
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         {eyebrow}
-        </p>
+        <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        )}
        <h2 className="text-lg font-black text-text-primary">{title}</h2>
-       {subtitle && (
-        <p className="mt-1 text-sm font-semibold text-text-muted">
-         {subtitle}
-        </p>
-       )}
+       {subtitle && <p className="mt-1  font-semibold text-text-muted">{subtitle}</p>}
       </div>
      </div>
 
@@ -63,24 +57,5 @@ export function StudySectionCard({
     {children}
    </div>
   </Card>
- );
-}
-
-export function DebugRawDataPanel({
- title = "Raw data",
- value,
-}: {
- title?: string;
- value: unknown;
-}) {
- return (
-  <details className="rounded-xl border border-border-default bg-bg-primary">
-   <summary className="cursor-pointer list-none px-4 py-3 text-sm font-black text-text-primary marker:hidden">
-    {title}
-   </summary>
-   <pre className="max-h-[28rem] overflow-auto border-t border-border-default bg-bg-subtle p-4 text-xs font-semibold leading-relaxed text-text-secondary">
-    {JSON.stringify(value, null, 2)}
-   </pre>
-  </details>
  );
 }

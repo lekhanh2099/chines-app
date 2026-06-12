@@ -28,24 +28,16 @@ type LessonTextInlineEditorProps = {
 
 const allSectionsId = "__all_lesson_sections__";
 
-export function LessonTextInlineEditor({
- compact = false,
-}: LessonTextInlineEditorProps) {
+export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEditorProps) {
  const { lesson } = useHanziHomeRuntime();
  const actions = useHanziHomeFeatureActions();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
- const displayMode = useHanziHomeFeatureSelector(
-  (state) => state.lessonTextDisplayMode,
- );
+ const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const selectedSectionId = useHanziHomeFeatureSelector(
   (state) => state.lessonTextSelectedSectionId,
  );
- const isSectionNavOpen = useHanziHomeFeatureSelector(
-  (state) => state.lessonTextSidebarOpen,
- );
- const isReadingSettingsOpen = useHanziHomeFeatureSelector(
-  (state) => state.lessonTextSettingsOpen,
- );
+ const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
+ const isReadingSettingsOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSettingsOpen);
  const sourceSections = useMemo(
   () =>
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
@@ -109,7 +101,7 @@ export function LessonTextInlineEditor({
    >
     <Layers className="mt-0.5 h-4 w-4 shrink-0" />
     <span className="min-w-0">
-     <span className="block text-sm font-black">Xem toàn bộ</span>
+     <span className="block  font-black">Xem toàn bộ</span>
      <span className="mt-0.5 block text-xs font-bold opacity-75">
       {sourceSections.length} đề mục
      </span>
@@ -135,7 +127,7 @@ export function LessonTextInlineEditor({
       >
        <Icon className="mt-0.5 h-4 w-4 shrink-0" />
        <span className="min-w-0">
-        <span className="line-clamp-2 text-sm font-black">
+        <span className="line-clamp-2  font-black">
          {index + 1}. {sectionTitle(section)}
         </span>
         {sectionSubtitle(section) && (
@@ -207,7 +199,7 @@ export function LessonTextInlineEditor({
     </div>
    ) : (
     <Card padding="sm" className="rounded-xl sm:p-4">
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-3 text-sm font-semibold text-text-muted sm:p-4">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-3  font-semibold text-text-muted sm:p-4">
       Chưa có bài khóa trong JSON của bài này.
      </div>
     </Card>
@@ -218,10 +210,7 @@ export function LessonTextInlineEditor({
     side="bottom"
     className="p-4"
    >
-    <SheetHeader
-     title="Cài đặt đọc"
-     onClose={() => actions.setLessonTextSettingsOpen(false)}
-    />
+    <SheetHeader title="Cài đặt đọc" onClose={() => actions.setLessonTextSettingsOpen(false)} />
     {readingControls}
    </Sheet>
   </LessonModuleFrame>

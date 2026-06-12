@@ -23,8 +23,7 @@ export function arrayValue(record: Record<string, unknown>, key: string) {
 
 export function nonEmptyStrings(value: unknown[]) {
  return value.filter(
-  (entry): entry is string =>
-   typeof entry === "string" && Boolean(entry.trim()),
+  (entry): entry is string => typeof entry === "string" && Boolean(entry.trim()),
  );
 }
 
@@ -54,12 +53,12 @@ export function hasClozeAnswerValue(value: unknown): boolean {
  const record = asRecord(value);
  return Boolean(
   stringValue(record, "answer") ||
-   stringValue(record, "answer_zh") ||
-   stringValue(record, "value") ||
-   stringValue(record, "text") ||
-   stringValue(record, "zh") ||
-   stringValue(record, "sample_answer") ||
-   arrayValue(record, "acceptable_answers").some(hasTextLikeValue),
+  stringValue(record, "answer_zh") ||
+  stringValue(record, "value") ||
+  stringValue(record, "text") ||
+  stringValue(record, "zh") ||
+  stringValue(record, "sample_answer") ||
+  arrayValue(record, "acceptable_answers").some(hasTextLikeValue),
  );
 }
 
@@ -67,10 +66,7 @@ function firstRenderableArray(...arrays: unknown[][]): unknown[] {
  return arrays.find((values) => values.some(hasTextLikeValue)) ?? [];
 }
 
-function mergedRenderableArrays(
- record: Record<string, unknown>,
- keys: string[],
-): unknown[] {
+function mergedRenderableArrays(record: Record<string, unknown>, keys: string[]): unknown[] {
  return keys.flatMap((key) => arrayValue(record, key)).filter(hasTextLikeValue);
 }
 
@@ -89,8 +85,7 @@ export function getPassageLikeValue(
  const directPassageRecord = asRecord(record.passage);
  const directPassageText = answerToString(record.passage);
  const directPassageHasPayload =
-  Boolean(directPassageText) ||
-  Object.values(directPassageRecord).some(hasTextLikeValue);
+  Boolean(directPassageText) || Object.values(directPassageRecord).some(hasTextLikeValue);
 
  const supplementaryVocabulary = [
   ...mergedRenderableArrays(directPassageRecord, supplementaryVocabKeys),
@@ -105,9 +100,7 @@ export function getPassageLikeValue(
     stringValue(directPassageRecord, "title") ||
     stringValue(record, "title") ||
     stringValue(record, "title_vi"),
-   title_vi:
-    stringValue(directPassageRecord, "title_vi") ||
-    stringValue(record, "title_vi"),
+   title_vi: stringValue(directPassageRecord, "title_vi") || stringValue(record, "title_vi"),
    instruction: directPassageRecord.instruction ?? record.instruction,
    text_with_blanks:
     stringValue(directPassageRecord, "text_with_blanks") ||
@@ -126,8 +119,7 @@ export function getPassageLikeValue(
     stringValue(record, "completed_text_zh") ||
     stringValue(record, "completed_passage") ||
     stringValue(record, "passage_complete"),
-   pinyin:
-    stringValue(directPassageRecord, "pinyin") || stringValue(record, "pinyin"),
+   pinyin: stringValue(directPassageRecord, "pinyin") || stringValue(record, "pinyin"),
    vi:
     stringValue(directPassageRecord, "translation_vi") ||
     stringValue(directPassageRecord, "vi") ||
@@ -181,9 +173,7 @@ export function getPassageLikeValue(
      .map((item) => {
       const itemRecord = asRecord(item);
       return (
-       stringValue(itemRecord, "text") ||
-       stringValue(itemRecord, "zh") ||
-       answerToString(item)
+       stringValue(itemRecord, "text") || stringValue(itemRecord, "zh") || answerToString(item)
       );
      })
      .filter(Boolean)
@@ -295,9 +285,7 @@ export function sectionSubtitle(section: Section) {
  return undefined;
 }
 
-export function getBookSections(
- sourceLesson: HanyuLesson | undefined,
-): BookSection[] {
+export function getBookSections(sourceLesson: HanyuLesson | undefined): BookSection[] {
  return (sourceLesson?.lesson.sections ?? [])
   .slice()
   .sort((a, b) => a.order - b.order)

@@ -176,10 +176,7 @@ export async function updateNoteCategory(
 }
 
 /** Delete a note */
-export async function deleteNote(
- supabase: SupabaseClient,
- noteId: string,
-): Promise<boolean> {
+export async function deleteNote(supabase: SupabaseClient, noteId: string): Promise<boolean> {
  const { error } = await supabase.from("notes").delete().eq("id", noteId);
 
  if (error) {
@@ -275,12 +272,7 @@ export async function searchNotesByTitle(
    ══════════════════════════════════════════ */
 
 export type LessonNoteTargetType = "hanzihome_lesson";
-export type LessonNoteRelationType =
- | "main"
- | "lesson_text"
- | "vocab"
- | "grammar"
- | "annotation";
+export type LessonNoteRelationType = "main" | "lesson_text" | "vocab" | "grammar" | "annotation";
 
 export async function getNoteByLessonNoteLink(
  supabase: SupabaseClient,

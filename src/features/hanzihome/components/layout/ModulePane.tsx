@@ -2,11 +2,7 @@
 
 import type { DragEvent, ReactNode } from "react";
 
-import type {
- DraggedModule,
- PaneId,
- StudyModule,
-} from "@/features/hanzihome/context/types";
+import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
 
 import { ModuleTabButton } from "./ModuleTabButton";
 import { moduleMeta } from "./moduleMeta";
@@ -54,12 +50,8 @@ export function ModulePane({
    ].join(" ")}
   >
    <div className="min-w-0">
-    <h2 className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">
-     {title}
-    </h2>
-    <p className="line-clamp-1 text-sm font-black text-text-primary">
-     {moduleMeta[activeModule].label}
-    </p>
+    <h2 className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">{title}</h2>
+    <p className="line-clamp-1 font-black text-text-primary">{moduleMeta[activeModule].label}</p>
    </div>
    <div className="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
     <div
@@ -97,4 +89,3 @@ export function ModulePane({
   </section>
  );
 }
-

@@ -144,8 +144,7 @@ export function useNoteDetail(noteId: string) {
   saveReadingContent,
   isReadingSaving: saveReadingContentMutation.isPending,
 
-  updateSplitView: (enabled: boolean) =>
-   updateSplitViewMutation.mutate(enabled),
+  updateSplitView: (enabled: boolean) => updateSplitViewMutation.mutate(enabled),
 
   updateTitle: (title: string) => updateTitleMutation.mutate(title),
   updateCategory: (cat: NoteCategory) => updateCategoryMutation.mutate(cat),

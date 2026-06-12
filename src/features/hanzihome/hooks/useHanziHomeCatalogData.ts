@@ -33,7 +33,7 @@ export function useHanziHomeCatalogData({
  includeLessons = false,
 }: {
  includeLessons?: boolean;
- } = {}) {
+} = {}) {
  const query = useQuery({
   queryKey: ["hanzihome", "catalog", { includeLessons }],
   queryFn: () => fetchHanziHomeCatalog({ includeLessons }),

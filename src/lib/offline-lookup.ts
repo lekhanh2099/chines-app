@@ -1,7 +1,4 @@
-import type {
- AiVocabResponse,
- SentenceInsightResponse,
-} from "@/types/database";
+import type { AiVocabResponse, SentenceInsightResponse } from "@/types/database";
 
 const offlineWordMap: Record<string, AiVocabResponse> = {
  我: {
@@ -47,9 +44,7 @@ const offlineWordMap: Record<string, AiVocabResponse> = {
    {
     pos: "Tính từ",
     meaning: "Tốt, ổn, hay",
-    examples: [
-     { cn: "今天很好。", py: "Jīntiān hěn hǎo.", vi: "Hôm nay rất ổn." },
-    ],
+    examples: [{ cn: "今天很好。", py: "Jīntiān hěn hǎo.", vi: "Hôm nay rất ổn." }],
    },
   ],
  },
@@ -79,9 +74,7 @@ const offlineWordMap: Record<string, AiVocabResponse> = {
    {
     pos: "Động từ",
     meaning: "Là",
-    examples: [
-     { cn: "我是学生。", py: "Wǒ shì xuéshēng.", vi: "Tôi là học sinh." },
-    ],
+    examples: [{ cn: "我是学生。", py: "Wǒ shì xuéshēng.", vi: "Tôi là học sinh." }],
    },
   ],
  },
@@ -266,9 +259,7 @@ export function getOfflineWordAnalysis(word: string): AiVocabResponse | null {
  return null;
 }
 
-export function getOfflineSentenceInsight(
- sentence: string,
-): SentenceInsightResponse | null {
+export function getOfflineSentenceInsight(sentence: string): SentenceInsightResponse | null {
  const trimmed = sentence.trim();
  const direct = offlineSentenceMap[trimmed];
  if (direct) {
@@ -280,9 +271,7 @@ export function getOfflineSentenceInsight(
   return offlineSentenceMap[normalized];
  }
 
- const matchNationality = normalized.match(
-  /^我[是叫]([\u4e00-\u9fff]{1,6})人$/u,
- );
+ const matchNationality = normalized.match(/^我[是叫]([\u4e00-\u9fff]{1,6})人$/u);
  if (matchNationality) {
   return {
    text: trimmed,

@@ -58,10 +58,7 @@ export function SegmentedControl<T extends string>({
    {resolvedGroups.map((group, groupIndex) => (
     <div key={group.key} className="flex shrink-0 items-center gap-1">
      {groupIndex > 0 && (
-      <span
-       aria-hidden="true"
-       className="h-6 w-px shrink-0 rounded-full bg-border-default"
-      />
+      <span aria-hidden="true" className="h-6 w-px shrink-0 rounded-full bg-border-default" />
      )}
 
      <div className="flex items-center gap-1">
@@ -77,7 +74,7 @@ export function SegmentedControl<T extends string>({
          data-active={active ? "true" : "false"}
          onClick={() => onChange(item.key)}
          className={cn(
-          "flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-md px-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-md px-2.5  font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
           active
            ? "bg-bg-primary text-text-primary shadow-theme-sm"
            : "text-text-muted hover:bg-bg-primary hover:text-text-primary",

@@ -107,11 +107,13 @@ export const ExampleSchema = z.object({
 /* Source / root                                                              */
 /* -------------------------------------------------------------------------- */
 
-export const SourceFileSchema = z.object({
- name: z.string(),
- type: z.string(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const SourceFileSchema = z
+ .object({
+  name: z.string(),
+  type: z.string(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const SourceSchema = z.object({
  book: z.string(),
@@ -126,76 +128,88 @@ export const SourceSchema = z.object({
  source_files: z.array(SourceFileSchema).optional().default([]),
 });
 
-export const LessonMetadataSchema = z.object({
- legacy_id: z.string().optional().default(""),
- book: z.string().optional().default(""),
- volume: z.string().optional().default(""),
- volume_vi: z.string().optional().default(""),
- lesson_index: z.number().int().positive(),
- lesson_number_cn: z.string().optional().default(""),
- lesson_title_cn: z.string().optional().default(""),
- lesson_title_pinyin: z.string().optional().default(""),
- lesson_title_vi: z.string().optional().default(""),
- lesson_title_en: z.string().optional().default(""),
- source_files: z.array(SourceFileSchema).optional().default([]),
-}).passthrough();
+export const LessonMetadataSchema = z
+ .object({
+  legacy_id: z.string().optional().default(""),
+  book: z.string().optional().default(""),
+  volume: z.string().optional().default(""),
+  volume_vi: z.string().optional().default(""),
+  lesson_index: z.number().int().positive(),
+  lesson_number_cn: z.string().optional().default(""),
+  lesson_title_cn: z.string().optional().default(""),
+  lesson_title_pinyin: z.string().optional().default(""),
+  lesson_title_vi: z.string().optional().default(""),
+  lesson_title_en: z.string().optional().default(""),
+  source_files: z.array(SourceFileSchema).optional().default([]),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Text section                                                               */
 /* -------------------------------------------------------------------------- */
 
-export const TextLineSchema = z.object({
- id: z.string(),
- order: z.number().int().positive(),
- speaker: z.string().optional().default(""),
- zh: z.string(),
- pinyin: z.string().optional().default(""),
- vi: z.string().optional().default(""),
- audio_key: z.string().optional().default(""),
- vocab_refs: z.array(z.string()).optional().default([]),
- grammar_refs: z.array(z.string()).optional().default([]),
- notes: z.array(z.string()).optional().default([]),
-}).passthrough();
+export const TextLineSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  speaker: z.string().optional().default(""),
+  zh: z.string(),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  audio_key: z.string().optional().default(""),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+  notes: z.array(z.string()).optional().default([]),
+ })
+ .passthrough();
 
-export const TextSceneSchema = z.object({
- id: z.string(),
- order: z.number().int().positive(),
- summary_vi: z.string().optional().default(""),
- lines: z.array(TextLineSchema),
-}).passthrough();
+export const TextSceneSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  summary_vi: z.string().optional().default(""),
+  lines: z.array(TextLineSchema),
+ })
+ .passthrough();
 
-export const TextDialogueBlockSchema = z.object({
- id: z.string(),
- type: z.literal("text_dialogue"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- scenes: z.array(TextSceneSchema).optional().default([]),
- lines: z.array(TextLineSchema).optional().default([]),
- comprehension_questions: z.array(z.unknown()).optional().default([]),
-}).passthrough();
+export const TextDialogueBlockSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text_dialogue"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  scenes: z.array(TextSceneSchema).optional().default([]),
+  lines: z.array(TextLineSchema).optional().default([]),
+  comprehension_questions: z.array(z.unknown()).optional().default([]),
+ })
+ .passthrough();
 
-export const TextParagraphSchema = z.object({
- id: z.string(),
- order: z.number().int().positive(),
- zh: z.string(),
- pinyin: z.string().optional().default(""),
- vi: z.string().optional().default(""),
- audio_key: z.string().optional().default(""),
- vocab_refs: z.array(z.string()).optional().default([]),
- grammar_refs: z.array(z.string()).optional().default([]),
-}).passthrough();
+export const TextParagraphSchema = z
+ .object({
+  id: z.string(),
+  order: z.number().int().positive(),
+  zh: z.string(),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  audio_key: z.string().optional().default(""),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+ })
+ .passthrough();
 
-export const TextNarrativeBlockSchema = z.object({
- id: z.string(),
- type: z.literal("text_narrative"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- paragraphs: z.array(TextParagraphSchema).optional().default([]),
- lines: z.array(TextLineSchema).optional().default([]),
- comprehension_questions: z.array(z.unknown()).optional().default([]),
-}).passthrough();
+export const TextNarrativeBlockSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text_narrative"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  paragraphs: z.array(TextParagraphSchema).optional().default([]),
+  lines: z.array(TextLineSchema).optional().default([]),
+  comprehension_questions: z.array(z.unknown()).optional().default([]),
+ })
+ .passthrough();
 
 export const TextBlockSchema = z.discriminatedUnion("type", [
  TextDialogueBlockSchema,
@@ -222,46 +236,45 @@ export const FlashcardSchema = z.object({
  front: z.string(),
  back: z.string(),
  modes: z.array(
-  z.enum([
-   "hanzi_to_meaning",
-   "meaning_to_hanzi",
-   "pinyin_to_hanzi",
-   "audio_to_hanzi",
-  ]),
+  z.enum(["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi", "audio_to_hanzi"]),
  ),
 });
 
-export const VocabularyItemSchema = z.object({
- id: z.string(),
- type: z.literal("vocabulary_item"),
- order: z.number().int().positive(),
- hanzi: z.string(),
- pinyin: z.string().optional().default(""),
- meaning_vi: z.string(),
- meaning_en: z.string().optional().default(""),
- pos: PartOfSpeechSchema.optional().default("unknown"),
- tags: z.array(z.string()).optional().default([]),
- examples: z.array(VocabularyExampleSchema).optional().default([]),
- flashcard: FlashcardSchema.optional(),
- audio_key: z.string().optional().default(""),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const VocabularyItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("vocabulary_item"),
+  order: z.number().int().positive(),
+  hanzi: z.string(),
+  pinyin: z.string().optional().default(""),
+  meaning_vi: z.string(),
+  meaning_en: z.string().optional().default(""),
+  pos: PartOfSpeechSchema.optional().default("unknown"),
+  tags: z.array(z.string()).optional().default([]),
+  examples: z.array(VocabularyExampleSchema).optional().default([]),
+  flashcard: FlashcardSchema.optional(),
+  audio_key: z.string().optional().default(""),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Notes section                                                              */
 /* -------------------------------------------------------------------------- */
 
-export const NoteItemSchema = z.object({
- id: z.string(),
- type: z.literal("note"),
- order: z.number().int().positive(),
- title: z.string(),
- structure: z.string().optional().default(""),
- meaning_vi: z.string(),
- examples: z.array(ExampleSchema).optional().default([]),
- source_refs: z.array(z.string()).optional().default([]),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const NoteItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("note"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  structure: z.string().optional().default(""),
+  meaning_vi: z.string(),
+  examples: z.array(ExampleSchema).optional().default([]),
+  source_refs: z.array(z.string()).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Grammar section                                                            */
@@ -410,26 +423,25 @@ export const GrammarBlockSchema = z
  ])
  .or(GenericGrammarBlockSchema);
 
-const GrammarPointBaseSchema = z.object({
- id: z.string(),
- type: z.literal("grammar_point"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- level: z.string().optional().default(""),
- tags: z.array(z.string()).optional().default([]),
- blocks: z.array(GrammarBlockSchema),
-}).passthrough();
+const GrammarPointBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("grammar_point"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  level: z.string().optional().default(""),
+  tags: z.array(z.string()).optional().default([]),
+  blocks: z.array(GrammarBlockSchema),
+ })
+ .passthrough();
 
 export const GrammarPointSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
  const currentType = optionalString(record.type);
  const blocks = optionalArray(record.blocks);
 
- if (
-  (currentType !== "grammar_item" && currentType !== "grammar_point") ||
-  blocks.length > 0
- ) {
+ if ((currentType !== "grammar_item" && currentType !== "grammar_point") || blocks.length > 0) {
   return currentType === "grammar_item" ? { ...record, type: "grammar_point" } : value;
  }
 
@@ -461,21 +473,23 @@ export const GrammarPointSchema = z.preprocess((value) => {
 /* Exercises                                                                  */
 /* -------------------------------------------------------------------------- */
 
-export const ExerciseBaseSchema = z.object({
- id: z.string(),
- type: z.string(),
- variant: z.string().optional().default(""),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
- difficulty: z.enum(["easy", "normal", "hard"]).optional().default("normal"),
- skill_focus: z.array(z.string()).optional().default([]),
- grammar_refs: z.array(z.string()).optional().default([]),
- vocab_refs: z.array(z.string()).optional().default([]),
- rendering: RenderingSchema.optional(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ExerciseBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.string(),
+  variant: z.string().optional().default(""),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
+  difficulty: z.enum(["easy", "normal", "hard"]).optional().default("normal"),
+  skill_focus: z.array(z.string()).optional().default([]),
+  grammar_refs: z.array(z.string()).optional().default([]),
+  vocab_refs: z.array(z.string()).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const PhoneticsPairSchema = z.object({
  id: z.string(),
@@ -599,10 +613,7 @@ export const CompleteDialogueSampleAnswerSchema = z.object({
 export const CompleteDialogueItemSchema = z.object({
  id: z.string(),
  lines: z.array(CompleteDialogueLineSchema),
- sample_answers: z
-  .array(CompleteDialogueSampleAnswerSchema)
-  .optional()
-  .default([]),
+ sample_answers: z.array(CompleteDialogueSampleAnswerSchema).optional().default([]),
  grading: GradingSchema.optional(),
 });
 
@@ -667,10 +678,7 @@ export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  function: z.string().optional().default(""),
  function_vi: z.string().optional().default(""),
  dialogue: z.array(CommunicationDialogueLineSchema),
- practice_tasks: z
-  .array(CommunicationPracticeTaskSchema)
-  .optional()
-  .default([]),
+ practice_tasks: z.array(CommunicationPracticeTaskSchema).optional().default([]),
 });
 
 export const GenericExerciseSchema = ExerciseBaseSchema.passthrough();
@@ -711,21 +719,23 @@ export const ReadingParagraphSchema = z.object({
  vocab_refs: z.array(z.string()).optional().default([]),
 });
 
-export const ReadingTextItemSchema = z.object({
- id: z.string(),
- type: z.literal("reading_text"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- supplementary_words: z.array(SupplementaryWordSchema).optional().default([]),
- paragraphs: z.array(ReadingParagraphSchema).optional().default([]),
- text: z.string().optional().default(""),
- pinyin: z.string().optional().default(""),
- vi: z.string().optional().default(""),
- questions: z.array(z.unknown()).optional().default([]),
- answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ReadingTextItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_text"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  supplementary_words: z.array(SupplementaryWordSchema).optional().default([]),
+  paragraphs: z.array(ReadingParagraphSchema).optional().default([]),
+  text: z.string().optional().default(""),
+  pinyin: z.string().optional().default(""),
+  vi: z.string().optional().default(""),
+  questions: z.array(z.unknown()).optional().default([]),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const ReadingShortAnswerQuestionSchema = z.object({
  id: z.string(),
@@ -742,18 +752,20 @@ export const ReadingShortAnswerQuestionSchema = z.object({
  grading: GradingSchema.optional(),
 });
 
-export const ReadingShortAnswerItemSchema = z.object({
- id: z.string(),
- type: z.literal("reading_short_answer"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- source_text_ref: z.string(),
- questions: z.array(ReadingShortAnswerQuestionSchema),
- answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
- rendering: RenderingSchema.optional(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ReadingShortAnswerItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_short_answer"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(ReadingShortAnswerQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const ReadingTrueFalseQuestionSchema = z.object({
  id: z.string(),
@@ -767,18 +779,20 @@ export const ReadingTrueFalseQuestionSchema = z.object({
  explanation_vi: z.string().optional().default(""),
 });
 
-export const ReadingTrueFalseItemSchema = z.object({
- id: z.string(),
- type: z.literal("reading_true_false"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- source_text_ref: z.string(),
- questions: z.array(ReadingTrueFalseQuestionSchema),
- answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
- rendering: RenderingSchema.optional(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ReadingTrueFalseItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_true_false"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(ReadingTrueFalseQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const ClozeTextSegmentSchema = z.object({
  id: z.string(),
@@ -810,33 +824,37 @@ export const ClozeAnswerSchema = z.object({
  grammar_refs: z.array(z.string()).optional().default([]),
 });
 
-export const ReadingClozeItemSchema = z.object({
- id: z.string(),
- type: z.literal("reading_cloze"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
- word_bank: z.array(z.string()).optional().default([]),
- passage: ClozePassageSchema,
- answers: z.array(ClozeAnswerSchema),
- answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
- rendering: RenderingSchema.optional(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ReadingClozeItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_cloze"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  instruction: InstructionSchema.optional().default({ zh: "", vi: "" }),
+  word_bank: z.array(z.string()).optional().default([]),
+  passage: ClozePassageSchema,
+  answers: z.array(ClozeAnswerSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
-export const ReadingMultipleChoiceItemSchema = z.object({
- id: z.string(),
- type: z.literal("reading_multiple_choice"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- source_text_ref: z.string(),
- questions: z.array(MultipleChoiceQuestionSchema),
- answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
- rendering: RenderingSchema.optional(),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const ReadingMultipleChoiceItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading_multiple_choice"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  source_text_ref: z.string(),
+  questions: z.array(MultipleChoiceQuestionSchema),
+  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
+  rendering: RenderingSchema.optional(),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 export const GenericReadingItemSchema = z
  .object({
@@ -863,64 +881,74 @@ export const ReadingItemSchema = z
 /* Character writing section                                                  */
 /* -------------------------------------------------------------------------- */
 
-export const CharacterWritingItemSchema = z.object({
- id: z.string(),
- type: z.string().optional().default("character_writing_item"),
- order: z.number().int().positive(),
- hanzi: z.string().optional().default(""),
- pinyin: z.string().optional().default(""),
- vocab_ref: z.string().optional().default(""),
- stroke_count: z.number().int().positive().nullable().optional(),
- radical: z.string().optional().default(""),
- stroke_order_key: z.string().optional().default(""),
- practice: z
-  .object({
-   grid_type: z.string().optional().default("田字格"),
-   repeat_count: z.number().int().positive().optional().default(6),
-  })
-  .optional()
-  .default({ grid_type: "田字格", repeat_count: 6 }),
-}).passthrough();
+export const CharacterWritingItemSchema = z
+ .object({
+  id: z.string(),
+  type: z.string().optional().default("character_writing_item"),
+  order: z.number().int().positive(),
+  hanzi: z.string().optional().default(""),
+  pinyin: z.string().optional().default(""),
+  vocab_ref: z.string().optional().default(""),
+  stroke_count: z.number().int().positive().nullable().optional(),
+  radical: z.string().optional().default(""),
+  stroke_order_key: z.string().optional().default(""),
+  practice: z
+   .object({
+    grid_type: z.string().optional().default("田字格"),
+    repeat_count: z.number().int().positive().optional().default(6),
+   })
+   .optional()
+   .default({ grid_type: "田字格", repeat_count: 6 }),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Sections                                                                   */
 /* -------------------------------------------------------------------------- */
 
-export const TextSectionSchema = z.object({
- id: z.string(),
- type: z.literal("text"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- blocks: z.array(TextBlockSchema),
-}).passthrough();
+export const TextSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("text"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  blocks: z.array(TextBlockSchema),
+ })
+ .passthrough();
 
-export const VocabularySectionSchema = z.object({
- id: z.string(),
- type: z.literal("vocabulary"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(VocabularyItemSchema),
-}).passthrough();
+export const VocabularySectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("vocabulary"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(VocabularyItemSchema),
+ })
+ .passthrough();
 
-export const NotesSectionSchema = z.object({
- id: z.string(),
- type: z.literal("notes"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(NoteItemSchema),
-}).passthrough();
+export const NotesSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("notes"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(NoteItemSchema),
+ })
+ .passthrough();
 
-const GrammarSectionBaseSchema = z.object({
- id: z.string(),
- type: z.literal("grammar"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(GrammarPointSchema),
-}).passthrough();
+const GrammarSectionBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("grammar"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(GrammarPointSchema),
+ })
+ .passthrough();
 
 export const GrammarSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -953,23 +981,27 @@ export const GrammarSectionSchema = z.preprocess((value) => {
   : value;
 }, GrammarSectionBaseSchema);
 
-export const ExercisesSectionSchema = z.object({
- id: z.string(),
- type: z.literal("exercises"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(ExerciseSchema),
-}).passthrough();
+export const ExercisesSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("exercises"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(ExerciseSchema),
+ })
+ .passthrough();
 
-const ReadingSectionBaseSchema = z.object({
- id: z.string(),
- type: z.literal("reading"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(ReadingItemSchema),
-}).passthrough();
+const ReadingSectionBaseSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("reading"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(ReadingItemSchema),
+ })
+ .passthrough();
 
 export const ReadingSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -1002,9 +1034,7 @@ export const ReadingSectionSchema = z.preprocess((value) => {
   "retell_outline",
   "sample_retelling",
  ];
- const hasRootPayload = rootReadingPayloadKeys.some((key) =>
-  hasTextLikeValue(record[key]),
- );
+ const hasRootPayload = rootReadingPayloadKeys.some((key) => hasTextLikeValue(record[key]));
 
  return hasRootPayload
   ? {
@@ -1023,14 +1053,16 @@ export const ReadingSectionSchema = z.preprocess((value) => {
   : value;
 }, ReadingSectionBaseSchema);
 
-export const CharacterWritingSectionSchema = z.object({
- id: z.string(),
- type: z.literal("character_writing"),
- order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().optional().default(""),
- items: z.array(CharacterWritingItemSchema),
-}).passthrough();
+export const CharacterWritingSectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("character_writing"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(CharacterWritingItemSchema),
+ })
+ .passthrough();
 
 export const ProperNounsSectionSchema = z
  .object({
@@ -1116,18 +1148,13 @@ function normalizeSectionInput(value: unknown): unknown {
      ...item,
      id: optionalString(item.id) || `${id}_character_${index + 1}`,
      type: optionalString(item.type) || "character_writing_item",
-     order:
-      typeof item.order === "number" && Number.isFinite(item.order)
-       ? item.order
-       : index + 1,
+     order: typeof item.order === "number" && Number.isFinite(item.order) ? item.order : index + 1,
     };
    }),
   };
  }
 
- return normalizedType && normalizedType !== type
-  ? { ...record, type: normalizedType }
-  : value;
+ return normalizedType && normalizedType !== type ? { ...record, type: normalizedType } : value;
 }
 
 export const SectionSchema = z.preprocess(
@@ -1155,51 +1182,58 @@ export const SummaryGrammarPointSchema = z.object({
  title: z.string(),
 });
 
-export const SummaryPatternSchema = z.object({
- pattern: z.string(),
- grammar_ref: z.string().optional().default(""),
-})
+export const SummaryPatternSchema = z
+ .object({
+  pattern: z.string(),
+  grammar_ref: z.string().optional().default(""),
+ })
  .passthrough();
 
-export const LessonSummarySchema = z.object({
- lesson_parts: z.array(z.string()).optional().default([]),
- grammar_points: z.array(SummaryGrammarPointSchema).optional().default([]),
- main_patterns: z
-  .array(z.union([SummaryPatternSchema, z.string()]))
-  .optional()
-  .default([]),
- exercise_types: z.array(z.string()).optional().default([]),
- check_needed: z.boolean().optional().default(false),
-}).passthrough();
+export const LessonSummarySchema = z
+ .object({
+  lesson_parts: z.array(z.string()).optional().default([]),
+  grammar_points: z.array(SummaryGrammarPointSchema).optional().default([]),
+  main_patterns: z
+   .array(z.union([SummaryPatternSchema, z.string()]))
+   .optional()
+   .default([]),
+  exercise_types: z.array(z.string()).optional().default([]),
+  check_needed: z.boolean().optional().default(false),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Final lesson schema                                                        */
 /* -------------------------------------------------------------------------- */
 
-export const LessonSchema = z.object({
- id: z.string(),
- title: LocalizedTextSchema,
- tags: z.array(z.string()).optional().default([]),
- metadata: LessonMetadataSchema.optional(),
- sections: z.array(SectionSchema),
- summary: LessonSummarySchema.optional().default({
-  lesson_parts: [],
-  grammar_points: [],
-  main_patterns: [],
-  exercise_types: [],
-  check_needed: false,
- }),
-}).passthrough();
+export const LessonSchema = z
+ .object({
+  id: z.string(),
+  title: LocalizedTextSchema,
+  tags: z.array(z.string()).optional().default([]),
+  metadata: LessonMetadataSchema.optional(),
+  sections: z.array(SectionSchema),
+  summary: LessonSummarySchema.optional().default({
+   lesson_parts: [],
+   grammar_points: [],
+   main_patterns: [],
+   exercise_types: [],
+   check_needed: false,
+  }),
+ })
+ .passthrough();
 
-export const HanyuLessonSchema = z.object({
- schema_version: z.string().min(1).optional(),
- content_type: z.literal("chinese_textbook_lesson").optional(),
- verification_status: z.string().optional(),
- source: SourceSchema.optional(),
- lesson: LessonSchema,
- coverage_report: z.unknown().optional(),
- schema_extension_notes: z.unknown().optional(),
-}).passthrough();
+export const HanyuLessonSchema = z
+ .object({
+  schema_version: z.string().min(1).optional(),
+  content_type: z.literal("chinese_textbook_lesson").optional(),
+  verification_status: z.string().optional(),
+  source: SourceSchema.optional(),
+  lesson: LessonSchema,
+  coverage_report: z.unknown().optional(),
+  schema_extension_notes: z.unknown().optional(),
+ })
+ .passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Exported TypeScript types                                                  */

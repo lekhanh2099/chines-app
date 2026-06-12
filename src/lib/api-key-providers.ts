@@ -30,23 +30,15 @@ export const API_KEY_PROVIDER_OPTIONS = [
 export type ApiKeyProvider = (typeof API_KEY_PROVIDER_OPTIONS)[number]["value"];
 
 export function getApiKeyProviderLabel(provider?: string | null): string {
- return (
-  API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.label ||
-  "Unknown"
- );
+ return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.label || "Unknown";
 }
 
-export function isSupportedApiKeyProvider(
- provider?: string | null,
-): provider is ApiKeyProvider {
+export function isSupportedApiKeyProvider(provider?: string | null): provider is ApiKeyProvider {
  return API_KEY_PROVIDER_OPTIONS.some((option) => option.value === provider);
 }
 
 export function getApiKeyProviderDocsUrl(provider: ApiKeyProvider): string {
- return (
-  API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)
-   ?.docsUrl || "#"
- );
+ return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.docsUrl || "#";
 }
 
 export function getMaskedApiKey(apiKey: string): string {

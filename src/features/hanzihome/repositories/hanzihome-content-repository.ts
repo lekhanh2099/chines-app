@@ -28,9 +28,7 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 
 export type HanzihomeContentRepository = {
- getCatalogSummary: (options?: {
-  includeLessons?: boolean;
- }) => HanziHomeCatalogData;
+ getCatalogSummary: (options?: { includeLessons?: boolean }) => HanziHomeCatalogData;
  getCourseLessonSummaries: (courseId: string) => HanziHomeLesson[];
  getLessonOverview: (lessonId: string) => LessonOverviewResource | null;
  getLessonDetail: (lessonId: string | null | undefined) => HanziHomeLesson | null;
@@ -51,9 +49,7 @@ function matchesTextQuery(values: string[], query: string) {
  const normalizedQuery = query.trim().toLocaleLowerCase("vi-VN");
  if (!normalizedQuery) return true;
 
- return values.some((value) =>
-  value.toLocaleLowerCase("vi-VN").includes(normalizedQuery),
- );
+ return values.some((value) => value.toLocaleLowerCase("vi-VN").includes(normalizedQuery));
 }
 
 function getFilteredLessons(filters: AggregateFilters) {
@@ -66,11 +62,9 @@ function getFilteredLessons(filters: AggregateFilters) {
 }
 
 export const staticHanzihomeContentRepository: HanzihomeContentRepository = {
- getCatalogSummary: ({ includeLessons = false } = {}) =>
-  getHanziHomeCatalogSummary(includeLessons),
+ getCatalogSummary: ({ includeLessons = false } = {}) => getHanziHomeCatalogSummary(includeLessons),
 
- getCourseLessonSummaries: (courseId) =>
-  getHanziHomeCourseLessonSummaries(courseId),
+ getCourseLessonSummaries: (courseId) => getHanziHomeCourseLessonSummaries(courseId),
 
  getLessonOverview: (lessonId) => {
   const lesson = getHanziHomeLessonDetail(lessonId);
@@ -87,9 +81,7 @@ export const staticHanzihomeContentRepository: HanzihomeContentRepository = {
 
  getLessonSection: (sectionId) => {
   for (const lesson of getHanziHomeData().lessons) {
-   const section = lesson.sourceLesson?.lesson.sections.find(
-    (item) => item.id === sectionId,
-   );
+   const section = lesson.sourceLesson?.lesson.sections.find((item) => item.id === sectionId);
 
    if (section) return section;
   }
@@ -105,9 +97,7 @@ export const staticHanzihomeContentRepository: HanzihomeContentRepository = {
 
  getVocabDetail: (vocabId) => {
   for (const lesson of getHanziHomeData().lessons) {
-   const item = lesson.vocab.find(
-    (vocab) => vocab.runtimeId === vocabId || vocab.id === vocabId,
-   );
+   const item = lesson.vocab.find((vocab) => vocab.runtimeId === vocabId || vocab.id === vocabId);
 
    if (item) return item;
   }
@@ -137,35 +127,30 @@ export const staticHanzihomeContentRepository: HanzihomeContentRepository = {
   if (kind === "vocab") {
    return lessons.flatMap((lesson) =>
     lesson.vocab
-     .map((item): AggregateVocabItem => ({
-      id: item.runtimeId,
-      courseId: lesson.courseId || "",
-      bookId: lesson.bookId || "",
-      lessonId: lesson.id,
-      lessonNumber: lesson.lessonNumber,
-      lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
-      lessonTitle: lesson.titleZh || lesson.title,
-      word: item.hanzi,
-      pinyin: item.pinyin,
-      hanViet: item.meaning.hanviet || "",
-      meaning: item.meaning.meaning_vi,
-      category: item.category,
-      level: item.level_tag,
-      pos: {
-       vi: item.pos.raw_vi || item.pos.normalized,
-       zh: item.pos.raw_cn || item.pos.normalized,
-      },
-     }))
+     .map(
+      (item): AggregateVocabItem => ({
+       id: item.runtimeId,
+       courseId: lesson.courseId || "",
+       bookId: lesson.bookId || "",
+       lessonId: lesson.id,
+       lessonNumber: lesson.lessonNumber,
+       lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
+       lessonTitle: lesson.titleZh || lesson.title,
+       word: item.hanzi,
+       pinyin: item.pinyin,
+       hanViet: item.meaning.hanviet || "",
+       meaning: item.meaning.meaning_vi,
+       category: item.category,
+       level: item.level_tag,
+       pos: {
+        vi: item.pos.raw_vi || item.pos.normalized,
+        zh: item.pos.raw_cn || item.pos.normalized,
+       },
+      }),
+     )
      .filter((item) =>
       matchesTextQuery(
-       [
-        item.word,
-        item.pinyin,
-        item.hanViet,
-        item.meaning,
-        item.category,
-        item.lessonTitle,
-       ],
+       [item.word, item.pinyin, item.hanViet, item.meaning, item.category, item.lessonTitle],
        filters.q,
       ),
      ),
@@ -174,23 +159,22 @@ export const staticHanzihomeContentRepository: HanzihomeContentRepository = {
 
   return lessons.flatMap((lesson) =>
    lesson.grammar
-    .map((item): AggregateGrammarItem => ({
-     id: item.id,
-     courseId: lesson.courseId || "",
-     bookId: lesson.bookId || "",
-     lessonId: lesson.id,
-     lessonNumber: lesson.lessonNumber,
-     lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
-     lessonTitle: lesson.titleZh || lesson.title,
-     title: item.title || item.cleanTitle,
-     cleanTitle: item.cleanTitle,
-     core: item.core,
-    }))
+    .map(
+     (item): AggregateGrammarItem => ({
+      id: item.id,
+      courseId: lesson.courseId || "",
+      bookId: lesson.bookId || "",
+      lessonId: lesson.id,
+      lessonNumber: lesson.lessonNumber,
+      lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
+      lessonTitle: lesson.titleZh || lesson.title,
+      title: item.title || item.cleanTitle,
+      cleanTitle: item.cleanTitle,
+      core: item.core,
+     }),
+    )
     .filter((item) =>
-     matchesTextQuery(
-      [item.title, item.cleanTitle, item.core, item.lessonTitle],
-      filters.q,
-     ),
+     matchesTextQuery([item.title, item.cleanTitle, item.core, item.lessonTitle], filters.q),
     ),
   );
  },

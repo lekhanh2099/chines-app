@@ -34,11 +34,9 @@ export function LessonModuleSidebarItem({
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
    <span className="min-w-0 flex-1">
-    <span className="block line-clamp-2 text-sm font-black">{title}</span>
+    <span className="block line-clamp-2  font-black">{title}</span>
     {subtitle && (
-     <span className="mt-0.5 block line-clamp-2 text-xs font-semibold opacity-80">
-      {subtitle}
-     </span>
+     <span className="mt-0.5 block line-clamp-2 text-xs font-semibold opacity-80">{subtitle}</span>
     )}
    </span>
    {marker && <span className="shrink-0 text-xs font-bold">{marker}</span>}

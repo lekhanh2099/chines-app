@@ -12,12 +12,8 @@ import {
  type HanyuLesson,
  type Section,
 } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import {
- DeepVocabularyItemSchema,
-} from "@/features/hanzihome/static-json/schemas/vocab.schema";
-import {
- requireHanziHomeDbJson,
-} from "@/features/hanzihome/static-json/hanzihome-db-static-json";
+import { DeepVocabularyItemSchema } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import { requireHanziHomeDbJson } from "@/features/hanzihome/static-json/hanzihome-db-static-json";
 import type {
  DbDatasetManifest,
  DbLessonManifestItem,
@@ -54,10 +50,10 @@ type DbLessonBundle = {
  bookTitle: string;
  bookOrder: number;
  lessonNumber: number;
-  lessonOrder: number;
-  lessonMeta: DbLessonMeta;
-  sectionIndex: Array<{ id?: string; file: string }>;
-  sections: DbSectionPayload[];
+ lessonOrder: number;
+ lessonMeta: DbLessonMeta;
+ sectionIndex: Array<{ id?: string; file: string }>;
+ sections: DbSectionPayload[];
  vocabularyIndex: DbVocabularyIndexItem[];
  vocabularyItems: DbVocabularyItemPayload[];
  vocabularyGroups: Array<Record<string, unknown>>;
@@ -79,8 +75,7 @@ type RuntimeLessonEntry = {
 
 type NormalizedPos = HanziHomeVocabItem["pos"]["normalized"];
 
-const rootManifest =
- requireHanziHomeDbJson<DbRootManifest>("manifest.json");
+const rootManifest = requireHanziHomeDbJson<DbRootManifest>("manifest.json");
 
 const partOfSpeechValues = new Set<NormalizedPos>([
  "noun",
@@ -195,24 +190,18 @@ function loadLessonBundle(
  lesson: DbLessonManifestItem,
 ): DbLessonBundle {
  const basePath = joinDbPath(dataset, lesson.folder);
- const lessonMeta = requireHanziHomeDbJson<DbLessonMeta>(
-  joinDbPath(basePath, "lesson.json"),
- );
+ const lessonMeta = requireHanziHomeDbJson<DbLessonMeta>(joinDbPath(basePath, "lesson.json"));
  const sectionIndex = requireHanziHomeDbJson<Array<{ file: string }>>(
   joinDbPath(basePath, "sections/index.json"),
  );
  const sections = sectionIndex.map((section) =>
-  requireHanziHomeDbJson<DbSectionPayload>(
-   joinDbPath(basePath, "sections", section.file),
-  ),
+  requireHanziHomeDbJson<DbSectionPayload>(joinDbPath(basePath, "sections", section.file)),
  );
  const vocabularyIndex = requireHanziHomeDbJson<DbVocabularyIndexItem[]>(
   joinDbPath(basePath, "vocabulary/index.json"),
  );
  const vocabularyItems = vocabularyIndex.map((item) =>
-  requireHanziHomeDbJson<DbVocabularyItemPayload>(
-   joinDbPath(basePath, item.file),
-  ),
+  requireHanziHomeDbJson<DbVocabularyItemPayload>(joinDbPath(basePath, item.file)),
  );
  const vocabularyGroups = requireHanziHomeDbJson<Array<Record<string, unknown>>>(
   joinDbPath(basePath, "vocabulary/groups.json"),
@@ -235,20 +224,11 @@ function loadLessonBundle(
   vocabularyGroups,
   relations: {
    all: loadRelationFile(basePath, "all.json"),
-   contentToVocabulary: loadRelationFile(
-    basePath,
-    "content-to-vocabulary-item.json",
-   ),
+   contentToVocabulary: loadRelationFile(basePath, "content-to-vocabulary-item.json"),
    contentToGrammar: loadRelationFile(basePath, "content-to-grammar.json"),
-   lessonVocabToVocabulary: loadRelationFile(
-    basePath,
-    "lesson-vocab-to-vocabulary-item.json",
-   ),
-   vocabGroupToVocabulary: loadRelationFile(
-    basePath,
-    "vocab-group-to-vocabulary-item.json",
-   ),
- },
+   lessonVocabToVocabulary: loadRelationFile(basePath, "lesson-vocab-to-vocabulary-item.json"),
+   vocabGroupToVocabulary: loadRelationFile(basePath, "vocab-group-to-vocabulary-item.json"),
+  },
  };
 }
 
@@ -272,19 +252,17 @@ function buildSourceLesson(bundle: DbLessonBundle): HanyuLesson {
 
  if (!parsed.success) {
   throw new Error(
-   `Invalid HanziHome DB lesson ${bundle.dataset}/lesson_${String(
-    bundle.lessonNumber,
-   ).padStart(2, "0")}: ${parsed.error.message}`,
+   `Invalid HanziHome DB lesson ${bundle.dataset}/lesson_${String(bundle.lessonNumber).padStart(
+    2,
+    "0",
+   )}: ${parsed.error.message}`,
   );
  }
 
  return parsed.data;
 }
 
-function getCategoryForWord(
- groups: Array<Record<string, unknown>>,
- item: DbVocabularyItemPayload,
-) {
+function getCategoryForWord(groups: Array<Record<string, unknown>>, item: DbVocabularyItemPayload) {
  const hanzi = recordString(item, "hanzi");
  const matchingGroup = groups
   .map((group) => unknownRecord(group))
@@ -463,9 +441,7 @@ function renderLessonOverviewMarkdown(sourceLesson: HanyuLesson) {
 }
 
 function renderTextSection(sourceLesson: HanyuLesson) {
- const textSection = sourceLesson.lesson.sections.find(
-  (section) => section.type === "text",
- );
+ const textSection = sourceLesson.lesson.sections.find((section) => section.type === "text");
 
  if (!textSection || !("blocks" in textSection)) return "";
 
@@ -483,9 +459,7 @@ function renderTextSection(sourceLesson: HanyuLesson) {
        recordString(line, "speaker")
         ? `**${recordString(line, "speaker")}:** ${recordString(line, "zh")}`
         : recordString(line, "zh"),
-       recordString(line, "pinyin")
-        ? `_${recordString(line, "pinyin")}_`
-        : undefined,
+       recordString(line, "pinyin") ? `_${recordString(line, "pinyin")}_` : undefined,
        recordString(line, "vi"),
       ]),
      );
@@ -544,14 +518,10 @@ function renderGrammarBlockDetailLines(block: GrammarBlock) {
 
  return [
   recordString(record, "content_vi"),
-  recordString(record, "pattern")
-   ? `Cấu trúc: ${recordString(record, "pattern")}`
-   : "",
+  recordString(record, "pattern") ? `Cấu trúc: ${recordString(record, "pattern")}` : "",
   recordString(record, "meaning_vi"),
   ...formulas.map((formula) =>
-   [recordString(formula, "label"), recordString(formula, "pattern")]
-    .filter(Boolean)
-    .join(": "),
+   [recordString(formula, "label"), recordString(formula, "pattern")].filter(Boolean).join(": "),
   ),
   ...notes,
   ...items.flatMap(renderGrammarBlockItem),
@@ -570,8 +540,7 @@ function getGrammarPointCore(point: GrammarPoint) {
 
  for (const block of point.blocks) {
   const record = unknownRecord(block);
-  const content =
-   recordString(record, "content_vi") || recordString(record, "meaning_vi");
+  const content = recordString(record, "content_vi") || recordString(record, "meaning_vi");
 
   if (content) return content;
  }
@@ -601,8 +570,7 @@ function renderGrammarBlock(block: GrammarBlock) {
  if (formulas.length > 0) {
   lines.push(
    ...formulas.map(
-    (formula) =>
-     `- **${recordString(formula, "label")}:** ${recordString(formula, "pattern")}`,
+    (formula) => `- **${recordString(formula, "label")}:** ${recordString(formula, "pattern")}`,
    ),
   );
  }
@@ -612,9 +580,7 @@ function renderGrammarBlock(block: GrammarBlock) {
    ...examples.flatMap((example) =>
     joinLines([
      recordString(example, "zh"),
-     recordString(example, "pinyin")
-      ? `_${recordString(example, "pinyin")}_`
-      : "",
+     recordString(example, "pinyin") ? `_${recordString(example, "pinyin")}_` : "",
      recordString(example, "vi"),
     ]),
    ),
@@ -639,9 +605,7 @@ function buildLessonDocumentGrammarViewModels(
  lessonId: string,
  sourceLesson: HanyuLesson,
 ): GrammarViewModel[] {
- const grammarSection = sourceLesson.lesson.sections.find(
-  (section) => section.type === "grammar",
- );
+ const grammarSection = sourceLesson.lesson.sections.find((section) => section.type === "grammar");
 
  if (!grammarSection) return [];
 
@@ -662,8 +626,7 @@ function buildLessonDocumentGrammarViewModels(
     .map(unknownRecord)
     .map((example, index) => ({
      id:
-      recordString(example, "id") ||
-      `${lessonId}__${point.id}__${block.id}__example_${index + 1}`,
+      recordString(example, "id") || `${lessonId}__${point.id}__${block.id}__example_${index + 1}`,
      zh: recordString(example, "zh"),
      pinyin: recordString(example, "pinyin") || undefined,
      vi: recordString(example, "vi") || undefined,
@@ -690,13 +653,8 @@ function buildLessonDocumentGrammarViewModels(
 
 function getEntryVocabCategories(bundle: DbLessonBundle) {
  return bundle.vocabularyGroups.map((group) => ({
-  nameVi:
-   recordString(group, "title_vi") ||
-   recordString(group, "title") ||
-   "Từ vựng",
-  words: recordArray(group, "words").filter(
-   (word): word is string => typeof word === "string",
-  ),
+  nameVi: recordString(group, "title_vi") || recordString(group, "title") || "Từ vựng",
+  words: recordArray(group, "words").filter((word): word is string => typeof word === "string"),
  }));
 }
 
@@ -715,10 +673,7 @@ function buildLessonSummary(entry: RuntimeLessonEntry): HanziHomeLesson {
   ]),
  );
  const vocabularyItemFilesByRuntimeId = Object.fromEntries(
-  entry.vocab.map((item, index) => [
-   item.runtimeId,
-   bundle.vocabularyIndex[index]?.file ?? "",
-  ]),
+  entry.vocab.map((item, index) => [item.runtimeId, bundle.vocabularyIndex[index]?.file ?? ""]),
  );
  const vocabularyItemPayloadsByRuntimeId = Object.fromEntries(
   entry.vocab.map((item, index) => [item.runtimeId, bundle.vocabularyItems[index]]),
@@ -789,10 +744,7 @@ function buildRuntimeLessonEntries() {
    const bundle = loadLessonBundle(dataset, lesson);
    const sourceLesson = buildSourceLesson(bundle);
    const vocab = normalizeDbVocabItems(bundle);
-   const grammar = buildLessonDocumentGrammarViewModels(
-    bundle.lessonMeta.id,
-    sourceLesson,
-   );
+   const grammar = buildLessonDocumentGrammarViewModels(bundle.lessonMeta.id, sourceLesson);
 
    return { bundle, sourceLesson, vocab, grammar };
   });
@@ -806,17 +758,12 @@ function getStaticRadicals() {
  return [...radicalsData.radicals].sort((a, b) => a.index - b.index);
 }
 
-export function getHanziHomeCatalogSummary(
- includeLessons = false,
-): HanziHomeCatalogData {
+export function getHanziHomeCatalogSummary(includeLessons = false): HanziHomeCatalogData {
  const courses: HanziHomeCatalogCourse[] = hanzihomeCourses.map((course) => ({
   ...course,
   stats: {
-   bookCount: hanzihomeCourseBooks.filter((book) => book.courseId === course.id)
-    .length,
-   lessonCount: lessonSummaries.filter(
-    (lesson) => lesson.courseId === course.id,
-   ).length,
+   bookCount: hanzihomeCourseBooks.filter((book) => book.courseId === course.id).length,
+   lessonCount: lessonSummaries.filter((lesson) => lesson.courseId === course.id).length,
    vocabCount: lessonSummaries
     .filter((lesson) => lesson.courseId === course.id)
     .reduce((sum, lesson) => sum + (lesson.vocabCount ?? 0), 0),
@@ -824,18 +771,10 @@ export function getHanziHomeCatalogSummary(
     .filter((lesson) => lesson.courseId === course.id)
     .reduce((sum, lesson) => sum + (lesson.grammarCount ?? 0), 0),
   },
-  fallbackLessonId: lessonSummaries.find(
-   (lesson) => lesson.courseId === course.id,
-  )?.id,
+  fallbackLessonId: lessonSummaries.find((lesson) => lesson.courseId === course.id)?.id,
  }));
- const vocabCount = lessonSummaries.reduce(
-  (sum, lesson) => sum + (lesson.vocabCount ?? 0),
-  0,
- );
- const grammarCount = lessonSummaries.reduce(
-  (sum, lesson) => sum + (lesson.grammarCount ?? 0),
-  0,
- );
+ const vocabCount = lessonSummaries.reduce((sum, lesson) => sum + (lesson.vocabCount ?? 0), 0);
+ const grammarCount = lessonSummaries.reduce((sum, lesson) => sum + (lesson.grammarCount ?? 0), 0);
 
  return {
   source: "static",
@@ -869,9 +808,7 @@ export function getHanziHomeCourseLessonSummaries(courseId: string) {
 export function getHanziHomeLessonDetail(
  lessonId: string | null | undefined,
 ): HanziHomeLesson | null {
- const entry = runtimeLessonEntries.find(
-  (item) => item.bundle.lessonMeta.id === lessonId,
- );
+ const entry = runtimeLessonEntries.find((item) => item.bundle.lessonMeta.id === lessonId);
 
  return entry ? buildLessonDetail(entry) : null;
 }

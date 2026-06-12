@@ -39,4 +39,3 @@ export type HanziHomeFeatureRuntime = {
   result: ReviewResult,
  ) => void;
 };
-

@@ -45,12 +45,7 @@ export function getHanziHomeDbEditTargetPath(target: HanziHomeDbEditTarget) {
  assertSafeDataset(target.dataset);
  assertSafeLessonFolder(target.lessonFolder);
 
- const lessonBase = joinDbPath(
-  "data/hanzihome-db",
-  target.dataset,
-  "lessons",
-  target.lessonFolder,
- );
+ const lessonBase = joinDbPath("data/hanzihome-db", target.dataset, "lessons", target.lessonFolder);
 
  switch (target.kind) {
   case "lesson_meta":

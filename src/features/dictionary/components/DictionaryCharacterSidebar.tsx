@@ -29,11 +29,7 @@ function DictionaryCharacterSidebar({
 
  if (isLoading || !vocabData) {
   return (
-   <Card
-    variant="subtle"
-    padding="md"
-    className="rounded-2xl  text-sm text-text-muted"
-   >
+   <Card variant="subtle" padding="md" className="rounded-2xl   text-text-muted">
     <div className="flex items-center gap-2">
      <Loader2 className="h-4 w-4 animate-spin  " />
      Đang tải cấu tạo chữ...
@@ -44,10 +40,8 @@ function DictionaryCharacterSidebar({
 
  const ai = vocabData.ai_analysis;
  const radicals = getNormalizedRadicals(ai);
- const etymologyType =
-  typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
- const etymologyText =
-  typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
+ const etymologyType = typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
+ const etymologyText = typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
  const mnemonic_story = ai?.mnemonic_story;
 
  return (
@@ -60,7 +54,7 @@ function DictionaryCharacterSidebar({
       parentText !== selectedCharacter ? (
        <Link
         href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}
-        className="text-sm font-semibold   transition-colors hover: -hover"
+        className=" font-semibold   transition-colors hover: -hover"
        >
         Tra riêng
        </Link>
@@ -107,9 +101,7 @@ function DictionaryCharacterSidebar({
          </Badge>
         )}
        </div>
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {mnemonic_story || etymologyText}
-       </p>
+       <p className=" leading-relaxed text-text-secondary">{mnemonic_story || etymologyText}</p>
       </div>
      </Card>
     )}
@@ -147,26 +139,19 @@ function AnatomyOverview({
      {structureItems.length > 0 ? (
       <div className="flex flex-wrap items-center gap-2">
        {structureItems.map((item, index) => (
-        <div
-         key={`${item.symbol}-${item.label}-${index}`}
-         className="flex items-center gap-2"
-        >
+        <div key={`${item.symbol}-${item.label}-${index}`} className="flex items-center gap-2">
          <Card variant="default" padding="sm" className="rounded-2xl ">
           <div className="text-center">
            <p className="text-lg font-black text-text-primary">{item.symbol}</p>
-           {item.label && (
-            <p className="text-xs leading-tight text-text-muted">
-             {item.label}
-            </p>
-           )}
+           {item.label && <p className="text-xs leading-tight text-text-muted">{item.label}</p>}
           </div>
          </Card>
          {index < structureItems.length - 1 && (
-          <span className="text-sm font-bold text-text-muted">+</span>
+          <span className=" font-bold text-text-muted">+</span>
          )}
         </div>
        ))}
-       <span className="text-sm font-bold text-text-muted">=</span>
+       <span className=" font-bold text-text-muted">=</span>
        <Card
         variant="subtle"
         padding="sm"
@@ -177,9 +162,7 @@ function AnatomyOverview({
        </Card>
       </div>
      ) : (
-      <p className="text-sm text-text-muted">
-       Chưa có dữ liệu cấu tạo chi tiết.
-      </p>
+      <p className=" text-text-muted">Chưa có dữ liệu cấu tạo chi tiết.</p>
      )}
     </div>
    </Card>
@@ -200,7 +183,7 @@ function AnatomyOverview({
           {component.part || "?"}
          </span>
          <div className="min-w-0">
-          <p className="text-sm font-semibold text-text-primary">
+          <p className=" font-semibold text-text-primary">
            {component.name || component.meaning || "Thành phần phụ"}
           </p>
           {component.name && component.meaning && (

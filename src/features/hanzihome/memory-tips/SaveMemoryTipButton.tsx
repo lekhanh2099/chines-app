@@ -4,10 +4,7 @@ import { Lightbulb } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import {
- isDuplicateMemoryTipError,
- MemoryTipsApiError,
-} from "./memory-tip-api";
+import { isDuplicateMemoryTipError, MemoryTipsApiError } from "./memory-tip-api";
 import type { CreateMemoryTipPayload } from "./memory-tip.schema";
 import { useCreateMemoryTipMutation } from "./useMemoryTips";
 
@@ -16,10 +13,7 @@ type SaveMemoryTipButtonProps = {
  variant?: "outline" | "ghost";
 };
 
-export function SaveMemoryTipButton({
- payload,
- variant = "outline",
-}: SaveMemoryTipButtonProps) {
+export function SaveMemoryTipButton({ payload, variant = "outline" }: SaveMemoryTipButtonProps) {
  const createMutation = useCreateMemoryTipMutation();
 
  return (
@@ -37,11 +31,7 @@ export function SaveMemoryTipButton({
       return;
      }
 
-     toast.error(
-      error instanceof MemoryTipsApiError
-       ? error.message
-       : "Không thể lưu nhắc nhanh",
-     );
+     toast.error(error instanceof MemoryTipsApiError ? error.message : "Không thể lưu nhắc nhanh");
     }
    }}
   >

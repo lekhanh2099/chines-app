@@ -42,13 +42,11 @@ export function LessonHub({
   >
    <div className="flex w-full min-w-0 flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
     <div className="flex min-w-0 flex-col gap-2">
-     <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
-      Nguồn học
-     </p>
+     <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">Nguồn học</p>
      <h1 className="break-words text-3xl font-black leading-tight text-stone-950 sm:text-4xl">
       {title}
      </h1>
-     <p className="max-w-3xl break-words text-sm font-bold leading-6 text-stone-500 sm:text-base">
+     <p className="max-w-3xl break-words  font-bold leading-6 text-stone-500 sm:text-base">
       {description}
      </p>
     </div>
@@ -62,10 +60,8 @@ export function LessonHub({
        type="button"
        onClick={() => onSourceChange(item.key)}
        className={cn(
-        "h-11 min-w-0 truncate rounded-2xl -xl px-3 text-sm font-black transition",
-        source === item.key
-         ? "    shadow-theme-sm"
-         : "text-stone-600 hover:bg-white",
+        "h-11 min-w-0 truncate rounded-2xl -xl px-3  font-black transition",
+        source === item.key ? "    shadow-theme-sm" : "text-stone-600 hover:bg-white",
        )}
       >
        {item.label}
@@ -90,9 +86,7 @@ export function LessonHub({
          {lesson.title}
         </h2>
         {lesson.subtitle ? (
-         <p className="mt-2 line-clamp-2 text-sm font-bold leading-5 text-stone-500">
-          {lesson.subtitle}
-         </p>
+         <p className="mt-2 line-clamp-2  font-bold leading-5 text-stone-500">{lesson.subtitle}</p>
         ) : null}
        </div>
        <span className="shrink-0 rounded-2xl -full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
@@ -101,11 +95,7 @@ export function LessonHub({
       </div>
       <div className="mt-5 grid min-w-0 grid-cols-3 gap-2 text-xs font-black">
        <Metric icon={BookOpen} label="Từ" value={lesson.vocabularyCount || 0} />
-       <Metric
-        icon={Layers3}
-        label="Ngữ pháp"
-        value={lesson.grammarCount || 0}
-       />
+       <Metric icon={Layers3} label="Ngữ pháp" value={lesson.grammarCount || 0} />
        <Metric icon={Brain} label="Yếu" value={lesson.weakCount || 0} />
       </div>
      </Link>
@@ -127,9 +117,7 @@ function Metric({
  return (
   <div className="min-w-0 overflow-hidden rounded-2xlbg-white p-3 shadow-theme-sm">
    <Icon className="h-4 w-4 text-stone-500" />
-   <p className="mt-2 text-[11px] uppercase tracking-wide text-stone-400">
-    {label}
-   </p>
+   <p className="mt-2 text-[11px] uppercase tracking-wide text-stone-400">{label}</p>
    <p className="break-words text-lg text-stone-900">{value}</p>
   </div>
  );

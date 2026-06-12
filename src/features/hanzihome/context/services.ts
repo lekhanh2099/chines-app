@@ -2,10 +2,7 @@
 
 import type { HanziHomeDbEditTarget } from "@/features/hanzihome/editor/hanzihome-db-edit.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
-import type {
- DraftPatchPath,
- EditableNodeRequest,
-} from "@/features/hanzihome/editing/store/types";
+import type { DraftPatchPath, EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 
 export type ResolvedEditTarget = {
  target: HanziHomeDbEditTarget;
@@ -34,9 +31,7 @@ function resolveSectionTarget(
  const sectionIndex = numericSegment(path[2]);
  const dbSource = lesson.dbSource;
  const section =
-  sectionIndex === null
-   ? undefined
-   : lesson.sourceLesson?.lesson.sections[sectionIndex];
+  sectionIndex === null ? undefined : lesson.sourceLesson?.lesson.sections[sectionIndex];
  const sectionFile = section ? dbSource?.sectionFilesById[section.id] : "";
 
  if (!dbSource || !section || !sectionFile) return null;
@@ -79,11 +74,8 @@ function resolveVocabTarget(
 
  const vocabIndex = numericSegment(path[1]);
  const dbSource = lesson.dbSource;
- const runtimeId =
-  vocabIndex === null ? undefined : lesson.vocab[vocabIndex]?.runtimeId;
- const itemFile = runtimeId
-  ? dbSource?.vocabularyItemFilesByRuntimeId[runtimeId]
-  : "";
+ const runtimeId = vocabIndex === null ? undefined : lesson.vocab[vocabIndex]?.runtimeId;
+ const itemFile = runtimeId ? dbSource?.vocabularyItemFilesByRuntimeId[runtimeId] : "";
 
  if (!dbSource || !runtimeId || !itemFile) return null;
 
@@ -98,9 +90,7 @@ function resolveVocabTarget(
  };
 }
 
-export function createHanziHomeFeatureServices(
- lesson: HanziHomeLesson,
-): HanziHomeFeatureServices {
+export function createHanziHomeFeatureServices(lesson: HanziHomeLesson): HanziHomeFeatureServices {
  return {
   resolveEditTarget: (node) => {
    if (node.target) {
@@ -118,4 +108,3 @@ export function createHanziHomeFeatureServices(
   },
  };
 }
-

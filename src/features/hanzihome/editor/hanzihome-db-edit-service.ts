@@ -16,10 +16,7 @@ function stableStringify(value: unknown) {
 }
 
 function isEditorEnabled() {
- return (
-  process.env.NODE_ENV === "development" ||
-  process.env.HANZIHOME_EDITOR_ENABLED === "true"
- );
+ return process.env.NODE_ENV === "development" || process.env.HANZIHOME_EDITOR_ENABLED === "true";
 }
 
 function validateDraft(draft: HanziHomeDbEditDraft) {

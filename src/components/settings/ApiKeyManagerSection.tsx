@@ -86,9 +86,7 @@ export default function ApiKeyManagerSection() {
  const [schemaMessage, setSchemaMessage] = useState<string | null>(null);
  const [isLoading, setIsLoading] = useState(true);
  const [isDialogOpen, setIsDialogOpen] = useState(false);
- const [provider, setProvider] = useState<ProviderSelectValue>(
-  AUTO_API_KEY_PROVIDER,
- );
+ const [provider, setProvider] = useState<ProviderSelectValue>(AUTO_API_KEY_PROVIDER);
  const [label, setLabel] = useState("");
  const [apiKey, setApiKey] = useState("");
  const [showKey, setShowKey] = useState(false);
@@ -156,9 +154,7 @@ export default function ApiKeyManagerSection() {
    return null;
   }
 
-  return (
-   API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider) || null
-  );
+  return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider) || null;
  }, [provider]);
 
  async function handlePaste() {
@@ -246,9 +242,7 @@ export default function ApiKeyManagerSection() {
    }
 
    const updatedKey = data.key;
-   setKeys((current) =>
-    current.map((item) => (item.id === updatedKey.id ? updatedKey : item)),
-   );
+   setKeys((current) => current.map((item) => (item.id === updatedKey.id ? updatedKey : item)));
    setSummary((current) => ({
     ...current,
     active: current.active + (updatedKey.isActive ? 1 : -1),
@@ -333,13 +327,10 @@ export default function ApiKeyManagerSection() {
       <Workflow className="h-3.5 w-3.5" />
       API Key Manager
      </div>
-     <h2 className="text-xl font-bold text-text-primary">
-      Quản lý API key và thứ tự failover
-     </h2>
-     <p className="text-sm leading-6 text-text-secondary">
-      Chỉ còn một section để quản lý toàn bộ key. App sẽ thử đúng theo thứ tự
-      bạn sắp xếp từ trên xuống dưới, nên nếu muốn ưu tiên DeepSeek thì hãy để
-      các DeepSeek key ở phía trên.
+     <h2 className="text-xl font-bold text-text-primary">Quản lý API key và thứ tự failover</h2>
+     <p className=" leading-6 text-text-secondary">
+      Chỉ còn một section để quản lý toàn bộ key. App sẽ thử đúng theo thứ tự bạn sắp xếp từ trên
+      xuống dưới, nên nếu muốn ưu tiên DeepSeek thì hãy để các DeepSeek key ở phía trên.
      </p>
     </div>
 
@@ -354,22 +345,17 @@ export default function ApiKeyManagerSection() {
       <DialogHeader>
        <DialogTitle className="text-text-primary">Thêm API key mới</DialogTitle>
        <DialogDescription className="text-text-secondary">
-        Có thể để app tự detect provider, hoặc chọn tay nếu key thuộc dạng khó
-        phân biệt.
+        Có thể để app tự detect provider, hoặc chọn tay nếu key thuộc dạng khó phân biệt.
        </DialogDescription>
       </DialogHeader>
 
       <DialogBody>
        <label className="space-y-2">
-        <span className="text-sm font-semibold text-text-primary">
-         Provider
-        </span>
+        <span className=" font-semibold text-text-primary">Provider</span>
         <select
          value={provider}
-         onChange={(event) =>
-          setProvider(event.target.value as ProviderSelectValue)
-         }
-         className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
+         onChange={(event) => setProvider(event.target.value as ProviderSelectValue)}
+         className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4  text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
         >
          <option value={AUTO_API_KEY_PROVIDER}>Tự nhận diện</option>
          {API_KEY_PROVIDER_OPTIONS.map((option) => (
@@ -381,10 +367,8 @@ export default function ApiKeyManagerSection() {
        </label>
 
        {selectedProviderOption ? (
-        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm text-text-secondary">
-         <p className="font-semibold text-text-primary">
-          {selectedProviderOption.label}
-         </p>
+        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3  text-text-secondary">
+         <p className="font-semibold text-text-primary">{selectedProviderOption.label}</p>
          <p className="mt-1 leading-6">{selectedProviderOption.description}</p>
          <a
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
@@ -397,16 +381,14 @@ export default function ApiKeyManagerSection() {
          </a>
         </div>
        ) : (
-        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm leading-6 text-text-secondary">
-         App sẽ thử detect theo thứ tự hợp lý. Với key dạng `sk-...`, app sẽ thử
-         DeepSeek trước rồi mới đến OpenAI.
+        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3  leading-6 text-text-secondary">
+         App sẽ thử detect theo thứ tự hợp lý. Với key dạng `sk-...`, app sẽ thử DeepSeek trước rồi
+         mới đến OpenAI.
         </div>
        )}
 
        <label className="space-y-2">
-        <span className="text-sm font-semibold text-text-primary">
-         Tên hiển thị
-        </span>
+        <span className=" font-semibold text-text-primary">Tên hiển thị</span>
         <Input
          value={label}
          onChange={(event) => setLabel(event.target.value)}
@@ -416,16 +398,14 @@ export default function ApiKeyManagerSection() {
        </label>
 
        <label className="space-y-2">
-        <span className="text-sm font-semibold text-text-primary">API key</span>
+        <span className=" font-semibold text-text-primary">API key</span>
         <div className="flex items-center gap-2">
          <div className="relative flex-1">
           <Input
            type={showKey ? "text" : "password"}
            value={apiKey}
            onChange={(event) => setApiKey(event.target.value)}
-           placeholder={
-            selectedProviderOption?.placeholder || "Dán API key vào đây"
-           }
+           placeholder={selectedProviderOption?.placeholder || "Dán API key vào đây"}
            className="h-11 pr-11"
            autoComplete="off"
            spellCheck={false}
@@ -435,11 +415,7 @@ export default function ApiKeyManagerSection() {
            onClick={() => setShowKey((current) => !current)}
            className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted transition hover:text-text-primary"
           >
-           {showKey ? (
-            <EyeOff className="h-4 w-4" />
-           ) : (
-            <Eye className="h-4 w-4" />
-           )}
+           {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
           </button>
          </div>
          <Button variant="outline" onClick={handlePaste}>
@@ -451,11 +427,7 @@ export default function ApiKeyManagerSection() {
       </DialogBody>
 
       <DialogFooter>
-       <Button
-        variant="outline"
-        onClick={() => setIsDialogOpen(false)}
-        disabled={isSubmitting}
-       >
+       <Button variant="outline" onClick={() => setIsDialogOpen(false)} disabled={isSubmitting}>
         Hủy
        </Button>
        <Button
@@ -472,7 +444,7 @@ export default function ApiKeyManagerSection() {
    </div>
 
    {!schemaReady && (
-    <div className="mt-5 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+    <div className="mt-5 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3  leading-6 text-amber-900">
      {schemaMessage ||
       "Database chưa sẵn sàng cho user_api_keys. Hãy apply migration hoặc repair migration rồi tải lại trang."}
     </div>
@@ -482,20 +454,17 @@ export default function ApiKeyManagerSection() {
     <SummaryPill label="Tổng key" value={summary.total} />
     <SummaryPill label="Đang active" value={summary.active} tone="success" />
     <SummaryPill label="DeepSeek" value={summary.deepseek} />
-    <SummaryPill
-     label="Gemini / OpenAI"
-     value={summary.gemini + summary.openai}
-    />
+    <SummaryPill label="Gemini / OpenAI" value={summary.gemini + summary.openai} />
    </div>
 
-   <div className="mt-5 rounded-2xl border border-border-default bg-bg-primary p-4 text-sm leading-6 text-text-secondary">
-    Thứ tự fallback: app đọc từ trên xuống dưới trong danh sách key active. Khi
-    một key lỗi hoặc hết balance, app chuyển sang key kế tiếp. Nếu toàn bộ key
-    user đều fail, app mới fallback sang system provider của app.
+   <div className="mt-5 rounded-2xl border border-border-default bg-bg-primary p-4  leading-6 text-text-secondary">
+    Thứ tự fallback: app đọc từ trên xuống dưới trong danh sách key active. Khi một key lỗi hoặc hết
+    balance, app chuyển sang key kế tiếp. Nếu toàn bộ key user đều fail, app mới fallback sang
+    system provider của app.
    </div>
 
    {isLoading ? (
-    <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border-default bg-bg-primary p-5 text-sm text-text-secondary">
+    <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border-default bg-bg-primary p-5  text-text-secondary">
      <Loader2 className="h-4 w-4 animate-spin" />
      Đang tải danh sách API key...
     </div>
@@ -504,10 +473,8 @@ export default function ApiKeyManagerSection() {
      <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl -full bg-accent/10  ">
       <KeyRound className="h-5 w-5" />
      </div>
-     <p className="mt-4 text-base font-semibold text-text-primary">
-      Chưa có API key nào
-     </p>
-     <p className="mt-2 text-sm leading-6 text-text-secondary">
+     <p className="mt-4 text-base font-semibold text-text-primary">Chưa có API key nào</p>
+     <p className="mt-2  leading-6 text-text-secondary">
       {schemaReady
        ? "Thêm ít nhất một key để app có thể tự failover khi provider cá nhân bị hết quota hoặc mất kết nối."
        : "Apply migration database trước, rồi quay lại thêm key để bật failover cá nhân."}
@@ -544,27 +511,17 @@ export default function ApiKeyManagerSection() {
            <span
             className={cn(
              "inline-flex items-center gap-1 rounded-2xl -full px-3 py-1 text-xs font-semibold",
-             key.isActive
-              ? "bg-success/10 text-success"
-              : "bg-bg-card text-text-muted",
+             key.isActive ? "bg-success/10 text-success" : "bg-bg-card text-text-muted",
             )}
            >
-            {key.isActive ? (
-             <Check className="h-3.5 w-3.5" />
-            ) : (
-             <Pause className="h-3.5 w-3.5" />
-            )}
+            {key.isActive ? <Check className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
             {key.isActive ? "Đang active" : "Đang tạm dừng"}
            </span>
           </div>
 
           <div>
-           <h3 className="text-base font-bold text-text-primary">
-            {key.label}
-           </h3>
-           <p className="mt-1 font-mono text-sm text-text-secondary">
-            {key.maskedKey}
-           </p>
+           <h3 className="text-base font-bold text-text-primary">{key.label}</h3>
+           <p className="mt-1 font-mono  text-text-secondary">{key.maskedKey}</p>
           </div>
 
           <div className="flex flex-wrap gap-3 text-xs text-text-muted">
@@ -597,11 +554,7 @@ export default function ApiKeyManagerSection() {
            disabled={isBusy || !schemaReady}
            isLoading={isBusy}
           >
-           {key.isActive ? (
-            <Pause className="h-4 w-4" />
-           ) : (
-            <Play className="h-4 w-4" />
-           )}
+           {key.isActive ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
            {key.isActive ? "Tạm dừng" : "Bật lại"}
           </Button>
           <Button
@@ -638,14 +591,10 @@ function SummaryPill({
   <div
    className={cn(
     "rounded-2xl border px-4 py-3",
-    tone === "success"
-     ? "border-success/20 bg-success/5"
-     : "border-border-default bg-bg-primary",
+    tone === "success" ? "border-success/20 bg-success/5" : "border-border-default bg-bg-primary",
    )}
   >
-   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
-    {label}
-   </p>
+   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">{label}</p>
    <p className="mt-2 text-2xl font-bold text-text-primary">{value}</p>
   </div>
  );

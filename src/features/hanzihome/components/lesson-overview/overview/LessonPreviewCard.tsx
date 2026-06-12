@@ -28,9 +28,7 @@ export function LessonPreviewCard({
        <Icon className="h-5 w-5" />
       </span>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {eyebrow}
-       </p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        <h2 className="text-lg font-black text-text-primary">{title}</h2>
       </div>
      </div>

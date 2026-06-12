@@ -3,9 +3,7 @@ import {
  HANYU_Q3_COURSE_ID,
  hanzihomeCourses,
 } from "@/features/hanzihome/courses/course-catalog";
-import {
- requireHanziHomeDbJson,
-} from "@/features/hanzihome/static-json/hanzihome-db-static-json";
+import { requireHanziHomeDbJson } from "@/features/hanzihome/static-json/hanzihome-db-static-json";
 import type {
  DbDatasetManifest,
  HanziHomeDbDataset,
@@ -29,16 +27,12 @@ function datasetToCourseId(dataset: HanziHomeDbDataset) {
 }
 
 function getCourse(dataset: HanziHomeDbDataset): HeaderCourseNavItem {
- const manifest = requireHanziHomeDbJson<DbDatasetManifest>(
-  `${dataset}/manifest.json`,
- );
+ const manifest = requireHanziHomeDbJson<DbDatasetManifest>(`${dataset}/manifest.json`);
  const courseId = datasetToCourseId(dataset);
 
  return {
   id: courseId,
-  title:
-   hanzihomeCourses.find((course) => course.id === courseId)?.title ??
-   manifest.dataset,
+  title: hanzihomeCourses.find((course) => course.id === courseId)?.title ?? manifest.dataset,
   lessons: manifest.lessons.map((lesson) => ({
    id: lesson.id,
    lessonNumber: lesson.lessonIndex,

@@ -47,9 +47,7 @@ async function lookupVocab(hanzi: string): Promise<LookupResult> {
      hanzi: json.data.hanzi,
      pinyin: json.data.pinyin || getPinyin(chinese),
      meaning: json.data.meaning || "",
-     ai_analysis: (json.data.analysis ||
-      json.data.ai_analysis ||
-      {}) as AiAnalysis,
+     ai_analysis: (json.data.analysis || json.data.ai_analysis || {}) as AiAnalysis,
     },
     isSaved: !!json.cached,
    };

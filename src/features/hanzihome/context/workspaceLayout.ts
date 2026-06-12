@@ -1,11 +1,6 @@
 "use client";
 
-import type {
- LessonViewMode,
- PaneId,
- PaneLayout,
- StudyModule,
-} from "./types";
+import type { LessonViewMode, PaneId, PaneLayout, StudyModule } from "./types";
 
 const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
@@ -30,12 +25,8 @@ export const defaultPaneLayout: PaneLayout = {
  activeRight: "vocab",
 };
 
-export function parseStudyModule(
- value: string | null | undefined,
-): StudyModule | null {
- return studyModules.some((item) => item === value)
-  ? (value as StudyModule)
-  : null;
+export function parseStudyModule(value: string | null | undefined): StudyModule | null {
+ return studyModules.some((item) => item === value) ? (value as StudyModule) : null;
 }
 
 function uniqueModules(value: unknown) {
@@ -106,14 +97,11 @@ export function readWorkspacePreferences() {
   splitEnabled: window.localStorage.getItem(splitEnabledKey) === "true",
   paneLayout,
   viewMode:
-   developerToolsEnabled &&
-   window.localStorage.getItem(lessonViewModeKey) === "debug"
+   developerToolsEnabled && window.localStorage.getItem(lessonViewModeKey) === "debug"
     ? ("debug" as const)
     : ("study" as const),
   splitPaneSize:
-   Number.isFinite(storedSize) && storedSize >= 38 && storedSize <= 62
-    ? storedSize
-    : 48,
+   Number.isFinite(storedSize) && storedSize >= 38 && storedSize <= 62 ? storedSize : 48,
  };
 }
 
@@ -122,10 +110,7 @@ export function persistSplitEnabled(enabled: boolean) {
 }
 
 export function persistPaneLayout(layout: PaneLayout) {
- window.localStorage.setItem(
-  paneLayoutKey,
-  JSON.stringify(normalizePaneLayout(layout)),
- );
+ window.localStorage.setItem(paneLayoutKey, JSON.stringify(normalizePaneLayout(layout)));
 }
 
 export function persistViewMode(mode: LessonViewMode) {
@@ -136,11 +121,7 @@ export function persistSplitPaneSize(size: number) {
  window.localStorage.setItem(splitPaneSizeKey, String(size));
 }
 
-export function setPaneActive(
- layout: PaneLayout,
- paneId: PaneId,
- module: StudyModule,
-) {
+export function setPaneActive(layout: PaneLayout, paneId: PaneId, module: StudyModule) {
  return normalizePaneLayout({
   ...layout,
   activeLeft: paneId === "left" ? module : layout.activeLeft,
@@ -182,4 +163,3 @@ export function moveModuleInLayout(
       : nextRight[0],
  });
 }
-

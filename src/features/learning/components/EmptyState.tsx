@@ -22,9 +22,7 @@ export function EmptyState({
   >
    <Sparkles className="h-12 w-12 text-stone-300" />
    <h2 className="mt-4 text-2xl font-black text-stone-900">{title}</h2>
-   <p className="mt-2 max-w-md text-sm font-bold leading-6 text-stone-500">
-    {description}
-   </p>
+   <p className="mt-2 max-w-md  font-bold leading-6 text-stone-500">{description}</p>
    {action ? <div className="mt-5">{action}</div> : null}
   </div>
  );

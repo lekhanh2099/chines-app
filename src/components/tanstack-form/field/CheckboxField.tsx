@@ -7,10 +7,7 @@ export function CheckboxField({
  description,
  helperText,
  ...rest
-}: Omit<
- React.InputHTMLAttributes<HTMLInputElement>,
- "value" | "onChange" | "onBlur" | "type"
-> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<boolean>();
 
@@ -32,9 +29,7 @@ export function CheckboxField({
      className="w-5 h-5 text-indigo-600 bg-slate-50 border-slate-300 rounded-2xl  focus:ring-indigo-500"
      {...rest}
     />
-    {label && (
-     <span className="text-sm font-medium text-slate-700">{label}</span>
-    )}
+    {label && <span className=" font-medium text-slate-700">{label}</span>}
    </div>
   </FieldItem>
  );

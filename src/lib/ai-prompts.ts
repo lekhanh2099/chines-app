@@ -356,18 +356,11 @@ Schema JSON mẫu:
 Chỉ trả về JSON hợp lệ. Không giải thích thêm ngoài JSON.`,
 ];
 
-function isLegacyDefaultTemplate(
- template: string,
- placeholder: string,
-): boolean {
+function isLegacyDefaultTemplate(template: string, placeholder: string): boolean {
  const legacyTemplates =
-  placeholder === WORD_PLACEHOLDER
-   ? LEGACY_WORD_LOOKUP_PROMPTS
-   : LEGACY_SENTENCE_LOOKUP_PROMPTS;
+  placeholder === WORD_PLACEHOLDER ? LEGACY_WORD_LOOKUP_PROMPTS : LEGACY_SENTENCE_LOOKUP_PROMPTS;
 
- return legacyTemplates.some(
-  (legacyTemplate) => legacyTemplate.trim() === template,
- );
+ return legacyTemplates.some((legacyTemplate) => legacyTemplate.trim() === template);
 }
 
 function normalizeTemplate(
@@ -390,43 +383,21 @@ function normalizeTemplate(
 }
 
 export function getWordLookupPromptTemplate(template?: string | null): string {
- return normalizeTemplate(
-  template,
-  DEFAULT_WORD_LOOKUP_PROMPT,
-  WORD_PLACEHOLDER,
- );
+ return normalizeTemplate(template, DEFAULT_WORD_LOOKUP_PROMPT, WORD_PLACEHOLDER);
 }
 
-export function getSentenceLookupPromptTemplate(
- template?: string | null,
-): string {
- return normalizeTemplate(
-  template,
-  DEFAULT_SENTENCE_LOOKUP_PROMPT,
-  SENTENCE_PLACEHOLDER,
- );
+export function getSentenceLookupPromptTemplate(template?: string | null): string {
+ return normalizeTemplate(template, DEFAULT_SENTENCE_LOOKUP_PROMPT, SENTENCE_PLACEHOLDER);
 }
 
-export function renderWordLookupPrompt(
- word: string,
- template?: string | null,
-): string {
- return getWordLookupPromptTemplate(template).replaceAll(
-  WORD_PLACEHOLDER,
-  word,
- );
+export function renderWordLookupPrompt(word: string, template?: string | null): string {
+ return getWordLookupPromptTemplate(template).replaceAll(WORD_PLACEHOLDER, word);
 }
 
 export function renderWordLookupBasicPrompt(word: string): string {
  return DEFAULT_WORD_LOOKUP_BASIC_PROMPT.replaceAll(WORD_PLACEHOLDER, word);
 }
 
-export function renderSentenceLookupPrompt(
- sentence: string,
- template?: string | null,
-): string {
- return getSentenceLookupPromptTemplate(template).replaceAll(
-  SENTENCE_PLACEHOLDER,
-  sentence,
- );
+export function renderSentenceLookupPrompt(sentence: string, template?: string | null): string {
+ return getSentenceLookupPromptTemplate(template).replaceAll(SENTENCE_PLACEHOLDER, sentence);
 }

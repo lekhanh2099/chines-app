@@ -1,9 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import type { VocabularyItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "./types";
 
@@ -34,9 +31,7 @@ export function VocabMiniGrid({
        )}
       </div>
       {displayMode.showMeaning && (
-       <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-        {item.meaning_vi}
-       </p>
+       <p className=" font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>
       )}
       {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
      </div>

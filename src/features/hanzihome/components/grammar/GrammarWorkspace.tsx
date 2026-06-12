@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
-import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
+import { GrammarPointReader } from "@/features/hanzihome/components/grammar/GrammarPointReader";
 import { AllGrammarPointReader } from "@/features/hanzihome/components/grammar/AllGrammarPointReader";
 import { GrammarReadingReader } from "@/features/hanzihome/components/grammar/GrammarReadingReader";
 import {

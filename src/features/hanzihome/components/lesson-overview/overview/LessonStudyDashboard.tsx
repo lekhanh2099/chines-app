@@ -23,10 +23,7 @@ function getLessonHeading(lesson: HanziHomeLesson) {
  return {
   zhTitle: stringValue(title, "zh") || lesson.title,
   pinyinTitle: stringValue(title, "pinyin"),
-  volume:
-   stringValue(source, "volume_vi") ||
-   stringValue(source, "volume") ||
-   "Không rõ quyển",
+  volume: stringValue(source, "volume_vi") || stringValue(source, "volume") || "Không rõ quyển",
  };
 }
 
@@ -44,13 +41,9 @@ export function LessonStudyDashboard({
   <Card padding="lg" className="rounded-xl">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0">
-     <p className="text-xs font-black uppercase tracking-wide text-primary">
-      Bài học
-     </p>
-     <h2 className="text-2xl font-black leading-tight text-text-primary">
-      {heading.zhTitle}
-     </h2>
-     <p className="mt-1 text-sm font-bold text-text-muted">
+     <p className="text-xs font-black uppercase tracking-wide text-primary">Bài học</p>
+     <h2 className="text-2xl font-black leading-tight text-text-primary">{heading.zhTitle}</h2>
+     <p className="mt-1  font-bold text-text-muted">
       {heading.volume}
       {heading.pinyinTitle && ` · ${heading.pinyinTitle}`}
      </p>
@@ -124,16 +117,9 @@ export function LessonStudyDashboard({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Lộ trình bài này
        </p>
-       <h2 className="text-lg font-black text-text-primary">
-        Học theo đúng cấu trúc sách
-       </h2>
+       <h2 className="text-lg font-black text-text-primary">Học theo đúng cấu trúc sách</h2>
       </div>
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       onClick={() => onOpenModule("lessonText")}
-      >
+      <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("lessonText")}>
        Mở bài khóa
       </Button>
      </div>

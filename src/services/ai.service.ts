@@ -136,19 +136,11 @@ Rules:
 - Do not wrap the response in markdown.`;
 }
 
-function getProviderOutageKey(
- provider: ProviderName,
- geminiModel?: GeminiModelId,
-): string {
- return provider === "Gemini"
-  ? `${provider}:${geminiModel || DEFAULT_GEMINI_MODEL}`
-  : provider;
+function getProviderOutageKey(provider: ProviderName, geminiModel?: GeminiModelId): string {
+ return provider === "Gemini" ? `${provider}:${geminiModel || DEFAULT_GEMINI_MODEL}` : provider;
 }
 
-function getProviderSkipReason(
- provider: ProviderName,
- geminiModel?: GeminiModelId,
-): string | null {
+function getProviderSkipReason(provider: ProviderName, geminiModel?: GeminiModelId): string | null {
  const outage = providerOutages[getProviderOutageKey(provider, geminiModel)];
  if (!outage) return null;
 
@@ -172,11 +164,7 @@ function markProviderUnavailable(
  };
 }
 
-function getProviderCooldownMs(
- provider: ProviderName,
- status: number,
- errorBody: string,
-): number {
+function getProviderCooldownMs(provider: ProviderName, status: number, errorBody: string): number {
  const retryMatch = errorBody.match(/"retryDelay"\s*:\s*"([\d.]+)s"/i);
  const retrySeconds = retryMatch ? Number(retryMatch[1]) : NaN;
 
@@ -299,11 +287,7 @@ async function callDeepSeekRaw(
   console.error("[AI:DeepSeek] Error:", err);
 
   // Timeout → short cooldown so fallback chain doesn't waste time retrying
-  if (
-   useOutageTracking &&
-   err instanceof Error &&
-   err.message?.includes("timeout")
-  ) {
+  if (useOutageTracking && err instanceof Error && err.message?.includes("timeout")) {
    markProviderUnavailable("DeepSeek", 30_000, "DeepSeek timeout");
   }
 
@@ -509,11 +493,7 @@ function formatProviderError(
  }
 
  if (provider === "OpenAI") {
-  if (
-   status === 429 ||
-   body.includes("insufficient_quota") ||
-   body.includes("rate limit")
-  ) {
+  if (status === 429 || body.includes("insufficient_quota") || body.includes("rate limit")) {
    return "OpenAI đã hết quota hoặc đang bị rate limit.";
   }
 
@@ -568,11 +548,7 @@ function formatManagedKeyError(
   return "OpenAI key không hợp lệ hoặc đã bị thu hồi.";
  }
 
- if (
-  status === 429 ||
-  body.includes("insufficient_quota") ||
-  body.includes("rate limit")
- ) {
+ if (status === 429 || body.includes("insufficient_quota") || body.includes("rate limit")) {
   return "OpenAI key đã hết quota hoặc đang bị rate limit.";
  }
 
@@ -618,10 +594,7 @@ function parseAndValidate<T>(
  }
 }
 
-function normalizeWordAnalysis(
- hanzi: string,
- parsed: AiVocabResponse,
-): AiVocabResponse {
+function normalizeWordAnalysis(hanzi: string, parsed: AiVocabResponse): AiVocabResponse {
  const normalizeExamples = (examples?: AiDefinitionExample[]) =>
   examples
    ?.map((example) => ({
@@ -629,9 +602,7 @@ function normalizeWordAnalysis(
     py: example.py || example.pinyin,
     pinyin: example.pinyin || example.py,
    }))
-   .filter(
-    (example) => example.cn || example.vi || example.py || example.pinyin,
-   );
+   .filter((example) => example.cn || example.vi || example.py || example.pinyin);
 
  const normalizeRelations = (relations?: AiWordRelation[]) =>
   relations
@@ -652,18 +623,9 @@ function normalizeWordAnalysis(
      }
    : {
       type: parsed.etymology?.type?.trim() || "Không xác định",
-      origin:
-       parsed.etymology?.origin?.trim() ||
-       parsed.etymology?.explanation?.trim() ||
-       "",
-      mnemonic:
-       parsed.etymology?.mnemonic?.trim() ||
-       parsed.mnemonic_story?.trim() ||
-       "",
-      explanation:
-       parsed.etymology?.explanation?.trim() ||
-       parsed.etymology?.origin?.trim() ||
-       "",
+      origin: parsed.etymology?.origin?.trim() || parsed.etymology?.explanation?.trim() || "",
+      mnemonic: parsed.etymology?.mnemonic?.trim() || parsed.mnemonic_story?.trim() || "",
+      explanation: parsed.etymology?.explanation?.trim() || parsed.etymology?.origin?.trim() || "",
      };
  const relatedCompounds = normalizeRelations(parsed.related_compounds);
  const synonyms = normalizeRelations(parsed.synonyms);
@@ -721,8 +683,7 @@ function normalizeWordAnalysis(
   ) || []),
  ].filter((example) => example.zh || example.pinyin || example.vi);
 
- const resolvedSinoVietnamese =
-  parsed.sino_vietnamese || parsed.han_viet || undefined;
+ const resolvedSinoVietnamese = parsed.sino_vietnamese || parsed.han_viet || undefined;
 
  return {
   ...parsed,
@@ -735,9 +696,7 @@ function normalizeWordAnalysis(
    : {}),
   etymology,
   ...(definitions ? { definitions } : {}),
-  related_compounds: relatedCompounds?.length
-   ? relatedCompounds
-   : legacyRelatedCompounds,
+  related_compounds: relatedCompounds?.length ? relatedCompounds : legacyRelatedCompounds,
   synonyms: synonyms || [],
   antonyms: antonyms || [],
   hsk_level: parsed.hsk_level?.trim() || "",
@@ -747,21 +706,15 @@ function normalizeWordAnalysis(
   ...(flattenedExamples.length ? { examples: flattenedExamples } : {}),
   ...(parsed.common_mistakes || parsed.confusion || parsed.confusion_warning
    ? {
-      common_mistakes:
-       parsed.common_mistakes || parsed.confusion || parsed.confusion_warning,
-      confusion:
-       parsed.confusion || parsed.confusion_warning || parsed.common_mistakes,
-      confusion_warning:
-       parsed.confusion_warning || parsed.confusion || parsed.common_mistakes,
+      common_mistakes: parsed.common_mistakes || parsed.confusion || parsed.confusion_warning,
+      confusion: parsed.confusion || parsed.confusion_warning || parsed.common_mistakes,
+      confusion_warning: parsed.confusion_warning || parsed.confusion || parsed.common_mistakes,
      }
    : {}),
  };
 }
 
-function normalizeBasicWordAnalysis(
- hanzi: string,
- parsed: AiVocabResponse,
-): AiVocabResponse {
+function normalizeBasicWordAnalysis(hanzi: string, parsed: AiVocabResponse): AiVocabResponse {
  const normalized = normalizeWordAnalysis(hanzi, parsed);
  const firstDefinition = normalized.definitions?.find(
   (definition) => definition.meaning || definition.text,
@@ -776,8 +729,7 @@ function normalizeBasicWordAnalysis(
  return {
   hanzi,
   pinyin: normalized.pinyin || "",
-  sino_vietnamese:
-   normalized.sino_vietnamese || normalized.han_viet || undefined,
+  sino_vietnamese: normalized.sino_vietnamese || normalized.han_viet || undefined,
   han_viet: normalized.han_viet || normalized.sino_vietnamese || undefined,
   meaning_summary: meaningSummary,
   ...(firstDefinition
@@ -785,8 +737,7 @@ function normalizeBasicWordAnalysis(
       definitions: [
        {
         pos: firstDefinition.pos,
-        meaning:
-         firstDefinition.meaning || firstDefinition.text || meaningSummary,
+        meaning: firstDefinition.meaning || firstDefinition.text || meaningSummary,
         text: firstDefinition.text || firstDefinition.meaning || meaningSummary,
        },
       ],
@@ -860,11 +811,7 @@ async function requestStructuredJson<T>(
   }
 
   if (rawResult.content) {
-   const managedKeyResult = parseAndValidate(
-    rawResult.content,
-    schema,
-    fallback,
-   );
+   const managedKeyResult = parseAndValidate(rawResult.content, schema, fallback);
    if (managedKeyResult) {
     return { data: managedKeyResult, error: null };
    }
@@ -880,13 +827,7 @@ async function requestStructuredJson<T>(
 
  throwIfAborted(abortSignal);
 
- const geminiRaw = await callGeminiRaw(
-  systemPrompt,
-  prompt,
-  geminiModel,
-  undefined,
-  abortSignal,
- );
+ const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel, undefined, abortSignal);
  if (geminiRaw.content) {
   const geminiResult = parseAndValidate(geminiRaw.content, schema, fallback);
   if (geminiResult) {
@@ -906,11 +847,7 @@ async function requestStructuredJson<T>(
   abortSignal,
  });
  if (deepSeekRaw.content) {
-  const deepSeekResult = parseAndValidate(
-   deepSeekRaw.content,
-   schema,
-   fallback,
-  );
+  const deepSeekResult = parseAndValidate(deepSeekRaw.content, schema, fallback);
   if (deepSeekResult) {
    return { data: deepSeekResult, error: null };
   }
@@ -943,9 +880,7 @@ export async function analyzeHanziDetailed(
 ): Promise<StructuredRequestResult<AiVocabResponse>> {
  console.log("[AI] Analyzing:", hanzi);
 
- const geminiModel = normalizeGeminiModel(
-  options?.geminiModel || DEFAULT_GEMINI_MODEL,
- );
+ const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
  const result = await requestStructuredJson(
   WORD_SYSTEM_PROMPT,
@@ -979,9 +914,7 @@ export async function analyzeHanziBasicDetailed(
 ): Promise<StructuredRequestResult<AiVocabResponse>> {
  console.log("[AI] Analyzing basic word:", hanzi);
 
- const geminiModel = normalizeGeminiModel(
-  options?.geminiModel || DEFAULT_GEMINI_MODEL,
- );
+ const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
  const result = await requestStructuredJson(
   WORD_SYSTEM_PROMPT,
@@ -1004,8 +937,7 @@ export async function analyzeHanziBasicDetailed(
  return {
   data: null,
   error:
-   result.error ||
-   "Không thể generate nghĩa cơ bản lúc này vì tất cả AI provider đều thất bại.",
+   result.error || "Không thể generate nghĩa cơ bản lúc này vì tất cả AI provider đều thất bại.",
  };
 }
 
@@ -1023,9 +955,7 @@ export async function analyzeSentenceDetailed(
 ): Promise<StructuredRequestResult<SentenceInsightResponse>> {
  console.log("[AI] Analyzing sentence:", text);
 
- const geminiModel = normalizeGeminiModel(
-  options?.geminiModel || DEFAULT_GEMINI_MODEL,
- );
+ const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
  const result = await requestStructuredJson(
   SENTENCE_SYSTEM_PROMPT,
@@ -1049,7 +979,7 @@ export async function analyzeSentenceDetailed(
   data: null,
   error:
    result.error ||
-  "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+   "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
  };
 }
 
@@ -1090,7 +1020,13 @@ const grammarFillSchema = z.object({
 });
 
 const grammarGeneratedExerciseSchema = z.object({
- exercise_type: z.enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]),
+ exercise_type: z.enum([
+  "fill_blank",
+  "multiple_choice",
+  "reorder_sentence",
+  "translate_zh",
+  "identify_error",
+ ]),
  prompt: z.string(),
  content: z.record(z.string(), z.unknown()).optional(),
  answer: z.record(z.string(), z.unknown()),
@@ -1138,9 +1074,10 @@ function grammarExerciseSetPrompt(input: {
   examples: point.content.examples?.slice(0, 4),
   notes: point.content.usage_notes?.slice(0, 4),
  }));
- const types = input.exerciseType === "mixed"
-  ? ["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]
-  : [input.exerciseType];
+ const types =
+  input.exerciseType === "mixed"
+   ? ["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]
+   : [input.exerciseType];
  return `Generate a fresh Chinese grammar exercise set for Vietnamese learners.
 
 Lesson: ${input.lessonTitle || ""}
@@ -1229,9 +1166,7 @@ export async function generateGrammarFillMissingDetailed(
 ): Promise<StructuredRequestResult<GrammarFillMissingResult>> {
  console.log("[AI] Filling grammar:", input.title);
 
- const geminiModel = normalizeGeminiModel(
-  options?.geminiModel || DEFAULT_GEMINI_MODEL,
- );
+ const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
  const result = await requestStructuredJson(
   GRAMMAR_SYSTEM_PROMPT,
@@ -1253,8 +1188,6 @@ export async function generateGrammarFillMissingDetailed(
  console.error("[AI] All providers failed for grammar:", input.title);
  return {
   data: null,
-  error:
-   result.error ||
-   "Không thể bổ sung ngữ pháp lúc này vì tất cả AI provider đều thất bại.",
+  error: result.error || "Không thể bổ sung ngữ pháp lúc này vì tất cả AI provider đều thất bại.",
  };
 }

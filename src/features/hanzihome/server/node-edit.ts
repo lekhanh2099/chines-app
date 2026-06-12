@@ -62,11 +62,7 @@ export function handlePatchResult<T>(
 ) {
  if (error) {
   if (isMissingEditableContentTable(error.code)) {
-   return jsonError(
-    "HanziHome editable content tables are not ready",
-    503,
-    error.code,
-   );
+   return jsonError("HanziHome editable content tables are not ready", 503, error.code);
   }
 
   return jsonError(`Could not update ${entityLabel}`, 500, error.code);
@@ -110,9 +106,7 @@ export function buildVocabExamplePatch(payload: UpdateVocabExamplePayload) {
  return patch;
 }
 
-export function buildVocabDetailSectionPatch(
- payload: UpdateVocabDetailSectionPayload,
-) {
+export function buildVocabDetailSectionPatch(payload: UpdateVocabDetailSectionPayload) {
  const patch: DbPatch = {};
 
  if (payload.sectionKey !== undefined) patch.section_key = payload.sectionKey;
@@ -157,9 +151,7 @@ export function buildGrammarExamplePatch(payload: UpdateGrammarExamplePayload) {
  return patch;
 }
 
-export function buildGrammarDetailSectionPatch(
- payload: UpdateGrammarDetailSectionPayload,
-) {
+export function buildGrammarDetailSectionPatch(payload: UpdateGrammarDetailSectionPayload) {
  const patch: DbPatch = {};
 
  if (payload.sectionKey !== undefined) patch.section_key = payload.sectionKey;

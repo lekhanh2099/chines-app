@@ -109,7 +109,7 @@ export function SelectNew({
     </SelectContent>
    </SelectRoot>
 
-   {errorMessage && <p className="text-sm font-semibold text-danger">{errorMessage}</p>}
+   {errorMessage && <p className=" font-semibold text-danger">{errorMessage}</p>}
   </div>
  );
 }

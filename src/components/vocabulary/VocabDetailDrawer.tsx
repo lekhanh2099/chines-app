@@ -1,15 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
- BookmarkPlus,
- Check,
- Loader2,
- Save,
- Volume2,
- VolumeOff,
- X,
-} from "lucide-react";
+import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff, X } from "lucide-react";
 import { toast } from "sonner";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
@@ -55,23 +47,13 @@ function getDisplayMeaning(
 
 function getUniqueCharacters(text: string) {
  return Array.from(
-  new Set(
-   Array.from(extractChinese(text)).filter((char) =>
-    HANZI_CHAR_REGEX.test(char),
-   ),
-  ),
+  new Set(Array.from(extractChinese(text)).filter((char) => HANZI_CHAR_REGEX.test(char))),
  );
 }
 
 export function VocabDetailDrawer() {
- const {
-  isOpen,
-  text,
-  contextSentence,
-  mode,
-  closeDetailDrawer,
-  openDetailDrawer,
- } = useVocabDetailDrawerStore();
+ const { isOpen, text, contextSentence, mode, closeDetailDrawer, openDetailDrawer } =
+  useVocabDetailDrawerStore();
  const detailQuery = useSmartSelectionInsights(text, contextSentence, {
   enabled: isOpen && !!text,
   mode,
@@ -81,8 +63,7 @@ export function VocabDetailDrawer() {
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSpeak = () => {
-  const speechText =
-   mode === "sentence" ? text : smartData?.entry.hanzi || text;
+  const speechText = mode === "sentence" ? text : smartData?.entry.hanzi || text;
   if (!speechText) return;
   if (isSpeaking) {
    stop();
@@ -105,9 +86,7 @@ export function VocabDetailDrawer() {
      : `Đã lưu \"${smartData.entry.hanzi}\" vào kho ôn tập`,
    );
   } catch (error) {
-   toast.error(
-    error instanceof Error ? error.message : "Không thể lưu từ vựng",
-   );
+   toast.error(error instanceof Error ? error.message : "Không thể lưu từ vựng");
   }
  };
 
@@ -149,17 +128,13 @@ export function VocabDetailDrawer() {
          </button>
         </div>
         {smartData?.entry.pinyin && (
-         <p className="mt-1 text-sm font-semibold  ">
-          {smartData.entry.pinyin}
-         </p>
+         <p className="mt-1  font-semibold  ">{smartData.entry.pinyin}</p>
         )}
        </div>
 
        <div className="flex items-center gap-2">
         <div className="rounded-2xl border border-border-default bg-bg-primary px-3 py-2 text-right">
-         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-text-muted">
-          SRS
-         </p>
+         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-text-muted">SRS</p>
          <p className="text-xs font-semibold text-text-primary">
           {smartData?.isSaved ? "Đã lưu" : "Chưa lưu"}
          </p>
@@ -178,18 +153,18 @@ export function VocabDetailDrawer() {
 
      <div className="flex-1 overflow-y-auto scrollbar-soft  px-5 py-4">
       {detailQuery.isLoading ? (
-       <div className="flex h-40 items-center justify-center gap-2 text-sm text-text-muted">
+       <div className="flex h-40 items-center justify-center gap-2  text-text-muted">
         <Loader2 className="h-4 w-4 animate-spin  " />
         Đang tải chi tiết từ vựng...
        </div>
       ) : detailQuery.isError ? (
-       <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+       <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3  text-rose-700">
         {detailQuery.error instanceof Error
          ? detailQuery.error.message
          : "Không thể tải dữ liệu chi tiết"}
        </div>
       ) : !smartData ? (
-       <div className="rounded-2xl border border-border-default bg-bg-card px-4 py-6 text-sm text-text-muted">
+       <div className="rounded-2xl border border-border-default bg-bg-card px-4 py-6  text-text-muted">
         Không có dữ liệu để hiển thị.
        </div>
       ) : mode === "sentence" ? (
@@ -245,10 +220,7 @@ function WordDetailPanel({
 }) {
  const ai = smartData.entry.ai_analysis as AiAnalysis | undefined;
  const radicals = getNormalizedRadicals(ai);
- const definitions = getNormalizedDefinitions(
-  ai,
-  smartData.entry.meaning || "",
- );
+ const definitions = getNormalizedDefinitions(ai, smartData.entry.meaning || "");
  const examples =
   ai?.examples?.filter((example) => example.zh || example.vi) ||
   definitions
@@ -269,22 +241,16 @@ function WordDetailPanel({
    ? activeCharacter
    : characters[0] || smartData.entry.hanzi;
  const [noteDraft, setNoteDraft] = useState(smartData.personal_note || "");
- const etymologyType =
-  typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
- const etymologyText =
-  typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
+ const etymologyType = typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
+ const etymologyText = typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
 
  return (
   <div className="space-y-5">
    <div className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <div>
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-       Header
-      </p>
-      <p className="mt-1 text-base font-semibold text-text-primary">
-       {displayMeaning}
-      </p>
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Header</p>
+      <p className="mt-1 text-base font-semibold text-text-primary">{displayMeaning}</p>
      </div>
      <button
       type="button"
@@ -307,9 +273,7 @@ function WordDetailPanel({
    <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
      <div>
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-       Giải phẫu
-      </p>
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Giải phẫu</p>
       {characters.length > 1 && (
        <div className="mt-2 flex flex-wrap gap-2">
         {characters.map((character) => (
@@ -317,7 +281,7 @@ function WordDetailPanel({
           key={character}
           type="button"
           onClick={() => setActiveCharacter(character)}
-          className={`inline-flex h-8 min-w-8 items-center justify-center rounded-2xl -md border px-2 text-sm font-bold transition-colors ${
+          className={`inline-flex h-8 min-w-8 items-center justify-center rounded-2xl -md border px-2  font-bold transition-colors ${
            visualCharacter === character
             ? "border-accent bg-accent  "
             : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover: "
@@ -355,16 +319,14 @@ function WordDetailPanel({
            key={`${radical.char || radical.meaning || "radical"}-${index}`}
            className="rounded-2xl -xl border border-border-default bg-bg-card px-3 py-2"
           >
-           <p className="text-base font-bold text-text-primary">
-            {radical.char || "?"}
-           </p>
+           <p className="text-base font-bold text-text-primary">{radical.char || "?"}</p>
            <p className="text-xs font-semibold  ">{radical.pinyin}</p>
            <p className="text-xs text-text-secondary">{radical.meaning}</p>
           </div>
          ))}
         </div>
        ) : (
-        <p className="text-sm text-text-muted">Chưa có dữ liệu bộ thủ.</p>
+        <p className=" text-text-muted">Chưa có dữ liệu bộ thủ.</p>
        )}
       </div>
 
@@ -377,7 +339,7 @@ function WordDetailPanel({
          {etymologyType}
         </span>
        )}
-       <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+       <p className="mt-2  leading-relaxed text-text-secondary">
         {etymologyText || "Chưa có phân tích nguồn gốc."}
        </p>
       </div>
@@ -389,9 +351,7 @@ function WordDetailPanel({
      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-700 mb-1.5">
       AI gợi ý mẹo nhớ
      </p>
-     <p className="text-sm leading-relaxed text-amber-900">
-      {ai.mnemonic_story}
-     </p>
+     <p className=" leading-relaxed text-amber-900">{ai.mnemonic_story}</p>
     </div>
    )}
 
@@ -426,16 +386,13 @@ function WordDetailPanel({
            </span>
           )}
          </div>
-         <p className="mt-2 text-sm font-semibold text-text-primary">
+         <p className="mt-2  font-semibold text-text-primary">
           {definition.meaning || definition.text}
          </p>
          {definitionExamples.length > 0 && (
           <div className="mt-3 space-y-2 border-l-2 border-accent/20 pl-3">
            {definitionExamples.map((example, exampleIndex) => (
-            <ExampleCard
-             key={`${example.zh}-${exampleIndex}`}
-             example={example}
-            />
+            <ExampleCard key={`${example.zh}-${exampleIndex}`} example={example} />
            ))}
           </div>
          )}
@@ -443,7 +400,7 @@ function WordDetailPanel({
        );
       })
      ) : (
-      <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-sm text-text-muted">
+      <div className="rounded-2xl border border-border-default bg-bg-primary p-3  text-text-muted">
        {displayMeaning || "Chưa có dữ liệu nghĩa."}
       </div>
      )}
@@ -500,11 +457,7 @@ function WordDetailPanel({
       disabled={isSaving}
       className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
-      {isSaving ? (
-       <Loader2 className="h-4 w-4 animate-spin" />
-      ) : (
-       <Save className="h-4 w-4" />
-      )}
+      {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
       Lưu note
      </button>
     </div>
@@ -512,7 +465,7 @@ function WordDetailPanel({
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
+     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3  text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
     />
    </section>
   </div>
@@ -540,7 +493,7 @@ function SentenceDetailPanel({
     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
      Dịch nghĩa
     </p>
-    <p className="text-sm leading-relaxed text-text-primary">
+    <p className=" leading-relaxed text-text-primary">
      {smartData.translation || smartData.entry.meaning || "Chưa có bản dịch."}
     </p>
    </section>
@@ -560,9 +513,7 @@ function SentenceDetailPanel({
          {point.pattern || `Điểm ${index + 1}`}
         </p>
         {point.explanation && (
-         <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-          {point.explanation}
-         </p>
+         <p className="mt-1  leading-relaxed text-text-secondary">{point.explanation}</p>
         )}
        </div>
       ))}
@@ -588,7 +539,7 @@ function SentenceDetailPanel({
       ) : (
        <span
         key={`${char}-${index}`}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-2xl -md bg-bg-subtle px-2 text-sm text-text-muted"
+        className="inline-flex h-10 min-w-10 items-center justify-center rounded-2xl -md bg-bg-subtle px-2  text-text-muted"
        >
         {char}
        </span>
@@ -608,11 +559,7 @@ function SentenceDetailPanel({
       disabled={isSaving}
       className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
-      {isSaving ? (
-       <Loader2 className="h-4 w-4 animate-spin" />
-      ) : (
-       <Save className="h-4 w-4" />
-      )}
+      {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
       Lưu note
      </button>
     </div>
@@ -620,27 +567,19 @@ function SentenceDetailPanel({
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Ghi chú cách hiểu câu, cấu trúc hoặc lỗi dễ mắc..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
+     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3  text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
     />
    </section>
   </div>
  );
 }
 
-function ExampleCard({
- example,
-}: {
- example: { zh: string; pinyin: string; vi: string };
-}) {
+function ExampleCard({ example }: { example: { zh: string; pinyin: string; vi: string } }) {
  return (
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-   <p className="text-sm font-medium text-text-primary">{example.zh}</p>
-   {example.pinyin && (
-    <p className="text-xs font-semibold  ">{example.pinyin}</p>
-   )}
-   {example.vi && (
-    <p className="text-xs text-text-secondary italic">{example.vi}</p>
-   )}
+   <p className=" font-medium text-text-primary">{example.zh}</p>
+   {example.pinyin && <p className="text-xs font-semibold  ">{example.pinyin}</p>}
+   {example.vi && <p className="text-xs text-text-secondary italic">{example.vi}</p>}
   </div>
  );
 }
@@ -658,9 +597,7 @@ function RelationList({
 }) {
  return (
   <div className="space-y-2">
-   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-    {title}
-   </p>
+   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">{title}</p>
    {items.length > 0 ? (
     <div className="space-y-2">
      {items.map((item, index) => {
@@ -677,11 +614,9 @@ function RelationList({
         <div className="min-w-0">
          <div className="flex flex-wrap items-center gap-2">
           <span className="text-base font-bold text-text-primary">{word}</span>
-          {item.pinyin && (
-           <span className="text-xs font-semibold  ">{item.pinyin}</span>
-          )}
+          {item.pinyin && <span className="text-xs font-semibold  ">{item.pinyin}</span>}
          </div>
-         <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+         <p className="mt-1  leading-relaxed text-text-secondary">
           {item.meaning || "Chưa có nghĩa."}
          </p>
         </div>
@@ -690,7 +625,7 @@ function RelationList({
      })}
     </div>
    ) : (
-    <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-sm text-text-muted">
+    <div className="rounded-2xl border border-border-default bg-bg-primary p-3  text-text-muted">
      {emptyText}
     </div>
    )}
@@ -777,9 +712,7 @@ function CharacterWriterCard({ character }: { character: string }) {
      writerRef.current = writer;
      requestAnimationFrame(() => {
       if (!isActive) return;
-      void writer
-       .hideCharacter?.({ duration: 0 })
-       ?.then(() => writer.animateCharacter?.());
+      void writer.hideCharacter?.({ duration: 0 })?.then(() => writer.animateCharacter?.());
      });
     } catch {
      if (!isActive) return;

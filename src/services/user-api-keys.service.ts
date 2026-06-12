@@ -59,9 +59,7 @@ function normalizeUserApiKey(row: DbUserApiKey): UserApiKey {
  };
 }
 
-function sortRuntimeCredentials(
- keys: UserApiKeyCredential[],
-): UserApiKeyCredential[] {
+function sortRuntimeCredentials(keys: UserApiKeyCredential[]): UserApiKeyCredential[] {
  return [...keys].sort((left, right) => {
   if (left.priority !== right.priority) {
    return left.priority - right.priority;
@@ -71,9 +69,7 @@ function sortRuntimeCredentials(
  });
 }
 
-function getUserApiKeysSchemaStatusFromError(
- error: unknown,
-): UserApiKeysSchemaStatus {
+function getUserApiKeysSchemaStatusFromError(error: unknown): UserApiKeysSchemaStatus {
  const code =
   typeof error === "object" && error !== null && "code" in error
    ? String((error as { code?: unknown }).code || "")
@@ -88,12 +84,8 @@ function getUserApiKeysSchemaStatusFromError(
   code === "42P01" ||
   code === "PGRST205" ||
   normalizedMessage.includes('relation "user_api_keys" does not exist') ||
-  normalizedMessage.includes(
-   'relation "public.user_api_keys" does not exist',
-  ) ||
-  normalizedMessage.includes(
-   "could not find the table 'public.user_api_keys'",
-  ) ||
+  normalizedMessage.includes('relation "public.user_api_keys" does not exist') ||
+  normalizedMessage.includes("could not find the table 'public.user_api_keys'") ||
   normalizedMessage.includes('could not find the table "public.user_api_keys"')
  ) {
   return {
@@ -129,9 +121,7 @@ function getUserApiKeysSchemaStatusFromError(
  };
 }
 
-function formatApiKeyStorageError(
- error: SupabaseErrorLike | null | undefined,
-): string {
+function formatApiKeyStorageError(error: SupabaseErrorLike | null | undefined): string {
  if (!error) {
   return "Không xác định được lỗi lưu API key.";
  }
@@ -207,9 +197,7 @@ async function migrateLegacyDeepSeekKeyForUser(
 ): Promise<boolean> {
  const { data: legacyRow, error } = await supabase
   .from("user_ai_prompt_settings")
-  .select(
-   "user_id, deepseek_api_key_encrypted, deepseek_enabled, created_at, updated_at",
-  )
+  .select("user_id, deepseek_api_key_encrypted, deepseek_enabled, created_at, updated_at")
   .eq("user_id", userId)
   .maybeSingle();
 
@@ -262,11 +250,7 @@ export async function listUserApiKeys(
  }
 
  if (initial.data.length === 0) {
-  const migrated = await migrateLegacyDeepSeekKeyForUser(
-   supabase,
-   userId,
-   initial.data,
-  );
+  const migrated = await migrateLegacyDeepSeekKeyForUser(supabase, userId, initial.data);
 
   if (migrated) {
    const afterMigration = await listUserApiKeysRaw(supabase, userId);
@@ -333,15 +317,13 @@ export async function createUserApiKey(
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return {
    key: null,
-   error:
-    "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi thêm API key.",
+   error: "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi thêm API key.",
   };
  }
 
  const existing = await listUserApiKeys(supabase, userId);
  const resolvedLabel =
-  input.label?.trim() ||
-  `${getApiKeyProviderLabel(input.provider)} Key ${existing.length + 1}`;
+  input.label?.trim() || `${getApiKeyProviderLabel(input.provider)} Key ${existing.length + 1}`;
 
  const { data, error } = await supabase
   .from("user_api_keys")
@@ -485,10 +467,7 @@ export async function moveUserApiKey(
   .eq("user_id", userId);
 
  if (currentUpdate.error || targetUpdate.error) {
-  console.error(
-   "[ApiKeys] reorder error:",
-   currentUpdate.error || targetUpdate.error,
-  );
+  console.error("[ApiKeys] reorder error:", currentUpdate.error || targetUpdate.error);
   return null;
  }
 

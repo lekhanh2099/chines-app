@@ -25,7 +25,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
    <PageContainer>
     <div className="flex h-full flex-col items-center justify-center gap-4">
      <Loader2 className="h-8 w-8 animate-spin  " />
-     <p className="text-sm text-text-muted">Đang tải dữ liệu từ điển...</p>
+     <p className=" text-text-muted">Đang tải dữ liệu từ điển...</p>
     </div>
    </PageContainer>
   );
@@ -36,10 +36,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
    <PageContainer>
     <div className="flex h-full flex-col items-center justify-center gap-4">
      <p className="text-text-muted">Không tìm thấy từ vựng.</p>
-     <Link
-      href="/hanzihome"
-      className="text-sm font-medium   transition-colors hover: -hover"
-     >
+     <Link href="/hanzihome" className=" font-medium   transition-colors hover: -hover">
       Quay về HanziHome
      </Link>
     </div>
@@ -53,7 +50,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Link
       href="/hanzihome"
-      className="inline-flex h-12 items-center gap-2 rounded-xl border border-border-default bg-bg-card px-4 text-sm font-black text-text-secondary shadow-theme-sm transition-colors hover:bg-bg-subtle"
+      className="inline-flex h-12 items-center gap-2 rounded-xl border border-border-default bg-bg-card px-4  font-black text-text-secondary shadow-theme-sm transition-colors hover:bg-bg-subtle"
      >
       <ArrowLeft className="h-4 w-4" />
       HanziHome
@@ -78,9 +75,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px]">
      <main className="flex min-w-0 flex-col gap-5">
       <DictionaryDocStructureSection viewModel={viewModel} />
-      {(viewModel.ai?.vn_trap ||
-       viewModel.ai?.common_mistakes ||
-       viewModel.ai?.confusion) && (
+      {(viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion) && (
        <Card
         variant="subtle"
         padding="md"
@@ -88,10 +83,8 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
        >
         <div className="flex flex-col gap-2">
          <SectionHeader title="Dễ nhầm" />
-         <p className="text-sm leading-relaxed text-danger-text">
-          {viewModel.ai?.confusion ||
-           viewModel.ai?.vn_trap ||
-           viewModel.ai?.common_mistakes}
+         <p className=" leading-relaxed text-danger-text">
+          {viewModel.ai?.confusion || viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes}
          </p>
         </div>
        </Card>

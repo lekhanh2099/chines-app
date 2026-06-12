@@ -16,10 +16,7 @@ export function StatBox({
  }[tone];
  return (
   <div
-   className={cn(
-    "min-w-24rounded-2xl border-2 px-4 py-3 text-center shadow-theme-sm",
-    className,
-   )}
+   className={cn("min-w-24rounded-2xl border-2 px-4 py-3 text-center shadow-theme-sm", className)}
   >
    <p className="text-2xl font-black">{value}</p>
    <p className="text-xs font-black">{label}</p>

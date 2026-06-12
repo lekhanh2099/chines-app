@@ -17,6 +17,7 @@ type RouteOverrides = Record<string, boolean>;
 
 function loadOverrides(): RouteOverrides {
  if (typeof window === "undefined") return {};
+
  try {
   const raw = localStorage.getItem(STORAGE_KEY);
   return raw ? JSON.parse(raw) : {};
@@ -26,6 +27,8 @@ function loadOverrides(): RouteOverrides {
 }
 
 function saveOverrides(overrides: RouteOverrides) {
+ if (typeof window === "undefined") return;
+
  try {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
  } catch {
@@ -49,6 +52,8 @@ function getDefaultForRoute(routeKey: string): boolean {
 
 type DictionaryLookupState = {
  overrides: RouteOverrides;
+ hasHydrated: boolean;
+ hydrate: () => void;
  /** Whether lookup is enabled for the given pathname */
  isEnabled: (pathname: string) => boolean;
  /** Toggle lookup for the given pathname */
@@ -57,31 +62,43 @@ type DictionaryLookupState = {
  setEnabled: (pathname: string, enabled: boolean) => void;
 };
 
-export const useDictionaryLookupStore = create<DictionaryLookupState>(
- (set, get) => ({
-  overrides: loadOverrides(),
+export const useDictionaryLookupStore = create<DictionaryLookupState>((set, get) => ({
+ // Must be stable for SSR + first client render.
+ // Do not read localStorage here, otherwise Header hydration can mismatch.
+ overrides: {},
+ hasHydrated: false,
 
-  isEnabled: (pathname: string) => {
-   const key = getRouteKey(pathname);
-   const { overrides } = get();
-   if (key in overrides) return overrides[key];
-   return getDefaultForRoute(key);
-  },
+ hydrate: () => {
+  if (get().hasHydrated) return;
+  set({
+   overrides: loadOverrides(),
+   hasHydrated: true,
+  });
+ },
 
-  toggle: (pathname: string) => {
-   const key = getRouteKey(pathname);
-   const current = get().isEnabled(pathname);
-   const next = !current;
-   const newOverrides = { ...get().overrides, [key]: next };
-   saveOverrides(newOverrides);
-   set({ overrides: newOverrides });
-  },
+ isEnabled: (pathname: string) => {
+  const key = getRouteKey(pathname);
+  const { overrides } = get();
 
-  setEnabled: (pathname: string, enabled: boolean) => {
-   const key = getRouteKey(pathname);
-   const newOverrides = { ...get().overrides, [key]: enabled };
-   saveOverrides(newOverrides);
-   set({ overrides: newOverrides });
-  },
- }),
-);
+  if (key in overrides) return overrides[key];
+  return getDefaultForRoute(key);
+ },
+
+ toggle: (pathname: string) => {
+  const key = getRouteKey(pathname);
+  const current = get().isEnabled(pathname);
+  const next = !current;
+  const newOverrides = { ...get().overrides, [key]: next };
+
+  saveOverrides(newOverrides);
+  set({ overrides: newOverrides, hasHydrated: true });
+ },
+
+ setEnabled: (pathname: string, enabled: boolean) => {
+  const key = getRouteKey(pathname);
+  const newOverrides = { ...get().overrides, [key]: enabled };
+
+  saveOverrides(newOverrides);
+  set({ overrides: newOverrides, hasHydrated: true });
+ },
+}));

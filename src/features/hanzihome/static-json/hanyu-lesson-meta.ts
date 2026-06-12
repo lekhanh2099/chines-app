@@ -35,15 +35,9 @@ export function getHanyuLessonMeta(lessonDocument: HanyuLesson) {
    source?.lesson_title_pinyin ||
    "",
   titleVi:
-   lessonDocument.lesson.title.vi ||
-   lessonMeta?.lesson_title_vi ||
-   source?.lesson_title_vi ||
-   "",
+   lessonDocument.lesson.title.vi || lessonMeta?.lesson_title_vi || source?.lesson_title_vi || "",
   titleEn:
-   lessonDocument.lesson.title.en ||
-   lessonMeta?.lesson_title_en ||
-   source?.lesson_title_en ||
-   "",
+   lessonDocument.lesson.title.en || lessonMeta?.lesson_title_en || source?.lesson_title_en || "",
   sourceFiles: lessonMeta?.source_files ?? source?.source_files ?? [],
  };
 }

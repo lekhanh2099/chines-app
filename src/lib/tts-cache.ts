@@ -37,9 +37,7 @@ export async function getCachedAudio(key: string): Promise<Blob | null> {
    const store = tx.objectStore(STORE_NAME);
    const request = store.get(key);
    request.onsuccess = () => {
-    const result = request.result as
-     | { key: string; blob: Blob; createdAt: number }
-     | undefined;
+    const result = request.result as { key: string; blob: Blob; createdAt: number } | undefined;
     resolve(result?.blob ?? null);
    };
    request.onerror = () => resolve(null);

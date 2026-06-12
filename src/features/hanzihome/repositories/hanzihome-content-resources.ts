@@ -163,9 +163,7 @@ function buildLessonSectionHref(lesson: HanziHomeLesson, type: string) {
  });
 }
 
-export function buildLessonSectionResources(
- lesson: HanziHomeLesson,
-): LessonSectionResource[] {
+export function buildLessonSectionResources(lesson: HanziHomeLesson): LessonSectionResource[] {
  const sourceSections = lesson.sourceLesson?.lesson.sections ?? [];
 
  return sourceSections
@@ -183,9 +181,7 @@ export function buildLessonSectionResources(
   .sort((a, b) => a.order - b.order);
 }
 
-export function buildLessonOverviewResource(
- lesson: HanziHomeLesson,
-): LessonOverviewResource {
+export function buildLessonOverviewResource(lesson: HanziHomeLesson): LessonOverviewResource {
  return {
   id: lesson.id,
   courseId: lesson.courseId || "",
@@ -210,13 +206,9 @@ export function buildLessonOverviewResource(
  };
 }
 
-export function buildLessonSectionsResource(
- lesson: HanziHomeLesson,
-): LessonSectionsResource {
+export function buildLessonSectionsResource(lesson: HanziHomeLesson): LessonSectionsResource {
  const sections =
-  lesson.sourceLesson?.lesson.sections
-   .slice()
-   .sort((a, b) => a.order - b.order) ?? [];
+  lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ?? [];
 
  return { lessonId: lesson.id, sections, total: sections.length };
 }
@@ -231,9 +223,7 @@ export function buildLessonVocabularyResource(
  };
 }
 
-export function buildLessonGrammarResource(
- lesson: HanziHomeLesson,
-): LessonGrammarListResource {
+export function buildLessonGrammarResource(lesson: HanziHomeLesson): LessonGrammarListResource {
  return {
   lessonId: lesson.id,
   items: lesson.grammar,

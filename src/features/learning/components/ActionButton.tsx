@@ -31,7 +31,7 @@ export function ActionButton({
    onClick={onClick}
    disabled={loading || disabled}
    className={cn(
-    "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4 text-sm font-black shadow-theme-sm transition disabled:cursor-not-allowed disabled:opacity-60",
+    "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4  font-black shadow-theme-sm transition disabled:cursor-not-allowed disabled:opacity-60",
     toneClassName,
     className,
    )}

@@ -8,10 +8,7 @@ export function RadioField({
  helperText,
  options,
  ...rest
-}: Omit<
- React.InputHTMLAttributes<HTMLInputElement>,
- "value" | "onChange" | "onBlur" | "type"
-> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
  Omit<FieldItemProps, "field"> & {
   options: { label: string; value: string }[];
  }) {
@@ -27,10 +24,7 @@ export function RadioField({
   >
    <div className="flex flex-col gap-2 mt-2">
     {options.map((option) => (
-     <label
-      key={option.value}
-      className="flex items-center gap-2 cursor-pointer"
-     >
+     <label key={option.value} className="flex items-center gap-2 cursor-pointer">
       <input
        type="radio"
        name={field.name}
@@ -40,7 +34,7 @@ export function RadioField({
        onBlur={field.handleBlur}
        className="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500"
       />
-      <span className="text-sm text-slate-700">{option.label}</span>
+      <span className=" text-slate-700">{option.label}</span>
      </label>
     ))}
    </div>

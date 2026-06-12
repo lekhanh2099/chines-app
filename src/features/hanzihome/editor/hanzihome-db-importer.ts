@@ -9,14 +9,10 @@ type ScriptResult = {
 };
 
 async function runDataScript(scriptPath: string): Promise<ScriptResult> {
- const result = await execFileAsync(
-  process.execPath,
-  ["--experimental-strip-types", scriptPath],
-  {
-   cwd: process.cwd(),
-   maxBuffer: 1024 * 1024 * 8,
-  },
- );
+ const result = await execFileAsync(process.execPath, ["--experimental-strip-types", scriptPath], {
+  cwd: process.cwd(),
+  maxBuffer: 1024 * 1024 * 8,
+ });
 
  return {
   stdout: result.stdout,

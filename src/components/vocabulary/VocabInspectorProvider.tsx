@@ -56,19 +56,12 @@ export const useVocabInspector = () => {
  const openInspector = useInspectorStore((state) => state.openInspector);
  const closeInspector = useInspectorStore((state) => state.closeInspector);
  const isOpen = useInspectorStore((state) => state.isOpen);
- const openDetailDrawer = useVocabDetailDrawerStore(
-  (state) => state.openDetailDrawer,
- );
+ const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
  return { openInspector, closeInspector, isOpen, openDetailDrawer };
 };
 
-export function VocabInspectorProvider({
- children,
-}: {
- children: React.ReactNode;
-}) {
- const { isOpen, openInspector, closeInspector, selectedText } =
-  useInspectorStore();
+export function VocabInspectorProvider({ children }: { children: React.ReactNode }) {
+ const { isOpen, openInspector, closeInspector, selectedText } = useInspectorStore();
  const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
  const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null);
  const pathname = usePathname();
@@ -111,8 +104,7 @@ export function VocabInspectorProvider({
   return () => document.removeEventListener("mouseup", handleMouseUp);
  }, [openInspector, lookupEnabled]);
 
- const getAnchor = () =>
-  selectionAnchorRef.current as unknown as Element | null;
+ const getAnchor = () => selectionAnchorRef.current as unknown as Element | null;
 
  return (
   <>
@@ -166,9 +158,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
 
  const [isSaving, setIsSaving] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
- const openDetailDrawer = useVocabDetailDrawerStore(
-  (state) => state.openDetailDrawer,
- );
+ const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSaveToVocab = async () => {
@@ -283,15 +273,13 @@ function InspectorCard({ onClose }: InspectorCardProps) {
     {isLoading ? (
      <InspectorLoadingSkeleton />
     ) : !vocabData ? (
-     <div className="flex h-32 items-center justify-center text-center text-sm text-text-muted">
+     <div className="flex h-32 items-center justify-center text-center  text-text-muted">
       Không tìm thấy dữ liệu từ vựng
      </div>
     ) : (
      <div className="space-y-4">
       <section className="space-y-3 rounded-2xl  border border-border-default bg-bg-primary px-4 py-4 text-center shadow-theme-sm">
-       <p className="text-2xl font-semibold tracking-tight  ">
-        {vocabData.pinyin}
-       </p>
+       <p className="text-2xl font-semibold tracking-tight  ">{vocabData.pinyin}</p>
 
        {sinoVietnamese && (
         <div className="flex justify-center">
@@ -311,9 +299,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
         {primaryMeaning}
        </p>
        {secondaryMeaning && secondaryMeaning !== primaryMeaning && (
-        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-         {secondaryMeaning}
-        </p>
+        <p className="mt-2  leading-relaxed text-text-secondary">{secondaryMeaning}</p>
        )}
        {deepError && <p className="mt-3 text-xs text-amber-700">{deepError}</p>}
       </section>

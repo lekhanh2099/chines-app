@@ -75,9 +75,7 @@ export async function fetchHanziHomeCatalog(options: {
   params.set("includeLessons", "1");
  }
 
- const url = params.size
-  ? `/api/hanzihome/catalog?${params.toString()}`
-  : "/api/hanzihome/catalog";
+ const url = params.size ? `/api/hanzihome/catalog?${params.toString()}` : "/api/hanzihome/catalog";
  const payload = await fetchJson<CatalogApiResponse>(url);
 
  return payload.catalog;
@@ -144,10 +142,7 @@ export async function saveHanziHomeLearningState(
  return payload.state;
 }
 
-export async function updateHanziHomeVocabCore(
- vocabId: string,
- payload: UpdateVocabCorePayload,
-) {
+export async function updateHanziHomeVocabCore(vocabId: string, payload: UpdateVocabCorePayload) {
  return patchJson<{ item: unknown }>(
   `/api/hanzihome/edit/vocab/${encodeURIComponent(vocabId)}/core`,
   payload,

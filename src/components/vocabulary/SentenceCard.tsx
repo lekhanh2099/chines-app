@@ -37,22 +37,13 @@ export function SentenceCard({
   <div className="group rounded-2xl  border border-border-default bg-bg-card hover:bg-bg-card-hover transition-colors p-4">
    <div className="flex items-start justify-between gap-3">
     <div className="flex-1 min-w-0">
-     <Link
-      href={`/dictionary/${encodeURIComponent(item.hanzi)}`}
-      className="block"
-     >
+     <Link href={`/dictionary/${encodeURIComponent(item.hanzi)}`} className="block">
       <p className="text-lg font-bold text-text-primary leading-relaxed hover:  transition-colors">
        {item.hanzi}
       </p>
      </Link>
-     {item.pinyin && (
-      <p className="text-sm text-text-muted mt-1">{item.pinyin}</p>
-     )}
-     {item.meaning && (
-      <p className="text-sm text-text-secondary mt-2 leading-relaxed">
-       {item.meaning}
-      </p>
-     )}
+     {item.pinyin && <p className=" text-text-muted mt-1">{item.pinyin}</p>}
+     {item.meaning && <p className=" text-text-secondary mt-2 leading-relaxed">{item.meaning}</p>}
     </div>
 
     <div className="flex flex-col items-end gap-2 shrink-0">

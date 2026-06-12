@@ -133,9 +133,7 @@ export default function EditorFloatingMenu() {
  });
  const pathname = usePathname();
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
- const openDetailDrawer = useVocabDetailDrawerStore(
-  (state) => state.openDetailDrawer,
- );
+ const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
 
  const debouncedSelection = useDebounce(draftSelection, DEBOUNCE_DELAY);
  const selectedText = debouncedSelection.text;
@@ -156,16 +154,11 @@ export default function EditorFloatingMenu() {
  });
 
  const smartMode = smartData?.mode || mode;
- const detailTarget =
-  smartData?.entry.hanzi || extractChinese(selectedText) || selectedText;
+ const detailTarget = smartData?.entry.hanzi || extractChinese(selectedText) || selectedText;
 
  const updateAnchorFromNativeSelection = useCallback(() => {
   const nativeSelection = window.getSelection();
-  if (
-   !nativeSelection ||
-   nativeSelection.isCollapsed ||
-   nativeSelection.rangeCount === 0
-  ) {
+  if (!nativeSelection || nativeSelection.isCollapsed || nativeSelection.rangeCount === 0) {
    selectionAnchorRef.current = null;
    setHasAnchor(false);
    return false;
@@ -186,10 +179,7 @@ export default function EditorFloatingMenu() {
   return true;
  }, [editor]);
 
- const getAnchor = useCallback(
-  () => selectionAnchorRef.current as unknown as Element | null,
-  [],
- );
+ const getAnchor = useCallback(() => selectionAnchorRef.current as unknown as Element | null, []);
 
  const clearSelectionState = useCallback(() => {
   latestDraftRef.current = { text: "", contextSentence: "" };
@@ -217,33 +207,24 @@ export default function EditorFloatingMenu() {
    !nativeSelection ||
    nativeSelection.isCollapsed
   ) {
-   if (
-    (showNote || showLinkSearch || showInlineNote) &&
-    latestDraftRef.current.text
-   ) {
+   if ((showNote || showLinkSearch || showInlineNote) && latestDraftRef.current.text) {
     return;
    }
    clearSelectionState();
    return;
   }
 
-  const nextText =
-   nativeSelection.toString().trim() || selection.getTextContent().trim();
+  const nextText = nativeSelection.toString().trim() || selection.getTextContent().trim();
   if (!nextText) {
    clearSelectionState();
    return;
   }
 
   const anchorNode = selection.anchor.getNode();
-  const blockText = anchorNode
-   .getTopLevelElement()
-   ?.getTextContent()
-   .replace(/\s+/g, " ")
-   .trim();
+  const blockText = anchorNode.getTopLevelElement()?.getTextContent().replace(/\s+/g, " ").trim();
   const nextDraft = {
    text: nextText,
-   contextSentence:
-    blockText && blockText.includes(nextText) ? blockText : nextText,
+   contextSentence: blockText && blockText.includes(nextText) ? blockText : nextText,
   };
 
   setIsBold(selection.hasFormat("bold"));
@@ -396,9 +377,7 @@ export default function EditorFloatingMenu() {
      : `Đã lưu "${smartData?.entry.hanzi || detailTarget}" vào kho ôn tập`,
    );
   } catch (saveError) {
-   toast.error(
-    saveError instanceof Error ? saveError.message : "Không thể lưu selection",
-   );
+   toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu selection");
   }
  };
 
@@ -446,9 +425,7 @@ export default function EditorFloatingMenu() {
    toast.success("Đã lưu ghi chú nhanh");
    setShowNote(false);
   } catch (saveError) {
-   toast.error(
-    saveError instanceof Error ? saveError.message : "Không thể lưu ghi chú",
-   );
+   toast.error(saveError instanceof Error ? saveError.message : "Không thể lưu ghi chú");
   }
  };
 
@@ -481,11 +458,7 @@ export default function EditorFloatingMenu() {
 
     const linkText = selection.getTextContent() || noteItem.title;
     selection.removeText();
-    const linkNode = $createInternalLinkNode(
-     noteItem.id,
-     noteItem.title,
-     linkText,
-    );
+    const linkNode = $createInternalLinkNode(noteItem.id, noteItem.title, linkText);
     selection.insertNodes([linkNode]);
    });
    toast.success(`Đã liên kết đến "${noteItem.title}"`);
@@ -496,9 +469,7 @@ export default function EditorFloatingMenu() {
   [editor],
  );
 
- const handleToggleLinkSearch = (
-  event: React.MouseEvent<HTMLButtonElement>,
- ) => {
+ const handleToggleLinkSearch = (event: React.MouseEvent<HTMLButtonElement>) => {
   preserveEditorSelection(event);
   const next = !showLinkSearch;
   setShowLinkSearch(next);
@@ -512,9 +483,7 @@ export default function EditorFloatingMenu() {
  };
 
  /* ── Inline quick note ── */
- const handleToggleInlineNote = (
-  event: React.MouseEvent<HTMLButtonElement>,
- ) => {
+ const handleToggleInlineNote = (event: React.MouseEvent<HTMLButtonElement>) => {
   preserveEditorSelection(event);
   const next = !showInlineNote;
   setShowInlineNote(next);
@@ -586,25 +555,21 @@ export default function EditorFloatingMenu() {
       {showChineseLookup && (
        <div className="p-2 pb-1">
         {smartLoading ? (
-         <div className="flex items-center justify-center gap-2 rounded-xl px-3 py-4 text-sm text-slate-500">
+         <div className="flex items-center justify-center gap-2 rounded-xl px-3 py-4  text-slate-500">
           <Loader2 className="h-4 w-4 animate-spin text-indigo-500" />
           <span>Đang tra...</span>
          </div>
         ) : smartError ? (
-         <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
+         <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2  text-rose-700">
           {error instanceof Error ? error.message : "Không thể tải dữ liệu"}
          </div>
         ) : smartData ? (
          smartMode === "word" ? (
           <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
            <div className="text-center">
-            <p className="text-xl font-bold text-slate-900">
-             {smartData.entry.hanzi}
-            </p>
+            <p className="text-xl font-bold text-slate-900">{smartData.entry.hanzi}</p>
             {smartData.entry.pinyin && (
-             <p className="mt-1 text-sm font-semibold text-indigo-600">
-              {smartData.entry.pinyin}
-             </p>
+             <p className="mt-1  font-semibold text-indigo-600">{smartData.entry.pinyin}</p>
             )}
            </div>
            <div className="grid gap-2 sm:grid-cols-3">
@@ -612,17 +577,15 @@ export default function EditorFloatingMenu() {
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Từ loại
              </p>
-             <p className="mt-1 text-sm font-semibold text-slate-800">
-              {smartData.definitions[0]?.pos ||
-               smartData.entry.ai_analysis?.word_type ||
-               "Chưa rõ"}
+             <p className="mt-1  font-semibold text-slate-800">
+              {smartData.definitions[0]?.pos || smartData.entry.ai_analysis?.word_type || "Chưa rõ"}
              </p>
             </div>
             <div className="rounded-xl border border-border-default bg-bg-card px-3 py-2 text-text-primary shadow-theme-sm">
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Pinyin
              </p>
-             <p className="mt-1 text-sm font-semibold text-indigo-600">
+             <p className="mt-1  font-semibold text-indigo-600">
               {smartData.entry.pinyin || "Chưa rõ"}
              </p>
             </div>
@@ -630,7 +593,7 @@ export default function EditorFloatingMenu() {
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Nghĩa
              </p>
-             <p className="mt-1 line-clamp-2 text-sm font-semibold text-slate-800">
+             <p className="mt-1 line-clamp-2  font-semibold text-slate-800">
               {smartData.meaning_summary ||
                smartData.definitions[0]?.meaning ||
                smartData.definitions[0]?.text ||
@@ -640,7 +603,7 @@ export default function EditorFloatingMenu() {
             </div>
            </div>
            <div className="rounded-xl border border-border-default bg-bg-card px-3 py-3 text-center text-text-primary shadow-theme-sm">
-            <p className="text-sm font-medium leading-6 text-slate-800">
+            <p className=" font-medium leading-6 text-slate-800">
              {smartData.meaning_summary ||
               smartData.definitions[0]?.meaning ||
               smartData.definitions[0]?.text ||
@@ -649,8 +612,7 @@ export default function EditorFloatingMenu() {
             </p>
             {smartData.definitions[1] && (
              <p className="mt-1 text-xs leading-5 text-slate-500">
-              {smartData.definitions[1].meaning ||
-               smartData.definitions[1].text}
+              {smartData.definitions[1].meaning || smartData.definitions[1].text}
              </p>
             )}
            </div>
@@ -658,13 +620,9 @@ export default function EditorFloatingMenu() {
          ) : (
           <div className="space-y-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
            <div className="rounded-xl bg-slate-50 px-3 py-2 text-center">
-            <p className="text-sm font-semibold leading-6 text-slate-900">
-             {smartData.selection}
-            </p>
+            <p className=" font-semibold leading-6 text-slate-900">{smartData.selection}</p>
             {smartData.entry.pinyin && (
-             <p className="mt-1 text-xs text-gray-500">
-              {smartData.entry.pinyin}
-             </p>
+             <p className="mt-1 text-xs text-gray-500">{smartData.entry.pinyin}</p>
             )}
            </div>
 
@@ -672,13 +630,13 @@ export default function EditorFloatingMenu() {
             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
              Dịch nghĩa
             </p>
-            <div className="rounded-xl border border-slate-200 px-3 py-2 text-sm leading-6 text-slate-700">
+            <div className="rounded-xl border border-slate-200 px-3 py-2  leading-6 text-slate-700">
              {smartData.translation || "Chưa có bản dịch cho câu này"}
             </div>
            </div>
 
            {smartData.grammar_points[0]?.explanation && (
-            <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 text-sm leading-6 text-text-secondary shadow-theme-sm">
+            <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2  leading-6 text-text-secondary shadow-theme-sm">
              {smartData.grammar_points[0].explanation}
             </div>
            )}
@@ -789,18 +747,10 @@ export default function EditorFloatingMenu() {
          </Button>
          <div className="mx-1 h-5 w-px bg-slate-200" />
 
-         <FormatButton
-          active={isBold}
-          onClick={() => formatText("bold")}
-          title="Bold"
-         >
+         <FormatButton active={isBold} onClick={() => formatText("bold")} title="Bold">
           <Bold className="h-4 w-4" />
          </FormatButton>
-         <FormatButton
-          active={isItalic}
-          onClick={() => formatText("italic")}
-          title="Italic"
-         >
+         <FormatButton active={isItalic} onClick={() => formatText("italic")} title="Italic">
           <Italic className="h-4 w-4" />
          </FormatButton>
          <FormatButton
@@ -832,18 +782,10 @@ export default function EditorFloatingMenu() {
           <Superscript className="h-4 w-4" />
          </FormatButton>
          <div className="mx-1 h-5 w-px bg-slate-200" />
-         <FormatButton
-          active={isHighlight}
-          onClick={toggleHighlight}
-          title="Highlight"
-         >
+         <FormatButton active={isHighlight} onClick={toggleHighlight} title="Highlight">
           <Highlighter className="h-4 w-4" />
          </FormatButton>
-         <FormatButton
-          active={isCode}
-          onClick={() => formatText("code")}
-          title="Inline Code"
-         >
+         <FormatButton active={isCode} onClick={() => formatText("code")} title="Inline Code">
           <Code className="h-4 w-4" />
          </FormatButton>
          <div className="mx-1 h-5 w-px bg-slate-200" />
@@ -883,7 +825,7 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setNoteDraft(event.target.value)}
-          className="min-h-23 w-full resize-y rounded-xl border border-yellow-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-amber-300"
+          className="min-h-23 w-full resize-y rounded-xl border border-yellow-200 bg-transparent px-3 py-2  text-slate-700 outline-none placeholder:text-slate-400 focus:border-amber-300"
           placeholder="Ghi chú nhanh..."
          />
         </div>
@@ -894,9 +836,7 @@ export default function EditorFloatingMenu() {
         <div className="mt-2 overflow-hidden rounded-xl border border-indigo-100 bg-indigo-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center gap-2">
           <Search className="h-4 w-4 text-indigo-500" />
-          <span className="text-xs font-semibold text-indigo-700">
-           Liên kết ghi chú
-          </span>
+          <span className="text-xs font-semibold text-indigo-700">Liên kết ghi chú</span>
          </div>
          <input
           ref={linkSearchInputRef}
@@ -921,7 +861,7 @@ export default function EditorFloatingMenu() {
            }
           }}
           placeholder="Tìm theo tiêu đề ghi chú..."
-          className="w-full rounded-xl border border-border-default bg-bg-input px-3 py-1.5 text-sm text-text-primary outline-none placeholder:text-text-muted focus:border-accent-muted"
+          className="w-full rounded-xl border border-border-default bg-bg-input px-3 py-1.5  text-text-primary outline-none placeholder:text-text-muted focus:border-accent-muted"
          />
          {isSearching && (
           <div className="mt-2 flex items-center gap-2 text-xs text-indigo-500">
@@ -938,7 +878,7 @@ export default function EditorFloatingMenu() {
               preserveEditorSelection(event);
               handleInsertNoteLink(note);
              }}
-             className="w-full text-left rounded-2xl  px-3 py-1.5 text-sm hover:bg-indigo-100 transition-colors text-slate-700"
+             className="w-full text-left rounded-2xl  px-3 py-1.5  hover:bg-indigo-100 transition-colors text-slate-700"
             >
              {note.title}
             </button>
@@ -946,9 +886,7 @@ export default function EditorFloatingMenu() {
           </div>
          )}
          {!isSearching && linkSearchQuery && linkSearchResults.length === 0 && (
-          <p className="mt-2 text-xs text-slate-400">
-           Không tìm thấy ghi chú nào
-          </p>
+          <p className="mt-2 text-xs text-slate-400">Không tìm thấy ghi chú nào</p>
          )}
         </div>
        )}
@@ -983,7 +921,7 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setInlineNoteDraft(event.target.value)}
-          className="min-h-16 w-full resize-y rounded-xl border border-sky-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-300"
+          className="min-h-16 w-full resize-y rounded-xl border border-sky-200 bg-transparent px-3 py-2  text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-300"
           placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
          />
         </div>

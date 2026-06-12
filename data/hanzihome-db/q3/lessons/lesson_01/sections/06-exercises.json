@@ -36,36 +36,49 @@
             {
               "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
               "left": "终于 zhōngyú",
-              "right": "充裕 chōngyù"
+              "right": "充裕 chōngyù",
+              "left_vi": "cuối cùng / rốt cuộc — zhōngyú",
+              "right_vi": "dồi dào / sung túc / đủ đầy — chōngyù"
             },
             {
               "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
               "left": "心里 xīnlǐ",
-              "right": "心理 xīnlǐ"
+              "right": "心理 xīnlǐ",
+              "left_vi": "trong lòng / trong bụng nghĩ — xīnlǐ",
+              "right_vi": "tâm lý — xīnlǐ"
             },
             {
               "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
               "left": "联系 liánxì",
-              "right": "练习 liànxí"
+              "right": "练习 liànxí",
+              "left_vi": "liên hệ / liên lạc — liánxì",
+              "right_vi": "luyện tập / bài tập — liànxí"
             },
             {
               "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
               "left": "如果 rúguǒ",
-              "right": "路过 lùguò"
+              "right": "路过 lùguò",
+              "left_vi": "nếu / nếu như — rúguǒ",
+              "right_vi": "đi ngang qua / ghé qua đường — lùguò"
             },
             {
               "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
               "left": "因此 yīncǐ",
-              "right": "影视 yǐngshì"
+              "right": "影视 yǐngshì",
+              "left_vi": "vì vậy / do đó — yīncǐ",
+              "right_vi": "điện ảnh và truyền hình — yǐngshì"
             },
             {
               "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
               "left": "想念 xiǎngniàn",
-              "right": "项链 xiàngliàn"
+              "right": "项链 xiàngliàn",
+              "left_vi": "nhớ / nhớ nhung — xiǎngniàn",
+              "right_vi": "dây chuyền / vòng cổ — xiàngliàn"
             }
           ],
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "title_vi": "Phân biệt âm và thanh điệu"
         },
         {
           "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
@@ -80,9 +93,12 @@
               "pinyin": "Cí mǔ shǒu zhōng xiàn, Yóuzǐ shēn shàng yī. Lín xíng mì mì féng, Yì kǒng chí chí guī. Shuí yán cùn cǎo xīn, Bào dé sān chūn huī.",
               "source_origin": "textbook",
               "check_needed": false,
-              "vi": "Mẹ hiền cầm sợi chỉ trong tay,\nÁo mặc trên thân người con xa nhà.\nTrước lúc con đi, mẹ khâu từng mũi thật dày,\nLòng lo con mãi chậm ngày trở về.\nAi nói tấm lòng nhỏ bé của con cái,\nCó thể báo đáp được ánh xuân ba tháng?"
+              "vi": "Mẹ hiền cầm sợi chỉ trong tay,\nÁo mặc trên thân người con xa nhà.\nTrước lúc con đi, mẹ khâu từng mũi thật dày,\nLòng lo con mãi chậm ngày trở về.\nAi nói tấm lòng nhỏ bé của con cái,\nCó thể báo đáp được ánh xuân ba tháng?",
+              "title_vi": "Du tử ngâm / Khúc ngâm của người con xa nhà",
+              "author_vi": "[Đời Đường] Mạnh Giao"
             }
-          ]
+          ],
+          "title_vi": "Đọc thành tiếng"
         }
       ],
       "rendering": {
@@ -109,168 +125,192 @@
           "text": "实现理想",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Shíxiàn lǐxiǎng"
+          "pinyin": "Shíxiàn lǐxiǎng",
+          "vi": "thực hiện lý tưởng"
         },
         {
           "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
           "text": "实现愿望",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Shíxiàn yuànwàng"
+          "pinyin": "Shíxiàn yuànwàng",
+          "vi": "thực hiện nguyện vọng / mong ước"
         },
         {
           "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
           "text": "实现不了",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Shíxiàn bù liǎo"
+          "pinyin": "Shíxiàn bù liǎo",
+          "vi": "không thể thực hiện được"
         },
         {
           "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
           "text": "改变主意",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gǎibiàn zhǔyi"
+          "pinyin": "Gǎibiàn zhǔyi",
+          "vi": "đổi ý"
         },
         {
           "id": "9e310873-3483-4086-91b4-53e6c4982438",
           "text": "改变计划",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gǎibiàn jìhuà"
+          "pinyin": "Gǎibiàn jìhuà",
+          "vi": "thay đổi kế hoạch"
         },
         {
           "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
           "text": "改变想法",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gǎibiàn xiǎngfǎ"
+          "pinyin": "Gǎibiàn xiǎngfǎ",
+          "vi": "thay đổi suy nghĩ/cách nghĩ"
         },
         {
           "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
           "text": "有联系",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Yǒu liánxì"
+          "pinyin": "Yǒu liánxì",
+          "vi": "có liên hệ / có liên lạc"
         },
         {
           "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
           "text": "没有联系",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Méi yǒu liánxì"
+          "pinyin": "Méi yǒu liánxì",
+          "vi": "không có liên hệ / không liên lạc"
         },
         {
           "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
           "text": "联系学校",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Liánxì xuéxiào"
+          "pinyin": "Liánxì xuéxiào",
+          "vi": "liên hệ với trường"
         },
         {
           "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
           "text": "办手续",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Bàn shǒuxù"
+          "pinyin": "Bàn shǒuxù",
+          "vi": "làm thủ tục"
         },
         {
           "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
           "text": "办事",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Bàn shì"
+          "pinyin": "Bàn shì",
+          "vi": "làm việc / giải quyết công việc"
         },
         {
           "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
           "text": "办签证",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Bàn qiānzhèng"
+          "pinyin": "Bàn qiānzhèng",
+          "vi": "làm visa / làm thị thực"
         },
         {
           "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
           "text": "临出发",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Lín chūfā"
+          "pinyin": "Lín chūfā",
+          "vi": "trước lúc xuất phát"
         },
         {
           "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
           "text": "临上车前",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Lín shàng chē qián"
+          "pinyin": "Lín shàng chē qián",
+          "vi": "ngay trước lúc lên xe"
         },
         {
           "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
           "text": "临上飞机",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Lín shàng fēijī"
+          "pinyin": "Lín shàng fēijī",
+          "vi": "ngay trước lúc lên máy bay"
         },
         {
           "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
           "text": "拼命跑",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Pīnmìng pǎo"
+          "pinyin": "Pīnmìng pǎo",
+          "vi": "chạy hết sức / chạy như liều mạng"
         },
         {
           "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
           "text": "拼命学习",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Pīnmìng xuéxí"
+          "pinyin": "Pīnmìng xuéxí",
+          "vi": "học cật lực"
         },
         {
           "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
           "text": "拼命工作",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Pīnmìng gōngzuò"
+          "pinyin": "Pīnmìng gōngzuò",
+          "vi": "làm việc cật lực"
         },
         {
           "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
           "text": "跟父母商量",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gēn fùmǔ shāngliang"
+          "pinyin": "Gēn fùmǔ shāngliang",
+          "vi": "bàn bạc với bố mẹ"
         },
         {
           "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
           "text": "跟学校商量",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gēn xuéxiào shāngliang"
+          "pinyin": "Gēn xuéxiào shāngliang",
+          "vi": "bàn bạc với nhà trường"
         },
         {
           "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
           "text": "跟朋友商量",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gēn péngyou shāngliang"
+          "pinyin": "Gēn péngyou shāngliang",
+          "vi": "bàn bạc với bạn bè"
         },
         {
           "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
           "text": "请放心",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Qǐng fàngxīn"
+          "pinyin": "Qǐng fàngxīn",
+          "vi": "xin hãy yên tâm"
         },
         {
           "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
           "text": "不放心",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Bù fàngxīn"
+          "pinyin": "Bù fàngxīn",
+          "vi": "không yên tâm"
         },
         {
           "id": "71556026-f031-4d36-9a7e-7abd82202c42",
           "text": "放不下心",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Fàng bu xià xīn"
+          "pinyin": "Fàng bu xià xīn",
+          "vi": "không thể yên lòng / vẫn không yên tâm được"
         }
       ],
       "rendering": {
@@ -317,7 +357,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Wǒ zǎojiù xiǎng néng yǒu jīhuì dào Chángchéng qù kànkan， jīntiān zhè ge yuànwàng______shíxiàn le。",
-              "answer_pinyin": "Zhōngyú"
+              "answer_pinyin": "Zhōngyú",
+              "prompt_vi": "Tôi từ lâu đã mong có cơ hội đến Trường Thành xem thử; hôm nay nguyện vọng này cuối cùng đã thành hiện thực.",
+              "answer_vi": "cuối cùng / rốt cuộc"
             },
             {
               "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
@@ -328,7 +370,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Dàxué bìyè yǐhòu， wǒ hé tā méi yǒu______guò。",
-              "answer_pinyin": "Liánxì"
+              "answer_pinyin": "Liánxì",
+              "prompt_vi": "Sau khi tốt nghiệp đại học, tôi và cô ấy chưa từng liên lạc với nhau.",
+              "answer_vi": "liên hệ / liên lạc"
             },
             {
               "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
@@ -339,7 +383,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "______Tā zhīdào le zhè jiàn shì， yī dìng huì bù gāoxìng。",
-              "answer_pinyin": "Rúguǒ"
+              "answer_pinyin": "Rúguǒ",
+              "prompt_vi": "Nếu cô ấy biết chuyện này, chắc chắn sẽ không vui.",
+              "answer_vi": "nếu / nếu như"
             },
             {
               "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
@@ -350,7 +396,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Tiānqì yùbào shuō jīntiān yǒu yǔ， nǐ kàn，______xià qǐlái le。",
-              "answer_pinyin": "Guǒrán"
+              "answer_pinyin": "Guǒrán",
+              "prompt_vi": "Dự báo thời tiết nói hôm nay có mưa; bạn xem, quả nhiên mưa đã bắt đầu rơi rồi.",
+              "answer_vi": "quả nhiên / đúng như dự đoán"
             },
             {
               "id": "550309ca-788b-4859-9f6d-650749a11c98",
@@ -361,7 +409,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Lí kāi jiā yǐhòu， cái zhīdào wǒ shì duōme______fùmǔ。",
-              "answer_pinyin": "Xiǎngniàn"
+              "answer_pinyin": "Xiǎngniàn",
+              "prompt_vi": "Sau khi rời nhà, tôi mới biết mình nhớ bố mẹ đến mức nào.",
+              "answer_vi": "nhớ / nhớ nhung"
             },
             {
               "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
@@ -372,7 +422,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Māma zǒng shì______wǒ yào zhùyì ānquán。",
-              "answer_pinyin": "Zhǔfù"
+              "answer_pinyin": "Zhǔfù",
+              "prompt_vi": "Mẹ luôn dặn tôi phải chú ý an toàn.",
+              "answer_vi": "dặn dò / căn dặn"
             },
             {
               "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
@@ -383,7 +435,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Wǒ zhīdào， rúguǒ bǎ zhè jiàn shì gàosu fùmǔ de huà， tāmen duōbàn bú huì tóngyì， suǒyǐ______mánzhe tāmen。",
-              "answer_pinyin": "Zhǐhǎo"
+              "answer_pinyin": "Zhǐhǎo",
+              "prompt_vi": "Tôi biết nếu nói chuyện này với bố mẹ thì phần lớn là họ sẽ không đồng ý, nên tôi đành phải giấu họ.",
+              "answer_vi": "đành phải / chỉ còn cách"
             },
             {
               "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
@@ -394,7 +448,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Gāng dào Zhōngguó de shíhou， yǒu hǎo duō dìfang bù xíguàn， dànshì xiànzài yào líkāi le， hái zhēn yǒu diǎn ér______。",
-              "answer_pinyin": "Liànliàn-bùshě"
+              "answer_pinyin": "Liànliàn-bùshě",
+              "prompt_vi": "Lúc mới đến Trung Quốc, có rất nhiều điều không quen; nhưng bây giờ sắp rời đi rồi, thật sự lại có chút lưu luyến không nỡ.",
+              "answer_vi": "lưu luyến không nỡ rời"
             },
             {
               "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
@@ -405,7 +461,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "A： nǐ______dǎsuàn zuò shénme？ B： wǒ juéde wǒ de xìnggé dāng lǎoshī bǐjiào hǎo。",
-              "answer_pinyin": "Jiānglái"
+              "answer_pinyin": "Jiānglái",
+              "prompt_vi": "A: Sau này bạn định làm gì?\nB: Tôi thấy tính cách của mình làm giáo viên thì khá hợp.",
+              "answer_vi": "tương lai / sau này"
             },
             {
               "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
@@ -416,8 +474,22 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Shìjiè shàng de yíqiè shìqing dōu zài biànhuà zhōng， nǐ bù juéde rén de xìnggé yě huì______ma？",
-              "answer_pinyin": "Gǎibiàn"
+              "answer_pinyin": "Gǎibiàn",
+              "prompt_vi": "Mọi sự trên thế giới đều đang thay đổi; bạn không thấy tính cách con người cũng sẽ thay đổi sao?",
+              "answer_vi": "thay đổi"
             }
+          ],
+          "word_bank_vi": [
+            "lưu luyến không nỡ rời",
+            "nếu / nếu như",
+            "đành phải / chỉ còn cách",
+            "quả nhiên / đúng như dự đoán",
+            "tương lai / sau này",
+            "cuối cùng / rốt cuộc",
+            "nhớ / nhớ nhung",
+            "liên hệ / liên lạc",
+            "thay đổi",
+            "dặn dò / căn dặn"
           ]
         },
         {
@@ -444,7 +516,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Wǒ shōu______le tā cóng guówài jì lái de lǐ wù。",
-              "answer_pinyin": "Dào"
+              "answer_pinyin": "Dào",
+              "prompt_vi": "Tôi đã nhận được món quà cô ấy gửi từ nước ngoài về.",
+              "answer_vi": "đến / đạt tới / bổ ngữ kết quả đến được"
             },
             {
               "id": "07469e97-a1b0-46e0-8866-d361f064c457",
@@ -455,7 +529,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Xià bān yǐhòu， tā jiù máng______mǎi cài、 zuò fàn。",
-              "answer_pinyin": "Zhe"
+              "answer_pinyin": "Zhe",
+              "prompt_vi": "Sau khi tan làm, cô ấy liền bận mua rau, nấu cơm.",
+              "answer_vi": "trợ từ 着: chỉ trạng thái đang duy trì hoặc hành động đi kèm"
             },
             {
               "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
@@ -466,7 +542,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Wǒ bǎ yíqiè shǒuxù bàn______yǐhòu， cái gàosu tā wǒ yào chūguó， tā tīng le yǐhòu yǒu diǎn ér bú dà gāoxìng。",
-              "answer_pinyin": "Hǎo"
+              "answer_pinyin": "Hǎo",
+              "prompt_vi": "Sau khi tôi làm xong toàn bộ thủ tục, tôi mới nói với cô ấy rằng tôi sắp ra nước ngoài; nghe xong cô ấy hơi không vui lắm.",
+              "answer_vi": "xong / tốt / bổ ngữ kết quả chỉ làm xong, làm ổn"
             },
             {
               "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
@@ -477,7 +555,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Māma yào wǒ Dào Zhōngguó yǐhòu， měi ge xīngqī dōu______tā dǎ gè diànhuà。",
-              "answer_pinyin": "Gěi"
+              "answer_pinyin": "Gěi",
+              "prompt_vi": "Mẹ yêu cầu tôi sau khi đến Trung Quốc, mỗi tuần đều gọi điện cho bà một lần.",
+              "answer_vi": "cho / với / làm cho; trong bài có thể là giới từ/cụm bổ ngữ 给"
             },
             {
               "id": "dce87767-a467-497b-b4a9-5434e845aedf",
@@ -488,7 +568,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Wǒ hěn zǎo jiù xiǎng pá shàng Chángchéng kàn kàn， jīntiān zhè ge yuànwàng zhōngyú shíxiàn______， xīnlǐ yǒu shuō bù chū______gāoxìng。",
-              "answer_pinyin": "Le； de"
+              "answer_pinyin": "Le； de",
+              "prompt_vi": "Tôi từ rất lâu đã muốn leo lên Trường Thành xem thử; hôm nay nguyện vọng này cuối cùng đã thành hiện thực, trong lòng vui không nói nên lời.",
+              "answer_vi": "了; 的"
             },
             {
               "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
@@ -499,7 +581,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Lín chūfā shí， bàba gěi wǒ mǎi______hěn duō dōngxi， pīnmìng______wǎng wǒ xiāngzi lǐ sāi。 Yīnwèi dōngxi tài duō， xiāngzi dōu zhuāng bù______le。",
-              "answer_pinyin": "Le； de； xià"
+              "answer_pinyin": "Le； de； xià",
+              "prompt_vi": "Trước lúc xuất phát, bố mua cho tôi rất nhiều đồ, cứ cố nhét vào va-li của tôi. Vì đồ nhiều quá nên va-li không chứa nổi nữa.",
+              "answer_vi": "了; 地; 下"
             },
             {
               "id": "daeadd79-6c9c-4f14-92f6-d7a4c907b10c",
@@ -510,7 +594,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Péngyou kāi chē______wǒ sòng______jīchǎng， líbié shí kàn tā liànliàn-bùshě______yàngzi， wǒ de yǎnlèi yě liú le chūlái。",
-              "answer_pinyin": "Bǎ； dào； de"
+              "answer_pinyin": "Bǎ； dào； de",
+              "prompt_vi": "Bạn tôi lái xe đưa tôi đến sân bay; lúc chia tay, nhìn dáng vẻ lưu luyến không nỡ rời của anh ấy/cô ấy, nước mắt tôi cũng chảy ra.",
+              "answer_vi": "把; 到; 的"
             },
             {
               "id": "693c7f3e-bbea-4ef7-beec-92a70e277fd1",
@@ -521,8 +607,21 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Nǐ zhīdào wǒ de xìnggé， juédìng le de shìqing shì bú huì gǎibiàn______。",
-              "answer_pinyin": "De"
+              "answer_pinyin": "De",
+              "prompt_vi": "Bạn biết tính tôi mà; chuyện đã quyết định rồi thì sẽ không thay đổi đâu.",
+              "answer_vi": "trợ từ 的: kết cấu định ngữ / nhấn mạnh / danh từ hóa tùy ngữ cảnh"
             }
+          ],
+          "word_bank_vi": [
+            "trợ từ 着: chỉ trạng thái đang duy trì hoặc hành động đi kèm",
+            "trợ từ 了: báo hoàn thành hoặc thay đổi tình huống",
+            "trợ từ 的: kết cấu định ngữ / nhấn mạnh / danh từ hóa tùy ngữ cảnh",
+            "đến / đạt tới / bổ ngữ kết quả đến được",
+            "cho / với / làm cho; trong bài có thể là giới từ/cụm bổ ngữ 给",
+            "giới từ 把 đưa tân ngữ lên trước động từ",
+            "xong / tốt / bổ ngữ kết quả chỉ làm xong, làm ổn",
+            "trợ từ 地: nối trạng ngữ với động từ",
+            "xuống; chứa/vừa; bổ ngữ kết quả/xu hướng tùy ngữ cảnh"
           ]
         },
         {
@@ -542,7 +641,13 @@
                 "而且"
               ],
               "pinyin": "Běijīng kǎo yā hěn hǎo chī，______bú tài guì。",
-              "answer_pinyin": "Érqiě"
+              "answer_pinyin": "Érqiě",
+              "prompt_vi": "Vịt quay Bắc Kinh rất ngon, hơn nữa cũng không quá đắt.",
+              "answer_vi": "hơn nữa / vả lại / mà còn",
+              "choices_vi": [
+                "mà / còn / nhưng; nối hai ý đối lập hoặc chuyển ý",
+                "hơn nữa / vả lại / mà còn"
+              ]
             },
             {
               "id": "f765b082-e924-4d7b-ae01-a2877d61150f",
@@ -557,7 +662,13 @@
                 "而且"
               ],
               "pinyin": "Kuài kǎo shì le， dàjiā dōu zài mángzhe fù xí，______mài kè què lǚ xíng qù le。",
-              "answer_pinyin": "Ér"
+              "answer_pinyin": "Ér",
+              "prompt_vi": "Sắp thi rồi, mọi người đều bận ôn tập, còn Mike thì lại đi du lịch.",
+              "answer_vi": "mà / còn / nhưng; nối hai ý đối lập hoặc chuyển ý",
+              "choices_vi": [
+                "mà / còn / nhưng; nối hai ý đối lập hoặc chuyển ý",
+                "hơn nữa / vả lại / mà còn"
+              ]
             },
             {
               "id": "f5af46c4-1ff8-4832-99a0-84e30a496e48",
@@ -572,7 +683,13 @@
                 "然后"
               ],
               "pinyin": "Wǒ dàxué bìyè______， hái méi yǒu gēn tā liánxì guò。",
-              "answer_pinyin": "Yǐhòu"
+              "answer_pinyin": "Yǐhòu",
+              "prompt_vi": "Sau khi tốt nghiệp đại học, tôi vẫn chưa từng liên lạc với cô ấy.",
+              "answer_vi": "sau khi / về sau",
+              "choices_vi": [
+                "sau khi / về sau",
+                "sau đó / rồi sau đó"
+              ]
             },
             {
               "id": "f41dd12e-7759-4790-815d-b93f89bc19b9",
@@ -587,7 +704,13 @@
                 "以后"
               ],
               "pinyin": "Wǒ dǎsuàn míngtiān xià wǔ xiān qù yóu jú jì bāo guǒ，______qù yín xíng huàn diǎn ér qián。",
-              "answer_pinyin": "Ránhòu"
+              "answer_pinyin": "Ránhòu",
+              "prompt_vi": "Tôi định chiều mai trước hết đến bưu điện gửi bưu kiện, sau đó đến ngân hàng đổi chút tiền.",
+              "answer_vi": "sau đó / rồi sau đó",
+              "choices_vi": [
+                "sau đó / rồi sau đó",
+                "sau khi / về sau"
+              ]
             },
             {
               "id": "bf7f9ce6-163c-4fb0-8df7-d389bcdbcbb8",
@@ -602,7 +725,13 @@
                 "愿意"
               ],
               "pinyin": "Wǒ______xiān zài zhè ér xué liǎng nián Hànyǔ， ránhòu qù bié de dàxué xuéxí Zhōngguó jīngjì。",
-              "answer_pinyin": "Dǎsuàn"
+              "answer_pinyin": "Dǎsuàn",
+              "prompt_vi": "Tôi dự định trước hết học tiếng Hán ở đây hai năm, sau đó đến trường đại học khác học kinh tế Trung Quốc.",
+              "answer_vi": "dự định / tính làm gì",
+              "choices_vi": [
+                "dự định / tính làm gì",
+                "bằng lòng / sẵn lòng / muốn"
+              ]
             },
             {
               "id": "7b68af61-aff1-42d6-b887-22d42ec9590b",
@@ -617,7 +746,13 @@
                 "愿意"
               ],
               "pinyin": "Wǒmen dǎsuàn xīng qī tiān qù pá shān， nǐ yào shì______jiù gēn wǒmen yìqǐ qù。",
-              "answer_pinyin": "Yuànyì"
+              "answer_pinyin": "Yuànyì",
+              "prompt_vi": "Chúng tôi định chủ nhật đi leo núi; nếu bạn muốn thì đi cùng chúng tôi.",
+              "answer_vi": "bằng lòng / sẵn lòng / muốn",
+              "choices_vi": [
+                "hy vọng / mong",
+                "bằng lòng / sẵn lòng / muốn"
+              ]
             },
             {
               "id": "1f2b5253-da5b-47c8-9a2c-26e51bd79428",
@@ -632,7 +767,13 @@
                 "考虑"
               ],
               "pinyin": "A： shǔ jiǎ nǐ yǒu shénme______？ B： wǒ hái méi______hǎo ne。",
-              "answer_pinyin": "Dǎsuàn； kǎolǜ"
+              "answer_pinyin": "Dǎsuàn； kǎolǜ",
+              "prompt_vi": "A: Kỳ nghỉ hè bạn có dự định gì?\nB: Tôi vẫn chưa cân nhắc xong.",
+              "answer_vi": "打算; 考虑",
+              "choices_vi": [
+                "dự định / tính làm gì",
+                "cân nhắc / suy nghĩ kỹ"
+              ]
             },
             {
               "id": "166cf1ec-4907-408f-9fbb-c6b906108c22",
@@ -647,7 +788,13 @@
                 "考虑"
               ],
               "pinyin": "A： nǐ______bù______qù yún nán？ Nǐ yào shì xiǎng qù， zán men yìqǐ qù， zěnmeyàng？ B： ràng wǒ______yī xià ér， ránhòu zài gàosu nǐ， hǎo ma？",
-              "answer_pinyin": "Dǎsuàn； dǎsuàn； kǎolǜ"
+              "answer_pinyin": "Dǎsuàn； dǎsuàn； kǎolǜ",
+              "prompt_vi": "A: Bạn có định đi Vân Nam không? Nếu bạn muốn đi, chúng ta đi cùng nhau, được không?\nB: Để tôi suy nghĩ một chút, rồi nói lại với bạn, được không?",
+              "answer_vi": "打算; 打算; 考虑",
+              "choices_vi": [
+                "dự định / tính làm gì",
+                "cân nhắc / suy nghĩ kỹ"
+              ]
             },
             {
               "id": "64067186-dda2-41e4-9964-cc1afac23bc3",
@@ -662,7 +809,13 @@
                 "变"
               ],
               "pinyin": "Kē xué jiā rèn wèi xiànzài quán qiú qì hòu zhèngzài______nuǎn。",
-              "answer_pinyin": "Biàn"
+              "answer_pinyin": "Biàn",
+              "prompt_vi": "Các nhà khoa học cho rằng hiện nay khí hậu toàn cầu đang ấm lên.",
+              "answer_vi": "trở nên / biến đổi",
+              "choices_vi": [
+                "thay đổi",
+                "trở nên / biến đổi"
+              ]
             },
             {
               "id": "b9859d59-6e66-42fe-ac9a-11d05a59a86d",
@@ -677,7 +830,13 @@
                 "变"
               ],
               "pinyin": "Tāmen yán jiū guò le， kě néng yào______yuán lái de jìhuà。",
-              "answer_pinyin": "Gǎibiàn"
+              "answer_pinyin": "Gǎibiàn",
+              "prompt_vi": "Họ đã nghiên cứu rồi, có thể sẽ phải thay đổi kế hoạch ban đầu.",
+              "answer_vi": "thay đổi",
+              "choices_vi": [
+                "thay đổi",
+                "trở nên / biến đổi"
+              ]
             }
           ]
         }
@@ -718,7 +877,9 @@
             "D"
           ],
           "given_word": "一切",
-          "pinyin": "Zhè A jiùshì B wǒ yào C gàosu nǐ de D。"
+          "pinyin": "Zhè A jiùshì B wǒ yào C gàosu nǐ de D。",
+          "prompt_vi": "Đây chính là điều tôi muốn nói với bạn.",
+          "given_word_vi": "tất cả / mọi thứ"
         },
         {
           "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
@@ -735,7 +896,9 @@
             "D"
           ],
           "given_word": "一切",
-          "pinyin": "A gāng dào B Zhōngguó de shíhou， gǎndào C dōu shì D nàme xīn xiān。"
+          "pinyin": "A gāng dào B Zhōngguó de shíhou， gǎndào C dōu shì D nàme xīn xiān。",
+          "prompt_vi": "Lúc mới đến Trung Quốc, tôi cảm thấy mọi thứ đều mới mẻ như vậy.",
+          "given_word_vi": "tất cả / mọi thứ"
         },
         {
           "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
@@ -752,7 +915,9 @@
             "D"
           ],
           "given_word": "一下子",
-          "pinyin": "A nà wèi lǎo rén B méi zǒu hǎo， C shuāi dào le D。"
+          "pinyin": "A nà wèi lǎo rén B méi zǒu hǎo， C shuāi dào le D。",
+          "prompt_vi": "Cụ già đó đi không vững nên bỗng chốc ngã xuống.",
+          "given_word_vi": "một cái là / bỗng chốc / lập tức"
         },
         {
           "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
@@ -769,7 +934,9 @@
             "D"
           ],
           "given_word": "一下儿",
-          "pinyin": "Wǒ xiǎng A yòng B nǐ de C cí diǎn D， kěyǐ ma？"
+          "pinyin": "Wǒ xiǎng A yòng B nǐ de C cí diǎn D， kěyǐ ma？",
+          "prompt_vi": "Tôi muốn dùng từ điển của bạn một chút, được không?",
+          "given_word_vi": "một chút / một lát"
         },
         {
           "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
@@ -786,7 +953,9 @@
             "D"
           ],
           "given_word": "多半",
-          "pinyin": "A tā dào B xiànzài C hái méi lái， D bù lái le。"
+          "pinyin": "A tā dào B xiànzài C hái méi lái， D bù lái le。",
+          "prompt_vi": "Đến bây giờ anh ấy vẫn chưa đến, rất có thể là không đến nữa.",
+          "given_word_vi": "phần lớn là / rất có khả năng"
         },
         {
           "id": "9002df8c-125f-489d-9396-d008958aa6b9",
@@ -803,7 +972,9 @@
             "D"
           ],
           "given_word": "就是",
-          "pinyin": "Tā A xiǎng duō B shuì C yī huì ér， D bú shì bìng le。"
+          "pinyin": "Tā A xiǎng duō B shuì C yī huì ér， D bú shì bìng le。",
+          "prompt_vi": "Anh ấy chỉ muốn ngủ thêm một lát thôi, không phải bị bệnh đâu.",
+          "given_word_vi": "chính là / chỉ là / chẳng qua là"
         },
         {
           "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
@@ -820,7 +991,9 @@
             "D"
           ],
           "given_word": "了",
-          "pinyin": "Zhè yí ge xīng qī A wǒ jiù shōu B dào C wǔ jiàn lǐ wù D。"
+          "pinyin": "Zhè yí ge xīng qī A wǒ jiù shōu B dào C wǔ jiàn lǐ wù D。",
+          "prompt_vi": "Chỉ trong một tuần này, tôi đã nhận được năm món quà rồi.",
+          "given_word_vi": "trợ từ 了: báo hoàn thành hoặc thay đổi tình huống"
         },
         {
           "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
@@ -837,7 +1010,9 @@
             "D"
           ],
           "given_word": "了",
-          "pinyin": "Wǒ dǎsuàn A fàng B jiǎ C jiù qù nán fāng lǚ xíng D。"
+          "pinyin": "Wǒ dǎsuàn A fàng B jiǎ C jiù qù nán fāng lǚ xíng D。",
+          "prompt_vi": "Tôi định nghỉ lễ rồi sẽ đi miền Nam du lịch.",
+          "given_word_vi": "trợ từ 了: báo hoàn thành hoặc thay đổi tình huống"
         }
       ],
       "rendering": {
@@ -871,7 +1046,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Gāng lái de shíhou wǒ hěn bù xíguàn， lǎoshī shuō， guò yì liǎng ge yuè jiù hǎo le。 Xiànzài， yí ge duō yuè guò qù le，______。",
-          "answer_pinyin": "Wǒ guǒrán xí guàn duō le。"
+          "answer_pinyin": "Wǒ guǒrán xí guàn duō le。",
+          "prompt_vi": "Lúc mới đến tôi rất không quen; thầy/cô nói qua một hai tháng là sẽ ổn. Bây giờ, hơn một tháng đã trôi qua, ________________.",
+          "answer_vi": "Quả nhiên tôi đã quen hơn nhiều rồi.",
+          "given_word_vi": "quả nhiên / đúng như dự đoán"
         },
         {
           "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
@@ -884,7 +1062,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Dà fū gēn wǒ shuō， jiānchí dǎ yì nián de tài jí quán， nǐ de bìng jiù huì hǎo de。 Nǐ kàn， wǒ cái dǎ le bàn nián，______。",
-          "answer_pinyin": "Wǒ de bìng guǒrán hǎo duō le。"
+          "answer_pinyin": "Wǒ de bìng guǒrán hǎo duō le。",
+          "prompt_vi": "Bác sĩ nói với tôi rằng nếu kiên trì tập Thái Cực Quyền một năm thì bệnh của tôi sẽ khỏi. Bạn xem, tôi mới tập nửa năm, ________________.",
+          "answer_vi": "Bệnh của tôi quả nhiên đã đỡ hơn nhiều rồi.",
+          "given_word_vi": "quả nhiên / đúng như dự đoán"
         },
         {
           "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
@@ -897,7 +1078,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Nà tiān， wǒ mí lù le，______。",
-          "answer_pinyin": "Zhǐhǎo wèn lù。"
+          "answer_pinyin": "Zhǐhǎo wèn lù。",
+          "prompt_vi": "Hôm đó, tôi bị lạc đường, ________________.",
+          "answer_vi": "đành phải hỏi đường.",
+          "given_word_vi": "đành phải / chỉ còn cách"
         },
         {
           "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
@@ -910,7 +1094,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Nǐ kàn tā de yàngzi，______。",
-          "answer_pinyin": "Tā duōbàn shì lèi le。"
+          "answer_pinyin": "Tā duōbàn shì lèi le。",
+          "prompt_vi": "Bạn nhìn dáng vẻ cô ấy kìa, ________________.",
+          "answer_vi": "rất có thể cô ấy mệt rồi.",
+          "given_word_vi": "phần lớn là / rất có khả năng"
         },
         {
           "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
@@ -923,7 +1110,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Mǎlì bìng le， tóngxué men dōu lái kàn tā，______。",
-          "answer_pinyin": "Zhǔfù tā hǎo hǎo ér xiū xī， àn shí chī yào。"
+          "answer_pinyin": "Zhǔfù tā hǎo hǎo ér xiū xī， àn shí chī yào。",
+          "prompt_vi": "Mary bị bệnh, các bạn học đều đến thăm cô ấy, ________________.",
+          "answer_vi": "dặn cô ấy nghỉ ngơi cho tốt và uống thuốc đúng giờ.",
+          "given_word_vi": "dặn dò / căn dặn"
         },
         {
           "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
@@ -936,7 +1126,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Jīng guò nǔ lì，______。",
-          "answer_pinyin": "Tā zhōngyú shíxiàn le zìjǐ de yuànwàng。"
+          "answer_pinyin": "Tā zhōngyú shíxiàn le zìjǐ de yuànwàng。",
+          "prompt_vi": "Sau một quá trình nỗ lực, ________________.",
+          "answer_vi": "cuối cùng anh ấy đã thực hiện được nguyện vọng của mình.",
+          "given_word_vi": "cuối cùng / rốt cuộc"
         },
         {
           "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
@@ -949,7 +1142,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "______Dàjiā hái yǒu bù tóngyì jiàn。",
-          "answer_pinyin": "Duìyú zhè ge wèntí， dàjiā hái yǒu bù tóngyì jiàn。"
+          "answer_pinyin": "Duìyú zhè ge wèntí， dàjiā hái yǒu bù tóngyì jiàn。",
+          "prompt_vi": "________________ mọi người vẫn còn ý kiến khác nhau.",
+          "answer_vi": "Đối với vấn đề này, mọi người vẫn còn ý kiến khác nhau.",
+          "given_word_vi": "đối với"
         },
         {
           "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
@@ -962,7 +1158,10 @@
           "source_origin": "generated_answer_checked",
           "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
           "pinyin": "Wǒ nǎ ér dōu bù xiǎng qù，______。",
-          "answer_pinyin": "Jiùshì xiǎng zài jiā xiū xī。"
+          "answer_pinyin": "Jiùshì xiǎng zài jiā xiū xī。",
+          "prompt_vi": "Tôi chẳng muốn đi đâu cả, ________________.",
+          "answer_vi": "chỉ muốn nghỉ ngơi ở nhà thôi.",
+          "given_word_vi": "chính là / chỉ là / chẳng qua là"
         }
       ],
       "rendering": {
@@ -992,22 +1191,26 @@
             {
               "label": "A",
               "text": "尤其是冬天的星空，常常使我看得入迷。",
-              "pinyin": "Yóuqí shì dōngtiān de xīngkōng， chángcháng shǐ wǒ kàn de rùmí。"
+              "pinyin": "Yóuqí shì dōngtiān de xīngkōng， chángcháng shǐ wǒ kàn de rùmí。",
+              "vi": "Đặc biệt là bầu trời sao mùa đông, thường khiến tôi nhìn đến mê mẩn."
             },
             {
               "label": "B",
               "text": "我的家乡是一个美丽的小城。",
-              "pinyin": "Wǒ de jiāxiāng shì yí ge měilì de xiǎochéng。"
+              "pinyin": "Wǒ de jiāxiāng shì yí ge měilì de xiǎochéng。",
+              "vi": "Quê tôi là một thành phố nhỏ xinh đẹp."
             },
             {
               "label": "C",
               "text": "每到晴天的夜晚，就可以看到明亮的星星。",
-              "pinyin": "Měi dào qíngtiān de yèwǎn， jiù kěyǐ kàn dào míngliàng de xīngxing。"
+              "pinyin": "Měi dào qíngtiān de yèwǎn， jiù kěyǐ kàn dào míngliàng de xīngxing。",
+              "vi": "Cứ đến những đêm trời quang, là có thể nhìn thấy những ngôi sao sáng."
             },
             {
               "label": "D",
               "text": "小时候，我常爱看那美丽的星空。",
-              "pinyin": "Xiǎoshíhou， wǒ cháng ài kàn nà měilì de xīngkōng。"
+              "pinyin": "Xiǎoshíhou， wǒ cháng ài kàn nà měilì de xīngkōng。",
+              "vi": "Khi còn nhỏ, tôi thường thích ngắm bầu trời sao xinh đẹp ấy."
             }
           ],
           "answer": [
@@ -1027,22 +1230,26 @@
             {
               "label": "A",
               "text": "到中国以后我还是这样。",
-              "pinyin": "Dào Zhōngguó yǐhòu wǒ háishi zhè yàng。"
+              "pinyin": "Dào Zhōngguó yǐhòu wǒ háishi zhè yàng。",
+              "vi": "Sau khi đến Trung Quốc, tôi vẫn như vậy."
             },
             {
               "label": "B",
               "text": "后来离开了家乡，我仍然经常想起家乡那美丽的星空。",
-              "pinyin": "Hòulái lí kāi le jiāxiāng， wǒ réng rán jīng cháng xiǎng qǐ jiāxiāng nà měilì de xīngkōng。"
+              "pinyin": "Hòulái lí kāi le jiāxiāng， wǒ réng rán jīng cháng xiǎng qǐ jiāxiāng nà měilì de xīngkōng。",
+              "vi": "Sau này khi rời quê hương, tôi vẫn thường nhớ đến bầu trời sao xinh đẹp ở quê nhà."
             },
             {
               "label": "C",
               "text": "常常一到晚上就不由得会抬起头来往天上看。",
-              "pinyin": "Chángcháng yī dào wǎn shàng jiù bù yóu dé huì tái qǐ tóu lái wǎng tiān shàng kàn。"
+              "pinyin": "Chángcháng yī dào wǎn shàng jiù bù yóu dé huì tái qǐ tóu lái wǎng tiān shàng kàn。",
+              "vi": "Thường cứ đến tối là tôi không kìm được mà ngẩng đầu nhìn lên trời."
             },
             {
               "label": "D",
               "text": "天空有没有明亮的星星。",
-              "pinyin": "Tiān kōng yǒu méi yǒu míngliàng de xīngxing。"
+              "pinyin": "Tiān kōng yǒu méi yǒu míngliàng de xīngxing。",
+              "vi": "xem trên bầu trời có những ngôi sao sáng hay không."
             }
           ],
           "answer": [
@@ -1086,7 +1293,9 @@
           "check_needed": false,
           "pinyin": "Zhè jiàn shì nǐ duì tā bù gāi mán。",
           "answer_pinyin": "Zhè jiàn shì nǐ bù gāi mánzhe tā。",
-          "explanation_vi": "瞒 là động từ cần tân ngữ trực tiếp; trong câu này dùng 瞒着她 tự nhiên hơn, không nói 对她瞒."
+          "explanation_vi": "瞒 là động từ cần tân ngữ trực tiếp; trong câu này dùng 瞒着她 tự nhiên hơn, không nói 对她瞒.",
+          "prompt_vi": "Chuyện này bạn không nên giấu cô ấy. [câu sai cần sửa]",
+          "answer_vi": "Chuyện này bạn không nên giấu cô ấy."
         },
         {
           "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
@@ -1098,7 +1307,9 @@
           "check_needed": false,
           "pinyin": "Wǒ zhōngyú kuài dào Zhōngguó le。",
           "answer_pinyin": "Wǒ zhōngyú dào Zhōngguó le。",
-          "explanation_vi": "终于 nhấn kết quả cuối cùng đã đạt được; 快到 chỉ sắp tới, mâu thuẫn với 终于 trong câu này."
+          "explanation_vi": "终于 nhấn kết quả cuối cùng đã đạt được; 快到 chỉ sắp tới, mâu thuẫn với 终于 trong câu này.",
+          "prompt_vi": "Cuối cùng tôi sắp đến Trung Quốc rồi. [câu sai cần sửa]",
+          "answer_vi": "Cuối cùng tôi đã đến Trung Quốc rồi."
         },
         {
           "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
@@ -1110,7 +1321,9 @@
           "check_needed": false,
           "pinyin": "Nǐ kěyǐ bǎ wǒ zuò nǐ de péngyou。",
           "answer_pinyin": "Nǐ kěyǐ bǎ wǒ dāng zuò nǐ de péngyou。",
-          "explanation_vi": "把……作…… không tự nhiên ở đây; dùng 把……当作…… = coi ai/cái gì là...."
+          "explanation_vi": "把……作…… không tự nhiên ở đây; dùng 把……当作…… = coi ai/cái gì là....",
+          "prompt_vi": "Bạn có thể coi tôi là bạn của bạn. [câu sai cần sửa]",
+          "answer_vi": "Bạn có thể coi tôi là bạn của bạn."
         },
         {
           "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
@@ -1122,7 +1335,9 @@
           "check_needed": false,
           "pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎn lǐ liú le yǎnlèi。",
           "answer_pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎnlèi yíxiàzi liú le chūlái。",
-          "explanation_vi": "Chủ ngữ tự nhiên là 眼泪; nói 眼泪流出来, không nói 我的眼里流了眼泪 trong văn cảnh này."
+          "explanation_vi": "Chủ ngữ tự nhiên là 眼泪; nói 眼泪流出来, không nói 我的眼里流了眼泪 trong văn cảnh này.",
+          "prompt_vi": "Nhìn thấy tình huống này, trong mắt tôi chảy nước mắt. [câu sai/kém tự nhiên cần sửa]",
+          "answer_vi": "Nhìn thấy tình huống này, nước mắt tôi lập tức trào ra."
         },
         {
           "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
@@ -1134,7 +1349,9 @@
           "check_needed": false,
           "pinyin": "Yīnwèi mǎi piào tài duō rén， wǒmen méi yǒu mǎi wò pù， zhǐhǎo mǎi le yìng zuò。",
           "answer_pinyin": "Yīnwèi mǎi piào de rén tài duō， wǒmen méi yǒu mǎi dào wò pù， zhǐhǎo mǎi le yìng zuò。",
-          "explanation_vi": "要 nói “người mua vé quá nhiều”: 买票的人太多. 没有买到 nhấn không mua được vé giường nằm."
+          "explanation_vi": "要 nói “người mua vé quá nhiều”: 买票的人太多. 没有买到 nhấn không mua được vé giường nằm.",
+          "prompt_vi": "Vì người mua vé quá đông, chúng tôi không mua được vé giường nằm, đành mua vé ghế cứng. [câu sai cần sửa]",
+          "answer_vi": "Vì người mua vé quá đông, chúng tôi không mua được vé giường nằm, đành mua vé ghế cứng."
         },
         {
           "id": "6db3da52-2247-4991-a1d3-225528d56fff",
@@ -1146,7 +1363,9 @@
           "check_needed": false,
           "pinyin": "Wǒ fàng xíng lǐ zài fēijīchǎng de dà tīng lǐ。",
           "answer_pinyin": "Wǒ bǎ xíng lǐ fàng zài fēijīchǎng de dà tīng lǐ。",
-          "explanation_vi": "放 + đồ vật + 在 + nơi chốn; với tân ngữ xác định 行李, dùng 把行李放在…… tự nhiên hơn."
+          "explanation_vi": "放 + đồ vật + 在 + nơi chốn; với tân ngữ xác định 行李, dùng 把行李放在…… tự nhiên hơn.",
+          "prompt_vi": "Tôi để hành lý ở đại sảnh sân bay. [câu sai/kém tự nhiên cần sửa]",
+          "answer_vi": "Tôi để hành lý ở đại sảnh sân bay."
         },
         {
           "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
@@ -1158,7 +1377,9 @@
           "check_needed": false,
           "pinyin": "Tā jiéhūn le yí ge yǒu qián rén。",
           "answer_pinyin": "Tā hé yí ge yǒu qián rén jiéhūn le。",
-          "explanation_vi": "结婚 không trực tiếp mang tân ngữ người; phải dùng 和/跟 + người + 结婚."
+          "explanation_vi": "结婚 không trực tiếp mang tân ngữ người; phải dùng 和/跟 + người + 结婚.",
+          "prompt_vi": "Cô ấy kết hôn một người giàu. [câu sai cần sửa]",
+          "answer_vi": "Cô ấy đã kết hôn với một người giàu."
         },
         {
           "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
@@ -1170,7 +1391,9 @@
           "check_needed": false,
           "pinyin": "Wǒ cóng xiǎo jiùshì hē māma de niú nǎi zhǎng dà de。",
           "answer_pinyin": "Wǒ cóng xiǎo jiùshì hē māma de nǎi zhǎng dà de。",
-          "explanation_vi": "牛奶 là sữa bò/sữa uống; sữa mẹ nói 妈妈的奶 hoặc 母乳. Câu này dùng 妈妈的奶 tự nhiên hơn."
+          "explanation_vi": "牛奶 là sữa bò/sữa uống; sữa mẹ nói 妈妈的奶 hoặc 母乳. Câu này dùng 妈妈的奶 tự nhiên hơn.",
+          "prompt_vi": "Từ nhỏ tôi lớn lên nhờ uống sữa bò của mẹ. [câu sai cần sửa]",
+          "answer_vi": "Từ nhỏ tôi lớn lên nhờ bú sữa mẹ."
         }
       ],
       "rendering": {
@@ -1207,7 +1430,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Xiànzài wǒ de yuànwàng zhōngyú shíxiàn le， xīnlǐ yǒu shuō bù chū de gāoxìng。",
-              "answer_pinyin": "Yí ge rén zhǎng qī xīwàng lái Zhōngguó xuéxí Hànyǔ， xiànzài jīhuì zhōngyú lái le、 yuànwàng shíxiàn le。"
+              "answer_pinyin": "Yí ge rén zhǎng qī xīwàng lái Zhōngguó xuéxí Hànyǔ， xiànzài jīhuì zhōngyú lái le、 yuànwàng shíxiàn le。",
+              "prompt_vi": "Bây giờ nguyện vọng của tôi cuối cùng đã thành hiện thực, trong lòng vui không nói nên lời.",
+              "answer_vi": "Một người từ lâu đã mong được đến Trung Quốc học tiếng Hán; bây giờ cơ hội cuối cùng đã đến, nguyện vọng đã thành hiện thực."
             },
             {
               "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
@@ -1218,7 +1443,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Rúguǒ bǎ zhè jiàn shì gàosu tā， tā duōbàn bú huì tóngyì。",
-              "answer_pinyin": "Xiǎng gàosu mǒu rén yī jiàn shì， dàn pàn duàn tā hěn kě néng bù tóngyì。"
+              "answer_pinyin": "Xiǎng gàosu mǒu rén yī jiàn shì， dàn pàn duàn tā hěn kě néng bù tóngyì。",
+              "prompt_vi": "Nếu nói chuyện này cho cô ấy biết, rất có thể cô ấy sẽ không đồng ý.",
+              "answer_vi": "Muốn nói với ai đó một chuyện, nhưng phán đoán rằng người ấy rất có thể sẽ không đồng ý."
             },
             {
               "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
@@ -1229,7 +1456,9 @@
               "answer_verified": true,
               "check_needed": false,
               "pinyin": "Kàn tā nà liànliàn-bùshě de yàngzi， wǒ de yǎnlèi yě yíxiàzi liú le chūlái。",
-              "answer_pinyin": "Líbié shí kàn dào duìfang shěbude lí kāi， zìjǐ yě rěn bù zhù liú lèi。"
+              "answer_pinyin": "Líbié shí kàn dào duìfang shěbude lí kāi， zìjǐ yě rěn bù zhù liú lèi。",
+              "prompt_vi": "Nhìn dáng vẻ lưu luyến không nỡ rời của cô ấy, nước mắt tôi cũng lập tức trào ra.",
+              "answer_vi": "Khi chia tay, nhìn thấy đối phương không nỡ rời đi, bản thân cũng không kìm được mà rơi nước mắt."
             }
           ]
         },
@@ -1248,7 +1477,10 @@
               "check_needed": false,
               "source_origin": "generated_answer_checked",
               "pinyin": "Péngyou qǐng nǐ bāng bāng tā， nǐ méi yǒu shíjiān， dàn kàn dào péngyou zháojí de yàngzi， nǐ háishi dāying le。",
-              "answer_pinyin": "Wǒ méi yǒu shíjiān， kěshì kàn dào tā zháojí de yàngzi， zhǐhǎo dāying le。"
+              "answer_pinyin": "Wǒ méi yǒu shíjiān， kěshì kàn dào tā zháojí de yàngzi， zhǐhǎo dāying le。",
+              "prompt_vi": "Bạn nhờ bạn giúp cô ấy; bạn không có thời gian, nhưng nhìn thấy dáng vẻ sốt ruột của bạn mình, bạn vẫn nhận lời.",
+              "answer_vi": "Tôi không có thời gian, nhưng nhìn thấy dáng vẻ sốt ruột của cô ấy, tôi đành phải nhận lời.",
+              "given_word_vi": "đành phải / chỉ còn cách"
             },
             {
               "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
@@ -1260,7 +1492,10 @@
               "check_needed": false,
               "source_origin": "generated_answer_checked",
               "pinyin": "Hé nán / nǚ péngyou líbié shí， nǐ bù xiǎng lí kāi， yǎnlèi dōu liú le chūlái。",
-              "answer_pinyin": "Hé nǚ péngyou fēnbié shí， wǒ liànliàn-bùshě， yǎnlèi dōu liú le chūlái。"
+              "answer_pinyin": "Hé nǚ péngyou fēnbié shí， wǒ liànliàn-bùshě， yǎnlèi dōu liú le chūlái。",
+              "prompt_vi": "Khi chia tay bạn trai/bạn gái, bạn không muốn rời đi, nước mắt đều trào ra.",
+              "answer_vi": "Khi chia tay bạn gái, tôi lưu luyến không nỡ rời, nước mắt đều trào ra.",
+              "given_word_vi": "lưu luyến không nỡ rời"
             },
             {
               "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
@@ -1272,7 +1507,10 @@
               "check_needed": false,
               "source_origin": "generated_answer_checked",
               "pinyin": "Gāng lái Zhōngguó， nǐ juéde bù xíguàn， tèbié xiǎng jiā。",
-              "answer_pinyin": "Gāng lái Zhōngguó de shíhou， wǒ hěn bù xíguàn， tèbié xiǎngniàn jiā rén。"
+              "answer_pinyin": "Gāng lái Zhōngguó de shíhou， wǒ hěn bù xíguàn， tèbié xiǎngniàn jiā rén。",
+              "prompt_vi": "Vừa mới đến Trung Quốc, bạn cảm thấy không quen, đặc biệt nhớ nhà.",
+              "answer_vi": "Lúc vừa mới đến Trung Quốc, tôi rất không quen, đặc biệt nhớ người nhà.",
+              "given_word_vi": "nhớ / nhớ nhung"
             }
           ]
         }
@@ -1449,7 +1687,8 @@
           "zh": "半年前，我临来中国时，朋友们一起①________我过了一次生日。当时，最让我难忘的是，大家送给我一个戒指，上面刻②________一句话：“我们都爱你。”看到这句话，我的眼泪一下子就流了③________。想到就要和朋友们分别了，我真有点儿恋恋不舍。但是，来中国留学的手续已经办好了，我只好与朋友分别，坐④________了飞往中国的飞机。",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dànshì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐhǎo yǔ péngyou fēnbié， zuò④ ______ le fēiwǎng Zhōngguó de fēijī。"
+          "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dànshì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐhǎo yǔ péngyou fēnbié， zuò④ ______ le fēiwǎng Zhōngguó de fēijī。",
+          "vi": "Nửa năm trước, trước lúc tôi đến Trung Quốc, các bạn đã cùng tổ chức sinh nhật cho tôi một lần. Lúc đó, điều khiến tôi khó quên nhất là mọi người tặng tôi một chiếc nhẫn, trên đó có khắc một câu: “Chúng tôi đều yêu quý bạn.” Nhìn thấy câu nói ấy, nước mắt tôi lập tức trào ra. Nghĩ đến việc sắp phải chia tay bạn bè, tôi thật sự có chút lưu luyến không nỡ. Nhưng thủ tục du học Trung Quốc đã làm xong rồi, tôi đành phải chia tay các bạn, lên chiếc máy bay bay đến Trung Quốc."
         },
         {
           "id": "9bf6f21e-c30f-4adb-94c3-35c3b2e1b12a",
@@ -1457,7 +1696,8 @@
           "zh": "一个人来到异国他乡，⑤________都是陌生的，一切都感到不习惯。但是到中国不久，我就认识了不少新朋友。可以说，我能一直坚持学习到现在，除了国内的朋友支持我、帮助我、鼓励我以外，更重要的是因为有了这些新朋友。⑥________没有她们，我在中国的生活会是非常孤独和寂寞的。",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dànshì dào Zhōngguó bùjiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
+          "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dànshì dào Zhōngguó bùjiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。",
+          "vi": "Một mình đến nơi đất khách quê người, mọi thứ đều xa lạ, cái gì cũng cảm thấy không quen. Nhưng đến Trung Quốc không lâu, tôi đã quen được khá nhiều bạn mới. Có thể nói, tôi có thể kiên trì học đến bây giờ, ngoài sự ủng hộ, giúp đỡ và động viên của bạn bè trong nước, điều quan trọng hơn là vì có những người bạn mới này. Nếu không có họ, cuộc sống của tôi ở Trung Quốc sẽ vô cùng cô độc và buồn tẻ."
         },
         {
           "id": "2aed955a-1c84-4a71-a100-eb50315cb0a3",
@@ -1465,7 +1705,8 @@
           "zh": "刚到中国一个月，我⑦________生病住进了医院。在医院里，我感到非常寂寞，十分后悔到中国来。正在我感到非常孤独和寂寞时，我遇到了一位热心的中国大学生。⑧________与我同住一个病房，每天都邀请我一起下楼去吃饭、散步。我觉得心情一下子好多了。晚上，有时医院里还组织联欢会，每次大家都邀请我唱一支我们国家的歌。虽然我唱得不太好，但是大家听了都给我鼓掌，让我很感动。在病房里，这位朋友还教我学汉语，成了我的辅导老师。⑨________她的帮助下，我的功课并没有因为住院而落下。",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēngbìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìngfáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīnqíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī liánhuānhuì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng de bú tài hǎo， dànshì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìngfáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōngkè bìng méi yǒu yīnwèi zhùyuàn ér là xià。"
+          "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēngbìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìngfáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīnqíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī liánhuānhuì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng de bú tài hǎo， dànshì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìngfáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōngkè bìng méi yǒu yīnwèi zhùyuàn ér là xià。",
+          "vi": "Mới đến Trung Quốc được một tháng, tôi đã bị bệnh phải vào viện. Ở trong bệnh viện, tôi cảm thấy vô cùng buồn tẻ, rất hối hận vì đã đến Trung Quốc. Đúng lúc tôi cảm thấy hết sức cô độc và buồn tẻ, tôi gặp một sinh viên đại học Trung Quốc rất nhiệt tình. Cô ấy ở cùng phòng bệnh với tôi, ngày nào cũng mời tôi cùng xuống lầu ăn cơm, đi dạo. Tôi cảm thấy tâm trạng lập tức khá hơn nhiều. Buổi tối, đôi khi bệnh viện còn tổ chức liên hoan; lần nào mọi người cũng mời tôi hát một bài hát của đất nước chúng tôi. Tuy tôi hát không hay lắm, nhưng mọi người nghe xong đều vỗ tay cho tôi, khiến tôi rất cảm động. Trong phòng bệnh, người bạn này còn dạy tôi học tiếng Hán, trở thành gia sư phụ đạo của tôi. Dưới sự giúp đỡ của cô ấy, bài vở của tôi không bị tụt lại vì nằm viện."
         },
         {
           "id": "4afd733e-6faf-4d2e-a05c-d627d5eec1ef",
@@ -1473,7 +1714,8 @@
           "zh": "出院后，朋友还邀请我到她家去玩儿，她的父母像对自己的女儿一样对待我，使我感到就像回到了自己家一样。认识了朋友这一家人，⑩________我对中国、对中国人有了更多的了解。",
           "source_origin": "textbook",
           "check_needed": false,
-          "pinyin": "Chūyuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
+          "pinyin": "Chūyuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。",
+          "vi": "Sau khi xuất viện, bạn tôi còn mời tôi đến nhà cô ấy chơi. Bố mẹ cô ấy đối xử với tôi như với con gái của mình, khiến tôi cảm thấy như trở về chính nhà mình vậy. Việc quen biết gia đình người bạn này đã khiến tôi hiểu thêm nhiều hơn về Trung Quốc và người Trung Quốc."
         }
       ],
       "blanks": [
@@ -1485,7 +1727,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Gěi"
+          "answer_pinyin": "Gěi",
+          "answer_vi": "cho / với / làm cho; trong bài có thể là giới từ/cụm bổ ngữ 给"
         },
         {
           "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
@@ -1495,7 +1738,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Zhe"
+          "answer_pinyin": "Zhe",
+          "answer_vi": "trợ từ 着: chỉ trạng thái đang duy trì hoặc hành động đi kèm"
         },
         {
           "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
@@ -1505,7 +1749,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Chūlái"
+          "answer_pinyin": "Chūlái",
+          "answer_vi": "ra ngoài; hiện ra; bật ra / chảy ra tùy ngữ cảnh"
         },
         {
           "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
@@ -1515,7 +1760,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Shàng"
+          "answer_pinyin": "Shàng",
+          "answer_vi": "lên / lên trên; trong 坐上 là lên phương tiện"
         },
         {
           "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
@@ -1525,7 +1771,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Yíqiè"
+          "answer_pinyin": "Yíqiè",
+          "answer_vi": "tất cả / mọi thứ"
         },
         {
           "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
@@ -1535,7 +1782,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Rúguǒ"
+          "answer_pinyin": "Rúguǒ",
+          "answer_vi": "nếu / nếu như"
         },
         {
           "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
@@ -1545,7 +1793,8 @@
           "check_needed": false,
           "note_vi": "刚到中国一个月，我就生病住进了医院: 就 nhấn sự việc xảy ra sớm sau khi đến Trung Quốc.",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Jiù"
+          "answer_pinyin": "Jiù",
+          "answer_vi": "liền / thì; trong bài nhấn sự việc xảy ra sớm hoặc tiếp ngay"
         },
         {
           "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
@@ -1555,7 +1804,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Tā"
+          "answer_pinyin": "Tā",
+          "answer_vi": "cô ấy"
         },
         {
           "id": "a16e1e89-5c64-4895-a450-e4d057f5c79f",
@@ -1565,7 +1815,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Zài"
+          "answer_pinyin": "Zài",
+          "answer_vi": "ở / tại; trong 在……帮助下 = dưới sự giúp đỡ của..."
         },
         {
           "id": "e35e1bf7-610d-4619-a193-04b69f5c3998",
@@ -1575,7 +1826,8 @@
           "check_needed": false,
           "note_vi": "",
           "source_origin": "textbook_question_checked_answer",
-          "answer_pinyin": "Shǐ"
+          "answer_pinyin": "Shǐ",
+          "answer_vi": "khiến / làm cho"
         }
       ],
       "rendering": {
@@ -1601,62 +1853,84 @@
           "order": 1,
           "answer": "给",
           "check_needed": false,
-          "answer_pinyin": "Gěi"
+          "answer_pinyin": "Gěi",
+          "answer_vi": "cho / với / làm cho; trong bài có thể là giới từ/cụm bổ ngữ 给"
         },
         {
           "order": 2,
           "answer": "着",
           "check_needed": false,
-          "answer_pinyin": "Zhe"
+          "answer_pinyin": "Zhe",
+          "answer_vi": "trợ từ 着: chỉ trạng thái đang duy trì hoặc hành động đi kèm"
         },
         {
           "order": 3,
           "answer": "出来",
           "check_needed": false,
-          "answer_pinyin": "Chūlái"
+          "answer_pinyin": "Chūlái",
+          "answer_vi": "ra ngoài; hiện ra; bật ra / chảy ra tùy ngữ cảnh"
         },
         {
           "order": 4,
           "answer": "上",
           "check_needed": false,
-          "answer_pinyin": "Shàng"
+          "answer_pinyin": "Shàng",
+          "answer_vi": "lên / lên trên; trong 坐上 là lên phương tiện"
         },
         {
           "order": 5,
           "answer": "一切",
           "check_needed": false,
-          "answer_pinyin": "Yíqiè"
+          "answer_pinyin": "Yíqiè",
+          "answer_vi": "tất cả / mọi thứ"
         },
         {
           "order": 6,
           "answer": "如果",
           "check_needed": false,
-          "answer_pinyin": "Rúguǒ"
+          "answer_pinyin": "Rúguǒ",
+          "answer_vi": "nếu / nếu như"
         },
         {
           "order": 7,
           "answer": "就",
           "check_needed": false,
-          "answer_pinyin": "Jiù"
+          "answer_pinyin": "Jiù",
+          "answer_vi": "liền / thì; trong bài nhấn sự việc xảy ra sớm hoặc tiếp ngay"
         },
         {
           "order": 8,
           "answer": "她",
           "check_needed": false,
-          "answer_pinyin": "Tā"
+          "answer_pinyin": "Tā",
+          "answer_vi": "cô ấy"
         },
         {
           "order": 9,
           "answer": "在",
           "check_needed": false,
-          "answer_pinyin": "Zài"
+          "answer_pinyin": "Zài",
+          "answer_vi": "ở / tại; trong 在……帮助下 = dưới sự giúp đỡ của..."
         },
         {
           "order": 10,
           "answer": "使",
           "check_needed": false,
-          "answer_pinyin": "Shǐ"
+          "answer_pinyin": "Shǐ",
+          "answer_vi": "khiến / làm cho"
         }
+      ],
+      "answers_vi": [
+        "cho / với / làm cho; trong bài có thể là giới từ/cụm bổ ngữ 给",
+        "trợ từ 着: chỉ trạng thái đang duy trì hoặc hành động đi kèm",
+        "ra ngoài; hiện ra; bật ra / chảy ra tùy ngữ cảnh",
+        "lên / lên trên; trong 坐上 là lên phương tiện",
+        "tất cả / mọi thứ",
+        "nếu / nếu như",
+        "liền / thì; trong bài nhấn sự việc xảy ra sớm hoặc tiếp ngay",
+        "cô ấy",
+        "ở / tại; trong 在……帮助下 = dưới sự giúp đỡ của...",
+        "khiến / làm cho"
       ]
     },
     {
@@ -1679,46 +1953,55 @@
             {
               "speaker": "A",
               "zh": "老师，我想去中国学汉语。",
-              "pinyin": "Lǎoshī， wǒ xiǎng qù Zhōngguó xué Hànyǔ。"
+              "pinyin": "Lǎoshī， wǒ xiǎng qù Zhōngguó xué Hànyǔ。",
+              "vi": "Thưa thầy/cô, em muốn đi Trung Quốc học tiếng Hán."
             },
             {
               "speaker": "B",
               "zh": "好啊！手续办好了吗？",
-              "pinyin": "Hǎo a！ Shǒuxù bàn hǎo le ma？"
+              "pinyin": "Hǎo a！ Shǒuxù bàn hǎo le ma？",
+              "vi": "Tốt đấy! Thủ tục đã làm xong chưa?"
             },
             {
               "speaker": "A",
               "zh": "还没有呢。我想请教老师，几月去比较好？",
-              "pinyin": "Hái méiyǒu ne。 Wǒ xiǎng qǐngjiào lǎoshī， jǐ yuè qù bǐjiào hǎo？"
+              "pinyin": "Hái méiyǒu ne。 Wǒ xiǎng qǐngjiào lǎoshī， jǐ yuè qù bǐjiào hǎo？",
+              "vi": "Vẫn chưa ạ. Em muốn hỏi ý kiến thầy/cô, đi vào tháng mấy thì tốt hơn?"
             },
             {
               "speaker": "B",
               "zh": "你准备学多长时间？",
-              "pinyin": "Nǐ zhǔnbèi xué duō cháng shíjiān？"
+              "pinyin": "Nǐ zhǔnbèi xué duō cháng shíjiān？",
+              "vi": "Em chuẩn bị học trong bao lâu?"
             },
             {
               "speaker": "A",
               "zh": "一年。",
-              "pinyin": "Yì nián。"
+              "pinyin": "Yì nián。",
+              "vi": "Một năm ạ."
             },
             {
               "speaker": "B",
               "zh": "如果只学一年的话，还是从九月开始比较好。因为中国学校的新学年是从九月开始的。",
-              "pinyin": "Rúguǒ zhǐ xué yì nián de huà， háishi cóng jiǔ yuè kāishǐ bǐjiào hǎo。 Yīnwèi Zhōngguó xuéxiào de xīn xuénián shì cóng jiǔ yuè kāishǐ de。"
+              "pinyin": "Rúguǒ zhǐ xué yì nián de huà， háishi cóng jiǔ yuè kāishǐ bǐjiào hǎo。 Yīnwèi Zhōngguó xuéxiào de xīn xuénián shì cóng jiǔ yuè kāishǐ de。",
+              "vi": "Nếu chỉ học một năm thì vẫn nên bắt đầu từ tháng Chín là tốt hơn, vì năm học mới của các trường Trung Quốc bắt đầu từ tháng Chín."
             },
             {
               "speaker": "A",
               "zh": "我去以后读二年级可以吗？",
-              "pinyin": "Wǒ qù yǐhòu dú èr niánjí kěyǐ ma？"
+              "pinyin": "Wǒ qù yǐhòu dú èr niánjí kěyǐ ma？",
+              "vi": "Sau khi sang đó, em học năm hai có được không ạ?"
             },
             {
               "speaker": "B",
               "zh": "根据你的情况，我想，最好从一年级开始，先把语音和语法基础打好了，对你今后的学习会更好。",
-              "pinyin": "Gēnjù nǐ de qíngkuàng， wǒ xiǎng， zuì hǎo cóng yī niánjí kāishǐ， xiān bǎ yǔyīn hé yǔfǎ jīchǔ dǎ hǎo le， duì nǐ jīnhòu de xuéxí huì gèng hǎo。"
+              "pinyin": "Gēnjù nǐ de qíngkuàng， wǒ xiǎng， zuì hǎo cóng yī niánjí kāishǐ， xiān bǎ yǔyīn hé yǔfǎ jīchǔ dǎ hǎo le， duì nǐ jīnhòu de xuéxí huì gèng hǎo。",
+              "vi": "Dựa vào tình hình của em, tôi nghĩ tốt nhất nên bắt đầu từ năm nhất; trước hết học chắc nền tảng ngữ âm và ngữ pháp thì sẽ tốt hơn cho việc học sau này của em."
             }
           ],
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "title_vi": "Xin chỉ giáo / hỏi ý kiến (1)"
         }
       ],
       "rendering": {

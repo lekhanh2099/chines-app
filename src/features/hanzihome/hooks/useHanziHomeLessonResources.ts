@@ -17,16 +17,12 @@ import {
 const lessonResourceStaleTime = Infinity;
 
 export const hanzihomeLessonResourceKeys = {
- detail: (lessonId: string) =>
-  ["hanzihome", "lesson-detail", lessonId] as const,
- overview: (lessonId: string) =>
-  ["hanzihome", "lesson-resource", lessonId, "overview"] as const,
- sections: (lessonId: string) =>
-  ["hanzihome", "lesson-resource", lessonId, "sections"] as const,
+ detail: (lessonId: string) => ["hanzihome", "lesson-detail", lessonId] as const,
+ overview: (lessonId: string) => ["hanzihome", "lesson-resource", lessonId, "overview"] as const,
+ sections: (lessonId: string) => ["hanzihome", "lesson-resource", lessonId, "sections"] as const,
  vocabulary: (lessonId: string) =>
   ["hanzihome", "lesson-resource", lessonId, "vocabulary"] as const,
- grammar: (lessonId: string) =>
-  ["hanzihome", "lesson-resource", lessonId, "grammar"] as const,
+ grammar: (lessonId: string) => ["hanzihome", "lesson-resource", lessonId, "grammar"] as const,
 };
 
 function useHanziHomeLessonDetailResource(lessonId: string) {
@@ -38,17 +34,13 @@ function useHanziHomeLessonDetailResource(lessonId: string) {
  });
 }
 
-export function useHanziHomeLessonOverview(
- lessonId: string,
-): LessonOverviewResource | null {
+export function useHanziHomeLessonOverview(lessonId: string): LessonOverviewResource | null {
  const query = useHanziHomeLessonDetailResource(lessonId);
 
  return query.data ? buildLessonOverviewResource(query.data) : null;
 }
 
-export function useHanziHomeLessonSections(
- lessonId: string,
-): LessonSectionsResource | null {
+export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
  const query = useHanziHomeLessonDetailResource(lessonId);
 
  return query.data ? buildLessonSectionsResource(query.data) : null;
@@ -62,9 +54,7 @@ export function useHanziHomeLessonVocabulary(
  return query.data ? buildLessonVocabularyResource(query.data) : null;
 }
 
-export function useHanziHomeLessonGrammar(
- lessonId: string,
-): LessonGrammarListResource | null {
+export function useHanziHomeLessonGrammar(lessonId: string): LessonGrammarListResource | null {
  const query = useHanziHomeLessonDetailResource(lessonId);
 
  return query.data ? buildLessonGrammarResource(query.data) : null;

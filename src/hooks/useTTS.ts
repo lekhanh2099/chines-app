@@ -47,10 +47,8 @@ export function useTTS() {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "zh-CN";
   utterance.rate = rate;
-  utterance.onend = () =>
-   setState({ isSpeaking: false, isLoading: false, error: null });
-  utterance.onerror = () =>
-   setState({ isSpeaking: false, isLoading: false, error: null });
+  utterance.onend = () => setState({ isSpeaking: false, isLoading: false, error: null });
+  utterance.onerror = () => setState({ isSpeaking: false, isLoading: false, error: null });
   window.speechSynthesis.speak(utterance);
   setState((prev) => ({ ...prev, isSpeaking: true, isLoading: false }));
  }, []);
@@ -80,9 +78,7 @@ export function useTTS() {
    // Try cache first
    const cached = await getCachedAudio(cacheKey);
    if (cached) {
-    return playBlob(cached, () =>
-     setState({ isSpeaking: false, isLoading: false, error: null }),
-    );
+    return playBlob(cached, () => setState({ isSpeaking: false, isLoading: false, error: null }));
    }
 
    try {
@@ -103,9 +99,7 @@ export function useTTS() {
 
     const blob = await response.blob();
     void setCachedAudio(cacheKey, blob);
-    return playBlob(blob, () =>
-     setState({ isSpeaking: false, isLoading: false, error: null }),
-    );
+    return playBlob(blob, () => setState({ isSpeaking: false, isLoading: false, error: null }));
    } catch {
     setState((prev) => ({
      ...prev,

@@ -24,10 +24,7 @@ export function throwIfAborted(signal?: AbortSignal | null): void {
  throw new DOMException("The operation was aborted.", "AbortError");
 }
 
-export function createRequestSignal(
- timeoutMs: number,
- signal?: AbortSignal | null,
-): AbortSignal {
+export function createRequestSignal(timeoutMs: number, signal?: AbortSignal | null): AbortSignal {
  const timeoutSignal = AbortSignal.timeout(timeoutMs);
  if (!signal) {
   return timeoutSignal;
@@ -50,13 +47,8 @@ export function applyServerTimingHeaders(
  extraHeaders?: Record<string, string | number | boolean | null | undefined>,
 ) {
  const timingValue = metrics
-  .filter(
-   (metric) => Number.isFinite(metric.durationMs) && metric.durationMs >= 0,
-  )
-  .map(
-   (metric) =>
-    `${metric.name};dur=${Math.round(metric.durationMs * 100) / 100}`,
-  )
+  .filter((metric) => Number.isFinite(metric.durationMs) && metric.durationMs >= 0)
+  .map((metric) => `${metric.name};dur=${Math.round(metric.durationMs * 100) / 100}`)
   .join(", ");
 
  if (timingValue) {

@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 import type { ReactNode } from "react";
-import {
- ResizableHandle,
- ResizablePanel,
- ResizablePanelGroup,
-} from "@/components/ui/resizable";
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
 export function StudySplitLayout({
  left,
@@ -34,7 +30,7 @@ export function StudySplitLayout({
  if (mode === "left") return <>{left}</>;
  if (mode === "right") return <>{right}</>;
 
-  return (
+ return (
   <ResizablePanelGroup
    orientation="horizontal"
    defaultLayout={{ left: leftSize, right: 100 - leftSize }}
@@ -47,7 +43,8 @@ export function StudySplitLayout({
     onResize={(panelSize) => {
      const next = Math.round(panelSize.asPercentage);
      setLeftSize(next);
-     if (storageKey && typeof window !== "undefined") window.localStorage.setItem(storageKey, String(next));
+     if (storageKey && typeof window !== "undefined")
+      window.localStorage.setItem(storageKey, String(next));
     }}
    >
     {left}

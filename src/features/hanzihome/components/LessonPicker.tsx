@@ -10,18 +10,13 @@ type LessonPickerProps = {
  onSelectLesson: (lessonId: string) => void;
 };
 
-export function LessonPicker({
- lessons,
- selectedLessonId,
- onSelectLesson,
-}: LessonPickerProps) {
+export function LessonPicker({ lessons, selectedLessonId, onSelectLesson }: LessonPickerProps) {
  const options: IOption[] = lessons.map((lesson) => ({
   value: lesson.id,
   label: lesson.title,
  }));
 
- const selectedOption =
-  options.find((option) => option.value === selectedLessonId) ?? null;
+ const selectedOption = options.find((option) => option.value === selectedLessonId) ?? null;
 
  return (
   <Select

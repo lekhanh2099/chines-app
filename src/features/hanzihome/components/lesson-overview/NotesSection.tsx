@@ -21,9 +21,7 @@ export function NoteCard({
     )}
    </div>
    {displayMode.showMeaning && (
-    <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-     {item.meaning_vi}
-    </p>
+    <p className=" font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>
    )}
    {item.examples.length > 0 && (
     <div className="grid gap-2">

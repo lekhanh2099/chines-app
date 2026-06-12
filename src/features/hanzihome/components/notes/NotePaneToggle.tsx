@@ -17,10 +17,8 @@ export function NotePaneToggle({
      type="button"
      onClick={() => onChange(pane)}
      className={[
-      "rounded-xl px-3 py-2 text-sm font-black transition-colors",
-      activePane === pane
-       ? "bg-bg-primary text-text-primary shadow-theme-sm"
-       : "text-text-muted",
+      "rounded-xl px-3 py-2  font-black transition-colors",
+      activePane === pane ? "bg-bg-primary text-text-primary shadow-theme-sm" : "text-text-muted",
      ].join(" ")}
     >
      {pane === "reading" ? "Bài đọc" : "Ghi chú"}

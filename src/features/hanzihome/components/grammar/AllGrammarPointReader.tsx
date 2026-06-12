@@ -1,4 +1,4 @@
-import { StructuredGrammarContent } from "@/features/hanzihome/components/GrammarPointReader";
+import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 
 export function AllGrammarPointReader({

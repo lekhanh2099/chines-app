@@ -12,25 +12,14 @@ type SectionHeaderProps = {
  * Standardized section header with uppercase label + optional description.
  * Replaces the repeated pattern:
  *   <p className="text-[10px] font-bold uppercase tracking-[0.18em]...">Title</p>
- *   <p className="mt-1 text-sm text-text-muted">Description</p>
+ *   <p className="mt-1  text-text-muted">Description</p>
  */
-function SectionHeader({
- title,
- description,
- trailing,
- className,
-}: SectionHeaderProps) {
+function SectionHeader({ title, description, trailing, className }: SectionHeaderProps) {
  return (
-  <div
-   className={cn("flex flex-wrap items-start justify-between gap-3", className)}
-  >
+  <div className={cn("flex flex-wrap items-start justify-between gap-3", className)}>
    <div>
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-     {title}
-    </p>
-    {description && (
-     <p className="mt-1 text-sm text-text-muted">{description}</p>
-    )}
+    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">{title}</p>
+    {description && <p className="mt-1  text-text-muted">{description}</p>}
    </div>
    {trailing}
   </div>

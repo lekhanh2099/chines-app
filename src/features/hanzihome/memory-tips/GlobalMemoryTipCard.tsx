@@ -2,15 +2,7 @@
 
 import { useMemo } from "react";
 import Link from "next/link";
-import {
- Lightbulb,
- Pencil,
- Pin,
- PinOff,
- Plus,
- RefreshCw,
- Settings,
-} from "lucide-react";
+import { Lightbulb, Pencil, Pin, PinOff, Plus, RefreshCw, Settings } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -20,23 +12,15 @@ import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
 import { getUserVisibleMemoryTips } from "./memory-tip.utils";
 import { useRouteMemoryTip } from "./useRouteMemoryTip";
-import {
- useMemoryTipsQuery,
- useUpdateMemoryTipMutation,
-} from "./useMemoryTips";
+import { useMemoryTipsQuery, useUpdateMemoryTipMutation } from "./useMemoryTips";
 
 type GlobalMemoryTipCardProps = {
  compact?: boolean;
 };
 
-export function GlobalMemoryTipCard({
- compact = false,
-}: GlobalMemoryTipCardProps) {
+export function GlobalMemoryTipCard({ compact = false }: GlobalMemoryTipCardProps) {
  const tipsQuery = useMemoryTipsQuery();
- const tips = useMemo(
-  () => getUserVisibleMemoryTips(tipsQuery.data ?? []),
-  [tipsQuery.data],
- );
+ const tips = useMemo(() => getUserVisibleMemoryTips(tipsQuery.data ?? []), [tipsQuery.data]);
  const { selectedTip, pickNextTip } = useRouteMemoryTip(tips);
  const updateMutation = useUpdateMemoryTipMutation();
  const isMutating = updateMutation.isPending;
@@ -53,9 +37,7 @@ export function GlobalMemoryTipCard({
    toast.success(selectedTip.isPinned ? "Đã bỏ ghim" : "Đã ghim");
   } catch (error) {
    toast.error(
-    error instanceof MemoryTipsApiError
-     ? error.message
-     : "Không thể cập nhật nhắc nhanh",
+    error instanceof MemoryTipsApiError ? error.message : "Không thể cập nhật nhắc nhanh",
    );
   }
  };
@@ -82,13 +64,9 @@ export function GlobalMemoryTipCard({
       </span>
 
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Nhắc nhanh
-       </p>
-       <h2 className="line-clamp-1 text-base font-black text-text-primary">
-        {selectedTip.title}
-       </h2>
-       <p className="line-clamp-2 whitespace-pre-line text-sm font-semibold leading-relaxed text-text-secondary">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Nhắc nhanh</p>
+       <h2 className="line-clamp-1 text-base font-black text-text-primary">{selectedTip.title}</h2>
+       <p className="line-clamp-2 whitespace-pre-line  font-semibold leading-relaxed text-text-secondary">
         {selectedTip.body}
        </p>
       </div>
@@ -137,11 +115,7 @@ export function GlobalMemoryTipCard({
         isLoading={isMutating}
         onClick={togglePin}
        >
-        {selectedTip.isPinned ? (
-         <PinOff className="h-4 w-4" />
-        ) : (
-         <Pin className="h-4 w-4" />
-        )}
+        {selectedTip.isPinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
         {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
        </Button>
       )}
@@ -150,25 +124,15 @@ export function GlobalMemoryTipCard({
 
     {!compact && (selectedTip.formula || selectedTip.exampleZh) && (
      <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
-      {selectedTip.formula && (
-       <p className="text-sm font-black text-info-text">
-        {selectedTip.formula}
-       </p>
-      )}
+      {selectedTip.formula && <p className=" font-black text-info-text">{selectedTip.formula}</p>}
       {selectedTip.exampleZh && (
        <div className="grid gap-1">
-        <p className="text-sm font-black text-text-primary">
-         {selectedTip.exampleZh}
-        </p>
+        <p className="font-black text-text-primary">{selectedTip.exampleZh}</p>
         {selectedTip.examplePinyin && (
-         <p className="text-xs font-semibold text-text-secondary">
-          {selectedTip.examplePinyin}
-         </p>
+         <p className="text-xs font-semibold text-text-secondary">{selectedTip.examplePinyin}</p>
         )}
         {selectedTip.exampleVi && (
-         <p className="text-xs font-semibold text-text-muted">
-          {selectedTip.exampleVi}
-         </p>
+         <p className="text-xs font-semibold text-text-muted">{selectedTip.exampleVi}</p>
         )}
        </div>
       )}

@@ -4,11 +4,7 @@ type WebpackRequireContext = {
 };
 
 type WebpackRequire = NodeRequire & {
- context(
-  directory: string,
-  useSubdirectories: boolean,
-  regExp: RegExp,
- ): WebpackRequireContext;
+ context(directory: string, useSubdirectories: boolean, regExp: RegExp): WebpackRequireContext;
 };
 
 type JsonModule = {
@@ -16,12 +12,7 @@ type JsonModule = {
 };
 
 function unwrapJsonModule(value: unknown): unknown {
- if (
-  value &&
-  typeof value === "object" &&
-  "default" in value &&
-  Object.keys(value).length === 1
- ) {
+ if (value && typeof value === "object" && "default" in value && Object.keys(value).length === 1) {
   return (value as JsonModule).default;
  }
 
@@ -33,17 +24,12 @@ function normalizeDbPath(path: string) {
 }
 
 const webpackRequire = require as WebpackRequire;
-const hanzihomeDbContext = webpackRequire.context(
- "../../../../data/hanzihome-db",
- true,
- /\.json$/,
-);
+const hanzihomeDbContext = webpackRequire.context("../../../../data/hanzihome-db", true, /\.json$/);
 
 const hanzihomeDbJsonByPath = new Map(
- hanzihomeDbContext.keys().map((key) => [
-  normalizeDbPath(key),
-  unwrapJsonModule(hanzihomeDbContext(key)),
- ]),
+ hanzihomeDbContext
+  .keys()
+  .map((key) => [normalizeDbPath(key), unwrapJsonModule(hanzihomeDbContext(key))]),
 );
 
 export function listHanziHomeDbJsonPaths(prefix = ""): string[] {

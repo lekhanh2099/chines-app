@@ -33,9 +33,7 @@ const hanziSizeOptions: Array<{ value: HanziReaderSize; label: string }> = [
 
 type LessonTypographyControlsProps = {
  displayMode: LessonDisplayMode;
- onChange: (
-  updates: Partial<Pick<LessonDisplayMode, "hanziFont" | "hanziSize">>,
- ) => void;
+ onChange: (updates: Partial<Pick<LessonDisplayMode, "hanziFont" | "hanziSize">>) => void;
 };
 
 function parseHanziReaderFont(value: string): HanziReaderFont {
@@ -52,29 +50,17 @@ function parseHanziReaderSize(value: string): HanziReaderSize {
  );
 }
 
-export function LessonTypographyControls({
- displayMode,
- onChange,
-}: LessonTypographyControlsProps) {
+export function LessonTypographyControls({ displayMode, onChange }: LessonTypographyControlsProps) {
  return (
   <div className="inline-flex max-w-full flex-wrap items-center gap-1 rounded-lg border border-border-default bg-bg-subtle/60 p-1">
-   <span className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">
-    Chữ
-   </span>
+   <span className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Chữ</span>
    <div className="flex min-w-0 items-center gap-1">
-    <span className="hidden px-1 text-xs font-bold text-text-muted sm:inline">
-     Font
-    </span>
+    <span className="hidden px-1 text-xs font-bold text-text-muted sm:inline">Font</span>
     <Select
      value={displayMode.hanziFont}
-     onValueChange={(value) =>
-      onChange({ hanziFont: parseHanziReaderFont(value) })
-     }
+     onValueChange={(value) => onChange({ hanziFont: parseHanziReaderFont(value) })}
     >
-     <SelectTrigger
-      size="sm"
-      className="h-7 min-w-24 bg-bg-primary shadow-none sm:min-w-32"
-     >
+     <SelectTrigger size="sm" className="h-7 min-w-24 bg-bg-primary shadow-none sm:min-w-32">
       <SelectValue />
      </SelectTrigger>
      <SelectContent align="end">
@@ -90,14 +76,9 @@ export function LessonTypographyControls({
     <span className="px-1 text-xs font-bold text-text-muted">Cỡ</span>
     <Select
      value={displayMode.hanziSize}
-     onValueChange={(value) =>
-      onChange({ hanziSize: parseHanziReaderSize(value) })
-     }
+     onValueChange={(value) => onChange({ hanziSize: parseHanziReaderSize(value) })}
     >
-     <SelectTrigger
-      size="sm"
-      className="h-7 min-w-20 bg-bg-primary shadow-none sm:min-w-24"
-     >
+     <SelectTrigger size="sm" className="h-7 min-w-20 bg-bg-primary shadow-none sm:min-w-24">
       <SelectValue />
      </SelectTrigger>
      <SelectContent align="end">

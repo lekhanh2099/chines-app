@@ -61,10 +61,7 @@ export default function NodeHoverPlugin() {
 
   const handleMouseOut = (e: MouseEvent) => {
    const related = e.relatedTarget as HTMLElement | null;
-   if (
-    related?.closest("[data-internal-link]") ||
-    related?.closest("[data-link-tooltip]")
-   ) {
+   if (related?.closest("[data-internal-link]") || related?.closest("[data-link-tooltip]")) {
     return;
    }
    hide();
@@ -101,9 +98,7 @@ export default function NodeHoverPlugin() {
     <span className="mb-0.5 block text-[10px] font-semibold uppercase tracking-widest text-indigo-400">
      Ghi chú liên kết
     </span>
-    <span className="block max-w-52 truncate text-sm font-medium text-slate-700">
-     {tooltip.noteTitle}
-    </span>
+    <span className="block max-w-52 truncate  font-medium text-slate-700">{tooltip.noteTitle}</span>
     <span className="mt-1 block text-[10px] text-slate-400">Click để mở</span>
    </div>
    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-white" />

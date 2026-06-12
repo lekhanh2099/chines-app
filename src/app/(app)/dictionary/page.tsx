@@ -99,16 +99,10 @@ function getMeaningFromAnalysis(value: unknown) {
   return { meaning: "", hanViet: "" };
  }
 
- const firstDefinition = parsed.data.definitions?.find(
-  (item) => item.meaning || item.text,
- );
+ const firstDefinition = parsed.data.definitions?.find((item) => item.meaning || item.text);
 
  return {
-  meaning:
-   parsed.data.meaning_summary ||
-   firstDefinition?.meaning ||
-   firstDefinition?.text ||
-   "",
+  meaning: parsed.data.meaning_summary || firstDefinition?.meaning || firstDefinition?.text || "",
   hanViet: parsed.data.sino_vietnamese || parsed.data.han_viet || "",
  };
 }
@@ -151,9 +145,7 @@ function buildSavedItems({
 
  return progressRows.map((progress) => {
   const vocab = vocabById.get(progress.vocab_id);
-  const dictionary = progress.dictionary_id
-   ? dictionaryById.get(progress.dictionary_id)
-   : null;
+  const dictionary = progress.dictionary_id ? dictionaryById.get(progress.dictionary_id) : null;
   const analysis = getMeaningFromAnalysis(dictionary?.ai_analysis);
 
   return {
@@ -161,11 +153,7 @@ function buildSavedItems({
    dictionaryId: progress.dictionary_id || undefined,
    hanzi: dictionary?.headword || vocab?.hanzi || progress.vocab_id,
    pinyin: dictionary?.pinyin || vocab?.pinyin || "",
-   hanViet:
-    dictionary?.sino_vietnamese ||
-    vocab?.sino_vietnamese ||
-    analysis.hanViet ||
-    "",
+   hanViet: dictionary?.sino_vietnamese || vocab?.sino_vietnamese || analysis.hanViet || "",
    meaning: analysis.meaning || vocab?.meaning || "",
    level: progress.proficiency_level ?? 0,
    saved: progress.is_favorited ?? true,
@@ -177,13 +165,7 @@ function buildSavedItems({
 
 function matchesQuery(item: SavedVocabItem, query: string) {
  if (!query) return true;
- const haystack = [
-  item.hanzi,
-  item.pinyin,
-  item.hanViet,
-  item.meaning,
-  item.note,
- ].join(" ");
+ const haystack = [item.hanzi, item.pinyin, item.hanViet, item.meaning, item.note].join(" ");
 
  return haystack.toLocaleLowerCase("vi-VN").includes(query);
 }
@@ -195,9 +177,7 @@ function getLevelLabel(level: number) {
  return "Thuần thục";
 }
 
-export default async function DictionarySrsPage({
- searchParams,
-}: DictionarySrsPageProps) {
+export default async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps) {
  const resolvedSearchParams = await searchParams;
  const query = (resolvedSearchParams?.q ?? "").trim().toLocaleLowerCase("vi-VN");
  const supabase = await createClient();
@@ -285,13 +265,11 @@ export default async function DictionarySrsPage({
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
      <div className="flex flex-wrap items-start justify-between gap-4">
       <div className="grid gap-1">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        SRS từ vựng
-       </p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">SRS từ vựng</p>
        <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
         Kho ôn tập từ đã lưu
        </h1>
-       <p className="text-sm font-semibold text-text-muted">
+       <p className=" font-semibold text-text-muted">
         Danh sách từ đã bấm lưu từ tra từ điển hoặc inspector.
        </p>
       </div>
@@ -300,7 +278,7 @@ export default async function DictionarySrsPage({
        <Badge variant="accent">{savedItems.length} từ</Badge>
        <Link
         href="/hanzihome/vocab"
-        className="inline-flex h-9 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3 text-sm font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+        className="inline-flex h-9 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3  font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
        >
         <BookOpen className="h-4 w-4" />
         Tổng hợp từ
@@ -316,7 +294,7 @@ export default async function DictionarySrsPage({
        name="q"
        defaultValue={resolvedSearchParams?.q ?? ""}
        placeholder="Tìm Hán tự, pinyin, Hán Việt, nghĩa..."
-       className="h-11 min-w-0 flex-1 bg-transparent text-sm font-semibold text-text-primary outline-none placeholder:text-text-muted"
+       className="h-11 min-w-0 flex-1 bg-transparent  font-semibold text-text-primary outline-none placeholder:text-text-muted"
       />
       <button
        type="submit"
@@ -329,9 +307,9 @@ export default async function DictionarySrsPage({
 
     {missingSchema && (
      <Card className="rounded-xl border border-warning/30 bg-warning-subtle">
-      <p className="text-sm font-bold text-warning-text">
-       Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho
-       `user_vocab_progress` trước khi route này có dữ liệu.
+      <p className=" font-bold text-warning-text">
+       Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho `user_vocab_progress`
+       trước khi route này có dữ liệu.
       </p>
      </Card>
     )}
@@ -341,10 +319,8 @@ export default async function DictionarySrsPage({
       <div className="grid place-items-center gap-3 py-10 text-center">
        <Sparkles className="h-8 w-8 text-text-muted" />
        <div className="grid gap-1">
-        <h2 className="text-xl font-black text-text-primary">
-         Chưa có từ trong SRS
-        </h2>
-        <p className="text-sm font-semibold text-text-muted">
+        <h2 className="text-xl font-black text-text-primary">Chưa có từ trong SRS</h2>
+        <p className=" font-semibold text-text-muted">
          Mở một từ ở từ điển rồi bấm “Lưu vào SRS” để thêm vào kho ôn.
         </p>
        </div>
@@ -368,20 +344,16 @@ export default async function DictionarySrsPage({
           >
            {item.hanzi}
           </h2>
-          <p className="mt-1 truncate text-sm font-black text-accent-text">
+          <p className="mt-1 truncate  font-black text-accent-text">
            {item.pinyin || "Chưa có pinyin"}
           </p>
          </div>
-         <Badge variant={item.saved ? "success" : "default"}>
-          {getLevelLabel(item.level)}
-         </Badge>
+         <Badge variant={item.saved ? "success" : "default"}>{getLevelLabel(item.level)}</Badge>
         </div>
 
         <div className="grid gap-1 text-sm">
          {item.hanViet && (
-          <p className="font-black uppercase tracking-wide text-text-primary">
-           {item.hanViet}
-          </p>
+          <p className="font-black uppercase tracking-wide text-text-primary">{item.hanViet}</p>
          )}
          <p className="line-clamp-2 font-semibold text-text-secondary">
           {item.meaning || "Chưa có nghĩa phù hợp"}

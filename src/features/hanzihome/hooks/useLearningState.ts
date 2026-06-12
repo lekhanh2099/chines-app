@@ -3,11 +3,7 @@
 import { useCallback, useMemo } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import type {
- LearningStatus,
- ReviewResult,
- UserLearningState,
-} from "@/features/hanzihome/types";
+import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import {
  fetchHanziHomeLearningState,
  saveHanziHomeLearningState,
@@ -30,13 +26,9 @@ export function useLearningState() {
   mutationFn: saveHanziHomeLearningState,
   onMutate: async (nextState) => {
    await queryClient.cancelQueries({ queryKey: learningStateQueryKey });
-   const previousState =
-    queryClient.getQueryData<UserLearningState>(learningStateQueryKey);
+   const previousState = queryClient.getQueryData<UserLearningState>(learningStateQueryKey);
 
-   queryClient.setQueryData(
-    learningStateQueryKey,
-    normalizeLearningState(nextState),
-   );
+   queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(nextState));
 
    return { previousState };
   },
@@ -46,10 +38,7 @@ export function useLearningState() {
    }
   },
   onSuccess: (savedState) => {
-   queryClient.setQueryData(
-    learningStateQueryKey,
-    normalizeLearningState(savedState),
-   );
+   queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(savedState));
   },
  });
 
@@ -129,6 +118,13 @@ export function useLearningState() {
      ],
     })),
   }),
-  [persistMutation.isError, persistMutation.isPending, query.isError, query.isLoading, state, updateState],
+  [
+   persistMutation.isError,
+   persistMutation.isPending,
+   query.isError,
+   query.isLoading,
+   state,
+   updateState,
+  ],
  );
 }

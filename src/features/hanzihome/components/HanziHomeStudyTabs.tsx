@@ -51,7 +51,7 @@ export function HanziHomeStudyTabs<T extends string>({
       disabled={item.disabled}
       onClick={() => onChange(item.key)}
       className={cn(
-       "flex h-9 shrink-0 items-center justify-center gap-2 rounded-md px-2.5 text-sm font-bold text-text-muted transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
+       "flex h-9 shrink-0 items-center justify-center gap-2 rounded-md px-2.5  font-bold text-text-muted transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
        selected && "bg-bg-primary text-text-primary shadow-theme-sm",
        compact && "h-8 px-2 text-xs",
       )}

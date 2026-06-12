@@ -18,28 +18,26 @@ type VocabDetailDrawerStore = {
  closeDetailDrawer: () => void;
 };
 
-export const useVocabDetailDrawerStore = create<VocabDetailDrawerStore>(
- (set) => ({
-  isOpen: false,
-  text: "",
-  contextSentence: "",
-  mode: "word",
-  openDetailDrawer: ({ text, contextSentence, mode = "word" }) => {
-   const trimmedText = text.trim();
-   set({
-    isOpen: !!trimmedText,
-    text: trimmedText,
-    contextSentence: contextSentence?.trim() || trimmedText,
-    mode,
-   });
-  },
-  closeDetailDrawer: () => {
-   set({
-    isOpen: false,
-    text: "",
-    contextSentence: "",
-    mode: "word",
-   });
-  },
- }),
-);
+export const useVocabDetailDrawerStore = create<VocabDetailDrawerStore>((set) => ({
+ isOpen: false,
+ text: "",
+ contextSentence: "",
+ mode: "word",
+ openDetailDrawer: ({ text, contextSentence, mode = "word" }) => {
+  const trimmedText = text.trim();
+  set({
+   isOpen: !!trimmedText,
+   text: trimmedText,
+   contextSentence: contextSentence?.trim() || trimmedText,
+   mode,
+  });
+ },
+ closeDetailDrawer: () => {
+  set({
+   isOpen: false,
+   text: "",
+   contextSentence: "",
+   mode: "word",
+  });
+ },
+}));

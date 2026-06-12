@@ -39,15 +39,9 @@ function loadState(): {
  return { activeNotes: {}, dividerPositions: {} };
 }
 
-function saveState(
- activeNotes: Record<string, boolean>,
- dividerPositions: Record<string, number>,
-) {
+function saveState(activeNotes: Record<string, boolean>, dividerPositions: Record<string, number>) {
  try {
-  localStorage.setItem(
-   STORAGE_KEY,
-   JSON.stringify({ activeNotes, dividerPositions }),
-  );
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ activeNotes, dividerPositions }));
  } catch {}
 }
 
@@ -85,7 +79,6 @@ export const useSplitViewStore = create<SplitViewState>((set, get) => {
   },
 
   isSplitView: (noteId) => get().activeNotes[noteId] ?? false,
-  getDividerPosition: (noteId) =>
-   get().dividerPositions[noteId] ?? DEFAULT_SPLIT,
+  getDividerPosition: (noteId) => get().dividerPositions[noteId] ?? DEFAULT_SPLIT,
  };
 });

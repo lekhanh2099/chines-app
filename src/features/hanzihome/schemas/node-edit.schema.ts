@@ -81,21 +81,11 @@ export const updateGrammarDetailSectionPayloadSchema = z
  .strict()
  .refine(requireAtLeastOneField, "Payload phải có ít nhất một field.");
 
-export type UpdateVocabCorePayload = z.infer<
- typeof updateVocabCorePayloadSchema
->;
-export type UpdateVocabExamplePayload = z.infer<
- typeof updateVocabExamplePayloadSchema
->;
-export type UpdateVocabDetailSectionPayload = z.infer<
- typeof updateVocabDetailSectionPayloadSchema
->;
-export type UpdateGrammarCorePayload = z.infer<
- typeof updateGrammarCorePayloadSchema
->;
-export type UpdateGrammarExamplePayload = z.infer<
- typeof updateGrammarExamplePayloadSchema
->;
+export type UpdateVocabCorePayload = z.infer<typeof updateVocabCorePayloadSchema>;
+export type UpdateVocabExamplePayload = z.infer<typeof updateVocabExamplePayloadSchema>;
+export type UpdateVocabDetailSectionPayload = z.infer<typeof updateVocabDetailSectionPayloadSchema>;
+export type UpdateGrammarCorePayload = z.infer<typeof updateGrammarCorePayloadSchema>;
+export type UpdateGrammarExamplePayload = z.infer<typeof updateGrammarExamplePayloadSchema>;
 export type UpdateGrammarDetailSectionPayload = z.infer<
  typeof updateGrammarDetailSectionPayloadSchema
 >;

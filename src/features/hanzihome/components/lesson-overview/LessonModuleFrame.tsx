@@ -83,7 +83,7 @@ export function LessonModuleFrame({
       </Button>
 
       <div className="min-w-0">
-       <p className="line-clamp-2 text-sm font-black text-text-primary">{title}</p>
+       <p className="line-clamp-2 font-black text-text-primary">{title}</p>
        {subtitle && (
         <p className="hidden line-clamp-2 text-xs font-semibold text-text-muted sm:block">
          {subtitle}

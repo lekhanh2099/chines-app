@@ -1,10 +1,7 @@
 "use client";
 
 import { EditableNodeWrapper } from "./EditableNodeWrapper";
-import type {
- DraftPatchPath,
- EditableEntityType,
-} from "../store/types";
+import type { DraftPatchPath, EditableEntityType } from "../store/types";
 
 type NestedEditableNode = {
  entityType: EditableEntityType;
@@ -31,9 +28,7 @@ export function NestedEditControls({
 
  return (
   <div className="flex flex-wrap items-center gap-2 rounded-xl border border-dashed border-accent/40 bg-accent-subtle/35 p-2">
-   <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-    {title}
-   </p>
+   <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
    {nodes.map((node) => (
     <EditableNodeWrapper
      key={`${node.entityType}-${node.entityId}-${node.path.join(".")}`}

@@ -21,9 +21,7 @@ type VocabWritingCueProps = {
 function getWritingLines(word: HanziHomeVocabItem) {
  return word.word_formation.characters
   .flatMap((character) => [
-   character.modern_meaning_vi
-    ? `${character.hanzi}: ${character.modern_meaning_vi}`
-    : "",
+   character.modern_meaning_vi ? `${character.hanzi}: ${character.modern_meaning_vi}` : "",
    character.modern_logic_vi,
    character.structure_note_vi,
   ])
@@ -50,9 +48,7 @@ export function VocabWritingCue({
  onSelectedIndexChange,
  isShowAll,
 }: VocabWritingCueProps) {
- const chars = Array.from(word.hanzi).filter((char) =>
-  /\p{Script=Han}/u.test(char),
- );
+ const chars = Array.from(word.hanzi).filter((char) => /\p{Script=Han}/u.test(char));
 
  const [internalSelectedIndex, setInternalSelectedIndex] = useState(0);
  const [writerKey, setWriterKey] = useState(0);
@@ -121,9 +117,7 @@ export function VocabWritingCue({
    <div
     className={[
      "relative mt-2 grid gap-4 md:items-start",
-     compact || isShowAll
-      ? "justify-items-center"
-      : "md:grid-cols-[auto_minmax(0,1fr)]",
+     compact || isShowAll ? "justify-items-center" : "md:grid-cols-[auto_minmax(0,1fr)]",
     ].join(" ")}
    >
     <div
@@ -147,20 +141,18 @@ export function VocabWritingCue({
     </div>
 
     {!compact && (
-     <div className="grid content-start gap-2 text-sm leading-relaxed text-text-secondary">
+     <div className="grid content-start gap-2  leading-relaxed text-text-secondary">
       <p>
        <span className="font-bold text-text-primary">Bính âm:</span>{" "}
        <span className="font-pinyin font-black">{info.pinyin}</span>
       </p>
 
       <p>
-       <span className="font-bold text-text-primary">Hán Việt:</span>{" "}
-       {info.hanViet}
+       <span className="font-bold text-text-primary">Hán Việt:</span> {info.hanViet}
       </p>
 
       <p>
-       <span className="font-bold text-text-primary">Nghĩa:</span>{" "}
-       {info.meaning}
+       <span className="font-bold text-text-primary">Nghĩa:</span> {info.meaning}
       </p>
 
       {info.lines.length > 0 ? (

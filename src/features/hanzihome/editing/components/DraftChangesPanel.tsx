@@ -39,17 +39,11 @@ export function DraftChangesPanel() {
   (patch) => patch.lessonId === lessonId,
  );
  const skippedPatchIds = useHanziHomeDraftStore(
-  (state) =>
-   state.skippedPatchIdsByLesson[lessonId] ?? EMPTY_SKIPPED_PATCH_IDS,
+  (state) => state.skippedPatchIdsByLesson[lessonId] ?? EMPTY_SKIPPED_PATCH_IDS,
  );
  const removePatch = useHanziHomeDraftStore((state) => state.removePatch);
- const clearLessonDrafts = useHanziHomeDraftStore(
-  (state) => state.clearLessonDrafts,
- );
- const skippedPatchIdSet = useMemo(
-  () => new Set(skippedPatchIds),
-  [skippedPatchIds],
- );
+ const clearLessonDrafts = useHanziHomeDraftStore((state) => state.clearLessonDrafts);
+ const skippedPatchIdSet = useMemo(() => new Set(skippedPatchIds), [skippedPatchIds]);
  const activePatches = useMemo(
   () => patches.filter((patch) => !skippedPatchIdSet.has(patch.id)),
   [patches, skippedPatchIdSet],
@@ -93,9 +87,7 @@ export function DraftChangesPanel() {
     const result = await saveHanziHomeDbEditDraftClient(entry.draft);
 
     if (!result.ok) {
-     throw new Error(
-      result?.errors?.[0]?.message || "Không lưu được module HanziHome DB.",
-     );
+     throw new Error(result?.errors?.[0]?.message || "Không lưu được module HanziHome DB.");
     }
 
     for (const patchId of entry.patchIds) savedPatchIds.add(patchId);
@@ -131,12 +123,7 @@ export function DraftChangesPanel() {
  return (
   <Dialog>
    <DialogTrigger asChild>
-    <Button
-     type="button"
-     variant="outline"
-     size="sm"
-     className="h-8 px-2.5 text-xs"
-    >
+    <Button type="button" variant="outline" size="sm" className="h-8 px-2.5 text-xs">
      Drafts {patches.length > 0 ? `(${patches.length})` : ""}
     </Button>
    </DialogTrigger>
@@ -177,40 +164,35 @@ export function DraftChangesPanel() {
      >
       <Trash2 className="h-4 w-4" />
       Xóa draft bài này
-    </Button>
-   </div>
+     </Button>
+    </div>
     {saveSummary ? (
      <div className="grid gap-1 rounded-xl border border-success/35 bg-success-subtle p-3 text-xs font-semibold text-success-text">
       <p className="font-black">
-       Đã lưu {saveSummary.savedCount} patch. Bỏ qua{" "}
-       {saveSummary.skippedCount} patch.
+       Đã lưu {saveSummary.savedCount} patch. Bỏ qua {saveSummary.skippedCount} patch.
       </p>
       {saveSummary.targetPaths.length > 0 ? (
-       <p className="text-text-secondary">
-        Files: {saveSummary.targetPaths.join(", ")}
-       </p>
+       <p className="text-text-secondary">Files: {saveSummary.targetPaths.join(", ")}</p>
       ) : null}
      </div>
     ) : null}
     {skippedPatchIds.length > 0 ? (
-     <div className="flex items-start gap-2 rounded-xl border border-warning/35 bg-warning-subtle p-3 text-sm font-semibold text-warning-text">
+     <div className="flex items-start gap-2 rounded-xl border border-warning/35 bg-warning-subtle p-3  font-semibold text-warning-text">
       <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
       <div className="grid gap-1">
        <p className="font-black">
-        Có {skippedPatchIds.length} draft patch không apply được vì path không
-        còn khớp data hiện tại.
+        Có {skippedPatchIds.length} draft patch không apply được vì path không còn khớp data hiện
+        tại.
        </p>
        <p className="text-xs text-text-secondary">
-        Xóa hoặc sửa các patch bị đánh dấu trước khi export để tránh tưởng đã
-        lưu nhưng UI không đổi.
+        Xóa hoặc sửa các patch bị đánh dấu trước khi export để tránh tưởng đã lưu nhưng UI không
+        đổi.
        </p>
       </div>
      </div>
     ) : null}
     <DialogBody className="max-h-[calc(90vh-12rem)] overflow-y-auto pr-1">
-     {patches.length > 0 ? (
-      <UnsupportedPatchNotice unsupported={buildResult.unsupported} />
-     ) : null}
+     {patches.length > 0 ? <UnsupportedPatchNotice unsupported={buildResult.unsupported} /> : null}
      {patches.length > 0 ? (
       patches.map((patch) => (
        <div
@@ -223,7 +205,7 @@ export function DraftChangesPanel() {
        >
         <div className="flex items-center justify-between gap-2">
          <div className="min-w-0">
-          <p className="text-sm font-black text-text-primary">
+          <p className="font-black text-text-primary">
            {patch.entityType} · {patch.entityId}
           </p>
           {skippedPatchIdSet.has(patch.id) ? (
@@ -232,12 +214,7 @@ export function DraftChangesPanel() {
            </p>
           ) : null}
          </div>
-         <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          onClick={() => removePatch(patch.id)}
-         >
+         <Button type="button" variant="ghost" size="sm" onClick={() => removePatch(patch.id)}>
           Xóa
          </Button>
         </div>
@@ -245,7 +222,7 @@ export function DraftChangesPanel() {
        </div>
       ))
      ) : (
-      <p className="rounded-xl border border-dashed border-border-default p-6 text-center text-sm font-semibold text-text-muted">
+      <p className="rounded-xl border border-dashed border-border-default p-6 text-center  font-semibold text-text-muted">
        Chưa có draft patch cho bài này.
       </p>
      )}

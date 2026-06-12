@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemoryTipButton";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
+import { PopularFontPreview } from "./PopularFontPreview";
 
 export function VocabDetailHeader({
  word,
@@ -118,13 +119,5 @@ export function VocabDetailHeader({
     </div>
    </div>
   </div>
- );
-}
-
-function PopularFontPreview({ word }: { word: string }) {
- return (
-  <p className="font-popular-xingkai mt-1 truncate text-8xl leading-none text-text-primary">
-   {word}
-  </p>
  );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
+import { RadicalSection } from "./RadicalSection";
 
 type RadicalWorkspaceProps = {
  radicals: StaticRadicalData[];
@@ -46,7 +46,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  if (!selectedRadical) {
   return (
    <Card padding="lg" className="rounded-xl">
-    <p className="text-sm font-semibold text-text-muted">Chưa có dữ liệu bộ thủ.</p>
+    <p className=" font-semibold text-text-muted">Chưa có dữ liệu bộ thủ.</p>
    </Card>
   );
  }
@@ -55,9 +55,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
   <div className="grid gap-3">
    <div>
     <h2 className="text-lg font-black text-text-primary">Toàn bộ bộ thủ</h2>
-    <p className="text-sm font-semibold text-text-muted">
-     {radicals.length} bộ thủ độc lập với bài học.
-    </p>
+    <p className=" font-semibold text-text-muted">{radicals.length} bộ thủ độc lập với bài học.</p>
    </div>
    <Input
     value={searchValue}
@@ -81,7 +79,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     ))}
    </div>
    {visibleRadicals.length === 0 && (
-    <p className="rounded-xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+    <p className="rounded-xl bg-bg-subtle p-4  font-semibold text-text-muted">
      Không có bộ thủ phù hợp bộ lọc.
     </p>
    )}
@@ -145,14 +143,5 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     </div>
    </Card>
   </LessonModuleFrame>
- );
-}
-
-function RadicalSection({ title, children }: { title: string; children: ReactNode }) {
- return (
-  <section className="grid gap-2 rounded-xl bg-bg-subtle p-4 text-base leading-relaxed text-text-secondary">
-   <h4 className="text-base font-black text-text-primary">{title}</h4>
-   {children}
-  </section>
  );
 }

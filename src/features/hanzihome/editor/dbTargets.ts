@@ -14,4 +14,3 @@ export function getHanziHomeDbEditTargetKey(target: HanziHomeDbEditTarget) {
    return `${target.dataset}/${target.lessonFolder}/relations/${target.relationFile}`;
  }
 }
-

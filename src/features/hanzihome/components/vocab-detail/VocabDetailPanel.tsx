@@ -4,17 +4,10 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import type {
- HanziHomeVocabItem,
- LearningStatus,
-} from "@/features/hanzihome/types";
+import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import type { DraftPatchPath } from "@/features/hanzihome/editing";
 
-import {
- hasCultureContent,
- hasSectionInItem,
- hasWarningContent,
-} from "./content-checks";
+import { hasCultureContent, hasSectionInItem, hasWarningContent } from "./content-checks";
 import { sectionShortcutTabs, type SectionView } from "./types";
 import { VocabDetailHeader } from "./VocabDetailHeader";
 import {
@@ -91,9 +84,7 @@ export function VocabDetailPanel({
     padding="lg"
     className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
    >
-    <p className="text-sm font-semibold text-text-muted">
-     Chọn một từ để xem chi tiết.
-    </p>
+    <p className=" font-semibold text-text-muted">Chọn một từ để xem chi tiết.</p>
    </Card>
   );
  }
@@ -101,18 +92,13 @@ export function VocabDetailPanel({
  const sectionTabs = [...sectionShortcutTabs].filter((item) => {
   return hasSectionInItem(word, item.key);
  });
- const effectiveSectionView = sectionTabs.some(
-  (item) => item.key === sectionView,
- )
+ const effectiveSectionView = sectionTabs.some((item) => item.key === sectionView)
   ? sectionView
   : "all";
 
  return (
   <article
-   className={cn(
-    "grid gap-4",
-    !compact && "xl:grid-cols-[minmax(0,1fr)_19rem] xl:items-start",
-   )}
+   className={cn("grid gap-4", !compact && "xl:grid-cols-[minmax(0,1fr)_19rem] xl:items-start")}
   >
    <div className="grid min-w-0 gap-4">
     <Card
@@ -163,18 +149,13 @@ export function VocabDetailPanel({
    <aside
     className={cn(
      "grid gap-4",
-     !compact &&
-      "xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1",
+     !compact && "xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1",
     )}
    >
-    <WordFormationPreview formation={word.word_formation} word={word} />
+    <WordFormationPreview formation={word.word_formation} />
 
-    {hasCultureContent(word.culture_note) && (
-     <CultureSection culture={word.culture_note} />
-    )}
-    {hasWarningContent(word.warnings) && (
-     <WarningSection warnings={word.warnings} />
-    )}
+    {hasCultureContent(word.culture_note) && <CultureSection culture={word.culture_note} />}
+    {hasWarningContent(word.warnings) && <WarningSection warnings={word.warnings} />}
    </aside>
   </article>
  );

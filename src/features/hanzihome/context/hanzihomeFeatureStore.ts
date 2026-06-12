@@ -3,11 +3,7 @@
 import { createStore } from "@tanstack/react-store";
 
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
-import type {
- DraggedModule,
- LessonViewMode,
- PaneLayout,
-} from "./types";
+import type { DraggedModule, LessonViewMode, PaneLayout } from "./types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,

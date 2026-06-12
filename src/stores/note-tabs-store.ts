@@ -121,9 +121,7 @@ export const useNoteTabsStore = create<NoteTabsState>((set, get) => ({
 
  updateTabTitle: (noteId, title) => {
   const { tabs, activeNoteId } = get();
-  const newTabs = tabs.map((t) =>
-   t.noteId === noteId ? { ...t, title } : t,
-  );
+  const newTabs = tabs.map((t) => (t.noteId === noteId ? { ...t, title } : t));
   set({ tabs: newTabs });
   saveState(newTabs, activeNoteId);
  },

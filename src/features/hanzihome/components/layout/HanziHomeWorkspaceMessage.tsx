@@ -19,16 +19,14 @@ export function HanziHomeWorkspaceMessage({
     <Card padding="lg" className="rounded-xl">
      <div className="grid gap-2.5">
       <div>
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {eyebrow}
-       </p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        <h1 className="text-2xl font-black text-text-primary">{title}</h1>
-       <p className="text-sm font-semibold text-text-muted">{description}</p>
+       <p className=" font-semibold text-text-muted">{description}</p>
       </div>
       {showLibraryLink ? (
        <Link
         href="/"
-        className="w-fit rounded-xl bg-bg-inverse px-4 py-2 text-sm font-black text-text-inverse"
+        className="w-fit rounded-xl bg-bg-inverse px-4 py-2  font-black text-text-inverse"
        >
         Về thư viện học liệu
        </Link>
@@ -39,4 +37,3 @@ export function HanziHomeWorkspaceMessage({
   </main>
  );
 }
-

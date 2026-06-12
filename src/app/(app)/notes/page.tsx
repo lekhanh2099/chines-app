@@ -97,11 +97,7 @@ function NotesPageInner() {
      </div>
     </div>
 
-    <Tabs.Root
-     defaultValue="all"
-     value={activeTab}
-     onValueChange={(val) => setActiveTab(val)}
-    >
+    <Tabs.Root defaultValue="all" value={activeTab} onValueChange={(val) => setActiveTab(val)}>
      <Tabs.List className="flex items-center gap-1">
       {[
        { value: "all", label: "Tất cả" },
@@ -125,12 +121,8 @@ function NotesPageInner() {
     {filteredNotes.length === 0 ? (
      <div className="text-center py-24">
       <FileText className="w-10 h-10 text-text-muted mx-auto mb-3" />
-      <p className="text-sm font-medium text-text-secondary mb-1">
-       Chưa có ghi chú nào
-      </p>
-      <p className="text-xs text-text-muted mb-5">
-       Tạo ghi chú đầu tiên để bắt đầu.
-      </p>
+      <p className=" font-medium text-text-secondary mb-1">Chưa có ghi chú nào</p>
+      <p className="text-xs text-text-muted mb-5">Tạo ghi chú đầu tiên để bắt đầu.</p>
       <div className="flex items-center justify-center gap-2">
        <QuickNoteButton size="sm" />
        <CreateNoteDialog />
@@ -144,9 +136,7 @@ function NotesPageInner() {
         key={note.id}
         className="flex items-center gap-4 px-8 py-3.5 hover:bg-bg-card-hover transition-colors group"
        >
-        <span className="text-base leading-none">
-         {categoryEmoji[note.category] || "⬜"}
-        </span>
+        <span className="text-base leading-none">{categoryEmoji[note.category] || "⬜"}</span>
 
         <span className="flex-1 min-w-0 text-[13px] font-medium text-text-primary truncate group-hover: -text transition-colors">
          {note.title}
@@ -235,17 +225,15 @@ function NewNoteView() {
     <div className="w-16 h-16 rounded-2xl  bg-bg-subtle flex items-center justify-center mx-auto mb-6">
      <FileText className="w-8 h-8 text-text-muted" />
     </div>
-    <h2 className="text-2xl font-bold text-text-primary mb-2">
-     Chào mừng bạn! 👋
-    </h2>
+    <h2 className="text-2xl font-bold text-text-primary mb-2">Chào mừng bạn! 👋</h2>
     <p className="text-text-secondary mb-8 leading-relaxed">
-     Đây là không gian ghi chú của bạn. Tạo ghi chú đầu tiên để bắt đầu lưu trữ
-     kiến thức tiếng Trung.
+     Đây là không gian ghi chú của bạn. Tạo ghi chú đầu tiên để bắt đầu lưu trữ kiến thức tiếng
+     Trung.
     </p>
     <button
      onClick={handleCreate}
      disabled={createNoteMutation.isPending}
-     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover   px-6 py-3 rounded-2xl  text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
+     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover   px-6 py-3 rounded-2xl   font-semibold transition-colors shadow-sm disabled:opacity-60"
     >
      {createNoteMutation.isPending ? (
       <Loader2 className="w-4 h-4 animate-spin" />
@@ -311,9 +299,7 @@ function CreateNoteDialog() {
    <DialogContent className="max-w-md">
     <DialogHeader>
      <DialogTitle>Tạo ghi chú mới</DialogTitle>
-     <DialogDescription>
-      Nhập tiêu đề và phân loại cho ghi chú của bạn
-     </DialogDescription>
+     <DialogDescription>Nhập tiêu đề và phân loại cho ghi chú của bạn</DialogDescription>
     </DialogHeader>
 
     <form
@@ -327,15 +313,12 @@ function CreateNoteDialog() {
       <form.Field
        name="title"
        validators={{
-        onChange: ({ value }) =>
-         !value ? "Tiêu đề không được để trống" : undefined,
+        onChange: ({ value }) => (!value ? "Tiêu đề không được để trống" : undefined),
        }}
       >
        {(field) => (
         <div className="space-y-2">
-         <label className="text-sm font-bold text-text-primary">
-          Tiêu đề ghi chú
-         </label>
+         <label className=" font-bold text-text-primary">Tiêu đề ghi chú</label>
          <Input
           name={field.name}
           value={field.state.value}
@@ -345,9 +328,7 @@ function CreateNoteDialog() {
           className="border-border-default focus-visible:ring-accent"
          />
          {field.state.meta.errors ? (
-          <p className="text-xs text-danger font-medium">
-           {field.state.meta.errors}
-          </p>
+          <p className="text-xs text-danger font-medium">{field.state.meta.errors}</p>
          ) : null}
         </div>
        )}
@@ -356,9 +337,7 @@ function CreateNoteDialog() {
       <form.Field name="tags">
        {(field) => (
         <div className="space-y-2 mt-4">
-         <label className="text-sm font-bold text-text-primary">
-          Phân loại (Cách nhau bằng dấu phẩy)
-         </label>
+         <label className=" font-bold text-text-primary">Phân loại (Cách nhau bằng dấu phẩy)</label>
          <Input
           name={field.name}
           value={field.state.value}
@@ -374,13 +353,13 @@ function CreateNoteDialog() {
       <form.Field name="category">
        {(field) => (
         <div className="space-y-2 mt-4">
-         <label className="text-sm font-bold text-text-primary">Danh mục</label>
+         <label className=" font-bold text-text-primary">Danh mục</label>
          <select
           name={field.name}
           value={field.state.value}
           onBlur={field.handleBlur}
           onChange={(e) => field.handleChange(e.target.value)}
-          className="w-full h-10 bg-bg-card border border-border-default rounded-2xl  px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
+          className="w-full h-10 bg-bg-card border border-border-default rounded-2xl  px-3  text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
          >
           <option value="grammar">🟦 Ngữ Pháp</option>
           <option value="vocabulary">🟩 Từ Vựng</option>
@@ -401,18 +380,10 @@ function CreateNoteDialog() {
       >
        Hủy
       </Button>
-      <form.Subscribe
-       selector={(state) => [state.canSubmit, state.isSubmitting]}
-      >
+      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
        {([canSubmit, isSubmitting]) => (
-        <Button
-         type="submit"
-         disabled={!canSubmit}
-         className="bg-accent hover:bg-accent-hover  "
-        >
-         {isSubmitting ? (
-          <Loader2 className="w-4 h-4 animate-spin mr-2" />
-         ) : null}
+        <Button type="submit" disabled={!canSubmit} className="bg-accent hover:bg-accent-hover  ">
+         {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
          Tạo Ghi Chú
         </Button>
        )}

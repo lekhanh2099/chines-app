@@ -12,9 +12,7 @@ const AUTH_TAG_LENGTH = 16;
 function getEncryptionKey(): Buffer {
  const secret = process.env.BYOK_ENCRYPTION_SECRET;
  if (!secret || secret.length < 32) {
-  throw new Error(
-   "BYOK_ENCRYPTION_SECRET must be set (min 32 chars) in environment variables.",
-  );
+  throw new Error("BYOK_ENCRYPTION_SECRET must be set (min 32 chars) in environment variables.");
  }
  // Use first 32 bytes as AES-256 key
  return Buffer.from(secret.slice(0, 32), "utf8");
@@ -29,10 +27,7 @@ export function encryptApiKey(plaintext: string): string {
  const iv = randomBytes(IV_LENGTH);
  const cipher = createCipheriv(ALGORITHM, key, iv);
 
- const encrypted = Buffer.concat([
-  cipher.update(plaintext, "utf8"),
-  cipher.final(),
- ]);
+ const encrypted = Buffer.concat([cipher.update(plaintext, "utf8"), cipher.final()]);
  const authTag = cipher.getAuthTag();
 
  return Buffer.concat([iv, authTag, encrypted]).toString("base64");
@@ -52,7 +47,5 @@ export function decryptApiKey(encoded: string): string {
  const decipher = createDecipheriv(ALGORITHM, key, iv);
  decipher.setAuthTag(authTag);
 
- return Buffer.concat([decipher.update(ciphertext), decipher.final()]).toString(
-  "utf8",
- );
+ return Buffer.concat([decipher.update(ciphertext), decipher.final()]).toString("utf8");
 }

@@ -2,11 +2,7 @@
 
 import type { DragEvent } from "react";
 
-import type {
- DraggedModule,
- PaneId,
- StudyModule,
-} from "@/features/hanzihome/context/types";
+import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
 
 import { moduleMeta } from "./moduleMeta";
 
@@ -69,7 +65,7 @@ export function ModuleTabButton({
    }}
    onDragEnd={onDragEnd}
    className={[
-    "flex h-8 shrink-0 cursor-grab select-none items-center gap-1.5 whitespace-nowrap rounded-lg border border-transparent px-2.5 text-sm font-black transition-colors active:cursor-grabbing sm:gap-2",
+    "flex h-8 shrink-0 cursor-grab select-none items-center gap-1.5 whitespace-nowrap rounded-lg border border-transparent px-2.5  font-black transition-colors active:cursor-grabbing sm:gap-2",
     active
      ? "bg-bg-primary text-text-primary shadow-theme-sm"
      : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
@@ -82,4 +78,3 @@ export function ModuleTabButton({
   </button>
  );
 }
-

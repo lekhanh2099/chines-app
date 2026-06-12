@@ -13,11 +13,7 @@ import { useHanziHomeDraftStore } from "./store/useHanziHomeDraftStore";
 
 export { EditableNodeWrapper } from "./components/EditableNodeWrapper";
 export { NestedEditControls } from "./components/NestedEditControls";
-export type {
- DraftPatch,
- DraftPatchPath,
- EditableEntityType,
-} from "./store/types";
+export type { DraftPatch, DraftPatchPath, EditableEntityType } from "./store/types";
 
 export function HanziHomeEditingTools() {
  return (
@@ -31,13 +27,9 @@ export function HanziHomeEditingTools() {
  );
 }
 
-export function useDraftPatchedLesson(
- lesson: HanziHomeLesson,
-): HanziHomeLesson {
+export function useDraftPatchedLesson(lesson: HanziHomeLesson): HanziHomeLesson {
  const patches = useHanziHomeDraftStore((state) => state.patches);
- const setSkippedPatchIds = useHanziHomeDraftStore(
-  (state) => state.setSkippedPatchIds,
- );
+ const setSkippedPatchIds = useHanziHomeDraftStore((state) => state.setSkippedPatchIds);
  const lessonPatches = useMemo(
   () => patches.filter((patch) => patch.lessonId === lesson.id),
   [lesson.id, patches],
@@ -50,12 +42,8 @@ export function useDraftPatchedLesson(
 
   const output = structuredClone(lesson);
   const skippedPatchIds: string[] = [];
-  const sourceLessonPatches = lessonPatches.filter(
-   (patch) => patch.path[0] === "lesson",
-  );
-  const viewModelPatches = lessonPatches.filter(
-   (patch) => patch.path[0] !== "lesson",
-  );
+  const sourceLessonPatches = lessonPatches.filter((patch) => patch.path[0] === "lesson");
+  const viewModelPatches = lessonPatches.filter((patch) => patch.path[0] !== "lesson");
 
   if (output.sourceLesson && sourceLessonPatches.length > 0) {
    const result = applyDraftPatches(output.sourceLesson, sourceLessonPatches);
@@ -65,11 +53,7 @@ export function useDraftPatchedLesson(
 
   for (const patch of viewModelPatches) {
    if (patch.op !== "update") continue;
-   const applied = setValueAtPath(
-    output,
-    patch.path,
-    structuredClone(patch.after),
-   );
+   const applied = setValueAtPath(output, patch.path, structuredClone(patch.after));
    if (!applied) skippedPatchIds.push(patch.id);
   }
 

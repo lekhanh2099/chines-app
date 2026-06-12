@@ -3,10 +3,7 @@
 import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";
-import {
- getDescribedBy,
- getFieldError,
-} from "@/components/form/fields/field-utils";
+import { getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
 import { cn } from "@/lib/utils";
 
 type FormCheckboxProps = {
@@ -44,26 +41,20 @@ export function FormCheckbox({
      checked={Boolean(field.state.value)}
      disabled={disabled}
      aria-invalid={Boolean(error)}
-     aria-describedby={getDescribedBy(
-      descriptionId,
-      error ? errorId : undefined,
-     )}
+     aria-describedby={getDescribedBy(descriptionId, error ? errorId : undefined)}
      className="mt-1 size-4 accent-primary disabled:cursor-not-allowed disabled:opacity-50"
      onBlur={field.handleBlur}
      onChange={(event) => field.handleChange(event.target.checked)}
     />
 
     <span className="grid gap-1">
-     <span className="text-sm font-black text-text-primary">
+     <span className="font-black text-text-primary">
       {label}
       {required && <span className="ml-1 text-destructive">*</span>}
      </span>
 
      {description && (
-      <span
-       id={descriptionId}
-       className="text-xs font-semibold text-text-muted"
-      >
+      <span id={descriptionId} className="text-xs font-semibold text-text-muted">
        {description}
       </span>
      )}
@@ -71,7 +62,7 @@ export function FormCheckbox({
    </label>
 
    {error && (
-    <p id={errorId} role="alert" className="text-sm font-bold text-destructive">
+    <p id={errorId} role="alert" className=" font-bold text-destructive">
      {error}
     </p>
    )}

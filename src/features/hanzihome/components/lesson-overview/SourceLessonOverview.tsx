@@ -154,7 +154,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
          {selectedSection?.title ?? "Toàn bộ bài khóa"}
         </h3>
         {(selectedSection?.subtitle || !selectedSection) && (
-         <p className="text-sm font-semibold text-text-muted">
+         <p className=" font-semibold text-text-muted">
           {selectedSection?.subtitle ?? `${sections.length} đề mục`}
          </p>
         )}
@@ -209,7 +209,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
             <div>
              <h4 className="text-base font-black text-text-primary">{section.title}</h4>
              {section.subtitle && (
-              <p className="text-sm font-semibold text-text-muted">{section.subtitle}</p>
+              <p className=" font-semibold text-text-muted">{section.subtitle}</p>
              )}
             </div>
            </div>

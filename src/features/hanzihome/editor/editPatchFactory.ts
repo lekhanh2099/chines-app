@@ -1,9 +1,6 @@
 "use client";
 
-import type {
- DraftPatch,
- EditableNodeRequest,
-} from "@/features/hanzihome/editing/store/types";
+import type { DraftPatch, EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 
 export function createHanziHomeUpdatePatch(params: {
  node: EditableNodeRequest;

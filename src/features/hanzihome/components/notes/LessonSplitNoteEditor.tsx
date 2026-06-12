@@ -29,7 +29,7 @@ export function LessonSplitNoteEditor({ noteId }: { noteId: string }) {
 
  if (isLoading) {
   return (
-   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
     Đang tải note của bài...
    </div>
   );
@@ -37,15 +37,14 @@ export function LessonSplitNoteEditor({ noteId }: { noteId: string }) {
 
  if (!note) {
   return (
-   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
     Không tìm thấy note đã gắn với bài này.
    </div>
   );
  }
 
  const readingContent =
-  (note.reading_content as Record<string, unknown> | null) ??
-  createLessonReadingContent(lesson);
+  (note.reading_content as Record<string, unknown> | null) ?? createLessonReadingContent(lesson);
  const content = note.content as Record<string, unknown> | null;
  const splitEnabled = note.split_view_enabled ?? true;
 
@@ -65,11 +64,7 @@ export function LessonSplitNoteEditor({ noteId }: { noteId: string }) {
       <Save className="h-3.5 w-3.5" />
       {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
      </span>
-     <Button
-      type="button"
-      variant="outline"
-      onClick={() => updateSplitView(!splitEnabled)}
-     >
+     <Button type="button" variant="outline" onClick={() => updateSplitView(!splitEnabled)}>
       {splitEnabled ? "Đóng Split" : "Mở Split"}
      </Button>
      <Button asChild variant="outline">
@@ -81,9 +76,7 @@ export function LessonSplitNoteEditor({ noteId }: { noteId: string }) {
     </div>
    </div>
 
-   {splitEnabled ? (
-    <NotePaneToggle activePane={mobilePane} onChange={setMobilePane} />
-   ) : null}
+   {splitEnabled ? <NotePaneToggle activePane={mobilePane} onChange={setMobilePane} /> : null}
 
    {splitEnabled ? (
     <>

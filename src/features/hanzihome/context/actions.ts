@@ -4,11 +4,7 @@ import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/typ
 
 import { useHanziHomeFeatureContext } from "./hanzihomeFeatureContext";
 import type { HanziHomeFeatureStore } from "./hanzihomeFeatureStore";
-import type {
- DraggedModule,
- LessonViewMode,
- PaneLayout,
-} from "./types";
+import type { DraggedModule, LessonViewMode, PaneLayout } from "./types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import type { HanziHomeFeatureState } from "./hanzihomeFeatureStore";
 import {
@@ -81,9 +77,7 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
    store.setState((state) => ({ ...state, lessonTextSidebarOpen })),
   setLessonTextSettingsOpen: (lessonTextSettingsOpen: boolean) =>
    store.setState((state) => ({ ...state, lessonTextSettingsOpen })),
-  setLessonTextDisplayMode: (
-   updates: Partial<HanziHomeFeatureState["lessonTextDisplayMode"]>,
-  ) =>
+  setLessonTextDisplayMode: (updates: Partial<HanziHomeFeatureState["lessonTextDisplayMode"]>) =>
    store.setState((state) => ({
     ...state,
     lessonTextDisplayMode: { ...state.lessonTextDisplayMode, ...updates },
@@ -91,9 +85,7 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
  };
 }
 
-export type HanziHomeFeatureActions = ReturnType<
- typeof createHanziHomeFeatureActions
->;
+export type HanziHomeFeatureActions = ReturnType<typeof createHanziHomeFeatureActions>;
 
 export function useHanziHomeFeatureActions() {
  return useHanziHomeFeatureContext().actions;
