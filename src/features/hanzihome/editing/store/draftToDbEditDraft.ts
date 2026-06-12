@@ -4,13 +4,17 @@ import type {
  HanziHomeDbEditDraft,
  HanziHomeDbEditTarget,
 } from "@/features/hanzihome/editor/hanzihome-db-edit.types";
+import { getHanziHomeDbEditTargetKey } from "@/features/hanzihome/editor/dbTargets";
 import type { HanziHomeLesson, HanziHomeVocabItem } from "@/features/hanzihome/types";
 
 import { setValueAtPath } from "./pathUtils";
 import type { DraftPatch } from "./types";
 
 type BuildResult = {
- drafts: HanziHomeDbEditDraft[];
+ drafts: Array<{
+  draft: HanziHomeDbEditDraft;
+  patchIds: string[];
+ }>;
  unsupported: Array<{
   patchId: string;
   entityType: string;
@@ -75,18 +79,7 @@ function getCanonicalVocabPayload(original: unknown, after: unknown) {
 }
 
 function targetKey(target: HanziHomeDbEditTarget) {
- switch (target.kind) {
-  case "lesson_meta":
-   return `${target.dataset}/${target.lessonFolder}/lesson.json`;
-  case "section":
-   return `${target.dataset}/${target.lessonFolder}/sections/${target.sectionFile}`;
-  case "vocabulary_item":
-   return `${target.dataset}/${target.lessonFolder}/${target.itemFile}`;
-  case "vocabulary_groups":
-   return `${target.dataset}/${target.lessonFolder}/vocabulary/groups.json`;
-  case "relation_file":
-   return `${target.dataset}/${target.lessonFolder}/relations/${target.relationFile}`;
- }
+ return getHanziHomeDbEditTargetKey(target);
 }
 
 function addModulePatch(
@@ -162,6 +155,58 @@ function getVocabTarget(lesson: HanziHomeLesson, vocabIndex: number) {
  };
 }
 
+function getOriginalForTarget(
+ lesson: HanziHomeLesson,
+ target: HanziHomeDbEditTarget,
+) {
+ const dbSource = lesson.dbSource;
+ if (!dbSource) return undefined;
+
+ switch (target.kind) {
+  case "lesson_meta":
+   return dbSource.lessonMeta;
+  case "section": {
+   const entry = Object.entries(dbSource.sectionFilesById).find(
+    ([, sectionFile]) => sectionFile === target.sectionFile,
+   );
+   const sectionId = entry?.[0];
+   return lesson.sourceLesson?.lesson.sections.find(
+    (section) => section.id === sectionId,
+   );
+  }
+  case "vocabulary_item": {
+   const entry = Object.entries(dbSource.vocabularyItemFilesByRuntimeId).find(
+    ([, itemFile]) => itemFile === target.itemFile,
+   );
+   const runtimeId = entry?.[0];
+   return runtimeId
+    ? dbSource.vocabularyItemPayloadsByRuntimeId[runtimeId]
+    : undefined;
+  }
+  case "vocabulary_groups":
+   return lesson.vocabCategories ?? [];
+  case "relation_file":
+   return undefined;
+ }
+}
+
+function getCanonicalAfterForTarget(
+ target: HanziHomeDbEditTarget,
+ original: unknown,
+ patch: DraftPatch,
+ relativePath: Array<string | number>,
+) {
+ if (target.kind === "lesson_meta" && relativePath.length === 0) {
+  return getLessonTitlePatch(original, patch.after) ?? patch.after;
+ }
+
+ if (target.kind === "vocabulary_item" && relativePath.length === 0) {
+  return getCanonicalVocabPayload(original, patch.after);
+ }
+
+ return patch.after;
+}
+
 export function buildHanziHomeDbEditDraftsFromPatches(
  lesson: HanziHomeLesson,
  patches: DraftPatch[],
@@ -171,6 +216,35 @@ export function buildHanziHomeDbEditDraftsFromPatches(
 
  for (const patch of patches) {
   try {
+   if (patch.target) {
+    const original = getOriginalForTarget(lesson, patch.target);
+
+    if (original === undefined) {
+     unsupported.push({
+      patchId: patch.id,
+      entityType: patch.entityType,
+      reason:
+       "Patch có DB target nhưng không tìm được module gốc trong lesson hiện tại.",
+     });
+     continue;
+    }
+
+    addModulePatch(
+     modules,
+     patch.target,
+     original,
+     patch,
+     patch.targetRelativePath ?? [],
+     getCanonicalAfterForTarget(
+      patch.target,
+      original,
+      patch,
+      patch.targetRelativePath ?? [],
+     ),
+    );
+    continue;
+   }
+
    if (patch.path[0] === "lesson" && patch.path.length === 1) {
     const dbSource = lesson.dbSource;
     const next = getLessonTitlePatch(dbSource?.lessonMeta, patch.after);
@@ -267,13 +341,16 @@ export function buildHanziHomeDbEditDraftsFromPatches(
 
  return {
   drafts: Array.from(modules.values()).map((moduleDraft) => ({
-   id: crypto.randomUUID(),
-   target: moduleDraft.target,
-   original: moduleDraft.original,
-   next: moduleDraft.next,
-   status: "valid",
-   validationErrors: [],
-   updatedAt: new Date().toISOString(),
+   draft: {
+    id: crypto.randomUUID(),
+    target: moduleDraft.target,
+    original: moduleDraft.original,
+    next: moduleDraft.next,
+    status: "valid",
+    validationErrors: [],
+    updatedAt: new Date().toISOString(),
+   },
+   patchIds: moduleDraft.patchIds,
   })),
   unsupported,
  };

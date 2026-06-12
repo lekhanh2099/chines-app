@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 const reviewResultSchema = z.enum(["again", "hard", "known"]);
@@ -30,8 +30,8 @@ export const userLearningStateSchema = z.object({
   .default({}),
  progress: z
   .object({
-   vocab: z.record(progressItemSchema).optional(),
-   grammar: z.record(progressItemSchema).optional(),
+   vocab: z.record(z.string(), progressItemSchema).optional(),
+   grammar: z.record(z.string(), progressItemSchema).optional(),
   })
   .default({}),
  bookmarks: z

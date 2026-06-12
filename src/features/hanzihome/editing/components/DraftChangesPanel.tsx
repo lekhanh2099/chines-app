@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { AlertTriangle, Download, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -14,17 +14,27 @@ import {
  DialogTitle,
  DialogTrigger,
 } from "@/components/ui/dialog";
-import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { buildHanziHomeDbEditDraftsFromPatches } from "@/features/hanzihome/editor/editDraftBuilder";
+import { saveHanziHomeDbEditDraftClient } from "@/features/hanzihome/editor/editSaveClient";
+import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 
-import { buildHanziHomeDbEditDraftsFromPatches } from "../store/draftToDbEditDraft";
 import { useHanziHomeDraftStore } from "../store/useHanziHomeDraftStore";
 import { PatchPreview } from "./PatchPreview";
+import { UnsupportedPatchNotice } from "./UnsupportedPatchNotice";
 
 const EMPTY_SKIPPED_PATCH_IDS: string[] = [];
 
-export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
+type SaveSummary = {
+ savedCount: number;
+ skippedCount: number;
+ targetPaths: string[];
+};
+
+export function DraftChangesPanel() {
+ const { originalLesson: lesson } = useHanziHomeRuntime();
  const lessonId = lesson.id;
  const [isSaving, setIsSaving] = useState(false);
+ const [saveSummary, setSaveSummary] = useState<SaveSummary | null>(null);
  const patches = useHanziHomeDraftStore((state) => state.patches).filter(
   (patch) => patch.lessonId === lessonId,
  );
@@ -36,7 +46,18 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
  const clearLessonDrafts = useHanziHomeDraftStore(
   (state) => state.clearLessonDrafts,
  );
- const skippedPatchIdSet = new Set(skippedPatchIds);
+ const skippedPatchIdSet = useMemo(
+  () => new Set(skippedPatchIds),
+  [skippedPatchIds],
+ );
+ const activePatches = useMemo(
+  () => patches.filter((patch) => !skippedPatchIdSet.has(patch.id)),
+  [patches, skippedPatchIdSet],
+ );
+ const buildResult = useMemo(
+  () => buildHanziHomeDbEditDraftsFromPatches(lesson, activePatches),
+  [activePatches, lesson],
+ );
 
  const exportPatches = () => {
   const blob = new Blob([JSON.stringify(patches, null, 2)], {
@@ -51,45 +72,55 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
  };
 
  const saveToDbModules = async () => {
-  const { drafts, unsupported } = buildHanziHomeDbEditDraftsFromPatches(
-   lesson,
-   patches,
-  );
+  const { drafts, unsupported } = buildResult;
 
-  if (unsupported.length > 0) {
+  if (drafts.length === 0) {
    toast.error(
-    `Còn ${unsupported.length} draft chưa map được sang module DB. Mở Drafts để xem chi tiết.`,
+    unsupported.length > 0 || skippedPatchIds.length > 0
+     ? "Không có draft module hợp lệ để lưu. Mở Drafts để xem patch bị skip/unsupported."
+     : "Không có draft module hợp lệ để lưu.",
    );
    return;
   }
 
-  if (drafts.length === 0) {
-   toast.error("Không có draft module hợp lệ để lưu.");
-   return;
-  }
-
   setIsSaving(true);
+  setSaveSummary(null);
   try {
-   for (const draft of drafts) {
-    const response = await fetch("/api/hanzihome-db/edit", {
-     method: "POST",
-     headers: { "Content-Type": "application/json" },
-     body: JSON.stringify({ draft }),
-    });
-    const result = (await response.json().catch(() => null)) as
-     | { ok?: boolean; errors?: Array<{ message?: string }> }
-     | null;
+   const savedPatchIds = new Set<string>();
+   const targetPaths: string[] = [];
 
-    if (!response.ok || !result?.ok) {
+   for (const entry of drafts) {
+    const result = await saveHanziHomeDbEditDraftClient(entry.draft);
+
+    if (!result.ok) {
      throw new Error(
       result?.errors?.[0]?.message || "Không lưu được module HanziHome DB.",
      );
     }
+
+    for (const patchId of entry.patchIds) savedPatchIds.add(patchId);
+    if (result.targetPath) targetPaths.push(result.targetPath);
    }
 
-   clearLessonDrafts(lessonId);
-   toast.success("Đã lưu draft vào data/hanzihome-db và rebuild/audit xong.");
-   window.location.reload();
+   for (const patchId of savedPatchIds) removePatch(patchId);
+
+   const skippedCount = skippedPatchIds.length + unsupported.length;
+   setSaveSummary({
+    savedCount: savedPatchIds.size,
+    skippedCount,
+    targetPaths: [...new Set(targetPaths)],
+   });
+
+   toast.success(
+    skippedCount > 0
+     ? `Đã lưu ${savedPatchIds.size} patch hợp lệ. Còn ${skippedCount} patch bị bỏ qua.`
+     : "Đã lưu draft vào data/hanzihome-db và rebuild/audit xong.",
+   );
+
+   if (savedPatchIds.size === patches.length) {
+    clearLessonDrafts(lessonId);
+    window.location.reload();
+   }
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không lưu được draft.");
   } finally {
@@ -121,7 +152,7 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
       type="button"
       variant="outline"
       size="sm"
-      disabled={patches.length === 0 || skippedPatchIds.length > 0}
+      disabled={patches.length === 0}
       onClick={exportPatches}
      >
       <Download className="h-4 w-4" />
@@ -131,7 +162,7 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
       type="button"
       variant="default"
       size="sm"
-      disabled={patches.length === 0 || skippedPatchIds.length > 0 || isSaving}
+      disabled={patches.length === 0 || isSaving}
       onClick={saveToDbModules}
      >
       <Save className="h-4 w-4" />
@@ -146,8 +177,21 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
      >
       <Trash2 className="h-4 w-4" />
       Xóa draft bài này
-     </Button>
-    </div>
+    </Button>
+   </div>
+    {saveSummary ? (
+     <div className="grid gap-1 rounded-xl border border-success/35 bg-success-subtle p-3 text-xs font-semibold text-success-text">
+      <p className="font-black">
+       Đã lưu {saveSummary.savedCount} patch. Bỏ qua{" "}
+       {saveSummary.skippedCount} patch.
+      </p>
+      {saveSummary.targetPaths.length > 0 ? (
+       <p className="text-text-secondary">
+        Files: {saveSummary.targetPaths.join(", ")}
+       </p>
+      ) : null}
+     </div>
+    ) : null}
     {skippedPatchIds.length > 0 ? (
      <div className="flex items-start gap-2 rounded-xl border border-warning/35 bg-warning-subtle p-3 text-sm font-semibold text-warning-text">
       <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
@@ -165,7 +209,7 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
     ) : null}
     <DialogBody className="max-h-[calc(90vh-12rem)] overflow-y-auto pr-1">
      {patches.length > 0 ? (
-      <UnsupportedPatchNotice lesson={lesson} patches={patches} />
+      <UnsupportedPatchNotice unsupported={buildResult.unsupported} />
      ) : null}
      {patches.length > 0 ? (
       patches.map((patch) => (
@@ -208,30 +252,5 @@ export function DraftChangesPanel({ lesson }: { lesson: HanziHomeLesson }) {
     </DialogBody>
    </DialogContent>
   </Dialog>
- );
-}
-
-function UnsupportedPatchNotice({
- lesson,
- patches,
-}: {
- lesson: HanziHomeLesson;
- patches: Parameters<typeof buildHanziHomeDbEditDraftsFromPatches>[1];
-}) {
- const { unsupported } = buildHanziHomeDbEditDraftsFromPatches(lesson, patches);
-
- if (unsupported.length === 0) return null;
-
- return (
-  <div className="grid gap-1 rounded-xl border border-warning/35 bg-warning-subtle p-3 text-xs font-semibold text-warning-text">
-   <p className="font-black">
-    {unsupported.length} draft chưa lưu DB tự động được.
-   </p>
-   {unsupported.slice(0, 5).map((item) => (
-    <p key={item.patchId}>
-     {item.entityType}: {item.reason}
-    </p>
-   ))}
-  </div>
  );
 }

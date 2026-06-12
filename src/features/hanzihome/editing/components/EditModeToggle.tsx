@@ -3,12 +3,12 @@
 import { Pencil, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-
-import { useHanziHomeDraftStore } from "../store/useHanziHomeDraftStore";
+import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
+import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 
 export function EditModeToggle() {
- const editMode = useHanziHomeDraftStore((state) => state.editMode);
- const setEditMode = useHanziHomeDraftStore((state) => state.setEditMode);
+ const editMode = useHanziHomeEditMode();
+ const { setEditMode } = useHanziHomeFeatureActions();
 
  return (
   <Button

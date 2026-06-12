@@ -1182,7 +1182,13 @@ export const LessonSchema = z.object({
  tags: z.array(z.string()).optional().default([]),
  metadata: LessonMetadataSchema.optional(),
  sections: z.array(SectionSchema),
- summary: LessonSummarySchema.optional().default({ lesson_parts: [] }),
+ summary: LessonSummarySchema.optional().default({
+  lesson_parts: [],
+  grammar_points: [],
+  main_patterns: [],
+  exercise_types: [],
+  check_needed: false,
+ }),
 }).passthrough();
 
 export const HanyuLessonSchema = z.object({

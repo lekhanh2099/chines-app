@@ -1064,8 +1064,8 @@ const grammarExerciseSchema = z.object({
   .enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"])
   .optional(),
  prompt: z.string().optional(),
- content: z.record(z.unknown()).optional(),
- answer: z.record(z.unknown()).optional(),
+ content: z.record(z.string(), z.unknown()).optional(),
+ answer: z.record(z.string(), z.unknown()).optional(),
  explanation: z.string().optional(),
 });
 
@@ -1092,8 +1092,8 @@ const grammarFillSchema = z.object({
 const grammarGeneratedExerciseSchema = z.object({
  exercise_type: z.enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]),
  prompt: z.string(),
- content: z.record(z.unknown()).optional(),
- answer: z.record(z.unknown()),
+ content: z.record(z.string(), z.unknown()).optional(),
+ answer: z.record(z.string(), z.unknown()),
  explanation: z.string().optional(),
 });
 

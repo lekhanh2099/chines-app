@@ -1,0 +1,28 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
+import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+
+export function LessonViewModeToggle() {
+ const mode = useHanziHomeFeatureSelector((state) => state.viewMode);
+ const { setViewMode } = useHanziHomeFeatureActions();
+
+ return (
+  <div className="flex shrink-0 rounded-lg bg-bg-subtle p-1">
+   {(["study", "debug"] as const).map((value) => (
+    <Button
+     key={value}
+     type="button"
+     variant={mode === value ? "default" : "ghost"}
+     size="sm"
+     className="h-8 px-2 text-xs"
+     onClick={() => setViewMode(value)}
+    >
+     {value === "study" ? "Study" : "Debug"}
+    </Button>
+   ))}
+  </div>
+ );
+}
+

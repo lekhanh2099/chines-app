@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import type { HanziHomeDbEditTarget } from "@/features/hanzihome/editor/hanzihome-db-edit.types";
+
 export const editableEntityTypes = [
  "lesson",
  "section",
@@ -40,6 +42,8 @@ export type DraftPatch = {
  parentEntityType?: EditableEntityType;
  parentEntityId?: string;
  path: DraftPatchPath;
+ target?: HanziHomeDbEditTarget;
+ targetRelativePath?: DraftPatchPath;
  op: DraftPatchOperation;
  before: unknown;
  after: unknown;
@@ -53,6 +57,8 @@ export type EditableNodeRequest = {
  parentEntityType?: EditableEntityType;
  parentEntityId?: string;
  path: DraftPatchPath;
+ target?: HanziHomeDbEditTarget;
+ targetRelativePath?: DraftPatchPath;
  value: unknown;
  label?: string;
  description?: ReactNode;

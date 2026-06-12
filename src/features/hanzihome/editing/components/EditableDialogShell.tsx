@@ -13,6 +13,9 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
+import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
+import { useHanziHomeActiveEditableNode } from "@/features/hanzihome/context/selectors";
+import { createHanziHomeUpdatePatch } from "@/features/hanzihome/editor/editPatchFactory";
 
 import { editRegistry } from "../editRegistry";
 import { useHanziHomeDraftStore } from "../store/useHanziHomeDraftStore";
@@ -22,8 +25,8 @@ import { PatchPreview } from "./PatchPreview";
 const formId = "hanzihome-node-edit-form";
 
 export function EditableDialogShell() {
- const activeNode = useHanziHomeDraftStore((state) => state.activeNode);
- const closeNode = useHanziHomeDraftStore((state) => state.closeNode);
+ const activeNode = useHanziHomeActiveEditableNode();
+ const { closeEditableNode } = useHanziHomeFeatureActions();
  const addPatch = useHanziHomeDraftStore((state) => state.addPatch);
  const [previewPatch, setPreviewPatch] = useState<DraftPatch | null>(null);
  const [draftAfter, setDraftAfter] = useState<unknown>(null);
@@ -34,18 +37,7 @@ export function EditableDialogShell() {
  const draftBase = useMemo(
   () =>
    activeNode
-    ? {
-       id: crypto.randomUUID(),
-       lessonId: activeNode.lessonId,
-       entityType: activeNode.entityType,
-       entityId: activeNode.entityId,
-       parentEntityType: activeNode.parentEntityType,
-       parentEntityId: activeNode.parentEntityId,
-       path: activeNode.path,
-       op: "update" as const,
-       before: activeNode.value,
-       createdAt: new Date().toISOString(),
-      }
+    ? createHanziHomeUpdatePatch({ node: activeNode, after: activeNode.value })
     : null,
   [activeNode],
  );
@@ -54,7 +46,7 @@ export function EditableDialogShell() {
   if (!draftBase) return;
   addPatch({ ...draftBase, after });
   setPreviewPatch(null);
-  closeNode();
+  closeEditableNode();
  };
 
  return (
@@ -63,7 +55,7 @@ export function EditableDialogShell() {
    onOpenChange={(open) => {
     if (!open) {
      setPreviewPatch(null);
-     closeNode();
+     closeEditableNode();
     }
    }}
   >
@@ -82,10 +74,10 @@ export function EditableDialogShell() {
        onDraftChange={setDraftAfter}
        onValidityChange={setIsValid}
       />
-      {previewPatch ? <PatchPreview patch={previewPatch} /> : null}
+     {previewPatch ? <PatchPreview patch={previewPatch} /> : null}
      </DialogBody>
      <DialogFooter>
-      <Button type="button" variant="ghost" onClick={closeNode}>
+      <Button type="button" variant="ghost" onClick={closeEditableNode}>
        Hủy
       </Button>
       <Button

@@ -1,13 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPanel";
 import { VocabList } from "@/features/hanzihome/components/VocabList";
-import type {
- HanziHomeLesson,
- LearningStatus,
- UserLearningState,
-} from "@/features/hanzihome/types";
+import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
+import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
+import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import {
  getVocabItemKey,
  getVocabSearchText,
@@ -18,28 +16,24 @@ import {
 } from "@/features/hanzihome/editing";
 
 type VocabWorkspaceProps = {
- lesson: HanziHomeLesson;
- state: UserLearningState;
  compact?: boolean;
- onBookmark: (id: string) => void;
- onMarkStatus: (id: string, status: LearningStatus) => void;
- onOpenReview?: () => void;
 };
 
 export function VocabWorkspace({
- lesson,
- state,
  compact = false,
- onBookmark,
- onMarkStatus,
 }: VocabWorkspaceProps) {
+ const runtime = useHanziHomeRuntime();
+ const { lesson, learningState: state } = runtime;
+ const actions = useHanziHomeFeatureActions();
  const words = lesson.vocab;
- const [selectedWordId, setSelectedWordId] = useState<string | null>(
-  words[0] ? getVocabItemKey(words[0]) : null,
+ const selectedWordId = useHanziHomeFeatureSelector(
+  (featureState) => featureState.vocabSelectedWordId,
  );
- const [searchValue, setSearchValue] = useState("");
- const [statusFilter, setStatusFilter] = useState<"all" | LearningStatus>(
- "all",
+ const searchValue = useHanziHomeFeatureSelector(
+  (featureState) => featureState.vocabSearchValue,
+ );
+ const statusFilter = useHanziHomeFeatureSelector(
+  (featureState) => featureState.vocabStatusFilter,
  );
 
  const bookmarks = state.bookmarks.vocab || [];
@@ -93,9 +87,9 @@ export function VocabWorkspace({
      : 0;
 
    const nextWord = visibleWords[nextIndex];
-   setSelectedWordId(nextWord ? getVocabItemKey(nextWord) : null);
+   actions.selectVocabWord(nextWord ? getVocabItemKey(nextWord) : null);
   },
-  [selectedWord, visibleWords],
+  [actions, selectedWord, visibleWords],
  );
 
  useEffect(() => {
@@ -137,9 +131,9 @@ export function VocabWorkspace({
     searchValue={searchValue}
     statusFilter={statusFilter}
     compact={compact}
-    onSearchChange={setSearchValue}
-    onStatusFilterChange={setStatusFilter}
-    onSelectWord={setSelectedWordId}
+    onSearchChange={actions.setVocabSearchValue}
+    onStatusFilterChange={actions.setVocabStatusFilter}
+    onSelectWord={actions.selectVocabWord}
    />
 
    {selectedWord && selectedWordPath ? (
@@ -158,9 +152,9 @@ export function VocabWorkspace({
       bookmarked={bookmarks.includes(getVocabItemKey(selectedWord))}
       lessonId={lesson.id}
       compact={compact}
-      onBookmark={() => onBookmark(getVocabItemKey(selectedWord))}
+      onBookmark={() => runtime.bookmarkVocab(getVocabItemKey(selectedWord))}
       onMarkStatus={(status) =>
-       onMarkStatus(getVocabItemKey(selectedWord), status)
+       runtime.markVocab(getVocabItemKey(selectedWord), status)
       }
      />
     </EditableNodeWrapper>

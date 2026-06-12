@@ -2,16 +2,11 @@
 
 import { create } from "zustand";
 
-import type { DraftPatch, EditableNodeRequest } from "./types";
+import type { DraftPatch } from "./types";
 
 type HanziHomeDraftStore = {
- editMode: boolean;
  patches: DraftPatch[];
  skippedPatchIdsByLesson: Record<string, string[]>;
- activeNode: EditableNodeRequest | null;
- setEditMode: (enabled: boolean) => void;
- openNode: (node: EditableNodeRequest) => void;
- closeNode: () => void;
  addPatch: (patch: DraftPatch) => void;
  removePatch: (patchId: string) => void;
  clearLessonDrafts: (lessonId: string) => void;
@@ -21,14 +16,8 @@ type HanziHomeDraftStore = {
 };
 
 export const useHanziHomeDraftStore = create<HanziHomeDraftStore>((set, get) => ({
- editMode: false,
  patches: [],
  skippedPatchIdsByLesson: {},
- activeNode: null,
- setEditMode: (editMode) =>
-  set((state) => ({ editMode, activeNode: editMode ? state.activeNode : null })),
- openNode: (activeNode) => set({ activeNode }),
- closeNode: () => set({ activeNode: null }),
  addPatch: (patch) =>
   set((state) => ({
    patches: (() => {

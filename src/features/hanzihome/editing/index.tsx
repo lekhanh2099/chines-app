@@ -19,12 +19,12 @@ export type {
  EditableEntityType,
 } from "./store/types";
 
-export function HanziHomeEditingTools({ lesson }: { lesson: HanziHomeLesson }) {
+export function HanziHomeEditingTools() {
  return (
   <>
    <div className="flex flex-wrap items-center gap-1.5">
     <EditModeToggle />
-    <DraftChangesPanel lesson={lesson} />
+    <DraftChangesPanel />
    </div>
    <EditableDialogShell />
   </>

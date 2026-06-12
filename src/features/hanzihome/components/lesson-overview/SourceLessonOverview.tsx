@@ -10,7 +10,8 @@ import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
 
 import { BookSectionContent } from "./BookSectionContent";
-import { LessonModuleFrame, LessonModuleSidebarItem } from "./LessonModuleFrame";
+import { LessonModuleFrame } from "./LessonModuleFrame";
+import { LessonModuleSidebarItem } from "./LessonModuleSidebarItem";
 import { LessonTypographyControls } from "./LessonTypographyControls";
 import { BookOpen, sectionIcons } from "./section-icons";
 import {
