@@ -4,15 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
-import {
- Loader2,
- Trash2,
- Check,
- Cloud,
- CloudOff,
- PanelLeftClose,
- PanelLeft,
-} from "lucide-react";
+import { Loader2, Trash2, Check, Cloud, CloudOff, PanelLeftClose, PanelLeft } from "lucide-react";
 import { format } from "date-fns";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
@@ -183,11 +175,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
          <PanelLeft className="w-3.5 h-3.5" />
         )}
         <span className="hidden sm:inline">
-         {isSplitView
-          ? "Đóng Split"
-          : hasReadingContent
-            ? "Mở Bài đọc"
-            : "Split View"}
+         {isSplitView ? "Đóng Split" : hasReadingContent ? "Mở Bài đọc" : "Split View"}
         </span>
         {!isSplitView && hasReadingContent && (
          <span className="w-1.5 h-1.5 rounded-2xl -full bg-info animate-pulse" />

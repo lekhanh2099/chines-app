@@ -11,10 +11,7 @@ import { updateVocabDetailSectionPayloadSchema } from "@/features/hanzihome/sche
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function PATCH(
- request: Request,
- context: NodeEditRouteContext<"sectionId">,
-) {
+export async function PATCH(request: Request, context: NodeEditRouteContext<"sectionId">) {
  const { sectionId } = await context.params;
  const { supabase, user } = await getAuthenticatedSupabase();
 

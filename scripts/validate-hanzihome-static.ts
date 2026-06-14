@@ -1,8 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
-const schemaModulePath =
- "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
+const schemaModulePath = "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
 const lessonSchemaModulePath =
  "../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
 
@@ -16,12 +15,12 @@ type StaticDatasetExpectation = {
 
 const datasets: StaticDatasetExpectation[] = [
  {
- id: "q2",
- dir: "data/hanzihome/q2",
- filePrefix: "hanyu_2_",
- expectedLessonCount: 25,
- expectedLessonDocumentCount: 25,
-},
+  id: "q2",
+  dir: "data/hanzihome/q2",
+  filePrefix: "hanyu_2_",
+  expectedLessonCount: 25,
+  expectedLessonDocumentCount: 25,
+ },
  {
   id: "q3",
   dir: "data/hanzihome/q3",
@@ -39,8 +38,7 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
  const { DeepVocabularyLessonSchema } = await import(schemaModulePath);
  const { HanyuLessonSchema } = await import(lessonSchemaModulePath);
  const { getHanyuLessonIndex } = await import(
-  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url)
-   .href
+  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url).href
  );
  const vocabDir = path.join(process.cwd(), dataset.dir, "vocab");
  const lessonDir = path.join(process.cwd(), dataset.dir, "lessons");
@@ -74,10 +72,7 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
   ...vocabLessons.map((lesson) => lesson.source.lesson_index),
   ...lessonDocuments.map(getHanyuLessonIndex),
  ]);
- const totalVocab = vocabLessons.reduce(
-  (sum, lesson) => sum + lesson.items.length,
-  0,
- );
+ const totalVocab = vocabLessons.reduce((sum, lesson) => sum + lesson.items.length, 0);
 
  if (lessonIndexes.size !== dataset.expectedLessonCount) {
   throw new Error(

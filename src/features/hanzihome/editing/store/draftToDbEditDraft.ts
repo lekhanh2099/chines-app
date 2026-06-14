@@ -136,9 +136,7 @@ function getVocabTarget(lesson: HanziHomeLesson, vocabIndex: number) {
  const item = lesson.vocab[vocabIndex] as HanziHomeVocabItem | undefined;
  const runtimeId = item?.runtimeId;
  const itemFile = runtimeId ? dbSource?.vocabularyItemFilesByRuntimeId[runtimeId] : "";
- const original = runtimeId
-  ? dbSource?.vocabularyItemPayloadsByRuntimeId[runtimeId]
-  : undefined;
+ const original = runtimeId ? dbSource?.vocabularyItemPayloadsByRuntimeId[runtimeId] : undefined;
 
  if (!dbSource || !item || !runtimeId || !itemFile || original === undefined) {
   return null;
@@ -155,10 +153,7 @@ function getVocabTarget(lesson: HanziHomeLesson, vocabIndex: number) {
  };
 }
 
-function getOriginalForTarget(
- lesson: HanziHomeLesson,
- target: HanziHomeDbEditTarget,
-) {
+function getOriginalForTarget(lesson: HanziHomeLesson, target: HanziHomeDbEditTarget) {
  const dbSource = lesson.dbSource;
  if (!dbSource) return undefined;
 
@@ -170,18 +165,14 @@ function getOriginalForTarget(
     ([, sectionFile]) => sectionFile === target.sectionFile,
    );
    const sectionId = entry?.[0];
-   return lesson.sourceLesson?.lesson.sections.find(
-    (section) => section.id === sectionId,
-   );
+   return lesson.sourceLesson?.lesson.sections.find((section) => section.id === sectionId);
   }
   case "vocabulary_item": {
    const entry = Object.entries(dbSource.vocabularyItemFilesByRuntimeId).find(
     ([, itemFile]) => itemFile === target.itemFile,
    );
    const runtimeId = entry?.[0];
-   return runtimeId
-    ? dbSource.vocabularyItemPayloadsByRuntimeId[runtimeId]
-    : undefined;
+   return runtimeId ? dbSource.vocabularyItemPayloadsByRuntimeId[runtimeId] : undefined;
   }
   case "vocabulary_groups":
    return lesson.vocabCategories ?? [];
@@ -223,8 +214,7 @@ export function buildHanziHomeDbEditDraftsFromPatches(
      unsupported.push({
       patchId: patch.id,
       entityType: patch.entityType,
-      reason:
-       "Patch có DB target nhưng không tìm được module gốc trong lesson hiện tại.",
+      reason: "Patch có DB target nhưng không tìm được module gốc trong lesson hiện tại.",
      });
      continue;
     }
@@ -235,12 +225,7 @@ export function buildHanziHomeDbEditDraftsFromPatches(
      original,
      patch,
      patch.targetRelativePath ?? [],
-     getCanonicalAfterForTarget(
-      patch.target,
-      original,
-      patch,
-      patch.targetRelativePath ?? [],
-     ),
+     getCanonicalAfterForTarget(patch.target, original, patch, patch.targetRelativePath ?? []),
     );
     continue;
    }
@@ -327,8 +312,7 @@ export function buildHanziHomeDbEditDraftsFromPatches(
    unsupported.push({
     patchId: patch.id,
     entityType: patch.entityType,
-    reason:
-     "Patch này đang nằm trên view model hoặc node chưa có map an toàn sang module DB.",
+    reason: "Patch này đang nằm trên view model hoặc node chưa có map an toàn sang module DB.",
    });
   } catch (error) {
    unsupported.push({

@@ -1,9 +1,7 @@
 import type { EditAdapter, EditFieldDefinition } from "./types";
 
 function asEditableRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function fieldToString(value: unknown, kind: EditFieldDefinition["kind"]) {
@@ -21,16 +19,10 @@ function fieldToString(value: unknown, kind: EditFieldDefinition["kind"]) {
   return typeof value === "boolean" ? String(value) : "false";
  }
 
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
-function stringToFieldValue(
- value: string,
- kind: EditFieldDefinition["kind"],
- fallback: unknown,
-) {
+function stringToFieldValue(value: string, kind: EditFieldDefinition["kind"], fallback: unknown) {
  if (kind === "string-list") {
   return value
    .split("\n")
@@ -61,10 +53,7 @@ export function createEditAdapter(fields: EditFieldDefinition[]): EditAdapter {
    const record = asEditableRecord(value);
 
    return Object.fromEntries(
-    fields.map((field) => [
-     field.key,
-     fieldToString(record[field.key], field.kind),
-    ]),
+    fields.map((field) => [field.key, fieldToString(record[field.key], field.kind)]),
    );
   },
   toNode: (original, values) => {
@@ -72,11 +61,7 @@ export function createEditAdapter(fields: EditFieldDefinition[]): EditAdapter {
 
    for (const field of fields) {
     const value = values[field.key] ?? "";
-    output[field.key] = stringToFieldValue(
-     value,
-     field.kind,
-     output[field.key],
-    );
+    output[field.key] = stringToFieldValue(value, field.kind, output[field.key]);
    }
 
    return output;

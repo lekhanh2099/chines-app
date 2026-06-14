@@ -5,7 +5,12 @@ import {
 } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
-import { EmptySectionState, ExerciseQuestionCard, LooseItemGrid, hasRenderableValue } from "../CommonCards";
+import {
+ EmptySectionState,
+ ExerciseQuestionCard,
+ LooseItemGrid,
+ hasRenderableValue,
+} from "../CommonCards";
 import { PassageCard } from "../PassageCard";
 import type { LessonDisplayMode } from "../types";
 import {

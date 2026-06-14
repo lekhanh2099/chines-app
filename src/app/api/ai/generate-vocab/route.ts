@@ -32,17 +32,11 @@ export async function POST(request: NextRequest) {
  const { hanzi } = body as { hanzi?: string };
 
  if (!hanzi || typeof hanzi !== "string" || hanzi.length > 10) {
-  return NextResponse.json(
-   { error: "Invalid hanzi parameter" },
-   { status: 400 },
-  );
+  return NextResponse.json({ error: "Invalid hanzi parameter" }, { status: 400 });
  }
 
  const lookupText = normalizeDictionaryHeadword(hanzi);
- const cachedDictionary = await getDictionaryEntryByHeadword(
-  supabase,
-  lookupText,
- );
+ const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
  if (cachedDictionary) {
   const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);

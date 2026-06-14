@@ -268,10 +268,10 @@ export function Sidebar() {
       const active = isActive(pathname, searchParams, item.href);
       return (
        <Link
-       key={item.name}
-       href={item.href}
-       prefetch={false}
-       className={cn(
+        key={item.name}
+        href={item.href}
+        prefetch={false}
+        className={cn(
          "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
          active ? "bg-accent-subtle text-accent-text" : "text-text-muted hover:bg-bg-subtle",
         )}

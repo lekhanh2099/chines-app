@@ -38,23 +38,17 @@ export function Select({
  errorMessage,
  onChange,
 }: SimpleSelectProps) {
- const selectedValue =
-  selectValue?.value !== undefined ? stringifyValue(selectValue.value) : "";
+ const selectedValue = selectValue?.value !== undefined ? stringifyValue(selectValue.value) : "";
 
  const handleValueChange = (value: string) => {
-  const selectedOption =
-   options.find((option) => stringifyValue(option.value) === value) ?? null;
+  const selectedOption = options.find((option) => stringifyValue(option.value) === value) ?? null;
 
   onChange(selectedOption, selectedOption);
  };
 
  return (
   <div className="grid w-full gap-1">
-   <SelectRoot
-    value={selectedValue}
-    onValueChange={handleValueChange}
-    disabled={disabled}
-   >
+   <SelectRoot value={selectedValue} onValueChange={handleValueChange} disabled={disabled}>
     <SelectTrigger
      className={cn(
       "bg-bg-field-default border-stroke-default h-9 w-full rounded-xl border px-2 text-left",

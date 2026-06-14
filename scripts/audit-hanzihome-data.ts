@@ -68,8 +68,7 @@ const editableTypes = new Set<string>([
  "text_line",
  "text_paragraph",
 ]);
-const circledBlankPattern =
- /[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]\s*(?:[_＿]{2,}|…{2,}|\.\.\.+)/g;
+const circledBlankPattern = /[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]\s*(?:[_＿]{2,}|…{2,}|\.\.\.+)/g;
 
 const editableNodeTypeByRawType = new Map<string, string>([
  ["vocabulary_item", "vocab_item"],
@@ -96,9 +95,7 @@ function asRecord(value: unknown): Record<string, unknown> {
 
 function stringValue(record: Record<string, unknown>, key: string): string {
  const value = record[key];
- return typeof value === "string" || typeof value === "number"
-  ? String(value).trim()
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value).trim() : "";
 }
 
 function hasText(value: unknown): boolean {
@@ -123,9 +120,7 @@ async function loadAuditFiles(dataset: Dataset): Promise<AuditFile[]> {
  for (const root of roots) {
   const absoluteDir = path.join(process.cwd(), root.dir);
   const names = (await readdir(absoluteDir))
-   .filter(
-    (file) => file.endsWith(".json") && file.startsWith(dataset.filePrefix),
-   )
+   .filter((file) => file.endsWith(".json") && file.startsWith(dataset.filePrefix))
    .sort();
 
   for (const name of names) {
@@ -150,9 +145,7 @@ function collectIds(
  ids: Map<string, IdOccurrence[]>,
 ) {
  if (Array.isArray(value)) {
-  value.forEach((item, index) =>
-   collectIds(item, file, joinPath(currentPath, index), ids),
-  );
+  value.forEach((item, index) => collectIds(item, file, joinPath(currentPath, index), ids));
   return;
  }
 
@@ -171,11 +164,15 @@ function collectIds(
  }
 }
 
-function collectRefs(value: unknown, currentPath: string, refs: Array<{
- path: string;
- id: string;
- type: string;
-}>) {
+function collectRefs(
+ value: unknown,
+ currentPath: string,
+ refs: Array<{
+  path: string;
+  id: string;
+  type: string;
+ }>,
+) {
  if (Array.isArray(value)) {
   value.forEach((item, index) => collectRefs(item, joinPath(currentPath, index), refs));
   return;
@@ -186,13 +183,7 @@ function collectRefs(value: unknown, currentPath: string, refs: Array<{
 
  for (const [key, child] of Object.entries(record)) {
   if (
-   [
-    "vocab_refs",
-    "grammar_refs",
-    "source_refs",
-    "reading_refs",
-    "question_refs",
-   ].includes(key) &&
+   ["vocab_refs", "grammar_refs", "source_refs", "reading_refs", "question_refs"].includes(key) &&
    Array.isArray(child)
   ) {
    child.forEach((ref, index) => {
@@ -256,11 +247,8 @@ function checkEditableNodeId(
 ) {
  const rawType = stringValue(record, "type");
  const mappedType = editableNodeTypeByRawType.get(rawType);
- const isExerciseItem = /^\$\.lesson\.sections\.\d+\.items\.\d+$/.test(
-  currentPath,
- );
- const isQuestionLike =
-  /\.(questions|correct_examples|wrong_examples)\.\d+$/.test(currentPath);
+ const isExerciseItem = /^\$\.lesson\.sections\.\d+\.items\.\d+$/.test(currentPath);
+ const isQuestionLike = /\.(questions|correct_examples|wrong_examples)\.\d+$/.test(currentPath);
  const isDialogueLine =
   /\.(dialogue|lines)\.\d+$/.test(currentPath) &&
   (hasText(record.zh) || hasText(record.text) || hasText(record.speaker));
@@ -308,9 +296,7 @@ function answerCount(value: unknown): number {
     return Boolean(String(item).trim());
    }
    const record = asRecord(item);
-   return ["answer", "value", "zh", "text", "correct"].some((key) =>
-    hasText(record[key]),
-   );
+   return ["answer", "value", "zh", "text", "correct"].some((key) => hasText(record[key]));
   }).length;
  }
 
@@ -356,16 +342,9 @@ function checkClozeMismatch(
  }
 }
 
-function walkForIssues(
- value: unknown,
- file: string,
- currentPath: string,
- issues: AuditIssue[],
-) {
+function walkForIssues(value: unknown, file: string, currentPath: string, issues: AuditIssue[]) {
  if (Array.isArray(value)) {
-  value.forEach((item, index) =>
-   walkForIssues(item, file, joinPath(currentPath, index), issues),
-  );
+  value.forEach((item, index) => walkForIssues(item, file, joinPath(currentPath, index), issues));
   return;
  }
 
@@ -395,11 +374,7 @@ function duplicateIdIssues(ids: Map<string, IdOccurrence[]>): AuditIssue[] {
  });
 }
 
-function orphanRefIssues(
- file: string,
- payload: unknown,
- idSet: Set<string>,
-): AuditIssue[] {
+function orphanRefIssues(file: string, payload: unknown, idSet: Set<string>): AuditIssue[] {
  const refs: Array<{ path: string; id: string; type: string }> = [];
  collectRefs(payload, "$", refs);
 
@@ -432,9 +407,7 @@ function groupIssues(issues: AuditIssue[]) {
 }
 
 async function main() {
- const files = (
-  await Promise.all(datasets.map((dataset) => loadAuditFiles(dataset)))
- ).flat();
+ const files = (await Promise.all(datasets.map((dataset) => loadAuditFiles(dataset)))).flat();
  const ids = new Map<string, IdOccurrence[]>();
  const issues: AuditIssue[] = [];
 

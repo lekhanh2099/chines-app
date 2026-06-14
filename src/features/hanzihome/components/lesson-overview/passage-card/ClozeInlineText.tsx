@@ -1,11 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { ClozeAnswer } from "./types";
-import {
- BLANK_MARKER_SOURCE,
- blankLabelToNumber,
- getBlankMarkerFromMatch,
-} from "./passage-utils";
+import { BLANK_MARKER_SOURCE, blankLabelToNumber, getBlankMarkerFromMatch } from "./passage-utils";
 
 export function ClozeInlineText({
  text,

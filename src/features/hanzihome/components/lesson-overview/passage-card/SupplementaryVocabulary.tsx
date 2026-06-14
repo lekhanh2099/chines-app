@@ -15,9 +15,9 @@ export function SupplementaryVocabulary({
   const record = asRecord(value);
   return Boolean(
    stringValue(record, "hanzi") ||
-    stringValue(record, "text") ||
-    stringValue(record, "zh") ||
-    stringValue(record, "meaning_vi"),
+   stringValue(record, "text") ||
+   stringValue(record, "zh") ||
+   stringValue(record, "meaning_vi"),
   );
  });
 

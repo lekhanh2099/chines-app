@@ -31,7 +31,10 @@ export function formatSelectedLessonsLabel(
  return `${lessons.length} bài đang ôn`;
 }
 
-export function combineReviewLessons(lessons: HanziHomeLesson[], kind: AggregateKind): HanziHomeLesson {
+export function combineReviewLessons(
+ lessons: HanziHomeLesson[],
+ kind: AggregateKind,
+): HanziHomeLesson {
  const firstLesson = lessons[0];
 
  return {

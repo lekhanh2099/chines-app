@@ -17,11 +17,7 @@ import {
  type NodeKey,
 } from "lexical";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import {
- $createHeadingNode,
- $createQuoteNode,
- type HeadingTagType,
-} from "@lexical/rich-text";
+import { $createHeadingNode, $createQuoteNode, type HeadingTagType } from "@lexical/rich-text";
 import { $createCodeNode } from "@lexical/code";
 import {
  INSERT_ORDERED_LIST_COMMAND,
@@ -59,10 +55,7 @@ const BLOCK_INSERT_OPTIONS = [
  { key: "table", label: "Table", icon: Table },
 ] as const;
 
-function getBlockElemFromTarget(
- target: HTMLElement,
- editor: LexicalEditor,
-): HTMLElement | null {
+function getBlockElemFromTarget(target: HTMLElement, editor: LexicalEditor): HTMLElement | null {
  const root = editor.getRootElement();
  if (!root) return null;
  let elem: HTMLElement | null = target;
@@ -141,10 +134,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  useEffect(() => {
   if (!showBlockMenu) return;
   const close = (e: MouseEvent) => {
-   if (
-    blockMenuRef.current &&
-    !blockMenuRef.current.contains(e.target as Node)
-   ) {
+   if (blockMenuRef.current && !blockMenuRef.current.contains(e.target as Node)) {
     setShowBlockMenu(false);
     setFilterText("");
    }
@@ -381,9 +371,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  if (!editor.getRootElement()) return null;
 
  const filteredOptions = filterText
-  ? BLOCK_INSERT_OPTIONS.filter((o) =>
-     o.label.toLowerCase().includes(filterText.toLowerCase()),
-    )
+  ? BLOCK_INSERT_OPTIONS.filter((o) => o.label.toLowerCase().includes(filterText.toLowerCase()))
   : BLOCK_INSERT_OPTIONS;
 
  return (
@@ -453,11 +441,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
    )}
 
    {/* ── Drop Indicator Line ── */}
-   <div
-    ref={dropLineRef}
-    className="draggable-block-dropline"
-    style={{ display: "none" }}
-   />
+   <div ref={dropLineRef} className="draggable-block-dropline" style={{ display: "none" }} />
   </>
  );
 }

@@ -342,9 +342,7 @@ const clozePayloadKeys = [
 const answerSourceKeys = ["blanks", "answers", "answer_key", "cloze_answers"];
 
 function asRecord(value: unknown): JsonRecord {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as JsonRecord)
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? (value as JsonRecord) : {};
 }
 
 function stringValue(record: JsonRecord, key: string): string {
@@ -359,8 +357,7 @@ function arrayValue(record: JsonRecord, key: string): unknown[] {
 
 function answerToString(value: unknown): string {
  if (typeof value === "string") return value.trim();
- if (typeof value === "number" || typeof value === "boolean")
-  return String(value);
+ if (typeof value === "number" || typeof value === "boolean") return String(value);
  if (Array.isArray(value)) {
   return value.map(answerToString).filter(Boolean).join(" / ");
  }
@@ -413,9 +410,7 @@ async function getLessonFiles(root: string) {
 
   if (!targetStat.isDirectory()) return;
 
-  const entries = await readdir(targetPath, { withFileTypes: true }).catch(
-   () => [],
-  );
+  const entries = await readdir(targetPath, { withFileTypes: true }).catch(() => []);
 
   for (const entry of entries) {
    if (entry.name === "node_modules" || entry.name === ".next") continue;
@@ -440,25 +435,14 @@ function addIssue(issues: AuditIssue[], issue: AuditIssue) {
 
 function getKnownKeysForSection(sectionType: string) {
  if (sectionType === "text") return new Set([...sectionKnownKeys, "blocks"]);
- if (sectionType === "vocabulary")
-  return new Set([...sectionKnownKeys, "items"]);
+ if (sectionType === "vocabulary") return new Set([...sectionKnownKeys, "items"]);
  if (sectionType === "notes") return new Set([...sectionKnownKeys, "items"]);
- if (sectionType === "grammar")
-  return new Set([...sectionKnownKeys, "items", "blocks"]);
- if (sectionType === "exercises")
-  return new Set([...sectionKnownKeys, "items", "blocks"]);
+ if (sectionType === "grammar") return new Set([...sectionKnownKeys, "items", "blocks"]);
+ if (sectionType === "exercises") return new Set([...sectionKnownKeys, "items", "blocks"]);
  if (sectionType === "reading" || sectionType === "reading_comprehension") {
-  return new Set([
-   ...sectionKnownKeys,
-   "items",
-   "blocks",
-   ...readingItemKnownKeys,
-  ]);
+  return new Set([...sectionKnownKeys, "items", "blocks", ...readingItemKnownKeys]);
  }
- if (
-  sectionType === "character_writing" ||
-  sectionType === "writing_characters"
- ) {
+ if (sectionType === "character_writing" || sectionType === "writing_characters") {
   return new Set([...sectionKnownKeys, "items"]);
  }
  if (sectionType === "summary") return new Set([...sectionKnownKeys]);
@@ -565,10 +549,7 @@ function answerTextFromRecord(record: JsonRecord) {
   stringValue(record, "text") ||
   stringValue(record, "zh") ||
   stringValue(record, "sample_answer") ||
-  arrayValue(record, "acceptable_answers")
-   .map(answerToString)
-   .filter(Boolean)
-   .join(" / ")
+  arrayValue(record, "acceptable_answers").map(answerToString).filter(Boolean).join(" / ")
  );
 }
 
@@ -576,11 +557,7 @@ function normalizeAnswerSource(values: unknown[]) {
  const map = new Map<string, string>();
 
  values.forEach((value, index) => {
-  if (
-   typeof value === "string" ||
-   typeof value === "number" ||
-   typeof value === "boolean"
-  ) {
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
    const answer = answerToString(value);
    if (answer) map.set(`${index + 1}`, answer);
    return;
@@ -664,9 +641,7 @@ function hasBlankLikeText(record: JsonRecord) {
   ...arrayValue(record, "paragraphs").map((paragraph) => {
    if (typeof paragraph === "string") return paragraph;
    const paragraphRecord = asRecord(paragraph);
-   return (
-    stringValue(paragraphRecord, "zh") || stringValue(paragraphRecord, "text")
-   );
+   return stringValue(paragraphRecord, "zh") || stringValue(paragraphRecord, "text");
   }),
  ].filter(Boolean);
 
@@ -705,8 +680,7 @@ function auditClozeShape({
    code: "ANSWERS_WITHOUT_CLOZE_PAYLOAD",
    file,
    location,
-   message:
-    "Có dấu hiệu cloze nhưng không thấy passage/text/paragraphs/segments.",
+   message: "Có dấu hiệu cloze nhưng không thấy passage/text/paragraphs/segments.",
   });
  }
 
@@ -716,8 +690,7 @@ function auditClozeShape({
    code: "CLOZE_WITHOUT_ANSWERS",
    file,
    location,
-   message:
-    "Có dấu hiệu cloze nhưng không thấy blanks/answers/answer_key/cloze_answers.",
+   message: "Có dấu hiệu cloze nhưng không thấy blanks/answers/answer_key/cloze_answers.",
   });
  }
 
@@ -803,10 +776,7 @@ function auditSection({
   });
  }
 
- const items = [
-  ...arrayValue(record, "items"),
-  ...arrayValue(record, "blocks"),
- ];
+ const items = [...arrayValue(record, "items"), ...arrayValue(record, "blocks")];
 
  if (items.length === 0 && !hasRenderableValue(record)) {
   addIssue(issues, {
@@ -866,8 +836,7 @@ function auditLesson(file: string, input: unknown, issues: AuditIssue[]) {
  sections.forEach((section, sectionIndex) => {
   const sectionRecord = asRecord(section);
   itemCount +=
-   arrayValue(sectionRecord, "items").length +
-   arrayValue(sectionRecord, "blocks").length;
+   arrayValue(sectionRecord, "items").length + arrayValue(sectionRecord, "blocks").length;
 
   auditSection({
    issues,
@@ -889,25 +858,15 @@ function countIssues(issues: AuditIssue[], severity: Severity) {
 
 function printIssue(issue: AuditIssue) {
  const prefix =
-  issue.severity === "error"
-   ? "ERROR"
-   : issue.severity === "warning"
-     ? "WARN "
-     : "INFO ";
+  issue.severity === "error" ? "ERROR" : issue.severity === "warning" ? "WARN " : "INFO ";
 
- console.log(
-  `${prefix} ${issue.code} | ${issue.file} | ${issue.location} | ${issue.message}`,
- );
+ console.log(`${prefix} ${issue.code} | ${issue.file} | ${issue.location} | ${issue.message}`);
 }
 
 function parseArgs() {
  const args = process.argv.slice(2);
- const datasetArg = args
-  .find((arg) => arg.startsWith("--dataset="))
-  ?.replace("--dataset=", "");
- const limitArg = args
-  .find((arg) => arg.startsWith("--limit="))
-  ?.replace("--limit=", "");
+ const datasetArg = args.find((arg) => arg.startsWith("--dataset="))?.replace("--dataset=", "");
+ const limitArg = args.find((arg) => arg.startsWith("--limit="))?.replace("--limit=", "");
  const onlyProblems = args.includes("--problems-only");
 
  return {
@@ -987,9 +946,7 @@ async function main() {
 
  if (visibleIssues.length > args.limit) {
   console.log("");
-  console.log(
-   `Đang chỉ hiện ${args.limit}/${visibleIssues.length} issue. Tăng bằng --limit=1000.`,
-  );
+  console.log(`Đang chỉ hiện ${args.limit}/${visibleIssues.length} issue. Tăng bằng --limit=1000.`);
  }
 }
 

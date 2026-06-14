@@ -57,10 +57,7 @@ export async function PUT(request: NextRequest) {
  });
 
  if (!saved) {
-  return NextResponse.json(
-   { error: "Failed to save AI prompt settings" },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: "Failed to save AI prompt settings" }, { status: 500 });
  }
 
  return NextResponse.json(saved);

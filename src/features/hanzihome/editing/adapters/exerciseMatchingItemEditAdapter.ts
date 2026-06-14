@@ -1,16 +1,12 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function stringValue(record: { [key: string]: unknown }, key: string) {
  const value = record[key];
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
 export const exerciseMatchingItemEditAdapter: EditAdapter = {
@@ -43,9 +39,7 @@ export const exerciseMatchingItemEditAdapter: EditAdapter = {
     stringValue(item, "answer"),
    pinyin: stringValue(item, "pinyin"),
    vi:
-    stringValue(item, "vi") ||
-    stringValue(item, "translation_vi") ||
-    stringValue(item, "meaning"),
+    stringValue(item, "vi") || stringValue(item, "translation_vi") || stringValue(item, "meaning"),
    meaning_vi: stringValue(item, "meaning_vi"),
    label: stringValue(item, "label"),
   };

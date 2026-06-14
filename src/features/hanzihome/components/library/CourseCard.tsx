@@ -14,7 +14,13 @@ import { IOption } from "@/types/option";
 import type { CourseStats } from "./types";
 import { MiniMetric } from "./MiniMetric";
 
-export function CourseCard({ course, stats }: { course: HanziHomeCatalogCourse; stats: CourseStats }) {
+export function CourseCard({
+ course,
+ stats,
+}: {
+ course: HanziHomeCatalogCourse;
+ stats: CourseStats;
+}) {
  const primaryBook = stats.books[0];
  const { lessons: courseLessons } = useHanziHomeCourseLessons(course.id);
  const [selectedLessonId, setSelectedLessonId] = useState(stats.fallbackLessonId ?? "");

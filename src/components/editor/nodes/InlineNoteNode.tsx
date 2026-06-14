@@ -159,9 +159,7 @@ function InlineNoteComponent({
        minWidth: 120,
        maxWidth: 280,
        transform:
-        tooltipPosition.placement === "top"
-         ? "translate(-50%, -100%)"
-         : "translate(-50%, 0)",
+        tooltipPosition.placement === "top" ? "translate(-50%, -100%)" : "translate(-50%, 0)",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -186,9 +184,7 @@ function InlineNoteComponent({
 }
 
 /* ── DOM → Lexical conversion ── */
-function convertInlineNoteElement(
- domNode: HTMLElement,
-): DOMConversionOutput | null {
+function convertInlineNoteElement(domNode: HTMLElement): DOMConversionOutput | null {
  const text = domNode.textContent || "";
  const noteText = domNode.dataset.noteText || "";
  if (!text) return null;
@@ -236,8 +232,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   const el = document.createElement("span");
   el.dataset.inlineNote = "true";
   el.dataset.noteText = this.__noteText;
-  el.className =
-   "bg-sky-100 px-0.5 rounded-2xl -sm underline decoration-wavy decoration-sky-300";
+  el.className = "bg-sky-100 px-0.5 rounded-2xl -sm underline decoration-wavy decoration-sky-300";
   el.textContent = this.__text;
   return { element: el };
  }
@@ -278,25 +273,14 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
  }
 
  decorate(): JSX.Element {
-  return (
-   <InlineNoteComponent
-    text={this.__text}
-    noteText={this.__noteText}
-    nodeKey={this.__key}
-   />
-  );
+  return <InlineNoteComponent text={this.__text} noteText={this.__noteText} nodeKey={this.__key} />;
  }
 }
 
-export function $createInlineNoteNode(
- text: string,
- noteText: string,
-): InlineNoteNode {
+export function $createInlineNoteNode(text: string, noteText: string): InlineNoteNode {
  return $applyNodeReplacement(new InlineNoteNode(text, noteText));
 }
 
-export function $isInlineNoteNode(
- node: LexicalNode | null | undefined,
-): node is InlineNoteNode {
+export function $isInlineNoteNode(node: LexicalNode | null | undefined): node is InlineNoteNode {
  return node instanceof InlineNoteNode;
 }

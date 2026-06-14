@@ -18,9 +18,7 @@ export function FieldInfo({
     <p className="text-xs text-rose-500">
      {errors
       .map((e) =>
-       typeof e === "string"
-        ? e
-        : (e as Record<string, unknown>)?.message || String(e),
+       typeof e === "string" ? e : (e as Record<string, unknown>)?.message || String(e),
       )
       .join(", ")}
     </p>

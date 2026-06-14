@@ -53,9 +53,7 @@ async function run() {
 
  if (error) {
   console.error("Migration failed via RPC. Error:", error.message);
-  console.log(
-   "\nPlease run the SQL manually in the Supabase Dashboard → SQL Editor.",
-  );
+  console.log("\nPlease run the SQL manually in the Supabase Dashboard → SQL Editor.");
   console.log("File:", sqlPath);
   process.exit(1);
  }

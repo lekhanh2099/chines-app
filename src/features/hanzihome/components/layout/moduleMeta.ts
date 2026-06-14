@@ -30,4 +30,3 @@ export const moduleMeta = {
 export const flatTabs = studyModules.map(
  (key) => moduleMeta[key],
 ) satisfies HanziHomeStudyTab<StudyModule>[];
-

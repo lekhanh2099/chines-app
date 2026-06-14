@@ -43,28 +43,23 @@ async function readJson(filePath: string): Promise<unknown> {
 function getBookId(dataset: DatasetConfig, lessonNumber: number) {
  return (
   dataset.books.find(
-   (book) =>
-    lessonNumber >= book.lessonRange[0] && lessonNumber <= book.lessonRange[1],
-  )?.id || dataset.books[0]?.id || ""
+   (book) => lessonNumber >= book.lessonRange[0] && lessonNumber <= book.lessonRange[1],
+  )?.id ||
+  dataset.books[0]?.id ||
+  ""
  );
 }
 
 async function syncDataset(dataset: DatasetConfig) {
  const { getHanyuLessonIndex, getHanyuLessonMeta } = await import(
-  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url)
-   .href
+  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url).href
  );
  const { HanyuLessonSchema } = await import(
-  new URL(
-   "../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts",
-   import.meta.url,
-  ).href
+  new URL("../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts", import.meta.url)
+   .href
  );
  const { DeepVocabularyLessonSchema } = await import(
-  new URL(
-   "../src/features/hanzihome/static-json/schemas/vocab.schema.ts",
-   import.meta.url,
-  ).href
+  new URL("../src/features/hanzihome/static-json/schemas/vocab.schema.ts", import.meta.url).href
  );
  const datasetDir = path.join(process.cwd(), "data/hanzihome", dataset.id);
  const vocabDir = path.join(datasetDir, "vocab");

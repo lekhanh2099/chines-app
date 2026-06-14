@@ -13,10 +13,7 @@ interface NoteTabContainerProps {
  initialTitle?: string;
 }
 
-export function NoteTabContainer({
- initialNoteId,
- initialTitle,
-}: NoteTabContainerProps) {
+export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContainerProps) {
  const tabs = useNoteTabsStore((s) => s.tabs);
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
  const openTab = useNoteTabsStore((s) => s.openTab);

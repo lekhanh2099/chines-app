@@ -49,13 +49,8 @@ function buildLookupResponse(vocabData: VocabData, cached: boolean) {
  });
 }
 
-function hasUsableBasicData(
- vocabData: VocabData | null,
-): vocabData is VocabData {
- return !!(
-  vocabData &&
-  (vocabData.pinyin || vocabData.sino_vietnamese || vocabData.meaning)
- );
+function hasUsableBasicData(vocabData: VocabData | null): vocabData is VocabData {
+ return !!(vocabData && (vocabData.pinyin || vocabData.sino_vietnamese || vocabData.meaning));
 }
 
 export async function POST(request: NextRequest) {
@@ -69,17 +64,13 @@ export async function POST(request: NextRequest) {
 
  const finalize = (response: NextResponse) => {
   const totalMs = performance.now() - startedAt;
-  applyServerTimingHeaders(
-   response.headers,
-   [...metrics, { name: "total", durationMs: totalMs }],
-   {
-    "x-lookup-route": "basic",
-    "x-lookup-source": source,
-    "x-lookup-cache": cached ? "hit" : "miss",
-    "x-lookup-ai-status": aiStatus,
-    "x-lookup-user-keys": userApiKeyCount,
-   },
-  );
+  applyServerTimingHeaders(response.headers, [...metrics, { name: "total", durationMs: totalMs }], {
+   "x-lookup-route": "basic",
+   "x-lookup-source": source,
+   "x-lookup-cache": cached ? "hit" : "miss",
+   "x-lookup-ai-status": aiStatus,
+   "x-lookup-user-keys": userApiKeyCount,
+  });
 
   console.info(
    "[lookup/basic]",
@@ -104,21 +95,13 @@ export async function POST(request: NextRequest) {
 
   if (!parsed.success) {
    source = "invalid";
-   return finalize(
-    NextResponse.json(
-     { error: "Invalid basic lookup payload" },
-     { status: 400 },
-    ),
-   );
+   return finalize(NextResponse.json({ error: "Invalid basic lookup payload" }, { status: 400 }));
   }
 
   lookupText = normalizeDictionaryHeadword(parsed.data.text);
 
   const cacheStartedAt = performance.now();
-  const cachedDictionary = await getDictionaryEntryByHeadword(
-   supabase,
-   lookupText,
-  );
+  const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
   if (cachedDictionary) {
    metrics.push({
@@ -128,10 +111,7 @@ export async function POST(request: NextRequest) {
    source = "dictionary_core";
    cached = true;
    return finalize(
-    buildLookupResponse(
-     getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary)),
-     true,
-    ),
+    buildLookupResponse(getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary)), true),
    );
   }
 
@@ -147,10 +127,7 @@ export async function POST(request: NextRequest) {
     hanzi: cachedWord.hanzi,
     pinyin: cachedWord.pinyin || getPinyin(lookupText),
     sino_vietnamese: cachedWord.sino_vietnamese || undefined,
-    meaning: getPrimaryMeaning(
-     getVocabularyAnalysis(cachedWord),
-     cachedWord.meaning || "",
-    ),
+    meaning: getPrimaryMeaning(getVocabularyAnalysis(cachedWord), cachedWord.meaning || ""),
     ai_analysis: getVocabularyAnalysis(cachedWord),
    });
 
@@ -167,12 +144,8 @@ export async function POST(request: NextRequest) {
   const {
    data: { user },
   } = await supabase.auth.getUser();
-  const promptSettings = user?.id
-   ? await getUserAiPromptSettings(supabase, user.id)
-   : null;
-  const userApiKeys = user?.id
-   ? await getActiveUserApiKeyCredentials(supabase, user.id)
-   : [];
+  const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
+  const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
   userApiKeyCount = userApiKeys.length;
   metrics.push({
    name: "auth",
@@ -201,10 +174,7 @@ export async function POST(request: NextRequest) {
      hanzi: cachedWord.hanzi,
      pinyin: cachedWord.pinyin || getPinyin(lookupText),
      sino_vietnamese: cachedWord.sino_vietnamese || undefined,
-     meaning: getPrimaryMeaning(
-      getVocabularyAnalysis(cachedWord),
-      cachedWord.meaning || "",
-     ),
+     meaning: getPrimaryMeaning(getVocabularyAnalysis(cachedWord), cachedWord.meaning || ""),
      ai_analysis: getVocabularyAnalysis(cachedWord),
     });
 
@@ -231,12 +201,8 @@ export async function POST(request: NextRequest) {
   const basicVocab = getBasicVocabData({
    hanzi: lookupText,
    pinyin: basicLookup.data.pinyin || getPinyin(lookupText),
-   sino_vietnamese:
-    basicLookup.data.sino_vietnamese || basicLookup.data.han_viet || undefined,
-   meaning: getPrimaryMeaning(
-    basicLookup.data,
-    basicLookup.data.meaning_summary || "",
-   ),
+   sino_vietnamese: basicLookup.data.sino_vietnamese || basicLookup.data.han_viet || undefined,
+   meaning: getPrimaryMeaning(basicLookup.data, basicLookup.data.meaning_summary || ""),
    ai_analysis: basicLookup.data,
   });
 
@@ -252,10 +218,7 @@ export async function POST(request: NextRequest) {
   });
 
   if (dictionaryEntry) {
-   const mirrored = await syncDictionaryEntryToLegacyVocab(
-    supabase,
-    dictionaryEntry,
-   );
+   const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
    metrics.push({
     name: "persist",
     durationMs: performance.now() - persistStartedAt,
@@ -308,10 +271,7 @@ export async function POST(request: NextRequest) {
   }
 
   return finalize(
-   NextResponse.json(
-    { error: "Lookup basic failed unexpectedly." },
-    { status: 500 },
-   ),
+   NextResponse.json({ error: "Lookup basic failed unexpectedly." }, { status: 500 }),
   );
  }
 }

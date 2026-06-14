@@ -38,13 +38,9 @@ function heading(text: string, tag: "h1" | "h2" | "h3" = "h2") {
  };
 }
 
-export function createLessonReadingContent(
- lesson: HanziHomeLesson,
-): Record<string, unknown> {
+export function createLessonReadingContent(lesson: HanziHomeLesson): Record<string, unknown> {
  const grammarLines = lesson.grammar.slice(0, 8).map((point, index) => {
-  const structure = point.structuresView[0]
-   ? ` — ${point.structuresView[0]}`
-   : "";
+  const structure = point.structuresView[0] ? ` — ${point.structuresView[0]}` : "";
 
   return `${index + 1}. ${point.cleanTitle}${structure}`;
  });
@@ -76,9 +72,7 @@ export function createLessonReadingContent(
  };
 }
 
-export function createPersonalNoteContent(
- lesson: HanziHomeLesson,
-): Record<string, unknown> {
+export function createPersonalNoteContent(lesson: HanziHomeLesson): Record<string, unknown> {
  return {
   root: {
    children: [

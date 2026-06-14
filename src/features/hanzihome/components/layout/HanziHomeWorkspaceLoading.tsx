@@ -16,10 +16,7 @@ export function HanziHomeWorkspaceLoading() {
      <div className="grid gap-2 lg:grid-cols-[15rem_minmax(0,1fr)]">
       <div className="grid content-start gap-2">
        {Array.from({ length: 5 }, (_, index) => (
-        <div
-         key={index}
-         className="h-16 rounded-lg border border-border-default bg-bg-subtle"
-        />
+        <div key={index} className="h-16 rounded-lg border border-border-default bg-bg-subtle" />
        ))}
       </div>
       <div className="grid min-h-96 content-start gap-3 rounded-xl border border-border-default bg-bg-subtle p-4">
@@ -34,4 +31,3 @@ export function HanziHomeWorkspaceLoading() {
   </main>
  );
 }
-

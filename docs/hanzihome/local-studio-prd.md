@@ -1649,4 +1649,3 @@ Bản đúng là “lesson workspace + local JSON CMS”.
 8. Review progress.
 
 Nếu app làm đúng PRD này, nó sẽ không còn cảm giác UI chật, rối, tab vô nghĩa, hoặc “có data nhưng học không sướng”. Nó sẽ thành một công cụ học thật: mở bài, học sâu, sửa nhanh, lưu local, không cần server.
-

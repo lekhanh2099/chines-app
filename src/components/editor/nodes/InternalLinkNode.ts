@@ -36,12 +36,7 @@ export class InternalLinkNode extends TextNode {
  }
 
  static clone(node: InternalLinkNode): InternalLinkNode {
-  return new InternalLinkNode(
-   node.__noteId,
-   node.__noteTitle,
-   node.__text,
-   node.__key,
-  );
+  return new InternalLinkNode(node.__noteId, node.__noteTitle, node.__text, node.__key);
  }
 
  constructor(noteId: string, noteTitle: string, text: string, key?: NodeKey) {
@@ -110,9 +105,7 @@ export class InternalLinkNode extends TextNode {
   };
  }
 
- static importJSON(
-  serializedNode: SerializedInternalLinkNode,
- ): InternalLinkNode {
+ static importJSON(serializedNode: SerializedInternalLinkNode): InternalLinkNode {
   return $createInternalLinkNode(
    serializedNode.noteId,
    serializedNode.noteTitle,
@@ -141,19 +134,14 @@ export class InternalLinkNode extends TextNode {
   return true;
  }
 
- insertNewAfter(
-  _selection: RangeSelection,
-  restoreSelection?: boolean,
- ): null | TextNode {
+ insertNewAfter(_selection: RangeSelection, restoreSelection?: boolean): null | TextNode {
   const textNode = $createTextNode(this.getTextContent());
   this.insertAfter(textNode, restoreSelection);
   return textNode;
  }
 }
 
-function convertInternalLinkElement(
- domNode: HTMLElement,
-): DOMConversionOutput | null {
+function convertInternalLinkElement(domNode: HTMLElement): DOMConversionOutput | null {
  const noteId = domNode.dataset.noteId;
  if (!noteId) return null;
 

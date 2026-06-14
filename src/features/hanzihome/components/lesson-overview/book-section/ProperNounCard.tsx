@@ -1,11 +1,7 @@
 import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
-import {
- properNounBackText,
- properNounFrontText,
- stringList,
-} from "./proper-noun-utils";
+import { properNounBackText, properNounFrontText, stringList } from "./proper-noun-utils";
 
 export function ProperNounCard({
  item,

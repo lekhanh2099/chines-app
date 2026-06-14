@@ -1,15 +1,11 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function text(value: unknown) {
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
 export const exerciseAnswerKeyEditAdapter: EditAdapter = {
@@ -26,11 +22,7 @@ export const exerciseAnswerKeyEditAdapter: EditAdapter = {
   return {
    question_id: text(answer.question_id),
    blank_id: text(answer.blank_id),
-   answer:
-    text(answer.answer) ||
-    text(answer.value) ||
-    text(answer.text) ||
-    text(value),
+   answer: text(answer.answer) || text(answer.value) || text(answer.text) || text(value),
    sample_answer: text(answer.sample_answer),
    explanation_vi: text(answer.explanation_vi),
   };

@@ -1,7 +1,4 @@
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 import { asRecord, stringValue } from "../utils";
 import { matchingAnswerText } from "./matching-answer-utils";

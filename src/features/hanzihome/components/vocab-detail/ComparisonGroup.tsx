@@ -1,12 +1,6 @@
 type ComparisonRow = { key: string; title: string; body?: string; example?: string };
 
-export function ComparisonGroup({
- title,
- rows,
-}: {
- title: string;
- rows: ComparisonRow[];
-}) {
+export function ComparisonGroup({ title, rows }: { title: string; rows: ComparisonRow[] }) {
  return (
   <div className="grid gap-2">
    <h4 className="font-black uppercase tracking-wide text-text-muted">{title}</h4>

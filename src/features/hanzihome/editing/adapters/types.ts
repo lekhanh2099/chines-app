@@ -1,10 +1,4 @@
-export type EditFieldKind =
- | "text"
- | "textarea"
- | "string-list"
- | "number"
- | "boolean"
- | "json";
+export type EditFieldKind = "text" | "textarea" | "string-list" | "number" | "boolean" | "json";
 
 export type EditFieldDefinition = {
  key: string;

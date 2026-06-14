@@ -77,7 +77,9 @@ async function main() {
             : "unknown";
 
     if (!item.id || !item.hanzi || !item.pinyin || !meaningVi || !normalizedPos) {
-     errors.push(`${datasetId}/${String(lesson.folder)}/${vocabEntry.file} missing runtime vocab fields`);
+     errors.push(
+      `${datasetId}/${String(lesson.folder)}/${vocabEntry.file} missing runtime vocab fields`,
+     );
     }
    }
   }

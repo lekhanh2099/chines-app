@@ -31,9 +31,7 @@ export function VocabDetailHeader({
     <div
      className={[
       "grid gap-3",
-      compact
-       ? ""
-       : "lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end",
+      compact ? "" : "lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end",
      ].join(" ")}
     >
      <div className="min-w-0">
@@ -46,12 +44,7 @@ export function VocabDetailHeader({
       >
        {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
       </h2>
-      <p
-       className={[
-        "font-black text-accent-text",
-        compact ? "text-lg" : "text-xl",
-       ].join(" ")}
-      >
+      <p className={["font-black text-accent-text", compact ? "text-lg" : "text-xl"].join(" ")}>
        {word.pinyin}
        {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
       </p>
@@ -66,9 +59,7 @@ export function VocabDetailHeader({
     <div className="mt-2 flex flex-wrap items-center gap-1.5">
      {word.pos.raw_vi && <Badge variant="info">{word.pos.raw_vi}</Badge>}
 
-     {word.level_tag !== "unknown" && (
-      <Badge variant="danger">{word.level_tag}</Badge>
-     )}
+     {word.level_tag !== "unknown" && <Badge variant="danger">{word.level_tag}</Badge>}
      <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
       <Bookmark className="h-4 w-4" />
       {bookmarked ? "Đã lưu" : "Lưu"}
@@ -97,21 +88,15 @@ export function VocabDetailHeader({
     <div className={compact ? "min-w-0" : "w-max min-w-full"}>
      <div className="grid gap-2">
       {word.meaning.short_definition_vi && (
-       <p className="text-lg font-black text-text-primary">
-        {word.meaning.short_definition_vi}
-       </p>
+       <p className="text-lg font-black text-text-primary">{word.meaning.short_definition_vi}</p>
       )}
-      {word.meaning.textbook_focus_vi && (
-       <p>{word.meaning.textbook_focus_vi}</p>
-      )}
+      {word.meaning.textbook_focus_vi && <p>{word.meaning.textbook_focus_vi}</p>}
       {word.meaning.natural_translations_vi.length > 0 && (
        <p>Tự nhiên: {word.meaning.natural_translations_vi.join(", ")}</p>
       )}
 
       {word.meaning.register_vi && <p>Sắc thái: {word.meaning.register_vi}</p>}
-      {word.meaning.usage_domain_vi && (
-       <p>Phạm vi dùng: {word.meaning.usage_domain_vi}</p>
-      )}
+      {word.meaning.usage_domain_vi && <p>Phạm vi dùng: {word.meaning.usage_domain_vi}</p>}
       {word.meaning.notes.map((note) => (
        <p key={note.text_vi}>{note.text_vi}</p>
       ))}

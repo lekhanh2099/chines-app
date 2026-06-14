@@ -95,25 +95,21 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   },
   onSuccess: (aiData) => {
    // Update the cached query data optimistically
-   queryClient.setQueryData(
-    ["vocab-detail", chineseText],
-    (old: typeof query.data) => {
-     if (!old) return old;
-     return {
-      ...old,
-      vocab: {
-       ...old.vocab,
-       pinyin:
-        (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
-       meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
-       ai_analysis: {
-        ...old.vocab.ai_analysis,
-        ...aiData,
-       },
+   queryClient.setQueryData(["vocab-detail", chineseText], (old: typeof query.data) => {
+    if (!old) return old;
+    return {
+     ...old,
+     vocab: {
+      ...old.vocab,
+      pinyin: (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
+      meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
+      ai_analysis: {
+       ...old.vocab.ai_analysis,
+       ...aiData,
       },
-     };
-    },
-   );
+     },
+    };
+   });
   },
  });
 
@@ -132,17 +128,11 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
        };
       },
   ) => {
-   const payload =
-    "vocabData" in vocabInput ? vocabInput : { vocabData: vocabInput };
+   const payload = "vocabData" in vocabInput ? vocabInput : { vocabData: vocabInput };
    const user = await getClientSessionUser(supabase);
    if (!user) throw new Error("Not authenticated");
 
-   const result = await saveVocabToSrs(
-    supabase,
-    user.id,
-    payload.vocabData,
-    payload.options,
-   );
+   const result = await saveVocabToSrs(supabase, user.id, payload.vocabData, payload.options);
    if (!result) throw new Error("Save failed");
 
    if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
@@ -155,26 +145,20 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   },
   onSuccess: (_result, variables) => {
    const payload =
-    typeof variables === "object" &&
-    variables !== null &&
-    "vocabData" in variables
+    typeof variables === "object" && variables !== null && "vocabData" in variables
      ? variables
      : { vocabData: variables };
 
-   queryClient.setQueryData(
-    ["vocab-detail", chineseText],
-    (old: typeof query.data) => {
-     if (!old) return old;
+   queryClient.setQueryData(["vocab-detail", chineseText], (old: typeof query.data) => {
+    if (!old) return old;
 
-     return {
-      ...old,
-      isSaved: true,
-      personalNote: payload.options?.personalNote ?? old.personalNote,
-      personalNoteMode:
-       payload.options?.personalNoteMode ?? old.personalNoteMode,
-     };
-    },
-   );
+    return {
+     ...old,
+     isSaved: true,
+     personalNote: payload.options?.personalNote ?? old.personalNote,
+     personalNoteMode: payload.options?.personalNoteMode ?? old.personalNoteMode,
+    };
+   });
 
    // Refetch to update isSaved status
    queryClient.invalidateQueries({ queryKey: ["vocab-detail", chineseText] });

@@ -109,9 +109,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
        return;
       }
 
-      void writer
-       .hideCharacter?.({ duration: 0 })
-       ?.then(() => writer.animateCharacter?.());
+      void writer.hideCharacter?.({ duration: 0 })?.then(() => writer.animateCharacter?.());
      });
     } catch {
      renderStaticCharacter();
@@ -156,12 +154,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
    <div ref={containerRef} className={writerContainerClassName} />
 
    <div className="flex flex-wrap items-center justify-center gap-2">
-    <Button
-     variant="outline"
-     size="sm"
-     className="min-w-0 px-3"
-     onClick={handlePlayAnimation}
-    >
+    <Button variant="outline" size="sm" className="min-w-0 px-3" onClick={handlePlayAnimation}>
      <Play className="h-3.5 w-3.5" />
      Nét viết
     </Button>

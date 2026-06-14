@@ -38,9 +38,7 @@ const dbRoot = path.join(process.cwd(), "data/hanzihome-db");
 const datasets: DatasetId[] = ["q2", "q3"];
 
 function asRecord(value: unknown): JsonRecord {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as JsonRecord)
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? (value as JsonRecord) : {};
 }
 
 function asString(value: unknown) {
@@ -123,7 +121,8 @@ function indexEntryFromVocab(item: JsonRecord, file: string, order: number) {
   type: asString(item.type),
   materialized_kind: kind,
   source_deep_vocab_id:
-   asString(materialized.source_deep_vocab_id) || (kind === "source_deep_vocab" ? asString(item.id) : null),
+   asString(materialized.source_deep_vocab_id) ||
+   (kind === "source_deep_vocab" ? asString(item.id) : null),
   source_lesson_vocab_id: asString(materialized.source_lesson_vocab_id) || null,
   check_needed: Boolean(item.check_needed),
   file: `vocabulary/items/${file}`,
@@ -182,23 +181,17 @@ async function rebuildLesson(dataset: DatasetId, lessonFolder: string) {
  await writeJson(path.join(lessonRoot, "vocabulary/index.json"), vocabIndex);
 
  const relationDir = path.join(lessonRoot, "relations");
- const allRelations = await readJson<JsonRecord[]>(
-  path.join(relationDir, "all.json"),
- );
+ const allRelations = await readJson<JsonRecord[]>(path.join(relationDir, "all.json"));
  const unresolved = await readJson<unknown[]>(path.join(relationDir, "unresolved.json"));
  const warnings = await readJson<unknown[]>(path.join(relationDir, "warnings.json"));
- const oldRelationIndex = await readJson<JsonRecord>(
-  path.join(relationDir, "index.json"),
- );
+ const oldRelationIndex = await readJson<JsonRecord>(path.join(relationDir, "index.json"));
  const relationIndex = {
   ...oldRelationIndex,
   counts: {
    ...asRecord(oldRelationIndex.counts),
    byType: countRelationTypes(allRelations),
    all: allRelations.length,
-   checkNeededRelations: allRelations.filter(
-    (relation) => relation.check_needed,
-   ).length,
+   checkNeededRelations: allRelations.filter((relation) => relation.check_needed).length,
    unresolved: unresolved.length,
    warnings: warnings.length,
   },
@@ -212,19 +205,16 @@ async function rebuildLesson(dataset: DatasetId, lessonFolder: string) {
   ...existingCounts,
   sections: sectionIndex.length,
   lessonVocabItems: relationTypes.lesson_vocab_to_vocabulary_item ?? 0,
-  sourceDeepVocabItems: vocabIndex.filter(
-   (item) => item.materialized_kind === "source_deep_vocab",
-  ).length,
+  sourceDeepVocabItems: vocabIndex.filter((item) => item.materialized_kind === "source_deep_vocab")
+   .length,
   materializedVocabItems: vocabIndex.length,
   syntheticVocabItems: vocabIndex.filter(
    (item) => item.materialized_kind === "synthetic_from_lesson_vocab",
   ).length,
   hanziOnlyVocabMatches: asNumber(asRecord(lessonJson.counts).hanziOnlyVocabMatches),
   relations: allRelations.length,
-  checkNeededRelations: allRelations.filter((relation) => relation.check_needed)
-   .length,
-  checkNeededVocabItems: vocabItems.filter((item) => item.value.check_needed)
-   .length,
+  checkNeededRelations: allRelations.filter((relation) => relation.check_needed).length,
+  checkNeededVocabItems: vocabItems.filter((item) => item.value.check_needed).length,
   unresolved: unresolved.length,
   warnings: warnings.length,
  } as LessonCounts;
@@ -282,19 +272,11 @@ function sumCounts(lessons: LessonSummary[]) {
 
 async function rebuildDataset(dataset: DatasetId) {
  const datasetRoot = path.join(dbRoot, dataset);
- const oldManifest = await readJson<JsonRecord>(
-  path.join(datasetRoot, "manifest.json"),
- );
+ const oldManifest = await readJson<JsonRecord>(path.join(datasetRoot, "manifest.json"));
  const lessonFolders = await listLessonFolders(datasetRoot);
- const lessons = await Promise.all(
-  lessonFolders.map((folder) => rebuildLesson(dataset, folder)),
- );
- const oldLessons = Array.isArray(oldManifest.lessons)
-  ? oldManifest.lessons.map(asRecord)
-  : [];
- const oldLessonsById = new Map(
-  oldLessons.map((lesson) => [asString(lesson.id), lesson]),
- );
+ const lessons = await Promise.all(lessonFolders.map((folder) => rebuildLesson(dataset, folder)));
+ const oldLessons = Array.isArray(oldManifest.lessons) ? oldManifest.lessons.map(asRecord) : [];
+ const oldLessonsById = new Map(oldLessons.map((lesson) => [asString(lesson.id), lesson]));
  const sortedLessons = lessons
   .sort((a, b) => a.lessonIndex - b.lessonIndex)
   .map((lesson) => {
@@ -340,9 +322,7 @@ async function validateStructure() {
    const allRelations = await readJson<Array<{ to?: { path?: string } }>>(
     path.join(lessonRoot, "relations/all.json"),
    );
-   const unresolved = await readJson<unknown[]>(
-    path.join(lessonRoot, "relations/unresolved.json"),
-   );
+   const unresolved = await readJson<unknown[]>(path.join(lessonRoot, "relations/unresolved.json"));
 
    for (const item of sectionIndex) {
     if (!(await fileExists(path.join(lessonRoot, "sections", item.file)))) {

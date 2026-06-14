@@ -1,8 +1,5 @@
 import { FieldValue } from "./FieldValue";
-import {
- hasRenderableValue,
- type RenderableField,
-} from "./generic-field-utils";
+import { hasRenderableValue, type RenderableField } from "./generic-field-utils";
 import type { LessonDisplayMode } from "../types";
 
 export function FieldValueBlock({

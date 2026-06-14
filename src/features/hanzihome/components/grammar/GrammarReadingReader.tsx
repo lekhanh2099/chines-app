@@ -11,12 +11,8 @@ export function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
   >
    <article className="grid gap-3">
     <div className="grid gap-1">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-      {reading.title}
-     </p>
-     <h2 className="text-2xl font-black tracking-normal text-text-primary">
-      Bài đọc áp dụng
-     </h2>
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{reading.title}</p>
+     <h2 className="text-2xl font-black tracking-normal text-text-primary">Bài đọc áp dụng</h2>
     </div>
 
     <MarkdownContent content={reading.contentMd} className="gap-3" />

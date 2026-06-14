@@ -3,10 +3,7 @@ import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/server";
 import { extractChinese } from "@/lib/chinese-utils";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import {
- analyzeHanziDetailed,
- analyzeSentenceDetailed,
-} from "@/services/ai.service";
+import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
@@ -116,24 +113,15 @@ export async function POST(request: NextRequest) {
  const {
   data: { user },
  } = await supabase.auth.getUser();
- const promptSettings = user?.id
-  ? await getUserAiPromptSettings(supabase, user.id)
-  : null;
- const userApiKeys = user?.id
-  ? await getActiveUserApiKeyCredentials(supabase, user.id)
-  : [];
+ const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
+ const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
 
  const resolvedMode = mode || resolveMode(rawSelection);
  const normalizedChinese = extractChinese(rawSelection);
 
  if (resolvedMode === "word") {
-  const lookupText = normalizeDictionaryHeadword(
-   normalizedChinese || rawSelection,
-  );
-  const cachedDictionary = await getDictionaryEntryByHeadword(
-   supabase,
-   lookupText,
-  );
+  const lookupText = normalizeDictionaryHeadword(normalizedChinese || rawSelection);
+  const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
   if (cachedDictionary) {
    void incrementDictionaryLookupCount(supabase, {
@@ -142,17 +130,14 @@ export async function POST(request: NextRequest) {
    });
   }
 
-  const existing = cachedDictionary
-   ? null
-   : await getVocabByHanzi(supabase, lookupText);
+  const existing = cachedDictionary ? null : await getVocabByHanzi(supabase, lookupText);
   const cachedDictionaryVocab = cachedDictionary
    ? mapDictionaryEntryToVocabData(cachedDictionary)
    : null;
   const existingAnalysis = cachedDictionaryVocab
    ? cachedDictionaryVocab.ai_analysis || {}
    : getVocabularyAnalysis(existing);
-  const existingIsEnglishFallback =
-   isGenericEnglishFallbackAnalysis(existingAnalysis);
+  const existingIsEnglishFallback = isGenericEnglishFallbackAnalysis(existingAnalysis);
   const existingMeaning = getPrimaryMeaning(
    existingAnalysis,
    existingIsEnglishFallback ? "" : existing?.meaning || "",
@@ -185,8 +170,7 @@ export async function POST(request: NextRequest) {
   if (needsEnrichment && normalizedChinese) {
    const aiLookup = await analyzeHanziDetailed(lookupText, {
     geminiModel: geminiModel || promptSettings?.geminiModel,
-    promptTemplate:
-     wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
+    promptTemplate: wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
     userApiKeys,
    });
 
@@ -247,9 +231,7 @@ export async function POST(request: NextRequest) {
   // Extract deep analysis fields (etymology may be string or object)
   const etymologyRaw = analysis.etymology;
   const etymologyText =
-   typeof etymologyRaw === "string"
-    ? etymologyRaw
-    : etymologyRaw?.explanation || "";
+   typeof etymologyRaw === "string" ? etymologyRaw : etymologyRaw?.explanation || "";
 
   const result: SmartSelectionResult = {
    mode: "word",
@@ -276,8 +258,7 @@ export async function POST(request: NextRequest) {
  const sentenceText = rawSelection;
  const existing = await getVocabByHanzi(supabase, sentenceText);
  const existingAnalysis = getVocabularyAnalysis(existing);
- const cachedTranslation =
-  existingAnalysis.sentence_translation || existing?.meaning || "";
+ const cachedTranslation = existingAnalysis.sentence_translation || existing?.meaning || "";
  const cachedGrammar = existingAnalysis.grammar_breakdown || [];
 
  let translation = cachedTranslation;
@@ -287,8 +268,7 @@ export async function POST(request: NextRequest) {
  if (!translation && grammarPoints.length === 0) {
   const sentenceLookup = await analyzeSentenceDetailed(sentenceText, {
    geminiModel: geminiModel || promptSettings?.geminiModel,
-   promptTemplate:
-    sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
+   promptTemplate: sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
    userApiKeys,
   });
   if (!sentenceLookup.data) {
@@ -319,12 +299,7 @@ export async function POST(request: NextRequest) {
    ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
   },
  };
- const progress = await getProgressState(
-  user?.id || null,
-  entry.id,
-  entry.dictionary_id,
-  supabase,
- );
+ const progress = await getProgressState(user?.id || null, entry.id, entry.dictionary_id, supabase);
 
  const result: SmartSelectionResult = {
   mode: "sentence",

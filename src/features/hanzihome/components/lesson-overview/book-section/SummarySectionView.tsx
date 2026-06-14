@@ -1,10 +1,6 @@
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
-import {
- EmptySectionState,
- LooseItemGrid,
- hasRenderableValue,
-} from "../CommonCards";
+import { EmptySectionState, LooseItemGrid, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, sectionEmptyReason } from "../utils";
 import { buildSummaryGroups } from "./summary-utils";

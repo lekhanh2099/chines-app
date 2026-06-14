@@ -47,16 +47,11 @@ function PinyinComponent({
  const syllables = pinyin.split(" ");
 
  return (
-  <span
-   className={`pinyin-word${forceShow ? " force-pinyin" : ""}`}
-   data-pinyin-key={nodeKey}
-  >
+  <span className={`pinyin-word${forceShow ? " force-pinyin" : ""}`} data-pinyin-key={nodeKey}>
    {chars.map((char, i) => (
     <ruby key={i} className="pinyin-ruby">
      {char}
-     <rt className={`pinyin-rt${forceShow ? " force-visible" : ""}`}>
-      {syllables[i] || ""}
-     </rt>
+     <rt className={`pinyin-rt${forceShow ? " force-visible" : ""}`}>{syllables[i] || ""}</rt>
     </ruby>
    ))}
   </span>
@@ -93,20 +88,10 @@ export class PinyinNode extends DecoratorNode<JSX.Element> {
  }
 
  static clone(node: PinyinNode): PinyinNode {
-  return new PinyinNode(
-   node.__chinese,
-   node.__pinyin,
-   node.__forceShow,
-   node.__key,
-  );
+  return new PinyinNode(node.__chinese, node.__pinyin, node.__forceShow, node.__key);
  }
 
- constructor(
-  chinese: string,
-  pinyin: string,
-  forceShow: boolean = false,
-  key?: NodeKey,
- ) {
+ constructor(chinese: string, pinyin: string, forceShow: boolean = false, key?: NodeKey) {
   super(key);
   this.__chinese = chinese;
   this.__pinyin = pinyin;
@@ -115,11 +100,7 @@ export class PinyinNode extends DecoratorNode<JSX.Element> {
 
  /* ── Serialization ── */
  static importJSON(serialized: SerializedPinyinNode): PinyinNode {
-  return $createPinyinNode(
-   serialized.chinese,
-   serialized.pinyin,
-   serialized.forceShow ?? false,
-  );
+  return $createPinyinNode(serialized.chinese, serialized.pinyin, serialized.forceShow ?? false);
  }
 
  exportJSON(): SerializedPinyinNode {
@@ -225,9 +206,7 @@ export function $createPinyinNode(
  return new PinyinNode(chinese, pinyin, forceShow);
 }
 
-export function $isPinyinNode(
- node: LexicalNode | null | undefined,
-): node is PinyinNode {
+export function $isPinyinNode(node: LexicalNode | null | undefined): node is PinyinNode {
  return node instanceof PinyinNode;
 }
 

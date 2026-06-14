@@ -12,10 +12,7 @@ interface ResizableDividerProps {
  containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
-export function ResizableDivider({
- onResize,
- containerRef,
-}: ResizableDividerProps) {
+export function ResizableDivider({ onResize, containerRef }: ResizableDividerProps) {
  const isDragging = useRef(false);
 
  const handleMouseDown = useCallback((e: React.MouseEvent) => {
@@ -52,11 +49,7 @@ export function ResizableDivider({
  }, [onResize, containerRef]);
 
  return (
-  <div
-   className="split-view-divider"
-   onMouseDown={handleMouseDown}
-   title="Kéo để điều chỉnh tỷ lệ"
-  >
+  <div className="split-view-divider" onMouseDown={handleMouseDown} title="Kéo để điều chỉnh tỷ lệ">
    <div className="split-view-divider-handle" />
   </div>
  );

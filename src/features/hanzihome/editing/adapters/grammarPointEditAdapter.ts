@@ -1,15 +1,11 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function text(value: unknown) {
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
 function stringList(value: unknown) {

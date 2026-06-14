@@ -11,10 +11,7 @@ import { updateVocabCorePayloadSchema } from "@/features/hanzihome/schemas/node-
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function PATCH(
- request: Request,
- context: NodeEditRouteContext<"vocabId">,
-) {
+export async function PATCH(request: Request, context: NodeEditRouteContext<"vocabId">) {
  const { vocabId } = await context.params;
  const { supabase, user } = await getAuthenticatedSupabase();
 

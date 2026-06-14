@@ -24,7 +24,9 @@ export function CollocationSection({
        <p className="font-black text-text-primary">{collocation.zh}</p>
        {collocation.pinyin && <p className="italic text-text-muted">{collocation.pinyin}</p>}
        {collocation.vi && <p>{collocation.vi}</p>}
-       {collocation.pattern && <p className="font-semibold text-accent-text">{collocation.pattern}</p>}
+       {collocation.pattern && (
+        <p className="font-semibold text-accent-text">{collocation.pattern}</p>
+       )}
        {collocation.note_vi && <p className="text-text-muted">{collocation.note_vi}</p>}
       </div>
      );

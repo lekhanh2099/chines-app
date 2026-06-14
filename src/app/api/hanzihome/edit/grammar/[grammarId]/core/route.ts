@@ -11,10 +11,7 @@ import { updateGrammarCorePayloadSchema } from "@/features/hanzihome/schemas/nod
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function PATCH(
- request: Request,
- context: NodeEditRouteContext<"grammarId">,
-) {
+export async function PATCH(request: Request, context: NodeEditRouteContext<"grammarId">) {
  const { grammarId } = await context.params;
  const { supabase, user } = await getAuthenticatedSupabase();
 

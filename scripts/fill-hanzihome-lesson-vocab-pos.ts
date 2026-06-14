@@ -156,9 +156,7 @@ function isPos(value: string): value is Pos {
 }
 
 async function buildDeepVocabPosMaps(vocabDir: string) {
- const files = (await readdir(vocabDir))
-  .filter((file) => file.endsWith(".json"))
-  .sort();
+ const files = (await readdir(vocabDir)).filter((file) => file.endsWith(".json")).sort();
  const byLesson = new Map<number, Map<string, Pos>>();
 
  for (const file of files) {
@@ -198,9 +196,10 @@ async function fillLessonFile(filePath: string, deepMaps: Map<number, Map<string
  const deepMap = deepMaps.get(lessonIndex) ?? new Map<string, Pos>();
  const lessonRecord = isRecord(lesson.lesson) ? lesson.lesson : {};
  const sections = Array.isArray(lessonRecord.sections) ? lessonRecord.sections : [];
- const vocabSection = sections.find((section): section is JsonRecord => (
-  isRecord(section) && stringValue(section, "type") === "vocabulary"
- ));
+ const vocabSection = sections.find(
+  (section): section is JsonRecord =>
+   isRecord(section) && stringValue(section, "type") === "vocabulary",
+ );
  const items = Array.isArray(vocabSection?.items) ? vocabSection.items : [];
  let changed = 0;
  let remainingUnknown = 0;
@@ -232,9 +231,7 @@ async function main() {
  const vocabDir = path.join(args.datasetDir, "vocab");
  const lessonDir = path.join(args.datasetDir, "lessons");
  const deepMaps = await buildDeepVocabPosMaps(vocabDir);
- const files = (await readdir(lessonDir))
-  .filter((file) => file.endsWith(".json"))
-  .sort();
+ const files = (await readdir(lessonDir)).filter((file) => file.endsWith(".json")).sort();
  let changed = 0;
  let remainingUnknown = 0;
 

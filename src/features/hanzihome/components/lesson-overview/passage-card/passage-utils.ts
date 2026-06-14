@@ -1,10 +1,4 @@
-import {
- answerToString,
- arrayValue,
- asRecord,
- hasClozeAnswerValue,
- stringValue,
-} from "../utils";
+import { answerToString, arrayValue, asRecord, hasClozeAnswerValue, stringValue } from "../utils";
 import type { ClozeAnswer, PassageLine } from "./types";
 
 export const BLANK_MARKER_SOURCE =
@@ -271,7 +265,9 @@ export function clozeTextFromSegments(segments: unknown[]) {
     return ` ${marker}______ `;
    }
 
-   return stringValue(segment, "text") || stringValue(segment, "zh") || answerToString(segmentValue);
+   return (
+    stringValue(segment, "text") || stringValue(segment, "zh") || answerToString(segmentValue)
+   );
   })
   .join("");
 }

@@ -41,9 +41,7 @@ function parseCsvOption<TValue extends string>(
   .map((value) => value.trim())
   .filter(Boolean);
 
- const invalidValues = parsedValues.filter(
-  (value) => !allowedValues.includes(value as TValue),
- );
+ const invalidValues = parsedValues.filter((value) => !allowedValues.includes(value as TValue));
 
  if (invalidValues.length > 0) {
   throw new Error(
@@ -63,9 +61,7 @@ function parseOptions(argv: string[]): CliOptions {
 
   const [key, inlineValue] = arg.slice(2).split("=", 2);
   const nextValue = argv[index + 1];
-  const value =
-   inlineValue ??
-   (nextValue && !nextValue.startsWith("--") ? nextValue : true);
+  const value = inlineValue ?? (nextValue && !nextValue.startsWith("--") ? nextValue : true);
 
   if (value === nextValue) index += 1;
   args.set(key, value);
@@ -124,19 +120,11 @@ function collectIds(
  }
 
  Object.entries(value).forEach(([key, item]) => {
-  collectIds(
-   item,
-   filePath,
-   `${jsonPath}/${escapePathSegment(key)}`,
-   occurrencesById,
-  );
+  collectIds(item, filePath, `${jsonPath}/${escapePathSegment(key)}`, occurrencesById);
  });
 }
 
-function rewriteReferences(
- value: JsonValue,
- idReplacements: Map<string, string>,
-): JsonValue {
+function rewriteReferences(value: JsonValue, idReplacements: Map<string, string>): JsonValue {
  if (typeof value === "string") {
   return idReplacements.get(value) ?? value;
  }

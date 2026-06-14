@@ -141,10 +141,7 @@ function TabItem({
    title={tab.title}
   >
    <FileText
-    className={cn(
-     "w-3.5 h-3.5 shrink-0 transition-colors",
-     isActive ? " " : "text-text-muted/60",
-    )}
+    className={cn("w-3.5 h-3.5 shrink-0 transition-colors", isActive ? " " : "text-text-muted/60")}
    />
 
    <span className="truncate flex-1 min-w-0 px-1">{tab.title}</span>

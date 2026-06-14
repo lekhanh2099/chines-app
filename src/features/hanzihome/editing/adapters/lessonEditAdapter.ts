@@ -1,9 +1,7 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function stringValue(record: { [key: string]: unknown }, key: string) {
@@ -29,9 +27,7 @@ export const lessonEditAdapter: EditAdapter = {
    title_vi: stringValue(title, "vi"),
    title_en: stringValue(title, "en"),
    tags: Array.isArray(lesson.tags)
-    ? lesson.tags
-       .filter((tag): tag is string => typeof tag === "string")
-       .join("\n")
+    ? lesson.tags.filter((tag): tag is string => typeof tag === "string").join("\n")
     : "",
   };
  },

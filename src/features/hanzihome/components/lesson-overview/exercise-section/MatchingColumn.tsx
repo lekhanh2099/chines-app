@@ -1,7 +1,4 @@
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";

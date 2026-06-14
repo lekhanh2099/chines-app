@@ -25,11 +25,7 @@ export function getValueAtPath(root: unknown, path: DraftPatchPath): unknown {
  return current;
 }
 
-export function setValueAtPath(
- root: unknown,
- path: DraftPatchPath,
- value: unknown,
-): boolean {
+export function setValueAtPath(root: unknown, path: DraftPatchPath, value: unknown): boolean {
  if (path.length === 0) return false;
 
  const parent = getValueAtPath(root, path.slice(0, -1));
@@ -49,11 +45,7 @@ export function setValueAtPath(
  return false;
 }
 
-export function createValueAtPath(
- root: unknown,
- path: DraftPatchPath,
- value: unknown,
-): boolean {
+export function createValueAtPath(root: unknown, path: DraftPatchPath, value: unknown): boolean {
  const target = getValueAtPath(root, path);
  if (!Array.isArray(target)) return false;
  target.push(value);
@@ -79,11 +71,7 @@ export function deleteValueAtPath(root: unknown, path: DraftPatchPath): boolean 
  return false;
 }
 
-export function reorderValueAtPath(
- root: unknown,
- path: DraftPatchPath,
- order: unknown,
-): boolean {
+export function reorderValueAtPath(root: unknown, path: DraftPatchPath, order: unknown): boolean {
  const target = getValueAtPath(root, path);
  if (!Array.isArray(target) || !Array.isArray(order)) return false;
  target.splice(0, target.length, ...order);

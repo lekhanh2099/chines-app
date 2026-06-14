@@ -28,12 +28,7 @@ export function Tabs<T extends string>({
  return (
   <div className={className}>
    <div className={listClassName}>
-    <SegmentedControl
-     value={value}
-     items={items}
-     groups={groups}
-     onChange={onValueChange}
-    />
+    <SegmentedControl value={value} items={items} groups={groups} onChange={onValueChange} />
    </div>
    {children}
   </div>

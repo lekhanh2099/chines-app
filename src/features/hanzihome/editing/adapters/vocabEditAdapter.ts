@@ -1,16 +1,12 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function stringValue(record: { [key: string]: unknown }, key: string) {
  const value = record[key];
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
 function stringList(value: unknown) {
@@ -40,10 +36,7 @@ export const vocabEditAdapter: EditAdapter = {
    meaning_vi: stringValue(item, "meaning_vi") || stringValue(meaning, "meaning_vi"),
    meaning_en: stringValue(item, "meaning_en") || stringValue(meaning, "meaning_en"),
    hanviet: stringValue(meaning, "hanviet"),
-   pos:
-    stringValue(item, "pos") ||
-    stringValue(pos, "normalized") ||
-    stringValue(pos, "raw_vi"),
+   pos: stringValue(item, "pos") || stringValue(pos, "normalized") || stringValue(pos, "raw_vi"),
    tags: stringList(item.tags),
   };
  },

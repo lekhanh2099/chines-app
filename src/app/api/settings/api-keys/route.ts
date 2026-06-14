@@ -19,18 +19,10 @@ import {
 } from "@/services/user-api-keys.service";
 
 const VALIDATION_TIMEOUT = 10_000;
-const OPENAI_MODEL_PREFERENCES = [
- "gpt-4.1-mini",
- "gpt-4o-mini",
- "gpt-4.1",
- "gpt-4o",
-] as const;
+const OPENAI_MODEL_PREFERENCES = ["gpt-4.1-mini", "gpt-4o-mini", "gpt-4.1", "gpt-4o"] as const;
 
 const providerEnum = z.enum(
- API_KEY_PROVIDER_OPTIONS.map((option) => option.value) as [
-  ApiKeyProvider,
-  ...ApiKeyProvider[],
- ],
+ API_KEY_PROVIDER_OPTIONS.map((option) => option.value) as [ApiKeyProvider, ...ApiKeyProvider[]],
 );
 
 const addKeySchema = z.object({
@@ -74,9 +66,7 @@ type ProviderValidationFailure = {
  error: string;
 };
 
-type ProviderValidationResult =
- | ProviderValidationSuccess
- | ProviderValidationFailure;
+type ProviderValidationResult = ProviderValidationSuccess | ProviderValidationFailure;
 
 export async function GET() {
  const supabase = await createClient();
@@ -89,9 +79,7 @@ export async function GET() {
  }
 
  const schemaStatus = await getUserApiKeysSchemaStatus(supabase, user.id);
- const keys = schemaStatus.ready
-  ? await listUserApiKeys(supabase, user.id)
-  : [];
+ const keys = schemaStatus.ready ? await listUserApiKeys(supabase, user.id) : [];
  const summary = {
   total: keys.length,
   active: keys.filter((key) => key.isActive).length,
@@ -125,8 +113,7 @@ export async function POST(request: NextRequest) {
  if (!(await isUserApiKeysSchemaReady(supabase, user.id))) {
   return NextResponse.json(
    {
-    error:
-     "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi thêm API key.",
+    error: "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi thêm API key.",
    },
    { status: 503 },
   );
@@ -159,10 +146,7 @@ export async function POST(request: NextRequest) {
  });
 
  if (!created.key) {
-  return NextResponse.json(
-   { error: created.error || "Không thể lưu API key." },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: created.error || "Không thể lưu API key." }, { status: 500 });
  }
 
  return NextResponse.json({
@@ -172,8 +156,7 @@ export async function POST(request: NextRequest) {
    providerLabel: getApiKeyProviderLabel(created.key.provider),
   },
   message:
-   validation.message ||
-   `Đã thêm ${getApiKeyProviderLabel(validation.provider)} key thành công.`,
+   validation.message || `Đã thêm ${getApiKeyProviderLabel(validation.provider)} key thành công.`,
  });
 }
 
@@ -208,18 +191,10 @@ export async function PATCH(request: NextRequest) {
  }
 
  if (parsed.data.action === "move") {
-  const keys = await moveUserApiKey(
-   supabase,
-   user.id,
-   parsed.data.keyId,
-   parsed.data.direction,
-  );
+  const keys = await moveUserApiKey(supabase, user.id, parsed.data.keyId, parsed.data.direction);
 
   if (!keys) {
-   return NextResponse.json(
-    { error: "Không thể cập nhật thứ tự key." },
-    { status: 500 },
-   );
+   return NextResponse.json({ error: "Không thể cập nhật thứ tự key." }, { status: 500 });
   }
 
   return NextResponse.json({
@@ -232,17 +207,12 @@ export async function PATCH(request: NextRequest) {
  }
 
  const updated = await updateUserApiKey(supabase, user.id, parsed.data.keyId, {
-  ...(parsed.data.action === "toggle"
-   ? { isActive: parsed.data.isActive }
-   : {}),
+  ...(parsed.data.action === "toggle" ? { isActive: parsed.data.isActive } : {}),
   ...(parsed.data.action === "rename" ? { label: parsed.data.label } : {}),
  });
 
  if (!updated) {
-  return NextResponse.json(
-   { error: "Không thể cập nhật API key." },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: "Không thể cập nhật API key." }, { status: 500 });
  }
 
  return NextResponse.json({
@@ -267,8 +237,7 @@ export async function DELETE(request: NextRequest) {
  if (!(await isUserApiKeysSchemaReady(supabase, user.id))) {
   return NextResponse.json(
    {
-    error:
-     "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi xóa API key.",
+    error: "Database chưa có bảng user_api_keys. Hãy apply migration mới trước khi xóa API key.",
    },
    { status: 503 },
   );
@@ -283,10 +252,7 @@ export async function DELETE(request: NextRequest) {
 
  const deleted = await deleteUserApiKey(supabase, user.id, parsed.data.keyId);
  if (!deleted) {
-  return NextResponse.json(
-   { error: "Không thể xóa API key." },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: "Không thể xóa API key." }, { status: 500 });
  }
 
  return NextResponse.json({ success: true });
@@ -313,9 +279,7 @@ async function detectAndValidateProvider(
 
  return {
   valid: false,
-  error:
-   errors[0] ||
-   "Không thể xác định provider cho API key này. Hãy chọn provider thủ công.",
+  error: errors[0] || "Không thể xác định provider cho API key này. Hãy chọn provider thủ công.",
  };
 }
 
@@ -360,8 +324,7 @@ async function validateDeepSeekKey(
  if (!apiKey.startsWith("sk-")) {
   return {
    valid: false,
-   error:
-    "Key này không giống định dạng DeepSeek. DeepSeek key thường bắt đầu bằng 'sk-'.",
+   error: "Key này không giống định dạng DeepSeek. DeepSeek key thường bắt đầu bằng 'sk-'.",
   };
  }
 
@@ -375,8 +338,7 @@ async function validateDeepSeekKey(
   if (res.status === 401 || res.status === 403) {
    return {
     valid: false,
-    error:
-     "DeepSeek từ chối API key này. Hãy kiểm tra lại key trên platform.deepseek.com.",
+    error: "DeepSeek từ chối API key này. Hãy kiểm tra lại key trên platform.deepseek.com.",
    };
   }
 
@@ -396,18 +358,14 @@ async function validateDeepSeekKey(
 
   const json = (await res.json()) as { data?: { id: string }[] };
   const models = (json.data || []).map((model) => model.id);
-  const defaultModel =
-   models.find((model) => model === "deepseek-chat") || models[0] || null;
+  const defaultModel = models.find((model) => model === "deepseek-chat") || models[0] || null;
 
   return {
    valid: true,
    provider: "deepseek",
    defaultModel,
    detectedVia,
-   message:
-    detectedVia === "auto"
-     ? "Đã tự nhận diện DeepSeek key và lưu thành công."
-     : undefined,
+   message: detectedVia === "auto" ? "Đã tự nhận diện DeepSeek key và lưu thành công." : undefined,
   };
  } catch (err) {
   return {
@@ -422,19 +380,15 @@ async function validateGeminiKey(
  detectedVia: "auto" | "manual",
 ): Promise<ProviderValidationResult> {
  try {
-  const res = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`,
-   {
-    method: "GET",
-    signal: AbortSignal.timeout(VALIDATION_TIMEOUT),
-   },
-  );
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`, {
+   method: "GET",
+   signal: AbortSignal.timeout(VALIDATION_TIMEOUT),
+  });
 
   if (res.status === 400 || res.status === 401 || res.status === 403) {
    return {
     valid: false,
-    error:
-     "Google Gemini từ chối API key này. Hãy kiểm tra lại key trong AI Studio.",
+    error: "Google Gemini từ chối API key này. Hãy kiểm tra lại key trong AI Studio.",
    };
   }
 
@@ -453,9 +407,7 @@ async function validateGeminiKey(
   };
 
   const availableModels = (json.models || [])
-   .filter((model) =>
-    (model.supportedGenerationMethods || []).includes("generateContent"),
-   )
+   .filter((model) => (model.supportedGenerationMethods || []).includes("generateContent"))
    .map((model) => model.name || "")
    .filter(Boolean);
 
@@ -468,9 +420,7 @@ async function validateGeminiKey(
     DEFAULT_GEMINI_MODEL,
    detectedVia,
    message:
-    detectedVia === "auto"
-     ? "Đã tự nhận diện Google Gemini key và lưu thành công."
-     : undefined,
+    detectedVia === "auto" ? "Đã tự nhận diện Google Gemini key và lưu thành công." : undefined,
   };
  } catch (err) {
   return {
@@ -487,8 +437,7 @@ async function validateOpenAiKey(
  if (!apiKey.startsWith("sk-")) {
   return {
    valid: false,
-   error:
-    "Key này không giống định dạng OpenAI. OpenAI key thường bắt đầu bằng 'sk-'.",
+   error: "Key này không giống định dạng OpenAI. OpenAI key thường bắt đầu bằng 'sk-'.",
   };
  }
 
@@ -502,8 +451,7 @@ async function validateOpenAiKey(
   if (res.status === 401 || res.status === 403) {
    return {
     valid: false,
-    error:
-     "OpenAI từ chối API key này. Hãy kiểm tra lại key trên platform.openai.com.",
+    error: "OpenAI từ chối API key này. Hãy kiểm tra lại key trên platform.openai.com.",
    };
   }
 
@@ -517,19 +465,14 @@ async function validateOpenAiKey(
   const json = (await res.json()) as { data?: { id: string }[] };
   const models = (json.data || []).map((model) => model.id);
   const defaultModel =
-   OPENAI_MODEL_PREFERENCES.find((model) => models.includes(model)) ||
-   models[0] ||
-   null;
+   OPENAI_MODEL_PREFERENCES.find((model) => models.includes(model)) || models[0] || null;
 
   return {
    valid: true,
    provider: "openai",
    defaultModel,
    detectedVia,
-   message:
-    detectedVia === "auto"
-     ? "Đã tự nhận diện OpenAI key và lưu thành công."
-     : undefined,
+   message: detectedVia === "auto" ? "Đã tự nhận diện OpenAI key và lưu thành công." : undefined,
   };
  } catch (err) {
   return {
@@ -539,10 +482,7 @@ async function validateOpenAiKey(
  }
 }
 
-function formatValidationNetworkError(
- providerLabel: string,
- error: unknown,
-): string {
+function formatValidationNetworkError(providerLabel: string, error: unknown): string {
  if (error instanceof DOMException && error.name === "TimeoutError") {
   return `${providerLabel} phản hồi quá chậm khi validate key. Vui lòng thử lại.`;
  }

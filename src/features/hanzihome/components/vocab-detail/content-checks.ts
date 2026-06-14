@@ -54,29 +54,21 @@ export function hasCultureContent(culture: CultureNote | undefined) {
 
 export function hasWarningContent(warnings: Warning[]) {
  return warnings.some((warning) =>
-  [
-   warning.rule_vi,
-   warning.explanation_vi,
-   ...warning.notes.map((note) => note.text_vi),
-  ].some(hasText),
+  [warning.rule_vi, warning.explanation_vi, ...warning.notes.map((note) => note.text_vi)].some(
+   hasText,
+  ),
  );
 }
 
-export function hasSectionInItem(
- item: HanziHomeVocabItem,
- section: SectionView,
-) {
+export function hasSectionInItem(item: HanziHomeVocabItem, section: SectionView) {
  if (section === "all") return true;
  if (section === "examples") return item.examples.length > 0;
  if (section === "meaning") return hasMeaningContent(item.meaning);
- if (section === "etymology")
-  return hasWordFormationContent(item.word_formation);
+ if (section === "etymology") return hasWordFormationContent(item.word_formation);
  if (section === "comparisons") return hasComparisonContent(item.comparison);
  if (section === "notes") {
   return (
-   hasCultureContent(item.culture_note) ||
-   hasWarningContent(item.warnings) ||
-   item.notes.length > 0
+   hasCultureContent(item.culture_note) || hasWarningContent(item.warnings) || item.notes.length > 0
   );
  }
 

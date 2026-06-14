@@ -41,18 +41,10 @@ export function Sheet({
  );
 }
 
-export function SheetHeader({
- title,
- onClose,
-}: {
- title: string;
- onClose: () => void;
-}) {
+export function SheetHeader({ title, onClose }: { title: string; onClose: () => void }) {
  return (
   <div className="mb-5 flex min-w-0 items-center justify-between gap-3">
-   <h2 className="min-w-0 break-words text-2xl font-black text-text-primary">
-    {title}
-   </h2>
+   <h2 className="min-w-0 break-words text-2xl font-black text-text-primary">{title}</h2>
    <button
     type="button"
     onClick={onClose}

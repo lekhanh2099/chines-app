@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
-import {
- analyzeHanziDetailed,
- analyzeSentenceDetailed,
-} from "@/services/ai.service";
+import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
@@ -37,29 +34,20 @@ export async function POST(request: NextRequest) {
  const parsed = lookupSchema.safeParse(payload);
 
  if (!parsed.success) {
-  return NextResponse.json(
-   { error: "Invalid lookup payload" },
-   { status: 400 },
-  );
+  return NextResponse.json({ error: "Invalid lookup payload" }, { status: 400 });
  }
 
  if (parsed.data.type === "sentence") {
   const {
    data: { user },
   } = await supabase.auth.getUser();
-  const promptSettings = user?.id
-   ? await getUserAiPromptSettings(supabase, user.id)
-   : null;
-  const userApiKeys = user?.id
-   ? await getActiveUserApiKeyCredentials(supabase, user.id)
-   : [];
+  const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
+  const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
 
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
    promptTemplate:
-    parsed.data.sentencePromptTemplate ||
-    promptSettings?.sentenceLookupPrompt ||
-    undefined,
+    parsed.data.sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
    userApiKeys,
   });
 
@@ -78,10 +66,7 @@ export async function POST(request: NextRequest) {
  }
 
  const lookupText = normalizeDictionaryHeadword(parsed.data.text);
- const cachedDictionary = await getDictionaryEntryByHeadword(
-  supabase,
-  lookupText,
- );
+ const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
  if (cachedDictionary) {
   void incrementDictionaryLookupCount(supabase, {
@@ -130,19 +115,12 @@ export async function POST(request: NextRequest) {
  const {
   data: { user },
  } = await supabase.auth.getUser();
- const promptSettings = user?.id
-  ? await getUserAiPromptSettings(supabase, user.id)
-  : null;
- const userApiKeys = user?.id
-  ? await getActiveUserApiKeyCredentials(supabase, user.id)
-  : [];
+ const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
+ const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
 
  const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
-  promptTemplate:
-   parsed.data.wordPromptTemplate ||
-   promptSettings?.wordLookupPrompt ||
-   undefined,
+  promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
   userApiKeys,
  });
 
@@ -158,8 +136,7 @@ export async function POST(request: NextRequest) {
      id: cachedWord.id,
      dictionary_id: undefined,
      hanzi: cachedWord.hanzi,
-     pinyin:
-      cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
      sino_vietnamese:
       cachedWord.sino_vietnamese ||
       cachedAnalysis.sino_vietnamese ||
@@ -194,10 +171,7 @@ export async function POST(request: NextRequest) {
  let legacyVocabId: string | undefined;
 
  if (dictionaryEntry) {
-  const mirrored = await syncDictionaryEntryToLegacyVocab(
-   supabase,
-   dictionaryEntry,
-  );
+  const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
   legacyVocabId = mirrored?.id;
  } else {
   const mirrored = await upsertVocab(supabase, {

@@ -10,12 +10,7 @@ const datasets: Array<{ id: DatasetId; courseNumber: 2 | 3 }> = [
  { id: "q3", courseNumber: 3 },
 ];
 
-const refKeys = new Set([
- "item_id",
- "vocab_ref",
- "grammar_ref",
- "source_item_id",
-]);
+const refKeys = new Set(["item_id", "vocab_ref", "grammar_ref", "source_item_id"]);
 
 function isRecord(value: unknown): value is JsonRecord {
  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
@@ -40,10 +35,7 @@ async function writeJson(filePath: string, value: unknown) {
 }
 
 function stableUuidFromKey(key: string) {
- const bytes = Buffer.from(
-  createHash("sha256").update(key).digest("hex").slice(0, 32),
-  "hex",
- );
+ const bytes = Buffer.from(createHash("sha256").update(key).digest("hex").slice(0, 32), "hex");
  bytes[6] = (bytes[6] & 0x0f) | 0x40;
  bytes[8] = (bytes[8] & 0x3f) | 0x80;
  const hex = bytes.toString("hex");
@@ -58,9 +50,7 @@ function stableUuidFromKey(key: string) {
 }
 
 function isUuid(value: string) {
- return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{12}$/i.test(
-  value,
- );
+ return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{12}$/i.test(value);
 }
 
 function getLessonIndex(value: unknown, fallbackIndex: number) {
@@ -85,11 +75,7 @@ function getExpectedLessonId(courseNumber: 2 | 3, lessonIndex: number) {
 }
 
 function normalizeExampleLevel(value: unknown) {
- if (
-  value === "application" ||
-  value === "lesson" ||
-  value === "lesson_context"
- ) {
+ if (value === "application" || value === "lesson" || value === "lesson_context") {
   return "applied";
  }
 
@@ -166,10 +152,7 @@ function normalizeVocabularyDocument(
 ) {
  if (!isRecord(raw)) return raw;
 
- const expectedLegacyLessonId = getExpectedLessonId(
-  options.courseNumber,
-  options.lessonIndex,
- );
+ const expectedLegacyLessonId = getExpectedLessonId(options.courseNumber, options.lessonIndex);
  const root: JsonRecord = { ...raw };
  const source = isRecord(root.source) ? { ...root.source } : {};
  const lesson = isRecord(root.lesson) ? { ...root.lesson } : {};
@@ -203,9 +186,7 @@ function normalizeVocabularyDocument(
 
 async function getLessonDocumentIds(datasetDir: string) {
  const lessonDir = path.join(datasetDir, "lessons");
- const lessonFiles = (await readdir(lessonDir)).filter((file) =>
-  file.endsWith(".json"),
- );
+ const lessonFiles = (await readdir(lessonDir)).filter((file) => file.endsWith(".json"));
  const idsByIndex = new Map<number, string>();
 
  for (const file of lessonFiles) {
@@ -213,8 +194,7 @@ async function getLessonDocumentIds(datasetDir: string) {
   const root = isRecord(value) ? value : {};
   const lesson = isRecord(root.lesson) ? root.lesson : {};
   const metadata = isRecord(lesson.metadata) ? lesson.metadata : {};
-  const lessonIndex =
-   numberValue(metadata, "lesson_index") || getLessonIndex(value, 0);
+  const lessonIndex = numberValue(metadata, "lesson_index") || getLessonIndex(value, 0);
   const lessonId = stringValue(lesson, "id");
 
   if (lessonIndex && lessonId) idsByIndex.set(lessonIndex, lessonId);
@@ -227,9 +207,7 @@ async function normalizeDataset(dataset: { id: DatasetId; courseNumber: 2 | 3 })
  const datasetDir = path.join(process.cwd(), "data/hanzihome", dataset.id);
  const vocabDir = path.join(datasetDir, "vocab");
  const lessonDocumentIds = await getLessonDocumentIds(datasetDir);
- const files = (await readdir(vocabDir))
-  .filter((file) => file.endsWith(".json"))
-  .sort();
+ const files = (await readdir(vocabDir)).filter((file) => file.endsWith(".json")).sort();
  let changed = 0;
  let renamed = 0;
 

@@ -32,9 +32,7 @@ export function SubscribeButton({
       disabled={disabled}
       className={`flex items-center justify-center gap-2 bg-indigo-600   font-semibold py-3 px-8 rounded-2xl  hover:bg-indigo-700 transition duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed ${className || ""}`}
      >
-      {(state.isSubmitting || isLoading) && (
-       <Loader2 className="w-5 h-5 animate-spin" />
-      )}
+      {(state.isSubmitting || isLoading) && <Loader2 className="w-5 h-5 animate-spin" />}
       {children}
      </button>
     );

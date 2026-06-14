@@ -381,24 +381,24 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
           <div className="flex flex-wrap gap-1.5">
            <Link
-           href={buildHanziHomeLessonHref({
-            courseId: group.courseId,
-            lessonNumber: group.lessonNumber,
-            module: kind === "vocab" ? "vocab" : "grammar",
-           })}
-           prefetch={false}
-           className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+            href={buildHanziHomeLessonHref({
+             courseId: group.courseId,
+             lessonNumber: group.lessonNumber,
+             module: kind === "vocab" ? "vocab" : "grammar",
+            })}
+            prefetch={false}
+            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
            >
             Mở bài
            </Link>
            <Link
-           href={buildHanziHomeLessonHref({
-            courseId: group.courseId,
-            lessonNumber: group.lessonNumber,
-            module: "review",
-           })}
-           prefetch={false}
-           className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+            href={buildHanziHomeLessonHref({
+             courseId: group.courseId,
+             lessonNumber: group.lessonNumber,
+             module: "review",
+            })}
+            prefetch={false}
+            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
             onClick={(event) => {
              event.preventDefault();
              startReview([group.lessonId]);

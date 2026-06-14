@@ -103,9 +103,7 @@ async function auditLesson(dataset: DatasetId, lessonFolder: string, errors: str
  const allRelations = await readJson<Array<{ to?: { path?: string } }>>(
   path.join(lessonRoot, "relations/all.json"),
  );
- const unresolved = await readJson<unknown[]>(
-  path.join(lessonRoot, "relations/unresolved.json"),
- );
+ const unresolved = await readJson<unknown[]>(path.join(lessonRoot, "relations/unresolved.json"));
 
  for (const item of sectionIndex) {
   if (!(await exists(path.join(lessonRoot, "sections", item.file)))) {
@@ -130,11 +128,11 @@ async function auditLesson(dataset: DatasetId, lessonFolder: string, errors: str
   const payload = asRecord(await readJson(itemPath));
   const materialized = asRecord(payload.materialized);
   const kind =
-   item.materialized_kind ||
-   asString(payload.materialized_kind) ||
-   asString(materialized.kind);
+   item.materialized_kind || asString(payload.materialized_kind) || asString(materialized.kind);
   if (kind === "synthetic_from_lesson_vocab" && payload.check_needed !== true) {
-   errors.push(`${dataset}/${lessonFolder}: synthetic vocab ${item.id} must have check_needed=true`);
+   errors.push(
+    `${dataset}/${lessonFolder}: synthetic vocab ${item.id} must have check_needed=true`,
+   );
   }
   if (kind === "source_deep_vocab" && !payload.meaning) {
    errors.push(`${dataset}/${lessonFolder}: source deep vocab ${item.id} lost meaning payload`);
@@ -188,9 +186,7 @@ async function main() {
    errors.push(`${dataset}: manifest lesson count mismatch`);
   }
 
-  await Promise.all(
-   lessons.map((lessonFolder) => auditLesson(dataset, lessonFolder, errors)),
-  );
+  await Promise.all(lessons.map((lessonFolder) => auditLesson(dataset, lessonFolder, errors)));
  }
 
  await auditRuntimeImports(errors);

@@ -9,8 +9,7 @@ import type {
 } from "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
 
 const defaultDataRoot = path.join(process.cwd(), "data/hanzihome");
-const vocabSchemaModulePath =
- "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
+const vocabSchemaModulePath = "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
 const shouldShowWarnings = process.argv.includes("--show-warnings");
 
 type Severity = "error" | "warning";
@@ -52,7 +51,8 @@ type DatasetSummary = {
  sparseItems: number;
 };
 
-type VocabSchemaModule = typeof import("../src/features/hanzihome/static-json/schemas/vocab.schema.ts");
+type VocabSchemaModule =
+ typeof import("../src/features/hanzihome/static-json/schemas/vocab.schema.ts");
 
 function hasText(value: string | undefined) {
  return Boolean(value?.trim());
@@ -102,15 +102,12 @@ function hasComparisonContent(item: DeepVocabularyItem) {
 function hasCultureOrWarningContent(item: DeepVocabularyItem) {
  return (
   Boolean(
-   item.culture_note &&
-    [item.culture_note.title, item.culture_note.content_vi].some(hasText),
+   item.culture_note && [item.culture_note.title, item.culture_note.content_vi].some(hasText),
   ) ||
   item.warnings.some((warning) =>
-   [
-    warning.rule_vi,
-    warning.explanation_vi,
-    ...warning.notes.map((note) => note.text_vi),
-   ].some(hasText),
+   [warning.rule_vi, warning.explanation_vi, ...warning.notes.map((note) => note.text_vi)].some(
+    hasText,
+   ),
   ) ||
   item.notes.some((note) => hasText(note.text_vi))
  );
@@ -177,9 +174,7 @@ async function readVocabularyLessons(
  issues: AuditIssue[],
 ) {
  const dataset = path.basename(path.dirname(vocabDir));
- const files = (await readdir(vocabDir))
-  .filter((file) => file.endsWith(".json"))
-  .sort();
+ const files = (await readdir(vocabDir)).filter((file) => file.endsWith(".json")).sort();
  const lessons: Array<{ file: string; lesson: DeepVocabularyLesson }> = [];
 
  for (const file of files) {
@@ -422,9 +417,7 @@ function summarizeDataset({
   errors: datasetIssues.filter((issue) => issue.severity === "error").length,
   warnings: datasetIssues.filter((issue) => issue.severity === "warning").length,
   unknownPos: datasetIssues.filter((issue) => issue.code === "UNKNOWN_POS").length,
-  sparseItems: datasetIssues.filter(
-   (issue) => issue.code === "SPARSE_RENDER_SECTIONS",
-  ).length,
+  sparseItems: datasetIssues.filter((issue) => issue.code === "SPARSE_RENDER_SECTIONS").length,
  };
 }
 
@@ -437,9 +430,7 @@ function printIssues(issues: AuditIssue[]) {
    .join(" · ");
   const location = [issue.dataset, issue.file, itemLabel].filter(Boolean).join(" / ");
 
-  console.error(
-   `[${issue.severity.toUpperCase()}] ${issue.code} ${location}: ${issue.message}`,
-  );
+  console.error(`[${issue.severity.toUpperCase()}] ${issue.code} ${location}: ${issue.message}`);
  }
 
  if (issues.length > maxIssuesToPrint) {
@@ -458,19 +449,15 @@ async function main() {
  }
 
  for (const vocabDir of vocabDirs) {
-  const { dataset, files, lessons } = await readVocabularyLessons(
-   vocabDir,
-   schemaModule,
-   issues,
-  );
+  const { dataset, files, lessons } = await readVocabularyLessons(vocabDir, schemaModule, issues);
 
   for (const entry of lessons) {
    auditLesson({
-   dataset,
-   file: entry.file,
-   lesson: entry.lesson,
-   issues,
-  });
+    dataset,
+    file: entry.file,
+    lesson: entry.lesson,
+    issues,
+   });
   }
 
   summaries.push(summarizeDataset({ dataset, files, lessons, issues }));

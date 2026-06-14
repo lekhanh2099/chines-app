@@ -61,17 +61,13 @@ export async function POST(request: NextRequest) {
 
  const finalize = (response: NextResponse) => {
   const totalMs = performance.now() - startedAt;
-  applyServerTimingHeaders(
-   response.headers,
-   [...metrics, { name: "total", durationMs: totalMs }],
-   {
-    "x-lookup-route": "deep",
-    "x-lookup-source": source,
-    "x-lookup-cache": cached ? "hit" : "miss",
-    "x-lookup-ai-status": aiStatus,
-    "x-lookup-user-keys": userApiKeyCount,
-   },
-  );
+  applyServerTimingHeaders(response.headers, [...metrics, { name: "total", durationMs: totalMs }], {
+   "x-lookup-route": "deep",
+   "x-lookup-source": source,
+   "x-lookup-cache": cached ? "hit" : "miss",
+   "x-lookup-ai-status": aiStatus,
+   "x-lookup-user-keys": userApiKeyCount,
+  });
 
   console.info(
    "[lookup/deep]",
@@ -96,21 +92,13 @@ export async function POST(request: NextRequest) {
 
   if (!parsed.success) {
    source = "invalid";
-   return finalize(
-    NextResponse.json(
-     { error: "Invalid deep lookup payload" },
-     { status: 400 },
-    ),
-   );
+   return finalize(NextResponse.json({ error: "Invalid deep lookup payload" }, { status: 400 }));
   }
 
   lookupText = normalizeDictionaryHeadword(parsed.data.text);
 
   const cacheStartedAt = performance.now();
-  const cachedDictionary = await getDictionaryEntryByHeadword(
-   supabase,
-   lookupText,
-  );
+  const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
   if (cachedDictionary) {
    const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);
@@ -140,8 +128,7 @@ export async function POST(request: NextRequest) {
      {
       id: cachedWord.id,
       hanzi: cachedWord.hanzi,
-      pinyin:
-       cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+      pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
       sino_vietnamese:
        cachedWord.sino_vietnamese ||
        cachedAnalysis.sino_vietnamese ||
@@ -161,12 +148,8 @@ export async function POST(request: NextRequest) {
   const {
    data: { user },
   } = await supabase.auth.getUser();
-  const promptSettings = user?.id
-   ? await getUserAiPromptSettings(supabase, user.id)
-   : null;
-  const userApiKeys = user?.id
-   ? await getActiveUserApiKeyCredentials(supabase, user.id)
-   : [];
+  const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
+  const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
   userApiKeyCount = userApiKeys.length;
   metrics.push({
    name: "auth",
@@ -179,10 +162,7 @@ export async function POST(request: NextRequest) {
   aiStatus = "running";
   const aiLookup = await analyzeHanziDetailed(lookupText, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
-   promptTemplate:
-    parsed.data.wordPromptTemplate ||
-    promptSettings?.wordLookupPrompt ||
-    undefined,
+   promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
    userApiKeys,
    abortSignal: request.signal,
   });
@@ -220,10 +200,7 @@ export async function POST(request: NextRequest) {
   let legacyVocabId: string | undefined;
 
   if (dictionaryEntry) {
-   const mirrored = await syncDictionaryEntryToLegacyVocab(
-    supabase,
-    dictionaryEntry,
-   );
+   const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
    legacyVocabId = mirrored?.id;
   } else {
    const mirrored = await upsertVocab(supabase, {
@@ -248,8 +225,7 @@ export async function POST(request: NextRequest) {
      dictionary_id: dictionaryEntry?.id,
      hanzi: lookupText,
      pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
-     sino_vietnamese:
-      aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || undefined,
+     sino_vietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || undefined,
      meaning: getPrimaryMeaning(aiLookup.data, ""),
      ai_analysis: aiLookup.data,
     },
@@ -270,10 +246,7 @@ export async function POST(request: NextRequest) {
   }
 
   return finalize(
-   NextResponse.json(
-    { error: "Lookup deep failed unexpectedly." },
-    { status: 500 },
-   ),
+   NextResponse.json({ error: "Lookup deep failed unexpectedly." }, { status: 500 }),
   );
  }
 }

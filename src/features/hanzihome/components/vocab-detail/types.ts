@@ -1,10 +1,4 @@
-export type SectionView =
- | "all"
- | "meaning"
- | "etymology"
- | "comparisons"
- | "examples"
- | "notes";
+export type SectionView = "all" | "meaning" | "etymology" | "comparisons" | "examples" | "notes";
 
 export const sectionShortcutTabs: Array<{
  key: SectionView;

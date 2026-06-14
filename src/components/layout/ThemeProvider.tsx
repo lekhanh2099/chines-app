@@ -1,12 +1,6 @@
 "use client";
 
-import {
- createContext,
- useCallback,
- useContext,
- useEffect,
- useState,
-} from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
@@ -25,9 +19,7 @@ function getInitialTheme(): Theme {
  const stored = localStorage.getItem(STORAGE_KEY);
  if (stored === "dark" || stored === "light") return stored;
 
- return window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "dark"
-  : "light";
+ return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

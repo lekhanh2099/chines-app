@@ -26,9 +26,7 @@ import {
 
 export function useDictionaryPageViewModel(): DictionaryPageViewModel {
  const params = useParams<{ hanzi: string | string[] }>();
- const paramValue = Array.isArray(params.hanzi)
-  ? params.hanzi[0]
-  : params.hanzi;
+ const paramValue = Array.isArray(params.hanzi) ? params.hanzi[0] : params.hanzi;
  const rawText = decodeURIComponent(paramValue || "");
  const chineseCharacters = getUniqueChineseCharacters(rawText);
  const isSentenceView = isSentenceLikeQuery(rawText);
@@ -66,11 +64,9 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    text: rawText,
    characters: chineseCharacters,
    isLoading: sentenceQuery.isLoading,
-   translation:
-    sentenceQuery.data?.translation || sentenceQuery.data?.entry.meaning || "",
+   translation: sentenceQuery.data?.translation || sentenceQuery.data?.entry.meaning || "",
    pinyin: sentenceQuery.data?.entry.pinyin || "",
-   error:
-    sentenceQuery.error instanceof Error ? sentenceQuery.error.message : null,
+   error: sentenceQuery.error instanceof Error ? sentenceQuery.error.message : null,
   };
  }
 
@@ -89,8 +85,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    : ai?.etymology;
  const definitions = getNormalizedDefinitions(ai, vocabData.meaning || "");
  const radicals = getNormalizedRadicals(ai);
- const meaningSummary =
-  ai?.meaning_summary || definitions[0]?.meaning || vocabData.meaning || "";
+ const meaningSummary = ai?.meaning_summary || definitions[0]?.meaning || vocabData.meaning || "";
  const examples = (
   ai?.examples ??
   definitions
@@ -131,9 +126,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    definition.examples.map((example) => getExampleKey(example)),
   ),
  );
- const extraExamples = examples.filter(
-  (example) => !usedExampleKeys.has(getExampleKey(example)),
- );
+ const extraExamples = examples.filter((example) => !usedExampleKeys.has(getExampleKey(example)));
  const hasLearningInsights = Boolean(
   ai?.mnemonic_story ||
   ai?.usage_logic?.length ||
@@ -217,9 +210,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    {
     onSuccess: () => toast.success("Đã lưu ghi chú cá nhân"),
     onError: (error) =>
-     toast.error(
-      error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân",
-     ),
+     toast.error(error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân"),
    },
   );
  };

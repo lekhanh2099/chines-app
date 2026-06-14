@@ -1,11 +1,6 @@
 import { PassageCard } from "../PassageCard";
 import type { LessonDisplayMode } from "../types";
-import {
- asRecord,
- getClozeAnswerValues,
- getPassageLikeValue,
- stringValue,
-} from "../utils";
+import { asRecord, getClozeAnswerValues, getPassageLikeValue, stringValue } from "../utils";
 import { FieldListItem } from "./FieldListItem";
 import {
  fieldFallbackText,
@@ -39,9 +34,7 @@ export function FieldValue({
       key={`field-entry-${index}`}
       value={entry}
       displayMode={displayMode}
-      renderFallback={(nestedValue) => (
-       <FieldValue value={nestedValue} displayMode={displayMode} />
-      )}
+      renderFallback={(nestedValue) => <FieldValue value={nestedValue} displayMode={displayMode} />}
      />
     ))}
    </div>

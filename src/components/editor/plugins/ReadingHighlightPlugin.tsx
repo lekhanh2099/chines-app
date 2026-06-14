@@ -85,11 +85,7 @@ export default function ReadingHighlightPlugin() {
  }, [editor]);
 
  useEffect(() => {
-  return editor.registerCommand(
-   CLICK_COMMAND,
-   handleClick,
-   COMMAND_PRIORITY_LOW,
-  );
+  return editor.registerCommand(CLICK_COMMAND, handleClick, COMMAND_PRIORITY_LOW);
  }, [editor, handleClick]);
 
  return null;

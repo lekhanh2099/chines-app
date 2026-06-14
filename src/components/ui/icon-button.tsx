@@ -31,13 +31,7 @@ type IconButtonProps = React.ComponentProps<"button"> &
  ButtonPrimitive.Props &
  VariantProps<typeof iconButtonVariants>;
 
-function IconButton({
- className,
- variant,
- size,
- children,
- ...rest
-}: IconButtonProps) {
+function IconButton({ className, variant, size, children, ...rest }: IconButtonProps) {
  return (
   <ButtonPrimitive
    className={cn(iconButtonVariants({ variant, size, className }))}

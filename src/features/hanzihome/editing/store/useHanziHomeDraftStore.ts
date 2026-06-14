@@ -63,8 +63,7 @@ export const useHanziHomeDraftStore = create<HanziHomeDraftStore>((set, get) => 
    const current = state.skippedPatchIdsByLesson[lessonId] ?? [];
    const next = [...new Set(patchIds)];
    const unchanged =
-    current.length === next.length &&
-    current.every((patchId, index) => patchId === next[index]);
+    current.length === next.length && current.every((patchId, index) => patchId === next[index]);
 
    if (unchanged) return state;
 
@@ -75,10 +74,8 @@ export const useHanziHomeDraftStore = create<HanziHomeDraftStore>((set, get) => 
     },
    };
   }),
- getSkippedPatchIds: (lessonId) =>
-  get().skippedPatchIdsByLesson[lessonId] ?? [],
- getLessonPatches: (lessonId) =>
-  get().patches.filter((patch) => patch.lessonId === lessonId),
+ getSkippedPatchIds: (lessonId) => get().skippedPatchIdsByLesson[lessonId] ?? [],
+ getLessonPatches: (lessonId) => get().patches.filter((patch) => patch.lessonId === lessonId),
 }));
 
 export function getLessonPatches(lessonId: string) {

@@ -21,9 +21,9 @@ export function ModelBlock({
   const record = asRecord(value);
   return Boolean(
    stringValue(record, "zh") ||
-    stringValue(record, "text") ||
-    stringValue(record, "prompt") ||
-    stringValue(record, "answer"),
+   stringValue(record, "text") ||
+   stringValue(record, "prompt") ||
+   stringValue(record, "answer"),
   );
  });
 

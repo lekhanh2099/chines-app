@@ -55,11 +55,7 @@ import {
  $getSelectionStyleValueForProperty,
  $setBlocksType,
 } from "@lexical/selection";
-import {
- $findMatchingParent,
- $getNearestNodeOfType,
- mergeRegister,
-} from "@lexical/utils";
+import { $findMatchingParent, $getNearestNodeOfType, mergeRegister } from "@lexical/utils";
 import {
  Undo2,
  Redo2,
@@ -168,12 +164,7 @@ function ToolbarButton({
    onClick={onClick}
    title={title}
    aria-label={title}
-   className={[
-    "toolbar-item",
-    active ? "active" : "",
-    disabled ? "disabled" : "",
-    className,
-   ]
+   className={["toolbar-item", active ? "active" : "", disabled ? "disabled" : "", className]
     .filter(Boolean)
     .join(" ")}
   >
@@ -228,11 +219,7 @@ function Dropdown({
     <ChevronDown className="toolbar-chevron" />
    </button>
    {open && (
-    <div
-     className="toolbar-dropdown-panel"
-     onMouseDown={pf}
-     onClick={() => setOpen(false)}
-    >
+    <div className="toolbar-dropdown-panel" onMouseDown={pf} onClick={() => setOpen(false)}>
      {children}
     </div>
    )}
@@ -372,8 +359,7 @@ function ColorPicker({
       className="toolbar-color-indicator"
       style={{
        backgroundColor:
-        activeColor ||
-        (label === "Text Color" ? "var(--text-primary)" : "transparent"),
+        activeColor || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
        border: !activeColor ? "1px solid var(--border)" : "none",
       }}
      />
@@ -381,10 +367,7 @@ function ColorPicker({
     <ChevronDown className="toolbar-chevron" />
    </button>
    {open && (
-    <div
-     className="toolbar-dropdown-panel toolbar-color-panel"
-     onMouseDown={pf}
-    >
+    <div className="toolbar-dropdown-panel toolbar-color-panel" onMouseDown={pf}>
      <div className="toolbar-color-grid">
       {colors.map((c) => (
        <button
@@ -399,8 +382,7 @@ function ColorPicker({
         className={`toolbar-color-swatch ${activeColor === c.value ? "active" : ""}`}
         style={{
          backgroundColor:
-          c.value ||
-          (label === "Text Color" ? "var(--text-primary)" : "transparent"),
+          c.value || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
         }}
        >
         {!c.value && <span className="toolbar-color-reset">✕</span>}
@@ -455,13 +437,7 @@ function formatCode(editor: LexicalEditor) {
 
 /* ── Insert Table Dialog (Playground-style) ── */
 
-function InsertTableDialog({
- editor,
- onClose,
-}: {
- editor: LexicalEditor;
- onClose: () => void;
-}) {
+function InsertTableDialog({ editor, onClose }: { editor: LexicalEditor; onClose: () => void }) {
  const [rows, setRows] = useState("5");
  const [columns, setColumns] = useState("5");
 
@@ -479,17 +455,10 @@ function InsertTableDialog({
 
  return (
   <div className="insert-table-dialog-overlay" onMouseDown={onClose}>
-   <div
-    className="insert-table-dialog"
-    onMouseDown={(e) => e.stopPropagation()}
-   >
+   <div className="insert-table-dialog" onMouseDown={(e) => e.stopPropagation()}>
     <div className="insert-table-dialog-header">
      <h3>Insert Table</h3>
-     <button
-      type="button"
-      onClick={onClose}
-      className="insert-table-dialog-close"
-     >
+     <button type="button" onClick={onClose} className="insert-table-dialog-close">
       <X className="w-4 h-4" />
      </button>
     </div>
@@ -522,11 +491,7 @@ function InsertTableDialog({
      </label>
     </div>
     <div className="insert-table-dialog-footer">
-     <button
-      type="button"
-      onClick={handleConfirm}
-      className="insert-table-dialog-confirm"
-     >
+     <button type="button" onClick={handleConfirm} className="insert-table-dialog-confirm">
       Confirm
      </button>
     </div>
@@ -537,13 +502,7 @@ function InsertTableDialog({
 
 /* ── + Insert Dropdown (Playground-style) ── */
 
-function InsertDropdown({
- editor,
- isEditable,
-}: {
- editor: LexicalEditor;
- isEditable: boolean;
-}) {
+function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEditable: boolean }) {
  const [open, setOpen] = useState(false);
  const [showTableDialog, setShowTableDialog] = useState(false);
  const ref = useRef<HTMLDivElement>(null);
@@ -602,10 +561,7 @@ function InsertDropdown({
     )}
    </div>
    {showTableDialog && (
-    <InsertTableDialog
-     editor={editor}
-     onClose={() => setShowTableDialog(false)}
-    />
+    <InsertTableDialog editor={editor} onClose={() => setShowTableDialog(false)} />
    )}
   </>
  );
@@ -630,8 +586,7 @@ export default function ToolbarPlugin() {
  const [isCode, setIsCode] = useState(false);
 
  // Block type
- const [blockType, setBlockType] =
-  useState<keyof typeof BLOCK_TYPES>("paragraph");
+ const [blockType, setBlockType] = useState<keyof typeof BLOCK_TYPES>("paragraph");
 
  // Font
  const [fontFamily, setFontFamily] = useState("");
@@ -662,16 +617,10 @@ export default function ToolbarPlugin() {
   setIsCode(selection.hasFormat("code"));
 
   // Inline style state
-  setFontFamily(
-   $getSelectionStyleValueForProperty(selection, "font-family", ""),
-  );
-  setFontSize(
-   $getSelectionStyleValueForProperty(selection, "font-size", "16px"),
-  );
+  setFontFamily($getSelectionStyleValueForProperty(selection, "font-family", ""));
+  setFontSize($getSelectionStyleValueForProperty(selection, "font-size", "16px"));
   setFontColor($getSelectionStyleValueForProperty(selection, "color", ""));
-  setBgColor(
-   $getSelectionStyleValueForProperty(selection, "background-color", ""),
-  );
+  setBgColor($getSelectionStyleValueForProperty(selection, "background-color", ""));
 
   // Block type
   const anchorNode = selection.anchor.getNode();
@@ -696,9 +645,7 @@ export default function ToolbarPlugin() {
   if ($isListNode(element)) {
    const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode);
    const type = parentList ? parentList.getListType() : element.getListType();
-   setBlockType(
-    type === "number" ? "number" : type === "check" ? "check" : "bullet",
-   );
+   setBlockType(type === "number" ? "number" : type === "check" ? "check" : "bullet");
   } else if ($isHeadingNode(element)) {
    setBlockType(element.getTag() as keyof typeof BLOCK_TYPES);
   } else if ($isCodeNode(element)) {
@@ -807,11 +754,7 @@ export default function ToolbarPlugin() {
     disabled={!isEditable}
    >
     {Object.entries(BLOCK_TYPES).map(([key, label]) => (
-     <DropdownItem
-      key={key}
-      active={blockType === key}
-      onClick={() => handleBlockFormat(key)}
-     >
+     <DropdownItem key={key} active={blockType === key} onClick={() => handleBlockFormat(key)}>
       {label}
      </DropdownItem>
     ))}
@@ -961,9 +904,7 @@ export default function ToolbarPlugin() {
    <ToolbarButton
     active={blockType === "bullet"}
     disabled={!isEditable}
-    onClick={() =>
-     editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
-    }
+    onClick={() => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)}
     title="Bullet List"
    >
     <List className="w-4 h-4" />
@@ -971,9 +912,7 @@ export default function ToolbarPlugin() {
    <ToolbarButton
     active={blockType === "number"}
     disabled={!isEditable}
-    onClick={() =>
-     editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
-    }
+    onClick={() => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)}
     title="Numbered List"
    >
     <ListOrdered className="w-4 h-4" />

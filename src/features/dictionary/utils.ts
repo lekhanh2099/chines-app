@@ -5,20 +5,14 @@ export const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
 
 export function getUniqueChineseCharacters(text: string): string[] {
  return Array.from(
-  new Set(
-   Array.from(extractChinese(text)).filter((character) =>
-    HANZI_CHAR_REGEX.test(character),
-   ),
-  ),
+  new Set(Array.from(extractChinese(text)).filter((character) => HANZI_CHAR_REGEX.test(character))),
  );
 }
 
 export function isSentenceLikeQuery(text: string): boolean {
  const normalized = text.trim();
  const chineseOnly = extractChinese(normalized);
- return (
-  /[\s\n，。！？；：、,.!?;:]/.test(normalized) || chineseOnly.length >= 6
- );
+ return /[\s\n，。！？；：、,.!?;:]/.test(normalized) || chineseOnly.length >= 6;
 }
 
 export function normalizeExample(example: {

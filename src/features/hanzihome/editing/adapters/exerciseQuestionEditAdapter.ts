@@ -1,21 +1,15 @@
 import type { EditAdapter } from "./types";
 
 function asRecord(value: unknown): { [key: string]: unknown } {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? { ...value }
-  : {};
+ return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
 function editableText(value: unknown) {
  if (Array.isArray(value)) {
-  return value
-   .filter((item): item is string => typeof item === "string")
-   .join("\n");
+  return value.filter((item): item is string => typeof item === "string").join("\n");
  }
 
- return typeof value === "string" || typeof value === "number"
-  ? String(value)
-  : "";
+ return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
 function preserveTextShape(original: unknown, value: string) {
@@ -39,11 +33,7 @@ export const exerciseQuestionEditAdapter: EditAdapter = {
   { key: "explanation_vi", label: "Giải thích", kind: "textarea" },
  ],
  toValues: (value) => {
-  if (
-   typeof value === "string" ||
-   typeof value === "number" ||
-   typeof value === "boolean"
-  ) {
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
    return {
     prompt: editableText(value),
     choices: "",

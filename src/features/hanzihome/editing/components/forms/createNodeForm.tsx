@@ -1,10 +1,7 @@
 "use client";
 
 import type { EditAdapter } from "../../adapters/types";
-import {
- StructuredNodeForm,
- type StructuredNodeFormProps,
-} from "./StructuredNodeForm";
+import { StructuredNodeForm, type StructuredNodeFormProps } from "./StructuredNodeForm";
 
 export type NodeFormProps = Omit<StructuredNodeFormProps, "adapter">;
 

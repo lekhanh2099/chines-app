@@ -1,7 +1,4 @@
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 import { LooseItemGrid } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";

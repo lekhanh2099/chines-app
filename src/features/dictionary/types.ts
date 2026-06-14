@@ -87,6 +87,4 @@ export type DictionaryWordViewModel =
  | DictionaryWordNotFoundViewModel
  | DictionaryWordReadyViewModel;
 
-export type DictionaryPageViewModel =
- | DictionarySentenceViewModel
- | DictionaryWordViewModel;
+export type DictionaryPageViewModel = DictionarySentenceViewModel | DictionaryWordViewModel;

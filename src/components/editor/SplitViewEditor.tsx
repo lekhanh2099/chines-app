@@ -46,20 +46,13 @@ export function SplitViewEditor({
  return (
   <div ref={containerRef} className="split-view-container">
    {/* Left Pane — Reading / Lesson Passage */}
-   <div
-    className="split-view-pane split-view-pane-left"
-    style={{ width: `${dividerPosition}%` }}
-   >
+   <div className="split-view-pane split-view-pane-left" style={{ width: `${dividerPosition}%` }}>
     <div className="split-view-pane-header">
      <BookOpen className="w-3.5 h-3.5" />
      <span>Bài đọc</span>
     </div>
     <div className="split-view-pane-content">
-     <Editor
-      initialContent={readingContent}
-      onChange={onReadingChange}
-      seamless
-     />
+     <Editor initialContent={readingContent} onChange={onReadingChange} seamless />
     </div>
    </div>
 

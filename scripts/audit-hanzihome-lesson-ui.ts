@@ -65,7 +65,15 @@ function hasRenderableGrammarBlock(blockValue: unknown): boolean {
  const block = asRecord(blockValue);
  return (
   hasAnyText(block, ["content_vi", "pattern", "meaning_vi", "wrong_pattern", "title"]) ||
-  hasAnyArray(block, ["examples", "formulas", "notes_vi", "items", "questions", "correct_examples", "wrong_examples"])
+  hasAnyArray(block, [
+   "examples",
+   "formulas",
+   "notes_vi",
+   "items",
+   "questions",
+   "correct_examples",
+   "wrong_examples",
+  ])
  );
 }
 
@@ -86,27 +94,30 @@ function hasRenderableExercise(itemValue: unknown): boolean {
   return true;
  }
  if (hasText(item.instruction)) return true;
- if (hasAnyArray(item, [
-  "parts",
-  "items",
-  "questions",
-  "dialogues",
-  "dialogue",
-  "practice_tasks",
-  "chunks",
-  "drills",
-  "groups",
-  "patterns",
-  "prompts",
-  "supplementary_vocab",
-  "supplementary_words",
-  "word_bank",
-  "left_items",
-  "right_items",
-  "answer_key",
-  "model",
-  "models",
- ])) return true;
+ if (
+  hasAnyArray(item, [
+   "parts",
+   "items",
+   "questions",
+   "dialogues",
+   "dialogue",
+   "practice_tasks",
+   "chunks",
+   "drills",
+   "groups",
+   "patterns",
+   "prompts",
+   "supplementary_vocab",
+   "supplementary_words",
+   "word_bank",
+   "left_items",
+   "right_items",
+   "answer_key",
+   "model",
+   "models",
+  ])
+ )
+  return true;
 
  return hasText(item.model);
 }
@@ -114,17 +125,20 @@ function hasRenderableExercise(itemValue: unknown): boolean {
 function hasRenderableReading(itemValue: unknown): boolean {
  const item = asRecord(itemValue);
  if (hasAnyText(item, ["title", "title_vi", "text", "vi", "passage"])) return true;
- if (hasAnyArray(item, [
-  "supplementary_words",
-  "supplementary_vocab",
-  "items",
-  "paragraphs",
-  "questions",
-  "word_bank",
-  "answers",
-  "answer_key",
-  "cloze_segments",
- ])) return true;
+ if (
+  hasAnyArray(item, [
+   "supplementary_words",
+   "supplementary_vocab",
+   "items",
+   "paragraphs",
+   "questions",
+   "word_bank",
+   "answers",
+   "answer_key",
+   "cloze_segments",
+  ])
+ )
+  return true;
 
  const passage = asRecord(item.passage);
  return hasAnyArray(passage, ["segments"]) || hasText(item.passage);
@@ -139,14 +153,7 @@ function hasAnswerValue(value: unknown): boolean {
  }
 
  const record = asRecord(value);
- return hasAnyText(record, [
-  "answer",
-  "answer_zh",
-  "value",
-  "text",
-  "zh",
-  "sample_answer",
- ]);
+ return hasAnyText(record, ["answer", "answer_zh", "value", "text", "zh", "sample_answer"]);
 }
 
 function firstAnswerSource(item: Record<string, unknown>): unknown[] {
@@ -221,9 +228,7 @@ function auditReadingCloze(
  const variant = stringValue(item, "variant");
  const type = stringValue(item, "type");
  const isReadingCloze =
-  type === "reading_fill_blank" ||
-  variant.includes("cloze") ||
-  renderer.includes("cloze");
+  type === "reading_fill_blank" || variant.includes("cloze") || renderer.includes("cloze");
 
  if (!isReadingCloze) return [];
 
@@ -330,7 +335,9 @@ function auditMinimalPairGroups(
 function auditLessonFile(
  file: string,
  input: unknown,
- schema: { parse(input: unknown): { lesson: { id: string; sections: Array<Record<string, unknown>> } } },
+ schema: {
+  parse(input: unknown): { lesson: { id: string; sections: Array<Record<string, unknown>> } };
+ },
 ): AuditIssue[] {
  const lesson = schema.parse(input);
  const issues: AuditIssue[] = [];
@@ -342,7 +349,12 @@ function auditLessonFile(
   if (section.type === "text") {
    const blocks = arrayValue(section, "blocks");
    if (!blocks.some(hasRenderableTextBlock)) {
-    issues.push({ file, lesson: lesson.lesson.id, section: sectionLabel, reason: "text section has no renderable block lines/paragraphs" });
+    issues.push({
+     file,
+     lesson: lesson.lesson.id,
+     section: sectionLabel,
+     reason: "text section has no renderable block lines/paragraphs",
+    });
    }
    continue;
   }
@@ -352,7 +364,13 @@ function auditLessonFile(
     const item = asRecord(itemValue);
     const blocks = arrayValue(item, "blocks");
     if (blocks.length === 0 || !blocks.some(hasRenderableGrammarBlock)) {
-     issues.push({ file, lesson: lesson.lesson.id, section: sectionLabel, item: stringValue(item, "id"), reason: "grammar point has no renderable blocks" });
+     issues.push({
+      file,
+      lesson: lesson.lesson.id,
+      section: sectionLabel,
+      item: stringValue(item, "id"),
+      reason: "grammar point has no renderable blocks",
+     });
     }
    }
    continue;
@@ -362,7 +380,13 @@ function auditLessonFile(
    for (const itemValue of arrayValue(section, "items")) {
     const item = asRecord(itemValue);
     if (!hasRenderableExercise(item)) {
-     issues.push({ file, lesson: lesson.lesson.id, section: sectionLabel, item: stringValue(item, "id"), reason: `exercise ${stringValue(item, "type")} has no supported renderable payload` });
+     issues.push({
+      file,
+      lesson: lesson.lesson.id,
+      section: sectionLabel,
+      item: stringValue(item, "id"),
+      reason: `exercise ${stringValue(item, "type")} has no supported renderable payload`,
+     });
     }
     issues.push(...auditReadingCloze(file, lesson.lesson.id, sectionLabel, item));
     issues.push(...auditMinimalPairGroups(file, lesson.lesson.id, sectionLabel, item));
@@ -374,7 +398,13 @@ function auditLessonFile(
    for (const itemValue of arrayValue(section, "items")) {
     const item = asRecord(itemValue);
     if (!hasRenderableReading(item)) {
-     issues.push({ file, lesson: lesson.lesson.id, section: sectionLabel, item: stringValue(item, "id"), reason: `reading item ${stringValue(item, "type")} has no supported renderable payload` });
+     issues.push({
+      file,
+      lesson: lesson.lesson.id,
+      section: sectionLabel,
+      item: stringValue(item, "id"),
+      reason: `reading item ${stringValue(item, "type")} has no supported renderable payload`,
+     });
     }
    }
    continue;
@@ -419,7 +449,12 @@ function auditLessonFile(
   if (hasAnyText(sectionRecord, ["empty_reason_vi"])) continue;
 
   if (!hasAnyArray(sectionRecord, ["items", "blocks"])) {
-   issues.push({ file, lesson: lesson.lesson.id, section: sectionLabel, reason: "section has no items/blocks" });
+   issues.push({
+    file,
+    lesson: lesson.lesson.id,
+    section: sectionLabel,
+    reason: "section has no items/blocks",
+   });
   }
  }
 
@@ -442,11 +477,13 @@ async function main() {
    .sort();
 
   for (const file of lessonFiles) {
-   issues.push(...auditLessonFile(
-    path.join(dataset.dir, "lessons", file),
-    await readJson(path.join(lessonDir, file)),
-    HanyuLessonSchema,
-   ));
+   issues.push(
+    ...auditLessonFile(
+     path.join(dataset.dir, "lessons", file),
+     await readJson(path.join(lessonDir, file)),
+     HanyuLessonSchema,
+    ),
+   );
   }
 
   summaries.push({ id: dataset.id, lessonDocuments: lessonFiles.length });

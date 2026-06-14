@@ -1148,4 +1148,3 @@ UX requirements:
 10. Mobile no horizontal overflow.
 
 Deliver clean code with feature folders, typed schemas, validation report, and Playwright smoke tests.
-

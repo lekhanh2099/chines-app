@@ -9,10 +9,7 @@ export function PasswordField({
  description,
  helperText,
  ...rest
-}: Omit<
- React.InputHTMLAttributes<HTMLInputElement>,
- "value" | "onChange" | "onBlur" | "type"
-> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<string>();
  const [showPassword, setShowPassword] = useState(false);
@@ -40,11 +37,7 @@ export function PasswordField({
      onClick={() => setShowPassword(!showPassword)}
      className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors"
     >
-     {showPassword ? (
-      <EyeOff className="w-5 h-5" />
-     ) : (
-      <Eye className="w-5 h-5" />
-     )}
+     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
     </button>
    </div>
   </FieldItem>

@@ -22,9 +22,7 @@ type GrammarWorkspaceProps = {
 const ALL_GRAMMAR_POINTS_ID = "__all__";
 const READING_VIEW_ID = "__reading__";
 
-export function GrammarWorkspace({
- compact = false,
-}: GrammarWorkspaceProps) {
+export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  const runtime = useHanziHomeRuntime();
  const { lesson, learningState: state } = runtime;
  const actions = useHanziHomeFeatureActions();
@@ -138,9 +136,7 @@ export function GrammarWorkspace({
    relatedVocab={relatedVocab}
    lessonId={lesson.id}
    onBookmark={() => selectedPoint && runtime.bookmarkGrammar(selectedPoint.id)}
-   onMarkStatus={(status) =>
-    selectedPoint && runtime.markGrammar(selectedPoint.id, status)
-   }
+   onMarkStatus={(status) => selectedPoint && runtime.markGrammar(selectedPoint.id, status)}
   />
  );
 

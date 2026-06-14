@@ -65,9 +65,9 @@ export function LessonSplitNoteEditor({ noteId }: { noteId: string }) {
       {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
      </span>
      <Button type="button" variant="outline" onClick={() => updateSplitView(!splitEnabled)}>
-     {splitEnabled ? "Đóng Split" : "Mở Split"}
-    </Button>
-    <Button asChild variant="outline">
+      {splitEnabled ? "Đóng Split" : "Mở Split"}
+     </Button>
+     <Button asChild variant="outline">
       <Link href={`/notes/${note.id}`} prefetch={false}>
        <ExternalLink className="h-4 w-4" />
        Mở note

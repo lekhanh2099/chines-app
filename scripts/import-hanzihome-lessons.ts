@@ -119,14 +119,22 @@ function getLessonIndex(input: unknown, fallbackIndex: number): number {
  return sourceIndex ?? lessonNumber ?? fallbackIndex;
 }
 
-function getCourseBookPrefix(course: ImportArgs["course"], volume: string, lessonIndex: number): string {
+function getCourseBookPrefix(
+ course: ImportArgs["course"],
+ volume: string,
+ lessonIndex: number,
+): string {
  const courseNumber = course === "q3" ? 3 : 2;
  const part = volume.includes("下") || lessonIndex >= 13 ? 2 : 1;
 
  return `${courseNumber}_${part}`;
 }
 
-function getOutputFileName(input: unknown, course: ImportArgs["course"], fallbackIndex: number): string {
+function getOutputFileName(
+ input: unknown,
+ course: ImportArgs["course"],
+ fallbackIndex: number,
+): string {
  const root = isRecord(input) ? input : {};
  const source = isRecord(root.source) ? root.source : {};
  const lessonIndex = getLessonIndex(input, fallbackIndex);
@@ -314,55 +322,57 @@ function buildLessonSummary(lesson: JsonRecord, sections: JsonRecord[]): JsonRec
   grammar_points:
    arrayValue(embeddedSummary, "grammar_points").length > 0
     ? normalizeSummaryGrammarPoints(arrayValue(embeddedSummary, "grammar_points"))
-    : arrayValue(grammarSection ?? {}, "items").map((itemValue) => {
-      const item = isRecord(itemValue) ? itemValue : {};
-      return {
-       id: stringValue(item, "id"),
-       title: stringValue(item, "title_vi") || stringValue(item, "title"),
-      };
-     }).filter((item) => item.id || item.title),
+    : arrayValue(grammarSection ?? {}, "items")
+       .map((itemValue) => {
+        const item = isRecord(itemValue) ? itemValue : {};
+        return {
+         id: stringValue(item, "id"),
+         title: stringValue(item, "title_vi") || stringValue(item, "title"),
+        };
+       })
+       .filter((item) => item.id || item.title),
   main_patterns:
    arrayValue(embeddedSummary, "main_patterns").length > 0
     ? arrayValue(embeddedSummary, "main_patterns")
     : arrayValue(embeddedSummary, "key_patterns").map((pattern) => ({
-      pattern: typeof pattern === "string" ? pattern : String(pattern),
-     })),
+       pattern: typeof pattern === "string" ? pattern : String(pattern),
+      })),
   exercise_types: arrayValue(exercisesSection ?? {}, "items")
-   .map((itemValue) => stringValue(isRecord(itemValue) ? itemValue : {}, "title_vi") || stringValue(isRecord(itemValue) ? itemValue : {}, "title"))
+   .map(
+    (itemValue) =>
+     stringValue(isRecord(itemValue) ? itemValue : {}, "title_vi") ||
+     stringValue(isRecord(itemValue) ? itemValue : {}, "title"),
+   )
    .filter(Boolean),
   check_needed: Boolean(lesson.check_needed),
  };
 }
 
 function normalizeSummaryGrammarPoints(values: unknown[]): SummaryGrammarPoint[] {
-	 return values
-	  .map((value, index) => {
-	   if (typeof value === "string") {
-	    return {
-	     id: `summary_grammar_${String(index + 1).padStart(2, "0")}`,
+ return values
+  .map((value, index) => {
+   if (typeof value === "string") {
+    return {
+     id: `summary_grammar_${String(index + 1).padStart(2, "0")}`,
      title: value,
     };
    }
 
    if (!isRecord(value)) return null;
 
-	   return {
-	    ...value,
-	    id: stringValue(value, "id") || `summary_grammar_${String(index + 1).padStart(2, "0")}`,
-	    title: stringValue(value, "title") || stringValue(value, "title_vi") || stringValue(value, "pattern"),
-	   };
-	  })
-	  .filter(
-	   (value): value is SummaryGrammarPoint =>
-	    Boolean(value?.id) && Boolean(value?.title),
-	  );
-	}
+   return {
+    ...value,
+    id: stringValue(value, "id") || `summary_grammar_${String(index + 1).padStart(2, "0")}`,
+    title:
+     stringValue(value, "title") || stringValue(value, "title_vi") || stringValue(value, "pattern"),
+   };
+  })
+  .filter((value): value is SummaryGrammarPoint => Boolean(value?.id) && Boolean(value?.title));
+}
 
 function normalizeLessonSummary(summary: unknown): JsonRecord {
  const source = isRecord(summary) ? { ...summary } : {};
- source.grammar_points = normalizeSummaryGrammarPoints(
-  arrayValue(source, "grammar_points"),
- );
+ source.grammar_points = normalizeSummaryGrammarPoints(arrayValue(source, "grammar_points"));
 
  return source;
 }
@@ -374,9 +384,7 @@ function normalizeCharacterWritingSection(section: JsonRecord): JsonRecord {
   item.type = stringValue(item, "type") || "character_writing_item";
   item.order = numberValue(item, "order") ?? index + 1;
   item.hanzi =
-   stringValue(item, "hanzi") ||
-   stringValue(item, "character") ||
-   stringValue(item, "text");
+   stringValue(item, "hanzi") || stringValue(item, "character") || stringValue(item, "text");
 
   return item;
  });
@@ -443,7 +451,8 @@ function normalizeReadingSection(section: JsonRecord): JsonRecord {
 function normalizeSection(sectionValue: unknown, index: number): JsonRecord {
  const section = isRecord(sectionValue) ? { ...sectionValue } : {};
  const sectionType = stringValue(section, "type") || "other";
- section.id = stringValue(section, "id") || `section_${String(index + 1).padStart(2, "0")}_${sectionType}`;
+ section.id =
+  stringValue(section, "id") || `section_${String(index + 1).padStart(2, "0")}_${sectionType}`;
  section.order = numberValue(section, "order") ?? index + 1;
  section.title = stringValue(section, "title") || sectionType;
  if (isRecord(section.items)) section.items = [section.items];
@@ -472,15 +481,11 @@ function normalizeLessonDocument(input: unknown): unknown {
   volume_vi: stringValue(source, "volume_vi"),
   lesson_index: lessonIndex,
   lesson_number_cn: stringValue(source, "lesson_number_cn"),
-  lesson_title_cn:
-   stringValue(source, "lesson_title_cn") || stringValue(lessonTitle, "zh"),
+  lesson_title_cn: stringValue(source, "lesson_title_cn") || stringValue(lessonTitle, "zh"),
   lesson_title_pinyin:
-   stringValue(source, "lesson_title_pinyin") ||
-   stringValue(lessonTitle, "pinyin"),
-  lesson_title_vi:
-   stringValue(source, "lesson_title_vi") || stringValue(lessonTitle, "vi"),
-  lesson_title_en:
-   stringValue(source, "lesson_title_en") || stringValue(lessonTitle, "en"),
+   stringValue(source, "lesson_title_pinyin") || stringValue(lessonTitle, "pinyin"),
+  lesson_title_vi: stringValue(source, "lesson_title_vi") || stringValue(lessonTitle, "vi"),
+  lesson_title_en: stringValue(source, "lesson_title_en") || stringValue(lessonTitle, "en"),
   source_files: arrayValue(source, "source_files"),
  };
  lesson.sections = sections;

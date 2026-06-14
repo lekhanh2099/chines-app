@@ -6,22 +6,14 @@ import { VocabList } from "@/features/hanzihome/components/VocabList";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
-import {
- getVocabItemKey,
- getVocabSearchText,
-} from "@/features/hanzihome/utils/vocab-item";
-import {
- EditableNodeWrapper,
- type DraftPatchPath,
-} from "@/features/hanzihome/editing";
+import { getVocabItemKey, getVocabSearchText } from "@/features/hanzihome/utils/vocab-item";
+import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
 
 type VocabWorkspaceProps = {
  compact?: boolean;
 };
 
-export function VocabWorkspace({
- compact = false,
-}: VocabWorkspaceProps) {
+export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
  const runtime = useHanziHomeRuntime();
  const { lesson, learningState: state } = runtime;
  const actions = useHanziHomeFeatureActions();
@@ -29,18 +21,11 @@ export function VocabWorkspace({
  const selectedWordId = useHanziHomeFeatureSelector(
   (featureState) => featureState.vocabSelectedWordId,
  );
- const searchValue = useHanziHomeFeatureSelector(
-  (featureState) => featureState.vocabSearchValue,
- );
- const statusFilter = useHanziHomeFeatureSelector(
-  (featureState) => featureState.vocabStatusFilter,
- );
+ const searchValue = useHanziHomeFeatureSelector((featureState) => featureState.vocabSearchValue);
+ const statusFilter = useHanziHomeFeatureSelector((featureState) => featureState.vocabStatusFilter);
 
  const bookmarks = state.bookmarks.vocab || [];
- const progress = useMemo(
-  () => state.progress.vocab || {},
-  [state.progress.vocab],
- );
+ const progress = useMemo(() => state.progress.vocab || {}, [state.progress.vocab]);
 
  const visibleWords = useMemo(() => {
   const keyword = searchValue.trim().toLowerCase();
@@ -57,9 +42,7 @@ export function VocabWorkspace({
 
  const selectedWord = useMemo(
   () =>
-   visibleWords.find((word) => getVocabItemKey(word) === selectedWordId) ||
-   visibleWords[0] ||
-   null,
+   visibleWords.find((word) => getVocabItemKey(word) === selectedWordId) || visibleWords[0] || null,
   [selectedWordId, visibleWords],
  );
  const selectedWordPath = useMemo<DraftPatchPath | null>(() => {
@@ -77,14 +60,10 @@ export function VocabWorkspace({
    if (visibleWords.length === 0) return;
 
    const currentIndex = selectedWord
-    ? visibleWords.findIndex(
-       (word) => getVocabItemKey(word) === getVocabItemKey(selectedWord),
-      )
+    ? visibleWords.findIndex((word) => getVocabItemKey(word) === getVocabItemKey(selectedWord))
     : -1;
    const nextIndex =
-    currentIndex >= 0
-     ? (currentIndex + offset + visibleWords.length) % visibleWords.length
-     : 0;
+    currentIndex >= 0 ? (currentIndex + offset + visibleWords.length) % visibleWords.length : 0;
 
    const nextWord = visibleWords[nextIndex];
    actions.selectVocabWord(nextWord ? getVocabItemKey(nextWord) : null);
@@ -153,9 +132,7 @@ export function VocabWorkspace({
       lessonId={lesson.id}
       compact={compact}
       onBookmark={() => runtime.bookmarkVocab(getVocabItemKey(selectedWord))}
-      onMarkStatus={(status) =>
-       runtime.markVocab(getVocabItemKey(selectedWord), status)
-      }
+      onMarkStatus={(status) => runtime.markVocab(getVocabItemKey(selectedWord), status)}
      />
     </EditableNodeWrapper>
    ) : (

@@ -1,11 +1,7 @@
 import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 
-export function AllGrammarPointReader({
- points,
-}: {
- points: GrammarViewModel[];
-}) {
+export function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
  return (
   <div className="grid gap-4">
    {points.map((point, index) => (
@@ -18,9 +14,7 @@ export function AllGrammarPointReader({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Điểm ngữ pháp {index + 1}
        </p>
-       <h2 className="text-xl font-black text-text-primary">
-        {point.cleanTitle}
-       </h2>
+       <h2 className="text-xl font-black text-text-primary">{point.cleanTitle}</h2>
       </div>
 
       <StructuredGrammarContent point={point} exampleLimit={5} />

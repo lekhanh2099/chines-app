@@ -28,10 +28,7 @@ export async function POST(request: NextRequest) {
 
  const apiKey = process.env.ELEVENLABS_API_KEY;
  if (!apiKey) {
-  return NextResponse.json(
-   { error: "TTS service not configured" },
-   { status: 503 },
-  );
+  return NextResponse.json({ error: "TTS service not configured" }, { status: 503 });
  }
 
  const payload: unknown = await request.json();
@@ -49,19 +46,16 @@ export async function POST(request: NextRequest) {
  try {
   const client = new ElevenLabsClient({ apiKey });
 
-  const audioStream = await client.textToSpeech.convert(
-   voice || DEFAULT_VOICE_ID,
-   {
-    text,
-    modelId: "eleven_multilingual_v2",
-    outputFormat: "mp3_44100_128",
-    voiceSettings: {
-     stability: 0.5,
-     similarityBoost: 0.75,
-     style: 0.4,
-    },
+  const audioStream = await client.textToSpeech.convert(voice || DEFAULT_VOICE_ID, {
+   text,
+   modelId: "eleven_multilingual_v2",
+   outputFormat: "mp3_44100_128",
+   voiceSettings: {
+    stability: 0.5,
+    similarityBoost: 0.75,
+    style: 0.4,
    },
-  );
+  });
 
   // Collect ReadableStream into buffer
   const reader = audioStream.getReader();
@@ -82,8 +76,7 @@ export async function POST(request: NextRequest) {
    },
   });
  } catch (error) {
-  const message =
-   error instanceof Error ? error.message : "TTS generation failed";
+  const message = error instanceof Error ? error.message : "TTS generation failed";
 
   console.error("[TTS] ElevenLabs error:", message);
 
