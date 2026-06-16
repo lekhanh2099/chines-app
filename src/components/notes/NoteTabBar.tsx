@@ -58,10 +58,10 @@ export function NoteTabBar() {
  if (tabs.length === 0) return null;
 
  return (
-  <div className="flex items-stretch border-b border-border-default bg-bg-subtle/50 shrink-0 h-9.5">
+  <div className="flex h-10 shrink-0 items-center border-b border-border-default bg-bg-primary px-2">
    <div
     ref={scrollRef}
-    className="flex items-stretch overflow-x-auto scrollbar-none flex-1 min-w-0"
+    className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none"
     onWheel={handleWheel}
    >
     {tabs.map((tab, index) => (
@@ -119,15 +119,10 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex items-center gap-1 pl-2.5 pr-1 cursor-pointer select-none transition-all duration-150 text-[13px] min-w-0 max-w-50",
-    // Active: elevated card look with accent bottom border
+    "group relative flex h-8 min-w-30 max-w-64 cursor-pointer select-none items-center gap-1 rounded-lg border px-2 text-[13px] transition-all duration-150",
     isActive
-     ? "bg-bg-card text-text-primary font-medium shadow-[0_-1px_0_0_var(--border-default),1px_0_0_0_var(--border-default),-1px_0_0_0_var(--border-default)] z-10"
-     : "text-text-muted hover:text-text-secondary hover:bg-bg-card/50",
-    // Bottom accent indicator for active tab
-    isActive && "border-b-2 border-b-accent -mb-px",
-    !isActive && "border-b-2 border-b-transparent",
-    // Drag states
+     ? "z-10 border-border-default bg-bg-card font-semibold text-text-primary shadow-sm"
+     : "border-transparent text-text-muted hover:border-border-default hover:bg-bg-subtle hover:text-text-secondary",
     isDragging && "opacity-40",
     isDropTarget && "border-l-2 border-l-accent",
    )}

@@ -58,6 +58,14 @@ export function useNoteDetail(noteId: string) {
   mutationFn: async (title: string) => {
    const success = await updateNoteTitle(supabase, noteId, title);
    if (!success) throw new Error("Failed to update title");
+   return title;
+  },
+  onSuccess: (title) => {
+   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+    if (!old || typeof old !== "object") return old;
+    return { ...old, title };
+   });
+   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
   },
  });
 
@@ -66,6 +74,14 @@ export function useNoteDetail(noteId: string) {
   mutationFn: async (category: NoteCategory) => {
    const success = await updateNoteCategory(supabase, noteId, category);
    if (!success) throw new Error("Failed to update category");
+   return category;
+  },
+  onSuccess: (category) => {
+   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+    if (!old || typeof old !== "object") return old;
+    return { ...old, category };
+   });
+   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
   },
  });
 
@@ -82,7 +98,7 @@ export function useNoteDetail(noteId: string) {
 
  // ── Mutation: save reading content (split view left pane) ──
  const saveReadingContentMutation = useMutation({
-  mutationFn: async (readingContent: Record<string, unknown>) => {
+  mutationFn: async (readingContent: Record<string, unknown> | null) => {
    const success = await updateReadingContent(supabase, noteId, readingContent);
    if (!success) throw new Error("Failed to save reading content");
    return readingContent;
@@ -127,7 +143,7 @@ export function useNoteDetail(noteId: string) {
  );
 
  const saveReadingContent = useCallback(
-  (readingContent: Record<string, unknown>) => {
+  (readingContent: Record<string, unknown> | null) => {
    saveReadingContentMutation.mutate(readingContent);
   },
   [saveReadingContentMutation],

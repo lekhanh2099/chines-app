@@ -16,9 +16,14 @@ interface NoteTabContainerProps {
 export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContainerProps) {
  const tabs = useNoteTabsStore((s) => s.tabs);
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
+ const hydrateTabs = useNoteTabsStore((s) => s.hydrate);
  const openTab = useNoteTabsStore((s) => s.openTab);
  const router = useRouter();
  const hadTabsRef = useRef(false);
+
+ useEffect(() => {
+  hydrateTabs();
+ }, [hydrateTabs]);
 
  // Track whether we've ever had tabs open
  useEffect(() => {

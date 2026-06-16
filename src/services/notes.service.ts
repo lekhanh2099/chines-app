@@ -11,17 +11,102 @@ import type { DbNote, NoteCategory } from "@/types/database";
    Types
    ══════════════════════════════════════════ */
 
-export type NoteListItem = Pick<
+export type LessonNoteTargetType = "hanzihome_lesson";
+export type LessonNoteRelationType = "main" | "lesson_text" | "vocab" | "grammar" | "annotation";
+
+export type NoteLinkSummary = {
+ noteId: string;
+ targetType: LessonNoteTargetType;
+ targetKey: string;
+ relationType: LessonNoteRelationType;
+ updatedAt: string;
+};
+
+type NoteListRow = Pick<
  DbNote,
- "id" | "title" | "tags" | "status" | "category" | "short_id" | "updated_at"
+ "id" | "title" | "tags" | "status" | "category" | "short_id" | "updated_at" | "linked_lesson_id"
 >;
+
+export type NoteListItem = NoteListRow & {
+ links: NoteLinkSummary[];
+};
+
+export type NoteDetail = DbNote & {
+ links: NoteLinkSummary[];
+};
 
 export type CreateNoteInput = {
  title: string;
  tags: string[];
  category?: NoteCategory;
  content?: Record<string, unknown>;
+ readingContent?: Record<string, unknown> | null;
+ splitViewEnabled?: boolean;
 };
+
+type LessonNoteLinkRow = {
+ note_id: string;
+ target_type: LessonNoteTargetType;
+ target_key: string;
+ relation_type: LessonNoteRelationType;
+ updated_at: string;
+};
+
+function toNoteLinkSummary(row: LessonNoteLinkRow): NoteLinkSummary {
+ return {
+  noteId: row.note_id,
+  targetType: row.target_type,
+  targetKey: row.target_key,
+  relationType: row.relation_type,
+  updatedAt: row.updated_at,
+ };
+}
+
+async function getLessonNoteLinksForNotes(
+ supabase: SupabaseClient,
+ userId: string,
+ noteIds: string[],
+): Promise<Map<string, NoteLinkSummary[]>> {
+ const linksByNoteId = new Map<string, NoteLinkSummary[]>();
+ if (noteIds.length === 0) return linksByNoteId;
+
+ const { data, error } = await supabase
+  .from("lesson_note_links")
+  .select("note_id, target_type, target_key, relation_type, updated_at")
+  .eq("user_id", userId)
+  .in("note_id", noteIds);
+
+ if (error) {
+  console.error("[NotesService] fetch lesson note links error:", error);
+  return linksByNoteId;
+ }
+
+ for (const row of (data ?? []) as LessonNoteLinkRow[]) {
+  const link = toNoteLinkSummary(row);
+  const existingLinks = linksByNoteId.get(link.noteId) ?? [];
+  existingLinks.push(link);
+  linksByNoteId.set(link.noteId, existingLinks);
+ }
+
+ return linksByNoteId;
+}
+
+async function attachLessonLinks(
+ supabase: SupabaseClient,
+ userId: string,
+ notes: NoteListRow[],
+): Promise<NoteListItem[]> {
+ const linksByNoteId = await getLessonNoteLinksForNotes(
+  supabase,
+  userId,
+  notes.map((note) => note.id),
+ );
+
+ return notes.map((note) => ({
+  ...note,
+  links: linksByNoteId.get(note.id) ?? [],
+ }));
+}
 
 /* ══════════════════════════════════════════
    Read Operations
@@ -34,7 +119,7 @@ export async function getUserNotes(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at")
+  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
   .eq("user_id", userId)
   .order("updated_at", { ascending: false });
 
@@ -43,7 +128,7 @@ export async function getUserNotes(
   return [];
  }
 
- return (data || []) as NoteListItem[];
+ return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
 }
 
 /** Fetch notes by category */
@@ -54,7 +139,7 @@ export async function getNotesByCategory(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at")
+  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
   .eq("user_id", userId)
   .eq("category", category)
   .order("updated_at", { ascending: false });
@@ -64,7 +149,7 @@ export async function getNotesByCategory(
   return [];
  }
 
- return (data || []) as NoteListItem[];
+ return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
 }
 
 /** Fetch a single note by ID */
@@ -72,7 +157,7 @@ export async function getNoteById(
  supabase: SupabaseClient,
  noteId: string,
  userId: string,
-): Promise<DbNote | null> {
+): Promise<NoteDetail | null> {
  const { data, error } = await supabase
   .from("notes")
   .select("*")
@@ -85,7 +170,11 @@ export async function getNoteById(
   return null;
  }
 
- return data as DbNote;
+ const linksByNoteId = await getLessonNoteLinksForNotes(supabase, userId, [noteId]);
+ return {
+  ...(data as DbNote),
+  links: linksByNoteId.get(noteId) ?? [],
+ };
 }
 
 /* ══════════════════════════════════════════
@@ -109,6 +198,8 @@ export async function createNote(
     type: "doc",
     content: [{ type: "paragraph" }],
    },
+   reading_content: input.readingContent ?? null,
+   split_view_enabled: input.splitViewEnabled ?? false,
   })
   .select()
   .single();
@@ -190,7 +281,7 @@ export async function deleteNote(supabase: SupabaseClient, noteId: string): Prom
 export async function updateReadingContent(
  supabase: SupabaseClient,
  noteId: string,
- readingContent: Record<string, unknown>,
+ readingContent: Record<string, unknown> | null,
 ): Promise<boolean> {
  const { error } = await supabase
   .from("notes")
@@ -254,7 +345,7 @@ export async function searchNotesByTitle(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at")
+  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
   .eq("user_id", userId)
   .ilike("title", `%${query}%`)
   .order("updated_at", { ascending: false })
@@ -264,15 +355,12 @@ export async function searchNotesByTitle(
   console.error("[NotesService] search error:", error);
   return [];
  }
- return (data || []) as NoteListItem[];
+ return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
 }
 
 /* ══════════════════════════════════════════
    Lesson Note Links
    ══════════════════════════════════════════ */
-
-export type LessonNoteTargetType = "hanzihome_lesson";
-export type LessonNoteRelationType = "main" | "lesson_text" | "vocab" | "grammar" | "annotation";
 
 export async function getNoteByLessonNoteLink(
  supabase: SupabaseClient,

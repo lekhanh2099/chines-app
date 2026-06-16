@@ -18,14 +18,38 @@
 }
 
 @font-face {
- font-family: "FZ Kai Pinyin";
- src: url("/fonts/FZKaiPinyin.ttf") format("truetype");
+ font-family: "FZKTPY01";
+ src: url("/fonts/FZKTPY01.ttf") format("truetype");
  font-display: swap;
 }
 
 @font-face {
- font-family: "Chinese Pinyin Font";
- src: url("/fonts/Pinyinfont_V2.ttf") format("truetype");
+ font-family: "FZKTPY02";
+ src: url("/fonts/FZKTPY02.ttf") format("truetype");
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "FZKTPY03";
+ src: url("/fonts/FZKTPY03.ttf") format("truetype");
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "FZKTPY04";
+ src: url("/fonts/FZKTPY04.ttf") format("truetype");
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "FZKTPY05";
+ src: url("/fonts/FZKTPY05.ttf") format("truetype");
+ font-display: swap;
+}
+
+@font-face {
+ font-family: "FZKTPY06";
+ src: url("/fonts/FZKTPY06.ttf") format("truetype");
  font-display: swap;
 }
 
@@ -36,7 +60,7 @@
 }
 
 .font-popular-xingkai {
- font-family: "Popular Xingkai", "FZ Kai Pinyin", "Mengshen Han Serif", "Hanzi Songti", serif;
+ font-family: "Popular Xingkai", "FZKTPY01", "Mengshen Han Serif", "Hanzi Songti", serif;
 }
 
 /* =============================================
@@ -2076,9 +2100,8 @@ select {
 .editor-container,
 .editor-input,
 .editor-placeholder,
-[data-editor-wrapper],
-[data-editor-wrapper] * {
- font-family: var(--font-vietnamese) !important;
+[data-editor-wrapper] {
+ font-family: var(--font-vietnamese);
 }
 
 /* Chỉ những chỗ đánh dấu Hán tự mới dùng font Hán */

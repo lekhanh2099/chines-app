@@ -1,0 +1,47 @@
+"use client";
+
+import { FileText } from "lucide-react";
+
+import type { NoteListItem } from "@/services/notes.service";
+import type { LessonLookup } from "./noteContext";
+import { NoteCreateDialog } from "./NoteCreateDialog";
+import { NoteImportButton } from "./NoteImportButton";
+import { NoteListRow } from "./NoteListRow";
+
+export function NoteList({
+ notes,
+ lessonLookup,
+}: {
+ notes: NoteListItem[];
+ lessonLookup: LessonLookup;
+}) {
+ if (notes.length === 0) {
+  return (
+   <div className="flex flex-1 items-center justify-center px-6 py-24">
+    <div className="max-w-sm text-center">
+     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-bg-subtle text-text-muted">
+      <FileText className="h-6 w-6" />
+     </div>
+     <h2 className="text-lg font-bold text-text-primary">Chưa có ghi chú phù hợp</h2>
+     <p className="mt-1 text-sm font-medium text-text-muted">
+      Thử đổi bộ lọc, import file note hoặc tạo ghi chú mới.
+     </p>
+     <div className="mt-5 flex justify-center gap-2">
+      <NoteImportButton />
+      <NoteCreateDialog />
+     </div>
+    </div>
+   </div>
+  );
+ }
+
+ return (
+  <div className="flex-1 overflow-y-auto scrollbar-soft">
+   <div className="divide-y divide-border-default">
+    {notes.map((note) => (
+     <NoteListRow key={note.id} note={note} lessonLookup={lessonLookup} />
+    ))}
+   </div>
+  </div>
+ );
+}

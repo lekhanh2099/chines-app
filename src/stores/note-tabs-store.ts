@@ -17,6 +17,8 @@ export type NoteTab = {
 type NoteTabsState = {
  tabs: NoteTab[];
  activeNoteId: string | null;
+ hasHydrated: boolean;
+ hydrate: () => void;
  /** Open a note tab. If already open, just activate it. */
  openTab: (noteId: string, title?: string) => void;
  /** Close a tab. Activates adjacent tab if closing the active one. */
@@ -34,7 +36,6 @@ type NoteTabsState = {
 };
 
 function loadState(): { tabs: NoteTab[]; activeNoteId: string | null } {
- if (typeof window === "undefined") return { tabs: [], activeNoteId: null };
  try {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (raw) {
@@ -51,6 +52,7 @@ function loadState(): { tabs: NoteTab[]; activeNoteId: string | null } {
 }
 
 function saveState(tabs: NoteTab[], activeNoteId: string | null) {
+ if (typeof window === "undefined") return;
  try {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ tabs, activeNoteId }));
  } catch {
@@ -58,11 +60,16 @@ function saveState(tabs: NoteTab[], activeNoteId: string | null) {
  }
 }
 
-const initial = loadState();
-
 export const useNoteTabsStore = create<NoteTabsState>((set, get) => ({
- tabs: initial.tabs,
- activeNoteId: initial.activeNoteId,
+ tabs: [],
+ activeNoteId: null,
+ hasHydrated: false,
+
+ hydrate: () => {
+  if (get().hasHydrated || typeof window === "undefined") return;
+  const next = loadState();
+  set({ ...next, hasHydrated: true });
+ },
 
  openTab: (noteId, title) => {
   const { tabs } = get();

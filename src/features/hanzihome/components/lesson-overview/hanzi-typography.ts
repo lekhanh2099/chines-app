@@ -5,8 +5,8 @@ import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./type
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
  system: 'var(--font-hanzi), "PingFang SC", sans-serif',
  songti: '"Hanzi Songti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif',
- kai: '"FZ Kai Pinyin", "Kaiti SC", "KaiTi", "STKaiti", serif',
- pinyin: '"Chinese Pinyin Font", "FZ Kai Pinyin", "Kaiti SC", serif',
+ kai: '"FZKTPY01", "Kaiti SC", "KaiTi", "STKaiti", serif',
+ pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", serif',
  mengshen: '"Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif',
 };
 

@@ -1,2 +1,7 @@
 export type { DbNote, NoteCategory, NoteStatus } from "@/types/database";
-export type { NoteListItem, CreateNoteInput } from "@/services/notes.service";
+export type {
+ CreateNoteInput,
+ NoteDetail,
+ NoteLinkSummary,
+ NoteListItem,
+} from "@/services/notes.service";

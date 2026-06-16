@@ -4,15 +4,53 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
-import { Loader2, Trash2, Check, Cloud, CloudOff, PanelLeftClose, PanelLeft } from "lucide-react";
+import {
+ Check,
+ Cloud,
+ CloudOff,
+ Download,
+ Loader2,
+ PanelLeft,
+ PanelLeftClose,
+ Trash2,
+ Upload,
+} from "lucide-react";
 import { format } from "date-fns";
+import { vi } from "date-fns/locale";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
+import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/note-export.schema";
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
 import { useSplitViewStore } from "@/stores/split-view-store";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { getCategoryLabel, getNoteContext } from "@/features/notes/components/noteContext";
 
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
+}
+
+function createDownloadFileName(title: string): string {
+ const slug = title
+  .trim()
+  .toLowerCase()
+  .replace(/[^\p{L}\p{N}]+/gu, "-")
+  .replace(/^-+|-+$/g, "")
+  .slice(0, 64);
+
+ return `${slug || "ghi-chu"}.json`;
+}
+
+function downloadJsonFile(fileName: string, value: unknown) {
+ const blob = new Blob([JSON.stringify(value, null, 2)], { type: "application/json" });
+ const url = URL.createObjectURL(blob);
+ const link = document.createElement("a");
+ link.href = url;
+ link.download = fileName;
+ document.body.appendChild(link);
+ link.click();
+ link.remove();
+ URL.revokeObjectURL(url);
 }
 
 export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
@@ -24,6 +62,8 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
   saveStatus,
   saveReadingContent,
   updateSplitView,
+  updateTitle,
+  updateCategory,
   deleteNote: deleteNoteMutation,
   isDeleting,
  } = useNoteDetail(noteId);
@@ -34,10 +74,16 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
  const toggleSplitView = useSplitViewStore((s) => s.toggleSplitView);
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+ const [importedContent, setImportedContent] = useState<JsonObject | null>(null);
+ const [importedReadingContent, setImportedReadingContent] = useState<
+  JsonObject | null | undefined
+ >(undefined);
+ const [importVersion, setImportVersion] = useState(0);
  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const pendingContentRef = useRef<Record<string, unknown> | null>(null);
  const readingSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const pendingReadingRef = useRef<Record<string, unknown> | null>(null);
+ const importInputRef = useRef<HTMLInputElement | null>(null);
  const splitViewSynced = useRef(false);
 
  // Sync tab title with note title
@@ -126,6 +172,77 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
   closeTab(noteId);
  }, [deleteNoteMutation, closeTab, noteId]);
 
+ const handleExport = useCallback(() => {
+  if (!note) return;
+
+  downloadJsonFile(createDownloadFileName(note.title), {
+   version: 1,
+   exportedAt: new Date().toISOString(),
+   note: {
+    title: note.title,
+    tags: note.tags ?? [],
+    category: note.category,
+    content: importedContent ?? (note.content as JsonObject),
+    readingContent:
+     importedReadingContent !== undefined
+      ? importedReadingContent
+      : (note.reading_content as JsonObject | null),
+    splitViewEnabled: note.split_view_enabled,
+   },
+  });
+  toast.success("Đã export ghi chú.");
+ }, [importedContent, importedReadingContent, note]);
+
+ const currentNoteTitle = note?.title;
+ const currentNoteCategory = note?.category;
+
+ const handleImportFile = useCallback(
+  async (file: File) => {
+   try {
+    const importedPayload = normalizeImportedNotePayload(JSON.parse(await file.text()));
+    const nextContent = importedPayload.note.content;
+    const nextReadingContent = importedPayload.note.readingContent ?? null;
+
+    setImportedContent(nextContent);
+    setImportedReadingContent(nextReadingContent);
+    setImportVersion((version) => version + 1);
+    saveContent(nextContent);
+
+    saveReadingContent(nextReadingContent);
+
+    if (importedPayload.note.title && importedPayload.note.title !== currentNoteTitle) {
+     updateTitle(importedPayload.note.title);
+     updateTabTitle(noteId, importedPayload.note.title);
+    }
+
+    if (importedPayload.note.category && importedPayload.note.category !== currentNoteCategory) {
+     updateCategory(importedPayload.note.category);
+    }
+
+    if (typeof importedPayload.note.splitViewEnabled === "boolean") {
+     updateSplitView(importedPayload.note.splitViewEnabled);
+    }
+
+    toast.success("Đã import vào ghi chú hiện tại.");
+   } catch {
+    toast.error("File import không đúng định dạng ghi chú.");
+   } finally {
+    if (importInputRef.current) importInputRef.current.value = "";
+   }
+  },
+  [
+   currentNoteCategory,
+   currentNoteTitle,
+   noteId,
+   saveContent,
+   saveReadingContent,
+   updateCategory,
+   updateSplitView,
+   updateTabTitle,
+   updateTitle,
+  ],
+ );
+
  const displaySaveStatus: "idle" | "saving" | "saved" | "error" = isSaving
   ? "saving"
   : saveStatus === "success"
@@ -135,9 +252,13 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
       : "idle";
 
  const lastEdited = note?.updated_at || note?.created_at || null;
- const hasReadingContent = !!(
-  note?.reading_content && Object.keys(note.reading_content).length > 0
- );
+ const noteContext = note ? getNoteContext(note, new Map()) : null;
+ const noteContent = importedContent ?? (note?.content as Record<string, unknown> | null);
+ const readingContent =
+  importedReadingContent !== undefined
+   ? importedReadingContent
+   : (note?.reading_content as Record<string, unknown> | null);
+ const hasReadingContent = !!(readingContent && Object.keys(readingContent).length > 0);
 
  return (
   <div
@@ -154,68 +275,111 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
     </div>
    ) : (
     <>
+     <input
+      ref={importInputRef}
+      type="file"
+      accept="application/json,.json"
+      className="hidden"
+      onChange={(event) => {
+       const [file] = Array.from(event.target.files ?? []);
+       if (file) void handleImportFile(file);
+      }}
+     />
+
      {/* Toolbar */}
-     <div className="h-9 border-b border-border-default flex items-center justify-between px-4 shrink-0 bg-bg-card/50">
-      <div className="flex items-center gap-2 text-xs text-text-muted">
-       {" "}
-       <button
+     <div className="flex shrink-0 flex-col gap-2 border-b border-border-default bg-bg-card/60 px-3 py-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <Button
+        type="button"
+        variant={isSplitView ? "secondary" : "outline"}
+        size="sm"
         onClick={handleToggleSplitView}
-        className={`flex items-center gap-1.5 px-2.5 py-1 rounded-2xl  text-[11px] font-semibold transition-all ${
-         isSplitView
-          ? "bg-accent-subtle  -text border border-accent/20 shadow-sm"
-          : hasReadingContent
-            ? "bg-info-subtle text-info-text border border-info/20 hover:bg-info-subtle/80"
-            : "text-text-muted hover:text-text-primary hover:bg-bg-subtle border border-transparent"
-        }`}
         title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
        >
         {isSplitView ? (
-         <PanelLeftClose className="w-3.5 h-3.5" />
+         <PanelLeftClose className="h-3.5 w-3.5" />
         ) : (
-         <PanelLeft className="w-3.5 h-3.5" />
+         <PanelLeft className="h-3.5 w-3.5" />
         )}
-        <span className="hidden sm:inline">
-         {isSplitView ? "Đóng Split" : hasReadingContent ? "Mở Bài đọc" : "Split View"}
+        <span>{isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}</span>
+        {!isSplitView && hasReadingContent ? (
+         <span className="h-1.5 w-1.5 rounded-full bg-info" />
+        ) : null}
+       </Button>
+
+       <Badge variant="default" size="sm">
+        {getCategoryLabel(note.category)}
+       </Badge>
+       {noteContext ? (
+        <Badge variant={noteContext.kind === "lesson" ? "info" : "default"} size="sm">
+         {noteContext.title}
+        </Badge>
+       ) : null}
+       {noteContext?.relationLabel ? (
+        <span className="truncate text-xs font-semibold text-text-muted">
+         {noteContext.subtitle} / {noteContext.relationLabel}
         </span>
-        {!isSplitView && hasReadingContent && (
-         <span className="w-1.5 h-1.5 rounded-2xl -full bg-info animate-pulse" />
-        )}
-       </button>
-      </div>
-
-      <div className="flex items-center gap-2">
-       <SaveStatusBadge status={displaySaveStatus} />
-
-       {lastEdited && (
-        <span className="text-[11px] text-text-muted/70 ml-1">
-         {format(new Date(lastEdited), "MMM d, yyyy · h:mm a")}
+       ) : (
+        <span className="truncate text-xs font-semibold text-text-muted">
+         {noteContext?.subtitle}
         </span>
        )}
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+       <SaveStatusBadge status={displaySaveStatus} />
+
+       {lastEdited ? (
+        <span className="text-[11px] font-medium text-text-muted">
+         {format(new Date(lastEdited), "dd/MM/yyyy · HH:mm", { locale: vi })}
+        </span>
+       ) : null}
+
+       <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={() => importInputRef.current?.click()}
+       >
+        <Upload className="h-3.5 w-3.5" />
+        Import
+       </Button>
+       <Button type="button" variant="outline" size="sm" onClick={handleExport}>
+        <Download className="h-3.5 w-3.5" />
+        Export
+       </Button>
+
        {showDeleteConfirm ? (
-        <div className="flex items-center gap-2 bg-danger-subtle rounded-2xl -sm px-2.5 py-0.5 animate-in fade-in">
-         <span className="text-[11px] font-medium text-danger-text">Xoá?</span>
-         <button
+        <div className="flex items-center gap-1 rounded-lg border border-danger/25 bg-danger-subtle p-1">
+         <Button
+          type="button"
+          variant="destructive"
+          size="sm"
           onClick={handleDelete}
           disabled={isDeleting}
-          className="text-[11px] font-bold text-danger hover:underline disabled:opacity-50"
          >
-          {isDeleting ? "..." : "Xác nhận"}
-         </button>
-         <button
+          {isDeleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+          Xóa
+         </Button>
+         <Button
+          type="button"
+          variant="ghost"
+          size="sm"
           onClick={() => setShowDeleteConfirm(false)}
-          className="text-[11px] text-text-muted hover:text-text-primary"
          >
-          Huỷ
-         </button>
+          Hủy
+         </Button>
         </div>
        ) : (
-        <button
+        <Button
+         type="button"
+         variant="ghost"
+         size="icon-sm"
          onClick={() => setShowDeleteConfirm(true)}
-         className="p-1 text-text-muted hover:text-danger hover:bg-danger-subtle rounded-2xl -sm transition-colors"
-         title="Xoá ghi chú"
+         title="Xóa ghi chú"
         >
-         <Trash2 className="w-3.5 h-3.5" />
-        </button>
+         <Trash2 className="h-3.5 w-3.5" />
+        </Button>
        )}
       </div>
      </div>
@@ -223,18 +387,16 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      {isSplitView ? (
       <div className="h-full bg-bg-card border border-border-default rounded-2xl  shadow-theme-sm">
        <SplitViewEditor
+        key={`split-${importVersion}`}
         noteId={noteId}
-        noteContent={note.content as Record<string, unknown> | null}
-        readingContent={note.reading_content as Record<string, unknown> | null}
+        noteContent={noteContent}
+        readingContent={readingContent}
         onNoteChange={handleChange}
         onReadingChange={handleReadingChange}
        />
       </div>
      ) : (
-      <Editor
-       initialContent={note.content as Record<string, unknown> | null}
-       onChange={handleChange}
-      />
+      <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
      )}
     </>
    )}
