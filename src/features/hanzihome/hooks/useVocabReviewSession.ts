@@ -81,12 +81,37 @@ function getItemRank(item: ReviewItem) {
  return getRank(item.status);
 }
 
+function seededRandom(seed: number) {
+ let value = seed % 2147483647;
+ if (value <= 0) value += 2147483646;
+
+ return () => {
+  value = (value * 16807) % 2147483647;
+  return (value - 1) / 2147483646;
+ };
+}
+
+function shuffleItems<T>(items: T[], seed: number): T[] {
+ const nextItems = [...items];
+ const random = seededRandom(seed);
+
+ for (let index = nextItems.length - 1; index > 0; index -= 1) {
+  const swapIndex = Math.floor(random() * (index + 1));
+  const current = nextItems[index];
+  nextItems[index] = nextItems[swapIndex];
+  nextItems[swapIndex] = current;
+ }
+
+ return nextItems;
+}
+
 export function useVocabReviewSession(input: {
  vocab: HanziHomeVocabItem[];
  grammar: GrammarViewModel[];
  vocabProgress: Record<string, { status: LearningStatus }>;
  grammarProgress: Record<string, { status: LearningStatus }>;
  mode: ReviewDeckMode;
+ shuffleSeed?: number;
 }) {
  const items = useMemo<ReviewItem[]>(() => {
   const vocabItems: ReviewItem[] = input.vocab.map((item) => {
@@ -118,9 +143,7 @@ export function useVocabReviewSession(input: {
    };
   });
 
-  const merged = [...vocabItems, ...grammarItems];
-
-  return merged
+  const sortedItems = [...vocabItems, ...grammarItems]
    .filter((item) => {
     if (input.mode === "vocab") return item.type === "vocab";
     if (input.mode === "grammar") return item.type === "grammar";
@@ -134,7 +157,16 @@ export function useVocabReviewSession(input: {
     return getItemRank(a.item) - getItemRank(b.item) || a.index - b.index;
    })
    .map(({ item }) => item);
- }, [input.grammar, input.grammarProgress, input.mode, input.vocab, input.vocabProgress]);
+
+  return input.shuffleSeed ? shuffleItems(sortedItems, input.shuffleSeed) : sortedItems;
+ }, [
+  input.grammar,
+  input.grammarProgress,
+  input.mode,
+  input.shuffleSeed,
+  input.vocab,
+  input.vocabProgress,
+ ]);
 
  const [state, dispatch] = useReducer(reducer, {
   index: 0,

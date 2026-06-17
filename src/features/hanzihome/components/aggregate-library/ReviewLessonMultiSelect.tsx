@@ -1,9 +1,16 @@
-import { RotateCcw } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Check, RotateCcw, Search, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { AggregateKind } from "./aggregate-utils";
 import { formatLessonHeading } from "./aggregate-utils";
+
+type ReviewLessonOption = {
+ id: string;
+ lessonNumber: number;
+ title: string;
+ titleZh: string;
+};
 
 export function ReviewLessonMultiSelect({
  kind,
@@ -11,71 +18,165 @@ export function ReviewLessonMultiSelect({
  lessons,
  activeLessonTitle,
  onToggleLesson,
+ onChangeLessons,
  onStartReview,
  onCloseReview,
 }: {
  kind: AggregateKind;
  selectedLessonIds: string[];
- lessons: Array<{
-  id: string;
-  lessonNumber: number;
-  title: string;
-  titleZh: string;
- }>;
+ lessons: ReviewLessonOption[];
  activeLessonTitle: string;
  onToggleLesson: (lessonId: string) => void;
+ onChangeLessons?: (lessonIds: string[]) => void;
  onStartReview: () => void;
  onCloseReview: () => void;
 }) {
- return (
-  <TooltipProvider>
-   <div className="grid gap-2 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-    <div className="flex flex-wrap items-center gap-1.5">
-     <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-black text-text-muted">
-      {selectedLessonIds.length}
-     </span>
-     {lessons.map((lesson) => {
-      const selected = selectedLessonIds.includes(lesson.id);
-      const fullTitle = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
+ const [query, setQuery] = useState("");
+ const normalizedQuery = query.trim().toLowerCase();
 
-      return (
-       <Tooltip key={lesson.id}>
-        <TooltipTrigger asChild>
-         <Button
-          type="button"
-          size="xs"
-          variant={selected ? "default" : "outline"}
-          title={fullTitle}
-          aria-pressed={selected}
-          onClick={() => onToggleLesson(lesson.id)}
-          className="h-7 rounded-lg px-2.5 font-black"
-         >
-          Bài {lesson.lessonNumber}
-         </Button>
-        </TooltipTrigger>
-        <TooltipContent>{fullTitle}</TooltipContent>
-       </Tooltip>
-      );
-     })}
+ const selectedLessonIdSet = useMemo(() => new Set(selectedLessonIds), [selectedLessonIds]);
+
+ const filteredLessons = useMemo(() => {
+  if (!normalizedQuery) return lessons;
+
+  return lessons.filter((lesson) => {
+   const heading = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
+   const searchableText = [
+    heading,
+    lesson.title,
+    lesson.titleZh,
+    String(lesson.lessonNumber),
+    `bài ${lesson.lessonNumber}`,
+   ]
+    .join(" ")
+    .toLowerCase();
+
+   return searchableText.includes(normalizedQuery);
+  });
+ }, [lessons, normalizedQuery]);
+
+ const selectedLessons = lessons.filter((lesson) => selectedLessonIdSet.has(lesson.id));
+ const selectedCount = selectedLessons.length;
+ const canStartReview = selectedCount > 0;
+
+ const clearSelectedLessons = () => {
+  if (onChangeLessons) {
+   onChangeLessons([]);
+   return;
+  }
+
+  for (const lessonId of selectedLessonIds) {
+   onToggleLesson(lessonId);
+  }
+ };
+
+ return (
+  <section className="grid gap-3">
+   <div className="flex flex-wrap items-center justify-between gap-3">
+    <div className="min-w-0">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chọn bài để ôn</p>
+     <h2 className="text-lg font-black text-text-primary">
+      {kind === "vocab" ? "Ôn từ vựng theo bài" : "Ôn ngữ pháp theo bài"}
+     </h2>
     </div>
 
-    <div className="flex flex-wrap justify-end gap-2">
+    <div className="flex flex-wrap items-center gap-2">
+     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      {selectedCount} bài
+     </span>
+
      {activeLessonTitle && (
       <Button type="button" size="sm" variant="outline" onClick={onCloseReview}>
        Đóng ôn
       </Button>
      )}
-     <Button
-      type="button"
-      size="sm"
-      disabled={selectedLessonIds.length === 0}
-      onClick={onStartReview}
-     >
+
+     <Button type="button" size="sm" disabled={!canStartReview} onClick={onStartReview}>
       <RotateCcw className="h-4 w-4" />
-      {kind === "vocab" ? "Ôn từ vựng" : "Ôn ngữ pháp"}
+      {kind === "vocab" ? "Bắt đầu ôn" : "Bắt đầu ôn"}
      </Button>
     </div>
    </div>
-  </TooltipProvider>
+
+   <div className="relative">
+    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+    <input
+     value={query}
+     onChange={(event) => setQuery(event.target.value)}
+     placeholder="Tìm bài, ví dụ: Bài 10..."
+     className="h-11 w-full rounded-xl border border-border-default bg-bg-input pl-9 pr-3 text-sm font-bold text-text-primary outline-none transition-colors focus:border-accent"
+    />
+   </div>
+
+   <div className="grid max-h-64 gap-2 overflow-y-auto rounded-2xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:grid-cols-2 xl:grid-cols-3">
+    {filteredLessons.length > 0 ? (
+     filteredLessons.map((lesson) => {
+      const selected = selectedLessonIdSet.has(lesson.id);
+      const title = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
+
+      return (
+       <button
+        key={lesson.id}
+        type="button"
+        onClick={() => onToggleLesson(lesson.id)}
+        className={[
+         "flex min-h-12 items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-black transition-colors",
+         selected
+          ? "border-accent bg-accent-subtle text-accent-text"
+          : "border-border-default bg-bg-card text-text-primary hover:border-accent hover:bg-bg-elevated",
+        ].join(" ")}
+       >
+        <span
+         className={[
+          "flex h-5 w-5 shrink-0 items-center justify-center rounded-md border",
+          selected ? "border-accent bg-accent text-white" : "border-border-default bg-bg-primary",
+         ].join(" ")}
+        >
+         {selected && <Check className="h-3.5 w-3.5" />}
+        </span>
+        <span className="min-w-0 truncate">{title}</span>
+       </button>
+      );
+     })
+    ) : (
+     <p className="col-span-full px-2 py-4 text-sm font-bold text-text-muted">
+      Không tìm thấy bài phù hợp.
+     </p>
+    )}
+   </div>
+
+   {selectedLessons.length > 0 && (
+    <div className="flex flex-wrap items-center gap-2">
+     <span className="text-xs font-black uppercase tracking-wide text-text-muted">Đã chọn</span>
+
+     {selectedLessons.slice(0, 6).map((lesson) => (
+      <button
+       key={lesson.id}
+       type="button"
+       onClick={() => onToggleLesson(lesson.id)}
+       className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs font-black text-text-primary transition-colors hover:bg-bg-elevated"
+       title={`Bỏ ${formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}`}
+      >
+       <span>{formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}</span>
+       <X className="h-3.5 w-3.5 text-text-muted" />
+      </button>
+     ))}
+
+     {selectedLessons.length > 6 && (
+      <span className="rounded-full bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-muted">
+       +{selectedLessons.length - 6} bài nữa
+      </span>
+     )}
+
+     <button
+      type="button"
+      onClick={clearSelectedLessons}
+      className="rounded-full px-2 py-1 text-xs font-black text-text-muted transition-colors hover:text-text-primary"
+     >
+      Xóa hết
+     </button>
+    </div>
+   )}
+  </section>
  );
 }

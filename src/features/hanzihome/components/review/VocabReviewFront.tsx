@@ -4,6 +4,8 @@ import { BookOpen } from "lucide-react";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 
 export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "vocab" }> }) {
+ const example = item.source.examples.find((entry) => entry.zh)?.zh;
+
  return (
   <div className="grid gap-3">
    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
@@ -15,6 +17,11 @@ export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "
    <h3 className="text-6xl font-black tracking-normal text-text-primary" lang="zh-CN">
     {item.prompt}
    </h3>
+   {example && (
+    <p className="mx-auto max-w-2xl rounded-xl bg-bg-subtle p-3 text-base font-bold leading-relaxed text-text-primary">
+     {example}
+    </p>
+   )}
   </div>
  );
 }

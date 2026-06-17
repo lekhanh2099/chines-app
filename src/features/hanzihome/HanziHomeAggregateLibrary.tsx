@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useQueries, useQuery } from "@tanstack/react-query";
 import { BookOpen, GraduationCap, Search } from "lucide-react";
 
@@ -20,17 +21,24 @@ import {
  isAggregateVocabItem,
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
-import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import {
  fetchHanziHomeAggregateItems,
  fetchHanziHomeLessonDetail,
 } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
-import {
- type AggregateFilters,
- type AggregateKind,
+import type {
+ AggregateFilters,
+ AggregateKind,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
-import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
+import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
+import {
+ buildReviewLessonsQueryFromLessons,
+ buildVocabReviewHrefFromLessons,
+ parseReviewLessonTokensParam,
+ resolveReviewLessonTokens,
+ REVIEW_LESSONS_QUERY_KEY,
+} from "@/features/hanzihome/utils/review-selection-route";
+import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
 function useReviewLessons(lessonIds: string[]) {
  const queries = useQueries({
@@ -48,6 +56,8 @@ function useReviewLessons(lessonIds: string[]) {
 }
 
 export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
+ const router = useRouter();
+ const searchParams = useSearchParams();
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const learning = useLearningState();
  const [filters, setFilters] = useState<AggregateFilters>({
@@ -56,8 +66,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   lessonId: "",
   q: "",
  });
- const [selectedReviewLessonIds, setSelectedReviewLessonIds] = useState<string[]>([]);
  const [activeReviewLessonIds, setActiveReviewLessonIds] = useState<string[]>([]);
+
  const reviewLessons = useReviewLessons(activeReviewLessonIds);
  const aggregateCourses = catalog.courses;
  const aggregateCourseIds = useMemo(
@@ -108,27 +118,20 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const items = useMemo(() => query.data ?? [], [query.data]);
  const groupedItems = useMemo(() => groupByLesson(items), [items]);
  const reviewLessonOptions = filteredLessons;
+ const routeReviewLessonTokens = useMemo(
+  () => parseReviewLessonTokensParam(searchParams.get(REVIEW_LESSONS_QUERY_KEY)),
+  [searchParams],
+ );
+
+ const routeSelectedReviewLessonIds = useMemo(
+  () => resolveReviewLessonTokens(routeReviewLessonTokens, reviewLessonOptions),
+  [reviewLessonOptions, routeReviewLessonTokens],
+ );
+
  const availableReviewLessonIds = new Set(reviewLessonOptions.map((lesson) => lesson.id));
- const selectedAvailableReviewLessonIds = selectedReviewLessonIds.filter((id) =>
+ const selectedAvailableReviewLessonIds = routeSelectedReviewLessonIds.filter((id) =>
   availableReviewLessonIds.has(id),
  );
- const lessonFilterIsAvailable = reviewLessonOptions.some(
-  (lesson) => lesson.id === filters.lessonId,
- );
- const lastLessonIsAvailable = reviewLessonOptions.some(
-  (lesson) => lesson.id === learning.state.settings.lastLessonId,
- );
- const fallbackReviewLessonId =
-  (lessonFilterIsAvailable ? filters.lessonId : null) ||
-  (lastLessonIsAvailable ? learning.state.settings.lastLessonId : null) ||
-  reviewLessonOptions.at(-1)?.id ||
-  "";
- const effectiveReviewLessonIds =
-  selectedAvailableReviewLessonIds.length > 0
-   ? selectedAvailableReviewLessonIds
-   : fallbackReviewLessonId
-     ? [fallbackReviewLessonId]
-     : [];
  const activeReviewLessonSummaries = activeReviewLessonIds
   .map((lessonId) => aggregateLessons.find((lesson) => lesson.id === lessonId))
   .filter((lesson): lesson is (typeof aggregateLessons)[number] => Boolean(lesson));
@@ -148,12 +151,35 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
   return byId;
  }, [reviewLessons]);
- const isReviewActive = activeReviewLessonIds.length > 0;
+ const isReviewActive = kind !== "vocab" && activeReviewLessonIds.length > 0;
  const activeReviewTitle = formatSelectedLessonsLabel(activeReviewLessonSummaries);
  const shouldShowAggregateList = !isReviewActive;
  const hasActiveFilters = Boolean(
   filters.courseId || filters.bookId || filters.lessonId || filters.q.trim(),
  );
+
+ const syncSelectedLessonsToUrl = (lessonIds: string[]) => {
+  const nextLessonIds = Array.from(new Set(lessonIds.filter(Boolean)));
+  const nextLessons = reviewLessonOptions.filter((lesson) => nextLessonIds.includes(lesson.id));
+  const nextParams = new URLSearchParams(searchParams.toString());
+  const queryString = buildReviewLessonsQueryFromLessons(nextLessons);
+
+  if (queryString) {
+   const reviewParams = new URLSearchParams(queryString);
+   nextParams.set(REVIEW_LESSONS_QUERY_KEY, reviewParams.get(REVIEW_LESSONS_QUERY_KEY) || "");
+  } else {
+   nextParams.delete(REVIEW_LESSONS_QUERY_KEY);
+  }
+
+  router.replace(nextParams.toString() ? `?${nextParams.toString()}` : "?", { scroll: false });
+ };
+
+ const updateReviewLessonSelection = (lessonIds: string[]) => {
+  const nextLessonIds = Array.from(
+   new Set(lessonIds.filter((lessonId) => availableReviewLessonIds.has(lessonId))),
+  );
+  syncSelectedLessonsToUrl(nextLessonIds);
+ };
 
  const updateFilter = (key: keyof AggregateFilters, value: string) => {
   setFilters((current) => {
@@ -206,24 +232,29 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  };
 
  const toggleReviewLesson = (lessonId: string) => {
-  setSelectedReviewLessonIds((current) => {
-   const availableCurrent = current.filter((id) => availableReviewLessonIds.has(id));
-   const source = availableCurrent.length > 0 ? availableCurrent : effectiveReviewLessonIds;
+  if (selectedAvailableReviewLessonIds.includes(lessonId)) {
+   updateReviewLessonSelection(selectedAvailableReviewLessonIds.filter((id) => id !== lessonId));
+   return;
+  }
 
-   if (source.includes(lessonId)) {
-    return source.length === 1 ? source : source.filter((id) => id !== lessonId);
-   }
-
-   return [...source, lessonId];
-  });
+  updateReviewLessonSelection([...selectedAvailableReviewLessonIds, lessonId]);
  };
 
  const startReview = (lessonIds: string[]) => {
-  if (lessonIds.length === 0) return;
+  const nextLessonIds = Array.from(
+   new Set(lessonIds.filter((lessonId) => availableReviewLessonIds.has(lessonId))),
+  );
+  if (nextLessonIds.length === 0) return;
 
-  setActiveReviewLessonIds(lessonIds);
-  setSelectedReviewLessonIds(lessonIds);
-  learning.updateSettings({ lastLessonId: lessonIds[lessonIds.length - 1] });
+  learning.updateSettings({ lastLessonId: nextLessonIds[nextLessonIds.length - 1] });
+
+  if (kind === "vocab") {
+   const nextLessons = reviewLessonOptions.filter((lesson) => nextLessonIds.includes(lesson.id));
+   router.push(buildVocabReviewHrefFromLessons(nextLessons));
+   return;
+  }
+
+  setActiveReviewLessonIds(nextLessonIds);
  };
 
  return (
@@ -256,11 +287,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       <div className="rounded-xl border border-border-default bg-bg-primary p-2">
        <ReviewLessonMultiSelect
         kind={kind}
-        selectedLessonIds={effectiveReviewLessonIds}
+        selectedLessonIds={selectedAvailableReviewLessonIds}
         lessons={reviewLessonOptions}
         activeLessonTitle={activeReviewTitle}
         onToggleLesson={toggleReviewLesson}
-        onStartReview={() => startReview(effectiveReviewLessonIds)}
+        onChangeLessons={updateReviewLessonSelection}
+        onStartReview={() => startReview(selectedAvailableReviewLessonIds)}
         onCloseReview={() => setActiveReviewLessonIds([])}
        />
       </div>
@@ -333,7 +365,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
           learningState={learning.state}
           initialMode={kind}
           availableModes={[kind]}
-          title={kind === "vocab" ? "Ôn flashcard từ vựng" : "Ôn flashcard ngữ pháp"}
+          title="Ôn flashcard ngữ pháp"
           description={activeReviewTitle || "Bài đang chọn"}
           onAnswer={answerReview}
           onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
@@ -392,16 +424,30 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
             Mở bài
            </Link>
            <Link
-            href={buildHanziHomeLessonHref({
-             courseId: group.courseId,
-             lessonNumber: group.lessonNumber,
-             module: "review",
-            })}
+            href={
+             kind === "vocab"
+              ? buildVocabReviewHrefFromLessons([
+                 {
+                  id: group.lessonId,
+                  lessonNumber: group.lessonNumber,
+                  courseId: group.courseId,
+                  title: group.lessonTitle,
+                  titleZh: group.lessonTitle,
+                 },
+                ])
+              : buildHanziHomeLessonHref({
+                 courseId: group.courseId,
+                 lessonNumber: group.lessonNumber,
+                 module: "review",
+                })
+            }
             prefetch={false}
             className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
             onClick={(event) => {
-             event.preventDefault();
-             startReview([group.lessonId]);
+             if (kind !== "vocab") {
+              event.preventDefault();
+              startReview([group.lessonId]);
+             }
             }}
            >
             Ôn bài
