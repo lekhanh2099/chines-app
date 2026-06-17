@@ -55,8 +55,8 @@ export function HanziHomeVocabReviewPage({ reviewLessonsParam }: { reviewLessons
  const activeReviewTitle = formatSelectedLessonsLabel(
   lessons.map((lesson) => ({
    id: lesson.id,
-   title: lesson.title.vi || lesson.title.zh || lesson.title.en || "Bài học",
-   titleZh: lesson.title.zh,
+   title: lesson.title || lesson.titleZh || "Bài học",
+   titleZh: lesson.titleZh,
    lessonNumber: lesson.lessonNumber,
   })),
  );
