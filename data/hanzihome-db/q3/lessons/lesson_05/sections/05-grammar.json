@@ -47,8 +47,8 @@
             {
               "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
               "zh": "其实，北京人最爱说的一句话是“回头再说”。",
-              "vi": "Thật ra, câu người Bắc Kinh thích nói nhất là “回头再说”.",
-              "pinyin": "",
+              "vi": "Thật ra, câu người Bắc Kinh thích nói nhất là “回头再说” — “để sau rồi nói”.",
+              "pinyin": "Qíshí, Běijīng rén zuì ài shuō de yí jù huà shì “huítóu zài shuō”.",
               "highlight": [
                 "其实"
               ],
@@ -62,8 +62,8 @@
             {
               "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
               "zh": "你以为他回国了，其实他去云南旅行了。",
-              "vi": "Bạn tưởng anh ấy về nước rồi, thật ra anh ấy đi du lịch Vân Nam.",
-              "pinyin": "",
+              "vi": "Bạn tưởng anh ấy đã về nước rồi, thật ra anh ấy đi du lịch Vân Nam.",
+              "pinyin": "Nǐ yǐwéi tā huíguó le, qíshí tā qù Yúnnán lǚxíng le.",
               "highlight": [
                 "其实"
               ],
@@ -78,7 +78,7 @@
               "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
               "zh": "其实我没去过北京。",
               "vi": "Thật ra tôi chưa từng đi Bắc Kinh.",
-              "pinyin": "",
+              "pinyin": "Qíshí wǒ méi qù guo Běijīng.",
               "highlight": [
                 "其实"
               ],
@@ -140,7 +140,7 @@
               "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
               "zh": "这一段工作太忙，回头再说吧。",
               "vi": "Dạo này công việc bận quá, để sau rồi nói nhé.",
-              "pinyin": "",
+              "pinyin": "Zhè yí duàn gōngzuò tài máng, huítóu zài shuō ba.",
               "highlight": [
                 "再说"
               ],
@@ -155,7 +155,7 @@
               "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
               "zh": "这件事以后再说吧。",
               "vi": "Chuyện này để sau rồi nói nhé.",
-              "pinyin": "",
+              "pinyin": "Zhè jiàn shì yǐhòu zài shuō ba.",
               "highlight": [
                 "再说"
               ],
@@ -169,8 +169,8 @@
             {
               "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
               "zh": "时间太晚了，我们明天再说吧。",
-              "vi": "Khuya quá rồi, mai hãy nói.",
-              "pinyin": "",
+              "vi": "Muộn quá rồi, chúng ta để mai nói tiếp nhé.",
+              "pinyin": "Shíjiān tài wǎn le, wǒmen míngtiān zài shuō ba.",
               "highlight": [
                 "再说"
               ],
@@ -232,7 +232,7 @@
               "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
               "zh": "怎么会这样不实在？",
               "vi": "Sao lại không thật lòng như vậy?",
-              "pinyin": "",
+              "pinyin": "Zěnme huì zhèyàng bù shízài?",
               "highlight": [
                 "实在"
               ],
@@ -246,8 +246,8 @@
             {
               "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
               "zh": "要把汉语说得跟中国人一样好，实在不容易。",
-              "vi": "Muốn nói tiếng Hán tốt như người Trung Quốc, thật sự không dễ.",
-              "pinyin": "",
+              "vi": "Muốn nói tiếng Hán giỏi như người Trung Quốc thì thật sự không dễ.",
+              "pinyin": "Yào bǎ Hànyǔ shuō de gēn Zhōngguó rén yíyàng hǎo, shízài bù róngyì.",
               "highlight": [
                 "实在"
               ],
@@ -262,7 +262,7 @@
               "id": "11c0241f-0901-42a3-879e-03e8696d3e40",
               "zh": "我实在不知道。",
               "vi": "Tôi thật sự không biết.",
-              "pinyin": "",
+              "pinyin": "Wǒ shízài bù zhīdào.",
               "highlight": [
                 "实在"
               ],
@@ -323,8 +323,8 @@
             {
               "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
               "zh": "这些书都是你用得着的。",
-              "vi": "Những quyển sách này đều là thứ bạn sẽ cần dùng đến.",
-              "pinyin": "",
+              "vi": "Những quyển sách này đều là những thứ bạn cần dùng đến.",
+              "pinyin": "Zhèxiē shū dōu shì nǐ yòng de zháo de.",
               "highlight": [
                 "用得着"
               ],
@@ -338,8 +338,8 @@
             {
               "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
               "zh": "这台电脑我已经用不着了。",
-              "vi": "Cái máy tính này tôi không cần dùng nữa.",
-              "pinyin": "",
+              "vi": "Cái máy tính này tôi đã không cần dùng đến nữa.",
+              "pinyin": "Zhè tái diànnǎo wǒ yǐjīng yòng bù zháo le.",
               "highlight": [
                 "用不着"
               ],
@@ -353,8 +353,8 @@
             {
               "id": "8bd7092e-619f-4f28-a8d6-e09d666d9485",
               "zh": "有什么意见你就好好儿说，用不着生这么大气。",
-              "vi": "Có ý kiến gì thì cứ nói tử tế, không cần tức giận như vậy.",
-              "pinyin": "",
+              "vi": "Có ý kiến gì thì cứ nói cho đàng hoàng, không cần tức giận đến vậy.",
+              "pinyin": "Yǒu shénme yìjiàn nǐ jiù hǎohāor shuō, yòng bù zháo shēng zhème dà qì.",
               "highlight": [
                 "用不着"
               ],
@@ -414,8 +414,8 @@
             {
               "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
               "zh": "至于钱，回头再说吧。",
-              "vi": "Còn về tiền thì để sau rồi nói.",
-              "pinyin": "",
+              "vi": "Còn về tiền thì để sau rồi nói nhé.",
+              "pinyin": "Zhìyú qián, huítóu zài shuō ba.",
               "highlight": [
                 "至于"
               ],
@@ -429,8 +429,8 @@
             {
               "id": "f9e042a0-fdff-4bbd-ae63-c89fd60a5d8e",
               "zh": "我知道这是四川菜，至于怎么做的，我就不知道了。",
-              "vi": "Tôi biết đây là món Tứ Xuyên, còn làm như thế nào thì tôi không biết.",
-              "pinyin": "",
+              "vi": "Tôi biết đây là món Tứ Xuyên; còn làm như thế nào thì tôi không biết.",
+              "pinyin": "Wǒ zhīdào zhè shì Sìchuān cài, zhìyú zěnme zuò de, wǒ jiù bù zhīdào le.",
               "highlight": [
                 "至于"
               ],
@@ -444,8 +444,8 @@
             {
               "id": "94983de4-1c9c-4a06-a92a-dec034629020",
               "zh": "至于你们赞成不赞成，那我就不管了。",
-              "vi": "Còn các bạn có tán thành hay không thì tôi không quản nữa.",
-              "pinyin": "",
+              "vi": "Còn chuyện các bạn có tán thành hay không thì tôi không quan tâm nữa.",
+              "pinyin": "Zhìyú nǐmen zànchéng bù zànchéng, nà wǒ jiù bù guǎn le.",
               "highlight": [
                 "至于"
               ],
