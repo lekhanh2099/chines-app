@@ -25,7 +25,8 @@
   "start": "next start",
   "lint": "eslint",
   "typecheck": "tsc --noEmit",
-  "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
+  "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs",
+  "data:hanzihome:seed-audit": "node --experimental-strip-types scripts/audit-hanzihome-seed-readiness.ts"
  },
  "dependencies": {
   "@base-ui/react": "^1.2.0",

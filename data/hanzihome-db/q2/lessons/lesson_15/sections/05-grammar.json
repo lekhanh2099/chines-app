@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l15_01",
       "type": "grammar_point",
       "order": 1,
       "title": "动作的进行或状态的持续：动词 + 着",
@@ -39,7 +39,7 @@
                 "开着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
@@ -76,7 +76,7 @@
                 "笑着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -106,7 +106,7 @@
                 "贴着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -126,7 +126,7 @@
                 "穿着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -155,7 +155,7 @@
                 "贴着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "9e143bd6-8273-4480-beea-b87921f0d67e",
@@ -174,7 +174,7 @@
                 "开着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
@@ -193,7 +193,7 @@
                 "穿着"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -266,7 +266,7 @@
                 "开着没有"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -286,7 +286,7 @@
                 "没有"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -318,7 +318,7 @@
                 "讲话"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -338,7 +338,7 @@
                 "说"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -357,7 +357,7 @@
                 "走着去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -390,7 +390,7 @@
                 "呢"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -411,7 +411,7 @@
                 "呢"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l15_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -489,6 +489,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l15_01"
       ]
     }
   ]

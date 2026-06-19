@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l25_01",
       "type": "grammar_point",
       "order": 1,
       "title": "反问句",
@@ -37,7 +37,7 @@
                 "怎么能不去呢"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -69,7 +69,7 @@
                 "没听说过吗"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -85,7 +85,7 @@
                 "没看见吗"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -120,7 +120,7 @@
                 "怎么知道呢"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -136,7 +136,7 @@
                 "谁说"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -152,7 +152,7 @@
                 "哪儿"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l25_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -161,10 +161,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l25_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l25_02",
       "type": "grammar_point",
       "order": 2,
       "title": "连……也 / 都……",
@@ -209,7 +212,7 @@
                 "连长城也没去过"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l25_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -225,7 +228,7 @@
                 "连这么简单的问题也不会回答"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l25_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -258,7 +261,7 @@
                 "连校长都"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l25_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -274,7 +277,7 @@
                 "连孩子都会回答"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l25_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -285,10 +288,13 @@
             "Trong câu khẳng định, 连……都…… thường tự nhiên và ổn định hơn 连……也……."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l25_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l25_03",
       "type": "grammar_point",
       "order": 3,
       "title": "二次否定",
@@ -333,7 +339,7 @@
                 "没有不知道的"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l25_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -349,7 +355,7 @@
                 "没有人不知道"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l25_03"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -382,7 +388,7 @@
                 "不能不去"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l25_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -398,7 +404,7 @@
                 "不能不知道"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l25_03"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -407,6 +413,9 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l25_03"
       ]
     }
   ]

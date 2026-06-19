@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "l18_grammar_01",
+      "id": "grammar_q3_l18_01",
       "type": "grammar_point",
       "order": 1,
       "title": "本来",
@@ -50,10 +50,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_01"
       ]
     },
     {
-      "id": "l18_grammar_02",
+      "id": "grammar_q3_l18_02",
       "type": "grammar_point",
       "order": 2,
       "title": "来不及",
@@ -95,10 +98,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_02"
       ]
     },
     {
-      "id": "l18_grammar_03",
+      "id": "grammar_q3_l18_03",
       "type": "grammar_point",
       "order": 3,
       "title": "特意",
@@ -140,10 +146,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_03"
       ]
     },
     {
-      "id": "l18_grammar_04",
+      "id": "grammar_q3_l18_04",
       "type": "grammar_point",
       "order": 4,
       "title": "可惜",
@@ -185,10 +194,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_04"
       ]
     },
     {
-      "id": "l18_grammar_05",
+      "id": "grammar_q3_l18_05",
       "type": "grammar_point",
       "order": 5,
       "title": "不忍",
@@ -230,10 +242,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_05"
       ]
     },
     {
-      "id": "l18_grammar_06",
+      "id": "grammar_q3_l18_06",
       "type": "grammar_point",
       "order": 6,
       "title": "关于",
@@ -275,10 +290,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_06"
       ]
     },
     {
-      "id": "l18_grammar_07",
+      "id": "grammar_q3_l18_07",
       "type": "grammar_point",
       "order": 7,
       "title": "渐渐",
@@ -320,10 +338,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_07"
       ]
     },
     {
-      "id": "l18_grammar_08",
+      "id": "grammar_q3_l18_08",
       "type": "grammar_point",
       "order": 8,
       "title": "好",
@@ -365,10 +386,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_08"
       ]
     },
     {
-      "id": "l18_grammar_09",
+      "id": "grammar_q3_l18_09",
       "type": "grammar_point",
       "order": 9,
       "title": "所谓",
@@ -410,10 +434,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_09"
       ]
     },
     {
-      "id": "l18_grammar_10",
+      "id": "grammar_q3_l18_10",
       "type": "grammar_point",
       "order": 10,
       "title": "所有",
@@ -455,6 +482,9 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l18_10"
       ]
     }
   ]

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_001",
+      "id": "grammar_q3_l04_01",
       "type": "grammar_point",
       "order": 1,
       "title": "一点儿 + 也/都 + 不/没……",
@@ -38,7 +38,7 @@
                 "一点儿也不了解"
               ],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q3_l04_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -57,7 +57,7 @@
                 "一点儿都不知道"
               ],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q3_l04_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -97,7 +97,7 @@
                 "一点儿也不"
               ],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q3_l04_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -116,7 +116,7 @@
                 "一点儿都没"
               ],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q3_l04_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -132,10 +132,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_01"
       ]
     },
     {
-      "id": "grammar_002",
+      "id": "grammar_q3_l04_02",
       "type": "grammar_point",
       "order": 2,
       "title": "当然",
@@ -165,7 +168,7 @@
                 "当然"
               ],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l04_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -184,7 +187,7 @@
                 "当然"
               ],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l04_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -216,7 +219,7 @@
                 "当然"
               ],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l04_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -235,7 +238,7 @@
                 "一定"
               ],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l04_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -247,10 +250,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_02"
       ]
     },
     {
-      "id": "grammar_003",
+      "id": "grammar_q3_l04_03",
       "type": "grammar_point",
       "order": 3,
       "title": "不过",
@@ -280,7 +286,7 @@
                 "不过"
               ],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q3_l04_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -299,7 +305,7 @@
                 "不过"
               ],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q3_l04_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -325,10 +331,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_03"
       ]
     },
     {
-      "id": "grammar_004",
+      "id": "grammar_q3_l04_04",
       "type": "grammar_point",
       "order": 4,
       "title": "简直",
@@ -358,7 +367,7 @@
                 "简直"
               ],
               "grammar_refs": [
-                "grammar_004"
+                "grammar_q3_l04_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -377,7 +386,7 @@
                 "简直"
               ],
               "grammar_refs": [
-                "grammar_004"
+                "grammar_q3_l04_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -408,7 +417,7 @@
                 "简直"
               ],
               "grammar_refs": [
-                "grammar_004"
+                "grammar_q3_l04_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -423,10 +432,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_04"
       ]
     },
     {
-      "id": "grammar_005",
+      "id": "grammar_q3_l04_05",
       "type": "grammar_point",
       "order": 5,
       "title": "从",
@@ -456,7 +468,7 @@
                 "从小"
               ],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l04_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -475,7 +487,7 @@
                 "从不"
               ],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l04_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -506,7 +518,7 @@
                 "从来没"
               ],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l04_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -521,10 +533,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_05"
       ]
     },
     {
-      "id": "grammar_006",
+      "id": "grammar_q3_l04_06",
       "type": "grammar_point",
       "order": 6,
       "title": "偷偷儿",
@@ -554,7 +569,7 @@
                 "偷偷儿地"
               ],
               "grammar_refs": [
-                "grammar_006"
+                "grammar_q3_l04_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -573,7 +588,7 @@
                 "偷偷儿"
               ],
               "grammar_refs": [
-                "grammar_006"
+                "grammar_q3_l04_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -597,10 +612,13 @@
           "notes_vi": [],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_06"
       ]
     },
     {
-      "id": "grammar_007",
+      "id": "grammar_q3_l04_07",
       "type": "grammar_point",
       "order": 7,
       "title": "V着V着就……",
@@ -630,7 +648,7 @@
                 "哭着哭着就"
               ],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l04_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -649,7 +667,7 @@
                 "走着走着就"
               ],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l04_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -680,7 +698,7 @@
                 "说着说着就"
               ],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l04_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -699,7 +717,7 @@
                 "想着想着就"
               ],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l04_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -714,6 +732,9 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l04_07"
       ]
     }
   ]

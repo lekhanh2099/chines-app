@@ -27,7 +27,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+            "grammar_q2_l13_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -68,7 +68,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+            "grammar_q2_l13_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -242,7 +242,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+            "grammar_q2_l13_01",
             "dff6e5fd-b17c-416c-9b26-c132ffa8221b",
             "c90c2355-b27d-4fb8-bbeb-0d15f6c70319"
           ],
@@ -311,7 +311,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "874e376a-a113-46ba-b49b-c492f5f33124"
+            "grammar_q2_l13_03"
           ],
           "source_origin": "textbook",
           "check_needed": false

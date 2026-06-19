@@ -11,7 +11,11 @@
     "notes": []
   },
   "level_tag": "A++",
-  "tags": "khẩu ngữ/tự nhiên",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
   "meaning": {
     "hanviet": "Sai",
     "meaning_vi": "đoán",

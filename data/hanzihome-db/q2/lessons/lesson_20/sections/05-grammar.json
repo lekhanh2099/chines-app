@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l20_01",
       "type": "grammar_point",
       "order": 1,
       "title": "可能补语（一）",
@@ -99,10 +99,13 @@
             "Không dùng 把字句 với 可能补语 trong phạm vi bài này."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l20_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l20_02",
       "type": "grammar_point",
       "order": 2,
       "title": "结果补语 dạng khả năng",
@@ -145,10 +148,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l20_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l20_03",
       "type": "grammar_point",
       "order": 3,
       "title": "动词 + 得 / 不 + 了",
@@ -194,10 +200,13 @@
             "了 trong 去不了 đọc là liǎo, không phải trợ từ le."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l20_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q2_l20_04",
       "type": "grammar_point",
       "order": 4,
       "title": "动词 + 得 / 不 + 下",
@@ -240,6 +249,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l20_04"
       ]
     }
   ]

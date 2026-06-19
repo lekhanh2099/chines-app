@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l08_01",
       "type": "grammar_point",
       "order": 1,
       "title": "尽量",
@@ -33,7 +33,7 @@
               "pinyin": "Suǒyǐ wǒ zǒngshì jǐnliàng bù gēn tāmen zài yìqǐ.",
               "vi": "Vì vậy tôi luôn cố gắng không ở cùng họ.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l08_01"
               ],
               "source_ref": "4a807389-3592-4cf4-973f-6589e0118fb2",
               "source_origin": "textbook_pdf_checked",
@@ -55,7 +55,7 @@
               "pinyin": "Nǐ fàngxīn ba, zhǐyào wǒ néng zuò dào de, wǒ huì jǐnliàng bāngmáng.",
               "vi": "Bạn yên tâm, chỉ cần là việc tôi làm được, tôi sẽ cố gắng giúp.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l08_01"
               ],
               "source_origin": "textbook_pdf_checked",
               "check_needed": false
@@ -66,10 +66,13 @@
             "尽量 khác 一定: 尽量 là cố gắng hết sức, 一定 là cam kết mạnh hơn."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l08_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l08_02",
       "type": "grammar_point",
       "order": 2,
       "title": "立刻",
@@ -94,7 +97,7 @@
               "pinyin": "Wǒ lìkè gāoxìng de tiào le qǐlai.",
               "vi": "Tôi lập tức vui đến mức nhảy cẫng lên.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l08_02"
               ],
               "source_ref": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
               "source_origin": "textbook_pdf_checked",
@@ -132,10 +135,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l08_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l08_03",
       "type": "grammar_point",
       "order": 3,
       "title": "一连",
@@ -160,7 +166,7 @@
               "pinyin": "Yìlián hǎo jǐ ge wǎnshang, wǒ dōu fānlái-fùqù shuì bù zháo.",
               "vi": "Mấy tối liền, tôi đều trằn trọc không ngủ được.",
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l08_03"
               ],
               "source_ref": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
               "source_origin": "textbook_pdf_checked",
@@ -182,17 +188,20 @@
               "pinyin": "Wǒ yìlián gěi tā xiě le hǎo jǐ fēng yóujiàn, tā dōu méiyǒu huí.",
               "vi": "Tôi viết liền mấy email cho cô ấy, cô ấy đều không trả lời.",
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l08_03"
               ],
               "source_origin": "textbook_pdf_checked",
               "check_needed": false
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l08_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l08_04",
       "type": "grammar_point",
       "order": 4,
       "title": "仍然 / 仍",
@@ -217,7 +226,7 @@
               "pinyin": "Xiànzài Zhào Xiá yǐjīng chéng le wǒ de qīzi, Yú Huī réngrán shì wǒ zuì hǎo de péngyou.",
               "vi": "Bây giờ Triệu Hà đã trở thành vợ tôi, Dư Huy vẫn là người bạn thân nhất của tôi.",
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l08_04"
               ],
               "source_ref": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
               "source_origin": "textbook_pdf_checked",
@@ -239,7 +248,7 @@
               "pinyin": "Zhège yǔfǎ lǎoshī yǐjīng jiǎng guo le, kěshì wǒ réngrán bú tài dǒng.",
               "vi": "Ngữ pháp này giáo viên đã giảng rồi, nhưng tôi vẫn chưa hiểu lắm.",
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l08_04"
               ],
               "source_origin": "textbook_pdf_checked",
               "check_needed": false
@@ -250,6 +259,9 @@
             "还 khẩu ngữ và dùng rộng hơn; 仍然 nhấn mạnh hơn."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l08_04"
       ]
     }
   ]

@@ -23,7 +23,7 @@
           "zh": "请把这份说明书翻译一下儿。",
           "vi": "Xin hãy dịch bản hướng dẫn này một chút.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -35,7 +35,7 @@
           "zh": "翻译成英文的吗？",
           "vi": "Dịch sang tiếng Anh phải không ạ?",
           "grammar_refs": [
-            "result_complement_cheng"
+            "grammar_q2_l18_03"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -67,7 +67,7 @@
           "zh": "下午能翻译完吗？",
           "vi": "Chiều có thể dịch xong không?",
           "grammar_refs": [
-            "result_complement_wan"
+            "grammar_q2_l18_04"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -89,7 +89,7 @@
           "zh": "下午交给我吧。",
           "vi": "Chiều giao cho tôi nhé.",
           "grammar_refs": [
-            "verb_gei_recipient"
+            "grammar_q2_l18_05"
           ],
           "source_origin": "textbook",
           "check_needed": false

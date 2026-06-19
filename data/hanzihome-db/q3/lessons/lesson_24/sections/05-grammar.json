@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l24_01",
       "type": "grammar_point",
       "order": 1,
       "title": "以及",
@@ -53,7 +53,7 @@
                 "以及"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l24_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -68,7 +68,7 @@
                 "以及"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l24_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -79,10 +79,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l24_02",
       "type": "grammar_point",
       "order": 2,
       "title": "可见",
@@ -127,7 +130,7 @@
                 "可见"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l24_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -142,7 +145,7 @@
                 "可见"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l24_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -153,10 +156,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l24_03",
       "type": "grammar_point",
       "order": 3,
       "title": "以……为……",
@@ -201,7 +207,7 @@
                 "以"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l24_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -216,7 +222,7 @@
                 "以"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l24_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -227,10 +233,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l24_04",
       "type": "grammar_point",
       "order": 4,
       "title": "算",
@@ -275,7 +284,7 @@
                 "算"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l24_04"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -290,7 +299,7 @@
                 "算"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l24_04"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -301,10 +310,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l24_05",
       "type": "grammar_point",
       "order": 5,
       "title": "往往",
@@ -349,7 +361,7 @@
                 "往往"
               ],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l24_05"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -364,7 +376,7 @@
                 "往往"
               ],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l24_05"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -375,10 +387,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q3_l24_06",
       "type": "grammar_point",
       "order": 6,
       "title": "是否",
@@ -423,7 +438,7 @@
                 "是否"
               ],
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q3_l24_06"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -438,7 +453,7 @@
                 "是否"
               ],
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q3_l24_06"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -449,10 +464,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_06"
       ]
     },
     {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_q3_l24_07",
       "type": "grammar_point",
       "order": 7,
       "title": "不妨",
@@ -497,7 +515,7 @@
                 "不妨"
               ],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q3_l24_07"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -512,7 +530,7 @@
                 "不妨"
               ],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q3_l24_07"
               ],
               "vocab_refs": [],
               "source_origin": "textbook_pdf_checked",
@@ -523,6 +541,9 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l24_07"
       ]
     }
   ]

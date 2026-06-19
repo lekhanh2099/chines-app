@@ -23,7 +23,7 @@
           "zh": "啊，刮风了。今天天气真冷！",
           "vi": "À, gió nổi rồi. Hôm nay trời lạnh thật!",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l08_01"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -37,7 +37,7 @@
           "zh": "是啊，冬天快要到了。",
           "vi": "Đúng vậy, mùa đông sắp đến rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l08_02"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -73,7 +73,7 @@
           "zh": "我只会滑冰，不会滑雪。我真想到你们家乡去学学滑雪。你看，树叶都红了。红叶真漂亮！等一下儿，我去捡几片红叶。",
           "vi": "Tớ chỉ biết trượt băng, không biết trượt tuyết. Tớ thật sự muốn đến quê cậu học thử trượt tuyết. Cậu xem, lá cây đều đỏ rồi. Lá đỏ đẹp thật! Đợi một chút nhé, tớ đi nhặt vài chiếc lá đỏ.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l08_01"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -87,8 +87,8 @@
           "zh": "别捡了，快走吧，要上课了。",
           "vi": "Đừng nhặt nữa, đi nhanh đi, sắp vào lớp rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l08_02",
+            "grammar_q2_l08_04"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -135,7 +135,7 @@
           "zh": "什么？你的表是不是坏了？",
           "vi": "Cái gì? Đồng hồ của cậu có phải hỏng rồi không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l08_01"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -149,8 +149,8 @@
           "zh": "哎呀，我的表停了，可能没电了，该换电池了。什么时间了？",
           "vi": "Ôi, đồng hồ của tớ dừng rồi, có lẽ hết pin rồi, đến lúc phải thay pin rồi. Bây giờ là mấy giờ?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l08_01",
+            "grammar_q2_l08_04"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -164,8 +164,8 @@
           "zh": "都七点五十了。快走吧，再不快点儿就迟到了。",
           "vi": "Đã bảy giờ năm mươi rồi. Đi nhanh đi, nếu không nhanh hơn nữa thì sẽ đến muộn đó.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l08_01",
+            "grammar_q2_l08_04"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -204,8 +204,8 @@
           "zh": "我母亲来信了。她在信上高兴地说，我姐姐下个月就要结婚了。",
           "vi": "Mẹ tớ gửi thư đến rồi. Trong thư, mẹ vui mừng nói rằng chị gái tớ tháng sau sắp kết hôn.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l08_02",
+            "grammar_q2_l08_03"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,
@@ -219,7 +219,7 @@
           "zh": "上次你说你姐姐刚找到工作，怎么这么快就要结婚了？",
           "vi": "Lần trước cậu nói chị gái cậu vừa mới tìm được việc, sao nhanh như vậy đã sắp kết hôn rồi?",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l08_02"
           ],
           "source_origin": "pdf_textbook_checked",
           "check_needed": false,

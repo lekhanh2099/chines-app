@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "d5eaf408-514c-4987-b142-668f43d140be",
+      "id": "grammar_q3_l26_01",
       "type": "grammar_point",
       "order": 1,
       "title": "由于",
@@ -55,7 +55,7 @@
                 "所以"
               ],
               "grammar_refs": [
-                "d5eaf408-514c-4987-b142-668f43d140be"
+                "grammar_q3_l26_01"
               ],
               "vocab_refs": [],
               "source_ref": "4a807389-3592-4cf4-973f-6589e0118fb2",
@@ -70,10 +70,13 @@
             "因为 có thể đứng ở vế sau; 由于 thường không đứng ở vế sau theo kiểu khẩu ngữ."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_01"
       ]
     },
     {
-      "id": "a8720887-db26-4d49-b41f-8a6d646a791d",
+      "id": "grammar_q3_l26_02",
       "type": "grammar_point",
       "order": 2,
       "title": "为",
@@ -119,7 +122,7 @@
                 "化为"
               ],
               "grammar_refs": [
-                "a8720887-db26-4d49-b41f-8a6d646a791d"
+                "grammar_q3_l26_02"
               ],
               "vocab_refs": [],
               "source_ref": "grammar_page_219",
@@ -135,10 +138,13 @@
             "为 wèi: vì/cho; đọc khác với wéi."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_02"
       ]
     },
     {
-      "id": "28ce5846-ff50-47d0-927a-dd6a1699d21a",
+      "id": "grammar_q3_l26_03",
       "type": "grammar_point",
       "order": 3,
       "title": "始终",
@@ -182,10 +188,13 @@
           ],
           "wrong_examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_03"
       ]
     },
     {
-      "id": "43a1f72d-1510-4a57-a1fa-0af2b4890023",
+      "id": "grammar_q3_l26_04",
       "type": "grammar_point",
       "order": 4,
       "title": "不然",
@@ -223,7 +232,7 @@
                 "不然"
               ],
               "grammar_refs": [
-                "43a1f72d-1510-4a57-a1fa-0af2b4890023"
+                "grammar_q3_l26_04"
               ],
               "vocab_refs": [],
               "source_ref": "grammar_page_222",
@@ -237,10 +246,13 @@
             "不然 cũng có thể nói 要不然 hoặc 要不 trong khẩu ngữ."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_04"
       ]
     },
     {
-      "id": "cb4fa491-3ff6-4992-b0d5-5abdd9044560",
+      "id": "grammar_q3_l26_05",
       "type": "grammar_point",
       "order": 5,
       "title": "宁可",
@@ -279,7 +291,7 @@
                 "也不"
               ],
               "grammar_refs": [
-                "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+                "grammar_q3_l26_05"
               ],
               "vocab_refs": [],
               "source_ref": "2fa39b34-744a-4e61-870d-0888f40e57cd",
@@ -294,10 +306,13 @@
             "Có thể đứng trước động từ hoặc trước chủ ngữ."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_05"
       ]
     },
     {
-      "id": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae",
+      "id": "grammar_q3_l26_06",
       "type": "grammar_point",
       "order": 6,
       "title": "表达",
@@ -343,7 +358,7 @@
                 "表达"
               ],
               "grammar_refs": [
-                "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+                "grammar_q3_l26_06"
               ],
               "vocab_refs": [],
               "source_ref": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
@@ -357,6 +372,9 @@
             "Không nói trống 我表达了 nếu thiếu nội dung; nên nói 表达了自己的想法/感情."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l26_06"
       ]
     }
   ]

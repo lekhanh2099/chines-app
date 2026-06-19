@@ -24,7 +24,7 @@
           "pinyin": "Jiē shang dào chù dōu xiězhe “Yǒu kùnnan zhǎo jǐngchá”, nǐ zhǎoguo jǐngchá ma?",
           "vi": "Trên phố khắp nơi đều viết “Có khó khăn thì tìm cảnh sát”, bạn đã từng tìm cảnh sát chưa?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l24_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -74,7 +74,7 @@
           "pinyin": "Zài yí ge shízì lùkǒur, wǒ kànjiàn yí duì lǎo fūqī, kàn yàngzi tuǐjiǎo bú tài hǎo.",
           "vi": "Ở một ngã tư, tôi nhìn thấy một đôi vợ chồng già, nhìn bộ dạng thì chân cẳng không tốt lắm.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l24_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -100,7 +100,7 @@
           "pinyin": "Zhè shí, yí ge jiāotōng jǐngchá kànjiàn le, jiù lìjí pǎo le guòqu, fúzhe zhè liǎng wèi lǎorén, yí bù yí bù de zǒu guòlai.",
           "vi": "Lúc này, một cảnh sát giao thông nhìn thấy, liền lập tức chạy qua, dìu hai cụ già từng bước từng bước đi sang.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l24_02"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -174,7 +174,7 @@
           "pinyin": "Zhèngzài bù zhīdào zěnme bàn de shíhou, tā xiǎngdào “Yǒu kùnnan zhǎo jǐngchá” zhè jù huà, jiù qù zhǎo jǐngchá.",
           "vi": "Đúng lúc không biết phải làm sao, anh ấy nghĩ đến câu “Có khó khăn thì tìm cảnh sát”, nên đi tìm cảnh sát.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l24_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -272,7 +272,7 @@
           "pinyin": "Shuōzhe jiù bǎ xiǎo jiǎo shēn dào jǐngchá miànqián, jǐngchá xiàozhe wān xià yāo qù, gěi háizi bǎ xiédàir jì hǎo, jiù xiàng zhàogù zìjǐ de háizi yíyàng.",
           "vi": "Nói rồi, em đưa bàn chân nhỏ ra trước mặt cảnh sát; cảnh sát mỉm cười cúi xuống, buộc dây giày cho em, giống như đang chăm sóc con của mình vậy.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l24_03"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -286,7 +286,7 @@
           "pinyin": "Zhè shí háizi de māma yě pǎo le guòlai, kàndào zhè zhǒng qíngjǐng, gǎndòng de bù zhīdào shuō shénme hǎo.",
           "vi": "Lúc này mẹ của đứa bé cũng chạy tới, nhìn thấy cảnh tượng ấy, cảm động đến mức không biết nói gì.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l24_03"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -313,7 +313,7 @@
           "pinyin": "Zhè fú “Hóngméi Tú” huà de zhēn hǎo!",
           "vi": "Bức “Hồng Mai Đồ” này vẽ đẹp thật!",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l24_03"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -411,7 +411,7 @@
           "pinyin": "Wǒ kàn nín de zì xiě de hěn piàoliang.",
           "vi": "Tôi thấy chữ của ông viết rất đẹp.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l24_03"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",

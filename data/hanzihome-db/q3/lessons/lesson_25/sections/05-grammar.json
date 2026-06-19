@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l25_01",
       "type": "grammar_point",
       "order": 1,
       "title": "从不",
@@ -61,10 +61,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l25_02",
       "type": "grammar_point",
       "order": 2,
       "title": "吵",
@@ -117,10 +120,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l25_03",
       "type": "grammar_point",
       "order": 3,
       "title": "难以",
@@ -173,10 +179,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l25_04",
       "type": "grammar_point",
       "order": 4,
       "title": "仍旧",
@@ -229,10 +238,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l25_05",
       "type": "grammar_point",
       "order": 5,
       "title": "一会儿……一会儿……",
@@ -285,10 +297,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q3_l25_06",
       "type": "grammar_point",
       "order": 6,
       "title": "久久",
@@ -341,10 +356,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_06"
       ]
     },
     {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_q3_l25_07",
       "type": "grammar_point",
       "order": 7,
       "title": "吓",
@@ -397,6 +415,9 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l25_07"
       ]
     }
   ]

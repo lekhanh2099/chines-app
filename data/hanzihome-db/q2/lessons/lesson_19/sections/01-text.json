@@ -39,7 +39,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -119,7 +119,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -147,7 +147,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l19_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -227,7 +227,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -281,7 +281,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -309,8 +309,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l19_01",
+            "grammar_q2_l19_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -325,7 +325,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -366,8 +366,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l19_01",
+            "grammar_q2_l19_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -382,7 +382,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l19_01"
           ],
           "source_origin": "textbook",
           "check_needed": false

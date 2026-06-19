@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l06_01",
       "type": "grammar_point",
       "order": 1,
       "title": "比较句：A 比 B + 形容词",
@@ -36,7 +36,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l06_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -53,7 +53,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l06_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -86,7 +86,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l06_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -97,10 +97,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l06_02",
       "type": "grammar_point",
       "order": 2,
       "title": "更",
@@ -128,7 +131,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l06_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -145,7 +148,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l06_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -156,10 +159,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l06_03",
       "type": "grammar_point",
       "order": 3,
       "title": "比较句中的数量补语",
@@ -194,7 +200,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l06_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -211,7 +217,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l06_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -222,10 +228,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q2_l06_04",
       "type": "grammar_point",
       "order": 4,
       "title": "没有 trong phủ định so sánh",
@@ -255,7 +264,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q2_l06_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -272,7 +281,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q2_l06_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -300,7 +309,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q2_l06_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -311,10 +320,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q2_l06_05",
       "type": "grammar_point",
       "order": 5,
       "title": "有 / 没有……这么 / 那么……",
@@ -343,7 +355,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q2_l06_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -360,7 +372,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q2_l06_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -371,10 +383,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q2_l06_06",
       "type": "grammar_point",
       "order": 6,
       "title": "最",
@@ -402,7 +417,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q2_l06_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -413,10 +428,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_06"
       ]
     },
     {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_q2_l06_07",
       "type": "grammar_point",
       "order": 7,
       "title": "程度差异：一点儿 / 得多 / 多了 / 很多",
@@ -447,7 +465,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q2_l06_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -464,7 +482,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q2_l06_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -475,10 +493,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_07"
       ]
     },
     {
-      "id": "b7073860-473c-4cb7-82ba-943917998455",
+      "id": "grammar_q2_l06_08",
       "type": "grammar_point",
       "order": 8,
       "title": "动词 + 得 + 补语 trong so sánh",
@@ -507,7 +528,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "b7073860-473c-4cb7-82ba-943917998455"
+                "grammar_q2_l06_08"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -524,7 +545,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "b7073860-473c-4cb7-82ba-943917998455"
+                "grammar_q2_l06_08"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -535,10 +556,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_08"
       ]
     },
     {
-      "id": "3253aaee-3b06-4864-9b11-98c656764ed4",
+      "id": "grammar_q2_l06_09",
       "type": "grammar_point",
       "order": 9,
       "title": "感叹句",
@@ -567,7 +591,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "3253aaee-3b06-4864-9b11-98c656764ed4"
+                "grammar_q2_l06_09"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -584,7 +608,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "3253aaee-3b06-4864-9b11-98c656764ed4"
+                "grammar_q2_l06_09"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -595,6 +619,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l06_09"
       ]
     }
   ]

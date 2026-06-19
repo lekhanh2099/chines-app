@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l20_01",
       "type": "grammar_point",
       "order": 1,
       "title": "何必",
@@ -52,7 +52,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l20_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -69,7 +69,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l20_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -86,7 +86,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l20_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -100,10 +100,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l20_02",
       "type": "grammar_point",
       "order": 2,
       "title": "凭",
@@ -147,7 +150,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l20_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -164,7 +167,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l20_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -181,7 +184,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l20_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -195,10 +198,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l20_03",
       "type": "grammar_point",
       "order": 3,
       "title": "然而",
@@ -242,7 +248,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l20_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -259,7 +265,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l20_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -273,10 +279,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l20_04",
       "type": "grammar_point",
       "order": 4,
       "title": "从而",
@@ -320,7 +329,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l20_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -337,7 +346,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l20_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -351,10 +360,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l20_05",
       "type": "grammar_point",
       "order": 5,
       "title": "动词 + 不起",
@@ -398,7 +410,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l20_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -415,7 +427,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l20_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -432,7 +444,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l20_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -446,10 +458,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q3_l20_06",
       "type": "grammar_point",
       "order": 6,
       "title": "假如",
@@ -493,7 +508,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q3_l20_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -510,7 +525,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q3_l20_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -524,10 +539,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_06"
       ]
     },
     {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_q3_l20_07",
       "type": "grammar_point",
       "order": 7,
       "title": "尽情",
@@ -571,7 +589,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q3_l20_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -588,7 +606,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f3302370-f1c2-4d08-99ba-fda75cc4a335"
+                "grammar_q3_l20_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -602,6 +620,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l20_07"
       ]
     }
   ]

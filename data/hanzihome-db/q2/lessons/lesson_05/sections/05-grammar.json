@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l05_01",
       "type": "grammar_point",
       "order": 1,
       "title": "时量补语",
@@ -120,10 +120,13 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l05_01"
+      ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l05_02",
       "type": "grammar_point",
       "order": 2,
       "title": "概数的表达",
@@ -242,10 +245,13 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l05_02"
+      ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l05_03",
       "type": "grammar_point",
       "order": 3,
       "title": "离合词",
@@ -326,7 +332,10 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l05_03"
+      ]
     }
   ]
 }

@@ -11,7 +11,11 @@
     "notes": []
   },
   "level_tag": "A++",
-  "tags": "hiện đại, tự nhiên",
+  "tags": [
+    "hanyu2",
+    "lesson21",
+    "deep_vocab"
+  ],
   "meaning": {
     "hanviet": "Diễn xuất",
     "meaning_vi": "biểu diễn; buổi biểu diễn",

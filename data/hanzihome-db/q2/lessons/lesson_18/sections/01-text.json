@@ -23,7 +23,7 @@
           "zh": "我们先去办理登机手续，把行李托运了。",
           "vi": "Trước tiên chúng ta đi làm thủ tục lên máy bay, ký gửi hành lý đã.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -42,7 +42,7 @@
           "zh": "请把护照和机票给我。哪个箱子要托运？把它放上去吧。这是登机牌儿，请拿好。",
           "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi. Va-li nào cần ký gửi? Đặt nó lên đây nhé. Đây là thẻ lên máy bay, xin cầm cho cẩn thận.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -95,7 +95,7 @@
           "zh": "请把口袋里的东西都掏出来。",
           "vi": "Xin lấy hết đồ trong túi ra.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
@@ -135,7 +135,7 @@
           "zh": "把手提包放到行李箱里去吧。",
           "vi": "Đặt túi xách vào ngăn hành lý đi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
@@ -150,7 +150,7 @@
           "zh": "等一下儿，先把相机拿出来，我想在飞机上照两张照片。",
           "vi": "Chờ một chút, để em lấy máy ảnh ra trước, em muốn chụp hai tấm ảnh trên máy bay.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -163,7 +163,7 @@
           "zh": "给你。对了，相机里还没有电池呢，我先把电池装上。",
           "vi": "Đây. À đúng rồi, trong máy ảnh vẫn chưa có pin, anh lắp pin vào trước.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9"
@@ -204,7 +204,7 @@
           "zh": "你把灯打开。",
           "vi": "Em bật đèn lên đi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",
@@ -243,7 +243,7 @@
           "zh": "飞机马上就要起飞了，请大家把安全带系好，把手机关上……",
           "vi": "Máy bay sắp cất cánh rồi, xin mọi người thắt dây an toàn, tắt điện thoại…",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -275,7 +275,7 @@
           "zh": "把这个插头往里一插就行了。",
           "vi": "Cắm cái đầu này vào bên trong là được rồi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "d45d5488-9293-41ae-9deb-1e5b51cee446",
@@ -302,7 +302,7 @@
           "zh": "把卡子扳一下儿就打开了。",
           "vi": "Gạt cái khóa một cái là mở ra rồi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "c99a633b-27a2-429b-a139-44113a84c189",
@@ -318,7 +318,7 @@
           "zh": "啊，打开了。你看，咖啡都凉了，快把它喝了吧。",
           "vi": "À, mở được rồi. Anh xem, cà phê nguội cả rồi, uống nhanh đi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "dc0f8e06-a359-4907-a8d8-fc9b02260590"
@@ -355,7 +355,7 @@
           "zh": "你把杯子碰倒了，咖啡全洒了。",
           "vi": "Anh làm đổ cốc rồi, cà phê đổ hết ra rồi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [
             "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -371,7 +371,7 @@
           "zh": "快拿纸把桌子擦擦。",
           "vi": "Mau lấy giấy lau bàn đi.",
           "grammar_refs": [
-            "26d807af-9599-4242-96db-253eb2d2e572"
+            "grammar_q2_l18_01"
           ],
           "vocab_refs": [],
           "source_origin": "textbook",

@@ -23,7 +23,7 @@
           "zh": "喂，是田芳吗？",
           "vi": "Alo, Điền Phương đấy à?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -44,7 +44,7 @@
           "zh": "阿姨，您好！田芳去哪儿了？",
           "vi": "Cháu chào cô ạ! Điền Phương đi đâu rồi ạ?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -56,7 +56,7 @@
           "zh": "她四点多就去同学家了。她的一个中学同学要出国，她去看看她。",
           "vi": "Nó hơn bốn giờ đã đến nhà bạn học rồi. Một bạn cấp hai của nó sắp ra nước ngoài, nó đến thăm bạn ấy.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -86,7 +86,7 @@
           "zh": "我打了，可是她关机了。",
           "vi": "Cháu gọi rồi, nhưng bạn ấy tắt máy rồi ạ.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -98,7 +98,7 @@
           "zh": "是吗？你过一会儿再打吧。",
           "vi": "Thế à? Lát nữa cháu gọi lại nhé.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l01_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -110,7 +110,7 @@
           "zh": "阿姨，田芳回来了没有？",
           "vi": "Cô ơi, Điền Phương về chưa ạ?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -144,7 +144,7 @@
           "zh": "妈，我回来了。",
           "vi": "Mẹ, con về rồi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -156,7 +156,7 @@
           "zh": "饿了吧？快吃饭吧！啊，对了，张东给你打电话了没有？",
           "vi": "Đói rồi phải không? Mau ăn cơm đi! À đúng rồi, Trương Đông gọi điện cho con chưa?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -177,7 +177,7 @@
           "zh": "他来电话找你，说打你的手机，你关机了。",
           "vi": "Cậu ấy gọi điện tìm con, nói là gọi di động cho con nhưng con tắt máy rồi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -189,7 +189,7 @@
           "zh": "啊！对了，我忘开机了。",
           "vi": "À! Đúng rồi, con quên mở máy.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -201,8 +201,8 @@
           "zh": "快！电话又响了，你去接吧。",
           "vi": "Nhanh lên! Điện thoại lại reo rồi, con đi nghe đi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l01_01",
+            "grammar_q2_l01_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -214,7 +214,7 @@
           "zh": "喂，张东，下午你给我打电话了吧？",
           "vi": "Alo, Trương Đông, chiều nay cậu gọi điện cho mình phải không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -226,7 +226,7 @@
           "zh": "打了，你怎么关机了？",
           "vi": "Gọi rồi. Sao cậu lại tắt máy?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -238,7 +238,7 @@
           "zh": "对不起，我忘开机了。下午你做什么了？",
           "vi": "Xin lỗi, mình quên mở máy. Chiều nay cậu làm gì vậy?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -250,7 +250,7 @@
           "zh": "我去踢足球了。今天我们跟留学生代表队比赛了。",
           "vi": "Mình đi đá bóng. Hôm nay bọn mình thi đấu với đội đại diện lưu học sinh.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -262,7 +262,7 @@
           "zh": "你们队又输了吧？",
           "vi": "Đội các cậu lại thua rồi hả?",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l01_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -274,7 +274,7 @@
           "zh": "没有。这次我们赢了。",
           "vi": "Không. Lần này bọn mình thắng rồi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -313,7 +313,7 @@
           "zh": "我想问问你，你不是要上托福班吗？报名了没有？",
           "vi": "Mình muốn hỏi cậu, chẳng phải cậu định học lớp TOEFL sao? Đăng ký chưa?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -325,7 +325,7 @@
           "zh": "已经报了。你是不是也想考托福？",
           "vi": "Mình đăng ký rồi. Có phải cậu cũng muốn thi TOEFL không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l01_01"
           ],
           "source_origin": "textbook",
           "check_needed": false

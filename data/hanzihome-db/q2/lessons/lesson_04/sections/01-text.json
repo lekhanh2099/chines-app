@@ -35,7 +35,7 @@
           "zh": "这次没考好。题太多了，我没有做完。你做完了没有？",
           "vi": "Lần này mình thi không tốt. Đề nhiều quá, mình chưa làm xong. Bạn làm xong chưa?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -49,8 +49,8 @@
           "zh": "我都做完了，但是没都做对，做错了两道题，所以成绩不会太好。",
           "vi": "Mình làm xong hết rồi, nhưng không phải câu nào cũng làm đúng, mình làm sai hai câu, nên điểm chắc sẽ không tốt lắm.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_04"
           ],
           "vocab_refs": [
             "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -64,8 +64,8 @@
           "zh": "语法题不太难，我觉得都做对了。听力比较难，很多句子我没听懂。",
           "vi": "Câu ngữ pháp không khó lắm, mình thấy mình đều làm đúng rồi. Nghe hiểu thì khá khó, nhiều câu mình không nghe hiểu.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_04"
           ],
           "vocab_refs": [
             "5ea44727-d97c-467b-b1b8-babd195df50d"
@@ -78,7 +78,7 @@
           "zh": "我也不知道做对了没有。我的词典呢？",
           "vi": "Mình cũng không biết có làm đúng không nữa. Từ điển của mình đâu rồi?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
@@ -91,7 +91,7 @@
           "zh": "我没看见你的词典。你找词典干什么？",
           "vi": "Mình không nhìn thấy từ điển của bạn. Bạn tìm từ điển làm gì?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "54613016-834a-4fc3-9912-2357a6d27058"
@@ -104,8 +104,8 @@
           "zh": "我查一个词，看看写对了没有。糟糕，写错了，是这个“得”，我写成这个“的”了。",
           "vi": "Mình tra một từ, xem có viết đúng không. Thôi xong, viết sai rồi, là chữ “得” này, mình lại viết thành chữ “的” này rồi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_02"
           ],
           "vocab_refs": [
             "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -131,7 +131,7 @@
           "zh": "我的衣服还没有洗完呢，还得给我妹妹回信。",
           "vi": "Quần áo của mình vẫn chưa giặt xong, còn phải viết thư trả lời em gái mình nữa.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
@@ -144,7 +144,7 @@
           "zh": "看完电视剧再洗吧。",
           "vi": "Xem xong phim truyền hình rồi giặt sau đi.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l04_03"
           ],
           "vocab_refs": []
         }
@@ -167,9 +167,9 @@
           "zh": "吃完晚饭，我和玛丽回到宿舍。玛丽说，田芳借给她一本书，书里都是小故事，很有意思。我问她：“你看完了没有？”",
           "vi": "Ăn xong bữa tối, tôi và Mary về ký túc xá. Mary nói Điền Phương cho cô ấy mượn một quyển sách; trong sách toàn là truyện ngắn, rất thú vị. Tôi hỏi cô ấy: “Bạn đọc xong chưa?”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "fa804fff-372b-4874-8571-f54e613d7e07",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_03",
+            "grammar_q2_l04_04"
           ],
           "vocab_refs": [
             "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -184,8 +184,8 @@
           "zh": "玛丽说：“还没有看完呢，才看了三十页。”我问：“都看懂了吗？”玛丽说：“有的看懂了，有的没看懂。”",
           "vi": "Mary nói: “Vẫn chưa đọc xong đâu, mới đọc được ba mươi trang.” Tôi hỏi: “Đều đọc hiểu hết chưa?” Mary nói: “Có chỗ đọc hiểu rồi, có chỗ chưa đọc hiểu.”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_04"
           ],
           "vocab_refs": [
             "0125bdae-fe4e-48fb-8264-145e95c75933"
@@ -199,7 +199,7 @@
           "zh": "我说：“可以让我看看吗？”玛丽说：“当然可以。”我看了两个故事，也觉得很有意思。看到有意思的地方，就想笑。",
           "vi": "Tôi nói: “Có thể cho mình xem thử không?” Mary nói: “Tất nhiên là được.” Tôi đọc hai câu chuyện, cũng thấy rất thú vị. Đọc đến chỗ thú vị thì muốn cười.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -214,7 +214,7 @@
           "zh": "我对玛丽说：“咱们可以用这些故事练习会话。”玛丽问：“怎么练习？”我说：“我念完一个故事，问你几个问题，看你能不能答对；你念完一个故事，也问我几个问题，看我能不能答对。”",
           "vi": "Tôi nói với Mary: “Chúng ta có thể dùng những câu chuyện này để luyện hội thoại.” Mary hỏi: “Luyện thế nào?” Tôi nói: “Tôi đọc xong một câu chuyện rồi hỏi bạn vài câu, xem bạn có trả lời đúng được không; bạn đọc xong một câu chuyện rồi cũng hỏi tôi vài câu, xem tôi có trả lời đúng được không.”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l04_01"
           ],
           "vocab_refs": [
             "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -230,8 +230,8 @@
           "zh": "玛丽说：“这是个好办法。”我念了一个故事，玛丽听懂了。问了她五个问题，她都答对了。",
           "vi": "Mary nói: “Đây là một cách hay.” Tôi đọc một câu chuyện, Mary nghe hiểu. Tôi hỏi cô ấy năm câu, cô ấy đều trả lời đúng.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l04_01",
+            "grammar_q2_l04_04"
           ],
           "vocab_refs": [
             "c99a633b-27a2-429b-a139-44113a84c189"

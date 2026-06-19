@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_001",
+      "id": "grammar_q2_l11_01",
       "type": "grammar_point",
       "order": 1,
       "title": "是……的",
@@ -36,7 +36,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -53,7 +53,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -90,7 +90,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -107,7 +107,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -134,7 +134,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -151,7 +151,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q2_l11_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -196,10 +196,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l11_01"
       ]
     },
     {
-      "id": "grammar_002",
+      "id": "grammar_q2_l11_02",
       "type": "grammar_point",
       "order": 2,
       "title": "一……就……",
@@ -227,7 +230,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q2_l11_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -244,7 +247,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q2_l11_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -277,7 +280,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q2_l11_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -294,7 +297,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q2_l11_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -338,10 +341,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l11_02"
       ]
     },
     {
-      "id": "grammar_003",
+      "id": "grammar_q2_l11_03",
       "type": "grammar_point",
       "order": 3,
       "title": "形容词重叠",
@@ -369,7 +375,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q2_l11_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -402,7 +408,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q2_l11_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -419,7 +425,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q2_l11_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -452,7 +458,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q2_l11_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -483,6 +489,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l11_03"
       ]
     }
   ]

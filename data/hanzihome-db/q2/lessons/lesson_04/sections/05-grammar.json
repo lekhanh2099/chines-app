@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l04_01",
       "type": "grammar_point",
       "order": 1,
       "title": "结果补语",
@@ -61,10 +61,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l04_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l04_02",
       "type": "grammar_point",
       "order": 2,
       "title": "结果补语：上、成、到",
@@ -120,10 +123,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l04_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l04_03",
       "type": "grammar_point",
       "order": 3,
       "title": "主谓词组作定语",
@@ -181,10 +187,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l04_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q2_l04_04",
       "type": "grammar_point",
       "order": 4,
       "title": "都",
@@ -221,6 +230,9 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l04_04"
       ]
     }
   ]

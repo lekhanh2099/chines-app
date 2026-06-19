@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l17_01",
       "type": "grammar_point",
       "order": 1,
       "title": "“把”字句（1）",
@@ -208,6 +208,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l17_01"
       ]
     }
   ]

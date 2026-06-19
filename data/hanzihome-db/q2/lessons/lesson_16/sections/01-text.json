@@ -38,7 +38,7 @@
           "zh": "等车的人越来越多了，咱们还是打的去吧，别坐公共汽车了。",
           "vi": "Người đợi xe ngày càng đông rồi, chúng ta vẫn nên đi taxi đi, đừng đi xe buýt nữa.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -57,7 +57,7 @@
           "zh": "好吧，你看，那边正好开过来一辆空车，就坐这辆吧。",
           "vi": "Được thôi, bạn xem, bên kia vừa hay có một chiếc taxi trống đang chạy tới, vậy ngồi chiếc này đi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l16_01"
           ],
           "vocab_refs": [
             "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -105,7 +105,7 @@
           "zh": "是啊。我家院子里种着一棵大枣树，树上结着很多红枣，远远儿地就能看见。一看见那棵大枣树就看到我家了。今天请你们尝尝我家的红枣，可甜了。",
           "vi": "Đúng vậy. Trong sân nhà mình có trồng một cây táo tàu lớn, trên cây kết rất nhiều táo đỏ, từ xa đã có thể nhìn thấy. Hễ nhìn thấy cây táo tàu lớn đó là thấy nhà mình rồi. Hôm nay mời các bạn nếm thử táo đỏ nhà mình, ngọt lắm.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l16_01"
           ],
           "vocab_refs": [
             "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -129,7 +129,7 @@
           "zh": "我听说现在住四合院儿的越来越少了。",
           "vi": "Mình nghe nói bây giờ người ở tứ hợp viện ngày càng ít rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -148,8 +148,8 @@
           "zh": "是。现在城市里大楼越盖越多，住宅小区也越建越漂亮。很多人都搬进楼房里去住了。我们院子里最近也搬走了五六家，明年我们家也要搬走了。",
           "vi": "Đúng vậy. Bây giờ trong thành phố, nhà cao tầng xây ngày càng nhiều, các khu dân cư cũng xây ngày càng đẹp. Rất nhiều người đều chuyển vào nhà chung cư để ở rồi. Trong sân nhà mình gần đây cũng đã có năm sáu gia đình chuyển đi, năm sau nhà mình cũng phải chuyển đi rồi.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_01",
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -258,7 +258,7 @@
           "zh": "刚来的时候，我不习惯北京的气候，常常感冒，现在越来越习惯了。",
           "vi": "Lúc mới đến, em không quen khí hậu Bắc Kinh, thường xuyên bị cảm, bây giờ ngày càng quen rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a"
@@ -276,7 +276,7 @@
           "zh": "我们的汉语越来越好，觉得越学越有意思了。",
           "vi": "Tiếng Hán của chúng em ngày càng tốt hơn, cảm thấy càng học càng thú vị.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -295,7 +295,7 @@
           "zh": "我的朋友越来越多了。",
           "vi": "Bạn bè của em ngày càng nhiều rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a"
@@ -313,7 +313,7 @@
           "zh": "朋友越多越好，“在家靠父母，出门靠朋友”嘛。",
           "vi": "Bạn bè càng nhiều càng tốt mà, “ở nhà nhờ cha mẹ, ra ngoài nhờ bạn bè” đấy thôi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -332,7 +332,7 @@
           "zh": "中国菜很好吃，我越吃越喜欢吃，所以也越来越胖了。",
           "vi": "Món Trung Quốc rất ngon, em càng ăn càng thích ăn, vì vậy cũng ngày càng béo rồi.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -351,7 +351,7 @@
           "zh": "我觉得人们的生活一天比一天丰富，年轻人越来越会打扮，打扮得越来越漂亮了。",
           "vi": "Em cảm thấy cuộc sống của mọi người ngày càng phong phú, người trẻ ngày càng biết ăn mặc, ăn mặc ngày càng đẹp.",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
@@ -371,7 +371,7 @@
           "zh": "圣诞节和新年快到了，不少商店都摆着圣诞树，装饰得非常漂亮，我看见很多中国人也买圣诞树和圣诞礼物。",
           "vi": "Giáng sinh và năm mới sắp đến rồi, không ít cửa hàng đều bày cây thông Noel, trang trí rất đẹp, em thấy rất nhiều người Trung Quốc cũng mua cây thông Noel và quà Giáng sinh.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l16_01"
           ],
           "vocab_refs": [
             "070690f6-fd26-41df-ab28-f5031668ed3e",
@@ -393,7 +393,7 @@
           "zh": "老师，我听说中国过圣诞节的人越来越多了，是吗？",
           "vi": "Thưa thầy, em nghe nói người Trung Quốc đón Giáng sinh ngày càng nhiều rồi, đúng không ạ?",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l16_02"
           ],
           "vocab_refs": [
             "070690f6-fd26-41df-ab28-f5031668ed3e",

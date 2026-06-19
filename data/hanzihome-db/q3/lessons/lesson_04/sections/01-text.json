@@ -50,7 +50,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "grammar_001"
+            "grammar_q3_l04_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -76,8 +76,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "grammar_002",
-            "grammar_003"
+            "grammar_q3_l04_02",
+            "grammar_q3_l04_03"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -103,7 +103,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "grammar_004"
+            "grammar_q3_l04_04"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -191,8 +191,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "grammar_006",
-            "grammar_007"
+            "grammar_q3_l04_06",
+            "grammar_q3_l04_07"
           ],
           "source_origin": "textbook",
           "check_needed": false

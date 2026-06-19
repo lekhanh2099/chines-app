@@ -38,7 +38,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q3_l03_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -52,8 +52,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q3_l03_02",
+            "grammar_q3_l03_03"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -115,8 +115,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17",
-            "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+            "grammar_q3_l03_04",
+            "grammar_q3_l03_05"
           ],
           "source_origin": "textbook",
           "check_needed": false

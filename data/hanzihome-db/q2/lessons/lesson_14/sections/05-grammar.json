@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l14_01",
       "type": "grammar_point",
       "order": 1,
       "title": "动作趋向的表达：复合趋向补语",
@@ -37,7 +37,7 @@
                 "上来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -53,7 +53,7 @@
                 "过去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -68,7 +68,7 @@
                 "进来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -83,7 +83,7 @@
                 "出去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -98,7 +98,7 @@
                 "回来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -113,7 +113,7 @@
                 "起来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -150,7 +150,7 @@
                 "上来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -166,7 +166,7 @@
                 "过去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -181,7 +181,7 @@
                 "进来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -196,7 +196,7 @@
                 "出去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -211,7 +211,7 @@
                 "回来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -226,7 +226,7 @@
                 "起来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -256,7 +256,7 @@
                 "走进图书馆去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -286,7 +286,7 @@
                 "带回来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -316,7 +316,7 @@
                 "跑出去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -331,7 +331,7 @@
                 "买回来"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l14_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -374,6 +374,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l14_01"
       ]
     }
   ]

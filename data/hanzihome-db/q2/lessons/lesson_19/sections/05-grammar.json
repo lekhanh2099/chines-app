@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l19_01",
       "type": "grammar_point",
       "order": 1,
       "title": "被动意义的表达：“被”字句",
@@ -36,7 +36,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -74,7 +74,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -96,7 +96,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "68c05a12-9d8e-45d9-a413-786bcf2f780a",
@@ -127,7 +127,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -148,7 +148,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -180,7 +180,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -202,7 +202,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -233,7 +233,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -255,7 +255,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -298,10 +298,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l19_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l19_02",
       "type": "grammar_point",
       "order": 2,
       "title": "又",
@@ -329,7 +332,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l19_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -356,8 +359,8 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l19_02",
+                "grammar_q2_l19_01"
               ],
               "vocab_refs": [
                 "863bbf3f-83e7-4021-b98e-be632043d94c",
@@ -388,7 +391,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l19_02"
               ],
               "vocab_refs": [
                 "7a89dc80-d79d-4c2f-988c-d0f54e240d19"
@@ -407,7 +410,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l19_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -448,6 +451,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l19_02"
       ]
     }
   ]

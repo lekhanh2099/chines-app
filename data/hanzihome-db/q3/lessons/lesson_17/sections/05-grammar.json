@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_001",
+      "id": "grammar_q3_l17_01",
       "type": "grammar_point",
       "order": 1,
       "title": "一向",
@@ -44,10 +44,13 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_01"
+      ]
     },
     {
-      "id": "grammar_002",
+      "id": "grammar_q3_l17_02",
       "type": "grammar_point",
       "order": 2,
       "title": "何况",
@@ -83,10 +86,13 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_02"
+      ]
     },
     {
-      "id": "grammar_003",
+      "id": "grammar_q3_l17_03",
       "type": "grammar_point",
       "order": 3,
       "title": "一下子",
@@ -122,10 +128,13 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_03"
+      ]
     },
     {
-      "id": "grammar_004",
+      "id": "grammar_q3_l17_04",
       "type": "grammar_point",
       "order": 4,
       "title": "或……或……",
@@ -161,10 +170,13 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_04"
+      ]
     },
     {
-      "id": "grammar_005",
+      "id": "grammar_q3_l17_05",
       "type": "grammar_point",
       "order": 5,
       "title": "与其……不如……",
@@ -201,10 +213,13 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_05"
+      ]
     },
     {
-      "id": "grammar_006",
+      "id": "grammar_q3_l17_06",
       "type": "grammar_point",
       "order": 6,
       "title": "否则",
@@ -240,7 +255,10 @@
         }
       ],
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q3_l17_06"
+      ]
     }
   ]
 }

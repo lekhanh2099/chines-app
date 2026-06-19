@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l24_01",
       "type": "grammar_point",
       "order": 1,
       "title": "无关联词语复句",
@@ -35,7 +35,7 @@
                 "找警察"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l24_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -51,7 +51,7 @@
                 "给我打电话"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l24_01"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -76,10 +76,13 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l24_01"
+      ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l24_02",
       "type": "grammar_point",
       "order": 2,
       "title": "数量词重叠",
@@ -105,7 +108,7 @@
                 "一步一步地"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l24_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -120,7 +123,7 @@
                 "一句一句地"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l24_02"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -149,10 +152,13 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l24_02"
+      ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l24_03",
       "type": "grammar_point",
       "order": 3,
       "title": "状态补语（2）",
@@ -178,7 +184,7 @@
                 "感动得不知道说什么好"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l24_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -193,7 +199,7 @@
                 "写得很漂亮"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l24_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -234,7 +240,10 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false
+      "check_needed": false,
+      "legacy_ids": [
+        "grammar_q2_l24_03"
+      ]
     }
   ]
 }

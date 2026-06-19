@@ -36,8 +36,8 @@
       "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu?",
       "vi": "Hộ chiếu của anh, em tìm thấy chưa?",
       "grammar_refs": [
-        "f8ec59f3-898a-47b2-b536-44dfd8183393",
-        "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        "grammar_q2_l12_01",
+        "grammar_q2_l12_02"
       ]
     },
     {
@@ -46,7 +46,7 @@
       "pinyin": "Wǒ zhǎo le bàntiān yě méi zhǎozháo.",
       "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
       "grammar_refs": [
-        "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        "grammar_q2_l12_02"
       ]
     },
     {
@@ -55,7 +55,7 @@
       "pinyin": "Fàng zài wǒ de shǒutíbāor lǐ le.",
       "vi": "Đã để trong túi xách tay của tôi rồi.",
       "grammar_refs": [
-        "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        "grammar_q2_l12_02"
       ]
     },
     {
@@ -64,7 +64,7 @@
       "pinyin": "Zuìhòu qù chéng le ma?",
       "vi": "Cuối cùng có đi được không?",
       "grammar_refs": [
-        "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        "grammar_q2_l12_02"
       ]
     }
   ],

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l16_01",
       "type": "grammar_point",
       "order": 1,
       "title": "存现句",
@@ -59,7 +59,7 @@
               "vi": "Trước cửa có trồng một cái cây.",
               "pinyin": "Mén qián zhòngzhe yì kē shù.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l16_01"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -70,7 +70,7 @@
               "vi": "Trên cây nở rất nhiều hoa.",
               "pinyin": "Shù shang kāizhe hěn duō huār.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l16_01"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -81,7 +81,7 @@
               "vi": "Dưới lầu có một người đi lên.",
               "pinyin": "Lóu xià shànglai yí ge rén.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l16_01"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -92,7 +92,7 @@
               "vi": "Phía trước có một chiếc taxi chạy tới.",
               "pinyin": "Qiánmiàn kāi guòlai yí liàng chūzūchē.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l16_01"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -103,7 +103,7 @@
               "vi": "Lớp chúng tôi có hai học sinh rời đi.",
               "pinyin": "Wǒmen bān zǒu le liǎng ge xuésheng.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l16_01"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -132,10 +132,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l16_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l16_02",
       "type": "grammar_point",
       "order": 2,
       "title": "越来越…… / 越……越……",
@@ -172,7 +175,7 @@
               "vi": "Người đợi xe ngày càng đông rồi.",
               "pinyin": "Děng chē de rén yuè lái yuè duō le.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -183,7 +186,7 @@
               "vi": "Tiếng Hán của chúng em ngày càng tốt hơn.",
               "pinyin": "Wǒmen de Hànyǔ yuè lái yuè hǎo.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -194,7 +197,7 @@
               "vi": "Người trẻ ngày càng biết ăn mặc.",
               "pinyin": "Niánqīngrén yuè lái yuè huì dǎban le.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -220,7 +223,7 @@
               "vi": "Bạn bè càng nhiều càng tốt.",
               "pinyin": "Péngyou yuè duō yuè hǎo.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -231,7 +234,7 @@
               "vi": "Món Trung Quốc rất ngon, tôi càng ăn càng thích ăn.",
               "pinyin": "Zhōngguó cài hěn hǎochī, wǒ yuè chī yuè xǐhuan chī.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -242,7 +245,7 @@
               "vi": "Trong thành phố, nhà cao tầng càng xây càng nhiều.",
               "pinyin": "Chéngshì lǐ dàlóu yuè gài yuè duō le.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l16_02"
               ],
               "source_origin": "textbook",
               "check_needed": false
@@ -319,6 +322,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l16_02"
       ]
     }
   ]

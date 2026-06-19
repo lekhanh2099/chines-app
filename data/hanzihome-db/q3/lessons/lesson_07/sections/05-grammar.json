@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l07_01",
       "type": "grammar_point",
       "order": 1,
       "title": "入迷",
@@ -59,10 +59,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l07_02",
       "type": "grammar_point",
       "order": 2,
       "title": "任何",
@@ -113,10 +116,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l07_03",
       "type": "grammar_point",
       "order": 3,
       "title": "动词 + 下",
@@ -169,10 +175,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l07_04",
       "type": "grammar_point",
       "order": 4,
       "title": "根本",
@@ -223,10 +232,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l07_05",
       "type": "grammar_point",
       "order": 5,
       "title": "为了",
@@ -279,10 +291,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q3_l07_06",
       "type": "grammar_point",
       "order": 6,
       "title": "不管",
@@ -335,10 +350,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_06"
       ]
     },
     {
-      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+      "id": "grammar_q3_l07_07",
       "type": "grammar_point",
       "order": 7,
       "title": "其中",
@@ -389,10 +407,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_07"
       ]
     },
     {
-      "id": "b7073860-473c-4cb7-82ba-943917998455",
+      "id": "grammar_q3_l07_08",
       "type": "grammar_point",
       "order": 8,
       "title": "既然",
@@ -445,6 +466,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l07_08"
       ]
     }
   ]

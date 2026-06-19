@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "e423bad8-4371-41b2-9f49-bc4b3b4636bd",
+      "id": "grammar_q3_l14_01",
       "type": "grammar_point",
       "order": 1,
       "title": "由",
@@ -64,10 +64,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_01"
       ]
     },
     {
-      "id": "36aa92b3-171a-4d83-b5a3-2a88518c4661",
+      "id": "grammar_q3_l14_02",
       "type": "grammar_point",
       "order": 2,
       "title": "马上",
@@ -122,10 +125,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_02"
       ]
     },
     {
-      "id": "7db83e91-e5d9-49cb-be52-d4c358332f78",
+      "id": "grammar_q3_l14_03",
       "type": "grammar_point",
       "order": 3,
       "title": "并",
@@ -180,10 +186,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_03"
       ]
     },
     {
-      "id": "94289a4a-938f-4624-89d1-52d344a654e8",
+      "id": "grammar_q3_l14_04",
       "type": "grammar_point",
       "order": 4,
       "title": "似乎",
@@ -238,10 +247,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_04"
       ]
     },
     {
-      "id": "ad28aa19-4605-4dfb-b6ff-94d18dcdb0ad",
+      "id": "grammar_q3_l14_05",
       "type": "grammar_point",
       "order": 5,
       "title": "顿时",
@@ -296,10 +308,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_05"
       ]
     },
     {
-      "id": "4be6b0af-2db8-4615-b187-614c376f1a94",
+      "id": "grammar_q3_l14_06",
       "type": "grammar_point",
       "order": 6,
       "title": "顿时 / 立刻",
@@ -352,6 +367,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l14_06"
       ]
     }
   ]

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l21_01",
       "type": "grammar_point",
       "order": 1,
       "title": "可能补语（2）：动词 + 得 / 不 + 动 / 好 / 住",
@@ -61,7 +61,7 @@
                 "爬得上去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -77,7 +77,7 @@
                 "爬不上去"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -93,7 +93,7 @@
                 "坐得下"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -109,7 +109,7 @@
                 "搬得动"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -125,7 +125,7 @@
                 "演不好"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -141,7 +141,7 @@
                 "记得住"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l21_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -152,10 +152,13 @@
             "Theo PDF bài 21, trọng tâm của 可能补语（2）là 动 / 好 / 住; các mẫu hướng như 爬得上去 vẫn xuất hiện trong bài khóa và luyện tập."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l21_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l21_02",
       "type": "grammar_point",
       "order": 2,
       "title": "可能补语与状态补语",
@@ -253,7 +256,7 @@
                 "演不好"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l21_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -269,7 +272,7 @@
                 "演得不好"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l21_02"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -282,10 +285,13 @@
           "source_origin": "textbook",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l21_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q2_l21_03",
       "type": "grammar_point",
       "order": 3,
       "title": "只要……就……",
@@ -331,7 +337,7 @@
                 "就"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l21_03"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -348,7 +354,7 @@
                 "就"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q2_l21_03"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -359,10 +365,13 @@
             "So với 如果……就……, 只要……就…… nghe chắc hơn và nhấn mạnh điều kiện đủ."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l21_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q2_l21_04",
       "type": "grammar_point",
       "order": 4,
       "title": "恐怕",
@@ -407,7 +416,7 @@
                 "恐怕"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q2_l21_04"
               ],
               "vocab_refs": [],
               "source_origin": "textbook",
@@ -423,7 +432,7 @@
                 "恐怕"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q2_l21_04"
               ],
               "vocab_refs": [],
               "source_origin": "generated",
@@ -432,6 +441,9 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l21_04"
       ]
     }
   ]

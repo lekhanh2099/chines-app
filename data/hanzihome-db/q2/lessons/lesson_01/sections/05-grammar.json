@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l01_01",
       "type": "grammar_point",
       "order": 1,
       "title": "语气助词“了”（1）",
@@ -101,10 +101,13 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l01_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l01_02",
       "type": "grammar_point",
       "order": 2,
       "title": "“再”和“又”",
@@ -194,6 +197,9 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l01_02"
       ]
     }
   ]

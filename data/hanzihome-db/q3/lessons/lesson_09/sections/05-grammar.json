@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "b8da742b-e61c-4cc3-8cef-13353bddccd3",
+      "id": "grammar_q3_l09_01",
       "type": "grammar_point",
       "order": 1,
       "title": "到底",
@@ -149,10 +149,13 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_01"
       ]
     },
     {
-      "id": "0183069d-fb63-4af1-bd86-78884e0445b0",
+      "id": "grammar_q3_l09_02",
       "type": "grammar_point",
       "order": 2,
       "title": "算",
@@ -263,10 +266,13 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_02"
       ]
     },
     {
-      "id": "caae11de-a979-422e-a484-e62b0cad5438",
+      "id": "grammar_q3_l09_03",
       "type": "grammar_point",
       "order": 3,
       "title": "曾经",
@@ -407,10 +413,13 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_03"
       ]
     },
     {
-      "id": "7a8b5c6d-ec5d-4e62-b349-162f7741dba2",
+      "id": "grammar_q3_l09_04",
       "type": "grammar_point",
       "order": 4,
       "title": "原来",
@@ -539,10 +548,13 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_04"
       ]
     },
     {
-      "id": "fb5436e8-0af4-4efa-8edf-9cccc9c963b4",
+      "id": "grammar_q3_l09_05",
       "type": "grammar_point",
       "order": 5,
       "title": "对……来说",
@@ -683,10 +695,13 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_05"
       ]
     },
     {
-      "id": "125bb1df-d57c-40ad-a3fd-0d59abe29848",
+      "id": "grammar_q3_l09_06",
       "type": "grammar_point",
       "order": 6,
       "title": "装",
@@ -829,6 +844,9 @@
           "source_origin": "generated_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l09_06"
       ]
     }
   ]

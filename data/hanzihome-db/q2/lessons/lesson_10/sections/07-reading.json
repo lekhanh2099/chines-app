@@ -143,7 +143,7 @@
           "zh": "今天上课，我们学习的语法是“动词 + 过”，老师要大家用这个语法互相问答。同学们问了很多问题，“你以前来过中国没有？”“吃过中国菜没有？”“看过中国电影没有？”等等。我问山本：“你谈过恋爱没有？”山本脸一红，说当然谈过。山本问我的问题是：“你说过谎没有？”我回答，当然说过。记得小时候，有一天我不想去上学了，就给老师打电话，说：“老师，我的小杰克病了，今天不能去上课了。”老师一听是我的声音，就问：“你是谁呀？”我说：“我是我爸爸。”",
           "vi": "Hôm nay lên lớp, ngữ pháp chúng tôi học là “động từ + 过”, thầy/cô yêu cầu mọi người dùng ngữ pháp này hỏi đáp lẫn nhau. Các bạn hỏi rất nhiều câu như: “Trước đây bạn đã từng đến Trung Quốc chưa?”, “Đã từng ăn món Trung chưa?”, “Đã từng xem phim Trung Quốc chưa?” v.v. Tôi hỏi Yamamoto: “Bạn đã từng yêu chưa?” Yamamoto đỏ mặt, nói tất nhiên là từng rồi. Yamamoto hỏi tôi: “Bạn đã từng nói dối chưa?” Tôi trả lời, tất nhiên là từng. Nhớ hồi nhỏ, có một hôm tôi không muốn đi học, bèn gọi điện cho thầy/cô và nói: “Thưa thầy/cô, Jack bé nhỏ của em bị bệnh rồi, hôm nay không thể đi học.” Thầy/cô vừa nghe là giọng tôi liền hỏi: “Em là ai vậy?” Tôi nói: “Em là bố của em.”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l10_01"
           ],
           "pinyin": "Jīntiān shàngkè, wǒmen xuéxí de yǔfǎ shì “dòngcí jiā guo”, lǎoshī yào dàjiā yòng zhège yǔfǎ hùxiāng wèndá. Tóngxuémen wèn le hěn duō wèntí, “Nǐ yǐqián lái guo Zhōngguó méiyǒu?” “Chī guo Zhōngguó cài méiyǒu?” “Kàn guo Zhōngguó diànyǐng méiyǒu?” děngděng. Wǒ wèn Shānběn: “Nǐ tán guo liàn’ài méiyǒu?” Shānběn liǎn yì hóng, shuō dāngrán tán guo. Shānběn wèn wǒ de wèntí shì: “Nǐ shuō guo huǎng méiyǒu?” Wǒ huídá, dāngrán shuō guo. Jìde xiǎo shíhou, yǒu yì tiān wǒ bù xiǎng qù shàngxué le, jiù gěi lǎoshī dǎ diànhuà, shuō: “Lǎoshī, wǒ de Xiǎo Jiékè bìng le, jīntiān bù néng qù shàngkè le.” Lǎoshī yì tīng shì wǒ de shēngyīn, jiù wèn: “Nǐ shì shéi ya?” Wǒ shuō: “Wǒ shì wǒ bàba.”",
           "check_needed": false
@@ -154,7 +154,7 @@
           "zh": "山本又问马丁说过谎没有。马丁说：“没有。山本，我是世界上最老实的人，从来不说谎。也没有谈过恋爱，要是你的男朋友跟你分手了，你就做我的女朋友吧。”",
           "vi": "Yamamoto lại hỏi Martin đã từng nói dối chưa. Martin nói: “Chưa. Yamamoto, tôi là người thật thà nhất thế giới, chưa bao giờ nói dối. Cũng chưa từng yêu. Nếu bạn trai của bạn chia tay bạn, thì bạn làm bạn gái của tôi nhé.”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l10_01"
           ],
           "pinyin": "Shānběn yòu wèn Mǎdīng shuō guo huǎng méiyǒu. Mǎdīng shuō: “Méiyǒu. Shānběn, wǒ shì shìjiè shàng zuì lǎoshi de rén, cónglái bù shuōhuǎng. Yě méiyǒu tán guo liàn’ài, yàoshi nǐ de nánpéngyou gēn nǐ fēn shǒu le, nǐ jiù zuò wǒ de nǚpéngyou ba.”",
           "check_needed": false
@@ -165,8 +165,8 @@
           "zh": "麦克听了大声地对山本说：“山本，你别听他的，马丁正在说谎，他谈过三次恋爱！”",
           "vi": "Mike nghe xong liền lớn tiếng nói với Yamamoto: “Yamamoto, bạn đừng nghe anh ta, Martin đang nói dối, anh ta đã từng yêu ba lần rồi!”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l10_01",
+            "grammar_q2_l10_02"
           ],
           "pinyin": "Màikè tīng le dàshēng de duì Shānběn shuō: “Shānběn, nǐ bié tīng tā de, Mǎdīng zhèngzài shuōhuǎng, tā tán guo sān cì liàn’ài!”",
           "check_needed": false

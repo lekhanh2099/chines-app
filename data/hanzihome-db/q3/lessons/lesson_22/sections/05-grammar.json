@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l22_01",
       "type": "grammar_point",
       "order": 1,
       "title": "逐渐",
@@ -88,10 +88,13 @@
             "渐渐 thiên khẩu ngữ hơn, tự nhiên trong đời sống hằng ngày."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l22_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l22_02",
       "type": "grammar_point",
       "order": 2,
       "title": "决心",
@@ -195,10 +198,13 @@
             "Không nói: 他决心地要学好汉语。"
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l22_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l22_03",
       "type": "grammar_point",
       "order": 3,
       "title": "不论",
@@ -277,10 +283,13 @@
             "Không nói: 不论下大雨我们也去. Nên nói: 不论下不下大雨，我们都去."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l22_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l22_04",
       "type": "grammar_point",
       "order": 4,
       "title": "了不起",
@@ -366,10 +375,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l22_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l22_05",
       "type": "grammar_point",
       "order": 5,
       "title": "即使",
@@ -445,6 +457,9 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l22_05"
       ]
     }
   ]

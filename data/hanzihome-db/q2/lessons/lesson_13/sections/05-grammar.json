@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+      "id": "grammar_q2_l13_01",
       "type": "grammar_point",
       "order": 1,
       "title": "被动意义的表达：被动句",
@@ -37,7 +37,7 @@
                 "摔坏了"
               ],
               "grammar_refs": [
-                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+                "grammar_q2_l13_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -56,7 +56,7 @@
                 "选好了"
               ],
               "grammar_refs": [
-                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+                "grammar_q2_l13_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -87,7 +87,7 @@
                 "摔坏了"
               ],
               "grammar_refs": [
-                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+                "grammar_q2_l13_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -106,7 +106,7 @@
                 "关上了"
               ],
               "grammar_refs": [
-                "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
+                "grammar_q2_l13_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -135,10 +135,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l13_01"
       ]
     },
     {
-      "id": "5e0db92f-f3b4-4746-a9a7-7761bcd985ee",
+      "id": "grammar_q2_l13_02",
       "type": "grammar_point",
       "order": 2,
       "title": "量词重叠",
@@ -167,7 +170,7 @@
                 "都"
               ],
               "grammar_refs": [
-                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+                "grammar_q2_l13_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -198,7 +201,7 @@
                 "都"
               ],
               "grammar_refs": [
-                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+                "grammar_q2_l13_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -216,7 +219,7 @@
                 "天天"
               ],
               "grammar_refs": [
-                "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
+                "grammar_q2_l13_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -232,10 +235,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l13_02"
       ]
     },
     {
-      "id": "874e376a-a113-46ba-b49b-c492f5f33124",
+      "id": "grammar_q2_l13_03",
       "type": "grammar_point",
       "order": 3,
       "title": "一年比一年",
@@ -263,7 +269,7 @@
                 "一年比一年多"
               ],
               "grammar_refs": [
-                "874e376a-a113-46ba-b49b-c492f5f33124"
+                "grammar_q2_l13_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -293,7 +299,7 @@
                 "一天比一天冷"
               ],
               "grammar_refs": [
-                "874e376a-a113-46ba-b49b-c492f5f33124"
+                "grammar_q2_l13_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -311,7 +317,7 @@
                 "一次比一次难"
               ],
               "grammar_refs": [
-                "874e376a-a113-46ba-b49b-c492f5f33124"
+                "grammar_q2_l13_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -327,6 +333,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l13_03"
       ]
     }
   ]

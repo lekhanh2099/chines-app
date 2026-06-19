@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_001",
+      "id": "grammar_q3_l19_01",
       "type": "grammar_point",
       "order": 1,
       "title": "受 / 受到",
@@ -84,10 +84,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_01"
       ]
     },
     {
-      "id": "grammar_002",
+      "id": "grammar_q3_l19_02",
       "type": "grammar_point",
       "order": 2,
       "title": "不得不",
@@ -163,10 +166,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_02"
       ]
     },
     {
-      "id": "grammar_003",
+      "id": "grammar_q3_l19_03",
       "type": "grammar_point",
       "order": 3,
       "title": "一次又一次",
@@ -240,10 +246,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_03"
       ]
     },
     {
-      "id": "grammar_004",
+      "id": "grammar_q3_l19_04",
       "type": "grammar_point",
       "order": 4,
       "title": "使得",
@@ -319,10 +328,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_04"
       ]
     },
     {
-      "id": "grammar_005",
+      "id": "grammar_q3_l19_05",
       "type": "grammar_point",
       "order": 5,
       "title": "舍不得",
@@ -398,10 +410,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_05"
       ]
     },
     {
-      "id": "grammar_006",
+      "id": "grammar_q3_l19_06",
       "type": "grammar_point",
       "order": 6,
       "title": "趁",
@@ -477,6 +492,9 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l19_06"
       ]
     }
   ]

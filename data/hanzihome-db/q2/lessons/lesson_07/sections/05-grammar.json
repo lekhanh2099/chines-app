@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l07_01",
       "type": "grammar_point",
       "order": 1,
       "title": "跟……一样 / 跟……不一样",
@@ -36,7 +36,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -53,7 +53,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -88,7 +88,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -105,7 +105,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -144,7 +144,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -199,7 +199,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -216,7 +216,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l07_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -229,10 +229,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l07_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l07_02",
       "type": "grammar_point",
       "order": 2,
       "title": "不但……而且……",
@@ -260,7 +263,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l07_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -295,7 +298,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l07_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -312,7 +315,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l07_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -350,7 +353,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l07_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -407,7 +410,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l07_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -420,6 +423,9 @@
           "source_origin": "generated",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l07_02"
       ]
     }
   ]

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "26d807af-9599-4242-96db-253eb2d2e572",
+      "id": "grammar_q2_l18_01",
       "type": "grammar_point",
       "order": 1,
       "title": "把字句（2）",
@@ -38,7 +38,7 @@
                 "把护照和机票给我"
               ],
               "grammar_refs": [
-                "26d807af-9599-4242-96db-253eb2d2e572"
+                "grammar_q2_l18_01"
               ],
               "vocab_refs": [
                 "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -281,10 +281,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l18_01"
       ]
     },
     {
-      "id": "grammar_l18_kuai_le",
+      "id": "grammar_q2_l18_02",
       "type": "grammar_point",
       "order": 2,
       "title": "快……了",
@@ -315,7 +318,7 @@
                 "快黑了"
               ],
               "grammar_refs": [
-                "grammar_l18_kuai_le"
+                "grammar_q2_l18_02"
               ],
               "vocab_refs": [],
               "source_ref": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
@@ -326,10 +329,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l18_02"
       ]
     },
     {
-      "id": "result_complement_cheng",
+      "id": "grammar_q2_l18_03",
       "type": "grammar_point",
       "order": 3,
       "title": "V + 成",
@@ -359,7 +365,7 @@
                 "翻译成英文"
               ],
               "grammar_refs": [
-                "result_complement_cheng"
+                "grammar_q2_l18_03"
               ],
               "vocab_refs": [],
               "source_ref": "ab5ff6c5-e148-476f-b214-78d6d236b940",
@@ -370,10 +376,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l18_03"
       ]
     },
     {
-      "id": "result_complement_wan",
+      "id": "grammar_q2_l18_04",
       "type": "grammar_point",
       "order": 4,
       "title": "V + 完",
@@ -403,7 +412,7 @@
                 "翻译完"
               ],
               "grammar_refs": [
-                "result_complement_wan"
+                "grammar_q2_l18_04"
               ],
               "vocab_refs": [],
               "source_ref": "bbe94aa4-4664-4aae-bb1f-58726d1ab505",
@@ -414,10 +423,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l18_04"
       ]
     },
     {
-      "id": "verb_gei_recipient",
+      "id": "grammar_q2_l18_05",
       "type": "grammar_point",
       "order": 5,
       "title": "V + 给 + người nhận",
@@ -447,7 +459,7 @@
                 "交给我"
               ],
               "grammar_refs": [
-                "verb_gei_recipient"
+                "grammar_q2_l18_05"
               ],
               "vocab_refs": [],
               "source_ref": "ac132aae-10a0-4c37-89fc-2bd40e855cef",
@@ -458,6 +470,9 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l18_05"
       ]
     }
   ]

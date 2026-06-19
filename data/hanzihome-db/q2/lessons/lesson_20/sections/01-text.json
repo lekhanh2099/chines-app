@@ -47,7 +47,7 @@
           "zh": "看得懂，但是听不懂。看了演出能猜出大概的意思。",
           "vi": "Xem thì hiểu, nhưng nghe thì không hiểu. Xem buổi biểu diễn rồi có thể đoán ra ý đại khái.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l20_01"
           ],
           "pinyin": "Kàn de dǒng, dànshì tīng bu dǒng. Kàn le yǎnchū néng cāi chū dàgài de yìsi."
         },
@@ -58,7 +58,7 @@
           "zh": "我也是，一点儿也听不懂演员唱的是什么，只是觉得很热闹。",
           "vi": "Tôi cũng vậy, một chút cũng không nghe hiểu diễn viên hát gì, chỉ cảm thấy rất náo nhiệt.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l20_01"
           ],
           "pinyin": "Wǒ yě shì, yìdiǎnr yě tīng bu dǒng yǎnyuán chàng de shì shénme, zhǐshì juéde hěn rènào."
         },
@@ -130,7 +130,7 @@
           "zh": "昨天我给山本打电话，约她晚上一起去看京剧。但是她说晚上有事，去不了。所以我们就决定今天晚上去。",
           "vi": "Hôm qua tôi gọi điện cho Yamamoto, hẹn cô ấy buổi tối cùng đi xem Kinh kịch. Nhưng cô ấy nói buổi tối có việc, không đi được. Vì vậy chúng tôi quyết định tối nay đi.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l20_03"
           ],
           "pinyin": "Zuótiān wǒ gěi Shānběn dǎ diànhuà, yuē tā wǎnshang yìqǐ qù kàn Jīngjù. Dànshì tā shuō wǎnshang yǒu shì, qù bu liǎo. Suǒyǐ wǒmen jiù juédìng jīntiān wǎnshang qù."
         },
@@ -140,8 +140,8 @@
           "zh": "我们是下午五点半出发的。正是下班时间，路上人多车也多。公共汽车上不去，我们只好打的。我担心买不到票，但是山本说，票好买，肯定买得到。",
           "vi": "Chúng tôi xuất phát lúc 5 giờ rưỡi chiều. Đúng vào giờ tan làm, trên đường người đông, xe cũng đông. Không lên được xe buýt, chúng tôi đành đi taxi. Tôi lo không mua được vé, nhưng Yamamoto nói vé dễ mua, chắc chắn mua được.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l20_01",
+            "grammar_q2_l20_02"
           ],
           "pinyin": "Wǒmen shì xiàwǔ wǔ diǎn bàn chūfā de. Zhèng shì xiàbān shíjiān, lùshang rén duō chē yě duō. Gōnggòng qìchē shàng bu qù, wǒmen zhǐhǎo dǎdī. Wǒ dānxīn mǎi bu dào piào, dànshì Shānběn shuō, piào hǎo mǎi, kěndìng mǎi de dào."
         },
@@ -151,7 +151,7 @@
           "zh": "到了剧场，山本说要买前十排的，因为她的眼睛不太好，坐得太远看不清楚。但是，前十排的票都卖完了，没买到，我们买的是十二排的。",
           "vi": "Đến rạp hát, Yamamoto nói muốn mua vé mười hàng đầu, vì mắt cô ấy không tốt lắm, ngồi xa quá thì nhìn không rõ. Nhưng vé mười hàng đầu đều đã bán hết, không mua được, chúng tôi mua vé hàng thứ mười hai.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l20_01"
           ],
           "pinyin": "Dào le jùchǎng, Shānběn shuō yào mǎi qián shí pái de, yīnwèi tā de yǎnjing bú tài hǎo, zuò de tài yuǎn kàn bu qīngchu. Dànshì, qián shí pái de piào dōu mài wán le, méi mǎi dào, wǒmen mǎi de shì shí’èr pái de."
         },
@@ -161,7 +161,7 @@
           "zh": "这个剧场不大，估计坐不下一千人。离开演还有十多分钟，人差不多都坐满了。",
           "vi": "Rạp hát này không lớn, ước chừng không ngồi đủ một nghìn người. Còn hơn mười phút nữa là mở màn, mọi người gần như đã ngồi kín.",
           "grammar_refs": [
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l20_04"
           ],
           "pinyin": "Zhège jùchǎng bú dà, gūjì zuò bu xià yì qiān rén. Lí kāiyǎn hái yǒu shí duō fēnzhōng, rén chàbuduō dōu zuò mǎn le."
         },
@@ -171,7 +171,7 @@
           "zh": "我拿了一张节目单。上面全是中文，没有英文，我看不懂。山本看了看说：“这是一个古代神话故事。说的是天上一个仙女，很羡慕人间的生活，就偷偷儿来到人间，跟一个小伙子结了婚。后边的内容我也看不懂。不过，不用担心，看不懂节目单，一定看得懂表演。”",
           "vi": "Tôi lấy một tờ chương trình. Bên trên toàn là tiếng Trung, không có tiếng Anh, tôi đọc không hiểu. Yamamoto xem qua rồi nói: “Đây là một câu chuyện thần thoại cổ đại. Câu chuyện kể về một tiên nữ trên trời rất ngưỡng mộ cuộc sống nhân gian, bèn lén xuống nhân gian và kết hôn với một chàng trai. Phần nội dung phía sau tôi cũng đọc không hiểu. Nhưng không cần lo, không đọc hiểu tờ chương trình thì nhất định vẫn xem hiểu buổi biểu diễn.”",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l20_01"
           ],
           "pinyin": "Wǒ ná le yì zhāng jiémùdān. Shàngmiàn quán shì Zhōngwén, méiyǒu Yīngwén, wǒ kàn bu dǒng. Shānběn kàn le kàn shuō: “Zhè shì yí ge gǔdài shénhuà gùshi. Shuō de shì tiānshang yí ge xiānnǚ, hěn xiànmù rénjiān de shēnghuó, jiù tōutōur lái dào rénjiān, gēn yí ge xiǎohuǒzi jié le hūn. Hòubian de nèiróng wǒ yě kàn bu dǒng. Búguò, bú yòng dānxīn, kàn bu dǒng jiémùdān, yídìng kàn de dǒng biǎoyǎn.”"
         },

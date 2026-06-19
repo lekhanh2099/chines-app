@@ -20,8 +20,8 @@
           "zh": "我一次病也没有得过。",
           "vi": "Tôi chưa từng bị bệnh lần nào.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l10_01",
+            "grammar_q2_l10_02"
           ],
           "check_needed": false
         }
@@ -67,7 +67,7 @@
           "zh": "我听过钢琴协奏曲《黄河》。",
           "vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l10_01"
           ],
           "check_needed": false
         }
@@ -118,7 +118,7 @@
           "zh": "听说过，但是没听过。",
           "vi": "Từng nghe nói đến, nhưng chưa từng nghe.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l10_01"
           ],
           "check_needed": false
         }

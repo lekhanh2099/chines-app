@@ -41,7 +41,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "d5eaf408-514c-4987-b142-668f43d140be"
+            "grammar_q3_l26_01"
           ],
           "source_origin": "textbook",
           "page_start": 211,
@@ -57,7 +57,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "a8720887-db26-4d49-b41f-8a6d646a791d"
+            "grammar_q3_l26_02"
           ],
           "source_origin": "textbook",
           "page_start": 211,
@@ -87,7 +87,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "28ce5846-ff50-47d0-927a-dd6a1699d21a"
+            "grammar_q3_l26_03"
           ],
           "source_origin": "textbook",
           "page_start": 212,
@@ -103,8 +103,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "28ce5846-ff50-47d0-927a-dd6a1699d21a",
-            "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+            "grammar_q3_l26_03",
+            "grammar_q3_l26_06"
           ],
           "source_origin": "textbook",
           "page_start": 212,
@@ -134,7 +134,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+            "grammar_q3_l26_06"
           ],
           "source_origin": "textbook",
           "page_start": 213,
@@ -178,8 +178,8 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "43a1f72d-1510-4a57-a1fa-0af2b4890023",
-            "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+            "grammar_q3_l26_04",
+            "grammar_q3_l26_05"
           ],
           "source_origin": "textbook",
           "page_start": 213,
@@ -195,7 +195,7 @@
           "audio_key": "",
           "vocab_refs": [],
           "grammar_refs": [
-            "a8720887-db26-4d49-b41f-8a6d646a791d"
+            "grammar_q3_l26_02"
           ],
           "source_origin": "textbook",
           "page_start": 214,

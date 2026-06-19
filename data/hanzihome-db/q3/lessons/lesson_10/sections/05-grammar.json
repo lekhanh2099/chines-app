@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "291dbd9f-d7a8-48b3-89e0-9175a7c78687",
+      "id": "grammar_q3_l10_01",
       "type": "grammar_point",
       "order": 1,
       "title": "弄",
@@ -54,7 +54,7 @@
                 "弄"
               ],
               "grammar_refs": [
-                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+                "grammar_q3_l10_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -73,7 +73,7 @@
                 "弄"
               ],
               "grammar_refs": [
-                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+                "grammar_q3_l10_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -92,7 +92,7 @@
                 "弄"
               ],
               "grammar_refs": [
-                "291dbd9f-d7a8-48b3-89e0-9175a7c78687"
+                "grammar_q3_l10_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -106,10 +106,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_01"
       ]
     },
     {
-      "id": "474927bc-72e0-46ec-954a-4e541eafc966",
+      "id": "grammar_q3_l10_02",
       "type": "grammar_point",
       "order": 2,
       "title": "搞",
@@ -155,7 +158,7 @@
                 "搞"
               ],
               "grammar_refs": [
-                "474927bc-72e0-46ec-954a-4e541eafc966"
+                "grammar_q3_l10_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -174,7 +177,7 @@
                 "搞"
               ],
               "grammar_refs": [
-                "474927bc-72e0-46ec-954a-4e541eafc966"
+                "grammar_q3_l10_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -193,7 +196,7 @@
                 "搞"
               ],
               "grammar_refs": [
-                "474927bc-72e0-46ec-954a-4e541eafc966"
+                "grammar_q3_l10_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -207,10 +210,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_02"
       ]
     },
     {
-      "id": "ecd23374-1730-4343-b588-3cd2fb99db79",
+      "id": "grammar_q3_l10_03",
       "type": "grammar_point",
       "order": 3,
       "title": "甚至",
@@ -256,7 +262,7 @@
                 "甚至"
               ],
               "grammar_refs": [
-                "ecd23374-1730-4343-b588-3cd2fb99db79"
+                "grammar_q3_l10_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -275,7 +281,7 @@
                 "甚至"
               ],
               "grammar_refs": [
-                "ecd23374-1730-4343-b588-3cd2fb99db79"
+                "grammar_q3_l10_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -289,10 +295,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_03"
       ]
     },
     {
-      "id": "b4846970-136f-4e6d-89ae-b39baab05492",
+      "id": "grammar_q3_l10_04",
       "type": "grammar_point",
       "order": 4,
       "title": "以后",
@@ -338,7 +347,7 @@
                 "以后"
               ],
               "grammar_refs": [
-                "b4846970-136f-4e6d-89ae-b39baab05492"
+                "grammar_q3_l10_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -357,7 +366,7 @@
                 "以后"
               ],
               "grammar_refs": [
-                "b4846970-136f-4e6d-89ae-b39baab05492"
+                "grammar_q3_l10_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -371,10 +380,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_04"
       ]
     },
     {
-      "id": "56484844-874c-4f9e-ae8b-174d5c2ee195",
+      "id": "grammar_q3_l10_05",
       "type": "grammar_point",
       "order": 5,
       "title": "偶然",
@@ -420,7 +432,7 @@
                 "偶然"
               ],
               "grammar_refs": [
-                "56484844-874c-4f9e-ae8b-174d5c2ee195"
+                "grammar_q3_l10_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -439,7 +451,7 @@
                 "偶然"
               ],
               "grammar_refs": [
-                "56484844-874c-4f9e-ae8b-174d5c2ee195"
+                "grammar_q3_l10_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -453,10 +465,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_05"
       ]
     },
     {
-      "id": "d903d4bd-81f8-4c39-96da-09641708c8f3",
+      "id": "grammar_q3_l10_06",
       "type": "grammar_point",
       "order": 6,
       "title": "却",
@@ -502,7 +517,7 @@
                 "却"
               ],
               "grammar_refs": [
-                "d903d4bd-81f8-4c39-96da-09641708c8f3"
+                "grammar_q3_l10_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -521,7 +536,7 @@
                 "却"
               ],
               "grammar_refs": [
-                "d903d4bd-81f8-4c39-96da-09641708c8f3"
+                "grammar_q3_l10_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -535,10 +550,13 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_06"
       ]
     },
     {
-      "id": "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b",
+      "id": "grammar_q3_l10_07",
       "type": "grammar_point",
       "order": 7,
       "title": "既……又……",
@@ -584,7 +602,7 @@
                 "既……又……"
               ],
               "grammar_refs": [
-                "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b"
+                "grammar_q3_l10_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -603,7 +621,7 @@
                 "既……又……"
               ],
               "grammar_refs": [
-                "a79c9e4b-99ee-4ef9-a11d-7b9eb240f03b"
+                "grammar_q3_l10_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -617,6 +635,9 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l10_07"
       ]
     }
   ]

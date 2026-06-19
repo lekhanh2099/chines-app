@@ -25,7 +25,7 @@
           "vi": "Tôi hơi đói rồi, muốn ăn chút gì đó. Còn bạn?",
           "pinyin": "Wǒ yǒudiǎnr è le, xiǎng chī diǎnr shénme. Nǐ ne?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "68c05a12-9d8e-45d9-a413-786bcf2f780a"
@@ -57,7 +57,7 @@
           "vi": "Bạn muốn ăn chút gì?",
           "pinyin": "Nǐ xiǎng chī diǎnr shénme?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
@@ -74,7 +74,7 @@
           "vi": "Bạn gọi đi, món gì cũng được.",
           "pinyin": "Nǐ diǎn ba, shénme dōu kěyǐ.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
@@ -91,7 +91,7 @@
           "vi": "Vậy món nào ngon thì ăn món đó.",
           "pinyin": "Nà jiù shénme hǎochī chī shénme.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -108,7 +108,7 @@
           "vi": "Hai vị muốn gọi chút gì?",
           "pinyin": "Nǐmen liǎng wèi yào diǎnr shénme?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
@@ -125,7 +125,7 @@
           "vi": "Phục vụ ơi, ở đây có món gì ngon?",
           "pinyin": "Fúwùyuán, nǐmen zhèr yǒu shénme hǎochī de cài?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -142,7 +142,7 @@
           "vi": "Ở chỗ chúng tôi món nào cũng ngon cả.",
           "pinyin": "Wǒmen zhèr shénme cài dōu hǎochī a.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
@@ -190,7 +190,7 @@
           "vi": "Vậy mỗi món lấy một phần đi. Chúng ta uống chút gì nhỉ?",
           "pinyin": "Nà jiù yíyàng lái yí ge ba. Wǒmen hē diǎnr shénme ne?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [],
           "audio_key": "",
@@ -205,7 +205,7 @@
           "vi": "Tùy bạn. Bạn nói uống gì thì uống cái đó đi.",
           "pinyin": "Suíbiàn. Nǐ shuō hē shénme jiù hē shénme ba.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [],
           "audio_key": "",
@@ -261,7 +261,7 @@
           "vi": "Trường sẽ tổ chức cho lưu học sinh đi du lịch nơi khác, ai cũng có thể đăng ký, bạn có đăng ký không?",
           "pinyin": "Xuéxiào yào zǔzhī liúxuéshēng qù wàidì lǚxíng, shéi dōu kěyǐ bàomíng, nǐ bàomíng ma?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "54613016-834a-4fc3-9912-2357a6d27058"
@@ -278,7 +278,7 @@
           "vi": "Tôi có nghe ai đó nói chuyện này rồi. Nhưng tôi muốn tự mình đi du lịch.",
           "pinyin": "Wǒ tīng shéi shuō guo zhè jiàn shìr. Búguò wǒ xiǎng zìjǐ qù lǚxíng.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [],
           "audio_key": "",
@@ -306,7 +306,7 @@
           "vi": "Chỗ nào vui thì đi chỗ đó. Tôi muốn đi Cáp Nhĩ Tân.",
           "pinyin": "Nǎr hǎowánr jiù qù nǎr. Wǒ xiǎng qù Hā'ěrbīn.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -324,7 +324,7 @@
           "vi": "Cáp Nhĩ Tân á? Bạn chỗ nào lạnh thì đi chỗ đó hả? Bây giờ ban ngày ở đó đã âm hơn hai mươi độ rồi.",
           "pinyin": "Hā'ěrbīn? Nǐ shì nǎr lěng qù nǎr a. Xiànzài nàr báitiān yǐjīng língxià èrshí duō dù le.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l23_01"
           ],
           "vocab_refs": [
             "54b36889-82be-485b-8342-fb8aab572065",
@@ -372,8 +372,8 @@
           "vi": "Ngoài đi xe đạp ra, đi bằng cách nào cũng được.",
           "pinyin": "Chúle qí zìxíngchē yǐwài, zěnme qù dōu xíng.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l23_01",
+            "grammar_q2_l23_04"
           ],
           "vocab_refs": [],
           "audio_key": "",
@@ -418,7 +418,7 @@
           "vi": "Tôi định trước tiên đi Tây An xem Rừng Bia và Binh Mã Dũng, sau đó đến Trùng Khánh, từ Trùng Khánh ngồi thuyền tham quan Tam Hiệp Trường Giang, rồi đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
           "pinyin": "Wǒ dǎsuàn xiān qù Xī'ān kàn Bēilín hé Bīngmǎyǒng, zài dào Chóngqìng, cóng Chóngqìng zuò chuán yóulǎn Chángjiāng Sānxiá, ránhòu qù Yúnnán, Guìlín, zuìhòu qù Sūzhōu hé Hángzhōu.",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l23_03"
           ],
           "vocab_refs": [
             "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -481,7 +481,7 @@
           "vi": "Chưa. Tôi rất hứng thú với phong tục của các dân tộc thiểu số ở Vân Nam. Nếu có cơ hội nhất định sẽ đi xem. Lộ trình du lịch của bạn rất hay, nhưng phải tốn bao nhiêu tiền?",
           "pinyin": "Méiyǒu. Wǒ duì Yúnnán shǎoshù mínzú de fēngsú hěn gǎn xìngqù. Yàoshi yǒu jīhuì yídìng qù kànkan. Nǐ de lǚxíng lùxiàn hěn hǎo, búguò yào huā duōshǎo qián a?",
           "grammar_refs": [
-            "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+            "grammar_q2_l23_06"
           ],
           "vocab_refs": [
             "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -502,8 +502,8 @@
           "vi": "Tôi thích du lịch, chỉ cần chơi vui thì tốn thêm chút tiền cũng đáng. Ngoài ra, quan trọng nhất là còn có thể vừa du lịch vừa luyện nói tiếng Hán, ý nghĩa biết bao!",
           "pinyin": "Wǒ xǐhuan lǚxíng, zhǐyào wánr de kāixīn, duō huā diǎnr qián yě zhíde. Lìngwài zuì zhòngyào de shì hái kěyǐ yìbiān lǚxíng yìbiān liànxí shuō Hànyǔ, duō yǒu yìyì a!",
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+            "grammar_q2_l23_02",
+            "grammar_q2_l23_05"
           ],
           "vocab_refs": [
             "55cd807c-eec7-412d-99db-f4e6508b170f",

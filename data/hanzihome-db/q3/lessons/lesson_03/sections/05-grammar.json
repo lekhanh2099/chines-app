@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l03_01",
       "type": "grammar_point",
       "order": 1,
       "title": "拿",
@@ -37,7 +37,7 @@
                 "拿北京来说"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l03_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -66,7 +66,7 @@
                 "拿学习汉语来说"
               ],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l03_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -89,10 +89,13 @@
           ],
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l03_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l03_02",
       "type": "grammar_point",
       "order": 2,
       "title": "动词 + 下",
@@ -122,7 +125,7 @@
                 "脱下"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l03_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -151,7 +154,7 @@
                 "记下来"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l03_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -170,7 +173,7 @@
                 "停下来"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l03_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -202,7 +205,7 @@
                 "住得下"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l03_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -221,7 +224,7 @@
                 "住不下"
               ],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l03_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -232,10 +235,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l03_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l03_03",
       "type": "grammar_point",
       "order": 3,
       "title": "动词 + 上",
@@ -265,7 +271,7 @@
                 "换上"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l03_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -294,7 +300,7 @@
                 "关上"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l03_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -313,7 +319,7 @@
                 "考上"
               ],
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l03_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -343,10 +349,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l03_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l03_04",
       "type": "grammar_point",
       "order": 4,
       "title": "多么",
@@ -376,7 +385,7 @@
                 "多么年轻"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l03_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -405,7 +414,7 @@
                 "多么美丽"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l03_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -436,7 +445,7 @@
                 "真美"
               ],
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l03_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -447,10 +456,13 @@
             }
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l03_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l03_05",
       "type": "grammar_point",
       "order": 5,
       "title": "也许",
@@ -480,7 +492,7 @@
                 "也许"
               ],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l03_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -509,7 +521,7 @@
                 "也许"
               ],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l03_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -528,7 +540,7 @@
                 "也许"
               ],
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l03_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -551,6 +563,9 @@
           ],
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l03_05"
       ]
     }
   ]

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l23_01",
       "type": "grammar_point",
       "order": 1,
       "title": "有关",
@@ -122,10 +122,13 @@
             "Gần nghĩa với 关于, nhưng 有关 thường đi sát danh từ làm định ngữ."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l23_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l23_02",
       "type": "grammar_point",
       "order": 2,
       "title": "不是……，而是……",
@@ -196,10 +199,13 @@
             "而是 B: khẳng định B mới đúng."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l23_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l23_03",
       "type": "grammar_point",
       "order": 3,
       "title": "通过",
@@ -309,10 +315,13 @@
           ],
           "notes_vi": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l23_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l23_04",
       "type": "grammar_point",
       "order": 4,
       "title": "适合",
@@ -397,10 +406,13 @@
             "Không dùng dạng lặp lại *适合适合."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l23_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l23_05",
       "type": "grammar_point",
       "order": 5,
       "title": "为……而……",
@@ -488,6 +500,9 @@
             "Sắc thái hơi trang trọng/văn viết hơn 为了."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l23_05"
       ]
     }
   ]

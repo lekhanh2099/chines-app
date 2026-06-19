@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l12_01",
       "type": "grammar_point",
       "order": 1,
       "title": "尽管",
@@ -53,10 +53,13 @@
             "Không nên hiểu máy móc 尽管 = 尽量. 尽管说 là 'cứ nói đi', còn 尽量说 là 'cố gắng nói'."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l12_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l12_02",
       "type": "grammar_point",
       "order": 2,
       "title": "难免",
@@ -101,10 +104,13 @@
             "难免 thiên về chuyện không tốt: sai sót, khó khăn, hiểu lầm, bất đồng, vấn đề."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l12_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l12_03",
       "type": "grammar_point",
       "order": 3,
       "title": "恐怕",
@@ -149,10 +155,13 @@
             "可能 có thể được 很/非常 bổ nghĩa, còn 恐怕 thì không."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l12_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l12_04",
       "type": "grammar_point",
       "order": 4,
       "title": "免得",
@@ -197,10 +206,13 @@
             "Sau 免得 thường là chuyện người nói không muốn xảy ra."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l12_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l12_05",
       "type": "grammar_point",
       "order": 5,
       "title": "来",
@@ -245,6 +257,9 @@
             "我来帮你打吧 nghe chủ động hơn 我帮你打吧."
           ]
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l12_05"
       ]
     }
   ]

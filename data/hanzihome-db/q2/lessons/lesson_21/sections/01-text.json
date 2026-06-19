@@ -47,7 +47,7 @@
           "zh": "山这么高，你爬得上去吗？",
           "vi": "Núi cao thế này, thầy leo lên nổi không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma?"
         },
@@ -58,7 +58,7 @@
           "zh": "没问题。爬得上去。",
           "vi": "Không vấn đề gì. Leo lên được.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Méi wèntí. Pá de shàngqù."
         },
@@ -77,8 +77,8 @@
           "zh": "美英，我看你累得都喘不上气来了，还爬得动吗？",
           "vi": "Mỹ Anh, cô thấy em mệt đến mức thở không ra hơi rồi, còn leo tiếp nổi không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l21_01",
+            "grammar_q2_l21_02"
           ],
           "pinyin": "Měiyīng, wǒ kàn nǐ lèi de dōu chuǎn bù shàng qì lái le, hái pá de dòng ma?"
         },
@@ -89,7 +89,7 @@
           "zh": "爬得动。",
           "vi": "Vẫn leo được ạ.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Pá de dòng."
         },
@@ -100,7 +100,7 @@
           "zh": "别着急，一步一步地往上爬，爬不动的时候就休息一会儿。走，咱们一起爬，要坚持到底，坚持就是胜利。……王老师，加油儿啊！",
           "vi": "Đừng vội, cứ từng bước từng bước leo lên. Khi nào leo không nổi thì nghỉ một lát. Đi nào, chúng ta cùng leo, phải kiên trì đến cùng; kiên trì chính là thắng lợi. … Thầy Vương, cố lên nhé!",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "notes": [
             "加油儿啊",
@@ -195,7 +195,7 @@
           "zh": "我和麦克说个相声。可是我总记不住台词，正背台词呢。",
           "vi": "Em và Mike sẽ diễn một tiết mục tướng thanh. Nhưng em cứ không nhớ được lời thoại, đang học thuộc lời thoại đây ạ.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Wǒ hé Màikè shuō ge xiàngsheng. Kěshì wǒ zǒng jì bù zhù táicí, zhèng bèi táicí ne."
         },
@@ -222,7 +222,7 @@
           "zh": "我们也正在排练呢。有的音我发不准，我请田芳一句一句地给我纠正。",
           "vi": "Chúng em cũng đang tập luyện. Có vài âm em phát âm không chuẩn, em nhờ Điền Phương sửa từng câu từng câu cho em.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Wǒmen yě zhèngzài páiliàn ne. Yǒu de yīn wǒ fā bù zhǔn, wǒ qǐng Tián Fāng yí jù yí jù de gěi wǒ jiūzhèng."
         },
@@ -241,7 +241,7 @@
           "zh": "原来是玛丽，可是玛丽腿受伤了，参加不了了。我请罗兰跟我一起表演。",
           "vi": "Ban đầu là Mary, nhưng chân Mary bị thương rồi, không thể tham gia được nữa. Em mời Roland biểu diễn cùng em.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Yuánlái shì Mǎlì, kěshì Mǎlì tuǐ shòu shāng le, cānjiā bù liǎo le. Wǒ qǐng Luólán gēn wǒ yìqǐ biǎoyǎn."
         },
@@ -252,7 +252,7 @@
           "zh": "我担心自己演不好。",
           "vi": "Em lo mình diễn không tốt.",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Wǒ dānxīn zìjǐ yǎn bù hǎo."
         },
@@ -271,7 +271,7 @@
           "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
           "vi": "Chỉ cần chúng em luyện tập thật tốt, thì nhất định có thể diễn tốt. Chẳng phải có câu “Trên đời không có việc gì khó, chỉ sợ người có lòng quyết tâm” sao!",
           "grammar_refs": [
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q2_l21_03"
           ],
           "notes": [
             "世上无难事，只怕有心人"
@@ -301,7 +301,7 @@
           "zh": "我准备了一首歌，不过，很长时间没唱了，恐怕唱不好。",
           "vi": "Cô đã chuẩn bị một bài hát, nhưng lâu lắm rồi chưa hát, e là hát không hay.",
           "grammar_refs": [
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q2_l21_04"
           ],
           "pinyin": "Wǒ zhǔnbèi le yì shǒu gē, búguò, hěn cháng shíjiān méi chàng le, kǒngpà chàng bù hǎo."
         },
@@ -312,7 +312,7 @@
           "zh": "老师，这个地方这么小，坐得下二百多人吗？",
           "vi": "Cô ơi, chỗ này nhỏ thế này, ngồi được hơn hai trăm người không?",
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l21_01"
           ],
           "pinyin": "Lǎoshī, zhège dìfang zhème xiǎo, zuò de xià èr bǎi duō rén ma?"
         },

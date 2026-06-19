@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_001",
+      "id": "grammar_q3_l13_01",
       "type": "grammar_point",
       "order": 1,
       "title": "老大",
@@ -47,7 +47,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_001"
+                "grammar_q3_l13_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -61,10 +61,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_01"
       ]
     },
     {
-      "id": "grammar_002",
+      "id": "grammar_q3_l13_02",
       "type": "grammar_point",
       "order": 2,
       "title": "以……为主",
@@ -103,7 +106,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l13_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -120,7 +123,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_002"
+                "grammar_q3_l13_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -134,10 +137,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_02"
       ]
     },
     {
-      "id": "grammar_003",
+      "id": "grammar_q3_l13_03",
       "type": "grammar_point",
       "order": 3,
       "title": "总之",
@@ -176,7 +182,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q3_l13_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -193,7 +199,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_003"
+                "grammar_q3_l13_03"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -207,10 +213,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_03"
       ]
     },
     {
-      "id": "grammar_004",
+      "id": "grammar_q3_l13_04",
       "type": "grammar_point",
       "order": 4,
       "title": "总得",
@@ -249,7 +258,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_004"
+                "grammar_q3_l13_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -266,7 +275,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_004"
+                "grammar_q3_l13_04"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -282,10 +291,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_04"
       ]
     },
     {
-      "id": "grammar_005",
+      "id": "grammar_q3_l13_05",
       "type": "grammar_point",
       "order": 5,
       "title": "够",
@@ -324,7 +336,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l13_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -341,7 +353,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l13_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -372,7 +384,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l13_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -403,7 +415,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_005"
+                "grammar_q3_l13_05"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -417,10 +429,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_05"
       ]
     },
     {
-      "id": "grammar_006",
+      "id": "grammar_q3_l13_06",
       "type": "grammar_point",
       "order": 6,
       "title": "哪怕",
@@ -459,7 +474,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_006"
+                "grammar_q3_l13_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -476,7 +491,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_006"
+                "grammar_q3_l13_06"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -490,10 +505,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_06"
       ]
     },
     {
-      "id": "grammar_007",
+      "id": "grammar_q3_l13_07",
       "type": "grammar_point",
       "order": 7,
       "title": "敢",
@@ -532,7 +550,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l13_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -549,7 +567,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_007"
+                "grammar_q3_l13_07"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -565,10 +583,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_07"
       ]
     },
     {
-      "id": "grammar_008",
+      "id": "grammar_q3_l13_08",
       "type": "grammar_point",
       "order": 8,
       "title": "好在",
@@ -607,7 +628,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_008"
+                "grammar_q3_l13_08"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -624,7 +645,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_008"
+                "grammar_q3_l13_08"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -638,10 +659,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_08"
       ]
     },
     {
-      "id": "grammar_009",
+      "id": "grammar_q3_l13_09",
       "type": "grammar_point",
       "order": 9,
       "title": "一……就是……",
@@ -680,7 +704,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_009"
+                "grammar_q3_l13_09"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -697,7 +721,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_009"
+                "grammar_q3_l13_09"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -711,10 +735,13 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_09"
       ]
     },
     {
-      "id": "grammar_010",
+      "id": "grammar_q3_l13_10",
       "type": "grammar_point",
       "order": 10,
       "title": "反而",
@@ -753,7 +780,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_010"
+                "grammar_q3_l13_10"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -770,7 +797,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "grammar_010"
+                "grammar_q3_l13_10"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -786,6 +813,9 @@
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l13_10"
       ]
     }
   ]

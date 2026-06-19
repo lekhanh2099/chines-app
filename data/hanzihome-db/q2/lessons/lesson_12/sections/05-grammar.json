@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q2_l12_01",
       "type": "grammar_point",
       "order": 1,
       "title": "主谓谓语句（二）",
@@ -36,8 +36,8 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_01",
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [
                 "68c05a12-9d8e-45d9-a413-786bcf2f780a"
@@ -78,7 +78,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l12_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -95,7 +95,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q2_l12_01"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -112,10 +112,13 @@
           "source_origin": "textbook",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l12_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q2_l12_02",
       "type": "grammar_point",
       "order": 2,
       "title": "结果补语（二）：在、着、好、成",
@@ -160,7 +163,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [
                 "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -180,7 +183,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -218,7 +221,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -235,7 +238,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -274,7 +277,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -291,7 +294,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -329,7 +332,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [
                 "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
@@ -349,7 +352,7 @@
               "en": "",
               "highlight": [],
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q2_l12_02"
               ],
               "vocab_refs": [],
               "source_ref": "",
@@ -366,6 +369,9 @@
           "source_origin": "textbook",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l12_02"
       ]
     }
   ]

@@ -28,8 +28,8 @@
             "68c05a12-9d8e-45d9-a413-786bcf2f780a"
           ],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_01",
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -48,7 +48,7 @@
             "d9991c79-3454-4247-bf18-f14f43b4a24a"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -67,8 +67,8 @@
             "d9991c79-3454-4247-bf18-f14f43b4a24a"
           ],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_01",
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -86,7 +86,7 @@
             "d9991c79-3454-4247-bf18-f14f43b4a24a"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -104,7 +104,7 @@
             "d9991c79-3454-4247-bf18-f14f43b4a24a"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -151,7 +151,7 @@
             "e93080a4-2857-4582-a75a-94276764a235"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -168,7 +168,7 @@
             "vocab-12-bao-er"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -186,7 +186,7 @@
             "188412d4-4c23-4d60-b7b2-21f3490199e7"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -204,7 +204,7 @@
             "d9991c79-3454-4247-bf18-f14f43b4a24a"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -306,7 +306,7 @@
             "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9"
           ],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l12_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -324,7 +324,7 @@
             "20f66e08-4820-43f5-a18a-50f61591e7cd"
           ],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q2_l12_01"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -435,7 +435,7 @@
             "71f9308f-7b38-435e-bfa8-c7c974599035"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false
@@ -456,7 +456,7 @@
             "db0c0e40-5639-4c1e-bd66-9728a0c5006e"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            "grammar_q2_l12_02"
           ],
           "source_origin": "textbook",
           "check_needed": false

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "grammar_l09_directional_lai_qu",
+      "id": "grammar_q2_l09_01",
       "type": "grammar_point",
       "order": 1,
       "title": "动作趋向的表达：动词 + 来 / 去",
@@ -47,7 +47,7 @@
               ],
               "pinyin": "Shànglai ba.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -62,7 +62,7 @@
               ],
               "pinyin": "Xiàqù ba.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -77,7 +77,7 @@
               ],
               "pinyin": "Jìnlai ba.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -92,7 +92,7 @@
               ],
               "pinyin": "Chūqù ba.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -118,7 +118,7 @@
               ],
               "pinyin": "Wǒ dào Xiǎo Zhào jiā qù le.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -133,7 +133,7 @@
               ],
               "pinyin": "Wǒ zhènghǎo yào xià lóu qù.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -148,7 +148,7 @@
               ],
               "pinyin": "Wǒmen jìn jiàoshì qù ba.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -174,7 +174,7 @@
               ],
               "pinyin": "Tā dài le yí ge zhàoxiàngjī lái.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -189,7 +189,7 @@
               ],
               "pinyin": "Tā dàilai le yí ge zhàoxiàngjī.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -204,7 +204,7 @@
               ],
               "pinyin": "Wǒ gěi nǐ dàilai le yìxiē dōngxi.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -232,7 +232,7 @@
               ],
               "pinyin": "Tā bú shànglai le.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -247,7 +247,7 @@
               ],
               "pinyin": "Tā méi huílai.",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -262,7 +262,7 @@
               ],
               "pinyin": "Tā huílai le ma?",
               "grammar_refs": [
-                "grammar_l09_directional_lai_qu"
+                "grammar_q2_l09_01"
               ],
               "vocab_refs": [],
               "source_origin": "textbook/generated_mixed",
@@ -292,6 +292,9 @@
           ],
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q2_l09_01"
       ]
     }
   ]

@@ -51,7 +51,7 @@
             "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
           ],
           "grammar_refs": [
-            "f8ec59f3-898a-47b2-b536-44dfd8183393"
+            "grammar_q3_l08_01"
           ],
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
@@ -100,8 +100,8 @@
             "d0cc2a3d-951d-4dc5-93e3-bc90ee212237"
           ],
           "grammar_refs": [
-            "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "fa804fff-372b-4874-8571-f54e613d7e07"
+            "grammar_q3_l08_02",
+            "grammar_q3_l08_03"
           ],
           "source_origin": "textbook_pdf_checked",
           "check_needed": false
@@ -199,7 +199,7 @@
             "eb7cc112-7df2-44e6-a1df-9824d8b6e45a"
           ],
           "grammar_refs": [
-            "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+            "grammar_q3_l08_04"
           ],
           "source_origin": "textbook_pdf_checked",
           "check_needed": false

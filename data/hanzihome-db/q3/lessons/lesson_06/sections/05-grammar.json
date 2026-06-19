@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+      "id": "grammar_q3_l06_01",
       "type": "grammar_point",
       "order": 1,
       "title": "不料",
@@ -33,7 +33,7 @@
               "pinyin": "Wǒ yǐwéi tā bú huì lái, búliào tā dì yī ge dào le.",
               "vi": "Tôi tưởng anh ấy sẽ không đến, không ngờ anh ấy lại đến đầu tiên.",
               "grammar_refs": [
-                "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                "grammar_q3_l06_01"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -54,10 +54,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_01"
       ]
     },
     {
-      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+      "id": "grammar_q3_l06_02",
       "type": "grammar_point",
       "order": 2,
       "title": "竟然",
@@ -82,7 +85,7 @@
               "pinyin": "Tā jìngrán méi lái.",
               "vi": "Không ngờ anh ấy lại không đến.",
               "grammar_refs": [
-                "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                "grammar_q3_l06_02"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -103,10 +106,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_02"
       ]
     },
     {
-      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+      "id": "grammar_q3_l06_03",
       "type": "grammar_point",
       "order": 3,
       "title": "一 + 动词",
@@ -131,7 +137,7 @@
               "pinyin": "Yí kàn jiù dǒng.",
               "vi": "Nhìn một cái là hiểu.",
               "grammar_refs": [
-                "fa804fff-372b-4874-8571-f54e613d7e07"
+                "grammar_q3_l06_03"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -152,10 +158,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_03"
       ]
     },
     {
-      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+      "id": "grammar_q3_l06_04",
       "type": "grammar_point",
       "order": 4,
       "title": "只是",
@@ -180,7 +189,7 @@
               "pinyin": "Wǒ zhǐshì wènwen.",
               "vi": "Tôi chỉ hỏi chút thôi.",
               "grammar_refs": [
-                "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                "grammar_q3_l06_04"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -201,10 +210,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_04"
       ]
     },
     {
-      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+      "id": "grammar_q3_l06_05",
       "type": "grammar_point",
       "order": 5,
       "title": "并",
@@ -229,7 +241,7 @@
               "pinyin": "Tā bìng méiyǒu shēngqì.",
               "vi": "Anh ấy thực ra không giận.",
               "grammar_refs": [
-                "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
+                "grammar_q3_l06_05"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -250,10 +262,13 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_05"
       ]
     },
     {
-      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+      "id": "grammar_q3_l06_06",
       "type": "grammar_point",
       "order": 6,
       "title": "一……一……",
@@ -278,7 +293,7 @@
               "pinyin": "Háizi yì bèng yí tiào de huí jiā le.",
               "vi": "Đứa trẻ nhảy chân sáo về nhà.",
               "grammar_refs": [
-                "b0c8e101-1500-4742-9064-1e102a0eb8b9"
+                "grammar_q3_l06_06"
               ],
               "source_origin": "generated",
               "check_needed": false
@@ -299,6 +314,9 @@
           "source_origin": "textbook_generated_mixed",
           "check_needed": false
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l06_06"
       ]
     }
   ]

@@ -8,7 +8,7 @@
   "check_needed": false,
   "items": [
     {
-      "id": "85d0a510-2e12-4444-a8ec-62952ba505f1",
+      "id": "grammar_q3_l16_01",
       "type": "grammar_point",
       "order": 1,
       "title": "可能",
@@ -28,10 +28,13 @@
           "content_vi": "可能 có thể làm danh từ, tính từ hoặc phó từ/trợ động từ hóa; nghĩa lõi là khả năng xảy ra hoặc khả năng làm được.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_01"
       ]
     },
     {
-      "id": "c76d6465-edb6-4fa0-9853-e4ae437950f2",
+      "id": "grammar_q3_l16_02",
       "type": "grammar_point",
       "order": 2,
       "title": "究竟",
@@ -51,10 +54,13 @@
           "content_vi": "究竟 dùng trong câu hỏi để truy hỏi sâu hơn; khẩu ngữ thường dùng 到底 nhiều hơn.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_02"
       ]
     },
     {
-      "id": "c8ec8356-ea1d-4172-91eb-fe52a7f92f60",
+      "id": "grammar_q3_l16_03",
       "type": "grammar_point",
       "order": 3,
       "title": "充满",
@@ -74,10 +80,13 @@
           "content_vi": "A + 充满 + B: một nơi/sự vật được lấp đầy bởi chất, khí, cảm xúc hoặc không khí trừu tượng.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_03"
       ]
     },
     {
-      "id": "833a279d-9e19-4ada-ad5b-5743fccc81b8",
+      "id": "grammar_q3_l16_04",
       "type": "grammar_point",
       "order": 4,
       "title": "其他",
@@ -97,10 +106,13 @@
           "content_vi": "其他 + 名词 chỉ người hoặc sự vật nằm ngoài phạm vi đã nói đến.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_04"
       ]
     },
     {
-      "id": "7d6d5ce7-c7f4-467d-b0f3-3aed58c7d7f4",
+      "id": "grammar_q3_l16_05",
       "type": "grammar_point",
       "order": 5,
       "title": "不可思议",
@@ -120,10 +132,13 @@
           "content_vi": "Dùng khi một việc rất khó hiểu, khó tin, vượt ngoài tưởng tượng thông thường.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_05"
       ]
     },
     {
-      "id": "b247a333-08b2-446a-bfc2-d789e4d5b534",
+      "id": "grammar_q3_l16_06",
       "type": "grammar_point",
       "order": 6,
       "title": "沿 / 沿着",
@@ -143,10 +158,13 @@
           "content_vi": "沿 / 沿着 + 路线 / 地点 + V biểu thị chuyển động men theo tuyến đường/quỹ đạo.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_06"
       ]
     },
     {
-      "id": "594b67cd-9f2c-4c66-b431-12fd5459513d",
+      "id": "grammar_q3_l16_07",
       "type": "grammar_point",
       "order": 7,
       "title": "毫无 / 毫不",
@@ -166,10 +184,13 @@
           "content_vi": "毫无 thường đi với danh từ; 毫不 thường đi với động từ hoặc tính từ.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_07"
       ]
     },
     {
-      "id": "0766ceda-b591-43d5-a6ed-a503d84ade07",
+      "id": "grammar_q3_l16_08",
       "type": "grammar_point",
       "order": 8,
       "title": "意味着",
@@ -189,6 +210,9 @@
           "content_vi": "A + 意味着 + B: A kéo theo ý nghĩa hoặc hệ quả B; trang trọng hơn 意思是.",
           "examples": []
         }
+      ],
+      "legacy_ids": [
+        "grammar_q3_l16_08"
       ]
     }
   ]
