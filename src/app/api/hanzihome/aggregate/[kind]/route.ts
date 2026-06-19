@@ -37,14 +37,19 @@ export async function GET(request: Request, context: RouteContext) {
   lessonId: url.searchParams.get("lessonId") ?? "",
   q: url.searchParams.get("q") ?? "",
  };
- const items = hanzihomeContentRepository.getAggregateItems({ kind, filters });
+ try {
+  const items = await hanzihomeContentRepository.getAggregateItems({ kind, filters });
 
- return NextResponse.json(
-  { items },
-  {
-   headers: {
-    "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+  return NextResponse.json(
+   { items },
+   {
+    headers: {
+     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+    },
    },
-  },
- );
+  );
+ } catch (error) {
+  const message = error instanceof Error ? error.message : "Unknown Supabase error";
+  return jsonError(message, 503);
+ }
 }

@@ -27,10 +27,10 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
   return radicals.filter((radical) => {
    const haystack = [
     radical.radical,
-    radical.nameVi,
-    radical.coreMeaning.history,
-    radical.coreMeaning.modern,
-    radical.recognition,
+    radical.nameVi ?? "",
+    radical.coreMeaning.history ?? "",
+    radical.coreMeaning.modern ?? "",
+    radical.recognition ?? "",
     radical.variants.map((variant) => `${variant.form} ${variant.note}`).join(" "),
    ]
     .join(" ")
@@ -78,7 +78,9 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       onClick={() => setSelectedId(radical.id)}
      >
       <span className="text-xl font-black">{radical.radical}</span>
-      <span className="min-w-0 flex-1 whitespace-normal line-clamp-2">{radical.nameVi}</span>
+      <span className="min-w-0 flex-1 whitespace-normal line-clamp-2">
+       {radical.nameVi || "Chưa có tên"}
+      </span>
       <span className="shrink-0 text-xs uppercase opacity-75">{radical.strokes ?? "?"} nét</span>
      </Button>
     ))}
@@ -94,7 +96,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  return (
   <LessonModuleFrame
    title="Bộ thủ"
-   subtitle={`${selectedRadical.radical} · ${selectedRadical.nameVi}`}
+   subtitle={`${selectedRadical.radical} · ${selectedRadical.nameVi || "Chưa có tên"}`}
    sidebarLabel="Danh sách bộ thủ"
    sidebarSummary={`${radicals.length} bộ`}
    sidebarOpen={isSidebarOpen}
@@ -111,13 +113,17 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
         <Badge>#{selectedRadical.index}</Badge>
         <Badge variant="info">{selectedRadical.strokes ?? "?"} nét</Badge>
        </div>
-       <h3 className="text-2xl font-black text-text-primary">{selectedRadical.nameVi}</h3>
+       <h3 className="text-2xl font-black text-text-primary">
+        {selectedRadical.nameVi || "Chưa có tên"}
+       </h3>
       </div>
      </div>
 
      <RadicalSection title="Ý nghĩa cốt lõi">
-      <p>{selectedRadical.coreMeaning.modern}</p>
-      <p className="text-text-muted">{selectedRadical.coreMeaning.history}</p>
+      <p>{selectedRadical.coreMeaning.modern || "Chưa có mô tả hiện đại."}</p>
+      {selectedRadical.coreMeaning.history && (
+       <p className="text-text-muted">{selectedRadical.coreMeaning.history}</p>
+      )}
      </RadicalSection>
 
      {selectedRadical.variants.length > 0 && (
@@ -133,7 +139,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      )}
 
      <RadicalSection title="Nhận diện">
-      <p>{selectedRadical.recognition}</p>
+      <p>{selectedRadical.recognition || "Chưa có ghi chú nhận diện."}</p>
      </RadicalSection>
 
      {selectedRadical.distinguish.length > 0 && (

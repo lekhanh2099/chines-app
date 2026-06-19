@@ -17,17 +17,16 @@ export function HanziHomeLibraryHome() {
     <div className="grid gap-1">
      <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">HanziHome</p>
      <h1 className="text-2xl font-black tracking-tight text-text-primary">
-      Thư viện ôn thi từ JSON tĩnh
+      Thư viện học HanziHome
      </h1>
      <p className="max-w-3xl  font-semibold leading-relaxed text-text-muted">
-      Dữ liệu học chính đang đọc trực tiếp từ bộ JSON Quyển 2 trong source. Supabase chỉ còn dùng
-      cho ghi chú cá nhân.
+      Nội dung khóa học, bài học, từ vựng và ngữ pháp được tải từ thư viện HanziHome.
      </p>
     </div>
 
     {courses.length === 0 ? (
      <Card padding="lg" className="rounded-xl">
-      <p className=" font-semibold text-text-muted">Chưa tìm thấy course tĩnh.</p>
+      <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
      </Card>
     ) : (
      <div className="grid gap-4">

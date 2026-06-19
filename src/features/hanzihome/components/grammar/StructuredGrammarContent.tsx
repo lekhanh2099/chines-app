@@ -59,9 +59,9 @@ export function StructuredGrammarContent({
        <h3 className="text-base font-black text-text-primary">Mẫu cần nhớ</h3>
       </div>
      </div>
-     {point.structuresView.map((structure) => (
+     {point.structuresView.map((structure, index) => (
       <p
-       key={structure}
+       key={`${point.id}-structure-${index}`}
        className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 font-mono text-base font-black leading-relaxed text-info-text shadow-theme-sm sm:text-lg"
       >
        {cleanGrammarDisplayLine(structure)}
@@ -141,8 +141,8 @@ export function StructuredGrammarContent({
    {point.notes.length > 0 && (
     <section className="grid gap-2">
      <h3 className="text-base font-black text-text-primary">Lưu ý / bẫy sai</h3>
-     {point.notes.map((note) => (
-      <p key={note} className="leading-relaxed text-text-secondary">
+     {point.notes.map((note, index) => (
+      <p key={`${point.id}-note-${index}`} className="leading-relaxed text-text-secondary">
        {note}
       </p>
      ))}

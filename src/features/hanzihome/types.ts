@@ -1,4 +1,3 @@
-import type radicalsData from "../../../data/hanzihome-db/radicals.json";
 import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
@@ -33,7 +32,23 @@ export type HanziHomeCourseBook = {
  order: number;
 };
 
-export type StaticRadicalData = (typeof radicalsData.radicals)[number];
+export type StaticRadicalData = {
+ id: string;
+ index: number;
+ radical: string;
+ nameVi?: string;
+ strokes?: number | null;
+ coreMeaning: {
+  modern?: string;
+  history?: string;
+ };
+ recognition?: string;
+ variants: Array<{
+  form: string;
+  note: string;
+ }>;
+ distinguish: string[];
+};
 
 export type HanziHomeMeta = {
  app: string;
