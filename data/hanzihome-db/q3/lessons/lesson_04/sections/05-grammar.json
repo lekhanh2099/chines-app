@@ -132,9 +132,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_01"
       ]
     },
     {
@@ -250,9 +247,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_02"
       ]
     },
     {
@@ -331,9 +325,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_03"
       ]
     },
     {
@@ -432,9 +423,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_04"
       ]
     },
     {
@@ -533,9 +521,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_05"
       ]
     },
     {
@@ -612,9 +597,6 @@
           "notes_vi": [],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_06"
       ]
     },
     {
@@ -732,9 +714,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q3_l04_07"
       ]
     }
   ]

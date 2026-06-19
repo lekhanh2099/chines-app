@@ -55,10 +55,7 @@
         }
       ],
       "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l08_01"
-      ]
+      "check_needed": false
     },
     {
       "id": "grammar_q2_l08_02",
@@ -109,10 +106,7 @@
         }
       ],
       "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l08_02"
-      ]
+      "check_needed": false
     },
     {
       "id": "grammar_q2_l08_03",
@@ -155,10 +149,7 @@
         }
       ],
       "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l08_03"
-      ]
+      "check_needed": false
     },
     {
       "id": "grammar_q2_l08_04",
@@ -208,10 +199,7 @@
         }
       ],
       "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l08_04"
-      ]
+      "check_needed": false
     }
   ]
 }

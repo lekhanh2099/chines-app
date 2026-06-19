@@ -135,9 +135,6 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q2_l13_01"
       ]
     },
     {
@@ -235,9 +232,6 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q2_l13_02"
       ]
     },
     {
@@ -333,9 +327,6 @@
           "source_origin": "textbook/generated_mixed",
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q2_l13_03"
       ]
     }
   ]

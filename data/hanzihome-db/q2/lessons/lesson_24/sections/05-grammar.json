@@ -76,10 +76,7 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l24_01"
-      ]
+      "check_needed": false
     },
     {
       "id": "grammar_q2_l24_02",
@@ -152,10 +149,7 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l24_02"
-      ]
+      "check_needed": false
     },
     {
       "id": "grammar_q2_l24_03",
@@ -240,10 +234,7 @@
         }
       ],
       "source_origin": "textbook/generated_mixed",
-      "check_needed": false,
-      "legacy_ids": [
-        "grammar_q2_l24_03"
-      ]
+      "check_needed": false
     }
   ]
 }

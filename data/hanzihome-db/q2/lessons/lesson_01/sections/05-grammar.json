@@ -101,9 +101,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q2_l01_01"
       ]
     },
     {
@@ -197,9 +194,6 @@
           ],
           "check_needed": false
         }
-      ],
-      "legacy_ids": [
-        "grammar_q2_l01_02"
       ]
     }
   ]
