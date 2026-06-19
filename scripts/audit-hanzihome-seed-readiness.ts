@@ -36,6 +36,14 @@ type AuditState = {
 
 const strictRefs = process.argv.includes("--strict-refs");
 
+const seedAuditIgnoredMetadataKeys = new Set([
+ "check_needed",
+ "check_reason",
+ "json_path",
+ "path",
+ "kind",
+]);
+
 const DATASET_IDS: DatasetId[] = ["q2", "q3"];
 const EXPECTED_LESSON_COUNTS: Record<DatasetId, number> = {
  q2: 25,
@@ -289,6 +297,9 @@ function scanJsonConventions(value: unknown, ctx: string, state: AuditState) {
  if (!isRecord(value)) return;
 
  for (const [key, fieldValue] of Object.entries(value)) {
+  if (seedAuditIgnoredMetadataKeys.has(key)) {
+   continue;
+  }
   if (key === "id" && typeof fieldValue !== "string") {
    addError(state, ctx, `id must be string, got ${typeName(fieldValue)}`);
   }
