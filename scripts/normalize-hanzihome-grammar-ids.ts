@@ -2,6 +2,9 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 type DatasetId = "q2" | "q3";
+type GrammarDocument = {
+ items?: Array<{ id: string }>;
+};
 
 const args = new Set<string>(process.argv.slice(2));
 const apply = args.has("--apply");
@@ -15,7 +18,7 @@ function pad(n: number) {
  return String(n).padStart(2, "0");
 }
 
-function readJson(file: string): any {
+function readJson<T>(file: string): T {
  return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
@@ -86,7 +89,7 @@ for (const dataset of datasets) {
 
   if (!fs.existsSync(grammarFile)) continue;
 
-  const grammar = readJson(grammarFile);
+  const grammar = readJson<GrammarDocument>(grammarFile);
   const idMap = new Map();
 
   for (const [index, item] of (grammar.items ?? []).entries()) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Shuffle, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -50,7 +50,6 @@ export function VocabReviewPanel({
  );
  const [detailOpen, setDetailOpen] = useState(false);
  const [selectedWritingIndex, setSelectedWritingIndex] = useState(0);
- const [shuffleSeed, setShuffleSeed] = useState(0);
 
  const session = useVocabReviewSession({
   vocab: lesson.vocab,
@@ -92,11 +91,6 @@ export function VocabReviewPanel({
 
  const resetWithMode = (nextMode: ReviewDeckMode) => {
   setMode(nextMode);
-  session.reset();
- };
-
- const shuffleDeck = () => {
-  setShuffleSeed(Date.now());
   session.reset();
  };
 

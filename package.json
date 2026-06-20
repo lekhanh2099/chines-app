@@ -20,6 +20,8 @@
   "data:hanzihome:db-rebuild": "node --experimental-strip-types scripts/rebuild-hanzihome-db.ts",
   "data:hanzihome:db-audit": "node --experimental-strip-types scripts/audit-hanzihome-db.ts",
   "data:hanzihome:db-runtime-audit": "node --experimental-strip-types scripts/audit-hanzihome-db-runtime.ts",
+  "data:hanzihome:seed-supabase": "node --experimental-strip-types scripts/seed-hanzihome-supabase.ts",
+  "data:hanzihome:verify-supabase-seed": "node --experimental-strip-types scripts/verify-hanzihome-supabase-seed.ts",
   "format": "prettier --write .",
   "format:check": "prettier --check .",
   "start": "next start",

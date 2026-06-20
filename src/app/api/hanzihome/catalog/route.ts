@@ -9,33 +9,38 @@ function parseBooleanParam(value: string | null) {
 }
 
 export async function GET(request: Request) {
- const url = new URL(request.url);
- const courseId = url.searchParams.get("courseId")?.trim();
+ try {
+  const url = new URL(request.url);
+  const courseId = url.searchParams.get("courseId")?.trim();
 
- if (courseId) {
-  const lessons = hanzihomeContentRepository.getCourseLessonSummaries(courseId);
+  if (courseId) {
+   const lessons = await hanzihomeContentRepository.getCourseLessonSummaries(courseId);
+
+   return NextResponse.json(
+    { lessons },
+    {
+     headers: {
+      "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+     },
+    },
+   );
+  }
+
+  const includeLessons = parseBooleanParam(url.searchParams.get("includeLessons"));
+  const catalog = await hanzihomeContentRepository.getCatalogSummary({
+   includeLessons,
+  });
 
   return NextResponse.json(
-   { lessons },
+   { catalog },
    {
     headers: {
      "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
     },
    },
   );
+ } catch (error) {
+  const message = error instanceof Error ? error.message : "Unknown Supabase error";
+  return NextResponse.json({ error: message }, { status: 503 });
  }
-
- const includeLessons = parseBooleanParam(url.searchParams.get("includeLessons"));
- const catalog = hanzihomeContentRepository.getCatalogSummary({
-  includeLessons,
- });
-
- return NextResponse.json(
-  { catalog },
-  {
-   headers: {
-    "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
-   },
-  },
- );
 }

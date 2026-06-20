@@ -16,14 +16,18 @@ import { VocabPreviewRow } from "./VocabPreviewRow";
 
 function getLessonHeading(lesson: HanziHomeLesson) {
  const sourceRoot = asRecord(lesson.sourceLesson);
- const source = asRecord(sourceRoot.source);
  const parsedLesson = asRecord(sourceRoot.lesson);
  const title = asRecord(parsedLesson.title);
+ const metadata = asRecord(parsedLesson.metadata);
 
  return {
   zhTitle: stringValue(title, "zh") || lesson.title,
   pinyinTitle: stringValue(title, "pinyin"),
-  volume: stringValue(source, "volume_vi") || stringValue(source, "volume") || "Không rõ quyển",
+  volume:
+   stringValue(metadata, "volume_vi") ||
+   stringValue(metadata, "volume") ||
+   lesson.bookTitle ||
+   "Không rõ quyển",
  };
 }
 

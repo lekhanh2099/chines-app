@@ -15,11 +15,7 @@ import {
  clearHanziHomeSearchNavigationIntent,
  useHanziHomeSearchNavigationIntent,
 } from "@/features/hanzihome/search/searchNavigationStore";
-import {
- hanzihomeCourseBooks,
- hanzihomeCourses,
- sortLessonsByCourseBookOrder,
-} from "@/features/hanzihome/courses/course-catalog";
+import { sortLessonsByCourseBookOrder } from "@/features/hanzihome/courses/course-catalog";
 import {
  findLessonByRouteParam,
  getLessonRouteValue,
@@ -57,8 +53,8 @@ export function HanziHomeWorkspace() {
  );
  const courseCatalog = useMemo(
   () => ({
-   courses: catalogData.courses.length > 0 ? catalogData.courses : hanzihomeCourses,
-   books: catalogData.books.length > 0 ? catalogData.books : hanzihomeCourseBooks,
+   courses: catalogData.courses,
+   books: catalogData.books,
   }),
   [catalogData.books, catalogData.courses],
  );
@@ -66,7 +62,7 @@ export function HanziHomeWorkspace() {
  const selectedCourseId =
   searchParams.get("courseId") ||
   learning.state.settings.lastCourseId ||
-  (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
+  courseCatalog.courses[0]?.id ||
   "";
 
  const {
@@ -81,13 +77,8 @@ export function HanziHomeWorkspace() {
  );
 
  const courseLessons = useMemo(
-  () =>
-   lessons.filter(
-    (item) =>
-     (item.courseId || (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
-     selectedCourseId,
-   ),
-  [lessons, courseCatalog.courses, selectedCourseId],
+  () => lessons.filter((item) => item.courseId === selectedCourseId),
+  [lessons, selectedCourseId],
  );
 
  const lastLessonId = learning.state.settings.lastLessonId;

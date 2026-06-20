@@ -1,5 +1,9 @@
-import { getHanziHomeData } from "@/features/hanzihome/static-db-data";
-import type { HanziHomeLesson, HanziHomeModule } from "@/features/hanzihome/types";
+import type {
+ HanziHomeData,
+ HanziHomeLesson,
+ HanziHomeModule,
+ StaticRadicalData,
+} from "@/features/hanzihome/types";
 
 import { normalizeSearchText } from "./normalize";
 import type { HanziHomeSearchIndexItem, HanziHomeSearchKind } from "./types";
@@ -273,7 +277,7 @@ function buildLessonNavigationItems(lesson: HanziHomeLesson) {
  );
 }
 
-function buildRadicalItems(radicals: ReturnType<typeof getHanziHomeData>["radicals"]) {
+function buildRadicalItems(radicals: StaticRadicalData[]) {
  return radicals.map((radical) => {
   const record = asRecord(radical);
   const title = text(record, "radical") || text(record, "character");
@@ -313,9 +317,7 @@ function buildGlobalNavigationItems() {
  );
 }
 
-export function buildHanziHomeSearchIndex() {
- const data = getHanziHomeData();
-
+export function buildHanziHomeSearchIndex(data: HanziHomeData) {
  return [
   ...data.lessons.flatMap((lesson) => [
    ...buildLessonNavigationItems(lesson),

@@ -15,19 +15,24 @@ function jsonError(message: string, status: number) {
 }
 
 export async function GET(_request: Request, context: RouteContext) {
- const { lessonId } = await context.params;
- const lesson = hanzihomeContentRepository.getLessonDetail(lessonId);
+ try {
+  const { lessonId } = await context.params;
+  const lesson = await hanzihomeContentRepository.getLessonDetail(lessonId);
 
- if (!lesson) {
-  return jsonError("Lesson not found", 404);
- }
+  if (!lesson) {
+   return jsonError("Lesson not found", 404);
+  }
 
- return NextResponse.json(
-  { lesson },
-  {
-   headers: {
-    "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+  return NextResponse.json(
+   { lesson },
+   {
+    headers: {
+     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+    },
    },
-  },
- );
+  );
+ } catch (error) {
+  const message = error instanceof Error ? error.message : "Unknown Supabase error";
+  return jsonError(message, 503);
+ }
 }
