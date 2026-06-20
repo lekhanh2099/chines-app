@@ -5,6 +5,11 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { config as loadEnv } from "dotenv";
 import { z } from "zod";
 
+import {
+ SectionSchema,
+ type Section,
+} from "../../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
+
 export const HANZIHOME_DATASETS = ["q2", "q3"] as const;
 export type HanziHomeDataset = (typeof HANZIHOME_DATASETS)[number];
 export type HanziHomeDatasetScope = HanziHomeDataset | "all";
@@ -12,6 +17,7 @@ export type HanziHomeDatasetScope = HanziHomeDataset | "all";
 export const EXPECTED_SEED_COUNTS = {
  q2: {
   lessons: 25,
+  lessonSections: 227,
   vocabItems: 1418,
   grammarPoints: 76,
   vocabExamples: 3164,
@@ -19,6 +25,7 @@ export const EXPECTED_SEED_COUNTS = {
  },
  q3: {
   lessons: 26,
+  lessonSections: 239,
   vocabItems: 1819,
   grammarPoints: 168,
   vocabExamples: 2974,
@@ -26,6 +33,7 @@ export const EXPECTED_SEED_COUNTS = {
  },
  all: {
   lessons: 51,
+  lessonSections: 466,
   vocabItems: 3237,
   grammarPoints: 244,
   vocabExamples: 6138,
@@ -397,6 +405,22 @@ export type LessonTextRow = {
  imported_at: string;
 };
 
+export type LessonSectionRow = {
+ id: string;
+ lesson_id: string;
+ owner_id: null;
+ source: "seed";
+ source_section_id: string;
+ section_key: string;
+ section_type: string;
+ title: string;
+ title_vi: string;
+ section_order: number;
+ payload: Section;
+ source_file: string;
+ imported_at: string;
+};
+
 export type VocabItemRow = {
  id: string;
  lesson_id: string;
@@ -494,6 +518,7 @@ export type HanziHomeSeedData = {
  courses: CourseRow[];
  books: BookRow[];
  lessons: LessonRow[];
+ lessonSections: LessonSectionRow[];
  lessonTexts: LessonTextRow[];
  vocabItems: VocabItemRow[];
  vocabExamples: VocabExampleRow[];
@@ -887,6 +912,27 @@ async function loadLessonSeed(params: {
   imported_at: params.importedAt,
  });
 
+ for (const sectionEntry of sectionIndex.slice().sort((left, right) => left.order - right.order)) {
+  const sectionPath = path.join(folderPath, "sections", sectionEntry.file);
+  const payload = await readJsonFile(sectionPath, SectionSchema);
+
+  params.seed.lessonSections.push({
+   id: stableUuidFromKey(`hanzihome:lesson-section:${lessonMeta.id}:${sectionEntry.id}`),
+   lesson_id: lessonMeta.id,
+   owner_id: null,
+   source: "seed",
+   source_section_id: sectionEntry.id,
+   section_key: sectionEntry.id,
+   section_type: sectionEntry.type,
+   title: sectionEntry.title,
+   title_vi: sectionEntry.title_vi,
+   section_order: sectionEntry.order,
+   payload,
+   source_file: path.relative(process.cwd(), sectionPath).split(path.sep).join("/"),
+   imported_at: params.importedAt,
+  });
+ }
+
  const textEntry = sectionIndex.find((section) => section.type === "text");
  if (textEntry) {
   const textSection = await readJsonFile(
@@ -1037,6 +1083,7 @@ export async function buildHanziHomeSeedData(
   courses: [],
   books: [],
   lessons: [],
+  lessonSections: [],
   lessonTexts: [],
   vocabItems: [],
   vocabExamples: [],
@@ -1095,6 +1142,7 @@ type SeedCollectionName =
  | "courses"
  | "books"
  | "lessons"
+ | "lessonSections"
  | "lessonTexts"
  | "vocabItems"
  | "vocabExamples"
@@ -1107,6 +1155,7 @@ const COLLECTION_NAMES: SeedCollectionName[] = [
  "courses",
  "books",
  "lessons",
+ "lessonSections",
  "lessonTexts",
  "vocabItems",
  "vocabExamples",
@@ -1170,6 +1219,9 @@ export function validateHanziHomeSeedData(
   checkParent(courseIds.has(row.course_id), `lesson ${row.id} course ${row.course_id}`);
   checkParent(bookIds.has(row.book_id), `lesson ${row.id} book ${row.book_id}`);
  });
+ seed.lessonSections.forEach((row) =>
+  checkParent(lessonIds.has(row.lesson_id), `lesson section ${row.id}`),
+ );
  seed.lessonTexts.forEach((row) =>
   checkParent(lessonIds.has(row.lesson_id), `lesson text ${row.id}`),
  );
@@ -1198,6 +1250,12 @@ export function validateHanziHomeSeedData(
 
  const duplicateOrders = [
   ...duplicateOrderKeys(
+   seed.lessonSections.map((row) => ({
+    parent: row.lesson_id,
+    order: row.section_order,
+   })),
+  ),
+  ...duplicateOrderKeys(
    seed.vocabItems.map((row) => ({ parent: row.lesson_id, order: row.item_order })),
   ),
   ...duplicateOrderKeys(
@@ -1223,6 +1281,7 @@ export function validateHanziHomeSeedData(
  const expected = EXPECTED_SEED_COUNTS[scope];
  const actual = {
   lessons: seed.lessons.length,
+  lessonSections: seed.lessonSections.length,
   vocabItems: seed.vocabItems.length,
   grammarPoints: seed.grammarPoints.length,
   vocabExamples: seed.vocabExamples.length,
@@ -1271,6 +1330,7 @@ export const SEED_TABLES = {
  courses: "hanzihome_courses",
  books: "hanzihome_course_books",
  lessons: "hanzihome_lessons",
+ lessonSections: "hanzihome_lesson_sections",
  lessonTexts: "hanzihome_lesson_texts",
  vocabItems: "hanzihome_vocab_items",
  vocabExamples: "hanzihome_vocab_examples",

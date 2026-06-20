@@ -60,6 +60,7 @@ function printCounts(seed: HanziHomeSeedData) {
   courses: seed.courses.length,
   books: seed.books.length,
   lessons: seed.lessons.length,
+  lessonSections: seed.lessonSections.length,
   lessonTexts: seed.lessonTexts.length,
   vocabItems: seed.vocabItems.length,
   vocabExamples: seed.vocabExamples.length,
@@ -78,6 +79,8 @@ function collectionRows(seed: HanziHomeSeedData, collection: CollectionKey) {
    return seed.books;
   case "lessons":
    return seed.lessons;
+  case "lessonSections":
+   return seed.lessonSections;
   case "lessonTexts":
    return seed.lessonTexts;
   case "vocabItems":
@@ -176,6 +179,7 @@ async function seedReplace(client: SupabaseClient, seed: HanziHomeSeedData) {
 
  const childOrder: CollectionKey[] = [
   "lessons",
+  "lessonSections",
   "lessonTexts",
   "vocabItems",
   "vocabExamples",

@@ -5,6 +5,7 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import {
  HanyuLessonSchema,
+ SectionSchema,
  type Section,
 } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import {
@@ -85,6 +86,19 @@ const LessonTextRowSchema = z.object({
  title: z.string(),
  content: z.string(),
  content_format: z.string(),
+});
+
+const LessonSectionRowSchema = z.object({
+ id: z.string().uuid(),
+ lesson_id: z.string(),
+ source_section_id: z.string(),
+ section_key: z.string(),
+ section_type: z.string(),
+ title: z.string(),
+ title_vi: z.string(),
+ section_order: z.number().int().positive(),
+ payload: SectionSchema,
+ source_file: z.string().nullable(),
 });
 
 const VocabExampleRowSchema = z.object({
@@ -176,6 +190,7 @@ const LessonDetailRowSchema = z.object({
  source_file: z.string().nullable(),
  course: RelatedCourseSchema,
  book: RelatedBookSchema,
+ sections: z.array(LessonSectionRowSchema).default([]),
  texts: z.array(LessonTextRowSchema).default([]),
  vocab: z.array(VocabRowSchema).default([]),
  grammar: z.array(GrammarRowSchema).default([]),
@@ -439,190 +454,15 @@ function grammarRowToViewModel(row: GrammarRow): GrammarViewModel {
  };
 }
 
-function parseLessonTextContent(row: z.infer<typeof LessonTextRowSchema>) {
- const chunks = row.content
-  .split(/\n\s*\n/u)
-  .map((chunk) => chunk.trim())
-  .filter(Boolean);
- const heading = chunks[0]?.replace(/^##\s+/u, "").trim() || row.title;
- const contentChunks = chunks[0]?.startsWith("## ") ? chunks.slice(1) : chunks;
- const hasDialogue = contentChunks.some((chunk) => /^\*\*.+?:\*\*\s*/u.test(chunk));
- const entries: Array<{
-  id: string;
-  order: number;
-  speaker: string;
-  zh: string;
-  pinyin: string;
-  vi: string;
- }> = [];
-
- for (let index = 0; index < contentChunks.length; ) {
-  const first = contentChunks[index] ?? "";
-  const speakerMatch = first.match(/^\*\*(.+?):\*\*\s*(.+)$/u);
-  const zh = speakerMatch?.[2] ?? first;
-  const speaker = speakerMatch?.[1] ?? "";
-  const next = contentChunks[index + 1] ?? "";
-  const hasPinyin = /^_.+_$/u.test(next);
-  const pinyin = hasPinyin ? next.slice(1, -1) : "";
-  const viIndex = index + (hasPinyin ? 2 : 1);
-  const possibleVi = contentChunks[viIndex] ?? "";
-  const isNextChineseLine =
-   /^\*\*.+?:\*\*\s*/u.test(possibleVi) || /[\p{Script=Han}]/u.test(possibleVi);
-  const vi = possibleVi && !isNextChineseLine ? possibleVi : "";
-
-  entries.push({
-   id: `${row.id}:content:${entries.length + 1}`,
-   order: entries.length + 1,
-   speaker,
-   zh,
-   pinyin,
-   vi,
-  });
-  index = vi ? viIndex + 1 : hasPinyin ? index + 2 : index + 1;
- }
-
- return {
-  id: row.id,
-  type: hasDialogue ? ("text_dialogue" as const) : ("text_narrative" as const),
-  order: 1,
-  title: heading,
-  title_vi: row.title,
-  entries,
- };
-}
-
 function buildSourceLesson(row: LessonDetailRow) {
- const textBlocks = row.texts
+ const sections = row.sections
   .slice()
-  .sort((left, right) => left.text_key.localeCompare(right.text_key, "en", { numeric: true }))
-  .map((text, index) => {
-   const parsed = parseLessonTextContent(text);
-   return parsed.type === "text_dialogue"
-    ? {
-       id: parsed.id,
-       type: parsed.type,
-       order: index + 1,
-       title: parsed.title,
-       title_vi: parsed.title_vi,
-       lines: parsed.entries,
-       comprehension_questions: [],
-      }
-    : {
-       id: parsed.id,
-       type: parsed.type,
-       order: index + 1,
-       title: parsed.title,
-       title_vi: parsed.title_vi,
-       paragraphs: parsed.entries.map((entry) => ({
-        id: entry.id,
-        order: entry.order,
-        zh: entry.zh,
-        pinyin: entry.pinyin,
-        vi: entry.vi,
-       })),
-       comprehension_questions: [],
-      };
-  });
- const vocabItems = row.vocab
-  .slice()
-  .sort((left, right) => left.item_order - right.item_order)
-  .map((item) => ({
-   id: item.id,
-   type: "vocabulary_item" as const,
-   order: item.item_order,
-   hanzi: item.word,
-   pinyin: item.pinyin,
-   meaning_vi: item.meaning,
-   meaning_en: "",
-   pos: item.pos_vi || "unknown",
-   tags: [],
-   examples: item.examples.map((example) => ({
-    id: example.id,
-    zh: example.zh,
-    pinyin: normalizeText(example.pinyin),
-    vi: normalizeText(example.vi),
-    source_ref: "",
-    grammar_refs: [],
-    vocab_refs: [],
-   })),
-   check_needed: false,
-  }));
- const grammarItems = row.grammar
-  .slice()
-  .sort((left, right) => left.point_order - right.point_order)
-  .map((point) => ({
-   id: point.id,
-   type: "grammar_point" as const,
-   order: point.point_order,
-   title: point.title,
-   title_vi: point.clean_title,
-   level: "",
-   tags: [],
-   blocks: [
-    {
-     id: `${point.id}:overview`,
-     type: "grammar_overview" as const,
-     order: 1,
-     title: "Ý nghĩa",
-     content_vi: point.core || point.content_md,
-     examples: point.examples.map((example) => ({
-      id: example.id,
-      zh: example.zh,
-      pinyin: normalizeText(example.pinyin),
-      vi: normalizeText(example.vi),
-      note_vi: normalizeText(example.note),
-     })),
-    },
-    ...point.details
-     .slice()
-     .sort((left, right) => left.section_order - right.section_order)
-     .map((detail, index) => ({
-      id: detail.id,
-      type: "grammar_usage_notes" as const,
-      order: index + 2,
-      title: detail.title,
-      notes_vi: detail.lines,
-     })),
-   ],
-  }));
- const sections = [
-  ...(textBlocks.length > 0
-   ? [
-      {
-       id: `${row.id}:text`,
-       type: "text" as const,
-       order: 1,
-       title: "课文",
-       title_vi: "Bài khóa",
-       blocks: textBlocks,
-      },
-     ]
-   : []),
-  ...(vocabItems.length > 0
-   ? [
-      {
-       id: `${row.id}:vocabulary`,
-       type: "vocabulary" as const,
-       order: 2,
-       title: "生词",
-       title_vi: "Từ vựng",
-       items: vocabItems,
-      },
-     ]
-   : []),
-  ...(grammarItems.length > 0
-   ? [
-      {
-       id: `${row.id}:grammar`,
-       type: "grammar" as const,
-       order: 3,
-       title: "语法 / 词语用法",
-       title_vi: "Ngữ pháp / Cách dùng từ",
-       items: grammarItems,
-      },
-     ]
-   : []),
- ];
+  .sort((left, right) => left.section_order - right.section_order)
+  .map(lessonSectionRowToSection);
+
+ if (sections.length === 0) {
+  throw new Error(`HanziHome lesson ${row.id} has no canonical lesson sections`);
+ }
 
  return HanyuLessonSchema.parse({
   lesson: {
@@ -754,12 +594,13 @@ async function getLessonSummaryRows(courseId?: string) {
 
 async function getLessonDetailRow(lessonId: string) {
  const client = await createClient();
- const rows = await requireRows(
-  `lesson detail ${lessonId}`,
-  client
-   .from("hanzihome_lessons")
-   .select(
-    `
+ const [rows, sections] = await Promise.all([
+  requireRows(
+   `lesson detail ${lessonId}`,
+   client
+    .from("hanzihome_lessons")
+    .select(
+     `
      id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file,
      course:hanzihome_courses!inner(id, slug, title, subtitle, type, course_order),
      book:hanzihome_course_books!inner(id, course_id, title, short_title, book_order),
@@ -785,13 +626,55 @@ async function getLessonDetailRow(lessonId: string) {
       )
      )
     `,
+    )
+    .eq("id", lessonId)
+    .eq("source", "seed")
+    .limit(1),
+   z.array(LessonDetailRowSchema),
+  ),
+  requireRows(
+   `lesson sections ${lessonId}`,
+   client
+    .from("hanzihome_lesson_sections")
+    .select(
+     "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
+    )
+    .eq("lesson_id", lessonId)
+    .eq("source", "seed")
+    .order("section_order"),
+   z.array(LessonSectionRowSchema),
+  ),
+ ]);
+
+ const row = rows[0];
+ return row ? LessonDetailRowSchema.parse({ ...row, sections }) : null;
+}
+
+async function getLessonSectionRow(sectionId: string) {
+ const client = await createClient();
+ const rows = await requireRows(
+  `lesson section ${sectionId}`,
+  client
+   .from("hanzihome_lesson_sections")
+   .select(
+    "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
    )
-   .eq("id", lessonId)
+   .eq("id", sectionId)
    .eq("source", "seed")
    .limit(1),
-  z.array(LessonDetailRowSchema),
+  z.array(LessonSectionRowSchema),
  );
  return rows[0] ?? null;
+}
+
+function lessonSectionRowToSection(row: z.infer<typeof LessonSectionRowSchema>): Section {
+ return SectionSchema.parse({
+  ...row.payload,
+  id: row.id,
+  order: row.section_order,
+  title: row.title,
+  title_vi: row.title_vi,
+ });
 }
 
 function matchesTextQuery(values: string[], query: string) {
@@ -1109,12 +992,8 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
  },
 
  async getLessonSection(sectionId) {
-  const searchData = await getSearchData();
-  for (const lesson of searchData.lessons) {
-   const section = lesson.sourceLesson?.lesson.sections.find((item) => item.id === sectionId);
-   if (section) return section;
-  }
-  return null;
+  const row = await getLessonSectionRow(sectionId);
+  return row ? lessonSectionRowToSection(row) : null;
  },
 
  async getLessonVocabulary(lessonId) {
