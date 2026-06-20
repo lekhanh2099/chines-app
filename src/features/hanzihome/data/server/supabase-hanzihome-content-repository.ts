@@ -248,6 +248,23 @@ export type HanzihomeContentRepository = {
  getSearchData: () => Promise<HanziHomeData>;
 };
 
+function groupBy<T, K>(items: T[], getKey: (item: T) => K) {
+ const grouped = new Map<K, T[]>();
+
+ for (const item of items) {
+  const key = getKey(item);
+  const group = grouped.get(key);
+
+  if (group) {
+   group.push(item);
+  } else {
+   grouped.set(key, [item]);
+  }
+ }
+
+ return grouped;
+}
+
 function countFromRelation(value: Array<{ count: number }>) {
  return value[0]?.count ?? 0;
 }
@@ -670,7 +687,7 @@ async function getLessonSectionRow(sectionId: string) {
 function lessonSectionRowToSection(row: z.infer<typeof LessonSectionRowSchema>): Section {
  return SectionSchema.parse({
   ...row.payload,
-  id: row.id,
+  id: row.source_section_id || row.section_key,
   order: row.section_order,
   title: row.title,
   title_vi: row.title_vi,
@@ -845,9 +862,9 @@ async function getSearchData(): Promise<HanziHomeData> {
     .range(from, to),
   ),
  ]);
- const textsByLesson = Map.groupBy(texts, (row) => row.lesson_id);
- const vocabByLesson = Map.groupBy(vocab, (row) => row.lesson_id);
- const grammarByLesson = Map.groupBy(grammar, (row) => row.lesson_id);
+ const textsByLesson = groupBy(texts, (row) => row.lesson_id);
+ const vocabByLesson = groupBy(vocab, (row) => row.lesson_id);
+ const grammarByLesson = groupBy(grammar, (row) => row.lesson_id);
  const lessons = summaries.map((summary) => {
   const detail = LessonDetailRowSchema.parse({
    ...summary,
