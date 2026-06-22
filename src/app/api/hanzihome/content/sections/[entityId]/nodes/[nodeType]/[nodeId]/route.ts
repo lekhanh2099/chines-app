@@ -7,7 +7,6 @@ import {
 } from "@/features/hanzihome/server/canonical-content-mutation";
 import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
 import { SectionSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -137,8 +136,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return mutationError("expectedUpdatedAt is required", 400);
  }
 
- const admin = createSupabaseAdminClient();
- const { data: section, error } = await admin
+ const { data: section, error } = await sessionClient
   .from("hanzihome_lesson_sections")
   .select("id,payload,updated_at,deleted_at")
   .eq("id", entityId)
@@ -214,8 +212,7 @@ async function setNestedNodeDeletedState(
  }
  if (!parsed.data.expectedUpdatedAt) return mutationError("expectedUpdatedAt is required", 400);
 
- const admin = createSupabaseAdminClient();
- const { data: section, error } = await admin
+ const { data: section, error } = await sessionClient
   .from("hanzihome_lesson_sections")
   .select("id,payload,updated_at,deleted_at")
   .eq("id", entityId)

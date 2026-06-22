@@ -4,7 +4,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { SectionSchema } from "../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
 import {
  buildHanziHomeSeedData,
- createHanziHomeAdminClient,
+ createHanziHomeReadClient,
  EXPECTED_SEED_COUNTS,
  fetchAllRows,
  SEED_TABLES,
@@ -107,55 +107,57 @@ function groupByLessonId<T extends { lesson_id: string }>(rows: T[]) {
 }
 
 async function loadDatabase(client: SupabaseClient) {
- const [
-  courses,
-  books,
-  lessons,
-  lessonSections,
-  lessonTexts,
-  vocabItems,
-  vocabExamples,
-  vocabDetails,
-  grammarPoints,
-  grammarExamples,
-  grammarDetails,
- ] = await Promise.all([
-  fetchAllRows<IdSourceRow>(client, SEED_TABLES.courses, "id,source"),
-  fetchAllRows<BookDbRow>(client, SEED_TABLES.books, "id,source,course_id,book_order"),
-  fetchAllRows<LessonDbRow>(
-   client,
-   SEED_TABLES.lessons,
-   "id,source,course_id,book_id,lesson_number,lesson_order",
-  ),
-  fetchAllRows<LessonSectionDbRow>(
-   client,
-   SEED_TABLES.lessonSections,
-   "id,source,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
-  ),
-  fetchAllRows<LessonTextDbRow>(client, SEED_TABLES.lessonTexts, "id,source,lesson_id,text_key"),
-  fetchAllRows<VocabDbRow>(client, SEED_TABLES.vocabItems, "id,source,lesson_id,item_order"),
-  fetchAllRows<VocabExampleDbRow>(
-   client,
-   SEED_TABLES.vocabExamples,
-   "id,source,vocab_item_id,lesson_id,example_order",
-  ),
-  fetchAllRows<VocabDetailDbRow>(
-   client,
-   SEED_TABLES.vocabDetailSections,
-   "id,source,vocab_item_id,lesson_id,section_order",
-  ),
-  fetchAllRows<GrammarDbRow>(client, SEED_TABLES.grammarPoints, "id,source,lesson_id,point_order"),
-  fetchAllRows<GrammarExampleDbRow>(
-   client,
-   SEED_TABLES.grammarExamples,
-   "id,source,grammar_point_id,lesson_id,example_order",
-  ),
-  fetchAllRows<GrammarDetailDbRow>(
-   client,
-   SEED_TABLES.grammarDetailSections,
-   "id,source,grammar_point_id,lesson_id,section_order",
-  ),
- ]);
+ const courses = await fetchAllRows<IdSourceRow>(client, SEED_TABLES.courses, "id,source");
+ const books = await fetchAllRows<BookDbRow>(
+  client,
+  SEED_TABLES.books,
+  "id,source,course_id,book_order",
+ );
+ const lessons = await fetchAllRows<LessonDbRow>(
+  client,
+  SEED_TABLES.lessons,
+  "id,source,course_id,book_id,lesson_number,lesson_order",
+ );
+ const lessonSections = await fetchAllRows<LessonSectionDbRow>(
+  client,
+  SEED_TABLES.lessonSections,
+  "id,source,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
+ );
+ const lessonTexts = await fetchAllRows<LessonTextDbRow>(
+  client,
+  SEED_TABLES.lessonTexts,
+  "id,source,lesson_id,text_key",
+ );
+ const vocabItems = await fetchAllRows<VocabDbRow>(
+  client,
+  SEED_TABLES.vocabItems,
+  "id,source,lesson_id,item_order",
+ );
+ const vocabExamples = await fetchAllRows<VocabExampleDbRow>(
+  client,
+  SEED_TABLES.vocabExamples,
+  "id,source,vocab_item_id,lesson_id,example_order",
+ );
+ const vocabDetails = await fetchAllRows<VocabDetailDbRow>(
+  client,
+  SEED_TABLES.vocabDetailSections,
+  "id,source,vocab_item_id,lesson_id,section_order",
+ );
+ const grammarPoints = await fetchAllRows<GrammarDbRow>(
+  client,
+  SEED_TABLES.grammarPoints,
+  "id,source,lesson_id,point_order",
+ );
+ const grammarExamples = await fetchAllRows<GrammarExampleDbRow>(
+  client,
+  SEED_TABLES.grammarExamples,
+  "id,source,grammar_point_id,lesson_id,example_order",
+ );
+ const grammarDetails = await fetchAllRows<GrammarDetailDbRow>(
+  client,
+  SEED_TABLES.grammarDetailSections,
+  "id,source,grammar_point_id,lesson_id,section_order",
+ );
 
  return {
   courses: seedOnly(courses),
@@ -304,7 +306,7 @@ async function main() {
   throw new Error(`Local seed invalid:\n${localValidation.errors.join("\n")}`);
  }
 
- const client = createHanziHomeAdminClient();
+ const client = createHanziHomeReadClient();
  const db = await loadDatabase(client);
  const errors: string[] = [];
 

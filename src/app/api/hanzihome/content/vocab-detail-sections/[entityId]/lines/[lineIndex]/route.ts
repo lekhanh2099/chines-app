@@ -5,7 +5,6 @@ import {
  mutateCanonicalContent,
  mutationError,
 } from "@/features/hanzihome/server/canonical-content-mutation";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 type RouteContext = {
@@ -34,8 +33,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  }
  if (!parsed.data.expectedUpdatedAt) return mutationError("expectedUpdatedAt is required", 400);
 
- const admin = createSupabaseAdminClient();
- const { data: detail, error } = await admin
+ const { data: detail, error } = await sessionClient
   .from("hanzihome_vocab_detail_sections")
   .select("id,lines,updated_at,deleted_at")
   .eq("id", entityId)

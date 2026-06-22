@@ -3,7 +3,6 @@ import { z } from "zod";
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
 import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
 import type { EditableEntityType } from "@/features/hanzihome/editing/store/types";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -122,7 +121,6 @@ export async function GET() {
  } = await sessionClient.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
 
- const admin = createSupabaseAdminClient();
  const [
   courses,
   books,
@@ -137,51 +135,51 @@ export async function GET() {
   grammarDetails,
   activeSections,
  ] = await Promise.all([
-  admin
+  sessionClient
    .from("hanzihome_courses")
    .select("id,title,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_course_books")
    .select("id,course_id,title,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_lessons")
    .select("id,book_id,title_zh,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_lesson_sections")
    .select("id,lesson_id,title,title_vi,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_lesson_texts")
    .select("id,lesson_id,title,text_key,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_vocab_items")
    .select("id,lesson_id,word,pinyin,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_vocab_examples")
    .select("id,vocab_item_id,zh,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_vocab_detail_sections")
    .select("id,vocab_item_id,title,section_key,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_grammar_points")
    .select("id,lesson_id,title,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_grammar_examples")
    .select("id,grammar_point_id,zh,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_grammar_detail_sections")
    .select("id,grammar_point_id,title,section_key,updated_at,deleted_at")
    .not("deleted_at", "is", null),
-  admin
+  sessionClient
    .from("hanzihome_lesson_sections")
    .select("id,lesson_id,payload,updated_at")
    .is("deleted_at", null),

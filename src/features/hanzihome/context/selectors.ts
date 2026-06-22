@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useSelector } from "@tanstack/react-store";
 
 import type { HanziHomeFeatureState } from "./hanzihomeFeatureStore";
@@ -22,11 +23,14 @@ export function useHanziHomeActiveEditableNode() {
 }
 
 export function useHanziHomeWorkspaceLayout() {
- return useHanziHomeFeatureSelector((state) => ({
-  splitEnabled: state.splitEnabled,
-  paneLayout: state.paneLayout,
-  draggedModule: state.draggedModule,
-  viewMode: state.viewMode,
-  splitPaneSize: state.splitPaneSize,
- }));
+ const splitEnabled = useHanziHomeFeatureSelector((state) => state.splitEnabled);
+ const paneLayout = useHanziHomeFeatureSelector((state) => state.paneLayout);
+ const draggedModule = useHanziHomeFeatureSelector((state) => state.draggedModule);
+ const viewMode = useHanziHomeFeatureSelector((state) => state.viewMode);
+ const splitPaneSize = useHanziHomeFeatureSelector((state) => state.splitPaneSize);
+
+ return useMemo(
+  () => ({ splitEnabled, paneLayout, draggedModule, viewMode, splitPaneSize }),
+  [draggedModule, paneLayout, splitEnabled, splitPaneSize, viewMode],
+ );
 }

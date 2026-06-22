@@ -1326,6 +1326,24 @@ export function createHanziHomeAdminClient(): SupabaseClient {
  });
 }
 
+export function createHanziHomeReadClient(): SupabaseClient {
+ loadEnv({ path: path.join(process.cwd(), ".env.local"), quiet: true });
+ loadEnv({ quiet: true });
+ const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+ const publicKey =
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+ if (!url || !publicKey) {
+  throw new Error(
+   "NEXT_PUBLIC_SUPABASE_URL and a Supabase publishable/anon key are required for seed verification.",
+  );
+ }
+
+ return createClient(url, publicKey, {
+  auth: { persistSession: false, autoRefreshToken: false },
+ });
+}
+
 export const SEED_TABLES = {
  courses: "hanzihome_courses",
  books: "hanzihome_course_books",

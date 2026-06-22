@@ -11,7 +11,6 @@ import {
  type CanonicalEntityType,
  type CanonicalMutationOperation,
 } from "@/features/hanzihome/schemas/canonical-content.schema";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 
 type MutationRpcError = {
@@ -21,6 +20,8 @@ type MutationRpcError = {
 
 function statusForMutationError(error: MutationRpcError) {
  if (error.code === "40001") return 409;
+ if (error.code === "28000") return 401;
+ if (error.code === "42501") return 403;
  if (error.code === "P0002" || error.code === "23503") return 404;
  if (error.code === "22023" || error.code === "23505" || error.code === "23514") return 400;
  return 500;
@@ -75,9 +76,7 @@ export async function mutateCanonicalContent({
   return mutationError("Invalid HanziHome changes", 400, parsedChanges.error.flatten());
  }
 
- const admin = createSupabaseAdminClient();
- const { data, error } = await admin.rpc("hanzihome_mutate_content", {
-  p_actor_id: user.id,
+ const { data, error } = await sessionClient.rpc("hanzihome_mutate_content_as_user", {
   p_operation: parsedOperation,
   p_entity_type: parsedEntityType,
   p_entity_id: entityId ?? null,
