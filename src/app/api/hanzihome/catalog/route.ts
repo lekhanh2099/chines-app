@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 function parseBooleanParam(value: string | null) {
  return value === "1" || value === "true";
@@ -20,7 +21,7 @@ export async function GET(request: Request) {
     { lessons },
     {
      headers: {
-      "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+      "Cache-Control": "no-store",
      },
     },
    );
@@ -35,7 +36,7 @@ export async function GET(request: Request) {
    { catalog },
    {
     headers: {
-     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+     "Cache-Control": "no-store",
     },
    },
   );

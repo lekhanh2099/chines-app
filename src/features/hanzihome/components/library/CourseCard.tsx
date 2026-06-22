@@ -13,13 +13,18 @@ import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-rout
 import { IOption } from "@/types/option";
 import type { CourseStats } from "./types";
 import { MiniMetric } from "./MiniMetric";
+import { BookCrudActions } from "./BookCrudActions";
+import { CourseCrudActions } from "./CourseCrudActions";
+import { LessonCrudActions } from "./LessonCrudActions";
 
 export function CourseCard({
  course,
  stats,
+ editMode = false,
 }: {
  course: HanziHomeCatalogCourse;
  stats: CourseStats;
+ editMode?: boolean;
 }) {
  const primaryBook = stats.books[0];
  const { lessons: courseLessons } = useHanziHomeCourseLessons(course.id);
@@ -81,6 +86,7 @@ export function CourseCard({
          {stats.books.length} quyển
         </span>
        )}
+       {editMode ? <CourseCrudActions course={course} /> : null}
       </div>
 
       <h2 className="truncate text-2xl font-black tracking-tight text-text-primary">
@@ -99,21 +105,41 @@ export function CourseCard({
        <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
       </div>
 
+      {stats.books.length > 0 ? (
+       <div className="flex flex-wrap gap-2 pt-1">
+        {stats.books.map((book) => (
+         <div
+          key={book.id}
+          className="flex items-center gap-1 rounded-lg border border-border-default bg-bg-primary px-2 py-1"
+         >
+          <span className="text-xs font-bold text-text-secondary">
+           {book.shortTitle || book.title}
+          </span>
+          {editMode ? <BookCrudActions book={book} /> : null}
+         </div>
+        ))}
+       </div>
+      ) : null}
+
       {courseLessons.length > 0 && (
-       <label className="mt-2 grid max-w-lg gap-1.5">
+       <div className="mt-2 grid max-w-lg gap-1.5">
         <span className="text-xs font-black uppercase tracking-wide text-text-muted">
          Bài sẽ mở
         </span>
-
-        <Select
-         options={courseLessonOptions}
-         selectValue={selectedOption}
-         triggerPlaceholder="Chọn course"
-         onChange={(option: IOption | null) => {
-          if (option?.value) setSelectedLessonId(String(option.value));
-         }}
-        />
-       </label>
+        <div className="flex min-w-0 items-center gap-1">
+         <div className="min-w-0 flex-1">
+          <Select
+           options={courseLessonOptions}
+           selectValue={selectedOption}
+           triggerPlaceholder="Chọn course"
+           onChange={(option: IOption | null) => {
+            if (option?.value) setSelectedLessonId(String(option.value));
+           }}
+          />
+         </div>
+         {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+        </div>
+       </div>
       )}
      </div>
     </div>

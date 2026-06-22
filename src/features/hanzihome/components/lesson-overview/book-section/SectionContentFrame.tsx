@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import { RawDataDetails } from "../CommonCards";
@@ -14,7 +14,7 @@ export function SectionContentFrame({
 }: {
  lessonId?: string;
  section: Section;
- sectionPath?: DraftPatchPath;
+ sectionPath?: EditableNodePath;
  debugMode: boolean;
  children: ReactNode;
 }) {

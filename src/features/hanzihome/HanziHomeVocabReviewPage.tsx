@@ -22,7 +22,11 @@ import {
 } from "@/features/hanzihome/utils/review-selection-route";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
-export function HanziHomeVocabReviewPage({ reviewLessonsParam }: { reviewLessonsParam: string | null }) {
+export function HanziHomeVocabReviewPage({
+ reviewLessonsParam,
+}: {
+ reviewLessonsParam: string | null;
+}) {
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const lessonTokens = useMemo(
   () => parseReviewLessonTokensParam(reviewLessonsParam),
@@ -138,9 +142,7 @@ export function HanziHomeVocabReviewPage({ reviewLessonsParam }: { reviewLessons
     )}
 
     {isLoading && (
-     <p className="rounded-xl bg-bg-subtle p-4 font-bold text-text-muted">
-      Đang tải bài để ôn...
-     </p>
+     <p className="rounded-xl bg-bg-subtle p-4 font-bold text-text-muted">Đang tải bài để ôn...</p>
     )}
 
     {!isLoading && lessonIds.length > 0 && combinedReviewLesson && (

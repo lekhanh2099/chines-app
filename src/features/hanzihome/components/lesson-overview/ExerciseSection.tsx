@@ -1,5 +1,5 @@
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { ExerciseBody } from "./exercise-section/ExerciseBody";
 import { RawExerciseDataDetails } from "./exercise-section/RawExerciseDataDetails";
@@ -16,7 +16,7 @@ export function ExerciseCard({
 }: {
  lessonId?: string;
  parentSectionId?: string;
- path?: DraftPatchPath;
+ path?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;

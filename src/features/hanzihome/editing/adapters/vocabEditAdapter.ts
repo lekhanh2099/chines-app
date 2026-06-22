@@ -22,7 +22,11 @@ export const vocabEditAdapter: EditAdapter = {
   { key: "meaning_vi", label: "Nghĩa tiếng Việt", kind: "textarea", required: true },
   { key: "meaning_en", label: "Nghĩa tiếng Anh", kind: "textarea" },
   { key: "hanviet", label: "Hán Việt" },
-  { key: "pos", label: "Từ loại" },
+  { key: "category", label: "Nhóm từ vựng", required: true },
+  { key: "level_tag", label: "Cấp độ" },
+  { key: "pos_vi", label: "Từ loại tiếng Việt" },
+  { key: "pos_zh", label: "Từ loại tiếng Trung" },
+  { key: "tone", label: "Sắc thái / ngữ vực" },
   { key: "tags", label: "Tags", kind: "string-list" },
  ],
  toValues: (value) => {
@@ -36,7 +40,11 @@ export const vocabEditAdapter: EditAdapter = {
    meaning_vi: stringValue(item, "meaning_vi") || stringValue(meaning, "meaning_vi"),
    meaning_en: stringValue(item, "meaning_en") || stringValue(meaning, "meaning_en"),
    hanviet: stringValue(meaning, "hanviet"),
-   pos: stringValue(item, "pos") || stringValue(pos, "normalized") || stringValue(pos, "raw_vi"),
+   category: stringValue(item, "category") || "Từ vựng",
+   level_tag: stringValue(item, "level_tag"),
+   pos_vi: stringValue(pos, "raw_vi") || stringValue(pos, "normalized"),
+   pos_zh: stringValue(pos, "raw_cn"),
+   tone: stringValue(item, "tone"),
    tags: stringList(item.tags),
   };
  },
@@ -44,6 +52,9 @@ export const vocabEditAdapter: EditAdapter = {
   const item = asRecord(original);
   item.hanzi = values.hanzi ?? "";
   item.pinyin = values.pinyin ?? "";
+  item.category = values.category ?? "Từ vựng";
+  item.level_tag = values.level_tag ?? "unknown";
+  item.tone = values.tone ?? "";
   item.tags = (values.tags ?? "")
    .split("\n")
    .map((tag) => tag.trim())
@@ -63,11 +74,12 @@ export const vocabEditAdapter: EditAdapter = {
   if (item.pos && typeof item.pos === "object" && !Array.isArray(item.pos)) {
    item.pos = {
     ...asRecord(item.pos),
-    raw_vi: values.pos ?? "",
-    normalized: values.pos ?? "unknown",
+    raw_vi: values.pos_vi ?? "",
+    raw_cn: values.pos_zh ?? "",
+    normalized: values.pos_vi ?? "unknown",
    };
   } else {
-   item.pos = values.pos ?? "unknown";
+   item.pos = values.pos_vi ?? "unknown";
   }
 
   return item;

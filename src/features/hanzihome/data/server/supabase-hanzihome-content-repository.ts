@@ -18,6 +18,7 @@ import type {
  HanziHomeCatalogCourse,
  HanziHomeCatalogData,
  HanziHomeData,
+ HanziHomeEditableRecordMeta,
  HanziHomeLesson,
  HanziHomeVocabItem,
 } from "@/features/hanzihome/types";
@@ -46,6 +47,7 @@ const CourseRowSchema = z.object({
  subtitle: z.string().nullable(),
  type: z.string(),
  course_order: z.number().int(),
+ updated_at: z.string(),
 });
 
 const BookRowSchema = z.object({
@@ -54,6 +56,7 @@ const BookRowSchema = z.object({
  title: z.string(),
  short_title: z.string().nullable(),
  book_order: z.number().int(),
+ updated_at: z.string(),
 });
 
 const RelatedCourseSchema = z
@@ -71,8 +74,12 @@ const LessonSummaryRowSchema = z.object({
  lesson_number: z.number().int().positive(),
  lesson_order: z.number().int().positive(),
  title_zh: z.string(),
- title_vi: z.string(),
+ title_pinyin: z.string().nullable().default(null),
+ title_vi: z.string().nullable().default(null),
+ title_en: z.string().nullable().default(null),
+ tags: z.array(z.string()).default([]),
  source_file: z.string().nullable(),
+ updated_at: z.string(),
  course: RelatedCourseSchema,
  book: RelatedBookSchema,
  vocab_count: CountRelationSchema,
@@ -83,9 +90,10 @@ const LessonTextRowSchema = z.object({
  id: z.string(),
  lesson_id: z.string(),
  text_key: z.string(),
- title: z.string(),
+ title: z.string().nullable().default(null),
  content: z.string(),
  content_format: z.string(),
+ updated_at: z.string(),
 });
 
 const LessonSectionRowSchema = z.object({
@@ -99,6 +107,7 @@ const LessonSectionRowSchema = z.object({
  section_order: z.number().int().positive(),
  payload: SectionSchema,
  source_file: z.string().nullable(),
+ updated_at: z.string(),
 });
 
 const VocabExampleRowSchema = z.object({
@@ -109,6 +118,7 @@ const VocabExampleRowSchema = z.object({
  pinyin: z.string().nullable(),
  vi: z.string().nullable(),
  note: z.string().nullable(),
+ updated_at: z.string(),
 });
 
 const VocabDetailRowSchema = z.object({
@@ -118,6 +128,7 @@ const VocabDetailRowSchema = z.object({
  title: z.string(),
  lines: z.array(z.string()),
  section_order: z.number().int().positive(),
+ updated_at: z.string(),
 });
 
 const VocabCoreRowSchema = z.object({
@@ -130,10 +141,14 @@ const VocabCoreRowSchema = z.object({
  pinyin: z.string(),
  han_viet: z.string(),
  meaning: z.string(),
+ meaning_en: z.string().nullable().default(null),
  category: z.string(),
  level: z.string().nullable(),
  pos_vi: z.string().nullable(),
  pos_zh: z.string().nullable(),
+ tone: z.string().nullable().default(null),
+ tags: z.array(z.string()).default([]),
+ updated_at: z.string(),
 });
 
 const VocabRowSchema = VocabCoreRowSchema.extend({
@@ -149,6 +164,7 @@ const GrammarExampleRowSchema = z.object({
  pinyin: z.string().nullable(),
  vi: z.string().nullable(),
  note: z.string().nullable(),
+ updated_at: z.string(),
 });
 
 const GrammarDetailRowSchema = z.object({
@@ -158,6 +174,7 @@ const GrammarDetailRowSchema = z.object({
  title: z.string(),
  lines: z.array(z.string()),
  section_order: z.number().int().positive(),
+ updated_at: z.string(),
 });
 
 const GrammarCoreRowSchema = z.object({
@@ -167,11 +184,15 @@ const GrammarCoreRowSchema = z.object({
  book_id: z.string(),
  point_order: z.number().int().positive(),
  title: z.string(),
+ title_vi: z.string().nullable().default(null),
  clean_title: z.string(),
+ level: z.string().nullable().default(null),
  core: z.string(),
- content_md: z.string(),
+ content_md: z.string().nullable().default(null),
  structures_view: z.array(z.string()),
  notes: z.array(z.string()),
+ tags: z.array(z.string()).default([]),
+ updated_at: z.string(),
 });
 
 const GrammarRowSchema = GrammarCoreRowSchema.extend({
@@ -186,8 +207,12 @@ const LessonDetailRowSchema = z.object({
  lesson_number: z.number().int().positive(),
  lesson_order: z.number().int().positive(),
  title_zh: z.string(),
- title_vi: z.string(),
+ title_pinyin: z.string().nullable().default(null),
+ title_vi: z.string().nullable().default(null),
+ title_en: z.string().nullable().default(null),
+ tags: z.array(z.string()).default([]),
  source_file: z.string().nullable(),
+ updated_at: z.string(),
  course: RelatedCourseSchema,
  book: RelatedBookSchema,
  sections: z.array(LessonSectionRowSchema).default([]),
@@ -203,7 +228,7 @@ const RelatedLessonSchema = z
    lesson_number: z.number().int().positive(),
    lesson_order: z.number().int().positive(),
    title_zh: z.string(),
-   title_vi: z.string(),
+   title_vi: z.string().nullable().default(null),
   }),
   z.array(
    z.object({
@@ -211,7 +236,7 @@ const RelatedLessonSchema = z
     lesson_number: z.number().int().positive(),
     lesson_order: z.number().int().positive(),
     title_zh: z.string(),
-    title_vi: z.string(),
+    title_vi: z.string().nullable().default(null),
    }),
   ),
  ])
@@ -293,6 +318,9 @@ function lessonSummaryToViewModel(row: LessonSummaryRow): HanziHomeLesson {
   lessonNumber: row.lesson_number,
   titleZh: row.title_zh,
   title: row.title_vi || row.title_zh,
+  titlePinyin: row.title_pinyin ?? undefined,
+  titleEn: row.title_en ?? undefined,
+  tags: row.tags,
   sourceFile: row.source_file ?? undefined,
   courseId: row.course_id,
   courseTitle: row.course.title,
@@ -306,6 +334,14 @@ function lessonSummaryToViewModel(row: LessonSummaryRow): HanziHomeLesson {
   grammarPointIds: [],
   vocab: [],
   grammar: [],
+  editMeta: {
+   entityType: "lesson",
+   entityId: row.id,
+   dbId: row.id,
+   updatedAt: row.updated_at,
+   order: row.lesson_order,
+   orderField: "lesson_order",
+  },
  };
 }
 
@@ -346,7 +382,7 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
   meaning: {
    hanviet: row.han_viet,
    meaning_vi: row.meaning || "Chưa có nghĩa",
-   meaning_en: "",
+   meaning_en: row.meaning_en ?? "",
    natural_translations_vi: row.meaning ? [row.meaning] : [],
    short_definition_vi: meaningLines[0] || row.meaning,
    textbook_focus_vi: meaningLines.slice(1).join("\n"),
@@ -437,6 +473,16 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
   runtimeId: `${row.lesson_id}__${row.id}`,
   lessonId: row.lesson_id,
   category: row.category || "Từ vựng",
+  tone: row.tone ?? "",
+  tags: row.tags,
+  editMeta: {
+   entityType: "vocab_item",
+   entityId: `${row.lesson_id}__${row.id}`,
+   dbId: row.id,
+   updatedAt: row.updated_at,
+   parentEntityType: "lesson",
+   parentEntityId: row.lesson_id,
+  },
  };
 }
 
@@ -444,7 +490,10 @@ function grammarRowToViewModel(row: GrammarRow): GrammarViewModel {
  return {
   id: `${row.lesson_id}__${row.id}`,
   title: row.title,
-  contentMd: row.content_md,
+  titleVi: row.title_vi ?? undefined,
+  level: row.level ?? undefined,
+  tags: row.tags,
+  contentMd: row.content_md ?? "",
   cleanTitle: row.clean_title || row.title,
   core: row.core,
   structuresView: row.structures_view,
@@ -468,7 +517,137 @@ function grammarRowToViewModel(row: GrammarRow): GrammarViewModel {
     title: detail.title,
     lines: detail.lines,
    })),
+  editMeta: {
+   entityType: "grammar_point",
+   entityId: `${row.lesson_id}__${row.id}`,
+   dbId: row.id,
+   updatedAt: row.updated_at,
+   parentEntityType: "lesson",
+   parentEntityId: row.lesson_id,
+  },
  };
+}
+
+function editableRecordKey(entityType: string, entityId: string) {
+ return `${entityType}:${entityId}`;
+}
+
+function buildEditableRecords(row: LessonDetailRow) {
+ const records: Record<string, HanziHomeEditableRecordMeta> = {};
+ const add = (record: HanziHomeEditableRecordMeta) => {
+  records[editableRecordKey(record.entityType, record.entityId)] = record;
+ };
+
+ add({
+  entityType: "lesson",
+  entityId: row.id,
+  dbId: row.id,
+  updatedAt: row.updated_at,
+  order: row.lesson_order,
+  orderField: "lesson_order",
+ });
+
+ for (const section of row.sections) {
+  add({
+   entityType: "section",
+   entityId: section.source_section_id,
+   dbId: section.id,
+   updatedAt: section.updated_at,
+   parentEntityType: "lesson",
+   parentEntityId: row.id,
+   sectionDbId: section.id,
+   order: section.section_order,
+   orderField: "section_order",
+  });
+ }
+
+ for (const item of row.vocab) {
+  const runtimeId = `${row.id}__${item.id}`;
+  add({
+   entityType: "vocab_item",
+   entityId: runtimeId,
+   dbId: item.id,
+   updatedAt: item.updated_at,
+   parentEntityType: "lesson",
+   parentEntityId: row.id,
+   order: item.item_order,
+   orderField: "item_order",
+  });
+  for (const example of item.examples) {
+   add({
+    entityType: "vocab_example",
+    entityId: example.id,
+    dbId: example.id,
+    updatedAt: example.updated_at,
+    parentEntityType: "vocab_item",
+    parentEntityId: runtimeId,
+    order: example.example_order,
+    orderField: "example_order",
+   });
+  }
+  for (const detail of item.details) {
+   const detailRecord: HanziHomeEditableRecordMeta = {
+    entityType: "vocab_detail_section",
+    entityId: detail.id,
+    dbId: detail.id,
+    updatedAt: detail.updated_at,
+    parentEntityType: "vocab_item",
+    parentEntityId: runtimeId,
+    order: detail.section_order,
+    orderField: "section_order",
+   };
+   add(detailRecord);
+   if (detail.section_key === "collocations") {
+    detail.lines.forEach((_, lineIndex) => {
+     add({
+      ...detailRecord,
+      entityId: `${item.id}:collocation:${lineIndex + 1}`,
+      fieldPath: ["lines", lineIndex],
+     });
+    });
+   }
+  }
+ }
+
+ for (const point of row.grammar) {
+  const runtimeId = `${row.id}__${point.id}`;
+  add({
+   entityType: "grammar_point",
+   entityId: runtimeId,
+   dbId: point.id,
+   updatedAt: point.updated_at,
+   parentEntityType: "lesson",
+   parentEntityId: row.id,
+   order: point.point_order,
+   orderField: "point_order",
+  });
+  for (const example of point.examples) {
+   add({
+    entityType: "grammar_example",
+    entityId: example.id,
+    dbId: example.id,
+    updatedAt: example.updated_at,
+    parentEntityType: "grammar_point",
+    parentEntityId: runtimeId,
+    order: example.example_order,
+    orderField: "example_order",
+   });
+  }
+  for (const detail of point.details) {
+   add({
+    entityType: "grammar_detail_section",
+    entityId: detail.id,
+    dbId: detail.id,
+    updatedAt: detail.updated_at,
+    parentEntityType: "grammar_point",
+    parentEntityId: runtimeId,
+    order: detail.section_order,
+    orderField: "section_order",
+   });
+  }
+ }
+
+ return records;
 }
 
 function buildSourceLesson(row: LessonDetailRow) {
@@ -486,11 +665,11 @@ function buildSourceLesson(row: LessonDetailRow) {
    id: row.id,
    title: {
     zh: row.title_zh,
-    pinyin: "",
-    vi: row.title_vi,
-    en: "",
+    pinyin: row.title_pinyin ?? "",
+    vi: row.title_vi ?? "",
+    en: row.title_en ?? "",
    },
-   tags: [],
+   tags: row.tags,
    metadata: {
     legacy_id: "",
     book: "Hanyu Jiaocheng",
@@ -499,9 +678,9 @@ function buildSourceLesson(row: LessonDetailRow) {
     lesson_index: row.lesson_number,
     lesson_number_cn: "",
     lesson_title_cn: row.title_zh,
-    lesson_title_pinyin: "",
-    lesson_title_vi: row.title_vi,
-    lesson_title_en: "",
+    lesson_title_pinyin: row.title_pinyin ?? "",
+    lesson_title_vi: row.title_vi ?? "",
+    lesson_title_en: row.title_en ?? "",
     source_files: [],
    },
    sections,
@@ -522,6 +701,9 @@ function lessonDetailToViewModel(row: LessonDetailRow): HanziHomeLesson {
   lessonNumber: row.lesson_number,
   titleZh: row.title_zh,
   title: row.title_vi || row.title_zh,
+  titlePinyin: row.title_pinyin ?? undefined,
+  titleEn: row.title_en ?? undefined,
+  tags: row.tags,
   sourceFile: row.source_file ?? undefined,
   courseId: row.course_id,
   courseTitle: row.course.title,
@@ -540,7 +722,7 @@ function lessonDetailToViewModel(row: LessonDetailRow): HanziHomeLesson {
   vocab,
   grammar,
   notes: {
-   overviewMarkdown: `# ${row.title_zh}\n\n${row.title_vi}`,
+   overviewMarkdown: `# ${row.title_zh}\n\n${row.title_vi ?? ""}`,
    lessonTextMarkdown: row.texts
     .slice()
     .sort((left, right) => left.text_key.localeCompare(right.text_key, "en", { numeric: true }))
@@ -550,6 +732,15 @@ function lessonDetailToViewModel(row: LessonDetailRow): HanziHomeLesson {
    vocabularyText: vocab.map((item) => `${item.hanzi} · ${item.pinyin}`).join("\n"),
   },
   sourceLesson: buildSourceLesson(row),
+  editMeta: {
+   entityType: "lesson",
+   entityId: row.id,
+   dbId: row.id,
+   updatedAt: row.updated_at,
+   order: row.lesson_order,
+   orderField: "lesson_order",
+  },
+  editableRecords: buildEditableRecords(row),
  };
 }
 
@@ -595,14 +786,13 @@ async function getLessonSummaryRows(courseId?: string) {
   .from("hanzihome_lessons")
   .select(
    `
-    id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file,
-    course:hanzihome_courses!inner(id, slug, title, subtitle, type, course_order),
-    book:hanzihome_course_books!inner(id, course_id, title, short_title, book_order),
+    *,
+    course:hanzihome_courses!inner(*),
+    book:hanzihome_course_books!inner(*),
     vocab_count:hanzihome_vocab_items(count),
     grammar_count:hanzihome_grammar_points(count)
    `,
   )
-  .eq("source", "seed")
   .order("lesson_order");
 
  if (courseId) query = query.eq("course_id", courseId);
@@ -618,34 +808,23 @@ async function getLessonDetailRow(lessonId: string) {
     .from("hanzihome_lessons")
     .select(
      `
-     id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file,
-     course:hanzihome_courses!inner(id, slug, title, subtitle, type, course_order),
-     book:hanzihome_course_books!inner(id, course_id, title, short_title, book_order),
-     texts:hanzihome_lesson_texts(id, lesson_id, text_key, title, content, content_format),
+     *,
+     course:hanzihome_courses!inner(*),
+     book:hanzihome_course_books!inner(*),
+     texts:hanzihome_lesson_texts(*),
      vocab:hanzihome_vocab_items(
-      id, lesson_id, course_id, book_id, item_order, word, pinyin, han_viet, meaning,
-      category, level, pos_vi, pos_zh,
-      examples:hanzihome_vocab_examples(
-       id, vocab_item_id, example_order, zh, pinyin, vi, note
-      ),
-      details:hanzihome_vocab_detail_sections(
-       id, vocab_item_id, section_key, title, lines, section_order
-      )
+      *,
+      examples:hanzihome_vocab_examples(*),
+      details:hanzihome_vocab_detail_sections(*)
      ),
      grammar:hanzihome_grammar_points(
-      id, lesson_id, course_id, book_id, point_order, title, clean_title, core,
-      content_md, structures_view, notes,
-      examples:hanzihome_grammar_examples(
-       id, grammar_point_id, example_order, zh, pinyin, vi, note
-      ),
-      details:hanzihome_grammar_detail_sections(
-       id, grammar_point_id, section_key, title, lines, section_order
-      )
+      *,
+      examples:hanzihome_grammar_examples(*),
+      details:hanzihome_grammar_detail_sections(*)
      )
     `,
     )
     .eq("id", lessonId)
-    .eq("source", "seed")
     .limit(1),
    z.array(LessonDetailRowSchema),
   ),
@@ -653,11 +832,8 @@ async function getLessonDetailRow(lessonId: string) {
    `lesson sections ${lessonId}`,
    client
     .from("hanzihome_lesson_sections")
-    .select(
-     "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
-    )
+    .select("*")
     .eq("lesson_id", lessonId)
-    .eq("source", "seed")
     .order("section_order"),
    z.array(LessonSectionRowSchema),
   ),
@@ -671,22 +847,40 @@ async function getLessonSectionRow(sectionId: string) {
  const client = await createClient();
  const rows = await requireRows(
   `lesson section ${sectionId}`,
-  client
-   .from("hanzihome_lesson_sections")
-   .select(
-    "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file",
-   )
-   .eq("id", sectionId)
-   .eq("source", "seed")
-   .limit(1),
+  client.from("hanzihome_lesson_sections").select("*").eq("id", sectionId).limit(1),
   z.array(LessonSectionRowSchema),
  );
  return rows[0] ?? null;
 }
 
+function removeDeletedNestedNodes(value: unknown): unknown {
+ if (Array.isArray(value)) {
+  return value
+   .filter(
+    (item) =>
+     !item ||
+     typeof item !== "object" ||
+     Array.isArray(item) ||
+     !(item as Record<string, unknown>).deleted_at,
+   )
+   .map(removeDeletedNestedNodes);
+ }
+ if (!value || typeof value !== "object") return value;
+ return Object.fromEntries(
+  Object.entries(value as Record<string, unknown>).map(([key, item]) => [
+   key,
+   removeDeletedNestedNodes(item),
+  ]),
+ );
+}
+
 function lessonSectionRowToSection(row: z.infer<typeof LessonSectionRowSchema>): Section {
+ const payload = removeDeletedNestedNodes(row.payload);
+ if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+  throw new Error(`HanziHome section ${row.id} payload is not an object`);
+ }
  return SectionSchema.parse({
-  ...row.payload,
+  ...payload,
   id: row.source_section_id || row.section_key,
   order: row.section_order,
   title: row.title,
@@ -720,12 +914,10 @@ async function getAggregateItems({
      .from("hanzihome_vocab_items")
      .select(
       `
-       id, lesson_id, course_id, book_id, item_order, word, pinyin, han_viet, meaning,
-       category, level, pos_vi, pos_zh,
-       lesson:hanzihome_lessons!inner(id, lesson_number, lesson_order, title_zh, title_vi)
+       *,
+       lesson:hanzihome_lessons!inner(*)
       `,
      )
-     .eq("source", "seed")
      .order("lesson_id")
      .order("item_order")
      .range(from, to);
@@ -744,7 +936,7 @@ async function getAggregateItems({
      lessonId: row.lesson_id,
      lessonNumber: row.lesson.lesson_number,
      lessonOrder: row.lesson.lesson_order,
-     lessonTitle: row.lesson.title_zh || row.lesson.title_vi,
+     lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
      word: row.word,
      pinyin: row.pinyin,
      hanViet: row.han_viet,
@@ -770,12 +962,10 @@ async function getAggregateItems({
     .from("hanzihome_grammar_points")
     .select(
      `
-      id, lesson_id, course_id, book_id, point_order, title, clean_title, core,
-      content_md, structures_view, notes,
-      lesson:hanzihome_lessons!inner(id, lesson_number, lesson_order, title_zh, title_vi)
+      *,
+      lesson:hanzihome_lessons!inner(*)
      `,
     )
-    .eq("source", "seed")
     .order("lesson_id")
     .order("point_order")
     .range(from, to);
@@ -794,7 +984,7 @@ async function getAggregateItems({
     lessonId: row.lesson_id,
     lessonNumber: row.lesson.lesson_number,
     lessonOrder: row.lesson.lesson_order,
-    lessonTitle: row.lesson.title_zh || row.lesson.title_vi,
+    lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
     title: row.title,
     cleanTitle: row.clean_title,
     core: row.core,
@@ -829,12 +1019,19 @@ function buildMeta(lessons: HanziHomeLesson[]) {
 async function getSearchData(): Promise<HanziHomeData> {
  const summaries = await getLessonSummaryRows();
  const client = await createClient();
- const [texts, vocab, grammar] = await Promise.all([
+ const [sections, texts, vocab, grammar] = await Promise.all([
+  requirePagedRows("search lesson sections", z.array(LessonSectionRowSchema), (from, to) =>
+   client
+    .from("hanzihome_lesson_sections")
+    .select("*")
+    .order("lesson_id")
+    .order("section_order")
+    .range(from, to),
+  ),
   requirePagedRows("search lesson texts", z.array(LessonTextRowSchema), (from, to) =>
    client
     .from("hanzihome_lesson_texts")
-    .select("id, lesson_id, text_key, title, content, content_format")
-    .eq("source", "seed")
+    .select("*")
     .order("lesson_id")
     .order("text_key")
     .range(from, to),
@@ -842,10 +1039,7 @@ async function getSearchData(): Promise<HanziHomeData> {
   requirePagedRows("search vocab", z.array(VocabCoreRowSchema), (from, to) =>
    client
     .from("hanzihome_vocab_items")
-    .select(
-     "id, lesson_id, course_id, book_id, item_order, word, pinyin, han_viet, meaning, category, level, pos_vi, pos_zh",
-    )
-    .eq("source", "seed")
+    .select("*")
     .order("lesson_id")
     .order("item_order")
     .range(from, to),
@@ -853,21 +1047,20 @@ async function getSearchData(): Promise<HanziHomeData> {
   requirePagedRows("search grammar", z.array(GrammarCoreRowSchema), (from, to) =>
    client
     .from("hanzihome_grammar_points")
-    .select(
-     "id, lesson_id, course_id, book_id, point_order, title, clean_title, core, content_md, structures_view, notes",
-    )
-    .eq("source", "seed")
+    .select("*")
     .order("lesson_id")
     .order("point_order")
     .range(from, to),
   ),
  ]);
+ const sectionsByLesson = groupBy(sections, (row) => row.lesson_id);
  const textsByLesson = groupBy(texts, (row) => row.lesson_id);
  const vocabByLesson = groupBy(vocab, (row) => row.lesson_id);
  const grammarByLesson = groupBy(grammar, (row) => row.lesson_id);
  const lessons = summaries.map((summary) => {
   const detail = LessonDetailRowSchema.parse({
    ...summary,
+   sections: sectionsByLesson.get(summary.id) ?? [],
    texts: textsByLesson.get(summary.id) ?? [],
    vocab: (vocabByLesson.get(summary.id) ?? []).map((item) => ({
     ...item,
@@ -895,6 +1088,7 @@ async function getSearchData(): Promise<HanziHomeData> {
       subtitle: row.course.subtitle ?? undefined,
       type: row.course.type,
       order: row.course.course_order,
+      updatedAt: row.course.updated_at,
      },
     ]),
    ).values(),
@@ -909,6 +1103,7 @@ async function getSearchData(): Promise<HanziHomeData> {
       title: row.book.title,
       shortTitle: row.book.short_title ?? undefined,
       order: row.book.book_order,
+      updatedAt: row.book.updated_at,
      },
     ]),
    ).values(),
@@ -931,8 +1126,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     "catalog courses",
     client
      .from("hanzihome_courses")
-     .select("id, slug, title, subtitle, type, course_order")
-     .eq("source", "seed")
+     .select("id, slug, title, subtitle, type, course_order, updated_at")
      .order("course_order"),
     z.array(CourseRowSchema),
    ),
@@ -940,8 +1134,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     "catalog books",
     client
      .from("hanzihome_course_books")
-     .select("id, course_id, title, short_title, book_order")
-     .eq("source", "seed")
+     .select("id, course_id, title, short_title, book_order, updated_at")
      .order("book_order"),
     z.array(BookRowSchema),
    ),
@@ -961,6 +1154,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     subtitle: course.subtitle ?? undefined,
     type: course.type,
     order: course.course_order,
+    updatedAt: course.updated_at,
     stats: {
      bookCount: bookRows.filter((book) => book.course_id === course.id).length,
      lessonCount: courseLessons.length,
@@ -981,6 +1175,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     title: book.title,
     shortTitle: book.short_title ?? undefined,
     order: book.book_order,
+    updatedAt: book.updated_at,
    })),
    lessons: includeLessons ? lessons : [],
    radicals: [],

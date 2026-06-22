@@ -15,7 +15,7 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { useHanziHomeLessonSections } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
@@ -47,7 +47,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
  );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
- const sectionPathFor = (section: Section): DraftPatchPath => {
+ const sectionPathFor = (section: Section): EditableNodePath => {
   const sourceIndex =
    lesson.sourceLesson?.lesson.sections.findIndex(
     (sourceSection) => sourceSection.id === section.id,

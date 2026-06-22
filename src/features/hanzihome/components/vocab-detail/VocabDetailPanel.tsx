@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
+import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 
 import { hasCultureContent, hasSectionInItem, hasWarningContent } from "./content-checks";
 import { sectionShortcutTabs, type SectionView } from "./types";
@@ -30,7 +32,7 @@ function isTypingTarget(element: Element | null) {
 
 type VocabDetailPanelProps = {
  word: HanziHomeVocabItem | null;
- wordPath?: DraftPatchPath | null;
+ wordPath?: EditableNodePath | null;
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;
@@ -48,6 +50,7 @@ export function VocabDetailPanel({
  compact = false,
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
+ const editMode = useHanziHomeEditMode();
 
  useEffect(() => {
   if (!word) return;
@@ -136,6 +139,11 @@ export function VocabDetailPanel({
     </Card>
 
     <div className="grid gap-4">
+     {editMode && lessonId && word.editMeta ? (
+      <div className="flex justify-end">
+       <CreateNormalizedChildDialog family="vocab" lessonId={lessonId} parent={word.editMeta} />
+      </div>
+     ) : null}
      <StructuredVocabSections
       item={word}
       itemPath={wordPath ?? undefined}

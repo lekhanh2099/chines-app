@@ -10,12 +10,7 @@ export type ReviewLessonRouteOption = {
 };
 
 function inferBookToken(lesson: ReviewLessonRouteOption) {
- const source = [
-  lesson.courseId,
-  lesson.bookId,
-  lesson.title,
-  lesson.titleZh,
- ]
+ const source = [lesson.courseId, lesson.bookId, lesson.title, lesson.titleZh]
   .filter(Boolean)
   .join(" ")
   .toLowerCase();
@@ -54,10 +49,7 @@ export function parseReviewLessonTokensParam(value: string | null): string[] {
  );
 }
 
-export function resolveReviewLessonTokens(
- tokens: string[],
- lessons: ReviewLessonRouteOption[],
-) {
+export function resolveReviewLessonTokens(tokens: string[], lessons: ReviewLessonRouteOption[]) {
  const byToken = new Map<string, string>();
 
  for (const lesson of lessons) {

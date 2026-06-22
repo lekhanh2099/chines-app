@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import { LooseItemGrid } from "../CommonCards";
@@ -14,7 +14,7 @@ export function CompleteDialogueExerciseBody({
  displayMode,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {

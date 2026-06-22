@@ -6,7 +6,8 @@ import type {
  AggregateKind,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type RouteContext = {
  params: Promise<{
@@ -44,7 +45,7 @@ export async function GET(request: Request, context: RouteContext) {
    { items },
    {
     headers: {
-     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+     "Cache-Control": "no-store",
     },
    },
   );

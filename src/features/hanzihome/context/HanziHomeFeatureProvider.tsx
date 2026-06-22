@@ -2,7 +2,6 @@
 
 import { useMemo, type ReactNode } from "react";
 
-import { useDraftPatchedLesson } from "@/features/hanzihome/editing";
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import type {
  HanziHomeLesson,
@@ -43,7 +42,6 @@ export function HanziHomeFeatureProvider({
  ) => void;
  children: ReactNode;
 }) {
- const patchedLesson = useDraftPatchedLesson(lesson);
  const searchIntent = useHanziHomeSearchNavigationIntent();
  const matchingIntent = searchIntent?.lessonId === lesson.id ? searchIntent : null;
  const store = useMemo(
@@ -65,7 +63,7 @@ export function HanziHomeFeatureProvider({
  const runtime = useMemo(
   () => ({
    originalLesson: lesson,
-   lesson: patchedLesson,
+   lesson,
    learningState,
    activeModule,
    selectModule: onSelectModule,
@@ -85,7 +83,6 @@ export function HanziHomeFeatureProvider({
    onMarkGrammar,
    onMarkVocab,
    onSelectModule,
-   patchedLesson,
   ],
  );
  const value = useMemo(

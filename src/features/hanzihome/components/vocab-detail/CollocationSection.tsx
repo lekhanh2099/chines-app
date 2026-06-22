@@ -1,6 +1,6 @@
 import type { Collocation } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { VocabReadingSection } from "./VocabReadingSection";
 
@@ -13,7 +13,7 @@ export function CollocationSection({
  collocations: Collocation[];
  item: HanziHomeVocabItem;
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
 }) {
  return (
   <VocabReadingSection id="vocab-collocations" title="Kết hợp thường gặp">

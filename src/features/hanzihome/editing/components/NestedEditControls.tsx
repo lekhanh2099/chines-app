@@ -1,12 +1,12 @@
 "use client";
 
 import { EditableNodeWrapper } from "./EditableNodeWrapper";
-import type { DraftPatchPath, EditableEntityType } from "../store/types";
+import type { EditableNodePath, EditableEntityType } from "../store/types";
 
 type NestedEditableNode = {
  entityType: EditableEntityType;
  entityId: string;
- path: DraftPatchPath;
+ path: EditableNodePath;
  value: unknown;
  label: string;
 };

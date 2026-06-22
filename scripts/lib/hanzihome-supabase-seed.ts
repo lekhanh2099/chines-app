@@ -1340,23 +1340,29 @@ export const SEED_TABLES = {
  grammarDetailSections: "hanzihome_grammar_detail_sections",
 } as const;
 
-export async function fetchAllRows<T>(
+export async function fetchAllRows<T extends { id: string }>(
  client: SupabaseClient,
  table: string,
  columns = "*",
 ): Promise<T[]> {
  const pageSize = 1000;
  const rows: T[] = [];
- for (let from = 0; ; from += pageSize) {
-  const { data, error } = await client
-   .from(table)
-   .select(columns)
-   .order("id", { ascending: true })
-   .range(from, from + pageSize - 1);
+ let lastId: string | null = null;
+
+ for (;;) {
+  let query = client.from(table).select(columns).order("id", { ascending: true }).limit(pageSize);
+
+  if (lastId) {
+   query = query.gt("id", lastId);
+  }
+
+  const { data, error } = await query;
   if (error) throw new Error(`Failed reading ${table}: ${error.message}`);
-  const page = (data ?? []) as T[];
+  const page = (data ?? []) as unknown as T[];
   rows.push(...page);
   if (page.length < pageSize) break;
+  lastId = page.at(-1)?.id ?? null;
+  if (!lastId) break;
  }
  return rows;
 }

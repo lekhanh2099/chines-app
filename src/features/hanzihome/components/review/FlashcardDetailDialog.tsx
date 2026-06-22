@@ -13,7 +13,10 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { GrammarPointReader } from "@/features/hanzihome/components/grammar/GrammarPointReader";
-import { hasCultureContent, hasWarningContent } from "@/features/hanzihome/components/vocab-detail/content-checks";
+import {
+ hasCultureContent,
+ hasWarningContent,
+} from "@/features/hanzihome/components/vocab-detail/content-checks";
 import {
  CultureSection,
  StructuredVocabSections,
@@ -121,9 +124,7 @@ function ReviewVocabDetailContent({
    <aside className="grid min-w-0 content-start gap-4">
     {word.word_formation.characters.length > 0 && (
      <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
-      <p className="mb-3 text-xs font-black uppercase tracking-wide text-text-muted">
-       Cấu tạo chữ
-      </p>
+      <p className="mb-3 text-xs font-black uppercase tracking-wide text-text-muted">Cấu tạo chữ</p>
       <WordFormationPreview formation={word.word_formation} />
      </section>
     )}

@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import { EmptySectionState, GenericItemCard, hasRenderableValue } from "./CommonCards";
@@ -25,7 +25,7 @@ export function BookSectionContent({
 }: {
  lessonId?: string;
  section: Section;
- sectionPath?: DraftPatchPath;
+ sectionPath?: EditableNodePath;
  displayMode?: LessonDisplayMode;
  debugMode?: boolean;
 }) {

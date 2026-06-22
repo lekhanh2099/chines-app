@@ -1,5 +1,5 @@
 import type { TextBlock } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
@@ -12,7 +12,7 @@ export function TextBlockView({
 }: {
  lessonId?: string;
  block: TextBlock;
- path?: DraftPatchPath;
+ path?: EditableNodePath;
  displayMode: LessonDisplayMode;
 }) {
  const directLines = block.lines;

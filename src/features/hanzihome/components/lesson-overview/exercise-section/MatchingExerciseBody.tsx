@@ -1,4 +1,4 @@
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import type { LessonDisplayMode } from "../types";
@@ -15,7 +15,7 @@ export function MatchingExerciseBody({
  displayMode,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {

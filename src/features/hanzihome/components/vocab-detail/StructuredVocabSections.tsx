@@ -1,5 +1,5 @@
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { hasComparisonContent, hasWordFormationContent } from "./content-checks";
 import { CollocationSection } from "./CollocationSection";
 import { ComparisonSection } from "./ComparisonSection";
@@ -16,7 +16,7 @@ export function StructuredVocabSections({
 }: {
  item: HanziHomeVocabItem;
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  sectionView: SectionView;
  keyword: string;
 }) {

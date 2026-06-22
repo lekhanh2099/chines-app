@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { asRecord, stringValue } from "../utils";
 import { matchingAnswerText } from "./matching-answer-utils";
@@ -13,7 +13,7 @@ export function MatchingAnswerDetails({
  rightItems,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  itemId: string;
  answers: unknown[];
  sourceKey: string;

@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import type { HanziHomeDbEditTarget } from "@/features/hanzihome/editor/hanzihome-db-edit.types";
-
 export const editableEntityTypes = [
  "lesson",
  "section",
@@ -11,6 +9,7 @@ export const editableEntityTypes = [
  "proper_noun",
  "character_writing_item",
  "grammar_point",
+ "grammar_detail_section",
  "grammar_block",
  "grammar_formula",
  "grammar_example",
@@ -31,24 +30,7 @@ export const editableEntityTypes = [
 ] as const;
 
 export type EditableEntityType = (typeof editableEntityTypes)[number];
-export type DraftPatchOperation = "update" | "create" | "delete" | "reorder";
-export type DraftPatchPath = Array<string | number>;
-
-export type DraftPatch = {
- id: string;
- lessonId: string;
- entityType: EditableEntityType;
- entityId: string;
- parentEntityType?: EditableEntityType;
- parentEntityId?: string;
- path: DraftPatchPath;
- target?: HanziHomeDbEditTarget;
- targetRelativePath?: DraftPatchPath;
- op: DraftPatchOperation;
- before: unknown;
- after: unknown;
- createdAt: string;
-};
+export type EditableNodePath = Array<string | number>;
 
 export type EditableNodeRequest = {
  lessonId: string;
@@ -56,9 +38,7 @@ export type EditableNodeRequest = {
  entityId: string;
  parentEntityType?: EditableEntityType;
  parentEntityId?: string;
- path: DraftPatchPath;
- target?: HanziHomeDbEditTarget;
- targetRelativePath?: DraftPatchPath;
+ path: EditableNodePath;
  value: unknown;
  label?: string;
  description?: ReactNode;

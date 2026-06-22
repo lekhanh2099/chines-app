@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import { buildHanziHomeSearchIndex } from "@/features/hanzihome/search/buildSearchIndex";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET() {
  try {
@@ -14,7 +15,7 @@ export async function GET() {
    { items },
    {
     headers: {
-     "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+     "Cache-Control": "no-store",
     },
    },
   );

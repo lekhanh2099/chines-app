@@ -16,6 +16,7 @@ export const lessonEditAdapter: EditAdapter = {
   { key: "title_vi", label: "Tiêu đề tiếng Việt" },
   { key: "title_en", label: "Tiêu đề tiếng Anh" },
   { key: "tags", label: "Tags", kind: "string-list" },
+  { key: "source_file", label: "Tệp nguồn" },
  ],
  toValues: (value) => {
   const lesson = asRecord(value);
@@ -29,6 +30,7 @@ export const lessonEditAdapter: EditAdapter = {
    tags: Array.isArray(lesson.tags)
     ? lesson.tags.filter((tag): tag is string => typeof tag === "string").join("\n")
     : "",
+   source_file: stringValue(lesson, "source_file"),
   };
  },
  toNode: (original, values) => {
@@ -48,6 +50,7 @@ export const lessonEditAdapter: EditAdapter = {
     .split("\n")
     .map((tag) => tag.trim())
     .filter(Boolean),
+   source_file: values.source_file ?? "",
   };
  },
 };

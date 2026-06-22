@@ -1,5 +1,5 @@
 import type { GrammarPoint } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";
 import { GrammarBlockView } from "./GrammarBlockView";
@@ -13,7 +13,7 @@ export function GrammarCard({
 }: {
  lessonId?: string;
  parentSectionId?: string;
- path?: DraftPatchPath;
+ path?: EditableNodePath;
  item: GrammarPoint;
  displayMode: LessonDisplayMode;
 }) {

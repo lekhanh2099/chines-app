@@ -1,7 +1,7 @@
 import {
  EditableNodeWrapper,
  NestedEditControls,
- type DraftPatchPath,
+ type EditableNodePath,
 } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
@@ -39,7 +39,7 @@ export function QuestionExerciseBody({
  displayMode,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -100,12 +100,12 @@ export function QuestionExerciseBody({
  const passageSegments =
   arrayValue(directPassage, "segments").length > 0
    ? {
-      path: ["passage", "segments"] as DraftPatchPath,
+      path: ["passage", "segments"] as EditableNodePath,
       values: arrayValue(directPassage, "segments"),
      }
    : arrayValue(record, "segments").length > 0
      ? {
-        path: ["segments"] as DraftPatchPath,
+        path: ["segments"] as EditableNodePath,
         values: arrayValue(record, "segments"),
        }
      : null;

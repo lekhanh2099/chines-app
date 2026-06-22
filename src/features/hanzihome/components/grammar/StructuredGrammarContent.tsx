@@ -1,15 +1,17 @@
 "use client";
 
 import { Lightbulb, Sigma } from "lucide-react";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
+import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 import { GrammarDetailSectionCard } from "./GrammarDetailSectionCard";
 import { cleanGrammarDisplayLine, isDuplicateCoreSection } from "./grammar-display";
 
 type StructuredGrammarContentProps = {
  point: GrammarViewModel;
  lessonId?: string;
- pointPath?: DraftPatchPath;
+ pointPath?: EditableNodePath;
  exampleLimit?: number;
 };
 
@@ -19,6 +21,7 @@ export function StructuredGrammarContent({
  pointPath,
  exampleLimit,
 }: StructuredGrammarContentProps) {
+ const editMode = useHanziHomeEditMode();
  const hasExampleDetailSection = Boolean(
   point.detailSections?.some((section) =>
    section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
@@ -34,6 +37,11 @@ export function StructuredGrammarContent({
 
  return (
   <div className="grid gap-4">
+   {editMode && lessonId && point.editMeta ? (
+    <div className="flex justify-end">
+     <CreateNormalizedChildDialog family="grammar" lessonId={lessonId} parent={point.editMeta} />
+    </div>
+   ) : null}
    {point.core && (
     <section className="rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
      <div className="flex items-center gap-2">
@@ -84,7 +92,7 @@ export function StructuredGrammarContent({
        <EditableNodeWrapper
         key={section.id}
         lessonId={lessonId}
-        entityType="grammar_block"
+        entityType="grammar_detail_section"
         entityId={section.id}
         parentEntityType="grammar_point"
         parentEntityId={point.id}

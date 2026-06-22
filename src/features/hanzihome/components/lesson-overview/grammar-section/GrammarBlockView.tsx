@@ -1,5 +1,5 @@
 import type { GrammarBlock } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
@@ -15,7 +15,7 @@ export function GrammarBlockView({
 }: {
  lessonId?: string;
  grammarPointId?: string;
- path?: DraftPatchPath;
+ path?: EditableNodePath;
  block: GrammarBlock;
  displayMode: LessonDisplayMode;
 }) {

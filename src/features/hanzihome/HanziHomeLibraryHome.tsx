@@ -1,27 +1,43 @@
 "use client";
 
+import { useState } from "react";
+
 import { Card } from "@/components/ui/card";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
+import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
 import type { CourseStats } from "@/features/hanzihome/components/library/types";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 export function HanziHomeLibraryHome() {
+ const [editMode, setEditMode] = useState(false);
  const catalogData = useHanziHomeCatalogData();
+ const canEdit = useHanziHomeCanEdit();
  const courses = catalogData.courses;
  const books = catalogData.books;
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
    <section className="grid gap-4">
-    <div className="grid gap-1">
-     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">HanziHome</p>
-     <h1 className="text-2xl font-black tracking-tight text-text-primary">
-      Thư viện học HanziHome
-     </h1>
-     <p className="max-w-3xl  font-semibold leading-relaxed text-text-muted">
-      Nội dung khóa học, bài học, từ vựng và ngữ pháp được tải từ thư viện HanziHome.
-     </p>
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div className="grid gap-1">
+      <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">HanziHome</p>
+      <h1 className="text-2xl font-black tracking-tight text-text-primary">
+       Thư viện học HanziHome
+      </h1>
+      <p className="max-w-3xl  font-semibold leading-relaxed text-text-muted">
+       Nội dung khóa học, bài học, từ vựng và ngữ pháp được tải từ thư viện HanziHome.
+      </p>
+     </div>
+     {canEdit ? (
+      <HanziHomeLibraryCrudToolbar
+       courses={courses}
+       books={books}
+       editMode={editMode}
+       onEditModeChange={setEditMode}
+      />
+     ) : null}
     </div>
 
     {courses.length === 0 ? (
@@ -31,7 +47,12 @@ export function HanziHomeLibraryHome() {
     ) : (
      <div className="grid gap-4">
       {courses.map((course) => (
-       <CourseCard key={course.id} course={course} stats={getCourseStats(course, books)} />
+       <CourseCard
+        key={course.id}
+        course={course}
+        stats={getCourseStats(course, books)}
+        editMode={canEdit && editMode}
+       />
       ))}
      </div>
     )}

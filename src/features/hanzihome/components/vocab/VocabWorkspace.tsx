@@ -7,7 +7,7 @@ import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import { getVocabItemKey, getVocabSearchText } from "@/features/hanzihome/utils/vocab-item";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 type VocabWorkspaceProps = {
  compact?: boolean;
@@ -45,7 +45,7 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
    visibleWords.find((word) => getVocabItemKey(word) === selectedWordId) || visibleWords[0] || null,
   [selectedWordId, visibleWords],
  );
- const selectedWordPath = useMemo<DraftPatchPath | null>(() => {
+ const selectedWordPath = useMemo<EditableNodePath | null>(() => {
   if (!selectedWord) return null;
 
   const index = lesson.vocab.findIndex(

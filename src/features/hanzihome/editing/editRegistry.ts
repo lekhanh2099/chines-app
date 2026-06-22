@@ -37,12 +37,12 @@ type EditRegistryEntry = {
 export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
  lesson: {
   title: "Sửa thông tin bài học",
-  description: "Chỉnh metadata của bài, chưa thay đổi JSON gốc.",
+  description: "Chỉnh metadata của bài học và lưu trực tiếp vào Supabase.",
   Form: LessonInfoForm,
  },
  section: {
   title: "Sửa đề mục",
-  description: "Chỉnh metadata hiển thị của section.",
+  description: "Chỉnh metadata hiển thị của đề mục.",
   Form: SectionMetadataForm,
  },
  vocab_item: {
@@ -74,6 +74,11 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   title: "Sửa điểm ngữ pháp",
   description: "Chỉnh metadata của điểm ngữ pháp.",
   Form: GrammarPointForm,
+ },
+ grammar_detail_section: {
+  title: "Sửa chi tiết ngữ pháp",
+  description: "Chỉnh tiêu đề và các dòng nội dung của phần chi tiết.",
+  Form: GrammarBlockForm,
  },
  grammar_block: {
   title: "Sửa block ngữ pháp",

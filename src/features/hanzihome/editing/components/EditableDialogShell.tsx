@@ -1,7 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { RotateCcw } from "lucide-react";
+import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,37 +16,56 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
+import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeActiveEditableNode } from "@/features/hanzihome/context/selectors";
-import { createHanziHomeUpdatePatch } from "@/features/hanzihome/editor/editPatchFactory";
 
 import { editRegistry } from "../editRegistry";
-import { useHanziHomeDraftStore } from "../store/useHanziHomeDraftStore";
-import type { DraftPatch } from "../store/types";
-import { PatchPreview } from "./PatchPreview";
+import { saveEditableNodeDirectly } from "../direct-save";
 
 const formId = "hanzihome-node-edit-form";
 
 export function EditableDialogShell() {
  const activeNode = useHanziHomeActiveEditableNode();
  const { closeEditableNode } = useHanziHomeFeatureActions();
- const addPatch = useHanziHomeDraftStore((state) => state.addPatch);
- const [previewPatch, setPreviewPatch] = useState<DraftPatch | null>(null);
- const [draftAfter, setDraftAfter] = useState<unknown>(null);
+ const { services } = useHanziHomeFeatureContext();
+ const queryClient = useQueryClient();
  const [formVersion, setFormVersion] = useState(0);
- const [isValid, setIsValid] = useState(true);
+ const [isSaving, setIsSaving] = useState(false);
  const registryEntry = activeNode ? editRegistry[activeNode.entityType] : null;
 
- const draftBase = useMemo(
-  () =>
-   activeNode ? createHanziHomeUpdatePatch({ node: activeNode, after: activeNode.value }) : null,
-  [activeNode],
- );
+ const saveDirectly = async (after: unknown) => {
+  if (!activeNode || isSaving) return;
+  const record = services.resolveEditableRecord(activeNode);
+  if (!record) {
+   toast.error("Node này chưa có DB write target.");
+   return;
+  }
 
- const saveDraft = (after: unknown) => {
-  if (!draftBase) return;
-  addPatch({ ...draftBase, after });
-  setPreviewPatch(null);
-  closeEditableNode();
+  setIsSaving(true);
+  try {
+   await saveEditableNodeDirectly({
+    node: activeNode,
+    record,
+    after,
+    reason: `Cập nhật ${activeNode.entityType}: ${activeNode.label || activeNode.entityId}`,
+   });
+   await Promise.all([
+    queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", activeNode.lessonId],
+    }),
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "course-lessons"] }),
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-vocab"] }),
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-grammar"] }),
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "search-index"] }),
+   ]);
+   toast.success("Đã lưu nội dung vào Supabase.");
+   closeEditableNode();
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể lưu nội dung.");
+  } finally {
+   setIsSaving(false);
+  }
  };
 
  return (
@@ -52,7 +73,6 @@ export function EditableDialogShell() {
    open={Boolean(activeNode)}
    onOpenChange={(open) => {
     if (!open) {
-     setPreviewPatch(null);
      closeEditableNode();
     }
    }}
@@ -68,44 +88,24 @@ export function EditableDialogShell() {
        key={`${activeNode.entityType}-${activeNode.entityId}-${activeNode.path.join(".")}-${formVersion}`}
        value={activeNode.value}
        formId={formId}
-       onSubmit={saveDraft}
-       onDraftChange={setDraftAfter}
-       onValidityChange={setIsValid}
+       onSubmit={saveDirectly}
       />
-      {previewPatch ? <PatchPreview patch={previewPatch} /> : null}
      </DialogBody>
      <DialogFooter>
-      <Button type="button" variant="ghost" onClick={closeEditableNode}>
+      <Button type="button" variant="ghost" disabled={isSaving} onClick={closeEditableNode}>
        Hủy
       </Button>
       <Button
        type="button"
        variant="outline"
-       onClick={() => {
-        setDraftAfter(null);
-        setPreviewPatch(null);
-        setIsValid(true);
-        setFormVersion((current) => current + 1);
-       }}
+       onClick={() => setFormVersion((current) => current + 1)}
+       disabled={isSaving}
       >
        <RotateCcw className="h-4 w-4" />
-       Reset preview
+       Reset
       </Button>
-      <Button
-       type="button"
-       variant="outline"
-       onClick={() =>
-        draftBase &&
-        setPreviewPatch({
-         ...draftBase,
-         after: draftAfter ?? activeNode.value,
-        })
-       }
-      >
-       Preview diff
-      </Button>
-      <Button type="submit" form={formId} disabled={!isValid}>
-       Lưu draft
+      <Button type="submit" form={formId} disabled={isSaving}>
+       {isSaving ? "Đang lưu..." : "Lưu"}
       </Button>
      </DialogFooter>
     </DialogContent>

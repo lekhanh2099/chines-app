@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
@@ -16,7 +16,7 @@ export function MatchingColumn({
  displayMode,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  itemId: string;
  title: string;
  values: unknown[];

@@ -7,7 +7,7 @@ import {
  sectionSubtitle,
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 export function TextbookSectionCard({
@@ -18,7 +18,7 @@ export function TextbookSectionCard({
 }: {
  lessonId: string;
  section: Section;
- sectionPath: DraftPatchPath;
+ sectionPath: EditableNodePath;
  displayMode: LessonDisplayMode;
 }) {
  return (

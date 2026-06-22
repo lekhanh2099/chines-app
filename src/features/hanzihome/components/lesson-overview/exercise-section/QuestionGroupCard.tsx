@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { LooseItemGrid } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
@@ -19,10 +19,10 @@ export function QuestionGroupCard({
  displayMode,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  itemId: string;
  parentExerciseId: string;
- groupPath?: DraftPatchPath;
+ groupPath?: EditableNodePath;
  groupValue: unknown;
  index: number;
  fallbackTitle: string;

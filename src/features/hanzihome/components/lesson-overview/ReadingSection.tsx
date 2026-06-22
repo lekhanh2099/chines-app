@@ -2,7 +2,7 @@ import type { ReadingItem } from "@/features/hanzihome/static-json/schemas/hanyu
 import {
  EditableNodeWrapper,
  NestedEditControls,
- type DraftPatchPath,
+ type EditableNodePath,
 } from "@/features/hanzihome/editing";
 
 import { AnswerKeyList, RawDataDetails } from "./CommonCards";
@@ -34,7 +34,7 @@ export function ReadingCard({
 }: {
  lessonId?: string;
  parentSectionId?: string;
- path?: DraftPatchPath;
+ path?: EditableNodePath;
  item: ReadingItem;
  displayMode: LessonDisplayMode;
 }) {
@@ -48,12 +48,12 @@ export function ReadingCard({
  const passageSegments =
   arrayValue(directPassage, "segments").length > 0
    ? {
-      path: ["passage", "segments"] as DraftPatchPath,
+      path: ["passage", "segments"] as EditableNodePath,
       values: arrayValue(directPassage, "segments"),
      }
    : arrayValue(record, "segments").length > 0
      ? {
-        path: ["segments"] as DraftPatchPath,
+        path: ["segments"] as EditableNodePath,
         values: arrayValue(record, "segments"),
        }
      : null;

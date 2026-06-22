@@ -12,7 +12,7 @@ import {
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
@@ -68,7 +68,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
 
  const progress = state.progress.grammar || {};
  const bookmarks = state.bookmarks.grammar || [];
- const selectedPointPath = useMemo<DraftPatchPath | null>(() => {
+ const selectedPointPath = useMemo<EditableNodePath | null>(() => {
   if (!selectedPoint) return null;
 
   const index = lesson.grammar.findIndex((point) => point.id === selectedPoint.id);

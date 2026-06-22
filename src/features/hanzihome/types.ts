@@ -22,6 +22,7 @@ export type HanziHomeCourse = {
  subtitle?: string;
  type: HanziHomeCourseType;
  order: number;
+ updatedAt?: string;
 };
 
 export type HanziHomeCourseBook = {
@@ -30,6 +31,20 @@ export type HanziHomeCourseBook = {
  title: string;
  shortTitle?: string;
  order: number;
+ updatedAt?: string;
+};
+
+export type HanziHomeEditableRecordMeta = {
+ entityType: string;
+ entityId: string;
+ dbId: string;
+ updatedAt: string;
+ parentEntityType?: string;
+ parentEntityId?: string;
+ sectionDbId?: string;
+ fieldPath?: Array<string | number>;
+ order?: number;
+ orderField?: string;
 };
 
 export type StaticRadicalData = {
@@ -78,11 +93,16 @@ export type HanziHomeVocabItem = DeepVocabularyItem & {
  runtimeId: string;
  lessonId?: string;
  category: string;
+ tone?: string;
+ editMeta?: HanziHomeEditableRecordMeta;
 };
 
 export type GrammarViewModel = {
  id: string;
  title?: string;
+ titleVi?: string;
+ level?: string;
+ tags?: string[];
  contentMd?: string;
  cleanTitle: string;
  core: string;
@@ -95,6 +115,7 @@ export type GrammarViewModel = {
   title: string;
   lines: string[];
  }>;
+ editMeta?: HanziHomeEditableRecordMeta;
 };
 
 export type LessonNotesViewModel = {
@@ -123,6 +144,9 @@ export type HanziHomeLesson = {
  lessonNumber: number;
  titleZh: string;
  title: string;
+ titlePinyin?: string;
+ titleEn?: string;
+ tags?: string[];
  sourceFile?: string;
  courseId?: string;
  courseTitle?: string;
@@ -142,6 +166,8 @@ export type HanziHomeLesson = {
  grammar: GrammarViewModel[];
  notes?: LessonNotesViewModel;
  sourceLesson?: HanyuLesson;
+ editMeta?: HanziHomeEditableRecordMeta;
+ editableRecords?: Record<string, HanziHomeEditableRecordMeta>;
 };
 
 export type HanziHomeData = {

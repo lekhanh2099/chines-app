@@ -69,7 +69,10 @@ export function LessonStudyDashboard({
      entityType="lesson"
      entityId={lesson.sourceLesson.lesson.id}
      path={["lesson"]}
-     value={lesson.sourceLesson.lesson}
+     value={{
+      ...lesson.sourceLesson.lesson,
+      source_file: lesson.sourceFile ?? "",
+     }}
      label="Thông tin bài học"
     >
      {header}

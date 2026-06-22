@@ -11,7 +11,7 @@ import type {
  HanziHomeVocabItem,
  LearningStatus,
 } from "@/features/hanzihome/types";
-import type { DraftPatchPath } from "@/features/hanzihome/editing";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
 type GrammarPointReaderProps = {
@@ -20,7 +20,7 @@ type GrammarPointReaderProps = {
  bookmarked: boolean;
  relatedVocab: HanziHomeVocabItem[];
  lessonId?: string;
- pointPath?: DraftPatchPath | null;
+ pointPath?: EditableNodePath | null;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };

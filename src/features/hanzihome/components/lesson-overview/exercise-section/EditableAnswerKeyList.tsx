@@ -1,4 +1,4 @@
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { AnswerKeyList } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
@@ -11,9 +11,9 @@ export function EditableAnswerKeyList({
  values,
 }: {
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  itemId: string;
- sourcePath: DraftPatchPath;
+ sourcePath: EditableNodePath;
  values: unknown[];
 }) {
  return (

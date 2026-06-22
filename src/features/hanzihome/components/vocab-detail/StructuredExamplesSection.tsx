@@ -1,6 +1,6 @@
 import { BookOpen } from "lucide-react";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import { EditableNodeWrapper, type DraftPatchPath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { renderHighlightedVocabText } from "./renderHighlightedVocabText";
 
@@ -12,7 +12,7 @@ export function StructuredExamplesSection({
 }: {
  item: HanziHomeVocabItem;
  lessonId?: string;
- itemPath?: DraftPatchPath;
+ itemPath?: EditableNodePath;
  keyword: string;
 }) {
  return (
