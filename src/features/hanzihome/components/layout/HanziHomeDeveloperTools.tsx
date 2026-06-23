@@ -1,14 +1,18 @@
 "use client";
 
 import { LessonViewModeToggle } from "@/features/hanzihome/components/layout/LessonViewModeToggle";
-import { developerToolsEnabled } from "@/features/hanzihome/context/workspaceLayout";
+import {
+ contentEditingEnabled,
+ developerToolsEnabled,
+} from "@/features/hanzihome/context/workspaceLayout";
 import { HanziHomeEditingTools } from "@/features/hanzihome/editing";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 
 export function HanziHomeDeveloperTools({ inline = false }: { inline?: boolean }) {
  const canEdit = useHanziHomeCanEdit();
+ const showEditingTools = contentEditingEnabled && canEdit;
 
- if (!developerToolsEnabled && !canEdit) return null;
+ if (!developerToolsEnabled && !showEditingTools) return null;
 
  return (
   <div
@@ -19,7 +23,7 @@ export function HanziHomeDeveloperTools({ inline = false }: { inline?: boolean }
    }
   >
    {developerToolsEnabled ? <LessonViewModeToggle /> : null}
-   {canEdit ? <HanziHomeEditingTools /> : null}
+   {showEditingTools ? <HanziHomeEditingTools /> : null}
   </div>
  );
 }

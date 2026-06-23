@@ -8,6 +8,7 @@ const lessonViewModeKey = "hanzihome:lesson-view-mode:v1";
 const splitPaneSizeKey = "hanzihome:module-split-size:v1";
 
 export const developerToolsEnabled = process.env.NODE_ENV === "development";
+export const contentEditingEnabled = true;
 
 export const studyModules = [
  "overview",
