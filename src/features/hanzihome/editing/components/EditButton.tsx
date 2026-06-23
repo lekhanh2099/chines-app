@@ -4,7 +4,7 @@ import { Pencil } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export function EditButton({ onClick }: { onClick: () => void }) {
+export function EditButton({ onClick, label = "Sửa" }: { onClick: () => void; label?: string }) {
  return (
   <Button
    type="button"
@@ -14,7 +14,7 @@ export function EditButton({ onClick }: { onClick: () => void }) {
    onClick={onClick}
   >
    <Pencil className="h-3.5 w-3.5" />
-   Sửa
+   {label}
   </Button>
  );
 }

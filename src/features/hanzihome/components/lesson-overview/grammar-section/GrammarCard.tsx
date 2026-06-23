@@ -50,6 +50,7 @@ export function GrammarCard({
    path={path}
    value={item}
    label={item.title_vi || item.title}
+   editLabel="Sửa ngữ pháp"
   >
    {content}
   </EditableNodeWrapper>

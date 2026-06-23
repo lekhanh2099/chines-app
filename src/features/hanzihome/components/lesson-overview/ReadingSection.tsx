@@ -202,6 +202,7 @@ export function ReadingCard({
    path={path}
    value={item}
    label={item.title_vi || item.title}
+   editLabel="Sửa bài đọc"
   >
    {content}
   </EditableNodeWrapper>

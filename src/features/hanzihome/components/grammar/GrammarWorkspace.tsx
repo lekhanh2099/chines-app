@@ -116,6 +116,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
    path={selectedPointPath}
    value={selectedPoint}
    label={selectedPoint.cleanTitle}
+   editLabel="Sửa ngữ pháp"
   >
    <GrammarPointReader
     point={selectedPoint}

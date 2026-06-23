@@ -3,6 +3,7 @@ export type EditFieldKind = "text" | "textarea" | "string-list" | "number" | "bo
 export type EditFieldDefinition = {
  key: string;
  label: string;
+ group?: string;
  kind?: EditFieldKind;
  description?: string;
  required?: boolean;

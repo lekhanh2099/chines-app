@@ -15,6 +15,9 @@ import {
  reorderCanonicalContent,
  type RestorableCanonicalEntityType,
 } from "../direct-save";
+import { invalidateHanziHomeContent } from "../invalidate-content";
+import { isPrimaryEditableEntityType } from "../edit-visibility";
+import { isHanziHomeMutationConflict } from "../mutation-error";
 import type { EditableNodePath, EditableEntityType } from "../store/types";
 import { EditButton } from "./EditButton";
 
@@ -27,6 +30,7 @@ type EditableNodeWrapperProps = {
  path: EditableNodePath;
  value: unknown;
  label?: string;
+ editLabel?: string;
  className?: string;
  editOnly?: boolean;
  children: ReactNode;
@@ -41,6 +45,7 @@ export function EditableNodeWrapper({
  path,
  value,
  label,
+ editLabel,
  className,
  editOnly = false,
  children,
@@ -53,6 +58,7 @@ export function EditableNodeWrapper({
  const [isReordering, setIsReordering] = useState(false);
 
  if (!editMode) return editOnly ? null : children;
+ if (!isPrimaryEditableEntityType(entityType)) return editOnly ? null : children;
 
  const baseNode = {
   lessonId,
@@ -93,16 +99,16 @@ export function EditableNodeWrapper({
     record,
     reason: `Xóa ${label || entityId}`,
    });
-   await Promise.all([
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "course-lessons"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-vocab"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-grammar"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "search-index"] }),
-   ]);
+   await invalidateHanziHomeContent({ queryClient, lessonId, entityType });
    toast.success("Đã chuyển nội dung vào mục đã xóa.");
   } catch (error) {
+   if (isHanziHomeMutationConflict(error)) {
+    await queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", lessonId],
+    });
+    toast.error("Nội dung đã thay đổi, đang tải lại.");
+    return;
+   }
    toast.error(error instanceof Error ? error.message : "Không thể xóa nội dung.");
   } finally {
    setIsDeleting(false);
@@ -128,6 +134,13 @@ export function EditableNodeWrapper({
    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] });
    toast.success("Đã cập nhật thứ tự.");
   } catch (error) {
+   if (isHanziHomeMutationConflict(error)) {
+    await queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", lessonId],
+    });
+    toast.error("Nội dung đã thay đổi, đang tải lại.");
+    return;
+   }
    toast.error(error instanceof Error ? error.message : "Không thể sắp xếp nội dung.");
   } finally {
    setIsReordering(false);
@@ -136,13 +149,10 @@ export function EditableNodeWrapper({
 
  return (
   <div
-   className={cn(
-    "group/edit relative rounded-xl outline outline-1 outline-dashed outline-accent/35 outline-offset-2",
-    className,
-   )}
+   className={cn("overflow-hidden rounded-xl border border-dashed border-accent/45", className)}
   >
-   <div className="absolute right-2 top-2 z-10 flex gap-1 opacity-30 transition-opacity group-hover/edit:opacity-100 group-focus-within/edit:opacity-100">
-    <EditButton onClick={openNode} />
+   <div className="flex min-h-10 items-center justify-end gap-1 border-b border-accent/20 bg-accent-subtle/30 px-2 py-1.5">
+    <EditButton onClick={openNode} label={editLabel} />
     {canReorder ? (
      <>
       <Button

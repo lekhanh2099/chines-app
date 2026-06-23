@@ -18,9 +18,12 @@ import {
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeActiveEditableNode } from "@/features/hanzihome/context/selectors";
+import { cn } from "@/lib/utils";
 
 import { editRegistry } from "../editRegistry";
 import { saveEditableNodeDirectly } from "../direct-save";
+import { invalidateHanziHomeContent } from "../invalidate-content";
+import { isHanziHomeMutationConflict } from "../mutation-error";
 
 const formId = "hanzihome-node-edit-form";
 
@@ -32,6 +35,8 @@ export function EditableDialogShell() {
  const [formVersion, setFormVersion] = useState(0);
  const [isSaving, setIsSaving] = useState(false);
  const registryEntry = activeNode ? editRegistry[activeNode.entityType] : null;
+ const isBulkNode =
+  activeNode?.entityType === "text_block" || activeNode?.entityType === "exercise";
 
  const saveDirectly = async (after: unknown) => {
   if (!activeNode || isSaving) return;
@@ -49,19 +54,22 @@ export function EditableDialogShell() {
     after,
     reason: `Cập nhật ${activeNode.entityType}: ${activeNode.label || activeNode.entityId}`,
    });
-   await Promise.all([
-    queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", activeNode.lessonId],
-    }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "course-lessons"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-vocab"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "aggregate-grammar"] }),
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "search-index"] }),
-   ]);
+   await invalidateHanziHomeContent({
+    queryClient,
+    lessonId: activeNode.lessonId,
+    entityType: activeNode.entityType,
+   });
    toast.success("Đã lưu nội dung vào Supabase.");
    closeEditableNode();
   } catch (error) {
+   if (isHanziHomeMutationConflict(error)) {
+    closeEditableNode();
+    await queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", activeNode.lessonId],
+    });
+    toast.error("Nội dung đã thay đổi, đang tải lại.");
+    return;
+   }
    toast.error(error instanceof Error ? error.message : "Không thể lưu nội dung.");
   } finally {
    setIsSaving(false);
@@ -78,7 +86,9 @@ export function EditableDialogShell() {
    }}
   >
    {activeNode && registryEntry ? (
-    <DialogContent className="max-h-[90vh] max-w-3xl overflow-hidden">
+    <DialogContent
+     className={cn("max-h-[90vh] overflow-hidden", isBulkNode ? "max-w-5xl" : "max-w-3xl")}
+    >
      <DialogHeader>
       <DialogTitle>{activeNode.label || registryEntry.title}</DialogTitle>
       <DialogDescription>{registryEntry.description}</DialogDescription>

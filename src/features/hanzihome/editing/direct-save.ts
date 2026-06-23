@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import type { EditableNodeRequest } from "./store/types";
 import type { HanziHomeEditableRecordMeta } from "@/features/hanzihome/types";
+import { HanziHomeMutationError } from "./mutation-error";
 
 const editableLessonSchema = z.looseObject({
  title: z.looseObject({
@@ -194,7 +195,11 @@ async function readMutationResponse(response: Response, fallback: string) {
    payload && typeof payload === "object" && "error" in payload
     ? String((payload as { error: unknown }).error)
     : `${fallback} (${response.status})`;
-  throw new Error(message);
+  const details =
+   payload && typeof payload === "object" && "details" in payload
+    ? (payload as { details: unknown }).details
+    : undefined;
+  throw new HanziHomeMutationError(message, response.status, details);
  }
  return payload;
 }
@@ -263,15 +268,7 @@ export async function createCanonicalContent({
   headers: { Accept: "application/json", "Content-Type": "application/json" },
   body: JSON.stringify({ reason, changes }),
  });
- const payload: unknown = await response.json().catch(() => null);
- if (!response.ok) {
-  const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
-    : `Tạo nội dung thất bại (${response.status})`;
-  throw new Error(message);
- }
- return payload;
+ return readMutationResponse(response, "Tạo nội dung thất bại");
 }
 
 function changesForEntity(entityType: string, value: unknown) {
@@ -365,15 +362,7 @@ export async function saveEditableNodeDirectly({
   headers: { Accept: "application/json", "Content-Type": "application/json" },
   body: JSON.stringify(body),
  });
- const payload: unknown = await response.json().catch(() => null);
- if (!response.ok) {
-  const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
-    : `Lưu thất bại (${response.status})`;
-  throw new Error(message);
- }
- return payload;
+ return readMutationResponse(response, "Lưu thất bại");
 }
 
 export async function deleteEditableNodeDirectly({
@@ -403,15 +392,7 @@ export async function deleteEditableNodeDirectly({
    changes: {},
   }),
  });
- const payload: unknown = await response.json().catch(() => null);
- if (!response.ok) {
-  const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
-    : `Xóa thất bại (${response.status})`;
-  throw new Error(message);
- }
- return payload;
+ return readMutationResponse(response, "Xóa thất bại");
 }
 
 export async function restoreCanonicalContent({
@@ -440,15 +421,7 @@ export async function restoreCanonicalContent({
    }),
   },
  );
- const payload: unknown = await response.json().catch(() => null);
- if (!response.ok) {
-  const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
-    : `Khôi phục thất bại (${response.status})`;
-  throw new Error(message);
- }
- return payload;
+ return readMutationResponse(response, "Khôi phục thất bại");
 }
 
 export async function restoreNestedSectionNode({

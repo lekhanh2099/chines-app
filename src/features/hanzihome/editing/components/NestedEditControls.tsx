@@ -1,6 +1,7 @@
 "use client";
 
 import { EditableNodeWrapper } from "./EditableNodeWrapper";
+import { isPrimaryEditableEntityType } from "../edit-visibility";
 import type { EditableNodePath, EditableEntityType } from "../store/types";
 
 type NestedEditableNode = {
@@ -24,12 +25,13 @@ export function NestedEditControls({
  title: string;
  nodes: NestedEditableNode[];
 }) {
- if (!lessonId || nodes.length === 0) return null;
+ const visibleNodes = nodes.filter((node) => isPrimaryEditableEntityType(node.entityType));
+ if (!lessonId || visibleNodes.length === 0) return null;
 
  return (
   <div className="flex flex-wrap items-center gap-2 rounded-xl border border-dashed border-accent/40 bg-accent-subtle/35 p-2">
    <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
-   {nodes.map((node) => (
+   {visibleNodes.map((node) => (
     <EditableNodeWrapper
      key={`${node.entityType}-${node.entityId}-${node.path.join(".")}`}
      lessonId={lessonId}

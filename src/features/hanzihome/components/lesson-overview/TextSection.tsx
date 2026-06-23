@@ -150,6 +150,7 @@ export function TextBlockView({
    path={path}
    value={block}
    label={block.title_vi || block.title}
+   editLabel="Sửa nội dung"
   >
    {content}
   </EditableNodeWrapper>

@@ -30,6 +30,7 @@ type DeletedContentBase = {
  entityId: string;
  label: string;
  parentEntityId?: string;
+ lessonId?: string;
  deletedAt: string;
  updatedAt: string;
 };
@@ -50,6 +51,7 @@ function deletedItem(
  row: z.infer<typeof deletedRowSchema>,
  label: string,
  parentEntityId?: string,
+ lessonId?: string,
 ): DeletedContentItem {
  return {
   kind: "canonical",
@@ -57,6 +59,7 @@ function deletedItem(
   entityId: row.id,
   label: label || row.id,
   parentEntityId,
+  lessonId,
   deletedAt: row.deleted_at,
   updatedAt: row.updated_at,
  };
@@ -106,6 +109,7 @@ function collectDeletedNestedNodes({
    entityId,
    label: nestedNodeLabel(record, entityId),
    parentEntityId: lessonId,
+   lessonId,
    sectionId,
    deletedAt,
    updatedAt: sectionUpdatedAt,
@@ -161,11 +165,11 @@ export async function GET() {
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_vocab_examples")
-   .select("id,vocab_item_id,zh,updated_at,deleted_at")
+   .select("id,vocab_item_id,lesson_id,zh,updated_at,deleted_at")
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_vocab_detail_sections")
-   .select("id,vocab_item_id,title,section_key,updated_at,deleted_at")
+   .select("id,vocab_item_id,lesson_id,title,section_key,updated_at,deleted_at")
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_grammar_points")
@@ -173,11 +177,11 @@ export async function GET() {
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_grammar_examples")
-   .select("id,grammar_point_id,zh,updated_at,deleted_at")
+   .select("id,grammar_point_id,lesson_id,zh,updated_at,deleted_at")
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_grammar_detail_sections")
-   .select("id,grammar_point_id,title,section_key,updated_at,deleted_at")
+   .select("id,grammar_point_id,lesson_id,title,section_key,updated_at,deleted_at")
    .not("deleted_at", "is", null),
   sessionClient
    .from("hanzihome_lesson_sections")
@@ -210,16 +214,23 @@ export async function GET() {
    deletedItem("book", deletedRowSchema.parse(row), row.title, row.course_id),
   ),
   ...(lessons.data ?? []).map((row) =>
-   deletedItem("lesson", deletedRowSchema.parse(row), row.title_zh, row.book_id),
+   deletedItem("lesson", deletedRowSchema.parse(row), row.title_zh, row.book_id, row.id),
   ),
   ...(sections.data ?? []).map((row) =>
-   deletedItem("section", deletedRowSchema.parse(row), row.title_vi || row.title, row.lesson_id),
+   deletedItem(
+    "section",
+    deletedRowSchema.parse(row),
+    row.title_vi || row.title,
+    row.lesson_id,
+    row.lesson_id,
+   ),
   ),
   ...(lessonTexts.data ?? []).map((row) =>
    deletedItem(
     "lesson_text",
     deletedRowSchema.parse(row),
     row.title || row.text_key,
+    row.lesson_id,
     row.lesson_id,
    ),
   ),
@@ -229,10 +240,17 @@ export async function GET() {
     deletedRowSchema.parse(row),
     `${row.word} ${row.pinyin}`.trim(),
     row.lesson_id,
+    row.lesson_id,
    ),
   ),
   ...(vocabExamples.data ?? []).map((row) =>
-   deletedItem("vocab_example", deletedRowSchema.parse(row), row.zh, row.vocab_item_id),
+   deletedItem(
+    "vocab_example",
+    deletedRowSchema.parse(row),
+    row.zh,
+    row.vocab_item_id,
+    row.lesson_id,
+   ),
   ),
   ...(vocabDetails.data ?? []).map((row) =>
    deletedItem(
@@ -240,13 +258,26 @@ export async function GET() {
     deletedRowSchema.parse(row),
     row.title || row.section_key,
     row.vocab_item_id,
+    row.lesson_id,
    ),
   ),
   ...(grammarPoints.data ?? []).map((row) =>
-   deletedItem("grammar_point", deletedRowSchema.parse(row), row.title, row.lesson_id),
+   deletedItem(
+    "grammar_point",
+    deletedRowSchema.parse(row),
+    row.title,
+    row.lesson_id,
+    row.lesson_id,
+   ),
   ),
   ...(grammarExamples.data ?? []).map((row) =>
-   deletedItem("grammar_example", deletedRowSchema.parse(row), row.zh, row.grammar_point_id),
+   deletedItem(
+    "grammar_example",
+    deletedRowSchema.parse(row),
+    row.zh,
+    row.grammar_point_id,
+    row.lesson_id,
+   ),
   ),
   ...(grammarDetails.data ?? []).map((row) =>
    deletedItem(
@@ -254,6 +285,7 @@ export async function GET() {
     deletedRowSchema.parse(row),
     row.title || row.section_key,
     row.grammar_point_id,
+    row.lesson_id,
    ),
   ),
   ...(activeSections.data ?? []).flatMap((section) =>

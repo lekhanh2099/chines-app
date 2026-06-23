@@ -123,6 +123,7 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
      path={selectedWordPath}
      value={selectedWord}
      label={selectedWord.hanzi}
+     editLabel="Sửa từ"
     >
      <VocabDetailPanel
       word={selectedWord}

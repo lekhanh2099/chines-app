@@ -50,6 +50,7 @@ export function ExerciseCard({
    path={path}
    value={item}
    label={item.title_vi || item.title}
+   editLabel="Sửa nội dung"
   >
    {content}
   </EditableNodeWrapper>

@@ -97,11 +97,9 @@ export function LessonContentCreateDialog() {
      changes,
      reason: `Tạo ${value.kind} trong bài ${lesson.lessonNumber}`,
     });
-    await Promise.all([
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lesson.id] }),
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", "course-lessons"] }),
-    ]);
+    await queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", lesson.id],
+    });
     toast.success("Đã tạo nội dung.");
     form.reset();
     setOpen(false);

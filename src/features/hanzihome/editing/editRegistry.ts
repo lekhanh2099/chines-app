@@ -101,8 +101,9 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   Form: GrammarBlockItemForm,
  },
  exercise: {
-  title: "Sửa metadata bài tập",
-  description: "Chỉnh tiêu đề, variant và độ khó.",
+  title: "Sửa toàn bộ bài tập",
+  description:
+   "Chỉnh toàn bộ field của bài tập này. ID, loại và thứ tự được giữ nguyên; các bài tập khác không bị thay đổi.",
   Form: ExerciseMetadataForm,
  },
  exercise_question: {
@@ -151,8 +152,9 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   Form: ReadingQuestionForm,
  },
  text_block: {
-  title: "Sửa block bài khóa",
-  description: "Chỉnh tiêu đề và toàn bộ field của block bài khóa.",
+  title: "Sửa toàn bộ block bài khóa",
+  description:
+   "Chỉnh metadata và toàn bộ dòng, cảnh hoặc đoạn trong block này. ID, loại và thứ tự được giữ nguyên.",
   Form: TextBlockForm,
  },
  text_line: {

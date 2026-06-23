@@ -52,6 +52,7 @@ export function VocabMiniGrid({
       path={[...itemsPath, index]}
       value={item}
       label={item.hanzi}
+      editLabel="Sửa từ"
      >
       {card}
      </EditableNodeWrapper>

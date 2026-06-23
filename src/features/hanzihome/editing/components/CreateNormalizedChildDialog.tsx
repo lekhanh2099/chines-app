@@ -104,12 +104,9 @@ export function CreateNormalizedChildDialog({
          }),
      },
     });
-    await Promise.all([
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] }),
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", family, parent.dbId] }),
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", `aggregate-${family}`] }),
-     queryClient.invalidateQueries({ queryKey: ["hanzihome", "search-index"] }),
-    ]);
+    await queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "lesson-detail", lessonId],
+    });
     toast.success("Đã thêm nội dung.");
     form.reset();
     setOpen(false);
