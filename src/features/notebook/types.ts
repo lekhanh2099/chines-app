@@ -16,6 +16,30 @@ export const NotebookGroupSchema = z.object({
  name: z.string(),
 });
 
+export const NotebookDeepDiveSourceSchema = z.enum([
+ "prepositions",
+ "particles",
+ "discourse",
+ "allset",
+ "wordorder",
+ "contrast",
+ "condition",
+ "choice",
+ "adverbs",
+ "pronouns",
+ "textbook",
+ "grammar_q2",
+ "phase4",
+]);
+
+export const NotebookDeepDiveSchema = z.object({
+ why: z.string(),
+ pos: z.string(),
+ decision: z.string(),
+ mistake: z.string(),
+ src: z.array(NotebookDeepDiveSourceSchema),
+});
+
 export const NotebookTermSchema = z.object({
  g: z.string(),
  term: z.string(),
@@ -27,6 +51,11 @@ export const NotebookTermSchema = z.object({
  avoid: z.string(),
  tags: z.array(z.string()),
  ex: z.tuple([z.string(), z.string(), z.string()]),
+ why: z.string().optional(),
+ pos: z.string().optional(),
+ decision: z.string().optional(),
+ mistake: z.string().optional(),
+ src: z.array(NotebookDeepDiveSourceSchema).optional(),
 });
 
 export const NotebookComparisonSchema = z.object({
@@ -61,6 +90,8 @@ export const NotebookSeedDataSchema = z.object({
 
 export type NotebookSectionId = z.infer<typeof NotebookSectionIdSchema>;
 export type NotebookGroup = z.infer<typeof NotebookGroupSchema>;
+export type NotebookDeepDive = z.infer<typeof NotebookDeepDiveSchema>;
+export type NotebookDeepDiveSource = z.infer<typeof NotebookDeepDiveSourceSchema>;
 export type NotebookTerm = z.infer<typeof NotebookTermSchema>;
 export type NotebookComparison = z.infer<typeof NotebookComparisonSchema>;
 export type NotebookSection = z.infer<typeof NotebookSectionSchema>;

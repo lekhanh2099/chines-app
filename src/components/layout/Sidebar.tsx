@@ -168,7 +168,7 @@ export function Sidebar() {
   <>
    <aside
     className={cn(
-     "nova-shell-sidebar hidden h-full shrink-0 flex-col border-r border-border-default transition-all duration-200 md:flex",
+     "nova-shell-sidebar sticky top-0 hidden min-h-dvh shrink-0 flex-col border-r border-border-default transition-all duration-200 md:flex",
      effectiveCollapsed ? "w-16" : "w-64",
     )}
    >

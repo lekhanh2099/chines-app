@@ -2,9 +2,13 @@ import { CircleAlert, Sparkles } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { NotebookDeepDive } from "@/features/notebook/components/NotebookDeepDive";
+import { getNotebookDeepDive } from "@/features/notebook/data/notebookDeepDiveData";
 import type { NotebookItem } from "@/features/notebook/types";
 
 export function NotebookTermCard({ item }: { item: NotebookItem }) {
+ const deepDive = getNotebookDeepDive(item);
+
  return (
   <Card variant="glass" padding="none" className="overflow-hidden">
    <div className="grid gap-4 p-5">
@@ -58,6 +62,8 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
       <p className="mt-2 text-sm font-medium leading-6 text-text-secondary">{item.avoid}</p>
      </div>
     </div>
+
+    <NotebookDeepDive deepDive={deepDive} />
 
     <div className="border-t border-border-default pt-4">
      <p lang="zh-CN" className="font-hanzi text-2xl leading-relaxed text-text-primary">

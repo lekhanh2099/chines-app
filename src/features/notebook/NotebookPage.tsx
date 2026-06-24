@@ -50,7 +50,7 @@ export function NotebookPage() {
  };
 
  return (
-  <div className="mx-auto grid w-full max-w-[96rem] gap-4 px-3 py-4 sm:px-5 sm:py-6 lg:gap-5 lg:px-8">
+  <div className="mx-auto grid w-full max-w-full gap-4 px-3 py-4 sm:px-5 sm:py-6 lg:gap-5 lg:px-8">
    <NotebookHero
     itemCount={notebookTotals.items}
     groupCount={notebookTotals.groups}
