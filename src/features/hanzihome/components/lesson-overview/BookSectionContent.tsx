@@ -144,7 +144,7 @@ export function BookSectionContent({
     debugMode={debugMode}
    >
     {section.items.length > 0 ? (
-     <div className="grid gap-2">
+     <div className="grid gap-4">
       {section.items.map((item, index) => (
        <ExerciseCard
         key={item.id}

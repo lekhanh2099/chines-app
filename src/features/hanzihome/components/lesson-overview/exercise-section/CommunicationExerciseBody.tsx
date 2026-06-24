@@ -25,6 +25,7 @@ export function CommunicationExerciseBody({
   : arrayValue(asRecord(dialogueValue), "lines");
  const questions = arrayValue(record, "questions");
  const tasks = arrayValue(record, "practice_tasks");
+ const parts = arrayValue(record, "parts");
 
  return (
   <div className="grid gap-3">
@@ -110,7 +111,7 @@ export function CommunicationExerciseBody({
     );
    })}
 
-   {dialogue.length === 0 && questions.length > 0 && (
+   {(questions.length > 0 || parts.length > 0) && (
     <QuestionExerciseBody
      lessonId={lessonId}
      itemPath={itemPath}

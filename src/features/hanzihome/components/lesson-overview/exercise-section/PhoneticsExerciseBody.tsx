@@ -1,8 +1,9 @@
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import { LooseItemGrid } from "../CommonCards";
+import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
-import { arrayValue, asRecord, stringValue } from "../utils";
+import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
 
 export function PhoneticsExerciseBody({
  item,
@@ -39,31 +40,61 @@ export function PhoneticsExerciseBody({
     const items = arrayValue(part, "items");
     const type = stringValue(part, "type");
 
+    const isPairGroup = type.includes("pair");
+
     return (
      <div
       key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
-      className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+      className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle/60 p-3 sm:p-4"
      >
       <div>
        <h5 className="font-black text-text-primary">{title}</h5>
        {instruction && <p className=" font-semibold text-text-muted">{instruction}</p>}
       </div>
 
-      <LooseItemGrid
-       items={items.map((entryValue) => {
-        const entry = asRecord(entryValue);
+      {isPairGroup ? (
+       <div className="grid gap-2 sm:grid-cols-2">
+        {items.map((entryValue, index) => {
+         const entry = asRecord(entryValue);
+         const rawText = answerToString(entryValue);
+         const [rawLeft = "", rawRight = ""] = rawText.split(/\s*\/\s*/, 2);
+         const left = stringValue(entry, "left") || rawLeft;
+         const right = stringValue(entry, "right") || rawRight;
 
-        if (type.includes("pair") || stringValue(entry, "left") || stringValue(entry, "right")) {
-         return {
-          id: stringValue(entry, "id"),
-          text: `${stringValue(entry, "left")} / ${stringValue(entry, "right")}`,
-         };
-        }
+         return (
+          <div
+           key={stringValue(entry, "id") || `${item.id}-pair-${partIndex}-${index}`}
+           className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 rounded-xl border border-border-default bg-bg-primary/80 px-3 py-3"
+          >
+           <span className="text-center font-black text-text-primary">{left}</span>
+           <span className="text-xs font-black text-text-muted">/</span>
+           <span className="text-center font-black text-text-primary">{right}</span>
+          </div>
+         );
+        })}
+       </div>
+      ) : (
+       <div className="grid gap-2 sm:grid-cols-2">
+        {items.map((entryValue, index) => {
+         const entry = asRecord(entryValue);
+         const text =
+          stringValue(entry, "text") ||
+          stringValue(entry, "zh") ||
+          stringValue(entry, "phrase") ||
+          answerToString(entryValue);
 
-        return entryValue;
-       })}
-       displayMode={displayMode}
-      />
+         return (
+          <TextLineCard
+           key={stringValue(entry, "id") || `${item.id}-reading-${partIndex}-${index}`}
+           zh={text}
+           pinyin={stringValue(entry, "pinyin")}
+           vi={stringValue(entry, "vi") || stringValue(entry, "meaning_vi")}
+           displayMode={displayMode}
+          />
+         );
+        })}
+       </div>
+      )}
      </div>
     );
    })}

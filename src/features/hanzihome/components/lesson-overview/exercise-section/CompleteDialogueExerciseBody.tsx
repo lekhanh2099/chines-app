@@ -6,6 +6,7 @@ import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
+import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function CompleteDialogueExerciseBody({
  lessonId,
@@ -21,6 +22,17 @@ export function CompleteDialogueExerciseBody({
  const record = asRecord(item);
  const dialogues = arrayValue(record, "dialogues");
  const fallbackItems = [...arrayValue(record, "items"), ...arrayValue(record, "questions")];
+
+ if (dialogues.length === 0 && arrayValue(record, "questions").length > 0) {
+  return (
+   <QuestionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
 
  return (
   <div className="grid gap-3">

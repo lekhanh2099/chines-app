@@ -7,8 +7,8 @@ export function WordBank({ values }: { values: unknown[] }) {
  if (words.length === 0) return null;
 
  return (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ cho sẵn</p>
+  <div className="grid gap-2 rounded-xl border border-primary/15 bg-accent-subtle/45 p-3 sm:p-4">
+   <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-text">Từ cho sẵn</p>
    <div className="flex flex-wrap gap-2">
     {words.map((word) => (
      <ExercisePill key={word}>{word}</ExercisePill>

@@ -8,6 +8,10 @@ import { MatchingExerciseBody } from "./MatchingExerciseBody";
 import { PhoneticsExerciseBody } from "./PhoneticsExerciseBody";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 import { SubstitutionExerciseBody } from "./SubstitutionExerciseBody";
+import { ExerciseReferenceBody } from "./ExerciseReferenceBody";
+import { ReorderExerciseBody } from "./ReorderExerciseBody";
+import { WritingExerciseBody } from "./WritingExerciseBody";
+import { getExerciseRendererMeta } from "./exercise-renderer-registry";
 
 export function ExerciseBody({
  lessonId,
@@ -20,7 +24,9 @@ export function ExerciseBody({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
- if (item.type === "matching") {
+ const { family } = getExerciseRendererMeta(item.type);
+
+ if (family === "matching") {
   return (
    <MatchingExerciseBody
     lessonId={lessonId}
@@ -30,11 +36,11 @@ export function ExerciseBody({
    />
   );
  }
- if (item.type === "phonetics" || item.type === "read_aloud") {
+ if (family === "phonetics") {
   return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
  }
 
- if (item.type === "substitution" || item.type === "substitution_drill") {
+ if (family === "substitution") {
   return (
    <SubstitutionExerciseBody
     lessonId={lessonId}
@@ -45,7 +51,7 @@ export function ExerciseBody({
   );
  }
 
- if (item.type === "complete_dialogue") {
+ if (family === "dialogue") {
   return (
    <CompleteDialogueExerciseBody
     lessonId={lessonId}
@@ -56,7 +62,7 @@ export function ExerciseBody({
   );
  }
 
- if (item.type === "communication_dialogue") {
+ if (family === "communication") {
   return (
    <CommunicationExerciseBody
     lessonId={lessonId}
@@ -66,6 +72,30 @@ export function ExerciseBody({
    />
   );
  }
+
+ if (family === "reorder") {
+  return (
+   <ReorderExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
+
+ if (family === "writing") {
+  return (
+   <WritingExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
+
+ if (family === "reference") return <ExerciseReferenceBody item={item} />;
 
  return (
   <QuestionExerciseBody

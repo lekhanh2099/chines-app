@@ -117,7 +117,7 @@ export function QuestionCard({
    title={title}
    answer={answer}
    note={note}
-   meaning={question?.answer_vi as string | undefined}
+   meaning={stringValue(question, "answer_vi") || undefined}
   >
    {hasExtra && (
     <div className="grid gap-2">

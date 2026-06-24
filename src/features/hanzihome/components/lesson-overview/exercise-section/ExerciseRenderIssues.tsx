@@ -31,6 +31,10 @@ export function ExerciseRenderIssues({
   );
  }
 
+ if (passage && answerCount > 0 && markerCount === 0) {
+  issues.push("Bài đọc có đáp án nhưng passage chưa có marker/chỗ trống để gắn đáp án.");
+ }
+
  if (markerCount > 0 && answerCount > 0 && markerCount !== answerCount) {
   issues.push(`Số chỗ trống (${markerCount}) không khớp số đáp án (${answerCount}).`);
  }

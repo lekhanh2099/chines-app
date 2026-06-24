@@ -26,10 +26,19 @@ export function ExerciseCard({
  const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
  const content = (
-  <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div>
-    <h4 className="font-black text-text-primary">{item.title_vi || item.title}</h4>
-    {instructionText && <p className=" font-semibold text-text-secondary">{instructionText}</p>}
+  <article className="nova-glass-panel grid gap-4 rounded-2xl p-4 sm:p-5">
+   <div className="flex items-start gap-3 border-b border-border-default/70 pb-4">
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-bg-subtle text-sm font-black text-accent-text">
+     {item.order}
+    </span>
+    <div className="min-w-0 flex-1">
+     <h4 className="mt-2 text-lg font-black leading-tight text-text-primary sm:text-xl">
+      {item.title_vi || item.title}
+     </h4>
+     {instructionText && (
+      <p className="mt-1 text-sm font-semibold leading-6 text-text-secondary">{instructionText}</p>
+     )}
+    </div>
    </div>
 
    <ExerciseBody lessonId={lessonId} itemPath={path} item={item} displayMode={displayMode} />
