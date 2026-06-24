@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 type PageContainerProps = React.ComponentProps<"div">;
 
 /**
- * Fluid page wrapper — width is dynamic (controlled by parent layout).
- * Provides consistent inline padding only. No margin.
+ * Fluid page wrapper — full width, no max-width, no nested page scroll.
+ * Scroll is owned by the app main shell.
  */
 function PageContainer({ className, children, ...rest }: PageContainerProps) {
  return (
-  <div className={cn("w-full h-full overflow-y-auto scrollbar-soft ", className)} {...rest}>
-   <div className="w-full px-4 py-5 sm:px-6">{children}</div>
+  <div className={cn("w-full", className)} {...rest}>
+   <div className="w-full px-4 py-5 sm:px-6 lg:px-8">{children}</div>
   </div>
  );
 }

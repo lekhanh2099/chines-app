@@ -10,7 +10,7 @@ export function HomeDashboard() {
  const dashboard = useHomeDashboard();
 
  return (
-  <div className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 sm:py-7 lg:px-8">
+  <div className="flex w-full max-w-full flex-col gap-5 px-4 py-5 lg:px-8 lg:py-7">
    <div className="grid gap-5">
     <ContinueLearningPanel lesson={dashboard.lesson} />
     <HomeResourceLinks />

@@ -24,7 +24,7 @@ export function VocabDetailHeader({
   <div
    className={[
     "grid grid-cols-1 items-start gap-4",
-    compact ? "" : "xl:grid-cols-[minmax(0,1fr)_minmax(0,46rem)]",
+    compact ? "" : "xl:grid-cols-[minmax(1fr,1fr)_minmax(0,46rem)]",
    ].join(" ")}
   >
    <div className="min-w-0">
