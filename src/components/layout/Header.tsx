@@ -28,6 +28,7 @@ import {
  setHanziHomeSearchNavigationIntent,
 } from "@/features/hanzihome/search/searchNavigationStore";
 import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
+import { cn } from "@/lib/utils";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
@@ -40,16 +41,22 @@ export function Header({ user }: { user?: User | null }) {
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
  const isHanziHomeRoute = pathname === "/hanzihome";
- const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeRoute });
+ const isHanziHomeWorkspaceRoute =
+  isHanziHomeRoute &&
+  (searchParams.has("courseId") ||
+   searchParams.has("lesson") ||
+   searchParams.has("lessonId") ||
+   searchParams.has("module"));
+ const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeWorkspaceRoute });
  const selectedCourseId =
-  isHanziHomeRoute && catalogData.courses.length > 0
+  isHanziHomeWorkspaceRoute && catalogData.courses.length > 0
    ? searchParams.get("courseId") || catalogData.courses[0]?.id || ""
    : "";
  const courseLessonsQuery = useHanziHomeCourseLessons(selectedCourseId, {
-  enabled: isHanziHomeRoute && Boolean(selectedCourseId),
+  enabled: isHanziHomeWorkspaceRoute && Boolean(selectedCourseId),
  });
  const hanzihomeBreadcrumb = useMemo(() => {
-  if (!isHanziHomeRoute) return null;
+  if (!isHanziHomeWorkspaceRoute) return null;
 
   const courses = catalogData.courses;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? courses[0];
@@ -70,7 +77,7 @@ export function Header({ user }: { user?: User | null }) {
  }, [
   catalogData.courses,
   courseLessonsQuery.lessons,
-  isHanziHomeRoute,
+  isHanziHomeWorkspaceRoute,
   searchParams,
   selectedCourseId,
  ]);
@@ -130,7 +137,12 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header className="z-10 flex min-h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft border-b border-border-default bg-background/95 px-3 py-2 backdrop-blur sm:gap-3 sm:px-5 lg:px-7">
+  <header
+   className={cn(
+    "nova-shell-header z-30 flex min-h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden border-b border-border-default px-3 py-2 sm:gap-3 sm:px-5 lg:px-7",
+    isHanziHomeRoute && "hanzihome-liquid-header",
+   )}
+  >
    {hanzihomeBreadcrumb && (
     <nav
      aria-label="Chuyển nhanh bài HanziHome"
@@ -206,7 +218,7 @@ export function Header({ user }: { user?: User | null }) {
      }}
      placeholder="Tìm toàn bộ HanziHome"
      aria-label="Tìm toàn bộ HanziHome"
-     className="h-10 w-full rounded-lg border border-border-default bg-bg-card pl-10 pr-3  font-medium text-text-primary outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
+     className="h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
     />
    </form>
 

@@ -34,7 +34,7 @@ export function HanziHomeStudyTabs<T extends string>({
    role="tablist"
    aria-label="Nội dung học"
    className={cn(
-    "flex min-w-0 max-w-full gap-1 overflow-x-auto rounded-lg bg-bg-subtle p-1 scrollbar-soft",
+    "flex min-w-0 max-w-full gap-1 overflow-x-auto rounded-xl bg-bg-subtle/80 p-1 scrollbar-soft",
     className,
    )}
   >
@@ -51,8 +51,8 @@ export function HanziHomeStudyTabs<T extends string>({
       disabled={item.disabled}
       onClick={() => onChange(item.key)}
       className={cn(
-       "flex h-9 shrink-0 items-center justify-center gap-2 rounded-md px-2.5  font-bold text-text-muted transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
-       selected && "bg-bg-primary text-text-primary shadow-theme-sm",
+       "flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg px-2.5 font-bold text-text-muted transition-all focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:pointer-events-none disabled:opacity-50",
+       selected && "bg-bg-card text-accent-text shadow-theme-sm",
        compact && "h-8 px-2 text-xs",
       )}
      >

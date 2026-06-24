@@ -31,7 +31,7 @@ export function ModuleSplitWorkspaceContent() {
  if (!splitEnabled) {
   return (
    <div className="grid gap-2">
-    <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-lg border border-border-default bg-bg-card/95 p-1 shadow-theme-sm backdrop-blur">
+    <div className="hanzihome-liquid-toolbar sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
      <div className="min-w-0 flex-1">
       <HanziHomeStudyTabs
        value={runtime.activeModule}
@@ -63,7 +63,7 @@ export function ModuleSplitWorkspaceContent() {
 
  return (
   <div className="grid gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)] xl:overflow-hidden">
-   <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-lg border border-border-default bg-bg-card/95 p-1 shadow-theme-sm backdrop-blur">
+   <div className="hanzihome-liquid-toolbar sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
     <div className="min-w-0 px-2">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Split mode</p>
      <p className="hidden text-xs font-bold text-text-muted sm:block">

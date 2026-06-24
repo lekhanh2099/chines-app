@@ -103,6 +103,21 @@ export function HanziHomeWorkspace() {
  const resolvedActiveModule = matchingSearchIntent?.module ?? activeModule;
 
  useEffect(() => {
+  if (learning.isLoading || !selectedLesson || !selectedCourseId) return;
+  if (
+   learning.state.settings.lastCourseId === selectedCourseId &&
+   learning.state.settings.lastLessonId === selectedLesson.id
+  ) {
+   return;
+  }
+
+  learning.updateSettings({
+   lastCourseId: selectedCourseId,
+   lastLessonId: selectedLesson.id,
+  });
+ }, [learning, selectedCourseId, selectedLesson]);
+
+ useEffect(() => {
   if (!selectedLesson || resolvedActiveModule === "radicals") return;
 
   const hasCanonicalLesson =

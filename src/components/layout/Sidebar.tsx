@@ -15,6 +15,7 @@ import {
  Lightbulb,
  LogOut,
  NotebookPen,
+ NotebookTabs,
  Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -35,6 +36,11 @@ const mainItems: NavItem[] = [
   name: "HanziHome",
   icon: Sparkles,
   href: "/hanzihome",
+ },
+ {
+  name: "Sổ tay",
+  icon: NotebookTabs,
+  href: "/notebook",
  },
  {
   name: "SRS từ",
@@ -65,6 +71,16 @@ const mainItems: NavItem[] = [
 ];
 
 const secondaryItems: NavItem[] = [];
+
+const mobileItems = [mainItems[0], mainItems[1], mainItems[2], mainItems[3], mainItems[8]] as const;
+
+const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
+ "/": "Home",
+ "/hanzihome": "Học",
+ "/notebook": "Sổ tay",
+ "/dictionary": "SRS",
+ "/notes": "Ghi chú",
+};
 
 function isActive(pathname: string, searchParams: URLSearchParams, href: string) {
  const [base, rawQuery] = href.split("?");
@@ -130,8 +146,8 @@ export function Sidebar() {
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
  const hydrateSidebar = useSidebarStore((s) => s.hydrate);
- const isHanziHome = pathname === "/hanzihome";
- const effectiveCollapsed = isHanziHome || isCollapsed;
+ const isHanziHomeRoute = pathname === "/hanzihome";
+ const effectiveCollapsed = isCollapsed;
 
  useEffect(() => {
   hydrateSidebar();
@@ -152,7 +168,7 @@ export function Sidebar() {
   <>
    <aside
     className={cn(
-     "hidden h-full shrink-0 flex-col border-r border-border-default bg-bg-card/95 transition-all duration-200 md:flex",
+     "nova-shell-sidebar hidden h-full shrink-0 flex-col border-r border-border-default transition-all duration-200 md:flex",
      effectiveCollapsed ? "w-16" : "w-64",
     )}
    >
@@ -212,8 +228,8 @@ export function Sidebar() {
       effectiveCollapsed ? "px-3" : "px-4",
      )}
     >
-     {!effectiveCollapsed && !isHanziHome && (
-      <div className="rounded-lg border border-border-default bg-bg-subtle/70 p-3">
+     {!effectiveCollapsed && !isHanziHomeRoute && (
+      <div className="rounded-xl border border-border-default bg-bg-subtle/70 p-3">
        <div className="flex items-center gap-2  font-bold text-text-primary">
         <Flame className="h-4 w-4" />
         Học theo bài
@@ -237,7 +253,7 @@ export function Sidebar() {
       {!effectiveCollapsed && "Đăng xuất"}
      </button>
 
-     {!isHanziHome && (
+     {!isHanziHomeRoute && (
       <button
        type="button"
        onClick={toggleSidebar}
@@ -256,14 +272,9 @@ export function Sidebar() {
      )}
     </div>
    </aside>
-   <nav className="fixed inset-x-0 bottom-0 z-40 grid max-w-full place-items-center overflow-x-hidden scrollbar-soft border-t border-border-default bg-bg-card/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-theme-sm backdrop-blur md:hidden">
-    <div
-     className="grid w-full max-w-md min-w-0 gap-1"
-     style={{
-      gridTemplateColumns: `repeat(${mainItems.length}, minmax(0, 1fr))`,
-     }}
-    >
-     {mainItems.map((item) => {
+   <nav className="nova-shell-header fixed inset-x-0 bottom-0 z-40 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
+    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
+     {mobileItems.map((item) => {
       const Icon = item.icon;
       const active = isActive(pathname, searchParams, item.href);
       return (
@@ -277,7 +288,7 @@ export function Sidebar() {
         )}
        >
         <Icon className="h-5 w-5 shrink-0" />
-        <span className="max-w-full truncate">{item.name.replace("Trang chủ", "Home")}</span>
+        <span className="max-w-full truncate">{mobileLabels[item.href]}</span>
        </Link>
       );
      })}

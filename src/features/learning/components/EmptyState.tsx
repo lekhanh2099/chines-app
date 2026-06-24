@@ -16,13 +16,15 @@ export function EmptyState({
  return (
   <div
    className={cn(
-    "flex flex-col items-center justify-center rounded-2xl -[28px] border-2 border-dashed border-stone-200 bg-white p-8 text-center",
-    compact ? "min-h-80" : "min-h-[520px] shadow",
+    "nova-glass-panel flex flex-col items-center justify-center rounded-2xl border border-dashed border-border-default p-8 text-center",
+    compact ? "min-h-80" : "min-h-[32rem] shadow-theme-lg",
    )}
   >
-   <Sparkles className="h-12 w-12 text-stone-300" />
-   <h2 className="mt-4 text-2xl font-black text-stone-900">{title}</h2>
-   <p className="mt-2 max-w-md  font-bold leading-6 text-stone-500">{description}</p>
+   <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-subtle text-accent-text">
+    <Sparkles className="h-6 w-6" />
+   </span>
+   <h2 className="mt-4 text-2xl font-black text-text-primary">{title}</h2>
+   <p className="mt-2 max-w-md font-medium leading-6 text-text-muted">{description}</p>
    {action ? <div className="mt-5">{action}</div> : null}
   </div>
  );

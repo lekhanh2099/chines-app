@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { Card } from "@/components/ui/card";
+import { PageHeader } from "@/components/ui/page-header";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
 import type { CourseStats } from "@/features/hanzihome/components/library/types";
@@ -18,30 +19,25 @@ export function HanziHomeLibraryHome() {
  const books = catalogData.books;
 
  return (
-  <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
-   <section className="grid gap-4">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="grid gap-1">
-      <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">HanziHome</p>
-      <h1 className="text-2xl font-black tracking-tight text-text-primary">
-       Thư viện học HanziHome
-      </h1>
-      <p className="max-w-3xl  font-semibold leading-relaxed text-text-muted">
-       Nội dung khóa học, bài học, từ vựng và ngữ pháp được tải từ thư viện HanziHome.
-      </p>
-     </div>
-     {canEdit ? (
-      <HanziHomeLibraryCrudToolbar
-       courses={courses}
-       books={books}
-       editMode={editMode}
-       onEditModeChange={setEditMode}
-      />
-     ) : null}
-    </div>
+  <main className="flex w-full max-w-full flex-col gap-5 px-4 py-5 lg:px-8 lg:py-7">
+   <section className="grid gap-5">
+    <PageHeader
+     title="Thư viện học HanziHome"
+     description="Chọn giáo trình và bài học để đọc bài khóa, học từ vựng, nắm ngữ pháp và ôn tập."
+     actions={
+      canEdit ? (
+       <HanziHomeLibraryCrudToolbar
+        courses={courses}
+        books={books}
+        editMode={editMode}
+        onEditModeChange={setEditMode}
+       />
+      ) : null
+     }
+    />
 
     {courses.length === 0 ? (
-     <Card padding="lg" className="rounded-xl">
+     <Card variant="glass" padding="lg">
       <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
      </Card>
     ) : (

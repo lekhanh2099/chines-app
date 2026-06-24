@@ -66,8 +66,9 @@ export function CourseCard({
 
  return (
   <Card
+   variant="glass"
    padding="none"
-   className="rounded-xl p-4 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+   className="p-4 transition-all hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-theme-lg sm:p-5"
   >
    <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
     <div className="flex min-w-0 gap-4">

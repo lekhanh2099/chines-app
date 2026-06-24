@@ -49,11 +49,9 @@ export function LessonModuleFrame({
  return (
   <div className="grid gap-3">
    <Card
+    variant="glass"
     padding="sm"
-    className={cn(
-     "sticky z-20 rounded-xl border-border-default bg-bg-primary/95 shadow-theme-sm backdrop-blur",
-     compact ? "top-0" : "top-11",
-    )}
+    className={cn("sticky z-20 border-border-default", compact ? "top-0" : "top-11")}
    >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="flex min-w-0 items-center gap-2">
@@ -116,7 +114,7 @@ export function LessonModuleFrame({
        compact ? "xl:top-14" : "xl:top-24",
       )}
      >
-      <Card padding="sm" className="max-w-full overflow-hidden rounded-xl border-border-default">
+      <Card variant="glass" padding="sm" className="max-w-full overflow-hidden">
        {sidebar}
       </Card>
      </aside>

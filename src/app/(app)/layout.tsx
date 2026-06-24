@@ -22,7 +22,7 @@ export default async function AppLayout({
    <Sidebar />
    <div className="flex min-w-0 flex-1 flex-col overflow-x-hidden scrollbar-soft ">
     <Header user={user} />
-    <main className="page-shell relative flex-1 overflow-y-auto bg-background pb-[calc(88px+env(safe-area-inset-bottom))] scrollbar-soft md:pb-0">
+    <main className="page-shell nova-page relative flex-1 overflow-y-auto pb-[calc(88px+env(safe-area-inset-bottom))] scrollbar-soft md:pb-0">
      {children}
     </main>
    </div>

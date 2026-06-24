@@ -45,7 +45,7 @@ export function ModulePane({
  return (
   <section
    className={[
-    "grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm xl:h-full xl:min-h-0",
+    "hanzihome-liquid-panel grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden rounded-2xl p-2 xl:h-full xl:min-h-0",
     className,
    ].join(" ")}
   >

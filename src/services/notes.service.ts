@@ -131,6 +131,27 @@ export async function getUserNotes(
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
 }
 
+/** Fetch a bounded list for lightweight dashboard surfaces. */
+export async function getRecentUserNotes(
+ supabase: SupabaseClient,
+ userId: string,
+ limit: number,
+): Promise<NoteListItem[]> {
+ const { data, error } = await supabase
+  .from("notes")
+  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
+  .eq("user_id", userId)
+  .order("updated_at", { ascending: false })
+  .limit(limit);
+
+ if (error) {
+  console.error("[NotesService] fetch recent error:", error);
+  return [];
+ }
+
+ return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+}
+
 /** Fetch notes by category */
 export async function getNotesByCategory(
  supabase: SupabaseClient,

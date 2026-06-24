@@ -1,5 +1,5 @@
-import { HanziHomeLibraryHome } from "@/features/hanzihome/HanziHomeLibraryHome";
+import { HomeDashboard } from "@/features/home/HomeDashboard";
 
 export default function HomePage() {
- return <HanziHomeLibraryHome />;
+ return <HomeDashboard />;
 }
