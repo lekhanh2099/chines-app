@@ -11,11 +11,12 @@ import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHo
 import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { IOption } from "@/types/option";
-import type { CourseStats } from "./types";
-import { MiniMetric } from "./MiniMetric";
+
 import { BookCrudActions } from "./BookCrudActions";
 import { CourseCrudActions } from "./CourseCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";
+import { MiniMetric } from "./MiniMetric";
+import type { CourseStats } from "./types";
 
 export function CourseCard({
  course,
@@ -29,6 +30,7 @@ export function CourseCard({
  const primaryBook = stats.books[0];
  const { lessons: courseLessons } = useHanziHomeCourseLessons(course.id);
  const [selectedLessonId, setSelectedLessonId] = useState(stats.fallbackLessonId ?? "");
+
  const effectiveLesson = useMemo(() => {
   const selectedExists = courseLessons.some((lesson) => lesson.id === selectedLessonId);
   const effectiveLessonId =
@@ -39,11 +41,13 @@ export function CourseCard({
 
   return courseLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
  }, [courseLessons, selectedLessonId, stats.fallbackLessonId]);
+
  const effectiveLessonId = effectiveLesson?.id ?? "";
  const href = buildHanziHomeLessonHref({
   courseId: course.id,
   lessonNumber: effectiveLesson?.lessonNumber,
  });
+
  const visibleLessonCount = courseLessons.length || stats.lessonCount;
  const visibleVocabCount =
   courseLessons.length > 0
@@ -61,6 +65,7 @@ export function CourseCard({
   value: lesson.id,
   label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`,
  }));
+
  const selectedOption =
   courseLessonOptions.find((option) => option.value === effectiveLessonId) || null;
 
@@ -68,15 +73,15 @@ export function CourseCard({
   <Card
    variant="glass"
    padding="none"
-   className="p-4 transition-all hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-theme-lg sm:p-5"
+   className="group flex h-full min-w-0 flex-col p-5 transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-theme-lg"
   >
-   <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+   <div className="flex min-w-0 items-start justify-between gap-4">
     <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle shadow-theme-sm">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-subtle text-accent-text shadow-theme-sm">
       <BookMarked className="h-5 w-5" />
      </span>
 
-     <div className="grid min-w-0 gap-1">
+     <div className="min-w-0">
       <div className="flex flex-wrap items-center gap-2">
        <span className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
         {primaryBook?.shortTitle || primaryBook?.title || course.type}
@@ -87,72 +92,78 @@ export function CourseCard({
          {stats.books.length} quyển
         </span>
        )}
+
        {editMode ? <CourseCrudActions course={course} /> : null}
       </div>
 
-      <h2 className="truncate text-2xl font-black tracking-tight text-text-primary">
+      <h2 className="mt-2 line-clamp-2 text-2xl font-black leading-tight tracking-tight text-text-primary">
        {course.title}
       </h2>
 
       {course.subtitle && (
-       <p className="line-clamp-1 max-w-2xl  font-semibold text-text-secondary">
+       <p className="mt-2 line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
         {course.subtitle}
        </p>
-      )}
-
-      <div className="flex flex-wrap gap-2 pt-2">
-       <MiniMetric label="Bài" value={visibleLessonCount} />
-       <MiniMetric label="Từ" value={visibleVocabCount} />
-       <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
-      </div>
-
-      {stats.books.length > 0 ? (
-       <div className="flex flex-wrap gap-2 pt-1">
-        {stats.books.map((book) => (
-         <div
-          key={book.id}
-          className="flex items-center gap-1 rounded-lg border border-border-default bg-bg-primary px-2 py-1"
-         >
-          <span className="text-xs font-bold text-text-secondary">
-           {book.shortTitle || book.title}
-          </span>
-          {editMode ? <BookCrudActions book={book} /> : null}
-         </div>
-        ))}
-       </div>
-      ) : null}
-
-      {courseLessons.length > 0 && (
-       <div className="mt-2 grid max-w-lg gap-1.5">
-        <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-         Bài sẽ mở
-        </span>
-        <div className="flex min-w-0 items-center gap-1">
-         <div className="min-w-0 flex-1">
-          <Select
-           options={courseLessonOptions}
-           selectValue={selectedOption}
-           triggerPlaceholder="Chọn course"
-           onChange={(option: IOption | null) => {
-            if (option?.value) setSelectedLessonId(String(option.value));
-           }}
-          />
-         </div>
-         {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-        </div>
-       </div>
       )}
      </div>
     </div>
 
-    <div className="flex flex-wrap gap-2 md:justify-end">
-     <Button asChild>
-      <Link href={href} prefetch={false}>
-       <Sparkles className="h-4 w-4" />
-       Vào học
-      </Link>
-     </Button>
+    <Button asChild className="hidden shrink-0 sm:inline-flex">
+     <Link href={href} prefetch={false}>
+      <Sparkles className="h-4 w-4" />
+      Vào học
+     </Link>
+    </Button>
+   </div>
+
+   <div className="mt-5 flex flex-wrap gap-2">
+    <MiniMetric label="Bài" value={visibleLessonCount} />
+    <MiniMetric label="Từ" value={visibleVocabCount} />
+    <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
+   </div>
+
+   {stats.books.length > 0 ? (
+    <div className="mt-4 flex flex-wrap gap-2">
+     {stats.books.map((book) => (
+      <div
+       key={book.id}
+       className="flex items-center gap-1 rounded-full border border-border-default/80 bg-bg-primary/70 px-3 py-1.5"
+      >
+       <span className="text-xs font-bold text-text-secondary">{book.shortTitle || book.title}</span>
+       {editMode ? <BookCrudActions book={book} /> : null}
+      </div>
+     ))}
     </div>
+   ) : null}
+
+   <div className="mt-auto grid gap-2 pt-5">
+    {courseLessons.length > 0 && (
+     <div className="grid gap-1.5">
+      <span className="text-xs font-black uppercase tracking-wide text-text-muted">Bài sẽ mở</span>
+
+      <div className="flex min-w-0 items-center gap-2">
+       <div className="min-w-0 flex-1">
+        <Select
+         options={courseLessonOptions}
+         selectValue={selectedOption}
+         triggerPlaceholder="Chọn bài"
+         onChange={(option: IOption | null) => {
+          if (option?.value) setSelectedLessonId(String(option.value));
+         }}
+        />
+       </div>
+
+       {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+      </div>
+     </div>
+    )}
+
+    <Button asChild className="sm:hidden">
+     <Link href={href} prefetch={false}>
+      <Sparkles className="h-4 w-4" />
+      Vào học
+     </Link>
+    </Button>
    </div>
   </Card>
  );

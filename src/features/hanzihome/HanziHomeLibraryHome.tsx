@@ -19,7 +19,7 @@ export function HanziHomeLibraryHome() {
  const books = catalogData.books;
 
  return (
-  <main className="flex w-full max-w-full flex-col gap-5 px-4 py-5 lg:px-8 lg:py-7">
+  <main className="flex w-full flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8 lg:py-7">
    <section className="grid gap-5">
     <PageHeader
      title="Thư viện học HanziHome"
@@ -41,7 +41,7 @@ export function HanziHomeLibraryHome() {
       <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
      </Card>
     ) : (
-     <div className="grid gap-4">
+     <div className="grid gap-4 xl:grid-cols-2 2xl:grid-cols-2">
       {courses.map((course) => (
        <CourseCard
         key={course.id}
