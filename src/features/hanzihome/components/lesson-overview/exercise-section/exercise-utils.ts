@@ -86,6 +86,21 @@ export function firstTextByKeys(record: Record<string, unknown>, keys: string[])
  return "";
 }
 
+export function hasExercisePassagePayload(record: Record<string, unknown>) {
+ const directPassage = record.passage;
+ const hasDirectPassage =
+  Boolean(answerToString(directPassage)) || Object.keys(asRecord(directPassage)).length > 0;
+
+ return (
+  hasDirectPassage ||
+  arrayValue(record, "paragraphs").length > 0 ||
+  arrayValue(record, "segments").length > 0 ||
+  ["text_with_blanks", "passage_with_blanks", "passage_blanked", "cloze_text", "passage_text"].some(
+   (key) => Boolean(stringValue(record, key)),
+  )
+ );
+}
+
 export function lineTextFromValue(value: unknown) {
  if (typeof value === "string" || typeof value === "number") {
   return answerToString(value);

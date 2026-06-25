@@ -10,7 +10,6 @@ export function WritingExerciseBody({
  lessonId,
  itemPath,
  item,
- displayMode: _displayMode,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;

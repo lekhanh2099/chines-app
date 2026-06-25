@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Popover } from "@base-ui/react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { $patchStyleText } from "@lexical/selection";
+import { $getSelectionStyleValueForProperty, $patchStyleText } from "@lexical/selection";
 import { mergeRegister } from "@lexical/utils";
 import {
  $getSelection,
@@ -34,6 +34,7 @@ import {
  Strikethrough,
  Subscript,
  Superscript,
+ Type,
  Underline,
  Volume2,
 } from "lucide-react";
@@ -48,6 +49,7 @@ import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { usePathname } from "next/navigation";
 import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
 import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
+import { FONT_FAMILIES } from "./toolbar-options";
 import type { NoteListItem } from "@/services/notes.service";
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
@@ -123,6 +125,8 @@ export default function EditorFloatingMenu() {
  const [isSuperscript, setIsSuperscript] = useState(false);
  const [isCode, setIsCode] = useState(false);
  const [isHighlight, setIsHighlight] = useState(false);
+ const [fontFamily, setFontFamily] = useState("");
+ const [showFontMenu, setShowFontMenu] = useState(false);
  const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
  const noteTextareaRef = useRef<HTMLTextAreaElement | null>(null);
  const linkSearchInputRef = useRef<HTMLInputElement | null>(null);
@@ -164,7 +168,8 @@ export default function EditorFloatingMenu() {
    return false;
   }
 
-  const rect = nativeSelection.getRangeAt(0).getBoundingClientRect();
+  const range = nativeSelection.getRangeAt(0);
+  const rect = range.getBoundingClientRect();
   if (rect.width === 0 && rect.height === 0) {
    selectionAnchorRef.current = null;
    setHasAnchor(false);
@@ -172,7 +177,7 @@ export default function EditorFloatingMenu() {
   }
 
   selectionAnchorRef.current = {
-   getBoundingClientRect: () => rect,
+   getBoundingClientRect: () => range.getBoundingClientRect(),
    contextElement: editor.getRootElement(),
   };
   setHasAnchor(true);
@@ -194,6 +199,8 @@ export default function EditorFloatingMenu() {
   setLinkSearchResults([]);
   setShowInlineNote(false);
   setInlineNoteDraft("");
+  setShowFontMenu(false);
+  setFontFamily("");
   selectionAnchorRef.current = null;
  }, []);
 
@@ -234,6 +241,7 @@ export default function EditorFloatingMenu() {
   setIsSubscript(selection.hasFormat("subscript"));
   setIsSuperscript(selection.hasFormat("superscript"));
   setIsCode(selection.hasFormat("code"));
+  setFontFamily($getSelectionStyleValueForProperty(selection, "font-family", ""));
 
   if ($isTextNode(anchorNode)) {
    setIsHighlight(anchorNode.getStyle().includes("background-color"));
@@ -262,6 +270,7 @@ export default function EditorFloatingMenu() {
    setLinkSearchResults([]);
    setShowInlineNote(false);
    setInlineNoteDraft("");
+   setShowFontMenu(false);
   }
  }, [
   clearSelectionState,
@@ -322,11 +331,9 @@ export default function EditorFloatingMenu() {
   if (!finalPopupOpen) return;
 
   const hide = () => setIsViewportHidden(true);
-  window.addEventListener("scroll", hide, { capture: true, passive: true });
   window.addEventListener("resize", hide);
 
   return () => {
-   window.removeEventListener("scroll", hide, { capture: true });
    window.removeEventListener("resize", hide);
   };
  }, [finalPopupOpen]);
@@ -338,16 +345,32 @@ export default function EditorFloatingMenu() {
   [editor],
  );
 
+ const applyInlineStyle = useCallback(
+  (styles: Record<string, string | null>) => {
+   editor.update(() => {
+    const selection = $getSelection();
+    if ($isRangeSelection(selection)) {
+     $patchStyleText(selection, styles);
+    }
+   });
+  },
+  [editor],
+ );
+
+ const applyFontFamily = useCallback(
+  (value: string) => {
+   applyInlineStyle({ "font-family": value || null });
+   setFontFamily(value);
+   setShowFontMenu(false);
+  },
+  [applyInlineStyle],
+ );
+
  const toggleHighlight = useCallback(() => {
-  editor.update(() => {
-   const selection = $getSelection();
-   if ($isRangeSelection(selection)) {
-    $patchStyleText(selection, {
-     "background-color": isHighlight ? null : "#fef08a",
-    });
-   }
+  applyInlineStyle({
+   "background-color": isHighlight ? null : "#fef08a",
   });
- }, [editor, isHighlight]);
+ }, [applyInlineStyle, isHighlight]);
 
  const clearFormatting = useCallback(() => {
   editor.update(() => {
@@ -530,6 +553,7 @@ export default function EditorFloatingMenu() {
      setShowNote(false);
      setShowLinkSearch(false);
      setShowInlineNote(false);
+     setShowFontMenu(false);
     }
    }}
    modal={false}
@@ -745,6 +769,58 @@ export default function EditorFloatingMenu() {
          >
           <StickyNote className="h-4 w-4" />
          </Button>
+         <div className="mx-1 h-5 w-px bg-slate-200" />
+
+         <div className="relative">
+          <Button
+           variant="ghost"
+           size="sm"
+           className={cn(
+            "h-8 min-w-0 rounded-xl border border-transparent px-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+            (fontFamily || showFontMenu) && "border-indigo-200 bg-indigo-50 text-indigo-600",
+           )}
+           onMouseDown={preserveEditorSelection}
+           onClick={(event) => {
+            preserveEditorSelection(event);
+            setShowFontMenu((open) => !open);
+            setShowNote(false);
+            setShowLinkSearch(false);
+            setShowInlineNote(false);
+           }}
+           title="Đổi font chữ"
+          >
+           <Type className="h-4 w-4" />
+           <span className="max-w-24 truncate text-xs font-semibold">
+            {FONT_FAMILIES.find(([value]) => value === fontFamily)?.[1] || "Font"}
+           </span>
+          </Button>
+          {showFontMenu ? (
+           <div
+            className="absolute right-0 top-[calc(100%+0.25rem)] z-10 max-h-64 min-w-44 overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1 shadow-theme-lg"
+            onMouseDown={preserveEditorSelection}
+           >
+            {FONT_FAMILIES.map(([value, label]) => (
+             <button
+              key={value || "default"}
+              type="button"
+              className={cn(
+               "flex w-full items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-left text-xs font-semibold text-text-secondary hover:bg-bg-subtle hover:text-text-primary",
+               fontFamily === value && "bg-accent-subtle text-accent-text",
+              )}
+              style={value ? { fontFamily: value } : undefined}
+              onMouseDown={preserveEditorSelection}
+              onClick={(event) => {
+               preserveEditorSelection(event);
+               applyFontFamily(value);
+              }}
+             >
+              <span>{label}</span>
+              {fontFamily === value ? <Check className="h-3.5 w-3.5" /> : null}
+             </button>
+            ))}
+           </div>
+          ) : null}
+         </div>
          <div className="mx-1 h-5 w-px bg-slate-200" />
 
          <FormatButton active={isBold} onClick={() => formatText("bold")} title="Bold">

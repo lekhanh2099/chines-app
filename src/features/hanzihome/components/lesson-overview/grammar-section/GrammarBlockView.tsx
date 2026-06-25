@@ -5,6 +5,7 @@ import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { GrammarBlockItemView } from "./GrammarBlockItemView";
+import { GrammarMicroPractice } from "./GrammarMicroPractice";
 
 export function GrammarBlockView({
  lessonId,
@@ -31,6 +32,7 @@ export function GrammarBlockView({
   .map(asRecord)
   .filter((example) => stringValue(example, "zh"));
  const items = arrayValue(blockRecord, "items").map(asRecord);
+ const practiceQuestions = arrayValue(blockRecord, "questions");
 
  const content = (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
@@ -92,6 +94,9 @@ export function GrammarBlockView({
       ),
      )}
     </div>
+   )}
+   {block.type === "grammar_micro_practice" && (
+    <GrammarMicroPractice questions={practiceQuestions} />
    )}
    {examples.length > 0 && (
     <div className="grid gap-2">

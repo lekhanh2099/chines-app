@@ -180,11 +180,11 @@ export async function getNoteById(
  userId: string,
 ): Promise<NoteDetail | null> {
  const { data, error } = await supabase
-  .from("notes")
-  .select("*")
-  .eq("id", noteId)
-  .eq("user_id", userId)
-  .single();
+ .from("notes")
+ .select("*")
+ .eq("id", noteId)
+ .eq("user_id", userId)
+ .maybeSingle();
 
  if (error) {
   console.error("[NotesService] fetch by ID error:", error);

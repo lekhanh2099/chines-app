@@ -152,7 +152,12 @@ export function ReadingCard({
      {questions.map((questionValue, index) => {
       const questionId = stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`;
       const questionCard = (
-       <ReadingQuestionCard itemId={item.id} questionValue={questionValue} index={index} />
+       <ReadingQuestionCard
+        itemId={item.id}
+        readingType={item.type}
+        questionValue={questionValue}
+        index={index}
+       />
       );
 
       return lessonId && path ? (

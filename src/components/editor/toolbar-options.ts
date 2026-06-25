@@ -1,0 +1,15 @@
+export const FONT_FAMILIES: [string, string][] = [
+ ["", "Default"],
+ ["Arial", "Arial"],
+ ["Georgia", "Georgia"],
+ ["Times New Roman", "Times New Roman"],
+ ["Courier New", "Courier New"],
+ ["'Noto Sans SC', sans-serif", "Noto Sans SC"],
+ ["'Ma Shan Zheng', cursive", "Ma Shan Zheng"],
+ ["'FZKTPY01', 'KaiTi', serif", "FZKTPY01"],
+ ["'FZKTPY02', 'KaiTi', serif", "FZKTPY02"],
+ ["'FZKTPY03', 'KaiTi', serif", "FZKTPY03"],
+ ["'FZKTPY04', 'KaiTi', serif", "FZKTPY04"],
+ ["'FZKTPY05', 'KaiTi', serif", "FZKTPY05"],
+ ["'FZKTPY06', 'KaiTi', serif", "FZKTPY06"],
+];

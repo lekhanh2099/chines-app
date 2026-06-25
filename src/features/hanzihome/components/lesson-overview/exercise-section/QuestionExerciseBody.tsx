@@ -30,7 +30,7 @@ import { QuestionCard } from "./QuestionCard";
 import { QuestionGroupCard } from "./QuestionGroupCard";
 import { SupplementaryPills } from "./SupplementaryPills";
 import { WordBank } from "./WordBank";
-import { firstArrayByKeys, firstArraySource } from "./exercise-utils";
+import { firstArrayByKeys, firstArraySource, hasExercisePassagePayload } from "./exercise-utils";
 
 export function QuestionExerciseBody({
  lessonId,
@@ -95,7 +95,8 @@ export function QuestionExerciseBody({
 
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
- const passage = getPassageLikeValue(record, { includeText: true });
+ const hasPassagePayload = hasExercisePassagePayload(record);
+ const passage = hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined;
  const directPassage = asRecord(record.passage);
  const passageSegments =
   arrayValue(directPassage, "segments").length > 0
@@ -298,6 +299,7 @@ export function QuestionExerciseBody({
        lessonId={lessonId}
        itemPath={itemPath}
        itemId={`${item.id}-part-${partIndex}`}
+       exerciseType={item.type}
        parentExerciseId={item.id}
        groupPath={["parts", partIndex]}
        groupValue={partValue}
@@ -352,6 +354,7 @@ export function QuestionExerciseBody({
        lessonId={lessonId}
        itemPath={itemPath}
        itemId={`${item.id}-group-${index}`}
+       exerciseType={item.type}
        parentExerciseId={item.id}
        groupPath={["groups", index]}
        groupValue={groupValue}
@@ -370,6 +373,7 @@ export function QuestionExerciseBody({
       const questionCard = (
        <QuestionCard
         itemId={item.id}
+        exerciseType={item.type}
         questionValue={questionValue}
         index={index}
         displayMode={displayMode}

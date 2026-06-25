@@ -2,6 +2,7 @@ import type { CharacterWritingItem } from "@/features/hanzihome/static-json/sche
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "./types";
+import { asRecord, stringValue } from "./utils";
 
 export function WritingCard({
  lessonId,
@@ -16,6 +17,7 @@ export function WritingCard({
  item: CharacterWritingItem;
  displayMode: LessonDisplayMode;
 }) {
+ const meaningVi = stringValue(asRecord(item), "meaning_vi");
  const content = (
   <div className="rounded-xl border border-border-default bg-bg-primary p-3">
    <p className="text-4xl font-black text-text-primary" lang="zh-CN">
@@ -24,7 +26,17 @@ export function WritingCard({
    {displayMode.showPinyin && item.pinyin && (
     <p className="font-bold text-accent-text">{item.pinyin}</p>
    )}
+   {displayMode.showMeaning && meaningVi && (
+    <p className="font-semibold text-text-secondary">{meaningVi}</p>
+   )}
    {item.radical && <p className=" font-semibold text-text-muted">Bộ: {item.radical}</p>}
+   <div className="mt-2 flex flex-wrap gap-1.5 text-xs font-bold text-text-muted">
+    {item.stroke_count && (
+     <span className="rounded-lg bg-bg-subtle px-2 py-1">{item.stroke_count} nét</span>
+    )}
+    <span className="rounded-lg bg-bg-subtle px-2 py-1">Ô {item.practice.grid_type}</span>
+    <span className="rounded-lg bg-bg-subtle px-2 py-1">Lặp {item.practice.repeat_count} lần</span>
+   </div>
   </div>
  );
 

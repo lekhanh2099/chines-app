@@ -13,7 +13,10 @@ import type { ExerciseRendererMeta } from "./exercise-renderer-registry";
 const familyIcons = {
  phonetics: Languages,
  substitution: Shuffle,
- questions: ListChecks,
+ fill_blank: ListChecks,
+ answer_pattern: ListChecks,
+ correct_sentence: SpellCheck2,
+ multiple_choice: ListChecks,
  dialogue: MessageCircleMore,
  communication: MessageCircleMore,
  matching: SpellCheck2,
@@ -21,6 +24,7 @@ const familyIcons = {
  reorder: Shuffle,
  writing: PencilLine,
  reference: PencilLine,
+ generic: ListChecks,
 } as const;
 
 export function ExerciseTypeBadge({ meta }: { meta: ExerciseRendererMeta }) {

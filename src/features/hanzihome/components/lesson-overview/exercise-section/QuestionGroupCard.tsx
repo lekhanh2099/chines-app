@@ -11,6 +11,7 @@ export function QuestionGroupCard({
  lessonId,
  itemPath,
  itemId,
+ exerciseType,
  parentExerciseId,
  groupPath,
  groupValue,
@@ -21,6 +22,7 @@ export function QuestionGroupCard({
  lessonId?: string;
  itemPath?: EditableNodePath;
  itemId: string;
+ exerciseType: string;
  parentExerciseId: string;
  groupPath?: EditableNodePath;
  groupValue: unknown;
@@ -68,6 +70,7 @@ export function QuestionGroupCard({
       const content = (
        <QuestionCard
         itemId={itemId}
+        exerciseType={exerciseType}
         questionValue={questionValue}
         index={questionIndex}
         displayMode={displayMode}

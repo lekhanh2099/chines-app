@@ -262,7 +262,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
 
  return (
   <div
-   className="flex h-full w-full flex-col bg-bg-primary"
+   className="flex h-full min-h-0 w-full flex-col bg-bg-primary"
    style={{ display: isVisible ? "flex" : "none" }}
   >
    {isLoading ? (
@@ -385,7 +385,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      </div>
 
      {isSplitView ? (
-      <div className="h-full bg-bg-card border border-border-default rounded-2xl  shadow-theme-sm">
+      <div className="min-h-0 flex-1 bg-bg-card border border-border-default rounded-2xl  shadow-theme-sm">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -396,7 +396,9 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
        />
       </div>
      ) : (
-      <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
+      <div className="note-editor-scroll">
+       <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
+      </div>
      )}
     </>
    )}

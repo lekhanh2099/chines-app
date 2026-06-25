@@ -4,13 +4,44 @@ import { formatAnswer, objectText } from "./reading-utils";
 
 export function ReadingQuestionCard({
  itemId,
+ readingType,
  questionValue,
  index,
 }: {
  itemId: string;
+ readingType: string;
  questionValue: unknown;
  index: number;
 }) {
+ if (Array.isArray(questionValue)) {
+  const values = questionValue.map(answerToString);
+  const title = values[0] || "Câu hỏi";
+  const answer = readingType === "reading_multiple_choice" ? values.at(-1) : values[1];
+
+  return (
+   <ExerciseQuestionCard
+    key={`${itemId}-question-${index}`}
+    index={index + 1}
+    title={title}
+    answer={answer}
+   />
+  );
+ }
+
+ if (
+  typeof questionValue === "string" ||
+  typeof questionValue === "number" ||
+  typeof questionValue === "boolean"
+ ) {
+  return (
+   <ExerciseQuestionCard
+    key={`${itemId}-question-${index}`}
+    index={index + 1}
+    title={String(questionValue)}
+   />
+  );
+ }
+
  const question = asRecord(questionValue);
  const nestedQuestion = asRecord(question.question);
  const statement = asRecord(question.statement);
