@@ -11,7 +11,10 @@ import {
 } from "@/features/hanzihome/components/grammar/grammar-reading";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
-import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import {
+ useHanziHomeEditMode,
+ useHanziHomeFeatureSelector,
+} from "@/features/hanzihome/context/selectors";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 
@@ -31,6 +34,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  const selectedPointId = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSelectedPointId,
  );
+ const editMode = useHanziHomeEditMode();
  const isGrammarSidebarOpen = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSidebarOpen,
  );
@@ -105,7 +109,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader points={grammarPoints} />
+  <AllGrammarPointReader points={grammarPoints} editMode={editMode} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : selectedPoint && selectedPointPath ? (
@@ -125,6 +129,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
     bookmarked={bookmarks.includes(selectedPoint.id)}
     relatedVocab={relatedVocab}
     lessonId={lesson.id}
+    editMode={editMode}
     onBookmark={() => runtime.bookmarkGrammar(selectedPoint.id)}
     onMarkStatus={(status) => runtime.markGrammar(selectedPoint.id, status)}
    />
@@ -136,6 +141,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
    bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
    relatedVocab={relatedVocab}
    lessonId={lesson.id}
+   editMode={editMode}
    onBookmark={() => selectedPoint && runtime.bookmarkGrammar(selectedPoint.id)}
    onMarkStatus={(status) => selectedPoint && runtime.markGrammar(selectedPoint.id, status)}
   />

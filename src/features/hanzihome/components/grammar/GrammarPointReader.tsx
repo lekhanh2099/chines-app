@@ -21,6 +21,7 @@ type GrammarPointReaderProps = {
  relatedVocab: HanziHomeVocabItem[];
  lessonId?: string;
  pointPath?: EditableNodePath | null;
+ editMode?: boolean;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };
@@ -32,6 +33,7 @@ export function GrammarPointReader({
  relatedVocab,
  lessonId,
  pointPath,
+ editMode,
  onBookmark,
 }: GrammarPointReaderProps) {
  if (!point) {
@@ -72,6 +74,7 @@ export function GrammarPointReader({
       point={point}
       lessonId={lessonId}
       pointPath={pointPath ?? undefined}
+      editMode={editMode}
      />
     ) : contentMd ? (
      <MarkdownContent content={contentMd} />

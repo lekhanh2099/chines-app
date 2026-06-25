@@ -3,7 +3,6 @@
 import { Lightbulb, Sigma } from "lucide-react";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
-import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
 import { GrammarDetailSectionCard } from "./GrammarDetailSectionCard";
 import { cleanGrammarDisplayLine, isDuplicateCoreSection } from "./grammar-display";
@@ -13,6 +12,7 @@ type StructuredGrammarContentProps = {
  lessonId?: string;
  pointPath?: EditableNodePath;
  exampleLimit?: number;
+ editMode?: boolean;
 };
 
 export function StructuredGrammarContent({
@@ -20,8 +20,8 @@ export function StructuredGrammarContent({
  lessonId,
  pointPath,
  exampleLimit,
+ editMode = false,
 }: StructuredGrammarContentProps) {
- const editMode = useHanziHomeEditMode();
  const hasExampleDetailSection = Boolean(
   point.detailSections?.some((section) =>
    section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
