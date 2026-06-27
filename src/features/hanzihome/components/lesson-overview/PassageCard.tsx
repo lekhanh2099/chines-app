@@ -8,6 +8,8 @@ import { WordBank } from "./passage-card/WordBank";
 import {
  clozeAnswersFromSources,
  clozeTextFromSegments,
+ completedTextFromPassageLines,
+ fillClozeBlanksWithAnswers,
  passageLinesFromParagraphs,
  shouldRenderAsCloze,
  withMissingBlankNumbers,
@@ -74,7 +76,7 @@ export function PassageCard({
       nextBlankNumber,
      );
 
- const completedPassageText =
+ const explicitCompletedPassageText =
   stringValue(passageRecord, "completed_text") ||
   stringValue(passageRecord, "completed_text_zh") ||
   stringValue(passageRecord, "completed_passage") ||
@@ -88,6 +90,18 @@ export function PassageCard({
   segments.length > 0
    ? withMissingBlankNumbers(clozeTextFromSegments(segments), answerMap, nextBlankNumber)
    : "";
+
+ const inlinePassageSource = passageText || clozeText;
+ const completedInlinePassageText = inlinePassageSource
+  ? fillClozeBlanksWithAnswers(inlinePassageSource, answerMap, rendererId)
+  : "";
+ const completedPassageTextFromFields = explicitCompletedPassageText
+  ? fillClozeBlanksWithAnswers(explicitCompletedPassageText, answerMap, rendererId)
+  : "";
+ const completedPassageText =
+  completedPassageTextFromFields ||
+  completedTextFromPassageLines(passageLines, answerMap, rendererId) ||
+  (completedInlinePassageText !== inlinePassageSource ? completedInlinePassageText : "");
 
  const hasMainPayload =
   Boolean(passageTitle) ||

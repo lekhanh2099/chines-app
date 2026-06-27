@@ -11,6 +11,12 @@ import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHome
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { FilterSelect } from "@/features/hanzihome/components/aggregate-library/FilterSelect";
 import { GrammarAggregateRow } from "@/features/hanzihome/components/aggregate-library/GrammarAggregateRow";
+import {
+ DEFAULT_SELECTED_CONTENT_MODULES,
+ getOrderedLessonContentModules,
+ LessonContentPreviewPanel,
+ type LessonContentModule,
+} from "@/features/hanzihome/components/aggregate-library/LessonContentPreviewPanel";
 import { ReviewLessonMultiSelect } from "@/features/hanzihome/components/aggregate-library/ReviewLessonMultiSelect";
 import { VocabAggregateRow } from "@/features/hanzihome/components/aggregate-library/VocabAggregateRow";
 import {
@@ -67,6 +73,9 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   q: "",
  });
  const [activeReviewLessonIds, setActiveReviewLessonIds] = useState<string[]>([]);
+ const [selectedContentModules, setSelectedContentModules] = useState<LessonContentModule[]>(
+  DEFAULT_SELECTED_CONTENT_MODULES,
+ );
 
  const reviewLessons = useReviewLessons(activeReviewLessonIds);
  const aggregateCourses = catalog.courses;
@@ -132,6 +141,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const selectedAvailableReviewLessonIds = routeSelectedReviewLessonIds.filter((id) =>
   availableReviewLessonIds.has(id),
  );
+ const selectedLessonDetails = useReviewLessons(selectedAvailableReviewLessonIds);
  const activeReviewLessonSummaries = activeReviewLessonIds
   .map((lessonId) => aggregateLessons.find((lesson) => lesson.id === lessonId))
   .filter((lesson): lesson is (typeof aggregateLessons)[number] => Boolean(lesson));
@@ -240,6 +250,10 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   updateReviewLessonSelection([...selectedAvailableReviewLessonIds, lessonId]);
  };
 
+ const toggleContentModule = (module: LessonContentModule) => {
+  setSelectedContentModules((current) => getOrderedLessonContentModules(current, module));
+ };
+
  const startReview = (lessonIds: string[]) => {
   const nextLessonIds = Array.from(
    new Set(lessonIds.filter((lessonId) => availableReviewLessonIds.has(lessonId))),
@@ -284,7 +298,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        </span>
       </div>
 
-      <div className="rounded-xl border border-border-default bg-bg-primary p-2">
+      <div className="rounded-xl bg-bg-primary">
        <ReviewLessonMultiSelect
         kind={kind}
         selectedLessonIds={selectedAvailableReviewLessonIds}
@@ -296,6 +310,14 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         onCloseReview={() => setActiveReviewLessonIds([])}
        />
       </div>
+
+      <LessonContentPreviewPanel
+        lessons={selectedLessonDetails}
+        selectedModules={selectedContentModules}
+        selectedLessonCount={selectedAvailableReviewLessonIds.length}
+        onToggleModule={toggleContentModule}
+        onApplyPreset={setSelectedContentModules}
+      />
      </div>
     </Card>
 

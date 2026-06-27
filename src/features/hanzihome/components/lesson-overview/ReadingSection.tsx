@@ -31,12 +31,14 @@ export function ReadingCard({
  path,
  item,
  displayMode,
+ debugMode = false,
 }: {
  lessonId?: string;
  parentSectionId?: string;
  path?: EditableNodePath;
  item: ReadingItem;
  displayMode: LessonDisplayMode;
+ debugMode?: boolean;
 }) {
  const record = asRecord(item);
  const instruction = asRecord(record.instruction);
@@ -57,7 +59,14 @@ export function ReadingCard({
         values: arrayValue(record, "segments"),
        }
      : null;
- const clozeAnswerSource = ["blanks", "answers", "answer_key", "cloze_answers", "suggested_answers"]
+ const clozeAnswerSource = [
+  "blanks",
+  "answers",
+  "answer_key",
+  "cloze_answers",
+  "suggested_answers",
+  "questions",
+ ]
   .map((key) => ({ key, values: arrayValue(record, key) }))
   .find(({ values }) => values.some(hasClozeAnswerValue));
 
@@ -70,6 +79,22 @@ export function ReadingCard({
  ];
 
  const questions = arrayValue(record, "questions");
+ const questionsOnlyProvideClozeAnswers =
+  item.type === "reading_cloze" &&
+  questions.length > 0 &&
+  questions.every((questionValue) => {
+   const question = asRecord(questionValue);
+
+   return (
+    hasClozeAnswerValue(questionValue) &&
+    !stringValue(question, "prompt") &&
+    !stringValue(question, "question") &&
+    !stringValue(question, "text") &&
+    !stringValue(asRecord(question.statement), "zh") &&
+    !stringValue(asRecord(question.statement), "vi")
+   );
+  });
+ const visibleQuestions = questionsOnlyProvideClozeAnswers ? [] : questions;
  const answers =
   arrayValue(record, "blanks").length > 0
    ? arrayValue(record, "blanks")
@@ -147,9 +172,9 @@ export function ReadingCard({
 
    <LinkedData exerciseRef={exerciseRef} linkedReadingId={linkedReadingId} />
 
-   {questions.length > 0 && (
+   {visibleQuestions.length > 0 && (
     <div className="grid gap-2">
-     {questions.map((questionValue, index) => {
+     {visibleQuestions.map((questionValue, index) => {
       const questionId = stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`;
       const questionCard = (
        <ReadingQuestionCard
@@ -191,7 +216,7 @@ export function ReadingCard({
 
    <AnswerKeyList itemId={item.id} values={answers} />
 
-   <RawDataDetails value={item} label="Dữ liệu gốc của reading item" />
+   {debugMode && <RawDataDetails value={item} label="Dữ liệu gốc của reading item" />}
   </article>
  );
 

@@ -7,6 +7,22 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { AnswerReveal } from "./AnswerReveal";
 
+function answerLabelValue(record: Record<string, unknown>, key: string) {
+ const value = record[key];
+
+ if (typeof value === "number" && Number.isFinite(value)) return `${value}`;
+ if (typeof value === "string") return value.trim();
+
+ return "";
+}
+
+function isTechnicalAnswerLabel(value: string) {
+ return (
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value) ||
+  /^ex\d+_q\d+$/i.test(value)
+ );
+}
+
 export function AnswerKeyList({
  itemId,
  values,
@@ -29,12 +45,17 @@ export function AnswerKeyList({
  const answers = values
   .map((answerValue, index): AnswerEntry | null => {
    const answer = asRecord(answerValue);
-   const label =
+   const explicitLabel =
+    answerLabelValue(answer, "blank_no") ||
+    answerLabelValue(answer, "blankNo") ||
+    answerLabelValue(answer, "question_no") ||
+    answerLabelValue(answer, "questionNo") ||
     stringValue(answer, "blank_id") ||
     stringValue(answer, "question_id") ||
     stringValue(answer, "label") ||
-    stringValue(answer, "id") ||
-    `${index + 1}`;
+    stringValue(answer, "id");
+   const label =
+    explicitLabel && !isTechnicalAnswerLabel(explicitLabel) ? explicitLabel : `${index + 1}`;
    const value =
     answerToString(answer.answer) ||
     stringValue(answer, "sample_answer") ||

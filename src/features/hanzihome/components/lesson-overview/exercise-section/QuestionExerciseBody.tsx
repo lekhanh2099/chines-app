@@ -30,7 +30,33 @@ import { QuestionCard } from "./QuestionCard";
 import { QuestionGroupCard } from "./QuestionGroupCard";
 import { SupplementaryPills } from "./SupplementaryPills";
 import { WordBank } from "./WordBank";
-import { firstArrayByKeys, firstArraySource, hasExercisePassagePayload } from "./exercise-utils";
+import {
+ firstArrayByKeys,
+ firstArraySource,
+ formatAnswer,
+ hasExercisePassagePayload,
+} from "./exercise-utils";
+
+function questionHasInlineAnswer(value: unknown) {
+ if (Array.isArray(value)) return value.length > 1;
+
+ const question = asRecord(value);
+ const answerRecord = asRecord(question.answer);
+
+ return Boolean(
+  stringValue(question, "answer") ||
+   stringValue(question, "answer_zh") ||
+   stringValue(question, "sample_answer") ||
+   stringValue(question, "sample_answer_zh") ||
+   stringValue(question, "suggested_answer") ||
+   stringValue(question, "suggested_answer_zh") ||
+   stringValue(question, "correct") ||
+   stringValue(question, "correct_sentence") ||
+   stringValue(answerRecord, "zh") ||
+   stringValue(answerRecord, "vi") ||
+   arrayValue(question, "acceptable_answers").length > 0,
+ );
+}
 
 export function QuestionExerciseBody({
  lessonId,
@@ -81,8 +107,6 @@ export function QuestionExerciseBody({
      ? "answer_key"
      : "answers";
 
- const clozeAnswers = getClozeAnswerValues(record);
- const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const wordBank = arrayValue(record, "word_bank");
 
  const supplementaryWords = [
@@ -96,6 +120,8 @@ export function QuestionExerciseBody({
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
  const hasPassagePayload = hasExercisePassagePayload(record);
+ const clozeAnswers = hasPassagePayload ? getClozeAnswerValues(record) : [];
+ const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const passage = hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined;
  const directPassage = asRecord(record.passage);
  const passageSegments =
@@ -122,6 +148,12 @@ export function QuestionExerciseBody({
   Boolean(passage) &&
   clozeAnswerCount > 0 &&
   (item.type === "reading_fill_blank" || variant.includes("cloze") || renderer.includes("cloze"));
+ const questionAnswersAreInline =
+  questions.length > 0 &&
+  questions.every((questionValue, index) => {
+   return questionHasInlineAnswer(questionValue) || Boolean(formatAnswer(answerKey[index]));
+  });
+ const shouldRenderAggregateAnswerKey = !isReadingCloze && !questionAnswersAreInline;
 
  const scenarioText =
   stringValue(record, "scenario_vi") ||
@@ -254,12 +286,14 @@ export function QuestionExerciseBody({
     />
    ) : null}
 
-   <PassageCard
-    itemId={item.id}
-    passage={passage}
-    answers={clozeAnswers}
-    displayMode={displayMode}
-   />
+   {passage ? (
+    <PassageCard
+     itemId={item.id}
+     passage={passage}
+     answers={clozeAnswers}
+     displayMode={displayMode}
+    />
+   ) : null}
 
    <ExerciseRenderIssues item={item} passage={passage} answers={clozeAnswers} />
 
@@ -377,6 +411,7 @@ export function QuestionExerciseBody({
         questionValue={questionValue}
         index={index}
         displayMode={displayMode}
+        answerOverride={answerKey[index]}
        />
       );
 
@@ -403,7 +438,7 @@ export function QuestionExerciseBody({
     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
    ) : null}
 
-   {!isReadingCloze && (
+   {shouldRenderAggregateAnswerKey && (
     <EditableAnswerKeyList
      lessonId={lessonId}
      itemPath={itemPath}

@@ -101,6 +101,7 @@ export function buildExerciseQuestionViewModel({
  }
 
  const question = asRecord(value);
+ const answerOverrideRecord = asRecord(answerOverride);
  const answer = formatAnswer(answerOverride) || answerFromRecord(question);
  const dialogue = arrayValue(question, "dialogue");
  const givenWords = [
@@ -122,8 +123,11 @@ export function buildExerciseQuestionViewModel({
    stringValue(question, "explanation_vi") ||
    stringValue(question, "answer_note_vi") ||
    stringValue(question, "note_vi") ||
+   stringValue(answerOverrideRecord, "explanation_vi") ||
+   stringValue(answerOverrideRecord, "answer_note_vi") ||
+   stringValue(answerOverrideRecord, "note_vi") ||
    objectText(question.evidence, ["quote"]),
-  meaning: stringValue(question, "answer_vi"),
+  meaning: stringValue(question, "answer_vi") || stringValue(answerOverrideRecord, "answer_vi"),
   choices: arrayValue(question, "choices"),
   context: firstTextByKeys(question, [
    "context",

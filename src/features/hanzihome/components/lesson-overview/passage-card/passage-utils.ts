@@ -59,8 +59,12 @@ function numberFromLabelSuffix(label: string): number | null {
 export function answerIndexFromRecord(record: Record<string, unknown>) {
  const directNumber =
   numberValue(record, "blank") ??
+  numberValue(record, "blank_no") ??
+  numberValue(record, "blankNo") ??
   numberValue(record, "index") ??
   numberValue(record, "number") ??
+  numberValue(record, "question_no") ??
+  numberValue(record, "questionNo") ??
   numberValue(record, "order") ??
   numberValue(record, "blank_number");
 
@@ -207,6 +211,56 @@ export function withMissingBlankNumbers(
  return text.replace(new RegExp(PLAIN_BLANK_SOURCE, "g"), (match) => {
   return `${nextBlankNumber()}${match}`;
  });
+}
+
+export function fillClozeBlanksWithAnswers(
+ text: string,
+ answerMap: Map<string, ClozeAnswer>,
+ rendererId: string,
+) {
+ if (!text || answerMap.size === 0) return text;
+
+ let didFill = false;
+ const filledMarkedBlanks = text.replace(
+  new RegExp(BLANK_MARKER_SOURCE, "g"),
+  (match: string, directMarker?: string, parenMarker?: string, bracketMarker?: string) => {
+   const marker = directMarker || parenMarker || bracketMarker || "";
+   const blankNumber = blankLabelToNumber(marker);
+   const label = blankNumber ? `${blankNumber}` : marker;
+   const answer = answerMap.get(label);
+
+   if (!answer) return match;
+
+   didFill = true;
+   return answer.answer;
+  },
+ );
+
+ if (didFill) return filledMarkedBlanks;
+ if (!shouldRenderAsCloze(text, answerMap, rendererId)) return text;
+
+ let plainBlankIndex = 0;
+ return text.replace(new RegExp(PLAIN_BLANK_SOURCE, "g"), (match) => {
+  plainBlankIndex += 1;
+  const answer = answerMap.get(`${plainBlankIndex}`);
+
+  if (!answer) return match;
+
+  didFill = true;
+  return answer.answer;
+ });
+}
+
+export function completedTextFromPassageLines(
+ lines: PassageLine[],
+ answerMap: Map<string, ClozeAnswer>,
+ rendererId: string,
+) {
+ const sourceText = lines.map((line) => line.zh).join("\n\n");
+ if (!sourceText) return "";
+
+ const completedText = fillClozeBlanksWithAnswers(sourceText, answerMap, rendererId);
+ return completedText !== sourceText ? completedText : "";
 }
 
 export function passageLinesFromParagraphs(

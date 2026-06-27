@@ -37,6 +37,20 @@ export function objectText(value: unknown, keys: string[]) {
 
 export function formatAnswer(value: unknown): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
+ const record = asRecord(value);
+ const recordAnswer =
+  stringValue(record, "answer") ||
+  stringValue(record, "answer_zh") ||
+  stringValue(record, "correct") ||
+  stringValue(record, "correct_sentence") ||
+  stringValue(record, "sample_answer") ||
+  stringValue(record, "suggested_answer") ||
+  stringValue(record, "value") ||
+  stringValue(record, "text") ||
+  stringValue(record, "zh");
+
+ if (recordAnswer) return recordAnswer;
+
  return answerToString(value);
 }
 

@@ -3,6 +3,20 @@ import type { VocabularyItem } from "@/features/hanzihome/static-json/schemas/ha
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "./types";
+import { asRecord, stringValue } from "./utils";
+
+function vocabMeaning(item: VocabularyItem) {
+ const record = asRecord(item);
+
+ return (
+  item.meaning_vi ||
+  stringValue(record, "meaning") ||
+  stringValue(record, "vi") ||
+  stringValue(record, "gloss_vi") ||
+  stringValue(record, "definition_vi") ||
+  stringValue(record, "translation_vi")
+ );
+}
 
 export function VocabMiniGrid({
  lessonId,
@@ -20,6 +34,7 @@ export function VocabMiniGrid({
  return (
   <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
    {items.map((item, index) => {
+    const meaning = vocabMeaning(item);
     const card = (
      <div className="rounded-xl border border-border-default bg-bg-primary p-3">
       <div className="flex flex-wrap items-end gap-2">
@@ -30,8 +45,8 @@ export function VocabMiniGrid({
         <p className="font-bold text-accent-text">{item.pinyin}</p>
        )}
       </div>
-      {displayMode.showMeaning && (
-       <p className=" font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>
+      {meaning && (
+       <p className=" font-semibold leading-relaxed text-text-secondary">{meaning}</p>
       )}
       {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
      </div>

@@ -18,9 +18,11 @@ import { RawDataDetails } from "./RawDataDetails";
 export function GenericItemCard({
  value,
  displayMode,
+ debugMode = false,
 }: {
  value: unknown;
  displayMode: LessonDisplayMode;
+ debugMode?: boolean;
 }) {
  const item = asRecord(value);
  const title =
@@ -162,7 +164,7 @@ export function GenericItemCard({
     </div>
    )}
 
-   <RawDataDetails value={value} />
+   {debugMode && <RawDataDetails value={value} />}
   </article>
  );
 }

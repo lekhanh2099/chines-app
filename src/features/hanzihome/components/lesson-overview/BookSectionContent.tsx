@@ -31,7 +31,7 @@ export function BookSectionContent({
 }) {
  const renderSectionFallback = () =>
   hasRenderableValue(section) ? (
-   <GenericItemCard value={section} displayMode={displayMode} />
+   <GenericItemCard value={section} displayMode={displayMode} debugMode={debugMode} />
   ) : (
    <EmptySectionState reason={sectionEmptyReason(section)} />
   );
@@ -182,6 +182,7 @@ export function BookSectionContent({
         path={sectionPath ? [...sectionPath, "items", index] : undefined}
         item={item}
         displayMode={displayMode}
+        debugMode={debugMode}
        />
       ))}
      </div>
@@ -251,6 +252,7 @@ export function BookSectionContent({
         key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
         value={item}
         displayMode={displayMode}
+        debugMode={debugMode}
        />
       ))}
      </div>
@@ -315,6 +317,7 @@ export function BookSectionContent({
        key={stringValue(asRecord(item), "id") || `${index}`}
        value={item}
        displayMode={displayMode}
+       debugMode={debugMode}
       />
      ))}
     </div>
