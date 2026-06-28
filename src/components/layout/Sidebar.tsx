@@ -7,6 +7,7 @@ import {
  ChevronLeft,
  ChevronRight,
  Flame,
+ FileCode2,
  Home,
  BookOpen,
  BookmarkCheck,
@@ -58,9 +59,14 @@ const mainItems: NavItem[] = [
   href: "/hanzihome/grammar",
  },
  {
-  name: "Nhắc nhanh",
-  icon: Lightbulb,
-  href: "/hanzihome/memory-tips",
+ name: "Nhắc nhanh",
+ icon: Lightbulb,
+ href: "/hanzihome/memory-tips",
+ },
+ {
+  name: "HTML files",
+  icon: FileCode2,
+  href: "/hanzihome/html-artifacts",
  },
  {
   name: "Bộ thủ",
@@ -72,7 +78,7 @@ const mainItems: NavItem[] = [
 
 const secondaryItems: NavItem[] = [];
 
-const mobileItems = [mainItems[0], mainItems[1], mainItems[2], mainItems[3], mainItems[8]] as const;
+const mobileItems = [mainItems[0], mainItems[1], mainItems[2], mainItems[3], mainItems[9]] as const;
 
 const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
  "/": "Home",

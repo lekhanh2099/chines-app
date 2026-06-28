@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+import { FileCode2 } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
@@ -25,14 +28,22 @@ export function HanziHomeLibraryHome() {
      title="Thư viện học HanziHome"
      description="Chọn giáo trình và bài học để đọc bài khóa, học từ vựng, nắm ngữ pháp và ôn tập."
      actions={
-      canEdit ? (
-       <HanziHomeLibraryCrudToolbar
-        courses={courses}
-        books={books}
-        editMode={editMode}
-        onEditModeChange={setEditMode}
-       />
-      ) : null
+      <>
+       <Button type="button" variant="outline" asChild>
+        <Link href="/hanzihome/html-artifacts" prefetch={false}>
+         <FileCode2 className="h-4 w-4" />
+         HTML artifacts
+        </Link>
+       </Button>
+       {canEdit ? (
+        <HanziHomeLibraryCrudToolbar
+         courses={courses}
+         books={books}
+         editMode={editMode}
+         onEditModeChange={setEditMode}
+        />
+       ) : null}
+      </>
      }
     />
 

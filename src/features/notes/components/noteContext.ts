@@ -74,10 +74,25 @@ function compactRawTargetKey(targetKey: string): string {
 
 function cleanTags(tags: string[]): string[] {
  return tags
-  .filter((tag) => tag.trim().length > 0)
+  .map((tag) => tag.trim())
+  .filter((tag) => tag.length > 0)
   .filter((tag) => tag !== "hanzihome")
   .filter((tag) => tag !== "quick-note")
   .slice(0, 3);
+}
+
+function uniqueBadges(badges: string[]): string[] {
+ const seen = new Set<string>();
+ const uniqueBadgesList: string[] = [];
+
+ for (const badge of badges) {
+  const normalizedBadge = badge.trim().toLocaleLowerCase("vi-VN");
+  if (!normalizedBadge || seen.has(normalizedBadge)) continue;
+  seen.add(normalizedBadge);
+  uniqueBadgesList.push(badge);
+ }
+
+ return uniqueBadgesList;
 }
 
 export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup): NoteContextView {
@@ -98,7 +113,7 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
    subtitle: lessonTitle,
    relationLabel,
    lessonId: lesson?.id ?? fallbackTarget,
-   badges: [relationLabel, ...noteTags],
+   badges: uniqueBadges([relationLabel, ...noteTags]),
   };
  }
 
@@ -107,7 +122,7 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
    kind: "quick",
    title: "Ghi chú nhanh",
    subtitle: "Không gắn với bài học",
-   badges: ["Quick note", ...noteTags],
+   badges: uniqueBadges(["Quick note", ...noteTags]),
   };
  }
 
@@ -115,7 +130,7 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
   kind: "normal",
   title: "Ghi chú thường",
   subtitle: categoryLabels[note.category],
-  badges: [categoryLabels[note.category], ...noteTags],
+  badges: uniqueBadges([categoryLabels[note.category], ...noteTags]),
  };
 }
 
