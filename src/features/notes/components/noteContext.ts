@@ -84,7 +84,7 @@ function cleanTags(tags: string[]): string[] {
 function uniqueBadges(badges: string[]): string[] {
  const seen = new Set<string>();
  const uniqueBadgesList: string[] = [];
-
+ if (!badges || badges.length === 0) return uniqueBadgesList;
  for (const badge of badges) {
   const normalizedBadge = badge.trim().toLocaleLowerCase("vi-VN");
   if (!normalizedBadge || seen.has(normalizedBadge)) continue;

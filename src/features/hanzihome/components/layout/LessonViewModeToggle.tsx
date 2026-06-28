@@ -16,7 +16,7 @@ export function LessonViewModeToggle() {
      type="button"
      variant={mode === value ? "default" : "ghost"}
      size="sm"
-     className="h-8 px-2 text-xs"
+     className="min-h-11 px-3 text-xs"
      onClick={() => setViewMode(value)}
     >
      {value === "study" ? "Study" : "Debug"}

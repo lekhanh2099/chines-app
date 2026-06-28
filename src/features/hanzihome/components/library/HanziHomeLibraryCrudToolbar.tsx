@@ -29,7 +29,7 @@ export function HanziHomeLibraryCrudToolbar({
     onClick={() => onEditModeChange(!editMode)}
    >
     {editMode ? <X className="h-4 w-4" /> : <Pencil className="h-4 w-4" />}
-    {editMode ? "Tắt sửa" : "Edit"}
+    {editMode ? "Tắt sửa" : "Sửa"}
    </Button>
    {editMode ? (
     <>

@@ -227,6 +227,7 @@ export default function SettingsPage() {
      <label className="space-y-2">
       <span className=" font-semibold text-text-primary">Model text</span>
       <select
+       aria-label="Chọn model Gemini"
        value={geminiModel}
        onChange={(event) => setGeminiModel(event.target.value as GeminiModelId)}
        disabled={isLoading || isSaving}
@@ -364,6 +365,7 @@ function PromptPanel({
    </div>
 
    <textarea
+    aria-label={title}
     value={value}
     onChange={(event) => onChange(event.target.value)}
     disabled={disabled}

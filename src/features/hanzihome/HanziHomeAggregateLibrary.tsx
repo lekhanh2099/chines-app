@@ -330,8 +330,9 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         <input
          value={filters.q}
          onChange={(event) => updateFilter("q", event.target.value)}
+         aria-label={kind === "vocab" ? "Tìm từ vựng" : "Tìm ngữ pháp"}
          placeholder={kind === "vocab" ? "Hán tự, pinyin, nghĩa..." : "Tiêu đề, cấu trúc..."}
-         className="min-w-0 flex-1 bg-transparent  font-semibold text-text-primary outline-none placeholder:text-text-muted"
+         className="h-full min-w-0 flex-1 bg-transparent font-semibold text-text-primary outline-none placeholder:text-text-muted"
         />
        </div>
       </label>
@@ -441,7 +442,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
              module: kind === "vocab" ? "vocab" : "grammar",
             })}
             prefetch={false}
-            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+            className="inline-flex min-h-11 items-center rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
            >
             Mở bài
            </Link>
@@ -464,7 +465,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
                 })
             }
             prefetch={false}
-            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+            className="inline-flex min-h-11 items-center rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
             onClick={(event) => {
              if (kind !== "vocab") {
               event.preventDefault();

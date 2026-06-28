@@ -9,13 +9,6 @@ import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvide
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { Button } from "@/components/ui/button";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import {
@@ -144,65 +137,45 @@ export function Header({ user }: { user?: User | null }) {
    )}
   >
    {hanzihomeBreadcrumb && (
-    <nav
+   <nav
      aria-label="Chuyển nhanh bài HanziHome"
      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
     >
-     <Select
+     <select
       value={hanzihomeBreadcrumb.selectedCourse.id}
-      onValueChange={(courseId) => {
+      onChange={(event) => {
+       const courseId = event.target.value;
        const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
 
        if (course) {
         navigateHanziHome(course.id, 1);
        }
       }}
+      aria-label="Chọn giáo trình HanziHome"
+      className="h-11 max-w-60 rounded-xl border border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/30"
      >
-      <SelectTrigger
-       size="sm"
-       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5  font-semibold text-text-primary shadow-none"
-      >
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent
-       align="start"
-       position="popper"
-       sideOffset={6}
-       className="min-w-[min(28rem,calc(100vw-2rem))]"
-      >
        {hanzihomeBreadcrumb.courses.map((course, index) => (
-        <SelectItem key={course.id + index} value={course.id}>
+        <option key={course.id + index} value={course.id}>
          {course.title}
-        </SelectItem>
+        </option>
        ))}
-      </SelectContent>
-     </Select>
+     </select>
      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
-     <Select
+     <select
       value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
-      onValueChange={(lessonNumber) => {
+      onChange={(event) => {
+       const lessonNumber = event.target.value;
        navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
       }}
+      aria-label="Chọn bài học HanziHome"
+      className="h-11 max-w-60 rounded-xl border border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/30"
      >
-      <SelectTrigger
-       size="sm"
-       className="h-8 max-w-60 border-border-default bg-bg-card px-2.5  font-semibold text-text-primary shadow-none"
-      >
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent
-       align="start"
-       position="popper"
-       sideOffset={6}
-       className="min-w-[min(28rem,calc(100vw-2rem))]"
-      >
        {hanzihomeBreadcrumb.lessons.map((lesson) => (
-        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+        <option key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-        </SelectItem>
+        </option>
        ))}
-      </SelectContent>
-     </Select>
+     </select>
     </nav>
    )}
 
@@ -218,7 +191,7 @@ export function Header({ user }: { user?: User | null }) {
      }}
      placeholder="Tìm toàn bộ HanziHome"
      aria-label="Tìm toàn bộ HanziHome"
-     className="h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
+     className="h-11 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
     />
    </form>
 
@@ -228,7 +201,8 @@ export function Header({ user }: { user?: User | null }) {
      onClick={() => toggleLookup(pathname)}
      variant={lookupEnabled ? "default" : "outline"}
      size="lg"
-     className="h-9 px-2.5"
+     className="h-11 min-w-11 px-3"
+     aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
      title="Bật/Tắt tra từ tự động"
     >
      <BookOpenCheck className="h-5 w-5" />
@@ -238,9 +212,9 @@ export function Header({ user }: { user?: User | null }) {
     <Button
      type="button"
      onClick={toggleTheme}
-     aria-label="Toggle theme"
+     aria-label="Đổi giao diện sáng tối"
      size="icon-lg"
-     className="h-9 w-9"
+     className="h-11 w-11"
     >
      {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
     </Button>

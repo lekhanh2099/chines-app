@@ -277,9 +277,9 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
       <div className="flex flex-wrap gap-2">
        <Badge variant="accent">{savedItems.length} từ</Badge>
        <Link
-        href="/hanzihome/vocab"
-        className="inline-flex h-9 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3  font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
-       >
+       href="/hanzihome/vocab"
+        className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3 font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+      >
         <BookOpen className="h-4 w-4" />
         Tổng hợp từ
        </Link>
@@ -293,12 +293,13 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
       <input
        name="q"
        defaultValue={resolvedSearchParams?.q ?? ""}
+       aria-label="Tìm trong kho ôn tập từ vựng"
        placeholder="Tìm Hán tự, pinyin, Hán Việt, nghĩa..."
        className="h-11 min-w-0 flex-1 bg-transparent  font-semibold text-text-primary outline-none placeholder:text-text-muted"
       />
       <button
        type="submit"
-       className="rounded-lg bg-bg-inverse px-3 py-1.5 text-xs font-black text-text-inverse"
+       className="min-h-11 rounded-lg bg-bg-inverse px-4 text-xs font-black text-text-inverse"
       >
        Tìm
       </button>

@@ -119,7 +119,7 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex h-8 min-w-30 max-w-64 cursor-pointer select-none items-center gap-1 rounded-lg border px-2 text-[13px] transition-all duration-150",
+    "group relative flex min-h-11 min-w-30 max-w-64 cursor-pointer select-none items-center gap-1 rounded-lg border px-2 text-[13px] transition-all duration-150",
     isActive
      ? "z-10 border-border-default bg-bg-card font-semibold text-text-primary shadow-sm"
      : "border-transparent text-text-muted hover:border-border-default hover:bg-bg-subtle hover:text-text-secondary",
@@ -143,11 +143,12 @@ function TabItem({
 
    <button
     className={cn(
-     "shrink-0 w-4.5 h-4.5 rounded-2xl -sm flex items-center justify-center transition-all",
+     "flex h-11 w-11 shrink-0 items-center justify-center rounded-lg transition-all",
      isActive
       ? "text-text-muted hover:text-text-primary hover:bg-bg-subtle"
       : "opacity-0 group-hover:opacity-100 text-text-muted hover:text-text-primary hover:bg-bg-subtle",
     )}
+    aria-label={`Đóng tab ${tab.title}`}
     onClick={(e) => {
      e.stopPropagation();
      onClose();

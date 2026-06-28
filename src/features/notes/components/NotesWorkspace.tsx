@@ -105,7 +105,7 @@ export function NotesWorkspace() {
 
  return (
   <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
-   <header className="shrink-0 border-b border-border-default px-5 py-4 sm:px-8">
+   <header className="shrink-0 border-b border-border-default px-5 py-4 sm:px-8 sticky top-0 z-20 bg-bg-primary">
     <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
      <div>
       <div className="flex flex-wrap items-center gap-2">
@@ -125,8 +125,9 @@ export function NotesWorkspace() {
        <Input
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
+        aria-label="Tìm ghi chú theo tiêu đề, bài học hoặc tag"
         placeholder="Tìm tiêu đề, bài học, tag..."
-        className="h-9 pl-9"
+        className="h-11 pl-9"
        />
       </div>
       <QuickNoteButton variant="outline" />
@@ -145,8 +146,9 @@ export function NotesWorkspace() {
         key={filter.value}
         type="button"
         variant={isActive ? "default" : "ghost"}
-        size="sm"
-        className="gap-2"
+        size="default"
+        className="min-h-11 gap-2"
+        aria-pressed={isActive}
         onClick={() => setActiveFilter(filter.value)}
        >
         {filter.label}

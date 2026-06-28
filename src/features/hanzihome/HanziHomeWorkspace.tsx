@@ -200,7 +200,7 @@ export function HanziHomeWorkspace() {
   );
  }
 
- if (!lesson && resolvedActiveModule !== "radicals") {
+  if (!lesson && resolvedActiveModule !== "radicals") {
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
@@ -211,8 +211,15 @@ export function HanziHomeWorkspace() {
   );
  }
 
- return (
+  return (
   <main className="hanzihome-static-page">
+   <h1 className="sr-only">
+    {resolvedActiveModule === "radicals"
+     ? "Bộ thủ HanziHome"
+     : lesson
+       ? `Bài học ${lesson.title}`
+       : "Không gian học HanziHome"}
+   </h1>
    <div className="flex w-full max-w-full flex-col gap-2.5">
     {resolvedActiveModule === "radicals" ? (
      <RadicalWorkspace

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { Toaster } from "sonner";
+import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { Geist } from "next/font/google";
@@ -36,7 +36,7 @@ export default function RootLayout({
      <QueryProvider>
       <VocabInspectorProvider>{children}</VocabInspectorProvider>
      </QueryProvider>
-     <Toaster position="top-right" richColors />
+     <AppToaster />
     </ThemeProvider>
    </body>
   </html>

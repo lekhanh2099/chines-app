@@ -159,7 +159,9 @@ export default function LoginPage() {
          {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
         </button>
        </p>
-       <p className="text-xs opacity-70">*Tài khoản thử nghiệm sẽ được cung cấp bởi Admin.</p>
+       <p className="text-xs font-medium text-text-secondary">
+        *Tài khoản thử nghiệm sẽ được cung cấp bởi Admin.
+       </p>
       </div>
      </form>
     </div>

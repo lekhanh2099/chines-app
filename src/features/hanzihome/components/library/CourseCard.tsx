@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { BookMarked, Sparkles } from "lucide-react";
+import { ArrowRight, BookMarked } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -71,24 +71,24 @@ export function CourseCard({
 
  return (
   <Card
-   variant="glass"
+   variant="section"
    padding="none"
-   className="group flex h-full min-w-0 flex-col p-5 transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-theme-lg"
+   className="group flex h-full min-w-0 flex-col rounded-xl p-4 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-5"
   >
    <div className="flex min-w-0 items-start justify-between gap-4">
-    <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-subtle text-accent-text shadow-theme-sm">
+    <div className="flex min-w-0 gap-3">
+     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
       <BookMarked className="h-5 w-5" />
      </span>
 
      <div className="min-w-0">
       <div className="flex flex-wrap items-center gap-2">
-       <span className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+       <span className="text-sm font-bold text-text-secondary">
         {primaryBook?.shortTitle || primaryBook?.title || course.type}
        </span>
 
        {stats.books.length > 0 && (
-        <span className="rounded-full bg-bg-subtle px-2.5 py-1 text-[0.7rem] font-black text-text-muted">
+        <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-secondary">
          {stats.books.length} quyển
         </span>
        )}
@@ -96,12 +96,12 @@ export function CourseCard({
        {editMode ? <CourseCrudActions course={course} /> : null}
       </div>
 
-      <h2 className="mt-2 line-clamp-2 text-2xl font-black leading-tight tracking-tight text-text-primary">
+      <h2 className="mt-1.5 line-clamp-2 text-xl font-black leading-snug text-text-primary sm:text-2xl">
        {course.title}
       </h2>
 
       {course.subtitle && (
-       <p className="mt-2 line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
+       <p className="mt-1.5 line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
         {course.subtitle}
        </p>
       )}
@@ -110,13 +110,13 @@ export function CourseCard({
 
     <Button asChild className="hidden shrink-0 sm:inline-flex">
      <Link href={href} prefetch={false}>
-      <Sparkles className="h-4 w-4" />
+      <ArrowRight className="h-4 w-4" />
       Vào học
      </Link>
     </Button>
    </div>
 
-   <div className="mt-5 flex flex-wrap gap-2">
+   <div className="mt-4 flex flex-wrap gap-2">
     <MiniMetric label="Bài" value={visibleLessonCount} />
     <MiniMetric label="Từ" value={visibleVocabCount} />
     <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
@@ -127,7 +127,7 @@ export function CourseCard({
      {stats.books.map((book) => (
       <div
        key={book.id}
-       className="flex items-center gap-1 rounded-full border border-border-default/80 bg-bg-primary/70 px-3 py-1.5"
+       className="flex items-center gap-1 rounded-lg border border-border-default/80 bg-bg-primary px-2.5 py-1.5"
       >
        <span className="text-xs font-bold text-text-secondary">{book.shortTitle || book.title}</span>
        {editMode ? <BookCrudActions book={book} /> : null}
@@ -139,7 +139,7 @@ export function CourseCard({
    <div className="mt-auto grid gap-2 pt-5">
     {courseLessons.length > 0 && (
      <div className="grid gap-1.5">
-      <span className="text-xs font-black uppercase tracking-wide text-text-muted">Bài sẽ mở</span>
+      <span className="text-xs font-bold text-text-secondary">Bài sẽ mở</span>
 
       <div className="flex min-w-0 items-center gap-2">
        <div className="min-w-0 flex-1">
@@ -160,7 +160,7 @@ export function CourseCard({
 
     <Button asChild className="sm:hidden">
      <Link href={href} prefetch={false}>
-      <Sparkles className="h-4 w-4" />
+      <ArrowRight className="h-4 w-4" />
       Vào học
      </Link>
     </Button>

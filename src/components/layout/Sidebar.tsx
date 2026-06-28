@@ -64,7 +64,7 @@ const mainItems: NavItem[] = [
  href: "/hanzihome/memory-tips",
  },
  {
-  name: "HTML files",
+  name: "Tệp HTML",
   icon: FileCode2,
   href: "/hanzihome/html-artifacts",
  },

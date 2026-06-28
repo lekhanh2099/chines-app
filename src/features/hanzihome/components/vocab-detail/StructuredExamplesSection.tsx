@@ -36,7 +36,7 @@ export function StructuredExamplesSection({
          : "border-border-default bg-bg-primary",
        ].join(" ")}
       >
-       <div className="border-l-4 border-accent pl-4">
+       <div className="rounded-lg border border-accent/25 bg-bg-primary/60 p-4">
         <p className="text-2xl font-black leading-relaxed text-text-primary">
          {renderHighlightedVocabText(example.zh, keyword)}
         </p>

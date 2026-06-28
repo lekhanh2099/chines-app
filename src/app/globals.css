@@ -842,7 +842,9 @@ body {
 .editor-quote {
  margin: 0.5em 0;
  padding: 0.5em 1em;
- border-left: 4px solid var(--accent-muted);
+ border: 1px solid var(--border);
+ border-radius: 0.75rem;
+ background: var(--bg-subtle);
  color: var(--text-secondary);
  font-style: italic;
 }
@@ -2056,6 +2058,22 @@ hr.editor-hr.selected {
  }
 }
 
+@media (max-width: 1279px) {
+ .html-artifacts-desktop-shell {
+  display: none !important;
+ }
+}
+
+@media (min-width: 1280px) {
+ .html-artifacts-mobile-shell {
+  display: none !important;
+ }
+
+ .html-artifacts-desktop-shell {
+  display: flex !important;
+ }
+}
+
 @theme inline {
  --font-heading: var(--font-sans);
  --font-sans:
@@ -2267,4 +2285,12 @@ select {
 .editor-input rt,
 .editor-input ruby rt {
  font-family: var(--font-vietnamese) !important;
+}
+
+/* Sonner's default toast transition includes height, which causes layout work on every toast. */
+[data-sonner-toast] {
+ transition:
+  transform 0.4s,
+  opacity 0.4s,
+  box-shadow 0.2s !important;
 }

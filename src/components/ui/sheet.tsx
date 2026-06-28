@@ -31,7 +31,7 @@ export function Sheet({
      "absolute max-w-full overflow-y-auto scrollbar-soft  overflow-x-hidden scrollbar-soft  border-border-default bg-bg-card shadow-theme-lg",
      side === "right"
       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
-      : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border-t-2",
+      : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border",
      className,
     )}
    >

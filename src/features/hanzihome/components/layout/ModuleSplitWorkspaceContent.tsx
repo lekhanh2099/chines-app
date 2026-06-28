@@ -31,7 +31,7 @@ export function ModuleSplitWorkspaceContent() {
  if (!splitEnabled) {
   return (
    <div className="grid gap-2">
-    <div className="hanzihome-liquid-toolbar sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
+    <div className="hanzihome-liquid-toolbar flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1 sticky top-16.25 z-30">
      <div className="min-w-0 flex-1">
       <HanziHomeStudyTabs
        value={runtime.activeModule}

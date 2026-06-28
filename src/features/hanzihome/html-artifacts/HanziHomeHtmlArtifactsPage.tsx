@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { DragEvent, FormEvent } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import {
@@ -52,10 +52,10 @@ import {
 } from "./useHtmlArtifacts";
 
 const artifactTypeLabels: Record<HtmlArtifactType, string> = {
- practice_page: "Practice page",
- mock_exam: "Mock exam",
- grammar_drill: "Grammar drill",
- reference: "Reference",
+ practice_page: "Trang luyện tập",
+ mock_exam: "Đề thử",
+ grammar_drill: "Luyện ngữ pháp",
+ reference: "Tài liệu tham khảo",
  other: "Khác",
 };
 
@@ -114,6 +114,8 @@ type DeleteDialogState =
 type DragItem =
  | { type: "artifact"; id: string }
  | { type: "folder"; id: string };
+
+type MobilePane = "files" | "preview" | "edit";
 
 type FolderTreeNode = HtmlArtifactFolder & {
  children: FolderTreeNode[];
@@ -237,6 +239,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const [selectedId, setSelectedId] = useState<string | "new" | null>(null);
  const [activeFolderId, setActiveFolderId] = useState<FolderFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
+ const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
+ const isDesktopShell = useHtmlArtifactsDesktopShell();
  const [isCreateFolderOpen, setIsCreateFolderOpen] = useState(false);
  const [folderDraft, setFolderDraft] = useState<{
   name: string;
@@ -292,7 +296,7 @@ export function HanziHomeHtmlArtifactsPage() {
  const defaultFolderId = activeFolderId !== "all" && activeFolderId !== "unfiled" ? activeFolderId : null;
 
  const resetForNewArtifact = () => {
- setSelectedId("new");
+  setSelectedId("new");
  };
 
  const openCreateFolderDialog = () => {
@@ -320,9 +324,9 @@ export function HanziHomeHtmlArtifactsPage() {
    });
    setActiveFolderId(folder.id);
    setIsCreateFolderOpen(false);
-   toast.success("Đã tạo folder");
+   toast.success("Đã tạo thư mục");
   } catch (error) {
-   toast.error(getApiErrorMessage(error, "Không thể tạo folder"));
+   toast.error(getApiErrorMessage(error, "Không thể tạo thư mục"));
   }
  };
 
@@ -340,9 +344,9 @@ export function HanziHomeHtmlArtifactsPage() {
     artifactId,
     input: { folderId },
    });
-   toast.success(folderId ? "Đã chuyển file vào folder" : "Đã bỏ file khỏi folder");
+   toast.success(folderId ? "Đã chuyển tệp vào thư mục" : "Đã bỏ tệp khỏi thư mục");
   } catch (error) {
-   toast.error(getApiErrorMessage(error, "Không thể chuyển file"));
+   toast.error(getApiErrorMessage(error, "Không thể chuyển tệp"));
   }
  };
 
@@ -351,7 +355,7 @@ export function HanziHomeHtmlArtifactsPage() {
   if (!folder || folder.parentFolderId === parentFolderId) return;
 
   if (parentFolderId && (folderId === parentFolderId || hasFolderDescendant(folders, folderId, parentFolderId))) {
-   toast.error("Không thể kéo folder vào chính nó hoặc folder con");
+   toast.error("Không thể kéo thư mục vào chính nó hoặc thư mục con");
    return;
   }
 
@@ -360,9 +364,9 @@ export function HanziHomeHtmlArtifactsPage() {
     folderId,
     input: { parentFolderId },
    });
-   toast.success(parentFolderId ? "Đã lồng folder" : "Đã đưa folder ra ngoài");
+   toast.success(parentFolderId ? "Đã lồng thư mục" : "Đã đưa thư mục ra ngoài");
   } catch (error) {
-   toast.error(getApiErrorMessage(error, "Không thể chuyển folder"));
+   toast.error(getApiErrorMessage(error, "Không thể chuyển thư mục"));
   }
  };
 
@@ -398,12 +402,12 @@ export function HanziHomeHtmlArtifactsPage() {
     await deleteFolderMutation.mutateAsync(deleteDialog.folder.id);
     setActiveFolderId("all");
     setDeleteDialog(null);
-    toast.success("Đã xóa folder");
+    toast.success("Đã xóa thư mục");
     return;
    }
 
    await deleteMutation.mutateAsync(deleteDialog.artifact.id);
-   toast.success("Đã xóa HTML file");
+   toast.success("Đã xóa tệp HTML");
    const nextArtifact =
     filteredArtifacts.find((artifact) => artifact.id !== deleteDialog.artifact.id) ?? null;
    setSelectedId(nextArtifact?.id ?? "new");
@@ -412,7 +416,7 @@ export function HanziHomeHtmlArtifactsPage() {
    toast.error(
     getApiErrorMessage(
      error,
-     deleteDialog.kind === "folder" ? "Không thể xóa folder" : "Không thể xóa HTML file",
+     deleteDialog.kind === "folder" ? "Không thể xóa thư mục" : "Không thể xóa tệp HTML",
     ),
    );
   }
@@ -434,20 +438,22 @@ export function HanziHomeHtmlArtifactsPage() {
      input: payload,
     });
     setSelectedId(nextArtifact.id);
-    toast.success("Đã lưu HTML file");
+    setMobilePane("preview");
+    toast.success("Đã lưu tệp HTML");
     return;
    }
 
    const nextArtifact = await createMutation.mutateAsync(payload);
    setSelectedId(nextArtifact.id);
-   toast.success("Đã tạo HTML file");
+   setMobilePane("preview");
+   toast.success("Đã tạo tệp HTML");
   } catch (error) {
-   toast.error(getApiErrorMessage(error, "Không thể lưu HTML file"));
+   toast.error(getApiErrorMessage(error, "Không thể lưu tệp HTML"));
   }
  };
 
  return (
-  <main className="flex h-[calc(100dvh-3.5rem)] min-h-0 w-full flex-col overflow-hidden bg-bg-subtle">
+  <main className="flex h-[calc(100dvh-3.5rem-88px-env(safe-area-inset-bottom))] min-h-0 w-full flex-col overflow-hidden bg-bg-subtle md:h-[calc(100dvh-3.5rem)]">
    <header className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-border-default bg-bg-card px-4 py-3 shadow-theme-sm lg:px-6">
     <div className="flex min-w-0 flex-wrap items-center gap-3">
      <div className="flex min-w-0 items-center gap-3">
@@ -456,13 +462,13 @@ export function HanziHomeHtmlArtifactsPage() {
       </span>
       <div className="min-w-0">
        <div className="flex min-w-0 items-center gap-2">
-        <h1 className="truncate text-lg font-black text-text-primary">HTML files</h1>
+        <h1 className="truncate text-lg font-black text-text-primary">Tệp HTML</h1>
         <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
          {artifacts.length}
         </span>
        </div>
        <p className="truncate text-xs font-semibold text-text-muted">
-        Quản lý HTML đã lưu trong HanziHome.
+        Quản lý các trang luyện tập HTML đã lưu trong HanziHome.
        </p>
       </div>
      </div>
@@ -477,9 +483,9 @@ export function HanziHomeHtmlArtifactsPage() {
    </header>
 
    <CreateFolderDialog
-   folderDraft={folderDraft}
-   folders={folders}
-   isOpen={isCreateFolderOpen}
+    folderDraft={folderDraft}
+    folders={folders}
+    isOpen={isCreateFolderOpen}
     isSaving={createFolderMutation.isPending}
     onFolderDraftChange={setFolderDraft}
     onOpenChange={setIsCreateFolderOpen}
@@ -495,116 +501,201 @@ export function HanziHomeHtmlArtifactsPage() {
     }}
    />
 
-   <div className="grid min-h-0 flex-1 overflow-y-auto xl:hidden">
-    <DirectoryPane
-     activeFolderId={activeFolderId}
-     artifacts={artifacts}
-     folders={folders}
-     filteredArtifacts={filteredArtifacts}
-     dragItem={dragItem}
-     isLoading={artifactsQuery.isLoading}
-     error={artifactsQuery.error}
-     searchQuery={searchQuery}
-     selectedId={effectiveSelectedId}
-     isFolderMutating={isFolderMutating}
-     onCreateArtifact={resetForNewArtifact}
-     onCreateFolder={openCreateFolderDialog}
-     onDeleteActiveFolder={requestDeleteActiveFolder}
-     onDragEnd={() => setDragItem(null)}
-     onDragStart={setDragItem}
-     onDropOnFolder={dropOnFolder}
-     onSearchChange={setSearchQuery}
-     onSelectArtifact={setSelectedId}
-     onSelectFolder={setActiveFolderId}
-    />
-    <PreviewPane
-     selectedArtifact={selectedArtifact}
-     selectedSummary={selectedSummary}
-     isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
-    />
-    <EditorPane
-     key={selectedArtifact?.id ?? `new-${defaultFolderId ?? "none"}`}
-     artifact={selectedArtifact}
-     defaultFolderId={defaultFolderId}
-     folders={folders}
-     isSaving={isSaving}
-     isDeleting={isDeleting}
-     onSubmit={(formState) => void saveArtifact(formState)}
-     onDelete={requestDeleteSelectedArtifact}
-    />
-   </div>
+   {isDesktopShell ? null : (
+    <div className="html-artifacts-mobile-shell flex min-h-0 flex-1 flex-col overflow-hidden">
+     <MobilePaneTabs activePane={mobilePane} onChange={setMobilePane} />
+     <div className="min-h-0 flex-1 overflow-hidden">
+      {mobilePane === "files" ? (
+       <DirectoryPane
+        activeFolderId={activeFolderId}
+        artifacts={artifacts}
+        folders={folders}
+        filteredArtifacts={filteredArtifacts}
+        dragItem={dragItem}
+        isLoading={artifactsQuery.isLoading}
+        error={artifactsQuery.error}
+        searchQuery={searchQuery}
+        selectedId={effectiveSelectedId}
+        isFolderMutating={isFolderMutating}
+        onCreateArtifact={() => {
+         resetForNewArtifact();
+         setMobilePane("edit");
+        }}
+        onCreateFolder={openCreateFolderDialog}
+        onDeleteActiveFolder={requestDeleteActiveFolder}
+        onDragEnd={() => setDragItem(null)}
+        onDragStart={setDragItem}
+        onDropOnFolder={dropOnFolder}
+        onSearchChange={setSearchQuery}
+        onSelectArtifact={(artifactId) => {
+         setSelectedId(artifactId);
+         setMobilePane("preview");
+        }}
+        onSelectFolder={setActiveFolderId}
+       />
+      ) : null}
+      {mobilePane === "preview" ? (
+       <PreviewPane
+        selectedArtifact={selectedArtifact}
+        selectedSummary={selectedSummary}
+        isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+       />
+      ) : null}
+      {mobilePane === "edit" ? (
+       <EditorPane
+        key={selectedArtifact?.id ?? `new-${defaultFolderId ?? "none"}`}
+        artifact={selectedArtifact}
+        defaultFolderId={defaultFolderId}
+        folders={folders}
+        isSaving={isSaving}
+        isDeleting={isDeleting}
+        onSubmit={(formState) => void saveArtifact(formState)}
+        onDelete={requestDeleteSelectedArtifact}
+       />
+      ) : null}
+     </div>
+    </div>
+   )}
 
-   <ResizablePanelGroup
-    id="html-artifacts-panels"
-    key="html-artifacts-layout-v2"
-    orientation="horizontal"
-    defaultLayout={desktopLayout}
-    className="hidden min-h-0 min-w-0 flex-1 overflow-hidden bg-border-default xl:flex"
-   >
-    <ResizablePanel
-     id="html-artifacts-directory"
-     defaultSize={`${desktopLayout["html-artifacts-directory"]}%`}
-     minSize="18%"
-     maxSize="34%"
-     className="min-h-0 min-w-0 overflow-hidden"
+   {isDesktopShell ? (
+    <ResizablePanelGroup
+     id="html-artifacts-panels"
+     key="html-artifacts-layout-v2"
+     orientation="horizontal"
+     defaultLayout={desktopLayout}
+     className="html-artifacts-desktop-shell min-h-0 min-w-0 flex-1 overflow-hidden bg-border-default"
     >
-     <DirectoryPane
-      activeFolderId={activeFolderId}
-      artifacts={artifacts}
-      folders={folders}
-      filteredArtifacts={filteredArtifacts}
-      dragItem={dragItem}
-      isLoading={artifactsQuery.isLoading}
-      error={artifactsQuery.error}
-      searchQuery={searchQuery}
-      selectedId={effectiveSelectedId}
-      isFolderMutating={isFolderMutating}
-      onCreateArtifact={resetForNewArtifact}
-      onCreateFolder={openCreateFolderDialog}
-      onDeleteActiveFolder={requestDeleteActiveFolder}
-      onDragEnd={() => setDragItem(null)}
-      onDragStart={setDragItem}
-      onDropOnFolder={dropOnFolder}
-      onSearchChange={setSearchQuery}
-      onSelectArtifact={setSelectedId}
-      onSelectFolder={setActiveFolderId}
-     />
-    </ResizablePanel>
-    <ResizableHandle />
-    <ResizablePanel
-     id="html-artifacts-preview"
-     defaultSize={`${desktopLayout["html-artifacts-preview"]}%`}
-     minSize="34%"
-     className="min-h-0 min-w-0 overflow-hidden"
-    >
-     <PreviewPane
-      selectedArtifact={selectedArtifact}
-      selectedSummary={selectedSummary}
-      isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
-     />
-    </ResizablePanel>
-    <ResizableHandle />
-    <ResizablePanel
-     id="html-artifacts-editor"
-     defaultSize={`${desktopLayout["html-artifacts-editor"]}%`}
-     minSize="22%"
-     maxSize="38%"
-     className="min-h-0 min-w-0 overflow-hidden"
-    >
-     <EditorPane
-      key={selectedArtifact?.id ?? `new-${defaultFolderId ?? "none"}`}
-      artifact={selectedArtifact}
-      defaultFolderId={defaultFolderId}
-      folders={folders}
-      isSaving={isSaving}
-      isDeleting={isDeleting}
-      onSubmit={(formState) => void saveArtifact(formState)}
-      onDelete={requestDeleteSelectedArtifact}
-     />
-    </ResizablePanel>
-   </ResizablePanelGroup>
+     <ResizablePanel
+      id="html-artifacts-directory"
+      defaultSize={`${desktopLayout["html-artifacts-directory"]}%`}
+      minSize="18%"
+      maxSize="34%"
+      className="min-h-0 min-w-0 overflow-hidden"
+     >
+      <DirectoryPane
+       activeFolderId={activeFolderId}
+       artifacts={artifacts}
+       folders={folders}
+       filteredArtifacts={filteredArtifacts}
+       dragItem={dragItem}
+       isLoading={artifactsQuery.isLoading}
+       error={artifactsQuery.error}
+       searchQuery={searchQuery}
+       selectedId={effectiveSelectedId}
+       isFolderMutating={isFolderMutating}
+       onCreateArtifact={resetForNewArtifact}
+       onCreateFolder={openCreateFolderDialog}
+       onDeleteActiveFolder={requestDeleteActiveFolder}
+       onDragEnd={() => setDragItem(null)}
+       onDragStart={setDragItem}
+       onDropOnFolder={dropOnFolder}
+       onSearchChange={setSearchQuery}
+       onSelectArtifact={setSelectedId}
+       onSelectFolder={setActiveFolderId}
+      />
+     </ResizablePanel>
+     <ResizableHandle />
+     <ResizablePanel
+      id="html-artifacts-preview"
+      defaultSize={`${desktopLayout["html-artifacts-preview"]}%`}
+      minSize="34%"
+      className="min-h-0 min-w-0 overflow-hidden"
+     >
+      <PreviewPane
+       selectedArtifact={selectedArtifact}
+       selectedSummary={selectedSummary}
+       isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+      />
+     </ResizablePanel>
+     <ResizableHandle />
+     <ResizablePanel
+      id="html-artifacts-editor"
+      defaultSize={`${desktopLayout["html-artifacts-editor"]}%`}
+      minSize="22%"
+      maxSize="38%"
+      className="min-h-0 min-w-0 overflow-hidden"
+     >
+      <EditorPane
+       key={selectedArtifact?.id ?? `new-${defaultFolderId ?? "none"}`}
+       artifact={selectedArtifact}
+       defaultFolderId={defaultFolderId}
+       folders={folders}
+       isSaving={isSaving}
+       isDeleting={isDeleting}
+       onSubmit={(formState) => void saveArtifact(formState)}
+       onDelete={requestDeleteSelectedArtifact}
+      />
+     </ResizablePanel>
+    </ResizablePanelGroup>
+   ) : null}
   </main>
  );
+}
+
+function MobilePaneTabs({
+ activePane,
+ onChange,
+}: {
+ activePane: MobilePane;
+ onChange: (pane: MobilePane) => void;
+}) {
+ const panes: Array<{ key: MobilePane; label: string; icon: typeof Folder }> = [
+  { key: "files", label: "Tệp", icon: Folder },
+  { key: "preview", label: "Xem trước", icon: Code2 },
+  { key: "edit", label: "Sửa", icon: FileCode2 },
+ ];
+
+ return (
+  <div className="shrink-0 border-b border-border-default bg-bg-card p-2">
+   <div
+   role="tablist"
+    aria-label="Chọn vùng tệp HTML"
+    className="grid grid-cols-3 gap-1 rounded-xl bg-bg-subtle p-1"
+   >
+    {panes.map((pane) => {
+     const Icon = pane.icon;
+     const active = activePane === pane.key;
+
+     return (
+      <button
+       key={pane.key}
+       type="button"
+       role="tab"
+       aria-selected={active}
+       className={cn(
+        "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-lg px-2 text-xs font-black transition-colors",
+        active
+         ? "bg-bg-card text-primary shadow-theme-sm"
+         : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
+       )}
+       onClick={() => onChange(pane.key)}
+      >
+       <Icon className="h-3.5 w-3.5 shrink-0" />
+       <span className="truncate">{pane.label}</span>
+      </button>
+     );
+    })}
+   </div>
+  </div>
+ );
+}
+
+function useHtmlArtifactsDesktopShell() {
+ const [isDesktopShell, setIsDesktopShell] = useState(false);
+
+ useEffect(() => {
+  const query = window.matchMedia("(min-width: 1280px)");
+  const updateShell = () => setIsDesktopShell(query.matches);
+
+  updateShell();
+  query.addEventListener("change", updateShell);
+
+  return () => {
+   query.removeEventListener("change", updateShell);
+  };
+ }, []);
+
+ return isDesktopShell;
 }
 
 function DirectoryPane({
@@ -662,13 +753,13 @@ function DirectoryPane({
     <Button
      type="button"
      variant="outline"
-     size="sm"
-     className="h-8 shrink-0 px-2.5"
+     size="default"
+     className="min-h-11 shrink-0 px-3"
      disabled={isFolderMutating}
      onClick={onCreateFolder}
     >
      <FolderPlus className="h-4 w-4" />
-     Folder mới
+     Thư mục mới
     </Button>
    </div>
 
@@ -676,10 +767,11 @@ function DirectoryPane({
     <div className="relative">
      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
      <Input
-      value={searchQuery}
-      onChange={(event) => onSearchChange(event.target.value)}
-      placeholder="Search"
-      className="h-9 pl-9"
+     value={searchQuery}
+     onChange={(event) => onSearchChange(event.target.value)}
+     aria-label="Tìm tệp HTML"
+     placeholder="Tìm tệp"
+     className="h-11 pl-9"
      />
     </div>
    </div>
@@ -735,21 +827,21 @@ function DirectoryPane({
       onClick={onDeleteActiveFolder}
      >
       <Trash2 className="h-4 w-4" />
-      Xóa folder
+      Xóa thư mục
      </Button>
    ) : null}
    </div>
 
    <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
     <div className="flex min-w-0 items-center gap-2">
-     <h3 className="text-sm font-black text-text-primary">Files</h3>
+     <h3 className="text-sm font-black text-text-primary">Tệp</h3>
      <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
       {filteredArtifacts.length}
      </span>
     </div>
-    <Button type="button" size="sm" className="h-8 shrink-0 px-2.5" onClick={onCreateArtifact}>
+    <Button type="button" size="default" className="min-h-11 shrink-0 px-3" onClick={onCreateArtifact}>
      <Plus className="h-4 w-4" />
-     File mới
+     Tệp mới
     </Button>
    </div>
 
@@ -766,13 +858,13 @@ function DirectoryPane({
       role="alert"
       className="rounded-lg border border-destructive/20 bg-destructive/10 p-3 text-sm font-bold text-destructive"
      >
-      Không tải được HTML files.
+      Không tải được tệp HTML.
      </p>
     )}
 
     {!isLoading && !error && filteredArtifacts.length === 0 && (
      <p className="rounded-lg border border-dashed border-border-default bg-bg-subtle p-3 text-sm font-bold text-text-muted">
-      Folder này chưa có file.
+      Thư mục này chưa có tệp.
      </p>
     )}
 
@@ -848,7 +940,7 @@ function FolderRow({
    onDrop={handleDrop}
    onClick={onClick}
    className={cn(
-    "flex h-10 min-w-0 items-center gap-2 rounded-lg border px-2 text-left text-sm font-bold transition-colors",
+    "flex min-h-11 min-w-0 items-center gap-2 rounded-lg border px-2 text-left text-sm font-bold transition-colors",
     active
      ? "border-primary/45 bg-primary/10 text-primary shadow-theme-sm"
      : "border-border-default bg-bg-primary text-text-secondary hover:border-primary/25 hover:bg-bg-subtle hover:text-text-primary",
@@ -934,14 +1026,14 @@ function PreviewPane({
  isFetching: boolean;
 }) {
  return (
-  <section className="flex h-full min-h-[32rem] min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card lg:min-h-0">
+  <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
    <div className="flex h-12 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
     <div className="min-w-0">
      <h2 className="truncate text-sm font-black text-text-primary">
       {getArtifactTitle(selectedArtifact ?? selectedSummary)}
      </h2>
      <p className="truncate text-xs font-semibold text-text-muted">
-      {selectedArtifact?.updatedAt ? `Cập nhật ${formatDate(selectedArtifact.updatedAt)}` : "Preview"}
+      {selectedArtifact?.updatedAt ? `Cập nhật ${formatDate(selectedArtifact.updatedAt)}` : "Xem trước"}
      </p>
     </div>
     <span className="inline-flex items-center gap-1 rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
@@ -950,7 +1042,7 @@ function PreviewPane({
     </span>
    </div>
 
-   <div className="min-h-0 flex-1 overflow-hidden bg-white">
+   <div className="min-h-0 flex-1 overflow-auto bg-white">
     {isFetching ? (
      <div className="flex h-full items-center justify-center gap-2 text-sm font-bold text-text-muted">
       <Loader2 className="h-4 w-4 animate-spin" />
@@ -962,11 +1054,11 @@ function PreviewPane({
       title={selectedArtifact.title}
       sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
       srcDoc={selectedArtifact.html}
-      className="h-full w-full border-0"
+      className="h-full min-h-[32rem] w-full min-w-[22rem] border-0 xl:min-w-0"
      />
     ) : (
      <div className="flex h-full items-center justify-center p-6 text-center text-sm font-bold text-text-muted">
-      Chọn một file đã lưu hoặc paste HTML rồi bấm Lưu DB.
+      Chọn một tệp đã lưu hoặc dán HTML rồi bấm Lưu.
      </div>
     )}
    </div>
@@ -1004,11 +1096,11 @@ function ConfirmDeleteDialog({
  onOpenChange: (open: boolean) => void;
 }) {
  const isFolder = deleteDialog?.kind === "folder";
- const title = isFolder ? "Xóa folder?" : "Xóa HTML file?";
+ const title = isFolder ? "Xóa thư mục?" : "Xóa tệp HTML?";
  const name = isFolder ? deleteDialog.folder.name : deleteDialog?.artifact.title;
  const description = isFolder
-  ? `File trong "${name}" sẽ được chuyển về Chưa phân loại.`
-  : `"${name ?? "File này"}" sẽ bị xóa khỏi database.`;
+  ? `Tệp trong "${name}" sẽ được chuyển về Chưa phân loại.`
+  : `"${name ?? "Tệp này"}" sẽ bị xóa khỏi database.`;
 
  return (
   <Dialog open={Boolean(deleteDialog)} onOpenChange={onOpenChange}>
@@ -1061,17 +1153,17 @@ function CreateFolderDialog({
    <DialogContent className="max-w-md">
     <form className="grid gap-4" onSubmit={onSubmit}>
      <DialogHeader>
-      <DialogTitle>Folder mới</DialogTitle>
+      <DialogTitle>Thư mục mới</DialogTitle>
       <DialogDescription>
        {parentFolder
-        ? `Tạo folder con trong "${parentFolder.name}".`
-        : "Đặt tên và màu để gom HTML files theo nhóm."}
+        ? `Tạo thư mục con trong "${parentFolder.name}".`
+        : "Đặt tên và màu để gom tệp HTML theo nhóm."}
       </DialogDescription>
      </DialogHeader>
 
      <DialogBody>
       <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-       Tên folder
+       Tên thư mục
        <Input
         value={folderDraft.name}
         onChange={(event) =>
@@ -1096,7 +1188,7 @@ function CreateFolderDialog({
            key={color}
            type="button"
            className={cn(
-            "h-9 w-9 rounded-full border-2 shadow-theme-sm ring-offset-2 ring-offset-bg-card transition",
+            "h-11 w-11 rounded-full border-2 shadow-theme-sm ring-offset-2 ring-offset-bg-card transition",
             folderColorSwatchClasses[color],
             selected ? "ring-2 ring-ring" : "opacity-80 hover:opacity-100",
            )}
@@ -1126,7 +1218,7 @@ function CreateFolderDialog({
       </Button>
       <Button type="submit" disabled={isSaving || !folderDraft.name.trim()}>
        {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <FolderPlus className="h-4 w-4" />}
-       Tạo folder
+       Tạo thư mục
       </Button>
      </DialogFooter>
     </form>
@@ -1201,13 +1293,13 @@ function ArtifactForm({
    onSubmit={submitForm}
   >
    <div className="flex items-center justify-between gap-2">
-    <h2 className="font-black text-text-primary">{artifact ? "Sửa file" : "Tạo file"}</h2>
+    <h2 className="font-black text-text-primary">{artifact ? "Sửa tệp" : "Tạo tệp"}</h2>
     <div className="flex gap-2">
      {artifact && (
       <Button
        type="button"
        variant="destructive"
-       size="sm"
+       size="default"
        disabled={isDeleting || isSaving}
        onClick={onDelete}
       >
@@ -1215,9 +1307,9 @@ function ArtifactForm({
        Xóa
       </Button>
      )}
-     <Button type="submit" size="sm" disabled={isSaving || isDeleting}>
+     <Button type="submit" size="default" disabled={isSaving || isDeleting}>
       {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-      Lưu DB
+      Lưu
      </Button>
     </div>
    </div>
@@ -1227,15 +1319,17 @@ function ArtifactForm({
     <Input
      value={form.title}
      onChange={(event) => setForm((current) => ({ ...current, title: event.target.value }))}
+     aria-label="Tiêu đề tệp HTML"
      placeholder="SC3 Mock Exam 03"
      required
     />
    </label>
 
    <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-    Folder
+    Thư mục
     <select
-     className="h-10 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
+     aria-label="Chọn thư mục cho tệp HTML"
+     className="h-11 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
      value={form.folderId ?? noFolderValue}
      onChange={(event) =>
       setForm((current) => ({
@@ -1255,9 +1349,10 @@ function ArtifactForm({
 
    <div className="grid gap-3 sm:grid-cols-[160px_minmax(0,1fr)] lg:grid-cols-1 xl:grid-cols-[150px_minmax(0,1fr)]">
     <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-     Loại
+     Loại tệp
      <select
-      className="h-10 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
+      aria-label="Chọn loại tệp HTML"
+      className="h-11 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
       value={form.artifactType}
       onChange={(event) =>
        setForm((current) => ({
@@ -1275,10 +1370,11 @@ function ArtifactForm({
     </label>
 
     <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-     Tags
+     Tag
      <Input
       value={form.tagsInput}
       onChange={(event) => setForm((current) => ({ ...current, tagsInput: event.target.value }))}
+      aria-label="Tag của tệp HTML"
       placeholder="SC3, mock, bổ ngữ"
      />
     </label>
@@ -1286,11 +1382,11 @@ function ArtifactForm({
 
    <div className="flex min-h-0 flex-1 flex-col gap-1.5">
     <div className="flex items-center justify-between gap-2">
-     <span className="text-sm font-bold text-text-primary">HTML</span>
+     <span id="html-source-label" className="text-sm font-bold text-text-primary">HTML</span>
      <Button
       type="button"
       variant="outline"
-      size="xs"
+      size="default"
       disabled={isSaving || isDeleting || isFormattingHtml || !form.html.trim()}
       onClick={formatHtml}
      >
@@ -1299,10 +1395,11 @@ function ArtifactForm({
       ) : (
        <Code2 className="h-3.5 w-3.5" />
       )}
-      Format
+      Định dạng
      </Button>
     </div>
     <HtmlSourceEditor
+     ariaLabelledBy="html-source-label"
      value={form.html}
      onChange={(htmlValue) => setForm((current) => ({ ...current, html: htmlValue }))}
     />
@@ -1312,16 +1409,18 @@ function ArtifactForm({
 }
 
 function HtmlSourceEditor({
+ ariaLabelledBy,
  value,
  onChange,
 }: {
+ ariaLabelledBy: string;
  value: string;
  onChange: (value: string) => void;
 }) {
  return (
   <div className="h-[clamp(18rem,48dvh,34rem)] overflow-hidden rounded-2xl border border-border-default bg-bg-primary shadow-inner focus-within:ring-2 focus-within:ring-ring [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full">
    <CodeMirror
-    aria-label="HTML source"
+    aria-labelledby={ariaLabelledBy}
     value={value}
     height="100%"
     basicSetup={{

@@ -212,10 +212,10 @@ function LessonContentModuleSelector({
       {selectedModules.length} phần
      </span>
      <button
-      type="button"
-      onClick={() => onApplyPreset([])}
-      disabled={!hasSelection}
-      className="rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted transition-colors hover:bg-bg-elevated hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-50"
+     type="button"
+     onClick={() => onApplyPreset([])}
+     disabled={!hasSelection}
+      className="min-h-11 rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted transition-colors hover:bg-bg-elevated hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-50"
      >
       Bỏ chọn
      </button>
@@ -234,7 +234,7 @@ function LessonContentModuleSelector({
        aria-pressed={isSelected}
        title={module.description}
        className={[
-        "rounded-full border px-3 py-1.5 text-sm font-black transition-colors",
+        "min-h-11 rounded-full border px-3 py-1.5 text-sm font-black transition-colors",
         isSelected
          ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
          : "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
@@ -250,10 +250,10 @@ function LessonContentModuleSelector({
     <span className="text-xs font-black uppercase tracking-wide text-text-muted">Preset</span>
     {LESSON_CONTENT_PRESETS.map((preset) => (
      <button
-      key={preset.label}
-      type="button"
-      onClick={() => onApplyPreset(preset.modules)}
-      className="rounded-full border border-border-default bg-bg-card px-2.5 py-1 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+     key={preset.label}
+     type="button"
+     onClick={() => onApplyPreset(preset.modules)}
+      className="min-h-11 rounded-full border border-border-default bg-bg-card px-3 py-1 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
      >
       {preset.label}
      </button>
@@ -332,7 +332,7 @@ function SelectedLessonContentPreview({
           module: "overview",
          })}
          prefetch={false}
-         className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+         className="inline-flex min-h-11 items-center rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
         >
          Mở bài
         </Link>

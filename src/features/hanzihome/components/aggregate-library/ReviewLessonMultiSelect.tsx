@@ -124,7 +124,7 @@ export function ReviewLessonMultiSelect({
        key={lesson.id}
        type="button"
        onClick={() => onToggleLesson(lesson.id)}
-       className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs font-black text-text-primary transition-colors hover:bg-bg-elevated"
+       className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs font-black text-text-primary transition-colors hover:bg-bg-elevated"
        title={`Bỏ ${formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}`}
       >
        <span>{formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}</span>
@@ -139,9 +139,9 @@ export function ReviewLessonMultiSelect({
      )}
 
      <button
-      type="button"
-      onClick={clearSelectedLessons}
-      className="rounded-full px-2 py-1 text-xs font-black text-text-muted transition-colors hover:text-text-primary"
+     type="button"
+     onClick={clearSelectedLessons}
+      className="min-h-11 rounded-full px-3 py-1 text-xs font-black text-text-muted transition-colors hover:text-text-primary"
      >
      Xóa hết
      </button>
@@ -161,8 +161,9 @@ export function ReviewLessonMultiSelect({
       <input
        value={query}
        onChange={(event) => setQuery(event.target.value)}
+       aria-label="Tìm bài để ôn"
        placeholder="Tìm bài, ví dụ: Bài 10..."
-       className="h-10 w-full rounded-xl border border-border-default bg-bg-input pl-9 pr-3 text-sm font-bold text-text-primary outline-none transition-colors focus:border-accent"
+       className="h-11 w-full rounded-xl border border-border-default bg-bg-input pl-9 pr-3 text-sm font-bold text-text-primary outline-none transition-colors focus:border-accent"
       />
      </div>
 
@@ -178,7 +179,7 @@ export function ReviewLessonMultiSelect({
           type="button"
           onClick={() => onToggleLesson(lesson.id)}
           className={[
-           "flex min-h-10 items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-black transition-colors",
+           "flex min-h-11 items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-black transition-colors",
            selected
             ? "border-accent bg-accent-subtle text-accent-text"
             : "border-border-default bg-bg-card text-text-primary hover:border-accent hover:bg-bg-elevated",

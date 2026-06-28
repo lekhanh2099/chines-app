@@ -212,7 +212,7 @@ export function MarkdownContent({ content, className }: MarkdownContentProps) {
      return (
       <blockquote
        key={`${index}-${block.text}`}
-       className="rounded-xl border-l-4 border-info bg-info-subtle px-4 py-3  font-semibold leading-relaxed text-info-text"
+       className="rounded-xl border border-info/30 bg-info-subtle px-4 py-3  font-semibold leading-relaxed text-info-text"
       >
        <MarkdownParagraph text={block.text} />
       </blockquote>

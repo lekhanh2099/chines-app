@@ -707,7 +707,7 @@ export default function EditorFloatingMenu() {
             variant="ghost"
             size="icon-sm"
             className={cn(
-             "h-8 w-8 min-w-0 rounded-2xl -full px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
+             "h-8 w-8 min-w-0 rounded-2xl -full px-0 text-amber-700 hover:bg-amber-50 hover:text-amber-800",
              showNote && "bg-amber-100 text-amber-700",
             )}
             onMouseDown={preserveEditorSelection}
@@ -760,8 +760,8 @@ export default function EditorFloatingMenu() {
           variant="ghost"
           size="icon-sm"
           className={cn(
-           "h-8 w-8 min-w-0 rounded-xl border border-transparent px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
-           showInlineNote && "border-amber-200 bg-amber-50 text-amber-700",
+           "h-8 w-8 min-w-0 rounded-xl border border-transparent px-0 text-amber-700 hover:bg-amber-50 hover:text-amber-800",
+           showInlineNote && "border-amber-200 bg-amber-50 text-amber-800",
           )}
           onMouseDown={preserveEditorSelection}
           onClick={handleToggleInlineNote}
@@ -954,7 +954,7 @@ export default function EditorFloatingMenu() {
               preserveEditorSelection(event);
               handleInsertNoteLink(note);
              }}
-             className="w-full text-left rounded-2xl  px-3 py-1.5  hover:bg-indigo-100 transition-colors text-slate-700"
+             className="w-full text-left rounded-2xl  px-3 py-1.5  text-indigo-950 transition-colors hover:bg-indigo-100"
             >
              {note.title}
             </button>
