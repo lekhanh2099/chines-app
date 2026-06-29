@@ -4,22 +4,23 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
+ BookOpenCheck,
+ BookOpenText,
  ChevronLeft,
  ChevronRight,
  Flame,
  FileCode2,
  Home,
- BookOpen,
- BookmarkCheck,
- GraduationCap,
+ Languages,
  Layers3,
  Lightbulb,
  LogOut,
  NotebookPen,
  NotebookTabs,
- Sparkles,
+ Repeat2,
 } from "lucide-react";
 import { toast } from "sonner";
+import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { createClient } from "@/lib/supabase/client";
 import { useSidebarStore } from "@/stores/sidebar-store";
 import { cn } from "@/lib/utils";
@@ -35,7 +36,7 @@ const mainItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
  {
   name: "HanziHome",
-  icon: Sparkles,
+  icon: BookOpenCheck,
   href: "/hanzihome",
  },
  {
@@ -45,23 +46,23 @@ const mainItems: NavItem[] = [
  },
  {
   name: "SRS từ",
-  icon: BookmarkCheck,
+  icon: Repeat2,
   href: "/dictionary",
  },
  {
   name: "Tổng hợp từ",
-  icon: BookOpen,
+  icon: Languages,
   href: "/hanzihome/vocab",
  },
  {
   name: "Tổng hợp ngữ pháp",
-  icon: GraduationCap,
+  icon: BookOpenText,
   href: "/hanzihome/grammar",
  },
  {
- name: "Nhắc nhanh",
- icon: Lightbulb,
- href: "/hanzihome/memory-tips",
+  name: "Nhắc nhanh",
+  icon: Lightbulb,
+  href: "/hanzihome/memory-tips",
  },
  {
   name: "Tệp HTML",
@@ -185,9 +186,7 @@ export function Sidebar() {
      )}
     >
      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-accent-subtle text-accent-text">
-       <span className="text-2xl leading-none">汉</span>
-      </div>
+      <AppLogoMark />
       {!effectiveCollapsed && (
        <span className="truncate font-black text-text-primary">HanziHome</span>
       )}

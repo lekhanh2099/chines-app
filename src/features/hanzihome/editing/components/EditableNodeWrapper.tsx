@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { Children, cloneElement, isValidElement, useState, type ReactElement, type ReactNode } from "react";
 import { ArrowDown, ArrowUp, Trash2 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -35,6 +35,28 @@ type EditableNodeWrapperProps = {
  editOnly?: boolean;
  children: ReactNode;
 };
+
+type ElementWithChildren = ReactElement<{ children?: ReactNode }>;
+
+function isElementWithChildren(value: ReactNode): value is ElementWithChildren {
+ return isValidElement<{ children?: ReactNode }>(value);
+}
+
+function injectControlsIntoChild(children: ReactNode, controls: ReactNode): ReactNode {
+ const childList = Children.toArray(children);
+ const firstChild = childList[0];
+
+ if (childList.length === 0) return controls;
+
+ if (isElementWithChildren(firstChild)) {
+  return [
+   cloneElement(firstChild, undefined, firstChild.props.children, controls),
+   ...childList.slice(1),
+  ];
+ }
+
+ return [controls, ...childList];
+}
 
 export function EditableNodeWrapper({
  lessonId,
@@ -147,11 +169,8 @@ export function EditableNodeWrapper({
   }
  };
 
- return (
-  <div
-   className={cn("overflow-hidden rounded-xl border border-dashed border-accent/45", className)}
-  >
-   <div className="flex min-h-10 items-center justify-end gap-1 border-b border-accent/20 bg-accent-subtle/30 px-2 py-1.5">
+ const controls = (
+  <div className="flex items-center justify-end gap-1">
     <EditButton onClick={openNode} label={editLabel} />
     {canReorder ? (
      <>
@@ -193,7 +212,31 @@ export function EditableNodeWrapper({
      </Button>
     ) : null}
    </div>
-   {children}
+ );
+ const childList = Children.toArray(children);
+ const firstChild = childList[0];
+ let content: ReactNode;
+
+ if (childList.length === 1 && isElementWithChildren(firstChild)) {
+  content = cloneElement(
+   firstChild,
+   undefined,
+   injectControlsIntoChild(firstChild.props.children, controls),
+  );
+ } else {
+  content = (
+   <>
+    {controls}
+    {children}
+   </>
+  );
+ }
+
+ return (
+  <div
+   className={cn("overflow-hidden rounded-xl border border-dashed border-accent/45", className)}
+  >
+   {content}
   </div>
  );
 }

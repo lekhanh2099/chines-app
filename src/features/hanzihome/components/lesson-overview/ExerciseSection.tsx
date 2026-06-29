@@ -26,8 +26,8 @@ export function ExerciseCard({
  const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
  const content = (
-  <article className="nova-glass-panel grid gap-4 rounded-2xl p-4 sm:p-5">
-   <div className="flex items-start gap-3 border-b border-border-default/70 pb-4">
+  <article className="grid gap-4 rounded-xl border border-border-default border-l-accent/30 bg-bg-card p-4 shadow-theme-sm sm:p-5">
+   <div className="flex items-start justify-between gap-3">
     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-bg-subtle text-sm font-black text-accent-text">
      {item.order}
     </span>

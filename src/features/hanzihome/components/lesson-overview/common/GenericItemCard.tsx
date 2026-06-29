@@ -56,7 +56,7 @@ export function GenericItemCard({
  });
 
  return (
-  <article className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+  <article className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
    <h4 className="text-base font-black text-text-primary">{title}</h4>
 
    {hanzi && hanzi !== title && (

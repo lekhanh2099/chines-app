@@ -108,6 +108,7 @@ export function ReadingCard({
  const retellOutline = arrayValue(record, "retell_outline");
  const baSentences = arrayValue(record, "ba_sentences");
  const generatedQuestions = arrayValue(record, "generated_comprehension_questions");
+ const passageOwnsClozeAnswers = Boolean(passage) && clozeAnswers.length > 0;
 
  const content = (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
@@ -219,7 +220,9 @@ export function ReadingCard({
 
    <BaSentences itemId={item.id} values={baSentences} />
 
-   <AnswerKeyList itemId={item.id} values={answers} defaultOpen={displayMode.showAnswers} />
+   {!passageOwnsClozeAnswers && (
+    <AnswerKeyList itemId={item.id} values={answers} defaultOpen={displayMode.showAnswers} />
+   )}
 
    {debugMode && <RawDataDetails value={item} label="Dữ liệu gốc của reading item" />}
   </article>

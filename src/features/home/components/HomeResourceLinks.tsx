@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, BookOpen, FileText, NotebookTabs } from "lucide-react";
+import { ArrowUpRight, BookOpenCheck, NotebookPen, NotebookTabs } from "lucide-react";
 
 import { notebookSummary } from "@/features/notebook/notebook-summary";
 
@@ -13,14 +13,14 @@ const resources = [
  },
  {
   href: "/notes",
-  icon: FileText,
+  icon: NotebookPen,
   title: "Ghi chú",
   description: "Mở note theo bài, ghi chú nhanh hoặc tài liệu đang soạn.",
   meta: "Theo bài và ghi chú tự do",
  },
  {
   href: "/hanzihome",
-  icon: BookOpen,
+  icon: BookOpenCheck,
   title: "Thư viện HanziHome",
   description: "Chọn giáo trình, quyển và bài học mới.",
   meta: "Course · Book · Lesson",

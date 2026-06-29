@@ -8,7 +8,7 @@ export function WarningSection({ warnings }: { warnings: Warning[] }) {
     {warnings.map((warning) => (
      <div
       key={warning.id}
-      className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3"
+      className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3"
      >
       {warning.rule_vi && <p className="font-black text-text-primary">{warning.rule_vi}</p>}
       {warning.explanation_vi && <p>{warning.explanation_vi}</p>}

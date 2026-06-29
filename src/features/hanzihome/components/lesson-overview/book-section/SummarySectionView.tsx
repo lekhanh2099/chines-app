@@ -37,7 +37,7 @@ export function SummarySectionView({
    {groups.map((group) => (
     <div
      key={group.id}
-     className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3"
+     className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3"
     >
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">{group.title}</p>
      <div className="grid gap-2">

@@ -24,7 +24,7 @@ export function SupplementaryVocabulary({
  if (visibleValues.length === 0) return null;
 
  return (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
    <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ bổ sung</p>
    <div className="flex flex-wrap gap-2">
     {visibleValues.map((wordValue, index) => {

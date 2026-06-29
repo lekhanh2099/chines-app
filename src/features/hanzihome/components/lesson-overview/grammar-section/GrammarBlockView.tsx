@@ -35,7 +35,7 @@ export function GrammarBlockView({
  const practiceQuestions = arrayValue(blockRecord, "questions");
 
  const content = (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
    <h5 className="font-black text-text-primary">{block.title}</h5>
    {contentText && <p className=" font-semibold text-text-secondary">{contentText}</p>}
    {pattern && (

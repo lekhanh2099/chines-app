@@ -24,7 +24,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeLessonTarget | n
       <Link
        href={lesson.href}
        prefetch={false}
-       className="flex max-w-2xl items-center gap-4 rounded-2xl border-white/50 bg-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-primary/25 hover:bg-white/45 sm:p-5"
+       className="flex max-w-2xl items-center gap-4 rounded-2xl border-white/50 bg-white/20 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-primary/25 hover:bg-white/45 sm:p-5"
       >
        <HomeIconTile className="bg-white/55 text-text-primary">
         <BookOpenCheck className="h-5 w-5" />

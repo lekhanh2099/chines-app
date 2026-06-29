@@ -12,12 +12,12 @@ export function AnswerReveal({
  return (
   <details
    open={defaultOpen || undefined}
-   className="group rounded-lg border border-accent/25 bg-bg-primary/80"
+   className="group"
   >
-   <summary className="cursor-pointer list-none px-3 py-2 text-xs font-black uppercase tracking-wide text-accent-text marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+   <summary className="cursor-pointer list-none rounded-md px-2 py-1 text-xs font-black uppercase tracking-wide text-accent-text marker:hidden hover:bg-accent-subtle/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
     {label}
    </summary>
-   <div className="grid gap-2 border-t border-accent/20 bg-accent-subtle/45 px-3 py-3">
+   <div className="mt-1 grid gap-2 rounded-md border-l-2 border-accent/35 bg-accent-subtle/35 px-3 py-2">
     {children}
    </div>
   </details>

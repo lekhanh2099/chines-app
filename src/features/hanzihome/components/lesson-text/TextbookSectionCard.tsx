@@ -1,6 +1,5 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { BookSectionContent } from "@/features/hanzihome/components/LessonOverview";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
@@ -22,7 +21,7 @@ export function TextbookSectionCard({
  displayMode: LessonDisplayMode;
 }) {
  return (
-  <Card padding="sm" className="rounded-xl border-border-default bg-bg-primary sm:p-4">
+  <>
    <article className="grid gap-3">
     <div>
      <p className="text-[0.7rem] font-black uppercase tracking-wide text-text-muted">
@@ -41,6 +40,6 @@ export function TextbookSectionCard({
      displayMode={displayMode}
     />
    </article>
-  </Card>
+  </>
  );
 }

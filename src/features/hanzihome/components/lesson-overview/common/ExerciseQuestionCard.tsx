@@ -20,7 +20,7 @@ export function ExerciseQuestionCard({
  meaning?: string;
 }) {
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary/75 p-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.45)] sm:p-4">
+  <div className="grid gap-2 rounded-lg bg-bg-subtle/55 px-3 py-3 sm:px-4 sm:py-3.5">
    <div className="flex items-start gap-3">
     <span className="flex h-7 min-w-7 shrink-0 items-center justify-center rounded-lg bg-accent-subtle px-2 text-xs font-black text-accent-text">
      {index}

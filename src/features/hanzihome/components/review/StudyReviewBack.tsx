@@ -60,7 +60,7 @@ export function StudyReviewBack({
     />
 
     {example && (
-     <div className="grid gap-1 rounded-xl border border-border-default bg-bg-primary p-3 shadow-theme-sm sm:p-4">
+     <div className="grid gap-1 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm sm:p-4">
       <p className="font-hanzi text-base font-black text-text-primary" lang="zh-CN">
        {example.zh}
       </p>

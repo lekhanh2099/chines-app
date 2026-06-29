@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { TextLineCard } from "./TextLineCard";
 import { getHanziTypographyStyle } from "./hanzi-typography";
 import { AnswerList } from "./passage-card/AnswerList";
@@ -28,6 +32,7 @@ export function PassageCard({
  answers?: unknown[];
  displayMode: LessonDisplayMode;
 }) {
+ const [manualAnswerListOpen, setManualAnswerListOpen] = useState(false);
  const passageRecord = asRecord(passage);
  const rendering = asRecord(passageRecord.rendering);
  const rendererId = stringValue(rendering, "renderer");
@@ -35,6 +40,9 @@ export function PassageCard({
  const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
  const { answerMap, answerList } = clozeAnswersFromSources(passageRecord, answers);
+ const answerListOpen = displayMode.showAnswers || manualAnswerListOpen;
+ const showInlineAnswers = displayMode.showAnswers || manualAnswerListOpen;
+ const clozeDisplayMode = { ...displayMode, showAnswers: showInlineAnswers };
 
  const segments = arrayValue(passageRecord, "segments");
  const passageTitle = stringValue(passageRecord, "title_vi") || stringValue(passageRecord, "title");
@@ -137,7 +145,7 @@ export function PassageCard({
        line={line}
        answerMap={answerMap}
        rendererId={rendererId}
-       displayMode={displayMode}
+       displayMode={clozeDisplayMode}
       />
      ))}
     </div>
@@ -147,7 +155,11 @@ export function PassageCard({
     <div className="rounded-xl border border-border-default bg-bg-primary p-3">
      {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
       <div className="grid gap-2">
-       <ClozeText text={passageText || clozeText} answerMap={answerMap} displayMode={displayMode} />
+       <ClozeText
+        text={passageText || clozeText}
+        answerMap={answerMap}
+        displayMode={clozeDisplayMode}
+       />
        {displayMode.showPinyin && passagePinyin && (
         <p className="text-xs font-bold italic text-text-muted sm:text-sm">{passagePinyin}</p>
        )}
@@ -180,7 +192,11 @@ export function PassageCard({
     </div>
    )}
 
-   <AnswerList answers={answerList} defaultOpen={displayMode.showAnswers} />
+   <AnswerList
+    answers={answerList}
+    open={answerListOpen}
+    onOpenChange={setManualAnswerListOpen}
+   />
   </div>
  );
 }

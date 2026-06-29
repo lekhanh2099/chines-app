@@ -64,7 +64,7 @@ export function PhoneticsExerciseBody({
          return (
           <div
            key={stringValue(entry, "id") || `${item.id}-pair-${partIndex}-${index}`}
-           className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 rounded-xl border border-border-default bg-bg-primary/80 px-3 py-3"
+           className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 rounded-xl border border-border-default bg-bg-card px-3 py-3"
           >
            <span className="text-center font-black text-text-primary">{left}</span>
            <span className="text-xs font-black text-text-muted">/</span>

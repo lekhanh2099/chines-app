@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { BookmarkCheck, GraduationCap, Layers3, Lightbulb } from "lucide-react";
+import { BookOpenText, Layers3, Lightbulb, Repeat2 } from "lucide-react";
 
 const actions = [
- { href: "/dictionary", label: "Ôn SRS", icon: BookmarkCheck },
- { href: "/hanzihome/grammar", label: "Ngữ pháp", icon: GraduationCap },
+ { href: "/dictionary", label: "Ôn SRS", icon: Repeat2 },
+ { href: "/hanzihome/grammar", label: "Ngữ pháp", icon: BookOpenText },
  { href: "/hanzihome/memory-tips", label: "Nhắc nhanh", icon: Lightbulb },
  { href: "/hanzihome?module=radicals", label: "Bộ thủ", icon: Layers3 },
 ] as const;
