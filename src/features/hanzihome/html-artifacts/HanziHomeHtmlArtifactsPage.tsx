@@ -1,17 +1,16 @@
 "use client";
-
-import Link from "next/link";
 import type { DragEvent, FormEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import {
- ArrowLeft,
  Code2,
  FileCode2,
  Folder,
  FolderPlus,
  Loader2,
+ Maximize2,
+ Minimize2,
  Plus,
  Save,
  Search,
@@ -31,6 +30,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { HtmlArtifactsApiError } from "./html-artifact-api";
 import type {
@@ -91,9 +97,8 @@ const emptyArtifactSummaries: HtmlArtifactSummary[] = [];
 const emptyArtifactFolders: HtmlArtifactFolder[] = [];
 const noFolderValue = "__none__";
 const desktopLayout = {
- "html-artifacts-directory": 22,
- "html-artifacts-preview": 52,
- "html-artifacts-editor": 26,
+ "html-artifacts-preview": 72,
+ "html-artifacts-inspector": 28,
 };
 const htmlEditorExtensions = [html({ autoCloseTags: true, matchClosingTags: true })];
 
@@ -116,6 +121,7 @@ type DragItem =
  | { type: "folder"; id: string };
 
 type MobilePane = "files" | "preview" | "edit";
+type InspectorTab = "files" | "edit";
 
 type FolderTreeNode = HtmlArtifactFolder & {
  children: FolderTreeNode[];
@@ -240,6 +246,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const [activeFolderId, setActiveFolderId] = useState<FolderFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
+ const [inspectorTab, setInspectorTab] = useState<InspectorTab>("files");
+ const [isPreviewFocused, setIsPreviewFocused] = useState(false);
  const isDesktopShell = useHtmlArtifactsDesktopShell();
  const [isCreateFolderOpen, setIsCreateFolderOpen] = useState(false);
  const [folderDraft, setFolderDraft] = useState<{
@@ -454,34 +462,6 @@ export function HanziHomeHtmlArtifactsPage() {
 
  return (
   <main className="flex h-[calc(100dvh-3.5rem-88px-env(safe-area-inset-bottom))] min-h-0 w-full flex-col overflow-hidden md:h-[calc(100dvh-3.5rem)]">
-   <header className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-border-default bg-bg-card px-5 py-4 shadow-theme-sm sm:px-8">
-    <div className="flex min-w-0 flex-wrap items-center gap-3">
-     <div className="flex min-w-0 items-center gap-3">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
-       <FileCode2 className="h-5 w-5" />
-      </span>
-      <div className="min-w-0">
-       <div className="flex min-w-0 items-center gap-2">
-        <h1 className="truncate text-xl font-black text-text-primary">Tệp HTML</h1>
-        <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-         {artifacts.length}
-        </span>
-       </div>
-       <p className="truncate text-sm font-medium text-text-muted">
-        Quản lý các trang luyện tập HTML đã lưu trong HanziHome.
-       </p>
-      </div>
-     </div>
-    </div>
-
-    <Button type="button" variant="outline" size="sm" asChild>
-     <Link href="/hanzihome" prefetch={false}>
-      <ArrowLeft className="h-4 w-4" />
-      HanziHome
-     </Link>
-    </Button>
-   </header>
-
    <CreateFolderDialog
     folderDraft={folderDraft}
     folders={folders}
@@ -501,7 +481,19 @@ export function HanziHomeHtmlArtifactsPage() {
     }}
    />
 
-   {isDesktopShell ? null : (
+   {!isDesktopShell && isPreviewFocused ? (
+    <div className="min-h-0 flex-1 overflow-hidden">
+     <PreviewPane
+      selectedArtifact={selectedArtifact}
+      selectedSummary={selectedSummary}
+      isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+      isFocused={isPreviewFocused}
+      onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
+     />
+    </div>
+   ) : null}
+
+   {!isDesktopShell && !isPreviewFocused ? (
     <div className="html-artifacts-mobile-shell flex min-h-0 flex-1 flex-col overflow-hidden">
      <MobilePaneTabs activePane={mobilePane} onChange={setMobilePane} />
      <div className="min-h-0 flex-1 overflow-hidden">
@@ -539,6 +531,8 @@ export function HanziHomeHtmlArtifactsPage() {
         selectedArtifact={selectedArtifact}
         selectedSummary={selectedSummary}
         isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+        isFocused={isPreviewFocused}
+        onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
        />
       ) : null}
       {mobilePane === "edit" ? (
@@ -555,36 +549,72 @@ export function HanziHomeHtmlArtifactsPage() {
       ) : null}
      </div>
     </div>
-   )}
+   ) : null}
 
-   {isDesktopShell ? (
+   {isDesktopShell && isPreviewFocused ? (
+    <div className="min-h-0 flex-1 overflow-hidden">
+     <PreviewPane
+      selectedArtifact={selectedArtifact}
+      selectedSummary={selectedSummary}
+      isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+      isFocused={isPreviewFocused}
+      onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
+     />
+    </div>
+   ) : null}
+
+   {isDesktopShell && !isPreviewFocused ? (
     <ResizablePanelGroup
      id="html-artifacts-panels"
-     key="html-artifacts-layout-v2"
+     key="html-artifacts-layout-v3"
      orientation="horizontal"
      defaultLayout={desktopLayout}
      className="html-artifacts-desktop-shell min-h-0 min-w-0 flex-1 overflow-hidden bg-border-default"
     >
      <ResizablePanel
-      id="html-artifacts-directory"
-      defaultSize={`${desktopLayout["html-artifacts-directory"]}%`}
-      minSize="18%"
-      maxSize="34%"
+      id="html-artifacts-preview"
+      defaultSize={`${desktopLayout["html-artifacts-preview"]}%`}
+      minSize="52%"
       className="min-h-0 min-w-0 overflow-hidden"
      >
-      <DirectoryPane
+      <PreviewPane
+       selectedArtifact={selectedArtifact}
+       selectedSummary={selectedSummary}
+       isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+       isFocused={isPreviewFocused}
+       onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
+      />
+     </ResizablePanel>
+     <ResizableHandle />
+     <ResizablePanel
+      id="html-artifacts-inspector"
+      defaultSize={`${desktopLayout["html-artifacts-inspector"]}%`}
+      minSize="24%"
+      maxSize="42%"
+      className="min-h-0 min-w-0 overflow-hidden"
+     >
+      <RightInspectorPane
        activeFolderId={activeFolderId}
+       activeTab={inspectorTab}
+       artifact={selectedArtifact}
        artifacts={artifacts}
-       folders={folders}
-       filteredArtifacts={filteredArtifacts}
+       defaultFolderId={defaultFolderId}
        dragItem={dragItem}
-       isLoading={artifactsQuery.isLoading}
        error={artifactsQuery.error}
+       filteredArtifacts={filteredArtifacts}
+       folders={folders}
+       isDeleting={isDeleting}
+       isFolderMutating={isFolderMutating}
+       isLoading={artifactsQuery.isLoading}
+       isSaving={isSaving}
        searchQuery={searchQuery}
        selectedId={effectiveSelectedId}
-       isFolderMutating={isFolderMutating}
-       onCreateArtifact={resetForNewArtifact}
+       onCreateArtifact={() => {
+        resetForNewArtifact();
+        setInspectorTab("edit");
+       }}
        onCreateFolder={openCreateFolderDialog}
+       onDelete={requestDeleteSelectedArtifact}
        onDeleteActiveFolder={requestDeleteActiveFolder}
        onDragEnd={() => setDragItem(null)}
        onDragStart={setDragItem}
@@ -592,38 +622,8 @@ export function HanziHomeHtmlArtifactsPage() {
        onSearchChange={setSearchQuery}
        onSelectArtifact={setSelectedId}
        onSelectFolder={setActiveFolderId}
-      />
-     </ResizablePanel>
-     <ResizableHandle />
-     <ResizablePanel
-      id="html-artifacts-preview"
-      defaultSize={`${desktopLayout["html-artifacts-preview"]}%`}
-      minSize="34%"
-      className="min-h-0 min-w-0 overflow-hidden"
-     >
-      <PreviewPane
-       selectedArtifact={selectedArtifact}
-       selectedSummary={selectedSummary}
-       isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
-      />
-     </ResizablePanel>
-     <ResizableHandle />
-     <ResizablePanel
-      id="html-artifacts-editor"
-      defaultSize={`${desktopLayout["html-artifacts-editor"]}%`}
-      minSize="22%"
-      maxSize="38%"
-      className="min-h-0 min-w-0 overflow-hidden"
-     >
-      <EditorPane
-       key={selectedArtifact?.id ?? `new-${defaultFolderId ?? "none"}`}
-       artifact={selectedArtifact}
-       defaultFolderId={defaultFolderId}
-       folders={folders}
-       isSaving={isSaving}
-       isDeleting={isDeleting}
        onSubmit={(formState) => void saveArtifact(formState)}
-       onDelete={requestDeleteSelectedArtifact}
+       onTabChange={setInspectorTab}
       />
      </ResizablePanel>
     </ResizablePanelGroup>
@@ -680,6 +680,166 @@ function MobilePaneTabs({
  );
 }
 
+function RightInspectorPane({
+ activeFolderId,
+ activeTab,
+ artifact,
+ artifacts,
+ defaultFolderId,
+ dragItem,
+ error,
+ filteredArtifacts,
+ folders,
+ isDeleting,
+ isFolderMutating,
+ isLoading,
+ isSaving,
+ searchQuery,
+ selectedId,
+ onCreateArtifact,
+ onCreateFolder,
+ onDelete,
+ onDeleteActiveFolder,
+ onDragEnd,
+ onDragStart,
+ onDropOnFolder,
+ onSearchChange,
+ onSelectArtifact,
+ onSelectFolder,
+ onSubmit,
+ onTabChange,
+}: {
+ activeFolderId: FolderFilter;
+ activeTab: InspectorTab;
+ artifact: HtmlArtifact | null;
+ artifacts: HtmlArtifactSummary[];
+ defaultFolderId: string | null;
+ dragItem: DragItem | null;
+ error: unknown;
+ filteredArtifacts: HtmlArtifactSummary[];
+ folders: HtmlArtifactFolder[];
+ isDeleting: boolean;
+ isFolderMutating: boolean;
+ isLoading: boolean;
+ isSaving: boolean;
+ searchQuery: string;
+ selectedId: string | null;
+ onCreateArtifact: () => void;
+ onCreateFolder: () => void;
+ onDelete: () => void;
+ onDeleteActiveFolder: () => void;
+ onDragEnd: () => void;
+ onDragStart: (item: DragItem) => void;
+ onDropOnFolder: (folderId: string | null) => void;
+ onSearchChange: (value: string) => void;
+ onSelectArtifact: (id: string) => void;
+ onSelectFolder: (folderId: FolderFilter) => void;
+ onSubmit: (formState: ArtifactFormState) => void;
+ onTabChange: (tab: InspectorTab) => void;
+}) {
+ return (
+  <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l-2 border-border-default bg-bg-card">
+   <div className="shrink-0 border-b border-border-default bg-bg-card p-3">
+    <div
+     role="tablist"
+     aria-label="HTML inspector"
+     className="grid grid-cols-2 gap-1 rounded-xl bg-bg-subtle p-1"
+    >
+     <InspectorTabButton
+      active={activeTab === "files"}
+      icon={Folder}
+      label="Tệp"
+      count={filteredArtifacts.length}
+      onClick={() => onTabChange("files")}
+     />
+     <InspectorTabButton
+      active={activeTab === "edit"}
+      icon={FileCode2}
+      label={artifact ? "Sửa" : "Tạo"}
+      onClick={() => onTabChange("edit")}
+     />
+    </div>
+   </div>
+
+   <div className="min-h-0 flex-1 overflow-hidden bg-bg-subtle">
+    {activeTab === "files" ? (
+     <DirectoryPane
+      activeFolderId={activeFolderId}
+      artifacts={artifacts}
+      folders={folders}
+      filteredArtifacts={filteredArtifacts}
+      dragItem={dragItem}
+      embedded
+      isLoading={isLoading}
+      error={error}
+      searchQuery={searchQuery}
+      selectedId={selectedId}
+      isFolderMutating={isFolderMutating}
+      onCreateArtifact={onCreateArtifact}
+      onCreateFolder={onCreateFolder}
+      onDeleteActiveFolder={onDeleteActiveFolder}
+      onDragEnd={onDragEnd}
+      onDragStart={onDragStart}
+      onDropOnFolder={onDropOnFolder}
+      onSearchChange={onSearchChange}
+      onSelectArtifact={onSelectArtifact}
+      onSelectFolder={onSelectFolder}
+     />
+    ) : (
+     <EditorPane
+      key={artifact?.id ?? `new-${defaultFolderId ?? "none"}`}
+      artifact={artifact}
+      defaultFolderId={defaultFolderId}
+      folders={folders}
+      embedded
+      isSaving={isSaving}
+      isDeleting={isDeleting}
+      onSubmit={onSubmit}
+      onDelete={onDelete}
+     />
+    )}
+   </div>
+  </aside>
+ );
+}
+
+function InspectorTabButton({
+ active,
+ count,
+ icon: Icon,
+ label,
+ onClick,
+}: {
+ active: boolean;
+ count?: number;
+ icon: typeof Folder;
+ label: string;
+ onClick: () => void;
+}) {
+ return (
+  <button
+   type="button"
+   role="tab"
+   aria-selected={active}
+   className={cn(
+    "inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-lg px-2 text-sm font-black transition-colors",
+    active
+     ? "bg-bg-card text-primary shadow-theme-sm"
+     : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
+   )}
+   onClick={onClick}
+  >
+   <Icon className="h-4 w-4 shrink-0" />
+   <span className="truncate">{label}</span>
+   {typeof count === "number" ? (
+    <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-[0.68rem] text-text-muted">
+     {count}
+    </span>
+   ) : null}
+  </button>
+ );
+}
+
 function useHtmlArtifactsDesktopShell() {
  const [isDesktopShell, setIsDesktopShell] = useState(false);
 
@@ -701,6 +861,7 @@ function useHtmlArtifactsDesktopShell() {
 function DirectoryPane({
  activeFolderId,
  artifacts,
+ embedded = false,
  folders,
  filteredArtifacts,
  dragItem,
@@ -721,6 +882,7 @@ function DirectoryPane({
 }: {
  activeFolderId: FolderFilter;
  artifacts: HtmlArtifactSummary[];
+ embedded?: boolean;
  folders: HtmlArtifactFolder[];
  filteredArtifacts: HtmlArtifactSummary[];
  dragItem: DragItem | null;
@@ -742,8 +904,13 @@ function DirectoryPane({
  const folderTree = useMemo(() => buildFolderTree(folders), [folders]);
 
  return (
-  <aside className="flex h-full min-h-0 flex-col overflow-hidden border-r border-border-default bg-bg-primary">
-   <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
+  <aside
+   className={cn(
+    "flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary",
+    !embedded && "border-r border-border-default",
+   )}
+  >
+   <div className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-4">
     <div className="flex min-w-0 items-center gap-2">
      <h2 className="text-sm font-black text-text-primary">Thư mục</h2>
      <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
@@ -753,8 +920,8 @@ function DirectoryPane({
     <Button
      type="button"
      variant="outline"
-     size="default"
-     className="min-h-11 shrink-0 px-3"
+     size="sm"
+     className="shrink-0"
      disabled={isFolderMutating}
      onClick={onCreateFolder}
     >
@@ -763,21 +930,21 @@ function DirectoryPane({
     </Button>
    </div>
 
-   <div className="grid shrink-0 gap-2 border-b border-border-default bg-bg-card p-2">
+   <div className="grid shrink-0 gap-2 border-b border-border-default bg-bg-card p-3">
     <div className="relative">
      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
      <Input
-     value={searchQuery}
-     onChange={(event) => onSearchChange(event.target.value)}
-     aria-label="Tìm tệp HTML"
-     placeholder="Tìm tệp"
-     className="h-11 pl-9"
+      value={searchQuery}
+      onChange={(event) => onSearchChange(event.target.value)}
+      aria-label="Tìm tệp HTML"
+      placeholder="Tìm tệp"
+      className="h-10 pl-9"
      />
     </div>
    </div>
 
-   <div className="max-h-64 shrink-0 overflow-y-auto border-b border-border-default bg-bg-card p-2 scrollbar-soft">
-    <div className="grid gap-1">
+   <div className="max-h-64 shrink-0 overflow-y-auto border-b border-border-default bg-bg-card p-3 scrollbar-soft">
+    <div className="grid gap-1.5">
      <FolderRow
       active={activeFolderId === "all"}
       count={getFolderCount(artifacts, "all")}
@@ -829,23 +996,23 @@ function DirectoryPane({
       <Trash2 className="h-4 w-4" />
       Xóa thư mục
      </Button>
-   ) : null}
+    ) : null}
    </div>
 
-   <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
+   <div className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-4">
     <div className="flex min-w-0 items-center gap-2">
      <h3 className="text-sm font-black text-text-primary">Tệp</h3>
      <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
       {filteredArtifacts.length}
      </span>
     </div>
-    <Button type="button" size="default" className="min-h-11 shrink-0 px-3" onClick={onCreateArtifact}>
+    <Button type="button" size="sm" className="shrink-0" onClick={onCreateArtifact}>
      <Plus className="h-4 w-4" />
      Tệp mới
     </Button>
    </div>
 
-   <div className="min-h-0 flex-1 overflow-y-auto bg-bg-subtle p-2 scrollbar-soft">
+   <div className="min-h-0 flex-1 overflow-y-auto bg-bg-subtle p-3 scrollbar-soft">
     {isLoading && (
      <div className="flex items-center gap-2 rounded-lg border border-border-default bg-bg-subtle p-3 text-sm font-bold text-text-muted">
       <Loader2 className="h-4 w-4 animate-spin" />
@@ -872,13 +1039,13 @@ function DirectoryPane({
      <div className="grid gap-2">
       {filteredArtifacts.map((artifact) => (
        <ArtifactListButton
-       key={artifact.id}
-       artifact={artifact}
-       active={artifact.id === selectedId}
-       onDragEnd={onDragEnd}
-       onDragStart={onDragStart}
-       onClick={() => onSelectArtifact(artifact.id)}
-      />
+        key={artifact.id}
+        artifact={artifact}
+        active={artifact.id === selectedId}
+        onDragEnd={onDragEnd}
+        onDragStart={onDragStart}
+        onClick={() => onSelectArtifact(artifact.id)}
+       />
       ))}
      </div>
     )}
@@ -1017,13 +1184,17 @@ function FolderTreeRow({
 }
 
 function PreviewPane({
+ isFocused,
  selectedArtifact,
  selectedSummary,
  isFetching,
+ onToggleFocus,
 }: {
+ isFocused: boolean;
  selectedArtifact: HtmlArtifact | null;
  selectedSummary: HtmlArtifactSummary | null;
  isFetching: boolean;
+ onToggleFocus: () => void;
 }) {
  return (
   <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
@@ -1036,10 +1207,16 @@ function PreviewPane({
       {selectedArtifact?.updatedAt ? `Cập nhật ${formatDate(selectedArtifact.updatedAt)}` : "Xem trước"}
      </p>
     </div>
-    <span className="inline-flex items-center gap-1 rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
-     <Code2 className="h-3.5 w-3.5" />
-     iframe
-    </span>
+    <div className="flex shrink-0 items-center gap-2">
+     <span className="inline-flex items-center gap-1 rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
+      <Code2 className="h-3.5 w-3.5" />
+      iframe
+     </span>
+     <Button type="button" variant="outline" size="sm" onClick={onToggleFocus}>
+      {isFocused ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+      {isFocused ? "Thu nhỏ" : "Phóng to"}
+     </Button>
+    </div>
    </div>
 
    <div className="min-h-0 flex-1 overflow-auto bg-white">
@@ -1050,12 +1227,12 @@ function PreviewPane({
      </div>
     ) : selectedArtifact ? (
      <iframe
-      key={`${selectedArtifact.id}-${selectedArtifact.updatedAt}`}
-      title={selectedArtifact.title}
+     key={`${selectedArtifact.id}-${selectedArtifact.updatedAt}`}
+     title={selectedArtifact.title}
       sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
       srcDoc={selectedArtifact.html}
-      className="h-full min-h-[32rem] w-full min-w-[22rem] border-0 xl:min-w-0"
-     />
+     className="h-full min-h-[32rem] w-full border-0"
+    />
     ) : (
      <div className="flex h-full items-center justify-center p-6 text-center text-sm font-bold text-text-muted">
       Chọn một tệp đã lưu hoặc dán HTML rồi bấm Lưu.
@@ -1069,15 +1246,23 @@ function PreviewPane({
 function EditorPane(props: {
  artifact: HtmlArtifact | null;
  defaultFolderId: string | null;
+ embedded?: boolean;
  folders: HtmlArtifactFolder[];
  isSaving: boolean;
  isDeleting: boolean;
  onSubmit: (formState: ArtifactFormState) => void;
  onDelete: () => void;
 }) {
+ const { embedded = false, ...formProps } = props;
+
  return (
-  <aside className="h-full min-h-0 overflow-y-auto border-l-2 border-border-default bg-bg-subtle p-3 scrollbar-soft">
-   <ArtifactForm {...props} />
+  <aside
+   className={cn(
+    "h-full min-h-0 overflow-y-auto bg-bg-subtle p-4 scrollbar-soft",
+    !embedded && "border-l-2 border-border-default",
+   )}
+  >
+   <ArtifactForm {...formProps} />
   </aside>
  );
 }
@@ -1289,7 +1474,7 @@ function ArtifactForm({
 
  return (
   <form
-   className="flex min-h-full flex-col gap-3 rounded-xl border-2 border-border-default bg-bg-card p-3 shadow-theme-lg"
+   className="flex min-h-full flex-col gap-4 rounded-xl border-2 border-border-default bg-bg-card p-4 shadow-theme-lg"
    onSubmit={submitForm}
   >
    <div className="flex items-center justify-between gap-2">
@@ -1299,7 +1484,7 @@ function ArtifactForm({
       <Button
        type="button"
        variant="destructive"
-       size="default"
+       size="sm"
        disabled={isDeleting || isSaving}
        onClick={onDelete}
       >
@@ -1307,7 +1492,7 @@ function ArtifactForm({
        Xóa
       </Button>
      )}
-     <Button type="submit" size="default" disabled={isSaving || isDeleting}>
+     <Button type="submit" size="sm" disabled={isSaving || isDeleting}>
       {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
       Lưu
      </Button>
@@ -1325,49 +1510,61 @@ function ArtifactForm({
     />
    </label>
 
-   <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-    Thư mục
-    <select
-     aria-label="Chọn thư mục cho tệp HTML"
-     className="h-11 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
+   <div className="grid gap-1.5 text-sm font-bold text-text-primary">
+    <span>Thư mục</span>
+    <Select
      value={form.folderId ?? noFolderValue}
-     onChange={(event) =>
+     onValueChange={(value) =>
       setForm((current) => ({
        ...current,
-       folderId: event.target.value === noFolderValue ? null : event.target.value,
+       folderId: value === noFolderValue ? null : value,
       }))
      }
     >
-     <option value={noFolderValue}>Chưa phân loại</option>
-     {folders.map((folder) => (
-      <option key={folder.id} value={folder.id}>
-       {folder.name}
-      </option>
-     ))}
-    </select>
-   </label>
+     <SelectTrigger
+      aria-label="Chọn thư mục cho tệp HTML"
+      className="h-10 w-full rounded-xl border-border-default bg-bg-primary px-3 text-sm font-bold text-text-primary shadow-none"
+     >
+      <SelectValue placeholder="Chọn thư mục" />
+     </SelectTrigger>
+     <SelectContent align="start">
+      <SelectItem value={noFolderValue}>Chưa phân loại</SelectItem>
+      {folders.map((folder) => (
+       <SelectItem key={folder.id} value={folder.id}>
+        {folder.name}
+       </SelectItem>
+      ))}
+     </SelectContent>
+    </Select>
+   </div>
 
    <div className="grid gap-3 sm:grid-cols-[160px_minmax(0,1fr)] lg:grid-cols-1 xl:grid-cols-[150px_minmax(0,1fr)]">
-    <label className="grid gap-1.5 text-sm font-bold text-text-primary">
-     Loại tệp
-     <select
-      aria-label="Chọn loại tệp HTML"
-      className="h-11 rounded border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none focus:ring-2 focus:ring-ring"
+    <div className="grid gap-1.5 text-sm font-bold text-text-primary">
+     <span>Loại tệp</span>
+     <Select
       value={form.artifactType}
-      onChange={(event) =>
+      onValueChange={(value) =>
        setForm((current) => ({
         ...current,
-        artifactType: event.target.value as HtmlArtifactType,
+        artifactType: value as HtmlArtifactType,
        }))
       }
      >
-      {artifactTypes.map((type) => (
-       <option key={type} value={type}>
-        {artifactTypeLabels[type]}
-       </option>
-      ))}
-     </select>
-    </label>
+      <SelectTrigger
+       aria-label="Chọn loại tệp HTML"
+       className="h-10 w-full rounded-xl border-border-default bg-bg-primary px-3 text-sm font-bold text-text-primary shadow-none"
+      >
+       <SelectValue placeholder="Chọn loại" />
+      </SelectTrigger>
+      <SelectContent align="start">
+       {artifactTypes.map((type) => (
+        <SelectItem key={type} value={type}>
+         {artifactTypeLabels[type]}
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+    </div>
 
     <label className="grid gap-1.5 text-sm font-bold text-text-primary">
      Tag
@@ -1386,7 +1583,7 @@ function ArtifactForm({
      <Button
       type="button"
       variant="outline"
-      size="default"
+      size="sm"
       disabled={isSaving || isDeleting || isFormattingHtml || !form.html.trim()}
       onClick={formatHtml}
      >
