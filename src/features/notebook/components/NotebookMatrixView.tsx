@@ -18,12 +18,12 @@ export function NotebookMatrixView({ items }: { items: NotebookItem[] }) {
      <tbody>
       {items.map((item) => (
        <tr key={item.id} className="border-t border-border-default align-top">
-        <td className="px-5 py-5">
+        <td className="px-5 py-5 grid gap-1">
          <strong lang="zh-CN" className="block font-hanzi text-3xl text-text-primary">
           {item.term}
          </strong>
-         <span className="mt-1 block text-sm font-bold text-accent-text">{item.p}</span>
-         <span className="mt-1 block text-sm font-semibold text-text-secondary">{item.vi}</span>
+         <span className="block text-sm font-bold text-accent-text">{item.p}</span>
+         <span className="block text-sm font-semibold text-text-secondary">{item.vi}</span>
         </td>
         <td className="max-w-xs px-5 py-5 text-sm font-medium leading-6 text-text-secondary">
          {item.essence}

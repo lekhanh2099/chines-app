@@ -20,15 +20,15 @@ export function PassageLineBlock({
  return (
   <div className="rounded-xl border border-border-default bg-bg-primary p-3">
    {isCloze ? (
-    <>
+    <div className="grid gap-2">
      <ClozeText text={line.zh} answerMap={answerMap} displayMode={displayMode} />
      {displayMode.showPinyin && line.pinyin && (
-      <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">{line.pinyin}</p>
+      <p className="text-xs font-bold italic text-text-muted sm:text-sm">{line.pinyin}</p>
      )}
      {displayMode.showMeaning && line.vi && (
-      <p className="mt-2  font-semibold leading-relaxed text-text-secondary">{line.vi}</p>
+      <p className="font-semibold leading-relaxed text-text-secondary">{line.vi}</p>
      )}
-    </>
+    </div>
    ) : (
     <TextLineCard
      zh={line.zh}

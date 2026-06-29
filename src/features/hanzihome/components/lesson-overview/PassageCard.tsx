@@ -146,15 +146,15 @@ export function PassageCard({
    {(passageText || clozeText) && passageLines.length === 0 && (
     <div className="rounded-xl border border-border-default bg-bg-primary p-3">
      {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
-      <>
+      <div className="grid gap-2">
        <ClozeText text={passageText || clozeText} answerMap={answerMap} displayMode={displayMode} />
        {displayMode.showPinyin && passagePinyin && (
-        <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">{passagePinyin}</p>
+        <p className="text-xs font-bold italic text-text-muted sm:text-sm">{passagePinyin}</p>
        )}
        {displayMode.showMeaning && passageMeaning && (
-        <p className="mt-2  font-semibold leading-relaxed text-text-secondary">{passageMeaning}</p>
+        <p className="font-semibold leading-relaxed text-text-secondary">{passageMeaning}</p>
        )}
-      </>
+      </div>
      ) : (
       <TextLineCard
        zh={passageText || clozeText}
@@ -168,10 +168,10 @@ export function PassageCard({
    )}
 
    {completedPassageText && completedPassageText !== passageText && (
-    <div className="rounded-lg border border-accent/30 bg-accent-subtle p-3">
+    <div className="rounded-lg border border-accent/30 bg-accent-subtle p-3 grid gap-1">
      <p className="text-xs font-black uppercase tracking-wide text-accent-text">Bản hoàn chỉnh</p>
      <p
-      className="mt-2 whitespace-pre-wrap leading-8 text-accent-text"
+      className="whitespace-pre-wrap leading-8 text-accent-text"
       lang="zh-CN"
       style={getHanziTypographyStyle(displayMode, { size: "lg" })}
      >

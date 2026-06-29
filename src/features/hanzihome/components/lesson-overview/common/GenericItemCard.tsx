@@ -137,7 +137,7 @@ export function GenericItemCard({
    )}
 
    {practiceTasks.length > 0 && (
-    <div className="mt-2 grid gap-2">
+    <div className="grid gap-2">
      {practiceTasks.map((taskValue, index) => {
       const task = asRecord(taskValue);
       const instruction =

@@ -73,7 +73,7 @@ export function CourseCard({
   <Card
    variant="section"
    padding="none"
-   className="group flex h-full min-w-0 flex-col rounded-xl p-4 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-5"
+   className="group flex h-full min-w-0 flex-col gap-4 rounded-xl p-4 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-5"
   >
    <div className="flex min-w-0 items-start justify-between gap-4">
     <div className="flex min-w-0 gap-3">
@@ -81,7 +81,7 @@ export function CourseCard({
       <BookMarked className="h-5 w-5" />
      </span>
 
-     <div className="min-w-0">
+     <div className="min-w-0 grid gap-1.5">
       <div className="flex flex-wrap items-center gap-2">
        <span className="text-sm font-bold text-text-secondary">
         {primaryBook?.shortTitle || primaryBook?.title || course.type}
@@ -96,12 +96,12 @@ export function CourseCard({
        {editMode ? <CourseCrudActions course={course} /> : null}
       </div>
 
-      <h2 className="mt-1.5 line-clamp-2 text-xl font-black leading-snug text-text-primary sm:text-2xl">
+      <h2 className="line-clamp-2 text-xl font-black leading-snug text-text-primary sm:text-2xl">
        {course.title}
       </h2>
 
       {course.subtitle && (
-       <p className="mt-1.5 line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
+       <p className="line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
         {course.subtitle}
        </p>
       )}
@@ -116,14 +116,14 @@ export function CourseCard({
     </Button>
    </div>
 
-   <div className="mt-4 flex flex-wrap gap-2">
+   <div className="flex flex-wrap gap-2">
     <MiniMetric label="Bài" value={visibleLessonCount} />
     <MiniMetric label="Từ" value={visibleVocabCount} />
     <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
    </div>
 
    {stats.books.length > 0 ? (
-    <div className="mt-4 flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2">
      {stats.books.map((book) => (
       <div
        key={book.id}

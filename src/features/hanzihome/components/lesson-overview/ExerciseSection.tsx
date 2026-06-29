@@ -31,12 +31,12 @@ export function ExerciseCard({
     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-bg-subtle text-sm font-black text-accent-text">
      {item.order}
     </span>
-    <div className="min-w-0 flex-1">
-     <h4 className="mt-2 text-lg font-black leading-tight text-text-primary sm:text-xl">
+    <div className="grid gap-1 min-w-0 flex-1">
+     <h4 className="text-lg font-black leading-tight text-text-primary sm:text-xl">
       {item.title_vi || item.title}
      </h4>
      {instructionText && (
-      <p className="mt-1 text-sm font-semibold leading-6 text-text-secondary">{instructionText}</p>
+      <p className="text-sm font-semibold leading-6 text-text-secondary">{instructionText}</p>
      )}
     </div>
    </div>

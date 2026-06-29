@@ -62,11 +62,11 @@ export function HanziHomeLibraryHome() {
     ) : (
      <section className="grid gap-3" aria-labelledby="course-library-heading">
       <div className="flex items-end justify-between gap-3">
-       <div className="min-w-0">
+       <div className="min-w-0 grid gap-1">
         <h2 id="course-library-heading" className="text-base font-black text-text-primary">
          Giáo trình đang học
         </h2>
-        <p className="mt-1 text-sm font-medium text-text-secondary">
+        <p className="text-sm font-medium text-text-secondary">
          Mở nhanh bài gần nhất hoặc chọn bài cụ thể trong từng giáo trình.
         </p>
        </div>
@@ -102,9 +102,9 @@ function LibraryStat({
    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text sm:h-9 sm:w-9">
     <Icon className="h-4 w-4" />
    </span>
-   <div className="min-w-0">
+   <div className="min-w-0 grid gap-1">
     <p className="text-lg font-black leading-none text-text-primary sm:text-xl">{value}</p>
-    <p className="mt-1 truncate text-xs font-bold text-text-secondary">{label}</p>
+    <p className="truncate text-xs font-bold text-text-secondary">{label}</p>
    </div>
   </div>
  );

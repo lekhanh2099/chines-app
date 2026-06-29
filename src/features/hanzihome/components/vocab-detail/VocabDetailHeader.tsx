@@ -27,14 +27,14 @@ export function VocabDetailHeader({
     compact ? "" : "xl:grid-cols-[minmax(1fr,1fr)_minmax(0,46rem)]",
    ].join(" ")}
   >
-   <div className="min-w-0">
+   <div className="min-w-0 grid gap-2">
     <div
      className={[
       "grid gap-3",
       compact ? "" : "lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end",
      ].join(" ")}
     >
-     <div className="min-w-0">
+     <div className="min-w-0 grid gap-1">
       <h2
        className={[
         "leading-none tracking-normal text-text-primary",
@@ -49,14 +49,14 @@ export function VocabDetailHeader({
        {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
       </p>
       {word.meaning.meaning_vi && (
-       <p className="mt-1 text-base font-semibold leading-relaxed text-text-primary">
+       <p className="text-base font-semibold leading-relaxed text-text-primary">
         {word.meaning.meaning_vi}
        </p>
       )}
      </div>
     </div>
 
-    <div className="mt-2 flex flex-wrap items-center gap-1.5">
+    <div className="flex flex-wrap items-center gap-1.5">
      {word.pos.raw_vi && <Badge variant="info">{word.pos.raw_vi}</Badge>}
 
      {word.level_tag !== "unknown" && <Badge variant="danger">{word.level_tag}</Badge>}

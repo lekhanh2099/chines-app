@@ -52,14 +52,14 @@ function ReviewVocabDetailContent({
     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
      <div className="grid gap-3">
       <div className="flex flex-wrap items-start justify-between gap-3">
-       <div className="min-w-0">
+       <div className="min-w-0 grid gap-1">
         <h2
          className="break-words font-hanzi text-5xl font-black leading-tight tracking-normal text-text-primary"
          lang="zh-CN"
         >
          {word.hanzi}
         </h2>
-        <p className="mt-1 text-lg font-black text-accent-text">
+        <p className="text-lg font-black text-accent-text">
          {word.pinyin}
          {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
         </p>
@@ -99,16 +99,16 @@ function ReviewVocabDetailContent({
     </section>
 
     {word.examples[0]?.zh && (
-     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
+     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-2">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ví dụ nhanh</p>
-      <p className="mt-2 text-xl font-black leading-relaxed text-text-primary" lang="zh-CN">
+      <p className="text-xl font-black leading-relaxed text-text-primary" lang="zh-CN">
        {word.examples[0].zh}
       </p>
       {word.examples[0].pinyin && (
-       <p className="mt-1 font-bold text-accent-text">{word.examples[0].pinyin}</p>
+       <p className="font-bold text-accent-text">{word.examples[0].pinyin}</p>
       )}
       {word.examples[0].vi && (
-       <p className="mt-1 font-semibold text-text-muted">{word.examples[0].vi}</p>
+       <p className="font-semibold text-text-muted">{word.examples[0].vi}</p>
       )}
      </section>
     )}
@@ -123,8 +123,8 @@ function ReviewVocabDetailContent({
 
    <aside className="grid min-w-0 content-start gap-4">
     {word.word_formation.characters.length > 0 && (
-     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
-      <p className="mb-3 text-xs font-black uppercase tracking-wide text-text-muted">Cấu tạo chữ</p>
+     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-3">
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Cấu tạo chữ</p>
       <WordFormationPreview formation={word.word_formation} />
      </section>
     )}

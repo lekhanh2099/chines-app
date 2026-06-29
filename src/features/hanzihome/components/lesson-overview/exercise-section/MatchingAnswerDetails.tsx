@@ -23,12 +23,12 @@ export function MatchingAnswerDetails({
  if (answers.length === 0) return null;
 
  return (
-  <details className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
+  <details className="rounded-xl border border-accent/30 bg-accent-subtle p-3 grid gap-3">
    <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-accent-text">
     Đáp án nối câu
    </summary>
 
-   <div className="mt-3 grid gap-2">
+   <div className="grid gap-2">
     {answers.map((answerValue, index) => {
      const answer = matchingAnswerText({
       answerValue,
@@ -39,13 +39,13 @@ export function MatchingAnswerDetails({
      const answerRecord = asRecord(answerValue);
      const answerId = stringValue(answerRecord, "id") || answer.id;
      const content = (
-      <div className="rounded-lg bg-bg-primary px-3 py-2">
+      <div className="rounded-lg bg-bg-primary px-3 py-2 grid gap-1">
        <p className=" font-black text-accent-text">
         {answer.leftLabel} → {answer.rightLabel}
        </p>
 
        {(answer.leftText || answer.rightText) && (
-        <p className="mt-1  font-semibold leading-relaxed text-text-secondary">
+        <p className="font-semibold leading-relaxed text-text-secondary">
          {answer.leftText}
          {answer.leftText && answer.rightText && " → "}
          {answer.rightText}
@@ -53,7 +53,7 @@ export function MatchingAnswerDetails({
        )}
 
        {answer.explanation && (
-        <p className="mt-1 text-xs font-semibold text-text-muted">{answer.explanation}</p>
+        <p className="text-xs font-semibold text-text-muted">{answer.explanation}</p>
        )}
       </div>
      );

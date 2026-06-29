@@ -41,8 +41,8 @@ export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
        key={section.key}
        className={
         section.warning
-         ? "rounded-2xl border border-pink-200 bg-pink-50/70 p-3"
-         : "rounded-2xl border border-purple-100 bg-white/85 p-3"
+         ? "rounded-2xl border border-pink-200 bg-pink-50/70 p-3 grid gap-1.5"
+         : "rounded-2xl border border-purple-100 bg-white/85 p-3 grid gap-1.5"
        }
       >
        <p
@@ -54,7 +54,7 @@ export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
        >
         {section.label}
        </p>
-       <p className="mt-1.5 text-sm font-medium leading-5 text-text-secondary">
+       <p className="text-sm font-medium leading-5 text-text-secondary">
         {deepDive[section.key]}
        </p>
       </div>

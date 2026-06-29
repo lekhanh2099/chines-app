@@ -11,13 +11,13 @@ export function ExerciseReferenceBody({ item }: { item: Exercise }) {
    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-accent-text">
     <PenLine className="h-4 w-4" />
    </span>
-   <div>
+   <div className="grid gap-1">
     <p className="font-black text-text-primary">Luyện trong mục Viết chữ Hán</p>
-    <p className="mt-1 text-sm font-semibold leading-5 text-text-secondary">
+    <p className="text-sm font-semibold leading-5 text-text-secondary">
      Bài này dùng ô luyện nét và chữ ở đề mục Viết chữ Hán của cùng bài học.
     </p>
     {reference ? (
-     <p className="mt-2 text-xs font-bold text-text-muted">Tham chiếu: {reference}</p>
+     <p className="text-xs font-bold text-text-muted">Tham chiếu: {reference}</p>
     ) : null}
    </div>
   </div>

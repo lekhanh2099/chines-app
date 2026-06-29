@@ -31,18 +31,20 @@ export function NewNoteStarter() {
 
  return (
   <div className="flex h-full items-center justify-center px-6">
-   <div className="max-w-md text-center">
-    <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-bg-subtle text-text-muted">
+   <div className="max-w-md text-center grid gap-5">
+    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-bg-subtle text-text-muted">
      <FileText className="h-7 w-7" />
     </div>
+    <div className="grid gap-2">
     <h2 className="text-2xl font-bold text-text-primary">Tạo không gian ghi chú</h2>
-    <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
+    <p className="text-sm font-medium leading-relaxed text-text-muted">
      Tạo note đầu tiên để lưu bài khóa, ngữ pháp, từ vựng hoặc ghi chú tự do.
     </p>
+    </div>
     <Button
      type="button"
      size="lg"
-     className="mt-7"
+     className="pt-2"
      onClick={handleCreate}
      disabled={createNoteMutation.isPending}
     >

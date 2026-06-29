@@ -105,16 +105,16 @@ export function NotesWorkspace() {
 
  return (
   <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
-   <header className="shrink-0 border-b border-border-default px-5 py-4 sm:px-8 sticky top-0 z-20 bg-bg-primary">
+   <header className="shrink-0 border-b border-border-default px-5 py-4 sm:px-8 sticky top-0 z-20 bg-bg-primary grid gap-4">
     <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
-     <div>
+     <div className="grid gap-1">
       <div className="flex flex-wrap items-center gap-2">
        <h1 className="text-xl font-bold text-text-primary">Ghi chú</h1>
        <Badge variant="info" size="sm">
         {allNotes.length} note
        </Badge>
       </div>
-      <p className="mt-1 text-sm font-medium text-text-muted">
+      <p className="text-sm font-medium text-text-muted">
        Quản lý ghi chú theo bài học, ghi chú nhanh và ghi chú tự do trong một nơi.
       </p>
      </div>
@@ -136,7 +136,7 @@ export function NotesWorkspace() {
      </div>
     </div>
 
-    <div className="mt-4 flex gap-1 overflow-x-auto scrollbar-none">
+    <div className="flex gap-1 overflow-x-auto scrollbar-none">
      {filterLabels.map((filter) => {
       const isActive = activeFilter === filter.value;
       const count = getFilterCount(allNotes, filter.value);

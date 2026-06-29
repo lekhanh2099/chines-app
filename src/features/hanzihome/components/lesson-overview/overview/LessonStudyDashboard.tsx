@@ -42,12 +42,12 @@ export function LessonStudyDashboard({
 }) {
  const heading = getLessonHeading(lesson);
  const header = (
-  <Card padding="lg" className="rounded-xl">
+  <Card padding="lg" className="rounded-xl grid gap-3 content-start">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0">
      <p className="text-xs font-black uppercase tracking-wide text-primary">Bài học</p>
      <h2 className="text-2xl font-black leading-tight text-text-primary">{heading.zhTitle}</h2>
-     <p className="mt-1  font-bold text-text-muted">
+     <p className="font-bold text-text-muted">
       {heading.volume}
       {heading.pinyinTitle && ` · ${heading.pinyinTitle}`}
      </p>
@@ -118,7 +118,7 @@ export function LessonStudyDashboard({
    )}
 
    {sections.length > 0 && (
-    <Card padding="lg" className="rounded-xl">
+    <Card padding="lg" className="rounded-xl grid gap-3 content-start">
      <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
@@ -131,7 +131,7 @@ export function LessonStudyDashboard({
       </Button>
      </div>
 
-     <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+     <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
       {sections.map((section, index) => (
        <StudyPathRow key={section.id} section={section} index={index} />
       ))}

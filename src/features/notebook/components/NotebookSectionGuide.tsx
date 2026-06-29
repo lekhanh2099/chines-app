@@ -20,11 +20,11 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
 
    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
     {section.principles.map((principle, index) => (
-     <div key={principle} className="rounded-xl border border-border-default bg-bg-card/80 p-4">
+     <div key={principle} className="rounded-xl border border-border-default bg-bg-card/80 p-4 grid gap-2">
       <p className="text-xs font-black uppercase tracking-[0.14em] text-accent-text">
        Bước {index + 1}
       </p>
-      <p className="mt-2 text-sm font-medium leading-6 text-text-secondary">{principle}</p>
+      <p className="text-sm font-medium leading-6 text-text-secondary">{principle}</p>
      </div>
     ))}
    </div>
@@ -38,9 +38,9 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
     </summary>
     <div className="grid gap-2 border-t border-border-default p-3 sm:grid-cols-2 lg:grid-cols-3">
      {section.quick.map(([label, value]) => (
-      <div key={`${label}-${value}`} className="rounded-xl bg-bg-subtle p-3">
+      <div key={`${label}-${value}`} className="rounded-xl bg-bg-subtle p-3 grid gap-1">
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">{label}</p>
-       <p lang="zh-CN" className="mt-1 text-sm font-semibold leading-6 text-text-primary">
+       <p lang="zh-CN" className="text-sm font-semibold leading-6 text-text-primary">
         {value}
        </p>
       </div>

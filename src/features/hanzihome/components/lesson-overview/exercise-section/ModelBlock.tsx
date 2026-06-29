@@ -30,9 +30,9 @@ export function ModelBlock({
  if (visibleValues.length === 0) return null;
 
  return (
-  <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
+  <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3 grid gap-2">
    <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
-   <div className="mt-2 grid gap-2">
+   <div className="grid gap-2">
     {visibleValues.map((value, index) => {
      const record = asRecord(value);
      const key = stringValue(record, "id") || `${title}-${answerToString(value) || index}-${index}`;

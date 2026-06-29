@@ -620,7 +620,7 @@ function CompactGenericItems({
    {items.slice(0, 10).map((item, index) => (
     <div
      key={stringValue(item, "id") || `${index}`}
-     className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2"
+     className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
     >
      <h4 className="font-black text-text-primary">
       {itemTitle(item) || `Mục ${index + 1}`}
@@ -629,7 +629,7 @@ function CompactGenericItems({
       <p className="text-sm font-bold text-text-muted">{instructionText(item.instruction)}</p>
      )}
      {getQuestionLikeText(item) && (
-      <p className="mt-1 line-clamp-2 text-sm font-semibold text-text-secondary">
+      <p className="line-clamp-2 text-sm font-semibold text-text-secondary">
        {getQuestionLikeText(item)}
       </p>
      )}

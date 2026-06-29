@@ -19,18 +19,20 @@ export function WritingCard({
 }) {
  const meaningVi = stringValue(asRecord(item), "meaning_vi");
  const content = (
-  <div className="rounded-xl border border-border-default bg-bg-primary p-3">
-   <p className="text-4xl font-black text-text-primary" lang="zh-CN">
-    {item.hanzi}
-   </p>
-   {displayMode.showPinyin && item.pinyin && (
-    <p className="font-bold text-accent-text">{item.pinyin}</p>
-   )}
-   {displayMode.showMeaning && meaningVi && (
-    <p className="font-semibold text-text-secondary">{meaningVi}</p>
-   )}
-   {item.radical && <p className=" font-semibold text-text-muted">Bộ: {item.radical}</p>}
-   <div className="mt-2 flex flex-wrap gap-1.5 text-xs font-bold text-text-muted">
+  <div className="rounded-xl border border-border-default bg-bg-primary p-3 grid gap-2">
+   <div className="grid gap-1">
+    <p className="text-4xl font-black text-text-primary" lang="zh-CN">
+     {item.hanzi}
+    </p>
+    {displayMode.showPinyin && item.pinyin && (
+     <p className="font-bold text-accent-text">{item.pinyin}</p>
+    )}
+    {displayMode.showMeaning && meaningVi && (
+     <p className="font-semibold text-text-secondary">{meaningVi}</p>
+    )}
+    {item.radical && <p className=" font-semibold text-text-muted">Bộ: {item.radical}</p>}
+   </div>
+   <div className="flex flex-wrap gap-1.5 text-xs font-bold text-text-muted">
     {item.stroke_count && (
      <span className="rounded-lg bg-bg-subtle px-2 py-1">{item.stroke_count} nét</span>
     )}

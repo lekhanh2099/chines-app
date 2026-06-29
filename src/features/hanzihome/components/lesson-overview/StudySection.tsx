@@ -38,12 +38,12 @@ export function StudySectionCard({
         <Icon className="h-5 w-5" />
        </span>
       )}
-      <div className="min-w-0">
+      <div className="min-w-0 grid gap-1">
        {eyebrow && (
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
        )}
        <h2 className="text-lg font-black text-text-primary">{title}</h2>
-       {subtitle && <p className="mt-1  font-semibold text-text-muted">{subtitle}</p>}
+       {subtitle && <p className="font-semibold text-text-muted">{subtitle}</p>}
       </div>
      </div>
 

@@ -9,11 +9,11 @@ export function GrammarReviewFront({ item }: { item: Extract<ReviewItem, { type:
    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-info-subtle text-info-text">
     <GraduationCap className="h-5 w-5" />
    </div>
-   <div className="text-center">
+   <div className="text-center grid gap-2">
     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
      Nhận diện ngữ pháp
     </p>
-    <h3 className="mt-2 text-3xl font-black tracking-tight text-text-primary">{item.prompt}</h3>
+    <h3 className="text-3xl font-black tracking-tight text-text-primary">{item.prompt}</h3>
    </div>
    <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-4">
     <p className="font-black text-text-primary">Trước khi mở đáp án, tự trả lời:</p>

@@ -12,10 +12,10 @@ export function NoteCard({
 }) {
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div>
+   <div className="grid gap-1">
     <h4 className="text-lg font-black text-text-primary">{item.title}</h4>
     {item.structure && (
-     <p className="mt-1 rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">
+     <p className="rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">
       {item.structure}
      </p>
     )}

@@ -44,10 +44,10 @@ export function SummarySectionView({
       {group.items.map((item) => (
        <div
         key={item.id}
-        className="rounded-lg border border-border-default bg-bg-subtle px-3 py-2"
+        className="rounded-lg border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
        >
         <p className="font-black text-text-primary">{item.label}</p>
-        {item.detail && <p className="mt-1 text-xs font-semibold text-text-muted">{item.detail}</p>}
+        {item.detail && <p className="text-xs font-semibold text-text-muted">{item.detail}</p>}
        </div>
       ))}
      </div>

@@ -143,8 +143,8 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    }
   >
    <Card padding="lg" className="rounded-xl">
-    <section className="min-w-0">
-     <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+    <section className="min-w-0 grid gap-4">
+     <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="flex items-start gap-3">
        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
         <Icon className="h-5 w-5" />
@@ -200,9 +200,9 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
          return (
           <article
            key={section.id}
-           className="rounded-xl border border-border-default bg-bg-subtle p-4"
+           className="rounded-xl border border-border-default bg-bg-subtle p-4 grid gap-3"
           >
-           <div className="mb-3 flex items-start gap-3">
+           <div className="flex items-start gap-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-primary">
              <SectionIcon className="h-4 w-4" />
             </span>

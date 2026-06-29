@@ -156,18 +156,18 @@ export function GlobalSearchDialog({
      ))}
 
      {!searchIndex.isLoading && trimmedQuery && visibleItems.length === 0 && (
-      <div className="px-4 py-10 text-center">
+      <div className="px-4 py-10 text-center grid gap-1">
        <p className="font-bold text-text-primary">Không tìm thấy nội dung phù hợp.</p>
-       <p className="mt-1 text-sm font-medium text-text-muted">
+       <p className="text-sm font-medium text-text-muted">
         Thử Hán tự, pinyin không dấu, nghĩa tiếng Việt hoặc tên bài.
        </p>
       </div>
      )}
 
      {searchIndex.isError && (
-      <div className="px-4 py-10 text-center">
+      <div className="px-4 py-10 text-center grid gap-1">
        <p className="font-bold text-danger">Không tải được chỉ mục tìm kiếm.</p>
-       <p className="mt-1 text-sm font-medium text-text-muted">Đóng và mở lại để thử lại.</p>
+       <p className="text-sm font-medium text-text-muted">Đóng và mở lại để thử lại.</p>
       </div>
      )}
     </div>

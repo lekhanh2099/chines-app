@@ -50,7 +50,7 @@ export function NoteListRow({
      {getContextIcon(context.kind)}
     </span>
 
-    <div className="min-w-0">
+    <div className="min-w-0 grid gap-2">
      <div className="flex min-w-0 flex-wrap items-center gap-2">
       <span className="truncate font-bold text-text-primary transition-colors group-hover:text-text-primary/80">
        {note.title || "Ghi chú chưa đặt tên"}
@@ -60,14 +60,14 @@ export function NoteListRow({
       </Badge>
      </div>
 
-     <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
+     <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
       <span className="truncate">{context.subtitle}</span>
       {context.relationLabel ? <span className="text-text-muted/60">/</span> : null}
       {context.relationLabel ? <span>{context.relationLabel}</span> : null}
      </div>
 
      {context.badges.length > 0 ? (
-      <div className="mt-2 flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-1.5">
        {context.badges.slice(0, 4).map((badge) => (
         <span
          key={badge}

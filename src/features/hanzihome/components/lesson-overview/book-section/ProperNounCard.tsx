@@ -70,11 +70,11 @@ export function ProperNounCard({
    )}
 
    {modes.length > 0 && (
-    <details className="rounded-lg border border-border-default bg-bg-subtle p-3">
+    <details className="rounded-lg border border-border-default bg-bg-subtle p-3 grid gap-2">
      <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">
       Flashcard modes
      </summary>
-     <div className="mt-2 flex flex-wrap gap-2">
+     <div className="flex flex-wrap gap-2">
       {modes.map((mode) => (
        <span
         key={mode}
