@@ -182,6 +182,7 @@ export function ReadingCard({
         readingType={item.type}
         questionValue={questionValue}
         index={index}
+        showAnswers={displayMode.showAnswers}
        />
       );
 
@@ -206,7 +207,11 @@ export function ReadingCard({
     </div>
    )}
 
-   <GeneratedQuestions itemId={item.id} values={generatedQuestions} />
+   <GeneratedQuestions
+    itemId={item.id}
+    values={generatedQuestions}
+    showAnswers={displayMode.showAnswers}
+   />
 
    <RetellOutline itemId={item.id} values={retellOutline} />
 
@@ -214,7 +219,7 @@ export function ReadingCard({
 
    <BaSentences itemId={item.id} values={baSentences} />
 
-   <AnswerKeyList itemId={item.id} values={answers} />
+   <AnswerKeyList itemId={item.id} values={answers} defaultOpen={displayMode.showAnswers} />
 
    {debugMode && <RawDataDetails value={item} label="Dữ liệu gốc của reading item" />}
   </article>

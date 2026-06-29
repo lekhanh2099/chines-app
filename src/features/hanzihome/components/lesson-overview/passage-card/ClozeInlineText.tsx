@@ -4,9 +4,11 @@ import type { ClozeAnswer } from "./types";
 import { BLANK_MARKER_SOURCE, blankLabelToNumber, getBlankMarkerFromMatch } from "./passage-utils";
 
 export function ClozeInlineText({
+ showAnswers = false,
  text,
  answerMap,
 }: {
+ showAnswers?: boolean;
  text: string;
  answerMap: Map<string, ClozeAnswer>;
 }) {
@@ -32,7 +34,7 @@ export function ClozeInlineText({
     title={answer?.note}
    >
     <span className="text-[0.78em] opacity-75">{marker}</span>
-    <span>{answer?.answer || matchText}</span>
+    <span>{showAnswers ? answer?.answer || matchText : "____"}</span>
    </span>,
   );
 

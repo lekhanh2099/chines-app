@@ -9,15 +9,18 @@ export function EditableAnswerKeyList({
  itemId,
  sourcePath,
  values,
+ showAnswers = false,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;
  itemId: string;
  sourcePath: EditableNodePath;
  values: unknown[];
+ showAnswers?: boolean;
 }) {
  return (
   <AnswerKeyList
+   defaultOpen={showAnswers}
    itemId={itemId}
    values={values}
    renderAnswer={

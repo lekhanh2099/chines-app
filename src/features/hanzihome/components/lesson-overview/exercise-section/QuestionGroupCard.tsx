@@ -110,6 +110,7 @@ export function QuestionGroupCard({
      itemId={`${itemId}-ordered-answer`}
      sourcePath={groupPath ? [...groupPath, "ordered_answer"] : ["ordered_answer"]}
      values={[orderedAnswer]}
+     showAnswers={displayMode.showAnswers}
     />
    )}
 
@@ -120,6 +121,7 @@ export function QuestionGroupCard({
      itemId={`${itemId}-answers`}
      sourcePath={groupPath ? [...groupPath, answerSourceKey] : [answerSourceKey]}
      values={answers}
+     showAnswers={displayMode.showAnswers}
     />
    )}
   </div>

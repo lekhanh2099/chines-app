@@ -157,6 +157,7 @@ export function GenericItemCard({
         index={index + 1}
         title={instruction}
         answer={sampleAnswer}
+        showAnswer={displayMode.showAnswers}
         note={stringValue(task, "explanation_vi")}
        />
       );

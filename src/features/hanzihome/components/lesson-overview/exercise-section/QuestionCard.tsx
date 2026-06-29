@@ -44,6 +44,7 @@ export function QuestionCard({
    index={index + 1}
    title={model.title}
    answer={model.answer}
+   showAnswer={displayMode.showAnswers}
    note={model.note}
    meaning={model.meaning || undefined}
   >

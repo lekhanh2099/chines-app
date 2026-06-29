@@ -22,8 +22,12 @@ export function ClozeText({
      className="whitespace-pre-wrap leading-relaxed text-text-primary"
      lang="zh-CN"
      style={getHanziTypographyStyle(displayMode)}
-    >
-     <ClozeInlineText text={paragraph} answerMap={answerMap} />
+   >
+     <ClozeInlineText
+      showAnswers={displayMode.showAnswers}
+      text={paragraph}
+      answerMap={answerMap}
+     />
     </p>
    ))}
   </div>

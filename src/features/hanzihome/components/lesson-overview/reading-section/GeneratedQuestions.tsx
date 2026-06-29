@@ -1,7 +1,15 @@
 import { ExerciseQuestionCard } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
 
-export function GeneratedQuestions({ itemId, values }: { itemId: string; values: unknown[] }) {
+export function GeneratedQuestions({
+ itemId,
+ values,
+ showAnswers = false,
+}: {
+ itemId: string;
+ values: unknown[];
+ showAnswers?: boolean;
+}) {
  if (values.length === 0) return null;
 
  return (
@@ -25,6 +33,7 @@ export function GeneratedQuestions({ itemId, values }: { itemId: string; values:
       index={index + 1}
       title={title}
       answer={answer}
+      showAnswer={showAnswers}
       note={stringValue(question, "explanation_vi") || stringValue(question, "note_vi")}
      />
     );

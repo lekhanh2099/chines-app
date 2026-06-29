@@ -57,7 +57,7 @@ export function ReorderExerciseBody({
        ))}
       </div>
       {answer ? (
-       <AnswerReveal label="Xem thứ tự đúng">
+       <AnswerReveal defaultOpen={displayMode.showAnswers} label="Xem thứ tự đúng">
         <p className="font-black text-accent-text">{answer}</p>
        </AnswerReveal>
       ) : null}

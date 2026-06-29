@@ -6,6 +6,7 @@ export function ExerciseQuestionCard({
  index,
  title,
  answer,
+ showAnswer = false,
  note,
  children,
  meaning,
@@ -13,6 +14,7 @@ export function ExerciseQuestionCard({
  index: number;
  title: string;
  answer?: string;
+ showAnswer?: boolean;
  note?: string;
  children?: ReactNode;
  meaning?: string;
@@ -26,7 +28,7 @@ export function ExerciseQuestionCard({
     <p className="min-w-0 pt-0.5 font-black leading-6 text-text-primary">{title}</p>
    </div>
    {answer && (
-    <AnswerReveal>
+    <AnswerReveal defaultOpen={showAnswer}>
      <p className=" font-bold text-accent-text">{answer}</p>
      {note && <p className="text-xs font-semibold leading-relaxed text-text-muted">{note}</p>}
      {meaning && <p className="text-xs font-semibold leading-relaxed text-text-muted">{meaning}</p>}

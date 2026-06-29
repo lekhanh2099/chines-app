@@ -242,6 +242,7 @@ export function QuestionExerciseBody({
      index={0}
      title={stringValue(model, "prompt") || "Mẫu"}
      answer={stringValue(model, "answer")}
+     showAnswer={displayMode.showAnswers}
     />
    )}
 
@@ -439,12 +440,13 @@ export function QuestionExerciseBody({
    ) : null}
 
    {shouldRenderAggregateAnswerKey && (
-    <EditableAnswerKeyList
+   <EditableAnswerKeyList
      lessonId={lessonId}
      itemPath={itemPath}
      itemId={item.id}
      sourcePath={[answerKeySource]}
      values={answerKey}
+     showAnswers={displayMode.showAnswers}
     />
    )}
   </div>

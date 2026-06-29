@@ -96,7 +96,7 @@ export function GrammarBlockView({
     </div>
    )}
    {block.type === "grammar_micro_practice" && (
-    <GrammarMicroPractice questions={practiceQuestions} />
+    <GrammarMicroPractice displayMode={displayMode} questions={practiceQuestions} />
    )}
    {examples.length > 0 && (
     <div className="grid gap-2">

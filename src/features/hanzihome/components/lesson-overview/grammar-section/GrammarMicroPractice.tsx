@@ -1,7 +1,14 @@
 import { ExerciseQuestionCard } from "../CommonCards";
+import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
 
-export function GrammarMicroPractice({ questions }: { questions: unknown[] }) {
+export function GrammarMicroPractice({
+ displayMode,
+ questions,
+}: {
+ displayMode: LessonDisplayMode;
+ questions: unknown[];
+}) {
  if (questions.length === 0) return null;
 
  return (
@@ -24,6 +31,7 @@ export function GrammarMicroPractice({ questions }: { questions: unknown[] }) {
       index={index + 1}
       title={title}
       answer={answer}
+      showAnswer={displayMode.showAnswers}
       note={stringValue(question, "explanation_vi")}
      />
     );

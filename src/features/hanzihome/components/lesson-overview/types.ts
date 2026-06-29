@@ -6,6 +6,7 @@ import type {
 export type LessonDisplayMode = {
  showPinyin: boolean;
  showMeaning: boolean;
+ showAnswers: boolean;
  hanziFont: HanziReaderFont;
  hanziSize: HanziReaderSize;
 };
@@ -16,6 +17,7 @@ export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
 export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
  showPinyin: true,
  showMeaning: false,
+ showAnswers: false,
  hanziFont: "songti",
  hanziSize: "3xl",
 };

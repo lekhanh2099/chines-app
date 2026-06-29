@@ -85,6 +85,7 @@ export function CompleteDialogueExerciseBody({
        itemId={`${item.id}-dialogue-${index}`}
        sourcePath={["dialogues", index, "sample_answers"]}
        values={answers}
+       showAnswers={displayMode.showAnswers}
       />
      </div>
     );
@@ -104,6 +105,7 @@ export function CompleteDialogueExerciseBody({
     itemId={item.id}
     sourcePath={["answer_key"]}
     values={arrayValue(record, "answer_key")}
+    showAnswers={displayMode.showAnswers}
    />
   </div>
  );

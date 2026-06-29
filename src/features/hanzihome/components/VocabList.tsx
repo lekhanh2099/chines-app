@@ -156,6 +156,7 @@ export function VocabList({
            {
             showPinyin: true,
             showMeaning: false,
+            showAnswers: false,
             hanziFont: "kai",
             hanziSize: "2xl",
            },

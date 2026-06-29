@@ -7,11 +7,13 @@ export function ReadingQuestionCard({
  readingType,
  questionValue,
  index,
+ showAnswers = false,
 }: {
  itemId: string;
  readingType: string;
  questionValue: unknown;
  index: number;
+ showAnswers?: boolean;
 }) {
  if (Array.isArray(questionValue)) {
   const values = questionValue.map(answerToString);
@@ -24,6 +26,7 @@ export function ReadingQuestionCard({
     index={index + 1}
     title={title}
     answer={answer}
+    showAnswer={showAnswers}
    />
   );
  }
@@ -89,6 +92,7 @@ export function ReadingQuestionCard({
    index={index + 1}
    title={choices.length > 0 ? `${title} (${choices.join(" / ")})` : title}
    answer={answer}
+   showAnswer={showAnswers}
    note={note}
   />
  );

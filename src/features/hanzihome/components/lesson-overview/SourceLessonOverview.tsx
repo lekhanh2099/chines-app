@@ -40,7 +40,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    : (sections.find((section) => section.id === selectedSectionId) ?? sections[0] ?? null);
  const lessonMeta = getHanyuLessonMeta(lessonDocument);
 
- function updateGlobalDisplayMode(key: "showPinyin" | "showMeaning") {
+ function updateGlobalDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
   setGlobalDisplayMode((current) => ({ ...current, [key]: !current[key] }));
   setSectionDisplayOverrides({});
  }
@@ -60,7 +60,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
   ...(selectedSection ? sectionDisplayOverrides[selectedSection.id] : {}),
  };
 
- function updateSectionDisplayMode(key: "showPinyin" | "showMeaning") {
+ function updateSectionDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
   setSectionDisplayOverrides((current) => ({
    ...current,
    [activeSection.id]: {
@@ -88,6 +88,14 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
     onClick={() => updateGlobalDisplayMode("showMeaning")}
    >
     Nghĩa: {globalDisplayMode.showMeaning ? "Bật" : "Tắt"}
+   </Button>
+   <Button
+    type="button"
+    variant={globalDisplayMode.showAnswers ? "default" : "outline"}
+    size="sm"
+    onClick={() => updateGlobalDisplayMode("showAnswers")}
+   >
+    Đáp án: {globalDisplayMode.showAnswers ? "Bật" : "Tắt"}
    </Button>
   </div>
  );
@@ -184,6 +192,18 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
         }
        >
         Nghĩa phần: {selectedSectionDisplayMode.showMeaning ? "Bật" : "Tắt"}
+       </Button>
+       <Button
+        type="button"
+        variant={selectedSectionDisplayMode.showAnswers ? "default" : "outline"}
+        size="sm"
+        onClick={() =>
+         selectedSection
+          ? updateSectionDisplayMode("showAnswers")
+          : updateGlobalDisplayMode("showAnswers")
+        }
+       >
+        Đáp án phần: {selectedSectionDisplayMode.showAnswers ? "Bật" : "Tắt"}
        </Button>
       </div>
      </div>

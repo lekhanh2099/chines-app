@@ -56,7 +56,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
- function toggleDisplayMode(key: "showPinyin" | "showMeaning") {
+ function toggleDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
   actions.setLessonTextDisplayMode({ [key]: !displayMode[key] });
  }
 
@@ -83,6 +83,15 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
     onClick={() => toggleDisplayMode("showMeaning")}
    >
     Nghĩa: {displayMode.showMeaning ? "Bật" : "Tắt"}
+   </Button>
+   <Button
+    type="button"
+    variant={displayMode.showAnswers ? "default" : "outline"}
+    size="sm"
+    className="h-8 px-2.5 text-xs"
+    onClick={() => toggleDisplayMode("showAnswers")}
+   >
+    Đáp án: {displayMode.showAnswers ? "Bật" : "Tắt"}
    </Button>
   </div>
  );

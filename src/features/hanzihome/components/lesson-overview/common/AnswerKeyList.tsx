@@ -24,10 +24,12 @@ function isTechnicalAnswerLabel(value: string) {
 }
 
 export function AnswerKeyList({
+ defaultOpen = false,
  itemId,
  values,
  renderAnswer,
 }: {
+ defaultOpen?: boolean;
  itemId: string;
  values: unknown[];
  renderAnswer?: (value: unknown, index: number, content: ReactNode) => ReactNode;
@@ -88,7 +90,7 @@ export function AnswerKeyList({
  if (answers.length === 0) return null;
 
  return (
-  <AnswerReveal label={`Xem ${answers.length} đáp án`}>
+  <AnswerReveal defaultOpen={defaultOpen} label={`Xem ${answers.length} đáp án`}>
    {answers.map((answer) => (
     <span key={answer.id}>
      {renderAnswer ? (

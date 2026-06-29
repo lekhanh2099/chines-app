@@ -10,6 +10,7 @@ export function WritingExerciseBody({
  lessonId,
  itemPath,
  item,
+ displayMode,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;
@@ -35,7 +36,14 @@ export function WritingExerciseBody({
       ? answerValue
       : stringValue(asRecord(answerValue), "answer") || stringValue(asRecord(answerValue), "text");
     const questionId = stringValue(questionRecord, "id") || `${item.id}-writing-${index}`;
-    const content = <ExerciseQuestionCard index={index + 1} title={title} answer={answer} />;
+    const content = (
+     <ExerciseQuestionCard
+      index={index + 1}
+      title={title}
+      answer={answer}
+      showAnswer={displayMode.showAnswers}
+     />
+    );
 
     return lessonId && itemPath ? (
      <EditableNodeWrapper

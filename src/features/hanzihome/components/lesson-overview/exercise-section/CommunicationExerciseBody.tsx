@@ -88,6 +88,7 @@ export function CommunicationExerciseBody({
        "Luyện tập"
       }
       answer={sample}
+      showAnswer={displayMode.showAnswers}
       note={stringValue(task, "explanation_vi")}
      />
     );

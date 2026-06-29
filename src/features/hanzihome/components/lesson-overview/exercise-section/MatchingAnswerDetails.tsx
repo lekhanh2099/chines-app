@@ -1,5 +1,6 @@
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
+import { AnswerReveal } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
 import { matchingAnswerText } from "./matching-answer-utils";
 
@@ -11,6 +12,7 @@ export function MatchingAnswerDetails({
  sourceKey,
  leftItems,
  rightItems,
+ showAnswers = false,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;
@@ -19,15 +21,12 @@ export function MatchingAnswerDetails({
  sourceKey: string;
  leftItems: unknown[];
  rightItems: unknown[];
+ showAnswers?: boolean;
 }) {
  if (answers.length === 0) return null;
 
  return (
-  <details className="rounded-xl border border-accent/30 bg-accent-subtle p-3 grid gap-3">
-   <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-accent-text">
-    Đáp án nối câu
-   </summary>
-
+  <AnswerReveal defaultOpen={showAnswers} label="Đáp án nối câu">
    <div className="grid gap-2">
     {answers.map((answerValue, index) => {
      const answer = matchingAnswerText({
@@ -77,6 +76,6 @@ export function MatchingAnswerDetails({
      );
     })}
    </div>
-  </details>
+  </AnswerReveal>
  );
 }

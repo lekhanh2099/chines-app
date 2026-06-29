@@ -167,7 +167,7 @@ export function PassageCard({
     </div>
    )}
 
-   {completedPassageText && completedPassageText !== passageText && (
+   {displayMode.showAnswers && completedPassageText && completedPassageText !== passageText && (
     <div className="rounded-lg border border-accent/30 bg-accent-subtle p-3 grid gap-1">
      <p className="text-xs font-black uppercase tracking-wide text-accent-text">Bản hoàn chỉnh</p>
      <p
@@ -180,7 +180,7 @@ export function PassageCard({
     </div>
    )}
 
-   <AnswerList answers={answerList} />
+   <AnswerList answers={answerList} defaultOpen={displayMode.showAnswers} />
   </div>
  );
 }

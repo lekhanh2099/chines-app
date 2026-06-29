@@ -1,10 +1,16 @@
 import type { ClozeAnswer } from "./types";
 
-export function AnswerList({ answers }: { answers: ClozeAnswer[] }) {
+export function AnswerList({
+ answers,
+ defaultOpen = false,
+}: {
+ answers: ClozeAnswer[];
+ defaultOpen?: boolean;
+}) {
  if (answers.length === 0) return null;
 
  return (
-  <details className="rounded-lg border border-accent/25 bg-bg-primary">
+  <details open={defaultOpen || undefined} className="rounded-lg border border-accent/25 bg-bg-primary">
    <summary className="cursor-pointer list-none px-3 py-2 text-xs font-black uppercase tracking-wide text-accent-text marker:hidden">
     Xem đáp án ({answers.length})
    </summary>
