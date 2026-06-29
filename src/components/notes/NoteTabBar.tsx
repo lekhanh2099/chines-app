@@ -58,10 +58,12 @@ export function NoteTabBar() {
  if (tabs.length === 0) return null;
 
  return (
-  <div className="flex h-10 shrink-0 items-center border-b border-border-default bg-bg-primary px-2">
+  <div className="shrink-0 border-b border-white/60 bg-white/45 px-3 py-2 shadow-[inset_0_-1px_0_rgb(117_72_246_/_6%)] backdrop-blur-2xl">
    <div
     ref={scrollRef}
-    className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none"
+    role="tablist"
+    aria-label="Ghi chú đang mở"
+    className="flex min-w-0 flex-1 items-center gap-1.5 overflow-x-auto scrollbar-none"
     onWheel={handleWheel}
    >
     {tabs.map((tab, index) => (
@@ -119,10 +121,10 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex min-h-11 min-w-30 max-w-64 cursor-pointer select-none items-center gap-1 rounded-lg border px-2 text-[13px] transition-all duration-150",
+    "group relative flex h-11 min-w-32 max-w-64 cursor-pointer select-none items-center gap-1 rounded-xl border px-2 text-[13px] transition-all duration-150",
     isActive
-     ? "z-10 border-border-default bg-bg-card font-semibold text-text-primary shadow-sm"
-     : "border-transparent text-text-muted hover:border-border-default hover:bg-bg-subtle hover:text-text-secondary",
+     ? "z-10 border-white/80 bg-white/85 font-semibold text-text-primary shadow-theme-sm"
+     : "border-white/0 text-text-muted hover:border-white/70 hover:bg-white/55 hover:text-text-secondary",
     isDragging && "opacity-40",
     isDropTarget && "border-l-2 border-l-accent",
    )}
@@ -142,8 +144,8 @@ function TabItem({
    <span className="truncate flex-1 min-w-0 px-1">{tab.title}</span>
 
    <button
-    className={cn(
-     "flex h-11 w-11 shrink-0 items-center justify-center rounded-lg transition-all",
+   className={cn(
+     "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all",
      isActive
       ? "text-text-muted hover:text-text-primary hover:bg-bg-subtle"
       : "opacity-0 group-hover:opacity-100 text-text-muted hover:text-text-primary hover:bg-bg-subtle",

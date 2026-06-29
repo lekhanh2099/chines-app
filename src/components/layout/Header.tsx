@@ -9,6 +9,13 @@ import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvide
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { Button } from "@/components/ui/button";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import {
@@ -137,45 +144,55 @@ export function Header({ user }: { user?: User | null }) {
    )}
   >
    {hanzihomeBreadcrumb && (
-   <nav
+    <nav
      aria-label="Chuyển nhanh bài HanziHome"
      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
     >
-     <select
+     <Select
       value={hanzihomeBreadcrumb.selectedCourse.id}
-      onChange={(event) => {
-       const courseId = event.target.value;
+      onValueChange={(courseId) => {
        const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
 
        if (course) {
         navigateHanziHome(course.id, 1);
        }
       }}
-      aria-label="Chọn giáo trình HanziHome"
-      className="h-11 max-w-60 rounded-xl border border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/30"
      >
+      <SelectTrigger
+       aria-label="Chọn giáo trình HanziHome"
+       className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+      >
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
        {hanzihomeBreadcrumb.courses.map((course, index) => (
-        <option key={course.id + index} value={course.id}>
+        <SelectItem key={course.id + index} value={course.id}>
          {course.title}
-        </option>
+        </SelectItem>
        ))}
-     </select>
+      </SelectContent>
+     </Select>
      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
-     <select
+     <Select
       value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
-      onChange={(event) => {
-       const lessonNumber = event.target.value;
+      onValueChange={(lessonNumber) => {
        navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
       }}
-      aria-label="Chọn bài học HanziHome"
-      className="h-11 max-w-60 rounded-xl border border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/30"
      >
+      <SelectTrigger
+       aria-label="Chọn bài học HanziHome"
+       className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+      >
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
        {hanzihomeBreadcrumb.lessons.map((lesson) => (
-        <option key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-        </option>
+        </SelectItem>
        ))}
-     </select>
+      </SelectContent>
+     </Select>
     </nav>
    )}
 

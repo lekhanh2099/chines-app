@@ -79,9 +79,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  }
 
  return (
-  <div className="flex h-full flex-col">
+  <div className="flex h-[calc(100dvh_-_3.8125rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden md:h-[calc(100dvh_-_3.8125rem)]">
    <NoteTabBar />
-   <div className="relative flex-1 min-h-0">
+   <div className="relative min-h-0 flex-1 overflow-hidden">
     {tabs.map((tab) => (
      <NoteEditorPanel
       key={tab.noteId}
