@@ -4,20 +4,26 @@ import {
  createHtmlArtifactPayloadSchema,
  createHtmlArtifactFolderPayloadSchema,
  htmlArtifactFolderSchema,
+ htmlArtifactRuntimeStateSchema,
  htmlArtifactSchema,
  htmlArtifactSummarySchema,
  updateHtmlArtifactPayloadSchema,
  updateHtmlArtifactFolderPayloadSchema,
+ updateHtmlArtifactRuntimeStatePayloadSchema,
  type CreateHtmlArtifactFolderPayload,
  type CreateHtmlArtifactPayload,
  type HtmlArtifact,
  type HtmlArtifactFolder,
+ type HtmlArtifactRuntimeState,
  type HtmlArtifactSummary,
  type UpdateHtmlArtifactFolderPayload,
  type UpdateHtmlArtifactPayload,
+ type UpdateHtmlArtifactRuntimeStatePayload,
 } from "./html-artifact.schema";
 
 export const htmlArtifactsQueryKey = ["hanzihome", "html-artifacts"] as const;
+export const htmlArtifactRuntimeStateQueryKey = (artifactId: string) =>
+ [...htmlArtifactsQueryKey, artifactId, "runtime-state"] as const;
 
 const htmlArtifactsResponseSchema = {
  parse(json: unknown) {
@@ -47,6 +53,14 @@ const htmlArtifactFolderResponseSchema = {
  parse(json: unknown) {
   return {
    item: htmlArtifactFolderSchema.parse((json as { item?: unknown }).item),
+  };
+ },
+};
+
+const htmlArtifactRuntimeStateResponseSchema = {
+ parse(json: unknown) {
+  return {
+   state: htmlArtifactRuntimeStateSchema.parse((json as { state?: unknown }).state ?? {}),
   };
  },
 };
@@ -153,6 +167,46 @@ export async function deleteHtmlArtifact(artifactId: string): Promise<void> {
  });
 
  await readJsonOrThrow(response);
+}
+
+export async function getHtmlArtifactRuntimeState(
+ artifactId: string,
+): Promise<HtmlArtifactRuntimeState> {
+ const response = await fetch(
+  `/api/hanzihome/html-artifacts/${encodeURIComponent(artifactId)}/runtime-state`,
+  {
+   method: "GET",
+   headers: {
+    Accept: "application/json",
+   },
+  },
+ );
+ const json = await readJsonOrThrow(response);
+
+ return htmlArtifactRuntimeStateResponseSchema.parse(json).state;
+}
+
+export async function updateHtmlArtifactRuntimeState({
+ artifactId,
+ input,
+}: {
+ artifactId: string;
+ input: UpdateHtmlArtifactRuntimeStatePayload;
+}): Promise<HtmlArtifactRuntimeState> {
+ const payload = updateHtmlArtifactRuntimeStatePayloadSchema.parse(input);
+ const response = await fetch(
+  `/api/hanzihome/html-artifacts/${encodeURIComponent(artifactId)}/runtime-state`,
+  {
+   method: "PUT",
+   headers: {
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify(payload),
+  },
+ );
+ const json = await readJsonOrThrow(response);
+
+ return htmlArtifactRuntimeStateResponseSchema.parse(json).state;
 }
 
 export async function createHtmlArtifactFolder(

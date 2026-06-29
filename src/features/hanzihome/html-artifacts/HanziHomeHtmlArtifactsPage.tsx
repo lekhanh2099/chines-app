@@ -1,6 +1,6 @@
 "use client";
 import type { DragEvent, FormEvent } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import {
@@ -43,6 +43,7 @@ import type {
  HtmlArtifact,
  HtmlArtifactFolder,
  HtmlArtifactFolderColor,
+ HtmlArtifactRuntimeState,
  HtmlArtifactSummary,
  HtmlArtifactType,
 } from "./html-artifact.schema";
@@ -52,7 +53,9 @@ import {
  useDeleteHtmlArtifactFolderMutation,
  useDeleteHtmlArtifactMutation,
  useHtmlArtifactQuery,
+ useHtmlArtifactRuntimeStateQuery,
  useHtmlArtifactSummariesQuery,
+ useUpdateHtmlArtifactRuntimeStateMutation,
  useUpdateHtmlArtifactFolderMutation,
  useUpdateHtmlArtifactMutation,
 } from "./useHtmlArtifacts";
@@ -95,11 +98,13 @@ const folderColorSequence: HtmlArtifactFolderColor[] = [
 const artifactTypes = Object.keys(artifactTypeLabels) as HtmlArtifactType[];
 const emptyArtifactSummaries: HtmlArtifactSummary[] = [];
 const emptyArtifactFolders: HtmlArtifactFolder[] = [];
+const emptyRuntimeState: HtmlArtifactRuntimeState = {};
 const noFolderValue = "__none__";
 const desktopLayout = {
  "html-artifacts-preview": 72,
  "html-artifacts-inspector": 28,
 };
+const runtimeStateSaveDelayMs = 2000;
 const htmlEditorExtensions = [html({ autoCloseTags: true, matchClosingTags: true })];
 
 type FolderFilter = "all" | "unfiled" | string;
@@ -110,6 +115,24 @@ type ArtifactFormState = {
  artifactType: HtmlArtifactType;
  tagsInput: string;
  html: string;
+};
+
+type ArtifactSaveOptions = {
+ silent?: boolean;
+};
+
+type ArtifactSubmitHandler = (
+ formState: ArtifactFormState,
+ options?: ArtifactSaveOptions,
+) => Promise<void> | void;
+
+type AutoSaveStatus = "idle" | "dirty" | "saving" | "saved" | "error";
+
+type RuntimeStateMessage = {
+ source: "hanzihome-html-artifact-runtime";
+ type: "runtime-state";
+ artifactId: string;
+ state: HtmlArtifactRuntimeState;
 };
 
 type DeleteDialogState =
@@ -151,6 +174,203 @@ function parseTags(input: string): string[] {
 
 function formatTags(tags: string[]): string {
  return tags.join(", ");
+}
+
+function toArtifactFormState(
+ artifact: HtmlArtifact | null,
+ defaultFolderId: string | null,
+): ArtifactFormState {
+ if (!artifact) {
+  return {
+   ...emptyForm,
+   folderId: defaultFolderId,
+  };
+ }
+
+ return {
+  title: artifact.title,
+  folderId: artifact.folderId,
+  artifactType: artifact.artifactType,
+  tagsInput: formatTags(artifact.tags),
+  html: artifact.html,
+ };
+}
+
+function getArtifactFormSaveKey(formState: ArtifactFormState): string {
+ return JSON.stringify({
+  title: formState.title.trim(),
+  folderId: formState.folderId,
+  artifactType: formState.artifactType,
+  tags: parseTags(formState.tagsInput),
+  html: formState.html.trim(),
+ });
+}
+
+function getAutoSaveLabel(status: AutoSaveStatus, hasArtifact: boolean) {
+ if (!hasArtifact) return "Chưa tạo DB";
+ if (status === "dirty") return "Chờ sync DB";
+ if (status === "saving") return "Đang sync DB...";
+ if (status === "error") return "Lỗi sync DB";
+ return "Đã sync DB";
+}
+
+function serializeForInlineScript(value: unknown): string {
+ return JSON.stringify(value)
+  .replace(/</g, "\\u003c")
+  .replace(/>/g, "\\u003e")
+  .replace(/&/g, "\\u0026")
+  .replace(/\u2028/g, "\\u2028")
+  .replace(/\u2029/g, "\\u2029");
+}
+
+function isRuntimeState(value: unknown): value is HtmlArtifactRuntimeState {
+ if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+
+ return Object.values(value).every((item) => typeof item === "string");
+}
+
+function isRuntimeStateMessage(value: unknown): value is RuntimeStateMessage {
+ if (!value || typeof value !== "object") return false;
+
+ const message = value as {
+  source?: unknown;
+  type?: unknown;
+  artifactId?: unknown;
+  state?: unknown;
+ };
+
+ return (
+  message.source === "hanzihome-html-artifact-runtime" &&
+  message.type === "runtime-state" &&
+  typeof message.artifactId === "string" &&
+  isRuntimeState(message.state)
+ );
+}
+
+function buildRuntimeStateBridgeScript(
+ artifactId: string,
+ runtimeState: HtmlArtifactRuntimeState,
+): string {
+ return `<script data-hanzihome-runtime-bridge>
+(() => {
+  const artifactId = ${serializeForInlineScript(artifactId)};
+  const initialState = ${serializeForInlineScript(runtimeState)};
+  const nativeLocalStorage = window.localStorage;
+  const state = new Map(Object.entries(initialState).map(([key, value]) => [String(key), String(value)]));
+  const cleanupNativeStorage = (key) => {
+    try {
+      nativeLocalStorage?.removeItem(String(key));
+    } catch {}
+  };
+  const snapshot = () => Object.fromEntries(state.entries());
+  const postState = () => {
+    window.parent?.postMessage({
+      source: "hanzihome-html-artifact-runtime",
+      type: "runtime-state",
+      artifactId,
+      state: snapshot(),
+    }, "*");
+  };
+  let timer = 0;
+  const schedulePost = (immediate = false) => {
+    if (timer) window.clearTimeout(timer);
+    if (immediate) {
+      postState();
+      return;
+    }
+    timer = window.setTimeout(postState, 150);
+  };
+
+  for (const key of state.keys()) cleanupNativeStorage(key);
+
+  const target = {};
+  Object.defineProperties(target, {
+    length: { get: () => state.size },
+    key: { value: (index) => Array.from(state.keys())[Number(index)] ?? null },
+    getItem: { value: (key) => {
+      const storageKey = String(key);
+      cleanupNativeStorage(storageKey);
+      return state.has(storageKey) ? state.get(storageKey) : null;
+    }},
+    setItem: { value: (key, value) => {
+      const storageKey = String(key);
+      state.set(storageKey, String(value));
+      cleanupNativeStorage(storageKey);
+      schedulePost();
+    }},
+    removeItem: { value: (key) => {
+      const storageKey = String(key);
+      state.delete(storageKey);
+      cleanupNativeStorage(storageKey);
+      schedulePost();
+    }},
+    clear: { value: () => {
+      for (const key of state.keys()) cleanupNativeStorage(key);
+      state.clear();
+      schedulePost();
+    }},
+  });
+
+  const storage = new Proxy(target, {
+    get(targetValue, property) {
+      if (property in targetValue) return targetValue[property];
+      if (typeof property === "string") {
+        cleanupNativeStorage(property);
+        return state.has(property) ? state.get(property) : undefined;
+      }
+      return undefined;
+    },
+    set(_targetValue, property, value) {
+      if (typeof property === "string") {
+        state.set(property, String(value));
+        cleanupNativeStorage(property);
+        schedulePost();
+      }
+      return true;
+    },
+    deleteProperty(_targetValue, property) {
+      if (typeof property === "string") {
+        state.delete(property);
+        cleanupNativeStorage(property);
+        schedulePost();
+      }
+      return true;
+    },
+    ownKeys: () => Array.from(state.keys()),
+    getOwnPropertyDescriptor(_targetValue, property) {
+      if (typeof property !== "string" || !state.has(property)) return undefined;
+      return { configurable: true, enumerable: true, value: state.get(property) };
+    },
+  });
+
+  Object.defineProperty(window, "localStorage", {
+    configurable: true,
+    value: storage,
+  });
+  window.addEventListener("pagehide", () => schedulePost(true));
+})();
+</script>`;
+}
+
+function injectRuntimeStateBridge(
+ source: string,
+ artifactId: string,
+ runtimeState: HtmlArtifactRuntimeState,
+): string {
+ const bridgeScript = buildRuntimeStateBridgeScript(artifactId, runtimeState);
+ const headMatch = source.match(/<head\b[^>]*>/i);
+
+ if (!headMatch?.index) {
+  if (headMatch?.[0]) {
+   return source.replace(headMatch[0], `${headMatch[0]}${bridgeScript}`);
+  }
+
+  return `${bridgeScript}${source}`;
+ }
+
+ return `${source.slice(0, headMatch.index + headMatch[0].length)}${bridgeScript}${source.slice(
+  headMatch.index + headMatch[0].length,
+ )}`;
 }
 
 async function formatHtmlSource(source: string): Promise<string> {
@@ -248,6 +468,10 @@ export function HanziHomeHtmlArtifactsPage() {
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
  const [inspectorTab, setInspectorTab] = useState<InspectorTab>("files");
  const [isPreviewFocused, setIsPreviewFocused] = useState(false);
+ const [draftPreview, setDraftPreview] = useState<{
+  targetId: string;
+  form: ArtifactFormState;
+ } | null>(null);
  const isDesktopShell = useHtmlArtifactsDesktopShell();
  const [isCreateFolderOpen, setIsCreateFolderOpen] = useState(false);
  const [folderDraft, setFolderDraft] = useState<{
@@ -267,13 +491,20 @@ export function HanziHomeHtmlArtifactsPage() {
  const createFolderMutation = useCreateHtmlArtifactFolderMutation();
  const updateFolderMutation = useUpdateHtmlArtifactFolderMutation();
  const deleteFolderMutation = useDeleteHtmlArtifactFolderMutation();
+ const updateRuntimeStateMutation = useUpdateHtmlArtifactRuntimeStateMutation();
+ const runtimeStateSaveTimerRef = useRef<number | null>(null);
+ const latestRuntimeStateSaveRef = useRef<{
+  artifactId: string;
+  state: HtmlArtifactRuntimeState;
+ } | null>(null);
 
  const artifacts = artifactsQuery.artifacts ?? emptyArtifactSummaries;
  const folders = artifactsQuery.folders ?? emptyArtifactFolders;
  const effectiveSelectedId =
-  selectedId === "new" ? null : selectedId ?? artifacts[0]?.id ?? null;
+ selectedId === "new" ? null : selectedId ?? artifacts[0]?.id ?? null;
  const selectedArtifactQuery = useHtmlArtifactQuery(effectiveSelectedId);
  const selectedArtifact = selectedArtifactQuery.data ?? null;
+ const runtimeStateQuery = useHtmlArtifactRuntimeStateQuery(selectedArtifact?.id ?? null);
  const isSaving = createMutation.isPending || updateMutation.isPending;
  const isDeleting = deleteMutation.isPending;
  const isFolderMutating =
@@ -283,6 +514,34 @@ export function HanziHomeHtmlArtifactsPage() {
   () => artifacts.find((artifact) => artifact.id === effectiveSelectedId) ?? null,
   [artifacts, effectiveSelectedId],
  );
+ const draftPreviewTargetId = selectedArtifact?.id ?? (selectedId === "new" ? "new" : null);
+ const activeDraftPreviewForm =
+  draftPreviewTargetId && draftPreview?.targetId === draftPreviewTargetId
+   ? draftPreview.form
+   : null;
+ const updateDraftPreview = (form: ArtifactFormState) => {
+  if (!draftPreviewTargetId) return;
+  setDraftPreview({ targetId: draftPreviewTargetId, form });
+ };
+
+ const previewArtifact = useMemo<HtmlArtifact | null>(() => {
+  if (!activeDraftPreviewForm) return selectedArtifact;
+  if (!selectedArtifact && !activeDraftPreviewForm.html.trim()) return null;
+
+  const timestamp = selectedArtifact?.updatedAt ?? new Date().toISOString();
+
+  return {
+   id: selectedArtifact?.id ?? "draft-preview",
+   ownerId: selectedArtifact?.ownerId ?? "draft",
+   folderId: activeDraftPreviewForm.folderId,
+   title: activeDraftPreviewForm.title,
+   artifactType: activeDraftPreviewForm.artifactType,
+   tags: parseTags(activeDraftPreviewForm.tagsInput),
+   html: activeDraftPreviewForm.html,
+   createdAt: selectedArtifact?.createdAt ?? timestamp,
+   updatedAt: timestamp,
+  };
+ }, [activeDraftPreviewForm, selectedArtifact]);
 
  const filteredArtifacts = useMemo(() => {
   const normalizedSearch = searchQuery.trim().toLowerCase();
@@ -302,6 +561,33 @@ export function HanziHomeHtmlArtifactsPage() {
  }, [activeFolderId, artifacts, searchQuery]);
 
  const defaultFolderId = activeFolderId !== "all" && activeFolderId !== "unfiled" ? activeFolderId : null;
+
+ const queueRuntimeStateSave = (artifactId: string, state: HtmlArtifactRuntimeState) => {
+  if (!selectedArtifact || artifactId !== selectedArtifact.id) return;
+
+  latestRuntimeStateSaveRef.current = { artifactId, state };
+  if (runtimeStateSaveTimerRef.current) window.clearTimeout(runtimeStateSaveTimerRef.current);
+
+  runtimeStateSaveTimerRef.current = window.setTimeout(() => {
+   const payload = latestRuntimeStateSaveRef.current;
+   if (!payload) return;
+
+   void updateRuntimeStateMutation
+    .mutateAsync({
+     artifactId: payload.artifactId,
+     input: { state: payload.state },
+    })
+    .catch(() => {
+     toast.error("Không thể sync đáp án trong iframe lên DB");
+    });
+  }, runtimeStateSaveDelayMs);
+ };
+
+ useEffect(() => {
+  return () => {
+   if (runtimeStateSaveTimerRef.current) window.clearTimeout(runtimeStateSaveTimerRef.current);
+  };
+ }, []);
 
  const resetForNewArtifact = () => {
   setSelectedId("new");
@@ -430,7 +716,7 @@ export function HanziHomeHtmlArtifactsPage() {
   }
  };
 
- const saveArtifact = async (formState: ArtifactFormState) => {
+ const saveArtifact = async (formState: ArtifactFormState, options: ArtifactSaveOptions = {}) => {
   const payload = {
    title: formState.title,
    folderId: formState.folderId,
@@ -446,17 +732,24 @@ export function HanziHomeHtmlArtifactsPage() {
      input: payload,
     });
     setSelectedId(nextArtifact.id);
-    setMobilePane("preview");
-    toast.success("Đã lưu tệp HTML");
+    if (!options.silent) {
+     setMobilePane("preview");
+     toast.success("Đã lưu tệp HTML");
+    }
     return;
    }
+
+   if (options.silent) return;
 
    const nextArtifact = await createMutation.mutateAsync(payload);
    setSelectedId(nextArtifact.id);
    setMobilePane("preview");
    toast.success("Đã tạo tệp HTML");
   } catch (error) {
-   toast.error(getApiErrorMessage(error, "Không thể lưu tệp HTML"));
+   if (!options.silent) {
+    toast.error(getApiErrorMessage(error, "Không thể lưu tệp HTML"));
+   }
+   throw error;
   }
  };
 
@@ -484,10 +777,15 @@ export function HanziHomeHtmlArtifactsPage() {
    {!isDesktopShell && isPreviewFocused ? (
     <div className="min-h-0 flex-1 overflow-hidden">
      <PreviewPane
-      selectedArtifact={selectedArtifact}
+      selectedArtifact={previewArtifact}
       selectedSummary={selectedSummary}
-      isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+      runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
+      isFetching={
+       (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+       (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+      }
       isFocused={isPreviewFocused}
+      onRuntimeStateChange={queueRuntimeStateSave}
       onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
      />
     </div>
@@ -528,10 +826,15 @@ export function HanziHomeHtmlArtifactsPage() {
       ) : null}
       {mobilePane === "preview" ? (
        <PreviewPane
-        selectedArtifact={selectedArtifact}
+        selectedArtifact={previewArtifact}
         selectedSummary={selectedSummary}
-        isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+        runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
+        isFetching={
+         (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+         (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+        }
         isFocused={isPreviewFocused}
+        onRuntimeStateChange={queueRuntimeStateSave}
         onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
        />
       ) : null}
@@ -543,7 +846,8 @@ export function HanziHomeHtmlArtifactsPage() {
         folders={folders}
         isSaving={isSaving}
         isDeleting={isDeleting}
-        onSubmit={(formState) => void saveArtifact(formState)}
+        onDraftChange={updateDraftPreview}
+        onSubmit={saveArtifact}
         onDelete={requestDeleteSelectedArtifact}
        />
       ) : null}
@@ -554,10 +858,15 @@ export function HanziHomeHtmlArtifactsPage() {
    {isDesktopShell && isPreviewFocused ? (
     <div className="min-h-0 flex-1 overflow-hidden">
      <PreviewPane
-      selectedArtifact={selectedArtifact}
+      selectedArtifact={previewArtifact}
       selectedSummary={selectedSummary}
-      isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+      runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
+      isFetching={
+       (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+       (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+      }
       isFocused={isPreviewFocused}
+      onRuntimeStateChange={queueRuntimeStateSave}
       onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
      />
     </div>
@@ -578,10 +887,15 @@ export function HanziHomeHtmlArtifactsPage() {
       className="min-h-0 min-w-0 overflow-hidden"
      >
       <PreviewPane
-       selectedArtifact={selectedArtifact}
+       selectedArtifact={previewArtifact}
        selectedSummary={selectedSummary}
-       isFetching={selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)}
+       runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
+       isFetching={
+        (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+        (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+       }
        isFocused={isPreviewFocused}
+       onRuntimeStateChange={queueRuntimeStateSave}
        onToggleFocus={() => setIsPreviewFocused((focused) => !focused)}
       />
      </ResizablePanel>
@@ -622,7 +936,8 @@ export function HanziHomeHtmlArtifactsPage() {
        onSearchChange={setSearchQuery}
        onSelectArtifact={setSelectedId}
        onSelectFolder={setActiveFolderId}
-       onSubmit={(formState) => void saveArtifact(formState)}
+       onDraftChange={updateDraftPreview}
+       onSubmit={saveArtifact}
        onTabChange={setInspectorTab}
       />
      </ResizablePanel>
@@ -706,6 +1021,7 @@ function RightInspectorPane({
  onSearchChange,
  onSelectArtifact,
  onSelectFolder,
+ onDraftChange,
  onSubmit,
  onTabChange,
 }: {
@@ -734,7 +1050,8 @@ function RightInspectorPane({
  onSearchChange: (value: string) => void;
  onSelectArtifact: (id: string) => void;
  onSelectFolder: (folderId: FolderFilter) => void;
- onSubmit: (formState: ArtifactFormState) => void;
+ onDraftChange: (formState: ArtifactFormState) => void;
+ onSubmit: ArtifactSubmitHandler;
  onTabChange: (tab: InspectorTab) => void;
 }) {
  return (
@@ -794,6 +1111,7 @@ function RightInspectorPane({
       embedded
       isSaving={isSaving}
       isDeleting={isDeleting}
+      onDraftChange={onDraftChange}
       onSubmit={onSubmit}
       onDelete={onDelete}
      />
@@ -1187,15 +1505,41 @@ function PreviewPane({
  isFocused,
  selectedArtifact,
  selectedSummary,
+ runtimeState,
  isFetching,
+ onRuntimeStateChange,
  onToggleFocus,
 }: {
  isFocused: boolean;
  selectedArtifact: HtmlArtifact | null;
  selectedSummary: HtmlArtifactSummary | null;
+ runtimeState: HtmlArtifactRuntimeState;
  isFetching: boolean;
+ onRuntimeStateChange: (artifactId: string, state: HtmlArtifactRuntimeState) => void;
  onToggleFocus: () => void;
 }) {
+ const iframeRef = useRef<HTMLIFrameElement | null>(null);
+ const iframeSrcDoc = useMemo(() => {
+  if (!selectedArtifact || isFetching) return "";
+
+  return injectRuntimeStateBridge(selectedArtifact.html, selectedArtifact.id, runtimeState);
+ }, [isFetching, runtimeState, selectedArtifact]);
+
+ useEffect(() => {
+  const handleMessage = (event: MessageEvent<unknown>) => {
+   if (event.source !== iframeRef.current?.contentWindow) return;
+   if (!isRuntimeStateMessage(event.data)) return;
+
+   onRuntimeStateChange(event.data.artifactId, event.data.state);
+  };
+
+  window.addEventListener("message", handleMessage);
+
+  return () => {
+   window.removeEventListener("message", handleMessage);
+  };
+ }, [onRuntimeStateChange]);
+
  return (
   <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
    <div className="flex h-12 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
@@ -1227,12 +1571,13 @@ function PreviewPane({
      </div>
     ) : selectedArtifact ? (
      <iframe
-     key={`${selectedArtifact.id}-${selectedArtifact.updatedAt}`}
-     title={selectedArtifact.title}
+      ref={iframeRef}
+      key={`${selectedArtifact.id}-${selectedArtifact.updatedAt}`}
+      title={selectedArtifact.title}
       sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
-      srcDoc={selectedArtifact.html}
-     className="h-full min-h-[32rem] w-full border-0"
-    />
+      srcDoc={iframeSrcDoc}
+      className="h-full min-h-[32rem] w-full border-0"
+     />
     ) : (
      <div className="flex h-full items-center justify-center p-6 text-center text-sm font-bold text-text-muted">
       Chọn một tệp đã lưu hoặc dán HTML rồi bấm Lưu.
@@ -1250,7 +1595,8 @@ function EditorPane(props: {
  folders: HtmlArtifactFolder[];
  isSaving: boolean;
  isDeleting: boolean;
- onSubmit: (formState: ArtifactFormState) => void;
+ onDraftChange: (formState: ArtifactFormState) => void;
+ onSubmit: ArtifactSubmitHandler;
  onDelete: () => void;
 }) {
  const { embedded = false, ...formProps } = props;
@@ -1418,6 +1764,7 @@ function ArtifactForm({
  folders,
  isSaving,
  isDeleting,
+ onDraftChange,
  onSubmit,
  onDelete,
 }: {
@@ -1426,24 +1773,81 @@ function ArtifactForm({
  folders: HtmlArtifactFolder[];
  isSaving: boolean;
  isDeleting: boolean;
- onSubmit: (formState: ArtifactFormState) => void;
+ onDraftChange: (formState: ArtifactFormState) => void;
+ onSubmit: ArtifactSubmitHandler;
  onDelete: () => void;
 }) {
  const [form, setForm] = useState<ArtifactFormState>(() =>
-  artifact
-   ? {
-      title: artifact.title,
-      folderId: artifact.folderId,
-      artifactType: artifact.artifactType,
-      tagsInput: formatTags(artifact.tags),
-      html: artifact.html,
-     }
-   : {
-      ...emptyForm,
-      folderId: defaultFolderId,
-     },
+  toArtifactFormState(artifact, defaultFolderId),
  );
  const [isFormattingHtml, setIsFormattingHtml] = useState(false);
+ const [autoSaveStatus, setAutoSaveStatus] = useState<AutoSaveStatus>("idle");
+ const autoSaveTimerRef = useRef<number | null>(null);
+ const latestFormRef = useRef(form);
+ const submitRef = useRef(onSubmit);
+ const lastSavedKeyRef = useRef(
+  artifact ? getArtifactFormSaveKey(toArtifactFormState(artifact, defaultFolderId)) : "",
+ );
+
+ const updateForm = (updater: (current: ArtifactFormState) => ArtifactFormState) => {
+  if (artifact) setAutoSaveStatus("dirty");
+  setForm((current) => {
+   const next = updater(current);
+   latestFormRef.current = next;
+   onDraftChange(next);
+   return next;
+  });
+ };
+
+ useEffect(() => {
+  submitRef.current = onSubmit;
+ }, [onSubmit]);
+
+ useEffect(() => {
+  latestFormRef.current = form;
+ }, [form]);
+
+ useEffect(() => {
+  return () => {
+   if (autoSaveTimerRef.current) window.clearTimeout(autoSaveTimerRef.current);
+  };
+ }, []);
+
+ useEffect(() => {
+  if (!artifact) return;
+
+  const currentKey = getArtifactFormSaveKey(form);
+  if (!lastSavedKeyRef.current) {
+   lastSavedKeyRef.current = getArtifactFormSaveKey(toArtifactFormState(artifact, defaultFolderId));
+  }
+
+  if (currentKey === lastSavedKeyRef.current) {
+   return;
+  }
+
+  if (autoSaveTimerRef.current) window.clearTimeout(autoSaveTimerRef.current);
+
+  if (!form.title.trim() || !form.html.trim()) {
+   return;
+  }
+
+  autoSaveTimerRef.current = window.setTimeout(() => {
+   const formToSave = latestFormRef.current;
+   setAutoSaveStatus("saving");
+   void Promise.resolve(submitRef.current(formToSave, { silent: true }))
+    .then(() => {
+     lastSavedKeyRef.current = getArtifactFormSaveKey(formToSave);
+     setAutoSaveStatus("saved");
+    })
+    .catch(() => {
+     setAutoSaveStatus("error");
+    });
+  }, 900);
+
+  return () => {
+   if (autoSaveTimerRef.current) window.clearTimeout(autoSaveTimerRef.current);
+  };
+ }, [artifact, defaultFolderId, form]);
 
  const submitForm = (event: FormEvent<HTMLFormElement>) => {
   event.preventDefault();
@@ -1451,7 +1855,16 @@ function ArtifactForm({
    toast.error("Paste HTML trước khi lưu.");
    return;
   }
-  onSubmit(form);
+  void Promise.resolve(onSubmit(form))
+   .then(() => {
+    if (artifact) {
+     lastSavedKeyRef.current = getArtifactFormSaveKey(form);
+     setAutoSaveStatus("saved");
+    }
+   })
+   .catch(() => {
+    if (artifact) setAutoSaveStatus("error");
+   });
  };
 
  const formatHtml = async () => {
@@ -1463,7 +1876,7 @@ function ArtifactForm({
   setIsFormattingHtml(true);
   try {
    const formattedHtml = await formatHtmlSource(form.html);
-   setForm((current) => ({ ...current, html: formattedHtml }));
+   updateForm((current) => ({ ...current, html: formattedHtml }));
    toast.success("Đã format HTML");
   } catch {
    toast.error("Không format được HTML. Kiểm tra lại cú pháp file.");
@@ -1494,7 +1907,7 @@ function ArtifactForm({
      )}
      <Button type="submit" size="sm" disabled={isSaving || isDeleting}>
       {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-      Lưu
+      Lưu DB
      </Button>
     </div>
    </div>
@@ -1503,7 +1916,7 @@ function ArtifactForm({
     Tiêu đề
     <Input
      value={form.title}
-     onChange={(event) => setForm((current) => ({ ...current, title: event.target.value }))}
+     onChange={(event) => updateForm((current) => ({ ...current, title: event.target.value }))}
      aria-label="Tiêu đề tệp HTML"
      placeholder="SC3 Mock Exam 03"
      required
@@ -1515,7 +1928,7 @@ function ArtifactForm({
     <Select
      value={form.folderId ?? noFolderValue}
      onValueChange={(value) =>
-      setForm((current) => ({
+      updateForm((current) => ({
        ...current,
        folderId: value === noFolderValue ? null : value,
       }))
@@ -1544,7 +1957,7 @@ function ArtifactForm({
      <Select
       value={form.artifactType}
       onValueChange={(value) =>
-       setForm((current) => ({
+       updateForm((current) => ({
         ...current,
         artifactType: value as HtmlArtifactType,
        }))
@@ -1568,18 +1981,30 @@ function ArtifactForm({
 
     <label className="grid gap-1.5 text-sm font-bold text-text-primary">
      Tag
-     <Input
-      value={form.tagsInput}
-      onChange={(event) => setForm((current) => ({ ...current, tagsInput: event.target.value }))}
-      aria-label="Tag của tệp HTML"
-      placeholder="SC3, mock, bổ ngữ"
+    <Input
+     value={form.tagsInput}
+     onChange={(event) => updateForm((current) => ({ ...current, tagsInput: event.target.value }))}
+     aria-label="Tag của tệp HTML"
+     placeholder="SC3, mock, bổ ngữ"
      />
     </label>
    </div>
 
    <div className="flex min-h-0 flex-1 flex-col gap-1.5">
     <div className="flex items-center justify-between gap-2">
-     <span id="html-source-label" className="text-sm font-bold text-text-primary">HTML</span>
+     <div className="min-w-0">
+      <span id="html-source-label" className="text-sm font-bold text-text-primary">
+       HTML
+      </span>
+      <p
+       className={cn(
+        "text-xs font-bold",
+        autoSaveStatus === "error" ? "text-danger" : "text-text-muted",
+       )}
+      >
+       {getAutoSaveLabel(autoSaveStatus, Boolean(artifact))}
+      </p>
+     </div>
      <Button
       type="button"
       variant="outline"
@@ -1598,7 +2023,7 @@ function ArtifactForm({
     <HtmlSourceEditor
      ariaLabelledBy="html-source-label"
      value={form.html}
-     onChange={(htmlValue) => setForm((current) => ({ ...current, html: htmlValue }))}
+     onChange={(htmlValue) => updateForm((current) => ({ ...current, html: htmlValue }))}
     />
    </div>
   </form>

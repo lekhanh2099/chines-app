@@ -40,7 +40,7 @@ export async function GET() {
 
  if (error) {
   if (isMissingFoldersTable(error.code)) {
-   return NextResponse.json({ items: [] }, { headers: { "Cache-Control": "no-store" } });
+   return jsonError("HTML artifact folders table is not ready", 503, error.code);
   }
 
   return jsonError("Could not load HTML artifact folders", 500, error.code);

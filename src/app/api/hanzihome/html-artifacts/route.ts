@@ -65,29 +65,24 @@ export async function GET(request: Request) {
 
  if (error) {
   if (isMissingHtmlArtifactsTable(error.code)) {
-   return NextResponse.json(
-    { items: [], folders: [] },
-    {
-     headers: {
-      "Cache-Control": "no-store",
-     },
-    },
-   );
+   return jsonError("HTML artifacts table is not ready", 503, error.code);
   }
 
   return jsonError("Could not load HTML artifacts", 500, error.code);
  }
 
  if (foldersResult.error) {
-  if (!isMissingHtmlArtifactsTable(foldersResult.error.code)) {
-   return jsonError("Could not load HTML artifact folders", 500, foldersResult.error.code);
+  if (isMissingHtmlArtifactsTable(foldersResult.error.code)) {
+   return jsonError("HTML artifact folders table is not ready", 503, foldersResult.error.code);
   }
+
+  return jsonError("Could not load HTML artifact folders", 500, foldersResult.error.code);
  }
 
  return NextResponse.json(
   {
    items: mapHtmlArtifactSummaryRows(data ?? []),
-   folders: foldersResult.error ? [] : mapHtmlArtifactFolderRows(foldersResult.data ?? []),
+   folders: mapHtmlArtifactFolderRows(foldersResult.data ?? []),
   },
   {
    headers: {

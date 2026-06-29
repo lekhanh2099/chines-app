@@ -63,11 +63,18 @@ export const createHtmlArtifactFolderPayloadSchema = z.object({
 export const updateHtmlArtifactFolderPayloadSchema =
  createHtmlArtifactFolderPayloadSchema.partial();
 
+export const htmlArtifactRuntimeStateSchema = z.record(z.string().min(1), z.string());
+
+export const updateHtmlArtifactRuntimeStatePayloadSchema = z.object({
+ state: htmlArtifactRuntimeStateSchema.default({}),
+});
+
 export type HtmlArtifactType = z.infer<typeof htmlArtifactTypeSchema>;
 export type HtmlArtifactFolderColor = z.infer<typeof htmlArtifactFolderColorSchema>;
 export type HtmlArtifactFolder = z.infer<typeof htmlArtifactFolderSchema>;
 export type HtmlArtifactSummary = z.infer<typeof htmlArtifactSummarySchema>;
 export type HtmlArtifact = z.infer<typeof htmlArtifactSchema>;
+export type HtmlArtifactRuntimeState = z.infer<typeof htmlArtifactRuntimeStateSchema>;
 export type CreateHtmlArtifactPayload = z.input<typeof createHtmlArtifactPayloadSchema>;
 export type UpdateHtmlArtifactPayload = z.input<typeof updateHtmlArtifactPayloadSchema>;
 export type CreateHtmlArtifactFolderPayload = z.input<
@@ -75,4 +82,7 @@ export type CreateHtmlArtifactFolderPayload = z.input<
 >;
 export type UpdateHtmlArtifactFolderPayload = z.input<
  typeof updateHtmlArtifactFolderPayloadSchema
+>;
+export type UpdateHtmlArtifactRuntimeStatePayload = z.input<
+ typeof updateHtmlArtifactRuntimeStatePayloadSchema
 >;

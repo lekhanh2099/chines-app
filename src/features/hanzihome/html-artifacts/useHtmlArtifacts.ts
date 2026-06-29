@@ -8,16 +8,20 @@ import {
  deleteHtmlArtifact,
  deleteHtmlArtifactFolder,
  getHtmlArtifact,
+ getHtmlArtifactRuntimeState,
  getHtmlArtifacts,
+ htmlArtifactRuntimeStateQueryKey,
  htmlArtifactsQueryKey,
  updateHtmlArtifact,
  updateHtmlArtifactFolder,
+ updateHtmlArtifactRuntimeState,
 } from "./html-artifact-api";
 import type {
  CreateHtmlArtifactFolderPayload,
  CreateHtmlArtifactPayload,
  UpdateHtmlArtifactFolderPayload,
  UpdateHtmlArtifactPayload,
+ UpdateHtmlArtifactRuntimeStatePayload,
 } from "./html-artifact.schema";
 
 export function useHtmlArtifactsQuery() {
@@ -44,6 +48,19 @@ export function useHtmlArtifactQuery(artifactId: string | null) {
  return useQuery({
   queryKey: [...htmlArtifactsQueryKey, artifactId],
   queryFn: () => getHtmlArtifact(artifactId ?? ""),
+  enabled: Boolean(artifactId),
+  staleTime: 5 * 60 * 1000,
+  gcTime: 30 * 60 * 1000,
+  retry: 1,
+ });
+}
+
+export function useHtmlArtifactRuntimeStateQuery(artifactId: string | null) {
+ return useQuery({
+  queryKey: artifactId
+   ? htmlArtifactRuntimeStateQueryKey(artifactId)
+   : [...htmlArtifactsQueryKey, "runtime-state", null],
+  queryFn: () => getHtmlArtifactRuntimeState(artifactId ?? ""),
   enabled: Boolean(artifactId),
   staleTime: 5 * 60 * 1000,
   gcTime: 30 * 60 * 1000,
@@ -129,5 +146,17 @@ export function useDeleteHtmlArtifactMutation() {
    queryClient.removeQueries({ queryKey: [...htmlArtifactsQueryKey, artifactId] });
    await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
   },
+ });
+}
+
+export function useUpdateHtmlArtifactRuntimeStateMutation() {
+ return useMutation({
+  mutationFn: ({
+   artifactId,
+   input,
+  }: {
+   artifactId: string;
+   input: UpdateHtmlArtifactRuntimeStatePayload;
+  }) => updateHtmlArtifactRuntimeState({ artifactId, input }),
  });
 }
