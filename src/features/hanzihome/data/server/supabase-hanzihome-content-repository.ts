@@ -21,6 +21,7 @@ import type {
  HanziHomeEditableRecordMeta,
  HanziHomeLesson,
  HanziHomeVocabItem,
+ StaticRadicalData,
 } from "@/features/hanzihome/types";
 import {
  buildLessonGrammarResource,
@@ -37,8 +38,89 @@ import {
  type LessonSectionsResource,
  type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import radicalsData from "../../../../../data/hanzihome-db/radicals.json";
 
 const CountRelationSchema = z.array(z.object({ count: z.number().int().nonnegative() }));
+const OptionalTextSchema = z
+ .string()
+ .nullish()
+ .transform((value) => value ?? "");
+
+const StaticRadicalSchema = z.object({
+ id: z.string(),
+ index: z.number().int().positive(),
+ radical: z.string(),
+ nameVi: z.string().optional(),
+ strokes: z.number().int().positive().nullable().optional(),
+ coreMeaning: z.object({
+  modern: z.string().optional(),
+  history: z.string().optional(),
+ }),
+ recognition: z.string().optional(),
+ variants: z.array(
+  z.object({
+   form: z.string(),
+   note: z.string(),
+  }),
+ ),
+ relatedComponents: z
+  .array(
+   z.object({
+    form: z.string(),
+    note: OptionalTextSchema,
+   }),
+  )
+  .default([]),
+ distinguish: z.array(z.string()).default([]),
+ groups: z
+  .array(
+   z.object({
+    name: z.string(),
+    chars: z.array(z.string()),
+   }),
+  )
+  .default([]),
+});
+
+const StaticRadicalsPayloadSchema = z.object({
+ radicals: z.array(StaticRadicalSchema),
+});
+
+const staticRadicals: StaticRadicalData[] =
+ StaticRadicalsPayloadSchema.parse(radicalsData).radicals;
+
+const RadicalRowSchema = z.object({
+ id: z.string(),
+ radical_index: z.number().int().positive(),
+ radical: z.string(),
+ name_vi: z.string().nullable().default(null),
+ strokes: z.number().int().positive().nullable().default(null),
+ core_meaning: z.object({
+  modern: z.string().optional(),
+  history: z.string().optional(),
+ }),
+ recognition: z.string().nullable().default(null),
+ variants: z.array(
+  z.object({
+   form: z.string(),
+   note: OptionalTextSchema,
+  }),
+ ),
+ related_components: z.array(
+  z.object({
+   form: z.string(),
+   note: OptionalTextSchema,
+  }),
+ ),
+ distinguish: z.array(z.string()),
+ groups: z.array(
+  z.object({
+   name: z.string(),
+   chars: z.array(z.string()),
+  }),
+ ),
+ updated_at: z.string(),
+});
 
 const CourseRowSchema = z.object({
  id: z.string(),
@@ -254,6 +336,7 @@ type LessonSummaryRow = z.infer<typeof LessonSummaryRowSchema>;
 type LessonDetailRow = z.infer<typeof LessonDetailRowSchema>;
 type VocabRow = z.infer<typeof VocabRowSchema>;
 type GrammarRow = z.infer<typeof GrammarRowSchema>;
+type RadicalRow = z.infer<typeof RadicalRowSchema>;
 
 export type HanzihomeContentRepository = {
  getCatalogSummary: (options?: { includeLessons?: boolean }) => Promise<HanziHomeCatalogData>;
@@ -780,6 +863,56 @@ async function requirePagedRows<T>(
  }
 }
 
+function radicalRowToViewModel(row: RadicalRow): StaticRadicalData {
+ return {
+  id: row.id,
+  index: row.radical_index,
+  radical: row.radical,
+  nameVi: row.name_vi ?? undefined,
+  strokes: row.strokes,
+  coreMeaning: row.core_meaning,
+  recognition: row.recognition ?? undefined,
+  variants: row.variants,
+  relatedComponents: row.related_components,
+  distinguish: row.distinguish,
+  groups: row.groups,
+  editMeta: {
+   entityType: "radical",
+   entityId: row.id,
+   dbId: row.id,
+   updatedAt: row.updated_at,
+   order: row.radical_index,
+   orderField: "radical_index",
+  },
+ };
+}
+
+async function getRadicalsFromDatabase(): Promise<StaticRadicalData[]> {
+ const client = await createClient();
+ const result = await client
+  .from("hanzihome_radicals")
+  .select(
+   "id,radical_index,radical,name_vi,strokes,core_meaning,variants,related_components,recognition,distinguish,groups,updated_at",
+  )
+  .eq("source", "seed")
+  .is("deleted_at", null)
+  .order("radical_index");
+
+ if (result.error) {
+  if (
+   result.error.message.includes("hanzihome_radicals") ||
+   result.error.message.includes("relation")
+  ) {
+   return staticRadicals;
+  }
+
+  throw new Error(`HanziHome Supabase radicals failed: ${result.error.message}`);
+ }
+
+ const rows = z.array(RadicalRowSchema).parse(result.data);
+ return rows.length > 0 ? rows.map(radicalRowToViewModel) : staticRadicals;
+}
+
 async function getLessonSummaryRows(courseId?: string) {
  const client = await createClient();
  let query = client
@@ -928,24 +1061,22 @@ async function getAggregateItems({
    },
   );
   return rows
-   .map(
-    (row): AggregateVocabItem => ({
-     id: `${row.lesson_id}__${row.id}`,
-     courseId: row.course_id,
-     bookId: row.book_id,
-     lessonId: row.lesson_id,
-     lessonNumber: row.lesson.lesson_number,
-     lessonOrder: row.lesson.lesson_order,
-     lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
-     word: row.word,
-     pinyin: row.pinyin,
-     hanViet: row.han_viet,
-     meaning: row.meaning,
-     category: row.category,
-     level: row.level,
-     pos: { vi: row.pos_vi, zh: row.pos_zh },
-    }),
-   )
+   .map((row): AggregateVocabItem => ({
+    id: `${row.lesson_id}__${row.id}`,
+    courseId: row.course_id,
+    bookId: row.book_id,
+    lessonId: row.lesson_id,
+    lessonNumber: row.lesson.lesson_number,
+    lessonOrder: row.lesson.lesson_order,
+    lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
+    word: row.word,
+    pinyin: row.pinyin,
+    hanViet: row.han_viet,
+    meaning: row.meaning,
+    category: row.category,
+    level: row.level,
+    pos: { vi: row.pos_vi, zh: row.pos_zh },
+   }))
    .filter((item) =>
     matchesTextQuery(
      [item.word, item.pinyin, item.hanViet, item.meaning, item.category, item.lessonTitle],
@@ -976,26 +1107,24 @@ async function getAggregateItems({
   },
  );
  return rows
-  .map(
-   (row): AggregateGrammarItem => ({
-    id: `${row.lesson_id}__${row.id}`,
-    courseId: row.course_id,
-    bookId: row.book_id,
-    lessonId: row.lesson_id,
-    lessonNumber: row.lesson.lesson_number,
-    lessonOrder: row.lesson.lesson_order,
-    lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
-    title: row.title,
-    cleanTitle: row.clean_title,
-    core: row.core,
-   }),
-  )
+  .map((row): AggregateGrammarItem => ({
+   id: `${row.lesson_id}__${row.id}`,
+   courseId: row.course_id,
+   bookId: row.book_id,
+   lessonId: row.lesson_id,
+   lessonNumber: row.lesson.lesson_number,
+   lessonOrder: row.lesson.lesson_order,
+   lessonTitle: row.lesson.title_zh || row.lesson.title_vi || "",
+   title: row.title,
+   cleanTitle: row.clean_title,
+   core: row.core,
+  }))
   .filter((item) =>
    matchesTextQuery([item.title, item.cleanTitle, item.core, item.lessonTitle], filters.q),
   );
 }
 
-function buildMeta(lessons: HanziHomeLesson[]) {
+function buildMeta(lessons: HanziHomeLesson[], radicals: StaticRadicalData[] = staticRadicals) {
  return {
   app: "hanzihome",
   dataset: "supabase",
@@ -1009,7 +1138,7 @@ function buildMeta(lessons: HanziHomeLesson[]) {
     (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammar.length),
     0,
    ),
-   radicals: 0,
+   radicals: radicals.length,
    flashcards: 0,
   },
   schemaNote: "Runtime content is loaded from normalized Supabase tables.",
@@ -1019,7 +1148,7 @@ function buildMeta(lessons: HanziHomeLesson[]) {
 async function getSearchData(): Promise<HanziHomeData> {
  const summaries = await getLessonSummaryRows();
  const client = await createClient();
- const [sections, texts, vocab, grammar] = await Promise.all([
+ const [sections, texts, vocab, grammar, radicals] = await Promise.all([
   requirePagedRows("search lesson sections", z.array(LessonSectionRowSchema), (from, to) =>
    client
     .from("hanzihome_lesson_sections")
@@ -1052,6 +1181,7 @@ async function getSearchData(): Promise<HanziHomeData> {
     .order("point_order")
     .range(from, to),
   ),
+  getRadicalsFromDatabase(),
  ]);
  const sectionsByLesson = groupBy(sections, (row) => row.lesson_id);
  const textsByLesson = groupBy(texts, (row) => row.lesson_id);
@@ -1109,8 +1239,8 @@ async function getSearchData(): Promise<HanziHomeData> {
    ).values(),
   ),
   lessons,
-  radicals: [],
-  meta: buildMeta(lessons),
+  radicals,
+  meta: buildMeta(lessons, radicals),
  };
 }
 
@@ -1121,7 +1251,7 @@ function entityLessonId(entityId: string) {
 export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
  async getCatalogSummary({ includeLessons = false } = {}) {
   const client = await createClient();
-  const [courseRows, bookRows, lessonRows] = await Promise.all([
+  const [courseRows, bookRows, lessonRows, radicals] = await Promise.all([
    requireRows(
     "catalog courses",
     client
@@ -1139,6 +1269,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     z.array(BookRowSchema),
    ),
    getLessonSummaryRows(),
+   getRadicalsFromDatabase(),
   ]);
   const lessons = lessonRows.map(lessonSummaryToViewModel);
   const courses: HanziHomeCatalogCourse[] = courseRows.map((course) => {
@@ -1178,8 +1309,8 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     updatedAt: book.updated_at,
    })),
    lessons: includeLessons ? lessons : [],
-   radicals: [],
-   meta: buildMeta(lessons),
+   radicals,
+   meta: buildMeta(lessons, radicals),
   };
  },
 

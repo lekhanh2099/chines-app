@@ -22,6 +22,7 @@ export const EXPECTED_SEED_COUNTS = {
   grammarPoints: 76,
   vocabExamples: 3164,
   grammarExamples: 305,
+  radicals: 244,
  },
  q3: {
   lessons: 26,
@@ -30,6 +31,7 @@ export const EXPECTED_SEED_COUNTS = {
   grammarPoints: 168,
   vocabExamples: 2974,
   grammarExamples: 378,
+  radicals: 244,
  },
  all: {
   lessons: 51,
@@ -38,10 +40,16 @@ export const EXPECTED_SEED_COUNTS = {
   grammarPoints: 244,
   vocabExamples: 6138,
   grammarExamples: 683,
+  radicals: 244,
  },
 } as const;
 
 const DATA_ROOT = path.join(process.cwd(), "data/hanzihome-db");
+
+const OptionalTextSchema = z
+ .string()
+ .nullish()
+ .transform((value) => value ?? "");
 
 const TitleSchema = z.object({
  zh: z.string().min(1),
@@ -356,6 +364,37 @@ const TextSectionSchema = z.looseObject({
  blocks: z.array(TextBlockSchema),
 });
 
+const RadicalComponentSchema = z.object({
+ form: z.string().min(1),
+ note: OptionalTextSchema,
+});
+
+const RadicalGroupSchema = z.object({
+ name: z.string().min(1),
+ chars: z.array(z.string().min(1)),
+});
+
+const RadicalSchema = z.object({
+ id: z.string().min(1),
+ index: z.number().int().positive(),
+ radical: z.string().min(1),
+ nameVi: z.string().optional(),
+ strokes: z.number().int().positive().nullable().optional(),
+ coreMeaning: z.object({
+  modern: z.string().optional(),
+  history: z.string().optional(),
+ }),
+ recognition: z.string().optional(),
+ variants: z.array(RadicalComponentSchema),
+ relatedComponents: z.array(RadicalComponentSchema).default([]),
+ distinguish: z.array(z.string()).default([]),
+ groups: z.array(RadicalGroupSchema).default([]),
+});
+
+const RadicalsPayloadSchema = z.object({
+ radicals: z.array(RadicalSchema),
+});
+
 export type CourseRow = {
  id: string;
  user_id: null;
@@ -513,6 +552,35 @@ export type GrammarDetailSectionRow = {
  imported_at: string;
 };
 
+export type RadicalRow = {
+ id: string;
+ owner_id: null;
+ source: "seed";
+ radical_index: number;
+ radical: string;
+ name_vi: string | null;
+ strokes: number | null;
+ core_meaning: {
+  modern?: string;
+  history?: string;
+ };
+ variants: Array<{
+  form: string;
+  note: string;
+ }>;
+ related_components: Array<{
+  form: string;
+  note: string;
+ }>;
+ recognition: string | null;
+ distinguish: string[];
+ groups: Array<{
+  name: string;
+  chars: string[];
+ }>;
+ imported_at: string;
+};
+
 export type HanziHomeSeedData = {
  datasets: HanziHomeDataset[];
  courses: CourseRow[];
@@ -526,6 +594,7 @@ export type HanziHomeSeedData = {
  grammarPoints: GrammarPointRow[];
  grammarExamples: GrammarExampleRow[];
  grammarDetailSections: GrammarDetailSectionRow[];
+ radicals: RadicalRow[];
 };
 
 type ParsedRichVocabItem = z.infer<typeof RichVocabItemSchema>;
@@ -1073,6 +1142,26 @@ async function loadLessonSeed(params: {
  }
 }
 
+async function loadRadicalSeed(importedAt: string): Promise<RadicalRow[]> {
+ const payload = await readJsonFile(path.join(DATA_ROOT, "radicals.json"), RadicalsPayloadSchema);
+ return payload.radicals.map((radical) => ({
+  id: radical.id,
+  owner_id: null,
+  source: "seed",
+  radical_index: radical.index,
+  radical: radical.radical,
+  name_vi: radical.nameVi ?? null,
+  strokes: radical.strokes ?? null,
+  core_meaning: radical.coreMeaning,
+  variants: radical.variants,
+  related_components: radical.relatedComponents,
+  recognition: radical.recognition ?? null,
+  distinguish: radical.distinguish,
+  groups: radical.groups,
+  imported_at: importedAt,
+ }));
+}
+
 export async function buildHanziHomeSeedData(
  scope: HanziHomeDatasetScope,
  importedAt = new Date().toISOString(),
@@ -1091,6 +1180,7 @@ export async function buildHanziHomeSeedData(
   grammarPoints: [],
   grammarExamples: [],
   grammarDetailSections: [],
+  radicals: await loadRadicalSeed(importedAt),
  };
 
  for (const dataset of datasets) {
@@ -1149,7 +1239,8 @@ type SeedCollectionName =
  | "vocabDetailSections"
  | "grammarPoints"
  | "grammarExamples"
- | "grammarDetailSections";
+ | "grammarDetailSections"
+ | "radicals";
 
 const COLLECTION_NAMES: SeedCollectionName[] = [
  "courses",
@@ -1163,6 +1254,7 @@ const COLLECTION_NAMES: SeedCollectionName[] = [
  "grammarPoints",
  "grammarExamples",
  "grammarDetailSections",
+ "radicals",
 ];
 
 export type SeedValidationReport = {
@@ -1205,6 +1297,12 @@ export function validateHanziHomeSeedData(
  const lessonIds = new Set(seed.lessons.map((row) => row.id));
  const vocabItemIds = new Set(seed.vocabItems.map((row) => row.id));
  const grammarPointIds = new Set(seed.grammarPoints.map((row) => row.id));
+ const radicalIndexes = duplicateValues(seed.radicals.map((row) => String(row.radical_index)));
+ if (radicalIndexes.length > 0) {
+  errors.push(
+   `radicals: duplicate radical_index values: ${radicalIndexes.slice(0, 10).join(", ")}`,
+  );
+ }
  const courseIds = new Set(seed.courses.map((row) => row.id));
  const bookIds = new Set(seed.books.map((row) => row.id));
 
@@ -1286,6 +1384,7 @@ export function validateHanziHomeSeedData(
   grammarPoints: seed.grammarPoints.length,
   vocabExamples: seed.vocabExamples.length,
   grammarExamples: seed.grammarExamples.length,
+  radicals: seed.radicals.length,
  };
  for (const key of Object.keys(expected) as Array<keyof typeof expected>) {
   if (actual[key] !== expected[key]) {
@@ -1356,6 +1455,7 @@ export const SEED_TABLES = {
  grammarPoints: "hanzihome_grammar_points",
  grammarExamples: "hanzihome_grammar_examples",
  grammarDetailSections: "hanzihome_grammar_detail_sections",
+ radicals: "hanzihome_radicals",
 } as const;
 
 export async function fetchAllRows<T extends { id: string }>(

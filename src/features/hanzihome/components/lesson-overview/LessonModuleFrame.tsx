@@ -109,7 +109,7 @@ export function LessonModuleFrame({
    <div
     className={cn(
      "grid min-w-0 gap-3",
-     !compact && "min-h-0 overflow-hidden",
+     !compact && "min-h-0 overflow-x-clip",
      !compact && sidebarOpen && "xl:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]",
     )}
    >
@@ -120,14 +120,14 @@ export function LessonModuleFrame({
        padding="sm"
        className="h-full max-w-full overflow-hidden border-border-default/80 bg-bg-card/60 shadow-none backdrop-blur"
       >
-       <div className="h-full min-h-0 overflow-y-auto pr-1 scrollbar-soft">{sidebar}</div>
+       <div className="h-full min-h-0 overflow-x-hidden overflow-y-auto pr-1 scrollbar-soft">
+        {sidebar}
+       </div>
       </Card>
      </aside>
     )}
 
-    <div className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
-     {children}
-    </div>
+    <div className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">{children}</div>
    </div>
 
    <Sheet

@@ -54,6 +54,18 @@ type GrammarDetailDbRow = IdSourceRow & {
  lesson_id: string;
  section_order: number;
 };
+type RadicalDbRow = IdSourceRow & {
+ radical_index: number;
+ radical: string;
+ name_vi: string | null;
+ strokes: number | null;
+ core_meaning: unknown;
+ variants: unknown;
+ related_components: unknown;
+ recognition: string | null;
+ distinguish: string[];
+ groups: unknown;
+};
 
 function seedOnly<T extends IdSourceRow>(rows: T[]) {
  return rows.filter((row) => row.source === "seed");
@@ -158,6 +170,11 @@ async function loadDatabase(client: SupabaseClient) {
   SEED_TABLES.grammarDetailSections,
   "id,source,grammar_point_id,lesson_id,section_order",
  );
+ const radicals = await fetchAllRows<RadicalDbRow>(
+  client,
+  SEED_TABLES.radicals,
+  "id,source,radical_index,radical,name_vi,strokes,core_meaning,variants,related_components,recognition,distinguish,groups",
+ );
 
  return {
   courses: seedOnly(courses),
@@ -171,6 +188,7 @@ async function loadDatabase(client: SupabaseClient) {
   grammarPoints: seedOnly(grammarPoints),
   grammarExamples: seedOnly(grammarExamples),
   grammarDetails: seedOnly(grammarDetails),
+  radicals: seedOnly(radicals),
  };
 }
 
@@ -343,6 +361,11 @@ async function main() {
   `grammarExamples=${db.grammarExamples.length}, expected=${hardCounts.grammarExamples}`,
   errors,
  );
+ assert(
+  db.radicals.length === hardCounts.radicals,
+  `radicals=${db.radicals.length}, expected=${hardCounts.radicals}`,
+  errors,
+ );
 
  compareIds("courses", expected.courses, db.courses, errors);
  compareIds("books", expected.books, db.books, errors);
@@ -355,6 +378,7 @@ async function main() {
  compareIds("grammarPoints", expected.grammarPoints, db.grammarPoints, errors);
  compareIds("grammarExamples", expected.grammarExamples, db.grammarExamples, errors);
  compareIds("grammarDetailSections", expected.grammarDetailSections, db.grammarDetails, errors);
+ compareIds("radicals", expected.radicals, db.radicals, errors);
 
  compareOrders({
   label: "lessons",
@@ -413,6 +437,18 @@ async function main() {
   })),
   errors,
  });
+ compareOrders({
+  label: "radicals",
+  expectedRows: expected.radicals.map((row) => ({
+   id: row.id,
+   order: row.radical_index,
+  })),
+  actualRows: db.radicals.map((row) => ({
+   id: row.id,
+   order: row.radical_index,
+  })),
+  errors,
+ });
 
  verifyParents(db, errors);
  verifySamples(expected, db, errors);
@@ -430,6 +466,7 @@ async function main() {
   grammarPoints: db.grammarPoints.length,
   grammarExamples: db.grammarExamples.length,
   grammarDetailSections: db.grammarDetails.length,
+  radicals: db.radicals.length,
  });
 
  if (errors.length > 0) {

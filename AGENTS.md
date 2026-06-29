@@ -171,6 +171,8 @@ Edit Mode rules:
 - Must not replace Study Mode.
 - Must be an overlay on top of the current render tree.
 - Must use forms/dialogs, not raw JSON textareas as the main editor.
+- Edit dialogs for backend-backed content should provide both Field and JSON modes when practical, matching the existing `StructuredNodeForm` pattern.
+- JSON mode is a developer/editor convenience inside explicit Edit Mode only. It must validate the JSON shape and still save through the same smallest field/node-level patch path as Field mode.
 - Must not mutate renderer props directly.
 - Must save the smallest possible field/node change.
 

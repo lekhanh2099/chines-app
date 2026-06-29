@@ -68,6 +68,7 @@ function printCounts(seed: HanziHomeSeedData) {
   grammarPoints: seed.grammarPoints.length,
   grammarExamples: seed.grammarExamples.length,
   grammarDetailSections: seed.grammarDetailSections.length,
+  radicals: seed.radicals.length,
  });
 }
 
@@ -95,6 +96,8 @@ function collectionRows(seed: HanziHomeSeedData, collection: CollectionKey) {
    return seed.grammarExamples;
   case "grammarDetailSections":
    return seed.grammarDetailSections;
+  case "radicals":
+   return seed.radicals;
  }
 }
 
@@ -175,6 +178,11 @@ async function seedReplace(client: SupabaseClient, seed: HanziHomeSeedData) {
   throw new Error(`Failed deleting selected seed lessons: ${deleteResult.error.message}`);
  }
 
+ const deleteRadicalsResult = await client.from(SEED_TABLES.radicals).delete().eq("source", "seed");
+ if (deleteRadicalsResult.error) {
+  throw new Error(`Failed deleting seed radicals: ${deleteRadicalsResult.error.message}`);
+ }
+
  await upsertSeedParents(client, seed);
 
  const childOrder: CollectionKey[] = [
@@ -187,6 +195,7 @@ async function seedReplace(client: SupabaseClient, seed: HanziHomeSeedData) {
   "grammarPoints",
   "grammarExamples",
   "grammarDetailSections",
+  "radicals",
  ];
  const report: Record<string, { inserted: number; skipped: number }> = {
   [SEED_TABLES.courses]: { inserted: seed.courses.length, skipped: 0 },

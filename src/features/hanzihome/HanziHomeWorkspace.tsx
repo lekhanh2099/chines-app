@@ -4,10 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
+import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/RadicalWorkspaceSkeleton";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { HanziHomeWorkspaceMessage } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceMessage";
-import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCatalogData, useIsCatalogPending } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -180,6 +181,9 @@ export function HanziHomeWorkspace() {
  const isLessonWorkspaceLoading =
   resolvedActiveModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
 
+ const isCatalogPending = useIsCatalogPending({ includeLessons: false });
+ const isRadicalsLoading = resolvedActiveModule === "radicals" && isCatalogPending;
+
  const hasLessonWorkspaceError =
   resolvedActiveModule !== "radicals" &&
   (isCourseLessonsError ||
@@ -188,6 +192,10 @@ export function HanziHomeWorkspace() {
 
  if (isLessonWorkspaceLoading) {
   return <HanziHomeWorkspaceLoading />;
+ }
+
+ if (isRadicalsLoading) {
+  return <RadicalWorkspaceSkeleton />;
  }
 
  if (hasLessonWorkspaceError) {

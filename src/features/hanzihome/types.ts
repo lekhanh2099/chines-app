@@ -2,13 +2,7 @@ import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyu
 import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
 export type HanziHomeModule =
- | "overview"
- | "lessonText"
- | "notes"
- | "vocab"
- | "grammar"
- | "radicals"
- | "review";
+ "overview" | "lessonText" | "notes" | "vocab" | "grammar" | "radicals" | "review";
 
 export type LearningStatus = "new" | "learning" | "known" | "hard";
 export type ReviewResult = "again" | "hard" | "known";
@@ -62,7 +56,16 @@ export type StaticRadicalData = {
   form: string;
   note: string;
  }>;
+ relatedComponents?: Array<{
+  form: string;
+  note: string;
+ }>;
  distinguish: string[];
+ groups?: Array<{
+  name: string;
+  chars: string[];
+ }>;
+ editMeta?: HanziHomeEditableRecordMeta;
 };
 
 export type HanziHomeMeta = {

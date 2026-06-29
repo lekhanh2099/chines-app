@@ -249,13 +249,82 @@ export function SubstitutionExerciseBody({
     <div className="grid gap-2 md:grid-cols-2">
      {items.map((entryValue, index) => {
       const entry = asRecord(entryValue);
+      const entityId = stringValue(entry, "id") || `${item.id}-${index}`;
+      const itemModel = arrayValue(entry, "model");
+      const itemPrompts = arrayValue(entry, "prompts");
+
+      // Items with inline model + prompts (substitution_drill variant)
+      if (itemModel.length > 0 || itemPrompts.length > 0) {
+       const expected = arrayValue(entry, "expected_dialogue")
+        .filter((line): line is string => typeof line === "string" && Boolean(line.trim()))
+        .join(" / ");
+       const answer =
+        expected || stringValue(entry, "sample_answer") || answerToString(entry.answer);
+
+       const content = (
+        <ExerciseQuestionCard
+         index={index + 1}
+         title={stringValue(entry, "title_vi") || `Mẫu ${index + 1}`}
+         answer={answer}
+         showAnswer={displayMode.showAnswers}
+        >
+         {itemModel.length > 0 && (
+          <div className="grid gap-1.5 rounded-lg border border-accent/30 bg-accent-subtle p-3">
+           <p className="text-xs font-black uppercase tracking-wide text-accent-text">Mẫu</p>
+           {itemModel.map((line, li) => (
+            <p key={li} className="text-base font-black text-accent-text" lang="zh-CN">
+             {answerToString(line)}
+            </p>
+           ))}
+          </div>
+         )}
+         {itemPrompts.length > 0 && (
+          <div className="grid gap-1.5">
+           <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+            Gợi ý thay thế
+           </p>
+           <div className="flex flex-wrap gap-1.5">
+            {itemPrompts.map((prompt, pi) => (
+             <span
+              key={pi}
+              className="rounded-md border border-border-default bg-bg-card px-2 py-1 text-xs font-bold text-text-secondary"
+              lang="zh-CN"
+             >
+              {answerToString(prompt)}
+             </span>
+            ))}
+           </div>
+          </div>
+         )}
+        </ExerciseQuestionCard>
+       );
+
+       return lessonId && itemPath ? (
+        <EditableNodeWrapper
+         key={entityId}
+         lessonId={lessonId}
+         entityType="exercise_question"
+         entityId={entityId}
+         parentEntityType="exercise"
+         parentEntityId={item.id}
+         path={[...itemPath, "items", index]}
+         value={entryValue}
+         label={`Mẫu ${index + 1}`}
+        >
+         {content}
+        </EditableNodeWrapper>
+       ) : (
+        <div key={entityId}>{content}</div>
+       );
+      }
+
+      // Standard items (prompt/answer based)
       const expected = arrayValue(entry, "expected_dialogue")
        .filter((line): line is string => typeof line === "string" && Boolean(line.trim()))
        .join(" / ");
       const answer =
        expected || stringValue(entry, "sample_answer") || answerToString(entry.answer);
 
-      const entityId = stringValue(entry, "id") || `${item.id}-${index}`;
       const content = (
        <ExerciseQuestionCard
         index={index + 1}

@@ -45,3 +45,18 @@ export function useHanziHomeCatalogData({
 
  return query.data ?? emptyCatalogData;
 }
+
+
+export function useIsCatalogPending({
+  includeLessons = false,
+}: {
+  includeLessons?: boolean;
+} = {}): boolean {
+  const { isPending } = useQuery({
+    queryKey: ["hanzihome", "catalog", { includeLessons }],
+    queryFn: () => fetchHanziHomeCatalog({ includeLessons }),
+    staleTime: catalogStaleTime,
+    enabled: false,
+  });
+  return isPending;
+}
