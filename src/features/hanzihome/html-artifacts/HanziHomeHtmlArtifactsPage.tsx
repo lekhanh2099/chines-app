@@ -453,21 +453,21 @@ export function HanziHomeHtmlArtifactsPage() {
  };
 
  return (
-  <main className="flex h-[calc(100dvh-3.5rem-88px-env(safe-area-inset-bottom))] min-h-0 w-full flex-col overflow-hidden bg-bg-subtle md:h-[calc(100dvh-3.5rem)]">
-   <header className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-border-default bg-bg-card px-4 py-3 shadow-theme-sm lg:px-6">
+  <main className="flex h-[calc(100dvh-3.5rem-88px-env(safe-area-inset-bottom))] min-h-0 w-full flex-col overflow-hidden md:h-[calc(100dvh-3.5rem)]">
+   <header className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-border-default bg-bg-card px-5 py-4 shadow-theme-sm sm:px-8">
     <div className="flex min-w-0 flex-wrap items-center gap-3">
      <div className="flex min-w-0 items-center gap-3">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-info-subtle text-info-text">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
        <FileCode2 className="h-5 w-5" />
       </span>
       <div className="min-w-0">
        <div className="flex min-w-0 items-center gap-2">
-        <h1 className="truncate text-lg font-black text-text-primary">Tệp HTML</h1>
-        <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
+        <h1 className="truncate text-xl font-black text-text-primary">Tệp HTML</h1>
+        <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
          {artifacts.length}
         </span>
        </div>
-       <p className="truncate text-xs font-semibold text-text-muted">
+       <p className="truncate text-sm font-medium text-text-muted">
         Quản lý các trang luyện tập HTML đã lưu trong HanziHome.
        </p>
       </div>
@@ -746,7 +746,7 @@ function DirectoryPane({
    <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
     <div className="flex min-w-0 items-center gap-2">
      <h2 className="text-sm font-black text-text-primary">Thư mục</h2>
-     <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
+     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
       {folders.length}
      </span>
     </div>
@@ -835,7 +835,7 @@ function DirectoryPane({
    <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
     <div className="flex min-w-0 items-center gap-2">
      <h3 className="text-sm font-black text-text-primary">Tệp</h3>
-     <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-muted">
+     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
       {filteredArtifacts.length}
      </span>
     </div>
@@ -1032,7 +1032,7 @@ function PreviewPane({
      <h2 className="truncate text-sm font-black text-text-primary">
       {getArtifactTitle(selectedArtifact ?? selectedSummary)}
      </h2>
-     <p className="truncate text-xs font-semibold text-text-muted">
+     <p className="truncate text-sm font-medium text-text-muted">
       {selectedArtifact?.updatedAt ? `Cập nhật ${formatDate(selectedArtifact.updatedAt)}` : "Xem trước"}
      </p>
     </div>

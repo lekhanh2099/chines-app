@@ -148,7 +148,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  );
 
  return (
-  <div className="grid gap-3">
+
    <LessonModuleFrame
     title="Ngữ pháp"
     subtitle={
@@ -164,6 +164,5 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
    >
     {readerContent}
    </LessonModuleFrame>
-  </div>
  );
 }

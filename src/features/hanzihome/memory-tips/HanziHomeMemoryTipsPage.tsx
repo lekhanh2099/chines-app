@@ -5,6 +5,7 @@ import { ArrowLeft, Lightbulb, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { MemoryTipsSkeleton } from "@/features/hanzihome/memory-tips/MemoryTipsSkeleton";
 import { Card } from "@/components/ui/card";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
@@ -94,9 +95,7 @@ export function HanziHomeMemoryTipsPage() {
    </Card>
 
    {tipsQuery.isLoading && (
-    <Card className="rounded-xl border border-border-default">
-     <p className=" font-bold text-text-muted">Đang tải nhắc nhanh...</p>
-    </Card>
+    <MemoryTipsSkeleton />
    )}
 
    {tipsQuery.error && (

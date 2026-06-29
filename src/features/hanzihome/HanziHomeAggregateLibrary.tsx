@@ -35,6 +35,7 @@ import type {
  AggregateFilters,
  AggregateKind,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import { AggregateLibrarySkeleton } from "@/features/hanzihome/components/AggregateLibrarySkeleton";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import {
@@ -403,9 +404,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       )}
 
       {shouldShowAggregateList && query.isLoading && (
-       <p className="rounded-xl bg-bg-subtle p-4  font-bold text-text-muted">
-        Đang tải dữ liệu tổng hợp...
-       </p>
+       <AggregateLibrarySkeleton />
       )}
 
       {shouldShowAggregateList && query.isError && (

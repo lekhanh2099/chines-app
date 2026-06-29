@@ -57,7 +57,7 @@ export function ModuleSplitWorkspaceContent() {
       </Button>
      </div>
     </div>
-    <div className="min-h-0 min-w-0 overflow-hidden">
+    <div className="min-h-0 min-w-0 overflow-y-auto scrollbar-soft">
      <LessonModuleContent module={runtime.activeModule} />
     </div>
     {debugPanel}

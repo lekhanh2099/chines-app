@@ -1,6 +1,7 @@
 "use client";
 
 import { ContinueLearningPanel } from "@/features/home/components/ContinueLearningPanel";
+import { HomeDashboardSkeleton } from "@/features/home/components/HomeDashboardSkeleton";
 import { HomeQuickActions } from "@/features/home/components/HomeQuickActions";
 import { HomeResourceLinks } from "@/features/home/components/HomeResourceLinks";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
@@ -8,6 +9,8 @@ import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
 
 export function HomeDashboard() {
  const dashboard = useHomeDashboard();
+
+ if (dashboard.isLoading) return <HomeDashboardSkeleton />;
 
  return (
   <div className="flex w-full max-w-full flex-col gap-5 px-4 py-5 lg:px-8 lg:py-7">
