@@ -7,6 +7,7 @@ export type EditFieldDefinition = {
  kind?: EditFieldKind;
  description?: string;
  required?: boolean;
+ defaultVisible?: boolean;
 };
 
 export type EditAdapter = {

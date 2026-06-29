@@ -28,7 +28,9 @@ type ModuleSplitWorkspaceProps = {
 export function ModuleSplitWorkspace(props: ModuleSplitWorkspaceProps) {
  return (
   <HanziHomeFeatureProvider {...props}>
-   <ModuleSplitWorkspaceContent />
+   <div className="h-full min-h-0">
+    <ModuleSplitWorkspaceContent />
+   </div>
   </HanziHomeFeatureProvider>
  );
 }

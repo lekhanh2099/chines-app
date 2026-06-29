@@ -30,8 +30,8 @@ export function ModuleSplitWorkspaceContent() {
 
  if (!splitEnabled) {
   return (
-   <div className="grid gap-2">
-    <div className="hanzihome-liquid-toolbar flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1 sticky top-16.25 z-30">
+   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
+    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
      <div className="min-w-0 flex-1">
       <HanziHomeStudyTabs
        value={runtime.activeModule}
@@ -44,26 +44,30 @@ export function ModuleSplitWorkspaceContent() {
        className="bg-transparent p-0 shadow-none"
       />
      </div>
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="hidden h-8 shrink-0 px-2.5  xl:flex"
-      onClick={() => actions.setSplitEnabled(true)}
-     >
-      Mở split
-     </Button>
+     <div className="flex shrink-0 items-center gap-2">
+      <HanziHomeDeveloperTools inline />
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       className="hidden h-8 shrink-0 px-2.5  xl:flex"
+       onClick={() => actions.setSplitEnabled(true)}
+      >
+       Mở split
+      </Button>
+     </div>
     </div>
-    <HanziHomeDeveloperTools />
-    <LessonModuleContent module={runtime.activeModule} />
+    <div className="min-h-0 min-w-0 overflow-hidden">
+     <LessonModuleContent module={runtime.activeModule} />
+    </div>
     {debugPanel}
    </div>
   );
  }
 
  return (
-  <div className="grid gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)] xl:overflow-hidden">
-   <div className="hanzihome-liquid-toolbar sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
+  <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
+   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
     <div className="min-w-0 px-2">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Split mode</p>
      <p className="hidden text-xs font-bold text-text-muted sm:block">

@@ -61,6 +61,19 @@ const collectionLabels: Record<string, string> = {
  scenes: "Cảnh",
 };
 
+const defaultHiddenFieldNames = new Set([
+ "audio_key",
+ "audio_keys",
+ "answer_verified",
+ "check_needed",
+ "en",
+ "grammar_refs",
+ "meaning_en",
+ "source_origin",
+ "source_refs",
+ "vocab_refs",
+]);
+
 function nearestCollection(path: NestedPath) {
  for (let index = path.length - 1; index >= 0; index -= 1) {
   if (typeof path[index] === "number" && typeof path[index - 1] === "string") {
@@ -117,4 +130,9 @@ export function nestedFieldRequired(path: NestedPath, value: unknown) {
    String(last),
   )
  );
+}
+
+export function nestedFieldDefaultVisible(path: NestedPath) {
+ const last = path.at(-1);
+ return typeof last !== "string" || !defaultHiddenFieldNames.has(last);
 }

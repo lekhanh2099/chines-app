@@ -15,6 +15,7 @@ type NestedEditAdapterOptions<T> = {
  groupForPath: (path: NestedPath) => string | undefined;
  kindForPath?: (path: NestedPath, value: unknown, inferredKind: EditFieldKind) => EditFieldKind;
  requiredForPath?: (path: NestedPath, value: unknown) => boolean;
+ defaultVisibleForPath?: (path: NestedPath, value: unknown) => boolean;
  skipKeys?: ReadonlySet<string>;
 };
 
@@ -47,7 +48,7 @@ function collectFields(
  path: NestedPath,
  options: Pick<
   NestedEditAdapterOptions<unknown>,
-  "groupForPath" | "kindForPath" | "labelForPath" | "requiredForPath"
+  "defaultVisibleForPath" | "groupForPath" | "kindForPath" | "labelForPath" | "requiredForPath"
  >,
  skipKeys: ReadonlySet<string>,
  output: NestedField[],
@@ -61,6 +62,7 @@ function collectFields(
    group: options.groupForPath(path),
    kind: resolvedKind,
    required: options.requiredForPath?.(path, value),
+   defaultVisible: options.defaultVisibleForPath?.(path, value) ?? true,
    path,
    sourceValue: value,
   });
@@ -150,6 +152,7 @@ export function createNestedEditAdapter<T>({
  groupForPath,
  kindForPath,
  requiredForPath,
+ defaultVisibleForPath,
  skipKeys = defaultSkippedKeys,
 }: NestedEditAdapterOptions<T>): EditAdapter {
  let fields: NestedField[] = [];
@@ -164,7 +167,7 @@ export function createNestedEditAdapter<T>({
    collectFields(
     value,
     [],
-    { labelForPath, groupForPath, kindForPath, requiredForPath },
+    { labelForPath, groupForPath, kindForPath, requiredForPath, defaultVisibleForPath },
     skipKeys,
     fields,
    );

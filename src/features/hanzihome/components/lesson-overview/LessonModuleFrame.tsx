@@ -47,11 +47,16 @@ export function LessonModuleFrame({
  }, [sidebarSelectionKey]);
 
  return (
-  <div className="grid gap-3">
+  <div
+   className={cn(
+    "grid gap-3",
+    !compact && "h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] overflow-hidden",
+   )}
+  >
    <Card
-    variant="glass"
+    variant="default"
     padding="sm"
-    className={cn("sticky z-20 border-border-default", compact ? "top-0" : "top-11")}
+    className="border-border-default/80 bg-bg-card/70 shadow-none backdrop-blur"
    >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="flex min-w-0 items-center gap-2">
@@ -104,23 +109,25 @@ export function LessonModuleFrame({
    <div
     className={cn(
      "grid min-w-0 gap-3",
-     sidebarOpen && !compact && "xl:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]",
+     !compact && "min-h-0 overflow-hidden",
+     !compact && sidebarOpen && "xl:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]",
     )}
    >
-    {sidebarOpen && !compact && (
-     <aside
-      className={cn(
-       "hidden min-w-0 xl:sticky xl:block xl:self-start",
-       compact ? "xl:top-14" : "xl:top-24",
-      )}
-     >
-      <Card variant="glass" padding="sm" className="max-w-full overflow-hidden">
-       {sidebar}
+    {!compact && sidebarOpen && (
+     <aside className={cn("hidden min-w-0 xl:block xl:min-h-0 xl:self-stretch xl:overflow-hidden")}>
+      <Card
+       variant="default"
+       padding="sm"
+       className="h-full max-w-full overflow-hidden border-border-default/80 bg-bg-card/60 shadow-none backdrop-blur"
+      >
+       <div className="h-full min-h-0 overflow-y-auto pr-1 scrollbar-soft">{sidebar}</div>
       </Card>
      </aside>
     )}
 
-    <div className="min-w-0">{children}</div>
+    <div className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
+     {children}
+    </div>
    </div>
 
    <Sheet

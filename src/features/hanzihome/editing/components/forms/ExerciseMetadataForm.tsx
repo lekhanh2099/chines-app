@@ -10,6 +10,7 @@ import {
  nestedFieldKind,
  nestedFieldLabel,
  nestedFieldRequired,
+ nestedFieldDefaultVisible,
 } from "../../adapters/nestedFieldLabels";
 import { StructuredNodeForm, type StructuredNodeFormProps } from "./StructuredNodeForm";
 
@@ -24,6 +25,7 @@ export function ExerciseMetadataForm(props: ExerciseFormProps) {
     groupForPath: nestedFieldGroup,
     kindForPath: nestedFieldKind,
     requiredForPath: nestedFieldRequired,
+    defaultVisibleForPath: nestedFieldDefaultVisible,
    }),
   [],
  );

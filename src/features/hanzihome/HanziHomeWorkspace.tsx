@@ -212,7 +212,7 @@ export function HanziHomeWorkspace() {
  }
 
   return (
-  <main className="hanzihome-static-page">
+  <main className="hanzihome-static-page hanzihome-workspace-page">
    <h1 className="sr-only">
     {resolvedActiveModule === "radicals"
      ? "Bộ thủ HanziHome"
@@ -220,7 +220,7 @@ export function HanziHomeWorkspace() {
        ? `Bài học ${lesson.title}`
        : "Không gian học HanziHome"}
    </h1>
-   <div className="flex w-full max-w-full flex-col gap-2.5">
+   <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
     {resolvedActiveModule === "radicals" ? (
      <RadicalWorkspace
       key={matchingSearchIntent?.id ?? "radicals"}
