@@ -1200,14 +1200,14 @@ hr.editor-hr.selected {
  display: flex;
  flex-wrap: wrap;
  align-items: center;
- gap: 3px;
- padding: 7px 9px;
+ gap: 2px;
+ padding: 5px 7px;
  border: 1px solid rgb(255 255 255 / 68%);
  background: linear-gradient(135deg, rgb(255 255 255 / 78%), rgb(255 255 255 / 52%));
  position: sticky;
  top: 0;
  z-index: 40;
- border-radius: 0.875rem;
+ border-radius: 0.75rem;
  box-shadow:
   0 0.75rem 2rem rgb(65 49 126 / 8%),
   inset 0 1px 0 rgb(255 255 255 / 88%);
@@ -1222,6 +1222,14 @@ hr.editor-hr.selected {
  min-height: 0;
  overflow-y: auto;
  overflow-x: hidden;
+ border: 1px solid rgb(255 255 255 / 64%);
+ border-radius: 1rem;
+ background: rgb(255 255 255 / 62%);
+ box-shadow:
+  0 0.75rem 2rem rgb(65 49 126 / 7%),
+  inset 0 1px 0 rgb(255 255 255 / 78%);
+ backdrop-filter: blur(1rem) saturate(1.12);
+ -webkit-backdrop-filter: blur(1rem) saturate(1.12);
 }
 
 .note-editor-scroll .editor-shell {
@@ -1237,6 +1245,22 @@ hr.editor-hr.selected {
  overflow-y: visible;
 }
 
+.note-editor-actionbar,
+.note-editor-split-panel {
+ border: 1px solid rgb(255 255 255 / 64%);
+ border-radius: 1rem;
+ background: rgb(255 255 255 / 58%);
+ box-shadow:
+  0 0.75rem 2rem rgb(65 49 126 / 7%),
+  inset 0 1px 0 rgb(255 255 255 / 78%);
+ backdrop-filter: blur(1rem) saturate(1.12);
+ -webkit-backdrop-filter: blur(1rem) saturate(1.12);
+}
+
+.note-editor-actionbar {
+ background: rgb(255 255 255 / 64%);
+}
+
 .editor-shell[data-seamless] .toolbar {
  border-radius: 0.75rem;
 }
@@ -1245,16 +1269,16 @@ hr.editor-hr.selected {
  display: flex;
  align-items: center;
  justify-content: center;
- gap: 4px;
- height: 32px;
- min-width: 32px;
- padding: 0 6px;
+ gap: 3px;
+ height: 28px;
+ min-width: 28px;
+ padding: 0 5px;
  border: none;
  border-radius: 0.375rem;
  background: transparent;
  color: var(--text-secondary);
  cursor: pointer;
- font-size: 13px;
+ font-size: 0.75rem;
  outline: none;
  transition:
   background-color 0.1s,
@@ -1277,8 +1301,8 @@ hr.editor-hr.selected {
 
 .toolbar-divider {
  width: 1px;
- height: 20px;
- margin: 0 4px;
+ height: 18px;
+ margin: 0 3px;
  background: var(--border);
  flex-shrink: 0;
 }
@@ -1289,11 +1313,11 @@ hr.editor-hr.selected {
 }
 
 .toolbar-dropdown-trigger {
- padding: 0 4px 0 8px;
+ padding: 0 4px 0 7px;
 }
 
 .toolbar-dropdown-label {
- max-width: 100px;
+ max-width: 84px;
  overflow: hidden;
  text-overflow: ellipsis;
  white-space: nowrap;
@@ -1361,8 +1385,8 @@ hr.editor-hr.selected {
  display: flex;
  align-items: center;
  justify-content: center;
- width: 28px;
- height: 28px;
+ width: 26px;
+ height: 26px;
  border: none;
  background: transparent;
  color: var(--text-secondary);
@@ -1379,8 +1403,8 @@ hr.editor-hr.selected {
 }
 
 .toolbar-font-size-input {
- width: 32px;
- height: 28px;
+ width: 30px;
+ height: 26px;
  border: none;
  border-left: 1px solid var(--border);
  border-right: 1px solid var(--border);
@@ -1453,7 +1477,7 @@ hr.editor-hr.selected {
 /* ── Pinyin Toggle ── */
 .toolbar-item-pinyin {
  gap: 4px;
- padding: 0 8px;
+ padding: 0 7px;
 }
 
 .toolbar-pinyin-label {
