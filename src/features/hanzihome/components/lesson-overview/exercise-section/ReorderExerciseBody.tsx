@@ -44,7 +44,7 @@ export function ReorderExerciseBody({
      stringValue(question, "completed_paragraph");
     const questionId = stringValue(question, "id") || `${item.id}-reorder-${questionIndex}`;
     const content = (
-     <section className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle/65 p-3 sm:p-4">
+     <section className="exercise-question-surface grid gap-3 rounded-xl border p-3 sm:p-4">
       <h5 className="font-black text-text-primary">Nhóm {questionIndex + 1}</h5>
       <div className="grid gap-2 sm:grid-cols-2">
        {options.map((option, optionIndex) => (

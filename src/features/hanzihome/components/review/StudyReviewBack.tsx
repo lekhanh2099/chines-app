@@ -80,7 +80,7 @@ export function StudyReviewBack({
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="grid min-w-0 flex-1 gap-2">
-     <div className="rounded-xl border border-primary/20 bg-primary/8 p-3 grid gap-2">
+     <div className="exercise-answer-surface grid gap-2 rounded-xl border p-3">
       <div className="flex items-center gap-2">
        <Lightbulb className="h-4 w-4 text-primary" />
        <p className="text-xs font-black uppercase tracking-wide text-primary">Ý nghĩa</p>

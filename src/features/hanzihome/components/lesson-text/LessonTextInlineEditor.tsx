@@ -45,6 +45,11 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
    [],
   [lesson.sourceLesson, sectionResource],
  );
+ const readingItems = useMemo(
+  () =>
+   sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
+  [sourceSections],
+ );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
  const sectionPathFor = (section: Section): EditableNodePath => {
@@ -195,6 +200,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
         section={section}
         sectionPath={sectionPathFor(section)}
         displayMode={displayMode}
+        readingItems={readingItems}
        />
       ))
      ) : selectedSection ? (
@@ -203,6 +209,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
        section={selectedSection}
        sectionPath={sectionPathFor(selectedSection)}
        displayMode={displayMode}
+       readingItems={readingItems}
       />
      ) : null}
     </div>

@@ -22,9 +22,9 @@ export function MatchingOptionCard({
  if (!text) return null;
 
  return (
-  <div className="grid gap-1 rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+  <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
    <div className="flex items-start gap-2">
-    <span className="mt-0.5 shrink-0 rounded-md bg-accent-subtle px-2 py-0.5 text-xs font-black text-accent-text">
+    <span className="study-chip-accent mt-0.5 shrink-0 rounded-md border px-2 py-0.5 text-xs font-black">
      {label}
     </span>
     <p className="min-w-0 font-black text-text-primary" lang="zh-CN">

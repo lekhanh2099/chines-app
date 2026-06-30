@@ -45,7 +45,7 @@ export function PhoneticsExerciseBody({
     return (
      <div
       key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
-      className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle/60 p-3 sm:p-4"
+      className="exercise-question-surface grid gap-3 rounded-xl border p-3 sm:p-4"
      >
       <div>
        <h5 className="font-black text-text-primary">{title}</h5>

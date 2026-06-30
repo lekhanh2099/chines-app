@@ -1,4 +1,7 @@
-import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ Exercise,
+ ReadingItem,
+} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { ExerciseBody } from "./exercise-section/ExerciseBody";
@@ -13,6 +16,7 @@ export function ExerciseCard({
  item,
  displayMode,
  debugMode = false,
+ readingItems,
 }: {
  lessonId?: string;
  parentSectionId?: string;
@@ -20,15 +24,16 @@ export function ExerciseCard({
  item: Exercise;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
+ readingItems?: readonly ReadingItem[];
 }) {
  const record = asRecord(item);
  const instruction = asRecord(record.instruction);
  const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
  const content = (
-  <article className="grid gap-4 rounded-xl border border-border-default border-l-accent/30 bg-bg-card p-4 shadow-theme-sm sm:p-5">
+  <article className="exercise-card-surface grid gap-4 rounded-xl border p-4 shadow-theme-sm sm:p-5">
    <div className="flex items-start justify-between gap-3">
-    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-bg-subtle text-sm font-black text-accent-text">
+    <span className="study-chip-accent flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border text-sm font-black">
      {item.order}
     </span>
     <div className="grid gap-1 min-w-0 flex-1">
@@ -41,7 +46,13 @@ export function ExerciseCard({
     </div>
    </div>
 
-   <ExerciseBody lessonId={lessonId} itemPath={path} item={item} displayMode={displayMode} />
+   <ExerciseBody
+    lessonId={lessonId}
+    itemPath={path}
+    item={item}
+    displayMode={displayMode}
+    readingItems={readingItems}
+   />
 
    {debugMode && <RawExerciseDataDetails value={item} />}
   </article>

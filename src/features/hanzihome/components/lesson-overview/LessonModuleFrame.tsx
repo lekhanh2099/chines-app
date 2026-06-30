@@ -56,7 +56,7 @@ export function LessonModuleFrame({
    <Card
     variant="default"
     padding="sm"
-    className="border-border-default/80 bg-bg-card/70 shadow-none backdrop-blur"
+    className="border-border-default bg-bg-card shadow-none"
    >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="flex min-w-0 items-center gap-2">
@@ -97,7 +97,7 @@ export function LessonModuleFrame({
 
      <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
       {sidebarSummary && (
-       <span className="rounded-lg bg-bg-subtle px-2 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+       <span className="study-chip rounded-lg border px-2 py-1 text-xs font-black uppercase tracking-wide">
         {sidebarSummary}
        </span>
       )}
@@ -118,7 +118,7 @@ export function LessonModuleFrame({
       <Card
        variant="default"
        padding="sm"
-       className="h-full max-w-full overflow-hidden border-border-default/80 bg-bg-card/60 shadow-none backdrop-blur"
+       className="h-full max-w-full overflow-hidden border-border-default bg-bg-card shadow-none"
       >
        <div className="h-full min-h-0 overflow-x-hidden overflow-y-auto pr-1 scrollbar-soft">
         {sidebar}

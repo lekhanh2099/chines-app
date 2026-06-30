@@ -21,7 +21,7 @@ export function QuestionDataBlock({
   if (!text) return null;
 
   return (
-   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2 grid gap-1">
+   <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
     <p className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary">
      {text}
@@ -36,7 +36,7 @@ export function QuestionDataBlock({
   if (visibleLines.length === 0) return null;
 
   return (
-   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2 grid gap-2">
+   <div className="study-content-surface grid gap-2 rounded-lg border px-3 py-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
     <div className="grid gap-1">
      {visibleLines.map((line, index) => (
@@ -68,7 +68,7 @@ export function QuestionDataBlock({
 
  if (zh) {
   return (
-   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2 grid gap-1">
+   <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
     <TextLineCard zh={zh} pinyin={pinyin} vi={vi} displayMode={displayMode} variant="reader" />
    </div>

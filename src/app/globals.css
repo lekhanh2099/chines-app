@@ -120,6 +120,17 @@
  --accent-muted: color-mix(in oklch, var(--primary) 30%, transparent);
  --accent-text: var(--accent-foreground);
 
+ --study-surface: var(--card);
+ --study-surface-muted: var(--card);
+ --study-chip-bg: var(--muted);
+ --study-chip-accent-bg: var(--card);
+ --study-accent-border: color-mix(in oklch, var(--primary) 18%, var(--border));
+ --exercise-card-bg: var(--study-surface);
+ --exercise-question-bg: var(--study-surface-muted);
+ --exercise-answer-bg: var(--card);
+ --exercise-answer-hover-bg: var(--accent);
+ --exercise-answer-border: color-mix(in oklch, var(--primary) 20%, var(--border));
+
  --warning: var(--chart-3);
  --warning-subtle: color-mix(in oklch, var(--chart-3) 16%, var(--background));
  --warning-text: var(--chart-3);
@@ -372,6 +383,52 @@ body {
  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
  transition-timing-function: ease;
  transition-duration: 0ms;
+}
+
+.study-toolbar {
+ border-color: var(--border);
+ background: var(--study-chip-bg);
+}
+
+.study-chip {
+ border-color: var(--border);
+ background: var(--study-chip-bg);
+ color: var(--text-secondary);
+}
+
+.study-content-surface {
+ border-color: var(--border);
+ background: var(--card);
+ color: var(--text-primary);
+}
+
+.study-chip-accent {
+ border-color: var(--study-accent-border);
+ background: var(--study-chip-accent-bg);
+ color: var(--accent-text);
+}
+
+.exercise-card-surface {
+ border-color: var(--border);
+ background: var(--exercise-card-bg);
+}
+
+.exercise-question-surface {
+ border-color: var(--border);
+ background: var(--exercise-question-bg);
+}
+
+.exercise-answer-trigger {
+ color: var(--accent-text);
+}
+
+.exercise-answer-trigger:hover {
+ background: var(--exercise-answer-hover-bg);
+}
+
+.exercise-answer-surface {
+ border-color: var(--exercise-answer-border);
+ background: var(--exercise-answer-bg);
 }
 
 .app-shell {

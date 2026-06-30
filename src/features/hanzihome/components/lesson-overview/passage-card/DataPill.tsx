@@ -12,7 +12,7 @@ export function DataPill({
  if (!label) return null;
 
  return (
-  <span className="rounded-lg border border-border-default bg-bg-primary px-3 py-2  font-bold text-text-primary">
+  <span className="study-content-surface rounded-lg border px-3 py-2 font-bold">
    {label}
    {pinyin && ` · ${pinyin}`}
    {meaning && ` · ${meaning}`}

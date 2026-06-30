@@ -12,7 +12,7 @@ export function AnswerList({
  if (answers.length === 0) return null;
 
  return (
-  <div className="rounded-lg border border-accent/25 bg-bg-primary">
+  <div className="exercise-answer-surface rounded-lg border">
    <button
     type="button"
     className="w-full cursor-pointer px-3 py-2 text-left text-xs font-black uppercase tracking-wide text-accent-text"
@@ -22,7 +22,7 @@ export function AnswerList({
     Xem đáp án ({answers.length})
    </button>
    {open && (
-    <div className="grid gap-1 border-t border-accent/20 bg-accent-subtle/55 px-3 py-2">
+    <div className="grid gap-1 border-t border-border-default px-3 py-2">
      {answers.map((answer) => (
       <p key={answer.key} className=" font-bold text-accent-text">
        {answer.label}: {answer.answer}

@@ -1,5 +1,8 @@
 import type { EditableNodePath } from "@/features/hanzihome/editing";
-import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ Exercise,
+ ReadingItem,
+} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import type { LessonDisplayMode } from "../types";
 import { CommunicationExerciseBody } from "./CommunicationExerciseBody";
@@ -18,11 +21,13 @@ export function ExerciseBody({
  itemPath,
  item,
  displayMode,
+ readingItems,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
+ readingItems?: readonly ReadingItem[];
 }) {
  const { family } = getExerciseRendererMeta(item.type);
 
@@ -103,6 +108,7 @@ export function ExerciseBody({
    itemPath={itemPath}
    item={item}
    displayMode={displayMode}
+   readingItems={readingItems}
   />
  );
 }

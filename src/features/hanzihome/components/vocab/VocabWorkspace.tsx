@@ -5,9 +5,13 @@ import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPan
 import { VocabList } from "@/features/hanzihome/components/VocabList";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
-import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import {
+ useHanziHomeEditMode,
+ useHanziHomeFeatureSelector,
+} from "@/features/hanzihome/context/selectors";
 import { getVocabItemKey, getVocabSearchText } from "@/features/hanzihome/utils/vocab-item";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
+import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
 
 type VocabWorkspaceProps = {
  compact?: boolean;
@@ -17,6 +21,7 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
  const runtime = useHanziHomeRuntime();
  const { lesson, learningState: state } = runtime;
  const actions = useHanziHomeFeatureActions();
+ const editMode = useHanziHomeEditMode();
  const words = lesson.vocab;
  const selectedWordId = useHanziHomeFeatureSelector(
   (featureState) => featureState.vocabSelectedWordId,
@@ -110,6 +115,22 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
     searchValue={searchValue}
     statusFilter={statusFilter}
     compact={compact}
+    actions={
+     editMode && visibleWords.length > 0 ? (
+      <VocabBulkEditDialog
+       lessonId={lesson.id}
+       items={visibleWords}
+       getEntityId={getVocabItemKey}
+       getItemPath={(word) => {
+        const index = lesson.vocab.findIndex(
+         (item) => getVocabItemKey(item) === getVocabItemKey(word),
+        );
+        return ["vocab", Math.max(index, 0)];
+       }}
+       label="Sửa tất cả"
+      />
+     ) : null
+    }
     onSearchChange={actions.setVocabSearchValue}
     onStatusFilterChange={actions.setVocabStatusFilter}
     onSelectWord={actions.selectVocabWord}

@@ -125,7 +125,7 @@ export function PassageCard({
  if (!hasMainPayload) return null;
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
+  <div className="exercise-card-surface grid gap-3 rounded-xl border p-3 sm:p-4">
    {(passageTitle || instructionText) && (
     <div className="grid gap-1">
      {passageTitle && <h5 className="font-black text-text-primary">{passageTitle}</h5>}
@@ -180,10 +180,10 @@ export function PassageCard({
    )}
 
    {displayMode.showAnswers && completedPassageText && completedPassageText !== passageText && (
-    <div className="rounded-lg border border-accent/30 bg-accent-subtle p-3 grid gap-1">
+    <div className="exercise-answer-surface grid gap-1 rounded-lg border p-3">
      <p className="text-xs font-black uppercase tracking-wide text-accent-text">Bản hoàn chỉnh</p>
      <p
-      className="whitespace-pre-wrap leading-8 text-accent-text"
+      className="whitespace-pre-wrap leading-8 text-text-primary"
       lang="zh-CN"
       style={getHanziTypographyStyle(displayMode, { size: "lg" })}
      >

@@ -30,7 +30,7 @@ export function ClozeInlineText({
   nodes.push(
    <span
     key={`${label}-${matchIndex}`}
-    className="mx-1 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-lg border border-accent/35 bg-accent-subtle px-2 py-0.5 text-[0.62em] font-black leading-none text-accent-text shadow-sm"
+    className="exercise-answer-surface mx-1 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-lg border px-2 py-0.5 text-[0.62em] font-black leading-none text-accent-text shadow-sm"
     title={answer?.note}
    >
     <span className="text-[0.78em] opacity-75">{marker}</span>

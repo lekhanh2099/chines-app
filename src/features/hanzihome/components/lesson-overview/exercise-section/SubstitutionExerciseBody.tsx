@@ -84,7 +84,7 @@ export function SubstitutionExerciseBody({
       return (
        <div
         key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
-        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+        className="exercise-card-surface grid gap-2 rounded-xl border p-3"
        >
         <h5 className="font-black text-text-primary">{partTitle}</h5>
 
@@ -160,7 +160,7 @@ export function SubstitutionExerciseBody({
       return (
        <div
         key={stringValue(group, "id") || `${item.id}-pattern-${groupIndex}`}
-        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+        className="exercise-card-surface grid gap-2 rounded-xl border p-3"
        >
         <ModelBlock
          title="Mẫu luyện"
@@ -269,10 +269,10 @@ export function SubstitutionExerciseBody({
          showAnswer={displayMode.showAnswers}
         >
          {itemModel.length > 0 && (
-          <div className="grid gap-1.5 rounded-lg border border-accent/30 bg-accent-subtle p-3">
+          <div className="exercise-answer-surface grid gap-1.5 rounded-lg border p-3">
            <p className="text-xs font-black uppercase tracking-wide text-accent-text">Mẫu</p>
            {itemModel.map((line, li) => (
-            <p key={li} className="text-base font-black text-accent-text" lang="zh-CN">
+            <p key={li} className="text-base font-black text-text-primary" lang="zh-CN">
              {answerToString(line)}
             </p>
            ))}

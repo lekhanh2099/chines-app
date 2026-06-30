@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
  Bookmark,
  CheckCircle2,
@@ -27,6 +27,7 @@ type VocabListProps = {
  searchValue: string;
  statusFilter: "all" | LearningStatus;
  compact?: boolean;
+ actions?: ReactNode;
  onSearchChange: (value: string) => void;
  onStatusFilterChange: (value: "all" | LearningStatus) => void;
  onSelectWord: (wordId: string) => void;
@@ -40,6 +41,7 @@ export function VocabList({
  searchValue,
  statusFilter,
  compact = false,
+ actions,
  onSearchChange,
  onStatusFilterChange,
  onSelectWord,
@@ -69,6 +71,7 @@ export function VocabList({
      </div>
 
      <div className="flex flex-wrap items-center gap-1">
+      {actions}
       {statusItems.map((item) => {
        const Icon = item.icon;
        const active = statusFilter === item.value;

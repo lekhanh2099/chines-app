@@ -7,18 +7,23 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ ReadingItem,
+ Section,
+} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 export function TextbookSectionCard({
  lessonId,
  section,
  sectionPath,
  displayMode,
+ readingItems,
 }: {
  lessonId: string;
  section: Section;
  sectionPath: EditableNodePath;
  displayMode: LessonDisplayMode;
+ readingItems?: readonly ReadingItem[];
 }) {
  return (
   <>
@@ -38,6 +43,7 @@ export function TextbookSectionCard({
      section={section}
      sectionPath={sectionPath}
      displayMode={displayMode}
+     readingItems={readingItems}
     />
    </article>
   </>

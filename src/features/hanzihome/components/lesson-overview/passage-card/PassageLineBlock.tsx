@@ -18,7 +18,7 @@ export function PassageLineBlock({
  const isCloze = shouldRenderAsCloze(line.zh, answerMap, rendererId);
 
  return (
-  <div className="rounded-xl border border-border-default bg-bg-primary p-3">
+  <div className="study-content-surface rounded-xl border p-3">
    {isCloze ? (
     <div className="grid gap-2">
      <ClozeText text={line.zh} answerMap={answerMap} displayMode={displayMode} />

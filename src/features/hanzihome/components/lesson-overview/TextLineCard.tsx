@@ -23,7 +23,7 @@ export function TextLineCard({
    className={cn(
     "grid gap-1",
     variant === "card"
-     ? "rounded-xl border border-border-default bg-bg-primary p-3"
+     ? "study-content-surface rounded-xl border p-3"
      : "border-b border-border-default/70 py-2.5 last:border-b-0 sm:py-3",
    )}
   >

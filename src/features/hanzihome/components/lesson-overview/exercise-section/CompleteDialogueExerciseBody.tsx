@@ -44,7 +44,7 @@ export function CompleteDialogueExerciseBody({
     return (
      <div
       key={stringValue(dialogue, "id") || `${item.id}-${index}`}
-      className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+      className="exercise-card-surface grid gap-2 rounded-xl border p-3"
      >
       {lines.map((lineValue, lineIndex) => {
        const line = asRecord(lineValue);

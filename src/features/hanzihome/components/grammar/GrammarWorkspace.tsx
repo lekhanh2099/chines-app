@@ -109,7 +109,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader points={grammarPoints} editMode={editMode} />
+  <AllGrammarPointReader lessonId={lesson.id} points={grammarPoints} editMode={editMode} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : selectedPoint && selectedPointPath ? (

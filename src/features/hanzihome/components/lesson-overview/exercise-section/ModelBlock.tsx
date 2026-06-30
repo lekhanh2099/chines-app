@@ -30,7 +30,7 @@ export function ModelBlock({
  if (visibleValues.length === 0) return null;
 
  return (
-  <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3 grid gap-2">
+  <div className="exercise-answer-surface grid gap-2 rounded-xl border p-3">
    <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
    <div className="grid gap-2">
     {visibleValues.map((value, index) => {
@@ -51,7 +51,7 @@ export function ModelBlock({
 
      if (typeof value === "string") {
       const content = (
-       <p className="text-base font-black text-accent-text" lang="zh-CN">
+       <p className="text-base font-black text-text-primary" lang="zh-CN">
         {zh}
        </p>
       );

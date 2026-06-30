@@ -31,7 +31,7 @@ export function ExerciseTypeBadge({ meta }: { meta: ExerciseRendererMeta }) {
  const Icon = familyIcons[meta.family];
 
  return (
-  <span className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-primary/15 bg-accent-subtle px-2.5 py-1 text-xs font-black text-accent-text">
+  <span className="study-chip-accent inline-flex w-fit items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-black">
    <Icon className="h-3.5 w-3.5" />
    {meta.label}
   </span>

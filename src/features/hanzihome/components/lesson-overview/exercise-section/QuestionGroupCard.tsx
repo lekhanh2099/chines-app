@@ -52,7 +52,7 @@ export function QuestionGroupCard({
  const note = stringValue(group, "explanation_vi") || stringValue(group, "note_vi");
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
+  <div className="exercise-card-surface grid gap-3 rounded-xl border p-3">
    <div>
     <h5 className="font-black text-text-primary">
      {index + 1}. {title}

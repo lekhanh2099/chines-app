@@ -16,7 +16,7 @@ export function SampleRetelling({
  if (!zh && !vi) return null;
 
  return (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+  <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
    <p className="text-xs font-black uppercase tracking-wide text-text-muted">Bài kể mẫu</p>
    <TextLineCard
     zh={zh || vi}

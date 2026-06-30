@@ -30,7 +30,7 @@ export function CommunicationExerciseBody({
  return (
   <div className="grid gap-3">
    {dialogue.length > 0 && (
-    <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+    <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
      {dialogue.map((lineValue, index) => {
       const line = asRecord(lineValue);
 

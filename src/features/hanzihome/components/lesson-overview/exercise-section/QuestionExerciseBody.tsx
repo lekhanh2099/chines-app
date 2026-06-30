@@ -3,7 +3,10 @@ import {
  NestedEditControls,
  type EditableNodePath,
 } from "@/features/hanzihome/editing";
-import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ Exercise,
+ ReadingItem,
+} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import {
  EmptySectionState,
@@ -58,16 +61,41 @@ function questionHasInlineAnswer(value: unknown) {
  );
 }
 
+function readingReferenceOrder(value: string) {
+ const match = /^reading[_-](\d+)$/i.exec(value);
+ if (!match) return null;
+
+ const order = Number.parseInt(match[1], 10);
+ return Number.isFinite(order) ? order : null;
+}
+
+function resolveReferencedReadingItem(
+ readingItems: readonly ReadingItem[] | undefined,
+ readingReference: string,
+) {
+ if (!readingReference || !readingItems?.length) return undefined;
+
+ const exactMatch = readingItems.find((readingItem) => readingItem.id === readingReference);
+ if (exactMatch) return exactMatch;
+
+ const referencedOrder = readingReferenceOrder(readingReference);
+ if (referencedOrder === null) return undefined;
+
+ return readingItems.find((readingItem) => readingItem.order === referencedOrder);
+}
+
 export function QuestionExerciseBody({
  lessonId,
  itemPath,
  item,
  displayMode,
+ readingItems,
 }: {
  lessonId?: string;
  itemPath?: EditableNodePath;
  item: Exercise;
  displayMode: LessonDisplayMode;
+ readingItems?: readonly ReadingItem[];
 }) {
  const record = asRecord(item);
 
@@ -108,6 +136,12 @@ export function QuestionExerciseBody({
      : "answers";
 
  const wordBank = arrayValue(record, "word_bank");
+ const readingReference =
+  stringValue(record, "reading_ref") ||
+  stringValue(record, "reading_id") ||
+  stringValue(record, "linked_reading_id");
+ const referencedReading = resolveReferencedReadingItem(readingItems, readingReference);
+ const referencedReadingRecord = asRecord(referencedReading);
 
  const supplementaryWords = [
   ...arrayValue(record, "supplementary_words"),
@@ -120,9 +154,14 @@ export function QuestionExerciseBody({
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
  const hasPassagePayload = hasExercisePassagePayload(record);
- const clozeAnswers = hasPassagePayload ? getClozeAnswerValues(record) : [];
+ const directClozeAnswers = getClozeAnswerValues(record);
+ const referencedClozeAnswers = getClozeAnswerValues(referencedReadingRecord);
+ const clozeAnswers =
+  directClozeAnswers.length > 0 ? directClozeAnswers : referencedClozeAnswers;
  const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
- const passage = hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined;
+ const passage =
+  (hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined) ??
+  getPassageLikeValue(referencedReadingRecord, { includeText: true });
  const directPassage = asRecord(record.passage);
  const passageSegments =
   arrayValue(directPassage, "segments").length > 0
@@ -189,7 +228,7 @@ export function QuestionExerciseBody({
   },
   {
    title: "Bài đọc liên quan",
-   value: stringValue(record, "reading_ref") || stringValue(record, "linked_reading_id"),
+   value: readingReference,
   },
   {
    title: "Luyện viết chữ liên quan",
@@ -232,7 +271,7 @@ export function QuestionExerciseBody({
    <InfoBlock title="Chức năng giao tiếp" value={functionText} />
 
    {pattern && (
-    <p className="rounded-xl border border-accent/30 bg-accent-subtle p-3 font-black text-accent-text">
+    <p className="exercise-answer-surface rounded-xl border p-3 font-black text-accent-text">
      {pattern}
     </p>
    )}

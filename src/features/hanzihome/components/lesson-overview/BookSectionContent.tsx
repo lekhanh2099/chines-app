@@ -1,5 +1,8 @@
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ ReadingItem,
+ Section,
+} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
 import { EmptySectionState, GenericItemCard, hasRenderableValue } from "./CommonCards";
 import { ExerciseCard } from "./ExerciseSection";
@@ -22,12 +25,14 @@ export function BookSectionContent({
  sectionPath,
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  debugMode = false,
+ readingItems,
 }: {
  lessonId?: string;
  section: Section;
  sectionPath?: EditableNodePath;
  displayMode?: LessonDisplayMode;
  debugMode?: boolean;
+ readingItems?: readonly ReadingItem[];
 }) {
  const renderSectionFallback = () =>
   hasRenderableValue(section) ? (
@@ -154,6 +159,7 @@ export function BookSectionContent({
         item={item}
         displayMode={displayMode}
         debugMode={debugMode}
+        readingItems={readingItems}
        />
       ))}
      </div>

@@ -52,7 +52,7 @@ function parseHanziReaderSize(value: string): HanziReaderSize {
 
 export function LessonTypographyControls({ displayMode, onChange }: LessonTypographyControlsProps) {
  return (
-  <div className="inline-flex max-w-full flex-wrap items-center gap-1 rounded-lg border border-border-default bg-bg-subtle/60 p-1">
+  <div className="study-toolbar inline-flex max-w-full flex-wrap items-center gap-1 rounded-lg border p-1">
    <span className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Chữ</span>
    <div className="flex min-w-0 items-center gap-1">
     <span className="hidden px-1 text-xs font-bold text-text-muted sm:inline">Font</span>

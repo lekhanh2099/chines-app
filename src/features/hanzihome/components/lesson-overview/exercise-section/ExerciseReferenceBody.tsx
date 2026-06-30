@@ -7,8 +7,8 @@ export function ExerciseReferenceBody({ item }: { item: Exercise }) {
  const reference = stringValue(asRecord(item), "character_writing_ref");
 
  return (
-  <div className="flex items-start gap-3 rounded-xl border border-primary/15 bg-accent-subtle/70 p-4">
-   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-accent-text">
+  <div className="exercise-answer-surface flex items-start gap-3 rounded-xl border p-4">
+   <span className="study-chip-accent flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border">
     <PenLine className="h-4 w-4" />
    </span>
    <div className="grid gap-1">

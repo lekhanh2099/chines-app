@@ -20,9 +20,9 @@ export function ExerciseQuestionCard({
  meaning?: string;
 }) {
  return (
-  <div className="grid gap-2 rounded-lg bg-bg-subtle/55 px-3 py-3 sm:px-4 sm:py-3.5">
+  <div className="exercise-question-surface grid gap-2 rounded-lg border px-3 py-3 sm:px-4 sm:py-3.5">
    <div className="flex items-start gap-3">
-    <span className="flex h-7 min-w-7 shrink-0 items-center justify-center rounded-lg bg-accent-subtle px-2 text-xs font-black text-accent-text">
+    <span className="study-chip-accent flex h-7 min-w-7 shrink-0 items-center justify-center rounded-lg border px-2 text-xs font-black">
      {index}
     </span>
     <p className="min-w-0 pt-0.5 font-black leading-6 text-text-primary">{title}</p>
