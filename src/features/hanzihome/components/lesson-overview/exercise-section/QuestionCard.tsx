@@ -4,6 +4,23 @@ import { QuestionChoiceList } from "./QuestionChoiceList";
 import { QuestionDataBlock } from "./QuestionDataBlock";
 import { buildExerciseQuestionViewModel } from "./question-view-model";
 
+const BLANK_RUN_PATTERN = /[_＿]{2,}|-{3,}|—{2,}|…{2,}|\.\.\.+/;
+const PUNCTUATION_PATTERN = /[。！？!?.,，；;]/;
+const TRAILING_PUNCTUATION_PATTERN = /[。！？!?.,，；;]+$/;
+
+function fillQuestionBlank(title: string, answer: string) {
+ if (!title || !answer || !BLANK_RUN_PATTERN.test(title)) return "";
+
+ return title.replace(BLANK_RUN_PATTERN, (blank, offset: number, source: string) => {
+  const nextCharacter = source[offset + blank.length] ?? "";
+  const inlineAnswer = PUNCTUATION_PATTERN.test(nextCharacter)
+   ? answer.replace(TRAILING_PUNCTUATION_PATTERN, "")
+   : answer;
+
+  return inlineAnswer;
+ });
+}
+
 export function QuestionCard({
  itemId,
  exerciseType,
@@ -23,8 +40,9 @@ export function QuestionCard({
   exerciseType,
   value: questionValue,
   index,
-  answerOverride,
- });
+ answerOverride,
+});
+ const titleWhenAnswerOpen = fillQuestionBlank(model.title, model.answer);
 
  const hasExtra =
   hasRenderableValue(model.context) ||
@@ -43,6 +61,7 @@ export function QuestionCard({
    key={model.id || `${itemId}-${index}`}
    index={index + 1}
    title={model.title}
+   titleWhenAnswerOpen={titleWhenAnswerOpen || undefined}
    answer={model.answer}
    showAnswer={displayMode.showAnswers}
    note={model.note}

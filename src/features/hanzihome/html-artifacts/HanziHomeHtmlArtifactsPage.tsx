@@ -5,12 +5,14 @@ import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import {
  Code2,
+ Copy,
  FileCode2,
  Folder,
  FolderPlus,
  Loader2,
  Maximize2,
  Minimize2,
+ PlugZap,
  Plus,
  Save,
  Search,
@@ -37,6 +39,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { createClient as createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import { HtmlArtifactsApiError } from "./html-artifact-api";
 import type {
@@ -133,6 +136,13 @@ type RuntimeStateMessage = {
  type: "runtime-state";
  artifactId: string;
  state: HtmlArtifactRuntimeState;
+};
+
+type PublishConnectionInfo = {
+ sessionUserId: string | null;
+ publishTokenEnabled: boolean;
+ publishOwnerId: string | null;
+ serviceRoleEnabled: boolean;
 };
 
 type DeleteDialogState =
@@ -474,6 +484,7 @@ export function HanziHomeHtmlArtifactsPage() {
  } | null>(null);
  const isDesktopShell = useHtmlArtifactsDesktopShell();
  const [isCreateFolderOpen, setIsCreateFolderOpen] = useState(false);
+ const [isPublishDialogOpen, setIsPublishDialogOpen] = useState(false);
  const [folderDraft, setFolderDraft] = useState<{
   name: string;
   parentFolderId: string | null;
@@ -773,6 +784,11 @@ export function HanziHomeHtmlArtifactsPage() {
      if (!open) setDeleteDialog(null);
     }}
    />
+   <PublishConnectionDialog
+    selectedArtifact={selectedArtifact}
+    isOpen={isPublishDialogOpen}
+    onOpenChange={setIsPublishDialogOpen}
+   />
 
    {!isDesktopShell && isPreviewFocused ? (
     <div className="min-h-0 flex-1 overflow-hidden">
@@ -812,6 +828,7 @@ export function HanziHomeHtmlArtifactsPage() {
          setMobilePane("edit");
         }}
         onCreateFolder={openCreateFolderDialog}
+        onOpenPublishDialog={() => setIsPublishDialogOpen(true)}
         onDeleteActiveFolder={requestDeleteActiveFolder}
         onDragEnd={() => setDragItem(null)}
         onDragStart={setDragItem}
@@ -936,6 +953,7 @@ export function HanziHomeHtmlArtifactsPage() {
        onSearchChange={setSearchQuery}
        onSelectArtifact={setSelectedId}
        onSelectFolder={setActiveFolderId}
+       onOpenPublishDialog={() => setIsPublishDialogOpen(true)}
        onDraftChange={updateDraftPreview}
        onSubmit={saveArtifact}
        onTabChange={setInspectorTab}
@@ -1021,6 +1039,7 @@ function RightInspectorPane({
  onSearchChange,
  onSelectArtifact,
  onSelectFolder,
+ onOpenPublishDialog,
  onDraftChange,
  onSubmit,
  onTabChange,
@@ -1050,17 +1069,18 @@ function RightInspectorPane({
  onSearchChange: (value: string) => void;
  onSelectArtifact: (id: string) => void;
  onSelectFolder: (folderId: FolderFilter) => void;
+ onOpenPublishDialog: () => void;
  onDraftChange: (formState: ArtifactFormState) => void;
  onSubmit: ArtifactSubmitHandler;
  onTabChange: (tab: InspectorTab) => void;
 }) {
  return (
   <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l-2 border-border-default bg-bg-card">
-   <div className="shrink-0 border-b border-border-default bg-bg-card p-3">
+   <div className="flex h-14 shrink-0 items-center border-b border-border-default bg-bg-card px-3">
     <div
      role="tablist"
      aria-label="HTML inspector"
-     className="grid grid-cols-2 gap-1 rounded-xl bg-bg-subtle p-1"
+     className="grid h-10 w-full grid-cols-2 gap-1 rounded-xl bg-bg-subtle p-1"
     >
      <InspectorTabButton
       active={activeTab === "files"}
@@ -1094,6 +1114,7 @@ function RightInspectorPane({
       isFolderMutating={isFolderMutating}
       onCreateArtifact={onCreateArtifact}
       onCreateFolder={onCreateFolder}
+      onOpenPublishDialog={onOpenPublishDialog}
       onDeleteActiveFolder={onDeleteActiveFolder}
       onDragEnd={onDragEnd}
       onDragStart={onDragStart}
@@ -1190,6 +1211,7 @@ function DirectoryPane({
  isFolderMutating,
  onCreateArtifact,
  onCreateFolder,
+ onOpenPublishDialog,
  onDeleteActiveFolder,
  onDragEnd,
  onDragStart,
@@ -1211,6 +1233,7 @@ function DirectoryPane({
  isFolderMutating: boolean;
  onCreateArtifact: () => void;
  onCreateFolder: () => void;
+ onOpenPublishDialog: () => void;
  onDeleteActiveFolder: () => void;
  onDragEnd: () => void;
  onDragStart: (item: DragItem) => void;
@@ -1324,10 +1347,16 @@ function DirectoryPane({
       {filteredArtifacts.length}
      </span>
     </div>
-    <Button type="button" size="sm" className="shrink-0" onClick={onCreateArtifact}>
-     <Plus className="h-4 w-4" />
-     Tệp mới
-    </Button>
+    <div className="flex shrink-0 items-center gap-2">
+     <Button type="button" variant="outline" size="sm" onClick={onOpenPublishDialog}>
+      <PlugZap className="h-4 w-4" />
+      Kết nối
+     </Button>
+     <Button type="button" size="sm" onClick={onCreateArtifact}>
+      <Plus className="h-4 w-4" />
+      Tệp mới
+     </Button>
+    </div>
    </div>
 
    <div className="min-h-0 flex-1 overflow-y-auto bg-bg-subtle p-3 scrollbar-soft">
@@ -1542,7 +1571,7 @@ function PreviewPane({
 
  return (
   <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
-   <div className="flex h-12 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-border-default bg-bg-card px-3">
+   <div className="flex h-14 shrink-0 items-center justify-between gap-3 border-b border-border-default bg-bg-card px-4">
     <div className="min-w-0">
      <h2 className="truncate text-sm font-black text-text-primary">
       {getArtifactTitle(selectedArtifact ?? selectedSummary)}
@@ -1584,7 +1613,250 @@ function PreviewPane({
      </div>
     )}
    </div>
-  </section>
+ </section>
+ );
+}
+
+function maskToken(token: string) {
+ if (token.length <= 24) return "••••";
+
+ return `${token.slice(0, 12)}...${token.slice(-8)}`;
+}
+
+function parsePublishConnectionInfo(value: unknown): PublishConnectionInfo | null {
+ if (!value || typeof value !== "object") return null;
+
+ const item = value as Partial<Record<keyof PublishConnectionInfo, unknown>>;
+
+ return {
+  sessionUserId: typeof item.sessionUserId === "string" ? item.sessionUserId : null,
+  publishTokenEnabled: item.publishTokenEnabled === true,
+  publishOwnerId: typeof item.publishOwnerId === "string" ? item.publishOwnerId : null,
+  serviceRoleEnabled: item.serviceRoleEnabled === true,
+ };
+}
+
+function KeyValueRow({ label, value }: { label: string; value: string }) {
+ return (
+  <div className="grid gap-1 rounded-lg border border-border-default bg-bg-subtle px-3 py-2">
+   <span className="text-[0.68rem] font-black uppercase text-text-muted">{label}</span>
+   <span className="break-all font-mono text-xs font-bold text-text-primary">{value}</span>
+  </div>
+ );
+}
+
+function PublishConnectionDialog({
+ selectedArtifact,
+ isOpen,
+ onOpenChange,
+}: {
+ selectedArtifact: HtmlArtifact | null;
+ isOpen: boolean;
+ onOpenChange: (open: boolean) => void;
+}) {
+ const endpointPath = "/api/hanzihome/html-artifacts/publish";
+ const displayEndpoint = `https://your-domain.com${endpointPath}`;
+ const supabase = useMemo(() => createBrowserSupabaseClient(), []);
+ const [connectionInfo, setConnectionInfo] = useState<PublishConnectionInfo | null>(null);
+ const [sessionAccessToken, setSessionAccessToken] = useState<string | null>(null);
+ const [isLoadingConnection, setIsLoadingConnection] = useState(false);
+ const exampleArtifactId = selectedArtifact?.id ?? "optional-stable-uuid";
+ const exampleTitle = selectedArtifact?.title ?? "SC3 Mock Exam 04";
+ const exampleType = selectedArtifact?.artifactType ?? "practice_page";
+ const exampleTags = selectedArtifact?.tags.length ? selectedArtifact.tags : ["SC3", "mock"];
+ const exampleHtml = selectedArtifact?.html
+  ? selectedArtifact.html.slice(0, 96).trim()
+  : "<!doctype html><html lang=\"vi\"><head><meta charset=\"utf-8\" /></head><body>...</body></html>";
+ const buildFetchSnippet = (endpoint: string) => `await fetch("${endpoint}", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <supabase-user-access-token-or-publish-token>"
+  },
+  body: JSON.stringify({
+    mode: "upsert",
+    artifactId: "${exampleArtifactId}",
+    title: ${JSON.stringify(exampleTitle)},
+    artifactType: "${exampleType}",
+    tags: ${JSON.stringify(exampleTags)},
+    folderId: null,
+    html: ${JSON.stringify(exampleHtml)}
+  })
+});`;
+ const displayFetchSnippet = buildFetchSnippet(displayEndpoint);
+ const getCurrentEndpoint = () => {
+  if (typeof window === "undefined") return displayEndpoint;
+
+  return new URL(endpointPath, window.location.origin).toString();
+ };
+ const tokenPreview = sessionAccessToken ? maskToken(sessionAccessToken) : "Chưa có session token";
+
+ const copyText = async (text: string, successMessage: string) => {
+  try {
+   await navigator.clipboard.writeText(text);
+   toast.success(successMessage);
+  } catch {
+   toast.error("Không copy được. Chọn text rồi copy thủ công.");
+  }
+ };
+
+ useEffect(() => {
+  if (!isOpen) return;
+
+  let ignore = false;
+
+  const loadConnectionInfo = async () => {
+   setIsLoadingConnection(true);
+   try {
+    const [statusResponse, sessionResult] = await Promise.all([
+     fetch(endpointPath, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+     }),
+     supabase.auth.getSession(),
+    ]);
+
+    const statusJson: unknown = await statusResponse.json().catch(() => null);
+    if (ignore) return;
+
+    setConnectionInfo(parsePublishConnectionInfo(statusJson));
+    setSessionAccessToken(sessionResult.data.session?.access_token ?? null);
+   } catch {
+    if (!ignore) {
+     setConnectionInfo(null);
+     setSessionAccessToken(null);
+    }
+   } finally {
+    if (!ignore) setIsLoadingConnection(false);
+   }
+  };
+
+  void loadConnectionInfo();
+
+  return () => {
+   ignore = true;
+  };
+ }, [isOpen, supabase]);
+
+ return (
+  <Dialog open={isOpen} onOpenChange={onOpenChange}>
+   <DialogContent className="max-w-2xl">
+    <DialogHeader>
+     <DialogTitle className="flex items-center gap-2">
+      <PlugZap className="h-5 w-5 text-primary" />
+      Kết nối publish HTML
+     </DialogTitle>
+     <DialogDescription>
+      Dùng endpoint này để tool khác gửi HTML vào Tệp HTML mà không cần mở app rồi copy paste.
+     </DialogDescription>
+    </DialogHeader>
+
+    <DialogBody>
+     <div className="grid gap-4">
+      <section className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+       <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+         <p className="text-xs font-black uppercase text-text-muted">Endpoint</p>
+         <p className="break-all font-mono text-sm font-bold text-text-primary">{endpointPath}</p>
+         <p className="mt-1 text-xs font-bold text-text-muted">
+          Copy sẽ tự dùng domain hiện tại của app.
+         </p>
+        </div>
+        <Button
+         type="button"
+         variant="outline"
+         size="sm"
+         className="shrink-0"
+         onClick={() => void copyText(getCurrentEndpoint(), "Đã copy endpoint")}
+        >
+         <Copy className="h-4 w-4" />
+         Copy
+        </Button>
+       </div>
+      </section>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
+        <div>
+         <p className="text-sm font-black text-text-primary">Auth user token</p>
+         <p className="mt-1 text-sm font-semibold text-text-muted">
+          Gửi Supabase access token trong header. DB chỉ cho ghi tệp của owner này.
+         </p>
+        </div>
+        <KeyValueRow label="Owner" value={connectionInfo?.sessionUserId ?? "Đang đọc..."} />
+        <KeyValueRow label="Token" value={isLoadingConnection ? "Đang đọc..." : tokenPreview} />
+        <Button
+         type="button"
+         variant="outline"
+         size="sm"
+         disabled={!sessionAccessToken}
+         onClick={() =>
+          sessionAccessToken
+           ? void copyText(sessionAccessToken, "Đã copy auth user token")
+           : toast.error("Không có session token để copy")
+         }
+        >
+         <Copy className="h-4 w-4" />
+         Copy auth token
+        </Button>
+       </div>
+       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
+        <div>
+         <p className="text-sm font-black text-text-primary">Publish token</p>
+         <p className="mt-1 text-sm font-semibold text-text-muted">
+          Token này nằm trong env server; UI chỉ show trạng thái và owner đang nhận file.
+         </p>
+        </div>
+        <KeyValueRow
+         label="Status"
+         value={
+          connectionInfo?.publishTokenEnabled
+           ? "Đã cấu hình"
+           : isLoadingConnection
+             ? "Đang đọc..."
+             : "Chưa cấu hình"
+         }
+        />
+        <KeyValueRow label="Owner" value={connectionInfo?.publishOwnerId ?? "Chưa cấu hình"} />
+        <KeyValueRow
+         label="Service role"
+         value={connectionInfo?.serviceRoleEnabled ? "Sẵn sàng" : "Chưa cấu hình"}
+        />
+       </div>
+      </div>
+
+      <section className="grid gap-2">
+       <div className="flex items-center justify-between gap-2">
+        <p className="text-sm font-black text-text-primary">Ví dụ fetch</p>
+        <Button
+         type="button"
+         variant="outline"
+         size="sm"
+         onClick={() => void copyText(buildFetchSnippet(getCurrentEndpoint()), "Đã copy ví dụ fetch")}
+        >
+         <Copy className="h-4 w-4" />
+         Copy code
+        </Button>
+       </div>
+       <pre className="max-h-80 overflow-auto rounded-xl border border-border-default bg-bg-primary p-3 text-xs font-semibold text-text-primary scrollbar-soft">
+        <code>{displayFetchSnippet}</code>
+       </pre>
+      </section>
+
+      <p className="rounded-xl border border-primary/20 bg-primary/10 p-3 text-sm font-bold text-primary">
+       <code>mode: &quot;upsert&quot;</code> sẽ update khi có <code>artifactId</code>,
+       còn không có thì tạo tệp mới.
+      </p>
+     </div>
+    </DialogBody>
+
+    <DialogFooter>
+     <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+      Đóng
+     </Button>
+    </DialogFooter>
+   </DialogContent>
+  </Dialog>
  );
 }
 

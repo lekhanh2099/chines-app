@@ -139,7 +139,7 @@ export function Header({ user }: { user?: User | null }) {
  return (
   <header
    className={cn(
-    "nova-shell-header sticky top-0 z-50 flex min-h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden border-b border-border-default px-3 py-2 sm:gap-3 sm:px-5 lg:px-7",
+    "nova-shell-header sticky top-0 z-50 flex h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden border-b border-border-default px-3 sm:gap-3 sm:px-5 lg:px-7",
     isHanziHomeRoute && "hanzihome-liquid-header",
    )}
   >
