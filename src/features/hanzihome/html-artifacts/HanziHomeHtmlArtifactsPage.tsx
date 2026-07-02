@@ -2063,12 +2063,10 @@ function ArtifactForm({
 
  const updateForm = (updater: (current: ArtifactFormState) => ArtifactFormState) => {
   if (artifact) setAutoSaveStatus("dirty");
-  setForm((current) => {
-   const next = updater(current);
-   latestFormRef.current = next;
-   onDraftChange(next);
-   return next;
-  });
+  const next = updater(latestFormRef.current);
+  latestFormRef.current = next;
+  setForm(next);
+  onDraftChange(next);
  };
 
  useEffect(() => {
