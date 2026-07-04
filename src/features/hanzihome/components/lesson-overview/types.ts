@@ -2,17 +2,14 @@ import type {
  HanyuLesson,
  Section,
 } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type {
+ HanziReaderFont,
+ HanziReaderSize,
+ LessonTextDisplaySettings,
+} from "@/features/hanzihome/types";
 
-export type LessonDisplayMode = {
- showPinyin: boolean;
- showMeaning: boolean;
- showAnswers: boolean;
- hanziFont: HanziReaderFont;
- hanziSize: HanziReaderSize;
-};
-
-export type HanziReaderFont = "system" | "songti" | "kai" | "pinyin" | "mengshen";
-export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
+export type LessonDisplayMode = LessonTextDisplaySettings;
+export type { HanziReaderFont, HanziReaderSize };
 
 export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
  showPinyin: true,

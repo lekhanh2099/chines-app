@@ -10,14 +10,22 @@ export { EditableNodeWrapper } from "./components/EditableNodeWrapper";
 export { NestedEditControls } from "./components/NestedEditControls";
 export type { EditableNodePath, EditableEntityType } from "./store/types";
 
-export function HanziHomeEditingTools() {
+export function HanziHomeEditingDialogShell() {
+ return <EditableDialogShell />;
+}
+
+export function HanziHomeEditingTools({
+ includeDialogShell = true,
+}: {
+ includeDialogShell?: boolean;
+} = {}) {
  const editMode = useHanziHomeEditMode();
  return (
   <>
    <EditModeToggle />
    {editMode ? <LessonContentCreateDialog /> : null}
    {editMode ? <DeletedContentDialog /> : null}
-   <EditableDialogShell />
+   {includeDialogShell ? <EditableDialogShell /> : null}
   </>
  );
 }

@@ -137,6 +137,7 @@ export default function EditorFloatingMenu() {
  });
  const pathname = usePathname();
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
+ const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
  const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
 
  const debouncedSelection = useDebounce(draftSelection, DEBOUNCE_DELAY);
@@ -159,6 +160,10 @@ export default function EditorFloatingMenu() {
 
  const smartMode = smartData?.mode || mode;
  const detailTarget = smartData?.entry.hanzi || extractChinese(selectedText) || selectedText;
+
+ useEffect(() => {
+  hydrateLookupSettings();
+ }, [hydrateLookupSettings]);
 
  const updateAnchorFromNativeSelection = useCallback(() => {
   const nativeSelection = window.getSelection();

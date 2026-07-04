@@ -1,13 +1,17 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import {
- fetchHanziHomeLearningState,
- saveHanziHomeLearningState,
-} from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+ loadLearningStateLocalFirst,
+ refreshLearningStateFromRemoteIfClean,
+ saveLearningStateLocalFirst,
+ syncPendingLearningStateMutations,
+ type LearningStateSyncResult,
+ type LearningStateSyncStatus,
+} from "@/features/hanzihome/local/learning-state-local-first";
 import {
  emptyLearningState,
  nextProgress,
@@ -16,31 +20,70 @@ import {
 
 const learningStateQueryKey = ["hanzihome", "learning-state"] as const;
 
+function getBrowserOnlineState() {
+ return typeof navigator === "undefined" ? true : navigator.onLine;
+}
+
 export function useLearningState() {
  const queryClient = useQueryClient();
+ const writeChainRef = useRef<Promise<void>>(Promise.resolve());
+ const syncInFlightRef = useRef<Promise<LearningStateSyncResult> | null>(null);
+ const [syncStatus, setSyncStatus] = useState<LearningStateSyncStatus>("synced");
+ const [pendingSyncCount, setPendingSyncCount] = useState(0);
+ const [lastSyncError, setLastSyncError] = useState<string | null>(null);
+ const [isOnline, setIsOnline] = useState(getBrowserOnlineState);
  const query = useQuery({
   queryKey: learningStateQueryKey,
-  queryFn: fetchHanziHomeLearningState,
+  queryFn: loadLearningStateLocalFirst,
  });
- const persistMutation = useMutation({
-  mutationFn: saveHanziHomeLearningState,
-  onMutate: async (nextState) => {
-   await queryClient.cancelQueries({ queryKey: learningStateQueryKey });
-   const previousState = queryClient.getQueryData<UserLearningState>(learningStateQueryKey);
 
-   queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(nextState));
+ const applySyncResult = useCallback(
+  (result: LearningStateSyncResult) => {
+   setSyncStatus(result.status);
+   setPendingSyncCount(result.pendingCount);
+   setLastSyncError(result.error ?? null);
 
-   return { previousState };
-  },
-  onError: (_error, _nextState, context) => {
-   if (context?.previousState) {
-    queryClient.setQueryData(learningStateQueryKey, context.previousState);
+   if (result.state) {
+    queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(result.state));
    }
   },
-  onSuccess: (savedState) => {
-   queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(savedState));
-  },
- });
+  [queryClient],
+ );
+
+ const refreshRemoteIfClean = useCallback(async () => {
+  try {
+   const remoteState = await refreshLearningStateFromRemoteIfClean();
+   if (remoteState) {
+    queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(remoteState));
+   }
+  } catch {
+   // Remote refresh is opportunistic. Pending local writes are handled by the sync queue.
+  }
+ }, [queryClient]);
+
+ const syncPendingMutations = useCallback(async () => {
+  if (syncInFlightRef.current) return syncInFlightRef.current;
+
+  setSyncStatus("syncing");
+  syncInFlightRef.current = syncPendingLearningStateMutations()
+   .then((result) => {
+    applySyncResult(result);
+    return result;
+   })
+   .finally(() => {
+    syncInFlightRef.current = null;
+   });
+
+  return syncInFlightRef.current;
+ }, [applySyncResult]);
+
+ const syncThenRefresh = useCallback(async () => {
+  const result = await syncPendingMutations();
+  if (result.status === "synced") {
+   await refreshRemoteIfClean();
+  }
+  return result;
+ }, [refreshRemoteIfClean, syncPendingMutations]);
 
  const state = useMemo(
   () => normalizeLearningState(query.data ?? emptyLearningState),
@@ -57,17 +100,66 @@ export function useLearningState() {
    const nextState = normalizeLearningState(recipe(current));
 
    queryClient.setQueryData(learningStateQueryKey, nextState);
-   persistMutation.mutate(nextState);
+   setSyncStatus("pending");
+   setPendingSyncCount(1);
+   setLastSyncError(null);
+
+   writeChainRef.current = writeChainRef.current
+    .catch(() => undefined)
+    .then(() => saveLearningStateLocalFirst(nextState));
+
+   void writeChainRef.current
+    .then(() => syncPendingMutations())
+    .catch((error: unknown) => {
+     const message =
+      error instanceof Error ? error.message : "Could not save learning state locally.";
+     setSyncStatus("error");
+     setPendingSyncCount(1);
+     setLastSyncError(message);
+    });
   },
-  [persistMutation, query.data, queryClient],
+  [query.data, queryClient, syncPendingMutations],
  );
+
+ useEffect(() => {
+  if (!query.isSuccess) return;
+
+  void syncThenRefresh();
+
+  const handleOnline = () => {
+   setIsOnline(true);
+   void syncThenRefresh();
+  };
+  const handleOffline = () => {
+   setIsOnline(false);
+  };
+  const handleFocus = () => {
+   setIsOnline(getBrowserOnlineState());
+   void syncThenRefresh();
+  };
+
+  window.addEventListener("online", handleOnline);
+  window.addEventListener("offline", handleOffline);
+  window.addEventListener("focus", handleFocus);
+
+  return () => {
+   window.removeEventListener("online", handleOnline);
+   window.removeEventListener("offline", handleOffline);
+   window.removeEventListener("focus", handleFocus);
+  };
+ }, [query.isSuccess, syncThenRefresh]);
 
  return useMemo(
   () => ({
    state,
    isLoading: query.isLoading,
-   isSaving: persistMutation.isPending,
-   isError: query.isError || persistMutation.isError,
+   isSaving: syncStatus === "syncing",
+   isError: query.isError || syncStatus === "error",
+   isOnline,
+   syncStatus,
+   pendingSyncCount,
+   lastSyncError,
+   retrySync: syncThenRefresh,
 
    updateSettings: (settings: Partial<UserLearningState["settings"]>) =>
     updateState((current) => ({
@@ -119,11 +211,14 @@ export function useLearningState() {
     })),
   }),
   [
-   persistMutation.isError,
-   persistMutation.isPending,
+   isOnline,
+   lastSyncError,
+   pendingSyncCount,
    query.isError,
    query.isLoading,
    state,
+   syncStatus,
+   syncThenRefresh,
    updateState,
   ],
  );

@@ -10,7 +10,7 @@ import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
 
 import { BookSectionContent } from "./BookSectionContent";
-import { LessonModuleFrame } from "./LessonModuleFrame";
+import { LessonModuleFrame, LessonModuleSidebarRailItem } from "./LessonModuleFrame";
 import { LessonModuleSidebarItem } from "./LessonModuleSidebarItem";
 import { LessonTypographyControls } from "./LessonTypographyControls";
 import { BookOpen, sectionIcons } from "./section-icons";
@@ -109,6 +109,28 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    sidebarOpen={isSectionListVisible}
    onSidebarOpenChange={setIsSectionListVisible}
    sidebarSelectionKey={selectedSectionId}
+   sidebarRail={
+    <>
+     <LessonModuleSidebarRailItem
+      icon={<BookOpen className="h-4 w-4" />}
+      label={`Xem toàn bộ ${sections.length} đề mục`}
+      selected={!selectedSection}
+      onClick={() => setSelectedSectionId(ALL_SECTIONS_ID)}
+     />
+     {sections.map((section, index) => {
+      const SectionIcon = sectionIcons[section.type] ?? BookOpen;
+      return (
+       <LessonModuleSidebarRailItem
+        key={section.id}
+        icon={<SectionIcon className="h-4 w-4" />}
+        label={`${index + 1}. ${section.title}`}
+        selected={selectedSection?.id === section.id}
+        onClick={() => setSelectedSectionId(section.id)}
+       />
+      );
+     })}
+    </>
+   }
    sidebar={
     <div className="grid max-h-[calc(100vh-11rem)] content-start gap-2 overflow-y-auto pr-1">
      <LessonModuleSidebarItem

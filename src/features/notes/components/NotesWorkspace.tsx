@@ -104,13 +104,13 @@ export function NotesWorkspace() {
  }
 
  return (
-  <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
-   <header className="shrink-0 border-b border-border-default px-5 py-4 sm:px-8 sticky top-0 z-20 bg-bg-primary grid gap-4">
+  <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
+   <header className="sticky top-0 z-20 grid shrink-0 gap-4 border-b border-border-default bg-bg-card/95 px-4 py-4 shadow-theme-sm backdrop-blur sm:px-6 lg:px-8">
     <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
      <div className="grid gap-1">
       <div className="flex flex-wrap items-center gap-2">
        <h1 className="text-xl font-bold text-text-primary">Ghi chú</h1>
-       <Badge variant="info" size="sm">
+       <Badge variant="purple" size="sm">
         {allNotes.length} note
        </Badge>
       </div>
@@ -120,23 +120,23 @@ export function NotesWorkspace() {
      </div>
 
      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-      <div className="relative min-w-0 sm:w-72">
+      <div className="relative min-w-0 sm:w-80">
        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
        <Input
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
         aria-label="Tìm ghi chú theo tiêu đề, bài học hoặc tag"
         placeholder="Tìm tiêu đề, bài học, tag..."
-        className="h-11 pl-9"
+        className="h-11 rounded-xl bg-bg-primary pl-9 shadow-theme-sm"
        />
       </div>
-      <QuickNoteButton variant="outline" />
+      <QuickNoteButton variant="outline" className="h-11 rounded-xl bg-bg-card px-3 shadow-theme-sm" />
       <NoteImportButton />
       <NoteCreateDialog />
      </div>
     </div>
 
-    <div className="flex gap-1 overflow-x-auto scrollbar-none">
+    <div className="flex gap-1 overflow-x-auto rounded-2xl border border-border-default bg-bg-primary p-1 scrollbar-none">
      {filterLabels.map((filter) => {
       const isActive = activeFilter === filter.value;
       const count = getFilterCount(allNotes, filter.value);
@@ -147,7 +147,7 @@ export function NotesWorkspace() {
         type="button"
         variant={isActive ? "default" : "ghost"}
         size="default"
-        className="min-h-11 gap-2"
+        className="min-h-10 gap-2 rounded-xl px-3"
         aria-pressed={isActive}
         onClick={() => setActiveFilter(filter.value)}
        >

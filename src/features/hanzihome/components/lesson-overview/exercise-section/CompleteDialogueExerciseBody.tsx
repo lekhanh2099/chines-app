@@ -8,6 +8,24 @@ import { arrayValue, asRecord, stringValue } from "../utils";
 import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
+function dialogueLineText(value: unknown) {
+ if (typeof value === "string") return value.trim();
+
+ const line = asRecord(value);
+ return stringValue(line, "zh") || stringValue(line, "text");
+}
+
+function dialogueAnswerValues(dialogue: Record<string, unknown>) {
+ const sampleAnswers = arrayValue(dialogue, "sample_answers");
+ if (sampleAnswers.length > 0) return sampleAnswers;
+
+ const answerHint = stringValue(dialogue, "answer_hint");
+ if (answerHint) return [answerHint];
+
+ const answer = stringValue(dialogue, "answer");
+ return answer ? [answer] : [];
+}
+
 export function CompleteDialogueExerciseBody({
  lessonId,
  itemPath,
@@ -37,9 +55,9 @@ export function CompleteDialogueExerciseBody({
  return (
   <div className="grid gap-3">
    {dialogues.map((dialogueValue, index) => {
-    const dialogue = asRecord(dialogueValue);
-    const lines = arrayValue(dialogue, "lines");
-    const answers = arrayValue(dialogue, "sample_answers");
+   const dialogue = asRecord(dialogueValue);
+   const lines = arrayValue(dialogue, "lines");
+    const answers = dialogueAnswerValues(dialogue);
 
     return (
      <div
@@ -52,7 +70,7 @@ export function CompleteDialogueExerciseBody({
        const lineCard = (
         <TextLineCard
          speaker={stringValue(line, "speaker")}
-         zh={stringValue(line, "zh") || stringValue(line, "text")}
+         zh={dialogueLineText(lineValue)}
          pinyin={stringValue(line, "pinyin")}
          vi={stringValue(line, "vi")}
          displayMode={displayMode}

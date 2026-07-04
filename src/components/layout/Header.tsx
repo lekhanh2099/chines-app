@@ -40,6 +40,7 @@ export function Header({ user }: { user?: User | null }) {
  const searchParams = useSearchParams();
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
+ const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
  const isHanziHomeRoute = pathname === "/hanzihome";
  const isHanziHomeWorkspaceRoute =
   isHanziHomeRoute &&
@@ -81,6 +82,10 @@ export function Header({ user }: { user?: User | null }) {
   searchParams,
   selectedCourseId,
  ]);
+
+ useEffect(() => {
+  hydrateLookupSettings();
+ }, [hydrateLookupSettings]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -143,107 +148,109 @@ export function Header({ user }: { user?: User | null }) {
     isHanziHomeRoute && "hanzihome-liquid-header",
    )}
   >
-   {hanzihomeBreadcrumb && (
-    <nav
-     aria-label="Chuyển nhanh bài HanziHome"
-     className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1  font-semibold text-text-secondary lg:flex"
-    >
-     <Select
-      value={hanzihomeBreadcrumb.selectedCourse.id}
-      onValueChange={(courseId) => {
-       const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
-
-       if (course) {
-        navigateHanziHome(course.id, 1);
-       }
-      }}
+   <div className="flex h-14 w-full min-w-0 items-center justify-between gap-2 sm:gap-3">
+    {hanzihomeBreadcrumb && (
+     <nav
+      aria-label="Chuyển nhanh bài HanziHome"
+      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1 font-semibold text-text-secondary lg:flex"
      >
-      <SelectTrigger
-       aria-label="Chọn giáo trình HanziHome"
-       className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+      <Select
+       value={hanzihomeBreadcrumb.selectedCourse.id}
+       onValueChange={(courseId) => {
+        const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
+
+        if (course) {
+         navigateHanziHome(course.id, 1);
+        }
+       }}
       >
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-       {hanzihomeBreadcrumb.courses.map((course, index) => (
-        <SelectItem key={course.id + index} value={course.id}>
-         {course.title}
-        </SelectItem>
-       ))}
-      </SelectContent>
-     </Select>
-     <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
-     <Select
-      value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
-      onValueChange={(lessonNumber) => {
-       navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
+       <SelectTrigger
+        aria-label="Chọn giáo trình HanziHome"
+        className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+       >
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
+        {hanzihomeBreadcrumb.courses.map((course, index) => (
+         <SelectItem key={course.id + index} value={course.id}>
+          {course.title}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
+      <Select
+       value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
+       onValueChange={(lessonNumber) => {
+        navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
+       }}
+      >
+       <SelectTrigger
+        aria-label="Chọn bài học HanziHome"
+        className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+       >
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
+        {hanzihomeBreadcrumb.lessons.map((lesson) => (
+         <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </nav>
+    )}
+
+    <form onSubmit={handleSearch} className="relative min-w-0 flex-1 lg:max-w-[34rem]">
+     <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+     <input
+      value={searchValue}
+      onFocus={() => setSearchOpen(true)}
+      onClick={() => setSearchOpen(true)}
+      onChange={(event) => {
+       setSearchValue(event.target.value);
+       setSearchOpen(true);
       }}
+      placeholder="Tìm toàn bộ HanziHome"
+      aria-label="Tìm toàn bộ HanziHome"
+      className="h-11 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
+     />
+    </form>
+
+    <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2">
+     <Button
+      type="button"
+      onClick={() => toggleLookup(pathname)}
+      variant={lookupEnabled ? "default" : "outline"}
+      size="lg"
+      className="h-11 min-w-11 px-3"
+      aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
+      title="Bật/Tắt tra từ tự động"
      >
-      <SelectTrigger
-       aria-label="Chọn bài học HanziHome"
-       className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
-      >
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-       {hanzihomeBreadcrumb.lessons.map((lesson) => (
-        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
-         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-        </SelectItem>
-       ))}
-      </SelectContent>
-     </Select>
-    </nav>
-   )}
+      <BookOpenCheck className="h-5 w-5" />
+      <span className="hidden sm:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
+     </Button>
 
-   <form onSubmit={handleSearch} className="relative min-w-0 flex-1 lg:max-w-[34rem]">
-    <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
-    <input
-     value={searchValue}
-     onFocus={() => setSearchOpen(true)}
-     onClick={() => setSearchOpen(true)}
-     onChange={(event) => {
-      setSearchValue(event.target.value);
-      setSearchOpen(true);
-     }}
-     placeholder="Tìm toàn bộ HanziHome"
-     aria-label="Tìm toàn bộ HanziHome"
-     className="h-11 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
-    />
-   </form>
+     <Button
+      type="button"
+      onClick={toggleTheme}
+      aria-label="Đổi giao diện sáng tối"
+      size="icon-lg"
+      className="h-11 w-11"
+     >
+      {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+     </Button>
 
-   <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2">
-    <Button
-     type="button"
-     onClick={() => toggleLookup(pathname)}
-     variant={lookupEnabled ? "default" : "outline"}
-     size="lg"
-     className="h-11 min-w-11 px-3"
-     aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
-     title="Bật/Tắt tra từ tự động"
-    >
-     <BookOpenCheck className="h-5 w-5" />
-     <span className="hidden sm:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
-    </Button>
+     <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary lg:flex">
+      <span className="text-lg">🇻🇳</span>
+      Tiếng Việt
+     </div>
 
-    <Button
-     type="button"
-     onClick={toggleTheme}
-     aria-label="Đổi giao diện sáng tối"
-     size="icon-lg"
-     className="h-11 w-11"
-    >
-     {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-    </Button>
-
-    <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary lg:flex">
-     <span className="text-lg">🇻🇳</span>
-     Tiếng Việt
-    </div>
-
-    <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
-     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle  font-bold text-accent-text">
-      {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
+     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
+      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle  font-bold text-accent-text">
+       {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
+      </div>
      </div>
     </div>
    </div>

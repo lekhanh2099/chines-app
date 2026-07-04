@@ -2,6 +2,8 @@ import * as z from "zod";
 
 const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 const reviewResultSchema = z.enum(["again", "hard", "known"]);
+const hanziReaderFontSchema = z.enum(["system", "songti", "kai", "pinyin", "mengshen"]);
+const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
 const moduleSchema = z.enum([
  "overview",
  "lessonText",
@@ -26,6 +28,15 @@ export const userLearningStateSchema = z.object({
    lastModule: moduleSchema.optional(),
    density: z.enum(["comfortable", "compact", "focus"]).optional(),
    vocabDetailTab: z.string().optional(),
+   lessonTextDisplayMode: z
+    .object({
+     showPinyin: z.boolean(),
+     showMeaning: z.boolean(),
+     showAnswers: z.boolean(),
+     hanziFont: hanziReaderFontSchema,
+     hanziSize: hanziReaderSizeSchema,
+    })
+    .optional(),
   })
   .default({}),
  progress: z

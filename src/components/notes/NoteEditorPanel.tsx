@@ -262,7 +262,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
 
  return (
   <div
-   className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-transparent"
+   className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-bg-primary"
    style={{ display: isVisible ? "flex" : "none" }}
   >
    {isLoading ? (
@@ -287,7 +287,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      />
 
      {/* Toolbar */}
-     <div className="note-editor-actionbar mx-3 mt-3 flex shrink-0 flex-col gap-2 px-3 py-2 sm:mx-4 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
+     <div className="note-editor-actionbar mx-4 mt-4 flex shrink-0 flex-col gap-2 px-3 py-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
       <div className="flex min-w-0 flex-wrap items-center gap-2">
        <Button
         type="button"
@@ -385,7 +385,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      </div>
 
      {isSplitView ? (
-      <div className="note-editor-split-panel m-3 min-h-0 flex-1 overflow-hidden sm:m-4">
+      <div className="note-editor-split-panel m-4 min-h-0 flex-1 overflow-hidden">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -396,7 +396,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
        />
       </div>
      ) : (
-      <div className="note-editor-scroll m-3 sm:m-4">
+      <div className="note-editor-scroll m-4">
        <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
       </div>
      )}

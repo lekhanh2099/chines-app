@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type ReactNode } from "react";
+import { useEffect, useMemo, type ReactNode } from "react";
 
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import type {
@@ -14,13 +14,28 @@ import { createHanziHomeFeatureStore } from "./hanzihomeFeatureStore";
 import { HanziHomeFeatureStoreProvider } from "./hanzihomeFeatureContext";
 import { createHanziHomeFeatureActions } from "./actions";
 import { createHanziHomeFeatureServices } from "./services";
-import type { StudyModule } from "./types";
+import type { LearningSyncUiState, StudyModule } from "./types";
+
+function displayModeEquals(
+ left: UserLearningState["settings"]["lessonTextDisplayMode"],
+ right: UserLearningState["settings"]["lessonTextDisplayMode"],
+) {
+ return (
+  left?.showPinyin === right?.showPinyin &&
+  left?.showMeaning === right?.showMeaning &&
+  left?.showAnswers === right?.showAnswers &&
+  left?.hanziFont === right?.hanziFont &&
+  left?.hanziSize === right?.hanziSize
+ );
+}
 
 export function HanziHomeFeatureProvider({
  lesson,
  learningState,
+ learningSync,
  activeModule,
  onSelectModule,
+ onUpdateLearningSettings,
  onBookmarkVocab,
  onMarkVocab,
  onBookmarkGrammar,
@@ -30,8 +45,10 @@ export function HanziHomeFeatureProvider({
 }: {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
+ learningSync?: LearningSyncUiState;
  activeModule: StudyModule;
  onSelectModule: (module: StudyModule) => void;
+ onUpdateLearningSettings: (settings: Partial<UserLearningState["settings"]>) => void;
  onBookmarkVocab: (id: string) => void;
  onMarkVocab: (id: string, status: LearningStatus) => void;
  onBookmarkGrammar: (id: string) => void;
@@ -58,6 +75,19 @@ export function HanziHomeFeatureProvider({
    }),
   [matchingIntent?.module, matchingIntent?.targetId],
  );
+ useEffect(() => {
+  const persistedDisplayMode = learningState.settings.lessonTextDisplayMode;
+  if (!persistedDisplayMode) return;
+
+  store.setState((state) => {
+   if (displayModeEquals(state.lessonTextDisplayMode, persistedDisplayMode)) return state;
+
+   return {
+    ...state,
+    lessonTextDisplayMode: persistedDisplayMode,
+   };
+  });
+ }, [learningState.settings.lessonTextDisplayMode, store]);
  const actions = useMemo(() => createHanziHomeFeatureActions(store), [store]);
  const services = useMemo(() => createHanziHomeFeatureServices(lesson), [lesson]);
  const runtime = useMemo(
@@ -65,8 +95,10 @@ export function HanziHomeFeatureProvider({
    originalLesson: lesson,
    lesson,
    learningState,
+   learningSync,
    activeModule,
    selectModule: onSelectModule,
+   updateLearningSettings: onUpdateLearningSettings,
    bookmarkVocab: onBookmarkVocab,
    markVocab: onMarkVocab,
    bookmarkGrammar: onBookmarkGrammar,
@@ -75,6 +107,7 @@ export function HanziHomeFeatureProvider({
   }),
   [
    activeModule,
+   learningSync,
    learningState,
    lesson,
    onAnswerReview,
@@ -83,6 +116,7 @@ export function HanziHomeFeatureProvider({
    onMarkGrammar,
    onMarkVocab,
    onSelectModule,
+   onUpdateLearningSettings,
   ],
  );
  const value = useMemo(

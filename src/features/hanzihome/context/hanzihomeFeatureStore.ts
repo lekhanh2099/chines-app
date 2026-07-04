@@ -33,7 +33,10 @@ export type HanziHomeFeatureState = {
 type HanziHomeFeatureInitialSelections = Partial<
  Pick<
   HanziHomeFeatureState,
-  "vocabSelectedWordId" | "grammarSelectedPointId" | "lessonTextSelectedSectionId"
+  | "vocabSelectedWordId"
+  | "grammarSelectedPointId"
+  | "lessonTextSelectedSectionId"
+  | "lessonTextDisplayMode"
  >
 >;
 
@@ -59,7 +62,8 @@ export function createHanziHomeFeatureStore(
    initialSelections.lessonTextSelectedSectionId ?? "__all_lesson_sections__",
   lessonTextSidebarOpen: true,
   lessonTextSettingsOpen: false,
-  lessonTextDisplayMode: DEFAULT_LESSON_DISPLAY_MODE,
+  lessonTextDisplayMode:
+   initialSelections.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE,
  });
 }
 

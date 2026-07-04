@@ -38,7 +38,7 @@ export function NoteListRow({
  return (
   <Link
    href={`/notes/${note.id}`}
-   className="group grid grid-cols-[minmax(0,1fr)_auto] gap-3 border-b border-border-default px-5 py-4 transition-colors hover:bg-bg-card-hover sm:px-8"
+   className="group grid grid-cols-[minmax(0,1fr)_auto] gap-3 border-b border-border-default px-4 py-4 transition-colors last:border-b-0 hover:bg-bg-subtle/70 sm:px-5"
   >
    <div className="flex min-w-0 items-start gap-3">
     <span
@@ -55,7 +55,7 @@ export function NoteListRow({
       <span className="truncate font-bold text-text-primary transition-colors group-hover:text-text-primary/80">
        {note.title || "Ghi chú chưa đặt tên"}
       </span>
-      <Badge variant={context.kind === "lesson" ? "info" : "default"} size="sm">
+      <Badge variant={context.kind === "lesson" ? "purple" : "default"} size="sm">
        {context.title}
       </Badge>
      </div>
@@ -71,7 +71,7 @@ export function NoteListRow({
        {context.badges.slice(0, 4).map((badge) => (
         <span
          key={badge}
-         className="rounded-full border border-border-default bg-bg-primary px-2 py-0.5 text-[0.65rem] font-black uppercase tracking-[0.14em] text-text-muted"
+         className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.65rem] font-black uppercase tracking-[0.14em] text-text-muted"
         >
          {badge}
         </span>

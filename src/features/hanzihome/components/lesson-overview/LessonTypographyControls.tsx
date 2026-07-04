@@ -63,7 +63,7 @@ export function LessonTypographyControls({ displayMode, onChange }: LessonTypogr
      <SelectTrigger size="sm" className="h-7 min-w-24 bg-bg-primary shadow-none sm:min-w-32">
       <SelectValue />
      </SelectTrigger>
-     <SelectContent align="end">
+     <SelectContent align="end" className="z-[100]">
       {hanziFontOptions.map((option) => (
        <SelectItem key={option.value} value={option.value}>
         {option.label}
@@ -81,7 +81,7 @@ export function LessonTypographyControls({ displayMode, onChange }: LessonTypogr
      <SelectTrigger size="sm" className="h-7 min-w-20 bg-bg-primary shadow-none sm:min-w-24">
       <SelectValue />
      </SelectTrigger>
-     <SelectContent align="end">
+     <SelectContent align="end" className="z-[100]">
       {hanziSizeOptions.map((option) => (
        <SelectItem key={option.value} value={option.value}>
         {option.label}

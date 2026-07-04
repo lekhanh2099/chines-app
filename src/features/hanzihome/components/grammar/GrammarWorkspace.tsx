@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { GraduationCap, Layers } from "lucide-react";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
 import { GrammarPointReader } from "@/features/hanzihome/components/grammar/GrammarPointReader";
 import { AllGrammarPointReader } from "@/features/hanzihome/components/grammar/AllGrammarPointReader";
@@ -16,7 +17,10 @@ import {
  useHanziHomeFeatureSelector,
 } from "@/features/hanzihome/context/selectors";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
+import {
+ LessonModuleFrame,
+ LessonModuleSidebarRailItem,
+} from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
  compact?: boolean;
@@ -148,21 +152,39 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  );
 
  return (
-
-   <LessonModuleFrame
-    title="Ngữ pháp"
-    subtitle={
-     selectedPoint?.cleanTitle || (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
-    }
-    sidebarLabel="Điểm ngữ pháp"
-    sidebarSummary={`${grammarPoints.length} mục`}
-    sidebarOpen={isGrammarSidebarOpen}
-    onSidebarOpenChange={actions.setGrammarSidebarOpen}
-    sidebar={renderGrammarSidebar()}
-    sidebarSelectionKey={effectiveSelectedPointId}
-    compact={compact}
-   >
-    {readerContent}
-   </LessonModuleFrame>
+  <LessonModuleFrame
+   title="Ngữ pháp"
+   subtitle={
+    selectedPoint?.cleanTitle || (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
+   }
+   sidebarLabel="Điểm ngữ pháp"
+   sidebarSummary={`${grammarPoints.length} mục`}
+   sidebarOpen={isGrammarSidebarOpen}
+   onSidebarOpenChange={actions.setGrammarSidebarOpen}
+   sidebar={renderGrammarSidebar()}
+   sidebarRail={
+    <>
+     <LessonModuleSidebarRailItem
+      icon={<Layers className="h-4 w-4" />}
+      label="Xem toàn bộ điểm ngữ pháp"
+      selected={isAllView}
+      onClick={() => actions.selectGrammarPoint(ALL_GRAMMAR_POINTS_ID)}
+     />
+     {grammarPoints.map((point, index) => (
+      <LessonModuleSidebarRailItem
+       key={point.id}
+       icon={<GraduationCap className="h-4 w-4" />}
+       label={`${index + 1}. ${point.cleanTitle}`}
+       selected={point.id === selectedPoint?.id}
+       onClick={() => actions.selectGrammarPoint(point.id)}
+      />
+     ))}
+    </>
+   }
+   sidebarSelectionKey={effectiveSelectedPointId}
+   compact={compact}
+  >
+   {readerContent}
+  </LessonModuleFrame>
  );
 }

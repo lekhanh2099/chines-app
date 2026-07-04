@@ -6,7 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
+import {
+ LessonModuleFrame,
+ LessonModuleSidebarRailItem,
+} from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
@@ -116,6 +119,19 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
    sidebarOpen={isSidebarOpen}
    onSidebarOpenChange={setIsSidebarOpen}
    sidebar={sidebar}
+   sidebarRail={visibleRadicals.map((radical) => (
+    <LessonModuleSidebarRailItem
+     key={radical.id}
+     icon={
+      <span className="text-base font-black" lang="zh-CN">
+       {radical.radical}
+      </span>
+     }
+     label={radical.nameVi ? `${radical.radical} · ${radical.nameVi}` : radical.radical}
+     selected={radical.id === selectedRadical.id}
+     onClick={() => setSelectedId(radical.id)}
+    />
+   ))}
    sidebarSelectionKey={selectedRadical.id}
    actions={
     canEdit ? (

@@ -1,13 +1,21 @@
 "use client";
 
-import { FileText, Layers, Settings2 } from "lucide-react";
+import { Popover } from "@base-ui/react";
+import { Eye, FileText, Layers } from "lucide-react";
 import { useMemo } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Sheet, SheetHeader } from "@/components/ui/sheet";
+import {
+ HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
+ HanziHomeCommandBarPortal,
+} from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
-import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
+import {
+ LessonModuleFrame,
+ LessonModuleSidebarRailItem,
+} from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
+import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { LessonTypographyControls } from "@/features/hanzihome/components/lesson-overview/LessonTypographyControls";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
 import {
@@ -20,7 +28,6 @@ import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLess
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
-import { cn } from "@/lib/utils";
 
 type LessonTextInlineEditorProps = {
  compact?: boolean;
@@ -29,7 +36,8 @@ type LessonTextInlineEditorProps = {
 const allSectionsId = "__all_lesson_sections__";
 
 export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEditorProps) {
- const { lesson } = useHanziHomeRuntime();
+ const runtime = useHanziHomeRuntime();
+ const { lesson } = runtime;
  const actions = useHanziHomeFeatureActions();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
@@ -46,8 +54,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   [lesson.sourceLesson, sectionResource],
  );
  const readingItems = useMemo(
-  () =>
-   sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
+  () => sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
   [sourceSections],
  );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
@@ -61,16 +68,20 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
+ function updateDisplayMode(updates: Partial<typeof displayMode>) {
+  const nextDisplayMode = { ...displayMode, ...updates };
+
+  actions.setLessonTextDisplayMode(updates);
+  runtime.updateLearningSettings({ lessonTextDisplayMode: nextDisplayMode });
+ }
+
  function toggleDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
-  actions.setLessonTextDisplayMode({ [key]: !displayMode[key] });
+  updateDisplayMode({ [key]: !displayMode[key] });
  }
 
  const readingControls = (
   <div className="flex flex-wrap items-center gap-1.5">
-   <LessonTypographyControls
-    displayMode={displayMode}
-    onChange={actions.setLessonTextDisplayMode}
-   />
+   <LessonTypographyControls displayMode={displayMode} onChange={updateDisplayMode} />
    <Button
     type="button"
     variant="outline"
@@ -103,24 +114,13 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
 
  const sidebar = (
   <div className="grid gap-2">
-   <button
-    type="button"
+   <LessonModuleSidebarItem
+    selected={showAllSections}
+    title="Xem toàn bộ"
+    subtitle={`${sourceSections.length} đề mục`}
+    icon={<Layers className="h-4 w-4" />}
     onClick={() => actions.selectLessonTextSection(allSectionsId)}
-    className={cn(
-     "flex gap-2 rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-     showAllSections
-      ? "border-primary bg-primary text-primary-foreground"
-      : "border-border-default bg-bg-subtle hover:bg-bg-primary",
-    )}
-   >
-    <Layers className="mt-0.5 h-4 w-4 shrink-0" />
-    <span className="min-w-0">
-     <span className="block  font-black">Xem toàn bộ</span>
-     <span className="mt-0.5 block text-xs font-bold opacity-75">
-      {sourceSections.length} đề mục
-     </span>
-    </span>
-   </button>
+   />
 
    <div className="grid max-h-[calc(100dvh-15rem)] gap-2 overflow-y-auto pr-1 scrollbar-soft">
     {sourceSections.map((section, index) => {
@@ -128,107 +128,174 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
      const active = !showAllSections && selectedSection?.id === section.id;
 
      return (
-      <button
+      <LessonModuleSidebarItem
        key={section.id}
-       type="button"
+       selected={active}
+       title={`${index + 1}. ${sectionTitle(section)}`}
+       subtitle={sectionSubtitle(section)}
+       icon={<Icon className="h-4 w-4" />}
        onClick={() => actions.selectLessonTextSection(section.id)}
-       className={cn(
-        "flex gap-2 rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-        active
-         ? "border-primary bg-primary text-primary-foreground"
-         : "border-border-default bg-bg-subtle hover:bg-bg-primary",
-       )}
-      >
-       <Icon className="mt-0.5 h-4 w-4 shrink-0" />
-       <span className="min-w-0">
-        <span className="line-clamp-2  font-black">
-         {index + 1}. {sectionTitle(section)}
-        </span>
-        {sectionSubtitle(section) && (
-         <span className="mt-0.5 block line-clamp-2 text-xs font-bold opacity-75">
-          {sectionSubtitle(section)}
-         </span>
-        )}
-       </span>
-      </button>
+      />
      );
     })}
    </div>
   </div>
  );
+ const sidebarRail = (
+  <>
+   <LessonModuleSidebarRailItem
+    icon={<Layers className="h-4 w-4" />}
+    label={`Xem toàn bộ ${sourceSections.length} đề mục`}
+    selected={showAllSections}
+    onClick={() => actions.selectLessonTextSection(allSectionsId)}
+   />
+   {sourceSections.map((section, index) => {
+    const Icon = sectionIcons[section.type] ?? FileText;
+    const active = !showAllSections && selectedSection?.id === section.id;
+
+    return (
+     <LessonModuleSidebarRailItem
+      key={section.id}
+      icon={<Icon className="h-4 w-4" />}
+      label={`${index + 1}. ${sectionTitle(section)}`}
+      selected={active}
+      onClick={() => actions.selectLessonTextSection(section.id)}
+     />
+    );
+   })}
+  </>
+ );
 
  return (
-  <LessonModuleFrame
-   title="Bài khóa"
-   subtitle={
-    showAllSections
-     ? "Toàn bộ nội dung bài"
-     : selectedSection
-       ? sectionTitle(selectedSection)
-       : "Chưa có nội dung"
-   }
-   sidebarLabel="Đề mục"
-   sidebarSummary={`${sourceSections.length} mục`}
-   sidebarOpen={isSectionNavOpen}
-   onSidebarOpenChange={actions.setLessonTextSidebarOpen}
-   sidebar={sidebar}
-   sidebarSelectionKey={selectedSectionId}
-   compact={compact}
-   actions={
-    <>
-     <div className={cn("hidden", !compact && "xl:block")}>{readingControls}</div>
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className={cn("h-8 px-2.5 text-xs", !compact && "xl:hidden")}
-      onClick={() => actions.setLessonTextSettingsOpen(true)}
-     >
-      <Settings2 className="h-4 w-4" />
-      Cài đặt đọc
-     </Button>
-    </>
-   }
-  >
-   {sourceSections.length > 0 ? (
-    <div className="grid min-w-0 gap-2.5">
-     {showAllSections ? (
-      sourceSections.map((section) => (
+  <>
+   {!compact ? (
+    <Popover.Root
+     open={isReadingSettingsOpen}
+     onOpenChange={actions.setLessonTextSettingsOpen}
+     modal={false}
+    >
+     <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
+      <Popover.Trigger
+       className="inline-flex h-10 shrink-0 items-center justify-center gap-1 rounded-[min(var(--radius-md),12px)] border border-border bg-bg-card/80 px-3 text-sm font-semibold whitespace-nowrap shadow-theme-sm backdrop-blur transition-all outline-none hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
+       aria-label="Mở cài đặt hiển thị bài đọc"
+      >
+       <Eye className="h-4 w-4" />
+       Hiển thị
+      </Popover.Trigger>
+     </HanziHomeCommandBarPortal>
+     <Popover.Portal>
+      <Popover.Positioner
+       side="bottom"
+       align="end"
+       sideOffset={8}
+       collisionPadding={12}
+       positionMethod="fixed"
+       style={{ zIndex: 80 }}
+      >
+       <Popover.Popup
+        initialFocus={false}
+        finalFocus={false}
+        className="w-[min(34rem,calc(100vw-1.5rem))] rounded-2xl border border-border-default bg-bg-elevated p-3 shadow-theme-lg"
+       >
+        <div className="mb-3 flex items-center justify-between gap-3">
+         <p className="text-sm font-black text-text-primary">Cài đặt đọc</p>
+         <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="h-8 px-2 text-xs"
+          onClick={() => actions.setLessonTextSettingsOpen(false)}
+         >
+          Đóng
+         </Button>
+        </div>
+        {readingControls}
+       </Popover.Popup>
+      </Popover.Positioner>
+     </Popover.Portal>
+    </Popover.Root>
+   ) : null}
+   <LessonModuleFrame
+    title="Bài khóa"
+    subtitle={
+     showAllSections
+      ? "Toàn bộ nội dung bài"
+      : selectedSection
+        ? sectionTitle(selectedSection)
+        : "Chưa có nội dung"
+    }
+    sidebarLabel="Đề mục"
+    sidebarSummary={`${sourceSections.length} mục`}
+    sidebarOpen={isSectionNavOpen}
+    onSidebarOpenChange={actions.setLessonTextSidebarOpen}
+    sidebar={sidebar}
+    sidebarRail={sidebarRail}
+    sidebarSelectionKey={selectedSectionId}
+    compact={compact}
+    actions={
+     compact ? (
+      <Popover.Root
+       open={isReadingSettingsOpen}
+       onOpenChange={actions.setLessonTextSettingsOpen}
+       modal={false}
+      >
+       <Popover.Trigger className="inline-flex h-8 shrink-0 items-center justify-center gap-1 rounded-[min(var(--radius-md),12px)] border border-border bg-bg-card/80 px-2.5 text-xs font-semibold whitespace-nowrap shadow-theme-sm transition-all outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
+        <Eye className="h-4 w-4" />
+        Cài đặt đọc
+       </Popover.Trigger>
+       <Popover.Portal>
+        <Popover.Positioner
+         side="bottom"
+         align="end"
+         sideOffset={8}
+         collisionPadding={12}
+         positionMethod="fixed"
+         style={{ zIndex: 80 }}
+        >
+         <Popover.Popup
+          initialFocus={false}
+          finalFocus={false}
+          className="w-[min(34rem,calc(100vw-1.5rem))] rounded-2xl border border-border-default bg-bg-elevated p-3 shadow-theme-lg"
+         >
+          {readingControls}
+         </Popover.Popup>
+        </Popover.Positioner>
+       </Popover.Portal>
+      </Popover.Root>
+     ) : null
+    }
+   >
+    {sourceSections.length > 0 ? (
+     <div className="grid min-w-0 gap-2.5">
+      {showAllSections ? (
+       sourceSections.map((section) => (
+        <TextbookSectionCard
+         key={section.id}
+         lessonId={lesson.id}
+         section={section}
+         sectionPath={sectionPathFor(section)}
+         displayMode={displayMode}
+         readingItems={readingItems}
+        />
+       ))
+      ) : selectedSection ? (
        <TextbookSectionCard
-        key={section.id}
         lessonId={lesson.id}
-        section={section}
-        sectionPath={sectionPathFor(section)}
+        section={selectedSection}
+        sectionPath={sectionPathFor(selectedSection)}
         displayMode={displayMode}
         readingItems={readingItems}
        />
-      ))
-     ) : selectedSection ? (
-      <TextbookSectionCard
-       lessonId={lesson.id}
-       section={selectedSection}
-       sectionPath={sectionPathFor(selectedSection)}
-       displayMode={displayMode}
-       readingItems={readingItems}
-      />
-     ) : null}
-    </div>
-   ) : (
-    <Card padding="sm" className="rounded-xl sm:p-4">
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-3  font-semibold text-text-muted sm:p-4">
-      Chưa có bài khóa trong JSON của bài này.
+      ) : null}
      </div>
-    </Card>
-   )}
-   <Sheet
-    open={isReadingSettingsOpen}
-    onOpenChange={actions.setLessonTextSettingsOpen}
-    side="bottom"
-    className="p-4"
-   >
-    <SheetHeader title="Cài đặt đọc" onClose={() => actions.setLessonTextSettingsOpen(false)} />
-    {readingControls}
-   </Sheet>
-  </LessonModuleFrame>
+    ) : (
+     <Card padding="sm" className="rounded-xl sm:p-4">
+      <div className="rounded-xl border border-border-default bg-bg-subtle p-3  font-semibold text-text-muted sm:p-4">
+       Chưa có bài khóa trong JSON của bài này.
+      </div>
+     </Card>
+    )}
+   </LessonModuleFrame>
+  </>
  );
 }

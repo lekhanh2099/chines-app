@@ -24,12 +24,22 @@ export type PaneLayout = {
  activeRight: StudyModule;
 };
 
+export type LearningSyncUiState = {
+ status: "synced" | "pending" | "syncing" | "error";
+ pendingCount: number;
+ lastError: string | null;
+ isOnline: boolean;
+ retry: () => Promise<unknown>;
+};
+
 export type HanziHomeFeatureRuntime = {
  originalLesson: HanziHomeLesson;
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
+ learningSync?: LearningSyncUiState;
  activeModule: StudyModule;
  selectModule: (module: StudyModule) => void;
+ updateLearningSettings: (settings: Partial<UserLearningState["settings"]>) => void;
  bookmarkVocab: (id: string) => void;
  markVocab: (id: string, status: LearningStatus) => void;
  bookmarkGrammar: (id: string) => void;

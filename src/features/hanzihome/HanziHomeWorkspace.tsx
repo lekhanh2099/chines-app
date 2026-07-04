@@ -8,7 +8,10 @@ import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/Radica
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { HanziHomeWorkspaceMessage } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceMessage";
-import { useHanziHomeCatalogData, useIsCatalogPending } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import {
+ useHanziHomeCatalogData,
+ useIsCatalogPending,
+} from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -208,7 +211,7 @@ export function HanziHomeWorkspace() {
   );
  }
 
-  if (!lesson && resolvedActiveModule !== "radicals") {
+ if (!lesson && resolvedActiveModule !== "radicals") {
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
@@ -219,7 +222,7 @@ export function HanziHomeWorkspace() {
   );
  }
 
-  return (
+ return (
   <main className="hanzihome-static-page hanzihome-workspace-page">
    <h1 className="sr-only">
     {resolvedActiveModule === "radicals"
@@ -240,8 +243,16 @@ export function HanziHomeWorkspace() {
        key={`${lesson.id}:${matchingSearchIntent?.id ?? "default"}`}
        lesson={lesson}
        learningState={learning.state}
+       learningSync={{
+        status: learning.syncStatus,
+        pendingCount: learning.pendingSyncCount,
+        lastError: learning.lastSyncError,
+        isOnline: learning.isOnline,
+        retry: learning.retrySync,
+       }}
        activeModule={activeLessonModule}
        onSelectModule={selectModule}
+       onUpdateLearningSettings={learning.updateSettings}
        onBookmarkVocab={(id) => learning.toggleBookmark("vocab", id)}
        onMarkVocab={markVocab}
        onBookmarkGrammar={(id) => learning.toggleBookmark("grammar", id)}

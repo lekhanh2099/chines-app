@@ -2,7 +2,7 @@
 
 import { ModuleSplitWorkspaceContent } from "@/features/hanzihome/components/layout/ModuleSplitWorkspaceContent";
 import { HanziHomeFeatureProvider } from "@/features/hanzihome/context/HanziHomeFeatureProvider";
-import type { StudyModule } from "@/features/hanzihome/context/types";
+import type { LearningSyncUiState, StudyModule } from "@/features/hanzihome/context/types";
 import type {
  HanziHomeLesson,
  LearningStatus,
@@ -13,8 +13,10 @@ import type {
 type ModuleSplitWorkspaceProps = {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
+ learningSync?: LearningSyncUiState;
  activeModule: StudyModule;
  onSelectModule: (module: StudyModule) => void;
+ onUpdateLearningSettings: (settings: Partial<UserLearningState["settings"]>) => void;
  onBookmarkVocab: (id: string) => void;
  onMarkVocab: (id: string, status: LearningStatus) => void;
  onBookmarkGrammar: (id: string) => void;

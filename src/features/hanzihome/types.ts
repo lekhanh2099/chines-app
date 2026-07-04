@@ -211,6 +211,17 @@ export type LearningProgressItem = {
  lastReviewedAt?: string;
 };
 
+export type HanziReaderFont = "system" | "songti" | "kai" | "pinyin" | "mengshen";
+export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
+
+export type LessonTextDisplaySettings = {
+ showPinyin: boolean;
+ showMeaning: boolean;
+ showAnswers: boolean;
+ hanziFont: HanziReaderFont;
+ hanziSize: HanziReaderSize;
+};
+
 export type UserLearningState = {
  settings: {
   lastCourseId?: string;
@@ -218,6 +229,7 @@ export type UserLearningState = {
   lastModule?: HanziHomeModule;
   density?: "comfortable" | "compact" | "focus";
   vocabDetailTab?: string;
+  lessonTextDisplayMode?: LessonTextDisplaySettings;
  };
  progress: {
   vocab?: Record<string, LearningProgressItem>;
