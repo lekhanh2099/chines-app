@@ -2,7 +2,7 @@
 
 import { Popover } from "@base-ui/react";
 import { Eye, FileText, Layers } from "lucide-react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -45,7 +45,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   (state) => state.lessonTextSelectedSectionId,
  );
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
- const isReadingSettingsOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSettingsOpen);
+ const [isReadingSettingsOpen, setIsReadingSettingsOpen] = useState(false);
  const sourceSections = useMemo(
   () =>
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
@@ -171,7 +171,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
    {!compact ? (
     <Popover.Root
      open={isReadingSettingsOpen}
-     onOpenChange={actions.setLessonTextSettingsOpen}
+     onOpenChange={setIsReadingSettingsOpen}
      modal={false}
     >
      <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
@@ -204,7 +204,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
           variant="ghost"
           size="sm"
           className="h-8 px-2 text-xs"
-          onClick={() => actions.setLessonTextSettingsOpen(false)}
+          onClick={() => setIsReadingSettingsOpen(false)}
          >
           Đóng
          </Button>
@@ -236,7 +236,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
      compact ? (
       <Popover.Root
        open={isReadingSettingsOpen}
-       onOpenChange={actions.setLessonTextSettingsOpen}
+       onOpenChange={setIsReadingSettingsOpen}
        modal={false}
       >
        <Popover.Trigger className="inline-flex h-8 shrink-0 items-center justify-center gap-1 rounded-[min(var(--radius-md),12px)] border border-border bg-bg-card/80 px-2.5 text-xs font-semibold whitespace-nowrap shadow-theme-sm transition-all outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
