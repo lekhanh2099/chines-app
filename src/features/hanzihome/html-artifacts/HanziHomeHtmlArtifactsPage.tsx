@@ -1,5 +1,5 @@
 "use client";
-import type { DragEvent, FormEvent } from "react";
+import type { DragEvent, FormEvent, RefObject } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
@@ -798,7 +798,7 @@ export function HanziHomeHtmlArtifactsPage() {
       runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
       isFetching={
        (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
-       (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+       (runtimeStateQuery.isPending && Boolean(selectedArtifact))
       }
       isFocused={isPreviewFocused}
       onRuntimeStateChange={queueRuntimeStateSave}
@@ -848,7 +848,7 @@ export function HanziHomeHtmlArtifactsPage() {
         runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
         isFetching={
          (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
-         (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+         (runtimeStateQuery.isPending && Boolean(selectedArtifact))
         }
         isFocused={isPreviewFocused}
         onRuntimeStateChange={queueRuntimeStateSave}
@@ -880,7 +880,7 @@ export function HanziHomeHtmlArtifactsPage() {
       runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
       isFetching={
        (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
-       (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+       (runtimeStateQuery.isPending && Boolean(selectedArtifact))
       }
       isFocused={isPreviewFocused}
       onRuntimeStateChange={queueRuntimeStateSave}
@@ -909,7 +909,7 @@ export function HanziHomeHtmlArtifactsPage() {
        runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
        isFetching={
         (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
-        (runtimeStateQuery.isFetching && Boolean(selectedArtifact))
+        (runtimeStateQuery.isPending && Boolean(selectedArtifact))
        }
        isFocused={isPreviewFocused}
        onRuntimeStateChange={queueRuntimeStateSave}
@@ -1548,11 +1548,10 @@ function PreviewPane({
  onToggleFocus: () => void;
 }) {
  const iframeRef = useRef<HTMLIFrameElement | null>(null);
- const iframeSrcDoc = useMemo(() => {
-  if (!selectedArtifact || isFetching) return "";
-
-  return injectRuntimeStateBridge(selectedArtifact.html, selectedArtifact.id, runtimeState);
- }, [isFetching, runtimeState, selectedArtifact]);
+ const iframeSrcDoc =
+  selectedArtifact && !isFetching
+   ? injectRuntimeStateBridge(selectedArtifact.html, selectedArtifact.id, runtimeState)
+   : "";
 
  useEffect(() => {
   const handleMessage = (event: MessageEvent<unknown>) => {
@@ -1599,13 +1598,11 @@ function PreviewPane({
       Đang tải HTML...
      </div>
     ) : selectedArtifact ? (
-     <iframe
-      ref={iframeRef}
-      key={`${selectedArtifact.id}-${selectedArtifact.updatedAt}`}
-      title={selectedArtifact.title}
-      sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
-      srcDoc={iframeSrcDoc}
-      className="h-full min-h-[32rem] w-full border-0"
+     <StableHtmlArtifactIframe
+      key={getHtmlArtifactFrameKey(selectedArtifact.id, selectedArtifact.html)}
+      artifact={selectedArtifact}
+      initialSrcDoc={iframeSrcDoc}
+      iframeRef={iframeRef}
      />
     ) : (
      <div className="flex h-full items-center justify-center p-6 text-center text-sm font-bold text-text-muted">
@@ -1614,6 +1611,38 @@ function PreviewPane({
     )}
    </div>
  </section>
+ );
+}
+
+function getHtmlArtifactFrameKey(artifactId: string, html: string) {
+ let hash = 0;
+
+ for (let index = 0; index < html.length; index += 1) {
+  hash = (hash * 31 + html.charCodeAt(index)) >>> 0;
+ }
+
+ return `${artifactId}-${html.length}-${hash.toString(36)}`;
+}
+
+function StableHtmlArtifactIframe({
+ artifact,
+ initialSrcDoc,
+ iframeRef,
+}: {
+ artifact: HtmlArtifact;
+ initialSrcDoc: string;
+ iframeRef: RefObject<HTMLIFrameElement | null>;
+}) {
+ const [srcDoc] = useState(initialSrcDoc);
+
+ return (
+  <iframe
+   ref={iframeRef}
+   title={artifact.title}
+   sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
+   srcDoc={srcDoc}
+   className="h-full min-h-[32rem] w-full border-0"
+  />
  );
 }
 
