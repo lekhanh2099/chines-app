@@ -4,7 +4,7 @@ export function InfoBlock({ title, value }: { title: string; value: string }) {
  return (
   <div className="study-content-surface rounded-xl border p-3">
    <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
-   <p className="font-semibold leading-relaxed text-text-secondary">{value}</p>
+   <p className="whitespace-pre-wrap font-semibold leading-relaxed text-text-secondary">{value}</p>
   </div>
  );
 }

@@ -42,7 +42,7 @@ export function QuestionDataBlock({
      {visibleLines.map((line, index) => (
       <p
        key={`${title}-${index}`}
-       className=" font-semibold leading-relaxed text-text-primary"
+       className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary"
        lang="zh-CN"
       >
        {line}

@@ -30,14 +30,18 @@ export function TextLineCard({
    {speaker && (
     <p className="text-xs font-black uppercase tracking-wide text-accent-text">{speaker}</p>
    )}
-   <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
+   <p className="whitespace-pre-wrap" lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
     {zh}
    </p>
    {displayMode.showPinyin && pinyin && (
-    <p className="text-xs font-bold italic text-text-muted sm:text-sm">{pinyin}</p>
+    <p className="whitespace-pre-wrap text-xs font-bold italic text-text-muted sm:text-sm">
+     {pinyin}
+    </p>
    )}
    {displayMode.showMeaning && vi && (
-    <p className=" font-semibold leading-snug text-text-secondary sm:leading-relaxed">{vi}</p>
+    <p className="whitespace-pre-wrap font-semibold leading-snug text-text-secondary sm:leading-relaxed">
+     {vi}
+    </p>
    )}
   </div>
  );

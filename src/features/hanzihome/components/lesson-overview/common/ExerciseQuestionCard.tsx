@@ -33,18 +33,30 @@ export function ExerciseQuestionCard({
     <span className="study-chip-accent flex h-7 min-w-7 shrink-0 items-center justify-center rounded-lg border px-2 text-xs font-black">
      {index}
     </span>
-    <p className="min-w-0 pt-0.5 font-black leading-6 text-text-primary">{visibleTitle}</p>
+    <p className="min-w-0 whitespace-pre-wrap pt-0.5 font-black leading-6 text-text-primary">
+     {visibleTitle}
+    </p>
    </div>
    {answer && (
     <AnswerReveal open={answerOpen} onOpenChange={setManualAnswerOpen}>
-     <p className=" font-bold text-accent-text">{answer}</p>
-     {note && <p className="text-xs font-semibold leading-relaxed text-text-muted">{note}</p>}
-     {meaning && <p className="text-xs font-semibold leading-relaxed text-text-muted">{meaning}</p>}
+     <p className="whitespace-pre-wrap font-bold text-accent-text">{answer}</p>
+     {note && (
+      <p className="whitespace-pre-wrap text-xs font-semibold leading-relaxed text-text-muted">
+       {note}
+      </p>
+     )}
+     {meaning && (
+      <p className="whitespace-pre-wrap text-xs font-semibold leading-relaxed text-text-muted">
+       {meaning}
+      </p>
+     )}
     </AnswerReveal>
    )}
    {children ? <div className="pl-0 sm:pl-10">{children}</div> : null}
    {note && !answer && (
-    <p className="text-xs font-semibold leading-relaxed text-text-muted">{note}</p>
+    <p className="whitespace-pre-wrap text-xs font-semibold leading-relaxed text-text-muted">
+     {note}
+    </p>
    )}
   </div>
  );
