@@ -1,6 +1,7 @@
 "use client";
 import type { DragEvent, FormEvent, RefObject } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import {
@@ -495,8 +496,12 @@ function hasFolderDescendant(
 }
 
 export function HanziHomeHtmlArtifactsPage() {
+ const pathname = usePathname();
+ const router = useRouter();
+ const searchParams = useSearchParams();
  const artifactsQuery = useHtmlArtifactSummariesQuery();
- const [selectedId, setSelectedId] = useState<string | "new" | null>(null);
+ const selectedIdFromUrl = searchParams.get("artifactId");
+ const selectedId: string | "new" | null = selectedIdFromUrl === "new" ? "new" : selectedIdFromUrl;
  const [activeFolderId, setActiveFolderId] = useState<FolderFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
@@ -597,6 +602,26 @@ export function HanziHomeHtmlArtifactsPage() {
 
  const defaultFolderId = activeFolderId !== "all" && activeFolderId !== "unfiled" ? activeFolderId : null;
 
+ const navigateToArtifact = (artifactId: string | "new" | null, mode: "push" | "replace" = "push") => {
+  const nextParams = new URLSearchParams(searchParams.toString());
+
+  if (artifactId) {
+   nextParams.set("artifactId", artifactId);
+  } else {
+   nextParams.delete("artifactId");
+  }
+
+  const queryString = nextParams.toString();
+  const nextUrl = queryString ? `${pathname}?${queryString}` : pathname;
+
+  if (mode === "replace") {
+   router.replace(nextUrl);
+   return;
+  }
+
+  router.push(nextUrl);
+ };
+
  const queueRuntimeStateSave = (artifactId: string, state: HtmlArtifactRuntimeState) => {
   if (!selectedArtifact || artifactId !== selectedArtifact.id) return;
 
@@ -624,8 +649,18 @@ export function HanziHomeHtmlArtifactsPage() {
   };
  }, []);
 
+ useEffect(() => {
+  if (selectedId || artifacts.length === 0) return;
+  const firstArtifactId = artifacts[0]?.id;
+  if (!firstArtifactId) return;
+
+  const nextParams = new URLSearchParams(searchParams.toString());
+  nextParams.set("artifactId", firstArtifactId);
+  router.replace(`${pathname}?${nextParams.toString()}`);
+ }, [artifacts, pathname, router, searchParams, selectedId]);
+
  const resetForNewArtifact = () => {
-  setSelectedId("new");
+  navigateToArtifact("new");
  };
 
  const openCreateFolderDialog = () => {
@@ -739,7 +774,7 @@ export function HanziHomeHtmlArtifactsPage() {
    toast.success("Đã xóa tệp HTML");
    const nextArtifact =
     filteredArtifacts.find((artifact) => artifact.id !== deleteDialog.artifact.id) ?? null;
-   setSelectedId(nextArtifact?.id ?? "new");
+   navigateToArtifact(nextArtifact?.id ?? "new", "replace");
    setDeleteDialog(null);
   } catch (error) {
    toast.error(
@@ -766,7 +801,7 @@ export function HanziHomeHtmlArtifactsPage() {
      artifactId: selectedArtifact.id,
      input: payload,
     });
-    setSelectedId(nextArtifact.id);
+    navigateToArtifact(nextArtifact.id, "replace");
     if (!options.silent) {
      setMobilePane("preview");
      toast.success("Đã lưu tệp HTML");
@@ -777,7 +812,7 @@ export function HanziHomeHtmlArtifactsPage() {
    if (options.silent) return;
 
    const nextArtifact = await createMutation.mutateAsync(payload);
-   setSelectedId(nextArtifact.id);
+   navigateToArtifact(nextArtifact.id, "replace");
    setMobilePane("preview");
    toast.success("Đã tạo tệp HTML");
   } catch (error) {
@@ -821,7 +856,7 @@ export function HanziHomeHtmlArtifactsPage() {
       selectedSummary={selectedSummary}
       runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
       isFetching={
-       (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+       (selectedArtifactQuery.isPending && Boolean(effectiveSelectedId)) ||
        (runtimeStateQuery.isPending && Boolean(selectedArtifact))
       }
       isFocused={isPreviewFocused}
@@ -859,7 +894,7 @@ export function HanziHomeHtmlArtifactsPage() {
         onDropOnFolder={dropOnFolder}
         onSearchChange={setSearchQuery}
         onSelectArtifact={(artifactId) => {
-         setSelectedId(artifactId);
+         navigateToArtifact(artifactId);
          setMobilePane("preview");
         }}
         onSelectFolder={setActiveFolderId}
@@ -871,7 +906,7 @@ export function HanziHomeHtmlArtifactsPage() {
         selectedSummary={selectedSummary}
         runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
         isFetching={
-         (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+         (selectedArtifactQuery.isPending && Boolean(effectiveSelectedId)) ||
          (runtimeStateQuery.isPending && Boolean(selectedArtifact))
         }
         isFocused={isPreviewFocused}
@@ -903,7 +938,7 @@ export function HanziHomeHtmlArtifactsPage() {
       selectedSummary={selectedSummary}
       runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
       isFetching={
-       (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+       (selectedArtifactQuery.isPending && Boolean(effectiveSelectedId)) ||
        (runtimeStateQuery.isPending && Boolean(selectedArtifact))
       }
       isFocused={isPreviewFocused}
@@ -932,7 +967,7 @@ export function HanziHomeHtmlArtifactsPage() {
        selectedSummary={selectedSummary}
        runtimeState={runtimeStateQuery.data ?? emptyRuntimeState}
        isFetching={
-        (selectedArtifactQuery.isFetching && Boolean(effectiveSelectedId)) ||
+        (selectedArtifactQuery.isPending && Boolean(effectiveSelectedId)) ||
         (runtimeStateQuery.isPending && Boolean(selectedArtifact))
        }
        isFocused={isPreviewFocused}
@@ -975,7 +1010,7 @@ export function HanziHomeHtmlArtifactsPage() {
        onDragStart={setDragItem}
        onDropOnFolder={dropOnFolder}
        onSearchChange={setSearchQuery}
-       onSelectArtifact={setSelectedId}
+       onSelectArtifact={navigateToArtifact}
        onSelectFolder={setActiveFolderId}
        onOpenPublishDialog={() => setIsPublishDialogOpen(true)}
        onDraftChange={updateDraftPreview}
@@ -1616,7 +1651,7 @@ function PreviewPane({
    </div>
 
    <div className="min-h-0 flex-1 overflow-auto bg-white">
-    {isFetching && !selectedArtifact ? (
+    {isFetching ? (
      <div className="flex h-full items-center justify-center gap-2 text-sm font-bold text-text-muted">
       <Loader2 className="h-4 w-4 animate-spin" />
       Đang tải HTML...
