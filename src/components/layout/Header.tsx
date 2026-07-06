@@ -152,33 +152,35 @@ export function Header({ user }: { user?: User | null }) {
     {hanzihomeBreadcrumb && (
      <nav
       aria-label="Chuyển nhanh bài HanziHome"
-      className="hidden min-w-0 max-w-[38rem] shrink-0 items-center gap-1 font-semibold text-text-secondary lg:flex"
+      className="hidden min-w-0 shrink-0 items-center gap-1 font-semibold text-text-secondary md:flex md:max-w-[18rem] lg:max-w-[24rem] xl:max-w-[38rem]"
      >
-      <Select
-       value={hanzihomeBreadcrumb.selectedCourse.id}
-       onValueChange={(courseId) => {
-        const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
+      <div className="hidden min-w-0 shrink-0 items-center gap-1 xl:flex">
+       <Select
+        value={hanzihomeBreadcrumb.selectedCourse.id}
+        onValueChange={(courseId) => {
+         const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
 
-        if (course) {
-         navigateHanziHome(course.id, 1);
-        }
-       }}
-      >
-       <SelectTrigger
-        aria-label="Chọn giáo trình HanziHome"
-        className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+         if (course) {
+          navigateHanziHome(course.id, 1);
+         }
+        }}
        >
-        <SelectValue />
-       </SelectTrigger>
-       <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-        {hanzihomeBreadcrumb.courses.map((course, index) => (
-         <SelectItem key={course.id + index} value={course.id}>
-          {course.title}
-         </SelectItem>
-        ))}
-       </SelectContent>
-      </Select>
-      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
+        <SelectTrigger
+         aria-label="Chọn giáo trình HanziHome"
+         className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+        >
+         <SelectValue />
+        </SelectTrigger>
+        <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
+         {hanzihomeBreadcrumb.courses.map((course, index) => (
+          <SelectItem key={course.id + index} value={course.id}>
+           {course.title}
+          </SelectItem>
+         ))}
+        </SelectContent>
+       </Select>
+       <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
+      </div>
       <Select
        value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
        onValueChange={(lessonNumber) => {
@@ -187,7 +189,7 @@ export function Header({ user }: { user?: User | null }) {
       >
        <SelectTrigger
         aria-label="Chọn bài học HanziHome"
-        className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
+        className="w-[min(18rem,34vw)] min-w-0 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm lg:w-[min(22rem,32vw)] xl:max-w-60"
        >
         <SelectValue />
        </SelectTrigger>

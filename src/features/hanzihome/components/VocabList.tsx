@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import {
  Bookmark,
  CheckCircle2,
@@ -33,6 +33,24 @@ type VocabListProps = {
  onSelectWord: (wordId: string) => void;
 };
 
+const normalPickerResizeBounds = {
+ defaultHeight: 192,
+ minHeight: 128,
+ maxHeight: 520,
+ step: 16,
+};
+
+const compactPickerResizeBounds = {
+ defaultHeight: 128,
+ minHeight: 96,
+ maxHeight: 320,
+ step: 16,
+};
+
+function clampValue(value: number, min: number, max: number) {
+ return Math.min(max, Math.max(min, value));
+}
+
 export function VocabList({
  words,
  selectedWordId,
@@ -47,6 +65,8 @@ export function VocabList({
  onSelectWord,
 }: VocabListProps) {
  const [isWordPickerOpen, setIsWordPickerOpen] = useState(!compact);
+ const resizeBounds = compact ? compactPickerResizeBounds : normalPickerResizeBounds;
+ const [wordPickerHeight, setWordPickerHeight] = useState(resizeBounds.defaultHeight);
  const statusItems: Array<{
   value: "all" | LearningStatus;
   label: string;
@@ -57,6 +77,54 @@ export function VocabList({
   { value: "hard", label: "Còn khó", icon: Flame },
   { value: "known", label: "Đã biết", icon: CheckCircle2 },
  ];
+ const updateWordPickerHeight = (nextHeight: number) => {
+  setWordPickerHeight(
+   clampValue(nextHeight, resizeBounds.minHeight, resizeBounds.maxHeight),
+  );
+ };
+ const adjustWordPickerHeight = (delta: number) => {
+  setWordPickerHeight((current) =>
+   clampValue(current + delta, resizeBounds.minHeight, resizeBounds.maxHeight),
+  );
+ };
+ const startWordPickerResize = (event: PointerEvent<HTMLButtonElement>) => {
+  event.preventDefault();
+
+  const startY = event.clientY;
+  const startHeight = wordPickerHeight;
+
+  const handlePointerMove = (moveEvent: globalThis.PointerEvent) => {
+   updateWordPickerHeight(startHeight + moveEvent.clientY - startY);
+  };
+  const handlePointerUp = () => {
+   window.removeEventListener("pointermove", handlePointerMove);
+   window.removeEventListener("pointerup", handlePointerUp);
+  };
+
+  window.addEventListener("pointermove", handlePointerMove);
+  window.addEventListener("pointerup", handlePointerUp);
+ };
+ const handleResizeKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+  if (event.key === "ArrowUp") {
+   event.preventDefault();
+   adjustWordPickerHeight(-resizeBounds.step);
+   return;
+  }
+  if (event.key === "ArrowDown") {
+   event.preventDefault();
+   adjustWordPickerHeight(resizeBounds.step);
+   return;
+  }
+  if (event.key === "Home") {
+   event.preventDefault();
+   updateWordPickerHeight(resizeBounds.minHeight);
+   return;
+  }
+  if (event.key === "End") {
+   event.preventDefault();
+   updateWordPickerHeight(resizeBounds.maxHeight);
+  }
+ };
 
  return (
   <Card
@@ -130,49 +198,63 @@ export function VocabList({
       Không có từ phù hợp bộ lọc.
      </p>
     ) : isWordPickerOpen ? (
-     <div
-      className={cn(
-       "flex flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft",
-       compact ? "max-h-28 sm:max-h-32" : "max-h-44 sm:max-h-48",
-      )}
-     >
-      {words.map((word) => {
-       const wordId = getVocabItemKey(word);
-       const active = wordId === selectedWordId;
-       const status = progress[wordId]?.status || "new";
-       const bookmarked = bookmarkedIds.includes(wordId);
+     <div className="grid gap-1">
+      <div
+       className="flex flex-wrap content-start gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft"
+       style={{ height: wordPickerHeight }}
+      >
+       {words.map((word) => {
+        const wordId = getVocabItemKey(word);
+        const active = wordId === selectedWordId;
+        const status = progress[wordId]?.status || "new";
+        const bookmarked = bookmarkedIds.includes(wordId);
 
-       return (
-        <Button
-         key={wordId}
-         type="button"
-         onClick={() => onSelectWord(wordId)}
-         variant={active ? "default" : "outline"}
-         className={cn(
-          "h-auto gap-1.5 px-2 py-1.5",
-          status === "hard" && !active && "border-warning/45",
-          status === "known" && !active && "border-success/35",
-         )}
-        >
-         <span
-          style={getHanziTypographyStyle(
-           {
-            showPinyin: true,
-            showMeaning: false,
-            showAnswers: false,
-            hanziFont: "kai",
-            hanziSize: "2xl",
-           },
-           { size: "xl" },
+        return (
+         <Button
+          key={wordId}
+          type="button"
+          onClick={() => onSelectWord(wordId)}
+          variant={active ? "default" : "outline"}
+          className={cn(
+           "h-auto gap-1.5 px-2 py-1.5",
+           status === "hard" && !active && "border-warning/45",
+           status === "known" && !active && "border-success/35",
           )}
-          lang="zh-CN"
          >
-          {word.hanzi}
-         </span>
-         {bookmarked && <Bookmark className="h-3 w-3 fill-current" />}
-        </Button>
-       );
-      })}
+          <span
+           style={getHanziTypographyStyle(
+            {
+             showPinyin: true,
+             showMeaning: false,
+             showAnswers: false,
+             hanziFont: "kai",
+             hanziSize: "2xl",
+            },
+            { size: "xl" },
+           )}
+           lang="zh-CN"
+          >
+           {word.hanzi}
+          </span>
+          {bookmarked && <Bookmark className="h-3 w-3 fill-current" />}
+         </Button>
+        );
+       })}
+      </div>
+      <button
+       type="button"
+       className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+       aria-label="Đổi chiều cao danh sách từ vựng"
+       aria-orientation="horizontal"
+       aria-valuemax={resizeBounds.maxHeight}
+       aria-valuemin={resizeBounds.minHeight}
+       aria-valuenow={wordPickerHeight}
+       role="separator"
+       onPointerDown={startWordPickerResize}
+       onKeyDown={handleResizeKeyDown}
+      >
+       <span className="h-1 w-12 rounded-full bg-border-default transition-colors group-hover:bg-text-muted/40" />
+      </button>
      </div>
     ) : (
      <p className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 text-xs font-bold text-text-muted">

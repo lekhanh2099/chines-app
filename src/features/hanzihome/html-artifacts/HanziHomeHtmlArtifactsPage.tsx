@@ -109,6 +109,20 @@ const desktopLayout = {
 };
 const runtimeStateSaveDelayMs = 2000;
 const htmlEditorExtensions = [html({ autoCloseTags: true, matchClosingTags: true })];
+const htmlArtifactPreviewCsp = [
+ "default-src 'none'",
+ "script-src 'unsafe-inline'",
+ "style-src 'unsafe-inline'",
+ "img-src data: blob:",
+ "font-src data:",
+ "media-src data: blob:",
+ "connect-src 'none'",
+ "object-src 'none'",
+ "base-uri 'none'",
+ "form-action 'none'",
+ "frame-src 'none'",
+ "worker-src 'none'",
+].join("; ");
 
 type FolderFilter = "all" | "unfiled" | string;
 
@@ -265,7 +279,10 @@ function buildRuntimeStateBridgeScript(
 (() => {
   const artifactId = ${serializeForInlineScript(artifactId)};
   const initialState = ${serializeForInlineScript(runtimeState)};
-  const nativeLocalStorage = window.localStorage;
+  let nativeLocalStorage = null;
+  try {
+    nativeLocalStorage = window.localStorage;
+  } catch {}
   const state = new Map(Object.entries(initialState).map(([key, value]) => [String(key), String(value)]));
   const cleanupNativeStorage = (key) => {
     try {
@@ -367,20 +384,27 @@ function injectRuntimeStateBridge(
  artifactId: string,
  runtimeState: HtmlArtifactRuntimeState,
 ): string {
+ const securityMeta = `<meta http-equiv="Content-Security-Policy" content="${htmlArtifactPreviewCsp}" />`;
  const bridgeScript = buildRuntimeStateBridgeScript(artifactId, runtimeState);
+ const injectedHeadContent = `${securityMeta}${bridgeScript}`;
  const headMatch = source.match(/<head\b[^>]*>/i);
 
- if (!headMatch?.index) {
-  if (headMatch?.[0]) {
-   return source.replace(headMatch[0], `${headMatch[0]}${bridgeScript}`);
-  }
-
-  return `${bridgeScript}${source}`;
+ if (headMatch?.[0] && typeof headMatch.index === "number") {
+  return `${source.slice(
+   0,
+   headMatch.index + headMatch[0].length,
+  )}${injectedHeadContent}${source.slice(headMatch.index + headMatch[0].length)}`;
  }
 
- return `${source.slice(0, headMatch.index + headMatch[0].length)}${bridgeScript}${source.slice(
-  headMatch.index + headMatch[0].length,
- )}`;
+ const htmlMatch = source.match(/<html\b[^>]*>/i);
+
+ if (htmlMatch?.[0] && typeof htmlMatch.index === "number") {
+  return `${source.slice(0, htmlMatch.index + htmlMatch[0].length)}<head>${injectedHeadContent}</head>${source.slice(
+   htmlMatch.index + htmlMatch[0].length,
+  )}`;
+ }
+
+ return `<!doctype html><html><head>${injectedHeadContent}</head><body>${source}</body></html>`;
 }
 
 async function formatHtmlSource(source: string): Promise<string> {
@@ -1592,7 +1616,7 @@ function PreviewPane({
    </div>
 
    <div className="min-h-0 flex-1 overflow-auto bg-white">
-    {isFetching ? (
+    {isFetching && !selectedArtifact ? (
      <div className="flex h-full items-center justify-center gap-2 text-sm font-bold text-text-muted">
       <Loader2 className="h-4 w-4 animate-spin" />
       Đang tải HTML...
@@ -1633,14 +1657,23 @@ function StableHtmlArtifactIframe({
  initialSrcDoc: string;
  iframeRef: RefObject<HTMLIFrameElement | null>;
 }) {
- const [srcDoc] = useState(initialSrcDoc);
+ const [frameSrc] = useState(() =>
+  URL.createObjectURL(new Blob([initialSrcDoc], { type: "text/html;charset=utf-8" })),
+ );
+
+ useEffect(() => {
+  return () => {
+   URL.revokeObjectURL(frameSrc);
+  };
+ }, [frameSrc]);
 
  return (
   <iframe
    ref={iframeRef}
    title={artifact.title}
-   sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads allow-same-origin"
-   srcDoc={srcDoc}
+   sandbox="allow-scripts allow-modals"
+   referrerPolicy="no-referrer"
+   src={frameSrc}
    className="h-full min-h-[32rem] w-full border-0"
   />
  );
