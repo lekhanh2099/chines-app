@@ -2404,6 +2404,81 @@ select {
  font-family: var(--font-vietnamese) !important;
 }
 
+.html-source-editor .cm-editor {
+ display: flex;
+ flex-direction: column;
+}
+
+.html-source-editor .cm-panels-bottom {
+ order: -1;
+ border-top: 0;
+ border-bottom: 1px solid var(--border);
+}
+
+.html-source-editor .cm-search {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 0.5rem;
+ border-top: 0;
+ background: color-mix(in oklab, var(--bg-elevated) 92%, white);
+ padding: 0.75rem;
+ font-family: var(--font-vietnamese);
+ box-shadow: 0 -10px 30px rgb(16 24 40 / 0.08);
+}
+
+.html-source-editor .cm-search input {
+ min-height: 2.25rem;
+ border: 1px solid var(--border);
+ border-radius: min(var(--radius-md), 0.75rem);
+ background: var(--bg-primary);
+ padding: 0 0.75rem;
+ color: var(--text-primary);
+ font: 700 0.8125rem / 1.2 var(--font-vietnamese);
+ outline: none;
+}
+
+.html-source-editor .cm-search input:focus {
+ border-color: var(--ring);
+ box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 24%, transparent);
+}
+
+.html-source-editor .cm-search button {
+ min-height: 2.25rem;
+ border: 1px solid var(--border);
+ border-radius: min(var(--radius-md), 0.75rem);
+ background: var(--bg-card);
+ padding: 0 0.75rem;
+ color: var(--text-secondary);
+ font: 800 0.75rem / 1 var(--font-vietnamese);
+ box-shadow: var(--shadow-sm);
+}
+
+.html-source-editor .cm-search button:hover {
+ border-color: color-mix(in oklab, var(--primary) 32%, var(--border));
+ color: var(--primary);
+}
+
+.html-source-editor .cm-search label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.35rem;
+ color: var(--text-muted);
+ font: 700 0.75rem / 1.2 var(--font-vietnamese);
+}
+
+.html-source-editor .cm-search label input {
+ min-height: auto;
+ padding: 0;
+}
+
+.html-source-editor .cm-search .cm-button[name="close"] {
+ margin-left: auto;
+ border-color: transparent;
+ background: transparent;
+ box-shadow: none;
+}
+
 /* Sonner's default toast transition includes height, which causes layout work on every toast. */
 [data-sonner-toast] {
  transition:

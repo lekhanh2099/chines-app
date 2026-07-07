@@ -225,8 +225,6 @@ export function Header({ user }: { user?: User | null }) {
       type="button"
       onClick={() => toggleLookup(pathname)}
       variant={lookupEnabled ? "default" : "outline"}
-      size="lg"
-      className="h-11 min-w-11 px-3"
       aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
       title="Bật/Tắt tra từ tự động"
      >
@@ -234,13 +232,7 @@ export function Header({ user }: { user?: User | null }) {
       <span className="hidden sm:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
      </Button>
 
-     <Button
-      type="button"
-      onClick={toggleTheme}
-      aria-label="Đổi giao diện sáng tối"
-      size="icon-lg"
-      className="h-11 w-11"
-     >
+     <Button type="button" onClick={toggleTheme} aria-label="Đổi giao diện sáng tối">
       {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
      </Button>
 
