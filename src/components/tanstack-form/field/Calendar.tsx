@@ -25,7 +25,7 @@ export function CalendarField({
     value={field.state.value || ""}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="w-full h-12 bg-slate-50 border border-slate-200 rounded-2xl  px-4  outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-slate-700"
+    className="h-12 w-full rounded-2xl border border-border-default bg-bg-primary px-4 text-text-secondary outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
     {...rest}
    />
   </FieldItem>

@@ -4,6 +4,7 @@ import { Lightbulb } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import { isDuplicateMemoryTipError, MemoryTipsApiError } from "./memory-tip-api";
 import type { CreateMemoryTipPayload } from "./memory-tip.schema";
 import { useCreateMemoryTipMutation } from "./useMemoryTips";
@@ -20,7 +21,7 @@ export function SaveMemoryTipButton({ payload, variant = "outline" }: SaveMemory
   <Button
    type="button"
    variant={variant}
-   isLoading={createMutation.isPending}
+   disabled={createMutation.isPending}
    onClick={async () => {
     try {
      await createMutation.mutateAsync(payload);
@@ -35,7 +36,11 @@ export function SaveMemoryTipButton({ payload, variant = "outline" }: SaveMemory
     }
    }}
   >
-   <Lightbulb />
+   {createMutation.isPending ? (
+    <Spinner data-icon="inline-start" />
+   ) : (
+    <Lightbulb data-icon="inline-start" />
+   )}
    Lưu nhắc nhanh
   </Button>
  );

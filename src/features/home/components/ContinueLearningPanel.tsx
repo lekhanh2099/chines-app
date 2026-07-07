@@ -17,16 +17,16 @@ const moduleLabels = {
 
 export function ContinueLearningPanel({ lesson }: { lesson: HomeLessonTarget | null }) {
  return (
-  <section className="nova-gradient-hero relative overflow-hidden rounded-2xl border border-white/55 p-5 shadow-theme-lg sm:p-7">
-   <div className="relative z-10 grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] xl:items-stretch">
+  <section className="app-gradient-hero relative overflow-hidden rounded-2xl border p-5 shadow-theme-lg sm:p-7">
+   <div className="grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] xl:items-stretch">
     <div className="min-w-0">
      {lesson ? (
       <Link
        href={lesson.href}
        prefetch={false}
-       className="flex max-w-2xl items-center gap-4 rounded-2xl border-white/50 bg-white/20 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-primary/25 hover:bg-white/45 sm:p-5"
+       className="app-glass-surface flex max-w-2xl items-center gap-4 rounded-2xl border p-4 shadow-theme-sm transition hover:-translate-y-0.5 hover:border-primary/25 sm:p-5"
       >
-       <HomeIconTile className="bg-white/55 text-text-primary">
+       <HomeIconTile>
         <BookOpenCheck className="h-5 w-5" />
        </HomeIconTile>
 
@@ -45,7 +45,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeLessonTarget | n
        <ArrowRight className="h-5 w-5 shrink-0 text-text-primary" />
       </Link>
      ) : (
-      <p className="mt-6 rounded-xl border border-white/40 bg-white/20 px-4 py-3 text-sm font-bold text-text-primary backdrop-blur-xl">
+      <p className="mt-6 rounded-xl border border-border-default bg-bg-primary px-4 py-3 text-sm font-bold text-text-primary">
        Chưa có bài học khả dụng.
       </p>
      )}
@@ -54,7 +54,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeLessonTarget | n
     <GlobalMemoryTipCard
      contentOnly
      showEmptyState
-     className="w-full self-center border-white/50 bg-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] backdrop-blur-xl xl:ml-auto xl:max-w-2xl"
+     className="app-glass-surface w-full self-center shadow-theme-sm xl:ml-auto xl:max-w-2xl"
     />
    </div>
   </section>

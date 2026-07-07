@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import {
  Select,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -33,10 +34,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const router = useRouter();
  const hadTabsRef = useRef(false);
 
- const selectableNotes = useMemo(
-  () => mergeSelectableNotes(notes ?? [], tabs),
-  [notes, tabs],
- );
+ const selectableNotes = useMemo(() => mergeSelectableNotes(notes ?? [], tabs), [notes, tabs]);
 
  const selectedNoteId = activeNoteId ?? tabs[0]?.noteId ?? "";
 
@@ -131,7 +129,10 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
 
 type SelectableNote = Pick<NoteListItem, "id" | "title" | "updated_at">;
 
-function mergeSelectableNotes(notes: NoteListItem[], tabs: Array<{ noteId: string; title: string }>) {
+function mergeSelectableNotes(
+ notes: NoteListItem[],
+ tabs: Array<{ noteId: string; title: string }>,
+) {
  const notesById = new Map<string, SelectableNote>();
 
  for (const note of notes) {
@@ -181,11 +182,13 @@ function NoteQuickSelect({
      <SelectValue placeholder="Chọn ghi chú" />
     </SelectTrigger>
     <SelectContent align="start" className="min-w-[min(32rem,calc(100vw-2rem))]">
-     {notes.map((note) => (
-      <SelectItem key={note.id} value={note.id}>
-       {note.title}
-      </SelectItem>
-     ))}
+     <SelectGroup>
+      {notes.map((note) => (
+       <SelectItem key={note.id} value={note.id}>
+        {note.title}
+       </SelectItem>
+      ))}
+     </SelectGroup>
     </SelectContent>
    </Select>
   </>

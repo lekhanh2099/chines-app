@@ -6,7 +6,7 @@ export function GlassPanel({ className, ...props }: React.ComponentProps<"div">)
  return (
   <div
    data-slot="glass-panel"
-   className={cn("nova-glass-panel rounded-2xl border", className)}
+   className={cn("app-glass-surface rounded-2xl border", className)}
    {...props}
   />
  );

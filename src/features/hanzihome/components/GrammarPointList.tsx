@@ -33,7 +33,7 @@ export function GrammarPointList({
       className={cn(
        "flex min-h-14 w-full min-w-0 max-w-full gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
        selectedPointId === allPointId
-        ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+        ? "app-active-item"
         : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
       )}
       onClick={() => onSelectPoint(allPointId)}
@@ -54,7 +54,7 @@ export function GrammarPointList({
       className={cn(
        "flex min-h-14 w-full min-w-0 max-w-full items-center gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
        point.id === selectedPointId
-        ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+        ? "app-active-item"
         : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
       )}
       onClick={() => onSelectPoint(point.id)}

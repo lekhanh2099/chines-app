@@ -212,9 +212,9 @@ function LessonContentModuleSelector({
       {selectedModules.length} phần
      </span>
      <button
-     type="button"
-     onClick={() => onApplyPreset([])}
-     disabled={!hasSelection}
+      type="button"
+      onClick={() => onApplyPreset([])}
+      disabled={!hasSelection}
       className="min-h-11 rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted transition-colors hover:bg-bg-elevated hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-50"
      >
       Bỏ chọn
@@ -236,7 +236,7 @@ function LessonContentModuleSelector({
        className={[
         "min-h-11 rounded-full border px-3 py-1.5 text-sm font-black transition-colors",
         isSelected
-         ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+         ? "app-active-item"
          : "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
        ].join(" ")}
       >
@@ -250,9 +250,9 @@ function LessonContentModuleSelector({
     <span className="text-xs font-black uppercase tracking-wide text-text-muted">Preset</span>
     {LESSON_CONTENT_PRESETS.map((preset) => (
      <button
-     key={preset.label}
-     type="button"
-     onClick={() => onApplyPreset(preset.modules)}
+      key={preset.label}
+      type="button"
+      onClick={() => onApplyPreset(preset.modules)}
       className="min-h-11 rounded-full border border-border-default bg-bg-card px-3 py-1 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
      >
       {preset.label}
@@ -419,8 +419,10 @@ function CompactModuleContent({
  if (module === "lessonText") return <CompactLessonText sections={sections} />;
  if (module === "vocab") return <CompactVocabulary lesson={lesson} sections={sections} />;
  if (module === "grammar") return <CompactGrammar lesson={lesson} sections={sections} />;
- if (module === "exercises") return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài tập." />;
- if (module === "reading") return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài đọc." />;
+ if (module === "exercises")
+  return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài tập." />;
+ if (module === "reading")
+  return <CompactGenericItems sections={sections} emptyLabel="Chưa có bài đọc." />;
 
  return <CompactEmpty label="Phần này chưa có dữ liệu render được cho bài đã chọn." />;
 }
@@ -493,7 +495,8 @@ function CompactVocabulary({
   return (
    <div className="grid gap-1.5 sm:grid-cols-2 xl:grid-cols-3">
     {sourceItems.slice(0, 12).map((item, index) => {
-     const hanzi = stringValue(item, "hanzi") || stringValue(item, "zh") || stringValue(item, "word");
+     const hanzi =
+      stringValue(item, "hanzi") || stringValue(item, "zh") || stringValue(item, "word");
      const meaning = stringValue(item, "meaning_vi") || stringValue(item, "vi");
      const pinyin = stringValue(item, "pinyin");
 
@@ -622,9 +625,7 @@ function CompactGenericItems({
      key={stringValue(item, "id") || `${index}`}
      className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
     >
-     <h4 className="font-black text-text-primary">
-      {itemTitle(item) || `Mục ${index + 1}`}
-     </h4>
+     <h4 className="font-black text-text-primary">{itemTitle(item) || `Mục ${index + 1}`}</h4>
      {instructionText(item.instruction) && (
       <p className="text-sm font-bold text-text-muted">{instructionText(item.instruction)}</p>
      )}

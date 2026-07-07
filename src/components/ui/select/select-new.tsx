@@ -5,6 +5,7 @@ import * as React from "react";
 import {
  Select as SelectRoot,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -93,19 +94,21 @@ export function SelectNew({
       contentClassName,
      )}
     >
-     {options.map((option) => (
-      <SelectItem
-       key={stringifyValue(option.value)}
-       value={stringifyValue(option.value)}
-       disabled={option.disabled || option.isDisabled}
-       className={cn("min-h-9", itemClassName)}
-      >
-       <span className="flex min-w-0 items-center gap-2">
-        {renderIcon(option.icon)}
-        <span className="min-w-0 flex-1 truncate">{option.label}</span>
-       </span>
-      </SelectItem>
-     ))}
+     <SelectGroup>
+      {options.map((option) => (
+       <SelectItem
+        key={stringifyValue(option.value)}
+        value={stringifyValue(option.value)}
+        disabled={option.disabled || option.isDisabled}
+        className={cn("min-h-9", itemClassName)}
+       >
+        <span className="flex min-w-0 items-center gap-2">
+         {renderIcon(option.icon)}
+         <span className="min-w-0 flex-1 truncate">{option.label}</span>
+        </span>
+       </SelectItem>
+      ))}
+     </SelectGroup>
     </SelectContent>
    </SelectRoot>
 

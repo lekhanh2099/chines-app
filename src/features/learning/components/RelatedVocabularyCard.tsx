@@ -68,12 +68,12 @@ function MiniStat({
  tone?: "neutral" | "green" | "yellow";
 }) {
  const toneClass = {
-  neutral: "bg-stone-50 text-stone-900",
-  green: "bg-emerald-50 text-emerald-700",
-  yellow: "bg-yellow-50 text-orange-600",
+  neutral: "bg-bg-subtle text-text-primary",
+  green: "bg-success-subtle text-success-text",
+  yellow: "bg-warning-subtle text-warning-text",
  }[tone];
  return (
-  <div className={cn("min-w-0 overflow-hidden rounded-2xlpx-3 py-2 text-center", toneClass)}>
+  <div className={cn("min-w-0 overflow-hidden rounded-2xl px-3 py-2 text-center", toneClass)}>
    <p className="break-words text-lg font-black">{value}</p>
    <p className="break-words text-[10px] font-black uppercase tracking-wide opacity-70">{label}</p>
   </div>

@@ -131,7 +131,7 @@ function NavRow({
     "group flex h-10 items-center gap-3 rounded-lg border  font-semibold transition-colors",
     collapsed ? "w-10 justify-center px-0" : "px-3",
     active
-     ? "border-primary/20 bg-accent-subtle/80 text-accent-text"
+     ? "app-active-item"
      : "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
    )}
   >
@@ -289,7 +289,7 @@ export function Sidebar() {
         prefetch={false}
         className={cn(
          "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
-         active ? "bg-accent-subtle text-accent-text" : "text-text-muted hover:bg-bg-subtle",
+         active ? "app-active-item border" : "text-text-muted hover:bg-bg-subtle",
         )}
        >
         <Icon className="h-5 w-5 shrink-0" />

@@ -22,9 +22,9 @@ export function RadioField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <div className="flex flex-col gap-2 mt-2">
+   <div className="mt-2 flex flex-col gap-2">
     {options.map((option) => (
-     <label key={option.value} className="flex items-center gap-2 cursor-pointer">
+     <label key={option.value} className="flex cursor-pointer items-center gap-2">
       <input
        type="radio"
        name={field.name}
@@ -32,9 +32,9 @@ export function RadioField({
        checked={field.state.value === option.value}
        onChange={() => field.handleChange(option.value)}
        onBlur={field.handleBlur}
-       className="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500"
+       className="size-4 border-border-default text-primary focus:ring-primary"
       />
-      <span className=" text-slate-700">{option.label}</span>
+      <span className="text-text-secondary">{option.label}</span>
      </label>
     ))}
    </div>

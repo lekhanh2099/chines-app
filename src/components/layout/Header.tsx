@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import {
  Select,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -172,11 +173,13 @@ export function Header({ user }: { user?: User | null }) {
          <SelectValue />
         </SelectTrigger>
         <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-         {hanzihomeBreadcrumb.courses.map((course, index) => (
-          <SelectItem key={course.id + index} value={course.id}>
-           {course.title}
-          </SelectItem>
-         ))}
+         <SelectGroup>
+          {hanzihomeBreadcrumb.courses.map((course, index) => (
+           <SelectItem key={course.id + index} value={course.id}>
+            {course.title}
+           </SelectItem>
+          ))}
+         </SelectGroup>
         </SelectContent>
        </Select>
        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
@@ -194,11 +197,13 @@ export function Header({ user }: { user?: User | null }) {
         <SelectValue />
        </SelectTrigger>
        <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-        {hanzihomeBreadcrumb.lessons.map((lesson) => (
-         <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
-          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-         </SelectItem>
-        ))}
+        <SelectGroup>
+         {hanzihomeBreadcrumb.lessons.map((lesson) => (
+          <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+           {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
+          </SelectItem>
+         ))}
+        </SelectGroup>
        </SelectContent>
       </Select>
      </nav>

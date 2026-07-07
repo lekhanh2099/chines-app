@@ -1,5 +1,7 @@
 import { BookOpenText, GitCompareArrows, Layers3 } from "lucide-react";
 
+import { Card } from "@/components/ui/card";
+
 export function NotebookHero({
  itemCount,
  groupCount,
@@ -16,7 +18,7 @@ export function NotebookHero({
  ];
 
  return (
-  <section className="nova-gradient-hero overflow-hidden rounded-3xl bg-[linear-gradient(125deg,#12bdb1_0%,#478bff_50%,#8358f7_100%)] p-5 text-white sm:p-7 lg:grid lg:grid-cols-[minmax(17rem,0.72fr)_minmax(0,2fr)] lg:gap-7">
+  <section className="app-gradient-hero overflow-hidden rounded-3xl border p-5 text-white shadow-theme-lg sm:p-7 lg:grid lg:grid-cols-[minmax(17rem,0.72fr)_minmax(0,2fr)] lg:gap-7">
    <div className="grid gap-4">
     <p className="text-xs font-black uppercase tracking-[0.16em] text-white/80">
      汉语教程 · 功能词与论证结构
@@ -35,20 +37,22 @@ export function NotebookHero({
      {metrics.map((metric) => {
       const Icon = metric.icon;
       return (
-       <div
+       <Card
         key={metric.label}
-        className="rounded-2xl border border-white/65 bg-white/70 px-3 py-4 text-center text-[#20233a] shadow-[inset_0_1px_0_rgba(255,255,255,.9),0_12px_30px_rgba(38,32,104,.13)] backdrop-blur-2xl grid gap-1"
+        variant="elevated"
+        padding="sm"
+        className="grid gap-1 px-3 py-4 text-center text-text-primary"
        >
-        <Icon className="mx-auto h-4 w-4 text-primary" />
+        <Icon className="mx-auto size-4 text-primary" />
         <strong className="block text-2xl font-black">{metric.value}</strong>
-        <span className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#687086]">
+        <span className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-text-muted">
          {metric.label}
         </span>
-       </div>
+       </Card>
       );
      })}
     </div>
-    <p className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-semibold leading-6 text-white/90 backdrop-blur">
+    <p className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-3 text-sm font-semibold leading-6 text-white/90">
      Cách học: nhận diện dấu hiệu → mở thẻ học hoặc so sánh → kiểm bằng ví dụ đối chiếu.
     </p>
    </div>

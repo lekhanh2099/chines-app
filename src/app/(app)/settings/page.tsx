@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import {
  loadClientAiPromptSettings,
  saveClientAiPromptSettings,
@@ -199,15 +200,14 @@ export default function SettingsPage() {
        }}
        disabled={isLoading || isSaving}
       >
-       <RefreshCcw className="h-4 w-4" />
+       <RefreshCcw data-icon="inline-start" />
        Reset mặc định
       </Button>
       <Button
        onClick={handleSave}
        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
-       isLoading={isSaving}
       >
-       <Save className="h-4 w-4" />
+       {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
        Lưu thay đổi
       </Button>
      </div>
@@ -276,9 +276,8 @@ export default function SettingsPage() {
       <Button
        onClick={handleSave}
        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
-       isLoading={isSaving}
       >
-       <Save className="h-4 w-4" />
+       {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
        Lưu prompt mới
       </Button>
      </div>

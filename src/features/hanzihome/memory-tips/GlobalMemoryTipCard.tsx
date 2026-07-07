@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Spinner } from "@/components/ui/spinner";
 import { cn } from "@/lib/utils";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
@@ -201,10 +202,15 @@ export function GlobalMemoryTipCard({
          type="button"
          variant={selectedTip.isPinned ? "default" : "outline"}
          size="sm"
-         isLoading={isMutating}
          onClick={togglePin}
         >
-         {selectedTip.isPinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
+         {isMutating ? (
+          <Spinner data-icon="inline-start" />
+         ) : selectedTip.isPinned ? (
+          <PinOff data-icon="inline-start" />
+         ) : (
+          <Pin data-icon="inline-start" />
+         )}
          {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
         </Button>
        )}

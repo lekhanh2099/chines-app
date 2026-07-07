@@ -1,6 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRight, BookOpenCheck, NotebookPen, NotebookTabs } from "lucide-react";
+import { BookOpenCheck, NotebookPen, NotebookTabs } from "lucide-react";
 
+import {
+ HomeArrowIcon,
+ HomeIconTile,
+ HomeSectionHeader,
+} from "@/features/home/components/HomePrimitives";
 import { notebookSummary } from "@/features/notebook/notebook-summary";
 
 const resources = [
@@ -30,14 +35,12 @@ const resources = [
 export function HomeResourceLinks() {
  return (
   <section aria-labelledby="home-resources-title">
-   <div className="mb-3 flex items-end justify-between gap-3">
-    <div>
-     <h2 id="home-resources-title" className="text-lg font-black text-text-primary">
-      Không gian học
-     </h2>
-     <p className="mt-0.5 text-sm font-medium text-text-muted">Mỗi nơi có một nhiệm vụ rõ ràng.</p>
-    </div>
-   </div>
+   <HomeSectionHeader
+    id="home-resources-title"
+    title="Không gian học"
+    description="Mỗi nơi có một nhiệm vụ rõ ràng."
+    className="mb-3"
+   />
 
    <div className="grid gap-3 lg:grid-cols-3">
     {resources.map((resource) => {
@@ -47,13 +50,13 @@ export function HomeResourceLinks() {
        key={resource.href}
        href={resource.href}
        prefetch={false}
-       className="nova-glass-panel group flex min-h-40 flex-col rounded-2xl p-5 transition hover:-translate-y-0.5 hover:border-primary/25"
+       className="group flex min-h-40 flex-col rounded-2xl border border-border-default bg-bg-card p-5 shadow-theme-sm transition hover:-translate-y-0.5 hover:border-primary/25"
       >
        <div className="flex items-start justify-between gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle text-accent-text">
-         <Icon className="h-5 w-5" />
-        </span>
-        <ArrowUpRight className="h-4 w-4 text-text-muted transition group-hover:text-accent-text" />
+        <HomeIconTile className="size-10">
+         <Icon className="size-5" />
+        </HomeIconTile>
+        <HomeArrowIcon className="transition group-hover:text-accent-text" />
        </div>
        <h3 className="mt-4 text-base font-black text-text-primary">{resource.title}</h3>
        <p className="mt-1 text-sm font-medium leading-5 text-text-muted">{resource.description}</p>

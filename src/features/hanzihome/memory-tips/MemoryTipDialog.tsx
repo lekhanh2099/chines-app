@@ -7,6 +7,7 @@ import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import {
  Dialog,
  DialogBody,
@@ -304,7 +305,8 @@ export function MemoryTipDialog({
       >
        Hủy
       </Button>
-      <Button type="submit" isLoading={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting}>
+       {isSubmitting ? <Spinner data-icon="inline-start" /> : null}
        {isEditMode ? "Cập nhật" : "Lưu nhắc nhanh"}
       </Button>
      </DialogFooter>

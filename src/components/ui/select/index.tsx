@@ -5,6 +5,7 @@ import * as React from "react";
 import {
  Select as SelectRoot,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -66,23 +67,25 @@ export function Select({
      position="popper"
      align="start"
     >
-     {options.map((option) => (
-      <SelectItem
-       key={stringifyValue(option.value)}
-       value={stringifyValue(option.value)}
-       disabled={option.disabled || option.isDisabled}
-      >
-       <div className="flex min-w-0 items-center gap-2">
-        {option.icon && (
-         <span className="flex size-4 flex-none items-center justify-center">
-          {typeof option.icon === "function" ? option.icon() : option.icon}
-         </span>
-        )}
+     <SelectGroup>
+      {options.map((option) => (
+       <SelectItem
+        key={stringifyValue(option.value)}
+        value={stringifyValue(option.value)}
+        disabled={option.disabled || option.isDisabled}
+       >
+        <div className="flex min-w-0 items-center gap-2">
+         {option.icon && (
+          <span className="flex size-4 flex-none items-center justify-center">
+           {typeof option.icon === "function" ? option.icon() : option.icon}
+          </span>
+         )}
 
-        <span className="truncate">{option.label}</span>
-       </div>
-      </SelectItem>
-     ))}
+         <span className="truncate">{option.label}</span>
+        </div>
+       </SelectItem>
+      ))}
+     </SelectGroup>
     </SelectContent>
    </SelectRoot>
 

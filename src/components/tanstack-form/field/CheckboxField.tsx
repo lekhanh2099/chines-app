@@ -19,17 +19,17 @@ export function CheckboxField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <div className="flex items-center gap-2 mt-1">
+   <div className="mt-1 flex items-center gap-2">
     <input
      type="checkbox"
      name={field.name}
      checked={field.state.value}
      onChange={(e) => field.handleChange(e.target.checked)}
      onBlur={field.handleBlur}
-     className="w-5 h-5 text-indigo-600 bg-slate-50 border-slate-300 rounded-2xl  focus:ring-indigo-500"
+     className="size-5 rounded-2xl border-border-default bg-bg-primary text-primary focus:ring-primary"
      {...rest}
     />
-    {label && <span className=" font-medium text-slate-700">{label}</span>}
+    {label && <span className="font-medium text-text-secondary">{label}</span>}
    </div>
   </FieldItem>
  );

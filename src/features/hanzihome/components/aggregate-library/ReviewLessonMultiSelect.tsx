@@ -101,10 +101,7 @@ export function ReviewLessonMultiSelect({
      >
       Chọn bài
       <ChevronDown
-       className={[
-        "h-4 w-4 transition-transform",
-        isPickerOpen ? "rotate-180" : "",
-       ].join(" ")}
+       className={["h-4 w-4 transition-transform", isPickerOpen ? "rotate-180" : ""].join(" ")}
       />
      </Button>
 
@@ -139,11 +136,11 @@ export function ReviewLessonMultiSelect({
      )}
 
      <button
-     type="button"
-     onClick={clearSelectedLessons}
+      type="button"
+      onClick={clearSelectedLessons}
       className="min-h-11 rounded-full px-3 py-1 text-xs font-black text-text-muted transition-colors hover:text-text-primary"
      >
-     Xóa hết
+      Xóa hết
      </button>
     </div>
    )}
@@ -181,7 +178,7 @@ export function ReviewLessonMultiSelect({
           className={[
            "flex min-h-11 items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-black transition-colors",
            selected
-            ? "border-accent bg-accent-subtle text-accent-text"
+            ? "app-active-item"
             : "border-border-default bg-bg-card text-text-primary hover:border-accent hover:bg-bg-elevated",
           ].join(" ")}
          >

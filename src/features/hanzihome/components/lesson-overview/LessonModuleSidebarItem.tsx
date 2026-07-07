@@ -28,7 +28,7 @@ export function LessonModuleSidebarItem({
    className={cn(
     "flex min-h-14 w-full min-w-0 max-w-full items-center gap-3 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
     selected
-     ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+     ? "app-active-item"
      : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
    )}
   >

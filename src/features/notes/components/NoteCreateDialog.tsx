@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "@tanstack/react-form";
-import { FilePlus2, Loader2 } from "lucide-react";
+import { FilePlus2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -17,10 +17,13 @@ import {
  DialogTitle,
  DialogTrigger,
 } from "@/components/ui/dialog";
+import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Spinner } from "@/components/ui/spinner";
 import {
  Select,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -101,83 +104,84 @@ export function NoteCreateDialog() {
       form.handleSubmit();
      }}
     >
-     <DialogBody className="space-y-4">
-      <form.Field
-       name="title"
-       validators={{
-        onChange: ({ value }) => (!value.trim() ? "Nhập tiêu đề ghi chú." : undefined),
-       }}
-      >
-       {(field) => (
-        <div className="space-y-2">
-         <label htmlFor={field.name} className="text-sm font-semibold text-text-primary">
-          Tiêu đề
-         </label>
-         <Input
-          id={field.name}
-          name={field.name}
-          value={field.state.value}
-          onBlur={field.handleBlur}
-          onChange={(event) => field.handleChange(event.target.value)}
-          placeholder="VD: Bài 6 - Chọn lọc ngữ pháp"
-         />
-         {field.state.meta.errors.length > 0 ? (
-          <p className="text-xs font-medium text-danger">{field.state.meta.errors.join(", ")}</p>
-         ) : null}
-        </div>
-       )}
-      </form.Field>
-
-      <form.Field name="category">
-       {(field) => {
-        const selectedOption = noteCategoryOptions.find(
-         (option) => option.value === field.state.value,
-        );
-
-        return (
-         <div className="space-y-2">
-          <label className="text-sm font-semibold text-text-primary">Danh mục</label>
-          <Select
+     <DialogBody>
+      <FieldGroup>
+       <form.Field
+        name="title"
+        validators={{
+         onChange: ({ value }) => (!value.trim() ? "Nhập tiêu đề ghi chú." : undefined),
+        }}
+       >
+        {(field) => (
+         <Field data-invalid={field.state.meta.errors.length > 0}>
+          <FieldLabel htmlFor={field.name}>Tiêu đề</FieldLabel>
+          <Input
+           id={field.name}
+           name={field.name}
            value={field.state.value}
-           onValueChange={(value) => field.handleChange(value as NoteCategory)}
-          >
-           <SelectTrigger className="h-10 w-full bg-bg-primary">
-            <SelectValue />
-           </SelectTrigger>
-           <SelectContent>
-            {noteCategoryOptions.map((option) => (
-             <SelectItem key={option.value} value={option.value}>
-              {option.label}
-             </SelectItem>
-            ))}
-           </SelectContent>
-          </Select>
-          {selectedOption ? (
-           <p className="text-xs font-medium text-text-muted">{selectedOption.helper}</p>
+           onBlur={field.handleBlur}
+           onChange={(event) => field.handleChange(event.target.value)}
+           placeholder="VD: Bài 6 - Chọn lọc ngữ pháp"
+           aria-invalid={field.state.meta.errors.length > 0}
+          />
+          {field.state.meta.errors.length > 0 ? (
+           <FieldDescription className="text-danger">
+            {field.state.meta.errors.join(", ")}
+           </FieldDescription>
           ) : null}
-         </div>
-        );
-       }}
-      </form.Field>
+         </Field>
+        )}
+       </form.Field>
 
-      <form.Field name="tags">
-       {(field) => (
-        <div className="space-y-2">
-         <label htmlFor={field.name} className="text-sm font-semibold text-text-primary">
-          Tag
-         </label>
-         <Input
-          id={field.name}
-          name={field.name}
-          value={field.state.value}
-          onBlur={field.handleBlur}
-          onChange={(event) => field.handleChange(event.target.value)}
-          placeholder="VD: HSK3, lỗi sai, ôn thi"
-         />
-         <p className="text-xs font-medium text-text-muted">Dùng dấu phẩy nếu có nhiều tag.</p>
-        </div>
-       )}
-      </form.Field>
+       <form.Field name="category">
+        {(field) => {
+         const selectedOption = noteCategoryOptions.find(
+          (option) => option.value === field.state.value,
+         );
+
+         return (
+          <Field>
+           <FieldLabel>Danh mục</FieldLabel>
+           <Select
+            value={field.state.value}
+            onValueChange={(value) => field.handleChange(value as NoteCategory)}
+           >
+            <SelectTrigger className="h-10 w-full bg-bg-primary">
+             <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+             <SelectGroup>
+              {noteCategoryOptions.map((option) => (
+               <SelectItem key={option.value} value={option.value}>
+                {option.label}
+               </SelectItem>
+              ))}
+             </SelectGroup>
+            </SelectContent>
+           </Select>
+           {selectedOption ? <FieldDescription>{selectedOption.helper}</FieldDescription> : null}
+          </Field>
+         );
+        }}
+       </form.Field>
+
+       <form.Field name="tags">
+        {(field) => (
+         <Field>
+          <FieldLabel htmlFor={field.name}>Tag</FieldLabel>
+          <Input
+           id={field.name}
+           name={field.name}
+           value={field.state.value}
+           onBlur={field.handleBlur}
+           onChange={(event) => field.handleChange(event.target.value)}
+           placeholder="VD: HSK3, lỗi sai, ôn thi"
+          />
+          <FieldDescription>Dùng dấu phẩy nếu có nhiều tag.</FieldDescription>
+         </Field>
+        )}
+       </form.Field>
+      </FieldGroup>
      </DialogBody>
 
      <DialogFooter>
@@ -188,7 +192,7 @@ export function NoteCreateDialog() {
        {([canSubmit, isSubmitting]) => (
         <Button type="submit" disabled={!canSubmit || createNoteMutation.isPending}>
          {isSubmitting || createNoteMutation.isPending ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
+          <Spinner data-icon="inline-start" />
          ) : null}
          Tạo
         </Button>

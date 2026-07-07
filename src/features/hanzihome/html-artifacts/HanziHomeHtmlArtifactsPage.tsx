@@ -39,6 +39,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/componen
 import {
  Select,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -76,21 +77,21 @@ const artifactTypeLabels: Record<HtmlArtifactType, string> = {
 };
 
 const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
- blue: "bg-blue-500/15 text-blue-700 ring-blue-500/20",
- purple: "bg-purple-500/15 text-purple-700 ring-purple-500/20",
- green: "bg-emerald-500/15 text-emerald-700 ring-emerald-500/20",
- orange: "bg-orange-500/15 text-orange-700 ring-orange-500/20",
- rose: "bg-rose-500/15 text-rose-700 ring-rose-500/20",
- slate: "bg-slate-500/15 text-slate-700 ring-slate-500/20",
+ blue: "bg-info-subtle text-info-text ring-info/20",
+ purple: "bg-purple-subtle text-purple-text ring-purple/20",
+ green: "bg-success-subtle text-success-text ring-success/20",
+ orange: "bg-warning-subtle text-warning-text ring-warning/20",
+ rose: "bg-danger-subtle text-danger-text ring-danger/20",
+ slate: "bg-bg-subtle text-text-secondary ring-border-default",
 };
 
 const folderColorSwatchClasses: Record<HtmlArtifactFolderColor, string> = {
- blue: "border-blue-500 bg-blue-500",
- purple: "border-purple-500 bg-purple-500",
- green: "border-emerald-500 bg-emerald-500",
- orange: "border-orange-500 bg-orange-500",
- rose: "border-rose-500 bg-rose-500",
- slate: "border-slate-500 bg-slate-500",
+ blue: "border-info bg-info",
+ purple: "border-purple bg-purple",
+ green: "border-success bg-success",
+ orange: "border-warning bg-warning",
+ rose: "border-danger bg-danger",
+ slate: "border-border-default bg-text-muted",
 };
 
 const folderColorSequence: HtmlArtifactFolderColor[] = [
@@ -1110,7 +1111,7 @@ function MobilePaneTabs({
        className={cn(
         "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-lg px-2 text-xs font-black transition-colors",
         active
-         ? "bg-bg-card text-primary shadow-theme-sm"
+         ? "app-active-item border"
          : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
        )}
        onClick={() => onChange(pane.key)}
@@ -1286,7 +1287,7 @@ function InspectorTabButton({
    className={cn(
     "inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-lg px-2 text-sm font-black transition-colors",
     active
-     ? "bg-bg-card text-primary shadow-theme-sm"
+     ? "app-active-item border"
      : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
    )}
    onClick={onClick}
@@ -1593,7 +1594,7 @@ function FolderRow({
    className={cn(
     "group flex min-h-11 min-w-0 items-center gap-1.5 rounded-lg border px-2 text-left text-sm font-bold transition-colors",
     active
-     ? "border-primary/45 bg-primary/10 text-primary shadow-theme-sm"
+     ? "app-active-item"
      : "border-border-default bg-bg-primary text-text-secondary hover:border-primary/25 hover:bg-bg-subtle hover:text-text-primary",
     canDrop && "data-[drag-over=true]:border-primary/50",
    )}
@@ -1874,7 +1875,7 @@ function PreviewModeButton({
    className={cn(
     "inline-flex h-8 min-w-0 items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-black transition-colors",
     active
-     ? "bg-bg-card text-primary shadow-theme-sm"
+     ? "app-active-item border"
      : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
    )}
    onClick={onClick}
@@ -2516,12 +2517,14 @@ function ArtifactForm({
         <SelectValue placeholder="Chọn thư mục" />
        </SelectTrigger>
        <SelectContent align="start">
-        <SelectItem value={noFolderValue}>Chưa phân loại</SelectItem>
-        {folders.map((folder) => (
-         <SelectItem key={folder.id} value={folder.id}>
-          {folder.name}
-         </SelectItem>
-        ))}
+        <SelectGroup>
+         <SelectItem value={noFolderValue}>Chưa phân loại</SelectItem>
+         {folders.map((folder) => (
+          <SelectItem key={folder.id} value={folder.id}>
+           {folder.name}
+          </SelectItem>
+         ))}
+        </SelectGroup>
        </SelectContent>
       </Select>
      </div>
@@ -2545,11 +2548,13 @@ function ArtifactForm({
          <SelectValue placeholder="Chọn loại" />
         </SelectTrigger>
         <SelectContent align="start">
-         {artifactTypes.map((type) => (
-          <SelectItem key={type} value={type}>
-           {artifactTypeLabels[type]}
-          </SelectItem>
-         ))}
+         <SelectGroup>
+          {artifactTypes.map((type) => (
+           <SelectItem key={type} value={type}>
+            {artifactTypeLabels[type]}
+           </SelectItem>
+          ))}
+         </SelectGroup>
         </SelectContent>
        </Select>
       </div>
@@ -2697,7 +2702,7 @@ function ArtifactListButton({
    className={cn(
     "group relative grid  gap-2 rounded-2xl border p-3.5 text-left shadow-theme-sm transition-colors",
     active
-     ? "border-primary/70 bg-bg-card text-primary ring-2 ring-primary/25"
+     ? "app-active-item"
      : "border-border-default bg-bg-card text-text-primary hover:border-primary/30 hover:bg-bg-elevated",
    )}
   >

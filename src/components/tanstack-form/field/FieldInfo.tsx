@@ -13,9 +13,9 @@ export function FieldInfo({
  if (isValid && !helperText) return null;
 
  return (
-  <div className="flex items-start justify-between gap-1 mt-1">
+  <div className="mt-1 flex items-start justify-between gap-1">
    {!isValid ? (
-    <p className="text-xs text-rose-500">
+    <p className="text-xs text-danger-text">
      {errors
       .map((e) =>
        typeof e === "string" ? e : (e as Record<string, unknown>)?.message || String(e),
@@ -23,7 +23,7 @@ export function FieldInfo({
       .join(", ")}
     </p>
    ) : helperText ? (
-    <p className="text-xs text-slate-500">{helperText}</p>
+    <p className="text-xs text-text-muted">{helperText}</p>
    ) : null}
   </div>
  );

@@ -78,9 +78,7 @@ export function VocabList({
   { value: "known", label: "Đã biết", icon: CheckCircle2 },
  ];
  const updateWordPickerHeight = (nextHeight: number) => {
-  setWordPickerHeight(
-   clampValue(nextHeight, resizeBounds.minHeight, resizeBounds.maxHeight),
-  );
+  setWordPickerHeight(clampValue(nextHeight, resizeBounds.minHeight, resizeBounds.maxHeight));
  };
  const adjustWordPickerHeight = (delta: number) => {
   setWordPickerHeight((current) =>
@@ -148,9 +146,9 @@ export function VocabList({
         <Button
          key={item.value}
          type="button"
-         variant={active ? "default" : "outline"}
+         variant="outline"
          size="sm"
-         className="h-7 px-2 text-xs"
+         className={cn("h-7 px-2 text-xs", active && "app-active-item")}
          onClick={() => onStatusFilterChange(item.value)}
         >
          <Icon className="h-3.5 w-3.5" />
@@ -214,9 +212,10 @@ export function VocabList({
           key={wordId}
           type="button"
           onClick={() => onSelectWord(wordId)}
-          variant={active ? "default" : "outline"}
+          variant="outline"
           className={cn(
            "h-auto gap-1.5 px-2 py-1.5",
+           active && "app-active-item",
            status === "hard" && !active && "border-warning/45",
            status === "known" && !active && "border-success/35",
           )}

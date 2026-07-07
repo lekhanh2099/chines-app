@@ -21,9 +21,9 @@ export function ActionButton({
  className?: string;
 }) {
  const toneClassName = {
-  red: "border-red-500    hover:bg-red-600",
-  neutral: "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
-  purple: "border-purple-300 bg-purple-50 text-purple-700 hover:bg-purple-100",
+  red: "border-danger bg-danger text-danger-foreground hover:bg-danger/90",
+  neutral: "border-border-default bg-bg-card text-text-secondary hover:bg-bg-subtle",
+  purple: "border-purple/30 bg-purple-subtle text-purple-text hover:bg-purple/15",
  }[tone];
  return (
   <button
@@ -31,15 +31,15 @@ export function ActionButton({
    onClick={onClick}
    disabled={loading || disabled}
    className={cn(
-    "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4  font-black shadow-theme-sm transition disabled:cursor-not-allowed disabled:opacity-60",
+    "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4 font-black shadow-theme-sm transition disabled:cursor-not-allowed disabled:opacity-60",
     toneClassName,
     className,
    )}
   >
    {loading ? (
-    <Loader2 className="h-4 w-4 animate-spin" />
+    <Loader2 className="size-4 animate-spin" />
    ) : Icon ? (
-    <Icon className="h-4 w-4" />
+    <Icon className="size-4" />
    ) : null}
    {children}
   </button>

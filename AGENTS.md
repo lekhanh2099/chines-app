@@ -702,6 +702,30 @@ Before finishing:
 - List any unsupported shapes or follow-up risks.
 - Be honest if something is not fully covered.
 
+### Repo-Tracked Skills
+
+For non-trivial HanziHome code changes involving React, TypeScript, data loading, forms, edit contracts, Supabase routes, renderers, or source cleanup, first read:
+
+```txt
+.codex/skills/hanzihome-code-standardization/SKILL.md
+```
+
+For UI work that mentions Nova UI, design tokens, Tailwind class drift, `globals.css` visual recipes, Home/Notebook/HanziHome visual consistency, glass surfaces, hero/card primitives, or preventing ad-hoc utility CSS, first read:
+
+```txt
+.codex/skills/hanzihome-ui-system-audit/SKILL.md
+```
+
+Use that workflow before editing UI code so future changes do not keep adding hidden design tokens, one-off palettes, or component recipes outside the shared primitive system.
+
+For shadcn/ui component work, `components.json`, registry items, component variants, or upstream component docs, read:
+
+```txt
+.agents/skills/shadcn/SKILL.md
+```
+
+The bundled `.agents/skills/migrate-radix-to-base/SKILL.md` is only for an explicit Radix-to-Base UI migration request. Do not invoke it for ordinary component cleanup.
+
 ## 21. Explicit Stop Conditions
 
 Stop and ask before coding if:

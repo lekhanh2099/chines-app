@@ -3,6 +3,7 @@
 import {
  Select,
  SelectContent,
+ SelectGroup,
  SelectItem,
  SelectTrigger,
  SelectValue,
@@ -63,12 +64,14 @@ export function LessonTypographyControls({ displayMode, onChange }: LessonTypogr
      <SelectTrigger size="sm" className="h-7 min-w-24 bg-bg-primary shadow-none sm:min-w-32">
       <SelectValue />
      </SelectTrigger>
-     <SelectContent align="end" className="z-[100]">
-      {hanziFontOptions.map((option) => (
-       <SelectItem key={option.value} value={option.value}>
-        {option.label}
-       </SelectItem>
-      ))}
+     <SelectContent align="end">
+      <SelectGroup>
+       {hanziFontOptions.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+         {option.label}
+        </SelectItem>
+       ))}
+      </SelectGroup>
      </SelectContent>
     </Select>
    </div>
@@ -81,12 +84,14 @@ export function LessonTypographyControls({ displayMode, onChange }: LessonTypogr
      <SelectTrigger size="sm" className="h-7 min-w-20 bg-bg-primary shadow-none sm:min-w-24">
       <SelectValue />
      </SelectTrigger>
-     <SelectContent align="end" className="z-[100]">
-      {hanziSizeOptions.map((option) => (
-       <SelectItem key={option.value} value={option.value}>
-        {option.label}
-       </SelectItem>
-      ))}
+     <SelectContent align="end">
+      <SelectGroup>
+       {hanziSizeOptions.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+         {option.label}
+        </SelectItem>
+       ))}
+      </SelectGroup>
      </SelectContent>
     </Select>
    </div>

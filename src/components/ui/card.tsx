@@ -9,7 +9,7 @@ const cardVariants = cva("rounded-2xl border", {
    elevated: "border-border-default/80 bg-bg-card shadow",
    section: "border-border-default/80 bg-bg-card shadow-theme-sm",
    subtle: "border-border-default bg-bg-subtle",
-   glass: "nova-glass-panel",
+   glass: "app-glass-surface",
   },
   padding: {
    none: "",

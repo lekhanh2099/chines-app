@@ -6,7 +6,7 @@ export function Title({ className, ...props }: Props) {
  return (
   <h2
    data-slot="form-title"
-   className={cn("text-xl font-bold text-slate-800", className)}
+   className={cn("text-xl font-bold text-text-primary", className)}
    {...props}
   />
  );

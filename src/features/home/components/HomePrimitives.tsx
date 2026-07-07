@@ -35,10 +35,7 @@ export function HomeGlassSection({ className, ...props }: ComponentPropsWithoutR
  return (
   <section
    {...props}
-   className={cn(
-    "nova-glass-panel rounded-2xl border border-white/70 p-5 shadow-theme-lg",
-    className,
-   )}
+   className={cn("app-glass-surface rounded-2xl border p-5 shadow-theme-lg", className)}
   />
  );
 }
@@ -47,7 +44,7 @@ export function HomeIconTile({ children, className }: { children: ReactNode; cla
  return (
   <span
    className={cn(
-    "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle text-accent-text shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]",
+    "flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle text-accent-text shadow-theme-sm",
     className,
    )}
   >

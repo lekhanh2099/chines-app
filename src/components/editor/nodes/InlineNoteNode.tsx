@@ -56,7 +56,7 @@ function renderLinkifiedText(value: string): ReactNode[] {
     href={url}
     target="_blank"
     rel="noreferrer"
-    className="break-all font-bold text-sky-600 underline underline-offset-2 hover:text-sky-700"
+    className="break-all font-bold text-sky-600 underline underline-offset-2 hover:text-info-text"
     onClick={(event) => event.stopPropagation()}
    >
     {url}
@@ -141,7 +141,7 @@ function InlineNoteComponent({
  return (
   <span
    ref={spanRef}
-   className="relative inline cursor-default rounded-2xl -sm bg-sky-100 px-0.5 decoration-sky-300 decoration-wavy underline"
+   className="relative inline cursor-default rounded-2xl -sm bg-info-subtle px-0.5 decoration-info/50 decoration-wavy underline"
    data-inline-note="true"
    onMouseEnter={handleMouseEnter}
    onMouseLeave={handleMouseLeave}
@@ -232,7 +232,8 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   const el = document.createElement("span");
   el.dataset.inlineNote = "true";
   el.dataset.noteText = this.__noteText;
-  el.className = "bg-sky-100 px-0.5 rounded-2xl -sm underline decoration-wavy decoration-sky-300";
+  el.className =
+   "bg-info-subtle px-0.5 rounded-2xl -sm underline decoration-wavy decoration-info/50";
   el.textContent = this.__text;
   return { element: el };
  }

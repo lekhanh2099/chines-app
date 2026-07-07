@@ -10,13 +10,13 @@ export function StatBox({
  tone: "yellow" | "blue" | "green";
 }) {
  const className = {
-  yellow: "border-yellow-300 bg-yellow-50 text-orange-600",
-  blue: "border-blue-300 bg-blue-50 text-blue-600",
-  green: "border-emerald-300 bg-emerald-50 text-emerald-600",
+  yellow: "border-warning/30 bg-warning-subtle text-warning-text",
+  blue: "border-info/30 bg-info-subtle text-info-text",
+  green: "border-success/30 bg-success-subtle text-success-text",
  }[tone];
  return (
   <div
-   className={cn("min-w-24rounded-2xl border-2 px-4 py-3 text-center shadow-theme-sm", className)}
+   className={cn("min-w-24 rounded-2xl border-2 px-4 py-3 text-center shadow-theme-sm", className)}
   >
    <p className="text-2xl font-black">{value}</p>
    <p className="text-xs font-black">{label}</p>

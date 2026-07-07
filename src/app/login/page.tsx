@@ -8,6 +8,8 @@ import { useAppForm } from "@/components/tanstack-form/hooks/form";
 import { TextField } from "@/components/tanstack-form/field/TextField";
 import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
 import { Button } from "@/components/ui/button";
+import { FieldGroup } from "@/components/ui/field";
+import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
 import { BookOpen, LogIn, UserPlus } from "lucide-react";
 
@@ -97,55 +99,58 @@ export default function LoginPage() {
    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div className="bg-bg-card py-8 px-4 shadow-theme-sm border border-border-default sm:rounded-2xl  sm:px-10">
      <form
-      className="space-y-6"
+      className="flex flex-col gap-6"
       onSubmit={(e) => {
        e.preventDefault();
        e.stopPropagation();
        form.handleSubmit();
       }}
      >
-      <form.AppField name="email">
-       {() => (
-        <TextField
-         label="Email"
-         inputProps={{
-          type: "email",
-          autoComplete: "email",
-          placeholder: "name@example.com",
-         }}
-        />
-       )}
-      </form.AppField>
+      <FieldGroup>
+       <form.AppField name="email">
+        {() => (
+         <TextField
+          label="Email"
+          inputProps={{
+           type: "email",
+           autoComplete: "email",
+           placeholder: "name@example.com",
+          }}
+         />
+        )}
+       </form.AppField>
 
-      <form.AppField name="password">
-       {() => (
-        <PasswordField
-         label="Mật khẩu"
-         placeholder="••••••••"
-         autoComplete={isLogin ? "current-password" : "new-password"}
-        />
-       )}
-      </form.AppField>
+       <form.AppField name="password">
+        {() => (
+         <PasswordField
+          label="Mật khẩu"
+          placeholder="••••••••"
+          autoComplete={isLogin ? "current-password" : "new-password"}
+         />
+        )}
+       </form.AppField>
+      </FieldGroup>
 
       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
        {([canSubmit, isSubmitting]) => (
         <Button
          type="submit"
          disabled={!canSubmit || isSubmitting || loading}
-         isLoading={loading || isSubmitting}
          className="w-full mt-2"
         >
-         {isLogin ? (
-          <LogIn className="w-[18px] h-[18px]" />
+         {loading || isSubmitting ? (
+          <Spinner data-icon="inline-start" />
+         ) : isLogin ? (
+          <LogIn data-icon="inline-start" />
          ) : (
-          <UserPlus className="w-[18px] h-[18px]" />
+          <UserPlus data-icon="inline-start" />
          )}
          {isLogin ? "Đăng nhập" : "Đăng ký"}
         </Button>
        )}
       </form.Subscribe>
 
-      <div className="text-center  text-text-muted mt-6 border-t border-border-default pt-6 space-y-2">
+      <div className="mt-6 flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
        <p>
         {isLogin ? "Chưa có tài khoản?" : "Đã có tài khoản?"}{" "}
         <button

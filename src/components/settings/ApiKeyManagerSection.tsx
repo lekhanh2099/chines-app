@@ -8,8 +8,10 @@ import {
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Spinner } from "@/components/ui/spinner";
 import {
  Dialog,
  DialogBody,
@@ -322,7 +324,7 @@ export default function ApiKeyManagerSection() {
  return (
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-    <div className="max-w-3xl space-y-2">
+    <div className="flex max-w-3xl flex-col gap-2">
      <div className="inline-flex items-center gap-2 rounded-2xl -full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
       <Workflow className="h-3.5 w-3.5" />
       API Key Manager
@@ -337,7 +339,7 @@ export default function ApiKeyManagerSection() {
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
      <DialogTrigger>
       <Button disabled={isLoading || !schemaReady}>
-       <Plus className="h-4 w-4" />
+       <Plus data-icon="inline-start" />
        Thêm API key
       </Button>
      </DialogTrigger>
@@ -350,7 +352,7 @@ export default function ApiKeyManagerSection() {
       </DialogHeader>
 
       <DialogBody>
-       <label className="space-y-2">
+       <label className="flex flex-col gap-2">
         <span className=" font-semibold text-text-primary">Provider</span>
         <select
          value={provider}
@@ -387,7 +389,7 @@ export default function ApiKeyManagerSection() {
         </div>
        )}
 
-       <label className="space-y-2">
+       <label className="flex flex-col gap-2">
         <span className=" font-semibold text-text-primary">Tên hiển thị</span>
         <Input
          value={label}
@@ -397,7 +399,7 @@ export default function ApiKeyManagerSection() {
         />
        </label>
 
-       <label className="space-y-2">
+       <label className="flex flex-col gap-2">
         <span className=" font-semibold text-text-primary">API key</span>
         <div className="flex items-center gap-2">
          <div className="relative flex-1">
@@ -419,7 +421,7 @@ export default function ApiKeyManagerSection() {
           </button>
          </div>
          <Button variant="outline" onClick={handlePaste}>
-          <ClipboardPaste className="h-4 w-4" />
+          <ClipboardPaste data-icon="inline-start" />
           Paste
          </Button>
         </div>
@@ -430,12 +432,12 @@ export default function ApiKeyManagerSection() {
        <Button variant="outline" onClick={() => setIsDialogOpen(false)} disabled={isSubmitting}>
         Hủy
        </Button>
-       <Button
-        onClick={handleAddKey}
-        disabled={!apiKey.trim() || isSubmitting || !schemaReady}
-        isLoading={isSubmitting}
-       >
-        <ShieldCheck className="h-4 w-4" />
+       <Button onClick={handleAddKey} disabled={!apiKey.trim() || isSubmitting || !schemaReady}>
+        {isSubmitting ? (
+         <Spinner data-icon="inline-start" />
+        ) : (
+         <ShieldCheck data-icon="inline-start" />
+        )}
         Verify và lưu
        </Button>
       </DialogFooter>
@@ -481,7 +483,7 @@ export default function ApiKeyManagerSection() {
      </p>
     </div>
    ) : (
-    <div className="mt-6 space-y-3">
+    <div className="mt-6 flex flex-col gap-3">
      {keys.map((key, index) => {
       const isBusy = busyKeyId === key.id;
 
@@ -491,20 +493,21 @@ export default function ApiKeyManagerSection() {
         className="rounded-2xl  border border-border-default bg-bg-primary p-4 shadow-theme-sm"
        >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-         <div className="space-y-3">
+         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center gap-2">
-           <span
-            className={cn(
-             "rounded-2xl -full px-3 py-1 text-xs font-semibold",
+           <Badge
+            variant={
              key.provider === "deepseek"
-              ? "bg-emerald-100 text-emerald-900"
+              ? "success"
               : key.provider === "gemini"
-                ? "bg-sky-100 text-sky-900"
-                : "bg-orange-100 text-orange-900",
-            )}
+                ? "info"
+                : "warning"
+            }
+            size="sm"
+            className="normal-case tracking-normal"
            >
             {key.providerLabel}
-           </span>
+           </Badge>
            <span className="rounded-2xl -full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
             Ưu tiên #{index + 1}
            </span>
@@ -552,9 +555,14 @@ export default function ApiKeyManagerSection() {
            size="sm"
            onClick={() => handleToggleKey(key)}
            disabled={isBusy || !schemaReady}
-           isLoading={isBusy}
           >
-           {key.isActive ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+           {isBusy ? (
+            <Spinner data-icon="inline-start" />
+           ) : key.isActive ? (
+            <Pause data-icon="inline-start" />
+           ) : (
+            <Play data-icon="inline-start" />
+           )}
            {key.isActive ? "Tạm dừng" : "Bật lại"}
           </Button>
           <Button

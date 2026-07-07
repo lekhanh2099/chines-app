@@ -31,7 +31,7 @@ export function TextareaField({
     aria-invalid={!field.state.meta.isValid}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="w-full min-h-[120px] bg-slate-50 border border-slate-200 rounded-2xl  p-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none"
+    className="min-h-[120px] w-full resize-none rounded-2xl border border-border-default bg-bg-primary p-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
     {...rest}
    />
   </FieldItem>

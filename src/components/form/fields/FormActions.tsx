@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import { useFormContext } from "@/components/form/form-context";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +37,8 @@ export function FormActions({
       </Button>
      )}
 
-     <Button type="submit" disabled={isSubmitting || disabled} isLoading={isSubmitting}>
+     <Button type="submit" disabled={isSubmitting || disabled}>
+      {isSubmitting ? <Spinner data-icon="inline-start" /> : null}
       {isSubmitting ? "Đang lưu..." : submitLabel}
      </Button>
     </div>

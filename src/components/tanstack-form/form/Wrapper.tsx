@@ -6,5 +6,5 @@ type Props = {
 };
 
 export function Wrapper({ children, className }: Props) {
- return <div className={cn("space-y-6", className)}>{children}</div>;
+ return <div className={cn("flex flex-col gap-6", className)}>{children}</div>;
 }

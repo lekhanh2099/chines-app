@@ -3,6 +3,7 @@
 import type { DragEvent } from "react";
 
 import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
+import { cn } from "@/lib/utils";
 
 import { moduleMeta } from "./moduleMeta";
 
@@ -64,14 +65,12 @@ export function ModuleTabButton({
     onDragEnd();
    }}
    onDragEnd={onDragEnd}
-   className={[
+   className={cn(
     "flex min-h-11 shrink-0 cursor-grab select-none items-center gap-1.5 whitespace-nowrap rounded-lg border border-transparent px-3 font-black transition-colors active:cursor-grabbing sm:gap-2",
-    active
-     ? "bg-bg-primary text-text-primary shadow-theme-sm"
-     : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
-    isDragging ? "opacity-40" : "",
-    isDropTarget ? "hover:border-accent/60" : "",
-   ].join(" ")}
+    active ? "app-active-item" : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
+    isDragging && "opacity-40",
+    isDropTarget && "hover:border-accent/60",
+   )}
   >
    <Icon className="h-4 w-4" />
    {meta.label}
