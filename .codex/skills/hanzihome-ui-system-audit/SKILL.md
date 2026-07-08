@@ -79,6 +79,7 @@ Use `app-active-item` for selected navigation rows, module tabs, sidebar list ro
 Strict rules:
 
 - Do not add new active-state recipes in feature components with local combinations such as `bg-primary text-primary-foreground`, `ring-primary`, `bg-primary/10 text-primary`, or `bg-accent-subtle text-accent-text`.
+- Keep active/page-shell brand gradients on the app's cyan-blue-purple axis. Do not introduce pink/rose active or shell layers unless the surface has an explicit danger/annotation role.
 - Do not use full `Button default` styling just to indicate selection. Reserve full-primary buttons for commands and CTAs.
 - Small nested status marks, check indicators, and badges may keep their own tone when they represent status rather than the selected surface.
 - If an active state needs a new density or emphasis, extend the system recipe first and update this skill in the same change.

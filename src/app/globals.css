@@ -458,7 +458,7 @@ body {
  min-block-size: 100%;
  background:
   linear-gradient(135deg, rgb(20 184 166 / 11%) 0%, transparent 34%),
-  linear-gradient(315deg, rgb(255 92 138 / 9%) 0%, transparent 38%),
+  linear-gradient(315deg, rgb(117 72 246 / 10%) 0%, transparent 40%),
   linear-gradient(155deg, #f7fcf9 0%, #f2efff 54%, #fff7ef 100%);
  background-attachment: fixed;
 }
@@ -524,12 +524,8 @@ body {
 }
 
 .app-active-item {
- border-color: color-mix(in oklch, var(--primary) 42%, var(--border));
- background: linear-gradient(
-  135deg,
-  color-mix(in oklch, var(--primary) 15%, var(--card)),
-  color-mix(in oklch, var(--chart-4) 10%, var(--card))
- );
+ border-color: rgb(117 72 246 / 38%);
+ background: linear-gradient(135deg, rgb(20 184 166 / 8%), rgb(117 72 246 / 12%)), var(--card);
  color: var(--accent-text);
  box-shadow:
   var(--shadow-sm),
