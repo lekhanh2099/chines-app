@@ -146,9 +146,9 @@ export function VocabList({
         <Button
          key={item.value}
          type="button"
-         variant="outline"
+         variant={active ? "active" : "outline"}
          size="sm"
-         className={cn("h-7 px-2 text-xs", active && "app-active-item")}
+         className="h-7 px-2 text-xs"
          onClick={() => onStatusFilterChange(item.value)}
         >
          <Icon className="h-3.5 w-3.5" />
@@ -212,10 +212,9 @@ export function VocabList({
           key={wordId}
           type="button"
           onClick={() => onSelectWord(wordId)}
-          variant="outline"
+          variant={active ? "active" : "outline"}
           className={cn(
            "h-auto gap-1.5 px-2 py-1.5",
-           active && "app-active-item",
            status === "hard" && !active && "border-warning/45",
            status === "known" && !active && "border-success/35",
           )}

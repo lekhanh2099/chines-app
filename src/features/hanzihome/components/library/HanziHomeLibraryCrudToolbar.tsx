@@ -25,7 +25,7 @@ export function HanziHomeLibraryCrudToolbar({
    <Button
     type="button"
     size="sm"
-    variant={editMode ? "default" : "outline"}
+    variant={editMode ? "active" : "outline"}
     onClick={() => onEditModeChange(!editMode)}
    >
     {editMode ? <X className="h-4 w-4" /> : <Pencil className="h-4 w-4" />}

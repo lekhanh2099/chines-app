@@ -76,7 +76,7 @@ export function SegmentedControl<T extends string>({
          className={cn(
           "flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-md px-2.5  font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
           active
-           ? "bg-bg-primary text-text-primary shadow-theme-sm"
+           ? "app-active-item"
            : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
           itemClassName,
          )}

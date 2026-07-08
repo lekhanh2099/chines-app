@@ -75,7 +75,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    <LessonTypographyControls displayMode={globalDisplayMode} onChange={updateGlobalTypography} />
    <Button
     type="button"
-    variant="outline"
+    variant={globalDisplayMode.showPinyin ? "active" : "outline"}
     size="sm"
     onClick={() => updateGlobalDisplayMode("showPinyin")}
    >
@@ -83,7 +83,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    </Button>
    <Button
     type="button"
-    variant="outline"
+    variant={globalDisplayMode.showMeaning ? "active" : "outline"}
     size="sm"
     onClick={() => updateGlobalDisplayMode("showMeaning")}
    >
@@ -91,7 +91,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    </Button>
    <Button
     type="button"
-    variant={globalDisplayMode.showAnswers ? "default" : "outline"}
+    variant={globalDisplayMode.showAnswers ? "active" : "outline"}
     size="sm"
     onClick={() => updateGlobalDisplayMode("showAnswers")}
    >
@@ -193,7 +193,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
       <div className="flex flex-wrap gap-2">
        <Button
         type="button"
-        variant="outline"
+        variant={selectedSectionDisplayMode.showPinyin ? "active" : "outline"}
         size="sm"
         onClick={() =>
          selectedSection
@@ -205,7 +205,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
        </Button>
        <Button
         type="button"
-        variant="outline"
+        variant={selectedSectionDisplayMode.showMeaning ? "active" : "outline"}
         size="sm"
         onClick={() =>
          selectedSection
@@ -217,7 +217,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
        </Button>
        <Button
         type="button"
-        variant={selectedSectionDisplayMode.showAnswers ? "default" : "outline"}
+        variant={selectedSectionDisplayMode.showAnswers ? "active" : "outline"}
         size="sm"
         onClick={() =>
          selectedSection

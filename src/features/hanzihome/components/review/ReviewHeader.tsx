@@ -33,7 +33,7 @@ export function ReviewHeader({
       <Button
        key={item.value}
        type="button"
-       variant={mode === item.value ? "default" : "outline"}
+       variant={mode === item.value ? "active" : "outline"}
        onClick={() => onModeChange(item.value)}
       >
        {item.label}

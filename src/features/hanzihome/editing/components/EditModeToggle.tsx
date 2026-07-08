@@ -13,7 +13,7 @@ export function EditModeToggle() {
  return (
   <Button
    type="button"
-   variant={editMode ? "default" : "outline"}
+   variant={editMode ? "active" : "outline"}
    size="sm"
    className="h-8 shrink-0 px-2.5 text-xs"
    onClick={() => setEditMode(!editMode)}

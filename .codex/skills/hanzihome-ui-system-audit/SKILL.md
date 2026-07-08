@@ -74,15 +74,27 @@ Strict rules:
 
 Selection and active states are system primitives, not per-feature styling.
 
-Use `app-active-item` for selected navigation rows, module tabs, sidebar list rows, picker rows, artifact cards, folder rows, and other active list/card controls. This keeps active states on one subtle brand-gradient recipe while preserving readable text and token-backed borders.
+Use `app-active-item` for selected navigation rows, segmented controls, module tabs, sidebar list rows, picker rows, artifact cards, folder rows, and other active list/card controls. This keeps active states on one tonal brand-gradient recipe with stronger text and borders while avoiding CTA styling.
 
 Strict rules:
 
 - Do not add new active-state recipes in feature components with local combinations such as `bg-primary text-primary-foreground`, `ring-primary`, `bg-primary/10 text-primary`, or `bg-accent-subtle text-accent-text`.
-- Keep active/page-shell brand gradients on the app's cyan-blue-purple axis. Do not introduce pink/rose active or shell layers unless the surface has an explicit danger/annotation role.
-- Do not use full `Button default` styling just to indicate selection. Reserve full-primary buttons for commands and CTAs.
+- Keep active states on a restrained violet tonal recipe. Do not introduce cyan/teal, pink/rose, or solid multi-color active fills unless the surface has an explicit semantic role.
+- Do not use full `Button default` styling or solid primary gradients just to indicate selection. Reserve full-primary buttons for commands and CTAs.
+- When the interactive control is a `Button`, use shared button variants such as `active`, `surface`, or `surfaceCard` for selected/list/chip states. Do not add `app-active-item`, token color stacks, or hover palettes directly in feature-level `className`.
+- Active/selected states must have enough contrast to be readable at a glance; avoid pale purple text-only active states.
 - Small nested status marks, check indicators, and badges may keep their own tone when they represent status rather than the selected surface.
 - If an active state needs a new density or emphasis, extend the system recipe first and update this skill in the same change.
+
+## Overlay Stack Contract
+
+Overlay z-index belongs to shared primitives and must be ordered by interaction depth:
+
+- App shell/header: below transient overlays.
+- Popover/sheet/dialog panels: above shell and content.
+- Select/dropdown content opened from inside an overlay: above the parent overlay, not behind it.
+
+Do not set one-off high z-index at feature call sites to fix nested dropdown bugs. Fix the shared primitive stack instead, then verify nested controls such as a `Select` inside a reading-settings `Popover`.
 
 ## Fix Planning
 

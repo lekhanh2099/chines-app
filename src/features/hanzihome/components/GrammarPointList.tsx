@@ -1,8 +1,8 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import type { GrammarViewModel, LearningStatus } from "@/features/hanzihome/types";
-import { cn } from "@/lib/utils";
 
 type GrammarPointListProps = {
  points: GrammarViewModel[];
@@ -28,14 +28,10 @@ export function GrammarPointList({
 
    <div className="grid gap-2">
     {allPointId && (
-     <button
+     <Button
       type="button"
-      className={cn(
-       "flex min-h-14 w-full min-w-0 max-w-full gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-       selectedPointId === allPointId
-        ? "app-active-item"
-        : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
-      )}
+      variant={selectedPointId === allPointId ? "active" : "surface"}
+      className="h-auto min-h-14 w-full min-w-0 max-w-full justify-start gap-2 overflow-hidden whitespace-normal rounded-lg p-2.5 text-left"
       onClick={() => onSelectPoint(allPointId)}
      >
       <span className="min-w-0 flex-1">
@@ -44,19 +40,15 @@ export function GrammarPointList({
         Hiển thị tất cả điểm ngữ pháp trong một trang
        </span>
       </span>
-     </button>
+     </Button>
     )}
 
     {points.map((point) => (
-     <button
+     <Button
       key={point.id}
       type="button"
-      className={cn(
-       "flex min-h-14 w-full min-w-0 max-w-full items-center gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-       point.id === selectedPointId
-        ? "app-active-item"
-        : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
-      )}
+      variant={point.id === selectedPointId ? "active" : "surface"}
+      className="h-auto min-h-14 w-full min-w-0 max-w-full justify-start gap-2 overflow-hidden whitespace-normal rounded-lg p-2.5 text-left"
       onClick={() => onSelectPoint(point.id)}
      >
       <span className="min-w-0 flex-1">
@@ -68,7 +60,7 @@ export function GrammarPointList({
       <span className="shrink-0 rounded-full border border-current/20 px-1.5 py-0.5 text-[0.65rem] font-bold uppercase">
        {progress[point.id]?.status || "new"}
       </span>
-     </button>
+     </Button>
     ))}
    </div>
   </div>

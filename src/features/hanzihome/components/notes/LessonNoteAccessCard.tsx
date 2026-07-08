@@ -34,8 +34,8 @@ export function LessonNoteAccessCard() {
     content: createPersonalNoteContent(lesson),
    },
    {
-    onSuccess: () => toast.success("Đã tạo note cho bài học"),
-    onError: () => toast.error("Không tạo được note cho bài học"),
+    onSuccess: () => toast.success("Đã tạo ghi chú cho bài học"),
+    onError: () => toast.error("Không tạo được ghi chú cho bài học"),
    },
   );
  };
@@ -49,7 +49,7 @@ export function LessonNoteAccessCard() {
        <FileText className="h-5 w-5" />
       </span>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Lesson note</p>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ghi chú bài học</p>
        <h2 className="text-xl font-black text-text-primary">Ghi chú riêng của bài</h2>
       </div>
      </div>
@@ -64,14 +64,14 @@ export function LessonNoteAccessCard() {
        ) : (
         <Plus className="h-4 w-4" />
        )}
-       Tạo note cho bài
+       Tạo ghi chú cho bài
       </Button>
      ) : null}
     </div>
 
     {linkedNoteQuery.isLoading ? (
      <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
-      Đang kiểm tra note...
+      Đang kiểm tra ghi chú...
      </div>
     ) : note ? (
      <LessonSplitNoteEditor noteId={note.id} />
@@ -82,7 +82,7 @@ export function LessonNoteAccessCard() {
       disabled={isCreating}
       className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left  font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
      >
-      Chưa có note cho bài này. Bấm để tạo split note.
+      Chưa có ghi chú riêng cho bài này. Bấm để tạo ghi chú liên kết với bài học.
      </button>
     )}
    </div>

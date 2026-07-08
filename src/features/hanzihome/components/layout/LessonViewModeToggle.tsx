@@ -14,7 +14,7 @@ export function LessonViewModeToggle() {
     <Button
      key={value}
      type="button"
-     variant={mode === value ? "default" : "ghost"}
+     variant={mode === value ? "active" : "ghost"}
      size="sm"
      className="min-h-11 px-3 text-xs"
      onClick={() => setViewMode(value)}

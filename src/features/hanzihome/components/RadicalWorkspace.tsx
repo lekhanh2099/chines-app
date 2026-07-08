@@ -13,6 +13,7 @@ import {
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
+import { cn } from "@/lib/utils";
 import { RadicalEditDialog } from "./RadicalEditDialog";
 import { RadicalSection } from "./RadicalSection";
 
@@ -88,8 +89,11 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     {visibleRadicals.map((radical) => (
      <Button
       key={radical.id}
-      variant={radical.id === selectedRadical.id ? "default" : "outline"}
-      className="h-auto min-h-14 w-full min-w-0 max-w-full shrink justify-start overflow-hidden whitespace-normal rounded-lg py-2.5 text-left"
+      variant="outline"
+      className={cn(
+       "h-auto min-h-14 w-full min-w-0 max-w-full shrink justify-start overflow-hidden whitespace-normal rounded-lg py-2.5 text-left",
+       radical.id === selectedRadical.id && "app-active-item",
+      )}
       onClick={() => setSelectedId(radical.id)}
      >
       <span className="shrink-0 text-xl font-black" lang="zh-CN">
@@ -137,7 +141,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     canEdit ? (
      <Button
       type="button"
-      variant={editMode ? "default" : "outline"}
+      variant={editMode ? "active" : "outline"}
       size="sm"
       className="h-8 shrink-0 px-2.5 text-xs"
       onClick={() => setEditMode((current) => !current)}

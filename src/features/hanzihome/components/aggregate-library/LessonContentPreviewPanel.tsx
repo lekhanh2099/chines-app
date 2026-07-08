@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Layers3 } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
@@ -211,14 +212,15 @@ function LessonContentModuleSelector({
      <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-primary">
       {selectedModules.length} phần
      </span>
-     <button
+     <Button
       type="button"
+      variant="surface"
       onClick={() => onApplyPreset([])}
       disabled={!hasSelection}
-      className="min-h-11 rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted transition-colors hover:bg-bg-elevated hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-50"
+      className="rounded-full px-3 py-1 text-xs font-black"
      >
       Bỏ chọn
-     </button>
+     </Button>
     </div>
    </div>
 
@@ -227,21 +229,17 @@ function LessonContentModuleSelector({
      const isSelected = selectedModules.includes(module.value);
 
      return (
-      <button
+      <Button
        key={module.value}
        type="button"
+       variant={isSelected ? "active" : "surface"}
        onClick={() => onToggleModule(module.value)}
        aria-pressed={isSelected}
        title={module.description}
-       className={[
-        "min-h-11 rounded-full border px-3 py-1.5 text-sm font-black transition-colors",
-        isSelected
-         ? "app-active-item"
-         : "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
-       ].join(" ")}
+       className="rounded-full px-3 py-1.5 text-sm font-black"
       >
        {module.label}
-      </button>
+      </Button>
      );
     })}
    </div>
@@ -249,14 +247,15 @@ function LessonContentModuleSelector({
    <div className="flex flex-wrap items-center gap-1.5">
     <span className="text-xs font-black uppercase tracking-wide text-text-muted">Preset</span>
     {LESSON_CONTENT_PRESETS.map((preset) => (
-     <button
+     <Button
       key={preset.label}
       type="button"
+      variant="surfaceCard"
       onClick={() => onApplyPreset(preset.modules)}
-      className="min-h-11 rounded-full border border-border-default bg-bg-card px-3 py-1 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+      className="rounded-full px-3 py-1 text-xs font-black"
      >
       {preset.label}
-     </button>
+     </Button>
     ))}
    </div>
 
@@ -325,17 +324,18 @@ function SelectedLessonContentPreview({
        </div>
 
        {lesson.courseId && (
-        <Link
-         href={buildHanziHomeLessonHref({
-          courseId: lesson.courseId,
-          lessonNumber: lesson.lessonNumber,
-          module: "overview",
-         })}
-         prefetch={false}
-         className="inline-flex min-h-11 items-center rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
-        >
-         Mở bài
-        </Link>
+        <Button asChild variant="surface" className="rounded-xl px-3 py-1.5 text-xs font-black">
+         <Link
+          href={buildHanziHomeLessonHref({
+           courseId: lesson.courseId,
+           lessonNumber: lesson.lessonNumber,
+           module: "overview",
+          })}
+          prefetch={false}
+         >
+          Mở bài
+         </Link>
+        </Button>
        )}
       </div>
 

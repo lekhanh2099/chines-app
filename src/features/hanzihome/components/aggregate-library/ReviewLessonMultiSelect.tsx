@@ -117,16 +117,17 @@ export function ReviewLessonMultiSelect({
      <span className="text-xs font-black uppercase tracking-wide text-text-muted">Đã chọn</span>
 
      {selectedLessons.slice(0, 6).map((lesson) => (
-      <button
+      <Button
        key={lesson.id}
        type="button"
+       variant="surfaceCard"
        onClick={() => onToggleLesson(lesson.id)}
-       className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs font-black text-text-primary transition-colors hover:bg-bg-elevated"
+       className="gap-1.5 rounded-full px-3 py-1.5 text-xs font-black"
        title={`Bỏ ${formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}`}
       >
        <span>{formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}</span>
-       <X className="h-3.5 w-3.5 text-text-muted" />
-      </button>
+       <X data-icon="inline-end" />
+      </Button>
      ))}
 
      {selectedLessons.length > 6 && (
@@ -135,13 +136,14 @@ export function ReviewLessonMultiSelect({
       </span>
      )}
 
-     <button
+     <Button
       type="button"
+      variant="ghost"
       onClick={clearSelectedLessons}
-      className="min-h-11 rounded-full px-3 py-1 text-xs font-black text-text-muted transition-colors hover:text-text-primary"
+      className="rounded-full px-3 py-1 text-xs font-black"
      >
       Xóa hết
-     </button>
+     </Button>
     </div>
    )}
 
@@ -171,16 +173,12 @@ export function ReviewLessonMultiSelect({
         const title = formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title);
 
         return (
-         <button
+         <Button
           key={lesson.id}
           type="button"
+          variant={selected ? "active" : "surfaceCard"}
           onClick={() => onToggleLesson(lesson.id)}
-          className={[
-           "flex min-h-11 items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-black transition-colors",
-           selected
-            ? "app-active-item"
-            : "border-border-default bg-bg-card text-text-primary hover:border-accent hover:bg-bg-elevated",
-          ].join(" ")}
+          className="justify-start gap-2 rounded-xl px-3 py-2 text-left text-sm font-black"
          >
           <span
            className={[
@@ -191,7 +189,7 @@ export function ReviewLessonMultiSelect({
            {selected && <Check className="h-3.5 w-3.5" />}
           </span>
           <span className="min-w-0 truncate">{title}</span>
-         </button>
+         </Button>
         );
        })
       ) : (

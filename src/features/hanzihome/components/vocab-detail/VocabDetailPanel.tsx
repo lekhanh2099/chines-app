@@ -126,7 +126,7 @@ export function VocabDetailPanel({
          key={item.key}
          type="button"
          onClick={() => setSectionView(item.key)}
-         variant={item.key === effectiveSectionView ? "default" : "outline"}
+         variant={item.key === effectiveSectionView ? "active" : "outline"}
         >
          <span>{item.label}</span>
          <kbd className="ml-2 rounded-full bg-bg-subtle px-2 py-0.5 text-[0.65rem] font-black text-text-muted">

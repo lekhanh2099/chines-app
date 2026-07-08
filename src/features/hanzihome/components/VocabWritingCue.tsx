@@ -6,7 +6,6 @@ import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWr
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { Button } from "@/components/ui/button";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
-import { cn } from "@/lib/utils";
 
 type VocabWritingCueProps = {
  word: HanziHomeVocabItem;
@@ -103,9 +102,8 @@ export function VocabWritingCue({
          key={`${char}-${index}`}
          type="button"
          onClick={() => selectCharacter(index)}
-         variant="outline"
+         variant={active ? "active" : "outline"}
          size={compact ? "xs" : "default"}
-         className={cn(active && "app-active-item")}
          lang="zh-CN"
         >
          {char}

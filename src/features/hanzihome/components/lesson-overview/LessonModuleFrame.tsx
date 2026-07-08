@@ -39,9 +39,9 @@ export function LessonModuleSidebarRailItem({
  return (
   <Button
    type="button"
-   variant="ghost"
+   variant={selected ? "active" : "ghost"}
    size="icon-sm"
-   className={cn("h-9 w-9 shrink-0 rounded-lg border", selected && "app-active-item")}
+   className="h-9 w-9 shrink-0 rounded-lg border"
    aria-label={label}
    title={label}
    onClick={onClick}

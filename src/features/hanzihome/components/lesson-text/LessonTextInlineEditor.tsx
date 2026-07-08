@@ -84,7 +84,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
    <LessonTypographyControls displayMode={displayMode} onChange={updateDisplayMode} />
    <Button
     type="button"
-    variant="outline"
+    variant={displayMode.showPinyin ? "active" : "outline"}
     size="sm"
     className="h-8 px-2.5 text-xs"
     onClick={() => toggleDisplayMode("showPinyin")}
@@ -93,7 +93,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
    </Button>
    <Button
     type="button"
-    variant="outline"
+    variant={displayMode.showMeaning ? "active" : "outline"}
     size="sm"
     className="h-8 px-2.5 text-xs"
     onClick={() => toggleDisplayMode("showMeaning")}
@@ -102,7 +102,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
    </Button>
    <Button
     type="button"
-    variant={displayMode.showAnswers ? "default" : "outline"}
+    variant={displayMode.showAnswers ? "active" : "outline"}
     size="sm"
     className="h-8 px-2.5 text-xs"
     onClick={() => toggleDisplayMode("showAnswers")}

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 type LessonModuleSidebarItemProps = {
  selected: boolean;
@@ -22,15 +22,11 @@ export function LessonModuleSidebarItem({
  onClick,
 }: LessonModuleSidebarItemProps) {
  return (
-  <button
+  <Button
    type="button"
+   variant={selected ? "active" : "surface"}
    onClick={onClick}
-   className={cn(
-    "flex min-h-14 w-full min-w-0 max-w-full items-center gap-3 overflow-hidden rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-    selected
-     ? "app-active-item"
-     : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
-   )}
+   className="h-auto min-h-14 w-full min-w-0 max-w-full justify-start gap-3 overflow-hidden whitespace-normal rounded-lg p-2.5 text-left"
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
    <span className="min-w-0 flex-1">
@@ -40,6 +36,6 @@ export function LessonModuleSidebarItem({
     )}
    </span>
    {marker && <span className="shrink-0 text-xs font-bold">{marker}</span>}
-  </button>
+  </Button>
  );
 }

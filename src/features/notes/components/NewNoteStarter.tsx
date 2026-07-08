@@ -36,10 +36,10 @@ export function NewNoteStarter() {
      <FileText className="h-7 w-7" />
     </div>
     <div className="grid gap-2">
-    <h2 className="text-2xl font-bold text-text-primary">Tạo không gian ghi chú</h2>
-    <p className="text-sm font-medium leading-relaxed text-text-muted">
-     Tạo note đầu tiên để lưu bài khóa, ngữ pháp, từ vựng hoặc ghi chú tự do.
-    </p>
+     <h2 className="text-2xl font-bold text-text-primary">Tạo không gian ghi chú</h2>
+     <p className="text-sm font-medium leading-relaxed text-text-muted">
+      Tạo ghi chú đầu tiên để lưu bài khóa, ngữ pháp, từ vựng hoặc ghi chú tự do.
+     </p>
     </div>
     <Button
      type="button"
