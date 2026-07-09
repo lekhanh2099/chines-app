@@ -62,7 +62,6 @@ type DraftSelection = {
 };
 
 const DEBOUNCE_DELAY = 500;
-
 function preserveEditorSelection(event: React.SyntheticEvent) {
  event.preventDefault();
  event.stopPropagation();
@@ -175,14 +174,27 @@ export default function EditorFloatingMenu() {
 
   const range = nativeSelection.getRangeAt(0);
   const rect = range.getBoundingClientRect();
+  const fallbackRect = Array.from(range.getClientRects()).find(
+   (clientRect) => clientRect.width > 0 || clientRect.height > 0,
+  );
   if (rect.width === 0 && rect.height === 0) {
-   selectionAnchorRef.current = null;
-   setHasAnchor(false);
-   return false;
+   if (!fallbackRect) {
+    selectionAnchorRef.current = null;
+    setHasAnchor(false);
+    return false;
+   }
   }
 
   selectionAnchorRef.current = {
-   getBoundingClientRect: () => range.getBoundingClientRect(),
+   getBoundingClientRect: () => {
+    const nextRect = range.getBoundingClientRect();
+    if (nextRect.width > 0 || nextRect.height > 0) return nextRect;
+
+    const nextFallbackRect = Array.from(range.getClientRects()).find(
+     (clientRect) => clientRect.width > 0 || clientRect.height > 0,
+    );
+    return nextFallbackRect ?? nextRect;
+   },
    contextElement: editor.getRootElement(),
   };
   setHasAnchor(true);
