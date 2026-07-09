@@ -12,7 +12,8 @@ Current stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4, Supabase, TanSt
 
 Content ownership:
 
-- Static JSON is built-in seed/fallback content.
+- Supabase normalized tables are the runtime source for HanziHome study content.
+- Static JSON seed artifacts are external migration/bootstrap inputs, not a checked-in runtime fallback.
 - Supabase is for user-created content, custom lessons, drafts, user-owned overrides, notes, settings, progress, bookmarks, and review history.
 - Course → Book/Volume → Lesson → Module is the current model.
 - Lesson notes belong to the main Notes system and should be linked through a relation table, not embedded as note IDs inside lesson JSON.
@@ -66,7 +67,7 @@ Rules:
 - Do not use one giant all-data endpoint for every screen.
 - Do not fetch all records just to calculate counts.
 - Counts come from summary queries, database counts, or lightweight grouped views.
-- Static fallback must follow the same contract: summary fallback for dashboard, detail fallback for lesson.
+- External seed/audit artifacts must follow the same contract when they are used for migration verification: summary data for dashboard-level checks, detail data for selected lesson checks.
 
 Preferred split:
 
@@ -561,7 +562,8 @@ Do not migrate by breaking the current study flow.
 
 Preferred strategy:
 
-- keep static fallback
+- keep study flow backed by normalized Supabase data
+- keep external seed artifacts available for migration/audit recovery when needed
 - introduce repository/data-access layer
 - add API compatibility endpoint if needed
 - compare static and API output
@@ -746,7 +748,7 @@ The current priority is not to make a bigger CRUD system.
 The current priority is:
 
 - preserve the study flow
-- keep static fallback safe
+- keep Supabase-backed study content safe
 - make editable UI node-based
 - make saves field/node-level
 - avoid destructive replace-all updates

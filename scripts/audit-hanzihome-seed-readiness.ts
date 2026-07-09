@@ -50,7 +50,7 @@ const EXPECTED_LESSON_COUNTS: Record<DatasetId, number> = {
  q3: 26,
 };
 
-const dbRoot = path.join(process.cwd(), "data/hanzihome-db");
+const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 
 function readArg(name: string) {
  const index = process.argv.indexOf(name);

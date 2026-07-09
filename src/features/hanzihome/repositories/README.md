@@ -7,7 +7,9 @@ Current implementation:
 
 - Supabase is the runtime source for catalog, lesson detail, aggregate, and
   search data.
-- Static JSON remains a seed/bootstrap and recovery artifact only.
+- Static JSON is no longer a checked-in runtime fallback. Seed/bootstrap data
+  lives outside the app repo and can be supplied to data scripts with
+  `HANZIHOME_DB_ROOT=/path/to/hanzihome-db`.
 - `hanzihome-content-repository.ts` exports the server repository that maps
   Supabase rows into resource-like runtime contracts.
 - Feature UI should prefer repository methods or hooks that wrap repository

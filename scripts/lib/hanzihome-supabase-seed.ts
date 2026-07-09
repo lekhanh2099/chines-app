@@ -44,7 +44,7 @@ export const EXPECTED_SEED_COUNTS = {
  },
 } as const;
 
-const DATA_ROOT = path.join(process.cwd(), "data/hanzihome-db");
+const DATA_ROOT = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 
 const OptionalTextSchema = z
  .string()

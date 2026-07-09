@@ -12,7 +12,8 @@ function asRecord(value: unknown): Record<string, unknown> {
 }
 
 async function main() {
- const rootPath = path.join(process.cwd(), "data/hanzihome-db/manifest.json");
+ const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
+ const rootPath = path.join(dbRoot, "manifest.json");
  const rootManifest = asRecord(await readJson(rootPath));
  const datasets = rootManifest.datasets;
  const errors: string[] = [];
@@ -25,9 +26,7 @@ async function main() {
  }
 
  for (const datasetId of ["q2", "q3"]) {
-  const manifest = asRecord(
-   await readJson(path.join(process.cwd(), `data/hanzihome-db/${datasetId}/manifest.json`)),
-  );
+  const manifest = asRecord(await readJson(path.join(dbRoot, datasetId, "manifest.json")));
   const lessons = Array.isArray(manifest.lessons) ? manifest.lessons : [];
   const expected = datasetId === "q2" ? 25 : 26;
 
@@ -38,8 +37,7 @@ async function main() {
   for (const lessonValue of lessons) {
    const lesson = asRecord(lessonValue);
    const lessonRoot = path.join(
-    process.cwd(),
-    "data/hanzihome-db",
+    dbRoot,
     datasetId,
     asRecord(lesson).folder as string,
    );

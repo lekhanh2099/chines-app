@@ -3,7 +3,7 @@ import path from "node:path";
 
 type DatasetId = "q2" | "q3";
 
-const dbRoot = path.join(process.cwd(), "data/hanzihome-db");
+const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 const sourceRoot = path.join(process.cwd(), "src");
 const packageJsonPath = path.join(process.cwd(), "package.json");
 const datasets: DatasetId[] = ["q2", "q3"];

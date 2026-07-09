@@ -7,7 +7,7 @@ import { QueryProvider } from "@/components/providers/QueryProvider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans", preload: false });
 
 export const metadata: Metadata = {
  title: "KMS — Chinese Learning Portal",

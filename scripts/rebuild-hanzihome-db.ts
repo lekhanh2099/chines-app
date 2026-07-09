@@ -34,7 +34,7 @@ type LessonCounts = {
  warnings: number;
 };
 
-const dbRoot = path.join(process.cwd(), "data/hanzihome-db");
+const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 const datasets: DatasetId[] = ["q2", "q3"];
 
 function asRecord(value: unknown): JsonRecord {

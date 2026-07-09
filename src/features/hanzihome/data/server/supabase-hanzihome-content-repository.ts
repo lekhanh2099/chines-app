@@ -38,56 +38,12 @@ import {
  type LessonSectionsResource,
  type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
-import radicalsData from "../../../../../data/hanzihome-db/radicals.json";
 
 const CountRelationSchema = z.array(z.object({ count: z.number().int().nonnegative() }));
 const OptionalTextSchema = z
  .string()
  .nullish()
  .transform((value) => value ?? "");
-
-const StaticRadicalSchema = z.object({
- id: z.string(),
- index: z.number().int().positive(),
- radical: z.string(),
- nameVi: z.string().optional(),
- strokes: z.number().int().positive().nullable().optional(),
- coreMeaning: z.object({
-  modern: z.string().optional(),
-  history: z.string().optional(),
- }),
- recognition: z.string().optional(),
- variants: z.array(
-  z.object({
-   form: z.string(),
-   note: z.string(),
-  }),
- ),
- relatedComponents: z
-  .array(
-   z.object({
-    form: z.string(),
-    note: OptionalTextSchema,
-   }),
-  )
-  .default([]),
- distinguish: z.array(z.string()).default([]),
- groups: z
-  .array(
-   z.object({
-    name: z.string(),
-    chars: z.array(z.string()),
-   }),
-  )
-  .default([]),
-});
-
-const StaticRadicalsPayloadSchema = z.object({
- radicals: z.array(StaticRadicalSchema),
-});
-
-const staticRadicals: StaticRadicalData[] =
- StaticRadicalsPayloadSchema.parse(radicalsData).radicals;
 
 const RadicalRowSchema = z.object({
  id: z.string(),
@@ -893,24 +849,21 @@ async function getRadicalsFromDatabase(): Promise<StaticRadicalData[]> {
   .from("hanzihome_radicals")
   .select(
    "id,radical_index,radical,name_vi,strokes,core_meaning,variants,related_components,recognition,distinguish,groups,updated_at",
-  )
-  .eq("source", "seed")
-  .is("deleted_at", null)
-  .order("radical_index");
+ )
+ .eq("source", "seed")
+ .is("deleted_at", null)
+ .order("radical_index");
 
  if (result.error) {
-  if (
-   result.error.message.includes("hanzihome_radicals") ||
-   result.error.message.includes("relation")
-  ) {
-   return staticRadicals;
-  }
-
   throw new Error(`HanziHome Supabase radicals failed: ${result.error.message}`);
  }
 
  const rows = z.array(RadicalRowSchema).parse(result.data);
- return rows.length > 0 ? rows.map(radicalRowToViewModel) : staticRadicals;
+ if (rows.length === 0) {
+  throw new Error("HanziHome Supabase radicals returned no seed rows.");
+ }
+
+ return rows.map(radicalRowToViewModel);
 }
 
 async function getLessonSummaryRows(courseId?: string) {
@@ -1124,7 +1077,7 @@ async function getAggregateItems({
   );
 }
 
-function buildMeta(lessons: HanziHomeLesson[], radicals: StaticRadicalData[] = staticRadicals) {
+function buildMeta(lessons: HanziHomeLesson[], radicals: StaticRadicalData[] = []) {
  return {
   app: "hanzihome",
   dataset: "supabase",
