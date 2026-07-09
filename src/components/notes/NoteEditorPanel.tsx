@@ -55,6 +55,9 @@ function downloadJsonFile(fileName: string, value: unknown) {
  URL.revokeObjectURL(url);
 }
 
+const noteEditorActionButtonClassName =
+ "h-9 min-h-9 w-9 gap-1.5 rounded-xl px-0 xl:w-auto xl:px-2.5";
+
 export function NoteEditorPanel({
  noteId,
  isVisible,
@@ -300,11 +303,11 @@ export function NoteEditorPanel({
           <Button
            type="button"
            variant={isReadOnlyMode ? "active" : "outline"}
-           size="icon-sm"
+           size="sm"
            onClick={() => setIsReadOnlyMode((current) => !current)}
            title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
            aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
-           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+           className={noteEditorActionButtonClassName}
           >
            {isReadOnlyMode ? <Eye className="h-3.5 w-3.5" /> : <Pencil className="h-3.5 w-3.5" />}
            <span className="hidden xl:inline">{isReadOnlyMode ? "Chỉ xem" : "Sửa"}</span>
@@ -313,12 +316,12 @@ export function NoteEditorPanel({
           {!isReadOnlyMode ? (
            <Button
             type="button"
-            variant={isToolbarVisible ? "outline" : "active"}
-            size="icon-sm"
+            variant={isToolbarVisible ? "active" : "outline"}
+            size="sm"
             onClick={() => setIsToolbarVisible((current) => !current)}
             title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
             aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-            className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+            className={noteEditorActionButtonClassName}
            >
             {isToolbarVisible ? (
              <PanelTopClose className="h-3.5 w-3.5" />
@@ -333,12 +336,12 @@ export function NoteEditorPanel({
 
           <Button
            type="button"
-           variant={isSplitView ? "secondary" : "outline"}
-           size="icon-sm"
+           variant={isSplitView ? "active" : "outline"}
+           size="sm"
            onClick={handleToggleSplitView}
            title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
            aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
-           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+           className={noteEditorActionButtonClassName}
           >
            {isSplitView ? (
             <PanelLeftClose className="h-3.5 w-3.5" />
@@ -356,11 +359,11 @@ export function NoteEditorPanel({
           <Button
            type="button"
            variant="outline"
-           size="icon-sm"
+           size="sm"
            onClick={() => importInputRef.current?.click()}
            title="Import ghi chú"
            aria-label="Import ghi chú"
-           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+           className={noteEditorActionButtonClassName}
           >
            <Upload className="h-3.5 w-3.5" />
            <span className="hidden xl:inline">Import</span>
@@ -368,11 +371,11 @@ export function NoteEditorPanel({
           <Button
            type="button"
            variant="outline"
-           size="icon-sm"
+           size="sm"
            onClick={handleExport}
            title="Export ghi chú"
            aria-label="Export ghi chú"
-           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+           className={noteEditorActionButtonClassName}
           >
            <Download className="h-3.5 w-3.5" />
            <span className="hidden xl:inline">Export</span>
