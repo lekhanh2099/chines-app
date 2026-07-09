@@ -49,7 +49,7 @@ import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { usePathname } from "next/navigation";
 import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
 import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
-import { FONT_FAMILIES } from "./toolbar-options";
+import { FONT_FAMILIES, QUICK_HANZI_FONT_FAMILIES } from "./toolbar-options";
 import type { NoteListItem } from "@/services/notes.service";
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
@@ -799,6 +799,27 @@ export default function EditorFloatingMenu() {
             {FONT_FAMILIES.find(([value]) => value === fontFamily)?.[1] || "Font"}
            </span>
           </Button>
+          <div className="ml-1 inline-flex h-8 items-center gap-0.5 rounded-xl bg-bg-subtle/70 p-0.5">
+           {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
+            <button
+             key={`quick-${label}`}
+             type="button"
+             className={cn(
+              "h-7 min-w-8 rounded-lg px-2 text-center text-[11px] font-black text-text-secondary transition-colors hover:bg-bg-primary hover:text-text-primary",
+              fontFamily === value && "bg-bg-primary text-accent-text shadow-theme-sm",
+             )}
+             style={{ fontFamily: value }}
+             onMouseDown={preserveEditorSelection}
+             onClick={(event) => {
+              preserveEditorSelection(event);
+              applyFontFamily(value);
+             }}
+             title={label}
+            >
+             {label.replace("FZKTPY", "")}
+            </button>
+           ))}
+          </div>
           {showFontMenu ? (
            <div
             className="absolute right-0 top-[calc(100%+0.25rem)] z-10 max-h-64 min-w-44 overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1 shadow-theme-lg"

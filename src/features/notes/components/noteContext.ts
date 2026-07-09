@@ -72,8 +72,9 @@ function compactRawTargetKey(targetKey: string): string {
   .toUpperCase();
 }
 
-function cleanTags(tags: string[]): string[] {
+function cleanTags(tags: unknown[]): string[] {
  return tags
+  .filter((tag): tag is string => typeof tag === "string")
   .map((tag) => tag.trim())
   .filter((tag) => tag.length > 0)
   .filter((tag) => tag !== "hanzihome")
@@ -81,11 +82,12 @@ function cleanTags(tags: string[]): string[] {
   .slice(0, 3);
 }
 
-function uniqueBadges(badges: string[]): string[] {
+function uniqueBadges(badges: unknown[]): string[] {
  const seen = new Set<string>();
  const uniqueBadgesList: string[] = [];
  if (!badges || badges.length === 0) return uniqueBadgesList;
  for (const badge of badges) {
+  if (typeof badge !== "string") continue;
   const normalizedBadge = badge.trim().toLocaleLowerCase("vi-VN");
   if (!normalizedBadge || seen.has(normalizedBadge)) continue;
   seen.add(normalizedBadge);

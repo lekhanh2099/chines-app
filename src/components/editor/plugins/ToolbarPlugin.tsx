@@ -82,7 +82,7 @@ import {
  SeparatorHorizontal,
  X,
 } from "lucide-react";
-import { FONT_FAMILIES } from "../toolbar-options";
+import { FONT_FAMILIES, QUICK_HANZI_FONT_FAMILIES } from "../toolbar-options";
 
 /* ── Constants ── */
 
@@ -758,6 +758,22 @@ export default function ToolbarPlugin() {
     buttonTitle="Font family"
     disabled={!isEditable}
    >
+    <div className="grid grid-cols-3 gap-1 border-b border-border-default p-1">
+     {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
+      <button
+       key={`quick-${label}`}
+       type="button"
+       onMouseDown={pf}
+       onClick={() => applyStyle({ "font-family": value })}
+       style={{ fontFamily: value }}
+       className={`rounded-md px-2 py-1 text-xs font-black ${
+        fontFamily === value ? "bg-accent-subtle text-accent-text" : "text-text-secondary"
+       }`}
+      >
+       {label.replace("FZKTPY", "")}
+      </button>
+     ))}
+    </div>
     {FONT_FAMILIES.map(([value, label]) => (
      <DropdownItem
       key={value}
