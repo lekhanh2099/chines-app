@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
+import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import type { NoteListItem } from "@/services/notes.service";
@@ -105,22 +106,17 @@ export function NotesWorkspace() {
 
  return (
   <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
-   <header className="sticky top-0 z-20 grid shrink-0 gap-4 border-b border-border-default bg-bg-card/95 px-4 py-4 shadow-theme-sm backdrop-blur sm:px-6 lg:px-8">
-    <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
-     <div className="grid gap-1">
-      <div className="flex flex-wrap items-center gap-2">
-       <h1 className="text-xl font-bold text-text-primary">Ghi chú</h1>
-       <Badge variant="purple" size="sm">
-        {allNotes.length} note
-       </Badge>
-      </div>
-      <p className="text-sm font-medium text-text-muted">
-       Quản lý ghi chú theo bài học, ghi chú nhanh và ghi chú tự do trong một nơi.
-      </p>
-     </div>
-
-     <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-      <div className="relative min-w-0 sm:w-80">
+   <WorkspaceCommandHeader
+    title="Ghi chú"
+    badge={
+     <Badge variant="purple" size="sm">
+      {allNotes.length} note
+     </Badge>
+    }
+    description="Quản lý ghi chú theo bài học, ghi chú nhanh và ghi chú tự do trong một nơi."
+    controls={
+     <>
+      <div className="relative min-w-56 flex-[1_1_18rem]">
        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
        <Input
         value={searchQuery}
@@ -130,13 +126,16 @@ export function NotesWorkspace() {
         className="h-11 rounded-xl bg-bg-primary pl-9 shadow-theme-sm"
        />
       </div>
-      <QuickNoteButton variant="outline" className="h-11 rounded-xl bg-bg-card px-3 shadow-theme-sm" />
-      <NoteImportButton />
-      <NoteCreateDialog />
-     </div>
-    </div>
-
-    <div className="flex gap-1 overflow-x-auto rounded-2xl border border-border-default bg-bg-primary p-1 scrollbar-none">
+      <QuickNoteButton
+       variant="outline"
+       className="h-11 flex-1 rounded-xl bg-bg-card px-3 shadow-theme-sm sm:flex-none"
+      />
+      <NoteImportButton className="flex-1 sm:flex-none" />
+      <NoteCreateDialog triggerClassName="flex-1 sm:flex-none" />
+     </>
+    }
+   >
+    <div className="flex snap-x snap-proximity gap-1 overflow-x-auto rounded-2xl border border-border-default bg-bg-primary p-1 scrollbar-none">
      {filterLabels.map((filter) => {
       const isActive = activeFilter === filter.value;
       const count = getFilterCount(allNotes, filter.value);
@@ -145,9 +144,9 @@ export function NotesWorkspace() {
        <Button
         key={filter.value}
         type="button"
-        variant={isActive ? "default" : "ghost"}
+        variant={isActive ? "active" : "ghost"}
         size="default"
-        className="min-h-10 gap-2 rounded-xl px-3"
+        className="min-h-10 snap-start gap-2 rounded-xl px-3"
         aria-pressed={isActive}
         onClick={() => setActiveFilter(filter.value)}
        >
@@ -165,7 +164,7 @@ export function NotesWorkspace() {
       );
      })}
     </div>
-   </header>
+   </WorkspaceCommandHeader>
 
    <NoteList notes={filteredNotes} lessonLookup={lessonLookup} />
   </div>

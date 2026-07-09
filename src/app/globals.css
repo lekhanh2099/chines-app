@@ -1222,6 +1222,45 @@ hr.editor-hr.selected {
  background: var(--bg-card);
 }
 
+@media (max-width: 1023px) {
+ .toolbar {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+ }
+
+ .toolbar::-webkit-scrollbar {
+  display: none;
+ }
+
+ .toolbar > * {
+  flex-shrink: 0;
+ }
+
+ .note-editor-scroll .toolbar {
+  margin: 0.5rem 0.5rem 0;
+ }
+
+ .note-editor-scroll .editor-container {
+  padding: 1.25rem 1.5rem 1.5rem 2.75rem;
+ }
+
+ .note-editor-scroll .editor-placeholder {
+  left: 2.75rem;
+ }
+}
+
+@media (max-width: 767px) {
+ .note-editor-scroll .editor-container {
+  padding-inline: 1rem;
+ }
+
+ .note-editor-scroll .editor-placeholder {
+  left: 1rem;
+ }
+}
+
 .editor-shell[data-seamless] .toolbar {
  border-radius: 0.75rem;
 }
@@ -1815,8 +1854,8 @@ hr.editor-hr.selected {
  background-color: rgba(147, 197, 253, 0.6);
 }
 
-/* ── Mobile: Stack panes vertically ── */
-@media (max-width: 768px) {
+/* ── Tablet/mobile: Stack panes vertically when the app shell leaves a narrow content pane. ── */
+@media (max-width: 1023px) {
  .split-view-container {
   flex-direction: column;
  }
@@ -1833,6 +1872,25 @@ hr.editor-hr.selected {
 
  .split-view-divider {
   display: none;
+ }
+
+ .split-view-pane-content .editor-container {
+  padding: 1rem 1.25rem 1rem 2.75rem;
+ }
+
+ .split-view-pane-header {
+  padding: 6px 10px;
+  font-size: 10px;
+ }
+
+ .split-view-pane-content .toolbar {
+  margin: 0.5rem;
+ }
+}
+
+@media (max-width: 767px) {
+ .split-view-pane-content .editor-container {
+  padding-inline: 1rem;
  }
 }
 

@@ -38,7 +38,7 @@ export function NoteList({
  }
 
  return (
-  <div className="min-h-0 flex-1 overflow-y-auto bg-bg-primary px-4 py-4 scrollbar-soft sm:px-6 lg:px-8">
+   <div className="min-h-0 flex-1 overflow-y-auto bg-bg-primary px-3 py-3 scrollbar-soft sm:px-4 lg:px-6 lg:py-4 xl:px-8">
    <div className="overflow-hidden rounded-2xl border border-border-default bg-bg-card shadow-theme-sm">
     {notes.map((note) => (
      <NoteListRow key={note.id} note={note} lessonLookup={lessonLookup} />

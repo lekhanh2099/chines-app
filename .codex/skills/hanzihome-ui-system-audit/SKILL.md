@@ -27,6 +27,7 @@ Inspect these files when they exist:
 - `src/components/ui/card.tsx`
 - `src/components/ui/button.tsx`
 - `src/components/ui/glass-panel.tsx`
+- `src/components/layout/workspace-command-header.tsx`
 - `src/features/home/components/HomePrimitives.tsx`
 - `src/features/home/components/ContinueLearningPanel.tsx`
 - `src/features/home/components/HomeResourceLinks.tsx`
@@ -47,6 +48,38 @@ Treat this as a UI system governance problem, not as a Tailwind syntax problem:
 - Do not remove brand gradients just because a scan finds gradients. First classify whether the gradient is primitive-owned (`app-gradient-hero`, `app-brand-gradient`, `app-glass-surface`) or feature-local/ad-hoc.
 - Overlay stacking belongs in shared primitives. Do not remove tested `z-*` classes from `SelectContent`, `DialogContent`, `SheetContent`, `PopoverContent`, `TooltipContent`, or similar overlay primitives during cleanup. The rule against manual z-index applies to feature call sites and one-off wrappers, not to the primitive that must render above the app shell and sticky toolbars.
 - HanziHome study flow correctness remains higher priority than visual cleanup. Do not mix UI-system consolidation with content-model, DB, or edit-contract changes unless the user asks.
+
+## Workspace Command Header Contract
+
+Workspace pages that combine page context, search/select controls, actions, and tabs/filters should reuse `WorkspaceCommandHeader` from `src/components/layout/workspace-command-header.tsx` instead of hand-building a new sticky header.
+
+Use this contract for new pages and for cleanup of existing page headers:
+
+- Put page title, count/status badge, and short description in the header identity area.
+- Put search inputs, quick selects, and primary page actions in the `controls` slot.
+- Put tabs, filters, segmented controls, or secondary command rows as header children.
+- Keep controls wrap-safe and scroll-safe for iPad portrait. Do not assume desktop width once the sidebar is visible.
+- Use icon-first actions below wide desktop when labels would force a second tall row. Preserve `title` and `aria-label`.
+- Hide non-essential global header inputs when route-specific toolbar content is active on iPad/tablet widths.
+- Preserve the scroll owner: the header should shrink-wrap its commands while the content area owns vertical scroll.
+- Avoid duplicating sticky header recipes in feature files; extend the shared primitive if a repeated header density or slot is needed.
+
+When adding a new study, notebook, notes, aggregate, or artifact page, first decide whether it is a workspace-command surface. If yes, start from `WorkspaceCommandHeader`.
+
+## iPad Safari Audit Contract
+
+HanziHome is primarily used for study on iPad, including portrait orientation in Safari. UI changes to study surfaces, note surfaces, or app-wide headers must be checked against this constraint.
+
+Audit at least these states when the touched surface is visible there:
+
+- iPad 11-inch portrait-ish width with desktop sidebar visible, around `820px x 1180px`.
+- iPad portrait with route-specific header controls active.
+- Safari dynamic viewport behavior: use `100dvh`/safe-area-aware wrappers where the page already owns viewport height.
+- Header height budget: app header plus workspace command header should not consume excessive vertical space.
+- Toolbar/action density: rich editor toolbars should not wrap into multiple tall rows on iPad; prefer horizontal scroll for low-frequency tools.
+- Horizontal overflow: tabs, filters, select triggers, action groups, and editor toolbars must either wrap intentionally or scroll horizontally inside their own row.
+- Split panes: avoid side-by-side panes at tablet widths when each pane becomes too narrow; stack or compact instead.
+- Touch ergonomics: keep icon buttons large enough for touch even when labels are hidden.
 
 ## Gradient System Contract
 

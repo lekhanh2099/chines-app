@@ -29,6 +29,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { cn } from "@/lib/utils";
 import type { NoteCategory } from "@/types/database";
 
 const noteCategoryOptions: Array<{ value: NoteCategory; label: string; helper: string }> = [
@@ -45,7 +46,7 @@ function parseTags(value: string): string[] {
   .filter(Boolean);
 }
 
-export function NoteCreateDialog() {
+export function NoteCreateDialog({ triggerClassName }: { triggerClassName?: string }) {
  const [isOpen, setIsOpen] = useState(false);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
@@ -83,7 +84,7 @@ export function NoteCreateDialog() {
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button size="lg" className="gap-2">
+    <Button size="lg" className={cn("gap-2", triggerClassName)}>
      <FilePlus2 className="h-4 w-4" />
      Tạo ghi chú
     </Button>

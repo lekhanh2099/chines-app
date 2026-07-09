@@ -221,7 +221,7 @@ export function Header({ user }: { user?: User | null }) {
      onSubmit={handleSearch}
      className={cn(
       "relative min-w-0 flex-1 lg:max-w-[34rem]",
-      headerToolbarContent && "hidden md:block md:max-w-[28rem]",
+      headerToolbarContent && "hidden xl:block xl:max-w-[28rem]",
      )}
     >
      <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
@@ -235,7 +235,7 @@ export function Header({ user }: { user?: User | null }) {
       }}
       placeholder="Tìm toàn bộ HanziHome"
       aria-label="Tìm toàn bộ HanziHome"
-      className="h-11 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
+      className="h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4 xl:h-11"
      />
     </form>
 
@@ -246,16 +246,22 @@ export function Header({ user }: { user?: User | null }) {
       variant={lookupEnabled ? "default" : "outline"}
       aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
       title="Bật/Tắt tra từ tự động"
+      className="h-10 min-h-10 px-2.5 xl:px-3"
      >
       <BookOpenCheck className="h-5 w-5" />
-      <span className="hidden sm:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
+      <span className="hidden xl:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
      </Button>
 
-     <Button type="button" onClick={toggleTheme} aria-label="Đổi giao diện sáng tối">
+     <Button
+      type="button"
+      onClick={toggleTheme}
+      aria-label="Đổi giao diện sáng tối"
+      className="h-10 min-h-10 w-10 px-0"
+     >
       {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
      </Button>
 
-     <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary lg:flex">
+     <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary 2xl:flex">
       <span className="text-lg">🇻🇳</span>
       Tiếng Việt
      </div>

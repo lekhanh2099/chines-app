@@ -78,7 +78,7 @@ export function NoteTabBar({
      {trailing ? <div className="shrink-0">{trailing}</div> : null}
     </div>
    ) : null}
-   <div className="flex min-h-12 min-w-0 items-center gap-2 px-4 py-2">
+   <div className="flex min-h-12 min-w-0 flex-wrap items-center gap-2 px-3 py-2 sm:px-4">
     {visibleTabs.length > 0 ? (
      <div
       ref={scrollRef}
@@ -116,7 +116,10 @@ export function NoteTabBar({
     >
      <Plus className="h-4 w-4" />
     </button>
-    <div ref={actionsRef} className="ml-auto flex shrink-0 items-center gap-2" />
+    <div
+     ref={actionsRef}
+     className="ml-auto flex min-w-0 max-w-full shrink-0 items-center gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2"
+    />
    </div>
   </div>
  );

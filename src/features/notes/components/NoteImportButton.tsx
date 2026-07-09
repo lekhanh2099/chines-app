@@ -8,8 +8,9 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
+import { cn } from "@/lib/utils";
 
-export function NoteImportButton() {
+export function NoteImportButton({ className }: { className?: string }) {
  const fileInputRef = useRef<HTMLInputElement | null>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
@@ -61,6 +62,7 @@ export function NoteImportButton() {
     size="lg"
     onClick={() => fileInputRef.current?.click()}
     disabled={createNoteMutation.isPending}
+    className={cn(className)}
    >
     <Upload className="h-4 w-4" />
     Import

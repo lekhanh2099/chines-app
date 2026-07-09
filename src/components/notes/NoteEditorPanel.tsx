@@ -288,23 +288,26 @@ export function NoteEditorPanel({
 
      {headerActionsContainer && isVisible
       ? createPortal(
-         <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
+         <div className="flex min-w-max items-center justify-start gap-1.5 xl:gap-2">
           <SaveStatusBadge status={displaySaveStatus} />
 
           <Button
            type="button"
            variant={isSplitView ? "secondary" : "outline"}
-           size="sm"
+           size="icon-sm"
            onClick={handleToggleSplitView}
            title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
-           className="h-9 rounded-xl font-black"
+           aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
+           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
           >
            {isSplitView ? (
             <PanelLeftClose className="h-3.5 w-3.5" />
            ) : (
             <PanelLeft className="h-3.5 w-3.5" />
            )}
-           <span>{isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}</span>
+           <span className="hidden xl:inline">
+            {isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}
+           </span>
            {!isSplitView && hasReadingContent ? (
             <span className="h-1.5 w-1.5 rounded-full bg-info" />
            ) : null}
@@ -313,22 +316,26 @@ export function NoteEditorPanel({
           <Button
            type="button"
            variant="outline"
-           size="sm"
+           size="icon-sm"
            onClick={() => importInputRef.current?.click()}
-           className="h-9 rounded-xl font-black"
+           title="Import ghi chú"
+           aria-label="Import ghi chú"
+           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
           >
            <Upload className="h-3.5 w-3.5" />
-           Import
+           <span className="hidden xl:inline">Import</span>
           </Button>
           <Button
            type="button"
            variant="outline"
-           size="sm"
+           size="icon-sm"
            onClick={handleExport}
-           className="h-9 rounded-xl font-black"
+           title="Export ghi chú"
+           aria-label="Export ghi chú"
+           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
           >
            <Download className="h-3.5 w-3.5" />
-           Export
+           <span className="hidden xl:inline">Export</span>
           </Button>
 
           {showDeleteConfirm ? (
@@ -371,7 +378,7 @@ export function NoteEditorPanel({
         )
       : null}
      {isSplitView ? (
-      <div className="note-editor-split-panel m-4 min-h-0 flex-1 overflow-hidden">
+      <div className="note-editor-split-panel m-2 min-h-0 flex-1 overflow-hidden lg:m-4">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -382,7 +389,7 @@ export function NoteEditorPanel({
        />
       </div>
      ) : (
-      <div className="note-editor-scroll m-4">
+      <div className="note-editor-scroll m-2 lg:m-4">
        <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
       </div>
      )}
@@ -419,10 +426,12 @@ function SaveStatusBadge({ status }: { status: SaveStatus }) {
 
  return (
   <div
-   className={`flex items-center gap-1.5 text-xs font-medium ${c.className} animate-in fade-in`}
+   className={`flex h-9 items-center gap-1.5 rounded-xl px-1 text-xs font-medium ${c.className} animate-in fade-in xl:px-2`}
+   title={c.label}
+   aria-label={c.label}
   >
    {c.icon}
-   <span>{c.label}</span>
+   <span className="hidden xl:inline">{c.label}</span>
   </div>
  );
 }

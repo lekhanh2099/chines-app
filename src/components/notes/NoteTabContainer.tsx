@@ -174,7 +174,7 @@ function NoteQuickSelect({
 }) {
  return (
   <>
-   <Button asChild variant="outline" size="sm" className="rounded-xl">
+   <Button asChild variant="outline" size="sm" className="h-9 min-h-9 rounded-xl px-2.5">
     <Link href="/notes" prefetch={false}>
      <ArrowLeft className="h-4 w-4" />
      Ghi chú
@@ -184,7 +184,7 @@ function NoteQuickSelect({
    <Select value={selectedNoteId} onValueChange={onSelectNote}>
    <SelectTrigger
      aria-label="Chọn nhanh ghi chú"
-     className="h-10 w-[min(18rem,48vw)] min-w-0 border-border-default bg-bg-primary shadow-theme-sm sm:w-72 lg:w-[28rem]"
+     className="h-9 w-[min(14rem,42vw)] min-w-0 border-border-default bg-bg-primary shadow-theme-sm sm:w-64 xl:w-[24rem]"
     >
      <SelectValue placeholder="Chọn ghi chú" />
     </SelectTrigger>

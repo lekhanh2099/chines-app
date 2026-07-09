@@ -38,7 +38,7 @@ export function NoteListRow({
  return (
   <Link
    href={`/notes/${note.id}`}
-   className="group grid grid-cols-[minmax(0,1fr)_auto] gap-3 border-b border-border-default px-4 py-4 transition-colors last:border-b-0 hover:bg-bg-subtle/70 sm:px-5"
+   className="group grid grid-cols-1 gap-2 border-b border-border-default px-3 py-3 transition-colors last:border-b-0 hover:bg-bg-subtle/70 sm:px-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-3 lg:px-5 lg:py-4"
   >
    <div className="flex min-w-0 items-start gap-3">
     <span
@@ -81,7 +81,7 @@ export function NoteListRow({
     </div>
    </div>
 
-   <div className="flex items-center gap-2 text-xs font-semibold text-text-muted">
+   <div className="flex items-center gap-2 pl-11 text-xs font-semibold text-text-muted lg:justify-end lg:pl-0">
     <FileText className="hidden h-3.5 w-3.5 sm:block" />
     <Clock className="h-3.5 w-3.5" />
     <span className="tabular-nums">{updatedAt}</span>
