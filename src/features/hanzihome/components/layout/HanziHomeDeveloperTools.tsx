@@ -30,7 +30,55 @@ export function HanziHomeDeveloperTools({
 
  if (compact) {
   return (
+   <HanziHomeCompactDeveloperTools
+    toolsOpen={toolsOpen}
+    setToolsOpen={setToolsOpen}
+    editMode={editMode}
+    showEditingTools={showEditingTools}
+   />
+  );
+ }
+
+ if (inline) {
+  return (
    <>
+    <div className="xl:hidden">
+     <HanziHomeCompactDeveloperTools
+      toolsOpen={toolsOpen}
+      setToolsOpen={setToolsOpen}
+      editMode={editMode}
+      showEditingTools={showEditingTools}
+     />
+    </div>
+    <div className="hidden items-center gap-2 xl:flex">
+     {developerToolsEnabled ? <LessonViewModeToggle /> : null}
+     {showEditingTools ? <HanziHomeEditingTools /> : null}
+    </div>
+   </>
+  );
+ }
+
+ return (
+  <div className="flex items-center justify-end gap-2 rounded-lg border border-dashed border-border-default bg-bg-subtle p-1.5">
+   {developerToolsEnabled ? <LessonViewModeToggle /> : null}
+   {showEditingTools ? <HanziHomeEditingTools /> : null}
+  </div>
+ );
+}
+
+function HanziHomeCompactDeveloperTools({
+ toolsOpen,
+ setToolsOpen,
+ editMode,
+ showEditingTools,
+}: {
+ toolsOpen: boolean;
+ setToolsOpen: (open: boolean) => void;
+ editMode: boolean;
+ showEditingTools: boolean;
+}) {
+ return (
+  <>
     {showEditingTools ? <HanziHomeEditingDialogShell /> : null}
     <Button
      type="button"
@@ -61,20 +109,6 @@ export function HanziHomeDeveloperTools({
       ) : null}
      </div>
     </Sheet>
-   </>
-  );
- }
-
- return (
-  <div
-   className={
-    inline
-     ? "flex items-center gap-2"
-     : "flex items-center justify-end gap-2 rounded-lg border border-dashed border-border-default bg-bg-subtle p-1.5"
-   }
-  >
-   {developerToolsEnabled ? <LessonViewModeToggle /> : null}
-   {showEditingTools ? <HanziHomeEditingTools /> : null}
-  </div>
+  </>
  );
 }
