@@ -85,6 +85,7 @@ export function Header({ user }: { user?: User | null }) {
   searchParams,
   selectedCourseId,
  ]);
+ const hasRouteToolbar = Boolean(headerToolbarContent || hanzihomeBreadcrumb);
 
  useEffect(() => {
   hydrateLookupSettings();
@@ -221,7 +222,7 @@ export function Header({ user }: { user?: User | null }) {
      onSubmit={handleSearch}
      className={cn(
       "relative min-w-0 flex-1 lg:max-w-[34rem]",
-      headerToolbarContent && "hidden xl:block xl:max-w-[28rem]",
+      hasRouteToolbar && "hidden xl:block xl:max-w-[28rem]",
      )}
     >
      <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
@@ -240,6 +241,19 @@ export function Header({ user }: { user?: User | null }) {
     </form>
 
     <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2">
+     {hasRouteToolbar ? (
+      <Button
+       type="button"
+       variant="outline"
+       onClick={() => setSearchOpen(true)}
+       aria-label="Mở tìm kiếm HanziHome"
+       title="Tìm toàn bộ HanziHome"
+       className="h-10 min-h-10 w-10 px-0 xl:hidden"
+      >
+       <Search className="h-5 w-5" />
+      </Button>
+     ) : null}
+
      <Button
       type="button"
       onClick={() => toggleLookup(pathname)}

@@ -132,7 +132,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
     </>
    }
    sidebar={
-    <div className="grid max-h-[calc(100vh-11rem)] content-start gap-2 overflow-y-auto pr-1">
+    <div className="grid max-h-[calc(100dvh-11rem)] content-start gap-2 overflow-y-auto pr-1">
      <LessonModuleSidebarItem
       selected={!selectedSection}
       title="Xem toàn bộ"
@@ -190,7 +190,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
         )}
        </div>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex max-w-full gap-2 overflow-x-auto scrollbar-none xl:flex-wrap xl:overflow-visible">
        <Button
         type="button"
         variant={selectedSectionDisplayMode.showPinyin ? "active" : "outline"}
@@ -229,7 +229,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
        </Button>
       </div>
      </div>
-     <div className="max-h-[calc(100vh-14rem)] overflow-y-auto pr-2">
+     <div className="max-h-[calc(100dvh-14rem)] overflow-y-auto pr-2">
       {selectedSection ? (
        <BookSectionContent
         section={selectedSection.section}

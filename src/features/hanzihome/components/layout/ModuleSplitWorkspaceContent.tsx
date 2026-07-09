@@ -70,7 +70,7 @@ export function ModuleSplitWorkspaceContent() {
   <>
    <div className="min-w-0 px-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Split mode</p>
-    <p className="hidden text-xs font-bold text-text-muted sm:block">
+    <p className="hidden text-xs font-bold text-text-muted xl:block">
      Kéo tab giữa hai pane, kéo divider để đổi kích thước.
     </p>
    </div>
@@ -141,7 +141,7 @@ export function ModuleSplitWorkspaceContent() {
  if (!splitEnabled) {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
+    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1">
      {workspaceControls}
     </div>
     <div className="grid h-full min-h-0 overflow-hidden">
@@ -156,11 +156,11 @@ export function ModuleSplitWorkspaceContent() {
 
  return (
   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl p-1">
+   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1">
     {workspaceControls}
    </div>
    <div className="grid h-full min-h-0 overflow-hidden">
-    <div className="grid min-w-0 gap-2 xl:hidden">
+    <div className="grid min-h-0 min-w-0 gap-2 overflow-y-auto pr-1 scrollbar-soft xl:hidden">
      <WorkspacePane paneId="left" title="Nội dung" />
      <WorkspacePane paneId="right" title="Học & ôn" />
     </div>

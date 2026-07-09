@@ -157,7 +157,7 @@ export function VocabDetailPanel({
    <aside
     className={cn(
      "grid gap-4",
-     !compact && "xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1",
+     !compact && "xl:sticky xl:top-4 xl:max-h-[calc(100dvh-2rem)] xl:overflow-y-auto xl:pr-1",
     )}
    >
     <WordFormationPreview formation={word.word_formation} />
