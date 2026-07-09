@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NoteTabBar } from "@/components/notes/NoteTabBar";
 import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
+import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import type { NoteListItem } from "@/services/notes.service";
 import { Button } from "@/components/ui/button";
@@ -30,13 +31,31 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
  const hydrateTabs = useNoteTabsStore((s) => s.hydrate);
  const openTab = useNoteTabsStore((s) => s.openTab);
+ const setHeaderToolbar = useHeaderToolbarStore((s) => s.setContent);
+ const clearHeaderToolbar = useHeaderToolbarStore((s) => s.clearContent);
  const { data: notes } = useNotesList();
  const router = useRouter();
  const hadTabsRef = useRef(false);
+ const [headerActionsContainer, setHeaderActionsContainer] = useState<HTMLDivElement | null>(null);
 
  const selectableNotes = useMemo(() => mergeSelectableNotes(notes ?? [], tabs), [notes, tabs]);
 
  const selectedNoteId = activeNoteId ?? tabs[0]?.noteId ?? "";
+
+ useEffect(() => {
+  setHeaderToolbar(
+   <NoteQuickSelect
+    notes={selectableNotes}
+    selectedNoteId={selectedNoteId}
+    onSelectNote={(noteId) => {
+     const note = selectableNotes.find((item) => item.id === noteId);
+     openTab(noteId, note?.title || "Ghi chú chưa đặt tên");
+    }}
+   />,
+  );
+
+  return () => clearHeaderToolbar();
+ }, [clearHeaderToolbar, openTab, selectableNotes, selectedNoteId, setHeaderToolbar]);
 
  useEffect(() => {
   hydrateTabs();
@@ -98,21 +117,8 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  return (
   <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
    <NoteTabBar
-    leading={
-     <NoteQuickSelect
-      notes={selectableNotes}
-      selectedNoteId={selectedNoteId}
-      onSelectNote={(noteId) => {
-       const note = selectableNotes.find((item) => item.id === noteId);
-       openTab(noteId, note?.title || "Ghi chú chưa đặt tên");
-      }}
-     />
-    }
-    trailing={
-     <span className="text-xs font-semibold text-text-muted">
-      {selectableNotes.length > 0 ? `${selectableNotes.length} ghi chú` : "Đang tải..."}
-     </span>
-    }
+    actionsRef={setHeaderActionsContainer}
+    onCreateNote={() => router.push("/notes?action=new")}
    />
    <div className="relative min-h-0 flex-1 overflow-hidden">
     {tabs.map((tab) => (
@@ -120,6 +126,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
       key={tab.noteId}
       noteId={tab.noteId}
       isVisible={tab.noteId === activeNoteId}
+      headerActionsContainer={headerActionsContainer}
      />
     ))}
    </div>
@@ -175,9 +182,9 @@ function NoteQuickSelect({
    </Button>
 
    <Select value={selectedNoteId} onValueChange={onSelectNote}>
-    <SelectTrigger
+   <SelectTrigger
      aria-label="Chọn nhanh ghi chú"
-     className="h-10 min-w-0 flex-1 border-border-default bg-bg-primary shadow-theme-sm sm:w-72 lg:w-96"
+     className="h-10 w-[min(18rem,48vw)] min-w-0 border-border-default bg-bg-primary shadow-theme-sm sm:w-72 lg:w-[28rem]"
     >
      <SelectValue placeholder="Chọn ghi chú" />
     </SelectTrigger>

@@ -1,16 +1,20 @@
 "use client";
 
-import { useRef, useCallback, useState, type ReactNode } from "react";
-import { X, FileText } from "lucide-react";
+import { useRef, useCallback, useState, type ReactNode, type Ref } from "react";
+import { X, FileText, Plus } from "lucide-react";
 import { useNoteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
 import { cn } from "@/lib/utils";
 
 export function NoteTabBar({
  leading,
  trailing,
+ actionsRef,
+ onCreateNote,
 }: {
  leading?: ReactNode;
  trailing?: ReactNode;
+ actionsRef?: Ref<HTMLDivElement>;
+ onCreateNote?: () => void;
 }) {
  const tabs = useNoteTabsStore((s) => s.tabs);
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
@@ -63,42 +67,57 @@ export function NoteTabBar({
 
  if (tabs.length === 0) return null;
 
- const visibleTabs = tabs
-  .map((tab, index) => ({ tab, index }))
-  .filter(({ tab }) => tab.noteId !== activeNoteId);
+ const visibleTabs = tabs.map((tab, index) => ({ tab, index }));
+ const hasTopRow = Boolean(leading || trailing);
 
  return (
-  <div className="flex shrink-0 flex-col gap-2 border-b border-border-default bg-bg-card/95 px-4 py-2 shadow-theme-sm backdrop-blur xl:flex-row xl:items-center">
-   {leading ? <div className="flex min-w-0 shrink-0 items-center gap-2">{leading}</div> : null}
-   {visibleTabs.length > 0 ? (
-    <div
-     ref={scrollRef}
-     role="tablist"
-     aria-label="Ghi chú khác đang mở"
-     className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none"
-     onWheel={handleWheel}
-    >
-     {visibleTabs.map(({ tab, index }) => (
-      <TabItem
-       key={tab.noteId}
-       tab={tab}
-       index={index}
-       isActive={false}
-       isDragging={dragIndex === index}
-       isDropTarget={dropIndex === index && dragIndex !== index}
-       onActivate={() => setActive(tab.noteId)}
-       onClose={() => closeTab(tab.noteId)}
-       onDragStart={(e) => handleDragStart(e, index)}
-       onDragOver={(e) => handleDragOver(e, index)}
-       onDrop={(e) => handleDrop(e, index)}
-       onDragEnd={handleDragEnd}
-      />
-     ))}
+  <div className="flex shrink-0 flex-col border-b border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur">
+   {hasTopRow ? (
+    <div className="flex min-h-14 min-w-0 items-center gap-2 border-b border-border-default/70 px-4 py-2">
+     {leading ? <div className="flex min-w-0 flex-1 items-center gap-2">{leading}</div> : null}
+     {trailing ? <div className="shrink-0">{trailing}</div> : null}
     </div>
-   ) : (
-    <div className="min-w-0 flex-1" />
-   )}
-   {trailing ? <div className="shrink-0">{trailing}</div> : null}
+   ) : null}
+   <div className="flex min-h-12 min-w-0 items-center gap-2 px-4 py-2">
+    {visibleTabs.length > 0 ? (
+     <div
+      ref={scrollRef}
+      role="tablist"
+      aria-label="Ghi chú đang mở"
+      className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none"
+      onWheel={handleWheel}
+     >
+      {visibleTabs.map(({ tab, index }) => (
+       <TabItem
+        key={tab.noteId}
+        tab={tab}
+        index={index}
+        isActive={tab.noteId === activeNoteId}
+        isDragging={dragIndex === index}
+        isDropTarget={dropIndex === index && dragIndex !== index}
+        onActivate={() => setActive(tab.noteId)}
+        onClose={() => closeTab(tab.noteId)}
+        onDragStart={(e) => handleDragStart(e, index)}
+        onDragOver={(e) => handleDragOver(e, index)}
+        onDrop={(e) => handleDrop(e, index)}
+        onDragEnd={handleDragEnd}
+       />
+      ))}
+     </div>
+    ) : (
+     <div className="min-w-0 flex-1" />
+    )}
+    <button
+     type="button"
+     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle"
+     onClick={onCreateNote}
+     title="Mở thêm ghi chú"
+     aria-label="Mở thêm ghi chú"
+    >
+     <Plus className="h-4 w-4" />
+    </button>
+    <div ref={actionsRef} className="ml-auto flex shrink-0 items-center gap-2" />
+   </div>
   </div>
  );
 }
@@ -137,10 +156,10 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex h-10 min-w-32 max-w-64 cursor-pointer select-none items-center gap-1 rounded-xl border px-2 text-[0.8125rem] transition-all duration-150",
+    "group relative flex h-10 min-w-32 max-w-64 cursor-pointer select-none items-center gap-1 rounded-t-xl border border-b-0 px-2 text-[0.8125rem] transition-all duration-150",
     isActive
-     ? "z-10 border-primary/20 bg-accent-subtle font-semibold text-accent-text shadow-theme-sm"
-     : "border-transparent text-text-muted hover:border-border-default hover:bg-bg-subtle hover:text-text-primary",
+     ? "z-10 border-primary/25 bg-bg-primary font-black text-text-primary shadow-theme-sm"
+     : "border-border-default/70 bg-bg-subtle/55 font-semibold text-text-muted hover:border-border-default hover:bg-bg-primary hover:text-text-primary",
     isDragging && "opacity-40",
     isDropTarget && "border-l-2 border-l-accent",
    )}

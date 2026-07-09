@@ -8,6 +8,7 @@ import { useTheme } from "./ThemeProvider";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
 import { Button } from "@/components/ui/button";
 import {
  Select,
@@ -42,6 +43,7 @@ export function Header({ user }: { user?: User | null }) {
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
  const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
+ const headerToolbarContent = useHeaderToolbarStore((s) => s.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
  const isHanziHomeWorkspaceRoute =
   isHanziHomeRoute &&
@@ -150,7 +152,13 @@ export function Header({ user }: { user?: User | null }) {
    )}
   >
    <div className="flex h-14 w-full min-w-0 items-center justify-between gap-2 sm:gap-3">
-    {hanzihomeBreadcrumb && (
+    {headerToolbarContent ? (
+     <div className="flex min-w-0 flex-1 items-center gap-2 lg:max-w-[38rem]">
+      {headerToolbarContent}
+     </div>
+    ) : null}
+
+    {!headerToolbarContent && hanzihomeBreadcrumb && (
      <nav
       aria-label="Chuyển nhanh bài HanziHome"
       className="hidden min-w-0 shrink-0 items-center gap-1 font-semibold text-text-secondary md:flex md:max-w-[18rem] lg:max-w-[24rem] xl:max-w-[38rem]"
@@ -209,7 +217,13 @@ export function Header({ user }: { user?: User | null }) {
      </nav>
     )}
 
-    <form onSubmit={handleSearch} className="relative min-w-0 flex-1 lg:max-w-[34rem]">
+    <form
+     onSubmit={handleSearch}
+     className={cn(
+      "relative min-w-0 flex-1 lg:max-w-[34rem]",
+      headerToolbarContent && "hidden md:block md:max-w-[28rem]",
+     )}
+    >
      <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
      <input
       value={searchValue}

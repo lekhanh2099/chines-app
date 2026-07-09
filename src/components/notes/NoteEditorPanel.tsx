@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
@@ -15,19 +16,16 @@ import {
  Trash2,
  Upload,
 } from "lucide-react";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/note-export.schema";
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
 import { useSplitViewStore } from "@/stores/split-view-store";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getCategoryLabel, getNoteContext } from "@/features/notes/components/noteContext";
 
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
+ headerActionsContainer?: HTMLElement | null;
 }
 
 function createDownloadFileName(title: string): string {
@@ -53,7 +51,11 @@ function downloadJsonFile(fileName: string, value: unknown) {
  URL.revokeObjectURL(url);
 }
 
-export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
+export function NoteEditorPanel({
+ noteId,
+ isVisible,
+ headerActionsContainer,
+}: NoteEditorPanelProps) {
  const {
   note,
   isLoading,
@@ -251,8 +253,6 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
       ? "error"
       : "idle";
 
- const lastEdited = note?.updated_at || note?.created_at || null;
- const noteContext = note ? getNoteContext(note, new Map()) : null;
  const noteContent = importedContent ?? (note?.content as Record<string, unknown> | null);
  const readingContent =
   importedReadingContent !== undefined
@@ -286,104 +286,90 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
       }}
      />
 
-     {/* Toolbar */}
-     <div className="note-editor-actionbar mx-4 mt-4 flex shrink-0 flex-col gap-2 px-3 py-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
-      <div className="flex min-w-0 flex-wrap items-center gap-2">
-       <Button
-        type="button"
-        variant={isSplitView ? "secondary" : "outline"}
-        size="sm"
-        onClick={handleToggleSplitView}
-        title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
-       >
-        {isSplitView ? (
-         <PanelLeftClose className="h-3.5 w-3.5" />
-        ) : (
-         <PanelLeft className="h-3.5 w-3.5" />
-        )}
-        <span>{isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}</span>
-        {!isSplitView && hasReadingContent ? (
-         <span className="h-1.5 w-1.5 rounded-full bg-info" />
-        ) : null}
-       </Button>
+     {headerActionsContainer && isVisible
+      ? createPortal(
+         <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
+          <SaveStatusBadge status={displaySaveStatus} />
 
-       <Badge variant="default" size="sm">
-        {getCategoryLabel(note.category)}
-       </Badge>
-       {noteContext ? (
-        <Badge variant={noteContext.kind === "lesson" ? "info" : "default"} size="sm">
-         {noteContext.title}
-        </Badge>
-       ) : null}
-       {noteContext?.relationLabel ? (
-        <span className="truncate text-xs font-semibold text-text-muted">
-         {noteContext.subtitle} / {noteContext.relationLabel}
-        </span>
-       ) : (
-        <span className="truncate text-xs font-semibold text-text-muted">
-         {noteContext?.subtitle}
-        </span>
-       )}
-      </div>
+          <Button
+           type="button"
+           variant={isSplitView ? "secondary" : "outline"}
+           size="sm"
+           onClick={handleToggleSplitView}
+           title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
+           className="h-9 rounded-xl font-black"
+          >
+           {isSplitView ? (
+            <PanelLeftClose className="h-3.5 w-3.5" />
+           ) : (
+            <PanelLeft className="h-3.5 w-3.5" />
+           )}
+           <span>{isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}</span>
+           {!isSplitView && hasReadingContent ? (
+            <span className="h-1.5 w-1.5 rounded-full bg-info" />
+           ) : null}
+          </Button>
 
-      <div className="flex flex-wrap items-center gap-2">
-       <SaveStatusBadge status={displaySaveStatus} />
+          <Button
+           type="button"
+           variant="outline"
+           size="sm"
+           onClick={() => importInputRef.current?.click()}
+           className="h-9 rounded-xl font-black"
+          >
+           <Upload className="h-3.5 w-3.5" />
+           Import
+          </Button>
+          <Button
+           type="button"
+           variant="outline"
+           size="sm"
+           onClick={handleExport}
+           className="h-9 rounded-xl font-black"
+          >
+           <Download className="h-3.5 w-3.5" />
+           Export
+          </Button>
 
-       {lastEdited ? (
-        <span className="text-[11px] font-medium text-text-muted">
-         {format(new Date(lastEdited), "dd/MM/yyyy · HH:mm", { locale: vi })}
-        </span>
-       ) : null}
-
-       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        onClick={() => importInputRef.current?.click()}
-       >
-        <Upload className="h-3.5 w-3.5" />
-        Import
-       </Button>
-       <Button type="button" variant="outline" size="sm" onClick={handleExport}>
-        <Download className="h-3.5 w-3.5" />
-        Export
-       </Button>
-
-       {showDeleteConfirm ? (
-        <div className="flex items-center gap-1 rounded-lg border border-danger/25 bg-danger-subtle p-1">
-         <Button
-          type="button"
-          variant="destructive"
-          size="sm"
-          onClick={handleDelete}
-          disabled={isDeleting}
-         >
-          {isDeleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
-          Xóa
-         </Button>
-         <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowDeleteConfirm(false)}
-         >
-          Hủy
-         </Button>
-        </div>
-       ) : (
-        <Button
-         type="button"
-         variant="ghost"
-         size="icon-sm"
-         onClick={() => setShowDeleteConfirm(true)}
-         title="Xóa ghi chú"
-        >
-         <Trash2 className="h-3.5 w-3.5" />
-        </Button>
-       )}
-      </div>
-     </div>
-
+          {showDeleteConfirm ? (
+           <div className="flex items-center gap-1 rounded-xl border border-danger/25 bg-danger-subtle p-1">
+            <Button
+             type="button"
+             variant="destructive"
+             size="sm"
+             onClick={handleDelete}
+             disabled={isDeleting}
+             className="h-8 rounded-lg"
+            >
+             {isDeleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+             Xóa
+            </Button>
+            <Button
+             type="button"
+             variant="ghost"
+             size="sm"
+             onClick={() => setShowDeleteConfirm(false)}
+             className="h-8 rounded-lg"
+            >
+             Hủy
+            </Button>
+           </div>
+          ) : (
+           <Button
+            type="button"
+            variant="outline"
+            size="icon-sm"
+            onClick={() => setShowDeleteConfirm(true)}
+            title="Xóa ghi chú"
+            className="h-9 w-9 rounded-xl"
+           >
+            <Trash2 className="h-3.5 w-3.5" />
+           </Button>
+          )}
+         </div>,
+         headerActionsContainer,
+        )
+      : null}
      {isSplitView ? (
       <div className="note-editor-split-panel m-4 min-h-0 flex-1 overflow-hidden">
        <SplitViewEditor
