@@ -10,9 +10,13 @@ import {
  Cloud,
  CloudOff,
  Download,
+ Eye,
  Loader2,
  PanelLeft,
  PanelLeftClose,
+ PanelTopClose,
+ PanelTopOpen,
+ Pencil,
  Trash2,
  Upload,
 } from "lucide-react";
@@ -80,6 +84,8 @@ export function NoteEditorPanel({
  const [importedReadingContent, setImportedReadingContent] = useState<
   JsonObject | null | undefined
  >(undefined);
+ const [isReadOnlyMode, setIsReadOnlyMode] = useState(false);
+ const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const [importVersion, setImportVersion] = useState(0);
  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const pendingContentRef = useRef<Record<string, unknown> | null>(null);
@@ -293,6 +299,40 @@ export function NoteEditorPanel({
 
           <Button
            type="button"
+           variant={isReadOnlyMode ? "active" : "outline"}
+           size="icon-sm"
+           onClick={() => setIsReadOnlyMode((current) => !current)}
+           title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+           aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+           className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+          >
+           {isReadOnlyMode ? <Eye className="h-3.5 w-3.5" /> : <Pencil className="h-3.5 w-3.5" />}
+           <span className="hidden xl:inline">{isReadOnlyMode ? "Chỉ xem" : "Sửa"}</span>
+          </Button>
+
+          {!isReadOnlyMode ? (
+           <Button
+            type="button"
+            variant={isToolbarVisible ? "outline" : "active"}
+            size="icon-sm"
+            onClick={() => setIsToolbarVisible((current) => !current)}
+            title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+            aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+            className="h-9 w-9 rounded-xl xl:w-auto xl:px-2.5"
+           >
+            {isToolbarVisible ? (
+             <PanelTopClose className="h-3.5 w-3.5" />
+            ) : (
+             <PanelTopOpen className="h-3.5 w-3.5" />
+            )}
+            <span className="hidden xl:inline">
+             {isToolbarVisible ? "Ẩn toolbar" : "Hiện toolbar"}
+            </span>
+           </Button>
+          ) : null}
+
+          <Button
+           type="button"
            variant={isSplitView ? "secondary" : "outline"}
            size="icon-sm"
            onClick={handleToggleSplitView}
@@ -386,11 +426,19 @@ export function NoteEditorPanel({
         readingContent={readingContent}
         onNoteChange={handleChange}
         onReadingChange={handleReadingChange}
+        readOnly={isReadOnlyMode}
+        toolbarVisible={isToolbarVisible}
        />
       </div>
      ) : (
       <div className="note-editor-scroll m-2 lg:m-4">
-       <Editor key={`note-${importVersion}`} initialContent={noteContent} onChange={handleChange} />
+       <Editor
+        key={`note-${importVersion}`}
+        initialContent={noteContent}
+        onChange={handleChange}
+        readOnly={isReadOnlyMode}
+        toolbarVisible={isToolbarVisible}
+       />
       </div>
      )}
     </>

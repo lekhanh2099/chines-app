@@ -23,6 +23,8 @@ interface SplitViewEditorProps {
  onNoteChange?: (json: Record<string, unknown>) => void;
  /** Called when reading content changes */
  onReadingChange?: (json: Record<string, unknown>) => void;
+ readOnly?: boolean;
+ toolbarVisible?: boolean;
 }
 
 export function SplitViewEditor({
@@ -31,6 +33,8 @@ export function SplitViewEditor({
  readingContent,
  onNoteChange,
  onReadingChange,
+ readOnly = false,
+ toolbarVisible = true,
 }: SplitViewEditorProps) {
  const containerRef = useRef<HTMLDivElement>(null);
  const dividerPosition = useSplitViewStore((s) => s.getDividerPosition(noteId));
@@ -52,7 +56,13 @@ export function SplitViewEditor({
      <span>Bài đọc</span>
     </div>
     <div className="split-view-pane-content">
-     <Editor initialContent={readingContent} onChange={onReadingChange} seamless />
+     <Editor
+      initialContent={readingContent}
+      onChange={onReadingChange}
+      readOnly={readOnly}
+      toolbarVisible={toolbarVisible}
+      seamless
+     />
     </div>
    </div>
 
@@ -69,7 +79,13 @@ export function SplitViewEditor({
      <span>Ghi chú</span>
     </div>
     <div className="split-view-pane-content">
-     <Editor initialContent={noteContent} onChange={onNoteChange} seamless />
+     <Editor
+      initialContent={noteContent}
+      onChange={onNoteChange}
+      readOnly={readOnly}
+      toolbarVisible={toolbarVisible}
+      seamless
+     />
     </div>
    </div>
   </div>

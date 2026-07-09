@@ -65,6 +65,7 @@ interface EditorProps {
  initialContent?: Record<string, unknown> | null;
  onChange?: (json: Record<string, unknown>) => void;
  readOnly?: boolean;
+ toolbarVisible?: boolean;
  seamless?: boolean;
 }
 
@@ -105,6 +106,7 @@ export function Editor({
  initialContent,
  onChange,
  readOnly = false,
+ toolbarVisible = true,
  seamless = false,
 }: EditorProps) {
  const initialConfig = useMemo(
@@ -145,7 +147,7 @@ export function Editor({
     {...(seamless ? { "data-seamless": "" } : {})}
    >
     {/* Toolbar */}
-    {!readOnly && <ToolbarPlugin />}
+    {!readOnly && toolbarVisible ? <ToolbarPlugin /> : null}
 
     {/* Editor body */}
     <div className="editor-container">
