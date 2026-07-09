@@ -591,7 +591,6 @@ export default function EditorFloatingMenu() {
       onMouseDown={preserveEditorSelection}
       data-no-inspector
       style={{ maxWidth: "calc(100vw - 1rem)" }}
-      className="relative w-auto min-w-75 max-w-md rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg"
      >
       {showChineseLookup && (
        <div className="p-2 pb-1">
@@ -687,7 +686,7 @@ export default function EditorFloatingMenu() {
        </div>
       )}
 
-      <div className="border-t border-border-default bg-bg-subtle p-2">
+      <div className="bg-bg-subtle p-2 rounded-2xl shadow-theme-sm">
        <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1">
          {showChineseLookup && (
