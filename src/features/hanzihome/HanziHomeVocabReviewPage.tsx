@@ -12,6 +12,7 @@ import {
  formatSelectedLessonsLabel,
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
+import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
@@ -141,9 +142,7 @@ export function HanziHomeVocabReviewPage({
      </p>
     )}
 
-    {isLoading && (
-     <p className="rounded-xl bg-bg-subtle p-4 font-bold text-text-muted">Đang tải bài để ôn...</p>
-    )}
+    {isLoading && <VocabReviewSkeleton />}
 
     {!isLoading && lessonIds.length > 0 && combinedReviewLesson && (
      <VocabReviewPanel

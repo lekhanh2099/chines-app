@@ -26,18 +26,22 @@ export function WorkspaceCommandHeader({
     className,
    )}
   >
-   <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
+   <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
     <div className="grid min-w-0 gap-1">
      <div className="flex min-w-0 flex-wrap items-center gap-2">
       <h1 className="min-w-0 truncate text-xl font-bold text-text-primary">{title}</h1>
       {badge}
      </div>
      {description ? (
-      <p className="text-sm font-medium text-text-muted">{description}</p>
+      <p className="text-sm font-medium text-text-muted md:hidden 2xl:block">{description}</p>
      ) : null}
     </div>
 
-    {controls ? <div className="flex min-w-0 flex-wrap items-center gap-2">{controls}</div> : null}
+    {controls ? (
+     <div className="flex min-w-0 flex-wrap items-center gap-2 md:flex-1 md:flex-nowrap md:justify-end">
+      {controls}
+     </div>
+    ) : null}
    </div>
 
    {children}

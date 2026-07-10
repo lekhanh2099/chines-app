@@ -1488,12 +1488,7 @@ function DirectoryPane({
    </div>
 
    <div className="min-h-0 flex-1 overflow-y-auto bg-bg-subtle px-3 pb-4 pt-2 scrollbar-soft">
-    {isLoading && (
-     <div className="flex items-center gap-2 rounded-lg border border-border-default bg-bg-subtle p-3 text-sm font-bold text-text-muted">
-      <Loader2 className="h-4 w-4 animate-spin" />
-      Đang tải...
-     </div>
-    )}
+    {isLoading && <ArtifactDirectorySkeleton />}
 
     {Boolean(error) && (
      <p
@@ -1835,10 +1830,7 @@ function PreviewPane({
       onDelete={onDelete}
      />
     ) : isFetching ? (
-     <div className="flex h-full items-center justify-center gap-2 text-sm font-bold text-text-muted">
-      <Loader2 className="h-4 w-4 animate-spin" />
-      Đang tải HTML...
-     </div>
+     <HtmlArtifactPreviewSkeleton />
     ) : selectedArtifact ? (
      <StableHtmlArtifactIframe
       key={getHtmlArtifactFrameKey(selectedArtifact.id, selectedArtifact.html)}
@@ -1853,6 +1845,45 @@ function PreviewPane({
     )}
    </div>
   </section>
+ );
+}
+
+function ArtifactDirectorySkeleton() {
+ return (
+  <div className="grid animate-pulse gap-2" aria-busy="true" aria-live="polite">
+   {Array.from({ length: 5 }, (_, index) => (
+    <div
+     key={index}
+     className="flex min-h-14 items-center gap-3 rounded-lg border border-border-default bg-bg-card p-3"
+    >
+     <div className="size-8 shrink-0 rounded-lg bg-bg-subtle" />
+     <div className="grid min-w-0 flex-1 gap-2">
+      <div className="h-4 w-3/4 rounded-md bg-bg-subtle" />
+      <div className="h-3 w-1/2 rounded-full bg-bg-subtle" />
+     </div>
+    </div>
+   ))}
+   <span className="sr-only">Đang tải danh sách tệp HTML</span>
+  </div>
+ );
+}
+
+function HtmlArtifactPreviewSkeleton() {
+ return (
+  <div
+   className="grid h-full animate-pulse content-start gap-4 bg-bg-primary p-5"
+   aria-busy="true"
+   aria-live="polite"
+  >
+   <div className="h-8 w-64 max-w-full rounded-lg bg-bg-subtle" />
+   <div className="h-4 w-96 max-w-full rounded-md bg-bg-subtle" />
+   <div className="grid gap-3 sm:grid-cols-2">
+    <div className="h-40 rounded-xl bg-bg-subtle" />
+    <div className="h-40 rounded-xl bg-bg-subtle" />
+   </div>
+   <div className="h-56 rounded-xl bg-bg-subtle" />
+   <span className="sr-only">Đang tải bản xem trước HTML</span>
+  </div>
  );
 }
 

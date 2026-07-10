@@ -29,6 +29,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
 import type { NoteCategory } from "@/types/database";
 
@@ -46,10 +47,17 @@ function parseTags(value: string): string[] {
   .filter(Boolean);
 }
 
-export function NoteCreateDialog({ triggerClassName }: { triggerClassName?: string }) {
+export function NoteCreateDialog({
+ triggerClassName,
+ compactOnTablet = false,
+}: {
+ triggerClassName?: string;
+ compactOnTablet?: boolean;
+}) {
  const [isOpen, setIsOpen] = useState(false);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
+ const focusModeEnabled = useFocusModeStore((s) => s.enabled);
 
  const form = useForm({
   defaultValues: {
@@ -58,6 +66,11 @@ export function NoteCreateDialog({ triggerClassName }: { triggerClassName?: stri
    category: "general" as NoteCategory,
   },
   onSubmit: async ({ value }) => {
+   if (focusModeEnabled) {
+    toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
+    return;
+   }
+
    createNoteMutation.mutate(
     {
      title: value.title.trim(),
@@ -84,9 +97,15 @@ export function NoteCreateDialog({ triggerClassName }: { triggerClassName?: stri
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button size="lg" className={cn("gap-2", triggerClassName)}>
+    <Button
+     size={compactOnTablet ? "icon-lg" : "lg"}
+     disabled={focusModeEnabled}
+     aria-label="Tạo ghi chú"
+     title="Tạo ghi chú"
+     className={cn(compactOnTablet && "2xl:w-auto 2xl:px-3", triggerClassName)}
+    >
      <FilePlus2 className="h-4 w-4" />
-     Tạo ghi chú
+     <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Tạo ghi chú</span>
     </Button>
    </DialogTrigger>
 

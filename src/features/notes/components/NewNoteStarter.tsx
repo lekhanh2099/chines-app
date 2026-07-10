@@ -2,15 +2,23 @@
 
 import { useRouter } from "next/navigation";
 import { FileText, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
 
 export function NewNoteStarter() {
  const router = useRouter();
  const createNoteMutation = useCreateNote();
+ const focusModeEnabled = useFocusModeStore((s) => s.enabled);
 
  function handleCreate() {
+  if (focusModeEnabled) {
+   toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
+   return;
+  }
+
   createNoteMutation.mutate(
    {
     title: "Ghi chú đầu tiên của tôi",
@@ -46,7 +54,7 @@ export function NewNoteStarter() {
      size="lg"
      className="pt-2"
      onClick={handleCreate}
-     disabled={createNoteMutation.isPending}
+     disabled={createNoteMutation.isPending || focusModeEnabled}
     >
      {createNoteMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
      Tạo ghi chú đầu tiên

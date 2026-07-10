@@ -1,13 +1,25 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
-import { BookOpenCheck, ChevronRight, Moon, Search, Sun } from "lucide-react";
+import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
+import { LockKeyhole, Search } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useTheme } from "./ThemeProvider";
+import { toast } from "sonner";
+import { type Theme, useTheme } from "./ThemeProvider";
+import {
+ AppHeaderBreadcrumb,
+ AppHeaderBreadcrumbItem,
+ AppHeaderBreadcrumbLink,
+ AppHeaderBreadcrumbPage,
+ AppHeaderBreadcrumbSeparator,
+ appHeaderBreadcrumbSelectTriggerClassName,
+} from "./app-header-breadcrumb";
+import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
+import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
 import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,6 +44,21 @@ import {
 import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
 import { cn } from "@/lib/utils";
 
+type HanziHomeHeaderBreadcrumb = {
+ courses: Array<{ id: string; title: string }>;
+ selectedCourse: { id: string; title: string };
+ selectedLesson: { id: string; lessonNumber: number; title: string; titleZh?: string };
+ lessons: Array<{ id: string; lessonNumber: number; title: string; titleZh?: string }>;
+};
+
+type SimpleHeaderBreadcrumb = {
+ label: string;
+ parent?: {
+  label: string;
+  href: string;
+ };
+};
+
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
@@ -43,24 +70,29 @@ export function Header({ user }: { user?: User | null }) {
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
  const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
+ const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const toggleFocusMode = useFocusModeStore((s) => s.toggle);
  const headerToolbarContent = useHeaderToolbarStore((s) => s.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
- const isHanziHomeWorkspaceRoute =
+ const currentHanziHomeModule = searchParams.get("module");
+ const isRadicalsWorkspaceRoute = isHanziHomeRoute && currentHanziHomeModule === "radicals";
+ const isHanziHomeLessonWorkspaceRoute =
   isHanziHomeRoute &&
+  !isRadicalsWorkspaceRoute &&
   (searchParams.has("courseId") ||
    searchParams.has("lesson") ||
    searchParams.has("lessonId") ||
    searchParams.has("module"));
- const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeWorkspaceRoute });
+ const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeLessonWorkspaceRoute });
  const selectedCourseId =
-  isHanziHomeWorkspaceRoute && catalogData.courses.length > 0
+  isHanziHomeLessonWorkspaceRoute && catalogData.courses.length > 0
    ? searchParams.get("courseId") || catalogData.courses[0]?.id || ""
    : "";
  const courseLessonsQuery = useHanziHomeCourseLessons(selectedCourseId, {
-  enabled: isHanziHomeWorkspaceRoute && Boolean(selectedCourseId),
+  enabled: isHanziHomeLessonWorkspaceRoute && Boolean(selectedCourseId),
  });
  const hanzihomeBreadcrumb = useMemo(() => {
-  if (!isHanziHomeWorkspaceRoute) return null;
+  if (!isHanziHomeLessonWorkspaceRoute) return null;
 
   const courses = catalogData.courses;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? courses[0];
@@ -81,11 +113,16 @@ export function Header({ user }: { user?: User | null }) {
  }, [
   catalogData.courses,
   courseLessonsQuery.lessons,
-  isHanziHomeWorkspaceRoute,
+  isHanziHomeLessonWorkspaceRoute,
   searchParams,
   selectedCourseId,
  ]);
- const hasRouteToolbar = Boolean(headerToolbarContent || hanzihomeBreadcrumb);
+ const simpleBreadcrumb = useMemo(
+  () =>
+   getSimpleHeaderBreadcrumb(pathname, currentHanziHomeModule, isHanziHomeLessonWorkspaceRoute),
+  [currentHanziHomeModule, isHanziHomeLessonWorkspaceRoute, pathname],
+ );
+ const hasRouteToolbar = Boolean(headerToolbarContent || hanzihomeBreadcrumb || simpleBreadcrumb);
 
  useEffect(() => {
   hydrateLookupSettings();
@@ -117,6 +154,15 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  const handleOpenSearchResult = (item: HanziHomeSearchIndexItem) => {
+  if (
+   focusModeEnabled &&
+   item.lessonId &&
+   item.lessonId !== hanzihomeBreadcrumb?.selectedLesson.id
+  ) {
+   toast.warning("Focus mode đang bật. Không thể chuyển sang bài khác.");
+   return;
+  }
+
   clearHanziHomeSearchNavigationIntent();
   if (item.module || item.targetId) {
    setHanziHomeSearchNavigationIntent({
@@ -133,11 +179,13 @@ export function Header({ user }: { user?: User | null }) {
   setSearchValue("");
  };
 
- const navigateHanziHome = (courseId: string, lessonNumber: number) => {
+ const navigateHanziHome = (lessonNumber: number) => {
+  if (focusModeEnabled) return;
+
   const nextParams = new URLSearchParams(searchParams.toString());
   const currentModule = nextParams.get("module");
 
-  nextParams.set("courseId", courseId);
+  nextParams.set("courseId", selectedCourseId);
   nextParams.set("lesson", getLessonRouteValue(lessonNumber));
   nextParams.delete("lessonId");
   if (currentModule) nextParams.set("module", currentModule);
@@ -146,157 +194,311 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header
-   className={cn(
-    "nova-shell-header sticky top-0 z-50 flex h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-hidden border-b border-border-default px-3 sm:gap-3 sm:px-5 lg:px-7",
-    isHanziHomeRoute && "hanzihome-liquid-header",
-   )}
-  >
-   <div className="flex h-14 w-full min-w-0 items-center justify-between gap-2 sm:gap-3">
-    {headerToolbarContent ? (
-     <div className="flex min-w-0 flex-1 items-center gap-2 lg:max-w-[38rem]">
-      {headerToolbarContent}
-     </div>
-    ) : null}
-
-    {!headerToolbarContent && hanzihomeBreadcrumb && (
-     <nav
-      aria-label="Chuyển nhanh bài HanziHome"
-      className="hidden min-w-0 shrink-0 items-center gap-1 font-semibold text-text-secondary md:flex md:max-w-[18rem] lg:max-w-[24rem] xl:max-w-[38rem]"
-     >
-      <div className="hidden min-w-0 shrink-0 items-center gap-1 xl:flex">
-       <Select
-        value={hanzihomeBreadcrumb.selectedCourse.id}
-        onValueChange={(courseId) => {
-         const course = hanzihomeBreadcrumb.courses.find((item) => item.id === courseId);
-
-         if (course) {
-          navigateHanziHome(course.id, 1);
-         }
-        }}
-       >
-        <SelectTrigger
-         aria-label="Chọn giáo trình HanziHome"
-         className="max-w-60 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm"
-        >
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-         <SelectGroup>
-          {hanzihomeBreadcrumb.courses.map((course, index) => (
-           <SelectItem key={course.id + index} value={course.id}>
-            {course.title}
-           </SelectItem>
-          ))}
-         </SelectGroup>
-        </SelectContent>
-       </Select>
-       <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
-      </div>
-      <Select
-       value={getLessonRouteValue(hanzihomeBreadcrumb.selectedLesson.lessonNumber)}
-       onValueChange={(lessonNumber) => {
-        navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, Number(lessonNumber));
-       }}
-      >
-       <SelectTrigger
-        aria-label="Chọn bài học HanziHome"
-        className="w-[min(18rem,34vw)] min-w-0 border-border-default bg-bg-card px-3 font-semibold text-text-primary shadow-theme-sm lg:w-[min(22rem,32vw)] xl:max-w-60"
-       >
-        <SelectValue />
-       </SelectTrigger>
-       <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-        <SelectGroup>
-         {hanzihomeBreadcrumb.lessons.map((lesson) => (
-          <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
-           {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-          </SelectItem>
-         ))}
-        </SelectGroup>
-       </SelectContent>
-      </Select>
-     </nav>
+  <>
+   <FocusModeRouteGuard />
+   <header
+    className={cn(
+     "nova-shell-header sticky top-0 z-50 flex h-14 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:px-5 lg:px-7",
+     isHanziHomeRoute && "hanzihome-liquid-header",
     )}
-
-    <form
-     onSubmit={handleSearch}
+   >
+    <div
      className={cn(
-      "relative min-w-0 flex-1 lg:max-w-[34rem]",
-      hasRouteToolbar && "hidden xl:block xl:max-w-[28rem]",
+      "grid h-14 w-full min-w-0 items-center gap-2 sm:gap-3",
+      hasRouteToolbar
+       ? "grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)_auto]"
+       : "grid-cols-[minmax(0,1fr)_auto]",
      )}
     >
-     <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
-     <input
-      value={searchValue}
-      onFocus={() => setSearchOpen(true)}
-      onClick={() => setSearchOpen(true)}
-      onChange={(event) => {
-       setSearchValue(event.target.value);
-       setSearchOpen(true);
-      }}
-      placeholder="Tìm toàn bộ HanziHome"
-      aria-label="Tìm toàn bộ HanziHome"
-      className="h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4 xl:h-11"
-     />
-    </form>
-
-    <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2">
      {hasRouteToolbar ? (
-      <Button
-       type="button"
-       variant="outline"
-       onClick={() => setSearchOpen(true)}
-       aria-label="Mở tìm kiếm HanziHome"
-       title="Tìm toàn bộ HanziHome"
-       className="h-10 min-h-10 w-10 px-0 xl:hidden"
-      >
-       <Search className="h-5 w-5" />
-      </Button>
+      <HeaderContextArea
+       toolbarContent={headerToolbarContent}
+       breadcrumb={hanzihomeBreadcrumb}
+       simpleBreadcrumb={simpleBreadcrumb}
+       focusModeEnabled={focusModeEnabled}
+       onNavigateHanziHome={navigateHanziHome}
+      />
      ) : null}
 
-     <Button
-      type="button"
-      onClick={() => toggleLookup(pathname)}
-      variant={lookupEnabled ? "default" : "outline"}
-      aria-label={lookupEnabled ? "Tắt tra từ tự động" : "Bật tra từ tự động"}
-      title="Bật/Tắt tra từ tự động"
-      className="h-10 min-h-10 px-2.5 xl:px-3"
-     >
-      <BookOpenCheck className="h-5 w-5" />
-      <span className="hidden xl:inline">{lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}</span>
-     </Button>
+     <HeaderSearchForm
+      value={searchValue}
+      routeToolbarActive={hasRouteToolbar}
+      onSubmit={handleSearch}
+      onOpen={() => setSearchOpen(true)}
+      onChange={(value) => {
+       setSearchValue(value);
+       setSearchOpen(true);
+      }}
+     />
 
-     <Button
-      type="button"
-      onClick={toggleTheme}
-      aria-label="Đổi giao diện sáng tối"
-      className="h-10 min-h-10 w-10 px-0"
-     >
-      {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-     </Button>
-
-     <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5  font-bold text-text-secondary 2xl:flex">
-      <span className="text-lg">🇻🇳</span>
-      Tiếng Việt
-     </div>
-
-     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
-      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle  font-bold text-accent-text">
-       {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
-      </div>
-     </div>
+     <HeaderUtilityArea
+      routeToolbarActive={hasRouteToolbar}
+      focusModeEnabled={focusModeEnabled}
+      user={user}
+      theme={theme}
+      lookupEnabled={lookupEnabled}
+      onOpenSearch={() => setSearchOpen(true)}
+      onToggleTheme={toggleTheme}
+      onToggleLookup={() => toggleLookup(pathname)}
+      onToggleFocusMode={toggleFocusMode}
+     />
     </div>
-   </div>
-   <GlobalSearchDialog
-    open={searchOpen}
-    query={searchValue}
-    courseId={hanzihomeBreadcrumb?.selectedCourse.id}
-    lessonId={hanzihomeBreadcrumb?.selectedLesson.id}
-    onOpenChange={setSearchOpen}
-    onQueryChange={setSearchValue}
-    onOpenResult={handleOpenSearchResult}
-    onDirectLookup={handleDirectLookup}
+    <GlobalSearchDialog
+     open={searchOpen}
+     query={searchValue}
+     courseId={hanzihomeBreadcrumb?.selectedCourse.id}
+     lessonId={hanzihomeBreadcrumb?.selectedLesson.id}
+     onOpenChange={setSearchOpen}
+     onQueryChange={setSearchValue}
+     onOpenResult={handleOpenSearchResult}
+     onDirectLookup={handleDirectLookup}
+    />
+   </header>
+  </>
+ );
+}
+
+function HeaderContextArea({
+ toolbarContent,
+ breadcrumb,
+ simpleBreadcrumb,
+ focusModeEnabled,
+ onNavigateHanziHome,
+}: {
+ toolbarContent: ReactNode;
+ breadcrumb: HanziHomeHeaderBreadcrumb | null;
+ simpleBreadcrumb: SimpleHeaderBreadcrumb | null;
+ focusModeEnabled: boolean;
+ onNavigateHanziHome: (lessonNumber: number) => void;
+}) {
+ if (toolbarContent) {
+  return <div className="flex min-w-0 items-center gap-2 overflow-hidden">{toolbarContent}</div>;
+ }
+
+ if (breadcrumb) {
+  return (
+   <HanziHomeBreadcrumbNav
+    breadcrumb={breadcrumb}
+    focusModeEnabled={focusModeEnabled}
+    onNavigate={onNavigateHanziHome}
    />
-  </header>
+  );
+ }
+
+ if (simpleBreadcrumb) {
+  return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
+ }
+
+ return <div className="min-w-0" />;
+}
+
+function HanziHomeBreadcrumbNav({
+ breadcrumb,
+ focusModeEnabled,
+ onNavigate,
+}: {
+ breadcrumb: HanziHomeHeaderBreadcrumb;
+ focusModeEnabled: boolean;
+ onNavigate: (lessonNumber: number) => void;
+}) {
+ return (
+  <AppHeaderBreadcrumb
+   aria-label="Chuyển nhanh bài HanziHome"
+   className="hidden min-w-0 max-w-[min(34rem,56vw)] justify-self-start md:inline-flex"
+  >
+   <AppHeaderBreadcrumbItem>
+    <AppHeaderBreadcrumbLink
+     href="/hanzihome"
+     disabled={focusModeEnabled}
+     className="max-w-[9rem]"
+     title="HanziHome"
+    >
+     HanziHome
+    </AppHeaderBreadcrumbLink>
+   </AppHeaderBreadcrumbItem>
+   <AppHeaderBreadcrumbSeparator />
+   <AppHeaderBreadcrumbItem className="hidden 2xl:flex">
+    <AppHeaderBreadcrumbPage className="max-w-48" title={breadcrumb.selectedCourse.title}>
+     {breadcrumb.selectedCourse.title}
+    </AppHeaderBreadcrumbPage>
+   </AppHeaderBreadcrumbItem>
+   <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
+   <AppHeaderBreadcrumbItem className="min-w-0">
+    <Select
+     value={getLessonRouteValue(breadcrumb.selectedLesson.lessonNumber)}
+     disabled={focusModeEnabled}
+     onValueChange={(lessonNumber) => {
+      onNavigate(Number(lessonNumber));
+     }}
+    >
+     <SelectTrigger
+      aria-label="Chọn bài học HanziHome"
+      className={cn(
+       appHeaderBreadcrumbSelectTriggerClassName,
+       "w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
+      )}
+     >
+      <SelectValue />
+     </SelectTrigger>
+     <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
+      <SelectGroup>
+       {breadcrumb.lessons.map((lesson) => (
+        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
+        </SelectItem>
+       ))}
+      </SelectGroup>
+     </SelectContent>
+    </Select>
+   </AppHeaderBreadcrumbItem>
+  </AppHeaderBreadcrumb>
+ );
+}
+
+function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcrumb }) {
+ return (
+  <AppHeaderBreadcrumb className="hidden min-w-0 md:inline-flex">
+   {breadcrumb.parent ? (
+    <>
+     <AppHeaderBreadcrumbItem>
+      <AppHeaderBreadcrumbLink href={breadcrumb.parent.href} title={breadcrumb.parent.label}>
+       {breadcrumb.parent.label}
+      </AppHeaderBreadcrumbLink>
+     </AppHeaderBreadcrumbItem>
+     <AppHeaderBreadcrumbSeparator />
+    </>
+   ) : null}
+   <AppHeaderBreadcrumbItem className="min-w-0">
+    <AppHeaderBreadcrumbPage title={breadcrumb.label}>{breadcrumb.label}</AppHeaderBreadcrumbPage>
+   </AppHeaderBreadcrumbItem>
+  </AppHeaderBreadcrumb>
+ );
+}
+
+function getSimpleHeaderBreadcrumb(
+ pathname: string,
+ hanzihomeModule: string | null,
+ isHanziHomeLessonWorkspaceRoute: boolean,
+): SimpleHeaderBreadcrumb | null {
+ if (pathname === "/notebook") return { label: "Sổ tay" };
+ if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
+ if (pathname === "/settings") return { label: "Cài đặt" };
+ if (pathname === "/hanzihome" && hanzihomeModule === "radicals") {
+  return { label: "Bộ thủ" };
+ }
+ if (pathname === "/hanzihome" && !isHanziHomeLessonWorkspaceRoute) return { label: "HanziHome" };
+ if (pathname === "/hanzihome/vocab/review") {
+  return { parent: { label: "Tổng hợp từ", href: "/hanzihome/vocab" }, label: "Ôn từ vựng" };
+ }
+ if (pathname === "/hanzihome/vocab") return { label: "Tổng hợp từ" };
+ if (pathname === "/hanzihome/grammar") return { label: "Tổng hợp ngữ pháp" };
+ if (pathname === "/hanzihome/memory-tips") return { label: "Nhắc nhanh" };
+ if (pathname === "/hanzihome/html-artifacts") return { label: "Tệp HTML" };
+ if (pathname.startsWith("/note/")) {
+  return { parent: { label: "Ghi chú", href: "/notes" }, label: "Chia sẻ" };
+ }
+
+ return null;
+}
+
+function HeaderSearchForm({
+ value,
+ routeToolbarActive,
+ onSubmit,
+ onOpen,
+ onChange,
+}: {
+ value: string;
+ routeToolbarActive: boolean;
+ onSubmit: (event: FormEvent) => void;
+ onOpen: () => void;
+ onChange: (value: string) => void;
+}) {
+ return (
+  <form
+   onSubmit={onSubmit}
+   className={cn(
+    "relative min-w-0",
+    routeToolbarActive ? "hidden xl:block" : "block",
+    routeToolbarActive && "xl:justify-self-center",
+   )}
+  >
+   <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+   <input
+    value={value}
+    onFocus={onOpen}
+    onClick={onOpen}
+    onChange={(event) => onChange(event.target.value)}
+    placeholder="Tìm toàn bộ HanziHome"
+    aria-label="Tìm toàn bộ HanziHome"
+    className={cn(
+     "h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4 xl:h-11",
+     routeToolbarActive && "xl:w-[min(34rem,34vw)]",
+    )}
+   />
+  </form>
+ );
+}
+
+function HeaderUtilityArea({
+ routeToolbarActive,
+ focusModeEnabled,
+ user,
+ theme,
+ lookupEnabled,
+ onOpenSearch,
+ onToggleTheme,
+ onToggleLookup,
+ onToggleFocusMode,
+}: {
+ routeToolbarActive: boolean;
+ focusModeEnabled: boolean;
+ user?: User | null;
+ theme: Theme;
+ lookupEnabled: boolean;
+ onOpenSearch: () => void;
+ onToggleTheme: () => void;
+ onToggleLookup: () => void;
+ onToggleFocusMode: () => void;
+}) {
+ return (
+  <div className="relative z-10 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+   {routeToolbarActive ? (
+    <Button
+     type="button"
+     variant="outline"
+     onClick={onOpenSearch}
+     aria-label="Mở tìm kiếm HanziHome"
+     title="Tìm toàn bộ HanziHome"
+     className="h-10 min-h-10 w-10 px-0 xl:hidden"
+    >
+     <Search className="h-5 w-5" />
+    </Button>
+   ) : null}
+
+   {focusModeEnabled ? <FocusModePill /> : null}
+
+   <ProfileSettingsMenu
+    user={user}
+    theme={theme}
+    lookupEnabled={lookupEnabled}
+    focusModeEnabled={focusModeEnabled}
+    onToggleTheme={onToggleTheme}
+    onToggleLookup={onToggleLookup}
+    onToggleFocusMode={onToggleFocusMode}
+   />
+  </div>
+ );
+}
+
+function FocusModePill() {
+ return (
+  <span
+   className="hidden size-9 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-warning/30 bg-warning-subtle p-0 text-xs font-black text-warning-text shadow-theme-sm sm:inline-flex 2xl:h-9 2xl:w-auto 2xl:px-2.5"
+   title="Focus mode đang bật"
+  >
+   <LockKeyhole className="h-3.5 w-3.5" />
+   <span className="hidden 2xl:inline">Focus</span>
+  </span>
  );
 }

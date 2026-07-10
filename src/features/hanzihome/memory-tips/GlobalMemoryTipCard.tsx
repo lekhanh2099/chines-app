@@ -63,14 +63,18 @@ export function GlobalMemoryTipCard({
      className,
     )}
    >
-    <div className="flex h-full min-h-28 items-center gap-3">
-     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
-      <Lightbulb className="h-4 w-4" />
-     </span>
-     <div className="grid gap-1">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Nhắc nhanh</p>
-      <p className="text-sm font-bold text-text-secondary">Đang tải mẹo nhớ...</p>
+    <div
+     className="flex h-full min-h-28 animate-pulse items-center gap-3"
+     aria-busy="true"
+     aria-live="polite"
+    >
+     <span className="size-9 shrink-0 rounded-xl bg-bg-subtle" />
+     <div className="grid min-w-0 flex-1 gap-2">
+      <div className="h-3 w-20 rounded-full bg-bg-subtle" />
+      <div className="h-4 w-48 max-w-full rounded-md bg-bg-subtle" />
+      <div className="h-3 w-3/4 rounded-full bg-bg-subtle" />
      </div>
+     <span className="sr-only">Đang tải mẹo nhớ</span>
     </div>
    </Card>
   );

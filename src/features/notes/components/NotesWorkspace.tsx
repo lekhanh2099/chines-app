@@ -1,7 +1,7 @@
 "use client";
 
 import { useDeferredValue, useMemo, useState } from "react";
-import { Loader2, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
 import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
-import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import {
+ useHanziHomeCatalogData,
+ useIsCatalogPending,
+} from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import type { NoteListItem } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
@@ -17,6 +20,7 @@ import { NewNoteStarter } from "./NewNoteStarter";
 import { NoteCreateDialog } from "./NoteCreateDialog";
 import { NoteImportButton } from "./NoteImportButton";
 import { NoteList } from "./NoteList";
+import { NotesWorkspaceSkeleton } from "./NotesWorkspaceSkeleton";
 import { buildLessonLookup, getNoteContext } from "./noteContext";
 
 type NoteFilter = "all" | "lesson" | "normal" | "quick" | NoteCategory;
@@ -67,6 +71,7 @@ export function NotesWorkspace() {
 
  const { data: notes, isLoading } = useNotesList();
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
+ const isCatalogPending = useIsCatalogPending({ includeLessons: true });
  const allNotes = notes ?? emptyNotes;
  const lessonLookup = useMemo(() => buildLessonLookup(catalog.lessons), [catalog.lessons]);
 
@@ -96,13 +101,7 @@ export function NotesWorkspace() {
 
  if (isNewAction) return <NewNoteStarter />;
 
- if (isLoading) {
-  return (
-   <div className="flex h-full items-center justify-center">
-    <Loader2 className="h-6 w-6 animate-spin text-text-muted" />
-   </div>
-  );
- }
+ if (isLoading || isCatalogPending) return <NotesWorkspaceSkeleton />;
 
  return (
   <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
@@ -116,7 +115,7 @@ export function NotesWorkspace() {
     description="Quản lý ghi chú theo bài học, ghi chú nhanh và ghi chú tự do trong một nơi."
     controls={
      <>
-      <div className="relative min-w-56 flex-[1_1_18rem]">
+      <div className="relative min-w-0 flex-1 md:max-w-sm">
        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
        <Input
         value={searchQuery}
@@ -126,12 +125,9 @@ export function NotesWorkspace() {
         className="h-11 rounded-xl bg-bg-primary pl-9 shadow-theme-sm"
        />
       </div>
-      <QuickNoteButton
-       variant="outline"
-       className="h-11 flex-1 rounded-xl bg-bg-card px-3 shadow-theme-sm sm:flex-none"
-      />
-      <NoteImportButton className="flex-1 sm:flex-none" />
-      <NoteCreateDialog triggerClassName="flex-1 sm:flex-none" />
+      <QuickNoteButton variant="outline" compactOnTablet className="bg-bg-card" />
+      <NoteImportButton compactOnTablet />
+      <NoteCreateDialog compactOnTablet />
      </>
     }
    >

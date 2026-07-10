@@ -6,8 +6,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
  BookOpenCheck,
  BookOpenText,
- ChevronLeft,
- ChevronRight,
  Flame,
  FileCode2,
  Home,
@@ -21,6 +19,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
+import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { createClient } from "@/lib/supabase/client";
 import { useSidebarStore } from "@/stores/sidebar-store";
 import { cn } from "@/lib/utils";
@@ -182,15 +181,21 @@ export function Sidebar() {
     <div
      className={cn(
       "flex h-14 items-center border-b border-border-default",
-      effectiveCollapsed ? "justify-center px-3" : "px-4",
+      effectiveCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
      )}
     >
-     <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
-      <AppLogoMark />
-      {!effectiveCollapsed && (
+     {!effectiveCollapsed ? (
+      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
+       <AppLogoMark />
        <span className="truncate font-black text-text-primary">HanziHome</span>
-      )}
-     </Link>
+      </Link>
+     ) : null}
+     <PanelToggleButton
+      open={!effectiveCollapsed}
+      onOpenChange={toggleSidebar}
+      label="thanh điều hướng"
+      size="md"
+     />
     </div>
 
     <nav
@@ -257,24 +262,6 @@ export function Sidebar() {
       <LogOut className="h-5 w-5" />
       {!effectiveCollapsed && "Đăng xuất"}
      </button>
-
-     {!isHanziHomeRoute && (
-      <button
-       type="button"
-       onClick={toggleSidebar}
-       className={cn(
-        "flex h-9 items-center justify-center gap-2 rounded-lg  font-medium text-text-muted transition-colors hover:bg-bg-subtle",
-        effectiveCollapsed ? "w-10" : "w-full",
-       )}
-      >
-       {effectiveCollapsed ? (
-        <ChevronRight className="h-4 w-4" />
-       ) : (
-        <ChevronLeft className="h-4 w-4" />
-       )}
-       {!effectiveCollapsed && "Thu gọn"}
-      </button>
-     )}
     </div>
    </aside>
    <nav className="nova-shell-header fixed inset-x-0 bottom-0 z-40 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">

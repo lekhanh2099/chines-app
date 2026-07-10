@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { DictionaryCharacterSidebar } from "@/features/dictionary/components/DictionaryCharacterSidebar";
 import {
@@ -15,6 +15,7 @@ import { Card } from "@/components/ui/card";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
+import { DictionaryWordSkeleton } from "@/features/dictionary/components/DictionarySkeletons";
 
 type DictionaryWordViewProps = {
  viewModel: DictionaryWordViewModel;
@@ -22,14 +23,7 @@ type DictionaryWordViewProps = {
 
 function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
  if (viewModel.state === "loading") {
-  return (
-   <PageContainer>
-    <div className="flex h-full flex-col items-center justify-center gap-4">
-     <Loader2 className="h-8 w-8 animate-spin " />
-     <p className=" text-text-muted">Đang tải dữ liệu từ điển...</p>
-    </div>
-   </PageContainer>
-  );
+  return <DictionaryWordSkeleton />;
  }
 
  if (viewModel.state === "not-found") {

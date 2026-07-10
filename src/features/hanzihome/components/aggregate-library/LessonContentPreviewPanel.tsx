@@ -296,9 +296,20 @@ function SelectedLessonContentPreview({
 
  if (lessons.length === 0 || lessons.length < selectedLessonCount) {
   return (
-   <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
-    Đang tải nội dung bài đã chọn...
-   </p>
+   <div
+    className="grid animate-pulse gap-3 rounded-xl border border-border-default bg-bg-primary p-4"
+    aria-busy="true"
+    aria-live="polite"
+   >
+    <div className="h-5 w-56 max-w-full rounded-md bg-bg-subtle" />
+    {Array.from({ length: Math.min(Math.max(selectedLessonCount, 1), 3) }, (_, index) => (
+     <div key={index} className="grid gap-3 rounded-xl bg-bg-subtle p-3">
+      <div className="h-5 w-48 max-w-full rounded-md bg-bg-card" />
+      <div className="h-20 rounded-lg bg-bg-card" />
+     </div>
+    ))}
+    <span className="sr-only">Đang tải nội dung bài đã chọn</span>
+   </div>
   );
  }
 

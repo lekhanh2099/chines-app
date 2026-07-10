@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -29,11 +28,20 @@ function DictionaryCharacterSidebar({
 
  if (isLoading || !vocabData) {
   return (
-   <Card variant="subtle" padding="md" className="rounded-2xl   text-text-muted">
-    <div className="flex items-center gap-2">
-     <Loader2 className="h-4 w-4 animate-spin  " />
-     Đang tải cấu tạo chữ...
+   <Card
+    variant="subtle"
+    padding="md"
+    className="grid animate-pulse gap-4 rounded-2xl"
+    aria-busy="true"
+    aria-live="polite"
+   >
+    <div className="h-5 w-36 rounded-md bg-bg-card" />
+    <div className="mx-auto size-48 rounded-2xl bg-bg-card" />
+    <div className="grid gap-2">
+     <div className="h-4 w-full rounded-md bg-bg-card" />
+     <div className="h-4 w-3/4 rounded-md bg-bg-card" />
     </div>
+    <span className="sr-only">Đang tải cấu tạo chữ</span>
    </Card>
   );
  }

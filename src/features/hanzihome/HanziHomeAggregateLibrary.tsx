@@ -27,6 +27,7 @@ import {
  isAggregateVocabItem,
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
+import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
 import {
  fetchHanziHomeAggregateItems,
  fetchHanziHomeLessonDetail,
@@ -313,11 +314,11 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       </div>
 
       <LessonContentPreviewPanel
-        lessons={selectedLessonDetails}
-        selectedModules={selectedContentModules}
-        selectedLessonCount={selectedAvailableReviewLessonIds.length}
-        onToggleModule={toggleContentModule}
-        onApplyPreset={setSelectedContentModules}
+       lessons={selectedLessonDetails}
+       selectedModules={selectedContentModules}
+       selectedLessonCount={selectedAvailableReviewLessonIds.length}
+       onToggleModule={toggleContentModule}
+       onApplyPreset={setSelectedContentModules}
       />
      </div>
     </Card>
@@ -396,16 +397,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
           getItemLesson={(item) => lessonByReviewItemId.get(`${item.type}:${item.id}`) ?? null}
          />
         ) : (
-         <p className="rounded-xl bg-bg-subtle p-4  font-bold text-text-muted">
-          Đang tải bài để ôn...
-         </p>
+         <VocabReviewSkeleton />
         )}
        </div>
       )}
 
-      {shouldShowAggregateList && query.isLoading && (
-       <AggregateLibrarySkeleton />
-      )}
+      {shouldShowAggregateList && query.isLoading && <AggregateLibrarySkeleton />}
 
       {shouldShowAggregateList && query.isError && (
        <p role="alert" className="rounded-xl bg-danger-subtle p-4  font-bold text-danger-text">

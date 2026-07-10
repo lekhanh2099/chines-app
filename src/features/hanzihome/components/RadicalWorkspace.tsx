@@ -152,10 +152,10 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
     ) : null
    }
   >
-   <Card padding="lg" className="mx-auto w-full max-w-5xl rounded-xl">
-    <div className="grid gap-3">
+   <Card padding="lg" className="mx-auto w-full max-w-7xl rounded-xl">
+    <div className="grid gap-3 2xl:grid-cols-2">
      {editMode ? (
-      <div className="flex justify-end">
+      <div className="flex justify-end 2xl:col-span-2">
        <Button
         type="button"
         variant="outline"
@@ -169,7 +169,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
        </Button>
       </div>
      ) : null}
-     <div className="flex flex-wrap items-center gap-4">
+     <div className="flex flex-wrap items-center gap-4 2xl:col-span-2">
       <h2 className="text-7xl font-black text-text-primary">{selectedRadical.radical}</h2>
       <div className="min-w-0">
        <div className="flex flex-wrap items-center gap-2">
@@ -202,8 +202,8 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      )}
 
      {selectedRelatedComponents.length > 0 && (
-      <RadicalSection title="Thành phần liên quan">
-       <div className="grid gap-2 sm:grid-cols-2">
+      <RadicalSection title="Thành phần liên quan" className="2xl:col-span-2">
+       <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
         {selectedRelatedComponents.map((component) => (
          <div
           key={`${component.form}-${component.note}`}
@@ -234,7 +234,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      )}
 
      {selectedGroups.length > 0 && (
-      <RadicalSection title="Nhóm chữ thường gặp">
+      <RadicalSection title="Nhóm chữ thường gặp" className="2xl:col-span-2">
        <div className="grid gap-3">
         {selectedGroups.map((group) => (
          <div key={group.name} className="grid gap-2">

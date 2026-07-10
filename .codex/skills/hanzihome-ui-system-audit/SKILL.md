@@ -66,6 +66,21 @@ Use this contract for new pages and for cleanup of existing page headers:
 
 When adding a new study, notebook, notes, aggregate, or artifact page, first decide whether it is a workspace-command surface. If yes, start from `WorkspaceCommandHeader`.
 
+## App Header Breadcrumb Contract
+
+The global app header should expose route context through `AppHeaderBreadcrumb` from `src/components/layout/app-header-breadcrumb.tsx`, not through ad-hoc button/select clusters.
+
+Use this contract when adding or changing app-level context controls:
+
+- Put top-level route context in `Header.tsx` via a breadcrumb shape, for example `HanziHome > course > lesson` or `Ghi chú > current note`.
+- Match the sidebar IA, not raw URL nesting. Sidebar main items such as `Tổng hợp từ`, `Tổng hợp ngữ pháp`, `Nhắc nhanh`, `Tệp HTML`, and `Bộ thủ` are app-level route contexts even when their implementation URL starts with `/hanzihome`.
+- In HanziHome lesson workspace breadcrumbs, keep course/book as read-only context and only expose lesson switching. Do not add a course/book select to the global header.
+- Keep page-specific command bars in `WorkspaceCommandHeader`; do not duplicate page title/search/filter rows inside the global header.
+- Use `AppHeaderBreadcrumbLink`, `AppHeaderBreadcrumbPage`, `AppHeaderBreadcrumbSeparator`, and `appHeaderBreadcrumbSelectTriggerClassName` for header breadcrumb items/selects so density, radius, typography, and hover states stay consistent inside one breadcrumb bar.
+- Use `PanelToggleButton` from `src/components/layout/panel-toggle-button.tsx` for app/sidebar/module panel collapse actions. Do not hand-build isolated `PanelLeftClose`, `PanelLeftOpen`, `ChevronLeft`, or `ChevronRight` collapse buttons in feature code.
+- On iPad/tablet widths, prefer one compact breadcrumb plus icon search over full global search plus route controls.
+- If a new route needs header context, add it to the shared route-breadcrumb logic in `Header.tsx` instead of creating a feature-local top header.
+
 ## iPad Safari Audit Contract
 
 HanziHome is primarily used for study on iPad, including portrait orientation in Safari. UI changes to study surfaces, note surfaces, or app-wide headers must be checked against this constraint.

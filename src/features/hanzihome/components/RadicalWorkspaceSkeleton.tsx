@@ -7,11 +7,10 @@ export function RadicalWorkspaceSkeleton() {
    aria-busy="true"
    aria-live="polite"
   >
-   {/* Top bar skeleton */}
    <Card
     variant="default"
     padding="sm"
-    className="border-border-default/80 bg-bg-card/70 shadow-none backdrop-blur"
+    className="border-border-default/80 bg-bg-card/70 shadow-none backdrop-blur xl:hidden"
    >
     <div className="flex animate-pulse flex-wrap items-center justify-between gap-2">
      <div className="flex items-center gap-2">
@@ -27,9 +26,7 @@ export function RadicalWorkspaceSkeleton() {
     </div>
    </Card>
 
-   {/* Body: sidebar + main content */}
-   <div className="grid min-w-0 grid-cols-1 gap-3 overflow-hidden xl:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)]">
-    {/* Sidebar skeleton */}
+   <div className="grid min-w-0 grid-cols-1 gap-3 overflow-hidden xl:grid-cols-[minmax(14rem,17rem)_minmax(0,1fr)] 2xl:grid-cols-[minmax(15rem,18rem)_minmax(0,1fr)]">
     <aside className="hidden min-w-0 xl:block">
      <Card
       variant="default"
@@ -56,12 +53,10 @@ export function RadicalWorkspaceSkeleton() {
      </Card>
     </aside>
 
-    {/* Main content skeleton */}
     <div className="min-w-0 overflow-y-auto pr-1 scrollbar-soft">
-     <Card padding="lg" className="mx-auto w-full max-w-5xl animate-pulse rounded-xl">
-      <div className="grid gap-4">
-       {/* Header: radical char + name + badges */}
-       <div className="flex flex-wrap items-center gap-4">
+     <Card padding="lg" className="mx-auto w-full max-w-7xl animate-pulse rounded-xl">
+      <div className="grid gap-4 2xl:grid-cols-2">
+       <div className="flex flex-wrap items-center gap-4 2xl:col-span-2">
         <div className="h-20 w-20 rounded-xl bg-bg-subtle" />
         <div className="grid gap-2">
          <div className="flex gap-2">
@@ -72,7 +67,6 @@ export function RadicalWorkspaceSkeleton() {
         </div>
        </div>
 
-       {/* Sections */}
        {Array.from({ length: 4 }, (_, i) => (
         <div key={i} className="grid gap-2">
          <div className="h-5 w-32 rounded-md bg-bg-subtle" />

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Loader2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -50,9 +50,10 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       <div className="flex flex-col gap-2">
        <SectionHeader title="Bản dịch" />
        {viewModel.isLoading ? (
-        <div className="flex items-center gap-2  text-text-muted">
-         <Loader2 className="h-4 w-4 animate-spin  " />
-         Đang dịch câu...
+        <div className="grid animate-pulse gap-2" aria-busy="true" aria-live="polite">
+         <div className="h-4 w-full rounded-md bg-bg-card" />
+         <div className="h-4 w-5/6 rounded-md bg-bg-card" />
+         <span className="sr-only">Đang dịch câu</span>
         </div>
        ) : viewModel.translation ? (
         <p className="break-words  leading-relaxed text-text-primary">{viewModel.translation}</p>

@@ -6,24 +6,35 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Loader2, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { cn } from "@/lib/utils";
 
 interface QuickNoteButtonProps {
  className?: string;
  variant?: "default" | "outline" | "ghost" | "dashed";
  size?: "sm" | "md" | "lg";
+ compactOnTablet?: boolean;
 }
 
 export function QuickNoteButton({
  className = "",
  variant = "default",
  size = "md",
+ compactOnTablet = false,
 }: QuickNoteButtonProps) {
  const [isCreating, setIsCreating] = useState(false);
  const supabase = createClient();
  const router = useRouter();
+ const focusModeEnabled = useFocusModeStore((s) => s.enabled);
 
  const handleCreate = async () => {
   if (isCreating) return;
+  if (focusModeEnabled) {
+   toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
+   return;
+  }
+
   setIsCreating(true);
 
   try {
@@ -59,8 +70,7 @@ export function QuickNoteButton({
    if (error) throw error;
 
    router.push(`/notes/${data.id}`);
-  } catch (error) {
-   console.error("Error creating quick note:", error);
+  } catch {
    toast.error("Không thể tạo ghi chú nhanh");
   } finally {
    setIsCreating(false);
@@ -69,38 +79,36 @@ export function QuickNoteButton({
 
  if (variant === "dashed") {
   return (
-   <button
+   <Button
+    type="button"
+    variant="outline"
     onClick={handleCreate}
-    disabled={isCreating}
-    className={`w-full py-4 border-2 border-dashed border-border-default rounded-2xl  text-text-muted hover:  hover:border-accent/40 transition-colors flex items-center justify-center gap-2  font-medium disabled:opacity-50 ${className}`}
+    disabled={isCreating || focusModeEnabled}
+    aria-label="Tạo ghi chú nhanh"
+    title="Tạo ghi chú nhanh"
+    className={cn("min-h-14 w-full border-dashed text-text-muted", className)}
    >
-    {isCreating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
-    Ghi Chú Nhanh
-   </button>
+    {isCreating ? <Loader2 className="size-4 animate-spin" /> : <Zap className="size-4" />}
+    Ghi chú nhanh
+   </Button>
   );
  }
 
- const sizeClasses = {
-  sm: "min-h-11 px-3 text-xs",
-  md: "min-h-11 px-5 text-sm",
-  lg: "h-12 px-6 text-base",
- };
-
- const variantClasses = {
-  default:
-   "bg-bg-elevated border border-border-default hover:border-accent/40 hover:bg-accent/5 text-text-primary",
-  outline: "border border-border-default hover:border-accent/40 text-text-secondary hover: ",
-  ghost: "text-text-secondary hover:  hover:bg-accent/5",
- };
+ const buttonSize = size === "sm" ? "sm" : size === "lg" ? "lg" : "default";
 
  return (
-  <button
+  <Button
+   type="button"
+   variant={variant}
+   size={compactOnTablet ? "icon-lg" : buttonSize}
    onClick={handleCreate}
-   disabled={isCreating}
-   className={`inline-flex items-center gap-2 rounded-2xl  font-semibold transition-colors disabled:opacity-50 shadow-sm ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+   disabled={isCreating || focusModeEnabled}
+   aria-label="Tạo ghi chú nhanh"
+   title="Tạo ghi chú nhanh"
+   className={cn(compactOnTablet && "2xl:w-auto 2xl:px-3", className)}
   >
-   {isCreating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
-   Ghi Chú Nhanh
-  </button>
+   {isCreating ? <Loader2 className="size-4 animate-spin" /> : <Zap className="size-4" />}
+   <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Ghi chú nhanh</span>
+  </Button>
  );
 }

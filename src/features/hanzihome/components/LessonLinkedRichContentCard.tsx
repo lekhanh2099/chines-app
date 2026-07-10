@@ -6,6 +6,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LinkedContentSkeleton } from "@/features/hanzihome/components/LinkedContentSkeleton";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
@@ -174,9 +175,7 @@ export function LessonLinkedRichContentCard({
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
-      Đang kiểm tra nội dung...
-     </div>
+     <LinkedContentSkeleton label="Đang kiểm tra nội dung liên kết" />
     ) : note ? (
      <InlineRichContent />
     ) : (

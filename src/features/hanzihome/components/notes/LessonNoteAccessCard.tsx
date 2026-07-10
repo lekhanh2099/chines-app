@@ -5,6 +5,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LinkedContentSkeleton } from "@/features/hanzihome/components/LinkedContentSkeleton";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
@@ -70,9 +71,7 @@ export function LessonNoteAccessCard() {
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-4  font-semibold text-text-muted">
-      Đang kiểm tra ghi chú...
-     </div>
+     <LinkedContentSkeleton label="Đang kiểm tra ghi chú của bài" />
     ) : note ? (
      <LessonSplitNoteEditor noteId={note.id} />
     ) : (

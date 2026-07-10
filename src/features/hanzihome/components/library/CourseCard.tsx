@@ -28,7 +28,9 @@ export function CourseCard({
  editMode?: boolean;
 }) {
  const primaryBook = stats.books[0];
- const { lessons: courseLessons } = useHanziHomeCourseLessons(course.id);
+ const { lessons: courseLessons, isLoading: areLessonsLoading } = useHanziHomeCourseLessons(
+  course.id,
+ );
  const [selectedLessonId, setSelectedLessonId] = useState(stats.fallbackLessonId ?? "");
 
  const effectiveLesson = useMemo(() => {
@@ -108,12 +110,16 @@ export function CourseCard({
      </div>
     </div>
 
-    <Button asChild className="hidden shrink-0 sm:inline-flex">
-     <Link href={href} prefetch={false}>
-      <ArrowRight className="h-4 w-4" />
-      Vào học
-     </Link>
-    </Button>
+    {areLessonsLoading ? (
+     <div className="hidden h-11 w-24 shrink-0 animate-pulse rounded-xl bg-bg-subtle sm:block" />
+    ) : (
+     <Button asChild className="hidden shrink-0 sm:inline-flex">
+      <Link href={href} prefetch={false}>
+       <ArrowRight className="h-4 w-4" />
+       Vào học
+      </Link>
+     </Button>
+    )}
    </div>
 
    <div className="flex flex-wrap gap-2">
@@ -129,7 +135,9 @@ export function CourseCard({
        key={book.id}
        className="flex items-center gap-1 rounded-lg border border-border-default/80 bg-bg-primary px-2.5 py-1.5"
       >
-       <span className="text-xs font-bold text-text-secondary">{book.shortTitle || book.title}</span>
+       <span className="text-xs font-bold text-text-secondary">
+        {book.shortTitle || book.title}
+       </span>
        {editMode ? <BookCrudActions book={book} /> : null}
       </div>
      ))}
@@ -137,7 +145,12 @@ export function CourseCard({
    ) : null}
 
    <div className="mt-auto grid gap-2 pt-5">
-    {courseLessons.length > 0 && (
+    {areLessonsLoading ? (
+     <div className="grid animate-pulse gap-1.5">
+      <div className="h-3 w-20 rounded-full bg-bg-subtle" />
+      <div className="h-11 w-full rounded-xl bg-bg-subtle" />
+     </div>
+    ) : courseLessons.length > 0 ? (
      <div className="grid gap-1.5">
       <span className="text-xs font-bold text-text-secondary">Bài sẽ mở</span>
 
@@ -156,14 +169,18 @@ export function CourseCard({
        {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
       </div>
      </div>
-    )}
+    ) : null}
 
-    <Button asChild className="sm:hidden">
-     <Link href={href} prefetch={false}>
-      <ArrowRight className="h-4 w-4" />
-      Vào học
-     </Link>
-    </Button>
+    {areLessonsLoading ? (
+     <div className="h-11 w-full animate-pulse rounded-xl bg-bg-subtle sm:hidden" />
+    ) : (
+     <Button asChild className="sm:hidden">
+      <Link href={href} prefetch={false}>
+       <ArrowRight className="h-4 w-4" />
+       Vào học
+      </Link>
+     </Button>
+    )}
    </div>
   </Card>
  );

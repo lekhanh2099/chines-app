@@ -25,6 +25,7 @@ import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
 import { useSplitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
+import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 
 interface NoteEditorPanelProps {
  noteId: string;
@@ -275,9 +276,7 @@ export function NoteEditorPanel({
    style={{ display: isVisible ? "flex" : "none" }}
   >
    {isLoading ? (
-    <div className="flex h-full items-center justify-center">
-     <Loader2 className="w-8 h-8 animate-spin  " />
-    </div>
+    <NoteEditorSkeleton />
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
      <p className="text-text-muted">Không tìm thấy ghi chú.</p>

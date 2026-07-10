@@ -10,11 +10,13 @@ export function NoteTabBar({
  trailing,
  actionsRef,
  onCreateNote,
+ focusLocked = false,
 }: {
  leading?: ReactNode;
  trailing?: ReactNode;
  actionsRef?: Ref<HTMLDivElement>;
  onCreateNote?: () => void;
+ focusLocked?: boolean;
 }) {
  const tabs = useNoteTabsStore((s) => s.tabs);
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
@@ -78,7 +80,7 @@ export function NoteTabBar({
      {trailing ? <div className="shrink-0">{trailing}</div> : null}
     </div>
    ) : null}
-   <div className="flex min-h-12 min-w-0 flex-wrap items-center gap-2 px-3 py-2 sm:px-4">
+   <div className="flex min-h-12 min-w-0 flex-nowrap items-center gap-2 overflow-hidden px-3 py-2 sm:px-4">
     {visibleTabs.length > 0 ? (
      <div
       ref={scrollRef}
@@ -95,6 +97,7 @@ export function NoteTabBar({
         isActive={tab.noteId === activeNoteId}
         isDragging={dragIndex === index}
         isDropTarget={dropIndex === index && dragIndex !== index}
+        focusLocked={focusLocked}
         onActivate={() => setActive(tab.noteId)}
         onClose={() => closeTab(tab.noteId)}
         onDragStart={(e) => handleDragStart(e, index)}
@@ -109,16 +112,17 @@ export function NoteTabBar({
     )}
     <button
      type="button"
-     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle"
+     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle disabled:opacity-50"
      onClick={onCreateNote}
-     title="Mở thêm ghi chú"
-     aria-label="Mở thêm ghi chú"
+     disabled={focusLocked}
+     title={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
+     aria-label={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
     >
      <Plus className="h-4 w-4" />
     </button>
     <div
      ref={actionsRef}
-     className="ml-auto flex min-w-0 max-w-full shrink-0 items-center gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2"
+     className="flex min-w-0 max-w-[min(56vw,44rem)] shrink items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2"
     />
    </div>
   </div>
@@ -130,6 +134,7 @@ function TabItem({
  isActive,
  isDragging,
  isDropTarget,
+ focusLocked,
  onActivate,
  onClose,
  onDragStart,
@@ -142,6 +147,7 @@ function TabItem({
  isActive: boolean;
  isDragging: boolean;
  isDropTarget: boolean;
+ focusLocked: boolean;
  onActivate: () => void;
  onClose: () => void;
  onDragStart: (e: React.DragEvent) => void;
@@ -153,7 +159,7 @@ function TabItem({
   <div
    role="tab"
    aria-selected={isActive}
-   draggable
+   draggable={!focusLocked}
    onDragStart={onDragStart}
    onDragOver={onDragOver}
    onDrop={onDrop}
@@ -189,11 +195,13 @@ function TabItem({
       : "opacity-0 group-hover:opacity-100 text-text-muted hover:text-text-primary hover:bg-bg-subtle",
     )}
     aria-label={`Đóng tab ${tab.title}`}
+    disabled={focusLocked}
     onClick={(e) => {
      e.stopPropagation();
+     if (focusLocked) return;
      onClose();
     }}
-    title="Đóng tab"
+    title={focusLocked ? "Focus mode đang giữ tab hiện tại" : "Đóng tab"}
    >
     <X className="w-3 h-3" />
    </button>
