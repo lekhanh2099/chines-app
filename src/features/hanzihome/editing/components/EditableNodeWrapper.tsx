@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SoftDeleteConfirmDialog } from "./SoftDeleteConfirmDialog";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
@@ -108,7 +109,6 @@ export function EditableNodeWrapper({
  };
 
  const deleteNode = async () => {
-  if (!window.confirm(`Xóa mềm "${label || entityId}"? Bạn có thể khôi phục sau.`)) return;
   if (!record) {
    toast.error("Node này chưa có DB delete target.");
    return;
@@ -127,11 +127,12 @@ export function EditableNodeWrapper({
    if (isHanziHomeMutationConflict(error)) {
     await queryClient.invalidateQueries({
      queryKey: ["hanzihome", "lesson-detail", lessonId],
-    });
-    toast.error("Nội dung đã thay đổi, đang tải lại.");
-    return;
-   }
-   toast.error(error instanceof Error ? error.message : "Không thể xóa nội dung.");
+   });
+   toast.error("Nội dung đã thay đổi, đang tải lại.");
+   throw error;
+  }
+  toast.error(error instanceof Error ? error.message : "Không thể xóa nội dung.");
+  throw error;
   } finally {
    setIsDeleting(false);
   }
@@ -199,17 +200,23 @@ export function EditableNodeWrapper({
      </>
     ) : null}
     {canDelete ? (
-     <Button
-      type="button"
-      variant="outline"
-      size="icon-sm"
-      aria-label={`Xóa ${label || entityId}`}
-      disabled={isDeleting}
-      className="h-7 w-7 bg-bg-card/95 text-danger-text shadow-theme-sm"
-      onClick={deleteNode}
-     >
-      <Trash2 className="h-3.5 w-3.5" />
-     </Button>
+     <SoftDeleteConfirmDialog
+      itemType="nội dung"
+      itemLabel={label || entityId}
+      onConfirm={deleteNode}
+      trigger={
+       <Button
+        type="button"
+        variant="outline"
+        size="icon-sm"
+        aria-label={`Xóa ${label || entityId}`}
+        disabled={isDeleting}
+        className="h-7 w-7 bg-bg-card/95 text-danger-text shadow-theme-sm"
+       >
+        <Trash2 className="h-3.5 w-3.5" />
+       </Button>
+      }
+     />
     ) : null}
    </div>
  );

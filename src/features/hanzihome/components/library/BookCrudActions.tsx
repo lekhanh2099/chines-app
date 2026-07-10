@@ -23,6 +23,7 @@ import {
  reorderCanonicalContent,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
+import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import type { HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -30,7 +31,15 @@ const formSchema = z.object({
  shortTitle: z.string().trim(),
 });
 
-export function BookCrudActions({ book }: { book: HanziHomeCourseBook }) {
+export function BookCrudActions({
+ book,
+ canMoveUp = true,
+ canMoveDown = true,
+}: {
+ book: HanziHomeCourseBook;
+ canMoveUp?: boolean;
+ canMoveDown?: boolean;
+}) {
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
  const form = useAppForm({
@@ -66,7 +75,7 @@ export function BookCrudActions({ book }: { book: HanziHomeCourseBook }) {
  });
 
  async function deleteBook() {
-  if (!book.updatedAt || !window.confirm(`Xóa mềm quyển "${book.title}"?`)) return;
+  if (!book.updatedAt) return;
   try {
    await deleteCanonicalContent({
     entityType: "book",
@@ -74,10 +83,16 @@ export function BookCrudActions({ book }: { book: HanziHomeCourseBook }) {
     expectedUpdatedAt: book.updatedAt,
     reason: `Xóa quyển ${book.title}`,
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+   await Promise.all([
+    queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
+    queryClient.invalidateQueries({
+     queryKey: ["hanzihome", "course-lessons", book.courseId],
+    }),
+   ]);
    toast.success("Đã xóa quyển. Có thể khôi phục trong Edit Mode.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể xóa quyển.");
+   throw error;
   }
  }
 
@@ -100,11 +115,12 @@ export function BookCrudActions({ book }: { book: HanziHomeCourseBook }) {
  }
 
  return (
-  <div className="flex items-center gap-0.5">
+  <div className="flex shrink-0 items-center gap-1">
    <Dialog open={open} onOpenChange={setOpen}>
     <DialogTrigger asChild>
-     <Button type="button" size="icon" variant="ghost" aria-label={`Sửa ${book.title}`}>
-      <Pencil className="h-3.5 w-3.5" />
+     <Button type="button" size="sm" variant="outline" aria-label={`Sửa ${book.title}`}>
+      <Pencil />
+      <span className="hidden sm:inline">Sửa</span>
      </Button>
     </DialogTrigger>
     <DialogContent>
@@ -145,31 +161,37 @@ export function BookCrudActions({ book }: { book: HanziHomeCourseBook }) {
     size="icon"
     variant="ghost"
     aria-label={`Đưa ${book.title} lên`}
-    disabled={!book.updatedAt || book.order === 1}
+    disabled={!book.updatedAt || !canMoveUp}
     onClick={() => void reorderBook(-1)}
    >
-    <ArrowUp className="h-3.5 w-3.5" />
+    <ArrowUp />
    </Button>
    <Button
     type="button"
     size="icon"
     variant="ghost"
     aria-label={`Đưa ${book.title} xuống`}
-    disabled={!book.updatedAt}
+    disabled={!book.updatedAt || !canMoveDown}
     onClick={() => void reorderBook(1)}
    >
-    <ArrowDown className="h-3.5 w-3.5" />
+    <ArrowDown />
    </Button>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Xóa ${book.title}`}
-    disabled={!book.updatedAt}
-    onClick={() => void deleteBook()}
-   >
-    <Trash2 className="h-3.5 w-3.5 text-danger-text" />
-   </Button>
+   <SoftDeleteConfirmDialog
+    itemType="quyển"
+    itemLabel={book.title}
+    onConfirm={deleteBook}
+    trigger={
+     <Button
+      type="button"
+      size="icon"
+      variant="destructive"
+      aria-label={`Xóa ${book.title}`}
+      disabled={!book.updatedAt}
+     >
+      <Trash2 />
+     </Button>
+    }
+   />
   </div>
  );
 }

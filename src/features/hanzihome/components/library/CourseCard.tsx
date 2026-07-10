@@ -63,6 +63,14 @@ export function CourseCard({
      )
    : stats.grammarCount;
 
+ const lessonCountByBook = useMemo(() => {
+  return courseLessons.reduce<Map<string, number>>((counts, lesson) => {
+   if (!lesson.bookId) return counts;
+   counts.set(lesson.bookId, (counts.get(lesson.bookId) ?? 0) + 1);
+   return counts;
+  }, new Map());
+ }, [courseLessons]);
+
  const courseLessonOptions: IOption[] = courseLessons.map((lesson) => ({
   value: lesson.id,
   label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`,
@@ -129,19 +137,54 @@ export function CourseCard({
    </div>
 
    {stats.books.length > 0 ? (
-    <div className="flex flex-wrap gap-2">
-     {stats.books.map((book) => (
-      <div
-       key={book.id}
-       className="flex items-center gap-1 rounded-lg border border-border-default/80 bg-bg-primary px-2.5 py-1.5"
-      >
-       <span className="text-xs font-bold text-text-secondary">
+    editMode ? (
+     <section className="grid gap-2" aria-label={`Quản lý quyển của ${course.title}`}>
+      <div className="flex items-center justify-between gap-3">
+       <h3 className="text-xs font-bold uppercase text-text-secondary">Các quyển trong khóa</h3>
+       <span className="text-xs font-semibold text-text-secondary">
+        {stats.books.length} quyển
+       </span>
+      </div>
+
+      <div className="grid gap-2">
+       {stats.books.map((book, index) => {
+        const lessonCount = lessonCountByBook.get(book.id) ?? 0;
+
+        return (
+         <div
+          key={book.id}
+          className="flex min-w-0 flex-col gap-3 rounded-lg border border-border-default bg-bg-primary p-3 sm:flex-row sm:items-center sm:justify-between"
+         >
+          <div className="min-w-0">
+           <p className="truncate text-sm font-bold text-text-primary">{book.title}</p>
+           <p className="mt-0.5 text-xs font-medium text-text-secondary">
+            {book.shortTitle && book.shortTitle !== book.title ? `${book.shortTitle} · ` : ""}
+            {lessonCount} bài · Thứ tự {book.order}
+           </p>
+          </div>
+
+          <BookCrudActions
+           book={book}
+           canMoveUp={index > 0}
+           canMoveDown={index < stats.books.length - 1}
+          />
+         </div>
+        );
+       })}
+      </div>
+     </section>
+    ) : (
+     <div className="flex flex-wrap gap-2">
+      {stats.books.map((book) => (
+       <span
+        key={book.id}
+        className="rounded-lg border border-border-default/80 bg-bg-primary px-2.5 py-1.5 text-xs font-bold text-text-secondary"
+       >
         {book.shortTitle || book.title}
        </span>
-       {editMode ? <BookCrudActions book={book} /> : null}
-      </div>
-     ))}
-    </div>
+      ))}
+     </div>
+    )
    ) : null}
 
    <div className="mt-auto grid gap-2 pt-5">

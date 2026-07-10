@@ -23,6 +23,7 @@ import {
  reorderCanonicalContent,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
+import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -73,7 +74,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
  });
 
  async function deleteCourse() {
-  if (!course.updatedAt || !window.confirm(`Xóa mềm khóa học "${course.title}"?`)) return;
+  if (!course.updatedAt) return;
   try {
    await deleteCanonicalContent({
     entityType: "course",
@@ -85,6 +86,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
    toast.success("Đã xóa khóa học. Có thể khôi phục trong Edit Mode.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể xóa khóa học.");
+   throw error;
   }
  }
 
@@ -173,16 +175,22 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
    >
     <ArrowDown className="h-4 w-4" />
    </Button>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Xóa ${course.title}`}
-    disabled={!course.updatedAt}
-    onClick={() => void deleteCourse()}
-   >
-    <Trash2 className="h-4 w-4 text-danger-text" />
-   </Button>
+   <SoftDeleteConfirmDialog
+    itemType="khóa học"
+    itemLabel={course.title}
+    onConfirm={deleteCourse}
+    trigger={
+     <Button
+      type="button"
+      size="icon"
+      variant="ghost"
+      aria-label={`Xóa ${course.title}`}
+      disabled={!course.updatedAt}
+     >
+      <Trash2 className="h-4 w-4 text-danger-text" />
+     </Button>
+    }
+   />
   </div>
  );
 }

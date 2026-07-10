@@ -23,6 +23,7 @@ import {
  reorderCanonicalContent,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
+import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -87,7 +88,7 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
  });
 
  async function deleteLesson() {
-  if (!updatedAt || !window.confirm(`Xóa mềm bài "${lesson.titleZh}"?`)) return;
+  if (!updatedAt) return;
   try {
    await deleteCanonicalContent({
     entityType: "lesson",
@@ -99,6 +100,7 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
    toast.success("Đã xóa bài học.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể xóa bài học.");
+   throw error;
   }
  }
 
@@ -190,16 +192,22 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
    >
     <ArrowDown className="h-3.5 w-3.5" />
    </Button>
-   <Button
-    type="button"
-    size="icon-sm"
-    variant="ghost"
-    aria-label={`Xóa ${lesson.titleZh}`}
-    disabled={!updatedAt}
-    onClick={() => void deleteLesson()}
-   >
-    <Trash2 className="h-3.5 w-3.5 text-danger-text" />
-   </Button>
+   <SoftDeleteConfirmDialog
+    itemType="bài học"
+    itemLabel={lesson.titleZh}
+    onConfirm={deleteLesson}
+    trigger={
+     <Button
+      type="button"
+      size="icon-sm"
+      variant="ghost"
+      aria-label={`Xóa ${lesson.titleZh}`}
+      disabled={!updatedAt}
+     >
+      <Trash2 className="h-3.5 w-3.5 text-danger-text" />
+     </Button>
+    }
+   />
   </div>
  );
 }

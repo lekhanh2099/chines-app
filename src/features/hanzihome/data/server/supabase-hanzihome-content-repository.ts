@@ -879,6 +879,9 @@ async function getLessonSummaryRows(courseId?: string) {
     grammar_count:hanzihome_grammar_points(count)
    `,
   )
+  .is("deleted_at", null)
+  .is("course.deleted_at", null)
+  .is("book.deleted_at", null)
   .order("lesson_order");
 
  if (courseId) query = query.eq("course_id", courseId);
@@ -911,6 +914,9 @@ async function getLessonDetailRow(lessonId: string) {
     `,
     )
     .eq("id", lessonId)
+    .is("deleted_at", null)
+    .is("course.deleted_at", null)
+    .is("book.deleted_at", null)
     .limit(1),
    z.array(LessonDetailRowSchema),
   ),
@@ -1210,6 +1216,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     client
      .from("hanzihome_courses")
      .select("id, slug, title, subtitle, type, course_order, updated_at")
+     .is("deleted_at", null)
      .order("course_order"),
     z.array(CourseRowSchema),
    ),
@@ -1218,6 +1225,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     client
      .from("hanzihome_course_books")
      .select("id, course_id, title, short_title, book_order, updated_at")
+     .is("deleted_at", null)
      .order("book_order"),
     z.array(BookRowSchema),
    ),
