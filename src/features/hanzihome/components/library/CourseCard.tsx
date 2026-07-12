@@ -5,73 +5,65 @@ import Link from "next/link";
 import { ArrowRight, BookMarked } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Select from "@/components/ui/select/index";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
-import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
+import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { IOption } from "@/types/option";
 
 import { BookCrudActions } from "./BookCrudActions";
-import { CourseCrudActions } from "./CourseCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";
 import { MiniMetric } from "./MiniMetric";
-import type { CourseStats } from "./types";
 
 export function CourseCard({
  course,
- stats,
+ book,
  editMode = false,
+ canMoveBookUp = false,
+ canMoveBookDown = false,
 }: {
  course: HanziHomeCatalogCourse;
- stats: CourseStats;
+ book: HanziHomeCourseBook;
  editMode?: boolean;
+ canMoveBookUp?: boolean;
+ canMoveBookDown?: boolean;
 }) {
- const primaryBook = stats.books[0];
  const { lessons: courseLessons, isLoading: areLessonsLoading } = useHanziHomeCourseLessons(
   course.id,
  );
- const [selectedLessonId, setSelectedLessonId] = useState(stats.fallbackLessonId ?? "");
+ const bookLessons = useMemo(
+  () => courseLessons.filter((lesson) => lesson.bookId === book.id),
+  [book.id, courseLessons],
+ );
+ const [selectedLessonId, setSelectedLessonId] = useState("");
 
  const effectiveLesson = useMemo(() => {
-  const selectedExists = courseLessons.some((lesson) => lesson.id === selectedLessonId);
-  const effectiveLessonId =
-   (selectedExists ? selectedLessonId : null) ||
-   stats.fallbackLessonId ||
-   courseLessons[0]?.id ||
-   "";
+  const selectedExists = bookLessons.some((lesson) => lesson.id === selectedLessonId);
+  const effectiveLessonId = (selectedExists ? selectedLessonId : null) || bookLessons[0]?.id || "";
 
-  return courseLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
- }, [courseLessons, selectedLessonId, stats.fallbackLessonId]);
+  return bookLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
+ }, [bookLessons, selectedLessonId]);
 
  const effectiveLessonId = effectiveLesson?.id ?? "";
  const href = buildHanziHomeLessonHref({
   courseId: course.id,
+  bookId: book.id,
   lessonNumber: effectiveLesson?.lessonNumber,
  });
 
- const visibleLessonCount = courseLessons.length || stats.lessonCount;
- const visibleVocabCount =
-  courseLessons.length > 0
-   ? courseLessons.reduce((sum, lesson) => sum + (lesson.vocabCount ?? lesson.vocabIds.length), 0)
-   : stats.vocabCount;
- const visibleGrammarCount =
-  courseLessons.length > 0
-   ? courseLessons.reduce(
-      (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
-      0,
-     )
-   : stats.grammarCount;
+ const visibleLessonCount = bookLessons.length;
+ const visibleVocabCount = bookLessons.reduce(
+  (sum, lesson) => sum + (lesson.vocabCount ?? lesson.vocabIds.length),
+  0,
+ );
+ const visibleGrammarCount = bookLessons.reduce(
+  (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
+  0,
+ );
 
- const lessonCountByBook = useMemo(() => {
-  return courseLessons.reduce<Map<string, number>>((counts, lesson) => {
-   if (!lesson.bookId) return counts;
-   counts.set(lesson.bookId, (counts.get(lesson.bookId) ?? 0) + 1);
-   return counts;
-  }, new Map());
- }, [courseLessons]);
-
- const courseLessonOptions: IOption[] = courseLessons.map((lesson) => ({
+ const courseLessonOptions: IOption[] = bookLessons.map((lesson) => ({
   value: lesson.id,
   label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`,
  }));
@@ -83,125 +75,65 @@ export function CourseCard({
   <Card
    variant="section"
    padding="none"
-   className="group flex h-full min-w-0 flex-col gap-4 rounded-xl p-4 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-5"
+   className="group flex min-w-0 flex-col gap-2.5 rounded-xl p-3 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-4"
   >
-   <div className="flex min-w-0 items-start justify-between gap-4">
-    <div className="flex min-w-0 gap-3">
-     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
-      <BookMarked className="h-5 w-5" />
+   <div className="flex min-w-0 items-start gap-2.5">
+    <div className="flex min-w-0 gap-2.5">
+     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+      <BookMarked className="size-4" />
      </span>
 
-     <div className="min-w-0 grid gap-1.5">
+     <div className="min-w-0 flex-1 grid gap-1">
       <div className="flex flex-wrap items-center gap-2">
-       <span className="text-sm font-bold text-text-secondary">
-        {primaryBook?.shortTitle || primaryBook?.title || course.type}
-       </span>
-
-       {stats.books.length > 0 && (
-        <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-xs font-bold text-text-secondary">
-         {stats.books.length} quyển
-        </span>
-       )}
-
-       {editMode ? <CourseCrudActions course={course} /> : null}
+       <Badge variant="purple">Quyển</Badge>
+       {editMode ? (
+        <BookCrudActions book={book} canMoveUp={canMoveBookUp} canMoveDown={canMoveBookDown} />
+       ) : null}
       </div>
 
-      <h2 className="line-clamp-2 text-xl font-black leading-snug text-text-primary sm:text-2xl">
-       {course.title}
-      </h2>
+      <h4 className="line-clamp-2 text-lg font-black leading-snug text-text-primary">
+       {book.shortTitle || book.title}
+      </h4>
 
-      {course.subtitle && (
-       <p className="line-clamp-2 text-sm font-semibold leading-5 text-text-secondary">
-        {course.subtitle}
-       </p>
-      )}
+      {book.shortTitle && book.shortTitle !== book.title && !book.title.startsWith(course.title) ? (
+       <p className="line-clamp-1 text-sm font-medium leading-5 text-text-muted">{book.title}</p>
+      ) : null}
      </div>
     </div>
-
-    {areLessonsLoading ? (
-     <div className="hidden h-11 w-24 shrink-0 animate-pulse rounded-xl bg-bg-subtle sm:block" />
-    ) : (
-     <Button asChild className="hidden shrink-0 sm:inline-flex">
-      <Link href={href} prefetch={false}>
-       <ArrowRight className="h-4 w-4" />
-       Vào học
-      </Link>
-     </Button>
-    )}
    </div>
 
-   <div className="flex flex-wrap gap-2">
-    <MiniMetric label="Bài" value={visibleLessonCount} />
-    <MiniMetric label="Từ" value={visibleVocabCount} />
-    <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
-   </div>
+   {areLessonsLoading ? (
+    <div className="flex animate-pulse gap-2">
+     <div className="h-10 w-20 rounded-xl bg-bg-subtle" />
+     <div className="h-10 w-20 rounded-xl bg-bg-subtle" />
+     <div className="h-10 w-24 rounded-xl bg-bg-subtle" />
+    </div>
+   ) : (
+    <div className="grid grid-cols-3 gap-2">
+     <MiniMetric label="Bài" value={visibleLessonCount} />
+     <MiniMetric label="Từ" value={visibleVocabCount} />
+     <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
+    </div>
+   )}
 
-   {stats.books.length > 0 ? (
-    editMode ? (
-     <section className="grid gap-2" aria-label={`Quản lý quyển của ${course.title}`}>
-      <div className="flex items-center justify-between gap-3">
-       <h3 className="text-xs font-bold uppercase text-text-secondary">Các quyển trong khóa</h3>
-       <span className="text-xs font-semibold text-text-secondary">
-        {stats.books.length} quyển
-       </span>
-      </div>
-
-      <div className="grid gap-2">
-       {stats.books.map((book, index) => {
-        const lessonCount = lessonCountByBook.get(book.id) ?? 0;
-
-        return (
-         <div
-          key={book.id}
-          className="flex min-w-0 flex-col gap-3 rounded-lg border border-border-default bg-bg-primary p-3 sm:flex-row sm:items-center sm:justify-between"
-         >
-          <div className="min-w-0">
-           <p className="truncate text-sm font-bold text-text-primary">{book.title}</p>
-           <p className="mt-0.5 text-xs font-medium text-text-secondary">
-            {book.shortTitle && book.shortTitle !== book.title ? `${book.shortTitle} · ` : ""}
-            {lessonCount} bài · Thứ tự {book.order}
-           </p>
-          </div>
-
-          <BookCrudActions
-           book={book}
-           canMoveUp={index > 0}
-           canMoveDown={index < stats.books.length - 1}
-          />
-         </div>
-        );
-       })}
-      </div>
-     </section>
-    ) : (
-     <div className="flex flex-wrap gap-2">
-      {stats.books.map((book) => (
-       <span
-        key={book.id}
-        className="rounded-lg border border-border-default/80 bg-bg-primary px-2.5 py-1.5 text-xs font-bold text-text-secondary"
-       >
-        {book.shortTitle || book.title}
-       </span>
-      ))}
-     </div>
-    )
-   ) : null}
-
-   <div className="mt-auto grid gap-2 pt-5">
+   <div className="grid gap-1.5 rounded-xl border border-border-default bg-bg-subtle p-2">
     {areLessonsLoading ? (
      <div className="grid animate-pulse gap-1.5">
       <div className="h-3 w-20 rounded-full bg-bg-subtle" />
       <div className="h-11 w-full rounded-xl bg-bg-subtle" />
      </div>
-    ) : courseLessons.length > 0 ? (
-     <div className="grid gap-1.5">
-      <span className="text-xs font-bold text-text-secondary">Bài sẽ mở</span>
+    ) : bookLessons.length > 0 ? (
+     <div className="grid gap-1">
+      <span className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">
+       Chọn bài để học
+      </span>
 
       <div className="flex min-w-0 items-center gap-2">
        <div className="min-w-0 flex-1">
         <Select
          options={courseLessonOptions}
          selectValue={selectedOption}
+         triggerAriaLabel={`Chọn bài trong ${book.shortTitle || book.title}`}
          triggerPlaceholder="Chọn bài"
          onChange={(option: IOption | null) => {
           if (option?.value) setSelectedLessonId(String(option.value));
@@ -210,20 +142,15 @@ export function CourseCard({
        </div>
 
        {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+       <Button asChild size="sm">
+        <Link href={href} prefetch={false}>
+         Mở bài
+         <ArrowRight data-icon="inline-end" />
+        </Link>
+       </Button>
       </div>
      </div>
     ) : null}
-
-    {areLessonsLoading ? (
-     <div className="h-11 w-full animate-pulse rounded-xl bg-bg-subtle sm:hidden" />
-    ) : (
-     <Button asChild className="sm:hidden">
-      <Link href={href} prefetch={false}>
-       <ArrowRight className="h-4 w-4" />
-       Vào học
-      </Link>
-     </Button>
-    )}
    </div>
   </Card>
  );

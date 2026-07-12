@@ -22,6 +22,7 @@ export const editableEntityTypes = [
  "exercise_dialogue_line",
  "exercise_cloze_segment",
  "exercise_cloze_answer",
+ "listening_item",
  "reading_item",
  "reading_question",
  "text_block",

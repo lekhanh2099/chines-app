@@ -8,6 +8,7 @@ export function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
   <Link
    href={buildHanziHomeLessonHref({
     courseId: item.courseId,
+    bookId: item.bookId,
     lessonNumber: item.lessonNumber,
     module: "vocab",
    })}

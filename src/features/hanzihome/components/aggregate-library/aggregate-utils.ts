@@ -59,6 +59,7 @@ export function groupByLesson(items: AggregateResourceItem[]) {
   {
    lessonId: string;
    courseId: string;
+   bookId: string;
    lessonNumber: number;
    lessonOrder: number;
    lessonTitle: string;
@@ -75,6 +76,7 @@ export function groupByLesson(items: AggregateResourceItem[]) {
    groups.set(item.lessonId, {
     lessonId: item.lessonId,
     courseId: item.courseId,
+    bookId: item.bookId,
     lessonNumber: item.lessonNumber,
     lessonOrder: item.lessonOrder,
     lessonTitle: item.lessonTitle,

@@ -47,8 +47,20 @@ import { cn } from "@/lib/utils";
 type HanziHomeHeaderBreadcrumb = {
  courses: Array<{ id: string; title: string }>;
  selectedCourse: { id: string; title: string };
- selectedLesson: { id: string; lessonNumber: number; title: string; titleZh?: string };
- lessons: Array<{ id: string; lessonNumber: number; title: string; titleZh?: string }>;
+ selectedLesson: {
+  id: string;
+  lessonNumber: number;
+  title: string;
+  titleZh?: string;
+  bookId?: string;
+ };
+ lessons: Array<{
+  id: string;
+  lessonNumber: number;
+  title: string;
+  titleZh?: string;
+  bookId?: string;
+ }>;
 };
 
 type SimpleHeaderBreadcrumb = {
@@ -74,8 +86,7 @@ export function Header({ user }: { user?: User | null }) {
  const toggleFocusMode = useFocusModeStore((s) => s.toggle);
  const headerToolbarContent = useHeaderToolbarStore((s) => s.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
- const currentHanziHomeModule = searchParams.get("module");
- const isRadicalsWorkspaceRoute = isHanziHomeRoute && currentHanziHomeModule === "radicals";
+ const isRadicalsWorkspaceRoute = pathname === "/radicals";
  const isHanziHomeLessonWorkspaceRoute =
   isHanziHomeRoute &&
   !isRadicalsWorkspaceRoute &&
@@ -99,8 +110,10 @@ export function Header({ user }: { user?: User | null }) {
   const lessons = courseLessonsQuery.lessons;
   const lessonFromUrl = searchParams.get("lesson");
   const legacyLessonIdFromUrl = searchParams.get("lessonId");
+  const bookIdFromUrl = searchParams.get("bookId");
   const selectedLesson =
-   findLessonByRouteParam(lessons, lessonFromUrl, legacyLessonIdFromUrl) ?? lessons[0];
+   findLessonByRouteParam(lessons, lessonFromUrl, legacyLessonIdFromUrl, bookIdFromUrl) ??
+   lessons[0];
 
   if (!selectedCourse || !selectedLesson) return null;
 
@@ -118,9 +131,8 @@ export function Header({ user }: { user?: User | null }) {
   selectedCourseId,
  ]);
  const simpleBreadcrumb = useMemo(
-  () =>
-   getSimpleHeaderBreadcrumb(pathname, currentHanziHomeModule, isHanziHomeLessonWorkspaceRoute),
-  [currentHanziHomeModule, isHanziHomeLessonWorkspaceRoute, pathname],
+  () => getSimpleHeaderBreadcrumb(pathname, isHanziHomeLessonWorkspaceRoute),
+  [isHanziHomeLessonWorkspaceRoute, pathname],
  );
  const hasRouteToolbar = Boolean(headerToolbarContent || hanzihomeBreadcrumb || simpleBreadcrumb);
 
@@ -179,14 +191,19 @@ export function Header({ user }: { user?: User | null }) {
   setSearchValue("");
  };
 
- const navigateHanziHome = (lessonNumber: number) => {
+ const navigateHanziHome = (lessonId: string) => {
   if (focusModeEnabled) return;
+
+  const lesson = hanzihomeBreadcrumb?.lessons.find((item) => item.id === lessonId);
+  if (!lesson) return;
 
   const nextParams = new URLSearchParams(searchParams.toString());
   const currentModule = nextParams.get("module");
 
   nextParams.set("courseId", selectedCourseId);
-  nextParams.set("lesson", getLessonRouteValue(lessonNumber));
+  nextParams.set("lesson", getLessonRouteValue(lesson.lessonNumber));
+  if (lesson.bookId) nextParams.set("bookId", lesson.bookId);
+  else nextParams.delete("bookId");
   nextParams.delete("lessonId");
   if (currentModule) nextParams.set("module", currentModule);
 
@@ -269,7 +286,7 @@ function HeaderContextArea({
  breadcrumb: HanziHomeHeaderBreadcrumb | null;
  simpleBreadcrumb: SimpleHeaderBreadcrumb | null;
  focusModeEnabled: boolean;
- onNavigateHanziHome: (lessonNumber: number) => void;
+ onNavigateHanziHome: (lessonId: string) => void;
 }) {
  if (toolbarContent) {
   return <div className="flex min-w-0 items-center gap-2 overflow-hidden">{toolbarContent}</div>;
@@ -299,7 +316,7 @@ function HanziHomeBreadcrumbNav({
 }: {
  breadcrumb: HanziHomeHeaderBreadcrumb;
  focusModeEnabled: boolean;
- onNavigate: (lessonNumber: number) => void;
+ onNavigate: (lessonId: string) => void;
 }) {
  return (
   <AppHeaderBreadcrumb
@@ -325,10 +342,10 @@ function HanziHomeBreadcrumbNav({
    <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
    <AppHeaderBreadcrumbItem className="min-w-0">
     <Select
-     value={getLessonRouteValue(breadcrumb.selectedLesson.lessonNumber)}
+     value={breadcrumb.selectedLesson.id}
      disabled={focusModeEnabled}
-     onValueChange={(lessonNumber) => {
-      onNavigate(Number(lessonNumber));
+     onValueChange={(lessonId) => {
+      onNavigate(lessonId);
      }}
     >
      <SelectTrigger
@@ -343,7 +360,7 @@ function HanziHomeBreadcrumbNav({
      <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
       <SelectGroup>
        {breadcrumb.lessons.map((lesson) => (
-        <SelectItem key={lesson.id} value={getLessonRouteValue(lesson.lessonNumber)}>
+        <SelectItem key={lesson.id} value={lesson.id}>
          {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
         </SelectItem>
        ))}
@@ -377,23 +394,22 @@ function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcr
 
 function getSimpleHeaderBreadcrumb(
  pathname: string,
- hanzihomeModule: string | null,
  isHanziHomeLessonWorkspaceRoute: boolean,
 ): SimpleHeaderBreadcrumb | null {
  if (pathname === "/notebook") return { label: "Sổ tay" };
  if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
  if (pathname === "/settings") return { label: "Cài đặt" };
- if (pathname === "/hanzihome" && hanzihomeModule === "radicals") {
+ if (pathname === "/radicals") {
   return { label: "Bộ thủ" };
  }
  if (pathname === "/hanzihome" && !isHanziHomeLessonWorkspaceRoute) return { label: "HanziHome" };
- if (pathname === "/hanzihome/vocab/review") {
-  return { parent: { label: "Tổng hợp từ", href: "/hanzihome/vocab" }, label: "Ôn từ vựng" };
+ if (pathname === "/vocab/review") {
+  return { parent: { label: "Tổng hợp từ", href: "/vocab" }, label: "Ôn từ vựng" };
  }
- if (pathname === "/hanzihome/vocab") return { label: "Tổng hợp từ" };
- if (pathname === "/hanzihome/grammar") return { label: "Tổng hợp ngữ pháp" };
- if (pathname === "/hanzihome/memory-tips") return { label: "Nhắc nhanh" };
- if (pathname === "/hanzihome/html-artifacts") return { label: "Tệp HTML" };
+ if (pathname === "/vocab") return { label: "Tổng hợp từ" };
+ if (pathname === "/grammar") return { label: "Tổng hợp ngữ pháp" };
+ if (pathname === "/memory-tips") return { label: "Nhắc nhanh" };
+ if (pathname === "/html-artifacts") return { label: "Tệp HTML" };
  if (pathname.startsWith("/note/")) {
   return { parent: { label: "Ghi chú", href: "/notes" }, label: "Chia sẻ" };
  }

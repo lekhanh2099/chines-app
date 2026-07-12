@@ -31,6 +31,9 @@ type StudyModule = Exclude<HanziHomeModule, "radicals">;
 const moduleValues = [
  "overview",
  "lessonText",
+ "listening",
+ "dictation",
+ "script",
  "notes",
  "vocab",
  "grammar",
@@ -38,20 +41,31 @@ const moduleValues = [
  "radicals",
 ] as const;
 
+const standardLessonModules = new Set<StudyModule>([
+ "overview",
+ "lessonText",
+ "notes",
+ "vocab",
+ "grammar",
+ "review",
+]);
+const listeningLessonModules = new Set<StudyModule>(["listening", "dictation"]);
+
 function parseModule(value: string | null | undefined): HanziHomeModule | null {
  return moduleValues.some((item) => item === value) ? (value as HanziHomeModule) : null;
 }
 
-export function HanziHomeWorkspace() {
+export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const router = useRouter();
  const searchParams = useSearchParams();
  const catalogData = useHanziHomeCatalogData({ includeLessons: false });
  const learning = useLearningState();
  const searchNavigationIntent = useHanziHomeSearchNavigationIntent();
- const moduleFromUrl = parseModule(searchParams.get("module"));
+ const moduleFromUrl = forcedModule ?? parseModule(searchParams.get("module"));
  const searchParamsString = searchParams.toString();
  const lessonNumberFromUrl = searchParams.get("lesson");
  const legacyLessonIdFromUrl = searchParams.get("lessonId");
+ const bookIdFromUrl = searchParams.get("bookId");
  const [activeModule, setActiveModule] = useState<HanziHomeModule>(
   () => moduleFromUrl || learning.state.settings.lastModule || "overview",
  );
@@ -90,6 +104,7 @@ export function HanziHomeWorkspace() {
   courseLessons,
   lessonNumberFromUrl,
   legacyLessonIdFromUrl,
+  bookIdFromUrl,
  );
  const lessonFromLastState = courseLessons.find((item) => item.id === lastLessonId);
 
@@ -104,7 +119,7 @@ export function HanziHomeWorkspace() {
     searchNavigationIntent.lessonNumber === selectedLesson?.lessonNumber))
    ? searchNavigationIntent
    : null;
- const resolvedActiveModule = matchingSearchIntent?.module ?? activeModule;
+ const resolvedActiveModule = forcedModule ?? matchingSearchIntent?.module ?? activeModule;
 
  useEffect(() => {
   if (learning.isLoading || !selectedLesson || !selectedCourseId) return;
@@ -126,17 +141,21 @@ export function HanziHomeWorkspace() {
 
   const hasCanonicalLesson =
    lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
+  const hasCanonicalBook = !selectedLesson.bookId || bookIdFromUrl === selectedLesson.bookId;
   const hasLegacyLessonId = Boolean(legacyLessonIdFromUrl);
 
-  if (hasCanonicalLesson && !hasLegacyLessonId) return;
+  if (hasCanonicalLesson && hasCanonicalBook && !hasLegacyLessonId) return;
 
   const nextParams = new URLSearchParams(searchParamsString);
   nextParams.set("courseId", selectedCourseId);
+  if (selectedLesson.bookId) nextParams.set("bookId", selectedLesson.bookId);
+  else nextParams.delete("bookId");
   nextParams.set("lesson", getLessonRouteValue(selectedLesson.lessonNumber));
   nextParams.delete("lessonId");
   router.replace(`/hanzihome?${nextParams.toString()}`);
  }, [
   resolvedActiveModule,
+  bookIdFromUrl,
   legacyLessonIdFromUrl,
   lessonNumberFromUrl,
   router,
@@ -145,8 +164,15 @@ export function HanziHomeWorkspace() {
   selectedLesson,
  ]);
 
- const activeLessonModule: StudyModule =
+ const requestedLessonModule: StudyModule =
   resolvedActiveModule === "radicals" ? "overview" : resolvedActiveModule;
+ const isListeningLesson = selectedLesson?.tags?.includes("listening") ?? false;
+ const allowedLessonModules = isListeningLesson ? listeningLessonModules : standardLessonModules;
+ const activeLessonModule = allowedLessonModules.has(requestedLessonModule)
+  ? requestedLessonModule
+  : isListeningLesson
+    ? "listening"
+    : "overview";
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
  const lesson = resolvedActiveModule === "radicals" ? null : activeLessonDetail.lesson;
@@ -156,6 +182,22 @@ export function HanziHomeWorkspace() {
   clearHanziHomeSearchNavigationIntent();
   setActiveModule(nextModule);
   learning.updateSettings({ lastModule: nextModule });
+
+  if (nextModule === "radicals") {
+   router.push("/radicals");
+   return;
+  }
+
+  const nextParams = new URLSearchParams(searchParamsString);
+  nextParams.set("courseId", selectedCourseId);
+  if (selectedLesson?.bookId) nextParams.set("bookId", selectedLesson.bookId);
+  else nextParams.delete("bookId");
+  if (selectedLesson) {
+   nextParams.set("lesson", getLessonRouteValue(selectedLesson.lessonNumber));
+  }
+  nextParams.delete("lessonId");
+  nextParams.set("module", nextModule);
+  router.replace(`/hanzihome?${nextParams.toString()}`, { scroll: false });
  };
 
  const markVocab = (id: string, status: LearningStatus) => {

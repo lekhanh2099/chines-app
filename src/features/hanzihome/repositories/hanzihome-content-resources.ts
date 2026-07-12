@@ -158,6 +158,7 @@ function buildLessonSectionHref(lesson: HanziHomeLesson, type: string) {
 
  return buildHanziHomeLessonHref({
   courseId: lesson.courseId || "",
+  bookId: lesson.bookId,
   lessonNumber: lesson.lessonNumber,
   module: targetModule,
  });

@@ -51,27 +51,27 @@ const mainItems: NavItem[] = [
  {
   name: "Tổng hợp từ",
   icon: Languages,
-  href: "/hanzihome/vocab",
+  href: "/vocab",
  },
  {
   name: "Tổng hợp ngữ pháp",
   icon: BookOpenText,
-  href: "/hanzihome/grammar",
+  href: "/grammar",
  },
  {
   name: "Nhắc nhanh",
   icon: Lightbulb,
-  href: "/hanzihome/memory-tips",
+  href: "/memory-tips",
  },
  {
   name: "Tệp HTML",
   icon: FileCode2,
-  href: "/hanzihome/html-artifacts",
+  href: "/html-artifacts",
  },
  {
   name: "Bộ thủ",
   icon: Layers3,
-  href: "/hanzihome?module=radicals",
+  href: "/radicals",
  },
  { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
 ];

@@ -434,6 +434,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
            <Link
             href={buildHanziHomeLessonHref({
              courseId: group.courseId,
+             bookId: group.bookId,
              lessonNumber: group.lessonNumber,
              module: kind === "vocab" ? "vocab" : "grammar",
             })}
@@ -456,6 +457,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
                 ])
               : buildHanziHomeLessonHref({
                  courseId: group.courseId,
+                 bookId: group.bookId,
                  lessonNumber: group.lessonNumber,
                  module: "review",
                 })

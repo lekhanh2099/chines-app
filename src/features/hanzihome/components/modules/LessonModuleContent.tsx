@@ -7,6 +7,8 @@ import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-t
 import { ReviewWorkspace } from "@/features/hanzihome/components/review/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/vocab/VocabWorkspace";
 import type { StudyModule } from "@/features/hanzihome/context/types";
+import { ListeningWorkspace } from "@/features/hanzihome/listening/ListeningWorkspace";
+import { ListeningDictationWorkspace } from "@/features/hanzihome/listening/ListeningDictationWorkspace";
 
 export function LessonModuleContent({
  module,
@@ -20,6 +22,12 @@ export function LessonModuleContent({
    return <LessonOverview />;
   case "lessonText":
    return <LessonTextInlineEditor compact={compact} />;
+  case "listening":
+   return <ListeningWorkspace />;
+  case "dictation":
+   return <ListeningDictationWorkspace />;
+  case "script":
+   return <ListeningWorkspace />;
   case "notes":
    return <LessonNoteAccessCard />;
   case "vocab":

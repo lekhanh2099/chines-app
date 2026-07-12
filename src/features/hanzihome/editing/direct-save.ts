@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import type { EditableNodeRequest } from "./store/types";
 import type { HanziHomeEditableRecordMeta } from "@/features/hanzihome/types";
+import { listeningRuntimeItemSchema } from "@/features/hanzihome/listening/listening.schemas";
 import { HanziHomeMutationError } from "./mutation-error";
 
 const editableLessonSchema = z.looseObject({
@@ -153,6 +154,18 @@ function mapSection(value: unknown) {
  };
 }
 
+function mapListeningItem(value: unknown) {
+ const item = listeningRuntimeItemSchema.parse(value);
+ return {
+  prompt_zh: item.promptZh ?? null,
+  transcript: item.transcript ?? null,
+  options: item.options,
+  answer: item.answer ?? null,
+  explanation_vi: item.explanationVi ?? null,
+  metadata: item.metadata,
+ };
+}
+
 const resourceByEntityType = {
  course: "courses",
  book: "books",
@@ -183,6 +196,8 @@ function resourceForEntityType(entityType: string) {
   case "grammar_example":
   case "grammar_detail_section":
    return resourceByEntityType[entityType];
+  case "listening_item":
+   return "listening-items";
   default:
    return undefined;
  }
@@ -287,6 +302,8 @@ function changesForEntity(entityType: string, value: unknown) {
    return mapDetailSection(value);
   case "grammar_point":
    return mapGrammarPoint(value);
+  case "listening_item":
+   return mapListeningItem(value);
   default:
    return null;
  }

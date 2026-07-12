@@ -8,7 +8,7 @@ import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStu
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
-import { flatTabs } from "@/features/hanzihome/components/layout/moduleMeta";
+import { tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
@@ -66,7 +66,10 @@ export function ModuleSplitWorkspaceContent() {
  const runtime = useHanziHomeRuntime();
  const { splitEnabled, paneLayout, viewMode, splitPaneSize } = useHanziHomeWorkspaceLayout();
  const actions = useHanziHomeFeatureActions();
- const workspaceControls = splitEnabled ? (
+ const isListeningLesson = runtime.lesson.tags?.includes("listening") ?? false;
+ const effectiveSplitEnabled = splitEnabled && !isListeningLesson;
+ const lessonTabs = tabsForLesson(runtime.lesson);
+ const workspaceControls = effectiveSplitEnabled ? (
   <>
    <div className="min-w-0 px-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Split mode</p>
@@ -98,10 +101,12 @@ export function ModuleSplitWorkspaceContent() {
    <div className="min-w-0 flex-1">
     <HanziHomeStudyTabs
      value={runtime.activeModule}
-     items={flatTabs}
+     items={lessonTabs}
      onChange={(module) => {
-      const paneId = paneLayout.left.includes(module) ? "left" : "right";
-      actions.setPaneLayout(setPaneActive(paneLayout, paneId, module));
+      if (paneLayout.left.includes(module) || paneLayout.right.includes(module)) {
+       const paneId = paneLayout.left.includes(module) ? "left" : "right";
+       actions.setPaneLayout(setPaneActive(paneLayout, paneId, module));
+      }
       runtime.selectModule(module);
      }}
      className="bg-transparent p-0 shadow-none"
@@ -138,7 +143,7 @@ export function ModuleSplitWorkspaceContent() {
    </div>
   ) : null;
 
- if (!splitEnabled) {
+ if (!effectiveSplitEnabled) {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
     <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1">

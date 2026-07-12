@@ -2,15 +2,18 @@ import {
  BookOpen,
  FileText,
  GraduationCap,
+ Headphones,
  Home,
+ Keyboard,
  NotebookPen,
  RotateCcw,
+ ScrollText,
  type LucideIcon,
 } from "lucide-react";
 
 import type { HanziHomeStudyTab } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import type { StudyModule } from "@/features/hanzihome/context/types";
-import { studyModules } from "@/features/hanzihome/context/workspaceLayout";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 export type ModuleMeta = {
  key: StudyModule;
@@ -21,12 +24,27 @@ export type ModuleMeta = {
 export const moduleMeta = {
  overview: { key: "overview", label: "Tổng quan", icon: Home },
  lessonText: { key: "lessonText", label: "Bài khóa", icon: FileText },
+ listening: { key: "listening", label: "Luyện nghe", icon: Headphones },
+ dictation: { key: "dictation", label: "Nghe chép", icon: Keyboard },
+ script: { key: "script", label: "Script", icon: ScrollText },
  notes: { key: "notes", label: "Ghi chú", icon: NotebookPen },
  vocab: { key: "vocab", label: "Từ vựng", icon: BookOpen },
  grammar: { key: "grammar", label: "Ngữ pháp", icon: GraduationCap },
  review: { key: "review", label: "Ôn tập", icon: RotateCcw },
 } satisfies Record<StudyModule, ModuleMeta>;
 
-export const flatTabs = studyModules.map(
- (key) => moduleMeta[key],
-) satisfies HanziHomeStudyTab<StudyModule>[];
+const standardModuleKeys = [
+ "overview",
+ "lessonText",
+ "notes",
+ "vocab",
+ "grammar",
+ "review",
+] as const satisfies readonly StudyModule[];
+
+const listeningModuleKeys = ["listening", "dictation"] as const satisfies readonly StudyModule[];
+
+export function tabsForLesson(lesson: HanziHomeLesson) {
+ const keys = lesson.tags?.includes("listening") ? listeningModuleKeys : standardModuleKeys;
+ return keys.map((key) => moduleMeta[key]) satisfies HanziHomeStudyTab<StudyModule>[];
+}

@@ -2,6 +2,7 @@ import type { TextBlock } from "@/features/hanzihome/static-json/schemas/hanyuLe
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";
+import { getHanziTypographyStyle } from "./hanzi-typography";
 import type { LessonDisplayMode } from "./types";
 
 export function TextBlockView({
@@ -23,11 +24,17 @@ export function TextBlockView({
 
  const content = (
   <section className="exercise-card-surface grid gap-3 rounded-lg border px-3 py-3 sm:gap-4 sm:px-4">
-   <div>
-    <h4 className="text-base font-black text-text-primary sm:text-lg">
-     {block.title_vi || block.title}
+   <div className="grid gap-1">
+    <h4
+     lang="zh-CN"
+     className="leading-relaxed text-text-primary"
+     style={getHanziTypographyStyle(displayMode, { size: "lg" })}
+    >
+     {block.title}
     </h4>
-    <p className="text-xs font-bold uppercase tracking-wide text-text-muted">{block.title}</p>
+    {displayMode.showMeaning && block.title_vi && block.title_vi !== block.title ? (
+     <p className="text-sm font-semibold text-text-muted">{block.title_vi}</p>
+    ) : null}
    </div>
 
    {shouldRenderDirectLines && (

@@ -76,5 +76,5 @@ export function buildReviewLessonsQueryFromLessons(lessons: ReviewLessonRouteOpt
 export function buildVocabReviewHrefFromLessons(lessons: ReviewLessonRouteOption[]) {
  const queryString = buildReviewLessonsQueryFromLessons(lessons);
 
- return queryString ? `/hanzihome/vocab/review?${queryString}` : "/hanzihome/vocab/review";
+ return queryString ? `/vocab/review?${queryString}` : "/vocab/review";
 }

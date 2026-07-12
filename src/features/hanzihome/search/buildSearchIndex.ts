@@ -289,7 +289,7 @@ function buildRadicalItems(radicals: StaticRadicalData[]) {
    body: stringsFromValue(record).join(" "),
    module: "radicals",
    targetId: text(record, "id"),
-   href: "/hanzihome?module=radicals",
+   href: "/radicals",
   });
  });
 }
@@ -297,9 +297,9 @@ function buildRadicalItems(radicals: StaticRadicalData[]) {
 function buildGlobalNavigationItems() {
  const items: Array<[string, string, string, HanziHomeSearchKind]> = [
   ["navigation:library", "Thư viện HanziHome", "/", "navigation"],
-  ["navigation:vocab", "Tổng hợp từ vựng", "/hanzihome/vocab", "navigation"],
-  ["navigation:grammar", "Tổng hợp ngữ pháp", "/hanzihome/grammar", "navigation"],
-  ["navigation:radicals", "Bộ thủ", "/hanzihome?module=radicals", "navigation"],
+  ["navigation:vocab", "Tổng hợp từ vựng", "/vocab", "navigation"],
+  ["navigation:grammar", "Tổng hợp ngữ pháp", "/grammar", "navigation"],
+  ["navigation:radicals", "Bộ thủ", "/radicals", "navigation"],
   ["navigation:notes", "Ghi chú", "/notes", "note"],
   ["navigation:dictionary", "SRS từ vựng", "/dictionary", "navigation"],
  ];

@@ -13,11 +13,25 @@ export const contentEditingEnabled = true;
 export const studyModules = [
  "overview",
  "lessonText",
+ "listening",
+ "dictation",
+ "script",
  "notes",
  "vocab",
  "grammar",
  "review",
 ] as const satisfies readonly StudyModule[];
+
+const splitStudyModules = [
+ "overview",
+ "lessonText",
+ "notes",
+ "vocab",
+ "grammar",
+ "review",
+] as const satisfies readonly StudyModule[];
+
+const splitStudyModuleSet = new Set<StudyModule>(splitStudyModules);
 
 export const defaultPaneLayout: PaneLayout = {
  left: ["overview", "lessonText", "notes"],
@@ -56,21 +70,24 @@ export function normalizePaneLayout(value: unknown): PaneLayout {
  const right = uniqueModules(input.right).filter((item) => !left.includes(item));
  const assigned = new Set<StudyModule>([...left, ...right]);
 
- for (const item of studyModules) {
+ for (const item of splitStudyModules) {
   if (!assigned.has(item)) right.push(item);
  }
 
- if (left.length === 0 || right.length === 0) return defaultPaneLayout;
+ const normalizedLeft = left.filter((item) => splitStudyModuleSet.has(item));
+ const normalizedRight = right.filter((item) => splitStudyModuleSet.has(item));
+
+ if (normalizedLeft.length === 0 || normalizedRight.length === 0) return defaultPaneLayout;
 
  return {
-  left,
-  right,
-  activeLeft: left.includes(input.activeLeft as StudyModule)
+  left: normalizedLeft,
+  right: normalizedRight,
+  activeLeft: normalizedLeft.includes(input.activeLeft as StudyModule)
    ? (input.activeLeft as StudyModule)
-   : left[0],
-  activeRight: right.includes(input.activeRight as StudyModule)
+   : normalizedLeft[0],
+  activeRight: normalizedRight.includes(input.activeRight as StudyModule)
    ? (input.activeRight as StudyModule)
-   : right[0],
+   : normalizedRight[0],
  };
 }
 

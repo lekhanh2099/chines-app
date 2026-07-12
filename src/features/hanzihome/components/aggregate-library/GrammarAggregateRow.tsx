@@ -8,6 +8,7 @@ export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
   <Link
    href={buildHanziHomeLessonHref({
     courseId: item.courseId,
+    bookId: item.bookId,
     lessonNumber: item.lessonNumber,
     module: "grammar",
    })}

@@ -21,6 +21,7 @@ type SimpleSelectProps = {
  triggerClassName?: string;
  contentClassName?: string;
  disabled?: boolean;
+ triggerAriaLabel?: string;
  errorMessage?: React.ReactNode;
  onChange: (option: IOption | null, selectedOption?: IOption | null) => void;
 };
@@ -36,6 +37,7 @@ export function Select({
  triggerClassName,
  contentClassName,
  disabled,
+ triggerAriaLabel,
  errorMessage,
  onChange,
 }: SimpleSelectProps) {
@@ -51,6 +53,7 @@ export function Select({
   <div className="grid w-full gap-1">
    <SelectRoot value={selectedValue} onValueChange={handleValueChange} disabled={disabled}>
     <SelectTrigger
+     aria-label={triggerAriaLabel}
      className={cn(
       "bg-bg-field-default border-stroke-default h-9 w-full rounded-xl border px-2 text-left",
       "focus-visible:border-stroke-active-focus",

@@ -5,9 +5,9 @@ import { HomeIconTile } from "@/features/home/components/HomePrimitives";
 
 const actions = [
  { href: "/dictionary", label: "Ôn SRS", icon: Repeat2 },
- { href: "/hanzihome/grammar", label: "Ngữ pháp", icon: BookOpenText },
- { href: "/hanzihome/memory-tips", label: "Nhắc nhanh", icon: Lightbulb },
- { href: "/hanzihome?module=radicals", label: "Bộ thủ", icon: Layers3 },
+ { href: "/grammar", label: "Ngữ pháp", icon: BookOpenText },
+ { href: "/memory-tips", label: "Nhắc nhanh", icon: Lightbulb },
+ { href: "/radicals", label: "Bộ thủ", icon: Layers3 },
 ] as const;
 
 export function HomeQuickActions() {

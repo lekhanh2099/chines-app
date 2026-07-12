@@ -1,4 +1,4 @@
-import { GraduationCap, Tags } from "lucide-react";
+import { GraduationCap, Headphones, Tags } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -53,6 +53,12 @@ export function LessonStudyDashboard({
      </p>
     </div>
     <div className="flex flex-wrap gap-2">
+     {lesson.tags?.includes("listening") ? (
+      <Button type="button" size="sm" onClick={() => onOpenModule("listening")}>
+       <Headphones data-icon="inline-start" />
+       Mở luyện nghe
+      </Button>
+     ) : null}
      <OverviewStatPill label={`${lesson.vocab.length} từ`} />
      <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
      <OverviewStatPill label={`${sections.length} phần`} />

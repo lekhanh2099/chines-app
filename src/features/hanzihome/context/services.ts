@@ -44,6 +44,12 @@ export function createHanziHomeFeatureServices(lesson: HanziHomeLesson): HanziHo
    if (direct) return direct;
 
    if (node.entityType === "lesson") return lesson.editMeta ?? null;
+
+   if (node.value && typeof node.value === "object" && "editMeta" in node.value) {
+    const editMeta = (node.value as { editMeta?: HanziHomeEditableRecordMeta }).editMeta;
+    if (editMeta?.dbId && editMeta.updatedAt) return editMeta;
+   }
+
    return resolveSectionEditableRecord(lesson, node.path);
   },
  };

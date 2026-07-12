@@ -2,7 +2,16 @@ import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyu
 import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
 export type HanziHomeModule =
- "overview" | "lessonText" | "notes" | "vocab" | "grammar" | "radicals" | "review";
+ | "overview"
+ | "lessonText"
+ | "listening"
+ | "dictation"
+ | "script"
+ | "notes"
+ | "vocab"
+ | "grammar"
+ | "radicals"
+ | "review";
 
 export type LearningStatus = "new" | "learning" | "known" | "hard";
 export type ReviewResult = "again" | "hard" | "known";

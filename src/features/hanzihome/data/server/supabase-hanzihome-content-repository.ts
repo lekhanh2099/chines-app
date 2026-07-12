@@ -143,7 +143,7 @@ const LessonSectionRowSchema = z.object({
  title: z.string(),
  title_vi: z.string(),
  section_order: z.number().int().positive(),
- payload: SectionSchema,
+ payload: z.unknown(),
  source_file: z.string().nullable(),
  updated_at: z.string(),
 });
@@ -691,12 +691,13 @@ function buildEditableRecords(row: LessonDetailRow) {
 
 function buildSourceLesson(row: LessonDetailRow) {
  const sections = row.sections
+  .filter((section) => section.section_type !== "listening")
   .slice()
   .sort((left, right) => left.section_order - right.section_order)
   .map(lessonSectionRowToSection);
 
  if (sections.length === 0) {
-  throw new Error(`HanziHome lesson ${row.id} has no canonical lesson sections`);
+  return undefined;
  }
 
  return HanyuLessonSchema.parse({
@@ -849,10 +850,10 @@ async function getRadicalsFromDatabase(): Promise<StaticRadicalData[]> {
   .from("hanzihome_radicals")
   .select(
    "id,radical_index,radical,name_vi,strokes,core_meaning,variants,related_components,recognition,distinguish,groups,updated_at",
- )
- .eq("source", "seed")
- .is("deleted_at", null)
- .order("radical_index");
+  )
+  .eq("source", "seed")
+  .is("deleted_at", null)
+  .order("radical_index");
 
  if (result.error) {
   throw new Error(`HanziHome Supabase radicals failed: ${result.error.message}`);

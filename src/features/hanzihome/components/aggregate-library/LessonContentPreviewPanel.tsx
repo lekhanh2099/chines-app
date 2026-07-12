@@ -339,6 +339,7 @@ function SelectedLessonContentPreview({
          <Link
           href={buildHanziHomeLessonHref({
            courseId: lesson.courseId,
+           bookId: lesson.bookId,
            lessonNumber: lesson.lessonNumber,
            module: "overview",
           })}

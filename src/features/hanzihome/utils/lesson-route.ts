@@ -1,6 +1,7 @@
 export type LessonRouteSummary = {
  id: string;
  lessonNumber: number;
+ bookId?: string;
 };
 
 export function getLessonRouteValue(lessonNumber: number) {
@@ -11,25 +12,36 @@ export function findLessonByRouteParam<TLesson extends LessonRouteSummary>(
  lessons: TLesson[],
  lessonParam: string | null | undefined,
  legacyLessonIdParam?: string | null,
+ bookIdParam?: string | null,
 ) {
+ const scopedLessons = bookIdParam
+  ? lessons.filter((lesson) => lesson.bookId === bookIdParam)
+  : lessons;
+
  return (
-  lessons.find((lesson) => getLessonRouteValue(lesson.lessonNumber) === lessonParam) ||
-  lessons.find((lesson) => lesson.id === legacyLessonIdParam) ||
+  scopedLessons.find((lesson) => getLessonRouteValue(lesson.lessonNumber) === lessonParam) ||
+  scopedLessons.find((lesson) => lesson.id === legacyLessonIdParam) ||
   null
  );
 }
 
 export function buildHanziHomeLessonHref({
  courseId,
+ bookId,
  lessonNumber,
  module,
 }: {
  courseId: string;
+ bookId?: string | null;
  lessonNumber?: number | null;
  module?: string | null;
 }) {
  const params = new URLSearchParams();
  params.set("courseId", courseId);
+
+ if (bookId) {
+  params.set("bookId", bookId);
+ }
 
  if (typeof lessonNumber === "number") {
   params.set("lesson", getLessonRouteValue(lessonNumber));

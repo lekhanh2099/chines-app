@@ -15,6 +15,12 @@ export async function invalidateHanziHomeContent({
   await queryClient.invalidateQueries({
    queryKey: ["hanzihome", "lesson-detail", lessonId],
   });
+
+  if (entityType === "listening_item") {
+   await queryClient.invalidateQueries({
+    queryKey: ["hanzihome", "listening", "lesson", lessonId],
+   });
+  }
  }
 
  if (!catalogEntityTypes.has(entityType)) return;

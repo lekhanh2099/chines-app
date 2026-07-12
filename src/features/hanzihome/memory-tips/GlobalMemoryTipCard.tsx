@@ -119,7 +119,7 @@ export function GlobalMemoryTipCard({
         }
        />
        <Button type="button" variant="ghost" size="sm" asChild>
-        <Link href="/hanzihome/memory-tips" prefetch={false}>
+        <Link href="/memory-tips" prefetch={false}>
          <Settings className="h-4 w-4" />
          Quản lý
         </Link>
@@ -195,7 +195,7 @@ export function GlobalMemoryTipCard({
        />
 
        <Button type="button" variant="ghost" size="sm" asChild>
-        <Link href="/hanzihome/memory-tips" prefetch={false}>
+        <Link href="/memory-tips" prefetch={false}>
          <Settings className="h-4 w-4" />
          Quản lý
         </Link>

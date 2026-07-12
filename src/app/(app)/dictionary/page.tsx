@@ -277,9 +277,9 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
       <div className="flex flex-wrap gap-2">
        <Badge variant="accent">{savedItems.length} từ</Badge>
        <Link
-       href="/hanzihome/vocab"
+        href="/vocab"
         className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3 font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
-      >
+       >
         <BookOpen className="h-4 w-4" />
         Tổng hợp từ
        </Link>

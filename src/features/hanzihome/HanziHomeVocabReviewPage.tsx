@@ -109,7 +109,7 @@ export function HanziHomeVocabReviewPage({
       </div>
 
       <Button asChild variant="outline">
-       <Link href="/hanzihome/vocab">
+       <Link href="/vocab">
         <ArrowLeft className="h-4 w-4" />
         Về tổng hợp từ
        </Link>
@@ -129,7 +129,7 @@ export function HanziHomeVocabReviewPage({
        </p>
        <div>
         <Button asChild>
-         <Link href="/hanzihome/vocab">Chọn bài ôn</Link>
+         <Link href="/vocab">Chọn bài ôn</Link>
         </Button>
        </div>
       </div>

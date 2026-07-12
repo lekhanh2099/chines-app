@@ -42,17 +42,19 @@ export function HanziHomeDeveloperTools({
  if (inline) {
   return (
    <>
+    {showEditingTools ? <HanziHomeEditingDialogShell /> : null}
     <div className="xl:hidden">
      <HanziHomeCompactDeveloperTools
       toolsOpen={toolsOpen}
       setToolsOpen={setToolsOpen}
       editMode={editMode}
       showEditingTools={showEditingTools}
+      includeDialogShell={false}
      />
     </div>
     <div className="hidden items-center gap-2 xl:flex">
      {developerToolsEnabled ? <LessonViewModeToggle /> : null}
-     {showEditingTools ? <HanziHomeEditingTools /> : null}
+     {showEditingTools ? <HanziHomeEditingTools includeDialogShell={false} /> : null}
     </div>
    </>
   );
@@ -71,44 +73,46 @@ function HanziHomeCompactDeveloperTools({
  setToolsOpen,
  editMode,
  showEditingTools,
+ includeDialogShell = true,
 }: {
  toolsOpen: boolean;
  setToolsOpen: (open: boolean) => void;
  editMode: boolean;
  showEditingTools: boolean;
+ includeDialogShell?: boolean;
 }) {
  return (
   <>
-    {showEditingTools ? <HanziHomeEditingDialogShell /> : null}
-    <Button
-     type="button"
-     variant={editMode ? "active" : "outline"}
-     size="sm"
-     className="h-8 shrink-0 px-2.5 text-xs"
-     onClick={() => setToolsOpen(true)}
-    >
-     <SlidersHorizontal className="h-4 w-4" />
-     {editMode ? "Đang sửa" : "Công cụ"}
-    </Button>
-    <Sheet open={toolsOpen} onOpenChange={setToolsOpen} side="bottom" className="p-4">
-     <SheetHeader title="Công cụ bài học" onClose={() => setToolsOpen(false)} />
-     <div className="grid gap-4">
-      {developerToolsEnabled ? (
-       <section className="grid gap-2">
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chế độ</p>
-        <LessonViewModeToggle />
-       </section>
-      ) : null}
-      {showEditingTools ? (
-       <section className="grid gap-2">
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chỉnh sửa</p>
-        <div className="flex flex-wrap items-center gap-2">
-         <HanziHomeEditingTools includeDialogShell={false} />
-        </div>
-       </section>
-      ) : null}
-     </div>
-    </Sheet>
+   {showEditingTools && includeDialogShell ? <HanziHomeEditingDialogShell /> : null}
+   <Button
+    type="button"
+    variant={editMode ? "active" : "outline"}
+    size="sm"
+    className="h-8 shrink-0 px-2.5 text-xs"
+    onClick={() => setToolsOpen(true)}
+   >
+    <SlidersHorizontal className="h-4 w-4" />
+    {editMode ? "Đang sửa" : "Công cụ"}
+   </Button>
+   <Sheet open={toolsOpen} onOpenChange={setToolsOpen} side="bottom" className="p-4">
+    <SheetHeader title="Công cụ bài học" onClose={() => setToolsOpen(false)} />
+    <div className="grid gap-4">
+     {developerToolsEnabled ? (
+      <section className="grid gap-2">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chế độ</p>
+       <LessonViewModeToggle />
+      </section>
+     ) : null}
+     {showEditingTools ? (
+      <section className="grid gap-2">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chỉnh sửa</p>
+       <div className="flex flex-wrap items-center gap-2">
+        <HanziHomeEditingTools includeDialogShell={false} />
+       </div>
+      </section>
+     ) : null}
+    </div>
+   </Sheet>
   </>
  );
 }

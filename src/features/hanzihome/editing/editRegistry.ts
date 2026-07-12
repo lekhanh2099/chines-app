@@ -15,6 +15,7 @@ import { GrammarExampleForm } from "./components/forms/GrammarExampleForm";
 import { GrammarFormulaForm } from "./components/forms/GrammarFormulaForm";
 import { GrammarPointForm } from "./components/forms/GrammarPointForm";
 import { LessonInfoForm } from "./components/forms/LessonInfoForm";
+import { ListeningItemForm } from "./components/forms/ListeningItemForm";
 import type { NodeFormProps } from "./components/forms/createNodeForm";
 import { ProperNounForm } from "./components/forms/ProperNounForm";
 import { ReadingItemForm } from "./components/forms/ReadingItemForm";
@@ -140,6 +141,12 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   title: "Sửa đáp án cloze",
   description: "Chỉnh đáp án cho một blank.",
   Form: ExerciseClozeAnswerForm,
+ },
+ listening_item: {
+  title: "Sửa câu luyện nghe",
+  description:
+   "Field mode sửa câu hỏi/giải thích. JSON mode sửa transcript, lựa chọn, đáp án và metadata của đúng item này.",
+  Form: ListeningItemForm,
  },
  reading_item: {
   title: "Sửa bài đọc",

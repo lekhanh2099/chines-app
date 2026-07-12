@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { BookOpen, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
+import { BookOpen, BookOpenCheck, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
-import type { CourseStats } from "@/features/hanzihome/components/library/types";
+import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
 import {
  useHanziHomeCatalogData,
  useIsCatalogPending,
@@ -30,37 +31,40 @@ export function HanziHomeLibraryHome() {
  if (isCatalogPending) return <HanziHomeLibrarySkeleton />;
 
  return (
-  <main className="flex w-full flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8 lg:py-7">
-   <section className="grid gap-5">
-    <PageHeader
-     title="Thư viện học HanziHome"
-     description="Chọn giáo trình và bài học để đọc bài khóa, học từ vựng, nắm ngữ pháp và ôn tập."
-     actions={
-      <>
-       <Button type="button" variant="outline" asChild>
-        <Link href="/hanzihome/html-artifacts" prefetch={false}>
-         <FileCode2 className="h-4 w-4" />
-         Tệp HTML
-        </Link>
-       </Button>
-       {canEdit ? (
-        <HanziHomeLibraryCrudToolbar
-         courses={courses}
-         books={books}
-         editMode={editMode}
-         onEditModeChange={setEditMode}
-        />
-       ) : null}
-      </>
-     }
-    />
+  <main className="flex w-full flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
+   <section className="grid gap-4">
+    <section className="app-gradient-hero relative grid gap-3 overflow-hidden rounded-2xl border border-border-default p-4 shadow-theme-md">
+     <PageHeader
+      className="gap-3 [&_h1]:text-2xl [&_p]:mt-1 [&_p]:text-sm [&_p]:leading-5 [&_p]:text-text-primary/75"
+      title="Thư viện học HanziHome"
+      description="Chọn đúng giáo trình, quyển và bài bạn muốn học tiếp."
+      actions={
+       <>
+        <Button type="button" variant="surfaceCard" asChild>
+         <Link href="/html-artifacts" prefetch={false}>
+          <FileCode2 className="h-4 w-4" />
+          Tệp HTML
+         </Link>
+        </Button>
+        {canEdit ? (
+         <HanziHomeLibraryCrudToolbar
+          courses={courses}
+          books={books}
+          editMode={editMode}
+          onEditModeChange={setEditMode}
+         />
+        ) : null}
+       </>
+      }
+     />
 
-    <div className="grid grid-cols-2 gap-2 xl:grid-cols-4">
-     <LibraryStat icon={LibraryBig} label="Khóa học" value={libraryStats.courseCount} />
-     <LibraryStat icon={Rows3} label="Quyển" value={libraryStats.bookCount} />
-     <LibraryStat icon={BookOpen} label="Bài học" value={libraryStats.lessonCount} />
-     <LibraryStat icon={GraduationCap} label="Điểm ngữ pháp" value={libraryStats.grammarCount} />
-    </div>
+     <div className="grid grid-cols-2 gap-2 xl:grid-cols-4">
+      <LibraryStat icon={LibraryBig} label="Giáo trình" value={libraryStats.courseCount} />
+      <LibraryStat icon={Rows3} label="Quyển" value={libraryStats.bookCount} />
+      <LibraryStat icon={BookOpen} label="Bài học" value={libraryStats.lessonCount} />
+      <LibraryStat icon={GraduationCap} label="Điểm ngữ pháp" value={libraryStats.grammarCount} />
+     </div>
+    </section>
 
     {courses.length === 0 ? (
      <Card variant="glass" padding="lg">
@@ -78,15 +82,56 @@ export function HanziHomeLibraryHome() {
         </p>
        </div>
       </div>
-      <div className="grid gap-4 xl:grid-cols-2 2xl:grid-cols-2">
-       {courses.map((course) => (
-        <CourseCard
-         key={course.id}
-         course={course}
-         stats={getCourseStats(course, books)}
-         editMode={canEdit && editMode}
-        />
-       ))}
+      <div className="grid gap-4">
+       {courses.map((course) => {
+        const courseBooks = books
+         .filter((book) => book.courseId === course.id)
+         .toSorted((left, right) => left.order - right.order);
+
+        return (
+         <section key={course.id} className="grid gap-2" aria-labelledby={`${course.id}-heading`}>
+          <Card
+           variant="glass"
+           padding="sm"
+           className="flex flex-wrap items-center justify-between gap-2 rounded-xl"
+          >
+           <div className="flex min-w-0 items-center gap-2.5">
+            <span className="app-brand-gradient flex size-9 shrink-0 items-center justify-center rounded-lg text-primary-foreground shadow-theme-sm">
+             <BookOpenCheck className="size-4" />
+            </span>
+            <div className="min-w-0">
+             <div className="flex flex-wrap items-center gap-2">
+              <h3 id={`${course.id}-heading`} className="text-base font-black text-text-primary">
+               {course.title}
+              </h3>
+              <Badge variant="purple">{courseBooks.length} quyển</Badge>
+             </div>
+             <p className="text-xs font-medium text-text-muted sm:text-sm">
+              {course.subtitle || `${course.stats.lessonCount} bài học trong giáo trình này`}
+             </p>
+            </div>
+           </div>
+           <div className="flex items-center gap-2">
+            <Badge variant="default">{course.stats.lessonCount} bài</Badge>
+            {canEdit && editMode ? <CourseCrudActions course={course} /> : null}
+           </div>
+          </Card>
+
+          <div className="grid gap-2.5 lg:grid-cols-2">
+           {courseBooks.map((book, index) => (
+            <CourseCard
+             key={book.id}
+             course={course}
+             book={book}
+             editMode={canEdit && editMode}
+             canMoveBookUp={index > 0}
+             canMoveBookDown={index < courseBooks.length - 1}
+            />
+           ))}
+          </div>
+         </section>
+        );
+       })}
       </div>
      </section>
     )}
@@ -105,12 +150,12 @@ function LibraryStat({
  value: number;
 }) {
  return (
-  <div className="flex min-w-0 items-center gap-2.5 rounded-xl border border-border-default/80 bg-bg-card px-3 py-2.5 shadow-theme-sm sm:gap-3 sm:px-4 sm:py-3">
-   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text sm:h-9 sm:w-9">
+  <div className="app-glass-surface flex min-w-0 items-center gap-2.5 rounded-xl border px-3 py-2 shadow-theme-sm">
+   <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
     <Icon className="h-4 w-4" />
    </span>
    <div className="min-w-0 grid gap-1">
-    <p className="text-lg font-black leading-none text-text-primary sm:text-xl">{value}</p>
+    <p className="text-base font-black leading-none text-text-primary sm:text-lg">{value}</p>
     <p className="truncate text-xs font-bold text-text-secondary">{label}</p>
    </div>
   </div>
@@ -123,15 +168,5 @@ function getLibraryStats(courses: HanziHomeCatalogCourse[], books: HanziHomeCour
   bookCount: books.length,
   lessonCount: courses.reduce((sum, course) => sum + course.stats.lessonCount, 0),
   grammarCount: courses.reduce((sum, course) => sum + course.stats.grammarCount, 0),
- };
-}
-
-function getCourseStats(course: HanziHomeCatalogCourse, books: HanziHomeCourseBook[]): CourseStats {
- return {
-  books: books.filter((book) => book.courseId === course.id),
-  lessonCount: course.stats.lessonCount,
-  vocabCount: course.stats.vocabCount,
-  grammarCount: course.stats.grammarCount,
-  fallbackLessonId: course.fallbackLessonId || course.lastLessonId,
  };
 }

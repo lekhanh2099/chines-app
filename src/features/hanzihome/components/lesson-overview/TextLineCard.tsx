@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { getHanziTypographyStyle } from "./hanzi-typography";
@@ -27,19 +28,25 @@ export function TextLineCard({
      : "border-b border-border-default/70 py-2.5 last:border-b-0 sm:py-3",
    )}
   >
-   {speaker && (
-    <p className="text-xs font-black uppercase tracking-wide text-accent-text">{speaker}</p>
-   )}
-   <p className="whitespace-pre-wrap" lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
+   {speaker ? (
+    <Badge variant="purple" className="w-fit normal-case tracking-normal">
+     {speaker}
+    </Badge>
+   ) : null}
+   <p
+    className="whitespace-pre-wrap leading-[1.7] text-text-primary"
+    lang="zh-CN"
+    style={getHanziTypographyStyle(displayMode)}
+   >
     {zh}
    </p>
    {displayMode.showPinyin && pinyin && (
-    <p className="whitespace-pre-wrap text-xs font-bold italic text-text-muted sm:text-sm">
+    <p className="whitespace-pre-wrap text-sm font-semibold leading-relaxed text-accent-text">
      {pinyin}
     </p>
    )}
    {displayMode.showMeaning && vi && (
-    <p className="whitespace-pre-wrap font-semibold leading-snug text-text-secondary sm:leading-relaxed">
+    <p className="whitespace-pre-wrap text-sm font-medium leading-relaxed text-text-muted sm:text-base">
      {vi}
     </p>
    )}
