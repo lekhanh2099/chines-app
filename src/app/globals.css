@@ -446,6 +446,10 @@ body {
  overflow-x: clip;
 }
 
+body[data-scroll-locked]:has([data-slot="select-content"]) {
+ overflow: visible !important;
+}
+
 .nova-shell-header,
 .nova-shell-sidebar {
  border-color: color-mix(in oklch, var(--primary) 14%, var(--border));
