@@ -1984,6 +1984,16 @@ export type Database = {
     Returns: Json;
    };
    is_hanzihome_content_editor: { Args: never; Returns: boolean };
+   upsert_legacy_vocabulary_cache: {
+    Args: {
+     p_analysis?: Json;
+     p_hanzi: string;
+     p_meaning?: string;
+     p_pinyin?: string;
+     p_sino_vietnamese?: string;
+    };
+    Returns: string;
+   };
   };
   Enums: {
    [_ in never]: never;

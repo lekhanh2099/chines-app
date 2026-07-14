@@ -1078,49 +1078,20 @@ export async function upsertVocab(
  const resolvedSinoVietnamese =
   data.sinoVietnamese || normalizedAnalysis.sino_vietnamese || normalizedAnalysis.han_viet || "";
 
- let { data: vocab, error } = await supabase
-  .from("vocabularies")
-  .upsert(
-   {
-    hanzi: data.hanzi,
-    pinyin: data.pinyin || "",
-    sino_vietnamese: resolvedSinoVietnamese || null,
-    meaning: resolvedMeaning,
-    analysis: normalizedAnalysis,
-    ai_analysis: normalizedAnalysis,
-   },
-   { onConflict: "hanzi" },
-  )
-  .select("id")
-  .single();
-
- if (error && isMissingColumnError(error)) {
-  logger.warn("[VocabService] Falling back to legacy vocab schema; migration may be missing.");
-
-  const legacyResult = await supabase
-   .from("vocabularies")
-   .upsert(
-    {
-     hanzi: data.hanzi,
-     pinyin: data.pinyin || "",
-     meaning: resolvedMeaning,
-     ai_analysis: normalizedAnalysis,
-    },
-    { onConflict: "hanzi" },
-   )
-   .select("id")
-   .single();
-
-  vocab = legacyResult.data;
-  error = legacyResult.error;
- }
+ const { data: vocabularyId, error } = await supabase.rpc("upsert_legacy_vocabulary_cache", {
+  p_hanzi: data.hanzi,
+  p_pinyin: data.pinyin || null,
+  p_sino_vietnamese: resolvedSinoVietnamese || null,
+  p_meaning: resolvedMeaning || null,
+  p_analysis: normalizedAnalysis,
+ });
 
  if (error) {
   logger.error("[VocabService] upsert error:", error);
   return null;
  }
 
- return vocab;
+ return vocabularyId ? { id: vocabularyId } : null;
 }
 
 export async function syncDictionaryEntryToLegacyVocab(

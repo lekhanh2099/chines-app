@@ -8,8 +8,9 @@ This was a read-only connector audit. No SQL, migration, policy, Auth setting, o
 
 - Live TypeScript database types were generated and checked into `src/types/supabase.generated.ts`.
 - The live migration ledger has 23 entries.
-- The repository and live ledger are not fully reproducible from each other. The live project contains Boya listening migrations and `create_temporary_hanyu_v3_import_chunks` that are absent locally; several HTML-artifact migrations also have different live timestamps. Older local migrations are absent from the live ledger.
-- Do not run repair/push against production until this history is reconciled from authoritative SQL. Do not fabricate missing migrations from generated types.
+- The five live-only migrations were recovered from the authoritative SQL stored in `supabase_migrations.schema_migrations`.
+- The six HTML-artifact migrations were verified byte-for-byte against the live statements (excluding the repository trailing newline) and renamed to their live versions.
+- Older local migrations are still absent from the live ledger. Do not run migration repair against production until their baseline status is established; the recovered live history must not be treated as proof that those older files were applied by Supabase migrations.
 
 ## Advisor summary
 
@@ -36,10 +37,17 @@ Supabase remediation references:
 - [Permissive RLS policies](https://supabase.com/docs/guides/database/database-linter?lint=0024_permissive_rls_policy)
 - [Password protection](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection)
 
+## Security rollout status
+
+- `harden_legacy_vocabulary_cache_and_function_paths` was applied additively.
+- The shared legacy vocabulary cache now has an authenticated, input-bounded upsert RPC.
+- Eight mutable function search paths were fixed and the RPC was verified with an authenticated transaction that rolled back its data.
+- Direct vocabulary table writes remain temporarily available until the RPC client is deployed. `restrict_legacy_vocabulary_cache_table_writes` is the post-deploy cutover migration.
+
 ## Safe next slice
 
-1. Recover the four missing live migration SQL bodies and reconcile timestamp/name differences.
-2. Classify public study-content reads versus private/user-owned tables before revoking grants.
-3. Fix mutable function search paths and obviously broad legacy vocabulary write policies in a reviewed migration.
-4. Re-run security advisors, then address RLS/grant exposure by resource family.
+1. Deploy the RPC client and verify a real vocabulary save, then apply the table-write cutover migration.
+2. Establish the baseline status of pre-2026-06-18 local migrations before any ledger repair.
+3. Treat public study-content GraphQL exposure as intentional until the Data API boundary is redesigned; private tables remain ownership-filtered by RLS.
+4. Enable leaked-password protection in Auth settings.
 5. Treat performance findings separately and validate query plans before changing indexes/policies.
