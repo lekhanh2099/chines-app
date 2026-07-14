@@ -12,6 +12,7 @@
   ]
  },
  "scripts": {
+  "prepare": "husky",
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
   "data:hanzihome:db-rebuild": "node --experimental-strip-types scripts/rebuild-hanzihome-db.ts",
@@ -32,7 +33,7 @@
   "audit:prod": "npm audit --omit=dev --audit-level=high",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
-  "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run build",
+  "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run deps:check && npm run audit:prod && npm run build",
   "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
  },
  "dependencies": {
@@ -84,6 +85,7 @@
   "dotenv": "^17.4.2",
   "eslint": "^9.39.4",
   "eslint-config-next": "^16.2.7",
+  "husky": "^9.1.7",
   "knip": "^5.82.0",
   "postcss": "^8.5.19",
   "supabase": "^2.109.1",

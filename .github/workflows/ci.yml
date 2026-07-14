@@ -16,23 +16,19 @@ jobs:
  verify:
   runs-on: ubuntu-latest
   timeout-minutes: 20
+  env:
+   HUSKY: 0
   steps:
-   - uses: actions/checkout@v4
+   - uses: actions/checkout@v5
 
-   - uses: actions/setup-node@v4
+   - uses: actions/setup-node@v5
      with:
       node-version: 22
       cache: npm
 
    - run: npm install --global npm@11.6.1
    - run: npm ci
-   - run: npm run format:check
-   - run: npm run lint
-   - run: npm run typecheck
-   - run: npm run test:run
-   - run: npm run deps:check
-   - run: npm run audit:prod
-   - run: npm run build
+   - run: npm run check
      env:
       NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
       NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
