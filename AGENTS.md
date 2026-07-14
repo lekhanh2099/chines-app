@@ -109,10 +109,14 @@ Every task must respect these rules:
 Required checks before finishing:
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+npm run check
 ```
+
+`npm run check` is the single local and CI quality gate. It runs formatting, lint, typecheck,
+tests, dependency checks, production dependency audit, and the production build.
+
+Husky runs this gate before every commit. Do not bypass it with `--no-verify` unless the user
+explicitly authorizes an emergency bypass and the reason is documented in the handoff.
 
 A task is not done if any required check fails.
 

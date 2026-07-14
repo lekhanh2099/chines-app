@@ -10,6 +10,7 @@ import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
 import { Button } from "@/components/ui/button";
 import { FieldGroup } from "@/components/ui/field";
 import { Spinner } from "@/components/ui/spinner";
+import { getSafeNextPath } from "@/lib/auth/safe-next-path";
 import { toast } from "sonner";
 import { BookOpen, LogIn, UserPlus } from "lucide-react";
 
@@ -84,7 +85,7 @@ export default function LoginPage() {
   let active = true;
 
   void supabase.auth.getUser().then(({ data }) => {
-   if (active && data.user) router.replace(getSafeNextPath());
+   if (active && data.user) router.replace(getSafeNextPathFromUrl());
   });
 
   return () => {
@@ -92,16 +93,16 @@ export default function LoginPage() {
   };
  }, [router]);
 
- function getSafeNextPath() {
+ function getSafeNextPathFromUrl() {
   const next = new URL(window.location.href).searchParams.get("next");
-  return next?.startsWith("/") && !next.startsWith("//") ? next : "/";
+  return getSafeNextPath(next);
  }
 
  async function signInWithGoogle() {
   setOauthLoading(true);
   const supabase = createClient();
   const callbackUrl = new URL("/auth/callback", window.location.origin);
-  callbackUrl.searchParams.set("next", getSafeNextPath());
+  callbackUrl.searchParams.set("next", getSafeNextPathFromUrl());
 
   const { error } = await supabase.auth.signInWithOAuth({
    provider: "google",
@@ -142,7 +143,7 @@ export default function LoginPage() {
     }
 
     toast.success("Đăng nhập thành công");
-    router.replace(getSafeNextPath());
+    router.replace(getSafeNextPathFromUrl());
     router.refresh();
    } else {
     const { error } = await supabase.auth.signUp({

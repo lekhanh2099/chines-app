@@ -74,10 +74,11 @@ Stop and ask before coding when:
 For app-code changes, run the required checks from `AGENTS.md`:
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+npm run check
 ```
+
+Husky runs the same command before commit, and GitHub Actions uses it as the shared CI gate.
+Do not bypass the hook unless the user explicitly authorizes an emergency exception.
 
 Add targeted checks when relevant:
 

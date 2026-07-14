@@ -13,7 +13,7 @@ import type {
  HanziHomeCourseBook,
  HanziHomeModule,
 } from "@/features/hanzihome/types";
-import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
+import { resolveRecentLearning } from "./recent-learning";
 
 const moduleLabels: Record<HanziHomeModule, string> = {
  overview: "Tổng quan",
@@ -47,18 +47,18 @@ export function RecentLearningCard({
   return <RecentLearningSkeleton />;
  }
 
- const lesson = courseLessons.lessons.find((item) => item.id === lastLessonId);
- const course = courses.find((item) => item.id === lastCourseId);
-
- if (!lesson || !course) return null;
-
- const book = books.find((item) => item.id === lesson.bookId);
- const href = buildHanziHomeLessonHref({
-  courseId: course.id,
-  bookId: lesson.bookId,
-  lessonNumber: lesson.lessonNumber,
+ const recentLearning = resolveRecentLearning({
+  courses,
+  books,
+  lessons: courseLessons.lessons,
+  courseId: lastCourseId,
+  lessonId: lastLessonId,
   module: lastModule,
  });
+
+ if (!recentLearning) return null;
+
+ const { lesson, course, book, href } = recentLearning;
 
  return (
   <section aria-labelledby="recent-learning-heading">
