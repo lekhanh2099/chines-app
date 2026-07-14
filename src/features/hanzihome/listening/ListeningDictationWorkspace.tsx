@@ -1,14 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Headphones, Keyboard, Play, Settings2 } from "lucide-react";
+import { Headphones, Keyboard, Play } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
-import { LessonTypographyControls } from "@/features/hanzihome/components/lesson-overview/LessonTypographyControls";
+import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
@@ -31,6 +31,7 @@ import {
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
 import { useNativeMandarinTts } from "./useNativeMandarinTts";
+import type { MandarinSpeechSegment } from "./useNativeMandarinTts";
 
 function normalizeDictationText(text: string) {
  return text
@@ -77,10 +78,12 @@ function DictationCards({
  entries,
  displayMode,
  onSpeak,
+ onSpeakSequence,
 }: {
  entries: ListeningTranscriptEntry[];
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
+ onSpeakSequence: (segments: MandarinSpeechSegment[]) => void;
 }) {
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -160,6 +163,7 @@ function DictationCards({
         transcript={entry.transcript}
         displayMode={displayMode}
         onSpeak={onSpeak}
+        onSpeakSequence={onSpeakSequence}
        />
       ) : null}
      </Card>
@@ -274,28 +278,7 @@ export function ListeningDictationWorkspace() {
    <div className="grid gap-2.5">
     <NativeMandarinTtsControls text={playAllText} tts={tts} />
 
-    <div className="flex max-w-full flex-wrap items-center gap-2 rounded-xl border border-border-default bg-bg-card p-2.5">
-     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
-      <Settings2 className="size-4" />
-     </span>
-     <LessonTypographyControls displayMode={displayMode} onChange={updateDisplayMode} />
-     <Button
-      type="button"
-      variant={displayMode.showPinyin ? "active" : "outline"}
-      size="sm"
-      onClick={() => updateDisplayMode({ showPinyin: !displayMode.showPinyin })}
-     >
-      Pinyin
-     </Button>
-     <Button
-      type="button"
-      variant={displayMode.showMeaning ? "active" : "outline"}
-      size="sm"
-      onClick={() => updateDisplayMode({ showMeaning: !displayMode.showMeaning })}
-     >
-      Nghĩa Việt
-     </Button>
-    </div>
+    <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
 
     <Card variant="glass" padding="md" className="grid gap-1.5 rounded-xl">
      <div className="flex items-start gap-2">
@@ -324,6 +307,7 @@ export function ListeningDictationWorkspace() {
       entries={transcriptEntries}
       displayMode={displayMode}
       onSpeak={tts.speak}
+      onSpeakSequence={tts.speakSequence}
      />
     ) : (
      <Card variant="subtle" padding="lg" className="rounded-xl text-center">

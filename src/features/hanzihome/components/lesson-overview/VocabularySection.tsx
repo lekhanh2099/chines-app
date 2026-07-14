@@ -5,6 +5,7 @@ import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { VocabularyItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
@@ -56,10 +57,11 @@ export function VocabMiniGrid({
      const meaning = vocabMeaning(item);
      return (
       <div key={item.id} className="study-content-surface rounded-xl border p-3">
-       <div className="flex flex-wrap items-end gap-2">
+       <div className="flex flex-wrap items-center gap-2">
         <p className="text-2xl font-black text-text-primary" lang="zh-CN">
          {item.hanzi}
         </p>
+        <NativeMandarinSpeakButton text={item.hanzi} />
         {displayMode.showPinyin && item.pinyin && (
          <p className="font-bold text-accent-text">{item.pinyin}</p>
         )}

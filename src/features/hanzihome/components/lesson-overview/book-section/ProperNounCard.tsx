@@ -2,6 +2,7 @@ import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { properNounBackText, properNounFrontText, stringList } from "./proper-noun-utils";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 export function ProperNounCard({
  item,
@@ -28,9 +29,12 @@ export function ProperNounCard({
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div className="grid gap-1">
     {hanzi && (
-     <h4 className="text-2xl font-black leading-none text-text-primary" lang="zh-CN">
-      {hanzi}
-     </h4>
+     <div className="flex items-center gap-1.5">
+      <h4 className="text-2xl font-black leading-none text-text-primary" lang="zh-CN">
+       {hanzi}
+      </h4>
+      <NativeMandarinSpeakButton text={hanzi} />
+     </div>
     )}
 
     {displayMode.showPinyin && pinyin && <p className=" font-black text-primary">{pinyin}</p>}

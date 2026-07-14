@@ -2,6 +2,7 @@
 
 import { BookOpen } from "lucide-react";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "vocab" }> }) {
  const example = item.source.examples.find((entry) => entry.zh)?.zh;
@@ -14,9 +15,12 @@ export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "
    <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
     Nhớ nghĩa và cách dùng
    </p>
-   <h3 className="text-6xl font-black tracking-normal text-text-primary" lang="zh-CN">
-    {item.prompt}
-   </h3>
+   <div className="flex items-center justify-center gap-2">
+    <h3 className="text-6xl font-black tracking-normal text-text-primary" lang="zh-CN">
+     {item.prompt}
+    </h3>
+    <NativeMandarinSpeakButton text={item.prompt} />
+   </div>
    {example && (
     <p className="mx-auto max-w-2xl rounded-xl bg-bg-subtle p-3 text-base font-bold leading-relaxed text-text-primary">
      {example}

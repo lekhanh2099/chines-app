@@ -6,6 +6,7 @@ import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemory
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { PopularFontPreview } from "./PopularFontPreview";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 export function VocabDetailHeader({
  word,
@@ -35,15 +36,18 @@ export function VocabDetailHeader({
      ].join(" ")}
     >
      <div className="min-w-0 grid gap-1">
-      <h2
-       className={[
-        "leading-none tracking-normal text-text-primary",
-        compact ? "text-5xl" : "text-6xl",
-       ].join(" ")}
-       lang="zh-CN"
-      >
-       {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
-      </h2>
+      <div className="flex items-start gap-2">
+       <h2
+        className={[
+         "min-w-0 leading-none tracking-normal text-text-primary",
+         compact ? "text-5xl" : "text-6xl",
+        ].join(" ")}
+        lang="zh-CN"
+       >
+        {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
+       </h2>
+       <NativeMandarinSpeakButton text={word.hanzi} />
+      </div>
       <p className={["font-black text-accent-text", compact ? "text-lg" : "text-xl"].join(" ")}>
        {word.pinyin}
        {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}

@@ -6,6 +6,7 @@ import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorPr
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { NativeMandarinTtsProvider } from "@/features/hanzihome/listening/NativeMandarinTtsProvider";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans", preload: false });
 
@@ -34,7 +35,9 @@ export default function RootLayout({
    <body className="antialiased">
     <ThemeProvider>
      <QueryProvider>
-      <VocabInspectorProvider>{children}</VocabInspectorProvider>
+      <NativeMandarinTtsProvider>
+       <VocabInspectorProvider>{children}</VocabInspectorProvider>
+      </NativeMandarinTtsProvider>
      </QueryProvider>
      <AppToaster />
     </ThemeProvider>

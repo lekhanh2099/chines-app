@@ -5,15 +5,17 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID,
+ HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
+import { speechTextForSections } from "@/features/hanzihome/components/lesson-text/lesson-section-speech";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
 
 import { BookSectionContent } from "./BookSectionContent";
 import { LessonModuleFrame, LessonModuleSidebarRailItem } from "./LessonModuleFrame";
 import { LessonModuleSidebarItem } from "./LessonModuleSidebarItem";
-import { LessonTypographyControls } from "./LessonTypographyControls";
+import { LessonReadingSettingsDialog } from "./LessonReadingSettings";
 import { BookOpen, sectionIcons } from "./section-icons";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
@@ -40,14 +42,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    : (sections.find((section) => section.id === selectedSectionId) ?? sections[0] ?? null);
  const lessonMeta = getHanyuLessonMeta(lessonDocument);
 
- function updateGlobalDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
-  setGlobalDisplayMode((current) => ({ ...current, [key]: !current[key] }));
-  setSectionDisplayOverrides({});
- }
-
- function updateGlobalTypography(
-  updates: Partial<Pick<LessonDisplayMode, "hanziFont" | "hanziSize">>,
- ) {
+ function updateGlobalDisplayMode(updates: Partial<LessonDisplayMode>) {
   setGlobalDisplayMode((current) => ({ ...current, ...updates }));
   setSectionDisplayOverrides({});
  }
@@ -59,6 +54,9 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
   ...globalDisplayMode,
   ...(selectedSection ? sectionDisplayOverrides[selectedSection.id] : {}),
  };
+ const visibleSpeechText = speechTextForSections(
+  selectedSection ? [selectedSection.section] : sections.map((section) => section.section),
+ );
 
  function updateSectionDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
   setSectionDisplayOverrides((current) => ({
@@ -71,42 +69,19 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
  }
 
  const readingControls = (
-  <div className="flex flex-wrap items-center gap-2">
-   <LessonTypographyControls displayMode={globalDisplayMode} onChange={updateGlobalTypography} />
-   <Button
-    type="button"
-    variant={globalDisplayMode.showPinyin ? "active" : "outline"}
-    size="sm"
-    onClick={() => updateGlobalDisplayMode("showPinyin")}
-   >
-    Pinyin: {globalDisplayMode.showPinyin ? "Bật" : "Tắt"}
-   </Button>
-   <Button
-    type="button"
-    variant={globalDisplayMode.showMeaning ? "active" : "outline"}
-    size="sm"
-    onClick={() => updateGlobalDisplayMode("showMeaning")}
-   >
-    Nghĩa: {globalDisplayMode.showMeaning ? "Bật" : "Tắt"}
-   </Button>
-   <Button
-    type="button"
-    variant={globalDisplayMode.showAnswers ? "active" : "outline"}
-    size="sm"
-    onClick={() => updateGlobalDisplayMode("showAnswers")}
-   >
-    Đáp án: {globalDisplayMode.showAnswers ? "Bật" : "Tắt"}
-   </Button>
+  <div className="flex items-center gap-1.5">
+   <NativeMandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />
+   <LessonReadingSettingsDialog
+    displayMode={globalDisplayMode}
+    onChange={updateGlobalDisplayMode}
+   />
   </div>
  );
 
  return (
   <>
-   <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID}>
-    <section className="grid gap-2">
-     <p className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Hiển thị</p>
-     {readingControls}
-    </section>
+   <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
+    {readingControls}
    </HanziHomeCommandBarPortal>
    <LessonModuleFrame
     title="Bài khóa"
@@ -174,7 +149,6 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
       })}
      </div>
     }
-    actions={<div className="hidden xl:block">{readingControls}</div>}
    >
     <Card padding="none" className="rounded-xl p-2.5 sm:p-4 lg:p-5">
      <section className="min-w-0 grid gap-4">
@@ -202,7 +176,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
          onClick={() =>
           selectedSection
            ? updateSectionDisplayMode("showPinyin")
-           : updateGlobalDisplayMode("showPinyin")
+           : updateGlobalDisplayMode({ showPinyin: !selectedSectionDisplayMode.showPinyin })
          }
         >
          Pinyin phần: {selectedSectionDisplayMode.showPinyin ? "Bật" : "Tắt"}
@@ -214,7 +188,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
          onClick={() =>
           selectedSection
            ? updateSectionDisplayMode("showMeaning")
-           : updateGlobalDisplayMode("showMeaning")
+           : updateGlobalDisplayMode({ showMeaning: !selectedSectionDisplayMode.showMeaning })
          }
         >
          Nghĩa phần: {selectedSectionDisplayMode.showMeaning ? "Bật" : "Tắt"}
@@ -226,7 +200,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
          onClick={() =>
           selectedSection
            ? updateSectionDisplayMode("showAnswers")
-           : updateGlobalDisplayMode("showAnswers")
+           : updateGlobalDisplayMode({ showAnswers: !selectedSectionDisplayMode.showAnswers })
          }
         >
          Đáp án phần: {selectedSectionDisplayMode.showAnswers ? "Bật" : "Tắt"}

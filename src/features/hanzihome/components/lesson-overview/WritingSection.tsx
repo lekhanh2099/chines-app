@@ -1,5 +1,6 @@
 import type { CharacterWritingItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
@@ -21,9 +22,12 @@ export function WritingCard({
  const content = (
   <div className="rounded-xl border border-border-default bg-bg-primary p-3 grid gap-2">
    <div className="grid gap-1">
-    <p className="text-4xl font-black text-text-primary" lang="zh-CN">
-     {item.hanzi}
-    </p>
+    <div className="flex items-center gap-1.5">
+     <p className="text-4xl font-black text-text-primary" lang="zh-CN">
+      {item.hanzi}
+     </p>
+     <NativeMandarinSpeakButton text={item.hanzi} />
+    </div>
     {displayMode.showPinyin && item.pinyin && (
      <p className="font-bold text-accent-text">{item.pinyin}</p>
     )}

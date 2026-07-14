@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { getHanziTypographyStyle } from "./hanzi-typography";
@@ -33,13 +34,16 @@ export function TextLineCard({
      {speaker}
     </Badge>
    ) : null}
-   <p
-    className="whitespace-pre-wrap leading-[1.7] text-text-primary"
-    lang="zh-CN"
-    style={getHanziTypographyStyle(displayMode)}
-   >
-    {zh}
-   </p>
+   <div className="flex min-w-0 items-start gap-1.5">
+    <p
+     className="min-w-0 flex-1 whitespace-pre-wrap leading-[1.7] text-text-primary"
+     lang="zh-CN"
+     style={getHanziTypographyStyle(displayMode)}
+    >
+     {zh}
+    </p>
+    <NativeMandarinSpeakButton text={zh} />
+   </div>
    {displayMode.showPinyin && pinyin && (
     <p className="whitespace-pre-wrap text-sm font-semibold leading-relaxed text-accent-text">
      {pinyin}

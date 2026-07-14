@@ -26,12 +26,16 @@ const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
  mengshen: 500,
 };
 
+export function getHanziFontFamily(font: HanziReaderFont): string {
+ return hanziFontFamilies[font];
+}
+
 export function getHanziTypographyStyle(
  displayMode: LessonDisplayMode,
  options: { size?: HanziReaderSize | "inherit" } = {},
 ): CSSProperties {
  return {
-  fontFamily: hanziFontFamilies[displayMode.hanziFont],
+  fontFamily: getHanziFontFamily(displayMode.hanziFont),
   fontSize:
    options.size === "inherit" ? undefined : hanziFontSizes[options.size ?? displayMode.hanziSize],
   fontWeight: hanziFontWeights[displayMode.hanziFont],

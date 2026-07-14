@@ -21,6 +21,7 @@ import type {
  ListeningRuntimeItem,
  ListeningTranscript,
 } from "./listening.types";
+import type { MandarinSpeechSegment } from "./useNativeMandarinTts";
 
 type ListeningExerciseItemsProps = {
  exerciseType: ListeningExerciseType;
@@ -33,6 +34,7 @@ type ListeningExerciseItemsProps = {
  showTranslationAfterCheck: boolean;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
+ onSpeakSequence: (segments: MandarinSpeechSegment[]) => void;
  lessonId: string;
 };
 
@@ -148,6 +150,7 @@ function ChoiceItems({
  sharedTranscript,
  displayMode,
  onSpeak,
+ onSpeakSequence,
  revealedScripts,
  onToggleScript,
  onEditItem,
@@ -258,6 +261,7 @@ function ChoiceItems({
        showMeaning: revealMeaning,
       }}
       onSpeak={onSpeak}
+      onSpeakSequence={onSpeakSequence}
      />
     ) : null}
    </Card>
@@ -764,6 +768,7 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
        transcript={props.sharedTranscript}
        displayMode={{ ...props.displayMode, showMeaning: revealSharedMeaning }}
        onSpeak={props.onSpeak}
+       onSpeakSequence={props.onSpeakSequence}
       />
      ) : null}
     </div>

@@ -1,13 +1,11 @@
 "use client";
 
-import { Popover } from "@base-ui/react";
-import { Eye, FileText, Layers } from "lucide-react";
-import { useMemo, useState } from "react";
+import { FileText, Layers } from "lucide-react";
+import { useMemo } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID,
+ HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
@@ -16,7 +14,7 @@ import {
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import { LessonTypographyControls } from "@/features/hanzihome/components/lesson-overview/LessonTypographyControls";
+import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
 import {
  sectionSubtitle,
@@ -28,6 +26,9 @@ import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLess
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+
+import { speechTextForSections } from "./lesson-section-speech";
 
 type LessonTextInlineEditorProps = {
  compact?: boolean;
@@ -45,7 +46,6 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   (state) => state.lessonTextSelectedSectionId,
  );
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
- const [isReadingSettingsOpen, setIsReadingSettingsOpen] = useState(false);
  const sourceSections = useMemo(
   () =>
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
@@ -59,6 +59,13 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
  );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
+ const visibleSpeechText = useMemo(
+  () =>
+   speechTextForSections(
+    showAllSections ? sourceSections : selectedSection ? [selectedSection] : [],
+   ),
+  [selectedSection, showAllSections, sourceSections],
+ );
  const sectionPathFor = (section: Section): EditableNodePath => {
   const sourceIndex =
    lesson.sourceLesson?.lesson.sections.findIndex(
@@ -75,40 +82,10 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   runtime.updateLearningSettings({ lessonTextDisplayMode: nextDisplayMode });
  }
 
- function toggleDisplayMode(key: "showPinyin" | "showMeaning" | "showAnswers") {
-  updateDisplayMode({ [key]: !displayMode[key] });
- }
-
  const readingControls = (
-  <div className="flex flex-wrap items-center gap-1.5">
-   <LessonTypographyControls displayMode={displayMode} onChange={updateDisplayMode} />
-   <Button
-    type="button"
-    variant={displayMode.showPinyin ? "active" : "outline"}
-    size="sm"
-    className="h-8 px-2.5 text-xs"
-    onClick={() => toggleDisplayMode("showPinyin")}
-   >
-    Pinyin: {displayMode.showPinyin ? "Bật" : "Tắt"}
-   </Button>
-   <Button
-    type="button"
-    variant={displayMode.showMeaning ? "active" : "outline"}
-    size="sm"
-    className="h-8 px-2.5 text-xs"
-    onClick={() => toggleDisplayMode("showMeaning")}
-   >
-    Nghĩa: {displayMode.showMeaning ? "Bật" : "Tắt"}
-   </Button>
-   <Button
-    type="button"
-    variant={displayMode.showAnswers ? "active" : "outline"}
-    size="sm"
-    className="h-8 px-2.5 text-xs"
-    onClick={() => toggleDisplayMode("showAnswers")}
-   >
-    Đáp án: {displayMode.showAnswers ? "Bật" : "Tắt"}
-   </Button>
+  <div className="flex items-center gap-1.5">
+   <NativeMandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />
+   <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
   </div>
  );
 
@@ -169,11 +146,8 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
  return (
   <>
    {!compact ? (
-    <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID}>
-     <section className="grid gap-2">
-      <p className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Hiển thị</p>
-      {readingControls}
-     </section>
+    <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
+     {readingControls}
     </HanziHomeCommandBarPortal>
    ) : null}
    <LessonModuleFrame
@@ -205,38 +179,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
      onChange: actions.selectLessonTextSection,
     }}
     compact={compact}
-    actions={
-     compact ? (
-      <Popover.Root
-       open={isReadingSettingsOpen}
-       onOpenChange={setIsReadingSettingsOpen}
-       modal={false}
-      >
-       <Popover.Trigger className="inline-flex h-8 shrink-0 items-center justify-center gap-1 rounded-[min(var(--radius-md),12px)] border border-border bg-bg-card/80 px-2.5 text-xs font-semibold whitespace-nowrap shadow-theme-sm transition-all outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
-        <Eye className="h-4 w-4" />
-        Cài đặt đọc
-       </Popover.Trigger>
-       <Popover.Portal>
-        <Popover.Positioner
-         side="bottom"
-         align="end"
-         sideOffset={8}
-         collisionPadding={12}
-         positionMethod="fixed"
-         style={{ zIndex: 80 }}
-        >
-         <Popover.Popup
-          initialFocus={false}
-          finalFocus={false}
-          className="w-[min(34rem,calc(100vw-1.5rem))] rounded-2xl border border-border-default bg-bg-elevated p-3 shadow-theme-lg"
-         >
-          {readingControls}
-         </Popover.Popup>
-        </Popover.Positioner>
-       </Popover.Portal>
-      </Popover.Root>
-     ) : null
-    }
+    actions={compact ? readingControls : null}
    >
     {sourceSections.length > 0 ? (
      <div className="grid min-w-0 gap-2.5">

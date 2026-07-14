@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import { TextLineCard } from "./TextLineCard";
 import { getHanziTypographyStyle } from "./hanzi-typography";
@@ -155,11 +156,16 @@ export function PassageCard({
     <div className="rounded-xl border border-border-default bg-bg-primary p-3">
      {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
       <div className="grid gap-2">
-       <ClozeText
-        text={passageText || clozeText}
-        answerMap={answerMap}
-        displayMode={clozeDisplayMode}
-       />
+       <div className="flex min-w-0 items-start gap-1.5">
+        <div className="min-w-0 flex-1">
+         <ClozeText
+          text={passageText || clozeText}
+          answerMap={answerMap}
+          displayMode={clozeDisplayMode}
+         />
+        </div>
+        <NativeMandarinSpeakButton text={completedPassageText || passageText || clozeText} />
+       </div>
        {displayMode.showPinyin && passagePinyin && (
         <p className="text-xs font-bold italic text-text-muted sm:text-sm">{passagePinyin}</p>
        )}

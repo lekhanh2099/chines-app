@@ -1,13 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Headphones, Settings2 } from "lucide-react";
+import { Headphones } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
-import { LessonTypographyControls } from "@/features/hanzihome/components/lesson-overview/LessonTypographyControls";
+import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonModuleFrame,
@@ -149,31 +149,13 @@ export function ListeningWorkspace() {
      onShowTranslationAfterCheckChange={setShowTranslationAfterCheck}
     />
 
-    <div className="flex max-w-full flex-wrap items-center gap-2 rounded-xl border border-border-default bg-bg-card p-2.5">
-     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
-      <Settings2 className="size-4" />
-     </span>
-     <LessonTypographyControls displayMode={displayMode} onChange={updateDisplayMode} />
-     <Button
-      type="button"
-      variant={displayMode.showPinyin ? "active" : "outline"}
-      size="sm"
-      onClick={() => updateDisplayMode({ showPinyin: !displayMode.showPinyin })}
-     >
-      Pinyin
-     </Button>
-     <Button
-      type="button"
-      variant={displayMode.showMeaning ? "active" : "outline"}
-      size="sm"
-      onClick={() => updateDisplayMode({ showMeaning: !displayMode.showMeaning })}
-     >
-      Nghĩa Việt
-     </Button>
+    <div className="grid max-w-full gap-2 rounded-xl border border-border-default bg-bg-card p-2.5">
+     <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
      <Button
       type="button"
       variant={showScript ? "active" : "outline"}
       size="sm"
+      className="w-fit"
       onClick={() => setShowScript((current) => !current)}
      >
       {showScript ? "Ẩn toàn bộ script" : "Hiện toàn bộ script"}
@@ -217,6 +199,7 @@ export function ListeningWorkspace() {
      showTranslationAfterCheck={showTranslationAfterCheck}
      displayMode={displayMode}
      onSpeak={tts.speak}
+     onSpeakSequence={tts.speakSequence}
      lessonId={runtime.lesson.id}
     />
    </div>
