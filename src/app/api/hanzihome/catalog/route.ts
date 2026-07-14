@@ -1,6 +1,9 @@
-import { NextResponse } from "next/server";
-
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
+import {
+ apiError,
+ privateNoStoreJson,
+ requireAuthenticatedRoute,
+} from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -10,6 +13,9 @@ function parseBooleanParam(value: string | null) {
 }
 
 export async function GET(request: Request) {
+ const auth = await requireAuthenticatedRoute();
+ if (!auth.authenticated) return auth.response;
+
  try {
   const url = new URL(request.url);
   const courseId = url.searchParams.get("courseId")?.trim();
@@ -17,14 +23,7 @@ export async function GET(request: Request) {
   if (courseId) {
    const lessons = await hanzihomeContentRepository.getCourseLessonSummaries(courseId);
 
-   return NextResponse.json(
-    { lessons },
-    {
-     headers: {
-      "Cache-Control": "no-store",
-     },
-    },
-   );
+   return privateNoStoreJson({ lessons });
   }
 
   const includeLessons = parseBooleanParam(url.searchParams.get("includeLessons"));
@@ -32,16 +31,8 @@ export async function GET(request: Request) {
    includeLessons,
   });
 
-  return NextResponse.json(
-   { catalog },
-   {
-    headers: {
-     "Cache-Control": "no-store",
-    },
-   },
-  );
- } catch (error) {
-  const message = error instanceof Error ? error.message : "Unknown Supabase error";
-  return NextResponse.json({ error: message }, { status: 503 });
+  return privateNoStoreJson({ catalog });
+ } catch {
+  return apiError("Could not load HanziHome catalog", 503, "CATALOG_UNAVAILABLE");
  }
 }

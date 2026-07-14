@@ -43,7 +43,10 @@ export async function updateSession(request: NextRequest) {
  } = await supabase.auth.getUser();
 
  const isLoginRoute = request.nextUrl.pathname === "/login";
- const isPublicRoute = isLoginRoute || request.nextUrl.pathname === "/auth/callback";
+ const isPublicRoute =
+  isLoginRoute ||
+  request.nextUrl.pathname === "/auth/callback" ||
+  request.nextUrl.pathname === "/auth/confirm";
 
  // If there is no user and the route is not public, redirect to login page.
  if (

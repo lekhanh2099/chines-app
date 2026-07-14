@@ -1,10 +1,13 @@
-import { NextResponse } from "next/server";
-
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import type {
  AggregateFilters,
  AggregateKind,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import {
+ apiError,
+ privateNoStoreJson,
+ requireAuthenticatedRoute,
+} from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -15,20 +18,19 @@ type RouteContext = {
  }>;
 };
 
-function jsonError(message: string, status: number) {
- return NextResponse.json({ error: message }, { status });
-}
-
 function parseAggregateKind(value: string): AggregateKind | null {
  return value === "vocab" || value === "grammar" ? value : null;
 }
 
 export async function GET(request: Request, context: RouteContext) {
+ const auth = await requireAuthenticatedRoute();
+ if (!auth.authenticated) return auth.response;
+
  const { kind: rawKind } = await context.params;
  const kind = parseAggregateKind(rawKind);
 
  if (!kind) {
-  return jsonError("Unsupported aggregate kind", 400);
+  return apiError("Unsupported aggregate kind", 400, "UNSUPPORTED_AGGREGATE_KIND");
  }
 
  const url = new URL(request.url);
@@ -41,16 +43,8 @@ export async function GET(request: Request, context: RouteContext) {
  try {
   const items = await hanzihomeContentRepository.getAggregateItems({ kind, filters });
 
-  return NextResponse.json(
-   { items },
-   {
-    headers: {
-     "Cache-Control": "no-store",
-    },
-   },
-  );
- } catch (error) {
-  const message = error instanceof Error ? error.message : "Unknown Supabase error";
-  return jsonError(message, 503);
+  return privateNoStoreJson({ items });
+ } catch {
+  return apiError("Could not load aggregate content", 503, "AGGREGATE_UNAVAILABLE");
  }
 }

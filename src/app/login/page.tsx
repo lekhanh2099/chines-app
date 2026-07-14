@@ -149,6 +149,9 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signUp({
      email: value.email,
      password: value.password,
+     options: {
+      emailRedirectTo: new URL("/auth/confirm", window.location.origin).toString(),
+     },
     });
 
     if (error) {

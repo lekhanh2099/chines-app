@@ -1,7 +1,9 @@
-import { NextResponse } from "next/server";
-
 import { fetchListeningLessonBundle } from "@/features/hanzihome/listening/listening.repository";
-import { createClient } from "@/lib/supabase/server";
+import {
+ apiError,
+ privateNoStoreJson,
+ requireAuthenticatedRoute,
+} from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -11,25 +13,19 @@ type RouteContext = {
 };
 
 export async function GET(_request: Request, context: RouteContext) {
+ const auth = await requireAuthenticatedRoute();
+ if (!auth.authenticated) return auth.response;
+
  try {
   const { lessonId } = await context.params;
-  const supabase = await createClient();
-  const bundle = await fetchListeningLessonBundle(supabase, lessonId);
+  const bundle = await fetchListeningLessonBundle(auth.context.supabase, lessonId);
 
   if (!bundle) {
-   return NextResponse.json({ error: "Listening lesson not found" }, { status: 404 });
+   return apiError("Listening lesson not found", 404, "LISTENING_LESSON_NOT_FOUND");
   }
 
-  return NextResponse.json(
-   { bundle },
-   {
-    headers: {
-     "Cache-Control": "private, no-store",
-    },
-   },
-  );
- } catch (error) {
-  const message = error instanceof Error ? error.message : "Unknown listening data error";
-  return NextResponse.json({ error: message }, { status: 503 });
+  return privateNoStoreJson({ bundle });
+ } catch {
+  return apiError("Could not load listening lesson", 503, "LISTENING_UNAVAILABLE");
  }
 }

@@ -1,26 +1,24 @@
-import { NextResponse } from "next/server";
-
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
 import { buildHanziHomeSearchIndex } from "@/features/hanzihome/search/buildSearchIndex";
+import {
+ apiError,
+ privateNoStoreJson,
+ requireAuthenticatedRoute,
+} from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export async function GET() {
+ const auth = await requireAuthenticatedRoute();
+ if (!auth.authenticated) return auth.response;
+
  try {
   const data = await hanzihomeContentRepository.getSearchData();
   const items = buildHanziHomeSearchIndex(data);
 
-  return NextResponse.json(
-   { items },
-   {
-    headers: {
-     "Cache-Control": "no-store",
-    },
-   },
-  );
- } catch (error) {
-  const message = error instanceof Error ? error.message : "Unknown Supabase error";
-  return NextResponse.json({ error: message }, { status: 503 });
+  return privateNoStoreJson({ items });
+ } catch {
+  return apiError("Could not load search index", 503, "SEARCH_INDEX_UNAVAILABLE");
  }
 }
