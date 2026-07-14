@@ -99,7 +99,9 @@ export function CourseCard({
      <span className="h-5 w-28 animate-pulse rounded-full bg-bg-subtle" />
     ) : (
      <div className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-text-muted sm:flex">
-      <Badge variant="default" size="sm">{visibleLessonCount} bài</Badge>
+      <Badge variant="default" size="sm">
+       {visibleLessonCount} bài
+      </Badge>
       <span>{visibleVocabCount} từ</span>
       <span aria-hidden="true">·</span>
       <span>{visibleGrammarCount} ngữ pháp</span>
@@ -115,25 +117,25 @@ export function CourseCard({
      </div>
     ) : bookLessons.length > 0 ? (
      <div className="flex min-w-0 items-center gap-1.5">
-       <div className="min-w-0 flex-1">
-        <Select
-         options={courseLessonOptions}
-         selectValue={selectedOption}
-         triggerAriaLabel={`Chọn bài trong ${book.shortTitle || book.title}`}
-         triggerPlaceholder="Chọn bài"
-         onChange={(option: IOption | null) => {
-          if (option?.value) setSelectedLessonId(String(option.value));
-         }}
-        />
-       </div>
+      <div className="min-w-0 flex-1">
+       <Select
+        options={courseLessonOptions}
+        selectValue={selectedOption}
+        triggerAriaLabel={`Chọn bài trong ${book.shortTitle || book.title}`}
+        triggerPlaceholder="Chọn bài"
+        onChange={(option: IOption | null) => {
+         if (option?.value) setSelectedLessonId(String(option.value));
+        }}
+       />
+      </div>
 
-       {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-       <Button asChild size="sm">
-        <Link href={href} prefetch={false}>
-         Mở bài
-         <ArrowRight data-icon="inline-end" />
-        </Link>
-       </Button>
+      {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+      <Button asChild size="sm">
+       <Link href={href} prefetch={false}>
+        Mở bài
+        <ArrowRight data-icon="inline-end" />
+       </Link>
+      </Button>
      </div>
     ) : null}
    </div>

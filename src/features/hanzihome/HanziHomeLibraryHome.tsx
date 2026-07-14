@@ -90,65 +90,72 @@ export function HanziHomeLibraryHome() {
    </div>
 
    {courses.length === 0 ? (
-     <Card variant="glass" padding="lg">
-      <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
-     </Card>
-    ) : (
-     <section
-      className="grid min-h-0 flex-1 content-start gap-3 overflow-y-auto overscroll-contain pr-1 pb-1 scrollbar-soft"
-      aria-labelledby="course-library-heading"
-     >
-       {courses.map((course) => {
-        const courseBooks = books
-         .filter((book) => book.courseId === course.id)
-         .toSorted((left, right) => left.order - right.order);
+    <Card variant="glass" padding="lg">
+     <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
+    </Card>
+   ) : (
+    <section
+     className="grid min-h-0 flex-1 content-start gap-3 overflow-y-auto overscroll-contain pr-1 pb-1 scrollbar-soft"
+     aria-labelledby="course-library-heading"
+    >
+     {courses.map((course) => {
+      const courseBooks = books
+       .filter((book) => book.courseId === course.id)
+       .toSorted((left, right) => left.order - right.order);
 
-        return (
-         <section key={course.id} className="grid gap-1.5" aria-labelledby={`${course.id}-heading`}>
-          <Card
-           variant="glass"
-           padding="sm"
-           className="flex flex-wrap items-center justify-between gap-2 rounded-xl p-2"
-          >
-           <div className="flex min-w-0 items-center gap-2">
-            <span className="app-brand-gradient flex size-8 shrink-0 items-center justify-center rounded-lg text-primary-foreground shadow-theme-sm">
-             <BookOpenCheck className="size-4" />
-            </span>
-            <div className="min-w-0">
-             <div className="flex flex-wrap items-center gap-1.5">
-              <h3 id={`${course.id}-heading`} className="truncate text-sm font-black text-text-primary sm:text-base">
-               {course.title}
-              </h3>
-              <Badge variant="purple" size="sm">{courseBooks.length} quyển</Badge>
-             </div>
-             <p className="hidden truncate text-xs font-medium text-text-muted sm:block">
-              {course.subtitle || `${course.stats.lessonCount} bài học trong giáo trình này`}
-             </p>
-            </div>
+      return (
+       <section key={course.id} className="grid gap-1.5" aria-labelledby={`${course.id}-heading`}>
+        <Card
+         variant="glass"
+         padding="sm"
+         className="flex flex-wrap items-center justify-between gap-2 rounded-xl p-2"
+        >
+         <div className="flex min-w-0 items-center gap-2">
+          <span className="app-brand-gradient flex size-8 shrink-0 items-center justify-center rounded-lg text-primary-foreground shadow-theme-sm">
+           <BookOpenCheck className="size-4" />
+          </span>
+          <div className="min-w-0">
+           <div className="flex flex-wrap items-center gap-1.5">
+            <h3
+             id={`${course.id}-heading`}
+             className="truncate text-sm font-black text-text-primary sm:text-base"
+            >
+             {course.title}
+            </h3>
+            <Badge variant="purple" size="sm">
+             {courseBooks.length} quyển
+            </Badge>
            </div>
-           <div className="flex items-center gap-2">
-            <Badge variant="default" size="sm">{course.stats.lessonCount} bài</Badge>
-            {canEdit && editMode ? <CourseCrudActions course={course} /> : null}
-           </div>
-          </Card>
-
-          <div className="grid gap-2 lg:grid-cols-2">
-           {courseBooks.map((book, index) => (
-            <CourseCard
-             key={book.id}
-             course={course}
-             book={book}
-             editMode={canEdit && editMode}
-             canMoveBookUp={index > 0}
-             canMoveBookDown={index < courseBooks.length - 1}
-            />
-           ))}
+           <p className="hidden truncate text-xs font-medium text-text-muted sm:block">
+            {course.subtitle || `${course.stats.lessonCount} bài học trong giáo trình này`}
+           </p>
           </div>
-         </section>
-        );
-       })}
-     </section>
-    )}
+         </div>
+         <div className="flex items-center gap-2">
+          <Badge variant="default" size="sm">
+           {course.stats.lessonCount} bài
+          </Badge>
+          {canEdit && editMode ? <CourseCrudActions course={course} /> : null}
+         </div>
+        </Card>
+
+        <div className="grid gap-2 lg:grid-cols-2">
+         {courseBooks.map((book, index) => (
+          <CourseCard
+           key={book.id}
+           course={course}
+           book={book}
+           editMode={canEdit && editMode}
+           canMoveBookUp={index > 0}
+           canMoveBookDown={index < courseBooks.length - 1}
+          />
+         ))}
+        </div>
+       </section>
+      );
+     })}
+    </section>
+   )}
   </main>
  );
 }

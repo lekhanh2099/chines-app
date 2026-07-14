@@ -53,10 +53,7 @@ function GoogleIcon() {
     fill="currentColor"
     d="M12 22c2.9 0 5.3-1 7-2.6l-3.5-2.7c-1 .7-2.2 1-3.5 1a6 6 0 0 1-5.6-4.1H2.8v2.8A10 10 0 0 0 12 22Z"
    />
-   <path
-    fill="currentColor"
-    d="M6.4 13.6a6 6 0 0 1 0-3.2V7.6H2.8a10 10 0 0 0 0 8.8l3.6-2.8Z"
-   />
+   <path fill="currentColor" d="M6.4 13.6a6 6 0 0 1 0-3.2V7.6H2.8a10 10 0 0 0 0 8.8l3.6-2.8Z" />
    <path
     fill="currentColor"
     d="M12 6.2c1.6 0 3 .6 4.1 1.6l3.1-3A10 10 0 0 0 2.8 7.6l3.6 2.8A6 6 0 0 1 12 6.2Z"
@@ -231,9 +228,7 @@ export default function LoginPage() {
           placeholder="••••••••"
           autoComplete={isLogin ? "current-password" : "new-password"}
           helperText={
-           isLogin
-            ? undefined
-            : "Ít nhất 12 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt."
+           isLogin ? undefined : "Ít nhất 12 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt."
           }
          />
         )}
