@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { jsonValueSchema } from "@/lib/json-schema";
+
 export const canonicalEntityTypeSchema = z.enum([
  "course",
  "book",
@@ -25,7 +27,7 @@ export const canonicalMutationOperationSchema = z.enum([
 export const mutationEnvelopeSchema = z.object({
  reason: z.string().trim().min(1).default("Cập nhật nội dung HanziHome"),
  expectedUpdatedAt: z.iso.datetime({ offset: true }).optional(),
- changes: z.record(z.string(), z.unknown()).default({}),
+ changes: z.record(z.string(), jsonValueSchema).default({}),
 });
 
 export const mutationResponseSchema = z.object({

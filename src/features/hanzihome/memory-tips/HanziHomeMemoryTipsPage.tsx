@@ -94,9 +94,7 @@ export function HanziHomeMemoryTipsPage() {
     </div>
    </Card>
 
-   {tipsQuery.isLoading && (
-    <MemoryTipsSkeleton />
-   )}
+   {tipsQuery.isLoading && <MemoryTipsSkeleton />}
 
    {tipsQuery.error && (
     <Card className="rounded-xl border border-border-default">

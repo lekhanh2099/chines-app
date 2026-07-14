@@ -1,5 +1,7 @@
 # PRD PHASE MỚI — HanziHome Productization Sprint
 
+> **SUPERSEDED — historical context only.** The current application is Supabase-backed. Local JSON open/save and the architecture below are not current implementation requirements.
+
 ## 0. Mục tiêu phase này
 
 Phase này không làm thêm feature mới cho vui. Phase này biến cái sườn hiện tại thành một app học được thật, sửa được thật, và không bị Codex tự diễn UI lung tung.

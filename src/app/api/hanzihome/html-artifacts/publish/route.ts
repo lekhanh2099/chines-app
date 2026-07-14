@@ -5,7 +5,10 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { createHtmlArtifactPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { publicSupabaseEnv } from "@/lib/env/public";
+import { getSupabaseServerSecret } from "@/lib/env/server";
 import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
+import type { Database } from "@/types/supabase.generated";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -19,7 +22,7 @@ const detailColumns =
  "id, owner_id, folder_id, title, artifact_type, tags, html, created_at, updated_at";
 
 type PublishAuthContext = {
- supabase: SupabaseClient;
+ supabase: SupabaseClient<Database>;
  ownerId: string;
  authMode: "publish_token" | "session" | "user_token";
 };
@@ -45,29 +48,27 @@ function isSameToken(value: string, expected: string) {
  const valueBuffer = Buffer.from(value);
  const expectedBuffer = Buffer.from(expected);
 
- return valueBuffer.length === expectedBuffer.length && timingSafeEqual(valueBuffer, expectedBuffer);
-}
-
-function createBearerSupabaseClient(accessToken: string) {
- return createSupabaseClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  {
-   auth: {
-    autoRefreshToken: false,
-    persistSession: false,
-   },
-   global: {
-    headers: {
-     Authorization: `Bearer ${accessToken}`,
-    },
-   },
-  },
+ return (
+  valueBuffer.length === expectedBuffer.length && timingSafeEqual(valueBuffer, expectedBuffer)
  );
 }
 
+function createBearerSupabaseClient(accessToken: string) {
+ return createSupabaseClient<Database>(publicSupabaseEnv.url, publicSupabaseEnv.key, {
+  auth: {
+   autoRefreshToken: false,
+   persistSession: false,
+  },
+  global: {
+   headers: {
+    Authorization: `Bearer ${accessToken}`,
+   },
+  },
+ });
+}
+
 function createServiceSupabaseClient() {
- return createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
+ return createSupabaseClient<Database>(publicSupabaseEnv.url, getSupabaseServerSecret(), {
   auth: {
    autoRefreshToken: false,
    persistSession: false,
@@ -81,7 +82,7 @@ async function getPublishAuthContext(request: Request): Promise<PublishAuthConte
 
  if (bearerToken && publishToken && isSameToken(bearerToken, publishToken)) {
   const ownerId = process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const serviceRoleKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!ownerId || !serviceRoleKey) {
    return jsonError("HTML publish token is configured without owner or service role env.", 500);
@@ -133,7 +134,7 @@ async function verifyFolderOwnership({
  ownerId,
  folderId,
 }: {
- supabase: SupabaseClient;
+ supabase: SupabaseClient<Database>;
  ownerId: string;
  folderId: string | null | undefined;
 }) {
@@ -179,7 +180,7 @@ async function updateArtifact({
  ownerId,
  payload,
 }: {
- supabase: SupabaseClient;
+ supabase: SupabaseClient<Database>;
  ownerId: string;
  payload: PublishPayload;
 }) {
@@ -201,7 +202,7 @@ async function createArtifact({
  ownerId,
  payload,
 }: {
- supabase: SupabaseClient;
+ supabase: SupabaseClient<Database>;
  ownerId: string;
  payload: PublishPayload;
 }) {
@@ -227,7 +228,9 @@ export async function GET() {
    sessionUserId: user.id,
    publishTokenEnabled: Boolean(process.env.HANZIHOME_HTML_PUBLISH_TOKEN),
    publishOwnerId: process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID ?? null,
-   serviceRoleEnabled: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+   serviceRoleEnabled: Boolean(
+    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY,
+   ),
   },
   {
    headers: {

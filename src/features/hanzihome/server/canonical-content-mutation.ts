@@ -12,6 +12,7 @@ import {
  type CanonicalMutationOperation,
 } from "@/features/hanzihome/schemas/canonical-content.schema";
 import { createClient } from "@/lib/supabase/server";
+import { jsonValueSchema } from "@/lib/json-schema";
 
 type MutationRpcError = {
  code?: string;
@@ -79,15 +80,15 @@ export async function mutateCanonicalContent({
  const { data, error } = await sessionClient.rpc("hanzihome_mutate_content_as_user", {
   p_operation: parsedOperation,
   p_entity_type: parsedEntityType,
-  p_entity_id: entityId ?? null,
-  p_expected_updated_at: parsedBody.data.expectedUpdatedAt ?? null,
-  p_changes: parsedChanges.data,
+  p_entity_id: entityId,
+  p_expected_updated_at: parsedBody.data.expectedUpdatedAt,
+  p_changes: jsonValueSchema.parse(parsedChanges.data),
   p_reason: parsedBody.data.reason,
-  p_audit_operation: audit?.operation ?? null,
-  p_audit_entity_type: audit?.entityType ?? null,
-  p_audit_entity_id: audit?.entityId ?? null,
-  p_audit_parent_entity_type: audit?.parentEntityType ?? null,
-  p_audit_parent_entity_id: audit?.parentEntityId ?? null,
+  p_audit_operation: audit?.operation,
+  p_audit_entity_type: audit?.entityType,
+  p_audit_entity_id: audit?.entityId,
+  p_audit_parent_entity_type: audit?.parentEntityType,
+  p_audit_parent_entity_id: audit?.parentEntityId,
  });
 
  if (error) {

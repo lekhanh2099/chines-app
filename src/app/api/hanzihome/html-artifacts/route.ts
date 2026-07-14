@@ -11,7 +11,8 @@ import { createClient } from "@/lib/supabase/server";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-const summaryColumns = "id, owner_id, folder_id, title, artifact_type, tags, created_at, updated_at";
+const summaryColumns =
+ "id, owner_id, folder_id, title, artifact_type, tags, created_at, updated_at";
 const detailColumns = `${summaryColumns}, html`;
 const folderColumns =
  "id, owner_id, parent_folder_id, name, color, position, created_at, updated_at";
@@ -48,10 +49,10 @@ export async function GET(request: Request) {
 
  const [artifactsResult, foldersResult] = await Promise.all([
   supabase
-  .from("hanzihome_html_artifacts")
-  .select(summaryColumns)
-  .eq("owner_id", user.id)
-  .order("updated_at", { ascending: false })
+   .from("hanzihome_html_artifacts")
+   .select(summaryColumns)
+   .eq("owner_id", user.id)
+   .order("updated_at", { ascending: false })
    .limit(limit),
   supabase
    .from("hanzihome_html_artifact_folders")

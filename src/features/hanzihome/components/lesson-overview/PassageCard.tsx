@@ -192,11 +192,7 @@ export function PassageCard({
     </div>
    )}
 
-   <AnswerList
-    answers={answerList}
-    open={answerListOpen}
-    onOpenChange={setManualAnswerListOpen}
-   />
+   <AnswerList answers={answerList} open={answerListOpen} onOpenChange={setManualAnswerListOpen} />
   </div>
  );
 }

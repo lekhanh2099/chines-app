@@ -34,7 +34,7 @@ export function SoftDeleteConfirmDialog({
 
  async function handleConfirm() {
   setIsDeleting(true);
- try {
+  try {
    await onConfirm();
    setOpen(false);
   } catch {

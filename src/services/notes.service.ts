@@ -5,6 +5,7 @@
  */
 
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { logger } from "@/lib/logger";
 import type { DbNote, NoteCategory } from "@/types/database";
 
 /* ══════════════════════════════════════════
@@ -77,7 +78,7 @@ async function getLessonNoteLinksForNotes(
   .in("note_id", noteIds);
 
  if (error) {
-  console.error("[NotesService] fetch lesson note links error:", error);
+  logger.error("[NotesService] fetch lesson note links error:", error);
   return linksByNoteId;
  }
 
@@ -124,7 +125,7 @@ export async function getUserNotes(
   .order("updated_at", { ascending: false });
 
  if (error) {
-  console.error("[NotesService] fetch error:", error);
+  logger.error("[NotesService] fetch error:", error);
   return [];
  }
 
@@ -145,7 +146,7 @@ export async function getRecentUserNotes(
   .limit(limit);
 
  if (error) {
-  console.error("[NotesService] fetch recent error:", error);
+  logger.error("[NotesService] fetch recent error:", error);
   return [];
  }
 
@@ -166,7 +167,7 @@ export async function getNotesByCategory(
   .order("updated_at", { ascending: false });
 
  if (error) {
-  console.error("[NotesService] fetch by category error:", error);
+  logger.error("[NotesService] fetch by category error:", error);
   return [];
  }
 
@@ -180,14 +181,14 @@ export async function getNoteById(
  userId: string,
 ): Promise<NoteDetail | null> {
  const { data, error } = await supabase
- .from("notes")
- .select("*")
- .eq("id", noteId)
- .eq("user_id", userId)
- .maybeSingle();
+  .from("notes")
+  .select("*")
+  .eq("id", noteId)
+  .eq("user_id", userId)
+  .maybeSingle();
 
  if (error) {
-  console.error("[NotesService] fetch by ID error:", error);
+  logger.error("[NotesService] fetch by ID error:", error);
   return null;
  }
 
@@ -226,7 +227,7 @@ export async function createNote(
   .single();
 
  if (error) {
-  console.error("[NotesService] create error:", error);
+  logger.error("[NotesService] create error:", error);
   return null;
  }
 
@@ -245,7 +246,7 @@ export async function updateNoteContent(
   .eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] update content error:", error);
+  logger.error("[NotesService] update content error:", error);
   return false;
  }
  return true;
@@ -263,7 +264,7 @@ export async function updateNoteTitle(
   .eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] update title error:", error);
+  logger.error("[NotesService] update title error:", error);
   return false;
  }
  return true;
@@ -281,7 +282,7 @@ export async function updateNoteCategory(
   .eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] update category error:", error);
+  logger.error("[NotesService] update category error:", error);
   return false;
  }
  return true;
@@ -292,7 +293,7 @@ export async function deleteNote(supabase: SupabaseClient, noteId: string): Prom
  const { error } = await supabase.from("notes").delete().eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] delete error:", error);
+  logger.error("[NotesService] delete error:", error);
   return false;
  }
  return true;
@@ -313,7 +314,7 @@ export async function updateReadingContent(
   .eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] update reading content error:", error);
+  logger.error("[NotesService] update reading content error:", error);
   return false;
  }
  return true;
@@ -331,7 +332,7 @@ export async function updateSplitViewEnabled(
   .eq("id", noteId);
 
  if (error) {
-  console.error("[NotesService] update split view state error:", error);
+  logger.error("[NotesService] update split view state error:", error);
   return false;
  }
  return true;
@@ -351,7 +352,7 @@ export async function getNoteByShortId(
   .single();
 
  if (error) {
-  console.error("[NotesService] fetch by short_id error:", error);
+  logger.error("[NotesService] fetch by short_id error:", error);
   return null;
  }
  return data as Pick<DbNote, "id" | "short_id">;
@@ -373,7 +374,7 @@ export async function searchNotesByTitle(
   .limit(limit);
 
  if (error) {
-  console.error("[NotesService] search error:", error);
+  logger.error("[NotesService] search error:", error);
   return [];
  }
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
@@ -400,7 +401,7 @@ export async function getNoteByLessonNoteLink(
   .maybeSingle();
 
  if (error) {
-  console.error("[NotesService] fetch lesson note link error:", error);
+  logger.error("[NotesService] fetch lesson note link error:", error);
   return null;
  }
 
@@ -433,7 +434,7 @@ export async function linkNoteToLessonTarget(
   .maybeSingle();
 
  if (selectError) {
-  console.error("[NotesService] select lesson note link error:", selectError);
+  logger.error("[NotesService] select lesson note link error:", selectError);
   return false;
  }
 
@@ -447,7 +448,7 @@ export async function linkNoteToLessonTarget(
    .eq("id", (existingLink as { id: string }).id);
 
   if (updateError) {
-   console.error("[NotesService] update lesson note link error:", updateError);
+   logger.error("[NotesService] update lesson note link error:", updateError);
    return false;
   }
 
@@ -463,7 +464,7 @@ export async function linkNoteToLessonTarget(
  });
 
  if (insertError) {
-  console.error("[NotesService] insert lesson note link error:", insertError);
+  logger.error("[NotesService] insert lesson note link error:", insertError);
   return false;
  }
 

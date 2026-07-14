@@ -14,6 +14,7 @@ export function useHanziHomeLesson(lessonId: string | null) {
  });
 
  return {
+  ...query,
   lesson: query.data ?? null,
   isLoading: Boolean(lessonId) && query.isPending,
   isError: query.isError,

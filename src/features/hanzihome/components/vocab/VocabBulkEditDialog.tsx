@@ -114,12 +114,17 @@ function entityIdFromJsonItem(value: VocabBulkEditableItem) {
 function parseJsonItems(value: string) {
  const parsed: unknown = JSON.parse(value);
  if (!Array.isArray(parsed) || !parsed.every(isVocabBulkJsonItem)) {
-  throw new Error("JSON phải là array vocab item đầy đủ và mỗi item cần có id/runtimeId, hanzi, pinyin.");
+  throw new Error(
+   "JSON phải là array vocab item đầy đủ và mỗi item cần có id/runtimeId, hanzi, pinyin.",
+  );
  }
  return parsed;
 }
 
-function itemWithBulkRow<TItem extends VocabBulkEditableItem>(item: TItem, row: VocabBulkRow): TItem {
+function itemWithBulkRow<TItem extends VocabBulkEditableItem>(
+ item: TItem,
+ row: VocabBulkRow,
+): TItem {
  const next = structuredClone(item) as TItem;
  const record = next as unknown as Record<string, unknown>;
  const meaning = asRecord(record.meaning);

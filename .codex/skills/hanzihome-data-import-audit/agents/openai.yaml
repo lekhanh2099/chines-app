@@ -1,0 +1,4 @@
+interface:
+ display_name: "HanziHome Data Import Audit"
+ short_description: "Audit HanziHome import data and mappings"
+ default_prompt: "Use $hanzihome-data-import-audit to audit this HanziHome source dataset before import."

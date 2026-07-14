@@ -33,9 +33,7 @@ export function WorkspaceCommandHeader({
       {badge}
      </div>
      {description ? (
-      <div className="text-sm font-medium text-text-muted md:hidden 2xl:block">
-       {description}
-      </div>
+      <div className="text-sm font-medium text-text-muted md:hidden 2xl:block">{description}</div>
      ) : null}
     </div>
 

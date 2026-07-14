@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { logger } from "@/lib/logger";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
     });
 
  if (!upsertResult) {
-  console.error("[generate-vocab] DB upsert failed");
+  logger.error("[generate-vocab] DB upsert failed");
  }
 
  return NextResponse.json({ data: aiResult, cached: false });

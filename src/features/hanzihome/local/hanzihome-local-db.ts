@@ -60,10 +60,7 @@ export function openHanziHomeLocalDb(): Promise<IDBDatabase> {
  return dbPromise;
 }
 
-export async function readFromStore<T>(
- storeName: string,
- key: IDBValidKey,
-): Promise<T | null> {
+export async function readFromStore<T>(storeName: string, key: IDBValidKey): Promise<T | null> {
  const db = await openHanziHomeLocalDb();
 
  return new Promise((resolve, reject) => {

@@ -16,10 +16,7 @@ function removeSonnerHeightTransition() {
   let nextCss = css;
   for (const [prefix, suffix] of SONNER_HEIGHT_TRANSITIONS) {
    const transition = `${prefix}height${suffix}`;
-   nextCss = nextCss.replace(
-    transition,
-    transition.replace(/,?\s*height (?:\.4s|400ms)/, ""),
-   );
+   nextCss = nextCss.replace(transition, transition.replace(/,?\s*height (?:\.4s|400ms)/, ""));
   }
 
   if (nextCss !== css) {

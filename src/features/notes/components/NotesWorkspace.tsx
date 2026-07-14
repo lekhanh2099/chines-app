@@ -7,12 +7,10 @@ import { useSearchParams } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { QueryErrorCard } from "@/components/ui/query-error-card";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
 import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
-import {
- useHanziHomeCatalogData,
- useIsCatalogPending,
-} from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import type { NoteListItem } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
@@ -69,9 +67,10 @@ export function NotesWorkspace() {
  const searchParams = useSearchParams();
  const isNewAction = searchParams.get("action") === "new";
 
- const { data: notes, isLoading } = useNotesList();
- const catalog = useHanziHomeCatalogData({ includeLessons: true });
- const isCatalogPending = useIsCatalogPending({ includeLessons: true });
+ const notesQuery = useNotesList();
+ const notes = notesQuery.data;
+ const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
+ const catalog = catalogQuery.data;
  const allNotes = notes ?? emptyNotes;
  const lessonLookup = useMemo(() => buildLessonLookup(catalog.lessons), [catalog.lessons]);
 
@@ -101,7 +100,21 @@ export function NotesWorkspace() {
 
  if (isNewAction) return <NewNoteStarter />;
 
- if (isLoading || isCatalogPending) return <NotesWorkspaceSkeleton />;
+ if (notesQuery.isPending || catalogQuery.isPending) return <NotesWorkspaceSkeleton />;
+
+ if (notesQuery.isError || catalogQuery.isError) {
+  return (
+   <div className="p-4 sm:p-6">
+    <QueryErrorCard
+     title="Không tải được ghi chú"
+     description="Danh sách ghi chú hoặc dữ liệu bài học hiện không khả dụng."
+     onRetry={() => {
+      void Promise.all([notesQuery.refetch(), catalogQuery.refetch()]);
+     }}
+    />
+   </div>
+  );
+ }
 
  return (
   <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">

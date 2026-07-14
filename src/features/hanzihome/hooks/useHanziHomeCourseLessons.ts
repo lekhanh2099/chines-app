@@ -18,6 +18,7 @@ export function useHanziHomeCourseLessons(
  });
 
  return {
+  ...query,
   lessons: query.data ?? [],
   isLoading: query.isLoading,
   isError: query.isError,

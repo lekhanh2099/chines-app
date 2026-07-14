@@ -49,7 +49,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const hadTabsRef = useRef(false);
  const [mobileHeaderActionsContainer, setMobileHeaderActionsContainer] =
   useState<HTMLDivElement | null>(null);
- const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(null);
+ const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(
+  null,
+ );
 
  const selectableNotes = useMemo(
   () =>
@@ -151,12 +153,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  }, [tabs.length, router]);
 
  if (!hasHydrated || (initialNoteId && tabs.length === 0)) {
-  return (
-   <NoteEditorSkeleton
-    showTabBar
-    className="h-full"
-   />
-  );
+  return <NoteEditorSkeleton showTabBar className="h-full" />;
  }
 
  if (tabs.length === 0) {

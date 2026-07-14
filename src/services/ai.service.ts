@@ -20,6 +20,12 @@ import {
  type GeminiModelId,
 } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
+import { logger } from "@/lib/logger";
+import {
+ getProviderCooldownMs,
+ getProviderSkipReason,
+ markProviderUnavailable,
+} from "@/services/ai/provider-outage-policy";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
@@ -43,15 +49,6 @@ type StructuredRequestResult<T> = {
  data: T | null;
  error: string | null;
 };
-
-type ProviderName = "Gemini" | "DeepSeek" | "OpenAI";
-
-type ProviderOutageState = {
- unavailableUntil: number;
- reason: string;
-};
-
-const providerOutages: Record<string, ProviderOutageState> = {};
 
 type AiRequestOptions = {
  promptTemplate?: string | null;
@@ -136,57 +133,6 @@ Rules:
 - Do not wrap the response in markdown.`;
 }
 
-function getProviderOutageKey(provider: ProviderName, geminiModel?: GeminiModelId): string {
- return provider === "Gemini" ? `${provider}:${geminiModel || DEFAULT_GEMINI_MODEL}` : provider;
-}
-
-function getProviderSkipReason(provider: ProviderName, geminiModel?: GeminiModelId): string | null {
- const outage = providerOutages[getProviderOutageKey(provider, geminiModel)];
- if (!outage) return null;
-
- if (Date.now() >= outage.unavailableUntil) {
-  delete providerOutages[getProviderOutageKey(provider, geminiModel)];
-  return null;
- }
-
- return outage.reason;
-}
-
-function markProviderUnavailable(
- provider: ProviderName,
- cooldownMs: number,
- reason: string,
- geminiModel?: GeminiModelId,
-) {
- providerOutages[getProviderOutageKey(provider, geminiModel)] = {
-  unavailableUntil: Date.now() + cooldownMs,
-  reason,
- };
-}
-
-function getProviderCooldownMs(provider: ProviderName, status: number, errorBody: string): number {
- const retryMatch = errorBody.match(/"retryDelay"\s*:\s*"([\d.]+)s"/i);
- const retrySeconds = retryMatch ? Number(retryMatch[1]) : NaN;
-
- if (provider === "Gemini" && status === 429) {
-  if (Number.isFinite(retrySeconds) && retrySeconds > 0) {
-   return Math.ceil(retrySeconds * 1000);
-  }
-
-  return 60_000;
- }
-
- if (provider === "DeepSeek" && status === 402) {
-  return 10 * 60_000;
- }
-
- if (status === 401 || status === 403) {
-  return 10 * 60_000;
- }
-
- return 0;
-}
-
 /* ══════════════════════════════════════════
    Provider: DeepSeek
    ══════════════════════════════════════════ */
@@ -210,7 +156,7 @@ async function callDeepSeekRaw(
  if (useOutageTracking) {
   const skippedReason = getProviderSkipReason("DeepSeek");
   if (skippedReason) {
-   console.warn("[AI:DeepSeek] Skipped due to recent provider outage");
+   logger.warn("[AI:DeepSeek] Skipped due to recent provider outage");
    return {
     content: null,
     error: skippedReason,
@@ -219,7 +165,7 @@ async function callDeepSeekRaw(
  }
 
  if (!apiKey) {
-  console.warn("[AI:DeepSeek] No API key configured");
+  logger.warn("[AI:DeepSeek] No API key configured");
   return {
    content: null,
    error: "DeepSeek chưa được cấu hình API key.",
@@ -250,7 +196,7 @@ async function callDeepSeekRaw(
 
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
-   console.error(`[AI:DeepSeek] HTTP ${res.status}:`, errBody);
+   logger.error(`[AI:DeepSeek] HTTP ${res.status}:`, errBody);
 
    if (isUserKey) {
     const userError = formatManagedKeyError("DeepSeek", res.status, errBody);
@@ -270,8 +216,7 @@ async function callDeepSeekRaw(
 
   const json: unknown = await res.json();
   const content = (json as Record<string, unknown[]>)?.choices?.[0] as
-   | Record<string, Record<string, string>>
-   | undefined;
+   Record<string, Record<string, string>> | undefined;
   if (!content?.message?.content) {
    return {
     content: null,
@@ -284,7 +229,7 @@ async function callDeepSeekRaw(
    error: null,
   };
  } catch (err) {
-  console.error("[AI:DeepSeek] Error:", err);
+  logger.error("[AI:DeepSeek] Error:", err);
 
   // Timeout → short cooldown so fallback chain doesn't waste time retrying
   if (useOutageTracking && err instanceof Error && err.message?.includes("timeout")) {
@@ -314,7 +259,7 @@ async function callGeminiRaw(
  if (!isUserKey) {
   const skippedReason = getProviderSkipReason("Gemini", model);
   if (skippedReason) {
-   console.warn("[AI:Gemini] Skipped due to recent provider outage");
+   logger.warn("[AI:Gemini] Skipped due to recent provider outage");
    return {
     content: null,
     error: skippedReason,
@@ -324,7 +269,7 @@ async function callGeminiRaw(
 
  const resolvedApiKey = apiKey || process.env.GEMINI_API_KEY;
  if (!resolvedApiKey) {
-  console.warn("[AI:Gemini] No API key configured");
+  logger.warn("[AI:Gemini] No API key configured");
   return {
    content: null,
    error: "Gemini chưa được cấu hình API key.",
@@ -357,7 +302,7 @@ async function callGeminiRaw(
 
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
-   console.error(`[AI:Gemini] HTTP ${res.status}:`, errBody);
+   logger.error(`[AI:Gemini] HTTP ${res.status}:`, errBody);
 
    if (isUserKey) {
     return {
@@ -395,7 +340,7 @@ async function callGeminiRaw(
    error: null,
   };
  } catch (err) {
-  console.error("[AI:Gemini] Error:", err);
+  logger.error("[AI:Gemini] Error:", err);
   return {
    content: null,
    error: `Gemini lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
@@ -436,7 +381,7 @@ async function callOpenAiRaw(
 
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
-   console.error(`[AI:OpenAI] HTTP ${res.status}:`, errBody);
+   logger.error(`[AI:OpenAI] HTTP ${res.status}:`, errBody);
    return {
     content: null,
     error: formatManagedKeyError("OpenAI", res.status, errBody),
@@ -457,7 +402,7 @@ async function callOpenAiRaw(
 
   return { content, error: null };
  } catch (err) {
-  console.error("[AI:OpenAI] Error:", err);
+  logger.error("[AI:OpenAI] Error:", err);
   return {
    content: null,
    error: `OpenAI lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
@@ -579,9 +524,9 @@ function parseAndValidate<T>(
 
   const result = schema.safeParse(parsed);
   if (!result.success) {
-   console.error("[AI] Zod validation failed:", result.error.issues);
+   logger.error("[AI] Zod validation failed:", result.error.issues);
    if (fallback(parsed)) {
-    console.warn("[AI] Using unvalidated data as fallback");
+    logger.warn("[AI] Using unvalidated data as fallback");
     return parsed as T;
    }
    return null;
@@ -589,7 +534,7 @@ function parseAndValidate<T>(
 
   return result.data;
  } catch {
-  console.error("[AI] Failed to parse JSON:", raw.slice(0, 200));
+  logger.error("[AI] Failed to parse JSON:", raw.slice(0, 200));
   return null;
  }
 }
@@ -838,7 +783,7 @@ async function requestStructuredJson<T>(
   providerErrors.push(geminiRaw.error);
  }
 
- console.log("[AI] Gemini failed, trying DeepSeek...");
+ logger.info("[AI] Gemini failed, trying DeepSeek...");
 
  throwIfAborted(abortSignal);
 
@@ -878,7 +823,7 @@ export async function analyzeHanziDetailed(
  hanzi: string,
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<AiVocabResponse>> {
- console.log("[AI] Analyzing:", hanzi);
+ logger.info("[AI] Analyzing:", hanzi);
 
  const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
@@ -899,7 +844,7 @@ export async function analyzeHanziDetailed(
   };
  }
 
- console.error("[AI] All providers failed for:", hanzi);
+ logger.error("[AI] All providers failed for:", hanzi);
  return {
   data: null,
   error:
@@ -912,7 +857,7 @@ export async function analyzeHanziBasicDetailed(
  hanzi: string,
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<AiVocabResponse>> {
- console.log("[AI] Analyzing basic word:", hanzi);
+ logger.info("[AI] Analyzing basic word:", hanzi);
 
  const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
@@ -933,7 +878,7 @@ export async function analyzeHanziBasicDetailed(
   };
  }
 
- console.error("[AI] All providers failed for basic word:", hanzi);
+ logger.error("[AI] All providers failed for basic word:", hanzi);
  return {
   data: null,
   error:
@@ -953,7 +898,7 @@ export async function analyzeSentenceDetailed(
  text: string,
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<SentenceInsightResponse>> {
- console.log("[AI] Analyzing sentence:", text);
+ logger.info("[AI] Analyzing sentence:", text);
 
  const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
@@ -974,7 +919,7 @@ export async function analyzeSentenceDetailed(
   };
  }
 
- console.error("[AI] All providers failed for sentence:", text);
+ logger.error("[AI] All providers failed for sentence:", text);
  return {
   data: null,
   error:
@@ -1164,7 +1109,7 @@ export async function generateGrammarFillMissingDetailed(
  },
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<GrammarFillMissingResult>> {
- console.log("[AI] Filling grammar:", input.title);
+ logger.info("[AI] Filling grammar:", input.title);
 
  const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
 
@@ -1185,7 +1130,7 @@ export async function generateGrammarFillMissingDetailed(
   };
  }
 
- console.error("[AI] All providers failed for grammar:", input.title);
+ logger.error("[AI] All providers failed for grammar:", input.title);
  return {
   data: null,
   error: result.error || "Không thể bổ sung ngữ pháp lúc này vì tất cả AI provider đều thất bại.",

@@ -1,5 +1,7 @@
 # PRD FINAL — HanziHome Local Studio
 
+> **SUPERSEDED — historical context only.** The current application is Supabase-backed. This local-JSON runtime/save architecture must not be implemented unless a new decision explicitly replaces `AGENTS.md` and the accepted ADRs.
+
 ## 0. Tuyên bố sản phẩm
 
 HanziHome Local Studio là một app học tiếng Trung chạy hoàn toàn local, dùng JSON làm nguồn dữ liệu chính, cho phép người học chọn bài, học từ vựng, học ngữ pháp, ôn flashcard, tra bộ thủ và chỉnh sửa dữ liệu ngay tại chỗ mà không cần server.

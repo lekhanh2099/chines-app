@@ -23,9 +23,7 @@ export function QuestionDataBlock({
   return (
    <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
-    <p className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary">
-     {text}
-    </p>
+    <p className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary">{text}</p>
    </div>
   );
  }

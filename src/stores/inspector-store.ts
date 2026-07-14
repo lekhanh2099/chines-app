@@ -3,6 +3,7 @@
 import { create } from "zustand";
 import { getQueryClient } from "@/components/providers/QueryProvider";
 import { containsChinese, extractChinese } from "@/lib/chinese-utils";
+import { logger } from "@/lib/logger";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/client";
 import {
@@ -261,7 +262,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
      return [listItem, ...withoutDuplicate];
     });
    } catch (error) {
-    console.error("[InspectorStore] track lookup failed:", error);
+    logger.error("[InspectorStore] track lookup failed:", error);
    }
   };
 

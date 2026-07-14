@@ -22,7 +22,7 @@ export function ClozeText({
      className="whitespace-pre-wrap leading-relaxed text-text-primary"
      lang="zh-CN"
      style={getHanziTypographyStyle(displayMode)}
-   >
+    >
      <ClozeInlineText
       showAnswers={displayMode.showAnswers}
       text={paragraph}

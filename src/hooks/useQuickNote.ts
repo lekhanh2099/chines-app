@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { logger } from "@/lib/logger";
 
 export function useQuickNote() {
  const router = useRouter();
@@ -34,7 +35,7 @@ export function useQuickNote() {
      router.push(`/notes/${note.id}`);
     },
     onError: (error) => {
-     console.error("Error creating quick note:", error);
+     logger.error("Error creating quick note:", error);
      toast.error("Không thể tạo ghi chú nhanh");
     },
    },

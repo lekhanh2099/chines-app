@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Popover } from "@base-ui/react";
+import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { VocabDetailDrawer } from "@/components/vocabulary/VocabDetailDrawer";
 import { containsChinese } from "@/lib/chinese-utils";
+import { logger } from "@/lib/logger";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
@@ -125,14 +126,13 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
     modal={false}
    >
     <Popover.Portal>
-     <Popover.Positioner
+     <BasePopoverPositioner
       anchor={getAnchor}
       side="top"
       align="center"
       sideOffset={12}
       collisionPadding={12}
       positionMethod="fixed"
-      style={{ zIndex: 9999 }}
      >
       <Popover.Popup
        initialFocus={false}
@@ -144,7 +144,7 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
       >
        <InspectorCard key={selectedText} onClose={handleClose} />
       </Popover.Popup>
-     </Popover.Positioner>
+     </BasePopoverPositioner>
     </Popover.Portal>
    </Popover.Root>
 
@@ -184,7 +184,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
    toast.success(`Đã thêm "${vocabData.hanzi}" vào kho ôn tập SRS!`);
    window.setTimeout(() => setIsSaved(false), 3000);
   } catch (error) {
-   console.error("Save vocab failed:", error);
+   logger.error("Save vocab failed:", error);
    toast.error("Không thể lưu từ vựng");
   } finally {
    setIsSaving(false);

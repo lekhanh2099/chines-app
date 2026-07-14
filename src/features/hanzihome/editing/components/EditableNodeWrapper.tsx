@@ -1,6 +1,13 @@
 "use client";
 
-import { Children, cloneElement, isValidElement, useState, type ReactElement, type ReactNode } from "react";
+import {
+ Children,
+ cloneElement,
+ isValidElement,
+ useState,
+ type ReactElement,
+ type ReactNode,
+} from "react";
 import { ArrowDown, ArrowUp, Trash2 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -127,12 +134,12 @@ export function EditableNodeWrapper({
    if (isHanziHomeMutationConflict(error)) {
     await queryClient.invalidateQueries({
      queryKey: ["hanzihome", "lesson-detail", lessonId],
-   });
-   toast.error("Nội dung đã thay đổi, đang tải lại.");
+    });
+    toast.error("Nội dung đã thay đổi, đang tải lại.");
+    throw error;
+   }
+   toast.error(error instanceof Error ? error.message : "Không thể xóa nội dung.");
    throw error;
-  }
-  toast.error(error instanceof Error ? error.message : "Không thể xóa nội dung.");
-  throw error;
   } finally {
    setIsDeleting(false);
   }
@@ -172,53 +179,53 @@ export function EditableNodeWrapper({
 
  const controls = (
   <div className="flex items-center justify-end gap-1">
-    <EditButton onClick={openNode} label={editLabel} />
-    {canReorder ? (
-     <>
+   <EditButton onClick={openNode} label={editLabel} />
+   {canReorder ? (
+    <>
+     <Button
+      type="button"
+      variant="outline"
+      size="icon-sm"
+      aria-label={`Đưa ${label || entityId} lên`}
+      disabled={isReordering || record?.order === 1}
+      className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
+      onClick={() => void reorderNode(-1)}
+     >
+      <ArrowUp className="h-3.5 w-3.5" />
+     </Button>
+     <Button
+      type="button"
+      variant="outline"
+      size="icon-sm"
+      aria-label={`Đưa ${label || entityId} xuống`}
+      disabled={isReordering}
+      className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
+      onClick={() => void reorderNode(1)}
+     >
+      <ArrowDown className="h-3.5 w-3.5" />
+     </Button>
+    </>
+   ) : null}
+   {canDelete ? (
+    <SoftDeleteConfirmDialog
+     itemType="nội dung"
+     itemLabel={label || entityId}
+     onConfirm={deleteNode}
+     trigger={
       <Button
        type="button"
        variant="outline"
        size="icon-sm"
-       aria-label={`Đưa ${label || entityId} lên`}
-       disabled={isReordering || record?.order === 1}
-       className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
-       onClick={() => void reorderNode(-1)}
+       aria-label={`Xóa ${label || entityId}`}
+       disabled={isDeleting}
+       className="h-7 w-7 bg-bg-card/95 text-danger-text shadow-theme-sm"
       >
-       <ArrowUp className="h-3.5 w-3.5" />
+       <Trash2 className="h-3.5 w-3.5" />
       </Button>
-      <Button
-       type="button"
-       variant="outline"
-       size="icon-sm"
-       aria-label={`Đưa ${label || entityId} xuống`}
-       disabled={isReordering}
-       className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
-       onClick={() => void reorderNode(1)}
-      >
-       <ArrowDown className="h-3.5 w-3.5" />
-      </Button>
-     </>
-    ) : null}
-    {canDelete ? (
-     <SoftDeleteConfirmDialog
-      itemType="nội dung"
-      itemLabel={label || entityId}
-      onConfirm={deleteNode}
-      trigger={
-       <Button
-        type="button"
-        variant="outline"
-        size="icon-sm"
-        aria-label={`Xóa ${label || entityId}`}
-        disabled={isDeleting}
-        className="h-7 w-7 bg-bg-card/95 text-danger-text shadow-theme-sm"
-       >
-        <Trash2 className="h-3.5 w-3.5" />
-       </Button>
-      }
-     />
-    ) : null}
-   </div>
+     }
+    />
+   ) : null}
+  </div>
  );
  const childList = Children.toArray(children);
  const firstChild = childList[0];

@@ -29,7 +29,7 @@ const emptyCatalogData: HanziHomeCatalogData = {
  },
 };
 
-export function useHanziHomeCatalogData({
+export function useHanziHomeCatalogQuery({
  includeLessons = false,
  enabled = true,
 }: {
@@ -43,20 +43,17 @@ export function useHanziHomeCatalogData({
   enabled,
  });
 
- return query.data ?? emptyCatalogData;
+ return {
+  ...query,
+  data: query.data ?? emptyCatalogData,
+ };
 }
 
-
-export function useIsCatalogPending({
-  includeLessons = false,
-}: {
+export function useHanziHomeCatalogData(
+ options: {
   includeLessons?: boolean;
-} = {}): boolean {
-  const { isPending } = useQuery({
-    queryKey: ["hanzihome", "catalog", { includeLessons }],
-    queryFn: () => fetchHanziHomeCatalog({ includeLessons }),
-    staleTime: catalogStaleTime,
-    enabled: false,
-  });
-  return isPending;
+  enabled?: boolean;
+ } = {},
+) {
+ return useHanziHomeCatalogQuery(options).data;
 }

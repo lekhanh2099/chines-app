@@ -48,16 +48,16 @@ function questionHasInlineAnswer(value: unknown) {
 
  return Boolean(
   stringValue(question, "answer") ||
-   stringValue(question, "answer_zh") ||
-   stringValue(question, "sample_answer") ||
-   stringValue(question, "sample_answer_zh") ||
-   stringValue(question, "suggested_answer") ||
-   stringValue(question, "suggested_answer_zh") ||
-   stringValue(question, "correct") ||
-   stringValue(question, "correct_sentence") ||
-   stringValue(answerRecord, "zh") ||
-   stringValue(answerRecord, "vi") ||
-   arrayValue(question, "acceptable_answers").length > 0,
+  stringValue(question, "answer_zh") ||
+  stringValue(question, "sample_answer") ||
+  stringValue(question, "sample_answer_zh") ||
+  stringValue(question, "suggested_answer") ||
+  stringValue(question, "suggested_answer_zh") ||
+  stringValue(question, "correct") ||
+  stringValue(question, "correct_sentence") ||
+  stringValue(answerRecord, "zh") ||
+  stringValue(answerRecord, "vi") ||
+  arrayValue(question, "acceptable_answers").length > 0,
  );
 }
 
@@ -156,8 +156,7 @@ export function QuestionExerciseBody({
  const hasPassagePayload = hasExercisePassagePayload(record);
  const directClozeAnswers = getClozeAnswerValues(record);
  const referencedClozeAnswers = getClozeAnswerValues(referencedReadingRecord);
- const clozeAnswers =
-  directClozeAnswers.length > 0 ? directClozeAnswers : referencedClozeAnswers;
+ const clozeAnswers = directClozeAnswers.length > 0 ? directClozeAnswers : referencedClozeAnswers;
  const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const passage =
   (hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined) ??
@@ -479,7 +478,7 @@ export function QuestionExerciseBody({
    ) : null}
 
    {shouldRenderAggregateAnswerKey && (
-   <EditableAnswerKeyList
+    <EditableAnswerKeyList
      lessonId={lessonId}
      itemPath={itemPath}
      itemId={item.id}

@@ -9,10 +9,10 @@ import {
  type Section,
 } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import {
- DeepVocabularyItemSchema,
  ImportanceLevelSchema,
  PartOfSpeechSchema,
 } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import { runtimeDeepVocabularyItemSchema } from "@/features/hanzihome/schemas/runtime-content.schema";
 import type {
  GrammarViewModel,
  HanziHomeCatalogCourse,
@@ -337,6 +337,10 @@ function normalizeText(value: string | null | undefined) {
  return value?.trim() ?? "";
 }
 
+function isMissingRequiredText(value: string | null | undefined) {
+ return normalizeText(value).length === 0;
+}
+
 function normalizePos(value: string | null) {
  const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
  const parsed = PartOfSpeechSchema.safeParse(normalized);
@@ -404,12 +408,13 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
   .filter((detail) => detail.section_key === "collocations")
   .sort((left, right) => left.section_order - right.section_order)
   .flatMap((detail) => detail.lines);
+ const coreNeedsReview = isMissingRequiredText(row.pinyin) || isMissingRequiredText(row.meaning);
 
- const parsed = DeepVocabularyItemSchema.parse({
+ const parsed = runtimeDeepVocabularyItemSchema.parse({
   id: row.id,
   order: row.item_order,
   hanzi: row.word,
-  pinyin: row.pinyin || "-",
+  pinyin: normalizeText(row.pinyin),
   pos: {
    raw_vi: normalizeText(row.pos_vi),
    raw_cn: normalizeText(row.pos_zh),
@@ -420,7 +425,7 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
   tags: [],
   meaning: {
    hanviet: row.han_viet,
-   meaning_vi: row.meaning || "Chưa có nghĩa",
+   meaning_vi: normalizeText(row.meaning),
    meaning_en: row.meaning_en ?? "",
    natural_translations_vi: row.meaning ? [row.meaning] : [],
    short_definition_vi: meaningLines[0] || row.meaning,
@@ -439,7 +444,7 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
    memory_tip_vi: "",
    warning_vi: "",
    notes: [],
-   check_needed: false,
+   check_needed: coreNeedsReview,
   },
   comparison: {
    near_synonyms: [],
@@ -476,7 +481,7 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
     level: "basic",
     audio_key: "",
     notes: [],
-    check_needed: false,
+    check_needed: isMissingRequiredText(example.pinyin) || isMissingRequiredText(example.vi),
    })),
   culture_note:
    cultureLines.length > 0
@@ -504,7 +509,7 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
   audio_key: "",
   raw_markdown: "",
   notes: [],
-  check_needed: false,
+  check_needed: coreNeedsReview,
  });
 
  return {
@@ -712,7 +717,7 @@ function buildSourceLesson(row: LessonDetailRow) {
    tags: row.tags,
    metadata: {
     legacy_id: "",
-    book: "Hanyu Jiaocheng",
+    book: row.book.title,
     volume: row.book.short_title || row.book.title,
     volume_vi: row.book.short_title || row.book.title,
     lesson_index: row.lesson_number,

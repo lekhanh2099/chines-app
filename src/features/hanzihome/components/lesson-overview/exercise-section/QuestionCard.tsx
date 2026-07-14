@@ -40,8 +40,8 @@ export function QuestionCard({
   exerciseType,
   value: questionValue,
   index,
- answerOverride,
-});
+  answerOverride,
+ });
  const titleWhenAnswerOpen = fillQuestionBlank(model.title, model.answer);
 
  const hasExtra =

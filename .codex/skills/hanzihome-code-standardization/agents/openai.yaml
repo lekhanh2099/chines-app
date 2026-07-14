@@ -1,4 +1,4 @@
 interface:
-  display_name: "HanziHome Code Standardization"
-  short_description: "Keep HanziHome code flow consistent"
-  default_prompt: "Use $hanzihome-code-standardization to plan and verify a HanziHome code change before editing."
+ display_name: "HanziHome Code Standardization"
+ short_description: "Keep HanziHome code flow consistent"
+ default_prompt: "Use $hanzihome-code-standardization to plan and verify a HanziHome code change before editing."

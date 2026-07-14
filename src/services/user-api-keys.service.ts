@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { logger } from "@/lib/logger";
 import {
  getApiKeyProviderLabel,
  getMaskedApiKey,
@@ -156,7 +157,7 @@ async function listUserApiKeysRaw(
 
  if (error || !data) {
   if (error) {
-   console.error("[ApiKeys] list error:", error);
+   logger.error("[ApiKeys] list error:", error);
   }
   return {
    data: [],
@@ -203,7 +204,7 @@ async function migrateLegacyDeepSeekKeyForUser(
 
  if (error || !legacyRow?.deepseek_api_key_encrypted) {
   if (error) {
-   console.error("[ApiKeys] legacy lookup error:", error);
+   logger.error("[ApiKeys] legacy lookup error:", error);
   }
   return false;
  }
@@ -229,13 +230,13 @@ async function migrateLegacyDeepSeekKeyForUser(
   });
 
   if (insertError) {
-   console.error("[ApiKeys] legacy migration insert error:", insertError);
+   logger.error("[ApiKeys] legacy migration insert error:", insertError);
    return false;
   }
 
   return true;
  } catch (migrationError) {
-  console.error("[ApiKeys] legacy migration decrypt error:", migrationError);
+  logger.error("[ApiKeys] legacy migration decrypt error:", migrationError);
   return false;
  }
 }
@@ -282,7 +283,7 @@ export async function getActiveUserApiKeyCredentials(
 
  if (error || !data) {
   if (error) {
-   console.error("[ApiKeys] credential list error:", error);
+   logger.error("[ApiKeys] credential list error:", error);
   }
   return [];
  }
@@ -295,7 +296,7 @@ export async function getActiveUserApiKeyCredentials(
      apiKey: decryptApiKey(row.encrypted_key),
     };
    } catch (err) {
-    console.error("[ApiKeys] decrypt failed:", err);
+    logger.error("[ApiKeys] decrypt failed:", err);
     return null;
    }
   })
@@ -345,7 +346,7 @@ export async function createUserApiKey(
   .single();
 
  if (error || !data) {
-  console.error("[ApiKeys] create error:", error);
+  logger.error("[ApiKeys] create error:", error);
   return {
    key: null,
    error: formatApiKeyStorageError(error as SupabaseErrorLike | null),
@@ -399,7 +400,7 @@ export async function updateUserApiKey(
   .single();
 
  if (error || !data) {
-  console.error("[ApiKeys] update error:", error);
+  logger.error("[ApiKeys] update error:", error);
   return null;
  }
 
@@ -422,7 +423,7 @@ export async function deleteUserApiKey(
   .eq("user_id", userId);
 
  if (error) {
-  console.error("[ApiKeys] delete error:", error);
+  logger.error("[ApiKeys] delete error:", error);
   return false;
  }
 
@@ -467,7 +468,7 @@ export async function moveUserApiKey(
   .eq("user_id", userId);
 
  if (currentUpdate.error || targetUpdate.error) {
-  console.error("[ApiKeys] reorder error:", currentUpdate.error || targetUpdate.error);
+  logger.error("[ApiKeys] reorder error:", currentUpdate.error || targetUpdate.error);
   return null;
  }
 
@@ -496,7 +497,7 @@ export async function resequenceUserApiKeys(
    .eq("user_id", userId);
 
   if (error) {
-   console.error("[ApiKeys] resequence error:", error);
+   logger.error("[ApiKeys] resequence error:", error);
    return keys;
   }
  }

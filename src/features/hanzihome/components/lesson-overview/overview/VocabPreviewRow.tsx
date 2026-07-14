@@ -13,9 +13,7 @@ export function VocabPreviewRow({ word }: { word: HanziHomeVocabItem }) {
    <p className="truncate text-xs font-bold uppercase tracking-wide text-text-muted">
     {word.meaning.hanviet || word.category}
    </p>
-   <p className="line-clamp-2 font-semibold text-text-secondary">
-    {getVocabDisplayMeaning(word)}
-   </p>
+   <p className="line-clamp-2 font-semibold text-text-secondary">{getVocabDisplayMeaning(word)}</p>
   </div>
  );
 }

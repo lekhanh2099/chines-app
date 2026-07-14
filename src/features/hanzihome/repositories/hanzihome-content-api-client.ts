@@ -1,5 +1,14 @@
 "use client";
 
+import { z } from "zod";
+
+import {
+ aggregateApiResponseSchema,
+ catalogApiResponseSchema,
+ courseLessonsApiResponseSchema,
+ learningStateApiResponseSchema,
+ lessonApiResponseSchema,
+} from "@/features/hanzihome/hanzihome-api.schemas";
 import type {
  HanziHomeCatalogData,
  HanziHomeLesson,
@@ -11,27 +20,41 @@ import type {
  AggregateResourceItem,
 } from "./hanzihome-content-resources";
 
-type CatalogApiResponse = {
- catalog: HanziHomeCatalogData;
-};
+export class HanziHomeApiError extends Error {
+ constructor(
+  message: string,
+  readonly status: number,
+  readonly details?: unknown,
+ ) {
+  super(message);
+  this.name = "HanziHomeApiError";
+ }
+}
 
-type CourseLessonsApiResponse = {
- lessons: HanziHomeLesson[];
-};
+async function parseJsonResponse<T>(response: Response, schema: z.ZodType<T>): Promise<T> {
+ const payload: unknown = await response.json().catch(() => null);
 
-type LessonApiResponse = {
- lesson: HanziHomeLesson;
-};
+ if (!response.ok) {
+  throw new HanziHomeApiError(
+   `HanziHome request failed: ${response.status}`,
+   response.status,
+   payload,
+  );
+ }
 
-type AggregateApiResponse = {
- items: AggregateResourceItem[];
-};
+ const parsed = schema.safeParse(payload);
+ if (!parsed.success) {
+  throw new HanziHomeApiError(
+   "HanziHome response did not match the expected contract",
+   response.status,
+   parsed.error.flatten(),
+  );
+ }
 
-type LearningStateApiResponse = {
- state: UserLearningState;
-};
+ return parsed.data;
+}
 
-async function fetchJson<T>(url: string): Promise<T> {
+async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
  const response = await fetch(url, {
   cache: "no-store",
   headers: {
@@ -39,11 +62,7 @@ async function fetchJson<T>(url: string): Promise<T> {
   },
  });
 
- if (!response.ok) {
-  throw new Error(`HanziHome request failed: ${response.status}`);
- }
-
- return response.json() as Promise<T>;
+ return parseJsonResponse(response, schema);
 }
 
 export async function fetchHanziHomeCatalog(options: {
@@ -56,7 +75,7 @@ export async function fetchHanziHomeCatalog(options: {
  }
 
  const url = params.size ? `/api/hanzihome/catalog?${params.toString()}` : "/api/hanzihome/catalog";
- const payload = await fetchJson<CatalogApiResponse>(url);
+ const payload = await fetchJson(url, catalogApiResponseSchema);
 
  return payload.catalog;
 }
@@ -64,8 +83,9 @@ export async function fetchHanziHomeCatalog(options: {
 export async function fetchHanziHomeCourseLessons(courseId: string): Promise<HanziHomeLesson[]> {
  if (!courseId) return [];
 
- const payload = await fetchJson<CourseLessonsApiResponse>(
+ const payload = await fetchJson(
   `/api/hanzihome/catalog?courseId=${encodeURIComponent(courseId)}`,
+  courseLessonsApiResponseSchema,
  );
 
  return payload.lessons;
@@ -76,8 +96,9 @@ export async function fetchHanziHomeLessonDetail(
 ): Promise<HanziHomeLesson | null> {
  if (!lessonId) return null;
 
- const payload = await fetchJson<LessonApiResponse>(
+ const payload = await fetchJson(
   `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}`,
+  lessonApiResponseSchema,
  );
 
  return payload.lesson;
@@ -100,13 +121,13 @@ export async function fetchHanziHomeAggregateItems({
  const url = params.size
   ? `/api/hanzihome/aggregate/${kind}?${params.toString()}`
   : `/api/hanzihome/aggregate/${kind}`;
- const payload = await fetchJson<AggregateApiResponse>(url);
+ const payload = await fetchJson(url, aggregateApiResponseSchema);
 
  return payload.items;
 }
 
 export async function fetchHanziHomeLearningState(): Promise<UserLearningState> {
- const payload = await fetchJson<LearningStateApiResponse>("/api/learning-state");
+ const payload = await fetchJson("/api/learning-state", learningStateApiResponseSchema);
 
  return payload.state;
 }
@@ -123,11 +144,7 @@ export async function saveHanziHomeLearningState(
   body: JSON.stringify(state),
  });
 
- if (!response.ok) {
-  throw new Error(`HanziHome learning state save failed: ${response.status}`);
- }
-
- const payload = (await response.json()) as LearningStateApiResponse;
+ const payload = await parseJsonResponse(response, learningStateApiResponseSchema);
 
  return payload.state;
 }

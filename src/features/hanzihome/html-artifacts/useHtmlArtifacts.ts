@@ -95,13 +95,8 @@ export function useUpdateHtmlArtifactFolderMutation() {
  const queryClient = useQueryClient();
 
  return useMutation({
-  mutationFn: ({
-   folderId,
-   input,
-  }: {
-   folderId: string;
-   input: UpdateHtmlArtifactFolderPayload;
-  }) => updateHtmlArtifactFolder({ folderId, input }),
+  mutationFn: ({ folderId, input }: { folderId: string; input: UpdateHtmlArtifactFolderPayload }) =>
+   updateHtmlArtifactFolder({ folderId, input }),
   onSuccess: async () => {
    await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });
   },
@@ -123,13 +118,8 @@ export function useUpdateHtmlArtifactMutation() {
  const queryClient = useQueryClient();
 
  return useMutation({
-  mutationFn: ({
-   artifactId,
-   input,
-  }: {
-   artifactId: string;
-   input: UpdateHtmlArtifactPayload;
-  }) => updateHtmlArtifact({ artifactId, input }),
+  mutationFn: ({ artifactId, input }: { artifactId: string; input: UpdateHtmlArtifactPayload }) =>
+   updateHtmlArtifact({ artifactId, input }),
   onSuccess: async (artifact) => {
    queryClient.setQueryData([...htmlArtifactsQueryKey, artifact.id], artifact);
    await queryClient.invalidateQueries({ queryKey: htmlArtifactsQueryKey });

@@ -11,8 +11,8 @@ export function NotebookEmptyState() {
    <div className="grid gap-2">
     <h2 className="text-xl font-black text-text-primary">Không tìm thấy mục phù hợp</h2>
     <p className="max-w-md text-sm font-medium leading-6 text-text-muted">
-    Thử đổi từ khóa hoặc chọn một nhóm chức năng khác.
-   </p>
+     Thử đổi từ khóa hoặc chọn một nhóm chức năng khác.
+    </p>
    </div>
   </GlassPanel>
  );

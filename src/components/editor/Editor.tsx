@@ -28,6 +28,7 @@ import { AutoLinkNode, LinkNode } from "@lexical/link";
 import { TableNode, TableCellNode, TableRowNode } from "@lexical/table";
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
+import { logger } from "@/lib/logger";
 
 import { PinyinNode } from "./nodes/PinyinNode";
 import { InternalLinkNode } from "./nodes/InternalLinkNode";
@@ -85,7 +86,7 @@ function RestoreStatePlugin({ initialState }: { initialState?: Record<string, un
    editor.setEditorState(editorState);
    hasRestored.current = true;
   } catch (err) {
-   console.warn("[Editor] Could not restore state:", err);
+   logger.warn("[Editor] Could not restore state:", err);
   }
  }, [editor, initialState]);
 
@@ -131,7 +132,7 @@ export function Editor({
    ],
    editable: !readOnly,
    onError: (error: Error) => {
-    console.error("[LexicalEditor]", error);
+    logger.error("[LexicalEditor]", error);
    },
   }),
   // eslint-disable-next-line react-hooks/exhaustive-deps

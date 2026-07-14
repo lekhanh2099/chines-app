@@ -55,8 +55,8 @@ export function CompleteDialogueExerciseBody({
  return (
   <div className="grid gap-3">
    {dialogues.map((dialogueValue, index) => {
-   const dialogue = asRecord(dialogueValue);
-   const lines = arrayValue(dialogue, "lines");
+    const dialogue = asRecord(dialogueValue);
+    const lines = arrayValue(dialogue, "lines");
     const answers = dialogueAnswerValues(dialogue);
 
     return (

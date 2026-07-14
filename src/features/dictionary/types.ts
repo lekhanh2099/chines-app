@@ -83,8 +83,6 @@ export type DictionaryWordReadyViewModel = {
 };
 
 export type DictionaryWordViewModel =
- | DictionaryWordLoadingViewModel
- | DictionaryWordNotFoundViewModel
- | DictionaryWordReadyViewModel;
+ DictionaryWordLoadingViewModel | DictionaryWordNotFoundViewModel | DictionaryWordReadyViewModel;
 
 export type DictionaryPageViewModel = DictionarySentenceViewModel | DictionaryWordViewModel;

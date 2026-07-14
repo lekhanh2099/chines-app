@@ -54,7 +54,8 @@ export function NotebookToolbar({
   { id: "matrix" as const, label: "Tổng hợp", icon: TableProperties },
  ];
  const activeSectionLabel = data[sectionId].label;
- const activeGroupLabel = groupId === "all" ? "Tất cả" : groups.find((group) => group.id === groupId)?.name;
+ const activeGroupLabel =
+  groupId === "all" ? "Tất cả" : groups.find((group) => group.id === groupId)?.name;
 
  useEffect(() => {
   let frame = 0;
@@ -158,9 +159,7 @@ export function NotebookToolbar({
        className="h-9 w-full rounded-lg border border-border-default bg-bg-card/90 pl-9 pr-3 text-xs font-medium text-text-primary outline-none transition focus:border-primary/40 focus:ring-3 focus:ring-ring/15"
       />
      </label>
-     <div className="hidden shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:flex">
-      {viewButtons}
-     </div>
+     <div className="hidden shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:flex">{viewButtons}</div>
      <Button
       type="button"
       variant={filtersOpen ? "default" : "outline"}
@@ -175,13 +174,15 @@ export function NotebookToolbar({
        {activeGroupLabel ? ` · ${activeGroupLabel}` : ""}
       </span>
       <span className="sm:hidden">Bộ lọc</span>
-      {filtersOpen ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+      {filtersOpen ? (
+       <ChevronUp className="h-3.5 w-3.5" />
+      ) : (
+       <ChevronDown className="h-3.5 w-3.5" />
+      )}
      </Button>
     </div>
 
-    <div className="flex shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:hidden">
-     {viewButtons}
-    </div>
+    <div className="flex shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:hidden">{viewButtons}</div>
 
     {filtersOpen && (
      <div className="grid gap-2 border-t border-border-default/70 pt-2">
@@ -199,9 +200,7 @@ export function NotebookToolbar({
 
  return (
   <GlassPanel className="sticky top-[calc(3.5rem+0.75rem)] z-30 grid gap-3 p-3 shadow-theme-lg sm:p-4">
-   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">
-    {sectionButtons}
-   </div>
+   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
 
    <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
     <label className="relative block min-w-0 flex-1">
@@ -214,14 +213,10 @@ export function NotebookToolbar({
       className="h-11 w-full rounded-xl border border-border-default bg-bg-card/90 pl-10 pr-4 text-sm font-medium text-text-primary outline-none transition focus:border-primary/40 focus:ring-3 focus:ring-ring/15"
      />
     </label>
-    <div className="flex flex-wrap gap-1 rounded-xl bg-bg-subtle p-1">
-     {viewButtons}
-    </div>
+    <div className="flex flex-wrap gap-1 rounded-xl bg-bg-subtle p-1">{viewButtons}</div>
    </div>
 
-   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">
-    {groupButtons}
-   </div>
+   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{groupButtons}</div>
   </GlassPanel>
  );
 }

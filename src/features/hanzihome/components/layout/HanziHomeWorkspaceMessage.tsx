@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export function HanziHomeWorkspaceMessage({
@@ -7,11 +8,13 @@ export function HanziHomeWorkspaceMessage({
  title,
  description,
  showLibraryLink = false,
+ onRetry,
 }: {
  eyebrow: string;
  title: string;
  description: string;
  showLibraryLink?: boolean;
+ onRetry?: () => void;
 }) {
  return (
   <main className="hanzihome-static-page">
@@ -23,14 +26,21 @@ export function HanziHomeWorkspaceMessage({
        <h1 className="text-2xl font-black text-text-primary">{title}</h1>
        <p className=" font-semibold text-text-muted">{description}</p>
       </div>
-      {showLibraryLink ? (
-       <Link
-        href="/"
-        prefetch={false}
-        className="w-fit rounded-xl bg-bg-inverse px-4 py-2  font-black text-text-inverse"
-       >
-        Về thư viện học liệu
-       </Link>
+      {showLibraryLink || onRetry ? (
+       <div className="flex flex-wrap gap-2">
+        {onRetry ? (
+         <Button type="button" variant="surfaceCard" onClick={onRetry}>
+          Thử tải lại
+         </Button>
+        ) : null}
+        {showLibraryLink ? (
+         <Button asChild>
+          <Link href="/" prefetch={false}>
+           Về thư viện học liệu
+          </Link>
+         </Button>
+        ) : null}
+       </div>
       ) : null}
      </div>
     </Card>

@@ -1,4 +1,4 @@
 interface:
-  display_name: "HanziHome UI System Audit"
-  short_description: "Audit HanziHome UI token drift"
-  default_prompt: "Use $hanzihome-ui-system-audit to review a HanziHome UI change for design-token drift before editing."
+ display_name: "HanziHome UI System Audit"
+ short_description: "Audit HanziHome UI token drift"
+ default_prompt: "Use $hanzihome-ui-system-audit to review a HanziHome UI change for design-token drift before editing."

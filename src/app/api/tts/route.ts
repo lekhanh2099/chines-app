@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { ElevenLabsClient } from "@elevenlabs/elevenlabs-js";
 import { createClient } from "@/lib/supabase/server";
+import { logger } from "@/lib/logger";
 
 const DEFAULT_VOICE_ID = "pFZP5JQG7iQjIQuC4Bku"; // Lily – Chinese-capable
 const MAX_TEXT_LENGTH = 500;
@@ -78,7 +79,7 @@ export async function POST(request: NextRequest) {
  } catch (error) {
   const message = error instanceof Error ? error.message : "TTS generation failed";
 
-  console.error("[TTS] ElevenLabs error:", message);
+  logger.error("[TTS] ElevenLabs error:", message);
 
   return NextResponse.json({ error: message }, { status: 502 });
  }

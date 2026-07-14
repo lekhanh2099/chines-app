@@ -36,11 +36,7 @@ async function main() {
 
   for (const lessonValue of lessons) {
    const lesson = asRecord(lessonValue);
-   const lessonRoot = path.join(
-    dbRoot,
-    datasetId,
-    asRecord(lesson).folder as string,
-   );
+   const lessonRoot = path.join(dbRoot, datasetId, asRecord(lesson).folder as string);
    const sections = await readJson<unknown[]>(path.join(lessonRoot, "sections/index.json"));
    const vocab = await readJson<Array<{ file: string }>>(
     path.join(lessonRoot, "vocabulary/index.json"),

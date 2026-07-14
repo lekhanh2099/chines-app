@@ -171,98 +171,98 @@ export function Sidebar() {
  };
 
  return (
-   <aside
+  <aside
+   className={cn(
+    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 md:flex",
+    effectiveCollapsed ? "w-16" : "w-64",
+   )}
+  >
+   <div
     className={cn(
-     "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 md:flex",
-     effectiveCollapsed ? "w-16" : "w-64",
+     "flex h-14 items-center border-b border-border-default",
+     effectiveCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
     )}
    >
-    <div
-     className={cn(
-      "flex h-14 items-center border-b border-border-default",
-      effectiveCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
-     )}
-    >
-     {!effectiveCollapsed ? (
-      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
-       <AppLogoMark />
-       <span className="truncate font-black text-text-primary">HanziHome</span>
-      </Link>
-     ) : null}
-     <PanelToggleButton
-      open={!effectiveCollapsed}
-      onOpenChange={toggleSidebar}
-      label="thanh điều hướng"
-      size="md"
+    {!effectiveCollapsed ? (
+     <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
+      <AppLogoMark />
+      <span className="truncate font-black text-text-primary">HanziHome</span>
+     </Link>
+    ) : null}
+    <PanelToggleButton
+     open={!effectiveCollapsed}
+     onOpenChange={toggleSidebar}
+     label="thanh điều hướng"
+     size="md"
+    />
+   </div>
+
+   <nav
+    className={cn("flex flex-col gap-1.5 py-3", effectiveCollapsed ? "items-center px-3" : "px-3")}
+   >
+    {mainItems.map((item) => (
+     <NavRow
+      key={item.name}
+      item={item}
+      active={isActive(pathname, searchParams, item.href)}
+      collapsed={effectiveCollapsed}
      />
-    </div>
+    ))}
+   </nav>
 
-    <nav
-     className={cn("flex flex-col gap-1.5 py-3", effectiveCollapsed ? "items-center px-3" : "px-3")}
-    >
-     {mainItems.map((item) => (
-      <NavRow
-       key={item.name}
-       item={item}
-       active={isActive(pathname, searchParams, item.href)}
-       collapsed={effectiveCollapsed}
-      />
-     ))}
-    </nav>
+   {secondaryItems.length > 0 && (
+    <>
+     <div className="border-t border-border-default" />
 
-    {secondaryItems.length > 0 && (
-     <>
-      <div className="border-t border-border-default" />
+     <nav
+      className={cn("flex flex-col gap-2 py-4", effectiveCollapsed ? "items-center px-3" : "px-4")}
+     >
+      {secondaryItems.map((item) => (
+       <NavRow
+        key={item.name}
+        item={item}
+        active={isActive(pathname, searchParams, item.href) && item.href !== "/"}
+        collapsed={effectiveCollapsed}
+       />
+      ))}
+     </nav>
+    </>
+   )}
 
-      <nav
-       className={cn("flex flex-col gap-2 py-4", effectiveCollapsed ? "items-center px-3" : "px-4")}
-      >
-       {secondaryItems.map((item) => (
-        <NavRow
-         key={item.name}
-         item={item}
-         active={isActive(pathname, searchParams, item.href) && item.href !== "/"}
-         collapsed={effectiveCollapsed}
-        />
-       ))}
-      </nav>
-     </>
+   <div className="flex-1" />
+
+   <div
+    className={cn(
+     "grid gap-2 border-t border-border-default py-3",
+     effectiveCollapsed ? "px-3" : "px-4",
+    )}
+   >
+    {!effectiveCollapsed && !isHanziHomeRoute && (
+     <div className="rounded-xl border border-border-default bg-bg-subtle/70 p-3">
+      <div className="flex items-center gap-2  font-bold text-text-primary">
+       <Flame className="h-4 w-4" />
+       Học theo bài
+      </div>
+      <p className="text-xs font-bold text-text-muted">
+       Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
+      </p>
+     </div>
     )}
 
-    <div className="flex-1" />
-
-    <div
+    <button
+     type="button"
+     onClick={handleLogout}
      className={cn(
-      "grid gap-2 border-t border-border-default py-3",
-      effectiveCollapsed ? "px-3" : "px-4",
+      "flex h-10 items-center gap-3 rounded-lg px-3  font-semibold text-danger transition-colors hover:bg-danger-subtle",
+      effectiveCollapsed ? "w-10 justify-center px-0" : "w-full",
      )}
+     title={effectiveCollapsed ? "Đăng xuất" : undefined}
     >
-     {!effectiveCollapsed && !isHanziHomeRoute && (
-      <div className="rounded-xl border border-border-default bg-bg-subtle/70 p-3">
-       <div className="flex items-center gap-2  font-bold text-text-primary">
-        <Flame className="h-4 w-4" />
-        Học theo bài
-       </div>
-       <p className="text-xs font-bold text-text-muted">
-        Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
-       </p>
-      </div>
-     )}
-
-     <button
-      type="button"
-      onClick={handleLogout}
-      className={cn(
-       "flex h-10 items-center gap-3 rounded-lg px-3  font-semibold text-danger transition-colors hover:bg-danger-subtle",
-       effectiveCollapsed ? "w-10 justify-center px-0" : "w-full",
-      )}
-      title={effectiveCollapsed ? "Đăng xuất" : undefined}
-     >
-      <LogOut className="h-5 w-5" />
-      {!effectiveCollapsed && "Đăng xuất"}
-     </button>
-    </div>
-   </aside>
+     <LogOut className="h-5 w-5" />
+     {!effectiveCollapsed && "Đăng xuất"}
+    </button>
+   </div>
+  </aside>
  );
 }
 
@@ -271,27 +271,27 @@ export function MobileBottomNavigation() {
  const searchParams = useSearchParams();
 
  return (
-   <nav className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
-    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
-     {mobileItems.map((item) => {
-      const Icon = item.icon;
-      const active = isActive(pathname, searchParams, item.href);
-      return (
-       <Link
-        key={item.name}
-        href={item.href}
-        prefetch={false}
-        className={cn(
-         "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
-         active ? "app-active-item border" : "text-text-muted hover:bg-bg-subtle",
-        )}
-       >
-        <Icon className="h-5 w-5 shrink-0" />
-        <span className="max-w-full truncate">{mobileLabels[item.href]}</span>
-       </Link>
-      );
-     })}
-    </div>
-   </nav>
+  <nav className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
+   <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
+    {mobileItems.map((item) => {
+     const Icon = item.icon;
+     const active = isActive(pathname, searchParams, item.href);
+     return (
+      <Link
+       key={item.name}
+       href={item.href}
+       prefetch={false}
+       className={cn(
+        "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
+        active ? "app-active-item border" : "text-text-muted hover:bg-bg-subtle",
+       )}
+      >
+       <Icon className="h-5 w-5 shrink-0" />
+       <span className="max-w-full truncate">{mobileLabels[item.href]}</span>
+      </Link>
+     );
+    })}
+   </div>
+  </nav>
  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Popover } from "@base-ui/react";
+import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $getSelectionStyleValueForProperty, $patchStyleText } from "@lexical/selection";
 import { mergeRegister } from "@lexical/utils";
@@ -576,14 +576,13 @@ export default function EditorFloatingMenu() {
    modal={false}
   >
    <Popover.Portal>
-    <Popover.Positioner
+    <BasePopoverPositioner
      anchor={getAnchor}
      side="top"
      align="center"
      sideOffset={12}
      collisionPadding={12}
      positionMethod="fixed"
-     style={{ zIndex: 9999 }}
     >
      <Popover.Popup
       initialFocus={false}
@@ -1041,7 +1040,7 @@ export default function EditorFloatingMenu() {
        )}
       </div>
      </Popover.Popup>
-    </Popover.Positioner>
+    </BasePopoverPositioner>
    </Popover.Portal>
   </Popover.Root>
  );

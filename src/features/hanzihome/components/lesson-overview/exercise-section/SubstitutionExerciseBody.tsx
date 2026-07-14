@@ -335,7 +335,7 @@ export function SubstitutionExerciseBody({
          stringValue(entry, "text") ||
          answer ||
          "Câu"
-       }
+        }
         answer={answer}
         showAnswer={displayMode.showAnswers}
         note={stringValue(entry, "explanation_vi")}
@@ -370,10 +370,10 @@ export function SubstitutionExerciseBody({
     lessonId={lessonId}
     itemPath={itemPath}
     itemId={item.id}
-   sourcePath={["answer_key"]}
-   values={answerKey}
-   showAnswers={displayMode.showAnswers}
-  />
+    sourcePath={["answer_key"]}
+    values={answerKey}
+    showAnswers={displayMode.showAnswers}
+   />
   </div>
  );
 }

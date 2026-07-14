@@ -7,6 +7,7 @@
  */
 
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { logger } from "@/lib/logger";
 import { extractChinese } from "@/lib/chinese-utils";
 import type {
  DbDictionaryCore,
@@ -325,7 +326,7 @@ export async function getDictionaryEntryByHeadword(
 
  if (error) {
   if (!isMissingDictionaryCacheSchemaError(error)) {
-   console.error("[VocabService] dictionary_core lookup error:", error);
+   logger.error("[VocabService] dictionary_core lookup error:", error);
   }
   return null;
  }
@@ -343,7 +344,7 @@ export async function incrementDictionaryLookupCount(
   .eq("id", entry.id);
 
  if (error && !isMissingDictionaryCacheSchemaError(error)) {
-  console.error("[VocabService] dictionary_core count update error:", error);
+  logger.error("[VocabService] dictionary_core count update error:", error);
  }
 }
 
@@ -401,7 +402,7 @@ export async function upsertDictionaryEntry(
 
  if (error) {
   if (!isMissingDictionaryCacheSchemaError(error)) {
-   console.error("[VocabService] dictionary_core upsert error:", error);
+   logger.error("[VocabService] dictionary_core upsert error:", error);
   }
   return null;
  }
@@ -509,7 +510,7 @@ export async function saveUserDictionaryRelationship(
 
  if (error) {
   if (!isMissingDictionaryCacheSchemaError(error) && !isRlsPolicyError(error)) {
-   console.error("[VocabService] user_vocabularies upsert error:", error);
+   logger.error("[VocabService] user_vocabularies upsert error:", error);
   }
   return false;
  }
@@ -1094,7 +1095,7 @@ export async function upsertVocab(
   .single();
 
  if (error && isMissingColumnError(error)) {
-  console.warn("[VocabService] Falling back to legacy vocab schema; migration may be missing.");
+  logger.warn("[VocabService] Falling back to legacy vocab schema; migration may be missing.");
 
   const legacyResult = await supabase
    .from("vocabularies")
@@ -1115,7 +1116,7 @@ export async function upsertVocab(
  }
 
  if (error) {
-  console.error("[VocabService] upsert error:", error);
+  logger.error("[VocabService] upsert error:", error);
   return null;
  }
 
@@ -1212,7 +1213,7 @@ export async function saveVocabToSrs(
   const allowContextFields = contextSchemaAvailable;
   const allowNoteFields = noteSchemaAvailable;
 
-  console.warn(
+  logger.warn(
    "[VocabService] Falling back to legacy user_vocab_progress schema; migration may be missing.",
   );
 
@@ -1281,7 +1282,7 @@ export async function saveVocabToSrs(
  }
 
  if (error) {
-  console.error("[VocabService] save to SRS error:", error);
+  logger.error("[VocabService] save to SRS error:", error);
   return null;
  }
 
@@ -1338,7 +1339,7 @@ export async function trackVocabLookup(
  );
 
  if (error && isMissingColumnError(error)) {
-  console.warn(
+  logger.warn(
    "[VocabService] Falling back to legacy lookup tracking schema; migration may be missing.",
   );
 
@@ -1355,7 +1356,7 @@ export async function trackVocabLookup(
  }
 
  if (error) {
-  console.error("[VocabService] track lookup error:", error);
+  logger.error("[VocabService] track lookup error:", error);
   return null;
  }
 
@@ -1398,7 +1399,7 @@ export async function removeVocabFromSrs(
  }
 
  if (error) {
-  console.error("[VocabService] remove from SRS error:", error);
+  logger.error("[VocabService] remove from SRS error:", error);
   return false;
  }
 
@@ -1410,7 +1411,7 @@ export async function removeVocabFromSrs(
    .eq("dictionary_id", deletedProgress.dictionary_id);
 
   if (relationResult.error && !isMissingDictionaryCacheSchemaError(relationResult.error)) {
-   console.error("[VocabService] remove user_vocabularies relation error:", relationResult.error);
+   logger.error("[VocabService] remove user_vocabularies relation error:", relationResult.error);
   }
  }
 

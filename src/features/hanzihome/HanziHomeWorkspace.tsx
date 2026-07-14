@@ -8,10 +8,7 @@ import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/Radica
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { HanziHomeWorkspaceMessage } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceMessage";
-import {
- useHanziHomeCatalogData,
- useIsCatalogPending,
-} from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -24,44 +21,17 @@ import {
  findLessonByRouteParam,
  getLessonRouteValue,
 } from "@/features/hanzihome/utils/lesson-route";
+import { parseHanziHomeModule, resolveLessonModule } from "@/features/hanzihome/workspace-modules";
 import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/hanzihome/types";
-
-type StudyModule = Exclude<HanziHomeModule, "radicals">;
-
-const moduleValues = [
- "overview",
- "lessonText",
- "listening",
- "dictation",
- "script",
- "notes",
- "vocab",
- "grammar",
- "review",
- "radicals",
-] as const;
-
-const standardLessonModules = new Set<StudyModule>([
- "overview",
- "lessonText",
- "notes",
- "vocab",
- "grammar",
- "review",
-]);
-const listeningLessonModules = new Set<StudyModule>(["listening", "dictation"]);
-
-function parseModule(value: string | null | undefined): HanziHomeModule | null {
- return moduleValues.some((item) => item === value) ? (value as HanziHomeModule) : null;
-}
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const router = useRouter();
  const searchParams = useSearchParams();
- const catalogData = useHanziHomeCatalogData({ includeLessons: false });
+ const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: false });
+ const catalogData = catalogQuery.data;
  const learning = useLearningState();
  const searchNavigationIntent = useHanziHomeSearchNavigationIntent();
- const moduleFromUrl = forcedModule ?? parseModule(searchParams.get("module"));
+ const moduleFromUrl = forcedModule ?? parseHanziHomeModule(searchParams.get("module"));
  const searchParamsString = searchParams.toString();
  const lessonNumberFromUrl = searchParams.get("lesson");
  const legacyLessonIdFromUrl = searchParams.get("lessonId");
@@ -87,6 +57,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   lessons: courseLessonSummaries,
   isLoading: isCourseLessonsLoading,
   isError: isCourseLessonsError,
+  refetch: refetchCourseLessons,
  } = useHanziHomeCourseLessons(selectedCourseId);
 
  const lessons = useMemo(
@@ -164,15 +135,11 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   selectedLesson,
  ]);
 
- const requestedLessonModule: StudyModule =
-  resolvedActiveModule === "radicals" ? "overview" : resolvedActiveModule;
  const isListeningLesson = selectedLesson?.tags?.includes("listening") ?? false;
- const allowedLessonModules = isListeningLesson ? listeningLessonModules : standardLessonModules;
- const activeLessonModule = allowedLessonModules.has(requestedLessonModule)
-  ? requestedLessonModule
-  : isListeningLesson
-    ? "listening"
-    : "overview";
+ const activeLessonModule = resolveLessonModule({
+  requestedModule: resolvedActiveModule,
+  isListeningLesson,
+ });
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
  const lesson = resolvedActiveModule === "radicals" ? null : activeLessonDetail.lesson;
@@ -226,12 +193,12 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  const isLessonWorkspaceLoading =
   resolvedActiveModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
 
- const isCatalogPending = useIsCatalogPending({ includeLessons: false });
- const isRadicalsLoading = resolvedActiveModule === "radicals" && isCatalogPending;
+ const isRadicalsLoading = resolvedActiveModule === "radicals" && catalogQuery.isPending;
 
  const hasLessonWorkspaceError =
   resolvedActiveModule !== "radicals" &&
-  (isCourseLessonsError ||
+  (catalogQuery.isError ||
+   isCourseLessonsError ||
    activeLessonDetail.isError ||
    (!isCourseLessonsLoading && !selectedCourse));
 
@@ -243,12 +210,19 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   return <RadicalWorkspaceSkeleton />;
  }
 
- if (hasLessonWorkspaceError) {
+ if (catalogQuery.isError || hasLessonWorkspaceError) {
   return (
    <HanziHomeWorkspaceMessage
     eyebrow={selectedCourse?.title || "HanziHome"}
     title="Không tải được bài học"
     description="Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
+    onRetry={() => {
+     void Promise.all([
+      catalogQuery.refetch(),
+      refetchCourseLessons(),
+      activeLessonDetail.refetch(),
+     ]);
+    }}
    />
   );
  }

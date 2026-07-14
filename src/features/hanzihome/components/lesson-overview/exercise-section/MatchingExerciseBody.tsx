@@ -84,11 +84,11 @@ export function MatchingExerciseBody({
     itemPath={itemPath}
     itemId={item.id}
     answers={answers}
-   sourceKey={answerSource?.key ?? "answer_key"}
-   leftItems={leftItems}
-   rightItems={rightItems}
-   showAnswers={displayMode.showAnswers}
-  />
+    sourceKey={answerSource?.key ?? "answer_key"}
+    leftItems={leftItems}
+    rightItems={rightItems}
+    showAnswers={displayMode.showAnswers}
+   />
   </div>
  );
 }

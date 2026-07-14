@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { logger } from "@/lib/logger";
 import {
  DEFAULT_SENTENCE_LOOKUP_PROMPT,
  DEFAULT_WORD_LOOKUP_PROMPT,
@@ -71,7 +72,7 @@ export async function upsertUserAiPromptSettings(
   .single();
 
  if (error) {
-  console.error("[AiPromptSettings] upsert error:", error);
+  logger.error("[AiPromptSettings] upsert error:", error);
   return null;
  }
 

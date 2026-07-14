@@ -461,74 +461,74 @@ export function NoteEditorPanel({
       ? createPortal(
          <div className="hidden min-w-max items-center gap-2 xl:flex">
           <SaveStatusBadge status={displaySaveStatus} />
+          <Button
+           type="button"
+           variant={!isReadOnlyMode ? "active" : "outline"}
+           size="icon-sm"
+           onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
+           title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+           aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+           className={noteEditorActionButtonClassName}
+          >
+           {isReadOnlyMode ? <Eye /> : <Pencil />}
+          </Button>
+          {!isReadOnlyMode ? (
            <Button
             type="button"
-            variant={!isReadOnlyMode ? "active" : "outline"}
+            variant={isToolbarVisible ? "active" : "outline"}
             size="icon-sm"
-            onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
-            title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
-            aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+            onClick={() => setIsToolbarVisible((current) => !current)}
+            title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+            aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
             className={noteEditorActionButtonClassName}
            >
-            {isReadOnlyMode ? <Eye /> : <Pencil />}
+            {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
            </Button>
-           {!isReadOnlyMode ? (
-            <Button
-             type="button"
-             variant={isToolbarVisible ? "active" : "outline"}
-             size="icon-sm"
-             onClick={() => setIsToolbarVisible((current) => !current)}
-             title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-             aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-             className={noteEditorActionButtonClassName}
-            >
-             {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
-            </Button>
-           ) : null}
-           <Button
-            type="button"
-            variant={isSplitView ? "active" : "outline"}
-            size="icon-sm"
-            onClick={handleToggleSplitView}
-            title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
-            aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
-            className={noteEditorActionButtonClassName}
-           >
-            {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
-           </Button>
-           <Button
-            type="button"
-            variant="outline"
-            size="icon-sm"
-            onClick={() => importInputRef.current?.click()}
-            title="Import ghi chú"
-            aria-label="Import ghi chú"
-            className="hidden shrink-0 rounded-full xl:inline-flex"
-           >
-            <Upload />
-           </Button>
-           <Button
-            type="button"
-            variant="outline"
-            size="icon-sm"
-            onClick={handleExport}
-            title="Export ghi chú"
-            aria-label="Export ghi chú"
-            className="hidden shrink-0 rounded-full xl:inline-flex"
-           >
-            <Download />
-           </Button>
-           <Button
-            type="button"
-            variant="outline"
-            size="icon-sm"
-            title="Xóa ghi chú"
-            aria-label="Xóa ghi chú"
-            className="shrink-0 rounded-full text-danger-text"
-            onClick={() => setShowDeleteConfirm(true)}
-           >
-            <Trash2 />
-           </Button>
+          ) : null}
+          <Button
+           type="button"
+           variant={isSplitView ? "active" : "outline"}
+           size="icon-sm"
+           onClick={handleToggleSplitView}
+           title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
+           aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
+           className={noteEditorActionButtonClassName}
+          >
+           {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
+          </Button>
+          <Button
+           type="button"
+           variant="outline"
+           size="icon-sm"
+           onClick={() => importInputRef.current?.click()}
+           title="Import ghi chú"
+           aria-label="Import ghi chú"
+           className="hidden shrink-0 rounded-full xl:inline-flex"
+          >
+           <Upload />
+          </Button>
+          <Button
+           type="button"
+           variant="outline"
+           size="icon-sm"
+           onClick={handleExport}
+           title="Export ghi chú"
+           aria-label="Export ghi chú"
+           className="hidden shrink-0 rounded-full xl:inline-flex"
+          >
+           <Download />
+          </Button>
+          <Button
+           type="button"
+           variant="outline"
+           size="icon-sm"
+           title="Xóa ghi chú"
+           aria-label="Xóa ghi chú"
+           className="shrink-0 rounded-full text-danger-text"
+           onClick={() => setShowDeleteConfirm(true)}
+          >
+           <Trash2 />
+          </Button>
           <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
            <DialogContent className="max-w-md" showCloseButton={!isDeleting}>
             <DialogHeader>

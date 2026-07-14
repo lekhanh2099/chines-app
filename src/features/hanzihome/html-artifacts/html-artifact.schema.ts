@@ -77,12 +77,8 @@ export type HtmlArtifact = z.infer<typeof htmlArtifactSchema>;
 export type HtmlArtifactRuntimeState = z.infer<typeof htmlArtifactRuntimeStateSchema>;
 export type CreateHtmlArtifactPayload = z.input<typeof createHtmlArtifactPayloadSchema>;
 export type UpdateHtmlArtifactPayload = z.input<typeof updateHtmlArtifactPayloadSchema>;
-export type CreateHtmlArtifactFolderPayload = z.input<
- typeof createHtmlArtifactFolderPayloadSchema
->;
-export type UpdateHtmlArtifactFolderPayload = z.input<
- typeof updateHtmlArtifactFolderPayloadSchema
->;
+export type CreateHtmlArtifactFolderPayload = z.input<typeof createHtmlArtifactFolderPayloadSchema>;
+export type UpdateHtmlArtifactFolderPayload = z.input<typeof updateHtmlArtifactFolderPayloadSchema>;
 export type UpdateHtmlArtifactRuntimeStatePayload = z.input<
  typeof updateHtmlArtifactRuntimeStatePayloadSchema
 >;

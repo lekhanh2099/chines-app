@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HanziHome
 
-## Getting Started
+HanziHome is a Chinese self-study application built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, TanStack Query/Form, and Supabase.
 
-First, run the development server:
+The product flow is Course → Book/Volume → Lesson → Module. Supabase normalized tables are the runtime source for study content; JSON files are migration and audit inputs only.
+
+## Local setup
+
+Requirements: Node.js 22 or newer and npm 11.
 
 ```bash
+cp .env.example .env.local
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app runs at [http://localhost:3001](http://localhost:3001). Add a Supabase URL and publishable key to `.env.local`; keep secret/service-role keys server-only.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run format:check
+npm run lint
+npm run typecheck
+npm run test:run
+npm run deps:check
+npm run audit:prod
+npm run build
+```
 
-## Learn More
+`npm run check` runs the required formatting, lint, type, test, and build gates. CI runs the same gates on every pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## Supabase workflow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Add schema changes as timestamped files under `supabase/migrations/`.
+- Refresh checked-in database types with `npm run types:supabase` after setting `SUPABASE_PROJECT_REF` and `SUPABASE_ACCESS_TOKEN`.
+- Use `npm run types:supabase:check` to detect remote type drift.
+- Never mutate static JSON from the app or trust client-provided ownership fields.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). Historical local-JSON PRDs are retained for product context but are explicitly superseded by the current Supabase runtime architecture.

@@ -576,11 +576,7 @@ export type VocabCourseWithLessons = {
 };
 
 export type GrammarExerciseType =
- | "fill_blank"
- | "multiple_choice"
- | "reorder_sentence"
- | "translate_zh"
- | "identify_error";
+ "fill_blank" | "multiple_choice" | "reorder_sentence" | "translate_zh" | "identify_error";
 
 export type GrammarPointContent = {
  quick_example?: {

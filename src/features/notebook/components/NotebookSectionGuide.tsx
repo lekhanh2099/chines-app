@@ -20,7 +20,10 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
 
    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
     {section.principles.map((principle, index) => (
-     <div key={principle} className="rounded-xl border border-border-default bg-bg-card/80 p-4 grid gap-2">
+     <div
+      key={principle}
+      className="rounded-xl border border-border-default bg-bg-card/80 p-4 grid gap-2"
+     >
       <p className="text-xs font-black uppercase tracking-[0.14em] text-accent-text">
        Bước {index + 1}
       </p>

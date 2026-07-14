@@ -8,27 +8,37 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
+import { QueryErrorCard } from "@/components/ui/query-error-card";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
 import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
-import {
- useHanziHomeCatalogData,
- useIsCatalogPending,
-} from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 export function HanziHomeLibraryHome() {
  const [editMode, setEditMode] = useState(false);
- const catalogData = useHanziHomeCatalogData();
- const isCatalogPending = useIsCatalogPending();
+ const catalogQuery = useHanziHomeCatalogQuery();
+ const catalogData = catalogQuery.data;
  const canEdit = useHanziHomeCanEdit();
  const courses = catalogData.courses;
  const books = catalogData.books;
  const libraryStats = useMemo(() => getLibraryStats(courses, books), [books, courses]);
 
- if (isCatalogPending) return <HanziHomeLibrarySkeleton />;
+ if (catalogQuery.isPending) return <HanziHomeLibrarySkeleton />;
+
+ if (catalogQuery.isError) {
+  return (
+   <main className="w-full px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
+    <QueryErrorCard
+     title="Không tải được thư viện HanziHome"
+     description="Dữ liệu giáo trình hiện không khả dụng. Hãy kiểm tra kết nối rồi thử lại."
+     onRetry={() => void catalogQuery.refetch()}
+    />
+   </main>
+  );
+ }
 
  return (
   <main className="flex w-full flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5">

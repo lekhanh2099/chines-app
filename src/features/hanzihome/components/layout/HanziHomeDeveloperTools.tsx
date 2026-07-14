@@ -110,10 +110,7 @@ function HanziHomeCompactDeveloperTools({
        finalFocus={false}
        className="w-[min(18rem,calc(100vw-1rem))] rounded-xl border border-border-default bg-bg-elevated p-2 text-sm shadow-theme-lg"
       >
-       <div
-        id={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID}
-        className="grid gap-2 empty:hidden"
-       />
+       <div id={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID} className="grid gap-2 empty:hidden" />
        {developerToolsEnabled ? (
         <section className="mt-2 grid gap-1 border-t border-border-default pt-2 first:mt-0 first:border-t-0 first:pt-0">
          <p className="px-1 py-1 text-xs font-black uppercase tracking-wide text-text-muted">

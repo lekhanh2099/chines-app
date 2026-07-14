@@ -225,7 +225,11 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
 
  const vocabIds = Array.from(new Set(progressRows.map((row) => row.vocab_id)));
  const dictionaryIds = Array.from(
-  new Set(progressRows.map((row) => row.dictionary_id).filter(Boolean)),
+  new Set(
+   progressRows
+    .map((row) => row.dictionary_id)
+    .filter((dictionaryId): dictionaryId is string => Boolean(dictionaryId)),
+  ),
  );
 
  const [vocabResult, dictionaryResult] = await Promise.all([

@@ -8,6 +8,7 @@ import {
  type ServerTimingMetric,
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
+import { logger } from "@/lib/logger";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
@@ -69,7 +70,7 @@ export async function POST(request: NextRequest) {
    "x-lookup-user-keys": userApiKeyCount,
   });
 
-  console.info(
+  logger.info(
    "[lookup/deep]",
    JSON.stringify({
     lookupText,
@@ -239,7 +240,7 @@ export async function POST(request: NextRequest) {
    return finalize(new NextResponse(null, { status: 499 }));
   }
 
-  console.error("[lookup/deep] Unexpected error:", error);
+  logger.error("[lookup/deep] Unexpected error:", error);
   source = "error";
   if (aiStatus === "skipped") {
    aiStatus = "error";

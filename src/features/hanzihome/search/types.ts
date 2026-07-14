@@ -1,14 +1,7 @@
 import type { HanziHomeModule } from "@/features/hanzihome/types";
 
 export type HanziHomeSearchKind =
- | "vocab"
- | "grammar"
- | "lesson_text"
- | "section"
- | "exercise"
- | "radical"
- | "note"
- | "navigation";
+ "vocab" | "grammar" | "lesson_text" | "section" | "exercise" | "radical" | "note" | "navigation";
 
 export type HanziHomeSearchIndexItem = {
  id: string;
