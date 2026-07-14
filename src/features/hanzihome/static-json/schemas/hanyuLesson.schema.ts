@@ -567,6 +567,7 @@ export const AnswerKeyItemSchema = z
 export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("choose_words_fill_blank"),
  word_bank: z.array(z.string()),
+ word_bank_vi: z.array(z.string()).optional().default([]),
  questions: z.array(FillBlankQuestionSchema),
  answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
 });
