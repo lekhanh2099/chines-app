@@ -42,6 +42,9 @@ export const hanziHomeVocabItemSchema = runtimeDeepVocabularyItemSchema.extend({
 export const grammarViewModelSchema = z.object({
  id: z.string(),
  title: z.string().optional(),
+ titleVi: z.string().optional(),
+ level: z.string().optional(),
+ tags: z.array(z.string()).optional(),
  contentMd: z.string().optional(),
  cleanTitle: z.string(),
  core: z.string(),
@@ -71,6 +74,7 @@ export const courseSchema = z.object({
  subtitle: z.string().optional(),
  type: z.string(),
  order: z.number(),
+ updatedAt: z.string().optional(),
 });
 
 export const catalogCourseSchema = courseSchema.extend({
@@ -90,6 +94,7 @@ export const bookSchema = z.object({
  title: z.string(),
  shortTitle: z.string().optional(),
  order: z.number(),
+ updatedAt: z.string().optional(),
 });
 
 export const lessonSchema = z.object({

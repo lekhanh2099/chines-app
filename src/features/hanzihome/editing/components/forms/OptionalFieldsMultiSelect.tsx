@@ -50,40 +50,41 @@ export function OptionalFieldsMultiSelect({
     </Button>
    </div>
    <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
-    <Popover.Trigger
-     className={cn(
-      "flex min-h-12 w-full min-w-0 items-center gap-2 rounded-lg border border-border-default bg-bg-primary px-2 py-1.5 text-left shadow-xs transition-colors outline-none hover:bg-bg-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
-      open && "border-primary/60 ring-3 ring-primary/15",
-     )}
-    >
-     <div className="flex min-w-0 flex-1 items-center gap-2">
-      {firstSelectedGroup ? (
-       <span className="flex min-w-0 max-w-full items-center gap-1.5 rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-primary">
-        <span className="min-w-0 truncate">{firstSelectedGroup.label}</span>
-        <button
-         type="button"
-         className="rounded-full text-text-muted hover:text-text-primary"
-         onClick={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          onToggleGroup(firstSelectedGroup.keys, false);
-         }}
-         aria-label={`Ẩn ${firstSelectedGroup.label}`}
-        >
-         <X className="h-3.5 w-3.5" />
-        </button>
-       </span>
-      ) : (
-       <span className="px-1 text-sm font-semibold text-text-muted">Chọn field optional...</span>
+    <div className="flex min-w-0 items-center gap-1">
+     <Popover.Trigger
+      className={cn(
+       "flex min-h-12 min-w-0 flex-1 items-center gap-2 rounded-lg border border-border-default bg-bg-primary px-2 py-1.5 text-left shadow-xs transition-colors outline-none hover:bg-bg-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
+       open && "border-primary/60 ring-3 ring-primary/15",
       )}
-      {remainingSelectedCount > 0 ? (
-       <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-secondary">
-        +{remainingSelectedCount}
-       </span>
-      ) : null}
-     </div>
-     <ChevronDown className="h-4 w-4 shrink-0 text-text-muted" />
-    </Popover.Trigger>
+     >
+      <div className="flex min-w-0 flex-1 items-center gap-2">
+       {firstSelectedGroup ? (
+        <span className="min-w-0 max-w-full truncate rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-primary">
+         {firstSelectedGroup.label}
+        </span>
+       ) : (
+        <span className="px-1 text-sm font-semibold text-text-muted">Chọn field optional...</span>
+       )}
+       {remainingSelectedCount > 0 ? (
+        <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-secondary">
+         +{remainingSelectedCount}
+        </span>
+       ) : null}
+      </div>
+      <ChevronDown className="h-4 w-4 shrink-0 text-text-muted" />
+     </Popover.Trigger>
+     {firstSelectedGroup ? (
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-sm"
+       onClick={() => onToggleGroup(firstSelectedGroup.keys, false)}
+       aria-label={`Ẩn ${firstSelectedGroup.label}`}
+      >
+       <X className="h-3.5 w-3.5" />
+      </Button>
+     ) : null}
+    </div>
     <Popover.Portal>
      <BasePopoverPositioner
       side="bottom"
