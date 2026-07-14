@@ -2,7 +2,7 @@
 
 Project: `pdrzkirlhbkmfpbcsujp`
 
-This was a read-only connector audit. No SQL, migration, policy, Auth setting, or production data was changed.
+This started as a read-only connector audit and now records the reviewed production hardening rollout.
 
 ## Types and migration history
 
@@ -30,6 +30,13 @@ Performance advisor: 121 notices (42 warnings, 79 info).
 - 11 tables with multiple permissive policies.
 - 32 unused-index notices; do not remove indexes based on a single usage snapshot.
 
+After the reviewed performance migration:
+
+- all 31 RLS init-plan findings are resolved without changing policy roles or ownership expressions;
+- unindexed foreign-key findings decreased from 35 to 25;
+- 10 indexes were added only for repository/API filters, lesson-detail relations, and reverse vocabulary lookups;
+- newly created indexes may appear as unused until production traffic has exercised them, so no index-removal work is justified by this snapshot.
+
 Supabase remediation references:
 
 - [Database linter](https://supabase.com/docs/guides/database/database-linter)
@@ -42,12 +49,13 @@ Supabase remediation references:
 - `harden_legacy_vocabulary_cache_and_function_paths` was applied additively.
 - The shared legacy vocabulary cache now has an authenticated, input-bounded upsert RPC.
 - Eight mutable function search paths were fixed and the RPC was verified with an authenticated transaction that rolled back its data.
-- Direct vocabulary table writes remain temporarily available until the RPC client is deployed. `restrict_legacy_vocabulary_cache_table_writes` is the post-deploy cutover migration.
+- The RPC client was deployed successfully before the table-write cutover.
+- `restrict_legacy_vocabulary_cache_table_writes` was then applied: authenticated clients retain read access but can no longer write the shared cache table directly.
+- The authenticated RPC was verified again after cutover in a transaction that rolled back its data.
 
 ## Safe next slice
 
-1. Deploy the RPC client and verify a real vocabulary save, then apply the table-write cutover migration.
-2. Establish the baseline status of pre-2026-06-18 local migrations before any ledger repair.
-3. Treat public study-content GraphQL exposure as intentional until the Data API boundary is redesigned; private tables remain ownership-filtered by RLS.
-4. Enable leaked-password protection in Auth settings.
-5. Treat performance findings separately and validate query plans before changing indexes/policies.
+1. Establish the baseline status of pre-2026-06-18 local migrations before any ledger repair.
+2. Treat public study-content GraphQL exposure as intentional until the Data API boundary is redesigned; private tables remain ownership-filtered by RLS.
+3. Enable leaked-password protection in Auth settings; the current connector cannot mutate this Auth dashboard setting.
+4. Reassess the remaining foreign-key and unused-index findings only with production query evidence; do not optimize audit columns speculatively.
