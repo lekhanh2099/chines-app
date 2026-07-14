@@ -81,6 +81,10 @@ async function getPublishAuthContext(request: Request): Promise<PublishAuthConte
  const publishToken = process.env.HANZIHOME_HTML_PUBLISH_TOKEN;
 
  if (bearerToken && publishToken && isSameToken(bearerToken, publishToken)) {
+  if (publishToken.length < 32) {
+   return jsonError("HTML publish token configuration is too weak.", 503);
+  }
+
   const ownerId = process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID;
   const serviceRoleKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -227,10 +231,6 @@ export async function GET() {
   {
    sessionUserId: user.id,
    publishTokenEnabled: Boolean(process.env.HANZIHOME_HTML_PUBLISH_TOKEN),
-   publishOwnerId: process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID ?? null,
-   serviceRoleEnabled: Boolean(
-    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY,
-   ),
   },
   {
    headers: {

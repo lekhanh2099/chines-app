@@ -44,11 +44,11 @@ export const htmlArtifactFolderSchema = z.object({
 });
 
 export const createHtmlArtifactPayloadSchema = z.object({
- title: z.string().trim().min(1),
+ title: z.string().trim().min(1).max(200),
  folderId: z.string().uuid().nullable().optional(),
  artifactType: htmlArtifactTypeSchema.default("practice_page"),
- tags: z.array(z.string().trim().min(1)).default([]),
- html: z.string().trim().min(1),
+ tags: z.array(z.string().trim().min(1).max(50)).max(20).default([]),
+ html: z.string().trim().min(1).max(2_000_000),
 });
 
 export const updateHtmlArtifactPayloadSchema = createHtmlArtifactPayloadSchema.partial();

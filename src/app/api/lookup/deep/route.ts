@@ -88,6 +88,15 @@ export async function POST(request: NextRequest) {
 
  try {
   const supabase = await createClient();
+  const {
+   data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+   source = "unauthorized";
+   return finalize(NextResponse.json({ error: "Unauthorized" }, { status: 401 }));
+  }
+
   const payload: unknown = await request.json();
   const parsed = deepLookupSchema.safeParse(payload);
 
@@ -146,11 +155,8 @@ export async function POST(request: NextRequest) {
   throwIfAborted(request.signal);
 
   const authStartedAt = performance.now();
-  const {
-   data: { user },
-  } = await supabase.auth.getUser();
-  const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
-  const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
+  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
+  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
   userApiKeyCount = userApiKeys.length;
   metrics.push({
    name: "auth",

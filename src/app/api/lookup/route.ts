@@ -30,6 +30,14 @@ const lookupSchema = z.object({
 
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
+ const {
+  data: { user },
+ } = await supabase.auth.getUser();
+
+ if (!user) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+ }
+
  const payload: unknown = await request.json();
  const parsed = lookupSchema.safeParse(payload);
 
@@ -38,11 +46,8 @@ export async function POST(request: NextRequest) {
  }
 
  if (parsed.data.type === "sentence") {
-  const {
-   data: { user },
-  } = await supabase.auth.getUser();
-  const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
-  const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
+  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
+  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
 
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
@@ -112,11 +117,8 @@ export async function POST(request: NextRequest) {
   });
  }
 
- const {
-  data: { user },
- } = await supabase.auth.getUser();
- const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
- const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
+ const promptSettings = await getUserAiPromptSettings(supabase, user.id);
+ const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
 
  const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
