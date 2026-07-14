@@ -2,6 +2,9 @@
 
 import * as React from "react";
 import { X } from "lucide-react";
+import { Dialog as DialogPrimitive } from "radix-ui";
+
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Sheet({
@@ -17,41 +20,69 @@ export function Sheet({
  side?: "right" | "bottom";
  className?: string;
 }) {
- if (!open) return null;
  return (
-  <div className="fixed inset-0 z-50 overflow-x-hidden scrollbar-soft ">
-   <button
-    type="button"
-    aria-label="Đóng"
-    className="absolute inset-0 bg-overlay"
-    onClick={() => onOpenChange(false)}
-   />
-   <div
+  <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
+   <DialogPrimitive.Portal>
+    <DialogPrimitive.Overlay className="fixed inset-0 z-[100] bg-overlay backdrop-blur-sm" />
+    <DialogPrimitive.Content
+     aria-describedby={undefined}
     className={cn(
-     "absolute max-w-full overflow-y-auto scrollbar-soft  overflow-x-hidden scrollbar-soft  border-border-default bg-bg-card shadow-theme-lg",
+     "fixed z-[101] flex max-w-full flex-col overflow-hidden border-border-default bg-bg-card shadow-theme-lg outline-none",
      side === "right"
       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
-      : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border",
+      : "inset-x-0 bottom-0 max-h-[82dvh] w-full rounded-t-2xl border border-b-0",
      className,
     )}
-   >
-    {children}
-   </div>
-  </div>
+    >
+     {children}
+    </DialogPrimitive.Content>
+   </DialogPrimitive.Portal>
+  </DialogPrimitive.Root>
  );
 }
 
 export function SheetHeader({ title, onClose }: { title: string; onClose: () => void }) {
  return (
-  <div className="mb-5 flex min-w-0 items-center justify-between gap-3">
-   <h2 className="min-w-0 break-words text-2xl font-black text-text-primary">{title}</h2>
-   <button
-    type="button"
-    onClick={onClose}
-    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border-default text-text-muted hover:bg-bg-subtle"
-   >
-    <X className="h-5 w-5" />
-   </button>
+  <div className="flex min-w-0 shrink-0 items-center justify-between gap-3 border-b border-border-default px-4 py-4 sm:px-5">
+   <DialogPrimitive.Title className="min-w-0 break-words text-xl font-black text-text-primary sm:text-2xl">
+    {title}
+   </DialogPrimitive.Title>
+   <DialogPrimitive.Close asChild>
+    <Button
+     type="button"
+     variant="outline"
+     size="icon-sm"
+     onClick={onClose}
+     className="shrink-0 rounded-full"
+     aria-label="Đóng"
+    >
+     <X />
+    </Button>
+   </DialogPrimitive.Close>
   </div>
+ );
+}
+
+export function SheetBody({ className, ...props }: React.ComponentProps<"div">) {
+ return (
+  <div
+   className={cn(
+    "min-h-0 flex-1 overflow-x-hidden overflow-y-auto px-4 py-4 text-sm scrollbar-soft sm:px-5 sm:text-base",
+    className,
+   )}
+   {...props}
+  />
+ );
+}
+
+export function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
+ return (
+  <div
+   className={cn(
+    "flex shrink-0 items-center justify-end gap-2 border-t border-border-default px-4 py-3 sm:px-5",
+    className,
+   )}
+   {...props}
+  />
  );
 }

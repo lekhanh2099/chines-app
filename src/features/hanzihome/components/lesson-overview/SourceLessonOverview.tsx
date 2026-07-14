@@ -1,12 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Settings2 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Sheet, SheetHeader } from "@/components/ui/sheet";
+import {
+ HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID,
+ HanziHomeCommandBarPortal,
+} from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
 
 import { BookSectionContent } from "./BookSectionContent";
@@ -27,7 +28,6 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
  const sections = useMemo(() => getBookSections(lessonDocument), [lessonDocument]);
  const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
  const [isSectionListVisible, setIsSectionListVisible] = useState(true);
- const [isReadingSettingsOpen, setIsReadingSettingsOpen] = useState(false);
  const [globalDisplayMode, setGlobalDisplayMode] = useState<LessonDisplayMode>(
   DEFAULT_LESSON_DISPLAY_MODE,
  );
@@ -101,6 +101,13 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
  );
 
  return (
+  <>
+   <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID}>
+    <section className="grid gap-2">
+     <p className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Hiển thị</p>
+     {readingControls}
+    </section>
+   </HanziHomeCommandBarPortal>
   <LessonModuleFrame
    title="Bài khóa"
    subtitle={`${lessonDocument.lesson.title.zh} · ${lessonMeta.volumeVi}`}
@@ -109,6 +116,18 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
    sidebarOpen={isSectionListVisible}
    onSidebarOpenChange={setIsSectionListVisible}
    sidebarSelectionKey={selectedSectionId}
+   mobileNavigation={{
+    label: "Đề mục",
+    value: selectedSection?.id ?? ALL_SECTIONS_ID,
+    items: [
+     { value: ALL_SECTIONS_ID, label: "Xem toàn bộ" },
+     ...sections.map((section, index) => ({
+      value: section.id,
+      label: `${index + 1}. ${section.title}`,
+     })),
+    ],
+    onChange: setSelectedSectionId,
+   }}
    sidebarRail={
     <>
      <LessonModuleSidebarRailItem
@@ -156,23 +175,10 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
     </div>
    }
    actions={
-    <>
-     <div className="hidden xl:block">{readingControls}</div>
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="xl:hidden"
-      onClick={() => setIsReadingSettingsOpen(true)}
-     >
-      <Settings2 className="h-4 w-4" />
-      Cài đặt đọc
-     </Button>
-     <Badge>{sections.length} phần</Badge>
-    </>
+    <div className="hidden xl:block">{readingControls}</div>
    }
   >
-   <Card padding="lg" className="rounded-xl">
+   <Card padding="none" className="rounded-xl p-2.5 sm:p-4 lg:p-5">
     <section className="min-w-0 grid gap-4">
      <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="flex items-start gap-3">
@@ -264,15 +270,7 @@ export function SourceLessonOverview({ lessonDocument }: SourceLessonOverviewPro
      </div>
     </section>
    </Card>
-   <Sheet
-    open={isReadingSettingsOpen}
-    onOpenChange={setIsReadingSettingsOpen}
-    side="bottom"
-    className="p-4"
-   >
-    <SheetHeader title="Cài đặt đọc" onClose={() => setIsReadingSettingsOpen(false)} />
-    {readingControls}
-   </Sheet>
   </LessonModuleFrame>
+  </>
  );
 }

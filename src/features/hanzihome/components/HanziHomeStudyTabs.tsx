@@ -35,7 +35,7 @@ export function HanziHomeStudyTabs<T extends string>({
    <div
     role="tablist"
     aria-label="Nội dung học"
-    className="flex min-w-0 max-w-full gap-1 overflow-x-auto rounded-lg p-1.5 scrollbar-soft"
+    className="flex min-w-0 max-w-full gap-1 overflow-x-auto rounded-lg p-0.5 scrollbar-soft sm:p-1.5"
    >
     {items.map((item) => {
      const Icon = item.icon;
@@ -51,7 +51,10 @@ export function HanziHomeStudyTabs<T extends string>({
        aria-selected={selected}
        disabled={item.disabled}
        onClick={() => onChange(item.key)}
-       className={cn("shrink-0 gap-2 rounded-lg font-bold", compact && "px-2 text-xs")}
+       className={cn(
+        "h-9 min-h-9 shrink-0 gap-1.5 rounded-lg px-2 font-bold sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
+        compact && "px-2 text-xs",
+       )}
       >
        {Icon ? <Icon data-icon="inline-start" /> : null}
        <span className="sm:hidden">{item.shortLabel ?? item.label}</span>

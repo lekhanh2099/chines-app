@@ -215,13 +215,13 @@ export function Header({ user }: { user?: User | null }) {
    <FocusModeRouteGuard />
    <header
     className={cn(
-     "nova-shell-header sticky top-0 z-50 flex h-14 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:px-5 lg:px-7",
+     "nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:h-14 sm:px-5 lg:px-7",
      isHanziHomeRoute && "hanzihome-liquid-header",
     )}
    >
     <div
      className={cn(
-      "grid h-14 w-full min-w-0 items-center gap-2 sm:gap-3",
+      "grid h-12 w-full min-w-0 items-center gap-2 sm:h-14 sm:gap-3",
       hasRouteToolbar
        ? "grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)_auto]"
        : "grid-cols-[minmax(0,1fr)_auto]",
@@ -321,9 +321,9 @@ function HanziHomeBreadcrumbNav({
  return (
   <AppHeaderBreadcrumb
    aria-label="Chuyển nhanh bài HanziHome"
-   className="hidden min-w-0 max-w-[min(34rem,56vw)] justify-self-start md:inline-flex"
+   className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(34rem,56vw)]"
   >
-   <AppHeaderBreadcrumbItem>
+   <AppHeaderBreadcrumbItem className="hidden md:flex">
     <AppHeaderBreadcrumbLink
      href="/hanzihome"
      disabled={focusModeEnabled}
@@ -333,7 +333,7 @@ function HanziHomeBreadcrumbNav({
      HanziHome
     </AppHeaderBreadcrumbLink>
    </AppHeaderBreadcrumbItem>
-   <AppHeaderBreadcrumbSeparator />
+   <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
    <AppHeaderBreadcrumbItem className="hidden 2xl:flex">
     <AppHeaderBreadcrumbPage className="max-w-48" title={breadcrumb.selectedCourse.title}>
      {breadcrumb.selectedCourse.title}
@@ -352,7 +352,7 @@ function HanziHomeBreadcrumbNav({
       aria-label="Chọn bài học HanziHome"
       className={cn(
        appHeaderBreadcrumbSelectTriggerClassName,
-       "w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
+       "w-[min(11rem,44vw)] text-sm md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
       )}
      >
       <SelectValue />
@@ -435,7 +435,7 @@ function HeaderSearchForm({
    onSubmit={onSubmit}
    className={cn(
     "relative min-w-0",
-    routeToolbarActive ? "hidden xl:block" : "block",
+    routeToolbarActive ? "hidden xl:col-start-2 xl:row-start-1 xl:block" : "block",
     routeToolbarActive && "xl:justify-self-center",
    )}
   >
@@ -478,7 +478,12 @@ function HeaderUtilityArea({
  onToggleFocusMode: () => void;
 }) {
  return (
-  <div className="relative z-10 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+  <div
+   className={cn(
+    "relative z-10 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2",
+    routeToolbarActive && "col-start-2 row-start-1 xl:col-start-3",
+   )}
+  >
    {routeToolbarActive ? (
     <Button
      type="button"

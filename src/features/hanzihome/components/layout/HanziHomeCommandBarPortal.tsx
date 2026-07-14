@@ -1,15 +1,11 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { type ReactNode, useCallback, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 
 export const HANZIHOME_COMMAND_BAR_WORKSPACE_TARGET_ID = "hanzihome-command-bar-workspace-controls";
 export const HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID = "hanzihome-command-bar-module-controls";
-
-function getTarget(targetId: string) {
- if (typeof document === "undefined") return null;
- return document.getElementById(targetId);
-}
+export const HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID = "hanzihome-command-bar-tools-menu";
 
 export function HanziHomeCommandBarPortal({
  targetId,
@@ -20,7 +16,13 @@ export function HanziHomeCommandBarPortal({
  children: ReactNode;
  fallback?: ReactNode;
 }) {
- const target = getTarget(targetId);
+ const subscribe = useCallback((onStoreChange: () => void) => {
+  const observer = new MutationObserver(onStoreChange);
+  observer.observe(document.body, { childList: true, subtree: true });
+  return () => observer.disconnect();
+ }, []);
+ const getSnapshot = useCallback(() => document.getElementById(targetId), [targetId]);
+ const target = useSyncExternalStore(subscribe, getSnapshot, () => null);
 
  if (!target) return fallback;
 

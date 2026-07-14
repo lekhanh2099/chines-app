@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Sheet, SheetHeader } from "@/components/ui/sheet";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 
 export function LearningDrawer({
  title,
@@ -13,9 +13,9 @@ export function LearningDrawer({
  side?: "right" | "bottom";
 }) {
  return (
-  <Sheet open onOpenChange={(open) => !open && onClose()} side={side} className="p-5">
+  <Sheet open onOpenChange={(open) => !open && onClose()} side={side}>
    <SheetHeader title={title} onClose={onClose} />
-   {children}
+   <SheetBody>{children}</SheetBody>
   </Sheet>
  );
 }

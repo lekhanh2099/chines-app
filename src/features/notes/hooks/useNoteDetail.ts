@@ -165,7 +165,7 @@ export function useNoteDetail(noteId: string) {
   updateTitle: (title: string) => updateTitleMutation.mutate(title),
   updateCategory: (cat: NoteCategory) => updateCategoryMutation.mutate(cat),
 
-  deleteNote: () => deleteMutation.mutate(),
+  deleteNote: () => deleteMutation.mutateAsync(),
   isDeleting: deleteMutation.isPending,
  };
 }

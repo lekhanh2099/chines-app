@@ -180,7 +180,7 @@
  --filter-width: 17.5rem;
  --bottom-nav-height: 4.75rem;
  --topbar-height: 4rem;
- --hanzihome-command-header-height: 3.5rem;
+ --hanzihome-command-header-height: 3rem;
  --border-thin: 0.0625rem;
 
  /* Misc */
@@ -446,10 +446,6 @@ body {
  overflow-x: clip;
 }
 
-body[data-scroll-locked]:has([data-slot="select-content"]) {
- overflow: visible !important;
-}
-
 .nova-shell-header,
 .nova-shell-sidebar {
  border-color: color-mix(in oklch, var(--primary) 14%, var(--border));
@@ -570,6 +566,7 @@ body[data-scroll-locked]:has([data-slot="select-content"]) {
  inline-size: 100%;
  max-inline-size: 100%;
  min-inline-size: 0;
+ min-block-size: 0;
  overflow-x: clip;
 }
 
@@ -599,18 +596,15 @@ body[data-scroll-locked]:has([data-slot="select-content"]) {
  background:
   linear-gradient(135deg, rgb(20 184 166 / 9%) 0%, transparent 34%),
   linear-gradient(315deg, rgb(117 72 246 / 10%) 0%, transparent 40%), transparent;
- padding-block: var(--space-3)
-  calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-4));
+ padding-block: var(--space-3) var(--space-4);
  padding-inline: var(--space-2);
 }
 
 .hanzihome-workspace-page {
- block-size: calc(
-  100dvh - var(--hanzihome-command-header-height) - 88px - env(safe-area-inset-bottom)
- );
+ block-size: 100%;
  min-block-size: 0;
  overflow: hidden;
- padding-block-end: var(--space-3);
+ padding-block-end: 0;
 }
 
 .hanzihome-workspace-shell {
@@ -663,8 +657,13 @@ body[data-scroll-locked]:has([data-slot="select-content"]) {
 }
 
 @media (min-width: 40rem) {
+ :root {
+  --hanzihome-command-header-height: 3.5rem;
+ }
+
  .hanzihome-workspace-page {
-  block-size: calc(100dvh - var(--hanzihome-command-header-height));
+  block-size: 100%;
+  padding-block-end: var(--space-3);
  }
 
  .hanzihome-static-page {
@@ -679,18 +678,6 @@ body[data-scroll-locked]:has([data-slot="select-content"]) {
 }
 
 @media (max-width: 40rem) {
- [data-radix-popper-content-wrapper] {
-  position: fixed !important;
-  inset-block-start: auto !important;
-  inset-block-end: calc(
-   var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-3)
-  ) !important;
-  max-inline-size: calc(100vw - var(--space-8)) !important;
-  width: auto !important;
-  inset-inline: var(--space-4) !important;
-  transform: none !important;
- }
-
  [data-nextjs-dev-tools-button],
  [data-nextjs-dev-tools],
  [data-nextjs-toast],

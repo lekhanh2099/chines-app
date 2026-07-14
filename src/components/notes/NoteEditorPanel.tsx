@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
+import { Popover } from "@base-ui/react";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
@@ -17,6 +19,8 @@ import {
  PanelTopClose,
  PanelTopOpen,
  Pencil,
+ Plus,
+ SlidersHorizontal,
  Trash2,
  Upload,
 } from "lucide-react";
@@ -25,12 +29,23 @@ import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
 import { useSplitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
+import {
+ Dialog,
+ DialogClose,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/dialog";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
 
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
- headerActionsContainer?: HTMLElement | null;
+ mobileHeaderActionsContainer?: HTMLElement | null;
+ desktopActionsContainer?: HTMLElement | null;
 }
 
 function createDownloadFileName(title: string): string {
@@ -56,13 +71,25 @@ function downloadJsonFile(fileName: string, value: unknown) {
  URL.revokeObjectURL(url);
 }
 
-const noteEditorActionButtonClassName =
- "h-9 min-h-9 w-9 gap-1.5 rounded-xl px-0 xl:w-auto xl:px-2.5";
+const noteEditorActionButtonClassName = "shrink-0 rounded-full";
+
+const mobileReadOnlyQuery = "(max-width: 767px)";
+
+function subscribeToMobileViewport(onChange: () => void) {
+ const media = window.matchMedia(mobileReadOnlyQuery);
+ media.addEventListener("change", onChange);
+ return () => media.removeEventListener("change", onChange);
+}
+
+function getMobileViewportSnapshot() {
+ return window.matchMedia(mobileReadOnlyQuery).matches;
+}
 
 export function NoteEditorPanel({
  noteId,
  isVisible,
- headerActionsContainer,
+ mobileHeaderActionsContainer,
+ desktopActionsContainer,
 }: NoteEditorPanelProps) {
  const {
   note,
@@ -80,15 +107,24 @@ export function NoteEditorPanel({
 
  const closeTab = useNoteTabsStore((s) => s.closeTab);
  const updateTabTitle = useNoteTabsStore((s) => s.updateTabTitle);
+ const focusModeEnabled = useFocusModeStore((s) => s.enabled);
  const isSplitView = useSplitViewStore((s) => s.isSplitView(noteId));
  const toggleSplitView = useSplitViewStore((s) => s.toggleSplitView);
+ const router = useRouter();
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+ const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
  const [importedContent, setImportedContent] = useState<JsonObject | null>(null);
  const [importedReadingContent, setImportedReadingContent] = useState<
   JsonObject | null | undefined
  >(undefined);
- const [isReadOnlyMode, setIsReadOnlyMode] = useState(false);
+ const isMobileViewport = useSyncExternalStore(
+  subscribeToMobileViewport,
+  getMobileViewportSnapshot,
+  () => false,
+ );
+ const [readOnlyOverride, setReadOnlyOverride] = useState<boolean | null>(null);
+ const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const [importVersion, setImportVersion] = useState(0);
  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -178,10 +214,15 @@ export function NoteEditorPanel({
   // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []);
 
- const handleDelete = useCallback(() => {
-  deleteNoteMutation();
-  toast.success("Đã xoá ghi chú.");
-  closeTab(noteId);
+ const handleDelete = useCallback(async () => {
+  try {
+   await deleteNoteMutation();
+   toast.success("Đã xoá ghi chú.");
+   setShowDeleteConfirm(false);
+   closeTab(noteId);
+  } catch {
+   toast.error("Không thể xóa ghi chú.");
+  }
  }, [deleteNoteMutation, closeTab, noteId]);
 
  const handleExport = useCallback(() => {
@@ -219,7 +260,6 @@ export function NoteEditorPanel({
     setImportedReadingContent(nextReadingContent);
     setImportVersion((version) => version + 1);
     saveContent(nextContent);
-
     saveReadingContent(nextReadingContent);
 
     if (importedPayload.note.title && importedPayload.note.title !== currentNoteTitle) {
@@ -268,7 +308,6 @@ export function NoteEditorPanel({
   importedReadingContent !== undefined
    ? importedReadingContent
    : (note?.reading_content as Record<string, unknown> | null);
- const hasReadingContent = !!(readingContent && Object.keys(readingContent).length > 0);
 
  return (
   <div
@@ -294,133 +333,234 @@ export function NoteEditorPanel({
       }}
      />
 
-     {headerActionsContainer && isVisible
+     {mobileHeaderActionsContainer && isVisible
       ? createPortal(
-         <div className="flex min-w-max items-center justify-start gap-1.5 xl:gap-2">
+         <div className="flex items-center gap-1.5 xl:hidden">
           <SaveStatusBadge status={displaySaveStatus} />
 
-          <Button
-           type="button"
-           variant={isReadOnlyMode ? "active" : "outline"}
-           size="sm"
-           onClick={() => setIsReadOnlyMode((current) => !current)}
-           title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
-           aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
-           className={noteEditorActionButtonClassName}
-          >
-           {isReadOnlyMode ? <Eye className="h-3.5 w-3.5" /> : <Pencil className="h-3.5 w-3.5" />}
-           <span className="hidden xl:inline">{isReadOnlyMode ? "Chỉ xem" : "Sửa"}</span>
-          </Button>
+          <Popover.Root open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} modal={false}>
+           <Popover.Trigger className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-bg-card text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 xl:hidden">
+            <SlidersHorizontal className="size-4" />
+            <span className="sr-only">Tùy chọn ghi chú</span>
+           </Popover.Trigger>
+           <Popover.Portal>
+            <Popover.Positioner
+             side="bottom"
+             align="end"
+             sideOffset={8}
+             collisionPadding={8}
+             positionMethod="fixed"
+             style={{ zIndex: 90 }}
+            >
+             <Popover.Popup
+              initialFocus={false}
+              finalFocus={false}
+              className="w-[min(19rem,calc(100vw-1rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg"
+             >
+              <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">Chế độ</p>
+              <Button
+               variant={!isReadOnlyMode ? "active" : "ghost"}
+               className="w-full justify-start px-2.5 text-sm"
+               onClick={() => {
+                setReadOnlyOverride(!isReadOnlyMode);
+                setMobileActionsOpen(false);
+               }}
+              >
+               {isReadOnlyMode ? <Pencil /> : <Eye />}
+               {isReadOnlyMode ? "Chỉnh sửa" : "Chỉ xem"}
+              </Button>
+              <Button
+               variant={isSplitView ? "active" : "ghost"}
+               className="w-full justify-start px-2.5 text-sm"
+               onClick={() => {
+                handleToggleSplitView();
+                setMobileActionsOpen(false);
+               }}
+              >
+               {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
+               {isSplitView ? "Đóng split" : "Mở split"}
+              </Button>
+              {!isReadOnlyMode ? (
+               <Button
+                variant={isToolbarVisible ? "active" : "ghost"}
+                className="w-full justify-start px-2.5 text-sm"
+                onClick={() => {
+                 setIsToolbarVisible((current) => !current);
+                 setMobileActionsOpen(false);
+                }}
+               >
+                {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
+                {isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+               </Button>
+              ) : null}
 
-          {!isReadOnlyMode ? (
+              <div className="my-1 h-px bg-border-default" />
+              <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">Ghi chú</p>
+              <Button
+               variant="ghost"
+               className="w-full justify-start px-2.5 text-sm"
+               onClick={() => {
+                setMobileActionsOpen(false);
+                requestAnimationFrame(() => importInputRef.current?.click());
+               }}
+              >
+               <Upload /> Import
+              </Button>
+              <Button
+               variant="ghost"
+               className="w-full justify-start px-2.5 text-sm"
+               onClick={() => {
+                handleExport();
+                setMobileActionsOpen(false);
+               }}
+              >
+               <Download /> Export
+              </Button>
+              <Button
+               variant="ghost"
+               className="w-full justify-start px-2.5 text-sm"
+               disabled={focusModeEnabled}
+               onClick={() => {
+                setMobileActionsOpen(false);
+                router.push("/notes?action=new");
+               }}
+              >
+               <Plus /> Mở ghi chú mới
+              </Button>
+              <Button
+               variant="ghost"
+               className="w-full justify-start px-2.5 text-sm"
+               disabled={focusModeEnabled}
+               onClick={() => {
+                closeTab(noteId);
+                setMobileActionsOpen(false);
+               }}
+              >
+               <PanelLeftClose /> Đóng tab hiện tại
+              </Button>
+              <Button
+               variant="ghost"
+               className="w-full justify-start px-2.5 text-sm text-danger-text hover:bg-danger-subtle"
+               onClick={() => {
+                setMobileActionsOpen(false);
+                requestAnimationFrame(() => setShowDeleteConfirm(true));
+               }}
+              >
+               <Trash2 /> Xóa ghi chú
+              </Button>
+             </Popover.Popup>
+            </Popover.Positioner>
+           </Popover.Portal>
+          </Popover.Root>
+         </div>,
+         mobileHeaderActionsContainer,
+        )
+      : null}
+
+     {desktopActionsContainer && isVisible
+      ? createPortal(
+         <div className="hidden min-w-max items-center gap-2 xl:flex">
+          <SaveStatusBadge status={displaySaveStatus} />
            <Button
             type="button"
-            variant={isToolbarVisible ? "active" : "outline"}
-            size="sm"
-            onClick={() => setIsToolbarVisible((current) => !current)}
-            title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-            aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+            variant={!isReadOnlyMode ? "active" : "outline"}
+            size="icon-sm"
+            onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
+            title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+            aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
             className={noteEditorActionButtonClassName}
            >
-            {isToolbarVisible ? (
-             <PanelTopClose className="h-3.5 w-3.5" />
-            ) : (
-             <PanelTopOpen className="h-3.5 w-3.5" />
-            )}
-            <span className="hidden xl:inline">
-             {isToolbarVisible ? "Ẩn toolbar" : "Hiện toolbar"}
-            </span>
+            {isReadOnlyMode ? <Eye /> : <Pencil />}
            </Button>
-          ) : null}
-
-          <Button
-           type="button"
-           variant={isSplitView ? "active" : "outline"}
-           size="sm"
-           onClick={handleToggleSplitView}
-           title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
-           aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
-           className={noteEditorActionButtonClassName}
-          >
-           {isSplitView ? (
-            <PanelLeftClose className="h-3.5 w-3.5" />
-           ) : (
-            <PanelLeft className="h-3.5 w-3.5" />
-           )}
-           <span className="hidden xl:inline">
-            {isSplitView ? "Đóng split" : hasReadingContent ? "Mở bài đọc" : "Split view"}
-           </span>
-           {!isSplitView && hasReadingContent ? (
-            <span className="h-1.5 w-1.5 rounded-full bg-info" />
+           {!isReadOnlyMode ? (
+            <Button
+             type="button"
+             variant={isToolbarVisible ? "active" : "outline"}
+             size="icon-sm"
+             onClick={() => setIsToolbarVisible((current) => !current)}
+             title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+             aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+             className={noteEditorActionButtonClassName}
+            >
+             {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
+            </Button>
            ) : null}
-          </Button>
-
-          <Button
-           type="button"
-           variant="outline"
-           size="sm"
-           onClick={() => importInputRef.current?.click()}
-           title="Import ghi chú"
-           aria-label="Import ghi chú"
-           className={noteEditorActionButtonClassName}
-          >
-           <Upload className="h-3.5 w-3.5" />
-           <span className="hidden xl:inline">Import</span>
-          </Button>
-          <Button
-           type="button"
-           variant="outline"
-           size="sm"
-           onClick={handleExport}
-           title="Export ghi chú"
-           aria-label="Export ghi chú"
-           className={noteEditorActionButtonClassName}
-          >
-           <Download className="h-3.5 w-3.5" />
-           <span className="hidden xl:inline">Export</span>
-          </Button>
-
-          {showDeleteConfirm ? (
-           <div className="flex items-center gap-1 rounded-xl border border-danger/25 bg-danger-subtle p-1">
-            <Button
-             type="button"
-             variant="destructive"
-             size="sm"
-             onClick={handleDelete}
-             disabled={isDeleting}
-             className="h-8 rounded-lg"
-            >
-             {isDeleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
-             Xóa
-            </Button>
-            <Button
-             type="button"
-             variant="ghost"
-             size="sm"
-             onClick={() => setShowDeleteConfirm(false)}
-             className="h-8 rounded-lg"
-            >
-             Hủy
-            </Button>
-           </div>
-          ) : (
+           <Button
+            type="button"
+            variant={isSplitView ? "active" : "outline"}
+            size="icon-sm"
+            onClick={handleToggleSplitView}
+            title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
+            aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
+            className={noteEditorActionButtonClassName}
+           >
+            {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
+           </Button>
            <Button
             type="button"
             variant="outline"
             size="icon-sm"
-            onClick={() => setShowDeleteConfirm(true)}
-            title="Xóa ghi chú"
-            className="h-9 w-9 rounded-xl"
+            onClick={() => importInputRef.current?.click()}
+            title="Import ghi chú"
+            aria-label="Import ghi chú"
+            className="hidden shrink-0 rounded-full xl:inline-flex"
            >
-            <Trash2 className="h-3.5 w-3.5" />
+            <Upload />
            </Button>
-          )}
+           <Button
+            type="button"
+            variant="outline"
+            size="icon-sm"
+            onClick={handleExport}
+            title="Export ghi chú"
+            aria-label="Export ghi chú"
+            className="hidden shrink-0 rounded-full xl:inline-flex"
+           >
+            <Download />
+           </Button>
+           <Button
+            type="button"
+            variant="outline"
+            size="icon-sm"
+            title="Xóa ghi chú"
+            aria-label="Xóa ghi chú"
+            className="shrink-0 rounded-full text-danger-text"
+            onClick={() => setShowDeleteConfirm(true)}
+           >
+            <Trash2 />
+           </Button>
+          <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
+           <DialogContent className="max-w-md" showCloseButton={!isDeleting}>
+            <DialogHeader>
+             <DialogTitle>Xóa ghi chú?</DialogTitle>
+             <DialogDescription>
+              “{note.title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.
+             </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+             <DialogClose asChild>
+              <Button type="button" variant="outline" disabled={isDeleting}>
+               Hủy
+              </Button>
+             </DialogClose>
+             <Button
+              type="button"
+              variant="destructive"
+              disabled={isDeleting}
+              onClick={() => void handleDelete()}
+             >
+              {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}
+              {isDeleting ? "Đang xóa..." : "Xóa"}
+             </Button>
+            </DialogFooter>
+           </DialogContent>
+          </Dialog>
          </div>,
-         headerActionsContainer,
+         desktopActionsContainer,
         )
       : null}
      {isSplitView ? (
-      <div className="note-editor-split-panel m-2 min-h-0 flex-1 overflow-hidden lg:m-4">
+      <div className="note-editor-split-panel m-1 min-h-0 flex-1 overflow-hidden sm:m-2 lg:m-4">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -433,7 +573,7 @@ export function NoteEditorPanel({
        />
       </div>
      ) : (
-      <div className="note-editor-scroll m-2 lg:m-4">
+      <div className="note-editor-scroll m-1 sm:m-2 lg:m-4">
        <Editor
         key={`note-${importVersion}`}
         initialContent={noteContent}

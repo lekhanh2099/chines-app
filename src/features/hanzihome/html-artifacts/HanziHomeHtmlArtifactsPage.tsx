@@ -914,7 +914,7 @@ export function HanziHomeHtmlArtifactsPage() {
  };
 
  return (
-  <main className="flex h-[calc(100dvh-3.5rem-88px-env(safe-area-inset-bottom))] min-h-0 w-full flex-col overflow-hidden md:h-[calc(100dvh-3.5rem)]">
+  <main className="flex h-full min-h-0 w-full flex-col overflow-hidden">
    <CreateFolderDialog
     folderDraft={folderDraft}
     folders={folders}

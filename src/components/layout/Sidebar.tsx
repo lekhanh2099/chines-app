@@ -171,10 +171,9 @@ export function Sidebar() {
  };
 
  return (
-  <>
    <aside
     className={cn(
-     "nova-shell-sidebar sticky top-0 hidden min-h-dvh shrink-0 flex-col border-r border-border-default transition-all duration-200 md:flex",
+     "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 md:flex",
      effectiveCollapsed ? "w-16" : "w-64",
     )}
    >
@@ -264,7 +263,15 @@ export function Sidebar() {
      </button>
     </div>
    </aside>
-   <nav className="nova-shell-header fixed inset-x-0 bottom-0 z-40 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
+ );
+}
+
+export function MobileBottomNavigation() {
+ const pathname = usePathname();
+ const searchParams = useSearchParams();
+
+ return (
+   <nav className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
     <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
      {mobileItems.map((item) => {
       const Icon = item.icon;
@@ -286,6 +293,5 @@ export function Sidebar() {
      })}
     </div>
    </nav>
-  </>
  );
 }

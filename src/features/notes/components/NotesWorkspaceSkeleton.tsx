@@ -8,9 +8,9 @@ export function NotesWorkspaceSkeleton() {
    aria-live="polite"
   >
    <WorkspaceCommandHeader
-    title={<div className="h-6 w-28 rounded-md bg-bg-subtle" />}
-    badge={<div className="h-6 w-16 rounded-full bg-bg-subtle" />}
-    description={<div className="h-4 w-96 max-w-full rounded-md bg-bg-subtle" />}
+    title={<span className="block h-6 w-28 rounded-md bg-bg-subtle" />}
+    badge={<span className="block h-6 w-16 rounded-full bg-bg-subtle" />}
+    description={<span className="block h-4 w-96 max-w-full rounded-md bg-bg-subtle" />}
     controls={
      <>
       <div className="h-11 min-w-0 flex-1 rounded-xl bg-bg-subtle md:max-w-sm" />

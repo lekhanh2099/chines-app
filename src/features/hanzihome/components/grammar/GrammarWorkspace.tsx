@@ -182,6 +182,19 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
     </>
    }
    sidebarSelectionKey={effectiveSelectedPointId}
+   mobileNavigation={{
+    label: "Điểm ngữ pháp",
+    value: effectiveSelectedPointId ?? ALL_GRAMMAR_POINTS_ID,
+    items: [
+     { value: ALL_GRAMMAR_POINTS_ID, label: "Xem toàn bộ" },
+     ...(reading ? [{ value: READING_VIEW_ID, label: "Bài đọc áp dụng" }] : []),
+     ...grammarPoints.map((point, index) => ({
+      value: point.id,
+      label: `${index + 1}. ${point.cleanTitle}`,
+     })),
+    ],
+    onChange: actions.selectGrammarPoint,
+   }}
    compact={compact}
   >
    {readerContent}

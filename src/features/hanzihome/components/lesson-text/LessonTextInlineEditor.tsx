@@ -7,7 +7,7 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
+ HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID,
  HanziHomeCommandBarPortal,
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { TextbookSectionCard } from "@/features/hanzihome/components/lesson-text/TextbookSectionCard";
@@ -169,51 +169,12 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
  return (
   <>
    {!compact ? (
-    <Popover.Root
-     open={isReadingSettingsOpen}
-     onOpenChange={setIsReadingSettingsOpen}
-     modal={false}
-    >
-     <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
-      <Popover.Trigger
-       className="inline-flex h-10 shrink-0 items-center justify-center gap-1 rounded-[min(var(--radius-md),12px)] border border-border bg-bg-card/80 px-3 text-sm font-semibold whitespace-nowrap shadow-theme-sm backdrop-blur transition-all outline-none hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
-       aria-label="Mở cài đặt hiển thị bài đọc"
-      >
-       <Eye className="h-4 w-4" />
-       Hiển thị
-      </Popover.Trigger>
-     </HanziHomeCommandBarPortal>
-     <Popover.Portal>
-      <Popover.Positioner
-       side="bottom"
-       align="end"
-       sideOffset={8}
-       collisionPadding={12}
-       positionMethod="fixed"
-       style={{ zIndex: 80 }}
-      >
-       <Popover.Popup
-        initialFocus={false}
-        finalFocus={false}
-        className="w-[min(34rem,calc(100vw-1.5rem))] rounded-2xl border border-border-default bg-bg-elevated p-3 shadow-theme-lg"
-       >
-        <div className="mb-3 flex items-center justify-between gap-3">
-         <p className="text-sm font-black text-text-primary">Cài đặt đọc</p>
-         <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 px-2 text-xs"
-          onClick={() => setIsReadingSettingsOpen(false)}
-         >
-          Đóng
-         </Button>
-        </div>
-        {readingControls}
-       </Popover.Popup>
-      </Popover.Positioner>
-     </Popover.Portal>
-    </Popover.Root>
+    <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID}>
+     <section className="grid gap-2">
+      <p className="px-1 text-xs font-black uppercase tracking-wide text-text-muted">Hiển thị</p>
+      {readingControls}
+     </section>
+    </HanziHomeCommandBarPortal>
    ) : null}
    <LessonModuleFrame
     title="Bài khóa"
@@ -231,6 +192,18 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
     sidebar={sidebar}
     sidebarRail={sidebarRail}
     sidebarSelectionKey={selectedSectionId}
+    mobileNavigation={{
+     label: "Đề mục",
+     value: showAllSections ? allSectionsId : (selectedSection?.id ?? allSectionsId),
+     items: [
+      { value: allSectionsId, label: "Xem toàn bộ" },
+      ...sourceSections.map((section, index) => ({
+       value: section.id,
+       label: `${index + 1}. ${sectionTitle(section)}`,
+      })),
+     ],
+     onChange: actions.selectLessonTextSection,
+    }}
     compact={compact}
     actions={
      compact ? (

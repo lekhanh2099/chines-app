@@ -47,7 +47,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const { data: notes } = useNotesList();
  const router = useRouter();
  const hadTabsRef = useRef(false);
- const [headerActionsContainer, setHeaderActionsContainer] = useState<HTMLDivElement | null>(null);
+ const [mobileHeaderActionsContainer, setMobileHeaderActionsContainer] =
+  useState<HTMLDivElement | null>(null);
+ const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(null);
 
  const selectableNotes = useMemo(
   () =>
@@ -77,6 +79,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
      }
      openTab(noteId, note?.title || "Ghi chú chưa đặt tên");
     }}
+    actionsRef={setMobileHeaderActionsContainer}
    />,
   );
 
@@ -151,14 +154,14 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   return (
    <NoteEditorSkeleton
     showTabBar
-    className="h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] md:h-[calc(100dvh_-_3.5rem)]"
+    className="h-full"
    />
   );
  }
 
  if (tabs.length === 0) {
   return (
-   <div className="flex h-[calc(100dvh-3.5rem)] flex-col items-center justify-center bg-bg-primary text-text-muted">
+   <div className="flex h-full flex-col items-center justify-center bg-bg-primary text-text-muted">
     <FileText className="w-10 h-10 mb-3 opacity-40" />
     <p className="text-sm">Chọn một ghi chú để bắt đầu</p>
    </div>
@@ -166,9 +169,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  }
 
  return (
-  <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
+  <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
    <NoteTabBar
-    actionsRef={setHeaderActionsContainer}
+    actionsRef={setDesktopActionsContainer}
     focusLocked={focusModeEnabled}
     onCreateNote={() => router.push("/notes?action=new")}
    />
@@ -178,7 +181,8 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
       key={tab.noteId}
       noteId={tab.noteId}
       isVisible={tab.noteId === activeNoteId}
-      headerActionsContainer={headerActionsContainer}
+      mobileHeaderActionsContainer={mobileHeaderActionsContainer}
+      desktopActionsContainer={desktopActionsContainer}
      />
     ))}
    </div>
@@ -220,48 +224,56 @@ function NoteQuickSelect({
  selectedNoteId,
  focusLocked,
  onSelectNote,
+ actionsRef,
 }: {
  notes: SelectableNote[];
  selectedNoteId: string;
  focusLocked: boolean;
  onSelectNote: (noteId: string) => void;
+ actionsRef: (element: HTMLDivElement | null) => void;
 }) {
  return (
-  <AppHeaderBreadcrumb aria-label="Điều hướng ghi chú" className="hidden min-w-0 md:inline-flex">
-   <AppHeaderBreadcrumbItem>
-    <AppHeaderBreadcrumbLink
-     href="/notes"
-     disabled={focusLocked}
-     icon={<ArrowLeft className="h-4 w-4" />}
-     title={focusLocked ? "Focus mode đang khóa rời khỏi ghi chú hiện tại" : "Ghi chú"}
-     className="max-w-[9rem]"
-    >
-     Ghi chú
-    </AppHeaderBreadcrumbLink>
-   </AppHeaderBreadcrumbItem>
-   <AppHeaderBreadcrumbSeparator />
-   <AppHeaderBreadcrumbItem className="min-w-0">
-    <Select value={selectedNoteId} onValueChange={onSelectNote}>
-     <SelectTrigger
-      aria-label="Chọn nhanh ghi chú"
-      className={cn(
-       appHeaderBreadcrumbSelectTriggerClassName,
-       "w-[min(14rem,42vw)] sm:w-64 xl:w-[24rem]",
-      )}
+  <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+   <AppHeaderBreadcrumb
+    aria-label="Điều hướng ghi chú"
+    className="min-w-0 max-w-[min(12rem,48vw)] md:max-w-none"
+   >
+    <AppHeaderBreadcrumbItem className="hidden md:flex">
+     <AppHeaderBreadcrumbLink
+      href="/notes"
+      disabled={focusLocked}
+      icon={<ArrowLeft className="h-4 w-4" />}
+      title={focusLocked ? "Focus mode đang khóa rời khỏi ghi chú hiện tại" : "Ghi chú"}
+      className="max-w-[9rem]"
      >
-      <SelectValue placeholder="Chọn ghi chú" />
-     </SelectTrigger>
-     <SelectContent align="start" className="min-w-[min(32rem,calc(100vw-2rem))]">
-      <SelectGroup>
-       {notes.map((note) => (
-        <SelectItem key={note.id} value={note.id}>
-         {note.title}
-        </SelectItem>
-       ))}
-      </SelectGroup>
-     </SelectContent>
-    </Select>
-   </AppHeaderBreadcrumbItem>
-  </AppHeaderBreadcrumb>
+      Ghi chú
+     </AppHeaderBreadcrumbLink>
+    </AppHeaderBreadcrumbItem>
+    <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
+    <AppHeaderBreadcrumbItem className="min-w-0">
+     <Select value={selectedNoteId} onValueChange={onSelectNote}>
+      <SelectTrigger
+       aria-label="Chọn nhanh ghi chú"
+       className={cn(
+        appHeaderBreadcrumbSelectTriggerClassName,
+        "w-[min(10rem,40vw)] text-sm sm:w-64 xl:w-[24rem]",
+       )}
+      >
+       <SelectValue placeholder="Chọn ghi chú" />
+      </SelectTrigger>
+      <SelectContent align="start" className="min-w-[min(32rem,calc(100vw-2rem))] text-sm">
+       <SelectGroup>
+        {notes.map((note) => (
+         <SelectItem key={note.id} value={note.id}>
+          {note.title}
+         </SelectItem>
+        ))}
+       </SelectGroup>
+      </SelectContent>
+     </Select>
+    </AppHeaderBreadcrumbItem>
+   </AppHeaderBreadcrumb>
+   <div ref={actionsRef} className="flex shrink-0 items-center xl:hidden" />
+  </div>
  );
 }

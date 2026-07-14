@@ -3,6 +3,14 @@
 import { Columns2, CloudOff, RefreshCcw, WifiOff } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
@@ -14,6 +22,7 @@ import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overvi
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeWorkspaceLayout } from "@/features/hanzihome/context/selectors";
+import type { StudyModule } from "@/features/hanzihome/context/types";
 import { developerToolsEnabled, setPaneActive } from "@/features/hanzihome/context/workspaceLayout";
 
 function LearningSyncStatusPill() {
@@ -69,6 +78,15 @@ export function ModuleSplitWorkspaceContent() {
  const isListeningLesson = runtime.lesson.tags?.includes("listening") ?? false;
  const effectiveSplitEnabled = splitEnabled && !isListeningLesson;
  const lessonTabs = tabsForLesson(runtime.lesson);
+
+ const selectModule = (module: StudyModule) => {
+  if (paneLayout.left.includes(module) || paneLayout.right.includes(module)) {
+   const paneId = paneLayout.left.includes(module) ? "left" : "right";
+   actions.setPaneLayout(setPaneActive(paneLayout, paneId, module));
+  }
+  runtime.selectModule(module);
+ };
+
  const workspaceControls = effectiveSplitEnabled ? (
   <>
    <div className="min-w-0 px-2">
@@ -79,6 +97,10 @@ export function ModuleSplitWorkspaceContent() {
    </div>
    <div className="flex shrink-0 items-center gap-2">
     <LearningSyncStatusPill />
+    <div
+     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
+     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
+    />
     <HanziHomeDeveloperTools inline />
     <Button
      type="button"
@@ -90,30 +112,53 @@ export function ModuleSplitWorkspaceContent() {
      <Columns2 className="h-4 w-4" />
      Tắt split
     </Button>
-    <div
-     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
-     className="flex min-w-0 shrink-0 items-center justify-end"
-    />
    </div>
   </>
  ) : (
   <>
    <div className="min-w-0 flex-1">
-    <HanziHomeStudyTabs
-     value={runtime.activeModule}
-     items={lessonTabs}
-     onChange={(module) => {
-      if (paneLayout.left.includes(module) || paneLayout.right.includes(module)) {
-       const paneId = paneLayout.left.includes(module) ? "left" : "right";
-       actions.setPaneLayout(setPaneActive(paneLayout, paneId, module));
-      }
-      runtime.selectModule(module);
-     }}
-     className="bg-transparent p-0 shadow-none"
-    />
+    <div className="xl:hidden">
+     <Select
+      value={runtime.activeModule}
+      onValueChange={(module) => selectModule(module as StudyModule)}
+     >
+      <SelectTrigger
+       aria-label="Chọn nội dung học"
+       className="h-10 w-full min-w-0 rounded-lg bg-bg-card px-3 text-sm shadow-none"
+      >
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent
+       side="bottom"
+       align="start"
+       avoidCollisions={false}
+       className="max-h-80 min-w-[var(--radix-select-trigger-width)] text-sm"
+      >
+       <SelectGroup>
+        {lessonTabs.map((item) => (
+         <SelectItem key={item.key} value={item.key}>
+          {item.label}
+         </SelectItem>
+        ))}
+       </SelectGroup>
+      </SelectContent>
+     </Select>
+    </div>
+    <div className="hidden xl:block">
+     <HanziHomeStudyTabs
+      value={runtime.activeModule}
+      items={lessonTabs}
+      onChange={selectModule}
+      className="bg-transparent p-0 shadow-none"
+     />
+    </div>
    </div>
    <div className="flex shrink-0 items-center gap-2">
     <LearningSyncStatusPill />
+    <div
+     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
+     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
+    />
     <HanziHomeDeveloperTools inline />
     <Button
      type="button"
@@ -125,10 +170,6 @@ export function ModuleSplitWorkspaceContent() {
      <Columns2 className="h-4 w-4" />
      Mở split
     </Button>
-    <div
-     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
-     className="flex min-w-0 shrink-0 items-center justify-end"
-    />
    </div>
   </>
  );
@@ -146,7 +187,7 @@ export function ModuleSplitWorkspaceContent() {
  if (!effectiveSplitEnabled) {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1">
+    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-1 overflow-hidden rounded-lg p-0.5 sm:gap-2 sm:rounded-xl sm:p-1">
      {workspaceControls}
     </div>
     <div className="grid h-full min-h-0 overflow-hidden">
@@ -161,7 +202,7 @@ export function ModuleSplitWorkspaceContent() {
 
  return (
   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-2 overflow-hidden rounded-xl p-1">
+   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-1 overflow-hidden rounded-lg p-0.5 sm:gap-2 sm:rounded-xl sm:p-1">
     {workspaceControls}
    </div>
    <div className="grid h-full min-h-0 overflow-hidden">

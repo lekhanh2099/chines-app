@@ -1,13 +1,18 @@
 "use client";
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { PanelLeftOpen } from "lucide-react";
+import { Check, ListTree, PanelLeftOpen } from "lucide-react";
+import { Popover } from "@base-ui/react";
 
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Sheet, SheetHeader } from "@/components/ui/sheet";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import {
+ HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
+ HanziHomeCommandBarPortal,
+} from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 
 type LessonModuleFrameProps = {
  title: string;
@@ -22,6 +27,12 @@ type LessonModuleFrameProps = {
  children: ReactNode;
  compact?: boolean;
  sidebarSelectionKey?: string | null;
+ mobileNavigation?: {
+  label: string;
+  value: string;
+  items: Array<{ value: string; label: string }>;
+  onChange: (value: string) => void;
+ };
 };
 
 type LessonModuleSidebarRailItemProps = {
@@ -65,6 +76,7 @@ export function LessonModuleFrame({
  children,
  compact = false,
  sidebarSelectionKey,
+ mobileNavigation,
 }: LessonModuleFrameProps) {
  const [sidebarSheetOpen, setSidebarSheetOpen] = useState(false);
  const previousSelectionKey = useRef(sidebarSelectionKey);
@@ -78,17 +90,22 @@ export function LessonModuleFrame({
  }, [sidebarSelectionKey]);
 
  return (
+  <>
+   {!compact && mobileNavigation ? <MobileModuleNavigation navigation={mobileNavigation} /> : null}
   <div
    className={cn(
     compact
      ? "grid gap-3"
-     : "grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden xl:gap-0",
+     : "grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-1 overflow-hidden sm:gap-2 xl:gap-0",
    )}
   >
    <Card
-    variant="default"
-    padding="sm"
-    className={cn("border-border-default bg-bg-card shadow-none", !compact && "xl:hidden")}
+   variant="default"
+    padding="none"
+    className={cn(
+     "border-border-default bg-bg-card p-1.5 shadow-none sm:p-2.5",
+     !compact && (mobileNavigation ? "hidden" : "xl:hidden"),
+    )}
    >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="flex min-w-0 items-center gap-2">
@@ -104,7 +121,7 @@ export function LessonModuleFrame({
       </Button>
 
       <div className="min-w-0">
-       <p className="line-clamp-2 font-black text-text-primary">{title}</p>
+       <p className="hidden line-clamp-2 font-black text-text-primary sm:block">{title}</p>
        {subtitle && (
         <p className="hidden line-clamp-2 text-xs font-semibold text-text-muted sm:block">
          {subtitle}
@@ -195,11 +212,70 @@ export function LessonModuleFrame({
     open={sidebarSheetOpen}
     onOpenChange={setSidebarSheetOpen}
     side="right"
-    className="p-4 sm:max-w-md"
+    className="sm:max-w-md"
    >
     <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
-    {sidebar}
+    <SheetBody>{sidebar}</SheetBody>
    </Sheet>
   </div>
+  </>
+ );
+}
+
+function MobileModuleNavigation({
+ navigation,
+}: {
+ navigation: NonNullable<LessonModuleFrameProps["mobileNavigation"]>;
+}) {
+ const [open, setOpen] = useState(false);
+
+ return (
+  <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
+   <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
+    <Popover.Trigger className="inline-flex h-9 w-9 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-border-default bg-bg-card px-0 text-sm font-semibold text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 sm:h-10 sm:w-auto sm:max-w-44 sm:px-3 xl:hidden">
+     <ListTree className="size-4 shrink-0" />
+     <span className="hidden truncate sm:inline">{navigation.label}</span>
+     <span className="sr-only">Chọn {navigation.label.toLowerCase()}</span>
+    </Popover.Trigger>
+   </HanziHomeCommandBarPortal>
+   <Popover.Portal>
+    <Popover.Positioner
+     side="bottom"
+     align="end"
+     sideOffset={8}
+     collisionPadding={8}
+     positionMethod="fixed"
+     style={{ zIndex: 90 }}
+    >
+     <Popover.Popup
+      initialFocus={false}
+      finalFocus={false}
+      className="max-h-[min(24rem,calc(100dvh-7rem))] w-[min(20rem,calc(100vw-1rem))] overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg scrollbar-soft"
+     >
+      <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">
+       {navigation.label}
+      </p>
+      {navigation.items.map((item) => {
+       const selected = item.value === navigation.value;
+       return (
+        <Button
+         key={item.value}
+         type="button"
+         variant={selected ? "active" : "ghost"}
+         className="w-full justify-start px-2.5 text-left text-sm"
+         onClick={() => {
+          navigation.onChange(item.value);
+          setOpen(false);
+         }}
+        >
+         <span className="min-w-0 flex-1 truncate">{item.label}</span>
+         {selected ? <Check className="size-4" /> : null}
+        </Button>
+       );
+      })}
+     </Popover.Popup>
+    </Popover.Positioner>
+   </Popover.Portal>
+  </Popover.Root>
  );
 }

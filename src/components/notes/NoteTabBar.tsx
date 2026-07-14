@@ -73,7 +73,7 @@ export function NoteTabBar({
  const hasTopRow = Boolean(leading || trailing);
 
  return (
-  <div className="flex shrink-0 flex-col border-b border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur">
+  <div className="hidden shrink-0 flex-col border-b border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur md:flex">
    {hasTopRow ? (
     <div className="flex min-h-14 min-w-0 items-center gap-2 border-b border-border-default/70 px-4 py-2">
      {leading ? <div className="flex min-w-0 flex-1 items-center gap-2">{leading}</div> : null}
@@ -86,7 +86,7 @@ export function NoteTabBar({
       ref={scrollRef}
       role="tablist"
       aria-label="Ghi chú đang mở"
-      className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none"
+      className="hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none md:flex"
       onWheel={handleWheel}
      >
       {visibleTabs.map(({ tab, index }) => (
@@ -112,7 +112,7 @@ export function NoteTabBar({
     )}
     <button
      type="button"
-     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle disabled:opacity-50"
+     className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle disabled:opacity-50 md:flex"
      onClick={onCreateNote}
      disabled={focusLocked}
      title={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
@@ -122,7 +122,7 @@ export function NoteTabBar({
     </button>
     <div
      ref={actionsRef}
-     className="flex min-w-0 max-w-[min(56vw,44rem)] shrink items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2"
+     className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2 md:max-w-[min(56vw,44rem)] md:flex-none"
     />
    </div>
   </div>
@@ -165,7 +165,7 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex h-10 min-w-32 max-w-64 cursor-pointer select-none items-center gap-1 rounded-t-xl border border-b-0 px-2 text-[0.8125rem] transition-all duration-150",
+    "group relative flex h-10 min-w-32 flex-1 basis-32 cursor-pointer select-none items-center gap-1 rounded-t-xl border border-b-0 px-2 text-[0.8125rem] transition-all duration-150",
     isActive
      ? "z-10 border-primary/25 bg-bg-primary font-black text-text-primary shadow-theme-sm"
      : "border-border-default/70 bg-bg-subtle/55 font-semibold text-text-muted hover:border-border-default hover:bg-bg-primary hover:text-text-primary",
