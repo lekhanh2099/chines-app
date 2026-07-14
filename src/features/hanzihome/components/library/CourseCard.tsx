@@ -15,7 +15,6 @@ import { IOption } from "@/types/option";
 
 import { BookCrudActions } from "./BookCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";
-import { MiniMetric } from "./MiniMetric";
 
 export function CourseCard({
  course,
@@ -75,60 +74,47 @@ export function CourseCard({
   <Card
    variant="section"
    padding="none"
-   className="group flex min-w-0 flex-col gap-2.5 rounded-xl p-3 transition-colors hover:border-primary/25 hover:bg-bg-elevated sm:p-4"
+   className="group flex min-w-0 flex-col gap-2 rounded-xl p-2.5 transition-colors hover:border-primary/25 hover:bg-bg-elevated"
   >
-   <div className="flex min-w-0 items-start gap-2.5">
-    <div className="flex min-w-0 gap-2.5">
-     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+   <div className="flex min-w-0 items-center justify-between gap-3">
+    <div className="flex min-w-0 items-center gap-2">
+     <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
       <BookMarked className="size-4" />
      </span>
 
-     <div className="min-w-0 flex-1 grid gap-1">
-      <div className="flex flex-wrap items-center gap-2">
-       <Badge variant="purple">Quyển</Badge>
+     <div className="min-w-0 flex-1">
+      <div className="flex min-w-0 items-center gap-1.5">
+       <h4 className="truncate text-base font-black leading-snug text-text-primary">
+        {book.shortTitle || book.title}
+       </h4>
        {editMode ? (
         <BookCrudActions book={book} canMoveUp={canMoveBookUp} canMoveDown={canMoveBookDown} />
        ) : null}
       </div>
-
-      <h4 className="line-clamp-2 text-lg font-black leading-snug text-text-primary">
-       {book.shortTitle || book.title}
-      </h4>
-
-      {book.shortTitle && book.shortTitle !== book.title && !book.title.startsWith(course.title) ? (
-       <p className="line-clamp-1 text-sm font-medium leading-5 text-text-muted">{book.title}</p>
-      ) : null}
+      <p className="truncate text-xs font-medium text-text-muted">{course.title}</p>
      </div>
     </div>
+
+    {areLessonsLoading ? (
+     <span className="h-5 w-28 animate-pulse rounded-full bg-bg-subtle" />
+    ) : (
+     <div className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-text-muted sm:flex">
+      <Badge variant="default" size="sm">{visibleLessonCount} bài</Badge>
+      <span>{visibleVocabCount} từ</span>
+      <span aria-hidden="true">·</span>
+      <span>{visibleGrammarCount} ngữ pháp</span>
+     </div>
+    )}
    </div>
 
-   {areLessonsLoading ? (
-    <div className="flex animate-pulse gap-2">
-     <div className="h-10 w-20 rounded-xl bg-bg-subtle" />
-     <div className="h-10 w-20 rounded-xl bg-bg-subtle" />
-     <div className="h-10 w-24 rounded-xl bg-bg-subtle" />
-    </div>
-   ) : (
-    <div className="grid grid-cols-3 gap-2">
-     <MiniMetric label="Bài" value={visibleLessonCount} />
-     <MiniMetric label="Từ" value={visibleVocabCount} />
-     <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
-    </div>
-   )}
-
-   <div className="grid gap-1.5 rounded-xl border border-border-default bg-bg-subtle p-2">
+   <div className="grid rounded-xl border border-border-default bg-bg-subtle p-1.5">
     {areLessonsLoading ? (
-     <div className="grid animate-pulse gap-1.5">
-      <div className="h-3 w-20 rounded-full bg-bg-subtle" />
-      <div className="h-11 w-full rounded-xl bg-bg-subtle" />
+     <div className="flex animate-pulse gap-2">
+      <div className="h-9 flex-1 rounded-xl bg-bg-primary" />
+      <div className="h-9 w-20 rounded-xl bg-bg-primary" />
      </div>
     ) : bookLessons.length > 0 ? (
-     <div className="grid gap-1">
-      <span className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">
-       Chọn bài để học
-      </span>
-
-      <div className="flex min-w-0 items-center gap-2">
+     <div className="flex min-w-0 items-center gap-1.5">
        <div className="min-w-0 flex-1">
         <Select
          options={courseLessonOptions}
@@ -148,7 +134,6 @@ export function CourseCard({
          <ArrowRight data-icon="inline-end" />
         </Link>
        </Button>
-      </div>
      </div>
     ) : null}
    </div>

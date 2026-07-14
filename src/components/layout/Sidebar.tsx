@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import {
  BookOpenCheck,
  BookOpenText,
@@ -12,15 +12,12 @@ import {
  Languages,
  Layers3,
  Lightbulb,
- LogOut,
  NotebookPen,
  NotebookTabs,
  Repeat2,
 } from "lucide-react";
-import { toast } from "sonner";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
-import { createClient } from "@/lib/supabase/client";
 import { useSidebarStore } from "@/stores/sidebar-store";
 import { cn } from "@/lib/utils";
 
@@ -148,7 +145,6 @@ function NavRow({
 export function Sidebar() {
  const pathname = usePathname();
  const searchParams = useSearchParams();
- const router = useRouter();
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
  const hydrateSidebar = useSidebarStore((s) => s.hydrate);
@@ -158,17 +154,6 @@ export function Sidebar() {
  useEffect(() => {
   hydrateSidebar();
  }, [hydrateSidebar]);
-
- const handleLogout = async () => {
-  const supabase = createClient();
-  const { error } = await supabase.auth.signOut();
-  if (error) {
-   toast.error("Đăng xuất thất bại!");
-   return;
-  }
-  toast.success("Đã đăng xuất");
-  router.push("/login");
- };
 
  return (
   <aside
@@ -231,13 +216,8 @@ export function Sidebar() {
 
    <div className="flex-1" />
 
-   <div
-    className={cn(
-     "grid gap-2 border-t border-border-default py-3",
-     effectiveCollapsed ? "px-3" : "px-4",
-    )}
-   >
-    {!effectiveCollapsed && !isHanziHomeRoute && (
+   {!effectiveCollapsed && !isHanziHomeRoute ? (
+    <div className="border-t border-border-default px-4 py-3">
      <div className="rounded-xl border border-border-default bg-bg-subtle/70 p-3">
       <div className="flex items-center gap-2  font-bold text-text-primary">
        <Flame className="h-4 w-4" />
@@ -247,21 +227,8 @@ export function Sidebar() {
        Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
       </p>
      </div>
-    )}
-
-    <button
-     type="button"
-     onClick={handleLogout}
-     className={cn(
-      "flex h-10 items-center gap-3 rounded-lg px-3  font-semibold text-danger transition-colors hover:bg-danger-subtle",
-      effectiveCollapsed ? "w-10 justify-center px-0" : "w-full",
-     )}
-     title={effectiveCollapsed ? "Đăng xuất" : undefined}
-    >
-     <LogOut className="h-5 w-5" />
-     {!effectiveCollapsed && "Đăng xuất"}
-    </button>
-   </div>
+    </div>
+   ) : null}
   </aside>
  );
 }

@@ -325,7 +325,7 @@ export default function ApiKeyManagerSection() {
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="flex max-w-3xl flex-col gap-2">
-     <div className="inline-flex items-center gap-2 rounded-2xl -full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
+     <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
       <Workflow className="h-3.5 w-3.5" />
       API Key Manager
      </div>
@@ -337,7 +337,7 @@ export default function ApiKeyManagerSection() {
     </div>
 
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-     <DialogTrigger>
+     <DialogTrigger asChild>
       <Button disabled={isLoading || !schemaReady}>
        <Plus data-icon="inline-start" />
        Thêm API key
@@ -357,7 +357,7 @@ export default function ApiKeyManagerSection() {
         <select
          value={provider}
          onChange={(event) => setProvider(event.target.value as ProviderSelectValue)}
-         className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4  text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
+         className="h-11 w-full rounded-xl border border-border-default bg-bg-primary px-4 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
         >
          <option value={AUTO_API_KEY_PROVIDER}>Tự nhận diện</option>
          {API_KEY_PROVIDER_OPTIONS.map((option) => (
@@ -376,7 +376,7 @@ export default function ApiKeyManagerSection() {
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"
           rel="noreferrer"
-          className="mt-2 inline-flex items-center gap-1 font-medium   transition hover: -hover"
+          className="mt-2 inline-flex items-center gap-1 font-medium text-accent-text transition hover:underline"
          >
           Mở trang lấy key
           <ExternalLink className="h-3.5 w-3.5" />
@@ -446,7 +446,7 @@ export default function ApiKeyManagerSection() {
    </div>
 
    {!schemaReady && (
-    <div className="mt-5 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3  leading-6 text-amber-900">
+    <div className="mt-5 rounded-2xl border border-warning/30 bg-warning-subtle px-4 py-3 leading-6 text-warning-text">
      {schemaMessage ||
       "Database chưa sẵn sàng cho user_api_keys. Hãy apply migration hoặc repair migration rồi tải lại trang."}
     </div>
@@ -472,7 +472,7 @@ export default function ApiKeyManagerSection() {
     </div>
    ) : keys.length === 0 ? (
     <div className="mt-6 rounded-2xl  border border-dashed border-border-default bg-bg-primary px-6 py-10 text-center">
-     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl -full bg-accent/10  ">
+     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-subtle text-accent-text">
       <KeyRound className="h-5 w-5" />
      </div>
      <p className="mt-4 text-base font-semibold text-text-primary">Chưa có API key nào</p>
@@ -508,12 +508,12 @@ export default function ApiKeyManagerSection() {
            >
             {key.providerLabel}
            </Badge>
-           <span className="rounded-2xl -full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
+           <span className="rounded-full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
             Ưu tiên #{index + 1}
            </span>
            <span
             className={cn(
-             "inline-flex items-center gap-1 rounded-2xl -full px-3 py-1 text-xs font-semibold",
+             "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold",
              key.isActive ? "bg-success/10 text-success" : "bg-bg-card text-text-muted",
             )}
            >

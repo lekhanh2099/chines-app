@@ -4,7 +4,19 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import { Popover } from "@base-ui/react";
 import type { User } from "@supabase/supabase-js";
-import { BookOpenCheck, Languages, LockKeyhole, Moon, Sun } from "lucide-react";
+import {
+ BookOpenCheck,
+ Languages,
+ LockKeyhole,
+ LogOut,
+ Mail,
+ Moon,
+ Settings,
+ ShieldCheck,
+ Sun,
+} from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 import type { Theme } from "@/components/layout/ThemeProvider";
@@ -24,6 +36,32 @@ type ProfileSettingsMenuProps = {
 const focusModeEnabledMessage =
  "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.";
 
+function readMetadataText(user: User | null | undefined, keys: string[]) {
+ for (const key of keys) {
+  const value: unknown = user?.user_metadata?.[key];
+  if (typeof value === "string" && value.trim()) return value.trim();
+ }
+ return null;
+}
+
+function getProfile(user: User | null | undefined) {
+ const email = user?.email ?? "Chưa có email";
+ const emailName = user?.email?.split("@")[0] || "Bạn";
+ const name = readMetadataText(user, ["full_name", "name", "display_name"]) ?? emailName;
+ const avatarCandidate = readMetadataText(user, ["avatar_url", "picture"]);
+ const avatarUrl = avatarCandidate?.startsWith("https://") ? avatarCandidate : null;
+ const provider =
+  typeof user?.app_metadata?.provider === "string" ? user.app_metadata.provider : null;
+
+ return {
+  name,
+  email,
+  avatarUrl,
+  initial: name.slice(0, 1).toLocaleUpperCase("vi-VN"),
+  providerLabel: provider === "google" ? "Google" : provider === "email" ? "Email" : "Supabase",
+ };
+}
+
 export function ProfileSettingsMenu({
  user,
  theme,
@@ -33,9 +71,11 @@ export function ProfileSettingsMenu({
  onToggleLookup,
  onToggleFocusMode,
 }: ProfileSettingsMenuProps) {
+ const router = useRouter();
  const [open, setOpen] = useState(false);
- const displayName = user?.user_metadata?.display_name || user?.email || "Bạn";
- const initial = displayName.slice(0, 1).toUpperCase();
+ const profile = getProfile(user);
+ const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
+ const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
 
  const toggleFocusMode = () => {
   if (!focusModeEnabled) {
@@ -43,6 +83,22 @@ export function ProfileSettingsMenu({
   }
 
   onToggleFocusMode();
+ };
+
+ const handleLogout = async () => {
+  const { createClient } = await import("@/lib/supabase/client");
+  const supabase = createClient();
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+   toast.error("Đăng xuất thất bại", { description: error.message });
+   return;
+  }
+
+  setOpen(false);
+  toast.success("Đã đăng xuất");
+  router.replace("/login");
+  router.refresh();
  };
 
  return (
@@ -55,7 +111,19 @@ export function ProfileSettingsMenu({
     aria-label="Mở hồ sơ và cài đặt học"
     title="Hồ sơ và cài đặt"
    >
-    {initial}
+    {showAvatar && profile.avatarUrl ? (
+     // Google profile images are user metadata and can use changing CDN hosts.
+     // eslint-disable-next-line @next/next/no-img-element
+     <img
+      src={profile.avatarUrl}
+      alt=""
+      className="h-full w-full rounded-full object-cover"
+      referrerPolicy="no-referrer"
+      onError={() => setFailedAvatarUrl(profile.avatarUrl)}
+     />
+    ) : (
+     profile.initial
+    )}
    </Popover.Trigger>
    <Popover.Portal>
     <Popover.Positioner
@@ -69,13 +137,39 @@ export function ProfileSettingsMenu({
      <Popover.Popup
       initialFocus={false}
       finalFocus={false}
-      className="w-[min(21rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg"
+      className="w-[min(23rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg"
      >
-      <div className="border-b border-border-default px-3 py-2">
-       <p className="truncate text-sm font-black text-text-primary">{displayName}</p>
-       <p className="text-xs font-semibold text-text-muted">Cài đặt học</p>
+      <div className="flex items-center gap-3 border-b border-border-default px-3 py-3">
+       <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text">
+        {showAvatar && profile.avatarUrl ? (
+         // eslint-disable-next-line @next/next/no-img-element
+         <img
+          src={profile.avatarUrl}
+          alt=""
+          className="h-full w-full object-cover"
+          referrerPolicy="no-referrer"
+          onError={() => setFailedAvatarUrl(profile.avatarUrl)}
+         />
+        ) : (
+         profile.initial
+        )}
+       </div>
+       <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-black text-text-primary">{profile.name}</p>
+        <p className="flex items-center gap-1.5 truncate text-xs font-semibold text-text-muted">
+         <Mail className="h-3 w-3 shrink-0" />
+         <span className="truncate">{profile.email}</span>
+        </p>
+       </div>
+       <span className="flex shrink-0 items-center gap-1 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary">
+        <ShieldCheck className="h-3 w-3" />
+        {profile.providerLabel}
+       </span>
       </div>
 
+      <div className="px-3 pt-3 text-xs font-black uppercase tracking-wide text-text-muted">
+       Cài đặt học
+      </div>
       <div className="grid gap-1 py-2">
        <SettingsStatusRow
         icon={<Languages className="h-4 w-4" />}
@@ -107,6 +201,26 @@ export function ProfileSettingsMenu({
         onClick={toggleFocusMode}
         warning={focusModeEnabled}
        />
+      </div>
+
+      <div className="grid gap-1 border-t border-border-default pt-2">
+       <Link
+        href="/settings"
+        onClick={() => setOpen(false)}
+        className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 text-sm font-bold text-text-primary transition hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+       >
+        <Settings className="h-4 w-4 text-text-secondary" />
+        Cài đặt tài khoản
+       </Link>
+       <Button
+        type="button"
+        variant="ghost"
+        className="min-h-11 w-full justify-start gap-3 rounded-xl px-3 py-2 text-danger hover:bg-danger-subtle hover:text-danger"
+        onClick={handleLogout}
+       >
+        <LogOut className="h-4 w-4" />
+        Đăng xuất
+       </Button>
       </div>
      </Popover.Popup>
     </Popover.Positioner>
