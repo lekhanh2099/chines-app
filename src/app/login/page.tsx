@@ -10,6 +10,7 @@ import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
 import { Button } from "@/components/ui/button";
 import { FieldGroup } from "@/components/ui/field";
 import { Spinner } from "@/components/ui/spinner";
+import { buildOAuthCallbackUrl } from "@/lib/auth/oauth-callback-url";
 import { getSafeNextPath } from "@/lib/auth/safe-next-path";
 import { toast } from "sonner";
 import { BookOpen, LogIn, UserPlus } from "lucide-react";
@@ -101,13 +102,16 @@ export default function LoginPage() {
  async function signInWithGoogle() {
   setOauthLoading(true);
   const supabase = createClient();
-  const callbackUrl = new URL("/auth/callback", window.location.origin);
-  callbackUrl.searchParams.set("next", getSafeNextPathFromUrl());
+  const callbackUrl = buildOAuthCallbackUrl({
+   currentOrigin: window.location.origin,
+   configuredAppUrl: process.env.NEXT_PUBLIC_APP_URL,
+   next: getSafeNextPathFromUrl(),
+  });
 
   const { error } = await supabase.auth.signInWithOAuth({
    provider: "google",
    options: {
-    redirectTo: callbackUrl.toString(),
+    redirectTo: callbackUrl,
    },
   });
 
