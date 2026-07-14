@@ -1,15 +1,15 @@
 /**
- * Database types derived from Supabase schema.
- * Source of truth: supabase/migrations/*.sql
+ * Legacy domain and normalized service types.
  *
- * TODO: Replace with auto-generated types via `supabase gen types typescript`
- * when CI/CD pipeline is set up.
+ * Use `supabase.generated.ts` for raw database rows. Keep types here only when a service deliberately
+ * narrows JSON fields, normalizes nullable columns, or models a non-table response.
  */
 
 import { z } from "zod";
+import type { Tables } from "@/types/supabase.generated";
 
 /* ══════════════════════════════════════════
-   Raw DB Row Types (match SQL exactly)
+   Legacy normalized service rows
    ══════════════════════════════════════════ */
 
 export type DbUser = {
@@ -53,30 +53,10 @@ export type DbVocabulary = {
  created_at: string;
 };
 
-export type DbUserAiPromptSettings = {
- user_id: string;
- word_lookup_prompt: string;
- sentence_lookup_prompt: string;
- gemini_model: string;
- deepseek_api_key_encrypted: string | null;
- deepseek_enabled: boolean;
- created_at: string;
- updated_at: string;
-};
+export type DbUserAiPromptSettings = Tables<"user_ai_prompt_settings">;
 
-export type DbUserApiKey = {
- id: string;
- user_id: string;
+export type DbUserApiKey = Omit<Tables<"user_api_keys">, "provider"> & {
  provider: "deepseek" | "gemini" | "openai";
- label: string;
- masked_key: string;
- encrypted_key: string;
- is_active: boolean;
- priority: number;
- default_model: string | null;
- last_validated_at: string | null;
- created_at: string;
- updated_at: string;
 };
 
 export type DbDictionaryCore = {

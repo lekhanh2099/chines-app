@@ -47,6 +47,19 @@ import {
 import { createClient as createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import { HtmlArtifactsApiError } from "./html-artifact-api";
+import {
+ buildFolderTree,
+ getArtifactFormSaveKey,
+ getDraftSaveLabel,
+ getFolderCount,
+ hasFolderDescendant,
+ parseTags,
+ toArtifactFormState,
+ type ArtifactFormState,
+ type DraftSaveStatus,
+ type FolderFilter,
+ type FolderTreeNode,
+} from "./html-artifact-page-utils";
 import type {
  HtmlArtifact,
  HtmlArtifactFolder,
@@ -129,16 +142,6 @@ const htmlArtifactPreviewCsp = [
  "worker-src 'none'",
 ].join("; ");
 
-type FolderFilter = "all" | "unfiled" | string;
-
-type ArtifactFormState = {
- title: string;
- folderId: string | null;
- artifactType: HtmlArtifactType;
- tagsInput: string;
- html: string;
-};
-
 type ArtifactSaveOptions = {
  silent?: boolean;
 };
@@ -147,8 +150,6 @@ type ArtifactSubmitHandler = (
  formState: ArtifactFormState,
  options?: ArtifactSaveOptions,
 ) => Promise<void> | void;
-
-type DraftSaveStatus = "idle" | "dirty" | "saved" | "error";
 
 type RuntimeStateMessage = {
  source: "hanzihome-html-artifact-runtime";
@@ -173,74 +174,6 @@ type DragItem = { type: "artifact"; id: string } | { type: "folder"; id: string 
 type MobilePane = "files" | "preview" | "edit";
 type InspectorTab = "files" | "edit";
 type PreviewMode = "iframe" | "editor";
-
-type FolderTreeNode = HtmlArtifactFolder & {
- children: FolderTreeNode[];
-};
-
-const emptyForm: ArtifactFormState = {
- title: "",
- folderId: null,
- artifactType: "practice_page",
- tagsInput: "",
- html: "",
-};
-
-function parseTags(input: string): string[] {
- const seen = new Set<string>();
- const tags: string[] = [];
-
- for (const rawTag of input.split(",")) {
-  const tag = rawTag.trim();
-  if (!tag || seen.has(tag)) continue;
-  seen.add(tag);
-  tags.push(tag);
- }
-
- return tags;
-}
-
-function formatTags(tags: string[]): string {
- return tags.join(", ");
-}
-
-function toArtifactFormState(
- artifact: HtmlArtifact | null,
- defaultFolderId: string | null,
-): ArtifactFormState {
- if (!artifact) {
-  return {
-   ...emptyForm,
-   folderId: defaultFolderId,
-  };
- }
-
- return {
-  title: artifact.title,
-  folderId: artifact.folderId,
-  artifactType: artifact.artifactType,
-  tagsInput: formatTags(artifact.tags),
-  html: artifact.html,
- };
-}
-
-function getArtifactFormSaveKey(formState: ArtifactFormState): string {
- return JSON.stringify({
-  title: formState.title.trim(),
-  folderId: formState.folderId,
-  artifactType: formState.artifactType,
-  tags: parseTags(formState.tagsInput),
-  html: formState.html.trim(),
- });
-}
-
-function getDraftSaveLabel(status: DraftSaveStatus, hasArtifact: boolean) {
- if (!hasArtifact) return "Chưa tạo DB";
- if (status === "dirty") return "Có thay đổi chưa lưu";
- if (status === "error") return "Lỗi lưu DB";
- if (status === "saved") return "Đã lưu DB";
- return "Đã lưu DB";
-}
 
 function serializeForInlineScript(value: unknown): string {
  return JSON.stringify(value)
@@ -440,62 +373,6 @@ function formatDate(date: string): string {
 
 function getArtifactTitle(artifact: HtmlArtifactSummary | HtmlArtifact | null): string {
  return artifact?.title.trim() || "HTML artifact";
-}
-
-function getFolderCount(artifacts: HtmlArtifactSummary[], folderId: FolderFilter): number {
- if (folderId === "all") return artifacts.length;
- if (folderId === "unfiled") return artifacts.filter((artifact) => !artifact.folderId).length;
- return artifacts.filter((artifact) => artifact.folderId === folderId).length;
-}
-
-function buildFolderTree(folders: HtmlArtifactFolder[]): FolderTreeNode[] {
- const nodeById = new Map<string, FolderTreeNode>();
- const roots: FolderTreeNode[] = [];
-
- for (const folder of folders) {
-  nodeById.set(folder.id, { ...folder, children: [] });
- }
-
- for (const folder of folders) {
-  const node = nodeById.get(folder.id);
-  if (!node) continue;
-  const parent = folder.parentFolderId ? nodeById.get(folder.parentFolderId) : null;
-  if (parent) {
-   parent.children.push(node);
-  } else {
-   roots.push(node);
-  }
- }
-
- return roots;
-}
-
-function hasFolderDescendant(
- folders: HtmlArtifactFolder[],
- folderId: string,
- possibleDescendantId: string,
-) {
- const childrenByParentId = new Map<string, string[]>();
-
- for (const folder of folders) {
-  if (!folder.parentFolderId) continue;
-  const children = childrenByParentId.get(folder.parentFolderId) ?? [];
-  children.push(folder.id);
-  childrenByParentId.set(folder.parentFolderId, children);
- }
-
- const stack = [...(childrenByParentId.get(folderId) ?? [])];
- const visited = new Set<string>();
-
- while (stack.length > 0) {
-  const current = stack.pop();
-  if (!current || visited.has(current)) continue;
-  if (current === possibleDescendantId) return true;
-  visited.add(current);
-  stack.push(...(childrenByParentId.get(current) ?? []));
- }
-
- return false;
 }
 
 export function HanziHomeHtmlArtifactsPage() {

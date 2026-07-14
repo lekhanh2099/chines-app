@@ -11,6 +11,11 @@
    "supabase"
   ]
  },
+ "overrides": {
+  "next": {
+   "postcss": "8.5.10"
+  }
+ },
  "scripts": {
   "prepare": "husky",
   "dev": "next dev -p 3001",
@@ -30,7 +35,7 @@
   "test:run": "vitest run",
   "test:coverage": "vitest run --coverage",
   "deps:check": "knip --dependencies",
-  "audit:prod": "npm audit --omit=dev --audit-level=high",
+  "audit:prod": "npm audit --omit=dev --audit-level=moderate",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
   "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run deps:check && npm run audit:prod && npm run build",
@@ -61,7 +66,7 @@
   "hanzi-writer": "^3.7.3",
   "lexical": "^0.45.0",
   "lucide-react": "^1.17.0",
-  "next": "^16.2.7",
+  "next": "^16.2.10",
   "pinyin-pro": "^3.28.0",
   "prettier": "^3.9.1",
   "radix-ui": "^1.4.3",
