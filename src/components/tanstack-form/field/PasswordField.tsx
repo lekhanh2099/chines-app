@@ -3,6 +3,7 @@ import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { IconButton } from "@/components/ui/icon-button";
 
 export function PasswordField({
  label,
@@ -32,13 +33,16 @@ export function PasswordField({
      className="w-full h-12 bg-bg-input border border-border-default text-text-primary placeholder:text-text-muted rounded-2xl  px-4 pr-12 text-base outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all"
      {...rest}
     />
-    <button
-     type="button"
-     onClick={() => setShowPassword(!showPassword)}
-     className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors"
+    <IconButton
+     variant="ghost"
+     size="lg"
+     aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+     title={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+     onClick={() => setShowPassword((current) => !current)}
+     className="absolute right-1 top-1/2 -translate-y-1/2"
     >
      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-    </button>
+    </IconButton>
    </div>
   </FieldItem>
  );

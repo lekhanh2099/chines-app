@@ -173,18 +173,18 @@ export default function LoginPage() {
  });
 
  return (
-  <div className="min-h-screen bg-bg-primary flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-   <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center">
-    <div className="w-12 h-12 bg-accent rounded-2xl  flex items-center justify-center mb-6 shadow">
-     <BookOpen className="w-6 h-6  " />
+  <main className="flex min-h-dvh flex-col justify-center bg-bg-primary px-4 py-[max(3rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
+   <div className="flex flex-col items-center sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="app-brand-gradient mb-5 grid size-12 place-items-center rounded-2xl shadow-theme-sm">
+     <BookOpen className="size-6" aria-hidden="true" />
     </div>
     <h2 className="text-center text-2xl font-bold tracking-tight text-text-primary">
-     {isLogin ? "Đăng nhập vào Hệ thống" : "Tạo tài khoản mới"}
+     {isLogin ? "Chào mừng trở lại HanziHome" : "Tạo tài khoản HanziHome"}
     </h2>
-    <p className="mt-2 text-center  text-text-secondary">
+    <p className="mt-2 max-w-sm text-center leading-6 text-text-secondary">
      {isLogin
-      ? "Vui lòng nhập email và mật khẩu để tiếp tục."
-      : "Nhập email và mật khẩu để đăng ký tài khoản."}
+      ? "Tiếp tục bài học, ghi chú và lịch ôn tập của bạn."
+      : "Lưu bài học, ghi chú và tiến độ ôn tập trên mọi thiết bị."}
     </p>
    </div>
 
@@ -292,6 +292,6 @@ export default function LoginPage() {
      </form>
     </div>
    </div>
-  </div>
+  </main>
  );
 }
