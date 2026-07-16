@@ -12,6 +12,7 @@ import {
  Mail,
  Moon,
  Settings,
+ Settings2,
  ShieldCheck,
  Sun,
 } from "lucide-react";
@@ -21,6 +22,10 @@ import { toast } from "sonner";
 
 import type { Theme } from "@/components/layout/ThemeProvider";
 import { Button } from "@/components/ui/button";
+import { Dialog } from "@/components/ui/dialog";
+import { LessonReadingSettingsDialogContent } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { cn } from "@/lib/utils";
 
 type ProfileSettingsMenuProps = {
@@ -73,9 +78,16 @@ export function ProfileSettingsMenu({
 }: ProfileSettingsMenuProps) {
  const router = useRouter();
  const [open, setOpen] = useState(false);
+ const [readingSettingsOpen, setReadingSettingsOpen] = useState(false);
+ const learning = useLearningState({ enabled: open || readingSettingsOpen });
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const profile = getProfile(user);
  const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
+
+ const updateDisplayMode = (updates: Partial<typeof displayMode>) => {
+  learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
+ };
 
  const toggleFocusMode = () => {
   if (!focusModeEnabled) {
@@ -137,7 +149,7 @@ export function ProfileSettingsMenu({
      <Popover.Popup
       initialFocus={false}
       finalFocus={false}
-      className="w-[min(23rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg"
+      className="max-h-[calc(100dvh-1rem)] w-[min(23rem,calc(100vw-1rem))] overflow-x-hidden overflow-y-auto rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg scrollbar-soft"
      >
       <div className="flex items-center gap-3 border-b border-border-default px-3 py-3">
        <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text">
@@ -175,6 +187,16 @@ export function ProfileSettingsMenu({
         icon={<Languages className="h-4 w-4" />}
         label="Ngôn ngữ"
         value="Tiếng Việt"
+       />
+       <SettingsNavigationRow
+        icon={<Settings2 className="h-4 w-4" />}
+        label="Cài đặt đọc"
+        description="Font, cỡ chữ, pinyin, nghĩa và đáp án."
+        value={learning.isLoading ? "Đang tải" : "Mở"}
+        onClick={() => {
+         setReadingSettingsOpen(true);
+         setOpen(false);
+        }}
        />
        <SettingsActionRow
         icon={<BookOpenCheck className="h-4 w-4" />}
@@ -225,7 +247,48 @@ export function ProfileSettingsMenu({
      </Popover.Popup>
     </Popover.Positioner>
    </Popover.Portal>
+   <Dialog open={readingSettingsOpen} onOpenChange={setReadingSettingsOpen}>
+    <LessonReadingSettingsDialogContent
+     displayMode={displayMode}
+     isLoading={learning.isLoading}
+     onChange={updateDisplayMode}
+    />
+   </Dialog>
   </Popover.Root>
+ );
+}
+
+function SettingsNavigationRow({
+ icon,
+ label,
+ description,
+ value,
+ onClick,
+}: {
+ icon: ReactNode;
+ label: string;
+ description: string;
+ value: string;
+ onClick: () => void;
+}) {
+ return (
+  <Button
+   type="button"
+   variant="ghost"
+   className="min-h-14 w-full justify-start gap-3 rounded-xl px-3 py-2 text-left"
+   onClick={onClick}
+  >
+   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-bg-card text-current shadow-theme-sm">
+    {icon}
+   </span>
+   <span className="grid min-w-0 flex-1 gap-0.5">
+    <span className="text-sm font-black text-text-primary">{label}</span>
+    <span className="truncate text-xs font-semibold text-text-muted">{description}</span>
+   </span>
+   <span className="shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary">
+    {value}
+   </span>
+  </Button>
  );
 }
 

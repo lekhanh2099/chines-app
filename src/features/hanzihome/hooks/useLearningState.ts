@@ -24,7 +24,7 @@ function getBrowserOnlineState() {
  return typeof navigator === "undefined" ? true : navigator.onLine;
 }
 
-export function useLearningState() {
+export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
  const queryClient = useQueryClient();
  const writeChainRef = useRef<Promise<void>>(Promise.resolve());
  const syncInFlightRef = useRef<Promise<LearningStateSyncResult> | null>(null);
@@ -35,6 +35,7 @@ export function useLearningState() {
  const query = useQuery({
   queryKey: learningStateQueryKey,
   queryFn: loadLearningStateLocalFirst,
+  enabled,
  });
 
  const applySyncResult = useCallback(
@@ -122,7 +123,7 @@ export function useLearningState() {
  );
 
  useEffect(() => {
-  if (!query.isSuccess) return;
+  if (!enabled || !query.isSuccess) return;
 
   void syncThenRefresh();
 
@@ -147,7 +148,7 @@ export function useLearningState() {
    window.removeEventListener("offline", handleOffline);
    window.removeEventListener("focus", handleFocus);
   };
- }, [query.isSuccess, syncThenRefresh]);
+ }, [enabled, query.isSuccess, syncThenRefresh]);
 
  return useMemo(
   () => ({

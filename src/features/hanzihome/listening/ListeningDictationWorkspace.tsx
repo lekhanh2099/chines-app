@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
-import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
@@ -16,7 +15,6 @@ import {
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 
@@ -175,7 +173,6 @@ function DictationCards({
 
 export function ListeningDictationWorkspace() {
  const runtime = useHanziHomeRuntime();
- const actions = useHanziHomeFeatureActions();
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const tts = useNativeMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
@@ -193,12 +190,6 @@ export function ListeningDictationWorkspace() {
   [selectedItems, selectedSection],
  );
  const playAllText = transcriptEntries.map(dictationText).join("\n");
-
- function updateDisplayMode(updates: Partial<typeof displayMode>) {
-  const nextDisplayMode = { ...displayMode, ...updates };
-  actions.setLessonTextDisplayMode(updates);
-  runtime.updateLearningSettings({ lessonTextDisplayMode: nextDisplayMode });
- }
 
  if (query.isPending) {
   return (
@@ -277,8 +268,6 @@ export function ListeningDictationWorkspace() {
   >
    <div className="grid gap-2.5">
     <NativeMandarinTtsControls text={playAllText} tts={tts} />
-
-    <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
 
     <Card variant="glass" padding="md" className="grid gap-1.5 rounded-xl">
      <div className="flex items-start gap-2">

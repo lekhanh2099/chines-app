@@ -7,14 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
-import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonModuleFrame,
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 
@@ -28,7 +26,6 @@ import type { ListeningCategory } from "./listening.types";
 
 export function ListeningWorkspace() {
  const runtime = useHanziHomeRuntime();
- const actions = useHanziHomeFeatureActions();
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const tts = useNativeMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
@@ -57,12 +54,6 @@ export function ListeningWorkspace() {
 
   return parts.join("\n");
  }, [selectedItems, selectedSection]);
-
- function updateDisplayMode(updates: Partial<typeof displayMode>) {
-  const nextDisplayMode = { ...displayMode, ...updates };
-  actions.setLessonTextDisplayMode(updates);
-  runtime.updateLearningSettings({ lessonTextDisplayMode: nextDisplayMode });
- }
 
  if (query.isPending) {
   return (
@@ -150,7 +141,6 @@ export function ListeningWorkspace() {
     />
 
     <div className="grid max-w-full gap-2 rounded-xl border border-border-default bg-bg-card p-2.5">
-     <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
      <Button
       type="button"
       variant={showScript ? "active" : "outline"}

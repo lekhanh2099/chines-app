@@ -14,7 +14,6 @@ import {
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import { LessonReadingSettingsDialog } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
 import {
  sectionSubtitle,
@@ -75,18 +74,8 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
- function updateDisplayMode(updates: Partial<typeof displayMode>) {
-  const nextDisplayMode = { ...displayMode, ...updates };
-
-  actions.setLessonTextDisplayMode(updates);
-  runtime.updateLearningSettings({ lessonTextDisplayMode: nextDisplayMode });
- }
-
  const readingControls = (
-  <div className="flex items-center gap-1.5">
-   <NativeMandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />
-   <LessonReadingSettingsDialog displayMode={displayMode} onChange={updateDisplayMode} />
-  </div>
+  <NativeMandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />
  );
 
  const sidebar = (
