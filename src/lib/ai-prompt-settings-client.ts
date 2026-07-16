@@ -6,11 +6,19 @@ import {
 } from "@/lib/ai-prompts";
 import {
  DEFAULT_GEMINI_MODEL,
+ GEMINI_TEXT_MODEL_OPTIONS,
  normalizeGeminiModel,
  type GeminiModelId,
 } from "@/lib/gemini-models";
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
+import { z } from "zod";
 
 const AI_PROMPT_SETTINGS_STORAGE_KEY = "ai-prompt-settings";
+const AI_PROMPT_SETTINGS_STORAGE_VERSION = 1;
 
 export type ClientAiPromptSettings = {
  wordLookupPrompt: string;
@@ -24,8 +32,35 @@ export const defaultClientAiPromptSettings: ClientAiPromptSettings = {
  geminiModel: DEFAULT_GEMINI_MODEL,
 };
 
+const clientAiPromptSettingsSchema = z.object({
+ wordLookupPrompt: z.string(),
+ sentenceLookupPrompt: z.string(),
+ geminiModel: z.enum(GEMINI_TEXT_MODEL_OPTIONS.map((option) => option.value)),
+});
+
+const aiPromptSettingsStorageConfig = {
+ key: AI_PROMPT_SETTINGS_STORAGE_KEY,
+ version: AI_PROMPT_SETTINGS_STORAGE_VERSION,
+ schema: clientAiPromptSettingsSchema,
+ fallback: defaultClientAiPromptSettings,
+ migrateLegacy: (value: unknown) => {
+  const legacy = z
+   .object({
+    wordLookupPrompt: z.string().optional(),
+    sentenceLookupPrompt: z.string().optional(),
+    geminiModel: z.string().optional(),
+   })
+   .safeParse(value);
+  return legacy.success ? normalizeSettings(legacy.data) : null;
+ },
+};
+
 function normalizeSettings(
- settings?: Partial<ClientAiPromptSettings> | null,
+ settings?: {
+  wordLookupPrompt?: string;
+  sentenceLookupPrompt?: string;
+  geminiModel?: string;
+ } | null,
 ): ClientAiPromptSettings {
  return {
   wordLookupPrompt: getWordLookupPromptTemplate(settings?.wordLookupPrompt),
@@ -35,20 +70,7 @@ function normalizeSettings(
 }
 
 export function loadClientAiPromptSettings(): ClientAiPromptSettings {
- if (typeof window === "undefined") {
-  return defaultClientAiPromptSettings;
- }
-
- try {
-  const raw = window.localStorage.getItem(AI_PROMPT_SETTINGS_STORAGE_KEY);
-  if (!raw) {
-   return defaultClientAiPromptSettings;
-  }
-
-  return normalizeSettings(JSON.parse(raw) as Partial<ClientAiPromptSettings>);
- } catch {
-  return defaultClientAiPromptSettings;
- }
+ return readVersionedStorage(getBrowserStorage(), aiPromptSettingsStorageConfig);
 }
 
 export function saveClientAiPromptSettings(
@@ -56,9 +78,7 @@ export function saveClientAiPromptSettings(
 ): ClientAiPromptSettings {
  const normalized = normalizeSettings(settings);
 
- if (typeof window !== "undefined") {
-  window.localStorage.setItem(AI_PROMPT_SETTINGS_STORAGE_KEY, JSON.stringify(normalized));
- }
+ writeVersionedStorage(getBrowserStorage(), aiPromptSettingsStorageConfig, normalized);
 
  return normalized;
 }

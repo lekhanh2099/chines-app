@@ -2,34 +2,34 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { z } from "zod";
 
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
 import type { MemoryTip } from "./memory-tip.schema";
 
 const recentIdsStorageKey = "hanzihome.memoryTips.recentIds";
 const maxRecentIds = 8;
+const recentIdsStorageConfig = {
+ key: recentIdsStorageKey,
+ version: 1,
+ schema: z.array(z.string()).max(maxRecentIds),
+ fallback: [] as string[],
+ migrateLegacy: (value: unknown) => {
+  const parsed = z.array(z.string()).safeParse(value);
+  return parsed.success ? parsed.data.slice(0, maxRecentIds) : null;
+ },
+};
 
 function readRecentIds() {
- if (typeof window === "undefined") return [];
-
- const raw = window.localStorage.getItem(recentIdsStorageKey);
- if (!raw) return [];
-
- const parsed: unknown = (() => {
-  try {
-   return JSON.parse(raw);
-  } catch {
-   return null;
-  }
- })();
-
- if (!Array.isArray(parsed)) return [];
- return parsed.filter((value): value is string => typeof value === "string");
+ return readVersionedStorage(getBrowserStorage(), recentIdsStorageConfig);
 }
 
 function writeRecentIds(ids: string[]) {
- if (typeof window === "undefined") return;
-
- window.localStorage.setItem(recentIdsStorageKey, JSON.stringify(ids.slice(0, maxRecentIds)));
+ writeVersionedStorage(getBrowserStorage(), recentIdsStorageConfig, ids.slice(0, maxRecentIds));
 }
 
 function isTypingTarget(element: Element | null) {
