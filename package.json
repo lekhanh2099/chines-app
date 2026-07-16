@@ -36,11 +36,12 @@
   "test": "vitest",
   "test:run": "vitest run",
   "test:coverage": "vitest run --coverage",
-  "deps:check": "knip --dependencies",
+  "deps:check": "knip --dependencies && knip --include files --no-progress",
+  "source:check": "node scripts/check-source-standards.mjs",
   "audit:prod": "npm audit --omit=dev --audit-level=moderate",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
-  "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run deps:check && npm run audit:prod && npm run build",
+  "check": "npm run format:check && npm run lint && npm run source:check && npm run typecheck && npm run test:run && npm run deps:check && npm run audit:prod && npm run build",
   "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
  },
  "dependencies": {
