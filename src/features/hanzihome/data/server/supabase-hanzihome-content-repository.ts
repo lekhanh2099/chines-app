@@ -35,261 +35,24 @@ import {
  type LessonSectionsResource,
  type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
-
-const CountRelationSchema = z.array(z.object({ count: z.number().int().nonnegative() }));
-const OptionalTextSchema = z
- .string()
- .nullish()
- .transform((value) => value ?? "");
-
-const RadicalRowSchema = z.object({
- id: z.string(),
- radical_index: z.number().int().positive(),
- radical: z.string(),
- name_vi: z.string().nullable().default(null),
- strokes: z.number().int().positive().nullable().default(null),
- core_meaning: z.object({
-  modern: z.string().optional(),
-  history: z.string().optional(),
- }),
- recognition: z.string().nullable().default(null),
- variants: z.array(
-  z.object({
-   form: z.string(),
-   note: OptionalTextSchema,
-  }),
- ),
- related_components: z.array(
-  z.object({
-   form: z.string(),
-   note: OptionalTextSchema,
-  }),
- ),
- distinguish: z.array(z.string()),
- groups: z.array(
-  z.object({
-   name: z.string(),
-   chars: z.array(z.string()),
-  }),
- ),
- updated_at: z.string(),
-});
-
-const CourseRowSchema = z.object({
- id: z.string(),
- slug: z.string(),
- title: z.string(),
- subtitle: z.string().nullable(),
- type: z.string(),
- course_order: z.number().int(),
- updated_at: z.string(),
-});
-
-const BookRowSchema = z.object({
- id: z.string(),
- course_id: z.string(),
- title: z.string(),
- short_title: z.string().nullable(),
- book_order: z.number().int(),
- updated_at: z.string(),
-});
-
-const RelatedCourseSchema = z
- .union([CourseRowSchema, z.array(CourseRowSchema)])
- .transform((value) => (Array.isArray(value) ? value[0] : value));
-
-const RelatedBookSchema = z
- .union([BookRowSchema, z.array(BookRowSchema)])
- .transform((value) => (Array.isArray(value) ? value[0] : value));
-
-const LessonSummaryRowSchema = z.object({
- id: z.string(),
- course_id: z.string(),
- book_id: z.string(),
- lesson_number: z.number().int().positive(),
- lesson_order: z.number().int().positive(),
- title_zh: z.string(),
- title_pinyin: z.string().nullable().default(null),
- title_vi: z.string().nullable().default(null),
- title_en: z.string().nullable().default(null),
- tags: z.array(z.string()).default([]),
- source_file: z.string().nullable(),
- updated_at: z.string(),
- course: RelatedCourseSchema,
- book: RelatedBookSchema,
- vocab_count: CountRelationSchema,
- grammar_count: CountRelationSchema,
-});
-
-const LessonTextRowSchema = z.object({
- id: z.string(),
- lesson_id: z.string(),
- text_key: z.string(),
- title: z.string().nullable().default(null),
- content: z.string(),
- content_format: z.string(),
- updated_at: z.string(),
-});
-
-const LessonSectionRowSchema = z.object({
- id: z.uuid(),
- lesson_id: z.string(),
- source_section_id: z.string(),
- section_key: z.string(),
- section_type: z.string(),
- title: z.string(),
- title_vi: z.string(),
- section_order: z.number().int().positive(),
- payload: z.unknown(),
- source_file: z.string().nullable(),
- updated_at: z.string(),
-});
-
-const VocabExampleRowSchema = z.object({
- id: z.string(),
- vocab_item_id: z.string(),
- example_order: z.number().int().positive(),
- zh: z.string(),
- pinyin: z.string().nullable(),
- vi: z.string().nullable(),
- note: z.string().nullable(),
- updated_at: z.string(),
-});
-
-const VocabDetailRowSchema = z.object({
- id: z.string(),
- vocab_item_id: z.string(),
- section_key: z.string(),
- title: z.string(),
- lines: z.array(z.string()),
- section_order: z.number().int().positive(),
- updated_at: z.string(),
-});
-
-const VocabCoreRowSchema = z.object({
- id: z.string(),
- lesson_id: z.string(),
- course_id: z.string(),
- book_id: z.string(),
- item_order: z.number().int().positive(),
- word: z.string(),
- pinyin: z.string(),
- han_viet: z.string(),
- meaning: z.string(),
- meaning_en: z.string().nullable().default(null),
- category: z.string(),
- level: z.string().nullable(),
- pos_vi: z.string().nullable(),
- pos_zh: z.string().nullable(),
- tone: z.string().nullable().default(null),
- tags: z.array(z.string()).default([]),
- updated_at: z.string(),
-});
-
-const VocabRowSchema = VocabCoreRowSchema.extend({
- examples: z.array(VocabExampleRowSchema).default([]),
- details: z.array(VocabDetailRowSchema).default([]),
-});
-
-const GrammarExampleRowSchema = z.object({
- id: z.string(),
- grammar_point_id: z.string(),
- example_order: z.number().int().positive(),
- zh: z.string(),
- pinyin: z.string().nullable(),
- vi: z.string().nullable(),
- note: z.string().nullable(),
- updated_at: z.string(),
-});
-
-const GrammarDetailRowSchema = z.object({
- id: z.string(),
- grammar_point_id: z.string(),
- section_key: z.string(),
- title: z.string(),
- lines: z.array(z.string()),
- section_order: z.number().int().positive(),
- updated_at: z.string(),
-});
-
-const GrammarCoreRowSchema = z.object({
- id: z.string(),
- lesson_id: z.string(),
- course_id: z.string(),
- book_id: z.string(),
- point_order: z.number().int().positive(),
- title: z.string(),
- title_vi: z.string().nullable().default(null),
- clean_title: z.string(),
- level: z.string().nullable().default(null),
- core: z.string(),
- content_md: z.string().nullable().default(null),
- structures_view: z.array(z.string()),
- notes: z.array(z.string()),
- tags: z.array(z.string()).default([]),
- updated_at: z.string(),
-});
-
-const GrammarRowSchema = GrammarCoreRowSchema.extend({
- examples: z.array(GrammarExampleRowSchema).default([]),
- details: z.array(GrammarDetailRowSchema).default([]),
-});
-
-const LessonDetailRowSchema = z.object({
- id: z.string(),
- course_id: z.string(),
- book_id: z.string(),
- lesson_number: z.number().int().positive(),
- lesson_order: z.number().int().positive(),
- title_zh: z.string(),
- title_pinyin: z.string().nullable().default(null),
- title_vi: z.string().nullable().default(null),
- title_en: z.string().nullable().default(null),
- tags: z.array(z.string()).default([]),
- source_file: z.string().nullable(),
- updated_at: z.string(),
- course: RelatedCourseSchema,
- book: RelatedBookSchema,
- sections: z.array(LessonSectionRowSchema).default([]),
- texts: z.array(LessonTextRowSchema).default([]),
- vocab: z.array(VocabRowSchema).default([]),
- grammar: z.array(GrammarRowSchema).default([]),
-});
-
-const RelatedLessonSchema = z
- .union([
-  z.object({
-   id: z.string(),
-   lesson_number: z.number().int().positive(),
-   lesson_order: z.number().int().positive(),
-   title_zh: z.string(),
-   title_vi: z.string().nullable().default(null),
-  }),
-  z.array(
-   z.object({
-    id: z.string(),
-    lesson_number: z.number().int().positive(),
-    lesson_order: z.number().int().positive(),
-    title_zh: z.string(),
-    title_vi: z.string().nullable().default(null),
-   }),
-  ),
- ])
- .transform((value) => (Array.isArray(value) ? value[0] : value));
-
-const AggregateVocabRowSchema = VocabCoreRowSchema.extend({
- lesson: RelatedLessonSchema,
-});
-
-const AggregateGrammarRowSchema = GrammarCoreRowSchema.extend({
- lesson: RelatedLessonSchema,
-});
-
-type LessonSummaryRow = z.infer<typeof LessonSummaryRowSchema>;
-type LessonDetailRow = z.infer<typeof LessonDetailRowSchema>;
-type VocabRow = z.infer<typeof VocabRowSchema>;
-type GrammarRow = z.infer<typeof GrammarRowSchema>;
-type RadicalRow = z.infer<typeof RadicalRowSchema>;
+import {
+ aggregateGrammarRowSchema,
+ aggregateVocabRowSchema,
+ bookRowSchema,
+ courseRowSchema,
+ grammarCoreRowSchema,
+ lessonDetailRowSchema,
+ lessonSectionRowSchema,
+ lessonSummaryRowSchema,
+ lessonTextRowSchema,
+ radicalRowSchema,
+ vocabCoreRowSchema,
+ type GrammarRow,
+ type LessonDetailRow,
+ type LessonSummaryRow,
+ type RadicalRow,
+ type VocabRow,
+} from "./supabase-content-row.schemas";
 
 export type HanzihomeContentRepository = {
  getCatalogSummary: (options?: { includeLessons?: boolean }) => Promise<HanziHomeCatalogData>;
@@ -861,7 +624,7 @@ async function getRadicalsFromDatabase(): Promise<StaticRadicalData[]> {
   throw new Error(`HanziHome Supabase radicals failed: ${result.error.message}`);
  }
 
- const rows = z.array(RadicalRowSchema).parse(result.data);
+ const rows = z.array(radicalRowSchema).parse(result.data);
  if (rows.length === 0) {
   throw new Error("HanziHome Supabase radicals returned no seed rows.");
  }
@@ -888,7 +651,7 @@ async function getLessonSummaryRows(courseId?: string) {
   .order("lesson_order");
 
  if (courseId) query = query.eq("course_id", courseId);
- return requireRows("lesson summaries", query, z.array(LessonSummaryRowSchema));
+ return requireRows("lesson summaries", query, z.array(lessonSummaryRowSchema));
 }
 
 async function getLessonDetailRow(lessonId: string) {
@@ -921,7 +684,7 @@ async function getLessonDetailRow(lessonId: string) {
     .is("course.deleted_at", null)
     .is("book.deleted_at", null)
     .limit(1),
-   z.array(LessonDetailRowSchema),
+   z.array(lessonDetailRowSchema),
   ),
   requireRows(
    `lesson sections ${lessonId}`,
@@ -930,12 +693,12 @@ async function getLessonDetailRow(lessonId: string) {
     .select("*")
     .eq("lesson_id", lessonId)
     .order("section_order"),
-   z.array(LessonSectionRowSchema),
+   z.array(lessonSectionRowSchema),
   ),
  ]);
 
  const row = rows[0];
- return row ? LessonDetailRowSchema.parse({ ...row, sections }) : null;
+ return row ? lessonDetailRowSchema.parse({ ...row, sections }) : null;
 }
 
 async function getLessonSectionRow(sectionId: string) {
@@ -943,7 +706,7 @@ async function getLessonSectionRow(sectionId: string) {
  const rows = await requireRows(
   `lesson section ${sectionId}`,
   client.from("hanzihome_lesson_sections").select("*").eq("id", sectionId).limit(1),
-  z.array(LessonSectionRowSchema),
+  z.array(lessonSectionRowSchema),
  );
  return rows[0] ?? null;
 }
@@ -969,7 +732,7 @@ function removeDeletedNestedNodes(value: unknown): unknown {
  );
 }
 
-function lessonSectionRowToSection(row: z.infer<typeof LessonSectionRowSchema>): Section {
+function lessonSectionRowToSection(row: z.infer<typeof lessonSectionRowSchema>): Section {
  const payload = removeDeletedNestedNodes(row.payload);
  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
   throw new Error(`HanziHome section ${row.id} payload is not an object`);
@@ -1003,7 +766,7 @@ async function getAggregateItems({
  if (kind === "vocab") {
   const rows = await requirePagedRows(
    "aggregate vocab",
-   z.array(AggregateVocabRowSchema),
+   z.array(aggregateVocabRowSchema),
    (from, to) => {
     let query = client
      .from("hanzihome_vocab_items")
@@ -1049,7 +812,7 @@ async function getAggregateItems({
 
  const rows = await requirePagedRows(
   "aggregate grammar",
-  z.array(AggregateGrammarRowSchema),
+  z.array(aggregateGrammarRowSchema),
   (from, to) => {
    let query = client
     .from("hanzihome_grammar_points")
@@ -1111,7 +874,7 @@ async function getSearchData(): Promise<HanziHomeData> {
  const summaries = await getLessonSummaryRows();
  const client = await createClient();
  const [sections, texts, vocab, grammar, radicals] = await Promise.all([
-  requirePagedRows("search lesson sections", z.array(LessonSectionRowSchema), (from, to) =>
+  requirePagedRows("search lesson sections", z.array(lessonSectionRowSchema), (from, to) =>
    client
     .from("hanzihome_lesson_sections")
     .select("*")
@@ -1119,7 +882,7 @@ async function getSearchData(): Promise<HanziHomeData> {
     .order("section_order")
     .range(from, to),
   ),
-  requirePagedRows("search lesson texts", z.array(LessonTextRowSchema), (from, to) =>
+  requirePagedRows("search lesson texts", z.array(lessonTextRowSchema), (from, to) =>
    client
     .from("hanzihome_lesson_texts")
     .select("*")
@@ -1127,7 +890,7 @@ async function getSearchData(): Promise<HanziHomeData> {
     .order("text_key")
     .range(from, to),
   ),
-  requirePagedRows("search vocab", z.array(VocabCoreRowSchema), (from, to) =>
+  requirePagedRows("search vocab", z.array(vocabCoreRowSchema), (from, to) =>
    client
     .from("hanzihome_vocab_items")
     .select("*")
@@ -1135,7 +898,7 @@ async function getSearchData(): Promise<HanziHomeData> {
     .order("item_order")
     .range(from, to),
   ),
-  requirePagedRows("search grammar", z.array(GrammarCoreRowSchema), (from, to) =>
+  requirePagedRows("search grammar", z.array(grammarCoreRowSchema), (from, to) =>
    client
     .from("hanzihome_grammar_points")
     .select("*")
@@ -1150,7 +913,7 @@ async function getSearchData(): Promise<HanziHomeData> {
  const vocabByLesson = groupBy(vocab, (row) => row.lesson_id);
  const grammarByLesson = groupBy(grammar, (row) => row.lesson_id);
  const lessons = summaries.map((summary) => {
-  const detail = LessonDetailRowSchema.parse({
+  const detail = lessonDetailRowSchema.parse({
    ...summary,
    sections: sectionsByLesson.get(summary.id) ?? [],
    texts: textsByLesson.get(summary.id) ?? [],
@@ -1221,7 +984,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
      .select("id, slug, title, subtitle, type, course_order, updated_at")
      .is("deleted_at", null)
      .order("course_order"),
-    z.array(CourseRowSchema),
+    z.array(courseRowSchema),
    ),
    requireRows(
     "catalog books",
@@ -1230,7 +993,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
      .select("id, course_id, title, short_title, book_order, updated_at")
      .is("deleted_at", null)
      .order("book_order"),
-    z.array(BookRowSchema),
+    z.array(bookRowSchema),
    ),
    getLessonSummaryRows(),
    getRadicalsFromDatabase(),
