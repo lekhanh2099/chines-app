@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
  AUTO_API_KEY_PROVIDER,
  API_KEY_PROVIDER_OPTIONS,
  getApiKeyProviderDocsUrl,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
+import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -41,39 +42,9 @@ import {
  Workflow,
 } from "lucide-react";
 
-type ManagedApiKey = {
- id: string;
- provider: ApiKeyProvider;
- providerLabel: string;
- label: string;
- maskedKey: string;
- isActive: boolean;
- priority: number;
- defaultModel: string | null;
- lastValidatedAt: string | null;
- createdAt: string;
- updatedAt: string;
-};
-
-type ApiKeysSummary = {
- total: number;
- active: number;
- deepseek: number;
- gemini: number;
- openai: number;
-};
-
-type ApiKeysResponse = {
- schemaReady?: boolean;
- schemaReason?: "ok" | "missing-table" | "schema-error";
- schemaMessage?: string | null;
- keys: ManagedApiKey[];
- summary: ApiKeysSummary;
-};
-
 type ProviderSelectValue = ApiKeyProvider | typeof AUTO_API_KEY_PROVIDER;
 
-const EMPTY_SUMMARY: ApiKeysSummary = {
+const EMPTY_SUMMARY = {
  total: 0,
  active: 0,
  deepseek: 0,
@@ -82,74 +53,19 @@ const EMPTY_SUMMARY: ApiKeysSummary = {
 };
 
 export default function ApiKeyManagerSection() {
- const [keys, setKeys] = useState<ManagedApiKey[]>([]);
- const [summary, setSummary] = useState<ApiKeysSummary>(EMPTY_SUMMARY);
- const [schemaReady, setSchemaReady] = useState(true);
- const [schemaMessage, setSchemaMessage] = useState<string | null>(null);
- const [isLoading, setIsLoading] = useState(true);
  const [isDialogOpen, setIsDialogOpen] = useState(false);
  const [provider, setProvider] = useState<ProviderSelectValue>(AUTO_API_KEY_PROVIDER);
  const [label, setLabel] = useState("");
  const [apiKey, setApiKey] = useState("");
  const [showKey, setShowKey] = useState(false);
- const [isSubmitting, setIsSubmitting] = useState(false);
- const [busyKeyId, setBusyKeyId] = useState<string | null>(null);
-
- async function loadKeys() {
-  try {
-   const response = await fetch("/api/settings/api-keys", {
-    method: "GET",
-    credentials: "include",
-   });
-
-   if (!response.ok) {
-    throw new Error("load_failed");
-   }
-
-   const data = (await response.json()) as ApiKeysResponse;
-   setSchemaReady(data.schemaReady ?? true);
-   setSchemaMessage(data.schemaMessage ?? null);
-   setKeys(data.keys || []);
-   setSummary(data.summary || EMPTY_SUMMARY);
-  } catch {
-   toast.error("Không tải được danh sách API key.");
-  } finally {
-   setIsLoading(false);
-  }
- }
-
- useEffect(() => {
-  let isCurrent = true;
-
-  void fetch("/api/settings/api-keys", {
-   method: "GET",
-   credentials: "include",
-  })
-   .then(async (response) => {
-    if (!response.ok) {
-     throw new Error("load_failed");
-    }
-
-    return (await response.json()) as ApiKeysResponse;
-   })
-   .then((data) => {
-    if (!isCurrent) return;
-    setSchemaReady(data.schemaReady ?? true);
-    setSchemaMessage(data.schemaMessage ?? null);
-    setKeys(data.keys || []);
-    setSummary(data.summary || EMPTY_SUMMARY);
-   })
-   .catch(() => {
-    if (isCurrent) toast.error("Không tải được danh sách API key.");
-   })
-   .finally(() => {
-    if (isCurrent) setIsLoading(false);
-   });
-
-  return () => {
-   isCurrent = false;
-  };
- }, []);
+ const { query, addMutation, toggleMutation, moveMutation, deleteMutation, busyKeyId } =
+  useManagedApiKeys();
+ const keys = query.data?.keys ?? [];
+ const summary = query.data?.summary ?? EMPTY_SUMMARY;
+ const schemaReady = query.data?.schemaReady ?? true;
+ const schemaMessage = query.data?.schemaMessage ?? null;
+ const isLoading = query.isPending;
+ const isSubmitting = addMutation.isPending;
 
  const selectedProviderOption = useMemo(() => {
   if (provider === AUTO_API_KEY_PROVIDER) {
@@ -177,147 +93,48 @@ export default function ApiKeyManagerSection() {
    return;
   }
 
-  setIsSubmitting(true);
-
   try {
-   const response = await fetch("/api/settings/api-keys", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({
-     apiKey: apiKey.trim(),
-     label: label.trim() || undefined,
-     provider,
-    }),
+   const data = await addMutation.mutateAsync({
+    apiKey: apiKey.trim(),
+    label: label.trim() || undefined,
+    provider,
    });
-
-   const data = (await response.json()) as {
-    success?: boolean;
-    error?: string;
-    message?: string;
-   };
-
-   if (!response.ok || !data.success) {
-    toast.error(data.error || "Không thể thêm API key.");
-    return;
-   }
-
-   toast.success(data.message || "Đã thêm API key.");
+   toast.success(data.message);
    setApiKey("");
    setLabel("");
    setProvider(AUTO_API_KEY_PROVIDER);
    setShowKey(false);
    setIsDialogOpen(false);
-   setIsLoading(true);
-   await loadKeys();
-  } catch {
-   toast.error("Lỗi kết nối khi thêm API key.");
-  } finally {
-   setIsSubmitting(false);
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể thêm API key.");
   }
  }
 
- async function handleToggleKey(key: ManagedApiKey) {
-  setBusyKeyId(key.id);
-
+ async function handleToggleKey(key: (typeof keys)[number]) {
   try {
-   const response = await fetch("/api/settings/api-keys", {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({
-     action: "toggle",
-     keyId: key.id,
-     isActive: !key.isActive,
-    }),
+   await toggleMutation.mutateAsync({
+    keyId: key.id,
+    isActive: !key.isActive,
    });
-
-   const data = (await response.json()) as {
-    success?: boolean;
-    error?: string;
-    key?: ManagedApiKey;
-   };
-
-   if (!response.ok || !data.success || !data.key) {
-    toast.error(data.error || "Không thể cập nhật trạng thái key.");
-    return;
-   }
-
-   const updatedKey = data.key;
-   setKeys((current) => current.map((item) => (item.id === updatedKey.id ? updatedKey : item)));
-   setSummary((current) => ({
-    ...current,
-    active: current.active + (updatedKey.isActive ? 1 : -1),
-   }));
-  } catch {
-   toast.error("Lỗi kết nối khi cập nhật key.");
-  } finally {
-   setBusyKeyId(null);
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể cập nhật trạng thái key.");
   }
  }
 
  async function handleMoveKey(keyId: string, direction: "up" | "down") {
-  setBusyKeyId(keyId);
-
   try {
-   const response = await fetch("/api/settings/api-keys", {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({
-     action: "move",
-     keyId,
-     direction,
-    }),
-   });
-
-   const data = (await response.json()) as {
-    success?: boolean;
-    error?: string;
-    keys?: ManagedApiKey[];
-   };
-
-   if (!response.ok || !data.success || !data.keys) {
-    toast.error(data.error || "Không thể đổi thứ tự key.");
-    return;
-   }
-
-   setKeys(data.keys);
-  } catch {
-   toast.error("Lỗi kết nối khi đổi thứ tự key.");
-  } finally {
-   setBusyKeyId(null);
+   await moveMutation.mutateAsync({ keyId, direction });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể đổi thứ tự key.");
   }
  }
 
  async function handleDeleteKey(keyId: string) {
-  setBusyKeyId(keyId);
-
   try {
-   const response = await fetch("/api/settings/api-keys", {
-    method: "DELETE",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({ keyId }),
-   });
-
-   const data = (await response.json()) as {
-    success?: boolean;
-    error?: string;
-   };
-
-   if (!response.ok || !data.success) {
-    toast.error(data.error || "Không thể xóa key.");
-    return;
-   }
-
+   await deleteMutation.mutateAsync(keyId);
    toast.success("Đã xóa API key.");
-   setIsLoading(true);
-   await loadKeys();
-  } catch {
-   toast.error("Lỗi kết nối khi xóa key.");
-  } finally {
-   setBusyKeyId(null);
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể xóa key.");
   }
  }
 
@@ -465,7 +282,15 @@ export default function ApiKeyManagerSection() {
     system provider của app.
    </div>
 
-   {isLoading ? (
+   {query.isError ? (
+    <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
+     <p className="font-semibold">Không tải được danh sách API key.</p>
+     <p className="text-sm">Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.</p>
+     <Button variant="outline" size="sm" onClick={() => void query.refetch()}>
+      Thử lại
+     </Button>
+    </div>
+   ) : isLoading ? (
     <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border-default bg-bg-primary p-5  text-text-secondary">
      <Loader2 className="h-4 w-4 animate-spin" />
      Đang tải danh sách API key...
