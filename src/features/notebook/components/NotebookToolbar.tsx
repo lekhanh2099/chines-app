@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
  ChevronDown,
  ChevronUp,
@@ -20,6 +20,9 @@ import type {
  NotebookViewMode,
 } from "@/features/notebook/types";
 import { cn } from "@/lib/utils";
+
+const compactEnterScrollTop = 240;
+const compactExitScrollTop = 32;
 
 export function NotebookToolbar({
  data,
@@ -46,6 +49,7 @@ export function NotebookToolbar({
  onQueryChange: (query: string) => void;
  onViewModeChange: (mode: NotebookViewMode) => void;
 }) {
+ const toolbarRef = useRef<HTMLDivElement>(null);
  const [isCompact, setIsCompact] = useState(false);
  const [filtersOpen, setFiltersOpen] = useState(false);
  const views = [
@@ -58,40 +62,45 @@ export function NotebookToolbar({
   groupId === "all" ? "Tất cả" : groups.find((group) => group.id === groupId)?.name;
 
  useEffect(() => {
+  const toolbar = toolbarRef.current;
+  if (!toolbar) return;
+
+  const scrollOwner = toolbar.closest("main");
+  const eventTarget = scrollOwner ?? window;
   let frame = 0;
   const updateCompactState = () => {
    if (frame) return;
 
    frame = window.requestAnimationFrame(() => {
     frame = 0;
-    setIsCompact(window.scrollY > 220);
+    const scrollTop = scrollOwner?.scrollTop ?? window.scrollY;
+    setIsCompact((compact) =>
+     compact ? scrollTop > compactExitScrollTop : scrollTop > compactEnterScrollTop,
+    );
    });
   };
 
   updateCompactState();
-  window.addEventListener("scroll", updateCompactState, { passive: true });
+  eventTarget.addEventListener("scroll", updateCompactState, { passive: true });
 
   return () => {
    if (frame) window.cancelAnimationFrame(frame);
-   window.removeEventListener("scroll", updateCompactState);
+   eventTarget.removeEventListener("scroll", updateCompactState);
   };
  }, []);
 
  const sectionButtons = sectionIds.map((id) => (
-  <button
+  <Button
    key={id}
    type="button"
+   size="sm"
+   variant={sectionId === id ? "active" : "surfaceCard"}
+   aria-pressed={sectionId === id}
    onClick={() => onSectionChange(id)}
-   className={cn(
-    "shrink-0 border font-black transition",
-    isCompact ? "rounded-lg px-2.5 py-1.5 text-xs" : "rounded-xl px-3 py-2 text-sm",
-    sectionId === id
-     ? "border-[#20233a] bg-[#20233a] text-white shadow-theme-sm"
-     : "border-border-default bg-bg-card/80 text-text-secondary hover:border-primary/25",
-   )}
+   className={cn("shrink-0 font-black", isCompact ? "h-9 min-h-9 px-2.5 text-xs" : "px-3 text-sm")}
   >
    {data[id].label}
-  </button>
+  </Button>
  ));
 
  const viewButtons = views.map((view) => {
@@ -101,8 +110,9 @@ export function NotebookToolbar({
     key={view.id}
     type="button"
     size="sm"
-    variant={viewMode === view.id ? "default" : "ghost"}
-    className={cn(isCompact && "h-8 px-2 text-xs")}
+    variant={viewMode === view.id ? "active" : "ghost"}
+    aria-pressed={viewMode === view.id}
+    className={cn(isCompact && "h-9 min-h-9 px-2 text-xs")}
     onClick={() => onViewModeChange(view.id)}
    >
     <Icon className="h-4 w-4" />
@@ -113,41 +123,38 @@ export function NotebookToolbar({
 
  const groupButtons = (
   <>
-   <button
+   <Button
     type="button"
+    size="sm"
+    variant={groupId === "all" ? "active" : "surfaceCard"}
+    aria-pressed={groupId === "all"}
     onClick={() => onGroupChange("all")}
-    className={cn(
-     "shrink-0 border text-xs font-black transition",
-     isCompact ? "rounded-lg px-2.5 py-1.5" : "rounded-xl px-3 py-2",
-     groupId === "all"
-      ? "border-primary bg-primary text-primary-foreground"
-      : "border-border-default bg-bg-card/75 text-text-muted hover:border-primary/25",
-    )}
+    className={cn("shrink-0 text-xs font-black", isCompact ? "h-9 min-h-9 px-2.5" : "px-3")}
    >
     Tất cả
-   </button>
+   </Button>
    {groups.map((group) => (
-    <button
+    <Button
      key={group.id}
      type="button"
+     size="sm"
+     variant={groupId === group.id ? "active" : "surfaceCard"}
+     aria-pressed={groupId === group.id}
      onClick={() => onGroupChange(group.id)}
-     className={cn(
-      "shrink-0 border text-xs font-black transition",
-      isCompact ? "rounded-lg px-2.5 py-1.5" : "rounded-xl px-3 py-2",
-      groupId === group.id
-       ? "border-primary bg-primary text-primary-foreground"
-       : "border-border-default bg-bg-card/75 text-text-muted hover:border-primary/25",
-     )}
+     className={cn("shrink-0 text-xs font-black", isCompact ? "h-9 min-h-9 px-2.5" : "px-3")}
     >
      {group.name}
-    </button>
+    </Button>
    ))}
   </>
  );
 
  if (isCompact) {
   return (
-   <GlassPanel className="sticky top-[calc(3.5rem+0.5rem)] z-30 grid gap-2 p-2 shadow-theme-lg backdrop-blur-xl transition-all duration-200 sm:p-2.5">
+   <GlassPanel
+    ref={toolbarRef}
+    className="sticky top-2 z-30 grid gap-2 bg-none bg-bg-card/95 p-2 shadow-theme-lg backdrop-blur-xl sm:top-3 sm:p-2.5"
+   >
     <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center">
      <label className="relative block min-w-0 flex-1">
       <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
@@ -199,7 +206,10 @@ export function NotebookToolbar({
  }
 
  return (
-  <GlassPanel className="sticky top-[calc(3.5rem+0.75rem)] z-30 grid gap-3 p-3 shadow-theme-lg sm:p-4">
+  <GlassPanel
+   ref={toolbarRef}
+   className="sticky top-2 z-30 grid gap-3 bg-none bg-bg-card/95 p-3 shadow-theme-lg sm:top-3 sm:p-4"
+  >
    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
 
    <div className="flex flex-col gap-3 lg:flex-row lg:items-center">

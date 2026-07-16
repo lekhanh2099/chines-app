@@ -28,15 +28,6 @@ export const notebookComparisons: NotebookComparisonItem[] = notebookSectionIds.
   })),
 );
 
-export const notebookTotals = {
- items: notebookItems.length,
- groups: notebookSectionIds.reduce(
-  (total, sectionId) => total + notebookSeedData[sectionId].groups.length,
-  0,
- ),
- comparisons: notebookComparisons.length,
-};
-
 export function getNotebookSectionItems(sectionId: NotebookSectionId) {
  return notebookItems.filter((item) => item.sectionId === sectionId);
 }

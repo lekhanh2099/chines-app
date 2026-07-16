@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 
 import { NotebookContent } from "@/features/notebook/components/NotebookContent";
-import { NotebookHero } from "@/features/notebook/components/NotebookHero";
 import { NotebookSectionGuide } from "@/features/notebook/components/NotebookSectionGuide";
 import { NotebookToolbar } from "@/features/notebook/components/NotebookToolbar";
 import {
@@ -11,7 +10,6 @@ import {
  getNotebookSectionItems,
  notebookSectionIds,
  notebookSeedData,
- notebookTotals,
 } from "@/features/notebook/data/notebookSeedData";
 import type { NotebookSectionId, NotebookViewMode } from "@/features/notebook/types";
 import { filterNotebookItems } from "@/features/notebook/utils/filterNotebookItems";
@@ -51,11 +49,6 @@ export function NotebookPage() {
 
  return (
   <div className="mx-auto grid w-full max-w-full gap-4 px-3 py-4 sm:px-5 sm:py-6 lg:gap-5 lg:px-8">
-   <NotebookHero
-    itemCount={notebookTotals.items}
-    groupCount={notebookTotals.groups}
-    comparisonCount={notebookTotals.comparisons}
-   />
    <NotebookToolbar
     data={notebookSeedData}
     sectionIds={notebookSectionIds}
