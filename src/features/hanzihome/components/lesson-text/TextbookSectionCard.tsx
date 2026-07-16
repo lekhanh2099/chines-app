@@ -7,10 +7,7 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
-import type {
- ReadingItem,
- Section,
-} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { ReadingItem, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 export function TextbookSectionCard({
  lessonId,

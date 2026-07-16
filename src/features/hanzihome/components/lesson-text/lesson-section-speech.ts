@@ -1,4 +1,4 @@
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 export function speechTextForSections(sections: readonly Section[]) {
  return sections

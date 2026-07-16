@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import {
  mapHtmlArtifactFolderRows,
@@ -110,7 +111,7 @@ export async function POST(request: Request) {
   return NextResponse.json(
    {
     error: "Invalid HTML artifact payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import type { CharacterAnalysis } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { CharacterAnalysis } from "@/features/hanzihome/schemas/vocab.types";
 
 export function CharacterAnalysisCard({ character }: { character: CharacterAnalysis }) {
  return (

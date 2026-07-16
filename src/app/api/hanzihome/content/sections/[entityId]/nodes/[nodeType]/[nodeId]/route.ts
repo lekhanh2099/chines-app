@@ -6,7 +6,7 @@ import {
  mutationError,
 } from "@/features/hanzihome/server/canonical-content-mutation";
 import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
-import { SectionSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -130,7 +130,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  const body: unknown = await request.json().catch(() => null);
  const parsed = nestedNodeMutationSchema.safeParse(body);
  if (!parsed.success) {
-  return mutationError("Invalid nested section mutation", 400, parsed.error.flatten());
+  return mutationError("Invalid nested section mutation", 400, z.flattenError(parsed.error));
  }
  if (!parsed.data.expectedUpdatedAt) {
   return mutationError("expectedUpdatedAt is required", 400);
@@ -163,7 +163,7 @@ export async function PATCH(request: Request, context: RouteContext) {
 
  const validatedSection = SectionSchema.safeParse(nextPayload);
  if (!validatedSection.success) {
-  return mutationError("Edited section is invalid", 400, validatedSection.error.flatten());
+  return mutationError("Edited section is invalid", 400, z.flattenError(validatedSection.error));
  }
 
  const nextRequest = new Request(request.url, {
@@ -208,7 +208,7 @@ async function setNestedNodeDeletedState(
  const body: unknown = await request.json().catch(() => null);
  const parsed = mutationEnvelopeSchema.safeParse(body);
  if (!parsed.success) {
-  return mutationError("Invalid nested section mutation", 400, parsed.error.flatten());
+  return mutationError("Invalid nested section mutation", 400, z.flattenError(parsed.error));
  }
  if (!parsed.data.expectedUpdatedAt) return mutationError("expectedUpdatedAt is required", 400);
 
@@ -251,7 +251,7 @@ async function setNestedNodeDeletedState(
 
  const validatedSection = SectionSchema.safeParse(nextPayload);
  if (!validatedSection.success) {
-  return mutationError("Edited section is invalid", 400, validatedSection.error.flatten());
+  return mutationError("Edited section is invalid", 400, z.flattenError(validatedSection.error));
  }
 
  const nextRequest = new Request(request.url, {

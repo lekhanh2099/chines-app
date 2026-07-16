@@ -1,7 +1,4 @@
-import type {
- HanyuLesson,
- Section,
-} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { HanyuLesson, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import type { BookSection } from "./types";
 

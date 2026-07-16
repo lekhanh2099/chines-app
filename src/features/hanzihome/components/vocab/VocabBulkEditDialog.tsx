@@ -25,7 +25,7 @@ import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutati
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
-import type { VocabularyItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { asRecord, stringValue } from "../lesson-overview/utils";
 

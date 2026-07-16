@@ -34,23 +34,23 @@ const addKeySchema = z.object({
 const patchSchema = z.discriminatedUnion("action", [
  z.object({
   action: z.literal("toggle"),
-  keyId: z.string().uuid(),
+  keyId: z.uuid(),
   isActive: z.boolean(),
  }),
  z.object({
   action: z.literal("rename"),
-  keyId: z.string().uuid(),
+  keyId: z.uuid(),
   label: z.string().trim().min(1).max(80),
  }),
  z.object({
   action: z.literal("move"),
-  keyId: z.string().uuid(),
+  keyId: z.uuid(),
   direction: z.enum(["up", "down"]),
  }),
 ]);
 
 const deleteSchema = z.object({
- keyId: z.string().uuid(),
+ keyId: z.uuid(),
 });
 
 type ProviderValidationSuccess = {
@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
 
  if (!parsed.success) {
   return NextResponse.json(
-   { error: "Payload không hợp lệ", issues: parsed.error.flatten() },
+   { error: "Payload không hợp lệ", issues: z.flattenError(parsed.error) },
    { status: 400 },
   );
  }
@@ -185,7 +185,7 @@ export async function PATCH(request: NextRequest) {
 
  if (!parsed.success) {
   return NextResponse.json(
-   { error: "Payload không hợp lệ", issues: parsed.error.flatten() },
+   { error: "Payload không hợp lệ", issues: z.flattenError(parsed.error) },
    { status: 400 },
   );
  }

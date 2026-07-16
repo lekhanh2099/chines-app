@@ -10,4 +10,4 @@ Read `AGENTS.md` before changing HanziHome code. Inspect the current data and re
 4. Add a timestamped Supabase migration for schema changes; never edit production schema only through the dashboard.
 5. Run `npm run check` and `npm run deps:check` before opening a pull request.
 
-Do not commit secrets, generated build output, raw production data, or app code that writes static JSON.
+Do not commit secrets, generated build output, raw production data, or app code that writes external static seed artifacts.

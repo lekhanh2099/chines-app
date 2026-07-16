@@ -1,10 +1,3 @@
--- Copy-paste this file into Supabase SQL Editor and run it once.
--- It is safe to run on both:
--- 1. databases that do not have public.user_api_keys yet
--- 2. databases that already applied an older/broken version
-
-create extension if not exists pgcrypto;
-
 create table if not exists public.user_api_keys (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
@@ -14,46 +7,11 @@ create table if not exists public.user_api_keys (
   encrypted_key text not null,
   is_active boolean not null default true,
   priority integer not null default 1,
-  default_model text default null,
-  last_validated_at timestamp with time zone default null,
-  created_at timestamp with time zone default now() not null,
-  updated_at timestamp with time zone default now() not null
+  default_model text,
+  last_validated_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
 );
-
-do $$
-declare
-  existing_constraint text;
-begin
-  select tc.constraint_name
-  into existing_constraint
-  from information_schema.table_constraints tc
-  join information_schema.key_column_usage kcu
-    on tc.constraint_name = kcu.constraint_name
-   and tc.table_schema = kcu.table_schema
-  join information_schema.constraint_column_usage ccu
-    on tc.constraint_name = ccu.constraint_name
-   and tc.table_schema = ccu.table_schema
-  where tc.table_schema = 'public'
-    and tc.table_name = 'user_api_keys'
-    and tc.constraint_type = 'FOREIGN KEY'
-    and kcu.column_name = 'user_id'
-  limit 1;
-
-  if existing_constraint is not null then
-    execute format(
-      'alter table public.user_api_keys drop constraint %I',
-      existing_constraint
-    );
-  end if;
-
-  begin
-    alter table public.user_api_keys
-      add constraint user_api_keys_user_id_fkey
-      foreign key (user_id) references auth.users(id) on delete cascade;
-  exception
-    when duplicate_object then null;
-  end;
-end $$;
 
 create index if not exists idx_user_api_keys_user_priority
   on public.user_api_keys (user_id, priority);
@@ -63,30 +21,37 @@ create index if not exists idx_user_api_keys_user_provider
 
 alter table public.user_api_keys enable row level security;
 
+revoke all on table public.user_api_keys from anon, authenticated;
+grant select, insert, update, delete on table public.user_api_keys to authenticated;
+
 drop policy if exists "Users can view own API keys" on public.user_api_keys;
 create policy "Users can view own API keys"
 on public.user_api_keys
 for select
-using (auth.uid() = user_id);
+to authenticated
+using ((select auth.uid()) = user_id);
 
 drop policy if exists "Users can insert own API keys" on public.user_api_keys;
 create policy "Users can insert own API keys"
 on public.user_api_keys
 for insert
-with check (auth.uid() = user_id);
+to authenticated
+with check ((select auth.uid()) = user_id);
 
 drop policy if exists "Users can update own API keys" on public.user_api_keys;
 create policy "Users can update own API keys"
 on public.user_api_keys
 for update
-using (auth.uid() = user_id)
-with check (auth.uid() = user_id);
+to authenticated
+using ((select auth.uid()) = user_id)
+with check ((select auth.uid()) = user_id);
 
 drop policy if exists "Users can delete own API keys" on public.user_api_keys;
 create policy "Users can delete own API keys"
 on public.user_api_keys
 for delete
-using (auth.uid() = user_id);
+to authenticated
+using ((select auth.uid()) = user_id);
 
 comment on table public.user_api_keys
   is 'User-managed AI provider API keys with provider-aware failover order.';
@@ -123,9 +88,3 @@ where settings.deepseek_api_key_encrypted is not null
       and keys.provider = 'deepseek'
       and keys.encrypted_key = settings.deepseek_api_key_encrypted
   );
-
-select
-  count(*) as total_user_api_keys,
-  count(*) filter (where provider = 'deepseek') as deepseek_keys,
-  count(*) filter (where is_active) as active_keys
-from public.user_api_keys;

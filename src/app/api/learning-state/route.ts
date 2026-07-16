@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import type { UserLearningState } from "@/features/hanzihome/types";
@@ -89,7 +90,7 @@ export async function PUT(request: Request) {
   return NextResponse.json(
    {
     error: "Invalid learning state payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

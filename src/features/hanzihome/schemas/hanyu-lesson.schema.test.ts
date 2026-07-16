@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { ExerciseSchema } from "./hanyuLesson.schema";
+import { ExerciseSchema } from "./hanyu-lesson.schema";
 
 describe("ExerciseSchema", () => {
  it("preserves Vietnamese labels for a choose-words word bank", () => {

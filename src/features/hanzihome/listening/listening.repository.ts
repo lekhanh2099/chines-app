@@ -44,7 +44,7 @@ const sectionPayloadSchema = z.object({
 });
 
 const sectionRowSchema = z.object({
- id: z.string().uuid(),
+ id: z.uuid(),
  source_section_id: z.string().min(1),
  section_order: z.number().int().positive(),
  title: z.string(),
@@ -58,7 +58,7 @@ const runtimeOptionSchema = listeningOptionSchema.extend({
 
 const itemRowSchema = z.object({
  id: z.string().min(1),
- section_id: z.string().uuid(),
+ section_id: z.uuid(),
  item_order: z.number().int().positive(),
  category: z.enum(["listening_comprehension", "pronunciation", "extra_practice"]),
  item_type: z.enum([

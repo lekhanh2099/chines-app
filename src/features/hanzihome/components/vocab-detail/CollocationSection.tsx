@@ -1,4 +1,4 @@
-import type { Collocation } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { Collocation } from "@/features/hanzihome/schemas/vocab.types";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";

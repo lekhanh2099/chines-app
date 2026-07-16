@@ -5,7 +5,7 @@ import {
  mutateCanonicalContent,
  mutationError,
 } from "@/features/hanzihome/server/canonical-content-mutation";
-import { SectionSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
 export const dynamic = "force-dynamic";
 
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
  const body: unknown = await request.json().catch(() => null);
  const parsed = createSectionSchema.safeParse(body);
  if (!parsed.success) {
-  return mutationError("Invalid section payload", 400, parsed.error.flatten());
+  return mutationError("Invalid section payload", 400, z.flattenError(parsed.error));
  }
 
  const sourceSectionId = `section_${randomUUID()}`;

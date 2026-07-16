@@ -16,7 +16,7 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 3. Identify the highest-risk unproven contract: state transition, response validation, renderer shape, node isolation, authorization, or migration invariant.
 4. Add the smallest deterministic test at the lowest useful boundary. Prefer pure schema/mapper tests, then hook/component integration, then route/database integration, then a focused end-to-end smoke flow.
 5. Use representative real shapes and sparse/error variants. Do not assert fabricated fixtures that cannot occur in the app.
-6. Run targeted tests first, then `npm run test:run`, `npm run typecheck`, `npm run lint`, and `npm run build` for source changes.
+6. Run targeted tests first, then the repository quality gate `npm run check` for source changes.
 
 ## Required assertions by change type
 

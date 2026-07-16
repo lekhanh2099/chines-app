@@ -1,4 +1,4 @@
-import type { CharacterWritingItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { CharacterWritingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 

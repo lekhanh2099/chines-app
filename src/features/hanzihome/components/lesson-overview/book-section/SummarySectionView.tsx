@@ -1,4 +1,4 @@
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, LooseItemGrid, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";

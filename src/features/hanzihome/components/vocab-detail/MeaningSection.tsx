@@ -1,4 +1,4 @@
-import type { Meaning } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { Meaning } from "@/features/hanzihome/schemas/vocab.types";
 import { VocabReadingSection } from "./VocabReadingSection";
 
 export function MeaningSection({ meaning }: { meaning: Meaning }) {

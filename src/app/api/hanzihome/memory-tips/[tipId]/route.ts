@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { mapMemoryTipRow } from "@/features/hanzihome/memory-tips/memory-tip.mapper";
 import {
@@ -90,7 +91,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return NextResponse.json(
    {
     error: "Invalid memory tip payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

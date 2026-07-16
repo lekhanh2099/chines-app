@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { z } from "zod";
 
-import { SectionSchema } from "../../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
+import { SectionSchema } from "../../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
 
 const seedRowSchema = z.looseObject({
  id: z.string().min(1),

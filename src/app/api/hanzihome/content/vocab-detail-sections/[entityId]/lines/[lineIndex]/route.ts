@@ -29,7 +29,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  const body: unknown = await request.json().catch(() => null);
  const parsed = lineMutationSchema.safeParse(body);
  if (!parsed.success) {
-  return mutationError("Invalid detail line mutation", 400, parsed.error.flatten());
+  return mutationError("Invalid detail line mutation", 400, z.flattenError(parsed.error));
  }
  if (!parsed.data.expectedUpdatedAt) return mutationError("expectedUpdatedAt is required", 400);
 

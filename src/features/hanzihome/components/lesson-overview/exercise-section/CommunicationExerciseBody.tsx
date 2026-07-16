@@ -1,5 +1,5 @@
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { ExerciseQuestionCard } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";

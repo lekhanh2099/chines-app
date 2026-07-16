@@ -58,22 +58,20 @@ const radicalGroupSchema = z.object({
  chars: z.array(z.string().trim().min(1)),
 });
 
-const radicalColumnValuesSchema = z
- .object({
-  radical: z.string().trim().min(1, "Thiếu bộ thủ"),
-  name_vi: z.string().nullable(),
-  strokes: z.number().int().positive().nullable(),
-  core_meaning: z.object({
-   modern: z.string(),
-   history: z.string(),
-  }),
-  recognition: z.string().nullable(),
-  variants: z.array(radicalComponentSchema),
-  related_components: z.array(radicalComponentSchema),
-  distinguish: z.array(z.string()),
-  groups: z.array(radicalGroupSchema),
- })
- .strict();
+const radicalColumnValuesSchema = z.strictObject({
+ radical: z.string().trim().min(1, "Thiếu bộ thủ"),
+ name_vi: z.string().nullable(),
+ strokes: z.number().int().positive().nullable(),
+ core_meaning: z.object({
+  modern: z.string(),
+  history: z.string(),
+ }),
+ recognition: z.string().nullable(),
+ variants: z.array(radicalComponentSchema),
+ related_components: z.array(radicalComponentSchema),
+ distinguish: z.array(z.string()),
+ groups: z.array(radicalGroupSchema),
+});
 
 const radicalFormSchema = z.object({
  radical: z.string().trim().min(1, "Thiếu bộ thủ"),

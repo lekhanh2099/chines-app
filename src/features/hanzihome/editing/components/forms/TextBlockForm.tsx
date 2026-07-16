@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-import { TextBlockSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { TextBlockSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
 import { createNestedEditAdapter } from "../../adapters/createNestedEditAdapter";
 import {

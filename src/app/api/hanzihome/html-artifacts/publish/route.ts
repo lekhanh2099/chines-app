@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 const publishHtmlArtifactPayloadSchema = createHtmlArtifactPayloadSchema.extend({
- artifactId: z.string().uuid().optional(),
+ artifactId: z.uuid().optional(),
  mode: z.enum(["create", "update", "upsert"]).default("upsert"),
 });
 
@@ -254,7 +254,7 @@ export async function POST(request: Request) {
   return NextResponse.json(
    {
     error: "Invalid HTML artifact publish payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 import {
  mutationEnvelopeSchema,
  mutationResponseSchema,
@@ -27,7 +29,11 @@ export async function PATCH(request: Request, context: RouteContext) {
  const envelope = mutationEnvelopeSchema.safeParse(body);
 
  if (!envelope.success) {
-  return mutationError("Invalid listening item mutation payload", 400, envelope.error.flatten());
+  return mutationError(
+   "Invalid listening item mutation payload",
+   400,
+   z.flattenError(envelope.error),
+  );
  }
  if (!envelope.data.expectedUpdatedAt) {
   return mutationError("expectedUpdatedAt is required", 400);
@@ -35,7 +41,7 @@ export async function PATCH(request: Request, context: RouteContext) {
 
  const changes = updateListeningItemChangesSchema.safeParse(envelope.data.changes);
  if (!changes.success) {
-  return mutationError("Invalid listening item changes", 400, changes.error.flatten());
+  return mutationError("Invalid listening item changes", 400, z.flattenError(changes.error));
  }
 
  const supabase = await createClient();
@@ -52,7 +58,11 @@ export async function PATCH(request: Request, context: RouteContext) {
 
  const response = mutationResponseSchema.safeParse(data);
  if (!response.success) {
-  return mutationError("Invalid listening item mutation response", 500, response.error.flatten());
+  return mutationError(
+   "Invalid listening item mutation response",
+   500,
+   z.flattenError(response.error),
+  );
  }
 
  return Response.json(response.data);

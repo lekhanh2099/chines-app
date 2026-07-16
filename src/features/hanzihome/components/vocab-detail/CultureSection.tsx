@@ -1,4 +1,4 @@
-import type { CultureNote } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { CultureNote } from "@/features/hanzihome/schemas/vocab.types";
 import { VocabReadingSection } from "./VocabReadingSection";
 
 export function CultureSection({ culture }: { culture: CultureNote | undefined }) {

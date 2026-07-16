@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { HanyuLessonSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { runtimeDeepVocabularyItemSchema } from "@/features/hanzihome/schemas/runtime-content.schema";
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
@@ -168,7 +168,7 @@ const metaSchema = z.object({
 });
 
 export const hanziHomeCatalogSchema = z.object({
- source: z.enum(["db", "static", "empty"]),
+ source: z.enum(["db", "empty"]),
  courses: z.array(catalogCourseSchema),
  books: z.array(bookSchema),
  lessons: z.array(lessonSchema),

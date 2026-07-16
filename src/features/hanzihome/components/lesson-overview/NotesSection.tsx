@@ -1,4 +1,4 @@
-import type { NoteItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { NoteItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";

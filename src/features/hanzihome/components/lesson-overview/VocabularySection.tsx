@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
-import type { VocabularyItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";

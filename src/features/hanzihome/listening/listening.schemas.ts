@@ -294,7 +294,7 @@ export const listeningRuntimeItemSchema = z.object({
 });
 
 export const updateListeningItemChangesSchema = z
- .object({
+ .strictObject({
   prompt_zh: z.string().trim().min(1).nullable().optional(),
   transcript: listeningTranscriptSchema.nullable().optional(),
   options: z.array(listeningRuntimeOptionSchema).optional(),
@@ -302,7 +302,6 @@ export const updateListeningItemChangesSchema = z
   explanation_vi: z.string().trim().min(1).nullable().optional(),
   metadata: listeningItemMetadataSchema.optional(),
  })
- .strict()
  .refine((value) => Object.keys(value).length > 0, "At least one changed field is required");
 
 export const listeningRuntimeSectionSchema = z.object({

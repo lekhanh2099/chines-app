@@ -9,7 +9,7 @@ import {
  Tags,
 } from "lucide-react";
 
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 export const sectionIcons: Partial<Record<Section["type"], typeof BookOpen>> = {
  text: BookOpen,

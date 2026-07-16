@@ -1,4 +1,4 @@
-import type { WordFormation } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { WordFormation } from "@/features/hanzihome/schemas/vocab.types";
 import { VocabReadingSection } from "./VocabReadingSection";
 
 export function WordFormationDetailSection({ formation }: { formation: WordFormation }) {

@@ -1,4 +1,4 @@
-import type { GrammarPoint } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { GrammarPoint } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";

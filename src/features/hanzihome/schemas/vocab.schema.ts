@@ -1,22 +1,6 @@
 import { z } from "zod";
 
-/**
- * Hanyu Deep Vocabulary Schema v2.1.0
- * -------------------------------------------------------
- * Purpose:
- * - Store one lesson's deep vocabulary data in UI-ready JSON.
- * - Avoid markdown/text blobs for structured content.
- * - Support radical-aware character analysis.
- * - Every meaningful object has `notes` for future UI flexibility.
- *
- * Recommended usage:
- * const parsed = DeepVocabularyLessonSchema.parse(data);
- * type DeepVocabularyLesson = z.infer<typeof DeepVocabularyLessonSchema>;
- */
-
-/* -------------------------------------------------------------------------- */
-/* Common helpers                                                             */
-/* -------------------------------------------------------------------------- */
+// Common helpers
 
 export const NonEmptyStringSchema = z.string().trim().min(1);
 
@@ -54,9 +38,7 @@ const FlexibleStringSchema = z.preprocess((value) => {
  return value;
 }, OptionalStringSchema);
 
-/* -------------------------------------------------------------------------- */
-/* Universal notes                                                            */
-/* -------------------------------------------------------------------------- */
+// Universal notes
 
 export const NoteKindSchema = z.enum([
  "general",
@@ -82,9 +64,7 @@ export const NoteSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Source / root metadata                                                     */
-/* -------------------------------------------------------------------------- */
+// Source / root metadata
 
 export const SourceFileSchema = z.object({
  name: NonEmptyStringSchema,
@@ -120,9 +100,7 @@ export const LessonTitleSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* POS / tags                                                                 */
-/* -------------------------------------------------------------------------- */
+// POS / tags
 
 export const PartOfSpeechSchema = z.enum([
  "noun",
@@ -174,9 +152,7 @@ export const PosSchema = z.preprocess(
 
 export const ImportanceLevelSchema = z.enum(["A+++", "A++", "A+", "A", "B+", "B", "C", "unknown"]);
 
-/* -------------------------------------------------------------------------- */
-/* Lesson overview groups                                                     */
-/* -------------------------------------------------------------------------- */
+// Lesson overview groups
 
 export const VocabularyGroupSchema = z.object({
  id: IdSchema,
@@ -186,9 +162,7 @@ export const VocabularyGroupSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Meaning                                                                    */
-/* -------------------------------------------------------------------------- */
+// Meaning
 
 export const MeaningSchema = z.object({
  hanviet: OptionalStringSchema,
@@ -207,9 +181,7 @@ export const MeaningSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Radical-aware character / word formation                                   */
-/* -------------------------------------------------------------------------- */
+// Radical-aware character / word formation
 
 export const ComponentRoleSchema = z.enum([
  "radical",
@@ -312,9 +284,7 @@ export const WordFormationSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Comparisons                                                                */
-/* -------------------------------------------------------------------------- */
+// Comparisons
 
 export const RelatedWordSchema = z.preprocess(
  (value) => {
@@ -393,9 +363,7 @@ export const ComparisonSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Collocations / 搭配                                                        */
-/* -------------------------------------------------------------------------- */
+// Collocations / 搭配
 
 export const CollocationSchema = z.object({
  id: IdSchema,
@@ -412,9 +380,7 @@ export const CollocationSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Examples                                                                   */
-/* -------------------------------------------------------------------------- */
+// Examples
 
 export const ExampleLevelSchema = z.preprocess(
  (value) => {
@@ -450,9 +416,7 @@ export const VocabularyExampleSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Culture / fact                                                             */
-/* -------------------------------------------------------------------------- */
+// Culture / fact
 
 export const CultureNoteSchema = z.object({
  title: OptionalStringSchema,
@@ -465,9 +429,7 @@ export const CultureNoteSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Warnings / common mistakes                                                 */
-/* -------------------------------------------------------------------------- */
+// Warnings / common mistakes
 
 export const UsageExampleSchema = z.object({
  zh: NonEmptyStringSchema,
@@ -506,9 +468,7 @@ export const WarningSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Flashcards                                                                 */
-/* -------------------------------------------------------------------------- */
+// Flashcards
 
 export const FlashcardModeSchema = z.enum([
  "hanzi_to_meaning",
@@ -533,9 +493,7 @@ export const FlashcardSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Deep vocabulary item                                                       */
-/* -------------------------------------------------------------------------- */
+// Deep vocabulary item
 
 export const DeepVocabularyItemSchema = z.object({
  id: IdSchema,
@@ -589,9 +547,7 @@ export const DeepVocabularyItemSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Parse metadata                                                             */
-/* -------------------------------------------------------------------------- */
+// Parse metadata
 
 export const ParseWarningSchema = z.object({
  type: z.enum([
@@ -622,9 +578,7 @@ export const ParseMetaSchema = z.object({
  notes: z.array(NoteSchema).default([]),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Root lesson schema                                                         */
-/* -------------------------------------------------------------------------- */
+// Root lesson schema
 
 export const DeepVocabularyLessonSchema = z.object({
  schema_version: z.literal("deep_vocab_v2.1.0").default("deep_vocab_v2.1.0"),
@@ -661,46 +615,3 @@ export const DeepVocabularyLessonSchema = z.object({
 
  notes: z.array(NoteSchema).default([]),
 });
-
-/* -------------------------------------------------------------------------- */
-/* Inferred TypeScript types                                                  */
-/* -------------------------------------------------------------------------- */
-
-export type NoteKind = z.infer<typeof NoteKindSchema>;
-export type Note = z.infer<typeof NoteSchema>;
-
-export type SourceFile = z.infer<typeof SourceFileSchema>;
-export type LessonSource = z.infer<typeof LessonSourceSchema>;
-export type LessonTitle = z.infer<typeof LessonTitleSchema>;
-
-export type VocabularyGroup = z.infer<typeof VocabularyGroupSchema>;
-
-export type PartOfSpeech = z.infer<typeof PartOfSpeechSchema>;
-export type Pos = z.infer<typeof PosSchema>;
-
-export type Meaning = z.infer<typeof MeaningSchema>;
-
-export type RadicalForm = z.infer<typeof RadicalFormSchema>;
-export type RadicalInfo = z.infer<typeof RadicalInfoSchema>;
-
-export type CharacterComponent = z.infer<typeof CharacterComponentSchema>;
-export type CharacterAnalysis = z.infer<typeof CharacterAnalysisSchema>;
-export type WordFormation = z.infer<typeof WordFormationSchema>;
-
-export type RelatedWord = z.infer<typeof RelatedWordSchema>;
-export type ContrastPair = z.infer<typeof ContrastPairSchema>;
-export type Comparison = z.infer<typeof ComparisonSchema>;
-
-export type Collocation = z.infer<typeof CollocationSchema>;
-export type VocabularyExample = z.infer<typeof VocabularyExampleSchema>;
-
-export type CultureNote = z.infer<typeof CultureNoteSchema>;
-
-export type UsageExample = z.infer<typeof UsageExampleSchema>;
-export type Warning = z.infer<typeof WarningSchema>;
-
-export type Flashcard = z.infer<typeof FlashcardSchema>;
-
-export type DeepVocabularyItem = z.infer<typeof DeepVocabularyItemSchema>;
-export type ParseMeta = z.infer<typeof ParseMetaSchema>;
-export type DeepVocabularyLesson = z.infer<typeof DeepVocabularyLessonSchema>;

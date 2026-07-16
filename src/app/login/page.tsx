@@ -15,7 +15,7 @@ import { getSafeNextPath } from "@/lib/auth/safe-next-path";
 import { toast } from "sonner";
 import { BookOpen, LogIn, UserPlus } from "lucide-react";
 
-const emailSchema = z.string().trim().toLowerCase().email("Email không hợp lệ");
+const emailSchema = z.string().trim().toLowerCase().pipe(z.email("Email không hợp lệ"));
 const passwordLoginSchema = z.string().min(1, "Vui lòng nhập mật khẩu");
 const strongPasswordSchema = z
  .string()

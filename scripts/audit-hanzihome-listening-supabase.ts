@@ -19,14 +19,14 @@ const BASELINE = {
 
 const lessonRowSchema = z.object({ id: z.string().min(1) });
 const sectionRowSchema = z.object({
- id: z.string().uuid(),
+ id: z.uuid(),
  lesson_id: z.string().min(1),
  payload: z.record(z.string(), z.unknown()),
 });
 const itemRowSchema = z.object({
  id: z.string().min(1),
  lesson_id: z.string().min(1),
- section_id: z.string().uuid(),
+ section_id: z.uuid(),
  item_type: z.string().min(1),
  prompt_zh: z.string().nullable(),
  transcript: z.unknown().nullable(),

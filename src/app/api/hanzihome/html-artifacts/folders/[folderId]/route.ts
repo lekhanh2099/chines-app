@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { mapHtmlArtifactFolderRow } from "@/features/hanzihome/html-artifacts/html-artifact.mapper";
 import {
@@ -83,7 +84,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return NextResponse.json(
    {
     error: "Invalid HTML artifact folder payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

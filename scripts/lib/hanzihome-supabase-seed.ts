@@ -5,10 +5,8 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { config as loadEnv } from "dotenv";
 import { z } from "zod";
 
-import {
- SectionSchema,
- type Section,
-} from "../../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
+import { SectionSchema } from "../../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
+import type { Section } from "../../src/features/hanzihome/schemas/hanyu-lesson.types.ts";
 
 export const HANZIHOME_DATASETS = ["q2", "q3"] as const;
 export type HanziHomeDataset = (typeof HANZIHOME_DATASETS)[number];

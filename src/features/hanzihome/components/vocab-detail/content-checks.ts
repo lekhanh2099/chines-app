@@ -4,7 +4,7 @@ import type {
  Meaning,
  Warning,
  WordFormation,
-} from "@/features/hanzihome/static-json/schemas/vocab.schema";
+} from "@/features/hanzihome/schemas/vocab.types";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 
 import type { SectionView } from "./types";

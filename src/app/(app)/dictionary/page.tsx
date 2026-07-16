@@ -92,7 +92,7 @@ function getMeaningFromAnalysis(value: unknown) {
     )
     .optional(),
   })
-  .passthrough()
+  .loose()
   .safeParse(value);
 
  if (!parsed.success) {

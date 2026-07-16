@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import {
  htmlArtifactRuntimeStateSchema,
@@ -110,7 +111,7 @@ export async function PUT(request: Request, context: RouteContext) {
   return NextResponse.json(
    {
     error: "Invalid HTML artifact runtime state payload",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

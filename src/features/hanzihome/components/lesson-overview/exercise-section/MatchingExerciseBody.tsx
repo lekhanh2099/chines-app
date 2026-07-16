@@ -1,5 +1,5 @@
 import type { EditableNodePath } from "@/features/hanzihome/editing";
-import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import type { LessonDisplayMode } from "../types";
 import { asRecord } from "../utils";

@@ -1,4 +1,4 @@
-import type { ReadingItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import {
  EditableNodeWrapper,
  NestedEditControls,

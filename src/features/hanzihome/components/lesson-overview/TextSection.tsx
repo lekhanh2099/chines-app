@@ -1,4 +1,4 @@
-import type { TextBlock } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { TextBlock } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";

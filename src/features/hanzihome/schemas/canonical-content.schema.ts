@@ -153,23 +153,22 @@ const grammarDetailFields = z.object({
 });
 
 const createChangesSchemas: Record<CanonicalEntityType, z.ZodType> = {
- course: courseFields.strict(),
- book: bookFields.strict(),
- lesson: lessonFields.strict(),
- section: sectionFields.strict(),
- lesson_text: lessonTextFields.strict(),
- vocab_item: vocabItemFields.strict(),
- vocab_example: vocabExampleFields.strict(),
- vocab_detail_section: vocabDetailFields.strict(),
- grammar_point: grammarPointFields.strict(),
- grammar_example: grammarExampleFields.strict(),
- grammar_detail_section: grammarDetailFields.strict(),
+ course: z.strictObject(courseFields.shape),
+ book: z.strictObject(bookFields.shape),
+ lesson: z.strictObject(lessonFields.shape),
+ section: z.strictObject(sectionFields.shape),
+ lesson_text: z.strictObject(lessonTextFields.shape),
+ vocab_item: z.strictObject(vocabItemFields.shape),
+ vocab_example: z.strictObject(vocabExampleFields.shape),
+ vocab_detail_section: z.strictObject(vocabDetailFields.shape),
+ grammar_point: z.strictObject(grammarPointFields.shape),
+ grammar_example: z.strictObject(grammarExampleFields.shape),
+ grammar_detail_section: z.strictObject(grammarDetailFields.shape),
 };
 
 function updateSchema(schema: z.ZodObject<z.ZodRawShape>) {
- return schema
-  .partial()
-  .strict()
+ return z
+  .strictObject(schema.partial().shape)
   .refine((value) => Object.keys(value).length > 0, "At least one changed field is required");
 }
 
@@ -217,16 +216,16 @@ const updateChangesSchemas: Record<CanonicalEntityType, z.ZodType> = {
 };
 
 const reorderChangesSchemas: Partial<Record<CanonicalEntityType, z.ZodType>> = {
- course: z.object({ course_order: positiveInteger }).strict(),
- book: z.object({ book_order: positiveInteger }).strict(),
- lesson: z.object({ lesson_order: positiveInteger }).strict(),
- section: z.object({ section_order: positiveInteger }).strict(),
- vocab_item: z.object({ item_order: positiveInteger }).strict(),
- vocab_example: z.object({ example_order: positiveInteger }).strict(),
- vocab_detail_section: z.object({ section_order: positiveInteger }).strict(),
- grammar_point: z.object({ point_order: positiveInteger }).strict(),
- grammar_example: z.object({ example_order: positiveInteger }).strict(),
- grammar_detail_section: z.object({ section_order: positiveInteger }).strict(),
+ course: z.strictObject({ course_order: positiveInteger }),
+ book: z.strictObject({ book_order: positiveInteger }),
+ lesson: z.strictObject({ lesson_order: positiveInteger }),
+ section: z.strictObject({ section_order: positiveInteger }),
+ vocab_item: z.strictObject({ item_order: positiveInteger }),
+ vocab_example: z.strictObject({ example_order: positiveInteger }),
+ vocab_detail_section: z.strictObject({ section_order: positiveInteger }),
+ grammar_point: z.strictObject({ point_order: positiveInteger }),
+ grammar_example: z.strictObject({ example_order: positiveInteger }),
+ grammar_detail_section: z.strictObject({ section_order: positiveInteger }),
 };
 
 export function getCanonicalChangesSchema(
@@ -238,5 +237,5 @@ export function getCanonicalChangesSchema(
  if (operation === "reorder") {
   return reorderChangesSchemas[entityType] ?? z.never();
  }
- return z.object({}).strict();
+ return z.strictObject({});
 }

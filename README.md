@@ -35,7 +35,7 @@ npm run build
 - Add schema changes as timestamped files under `supabase/migrations/`.
 - Refresh checked-in database types with `npm run types:supabase` after setting `SUPABASE_PROJECT_REF` and `SUPABASE_ACCESS_TOKEN`.
 - Use `npm run types:supabase:check` to detect remote type drift.
-- Never mutate static JSON from the app or trust client-provided ownership fields.
+- Never mutate external static seed artifacts from the app or trust client-provided ownership fields.
 
 ## Documentation
 

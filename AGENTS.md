@@ -18,11 +18,11 @@ Content ownership:
 - Course → Book/Volume → Lesson → Module is the current model.
 - Lesson notes belong to the main Notes system and should be linked through a relation table, not embedded as note IDs inside lesson JSON.
 
-Do not mutate static JSON from the app.
+Do not mutate external static seed artifacts from the app.
 
 Do not create local JSON write APIs.
 
-Do not duplicate built-in static JSON into Supabase as a second source of truth unless the task is an explicit seed import/migration task.
+Do not duplicate external static seed artifacts into Supabase as a second source of truth unless the task is an explicit seed import/migration task.
 
 If seed content is editable, the persistence model must be explicit: admin-only seed edit or copy-on-write user override. Do not silently turn a shared seed row into a user-owned row.
 
@@ -136,10 +136,10 @@ Expected HanziHome structure:
 src/features/hanzihome/
   HanziHomePage.tsx
   HanziHomeWorkspace.tsx
-  static-data.ts
   db-data.ts
   types.ts
   hanzihome-api.schemas.ts
+  schemas/
   components/
   hooks/
   editing/
@@ -736,7 +736,7 @@ The bundled `.agents/skills/migrate-radix-to-base/SKILL.md` is only for an expli
 
 Stop and ask before coding if:
 
-- The requested change would mutate static JSON from the app.
+- The requested change would mutate external static seed artifacts from the app.
 - The change requires editing seed DB rows but admin/copy-on-write policy is unclear.
 - The change requires delete/reinsert of child rows for a normal small edit.
 - The feature would fetch all lessons/content for dashboard use.

@@ -1,8 +1,5 @@
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import type {
- ReadingItem,
- Section,
-} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { ReadingItem, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, GenericItemCard, hasRenderableValue } from "./CommonCards";
 import { ExerciseCard } from "./ExerciseSection";

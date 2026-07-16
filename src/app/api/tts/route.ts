@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
  if (!parsed.success) {
   return NextResponse.json(
-   { error: "Payload không hợp lệ", issues: parsed.error.flatten() },
+   { error: "Payload không hợp lệ", issues: z.flattenError(parsed.error) },
    { status: 400 },
   );
  }

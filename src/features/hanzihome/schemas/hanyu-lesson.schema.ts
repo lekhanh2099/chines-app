@@ -1,22 +1,6 @@
 import { z } from "zod";
 
-/**
- * Hanyu Lesson App Data Schema v2.1.0
- * -------------------------------------------------------
- * Purpose:
- * - Store one Chinese textbook lesson in a stable, UI-first structure.
- * - Keep outer sections fixed.
- * - Allow inner blocks/exercises/readings to expand by `type`.
- * - Support rendering, flashcards, grammar highlighting, answer checking, and reading evidence.
- *
- * Recommended usage:
- * const parsed = HanyuLessonSchema.parse(data);
- * type HanyuLesson = z.infer<typeof HanyuLessonSchema>;
- */
-
-/* -------------------------------------------------------------------------- */
-/* Common primitives                                                          */
-/* -------------------------------------------------------------------------- */
+// Common primitives
 
 export const LocalizedTextSchema = z.object({
  zh: z.string().optional().default(""),
@@ -62,7 +46,7 @@ export const RenderingSchema = z
   shuffle_questions: z.boolean().optional(),
   shuffle_choices: z.boolean().optional(),
  })
- .passthrough();
+ .loose();
 
 export const GradingModeSchema = z.enum([
  "exact",
@@ -82,7 +66,7 @@ export const GradingSchema = z
   case_sensitive: z.boolean().optional(),
   reason: z.string().optional(),
  })
- .passthrough();
+ .loose();
 
 export const EvidenceSchema = z.object({
  paragraph_id: z.string(),
@@ -103,9 +87,7 @@ export const ExampleSchema = z.object({
  audio_key: z.string().optional().default(""),
 });
 
-/* -------------------------------------------------------------------------- */
-/* Source / root                                                              */
-/* -------------------------------------------------------------------------- */
+// Source / root
 
 export const SourceFileSchema = z
  .object({
@@ -113,7 +95,7 @@ export const SourceFileSchema = z
   type: z.string(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const SourceSchema = z.object({
  book: z.string(),
@@ -142,11 +124,9 @@ export const LessonMetadataSchema = z
   lesson_title_en: z.string().optional().default(""),
   source_files: z.array(SourceFileSchema).optional().default([]),
  })
- .passthrough();
+ .loose();
 
-/* -------------------------------------------------------------------------- */
-/* Text section                                                               */
-/* -------------------------------------------------------------------------- */
+// Text section
 
 export const TextLineSchema = z
  .object({
@@ -161,7 +141,7 @@ export const TextLineSchema = z
   grammar_refs: z.array(z.string()).optional().default([]),
   notes: z.array(z.string()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const TextSceneSchema = z
  .object({
@@ -170,7 +150,7 @@ export const TextSceneSchema = z
   summary_vi: z.string().optional().default(""),
   lines: z.array(TextLineSchema),
  })
- .passthrough();
+ .loose();
 
 export const TextDialogueBlockSchema = z
  .object({
@@ -183,7 +163,7 @@ export const TextDialogueBlockSchema = z
   lines: z.array(TextLineSchema).optional().default([]),
   comprehension_questions: z.array(z.unknown()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const TextParagraphSchema = z
  .object({
@@ -196,7 +176,7 @@ export const TextParagraphSchema = z
   vocab_refs: z.array(z.string()).optional().default([]),
   grammar_refs: z.array(z.string()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const TextNarrativeBlockSchema = z
  .object({
@@ -209,16 +189,14 @@ export const TextNarrativeBlockSchema = z
   lines: z.array(TextLineSchema).optional().default([]),
   comprehension_questions: z.array(z.unknown()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const TextBlockSchema = z.discriminatedUnion("type", [
  TextDialogueBlockSchema,
  TextNarrativeBlockSchema,
 ]);
 
-/* -------------------------------------------------------------------------- */
-/* Vocabulary section                                                         */
-/* -------------------------------------------------------------------------- */
+// Vocabulary section
 
 export const PartOfSpeechSchema = z.string().min(1).default("unknown");
 
@@ -256,11 +234,9 @@ export const VocabularyItemSchema = z
   audio_key: z.string().optional().default(""),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
-/* -------------------------------------------------------------------------- */
-/* Notes section                                                              */
-/* -------------------------------------------------------------------------- */
+// Notes section
 
 export const NoteItemSchema = z
  .object({
@@ -274,11 +250,9 @@ export const NoteItemSchema = z
   source_refs: z.array(z.string()).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
-/* -------------------------------------------------------------------------- */
-/* Grammar section                                                            */
-/* -------------------------------------------------------------------------- */
+// Grammar section
 
 export const FormulaSchema = z.object({
  label: z.string(),
@@ -391,7 +365,7 @@ export const GrammarMicroPracticeQuestionSchema = z
   explanation_vi: z.string().optional().default(""),
   grading: GradingSchema.optional(),
  })
- .passthrough();
+ .loose();
 
 export const GrammarMicroPracticeBlockSchema = z.object({
  id: z.string(),
@@ -408,7 +382,7 @@ export const GenericGrammarBlockSchema = z
   order: z.number().int().positive(),
   title: z.string(),
  })
- .passthrough();
+ .loose();
 
 export const GrammarBlockSchema = z
  .discriminatedUnion("type", [
@@ -434,7 +408,7 @@ const GrammarPointBaseSchema = z
   tags: z.array(z.string()).optional().default([]),
   blocks: z.array(GrammarBlockSchema),
  })
- .passthrough();
+ .loose();
 
 export const GrammarPointSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -469,9 +443,7 @@ export const GrammarPointSchema = z.preprocess((value) => {
  };
 }, GrammarPointBaseSchema);
 
-/* -------------------------------------------------------------------------- */
-/* Exercises                                                                  */
-/* -------------------------------------------------------------------------- */
+// Exercises
 
 export const ExerciseBaseSchema = z
  .object({
@@ -489,7 +461,7 @@ export const ExerciseBaseSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const PhoneticsPairSchema = z.object({
  id: z.string(),
@@ -562,7 +534,7 @@ export const AnswerKeyItemSchema = z
   label: z.string().optional(),
   check_needed: z.boolean().optional(),
  })
- .passthrough();
+ .loose();
 
 export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("choose_words_fill_blank"),
@@ -672,7 +644,7 @@ export const CommunicationPracticeTaskSchema = z
   instruction_vi: z.string(),
   sample_answer: z.array(z.string()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("communication_dialogue"),
@@ -682,7 +654,7 @@ export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  practice_tasks: z.array(CommunicationPracticeTaskSchema).optional().default([]),
 });
 
-export const GenericExerciseSchema = ExerciseBaseSchema.passthrough();
+export const GenericExerciseSchema = ExerciseBaseSchema.loose();
 
 export const ExerciseSchema = z
  .discriminatedUnion("type", [
@@ -698,9 +670,7 @@ export const ExerciseSchema = z
  ])
  .or(GenericExerciseSchema);
 
-/* -------------------------------------------------------------------------- */
-/* Reading section                                                            */
-/* -------------------------------------------------------------------------- */
+// Reading section
 
 export const SupplementaryWordSchema = z.object({
  id: z.string(),
@@ -736,7 +706,7 @@ export const ReadingTextItemSchema = z
   answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const ReadingShortAnswerQuestionSchema = z.object({
  id: z.string(),
@@ -766,7 +736,7 @@ export const ReadingShortAnswerItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const ReadingTrueFalseQuestionSchema = z.object({
  id: z.string(),
@@ -793,7 +763,7 @@ export const ReadingTrueFalseItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const ClozeTextSegmentSchema = z.object({
  id: z.string(),
@@ -840,7 +810,7 @@ export const ReadingClozeItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const ReadingMultipleChoiceItemSchema = z
  .object({
@@ -855,7 +825,7 @@ export const ReadingMultipleChoiceItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const GenericReadingItemSchema = z
  .object({
@@ -866,7 +836,7 @@ export const GenericReadingItemSchema = z
   title_vi: z.string().optional().default(""),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
 export const ReadingItemSchema = z
  .discriminatedUnion("type", [
@@ -878,9 +848,7 @@ export const ReadingItemSchema = z
  ])
  .or(GenericReadingItemSchema);
 
-/* -------------------------------------------------------------------------- */
-/* Character writing section                                                  */
-/* -------------------------------------------------------------------------- */
+// Character writing section
 
 export const CharacterWritingItemSchema = z
  .object({
@@ -901,11 +869,9 @@ export const CharacterWritingItemSchema = z
    .optional()
    .default({ grid_type: "田字格", repeat_count: 6 }),
  })
- .passthrough();
+ .loose();
 
-/* -------------------------------------------------------------------------- */
-/* Sections                                                                   */
-/* -------------------------------------------------------------------------- */
+// Sections
 
 export const TextSectionSchema = z
  .object({
@@ -916,7 +882,7 @@ export const TextSectionSchema = z
   title_vi: z.string().optional().default(""),
   blocks: z.array(TextBlockSchema),
  })
- .passthrough();
+ .loose();
 
 export const VocabularySectionSchema = z
  .object({
@@ -927,7 +893,7 @@ export const VocabularySectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(VocabularyItemSchema),
  })
- .passthrough();
+ .loose();
 
 export const NotesSectionSchema = z
  .object({
@@ -938,7 +904,7 @@ export const NotesSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(NoteItemSchema),
  })
- .passthrough();
+ .loose();
 
 const GrammarSectionBaseSchema = z
  .object({
@@ -949,7 +915,7 @@ const GrammarSectionBaseSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(GrammarPointSchema),
  })
- .passthrough();
+ .loose();
 
 export const GrammarSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -991,7 +957,7 @@ export const ExercisesSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(ExerciseSchema),
  })
- .passthrough();
+ .loose();
 
 const ReadingSectionBaseSchema = z
  .object({
@@ -1002,7 +968,7 @@ const ReadingSectionBaseSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(ReadingItemSchema),
  })
- .passthrough();
+ .loose();
 
 export const ReadingSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -1063,7 +1029,7 @@ export const CharacterWritingSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(CharacterWritingItemSchema),
  })
- .passthrough();
+ .loose();
 
 export const ProperNounsSectionSchema = z
  .object({
@@ -1074,7 +1040,7 @@ export const ProperNounsSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(z.unknown()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const CommunicationSectionSchema = z
  .object({
@@ -1085,7 +1051,7 @@ export const CommunicationSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(z.unknown()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 export const SummarySectionSchema = z
  .object({
@@ -1097,7 +1063,7 @@ export const SummarySectionSchema = z
   items: z.array(z.unknown()).optional().default([]),
   blocks: z.array(z.unknown()).optional().default([]),
  })
- .passthrough();
+ .loose();
 
 function normalizeSectionInput(value: unknown): unknown {
  const record = schemaRecord(value);
@@ -1174,9 +1140,7 @@ export const SectionSchema = z.preprocess(
  ]),
 );
 
-/* -------------------------------------------------------------------------- */
-/* Summary                                                                    */
-/* -------------------------------------------------------------------------- */
+// Summary
 
 export const SummaryGrammarPointSchema = z.object({
  id: z.string(),
@@ -1188,7 +1152,7 @@ export const SummaryPatternSchema = z
   pattern: z.string(),
   grammar_ref: z.string().optional().default(""),
  })
- .passthrough();
+ .loose();
 
 export const LessonSummarySchema = z
  .object({
@@ -1201,11 +1165,9 @@ export const LessonSummarySchema = z
   exercise_types: z.array(z.string()).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .passthrough();
+ .loose();
 
-/* -------------------------------------------------------------------------- */
-/* Final lesson schema                                                        */
-/* -------------------------------------------------------------------------- */
+// Final lesson schema
 
 export const LessonSchema = z
  .object({
@@ -1222,7 +1184,7 @@ export const LessonSchema = z
    check_needed: false,
   }),
  })
- .passthrough();
+ .loose();
 
 export const HanyuLessonSchema = z
  .object({
@@ -1234,37 +1196,4 @@ export const HanyuLessonSchema = z
   coverage_report: z.unknown().optional(),
   schema_extension_notes: z.unknown().optional(),
  })
- .passthrough();
-
-/* -------------------------------------------------------------------------- */
-/* Exported TypeScript types                                                  */
-/* -------------------------------------------------------------------------- */
-
-export type HanyuLesson = z.infer<typeof HanyuLessonSchema>;
-export type Lesson = z.infer<typeof LessonSchema>;
-export type Section = z.infer<typeof SectionSchema>;
-
-export type TextBlock = z.infer<typeof TextBlockSchema>;
-export type VocabularyItem = z.infer<typeof VocabularyItemSchema>;
-export type NoteItem = z.infer<typeof NoteItemSchema>;
-export type GrammarPoint = z.infer<typeof GrammarPointSchema>;
-export type GrammarBlock = z.infer<typeof GrammarBlockSchema>;
-export type Exercise = z.infer<typeof ExerciseSchema>;
-export type ReadingItem = z.infer<typeof ReadingItemSchema>;
-export type CharacterWritingItem = z.infer<typeof CharacterWritingItemSchema>;
-
-export type Example = z.infer<typeof ExampleSchema>;
-export type Grading = z.infer<typeof GradingSchema>;
-export type Rendering = z.infer<typeof RenderingSchema>;
-
-/* -------------------------------------------------------------------------- */
-/* Helper                                                                     */
-/* -------------------------------------------------------------------------- */
-
-export function parseHanyuLesson(input: unknown): HanyuLesson {
- return HanyuLessonSchema.parse(input);
-}
-
-export function safeParseHanyuLesson(input: unknown) {
- return HanyuLessonSchema.safeParse(input);
-}
+ .loose();

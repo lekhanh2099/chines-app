@@ -44,7 +44,7 @@ export async function PUT(request: NextRequest) {
   return NextResponse.json(
    {
     error: "Invalid prompt settings",
-    issues: parsed.error.flatten(),
+    issues: z.flattenError(parsed.error),
    },
    { status: 400 },
   );

@@ -20,7 +20,7 @@ const radicalGroupSchema = z.object({
 });
 
 const updateRadicalChangesSchema = z
- .object({
+ .strictObject({
   radical: z.string().trim().min(1).optional(),
   name_vi: optionalText,
   strokes: z.number().int().positive().nullable().optional(),
@@ -36,7 +36,6 @@ const updateRadicalChangesSchema = z
   distinguish: z.array(z.string()).optional(),
   groups: z.array(radicalGroupSchema).optional(),
  })
- .strict()
  .refine((value) => Object.keys(value).length > 0, "At least one changed field is required");
 
 const updateRadicalPayloadSchema = z.object({
@@ -75,7 +74,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  const body: unknown = await request.json().catch(() => null);
  const parsedBody = updateRadicalPayloadSchema.safeParse(body);
  if (!parsedBody.success) {
-  return mutationError("Invalid HanziHome radical payload", 400, parsedBody.error.flatten());
+  return mutationError("Invalid HanziHome radical payload", 400, z.flattenError(parsedBody.error));
  }
 
  const { data, error } = await supabase.rpc("hanzihome_update_radical_as_user", {

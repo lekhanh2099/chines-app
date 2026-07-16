@@ -14,7 +14,7 @@ Use this skill before non-trivial HanziHome source edits. It turns `AGENTS.md` i
 Start with the repo contract and current state:
 
 ```bash
-sed -n '1,780p' AGENTS.md
+cat AGENTS.md
 git status --short
 ```
 
@@ -40,7 +40,17 @@ Use the existing ownership boundaries instead of inventing a new layer:
 - Query/data contracts live in hooks, repositories, schemas, or route handlers, not in route pages.
 - Edit UI flows through `src/features/hanzihome/editing` adapters, forms, wrappers, and direct-save helpers.
 - Renderers stay shaped by their lesson/resource data and must not mutate props.
-- Static JSON is seed/fallback content and must not be mutated by app routes.
+- Supabase normalized tables are the runtime content source. External static artifacts are migration/bootstrap inputs only, never an app runtime fallback, and app routes must not mutate them.
+
+## Legacy and Dead-Code Cleanup
+
+For cleanup requests, prove reachability before deleting:
+
+1. Inspect `git status --short` and preserve unrelated user changes.
+2. Run `knip --files` and confirm each candidate with `rg` across source, routes, scripts, tests, and configuration.
+3. Classify each candidate as runtime code, migration/bootstrap tooling, active compatibility behavior, or dead code.
+4. Do not delete a schema, migration, fallback branch, or legacy-named field solely because of its path or name. Verify its call sites and production-data contract first.
+5. Delete only proven-unused files in a focused diff, then rerun dead-code analysis and `npm run check`.
 
 ## Implementation Rules
 

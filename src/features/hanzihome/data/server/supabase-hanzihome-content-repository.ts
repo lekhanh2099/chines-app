@@ -3,15 +3,12 @@ import "server-only";
 import { z } from "zod";
 
 import { createClient } from "@/lib/supabase/server";
-import {
- HanyuLessonSchema,
- SectionSchema,
- type Section,
-} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { HanyuLessonSchema, SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import {
  ImportanceLevelSchema,
  PartOfSpeechSchema,
-} from "@/features/hanzihome/static-json/schemas/vocab.schema";
+} from "@/features/hanzihome/schemas/vocab.schema";
 import { runtimeDeepVocabularyItemSchema } from "@/features/hanzihome/schemas/runtime-content.schema";
 import type {
  GrammarViewModel,
@@ -135,7 +132,7 @@ const LessonTextRowSchema = z.object({
 });
 
 const LessonSectionRowSchema = z.object({
- id: z.string().uuid(),
+ id: z.uuid(),
  lesson_id: z.string(),
  source_section_id: z.string(),
  section_key: z.string(),

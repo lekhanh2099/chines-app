@@ -1,8 +1,5 @@
 import type { EditableNodePath } from "@/features/hanzihome/editing";
-import type {
- Exercise,
- ReadingItem,
-} from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Exercise, ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import type { LessonDisplayMode } from "../types";
 import { CommunicationExerciseBody } from "./CommunicationExerciseBody";

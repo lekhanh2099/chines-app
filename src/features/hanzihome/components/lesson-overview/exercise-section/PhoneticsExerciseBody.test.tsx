@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
-import { ExerciseSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { ExerciseSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
 import { DEFAULT_LESSON_DISPLAY_MODE } from "../types";
 import { PhoneticsExerciseBody } from "./PhoneticsExerciseBody";

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import {
  canonicalEntityTypeSchema,
@@ -63,7 +64,7 @@ export async function mutateCanonicalContent({
  const body: unknown = await request.json().catch(() => null);
  const parsedBody = mutationEnvelopeSchema.safeParse(body);
  if (!parsedBody.success) {
-  return mutationError("Invalid HanziHome mutation payload", 400, parsedBody.error.flatten());
+  return mutationError("Invalid HanziHome mutation payload", 400, z.flattenError(parsedBody.error));
  }
 
  if (parsedOperation !== "create" && !parsedBody.data.expectedUpdatedAt) {
@@ -74,7 +75,7 @@ export async function mutateCanonicalContent({
   parsedBody.data.changes,
  );
  if (!parsedChanges.success) {
-  return mutationError("Invalid HanziHome changes", 400, parsedChanges.error.flatten());
+  return mutationError("Invalid HanziHome changes", 400, z.flattenError(parsedChanges.error));
  }
 
  const { data, error } = await sessionClient.rpc("hanzihome_mutate_content_as_user", {
@@ -97,7 +98,11 @@ export async function mutateCanonicalContent({
 
  const parsedResponse = mutationResponseSchema.safeParse(data);
  if (!parsedResponse.success) {
-  return mutationError("Invalid HanziHome mutation response", 500, parsedResponse.error.flatten());
+  return mutationError(
+   "Invalid HanziHome mutation response",
+   500,
+   z.flattenError(parsedResponse.error),
+  );
  }
 
  return NextResponse.json(parsedResponse.data);

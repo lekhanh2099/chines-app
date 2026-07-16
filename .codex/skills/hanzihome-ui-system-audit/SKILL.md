@@ -16,7 +16,7 @@ Important: HanziHome has a gradient-forward brand. Do not flatten brand surfaces
 Start by reading repository instructions and the current surface before editing:
 
 ```bash
-sed -n '1,260p' AGENTS.md
+cat AGENTS.md
 git status --short
 rg -n "bg-white/|border-white/|text-\[#|shadow-\[|bg-\[linear-gradient|nova-glass-panel|nova-gradient-hero|hanzihome-liquid|border-purple-|bg-emerald-|text-purple-|bg-pink-|bg-sky-" src
 ```
@@ -31,7 +31,8 @@ Inspect these files when they exist:
 - `src/features/home/components/HomePrimitives.tsx`
 - `src/features/home/components/ContinueLearningPanel.tsx`
 - `src/features/home/components/HomeResourceLinks.tsx`
-- `src/features/notebook/components/NotebookHero.tsx`
+- `src/features/notebook/components/NotebookContent.tsx`
+- `src/features/notebook/components/NotebookToolbar.tsx`
 - `src/features/notebook/components/NotebookDeepDive.tsx`
 - HanziHome lesson, exercise, overview, and layout components touched by the task
 
@@ -209,9 +210,7 @@ When the user asks for a review or audit, lead with the current-state verdict an
 For report-only work, validate the skill or artifact changes only. For app code changes, run the checks required by `AGENTS.md`:
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+npm run check
 ```
 
-If the change is only a scoped UI refactor and `next build` fails for an unrelated external dependency, report that explicitly and include the passing checks.
+Do not mark app-code work complete when this gate fails. If a failure is unrelated to the scoped UI change, report the exact failing stage and evidence without bypassing the gate.

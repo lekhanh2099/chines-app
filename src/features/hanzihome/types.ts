@@ -1,5 +1,5 @@
-import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type { DeepVocabularyItem } from "@/features/hanzihome/schemas/vocab.types";
 
 export type HanziHomeModule =
  | "overview"

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Layers3 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";

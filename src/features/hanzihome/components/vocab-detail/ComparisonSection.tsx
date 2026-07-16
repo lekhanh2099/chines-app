@@ -1,4 +1,4 @@
-import type { Comparison } from "@/features/hanzihome/static-json/schemas/vocab.schema";
+import type { Comparison } from "@/features/hanzihome/schemas/vocab.types";
 import { ComparisonGroup } from "./ComparisonGroup";
 import { VocabReadingSection } from "./VocabReadingSection";
 

@@ -47,7 +47,7 @@ async function parseJsonResponse<T>(response: Response, schema: z.ZodType<T>): P
   throw new HanziHomeApiError(
    "HanziHome response did not match the expected contract",
    response.status,
-   parsed.error.flatten(),
+   z.flattenError(parsed.error),
   );
  }
 

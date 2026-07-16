@@ -45,7 +45,7 @@ export const htmlArtifactFolderSchema = z.object({
 
 export const createHtmlArtifactPayloadSchema = z.object({
  title: z.string().trim().min(1).max(200),
- folderId: z.string().uuid().nullable().optional(),
+ folderId: z.uuid().nullable().optional(),
  artifactType: htmlArtifactTypeSchema.default("practice_page"),
  tags: z.array(z.string().trim().min(1).max(50)).max(20).default([]),
  html: z.string().trim().min(1).max(2_000_000),
@@ -55,7 +55,7 @@ export const updateHtmlArtifactPayloadSchema = createHtmlArtifactPayloadSchema.p
 
 export const createHtmlArtifactFolderPayloadSchema = z.object({
  name: z.string().trim().min(1),
- parentFolderId: z.string().uuid().nullable().optional(),
+ parentFolderId: z.uuid().nullable().optional(),
  color: htmlArtifactFolderColorSchema.default("blue"),
  position: z.number().int().min(0).default(0),
 });

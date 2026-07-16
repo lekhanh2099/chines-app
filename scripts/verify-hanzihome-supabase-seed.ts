@@ -1,7 +1,7 @@
 import { isDeepStrictEqual } from "node:util";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-import { SectionSchema } from "../src/features/hanzihome/static-json/schemas/hanyuLesson.schema.ts";
+import { SectionSchema } from "../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
 import {
  buildHanziHomeSeedData,
  createHanziHomeReadClient,

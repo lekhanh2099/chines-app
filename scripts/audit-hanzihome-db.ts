@@ -67,10 +67,6 @@ async function auditRuntimeImports(errors: string[]) {
 
  for (const file of files) {
   const relativePath = path.relative(process.cwd(), file);
-  if (relativePath === "src/features/hanzihome/static-json/q2-static-json.ts") {
-   continue;
-  }
-
   const text = await readFile(file, "utf8");
   for (const pattern of blockedPatterns) {
    if (text.includes(pattern)) {
