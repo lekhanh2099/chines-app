@@ -25,6 +25,8 @@
   "data:hanzihome:seed-audit": "node --experimental-strip-types scripts/audit-hanzihome-seed-readiness.ts",
   "data:hanzihome:seed-supabase": "node --experimental-strip-types scripts/seed-hanzihome-supabase.ts",
   "data:hanzihome:verify-supabase": "node --experimental-strip-types scripts/verify-hanzihome-supabase-seed.ts",
+  "data:hanzihome:import-external": "node --experimental-strip-types scripts/import-hanzihome-external-seed.ts",
+  "data:hanzihome:import-vocab-enrichment": "node --experimental-strip-types scripts/import-hanzihome-vocab-enrichment.ts",
   "data:hanzihome:listening-audit": "node --experimental-strip-types scripts/audit-hanzihome-listening-supabase.ts",
   "format": "prettier --write .",
   "format:check": "prettier --check .",

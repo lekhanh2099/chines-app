@@ -4,6 +4,50 @@ import { hasExercisePassagePayload } from "./exercise-utils";
 import { buildExerciseQuestionViewModel } from "./question-view-model";
 
 describe("buildExerciseQuestionViewModel", () => {
+ it("keeps Boya source metadata out of the learner-facing question model", () => {
+  const model = buildExerciseQuestionViewModel({
+   exerciseType: "phonetics",
+   index: 0,
+   value: {
+    id: "boya-intermediate-2-l01-src-005-q01",
+    order: 1,
+    prompt: "我的词汇量不够,你有什么记生词的好 ( )?",
+    answer: null,
+    source_ref: "boya-intermediate-2-l01-p06",
+    source_page: 6,
+    source_pages: [{ pdfPage: 24, printedPage: 6 }],
+    answer_origin: "manual",
+   },
+  });
+
+  expect(model).toMatchObject({
+   id: "boya-intermediate-2-l01-src-005-q01",
+   title: "我的词汇量不够,你有什么记生词的好 ( )?",
+   answer: "",
+   requiresSourceVisual: false,
+   sourcePrintedPages: [6],
+  });
+  expect(JSON.stringify(model)).not.toContain("source_ref");
+  expect(JSON.stringify(model)).not.toContain("pdfPage");
+ });
+
+ it("turns source-visual metadata into a learner-facing page notice", () => {
+  const model = buildExerciseQuestionViewModel({
+   exerciseType: "multiple_choice",
+   index: 0,
+   value: {
+    prompt: "选择正确答案（请参考原书第50、51页）",
+    requires_source_visual: true,
+    source_pages: [
+     { pdfPage: 68, printedPage: 50 },
+     { pdfPage: 69, printedPage: 51 },
+    ],
+   },
+  });
+
+  expect(model.requiresSourceVisual).toBe(true);
+  expect(model.sourcePrintedPages).toEqual([50, 51]);
+ });
  it("maps legacy choose-word tuples", () => {
   const model = buildExerciseQuestionViewModel({
    exerciseType: "choose_words_fill_blank",

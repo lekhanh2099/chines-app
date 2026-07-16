@@ -42,7 +42,14 @@ export function ExerciseBody({
   );
  }
  if (family === "phonetics") {
-  return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <PhoneticsExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
  if (family === "substitution") {
@@ -100,7 +107,16 @@ export function ExerciseBody({
   );
  }
 
- if (family === "reference") return <ExerciseReferenceBody item={item} />;
+ if (family === "reference") {
+  return (
+   <ExerciseReferenceBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
 
  return (
   <QuestionExerciseBody

@@ -1751,10 +1751,12 @@ hr.editor-hr.selected {
 }
 
 .split-view-pane-left {
+ width: var(--split-pane-leading-size, 50%);
  border-right: 1px solid var(--border);
 }
 
 .split-view-pane-right {
+ width: var(--split-pane-trailing-size, 50%);
  border-left: none;
 }
 
@@ -1817,6 +1819,7 @@ hr.editor-hr.selected {
  width: 5px;
  flex-shrink: 0;
  cursor: col-resize;
+ touch-action: none;
  background: transparent;
  position: relative;
  z-index: 5;
@@ -1871,16 +1874,27 @@ hr.editor-hr.selected {
 
  .split-view-pane {
   width: 100% !important;
-  height: 50%;
  }
 
  .split-view-pane-left {
+  height: var(--split-pane-leading-size, 50%);
   border-right: none;
   border-bottom: 1px solid var(--border);
  }
 
+ .split-view-pane-right {
+  height: var(--split-pane-trailing-size, 50%);
+ }
+
  .split-view-divider {
-  display: none;
+  width: 100%;
+  height: 12px;
+  cursor: row-resize;
+ }
+
+ .split-view-divider-handle {
+  width: 32px;
+  height: 3px;
  }
 
  .split-view-pane-content .editor-container {

@@ -9,6 +9,13 @@ import { RawExerciseDataDetails } from "./exercise-section/RawExerciseDataDetail
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
 
+const EXERCISE_PAGE_METADATA_PATTERN = /^Trang bài tập\s+\d+$/i;
+
+function meaningfulVietnameseTitle(value: string | undefined) {
+ const title = value?.trim();
+ return title && !EXERCISE_PAGE_METADATA_PATTERN.test(title) ? title : "";
+}
+
 export function ExerciseCard({
  lessonId,
  parentSectionId,
@@ -28,7 +35,11 @@ export function ExerciseCard({
 }) {
  const record = asRecord(item);
  const instruction = asRecord(record.instruction);
- const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
+ const title = item.title || meaningfulVietnameseTitle(item.title_vi) || `Bài tập ${item.order}`;
+ const titleVi = meaningfulVietnameseTitle(item.title_vi);
+ const rawInstruction =
+  meaningfulVietnameseTitle(stringValue(instruction, "vi")) || stringValue(instruction, "zh");
+ const instructionText = rawInstruction !== title ? rawInstruction : "";
 
  const content = (
   <article className="exercise-card-surface grid gap-4 rounded-xl border p-4 shadow-theme-sm sm:p-5">
@@ -37,9 +48,12 @@ export function ExerciseCard({
      {item.order}
     </span>
     <div className="grid gap-1 min-w-0 flex-1">
-     <h4 className="text-lg font-black leading-tight text-text-primary sm:text-xl">
-      {item.title_vi || item.title}
+     <h4 lang="zh-CN" className="text-lg font-black leading-tight text-text-primary sm:text-xl">
+      {title}
      </h4>
+     {displayMode.showMeaning && titleVi && titleVi !== title ? (
+      <p className="text-sm font-semibold leading-6 text-text-muted">{titleVi}</p>
+     ) : null}
      {instructionText && (
       <p className="text-sm font-semibold leading-6 text-text-secondary">{instructionText}</p>
      )}
@@ -69,7 +83,7 @@ export function ExerciseCard({
    parentEntityId={parentSectionId}
    path={path}
    value={item}
-   label={item.title_vi || item.title}
+   label={title}
    editLabel="Sửa nội dung"
   >
    {content}

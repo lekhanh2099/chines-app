@@ -7,6 +7,7 @@ import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
 import { AnswerReveal } from "../common/AnswerReveal";
 import { EmptySectionState } from "../common/EmptySectionState";
 import { MatchingOptionCard } from "./MatchingOptionCard";
+import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function ReorderExerciseBody({
  lessonId,
@@ -24,6 +25,24 @@ export function ReorderExerciseBody({
 
  if (questions.length === 0) {
   return <EmptySectionState reason="Bài sắp xếp chưa có nhóm câu." />;
+ }
+
+ const hasStructuredOptions = questions.some((questionValue) => {
+  const question = asRecord(questionValue);
+  return ["items", "sentences", "choices", "segments"].some(
+   (key) => arrayValue(question, key).length > 0,
+  );
+ });
+
+ if (!hasStructuredOptions) {
+  return (
+   <QuestionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
  return (

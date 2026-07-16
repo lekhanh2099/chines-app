@@ -24,6 +24,7 @@ const familyIcons = {
  reorder: Shuffle,
  writing: PencilLine,
  reference: PencilLine,
+ source_question: ListChecks,
  generic: ListChecks,
 } as const;
 

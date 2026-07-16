@@ -2,17 +2,16 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { BookOpen, BookOpenCheck, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
+import { BookOpen, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
 import { QueryErrorCard } from "@/components/ui/query-error-card";
-import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
+import { CourseCollectionSection } from "@/features/hanzihome/components/library/CourseCollectionSection";
 import { HanziHomeLibrarySkeleton } from "@/features/hanzihome/components/library/HanziHomeLibrarySkeleton";
 import { HanziHomeLibraryCrudToolbar } from "@/features/hanzihome/components/library/HanziHomeLibraryCrudToolbar";
-import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
+import { groupLibraryCourses } from "@/features/hanzihome/components/library/library-course-groups";
 import { RecentLearningCard } from "@/features/hanzihome/components/library/RecentLearningCard";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
@@ -26,6 +25,7 @@ export function HanziHomeLibraryHome() {
  const courses = catalogData.courses;
  const books = catalogData.books;
  const libraryStats = useMemo(() => getLibraryStats(courses, books), [books, courses]);
+ const courseGroups = useMemo(() => groupLibraryCourses(courses, books), [books, courses]);
 
  if (catalogQuery.isPending) return <HanziHomeLibrarySkeleton />;
 
@@ -81,10 +81,10 @@ export function HanziHomeLibraryHome() {
 
     <div className="min-w-0 grid gap-0.5">
      <h2 id="course-library-heading" className="text-base font-black text-text-primary">
-      Giáo trình đang học
+      Các bộ giáo trình
      </h2>
      <p className="text-sm font-medium text-text-secondary">
-      Chọn nhanh quyển và bài để tiếp tục học.
+      Chọn bộ, cấp độ, quyển rồi mở đúng bài bạn muốn học.
      </p>
     </div>
    </div>
@@ -98,62 +98,14 @@ export function HanziHomeLibraryHome() {
      className="grid min-h-0 flex-1 content-start gap-3 overflow-y-auto overscroll-contain pr-1 pb-1 scrollbar-soft"
      aria-labelledby="course-library-heading"
     >
-     {courses.map((course) => {
-      const courseBooks = books
-       .filter((book) => book.courseId === course.id)
-       .toSorted((left, right) => left.order - right.order);
-
-      return (
-       <section key={course.id} className="grid gap-1.5" aria-labelledby={`${course.id}-heading`}>
-        <Card
-         variant="glass"
-         padding="sm"
-         className="flex flex-wrap items-center justify-between gap-2 rounded-xl p-2"
-        >
-         <div className="flex min-w-0 items-center gap-2">
-          <span className="app-brand-gradient flex size-8 shrink-0 items-center justify-center rounded-lg text-primary-foreground shadow-theme-sm">
-           <BookOpenCheck className="size-4" />
-          </span>
-          <div className="min-w-0">
-           <div className="flex flex-wrap items-center gap-1.5">
-            <h3
-             id={`${course.id}-heading`}
-             className="truncate text-sm font-black text-text-primary sm:text-base"
-            >
-             {course.title}
-            </h3>
-            <Badge variant="purple" size="sm">
-             {courseBooks.length} quyển
-            </Badge>
-           </div>
-           <p className="hidden truncate text-xs font-medium text-text-muted sm:block">
-            {course.subtitle || `${course.stats.lessonCount} bài học trong giáo trình này`}
-           </p>
-          </div>
-         </div>
-         <div className="flex items-center gap-2">
-          <Badge variant="default" size="sm">
-           {course.stats.lessonCount} bài
-          </Badge>
-          {canEdit && editMode ? <CourseCrudActions course={course} /> : null}
-         </div>
-        </Card>
-
-        <div className="grid gap-2 lg:grid-cols-2">
-         {courseBooks.map((book, index) => (
-          <CourseCard
-           key={book.id}
-           course={course}
-           book={book}
-           editMode={canEdit && editMode}
-           canMoveBookUp={index > 0}
-           canMoveBookDown={index < courseBooks.length - 1}
-          />
-         ))}
-        </div>
-       </section>
-      );
-     })}
+     {courseGroups.map((group) => (
+      <CourseCollectionSection
+       key={group.key}
+       group={group}
+       books={books}
+       editMode={canEdit && editMode}
+      />
+     ))}
     </section>
    )}
   </main>

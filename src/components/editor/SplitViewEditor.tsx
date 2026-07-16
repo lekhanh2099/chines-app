@@ -7,6 +7,7 @@
  */
 "use client";
 
+import type { CSSProperties } from "react";
 import { useCallback, useRef } from "react";
 import { Editor } from "./Editor";
 import { ResizableDivider } from "./ResizableDivider";
@@ -39,6 +40,10 @@ export function SplitViewEditor({
  const containerRef = useRef<HTMLDivElement>(null);
  const dividerPosition = useSplitViewStore((s) => s.getDividerPosition(noteId));
  const setDividerPosition = useSplitViewStore((s) => s.setDividerPosition);
+ const splitStyle = {
+  "--split-pane-leading-size": `${dividerPosition}%`,
+  "--split-pane-trailing-size": `${100 - dividerPosition}%`,
+ } as CSSProperties;
 
  const handleResize = useCallback(
   (percent: number) => {
@@ -48,9 +53,9 @@ export function SplitViewEditor({
  );
 
  return (
-  <div ref={containerRef} className="split-view-container">
+  <div ref={containerRef} className="split-view-container" style={splitStyle}>
    {/* Left Pane — Reading / Lesson Passage */}
-   <div className="split-view-pane split-view-pane-left" style={{ width: `${dividerPosition}%` }}>
+   <div className="split-view-pane split-view-pane-left">
     <div className="split-view-pane-header">
      <BookOpen className="w-3.5 h-3.5" />
      <span>Bài đọc</span>
@@ -67,13 +72,10 @@ export function SplitViewEditor({
    </div>
 
    {/* Divider */}
-   <ResizableDivider onResize={handleResize} containerRef={containerRef} />
+   <ResizableDivider value={dividerPosition} onResize={handleResize} containerRef={containerRef} />
 
    {/* Right Pane — Personal Notes */}
-   <div
-    className="split-view-pane split-view-pane-right"
-    style={{ width: `${100 - dividerPosition}%` }}
-   >
+   <div className="split-view-pane split-view-pane-right">
     <div className="split-view-pane-header">
      <FileText className="w-3.5 h-3.5" />
      <span>Ghi chú</span>

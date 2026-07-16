@@ -91,7 +91,6 @@ export function CourseCard({
         <BookCrudActions book={book} canMoveUp={canMoveBookUp} canMoveDown={canMoveBookDown} />
        ) : null}
       </div>
-      <p className="truncate text-xs font-medium text-text-muted">{course.title}</p>
      </div>
     </div>
 

@@ -12,6 +12,7 @@ export type ExerciseRendererFamily =
  | "reorder"
  | "writing"
  | "reference"
+ | "source_question"
  | "generic";
 
 export type ExerciseRendererMeta = {
@@ -29,10 +30,17 @@ const exerciseRendererRegistry: Record<string, ExerciseRendererMeta> = {
  complete_sentence: { family: "fill_blank", label: "Hoàn thành câu" },
  answer_questions: { family: "answer_pattern", label: "Trả lời câu hỏi" },
  answer_with_pattern: { family: "answer_pattern", label: "Trả lời theo mẫu" },
+ grammar_practice: { family: "correct_sentence", label: "Luyện ngữ pháp" },
+ grammar_practice_set: { family: "correct_sentence", label: "Luyện ngữ pháp" },
+ sentence_transformation: { family: "correct_sentence", label: "Biến đổi câu" },
  correct_sentence: { family: "correct_sentence", label: "Sửa câu sai" },
  multiple_choice: { family: "multiple_choice", label: "Trắc nghiệm" },
- custom: { family: "generic", label: "Bài tập theo tình huống" },
- open_ended: { family: "generic", label: "Tự luận" },
+ true_false: { family: "multiple_choice", label: "Đúng / sai" },
+ classification: { family: "multiple_choice", label: "Phân loại" },
+ translation: { family: "source_question", label: "Dịch câu" },
+ generic: { family: "source_question", label: "Bài tập theo sách" },
+ custom: { family: "source_question", label: "Bài tập theo tình huống" },
+ open_ended: { family: "source_question", label: "Tự luận" },
  complete_dialogue: { family: "dialogue", label: "Hoàn thành hội thoại" },
  communication_dialogue: { family: "communication", label: "Hội thoại giao tiếp" },
  communication: { family: "communication", label: "Giao tiếp" },

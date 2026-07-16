@@ -1,24 +1,42 @@
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 
 import { LooseItemGrid } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
+import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
 export function PhoneticsExerciseBody({
  item,
  displayMode,
+ lessonId,
+ itemPath,
 }: {
  item: Exercise;
  displayMode: LessonDisplayMode;
+ lessonId?: string;
+ itemPath?: EditableNodePath;
 }) {
  const record = asRecord(item);
  const parts = arrayValue(record, "parts");
+ const questions = arrayValue(record, "questions");
  const fallbackItems = [
   ...arrayValue(record, "items"),
   ...arrayValue(record, "chunks"),
   ...arrayValue(record, "questions"),
  ];
+
+ if (parts.length === 0 && questions.length > 0) {
+  return (
+   <QuestionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
 
  if (parts.length === 0) {
   return (

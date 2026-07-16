@@ -23,6 +23,8 @@ export type ExerciseQuestionViewModel = {
  evidence: unknown;
  dialogue: unknown[];
  givenWords: string[];
+ requiresSourceVisual: boolean;
+ sourcePrintedPages: number[];
 };
 
 function tupleQuestionModel(
@@ -74,7 +76,15 @@ function emptyQuestionModel(values: Partial<ExerciseQuestionViewModel>): Exercis
   evidence: values.evidence,
   dialogue: values.dialogue ?? [],
   givenWords: values.givenWords ?? [],
+  requiresSourceVisual: values.requiresSourceVisual ?? false,
+  sourcePrintedPages: values.sourcePrintedPages ?? [],
  };
+}
+
+function sourcePrintedPages(question: Record<string, unknown>) {
+ return arrayValue(question, "source_pages")
+  .map((value) => asRecord(value).printedPage)
+  .filter((value): value is number => typeof value === "number" && Number.isFinite(value));
 }
 
 export function buildExerciseQuestionViewModel({
@@ -164,5 +174,7 @@ export function buildExerciseQuestionViewModel({
   evidence: question.evidence,
   dialogue,
   givenWords,
+  requiresSourceVisual: question.requires_source_visual === true,
+  sourcePrintedPages: sourcePrintedPages(question),
  });
 }

@@ -1,10 +1,35 @@
 import { PenLine } from "lucide-react";
 
+import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-import { asRecord, stringValue } from "../utils";
+import type { LessonDisplayMode } from "../types";
+import { arrayValue, asRecord, stringValue } from "../utils";
+import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
-export function ExerciseReferenceBody({ item }: { item: Exercise }) {
- const reference = stringValue(asRecord(item), "character_writing_ref");
+export function ExerciseReferenceBody({
+ lessonId,
+ itemPath,
+ item,
+ displayMode,
+}: {
+ lessonId?: string;
+ itemPath?: EditableNodePath;
+ item: Exercise;
+ displayMode: LessonDisplayMode;
+}) {
+ const record = asRecord(item);
+ const reference = stringValue(record, "character_writing_ref");
+
+ if (arrayValue(record, "questions").length > 0) {
+  return (
+   <QuestionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
+ }
 
  return (
   <div className="exercise-answer-surface flex items-start gap-3 rounded-xl border p-4">

@@ -90,6 +90,13 @@ export function QuestionCard({
      <QuestionDataBlock title="Dẫn chứng" value={model.evidence} displayMode={displayMode} />
     </div>
    )}
+
+   {model.requiresSourceVisual && (
+    <div className="rounded-xl border border-warning/30 bg-warning-subtle px-3 py-2 text-sm font-semibold text-warning-text">
+     Nội dung OCR chưa đủ tin cậy. Hãy đối chiếu trang gốc
+     {model.sourcePrintedPages.length > 0 ? ` ${model.sourcePrintedPages.join(", ")}` : " của bài"}.
+    </div>
+   )}
   </ExerciseQuestionCard>
  );
 }

@@ -143,7 +143,22 @@ const BASE_HIDDEN_GENERIC_FIELDS = new Set([
  "audio_key",
  "check_needed",
  "answer_verified",
+ "answer_origin",
+ "answer_mapping",
  "grading",
+ "mapping_confidence",
+ "official_answer_group",
+ "official_answer_source",
+ "external_solution_source",
+ "required_grammar_ref",
+ "requires_source_visual",
+ "source_assets",
+ "source_page",
+ "source_pages",
+ "source_ref",
+ "source_role",
+ "transcription_status",
+ "verification_status",
 ]);
 
 const PASSAGE_HANDLED_FIELDS = new Set([

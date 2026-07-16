@@ -280,6 +280,12 @@ const SyntheticVocabItemSchema = z.looseObject({
 
 const VocabItemSchema = z.union([RichVocabItemSchema, SyntheticVocabItemSchema]);
 
+const EnrichedVocabItemSchema = z.looseObject({
+ id: z.string().min(1),
+ examples: z.array(ExampleSchema).default([]),
+ collocations: z.array(CollocationSchema).default([]),
+});
+
 const GrammarFormulaSchema = z.looseObject({
  label: z.string().optional(),
  pattern: z.string().optional(),
@@ -662,6 +668,67 @@ function stableUuidFromKey(key: string) {
  hex[16] = ((Number.parseInt(hex[16] ?? "0", 16) & 0x3) | 0x8).toString(16);
  const value = hex.join("");
  return `${value.slice(0, 8)}-${value.slice(8, 12)}-${value.slice(12, 16)}-${value.slice(16, 20)}-${value.slice(20)}`;
+}
+
+export function materializeVocabEnrichment(params: {
+ rawItem: unknown;
+ lessonId: string;
+ importedAt?: string;
+}) {
+ const item = EnrichedVocabItemSchema.parse(params.rawItem);
+ const parsedVocabItem = VocabItemSchema.parse(params.rawItem);
+ const importedAt = params.importedAt ?? new Date().toISOString();
+ const examples = item.examples.map((example, index) => ({
+  id: stableUuidFromKey(`hanzihome:vocab-example:${item.id}:${index + 1}`),
+  vocab_item_id: item.id,
+  lesson_id: params.lessonId,
+  owner_id: null,
+  source: "seed" as const,
+  example_order: index + 1,
+  zh: example.zh,
+  pinyin: example.pinyin || null,
+  vi: example.vi || null,
+  note: example.analysis_vi || example.note_vi || null,
+  imported_at: importedAt,
+ }));
+ const collocationSection = isRichVocabItem(parsedVocabItem)
+  ? vocabDetailSections({ item: parsedVocabItem, lessonId: params.lessonId }).find(
+     (section) => section.section_key === "collocations",
+    )
+  : null;
+ const collocationLines =
+  collocationSection?.lines ??
+  item.collocations
+   .map((collocation) =>
+    cleanLines([
+     [collocation.zh, collocation.pinyin].filter(nonEmpty).join(" · "),
+     collocation.vi,
+     collocation.pattern,
+     collocation.note_vi,
+     ...noteLines(collocation.notes),
+    ]).join(" — "),
+   )
+   .filter(nonEmpty);
+
+ return {
+  vocabItemId: item.id,
+  examples,
+  collocationDetail:
+   collocationLines.length > 0
+    ? {
+       id: stableUuidFromKey(`hanzihome:vocab-detail:${item.id}:collocations`),
+       vocab_item_id: item.id,
+       lesson_id: params.lessonId,
+       owner_id: null,
+       source: "seed" as const,
+       section_key: "collocations",
+       title: "Kết hợp từ",
+       lines: collocationLines,
+       section_order: collocationSection?.section_order ?? 1,
+       imported_at: importedAt,
+      }
+    : null,
+ };
 }
 
 async function readJsonFile<T>(filePath: string, schema: z.ZodType<T>): Promise<T> {
