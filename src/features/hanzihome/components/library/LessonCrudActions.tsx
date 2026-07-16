@@ -24,6 +24,7 @@ import {
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
 import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -217,9 +218,11 @@ async function invalidateLessonLibrary(
  courseId?: string,
 ) {
  await Promise.all([
-  queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
+  queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot }),
   queryClient.invalidateQueries({
-   queryKey: courseId ? ["hanzihome", "course-lessons", courseId] : ["hanzihome", "course-lessons"],
+   queryKey: courseId
+    ? hanzihomeQueryKeys.courseLessons(courseId)
+    : hanzihomeQueryKeys.courseLessonsRoot,
   }),
  ]);
 }

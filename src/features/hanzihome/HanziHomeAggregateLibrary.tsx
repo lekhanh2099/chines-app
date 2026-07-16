@@ -9,6 +9,7 @@ import { BookOpen, GraduationCap, Search } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { FilterSelect } from "@/features/hanzihome/components/aggregate-library/FilterSelect";
 import { GrammarAggregateRow } from "@/features/hanzihome/components/aggregate-library/GrammarAggregateRow";
 import {
@@ -51,7 +52,7 @@ import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 function useReviewLessons(lessonIds: string[]) {
  const queries = useQueries({
   queries: lessonIds.map((lessonId) => ({
-   queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
+   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
    queryFn: () => fetchHanziHomeLessonDetail(lessonId),
    enabled: Boolean(lessonId),
    staleTime: Infinity,

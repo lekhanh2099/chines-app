@@ -23,6 +23,7 @@ import {
 import { invalidateHanziHomeContent } from "@/features/hanzihome/editing/invalidate-content";
 import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
 import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 const deletedContentResponseSchema = z.object({
  items: z.array(
@@ -114,7 +115,7 @@ export function DeletedContentDialog() {
  const [restoringId, setRestoringId] = useState<string | null>(null);
  const queryClient = useQueryClient();
  const deletedQuery = useQuery({
-  queryKey: ["hanzihome", "deleted-content"],
+  queryKey: hanzihomeQueryKeys.deletedContent,
   queryFn: getDeletedContent,
   enabled: open,
  });
@@ -138,7 +139,7 @@ export function DeletedContentDialog() {
      reason: `Khôi phục ${entityLabel(item.entityType)}: ${item.label}`,
     });
    }
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "deleted-content"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.deletedContent });
    await invalidateHanziHomeContent({
     queryClient,
     lessonId: item.lessonId,
@@ -147,10 +148,10 @@ export function DeletedContentDialog() {
    toast.success("Đã khôi phục nội dung.");
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "deleted-content"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.deletedContent });
     if (item.lessonId) {
      await queryClient.invalidateQueries({
-      queryKey: ["hanzihome", "lesson-detail", item.lessonId],
+      queryKey: hanzihomeQueryKeys.lessonDetail(item.lessonId),
      });
     }
     toast.error("Nội dung đã thay đổi, đang tải lại.");

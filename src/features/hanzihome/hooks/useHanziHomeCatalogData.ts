@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchHanziHomeCatalog } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCatalogData } from "@/features/hanzihome/types";
 
 const catalogStaleTime = Infinity;
@@ -37,7 +38,7 @@ export function useHanziHomeCatalogQuery({
  enabled?: boolean;
 } = {}) {
  const query = useQuery({
-  queryKey: ["hanzihome", "catalog", { includeLessons }],
+  queryKey: hanzihomeQueryKeys.catalog(includeLessons),
   queryFn: () => fetchHanziHomeCatalog({ includeLessons }),
   staleTime: catalogStaleTime,
   enabled,

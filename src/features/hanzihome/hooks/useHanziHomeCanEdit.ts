@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
@@ -11,7 +12,7 @@ export function useHanziHomeCanEdit() {
 
  return (
   useQuery({
-   queryKey: ["hanzihome", "can-edit"],
+   queryKey: hanzihomeQueryKeys.canEdit,
    queryFn: async () => {
     const user = await getClientSessionUser(supabase);
     if (!user) return false;

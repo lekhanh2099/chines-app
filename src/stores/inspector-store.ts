@@ -2,6 +2,7 @@
 
 import { create } from "zustand";
 import { getQueryClient } from "@/components/providers/QueryProvider";
+import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import { containsChinese, extractChinese } from "@/lib/chinese-utils";
 import { logger } from "@/lib/logger";
 import { pinyin as getPinyin } from "pinyin-pro";
@@ -256,7 +257,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
      return;
     }
 
-    queryClient.setQueryData<VocabWithProgress[]>(["vocab-list"], (current) => {
+    queryClient.setQueryData<VocabWithProgress[]>(dictionaryQueryKeys.vocabListRoot, (current) => {
      const existing = current || [];
      const withoutDuplicate = existing.filter((item) => item.id !== listItem.id);
      return [listItem, ...withoutDuplicate];

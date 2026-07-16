@@ -14,6 +14,7 @@ import {
  updateSplitViewEnabled,
 } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
+import { noteQueryKeys } from "@/features/notes/query-keys";
 
 /**
  * Hook: Fetch and manage a single note (editor page).
@@ -25,7 +26,7 @@ export function useNoteDetail(noteId: string) {
 
  // ── Main query ──
  const query = useQuery({
-  queryKey: ["note-detail", noteId],
+  queryKey: noteQueryKeys.detail(noteId),
   queryFn: async () => {
    const user = await getClientSessionUser(supabase);
    if (!user) return null;
@@ -42,7 +43,7 @@ export function useNoteDetail(noteId: string) {
    return content;
   },
   onSuccess: (content) => {
-   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -61,11 +62,11 @@ export function useNoteDetail(noteId: string) {
    return title;
   },
   onSuccess: (title) => {
-   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, title };
    });
-   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
   },
  });
 
@@ -77,11 +78,11 @@ export function useNoteDetail(noteId: string) {
    return category;
   },
   onSuccess: (category) => {
-   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, category };
    });
-   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
   },
  });
 
@@ -92,7 +93,7 @@ export function useNoteDetail(noteId: string) {
    if (!success) throw new Error("Failed to delete note");
   },
   onSuccess: () => {
-   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
   },
  });
 
@@ -104,7 +105,7 @@ export function useNoteDetail(noteId: string) {
    return readingContent;
   },
   onSuccess: (readingContent) => {
-   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -123,7 +124,7 @@ export function useNoteDetail(noteId: string) {
    return enabled;
   },
   onMutate: (enabled) => {
-   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
     if (!old || typeof old !== "object") return old;
 
     return {

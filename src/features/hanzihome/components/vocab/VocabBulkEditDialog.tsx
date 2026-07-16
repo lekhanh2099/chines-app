@@ -22,6 +22,7 @@ import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanziho
 import { saveEditableNodeDirectly } from "@/features/hanzihome/editing/direct-save";
 import { invalidateHanziHomeContent } from "@/features/hanzihome/editing/invalidate-content";
 import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
@@ -263,7 +264,9 @@ export function VocabBulkEditDialog<TItem extends VocabBulkEditableItem>({
    setOpen(false);
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] });
+    await queryClient.invalidateQueries({
+     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+    });
     toast.error("Nội dung đã thay đổi, đang tải lại.");
     setOpen(false);
     return;
@@ -331,7 +334,9 @@ export function VocabBulkEditDialog<TItem extends VocabBulkEditableItem>({
    setOpen(false);
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] });
+    await queryClient.invalidateQueries({
+     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+    });
     toast.error("Nội dung đã thay đổi, đang tải lại.");
     setOpen(false);
     return;

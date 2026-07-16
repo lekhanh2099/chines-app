@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getUserNotes, getNotesByCategory } from "@/services/notes.service";
+import { noteQueryKeys } from "@/features/notes/query-keys";
 import type { NoteCategory } from "@/types/database";
 
 /**
@@ -16,7 +17,7 @@ export function useNotesList(category?: NoteCategory) {
  const supabase = supabaseRef.current;
 
  return useQuery({
-  queryKey: ["notes-list", category ?? "all"],
+  queryKey: noteQueryKeys.list(category),
   queryFn: async () => {
    const user = await getClientSessionUser(supabase);
    if (!user) return [];

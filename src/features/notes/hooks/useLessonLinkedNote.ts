@@ -5,6 +5,7 @@ import { useRef } from "react";
 
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { noteQueryKeys } from "@/features/notes/query-keys";
 import { getNoteByLessonNoteLink, type LessonNoteRelationType } from "@/services/notes.service";
 
 export function useLessonLinkedNote(
@@ -20,7 +21,7 @@ export function useLessonLinkedNote(
   .filter((value, index, source) => source.indexOf(value) === index);
 
  return useQuery({
-  queryKey: ["lesson-linked-note", lessonIds, relationType],
+  queryKey: noteQueryKeys.lessonLinked(lessonIds, relationType),
   enabled: lessonIds.length > 0,
   queryFn: async () => {
    if (lessonIds.length === 0) return null;

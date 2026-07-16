@@ -19,6 +19,7 @@ import {
  DialogTrigger,
 } from "@/components/ui/dialog";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -44,7 +45,7 @@ export function CreateBookDialog({ courses }: { courses: HanziHomeCatalogCourse[
       short_title: value.shortTitle || null,
      },
     });
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
     toast.success("Đã tạo quyển.");
     form.reset();
     setOpen(false);

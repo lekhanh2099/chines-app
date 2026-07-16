@@ -24,6 +24,7 @@ import {
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
 import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -64,7 +65,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
      reason: `Cập nhật khóa học ${course.title}`,
      changes,
     });
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
     toast.success("Đã cập nhật khóa học.");
     setOpen(false);
    } catch (error) {
@@ -82,7 +83,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
     expectedUpdatedAt: course.updatedAt,
     reason: `Xóa khóa học ${course.title}`,
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
    toast.success("Đã xóa khóa học. Có thể khôi phục trong Edit Mode.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể xóa khóa học.");
@@ -101,7 +102,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
     order: course.order + direction,
     reason: `Sắp xếp khóa học ${course.title}`,
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
    toast.success("Đã cập nhật thứ tự khóa học.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể sắp xếp khóa học.");

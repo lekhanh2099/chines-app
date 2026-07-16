@@ -5,6 +5,7 @@ import { useRef } from "react";
 
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { noteQueryKeys } from "@/features/notes/query-keys";
 import {
  createNote,
  linkNoteToLessonTarget,
@@ -51,9 +52,9 @@ export function useCreateLessonLinkedNote() {
    return note;
   },
   onSuccess: async () => {
-   await queryClient.invalidateQueries({ queryKey: ["notes-list"] });
+   await queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
    await queryClient.invalidateQueries({
-    queryKey: ["lesson-linked-note"],
+    queryKey: noteQueryKeys.lessonLinkedRoot,
    });
   },
  });

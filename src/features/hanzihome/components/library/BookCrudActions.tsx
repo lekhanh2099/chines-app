@@ -24,6 +24,7 @@ import {
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
 import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCourseBook } from "@/features/hanzihome/types";
 
 const formSchema = z.object({
@@ -65,7 +66,7 @@ export function BookCrudActions({
      reason: `Cập nhật quyển ${book.title}`,
      changes,
     });
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
     toast.success("Đã cập nhật quyển.");
     setOpen(false);
    } catch (error) {
@@ -84,9 +85,9 @@ export function BookCrudActions({
     reason: `Xóa quyển ${book.title}`,
    });
    await Promise.all([
-    queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] }),
+    queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot }),
     queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "course-lessons", book.courseId],
+     queryKey: hanzihomeQueryKeys.courseLessons(book.courseId),
     }),
    ]);
    toast.success("Đã xóa quyển. Có thể khôi phục trong Edit Mode.");
@@ -107,7 +108,7 @@ export function BookCrudActions({
     order: book.order + direction,
     reason: `Sắp xếp quyển ${book.title}`,
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
    toast.success("Đã cập nhật thứ tự quyển.");
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể sắp xếp quyển.");

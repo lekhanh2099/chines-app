@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 const formSchema = z.object({
  kind: z.enum(["section", "vocab_item", "grammar_point"]),
@@ -98,7 +99,7 @@ export function LessonContentCreateDialog() {
      reason: `Tạo ${value.kind} trong bài ${lesson.lessonNumber}`,
     });
     await queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", lesson.id],
+     queryKey: hanzihomeQueryKeys.lessonDetail(lesson.id),
     });
     toast.success("Đã tạo nội dung.");
     form.reset();

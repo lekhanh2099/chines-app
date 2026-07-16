@@ -18,6 +18,7 @@ import { SoftDeleteConfirmDialog } from "./SoftDeleteConfirmDialog";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
  deleteEditableNodeDirectly,
  reorderCanonicalContent,
@@ -133,7 +134,7 @@ export function EditableNodeWrapper({
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
     await queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", lessonId],
+     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
     });
     toast.error("Nội dung đã thay đổi, đang tải lại.");
     throw error;
@@ -161,12 +162,12 @@ export function EditableNodeWrapper({
     order: record.order + direction,
     reason: `Sắp xếp ${label || entityId}`,
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "lesson-detail", lessonId] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.lessonDetail(lessonId) });
    toast.success("Đã cập nhật thứ tự.");
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
     await queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", lessonId],
+     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
     });
     toast.error("Nội dung đã thay đổi, đang tải lại.");
     return;

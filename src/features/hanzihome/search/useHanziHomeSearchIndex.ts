@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 import type { HanziHomeSearchIndexItem } from "./types";
 
@@ -18,7 +19,7 @@ async function fetchSearchIndex() {
 
 export function useHanziHomeSearchIndex(enabled: boolean) {
  return useQuery({
-  queryKey: ["hanzihome", "search-index", "v2"],
+  queryKey: hanzihomeQueryKeys.searchIndex,
   queryFn: fetchSearchIndex,
   enabled,
   staleTime: Number.POSITIVE_INFINITY,

@@ -1,5 +1,7 @@
 import type { QueryClient } from "@tanstack/react-query";
 
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+
 const catalogEntityTypes = new Set(["course", "book", "lesson"]);
 
 export async function invalidateHanziHomeContent({
@@ -13,18 +15,18 @@ export async function invalidateHanziHomeContent({
 }) {
  if (lessonId) {
   await queryClient.invalidateQueries({
-   queryKey: ["hanzihome", "lesson-detail", lessonId],
+   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
   });
 
   if (entityType === "listening_item") {
    await queryClient.invalidateQueries({
-    queryKey: ["hanzihome", "listening", "lesson", lessonId],
+    queryKey: hanzihomeQueryKeys.listeningLesson(lessonId),
    });
   }
  }
 
  if (!catalogEntityTypes.has(entityType)) return;
 
- await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
- await queryClient.invalidateQueries({ queryKey: ["hanzihome", "course-lessons"] });
+ await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
+ await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.courseLessonsRoot });
 }

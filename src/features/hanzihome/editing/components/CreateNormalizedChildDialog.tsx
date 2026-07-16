@@ -20,6 +20,7 @@ import {
  DialogTrigger,
 } from "@/components/ui/dialog";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeEditableRecordMeta } from "@/features/hanzihome/types";
 
 const formSchema = z
@@ -105,7 +106,7 @@ export function CreateNormalizedChildDialog({
      },
     });
     await queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", lessonId],
+     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
     });
     toast.success("Đã thêm nội dung.");
     form.reset();

@@ -19,6 +19,7 @@ import {
  DialogTrigger,
 } from "@/components/ui/dialog";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 const formSchema = z.object({
  slug: z.string().trim().min(2),
@@ -45,7 +46,7 @@ export function CreateCourseDialog() {
       type: value.type,
      },
     });
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
     toast.success("Đã tạo khóa học.");
     form.reset();
     setOpen(false);

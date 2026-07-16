@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { extractChinese } from "@/lib/chinese-utils";
+import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import {
  getVocabWithProgress,
  getPrimaryMeaning,
@@ -35,7 +36,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
 
  // ── Main query: vocab data + SRS progress ──
  const query = useQuery({
-  queryKey: ["vocab-detail", chineseText],
+  queryKey: dictionaryQueryKeys.vocabDetail(chineseText),
   enabled,
   queryFn: async () => {
    const pinyinText = getPinyin(chineseText);
@@ -95,21 +96,24 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   },
   onSuccess: (aiData) => {
    // Update the cached query data optimistically
-   queryClient.setQueryData(["vocab-detail", chineseText], (old: typeof query.data) => {
-    if (!old) return old;
-    return {
-     ...old,
-     vocab: {
-      ...old.vocab,
-      pinyin: (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
-      meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
-      ai_analysis: {
-       ...old.vocab.ai_analysis,
-       ...aiData,
+   queryClient.setQueryData(
+    dictionaryQueryKeys.vocabDetail(chineseText),
+    (old: typeof query.data) => {
+     if (!old) return old;
+     return {
+      ...old,
+      vocab: {
+       ...old.vocab,
+       pinyin: (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
+       meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
+       ai_analysis: {
+        ...old.vocab.ai_analysis,
+        ...aiData,
+       },
       },
-     },
-    };
-   });
+     };
+    },
+   );
   },
  });
 
@@ -149,20 +153,23 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
      ? variables
      : { vocabData: variables };
 
-   queryClient.setQueryData(["vocab-detail", chineseText], (old: typeof query.data) => {
-    if (!old) return old;
+   queryClient.setQueryData(
+    dictionaryQueryKeys.vocabDetail(chineseText),
+    (old: typeof query.data) => {
+     if (!old) return old;
 
-    return {
-     ...old,
-     isSaved: true,
-     personalNote: payload.options?.personalNote ?? old.personalNote,
-     personalNoteMode: payload.options?.personalNoteMode ?? old.personalNoteMode,
-    };
-   });
+     return {
+      ...old,
+      isSaved: true,
+      personalNote: payload.options?.personalNote ?? old.personalNote,
+      personalNoteMode: payload.options?.personalNoteMode ?? old.personalNoteMode,
+     };
+    },
+   );
 
    // Refetch to update isSaved status
-   queryClient.invalidateQueries({ queryKey: ["vocab-detail", chineseText] });
-   queryClient.invalidateQueries({ queryKey: ["vocab-list"] });
+   queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabDetail(chineseText) });
+   queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabListRoot });
   },
  });
 

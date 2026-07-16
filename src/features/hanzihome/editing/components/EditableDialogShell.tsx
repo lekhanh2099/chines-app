@@ -18,6 +18,7 @@ import {
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
 import { useHanziHomeActiveEditableNode } from "@/features/hanzihome/context/selectors";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { cn } from "@/lib/utils";
 
 import { editRegistry } from "../editRegistry";
@@ -65,7 +66,7 @@ export function EditableDialogShell() {
    if (isHanziHomeMutationConflict(error)) {
     closeEditableNode();
     await queryClient.invalidateQueries({
-     queryKey: ["hanzihome", "lesson-detail", activeNode.lessonId],
+     queryKey: hanzihomeQueryKeys.lessonDetail(activeNode.lessonId),
     });
     toast.error("Nội dung đã thay đổi, đang tải lại.");
     return;

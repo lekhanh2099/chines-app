@@ -15,6 +15,7 @@ import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPan
 import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 import {
@@ -41,7 +42,7 @@ export function HanziHomeVocabReviewPage({
 
  const lessonQueries = useQueries({
   queries: lessonIds.map((lessonId) => ({
-   queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
+   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
    queryFn: () => fetchHanziHomeLessonDetail(lessonId),
    enabled: Boolean(lessonId),
    staleTime: Infinity,

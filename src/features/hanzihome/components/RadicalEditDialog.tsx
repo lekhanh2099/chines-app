@@ -23,6 +23,7 @@ import {
  HanziHomeMutationError,
  isHanziHomeMutationConflict,
 } from "@/features/hanzihome/editing/mutation-error";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalEditDialogProps = {
@@ -266,13 +267,13 @@ function RadicalEditDialogContent({
 
   try {
    await updateRadical({ radical, changes });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "search-index"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.searchIndexRoot });
    toast.success("Đã lưu bộ thủ vào Supabase.");
    onOpenChange(false);
   } catch (error) {
    if (isHanziHomeMutationConflict(error)) {
-    await queryClient.invalidateQueries({ queryKey: ["hanzihome", "catalog"] });
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot });
     toast.error("Bộ thủ đã thay đổi, đang tải lại.");
     onOpenChange(false);
     return;

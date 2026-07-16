@@ -4,6 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { noteQueryKeys } from "@/features/notes/query-keys";
 import { createNote, type CreateNoteInput } from "@/services/notes.service";
 
 /**
@@ -24,7 +25,7 @@ export function useCreateNote() {
    return note;
   },
   onSuccess: () => {
-   queryClient.invalidateQueries({ queryKey: ["notes-list"] });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
   },
  });
 }
