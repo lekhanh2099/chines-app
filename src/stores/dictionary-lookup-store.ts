@@ -10,31 +10,28 @@
  */
 
 import { create } from "zustand";
+import { z } from "zod";
+
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "dictionary-lookup-overrides";
 
 type RouteOverrides = Record<string, boolean>;
-
-function loadOverrides(): RouteOverrides {
- if (typeof window === "undefined") return {};
-
- try {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  return raw ? JSON.parse(raw) : {};
- } catch {
-  return {};
- }
-}
-
-function saveOverrides(overrides: RouteOverrides) {
- if (typeof window === "undefined") return;
-
- try {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
- } catch {
-  // storage full or unavailable
- }
-}
+const routeOverridesSchema = z.record(z.string(), z.boolean());
+const storageConfig = {
+ key: STORAGE_KEY,
+ version: 1,
+ schema: routeOverridesSchema,
+ fallback: {} as RouteOverrides,
+ migrateLegacy: (value: unknown) => {
+  const parsed = routeOverridesSchema.safeParse(value);
+  return parsed.success ? parsed.data : null;
+ },
+};
 
 /**
  * Determine the "route key" for grouping pages.
@@ -71,7 +68,7 @@ export const useDictionaryLookupStore = create<DictionaryLookupState>((set, get)
  hydrate: () => {
   if (get().hasHydrated) return;
   set({
-   overrides: loadOverrides(),
+   overrides: readVersionedStorage(getBrowserStorage(), storageConfig),
    hasHydrated: true,
   });
  },
@@ -90,7 +87,7 @@ export const useDictionaryLookupStore = create<DictionaryLookupState>((set, get)
   const next = !current;
   const newOverrides = { ...get().overrides, [key]: next };
 
-  saveOverrides(newOverrides);
+  writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
   set({ overrides: newOverrides, hasHydrated: true });
  },
 
@@ -98,7 +95,7 @@ export const useDictionaryLookupStore = create<DictionaryLookupState>((set, get)
   const key = getRouteKey(pathname);
   const newOverrides = { ...get().overrides, [key]: enabled };
 
-  saveOverrides(newOverrides);
+  writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
   set({ overrides: newOverrides, hasHydrated: true });
  },
 }));

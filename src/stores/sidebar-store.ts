@@ -6,17 +6,23 @@
  */
 
 import { create } from "zustand";
+import { z } from "zod";
+
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "sidebar-collapsed";
 
-function loadCollapsed(): boolean {
- if (typeof window === "undefined") return false;
- try {
-  return localStorage.getItem(STORAGE_KEY) === "true";
- } catch {
-  return false;
- }
-}
+const storageConfig = {
+ key: STORAGE_KEY,
+ version: 1,
+ schema: z.boolean(),
+ fallback: false,
+ migrateLegacy: (value: unknown) => (typeof value === "boolean" ? value : null),
+};
 
 type SidebarState = {
  isCollapsed: boolean;
@@ -30,24 +36,16 @@ export const useSidebarStore = create<SidebarState>((set, get) => ({
 
  toggle: () => {
   const next = !get().isCollapsed;
-  try {
-   localStorage.setItem(STORAGE_KEY, String(next));
-  } catch {
-   // storage unavailable
-  }
+  writeVersionedStorage(getBrowserStorage(), storageConfig, next);
   set({ isCollapsed: next });
  },
 
  setCollapsed: (collapsed: boolean) => {
-  try {
-   localStorage.setItem(STORAGE_KEY, String(collapsed));
-  } catch {
-   // storage unavailable
-  }
+  writeVersionedStorage(getBrowserStorage(), storageConfig, collapsed);
   set({ isCollapsed: collapsed });
  },
 
  hydrate: () => {
-  set({ isCollapsed: loadCollapsed() });
+  set({ isCollapsed: readVersionedStorage(getBrowserStorage(), storageConfig) });
  },
 }));

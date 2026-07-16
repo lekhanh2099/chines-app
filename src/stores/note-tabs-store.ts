@@ -5,6 +5,13 @@
  * Persists open tabs to localStorage so they survive refresh.
  */
 import { create } from "zustand";
+import { z } from "zod";
+
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "note-tabs";
 const MAX_TABS = 20;
@@ -12,6 +19,23 @@ const MAX_TABS = 20;
 export type NoteTab = {
  noteId: string;
  title: string;
+};
+
+const noteTabsDataSchema = z.object({
+ tabs: z.array(z.object({ noteId: z.string().min(1), title: z.string() })).max(MAX_TABS),
+ activeNoteId: z.string().min(1).nullable(),
+});
+type NoteTabsData = z.output<typeof noteTabsDataSchema>;
+const fallbackState: NoteTabsData = { tabs: [], activeNoteId: null };
+const storageConfig = {
+ key: STORAGE_KEY,
+ version: 1,
+ schema: noteTabsDataSchema,
+ fallback: fallbackState,
+ migrateLegacy: (value: unknown) => {
+  const parsed = noteTabsDataSchema.safeParse(value);
+  return parsed.success ? parsed.data : null;
+ },
 };
 
 type NoteTabsState = {
@@ -35,29 +59,12 @@ type NoteTabsState = {
  reorderTabs: (fromIndex: number, toIndex: number) => void;
 };
 
-function loadState(): { tabs: NoteTab[]; activeNoteId: string | null } {
- try {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (raw) {
-   const parsed = JSON.parse(raw);
-   return {
-    tabs: Array.isArray(parsed.tabs) ? parsed.tabs : [],
-    activeNoteId: parsed.activeNoteId || null,
-   };
-  }
- } catch {
-  // corrupted
- }
- return { tabs: [], activeNoteId: null };
+function loadState(): NoteTabsData {
+ return readVersionedStorage(getBrowserStorage(), storageConfig);
 }
 
 function saveState(tabs: NoteTab[], activeNoteId: string | null) {
- if (typeof window === "undefined") return;
- try {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ tabs, activeNoteId }));
- } catch {
-  // full
- }
+ writeVersionedStorage(getBrowserStorage(), storageConfig, { tabs, activeNoteId });
 }
 
 export const useNoteTabsStore = create<NoteTabsState>((set, get) => ({
@@ -76,17 +83,14 @@ export const useNoteTabsStore = create<NoteTabsState>((set, get) => ({
   const existing = tabs.find((t) => t.noteId === noteId);
 
   if (existing) {
-   // Already open — just activate
    set({ activeNoteId: noteId });
    saveState(tabs, noteId);
    return;
   }
 
-  // Add new tab
   const newTab: NoteTab = { noteId, title: title || "Đang tải..." };
   let newTabs = [...tabs, newTab];
 
-  // Evict oldest if over limit
   if (newTabs.length > MAX_TABS) {
    newTabs = newTabs.slice(newTabs.length - MAX_TABS);
   }
@@ -104,7 +108,6 @@ export const useNoteTabsStore = create<NoteTabsState>((set, get) => ({
   let newActive = activeNoteId;
 
   if (activeNoteId === noteId) {
-   // Activate adjacent tab
    if (newTabs.length === 0) {
     newActive = null;
    } else if (idx >= newTabs.length) {

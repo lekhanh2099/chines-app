@@ -1,4 +1,11 @@
 import { create } from "zustand";
+import { z } from "zod";
+
+import {
+ getBrowserStorage,
+ readVersionedStorage,
+ writeVersionedStorage,
+} from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "hanzihome-focus-mode";
 
@@ -10,25 +17,13 @@ type FocusModeState = {
  toggle: () => void;
 };
 
-function loadFocusMode(): boolean {
- if (typeof window === "undefined") return false;
-
- try {
-  return localStorage.getItem(STORAGE_KEY) === "true";
- } catch {
-  return false;
- }
-}
-
-function saveFocusMode(enabled: boolean) {
- if (typeof window === "undefined") return;
-
- try {
-  localStorage.setItem(STORAGE_KEY, String(enabled));
- } catch {
-  // Storage can be unavailable in private browsing or locked contexts.
- }
-}
+const storageConfig = {
+ key: STORAGE_KEY,
+ version: 1,
+ schema: z.boolean(),
+ fallback: false,
+ migrateLegacy: (value: unknown) => (typeof value === "boolean" ? value : null),
+};
 
 export const useFocusModeStore = create<FocusModeState>((set, get) => ({
  enabled: false,
@@ -36,17 +31,20 @@ export const useFocusModeStore = create<FocusModeState>((set, get) => ({
 
  hydrate: () => {
   if (get().hasHydrated) return;
-  set({ enabled: loadFocusMode(), hasHydrated: true });
+  set({
+   enabled: readVersionedStorage(getBrowserStorage(), storageConfig),
+   hasHydrated: true,
+  });
  },
 
  setEnabled: (enabled) => {
-  saveFocusMode(enabled);
+  writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
   set({ enabled, hasHydrated: true });
  },
 
  toggle: () => {
   const enabled = !get().enabled;
-  saveFocusMode(enabled);
+  writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
   set({ enabled, hasHydrated: true });
  },
 }));
