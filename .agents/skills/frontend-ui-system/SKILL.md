@@ -1,10 +1,10 @@
 ---
 name: frontend-ui-system
-description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use when a task mentions component reuse, design system, Button, Dialog, Select, Popover, Dropdown, Menu, Sheet, Tabs, Card, Badge, Input, form control, command palette, global search, settings menu, toolbar, responsive layout, iPad, mobile, Tailwind classes, tokens, accessibility, keyboard, focus, loading, empty, error, hover, or visual consistency.
+description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use when a task mentions component reuse, design system, Button, Dialog, Select, Popover, DropdownMenu, Menu, Tooltip, Chip, Badge, Typography, Avatar, Switch, Sheet, Tabs, Card, Input, form control, command palette, global search, settings menu, toolbar, responsive layout, iPad, mobile, Tailwind classes, tokens, accessibility, keyboard, focus, loading, empty, error, hover, or visual consistency.
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers
 metadata:
   author: chines-app
-  version: "2.0"
+  version: "2.1"
 ---
 
 # Frontend UI System
@@ -16,11 +16,12 @@ Read:
 ```bash
 cat AGENTS.md
 cat docs/ui/component-contracts.md
+cat docs/ui/component-inventory.md
 cat docs/ui/ui-verification.md
 git status --short
 ```
 
-Read the local source for every primitive or pattern being considered.
+Read local source for every primitive or pattern being considered.
 
 When shadcn is involved:
 
@@ -33,7 +34,7 @@ Local source overrides generic examples.
 
 ## 2. Inventory before JSX
 
-For the requested interaction, report:
+Report:
 
 ```text
 Need:
@@ -53,8 +54,8 @@ rg -n 'from "@base-ui/react|from "radix-ui|from "@radix-ui/' src \
   --glob '!src/components/ui/**'
 ```
 
-Do not create a second Button/Dialog/Select/Menu visual language inside a
-feature.
+Do not create a second Button, Dialog, Select, DropdownMenu, Tooltip, Chip,
+Typography or Switch visual language inside a feature.
 
 ## 3. Primitive boundary
 
@@ -70,29 +71,54 @@ Shared primitives own:
 - overlay stack;
 - internal icon sizing.
 
-Feature code owns:
-
-- product labels;
-- data;
-- callbacks;
-- business conditions;
-- parent layout participation.
+Feature code owns labels, data, callbacks, business conditions and parent layout
+participation.
 
 Follow the `className` contract in `docs/ui/component-contracts.md`.
 
 ## 4. Component choice
 
-Use the canonical matrix.
+Use the canonical matrix and inventory.
 
 Special rules:
 
-- A styled Popover is not automatically an action Menu.
-- Toggle Buttons require exposed state.
-- A keyboard search surface is a composite widget, not just Input + Dialog.
-- Form adapters compose shared UI; they do not create a parallel design system.
-- Existing legacy paths must not gain new consumers without justification.
+- DropdownMenu is the canonical action-menu primitive.
+- A styled Popover is not automatically a Menu.
+- Tooltip contains supplementary information only.
+- Badge is static; Chip is interactive.
+- Toggle Buttons require exposed state; direct booleans should use Switch.
+- Typography is for app hierarchy, not HanziHome learner typography.
+- A keyboard search surface is a composite, not Input + Dialog alone.
+- Form adapters compose shared UI and must not create a parallel system.
+- Legacy component paths gain no new consumers without justification.
+- Do not create an alias-only pattern around an existing primitive.
 
-## 5. shadcn changes
+## 5. Variant design
+
+Add a variant only when it represents a stable semantic or interaction contract.
+
+Good:
+
+```text
+toolbar density
+menu density
+destructive menu action
+top-placed command dialog
+static badge vs interactive chip
+```
+
+Bad:
+
+```text
+purpleButtonForPageA
+width317
+specialSmallOnlyHere
+```
+
+Before adding a variant, list current or planned meaningful consumers. Prefer
+additive APIs until a dedicated migration task approves breaking cleanup.
+
+## 6. shadcn changes
 
 Before add/update:
 
@@ -103,71 +129,45 @@ npx shadcn@latest add <component> --diff
 
 Then inspect consumers and local customization.
 
-STOP AND CONFIRM before:
+STOP AND CONFIRM before overwrite, breaking local API, dependency addition,
+Base/Radix migration or global preset/token application.
 
-- overwrite;
-- breaking local API;
-- dependency addition;
-- Base/Radix migration;
-- global preset/token application.
+## 7. UX contract
 
-## 6. UX contract
+Before coding, define user goal, primary action, hierarchy, loading,
+initial/empty, error, disabled, long-content, keyboard, touch, responsive and
+focus-return behavior.
 
-Before coding, define:
+Do not ship a blank initial panel when instruction, recent content, navigation
+or a compact EmptyState is required.
 
-- user goal;
-- primary action;
-- hierarchy;
-- loading;
-- initial/empty;
-- error;
-- disabled;
-- long content;
-- keyboard;
-- touch;
-- responsive behavior;
-- focus return.
+## 8. Accessibility
 
-Do not ship a blank initial panel when a useful instruction, recent item,
-navigation action or compact empty state is required.
-
-## 7. Accessibility
-
-Use primitive-native semantics when available.
+Use primitive-native semantics.
 
 Verify:
 
 - button vs link;
-- toggle state;
+- Switch/Checkbox/toggle state;
 - menu trigger and menu items;
 - dialog title/focus/Escape;
-- select/combobox semantics;
+- Select/combobox semantics;
+- Tooltip is supplementary;
 - visible focus;
 - keyboard operation;
 - touch target size.
 
-Do not add ARIA to compensate for an incorrect interaction model. Fix the model
-or use the correct primitive.
+Do not add ARIA to compensate for an incorrect interaction model.
 
-## 8. Visual system
+## 9. Visual system
 
-Preserve repository brand roles:
+Preserve semantic tokens, active-state recipes, gradient/glass roles and shared
+overlay stacking.
 
-- semantic tokens;
-- shared active state;
-- shared gradient/glass recipes;
-- shared overlay stacking.
+Do not add feature-local hard-coded color, arbitrary gradient/shadow, overlay
+z-index, duplicated active palette or raw component recipe.
 
-Do not add feature-local:
-
-- hard-coded hex;
-- arbitrary gradient;
-- arbitrary shadow;
-- overlay z-index;
-- duplicated active palette;
-- raw component recipe.
-
-Classify an existing visual recipe before deleting it:
+Classify visual recipes as:
 
 ```text
 primitive-owned
@@ -177,21 +177,14 @@ legitimate local exception
 ad-hoc debt
 ```
 
-## 9. Verification
+## 10. Verification
 
 Follow `docs/ui/ui-verification.md`.
 
 A visual claim requires rendering.
 
-At minimum verify applicable:
-
-- desktop;
-- iPad portrait;
-- mobile;
-- keyboard;
-- loading/empty/error;
-- dark mode;
-- console.
+Verify applicable desktop, iPad portrait, mobile, keyboard,
+loading/empty/error, dark mode and console states.
 
 Then run:
 
@@ -199,13 +192,14 @@ Then run:
 npm run check
 ```
 
-## 10. Handoff
+## 11. Handoff
 
 Report:
 
 ```text
 Component contract used:
 New/extended contract:
+Meaningful consumers:
 Feature-local exceptions:
 Rendered routes:
 Viewports:

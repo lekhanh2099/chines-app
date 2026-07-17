@@ -2,53 +2,66 @@
 
 This is the canonical guide for choosing and composing UI in `chines-app`.
 
-Local source code is the source of truth. Generic shadcn documentation helps
-with concepts and upstream APIs but MUST NOT override customized local
-components.
+Local source code is the source of truth. Generic shadcn, Radix and Base UI
+documentation helps with concepts and upstream APIs but MUST NOT override
+customized local components.
 
 ## 1. Selection matrix
 
-| Need                               | Canonical contract                          | Notes                                                                                     |
-| ---------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Text action / CTA                  | `Button`                                    | Use a semantic variant and size                                                           |
-| Icon-only action                   | `Button` icon size                          | New code should not expand `IconButton` usage                                             |
-| Modal task                         | `Dialog`                                    | Must have a title; use managed focus                                                      |
-| Destructive confirmation           | Dialog confirmation pattern                 | Prefer a dedicated confirm pattern; do not use a generic modal without clear consequences |
-| Side or bottom panel               | `Sheet`                                     | Side is a responsive behavior contract                                                    |
-| Non-modal contextual content       | shared Popover wrapper                      | Feature code does not import Base UI directly                                             |
-| List of commands/actions           | `ActionMenu` pattern                        | Missing contract: create before further hand-rolled menus                                 |
-| Single-value selection             | `src/components/ui/select.tsx`              | Composable primitive                                                                      |
-| Option-array convenience selection | target `OptionSelect` adapter               | `src/components/ui/select/index.tsx` is legacy and must not gain new consumers            |
-| Form selection                     | canonical `FormSelect`                      | Must compose the shared Select system                                                     |
-| Text input                         | `Input` or form field adapter               | Search/command input may use a dedicated composite                                        |
-| Toggle setting                     | Switch or toggle Button with `aria-pressed` | Visual active state alone is insufficient                                                 |
-| Checkbox state                     | `Checkbox`                                  | Use checkbox semantics                                                                    |
-| Status/category label              | `Badge`                                     | Do not hand-build repeated pills                                                          |
-| Visual section/card                | `Card`                                      | Use current local API, not assumed upstream Card anatomy                                  |
-| Divider                            | `Separator`                                 | Avoid ad-hoc border divs for semantic separators                                          |
-| Compact option set                 | `SegmentedControl`                          | Use for a small single-choice set                                                         |
-| Content tabs                       | local `Tabs` contract                       | Current API is not standard shadcn Tabs                                                   |
-| Global/feature search command      | target `CommandDialog` pattern              | Do not reproduce listbox keyboard logic per feature                                       |
-| Avatar/profile image               | target `Avatar` primitive                   | Until added, keep raw avatar code isolated                                                |
+| Need                               | Canonical contract                      | Notes                                            |
+| ---------------------------------- | --------------------------------------- | ------------------------------------------------ |
+| Text action / CTA                  | `Button`                                | Use semantic variant and interaction density     |
+| Icon-only action                   | `Button` icon size + optional `Tooltip` | Always retain an accessible name                 |
+| Modal task                         | `Dialog`                                | Choose typed size, placement and scroll mode     |
+| Destructive confirmation           | confirmation Dialog pattern             | Consequence and pending state must be explicit   |
+| Side or bottom panel               | `Sheet`                                 | Side is a responsive behavior contract           |
+| Non-modal contextual content       | shared Popover wrapper                  | Not an action menu                               |
+| Action/function list               | `DropdownMenu`                          | Full keyboard/menu semantics                     |
+| Supplementary hint                 | `Tooltip`                               | Never hide required information in a tooltip     |
+| Single-value selection             | `src/components/ui/select.tsx`          | Composable primitive                             |
+| Option-array convenience selection | target `OptionSelect` adapter           | Legacy `select/index.tsx` gains no new consumers |
+| Boolean setting                    | `Switch`                                | Use label and description outside the control    |
+| Independent boolean selection      | `Checkbox`                              | Checkbox semantics                               |
+| Interactive compact filter/action  | `Chip`                                  | Optional `pressed` exposes `aria-pressed`        |
+| Static status/category             | `Badge`                                 | Not clickable                                    |
+| Application text hierarchy         | `Typography`                            | Do not replace HanziHome study typography        |
+| Avatar/profile image               | `Avatar`                                | Always include fallback initials                 |
+| Visual section/card                | `Card`                                  | Use the current local API                        |
+| Divider                            | `Separator`                             | Avoid repeated border-div recipes                |
+| Compact exclusive options          | `SegmentedControl`                      | Small single-choice set                          |
+| Content tabs                       | local `Tabs` contract                   | Not standard shadcn Tabs                         |
+| Empty/no-result state              | `EmptyState`                            | Initial, empty and error remain distinct         |
+| Search command surface             | target `CommandDialog`                  | Deferred until Global Search migration           |
 
-## 2. Current source-of-truth paths
+See `docs/ui/component-inventory.md` for implementation status and migration
+priority.
+
+## 2. Canonical source paths
 
 ```text
-src/components/ui/button.tsx
-src/components/ui/dialog.tsx
-src/components/ui/select.tsx
-src/components/ui/sheet.tsx
-src/components/ui/base-popover.tsx
-src/components/ui/card.tsx
+src/components/ui/avatar.tsx
 src/components/ui/badge.tsx
-src/components/ui/input.tsx
+src/components/ui/button.tsx
+src/components/ui/card.tsx
 src/components/ui/checkbox.tsx
+src/components/ui/chip.tsx
+src/components/ui/dialog.tsx
+src/components/ui/dropdown-menu.tsx
+src/components/ui/input.tsx
+src/components/ui/select.tsx
 src/components/ui/separator.tsx
+src/components/ui/sheet.tsx
+src/components/ui/switch.tsx
 src/components/ui/tabs.tsx
+src/components/ui/tooltip.tsx
+src/components/ui/typography.tsx
+src/components/ui/base-popover.tsx
 src/components/ui/segmented-control.tsx
+
+src/components/patterns/empty-state.tsx
 ```
 
-Known parallel/legacy paths:
+Known legacy/parallel paths:
 
 ```text
 src/components/ui/select/index.tsx
@@ -56,229 +69,198 @@ src/components/tanstack-form/field/SelectField.tsx
 src/components/ui/icon-button.tsx
 ```
 
-New feature work MUST NOT add consumers to a legacy path without an explicit
-compatibility reason.
-
-## 3. Primitive vs pattern vs feature
+## 3. Primitive, pattern and feature ownership
 
 ### Primitive
 
-Owns:
-
-- element/primitive anatomy;
-- base semantics;
-- focus/disabled/invalid behavior;
-- tokens;
-- variants;
-- internal icon sizing;
-- overlay stacking when applicable.
-
-Examples: Button, DialogContent, SelectTrigger.
+Owns element/primitive anatomy, semantics, focus, disabled/invalid behavior,
+tokens, variants, internal icon sizing and overlay stacking.
 
 ### Pattern
 
-Owns repeated interaction composition.
+Owns repeated cross-feature interaction composition.
 
 Examples:
 
 ```text
-ActionMenu
+EmptyState
 SettingsMenu
 CommandDialog
 ResponsiveOverlay
 ```
 
-Patterns may compose multiple primitives. They do not own product data.
-
 ### Feature
 
-Owns:
+Owns product labels, data, business rules, query/form/store integration and
+callbacks.
 
-- product labels;
-- business rules;
-- query/form/store integration;
-- feature-specific rendering;
-- callbacks.
+Feature code MUST NOT reproduce primitive or pattern anatomy.
 
-A feature SHOULD NOT recreate primitive or pattern anatomy.
+## 4. `className` ownership
 
-## 4. `className` contract
+Allowed at call sites:
 
-Call-site classes are allowed for parent participation:
+- parent-imposed width/max-width;
+- grid/flex placement;
+- responsive visibility;
+- parent-owned scroll constraints;
+- external spacing owned by the parent;
+- `sr-only` and equivalent accessibility utilities.
 
-- width/max-width;
-- flex/grid placement;
-- responsive hide/show;
-- parent-owned scroll size;
-- `sr-only`;
-- external spacing owned by the parent.
+Forbidden at call sites:
 
-Call-site classes are forbidden for primitive internals:
-
-- colors;
-- border tone;
+- color/tone;
+- border appearance;
 - radius;
-- internal padding;
+- internal padding/density;
 - typography;
-- shadows;
+- shadow;
 - hover/focus/active recipes;
-- z-index;
-- primitive-owned icon dimensions.
+- overlay z-index;
+- primitive-owned icon sizing.
 
-Example:
+A repeated valid variation becomes a semantic typed variant. A one-off pixel
+value does not automatically justify a new variant.
 
-```tsx
-// Allowed: the parent page owns available width.
-<SelectContent className="max-w-[calc(100vw-2rem)]" />
+## 5. Button
 
-// Not allowed: consumer creates a second Select visual language.
-<SelectTrigger className="rounded-2xl bg-purple-50 px-5 text-lg shadow-xl" />
-```
+Stable variants express meaning. Stable sizes express interaction density.
 
-If a prohibited variation is a repeated valid need, add a semantic typed
-variant to the primitive.
-
-## 5. Button contract
-
-Use Button variants to express action meaning, not arbitrary palettes.
-
-Required semantics:
-
-- submit buttons explicitly use `type="submit"`;
-- non-submit buttons use `type="button"`;
-- icon-only buttons have an accessible label;
-- toggle buttons expose state through `aria-pressed` or a dedicated control;
-- loading buttons are disabled and expose visible progress;
-- destructive actions use the destructive contract.
-
-Target semantic sizes to add when implementation work begins:
+New semantic sizes:
 
 ```text
 touch
-toolbar
 compact
+toolbar
 menu
-iconToolbar
-iconRound
+icon-toolbar
+icon-round
 ```
 
-Do not add a size solely for one pixel value. Add it for a repeated interaction
-density.
+Rules:
 
-## 6. Dialog contract
+- non-submit buttons default to `type="button"`;
+- submit buttons set `type="submit"`;
+- icon-only buttons require an accessible label;
+- toggle buttons expose state with `aria-pressed` or use Switch;
+- destructive menu actions use `menuDestructive`;
+- loading actions remain disabled and visibly pending.
 
-Every Dialog requires:
+## 6. Dialog
 
-- accessible title;
-- purpose-specific description when useful;
-- managed initial focus;
-- Escape behavior;
-- focus restoration;
-- a close action unless the operation must block it;
-- explicit loading/error behavior for async tasks.
-
-Target reusable DialogContent variants:
+`DialogContent` supports:
 
 ```text
 size: sm | md | lg | xl | command | editor
 placement: center | top
 scrollMode: body | content | none
-closePlacement: content | header | none
+surface: default | glass
 ```
 
-A consumer may select a contract. It SHOULD NOT reimplement placement, close
-button, scroll ownership and surface styling as a long utility string.
+Defaults preserve the previous centered `max-w-2xl` contract.
 
-## 7. Popover and menu contract
+Every dialog requires a title, managed focus, Escape behavior, focus
+restoration and an explicit async state when applicable.
 
-Use generic Popover for contextual interactive content that is not an
-application-style action menu.
+Do not encode placement, max width, scroll ownership and surface styling as a
+large feature-level class string when a typed contract exists.
 
-A popup with `role="menu"` MUST use a complete menu interaction contract:
+## 7. DropdownMenu and Popover
 
-- menu button trigger;
-- expanded state;
-- menu items;
-- radio/checkbox item state when needed;
-- keyboard navigation;
-- close-on-select behavior;
-- disabled behavior;
-- destructive tone;
-- focus return.
+Use `DropdownMenu` for a list of actions/functions. It owns:
 
-Do not attach `role="menu"` to arbitrary children.
+- trigger state;
+- managed focus;
+- arrow-key navigation;
+- typeahead;
+- checkbox/radio items;
+- submenus;
+- disabled/destructive states;
+- close and focus return.
 
-Target shared pattern:
+Use Popover for contextual interactive content that is not an application menu.
+
+Do not set `role="menu"` on arbitrary Popover children.
+
+## 8. Tooltip
+
+Tooltip is supplementary only.
+
+Use it for dense icon actions where the trigger already has a clear accessible
+name. Do not put required instructions, errors, descriptions or touch-critical
+information only inside Tooltip.
+
+For an info icon whose purpose is to reveal content, use Popover instead.
+
+`TooltipProvider` is installed at the root layout.
+
+## 9. Chip and Badge
+
+`Badge` is static metadata.
+
+`Chip` is an interactive compact control. Use `pressed` only for selectable
+chips so the component exposes `aria-pressed`.
+
+Do not render a static status as a disabled Chip.
+
+## 10. Typography
+
+General shell/page hierarchy uses Typography variants:
 
 ```text
-ActionMenu
-ActionMenuTrigger
-ActionMenuContent
-ActionMenuSection
-ActionMenuLabel
-ActionMenuSeparator
-ActionMenuItem
-ActionMenuRadioItem
-ActionMenuCheckboxItem
+display
+pageTitle
+sectionTitle
+cardTitle
+body
+bodySmall
+label
+caption
+overline
+code
 ```
 
-## 8. Select contract
+Tone, weight, alignment and line clamp are typed separately.
 
-Canonical IDs are strings at the UI Select boundary. Normalize once.
+HanziHome Chinese text, pinyin, font selection and learner reading-size controls
+remain feature-owned. Preserve `lang="zh-CN"` and current study typography
+helpers.
 
-Do not maintain both an option object and scalar value as independent state.
+## 11. Avatar
 
-Form adapters own:
+Use Avatar with AvatarImage and AvatarFallback.
 
-- field value conversion;
-- validation state;
-- description/error association;
-- blur handling.
+Fallback initials are mandatory because remote profile images can fail or
+change hosts. Feature code should not repeat image-failure state solely to
+recreate fallback behavior.
 
-Feature code owns:
+## 12. Switch
 
-- options;
-- disabled conditions;
-- business labels.
+Use Switch for boolean settings such as lookup, theme preference or focus mode
+when the interaction is a direct on/off state.
 
-The Select primitive owns:
+The visible row label and description remain outside the Switch. The control
+needs an accessible label or labelled relationship.
 
-- trigger;
-- content;
-- item;
-- focus;
-- keyboard;
-- overlay stack;
-- visual contract.
+## 13. Select
 
-## 9. Search/command contract
+Canonical UI value is normalized once, normally to string.
 
-Search with keyboard-selected results is a composite widget, not merely an
-Input inside a Dialog.
+Form adapters own value conversion, validation, description/error association
+and blur handling. Feature code owns options and business disabled conditions.
 
-A reusable command surface must define:
+## 14. Search/command
 
-- input semantics;
-- results relationship;
-- selected item;
-- ArrowUp/ArrowDown;
-- Enter;
-- Escape;
-- loading;
-- initial state;
-- empty state;
-- error;
-- direct actions;
-- close control;
-- footer help;
-- focus restoration.
+A keyboard-selected search surface is a composite widget, not only Input inside
+Dialog.
 
-Do not place interactive buttons inside a listbox option. Separate command
-actions and result options into a coherent composite contract.
+It must define input/result relationship, selection, Arrow keys, Enter, Escape,
+loading, initial state, empty state, error, direct actions, close control and
+focus restoration.
 
-## 10. shadcn workflow
+## 15. shadcn workflow
 
-Before adding/updating a component:
+Before add/update:
 
 ```bash
 npx shadcn@latest info --json
@@ -287,20 +269,12 @@ npx shadcn@latest add <component> --dry-run
 npx shadcn@latest add <component> --diff
 ```
 
-Then:
+Read local source and consumers. STOP AND CONFIRM before overwrite, dependency
+addition or breaking API migration.
 
-1. Read the local component.
-2. Search all consumers.
-3. Compare local API with upstream API.
-4. Decide additive merge vs breaking migration.
-5. STOP AND CONFIRM before overwrite or breaking change.
+## 16. Feature checklist
 
-Never assume standard upstream Card, Tabs, Sheet, Dialog or Select anatomy
-matches this repository.
-
-## 11. Feature implementation checklist
-
-Before writing JSX:
+Before JSX:
 
 ```text
 User goal:
@@ -318,8 +292,8 @@ Risk:
 After implementation:
 
 - no direct primitive-library import in feature code;
-- no new duplicated control recipe;
+- no duplicated control recipe;
 - no inaccessible custom interaction;
 - no blank loading/initial state;
 - desktop, iPad and mobile checked;
-- final component choice documented in the handoff.
+- component choice documented in the handoff.

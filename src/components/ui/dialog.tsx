@@ -3,6 +3,7 @@
 import * as React from "react";
 import { X } from "lucide-react";
 import { Dialog as DialogPrimitive } from "radix-ui";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,6 +12,41 @@ const Dialog = DialogPrimitive.Root;
 const DialogTrigger = DialogPrimitive.Trigger;
 const DialogClose = DialogPrimitive.Close;
 const DialogPortal = DialogPrimitive.Portal;
+
+const dialogContentVariants = cva(
+ "fixed left-1/2 z-50 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] -translate-x-1/2 flex-col gap-0 rounded-2xl p-0 shadow-theme-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+ {
+  variants: {
+   size: {
+    sm: "max-w-md",
+    md: "max-w-2xl",
+    lg: "max-w-3xl",
+    xl: "max-w-5xl",
+    command: "max-w-3xl",
+    editor: "max-w-5xl",
+   },
+   placement: {
+    center: "top-1/2 -translate-y-1/2",
+    top: "top-[max(4rem,8vh)]",
+   },
+   scrollMode: {
+    body: "overflow-hidden",
+    content: "overflow-y-auto",
+    none: "overflow-visible",
+   },
+   surface: {
+    default: "border-2 border-border-default bg-bg-card",
+    glass: "app-glass-surface border border-border-default/80",
+   },
+  },
+  defaultVariants: {
+   size: "md",
+   placement: "center",
+   scrollMode: "body",
+   surface: "default",
+  },
+ },
+);
 
 function DialogOverlay({
  className,
@@ -34,22 +70,24 @@ function DialogContent({
  className,
  children,
  showCloseButton = true,
+ size,
+ placement,
+ scrollMode,
+ surface,
  ...props
-}: React.ComponentProps<typeof DialogPrimitive.Content> & {
- showCloseButton?: boolean;
-}) {
+}: React.ComponentProps<typeof DialogPrimitive.Content> &
+ VariantProps<typeof dialogContentVariants> & {
+  showCloseButton?: boolean;
+ }) {
  return (
   <DialogPortal>
    <DialogOverlay />
    <DialogPrimitive.Content
     data-slot="dialog-content"
-    className={cn(
-     "fixed left-1/2 top-1/2 z-50 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden rounded-2xl border-2 border-border-default bg-bg-card p-0 shadow outline-none",
-     "data-[state=open]:animate-in data-[state=closed]:animate-out",
-     "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-     "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
-     className,
-    )}
+    data-size={size}
+    data-placement={placement}
+    data-scroll-mode={scrollMode}
+    className={cn(dialogContentVariants({ size, placement, scrollMode, surface }), className)}
     {...props}
    >
     {children}
@@ -59,11 +97,11 @@ function DialogContent({
       <Button
        type="button"
        variant="ghost"
-       size="icon"
-       className="absolute right-4 top-4"
+       size="icon-toolbar"
+       className="absolute right-3 top-3"
        aria-label="Đóng dialog"
       >
-       <X className="h-4 w-4" />
+       <X />
       </Button>
      </DialogPrimitive.Close>
     )}
@@ -133,7 +171,7 @@ function DialogDescription({
  return (
   <DialogPrimitive.Description
    data-slot="dialog-description"
-   className={cn(" font-semibold text-text-muted", className)}
+   className={cn("font-semibold text-text-muted", className)}
    {...props}
   />
  );
@@ -147,7 +185,9 @@ export {
  DialogDescription,
  DialogFooter,
  DialogHeader,
+ DialogOverlay,
  DialogPortal,
  DialogTitle,
  DialogTrigger,
+ dialogContentVariants,
 };
