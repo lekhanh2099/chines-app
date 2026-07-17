@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
 import { Spinner } from "@/components/ui/spinner";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import {
  loadClientAiPromptSettings,
  saveClientAiPromptSettings,
@@ -15,12 +24,13 @@ import {
 } from "@/lib/ai-prompts";
 import {
  DEFAULT_GEMINI_MODEL,
- GEMINI_TEXT_MODEL_OPTIONS,
+ DEFAULT_GEMINI_QUICK_MODEL,
+ GEMINI_DETAIL_MODEL_OPTIONS,
  getGeminiModelLabel,
  type GeminiModelId,
 } from "@/lib/gemini-models";
 import { toast } from "sonner";
-import { Bot, RefreshCcw, Save } from "lucide-react";
+import { Bot, Gauge, RefreshCcw, Save, Sparkles } from "lucide-react";
 import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
 
 type AiPromptSettingsResponse = {
@@ -163,116 +173,135 @@ export function SettingsPageContent() {
  const hasUnsavedPromptChanges = hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
  const hasUnsavedModelChange = !!savedSettings && geminiModel !== savedSettings.geminiModel;
  const hasUnsavedChanges = hasUnsavedPromptChanges || hasUnsavedModelChange;
+ const selectedDetailModel = GEMINI_DETAIL_MODEL_OPTIONS.find(
+  (option) => option.value === geminiModel,
+ );
 
  return (
-  <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8">
-   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
-    <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-     <div className="max-w-2xl space-y-2">
-      <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
-       <Bot className="h-3.5 w-3.5" />
-       AI Prompt Settings
-      </div>
-      <h1 className="text-3xl font-bold text-text-primary">Cache từ vựng và prompt tra cứu</h1>
-      <p className=" leading-6 text-text-secondary">
-       Hai prompt dưới đây điều khiển cách app gọi AI cho tra từ và phân tích câu. Word lookup được
-       dùng cho cache dictionary trong bảng vocabularies; sentence lookup dùng cho dịch nghĩa và
-       grammar points.
-      </p>
-      <div className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-1 text-xs text-text-secondary">
-       <span className="font-semibold text-text-primary">Model hiện tại</span>
-       <span>{getGeminiModelLabel(geminiModel)}</span>
-      </div>
+  <div className="mx-auto grid w-full max-w-full gap-4 px-3 py-4 sm:px-5 sm:py-6 lg:gap-5 lg:px-8">
+   <header className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+    <div className="max-w-3xl space-y-2">
+     <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
+      <Bot className="h-3.5 w-3.5" />
+      AI Settings
      </div>
-
-     <div className="flex items-center gap-3">
-      <span
-       className={`hidden rounded-full px-3 py-1 text-xs font-semibold md:inline-flex ${hasUnsavedChanges ? "bg-warning-subtle text-warning-text" : "bg-success/10 text-success"}`}
-      >
-       {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Mọi thay đổi đã được lưu"}
-      </span>
-      <Button
-       variant="outline"
-       onClick={() => {
-        setWordLookupPrompt(DEFAULT_WORD_LOOKUP_PROMPT);
-        setSentenceLookupPrompt(DEFAULT_SENTENCE_LOOKUP_PROMPT);
-        setGeminiModel(DEFAULT_GEMINI_MODEL);
-       }}
-       disabled={isLoading || isSaving}
-      >
-       <RefreshCcw data-icon="inline-start" />
-       Reset mặc định
-      </Button>
-      <Button
-       onClick={handleSave}
-       disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
-      >
-       {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-       Lưu thay đổi
-      </Button>
-     </div>
+     <h1 className="text-3xl font-bold text-text-primary">Cài đặt tra cứu AI</h1>
+     <p className="leading-6 text-text-secondary">
+      Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model mạnh
+      chỉ chạy khi bạn chủ động mở phần chi tiết.
+     </p>
+     <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
+      {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
+     </Badge>
     </div>
-   </section>
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
-    <div className="mb-4 space-y-2">
-     <h2 className="text-xl font-bold text-text-primary">Gemini Model</h2>
+    <div className="flex flex-wrap items-center gap-3">
+     <Button
+      variant="outline"
+      onClick={() => {
+       setWordLookupPrompt(DEFAULT_WORD_LOOKUP_PROMPT);
+       setSentenceLookupPrompt(DEFAULT_SENTENCE_LOOKUP_PROMPT);
+       setGeminiModel(DEFAULT_GEMINI_MODEL);
+      }}
+      disabled={isLoading || isSaving}
+     >
+      <RefreshCcw data-icon="inline-start" />
+      Reset mặc định
+     </Button>
+     <Button
+      onClick={handleSave}
+      disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
+     >
+      {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+      Lưu thay đổi
+     </Button>
+    </div>
+   </header>
+
+   <section className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+    <div className="space-y-2">
+     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+      <Gauge className="size-5 text-accent-text" />
+      Tra nhanh và dịch nghĩa
+     </h2>
      <p className="max-w-3xl  leading-6 text-text-secondary">
-      Chọn model Gemini cho các request tra từ và phân tích câu. Nếu một model đang bị rate limit
-      thì bạn có thể đổi sang model khác ngay tại đây.
+      Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key.
      </p>
     </div>
 
-    <div className="grid gap-4 lg:grid-cols-[minmax(0,340px),minmax(0,1fr)] lg:items-start">
-     <label className="space-y-2">
-      <span className=" font-semibold text-text-primary">Model text</span>
-      <select
-       aria-label="Chọn model Gemini"
-       value={geminiModel}
-       onChange={(event) => setGeminiModel(event.target.value as GeminiModelId)}
-       disabled={isLoading || isSaving}
-       className="h-11 w-full rounded-xl border border-border-default bg-bg-primary px-4 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-       {GEMINI_TEXT_MODEL_OPTIONS.map((option) => (
-        <option key={option.value} value={option.value}>
-         {option.label}
-        </option>
-       ))}
-      </select>
-     </label>
-
-     <div className="rounded-xl border border-border-default bg-bg-primary p-4">
-      <p className=" font-semibold text-text-primary">{getGeminiModelLabel(geminiModel)}</p>
-      <p className="mt-2  leading-6 text-text-secondary">
-       {GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === geminiModel)?.description ||
-        "Model text dùng cho generateContent."}
+    <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
+     <div>
+      <p className="font-semibold text-text-primary">
+       {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
       </p>
-      <p className="mt-3 text-xs leading-5 text-text-muted">
-       Gợi ý: `Gemini 2.5 Flash` là lựa chọn mặc định. Nếu một model bị quota, thử `Gemini 2.5
-       Flash-Lite`, `Gemini Flash Latest` hoặc một model Gemma.
-      </p>
+      <p className="mt-1 text-sm text-text-muted">Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.</p>
      </div>
+     <Badge variant="success" size="md">
+      Không cần key cá nhân
+     </Badge>
+     <Badge variant="info" size="md">
+      Free-tier eligible
+     </Badge>
+    </div>
+   </section>
+
+   <section className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+    <div className="space-y-2">
+     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+      <Sparkles className="size-5 text-accent-text" />
+      Xem chi tiết
+     </h2>
+     <p className="max-w-3xl leading-6 text-text-secondary">
+      Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app
+      dùng model Gemini hệ thống đã chọn bên dưới.
+     </p>
+    </div>
+
+    <div className="grid max-w-xl gap-2">
+     <label htmlFor="gemini-model" className="font-semibold text-text-primary">
+      Model chi tiết mặc định
+     </label>
+     <Select
+      value={geminiModel}
+      onValueChange={(value) => setGeminiModel(value as GeminiModelId)}
+      disabled={isLoading || isSaving}
+     >
+      <SelectTrigger id="gemini-model" width="full" aria-label="Chọn model Gemini">
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="start">
+       {!selectedDetailModel ? (
+        <SelectItem value={geminiModel}>{getGeminiModelLabel(geminiModel)} (đã lưu)</SelectItem>
+       ) : null}
+       {GEMINI_DETAIL_MODEL_OPTIONS.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+         {option.label}
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+     <p className="text-sm leading-5 text-text-muted">
+      {selectedDetailModel?.description || "Model cũ đang được giữ. Chọn model mới để cập nhật."}
+     </p>
     </div>
    </section>
 
    <ApiKeyManagerSection />
 
-   <section className="space-y-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+   <div className="space-y-4">
     <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
      <div className="space-y-2">
       <h2 className="text-xl font-bold text-text-primary">Lookup Prompts</h2>
       <p className="max-w-3xl  leading-6 text-text-secondary">
-       Chỉnh prompt xong bạn có thể lưu ngay tại đây, không cần kéo lên đầu trang. Hai block này ảnh
-       hưởng trực tiếp tới tra từ và phân tích câu.
+       Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để
+       giảm độ trễ và lượng token.
       </p>
      </div>
 
      <div className="flex flex-wrap items-center gap-3">
-      <span
-       className={`rounded-full px-3 py-1 text-xs font-semibold ${hasUnsavedPromptChanges ? "bg-warning-subtle text-warning-text" : "bg-success/10 text-success"}`}
-      >
+      <Badge variant={hasUnsavedPromptChanges ? "warning" : "success"} size="md">
        {hasUnsavedPromptChanges ? "Prompt có thay đổi chưa lưu" : "Prompt đã đồng bộ"}
-      </span>
+      </Badge>
       <Button
        onClick={handleSave}
        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
@@ -306,7 +335,7 @@ export function SettingsPageContent() {
       isDirty={hasUnsavedSentencePrompt}
      />
     </div>
-   </section>
+   </div>
   </div>
  );
 }
@@ -341,11 +370,9 @@ function PromptPanel({
     </div>
 
     <div className="flex items-center gap-2">
-     <span
-      className={`rounded-full px-2.5 py-1 text-xs font-semibold ${isDirty ? "bg-warning-subtle text-warning-text" : "bg-bg-subtle text-text-muted"}`}
-     >
+     <Badge variant={isDirty ? "warning" : "default"} size="sm">
       {isDirty ? "Chưa lưu" : "Đã lưu"}
-     </span>
+     </Badge>
      <Button size="sm" variant="ghost" onClick={() => onChange(defaultValue)} disabled={disabled}>
       Khôi phục block
      </Button>
@@ -353,23 +380,22 @@ function PromptPanel({
    </div>
 
    <div className="mb-3 flex items-center justify-between text-xs">
-    <span
-     className={`rounded-full px-2.5 py-1 font-semibold ${hasPlaceholder ? "bg-success/10 text-success" : "bg-danger/10 text-danger-text"}`}
-    >
+    <Badge variant={hasPlaceholder ? "success" : "danger"} size="sm">
      {hasPlaceholder
       ? `Có placeholder ${placeholderToken}`
       : `Thiếu placeholder ${placeholderToken}`}
-    </span>
+    </Badge>
     <span className="text-text-muted">{value.length} ký tự</span>
    </div>
 
-   <textarea
+   <Textarea
     aria-label={title}
     value={value}
     onChange={(event) => onChange(event.target.value)}
     disabled={disabled}
     spellCheck={false}
-    className="min-h-90 w-full rounded-xl border border-border-default bg-bg-primary px-4 py-4 font-mono leading-6 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
+    rows={16}
+    font="mono"
    />
   </div>
  );

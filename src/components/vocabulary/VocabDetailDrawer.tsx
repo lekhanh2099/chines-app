@@ -463,7 +463,7 @@ function WordDetailPanel({
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
+     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
     />
    </section>
   </div>
@@ -565,7 +565,7 @@ function SentenceDetailPanel({
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Ghi chú cách hiểu câu, cấu trúc hoặc lỗi dễ mắc..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
+     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
     />
    </section>
   </div>

@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
    promptTemplate:
     parsed.data.sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
    userApiKeys,
+   allowGroq: true,
   });
 
   if (!sentenceLookup.data) {
@@ -124,6 +125,7 @@ export async function POST(request: NextRequest) {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
   promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
   userApiKeys,
+  allowGroq: true,
  });
 
  if (!aiLookup.data) {

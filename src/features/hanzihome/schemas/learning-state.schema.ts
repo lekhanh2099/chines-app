@@ -38,6 +38,7 @@ export const userLearningStateSchema = z.object({
      showAnswers: z.boolean(),
      hanziFont: hanziReaderFontSchema,
      hanziSize: hanziReaderSizeSchema,
+     revealMode: z.enum(["always", "tap"]).optional().default("always"),
     })
     .optional(),
   })

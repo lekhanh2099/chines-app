@@ -4,6 +4,7 @@ import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/Native
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { getHanziTypographyStyle } from "./hanzi-typography";
+import { ProgressiveStudyText } from "./ProgressiveStudyText";
 
 export function TextLineCard({
  speaker,
@@ -12,6 +13,7 @@ export function TextLineCard({
  vi,
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  variant = "card",
+ annotationTarget,
 }: {
  speaker?: string;
  zh: string;
@@ -19,6 +21,7 @@ export function TextLineCard({
  vi?: string;
  displayMode?: LessonDisplayMode;
  variant?: "card" | "reader";
+ annotationTarget?: { lessonId: string; nodeType: string; nodeId: string };
 }) {
  return (
   <div
@@ -35,25 +38,18 @@ export function TextLineCard({
     </Badge>
    ) : null}
    <div className="flex min-w-0 items-start gap-1.5">
-    <p
-     className="min-w-0 flex-1 whitespace-pre-wrap leading-[1.7] text-text-primary"
-     lang="zh-CN"
-     style={getHanziTypographyStyle(displayMode)}
-    >
-     {zh}
-    </p>
+    <ProgressiveStudyText
+     key={displayMode.revealMode}
+     className="flex-1"
+     zh={zh}
+     pinyin={pinyin}
+     vi={vi}
+     displayMode={displayMode}
+     hanziStyle={getHanziTypographyStyle(displayMode)}
+     annotationTarget={annotationTarget}
+    />
     <NativeMandarinSpeakButton text={zh} />
    </div>
-   {displayMode.showPinyin && pinyin && (
-    <p className="whitespace-pre-wrap text-sm font-semibold leading-relaxed text-accent-text">
-     {pinyin}
-    </p>
-   )}
-   {displayMode.showMeaning && vi && (
-    <p className="whitespace-pre-wrap text-sm font-medium leading-relaxed text-text-muted sm:text-base">
-     {vi}
-    </p>
-   )}
   </div>
  );
 }

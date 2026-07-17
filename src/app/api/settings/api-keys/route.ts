@@ -7,6 +7,8 @@ import {
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
 import { DEFAULT_GEMINI_MODEL } from "@/lib/gemini-models";
+import { DEFAULT_GROQ_MODEL } from "@/lib/groq-models";
+import { getDefaultApiKeyModel, isApiKeyModelSupported } from "@/lib/api-key-models";
 import { createClient } from "@/lib/supabase/server";
 import {
  createUserApiKey,
@@ -19,7 +21,12 @@ import {
 } from "@/services/user-api-keys.service";
 
 const VALIDATION_TIMEOUT = 10_000;
-const OPENAI_MODEL_PREFERENCES = ["gpt-4.1-mini", "gpt-4o-mini", "gpt-4.1", "gpt-4o"] as const;
+const OPENAI_MODEL_PREFERENCES = [
+ "gpt-5-mini",
+ "gpt-5-nano",
+ "gpt-4.1-mini",
+ "gpt-4.1-nano",
+] as const;
 
 const providerEnum = z.enum(
  API_KEY_PROVIDER_OPTIONS.map((option) => option.value) as [ApiKeyProvider, ...ApiKeyProvider[]],
@@ -29,6 +36,7 @@ const addKeySchema = z.object({
  apiKey: z.string().trim().min(1).max(400),
  label: z.string().trim().max(80).optional(),
  provider: z.union([z.literal(AUTO_API_KEY_PROVIDER), providerEnum]).optional(),
+ model: z.string().trim().min(1).max(200).optional(),
 });
 
 const patchSchema = z.discriminatedUnion("action", [
@@ -46,6 +54,11 @@ const patchSchema = z.discriminatedUnion("action", [
   action: z.literal("move"),
   keyId: z.uuid(),
   direction: z.enum(["up", "down"]),
+ }),
+ z.object({
+  action: z.literal("model"),
+  keyId: z.uuid(),
+  model: z.string().trim().min(1).max(200),
  }),
 ]);
 
@@ -83,6 +96,7 @@ export async function GET() {
  const summary = {
   total: keys.length,
   active: keys.filter((key) => key.isActive).length,
+  groq: keys.filter((key) => key.provider === "groq").length,
   deepseek: keys.filter((key) => key.provider === "deepseek").length,
   gemini: keys.filter((key) => key.provider === "gemini").length,
   openai: keys.filter((key) => key.provider === "openai").length,
@@ -138,11 +152,23 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: validation.error }, { status: 400 });
  }
 
+ const selectedModel =
+  parsed.data.model ||
+  (validation.defaultModel && isApiKeyModelSupported(validation.provider, validation.defaultModel)
+   ? validation.defaultModel
+   : getDefaultApiKeyModel(validation.provider));
+ if (!selectedModel || !isApiKeyModelSupported(validation.provider, selectedModel)) {
+  return NextResponse.json(
+   { error: "Model đã chọn không được hỗ trợ cho provider này." },
+   { status: 400 },
+  );
+ }
+
  const created = await createUserApiKey(supabase, user.id, {
   provider: validation.provider,
   apiKey: parsed.data.apiKey,
   label: parsed.data.label,
-  defaultModel: validation.defaultModel,
+  defaultModel: selectedModel,
  });
 
  if (!created.key) {
@@ -206,9 +232,22 @@ export async function PATCH(request: NextRequest) {
   });
  }
 
+ if (parsed.data.action === "model") {
+  const key = (await listUserApiKeys(supabase, user.id)).find(
+   (candidate) => candidate.id === parsed.data.keyId,
+  );
+  if (!key || !isApiKeyModelSupported(key.provider, parsed.data.model)) {
+   return NextResponse.json(
+    { error: "Model đã chọn không được hỗ trợ cho provider này." },
+    { status: 400 },
+   );
+  }
+ }
+
  const updated = await updateUserApiKey(supabase, user.id, parsed.data.keyId, {
   ...(parsed.data.action === "toggle" ? { isActive: parsed.data.isActive } : {}),
   ...(parsed.data.action === "rename" ? { label: parsed.data.label } : {}),
+  ...(parsed.data.action === "model" ? { defaultModel: parsed.data.model } : {}),
  });
 
  if (!updated) {
@@ -290,6 +329,10 @@ function getProviderCandidates(apiKey: string): ApiKeyProvider[] {
   return ["gemini"];
  }
 
+ if (trimmed.startsWith("gsk_")) {
+  return ["groq"];
+ }
+
  if (trimmed.startsWith("sk-proj-")) {
   return ["openai", "deepseek"];
  }
@@ -298,7 +341,7 @@ function getProviderCandidates(apiKey: string): ApiKeyProvider[] {
   return ["deepseek", "openai"];
  }
 
- return ["deepseek", "gemini", "openai"];
+ return ["groq", "deepseek", "gemini", "openai"];
 }
 
 async function validateByProvider(
@@ -310,11 +353,56 @@ async function validateByProvider(
   return validateDeepSeekKey(apiKey, detectedVia);
  }
 
+ if (provider === "groq") {
+  return validateGroqKey(apiKey, detectedVia);
+ }
+
  if (provider === "gemini") {
   return validateGeminiKey(apiKey, detectedVia);
  }
 
  return validateOpenAiKey(apiKey, detectedVia);
+}
+
+async function validateGroqKey(
+ apiKey: string,
+ detectedVia: "auto" | "manual",
+): Promise<ProviderValidationResult> {
+ if (!apiKey.startsWith("gsk_")) {
+  return {
+   valid: false,
+   error: "Key này không giống định dạng Groq. Groq key thường bắt đầu bằng 'gsk_'.",
+  };
+ }
+
+ try {
+  const res = await fetch("https://api.groq.com/openai/v1/models", {
+   headers: { Authorization: `Bearer ${apiKey}` },
+   signal: AbortSignal.timeout(VALIDATION_TIMEOUT),
+  });
+
+  if (res.status === 401 || res.status === 403) {
+   return { valid: false, error: "Groq từ chối API key này. Hãy kiểm tra lại key." };
+  }
+  if (!res.ok) {
+   return { valid: false, error: `Groq trả về lỗi HTTP ${res.status}.` };
+  }
+
+  const json = (await res.json()) as { data?: { id: string }[] };
+  const models = (json.data || []).map((model) => model.id);
+  const defaultModel =
+   models.find((model) => model === DEFAULT_GROQ_MODEL) || models[0] || DEFAULT_GROQ_MODEL;
+
+  return {
+   valid: true,
+   provider: "groq",
+   defaultModel,
+   detectedVia,
+   message: detectedVia === "auto" ? "Đã tự nhận diện Groq key và lưu thành công." : undefined,
+  };
+ } catch (err) {
+  return { valid: false, error: formatValidationNetworkError("Groq", err) };
+ }
 }
 
 async function validateDeepSeekKey(
@@ -358,7 +446,8 @@ async function validateDeepSeekKey(
 
   const json = (await res.json()) as { data?: { id: string }[] };
   const models = (json.data || []).map((model) => model.id);
-  const defaultModel = models.find((model) => model === "deepseek-chat") || models[0] || null;
+  const preferredModel = getDefaultApiKeyModel("deepseek");
+  const defaultModel = models.find((model) => model === preferredModel) || models[0] || null;
 
   return {
    valid: true,

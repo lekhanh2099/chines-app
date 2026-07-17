@@ -172,6 +172,7 @@ export async function POST(request: NextRequest) {
    promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
    userApiKeys,
    abortSignal: request.signal,
+   allowGroq: true,
   });
   metrics.push({
    name: "ai",

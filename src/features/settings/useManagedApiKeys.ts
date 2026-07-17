@@ -8,6 +8,7 @@ import {
  fetchManagedApiKeys,
  moveManagedApiKey,
  toggleManagedApiKey,
+ updateManagedApiKeyModel,
 } from "./api-key-manager.client";
 import type { ApiKeysResponse } from "./api-key-manager.schema";
 import type { ApiKeyProvider } from "@/lib/api-key-providers";
@@ -23,9 +24,23 @@ export function useManagedApiKeys() {
 
  const refresh = () => queryClient.invalidateQueries({ queryKey: apiKeyManagerQueryKey });
  const addMutation = useMutation({
-  mutationFn: (input: { apiKey: string; label?: string; provider: ApiKeyProvider | "auto" }) =>
-   addManagedApiKey(input),
+  mutationFn: (input: {
+   apiKey: string;
+   label?: string;
+   provider: ApiKeyProvider | "auto";
+   model?: string;
+  }) => addManagedApiKey(input),
   onSuccess: refresh,
+ });
+ const modelMutation = useMutation({
+  mutationFn: updateManagedApiKeyModel,
+  onSuccess: ({ key }) => {
+   queryClient.setQueryData<ApiKeysResponse>(apiKeyManagerQueryKey, (current) =>
+    current
+     ? { ...current, keys: current.keys.map((item) => (item.id === key.id ? key : item)) }
+     : current,
+   );
+  },
  });
  const toggleMutation = useMutation({
   mutationFn: toggleManagedApiKey,
@@ -59,6 +74,7 @@ export function useManagedApiKeys() {
  const busyKeyId =
   (toggleMutation.isPending ? toggleMutation.variables?.keyId : null) ??
   (moveMutation.isPending ? moveMutation.variables?.keyId : null) ??
+  (modelMutation.isPending ? modelMutation.variables?.keyId : null) ??
   (deleteMutation.isPending ? deleteMutation.variables : null) ??
   null;
 
@@ -67,6 +83,7 @@ export function useManagedApiKeys() {
   addMutation,
   toggleMutation,
   moveMutation,
+  modelMutation,
   deleteMutation,
   busyKeyId,
  };

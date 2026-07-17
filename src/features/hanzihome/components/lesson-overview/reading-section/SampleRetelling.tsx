@@ -5,9 +5,13 @@ import { asRecord, stringValue } from "../utils";
 export function SampleRetelling({
  value,
  displayMode,
+ lessonId,
+ nodeId,
 }: {
  value: unknown;
  displayMode: LessonDisplayMode;
+ lessonId?: string;
+ nodeId?: string;
 }) {
  const sample = asRecord(value);
  const zh = stringValue(sample, "zh") || stringValue(sample, "text");
@@ -23,6 +27,9 @@ export function SampleRetelling({
     pinyin={stringValue(sample, "pinyin")}
     vi={vi}
     displayMode={displayMode}
+    annotationTarget={
+     lessonId && nodeId ? { lessonId, nodeType: "reading_sample", nodeId } : undefined
+    }
    />
   </div>
  );

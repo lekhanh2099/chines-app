@@ -25,7 +25,8 @@ function displayModeEquals(
   left?.showMeaning === right?.showMeaning &&
   left?.showAnswers === right?.showAnswers &&
   left?.hanziFont === right?.hanziFont &&
-  left?.hanziSize === right?.hanziSize
+  left?.hanziSize === right?.hanziSize &&
+  left?.revealMode === right?.revealMode
  );
 }
 

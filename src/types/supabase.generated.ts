@@ -1556,6 +1556,72 @@ export type Database = {
      },
     ];
    };
+   lesson_text_annotations: {
+    Row: {
+     created_at: string;
+     end_offset: number;
+     id: string;
+     lesson_id: string;
+     node_id: string;
+     node_type: string;
+     note_id: string | null;
+     prefix_text: string;
+     selected_text: string;
+     start_offset: number;
+     suffix_text: string;
+     tone: string;
+     updated_at: string;
+     user_id: string;
+    };
+    Insert: {
+     created_at?: string;
+     end_offset: number;
+     id?: string;
+     lesson_id: string;
+     node_id: string;
+     node_type: string;
+     note_id?: string | null;
+     prefix_text?: string;
+     selected_text: string;
+     start_offset: number;
+     suffix_text?: string;
+     tone?: string;
+     updated_at?: string;
+     user_id: string;
+    };
+    Update: {
+     created_at?: string;
+     end_offset?: number;
+     id?: string;
+     lesson_id?: string;
+     node_id?: string;
+     node_type?: string;
+     note_id?: string | null;
+     prefix_text?: string;
+     selected_text?: string;
+     start_offset?: number;
+     suffix_text?: string;
+     tone?: string;
+     updated_at?: string;
+     user_id?: string;
+    };
+    Relationships: [
+     {
+      foreignKeyName: "lesson_text_annotations_lesson_id_fkey";
+      columns: ["lesson_id"];
+      isOneToOne: false;
+      referencedRelation: "hanzihome_lessons";
+      referencedColumns: ["id"];
+     },
+     {
+      foreignKeyName: "lesson_text_annotations_note_id_fkey";
+      columns: ["note_id"];
+      isOneToOne: true;
+      referencedRelation: "notes";
+      referencedColumns: ["id"];
+     },
+    ];
+   };
    notes: {
     Row: {
      category: string | null;
@@ -1884,6 +1950,24 @@ export type Database = {
   };
   Functions: {
    can_edit_hanzihome_content: { Args: never; Returns: boolean };
+   create_lesson_text_annotation: {
+    Args: {
+     p_end_offset: number;
+     p_lesson_id: string;
+     p_node_id: string;
+     p_node_type: string;
+     p_note_text?: string;
+     p_prefix_text?: string;
+     p_selected_text: string;
+     p_start_offset: number;
+     p_suffix_text?: string;
+    };
+    Returns: string;
+   };
+   delete_lesson_text_annotation: {
+    Args: { p_annotation_id: string };
+    Returns: boolean;
+   };
    generate_note_short_id: { Args: never; Returns: string };
    get_hanzihome_aggregate_grammar: {
     Args: {
@@ -1932,6 +2016,14 @@ export type Database = {
      word: string;
     }[];
    };
+   hanzihome_apply_external_seed_patches: {
+    Args: { p_patches: Json };
+    Returns: Json;
+   };
+   hanzihome_import_external_seed_package: {
+    Args: { p_seed: Json };
+    Returns: Json;
+   };
    hanzihome_mutate_content: {
     Args: {
      p_actor_id: string;
@@ -1965,6 +2057,10 @@ export type Database = {
     };
     Returns: Json;
    };
+   hanzihome_refresh_external_seed_package: {
+    Args: { p_seed: Json };
+    Returns: Json;
+   };
    hanzihome_update_listening_item_as_user: {
     Args: {
      p_changes: Json;
@@ -1984,6 +2080,10 @@ export type Database = {
     Returns: Json;
    };
    is_hanzihome_content_editor: { Args: never; Returns: boolean };
+   update_lesson_text_annotation_note: {
+    Args: { p_annotation_id: string; p_note_text: string };
+    Returns: string;
+   };
    upsert_legacy_vocabulary_cache: {
     Args: {
      p_analysis?: Json;

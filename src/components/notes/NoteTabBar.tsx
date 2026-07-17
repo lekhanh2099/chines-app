@@ -4,6 +4,7 @@ import { useRef, useCallback, useState, type ReactNode, type Ref } from "react";
 import { X, FileText, Plus } from "lucide-react";
 import { useNoteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
 import { cn } from "@/lib/utils";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 export function NoteTabBar({
  leading,
@@ -23,6 +24,7 @@ export function NoteTabBar({
  const setActive = useNoteTabsStore((s) => s.setActive);
  const closeTab = useNoteTabsStore((s) => s.closeTab);
  const reorderTabs = useNoteTabsStore((s) => s.reorderTabs);
+ const isCoarsePointer = useCoarsePointer();
  const scrollRef = useRef<HTMLDivElement>(null);
 
  // Drag state
@@ -98,6 +100,7 @@ export function NoteTabBar({
         isDragging={dragIndex === index}
         isDropTarget={dropIndex === index && dragIndex !== index}
         focusLocked={focusLocked}
+        draggable={!focusLocked && !isCoarsePointer}
         onActivate={() => setActive(tab.noteId)}
         onClose={() => closeTab(tab.noteId)}
         onDragStart={(e) => handleDragStart(e, index)}
@@ -135,6 +138,7 @@ function TabItem({
  isDragging,
  isDropTarget,
  focusLocked,
+ draggable,
  onActivate,
  onClose,
  onDragStart,
@@ -148,6 +152,7 @@ function TabItem({
  isDragging: boolean;
  isDropTarget: boolean;
  focusLocked: boolean;
+ draggable: boolean;
  onActivate: () => void;
  onClose: () => void;
  onDragStart: (e: React.DragEvent) => void;
@@ -159,7 +164,7 @@ function TabItem({
   <div
    role="tab"
    aria-selected={isActive}
-   draggable={!focusLocked}
+   draggable={draggable}
    onDragStart={onDragStart}
    onDragOver={onDragOver}
    onDrop={onDrop}

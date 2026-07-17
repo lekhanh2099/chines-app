@@ -48,6 +48,9 @@ export function TextBlockView({
         vi={line.vi}
         displayMode={displayMode}
         variant="reader"
+        annotationTarget={
+         lessonId ? { lessonId, nodeType: "text_line", nodeId: line.id } : undefined
+        }
        />
       );
 
@@ -87,6 +90,9 @@ export function TextBlockView({
         vi={line.vi}
         displayMode={displayMode}
         variant="reader"
+        annotationTarget={
+         lessonId ? { lessonId, nodeType: "text_line", nodeId: line.id } : undefined
+        }
        />
       );
 
@@ -121,6 +127,9 @@ export function TextBlockView({
         vi={paragraph.vi}
         displayMode={displayMode}
         variant="reader"
+        annotationTarget={
+         lessonId ? { lessonId, nodeType: "text_paragraph", nodeId: paragraph.id } : undefined
+        }
        />
       );
 

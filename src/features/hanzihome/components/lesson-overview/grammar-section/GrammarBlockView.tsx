@@ -107,6 +107,15 @@ export function GrammarBlockView({
         pinyin={stringValue(example, "pinyin")}
         vi={stringValue(example, "vi")}
         displayMode={displayMode}
+        annotationTarget={
+         lessonId
+          ? {
+             lessonId,
+             nodeType: "grammar_example",
+             nodeId: stringValue(example, "id") || `${block.id}-${index}`,
+            }
+          : undefined
+        }
        />
       );
       const exampleId = stringValue(example, "id") || `${block.id}-${index}`;

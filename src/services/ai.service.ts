@@ -1,9 +1,8 @@
 /**
  * AI Service — structured Chinese word/sentence analysis.
  *
- * Strategy:
- *   1. Gemini Flash 2.0 (primary)
- *   2. DeepSeek-V3 (fallback)
+ * Strategy: use the selected BYOK key/model, or the configured system Gemini model when no
+ * eligible BYOK key exists. Provider/model fallback is intentionally disabled.
  *
  * This is a pure service layer — no Next.js, no DB, no auth.
  */
@@ -16,11 +15,13 @@ import {
 } from "@/lib/ai-prompts";
 import {
  DEFAULT_GEMINI_MODEL,
+ isGeminiModelId,
  normalizeGeminiModel,
  type GeminiModelId,
 } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import { logger } from "@/lib/logger";
+import { DEFAULT_GROQ_MODEL } from "@/lib/groq-models";
 import {
  getProviderCooldownMs,
  getProviderSkipReason,
@@ -55,6 +56,7 @@ type AiRequestOptions = {
  geminiModel?: string | null;
  userApiKeys?: UserApiKeyCredential[];
  abortSignal?: AbortSignal | null;
+ allowGroq?: boolean;
 };
 
 /* ══════════════════════════════════════════
@@ -149,7 +151,7 @@ async function callDeepSeekRaw(
 ): Promise<RawProviderResult> {
  const isUserKey = !!options?.apiKey;
  const apiKey = options?.apiKey || process.env.DEEPSEEK_API_KEY;
- const model = options?.model || "deepseek-chat";
+ const model = options?.model || "deepseek-v4-flash";
  const useOutageTracking = options?.useOutageTracking ?? !isUserKey;
 
  // Only check outage for system key; user key gets a fresh attempt
@@ -231,7 +233,7 @@ async function callDeepSeekRaw(
  } catch (err) {
   logger.error("[AI:DeepSeek] Error:", err);
 
-  // Timeout → short cooldown so fallback chain doesn't waste time retrying
+  // Timeout → short cooldown so repeated requests do not retry an unavailable provider.
   if (useOutageTracking && err instanceof Error && err.message?.includes("timeout")) {
    markProviderUnavailable("DeepSeek", 30_000, "DeepSeek timeout");
   }
@@ -360,6 +362,8 @@ async function callOpenAiRaw(
  try {
   throwIfAborted(abortSignal);
 
+  const isGpt5Model = resolvedModel.startsWith("gpt-5");
+
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
    method: "POST",
    headers: {
@@ -372,8 +376,8 @@ async function callOpenAiRaw(
      { role: "system", content: systemPrompt },
      { role: "user", content: prompt },
     ],
-    temperature: 0.3,
-    max_tokens: 4096,
+    ...(!isGpt5Model ? { temperature: 0.3 } : {}),
+    ...(isGpt5Model ? { max_completion_tokens: 4096 } : { max_tokens: 4096 }),
     response_format: { type: "json_object" },
    }),
    signal: createRequestSignal(60_000, abortSignal),
@@ -406,6 +410,54 @@ async function callOpenAiRaw(
   return {
    content: null,
    error: `OpenAI lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
+  };
+ }
+}
+
+async function callGroqRaw(
+ systemPrompt: string,
+ prompt: string,
+ apiKey: string,
+ model?: string | null,
+ abortSignal?: AbortSignal | null,
+): Promise<RawProviderResult> {
+ try {
+  throwIfAborted(abortSignal);
+  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${apiKey}`,
+   },
+   body: JSON.stringify({
+    model: model || DEFAULT_GROQ_MODEL,
+    messages: [
+     { role: "system", content: systemPrompt },
+     { role: "user", content: prompt },
+    ],
+    temperature: 0.2,
+    max_completion_tokens: 4096,
+    response_format: { type: "json_object" },
+   }),
+   signal: createRequestSignal(30_000, abortSignal),
+  });
+
+  if (!res.ok) {
+   const errBody = await res.text().catch(() => "");
+   logger.error(`[AI:Groq] HTTP ${res.status}:`, errBody);
+   return { content: null, error: formatManagedKeyError("Groq", res.status, errBody) };
+  }
+
+  const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+  const content = json.choices?.[0]?.message?.content;
+  return content
+   ? { content, error: null }
+   : { content: null, error: "Groq trả về response rỗng." };
+ } catch (err) {
+  logger.error("[AI:Groq] Error:", err);
+  return {
+   content: null,
+   error: `Groq lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
   };
  }
 }
@@ -451,11 +503,17 @@ function formatProviderError(
 }
 
 function formatManagedKeyError(
- provider: "Gemini" | "DeepSeek" | "OpenAI",
+ provider: "Gemini" | "DeepSeek" | "OpenAI" | "Groq",
  status: number,
  errorBody: string,
 ): string {
  const body = errorBody.toLowerCase();
+
+ if (provider === "Groq") {
+  if (status === 401 || status === 403) return "Groq key không hợp lệ hoặc đã bị thu hồi.";
+  if (status === 429) return "Groq key đang bị rate limit.";
+  return `Groq key trả về HTTP ${status}.`;
+ }
 
  if (provider === "DeepSeek") {
   if (status === 401 || status === 403) {
@@ -714,14 +772,16 @@ async function requestStructuredJson<T>(
  fallback: (parsed: unknown) => boolean,
  userApiKeys?: UserApiKeyCredential[],
  abortSignal?: AbortSignal | null,
+ allowGroq = false,
 ): Promise<StructuredRequestResult<T>> {
  const providerErrors: string[] = [];
 
  const managedSystemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${systemPrompt}`;
+ const selectedUserApiKey = (userApiKeys || []).find((key) => key.provider !== "groq" || allowGroq);
 
  throwIfAborted(abortSignal);
 
- for (const userApiKey of userApiKeys || []) {
+ for (const userApiKey of selectedUserApiKey ? [selectedUserApiKey] : []) {
   throwIfAborted(abortSignal);
 
   let rawResult: RawProviderResult | null = null;
@@ -734,15 +794,28 @@ async function requestStructuredJson<T>(
     abortSignal,
    });
   } else if (userApiKey.provider === "gemini") {
-   rawResult = await callGeminiRaw(
-    managedSystemPrompt,
-    prompt,
-    geminiModel,
-    userApiKey.apiKey,
-    abortSignal,
-   );
+   rawResult = isGeminiModelId(userApiKey.defaultModel)
+    ? await callGeminiRaw(
+       managedSystemPrompt,
+       prompt,
+       userApiKey.defaultModel,
+       userApiKey.apiKey,
+       abortSignal,
+      )
+    : {
+       content: null,
+       error: "Model Gemini đã lưu không còn hợp lệ. Hãy chọn lại model trong Cài đặt.",
+      };
   } else if (userApiKey.provider === "openai") {
    rawResult = await callOpenAiRaw(
+    managedSystemPrompt,
+    prompt,
+    userApiKey.apiKey,
+    userApiKey.defaultModel,
+    abortSignal,
+   );
+  } else if (userApiKey.provider === "groq" && allowGroq) {
+   rawResult = await callGroqRaw(
     managedSystemPrompt,
     prompt,
     userApiKey.apiKey,
@@ -770,6 +843,13 @@ async function requestStructuredJson<T>(
   }
  }
 
+ if (selectedUserApiKey) {
+  return {
+   data: null,
+   error: providerErrors.join(" ") || `${selectedUserApiKey.label} không thể xử lý request.`,
+  };
+ }
+
  throwIfAborted(abortSignal);
 
  const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel, undefined, abortSignal);
@@ -781,24 +861,6 @@ async function requestStructuredJson<T>(
   providerErrors.push("Gemini trả JSON không đúng schema.");
  } else if (geminiRaw.error) {
   providerErrors.push(geminiRaw.error);
- }
-
- logger.info("[AI] Gemini failed, trying DeepSeek...");
-
- throwIfAborted(abortSignal);
-
- const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt, {
-  useOutageTracking: true,
-  abortSignal,
- });
- if (deepSeekRaw.content) {
-  const deepSeekResult = parseAndValidate(deepSeekRaw.content, schema, fallback);
-  if (deepSeekResult) {
-   return { data: deepSeekResult, error: null };
-  }
-  providerErrors.push("DeepSeek trả JSON không đúng schema.");
- } else if (deepSeekRaw.error) {
-  providerErrors.push(deepSeekRaw.error);
  }
 
  return {
@@ -835,6 +897,7 @@ export async function analyzeHanziDetailed(
   (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
+  options?.allowGroq,
  );
 
  if (result.data) {
@@ -869,6 +932,7 @@ export async function analyzeHanziBasicDetailed(
   (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
+  options?.allowGroq,
  );
 
  if (result.data) {
@@ -910,6 +974,7 @@ export async function analyzeSentenceDetailed(
   (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
+  options?.allowGroq,
  );
 
  if (result.data) {

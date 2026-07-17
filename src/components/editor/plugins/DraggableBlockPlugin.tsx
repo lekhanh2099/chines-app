@@ -39,6 +39,7 @@ import {
  Code,
  Table,
 } from "lucide-react";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 const DRAG_DATA_FORMAT = "application/x-lexical-drag-block";
 
@@ -448,5 +449,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
 
 export default function DraggableBlockPlugin() {
  const [editor] = useLexicalComposerContext();
+ const isCoarsePointer = useCoarsePointer();
+ if (isCoarsePointer) return null;
  return <DragBlockMenu editor={editor} />;
 }

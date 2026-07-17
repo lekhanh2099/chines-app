@@ -27,11 +27,13 @@ export function PassageCard({
  passage,
  answers = [],
  displayMode,
+ lessonId,
 }: {
  itemId: string;
  passage: unknown;
  answers?: unknown[];
  displayMode: LessonDisplayMode;
+ lessonId?: string;
 }) {
  const [manualAnswerListOpen, setManualAnswerListOpen] = useState(false);
  const passageRecord = asRecord(passage);
@@ -147,6 +149,7 @@ export function PassageCard({
        answerMap={answerMap}
        rendererId={rendererId}
        displayMode={clozeDisplayMode}
+       lessonId={lessonId}
       />
      ))}
     </div>
@@ -180,6 +183,7 @@ export function PassageCard({
        vi={passageMeaning}
        displayMode={displayMode}
        variant="reader"
+       annotationTarget={lessonId ? { lessonId, nodeType: "passage", nodeId: itemId } : undefined}
       />
      )}
     </div>

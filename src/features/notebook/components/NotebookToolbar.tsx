@@ -163,7 +163,7 @@ export function NotebookToolbar({
        value={query}
        onChange={(event) => onQueryChange(event.target.value)}
        placeholder="Tìm: 只要, zhiyao, chỉ cần..."
-       className="h-9 w-full rounded-lg border border-border-default bg-bg-card/90 pl-9 pr-3 text-xs font-medium text-text-primary outline-none transition focus:border-primary/40 focus:ring-3 focus:ring-ring/15"
+       className="h-9 w-full rounded-lg border border-border-default bg-bg-card/90 pl-9 pr-3 text-xs font-medium text-text-primary outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/15"
       />
      </label>
      <div className="hidden shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:flex">{viewButtons}</div>
@@ -220,7 +220,7 @@ export function NotebookToolbar({
       value={query}
       onChange={(event) => onQueryChange(event.target.value)}
       placeholder="Tìm: 只要, zhiyao, chỉ cần, trái dự đoán..."
-      className="h-11 w-full rounded-xl border border-border-default bg-bg-card/90 pl-10 pr-4 text-sm font-medium text-text-primary outline-none transition focus:border-primary/40 focus:ring-3 focus:ring-ring/15"
+      className="h-11 w-full rounded-xl border border-border-default bg-bg-card/90 pl-10 pr-4 text-sm font-medium text-text-primary outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/15"
      />
     </label>
     <div className="flex flex-wrap gap-1 rounded-xl bg-bg-subtle p-1">{viewButtons}</div>

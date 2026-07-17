@@ -9,6 +9,8 @@ import { VocabWorkspace } from "@/features/hanzihome/components/vocab/VocabWorks
 import type { StudyModule } from "@/features/hanzihome/context/types";
 import { ListeningWorkspace } from "@/features/hanzihome/listening/ListeningWorkspace";
 import { ListeningDictationWorkspace } from "@/features/hanzihome/listening/ListeningDictationWorkspace";
+import { LessonAnnotationProvider } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
+import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 
 export function LessonModuleContent({
  module,
@@ -17,24 +19,37 @@ export function LessonModuleContent({
  module: StudyModule;
  compact?: boolean;
 }) {
+ const { lesson } = useHanziHomeRuntime();
+ let content;
  switch (module) {
   case "overview":
-   return <LessonOverview />;
+   content = <LessonOverview />;
+   break;
   case "lessonText":
-   return <LessonTextInlineEditor compact={compact} />;
+   content = <LessonTextInlineEditor compact={compact} />;
+   break;
   case "listening":
-   return <ListeningWorkspace />;
+   content = <ListeningWorkspace />;
+   break;
   case "dictation":
-   return <ListeningDictationWorkspace />;
+   content = <ListeningDictationWorkspace />;
+   break;
   case "script":
-   return <ListeningWorkspace />;
+   content = <ListeningWorkspace />;
+   break;
   case "notes":
-   return <LessonNoteAccessCard />;
+   content = <LessonNoteAccessCard />;
+   break;
   case "vocab":
-   return <VocabWorkspace compact={compact} />;
+   content = <VocabWorkspace compact={compact} />;
+   break;
   case "grammar":
-   return <GrammarWorkspace compact={compact} />;
+   content = <GrammarWorkspace compact={compact} />;
+   break;
   case "review":
-   return <ReviewWorkspace />;
+   content = <ReviewWorkspace />;
+   break;
  }
+
+ return <LessonAnnotationProvider lessonId={lesson.id}>{content}</LessonAnnotationProvider>;
 }

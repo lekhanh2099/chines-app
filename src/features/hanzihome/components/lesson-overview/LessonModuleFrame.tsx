@@ -234,7 +234,7 @@ function MobileModuleNavigation({
  return (
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
-    <Popover.Trigger className="inline-flex h-9 w-9 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-border-default bg-bg-card px-0 text-sm font-semibold text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 sm:h-10 sm:w-auto sm:max-w-44 sm:px-3 xl:hidden">
+    <Popover.Trigger className="inline-flex h-9 w-9 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-border-default bg-bg-card px-0 text-sm font-semibold text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 sm:h-10 sm:w-auto sm:max-w-44 sm:px-3 xl:hidden">
      <ListTree className="size-4 shrink-0" />
      <span className="hidden truncate sm:inline">{navigation.label}</span>
      <span className="sr-only">Chọn {navigation.label.toLowerCase()}</span>

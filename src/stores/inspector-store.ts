@@ -6,12 +6,10 @@ import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import { containsChinese, extractChinese } from "@/lib/chinese-utils";
 import { logger } from "@/lib/logger";
 import { pinyin as getPinyin } from "pinyin-pro";
-import { createClient } from "@/lib/supabase/client";
 import {
  getBasicVocabData,
  trackVocabLookup,
  getVocabByHanzi,
- hasInspectorDeepDiveData,
  classifyVocabType,
 } from "@/services/vocab.service";
 import type { VocabData, AiAnalysis, VocabWithProgress } from "@/types/database";
@@ -23,28 +21,31 @@ const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 type InspectorCacheEntry = {
  vocab: VocabData;
- hasDeepData: boolean;
  cachedAt: number;
+};
+
+export type InspectorOpenOptions = {
+ lessonId?: string;
+ anchorRect?: DOMRect;
 };
 
 const inspectorVocabCache = new Map<string, InspectorCacheEntry>();
 
 let activeLookupRequestId = 0;
 let activeBasicRequestController: AbortController | null = null;
-let activeDeepRequestController: AbortController | null = null;
 
-function getLookupCacheKey(text: string): string {
- return extractChinese(text).trim();
+function getLookupCacheKey(text: string, lessonId?: string): string {
+ const normalizedText = extractChinese(text).trim();
+ return normalizedText ? `${lessonId || "global"}:${normalizedText}` : "";
 }
 
-function setCachedVocab(text: string, vocab: VocabData) {
- const key = getLookupCacheKey(text || vocab.hanzi);
+function setCachedVocab(text: string, vocab: VocabData, lessonId?: string) {
+ const key = getLookupCacheKey(text || vocab.hanzi, lessonId);
  if (!key) return;
 
  inspectorVocabCache.delete(key);
  inspectorVocabCache.set(key, {
   vocab,
-  hasDeepData: hasInspectorDeepDiveData(vocab.ai_analysis),
   cachedAt: Date.now(),
  });
 
@@ -58,8 +59,8 @@ function setCachedVocab(text: string, vocab: VocabData) {
  }
 }
 
-function getCachedVocab(text: string): InspectorCacheEntry | null {
- const key = getLookupCacheKey(text);
+function getCachedVocab(text: string, lessonId?: string): InspectorCacheEntry | null {
+ const key = getLookupCacheKey(text, lessonId);
  if (!key) return null;
 
  const inMemory = inspectorVocabCache.get(key);
@@ -68,17 +69,20 @@ function getCachedVocab(text: string): InspectorCacheEntry | null {
   if (Date.now() - inMemory.cachedAt > CACHE_TTL_MS) {
    inspectorVocabCache.delete(key);
   } else {
-   setCachedVocab(key, inMemory.vocab);
+   setCachedVocab(text, inMemory.vocab, lessonId);
    return inMemory;
   }
  }
 
- const recentMatch = loadRecentLookups().find((item) => item.hanzi === key);
+ if (lessonId) return null;
+
+ const normalizedText = extractChinese(text).trim();
+ const recentMatch = loadRecentLookups().find((item) => item.hanzi === normalizedText);
  if (!recentMatch) {
   return null;
  }
 
- setCachedVocab(key, recentMatch);
+ setCachedVocab(text, recentMatch);
  return inspectorVocabCache.get(key) || null;
 }
 
@@ -105,39 +109,21 @@ function updateRecentLookups(
  current: VocabData[],
  vocab: VocabData,
  fallbackRecent?: VocabData[],
+ lessonId?: string,
 ): VocabData[] {
  const source = current.length > 0 ? current : fallbackRecent || [];
  const filtered = source.filter((item) => item.hanzi !== vocab.hanzi);
  const updated = [vocab, ...filtered].slice(0, MAX_RECENT_LOOKUPS);
 
  saveRecentLookups(updated);
- setCachedVocab(vocab.hanzi, vocab);
+ setCachedVocab(vocab.hanzi, vocab, lessonId);
 
  return updated;
-}
-
-function mergeVocabData(current: VocabData | null, incoming: VocabData): VocabData {
- return {
-  ...(current || {}),
-  ...incoming,
-  id: incoming.id || current?.id,
-  dictionary_id: incoming.dictionary_id || current?.dictionary_id,
-  hanzi: incoming.hanzi || current?.hanzi || "",
-  pinyin: incoming.pinyin || current?.pinyin || "",
-  sino_vietnamese: incoming.sino_vietnamese || current?.sino_vietnamese,
-  meaning: incoming.meaning || current?.meaning || "",
-  ai_analysis: {
-   ...(current?.ai_analysis || {}),
-   ...(incoming.ai_analysis || {}),
-  },
- };
 }
 
 function abortLookupRequests() {
  activeBasicRequestController?.abort();
  activeBasicRequestController = null;
- activeDeepRequestController?.abort();
- activeDeepRequestController = null;
 }
 
 function parseLookupResponse(payload: {
@@ -191,24 +177,22 @@ function buildTrackedVocabListItem(vocabData: VocabData): VocabWithProgress | nu
 
 type InspectorStore = {
  isOpen: boolean;
+ anchorRect: DOMRect | null;
  selectedText: string;
  vocabData: VocabData | null;
  isLoading: boolean;
- isDeepLoading: boolean;
- deepError: string | null;
  recentLookups: VocabData[];
- openInspector: (text: string) => Promise<void>;
+ openInspector: (text: string, options?: InspectorOpenOptions) => Promise<void>;
  closeInspector: () => void;
  loadRecentLookups: () => void;
 };
 
 export const useInspectorStore = create<InspectorStore>((set, get) => ({
  isOpen: false,
+ anchorRect: null,
  selectedText: "",
  vocabData: null,
  isLoading: false,
- isDeepLoading: false,
- deepError: null,
  recentLookups: [],
 
  loadRecentLookups: () => {
@@ -217,7 +201,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
   set({ recentLookups });
  },
 
- openInspector: async (text: string) => {
+ openInspector: async (text: string, options = {}) => {
   if (!containsChinese(text)) return;
 
   const chineseText = extractChinese(text);
@@ -225,7 +209,6 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
    return;
   }
 
-  const supabase = createClient();
   const queryClient = getQueryClient();
 
   const trackLookupInBackground = async (vocabData: VocabData) => {
@@ -234,6 +217,8 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
    }
 
    try {
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
     const {
      data: { session },
     } = await supabase.auth.getSession();
@@ -271,99 +256,23 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
   const requestId = activeLookupRequestId;
   abortLookupRequests();
 
-  const startDeepLookup = async () => {
-   const deepController = new AbortController();
-   activeDeepRequestController = deepController;
-
-   try {
-    const deepResponse = await fetch("/api/lookup/deep", {
-     method: "POST",
-     headers: { "Content-Type": "application/json" },
-     body: JSON.stringify({ text: chineseText }),
-     signal: deepController.signal,
-    });
-
-    const deepJson = (await deepResponse.json()) as {
-     data?: {
-      id?: string;
-      dictionary_id?: string;
-      hanzi?: string;
-      pinyin?: string;
-      sino_vietnamese?: string | null;
-      meaning?: string;
-      analysis?: AiAnalysis;
-      ai_analysis?: AiAnalysis;
-     };
-     error?: string;
-    };
-
-    if (requestId !== activeLookupRequestId) {
-     return;
-    }
-
-    const deepVocab = parseLookupResponse(deepJson);
-    if (!deepResponse.ok || !deepVocab) {
-     set({
-      isDeepLoading: false,
-      deepError: deepJson.error || "Không thể tải phân tích sâu lúc này.",
-     });
-     return;
-    }
-
-    const mergedVocab = mergeVocabData(get().vocabData, deepVocab);
-    const updatedRecent = updateRecentLookups(
-     get().recentLookups,
-     mergedVocab,
-     loadRecentLookups(),
-    );
-
-    set({
-     vocabData: mergedVocab,
-     isDeepLoading: false,
-     deepError: null,
-     recentLookups: updatedRecent,
-    });
-   } catch (error) {
-    if (error instanceof DOMException && error.name === "AbortError") {
-     return;
-    }
-
-    if (requestId !== activeLookupRequestId) {
-     return;
-    }
-
-    set({
-     isDeepLoading: false,
-     deepError: "Không thể tải phân tích sâu lúc này.",
-    });
-   } finally {
-    if (activeDeepRequestController === deepController) {
-     activeDeepRequestController = null;
-    }
-   }
-  };
-
-  const cachedVocab = getCachedVocab(chineseText);
+  const cachedVocab = getCachedVocab(chineseText, options.lessonId);
   if (cachedVocab) {
    const updatedRecent = updateRecentLookups(
     get().recentLookups,
     cachedVocab.vocab,
     loadRecentLookups(),
+    options.lessonId,
    );
 
    set({
     isOpen: true,
+    anchorRect: options.anchorRect || get().anchorRect,
     selectedText: chineseText,
     isLoading: false,
-    isDeepLoading: !cachedVocab.hasDeepData,
-    deepError: null,
     vocabData: cachedVocab.vocab,
     recentLookups: updatedRecent,
    });
-
-   if (!cachedVocab.hasDeepData) {
-    void startDeepLookup();
-   }
 
    void trackLookupInBackground(cachedVocab.vocab);
    return;
@@ -371,10 +280,9 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
 
   set({
    isOpen: true,
+   anchorRect: options.anchorRect || get().anchorRect,
    selectedText: chineseText,
    isLoading: true,
-   isDeepLoading: false,
-   deepError: null,
    vocabData: null,
   });
 
@@ -390,6 +298,7 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
      text: chineseText,
+     lessonId: options.lessonId,
     }),
     signal: basicController.signal,
    });
@@ -415,6 +324,8 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
      pinyin: parsedVocab.pinyin || pinyinText,
     });
    } else {
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
     const vocab = await getVocabByHanzi(supabase, chineseText);
 
     if (vocab) {
@@ -456,18 +367,20 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
    return;
   }
 
-  const updated = updateRecentLookups(get().recentLookups, resolvedVocab, loadRecentLookups());
+  const updated = updateRecentLookups(
+   get().recentLookups,
+   resolvedVocab,
+   loadRecentLookups(),
+   options.lessonId,
+  );
 
   set({
    vocabData: resolvedVocab,
    isLoading: false,
-   isDeepLoading: true,
-   deepError: null,
    recentLookups: updated,
   });
 
   void trackLookupInBackground(resolvedVocab);
-  void startDeepLookup();
  },
 
  closeInspector: () => {
@@ -475,11 +388,10 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
   abortLookupRequests();
   set({
    isOpen: false,
+   anchorRect: null,
    selectedText: "",
    vocabData: null,
    isLoading: false,
-   isDeepLoading: false,
-   deepError: null,
   });
  },
 }));

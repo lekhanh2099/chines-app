@@ -2,17 +2,27 @@
 
 import { useMemo, useState } from "react";
 import {
- AUTO_API_KEY_PROVIDER,
  API_KEY_PROVIDER_OPTIONS,
  getApiKeyProviderDocsUrl,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
+import {
+ getApiKeyModelDescription,
+ getApiKeyModelOptions,
+ getDefaultApiKeyModel,
+} from "@/lib/api-key-models";
 import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import {
  Dialog,
  DialogBody,
@@ -25,8 +35,6 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import {
- ArrowDown,
- ArrowUp,
  Check,
  ClipboardPaste,
  Eye,
@@ -39,14 +47,13 @@ import {
  Plus,
  ShieldCheck,
  Trash2,
- Workflow,
+ Cpu,
 } from "lucide-react";
-
-type ProviderSelectValue = ApiKeyProvider | typeof AUTO_API_KEY_PROVIDER;
 
 const EMPTY_SUMMARY = {
  total: 0,
  active: 0,
+ groq: 0,
  deepseek: 0,
  gemini: 0,
  openai: 0,
@@ -54,13 +61,22 @@ const EMPTY_SUMMARY = {
 
 export default function ApiKeyManagerSection() {
  const [isDialogOpen, setIsDialogOpen] = useState(false);
- const [provider, setProvider] = useState<ProviderSelectValue>(AUTO_API_KEY_PROVIDER);
+ const [provider, setProvider] = useState<ApiKeyProvider>("groq");
+ const [model, setModel] = useState(getDefaultApiKeyModel("groq"));
  const [label, setLabel] = useState("");
  const [apiKey, setApiKey] = useState("");
  const [showKey, setShowKey] = useState(false);
- const { query, addMutation, toggleMutation, moveMutation, deleteMutation, busyKeyId } =
-  useManagedApiKeys();
+ const {
+  query,
+  addMutation,
+  toggleMutation,
+  moveMutation,
+  modelMutation,
+  deleteMutation,
+  busyKeyId,
+ } = useManagedApiKeys();
  const keys = query.data?.keys ?? [];
+ const selectedKeyId = keys.find((key) => key.isActive)?.id ?? null;
  const summary = query.data?.summary ?? EMPTY_SUMMARY;
  const schemaReady = query.data?.schemaReady ?? true;
  const schemaMessage = query.data?.schemaMessage ?? null;
@@ -68,12 +84,9 @@ export default function ApiKeyManagerSection() {
  const isSubmitting = addMutation.isPending;
 
  const selectedProviderOption = useMemo(() => {
-  if (provider === AUTO_API_KEY_PROVIDER) {
-   return null;
-  }
-
   return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider) || null;
  }, [provider]);
+ const modelOptions = useMemo(() => getApiKeyModelOptions(provider), [provider]);
 
  async function handlePaste() {
   try {
@@ -98,15 +111,26 @@ export default function ApiKeyManagerSection() {
     apiKey: apiKey.trim(),
     label: label.trim() || undefined,
     provider,
+    model,
    });
    toast.success(data.message);
    setApiKey("");
    setLabel("");
-   setProvider(AUTO_API_KEY_PROVIDER);
+   setProvider("groq");
+   setModel(getDefaultApiKeyModel("groq"));
    setShowKey(false);
    setIsDialogOpen(false);
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Không thể thêm API key.");
+  }
+ }
+
+ async function handleModelChange(keyId: string, nextModel: string) {
+  try {
+   await modelMutation.mutateAsync({ keyId, model: nextModel });
+   toast.success("Đã đổi model.");
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể đổi model.");
   }
  }
 
@@ -142,14 +166,13 @@ export default function ApiKeyManagerSection() {
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="flex max-w-3xl flex-col gap-2">
-     <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
-      <Workflow className="h-3.5 w-3.5" />
-      API Key Manager
-     </div>
-     <h2 className="text-xl font-bold text-text-primary">Quản lý API key và thứ tự failover</h2>
+     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+      <Cpu className="size-5 text-accent-text" />
+      API key cá nhân cho Xem chi tiết
+     </h2>
      <p className=" leading-6 text-text-secondary">
-      Chỉ còn một section để quản lý toàn bộ key. App sẽ thử đúng theo thứ tự bạn sắp xếp từ trên
-      xuống dưới, nên nếu muốn ưu tiên DeepSeek thì hãy để các DeepSeek key ở phía trên.
+      Tất cả model trong phần này đều cần API key cá nhân. Provider có thể cấp quota miễn phí, nhưng
+      app vẫn cần key để gọi API. Khi request lỗi, app không tự đổi key hoặc model.
      </p>
     </div>
 
@@ -160,86 +183,114 @@ export default function ApiKeyManagerSection() {
        Thêm API key
       </Button>
      </DialogTrigger>
-     <DialogContent className="max-w-xl rounded-2xl  border border-border-default bg-bg-card p-6">
+     <DialogContent>
       <DialogHeader>
-       <DialogTitle className="text-text-primary">Thêm API key mới</DialogTitle>
-       <DialogDescription className="text-text-secondary">
-        Có thể để app tự detect provider, hoặc chọn tay nếu key thuộc dạng khó phân biệt.
-       </DialogDescription>
+       <DialogTitle>Thêm API key mới</DialogTitle>
+       <DialogDescription>Chọn provider, model và nhập key tương ứng.</DialogDescription>
       </DialogHeader>
 
       <DialogBody>
-       <label className="flex flex-col gap-2">
-        <span className=" font-semibold text-text-primary">Provider</span>
-        <select
+       <div className="grid gap-2">
+        <label htmlFor="api-key-provider" className="font-semibold text-text-primary">
+         Provider
+        </label>
+        <Select
          value={provider}
-         onChange={(event) => setProvider(event.target.value as ProviderSelectValue)}
-         className="h-11 w-full rounded-xl border border-border-default bg-bg-primary px-4 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
+         onValueChange={(value) => {
+          const nextProvider = value as ApiKeyProvider;
+          setProvider(nextProvider);
+          setModel(getDefaultApiKeyModel(nextProvider));
+         }}
         >
-         <option value={AUTO_API_KEY_PROVIDER}>Tự nhận diện</option>
-         {API_KEY_PROVIDER_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
-           {option.label}
-          </option>
-         ))}
-        </select>
-       </label>
+         <SelectTrigger id="api-key-provider" width="full">
+          <SelectValue />
+         </SelectTrigger>
+         <SelectContent align="start">
+          {API_KEY_PROVIDER_OPTIONS.map((option) => (
+           <SelectItem key={option.value} value={option.value}>
+            {option.label}
+           </SelectItem>
+          ))}
+         </SelectContent>
+        </Select>
+       </div>
+
+       <div className="grid gap-2">
+        <label htmlFor="api-key-model" className="font-semibold text-text-primary">
+         Model
+        </label>
+        <Select value={model} onValueChange={setModel}>
+         <SelectTrigger id="api-key-model" width="full">
+          <SelectValue />
+         </SelectTrigger>
+         <SelectContent align="start">
+          {modelOptions.map((option) => (
+           <SelectItem key={option.value} value={option.value}>
+            {option.label}
+           </SelectItem>
+          ))}
+         </SelectContent>
+        </Select>
+        <p className="text-sm text-text-muted">
+         {modelOptions.find((option) => option.value === model)?.description}
+        </p>
+       </div>
 
        {selectedProviderOption ? (
-        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3  text-text-secondary">
+        <div className="grid gap-1 text-sm text-text-secondary">
          <p className="font-semibold text-text-primary">{selectedProviderOption.label}</p>
-         <p className="mt-1 leading-6">{selectedProviderOption.description}</p>
+         <p>{selectedProviderOption.description}</p>
          <a
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"
           rel="noreferrer"
-          className="mt-2 inline-flex items-center gap-1 font-medium text-accent-text transition hover:underline"
+          className="inline-flex items-center gap-1 font-medium text-accent-text transition hover:underline"
          >
           Mở trang lấy key
           <ExternalLink className="h-3.5 w-3.5" />
          </a>
         </div>
-       ) : (
-        <div className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3  leading-6 text-text-secondary">
-         App sẽ thử detect theo thứ tự hợp lý. Với key dạng `sk-...`, app sẽ thử DeepSeek trước rồi
-         mới đến OpenAI.
-        </div>
-       )}
+       ) : null}
 
        <label className="flex flex-col gap-2">
         <span className=" font-semibold text-text-primary">Tên hiển thị</span>
         <Input
          value={label}
          onChange={(event) => setLabel(event.target.value)}
-         placeholder="Ví dụ: DeepSeek chính, Gemini backup"
+         placeholder="Ví dụ: Groq tra từ"
          maxLength={80}
         />
        </label>
 
        <label className="flex flex-col gap-2">
         <span className=" font-semibold text-text-primary">API key</span>
-        <div className="flex items-center gap-2">
-         <div className="relative flex-1">
-          <Input
-           type={showKey ? "text" : "password"}
-           value={apiKey}
-           onChange={(event) => setApiKey(event.target.value)}
-           placeholder={selectedProviderOption?.placeholder || "Dán API key vào đây"}
-           className="h-11 pr-11"
-           autoComplete="off"
-           spellCheck={false}
-          />
-          <button
-           type="button"
-           onClick={() => setShowKey((current) => !current)}
-           className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted transition hover:text-text-primary"
-          >
-           {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-          </button>
-         </div>
-         <Button variant="outline" onClick={handlePaste}>
-          <ClipboardPaste data-icon="inline-start" />
-          Paste
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] gap-2">
+         <Input
+          type={showKey ? "text" : "password"}
+          value={apiKey}
+          onChange={(event) => setApiKey(event.target.value)}
+          placeholder={selectedProviderOption?.placeholder || "Dán API key vào đây"}
+          autoComplete="off"
+          spellCheck={false}
+         />
+         <Button
+          type="button"
+          variant="outline"
+          size="icon"
+          onClick={() => setShowKey((current) => !current)}
+          aria-label={showKey ? "Ẩn API key" : "Hiện API key"}
+          title={showKey ? "Ẩn API key" : "Hiện API key"}
+         >
+          {showKey ? <EyeOff /> : <Eye />}
+         </Button>
+         <Button
+          variant="outline"
+          size="icon"
+          onClick={handlePaste}
+          aria-label="Dán API key"
+          title="Dán API key"
+         >
+          <ClipboardPaste />
          </Button>
         </div>
        </label>
@@ -269,18 +320,9 @@ export default function ApiKeyManagerSection() {
     </div>
    )}
 
-   <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-    <SummaryPill label="Tổng key" value={summary.total} />
-    <SummaryPill label="Đang active" value={summary.active} tone="success" />
-    <SummaryPill label="DeepSeek" value={summary.deepseek} />
-    <SummaryPill label="Gemini / OpenAI" value={summary.gemini + summary.openai} />
-   </div>
-
-   <div className="mt-5 rounded-2xl border border-border-default bg-bg-primary p-4  leading-6 text-text-secondary">
-    Thứ tự fallback: app đọc từ trên xuống dưới trong danh sách key active. Khi một key lỗi hoặc hết
-    balance, app chuyển sang key kế tiếp. Nếu toàn bộ key user đều fail, app mới fallback sang
-    system provider của app.
-   </div>
+   <p className="mt-5 text-sm text-text-muted">
+    {summary.total} key · {summary.active} đang bật · chỉ áp dụng khi mở phân tích chi tiết
+   </p>
 
    {query.isError ? (
     <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
@@ -296,29 +338,28 @@ export default function ApiKeyManagerSection() {
      Đang tải danh sách API key...
     </div>
    ) : keys.length === 0 ? (
-    <div className="mt-6 rounded-2xl  border border-dashed border-border-default bg-bg-primary px-6 py-10 text-center">
-     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-subtle text-accent-text">
+    <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-border-default bg-bg-primary p-4">
+     <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
       <KeyRound className="h-5 w-5" />
      </div>
-     <p className="mt-4 text-base font-semibold text-text-primary">Chưa có API key nào</p>
-     <p className="mt-2  leading-6 text-text-secondary">
-      {schemaReady
-       ? "Thêm ít nhất một key để app có thể tự failover khi provider cá nhân bị hết quota hoặc mất kết nối."
-       : "Apply migration database trước, rồi quay lại thêm key để bật failover cá nhân."}
-     </p>
+     <div>
+      <p className="text-base font-semibold text-text-primary">Chưa có API key cá nhân</p>
+      <p className="mt-1 text-sm leading-5 text-text-secondary">
+       {schemaReady
+        ? "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết."
+        : "Apply migration database trước, rồi quay lại thêm key."}
+      </p>
+     </div>
     </div>
    ) : (
-    <div className="mt-6 flex flex-col gap-3">
+    <div className="mt-6 divide-y divide-border-default border-y border-border-default">
      {keys.map((key, index) => {
       const isBusy = busyKeyId === key.id;
 
       return (
-       <article
-        key={key.id}
-        className="rounded-2xl  border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-       >
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-         <div className="flex flex-col gap-3">
+       <article key={key.id} className="py-4">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,22rem)_auto] lg:items-center">
+         <div className="min-w-0 space-y-2">
           <div className="flex flex-wrap items-center gap-2">
            <Badge
             variant={
@@ -329,52 +370,64 @@ export default function ApiKeyManagerSection() {
                 : "warning"
             }
             size="sm"
-            className="normal-case tracking-normal"
            >
             {key.providerLabel}
            </Badge>
-           <span className="rounded-full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
-            Ưu tiên #{index + 1}
-           </span>
-           <span
-            className={cn(
-             "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold",
-             key.isActive ? "bg-success/10 text-success" : "bg-bg-card text-text-muted",
-            )}
+           <Badge
+            variant={key.id === selectedKeyId ? "info" : key.isActive ? "success" : "default"}
+            size="sm"
            >
             {key.isActive ? <Check className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
-            {key.isActive ? "Đang active" : "Đang tạm dừng"}
-           </span>
+            {key.id === selectedKeyId ? "Đang dùng" : key.isActive ? "Đang bật" : "Tạm dừng"}
+           </Badge>
           </div>
 
-          <div>
-           <h3 className="text-base font-bold text-text-primary">{key.label}</h3>
-           <p className="mt-1 font-mono  text-text-secondary">{key.maskedKey}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-3 text-xs text-text-muted">
-           {key.defaultModel && <span>Model mặc định: {key.defaultModel}</span>}
-           {key.lastValidatedAt && <span>Đã verify key này</span>}
+          <div className="min-w-0">
+           <h3 className="truncate text-base font-bold text-text-primary">{key.label}</h3>
+           <p className="mt-1 truncate font-mono text-sm text-text-secondary">{key.maskedKey}</p>
           </div>
          </div>
 
+         <div className="grid min-w-0 gap-1.5">
+          <span className="text-xs font-semibold text-text-muted">Model sử dụng</span>
+          <Select
+           value={key.defaultModel || getDefaultApiKeyModel(key.provider)}
+           onValueChange={(value) => void handleModelChange(key.id, value)}
+           disabled={isBusy || !schemaReady}
+          >
+           <SelectTrigger width="full" aria-label={`Model cho ${key.label}`}>
+            <SelectValue />
+           </SelectTrigger>
+           <SelectContent align="start">
+            {key.defaultModel &&
+            !getApiKeyModelOptions(key.provider).some(
+             (option) => option.value === key.defaultModel,
+            ) ? (
+             <SelectItem value={key.defaultModel}>{key.defaultModel} (đã lưu)</SelectItem>
+            ) : null}
+            {getApiKeyModelOptions(key.provider).map((option) => (
+             <SelectItem key={option.value} value={option.value}>
+              {option.label}
+             </SelectItem>
+            ))}
+           </SelectContent>
+          </Select>
+          <span className="text-xs leading-5 text-text-muted">
+           {getApiKeyModelDescription(key.provider, key.defaultModel)}
+          </span>
+         </div>
+
          <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-          <Button
-           variant="outline"
-           size="sm"
-           onClick={() => handleMoveKey(key.id, "up")}
-           disabled={isBusy || index === 0 || !schemaReady}
-          >
-           <ArrowUp className="h-4 w-4" />
-          </Button>
-          <Button
-           variant="outline"
-           size="sm"
-           onClick={() => handleMoveKey(key.id, "down")}
-           disabled={isBusy || index === keys.length - 1 || !schemaReady}
-          >
-           <ArrowDown className="h-4 w-4" />
-          </Button>
+          {index > 0 ? (
+           <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleMoveKey(key.id, "up")}
+            disabled={isBusy || !schemaReady}
+           >
+            Đưa lên
+           </Button>
+          ) : null}
           <Button
            variant="outline"
            size="sm"
@@ -391,11 +444,10 @@ export default function ApiKeyManagerSection() {
            {key.isActive ? "Tạm dừng" : "Bật lại"}
           </Button>
           <Button
-           variant="outline"
+           variant="destructive"
            size="sm"
            onClick={() => handleDeleteKey(key.id)}
            disabled={isBusy || !schemaReady}
-           className="text-danger-text hover:bg-danger/10"
           >
            <Trash2 className="h-4 w-4" />
            Xóa
@@ -408,27 +460,5 @@ export default function ApiKeyManagerSection() {
     </div>
    )}
   </section>
- );
-}
-
-function SummaryPill({
- label,
- value,
- tone = "default",
-}: {
- label: string;
- value: number;
- tone?: "default" | "success";
-}) {
- return (
-  <div
-   className={cn(
-    "rounded-2xl border px-4 py-3",
-    tone === "success" ? "border-success/20 bg-success/5" : "border-border-default bg-bg-primary",
-   )}
-  >
-   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">{label}</p>
-   <p className="mt-2 text-2xl font-bold text-text-primary">{value}</p>
-  </div>
  );
 }

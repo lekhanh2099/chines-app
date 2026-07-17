@@ -1,6 +1,22 @@
 export const DEFAULT_GEMINI_MODEL = "models/gemini-2.5-flash";
+export const DEFAULT_GEMINI_QUICK_MODEL = "models/gemini-3.1-flash-lite";
 
 export const GEMINI_TEXT_MODEL_OPTIONS = [
+ {
+  value: "models/gemini-3.1-flash-lite",
+  label: "Gemini 3.1 Flash-Lite",
+  description: "Model stable mới, tối ưu tốc độ và structured output",
+ },
+ {
+  value: "models/gemini-3.5-flash",
+  label: "Gemini 3.5 Flash",
+  description: "Model stable mới cho tác vụ dài và phức tạp hơn",
+ },
+ {
+  value: "models/gemini-3.1-pro-preview",
+  label: "Gemini 3.1 Pro Preview",
+  description: "Model preview cho tác vụ cần suy luận mạnh",
+ },
  {
   value: "models/gemini-2.5-flash",
   label: "Gemini 2.5 Flash",
@@ -34,7 +50,7 @@ export const GEMINI_TEXT_MODEL_OPTIONS = [
  {
   value: "models/gemini-2.0-flash",
   label: "Gemini 2.0 Flash",
-  description: "Model cũ hơn, giữ để fallback thủ công",
+  description: "Model cũ hơn, giữ để tương thích cài đặt đã lưu",
  },
  {
   value: "models/gemini-2.0-flash-lite",
@@ -49,7 +65,7 @@ export const GEMINI_TEXT_MODEL_OPTIONS = [
  {
   value: "models/gemma-3-12b-it",
   label: "Gemma 3 12B",
-  description: "Model text trung bình, thiên về fallback",
+  description: "Model text trung bình trong dòng Gemma",
  },
  {
   value: "models/gemma-3-27b-it",
@@ -58,7 +74,20 @@ export const GEMINI_TEXT_MODEL_OPTIONS = [
  },
 ] as const;
 
+export const GEMINI_DETAIL_MODEL_OPTIONS = GEMINI_TEXT_MODEL_OPTIONS.filter((option) =>
+ [
+  "models/gemini-3.5-flash",
+  "models/gemini-3.1-pro-preview",
+  "models/gemini-2.5-flash",
+  "models/gemini-2.5-pro",
+ ].includes(option.value),
+);
+
 export type GeminiModelId = (typeof GEMINI_TEXT_MODEL_OPTIONS)[number]["value"];
+
+export function isGeminiModelId(model?: string | null): model is GeminiModelId {
+ return GEMINI_TEXT_MODEL_OPTIONS.some((option) => option.value === model);
+}
 
 export function normalizeGeminiModel(model?: string | null): GeminiModelId {
  const matched = GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model);

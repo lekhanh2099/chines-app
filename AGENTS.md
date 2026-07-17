@@ -99,6 +99,7 @@ Every task must respect these rules:
 - No horizontal overflow.
 - No random margin hacks.
 - No one-off duplicated Button/Select/Card/Badge/Tabs styles.
+- Do not restyle shared UI primitives from feature call sites with visual or layout utility classes. If a shared component needs another size, density, or layout, add a typed variant to the shared component and reuse that variant. Once a shared component is used, its visual contract must remain owned by that component.
 - No inaccessible custom controls.
 - No server-only code imported into Client Components.
 - No browser exposure of backend-only credentials.
@@ -650,6 +651,7 @@ Use existing shared UI primitives where possible.
 
 Rules:
 
+- Shared UI component call sites must not override component styling with `className`. Extend the shared component API with an explicit reusable variant instead.
 - Keep typography hierarchy clear.
 - Avoid cramped cards.
 - Avoid random margins.

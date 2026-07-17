@@ -53,8 +53,8 @@ export function OptionalFieldsMultiSelect({
     <div className="flex min-w-0 items-center gap-1">
      <Popover.Trigger
       className={cn(
-       "flex min-h-12 min-w-0 flex-1 items-center gap-2 rounded-lg border border-border-default bg-bg-primary px-2 py-1.5 text-left shadow-xs transition-colors outline-none hover:bg-bg-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
-       open && "border-primary/60 ring-3 ring-primary/15",
+       "flex min-h-12 min-w-0 flex-1 items-center gap-2 rounded-lg border border-border-default bg-bg-primary px-2 py-1.5 text-left shadow-xs transition-colors outline-none hover:bg-bg-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20",
+       open && "border-primary/50 bg-accent-subtle",
       )}
      >
       <div className="flex min-w-0 flex-1 items-center gap-2">

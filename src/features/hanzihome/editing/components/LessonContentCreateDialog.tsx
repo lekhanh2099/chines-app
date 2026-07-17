@@ -42,7 +42,11 @@ const formSchema = z.object({
 
 type LessonContentFormValues = z.input<typeof formSchema>;
 
-export function LessonContentCreateDialog() {
+export function LessonContentCreateDialog({
+ presentation = "toolbar",
+}: {
+ presentation?: "toolbar" | "menu";
+}) {
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
  const { lesson } = useHanziHomeRuntime();
@@ -114,9 +118,14 @@ export function LessonContentCreateDialog() {
  return (
   <Dialog open={open} onOpenChange={setOpen}>
    <DialogTrigger asChild>
-    <Button type="button" variant="outline" size="sm" className="h-8">
+    <Button
+     type="button"
+     variant={presentation === "menu" ? "menu" : "outline"}
+     size="sm"
+     role={presentation === "menu" ? "menuitem" : undefined}
+    >
      <Plus className="h-4 w-4" />
-     Thêm
+     Thêm nội dung
     </Button>
    </DialogTrigger>
    <DialogContent>

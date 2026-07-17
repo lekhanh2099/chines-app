@@ -222,6 +222,7 @@ export type LearningProgressItem = {
 
 export type HanziReaderFont = "system" | "songti" | "kai" | "pinyin" | "mengshen";
 export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
+export type LessonTextRevealMode = "always" | "tap";
 
 export type LessonTextDisplaySettings = {
  showPinyin: boolean;
@@ -229,6 +230,7 @@ export type LessonTextDisplaySettings = {
  showAnswers: boolean;
  hanziFont: HanziReaderFont;
  hanziSize: HanziReaderSize;
+ revealMode: LessonTextRevealMode;
 };
 
 export type UserLearningState = {

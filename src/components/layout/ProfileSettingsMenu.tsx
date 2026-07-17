@@ -117,7 +117,7 @@ export function ProfileSettingsMenu({
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <Popover.Trigger
     className={cn(
-     "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text shadow-theme-sm outline-none transition hover:bg-bg-elevated focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
+     "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text shadow-theme-sm outline-none transition hover:bg-bg-elevated focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20",
      focusModeEnabled && "border-warning/35 bg-warning-subtle text-warning-text",
     )}
     aria-label="Mở hồ sơ và cài đặt học"
@@ -229,7 +229,7 @@ export function ProfileSettingsMenu({
        <Link
         href="/settings"
         onClick={() => setOpen(false)}
-        className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 text-sm font-bold text-text-primary transition hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+        className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 text-sm font-bold text-text-primary transition hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20"
        >
         <Settings className="h-4 w-4 text-text-secondary" />
         Cài đặt tài khoản

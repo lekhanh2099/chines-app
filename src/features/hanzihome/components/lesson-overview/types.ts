@@ -14,6 +14,7 @@ export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
  showAnswers: false,
  hanziFont: "songti",
  hanziSize: "3xl",
+ revealMode: "always",
 };
 
 export type BookSection = {

@@ -227,6 +227,7 @@ export function VocabList({
              showAnswers: false,
              hanziFont: "kai",
              hanziSize: "2xl",
+             revealMode: "always",
             },
             { size: "xl" },
            )}
@@ -241,7 +242,7 @@ export function VocabList({
       </div>
       <button
        type="button"
-       className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+       className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20"
        aria-label="Đổi chiều cao danh sách từ vựng"
        aria-orientation="horizontal"
        aria-valuemax={resizeBounds.maxHeight}

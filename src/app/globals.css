@@ -1559,6 +1559,21 @@ hr.editor-hr.selected {
  z-index: 5;
 }
 
+/* Touch screens keep scrolling and text selection instead of unreliable HTML5 dragging. */
+@media (hover: none), (pointer: coarse) {
+ [data-study-annotation-node] {
+  -webkit-touch-callout: none;
+ }
+
+ [draggable="true"] {
+  -webkit-user-drag: none;
+ }
+
+ .draggable-block-menu {
+  display: none;
+ }
+}
+
 /* ── Block Insert Menu (from + button) ── */
 .draggable-block-insert-menu {
  position: absolute;

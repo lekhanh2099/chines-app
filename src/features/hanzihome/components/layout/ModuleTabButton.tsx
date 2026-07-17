@@ -5,6 +5,7 @@ import type { DragEvent } from "react";
 import { Button } from "@/components/ui/button";
 import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
 import { cn } from "@/lib/utils";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import { moduleMeta } from "./moduleMeta";
 
@@ -30,6 +31,7 @@ export function ModuleTabButton({
  onMoveModule: (module: StudyModule, targetPane: PaneId, targetIndex: number) => void;
 }) {
  const meta = moduleMeta[item];
+ const isCoarsePointer = useCoarsePointer();
  const Icon = meta.icon;
  const isDragging = draggedModule?.module === item;
  const isDropTarget =
@@ -52,7 +54,7 @@ export function ModuleTabButton({
   <Button
    type="button"
    variant={active ? "active" : "ghost"}
-   draggable
+   draggable={!isCoarsePointer}
    onClick={onClick}
    onDragStart={handleDragStart}
    onDragOver={(event) => {

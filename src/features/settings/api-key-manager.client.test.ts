@@ -1,6 +1,10 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { addManagedApiKey, fetchManagedApiKeys } from "./api-key-manager.client";
+import {
+ addManagedApiKey,
+ fetchManagedApiKeys,
+ updateManagedApiKeyModel,
+} from "./api-key-manager.client";
 
 const managedKey = {
  id: "8ea90191-e57f-4aca-a602-5b172df86c93",
@@ -31,7 +35,7 @@ describe("api key manager client", () => {
       schemaReason: "ok",
       schemaMessage: null,
       keys: [managedKey],
-      summary: { total: 1, active: 1, deepseek: 0, gemini: 1, openai: 0 },
+      summary: { total: 1, active: 1, groq: 0, deepseek: 0, gemini: 1, openai: 0 },
      }),
      { status: 200 },
     ),
@@ -65,6 +69,36 @@ describe("api key manager client", () => {
 
   await expect(addManagedApiKey({ apiKey: "invalid", provider: "auto" })).rejects.toThrow(
    "Key không hợp lệ.",
+  );
+ });
+
+ it("sends an explicit model update without fallback metadata", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   new Response(
+    JSON.stringify({
+     success: true,
+     key: { ...managedKey, defaultModel: "models/gemini-3.5-flash" },
+    }),
+    { status: 200 },
+   ),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await updateManagedApiKeyModel({
+   keyId: managedKey.id,
+   model: "models/gemini-3.5-flash",
+  });
+
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/settings/api-keys",
+   expect.objectContaining({
+    method: "PATCH",
+    body: JSON.stringify({
+     action: "model",
+     keyId: managedKey.id,
+     model: "models/gemini-3.5-flash",
+    }),
+   }),
   );
  });
 });

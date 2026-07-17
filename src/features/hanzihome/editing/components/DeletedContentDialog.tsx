@@ -110,7 +110,11 @@ async function getDeletedContent() {
  return deletedContentResponseSchema.parse(payload).items;
 }
 
-export function DeletedContentDialog() {
+export function DeletedContentDialog({
+ presentation = "toolbar",
+}: {
+ presentation?: "toolbar" | "menu";
+}) {
  const [open, setOpen] = useState(false);
  const [restoringId, setRestoringId] = useState<string | null>(null);
  const queryClient = useQueryClient();
@@ -166,9 +170,14 @@ export function DeletedContentDialog() {
  return (
   <Dialog open={open} onOpenChange={setOpen}>
    <DialogTrigger asChild>
-    <Button type="button" variant="outline" size="sm" className="h-8">
+    <Button
+     type="button"
+     variant={presentation === "menu" ? "menu" : "outline"}
+     size="sm"
+     role={presentation === "menu" ? "menuitem" : undefined}
+    >
      <Trash2 className="h-4 w-4" />
-     Đã xóa
+     Nội dung đã xóa
     </Button>
    </DialogTrigger>
    <DialogContent className="max-w-3xl">

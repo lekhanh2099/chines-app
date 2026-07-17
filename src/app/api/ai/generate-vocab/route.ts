@@ -64,6 +64,7 @@ export async function POST(request: NextRequest) {
   geminiModel: promptSettings.geminiModel,
   promptTemplate: promptSettings.wordLookupPrompt,
   userApiKeys,
+  allowGroq: true,
  });
 
  if (!aiLookup.data) {

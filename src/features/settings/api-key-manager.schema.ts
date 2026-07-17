@@ -21,6 +21,7 @@ export const managedApiKeySchema = z.object({
 const apiKeysSummarySchema = z.object({
  total: z.number().int().nonnegative(),
  active: z.number().int().nonnegative(),
+ groq: z.number().int().nonnegative(),
  deepseek: z.number().int().nonnegative(),
  gemini: z.number().int().nonnegative(),
  openai: z.number().int().nonnegative(),

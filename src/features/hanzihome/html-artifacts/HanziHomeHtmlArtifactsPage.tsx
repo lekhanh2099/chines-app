@@ -44,6 +44,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { createClient as createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import {
@@ -1223,6 +1224,7 @@ function FolderRow({
  onMoveUp?: () => void;
  onDrop: () => void;
 }) {
+ const isCoarsePointer = useCoarsePointer();
  const canDrop =
   dragItem?.type === "artifact" ||
   (dragItem?.type === "folder" && acceptsFolderDrop && dragItem.id !== folderId);
@@ -1240,7 +1242,7 @@ function FolderRow({
 
  return (
   <div
-   draggable={Boolean(folderId)}
+   draggable={Boolean(folderId) && !isCoarsePointer}
    onDragStart={() => {
     if (folderId) onDragStart({ type: "folder", id: folderId });
    }}
@@ -2372,6 +2374,7 @@ function ArtifactListButton({
  onEdit: () => void;
  onClick: () => void;
 }) {
+ const isCoarsePointer = useCoarsePointer();
  const stopAction = (action: () => void) => (event: MouseEvent<HTMLButtonElement>) => {
   event.stopPropagation();
   action();
@@ -2386,7 +2389,7 @@ function ArtifactListButton({
   <div
    role="button"
    tabIndex={0}
-   draggable
+   draggable={!isCoarsePointer}
    onDragStart={() => onDragStart({ type: "artifact", id: artifact.id })}
    onDragEnd={onDragEnd}
    onClick={onClick}
@@ -2403,7 +2406,7 @@ function ArtifactListButton({
      <span className="truncate text-sm font-black text-text-primary">{artifact.title}</span>
      <p className="text-xs font-black text-text-muted">{formatDate(artifact.updatedAt)}</p>
     </div>
-    <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+    <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100">
      <ArtifactCardAction icon={ExternalLink} label="Mở tệp" onClick={stopAction(onClick)} />
      <ArtifactCardAction icon={FileCode2} label="Chỉnh HTML" onClick={stopAction(onEdit)} />
      <ArtifactCardAction icon={Copy} label="Copy link" onClick={stopAction(onCopyLink)} />

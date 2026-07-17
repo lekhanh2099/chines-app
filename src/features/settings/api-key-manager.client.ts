@@ -40,10 +40,18 @@ export function addManagedApiKey(input: {
  apiKey: string;
  label?: string;
  provider: ApiKeyProvider | "auto";
+ model?: string;
 }) {
  return requestApiKeys(addApiKeyResponseSchema, {
   method: "POST",
   body: JSON.stringify(input),
+ });
+}
+
+export function updateManagedApiKeyModel(input: { keyId: string; model: string }) {
+ return requestApiKeys(updateApiKeyResponseSchema, {
+  method: "PATCH",
+  body: JSON.stringify({ action: "model", ...input }),
  });
 }
 

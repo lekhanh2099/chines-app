@@ -2,9 +2,17 @@ export const AUTO_API_KEY_PROVIDER = "auto";
 
 export const API_KEY_PROVIDER_OPTIONS = [
  {
+  value: "groq",
+  label: "Groq",
+  description: "Phân tích chi tiết từ và câu tốc độ cao bằng Groq BYOK.",
+  placeholder: "gsk_...",
+  docsUrl: "https://console.groq.com/keys",
+  runtimeSupported: true,
+ },
+ {
   value: "deepseek",
   label: "DeepSeek",
-  description: "Ưu tiên cho lookup và fallback trước các provider khác.",
+  description: "Dùng model DeepSeek đã chọn cho lookup và phân tích.",
   placeholder: "sk-xxxxxxxxxxxxxxxx",
   docsUrl: "https://platform.deepseek.com/api_keys",
   runtimeSupported: true,
@@ -20,7 +28,7 @@ export const API_KEY_PROVIDER_OPTIONS = [
  {
   value: "openai",
   label: "OpenAI / ChatGPT",
-  description: "Có thể dùng làm provider fallback sau DeepSeek và Gemini.",
+  description: "Dùng model OpenAI đã chọn cho lookup và phân tích.",
   placeholder: "sk-... hoặc sk-proj-...",
   docsUrl: "https://platform.openai.com/api-keys",
   runtimeSupported: true,

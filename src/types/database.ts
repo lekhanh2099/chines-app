@@ -56,7 +56,7 @@ export type DbVocabulary = {
 export type DbUserAiPromptSettings = Tables<"user_ai_prompt_settings">;
 
 export type DbUserApiKey = Omit<Tables<"user_api_keys">, "provider"> & {
- provider: "deepseek" | "gemini" | "openai";
+ provider: "deepseek" | "gemini" | "openai" | "groq";
 };
 
 export type DbDictionaryCore = {

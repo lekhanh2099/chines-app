@@ -9,9 +9,8 @@ import {
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
+import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getBasicVocabData,
  getDictionaryEntryByHeadword,
@@ -28,16 +27,17 @@ import type { VocabData } from "@/types/database";
 
 const basicLookupSchema = z.object({
  text: z.string().trim().min(1).max(120),
- geminiModel: z.string().trim().min(1).max(200).optional(),
+ lessonId: z.string().trim().min(1).max(200).optional(),
 });
 
 function roundMs(value: number): number {
  return Math.round(value * 100) / 100;
 }
 
-function buildLookupResponse(vocabData: VocabData, cached: boolean) {
+function buildLookupResponse(vocabData: VocabData, cached: boolean, source: string) {
  return NextResponse.json({
   cached,
+  source,
   data: {
    id: vocabData.id,
    dictionary_id: vocabData.dictionary_id,
@@ -61,7 +61,6 @@ export async function POST(request: NextRequest) {
  let source = "unknown";
  let cached = false;
  let aiStatus = "skipped";
- let userApiKeyCount = 0;
 
  const finalize = (response: NextResponse) => {
   const totalMs = performance.now() - startedAt;
@@ -70,7 +69,6 @@ export async function POST(request: NextRequest) {
    "x-lookup-source": source,
    "x-lookup-cache": cached ? "hit" : "miss",
    "x-lookup-ai-status": aiStatus,
-   "x-lookup-user-keys": userApiKeyCount,
   });
 
   logger.info(
@@ -80,7 +78,6 @@ export async function POST(request: NextRequest) {
     source,
     cached,
     aiStatus,
-    userApiKeyCount,
     aborted: request.signal.aborted,
     totalMs: roundMs(totalMs),
    }),
@@ -111,6 +108,39 @@ export async function POST(request: NextRequest) {
   lookupText = normalizeDictionaryHeadword(parsed.data.text);
 
   const cacheStartedAt = performance.now();
+  if (parsed.data.lessonId) {
+   const { data: lessonVocab, error: lessonVocabError } = await supabase
+    .from("hanzihome_vocab_items")
+    .select("id, word, pinyin, han_viet, meaning")
+    .eq("lesson_id", parsed.data.lessonId)
+    .eq("word", lookupText)
+    .is("deleted_at", null)
+    .limit(1)
+    .maybeSingle();
+
+   if (lessonVocabError) {
+    logger.warn("[lookup/basic] lesson vocabulary lookup failed", lessonVocabError);
+   } else if (lessonVocab) {
+    metrics.push({ name: "lesson_vocab", durationMs: performance.now() - cacheStartedAt });
+    source = "lesson_vocab";
+    cached = true;
+    return finalize(
+     buildLookupResponse(
+      getBasicVocabData({
+       id: lessonVocab.id,
+       hanzi: lessonVocab.word,
+       pinyin: lessonVocab.pinyin,
+       sino_vietnamese: lessonVocab.han_viet || undefined,
+       meaning: lessonVocab.meaning,
+       ai_analysis: {},
+      }),
+      true,
+      source,
+     ),
+    );
+   }
+  }
+
   const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
   if (cachedDictionary) {
@@ -121,7 +151,11 @@ export async function POST(request: NextRequest) {
    source = "dictionary_core";
    cached = true;
    return finalize(
-    buildLookupResponse(getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary)), true),
+    buildLookupResponse(
+     getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary)),
+     true,
+     source,
+    ),
    );
   }
 
@@ -144,28 +178,18 @@ export async function POST(request: NextRequest) {
    if (hasUsableBasicData(cachedVocab)) {
     source = "legacy_vocab";
     cached = true;
-    return finalize(buildLookupResponse(cachedVocab, true));
+    return finalize(buildLookupResponse(cachedVocab, true, source));
    }
   }
 
   throwIfAborted(request.signal);
-
-  const authStartedAt = performance.now();
-  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
-  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
-  userApiKeyCount = userApiKeys.length;
-  metrics.push({
-   name: "auth",
-   durationMs: performance.now() - authStartedAt,
-  });
 
   throwIfAborted(request.signal);
 
   const aiStartedAt = performance.now();
   aiStatus = "running";
   const basicLookup = await analyzeHanziBasicDetailed(lookupText, {
-   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
-   userApiKeys,
+   geminiModel: DEFAULT_GEMINI_QUICK_MODEL,
    abortSignal: request.signal,
   });
   metrics.push({
@@ -188,7 +212,7 @@ export async function POST(request: NextRequest) {
     if (hasUsableBasicData(fallbackVocab)) {
      source = "legacy_vocab_fallback";
      cached = true;
-     return finalize(buildLookupResponse(fallbackVocab, true));
+     return finalize(buildLookupResponse(fallbackVocab, true, source));
     }
    }
 
@@ -238,6 +262,7 @@ export async function POST(request: NextRequest) {
       id: mirrored?.id,
      },
      false,
+     source,
     ),
    );
   }
@@ -262,6 +287,7 @@ export async function POST(request: NextRequest) {
      id: mirrored?.id,
     },
     false,
+    source,
    ),
   );
  } catch (error) {

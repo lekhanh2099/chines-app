@@ -21,7 +21,7 @@ export function AnswerReveal({
    onToggle={(event) => onOpenChange?.(event.currentTarget.open)}
    className="group"
   >
-   <summary className="exercise-answer-trigger cursor-pointer list-none rounded-md px-2 py-1 text-xs font-black uppercase tracking-wide marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+   <summary className="exercise-answer-trigger cursor-pointer list-none rounded-md px-2 py-1 text-xs font-black uppercase tracking-wide marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20">
     {label}
    </summary>
    <div className="exercise-answer-surface mt-1 grid gap-2 rounded-md border px-3 py-2">

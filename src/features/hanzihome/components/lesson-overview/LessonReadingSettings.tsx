@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Settings2, Type, X } from "lucide-react";
+import { Eye, Settings2, Type } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
@@ -55,31 +55,12 @@ export function LessonReadingSettingsDialogContent({
  onChange,
 }: LessonReadingSettingsProps & { isLoading?: boolean }) {
  return (
-  <DialogContent
-   className="flex max-h-[min(46rem,calc(100dvh-1rem))] max-w-xl flex-col gap-0 overflow-hidden p-0"
-   showCloseButton={false}
-  >
-   <DialogHeader className="shrink-0 border-b border-border-default bg-bg-subtle px-4 py-3 pr-4 sm:px-5 sm:py-4">
-    <div className="flex items-start justify-between gap-3">
-     <div className="min-w-0">
-      <DialogTitle className="flex items-center gap-2">
-       <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
-        <Settings2 className="size-4" />
-       </span>
-       Thiết lập đọc
-      </DialogTitle>
-      <DialogDescription className="mt-1">
-       Điều chỉnh cách hiển thị nội dung tiếng Trung.
-      </DialogDescription>
-     </div>
-     <DialogClose asChild>
-      <Button type="button" variant="ghost" size="icon-sm" aria-label="Đóng thiết lập đọc">
-       <X />
-      </Button>
-     </DialogClose>
-    </div>
+  <DialogContent>
+   <DialogHeader>
+    <DialogTitle icon={<Settings2 />}>Thiết lập đọc</DialogTitle>
+    <DialogDescription>Điều chỉnh cách hiển thị nội dung tiếng Trung.</DialogDescription>
    </DialogHeader>
-   <DialogBody className="min-h-0 flex-1 overflow-y-auto p-3 scrollbar-soft sm:p-4">
+   <DialogBody>
     {isLoading ? (
      <div className="flex min-h-48 items-center justify-center gap-2 text-sm font-bold text-text-muted">
       <Spinner />
@@ -89,7 +70,7 @@ export function LessonReadingSettingsDialogContent({
      <LessonReadingSettings displayMode={displayMode} onChange={onChange} />
     )}
    </DialogBody>
-   <DialogFooter className="shrink-0 border-t border-border-default px-3 py-2.5 sm:px-4">
+   <DialogFooter>
     <DialogClose asChild>
      <Button type="button" variant="default" size="sm">
       Xong
@@ -106,7 +87,7 @@ export function LessonReadingSettings({
  className,
 }: LessonReadingSettingsProps) {
  return (
-  <div className={cn("grid min-w-0 gap-2.5", className)}>
+  <div className={cn("grid min-w-0 gap-2", className)}>
    <SettingsGroup icon={<Type />} label="Kiểu chữ">
     <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
      {fontOptions.map((option) => {
@@ -116,7 +97,6 @@ export function LessonReadingSettings({
         key={option.value}
         variant={active ? "active" : "surfaceCard"}
         size="sm"
-        className="min-w-0 justify-start px-2"
         aria-pressed={active}
         onClick={() => onChange({ hanziFont: option.value })}
        >
@@ -159,17 +139,46 @@ export function LessonReadingSettings({
     </div>
    </SettingsGroup>
 
+   <SettingsGroup icon={<Eye />} label="Cách mở nội dung">
+    <div className="grid grid-cols-2 gap-1.5">
+     <Button
+      variant={displayMode.revealMode === "always" ? "active" : "surfaceCard"}
+      size="sm"
+      aria-pressed={displayMode.revealMode === "always"}
+      onClick={() => onChange({ revealMode: "always" })}
+     >
+      Hiện sẵn
+     </Button>
+     <Button
+      variant={displayMode.revealMode === "tap" ? "active" : "surfaceCard"}
+      size="sm"
+      aria-pressed={displayMode.revealMode === "tap"}
+      onClick={() => onChange({ revealMode: "tap" })}
+     >
+      Bấm để mở
+     </Button>
+    </div>
+    {displayMode.revealMode === "tap" ? (
+     <p className="text-xs font-medium leading-relaxed text-text-muted">
+      Mỗi lần bấm sẽ thay nội dung cùng một vị trí: Hán tự, Pinyin, nghĩa rồi quay lại.
+     </p>
+    ) : null}
+   </SettingsGroup>
+
    <SettingsGroup icon={<Eye />} label="Hiển thị">
     <div className="grid grid-cols-3 gap-1.5">
      {visibilityOptions.map((option) => {
       const active = displayMode[option.key];
+      const disabled =
+       displayMode.revealMode === "tap" &&
+       (option.key === "showPinyin" || option.key === "showMeaning");
       return (
        <Button
         key={option.key}
         variant={active ? "active" : "surfaceCard"}
         size="sm"
-        className="min-w-0 px-1.5"
         aria-pressed={active}
+        disabled={disabled}
         onClick={() => onChange({ [option.key]: !active })}
        >
         <span className="truncate">{option.label}</span>
@@ -192,7 +201,7 @@ function SettingsGroup({
  children: React.ReactNode;
 }) {
  return (
-  <section className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-2.5">
+  <section className="grid gap-1.5 rounded-lg border border-border-default bg-bg-subtle p-2">
    <h3 className="flex items-center gap-1.5 text-xs font-black uppercase text-text-muted [&_svg]:size-3.5">
     {icon}
     {label}

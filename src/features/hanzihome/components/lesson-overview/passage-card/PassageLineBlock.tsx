@@ -9,11 +9,13 @@ export function PassageLineBlock({
  answerMap,
  rendererId,
  displayMode,
+ lessonId,
 }: {
  line: PassageLine;
  answerMap: Map<string, ClozeAnswer>;
  rendererId: string;
  displayMode: LessonDisplayMode;
+ lessonId?: string;
 }) {
  const isCloze = shouldRenderAsCloze(line.zh, answerMap, rendererId);
 
@@ -36,6 +38,9 @@ export function PassageLineBlock({
      vi={line.vi}
      displayMode={displayMode}
      variant="reader"
+     annotationTarget={
+      lessonId ? { lessonId, nodeType: "passage_line", nodeId: line.id } : undefined
+     }
     />
    )}
   </div>

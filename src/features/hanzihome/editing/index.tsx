@@ -16,15 +16,17 @@ export function HanziHomeEditingDialogShell() {
 
 export function HanziHomeEditingTools({
  includeDialogShell = true,
+ presentation = "toolbar",
 }: {
  includeDialogShell?: boolean;
+ presentation?: "toolbar" | "menu";
 } = {}) {
  const editMode = useHanziHomeEditMode();
  return (
   <>
-   <EditModeToggle />
-   {editMode ? <LessonContentCreateDialog /> : null}
-   {editMode ? <DeletedContentDialog /> : null}
+   <EditModeToggle presentation={presentation} />
+   {editMode ? <LessonContentCreateDialog presentation={presentation} /> : null}
+   {editMode ? <DeletedContentDialog presentation={presentation} /> : null}
    {includeDialogShell ? <EditableDialogShell /> : null}
   </>
  );

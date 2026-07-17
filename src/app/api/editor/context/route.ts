@@ -172,6 +172,7 @@ export async function POST(request: NextRequest) {
     geminiModel: geminiModel || promptSettings?.geminiModel,
     promptTemplate: wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
     userApiKeys,
+    allowGroq: true,
    });
 
    if (!aiLookup.data) {
@@ -270,6 +271,7 @@ export async function POST(request: NextRequest) {
    geminiModel: geminiModel || promptSettings?.geminiModel,
    promptTemplate: sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
    userApiKeys,
+   allowGroq: true,
   });
   if (!sentenceLookup.data) {
    return NextResponse.json(

@@ -99,7 +99,7 @@ export function BookSectionContent({
     {section.items.length > 0 ? (
      <div className="grid gap-3">
       {section.items.map((item) => (
-       <NoteCard key={item.id} item={item} displayMode={displayMode} />
+       <NoteCard key={item.id} item={item} displayMode={displayMode} lessonId={lessonId} />
       ))}
      </div>
     ) : (

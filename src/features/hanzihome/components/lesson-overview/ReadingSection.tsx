@@ -163,6 +163,7 @@ export function ReadingCard({
     passage={passage}
     answers={clozeAnswers}
     displayMode={displayMode}
+    lessonId={lessonId}
    />
 
    {!passage && (
@@ -216,7 +217,12 @@ export function ReadingCard({
 
    <RetellOutline itemId={item.id} values={retellOutline} />
 
-   <SampleRetelling value={record.sample_retelling} displayMode={displayMode} />
+   <SampleRetelling
+    value={record.sample_retelling}
+    displayMode={displayMode}
+    lessonId={lessonId}
+    nodeId={`${item.id}-sample-retelling`}
+   />
 
    <BaSentences itemId={item.id} values={baSentences} />
 

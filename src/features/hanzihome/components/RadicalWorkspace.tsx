@@ -285,7 +285,7 @@ function RadicalBrowseCard({
    type="button"
    onClick={onOpen}
    className={cn(
-    "group grid min-w-0 gap-4 rounded-xl border border-border-default bg-bg-card p-4 text-left shadow-theme-sm transition-colors hover:border-primary/25 hover:bg-bg-elevated focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30",
+    "group grid min-w-0 gap-4 rounded-xl border border-border-default bg-bg-card p-4 text-left shadow-theme-sm transition-colors hover:border-primary/25 hover:bg-bg-elevated focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20",
     compact ? "sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center" : "content-between",
    )}
   >

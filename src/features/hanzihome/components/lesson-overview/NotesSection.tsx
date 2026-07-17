@@ -6,9 +6,11 @@ import type { LessonDisplayMode } from "./types";
 export function NoteCard({
  item,
  displayMode,
+ lessonId,
 }: {
  item: NoteItem;
  displayMode: LessonDisplayMode;
+ lessonId?: string;
 }) {
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
@@ -32,6 +34,9 @@ export function NoteCard({
        pinyin={example.pinyin}
        vi={example.vi}
        displayMode={displayMode}
+       annotationTarget={
+        lessonId ? { lessonId, nodeType: "note_example", nodeId: example.id } : undefined
+       }
       />
      ))}
     </div>

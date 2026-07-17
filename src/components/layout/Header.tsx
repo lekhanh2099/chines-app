@@ -16,7 +16,7 @@ import {
 } from "./app-header-breadcrumb";
 import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
-import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
+import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { useFocusModeStore } from "@/stores/focus-mode-store";
@@ -448,7 +448,7 @@ function HeaderSearchForm({
     placeholder="Tìm toàn bộ HanziHome"
     aria-label="Tìm toàn bộ HanziHome"
     className={cn(
-     "h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4 xl:h-11",
+     "h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 sm:pr-4 xl:h-11",
      routeToolbarActive && "xl:w-[min(34rem,34vw)]",
     )}
    />

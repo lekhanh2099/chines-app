@@ -45,6 +45,8 @@ Treat this as a UI system governance problem, not as a Tailwind syntax problem:
 - `bg-bg-card/80` is valid Tailwind opacity syntax, but repeated opacity values can become hidden tokens.
 - `globals.css` should own theme tokens, base rules, and limited shell/brand recipes. Named brand recipes are allowed when they preserve the app identity and prevent ad-hoc feature gradients.
 - Feature code should prefer shared primitives or semantic variants over raw visual recipes.
+- Once a shared UI primitive is used, feature call sites must not override its visual or layout styling with `className`. Add a typed size, density, or layout variant to the primitive instead.
+- Do not create feature-level class recipes that restyle Dialog, Popover, Button, Select, Card, Badge, Tabs, Sheet, or other shared primitives.
 - One-off palettes in feature components make dark mode and cross-page consistency drift.
 - Do not remove brand gradients just because a scan finds gradients. First classify whether the gradient is primitive-owned (`app-gradient-hero`, `app-brand-gradient`, `app-glass-surface`) or feature-local/ad-hoc.
 - Overlay stacking belongs in shared primitives. Do not remove tested `z-*` classes from `SelectContent`, `DialogContent`, `SheetContent`, `PopoverContent`, `TooltipContent`, or similar overlay primitives during cleanup. The rule against manual z-index applies to feature call sites and one-off wrappers, not to the primitive that must render above the app shell and sticky toolbars.

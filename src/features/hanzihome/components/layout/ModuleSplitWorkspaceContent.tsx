@@ -101,17 +101,18 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    <HanziHomeDeveloperTools inline />
-    <Button
-     type="button"
-     variant="outline"
-     size="sm"
-     className="h-10 shrink-0 px-3 text-sm"
-     onClick={() => actions.setSplitEnabled(false)}
-    >
-     <Columns2 className="h-4 w-4" />
-     Tắt split
-    </Button>
+    <HanziHomeDeveloperTools inline>
+     <Button
+      type="button"
+      variant="menu"
+      size="sm"
+      role="menuitem"
+      onClick={() => actions.setSplitEnabled(false)}
+     >
+      <Columns2 />
+      Đóng chia đôi màn hình
+     </Button>
+    </HanziHomeDeveloperTools>
    </div>
   </>
  ) : (
@@ -159,17 +160,18 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    <HanziHomeDeveloperTools inline />
-    <Button
-     type="button"
-     variant="outline"
-     size="sm"
-     className="hidden h-10 shrink-0 px-3 xl:flex"
-     onClick={() => actions.setSplitEnabled(true)}
-    >
-     <Columns2 className="h-4 w-4" />
-     Mở split
-    </Button>
+    <HanziHomeDeveloperTools inline>
+     <Button
+      type="button"
+      variant="menu"
+      size="sm"
+      role="menuitem"
+      onClick={() => actions.setSplitEnabled(true)}
+     >
+      <Columns2 />
+      Chia đôi màn hình
+     </Button>
+    </HanziHomeDeveloperTools>
    </div>
   </>
  );

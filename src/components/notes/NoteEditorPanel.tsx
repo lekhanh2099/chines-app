@@ -339,7 +339,7 @@ export function NoteEditorPanel({
           <SaveStatusBadge status={displaySaveStatus} />
 
           <Popover.Root open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} modal={false}>
-           <Popover.Trigger className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-bg-card text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 xl:hidden">
+           <Popover.Trigger className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-bg-card text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 xl:hidden">
             <SlidersHorizontal className="size-4" />
             <span className="sr-only">Tùy chọn ghi chú</span>
            </Popover.Trigger>
