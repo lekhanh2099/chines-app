@@ -22,8 +22,10 @@ const buttonVariants = cva(
     surfaceCard:
      "border-border-default bg-bg-card text-text-primary shadow-theme-sm hover:bg-bg-elevated",
     menu:
-     "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted",
+     "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted data-[highlighted]:bg-muted",
     menuActive: "app-active-item w-full justify-start shadow-none",
+    menuDestructive:
+     "w-full justify-start border-transparent bg-transparent text-danger-text shadow-none hover:bg-danger-subtle focus-visible:border-danger/40 focus-visible:ring-danger/20",
     destructive:
      "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
     link: "text-primary underline-offset-4 hover:underline",
@@ -31,6 +33,13 @@ const buttonVariants = cva(
    size: {
     default:
      "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
+    touch:
+     "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
+    compact:
+     "min-h-8 gap-1 rounded-lg px-2 text-xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
+    toolbar:
+     "min-h-9 gap-1.5 rounded-lg px-2.5 text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+    menu: "min-h-10 gap-2 rounded-lg px-2.5 text-sm",
     xs: "min-h-11 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
     sm: "min-h-11 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
     lg: "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
@@ -40,6 +49,8 @@ const buttonVariants = cva(
     "icon-sm":
      "size-10 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
     "icon-lg": "size-11",
+    "icon-toolbar": "size-9 rounded-lg",
+    "icon-round": "size-10 rounded-full",
    },
   },
   defaultVariants: {

@@ -1,763 +1,308 @@
-# AGENTS.md — HanziHome Coding Rules
+<!-- BEGIN:nextjs-agent-rules -->
 
-This file is the source of truth for AI coding agents and contributors working in this repository.
+# Next.js: ALWAYS read version-matched docs before coding
 
-If a task conflicts with this file, stop and explain the conflict before coding.
+Before any Next.js work, find and read the relevant documentation in
+`node_modules/next/dist/docs/`. Installed documentation is the source of truth
+for the Next.js version in this repository.
 
-HanziHome is a Chinese self-study app. The goal is not just to make the UI look acceptable; the goal is to keep the study flow safe while the data model becomes editable and backend-ready.
+<!-- END:nextjs-agent-rules -->
 
-## 0. Project Truth
+# chines-app — Repository Agent Contract
 
-Current stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4, Supabase, TanStack Query, TanStack Form, Zod, Zustand, Radix/shadcn-style primitives, Sonner, Hanzi Writer, pinyin-pro, and Lexical.
+This file defines repository-wide rules for AI agents and contributors.
 
-Content ownership:
+Normative words are intentional:
 
-- Supabase normalized tables are the runtime source for HanziHome study content.
-- Static JSON seed artifacts are external migration/bootstrap inputs, not a checked-in runtime fallback.
-- Supabase is for user-created content, custom lessons, drafts, user-owned overrides, notes, settings, progress, bookmarks, and review history.
-- Course → Book/Volume → Lesson → Module is the current model.
-- Lesson notes belong to the main Notes system and should be linked through a relation table, not embedded as note IDs inside lesson JSON.
+- **MUST / MUST NOT**: hard requirement.
+- **SHOULD / SHOULD NOT**: default; deviations need evidence.
+- **MAY**: optional.
+- **STOP AND CONFIRM**: do not mutate until the user decides.
 
-Do not mutate external static seed artifacts from the app.
+More specific `AGENTS.md` files apply to their directory subtree and override
+this file where they are more specific.
 
-Do not create local JSON write APIs.
+## 1. Load the correct instructions
 
-Do not duplicate external static seed artifacts into Supabase as a second source of truth unless the task is an explicit seed import/migration task.
+Before a non-trivial task:
 
-If seed content is editable, the persistence model must be explicit: admin-only seed edit or copy-on-write user override. Do not silently turn a shared seed row into a user-owned row.
+1. Read this file.
+2. Read the nearest nested `AGENTS.md` for every file you may touch.
+3. Read the matching repo skill:
+   - General React/Next.js implementation, debugging, refactoring, state,
+     forms, queries, routes, API, or cleanup:
+     `.agents/skills/frontend-feature-workflow/SKILL.md`
+   - UI, UX, component reuse, Dialog, Button, Select, Popover, Menu, Sheet,
+     Tabs, Card, Input, command/search, responsive layout, accessibility, or
+     visual consistency:
+     `.agents/skills/frontend-ui-system/SKILL.md`
+   - HanziHome content editing, Supabase-backed lesson data, vocab, grammar,
+     exercises, reading, renderers, or edit persistence:
+     `.agents/skills/hanzihome-content-editing/SKILL.md`
+   - shadcn component APIs, registry operations, `components.json`, component
+     installation, or upstream component docs:
+     `.agents/skills/shadcn/SKILL.md`
+4. For UI work, read:
+   - `docs/ui/component-contracts.md`
+   - `docs/ui/ui-verification.md`
+5. For architecture or state ownership, read:
+   - `docs/architecture/frontend-structure.md`
+6. For risky work, read:
+   - `docs/agent/risk-confirmation.md`
+7. For task wording and completion language, read:
+   - `docs/agent/instruction-language.md`
 
-## 1. Product IA
+Do not load every detailed document for every task. Load only the instructions
+that match the files and behavior being changed.
 
-Home route `/` is the course library entry point.
+## 2. Verified project truth
 
-Workspace route `/hanzihome` follows: Course → Book/Volume → Lesson → Module.
+- Package manager: npm.
+- Runtime: Node.js 22 or newer.
+- Framework: Next.js App Router.
+- UI: React, TypeScript, Tailwind CSS 4, local shadcn-style source components.
+- Data/state: Supabase, TanStack Query, TanStack Form, Zustand, Zod.
+- UI primitive dependencies include both Radix and Base UI.
+- `src/components/ui/**` is the design-system primitive boundary.
+- Local component source is the source of truth, not generic shadcn examples.
+- `npm run check` is the repository quality gate.
 
-Lesson modules include overview, lesson text when available, vocabulary, grammar, review, and radicals as a standalone module. Radicals are not a lesson tab.
+Before assuming an API, inspect `package.json`, `components.json`, the local
+component implementation, and version-matched framework documentation.
+
+## 3. Repository boundaries
+
+Use the current ownership model:
+
+```text
+src/app/                 routing, layouts, route handlers, thin composition
+src/components/ui/       low-level reusable UI primitives
+src/components/patterns/ reusable cross-feature interaction patterns
+src/components/form/     TanStack Form adapters using the shared UI system
+src/components/layout/   application shell and cross-route layout
+src/features/<feature>/  feature UI, domain behavior, feature hooks and schemas
+src/lib/                 infrastructure and framework-agnostic helpers
+src/services/            server/data service orchestration
+src/stores/              truly cross-feature client state
+scripts/                 audits, import, migration and build tooling
+```
 
 Rules:
 
-- The user chooses a course before entering the learning workspace.
-- Lesson picker only shows lessons in the active course.
-- Book grouping comes from course/book metadata.
-- Vocabulary, grammar, review, and overview are lesson-based.
-- Published custom lesson drafts must keep courseId/bookId metadata.
-- Course cards must show real stats, not hard-coded values.
+- Route pages MUST remain thin.
+- Feature business behavior MUST remain in its feature.
+- Shared code MUST NOT import feature implementation code.
+- Feature code MUST NOT import another feature's internal implementation.
+- Client Components MUST NOT import server-only modules.
+- External data MUST be validated or normalized at a boundary.
+- Generated files MUST NOT be edited manually unless the generator contract is
+  understood and the source generator is updated.
+- Do not create a new global folder or architecture layer without proving the
+  current ownership model cannot express the requirement.
 
-## 2. Data Loading Contract
+## 4. State ownership
 
-Before implementing any screen or feature, define the data-loading contract.
+A value MUST have one source of truth.
 
-Every feature must answer:
+- URL/shareable navigation state: route/search params.
+- Server state: TanStack Query.
+- Form values, validation, dirty state and submission: TanStack Form.
+- Small transient interaction state: local React state.
+- Cross-feature client preferences: an existing scoped Zustand store.
+- Purely derived values: compute from current inputs; do not mirror them into
+  state.
+- Persisted browser state: versioned schema, safe parsing and migration.
 
-- What data is needed above the fold?
-- What data is needed only after user interaction?
-- What data must not be loaded on this screen?
-- Which hook/repository/endpoint owns the data?
-- What is the fallback behavior?
-- What is the cache/query key?
-- What is the expected payload size?
+MUST NOT:
 
-Rules:
+- copy query data into local state without an explicit editable-draft contract;
+- mirror form values into `useState`;
+- repair stale state with `setTimeout`, random keys, or force-render logic;
+- use `useEffect` for pure derivation;
+- hide loading, error and empty states behind the same fallback value.
 
-- Dashboard/library screens load summary data only.
-- Course cards must not load full lesson detail.
-- Lesson workspace may load only the selected lesson detail.
-- Vocab/grammar examples and detail sections must be fetched only for the selected lesson or an explicit aggregate page.
-- Aggregate vocab/grammar pages are the normal place to load all vocab/grammar across a book/course/all.
-- Do not use one giant all-data endpoint for every screen.
-- Do not fetch all records just to calculate counts.
-- Counts come from summary queries, database counts, or lightweight grouped views.
-- External seed/audit artifacts must follow the same contract when they are used for migration verification: summary data for dashboard-level checks, detail data for selected lesson checks.
+## 5. UI component boundary
 
-Preferred split:
+Feature and layout code MUST use project components before custom markup.
 
-- `/api/hanzihome/catalog`: course/book/lesson summary and counts only.
-- `/api/hanzihome/lessons/[lessonId]`: one selected lesson detail only.
-- `/api/hanzihome/aggregate/vocab`: scoped aggregate vocab/review data only.
-- `/api/hanzihome/aggregate/grammar`: scoped aggregate grammar/review data only.
+Primitive-library imports from `radix-ui`, `@radix-ui/*`, or
+`@base-ui/react*` are allowed only inside:
 
-Bad: dashboard fetches all lessons, all vocab, all examples, all detail sections, then reduces counts.
+- `src/components/ui/**`;
+- explicitly documented third-party integration adapters.
 
-Good: dashboard fetches catalog summary; lesson workspace fetches selected lesson detail.
+Feature code MUST NOT create a new visual control by styling raw
+`button`, `input`, `select`, dialog, popover, or menu markup unless:
 
-## 3. Hard Non-negotiables
+1. no current primitive/composite can represent the required semantics;
+2. the interaction is intentionally native or library-specific;
+3. the reason is documented in the change;
+4. repeated use is promoted to a shared primitive or pattern.
 
-Every task must respect these rules:
+Before adding or changing UI, classify the need:
 
-- No TypeScript errors.
-- No ESLint errors.
-- No build errors.
-- No unused imports.
-- No unused variables.
-- No console logs in committed code.
-- No avoidable `any`.
-- Code must be type-safe by design, not merely typecheck-clean.
-- Do not silence TypeScript with unsafe casts instead of modeling data correctly.
-- No giant components.
-- No duplicated state.
-- No storing derived data in state.
-- No horizontal overflow.
-- No random margin hacks.
-- No one-off duplicated Button/Select/Card/Badge/Tabs styles.
-- Do not restyle shared UI primitives from feature call sites with visual or layout utility classes. If a shared component needs another size, density, or layout, add a typed variant to the shared component and reuse that variant. Once a shared component is used, its visual contract must remain owned by that component.
-- No inaccessible custom controls.
-- No server-only code imported into Client Components.
-- No browser exposure of backend-only credentials.
-- No trusting client-provided identity fields.
-- No DB schema changes without migration.
-- No fake XP, fake streak, fake progress, or fake reward data.
+```text
+need
+→ existing primitive?
+→ existing pattern/composite?
+→ missing reusable contract?
+→ use | extend | create | justified local exception
+```
 
-Required checks before finishing:
+Do not overwrite an installed shadcn component automatically. Inspect local
+code and consumers, then use CLI dry-run/diff before any merge.
+
+## 6. `className` ownership
+
+Shared primitives own their internal visual contract.
+
+Allowed at call sites:
+
+- parent-imposed width or max-width;
+- grid/flex placement;
+- responsive visibility;
+- external margin only when the parent owns spacing;
+- parent-owned scroll constraints;
+- `sr-only` and similar accessibility utilities.
+
+Forbidden at call sites:
+
+- component color/tone;
+- border appearance;
+- radius;
+- internal padding or density;
+- typography;
+- shadow;
+- hover/focus/active styling;
+- overlay z-index;
+- icon sizing that the primitive owns.
+
+If an allowed layout adjustment repeats in at least two meaningful consumers,
+promote it to a typed variant or reusable pattern.
+
+Do not add a variant for a one-off value merely to satisfy this rule. First
+decide whether the variation is a stable design-system contract.
+
+## 7. React and TypeScript rules
+
+- Keep components focused on one interaction or rendering responsibility.
+- Prefer explicit domain names over `Wrapper`, `Container`, `Item`, or `Common`.
+- Do not introduce abstraction without real consumers and a stable semantic
+  boundary.
+- Avoid `any`; parse `unknown` at boundaries.
+- Normalize IDs once at the boundary.
+- Keep transport types, domain/view models and rendered props distinct when
+  they have different semantics.
+- Do not memoize by default. `useMemo` and `useCallback` require a concrete
+  correctness or performance reason.
+- Every effect MUST be explainable as synchronization with an external system,
+  subscription, browser API, imperative integration, or analytics.
+- Errors MUST remain observable. Do not convert errors into fake empty states.
+
+## 8. UI and accessibility minimum
+
+Interactive work MUST preserve:
+
+- keyboard access;
+- visible focus;
+- correct button/link semantics;
+- explicit toggle state (`aria-pressed`, Switch, Checkbox, or equivalent);
+- Dialog title and managed focus;
+- Menu trigger/menu item semantics;
+- loading, empty, error, disabled and stale states;
+- touch-sized targets where the app is used on iPad/mobile;
+- no accidental horizontal overflow;
+- Chinese text language metadata where appropriate.
+
+A styled Popover with `role="menu"` is not a complete menu contract unless its
+items and keyboard behavior follow the same interaction model.
+
+## 9. Working method
+
+Before editing:
+
+1. Inspect `git status --short`.
+2. Identify the entry point and direct consumers.
+3. Trace data and state ownership.
+4. Identify existing primitive/pattern contracts.
+5. State the root cause or implementation gap.
+6. Classify risk.
+7. Propose the smallest coherent change.
+8. STOP AND CONFIRM only when required by the risk policy.
+
+While editing:
+
+- Keep the diff focused.
+- Preserve unrelated user changes.
+- Do not mix UI redesign, data migration and persistence changes unless the
+  request explicitly requires all three.
+- Do not perform broad search-and-replace for component migrations.
+- Migrate one surface or interaction contract at a time.
+
+Before completion:
+
+1. Inspect the final diff.
+2. Run targeted checks.
+3. Run `npm run check` for app-code changes.
+4. For UI work, render and interact with the affected surface.
+5. Report exact checks and unresolved risks.
+
+## 10. Risk and confirmation
+
+Use `docs/agent/risk-confirmation.md`.
+
+Always STOP AND CONFIRM before:
+
+- database schema, RLS, auth or production-data mutation;
+- dependency installation/removal or major upgrade;
+- overwriting local shadcn primitives;
+- Radix-to-Base migration;
+- breaking shared component API;
+- repository-wide component migration;
+- route/public API/persisted-state contract change;
+- global token or brand-system redesign;
+- destructive Git operations, commit, push, merge or PR creation;
+- deleting code whose reachability or data compatibility is uncertain.
+
+Do not ask for confirmation merely to avoid reading the source. Investigate
+first and present a recommendation.
+
+## 11. Verification
+
+Use scripts from `package.json`.
+
+App-code completion normally requires:
 
 ```bash
 npm run check
 ```
 
-`npm run check` is the single local and CI quality gate. It runs formatting, lint, typecheck,
-tests, dependency checks, production dependency audit, and the production build.
+Also run targeted checks where relevant.
 
-Husky runs this gate before every commit. Do not bypass it with `--no-verify` unless the user
-explicitly authorizes an emergency bypass and the reason is documented in the handoff.
+A task MUST NOT be reported as complete when:
 
-A task is not done if any required check fails.
+- required checks were not run;
+- a check failed;
+- the UI was not rendered for a visual/interaction claim;
+- unsupported states remain;
+- the implementation depends on an unresolved product or data decision.
 
-If the task touches import/parser/data migration, also run the relevant data script from `package.json`.
+## 12. Completion report
 
-## 4. Project Structure Rules
+End non-trivial work with:
 
-Route pages must stay thin. Page files compose feature-level components.
-
-Do not put large UI directly inside route pages.
-
-Do not recreate old `/vocabulary`, `/grammar`, old HSK routes, old import/reset routes, or old CRUD pages unless explicitly requested.
-
-Expected HanziHome structure:
-
-```txt
-src/features/hanzihome/
-  HanziHomePage.tsx
-  HanziHomeWorkspace.tsx
-  db-data.ts
-  types.ts
-  hanzihome-api.schemas.ts
-  schemas/
-  components/
-  hooks/
-  editing/
+```text
+Scope:
+Root cause / contract gap:
+Files changed:
+Behavior preserved:
+Checks run:
+UI states verified:
+Risk level:
+Residual risks / unsupported states:
+Confirmation still required:
 ```
 
-## 5. Study Mode, Debug Mode, Edit Mode
-
-These modes must remain separate.
-
-Study Mode is the default learner-facing experience.
-
-Debug/Audit Mode is for developer data inspection.
-
-Edit Mode is for form/dialog-based content editing.
-
-Study Mode rules:
-
-- Do not show raw JSON.
-- Do not show renderer/debug metadata unless useful to learners.
-- Do not spoil exercise answers by default.
-- Exercise answers must be collapsed by default.
-- Keep the UI focused on learning.
-
-Debug/Audit Mode rules:
-
-- May show raw section/item JSON.
-- May show unmapped fields.
-- May show source files and payload counts.
-- Must be toggled explicitly.
-- Must not be the default learner path.
-
-Edit Mode rules:
-
-- Must not replace Study Mode.
-- Must be an overlay on top of the current render tree.
-- Must use forms/dialogs, not raw JSON textareas as the main editor.
-- Edit dialogs for backend-backed content should provide both Field and JSON modes when practical, matching the existing `StructuredNodeForm` pattern.
-- JSON mode is a developer/editor convenience inside explicit Edit Mode only. It must validate the JSON shape and still save through the same smallest field/node-level patch path as Field mode.
-- Must not mutate renderer props directly.
-- Must save the smallest possible field/node change.
-
-## 6. Editable UI Contract
-
-The editable system must follow the current render tree.
-
-Do not build only large dialogs such as `EditGrammarDialog` or `EditExerciseDialog` that submit a whole object by default.
-
-Anything rendered as a small meaningful card/block should be editable as that node.
-
-Current render tree to respect:
-
-```txt
-BookSectionContent
-→ section by type
-
-text
-→ TextBlockView
-→ scenes / lines / paragraphs when available
-
-vocabulary
-→ VocabMiniGrid / VocabDetailPanel
-→ vocab item
-→ examples
-→ detail sections
-
-proper_nouns
-→ ProperNounCard
-
-notes
-→ NoteCard
-
-grammar
-→ GrammarCard
-→ grammar point
-→ grammar block
-→ formulas
-→ block items
-→ examples
-→ notes
-
-exercises
-→ ExerciseCard
-→ ExerciseBody by type
-→ questions
-→ word_bank
-→ answer_key
-→ matching left/right/matches
-→ dialogue lines
-→ sample answers
-→ cloze segments
-→ cloze answers
-
-reading
-→ ReadingCard
-→ reading item
-→ paragraphs/questions/answers/cloze segments when available
-
-character_writing
-→ WritingCard
-→ character writing item
-
-summary
-→ SummarySectionView
-→ summary groups/items
-```
-
-Required editable node types:
-
-- lesson
-- section
-- vocab_item
-- vocab_example
-- vocab_detail_section
-- proper_noun
-- character_writing_item
-- grammar_point
-- grammar_block
-- grammar_formula
-- grammar_example
-- grammar_block_item
-- exercise
-- exercise_question
-- exercise_answer_key
-- exercise_word_bank
-- exercise_matching_item
-- exercise_dialogue_line
-- exercise_cloze_segment
-- exercise_cloze_answer
-- reading_item
-- reading_question
-
-Correct abstraction: rendered node → edit button in Edit Mode → dialog form for that node → validate fields → save only that node/field.
-
-Wrong abstraction: open a huge grammar/vocab/exercise dialog → submit a full object → delete/reinsert every child row.
-
-## 7. Field/Node-Level Save Contract
-
-This rule is critical.
-
-UI field-level editing must map to data field/node-level persistence.
-
-If the user edits one field, save only that field or the smallest owning node.
-
-Do not submit a whole object when only one part changed.
-
-Do not delete/reinsert all child arrays during normal edits.
-
-Bad flow:
-
-- User edits vocab meaning.
-- UI submits word, pinyin, meaning, examples, and detailSections.
-- API updates vocab row.
-- API deletes all examples.
-- API deletes all detail sections.
-- API reinserts all child rows.
-
-Good flow:
-
-- User edits vocab meaning.
-- API patches vocab core fields only.
-- Examples and detail sections are untouched.
-
-Good flow:
-
-- User edits one vocab example translation.
-- API patches that one vocab_example row only.
-- Other examples are untouched.
-
-Good flow:
-
-- User edits one grammar detail section line.
-- API patches that one grammar_detail_section row only.
-- Grammar point core and other sections are untouched.
-
-Normal save routes must never do replace-all child operations.
-
-Replace-all is allowed only as an explicit bulk action with clear UI copy and a separate route/action name.
-
-The phrase “field-by-field UI” is not enough. The save strategy must also be field/node-level.
-
-## 8. Stable IDs for Editable Child Nodes
-
-Node-level editing requires stable IDs.
-
-Every editable child node must have an ID before it can be safely edited:
-
-- vocab examples
-- vocab detail sections
-- grammar examples
-- grammar detail sections
-- grammar formulas
-- grammar block items
-- exercise questions
-- exercise choices
-- exercise answer key items
-- exercise word bank entries when individually editable
-- exercise dialogue lines
-- exercise cloze segments
-- exercise cloze answers
-- reading questions
-
-Do not key editable children only by array index when saving to DB.
-
-Index-based IDs are acceptable only as a temporary static-render fallback, not as a durable backend edit contract.
-
-## 9. Form Rules
-
-New edit UIs must use forms.
-
-Use TanStack Form + Zod for non-trivial editable forms.
-
-`useState` is acceptable for dialog open/closed state and tiny UI state. Do not use `useState` as the main form engine for nested editable data that needs validation, dirty-field tracking, reset, or field-level save.
-
-Every form must have:
-
-- initial values from an adapter
-- field-level validation where practical
-- submit validation
-- clear error rendering
-- disabled/loading state during submit
-- reset/cancel behavior
-- dirty-state awareness when practical
-
-Dialog footer should generally include: Hủy, Reset when useful, Preview diff when useful, and Lưu.
-
-Do not use a raw JSON textarea as the main editor. Raw JSON can exist only in Debug/Audit Mode or explicit developer tools.
-
-## 10. Required Update Schemas
-
-Do not rely on one full-object update schema for normal edits.
-
-Vocab update contracts should be split at minimum into:
-
-- updateVocabCorePayloadSchema
-- updateVocabExamplePayloadSchema
-- updateVocabDetailSectionPayloadSchema
-
-Grammar update contracts should be split at minimum into:
-
-- updateGrammarCorePayloadSchema
-- updateGrammarExamplePayloadSchema
-- updateGrammarDetailSectionPayloadSchema
-
-Exercise update contracts should be split by node/type, for example:
-
-- updateExerciseMetadataPayloadSchema
-- updateExerciseQuestionPayloadSchema
-- updateExerciseAnswerKeyPayloadSchema
-- updateExerciseWordBankPayloadSchema
-- updateExerciseMatchingItemPayloadSchema
-- updateExerciseDialogueLinePayloadSchema
-- updateExerciseClozeSegmentPayloadSchema
-- updateExerciseClozeAnswerPayloadSchema
-
-Reading update contracts should be split by node, for example:
-
-- updateReadingItemPayloadSchema
-- updateReadingQuestionPayloadSchema
-- updateReadingClozeSegmentPayloadSchema
-- updateReadingAnswerPayloadSchema
-
-Each schema should validate only the fields owned by that node.
-
-## 11. API/DB Persistence Rules
-
-Server routes must never trust client identity fields.
-
-Always get the user from the server-side session.
-
-Always verify ownership/editability server-side.
-
-Always verify parent-child relationships server-side:
-
-- vocab example belongs to vocab item
-- vocab item belongs to lesson
-- grammar example belongs to grammar point
-- grammar point belongs to lesson
-- exercise question belongs to exercise
-- exercise belongs to lesson
-
-Do not accept lessonId as proof. Use it only as an expected constraint, then verify it against DB rows.
-
-Do not perform multi-step destructive updates in route handlers without a transaction.
-
-If a save flow requires update parent, delete children, and insert children, it must be an explicit bulk replace operation and should be implemented transactionally.
-
-Normal field/node edits should be single-row updates whenever possible.
-
-## 12. Seed, Custom, and Override Rules
-
-DB rows must have a clear content ownership model.
-
-Supported concepts:
-
-- seed = built-in/shared content imported from static sources
-- custom = user-created content
-- user_override = user-owned override of seed content
-
-If the DB currently only supports `source: "seed" | "custom"`, do not fake a user override by mutating shared seed rows unless the product explicitly says seed is admin-editable only.
-
-For normal users editing seed content, prefer copy-on-write:
-
-- seed row remains unchanged
-- user override row is created
-- view model resolves user override over seed row
-
-For admin seed edits:
-
-- verify admin role server-side
-- edit seed row directly
-- invalidate/rebuild seed-derived views when needed
-
-A route that updates seed content must state whether it is admin seed edit or user override edit.
-
-## 13. Draft Patch Layer
-
-Before expanding backend persistence to all lesson nodes, prefer a draft patch layer for UI validation.
-
-Patch shape:
-
-```ts
-type DraftPatch = {
- id: string;
- lessonId: string;
- entityType: string;
- entityId: string;
- parentEntityType?: string;
- parentEntityId?: string;
- path?: Array<string | number>;
- op: "update" | "create" | "delete" | "reorder";
- before?: unknown;
- after?: unknown;
- createdAt: string;
-};
-```
-
-Use draft patches to prove:
-
-- which node the UI edits
-- which fields change
-- whether the renderer updates correctly
-- what backend contract is actually needed
-
-Do not expand DB PATCH routes for complex practice/exercise data until the edit node and patch shape are clear.
-
-## 14. Exercise and Practice Coverage Rules
-
-Exercise/practice data is the highest-risk area.
-
-Do not add DB persistence for a new exercise type until all rendered subparts are identified.
-
-For each exercise type, document and cover:
-
-- metadata
-- instruction
-- rendering config
-- questions/items
-- word bank
-- choices/options
-- answer / answers / answer_key
-- acceptable answers
-- explanations
-- grammar refs
-- vocab refs
-- dialogue lines
-- sample answers
-- cloze passage segments
-- cloze answers
-- matching left/right/matches
-
-Known exercise families to respect:
-
-- choose_words_fill_blank
-- fill_blank
-- answer_with_pattern
-- correct_sentence
-- multiple_choice
-- matching
-- phonetics
-- read_aloud
-- substitution
-- complete_dialogue
-- communication_dialogue
-- reading_cloze
-- reading_true_false
-- reading_short_answer
-- reading_multiple_choice
-- generic fallback
-
-Practice edit acceptance for each supported type:
-
-- Editing exercise metadata does not touch questions/answers.
-- Editing one question does not touch other questions.
-- Editing one answer key item does not touch other answer key items.
-- Editing word_bank does not touch questions unless explicitly intended.
-- Editing a dialogue line does not touch sample answers.
-- Editing a cloze segment does not touch unrelated answers.
-- Normal edits do not delete/reinsert full arrays.
-
-## 15. Lesson Overview Renderer Rules
-
-The lesson overview renderer is data-sensitive.
-
-Rules:
-
-- Do not make Study Mode parse arbitrary raw JSON in every component forever.
-- Unknown/flexible shape handling belongs in import adapters, normalizers, or debug fallback renderers.
-- Study renderer should prefer typed view models.
-- Debug renderer may show raw/unmapped payload.
-- Do not hide available data silently.
-- If data cannot be rendered, show a clear fallback and report the unmapped field/type.
-
-When adding a new renderer:
-
-- identify the exact data shape
-- add a type/schema if stable
-- add a renderer only for that shape
-- add debug fallback for unmapped fields
-- add UI audit coverage when practical
-
-## 16. Backend Migration Strategy
-
-Do not migrate by breaking the current study flow.
-
-Preferred strategy:
-
-- keep study flow backed by normalized Supabase data
-- keep external seed artifacts available for migration/audit recovery when needed
-- introduce repository/data-access layer
-- add API compatibility endpoint if needed
-- compare static and API output
-- gradually move modules to smaller DTOs/endpoints
-
-Do not immediately replace the current UI with ten small endpoint calls.
-
-Do not force the client to reconstruct a lesson from unrelated API calls unless the repository layer owns that composition.
-
-Backend DTOs should be designed from proven UI edit/read contracts, not guessed from raw JSON blobs.
-
-Raw import data, domain entities, API DTOs, and UI view models are separate concepts:
-
-```txt
-Raw import data ≠ domain model ≠ API DTO ≠ UI view model
-```
-
-## 17. Query and Cache Rules
-
-Use stable TanStack Query keys.
-
-Keys must include every variable that changes the returned data.
-
-Good:
-
-```ts
-["hanzihome", "catalog"];
-
-["hanzihome", "lesson-detail", lessonId];
-
-["hanzihome", "lesson", lessonId, "vocab", filters];
-
-["hanzihome", "vocab", vocabItemId];
-
-["hanzihome", "grammar", grammarPointId];
-
-["hanzihome", "exercise", exerciseId];
-
-["hanzihome", "reading", readingId];
-```
-
-Bad:
-
-```ts
-["lesson"];
-
-["hanzihome", "data"];
-
-["hanzihome", "lesson"];
-
-["hanzihome", "vocab"];
-```
-
-After mutation, invalidate the smallest correct scope.
-
-Do not invalidate the entire catalog when only one vocab example changed unless the catalog stats depend on that change.
-
-Mutation invalidation examples:
-
-```ts
-// Editing one vocab core field:
-invalidate(["hanzihome", "vocab", vocabItemId]);
-invalidate(["hanzihome", "lesson-detail", lessonId]);
-
-// Editing one vocab example:
-invalidate(["hanzihome", "vocab", vocabItemId]);
-invalidate(["hanzihome", "lesson-detail", lessonId]);
-
-// Editing catalog-level metadata only:
-invalidate(["hanzihome", "catalog"]);
-```
-
-Do not use one broad query key to hide unclear ownership.
-
-The query key must express the resource boundary.
-
-## 18. UI and Accessibility Rules
-
-Use existing shared UI primitives where possible.
-
-Rules:
-
-- Shared UI component call sites must not override component styling with `className`. Extend the shared component API with an explicit reusable variant instead.
-- Keep typography hierarchy clear.
-- Avoid cramped cards.
-- Avoid random margins.
-- No horizontal overflow.
-- Clickable custom controls need keyboard support and aria labels when necessary.
-- Dialog focus must be managed by the dialog primitive.
-- Do not show answer content by default in practice UI.
-- Do not show developer raw JSON in Study Mode.
-
-For Chinese text:
-
-- Set `lang="zh-CN"` where appropriate.
-- Preserve pinyin visibility controls.
-- Preserve Vietnamese meaning visibility controls.
-- Do not assume Japanese glyph fonts for Mainland Chinese learning content unless explicitly labeled.
-
-## 19. Import, Normalization, and Data Audit Rules
-
-Import scripts must not silently drop content.
-
-When normalizing raw lesson data:
-
-- preserve source references when available
-- add stable IDs for editable nodes
-- validate required fields
-- report unmapped fields
-- report missing pinyin/meaning where expected
-- report duplicate IDs
-- report orphan refs
-
-UI should not compensate forever for bad import data.
-
-If a renderer needs many fallback keys, consider moving that logic into an import adapter/normalizer.
-
-## 20. Task Workflow for AI Agents
-
-Before coding:
-
-- Read the relevant files.
-- Identify current data shape.
-- Identify current render tree.
-- Identify whether the task is Study, Debug, Edit, API, DB, or Import.
-- State the smallest safe implementation slice.
-
-While coding:
-
-- Make minimal focused changes.
-- Do not mix UI redesign, DB migration, and parser changes in one task unless explicitly requested.
-- Do not expand scope from vocab/grammar to exercises without asking.
-- Do not add direct DB writes for new content families until the edit contract is reviewed.
-
-Before finishing:
-
-- Run required checks.
-- Explain what changed.
-- List any unsupported shapes or follow-up risks.
-- Be honest if something is not fully covered.
-
-### Repo-Tracked Skills
-
-For non-trivial HanziHome code changes involving React, TypeScript, data loading, forms, edit contracts, Supabase routes, renderers, or source cleanup, first read:
-
-```txt
-.codex/skills/hanzihome-code-standardization/SKILL.md
-```
-
-For UI work that mentions Nova UI, design tokens, Tailwind class drift, `globals.css` visual recipes, Home/Notebook/HanziHome visual consistency, glass surfaces, hero/card primitives, or preventing ad-hoc utility CSS, first read:
-
-```txt
-.codex/skills/hanzihome-ui-system-audit/SKILL.md
-```
-
-Use that workflow before editing UI code so future changes do not keep adding hidden design tokens, one-off palettes, or component recipes outside the shared primitive system.
-
-For shadcn/ui component work, `components.json`, registry items, component variants, or upstream component docs, read:
-
-```txt
-.agents/skills/shadcn/SKILL.md
-```
-
-The bundled `.agents/skills/migrate-radix-to-base/SKILL.md` is only for an explicit Radix-to-Base UI migration request. Do not invoke it for ordinary component cleanup.
-
-## 21. Explicit Stop Conditions
-
-Stop and ask before coding if:
-
-- The requested change would mutate external static seed artifacts from the app.
-- The change requires editing seed DB rows but admin/copy-on-write policy is unclear.
-- The change requires delete/reinsert of child rows for a normal small edit.
-- The feature would fetch all lessons/content for dashboard use.
-- The exercise type shape is unknown.
-- The renderer would need broad arbitrary JSON guessing in Study Mode.
-- The task would require DB schema changes but no migration is provided.
-- The task would break current Study Mode.
-
-## 22. Current Priority
-
-The current priority is not to make a bigger CRUD system.
-
-The current priority is:
-
-- preserve the study flow
-- keep Supabase-backed study content safe
-- make editable UI node-based
-- make saves field/node-level
-- avoid destructive replace-all updates
-- prove edit contracts before expanding backend persistence
-
-If Codex or another agent starts adding more DB PATCH routes that submit full parent objects and replace child arrays, stop that work and refactor to field/node-level updates first.
+Use “implemented” or “changed” for code edits. Use “verified” only when there is
+evidence. Do not use “fixed”, “done”, “final”, or “production-ready” without
+completed verification.

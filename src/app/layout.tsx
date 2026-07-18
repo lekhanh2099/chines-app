@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { NativeMandarinTtsProvider } from "@/features/hanzihome/listening/NativeMandarinTtsProvider";
@@ -34,12 +35,14 @@ export default function RootLayout({
   >
    <body className="antialiased">
     <ThemeProvider>
-     <QueryProvider>
-      <NativeMandarinTtsProvider>
-       <VocabInspectorProvider>{children}</VocabInspectorProvider>
-      </NativeMandarinTtsProvider>
-     </QueryProvider>
-     <AppToaster />
+     <TooltipProvider>
+      <QueryProvider>
+       <NativeMandarinTtsProvider>
+        <VocabInspectorProvider>{children}</VocabInspectorProvider>
+       </NativeMandarinTtsProvider>
+      </QueryProvider>
+      <AppToaster />
+     </TooltipProvider>
     </ThemeProvider>
    </body>
   </html>
