@@ -36,7 +36,7 @@
   "test": "vitest",
   "test:run": "vitest run",
   "test:coverage": "vitest run --coverage",
-  "deps:check": "knip --dependencies && knip --include files --no-progress",
+  "deps:check": "knip --dependencies",
   "source:check": "node scripts/check-source-standards.mjs",
   "audit:prod": "npm audit --omit=dev --audit-level=moderate",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
