@@ -6,11 +6,11 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
+ HanziHomeLesson,
  HanziHomeModule,
 } from "@/features/hanzihome/types";
 import { resolveRecentLearning } from "./recent-learning";
@@ -31,26 +31,25 @@ const moduleLabels: Record<HanziHomeModule, string> = {
 export function RecentLearningCard({
  courses,
  books,
+ lessons,
 }: {
  courses: HanziHomeCatalogCourse[];
  books: HanziHomeCourseBook[];
+ lessons: HanziHomeLesson[];
 }) {
  const learning = useLearningState();
  const lastCourseId = learning.state.settings.lastCourseId ?? "";
  const lastLessonId = learning.state.settings.lastLessonId;
  const lastModule = learning.state.settings.lastModule ?? "overview";
- const courseLessons = useHanziHomeCourseLessons(lastCourseId, {
-  enabled: !learning.isLoading && Boolean(lastCourseId && lastLessonId),
- });
 
- if (learning.isLoading || courseLessons.isLoading) {
+ if (learning.isLoading) {
   return <RecentLearningSkeleton />;
  }
 
  const recentLearning = resolveRecentLearning({
   courses,
   books,
-  lessons: courseLessons.lessons,
+  lessons,
   courseId: lastCourseId,
   lessonId: lastLessonId,
   module: lastModule,

@@ -52,6 +52,21 @@ describe("GET /api/hanzihome/catalog", () => {
   await expect(response.json()).resolves.toEqual({
    catalog: { source: "db", courses: [] },
   });
+  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false });
+  expect(getCourseLessonSummaries).not.toHaveBeenCalled();
+ });
+
+ it("loads lightweight lesson summaries in the single catalog request when requested", async () => {
+  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], lessons: [] });
+
+  const response = await GET(
+   new Request("https://app.example/api/hanzihome/catalog?includeLessons=1"),
+  );
+
+  expect(response.status).toBe(200);
+  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: true });
+  expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 
  it("hides database error details from clients", async () => {

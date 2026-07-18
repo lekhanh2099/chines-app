@@ -599,45 +599,6 @@ export type Database = {
     };
     Relationships: [];
    };
-   hanzihome_lesson_drafts: {
-    Row: {
-     content: Json;
-     created_at: string;
-     id: string;
-     lesson_key: string;
-     lesson_number: number | null;
-     status: string;
-     title_vi: string | null;
-     title_zh: string;
-     updated_at: string;
-     user_id: string;
-    };
-    Insert: {
-     content?: Json;
-     created_at?: string;
-     id?: string;
-     lesson_key: string;
-     lesson_number?: number | null;
-     status?: string;
-     title_vi?: string | null;
-     title_zh: string;
-     updated_at?: string;
-     user_id: string;
-    };
-    Update: {
-     content?: Json;
-     created_at?: string;
-     id?: string;
-     lesson_key?: string;
-     lesson_number?: number | null;
-     status?: string;
-     title_vi?: string | null;
-     title_zh?: string;
-     updated_at?: string;
-     user_id?: string;
-    };
-    Relationships: [];
-   };
    hanzihome_lesson_sections: {
     Row: {
      created_at: string;
@@ -2014,6 +1975,18 @@ export type Database = {
      pos_vi: string;
      pos_zh: string;
      word: string;
+    }[];
+   };
+   get_hanzihome_catalog_stats: {
+    Args: never;
+    Returns: {
+     book_count: number;
+     course_id: string;
+     fallback_lesson_id: string;
+     grammar_count: number;
+     last_lesson_id: string;
+     lesson_count: number;
+     vocab_count: number;
     }[];
    };
    hanzihome_apply_external_seed_patches: {

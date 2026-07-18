@@ -1,6 +1,6 @@
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
 
-export type LibraryCourseGroupKey = "hanyu" | "boya" | "listening" | "other";
+export type LibraryCourseGroupKey = "hanyu" | "boya" | "boyaSecondEdition" | "listening" | "other";
 
 export type LibraryCourseGroup = {
  key: LibraryCourseGroupKey;
@@ -26,6 +26,11 @@ const groupDetails: Record<
   description: "Lộ trình Boya được chia rõ theo từng cấp độ và tập.",
   isDraft: false,
  },
+ boyaSecondEdition: {
+  title: "Boya 9 quyển · Bản 2",
+  description: "第二版 · hiện có 4/5 quyển Trung–Cao cấp; chưa có Cao cấp III.",
+  isDraft: false,
+ },
  listening: {
   title: "Giáo trình luyện nghe",
   description: "Bài nghe, luyện phản xạ và nghe chép theo từng quyển.",
@@ -38,7 +43,13 @@ const groupDetails: Record<
  },
 };
 
-const groupOrder: LibraryCourseGroupKey[] = ["hanyu", "boya", "listening", "other"];
+const groupOrder: LibraryCourseGroupKey[] = [
+ "hanyu",
+ "boya",
+ "boyaSecondEdition",
+ "listening",
+ "other",
+];
 
 export function groupLibraryCourses(
  courses: HanziHomeCatalogCourse[],
@@ -74,6 +85,7 @@ export function groupLibraryCourses(
 
 function resolveCourseGroupKey(course: HanziHomeCatalogCourse): LibraryCourseGroupKey {
  if (course.type === "listening") return "listening";
+ if (course.id === "boya-nine-volume-second-edition") return "boyaSecondEdition";
  if (course.id.startsWith("boya-") || course.slug.startsWith("boya-")) return "boya";
  if (course.type === "hanyu") return "hanyu";
  return "other";

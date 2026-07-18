@@ -52,12 +52,22 @@ for (const file of files) {
   fail(`${filePath} must not call catalog includeLessons=true`);
  }
 
+ if (filePath.endsWith("HanziHomeLibraryHome.tsx") && !content.includes("includeLessons: true")) {
+  fail(`${filePath} must load its lightweight lesson summaries in the catalog request`);
+ }
+
  if (
-  filePath.endsWith("HanziHomeLibraryHome.tsx") &&
-  content.includes("function CourseCard") &&
-  content.includes("useLearningState()")
+  (filePath.endsWith("CourseCard.tsx") || filePath.endsWith("RecentLearningCard.tsx")) &&
+  content.includes("useHanziHomeCourseLessons")
  ) {
-  fail(`${filePath} CourseCard should not call useLearningState per card`);
+  fail(`${filePath} must consume library lesson summaries instead of fetching a course again`);
+ }
+
+ if (
+  filePath.endsWith("supabase-hanzihome-content-repository.ts") &&
+  !content.includes("includeLessons ? getLessonSummaryRows() : Promise.resolve([])")
+ ) {
+  fail(`${filePath} must not query lesson summaries for stats-only catalog requests`);
  }
 
  if (filePath.endsWith("useHanziHomeCatalogData.ts") && content.includes("staleTime: 0")) {

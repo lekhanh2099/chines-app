@@ -39,14 +39,18 @@ import {
  aggregateGrammarRowSchema,
  aggregateVocabRowSchema,
  bookRowSchema,
+ catalogStatsRowSchema,
  courseRowSchema,
  grammarCoreRowSchema,
+ grammarRowSchema,
  lessonDetailRowSchema,
  lessonSectionRowSchema,
+ lessonShellRowSchema,
  lessonSummaryRowSchema,
  lessonTextRowSchema,
  radicalRowSchema,
  vocabCoreRowSchema,
+ vocabRowSchema,
  type GrammarRow,
  type LessonDetailRow,
  type LessonSummaryRow,
@@ -638,9 +642,20 @@ async function getLessonSummaryRows(courseId?: string) {
   .from("hanzihome_lessons")
   .select(
    `
-    *,
-    course:hanzihome_courses!inner(*),
-    book:hanzihome_course_books!inner(*),
+    id,
+    course_id,
+    book_id,
+    lesson_number,
+    lesson_order,
+    title_zh,
+    title_pinyin,
+    title_vi,
+    title_en,
+    tags,
+    source_file,
+    updated_at,
+    course:hanzihome_courses!inner(id,slug,title,subtitle,type,course_order,updated_at),
+    book:hanzihome_course_books!inner(id,course_id,title,short_title,book_order,updated_at),
     vocab_count:hanzihome_vocab_items(count),
     grammar_count:hanzihome_grammar_points(count)
    `,
@@ -654,29 +669,39 @@ async function getLessonSummaryRows(courseId?: string) {
  return requireRows("lesson summaries", query, z.array(lessonSummaryRowSchema));
 }
 
+async function getCatalogStatsRows() {
+ const client = await createClient();
+ return requireRows(
+  "catalog stats",
+  client.rpc("get_hanzihome_catalog_stats"),
+  z.array(catalogStatsRowSchema),
+ );
+}
+
 async function getLessonDetailRow(lessonId: string) {
  const client = await createClient();
- const [rows, sections] = await Promise.all([
+ const [shellRows, sections, vocab, grammar] = await Promise.all([
   requireRows(
-   `lesson detail ${lessonId}`,
+   `lesson shell ${lessonId}`,
    client
     .from("hanzihome_lessons")
     .select(
      `
-     *,
-     course:hanzihome_courses!inner(*),
-     book:hanzihome_course_books!inner(*),
-     texts:hanzihome_lesson_texts(*),
-     vocab:hanzihome_vocab_items(
-      *,
-      examples:hanzihome_vocab_examples(*),
-      details:hanzihome_vocab_detail_sections(*)
-     ),
-     grammar:hanzihome_grammar_points(
-      *,
-      examples:hanzihome_grammar_examples(*),
-      details:hanzihome_grammar_detail_sections(*)
-     )
+     id,
+     course_id,
+     book_id,
+     lesson_number,
+     lesson_order,
+     title_zh,
+     title_pinyin,
+     title_vi,
+     title_en,
+     tags,
+     source_file,
+     updated_at,
+     course:hanzihome_courses!inner(id,slug,title,subtitle,type,course_order,updated_at),
+     book:hanzihome_course_books!inner(id,course_id,title,short_title,book_order,updated_at),
+     texts:hanzihome_lesson_texts(id,lesson_id,text_key,title,content,content_format,updated_at)
     `,
     )
     .eq("id", lessonId)
@@ -684,21 +709,55 @@ async function getLessonDetailRow(lessonId: string) {
     .is("course.deleted_at", null)
     .is("book.deleted_at", null)
     .limit(1),
-   z.array(lessonDetailRowSchema),
+   z.array(lessonShellRowSchema),
   ),
   requireRows(
    `lesson sections ${lessonId}`,
    client
     .from("hanzihome_lesson_sections")
-    .select("*")
+    .select(
+     "id,lesson_id,source_section_id,section_key,section_type,title,title_vi,section_order,payload,source_file,updated_at",
+    )
     .eq("lesson_id", lessonId)
     .order("section_order"),
    z.array(lessonSectionRowSchema),
   ),
+  requireRows(
+   `lesson vocabulary ${lessonId}`,
+   client
+    .from("hanzihome_vocab_items")
+    .select(
+     `
+     id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at,
+     examples:hanzihome_vocab_examples(id,vocab_item_id,example_order,zh,pinyin,vi,note,updated_at),
+     details:hanzihome_vocab_detail_sections(id,vocab_item_id,section_key,title,lines,section_order,updated_at)
+     `,
+    )
+    .eq("lesson_id", lessonId)
+    .is("deleted_at", null)
+    .order("item_order"),
+   z.array(vocabRowSchema),
+  ),
+  requireRows(
+   `lesson grammar ${lessonId}`,
+   client
+    .from("hanzihome_grammar_points")
+    .select(
+     `
+     id,lesson_id,course_id,book_id,point_order,title,title_vi,clean_title,level,core,content_md,structures_view,notes,tags,updated_at,
+     examples:hanzihome_grammar_examples(id,grammar_point_id,example_order,zh,pinyin,vi,note,updated_at),
+     details:hanzihome_grammar_detail_sections(id,grammar_point_id,section_key,title,lines,section_order,updated_at)
+     `,
+    )
+    .eq("lesson_id", lessonId)
+    .is("deleted_at", null)
+    .order("point_order"),
+   z.array(grammarRowSchema),
+  ),
  ]);
 
- const row = rows[0];
- return row ? lessonDetailRowSchema.parse({ ...row, sections }) : null;
+ const shell = shellRows[0];
+ return shell ? lessonDetailRowSchema.parse({ ...shell, sections, vocab, grammar }) : null;
 }
 
 async function getLessonSectionRow(sectionId: string) {
@@ -976,7 +1035,7 @@ function entityLessonId(entityId: string) {
 export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
  async getCatalogSummary({ includeLessons = false } = {}) {
   const client = await createClient();
-  const [courseRows, bookRows, lessonRows, radicals] = await Promise.all([
+  const [courseRows, bookRows, lessonRows, statsRows, radicals] = await Promise.all([
    requireRows(
     "catalog courses",
     client
@@ -995,15 +1054,18 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
      .order("book_order"),
     z.array(bookRowSchema),
    ),
-   getLessonSummaryRows(),
+   includeLessons ? getLessonSummaryRows() : Promise.resolve([]),
+   includeLessons ? Promise.resolve([]) : getCatalogStatsRows(),
    getRadicalsFromDatabase(),
   ]);
   const lessons = lessonRows.map(lessonSummaryToViewModel);
+  const statsByCourse = new Map(statsRows.map((row) => [row.course_id, row]));
   const courses: HanziHomeCatalogCourse[] = courseRows.map((course) => {
    const courseLessons = lessons.filter((lesson) => lesson.courseId === course.id);
    const sortedLessons = courseLessons.slice().sort((left, right) => {
     return (left.lessonOrder ?? left.lessonNumber) - (right.lessonOrder ?? right.lessonNumber);
    });
+   const stats = statsByCourse.get(course.id);
 
    return {
     id: course.id,
@@ -1014,15 +1076,29 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
     order: course.course_order,
     updatedAt: course.updated_at,
     stats: {
-     bookCount: bookRows.filter((book) => book.course_id === course.id).length,
-     lessonCount: courseLessons.length,
-     vocabCount: courseLessons.reduce((sum, lesson) => sum + (lesson.vocabCount ?? 0), 0),
-     grammarCount: courseLessons.reduce((sum, lesson) => sum + (lesson.grammarCount ?? 0), 0),
+     bookCount: stats?.book_count ?? bookRows.filter((book) => book.course_id === course.id).length,
+     lessonCount: stats?.lesson_count ?? courseLessons.length,
+     vocabCount:
+      stats?.vocab_count ??
+      courseLessons.reduce((sum, lesson) => sum + (lesson.vocabCount ?? 0), 0),
+     grammarCount:
+      stats?.grammar_count ??
+      courseLessons.reduce((sum, lesson) => sum + (lesson.grammarCount ?? 0), 0),
     },
-    lastLessonId: sortedLessons.at(-1)?.id,
-    fallbackLessonId: sortedLessons[0]?.id,
+    lastLessonId: stats?.last_lesson_id ?? sortedLessons.at(-1)?.id,
+    fallbackLessonId: stats?.fallback_lesson_id ?? sortedLessons[0]?.id,
    };
   });
+  const catalogMeta = buildMeta(lessons, radicals);
+
+  if (!includeLessons) {
+   catalogMeta.counts.lessons = courses.reduce((sum, course) => sum + course.stats.lessonCount, 0);
+   catalogMeta.counts.vocab = courses.reduce((sum, course) => sum + course.stats.vocabCount, 0);
+   catalogMeta.counts.grammarPoints = courses.reduce(
+    (sum, course) => sum + course.stats.grammarCount,
+    0,
+   );
+  }
 
   return {
    source: "db",
@@ -1037,7 +1113,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
    })),
    lessons: includeLessons ? lessons : [],
    radicals,
-   meta: buildMeta(lessons, radicals),
+   meta: catalogMeta,
   };
  },
 

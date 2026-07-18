@@ -40,6 +40,16 @@ export const bookRowSchema = z.object({
  updated_at: z.string(),
 });
 
+export const catalogStatsRowSchema = z.object({
+ course_id: z.string(),
+ book_count: z.number().int().nonnegative(),
+ lesson_count: z.number().int().nonnegative(),
+ vocab_count: z.number().int().nonnegative(),
+ grammar_count: z.number().int().nonnegative(),
+ fallback_lesson_id: z.string().nullable(),
+ last_lesson_id: z.string().nullable(),
+});
+
 const relatedCourseSchema = z
  .union([courseRowSchema, z.array(courseRowSchema)])
  .transform((value) => (Array.isArray(value) ? value[0] : value));
@@ -201,6 +211,12 @@ export const lessonDetailRowSchema = z.object({
  grammar: z.array(grammarRowSchema).default([]),
 });
 
+export const lessonShellRowSchema = lessonDetailRowSchema.omit({
+ sections: true,
+ vocab: true,
+ grammar: true,
+});
+
 const relatedLessonSchema = z
  .union([
   z.object({
@@ -229,6 +245,7 @@ export const aggregateGrammarRowSchema = grammarCoreRowSchema.extend({
 
 export type LessonSummaryRow = z.output<typeof lessonSummaryRowSchema>;
 export type LessonDetailRow = z.output<typeof lessonDetailRowSchema>;
+export type LessonShellRow = z.output<typeof lessonShellRowSchema>;
 export type VocabRow = z.output<typeof vocabRowSchema>;
 export type GrammarRow = z.output<typeof grammarRowSchema>;
 export type RadicalRow = z.output<typeof radicalRowSchema>;

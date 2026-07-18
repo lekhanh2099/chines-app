@@ -19,11 +19,12 @@ import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/han
 
 export function HanziHomeLibraryHome() {
  const [editMode, setEditMode] = useState(false);
- const catalogQuery = useHanziHomeCatalogQuery();
+ const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
  const catalogData = catalogQuery.data;
  const canEdit = useHanziHomeCanEdit();
  const courses = catalogData.courses;
  const books = catalogData.books;
+ const lessons = catalogData.lessons;
  const libraryStats = useMemo(() => getLibraryStats(courses, books), [books, courses]);
  const courseGroups = useMemo(() => groupLibraryCourses(courses, books), [books, courses]);
 
@@ -77,7 +78,7 @@ export function HanziHomeLibraryHome() {
      </div>
     </section>
 
-    <RecentLearningCard courses={courses} books={books} />
+    <RecentLearningCard courses={courses} books={books} lessons={lessons} />
 
     <div className="min-w-0 grid gap-0.5">
      <h2 id="course-library-heading" className="text-base font-black text-text-primary">
@@ -103,6 +104,7 @@ export function HanziHomeLibraryHome() {
        key={group.key}
        group={group}
        books={books}
+       lessons={lessons}
        editMode={canEdit && editMode}
       />
      ))}

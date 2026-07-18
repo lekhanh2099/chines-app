@@ -2,16 +2,28 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookMarked } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import Select from "@/components/ui/select/index";
-import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
-import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import type {
+ HanziHomeCatalogCourse,
+ HanziHomeCourseBook,
+ HanziHomeLesson,
+} from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
-import { IOption } from "@/types/option";
 
 import { BookCrudActions } from "./BookCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";
@@ -19,22 +31,23 @@ import { LessonCrudActions } from "./LessonCrudActions";
 export function CourseCard({
  course,
  book,
+ lessons,
  editMode = false,
  canMoveBookUp = false,
  canMoveBookDown = false,
 }: {
  course: HanziHomeCatalogCourse;
  book: HanziHomeCourseBook;
+ lessons: HanziHomeLesson[];
  editMode?: boolean;
  canMoveBookUp?: boolean;
  canMoveBookDown?: boolean;
 }) {
- const { lessons: courseLessons, isLoading: areLessonsLoading } = useHanziHomeCourseLessons(
-  course.id,
- );
+ const router = useRouter();
+ const queryClient = useQueryClient();
  const bookLessons = useMemo(
-  () => courseLessons.filter((lesson) => lesson.bookId === book.id),
-  [book.id, courseLessons],
+  () => lessons.filter((lesson) => lesson.bookId === book.id),
+  [book.id, lessons],
  );
  const [selectedLessonId, setSelectedLessonId] = useState("");
 
@@ -61,14 +74,16 @@ export function CourseCard({
   (sum, lesson) => sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
   0,
  );
+ const prefetchSelectedLesson = () => {
+  if (!effectiveLessonId) return;
 
- const courseLessonOptions: IOption[] = bookLessons.map((lesson) => ({
-  value: lesson.id,
-  label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`,
- }));
-
- const selectedOption =
-  courseLessonOptions.find((option) => option.value === effectiveLessonId) || null;
+  router.prefetch(href);
+  void queryClient.prefetchQuery({
+   queryKey: hanzihomeQueryKeys.lessonDetail(effectiveLessonId),
+   queryFn: () => fetchHanziHomeLessonDetail(effectiveLessonId),
+   staleTime: Infinity,
+  });
+ };
 
  return (
   <Card
@@ -94,44 +109,47 @@ export function CourseCard({
      </div>
     </div>
 
-    {areLessonsLoading ? (
-     <span className="h-5 w-28 animate-pulse rounded-full bg-bg-subtle" />
-    ) : (
-     <div className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-text-muted sm:flex">
-      <Badge variant="default" size="sm">
-       {visibleLessonCount} bài
-      </Badge>
-      <span>{visibleVocabCount} từ</span>
-      <span aria-hidden="true">·</span>
-      <span>{visibleGrammarCount} ngữ pháp</span>
-     </div>
-    )}
+    <div className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-text-muted sm:flex">
+     <Badge variant="default" size="sm">
+      {visibleLessonCount} bài
+     </Badge>
+     <span>{visibleVocabCount} từ</span>
+     <span aria-hidden="true">·</span>
+     <span>{visibleGrammarCount} ngữ pháp</span>
+    </div>
    </div>
 
-   <div className="grid rounded-xl border border-border-default bg-bg-subtle p-1.5">
-    {areLessonsLoading ? (
-     <div className="flex animate-pulse gap-2">
-      <div className="h-9 flex-1 rounded-xl bg-bg-primary" />
-      <div className="h-9 w-20 rounded-xl bg-bg-primary" />
-     </div>
-    ) : bookLessons.length > 0 ? (
+   <div className="grid min-h-9">
+    {bookLessons.length > 0 ? (
      <div className="flex min-w-0 items-center gap-1.5">
       <div className="min-w-0 flex-1">
-       <Select
-        options={courseLessonOptions}
-        selectValue={selectedOption}
-        triggerAriaLabel={`Chọn bài trong ${book.shortTitle || book.title}`}
-        triggerPlaceholder="Chọn bài"
-        onChange={(option: IOption | null) => {
-         if (option?.value) setSelectedLessonId(String(option.value));
-        }}
-       />
+       <Select value={effectiveLessonId} onValueChange={setSelectedLessonId}>
+        <SelectTrigger
+         size="sm"
+         width="full"
+         aria-label={`Chọn bài trong ${book.shortTitle || book.title}`}
+        >
+         <SelectValue placeholder="Chọn bài" />
+        </SelectTrigger>
+        <SelectContent align="start">
+         {bookLessons.map((lesson) => (
+          <SelectItem key={lesson.id} value={lesson.id}>
+           Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+          </SelectItem>
+         ))}
+        </SelectContent>
+       </Select>
       </div>
 
       {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-      <Button asChild size="sm">
-       <Link href={href} prefetch={false}>
-        Mở bài
+      <Button asChild size="sm" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
+       <Link
+        href={href}
+        prefetch={false}
+        onMouseEnter={prefetchSelectedLesson}
+        onFocus={prefetchSelectedLesson}
+       >
+        Mở
         <ArrowRight data-icon="inline-end" />
        </Link>
       </Button>

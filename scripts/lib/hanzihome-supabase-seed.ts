@@ -76,12 +76,12 @@ const LessonManifestItemSchema = z.object({
 });
 
 const DatasetManifestSchema = z.object({
- dataset: z.enum(HANZIHOME_DATASETS),
+ dataset: z.string().min(1),
  lessons: z.array(LessonManifestItemSchema),
 });
 
 const LessonMetaSchema = z.object({
- dataset: z.enum(HANZIHOME_DATASETS),
+ dataset: z.string().min(1),
  lessonIndex: z.number().int().positive(),
  id: z.string().min(1),
  title: TitleSchema,
@@ -92,6 +92,7 @@ const LessonMetaSchema = z.object({
   })
   .optional(),
  counts: LessonCountsSchema,
+ verificationStatus: z.string().optional(),
 });
 
 const SectionIndexItemSchema = z.object({
@@ -139,6 +140,7 @@ const ExampleSchema = z.looseObject({
 const MeaningSchema = z.looseObject({
  hanviet: z.string().optional(),
  meaning_vi: z.string().optional(),
+ meaning_en: z.string().optional(),
  short_definition_vi: z.string().optional(),
  natural_translations_vi: z.array(z.string()).optional(),
  textbook_focus_vi: z.string().optional(),
@@ -257,6 +259,8 @@ const RichVocabItemSchema = z.looseObject({
  pinyin: z.string().min(1),
  pos: PosSchema,
  level_tag: z.string().optional(),
+ tags: z.array(z.string()).optional(),
+ check_needed: z.boolean().optional(),
  meaning: MeaningSchema,
  word_formation: WordFormationSchema.optional(),
  comparison: ComparisonSchema.optional(),
@@ -405,7 +409,7 @@ export type CourseRow = {
  slug: string;
  title: string;
  subtitle: string;
- type: "hanyu";
+ type: string;
  course_order: number;
  source: "seed";
  imported_at: string;
@@ -432,6 +436,9 @@ export type LessonRow = {
  lesson_order: number;
  title_zh: string;
  title_vi: string;
+ title_pinyin?: string | null;
+ title_en?: string | null;
+ tags?: string[];
  source_file: string | null;
  imported_at: string;
 };
@@ -476,6 +483,8 @@ export type VocabItemRow = {
  pinyin: string;
  han_viet: string;
  meaning: string;
+ meaning_en?: string | null;
+ tags?: string[];
  category: string;
  level: string | null;
  pos_vi: string | null;
@@ -521,6 +530,9 @@ export type GrammarPointRow = {
  source: "seed";
  point_order: number;
  title: string;
+ title_vi?: string | null;
+ level?: string | null;
+ tags?: string[];
  clean_title: string;
  core: string;
  content_md: string;
@@ -586,7 +598,7 @@ export type RadicalRow = {
 };
 
 export type HanziHomeSeedData = {
- datasets: HanziHomeDataset[];
+ datasets: string[];
  courses: CourseRow[];
  books: BookRow[];
  lessons: LessonRow[];
@@ -1009,14 +1021,62 @@ function renderGrammarPoint(point: ParsedGrammarPoint) {
  return lines.join("\n\n");
 }
 
+export function remapPortableLessonIds(
+ value: unknown,
+ sourceLessonId: string,
+ targetLessonId: string,
+): unknown {
+ if (typeof value === "string") {
+  const advancedVocabId = /^q[12]-b\d+-(.+)$/u.exec(value);
+  if (advancedVocabId) return `${targetLessonId}-v-${advancedVocabId[1]}`;
+  return value.startsWith(sourceLessonId)
+   ? `${targetLessonId}${value.slice(sourceLessonId.length)}`
+   : value;
+ }
+ if (Array.isArray(value)) {
+  return value.map((entry) => remapPortableLessonIds(entry, sourceLessonId, targetLessonId));
+ }
+ if (value && typeof value === "object") {
+  return Object.fromEntries(
+   Object.entries(value).map(([key, entry]) => [
+    key,
+    remapPortableLessonIds(entry, sourceLessonId, targetLessonId),
+   ]),
+  );
+ }
+ return value;
+}
+
 async function loadLessonSeed(params: {
- dataset: HanziHomeDataset;
+ datasetRoot: string;
  lessonFolder: string;
  importedAt: string;
  seed: HanziHomeSeedData;
+ courseId: string;
+ bookId: string;
+ targetLessonPrefix?: string;
 }) {
- const folderPath = path.join(DATA_ROOT, params.dataset, params.lessonFolder);
- const lessonMeta = await readJsonFile(path.join(folderPath, "lesson.json"), LessonMetaSchema);
+ const folderPath = path.join(params.datasetRoot, params.lessonFolder);
+ const sourceLessonMeta = await readJsonFile(
+  path.join(folderPath, "lesson.json"),
+  LessonMetaSchema,
+ );
+ const targetLessonId = params.targetLessonPrefix
+  ? `${params.targetLessonPrefix}-l${String(sourceLessonMeta.lessonIndex).padStart(2, "0")}`
+  : sourceLessonMeta.id;
+ const remapIds = (value: unknown) =>
+  remapPortableLessonIds(value, sourceLessonMeta.id, targetLessonId);
+ const readLessonJson = async <T>(filePath: string, schema: z.ZodType<T>) => {
+  const content = await readFile(filePath, "utf8");
+  const parsed = schema.safeParse(remapIds(JSON.parse(content) as unknown));
+  if (!parsed.success) {
+   throw new Error(
+    `Invalid portable lesson JSON: ${path.relative(process.cwd(), filePath)}\n${z.prettifyError(parsed.error)}`,
+   );
+  }
+  return parsed.data;
+ };
+ const lessonMeta = LessonMetaSchema.parse(remapIds(sourceLessonMeta));
  const sectionIndex = await readJsonFile(
   path.join(folderPath, "sections/index.json"),
   z.array(SectionIndexItemSchema),
@@ -1029,26 +1089,34 @@ async function loadLessonSeed(params: {
   path.join(folderPath, "vocabulary/groups.json"),
   z.array(VocabGroupSchema),
  );
- const config = DATASET_CONFIG[params.dataset];
- const book = bookForLesson(params.dataset, lessonMeta.lessonIndex);
+ const remappedSectionIndex = z.array(SectionIndexItemSchema).parse(remapIds(sectionIndex));
+ const remappedVocabIndex = z.array(VocabIndexItemSchema).parse(remapIds(vocabIndex));
 
  params.seed.lessons.push({
   id: lessonMeta.id,
-  course_id: config.courseId,
-  book_id: book.id,
+  course_id: params.courseId,
+  book_id: params.bookId,
   owner_id: null,
   source: "seed",
   lesson_number: lessonMeta.lessonIndex,
   lesson_order: lessonMeta.lessonIndex,
   title_zh: lessonMeta.title.zh,
   title_vi: lessonMeta.title.vi,
+  title_pinyin: lessonMeta.title.pinyin || null,
+  title_en: lessonMeta.title.en || null,
+  tags: [
+   ...(params.targetLessonPrefix ? ["boya-nine-volume-second-edition"] : []),
+   ...(lessonMeta.verificationStatus ? [lessonMeta.verificationStatus] : []),
+  ],
   source_file: lessonMeta.sourceRefs?.lessonFile ?? null,
   imported_at: params.importedAt,
  });
 
- for (const sectionEntry of sectionIndex.slice().sort((left, right) => left.order - right.order)) {
+ for (const sectionEntry of remappedSectionIndex
+  .slice()
+  .sort((left, right) => left.order - right.order)) {
   const sectionPath = path.join(folderPath, "sections", sectionEntry.file);
-  const payload = await readJsonFile(sectionPath, SectionSchema);
+  const payload = await readLessonJson(sectionPath, SectionSchema);
 
   params.seed.lessonSections.push({
    id: stableUuidFromKey(`hanzihome:lesson-section:${lessonMeta.id}:${sectionEntry.id}`),
@@ -1062,14 +1130,19 @@ async function loadLessonSeed(params: {
    title_vi: sectionEntry.title_vi,
    section_order: sectionEntry.order,
    payload,
-   source_file: path.relative(process.cwd(), sectionPath).split(path.sep).join("/"),
+   source_file: (params.targetLessonPrefix
+    ? [params.bookId, path.relative(params.datasetRoot, sectionPath)].join("/")
+    : path.relative(process.cwd(), sectionPath)
+   )
+    .split(path.sep)
+    .join("/"),
    imported_at: params.importedAt,
   });
  }
 
- const textEntry = sectionIndex.find((section) => section.type === "text");
+ const textEntry = remappedSectionIndex.find((section) => section.type === "text");
  if (textEntry) {
-  const textSection = await readJsonFile(
+  const textSection = await readLessonJson(
    path.join(folderPath, "sections", textEntry.file),
    TextSectionSchema,
   );
@@ -1088,8 +1161,10 @@ async function loadLessonSeed(params: {
   }
  }
 
- for (const indexItem of vocabIndex.slice().sort((left, right) => left.order - right.order)) {
-  const item = await readJsonFile(path.join(folderPath, indexItem.file), VocabItemSchema);
+ for (const indexItem of remappedVocabIndex
+  .slice()
+  .sort((left, right) => left.order - right.order)) {
+  const item = await readLessonJson(path.join(folderPath, indexItem.file), VocabItemSchema);
   const rich = isRichVocabItem(item);
   const meaning = rich
    ? item.meaning.meaning_vi || item.meaning.short_definition_vi || ""
@@ -1100,8 +1175,8 @@ async function loadLessonSeed(params: {
   params.seed.vocabItems.push({
    id: item.id,
    lesson_id: lessonMeta.id,
-   course_id: config.courseId,
-   book_id: book.id,
+   course_id: params.courseId,
+   book_id: params.bookId,
    owner_id: null,
    source: "seed",
    item_order: indexItem.order,
@@ -1109,6 +1184,8 @@ async function loadLessonSeed(params: {
    pinyin: item.pinyin,
    han_viet: rich ? item.meaning.hanviet || "" : "",
    meaning,
+   meaning_en: rich ? item.meaning.meaning_en || null : null,
+   tags: rich ? [...(item.tags ?? []), ...(item.check_needed ? ["check-needed"] : [])] : [],
    category: categoryForWord(vocabGroups, item.hanzi),
    level: rich ? item.level_tag || null : null,
    pos_vi: posVi || null,
@@ -1142,10 +1219,10 @@ async function loadLessonSeed(params: {
   );
  }
 
- const grammarEntry = sectionIndex.find((section) => section.type === "grammar");
+ const grammarEntry = remappedSectionIndex.find((section) => section.type === "grammar");
  if (!grammarEntry) return;
 
- const grammarSection = await readJsonFile(
+ const grammarSection = await readLessonJson(
   path.join(folderPath, "sections", grammarEntry.file),
   GrammarSectionSchema,
  );
@@ -1153,13 +1230,16 @@ async function loadLessonSeed(params: {
   params.seed.grammarPoints.push({
    id: point.id,
    lesson_id: lessonMeta.id,
-   course_id: config.courseId,
-   book_id: book.id,
+   course_id: params.courseId,
+   book_id: params.bookId,
    owner_id: null,
    source: "seed",
    point_order: point.order,
-   title: point.title_vi || point.title,
-   clean_title: point.title_vi || point.title,
+   title: point.title,
+   title_vi: point.title_vi || null,
+   level: point.level || null,
+   tags: point.tags ?? [],
+   clean_title: point.title,
    core: grammarPointCore(point),
    content_md: renderGrammarPoint(point),
    structures_view: point.blocks.flatMap((block) =>
@@ -1282,10 +1362,101 @@ export async function buildHanziHomeSeedData(
    .slice()
    .sort((left, right) => left.lessonIndex - right.lessonIndex)) {
    await loadLessonSeed({
-    dataset,
+    datasetRoot: path.join(DATA_ROOT, dataset),
     lessonFolder: lesson.folder,
     importedAt,
     seed,
+    courseId: config.courseId,
+    bookId: bookForLesson(dataset, lesson.lessonIndex).id,
+   });
+  }
+ }
+
+ return seed;
+}
+
+export type PortableSeedBookConfig = {
+ datasetRoot: string;
+ datasetId: string;
+ id: string;
+ title: string;
+ shortTitle: string;
+ order: number;
+ targetLessonPrefix: string;
+};
+
+export type PortableSeedCourseConfig = {
+ id: string;
+ slug: string;
+ title: string;
+ subtitle: string;
+ order: number;
+ type: string;
+ books: PortableSeedBookConfig[];
+};
+
+export async function buildPortableHanziHomeSeedData(
+ config: PortableSeedCourseConfig,
+ importedAt = new Date().toISOString(),
+): Promise<HanziHomeSeedData> {
+ const seed: HanziHomeSeedData = {
+  datasets: config.books.map((book) => book.datasetId),
+  courses: [
+   {
+    id: config.id,
+    user_id: null,
+    slug: config.slug,
+    title: config.title,
+    subtitle: config.subtitle,
+    type: config.type,
+    course_order: config.order,
+    source: "seed",
+    imported_at: importedAt,
+   },
+  ],
+  books: config.books.map((book) => ({
+   id: book.id,
+   user_id: null,
+   course_id: config.id,
+   title: book.title,
+   short_title: book.shortTitle,
+   book_order: book.order,
+   source: "seed",
+   imported_at: importedAt,
+  })),
+  lessons: [],
+  lessonSections: [],
+  lessonTexts: [],
+  vocabItems: [],
+  vocabExamples: [],
+  vocabDetailSections: [],
+  grammarPoints: [],
+  grammarExamples: [],
+  grammarDetailSections: [],
+  radicals: [],
+ };
+
+ for (const book of config.books.slice().sort((left, right) => left.order - right.order)) {
+  const manifest = await readJsonFile(
+   path.join(book.datasetRoot, "manifest.json"),
+   DatasetManifestSchema,
+  );
+  if (manifest.dataset !== book.datasetId) {
+   throw new Error(
+    `Portable dataset mismatch for ${book.id}: expected ${book.datasetId}, received ${manifest.dataset}`,
+   );
+  }
+  for (const lesson of manifest.lessons
+   .slice()
+   .sort((left, right) => left.lessonIndex - right.lessonIndex)) {
+   await loadLessonSeed({
+    datasetRoot: book.datasetRoot,
+    lessonFolder: lesson.folder,
+    importedAt,
+    seed,
+    courseId: config.id,
+    bookId: book.id,
+    targetLessonPrefix: book.targetLessonPrefix,
    });
   }
  }
@@ -1370,6 +1541,17 @@ export function validateHanziHomeSeedData(
  }
  const courseIds = new Set(seed.courses.map((row) => row.id));
  const bookIds = new Set(seed.books.map((row) => row.id));
+ const duplicateVocabKeys = duplicateValues(
+  seed.vocabItems.map((row) => `${row.lesson_id}\u0000${row.word}\u0000${row.pinyin}`),
+ );
+ if (duplicateVocabKeys.length > 0) {
+  errors.push(
+   `vocabItems: duplicate active lesson/word/pinyin keys: ${duplicateVocabKeys
+    .slice(0, 10)
+    .map((key) => key.replaceAll("\u0000", " / "))
+    .join(", ")}`,
+  );
+ }
 
  const checkParent = (exists: boolean, context: string) => {
   if (exists) return;
