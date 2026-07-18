@@ -225,7 +225,7 @@ export function VocabList({
              showPinyin: true,
              showMeaning: false,
              showAnswers: false,
-             hanziFont: "kai",
+             hanziFont: "system",
              hanziSize: "2xl",
              revealMode: "always",
             },

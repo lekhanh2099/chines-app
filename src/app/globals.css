@@ -6,12 +6,6 @@
 @plugin "@tailwindcss/typography";
 
 @font-face {
- font-family: "Mengshen Han Serif";
- src: url("/fonts/Mengshen-HanSerif.ttf") format("truetype");
- font-display: swap;
-}
-
-@font-face {
  font-family: "Hanzi Songti";
  src: local("Songti SC"), local("STSong"), local("Songti TC"), local("Songti");
  font-display: swap;
@@ -60,7 +54,7 @@
 }
 
 .font-popular-xingkai {
- font-family: "Popular Xingkai", "FZKTPY01", "Mengshen Han Serif", "Hanzi Songti", serif;
+ font-family: "Popular Xingkai", "FZKTPY01", var(--font-lxgw-wenkai-mono-tc, "Hanzi Songti", serif);
 }
 
 /* =============================================
@@ -322,7 +316,14 @@
  --color-bg-inverse: var(--bg-inverse);
 
  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
- --font-hanzi: "Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif;
+ --font-hanzi: var(
+  --font-lxgw-wenkai-mono-tc,
+  "PingFang TC",
+  "PingFang SC",
+  "Microsoft JhengHei",
+  "Microsoft YaHei",
+  sans-serif
+ );
  --font-pinyin: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
 }

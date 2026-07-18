@@ -5,11 +5,17 @@ import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Geist } from "next/font/google";
+import { Geist, LXGW_WenKai_Mono_TC } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { NativeMandarinTtsProvider } from "@/features/hanzihome/listening/NativeMandarinTtsProvider";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans", preload: false });
+const lxgwWenKaiMonoTc = LXGW_WenKai_Mono_TC({
+ weight: ["400", "700"],
+ variable: "--font-lxgw-wenkai-mono-tc",
+ preload: false,
+ fallback: ["PingFang TC", "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei"],
+});
 
 export const metadata: Metadata = {
  title: "KMS — Chinese Learning Portal",
@@ -31,7 +37,7 @@ export default function RootLayout({
    lang="en"
    data-theme="light"
    suppressHydrationWarning
-   className={cn("font-sans", geist.variable)}
+   className={cn("font-sans", geist.variable, lxgwWenKaiMonoTc.variable)}
   >
    <body className="antialiased">
     <ThemeProvider>

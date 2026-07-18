@@ -2,7 +2,10 @@ import * as z from "zod";
 
 const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 const reviewResultSchema = z.enum(["again", "hard", "known"]);
-const hanziReaderFontSchema = z.enum(["system", "songti", "kai", "pinyin", "mengshen"]);
+const hanziReaderFontSchema = z.union([
+ z.enum(["system", "songti", "pinyin"]),
+ z.enum(["kai", "mengshen"]).transform(() => "system" as const),
+]);
 const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
 const moduleSchema = z.enum([
  "overview",

@@ -3,11 +3,9 @@ import type { CSSProperties } from "react";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
- system: 'var(--font-hanzi), "PingFang SC", sans-serif',
+ system: "var(--font-hanzi)",
  songti: '"Hanzi Songti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif',
- kai: '"FZKTPY01", "Kaiti SC", "KaiTi", "STKaiti", serif',
  pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", serif',
- mengshen: '"Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif',
 };
 
 const hanziFontSizes: Record<HanziReaderSize, string> = {
@@ -21,9 +19,7 @@ const hanziFontSizes: Record<HanziReaderSize, string> = {
 const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
  system: 400,
  songti: 500,
- kai: 500,
  pinyin: 500,
- mengshen: 500,
 };
 
 export function getHanziFontFamily(font: HanziReaderFont): string {

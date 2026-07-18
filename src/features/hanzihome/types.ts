@@ -220,7 +220,7 @@ export type LearningProgressItem = {
  lastReviewedAt?: string;
 };
 
-export type HanziReaderFont = "system" | "songti" | "kai" | "pinyin" | "mengshen";
+export type HanziReaderFont = "system" | "songti" | "pinyin";
 export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
 export type LessonTextRevealMode = "always" | "tap";
 

@@ -19,11 +19,9 @@ import { getHanziFontFamily } from "./hanzi-typography";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
 const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
- { value: "songti", label: "Songti" },
- { value: "kai", label: "Kai" },
- { value: "mengshen", label: "Mộng Thần" },
- { value: "pinyin", label: "Pinyin" },
  { value: "system", label: "Hệ thống" },
+ { value: "songti", label: "Songti" },
+ { value: "pinyin", label: "Pinyin" },
 ];
 
 const sizeOptions: Array<{ value: HanziReaderSize; label: string; sample: string }> = [
