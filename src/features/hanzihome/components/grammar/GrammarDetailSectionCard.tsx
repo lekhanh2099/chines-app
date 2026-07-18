@@ -20,12 +20,12 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
 
    {importantLines.length > 0 && (
     <div className="grid gap-2">
-     {importantLines.map((line) => {
+     {importantLines.map((line, index) => {
       const parts = splitImportantGrammarLine(line);
 
       return (
        <div
-        key={line}
+        key={`${section.id}-important-line-${index}`}
         className="rounded-xl border border-info/30 bg-bg-primary px-3 py-2 shadow-theme-sm"
        >
         {parts.label && (

@@ -141,8 +141,8 @@ export function GrammarBlockView({
    )}
    {notes.length > 0 && (
     <div className="grid gap-1">
-     {notes.map((note) => (
-      <p key={note} className=" font-semibold text-text-secondary">
+     {notes.map((note, index) => (
+      <p key={`${block.id}-note-${index}`} className=" font-semibold text-text-secondary">
        {note}
       </p>
      ))}
