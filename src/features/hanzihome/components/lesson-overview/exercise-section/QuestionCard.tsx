@@ -66,6 +66,7 @@ export function QuestionCard({
    showAnswer={displayMode.showAnswers}
    note={model.note}
    meaning={model.meaning || undefined}
+   displayMode={displayMode}
   >
    {hasExtra && (
     <div className="grid gap-2">
@@ -83,7 +84,7 @@ export function QuestionCard({
 
      <QuestionDataBlock title="Câu cần hoàn thành" value={model.target} displayMode={displayMode} />
 
-     <QuestionChoiceList values={model.choices} />
+     <QuestionChoiceList values={model.choices} displayMode={displayMode} />
 
      <QuestionDataBlock title="Nhận định" value={model.statement} displayMode={displayMode} />
 

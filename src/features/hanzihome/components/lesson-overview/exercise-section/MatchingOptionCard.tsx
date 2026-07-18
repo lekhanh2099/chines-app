@@ -1,6 +1,7 @@
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { matchingItemText } from "./exercise-utils";
+import { getHanziTypographyStyle } from "../hanzi-typography";
 
 export function MatchingOptionCard({
  label,
@@ -27,7 +28,11 @@ export function MatchingOptionCard({
     <span className="study-chip-accent mt-0.5 shrink-0 rounded-md border px-2 py-0.5 text-xs font-black">
      {label}
     </span>
-    <p className="min-w-0 font-black text-text-primary" lang="zh-CN">
+    <p
+     className="min-w-0 font-black leading-[1.7] text-text-primary"
+     lang="zh-CN"
+     style={getHanziTypographyStyle(displayMode)}
+    >
      {text}
     </p>
    </div>

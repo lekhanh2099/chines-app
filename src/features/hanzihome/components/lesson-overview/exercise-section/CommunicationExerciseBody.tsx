@@ -89,6 +89,7 @@ export function CommunicationExerciseBody({
       }
       answer={sample}
       showAnswer={displayMode.showAnswers}
+      displayMode={displayMode}
       note={stringValue(task, "explanation_vi")}
      />
     );

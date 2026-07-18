@@ -1,14 +1,17 @@
 import { ExerciseQuestionCard } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
+import type { LessonDisplayMode } from "../types";
 
 export function GeneratedQuestions({
  itemId,
  values,
  showAnswers = false,
+ displayMode,
 }: {
  itemId: string;
  values: unknown[];
  showAnswers?: boolean;
+ displayMode: LessonDisplayMode;
 }) {
  if (values.length === 0) return null;
 
@@ -35,6 +38,7 @@ export function GeneratedQuestions({
       answer={answer}
       showAnswer={showAnswers}
       note={stringValue(question, "explanation_vi") || stringValue(question, "note_vi")}
+      displayMode={displayMode}
      />
     );
    })}

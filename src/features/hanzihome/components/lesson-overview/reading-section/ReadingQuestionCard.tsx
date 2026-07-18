@@ -1,6 +1,7 @@
 import { ExerciseQuestionCard } from "../CommonCards";
 import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
 import { formatAnswer, objectText } from "./reading-utils";
+import type { LessonDisplayMode } from "../types";
 
 export function ReadingQuestionCard({
  itemId,
@@ -8,12 +9,14 @@ export function ReadingQuestionCard({
  questionValue,
  index,
  showAnswers = false,
+ displayMode,
 }: {
  itemId: string;
  readingType: string;
  questionValue: unknown;
  index: number;
  showAnswers?: boolean;
+ displayMode: LessonDisplayMode;
 }) {
  if (Array.isArray(questionValue)) {
   const values = questionValue.map(answerToString);
@@ -27,6 +30,7 @@ export function ReadingQuestionCard({
     title={title}
     answer={answer}
     showAnswer={showAnswers}
+    displayMode={displayMode}
    />
   );
  }
@@ -41,6 +45,7 @@ export function ReadingQuestionCard({
     key={`${itemId}-question-${index}`}
     index={index + 1}
     title={String(questionValue)}
+    displayMode={displayMode}
    />
   );
  }
@@ -94,6 +99,7 @@ export function ReadingQuestionCard({
    answer={answer}
    showAnswer={showAnswers}
    note={note}
+   displayMode={displayMode}
   />
  );
 }

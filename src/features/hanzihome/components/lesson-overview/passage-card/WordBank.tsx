@@ -10,8 +10,8 @@ export function WordBank({ words }: { words: unknown[] }) {
   <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
    <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ cho sẵn</p>
    <div className="flex flex-wrap gap-2">
-    {wordBank.map((word) => (
-     <DataPill key={word} label={word} />
+    {wordBank.map((word, index) => (
+     <DataPill key={`${word}-${index}`} label={word} />
     ))}
    </div>
   </div>

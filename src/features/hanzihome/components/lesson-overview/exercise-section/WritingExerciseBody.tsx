@@ -42,6 +42,7 @@ export function WritingExerciseBody({
       title={title}
       answer={answer}
       showAnswer={displayMode.showAnswers}
+      displayMode={displayMode}
      />
     );
 

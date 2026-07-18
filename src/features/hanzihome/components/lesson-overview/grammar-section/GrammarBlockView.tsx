@@ -6,6 +6,7 @@ import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { GrammarBlockItemView } from "./GrammarBlockItemView";
 import { GrammarMicroPractice } from "./GrammarMicroPractice";
+import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 
 export function GrammarBlockView({
  lessonId,
@@ -36,10 +37,26 @@ export function GrammarBlockView({
 
  const content = (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
-   <h5 className="font-black text-text-primary">{block.title}</h5>
+   <h5
+    className="font-black leading-tight text-text-primary"
+    lang={containsHanziText(block.title) ? "zh-CN" : undefined}
+    style={
+     containsHanziText(block.title)
+      ? getHanziTypographyStyle(displayMode, { size: "md" })
+      : undefined
+    }
+   >
+    {block.title}
+   </h5>
    {contentText && <p className=" font-semibold text-text-secondary">{contentText}</p>}
    {pattern && (
-    <p className="rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">{pattern}</p>
+    <p
+     className="rounded-lg bg-accent-subtle px-3 py-2 font-black leading-[1.7] text-accent-text"
+     lang={containsHanziText(pattern) ? "zh-CN" : undefined}
+     style={containsHanziText(pattern) ? getHanziTypographyStyle(displayMode) : undefined}
+    >
+     {pattern}
+    </p>
    )}
    {displayMode.showMeaning && meaning && (
     <p className=" font-semibold text-text-secondary">{meaning}</p>
@@ -48,7 +65,11 @@ export function GrammarBlockView({
     <div className="grid gap-2">
      {formulas.map((formula, index) => {
       const formulaContent = (
-       <p className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2  font-black text-info-text">
+       <p
+        className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2 font-black leading-[1.7] text-info-text"
+        lang="zh-CN"
+        style={getHanziTypographyStyle(displayMode, { size: "md" })}
+       >
         {stringValue(formula, "label") ? `${stringValue(formula, "label")}: ` : ""}
         {stringValue(formula, "pattern")}
        </p>
@@ -142,7 +163,7 @@ export function GrammarBlockView({
    {notes.length > 0 && (
     <div className="grid gap-1">
      {notes.map((note, index) => (
-      <p key={`${block.id}-note-${index}`} className=" font-semibold text-text-secondary">
+      <p key={`${block.id}-note-${index}`} className="font-semibold text-text-secondary">
        {note}
       </p>
      ))}

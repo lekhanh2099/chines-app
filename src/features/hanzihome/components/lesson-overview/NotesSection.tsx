@@ -2,6 +2,7 @@ import type { NoteItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
+import { containsHanziText, getHanziTypographyStyle } from "./hanzi-typography";
 
 export function NoteCard({
  item,
@@ -15,9 +16,23 @@ export function NoteCard({
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div className="grid gap-1">
-    <h4 className="text-lg font-black text-text-primary">{item.title}</h4>
+    <h4
+     className="font-black leading-tight text-text-primary"
+     lang={containsHanziText(item.title) ? "zh-CN" : undefined}
+     style={
+      containsHanziText(item.title)
+       ? getHanziTypographyStyle(displayMode, { size: "md" })
+       : undefined
+     }
+    >
+     {item.title}
+    </h4>
     {item.structure && (
-     <p className="rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">
+     <p
+      className="rounded-lg bg-accent-subtle px-3 py-2 font-black leading-[1.7] text-accent-text"
+      lang={containsHanziText(item.structure) ? "zh-CN" : undefined}
+      style={containsHanziText(item.structure) ? getHanziTypographyStyle(displayMode) : undefined}
+     >
       {item.structure}
      </p>
     )}

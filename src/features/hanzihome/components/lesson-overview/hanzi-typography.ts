@@ -10,10 +10,10 @@ const hanziFontFamilies: Record<HanziReaderFont, string> = {
 
 const hanziFontSizes: Record<HanziReaderSize, string> = {
  md: "1.125rem",
- lg: "1.375rem",
- xl: "1.75rem",
- "2xl": "2.125rem",
- "3xl": "2.625rem",
+ lg: "clamp(1.25rem, 3.5vw, 1.375rem)",
+ xl: "clamp(1.375rem, 4vw, 1.75rem)",
+ "2xl": "clamp(1.5rem, 4.5vw, 2.125rem)",
+ "3xl": "clamp(1.75rem, 5vw, 2.625rem)",
 };
 
 const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
@@ -21,6 +21,12 @@ const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
  songti: 500,
  pinyin: 500,
 };
+
+const HAN_SCRIPT_PATTERN = /\p{Script=Han}/u;
+
+export function containsHanziText(value: string): boolean {
+ return HAN_SCRIPT_PATTERN.test(value);
+}
 
 export function getHanziFontFamily(font: HanziReaderFont): string {
  return hanziFontFamilies[font];

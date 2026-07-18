@@ -5,6 +5,7 @@ import { ExerciseBody } from "./exercise-section/ExerciseBody";
 import { RawExerciseDataDetails } from "./exercise-section/RawExerciseDataDetails";
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
+import { getHanziTypographyStyle } from "./hanzi-typography";
 
 const EXERCISE_PAGE_METADATA_PATTERN = /^Trang bài tập\s+\d+$/i;
 
@@ -45,7 +46,11 @@ export function ExerciseCard({
      {item.order}
     </span>
     <div className="grid gap-1 min-w-0 flex-1">
-     <h4 lang="zh-CN" className="text-lg font-black leading-tight text-text-primary sm:text-xl">
+     <h4
+      lang="zh-CN"
+      className="font-black leading-tight text-text-primary"
+      style={getHanziTypographyStyle(displayMode, { size: "md" })}
+     >
       {title}
      </h4>
      {displayMode.showMeaning && titleVi && titleVi !== title ? (

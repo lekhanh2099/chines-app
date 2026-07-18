@@ -209,6 +209,7 @@ export function getRenderableFields(
 
  return orderedKeys
   .filter((key, index) => orderedKeys.indexOf(key) === index)
+  .filter((key) => !key.startsWith("source_"))
   .filter((key) => !hiddenFields.has(key))
   .map((key) => ({ key, label: getFieldLabel(key), value: item[key] }))
   .filter((field) => hasRenderableValue(field.value));

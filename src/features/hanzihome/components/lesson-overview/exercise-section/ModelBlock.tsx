@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
+import { getHanziTypographyStyle } from "../hanzi-typography";
 
 export function ModelBlock({
  title = "Mẫu",
@@ -51,7 +52,11 @@ export function ModelBlock({
 
      if (typeof value === "string") {
       const content = (
-       <p className="text-base font-black text-text-primary" lang="zh-CN">
+       <p
+        className="font-black leading-[1.7] text-text-primary"
+        lang="zh-CN"
+        style={getHanziTypographyStyle(displayMode)}
+       >
         {zh}
        </p>
       );

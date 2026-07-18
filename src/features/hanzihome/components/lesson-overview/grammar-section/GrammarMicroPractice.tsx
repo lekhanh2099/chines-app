@@ -33,6 +33,7 @@ export function GrammarMicroPractice({
       answer={answer}
       showAnswer={displayMode.showAnswers}
       note={stringValue(question, "explanation_vi")}
+      displayMode={displayMode}
      />
     );
    })}

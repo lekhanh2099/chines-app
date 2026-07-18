@@ -257,10 +257,10 @@ export function QuestionExerciseBody({
      value={wordBank}
      label="Từ cho sẵn"
     >
-     <WordBank values={wordBank} />
+     <WordBank values={wordBank} displayMode={displayMode} />
     </EditableNodeWrapper>
    ) : (
-    <WordBank values={wordBank} />
+    <WordBank values={wordBank} displayMode={displayMode} />
    )}
 
    <InfoBlock title="Tình huống" value={scenarioText} />
@@ -278,6 +278,7 @@ export function QuestionExerciseBody({
      title={stringValue(model, "prompt") || "Mẫu"}
      answer={stringValue(model, "answer")}
      showAnswer={displayMode.showAnswers}
+     displayMode={displayMode}
     />
    )}
 

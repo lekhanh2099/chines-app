@@ -8,6 +8,7 @@ import { NoteCard } from "./NotesSection";
 import { ReadingCard } from "./ReadingSection";
 import { TextBlockView } from "./TextSection";
 import { ProperNounCard } from "./book-section/ProperNounCard";
+import { PreparationSectionView } from "./book-section/PreparationSectionView";
 import { SectionContentFrame } from "./book-section/SectionContentFrame";
 import { SummarySectionView } from "./book-section/SummarySectionView";
 import { properNounFrontText } from "./book-section/proper-noun-utils";
@@ -249,16 +250,11 @@ export function BookSectionContent({
     debugMode={debugMode}
    >
     {section.items.length > 0 ? (
-     <div className="grid gap-3">
-      {section.items.map((item, index) => (
-       <GenericItemCard
-        key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
-        value={item}
-        displayMode={displayMode}
-        debugMode={debugMode}
-       />
-      ))}
-     </div>
+     <PreparationSectionView
+      items={section.items}
+      displayMode={displayMode}
+      debugMode={debugMode}
+     />
     ) : (
      renderSectionFallback()
     )}

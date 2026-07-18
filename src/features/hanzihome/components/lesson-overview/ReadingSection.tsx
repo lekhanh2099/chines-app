@@ -184,6 +184,7 @@ export function ReadingCard({
         readingType={item.type}
         questionValue={questionValue}
         index={index}
+        displayMode={displayMode}
         showAnswers={displayMode.showAnswers}
        />
       );
@@ -213,6 +214,7 @@ export function ReadingCard({
     itemId={item.id}
     values={generatedQuestions}
     showAnswers={displayMode.showAnswers}
+    displayMode={displayMode}
    />
 
    <RetellOutline itemId={item.id} values={retellOutline} />

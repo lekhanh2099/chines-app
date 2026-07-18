@@ -2,8 +2,9 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, LooseItemGrid, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
-import { arrayValue, asRecord, sectionEmptyReason } from "../utils";
+import { arrayValue, asRecord, sectionEmptyReason, stringValue } from "../utils";
 import { buildSummaryGroups } from "./summary-utils";
+import { VocabularyComparisonCard } from "./VocabularyComparisonCard";
 
 export function SummarySectionView({
  section,
@@ -26,9 +27,15 @@ export function SummarySectionView({
  ];
 
  const hasGroups = groups.length > 0;
- const hasLooseItems = looseItems.some(hasRenderableValue);
+ const comparisonItems = looseItems.filter(
+  (item) => asRecord(item).type === "vocabulary_comparison",
+ );
+ const remainingLooseItems = looseItems.filter(
+  (item) => asRecord(item).type !== "vocabulary_comparison",
+ );
+ const hasLooseItems = remainingLooseItems.some(hasRenderableValue);
 
- if (!hasGroups && !hasLooseItems) {
+ if (!hasGroups && !hasLooseItems && comparisonItems.length === 0) {
   return <EmptySectionState reason={sectionEmptyReason(section)} />;
  }
 
@@ -54,7 +61,15 @@ export function SummarySectionView({
     </div>
    ))}
 
-   {hasLooseItems && <LooseItemGrid items={looseItems} displayMode={displayMode} />}
+   {comparisonItems.map((item, index) => (
+    <VocabularyComparisonCard
+     key={stringValue(asRecord(item), "id") || `${section.id}-comparison-${index}`}
+     value={item}
+     displayMode={displayMode}
+    />
+   ))}
+
+   {hasLooseItems && <LooseItemGrid items={remainingLooseItems} displayMode={displayMode} />}
   </div>
  );
 }

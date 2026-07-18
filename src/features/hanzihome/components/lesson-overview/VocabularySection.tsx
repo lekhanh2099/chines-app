@@ -8,6 +8,7 @@ import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/Vocab
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
+import { getHanziTypographyStyle } from "./hanzi-typography";
 import { asRecord, stringValue } from "./utils";
 
 function vocabMeaning(item: VocabularyItem) {
@@ -58,7 +59,11 @@ export function VocabMiniGrid({
      return (
       <div key={item.id} className="study-content-surface rounded-xl border p-3">
        <div className="flex flex-wrap items-center gap-2">
-        <p className="text-2xl font-black text-text-primary" lang="zh-CN">
+        <p
+         className="font-black leading-[1.5] text-text-primary"
+         lang="zh-CN"
+         style={getHanziTypographyStyle(displayMode)}
+        >
          {item.hanzi}
         </p>
         <NativeMandarinSpeakButton text={item.hanzi} />

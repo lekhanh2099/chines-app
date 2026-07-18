@@ -3,6 +3,7 @@ import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
 import { hasRenderableValue } from "../CommonCards";
 import { lineTextFromValue } from "./exercise-utils";
+import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 
 export function QuestionDataBlock({
  title,
@@ -23,7 +24,13 @@ export function QuestionDataBlock({
   return (
    <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
-    <p className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary">{text}</p>
+    <p
+     className="whitespace-pre-wrap font-semibold leading-[1.7] text-text-primary"
+     lang={containsHanziText(text) ? "zh-CN" : undefined}
+     style={containsHanziText(text) ? getHanziTypographyStyle(displayMode) : undefined}
+    >
+     {text}
+    </p>
    </div>
   );
  }
@@ -42,6 +49,7 @@ export function QuestionDataBlock({
        key={`${title}-${index}`}
        className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary"
        lang="zh-CN"
+       style={getHanziTypographyStyle(displayMode)}
       >
        {line}
       </p>

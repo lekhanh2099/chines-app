@@ -1,6 +1,6 @@
 import { PassageCard } from "../PassageCard";
 import { TextLineCard } from "../TextLineCard";
-import { getHanziTypographyStyle } from "../hanzi-typography";
+import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 import {
  answerToString,
@@ -58,7 +58,15 @@ export function GenericItemCard({
 
  return (
   <article className="study-content-surface grid gap-2 rounded-xl border p-3">
-   <h4 className="text-base font-black text-text-primary">{title}</h4>
+   <h4
+    className="font-black leading-tight text-text-primary"
+    lang={containsHanziText(title) ? "zh-CN" : undefined}
+    style={
+     containsHanziText(title) ? getHanziTypographyStyle(displayMode, { size: "md" }) : undefined
+    }
+   >
+    {title}
+   </h4>
 
    {hanzi && hanzi !== title && (
     <div className="flex items-center gap-1.5">
@@ -163,6 +171,7 @@ export function GenericItemCard({
         answer={sampleAnswer}
         showAnswer={displayMode.showAnswers}
         note={stringValue(task, "explanation_vi")}
+        displayMode={displayMode}
        />
       );
      })}

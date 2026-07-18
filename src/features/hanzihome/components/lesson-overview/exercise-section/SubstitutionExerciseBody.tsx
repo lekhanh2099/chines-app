@@ -2,6 +2,7 @@ import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, ExerciseQuestionCard, LooseItemGrid } from "../CommonCards";
+import { getHanziTypographyStyle } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
 import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
@@ -214,6 +215,7 @@ export function SubstitutionExerciseBody({
              answer={answer}
              showAnswer={displayMode.showAnswers}
              note={stringValue(entry, "explanation_vi")}
+             displayMode={displayMode}
             />
            );
 
@@ -267,12 +269,18 @@ export function SubstitutionExerciseBody({
          title={stringValue(entry, "title_vi") || `Mẫu ${index + 1}`}
          answer={answer}
          showAnswer={displayMode.showAnswers}
+         displayMode={displayMode}
         >
          {itemModel.length > 0 && (
           <div className="exercise-answer-surface grid gap-1.5 rounded-lg border p-3">
            <p className="text-xs font-black uppercase tracking-wide text-accent-text">Mẫu</p>
            {itemModel.map((line, li) => (
-            <p key={li} className="text-base font-black text-text-primary" lang="zh-CN">
+            <p
+             key={`${item.id}-model-${index}-${li}`}
+             className="font-black leading-[1.7] text-text-primary"
+             lang="zh-CN"
+             style={getHanziTypographyStyle(displayMode)}
+            >
              {answerToString(line)}
             </p>
            ))}
@@ -286,9 +294,10 @@ export function SubstitutionExerciseBody({
            <div className="flex flex-wrap gap-1.5">
             {itemPrompts.map((prompt, pi) => (
              <span
-              key={pi}
+              key={`${item.id}-prompt-${index}-${pi}`}
               className="rounded-md border border-border-default bg-bg-card px-2 py-1 text-xs font-bold text-text-secondary"
               lang="zh-CN"
+              style={getHanziTypographyStyle(displayMode, { size: "md" })}
              >
               {answerToString(prompt)}
              </span>
@@ -338,6 +347,7 @@ export function SubstitutionExerciseBody({
         }
         answer={answer}
         showAnswer={displayMode.showAnswers}
+        displayMode={displayMode}
         note={stringValue(entry, "explanation_vi")}
        />
       );

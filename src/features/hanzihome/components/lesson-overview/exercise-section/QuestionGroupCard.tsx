@@ -60,7 +60,7 @@ export function QuestionGroupCard({
     {note && <p className=" font-semibold text-text-muted">{note}</p>}
    </div>
 
-   <WordBank values={wordBank} />
+   <WordBank values={wordBank} displayMode={displayMode} />
 
    {questions.length > 0 && (
     <div className="grid gap-2">
