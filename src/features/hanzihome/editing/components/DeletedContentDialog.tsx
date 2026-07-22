@@ -17,9 +17,11 @@ import {
  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
+ purgeDeletedCanonicalContent,
  restoreCanonicalContent,
  restoreNestedSectionNode,
 } from "@/features/hanzihome/editing/direct-save";
+import type { PurgeableCanonicalEntityType } from "@/features/hanzihome/editing/direct-save";
 import { invalidateHanziHomeContent } from "@/features/hanzihome/editing/invalidate-content";
 import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
 import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
@@ -65,6 +67,12 @@ const deletedContentResponseSchema = z.object({
  ),
 });
 
+type DeletedContentItem = z.infer<typeof deletedContentResponseSchema>["items"][number];
+type CanonicalDeletedContentItem = Extract<DeletedContentItem, { kind: "canonical" }>;
+type PurgeableDeletedContentItem = Omit<CanonicalDeletedContentItem, "entityType"> & {
+ entityType: PurgeableCanonicalEntityType;
+};
+
 const entityLabels: Partial<Record<string, string>> = {
  course: "Khóa học",
  book: "Quyển",
@@ -101,6 +109,11 @@ function entityLabel(entityType: string) {
  return entityLabels[entityType] ?? "Nội dung";
 }
 
+function isPurgeableItem(item: DeletedContentItem): item is PurgeableDeletedContentItem {
+ if (item.kind !== "canonical") return false;
+ return item.entityType === "course" || item.entityType === "book" || item.entityType === "lesson";
+}
+
 async function getDeletedContent() {
  const response = await fetch("/api/hanzihome/content/deleted", {
   headers: { Accept: "application/json" },
@@ -116,7 +129,7 @@ export function DeletedContentDialog({
  presentation?: "toolbar" | "menu";
 }) {
  const [open, setOpen] = useState(false);
- const [restoringId, setRestoringId] = useState<string | null>(null);
+ const [pendingItemKey, setPendingItemKey] = useState<string | null>(null);
  const queryClient = useQueryClient();
  const deletedQuery = useQuery({
   queryKey: hanzihomeQueryKeys.deletedContent,
@@ -125,7 +138,8 @@ export function DeletedContentDialog({
  });
 
  async function restoreItem(item: NonNullable<typeof deletedQuery.data>[number]) {
-  setRestoringId(item.entityId);
+  const itemKey = `${item.entityType}:${item.entityId}`;
+  setPendingItemKey(itemKey);
   try {
    if (item.kind === "nested") {
     await restoreNestedSectionNode({
@@ -163,7 +177,36 @@ export function DeletedContentDialog({
    }
    toast.error(error instanceof Error ? error.message : "Không thể khôi phục nội dung.");
   } finally {
-   setRestoringId(null);
+   setPendingItemKey(null);
+  }
+ }
+
+ async function purgeItem(item: PurgeableDeletedContentItem) {
+  const itemKey = `${item.entityType}:${item.entityId}`;
+  setPendingItemKey(itemKey);
+  try {
+   await purgeDeletedCanonicalContent({
+    entityType: item.entityType,
+    entityId: item.entityId,
+    expectedUpdatedAt: item.updatedAt,
+    reason: `Xóa vĩnh viễn ${entityLabel(item.entityType)}: ${item.label}`,
+   });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.deletedContent });
+   await invalidateHanziHomeContent({
+    queryClient,
+    lessonId: item.lessonId,
+    entityType: item.entityType,
+   });
+   toast.success("Đã xóa vĩnh viễn nội dung và dữ liệu con.");
+  } catch (error) {
+   if (isHanziHomeMutationConflict(error)) {
+    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.deletedContent });
+    toast.error("Nội dung đã thay đổi, đang tải lại.");
+    return;
+   }
+   toast.error(error instanceof Error ? error.message : "Không thể xóa vĩnh viễn nội dung.");
+  } finally {
+   setPendingItemKey(null);
   }
  }
 
@@ -183,7 +226,10 @@ export function DeletedContentDialog({
    <DialogContent className="max-w-3xl">
     <DialogHeader>
      <DialogTitle>Nội dung đã xóa</DialogTitle>
-     <DialogDescription>Khôi phục các node đã xóa mềm trong thư viện dùng chung.</DialogDescription>
+     <DialogDescription>
+      Khôi phục nội dung đã xóa mềm. Khóa học, quyển và bài học cũng có thể bị xóa vĩnh viễn cùng
+      toàn bộ dữ liệu con.
+     </DialogDescription>
     </DialogHeader>
     <DialogBody className="max-h-[65vh] overflow-y-auto">
      {deletedQuery.isPending ? (
@@ -192,29 +238,47 @@ export function DeletedContentDialog({
       <p className="text-sm text-danger-text">{deletedQuery.error.message}</p>
      ) : deletedQuery.data?.length ? (
       <div className="grid gap-2">
-       {deletedQuery.data.map((item) => (
-        <div
-         key={`${item.entityType}:${item.entityId}`}
-         className="flex items-center justify-between gap-3 rounded-lg border border-border-default p-3"
-        >
-         <div className="min-w-0">
-          <p className="truncate font-bold text-text-primary">{item.label}</p>
-          <p className="text-xs text-text-muted">
-           {entityLabel(item.entityType)} · {new Date(item.deletedAt).toLocaleString("vi-VN")}
-          </p>
-         </div>
-         <Button
-          type="button"
-          size="sm"
-          variant="outline"
-          disabled={restoringId === item.entityId}
-          onClick={() => void restoreItem(item)}
+       {deletedQuery.data.map((item) => {
+        const itemKey = `${item.entityType}:${item.entityId}`;
+        const isPending = pendingItemKey === itemKey;
+        return (
+         <div
+          key={itemKey}
+          className="flex items-center justify-between gap-3 rounded-lg border border-border-default p-3"
          >
-          <RotateCcw className="h-4 w-4" />
-          Khôi phục
-         </Button>
-        </div>
-       ))}
+          <div className="min-w-0">
+           <p className="truncate font-bold text-text-primary">{item.label}</p>
+           <p className="text-xs text-text-muted">
+            {entityLabel(item.entityType)} · {new Date(item.deletedAt).toLocaleString("vi-VN")}
+           </p>
+          </div>
+          <div className="flex w-full shrink-0 flex-wrap justify-end gap-2 sm:w-auto">
+           {isPurgeableItem(item) ? (
+            <Button
+             type="button"
+             size="sm"
+             variant="destructive"
+             disabled={pendingItemKey !== null}
+             onClick={() => void purgeItem(item)}
+            >
+             <Trash2 />
+             {isPending ? "Đang xóa..." : "Xóa vĩnh viễn"}
+            </Button>
+           ) : null}
+           <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            disabled={pendingItemKey !== null}
+            onClick={() => void restoreItem(item)}
+           >
+            <RotateCcw />
+            {isPending ? "Đang xử lý..." : "Khôi phục"}
+           </Button>
+          </div>
+         </div>
+        );
+       })}
       </div>
      ) : (
       <p className="text-sm text-text-muted">Không có nội dung đã xóa.</p>

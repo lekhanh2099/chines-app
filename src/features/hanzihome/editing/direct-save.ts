@@ -441,6 +441,30 @@ export async function restoreCanonicalContent({
  return readMutationResponse(response, "Khôi phục thất bại");
 }
 
+export type PurgeableCanonicalEntityType = Extract<
+ RestorableCanonicalEntityType,
+ "course" | "book" | "lesson"
+>;
+
+export async function purgeDeletedCanonicalContent({
+ entityType,
+ entityId,
+ expectedUpdatedAt,
+ reason,
+}: {
+ entityType: PurgeableCanonicalEntityType;
+ entityId: string;
+ expectedUpdatedAt: string;
+ reason: string;
+}) {
+ const response = await fetch("/api/hanzihome/content/deleted/purge", {
+  method: "POST",
+  headers: { Accept: "application/json", "Content-Type": "application/json" },
+  body: JSON.stringify({ entityType, entityId, expectedUpdatedAt, reason }),
+ });
+ return readMutationResponse(response, "Xóa vĩnh viễn thất bại");
+}
+
 export async function restoreNestedSectionNode({
  sectionId,
  entityType,

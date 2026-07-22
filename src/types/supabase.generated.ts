@@ -2061,6 +2061,14 @@ export type Database = {
      vocab_count: number;
     }[];
    };
+   hanzihome_apply_external_seed_patches: {
+    Args: { p_patches: Json };
+    Returns: Json;
+   };
+   hanzihome_import_external_seed_package: {
+    Args: { p_seed: Json };
+    Returns: Json;
+   };
    hanzihome_list_vocab_children: {
     Args: {
      p_deleted?: boolean;
@@ -2072,41 +2080,6 @@ export type Database = {
      p_scope_type: string;
      p_section_keys?: string[];
     };
-    Returns: Json;
-   };
-   hanzihome_preview_vocab_child_bulk: {
-    Args: {
-     p_deleted?: boolean;
-     p_entity_type: string;
-     p_ids?: string[];
-     p_query?: string;
-     p_scope_id: string;
-     p_scope_type: string;
-     p_section_keys?: string[];
-    };
-    Returns: Json;
-   };
-   hanzihome_mutate_vocab_child_bulk: {
-    Args: {
-     p_entity_type: string;
-     p_expected_count: number;
-     p_expected_fingerprint: string;
-     p_ids?: string[];
-     p_operation: string;
-     p_query?: string;
-     p_reason: string;
-     p_scope_id: string;
-     p_scope_type: string;
-     p_section_keys?: string[];
-    };
-    Returns: Json;
-   };
-   hanzihome_apply_external_seed_patches: {
-    Args: { p_patches: Json };
-    Returns: Json;
-   };
-   hanzihome_import_external_seed_package: {
-    Args: { p_seed: Json };
     Returns: Json;
    };
    hanzihome_mutate_content: {
@@ -2142,6 +2115,42 @@ export type Database = {
     };
     Returns: Json;
    };
+   hanzihome_mutate_vocab_child_bulk: {
+    Args: {
+     p_entity_type: string;
+     p_expected_count: number;
+     p_expected_fingerprint: string;
+     p_ids?: string[];
+     p_operation: string;
+     p_query?: string;
+     p_reason: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: Json;
+   };
+   hanzihome_preview_vocab_child_bulk: {
+    Args: {
+     p_deleted?: boolean;
+     p_entity_type: string;
+     p_ids?: string[];
+     p_query?: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: Json;
+   };
+   hanzihome_purge_deleted_content_as_user: {
+    Args: {
+     p_entity_id: string;
+     p_entity_type: string;
+     p_expected_updated_at: string;
+     p_reason: string;
+    };
+    Returns: Json;
+   };
    hanzihome_refresh_external_seed_package: {
     Args: { p_seed: Json };
     Returns: Json;
@@ -2163,6 +2172,31 @@ export type Database = {
      p_reason?: string;
     };
     Returns: Json;
+   };
+   hanzihome_vocab_child_candidates: {
+    Args: {
+     p_deleted?: boolean;
+     p_entity_type: string;
+     p_ids?: string[];
+     p_query?: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: {
+     book_id: string;
+     course_id: string;
+     deleted_at: string;
+     id: string;
+     label: string;
+     lesson_id: string;
+     owner_id: string;
+     section_key: string;
+     source: string;
+     updated_at: string;
+     vocab_item_id: string;
+     word: string;
+    }[];
    };
    is_hanzihome_content_editor: { Args: never; Returns: boolean };
    update_lesson_text_annotation_note: {
