@@ -1,0 +1,21 @@
+{
+ "directPrimitiveImport": [
+  "src/components/layout/ProfileSettingsMenu.tsx",
+  "src/components/notes/NoteEditorPanel.tsx",
+  "src/features/hanzihome/components/lesson-overview/LessonModuleFrame.tsx"
+ ],
+ "inlineZIndex": [
+  "src/components/layout/ProfileSettingsMenu.tsx",
+  "src/components/notes/NoteEditorPanel.tsx",
+  "src/features/hanzihome/components/lesson-overview/LessonModuleFrame.tsx"
+ ],
+ "arbitraryZIndexClass": [
+  "src/components/editor/nodes/InlineNoteNode.tsx",
+  "src/components/editor/plugins/NodeHoverPlugin.tsx"
+ ],
+ "legacySelectImport": ["src/components/form/fields/FormSelect.tsx"],
+ "rawSelect": [
+  "src/components/tanstack-form/field/SelectField.tsx",
+  "src/features/hanzihome/components/aggregate-library/FilterSelect.tsx"
+ ]
+}
