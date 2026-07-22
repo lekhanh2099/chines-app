@@ -2,13 +2,39 @@
 
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { VocabReviewPanel } from "./VocabReviewPanel";
+import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export function LessonVocabReviewPanel() {
  const runtime = useHanziHomeRuntime();
+ const vocabularyQuery = useHanziHomeLessonVocabulary(runtime.lesson.id);
+
+ if (vocabularyQuery.isPending) {
+  return (
+   <div className="h-72 animate-pulse rounded-2xl bg-bg-subtle" aria-label="Đang tải bộ ôn tập" />
+  );
+ }
+
+ if (vocabularyQuery.isError) {
+  return (
+   <Card padding="lg" className="grid justify-items-start gap-3">
+    <p className="font-semibold text-text-primary">Không tải được bộ ôn tập.</p>
+    <Button type="button" variant="outline" onClick={() => vocabularyQuery.refetch()}>
+     Thử lại
+    </Button>
+   </Card>
+  );
+ }
+
+ const lesson = {
+  ...runtime.lesson,
+  vocab: vocabularyQuery.data?.items ?? [],
+ };
 
  return (
   <VocabReviewPanel
-   lesson={runtime.lesson}
+   lesson={lesson}
    learningState={runtime.learningState}
    onAnswer={runtime.answerReview}
    onToggleBookmark={(scope, id) =>

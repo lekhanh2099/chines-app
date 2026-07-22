@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { HanyuLessonSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { runtimeDeepVocabularyItemSchema } from "@/features/hanzihome/schemas/runtime-content.schema";
+import { VocabularyExampleSchema } from "@/features/hanzihome/schemas/vocab.schema";
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
 const editableRecordMetaSchema = z.object({
@@ -22,20 +23,30 @@ export const vocabExampleSchema = z.object({
  pinyin: z.string().optional(),
  vi: z.string().optional(),
  note: z.string().optional(),
+ editMeta: editableRecordMetaSchema.optional(),
 });
 
-const vocabDetailSectionSchema = z.object({
+const detailSectionSchema = z.object({
  id: z.string(),
  key: z.string().trim().min(1, "Thiếu key"),
  title: z.string().trim().min(1, "Thiếu tiêu đề"),
  lines: z.array(z.string().trim().min(1)).default([]),
 });
 
+const vocabDetailSectionSchema = detailSectionSchema.extend({
+ order: z.number().int().positive(),
+ editMeta: editableRecordMetaSchema.optional(),
+});
+
 export const hanziHomeVocabItemSchema = runtimeDeepVocabularyItemSchema.extend({
+ examples: z.array(
+  VocabularyExampleSchema.extend({ editMeta: editableRecordMetaSchema.optional() }),
+ ),
  runtimeId: z.string(),
  lessonId: z.string().optional(),
  category: z.string(),
  tone: z.string().optional(),
+ detailSections: z.array(vocabDetailSectionSchema).optional(),
  editMeta: editableRecordMetaSchema.optional(),
 });
 
@@ -51,7 +62,7 @@ export const grammarViewModelSchema = z.object({
  structuresView: z.array(z.string()),
  examplesParsed: z.array(vocabExampleSchema),
  notes: z.array(z.string()),
- detailSections: z.array(vocabDetailSectionSchema).optional(),
+ detailSections: z.array(detailSectionSchema).optional(),
  editMeta: editableRecordMetaSchema.optional(),
 });
 
@@ -215,6 +226,13 @@ const aggregateGrammarItemSchema = z.object({
 export const catalogApiResponseSchema = z.object({ catalog: hanziHomeCatalogSchema });
 export const courseLessonsApiResponseSchema = z.object({ lessons: z.array(lessonSchema) });
 export const lessonApiResponseSchema = z.object({ lesson: lessonSchema });
+export const lessonVocabularyApiResponseSchema = z.object({
+ resource: z.object({
+  lessonId: z.string(),
+  items: z.array(hanziHomeVocabItemSchema),
+  total: z.number().int().nonnegative(),
+ }),
+});
 export const aggregateApiResponseSchema = z.object({
  items: z.array(z.union([aggregateVocabItemSchema, aggregateGrammarItemSchema])),
 });

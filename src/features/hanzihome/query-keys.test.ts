@@ -48,4 +48,21 @@ describe("hanzihomeQueryKeys", () => {
   expect(isInvalidated(queryClient, catalogKey)).toBe(true);
   expect(isInvalidated(queryClient, courseLessonsKey)).toBe(true);
  });
+
+ it("invalidates only the vocabulary resource for child edits", async () => {
+  const queryClient = new QueryClient();
+  const lessonKey = hanzihomeQueryKeys.lessonDetail("lesson-1");
+  const vocabularyKey = hanzihomeQueryKeys.lessonResource("lesson-1", "vocabulary");
+  queryClient.setQueryData(lessonKey, { id: "lesson-1" });
+  queryClient.setQueryData(vocabularyKey, { words: [] });
+
+  await invalidateHanziHomeContent({
+   queryClient,
+   lessonId: "lesson-1",
+   entityType: "vocab_example",
+  });
+
+  expect(isInvalidated(queryClient, vocabularyKey)).toBe(true);
+  expect(isInvalidated(queryClient, lessonKey)).toBe(false);
+ });
 });

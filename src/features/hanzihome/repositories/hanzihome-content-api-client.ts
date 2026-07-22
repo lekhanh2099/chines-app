@@ -8,6 +8,7 @@ import {
  courseLessonsApiResponseSchema,
  learningStateApiResponseSchema,
  lessonApiResponseSchema,
+ lessonVocabularyApiResponseSchema,
 } from "@/features/hanzihome/hanzihome-api.schemas";
 import type {
  HanziHomeCatalogData,
@@ -19,6 +20,7 @@ import type {
  AggregateKind,
  AggregateResourceItem,
 } from "./hanzihome-content-resources";
+import type { LessonVocabularyListResource } from "./hanzihome-content-resources";
 
 export class HanziHomeApiError extends Error {
  constructor(
@@ -102,6 +104,17 @@ export async function fetchHanziHomeLessonDetail(
  );
 
  return payload.lesson;
+}
+
+export async function fetchHanziHomeLessonVocabulary(
+ lessonId: string,
+): Promise<LessonVocabularyListResource | null> {
+ if (!lessonId) return null;
+ const payload = await fetchJson(
+  `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}/vocabulary`,
+  lessonVocabularyApiResponseSchema,
+ );
+ return payload.resource;
 }
 
 export async function fetchHanziHomeAggregateItems({

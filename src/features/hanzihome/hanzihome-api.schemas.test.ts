@@ -65,6 +65,35 @@ describe("HanziHome API response contracts", () => {
   ).toBe(false);
  });
 
+ it("accepts grammar detail sections without vocab-only ordering metadata", () => {
+  const result = lessonApiResponseSchema.safeParse({
+   lesson: {
+    ...lesson,
+    grammarPointIds: ["lesson-1__grammar-1"],
+    grammar: [
+     {
+      id: "lesson-1__grammar-1",
+      cleanTitle: "把",
+      core: "把字句",
+      structuresView: [],
+      examplesParsed: [],
+      notes: [],
+      detailSections: [
+       {
+        id: "grammar-detail-1",
+        key: "usage",
+        title: "Cách dùng",
+        lines: ["把 + O + V"],
+       },
+      ],
+     },
+    ],
+   },
+  });
+
+  expect(result.success).toBe(true);
+ });
+
  it("rejects aggregate records without their course, book, and lesson boundary", () => {
   const result = aggregateApiResponseSchema.safeParse({
    items: [{ id: "vocab-1", word: "你好", pinyin: "nǐ hǎo", meaning: "xin chào" }],

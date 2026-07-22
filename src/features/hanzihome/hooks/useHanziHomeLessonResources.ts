@@ -2,13 +2,15 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import {
+ fetchHanziHomeLessonDetail,
+ fetchHanziHomeLessonVocabulary,
+} from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
  buildLessonGrammarResource,
  buildLessonOverviewResource,
  buildLessonSectionsResource,
- buildLessonVocabularyResource,
  type LessonGrammarListResource,
  type LessonOverviewResource,
  type LessonSectionsResource,
@@ -38,12 +40,13 @@ export function useHanziHomeLessonSections(lessonId: string): LessonSectionsReso
  return query.data ? buildLessonSectionsResource(query.data) : null;
 }
 
-export function useHanziHomeLessonVocabulary(
- lessonId: string,
-): LessonVocabularyListResource | null {
- const query = useHanziHomeLessonDetailResource(lessonId);
-
- return query.data ? buildLessonVocabularyResource(query.data) : null;
+export function useHanziHomeLessonVocabulary(lessonId: string) {
+ return useQuery<LessonVocabularyListResource | null>({
+  queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
+  queryFn: () => fetchHanziHomeLessonVocabulary(lessonId),
+  staleTime: lessonResourceStaleTime,
+  enabled: Boolean(lessonId),
+ });
 }
 
 export function useHanziHomeLessonGrammar(lessonId: string): LessonGrammarListResource | null {

@@ -24,7 +24,6 @@ import {
  buildLessonGrammarResource,
  buildLessonOverviewResource,
  buildLessonSectionsResource,
- buildLessonVocabularyResource,
  type AggregateFilters,
  type AggregateGrammarItem,
  type AggregateKind,
@@ -246,6 +245,16 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
     audio_key: "",
     notes: [],
     check_needed: isMissingRequiredText(example.pinyin) || isMissingRequiredText(example.vi),
+    editMeta: {
+     entityType: "vocab_example",
+     entityId: example.id,
+     dbId: example.id,
+     updatedAt: example.updated_at,
+     parentEntityType: "vocab_item",
+     parentEntityId: `${row.lesson_id}__${row.id}`,
+     order: example.example_order,
+     orderField: "example_order",
+    },
    })),
   culture_note:
    cultureLines.length > 0
@@ -278,11 +287,50 @@ function vocabRowToViewModel(row: VocabRow): HanziHomeVocabItem {
 
  return {
   ...parsed,
+  examples: parsed.examples.map((example, index) => {
+   const source = row.examples
+    .slice()
+    .sort((left, right) => left.example_order - right.example_order)[index];
+   if (!source) return example;
+   return {
+    ...example,
+    editMeta: {
+     entityType: "vocab_example",
+     entityId: source.id,
+     dbId: source.id,
+     updatedAt: source.updated_at,
+     parentEntityType: "vocab_item",
+     parentEntityId: `${row.lesson_id}__${row.id}`,
+     order: source.example_order,
+     orderField: "example_order",
+    },
+   };
+  }),
   runtimeId: `${row.lesson_id}__${row.id}`,
   lessonId: row.lesson_id,
   category: row.category || "Từ vựng",
   tone: row.tone ?? "",
   tags: row.tags,
+  detailSections: row.details
+   .slice()
+   .sort((left, right) => left.section_order - right.section_order)
+   .map((detail) => ({
+    id: detail.id,
+    key: detail.section_key,
+    title: detail.title,
+    lines: detail.lines,
+    order: detail.section_order,
+    editMeta: {
+     entityType: "vocab_detail_section",
+     entityId: detail.id,
+     dbId: detail.id,
+     updatedAt: detail.updated_at,
+     parentEntityType: "vocab_item",
+     parentEntityId: `${row.lesson_id}__${row.id}`,
+     order: detail.section_order,
+     orderField: "section_order",
+    },
+   })),
   editMeta: {
    entityType: "vocab_item",
    entityId: `${row.lesson_id}__${row.id}`,
@@ -723,20 +771,16 @@ async function getLessonDetailRow(lessonId: string) {
    z.array(lessonSectionRowSchema),
   ),
   requireRows(
-   `lesson vocabulary ${lessonId}`,
+   `lesson vocabulary shell ${lessonId}`,
    client
     .from("hanzihome_vocab_items")
     .select(
-     `
-     id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at,
-     examples:hanzihome_vocab_examples(id,vocab_item_id,example_order,zh,pinyin,vi,note,updated_at),
-     details:hanzihome_vocab_detail_sections(id,vocab_item_id,section_key,title,lines,section_order,updated_at)
-     `,
+     "id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at",
     )
     .eq("lesson_id", lessonId)
     .is("deleted_at", null)
     .order("item_order"),
-   z.array(vocabRowSchema),
+   z.array(vocabCoreRowSchema),
   ),
   requireRows(
    `lesson grammar ${lessonId}`,
@@ -757,7 +801,36 @@ async function getLessonDetailRow(lessonId: string) {
  ]);
 
  const shell = shellRows[0];
- return shell ? lessonDetailRowSchema.parse({ ...shell, sections, vocab, grammar }) : null;
+ return shell
+  ? lessonDetailRowSchema.parse({
+     ...shell,
+     sections,
+     vocab: vocab.map((item) => ({ ...item, examples: [], details: [] })),
+     grammar,
+    })
+  : null;
+}
+
+async function getLessonVocabularyRows(lessonId: string) {
+ const client = await createClient();
+ return requireRows(
+  `lesson vocabulary resource ${lessonId}`,
+  client
+   .from("hanzihome_vocab_items")
+   .select(
+    `
+    id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at,
+    examples:hanzihome_vocab_examples(id,vocab_item_id,example_order,zh,pinyin,vi,note,updated_at),
+    details:hanzihome_vocab_detail_sections(id,vocab_item_id,section_key,title,lines,section_order,updated_at)
+    `,
+   )
+   .eq("lesson_id", lessonId)
+   .is("deleted_at", null)
+   .is("examples.deleted_at", null)
+   .is("details.deleted_at", null)
+   .order("item_order"),
+  z.array(vocabRowSchema),
+ );
 }
 
 async function getLessonSectionRow(sectionId: string) {
@@ -1143,15 +1216,22 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
  },
 
  async getLessonVocabulary(lessonId) {
-  const lesson = await this.getLessonDetail(lessonId);
-  return lesson ? buildLessonVocabularyResource(lesson) : null;
+  if (!lessonId) return null;
+  const rows = await getLessonVocabularyRows(lessonId);
+  return {
+   lessonId,
+   items: rows.map(vocabRowToViewModel),
+   total: rows.length,
+  };
  },
 
  async getVocabDetail(vocabId) {
   const lessonId = entityLessonId(vocabId);
   if (!lessonId) return null;
-  const lesson = await this.getLessonDetail(lessonId);
-  return lesson?.vocab.find((item) => item.runtimeId === vocabId || item.id === vocabId) ?? null;
+  const rows = await getLessonVocabularyRows(lessonId);
+  const dbId = vocabId.includes("__") ? vocabId.split("__").at(-1) : vocabId;
+  const row = rows.find((item) => item.id === dbId);
+  return row ? vocabRowToViewModel(row) : null;
  },
 
  async getLessonGrammar(lessonId) {

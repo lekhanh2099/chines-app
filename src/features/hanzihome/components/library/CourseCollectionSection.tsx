@@ -111,7 +111,7 @@ export function CourseCollectionSection({
         </header>
 
         {courseBooks.length > 0 ? (
-         <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
+         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
           {courseBooks.map((book, bookIndex) => (
            <CourseCard
             key={book.id}

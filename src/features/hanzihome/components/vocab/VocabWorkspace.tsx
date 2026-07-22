@@ -12,6 +12,9 @@ import {
 import { getVocabItemKey, getVocabSearchText } from "@/features/hanzihome/utils/vocab-item";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
+import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 type VocabWorkspaceProps = {
  compact?: boolean;
@@ -22,7 +25,8 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
  const { lesson, learningState: state } = runtime;
  const actions = useHanziHomeFeatureActions();
  const editMode = useHanziHomeEditMode();
- const words = lesson.vocab;
+ const vocabularyQuery = useHanziHomeLessonVocabulary(lesson.id);
+ const words = useMemo(() => vocabularyQuery.data?.items ?? [], [vocabularyQuery.data]);
  const selectedWordId = useHanziHomeFeatureSelector(
   (featureState) => featureState.vocabSelectedWordId,
  );
@@ -53,12 +57,10 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
  const selectedWordPath = useMemo<EditableNodePath | null>(() => {
   if (!selectedWord) return null;
 
-  const index = lesson.vocab.findIndex(
-   (word) => getVocabItemKey(word) === getVocabItemKey(selectedWord),
-  );
+  const index = words.findIndex((word) => getVocabItemKey(word) === getVocabItemKey(selectedWord));
 
   return index >= 0 ? ["vocab", index] : null;
- }, [lesson.vocab, selectedWord]);
+ }, [selectedWord, words]);
 
  const selectRelativeWord = useCallback(
   (offset: number) => {
@@ -105,6 +107,23 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
   };
  }, [selectRelativeWord]);
 
+ if (vocabularyQuery.isPending) {
+  return (
+   <div className="h-72 animate-pulse rounded-2xl bg-bg-subtle" aria-label="Đang tải từ vựng" />
+  );
+ }
+
+ if (vocabularyQuery.isError) {
+  return (
+   <Card padding="lg" className="grid justify-items-start gap-3">
+    <p className="font-semibold text-text-primary">Không tải được dữ liệu từ vựng của bài.</p>
+    <Button type="button" variant="outline" onClick={() => vocabularyQuery.refetch()}>
+     Thử lại
+    </Button>
+   </Card>
+  );
+ }
+
  return (
   <div className="grid gap-3">
    <VocabList
@@ -122,12 +141,12 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
        items={visibleWords}
        getEntityId={getVocabItemKey}
        getItemPath={(word) => {
-        const index = lesson.vocab.findIndex(
-         (item) => getVocabItemKey(item) === getVocabItemKey(word),
-        );
+        const index = words.findIndex((item) => getVocabItemKey(item) === getVocabItemKey(word));
         return ["vocab", Math.max(index, 0)];
        }}
-       label="Sửa tất cả"
+       courseId={lesson.courseId ?? ""}
+       bookId={lesson.bookId ?? ""}
+       label="Quản lý từ vựng"
       />
      ) : null
     }

@@ -14,9 +14,20 @@ export async function invalidateHanziHomeContent({
  entityType: string;
 }) {
  if (lessonId) {
-  await queryClient.invalidateQueries({
-   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
-  });
+  if (entityType === "vocab_example" || entityType === "vocab_detail_section") {
+   await queryClient.invalidateQueries({
+    queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
+   });
+  } else {
+   await queryClient.invalidateQueries({
+    queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+   });
+   if (entityType === "vocab_item") {
+    await queryClient.invalidateQueries({
+     queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
+    });
+   }
+  }
 
   if (entityType === "listening_item") {
    await queryClient.invalidateQueries({

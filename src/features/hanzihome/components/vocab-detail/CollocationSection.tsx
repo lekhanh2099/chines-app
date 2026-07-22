@@ -9,17 +9,19 @@ export function CollocationSection({
  item,
  lessonId,
  itemPath,
+ section,
 }: {
  collocations: Collocation[];
  item: HanziHomeVocabItem;
  lessonId?: string;
  itemPath?: EditableNodePath;
+ section?: NonNullable<HanziHomeVocabItem["detailSections"]>[number];
 }) {
- return (
+ const content = (
   <VocabReadingSection id="vocab-collocations" title="Kết hợp thường gặp">
    <div className="grid gap-2">
-    {collocations.map((collocation, index) => {
-     const content = (
+    {collocations.map((collocation, index) => (
+     <div key={collocation.id || index}>
       <div className="rounded-xl border border-border-default bg-bg-primary p-3">
        <p className="font-black text-text-primary">{collocation.zh}</p>
        {collocation.pinyin && <p className="italic text-text-muted">{collocation.pinyin}</p>}
@@ -29,29 +31,29 @@ export function CollocationSection({
        )}
        {collocation.note_vi && <p className="text-text-muted">{collocation.note_vi}</p>}
       </div>
-     );
-
-     if (!lessonId || !itemPath || !collocation.id) {
-      return <div key={collocation.id || index}>{content}</div>;
-     }
-
-     return (
-      <EditableNodeWrapper
-       key={collocation.id}
-       lessonId={lessonId}
-       entityType="vocab_detail_section"
-       entityId={collocation.id}
-       parentEntityType="vocab_item"
-       parentEntityId={getVocabItemKey(item)}
-       path={[...itemPath, "collocations", index]}
-       value={collocation}
-       label={collocation.zh}
-      >
-       {content}
-      </EditableNodeWrapper>
-     );
-    })}
+     </div>
+    ))}
    </div>
   </VocabReadingSection>
+ );
+
+ if (!lessonId || !itemPath || !section) return content;
+ const sectionIndex = item.detailSections?.findIndex((entry) => entry.id === section.id) ?? -1;
+ if (sectionIndex < 0) return content;
+
+ return (
+  <EditableNodeWrapper
+   lessonId={lessonId}
+   entityType="vocab_detail_section"
+   entityId={section.id}
+   parentEntityType="vocab_item"
+   parentEntityId={getVocabItemKey(item)}
+   path={[...itemPath, "detailSections", sectionIndex]}
+   value={section}
+   label={section.title}
+   editLabel="Sửa cả section"
+  >
+   {content}
+  </EditableNodeWrapper>
  );
 }

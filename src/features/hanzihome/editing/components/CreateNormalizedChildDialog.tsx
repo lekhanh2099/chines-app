@@ -38,9 +38,6 @@ const formSchema = z
   if (value.kind === "example" && !value.zh) {
    context.addIssue({ code: "custom", path: ["zh"], message: "Câu tiếng Trung là bắt buộc" });
   }
-  if (value.kind === "detail" && !value.sectionKey) {
-   context.addIssue({ code: "custom", path: ["sectionKey"], message: "Khóa chi tiết là bắt buộc" });
-  }
   if (value.kind === "detail" && !value.title) {
    context.addIssue({ code: "custom", path: ["title"], message: "Tiêu đề là bắt buộc" });
   }
@@ -106,7 +103,7 @@ export function CreateNormalizedChildDialog({
      },
     });
     await queryClient.invalidateQueries({
-     queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
+     queryKey: hanzihomeQueryKeys.lessonResource(lessonId, isVocab ? "vocabulary" : "grammar"),
     });
     toast.success("Đã thêm nội dung.");
     form.reset();
@@ -161,7 +158,29 @@ export function CreateNormalizedChildDialog({
       ) : (
        <>
         <form.AppField name="sectionKey">
-         {(field) => <field.TextField label="Khóa chi tiết" required />}
+         {(field) => (
+          <field.Select
+           label="Loại section"
+           options={
+            family === "vocab"
+             ? [
+                { value: "meaning", label: "Nghĩa" },
+                { value: "word_formation", label: "Logic / cấu tạo" },
+                { value: "comparison", label: "So sánh" },
+                { value: "collocations", label: "Kết hợp thường gặp" },
+                { value: "culture", label: "Văn hóa và ngữ cảnh" },
+                { value: "warnings", label: "Lưu ý lỗi sai" },
+                { value: "notes", label: "Ghi chú" },
+                { value: "custom", label: "Khác" },
+               ]
+             : [
+                { value: "usage", label: "Cách dùng" },
+                { value: "examples", label: "Ví dụ" },
+                { value: "notes", label: "Ghi chú" },
+               ]
+           }
+          />
+         )}
         </form.AppField>
         <form.AppField name="title">
          {(field) => <field.TextField label="Tiêu đề" required />}

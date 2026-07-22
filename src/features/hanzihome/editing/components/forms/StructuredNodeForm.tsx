@@ -1,15 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FileJson, ListChecks } from "lucide-react";
 import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
-import { Tabs } from "@/components/ui/tabs";
 
 import type { EditAdapter } from "../../adapters/types";
 import { OptionalFieldsMultiSelect, type OptionalFieldGroup } from "./OptionalFieldsMultiSelect";
-import { StructuredJsonEditor } from "./StructuredJsonEditor";
 
 export type StructuredNodeFormProps = {
  value: unknown;
@@ -17,8 +14,6 @@ export type StructuredNodeFormProps = {
  formId: string;
  onSubmit: (value: unknown) => void;
 };
-
-type EditMode = "fields" | "json";
 
 export function StructuredNodeForm({ value, adapter, formId, onSubmit }: StructuredNodeFormProps) {
  const initialValues = useMemo(() => adapter.toValues(value), [adapter, value]);
@@ -43,7 +38,6 @@ export function StructuredNodeForm({ value, adapter, formId, onSubmit }: Structu
   }
   return Array.from(groups.values());
  }, [optionalFields]);
- const [mode, setMode] = useState<EditMode>("fields");
  const [visibleFieldKeys, setVisibleFieldKeys] = useState(() => new Set(defaultVisibleFieldKeys));
  const visibleFields = useMemo(
   () => editableFields.filter((field) => visibleFieldKeys.has(field.key)),
@@ -85,82 +79,67 @@ export function StructuredNodeForm({ value, adapter, formId, onSubmit }: Structu
  };
 
  return (
-  <div className="grid gap-4">
-   <Tabs
-    value={mode}
-    onValueChange={setMode}
-    items={[
-     { key: "fields", label: "Field", icon: ListChecks },
-     { key: "json", label: "JSON", icon: FileJson },
-    ]}
-   />
+  <form
+   id={formId}
+   className="grid gap-4"
+   onSubmit={(event) => {
+    event.preventDefault();
+    void form.handleSubmit();
+   }}
+  >
+   {optionalFieldGroups.length > 0 ? (
+    <OptionalFieldsMultiSelect
+     groups={optionalFieldGroups}
+     selectedGroups={selectedOptionalGroups}
+     selectedKeys={visibleFieldKeys}
+     onToggleGroup={toggleOptionalFieldGroup}
+     onReset={() => setVisibleFieldKeys(new Set(defaultVisibleFieldKeys))}
+     onSelectAll={() => setVisibleFieldKeys(new Set(editableFields.map((field) => field.key)))}
+    />
+   ) : null}
 
-   {mode === "fields" ? (
-    <form
-     id={formId}
-     className="grid gap-4"
-     onSubmit={(event) => {
-      event.preventDefault();
-      void form.handleSubmit();
-     }}
-    >
-     {optionalFieldGroups.length > 0 ? (
-      <OptionalFieldsMultiSelect
-       groups={optionalFieldGroups}
-       selectedGroups={selectedOptionalGroups}
-       selectedKeys={visibleFieldKeys}
-       onToggleGroup={toggleOptionalFieldGroup}
-       onReset={() => setVisibleFieldKeys(new Set(defaultVisibleFieldKeys))}
-       onSelectAll={() => setVisibleFieldKeys(new Set(editableFields.map((field) => field.key)))}
-      />
-     ) : null}
-
-     {visibleFields.map((field, index) => {
-      const previousGroup = visibleFields[index - 1]?.group;
-      return (
-       <div key={field.key} className="grid gap-4">
-        {field.group && field.group !== previousGroup ? (
-         <div className="border-t border-border-default pt-4 first:border-t-0 first:pt-0">
-          <h3 className="font-bold text-text-primary">{field.group}</h3>
-         </div>
-        ) : null}
-        <form.AppField name={field.key}>
-         {(formField) =>
-          field.kind === "textarea" || field.kind === "string-list" ? (
-           <formField.Textarea
-            label={field.label}
-            description={
-             field.kind === "string-list" ? "Mỗi dòng là một giá trị." : field.description
-            }
-            required={field.required}
-           />
-          ) : field.kind === "boolean" ? (
-           <formField.Select
-            label={field.label}
-            description={field.description}
-            required={field.required}
-            options={[
-             { value: "true", label: "Có" },
-             { value: "false", label: "Không" },
-            ]}
-           />
-          ) : (
-           <formField.TextField
-            label={field.label}
-            description={field.description}
-            required={field.required}
-            type={field.kind === "number" ? "number" : "text"}
-           />
-          )
-         }
-        </form.AppField>
+   {visibleFields.map((field, index) => {
+    const previousGroup = visibleFields[index - 1]?.group;
+    return (
+     <div key={field.key} className="grid gap-4">
+      {field.group && field.group !== previousGroup ? (
+       <div className="border-t border-border-default pt-4 first:border-t-0 first:pt-0">
+        <h3 className="font-bold text-text-primary">{field.group}</h3>
        </div>
-      );
-     })}
-    </form>
-   ) : (
-    <StructuredJsonEditor value={value} adapter={adapter} formId={formId} onSubmit={onSubmit} />
-   )}
-  </div>
+      ) : null}
+      <form.AppField name={field.key}>
+       {(formField) =>
+        field.kind === "textarea" || field.kind === "string-list" ? (
+         <formField.Textarea
+          label={field.label}
+          description={
+           field.kind === "string-list" ? "Mỗi dòng là một giá trị." : field.description
+          }
+          required={field.required}
+         />
+        ) : field.kind === "boolean" ? (
+         <formField.Select
+          label={field.label}
+          description={field.description}
+          required={field.required}
+          options={[
+           { value: "true", label: "Có" },
+           { value: "false", label: "Không" },
+          ]}
+         />
+        ) : (
+         <formField.TextField
+          label={field.label}
+          description={field.description}
+          required={field.required}
+          type={field.kind === "number" ? "number" : "text"}
+         />
+        )
+       }
+      </form.AppField>
+     </div>
+    );
+   })}
+  </form>
  );
 }

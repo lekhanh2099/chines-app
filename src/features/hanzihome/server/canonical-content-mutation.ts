@@ -39,6 +39,7 @@ export async function mutateCanonicalContent({
  operation,
  entityId,
  audit,
+ transformChanges,
 }: {
  request: Request;
  entityType: CanonicalEntityType;
@@ -51,6 +52,7 @@ export async function mutateCanonicalContent({
   parentEntityType?: string;
   parentEntityId?: string;
  };
+ transformChanges?: (changes: Record<string, unknown>) => Record<string, unknown>;
 }) {
  const parsedEntityType = canonicalEntityTypeSchema.parse(entityType);
  const parsedOperation = canonicalMutationOperationSchema.parse(operation);
@@ -71,8 +73,11 @@ export async function mutateCanonicalContent({
   return mutationError("expectedUpdatedAt is required", 400);
  }
 
+ const inputChanges = transformChanges
+  ? transformChanges(parsedBody.data.changes as Record<string, unknown>)
+  : parsedBody.data.changes;
  const parsedChanges = getCanonicalChangesSchema(parsedEntityType, parsedOperation).safeParse(
-  parsedBody.data.changes,
+  inputChanges,
  );
  if (!parsedChanges.success) {
   return mutationError("Invalid HanziHome changes", 400, z.flattenError(parsedChanges.error));

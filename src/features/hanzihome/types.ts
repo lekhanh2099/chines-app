@@ -99,13 +99,27 @@ export type VocabExample = {
  pinyin?: string;
  vi?: string;
  note?: string;
+ editMeta?: HanziHomeEditableRecordMeta;
 };
 
-export type HanziHomeVocabItem = DeepVocabularyItem & {
+export type VocabDetailSection = {
+ id: string;
+ key: string;
+ title: string;
+ lines: string[];
+ order: number;
+ editMeta?: HanziHomeEditableRecordMeta;
+};
+
+export type HanziHomeVocabItem = Omit<DeepVocabularyItem, "examples"> & {
+ examples: Array<
+  DeepVocabularyItem["examples"][number] & { editMeta?: HanziHomeEditableRecordMeta }
+ >;
  runtimeId: string;
  lessonId?: string;
  category: string;
  tone?: string;
+ detailSections?: VocabDetailSection[];
  editMeta?: HanziHomeEditableRecordMeta;
 };
 
