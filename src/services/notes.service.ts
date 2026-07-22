@@ -6,7 +6,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { logger } from "@/lib/logger";
-import type { DbNote, NoteCategory } from "@/types/database";
+import type { DbNote, NoteCategory, ReadingStatus } from "@/types/database";
 
 /* ══════════════════════════════════════════
    Types
@@ -25,7 +25,22 @@ export type NoteLinkSummary = {
 
 type NoteListRow = Pick<
  DbNote,
- "id" | "title" | "tags" | "status" | "category" | "short_id" | "updated_at" | "linked_lesson_id"
+ | "id"
+ | "title"
+ | "tags"
+ | "status"
+ | "category"
+ | "short_id"
+ | "updated_at"
+ | "linked_lesson_id"
+ | "folder_id"
+ | "reading_status"
+ | "source_url"
+ | "source_host"
+ | "source_label"
+ | "source_author"
+ | "source_published_at"
+ | "source_captured_at"
 >;
 
 export type NoteListItem = NoteListRow & {
@@ -43,7 +58,59 @@ export type CreateNoteInput = {
  content?: Record<string, unknown>;
  readingContent?: Record<string, unknown> | null;
  splitViewEnabled?: boolean;
+ folderId?: string | null;
+ readingStatus?: ReadingStatus | null;
+ source?: NoteSourceMetadata | null;
 };
+
+export type NoteFolderColor = "purple" | "blue" | "green" | "orange" | "rose" | "slate";
+
+export type NoteFolder = {
+ id: string;
+ userId: string;
+ parentId: string | null;
+ name: string;
+ color: NoteFolderColor;
+ position: number;
+ createdAt: string;
+ updatedAt: string;
+};
+
+export type NoteSourceMetadata = {
+ url: string | null;
+ host: string | null;
+ label: string | null;
+ author: string | null;
+ publishedAt: string | null;
+ capturedAt: string | null;
+};
+
+type NoteFolderRow = {
+ id: string;
+ user_id: string;
+ parent_id: string | null;
+ name: string;
+ color: NoteFolderColor;
+ position: number;
+ created_at: string;
+ updated_at: string;
+};
+
+const noteListSelect =
+ "id, title, tags, status, category, short_id, updated_at, linked_lesson_id, folder_id, reading_status, source_url, source_host, source_label, source_author, source_published_at, source_captured_at";
+
+function toNoteFolder(row: NoteFolderRow): NoteFolder {
+ return {
+  id: row.id,
+  userId: row.user_id,
+  parentId: row.parent_id,
+  name: row.name,
+  color: row.color,
+  position: row.position,
+  createdAt: row.created_at,
+  updatedAt: row.updated_at,
+ };
+}
 
 type LessonNoteLinkRow = {
  note_id: string;
@@ -120,13 +187,13 @@ export async function getUserNotes(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
+  .select(noteListSelect)
   .eq("user_id", userId)
   .order("updated_at", { ascending: false });
 
  if (error) {
   logger.error("[NotesService] fetch error:", error);
-  return [];
+  throw error;
  }
 
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
@@ -140,14 +207,14 @@ export async function getRecentUserNotes(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
+  .select(noteListSelect)
   .eq("user_id", userId)
   .order("updated_at", { ascending: false })
   .limit(limit);
 
  if (error) {
   logger.error("[NotesService] fetch recent error:", error);
-  return [];
+  throw error;
  }
 
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
@@ -161,14 +228,14 @@ export async function getNotesByCategory(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
+  .select(noteListSelect)
   .eq("user_id", userId)
   .eq("category", category)
   .order("updated_at", { ascending: false });
 
  if (error) {
   logger.error("[NotesService] fetch by category error:", error);
-  return [];
+  throw error;
  }
 
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
@@ -222,6 +289,14 @@ export async function createNote(
    },
    reading_content: input.readingContent ?? null,
    split_view_enabled: input.splitViewEnabled ?? false,
+   folder_id: input.folderId ?? null,
+   reading_status: input.readingStatus ?? null,
+   source_url: input.source?.url ?? null,
+   source_host: input.source?.host ?? null,
+   source_label: input.source?.label ?? null,
+   source_author: input.source?.author ?? null,
+   source_published_at: input.source?.publishedAt ?? null,
+   source_captured_at: input.source?.capturedAt ?? null,
   })
   .select()
   .single();
@@ -367,7 +442,7 @@ export async function searchNotesByTitle(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, short_id, updated_at, linked_lesson_id")
+  .select(noteListSelect)
   .eq("user_id", userId)
   .ilike("title", `%${query}%`)
   .order("updated_at", { ascending: false })
@@ -378,6 +453,96 @@ export async function searchNotesByTitle(
   return [];
  }
  return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+}
+
+export async function getNoteFolders(
+ supabase: SupabaseClient,
+ userId: string,
+): Promise<NoteFolder[]> {
+ const { data, error } = await supabase
+  .from("note_folders")
+  .select("id, user_id, parent_id, name, color, position, created_at, updated_at")
+  .eq("user_id", userId)
+  .order("position", { ascending: true })
+  .order("name", { ascending: true });
+
+ if (error) throw error;
+ return ((data ?? []) as NoteFolderRow[]).map(toNoteFolder);
+}
+
+export async function createNoteFolder(
+ supabase: SupabaseClient,
+ userId: string,
+ input: { name: string; parentId?: string | null; color?: NoteFolderColor; position?: number },
+): Promise<NoteFolder> {
+ const { data, error } = await supabase
+  .from("note_folders")
+  .insert({
+   user_id: userId,
+   name: input.name.trim(),
+   parent_id: input.parentId ?? null,
+   color: input.color ?? "purple",
+   position: input.position ?? 0,
+  })
+  .select("id, user_id, parent_id, name, color, position, created_at, updated_at")
+  .single();
+
+ if (error) throw error;
+ return toNoteFolder(data as NoteFolderRow);
+}
+
+export async function updateNoteFolder(
+ supabase: SupabaseClient,
+ folderId: string,
+ input: Partial<Pick<NoteFolder, "name" | "parentId" | "color" | "position">>,
+): Promise<NoteFolder> {
+ const changes: Record<string, string | number | null> = {};
+ if (input.name !== undefined) changes.name = input.name.trim();
+ if (input.parentId !== undefined) changes.parent_id = input.parentId;
+ if (input.color !== undefined) changes.color = input.color;
+ if (input.position !== undefined) changes.position = input.position;
+
+ const { data, error } = await supabase
+  .from("note_folders")
+  .update(changes)
+  .eq("id", folderId)
+  .select("id, user_id, parent_id, name, color, position, created_at, updated_at")
+  .single();
+
+ if (error) throw error;
+ return toNoteFolder(data as NoteFolderRow);
+}
+
+export async function deleteNoteFolder(supabase: SupabaseClient, folderId: string): Promise<void> {
+ const { error } = await supabase.from("note_folders").delete().eq("id", folderId);
+ if (error) throw error;
+}
+
+export async function updateNoteLibraryMetadata(
+ supabase: SupabaseClient,
+ noteId: string,
+ input: {
+  title?: string;
+  folderId?: string | null;
+  readingStatus?: ReadingStatus | null;
+  source?: NoteSourceMetadata | null;
+ },
+): Promise<void> {
+ const changes: Record<string, string | null> = { updated_at: new Date().toISOString() };
+ if (input.title !== undefined) changes.title = input.title;
+ if (input.folderId !== undefined) changes.folder_id = input.folderId;
+ if (input.readingStatus !== undefined) changes.reading_status = input.readingStatus;
+ if (input.source !== undefined) {
+  changes.source_url = input.source?.url ?? null;
+  changes.source_host = input.source?.host ?? null;
+  changes.source_label = input.source?.label ?? null;
+  changes.source_author = input.source?.author ?? null;
+  changes.source_published_at = input.source?.publishedAt ?? null;
+  changes.source_captured_at = input.source?.capturedAt ?? null;
+ }
+
+ const { error } = await supabase.from("notes").update(changes).eq("id", noteId);
+ if (error) throw error;
 }
 
 /* ══════════════════════════════════════════

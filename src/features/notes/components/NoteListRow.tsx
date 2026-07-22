@@ -1,17 +1,46 @@
 "use client";
 
-import Link from "next/link";
+import { useMemo, useState } from "react";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
-import { BookOpen, Clock, FileText, NotebookPen, Zap } from "lucide-react";
+import {
+ BookOpen,
+ CheckCircle2,
+ Clock,
+ Ellipsis,
+ FileText,
+ FolderInput,
+ Inbox,
+ NotebookPen,
+ Pencil,
+ Zap,
+} from "lucide-react";
+import Link from "next/link";
+import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuSub,
+ DropdownMenuSubContent,
+ DropdownMenuSubTrigger,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
+import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
+import { readingStatusLabels } from "@/features/notes/note-library-utils";
 import { cn } from "@/lib/utils";
-import type { NoteListItem } from "@/services/notes.service";
+import type { NoteFolder, NoteListItem } from "@/services/notes.service";
+import type { ReadingStatus } from "@/types/database";
 import type { LessonLookup } from "./noteContext";
 import { getNoteContext } from "./noteContext";
 
-const contextIconClassName = "h-4 w-4 shrink-0";
+const contextIconClassName = "size-4 shrink-0";
 
 function getContextIcon(kind: ReturnType<typeof getNoteContext>["kind"]) {
  if (kind === "lesson") return <BookOpen className={contextIconClassName} />;
@@ -25,67 +54,157 @@ function getContextClasses(kind: ReturnType<typeof getNoteContext>["kind"]) {
  return "border-border-default bg-bg-subtle text-text-secondary";
 }
 
+function getFolderBreadcrumb(folderId: string | null, folders: NoteFolder[]): string | null {
+ if (!folderId) return null;
+ const folder = folders.find((item) => item.id === folderId);
+ if (!folder) return null;
+ const parent = folder.parentId ? folders.find((item) => item.id === folder.parentId) : null;
+ return parent ? `${parent.name} / ${folder.name}` : folder.name;
+}
+
 export function NoteListRow({
  note,
+ folders,
  lessonLookup,
 }: {
  note: NoteListItem;
+ folders: NoteFolder[];
  lessonLookup: LessonLookup;
 }) {
  const context = getNoteContext(note, lessonLookup);
  const updatedAt = format(new Date(note.updated_at), "dd/MM/yy", { locale: vi });
+ const folderBreadcrumb = getFolderBreadcrumb(note.folder_id, folders);
+ const metadataMutation = useUpdateNoteLibraryMetadata();
+ const [metadataOpen, setMetadataOpen] = useState(false);
+ const sortedFolders = useMemo(
+  () => [...folders].sort((a, b) => a.position - b.position || a.name.localeCompare(b.name)),
+  [folders],
+ );
+
+ const updateMetadata = async (input: {
+  folderId?: string | null;
+  readingStatus?: ReadingStatus | null;
+ }) => {
+  try {
+   await metadataMutation.mutateAsync({ noteId: note.id, ...input });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không thể cập nhật ghi chú.");
+  }
+ };
 
  return (
-  <Link
-   href={`/notes/${note.id}`}
-   className="group grid grid-cols-1 gap-2 border-b border-border-default px-3 py-3 transition-colors last:border-b-0 hover:bg-bg-subtle/70 sm:px-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-3 lg:px-5 lg:py-4"
-  >
-   <div className="flex min-w-0 items-start gap-3">
-    <span
-     className={cn(
-      "mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg border",
-      getContextClasses(context.kind),
-     )}
-    >
-     {getContextIcon(context.kind)}
-    </span>
+  <article className="group grid grid-cols-[minmax(0,1fr)_auto] border-b border-border-default transition-colors last:border-b-0 hover:bg-bg-subtle/70">
+   <Link href={`/notes/${note.id}`} className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4">
+    <div className="flex min-w-0 items-start gap-3">
+     <span
+      className={cn(
+       "mt-0.5 flex size-8 items-center justify-center rounded-lg border",
+       getContextClasses(context.kind),
+      )}
+     >
+      {getContextIcon(context.kind)}
+     </span>
 
-    <div className="min-w-0 grid gap-2">
-     <div className="flex min-w-0 flex-wrap items-center gap-2">
-      <span className="truncate font-bold text-text-primary transition-colors group-hover:text-text-primary/80">
-       {note.title || "Ghi chú chưa đặt tên"}
-      </span>
-      <Badge variant={context.kind === "lesson" ? "purple" : "default"} size="sm">
-       {context.title}
-      </Badge>
-     </div>
+     <div className="grid min-w-0 gap-1.5">
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <span className="truncate font-bold text-text-primary">
+        {note.title || "Ghi chú chưa đặt tên"}
+       </span>
+       {note.reading_status ? (
+        <Badge variant="purple" size="sm">
+         {readingStatusLabels[note.reading_status]}
+        </Badge>
+       ) : (
+        <Badge variant={context.kind === "lesson" ? "purple" : "default"} size="sm">
+         {context.title}
+        </Badge>
+       )}
+      </div>
 
-     <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
-      <span className="truncate">{context.subtitle}</span>
-      {context.relationLabel ? <span className="text-text-muted/60">/</span> : null}
-      {context.relationLabel ? <span>{context.relationLabel}</span> : null}
-     </div>
+      <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
+       {folderBreadcrumb ? <span>{folderBreadcrumb}</span> : null}
+       {folderBreadcrumb && (note.source_label || context.subtitle) ? <span>/</span> : null}
+       <span className="truncate">{note.source_label || context.subtitle}</span>
+       {note.source_author ? <span>· {note.source_author}</span> : null}
+      </div>
 
-     {context.badges.length > 0 ? (
-      <div className="flex flex-wrap gap-1.5">
-       {context.badges.slice(0, 4).map((badge) => (
+      <div className="flex flex-wrap items-center gap-1.5">
+       {note.tags.slice(0, 3).map((tag) => (
         <span
-         key={badge}
-         className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.65rem] font-black uppercase tracking-[0.14em] text-text-muted"
+         key={tag}
+         className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.65rem] font-bold text-text-muted"
         >
-         {badge}
+         {tag}
         </span>
        ))}
+       <span className="flex items-center gap-1 text-xs font-semibold text-text-muted">
+        <Clock className="size-3.5" /> {updatedAt}
+       </span>
       </div>
-     ) : null}
+     </div>
     </div>
-   </div>
+   </Link>
 
-   <div className="flex items-center gap-2 pl-11 text-xs font-semibold text-text-muted lg:justify-end lg:pl-0">
-    <FileText className="hidden h-3.5 w-3.5 sm:block" />
-    <Clock className="h-3.5 w-3.5" />
-    <span className="tabular-nums">{updatedAt}</span>
+   <div className="flex items-start gap-1 px-2 py-3 lg:py-4">
+    <DropdownMenu>
+     <DropdownMenuTrigger asChild>
+      <Button variant="ghost" size="icon-toolbar" aria-label={`Tùy chọn ${note.title}`}>
+       <Ellipsis />
+      </Button>
+     </DropdownMenuTrigger>
+     <DropdownMenuContent align="end" width="md">
+      <DropdownMenuItem onSelect={() => setMetadataOpen(true)}>
+       <Pencil /> Chỉnh thông tin
+      </DropdownMenuItem>
+
+      <DropdownMenuSeparator />
+      <DropdownMenuSub>
+       <DropdownMenuSubTrigger>
+        <FolderInput /> Chuyển folder
+       </DropdownMenuSubTrigger>
+       <DropdownMenuSubContent width="md">
+        <DropdownMenuItem onSelect={() => void updateMetadata({ folderId: null })}>
+         <Inbox /> Chưa phân loại
+        </DropdownMenuItem>
+        {sortedFolders.map((folder) => (
+         <DropdownMenuItem
+          key={folder.id}
+          onSelect={() => void updateMetadata({ folderId: folder.id })}
+         >
+          <FolderInput /> {folder.parentId ? `↳ ${folder.name}` : folder.name}
+         </DropdownMenuItem>
+        ))}
+       </DropdownMenuSubContent>
+      </DropdownMenuSub>
+
+      <DropdownMenuSeparator />
+      <DropdownMenuLabel>Trạng thái đọc</DropdownMenuLabel>
+      {(["inbox", "reading", "completed"] as const).map((status) => (
+       <DropdownMenuItem
+        key={status}
+        onSelect={() => void updateMetadata({ readingStatus: status })}
+       >
+        {status === "completed" ? (
+         <CheckCircle2 />
+        ) : status === "reading" ? (
+         <BookOpen />
+        ) : (
+         <Inbox />
+        )}
+        {readingStatusLabels[status]}
+       </DropdownMenuItem>
+      ))}
+      {note.reading_status ? (
+       <DropdownMenuItem onSelect={() => void updateMetadata({ readingStatus: null })}>
+        <FileText /> Bỏ trạng thái đọc
+       </DropdownMenuItem>
+      ) : null}
+     </DropdownMenuContent>
+    </DropdownMenu>
+    {metadataOpen ? (
+     <NoteLibraryMetadataDialog note={note} open onOpenChange={setMetadataOpen} hideTrigger />
+    ) : null}
    </div>
-  </Link>
+  </article>
  );
 }

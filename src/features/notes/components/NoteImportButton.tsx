@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
+import { useNoteFolderMutations, useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { useFocusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,8 @@ export function NoteImportButton({
  const fileInputRef = useRef<HTMLInputElement | null>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
+ const foldersQuery = useNoteFolders();
+ const { createMutation: createFolderMutation } = useNoteFolderMutations();
  const focusModeEnabled = useFocusModeStore((s) => s.enabled);
 
  async function handleImport(file: File) {
@@ -31,25 +34,51 @@ export function NoteImportButton({
 
   try {
    const importedPayload = normalizeImportedNotePayload(JSON.parse(await file.text()));
-   createNoteMutation.mutate(
-    {
-     title: importedPayload.note.title,
-     tags: importedPayload.note.tags,
-     category: importedPayload.note.category,
-     content: importedPayload.note.content,
-     readingContent: importedPayload.note.readingContent ?? null,
-     splitViewEnabled: importedPayload.note.splitViewEnabled,
-    },
-    {
-     onSuccess: (note) => {
-      toast.success("Đã import ghi chú.");
-      router.push(`/notes/${note.id}`);
-     },
-     onError: () => {
-      toast.error("Không thể tạo ghi chú từ file import.");
-     },
-    },
-   );
+   let folderId: string | null = null;
+   if (importedPayload.note.folder) {
+    const folderSpec = importedPayload.note.folder;
+    let parentId: string | null = null;
+    if (folderSpec.parentName) {
+     const existingParent = foldersQuery.data?.find(
+      (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
+     );
+     parentId =
+      existingParent?.id ??
+      (
+       await createFolderMutation.mutateAsync({
+        name: folderSpec.parentName,
+        color: folderSpec.color,
+       })
+      ).id;
+    }
+
+    const existingFolder = foldersQuery.data?.find(
+     (folder) => folder.parentId === parentId && folder.name === folderSpec.name,
+    );
+    folderId =
+     existingFolder?.id ??
+     (
+      await createFolderMutation.mutateAsync({
+       name: folderSpec.name,
+       parentId,
+       color: folderSpec.color,
+      })
+     ).id;
+   }
+
+   const note = await createNoteMutation.mutateAsync({
+    title: importedPayload.note.title,
+    tags: importedPayload.note.tags,
+    category: importedPayload.note.category,
+    content: importedPayload.note.content,
+    readingContent: importedPayload.note.readingContent ?? null,
+    splitViewEnabled: importedPayload.note.splitViewEnabled,
+    folderId,
+    readingStatus: importedPayload.note.readingStatus ?? null,
+    source: importedPayload.note.source ?? null,
+   });
+   toast.success("Đã import ghi chú.");
+   router.push(`/notes/${note.id}`);
   } catch {
    toast.error("File import không đúng định dạng ghi chú.");
   } finally {
@@ -72,14 +101,14 @@ export function NoteImportButton({
    <Button
     type="button"
     variant="outline"
-    size={compactOnTablet ? "icon-lg" : "lg"}
+    size={compactOnTablet ? "responsive-action" : "lg"}
     onClick={() => fileInputRef.current?.click()}
     disabled={createNoteMutation.isPending || focusModeEnabled}
     aria-label="Import ghi chú"
     title="Import ghi chú"
-    className={cn(compactOnTablet && "2xl:w-auto 2xl:px-3", className)}
+    className={className}
    >
-    <Upload className="h-4 w-4" />
+    <Upload data-icon="inline-start" />
     <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Import</span>
    </Button>
   </>

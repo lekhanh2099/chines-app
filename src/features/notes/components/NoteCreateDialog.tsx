@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useForm } from "@tanstack/react-form";
-import { FilePlus2 } from "lucide-react";
+import { BookOpenText, ChevronDown, FilePlus2, NotebookPen } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -15,11 +15,15 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
- DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Spinner } from "@/components/ui/spinner";
 import {
  Select,
  SelectContent,
@@ -28,16 +32,20 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Spinner } from "@/components/ui/spinner";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
-import type { NoteCategory } from "@/types/database";
+import type { NoteFolder } from "@/services/notes.service";
+import { useFocusModeStore } from "@/stores/focus-mode-store";
+import type { NoteCategory, ReadingStatus } from "@/types/database";
 
-const noteCategoryOptions: Array<{ value: NoteCategory; label: string; helper: string }> = [
- { value: "general", label: "Chung", helper: "Ghi chú tự do, không gắn loại học cụ thể." },
- { value: "grammar", label: "Ngữ pháp", helper: "Công thức, ví dụ, lỗi sai hoặc cách dùng." },
- { value: "vocabulary", label: "Từ vựng", helper: "Từ mới, collocation, cách nhớ hoặc ví dụ." },
- { value: "culture", label: "Văn hóa", helper: "Văn cảnh dùng từ, mẹo học, ghi chú văn hóa." },
+type CreateMode = "note" | "reading";
+
+const noteCategoryOptions: Array<{ value: NoteCategory; label: string }> = [
+ { value: "general", label: "Chung" },
+ { value: "grammar", label: "Ngữ pháp" },
+ { value: "vocabulary", label: "Từ vựng" },
+ { value: "culture", label: "Văn hóa" },
 ];
 
 function parseTags(value: string): string[] {
@@ -48,179 +56,256 @@ function parseTags(value: string): string[] {
 }
 
 export function NoteCreateDialog({
+ folders = [],
  triggerClassName,
  compactOnTablet = false,
 }: {
+ folders?: NoteFolder[];
  triggerClassName?: string;
  compactOnTablet?: boolean;
 }) {
- const [isOpen, setIsOpen] = useState(false);
+ const [mode, setMode] = useState<CreateMode | null>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const focusModeEnabled = useFocusModeStore((state) => state.enabled);
 
  const form = useForm({
   defaultValues: {
    title: "",
    tags: "",
    category: "general" as NoteCategory,
+   folderId: "unfiled",
+   readingStatus: "reading" as ReadingStatus,
   },
   onSubmit: async ({ value }) => {
+   if (!mode) return;
    if (focusModeEnabled) {
     toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
     return;
    }
 
-   createNoteMutation.mutate(
-    {
+   try {
+    const emptyDocument = { type: "doc", content: [{ type: "paragraph" }] };
+    const note = await createNoteMutation.mutateAsync({
      title: value.title.trim(),
      tags: parseTags(value.tags),
      category: value.category,
-     content: {
-      type: "doc",
-      content: [{ type: "paragraph" }],
-     },
-    },
-    {
-     onSuccess: (note) => {
-      setIsOpen(false);
-      router.push(`/notes/${note.id}`);
-     },
-     onError: () => {
-      toast.error("Không thể tạo ghi chú.");
-     },
-    },
-   );
+     content: emptyDocument,
+     readingContent: mode === "reading" ? emptyDocument : undefined,
+     splitViewEnabled: mode === "reading",
+     folderId: value.folderId === "unfiled" ? null : value.folderId,
+     readingStatus: mode === "reading" ? value.readingStatus : null,
+     source: null,
+    });
+
+    setMode(null);
+    form.reset();
+    router.push(`/notes/${note.id}`);
+   } catch (error) {
+    toast.error(error instanceof Error ? error.message : "Không thể tạo ghi chú.");
+   }
   },
  });
 
+ const openMode = (nextMode: CreateMode) => {
+  if (focusModeEnabled) return;
+  form.reset();
+  setMode(nextMode);
+ };
+
  return (
-  <Dialog open={isOpen} onOpenChange={setIsOpen}>
-   <DialogTrigger asChild>
-    <Button
-     size={compactOnTablet ? "icon-lg" : "lg"}
-     disabled={focusModeEnabled}
-     aria-label="Tạo ghi chú"
-     title="Tạo ghi chú"
-     className={cn(compactOnTablet && "2xl:w-auto 2xl:px-3", triggerClassName)}
-    >
-     <FilePlus2 className="h-4 w-4" />
-     <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Tạo ghi chú</span>
-    </Button>
-   </DialogTrigger>
+  <>
+   <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+     <Button
+      size={compactOnTablet ? "responsive-action" : "lg"}
+      disabled={focusModeEnabled}
+      aria-label="Tạo ghi chú hoặc bài đọc"
+      title="Tạo"
+      className={triggerClassName}
+     >
+      <FilePlus2 data-icon="inline-start" />
+      <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Tạo</span>
+      <ChevronDown data-icon="inline-end" className={cn(compactOnTablet && "hidden 2xl:block")} />
+     </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end" width="md">
+     <DropdownMenuItem onSelect={() => openMode("note")}>
+      <NotebookPen />
+      <span>
+       <strong className="block">Ghi chú thường</strong>
+       <span className="text-xs font-medium text-text-muted">Ý tưởng và ghi chú tự do.</span>
+      </span>
+     </DropdownMenuItem>
+     <DropdownMenuItem onSelect={() => openMode("reading")}>
+      <BookOpenText />
+      <span>
+       <strong className="block">Bài đọc</strong>
+       <span className="text-xs font-medium text-text-muted">
+        Tạo ghi chú đọc và thêm nội dung sau.
+       </span>
+      </span>
+     </DropdownMenuItem>
+    </DropdownMenuContent>
+   </DropdownMenu>
 
-   <DialogContent className="max-w-lg">
-    <DialogHeader>
-     <DialogTitle>Tạo ghi chú mới</DialogTitle>
-     <DialogDescription>
-      Chọn danh mục ngay từ đầu để sau này lọc và liên kết với bài học rõ hơn.
-     </DialogDescription>
-    </DialogHeader>
+   <Dialog open={mode !== null} onOpenChange={(open) => !open && setMode(null)}>
+    <DialogContent size="md">
+     <DialogHeader>
+      <DialogTitle icon={mode === "reading" ? <BookOpenText /> : <NotebookPen />}>
+       {mode === "reading" ? "Tạo bài đọc" : "Tạo ghi chú"}
+      </DialogTitle>
+      <DialogDescription>
+       {mode === "reading"
+        ? "Tạo một bài đọc rỗng rồi thêm nội dung trong Split View."
+        : "Tạo một ghi chú tự do trong thư viện."}
+      </DialogDescription>
+     </DialogHeader>
 
-    <form
-     onSubmit={(event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      form.handleSubmit();
-     }}
-    >
-     <DialogBody>
-      <FieldGroup>
-       <form.Field
-        name="title"
-        validators={{
-         onChange: ({ value }) => (!value.trim() ? "Nhập tiêu đề ghi chú." : undefined),
-        }}
-       >
-        {(field) => (
-         <Field data-invalid={field.state.meta.errors.length > 0}>
-          <FieldLabel htmlFor={field.name}>Tiêu đề</FieldLabel>
-          <Input
-           id={field.name}
-           name={field.name}
-           value={field.state.value}
-           onBlur={field.handleBlur}
-           onChange={(event) => field.handleChange(event.target.value)}
-           placeholder="VD: Bài 6 - Chọn lọc ngữ pháp"
-           aria-invalid={field.state.meta.errors.length > 0}
-          />
-          {field.state.meta.errors.length > 0 ? (
-           <FieldDescription className="text-danger">
-            {field.state.meta.errors.join(", ")}
-           </FieldDescription>
-          ) : null}
-         </Field>
-        )}
-       </form.Field>
-
-       <form.Field name="category">
-        {(field) => {
-         const selectedOption = noteCategoryOptions.find(
-          (option) => option.value === field.state.value,
-         );
-
-         return (
-          <Field>
-           <FieldLabel>Danh mục</FieldLabel>
-           <Select
+     <form
+      className="flex min-h-0 flex-1 flex-col overflow-hidden"
+      onSubmit={(event) => {
+       event.preventDefault();
+       event.stopPropagation();
+       form.handleSubmit();
+      }}
+     >
+      <DialogBody>
+       <FieldGroup>
+        <form.Field
+         name="title"
+         validators={{
+          onChange: ({ value }) => (!value.trim() ? "Nhập tiêu đề." : undefined),
+         }}
+        >
+         {(field) => (
+          <Field data-invalid={field.state.meta.errors.length > 0}>
+           <FieldLabel htmlFor={field.name}>Tiêu đề</FieldLabel>
+           <Input
+            id={field.name}
+            required
             value={field.state.value}
-            onValueChange={(value) => field.handleChange(value as NoteCategory)}
-           >
-            <SelectTrigger className="h-10 w-full bg-bg-primary">
-             <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-             <SelectGroup>
-              {noteCategoryOptions.map((option) => (
-               <SelectItem key={option.value} value={option.value}>
-                {option.label}
-               </SelectItem>
-              ))}
-             </SelectGroup>
-            </SelectContent>
-           </Select>
-           {selectedOption ? <FieldDescription>{selectedOption.helper}</FieldDescription> : null}
+            onBlur={field.handleBlur}
+            onChange={(event) => field.handleChange(event.target.value)}
+            placeholder={mode === "reading" ? "Tiêu đề bài đọc" : "Tiêu đề ghi chú"}
+            aria-invalid={field.state.meta.errors.length > 0}
+           />
+           {field.state.meta.errors.length > 0 ? (
+            <FieldDescription className="text-danger">
+             {field.state.meta.errors.join(", ")}
+            </FieldDescription>
+           ) : null}
           </Field>
-         );
-        }}
-       </form.Field>
+         )}
+        </form.Field>
 
-       <form.Field name="tags">
-        {(field) => (
-         <Field>
-          <FieldLabel htmlFor={field.name}>Tag</FieldLabel>
-          <Input
-           id={field.name}
-           name={field.name}
-           value={field.state.value}
-           onBlur={field.handleBlur}
-           onChange={(event) => field.handleChange(event.target.value)}
-           placeholder="VD: HSK3, lỗi sai, ôn thi"
-          />
-          <FieldDescription>Dùng dấu phẩy nếu có nhiều tag.</FieldDescription>
-         </Field>
+        <div className="grid gap-4 sm:grid-cols-2">
+         <form.Field name="folderId">
+          {(field) => (
+           <Field>
+            <FieldLabel>Folder</FieldLabel>
+            <Select value={field.state.value} onValueChange={field.handleChange}>
+             <SelectTrigger width="full">
+              <SelectValue />
+             </SelectTrigger>
+             <SelectContent>
+              <SelectGroup>
+               <SelectItem value="unfiled">Chưa phân loại</SelectItem>
+               {folders.map((folder) => (
+                <SelectItem key={folder.id} value={folder.id}>
+                 {folder.parentId ? `↳ ${folder.name}` : folder.name}
+                </SelectItem>
+               ))}
+              </SelectGroup>
+             </SelectContent>
+            </Select>
+           </Field>
+          )}
+         </form.Field>
+
+         {mode === "reading" ? (
+          <form.Field name="readingStatus">
+           {(field) => (
+            <Field>
+             <FieldLabel>Trạng thái</FieldLabel>
+             <Select
+              value={field.state.value}
+              onValueChange={(value) => field.handleChange(value as ReadingStatus)}
+             >
+              <SelectTrigger width="full">
+               <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+               <SelectItem value="inbox">Đọc sau</SelectItem>
+               <SelectItem value="reading">Đang đọc</SelectItem>
+               <SelectItem value="completed">Đã đọc</SelectItem>
+              </SelectContent>
+             </Select>
+            </Field>
+           )}
+          </form.Field>
+         ) : (
+          <form.Field name="category">
+           {(field) => (
+            <Field>
+             <FieldLabel>Danh mục</FieldLabel>
+             <Select
+              value={field.state.value}
+              onValueChange={(value) => field.handleChange(value as NoteCategory)}
+             >
+              <SelectTrigger width="full">
+               <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+               {noteCategoryOptions.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                 {option.label}
+                </SelectItem>
+               ))}
+              </SelectContent>
+             </Select>
+            </Field>
+           )}
+          </form.Field>
+         )}
+        </div>
+
+        {mode !== "reading" ? (
+         <form.Field name="tags">
+          {(field) => (
+           <Field>
+            <FieldLabel htmlFor={field.name}>Tag</FieldLabel>
+            <Input
+             id={field.name}
+             value={field.state.value}
+             onChange={(event) => field.handleChange(event.target.value)}
+             placeholder="HSK3, ôn thi"
+            />
+           </Field>
+          )}
+         </form.Field>
+        ) : null}
+       </FieldGroup>
+      </DialogBody>
+
+      <DialogFooter>
+       <Button type="button" variant="outline" onClick={() => setMode(null)}>
+        Hủy
+       </Button>
+       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
+        {([canSubmit, isSubmitting]) => (
+         <Button type="submit" disabled={!canSubmit || createNoteMutation.isPending}>
+          {isSubmitting || createNoteMutation.isPending ? (
+           <Spinner data-icon="inline-start" />
+          ) : null}
+          {mode === "reading" ? "Tạo và mở" : "Tạo"}
+         </Button>
         )}
-       </form.Field>
-      </FieldGroup>
-     </DialogBody>
-
-     <DialogFooter>
-      <Button type="button" variant="outline" onClick={() => setIsOpen(false)}>
-       Hủy
-      </Button>
-      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
-       {([canSubmit, isSubmitting]) => (
-        <Button type="submit" disabled={!canSubmit || createNoteMutation.isPending}>
-         {isSubmitting || createNoteMutation.isPending ? (
-          <Spinner data-icon="inline-start" />
-         ) : null}
-         Tạo
-        </Button>
-       )}
-      </form.Subscribe>
-     </DialogFooter>
-    </form>
-   </DialogContent>
-  </Dialog>
+       </form.Subscribe>
+      </DialogFooter>
+     </form>
+    </DialogContent>
+   </Dialog>
+  </>
  );
 }

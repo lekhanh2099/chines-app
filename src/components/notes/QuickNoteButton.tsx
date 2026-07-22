@@ -100,14 +100,18 @@ export function QuickNoteButton({
   <Button
    type="button"
    variant={variant}
-   size={compactOnTablet ? "icon-lg" : buttonSize}
+   size={compactOnTablet ? "responsive-action" : buttonSize}
    onClick={handleCreate}
    disabled={isCreating || focusModeEnabled}
    aria-label="Tạo ghi chú nhanh"
    title="Tạo ghi chú nhanh"
-   className={cn(compactOnTablet && "2xl:w-auto 2xl:px-3", className)}
+   className={className}
   >
-   {isCreating ? <Loader2 className="size-4 animate-spin" /> : <Zap className="size-4" />}
+   {isCreating ? (
+    <Loader2 data-icon="inline-start" className="size-4 animate-spin" />
+   ) : (
+    <Zap data-icon="inline-start" className="size-4" />
+   )}
    <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Ghi chú nhanh</span>
   </Button>
  );

@@ -92,6 +92,14 @@ export type DbNote = {
  short_id: string | null;
  created_at: string;
  updated_at: string;
+ folder_id: string | null;
+ reading_status: ReadingStatus | null;
+ source_url: string | null;
+ source_host: string | null;
+ source_label: string | null;
+ source_author: string | null;
+ source_published_at: string | null;
+ source_captured_at: string | null;
 };
 
 export type DbExercise = {
@@ -184,6 +192,7 @@ export type DbUserVocabEntryProgress = {
 
 export type NoteCategory = "grammar" | "vocabulary" | "culture" | "general";
 export type NoteStatus = "draft" | "reviewed" | "mastered";
+export type ReadingStatus = "inbox" | "reading" | "completed";
 export type VocabProficiency = 0 | 1 | 2 | 3 | 4 | 5;
 export type PersonalNoteMode = "normal" | "important";
 export type VocabType = "word" | "sentence";

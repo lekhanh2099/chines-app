@@ -40,6 +40,12 @@ import {
 } from "@/components/ui/dialog";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
+import {
+ useNoteFolderMutations,
+ useNoteFolders,
+ useUpdateNoteLibraryMetadata,
+} from "@/features/notes/hooks/useNoteLibrary";
 
 interface NoteEditorPanelProps {
  noteId: string;
@@ -108,6 +114,9 @@ export function NoteEditorPanel({
  const closeTab = useNoteTabsStore((s) => s.closeTab);
  const updateTabTitle = useNoteTabsStore((s) => s.updateTabTitle);
  const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const noteFoldersQuery = useNoteFolders();
+ const { createMutation: createFolderMutation } = useNoteFolderMutations();
+ const updateLibraryMetadataMutation = useUpdateNoteLibraryMetadata();
  const isSplitView = useSplitViewStore((s) => s.isSplitView(noteId));
  const toggleSplitView = useSplitViewStore((s) => s.toggleSplitView);
  const router = useRouter();
@@ -228,8 +237,15 @@ export function NoteEditorPanel({
  const handleExport = useCallback(() => {
   if (!note) return;
 
+  const folder = note.folder_id
+   ? noteFoldersQuery.data?.find((item) => item.id === note.folder_id)
+   : null;
+  const parentFolder = folder?.parentId
+   ? noteFoldersQuery.data?.find((item) => item.id === folder.parentId)
+   : null;
+
   downloadJsonFile(createDownloadFileName(note.title), {
-   version: 1,
+   version: 2,
    exportedAt: new Date().toISOString(),
    note: {
     title: note.title,
@@ -241,10 +257,28 @@ export function NoteEditorPanel({
       ? importedReadingContent
       : (note.reading_content as JsonObject | null),
     splitViewEnabled: note.split_view_enabled,
+    readingStatus: note.reading_status,
+    folder: folder
+     ? {
+        name: folder.name,
+        parentName: parentFolder?.name ?? null,
+        color: folder.color,
+       }
+     : null,
+    source: note.source_url
+     ? {
+        url: note.source_url,
+        host: note.source_host,
+        label: note.source_label,
+        author: note.source_author,
+        publishedAt: note.source_published_at,
+        capturedAt: note.source_captured_at,
+       }
+     : null,
    },
   });
   toast.success("Đã export ghi chú.");
- }, [importedContent, importedReadingContent, note]);
+ }, [importedContent, importedReadingContent, note, noteFoldersQuery.data]);
 
  const currentNoteTitle = note?.title;
  const currentNoteCategory = note?.category;
@@ -252,7 +286,13 @@ export function NoteEditorPanel({
  const handleImportFile = useCallback(
   async (file: File) => {
    try {
-    const importedPayload = normalizeImportedNotePayload(JSON.parse(await file.text()));
+    const rawPayload: unknown = JSON.parse(await file.text());
+    const importedPayload = normalizeImportedNotePayload(rawPayload);
+    const hasLibraryMetadata =
+     typeof rawPayload === "object" &&
+     rawPayload !== null &&
+     "version" in rawPayload &&
+     rawPayload.version === 2;
     const nextContent = importedPayload.note.content;
     const nextReadingContent = importedPayload.note.readingContent ?? null;
 
@@ -275,6 +315,49 @@ export function NoteEditorPanel({
      updateSplitView(importedPayload.note.splitViewEnabled);
     }
 
+    if (hasLibraryMetadata) {
+     let importedFolderId: string | null | undefined;
+     if (importedPayload.note.folder) {
+      const folderSpec = importedPayload.note.folder;
+      let parentId: string | null = null;
+      if (folderSpec.parentName) {
+       const existingParent = noteFoldersQuery.data?.find(
+        (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
+       );
+       parentId =
+        existingParent?.id ??
+        (
+         await createFolderMutation.mutateAsync({
+          name: folderSpec.parentName,
+          color: folderSpec.color,
+         })
+        ).id;
+      }
+
+      const existingFolder = noteFoldersQuery.data?.find(
+       (folder) => folder.parentId === parentId && folder.name === folderSpec.name,
+      );
+      importedFolderId =
+       existingFolder?.id ??
+       (
+        await createFolderMutation.mutateAsync({
+         name: folderSpec.name,
+         parentId,
+         color: folderSpec.color,
+        })
+       ).id;
+     } else if (importedPayload.note.folder === null) {
+      importedFolderId = null;
+     }
+
+     await updateLibraryMetadataMutation.mutateAsync({
+      noteId,
+      folderId: importedFolderId,
+      readingStatus: importedPayload.note.readingStatus ?? null,
+      source: importedPayload.note.source ?? null,
+     });
+    }
+
     toast.success("Đã import vào ghi chú hiện tại.");
    } catch {
     toast.error("File import không đúng định dạng ghi chú.");
@@ -289,6 +372,9 @@ export function NoteEditorPanel({
    saveContent,
    saveReadingContent,
    updateCategory,
+   createFolderMutation,
+   noteFoldersQuery.data,
+   updateLibraryMetadataMutation,
    updateSplitView,
    updateTabTitle,
    updateTitle,
@@ -396,6 +482,7 @@ export function NoteEditorPanel({
 
               <div className="my-1 h-px bg-border-default" />
               <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">Ghi chú</p>
+              <NoteLibraryMetadataDialog note={note} compact />
               <Button
                variant="ghost"
                className="w-full justify-start px-2.5 text-sm"
@@ -518,6 +605,7 @@ export function NoteEditorPanel({
           >
            <Download />
           </Button>
+          <NoteLibraryMetadataDialog note={note} />
           <Button
            type="button"
            variant="outline"
