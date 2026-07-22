@@ -1583,16 +1583,65 @@ export type Database = {
      },
     ];
    };
+   note_folders: {
+    Row: {
+     color: string;
+     created_at: string;
+     id: string;
+     name: string;
+     parent_id: string | null;
+     position: number;
+     updated_at: string;
+     user_id: string;
+    };
+    Insert: {
+     color?: string;
+     created_at?: string;
+     id?: string;
+     name: string;
+     parent_id?: string | null;
+     position?: number;
+     updated_at?: string;
+     user_id: string;
+    };
+    Update: {
+     color?: string;
+     created_at?: string;
+     id?: string;
+     name?: string;
+     parent_id?: string | null;
+     position?: number;
+     updated_at?: string;
+     user_id?: string;
+    };
+    Relationships: [
+     {
+      foreignKeyName: "note_folders_user_parent_fk";
+      columns: ["user_id", "parent_id"];
+      isOneToOne: false;
+      referencedRelation: "note_folders";
+      referencedColumns: ["user_id", "id"];
+     },
+    ];
+   };
    notes: {
     Row: {
      category: string | null;
      content: Json | null;
      created_at: string | null;
+     folder_id: string | null;
      id: string;
      is_published: boolean | null;
      linked_lesson_id: string | null;
      reading_content: Json | null;
+     reading_status: string | null;
      short_id: string | null;
+     source_author: string | null;
+     source_captured_at: string | null;
+     source_host: string | null;
+     source_label: string | null;
+     source_published_at: string | null;
+     source_url: string | null;
      split_view_enabled: boolean | null;
      status: string | null;
      tags: string[] | null;
@@ -1604,11 +1653,19 @@ export type Database = {
      category?: string | null;
      content?: Json | null;
      created_at?: string | null;
+     folder_id?: string | null;
      id?: string;
      is_published?: boolean | null;
      linked_lesson_id?: string | null;
      reading_content?: Json | null;
+     reading_status?: string | null;
      short_id?: string | null;
+     source_author?: string | null;
+     source_captured_at?: string | null;
+     source_host?: string | null;
+     source_label?: string | null;
+     source_published_at?: string | null;
+     source_url?: string | null;
      split_view_enabled?: boolean | null;
      status?: string | null;
      tags?: string[] | null;
@@ -1620,11 +1677,19 @@ export type Database = {
      category?: string | null;
      content?: Json | null;
      created_at?: string | null;
+     folder_id?: string | null;
      id?: string;
      is_published?: boolean | null;
      linked_lesson_id?: string | null;
      reading_content?: Json | null;
+     reading_status?: string | null;
      short_id?: string | null;
+     source_author?: string | null;
+     source_captured_at?: string | null;
+     source_host?: string | null;
+     source_label?: string | null;
+     source_published_at?: string | null;
+     source_url?: string | null;
      split_view_enabled?: boolean | null;
      status?: string | null;
      tags?: string[] | null;
@@ -1633,6 +1698,13 @@ export type Database = {
      user_id?: string | null;
     };
     Relationships: [
+     {
+      foreignKeyName: "notes_user_folder_fk";
+      columns: ["user_id", "folder_id"];
+      isOneToOne: false;
+      referencedRelation: "note_folders";
+      referencedColumns: ["user_id", "id"];
+     },
      {
       foreignKeyName: "notes_user_id_fkey";
       columns: ["user_id"];
@@ -1988,6 +2060,46 @@ export type Database = {
      lesson_count: number;
      vocab_count: number;
     }[];
+   };
+   hanzihome_list_vocab_children: {
+    Args: {
+     p_deleted?: boolean;
+     p_entity_type: string;
+     p_page?: number;
+     p_page_size?: number;
+     p_query?: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: Json;
+   };
+   hanzihome_preview_vocab_child_bulk: {
+    Args: {
+     p_deleted?: boolean;
+     p_entity_type: string;
+     p_ids?: string[];
+     p_query?: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: Json;
+   };
+   hanzihome_mutate_vocab_child_bulk: {
+    Args: {
+     p_entity_type: string;
+     p_expected_count: number;
+     p_expected_fingerprint: string;
+     p_ids?: string[];
+     p_operation: string;
+     p_query?: string;
+     p_reason: string;
+     p_scope_id: string;
+     p_scope_type: string;
+     p_section_keys?: string[];
+    };
+    Returns: Json;
    };
    hanzihome_apply_external_seed_patches: {
     Args: { p_patches: Json };
