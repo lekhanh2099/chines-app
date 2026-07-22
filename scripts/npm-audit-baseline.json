@@ -1,0 +1,45 @@
+{
+ "reviewBy": "2026-08-31",
+ "advisories": {
+  "1123898": {
+   "package": "brace-expansion",
+   "severity": "high"
+  },
+  "1123911": {
+   "package": "js-yaml",
+   "severity": "high"
+  },
+  "1123976": {
+   "package": "body-parser",
+   "severity": "low"
+  },
+  "1124005": {
+   "package": "hono",
+   "severity": "moderate"
+  },
+  "1124006": {
+   "package": "@hono/node-server",
+   "severity": "moderate"
+  },
+  "1124009": {
+   "package": "hono",
+   "severity": "moderate"
+  },
+  "1124010": {
+   "package": "hono",
+   "severity": "moderate"
+  },
+  "1124015": {
+   "package": "fast-uri",
+   "severity": "high"
+  },
+  "1124064": {
+   "package": "fast-uri",
+   "severity": "high"
+  },
+  "1124066": {
+   "package": "sharp",
+   "severity": "high"
+  }
+ }
+}
