@@ -19,6 +19,7 @@ import {
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { useSidebarStore } from "@/stores/sidebar-store";
+import { useAppShellStore } from "@/stores/app-shell-store";
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -143,6 +144,7 @@ function NavRow({
 }
 
 export function Sidebar() {
+ const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
@@ -154,6 +156,8 @@ export function Sidebar() {
  useEffect(() => {
   hydrateSidebar();
  }, [hydrateSidebar]);
+
+ if (isContentFullscreen) return null;
 
  return (
   <aside
@@ -234,8 +238,11 @@ export function Sidebar() {
 }
 
 export function MobileBottomNavigation() {
+ const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
+
+ if (isContentFullscreen) return null;
 
  return (
   <nav className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">

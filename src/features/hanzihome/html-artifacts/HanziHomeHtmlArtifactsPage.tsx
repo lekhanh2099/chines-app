@@ -16,6 +16,7 @@ import {
  Loader2,
  Maximize2,
  Minimize2,
+ Pencil,
  PlugZap,
  Plus,
  Save,
@@ -47,6 +48,7 @@ import {
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { createClient as createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
+import { useAppShellStore } from "@/stores/app-shell-store";
 import {
  formatHtmlArtifactDate as formatDate,
  formatHtmlSource,
@@ -172,7 +174,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
  const [inspectorTab, setInspectorTab] = useState<InspectorTab>("files");
  const [previewMode, setPreviewMode] = useState<PreviewMode>("iframe");
- const [isPreviewFocused, setIsPreviewFocused] = useState(false);
+ const isPreviewFocused = useAppShellStore((state) => state.isContentFullscreen);
+ const setContentFullscreen = useAppShellStore((state) => state.setContentFullscreen);
  const [draftPreview, setDraftPreview] = useState<{
   targetId: string;
   form: ArtifactFormState;
@@ -203,6 +206,21 @@ export function HanziHomeHtmlArtifactsPage() {
   artifactId: string;
   state: HtmlArtifactRuntimeState;
  } | null>(null);
+
+ useEffect(() => {
+  return () => setContentFullscreen(false);
+ }, [setContentFullscreen]);
+
+ useEffect(() => {
+  if (!isPreviewFocused) return;
+
+  const exitOnEscape = (event: globalThis.KeyboardEvent) => {
+   if (event.key === "Escape") setContentFullscreen(false);
+  };
+
+  window.addEventListener("keydown", exitOnEscape);
+  return () => window.removeEventListener("keydown", exitOnEscape);
+ }, [isPreviewFocused, setContentFullscreen]);
 
  const artifacts = artifactsQuery.artifacts ?? emptyArtifactSummaries;
  const folders = artifactsQuery.folders ?? emptyArtifactFolders;
@@ -468,10 +486,10 @@ export function HanziHomeHtmlArtifactsPage() {
   setDeleteDialog({ kind: "artifact", artifact });
  };
 
- const editArtifactHtml = (artifactId: string) => {
+ const editArtifactDetails = (artifactId: string) => {
   navigateToArtifact(artifactId);
-  setPreviewMode("editor");
-  setMobilePane("preview");
+  setInspectorTab("edit");
+  setMobilePane("edit");
  };
 
  const copyArtifactLink = async (artifactId: string) => {
@@ -517,7 +535,7 @@ export function HanziHomeHtmlArtifactsPage() {
 
  const saveArtifact = async (formState: ArtifactFormState, options: ArtifactSaveOptions = {}) => {
   const payload = {
-   title: formState.title,
+   title: formState.title.trim() || "Tệp HTML mới",
    folderId: formState.folderId,
    artifactType: formState.artifactType,
    tags: parseTags(formState.tagsInput),
@@ -572,7 +590,7 @@ export function HanziHomeHtmlArtifactsPage() {
   onModeChange: setPreviewMode,
   onRuntimeStateChange: queueRuntimeStateSave,
   onSubmit: saveArtifact,
-  onToggleFocus: () => setIsPreviewFocused((focused) => !focused),
+  onToggleFocus: () => setContentFullscreen(!isPreviewFocused),
  };
 
  return (
@@ -631,7 +649,7 @@ export function HanziHomeHtmlArtifactsPage() {
         onCreateFolder={openCreateFolderDialog}
         onCopyArtifactLink={(artifactId) => void copyArtifactLink(artifactId)}
         onDeleteArtifact={requestDeleteArtifactSummary}
-        onEditArtifact={editArtifactHtml}
+        onEditArtifact={editArtifactDetails}
         onDeleteActiveFolder={requestDeleteActiveFolder}
         onDragEnd={() => setDragItem(null)}
         onDragStart={setDragItem}
@@ -728,7 +746,7 @@ export function HanziHomeHtmlArtifactsPage() {
        onOpenPublishDialog={() => setIsPublishDialogOpen(true)}
        onCopyArtifactLink={(artifactId) => void copyArtifactLink(artifactId)}
        onDeleteArtifact={requestDeleteArtifactSummary}
-       onEditArtifact={editArtifactHtml}
+       onEditArtifact={editArtifactDetails}
        onDraftChange={updateDraftPreview}
        onSubmit={saveArtifact}
        onTabChange={setInspectorTab}
@@ -2129,10 +2147,18 @@ function ArtifactForm({
    onSubmit={submitForm}
   >
    <div className="flex items-center justify-between gap-2">
-    <div className="min-w-0">
-     <h2 className="truncate font-black text-text-primary">
-      {htmlOnly ? "Chỉnh HTML" : artifact ? "Sửa tệp" : "Tạo tệp"}
-     </h2>
+    <div className="min-w-0 flex-1">
+     {htmlOnly ? (
+      <Input
+       value={form.title}
+       onChange={(event) => updateForm((current) => ({ ...current, title: event.target.value }))}
+       aria-label="Tiêu đề tệp HTML"
+       placeholder="Tên tệp HTML"
+       required
+      />
+     ) : (
+      <h2 className="truncate font-black text-text-primary">{artifact ? "Sửa tệp" : "Tạo tệp"}</h2>
+     )}
      {htmlOnly ? (
       <p
        className={cn(
@@ -2408,7 +2434,7 @@ function ArtifactListButton({
     </div>
     <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100">
      <ArtifactCardAction icon={ExternalLink} label="Mở tệp" onClick={stopAction(onClick)} />
-     <ArtifactCardAction icon={FileCode2} label="Chỉnh HTML" onClick={stopAction(onEdit)} />
+     <ArtifactCardAction icon={Pencil} label="Chỉnh thông tin" onClick={stopAction(onEdit)} />
      <ArtifactCardAction icon={Copy} label="Copy link" onClick={stopAction(onCopyLink)} />
      <ArtifactCardAction danger icon={Trash2} label="Xóa tệp" onClick={stopAction(onDelete)} />
     </div>

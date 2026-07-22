@@ -6,6 +6,7 @@ import {
  getArtifactFormSaveKey,
  hasFolderDescendant,
  parseTags,
+ toArtifactFormState,
 } from "./html-artifact-page-utils";
 
 function folder(id: string, parentFolderId: string | null): HtmlArtifactFolder {
@@ -43,6 +44,13 @@ describe("HTML artifact page utilities", () => {
   });
 
   expect(first).toBe(second);
+ });
+
+ it("creates a valid default form in the selected folder", () => {
+  expect(toArtifactFormState(null, "folder-1")).toMatchObject({
+   title: "Tệp HTML mới",
+   folderId: "folder-1",
+  });
  });
 
  it("builds nested folders and detects descendants", () => {

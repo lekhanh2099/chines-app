@@ -21,6 +21,7 @@ import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { useFocusModeStore } from "@/stores/focus-mode-store";
 import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
+import { useAppShellStore } from "@/stores/app-shell-store";
 import { Button } from "@/components/ui/button";
 import {
  Select,
@@ -72,6 +73,7 @@ type SimpleHeaderBreadcrumb = {
 };
 
 export function Header({ user }: { user?: User | null }) {
+ const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
  const [searchValue, setSearchValue] = useState("");
@@ -209,6 +211,8 @@ export function Header({ user }: { user?: User | null }) {
 
   router.push(`/hanzihome?${nextParams.toString()}`);
  };
+
+ if (isContentFullscreen) return <FocusModeRouteGuard />;
 
  return (
   <>

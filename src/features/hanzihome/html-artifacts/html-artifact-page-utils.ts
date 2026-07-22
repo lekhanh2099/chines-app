@@ -20,7 +20,7 @@ export type DraftSaveStatus = "idle" | "dirty" | "saved" | "error";
 export type FolderTreeNode = HtmlArtifactFolder & { children: FolderTreeNode[] };
 
 const emptyArtifactForm: ArtifactFormState = {
- title: "",
+ title: "Tệp HTML mới",
  folderId: null,
  artifactType: "practice_page",
  tagsInput: "",
