@@ -10,7 +10,7 @@
  */
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo } from "react";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
@@ -122,25 +122,6 @@ function Placeholder() {
  return <div className="editor-placeholder">Bắt đầu nhập nội dung...</div>;
 }
 
-/* ── Restore initial editor state from JSON ── */
-function RestoreStatePlugin({ initialState }: { initialState?: Record<string, unknown> | null }) {
- const [editor] = useLexicalComposerContext();
- const hasRestored = useRef(false);
-
- useEffect(() => {
-  if (!initialState || hasRestored.current) return;
-  try {
-   const editorState = editor.parseEditorState(JSON.stringify(initialState));
-   editor.setEditorState(editorState);
-   hasRestored.current = true;
-  } catch (err) {
-   logger.warn("[Editor] Could not restore state:", err);
-  }
- }, [editor, initialState]);
-
- return null;
-}
-
 /* ── Read-only toggle ── */
 function EditablePlugin({ readOnly }: { readOnly: boolean }) {
  const [editor] = useLexicalComposerContext();
@@ -200,6 +181,7 @@ export function Editor({
    html: {
     import: SAFE_HTML_IMPORT,
    },
+   editorState: initialContent ? JSON.stringify(initialContent) : undefined,
    nodes: [
     HeadingNode,
     QuoteNode,
@@ -261,7 +243,6 @@ export function Editor({
      <RichPastePlugin />
 
      {/* State management */}
-     <RestoreStatePlugin initialState={initialContent} />
      <EditablePlugin readOnly={readOnly} />
      <AutoSavePlugin onChange={onChange} />
 
