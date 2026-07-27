@@ -3,7 +3,7 @@
 import { createStore } from "@tanstack/react-store";
 
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
-import type { DraggedModule, LessonViewMode, PaneLayout } from "./types";
+import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
@@ -16,6 +16,7 @@ export type HanziHomeFeatureState = {
  activeNode: EditableNodeRequest | null;
  splitEnabled: boolean;
  paneLayout: PaneLayout;
+ activePane: PaneId;
  draggedModule: DraggedModule | null;
  viewMode: LessonViewMode;
  splitPaneSize: number;
@@ -50,6 +51,7 @@ export function createHanziHomeFeatureStore(
   activeNode: null,
   splitEnabled: preferences.splitEnabled,
   paneLayout: preferences.paneLayout,
+  activePane: "left",
   draggedModule: null,
   viewMode: preferences.viewMode,
   splitPaneSize: preferences.splitPaneSize,

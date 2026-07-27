@@ -15,9 +15,13 @@ import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 export function LessonModuleContent({
  module,
  compact = false,
+ lessonTextSelectedSectionId,
+ onSelectLessonTextSection,
 }: {
  module: StudyModule;
  compact?: boolean;
+ lessonTextSelectedSectionId: string;
+ onSelectLessonTextSection: (sectionId: string) => void;
 }) {
  const { lesson } = useHanziHomeRuntime();
  let content;
@@ -26,7 +30,13 @@ export function LessonModuleContent({
    content = <LessonOverview />;
    break;
   case "lessonText":
-   content = <LessonTextInlineEditor compact={compact} />;
+   content = (
+    <LessonTextInlineEditor
+     compact={compact}
+     selectedSectionId={lessonTextSelectedSectionId}
+     onSelectSection={onSelectLessonTextSection}
+    />
+   );
    break;
   case "listening":
    content = <ListeningWorkspace />;

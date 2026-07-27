@@ -2,14 +2,24 @@
 
 import type { DragEvent, ReactNode } from "react";
 
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
+import { parseStudyModule } from "@/features/hanzihome/context/workspaceLayout";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
-import { ModuleTabButton } from "./ModuleTabButton";
 import { moduleMeta } from "./moduleMeta";
+import { ModuleTabButton } from "./ModuleTabButton";
 
 export function ModulePane({
- title,
  items,
+ availableModules,
  activeModule,
  children,
  onSelectModule,
@@ -20,8 +30,8 @@ export function ModulePane({
  onDragEnd,
  onMoveModule,
 }: {
- title: string;
  items: StudyModule[];
+ availableModules: StudyModule[];
  activeModule: StudyModule;
  children: ReactNode;
  onSelectModule: (module: StudyModule) => void;
@@ -30,30 +40,62 @@ export function ModulePane({
  className?: string;
  onDragStart: (dragged: DraggedModule) => void;
  onDragEnd: () => void;
- onMoveModule: (module: StudyModule, targetPane: PaneId, targetIndex: number) => void;
+ onMoveModule: (
+  module: StudyModule,
+  sourcePane: PaneId,
+  targetPane: PaneId,
+  targetIndex: number,
+ ) => void;
 }) {
+ const isCoarsePointer = useCoarsePointer();
  const canDropIntoPane =
   draggedModule !== null &&
   (draggedModule.sourcePane !== paneId || !items.includes(draggedModule.module));
 
  const handleDropIntoPane = (event: DragEvent<HTMLDivElement>) => {
   event.preventDefault();
-  if (draggedModule) onMoveModule(draggedModule.module, paneId, items.length);
+  if (draggedModule) {
+   onMoveModule(draggedModule.module, draggedModule.sourcePane, paneId, items.length);
+  }
   onDragEnd();
  };
 
  return (
   <section
    className={[
-    "hanzihome-liquid-panel grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden rounded-2xl p-2 xl:h-full xl:min-h-0",
+    "hanzihome-liquid-panel grid h-full min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden rounded-2xl p-2",
     className,
    ].join(" ")}
   >
-   <div className="min-w-0">
-    <h2 className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">{title}</h2>
-    <p className="line-clamp-1 font-black text-text-primary">{moduleMeta[activeModule].label}</p>
-   </div>
-   <div className="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
+   {isCoarsePointer ? (
+    <div className="min-w-0">
+     <Select
+      value={activeModule}
+      onValueChange={(value) => {
+       const selectedModule = parseStudyModule(value);
+       if (selectedModule) onSelectModule(selectedModule);
+      }}
+     >
+      <SelectTrigger size="sm" width="full" aria-label="Chọn nội dung cho khung học">
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end">
+       <SelectGroup>
+        {availableModules.map((item) => {
+         const meta = moduleMeta[item];
+         const Icon = meta.icon;
+         return (
+          <SelectItem key={item} value={item}>
+           <Icon />
+           {meta.label}
+          </SelectItem>
+         );
+        })}
+       </SelectGroup>
+      </SelectContent>
+     </Select>
+    </div>
+   ) : (
     <div
      className={[
       "no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-lg border border-transparent bg-bg-subtle p-1 transition-colors",
@@ -82,9 +124,12 @@ export function ModulePane({
       />
      ))}
     </div>
-    <div className="min-h-0 min-w-0 overflow-y-auto overscroll-contain rounded-lg bg-bg-subtle/60 p-1 scrollbar-soft sm:rounded-xl sm:p-2 sm:pr-1">
-     {children}
-    </div>
+   )}
+   <div
+    data-pane-scroll={paneId}
+    className="min-h-0 min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain rounded-lg bg-bg-subtle/60 p-1 scrollbar-soft sm:rounded-xl sm:p-2 sm:pr-1"
+   >
+    {children}
    </div>
   </section>
  );

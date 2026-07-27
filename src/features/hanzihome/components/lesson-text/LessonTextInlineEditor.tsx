@@ -31,19 +31,22 @@ import { speechTextForSections } from "./lesson-section-speech";
 
 type LessonTextInlineEditorProps = {
  compact?: boolean;
+ selectedSectionId: string;
+ onSelectSection: (sectionId: string) => void;
 };
 
 const allSectionsId = "__all_lesson_sections__";
 
-export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEditorProps) {
+export function LessonTextInlineEditor({
+ compact = false,
+ selectedSectionId,
+ onSelectSection,
+}: LessonTextInlineEditorProps) {
  const runtime = useHanziHomeRuntime();
  const { lesson } = runtime;
  const actions = useHanziHomeFeatureActions();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
- const selectedSectionId = useHanziHomeFeatureSelector(
-  (state) => state.lessonTextSelectedSectionId,
- );
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
  const sourceSections = useMemo(
   () =>
@@ -85,7 +88,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
     title="Xem toàn bộ"
     subtitle={`${sourceSections.length} đề mục`}
     icon={<Layers className="h-4 w-4" />}
-    onClick={() => actions.selectLessonTextSection(allSectionsId)}
+    onClick={() => onSelectSection(allSectionsId)}
    />
 
    <div className="grid max-h-[calc(100dvh-15rem)] gap-2 overflow-y-auto pr-1 scrollbar-soft">
@@ -100,7 +103,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
        title={`${index + 1}. ${sectionTitle(section)}`}
        subtitle={sectionSubtitle(section)}
        icon={<Icon className="h-4 w-4" />}
-       onClick={() => actions.selectLessonTextSection(section.id)}
+       onClick={() => onSelectSection(section.id)}
       />
      );
     })}
@@ -113,7 +116,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
     icon={<Layers className="h-4 w-4" />}
     label={`Xem toàn bộ ${sourceSections.length} đề mục`}
     selected={showAllSections}
-    onClick={() => actions.selectLessonTextSection(allSectionsId)}
+    onClick={() => onSelectSection(allSectionsId)}
    />
    {sourceSections.map((section, index) => {
     const Icon = sectionIcons[section.type] ?? FileText;
@@ -125,7 +128,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
       icon={<Icon className="h-4 w-4" />}
       label={`${index + 1}. ${sectionTitle(section)}`}
       selected={active}
-      onClick={() => actions.selectLessonTextSection(section.id)}
+      onClick={() => onSelectSection(section.id)}
      />
     );
    })}
@@ -165,7 +168,7 @@ export function LessonTextInlineEditor({ compact = false }: LessonTextInlineEdit
        label: `${index + 1}. ${sectionTitle(section)}`,
       })),
      ],
-     onChange: actions.selectLessonTextSection,
+     onChange: onSelectSection,
     }}
     compact={compact}
     actions={compact ? readingControls : null}

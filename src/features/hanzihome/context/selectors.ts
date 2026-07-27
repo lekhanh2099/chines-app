@@ -25,12 +25,13 @@ export function useHanziHomeActiveEditableNode() {
 export function useHanziHomeWorkspaceLayout() {
  const splitEnabled = useHanziHomeFeatureSelector((state) => state.splitEnabled);
  const paneLayout = useHanziHomeFeatureSelector((state) => state.paneLayout);
+ const activePane = useHanziHomeFeatureSelector((state) => state.activePane);
  const draggedModule = useHanziHomeFeatureSelector((state) => state.draggedModule);
  const viewMode = useHanziHomeFeatureSelector((state) => state.viewMode);
  const splitPaneSize = useHanziHomeFeatureSelector((state) => state.splitPaneSize);
 
  return useMemo(
-  () => ({ splitEnabled, paneLayout, draggedModule, viewMode, splitPaneSize }),
-  [draggedModule, paneLayout, splitEnabled, splitPaneSize, viewMode],
+  () => ({ splitEnabled, paneLayout, activePane, draggedModule, viewMode, splitPaneSize }),
+  [activePane, draggedModule, paneLayout, splitEnabled, splitPaneSize, viewMode],
  );
 }

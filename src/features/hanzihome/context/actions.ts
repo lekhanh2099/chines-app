@@ -4,7 +4,7 @@ import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/typ
 
 import { useHanziHomeFeatureContext } from "./hanzihomeFeatureContext";
 import type { HanziHomeFeatureStore } from "./hanzihomeFeatureStore";
-import type { DraggedModule, LessonViewMode, PaneLayout } from "./types";
+import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import type { HanziHomeFeatureState } from "./hanzihomeFeatureStore";
 import {
@@ -47,10 +47,11 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
    persistSplitEnabled(enabled);
   },
   setPaneLayout: (layout: PaneLayout) => {
-   const normalized = normalizePaneLayout(layout);
-   store.setState((state) => ({ ...state, paneLayout: normalized }));
-   persistPaneLayout(normalized);
+   const paneLayout = normalizePaneLayout(layout);
+   store.setState((state) => ({ ...state, paneLayout }));
+   persistPaneLayout(paneLayout);
   },
+  setActivePane: (activePane: PaneId) => store.setState((state) => ({ ...state, activePane })),
   setDraggedModule: (draggedModule: DraggedModule | null) =>
    store.setState((state) => ({ ...state, draggedModule })),
   setViewMode: (viewMode: LessonViewMode) => {

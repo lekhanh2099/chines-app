@@ -7,6 +7,14 @@ import { Popover } from "@base-ui/react";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import {
@@ -104,23 +112,41 @@ export function LessonModuleFrame({
      padding="none"
      className={cn(
       "border-border-default bg-bg-card p-1.5 shadow-none sm:p-2.5",
+      compact && "sticky top-0 z-20",
       !compact && (mobileNavigation ? "hidden" : "xl:hidden"),
      )}
     >
      <div className="flex flex-wrap items-center justify-between gap-2">
-      <div className="flex min-w-0 items-center gap-2">
-       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        className="h-8 px-2.5 text-xs"
-        onClick={() => setSidebarSheetOpen(true)}
-       >
-        <PanelLeftOpen className="h-4 w-4" />
-        <span>{sidebarLabel}</span>
-       </Button>
+      <div className={cn("flex min-w-0 items-center gap-2", compact && "flex-1")}>
+       {compact && mobileNavigation ? (
+        <Select value={mobileNavigation.value} onValueChange={mobileNavigation.onChange}>
+         <SelectTrigger size="sm" width="full" aria-label={`Chọn ${sidebarLabel.toLowerCase()}`}>
+          <SelectValue />
+         </SelectTrigger>
+         <SelectContent align="start">
+          <SelectGroup>
+           {mobileNavigation.items.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+             {item.label}
+            </SelectItem>
+           ))}
+          </SelectGroup>
+         </SelectContent>
+        </Select>
+       ) : (
+        <Button
+         type="button"
+         variant="outline"
+         size="sm"
+         className="h-8 px-2.5 text-xs"
+         onClick={() => setSidebarSheetOpen(true)}
+        >
+         <PanelLeftOpen className="h-4 w-4" />
+         <span>{sidebarLabel}</span>
+        </Button>
+       )}
 
-       <div className="min-w-0">
+       <div className={cn("min-w-0", compact && "hidden")}>
         <p className="hidden line-clamp-2 font-black text-text-primary sm:block">{title}</p>
         {subtitle && (
          <p className="hidden line-clamp-2 text-xs font-semibold text-text-muted sm:block">
@@ -131,7 +157,7 @@ export function LessonModuleFrame({
       </div>
 
       <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
-       {sidebarSummary && (
+       {sidebarSummary && !compact && (
         <span className="study-chip rounded-lg border px-2 py-1 text-xs font-black uppercase tracking-wide">
          {sidebarSummary}
         </span>
@@ -210,15 +236,17 @@ export function LessonModuleFrame({
      <div className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">{children}</div>
     </div>
 
-    <Sheet
-     open={sidebarSheetOpen}
-     onOpenChange={setSidebarSheetOpen}
-     side="right"
-     className="sm:max-w-md"
-    >
-     <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
-     <SheetBody>{sidebar}</SheetBody>
-    </Sheet>
+    {!compact ? (
+     <Sheet
+      open={sidebarSheetOpen}
+      onOpenChange={setSidebarSheetOpen}
+      side="right"
+      className="sm:max-w-md"
+     >
+      <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
+      <SheetBody>{sidebar}</SheetBody>
+     </Sheet>
+    ) : null}
    </div>
   </>
  );

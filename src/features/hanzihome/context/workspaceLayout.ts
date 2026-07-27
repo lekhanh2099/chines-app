@@ -67,7 +67,9 @@ export function normalizePaneLayout(value: unknown): PaneLayout {
 
  const input = value as Partial<PaneLayout>;
  const left = uniqueModules(input.left);
- const right = uniqueModules(input.right).filter((item) => !left.includes(item));
+ const right = uniqueModules(input.right).filter(
+  (item) => item === "lessonText" || !left.includes(item),
+ );
  const assigned = new Set<StudyModule>([...left, ...right]);
 
  for (const item of splitStudyModules) {
@@ -150,18 +152,40 @@ export function setPaneActive(layout: PaneLayout, paneId: PaneId, module: StudyM
 export function moveModuleInLayout(
  layout: PaneLayout,
  module: StudyModule,
+ sourcePane: PaneId,
  targetPane: PaneId,
  targetIndex: number,
 ) {
- const sourcePane = layout.left.includes(module) ? "left" : "right";
  const sourceItems = sourcePane === "left" ? layout.left : layout.right;
 
  if (!sourceItems.includes(module)) return layout;
+
+ if (module === "lessonText" && sourcePane !== targetPane) {
+  const targetItems = [...(targetPane === "left" ? layout.left : layout.right)];
+  const existingIndex = targetItems.indexOf(module);
+  if (existingIndex >= 0) targetItems.splice(existingIndex, 1);
+  targetItems.splice(Math.max(0, Math.min(targetIndex, targetItems.length)), 0, module);
+
+  return normalizePaneLayout({
+   ...layout,
+   left: targetPane === "left" ? targetItems : layout.left,
+   right: targetPane === "right" ? targetItems : layout.right,
+   activeLeft: targetPane === "left" ? module : layout.activeLeft,
+   activeRight: targetPane === "right" ? module : layout.activeRight,
+  });
+ }
+
  if (sourcePane !== targetPane && sourceItems.length <= 1) return layout;
 
- const nextLeft = layout.left.filter((item) => item !== module);
- const nextRight = layout.right.filter((item) => item !== module);
+ const nextLeft = [...layout.left];
+ const nextRight = [...layout.right];
+ const nextSourceItems = sourcePane === "left" ? nextLeft : nextRight;
+ const sourceIndex = nextSourceItems.indexOf(module);
+ nextSourceItems.splice(sourceIndex, 1);
+
  const targetItems = targetPane === "left" ? nextLeft : nextRight;
+ const existingTargetIndex = targetItems.indexOf(module);
+ if (existingTargetIndex >= 0) targetItems.splice(existingTargetIndex, 1);
  targetItems.splice(Math.max(0, Math.min(targetIndex, targetItems.length)), 0, module);
 
  return normalizePaneLayout({

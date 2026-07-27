@@ -28,7 +28,12 @@ export function ModuleTabButton({
  onClick: () => void;
  onDragStart: (dragged: DraggedModule) => void;
  onDragEnd: () => void;
- onMoveModule: (module: StudyModule, targetPane: PaneId, targetIndex: number) => void;
+ onMoveModule: (
+  module: StudyModule,
+  sourcePane: PaneId,
+  targetPane: PaneId,
+  targetIndex: number,
+ ) => void;
 }) {
  const meta = moduleMeta[item];
  const isCoarsePointer = useCoarsePointer();
@@ -65,7 +70,9 @@ export function ModuleTabButton({
    }}
    onDrop={(event) => {
     event.preventDefault();
-    if (draggedModule?.module) onMoveModule(draggedModule.module, paneId, index);
+    if (draggedModule?.module) {
+     onMoveModule(draggedModule.module, draggedModule.sourcePane, paneId, index);
+    }
     onDragEnd();
    }}
    onDragEnd={onDragEnd}
