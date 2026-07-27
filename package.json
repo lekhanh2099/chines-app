@@ -12,8 +12,9 @@
   ]
  },
  "overrides": {
+  "brace-expansion@5.0.7": "5.0.8",
   "next": {
-   "postcss": "8.5.10"
+   "postcss": "8.5.23"
   }
  },
  "scripts": {
@@ -55,6 +56,7 @@
   "@lexical/code": "^0.45.0",
   "@lexical/link": "^0.45.0",
   "@lexical/list": "^0.45.0",
+  "@lexical/markdown": "^0.45.0",
   "@lexical/react": "^0.45.0",
   "@lexical/rich-text": "^0.45.0",
   "@lexical/selection": "^0.45.0",
@@ -73,7 +75,7 @@
   "hanzi-writer": "^3.7.3",
   "lexical": "^0.45.0",
   "lucide-react": "^1.17.0",
-  "next": "^16.2.10",
+  "next": "^16.2.12",
   "pinyin-pro": "^3.28.0",
   "prettier": "^3.9.1",
   "radix-ui": "^1.4.3",
@@ -96,10 +98,10 @@
   "@vitest/coverage-v8": "^4.1.10",
   "dotenv": "^17.4.2",
   "eslint": "^9.39.4",
-  "eslint-config-next": "^16.2.7",
+  "eslint-config-next": "^16.2.12",
   "husky": "^9.1.7",
   "knip": "^5.82.0",
-  "postcss": "^8.5.19",
+  "postcss": "^8.5.23",
   "supabase": "^2.109.1",
   "tailwindcss": "^4",
   "typescript": "^6.0.3",

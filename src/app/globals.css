@@ -783,83 +783,134 @@ body {
 
 /* ── Theme Classes ── */
 .editor-paragraph {
- margin: 0;
+ margin: 0.45rem 0;
  position: relative;
+ min-width: 0;
+ text-wrap: pretty;
+}
+
+.editor-heading-h1,
+.editor-heading-h2,
+.editor-heading-h3,
+.editor-heading-h4,
+.editor-heading-h5,
+.editor-heading-h6 {
+ color: var(--text-primary);
+ letter-spacing: 0;
+ text-wrap: balance;
 }
 
 .editor-heading-h1 {
- font-size: 2em;
+ font-size: 1.75em;
  font-weight: 700;
- margin: 0.67em 0;
- line-height: 1.3;
+ margin: 1.4em 0 0.55em;
+ line-height: 1.22;
 }
 .editor-heading-h2 {
- font-size: 1.5em;
- font-weight: 600;
- margin: 0.5em 0;
- line-height: 1.35;
+ font-size: 1.4em;
+ font-weight: 700;
+ margin: 1.25em 0 0.5em;
+ line-height: 1.28;
 }
 .editor-heading-h3 {
- font-size: 1.25em;
+ font-size: 1.2em;
  font-weight: 600;
- margin: 0.4em 0;
- line-height: 1.4;
+ margin: 1.1em 0 0.45em;
+ line-height: 1.35;
 }
 .editor-heading-h4 {
- font-size: 1.1em;
+ font-size: 1.08em;
  font-weight: 600;
- margin: 0.3em 0;
+ margin: 1em 0 0.4em;
+ line-height: 1.4;
 }
 .editor-heading-h5 {
  font-size: 1em;
  font-weight: 600;
- margin: 0.2em 0;
+ margin: 0.9em 0 0.35em;
+ line-height: 1.45;
 }
 .editor-heading-h6 {
  font-size: 0.9em;
  font-weight: 600;
- margin: 0.2em 0;
+ margin: 0.8em 0 0.3em;
  color: var(--text-secondary);
+ line-height: 1.45;
+ text-transform: uppercase;
 }
 
 .editor-quote {
- margin: 0.5em 0;
- padding: 0.5em 1em;
- border: 1px solid var(--border);
- border-radius: 0.75rem;
+ margin: 0.85rem 0;
+ padding: 0.75rem 1rem;
+ border-inline-start: 3px solid var(--accent);
+ border-radius: 0 0.5rem 0.5rem 0;
  background: var(--bg-subtle);
  color: var(--text-secondary);
- font-style: italic;
+ line-height: 1.65;
 }
 
 .editor-code {
  background: var(--bg-subtle);
  border: 1px solid var(--border);
  border-radius: 0.5rem;
- padding: 0.75rem 1rem;
+ padding: 0.875rem 1rem;
  font-family: var(--font-mono), monospace;
  font-size: 0.9em;
+ line-height: 1.65;
  tab-size: 2;
  overflow-x: auto;
- margin: 0.5em 0;
+ margin: 0.85rem 0;
  display: block;
+ white-space: pre;
 }
 
 .editor-list-ul {
  list-style-type: disc;
- padding-left: 1.5em;
- margin: 0.3em 0;
+ padding-inline-start: 1.65rem;
+ margin: 0.65rem 0;
 }
 .editor-list-ol {
  list-style-type: decimal;
- padding-left: 1.5em;
- margin: 0.3em 0;
+ padding-inline-start: 1.65rem;
+ margin: 0.65rem 0;
 }
 .editor-listitem {
- margin: 0.2em 0;
+ margin: 0.25rem 0;
+ padding-inline-start: 0.2rem;
 }
 .editor-nested-listitem {
  list-style-type: none;
+}
+
+.editor-listitem-checked,
+.editor-listitem-unchecked {
+ position: relative;
+ list-style: none;
+ padding-inline-start: 1.75rem;
+}
+
+.editor-listitem-checked::before,
+.editor-listitem-unchecked::before {
+ position: absolute;
+ inset-block-start: 0.42em;
+ inset-inline-start: 0;
+ width: 1rem;
+ height: 1rem;
+ border: 1px solid var(--border);
+ border-radius: 0.25rem;
+ background: var(--bg-card);
+ content: "";
+}
+
+.editor-listitem-checked {
+ color: var(--text-secondary);
+ text-decoration: line-through;
+}
+
+.editor-listitem-checked::before {
+ border-color: var(--accent);
+ background: var(--accent);
+ box-shadow: inset 0 0 0 3px var(--bg-card);
 }
 
 .editor-text-bold {
@@ -881,9 +932,10 @@ body {
  background: var(--bg-subtle);
  border: 1px solid var(--border);
  border-radius: 0.25rem;
- padding: 1px 4px;
+ padding: 0.08em 0.35em;
  font-family: var(--font-mono), monospace;
  font-size: 0.88em;
+ box-decoration-break: clone;
 }
 .editor-text-subscript {
  vertical-align: sub;
@@ -896,18 +948,19 @@ body {
 .editor-link {
  color: var(--accent-text);
  text-decoration: underline;
+ text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+ text-underline-offset: 0.18em;
 }
 .editor-link:hover {
- text-decoration: none;
+ text-decoration-color: currentColor;
 }
 
 /* ── Table Styles ── */
 .editor-table {
  width: 100%;
  border-collapse: collapse;
- margin: 1rem 0;
+ margin: 1.25rem 0;
  table-layout: fixed;
- overflow-x: auto;
 }
 
 .editor-table-row {
@@ -916,7 +969,7 @@ body {
 
 .editor-table-cell {
  border: 1px solid var(--border);
- padding: 0.5rem 0.75rem;
+ padding: 0.625rem 0.75rem;
  vertical-align: top;
  min-width: 60px;
  font-size: 14px;
@@ -926,7 +979,7 @@ body {
 
 .editor-table-cell-header {
  border: 1px solid var(--border);
- padding: 0.5rem 0.75rem;
+ padding: 0.625rem 0.75rem;
  vertical-align: top;
  min-width: 60px;
  font-size: 14px;
@@ -1001,8 +1054,8 @@ body {
 /* ── Horizontal Rule ── */
 hr.editor-hr {
  border: none;
- border-top: 2px solid var(--border);
- margin: 1.5rem 0;
+ border-top: 1px solid var(--border);
+ margin: 1.75rem 0;
  padding: 0;
  cursor: pointer;
 }

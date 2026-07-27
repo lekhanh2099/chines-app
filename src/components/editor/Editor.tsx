@@ -28,6 +28,20 @@ import { AutoLinkNode, LinkNode } from "@lexical/link";
 import { TableNode, TableCellNode, TableRowNode } from "@lexical/table";
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
+import { DEFAULT_TRANSFORMERS } from "@lexical/react/LexicalMarkdownShortcutPlugin";
+import { $convertFromMarkdownString } from "@lexical/markdown";
+import {
+ $createParagraphNode,
+ $getSelection,
+ $isRangeSelection,
+ $isTextNode,
+ $setSelection,
+ buildImportMap,
+ COMMAND_PRIORITY_HIGH,
+ PASTE_COMMAND,
+ TextNode,
+} from "lexical";
+import type { InitialConfigType } from "@lexical/react/LexicalComposer";
 import { logger } from "@/lib/logger";
 
 import { PinyinNode } from "./nodes/PinyinNode";
@@ -60,6 +74,40 @@ const AUTO_LINK_MATCHERS = [
   };
  },
 ];
+
+const SAFE_HTML_IMPORT = buildImportMap({
+ span: (node) => {
+  const defaultImporter = TextNode.importDOM()?.span?.(node);
+  if (!defaultImporter) return null;
+
+  return {
+   conversion: (element) => {
+    const output = defaultImporter.conversion(element);
+    if (!output) return null;
+
+    let safeStyle = "";
+    if (element.style.color) safeStyle += `color: ${element.style.color};`;
+    if (element.style.backgroundColor) {
+     safeStyle += `background-color: ${element.style.backgroundColor};`;
+    }
+    if (element.style.fontFamily) safeStyle += `font-family: ${element.style.fontFamily};`;
+    if (element.style.fontSize) safeStyle += `font-size: ${element.style.fontSize};`;
+    if (!safeStyle) return output;
+
+    const formatChild = output.forChild;
+    return {
+     ...output,
+     forChild: (lexicalNode, parentLexicalNode) => {
+      const formattedNode = formatChild ? formatChild(lexicalNode, parentLexicalNode) : lexicalNode;
+      if ($isTextNode(formattedNode)) formattedNode.setStyle(safeStyle);
+      return formattedNode;
+     },
+    };
+   },
+   priority: 1,
+  };
+ },
+});
 
 /* ── Types ── */
 interface EditorProps {
@@ -102,6 +150,41 @@ function EditablePlugin({ readOnly }: { readOnly: boolean }) {
  return null;
 }
 
+/* ── Prefer rich HTML, then convert plain clipboard Markdown ── */
+function RichPastePlugin() {
+ const [editor] = useLexicalComposerContext();
+
+ useEffect(
+  () =>
+   editor.registerCommand(
+    PASTE_COMMAND,
+    (event) => {
+     if (!(event instanceof ClipboardEvent) || !event.clipboardData) return false;
+     if (event.clipboardData.getData("text/html").trim()) return false;
+
+     const markdown = event.clipboardData.getData("text/plain");
+     const selection = $getSelection();
+     if (!markdown || !$isRangeSelection(selection)) return false;
+
+     const insertionSelection = selection.clone();
+     const markdownContainer = $createParagraphNode();
+     $convertFromMarkdownString(markdown, DEFAULT_TRANSFORMERS, markdownContainer);
+     const nodes = markdownContainer.getChildren();
+     if (nodes.length === 0) return false;
+
+     event.preventDefault();
+     $setSelection(insertionSelection);
+     insertionSelection.insertNodes(nodes);
+     return true;
+    },
+    COMMAND_PRIORITY_HIGH,
+   ),
+  [editor],
+ );
+
+ return null;
+}
+
 /* ── Main Editor ── */
 export function Editor({
  initialContent,
@@ -110,10 +193,13 @@ export function Editor({
  toolbarVisible = true,
  seamless = false,
 }: EditorProps) {
- const initialConfig = useMemo(
+ const initialConfig = useMemo<InitialConfigType>(
   () => ({
    namespace: "ChineseAppEditor",
    theme,
+   html: {
+    import: SAFE_HTML_IMPORT,
+   },
    nodes: [
     HeadingNode,
     QuoteNode,
@@ -172,6 +258,7 @@ export function Editor({
      <HorizontalRulePlugin />
      <LinkPlugin />
      <AutoLinkPlugin matchers={AUTO_LINK_MATCHERS} />
+     <RichPastePlugin />
 
      {/* State management */}
      <RestoreStatePlugin initialState={initialContent} />
