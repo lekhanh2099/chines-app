@@ -90,6 +90,7 @@ export function NotesWorkspace() {
     note.source_host,
     note.source_author,
     note.folder_id ? folderNames.get(note.folder_id) : null,
+    context.displayTitle,
     context.title,
     context.subtitle,
     context.relationLabel,

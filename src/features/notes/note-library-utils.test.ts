@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import type { NoteListItem } from "@/services/notes.service";
 import { normalizeReadingUrl, plainTextToEditorDocument } from "./note-library-utils";
+import { buildLessonLookup, getNoteContext } from "./components/noteContext";
 
 describe("note library utilities", () => {
  it("normalizes a reading URL and removes its fragment", () => {
@@ -23,6 +26,56 @@ describe("note library utilities", () => {
     { type: "paragraph", content: [{ type: "text", text: "Đoạn một." }] },
     { type: "paragraph", content: [{ type: "text", text: "Đoạn hai. Dòng tiếp." }] },
    ],
+  });
+ });
+});
+
+describe("lesson note context", () => {
+ it("shows the course, book and lesson while hiding technical tags", () => {
+  const lesson: HanziHomeLesson = {
+   id: "f3bf9e32-0f37-4cd4-8954-d1bf6c52a286",
+   lessonNumber: 7,
+   title: "Câu chuyện thành ngữ",
+   titleZh: "成语故事",
+   courseTitle: "Giáo trình Hán ngữ Quyển 2",
+   bookTitle: "Quyển 2 Thượng",
+   vocabIds: [],
+   grammarPointIds: [],
+   vocab: [],
+   grammar: [],
+  };
+  const note: NoteListItem = {
+   id: "note-id",
+   title: "Ghi chú: Câu chuyện thành ngữ",
+   tags: ["hanzihome", lesson.id, "lesson-note", "ôn tập"],
+   status: "draft",
+   category: "general",
+   short_id: "lesson-note",
+   updated_at: "2026-07-27T00:00:00.000Z",
+   linked_lesson_id: lesson.id,
+   folder_id: null,
+   reading_status: null,
+   source_url: null,
+   source_host: null,
+   source_label: null,
+   source_author: null,
+   source_published_at: null,
+   source_captured_at: null,
+   links: [
+    {
+     noteId: "note-id",
+     targetType: "hanzihome_lesson",
+     targetKey: lesson.id,
+     relationType: "main",
+     updatedAt: "2026-07-27T00:00:00.000Z",
+    },
+   ],
+  };
+
+  expect(getNoteContext(note, buildLessonLookup([lesson]))).toMatchObject({
+   displayTitle: "Quyển 2 Thượng · Bài 7",
+   subtitle: "Câu chuyện thành ngữ · 成语故事",
+   badges: ["Bài học", "ôn tập"],
   });
  });
 });

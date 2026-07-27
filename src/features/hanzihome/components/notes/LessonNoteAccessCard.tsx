@@ -29,7 +29,7 @@ export function LessonNoteAccessCard() {
    {
     lessonId: lesson.id,
     relationType: "main",
-    title: `Ghi chú: ${lesson.title}`,
+    title: `${lesson.bookTitle ? `${lesson.bookTitle} · ` : ""}Bài ${lesson.lessonNumber} · ${lesson.title}`,
     category: "general",
     tags: ["hanzihome", lesson.id, "lesson-note"],
     content: createPersonalNoteContent(lesson),
