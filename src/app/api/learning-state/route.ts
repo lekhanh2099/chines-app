@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -13,21 +14,22 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 type LearningStateRow = {
- settings: unknown;
- progress: unknown;
- bookmarks: unknown;
- review_history: unknown;
+ settings: JsonFieldValue;
+ progress: JsonFieldValue;
+ bookmarks: JsonFieldValue;
+ review_history: JsonFieldValue;
 };
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingLearningStateTable(code: string | undefined) {
+function isMissingLearningStateTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function rowToLearningState(row: LearningStateRow | null): UserLearningState {
+function rowToLearningState(row: Nullable<LearningStateRow>): UserLearningState {
  if (!row) return normalizeLearningState(emptyLearningState);
 
  const parsed = userLearningStateSchema.safeParse({
@@ -83,7 +85,7 @@ export async function PUT(request: Request) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = userLearningStateSchema.safeParse(body);
 
  if (!parsed.success) {

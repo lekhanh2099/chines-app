@@ -1,18 +1,21 @@
-import type { HanziHomeModule } from "@/features/hanzihome/types";
+import { z } from "zod";
+
+import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import type { NoteListItem } from "@/services/notes.service";
 
-export type HomeLessonTarget = {
- href: string;
- title: string;
- titleZh: string;
- courseTitle: string;
- lessonNumber: number;
- module: HanziHomeModule;
- isRecent: boolean;
-};
+export const HomeLessonTargetSchema = z.object({
+ href: z.string(),
+ title: z.string(),
+ titleZh: z.string(),
+ courseTitle: z.string(),
+ lessonNumber: z.number(),
+ module: moduleSchema,
+ isRecent: z.boolean(),
+});
+export type HomeLessonTarget = z.infer<typeof HomeLessonTargetSchema>;
 
 export type HomeDashboardModel = {
- lesson: HomeLessonTarget | null;
+ lesson: z.infer<z.ZodNullable<typeof HomeLessonTargetSchema>>;
  recentNotes: NoteListItem[];
  isLoading: boolean;
 };

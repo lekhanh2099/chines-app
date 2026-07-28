@@ -25,7 +25,7 @@ export function FocusModeRouteGuard() {
  const searchParamsString = searchParams.toString();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { hydrate: hydrateFocusMode } = focusModeStore.actions;
- const currentHrefRef = useRef<string | null>(null);
+ const currentHrefRef = useRef({ initialized: false, href: "" });
 
  useEffect(() => {
   hydrateFocusMode();
@@ -34,7 +34,7 @@ export function FocusModeRouteGuard() {
  useEffect(() => {
   if (!focusModeEnabled || typeof window === "undefined") return;
 
-  currentHrefRef.current = window.location.href;
+  currentHrefRef.current = { initialized: true, href: window.location.href };
   window.history.pushState(
    { ...(window.history.state ?? {}), hanzihomeFocusMode: true },
    "",
@@ -63,7 +63,7 @@ export function FocusModeRouteGuard() {
    });
 
    if (allowed) {
-    currentHrefRef.current = targetHref;
+    currentHrefRef.current = { initialized: true, href: targetHref };
     return;
    }
 
@@ -73,7 +73,9 @@ export function FocusModeRouteGuard() {
   };
 
   const handlePopState = () => {
-   const currentHref = currentHrefRef.current ?? window.location.href;
+   const currentHref = currentHrefRef.current.initialized
+    ? currentHrefRef.current.href
+    : window.location.href;
    window.history.pushState(
     { ...(window.history.state ?? {}), hanzihomeFocusMode: true },
     "",

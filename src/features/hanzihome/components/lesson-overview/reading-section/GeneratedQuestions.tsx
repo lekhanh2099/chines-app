@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { ExerciseQuestionCard } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
 import type { LessonDisplayMode } from "../types";
@@ -9,7 +10,7 @@ export function GeneratedQuestions({
  displayMode,
 }: {
  itemId: string;
- values: unknown[];
+ values: JsonValue[];
  showAnswers?: boolean;
  displayMode: LessonDisplayMode;
 }) {

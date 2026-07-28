@@ -20,8 +20,11 @@ import {
  WordFormationPreview,
 } from "./VocabDetailSections";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 
-function isTypingTarget(element: Element | null) {
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+
+function isTypingTarget(element: Document["activeElement"]) {
  return (
   element instanceof HTMLInputElement ||
   element instanceof HTMLTextAreaElement ||
@@ -32,8 +35,8 @@ function isTypingTarget(element: Element | null) {
 }
 
 type VocabDetailPanelProps = {
- word: HanziHomeVocabItem | null;
- wordPath?: EditableNodePath | null;
+ word: Nullable<HanziHomeVocabItem>;
+ wordPath?: Nullable<EditableNodePath>;
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;

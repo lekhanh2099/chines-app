@@ -1,19 +1,21 @@
+import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 const storageEnvelopeSchema = z.object({
  version: z.number().int().positive(),
- data: z.unknown(),
+ data: z.json(),
 });
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type VersionedStorageConfig<T> = {
  key: string;
  version: number;
  schema: z.ZodType<T>;
  fallback: T;
- migrateLegacy?: (value: unknown) => T | null;
+ migrateLegacy?: (value: JsonFieldValue) => Nullable<T>;
 };
 
-export function getBrowserStorage(): Storage | null {
+export function getBrowserStorage(): Nullable<Storage> {
  if (typeof window === "undefined") return null;
 
  try {
@@ -24,7 +26,7 @@ export function getBrowserStorage(): Storage | null {
 }
 
 export function readVersionedStorage<T>(
- storage: Storage | null,
+ storage: Nullable<Storage>,
  config: VersionedStorageConfig<T>,
 ): T {
  if (!storage) return config.fallback;
@@ -33,7 +35,7 @@ export function readVersionedStorage<T>(
   const raw = storage.getItem(config.key);
   if (!raw) return config.fallback;
 
-  const value: unknown = JSON.parse(raw);
+  const value = JsonValueSchema.parse(JSON.parse(raw));
   const envelope = storageEnvelopeSchema.safeParse(value);
   if (envelope.success && envelope.data.version === config.version) {
    const parsed = config.schema.safeParse(envelope.data.data);
@@ -51,7 +53,7 @@ export function readVersionedStorage<T>(
 }
 
 export function writeVersionedStorage<T>(
- storage: Storage | null,
+ storage: Nullable<Storage>,
  config: VersionedStorageConfig<T>,
  value: T,
 ) {

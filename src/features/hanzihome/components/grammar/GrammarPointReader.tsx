@@ -13,14 +13,17 @@ import type {
 } from "@/features/hanzihome/types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type GrammarPointReaderProps = {
- point: GrammarViewModel | null;
+ point: Nullable<GrammarViewModel>;
  status: LearningStatus;
  bookmarked: boolean;
  relatedVocab: HanziHomeVocabItem[];
  lessonId?: string;
- pointPath?: EditableNodePath | null;
+ pointPath?: Nullable<EditableNodePath>;
  editMode?: boolean;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;

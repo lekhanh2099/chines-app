@@ -1,4 +1,7 @@
-type NestedPath = Array<string | number>;
+import type { JsonFieldValue } from "@/types/json";
+import type { EditableNodePath } from "@/features/hanzihome/editing/store/types";
+import type { EditFieldKind } from "./types";
+type NestedPath = EditableNodePath;
 
 const fieldLabels: Record<string, string> = {
  answer: "Đáp án",
@@ -106,7 +109,11 @@ export function nestedFieldGroup(path: NestedPath) {
  } · ${current}`;
 }
 
-export function nestedFieldKind(path: NestedPath, value: unknown, inferredKind: string) {
+export function nestedFieldKind(
+ path: NestedPath,
+ value: JsonFieldValue,
+ inferredKind: EditFieldKind,
+): EditFieldKind {
  const last = path.at(-1);
  if (
   inferredKind === "text" &&
@@ -116,12 +123,12 @@ export function nestedFieldKind(path: NestedPath, value: unknown, inferredKind: 
   ) ||
    value.length > 80)
  ) {
-  return "textarea" as const;
+  return "textarea";
  }
- return inferredKind as "text" | "textarea" | "string-list" | "number" | "boolean" | "json";
+ return inferredKind;
 }
 
-export function nestedFieldRequired(path: NestedPath, value: unknown) {
+export function nestedFieldRequired(path: NestedPath, value: JsonFieldValue) {
  const last = path.at(-1);
  return (
   typeof value === "string" &&

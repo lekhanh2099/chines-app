@@ -1,13 +1,14 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-async function readJson<T = unknown>(filePath: string): Promise<T> {
+async function readJson<T = JsonFieldValue>(filePath: string): Promise<T> {
  return JSON.parse(await readFile(filePath, "utf8")) as T;
 }
 
-function asRecord(value: unknown): Record<string, unknown> {
+function asRecord(value: JsonFieldValue): Record<string, JsonFieldValue> {
  return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as Record<string, unknown>)
+  ? (value as Record<string, JsonFieldValue>)
   : {};
 }
 
@@ -37,7 +38,7 @@ async function main() {
   for (const lessonValue of lessons) {
    const lesson = asRecord(lessonValue);
    const lessonRoot = path.join(dbRoot, datasetId, asRecord(lesson).folder as string);
-   const sections = await readJson<unknown[]>(path.join(lessonRoot, "sections/index.json"));
+   const sections = await readJson<JsonFieldValue[]>(path.join(lessonRoot, "sections/index.json"));
    const vocab = await readJson<Array<{ file: string }>>(
     path.join(lessonRoot, "vocabulary/index.json"),
    );

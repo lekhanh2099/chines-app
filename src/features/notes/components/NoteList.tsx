@@ -22,8 +22,8 @@ export function NoteList({
  lessonLookup: LessonLookup;
  groupByMonth?: boolean;
 }) {
- const groups = useMemo(() => {
-  if (!groupByMonth) return [["", notes] as const];
+ const groups = useMemo<[string, NoteListItem[]][]>(() => {
+  if (!groupByMonth) return [["", notes]];
   const byMonth = new Map<string, NoteListItem[]>();
   for (const note of notes) {
    const month = format(new Date(note.updated_at), "MMMM yyyy", { locale: vi });

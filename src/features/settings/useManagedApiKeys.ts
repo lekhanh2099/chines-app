@@ -11,9 +11,8 @@ import {
  updateManagedApiKeyModel,
 } from "./api-key-manager.client";
 import type { ApiKeysResponse } from "./api-key-manager.schema";
-import type { ApiKeyProvider } from "@/lib/api-key-providers";
 
-const apiKeyManagerQueryKey = ["settings", "api-keys"] as const;
+const apiKeyManagerQueryKey = ["settings", "api-keys"];
 
 export function useManagedApiKeys() {
  const queryClient = useQueryClient();
@@ -27,7 +26,7 @@ export function useManagedApiKeys() {
   mutationFn: (input: {
    apiKey: string;
    label?: string;
-   provider: ApiKeyProvider | "auto";
+   provider: Parameters<typeof addManagedApiKey>[0]["provider"];
    model?: string;
   }) => addManagedApiKey(input),
   onSuccess: refresh,

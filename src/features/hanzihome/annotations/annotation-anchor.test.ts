@@ -47,8 +47,9 @@ describe("lesson annotation anchors", () => {
    endOffset: 3,
   });
   expect(anchor).not.toBeNull();
+  if (!anchor) throw new Error("Expected annotation anchor");
 
-  const resolved = resolveAnnotationAnchor(annotationFromAnchor(anchor!), `以前${source}`);
+  const resolved = resolveAnnotationAnchor(annotationFromAnchor(anchor), `以前${source}`);
   expect(resolved.stale).toBe(false);
   expect(resolved.resolvedStartOffset).toBe(3);
  });
@@ -63,8 +64,9 @@ describe("lesson annotation anchors", () => {
    endOffset: 1,
   });
   expect(anchor).not.toBeNull();
+  if (!anchor) throw new Error("Expected annotation anchor");
 
-  const resolved = resolveAnnotationAnchor(annotationFromAnchor(anchor!), "不很也很");
+  const resolved = resolveAnnotationAnchor(annotationFromAnchor(anchor), "不很也很");
   expect(resolved.stale).toBe(true);
  });
 });

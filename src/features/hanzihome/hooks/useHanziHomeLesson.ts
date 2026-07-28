@@ -5,8 +5,11 @@ import {
  useHanziHomeLessonDetailResource,
  useHanziHomeLessonVocabulary,
 } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import { z } from "zod";
 
-export function useHanziHomeLesson(lessonId: string | null) {
+const LessonIdSchema = z.string().nullable();
+
+export function useHanziHomeLesson(lessonId: z.infer<typeof LessonIdSchema>) {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId ?? "");
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId ?? "");
  const lesson =

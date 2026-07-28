@@ -1,5 +1,8 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
+import type { Database, Tables } from "../src/types/supabase.generated.ts";
 import { createClient } from "@supabase/supabase-js";
 import "dotenv/config";
+import { z } from "zod";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -7,22 +10,26 @@ if (!url || !key) {
  throw new Error("Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY/SUPABASE_SERVICE_ROLE_KEY.");
 }
 
-const client = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
-type Row = Record<string, unknown> & {
+const client = createClient<Database>(url, key, {
+ auth: { persistSession: false, autoRefreshToken: false },
+});
+type Row = Record<string, JsonFieldValue> & {
  id: string;
  lesson_id?: string;
  course_id?: string;
  book_id?: string;
  vocab_item_id?: string;
- owner_id?: string | null;
+ owner_id?: Tables<"hanzihome_vocab_items">["owner_id"];
  source?: string;
- deleted_at?: string | null;
+ deleted_at?: Tables<"hanzihome_vocab_items">["deleted_at"];
 };
+const VocabAuditTableSchema = z.enum([
+ "hanzihome_vocab_items",
+ "hanzihome_vocab_examples",
+ "hanzihome_vocab_detail_sections",
+]);
 
-async function allRows(
- table: "hanzihome_vocab_items" | "hanzihome_vocab_examples" | "hanzihome_vocab_detail_sections",
- select: string,
-) {
+async function allRows(table: z.infer<typeof VocabAuditTableSchema>, select: string) {
  const rows: Row[] = [];
  for (let from = 0; ; from += 1000) {
   const { data, error } = await client
@@ -30,7 +37,7 @@ async function allRows(
    .select(select)
    .range(from, from + 999);
   if (error) throw new Error(`${table}: ${error.message}`);
-  rows.push(...((data ?? []) as unknown as Row[]));
+  rows.push(...((data ?? []) as JsonFieldValue as Row[]));
   if (!data || data.length < 1000) return rows;
  }
 }
@@ -68,7 +75,7 @@ function duplicateNaturalKeys(rows: Row[], keyFor: (row: Row) => string) {
  return [...counts.values()].reduce((sum, count) => sum + Math.max(0, count - 1), 0);
 }
 
-function normalized(value: unknown) {
+function normalized(value: JsonFieldValue) {
  return String(value ?? "")
   .normalize("NFKC")
   .trim()

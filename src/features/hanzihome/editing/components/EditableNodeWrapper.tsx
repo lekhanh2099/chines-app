@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import {
  Children,
  cloneElement,
@@ -22,12 +23,13 @@ import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
  deleteEditableNodeDirectly,
  reorderCanonicalContent,
+ type ReorderDirection,
  type RestorableCanonicalEntityType,
 } from "../direct-save";
 import { invalidateHanziHomeContent } from "../invalidate-content";
 import { isPrimaryEditableEntityType } from "../edit-visibility";
 import { isHanziHomeMutationConflict } from "../mutation-error";
-import type { EditableNodePath, EditableEntityType } from "../store/types";
+import type { EditableNodePath, EditableEntityType, EditableNodeRequest } from "../store/types";
 import { EditButton } from "./EditButton";
 
 type EditableNodeWrapperProps = {
@@ -37,7 +39,7 @@ type EditableNodeWrapperProps = {
  parentEntityType?: EditableEntityType;
  parentEntityId?: string;
  path: EditableNodePath;
- value: unknown;
+ value: EditableNodeRequest["value"];
  label?: string;
  editLabel?: string;
  className?: string;
@@ -106,7 +108,7 @@ export function EditableNodeWrapper({
   Boolean(record?.order && record.orderField) && record?.entityType === entityType;
  const valueId =
   value && typeof value === "object" && !Array.isArray(value) && "id" in value
-   ? (value as { id?: unknown }).id
+   ? (value as { id?: JsonFieldValue }).id
    : undefined;
  const canDelete =
   Boolean(record) &&
@@ -146,7 +148,7 @@ export function EditableNodeWrapper({
   }
  };
 
- const reorderNode = async (direction: -1 | 1) => {
+ const reorderNode = async (direction: ReorderDirection) => {
   if (!record?.order || !record.orderField) return;
   if (!isRestorableEntityType(record.entityType)) {
    toast.error("Node này chưa hỗ trợ sắp xếp trực tiếp.");

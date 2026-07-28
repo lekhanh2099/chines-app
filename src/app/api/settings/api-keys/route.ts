@@ -1,8 +1,10 @@
+import type { JsonFieldValue } from "@/types/json";
+import { parseErrorLike, type ErrorInput } from "@/types/error";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import {
  AUTO_API_KEY_PROVIDER,
- API_KEY_PROVIDER_OPTIONS,
+ ApiKeyProviderSchema,
  getApiKeyProviderLabel,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
@@ -21,21 +23,29 @@ import {
 } from "@/services/user-api-keys.service";
 
 const VALIDATION_TIMEOUT = 10_000;
-const OPENAI_MODEL_PREFERENCES = [
- "gpt-5-mini",
- "gpt-5-nano",
- "gpt-4.1-mini",
- "gpt-4.1-nano",
-] as const;
+const OPENAI_MODEL_PREFERENCES = ["gpt-5-mini", "gpt-5-nano", "gpt-4.1-mini", "gpt-4.1-nano"];
 
-const providerEnum = z.enum(
- API_KEY_PROVIDER_OPTIONS.map((option) => option.value) as [ApiKeyProvider, ...ApiKeyProvider[]],
-);
+const providerEnum = ApiKeyProviderSchema;
+const RequestedProviderSchema = z.union([z.literal(AUTO_API_KEY_PROVIDER), providerEnum]);
+const ProviderDetectionModeSchema = z.enum(["auto", "manual"]);
+const providerModelsResponseSchema = z.object({
+ data: z.array(z.object({ id: z.string() })).optional(),
+});
+const geminiModelsResponseSchema = z.object({
+ models: z
+  .array(
+   z.object({
+    name: z.string().optional(),
+    supportedGenerationMethods: z.array(z.string()).optional(),
+   }),
+  )
+  .optional(),
+});
 
 const addKeySchema = z.object({
  apiKey: z.string().trim().min(1).max(400),
  label: z.string().trim().max(80).optional(),
- provider: z.union([z.literal(AUTO_API_KEY_PROVIDER), providerEnum]).optional(),
+ provider: RequestedProviderSchema.optional(),
  model: z.string().trim().min(1).max(200).optional(),
 });
 
@@ -66,20 +76,20 @@ const deleteSchema = z.object({
  keyId: z.uuid(),
 });
 
-type ProviderValidationSuccess = {
- valid: true;
- provider: ApiKeyProvider;
- defaultModel: string | null;
- detectedVia: "auto" | "manual";
- message?: string;
-};
-
-type ProviderValidationFailure = {
- valid: false;
- error: string;
-};
-
-type ProviderValidationResult = ProviderValidationSuccess | ProviderValidationFailure;
+const ProviderValidationResultSchema = z.discriminatedUnion("valid", [
+ z.object({
+  valid: z.literal(true),
+  provider: ApiKeyProviderSchema,
+  defaultModel: z.string().nullable(),
+  detectedVia: ProviderDetectionModeSchema,
+  message: z.string().optional(),
+ }),
+ z.object({
+  valid: z.literal(false),
+  error: z.string(),
+ }),
+]);
+type ProviderValidationResult = z.infer<typeof ProviderValidationResultSchema>;
 
 export async function GET() {
  const supabase = await createClient();
@@ -133,7 +143,7 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = addKeySchema.safeParse(payload);
 
  if (!parsed.success) {
@@ -206,7 +216,7 @@ export async function PATCH(request: NextRequest) {
   );
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = patchSchema.safeParse(payload);
 
  if (!parsed.success) {
@@ -282,7 +292,7 @@ export async function DELETE(request: NextRequest) {
   );
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = deleteSchema.safeParse(payload);
 
  if (!parsed.success) {
@@ -299,7 +309,7 @@ export async function DELETE(request: NextRequest) {
 
 async function detectAndValidateProvider(
  apiKey: string,
- provider: ApiKeyProvider | typeof AUTO_API_KEY_PROVIDER,
+ provider: z.infer<typeof RequestedProviderSchema>,
 ): Promise<ProviderValidationResult> {
  if (provider !== AUTO_API_KEY_PROVIDER) {
   return validateByProvider(apiKey, provider, "manual");
@@ -347,7 +357,7 @@ function getProviderCandidates(apiKey: string): ApiKeyProvider[] {
 async function validateByProvider(
  apiKey: string,
  provider: ApiKeyProvider,
- detectedVia: "auto" | "manual",
+ detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
 ): Promise<ProviderValidationResult> {
  if (provider === "deepseek") {
   return validateDeepSeekKey(apiKey, detectedVia);
@@ -366,7 +376,7 @@ async function validateByProvider(
 
 async function validateGroqKey(
  apiKey: string,
- detectedVia: "auto" | "manual",
+ detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("gsk_")) {
   return {
@@ -388,7 +398,7 @@ async function validateGroqKey(
    return { valid: false, error: `Groq trả về lỗi HTTP ${res.status}.` };
   }
 
-  const json = (await res.json()) as { data?: { id: string }[] };
+  const json = providerModelsResponseSchema.parse(await res.json());
   const models = (json.data || []).map((model) => model.id);
   const defaultModel =
    models.find((model) => model === DEFAULT_GROQ_MODEL) || models[0] || DEFAULT_GROQ_MODEL;
@@ -407,7 +417,7 @@ async function validateGroqKey(
 
 async function validateDeepSeekKey(
  apiKey: string,
- detectedVia: "auto" | "manual",
+ detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("sk-")) {
   return {
@@ -444,7 +454,7 @@ async function validateDeepSeekKey(
    };
   }
 
-  const json = (await res.json()) as { data?: { id: string }[] };
+  const json = providerModelsResponseSchema.parse(await res.json());
   const models = (json.data || []).map((model) => model.id);
   const preferredModel = getDefaultApiKeyModel("deepseek");
   const defaultModel = models.find((model) => model === preferredModel) || models[0] || null;
@@ -466,7 +476,7 @@ async function validateDeepSeekKey(
 
 async function validateGeminiKey(
  apiKey: string,
- detectedVia: "auto" | "manual",
+ detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
 ): Promise<ProviderValidationResult> {
  try {
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`, {
@@ -488,12 +498,7 @@ async function validateGeminiKey(
    };
   }
 
-  const json = (await res.json()) as {
-   models?: {
-    name?: string;
-    supportedGenerationMethods?: string[];
-   }[];
-  };
+  const json = geminiModelsResponseSchema.parse(await res.json());
 
   const availableModels = (json.models || [])
    .filter((model) => (model.supportedGenerationMethods || []).includes("generateContent"))
@@ -521,7 +526,7 @@ async function validateGeminiKey(
 
 async function validateOpenAiKey(
  apiKey: string,
- detectedVia: "auto" | "manual",
+ detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("sk-")) {
   return {
@@ -551,7 +556,7 @@ async function validateOpenAiKey(
    };
   }
 
-  const json = (await res.json()) as { data?: { id: string }[] };
+  const json = providerModelsResponseSchema.parse(await res.json());
   const models = (json.data || []).map((model) => model.id);
   const defaultModel =
    OPENAI_MODEL_PREFERENCES.find((model) => models.includes(model)) || models[0] || null;
@@ -571,10 +576,11 @@ async function validateOpenAiKey(
  }
 }
 
-function formatValidationNetworkError(providerLabel: string, error: unknown): string {
- if (error instanceof DOMException && error.name === "TimeoutError") {
+function formatValidationNetworkError(providerLabel: string, error: ErrorInput): string {
+ const parsedError = parseErrorLike(error);
+ if (parsedError.name === "TimeoutError") {
   return `${providerLabel} phản hồi quá chậm khi validate key. Vui lòng thử lại.`;
  }
 
- return `${providerLabel} lỗi kết nối: ${error instanceof Error ? error.message : "unknown"}.`;
+ return `${providerLabel} lỗi kết nối: ${parsedError.message || "unknown"}.`;
 }

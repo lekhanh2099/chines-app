@@ -1,21 +1,25 @@
+import { JsonValueSchema, type JsonObject, type JsonValue } from "@/types/json";
 import { z } from "zod";
 
 import type { EditAdapter, EditFieldDefinition, EditFieldKind } from "./types";
 
-type NestedPath = Array<string | number>;
+const NestedPathSchema = z.array(z.union([z.string(), z.number()]));
+type NestedPath = z.infer<typeof NestedPathSchema>;
+type NestedValue = JsonObject[string];
+type OptionalText = z.infer<z.ZodOptional<z.ZodString>>;
 
 type NestedField = EditFieldDefinition & {
  path: NestedPath;
- sourceValue: unknown;
+ sourceValue: NestedValue;
 };
 
 type NestedEditAdapterOptions<T> = {
  schema: z.ZodType<T>;
  labelForPath: (path: NestedPath) => string;
- groupForPath: (path: NestedPath) => string | undefined;
- kindForPath?: (path: NestedPath, value: unknown, inferredKind: EditFieldKind) => EditFieldKind;
- requiredForPath?: (path: NestedPath, value: unknown) => boolean;
- defaultVisibleForPath?: (path: NestedPath, value: unknown) => boolean;
+ groupForPath: (path: NestedPath) => OptionalText;
+ kindForPath?: (path: NestedPath, value: NestedValue, inferredKind: EditFieldKind) => EditFieldKind;
+ requiredForPath?: (path: NestedPath, value: NestedValue) => boolean;
+ defaultVisibleForPath?: (path: NestedPath, value: NestedValue) => boolean;
  skipKeys?: ReadonlySet<string>;
 };
 
@@ -29,11 +33,11 @@ const defaultSkippedKeys = new Set([
  "editMeta",
 ]);
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+function isRecord(value: NestedValue): value is JsonObject {
  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
-function fieldKind(value: unknown): EditFieldKind | null {
+function fieldKind(value: NestedValue): z.infer<z.ZodNullable<z.ZodType<EditFieldKind>>> {
  if (typeof value === "boolean") return "boolean";
  if (typeof value === "number") return "number";
  if (typeof value === "string" || value === null || value === undefined) return "text";
@@ -44,12 +48,15 @@ function fieldKind(value: unknown): EditFieldKind | null {
 }
 
 function collectFields(
- value: unknown,
+ value: NestedValue,
  path: NestedPath,
- options: Pick<
-  NestedEditAdapterOptions<unknown>,
-  "defaultVisibleForPath" | "groupForPath" | "kindForPath" | "labelForPath" | "requiredForPath"
- >,
+ options: {
+  defaultVisibleForPath: NestedEditAdapterOptions<JsonValue>["defaultVisibleForPath"];
+  groupForPath: NestedEditAdapterOptions<JsonValue>["groupForPath"];
+  kindForPath: NestedEditAdapterOptions<JsonValue>["kindForPath"];
+  labelForPath: NestedEditAdapterOptions<JsonValue>["labelForPath"];
+  requiredForPath: NestedEditAdapterOptions<JsonValue>["requiredForPath"];
+ },
  skipKeys: ReadonlySet<string>,
  output: NestedField[],
 ) {
@@ -82,8 +89,8 @@ function collectFields(
  });
 }
 
-function valueAtPath(value: unknown, path: NestedPath): unknown {
- return path.reduce<unknown>((current, segment) => {
+function valueAtPath(value: NestedValue, path: NestedPath): NestedValue {
+ return path.reduce<NestedValue>((current, segment) => {
   if (typeof segment === "number") {
    return Array.isArray(current) ? current[segment] : undefined;
   }
@@ -91,7 +98,7 @@ function valueAtPath(value: unknown, path: NestedPath): unknown {
  }, value);
 }
 
-function setValueAtPath(target: unknown, path: NestedPath, nextValue: unknown) {
+function setValueAtPath(target: NestedValue, path: NestedPath, nextValue: JsonValue) {
  let current = target;
 
  for (let index = 0; index < path.length - 1; index += 1) {
@@ -115,7 +122,7 @@ function setValueAtPath(target: unknown, path: NestedPath, nextValue: unknown) {
  }
 }
 
-function valueToString(value: unknown, kind: EditFieldKind) {
+function valueToString(value: NestedValue, kind: EditFieldKind) {
  if (kind === "string-list") {
   return Array.isArray(value) ? value.map(String).join("\n") : "";
  }
@@ -123,7 +130,7 @@ function valueToString(value: unknown, kind: EditFieldKind) {
  return value === null || value === undefined ? "" : String(value);
 }
 
-function stringToValue(value: string, kind: EditFieldKind, sourceValue: unknown) {
+function stringToValue(value: string, kind: EditFieldKind, sourceValue: NestedValue) {
  if (kind === "boolean") return value === "true";
  if (kind === "number") {
   const parsed = Number(value);
@@ -162,10 +169,10 @@ export function createNestedEditAdapter<T>({
    return fields;
   },
   toValues(value) {
-   schema.parse(value);
+   const parsedValue = JsonValueSchema.parse(schema.parse(value));
    fields = [];
    collectFields(
-    value,
+    parsedValue,
     [],
     { labelForPath, groupForPath, kindForPath, requiredForPath, defaultVisibleForPath },
     skipKeys,
@@ -174,20 +181,19 @@ export function createNestedEditAdapter<T>({
    return Object.fromEntries(
     fields.map((field) => [
      field.key,
-     valueToString(valueAtPath(value, field.path), field.kind ?? "text"),
+     valueToString(valueAtPath(parsedValue, field.path), field.kind ?? "text"),
     ]),
    );
   },
   toNode(original, values) {
-   schema.parse(original);
-   const output = structuredClone(original);
+   const output = structuredClone(JsonValueSchema.parse(schema.parse(original)));
 
    fields.forEach((field) => {
     const kind = field.kind ?? "text";
     setValueAtPath(
      output,
      field.path,
-     stringToValue(values[field.key] ?? "", kind, field.sourceValue),
+     JsonValueSchema.parse(stringToValue(values[field.key] ?? "", kind, field.sourceValue)),
     );
    });
 

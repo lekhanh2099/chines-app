@@ -23,13 +23,15 @@ import { useNativeMandarinTts } from "./useNativeMandarinTts";
 import { itemsForListeningSection } from "./listening.view-model";
 import { listeningCategoryLabels } from "./listening.labels";
 import type { ListeningCategory } from "./listening.types";
+import { z } from "zod";
 
 export function ListeningWorkspace() {
  const runtime = useHanziHomeRuntime();
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const tts = useNativeMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
- const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+ const [selectedSectionId, setSelectedSectionId] =
+  useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [sidebarOpen, setSidebarOpen] = useState(true);
  const [showScript, setShowScript] = useState(false);
  const [hideScriptBeforeCheck, setHideScriptBeforeCheck] = useState(true);

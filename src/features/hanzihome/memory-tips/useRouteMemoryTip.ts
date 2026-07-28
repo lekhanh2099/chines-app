@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { z } from "zod";
@@ -13,12 +14,14 @@ import type { MemoryTip } from "./memory-tip.schema";
 
 const recentIdsStorageKey = "hanzihome.memoryTips.recentIds";
 const maxRecentIds = 8;
+const emptyRecentIds: string[] = [];
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 const recentIdsStorageConfig = {
  key: recentIdsStorageKey,
  version: 1,
  schema: z.array(z.string()).max(maxRecentIds),
- fallback: [] as string[],
- migrateLegacy: (value: unknown) => {
+ fallback: emptyRecentIds,
+ migrateLegacy: (value: JsonFieldValue) => {
   const parsed = z.array(z.string()).safeParse(value);
   return parsed.success ? parsed.data.slice(0, maxRecentIds) : null;
  },
@@ -32,7 +35,7 @@ function writeRecentIds(ids: string[]) {
  writeVersionedStorage(getBrowserStorage(), recentIdsStorageConfig, ids.slice(0, maxRecentIds));
 }
 
-function isTypingTarget(element: Element | null) {
+function isTypingTarget(element: Document["activeElement"]) {
  if (!element) return false;
 
  const tagName = element.tagName.toLowerCase();
@@ -53,7 +56,11 @@ function getTipWeight(tip: MemoryTip) {
  return Math.max(1, Math.trunc(tip.weight)) * pinBoost;
 }
 
-function pickWeightedTip(tips: MemoryTip[], recentIds: string[], currentTipId?: string | null) {
+function pickWeightedTip(
+ tips: MemoryTip[],
+ recentIds: string[],
+ currentTipId?: Nullable<MemoryTip["id"]>,
+) {
  const activeTips = tips.filter((tip) => !tip.isArchived);
  const nonCurrentTips =
   activeTips.length > 1 ? activeTips.filter((tip) => tip.id !== currentTipId) : activeTips;
@@ -78,8 +85,8 @@ export function useRouteMemoryTip(tips: MemoryTip[]) {
  const searchParams = useSearchParams();
  const routeKey = `${pathname}?${searchParams.toString()}`;
  const tipsKey = useMemo(() => tips.map((tip) => tip.id).join("|"), [tips]);
- const [selectedTipId, setSelectedTipId] = useState<string | null>(null);
- const selectedTipIdRef = useRef<string | null>(null);
+ const [selectedTipId, setSelectedTipId] = useState<Nullable<MemoryTip["id"]>>(null);
+ const selectedTipIdRef = useRef<MemoryTip["id"]>(null);
 
  useEffect(() => {
   selectedTipIdRef.current = selectedTipId;

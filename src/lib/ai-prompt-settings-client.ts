@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import {
  DEFAULT_SENTENCE_LOOKUP_PROMPT,
  DEFAULT_WORD_LOOKUP_PROMPT,
@@ -32,7 +33,7 @@ export const defaultClientAiPromptSettings: ClientAiPromptSettings = {
  geminiModel: DEFAULT_GEMINI_MODEL,
 };
 
-const clientAiPromptSettingsSchema = z.object({
+export const ClientAiPromptSettingsSchema = z.object({
  wordLookupPrompt: z.string(),
  sentenceLookupPrompt: z.string(),
  geminiModel: z.enum(GEMINI_TEXT_MODEL_OPTIONS.map((option) => option.value)),
@@ -41,9 +42,9 @@ const clientAiPromptSettingsSchema = z.object({
 const aiPromptSettingsStorageConfig = {
  key: AI_PROMPT_SETTINGS_STORAGE_KEY,
  version: AI_PROMPT_SETTINGS_STORAGE_VERSION,
- schema: clientAiPromptSettingsSchema,
+ schema: ClientAiPromptSettingsSchema,
  fallback: defaultClientAiPromptSettings,
- migrateLegacy: (value: unknown) => {
+ migrateLegacy: (value: JsonFieldValue) => {
   const legacy = z
    .object({
     wordLookupPrompt: z.string().optional(),
@@ -55,12 +56,17 @@ const aiPromptSettingsStorageConfig = {
  },
 };
 
+const LegacyAiPromptSettingsSchema = z
+ .object({
+  wordLookupPrompt: z.string().optional(),
+  sentenceLookupPrompt: z.string().optional(),
+  geminiModel: z.string().optional(),
+ })
+ .nullable()
+ .optional();
+
 function normalizeSettings(
- settings?: {
-  wordLookupPrompt?: string;
-  sentenceLookupPrompt?: string;
-  geminiModel?: string;
- } | null,
+ settings: z.input<typeof LegacyAiPromptSettingsSchema>,
 ): ClientAiPromptSettings {
  return {
   wordLookupPrompt: getWordLookupPromptTemplate(settings?.wordLookupPrompt),

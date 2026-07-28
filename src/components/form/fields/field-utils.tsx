@@ -1,8 +1,11 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { ReactNode } from "react";
+import { z } from "zod";
 
 import { cn } from "@/lib/utils";
+type OptionalText = z.infer<z.ZodOptional<z.ZodString>>;
 
-export function getFieldError(meta: { isValid: boolean; errors: unknown[] }): string | undefined {
+export function getFieldError(meta: { isValid: boolean; errors: JsonFieldValue[] }): OptionalText {
  if (meta.isValid || meta.errors.length === 0) return undefined;
 
  return meta.errors
@@ -11,7 +14,7 @@ export function getFieldError(meta: { isValid: boolean; errors: unknown[] }): st
   .join(", ");
 }
 
-export function getDescribedBy(...ids: Array<string | undefined>) {
+export function getDescribedBy(...ids: OptionalText[]) {
  const value = ids.filter(Boolean).join(" ");
  return value || undefined;
 }

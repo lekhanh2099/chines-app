@@ -18,24 +18,24 @@ type TooltipState = {
 
 export default function NodeHoverPlugin() {
  const [editor] = useLexicalComposerContext();
- const [tooltip, setTooltip] = useState<TooltipState | null>(null);
- const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- const showTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+ const [tooltip, setTooltip] = useState<TooltipState>();
+ const hideTimerRef = useRef<{ value?: ReturnType<typeof setTimeout> }>({});
+ const showTimerRef = useRef<{ value?: ReturnType<typeof setTimeout> }>({});
 
  const clearTimers = useCallback(() => {
-  if (hideTimerRef.current) {
-   clearTimeout(hideTimerRef.current);
-   hideTimerRef.current = null;
+  if (hideTimerRef.current.value) {
+   clearTimeout(hideTimerRef.current.value);
+   delete hideTimerRef.current.value;
   }
-  if (showTimerRef.current) {
-   clearTimeout(showTimerRef.current);
-   showTimerRef.current = null;
+  if (showTimerRef.current.value) {
+   clearTimeout(showTimerRef.current.value);
+   delete showTimerRef.current.value;
   }
  }, []);
 
  const hide = useCallback(() => {
   clearTimers();
-  hideTimerRef.current = setTimeout(() => setTooltip(null), 150);
+  hideTimerRef.current.value = setTimeout(() => setTooltip(undefined), 150);
  }, [clearTimers]);
 
  useEffect(() => {
@@ -43,8 +43,10 @@ export default function NodeHoverPlugin() {
   if (!root) return;
 
   const handleMouseOver = (e: MouseEvent) => {
-   const target = e.target as HTMLElement;
-   const linkEl = target.closest("[data-internal-link]") as HTMLElement | null;
+   if (!(e.target instanceof HTMLElement)) return;
+   const target = e.target;
+   const closestLink = target.closest("[data-internal-link]");
+   const linkEl = closestLink instanceof HTMLElement ? closestLink : null;
 
    if (!linkEl) {
     hide();
@@ -52,7 +54,7 @@ export default function NodeHoverPlugin() {
    }
 
    clearTimers();
-   showTimerRef.current = setTimeout(() => {
+   showTimerRef.current.value = setTimeout(() => {
     const noteTitle = linkEl.title || linkEl.textContent || "";
     const rect = linkEl.getBoundingClientRect();
     setTooltip({ noteTitle, rect });
@@ -60,7 +62,7 @@ export default function NodeHoverPlugin() {
   };
 
   const handleMouseOut = (e: MouseEvent) => {
-   const related = e.relatedTarget as HTMLElement | null;
+   const related = e.relatedTarget instanceof HTMLElement ? e.relatedTarget : null;
    if (related?.closest("[data-internal-link]") || related?.closest("[data-link-tooltip]")) {
     return;
    }

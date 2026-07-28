@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
@@ -30,8 +31,8 @@ export function PassageCard({
  lessonId,
 }: {
  itemId: string;
- passage: unknown;
- answers?: unknown[];
+ passage: JsonFieldValue;
+ answers?: JsonValue[];
  displayMode: LessonDisplayMode;
  lessonId?: string;
 }) {

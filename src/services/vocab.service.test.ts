@@ -12,7 +12,6 @@ describe("mapDictionaryEntryToVocabData", () => {
    pinyin: "qīngchu",
    sino_vietnamese: "THANH SỞ",
    lookup_count: 1,
-   type: "word",
    created_at: "2026-07-28T00:00:00.000Z",
    data: {
     definitions: [

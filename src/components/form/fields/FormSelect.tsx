@@ -6,8 +6,10 @@ import { Select as SimpleSelect } from "@/components/ui/select/index";
 import { useFieldContext } from "@/components/form/form-context";
 import { FieldShell, getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
 import type { IOption } from "@/types/option";
+import { IOptionValueSchema } from "@/types/option";
+import { z } from "zod";
 
-type FormSelectValue = IOption["value"] | null;
+type FormSelectValue = z.infer<z.ZodNullable<typeof IOptionValueSchema>>;
 
 type FormSelectProps = {
  label: string;

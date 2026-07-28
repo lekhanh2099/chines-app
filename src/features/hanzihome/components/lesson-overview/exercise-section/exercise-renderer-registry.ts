@@ -1,19 +1,23 @@
-export type ExerciseRendererFamily =
- | "phonetics"
- | "substitution"
- | "fill_blank"
- | "answer_pattern"
- | "correct_sentence"
- | "multiple_choice"
- | "dialogue"
- | "communication"
- | "matching"
- | "reading"
- | "reorder"
- | "writing"
- | "reference"
- | "source_question"
- | "generic";
+import { z } from "zod";
+
+export const ExerciseRendererFamilySchema = z.enum([
+ "phonetics",
+ "substitution",
+ "fill_blank",
+ "answer_pattern",
+ "correct_sentence",
+ "multiple_choice",
+ "dialogue",
+ "communication",
+ "matching",
+ "reading",
+ "reorder",
+ "writing",
+ "reference",
+ "source_question",
+ "generic",
+]);
+export type ExerciseRendererFamily = z.infer<typeof ExerciseRendererFamilySchema>;
 
 export type ExerciseRendererMeta = {
  family: ExerciseRendererFamily;

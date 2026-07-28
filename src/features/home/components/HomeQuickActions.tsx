@@ -8,7 +8,7 @@ const actions = [
  { href: "/grammar", label: "Ngữ pháp", icon: BookOpenText },
  { href: "/memory-tips", label: "Nhắc nhanh", icon: Lightbulb },
  { href: "/radicals", label: "Bộ thủ", icon: Layers3 },
-] as const;
+];
 
 export function HomeQuickActions() {
  return (

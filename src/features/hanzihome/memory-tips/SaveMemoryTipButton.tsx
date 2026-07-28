@@ -8,10 +8,13 @@ import { Spinner } from "@/components/ui/spinner";
 import { isDuplicateMemoryTipError, MemoryTipsApiError } from "./memory-tip-api";
 import type { CreateMemoryTipPayload } from "./memory-tip.schema";
 import { useCreateMemoryTipMutation } from "./useMemoryTips";
+import { z } from "zod";
+
+const SaveMemoryTipButtonVariantSchema = z.enum(["outline", "ghost"]);
 
 type SaveMemoryTipButtonProps = {
  payload: CreateMemoryTipPayload;
- variant?: "outline" | "ghost";
+ variant?: z.infer<typeof SaveMemoryTipButtonVariantSchema>;
 };
 
 export function SaveMemoryTipButton({ payload, variant = "outline" }: SaveMemoryTipButtonProps) {

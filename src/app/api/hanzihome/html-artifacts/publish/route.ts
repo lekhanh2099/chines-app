@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { timingSafeEqual } from "node:crypto";
 
 import { createClient as createSupabaseClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -21,11 +22,18 @@ const publishHtmlArtifactPayloadSchema = createHtmlArtifactPayloadSchema.extend(
 const detailColumns =
  "id, owner_id, folder_id, title, artifact_type, tags, html, created_at, updated_at";
 
+const PublishAuthModeSchema = z.enum(["publish_token", "session", "user_token"]);
+
 type PublishAuthContext = {
  supabase: SupabaseClient<Database>;
  ownerId: string;
- authMode: "publish_token" | "session" | "user_token";
+ authMode: z.infer<typeof PublishAuthModeSchema>;
 };
+type PublishAuthResultMap = {
+ success: { context: PublishAuthContext };
+ failure: { response: NextResponse };
+};
+type PublishAuthResult = PublishAuthResultMap[keyof PublishAuthResultMap];
 
 type PublishPayload = z.output<typeof publishHtmlArtifactPayloadSchema>;
 
@@ -33,7 +41,7 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingHtmlArtifactsTable(code: string | undefined) {
+function isMissingHtmlArtifactsTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
@@ -76,26 +84,30 @@ function createServiceSupabaseClient() {
  });
 }
 
-async function getPublishAuthContext(request: Request): Promise<PublishAuthContext | NextResponse> {
+async function getPublishAuthContext(request: Request): Promise<PublishAuthResult> {
  const bearerToken = readBearerToken(request);
  const publishToken = process.env.HANZIHOME_HTML_PUBLISH_TOKEN;
 
  if (bearerToken && publishToken && isSameToken(bearerToken, publishToken)) {
   if (publishToken.length < 32) {
-   return jsonError("HTML publish token configuration is too weak.", 503);
+   return { response: jsonError("HTML publish token configuration is too weak.", 503) };
   }
 
   const ownerId = process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID;
   const serviceRoleKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!ownerId || !serviceRoleKey) {
-   return jsonError("HTML publish token is configured without owner or service role env.", 500);
+   return {
+    response: jsonError("HTML publish token is configured without owner or service role env.", 500),
+   };
   }
 
   return {
-   supabase: createServiceSupabaseClient(),
-   ownerId,
-   authMode: "publish_token",
+   context: {
+    supabase: createServiceSupabaseClient(),
+    ownerId,
+    authMode: "publish_token",
+   },
   };
  }
 
@@ -107,13 +119,15 @@ async function getPublishAuthContext(request: Request): Promise<PublishAuthConte
   } = await supabase.auth.getUser(bearerToken);
 
   if (error || !user) {
-   return jsonError("Unauthorized", 401);
+   return { response: jsonError("Unauthorized", 401) };
   }
 
   return {
-   supabase,
-   ownerId: user.id,
-   authMode: "user_token",
+   context: {
+    supabase,
+    ownerId: user.id,
+    authMode: "user_token",
+   },
   };
  }
 
@@ -123,13 +137,15 @@ async function getPublishAuthContext(request: Request): Promise<PublishAuthConte
  } = await supabase.auth.getUser();
 
  if (!user) {
-  return jsonError("Unauthorized", 401);
+  return { response: jsonError("Unauthorized", 401) };
  }
 
  return {
-  supabase,
-  ownerId: user.id,
-  authMode: "session",
+  context: {
+   supabase,
+   ownerId: user.id,
+   authMode: "session",
+  },
  };
 }
 
@@ -140,7 +156,7 @@ async function verifyFolderOwnership({
 }: {
  supabase: SupabaseClient<Database>;
  ownerId: string;
- folderId: string | null | undefined;
+ folderId: PublishPayload["folderId"];
 }) {
  if (!folderId) return null;
 
@@ -241,13 +257,14 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
- const authContext = await getPublishAuthContext(request);
+ const authResult = await getPublishAuthContext(request);
 
- if (authContext instanceof NextResponse) {
-  return authContext;
+ if ("response" in authResult) {
+  return authResult.response;
  }
+ const authContext = authResult.context;
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = publishHtmlArtifactPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

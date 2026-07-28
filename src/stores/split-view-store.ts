@@ -5,6 +5,7 @@
  * Tracks the resizable divider position.
  */
 
+import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
@@ -34,7 +35,7 @@ const storageConfig = {
  version: 1,
  schema: splitViewDataSchema,
  fallback: fallbackState,
- migrateLegacy: (value: unknown) => {
+ migrateLegacy: (value: JsonFieldValue) => {
   const parsed = splitViewDataSchema.safeParse(value);
   return parsed.success ? parsed.data : null;
  },

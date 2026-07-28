@@ -1,8 +1,14 @@
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import type { NoteCategory, ReadingStatus } from "@/types/database";
+import { NoteCategorySchema, type ReadingStatus } from "@/types/database";
+import type { JsonObject } from "./note-export.schema";
+import { z } from "zod";
 
-export type NoteLibraryView =
- "recent" | "inbox" | "reading" | "completed" | "lesson" | "quick" | "unfiled" | `folder:${string}`;
+export const NoteLibraryViewSchema = z.union([
+ z.enum(["recent", "inbox", "reading", "completed", "lesson", "quick", "unfiled"]),
+ z.templateLiteral(["folder:", z.string()]),
+]);
+export type NoteLibraryView = z.infer<typeof NoteLibraryViewSchema>;
+const NoteCategoryFilterSchema = z.union([NoteCategorySchema, z.literal("all")]);
 
 export type NoteFolderTreeNode = NoteFolder & { children: NoteFolderTreeNode[] };
 
@@ -15,7 +21,7 @@ export function normalizeReadingUrl(value: string): { url: string; host: string 
  return { url: parsed.toString(), host: parsed.hostname.toLowerCase() };
 }
 
-export function plainTextToEditorDocument(value: string): Record<string, unknown> {
+export function plainTextToEditorDocument(value: string): JsonObject {
  const paragraphs = value
   .replace(/\r\n?/g, "\n")
   .split(/\n{2,}/)
@@ -57,7 +63,10 @@ export function matchesNoteLibraryView(note: NoteListItem, view: NoteLibraryView
 
 export function matchesNoteFacets(
  note: NoteListItem,
- input: { category: NoteCategory | "all"; sourceHost: string | "all" },
+ input: {
+  category: z.infer<typeof NoteCategoryFilterSchema>;
+  sourceHost: string;
+ },
 ): boolean {
  if (input.category !== "all" && note.category !== input.category) return false;
  if (input.sourceHost !== "all" && note.source_host !== input.sourceHost) return false;

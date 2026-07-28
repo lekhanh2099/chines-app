@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
 import { DataPill } from "./DataPill";
@@ -6,7 +7,7 @@ export function SupplementaryVocabulary({
  values,
  displayMode,
 }: {
- values: unknown[];
+ values: JsonValue[];
  displayMode: LessonDisplayMode;
 }) {
  const visibleValues = values.filter((value) => {

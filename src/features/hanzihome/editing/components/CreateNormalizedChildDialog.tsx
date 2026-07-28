@@ -42,6 +42,7 @@ const formSchema = z
    context.addIssue({ code: "custom", path: ["title"], message: "Tiêu đề là bắt buộc" });
   }
  });
+const NormalizedChildFamilySchema = z.enum(["vocab", "grammar"]);
 
 type NormalizedChildFormValues = z.input<typeof formSchema>;
 
@@ -50,7 +51,7 @@ export function CreateNormalizedChildDialog({
  lessonId,
  parent,
 }: {
- family: "vocab" | "grammar";
+ family: z.infer<typeof NormalizedChildFamilySchema>;
  lessonId: string;
  parent: HanziHomeEditableRecordMeta;
 }) {

@@ -15,22 +15,27 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
+import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
+
+const VocabStatusFilterSchema = z.union([z.literal("all"), learningStatusSchema]);
+type VocabStatusFilter = z.infer<typeof VocabStatusFilterSchema>;
 
 type VocabListProps = {
  words: HanziHomeVocabItem[];
- selectedWordId: string | null;
+ selectedWordId: z.infer<z.ZodNullable<z.ZodString>>;
  progress: Record<string, { status: LearningStatus }>;
  bookmarkedIds: string[];
  searchValue: string;
- statusFilter: "all" | LearningStatus;
+ statusFilter: VocabStatusFilter;
  compact?: boolean;
  actions?: ReactNode;
  onSearchChange: (value: string) => void;
- onStatusFilterChange: (value: "all" | LearningStatus) => void;
+ onStatusFilterChange: (value: VocabStatusFilter) => void;
  onSelectWord: (wordId: string) => void;
 };
 
@@ -70,7 +75,7 @@ export function VocabList({
  const resizeBounds = compact ? compactPickerResizeBounds : normalPickerResizeBounds;
  const [wordPickerHeight, setWordPickerHeight] = useState(resizeBounds.defaultHeight);
  const statusItems: Array<{
-  value: "all" | LearningStatus;
+  value: VocabStatusFilter;
   label: string;
   icon: typeof Circle;
  }> = [

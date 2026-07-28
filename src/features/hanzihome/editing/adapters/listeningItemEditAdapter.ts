@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { EditAdapter, EditFieldDefinition } from "./types";
 
 const fields: EditFieldDefinition[] = [
@@ -18,11 +20,11 @@ const fields: EditFieldDefinition[] = [
  { key: "metadata", label: "Metadata", kind: "json" },
 ];
 
-function asRecord(value: unknown): Record<string, unknown> {
+function asRecord(value: JsonFieldValue): JsonObject {
  return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
-function jsonField(record: Record<string, unknown>, key: string) {
+function jsonField(record: JsonObject, key: string) {
  return JSON.stringify(record[key] ?? null, null, 2);
 }
 

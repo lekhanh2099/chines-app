@@ -1,5 +1,7 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import Link from "next/link";
 import { Layers3 } from "lucide-react";
 
@@ -8,8 +10,16 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
+import { z } from "zod";
 
-export type LessonContentModule = "lessonText" | "vocab" | "grammar" | "exercises" | "reading";
+export const LessonContentModuleSchema = z.enum([
+ "lessonText",
+ "vocab",
+ "grammar",
+ "exercises",
+ "reading",
+]);
+export type LessonContentModule = z.infer<typeof LessonContentModuleSchema>;
 
 type LessonSectionMatch = {
  section: Section;
@@ -69,7 +79,9 @@ const LESSON_CONTENT_PRESETS: Array<{
  { label: "Tất cả", modules: ["lessonText", "vocab", "grammar", "exercises", "reading"] },
 ];
 
-function getSectionContentModule(sectionType: Section["type"]): LessonContentModule | null {
+function getSectionContentModule(
+ sectionType: Section["type"],
+): z.infer<z.ZodNullable<typeof LessonContentModuleSchema>> {
  if (sectionType === "text") return "lessonText";
  if (sectionType === "vocabulary" || sectionType === "proper_nouns") return "vocab";
  if (sectionType === "grammar") return "grammar";
@@ -89,23 +101,22 @@ function getLessonSectionsForModule(
   .filter(({ section }) => getSectionContentModule(section.type) === module);
 }
 
-function asRecord(value: unknown): Record<string, unknown> {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as Record<string, unknown>)
-  : {};
+function asRecord(value: JsonFieldValue): JsonObject {
+ const parsed = JsonObjectSchema.safeParse(value);
+ return parsed.success ? parsed.data : {};
 }
 
-function stringValue(record: Record<string, unknown>, key: string) {
+function stringValue(record: JsonObject, key: string) {
  const value = record[key];
  return typeof value === "string" ? value.trim() : "";
 }
 
-function arrayValue(record: Record<string, unknown>, key: string) {
+function arrayValue(record: JsonObject, key: string) {
  const value = record[key];
  return Array.isArray(value) ? value : [];
 }
 
-function instructionText(value: unknown) {
+function instructionText(value: JsonFieldValue) {
  if (typeof value === "string") return value.trim();
 
  const record = asRecord(value);
@@ -117,7 +128,7 @@ function instructionText(value: unknown) {
  );
 }
 
-function itemTitle(record: Record<string, unknown>) {
+function itemTitle(record: JsonObject) {
  return (
   stringValue(record, "title_vi") ||
   stringValue(record, "title") ||
@@ -128,7 +139,7 @@ function itemTitle(record: Record<string, unknown>) {
  );
 }
 
-function getQuestionLikeText(value: unknown) {
+function getQuestionLikeText(value: JsonFieldValue) {
  const record = asRecord(value);
  return (
   stringValue(record, "question") ||

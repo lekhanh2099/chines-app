@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useRouter } from "next/navigation";
 import { NoteTabBar } from "@/components/notes/NoteTabBar";
@@ -29,6 +29,13 @@ import {
 import { ArrowLeft, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
+
+const OpenNoteTabDetailSchema = z.object({
+ noteId: z.string(),
+ noteTitle: z.string(),
+});
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 interface NoteTabContainerProps {
  /** If provided, ensure this note is opened + active on mount */
@@ -48,10 +55,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const router = useRouter();
  const hadTabsRef = useRef(false);
  const [mobileHeaderActionsContainer, setMobileHeaderActionsContainer] =
-  useState<HTMLDivElement | null>(null);
- const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(
-  null,
- );
+  useState<Nullable<HTMLDivElement>>(null);
+ const [desktopActionsContainer, setDesktopActionsContainer] =
+  useState<Nullable<HTMLDivElement>>(null);
 
  const selectableNotes = useMemo(
   () =>
@@ -117,7 +123,10 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  // Listen for open-note-tab custom events (from InternalLinkNode etc.)
  useEffect(() => {
   const handler = (e: Event) => {
-   const { noteId, noteTitle } = (e as CustomEvent).detail;
+   if (!(e instanceof CustomEvent)) return;
+   const detail = OpenNoteTabDetailSchema.safeParse(e.detail);
+   if (!detail.success) return;
+   const { noteId, noteTitle } = detail.data;
    if (noteId) {
     if (focusModeEnabled && !noteTabsStore.get().tabs.some((tab) => tab.noteId === noteId)) {
      toast.warning("Focus mode đang bật. Không mở thêm ghi chú mới.");
@@ -184,7 +193,11 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  );
 }
 
-type SelectableNote = Pick<NoteListItem, "id" | "title" | "updated_at">;
+type SelectableNote = {
+ id: NoteListItem["id"];
+ title: NoteListItem["title"];
+ updated_at: NoteListItem["updated_at"];
+};
 
 function mergeSelectableNotes(
  notes: NoteListItem[],
@@ -224,7 +237,7 @@ function NoteQuickSelect({
  selectedNoteId: string;
  focusLocked: boolean;
  onSelectNote: (noteId: string) => void;
- actionsRef: (element: HTMLDivElement | null) => void;
+ actionsRef: ComponentProps<"div">["ref"];
 }) {
  return (
   <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">

@@ -14,7 +14,7 @@ import { createHanziHomeFeatureStore } from "./hanzihomeFeatureStore";
 import { HanziHomeFeatureStoreProvider } from "./hanzihomeFeatureContext";
 import { createHanziHomeFeatureActions } from "./actions";
 import { createHanziHomeFeatureServices } from "./services";
-import type { LearningSyncUiState, StudyModule } from "./types";
+import type { LearningSyncUiState, ReviewItem, StudyModule } from "./types";
 
 function displayModeEquals(
  left: UserLearningState["settings"]["lessonTextDisplayMode"],
@@ -54,10 +54,7 @@ export function HanziHomeFeatureProvider({
  onMarkVocab: (id: string, status: LearningStatus) => void;
  onBookmarkGrammar: (id: string) => void;
  onMarkGrammar: (id: string, status: LearningStatus) => void;
- onAnswerReview: (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
-  result: ReviewResult,
- ) => void;
+ onAnswerReview: (item: ReviewItem, result: ReviewResult) => void;
  children: ReactNode;
 }) {
  const searchIntent = useHanziHomeSearchNavigationIntent();

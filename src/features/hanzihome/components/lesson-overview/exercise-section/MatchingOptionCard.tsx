@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { matchingItemText } from "./exercise-utils";
@@ -9,7 +10,7 @@ export function MatchingOptionCard({
  displayMode,
 }: {
  label: string;
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(value);

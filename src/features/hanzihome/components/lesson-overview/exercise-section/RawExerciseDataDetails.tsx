@@ -1,4 +1,5 @@
-export function RawExerciseDataDetails({ value }: { value: unknown }) {
+import type { JsonFieldValue } from "@/types/json";
+export function RawExerciseDataDetails({ value }: { value: JsonFieldValue }) {
  return (
   <details className="rounded-lg border border-border-default bg-bg-subtle p-3 grid gap-2">
    <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">

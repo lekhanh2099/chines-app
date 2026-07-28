@@ -1,14 +1,18 @@
-type LogLevel = "debug" | "info" | "warn" | "error";
+import { z } from "zod";
 
-function write(level: LogLevel, message: string, details: unknown[]) {
+const LogLevelSchema = z.enum(["debug", "info", "warn", "error"]);
+type LogLevel = z.infer<typeof LogLevelSchema>;
+type LogDetails = Parameters<Console["error"]>;
+
+function write(level: LogLevel, message: string, details: LogDetails) {
  if (process.env.NODE_ENV === "production" && (level === "debug" || level === "info")) return;
 
  console[level](message, ...details);
 }
 
 export const logger = {
- debug: (message: string, ...details: unknown[]) => write("debug", message, details),
- info: (message: string, ...details: unknown[]) => write("info", message, details),
- warn: (message: string, ...details: unknown[]) => write("warn", message, details),
- error: (message: string, ...details: unknown[]) => write("error", message, details),
+ debug: (message: string, ...details: LogDetails) => write("debug", message, details),
+ info: (message: string, ...details: LogDetails) => write("info", message, details),
+ warn: (message: string, ...details: LogDetails) => write("warn", message, details),
+ error: (message: string, ...details: LogDetails) => write("error", message, details),
 };

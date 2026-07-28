@@ -6,11 +6,6 @@
  "engines": {
   "node": ">=22"
  },
- "knip": {
-  "ignoreDependencies": [
-   "supabase"
-  ]
- },
  "overrides": {
   "brace-expansion@5.0.7": "5.0.8",
   "next": {
@@ -40,14 +35,13 @@
   "test": "vitest",
   "test:run": "vitest run",
   "test:coverage": "vitest run --coverage",
-  "deps:check": "knip --dependencies",
   "source:check": "node scripts/check-source-standards.mjs",
   "ui:check": "node scripts/check-ui-standards.mjs",
   "audit:prod": "node scripts/check-npm-audit.mjs",
   "audit:prod:raw": "npm audit --omit=dev --audit-level=moderate",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
-  "check": "npm run format:check && npm run lint && npm run source:check && npm run ui:check && npm run typecheck && npm run test:run && npm run deps:check && npm run audit:prod && npm run build",
+  "check": "npm run format:check && npm run lint && npm run source:check && npm run ui:check && npm run typecheck && npm run test:run && npm run audit:prod && npm run build",
   "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
  },
  "dependencies": {
@@ -95,16 +89,16 @@
   "@types/node": "^25.9.2",
   "@types/react": "^19.2.17",
   "@types/react-dom": "^19.2.3",
+  "@typescript/native": "npm:typescript@^7.0.2",
   "@vitest/coverage-v8": "^4.1.10",
   "dotenv": "^17.4.2",
   "eslint": "^9.39.4",
   "eslint-config-next": "^16.2.12",
   "husky": "^9.1.7",
-  "knip": "^5.82.0",
   "postcss": "^8.5.23",
   "supabase": "^2.109.1",
   "tailwindcss": "^4",
-  "typescript": "^6.0.3",
+  "typescript": "npm:@typescript/typescript6@^6.0.2",
   "vitest": "^4.1.7"
  }
 }

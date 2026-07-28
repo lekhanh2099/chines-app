@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { HtmlArtifactRuntimeState } from "./html-artifact.schema";
 
 type RuntimeStateMessage = {
@@ -22,7 +24,7 @@ const previewContentSecurityPolicy = [
  "worker-src 'none'",
 ].join("; ");
 
-function serializeForInlineScript(value: unknown): string {
+function serializeForInlineScript(value: JsonFieldValue): string {
  return JSON.stringify(value)
   .replace(/</g, "\\u003c")
   .replace(/>/g, "\\u003e")
@@ -31,15 +33,15 @@ function serializeForInlineScript(value: unknown): string {
   .replace(/\u2029/g, "\\u2029");
 }
 
-function isRuntimeState(value: unknown): value is HtmlArtifactRuntimeState {
+function isRuntimeState(value: JsonFieldValue): value is HtmlArtifactRuntimeState {
  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
  return Object.values(value).every((item) => typeof item === "string");
 }
 
-export function isRuntimeStateMessage(value: unknown): value is RuntimeStateMessage {
+export function isRuntimeStateMessage(value: JsonFieldValue): value is RuntimeStateMessage {
  if (!value || typeof value !== "object") return false;
 
- const message = value as Record<string, unknown>;
+ const message = value as JsonObject;
  return (
   message.source === "hanzihome-html-artifact-runtime" &&
   message.type === "runtime-state" &&

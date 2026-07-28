@@ -2,11 +2,7 @@ import { permanentRedirect } from "next/navigation";
 
 import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/HanziHomePage";
 
-export default async function HanziHomePage({
- searchParams,
-}: {
- searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+export default async function HanziHomePage({ searchParams }: PageProps<"/hanzihome">) {
  const params = await searchParams;
  const moduleParam = Array.isArray(params.module) ? params.module[0] : params.module;
 

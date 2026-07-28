@@ -2,11 +2,17 @@
  * IndexedDB-based audio cache for TTS.
  * Stores audio blobs keyed by text + voice to avoid redundant API calls.
  */
+import { z } from "zod";
 
 const DB_NAME = "tts-audio-cache";
 const STORE_NAME = "audio";
 const DB_VERSION = 1;
 const MAX_ENTRIES = 500;
+const CachedAudioSchema = z.object({
+ key: z.string(),
+ blob: z.instanceof(Blob),
+ createdAt: z.number(),
+});
 
 function openDb(): Promise<IDBDatabase> {
  return new Promise((resolve, reject) => {
@@ -29,7 +35,9 @@ export function buildCacheKey(text: string, voice?: string): string {
  return `${voice || "default"}::${text}`;
 }
 
-export async function getCachedAudio(key: string): Promise<Blob | null> {
+export async function getCachedAudio(
+ key: string,
+): Promise<z.infer<z.ZodNullable<z.ZodType<Blob>>>> {
  try {
   const db = await openDb();
   return new Promise((resolve) => {
@@ -37,8 +45,8 @@ export async function getCachedAudio(key: string): Promise<Blob | null> {
    const store = tx.objectStore(STORE_NAME);
    const request = store.get(key);
    request.onsuccess = () => {
-    const result = request.result as { key: string; blob: Blob; createdAt: number } | undefined;
-    resolve(result?.blob ?? null);
+    const result = CachedAudioSchema.safeParse(request.result);
+    resolve(result.success ? result.data.blob : null);
    };
    request.onerror = () => resolve(null);
   });

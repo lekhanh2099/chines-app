@@ -49,11 +49,13 @@ import { readingStatusLabels } from "@/features/notes/note-library-utils";
 import { cn } from "@/lib/utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
 import { noteTabsStore } from "@/stores/note-tabs-store";
-import type { ReadingStatus } from "@/types/database";
+import { ReadingStatusSchema } from "@/types/database";
+import { z } from "zod";
 import type { LessonLookup } from "./noteContext";
 import { getNoteContext } from "./noteContext";
 
 const contextIconClassName = "size-4 shrink-0";
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function getContextIcon(kind: ReturnType<typeof getNoteContext>["kind"]) {
  if (kind === "lesson") return <BookOpen className={contextIconClassName} />;
@@ -67,7 +69,10 @@ function getContextClasses(kind: ReturnType<typeof getNoteContext>["kind"]) {
  return "border-border-default bg-bg-subtle text-text-secondary";
 }
 
-function getFolderBreadcrumb(folderId: string | null, folders: NoteFolder[]): string | null {
+function getFolderBreadcrumb(
+ folderId: NoteListItem["folder_id"],
+ folders: NoteFolder[],
+): Nullable<string> {
  if (!folderId) return null;
  const folder = folders.find((item) => item.id === folderId);
  if (!folder) return null;
@@ -98,8 +103,8 @@ export function NoteListRow({
  );
 
  const updateMetadata = async (input: {
-  folderId?: string | null;
-  readingStatus?: ReadingStatus | null;
+  folderId?: NoteListItem["folder_id"];
+  readingStatus?: NoteListItem["reading_status"];
  }) => {
   try {
    await metadataMutation.mutateAsync({ noteId: note.id, ...input });
@@ -205,7 +210,7 @@ export function NoteListRow({
 
        <DropdownMenuSeparator />
        <DropdownMenuLabel>Trạng thái đọc</DropdownMenuLabel>
-       {(["inbox", "reading", "completed"] as const).map((status) => (
+       {ReadingStatusSchema.options.map((status) => (
         <DropdownMenuItem
          key={status}
          onSelect={() => void updateMetadata({ readingStatus: status })}

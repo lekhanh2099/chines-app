@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import {
  answerToString,
  asRecord,
@@ -7,7 +9,7 @@ import {
 export type RenderableField = {
  key: string;
  label: string;
- value: unknown;
+ value: JsonFieldValue;
 };
 
 const FIELD_LABELS: Record<string, string> = {
@@ -193,7 +195,7 @@ export function getFieldLabel(key: string) {
 }
 
 export function getRenderableFields(
- item: Record<string, unknown>,
+ item: JsonObject,
  options: { hasPassage?: boolean } = {},
 ): RenderableField[] {
  const hiddenFields = new Set(BASE_HIDDEN_GENERIC_FIELDS);
@@ -215,7 +217,7 @@ export function getRenderableFields(
   .filter((field) => hasRenderableValue(field.value));
 }
 
-export function hasRenderableValue(value: unknown): boolean {
+export function hasRenderableValue(value: JsonFieldValue): boolean {
  if (typeof value === "string") return Boolean(value.trim());
  if (typeof value === "number" || typeof value === "boolean") return true;
  if (Array.isArray(value)) return value.some(hasRenderableValue);
@@ -225,7 +227,7 @@ export function hasRenderableValue(value: unknown): boolean {
  return Object.keys(record).length > 0 && Object.values(record).some(hasRenderableValue);
 }
 
-export function primaryTextFromRecord(record: Record<string, unknown>) {
+export function primaryTextFromRecord(record: JsonObject) {
  return (
   stringValue(record, "title_vi") ||
   stringValue(record, "title") ||
@@ -240,6 +242,6 @@ export function primaryTextFromRecord(record: Record<string, unknown>) {
  );
 }
 
-export function fieldFallbackText(value: unknown) {
+export function fieldFallbackText(value: JsonFieldValue) {
  return answerToString(value);
 }

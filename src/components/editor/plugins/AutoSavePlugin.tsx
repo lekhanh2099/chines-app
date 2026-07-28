@@ -6,11 +6,12 @@
  */
 "use client";
 
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import { useEffect } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
 interface AutoSavePluginProps {
- onChange?: (json: Record<string, unknown>) => void;
+ onChange?: (json: JsonObject) => void;
 }
 
 export default function AutoSavePlugin({ onChange }: AutoSavePluginProps) {
@@ -23,7 +24,7 @@ export default function AutoSavePlugin({ onChange }: AutoSavePluginProps) {
    // Only fire when there are actual changes
    if (dirtyElements.size === 0 && dirtyLeaves.size === 0) return;
 
-   const json = editorState.toJSON() as unknown as Record<string, unknown>;
+   const json = JsonObjectSchema.parse(editorState.toJSON());
    onChange(json);
   });
  }, [editor, onChange]);

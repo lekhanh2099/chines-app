@@ -16,6 +16,11 @@ import {
  upsertVocab,
 } from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+
+const generateVocabRequestSchema = z.object({
+ hanzi: z.string().min(1).max(10),
+});
 
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
@@ -29,12 +34,11 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
  }
 
- const body: unknown = await request.json();
- const { hanzi } = body as { hanzi?: string };
-
- if (!hanzi || typeof hanzi !== "string" || hanzi.length > 10) {
+ const parsed = generateVocabRequestSchema.safeParse(await request.json());
+ if (!parsed.success) {
   return NextResponse.json({ error: "Invalid hanzi parameter" }, { status: 400 });
  }
+ const { hanzi } = parsed.data;
 
  const lookupText = normalizeDictionaryHeadword(hanzi);
  const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);

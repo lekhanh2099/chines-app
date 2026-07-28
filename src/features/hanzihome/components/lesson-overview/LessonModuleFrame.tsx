@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,
@@ -27,7 +28,7 @@ type LessonModuleFrameProps = {
  actions?: ReactNode;
  children: ReactNode;
  compact?: boolean;
- sidebarSelectionKey?: string | null;
+ sidebarSelectionKey?: z.infer<z.ZodNullable<z.ZodString>>;
  mobileNavigation?: {
   label: string;
   value: string;

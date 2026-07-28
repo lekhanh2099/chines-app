@@ -43,9 +43,9 @@ const standardModuleKeys = [
  "grammar",
  "review",
  "practice",
-] as const satisfies readonly StudyModule[];
+] satisfies readonly StudyModule[];
 
-const listeningModuleKeys = ["listening", "dictation"] as const satisfies readonly StudyModule[];
+const listeningModuleKeys = ["listening", "dictation"] satisfies readonly StudyModule[];
 
 export function tabsForLesson(lesson: HanziHomeLesson) {
  const keys = lesson.tags?.includes("listening") ? listeningModuleKeys : standardModuleKeys;

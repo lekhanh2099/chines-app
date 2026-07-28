@@ -38,9 +38,15 @@ import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes.service";
 import { focusModeStore } from "@/stores/focus-mode-store";
+import { NoteCategorySchema, ReadingStatusSchema } from "@/types/database";
 import type { NoteCategory, ReadingStatus } from "@/types/database";
+import { z } from "zod";
 
-type CreateMode = "note" | "reading";
+const CreateModeSchema = z.enum(["note", "reading"]);
+type CreateMode = z.infer<typeof CreateModeSchema>;
+
+const DEFAULT_NOTE_CATEGORY: NoteCategory = "general";
+const DEFAULT_READING_STATUS: ReadingStatus = "reading";
 
 const noteCategoryOptions: Array<{ value: NoteCategory; label: string }> = [
  { value: "general", label: "Chung" },
@@ -65,7 +71,7 @@ export function NoteCreateDialog({
  triggerClassName?: string;
  compactOnTablet?: boolean;
 }) {
- const [mode, setMode] = useState<CreateMode | null>(null);
+ const [mode, setMode] = useState<z.infer<z.ZodNullable<typeof CreateModeSchema>>>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -74,9 +80,9 @@ export function NoteCreateDialog({
   defaultValues: {
    title: "",
    tags: "",
-   category: "general" as NoteCategory,
+   category: DEFAULT_NOTE_CATEGORY,
    folderId: "unfiled",
-   readingStatus: "reading" as ReadingStatus,
+   readingStatus: DEFAULT_READING_STATUS,
   },
   onSubmit: async ({ value }) => {
    if (!mode) return;
@@ -231,7 +237,10 @@ export function NoteCreateDialog({
              <FieldLabel>Trạng thái</FieldLabel>
              <Select
               value={field.state.value}
-              onValueChange={(value) => field.handleChange(value as ReadingStatus)}
+              onValueChange={(value) => {
+               const parsedStatus = ReadingStatusSchema.safeParse(value);
+               if (parsedStatus.success) field.handleChange(parsedStatus.data);
+              }}
              >
               <SelectTrigger width="full">
                <SelectValue />
@@ -252,7 +261,10 @@ export function NoteCreateDialog({
              <FieldLabel>Danh mục</FieldLabel>
              <Select
               value={field.state.value}
-              onValueChange={(value) => field.handleChange(value as NoteCategory)}
+              onValueChange={(value) => {
+               const parsedCategory = NoteCategorySchema.safeParse(value);
+               if (parsedCategory.success) field.handleChange(parsedCategory.data);
+              }}
              >
               <SelectTrigger width="full">
                <SelectValue />

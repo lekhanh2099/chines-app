@@ -1,4 +1,5 @@
-import type { z } from "zod";
+import type { JsonFieldValue } from "@/types/json";
+import { z } from "zod";
 
 import {
  addApiKeyResponseSchema,
@@ -7,9 +8,11 @@ import {
  moveApiKeyResponseSchema,
  updateApiKeyResponseSchema,
 } from "./api-key-manager.schema";
-import type { ApiKeyProvider } from "@/lib/api-key-providers";
+import { ApiKeyProviderSchema, type ApiKeyProvider } from "@/lib/api-key-providers";
 
 const endpoint = "/api/settings/api-keys";
+const ApiKeyProviderInputSchema = z.union([ApiKeyProviderSchema, z.literal("auto")]);
+export const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
 
 async function requestApiKeys<T>(schema: z.ZodType<T>, init?: RequestInit): Promise<T> {
  const response = await fetch(endpoint, {
@@ -17,7 +20,7 @@ async function requestApiKeys<T>(schema: z.ZodType<T>, init?: RequestInit): Prom
   ...init,
   headers: init?.body ? { "Content-Type": "application/json", ...init.headers } : init?.headers,
  });
- const payload: unknown = await response.json().catch(() => null);
+ const payload: JsonFieldValue = await response.json().catch(() => null);
 
  if (!response.ok) {
   const message =
@@ -39,7 +42,7 @@ export function fetchManagedApiKeys() {
 export function addManagedApiKey(input: {
  apiKey: string;
  label?: string;
- provider: ApiKeyProvider | "auto";
+ provider: z.infer<typeof ApiKeyProviderInputSchema>;
  model?: string;
 }) {
  return requestApiKeys(addApiKeyResponseSchema, {
@@ -62,7 +65,10 @@ export function toggleManagedApiKey(input: { keyId: string; isActive: boolean })
  });
 }
 
-export function moveManagedApiKey(input: { keyId: string; direction: "up" | "down" }) {
+export function moveManagedApiKey(input: {
+ keyId: string;
+ direction: z.infer<typeof ApiKeyMoveDirectionSchema>;
+}) {
  return requestApiKeys(moveApiKeyResponseSchema, {
   method: "PATCH",
   body: JSON.stringify({ action: "move", ...input }),

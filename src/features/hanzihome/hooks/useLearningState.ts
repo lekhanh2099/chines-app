@@ -1,7 +1,9 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { z } from "zod";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import {
@@ -18,7 +20,7 @@ import {
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
-const learningStateQueryKey = ["hanzihome", "learning-state"] as const;
+const learningStateQueryKey = ["hanzihome", "learning-state"];
 
 function getBrowserOnlineState() {
  return typeof navigator === "undefined" ? true : navigator.onLine;
@@ -27,10 +29,10 @@ function getBrowserOnlineState() {
 export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
  const queryClient = useQueryClient();
  const writeChainRef = useRef<Promise<void>>(Promise.resolve());
- const syncInFlightRef = useRef<Promise<LearningStateSyncResult> | null>(null);
+ const syncInFlightRef = useRef<Promise<LearningStateSyncResult>>(null);
  const [syncStatus, setSyncStatus] = useState<LearningStateSyncStatus>("synced");
  const [pendingSyncCount, setPendingSyncCount] = useState(0);
- const [lastSyncError, setLastSyncError] = useState<string | null>(null);
+ const [lastSyncError, setLastSyncError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [isOnline, setIsOnline] = useState(getBrowserOnlineState);
  const query = useQuery({
   queryKey: learningStateQueryKey,
@@ -111,7 +113,7 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
 
    void writeChainRef.current
     .then(() => syncPendingMutations())
-    .catch((error: unknown) => {
+    .catch((error: JsonFieldValue) => {
      const message =
       error instanceof Error ? error.message : "Could not save learning state locally.";
      setSyncStatus("error");
@@ -200,7 +202,10 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
     }),
 
    appendReviewHistory: (
-    item: { type: "vocab" | "grammar" | "radical"; id: string },
+    item: {
+     type: UserLearningState["reviewHistory"][number]["type"];
+     id: string;
+    },
     result: ReviewResult,
    ) =>
     updateState((current) => ({

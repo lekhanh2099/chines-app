@@ -1,10 +1,13 @@
 import type { GrammarViewModel } from "@/features/hanzihome/types";
+import { z } from "zod";
 
-export type GrammarReading = {
- title: string;
- contentMd: string;
- preview?: string;
-};
+export const GrammarReadingSchema = z.object({
+ title: z.string(),
+ contentMd: z.string(),
+ preview: z.string().optional(),
+});
+export type GrammarReading = z.infer<typeof GrammarReadingSchema>;
+type NullableGrammarReading = z.infer<z.ZodNullable<typeof GrammarReadingSchema>>;
 
 const readingHeadingPattern =
  /^##\s*(BÀI ĐỌC(?:\s+THÊM) ?(?:\s+ÁP DỤNG) ?|BÀI ĐỌC THÊM ÁP DỤNG NGỮ PHÁP)\b/i;
@@ -34,7 +37,7 @@ function getReadingPreview(contentMd: string) {
   .find(Boolean);
 }
 
-export function extractGrammarReading(points: GrammarViewModel[]): GrammarReading | null {
+export function extractGrammarReading(points: GrammarViewModel[]): NullableGrammarReading {
  for (const point of points) {
   const contentMd = point.contentMd?.trim();
   if (!contentMd) continue;
@@ -65,7 +68,7 @@ export function extractGrammarReading(points: GrammarViewModel[]): GrammarReadin
  return null;
 }
 
-export function extractReadingFromMarkdown(contentMd?: string): GrammarReading | null {
+export function extractReadingFromMarkdown(contentMd?: string): NullableGrammarReading {
  const normalizedContent = contentMd?.trim();
  if (!normalizedContent) return null;
 

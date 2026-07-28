@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import path from "node:path";
 
 import {
@@ -10,24 +11,25 @@ import {
  loadExternalSeedPackage,
  normalizeBoyaCatalogLabels,
  verifyPackageChecksum,
+ type ExternalSeedCollection,
  type ExternalSeedPackage,
 } from "./lib/hanzihome-external-seed-package.ts";
 
 type ExistingRow = { id: string; source: string };
 
-const seedTableMappings = [
- ["courses", SEED_TABLES.courses],
- ["books", SEED_TABLES.books],
- ["lessons", SEED_TABLES.lessons],
- ["lessonSections", SEED_TABLES.lessonSections],
- ["lessonTexts", SEED_TABLES.lessonTexts],
- ["vocabItems", SEED_TABLES.vocabItems],
- ["vocabExamples", SEED_TABLES.vocabExamples],
- ["vocabDetailSections", SEED_TABLES.vocabDetailSections],
- ["grammarPoints", SEED_TABLES.grammarPoints],
- ["grammarExamples", SEED_TABLES.grammarExamples],
- ["grammarDetailSections", SEED_TABLES.grammarDetailSections],
-] as const;
+const seedTableMappings: { collection: ExternalSeedCollection; table: string }[] = [
+ { collection: "courses", table: SEED_TABLES.courses },
+ { collection: "books", table: SEED_TABLES.books },
+ { collection: "lessons", table: SEED_TABLES.lessons },
+ { collection: "lessonSections", table: SEED_TABLES.lessonSections },
+ { collection: "lessonTexts", table: SEED_TABLES.lessonTexts },
+ { collection: "vocabItems", table: SEED_TABLES.vocabItems },
+ { collection: "vocabExamples", table: SEED_TABLES.vocabExamples },
+ { collection: "vocabDetailSections", table: SEED_TABLES.vocabDetailSections },
+ { collection: "grammarPoints", table: SEED_TABLES.grammarPoints },
+ { collection: "grammarExamples", table: SEED_TABLES.grammarExamples },
+ { collection: "grammarDetailSections", table: SEED_TABLES.grammarDetailSections },
+];
 
 function option(name: string) {
  const index = process.argv.indexOf(name);
@@ -36,7 +38,7 @@ function option(name: string) {
 
 async function assertNoExistingIds(seed: ExternalSeedPackage) {
  const client = createHanziHomeAdminClient();
- for (const [collection, table] of seedTableMappings) {
+ for (const { collection, table } of seedTableMappings) {
   const expectedIds = new Set(seed[collection].map((row) => row.id));
   const existing = await fetchAllRows<ExistingRow>(client, table, "id,source");
   const collisions = existing.filter((row) => expectedIds.has(row.id));
@@ -56,7 +58,7 @@ async function assertRefreshIsSeedOnly(seed: ExternalSeedPackage) {
  const client = createHanziHomeAdminClient();
  const existingCounts: Record<string, number> = {};
 
- for (const [collection, table] of seedTableMappings) {
+ for (const { collection, table } of seedTableMappings) {
   const expectedIds = new Set(seed[collection].map((row) => row.id));
   const existing = await fetchAllRows<ExistingRow>(client, table, "id,source");
   const collisions = existing.filter((row) => expectedIds.has(row.id));
@@ -108,7 +110,7 @@ async function main() {
  console.table(result.data as Record<string, number>);
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

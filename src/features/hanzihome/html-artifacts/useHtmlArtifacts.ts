@@ -23,6 +23,9 @@ import type {
  UpdateHtmlArtifactPayload,
  UpdateHtmlArtifactRuntimeStatePayload,
 } from "./html-artifact.schema";
+import { z } from "zod";
+
+type NullableText = z.infer<z.ZodNullable<z.ZodString>>;
 
 export function useHtmlArtifactsQuery() {
  return useQuery({
@@ -44,7 +47,7 @@ export function useHtmlArtifactSummariesQuery() {
  };
 }
 
-export function useHtmlArtifactQuery(artifactId: string | null) {
+export function useHtmlArtifactQuery(artifactId: NullableText) {
  return useQuery({
   queryKey: [...htmlArtifactsQueryKey, artifactId],
   queryFn: () => getHtmlArtifact(artifactId ?? ""),
@@ -55,7 +58,7 @@ export function useHtmlArtifactQuery(artifactId: string | null) {
  });
 }
 
-export function useHtmlArtifactRuntimeStateQuery(artifactId: string | null) {
+export function useHtmlArtifactRuntimeStateQuery(artifactId: NullableText) {
  return useQuery({
   queryKey: artifactId
    ? htmlArtifactRuntimeStateQueryKey(artifactId)

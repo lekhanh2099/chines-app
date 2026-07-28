@@ -2,12 +2,19 @@ import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 
+type ControlledCheckboxProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ type?: never;
+};
+
 export function CheckboxField({
  label,
  description,
  helperText,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledCheckboxProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<boolean>();
 

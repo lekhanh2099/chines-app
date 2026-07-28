@@ -10,11 +10,15 @@ import { Loader2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
+
+const QuickNoteVariantSchema = z.enum(["default", "outline", "ghost", "dashed"]);
+const QuickNoteSizeSchema = z.enum(["sm", "md", "lg"]);
 
 interface QuickNoteButtonProps {
  className?: string;
- variant?: "default" | "outline" | "ghost" | "dashed";
- size?: "sm" | "md" | "lg";
+ variant?: z.infer<typeof QuickNoteVariantSchema>;
+ size?: z.infer<typeof QuickNoteSizeSchema>;
  compactOnTablet?: boolean;
 }
 

@@ -145,7 +145,10 @@ export default function ApiKeyManagerSection() {
   }
  }
 
- async function handleMoveKey(keyId: string, direction: "up" | "down") {
+ async function handleMoveKey(
+  keyId: string,
+  direction: Parameters<typeof moveMutation.mutateAsync>[0]["direction"],
+ ) {
   try {
    await moveMutation.mutateAsync({ keyId, direction });
   } catch (error) {

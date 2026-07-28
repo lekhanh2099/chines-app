@@ -1,5 +1,7 @@
+import type { ErrorInput } from "@/types/error";
 import { HtmlArtifactsApiError } from "./html-artifact-api";
-import type { HtmlArtifact, HtmlArtifactSummary } from "./html-artifact.schema";
+import { htmlArtifactSummarySchema, type HtmlArtifactSummary } from "./html-artifact.schema";
+import { z } from "zod";
 
 export async function formatHtmlSource(source: string): Promise<string> {
  const [prettier, htmlPlugin] = await Promise.all([
@@ -15,7 +17,7 @@ export async function formatHtmlSource(source: string): Promise<string> {
  return formatted.trimEnd();
 }
 
-export function getHtmlArtifactApiErrorMessage(error: unknown, fallback: string): string {
+export function getHtmlArtifactApiErrorMessage(error: ErrorInput, fallback: string): string {
  return error instanceof HtmlArtifactsApiError ? error.message : fallback;
 }
 
@@ -26,6 +28,8 @@ export function formatHtmlArtifactDate(date: string): string {
  }).format(new Date(date));
 }
 
-export function getHtmlArtifactTitle(artifact: HtmlArtifactSummary | HtmlArtifact | null): string {
+export function getHtmlArtifactTitle(
+ artifact: z.infer<z.ZodNullable<typeof htmlArtifactSummarySchema>>,
+): string {
  return artifact?.title.trim() || "HTML artifact";
 }

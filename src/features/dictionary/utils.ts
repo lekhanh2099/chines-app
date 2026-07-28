@@ -1,7 +1,9 @@
 import { extractChinese } from "@/lib/chinese-utils";
 import type { ExampleItem } from "@/features/dictionary/types";
+import { z } from "zod";
 
 export const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
+const ToneLabelInputSchema = z.string().nullable().optional();
 
 export function getUniqueChineseCharacters(text: string): string[] {
  return Array.from(
@@ -35,7 +37,7 @@ export function getExampleKey(example: ExampleItem): string {
  return `${example.zh}|${example.pinyin}|${example.vi}`;
 }
 
-export function getToneLabel(pinyin: string | null | undefined): string {
+export function getToneLabel(pinyin: z.input<typeof ToneLabelInputSchema>): string {
  if (!pinyin) return "Chưa rõ";
 
  const toneMap: Record<string, string> = {

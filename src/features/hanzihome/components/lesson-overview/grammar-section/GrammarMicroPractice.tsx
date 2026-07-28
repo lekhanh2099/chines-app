@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { ExerciseQuestionCard } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
@@ -7,7 +8,7 @@ export function GrammarMicroPractice({
  questions,
 }: {
  displayMode: LessonDisplayMode;
- questions: unknown[];
+ questions: JsonValue[];
 }) {
  if (questions.length === 0) return null;
 

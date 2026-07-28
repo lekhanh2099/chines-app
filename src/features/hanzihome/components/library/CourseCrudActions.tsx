@@ -21,6 +21,7 @@ import {
 import {
  deleteCanonicalContent,
  reorderCanonicalContent,
+ type ReorderDirection,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
 import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
@@ -91,7 +92,7 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
   }
  }
 
- async function reorderCourse(direction: -1 | 1) {
+ async function reorderCourse(direction: ReorderDirection) {
   if (!course.updatedAt) return;
   try {
    await reorderCanonicalContent({

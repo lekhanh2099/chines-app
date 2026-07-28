@@ -14,6 +14,7 @@ import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-o
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import type {
@@ -39,6 +40,8 @@ type ListeningExerciseItemsProps = {
 };
 
 type ListeningItemEditHandler = (item: ListeningRuntimeItem) => void;
+const AnswerExerciseTypeSchema = z.enum(["short_answer", "oral_response"]);
+const BooleanExerciseTypeSchema = z.enum(["true_false", "same_different"]);
 
 function ExerciseAudioButton({
  promptText,
@@ -283,7 +286,7 @@ function AnswerItems({
  onEditItem,
 }: {
  items: ListeningRuntimeItem[];
- exerciseType: "short_answer" | "oral_response";
+ exerciseType: z.infer<typeof AnswerExerciseTypeSchema>;
  answers: Record<string, string>;
  revealed: Record<string, boolean>;
  onAnswer: (itemId: string, value: string) => void;
@@ -371,7 +374,7 @@ function BooleanItems({
  onEditItem,
 }: {
  items: ListeningRuntimeItem[];
- exerciseType: "true_false" | "same_different";
+ exerciseType: z.infer<typeof BooleanExerciseTypeSchema>;
  selections: Record<string, string>;
  checked: Record<string, boolean>;
  revealed: Record<string, boolean>;
@@ -734,8 +737,8 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
   setRevealed((current) => ({ ...current, [itemId]: !current[itemId] }));
  const toggleItemScript = (itemId: string) =>
   setRevealedScripts((current) => ({ ...current, [itemId]: !current[itemId] }));
- const editItem: ListeningItemEditHandler | undefined = editMode
-  ? (item) => {
+ const editItem = editMode
+  ? (item: Parameters<ListeningItemEditHandler>[0]) => {
      if (!item.editMeta) return;
      openEditableNode({
       lessonId: props.lessonId,

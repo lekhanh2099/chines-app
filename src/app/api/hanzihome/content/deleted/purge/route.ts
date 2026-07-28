@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
@@ -34,7 +35,7 @@ export async function POST(request: Request) {
  } = await client.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsedBody = purgeRequestSchema.safeParse(body);
  if (!parsedBody.success) {
   return mutationError("Invalid HanziHome purge payload", 400, z.flattenError(parsedBody.error));

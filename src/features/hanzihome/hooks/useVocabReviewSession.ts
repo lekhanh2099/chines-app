@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useReducer } from "react";
+import { z } from "zod";
 
 import type {
  GrammarViewModel,
@@ -10,25 +11,28 @@ import type {
 } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
-export type ReviewDeckMode = "all" | "vocab" | "grammar" | "hard";
+export const ReviewDeckModeSchema = z.enum(["all", "vocab", "grammar", "hard"]);
+export type ReviewDeckMode = z.infer<typeof ReviewDeckModeSchema>;
 
-export type ReviewItem =
- | {
-    type: "vocab";
-    id: string;
-    prompt: string;
-    answer: string;
-    status: LearningStatus;
-    source: HanziHomeVocabItem;
-   }
- | {
-    type: "grammar";
-    id: string;
-    prompt: string;
-    answer: string;
-    status: LearningStatus;
-    source: GrammarViewModel;
-   };
+type ReviewItemMap = {
+ vocab: {
+  type: "vocab";
+  id: string;
+  prompt: string;
+  answer: string;
+  status: LearningStatus;
+  source: HanziHomeVocabItem;
+ };
+ grammar: {
+  type: "grammar";
+  id: string;
+  prompt: string;
+  answer: string;
+  status: LearningStatus;
+  source: GrammarViewModel;
+ };
+};
+export type ReviewItem = ReviewItemMap[keyof ReviewItemMap];
 
 type ReviewState = {
  index: number;
@@ -36,12 +40,14 @@ type ReviewState = {
  completed: boolean;
 };
 
-type ReviewAction =
- | { type: "reveal" }
- | { type: "answer"; itemCount: number; result: ReviewResult }
- | { type: "previous" }
- | { type: "next"; itemCount: number }
- | { type: "reset" };
+type ReviewActionMap = {
+ reveal: { type: "reveal" };
+ answer: { type: "answer"; itemCount: number; result: ReviewResult };
+ previous: { type: "previous" };
+ next: { type: "next"; itemCount: number };
+ reset: { type: "reset" };
+};
+type ReviewAction = ReviewActionMap[keyof ReviewActionMap];
 
 function reducer(state: ReviewState, action: ReviewAction): ReviewState {
  if (action.type === "reveal") {

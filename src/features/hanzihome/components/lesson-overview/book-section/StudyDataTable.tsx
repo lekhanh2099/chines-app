@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
 import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 import { answerToString, asRecord, stringValue } from "../utils";
@@ -8,7 +9,7 @@ export type StudyTableData = {
  rows: string[][];
 };
 
-function textFromCell(value: unknown): string {
+function textFromCell(value: JsonFieldValue): string {
  const record = asRecord(value);
 
  return (
@@ -19,7 +20,7 @@ function textFromCell(value: unknown): string {
  );
 }
 
-function rowFromValue(value: unknown): string[] {
+function rowFromValue(value: JsonFieldValue): string[] {
  if (Array.isArray(value)) return value.map(textFromCell);
 
  const record = asRecord(value);
@@ -27,7 +28,7 @@ function rowFromValue(value: unknown): string[] {
  return cells.map(textFromCell);
 }
 
-export function normalizedStudyTables(value: unknown, itemId: string): StudyTableData[] {
+export function normalizedStudyTables(value: JsonFieldValue, itemId: string): StudyTableData[] {
  const record = asRecord(value);
  const columns = Array.isArray(record.columns) ? record.columns.map(textFromCell) : [];
  const rows = Array.isArray(record.rows)

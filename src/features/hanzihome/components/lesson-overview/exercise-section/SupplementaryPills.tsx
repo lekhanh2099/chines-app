@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { ExercisePill } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
@@ -8,7 +9,7 @@ export function SupplementaryPills({
  displayMode,
 }: {
  itemId: string;
- values: unknown[];
+ values: JsonValue[];
  displayMode: LessonDisplayMode;
 }) {
  if (values.length === 0) return null;

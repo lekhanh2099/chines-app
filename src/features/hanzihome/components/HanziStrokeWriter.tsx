@@ -5,14 +5,8 @@ import { PenLine, Play, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-type HanziWriterInstance = {
- animateCharacter: () => Promise<unknown> | void;
- quiz: () => Promise<unknown> | void;
- showCharacter: () => Promise<unknown> | void;
- showOutline: () => Promise<unknown> | void;
-};
-
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
+type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
 type HanziCharacterData = Awaited<ReturnType<HanziWriterModule["loadCharacterData"]>>;
 
 type HanziStrokeWriterProps = {
@@ -47,7 +41,7 @@ export function HanziStrokeWriter({
 }: HanziStrokeWriterProps) {
  const reactId = useId();
  const targetId = `hanzi-writer-${reactId.replace(/[^a-zA-Z0-9_-]/g, "")}`;
- const writerRef = useRef<HanziWriterInstance | null>(null);
+ const writerRef = useRef<HanziWriterInstance>(null);
 
  useEffect(() => {
   let mounted = true;
@@ -83,7 +77,7 @@ export function HanziStrokeWriter({
     showHintAfterMisses: 1,
     highlightOnComplete: true,
     charDataLoader: () => charData,
-   }) as HanziWriterInstance;
+   });
 
    writerRef.current = writer;
 

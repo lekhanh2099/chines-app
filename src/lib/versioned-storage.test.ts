@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 import { describe, expect, it } from "vitest";
 
@@ -22,7 +23,7 @@ const config = {
  version: 1,
  schema: z.object({ enabled: z.boolean() }),
  fallback: { enabled: false },
- migrateLegacy: (value: unknown) => (typeof value === "boolean" ? { enabled: value } : null),
+ migrateLegacy: (value: JsonFieldValue) => (typeof value === "boolean" ? { enabled: value } : null),
 };
 
 describe("versioned storage", () => {

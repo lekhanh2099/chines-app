@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { normalizeGeminiModel } from "@/lib/gemini-models";
@@ -37,7 +38,7 @@ export async function PUT(request: NextRequest) {
   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = aiPromptSettingsSchema.safeParse(payload);
 
  if (!parsed.success) {

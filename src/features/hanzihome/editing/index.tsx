@@ -5,10 +5,11 @@ import { DeletedContentDialog } from "./components/DeletedContentDialog";
 import { EditModeToggle } from "./components/EditModeToggle";
 import { LessonContentCreateDialog } from "./components/LessonContentCreateDialog";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import type { EditingToolsPresentation } from "@/features/hanzihome/context/types";
 
 export { EditableNodeWrapper } from "./components/EditableNodeWrapper";
 export { NestedEditControls } from "./components/NestedEditControls";
-export type { EditableNodePath, EditableEntityType } from "./store/types";
+export type { EditableNodePath, EditableEntityType, NullableEditableNodePath } from "./store/types";
 
 export function HanziHomeEditingDialogShell() {
  return <EditableDialogShell />;
@@ -19,7 +20,7 @@ export function HanziHomeEditingTools({
  presentation = "toolbar",
 }: {
  includeDialogShell?: boolean;
- presentation?: "toolbar" | "menu";
+ presentation?: EditingToolsPresentation;
 } = {}) {
  const editMode = useHanziHomeEditMode();
  return (

@@ -17,6 +17,9 @@ import { ReviewHeader } from "./ReviewHeader";
 import { StudyReviewCard } from "./StudyReviewCard";
 import { deckModeOptions } from "./reviewDeckModes";
 import type { ReviewAnswerHandler, ReviewBookmarkHandler } from "./types";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
@@ -27,7 +30,7 @@ type VocabReviewPanelProps = {
  description?: string;
  onAnswer: ReviewAnswerHandler;
  onToggleBookmark?: ReviewBookmarkHandler;
- getItemLesson?: (item: ReviewItem) => HanziHomeLesson | null;
+ getItemLesson?: (item: ReviewItem) => Nullable<HanziHomeLesson>;
 };
 
 export function VocabReviewPanel({

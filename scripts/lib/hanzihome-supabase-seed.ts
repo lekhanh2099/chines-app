@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "../../src/types/json.ts";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
@@ -9,10 +10,13 @@ import { z } from "zod";
 import { SectionSchema } from "../../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
 import type { Section } from "../../src/features/hanzihome/schemas/hanyu-lesson.types.ts";
 import { PartOfSpeechSchema } from "../../src/features/hanzihome/schemas/vocab.schema.ts";
+import type { TablesInsert } from "../../src/types/supabase.generated.ts";
 
-export const HANZIHOME_DATASETS = ["q2", "q3"] as const;
-export type HanziHomeDataset = (typeof HANZIHOME_DATASETS)[number];
-export type HanziHomeDatasetScope = HanziHomeDataset | "all";
+export const HanziHomeDatasetSchema = z.enum(["q2", "q3"]);
+export const HanziHomeDatasetScopeSchema = z.enum(["q2", "q3", "all"]);
+export const HANZIHOME_DATASETS = HanziHomeDatasetSchema.options;
+export type HanziHomeDataset = z.infer<typeof HanziHomeDatasetSchema>;
+export type HanziHomeDatasetScope = z.infer<typeof HanziHomeDatasetScopeSchema>;
 
 export const EXPECTED_SEED_COUNTS = {
  q2: {
@@ -42,7 +46,7 @@ export const EXPECTED_SEED_COUNTS = {
   grammarExamples: 683,
   radicals: 244,
  },
-} as const;
+};
 
 const DATA_ROOT = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 
@@ -50,6 +54,8 @@ const OptionalTextSchema = z
  .string()
  .nullish()
  .transform((value) => value ?? "");
+const OptionalNullableTextSchema = z.string().nullish();
+const NullableTextSchema = z.string().nullable();
 
 const TitleSchema = z.object({
  zh: z.string().min(1),
@@ -58,10 +64,12 @@ const TitleSchema = z.object({
  en: z.string().optional(),
 });
 
-const LessonCountsSchema = z.looseObject({
- sections: z.number().int().nonnegative(),
- materializedVocabItems: z.number().int().nonnegative(),
-});
+const LessonCountsSchema = z
+ .object({
+  sections: z.number().int().nonnegative(),
+  materializedVocabItems: z.number().int().nonnegative(),
+ })
+ .catchall(z.json());
 
 const LessonManifestItemSchema = z.object({
  lessonIndex: z.number().int().positive(),
@@ -128,6 +136,7 @@ const NoteSchema = z.union([
   note_vi: z.string().optional(),
  }),
 ]);
+const OptionalNoteListSchema = z.array(NoteSchema).optional();
 
 const ExampleSchema = z.looseObject({
  order: z.number().int().positive().optional(),
@@ -438,10 +447,10 @@ export type LessonRow = {
  lesson_order: number;
  title_zh: string;
  title_vi: string;
- title_pinyin?: string | null;
- title_en?: string | null;
+ title_pinyin?: TablesInsert<"hanzihome_lessons">["title_pinyin"];
+ title_en?: TablesInsert<"hanzihome_lessons">["title_en"];
  tags?: string[];
- source_file: string | null;
+ source_file: TablesInsert<"hanzihome_lessons">["source_file"];
  imported_at: string;
 };
 
@@ -485,14 +494,14 @@ export type VocabItemRow = {
  pinyin: string;
  han_viet: string;
  meaning: string;
- meaning_en?: string | null;
+ meaning_en?: TablesInsert<"hanzihome_vocab_items">["meaning_en"];
  tags?: string[];
  category: string;
- level: string | null;
- pos_vi: string | null;
- pos_zh: string | null;
+ level: TablesInsert<"hanzihome_vocab_items">["level"];
+ pos_vi: TablesInsert<"hanzihome_vocab_items">["pos_vi"];
+ pos_zh: TablesInsert<"hanzihome_vocab_items">["pos_zh"];
  tone: null;
- source_file: string | null;
+ source_file: TablesInsert<"hanzihome_vocab_items">["source_file"];
  imported_at: string;
 };
 
@@ -504,9 +513,9 @@ export type VocabExampleRow = {
  source: "seed";
  example_order: number;
  zh: string;
- pinyin: string | null;
- vi: string | null;
- note: string | null;
+ pinyin: TablesInsert<"hanzihome_vocab_examples">["pinyin"];
+ vi: TablesInsert<"hanzihome_vocab_examples">["vi"];
+ note: TablesInsert<"hanzihome_vocab_examples">["note"];
  imported_at: string;
 };
 
@@ -532,8 +541,8 @@ export type GrammarPointRow = {
  source: "seed";
  point_order: number;
  title: string;
- title_vi?: string | null;
- level?: string | null;
+ title_vi?: TablesInsert<"hanzihome_grammar_points">["title_vi"];
+ level?: TablesInsert<"hanzihome_grammar_points">["level"];
  tags?: string[];
  clean_title: string;
  core: string;
@@ -551,9 +560,9 @@ export type GrammarExampleRow = {
  source: "seed";
  example_order: number;
  zh: string;
- pinyin: string | null;
- vi: string | null;
- note: string | null;
+ pinyin: TablesInsert<"hanzihome_grammar_examples">["pinyin"];
+ vi: TablesInsert<"hanzihome_grammar_examples">["vi"];
+ note: TablesInsert<"hanzihome_grammar_examples">["note"];
  imported_at: string;
 };
 
@@ -576,8 +585,8 @@ export type RadicalRow = {
  source: "seed";
  radical_index: number;
  radical: string;
- name_vi: string | null;
- strokes: number | null;
+ name_vi: TablesInsert<"hanzihome_radicals">["name_vi"];
+ strokes: TablesInsert<"hanzihome_radicals">["strokes"];
  core_meaning: {
   modern?: string;
   history?: string;
@@ -590,7 +599,7 @@ export type RadicalRow = {
   form: string;
   note: string;
  }>;
- recognition: string | null;
+ recognition: TablesInsert<"hanzihome_radicals">["recognition"];
  distinguish: string[];
  groups: Array<{
   name: string;
@@ -683,7 +692,7 @@ function stableUuidFromKey(key: string) {
 }
 
 export function materializeVocabEnrichment(params: {
- rawItem: unknown;
+ rawItem: JsonFieldValue;
  lessonId: string;
  importedAt?: string;
 }) {
@@ -695,7 +704,7 @@ export function materializeVocabEnrichment(params: {
   vocab_item_id: item.id,
   lesson_id: params.lessonId,
   owner_id: null,
-  source: "seed" as const,
+  source: "seed",
   example_order: index + 1,
   zh: example.zh,
   pinyin: example.pinyin || null,
@@ -732,7 +741,7 @@ export function materializeVocabEnrichment(params: {
        vocab_item_id: item.id,
        lesson_id: params.lessonId,
        owner_id: null,
-       source: "seed" as const,
+       source: "seed",
        section_key: "collocations",
        title: "Kết hợp từ",
        lines: collocationLines,
@@ -745,7 +754,7 @@ export function materializeVocabEnrichment(params: {
 
 async function readJsonFile<T>(filePath: string, schema: z.ZodType<T>): Promise<T> {
  const content = await readFile(filePath, "utf8");
- const parsedJson: unknown = JSON.parse(content);
+ const parsedJson: JsonFieldValue = JSON.parse(content);
  const parsed = schema.safeParse(parsedJson);
 
  if (!parsed.success) {
@@ -766,15 +775,15 @@ function bookForLesson(dataset: HanziHomeDataset, lessonIndex: number) {
  return lessonIndex <= 12 ? config.books.upper : config.books.lower;
 }
 
-function nonEmpty(value: string | undefined | null): value is string {
+function nonEmpty(value: z.infer<typeof OptionalNullableTextSchema>): value is string {
  return typeof value === "string" && value.trim().length > 0;
 }
 
-function cleanLines(lines: Array<string | undefined | null>) {
+function cleanLines(lines: Array<z.infer<typeof OptionalNullableTextSchema>>) {
  return lines.filter(nonEmpty).map((line) => line.trim());
 }
 
-function noteLines(notes: z.infer<typeof NoteSchema>[] | undefined) {
+function noteLines(notes: z.infer<typeof OptionalNoteListSchema>) {
  return (notes ?? []).flatMap((note) => {
   if (typeof note === "string") return nonEmpty(note) ? [note] : [];
   return cleanLines([note.text_vi, note.content_vi, note.note_vi]);
@@ -1024,10 +1033,10 @@ function renderGrammarPoint(point: ParsedGrammarPoint) {
 }
 
 export function remapPortableLessonIds(
- value: unknown,
+ value: JsonFieldValue,
  sourceLessonId: string,
  targetLessonId: string,
-): unknown {
+): JsonFieldValue {
  if (typeof value === "string") {
   const advancedVocabId = /^q[12]-b\d+-(.+)$/u.exec(value);
   if (advancedVocabId) return `${targetLessonId}-v-${advancedVocabId[1]}`;
@@ -1036,7 +1045,10 @@ export function remapPortableLessonIds(
    : value;
  }
  if (Array.isArray(value)) {
-  return value.map((entry) => remapPortableLessonIds(entry, sourceLessonId, targetLessonId));
+  return value
+   .filter((entry): entry is JsonValue => entry !== undefined)
+   .map((entry) => remapPortableLessonIds(entry, sourceLessonId, targetLessonId))
+   .filter((entry): entry is JsonValue => entry !== undefined);
  }
  if (value && typeof value === "object") {
   return Object.fromEntries(
@@ -1049,7 +1061,7 @@ export function remapPortableLessonIds(
  return value;
 }
 
-function normalizedVocabularyPos(value: string | null) {
+function normalizedVocabularyPos(value: TablesInsert<"hanzihome_vocab_items">["pos_vi"]) {
  const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
  const parsed = PartOfSpeechSchema.safeParse(normalized);
  return parsed.success ? parsed.data : "unknown";
@@ -1102,11 +1114,11 @@ async function loadLessonSeed(params: {
  const targetLessonId = params.targetLessonPrefix
   ? `${params.targetLessonPrefix}-l${String(sourceLessonMeta.lessonIndex).padStart(2, "0")}`
   : sourceLessonMeta.id;
- const remapIds = (value: unknown) =>
+ const remapIds = (value: JsonFieldValue) =>
   remapPortableLessonIds(value, sourceLessonMeta.id, targetLessonId);
  const readLessonJson = async <T>(filePath: string, schema: z.ZodType<T>) => {
   const content = await readFile(filePath, "utf8");
-  const parsed = schema.safeParse(remapIds(JSON.parse(content) as unknown));
+  const parsed = schema.safeParse(remapIds(JSON.parse(content) as JsonFieldValue));
   if (!parsed.success) {
    throw new Error(
     `Invalid portable lesson JSON: ${path.relative(process.cwd(), filePath)}\n${z.prettifyError(parsed.error)}`,
@@ -1452,16 +1464,19 @@ export async function buildHanziHomeSeedData(
    imported_at: importedAt,
   });
   seed.books.push(
-   ...Object.values(config.books).map((book) => ({
-    id: book.id,
-    user_id: null,
-    course_id: config.courseId,
-    title: book.title,
-    short_title: book.shortTitle,
-    book_order: book.order,
-    source: "seed" as const,
-    imported_at: importedAt,
-   })),
+   ...Object.values(config.books).map(
+    (book) =>
+     ({
+      id: book.id,
+      user_id: null,
+      course_id: config.courseId,
+      title: book.title,
+      short_title: book.shortTitle,
+      book_order: book.order,
+      source: "seed",
+      imported_at: importedAt,
+     }) satisfies BookRow,
+   ),
   );
 
   const manifest = await readJsonFile(
@@ -1574,21 +1589,7 @@ export async function buildPortableHanziHomeSeedData(
  return seed;
 }
 
-type SeedCollectionName =
- | "courses"
- | "books"
- | "lessons"
- | "lessonSections"
- | "lessonTexts"
- | "vocabItems"
- | "vocabExamples"
- | "vocabDetailSections"
- | "grammarPoints"
- | "grammarExamples"
- | "grammarDetailSections"
- | "radicals";
-
-const COLLECTION_NAMES: SeedCollectionName[] = [
+const SeedCollectionNameSchema = z.enum([
  "courses",
  "books",
  "lessons",
@@ -1601,7 +1602,19 @@ const COLLECTION_NAMES: SeedCollectionName[] = [
  "grammarExamples",
  "grammarDetailSections",
  "radicals",
-];
+]);
+const COLLECTION_NAMES = SeedCollectionNameSchema.options;
+type SeedCollectionName = z.infer<typeof SeedCollectionNameSchema>;
+
+const SeedCountKeySchema = z.enum([
+ "lessons",
+ "lessonSections",
+ "vocabItems",
+ "grammarPoints",
+ "vocabExamples",
+ "grammarExamples",
+ "radicals",
+]);
 
 export type SeedValidationReport = {
  errors: string[];
@@ -1743,7 +1756,7 @@ export function validateHanziHomeSeedData(
   grammarExamples: seed.grammarExamples.length,
   radicals: seed.radicals.length,
  };
- for (const key of Object.keys(expected) as Array<keyof typeof expected>) {
+ for (const key of SeedCountKeySchema.options) {
   if (actual[key] !== expected[key]) {
    errors.push(`Expected ${key}=${expected[key]}, got ${actual[key]}`);
   }
@@ -1753,9 +1766,11 @@ export function validateHanziHomeSeedData(
   errors,
   duplicateIds,
   missingParents,
-  counts: Object.fromEntries(
-   COLLECTION_NAMES.map((collection) => [collection, seed[collection].length]),
-  ) as Record<SeedCollectionName, number>,
+  counts: z
+   .record(SeedCollectionNameSchema, z.number())
+   .parse(
+    Object.fromEntries(COLLECTION_NAMES.map((collection) => [collection, seed[collection].length])),
+   ),
  };
 }
 
@@ -1813,7 +1828,7 @@ export const SEED_TABLES = {
  grammarExamples: "hanzihome_grammar_examples",
  grammarDetailSections: "hanzihome_grammar_detail_sections",
  radicals: "hanzihome_radicals",
-} as const;
+};
 
 export async function fetchAllRows<T extends { id: string }>(
  client: SupabaseClient,
@@ -1822,7 +1837,7 @@ export async function fetchAllRows<T extends { id: string }>(
 ): Promise<T[]> {
  const pageSize = 1000;
  const rows: T[] = [];
- let lastId: string | null = null;
+ let lastId: z.infer<typeof NullableTextSchema> = null;
 
  for (;;) {
   let query = client.from(table).select(columns).order("id", { ascending: true }).limit(pageSize);
@@ -1833,7 +1848,7 @@ export async function fetchAllRows<T extends { id: string }>(
 
   const { data, error } = await query;
   if (error) throw new Error(`Failed reading ${table}: ${error.message}`);
-  const page = (data ?? []) as unknown as T[];
+  const page = (data ?? []) as JsonFieldValue as T[];
   rows.push(...page);
   if (page.length < pageSize) break;
   lastId = page.at(-1)?.id ?? null;

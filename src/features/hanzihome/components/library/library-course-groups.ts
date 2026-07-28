@@ -1,6 +1,14 @@
 import type { HanziHomeCatalogCourse, HanziHomeCourseBook } from "@/features/hanzihome/types";
+import { z } from "zod";
 
-export type LibraryCourseGroupKey = "hanyu" | "boya" | "boyaSecondEdition" | "listening" | "other";
+export const LibraryCourseGroupKeySchema = z.enum([
+ "hanyu",
+ "boya",
+ "boyaSecondEdition",
+ "listening",
+ "other",
+]);
+export type LibraryCourseGroupKey = z.infer<typeof LibraryCourseGroupKeySchema>;
 
 export type LibraryCourseGroup = {
  key: LibraryCourseGroupKey;
@@ -14,7 +22,11 @@ export type LibraryCourseGroup = {
 
 const groupDetails: Record<
  LibraryCourseGroupKey,
- Pick<LibraryCourseGroup, "title" | "description" | "isDraft">
+ {
+  title: LibraryCourseGroup["title"];
+  description: LibraryCourseGroup["description"];
+  isDraft: LibraryCourseGroup["isDraft"];
+ }
 > = {
  hanyu: {
   title: "Giáo trình Hán ngữ",

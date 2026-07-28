@@ -1,11 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { z } from "zod";
 
 const MAX_UTTERANCE_LENGTH = 140;
 
-export type MandarinVoiceProfile = "male" | "female" | "neutral";
+export const MandarinVoiceProfileSchema = z.enum(["male", "female", "neutral"]);
+export type MandarinVoiceProfile = z.infer<typeof MandarinVoiceProfileSchema>;
 export type MandarinSpeechSegment = { text: string; voice?: MandarinVoiceProfile };
+const NullableStringSchema = z.string().nullable();
 
 function normalizeLanguage(language: string) {
  return language.trim().toLowerCase().replaceAll("_", "-");
@@ -26,7 +29,9 @@ function voiceScore(voice: SpeechSynthesisVoice) {
  return score;
 }
 
-function inferredVoiceProfile(voice: SpeechSynthesisVoice): MandarinVoiceProfile | null {
+function inferredVoiceProfile(
+ voice: SpeechSynthesisVoice,
+): z.infer<z.ZodNullable<typeof MandarinVoiceProfileSchema>> {
  const name = voice.name.toLowerCase();
  if (/\b(female|woman)\b|女|tingting|xiaoxiao|huihui|yaoyao|meijia|sinji/u.test(name)) {
   return "female";
@@ -39,8 +44,8 @@ function inferredVoiceProfile(voice: SpeechSynthesisVoice): MandarinVoiceProfile
 
 function voiceForProfile(
  voices: SpeechSynthesisVoice[],
- profile: MandarinVoiceProfile | undefined,
- fallback: SpeechSynthesisVoice | null,
+ profile: MandarinSpeechSegment["voice"],
+ fallback: SpeechSynthesisUtterance["voice"],
 ) {
  if (!profile || profile === "neutral") return fallback;
  const explicitMatch = voices.find((voice) => inferredVoiceProfile(voice) === profile);
@@ -72,8 +77,8 @@ export function useNativeMandarinTts() {
  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
  const [selectedVoiceUri, setSelectedVoiceUri] = useState("");
  const [isSpeaking, setIsSpeaking] = useState(false);
- const [speakingText, setSpeakingText] = useState<string | null>(null);
- const [error, setError] = useState<string | null>(null);
+ const [speakingText, setSpeakingText] = useState<z.infer<typeof NullableStringSchema>>(null);
+ const [error, setError] = useState<z.infer<typeof NullableStringSchema>>(null);
  const [rate, setRate] = useState(1);
  const speechRunRef = useRef(0);
 

@@ -5,6 +5,7 @@
  * Default: expanded (not collapsed).
  */
 
+import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
@@ -21,7 +22,7 @@ const storageConfig = {
  version: 1,
  schema: z.boolean(),
  fallback: false,
- migrateLegacy: (value: unknown) => (typeof value === "boolean" ? value : null),
+ migrateLegacy: (value: JsonFieldValue) => (typeof value === "boolean" ? value : null),
 };
 
 type SidebarState = {

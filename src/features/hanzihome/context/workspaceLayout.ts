@@ -1,6 +1,15 @@
 "use client";
 
-import type { LessonViewMode, PaneId, PaneLayout, StudyModule } from "./types";
+import type { JsonFieldValue } from "@/types/json";
+import { z } from "zod";
+import {
+ LessonViewModeSchema,
+ StudyModuleSchema,
+ type LessonViewMode,
+ type PaneId,
+ type PaneLayout,
+ type StudyModule,
+} from "./types";
 
 const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
@@ -21,7 +30,7 @@ export const studyModules = [
  "grammar",
  "review",
  "practice",
-] as const satisfies readonly StudyModule[];
+] satisfies readonly StudyModule[];
 
 const splitStudyModules = [
  "overview",
@@ -31,7 +40,7 @@ const splitStudyModules = [
  "grammar",
  "review",
  "practice",
-] as const satisfies readonly StudyModule[];
+] satisfies readonly StudyModule[];
 
 const splitStudyModuleSet = new Set<StudyModule>(splitStudyModules);
 
@@ -42,11 +51,22 @@ export const defaultPaneLayout: PaneLayout = {
  activeRight: "vocab",
 };
 
-export function parseStudyModule(value: string | null | undefined): StudyModule | null {
- return studyModules.some((item) => item === value) ? (value as StudyModule) : null;
+const NullableStudyModuleSchema = StudyModuleSchema.nullable();
+const paneLayoutInputSchema = z.object({
+ left: z.array(StudyModuleSchema).default([]),
+ right: z.array(StudyModuleSchema).default([]),
+ activeLeft: StudyModuleSchema.optional(),
+ activeRight: StudyModuleSchema.optional(),
+});
+
+export function parseStudyModule(
+ value: Parameters<typeof NullableStudyModuleSchema.safeParse>[0],
+): z.infer<typeof NullableStudyModuleSchema> {
+ const parsed = NullableStudyModuleSchema.safeParse(value);
+ return parsed.success ? parsed.data : null;
 }
 
-function uniqueModules(value: unknown) {
+function uniqueModules(value: JsonFieldValue) {
  if (!Array.isArray(value)) return [];
 
  const seen = new Set<StudyModule>();
@@ -64,10 +84,10 @@ function uniqueModules(value: unknown) {
  return result;
 }
 
-export function normalizePaneLayout(value: unknown): PaneLayout {
- if (!value || typeof value !== "object") return defaultPaneLayout;
-
- const input = value as Partial<PaneLayout>;
+export function normalizePaneLayout(value: JsonFieldValue): PaneLayout {
+ const parsed = paneLayoutInputSchema.safeParse(value);
+ if (!parsed.success) return defaultPaneLayout;
+ const input = parsed.data;
  const left = uniqueModules(input.left);
  const right = uniqueModules(input.right).filter(
   (item) => item === "lessonText" || !left.includes(item),
@@ -86,12 +106,14 @@ export function normalizePaneLayout(value: unknown): PaneLayout {
  return {
   left: normalizedLeft,
   right: normalizedRight,
-  activeLeft: normalizedLeft.includes(input.activeLeft as StudyModule)
-   ? (input.activeLeft as StudyModule)
-   : normalizedLeft[0],
-  activeRight: normalizedRight.includes(input.activeRight as StudyModule)
-   ? (input.activeRight as StudyModule)
-   : normalizedRight[0],
+  activeLeft:
+   input.activeLeft && normalizedLeft.includes(input.activeLeft)
+    ? input.activeLeft
+    : normalizedLeft[0],
+  activeRight:
+   input.activeRight && normalizedRight.includes(input.activeRight)
+    ? input.activeRight
+    : normalizedRight[0],
  };
 }
 
@@ -100,7 +122,7 @@ export function readWorkspacePreferences() {
   return {
    splitEnabled: false,
    paneLayout: defaultPaneLayout,
-   viewMode: "study" as LessonViewMode,
+   viewMode: LessonViewModeSchema.parse("study"),
    splitPaneSize: 48,
   };
  }
@@ -118,10 +140,11 @@ export function readWorkspacePreferences() {
  return {
   splitEnabled: window.localStorage.getItem(splitEnabledKey) === "true",
   paneLayout,
-  viewMode:
+  viewMode: LessonViewModeSchema.parse(
    developerToolsEnabled && window.localStorage.getItem(lessonViewModeKey) === "debug"
-    ? ("debug" as const)
-    : ("study" as const),
+    ? "debug"
+    : "study",
+  ),
   splitPaneSize:
    Number.isFinite(storedSize) && storedSize >= 38 && storedSize <= 62 ? storedSize : 48,
  };

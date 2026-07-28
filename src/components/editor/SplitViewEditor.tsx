@@ -7,6 +7,7 @@
  */
 "use client";
 
+import type { JsonObject } from "@/types/json";
 import type { CSSProperties } from "react";
 import { useCallback, useRef } from "react";
 import { useSelector } from "@tanstack/react-store";
@@ -14,17 +15,20 @@ import { Editor } from "./Editor";
 import { ResizableDivider } from "./ResizableDivider";
 import { splitViewStore } from "@/stores/split-view-store";
 import { BookOpen, FileText } from "lucide-react";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 interface SplitViewEditorProps {
  noteId: string;
  /** Note content (right pane) */
- noteContent: Record<string, unknown> | null;
+ noteContent: Nullable<JsonObject>;
  /** Reading content (left pane) */
- readingContent: Record<string, unknown> | null;
+ readingContent: Nullable<JsonObject>;
  /** Called when note content changes */
- onNoteChange?: (json: Record<string, unknown>) => void;
+ onNoteChange?: (json: JsonObject) => void;
  /** Called when reading content changes */
- onReadingChange?: (json: Record<string, unknown>) => void;
+ onReadingChange?: (json: JsonObject) => void;
  readOnly?: boolean;
  toolbarVisible?: boolean;
 }

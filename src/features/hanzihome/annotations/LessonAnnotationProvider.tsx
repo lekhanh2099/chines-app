@@ -1,5 +1,6 @@
 "use client";
 
+import { parseErrorLike, type ErrorInput } from "@/types/error";
 import {
  createContext,
  useCallback,
@@ -11,6 +12,7 @@ import {
 } from "react";
 import { Bookmark, Highlighter, Languages, StickyNote, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import {
@@ -32,7 +34,13 @@ import {
 import { containsChinese } from "@/lib/chinese-utils";
 
 import { createAnnotationAnchor, resolveAnnotationAnchor } from "./annotation-anchor";
-import type { AnnotationAnchor, LessonTextAnnotation, ResolvedLessonTextAnnotation } from "./types";
+import {
+ AnnotationAnchorSchema,
+ LessonTextAnnotationSchema,
+ type AnnotationAnchor,
+ type LessonTextAnnotation,
+ type ResolvedLessonTextAnnotation,
+} from "./types";
 import { useLessonAnnotations } from "./useLessonAnnotations";
 
 type AnnotationTarget = {
@@ -43,16 +51,23 @@ type AnnotationTarget = {
 
 type SelectionDraft = {
  anchor: AnnotationAnchor;
- rect: DOMRect;
+ rect: ReturnType<Range["getBoundingClientRect"]>;
  sourceText: string;
 };
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+
+const NoteDialogSchema = z.discriminatedUnion("kind", [
+ z.object({ kind: z.literal("anchor"), anchor: AnnotationAnchorSchema }),
+ z.object({ kind: z.literal("annotation"), annotation: LessonTextAnnotationSchema }),
+]);
 
 type AnnotationContextValue = {
  getAnnotations: (target: AnnotationTarget, text: string) => ResolvedLessonTextAnnotation[];
  openAnnotation: (annotation: LessonTextAnnotation) => void;
 };
 
-const AnnotationContext = createContext<AnnotationContextValue | null>(null);
+const AnnotationContext = createContext<Nullable<AnnotationContextValue>>(null);
 
 export function useLessonAnnotationContext() {
  return useContext(AnnotationContext);
@@ -76,27 +91,26 @@ function getSelectionOffsets(container: HTMLElement, range: Range) {
  };
 }
 
-function closestAnnotationTarget(node: Node): HTMLElement | null {
+function closestAnnotationTarget(node: Node) {
  const element = node instanceof Element ? node : node.parentElement;
  return element?.closest<HTMLElement>("[data-study-annotation-node]") || null;
 }
 
-function selectionTarget(range: Range): HTMLElement | null {
+function selectionTarget(range: Range) {
  const startTarget = closestAnnotationTarget(range.startContainer);
  const endTarget = closestAnnotationTarget(range.endContainer);
  return startTarget && startTarget === endTarget ? startTarget : null;
 }
 
-function getSelectionRect(range: Range): DOMRect | null {
+function getSelectionRect(range: Range) {
  const rects = Array.from(range.getClientRects()).filter((rect) => rect.width || rect.height);
  return (
   rects.at(-1) || (range.getBoundingClientRect().width ? range.getBoundingClientRect() : null)
  );
 }
 
-function annotationErrorMessage(error: unknown, fallback: string) {
- if (!error || typeof error !== "object") return fallback;
- const candidate = error as { code?: string; message?: string };
+function annotationErrorMessage(error: ErrorInput, fallback: string) {
+ const candidate = parseErrorLike(error);
  if (candidate.code === "PGRST205" || candidate.code === "42883") {
   return "Database chưa có migration ghi chú. Hãy đồng bộ migration rồi thử lại.";
  }
@@ -112,11 +126,8 @@ export function LessonAnnotationProvider({
 }) {
  const annotationState = useLessonAnnotations(lessonId);
  const { openInspector } = useVocabInspector();
- const [selectionDraft, setSelectionDraft] = useState<SelectionDraft | null>(null);
- const [noteDialog, setNoteDialog] = useState<{
-  anchor?: AnnotationAnchor;
-  annotation?: LessonTextAnnotation;
- } | null>(null);
+ const [selectionDraft, setSelectionDraft] = useState<Nullable<SelectionDraft>>(null);
+ const [noteDialog, setNoteDialog] = useState<Nullable<z.infer<typeof NoteDialogSchema>>>(null);
  const [noteText, setNoteText] = useState("");
  const selectionAnchor = useCallback(
   () =>
@@ -131,10 +142,10 @@ export function LessonAnnotationProvider({
  const closeSelectionMenu = useCallback(() => setSelectionDraft(null), []);
 
  useEffect(() => {
-  let selectionTimer: number | undefined;
+  const selectionTimer = { current: 0 };
   const captureSelection = (delay = 120) => {
-   window.clearTimeout(selectionTimer);
-   selectionTimer = window.setTimeout(() => {
+   window.clearTimeout(selectionTimer.current);
+   selectionTimer.current = window.setTimeout(() => {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || selection.rangeCount !== 1) return;
 
@@ -171,7 +182,7 @@ export function LessonAnnotationProvider({
   document.addEventListener("pointerup", captureSettledSelection);
   document.addEventListener("keyup", captureSettledSelection);
   return () => {
-   window.clearTimeout(selectionTimer);
+   window.clearTimeout(selectionTimer.current);
    document.removeEventListener("selectionchange", handleSelectionChange);
    document.removeEventListener("pointerup", captureSettledSelection);
    document.removeEventListener("keyup", captureSettledSelection);
@@ -223,24 +234,24 @@ export function LessonAnnotationProvider({
    return;
   }
   setNoteText("");
-  setNoteDialog({ anchor: selectionDraft.anchor });
+  setNoteDialog({ kind: "anchor", anchor: selectionDraft.anchor });
   closeSelectionMenu();
  };
 
  const openAnnotation = useCallback((annotation: LessonTextAnnotation) => {
   setNoteText(annotation.noteText);
-  setNoteDialog({ annotation });
+  setNoteDialog({ kind: "annotation", annotation });
  }, []);
 
  const saveNote = async () => {
   if (!noteDialog || !noteText.trim()) return;
   try {
-   if (noteDialog.annotation) {
+   if (noteDialog.kind === "annotation") {
     await annotationState.updateAnnotationNote({
      annotationId: noteDialog.annotation.id,
      noteText: noteText.trim(),
     });
-   } else if (noteDialog.anchor) {
+   } else {
     await annotationState.createAnnotation({
      anchor: noteDialog.anchor,
      noteText: noteText.trim(),
@@ -255,7 +266,7 @@ export function LessonAnnotationProvider({
  };
 
  const deleteAnnotation = async () => {
-  if (!noteDialog?.annotation) return;
+  if (noteDialog?.kind !== "annotation") return;
   try {
    await annotationState.deleteAnnotation(noteDialog.annotation.id);
    toast.success("Đã xóa highlight.");
@@ -324,7 +335,9 @@ export function LessonAnnotationProvider({
      <DialogHeader>
       <DialogTitle icon={<Bookmark />}>Ghi chú đoạn đọc</DialogTitle>
       <DialogDescription>
-       {noteDialog?.annotation?.selectedText || noteDialog?.anchor?.selectedText}
+       {noteDialog?.kind === "annotation"
+        ? noteDialog.annotation.selectedText
+        : noteDialog?.anchor.selectedText}
       </DialogDescription>
      </DialogHeader>
      <DialogBody>
@@ -341,7 +354,7 @@ export function LessonAnnotationProvider({
       </label>
      </DialogBody>
      <DialogFooter>
-      {noteDialog?.annotation ? (
+      {noteDialog?.kind === "annotation" ? (
        <Button
         variant="destructive"
         onClick={deleteAnnotation}

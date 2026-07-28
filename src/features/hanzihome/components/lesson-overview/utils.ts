@@ -1,30 +1,31 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { HanyuLesson, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 import type { BookSection } from "./types";
 
-export function asRecord(value: unknown): Record<string, unknown> {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as Record<string, unknown>)
-  : {};
+export function asRecord(value: JsonFieldValue): JsonObject {
+ return value && typeof value === "object" && !Array.isArray(value) ? (value as JsonObject) : {};
 }
 
-export function stringValue(record: Record<string, unknown>, key: string) {
+export function stringValue(record: JsonObject, key: string) {
  const value = record[key];
  return typeof value === "string" ? value.trim() : "";
 }
 
-export function arrayValue(record: Record<string, unknown>, key: string) {
+export function arrayValue(record: JsonObject, key: string) {
  const value = record[key];
  return Array.isArray(value) ? value : [];
 }
 
-export function nonEmptyStrings(value: unknown[]) {
+export function nonEmptyStrings(value: JsonValue[]) {
  return value.filter(
   (entry): entry is string => typeof entry === "string" && Boolean(entry.trim()),
  );
 }
 
-function hasTextLikeValue(value: unknown): boolean {
+function hasTextLikeValue(value: JsonFieldValue): boolean {
  if (typeof value === "string") return Boolean(value.trim());
  if (typeof value === "number" || typeof value === "boolean") return true;
  if (Array.isArray(value)) return value.some(hasTextLikeValue);
@@ -33,7 +34,7 @@ function hasTextLikeValue(value: unknown): boolean {
  return Object.values(record).some(hasTextLikeValue);
 }
 
-export function answerToString(value: unknown): string {
+export function answerToString(value: JsonFieldValue): string {
  if (typeof value === "string") return value.trim();
  if (typeof value === "number" || typeof value === "boolean") {
   return String(value);
@@ -42,7 +43,7 @@ export function answerToString(value: unknown): string {
  return "";
 }
 
-export function hasClozeAnswerValue(value: unknown): boolean {
+export function hasClozeAnswerValue(value: JsonFieldValue): boolean {
  if (typeof value === "string" || typeof value === "number") {
   return Boolean(String(value).trim());
  }
@@ -59,11 +60,11 @@ export function hasClozeAnswerValue(value: unknown): boolean {
  );
 }
 
-function firstRenderableArray(...arrays: unknown[][]): unknown[] {
+function firstRenderableArray(...arrays: JsonValue[][]): JsonValue[] {
  return arrays.find((values) => values.some(hasTextLikeValue)) ?? [];
 }
 
-function mergedRenderableArrays(record: Record<string, unknown>, keys: string[]): unknown[] {
+function mergedRenderableArrays(record: JsonObject, keys: string[]): JsonValue[] {
  return keys.flatMap((key) => arrayValue(record, key)).filter(hasTextLikeValue);
 }
 
@@ -76,9 +77,9 @@ const supplementaryVocabKeys = [
 ];
 
 export function getPassageLikeValue(
- record: Record<string, unknown>,
+ record: JsonObject,
  options: { includeText?: boolean } = {},
-): unknown {
+): JsonFieldValue {
  const directPassageRecord = asRecord(record.passage);
  const directPassageText = answerToString(record.passage);
  const directPassageHasPayload =
@@ -212,7 +213,7 @@ export function getPassageLikeValue(
  return Object.values(passage).some(hasTextLikeValue) ? passage : undefined;
 }
 
-export function getClozeAnswerValues(record: Record<string, unknown>) {
+export function getClozeAnswerValues(record: JsonObject) {
  const keys = [
   "blanks",
   "answers",
@@ -282,7 +283,7 @@ export function sectionSubtitle(section: Section) {
  return undefined;
 }
 
-export function getBookSections(sourceLesson: HanyuLesson | undefined): BookSection[] {
+export function getBookSections(sourceLesson: HanziHomeLesson["sourceLesson"]): BookSection[] {
  return (sourceLesson?.lesson.sections ?? [])
   .slice()
   .sort((a, b) => a.order - b.order)

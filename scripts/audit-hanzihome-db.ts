@@ -1,14 +1,17 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { z } from "zod";
 
-type DatasetId = "q2" | "q3";
+const DatasetIdSchema = z.enum(["q2", "q3"]);
+type DatasetId = z.infer<typeof DatasetIdSchema>;
 
 const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 const sourceRoot = path.join(process.cwd(), "src");
 const packageJsonPath = path.join(process.cwd(), "package.json");
 const datasets: DatasetId[] = ["q2", "q3"];
 
-async function readJson<T = unknown>(filePath: string): Promise<T> {
+async function readJson<T = JsonFieldValue>(filePath: string): Promise<T> {
  return JSON.parse(await readFile(filePath, "utf8")) as T;
 }
 
@@ -34,13 +37,13 @@ async function walk(dir: string): Promise<string[]> {
  return nested.flat();
 }
 
-function asRecord(value: unknown): Record<string, unknown> {
+function asRecord(value: JsonFieldValue): Record<string, JsonFieldValue> {
  return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as Record<string, unknown>)
+  ? (value as Record<string, JsonFieldValue>)
   : {};
 }
 
-function asString(value: unknown) {
+function asString(value: JsonFieldValue) {
  return typeof value === "string" ? value : "";
 }
 
@@ -99,7 +102,9 @@ async function auditLesson(dataset: DatasetId, lessonFolder: string, errors: str
  const allRelations = await readJson<Array<{ to?: { path?: string } }>>(
   path.join(lessonRoot, "relations/all.json"),
  );
- const unresolved = await readJson<unknown[]>(path.join(lessonRoot, "relations/unresolved.json"));
+ const unresolved = await readJson<JsonFieldValue[]>(
+  path.join(lessonRoot, "relations/unresolved.json"),
+ );
 
  for (const item of sectionIndex) {
   if (!(await exists(path.join(lessonRoot, "sections", item.file)))) {

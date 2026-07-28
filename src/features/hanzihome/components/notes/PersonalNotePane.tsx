@@ -1,5 +1,7 @@
 "use client";
 
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
+import { z } from "zod";
 import { Editor } from "@/components/editor/Editor";
 
 import { useDebouncedEditorSave } from "./useDebouncedEditorSave";
@@ -13,8 +15,8 @@ export function PersonalNotePane({
  className = "",
 }: {
  noteId: string;
- content: Record<string, unknown> | null;
- onSave: (content: Record<string, unknown>) => void;
+ content: z.infer<z.ZodNullable<typeof JsonObjectSchema>>;
+ onSave: (content: JsonObject) => void;
  readOnly: boolean;
  toolbarVisible: boolean;
  className?: string;

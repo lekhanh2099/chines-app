@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { GenericItemCard } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
@@ -10,7 +11,7 @@ function PreparationItem({
  displayMode,
  debugMode,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  index: number;
  displayMode: LessonDisplayMode;
  debugMode: boolean;
@@ -58,7 +59,7 @@ export function PreparationSectionView({
  displayMode,
  debugMode,
 }: {
- items: unknown[];
+ items: JsonValue[];
  displayMode: LessonDisplayMode;
  debugMode: boolean;
 }) {

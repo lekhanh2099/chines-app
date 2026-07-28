@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { AnswerKeyList } from "../CommonCards";
@@ -15,7 +16,7 @@ export function EditableAnswerKeyList({
  itemPath?: EditableNodePath;
  itemId: string;
  sourcePath: EditableNodePath;
- values: unknown[];
+ values: JsonValue[];
  showAnswers?: boolean;
 }) {
  return (

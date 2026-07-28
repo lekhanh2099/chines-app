@@ -1,31 +1,46 @@
 "use client";
 
+import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { z } from "zod";
 
 import { lessonAnnotationQueryKeys } from "./query-keys";
 import type { AnnotationAnchor, LessonTextAnnotation } from "./types";
 
-type AnnotationRow = {
- id: string;
- lesson_id: string;
- node_type: string;
- node_id: string;
- start_offset: number;
- end_offset: number;
- selected_text: string;
- prefix_text: string;
- suffix_text: string;
- tone: string;
- note_id: string | null;
- created_at: string;
- updated_at: string;
- notes: { content: unknown } | null;
-};
+const AnnotationRowSchema = z.object({
+ id: z.string(),
+ lesson_id: z.string(),
+ node_type: z.string(),
+ node_id: z.string(),
+ start_offset: z.number(),
+ end_offset: z.number(),
+ selected_text: z.string(),
+ prefix_text: z.string(),
+ suffix_text: z.string(),
+ tone: z.string(),
+ note_id: z.string().nullable(),
+ created_at: z.string(),
+ updated_at: z.string(),
+ notes: z.object({ content: JsonValueSchema }).nullable(),
+});
+type AnnotationRow = z.infer<typeof AnnotationRowSchema>;
 
-function extractNoteText(content: unknown): string {
- if (!content || typeof content !== "object") return "";
- const root = content as { content?: Array<{ content?: Array<{ text?: unknown }> }> };
- const text = root.content?.[0]?.content?.find((item) => typeof item.text === "string")?.text;
+const LexicalNoteContentSchema = z.object({
+ content: z
+  .array(
+   z.object({
+    content: z.array(z.object({ text: JsonValueSchema.optional() })).optional(),
+   }),
+  )
+  .optional(),
+});
+
+function extractNoteText(content: JsonFieldValue): string {
+ const parsed = LexicalNoteContentSchema.safeParse(content);
+ if (!parsed.success) return "";
+ const text = parsed.data.content?.[0]?.content?.find(
+  (item) => typeof item.text === "string",
+ )?.text;
  return typeof text === "string" ? text : "";
 }
 
@@ -71,7 +86,9 @@ export function useLessonAnnotations(lessonId: string) {
     .order("start_offset", { ascending: true });
 
    if (error) throw error;
-   return ((data || []) as AnnotationRow[]).map(mapAnnotation);
+   return AnnotationRowSchema.array()
+    .parse(data || [])
+    .map(mapAnnotation);
   },
  });
 

@@ -8,7 +8,7 @@ import {
 } from "./listening.types.ts";
 
 type RefinementContext = {
- addIssue(issue: { code: "custom"; message: string; path: Array<string | number> }): void;
+ addIssue(issue: { code: "custom"; message: string; path: PropertyKey[] }): void;
 };
 
 const optionalTrimmedText = z.string().trim().min(1).optional();

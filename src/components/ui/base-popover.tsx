@@ -2,12 +2,15 @@
 
 import { Popover } from "@base-ui/react";
 import * as React from "react";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const BasePopoverVariantSchema = z.enum(["default", "actions", "lookup", "menu"]);
+
 type BasePopoverPopupProps = Omit<React.ComponentProps<typeof Popover.Popup>, "className"> & {
- variant?: "default" | "actions" | "lookup" | "menu";
+ variant?: z.infer<typeof BasePopoverVariantSchema>;
 };
 
 const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, string> = {
@@ -21,9 +24,13 @@ const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, strin
   "grid w-72 max-w-[calc(100vw-1rem)] gap-2 rounded-xl border border-border-default bg-bg-elevated p-2 text-sm shadow-theme-lg",
 };
 
+type BasePopoverTriggerOwnedProps = {
+ className?: never;
+ render?: never;
+};
 type BasePopoverTriggerProps = Omit<
  React.ComponentProps<typeof Popover.Trigger>,
- "className" | "render"
+ keyof BasePopoverTriggerOwnedProps
 > & { active?: boolean };
 
 function BasePopoverTrigger({ active = false, ...props }: BasePopoverTriggerProps) {

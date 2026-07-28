@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -230,7 +231,7 @@ async function main() {
  console.table(result.data as Record<string, number>);
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

@@ -17,7 +17,7 @@ import {
  type NodeKey,
 } from "lexical";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { $createHeadingNode, $createQuoteNode, type HeadingTagType } from "@lexical/rich-text";
+import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
 import { $createCodeNode } from "@lexical/code";
 import {
  INSERT_ORDERED_LIST_COMMAND,
@@ -42,6 +42,7 @@ import {
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 const DRAG_DATA_FORMAT = "application/x-lexical-drag-block";
+type NullableHTMLElement = ReturnType<Document["getElementById"]>;
 
 const BLOCK_INSERT_OPTIONS = [
  { key: "paragraph", label: "Paragraph", icon: AlignLeft },
@@ -54,12 +55,12 @@ const BLOCK_INSERT_OPTIONS = [
  { key: "quote", label: "Quote", icon: Quote },
  { key: "code", label: "Code Block", icon: Code },
  { key: "table", label: "Table", icon: Table },
-] as const;
+];
 
-function getBlockElemFromTarget(target: HTMLElement, editor: LexicalEditor): HTMLElement | null {
+function getBlockElemFromTarget(target: HTMLElement, editor: LexicalEditor): NullableHTMLElement {
  const root = editor.getRootElement();
  if (!root) return null;
- let elem: HTMLElement | null = target;
+ let elem: NullableHTMLElement = target;
  while (elem && elem !== root) {
   if (elem.parentElement === root) return elem;
   elem = elem.parentElement;
@@ -71,14 +72,15 @@ function getBlockElemFromTarget(target: HTMLElement, editor: LexicalEditor): HTM
  * Find the nearest block element by Y-coordinate.
  * Used when mouse is in the container padding (not directly on a block).
  */
-function getBlockElemByY(y: number, editor: LexicalEditor): HTMLElement | null {
+function getBlockElemByY(y: number, editor: LexicalEditor): NullableHTMLElement {
  const root = editor.getRootElement();
  if (!root) return null;
  const children = root.children;
- let closest: HTMLElement | null = null;
+ let closest: NullableHTMLElement = null;
  let closestDist = Infinity;
  for (let i = 0; i < children.length; i++) {
-  const child = children[i] as HTMLElement;
+  const child = children[i];
+  if (!(child instanceof HTMLElement)) continue;
   const rect = child.getBoundingClientRect();
   // Check if y is within the block's vertical range
   if (y >= rect.top && y <= rect.bottom) return child;
@@ -102,17 +104,17 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  const [filterText, setFilterText] = useState("");
 
  // We store the hovered block element directly — no position matching
- const hoveredBlockRef = useRef<HTMLElement | null>(null);
- const draggedKeyRef = useRef<NodeKey | null>(null);
- const dropTargetRef = useRef<HTMLElement | null>(null);
+ const hoveredBlockRef = useRef<HTMLElement>(null);
+ const draggedKeyRef = useRef<NodeKey>(null);
+ const dropTargetRef = useRef<HTMLElement>(null);
 
  const showMenu = useCallback(
   (blockElem: HTMLElement) => {
    const root = editor.getRootElement();
    if (!root) return;
    // Position relative to .editor-container (the positioned parent)
-   const container = root.closest(".editor-container") as HTMLElement;
-   if (!container) return;
+   const container = root.closest(".editor-container");
+   if (!(container instanceof HTMLElement)) return;
    const containerRect = container.getBoundingClientRect();
    const blockRect = blockElem.getBoundingClientRect();
 
@@ -135,7 +137,11 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  useEffect(() => {
   if (!showBlockMenu) return;
   const close = (e: MouseEvent) => {
-   if (blockMenuRef.current && !blockMenuRef.current.contains(e.target as Node)) {
+   if (
+    blockMenuRef.current &&
+    e.target instanceof Node &&
+    !blockMenuRef.current.contains(e.target)
+   ) {
     setShowBlockMenu(false);
     setFilterText("");
    }
@@ -148,11 +154,12 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  useEffect(() => {
   const root = editor.getRootElement();
   if (!root) return;
-  const container = root.closest(".editor-container") as HTMLElement;
-  if (!container) return;
+  const container = root.closest(".editor-container");
+  if (!(container instanceof HTMLElement)) return;
 
   const onMouseMove = (e: MouseEvent) => {
-   const target = e.target as HTMLElement;
+   if (!(e.target instanceof HTMLElement)) return;
+   const target = e.target;
    // Don't change when hovering the menu itself or blockMenu
    if (menuRef.current?.contains(target)) return;
    if (blockMenuRef.current?.contains(target)) return;
@@ -236,7 +243,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
 
      let newNode;
      if (type === "h1" || type === "h2" || type === "h3") {
-      newNode = $createHeadingNode(type as HeadingTagType);
+      newNode = $createHeadingNode(type);
      } else if (type === "quote") {
       newNode = $createQuoteNode();
      } else if (type === "code") {
@@ -291,8 +298,8 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  useEffect(() => {
   const root = editor.getRootElement();
   if (!root) return;
-  const container = root.closest(".editor-container") as HTMLElement;
-  if (!container) return;
+  const container = root.closest(".editor-container");
+  if (!(container instanceof HTMLElement)) return;
 
   const onDragOver = (e: DragEvent) => {
    if (!e.dataTransfer?.types.includes(DRAG_DATA_FORMAT)) return;
@@ -302,7 +309,8 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
    e.dataTransfer.dropEffect = "move";
 
    // Find the block under the cursor
-   const target = e.target as HTMLElement;
+   if (!(e.target instanceof HTMLElement)) return;
+   const target = e.target;
    let block = getBlockElemFromTarget(target, editor);
    if (!block) block = getBlockElemByY(e.clientY, editor);
    if (block && dropLineRef.current) {

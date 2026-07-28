@@ -114,8 +114,10 @@ function DropdownMenuCheckboxItem({
  tone,
  density,
  ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> &
- Pick<VariantProps<typeof dropdownMenuItemVariants>, "tone" | "density">) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> & {
+ tone?: VariantProps<typeof dropdownMenuItemVariants>["tone"];
+ density?: VariantProps<typeof dropdownMenuItemVariants>["density"];
+}) {
  return (
   <DropdownMenuPrimitive.CheckboxItem
    data-slot="dropdown-menu-checkbox-item"
@@ -138,8 +140,10 @@ function DropdownMenuRadioItem({
  tone,
  density,
  ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> &
- Pick<VariantProps<typeof dropdownMenuItemVariants>, "tone" | "density">) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> & {
+ tone?: VariantProps<typeof dropdownMenuItemVariants>["tone"];
+ density?: VariantProps<typeof dropdownMenuItemVariants>["density"];
+}) {
  return (
   <DropdownMenuPrimitive.RadioItem
    data-slot="dropdown-menu-radio-item"

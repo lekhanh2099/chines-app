@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+import type { JsonFieldValue } from "@/types/json";
+import { z } from "zod";
 
-export const editableEntityTypes = [
+export const EditableEntityTypeSchema = z.enum([
  "lesson",
  "section",
  "vocab_item",
@@ -28,10 +30,14 @@ export const editableEntityTypes = [
  "text_block",
  "text_line",
  "text_paragraph",
-] as const;
+]);
+export const editableEntityTypes = EditableEntityTypeSchema.options;
 
-export type EditableEntityType = (typeof editableEntityTypes)[number];
-export type EditableNodePath = Array<string | number>;
+export const EditableNodePathSchema = z.array(z.union([z.string(), z.number()]));
+export const NullableEditableNodePathSchema = EditableNodePathSchema.nullable();
+export type EditableEntityType = z.infer<typeof EditableEntityTypeSchema>;
+export type EditableNodePath = z.infer<typeof EditableNodePathSchema>;
+export type NullableEditableNodePath = z.infer<typeof NullableEditableNodePathSchema>;
 
 export type EditableNodeRequest = {
  lessonId: string;
@@ -40,7 +46,7 @@ export type EditableNodeRequest = {
  parentEntityType?: EditableEntityType;
  parentEntityId?: string;
  path: EditableNodePath;
- value: unknown;
+ value: JsonFieldValue;
  label?: string;
  description?: ReactNode;
 };

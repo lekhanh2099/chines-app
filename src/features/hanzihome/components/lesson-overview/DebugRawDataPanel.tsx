@@ -1,9 +1,10 @@
+import type { JsonFieldValue } from "@/types/json";
 export function DebugRawDataPanel({
  title = "Raw data",
  value,
 }: {
  title?: string;
- value: unknown;
+ value: JsonFieldValue;
 }) {
  return (
   <details className="rounded-xl border border-border-default bg-bg-primary">

@@ -11,7 +11,7 @@ export type HanziHomeStudyTab<T extends string> = {
  label: string;
  shortLabel?: string;
  icon?: LucideIcon;
- badge?: string | number;
+ badge?: React.ComponentProps<typeof Badge>["children"];
  disabled?: boolean;
 };
 

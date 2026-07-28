@@ -1,10 +1,11 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { EditAdapter } from "./types";
 
-function asRecord(value: unknown): { [key: string]: unknown } {
+function asRecord(value: JsonFieldValue): { [key: string]: JsonFieldValue } {
  return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
-function editableText(value: unknown) {
+function editableText(value: JsonFieldValue) {
  if (Array.isArray(value)) {
   return value.filter((item): item is string => typeof item === "string").join("\n");
  }
@@ -12,7 +13,7 @@ function editableText(value: unknown) {
  return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
-function preserveTextShape(original: unknown, value: string) {
+function preserveTextShape(original: JsonFieldValue, value: string) {
  if (Array.isArray(original)) {
   return value
    .split("\n")

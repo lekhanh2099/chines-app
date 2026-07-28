@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -7,6 +8,7 @@ import {
  type UpdateHtmlArtifactPayload,
 } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
 import { createClient } from "@/lib/supabase/server";
+import type { TablesUpdate } from "@/types/supabase.generated";
 
 type RouteContext = {
  params: Promise<{
@@ -21,18 +23,12 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingHtmlArtifactsTable(code: string | undefined) {
+function isMissingHtmlArtifactsTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
 function buildUpdatePatch(payload: UpdateHtmlArtifactPayload) {
- const patch: {
-  title?: string;
-  folder_id?: string | null;
-  artifact_type?: UpdateHtmlArtifactPayload["artifactType"];
-  tags?: string[];
-  html?: string;
- } = {};
+ const patch: TablesUpdate<"hanzihome_html_artifacts"> = {};
 
  if (payload.title !== undefined) patch.title = payload.title;
  if (payload.folderId !== undefined) patch.folder_id = payload.folderId;
@@ -87,7 +83,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = updateHtmlArtifactPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

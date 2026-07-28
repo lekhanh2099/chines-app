@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { getCatalogSummary, getCourseLessonSummaries, requireAuthenticatedRoute } = vi.hoisted(
@@ -16,7 +17,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
  apiError: (message: string, status: number, code?: string) =>
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
- privateNoStoreJson: (body: unknown) =>
+ privateNoStoreJson: (body: JsonFieldValue) =>
   Response.json(body, { headers: { "Cache-Control": "private, no-store" } }),
 }));
 

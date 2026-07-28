@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/server";
@@ -28,8 +29,20 @@ import type {
  SmartSelectionResult,
  VocabData,
 } from "@/types/database";
+import { SmartSelectionModeSchema } from "@/types/database";
+import { GeminiModelIdSchema } from "@/lib/gemini-models";
+import { z } from "zod";
 
 const MAX_SELECTION_LENGTH = 120;
+const EditorContextRequestSchema = z.object({
+ selection: z.string(),
+ contextSentence: z.string().optional(),
+ mode: SmartSelectionModeSchema.optional(),
+ geminiModel: GeminiModelIdSchema.optional(),
+ wordPromptTemplate: z.string().optional(),
+ sentencePromptTemplate: z.string().optional(),
+});
+type NullableText = z.infer<z.ZodNullable<z.ZodString>>;
 
 function resolveMode(selection: string): SmartSelectionMode {
  const normalized = extractChinese(selection) || selection;
@@ -37,9 +50,9 @@ function resolveMode(selection: string): SmartSelectionMode {
 }
 
 async function getProgressState(
- userId: string | null,
- vocabId: string | undefined,
- dictionaryId: string | undefined,
+ userId: NullableText,
+ vocabId: VocabData["id"],
+ dictionaryId: VocabData["dictionary_id"],
  supabase: Awaited<ReturnType<typeof createClient>>,
 ): Promise<{
  isSaved: boolean;
@@ -88,7 +101,11 @@ async function getProgressState(
 
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
- const body: unknown = await request.json();
+ const body: JsonFieldValue = await request.json();
+ const parsedBody = EditorContextRequestSchema.safeParse(body);
+ if (!parsedBody.success) {
+  return NextResponse.json({ error: "Invalid selection" }, { status: 400 });
+ }
  const {
   selection,
   contextSentence,
@@ -96,14 +113,7 @@ export async function POST(request: NextRequest) {
   geminiModel,
   wordPromptTemplate,
   sentencePromptTemplate,
- } = body as {
-  selection?: string;
-  contextSentence?: string;
-  mode?: SmartSelectionMode;
-  geminiModel?: string;
-  wordPromptTemplate?: string;
-  sentencePromptTemplate?: string;
- };
+ } = parsedBody.data;
 
  const rawSelection = selection?.trim();
  if (!rawSelection || rawSelection.length > MAX_SELECTION_LENGTH) {

@@ -3,6 +3,10 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
+import { z } from "zod";
+
+const PartialLearningStateSchema = userLearningStateSchema.partial().nullable().optional();
 
 export const emptyLearningState: UserLearningState = {
  settings: {},
@@ -20,7 +24,7 @@ export const emptyLearningState: UserLearningState = {
 };
 
 export function normalizeLearningState(
- value: Partial<UserLearningState> | null | undefined,
+ value: z.infer<typeof PartialLearningStateSchema>,
 ): UserLearningState {
  return {
   settings: value?.settings || {},

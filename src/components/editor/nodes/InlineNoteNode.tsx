@@ -18,6 +18,7 @@ import type {
 } from "lexical";
 import { DecoratorNode, $applyNodeReplacement } from "lexical";
 import type { JSX, ReactNode } from "react";
+import { z } from "zod";
 
 export type SerializedInlineNoteNode = Spread<
  {
@@ -28,6 +29,13 @@ export type SerializedInlineNoteNode = Spread<
 >;
 
 const urlPattern = /https?:\/\/[^\s<>"'）)\]}]+/gi;
+const TooltipPositionSchema = z
+ .object({
+  top: z.number(),
+  left: z.number(),
+  placement: z.enum(["top", "bottom"]),
+ })
+ .nullable();
 
 function renderLinkifiedText(value: string): ReactNode[] {
  const parts: ReactNode[] = [];
@@ -88,13 +96,10 @@ function InlineNoteComponent({
  nodeKey: NodeKey;
 }) {
  const [showTooltip, setShowTooltip] = useState(false);
- const [tooltipPosition, setTooltipPosition] = useState<{
-  top: number;
-  left: number;
-  placement: "top" | "bottom";
- } | null>(null);
- const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- const spanRef = useRef<HTMLSpanElement | null>(null);
+ const [tooltipPosition, setTooltipPosition] =
+  useState<z.infer<typeof TooltipPositionSchema>>(null);
+ const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+ const spanRef = useRef<HTMLSpanElement>(null);
 
  const handleMouseEnter = useCallback(() => {
   if (timeoutRef.current) clearTimeout(timeoutRef.current);

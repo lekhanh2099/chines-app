@@ -1,15 +1,19 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { hasRenderableValue } from "../CommonCards";
 import { arrayValue, asRecord, stringValue } from "../utils";
+import { z } from "zod";
 
-export type SummaryGroup = {
- id: string;
- title: string;
- items: Array<{ id: string; label: string; detail?: string }>;
-};
+export const SummaryGroupSchema = z.object({
+ id: z.string(),
+ title: z.string(),
+ items: z.array(z.object({ id: z.string(), label: z.string(), detail: z.string().optional() })),
+});
+export type SummaryGroup = z.infer<typeof SummaryGroupSchema>;
 
-function titleFromValue(value: unknown, fallback: string) {
+function titleFromValue(value: JsonFieldValue, fallback: string) {
  if (typeof value === "string") return value;
 
  const record = asRecord(value);
@@ -26,7 +30,7 @@ function titleFromValue(value: unknown, fallback: string) {
  );
 }
 
-function detailFromValue(value: unknown) {
+function detailFromValue(value: JsonFieldValue) {
  const record = asRecord(value);
 
  return (
@@ -42,9 +46,9 @@ function groupFromArray(
  sectionId: string,
  id: string,
  title: string,
- values: unknown[],
+ values: JsonValue[],
  fallbackLabel: string,
-): SummaryGroup | null {
+): z.infer<z.ZodNullable<typeof SummaryGroupSchema>> {
  const visibleValues = values.filter(hasRenderableValue);
  if (visibleValues.length === 0) return null;
 
@@ -59,7 +63,7 @@ function groupFromArray(
  };
 }
 
-function collectArrays(record: Record<string, unknown>, keys: string[]): unknown[] {
+function collectArrays(record: JsonObject, keys: string[]): JsonValue[] {
  return keys.flatMap((key) => arrayValue(record, key));
 }
 

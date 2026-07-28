@@ -9,7 +9,7 @@ import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 
 import type { SectionView } from "./types";
 
-function hasText(value: string | undefined) {
+function hasText(value: Meaning["short_definition_vi"]) {
  return Boolean(value?.trim());
 }
 
@@ -48,7 +48,7 @@ export function hasComparisonContent(comparison: Comparison) {
  );
 }
 
-export function hasCultureContent(culture: CultureNote | undefined) {
+export function hasCultureContent(culture: HanziHomeVocabItem["culture_note"]) {
  return Boolean(culture && [culture.title, culture.content_vi].some(hasText));
 }
 

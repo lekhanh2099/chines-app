@@ -1,5 +1,6 @@
 import type { ApiKeyProvider } from "@/lib/api-key-providers";
 import { GEMINI_DETAIL_MODEL_OPTIONS } from "@/lib/gemini-models";
+import { z } from "zod";
 
 export type ApiKeyModelOption = {
  value: string;
@@ -61,6 +62,7 @@ export const API_KEY_MODEL_OPTIONS: Record<ApiKeyProvider, readonly ApiKeyModelO
   },
  ],
 };
+const OptionalNullableModelSchema = z.string().nullable().optional();
 
 export function getApiKeyModelOptions(provider: ApiKeyProvider) {
  return API_KEY_MODEL_OPTIONS[provider];
@@ -74,7 +76,10 @@ export function isApiKeyModelSupported(provider: ApiKeyProvider, model: string):
  return API_KEY_MODEL_OPTIONS[provider].some((option) => option.value === model);
 }
 
-export function getApiKeyModelLabel(provider: ApiKeyProvider, model?: string | null): string {
+export function getApiKeyModelLabel(
+ provider: ApiKeyProvider,
+ model?: z.infer<typeof OptionalNullableModelSchema>,
+): string {
  return (
   API_KEY_MODEL_OPTIONS[provider].find((option) => option.value === model)?.label ||
   model ||
@@ -82,7 +87,10 @@ export function getApiKeyModelLabel(provider: ApiKeyProvider, model?: string | n
  );
 }
 
-export function getApiKeyModelDescription(provider: ApiKeyProvider, model?: string | null): string {
+export function getApiKeyModelDescription(
+ provider: ApiKeyProvider,
+ model?: z.infer<typeof OptionalNullableModelSchema>,
+): string {
  return (
   API_KEY_MODEL_OPTIONS[provider].find((option) => option.value === model)?.description ||
   "Model đã lưu từ phiên bản trước. Chọn model mới để cập nhật."

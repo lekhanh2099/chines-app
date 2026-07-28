@@ -6,9 +6,16 @@ import { Input, type InputProps } from "@/components/ui/input";
 import { useFieldContext } from "@/components/form/form-context";
 import { FieldShell, getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
 
+type ControlledInputProps = {
+ value?: never;
+ defaultValue?: never;
+ onChange?: never;
+ onBlur?: never;
+ name?: never;
+};
 type FormTextFieldProps = Omit<
  InputHTMLAttributes<HTMLInputElement>,
- "value" | "defaultValue" | "onChange" | "onBlur" | "name"
+ keyof ControlledInputProps
 > & {
  label: string;
  description?: ReactNode;

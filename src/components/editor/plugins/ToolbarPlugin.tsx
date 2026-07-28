@@ -96,7 +96,7 @@ const BLOCK_TYPES = {
  check: "Check List",
  quote: "Quote",
  code: "Code Block",
-} as const;
+};
 
 const TEXT_COLORS = [
  { label: "Default", value: "" },
@@ -189,7 +189,7 @@ function Dropdown({
  useEffect(() => {
   if (!open) return;
   const close = (e: MouseEvent) => {
-   if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
   };
   document.addEventListener("mousedown", close);
   return () => document.removeEventListener("mousedown", close);
@@ -287,7 +287,7 @@ function FontSizeControl({
      if (e.key === "Enter") {
       e.preventDefault();
       applySize(inputVal);
-      (e.target as HTMLInputElement).blur();
+      if (e.target instanceof HTMLInputElement) e.target.blur();
      }
     }}
    />
@@ -328,7 +328,7 @@ function ColorPicker({
  useEffect(() => {
   if (!open) return;
   const close = (e: MouseEvent) => {
-   if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
   };
   document.addEventListener("mousedown", close);
   return () => document.removeEventListener("mousedown", close);
@@ -501,7 +501,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
  useEffect(() => {
   if (!open) return;
   const close = (e: MouseEvent) => {
-   if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
   };
   document.addEventListener("mousedown", close);
   return () => document.removeEventListener("mousedown", close);
@@ -638,7 +638,8 @@ export default function ToolbarPlugin() {
    const type = parentList ? parentList.getListType() : element.getListType();
    setBlockType(type === "number" ? "number" : type === "check" ? "check" : "bullet");
   } else if ($isHeadingNode(element)) {
-   setBlockType(element.getTag() as keyof typeof BLOCK_TYPES);
+   const heading = element.getTag();
+   setBlockType(heading === "h1" || heading === "h2" || heading === "h3" ? heading : "paragraph");
   } else if ($isCodeNode(element)) {
    setBlockType("code");
   } else {
@@ -682,7 +683,7 @@ export default function ToolbarPlugin() {
 
  /* ── Style helpers ── */
  const applyStyle = useCallback(
-  (styles: Record<string, string | null>) => {
+  (styles: Parameters<typeof $patchStyleText>[1]) => {
    editor.update(() => {
     const selection = $getSelection();
     if (selection !== null) {
@@ -699,7 +700,7 @@ export default function ToolbarPlugin() {
    if (type === "paragraph") {
     formatParagraph(editor);
    } else if (type === "h1" || type === "h2" || type === "h3") {
-    formatHeading(editor, type as HeadingTagType);
+    formatHeading(editor, type);
    } else if (type === "quote") {
     formatQuote(editor);
    } else if (type === "code") {

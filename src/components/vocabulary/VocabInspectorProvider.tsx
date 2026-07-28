@@ -30,6 +30,7 @@ import {
  X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
 
 type InspectorCardProps = {
  onClose: () => void;
@@ -40,7 +41,7 @@ function preserveSelection(event: React.SyntheticEvent) {
  event.stopPropagation();
 }
 
-function getSinoVietnamese(vocabData: VocabData | null) {
+function getSinoVietnamese(vocabData: z.infer<z.ZodNullable<z.ZodType<VocabData>>>) {
  return (
   vocabData?.sino_vietnamese ||
   vocabData?.ai_analysis?.sino_vietnamese ||
@@ -79,8 +80,7 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
  useEffect(() => {
   const handleMouseUp = (event: MouseEvent) => {
    if (!lookupEnabled) return;
-   const target = event.target as HTMLElement | null;
-   if (target?.closest("[data-no-inspector]")) return;
+   if (event.target instanceof Element && event.target.closest("[data-no-inspector]")) return;
 
    window.setTimeout(() => {
     const selection = window.getSelection();

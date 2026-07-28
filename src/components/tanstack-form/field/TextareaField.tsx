@@ -3,15 +3,19 @@ import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { useId } from "react";
 
+type ControlledTextareaProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ className?: never;
+};
+
 export function TextareaField({
  label,
  description,
  helperText,
  ...rest
-}: Omit<
- React.TextareaHTMLAttributes<HTMLTextAreaElement>,
- "value" | "onChange" | "onBlur" | "className"
-> &
+}: Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, keyof ControlledTextareaProps> &
  FieldItemProps) {
  const id = useId();
  const field = useFieldContext<string>();

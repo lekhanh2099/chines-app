@@ -1,7 +1,7 @@
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
-import type {
- AggregateFilters,
- AggregateKind,
+import {
+ AggregateKindSchema,
+ type AggregateFilters,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
  apiError,
@@ -18,18 +18,14 @@ type RouteContext = {
  }>;
 };
 
-function parseAggregateKind(value: string): AggregateKind | null {
- return value === "vocab" || value === "grammar" ? value : null;
-}
-
 export async function GET(request: Request, context: RouteContext) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
 
  const { kind: rawKind } = await context.params;
- const kind = parseAggregateKind(rawKind);
+ const kind = AggregateKindSchema.safeParse(rawKind);
 
- if (!kind) {
+ if (!kind.success) {
   return apiError("Unsupported aggregate kind", 400, "UNSUPPORTED_AGGREGATE_KIND");
  }
 
@@ -41,7 +37,10 @@ export async function GET(request: Request, context: RouteContext) {
   q: url.searchParams.get("q") ?? "",
  };
  try {
-  const items = await hanzihomeContentRepository.getAggregateItems({ kind, filters });
+  const items = await hanzihomeContentRepository.getAggregateItems({
+   kind: kind.data,
+   filters,
+  });
 
   return privateNoStoreJson({ items });
  } catch {

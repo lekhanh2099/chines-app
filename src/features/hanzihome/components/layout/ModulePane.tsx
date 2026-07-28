@@ -10,7 +10,12 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
+import type {
+ DraggedModule,
+ NullableDraggedModule,
+ PaneId,
+ StudyModule,
+} from "@/features/hanzihome/context/types";
 import { parseStudyModule } from "@/features/hanzihome/context/workspaceLayout";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
@@ -36,7 +41,7 @@ export function ModulePane({
  children: ReactNode;
  onSelectModule: (module: StudyModule) => void;
  paneId: PaneId;
- draggedModule: DraggedModule | null;
+ draggedModule: NullableDraggedModule;
  className?: string;
  onDragStart: (dragged: DraggedModule) => void;
  onDragEnd: () => void;

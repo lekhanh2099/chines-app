@@ -1,6 +1,7 @@
 "use client";
 
 import { z } from "zod";
+import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
 
 import {
  aggregateApiResponseSchema,
@@ -20,13 +21,14 @@ import type {
  AggregateKind,
  AggregateResourceItem,
 } from "./hanzihome-content-resources";
-import type { LessonVocabularyListResource } from "./hanzihome-content-resources";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export class HanziHomeApiError extends Error {
  constructor(
   message: string,
   readonly status: number,
-  readonly details?: unknown,
+  readonly details?: JsonFieldValue,
  ) {
   super(message);
   this.name = "HanziHomeApiError";
@@ -34,7 +36,7 @@ export class HanziHomeApiError extends Error {
 }
 
 async function parseJsonResponse<T>(response: Response, schema: z.ZodType<T>): Promise<T> {
- const payload: unknown = await response.json().catch(() => null);
+ const payload = JsonValueSchema.parse(await response.json().catch(() => null));
 
  if (!response.ok) {
   throw new HanziHomeApiError(
@@ -49,7 +51,7 @@ async function parseJsonResponse<T>(response: Response, schema: z.ZodType<T>): P
   throw new HanziHomeApiError(
    "HanziHome response did not match the expected contract",
    response.status,
-   z.flattenError(parsed.error),
+   JsonValueSchema.parse(z.flattenError(parsed.error)),
   );
  }
 
@@ -95,7 +97,7 @@ export async function fetchHanziHomeCourseLessons(courseId: string): Promise<Han
 
 export async function fetchHanziHomeLessonDetail(
  lessonId: string,
-): Promise<HanziHomeLesson | null> {
+): Promise<Nullable<z.output<typeof lessonApiResponseSchema>["lesson"]>> {
  if (!lessonId) return null;
 
  const payload = await fetchJson(
@@ -108,7 +110,7 @@ export async function fetchHanziHomeLessonDetail(
 
 export async function fetchHanziHomeLessonVocabulary(
  lessonId: string,
-): Promise<LessonVocabularyListResource | null> {
+): Promise<Nullable<z.output<typeof lessonVocabularyApiResponseSchema>["resource"]>> {
  if (!lessonId) return null;
  const payload = await fetchJson(
   `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}/vocabulary`,

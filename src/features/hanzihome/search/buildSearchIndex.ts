@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type {
  HanziHomeData,
  HanziHomeLesson,
@@ -5,13 +7,14 @@ import type {
  StaticRadicalData,
 } from "@/features/hanzihome/types";
 
-import { normalizeSearchText } from "./normalize";
+import { normalizeSearchText, SearchTextInputSchema } from "./normalize";
+import { z } from "zod";
 import type { HanziHomeSearchIndexItem, HanziHomeSearchKind } from "./types";
 
-type UnknownRecord = Record<string, unknown>;
+type UnknownRecord = JsonObject;
 const MAX_SEARCH_TEXT_LENGTH = 1_500;
 
-function asRecord(value: unknown): UnknownRecord {
+function asRecord(value: JsonFieldValue): UnknownRecord {
  return value && typeof value === "object" && !Array.isArray(value) ? (value as UnknownRecord) : {};
 }
 
@@ -20,7 +23,7 @@ function text(record: UnknownRecord, key: string) {
  return typeof value === "string" ? value.trim() : "";
 }
 
-function stringsFromValue(value: unknown, depth = 0): string[] {
+function stringsFromValue(value: JsonFieldValue, depth = 0): string[] {
  if (depth > 5) return [];
  if (typeof value === "string") return value.trim() ? [value.trim()] : [];
  if (typeof value === "number") return [String(value)];
@@ -34,7 +37,7 @@ function stringsFromValue(value: unknown, depth = 0): string[] {
  );
 }
 
-function compactSearchText(...values: Array<string | null | undefined>) {
+function compactSearchText(...values: Array<z.input<typeof SearchTextInputSchema>>) {
  const segments = new Set<string>();
 
  values.forEach((value) => {

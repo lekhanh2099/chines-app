@@ -9,10 +9,10 @@ import type { EditAdapter } from "../../adapters/types";
 import { OptionalFieldsMultiSelect, type OptionalFieldGroup } from "./OptionalFieldsMultiSelect";
 
 export type StructuredNodeFormProps = {
- value: unknown;
+ value: Parameters<EditAdapter["toValues"]>[0];
  adapter: EditAdapter;
  formId: string;
- onSubmit: (value: unknown) => void;
+ onSubmit: (value: ReturnType<EditAdapter["toNode"]>) => void;
 };
 
 export function StructuredNodeForm({ value, adapter, formId, onSubmit }: StructuredNodeFormProps) {

@@ -1,8 +1,13 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import { z } from "zod";
 
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
-import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
-import type { EditableEntityType } from "@/features/hanzihome/editing/store/types";
+import { EditableEntityTypeSchema } from "@/features/hanzihome/editing/store/types";
+import type {
+ DeletedContentItem,
+ DeletedEntityType,
+} from "@/features/hanzihome/schemas/canonical-content.schema";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -12,39 +17,6 @@ const deletedRowSchema = z.object({
  updated_at: z.string(),
  deleted_at: z.string(),
 });
-
-type DeletedEntityType =
- | "course"
- | "book"
- | "lesson"
- | "section"
- | "lesson_text"
- | "vocab_item"
- | "vocab_example"
- | "vocab_detail_section"
- | "grammar_point"
- | "grammar_example"
- | "grammar_detail_section";
-
-type DeletedContentBase = {
- entityId: string;
- label: string;
- parentEntityId?: string;
- lessonId?: string;
- deletedAt: string;
- updatedAt: string;
-};
-
-type DeletedContentItem =
- | (DeletedContentBase & {
-    kind: "canonical";
-    entityType: DeletedEntityType;
-   })
- | (DeletedContentBase & {
-    kind: "nested";
-    entityType: EditableEntityType;
-    sectionId: string;
-   });
 
 function deletedItem(
  entityType: DeletedEntityType,
@@ -65,9 +37,9 @@ function deletedItem(
  };
 }
 
-const nestedEntityTypeSchema = z.enum(editableEntityTypes);
+const nestedEntityTypeSchema = EditableEntityTypeSchema;
 
-function nestedNodeLabel(record: Record<string, unknown>, entityId: string) {
+function nestedNodeLabel(record: JsonObject, entityId: string) {
  for (const key of ["title_vi", "title", "hanzi", "zh", "question", "prompt", "text"]) {
   const value = record[key];
   if (typeof value === "string" && value.trim()) return value.trim();
@@ -81,7 +53,7 @@ function collectDeletedNestedNodes({
  sectionUpdatedAt,
  lessonId,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  sectionId: string;
  sectionUpdatedAt: string;
  lessonId: string;
@@ -93,7 +65,7 @@ function collectDeletedNestedNodes({
  }
  if (!value || typeof value !== "object") return [];
 
- const record = value as Record<string, unknown>;
+ const record = value as JsonObject;
  const children = Object.values(record).flatMap((item) =>
   collectDeletedNestedNodes({ value: item, sectionId, sectionUpdatedAt, lessonId }),
  );

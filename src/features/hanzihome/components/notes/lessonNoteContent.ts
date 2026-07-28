@@ -1,5 +1,9 @@
+import type { JsonObject } from "@/types/json";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
+import { z } from "zod";
+
+const LessonNoteHeadingTagSchema = z.enum(["h1", "h2", "h3"]);
 
 function textNode(text: string, format = 0) {
  return {
@@ -26,7 +30,7 @@ function paragraph(text: string) {
  };
 }
 
-function heading(text: string, tag: "h1" | "h2" | "h3" = "h2") {
+function heading(text: string, tag: z.infer<typeof LessonNoteHeadingTagSchema> = "h2") {
  return {
   children: [textNode(text, 1)],
   direction: "ltr",
@@ -38,7 +42,7 @@ function heading(text: string, tag: "h1" | "h2" | "h3" = "h2") {
  };
 }
 
-export function createLessonReadingContent(lesson: HanziHomeLesson): Record<string, unknown> {
+export function createLessonReadingContent(lesson: HanziHomeLesson): JsonObject {
  const grammarLines = lesson.grammar.slice(0, 8).map((point, index) => {
   const structure = point.structuresView[0] ? ` — ${point.structuresView[0]}` : "";
 
@@ -72,7 +76,7 @@ export function createLessonReadingContent(lesson: HanziHomeLesson): Record<stri
  };
 }
 
-export function createPersonalNoteContent(lesson: HanziHomeLesson): Record<string, unknown> {
+export function createPersonalNoteContent(lesson: HanziHomeLesson): JsonObject {
  return {
   root: {
    children: [

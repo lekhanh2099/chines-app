@@ -3,7 +3,12 @@
 import type { DragEvent } from "react";
 
 import { Button } from "@/components/ui/button";
-import type { DraggedModule, PaneId, StudyModule } from "@/features/hanzihome/context/types";
+import type {
+ DraggedModule,
+ NullableDraggedModule,
+ PaneId,
+ StudyModule,
+} from "@/features/hanzihome/context/types";
 import { cn } from "@/lib/utils";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
@@ -24,7 +29,7 @@ export function ModuleTabButton({
  active: boolean;
  paneId: PaneId;
  index: number;
- draggedModule: DraggedModule | null;
+ draggedModule: NullableDraggedModule;
  onClick: () => void;
  onDragStart: (dragged: DraggedModule) => void;
  onDragEnd: () => void;

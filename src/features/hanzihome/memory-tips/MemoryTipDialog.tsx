@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dialog";
 import {
  createMemoryTipPayloadSchema,
+ memoryTipSchema,
  memoryTipSourceTypeSchema,
  memoryTipTypeSchema,
  type CreateMemoryTipPayload,
@@ -41,6 +42,7 @@ const memoryTipFormSchema = z.object({
  tagsText: z.string().trim(),
  isPinned: z.boolean(),
 });
+const MemoryTipDefaultsSchema = z.union([createMemoryTipPayloadSchema.partial(), memoryTipSchema]);
 
 type MemoryTipFormValues = z.infer<typeof memoryTipFormSchema>;
 
@@ -90,7 +92,7 @@ function toUpdatePayload(value: MemoryTipFormValues): UpdateMemoryTipPayload {
 }
 
 function getDefaultValues(
- defaultValues?: Partial<CreateMemoryTipPayload> | MemoryTip,
+ defaultValues?: z.infer<typeof MemoryTipDefaultsSchema>,
 ): MemoryTipFormValues {
  return {
   tipType: defaultValues?.tipType ?? "custom",

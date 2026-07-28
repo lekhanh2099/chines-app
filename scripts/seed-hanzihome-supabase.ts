@@ -1,4 +1,6 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { z } from "zod";
 import {
  buildHanziHomeSeedData,
  createHanziHomeAdminClient,
@@ -11,7 +13,8 @@ import {
  type HanziHomeSeedData,
 } from "./lib/hanzihome-supabase-seed.ts";
 
-type SeedMode = "init-only" | "replace-seed";
+const SeedModeSchema = z.enum(["init-only", "replace-seed"]);
+type SeedMode = z.infer<typeof SeedModeSchema>;
 
 type CliOptions = {
  dataset: HanziHomeDatasetScope;
@@ -244,7 +247,7 @@ async function main() {
  console.log("Supabase seed completed.");
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

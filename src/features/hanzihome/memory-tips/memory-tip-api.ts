@@ -1,3 +1,5 @@
+import type { ErrorInput } from "@/types/error";
+import { z } from "zod";
 import {
  createMemoryTipPayloadSchema,
  memoryTipSchema,
@@ -7,27 +9,10 @@ import {
  type UpdateMemoryTipPayload,
 } from "./memory-tip.schema";
 
-export const memoryTipsQueryKey = ["hanzihome", "memory-tips"] as const;
+export const memoryTipsQueryKey = ["hanzihome", "memory-tips"];
 
-const memoryTipsResponseSchema = {
- parse(json: unknown) {
-  const items = Array.isArray((json as { items?: unknown }).items)
-   ? (json as { items: unknown[] }).items
-   : [];
-
-  return {
-   items: items.map((item) => memoryTipSchema.parse(item)),
-  };
- },
-};
-
-const memoryTipResponseSchema = {
- parse(json: unknown) {
-  return {
-   item: memoryTipSchema.parse((json as { item?: unknown }).item),
-  };
- },
-};
+const memoryTipsResponseSchema = z.object({ items: z.array(memoryTipSchema) });
+const memoryTipResponseSchema = z.object({ item: memoryTipSchema });
 
 export class MemoryTipsApiError extends Error {
  status: number;
@@ -42,7 +27,7 @@ export class MemoryTipsApiError extends Error {
 }
 
 async function parseApiError(response: Response) {
- const json: unknown = await response.json().catch(() => null);
+ const json = z.json().parse(await response.json().catch(() => null));
 
  if (json && typeof json === "object") {
   const error = "error" in json ? json.error : undefined;
@@ -59,12 +44,12 @@ async function parseApiError(response: Response) {
 }
 
 async function readJsonOrThrow(response: Response) {
- if (response.ok) return response.json() as Promise<unknown>;
+ if (response.ok) return z.json().parse(await response.json());
 
  throw await parseApiError(response);
 }
 
-export function isDuplicateMemoryTipError(error: unknown) {
+export function isDuplicateMemoryTipError(error: ErrorInput) {
  return error instanceof MemoryTipsApiError && (error.status === 409 || error.code === "23505");
 }
 

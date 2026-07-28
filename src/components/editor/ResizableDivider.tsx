@@ -10,13 +10,13 @@ import { useCallback, useEffect, useRef } from "react";
 interface ResizableDividerProps {
  value: number;
  onResize: (leadingPercent: number) => void;
- containerRef: React.RefObject<HTMLDivElement | null>;
+ containerRef: React.RefObject<ReturnType<Document["getElementById"]>>;
 }
 
 const narrowScreenQuery = "(max-width: 1023px)";
 
 export function ResizableDivider({ value, onResize, containerRef }: ResizableDividerProps) {
- const activePointerId = useRef<number | null>(null);
+ const activePointerId = useRef<number>(null);
 
  const stopDragging = useCallback(() => {
   activePointerId.current = null;

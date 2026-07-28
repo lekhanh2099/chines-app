@@ -19,7 +19,7 @@ type CharacterWriterCardProps = {
 
 function CharacterWriterCard({ character }: CharacterWriterCardProps) {
  const containerRef = useRef<HTMLDivElement>(null);
- const writerRef = useRef<HanziWriterInstance | null>(null);
+ const writerRef = useRef<{ value?: HanziWriterInstance }>({});
  const [quizMode, setQuizMode] = useState(false);
 
  useEffect(() => {
@@ -30,8 +30,8 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
   const container = containerRef.current;
   let isActive = true;
 
-  writerRef.current?.cancelQuiz?.();
-  writerRef.current = null;
+  writerRef.current.value?.cancelQuiz?.();
+  delete writerRef.current.value;
   setQuizMode(false);
   container.className = writerContainerClassName;
   container.innerHTML = "";
@@ -103,7 +103,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
       charDataLoader: () => charData,
      }) as HanziWriterInstance;
 
-     writerRef.current = writer;
+     writerRef.current.value = writer;
      requestAnimationFrame(() => {
       if (!isActive) {
        return;
@@ -125,23 +125,23 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
   return () => {
    isActive = false;
-   writerRef.current?.cancelQuiz?.();
-   writerRef.current = null;
+   writerRef.current.value?.cancelQuiz?.();
+   delete writerRef.current.value;
    container.innerHTML = "";
   };
  }, [character]);
 
  const handlePlayAnimation = () => {
-  void writerRef.current?.animateCharacter?.();
+  void writerRef.current.value?.animateCharacter?.();
  };
 
  const handleQuizMode = () => {
-  if (!writerRef.current?.quiz) {
+  if (!writerRef.current.value?.quiz) {
    return;
   }
 
   setQuizMode(true);
-  void writerRef.current.quiz({
+  void writerRef.current.value.quiz({
    onComplete: () => {
     toast.success("Viết đúng rồi!");
     setQuizMode(false);

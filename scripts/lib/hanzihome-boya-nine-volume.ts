@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "../../src/types/json.ts";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -9,12 +10,12 @@ import {
 } from "./hanzihome-supabase-seed.ts";
 
 export const BOYA_NINE_VOLUME_COURSE_ID = "boya-nine-volume-second-edition";
-export const BOYA_LEGACY_COURSE_IDS = ["boya-preintermediate", "boya-intermediate"] as const;
+export const BOYA_LEGACY_COURSE_IDS = ["boya-preintermediate", "boya-intermediate"];
 export const BOYA_LEGACY_BOOK_IDS = [
  "boya-preintermediate-1",
  "boya-preintermediate-2",
  "boya-intermediate-2",
-] as const;
+];
 
 const BOOKS = [
  {
@@ -49,7 +50,7 @@ const BOOKS = [
   shortTitle: "Cao cấp II",
   targetLessonPrefix: "boya-9e-advanced-2",
  },
-] as const;
+];
 
 export type BoyaVocabularyNormalization = {
  sourceCount: number;
@@ -86,7 +87,7 @@ function normalizePayloadReferences<T>(value: T, replacements: ReadonlyMap<strin
   return value
    .filter((entry) => {
     if (!entry || typeof entry !== "object" || Array.isArray(entry)) return true;
-    const id = (entry as Record<string, unknown>).id;
+    const id = (entry as Record<string, JsonFieldValue>).id;
     return typeof id !== "string" || !replacements.has(id);
    })
    .map((entry) => normalizePayloadReferences(entry, replacements)) as T;

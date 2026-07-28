@@ -28,10 +28,7 @@ export function StructuredVocabSections({
  const show = (section: SectionView) => sectionView === "all" || sectionView === section;
  const details = item.detailSections ?? [];
  const detailByKey = (key: string) => details.find((section) => section.key === key);
- const wrapDetail = (
-  section: NonNullable<HanziHomeVocabItem["detailSections"]>[number] | undefined,
-  content: ReactNode,
- ) => {
+ const wrapDetail = (section: ReturnType<typeof detailByKey>, content: ReactNode) => {
   if (!section || !lessonId || !itemPath) return content;
   const index = details.findIndex((entry) => entry.id === section.id);
   return (

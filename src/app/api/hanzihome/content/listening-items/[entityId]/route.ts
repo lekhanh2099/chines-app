@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import {
@@ -14,7 +15,7 @@ type RouteContext = {
  params: Promise<{ entityId: string }>;
 };
 
-function statusForMutationError(code: string | undefined) {
+function statusForMutationError(code: Parameters<typeof mutationError>[2]) {
  if (code === "40001") return 409;
  if (code === "28000") return 401;
  if (code === "42501") return 403;
@@ -25,7 +26,7 @@ function statusForMutationError(code: string | undefined) {
 
 export async function PATCH(request: Request, context: RouteContext) {
  const { entityId } = await context.params;
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const envelope = mutationEnvelopeSchema.safeParse(body);
 
  if (!envelope.success) {

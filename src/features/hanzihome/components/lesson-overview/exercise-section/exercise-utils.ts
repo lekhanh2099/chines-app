@@ -1,4 +1,7 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import { z } from "zod";
 
 import {
  answerToString,
@@ -9,7 +12,7 @@ import {
  stringValue,
 } from "../utils";
 
-export function promptToString(value: unknown): string {
+export function promptToString(value: JsonFieldValue): string {
  if (typeof value === "string") return value.trim();
  if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
 
@@ -24,7 +27,7 @@ export function promptToString(value: unknown): string {
  );
 }
 
-export function objectText(value: unknown, keys: string[]) {
+export function objectText(value: JsonFieldValue, keys: string[]) {
  const record = asRecord(value);
 
  for (const key of keys) {
@@ -35,7 +38,7 @@ export function objectText(value: unknown, keys: string[]) {
  return "";
 }
 
-export function formatAnswer(value: unknown): string {
+export function formatAnswer(value: JsonFieldValue): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
  const record = asRecord(value);
  const recordAnswer =
@@ -55,9 +58,9 @@ export function formatAnswer(value: unknown): string {
 }
 
 export function firstArraySource(
- record: Record<string, unknown>,
+ record: JsonObject,
  keys: string[],
- predicate: (value: unknown) => boolean = () => true,
+ predicate: (value: JsonFieldValue) => boolean = () => true,
 ) {
  for (const key of keys) {
   const values = arrayValue(record, key);
@@ -70,7 +73,7 @@ export function firstArraySource(
 export const CLOZE_MARKER_PATTERN =
  /(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+|[（(]\s*\d+\s*[）)]|\[\s*\d+\s*\])\s*(?:[_＿]{2,}|…{2,}|\.\.\.+)/g;
 
-export function passageTextForDiagnostics(passage: unknown) {
+export function passageTextForDiagnostics(passage: JsonFieldValue) {
  if (typeof passage === "string") return passage.trim();
 
  const record = asRecord(passage);
@@ -91,7 +94,7 @@ export function passageTextForDiagnostics(passage: unknown) {
   .join("\n");
 }
 
-export function firstTextByKeys(record: Record<string, unknown>, keys: string[]) {
+export function firstTextByKeys(record: JsonObject, keys: string[]) {
  for (const key of keys) {
   const text = stringValue(record, key);
   if (text) return text;
@@ -100,7 +103,7 @@ export function firstTextByKeys(record: Record<string, unknown>, keys: string[])
  return "";
 }
 
-export function hasExercisePassagePayload(record: Record<string, unknown>) {
+export function hasExercisePassagePayload(record: JsonObject) {
  const directPassage = record.passage;
  const hasDirectPassage =
   Boolean(answerToString(directPassage)) || Object.keys(asRecord(directPassage)).length > 0;
@@ -115,7 +118,7 @@ export function hasExercisePassagePayload(record: Record<string, unknown>) {
  );
 }
 
-export function lineTextFromValue(value: unknown) {
+export function lineTextFromValue(value: JsonFieldValue) {
  if (typeof value === "string" || typeof value === "number") {
   return answerToString(value);
  }
@@ -133,13 +136,13 @@ export function lineTextFromValue(value: unknown) {
  );
 }
 
-export function modelLineEntries(record: Record<string, unknown>) {
+export function modelLineEntries(record: JsonObject) {
  return ["model", "model_a", "model_b", "prompt_a", "prompt_b"]
   .map((key) => ({ key, value: stringValue(record, key) }))
   .filter((entry) => Boolean(entry.value));
 }
 
-export function answerFromRecord(record: Record<string, unknown>) {
+export function answerFromRecord(record: JsonObject) {
  const answerRecord = asRecord(record.answer);
  const acceptableAnswers = nonEmptyStrings(arrayValue(record, "acceptable_answers"));
  const givenWords = [
@@ -166,7 +169,7 @@ export function answerFromRecord(record: Record<string, unknown>) {
  );
 }
 
-export function promptFromQuestionRecord(record: Record<string, unknown>) {
+export function promptFromQuestionRecord(record: JsonObject) {
  const nestedQuestion = asRecord(record.question);
  const statement = asRecord(record.statement);
  const givenWords = [
@@ -195,7 +198,7 @@ export function promptFromQuestionRecord(record: Record<string, unknown>) {
  return prompt || "Câu hỏi";
 }
 
-export function firstArrayByKeys(record: Record<string, unknown>, keys: string[]) {
+export function firstArrayByKeys(record: JsonObject, keys: string[]) {
  for (const key of keys) {
   const values = arrayValue(record, key);
   if (values.length > 0) return { key, values };
@@ -208,7 +211,7 @@ export function letterLabel(index: number) {
  return String.fromCharCode(65 + index);
 }
 
-export function numberFromRecordKeys(record: Record<string, unknown>, keys: string[]) {
+export function numberFromRecordKeys(record: JsonObject, keys: string[]) {
  for (const key of keys) {
   const value = record[key];
   if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -221,14 +224,14 @@ export function numberFromRecordKeys(record: Record<string, unknown>, keys: stri
  return null;
 }
 
-export function normalizeIndex(value: number | null, length: number) {
+export function normalizeIndex(value: z.infer<z.ZodNullable<z.ZodNumber>>, length: number) {
  if (value === null) return null;
  if (value >= 0 && value < length) return value;
  if (value >= 1 && value <= length) return value - 1;
  return null;
 }
 
-export function matchingItemText(value: unknown) {
+export function matchingItemText(value: JsonFieldValue) {
  const record = asRecord(value);
  return (
   stringValue(record, "text") ||
@@ -240,7 +243,11 @@ export function matchingItemText(value: unknown) {
  );
 }
 
-export function isReadingClozeExercise(item: Exercise, passage: unknown, answers: unknown[]) {
+export function isReadingClozeExercise(
+ item: Exercise,
+ passage: JsonFieldValue,
+ answers: JsonValue[],
+) {
  const record = asRecord(item);
  const rendering = asRecord(record.rendering);
  const renderer = stringValue(rendering, "renderer");

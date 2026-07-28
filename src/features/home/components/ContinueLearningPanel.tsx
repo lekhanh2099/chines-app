@@ -3,7 +3,7 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 
 import { HomeIconTile } from "@/features/home/components/HomePrimitives";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
-import type { HomeLessonTarget } from "@/features/home/types";
+import type { HomeDashboardModel } from "@/features/home/types";
 
 const moduleLabels = {
  overview: "Tổng quan",
@@ -17,9 +17,9 @@ const moduleLabels = {
  grammar: "Ngữ pháp",
  radicals: "Bộ thủ",
  review: "Ôn tập",
-} as const;
+};
 
-export function ContinueLearningPanel({ lesson }: { lesson: HomeLessonTarget | null }) {
+export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["lesson"] }) {
  return (
   <section className="app-gradient-hero relative overflow-hidden rounded-2xl border p-5 shadow-theme-lg sm:p-7">
    <div className="grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] xl:items-stretch">

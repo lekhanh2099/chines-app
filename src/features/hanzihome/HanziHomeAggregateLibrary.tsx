@@ -39,6 +39,7 @@ import type {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import { AggregateLibrarySkeleton } from "@/features/hanzihome/components/AggregateLibrarySkeleton";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
+import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import {
  buildReviewLessonsQueryFromLessons,
@@ -223,10 +224,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   });
  };
 
- const answerReview = (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
-  result: ReviewResult,
- ) => {
+ const answerReview = (item: ReviewItem, result: ReviewResult) => {
   learning.appendReviewHistory(item, result);
 
   if (item.type === "vocab") {

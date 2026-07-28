@@ -95,7 +95,7 @@ export const lessonSectionRowSchema = z.object({
  title: z.string(),
  title_vi: z.string(),
  section_order: z.number().int().positive(),
- payload: z.unknown(),
+ payload: z.json(),
  source_file: z.string().nullable(),
  updated_at: z.string(),
 });

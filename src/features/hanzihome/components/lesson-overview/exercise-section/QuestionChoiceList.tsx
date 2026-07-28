@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { answerToString, asRecord, stringValue } from "../utils";
 import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
@@ -6,7 +7,7 @@ export function QuestionChoiceList({
  values,
  displayMode,
 }: {
- values: unknown[];
+ values: JsonValue[];
  displayMode: LessonDisplayMode;
 }) {
  if (values.length === 0) return null;

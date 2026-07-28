@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
@@ -8,6 +9,7 @@ import {
 } from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "hanzihome-focus-mode";
+const FocusNoteIdSchema = z.string().nullable();
 
 type FocusModeState = {
  enabled: boolean;
@@ -19,7 +21,7 @@ const storageConfig = {
  version: 1,
  schema: z.boolean(),
  fallback: false,
- migrateLegacy: (value: unknown) => (typeof value === "boolean" ? value : null),
+ migrateLegacy: (value: JsonFieldValue) => (typeof value === "boolean" ? value : null),
 };
 
 export const focusModeStore = createStore<
@@ -57,7 +59,7 @@ export const focusModeStore = createStore<
  }),
 );
 
-export function getNoteIdFromNotesPath(pathname: string): string | null {
+export function getNoteIdFromNotesPath(pathname: string): z.infer<typeof FocusNoteIdSchema> {
  const match = pathname.match(/^\/notes\/([^/?#]+)/);
  return match?.[1] ? decodeURIComponent(match[1]) : null;
 }

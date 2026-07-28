@@ -9,21 +9,26 @@ export const LocalizedTextSchema = z.object({
  en: z.string().optional().default(""),
 });
 
-function schemaRecord(value: unknown): Record<string, unknown> {
- return value && typeof value === "object" && !Array.isArray(value)
-  ? (value as Record<string, unknown>)
-  : {};
+const JsonValueSchema = z.json();
+const JsonRecordSchema = z.record(z.string(), JsonValueSchema);
+type JsonInput = Parameters<typeof JsonValueSchema.safeParse>[0];
+type JsonValue = z.infer<typeof JsonValueSchema>;
+type JsonRecord = z.infer<typeof JsonRecordSchema>;
+
+function schemaRecord(value: JsonInput): JsonRecord {
+ const parsed = JsonRecordSchema.safeParse(value);
+ return parsed.success ? parsed.data : {};
 }
 
-function optionalString(value: unknown) {
+function optionalString(value: JsonInput) {
  return typeof value === "string" ? value.trim() : "";
 }
 
-function optionalArray(value: unknown) {
+function optionalArray(value: JsonInput): JsonValue[] {
  return Array.isArray(value) ? value : [];
 }
 
-function hasTextLikeValue(value: unknown): boolean {
+function hasTextLikeValue(value: JsonInput): boolean {
  if (typeof value === "string") return Boolean(value.trim());
  if (typeof value === "number" || typeof value === "boolean") return true;
  if (Array.isArray(value)) return value.some(hasTextLikeValue);
@@ -46,7 +51,7 @@ export const RenderingSchema = z
   shuffle_questions: z.boolean().optional(),
   shuffle_choices: z.boolean().optional(),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GradingModeSchema = z.enum([
  "exact",
@@ -66,7 +71,7 @@ export const GradingSchema = z
   case_sensitive: z.boolean().optional(),
   reason: z.string().optional(),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const EvidenceSchema = z.object({
  paragraph_id: z.string(),
@@ -95,7 +100,7 @@ export const SourceFileSchema = z
   type: z.string(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const SourceSchema = z.object({
  book: z.string(),
@@ -124,7 +129,7 @@ export const LessonMetadataSchema = z
   lesson_title_en: z.string().optional().default(""),
   source_files: z.array(SourceFileSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 // Text section
 
@@ -141,7 +146,7 @@ export const TextLineSchema = z
   grammar_refs: z.array(z.string()).optional().default([]),
   notes: z.array(z.string()).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const TextSceneSchema = z
  .object({
@@ -150,7 +155,7 @@ export const TextSceneSchema = z
   summary_vi: z.string().optional().default(""),
   lines: z.array(TextLineSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const TextDialogueBlockSchema = z
  .object({
@@ -161,9 +166,9 @@ export const TextDialogueBlockSchema = z
   title_vi: z.string().optional().default(""),
   scenes: z.array(TextSceneSchema).optional().default([]),
   lines: z.array(TextLineSchema).optional().default([]),
-  comprehension_questions: z.array(z.unknown()).optional().default([]),
+  comprehension_questions: z.array(JsonValueSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const TextParagraphSchema = z
  .object({
@@ -176,7 +181,7 @@ export const TextParagraphSchema = z
   vocab_refs: z.array(z.string()).optional().default([]),
   grammar_refs: z.array(z.string()).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const TextNarrativeBlockSchema = z
  .object({
@@ -187,9 +192,9 @@ export const TextNarrativeBlockSchema = z
   title_vi: z.string().optional().default(""),
   paragraphs: z.array(TextParagraphSchema).optional().default([]),
   lines: z.array(TextLineSchema).optional().default([]),
-  comprehension_questions: z.array(z.unknown()).optional().default([]),
+  comprehension_questions: z.array(JsonValueSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const TextBlockSchema = z.discriminatedUnion("type", [
  TextDialogueBlockSchema,
@@ -234,7 +239,7 @@ export const VocabularyItemSchema = z
   audio_key: z.string().optional().default(""),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 // Notes section
 
@@ -250,7 +255,7 @@ export const NoteItemSchema = z
   source_refs: z.array(z.string()).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 // Grammar section
 
@@ -365,7 +370,7 @@ export const GrammarMicroPracticeQuestionSchema = z
   explanation_vi: z.string().optional().default(""),
   grading: GradingSchema.optional(),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GrammarMicroPracticeBlockSchema = z.object({
  id: z.string(),
@@ -382,7 +387,7 @@ export const GenericGrammarBlockSchema = z
   order: z.number().int().positive(),
   title: z.string(),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GrammarBlockSchema = z
  .discriminatedUnion("type", [
@@ -408,7 +413,7 @@ const GrammarPointBaseSchema = z
   tags: z.array(z.string()).optional().default([]),
   blocks: z.array(GrammarBlockSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GrammarPointSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -461,7 +466,7 @@ export const ExerciseBaseSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const PhoneticsPairSchema = z.object({
  id: z.string(),
@@ -534,7 +539,7 @@ export const AnswerKeyItemSchema = z
   label: z.string().optional(),
   check_needed: z.boolean().optional(),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ChooseWordsFillBlankExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("choose_words_fill_blank"),
@@ -644,7 +649,7 @@ export const CommunicationPracticeTaskSchema = z
   instruction_vi: z.string(),
   sample_answer: z.array(z.string()).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  type: z.literal("communication_dialogue"),
@@ -654,7 +659,7 @@ export const CommunicationDialogueExerciseSchema = ExerciseBaseSchema.extend({
  practice_tasks: z.array(CommunicationPracticeTaskSchema).optional().default([]),
 });
 
-export const GenericExerciseSchema = ExerciseBaseSchema.loose();
+export const GenericExerciseSchema = ExerciseBaseSchema.catchall(JsonValueSchema);
 
 export const ExerciseSchema = z
  .discriminatedUnion("type", [
@@ -702,11 +707,11 @@ export const ReadingTextItemSchema = z
   text: z.string().optional().default(""),
   pinyin: z.string().optional().default(""),
   vi: z.string().optional().default(""),
-  questions: z.array(z.unknown()).optional().default([]),
+  questions: z.array(JsonValueSchema).optional().default([]),
   answer_key: z.array(AnswerKeyItemSchema).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ReadingShortAnswerQuestionSchema = z.object({
  id: z.string(),
@@ -736,7 +741,7 @@ export const ReadingShortAnswerItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ReadingTrueFalseQuestionSchema = z.object({
  id: z.string(),
@@ -763,7 +768,7 @@ export const ReadingTrueFalseItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ClozeTextSegmentSchema = z.object({
  id: z.string(),
@@ -810,7 +815,7 @@ export const ReadingClozeItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ReadingMultipleChoiceItemSchema = z
  .object({
@@ -825,7 +830,7 @@ export const ReadingMultipleChoiceItemSchema = z
   rendering: RenderingSchema.optional(),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GenericReadingItemSchema = z
  .object({
@@ -836,7 +841,7 @@ export const GenericReadingItemSchema = z
   title_vi: z.string().optional().default(""),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ReadingItemSchema = z
  .discriminatedUnion("type", [
@@ -869,7 +874,7 @@ export const CharacterWritingItemSchema = z
    .optional()
    .default({ grid_type: "田字格", repeat_count: 6 }),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 // Sections
 
@@ -882,7 +887,7 @@ export const TextSectionSchema = z
   title_vi: z.string().optional().default(""),
   blocks: z.array(TextBlockSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const VocabularySectionSchema = z
  .object({
@@ -893,7 +898,7 @@ export const VocabularySectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(VocabularyItemSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const NotesSectionSchema = z
  .object({
@@ -904,7 +909,7 @@ export const NotesSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(NoteItemSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 const GrammarSectionBaseSchema = z
  .object({
@@ -915,7 +920,7 @@ const GrammarSectionBaseSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(GrammarPointSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const GrammarSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -957,7 +962,7 @@ export const ExercisesSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(ExerciseSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 const ReadingSectionBaseSchema = z
  .object({
@@ -968,7 +973,7 @@ const ReadingSectionBaseSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(ReadingItemSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ReadingSectionSchema = z.preprocess((value) => {
  const record = schemaRecord(value);
@@ -1029,7 +1034,7 @@ export const CharacterWritingSectionSchema = z
   title_vi: z.string().optional().default(""),
   items: z.array(CharacterWritingItemSchema),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const ProperNounsSectionSchema = z
  .object({
@@ -1038,9 +1043,9 @@ export const ProperNounsSectionSchema = z
   order: z.number().int().positive(),
   title: z.string(),
   title_vi: z.string().optional().default(""),
-  items: z.array(z.unknown()).optional().default([]),
+  items: z.array(JsonValueSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const CommunicationSectionSchema = z
  .object({
@@ -1049,9 +1054,9 @@ export const CommunicationSectionSchema = z
   order: z.number().int().positive(),
   title: z.string(),
   title_vi: z.string().optional().default(""),
-  items: z.array(z.unknown()).optional().default([]),
+  items: z.array(JsonValueSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const SummarySectionSchema = z
  .object({
@@ -1060,13 +1065,17 @@ export const SummarySectionSchema = z
   order: z.number().int().positive(),
   title: z.string(),
   title_vi: z.string().optional().default(""),
-  items: z.array(z.unknown()).optional().default([]),
-  blocks: z.array(z.unknown()).optional().default([]),
+  items: z.array(JsonValueSchema).optional().default([]),
+  blocks: z.array(JsonValueSchema).optional().default([]),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
-function normalizeSectionInput(value: unknown): unknown {
- const record = schemaRecord(value);
+function normalizeSectionInput(value: JsonInput): JsonValue {
+ const parsed = JsonValueSchema.safeParse(value);
+ if (!parsed.success) return null;
+
+ const jsonValue = parsed.data;
+ const record = schemaRecord(jsonValue);
  const type = optionalString(record.type);
  const id = optionalString(record.id) || "section";
  const blocks = optionalArray(record.blocks);
@@ -1121,7 +1130,7 @@ function normalizeSectionInput(value: unknown): unknown {
   };
  }
 
- return normalizedType && normalizedType !== type ? { ...record, type: normalizedType } : value;
+ return normalizedType && normalizedType !== type ? { ...record, type: normalizedType } : jsonValue;
 }
 
 export const SectionSchema = z.preprocess(
@@ -1152,7 +1161,7 @@ export const SummaryPatternSchema = z
   pattern: z.string(),
   grammar_ref: z.string().optional().default(""),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const LessonSummarySchema = z
  .object({
@@ -1165,7 +1174,7 @@ export const LessonSummarySchema = z
   exercise_types: z.array(z.string()).optional().default([]),
   check_needed: z.boolean().optional().default(false),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 // Final lesson schema
 
@@ -1184,7 +1193,7 @@ export const LessonSchema = z
    check_needed: false,
   }),
  })
- .loose();
+ .catchall(JsonValueSchema);
 
 export const HanyuLessonSchema = z
  .object({
@@ -1193,7 +1202,7 @@ export const HanyuLessonSchema = z
   verification_status: z.string().optional(),
   source: SourceSchema.optional(),
   lesson: LessonSchema,
-  coverage_report: z.unknown().optional(),
-  schema_extension_notes: z.unknown().optional(),
+  coverage_report: JsonValueSchema.optional(),
+  schema_extension_notes: JsonValueSchema.optional(),
  })
- .loose();
+ .catchall(JsonValueSchema);

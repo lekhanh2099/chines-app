@@ -4,100 +4,150 @@
  * Pure data operations. No UI, no React, no Next.js.
  */
 
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { z } from "zod";
 import { logger } from "@/lib/logger";
-import type { DbNote, NoteCategory, ReadingStatus } from "@/types/database";
+import { DbNoteSchema, type DbNote, type NoteCategory } from "@/types/database";
+import type { Database, TablesUpdate } from "@/types/supabase.generated";
+
+type AppSupabaseClient = SupabaseClient<Database>;
 
 /* ══════════════════════════════════════════
    Types
    ══════════════════════════════════════════ */
 
-export type LessonNoteTargetType = "hanzihome_lesson";
-export type LessonNoteRelationType = "main" | "lesson_text" | "vocab" | "grammar" | "annotation";
+const LessonNoteTargetTypeSchema = z.literal("hanzihome_lesson");
+const LessonNoteRelationTypeSchema = z.enum([
+ "main",
+ "lesson_text",
+ "vocab",
+ "grammar",
+ "annotation",
+]);
+export type LessonNoteTargetType = z.infer<typeof LessonNoteTargetTypeSchema>;
+export type LessonNoteRelationType = z.infer<typeof LessonNoteRelationTypeSchema>;
 
-export type NoteLinkSummary = {
- noteId: string;
- targetType: LessonNoteTargetType;
- targetKey: string;
- relationType: LessonNoteRelationType;
- updatedAt: string;
-};
-
-type NoteListRow = Pick<
- DbNote,
- | "id"
- | "title"
- | "tags"
- | "status"
- | "category"
- | "short_id"
- | "updated_at"
- | "linked_lesson_id"
- | "folder_id"
- | "reading_status"
- | "source_url"
- | "source_host"
- | "source_label"
- | "source_author"
- | "source_published_at"
- | "source_captured_at"
->;
+const NoteLinkSummarySchema = z.object({
+ noteId: z.string(),
+ targetType: LessonNoteTargetTypeSchema,
+ targetKey: z.string(),
+ relationType: LessonNoteRelationTypeSchema,
+ updatedAt: z.string(),
+});
+export type NoteLinkSummary = z.infer<typeof NoteLinkSummarySchema>;
 
 export type NoteListItem = NoteListRow & {
  links: NoteLinkSummary[];
 };
 
-export type NoteDetail = DbNote & {
- links: NoteLinkSummary[];
-};
+const NoteDetailSchema = DbNoteSchema.extend({
+ links: z.array(NoteLinkSummarySchema),
+});
+const NullableNoteDetailSchema = NoteDetailSchema.nullable();
+const NullableDbNoteSchema = DbNoteSchema.nullable();
+export type NoteDetail = z.infer<typeof NoteDetailSchema>;
+type NullableNoteDetail = z.infer<typeof NullableNoteDetailSchema>;
+type NullableDbNote = z.infer<typeof NullableDbNoteSchema>;
 
-export type CreateNoteInput = {
- title: string;
- tags: string[];
- category?: NoteCategory;
- content?: Record<string, unknown>;
- readingContent?: Record<string, unknown> | null;
- splitViewEnabled?: boolean;
- folderId?: string | null;
- readingStatus?: ReadingStatus | null;
- source?: NoteSourceMetadata | null;
-};
+export const NoteFolderColorSchema = z.enum(["purple", "blue", "green", "orange", "rose", "slate"]);
+export type NoteFolderColor = z.infer<typeof NoteFolderColorSchema>;
 
-export type NoteFolderColor = "purple" | "blue" | "green" | "orange" | "rose" | "slate";
+const NoteSourceMetadataSchema = z.object({
+ url: z.string().nullable(),
+ host: z.string().nullable(),
+ label: z.string().nullable(),
+ author: z.string().nullable(),
+ publishedAt: z.string().nullable(),
+ capturedAt: z.string().nullable(),
+});
+export type NoteSourceMetadata = z.infer<typeof NoteSourceMetadataSchema>;
 
-export type NoteFolder = {
- id: string;
- userId: string;
- parentId: string | null;
- name: string;
- color: NoteFolderColor;
- position: number;
- createdAt: string;
- updatedAt: string;
-};
+const CreateNoteInputSchema = z.object({
+ title: z.string(),
+ tags: z.array(z.string()),
+ category: DbNoteSchema.shape.category.optional(),
+ content: JsonObjectSchema.optional(),
+ readingContent: JsonObjectSchema.nullable().optional(),
+ splitViewEnabled: z.boolean().optional(),
+ folderId: z.string().nullable().optional(),
+ readingStatus: DbNoteSchema.shape.reading_status.optional(),
+ source: NoteSourceMetadataSchema.nullable().optional(),
+});
+export type CreateNoteInput = z.infer<typeof CreateNoteInputSchema>;
 
-export type NoteSourceMetadata = {
- url: string | null;
- host: string | null;
- label: string | null;
- author: string | null;
- publishedAt: string | null;
- capturedAt: string | null;
-};
+export const NoteFolderSchema = z.object({
+ id: z.string(),
+ userId: z.string(),
+ parentId: z.string().nullable(),
+ name: z.string(),
+ color: NoteFolderColorSchema,
+ position: z.number(),
+ createdAt: z.string(),
+ updatedAt: z.string(),
+});
+export type NoteFolder = z.infer<typeof NoteFolderSchema>;
 
-type NoteFolderRow = {
- id: string;
- user_id: string;
- parent_id: string | null;
- name: string;
- color: NoteFolderColor;
- position: number;
- created_at: string;
- updated_at: string;
-};
+const NullableNoteIdentitySchema = DbNoteSchema.pick({
+ id: true,
+ short_id: true,
+}).nullable();
+
+const CreateNoteFolderInputSchema = z.object({
+ name: z.string(),
+ parentId: z.string().nullable().optional(),
+ color: NoteFolderColorSchema.optional(),
+ position: z.number().optional(),
+});
+
+const UpdateNoteFolderInputSchema = NoteFolderSchema.pick({
+ name: true,
+ parentId: true,
+ color: true,
+ position: true,
+}).partial();
+
+export const UpdateNoteLibraryMetadataInputSchema = z.object({
+ title: z.string().optional(),
+ folderId: z.string().nullable().optional(),
+ readingStatus: DbNoteSchema.shape.reading_status.optional(),
+ source: NoteSourceMetadataSchema.nullable().optional(),
+});
+
+const NoteFolderRowSchema = z.object({
+ id: z.string(),
+ user_id: z.string(),
+ parent_id: z.string().nullable(),
+ name: z.string(),
+ color: NoteFolderColorSchema,
+ position: z.number(),
+ created_at: z.string(),
+ updated_at: z.string(),
+});
+type NoteFolderRow = z.infer<typeof NoteFolderRowSchema>;
 
 const noteListSelect =
  "id, title, tags, status, category, short_id, updated_at, linked_lesson_id, folder_id, reading_status, source_url, source_host, source_label, source_author, source_published_at, source_captured_at";
+
+const NoteListRowSchema = DbNoteSchema.pick({
+ id: true,
+ title: true,
+ tags: true,
+ status: true,
+ category: true,
+ short_id: true,
+ updated_at: true,
+ linked_lesson_id: true,
+ folder_id: true,
+ reading_status: true,
+ source_url: true,
+ source_host: true,
+ source_label: true,
+ source_author: true,
+ source_published_at: true,
+ source_captured_at: true,
+});
+type NoteListRow = z.infer<typeof NoteListRowSchema>;
 
 function toNoteFolder(row: NoteFolderRow): NoteFolder {
  return {
@@ -112,13 +162,14 @@ function toNoteFolder(row: NoteFolderRow): NoteFolder {
  };
 }
 
-type LessonNoteLinkRow = {
- note_id: string;
- target_type: LessonNoteTargetType;
- target_key: string;
- relation_type: LessonNoteRelationType;
- updated_at: string;
-};
+const LessonNoteLinkRowSchema = z.object({
+ note_id: z.string(),
+ target_type: z.literal("hanzihome_lesson"),
+ target_key: z.string(),
+ relation_type: z.enum(["main", "lesson_text", "vocab", "grammar", "annotation"]),
+ updated_at: z.string(),
+});
+type LessonNoteLinkRow = z.infer<typeof LessonNoteLinkRowSchema>;
 
 function toNoteLinkSummary(row: LessonNoteLinkRow): NoteLinkSummary {
  return {
@@ -131,7 +182,7 @@ function toNoteLinkSummary(row: LessonNoteLinkRow): NoteLinkSummary {
 }
 
 async function getLessonNoteLinksForNotes(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  noteIds: string[],
 ): Promise<Map<string, NoteLinkSummary[]>> {
@@ -149,7 +200,7 @@ async function getLessonNoteLinksForNotes(
   return linksByNoteId;
  }
 
- for (const row of (data ?? []) as LessonNoteLinkRow[]) {
+ for (const row of LessonNoteLinkRowSchema.array().parse(data ?? [])) {
   const link = toNoteLinkSummary(row);
   const existingLinks = linksByNoteId.get(link.noteId) ?? [];
   existingLinks.push(link);
@@ -160,7 +211,7 @@ async function getLessonNoteLinksForNotes(
 }
 
 async function attachLessonLinks(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  notes: NoteListRow[],
 ): Promise<NoteListItem[]> {
@@ -182,7 +233,7 @@ async function attachLessonLinks(
 
 /** Fetch all notes for a user */
 export async function getUserNotes(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
@@ -196,12 +247,12 @@ export async function getUserNotes(
   throw error;
  }
 
- return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+ return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
 }
 
 /** Fetch a bounded list for lightweight dashboard surfaces. */
 export async function getRecentUserNotes(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  limit: number,
 ): Promise<NoteListItem[]> {
@@ -217,12 +268,12 @@ export async function getRecentUserNotes(
   throw error;
  }
 
- return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+ return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
 }
 
 /** Fetch notes by category */
 export async function getNotesByCategory(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  category: NoteCategory,
 ): Promise<NoteListItem[]> {
@@ -238,15 +289,15 @@ export async function getNotesByCategory(
   throw error;
  }
 
- return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+ return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
 }
 
 /** Fetch a single note by ID */
 export async function getNoteById(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
  userId: string,
-): Promise<NoteDetail | null> {
+): Promise<NullableNoteDetail> {
  const { data, error } = await supabase
   .from("notes")
   .select("*")
@@ -261,7 +312,7 @@ export async function getNoteById(
 
  const linksByNoteId = await getLessonNoteLinksForNotes(supabase, userId, [noteId]);
  return {
-  ...(data as DbNote),
+  ...DbNoteSchema.parse(data),
   links: linksByNoteId.get(noteId) ?? [],
  };
 }
@@ -272,10 +323,10 @@ export async function getNoteById(
 
 /** Create a new note */
 export async function createNote(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  input: CreateNoteInput,
-): Promise<DbNote | null> {
+): Promise<NullableDbNote> {
  const { data, error } = await supabase
   .from("notes")
   .insert({
@@ -306,14 +357,14 @@ export async function createNote(
   return null;
  }
 
- return data as DbNote;
+ return DbNoteSchema.parse(data);
 }
 
 /** Update note content (used by auto-save) */
 export async function updateNoteContent(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
- content: Record<string, unknown>,
+ content: JsonObject,
 ): Promise<boolean> {
  const { error } = await supabase
   .from("notes")
@@ -329,7 +380,7 @@ export async function updateNoteContent(
 
 /** Update note title */
 export async function updateNoteTitle(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
  title: string,
 ): Promise<boolean> {
@@ -347,7 +398,7 @@ export async function updateNoteTitle(
 
 /** Update note category */
 export async function updateNoteCategory(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
  category: NoteCategory,
 ): Promise<boolean> {
@@ -364,7 +415,7 @@ export async function updateNoteCategory(
 }
 
 /** Delete a note */
-export async function deleteNote(supabase: SupabaseClient, noteId: string): Promise<boolean> {
+export async function deleteNote(supabase: AppSupabaseClient, noteId: string): Promise<boolean> {
  const { error } = await supabase.from("notes").delete().eq("id", noteId);
 
  if (error) {
@@ -376,9 +427,9 @@ export async function deleteNote(supabase: SupabaseClient, noteId: string): Prom
 
 /** Update reading content (split view left pane) */
 export async function updateReadingContent(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
- readingContent: Record<string, unknown> | null,
+ readingContent: DbNote["reading_content"],
 ): Promise<boolean> {
  const { error } = await supabase
   .from("notes")
@@ -397,7 +448,7 @@ export async function updateReadingContent(
 
 /** Update split view enabled state */
 export async function updateSplitViewEnabled(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
  enabled: boolean,
 ): Promise<boolean> {
@@ -415,10 +466,10 @@ export async function updateSplitViewEnabled(
 
 /** Resolve a short_id to the full note (for URL redirects) */
 export async function getNoteByShortId(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  shortId: string,
  userId: string,
-): Promise<Pick<DbNote, "id" | "short_id"> | null> {
+): Promise<z.infer<typeof NullableNoteIdentitySchema>> {
  const { data, error } = await supabase
   .from("notes")
   .select("id, short_id")
@@ -430,12 +481,12 @@ export async function getNoteByShortId(
   logger.error("[NotesService] fetch by short_id error:", error);
   return null;
  }
- return data as Pick<DbNote, "id" | "short_id">;
+ return data;
 }
 
 /** Search notes by title (for link-to-note feature) */
 export async function searchNotesByTitle(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  query: string,
  limit = 10,
@@ -452,11 +503,11 @@ export async function searchNotesByTitle(
   logger.error("[NotesService] search error:", error);
   return [];
  }
- return attachLessonLinks(supabase, userId, (data || []) as NoteListRow[]);
+ return attachLessonLinks(supabase, userId, NoteListRowSchema.array().parse(data || []));
 }
 
 export async function getNoteFolders(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<NoteFolder[]> {
  const { data, error } = await supabase
@@ -467,13 +518,15 @@ export async function getNoteFolders(
   .order("name", { ascending: true });
 
  if (error) throw error;
- return ((data ?? []) as NoteFolderRow[]).map(toNoteFolder);
+ return NoteFolderRowSchema.array()
+  .parse(data ?? [])
+  .map(toNoteFolder);
 }
 
 export async function createNoteFolder(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
- input: { name: string; parentId?: string | null; color?: NoteFolderColor; position?: number },
+ input: z.infer<typeof CreateNoteFolderInputSchema>,
 ): Promise<NoteFolder> {
  const { data, error } = await supabase
   .from("note_folders")
@@ -488,15 +541,15 @@ export async function createNoteFolder(
   .single();
 
  if (error) throw error;
- return toNoteFolder(data as NoteFolderRow);
+ return toNoteFolder(NoteFolderRowSchema.parse(data));
 }
 
 export async function updateNoteFolder(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  folderId: string,
- input: Partial<Pick<NoteFolder, "name" | "parentId" | "color" | "position">>,
+ input: z.infer<typeof UpdateNoteFolderInputSchema>,
 ): Promise<NoteFolder> {
- const changes: Record<string, string | number | null> = {};
+ const changes: TablesUpdate<"note_folders"> = {};
  if (input.name !== undefined) changes.name = input.name.trim();
  if (input.parentId !== undefined) changes.parent_id = input.parentId;
  if (input.color !== undefined) changes.color = input.color;
@@ -510,25 +563,23 @@ export async function updateNoteFolder(
   .single();
 
  if (error) throw error;
- return toNoteFolder(data as NoteFolderRow);
+ return toNoteFolder(NoteFolderRowSchema.parse(data));
 }
 
-export async function deleteNoteFolder(supabase: SupabaseClient, folderId: string): Promise<void> {
+export async function deleteNoteFolder(
+ supabase: AppSupabaseClient,
+ folderId: string,
+): Promise<void> {
  const { error } = await supabase.from("note_folders").delete().eq("id", folderId);
  if (error) throw error;
 }
 
 export async function updateNoteLibraryMetadata(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  noteId: string,
- input: {
-  title?: string;
-  folderId?: string | null;
-  readingStatus?: ReadingStatus | null;
-  source?: NoteSourceMetadata | null;
- },
+ input: z.infer<typeof UpdateNoteLibraryMetadataInputSchema>,
 ): Promise<void> {
- const changes: Record<string, string | null> = { updated_at: new Date().toISOString() };
+ const changes: TablesUpdate<"notes"> = { updated_at: new Date().toISOString() };
  if (input.title !== undefined) changes.title = input.title;
  if (input.folderId !== undefined) changes.folder_id = input.folderId;
  if (input.readingStatus !== undefined) changes.reading_status = input.readingStatus;
@@ -550,12 +601,12 @@ export async function updateNoteLibraryMetadata(
    ══════════════════════════════════════════ */
 
 export async function getNoteByLessonNoteLink(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  targetKey: string,
  targetType: LessonNoteTargetType = "hanzihome_lesson",
  relationType: LessonNoteRelationType = "main",
-): Promise<DbNote | null> {
+): Promise<NullableDbNote> {
  const { data, error } = await supabase
   .from("lesson_note_links")
   .select("note_id")
@@ -570,14 +621,14 @@ export async function getNoteByLessonNoteLink(
   return null;
  }
 
- const noteId = (data as { note_id?: string } | null)?.note_id;
+ const noteId = data?.note_id;
  if (!noteId) return null;
 
  return getNoteById(supabase, noteId, userId);
 }
 
 export async function linkNoteToLessonTarget(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  input: {
   userId: string;
   noteId: string;
@@ -603,14 +654,14 @@ export async function linkNoteToLessonTarget(
   return false;
  }
 
- if ((existingLink as { id?: string } | null)?.id) {
+ if (existingLink?.id) {
   const { error: updateError } = await supabase
    .from("lesson_note_links")
    .update({
     note_id: input.noteId,
     updated_at: new Date().toISOString(),
    })
-   .eq("id", (existingLink as { id: string }).id);
+   .eq("id", existingLink.id);
 
   if (updateError) {
    logger.error("[NotesService] update lesson note link error:", updateError);

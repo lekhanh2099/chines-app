@@ -1,13 +1,18 @@
+import { JsonValueSchema, type JsonFieldValue, type JsonObject } from "../src/types/json.ts";
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { z } from "zod";
 
-type DatasetId = "q2" | "q3";
+const DatasetIdSchema = z.enum(["q2", "q3"]);
+type DatasetId = z.infer<typeof DatasetIdSchema>;
+const RefKindSchema = z.enum(["vocab_refs", "grammar_refs"]);
 
 type RefHit = {
- kind: "vocab_refs" | "grammar_refs";
+ kind: z.infer<typeof RefKindSchema>;
  ref: string;
  ctx: string;
 };
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type AuditState = {
  errors: string[];
@@ -44,7 +49,7 @@ const seedAuditIgnoredMetadataKeys = new Set([
  "kind",
 ]);
 
-const DATASET_IDS: DatasetId[] = ["q2", "q3"];
+const DATASET_IDS: DatasetId[] = [...DatasetIdSchema.options];
 const EXPECTED_LESSON_COUNTS: Record<DatasetId, number> = {
  q2: 25,
  q3: 26,
@@ -58,11 +63,11 @@ function readArg(name: string) {
  return process.argv[index + 1] ?? null;
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+function isRecord(value: JsonFieldValue): value is Record<string, JsonFieldValue> {
  return value !== null && typeof value === "object" && !Array.isArray(value);
 }
 
-function typeName(value: unknown) {
+function typeName(value: JsonFieldValue) {
  if (Array.isArray(value)) return "array";
  if (value === null) return "null";
  return typeof value;
@@ -117,10 +122,10 @@ function addWarning(state: AuditState, ctx: string, message: string) {
 }
 
 function requiredRecord(
- value: unknown,
+ value: JsonFieldValue,
  ctx: string,
  state: AuditState,
-): Record<string, unknown> | null {
+): Nullable<JsonObject> {
  if (!isRecord(value)) {
   addError(state, ctx, `expected object, got ${typeName(value)}`);
   return null;
@@ -129,7 +134,11 @@ function requiredRecord(
  return value;
 }
 
-function requiredArray(value: unknown, ctx: string, state: AuditState): unknown[] | null {
+function requiredArray(
+ value: JsonFieldValue,
+ ctx: string,
+ state: AuditState,
+): Nullable<JsonFieldValue[]> {
  if (!Array.isArray(value)) {
   addError(state, ctx, `expected array, got ${typeName(value)}`);
   return null;
@@ -139,7 +148,7 @@ function requiredArray(value: unknown, ctx: string, state: AuditState): unknown[
 }
 
 function requiredString(
- obj: Record<string, unknown>,
+ obj: Record<string, JsonFieldValue>,
  key: string,
  ctx: string,
  state: AuditState,
@@ -160,18 +169,29 @@ function requiredString(
  return value;
 }
 
-function optionalString(obj: Record<string, unknown>, key: string, ctx: string, state: AuditState) {
- if (!(key in obj) || obj[key] === null) return null;
+function optionalString(
+ obj: Record<string, JsonFieldValue>,
+ key: string,
+ ctx: string,
+ state: AuditState,
+) {
+ const value = obj[key];
+ if (value === undefined || value === null) return null;
 
- if (typeof obj[key] !== "string") {
-  addError(state, ctx, `${key} must be string/null when present, got ${typeName(obj[key])}`);
+ if (typeof value !== "string") {
+  addError(state, ctx, `${key} must be string/null when present, got ${typeName(value)}`);
   return null;
  }
 
- return obj[key] as string;
+ return value;
 }
 
-function requiredNumber(obj: Record<string, unknown>, key: string, ctx: string, state: AuditState) {
+function requiredNumber(
+ obj: Record<string, JsonFieldValue>,
+ key: string,
+ ctx: string,
+ state: AuditState,
+) {
  const value = obj[key];
 
  if (typeof value !== "number" || !Number.isFinite(value)) {
@@ -183,7 +203,7 @@ function requiredNumber(obj: Record<string, unknown>, key: string, ctx: string, 
 }
 
 function requiredBoolean(
- obj: Record<string, unknown>,
+ obj: Record<string, JsonFieldValue>,
  key: string,
  ctx: string,
  state: AuditState,
@@ -199,23 +219,24 @@ function requiredBoolean(
 }
 
 function optionalBoolean(
- obj: Record<string, unknown>,
+ obj: Record<string, JsonFieldValue>,
  key: string,
  ctx: string,
  state: AuditState,
 ) {
- if (!(key in obj) || obj[key] === null) return null;
+ const value = obj[key];
+ if (value === undefined || value === null) return null;
 
- if (typeof obj[key] !== "boolean") {
-  addError(state, ctx, `${key} must be boolean/null when present, got ${typeName(obj[key])}`);
+ if (typeof value !== "boolean") {
+  addError(state, ctx, `${key} must be boolean/null when present, got ${typeName(value)}`);
   return null;
  }
 
- return obj[key] as boolean;
+ return value;
 }
 
 function requiredStringArray(
- obj: Record<string, unknown>,
+ obj: Record<string, JsonFieldValue>,
  key: string,
  ctx: string,
  state: AuditState,
@@ -261,10 +282,10 @@ async function exists(filePath: string) {
  }
 }
 
-async function readJson(filePath: string, state: AuditState): Promise<unknown | null> {
+async function readJson(filePath: string, state: AuditState): Promise<Nullable<JsonFieldValue>> {
  try {
   const text = await readFile(filePath, "utf8");
-  return JSON.parse(text) as unknown;
+  return JsonValueSchema.parse(JSON.parse(text));
  } catch (error) {
   addError(
    state,
@@ -288,7 +309,7 @@ async function walk(dir: string): Promise<string[]> {
  return nested.flat();
 }
 
-function scanJsonConventions(value: unknown, ctx: string, state: AuditState) {
+function scanJsonConventions(value: JsonFieldValue, ctx: string, state: AuditState) {
  if (Array.isArray(value)) {
   value.forEach((item, index) => scanJsonConventions(item, `${ctx}[${index}]`, state));
   return;
@@ -369,7 +390,7 @@ function scanJsonConventions(value: unknown, ctx: string, state: AuditState) {
 }
 
 function auditTitleObject(
- value: unknown,
+ value: JsonFieldValue,
  ctx: string,
  state: AuditState,
  options: { requirePinyin?: boolean } = {},
@@ -494,7 +515,7 @@ async function auditDatasetManifest(dataset: DatasetId, state: AuditState) {
 
 async function auditLessonFromManifest(
  dataset: DatasetId,
- lessonValue: unknown,
+ lessonValue: JsonFieldValue,
  state: AuditState,
 ) {
  const lessonCtx = `${dataset}.manifest.lesson`;
@@ -669,7 +690,7 @@ async function auditSections(
 }
 
 function auditLessonVocabularySection(
- sectionFile: Record<string, unknown>,
+ sectionFile: Record<string, JsonFieldValue>,
  ctx: string,
  lessonId: string,
  state: AuditState,
@@ -786,7 +807,7 @@ async function auditVocabularyIndex(
 
 function auditDeepVocabItem(
  dataset: DatasetId,
- item: Record<string, unknown>,
+ item: Record<string, JsonFieldValue>,
  ctx: string,
  lessonId: string,
  expectedId: string,
@@ -894,7 +915,7 @@ function auditDeepVocabItem(
 
 function auditGrammarSection(
  dataset: DatasetId,
- sectionFile: Record<string, unknown>,
+ sectionFile: Record<string, JsonFieldValue>,
  ctx: string,
  lessonId: string,
  state: AuditState,
@@ -943,7 +964,7 @@ function auditGrammarSection(
 }
 
 function auditGrammarBlocks(
- blocks: unknown[],
+ blocks: JsonFieldValue[],
  itemCtx: string,
  grammarId: string,
  state: AuditState,

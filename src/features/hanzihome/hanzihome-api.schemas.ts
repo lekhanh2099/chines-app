@@ -187,7 +187,7 @@ export const hanziHomeCatalogSchema = z.object({
  meta: metaSchema,
 });
 
-const aggregateVocabItemSchema = z.object({
+export const aggregateVocabItemSchema = z.object({
  id: z.string(),
  courseId: z.string(),
  bookId: z.string(),
@@ -210,7 +210,7 @@ const aggregateVocabItemSchema = z.object({
   .optional(),
 });
 
-const aggregateGrammarItemSchema = z.object({
+export const aggregateGrammarItemSchema = z.object({
  id: z.string(),
  courseId: z.string(),
  bookId: z.string(),

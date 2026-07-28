@@ -5,11 +5,12 @@ import { Pencil, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import type { EditingToolsPresentation } from "@/features/hanzihome/context/types";
 
 export function EditModeToggle({
  presentation = "toolbar",
 }: {
- presentation?: "toolbar" | "menu";
+ presentation?: EditingToolsPresentation;
 }) {
  const editMode = useHanziHomeEditMode();
  const { setEditMode } = useHanziHomeFeatureActions();

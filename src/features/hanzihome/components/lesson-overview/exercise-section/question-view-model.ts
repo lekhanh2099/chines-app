@@ -1,3 +1,5 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import { answerToString, arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
 import {
  answerFromRecord,
@@ -13,15 +15,15 @@ export type ExerciseQuestionViewModel = {
  answer: string;
  note: string;
  meaning: string;
- choices: unknown[];
- context: unknown;
- cue: unknown;
- target: unknown;
- left: unknown;
- right: unknown;
- statement: unknown;
- evidence: unknown;
- dialogue: unknown[];
+ choices: JsonValue[];
+ context: JsonFieldValue;
+ cue: JsonFieldValue;
+ target: JsonFieldValue;
+ left: JsonFieldValue;
+ right: JsonFieldValue;
+ statement: JsonFieldValue;
+ evidence: JsonFieldValue;
+ dialogue: JsonValue[];
  givenWords: string[];
  requiresSourceVisual: boolean;
  sourcePrintedPages: number[];
@@ -29,9 +31,9 @@ export type ExerciseQuestionViewModel = {
 
 function tupleQuestionModel(
  exerciseType: string,
- values: unknown[],
+ values: JsonValue[],
  index: number,
- answerOverride: unknown,
+ answerOverride: JsonFieldValue,
 ): ExerciseQuestionViewModel {
  const strings = values.map(answerToString);
 
@@ -81,7 +83,7 @@ function emptyQuestionModel(values: Partial<ExerciseQuestionViewModel>): Exercis
  };
 }
 
-function sourcePrintedPages(question: Record<string, unknown>) {
+function sourcePrintedPages(question: JsonObject) {
  return arrayValue(question, "source_pages")
   .map((value) => asRecord(value).printedPage)
   .filter((value): value is number => typeof value === "number" && Number.isFinite(value));
@@ -94,9 +96,9 @@ export function buildExerciseQuestionViewModel({
  answerOverride,
 }: {
  exerciseType: string;
- value: unknown;
+ value: JsonFieldValue;
  index: number;
- answerOverride?: unknown;
+ answerOverride?: JsonFieldValue;
 }): ExerciseQuestionViewModel {
  if (Array.isArray(value)) {
   return tupleQuestionModel(exerciseType, value, index, answerOverride);

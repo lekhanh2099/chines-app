@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -7,6 +8,7 @@ import {
  type UpdateHtmlArtifactFolderPayload,
 } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
 import { createClient } from "@/lib/supabase/server";
+import type { Tables, TablesUpdate } from "@/types/supabase.generated";
 
 type RouteContext = {
  params: Promise<{
@@ -21,17 +23,12 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingFoldersTable(code: string | undefined) {
+function isMissingFoldersTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
 function buildUpdatePatch(payload: UpdateHtmlArtifactFolderPayload) {
- const patch: {
-  name?: string;
-  parent_folder_id?: string | null;
-  color?: UpdateHtmlArtifactFolderPayload["color"];
-  position?: number;
- } = {};
+ const patch: TablesUpdate<"hanzihome_html_artifact_folders"> = {};
 
  if (payload.name !== undefined) patch.name = payload.name;
  if (payload.parentFolderId !== undefined) patch.parent_folder_id = payload.parentFolderId;
@@ -48,19 +45,25 @@ function wouldCreateCycle({
 }: {
  folderId: string;
  nextParentFolderId: string;
- folders: Array<{ id: string; parent_folder_id: string | null }>;
+ folders: Array<{
+  id: Tables<"hanzihome_html_artifact_folders">["id"];
+  parent_folder_id: Tables<"hanzihome_html_artifact_folders">["parent_folder_id"];
+ }>;
 }) {
  if (folderId === nextParentFolderId) return true;
 
  const parentById = new Map(folders.map((folder) => [folder.id, folder.parent_folder_id]));
- let current: string | null | undefined = nextParentFolderId;
+ const pending = [nextParentFolderId];
  const visited = new Set<string>();
 
- while (current) {
+ while (pending.length > 0) {
+  const current = pending.pop();
+  if (!current) continue;
   if (current === folderId) return true;
   if (visited.has(current)) return true;
   visited.add(current);
-  current = parentById.get(current);
+  const parentId = parentById.get(current);
+  if (parentId) pending.push(parentId);
  }
 
  return false;
@@ -77,7 +80,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = updateHtmlArtifactFolderPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

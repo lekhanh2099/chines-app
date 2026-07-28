@@ -8,7 +8,7 @@ import {
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-function parseBooleanParam(value: string | null) {
+function parseBooleanParam(value: ReturnType<URLSearchParams["get"]>) {
  return value === "1" || value === "true";
 }
 

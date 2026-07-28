@@ -14,6 +14,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 
 import { getHanziFontFamily } from "./hanzi-typography";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
@@ -32,8 +33,10 @@ const sizeOptions: Array<{ value: HanziReaderSize; label: string; sample: string
  { value: "3xl", label: "Cực lớn", sample: "A" },
 ];
 
+const LessonReadingVisibilityKeySchema = z.enum(["showPinyin", "showMeaning", "showAnswers"]);
+
 const visibilityOptions: Array<{
- key: "showPinyin" | "showMeaning" | "showAnswers";
+ key: z.infer<typeof LessonReadingVisibilityKeySchema>;
  label: string;
 }> = [
  { key: "showPinyin", label: "Pinyin" },

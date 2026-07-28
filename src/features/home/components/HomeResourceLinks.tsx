@@ -30,7 +30,7 @@ const resources = [
   description: "Chọn giáo trình, quyển và bài học mới.",
   meta: "Course · Book · Lesson",
  },
-] as const;
+];
 
 export function HomeResourceLinks() {
  return (

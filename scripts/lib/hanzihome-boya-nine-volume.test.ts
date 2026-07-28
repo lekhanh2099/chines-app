@@ -29,7 +29,7 @@ describe("Boya nine-volume portable adapter", () => {
    course_id: "boya-nine-volume-second-edition",
    book_id: "boya-9e-advanced-2",
    owner_id: null,
-   source: "seed" as const,
+   source: "seed",
    word: "角落",
    pinyin: "jiǎoluò",
    meaning: "góc, ngóc ngách",
@@ -41,7 +41,7 @@ describe("Boya nine-volume portable adapter", () => {
    tone: null,
    source_file: "Boya cao cấp.docx",
    imported_at: "2026-07-18T00:00:00.000Z",
-  };
+  } satisfies Partial<HanziHomeSeedData["vocabItems"][number]>;
   const seed: HanziHomeSeedData = {
    datasets: [],
    courses: [],

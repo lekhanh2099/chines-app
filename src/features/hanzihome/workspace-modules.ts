@@ -1,4 +1,6 @@
 import type { HanziHomeModule } from "@/features/hanzihome/types";
+import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
+import { z } from "zod";
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 
@@ -14,7 +16,7 @@ const moduleValues = [
  "review",
  "practice",
  "radicals",
-] as const satisfies readonly HanziHomeModule[];
+] satisfies readonly HanziHomeModule[];
 
 const standardLessonModules = new Set<StudyModule>([
  "overview",
@@ -27,7 +29,11 @@ const standardLessonModules = new Set<StudyModule>([
 ]);
 const listeningLessonModules = new Set<StudyModule>(["listening", "dictation"]);
 
-export function parseHanziHomeModule(value: string | null | undefined): HanziHomeModule | null {
+const OptionalNullableModuleInputSchema = z.string().nullable().optional();
+
+export function parseHanziHomeModule(
+ value: z.infer<typeof OptionalNullableModuleInputSchema>,
+): z.infer<z.ZodNullable<typeof moduleSchema>> {
  return moduleValues.find((item) => item === value) ?? null;
 }
 

@@ -76,7 +76,7 @@ export function useSmartSelectionInsights(
    return payload || {};
   },
   onSuccess: (_result, payload) => {
-   queryClient.setQueryData<SmartSelectionResult | undefined>(
+   queryClient.setQueryData<typeof query.data>(
     ["editor-smart-selection", cacheVersion, lookupKey, contextSentence, mode, settingsFingerprint],
     (old) =>
      old

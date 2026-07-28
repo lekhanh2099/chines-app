@@ -1,8 +1,9 @@
+import type { JsonFieldValue } from "@/types/json";
 export function RawDataDetails({
  value,
  label = "Dữ liệu gốc của mục này",
 }: {
- value: unknown;
+ value: JsonFieldValue;
  label?: string;
 }) {
  return (

@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { ExercisePill } from "../CommonCards";
 import { answerToString } from "../utils";
 import type { LessonDisplayMode } from "../types";
@@ -6,7 +7,7 @@ export function WordBank({
  values,
  displayMode,
 }: {
- values: unknown[];
+ values: JsonValue[];
  displayMode: LessonDisplayMode;
 }) {
  const words = values.map(answerToString).filter(Boolean);

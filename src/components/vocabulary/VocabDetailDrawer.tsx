@@ -27,7 +27,7 @@ import {
  getNormalizedSynonyms,
 } from "@/services/vocab.service";
 import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
-import type { AiAnalysis, SmartSelectionMode } from "@/types/database";
+import type { SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
 const drawerFontOptions: Array<{ value: HanziReaderFont; label: string }> = [
@@ -36,10 +36,8 @@ const drawerFontOptions: Array<{ value: HanziReaderFont; label: string }> = [
  { value: "pinyin", label: "Kai" },
 ];
 
-type HanziWriterInstance = {
- animateCharacter?: () => Promise<unknown>;
- hideCharacter?: (options?: { duration?: number }) => Promise<unknown>;
-};
+type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
+type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
 
 function getThemeColor(name: string) {
  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -259,7 +257,7 @@ function WordDetailPanel({
  displayMeaning: string;
  hanziFont: HanziReaderFont;
 }) {
- const ai = smartData.entry.ai_analysis as AiAnalysis | undefined;
+ const ai = smartData.entry.ai_analysis;
  const radicals = getNormalizedRadicals(ai);
  const definitions = getNormalizedDefinitions(ai, smartData.entry.meaning || "");
  const examples =
@@ -672,7 +670,7 @@ function CharacterWriterCard({
  hanziFont: HanziReaderFont;
 }) {
  const containerRef = useRef<HTMLDivElement>(null);
- const writerRef = useRef<HanziWriterInstance | null>(null);
+ const writerRef = useRef<HanziWriterInstance>(null);
 
  useEffect(() => {
   if (!containerRef.current || !character || typeof window === "undefined") {
@@ -746,7 +744,7 @@ function CharacterWriterCard({
       showOutline: true,
       showCharacter: true,
       charDataLoader: () => charData,
-     }) as HanziWriterInstance;
+     });
      writerRef.current = writer;
      requestAnimationFrame(() => {
       if (!isActive) return;

@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonObject, JsonValue } from "@/types/json";
 import { z } from "zod";
 
 import { mutationEnvelopeSchema } from "@/features/hanzihome/schemas/canonical-content.schema";
@@ -17,30 +18,36 @@ type RouteContext = {
 
 const nestedNodeMutationSchema = mutationEnvelopeSchema.extend({
  nodePath: z.array(z.union([z.string(), z.number().int()])),
- after: z.unknown(),
+ after: z.json(),
 });
 
 const editableEntityTypeSchema = z.enum(editableEntityTypes);
+type OptionalJsonValue = JsonFieldValue;
+type NodePath = z.infer<typeof nestedNodeMutationSchema>["nodePath"];
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-function countNodesById(value: unknown, nodeId: string): number {
+function isJsonObject(value: OptionalJsonValue): value is JsonObject {
+ return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function countNodesById(value: JsonValue, nodeId: string): number {
  if (Array.isArray(value)) {
-  return value.reduce((count, item) => count + countNodesById(item, nodeId), 0);
+  return value.reduce<number>((count, item) => count + countNodesById(item, nodeId), 0);
  }
- if (!value || typeof value !== "object") return 0;
+ if (!isJsonObject(value)) return 0;
 
- const record = value as Record<string, unknown>;
- let count = record.id === nodeId ? 1 : 0;
- for (const item of Object.values(record)) {
-  count += countNodesById(item, nodeId);
+ let count = value.id === nodeId ? 1 : 0;
+ for (const item of Object.values(value)) {
+  count += countNodesById(item ?? null, nodeId);
  }
  return count;
 }
 
 function updateNodeById(
- value: unknown,
+ value: JsonValue,
  nodeId: string,
- update: (current: Record<string, unknown>) => unknown,
-): unknown | null {
+ update: (current: JsonObject) => JsonValue,
+): Nullable<JsonValue> {
  if (Array.isArray(value)) {
   let found = false;
   const next = value.map((item) => {
@@ -52,45 +59,44 @@ function updateNodeById(
   return found ? next : null;
  }
 
- if (!value || typeof value !== "object") return null;
- const record = value as Record<string, unknown>;
- if (record.id === nodeId) return update(record);
+ if (!isJsonObject(value)) return null;
+ if (value.id === nodeId) return update(value);
 
  let found = false;
- const next: Record<string, unknown> = {};
- for (const [key, item] of Object.entries(record)) {
-  const replaced = updateNodeById(item, nodeId, update);
+ const next: JsonObject = {};
+ for (const [key, item] of Object.entries(value)) {
+  const replaced = updateNodeById(item ?? null, nodeId, update);
   next[key] = replaced === null ? item : replaced;
   if (replaced !== null) found = true;
  }
  return found ? next : null;
 }
 
-function sectionRelativePath(path: Array<string | number>) {
+function sectionRelativePath(path: NodePath) {
  const sectionsIndex = path.findIndex((segment) => segment === "sections");
  if (sectionsIndex < 0 || typeof path[sectionsIndex + 1] !== "number") return null;
  return path.slice(sectionsIndex + 2);
 }
 
-function valueAtPath(value: unknown, path: Array<string | number>): unknown {
- let current = value;
+function valueAtPath(value: JsonValue, path: NodePath): OptionalJsonValue {
+ let current: OptionalJsonValue = value;
  for (const segment of path) {
   if (typeof segment === "number") {
    if (!Array.isArray(current) || segment < 0 || segment >= current.length) return undefined;
    current = current[segment];
    continue;
   }
-  if (!current || typeof current !== "object" || Array.isArray(current)) return undefined;
-  current = (current as Record<string, unknown>)[segment];
+  if (!isJsonObject(current)) return undefined;
+  current = current[segment];
  }
  return current;
 }
 
 function updateValueAtPath(
- value: unknown,
- path: Array<string | number>,
- nextValue: unknown,
-): unknown | null {
+ value: JsonValue,
+ path: NodePath,
+ nextValue: JsonValue,
+): Nullable<JsonValue> {
  if (path.length === 0) return nextValue;
  const [segment, ...rest] = path;
 
@@ -103,17 +109,18 @@ function updateValueAtPath(
   return next;
  }
 
- if (!value || typeof value !== "object" || Array.isArray(value) || !(segment in value)) {
+ if (!isJsonObject(value) || !(segment in value)) {
   return null;
  }
- const record = value as Record<string, unknown>;
- const nextChild = updateValueAtPath(record[segment], rest, nextValue);
- return nextChild === null ? null : { ...record, [segment]: nextChild };
+ const currentChild = value[segment];
+ if (currentChild === undefined) return null;
+ const nextChild = updateValueAtPath(currentChild, rest, nextValue);
+ return nextChild === null ? null : { ...value, [segment]: nextChild };
 }
 
-function nodeIdMatches(value: unknown, nodeId: string) {
- if (!value || typeof value !== "object" || Array.isArray(value)) return true;
- const id = (value as Record<string, unknown>).id;
+function nodeIdMatches(value: OptionalJsonValue, nodeId: string) {
+ if (!isJsonObject(value)) return true;
+ const id = value.id;
  return typeof id !== "string" || id === nodeId;
 }
 
@@ -127,7 +134,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  } = await sessionClient.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonValue = await request.json().catch(() => null);
  const parsed = nestedNodeMutationSchema.safeParse(body);
  if (!parsed.success) {
   return mutationError("Invalid nested section mutation", 400, z.flattenError(parsed.error));
@@ -205,7 +212,7 @@ async function setNestedNodeDeletedState(
  } = await sessionClient.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonValue = await request.json().catch(() => null);
  const parsed = mutationEnvelopeSchema.safeParse(body);
  if (!parsed.success) {
   return mutationError("Invalid nested section mutation", 400, z.flattenError(parsed.error));

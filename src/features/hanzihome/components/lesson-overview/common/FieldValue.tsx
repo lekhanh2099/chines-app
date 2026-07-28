@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { PassageCard } from "../PassageCard";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, getClozeAnswerValues, getPassageLikeValue, stringValue } from "../utils";
@@ -13,7 +14,7 @@ export function FieldValue({
  value,
  displayMode,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
 }) {
  if (typeof value === "string" || typeof value === "number") {

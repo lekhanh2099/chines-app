@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { PassageCard } from "../PassageCard";
 import { TextLineCard } from "../TextLineCard";
 import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
@@ -21,7 +22,7 @@ export function GenericItemCard({
  displayMode,
  debugMode = false,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
 }) {

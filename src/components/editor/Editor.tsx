@@ -10,6 +10,8 @@
  */
 "use client";
 
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
+import { z } from "zod";
 import { useEffect, useMemo } from "react";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
@@ -110,9 +112,11 @@ const SAFE_HTML_IMPORT = buildImportMap({
 });
 
 /* ── Types ── */
+const InitialEditorContentSchema = JsonObjectSchema.nullable();
+
 interface EditorProps {
- initialContent?: Record<string, unknown> | null;
- onChange?: (json: Record<string, unknown>) => void;
+ initialContent?: z.infer<typeof InitialEditorContentSchema>;
+ onChange?: (json: JsonObject) => void;
  readOnly?: boolean;
  toolbarVisible?: boolean;
  seamless?: boolean;

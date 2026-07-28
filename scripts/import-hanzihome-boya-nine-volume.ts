@@ -1,8 +1,11 @@
-import { createHash } from "node:crypto";
+import type { JsonFieldValue } from "../src/types/json.ts";
+import type { Tables } from "../src/types/supabase.generated.ts";
+import { createHash, type BinaryLike } from "node:crypto";
 import { gzip as gzipCallback } from "node:zlib";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import { z } from "zod";
 
 import {
  BOYA_LEGACY_BOOK_IDS,
@@ -15,6 +18,7 @@ import {
  externalSeedCounts,
  externalSeedPackageSchema,
  validateExternalSeedRelationships,
+ type ExternalSeedCollection,
  type ExternalSeedPackage,
 } from "./lib/hanzihome-external-seed-package.ts";
 import {
@@ -23,44 +27,60 @@ import {
  SEED_TABLES,
 } from "./lib/hanzihome-supabase-seed.ts";
 
-type ExistingRow = { id: string; source: string };
-type LegacyCourseRow = ExistingRow & { deleted_at: string | null; user_id: string | null };
-type LegacyBookRow = ExistingRow & {
- course_id: string;
- deleted_at: string | null;
- user_id: string | null;
+type ExistingRow = {
+ id: Tables<"hanzihome_courses">["id"];
+ source: Tables<"hanzihome_courses">["source"];
 };
-type LegacyLessonRow = ExistingRow & {
- book_id: string;
- deleted_at: string | null;
- owner_id: string | null;
+type LegacyCourseRow = {
+ id: Tables<"hanzihome_courses">["id"];
+ source: Tables<"hanzihome_courses">["source"];
+ deleted_at: Tables<"hanzihome_courses">["deleted_at"];
+ user_id: Tables<"hanzihome_courses">["user_id"];
 };
-type TargetChildRow = { id: string; lesson_id: string };
+type LegacyBookRow = {
+ id: Tables<"hanzihome_course_books">["id"];
+ course_id: Tables<"hanzihome_course_books">["course_id"];
+ source: Tables<"hanzihome_course_books">["source"];
+ deleted_at: Tables<"hanzihome_course_books">["deleted_at"];
+ user_id: Tables<"hanzihome_course_books">["user_id"];
+};
+type LegacyLessonRow = {
+ id: Tables<"hanzihome_lessons">["id"];
+ book_id: Tables<"hanzihome_lessons">["book_id"];
+ source: Tables<"hanzihome_lessons">["source"];
+ deleted_at: Tables<"hanzihome_lessons">["deleted_at"];
+ owner_id: Tables<"hanzihome_lessons">["owner_id"];
+};
+type TargetChildRow = {
+ id: Tables<"hanzihome_lesson_sections">["id"];
+ lesson_id: Tables<"hanzihome_lesson_sections">["lesson_id"];
+};
 
 const gzip = promisify(gzipCallback);
+const NullableTextSchema = z.string().nullable();
 const CHUNK_BYTES = 512 * 1024;
 const STAGING_TABLE = "hanzihome_import_chunks";
 
-const seedTableMappings = [
- ["courses", SEED_TABLES.courses],
- ["books", SEED_TABLES.books],
- ["lessons", SEED_TABLES.lessons],
- ["lessonSections", SEED_TABLES.lessonSections],
- ["lessonTexts", SEED_TABLES.lessonTexts],
- ["vocabItems", SEED_TABLES.vocabItems],
- ["vocabExamples", SEED_TABLES.vocabExamples],
- ["vocabDetailSections", SEED_TABLES.vocabDetailSections],
- ["grammarPoints", SEED_TABLES.grammarPoints],
- ["grammarExamples", SEED_TABLES.grammarExamples],
- ["grammarDetailSections", SEED_TABLES.grammarDetailSections],
-] as const;
+const seedTableMappings: { collection: ExternalSeedCollection; table: string }[] = [
+ { collection: "courses", table: SEED_TABLES.courses },
+ { collection: "books", table: SEED_TABLES.books },
+ { collection: "lessons", table: SEED_TABLES.lessons },
+ { collection: "lessonSections", table: SEED_TABLES.lessonSections },
+ { collection: "lessonTexts", table: SEED_TABLES.lessonTexts },
+ { collection: "vocabItems", table: SEED_TABLES.vocabItems },
+ { collection: "vocabExamples", table: SEED_TABLES.vocabExamples },
+ { collection: "vocabDetailSections", table: SEED_TABLES.vocabDetailSections },
+ { collection: "grammarPoints", table: SEED_TABLES.grammarPoints },
+ { collection: "grammarExamples", table: SEED_TABLES.grammarExamples },
+ { collection: "grammarDetailSections", table: SEED_TABLES.grammarDetailSections },
+];
 
 function option(name: string) {
  const index = process.argv.indexOf(name);
- return index === -1 ? null : (process.argv[index + 1] ?? null);
+ return NullableTextSchema.parse(index === -1 ? null : (process.argv[index + 1] ?? null));
 }
 
-function sha256(content: string | Buffer) {
+function sha256(content: BinaryLike) {
  return createHash("sha256").update(content).digest("hex");
 }
 
@@ -102,7 +122,7 @@ async function assertNewIdsAvailable(
  seed: ExternalSeedPackage,
  client: ReturnType<typeof createHanziHomeAdminClient>,
 ) {
- for (const [collection, table] of seedTableMappings) {
+ for (const { collection, table } of seedTableMappings) {
   const expectedIds = new Set(seed[collection].map((row) => row.id));
   const existing = await fetchAllRows<ExistingRow>(client, table, "id,source");
   const collisions = existing.filter((row) => expectedIds.has(row.id));
@@ -127,15 +147,11 @@ async function assertLegacyReplacementReady(client: ReturnType<typeof createHanz
    "id,book_id,source,deleted_at,owner_id",
   ),
  ]);
- const legacyCourses = courses.filter((row) =>
-  BOYA_LEGACY_COURSE_IDS.includes(row.id as (typeof BOYA_LEGACY_COURSE_IDS)[number]),
- );
- const legacyBooks = books.filter((row) =>
-  BOYA_LEGACY_BOOK_IDS.includes(row.id as (typeof BOYA_LEGACY_BOOK_IDS)[number]),
- );
- const legacyLessons = lessons.filter((row) =>
-  BOYA_LEGACY_BOOK_IDS.includes(row.book_id as (typeof BOYA_LEGACY_BOOK_IDS)[number]),
- );
+ const legacyCourseIds = new Set<string>(BOYA_LEGACY_COURSE_IDS);
+ const legacyBookIds = new Set<string>(BOYA_LEGACY_BOOK_IDS);
+ const legacyCourses = courses.filter((row) => legacyCourseIds.has(row.id));
+ const legacyBooks = books.filter((row) => legacyBookIds.has(row.id));
+ const legacyLessons = lessons.filter((row) => legacyBookIds.has(row.book_id));
  if (legacyCourses.length !== 2 || legacyBooks.length !== 3 || legacyLessons.length !== 42) {
   throw new Error(
    `Legacy replacement scope drifted: courses=${legacyCourses.length}, books=${legacyBooks.length}, lessons=${legacyLessons.length}`,
@@ -343,7 +359,7 @@ async function main() {
  console.log(result.data);
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

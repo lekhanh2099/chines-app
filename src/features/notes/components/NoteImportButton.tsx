@@ -12,6 +12,10 @@ import { normalizeImportedNotePayload } from "@/features/notes/note-export.schem
 import { useNoteFolderMutations, useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
+import type { NoteFolder } from "@/services/notes.service";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export function NoteImportButton({
  className,
@@ -20,7 +24,7 @@ export function NoteImportButton({
  className?: string;
  compactOnTablet?: boolean;
 }) {
- const fileInputRef = useRef<HTMLInputElement | null>(null);
+ const fileInputRef = useRef<HTMLInputElement>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
  const foldersQuery = useNoteFolders();
@@ -35,10 +39,10 @@ export function NoteImportButton({
 
   try {
    const importedPayload = normalizeImportedNotePayload(JSON.parse(await file.text()));
-   let folderId: string | null = null;
+   let folderId: Nullable<NoteFolder["id"]> = null;
    if (importedPayload.note.folder) {
     const folderSpec = importedPayload.note.folder;
-    let parentId: string | null = null;
+    let parentId: NoteFolder["parentId"] = null;
     if (folderSpec.parentName) {
      const existingParent = foldersQuery.data?.find(
       (folder) => folder.parentId === null && folder.name === folderSpec.parentName,

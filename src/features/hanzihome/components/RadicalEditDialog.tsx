@@ -1,5 +1,7 @@
 "use client";
 
+import type { ErrorInput } from "@/types/error";
+import { JsonValueSchema, type JsonObject } from "@/types/json";
 import CodeMirror from "@uiw/react-codemirror";
 import { useMemo, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
@@ -23,11 +25,16 @@ import {
  HanziHomeMutationError,
  isHanziHomeMutationConflict,
 } from "@/features/hanzihome/editing/mutation-error";
+
+const radicalMutationResponseSchema = z.object({
+ error: z.string().optional(),
+ details: JsonValueSchema.optional(),
+});
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalEditDialogProps = {
- radical: StaticRadicalData | null;
+ radical: z.infer<z.ZodNullable<z.ZodType<StaticRadicalData>>>;
  open: boolean;
  onOpenChange: (open: boolean) => void;
 };
@@ -45,7 +52,8 @@ type RadicalFormValues = {
  groupsText: string;
 };
 
-type EditMode = "fields" | "json";
+const EditModeSchema = z.enum(["fields", "json"]);
+type EditMode = z.infer<typeof EditModeSchema>;
 
 const formId = "hanzihome-radical-edit-form";
 
@@ -90,14 +98,14 @@ const radicalFormSchema = z.object({
  groupsText: z.string(),
 });
 
-function jsonErrorMessage(error: unknown) {
+function jsonErrorMessage(error: ErrorInput) {
  if (error instanceof SyntaxError) return "JSON chưa hợp lệ.";
  if (error instanceof ZodError) return error.issues[0]?.message ?? "JSON không đúng schema.";
  if (error instanceof Error) return error.message;
  return "Không thể đọc JSON.";
 }
 
-function renderComponentLines(components: Array<{ form: string; note: string }> | undefined) {
+function renderComponentLines(components: StaticRadicalData["relatedComponents"]) {
  return (components ?? []).map((component) => `${component.form} | ${component.note}`).join("\n");
 }
 
@@ -138,7 +146,7 @@ function parseGroups(value: string) {
   .filter((group) => group.name && group.chars.length > 0);
 }
 
-function renderStringList(values: string[] | undefined) {
+function renderStringList(values: StaticRadicalData["distinguish"]) {
  return (values ?? []).join("\n");
 }
 
@@ -198,10 +206,7 @@ function columnValuesFromRadical(radical: StaticRadicalData) {
  };
 }
 
-function changedFields(
- before: Record<string, unknown>,
- after: Record<string, unknown>,
-): Record<string, unknown> {
+function changedFields(before: JsonObject, after: JsonObject): JsonObject {
  return Object.fromEntries(
   Object.entries(after).filter(
    ([key, value]) => JSON.stringify(before[key]) !== JSON.stringify(value),
@@ -214,7 +219,7 @@ async function updateRadical({
  changes,
 }: {
  radical: StaticRadicalData;
- changes: Record<string, unknown>;
+ changes: JsonObject;
 }) {
  const expectedUpdatedAt = radical.editMeta?.updatedAt;
  if (!expectedUpdatedAt) throw new Error("Bộ thủ này chưa có DB write target.");
@@ -228,19 +233,16 @@ async function updateRadical({
    changes,
   }),
  });
- const payload: unknown = await response.json().catch(() => null);
+ const payload = radicalMutationResponseSchema.safeParse(await response.json().catch(() => null));
  if (!response.ok) {
   const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
+   payload.success && payload.data.error
+    ? payload.data.error
     : `Không thể lưu bộ thủ (${response.status})`;
-  const details =
-   payload && typeof payload === "object" && "details" in payload
-    ? (payload as { details: unknown }).details
-    : undefined;
+  const details = payload.success ? payload.data.details : undefined;
   throw new HanziHomeMutationError(message, response.status, details);
  }
- return payload;
+ return payload.success ? payload.data : null;
 }
 
 function RadicalEditDialogContent({
@@ -255,10 +257,10 @@ function RadicalEditDialogContent({
  const before = useMemo(() => columnValuesFromRadical(radical), [radical]);
  const [mode, setMode] = useState<EditMode>("fields");
  const [jsonValue, setJsonValue] = useState(() => JSON.stringify(before, null, 2));
- const [jsonError, setJsonError] = useState<string | null>(null);
+ const [jsonError, setJsonError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [isJsonSubmitting, setIsJsonSubmitting] = useState(false);
 
- const submitColumnValues = async (after: Record<string, unknown>) => {
+ const submitColumnValues = async (after: JsonObject) => {
   const changes = changedFields(before, after);
   if (Object.keys(changes).length === 0) {
    toast.info("Không có thay đổi để lưu.");

@@ -7,6 +7,7 @@ import { Plus } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
+import { JsonObjectSchema } from "@/types/json";
 import { useAppForm } from "@/components/form";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +21,7 @@ import {
  DialogTrigger,
 } from "@/components/ui/dialog";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
+import type { EditingToolsPresentation } from "@/features/hanzihome/context/types";
 import { createCanonicalContent } from "@/features/hanzihome/editing/direct-save";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
@@ -45,7 +47,7 @@ type LessonContentFormValues = z.input<typeof formSchema>;
 export function LessonContentCreateDialog({
  presentation = "toolbar",
 }: {
- presentation?: "toolbar" | "menu";
+ presentation?: EditingToolsPresentation;
 }) {
  const [open, setOpen] = useState(false);
  const queryClient = useQueryClient();
@@ -99,7 +101,7 @@ export function LessonContentCreateDialog({
 
     await createCanonicalContent({
      entityType: value.kind,
-     changes,
+     changes: JsonObjectSchema.parse(changes),
      reason: `Tạo ${value.kind} trong bài ${lesson.lessonNumber}`,
     });
     await queryClient.invalidateQueries({

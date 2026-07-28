@@ -1,10 +1,11 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { EditAdapter } from "./types";
 
-function asRecord(value: unknown): { [key: string]: unknown } {
+function asRecord(value: JsonFieldValue): { [key: string]: JsonFieldValue } {
  return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
-function stringValue(record: { [key: string]: unknown }, key: string) {
+function stringValue(record: { [key: string]: JsonFieldValue }, key: string) {
  const value = record[key];
  return typeof value === "string" ? value : "";
 }

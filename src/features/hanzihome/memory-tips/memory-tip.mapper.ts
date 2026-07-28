@@ -1,3 +1,4 @@
+import { JsonValueSchema, type JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import { memoryTipSchema, type MemoryTip } from "./memory-tip.schema";
@@ -27,7 +28,7 @@ export const memoryTipRowSchema = z.object({
 
 export type MemoryTipRow = z.infer<typeof memoryTipRowSchema>;
 
-export function mapMemoryTipRow(row: unknown): MemoryTip {
+export function mapMemoryTipRow(row: JsonFieldValue): MemoryTip {
  const parsed = memoryTipRowSchema.parse(row);
 
  return memoryTipSchema.parse({
@@ -54,6 +55,8 @@ export function mapMemoryTipRow(row: unknown): MemoryTip {
  });
 }
 
-export function mapMemoryTipRows(rows: unknown[] | null): MemoryTip[] {
+export function mapMemoryTipRows(
+ rows: z.infer<z.ZodNullable<z.ZodArray<typeof JsonValueSchema>>>,
+): MemoryTip[] {
  return (rows ?? []).map(mapMemoryTipRow);
 }

@@ -5,71 +5,65 @@
  * narrows JSON fields, normalizes nullable columns, or models a non-table response.
  */
 
+import { JsonObjectSchema, JsonValueSchema, type JsonObject } from "@/types/json";
 import { z } from "zod";
 import type { Tables } from "@/types/supabase.generated";
+import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
 
 /* ══════════════════════════════════════════
    Legacy normalized service rows
    ══════════════════════════════════════════ */
 
-export type DbUser = {
- id: string;
- display_name: string | null;
- avatar_url: string | null;
- role: "user" | "admin";
- subscription_tier: "free" | "pro" | "lifetime";
- ai_credits: number;
- created_at: string;
-};
+export const DbUserSchema = z.object({
+ id: z.string(),
+ display_name: z.string().nullable(),
+ avatar_url: z.string().nullable(),
+ role: z.enum(["user", "admin"]),
+ subscription_tier: z.enum(["free", "pro", "lifetime"]),
+ ai_credits: z.number(),
+ created_at: z.string(),
+});
+export type DbUser = z.infer<typeof DbUserSchema>;
 
-export type DbBook = {
- id: string;
- title: string;
- level: string | null;
- cover_url: string | null;
- is_published: boolean;
- created_at: string;
-};
+export const DbBookSchema = z.object({
+ id: z.string(),
+ title: z.string(),
+ level: z.string().nullable(),
+ cover_url: z.string().nullable(),
+ is_published: z.boolean(),
+ created_at: z.string(),
+});
+export type DbBook = z.infer<typeof DbBookSchema>;
 
-export type DbLesson = {
- id: string;
- book_id: string | null;
- title: string;
- lesson_order: number | null;
- description: string | null;
- raw_passage: string | null;
- audio_url: string | null;
- created_at: string;
-};
-
-export type DbVocabulary = {
- id: string;
- hanzi: string;
- pinyin: string | null;
- sino_vietnamese: string | null;
- meaning: string | null;
- analysis: AiAnalysis | null;
- ai_analysis: AiAnalysis | null;
- created_at: string;
-};
+export const DbLessonSchema = z.object({
+ id: z.string(),
+ book_id: z.string().nullable(),
+ title: z.string(),
+ lesson_order: z.number().nullable(),
+ description: z.string().nullable(),
+ raw_passage: z.string().nullable(),
+ audio_url: z.string().nullable(),
+ created_at: z.string(),
+});
+export type DbLesson = z.infer<typeof DbLessonSchema>;
 
 export type DbUserAiPromptSettings = Tables<"user_ai_prompt_settings">;
 
-export type DbUserApiKey = Omit<Tables<"user_api_keys">, "provider"> & {
- provider: "deepseek" | "gemini" | "openai" | "groq";
-};
-
-export type DbDictionaryCore = {
- id: string;
- headword: string;
- lookup_key: string;
- pinyin: string | null;
- sino_vietnamese: string | null;
- data: Record<string, unknown>;
- lookup_count: number;
- type: VocabType;
- created_at: string;
-};
+export const DbUserApiKeySchema = z.object({
+ id: z.string(),
+ user_id: z.string(),
+ provider: ApiKeyProviderSchema,
+ label: z.string(),
+ masked_key: z.string(),
+ encrypted_key: z.string(),
+ is_active: z.boolean(),
+ priority: z.number(),
+ default_model: z.string().nullable(),
+ last_validated_at: z.string().nullable(),
+ created_at: z.string(),
+ updated_at: z.string(),
+});
+export type DbUserApiKey = z.infer<typeof DbUserApiKeySchema>;
 
 export type DbUserVocabulary = {
  user_id: string;
@@ -77,269 +71,98 @@ export type DbUserVocabulary = {
  created_at: string;
 };
 
-export type DbNote = {
- id: string;
- user_id: string;
- title: string;
- content: Record<string, unknown>;
- reading_content: Record<string, unknown> | null;
- split_view_enabled: boolean;
- tags: string[];
- linked_lesson_id: string | null;
- is_published: boolean;
- category: NoteCategory;
- status: NoteStatus;
- short_id: string | null;
- created_at: string;
- updated_at: string;
- folder_id: string | null;
- reading_status: ReadingStatus | null;
- source_url: string | null;
- source_host: string | null;
- source_label: string | null;
- source_author: string | null;
- source_published_at: string | null;
- source_captured_at: string | null;
-};
+export const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "general"]);
+export const NoteStatusSchema = z.enum(["draft", "reviewed", "mastered"]);
+export const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
+export const PersonalNoteModeSchema = z.enum(["normal", "important"]);
+export const VocabTypeSchema = z.enum(["word", "sentence"]);
 
-export type DbExercise = {
- id: string;
- lesson_id: string;
- type: "multiple_choice" | "fill_blank" | "true_false";
- content: Record<string, unknown>;
- order_index: number | null;
-};
+export const DbNoteSchema = z.object({
+ id: z.string(),
+ user_id: z.string(),
+ title: z.string(),
+ content: JsonObjectSchema,
+ reading_content: JsonObjectSchema.nullable(),
+ split_view_enabled: z.boolean(),
+ tags: z.array(z.string()),
+ linked_lesson_id: z.string().nullable(),
+ is_published: z.boolean(),
+ category: NoteCategorySchema,
+ status: NoteStatusSchema,
+ short_id: z.string().nullable(),
+ created_at: z.string(),
+ updated_at: z.string(),
+ folder_id: z.string().nullable(),
+ reading_status: ReadingStatusSchema.nullable(),
+ source_url: z.string().nullable(),
+ source_host: z.string().nullable(),
+ source_label: z.string().nullable(),
+ source_author: z.string().nullable(),
+ source_published_at: z.string().nullable(),
+ source_captured_at: z.string().nullable(),
+});
 
-export type DbUserLessonProgress = {
- user_id: string;
- lesson_id: string;
- status: "started" | "completed";
- last_accessed_at: string;
-};
+export type DbNote = z.infer<typeof DbNoteSchema>;
 
-export type DbUserVocabProgress = {
- user_id: string;
- vocab_id: string;
- proficiency_level: number;
- next_review_at: string | null;
- is_favorited: boolean;
- context_sentence: string | null;
- context_translation: string | null;
- personal_note: string | null;
- personal_note_mode: PersonalNoteMode | null;
-};
+export const DbExerciseSchema = z.object({
+ id: z.string(),
+ lesson_id: z.string(),
+ type: z.enum(["multiple_choice", "fill_blank", "true_false"]),
+ content: JsonObjectSchema,
+ order_index: z.number().nullable(),
+});
+export type DbExercise = z.infer<typeof DbExerciseSchema>;
 
-export type DbLessonVocabulary = {
- lesson_id: string;
- vocab_id: string;
- is_target_word: boolean;
-};
+export const DbUserLessonProgressSchema = z.object({
+ user_id: z.string(),
+ lesson_id: z.string(),
+ status: z.enum(["started", "completed"]),
+ last_accessed_at: z.string(),
+});
+export type DbUserLessonProgress = z.infer<typeof DbUserLessonProgressSchema>;
 
-export type DbVocabCourse = {
- id: string;
- owner_id: string;
- course_key: string;
- title: string;
- source_file: string;
- source_path: string | null;
- generated_at: string | null;
- imported_at: string;
- created_at: string;
-};
+export const DbUserVocabProgressSchema = z.object({
+ user_id: z.string(),
+ vocab_id: z.string(),
+ proficiency_level: z.number(),
+ next_review_at: z.string().nullable(),
+ is_favorited: z.boolean(),
+ context_sentence: z.string().nullable(),
+ context_translation: z.string().nullable(),
+ personal_note: z.string().nullable(),
+ personal_note_mode: PersonalNoteModeSchema.nullable(),
+});
+export type DbUserVocabProgress = z.infer<typeof DbUserVocabProgressSchema>;
 
-export type DbVocabLesson = {
- id: string;
- course_id: string;
- lesson_key: string;
- lesson_number: number | null;
- title: string;
- lesson_order: number;
- item_count: number;
- created_at: string;
- updated_at: string;
-};
-
-export type DbVocabEntry = {
- id: string;
- course_id: string;
- lesson_id: string;
- hanzi: string;
- pinyin: string | null;
- sino_vietnamese: string | null;
- meaning: string | null;
- word_type: string | null;
- category: string | null;
- row_number: number;
- ai_analysis: AiAnalysis | null;
- created_at: string;
- updated_at: string;
-};
-
-export type DbUserVocabEntryProgress = {
- user_id: string;
- entry_id: string;
- proficiency_level: number;
- next_review_at: string | null;
- is_favorited: boolean;
- last_answered_at: string | null;
- created_at: string;
- updated_at: string;
-};
+export const DbLessonVocabularySchema = z.object({
+ lesson_id: z.string(),
+ vocab_id: z.string(),
+ is_target_word: z.boolean(),
+});
+export type DbLessonVocabulary = z.infer<typeof DbLessonVocabularySchema>;
 
 /* ══════════════════════════════════════════
    Enums & Constrained Types
    ══════════════════════════════════════════ */
 
-export type NoteCategory = "grammar" | "vocabulary" | "culture" | "general";
-export type NoteStatus = "draft" | "reviewed" | "mastered";
-export type ReadingStatus = "inbox" | "reading" | "completed";
-export type VocabProficiency = 0 | 1 | 2 | 3 | 4 | 5;
-export type PersonalNoteMode = "normal" | "important";
-export type VocabType = "word" | "sentence";
+export type NoteCategory = z.infer<typeof NoteCategorySchema>;
+export type NoteStatus = z.infer<typeof NoteStatusSchema>;
+export type ReadingStatus = z.infer<typeof ReadingStatusSchema>;
+export const VocabProficiencySchema = z.union([
+ z.literal(0),
+ z.literal(1),
+ z.literal(2),
+ z.literal(3),
+ z.literal(4),
+ z.literal(5),
+]);
+export type VocabProficiency = z.infer<typeof VocabProficiencySchema>;
+export type PersonalNoteMode = z.infer<typeof PersonalNoteModeSchema>;
+export type VocabType = z.infer<typeof VocabTypeSchema>;
 
 /* ══════════════════════════════════════════
    AI Analysis (JSONB shape)
    ══════════════════════════════════════════ */
-
-export type AiRadical = {
- char?: string;
- pinyin?: string;
- meaning?: string;
-};
-
-export type AiDefinitionExample = {
- cn?: string;
- py?: string;
- pinyin?: string;
- vi?: string;
-};
-
-export type AiDefinitionMeaning = {
- meaning?: string;
- examples?: AiDefinitionExample[];
-};
-
-export type AiDefinition = {
- pos?: string;
- text?: string;
- meaning?: string;
- color?: string;
- examples?: AiDefinitionExample[];
- meanings?: AiDefinitionMeaning[];
-};
-
-export type DictionaryCoreDefinition = {
- part_of_speech?: string;
- meaning?: string;
- example?: string;
- examples?: AiDefinitionExample[];
-};
-
-export type AiGrammarPoint = {
- pattern?: string;
- structure?: string;
- explanation?: string;
-};
-
-export type AiMeaning = {
- part_of_speech?: string;
- definition?: string;
- example?: {
-  cn?: string;
-  pinyin?: string;
-  vi?: string;
- };
-};
-
-export type AiEtymology = {
- type?: string;
- origin?: string;
- mnemonic?: string;
- explanation?: string;
-};
-
-export type AiWordRelation = {
- word?: string;
- pinyin?: string;
- meaning?: string;
-};
-
-export type AiRelatedCompound = AiWordRelation;
-
-export type AiComponent = {
- part?: string;
- name?: string;
- meaning?: string;
-};
-
-export type AiSourceMetadata = {
- course_key?: string;
- lesson_key?: string;
- lesson_number?: number | null;
- lesson_title?: string;
- row_number?: number | null;
- category?: string;
- source_file?: string;
-};
-
-export type AiExample = {
- zh: string;
- pinyin: string;
- vi: string;
- note?: string;
-};
-
-export type AiAnalysis = {
- hanzi?: string;
- pinyin?: string;
- han_viet?: string;
- sino_vietnamese?: string;
- meaning_summary?: string;
- meaning_detail?: string;
- han_viet_note?: string;
- source_metadata?: AiSourceMetadata;
- stroke_count?: number | null;
- radical?: string | null;
- radicals?: AiRadical[];
- components?: AiComponent[];
- word_type?: string;
- definitions?: AiDefinition[];
- decomposition?: string;
- comparisons?: string[];
- etymology?: string | AiEtymology;
- related_compounds?: AiRelatedCompound[];
- synonyms?: AiWordRelation[];
- antonyms?: AiWordRelation[];
- mnemonic_story?: string;
- meanings?: AiMeaning[];
- examples?: AiExample[];
- usage_logic?: string[];
- collocations?: string[];
- related_words?: string[];
- usage_note?: string;
- cultural_note?: string;
- hsk_level?: string;
- tocfl_level?: string;
- notes?: string;
- vn_trap?: string | null;
- common_mistakes?: string | null;
- confusion?: string | null;
- confusion_warning?: string | null;
- sentence_translation?: string;
- grammar_breakdown?: AiGrammarPoint[];
-};
-
-export type DictionaryCoreData = {
- definitions?: DictionaryCoreDefinition[];
- ai_analysis?: AiAnalysis;
-};
-
-export type SentenceInsight = {
- text: string;
- pinyin?: string;
- translation?: string;
- grammar_points?: AiGrammarPoint[];
-};
 
 /* ══════════════════════════════════════════
    Zod Validators (for untrusted data)
@@ -421,6 +244,13 @@ export const aiSourceMetadataSchema = z.object({
  source_file: z.string().optional(),
 });
 
+export const aiExampleSchema = z.object({
+ zh: z.string(),
+ pinyin: z.string(),
+ vi: z.string(),
+ note: z.string().optional(),
+});
+
 export const aiAnalysisSchema = z.object({
  hanzi: z.string().optional(),
  pinyin: z.string().optional(),
@@ -444,16 +274,7 @@ export const aiAnalysisSchema = z.object({
  antonyms: z.array(aiWordRelationSchema).optional(),
  mnemonic_story: z.string().optional(),
  meanings: z.array(aiMeaningSchema).optional(),
- examples: z
-  .array(
-   z.object({
-    zh: z.string(),
-    pinyin: z.string(),
-    vi: z.string(),
-    note: z.string().optional(),
-   }),
-  )
-  .optional(),
+ examples: z.array(aiExampleSchema).optional(),
  usage_logic: z.array(z.string()).optional(),
  collocations: z.array(z.string()).optional(),
  related_words: z.array(z.string()).optional(),
@@ -470,6 +291,45 @@ export const aiAnalysisSchema = z.object({
  grammar_breakdown: z.array(aiGrammarPointSchema).optional(),
 });
 
+export const dictionaryCoreDefinitionSchema = z.object({
+ part_of_speech: z.string().optional(),
+ meaning: z.string().optional(),
+ example: z.string().optional(),
+ examples: z.array(aiDefinitionExampleSchema).optional(),
+});
+
+export const DictionaryCoreDataSchema = z.object({
+ definitions: z.array(dictionaryCoreDefinitionSchema).optional(),
+ ai_analysis: aiAnalysisSchema.optional(),
+});
+
+export const DbDictionaryCoreSchema = z.object({
+ id: z.string(),
+ headword: z.string(),
+ lookup_key: z.string(),
+ pinyin: z.string().nullable(),
+ sino_vietnamese: z.string().nullable(),
+ data: DictionaryCoreDataSchema,
+ lookup_count: z.number(),
+ created_at: z.string(),
+});
+
+export const DbVocabularySchema = z.object({
+ id: z.string(),
+ hanzi: z.string(),
+ pinyin: z.string().nullable(),
+ sino_vietnamese: z.string().nullable(),
+ meaning: z.string().nullable(),
+ analysis: JsonValueSchema,
+ ai_analysis: JsonValueSchema.nullable(),
+ created_at: z.string().nullable(),
+});
+
+export const GenerateVocabResponseSchema = z.object({
+ data: aiAnalysisSchema,
+ cached: z.boolean(),
+});
+
 export const sentenceInsightSchema = z.object({
  text: z.string().optional(),
  pinyin: z.string().optional(),
@@ -478,257 +338,359 @@ export const sentenceInsightSchema = z.object({
 });
 
 export type AiVocabResponse = z.infer<typeof aiAnalysisSchema>;
+export type AiRadical = z.infer<typeof aiRadicalSchema>;
+export type AiDefinitionExample = z.infer<typeof aiDefinitionExampleSchema>;
+export type AiDefinitionMeaning = z.infer<typeof aiDefinitionMeaningSchema>;
+export type AiDefinition = z.infer<typeof aiDefinitionSchema>;
+export type DictionaryCoreDefinition = z.infer<typeof dictionaryCoreDefinitionSchema>;
+export type AiGrammarPoint = z.infer<typeof aiGrammarPointSchema>;
+export type AiMeaning = z.infer<typeof aiMeaningSchema>;
+export type AiEtymology = z.infer<typeof aiEtymologySchema>;
+export type AiWordRelation = z.infer<typeof aiWordRelationSchema>;
+export type AiRelatedCompound = z.infer<typeof aiRelatedCompoundSchema>;
+export type AiComponent = z.infer<typeof aiComponentSchema>;
+export type AiSourceMetadata = z.infer<typeof aiSourceMetadataSchema>;
+export type AiExample = z.infer<typeof aiExampleSchema>;
+export type AiAnalysis = z.infer<typeof aiAnalysisSchema>;
+export type DictionaryCoreData = z.infer<typeof DictionaryCoreDataSchema>;
+export type DbDictionaryCore = z.infer<typeof DbDictionaryCoreSchema>;
+export type DbVocabulary = z.infer<typeof DbVocabularySchema>;
 export type SentenceInsightResponse = z.infer<typeof sentenceInsightSchema>;
 
 /* ══════════════════════════════════════════
    Composite / View Types (used by features)
    ══════════════════════════════════════════ */
 
+export const DbVocabCourseSchema = z.object({
+ id: z.string(),
+ owner_id: z.string(),
+ course_key: z.string(),
+ title: z.string(),
+ source_file: z.string(),
+ source_path: z.string().nullable(),
+ generated_at: z.string().nullable(),
+ imported_at: z.string(),
+ created_at: z.string(),
+});
+export type DbVocabCourse = z.infer<typeof DbVocabCourseSchema>;
+
+export const DbVocabLessonSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_key: z.string(),
+ lesson_number: z.number().nullable(),
+ title: z.string(),
+ lesson_order: z.number(),
+ item_count: z.number(),
+ created_at: z.string(),
+ updated_at: z.string(),
+});
+export type DbVocabLesson = z.infer<typeof DbVocabLessonSchema>;
+
+export const DbVocabEntrySchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_id: z.string(),
+ hanzi: z.string(),
+ pinyin: z.string().nullable(),
+ sino_vietnamese: z.string().nullable(),
+ meaning: z.string().nullable(),
+ word_type: z.string().nullable(),
+ category: z.string().nullable(),
+ row_number: z.number(),
+ ai_analysis: aiAnalysisSchema.nullable(),
+ created_at: z.string(),
+ updated_at: z.string(),
+});
+export type DbVocabEntry = z.infer<typeof DbVocabEntrySchema>;
+
+export const DbUserVocabEntryProgressSchema = z.object({
+ user_id: z.string(),
+ entry_id: z.string(),
+ proficiency_level: z.number(),
+ next_review_at: z.string().nullable(),
+ is_favorited: z.boolean(),
+ last_answered_at: z.string().nullable(),
+ created_at: z.string(),
+ updated_at: z.string(),
+});
+export type DbUserVocabEntryProgress = z.infer<typeof DbUserVocabEntryProgressSchema>;
+
 /** Vocabulary enriched with user progress */
-export type VocabWithProgress = {
- id: string;
- hanzi: string;
- pinyin: string;
- sino_vietnamese?: string;
- meaning: string;
- ai_analysis: AiAnalysis;
- source?: {
-  courseKey?: string;
-  lessonKey: string;
-  lessonNumber: number | null;
-  lessonTitle?: string;
-  rowNumber?: number | null;
-  category?: string;
-  sourceFile?: string;
- };
- proficiency_level: number;
- is_favorited: boolean;
- status: "new" | "learning" | "mastered";
- type: VocabType;
-};
+export const VocabLearningStatusSchema = z.enum(["new", "learning", "mastered"]);
 
-export type VocabEntryWithProgress = {
- id: string;
- course_id: string;
- lesson_id: string;
- hanzi: string;
- pinyin: string;
- sino_vietnamese?: string;
- meaning: string;
- word_type?: string;
- category?: string;
- row_number: number;
- ai_analysis: AiAnalysis;
- proficiency_level: number;
- is_favorited: boolean;
- last_answered_at: string | null;
- status: "new" | "learning" | "mastered";
- type: VocabType;
- source: {
-  courseKey: string;
-  lessonKey: string;
-  lessonNumber: number | null;
-  lessonTitle: string;
-  rowNumber: number;
-  category?: string;
-  sourceFile?: string;
- };
-};
+export const VocabSourceSchema = z.object({
+ courseKey: z.string().optional(),
+ lessonKey: z.string(),
+ lessonNumber: z.number().nullable(),
+ lessonTitle: z.string().optional(),
+ rowNumber: z.number().nullable().optional(),
+ category: z.string().optional(),
+ sourceFile: z.string().optional(),
+});
 
-export type VocabLessonWithStats = {
- id: string;
- course_id: string;
- lesson_key: string;
- lesson_number: number | null;
- title: string;
- lesson_order: number;
- item_count: number;
- entries: VocabEntryWithProgress[];
- studied: number;
- mastered: number;
- learning: number;
- fresh: number;
- progress: number;
- categories: { name: string; count: number }[];
-};
+export const VocabWithProgressSchema = z.object({
+ id: z.string(),
+ hanzi: z.string(),
+ pinyin: z.string(),
+ sino_vietnamese: z.string().optional(),
+ meaning: z.string(),
+ ai_analysis: aiAnalysisSchema,
+ source: VocabSourceSchema.optional(),
+ proficiency_level: z.number(),
+ is_favorited: z.boolean(),
+ status: VocabLearningStatusSchema,
+ type: VocabTypeSchema,
+});
+export type VocabWithProgress = z.infer<typeof VocabWithProgressSchema>;
 
-export type VocabCourseWithLessons = {
- id: string;
- course_key: string;
- title: string;
- source_file: string;
- source_path?: string | null;
- generated_at?: string | null;
- imported_at?: string;
- lessons: VocabLessonWithStats[];
- entries: VocabEntryWithProgress[];
-};
+export const VocabEntryWithProgressSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_id: z.string(),
+ hanzi: z.string(),
+ pinyin: z.string(),
+ sino_vietnamese: z.string().optional(),
+ meaning: z.string(),
+ word_type: z.string().optional(),
+ category: z.string().optional(),
+ row_number: z.number(),
+ ai_analysis: aiAnalysisSchema,
+ proficiency_level: z.number(),
+ is_favorited: z.boolean(),
+ last_answered_at: z.string().nullable(),
+ status: VocabLearningStatusSchema,
+ type: VocabTypeSchema,
+ source: VocabSourceSchema.extend({
+  courseKey: z.string(),
+  lessonTitle: z.string(),
+  rowNumber: z.number(),
+ }),
+});
+export type VocabEntryWithProgress = z.infer<typeof VocabEntryWithProgressSchema>;
 
-export type GrammarExerciseType =
- "fill_blank" | "multiple_choice" | "reorder_sentence" | "translate_zh" | "identify_error";
+export const VocabLessonWithStatsSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_key: z.string(),
+ lesson_number: z.number().nullable(),
+ title: z.string(),
+ lesson_order: z.number(),
+ item_count: z.number(),
+ entries: z.array(VocabEntryWithProgressSchema),
+ studied: z.number(),
+ mastered: z.number(),
+ learning: z.number(),
+ fresh: z.number(),
+ progress: z.number(),
+ categories: z.array(z.object({ name: z.string(), count: z.number() })),
+});
+export type VocabLessonWithStats = z.infer<typeof VocabLessonWithStatsSchema>;
 
-export type GrammarPointContent = {
- quick_example?: {
-  zh?: string;
-  pinyin?: string;
-  vi?: string;
- };
- core?: string;
- explanation?: string;
- formulas?: string[];
- structures?: string[];
- usage_notes?: string[];
- traps?: string[];
- common_mistakes?: string[];
- comparisons?: string[];
- quiz?: {
-  q?: string;
-  choices?: string[];
-  a?: number;
- };
- coach_contrasts?: { title: string; body: string }[];
- examples?: AiExample[];
- source_metadata?: {
-  course_key?: string;
-  lesson_key?: string;
-  lesson_number?: number | null;
-  lesson_title?: string;
-  row_number?: number | null;
-  source?: string;
- };
-};
+export const VocabCourseWithLessonsSchema = z.object({
+ id: z.string(),
+ course_key: z.string(),
+ title: z.string(),
+ source_file: z.string(),
+ source_path: z.string().nullable().optional(),
+ generated_at: z.string().nullable().optional(),
+ imported_at: z.string().optional(),
+ lessons: z.array(VocabLessonWithStatsSchema),
+ entries: z.array(VocabEntryWithProgressSchema),
+});
+export type VocabCourseWithLessons = z.infer<typeof VocabCourseWithLessonsSchema>;
 
-export type GrammarExerciseContent = {
- choices?: { id: string; text: string; note?: string }[];
- tokens?: string[];
- segments?: { id: string; text: string }[];
- accepted_answers?: string[];
- required_terms?: string[];
- sample_answer?: string;
- blank?: string;
- exercise_set_id?: string;
- generated_by?: string;
- generated_at?: string;
- source_point_title?: string;
-};
+export const GrammarExerciseTypeSchema = z.enum([
+ "fill_blank",
+ "multiple_choice",
+ "reorder_sentence",
+ "translate_zh",
+ "identify_error",
+]);
+export type GrammarExerciseType = z.infer<typeof GrammarExerciseTypeSchema>;
 
-export type DbGrammarCourse = {
- id: string;
- owner_id: string;
- course_key: string;
- title: string;
- source_type: string;
- source_file?: string | null;
- created_at?: string;
- updated_at?: string;
-};
+export const GrammarPointContentSchema = z.object({
+ quick_example: z
+  .object({ zh: z.string().optional(), pinyin: z.string().optional(), vi: z.string().optional() })
+  .optional(),
+ core: z.string().optional(),
+ explanation: z.string().optional(),
+ formulas: z.array(z.string()).optional(),
+ structures: z.array(z.string()).optional(),
+ usage_notes: z.array(z.string()).optional(),
+ traps: z.array(z.string()).optional(),
+ common_mistakes: z.array(z.string()).optional(),
+ comparisons: z.array(z.string()).optional(),
+ quiz: z
+  .object({
+   q: z.string().optional(),
+   choices: z.array(z.string()).optional(),
+   a: z.number().optional(),
+  })
+  .optional(),
+ coach_contrasts: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+ examples: z.array(aiExampleSchema).optional(),
+ source_metadata: z
+  .object({
+   course_key: z.string().optional(),
+   lesson_key: z.string().optional(),
+   lesson_number: z.number().nullable().optional(),
+   lesson_title: z.string().optional(),
+   row_number: z.number().nullable().optional(),
+   source: z.string().optional(),
+  })
+  .optional(),
+});
+export type GrammarPointContent = z.infer<typeof GrammarPointContentSchema>;
 
-export type DbGrammarLesson = {
- id: string;
- course_id: string;
- lesson_key: string;
- lesson_number: number | null;
- title: string;
- lesson_order: number;
- description?: string | null;
- created_at?: string;
- updated_at?: string;
-};
+export const GrammarExerciseContentSchema = z.object({
+ choices: z
+  .array(z.object({ id: z.string(), text: z.string(), note: z.string().optional() }))
+  .optional(),
+ tokens: z.array(z.string()).optional(),
+ segments: z.array(z.object({ id: z.string(), text: z.string() })).optional(),
+ accepted_answers: z.array(z.string()).optional(),
+ required_terms: z.array(z.string()).optional(),
+ sample_answer: z.string().optional(),
+ blank: z.string().optional(),
+ exercise_set_id: z.string().optional(),
+ generated_by: z.string().optional(),
+ generated_at: z.string().optional(),
+ source_point_title: z.string().optional(),
+});
+export type GrammarExerciseContent = z.infer<typeof GrammarExerciseContentSchema>;
 
-export type DbGrammarPoint = {
- id: string;
- course_id: string;
- lesson_id?: string | null;
- title: string;
- hanzi?: string | null;
- pinyin?: string | null;
- vietnamese_title?: string | null;
- level?: string | null;
- category?: string | null;
- tags?: string[] | null;
- row_number: number;
- content?: GrammarPointContent | null;
- created_at?: string;
- updated_at?: string;
-};
+export const DbGrammarCourseSchema = z.object({
+ id: z.string(),
+ owner_id: z.string(),
+ course_key: z.string(),
+ title: z.string(),
+ source_type: z.string(),
+ source_file: z.string().nullable().optional(),
+ created_at: z.string().optional(),
+ updated_at: z.string().optional(),
+});
+export type DbGrammarCourse = z.infer<typeof DbGrammarCourseSchema>;
 
-export type DbGrammarExercise = {
- id: string;
- course_id: string;
- lesson_id?: string | null;
- point_id?: string | null;
- exercise_type: GrammarExerciseType;
- prompt: string;
- content?: GrammarExerciseContent | null;
- answer?: Record<string, unknown> | null;
- explanation?: string | null;
- exercise_order: number;
- created_at?: string;
- updated_at?: string;
-};
+export const DbGrammarLessonSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_key: z.string(),
+ lesson_number: z.number().nullable(),
+ title: z.string(),
+ lesson_order: z.number(),
+ description: z.string().nullable().optional(),
+ created_at: z.string().optional(),
+ updated_at: z.string().optional(),
+});
+export type DbGrammarLesson = z.infer<typeof DbGrammarLessonSchema>;
 
-export type DbUserGrammarPointProgress = {
- user_id: string;
- point_id: string;
- proficiency_level: number;
- last_studied_at?: string | null;
- next_review_at?: string | null;
- created_at?: string;
- updated_at?: string;
-};
+export const DbGrammarPointSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_id: z.string().nullable().optional(),
+ title: z.string(),
+ hanzi: z.string().nullable().optional(),
+ pinyin: z.string().nullable().optional(),
+ vietnamese_title: z.string().nullable().optional(),
+ level: z.string().nullable().optional(),
+ category: z.string().nullable().optional(),
+ tags: z.array(z.string()).nullable().optional(),
+ row_number: z.number(),
+ content: GrammarPointContentSchema.nullable().optional(),
+ created_at: z.string().optional(),
+ updated_at: z.string().optional(),
+});
+export type DbGrammarPoint = z.infer<typeof DbGrammarPointSchema>;
 
-export type GrammarPointWithProgress = Omit<DbGrammarPoint, "content" | "tags"> & {
- content: GrammarPointContent;
- tags: string[];
- proficiency_level: number;
- status: "new" | "learning" | "mastered";
- exercises: DbGrammarExercise[];
-};
+export const DbGrammarExerciseSchema = z.object({
+ id: z.string(),
+ course_id: z.string(),
+ lesson_id: z.string().nullable().optional(),
+ point_id: z.string().nullable().optional(),
+ exercise_type: GrammarExerciseTypeSchema,
+ prompt: z.string(),
+ content: GrammarExerciseContentSchema.nullable().optional(),
+ answer: JsonObjectSchema.nullable().optional(),
+ explanation: z.string().nullable().optional(),
+ exercise_order: z.number(),
+ created_at: z.string().optional(),
+ updated_at: z.string().optional(),
+});
+export type DbGrammarExercise = z.infer<typeof DbGrammarExerciseSchema>;
 
-export type GrammarLessonWithStats = DbGrammarLesson & {
- points: GrammarPointWithProgress[];
- exercises: DbGrammarExercise[];
- fresh: number;
- learning: number;
- mastered: number;
- progress: number;
- categories: { name: string; count: number }[];
-};
+export const DbUserGrammarPointProgressSchema = z.object({
+ user_id: z.string(),
+ point_id: z.string(),
+ proficiency_level: z.number(),
+ last_studied_at: z.string().nullable().optional(),
+ next_review_at: z.string().nullable().optional(),
+ created_at: z.string().optional(),
+ updated_at: z.string().optional(),
+});
+export type DbUserGrammarPointProgress = z.infer<typeof DbUserGrammarPointProgressSchema>;
 
-export type GrammarCourseWithLessons = DbGrammarCourse & {
- lessons: GrammarLessonWithStats[];
- points: GrammarPointWithProgress[];
- exercises: DbGrammarExercise[];
-};
+export const GrammarPointWithProgressSchema = DbGrammarPointSchema.omit({
+ content: true,
+ tags: true,
+}).extend({
+ content: GrammarPointContentSchema,
+ tags: z.array(z.string()),
+ proficiency_level: z.number(),
+ status: VocabLearningStatusSchema,
+ exercises: z.array(DbGrammarExerciseSchema),
+});
+export type GrammarPointWithProgress = z.infer<typeof GrammarPointWithProgressSchema>;
+
+export const GrammarLessonWithStatsSchema = DbGrammarLessonSchema.extend({
+ points: z.array(GrammarPointWithProgressSchema),
+ exercises: z.array(DbGrammarExerciseSchema),
+ fresh: z.number(),
+ learning: z.number(),
+ mastered: z.number(),
+ progress: z.number(),
+ categories: z.array(z.object({ name: z.string(), count: z.number() })),
+});
+export type GrammarLessonWithStats = z.infer<typeof GrammarLessonWithStatsSchema>;
+
+export const GrammarCourseWithLessonsSchema = DbGrammarCourseSchema.extend({
+ lessons: z.array(GrammarLessonWithStatsSchema),
+ points: z.array(GrammarPointWithProgressSchema),
+ exercises: z.array(DbGrammarExerciseSchema),
+});
+export type GrammarCourseWithLessons = z.infer<typeof GrammarCourseWithLessonsSchema>;
 
 /** Vocab data used by inspector & dictionary */
-export type VocabData = {
- id?: string;
- dictionary_id?: string;
- hanzi: string;
- pinyin: string;
- sino_vietnamese?: string;
- meaning: string;
- ai_analysis?: AiAnalysis;
-};
+export const VocabDataSchema = z.object({
+ id: z.string().optional(),
+ dictionary_id: z.string().optional(),
+ hanzi: z.string(),
+ pinyin: z.string(),
+ sino_vietnamese: z.string().optional(),
+ meaning: z.string(),
+ ai_analysis: aiAnalysisSchema.optional(),
+});
+export type VocabData = z.infer<typeof VocabDataSchema>;
 
-export type SmartSelectionMode = "word" | "sentence";
+export const SmartSelectionModeSchema = z.enum(["word", "sentence"]);
+export type SmartSelectionMode = z.infer<typeof SmartSelectionModeSchema>;
 
-export type SmartSelectionResult = {
- mode: SmartSelectionMode;
- selection: string;
- context_sentence: string;
- entry: VocabData;
- radicals: AiRadical[];
- components: AiComponent[];
- definitions: AiDefinition[];
- meaning_summary: string;
- etymology: string;
- mnemonic_story: string;
- translation: string;
- grammar_points: AiGrammarPoint[];
- isSaved: boolean;
- found: boolean;
- personal_note: string;
- personal_note_mode: PersonalNoteMode;
-};
+export const SmartSelectionResultSchema = z.object({
+ mode: SmartSelectionModeSchema,
+ selection: z.string(),
+ context_sentence: z.string(),
+ entry: VocabDataSchema,
+ radicals: z.array(aiRadicalSchema),
+ components: z.array(aiComponentSchema),
+ definitions: z.array(aiDefinitionSchema),
+ meaning_summary: z.string(),
+ etymology: z.string(),
+ mnemonic_story: z.string(),
+ translation: z.string(),
+ grammar_points: z.array(aiGrammarPointSchema),
+ isSaved: z.boolean(),
+ found: z.boolean(),
+ personal_note: z.string(),
+ personal_note_mode: PersonalNoteModeSchema,
+});
+export type SmartSelectionResult = z.infer<typeof SmartSelectionResultSchema>;

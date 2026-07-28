@@ -1,14 +1,19 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
+import { z } from "zod";
+
 const DB_NAME = "hanzihome-local-db";
 const DB_VERSION = 1;
 
 export const HANZIHOME_LOCAL_STORES = {
  learningState: "learning_state",
  pendingMutations: "pending_mutations",
-} as const;
+};
 
-let dbPromise: Promise<IDBDatabase> | null = null;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+
+let dbPromise: Nullable<Promise<IDBDatabase>> = null;
 
 function createStores(db: IDBDatabase) {
  if (!db.objectStoreNames.contains(HANZIHOME_LOCAL_STORES.learningState)) {
@@ -60,7 +65,11 @@ export function openHanziHomeLocalDb(): Promise<IDBDatabase> {
  return dbPromise;
 }
 
-export async function readFromStore<T>(storeName: string, key: IDBValidKey): Promise<T | null> {
+export async function readFromStore<T>(
+ storeName: string,
+ key: IDBValidKey,
+ schema: z.ZodType<T>,
+): Promise<Nullable<T>> {
  const db = await openHanziHomeLocalDb();
 
  return new Promise((resolve, reject) => {
@@ -68,12 +77,15 @@ export async function readFromStore<T>(storeName: string, key: IDBValidKey): Pro
   const store = tx.objectStore(storeName);
   const request = store.get(key);
 
-  request.onsuccess = () => resolve((request.result as T | undefined) ?? null);
+  request.onsuccess = () => {
+   const parsed = schema.safeParse(request.result);
+   resolve(parsed.success ? parsed.data : null);
+  };
   request.onerror = () => reject(request.error);
  });
 }
 
-export async function putInStore(storeName: string, value: unknown): Promise<void> {
+export async function putInStore(storeName: string, value: JsonFieldValue): Promise<void> {
  const db = await openHanziHomeLocalDb();
 
  return new Promise((resolve, reject) => {
@@ -97,7 +109,7 @@ export async function deleteFromStore(storeName: string, key: IDBValidKey): Prom
  });
 }
 
-export async function getAllFromStore<T>(storeName: string): Promise<T[]> {
+export async function getAllFromStore<T>(storeName: string, schema: z.ZodType<T>): Promise<T[]> {
  const db = await openHanziHomeLocalDb();
 
  return new Promise((resolve, reject) => {
@@ -105,7 +117,10 @@ export async function getAllFromStore<T>(storeName: string): Promise<T[]> {
   const store = tx.objectStore(storeName);
   const request = store.getAll();
 
-  request.onsuccess = () => resolve(request.result as T[]);
+  request.onsuccess = () => {
+   const parsed = schema.array().safeParse(request.result);
+   resolve(parsed.success ? parsed.data : []);
+  };
   request.onerror = () => reject(request.error);
  });
 }

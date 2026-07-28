@@ -1,10 +1,13 @@
 "use client";
 
+import type { JsonObject } from "@/types/json";
 import { useCallback, useEffect, useMemo, useRef } from "react";
+import { z } from "zod";
 
 const DEFAULT_SAVE_DELAY_MS = 1200;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-function stableStringify(value: Record<string, unknown> | null) {
+function stableStringify(value: Nullable<JsonObject>) {
  return JSON.stringify(value ?? null);
 }
 
@@ -13,13 +16,13 @@ export function useDebouncedEditorSave({
  onSave,
  delayMs = DEFAULT_SAVE_DELAY_MS,
 }: {
- initialContent: Record<string, unknown> | null;
- onSave: (content: Record<string, unknown>) => void;
+ initialContent: Nullable<JsonObject>;
+ onSave: (content: JsonObject) => void;
  delayMs?: number;
 }) {
  const onSaveRef = useRef(onSave);
- const timerRef = useRef<number | null>(null);
- const pendingContentRef = useRef<Record<string, unknown> | null>(null);
+ const timerRef = useRef<number>(null);
+ const pendingContentRef = useRef<JsonObject>(null);
  const lastSavedSnapshotRef = useRef(stableStringify(initialContent));
  const initialSnapshot = useMemo(() => stableStringify(initialContent), [initialContent]);
 
@@ -51,7 +54,7 @@ export function useDebouncedEditorSave({
  }, []);
 
  return useCallback(
-  (content: Record<string, unknown>) => {
+  (content: JsonObject) => {
    const nextSnapshot = stableStringify(content);
    if (nextSnapshot === lastSavedSnapshotRef.current) return;
 

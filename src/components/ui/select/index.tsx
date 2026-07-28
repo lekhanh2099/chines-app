@@ -13,9 +13,12 @@ import {
 
 import { cn } from "@/lib/utils";
 import { IOption } from "@/types/option";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type SimpleSelectProps = {
- selectValue?: IOption | null;
+ selectValue?: Nullable<IOption>;
  options: IOption[];
  triggerPlaceholder?: string;
  triggerClassName?: string;
@@ -23,7 +26,7 @@ type SimpleSelectProps = {
  disabled?: boolean;
  triggerAriaLabel?: string;
  errorMessage?: React.ReactNode;
- onChange: (option: IOption | null, selectedOption?: IOption | null) => void;
+ onChange: (option: Nullable<IOption>, selectedOption?: Nullable<IOption>) => void;
 };
 
 function stringifyValue(value: IOption["value"]) {
@@ -80,7 +83,7 @@ export function Select({
         <div className="flex min-w-0 items-center gap-2">
          {option.icon && (
           <span className="flex size-4 flex-none items-center justify-center">
-           {typeof option.icon === "function" ? option.icon() : option.icon}
+           <option.icon />
           </span>
          )}
 

@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import { parseErrorLike, type ErrorInput } from "@/types/error";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -43,7 +45,7 @@ const dictionaryRowSchema = z.object({
  headword: z.string(),
  pinyin: z.string().nullable().optional(),
  sino_vietnamese: z.string().nullable().optional(),
- ai_analysis: z.unknown().nullable().optional(),
+ ai_analysis: z.json().nullable().optional(),
 });
 
 type ProgressRow = z.infer<typeof progressRowSchema>;
@@ -63,21 +65,15 @@ type SavedVocabItem = {
  updatedAt: string;
 };
 
-function isMissingTableError(code: string | undefined) {
+function isMissingTableError(code: ReturnType<typeof getErrorCode>) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function getErrorCode(error: unknown) {
- if (typeof error === "object" && error !== null && "code" in error) {
-  const code = (error as { code?: unknown }).code;
-
-  return typeof code === "string" ? code : undefined;
- }
-
- return undefined;
+function getErrorCode(error: ErrorInput) {
+ return parseErrorLike(error).code || undefined;
 }
 
-function getMeaningFromAnalysis(value: unknown) {
+function getMeaningFromAnalysis(value: JsonFieldValue) {
  const parsed = z
   .object({
    meaning_summary: z.string().optional(),
@@ -107,7 +103,7 @@ function getMeaningFromAnalysis(value: unknown) {
  };
 }
 
-function normalizeProgressRows(data: unknown[], legacy: boolean): ProgressRow[] {
+function normalizeProgressRows(data: JsonFieldValue[], legacy: boolean): ProgressRow[] {
  return data.flatMap((row) => {
   if (legacy) {
    const parsed = legacyProgressRowSchema.safeParse(row);

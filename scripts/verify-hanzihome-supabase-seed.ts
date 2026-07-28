@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
+import type { Tables } from "../src/types/supabase.generated.ts";
 import { isDeepStrictEqual } from "node:util";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
@@ -29,7 +31,7 @@ type LessonSectionDbRow = IdSourceRow & {
  title: string;
  title_vi: string;
  section_order: number;
- payload: unknown;
+ payload: JsonFieldValue;
  source_file: string;
 };
 type VocabDbRow = IdSourceRow & { lesson_id: string; item_order: number };
@@ -57,14 +59,14 @@ type GrammarDetailDbRow = IdSourceRow & {
 type RadicalDbRow = IdSourceRow & {
  radical_index: number;
  radical: string;
- name_vi: string | null;
- strokes: number | null;
- core_meaning: unknown;
- variants: unknown;
- related_components: unknown;
- recognition: string | null;
+ name_vi: Tables<"hanzihome_radicals">["name_vi"];
+ strokes: Tables<"hanzihome_radicals">["strokes"];
+ core_meaning: JsonFieldValue;
+ variants: JsonFieldValue;
+ related_components: JsonFieldValue;
+ recognition: Tables<"hanzihome_radicals">["recognition"];
  distinguish: string[];
- groups: unknown;
+ groups: JsonFieldValue;
 };
 
 function seedOnly<T extends IdSourceRow>(rows: T[]) {
@@ -481,7 +483,7 @@ async function main() {
  console.log("Supabase seed verification passed: counts, IDs, parents, order, and samples.");
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

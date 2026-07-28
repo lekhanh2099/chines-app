@@ -54,11 +54,12 @@ export function CreateLessonDialog({
   validators: { onSubmit: formSchema },
   onSubmit: async ({ value }) => {
    try {
+    const courseId = books.find((book) => book.id === value.bookId)?.courseId;
     await createCanonicalContent({
      entityType: "lesson",
      reason: `Tạo bài ${value.lessonNumber}: ${value.titleZh}`,
      changes: {
-      course_id: books.find((book) => book.id === value.bookId)?.courseId,
+      ...(courseId ? { course_id: courseId } : {}),
       book_id: value.bookId,
       lesson_number: Number(value.lessonNumber),
       title_zh: value.titleZh,

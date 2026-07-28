@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import "server-only";
 
 import { NextResponse } from "next/server";
@@ -29,7 +31,7 @@ function statusForMutationError(error: MutationRpcError) {
  return 500;
 }
 
-export function mutationError(message: string, status: number, details?: unknown) {
+export function mutationError(message: string, status: number, details?: JsonFieldValue) {
  return NextResponse.json({ error: message, details }, { status });
 }
 
@@ -52,7 +54,7 @@ export async function mutateCanonicalContent({
   parentEntityType?: string;
   parentEntityId?: string;
  };
- transformChanges?: (changes: Record<string, unknown>) => Record<string, unknown>;
+ transformChanges?: (changes: JsonObject) => JsonObject;
 }) {
  const parsedEntityType = canonicalEntityTypeSchema.parse(entityType);
  const parsedOperation = canonicalMutationOperationSchema.parse(operation);
@@ -63,7 +65,7 @@ export async function mutateCanonicalContent({
 
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsedBody = mutationEnvelopeSchema.safeParse(body);
  if (!parsedBody.success) {
   return mutationError("Invalid HanziHome mutation payload", 400, z.flattenError(parsedBody.error));
@@ -74,7 +76,7 @@ export async function mutateCanonicalContent({
  }
 
  const inputChanges = transformChanges
-  ? transformChanges(parsedBody.data.changes as Record<string, unknown>)
+  ? transformChanges(parsedBody.data.changes as JsonObject)
   : parsedBody.data.changes;
  const parsedChanges = getCanonicalChangesSchema(parsedEntityType, parsedOperation).safeParse(
   inputChanges,

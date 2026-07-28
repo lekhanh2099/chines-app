@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { ExerciseQuestionCard, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { QuestionChoiceList } from "./QuestionChoiceList";
@@ -31,10 +32,10 @@ export function QuestionCard({
 }: {
  itemId: string;
  exerciseType: string;
- questionValue: unknown;
+ questionValue: JsonFieldValue;
  index: number;
  displayMode: LessonDisplayMode;
- answerOverride?: unknown;
+ answerOverride?: JsonFieldValue;
 }) {
  const model = buildExerciseQuestionViewModel({
   exerciseType,

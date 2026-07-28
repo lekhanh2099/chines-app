@@ -1,4 +1,9 @@
-import type { AnnotationAnchor, LessonTextAnnotation, ResolvedLessonTextAnnotation } from "./types";
+import type {
+ AnnotationAnchor,
+ LessonTextAnnotation,
+ NullableAnnotationAnchor,
+ ResolvedLessonTextAnnotation,
+} from "./types";
 
 const CONTEXT_LENGTH = 24;
 
@@ -9,7 +14,7 @@ export function createAnnotationAnchor(input: {
  text: string;
  startOffset: number;
  endOffset: number;
-}): AnnotationAnchor | null {
+}): NullableAnnotationAnchor {
  const { text, startOffset, endOffset } = input;
  if (startOffset < 0 || endOffset <= startOffset || endOffset > text.length) return null;
 

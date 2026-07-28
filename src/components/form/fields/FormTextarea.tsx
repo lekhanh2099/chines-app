@@ -6,9 +6,16 @@ import { useFieldContext } from "@/components/form/form-context";
 import { FieldShell, getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
 import { cn } from "@/lib/utils";
 
+type ControlledTextareaProps = {
+ value?: never;
+ defaultValue?: never;
+ onChange?: never;
+ onBlur?: never;
+ name?: never;
+};
 type FormTextareaProps = Omit<
  TextareaHTMLAttributes<HTMLTextAreaElement>,
- "value" | "defaultValue" | "onChange" | "onBlur" | "name"
+ keyof ControlledTextareaProps
 > & {
  label: string;
  description?: ReactNode;

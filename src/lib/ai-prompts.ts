@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export const WORD_PLACEHOLDER = "{WORD}";
 export const SENTENCE_PLACEHOLDER = "{SENTENCE}";
 
@@ -363,8 +365,11 @@ function isLegacyDefaultTemplate(template: string, placeholder: string): boolean
  return legacyTemplates.some((legacyTemplate) => legacyTemplate.trim() === template);
 }
 
+const OptionalNullableTemplateSchema = z.string().nullable().optional();
+type OptionalNullableTemplate = z.infer<typeof OptionalNullableTemplateSchema>;
+
 function normalizeTemplate(
- template: string | null | undefined,
+ template: OptionalNullableTemplate,
  fallback: string,
  placeholder: string,
 ): string {
@@ -382,15 +387,15 @@ function normalizeTemplate(
   : `${trimmed}\n\nNhớ dùng placeholder ${placeholder} trong prompt.`;
 }
 
-export function getWordLookupPromptTemplate(template?: string | null): string {
+export function getWordLookupPromptTemplate(template?: OptionalNullableTemplate): string {
  return normalizeTemplate(template, DEFAULT_WORD_LOOKUP_PROMPT, WORD_PLACEHOLDER);
 }
 
-export function getSentenceLookupPromptTemplate(template?: string | null): string {
+export function getSentenceLookupPromptTemplate(template?: OptionalNullableTemplate): string {
  return normalizeTemplate(template, DEFAULT_SENTENCE_LOOKUP_PROMPT, SENTENCE_PLACEHOLDER);
 }
 
-export function renderWordLookupPrompt(word: string, template?: string | null): string {
+export function renderWordLookupPrompt(word: string, template?: OptionalNullableTemplate): string {
  return getWordLookupPromptTemplate(template).replaceAll(WORD_PLACEHOLDER, word);
 }
 
@@ -398,6 +403,9 @@ export function renderWordLookupBasicPrompt(word: string): string {
  return DEFAULT_WORD_LOOKUP_BASIC_PROMPT.replaceAll(WORD_PLACEHOLDER, word);
 }
 
-export function renderSentenceLookupPrompt(sentence: string, template?: string | null): string {
+export function renderSentenceLookupPrompt(
+ sentence: string,
+ template?: OptionalNullableTemplate,
+): string {
  return getSentenceLookupPromptTemplate(template).replaceAll(SENTENCE_PLACEHOLDER, sentence);
 }

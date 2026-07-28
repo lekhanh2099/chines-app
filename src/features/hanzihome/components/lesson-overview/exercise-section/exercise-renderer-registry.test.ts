@@ -19,7 +19,7 @@ const BOYA_EXERCISE_TYPES = [
  "sentence_transformation",
  "translation",
  "true_false",
-] as const;
+];
 
 describe("Boya exercise renderer registry", () => {
  it.each(BOYA_EXERCISE_TYPES)("maps %s to an explicit renderer family", (type) => {

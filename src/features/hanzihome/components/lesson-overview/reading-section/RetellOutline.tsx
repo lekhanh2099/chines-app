@@ -1,6 +1,7 @@
+import type { JsonValue } from "@/types/json";
 import { answerToString } from "../utils";
 
-export function RetellOutline({ itemId, values }: { itemId: string; values: unknown[] }) {
+export function RetellOutline({ itemId, values }: { itemId: string; values: JsonValue[] }) {
  const outline = values.map(answerToString).filter(Boolean);
 
  if (outline.length === 0) return null;

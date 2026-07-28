@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import {
@@ -34,6 +35,7 @@ export const htmlArtifactFolderRowSchema = z.object({
 
 export type HtmlArtifactRow = z.infer<typeof htmlArtifactRowSchema>;
 export type HtmlArtifactFolderRow = z.infer<typeof htmlArtifactFolderRowSchema>;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function mapBase(row: HtmlArtifactRow) {
  return {
@@ -48,17 +50,19 @@ function mapBase(row: HtmlArtifactRow) {
  };
 }
 
-export function mapHtmlArtifactSummaryRow(row: unknown): HtmlArtifactSummary {
+export function mapHtmlArtifactSummaryRow(row: JsonFieldValue): HtmlArtifactSummary {
  const parsed = htmlArtifactRowSchema.parse(row);
 
  return htmlArtifactSummarySchema.parse(mapBase(parsed));
 }
 
-export function mapHtmlArtifactSummaryRows(rows: unknown[] | null): HtmlArtifactSummary[] {
+export function mapHtmlArtifactSummaryRows(
+ rows: Nullable<JsonFieldValue[]>,
+): HtmlArtifactSummary[] {
  return (rows ?? []).map(mapHtmlArtifactSummaryRow);
 }
 
-export function mapHtmlArtifactRow(row: unknown): HtmlArtifact {
+export function mapHtmlArtifactRow(row: JsonFieldValue): HtmlArtifact {
  const parsed = htmlArtifactRowSchema.extend({ html: z.string() }).parse(row);
 
  return htmlArtifactSchema.parse({
@@ -67,7 +71,7 @@ export function mapHtmlArtifactRow(row: unknown): HtmlArtifact {
  });
 }
 
-export function mapHtmlArtifactFolderRow(row: unknown): HtmlArtifactFolder {
+export function mapHtmlArtifactFolderRow(row: JsonFieldValue): HtmlArtifactFolder {
  const parsed = htmlArtifactFolderRowSchema.parse(row);
 
  return htmlArtifactFolderSchema.parse({
@@ -82,6 +86,6 @@ export function mapHtmlArtifactFolderRow(row: unknown): HtmlArtifactFolder {
  });
 }
 
-export function mapHtmlArtifactFolderRows(rows: unknown[] | null): HtmlArtifactFolder[] {
+export function mapHtmlArtifactFolderRows(rows: Nullable<JsonFieldValue[]>): HtmlArtifactFolder[] {
  return (rows ?? []).map(mapHtmlArtifactFolderRow);
 }

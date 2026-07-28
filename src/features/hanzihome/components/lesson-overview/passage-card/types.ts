@@ -1,14 +1,18 @@
-export type PassageLine = {
- id: string;
- zh: string;
- pinyin?: string;
- vi?: string;
-};
+import { z } from "zod";
 
-export type ClozeAnswer = {
- key: string;
- label: string;
- answer: string;
- pinyin?: string;
- note?: string;
-};
+export const PassageLineSchema = z.object({
+ id: z.string(),
+ zh: z.string(),
+ pinyin: z.string().optional(),
+ vi: z.string().optional(),
+});
+export type PassageLine = z.infer<typeof PassageLineSchema>;
+
+export const PassageClozeAnswerSchema = z.object({
+ key: z.string(),
+ label: z.string(),
+ answer: z.string(),
+ pinyin: z.string().optional(),
+ note: z.string().optional(),
+});
+export type ClozeAnswer = z.infer<typeof PassageClozeAnswerSchema>;

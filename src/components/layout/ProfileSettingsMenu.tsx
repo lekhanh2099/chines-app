@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import { useState } from "react";
 import type { ReactNode } from "react";
 import { Popover } from "@base-ui/react";
@@ -19,6 +20,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import type { Theme } from "@/components/layout/ThemeProvider";
 import { Button } from "@/components/ui/button";
@@ -29,7 +31,7 @@ import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { cn } from "@/lib/utils";
 
 type ProfileSettingsMenuProps = {
- user?: User | null;
+ user?: z.infer<z.ZodNullable<z.ZodType<User>>>;
  theme: Theme;
  lookupEnabled: boolean;
  focusModeEnabled: boolean;
@@ -41,15 +43,15 @@ type ProfileSettingsMenuProps = {
 const focusModeEnabledMessage =
  "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.";
 
-function readMetadataText(user: User | null | undefined, keys: string[]) {
+function readMetadataText(user: ProfileSettingsMenuProps["user"], keys: string[]) {
  for (const key of keys) {
-  const value: unknown = user?.user_metadata?.[key];
+  const value: JsonFieldValue = user?.user_metadata?.[key];
   if (typeof value === "string" && value.trim()) return value.trim();
  }
  return null;
 }
 
-function getProfile(user: User | null | undefined) {
+function getProfile(user: ProfileSettingsMenuProps["user"]) {
  const email = user?.email ?? "Chưa có email";
  const emailName = user?.email?.split("@")[0] || "Bạn";
  const name = readMetadataText(user, ["full_name", "name", "display_name"]) ?? emailName;
@@ -82,7 +84,7 @@ export function ProfileSettingsMenu({
  const learning = useLearningState({ enabled: open || readingSettingsOpen });
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const profile = getProfile(user);
- const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
+ const [failedAvatarUrl, setFailedAvatarUrl] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
 
  const updateDisplayMode = (updates: Partial<typeof displayMode>) => {

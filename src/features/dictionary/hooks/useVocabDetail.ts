@@ -16,6 +16,7 @@ import {
  upsertVocab,
  saveVocabToSrs,
 } from "@/services/vocab.service";
+import { GenerateVocabResponseSchema } from "@/types/database";
 import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 
 // Dedup concurrent AI generation requests for the same hanzi.
@@ -44,17 +45,20 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
    const user = await getClientSessionUser(supabase);
 
    if (!user) {
+    const vocab: VocabData = {
+     hanzi: chineseText,
+     pinyin: pinyinText,
+     meaning: "",
+     ai_analysis: {},
+    };
+    const personalNoteMode: PersonalNoteMode = "important";
+
     return {
-     vocab: {
-      hanzi: chineseText,
-      pinyin: pinyinText,
-      meaning: "",
-      ai_analysis: {} as AiAnalysis,
-     } as VocabData,
+     vocab,
      srsLevel: null,
      isSaved: false,
      personalNote: "",
-     personalNoteMode: "important" as PersonalNoteMode,
+     personalNoteMode,
     };
    }
 
@@ -83,8 +87,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
      body: JSON.stringify({ hanzi: chineseText }),
     });
     if (!res.ok) throw new Error("AI generation failed");
-    const result = await res.json();
-    return result.data as AiAnalysis;
+    return GenerateVocabResponseSchema.parse(await res.json()).data;
    })();
 
    pendingAiGenerations.set(chineseText, promise);
@@ -104,7 +107,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
       ...old,
       vocab: {
        ...old.vocab,
-       pinyin: (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
+       pinyin: aiData.pinyin || old.vocab.pinyin,
        meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
        ai_analysis: {
         ...old.vocab.ai_analysis,
@@ -119,20 +122,15 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
 
  // ── Mutation: save to SRS ──
  const saveMutation = useMutation({
-  mutationFn: async (
-   vocabInput:
-    | VocabData
-    | {
-       vocabData: VocabData;
-       options?: {
-        contextSentence?: string;
-        contextTranslation?: string;
-        personalNote?: string;
-        personalNoteMode?: PersonalNoteMode;
-       };
-      },
-  ) => {
-   const payload = "vocabData" in vocabInput ? vocabInput : { vocabData: vocabInput };
+  mutationFn: async (payload: {
+   vocabData: VocabData;
+   options?: {
+    contextSentence?: string;
+    contextTranslation?: string;
+    personalNote?: string;
+    personalNoteMode?: PersonalNoteMode;
+   };
+  }) => {
    const user = await getClientSessionUser(supabase);
    if (!user) throw new Error("Not authenticated");
 
@@ -148,10 +146,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
    return result;
   },
   onSuccess: (_result, variables) => {
-   const payload =
-    typeof variables === "object" && variables !== null && "vocabData" in variables
-     ? variables
-     : { vocabData: variables };
+   const payload = variables;
 
    queryClient.setQueryData(
     dictionaryQueryKeys.vocabDetail(chineseText),

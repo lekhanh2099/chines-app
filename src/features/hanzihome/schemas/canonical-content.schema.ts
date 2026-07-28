@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { jsonValueSchema } from "@/lib/json-schema";
+import { EditableEntityTypeSchema } from "@/features/hanzihome/editing/store/types";
 
 export const canonicalEntityTypeSchema = z.enum([
  "course",
@@ -31,12 +32,38 @@ export const mutationEnvelopeSchema = z.object({
 });
 
 export const mutationResponseSchema = z.object({
- item: z.record(z.string(), z.unknown()),
+ item: z.record(z.string(), z.json()),
 });
 
 export type CanonicalEntityType = z.infer<typeof canonicalEntityTypeSchema>;
 export type CanonicalMutationOperation = z.infer<typeof canonicalMutationOperationSchema>;
 export type MutationEnvelope = z.infer<typeof mutationEnvelopeSchema>;
+
+const deletedContentBaseSchema = z.object({
+ entityId: z.string(),
+ label: z.string(),
+ parentEntityId: z.string().optional(),
+ lessonId: z.string().optional(),
+ deletedAt: z.string(),
+ updatedAt: z.string(),
+});
+
+export const deletedContentItemSchema = z.discriminatedUnion("kind", [
+ deletedContentBaseSchema.extend({
+  kind: z.literal("canonical"),
+  entityType: canonicalEntityTypeSchema,
+ }),
+ deletedContentBaseSchema.extend({
+  kind: z.literal("nested"),
+  entityType: EditableEntityTypeSchema,
+  sectionId: z.string(),
+ }),
+]);
+export const deletedContentResponseSchema = z.object({
+ items: z.array(deletedContentItemSchema),
+});
+export type DeletedEntityType = z.infer<typeof canonicalEntityTypeSchema>;
+export type DeletedContentItem = z.infer<typeof deletedContentItemSchema>;
 
 const nullableText = z.string().nullable().optional();
 const positiveInteger = z.number().int().positive();
@@ -74,7 +101,7 @@ const sectionFields = z.object({
  title: z.string(),
  title_vi: z.string(),
  section_order: positiveInteger.optional(),
- payload: z.record(z.string(), z.unknown()),
+ payload: z.record(z.string(), z.json()),
  source_file: nullableText,
 });
 const lessonTextFields = z.object({

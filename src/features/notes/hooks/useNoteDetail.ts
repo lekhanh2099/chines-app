@@ -1,5 +1,7 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -15,6 +17,8 @@ import {
 } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
 import { noteQueryKeys } from "@/features/notes/query-keys";
+
+type ReadingContent = Parameters<typeof updateReadingContent>[2];
 
 /**
  * Hook: Fetch and manage a single note (editor page).
@@ -37,13 +41,13 @@ export function useNoteDetail(noteId: string) {
 
  // ── Mutation: save content (auto-save) ──
  const saveContentMutation = useMutation({
-  mutationFn: async (content: Record<string, unknown>) => {
+  mutationFn: async (content: JsonObject) => {
    const success = await updateNoteContent(supabase, noteId, content);
    if (!success) throw new Error("Failed to save content");
    return content;
   },
   onSuccess: (content) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -62,7 +66,7 @@ export function useNoteDetail(noteId: string) {
    return title;
   },
   onSuccess: (title) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, title };
    });
@@ -78,7 +82,7 @@ export function useNoteDetail(noteId: string) {
    return category;
   },
   onSuccess: (category) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, category };
    });
@@ -99,13 +103,13 @@ export function useNoteDetail(noteId: string) {
 
  // ── Mutation: save reading content (split view left pane) ──
  const saveReadingContentMutation = useMutation({
-  mutationFn: async (readingContent: Record<string, unknown> | null) => {
+  mutationFn: async (readingContent: ReadingContent) => {
    const success = await updateReadingContent(supabase, noteId, readingContent);
    if (!success) throw new Error("Failed to save reading content");
    return readingContent;
   },
   onSuccess: (readingContent) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -124,7 +128,7 @@ export function useNoteDetail(noteId: string) {
    return enabled;
   },
   onMutate: (enabled) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: unknown) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -137,14 +141,14 @@ export function useNoteDetail(noteId: string) {
 
  // Helper for debounced save
  const saveContent = useCallback(
-  (content: Record<string, unknown>) => {
+  (content: JsonObject) => {
    saveContentMutation.mutate(content);
   },
   [saveContentMutation],
  );
 
  const saveReadingContent = useCallback(
-  (readingContent: Record<string, unknown> | null) => {
+  (readingContent: ReadingContent) => {
    saveReadingContentMutation.mutate(readingContent);
   },
   [saveReadingContentMutation],

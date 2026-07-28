@@ -6,6 +6,7 @@ import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
+import { z } from "zod";
 import { type Theme, useTheme } from "./ThemeProvider";
 import {
  AppHeaderBreadcrumb,
@@ -73,7 +74,9 @@ type SimpleHeaderBreadcrumb = {
  };
 };
 
-export function Header({ user }: { user?: User | null }) {
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+
+export function Header({ user }: { user?: Nullable<User> }) {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
@@ -288,8 +291,8 @@ function HeaderContextArea({
  onNavigateHanziHome,
 }: {
  toolbarContent: ReactNode;
- breadcrumb: HanziHomeHeaderBreadcrumb | null;
- simpleBreadcrumb: SimpleHeaderBreadcrumb | null;
+ breadcrumb: Nullable<HanziHomeHeaderBreadcrumb>;
+ simpleBreadcrumb: Nullable<SimpleHeaderBreadcrumb>;
  focusModeEnabled: boolean;
  onNavigateHanziHome: (lessonId: string) => void;
 }) {
@@ -400,7 +403,7 @@ function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcr
 function getSimpleHeaderBreadcrumb(
  pathname: string,
  isHanziHomeLessonWorkspaceRoute: boolean,
-): SimpleHeaderBreadcrumb | null {
+): Nullable<SimpleHeaderBreadcrumb> {
  if (pathname === "/notebook") return { label: "Sổ tay" };
  if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
  if (pathname === "/settings") return { label: "Cài đặt" };
@@ -474,7 +477,7 @@ function HeaderUtilityArea({
 }: {
  routeToolbarActive: boolean;
  focusModeEnabled: boolean;
- user?: User | null;
+ user?: Nullable<User>;
  theme: Theme;
  lookupEnabled: boolean;
  onOpenSearch: () => void;

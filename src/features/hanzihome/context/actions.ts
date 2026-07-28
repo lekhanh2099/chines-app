@@ -4,8 +4,7 @@ import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/typ
 
 import { useHanziHomeFeatureContext } from "./hanzihomeFeatureContext";
 import type { HanziHomeFeatureStore } from "./hanzihomeFeatureStore";
-import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
-import type { LearningStatus } from "@/features/hanzihome/types";
+import type { LessonViewMode, PaneId, PaneLayout } from "./types";
 import type { HanziHomeFeatureState } from "./hanzihomeFeatureStore";
 import {
  normalizePaneLayout,
@@ -52,7 +51,7 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
    persistPaneLayout(paneLayout);
   },
   setActivePane: (activePane: PaneId) => store.setState((state) => ({ ...state, activePane })),
-  setDraggedModule: (draggedModule: DraggedModule | null) =>
+  setDraggedModule: (draggedModule: HanziHomeFeatureState["draggedModule"]) =>
    store.setState((state) => ({ ...state, draggedModule })),
   setViewMode: (viewMode: LessonViewMode) => {
    store.setState((state) => ({ ...state, viewMode }));
@@ -62,13 +61,13 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
    store.setState((state) => ({ ...state, splitPaneSize }));
    persistSplitPaneSize(splitPaneSize);
   },
-  selectVocabWord: (vocabSelectedWordId: string | null) =>
+  selectVocabWord: (vocabSelectedWordId: HanziHomeFeatureState["vocabSelectedWordId"]) =>
    store.setState((state) => ({ ...state, vocabSelectedWordId })),
   setVocabSearchValue: (vocabSearchValue: string) =>
    store.setState((state) => ({ ...state, vocabSearchValue })),
-  setVocabStatusFilter: (vocabStatusFilter: "all" | LearningStatus) =>
+  setVocabStatusFilter: (vocabStatusFilter: HanziHomeFeatureState["vocabStatusFilter"]) =>
    store.setState((state) => ({ ...state, vocabStatusFilter })),
-  selectGrammarPoint: (grammarSelectedPointId: string | null) =>
+  selectGrammarPoint: (grammarSelectedPointId: HanziHomeFeatureState["grammarSelectedPointId"]) =>
    store.setState((state) => ({ ...state, grammarSelectedPointId })),
   setGrammarSidebarOpen: (grammarSidebarOpen: boolean) =>
    store.setState((state) => ({ ...state, grammarSidebarOpen })),

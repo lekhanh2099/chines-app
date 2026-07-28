@@ -1,6 +1,10 @@
 import type { CSSProperties } from "react";
+import { z } from "zod";
 
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
+import { hanziReaderSizeSchema } from "@/features/hanzihome/schemas/learning-state.schema";
+
+const HanziTypographySizeSchema = z.union([hanziReaderSizeSchema, z.literal("inherit")]);
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
  system: "var(--font-hanzi)",
@@ -34,7 +38,7 @@ export function getHanziFontFamily(font: HanziReaderFont): string {
 
 export function getHanziTypographyStyle(
  displayMode: LessonDisplayMode,
- options: { size?: HanziReaderSize | "inherit" } = {},
+ options: { size?: z.infer<typeof HanziTypographySizeSchema> } = {},
 ): CSSProperties {
  return {
   fontFamily: getHanziFontFamily(displayMode.hanziFont),

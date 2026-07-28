@@ -1,10 +1,6 @@
 import { HanziHomeVocabReviewPage } from "@/features/hanzihome/HanziHomeVocabReviewPage";
 
-export default async function VocabReviewRoute({
- searchParams,
-}: {
- searchParams: Promise<{ reviewLessons?: string | string[] }>;
-}) {
+export default async function VocabReviewRoute({ searchParams }: PageProps<"/vocab/review">) {
  const params = await searchParams;
  const reviewLessonsParam = Array.isArray(params.reviewLessons)
   ? params.reviewLessons[0] || null

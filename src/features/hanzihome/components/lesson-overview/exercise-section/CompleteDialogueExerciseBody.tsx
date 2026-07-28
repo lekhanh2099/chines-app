@@ -1,3 +1,5 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
@@ -8,14 +10,14 @@ import { arrayValue, asRecord, stringValue } from "../utils";
 import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
 import { QuestionExerciseBody } from "./QuestionExerciseBody";
 
-function dialogueLineText(value: unknown) {
+function dialogueLineText(value: JsonFieldValue) {
  if (typeof value === "string") return value.trim();
 
  const line = asRecord(value);
  return stringValue(line, "zh") || stringValue(line, "text");
 }
 
-function dialogueAnswerValues(dialogue: Record<string, unknown>) {
+function dialogueAnswerValues(dialogue: JsonObject) {
  const sampleAnswers = arrayValue(dialogue, "sample_answers");
  if (sampleAnswers.length > 0) return sampleAnswers;
 

@@ -27,7 +27,8 @@ import {
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import type { NoteCategory } from "@/types/database";
+import { NoteCategorySchema } from "@/types/database";
+import { z } from "zod";
 import { NewNoteStarter } from "./NewNoteStarter";
 import { NoteCreateDialog } from "./NoteCreateDialog";
 import { NoteImportButton } from "./NoteImportButton";
@@ -38,11 +39,13 @@ import { buildLessonLookup, getNoteContext } from "./noteContext";
 
 const emptyNotes: NoteListItem[] = [];
 const emptyFolders: NoteFolder[] = [];
+const NoteCategoryFilterSchema = z.union([NoteCategorySchema, z.literal("all")]);
+type NoteCategoryFilter = z.infer<typeof NoteCategoryFilterSchema>;
 
 export function NotesWorkspace() {
  const [searchQuery, setSearchQuery] = useState("");
  const [activeView, setActiveView] = useState<NoteLibraryView>("recent");
- const [category, setCategory] = useState<NoteCategory | "all">("all");
+ const [category, setCategory] = useState<NoteCategoryFilter>("all");
  const [sourceHost, setSourceHost] = useState("all");
  const [navigatorOpen, setNavigatorOpen] = useState(false);
  const deferredSearchQuery = useDeferredValue(searchQuery);
@@ -173,7 +176,13 @@ export function NotesWorkspace() {
      <span className="flex items-center gap-2 text-sm font-bold text-text-secondary">
       <Filter className="size-4" /> Bộ lọc
      </span>
-     <Select value={category} onValueChange={(value) => setCategory(value as NoteCategory | "all")}>
+     <Select
+      value={category}
+      onValueChange={(value) => {
+       const nextCategory = NoteCategoryFilterSchema.safeParse(value);
+       if (nextCategory.success) setCategory(nextCategory.data);
+      }}
+     >
       <SelectTrigger size="sm">
        <SelectValue />
       </SelectTrigger>

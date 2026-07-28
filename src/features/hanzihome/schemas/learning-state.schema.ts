@@ -1,13 +1,14 @@
 import * as z from "zod";
 
-const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
-const reviewResultSchema = z.enum(["again", "hard", "known"]);
-const hanziReaderFontSchema = z.union([
- z.enum(["system", "songti", "pinyin"]),
- z.enum(["kai", "mengshen"]).transform(() => "system" as const),
-]);
-const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
-const moduleSchema = z.enum([
+export const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
+export const reviewResultSchema = z.enum(["again", "hard", "known"]);
+export const hanziReaderFontSchema = z
+ .enum(["system", "songti", "pinyin", "kai", "mengshen"])
+ .transform((font) => (font === "kai" || font === "mengshen" ? "system" : font))
+ .pipe(z.enum(["system", "songti", "pinyin"]));
+export const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
+export const lessonTextRevealModeSchema = z.enum(["always", "tap"]);
+export const moduleSchema = z.enum([
  "overview",
  "lessonText",
  "practice",
@@ -21,7 +22,7 @@ const moduleSchema = z.enum([
  "review",
 ]);
 
-const progressItemSchema = z.object({
+export const progressItemSchema = z.object({
  level: z.number().int().min(0),
  status: learningStatusSchema,
  lastReviewedAt: z.string().optional(),
@@ -42,7 +43,7 @@ export const userLearningStateSchema = z.object({
      showAnswers: z.boolean(),
      hanziFont: hanziReaderFontSchema,
      hanziSize: hanziReaderSizeSchema,
-     revealMode: z.enum(["always", "tap"]).optional().default("always"),
+     revealMode: lessonTextRevealModeSchema.optional().default("always"),
     })
     .optional(),
   })

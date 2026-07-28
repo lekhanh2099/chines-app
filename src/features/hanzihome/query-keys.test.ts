@@ -1,10 +1,11 @@
+import type { JsonFieldValue } from "@/types/json";
 import { QueryClient } from "@tanstack/react-query";
 import { describe, expect, it } from "vitest";
 
 import { invalidateHanziHomeContent } from "./editing/invalidate-content";
 import { hanzihomeQueryKeys } from "./query-keys";
 
-function isInvalidated(queryClient: QueryClient, queryKey: readonly unknown[]) {
+function isInvalidated(queryClient: QueryClient, queryKey: readonly JsonFieldValue[]) {
  return queryClient.getQueryState(queryKey)?.isInvalidated ?? false;
 }
 

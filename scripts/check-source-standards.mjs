@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import ts from "typescript";
 
 const ROOTS = ["src", "scripts"];
 const SOURCE_EXTENSIONS = new Set([".js", ".jsx", ".mjs", ".mts", ".ts", ".tsx"]);
@@ -25,6 +26,19 @@ const DEPRECATED_ZOD_PATTERNS = [
 
 const CLIENT_SERVER_IMPORT_PATTERN =
  /(?:from\s+|import\s*\()["'](?:@\/lib\/supabase\/server|@\/[^"']*\/server(?:[./"'])|server-only)/;
+const GENERATED_TYPE_FILES = new Set(["src/types/supabase.generated.ts"]);
+const LIBRARY_UNION_EXCEPTION_BUDGET = new Map([
+ ["src/components/editor/nodes/InlineNoteNode.tsx::DOMConversionOutput | null", 1],
+ ["src/components/editor/nodes/InlineNoteNode.tsx::DOMConversionMap | null", 1],
+ ["src/components/editor/nodes/InlineNoteNode.tsx::LexicalNode | null | undefined", 1],
+ ["src/components/editor/nodes/InternalLinkNode.ts::DOMConversionMap | null", 1],
+ ["src/components/editor/nodes/InternalLinkNode.ts::null | TextNode", 1],
+ ["src/components/editor/nodes/InternalLinkNode.ts::DOMConversionOutput | null", 1],
+ ["src/components/editor/nodes/InternalLinkNode.ts::LexicalNode | null | undefined", 1],
+ ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionOutput | null", 1],
+ ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionMap | null", 1],
+ ["src/components/editor/nodes/PinyinNode.tsx::LexicalNode | null | undefined", 1],
+]);
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -54,6 +68,52 @@ for (const file of ROOTS.flatMap(listSourceFiles)) {
  const isClientModule = /^\s*["']use client["'];/m.test(source);
  if (isClientModule && CLIENT_SERVER_IMPORT_PATTERN.test(source)) {
   failures.push(`${file} is a Client Component importing a server-only module`);
+ }
+
+ if (!GENERATED_TYPE_FILES.has(file)) {
+  const sourceFile = ts.createSourceFile(
+   file,
+   source,
+   ts.ScriptTarget.Latest,
+   true,
+   file.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  );
+
+  const inspectTypeNode = (node) => {
+   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) {
+    const { line, character } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
+    failures.push(
+     `${file}:${line + 1}:${character + 1} uses an unsafe explicit ${node.getText(sourceFile)} type`,
+    );
+   }
+   if (ts.isUnionTypeNode(node)) {
+    const unionText = node.getText(sourceFile).replace(/\s+/g, " ");
+    const exceptionKey = `${file}::${unionText}`;
+    const remainingBudget = LIBRARY_UNION_EXCEPTION_BUDGET.get(exceptionKey) ?? 0;
+
+    if (remainingBudget > 0) {
+     LIBRARY_UNION_EXCEPTION_BUDGET.set(exceptionKey, remainingBudget - 1);
+    } else {
+     const { line, character } = sourceFile.getLineAndCharacterOfPosition(
+      node.getStart(sourceFile),
+     );
+     failures.push(
+      `${file}:${line + 1}:${character + 1} uses an unaudited handwritten union: ${unionText}`,
+     );
+    }
+   }
+   ts.forEachChild(node, inspectTypeNode);
+  };
+
+  inspectTypeNode(sourceFile);
+
+  lines.forEach((line, index) => {
+   if (/\bz\.(?:any|unknown)\s*\(/.test(line)) {
+    failures.push(
+     `${file}:${index + 1} uses an unconstrained Zod schema; define the runtime contract`,
+    );
+   }
+  });
  }
 }
 

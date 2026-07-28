@@ -5,11 +5,14 @@ import { Bug, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import type { EditingToolsPresentation, LessonViewMode } from "@/features/hanzihome/context/types";
+
+const lessonViewModes: LessonViewMode[] = ["study", "debug"];
 
 export function LessonViewModeToggle({
  presentation = "toolbar",
 }: {
- presentation?: "toolbar" | "menu";
+ presentation?: EditingToolsPresentation;
 }) {
  const mode = useHanziHomeFeatureSelector((state) => state.viewMode);
  const { setViewMode } = useHanziHomeFeatureActions();
@@ -18,7 +21,7 @@ export function LessonViewModeToggle({
   <div
    className={presentation === "menu" ? "grid gap-1" : "flex shrink-0 rounded-lg bg-bg-subtle p-1"}
   >
-   {(["study", "debug"] as const).map((value) => (
+   {lessonViewModes.map((value) => (
     <Button
      key={value}
      type="button"

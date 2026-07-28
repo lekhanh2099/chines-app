@@ -1,9 +1,17 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { NoteDetail, NoteLinkSummary, NoteListItem } from "@/services/notes.service";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { z } from "zod";
 
-export type NoteWithContext = NoteListItem | NoteDetail;
+type NoteWithContextMap = {
+ list: NoteListItem;
+ detail: NoteDetail;
+};
+export type NoteWithContext = NoteWithContextMap[keyof NoteWithContextMap];
 
-export type NoteContextKind = "lesson" | "quick" | "normal";
+const NoteContextKindSchema = z.enum(["lesson", "quick", "normal"]);
+export type NoteContextKind = z.infer<typeof NoteContextKindSchema>;
+type Optional<T> = z.infer<z.ZodOptional<z.ZodType<T>>>;
 
 export type NoteContextView = {
  kind: NoteContextKind;
@@ -43,14 +51,14 @@ export function buildLessonLookup(lessons: HanziHomeLesson[]): LessonLookup {
  return lookup;
 }
 
-function getPrimaryLessonLink(note: NoteWithContext): NoteLinkSummary | undefined {
+function getPrimaryLessonLink(note: NoteWithContext): Optional<NoteLinkSummary> {
  return note.links.find((link) => link.targetType === "hanzihome_lesson");
 }
 
 function getLessonForNote(
  note: NoteWithContext,
  lessonLookup: LessonLookup,
-): HanziHomeLesson | undefined {
+): Optional<HanziHomeLesson> {
  const link = getPrimaryLessonLink(note);
  if (link) {
   const lesson = lessonLookup.get(link.targetKey);
@@ -83,7 +91,7 @@ function cleanTags(tags: string[]): string[] {
   .slice(0, 3);
 }
 
-function uniqueBadges(badges: unknown[]): string[] {
+function uniqueBadges(badges: JsonFieldValue[]): string[] {
  const seen = new Set<string>();
  const uniqueBadgesList: string[] = [];
  if (!badges || badges.length === 0) return uniqueBadgesList;

@@ -3,9 +3,11 @@
 import { createStore, useSelector } from "@tanstack/react-store";
 
 import type { HanziHomeSearchNavigationIntent } from "./types";
+import { HanziHomeSearchNavigationIntentSchema } from "./types";
+import { z } from "zod";
 
 type SearchNavigationState = {
- intent: HanziHomeSearchNavigationIntent | null;
+ intent: z.infer<z.ZodNullable<typeof HanziHomeSearchNavigationIntentSchema>>;
 };
 
 const searchNavigationStore = createStore<SearchNavigationState>({

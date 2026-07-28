@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "../../src/types/json.ts";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -5,10 +6,12 @@ import { z } from "zod";
 
 import { SectionSchema } from "../../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
 
-const seedRowSchema = z.looseObject({
- id: z.string().min(1),
- source: z.literal("seed"),
-});
+const seedRowSchema = z
+ .object({
+  id: z.string().min(1),
+  source: z.literal("seed"),
+ })
+ .catchall(z.json());
 
 const courseSchema = seedRowSchema.extend({
  slug: z.string().min(1),
@@ -94,8 +97,8 @@ export const externalSeedPackageSchema = z.object({
  grammarPoints: z.array(grammarPointSchema),
  grammarExamples: z.array(grammarExampleSchema),
  grammarDetailSections: z.array(grammarDetailSectionSchema),
- radicals: z.array(z.unknown()).max(0),
- datasets: z.unknown().optional(),
+ radicals: z.array(z.json()).max(0),
+ datasets: z.json().optional(),
 });
 
 export type ExternalSeedPackage = z.infer<typeof externalSeedPackageSchema>;
@@ -135,7 +138,10 @@ const BOYA_BOOK_LABELS: Record<string, { title: string; short_title: string }> =
  },
 };
 
-export function normalizeBoyaCatalogLabels(seed: Pick<ExternalSeedPackage, "courses" | "books">) {
+export function normalizeBoyaCatalogLabels(seed: {
+ courses: ExternalSeedPackage["courses"];
+ books: ExternalSeedPackage["books"];
+}) {
  return {
   courses: seed.courses.map((course) => ({
    ...course,
@@ -148,7 +154,7 @@ export function normalizeBoyaCatalogLabels(seed: Pick<ExternalSeedPackage, "cour
  };
 }
 
-export const EXTERNAL_SEED_COLLECTIONS = [
+export const ExternalSeedCollectionSchema = z.enum([
  "courses",
  "books",
  "lessons",
@@ -160,9 +166,11 @@ export const EXTERNAL_SEED_COLLECTIONS = [
  "grammarPoints",
  "grammarExamples",
  "grammarDetailSections",
-] as const;
+]);
 
-export type ExternalSeedCollection = (typeof EXTERNAL_SEED_COLLECTIONS)[number];
+export const EXTERNAL_SEED_COLLECTIONS = ExternalSeedCollectionSchema.options;
+
+export type ExternalSeedCollection = z.infer<typeof ExternalSeedCollectionSchema>;
 
 function duplicateIds(rows: ReadonlyArray<{ id: string }>) {
  const seen = new Set<string>();
@@ -175,7 +183,7 @@ function duplicateIds(rows: ReadonlyArray<{ id: string }>) {
 }
 
 function missingParents(
- rows: ReadonlyArray<Record<string, unknown>>,
+ rows: ReadonlyArray<Record<string, JsonFieldValue>>,
  parentKey: string,
  parentIds: ReadonlySet<string>,
 ) {
@@ -199,7 +207,7 @@ export function validateExternalSeedRelationships(seed: ExternalSeedPackage) {
  const vocabIds = new Set(seed.vocabItems.map((row) => row.id));
  const grammarIds = new Set(seed.grammarPoints.map((row) => row.id));
  const checks: Array<
-  [string, ReadonlyArray<Record<string, unknown>>, string, ReadonlySet<string>]
+  [string, ReadonlyArray<Record<string, JsonFieldValue>>, string, ReadonlySet<string>]
  > = [
   ["books", seed.books, "course_id", courseIds],
   ["lessons.course", seed.lessons, "course_id", courseIds],
@@ -225,7 +233,7 @@ export function validateExternalSeedRelationships(seed: ExternalSeedPackage) {
 
 export async function loadExternalSeedPackage(packageRoot: string) {
  const seedPath = path.join(packageRoot, "seed", "supabase-seed.json");
- const raw = JSON.parse(await readFile(seedPath, "utf8")) as unknown;
+ const raw = z.json().parse(JSON.parse(await readFile(seedPath, "utf8")));
  const seed = externalSeedPackageSchema.parse(raw);
  const errors = validateExternalSeedRelationships(seed);
  if (errors.length > 0) throw new Error(errors.join("\n"));
@@ -235,7 +243,7 @@ export async function loadExternalSeedPackage(packageRoot: string) {
 export async function verifyPackageChecksum(packageRoot: string, relativePath: string) {
  const checksums = z
   .record(z.string(), z.string())
-  .parse(JSON.parse(await readFile(path.join(packageRoot, "checksums.json"), "utf8")) as unknown);
+  .parse(JSON.parse(await readFile(path.join(packageRoot, "checksums.json"), "utf8")));
  const expected = checksums[relativePath];
  if (!expected) throw new Error(`Missing checksum for ${relativePath}`);
  const content = await readFile(path.join(packageRoot, relativePath));

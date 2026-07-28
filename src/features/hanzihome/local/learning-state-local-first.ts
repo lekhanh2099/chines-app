@@ -1,10 +1,12 @@
 "use client";
 
+import { parseErrorLike, type ErrorInput } from "@/types/error";
 import {
  fetchHanziHomeLearningState,
  saveHanziHomeLearningState,
 } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import type { UserLearningState } from "@/features/hanzihome/types";
+import { z } from "zod";
 import {
  emptyLearningState,
  normalizeLearningState,
@@ -22,7 +24,10 @@ import {
  type PendingLearningStateMutation,
 } from "./learning-state-local-store";
 
-export type LearningStateSyncStatus = "synced" | "pending" | "syncing" | "error";
+export const LearningStateSyncStatusSchema = z.enum(["synced", "pending", "syncing", "error"]);
+export type LearningStateSyncStatus = z.infer<typeof LearningStateSyncStatusSchema>;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+type Optional<T> = z.infer<z.ZodOptional<z.ZodType<T>>>;
 
 export type LearningStateSyncResult = {
  status: LearningStateSyncStatus;
@@ -33,15 +38,15 @@ export type LearningStateSyncResult = {
 };
 
 const remoteRefreshCooldownMs = 15_000;
-let remoteRefreshInFlight: Promise<UserLearningState | null> | null = null;
+let remoteRefreshInFlight: Nullable<Promise<Nullable<UserLearningState>>> = null;
 let lastRemoteRefreshAt = 0;
 
 function isBrowserOnline() {
  return typeof navigator === "undefined" || navigator.onLine;
 }
 
-function errorMessage(error: unknown) {
- return error instanceof Error ? error.message : "Unknown learning-state sync error";
+function errorMessage(error: ErrorInput) {
+ return parseErrorLike(error).message || "Unknown learning-state sync error";
 }
 
 export async function loadLearningStateLocalFirst(): Promise<UserLearningState> {
@@ -67,7 +72,9 @@ export async function saveLearningStateLocalFirst(state: UserLearningState): Pro
  await enqueueLearningStateSync(normalized);
 }
 
-export async function refreshLearningStateFromRemoteIfClean(): Promise<UserLearningState | null> {
+export async function refreshLearningStateFromRemoteIfClean(): Promise<
+ Nullable<UserLearningState>
+> {
  if (!isBrowserOnline()) return null;
  if (remoteRefreshInFlight) return remoteRefreshInFlight;
  if (Date.now() - lastRemoteRefreshAt < remoteRefreshCooldownMs) return null;
@@ -92,7 +99,7 @@ export async function refreshLearningStateFromRemoteIfClean(): Promise<UserLearn
 }
 
 function shouldApplySyncResult(
- current: PendingLearningStateMutation | null,
+ current: Nullable<PendingLearningStateMutation>,
  syncing: PendingLearningStateMutation,
 ) {
  return Boolean(current && current.updatedAt === syncing.updatedAt);
@@ -114,7 +121,7 @@ export async function syncPendingLearningStateMutations(): Promise<LearningState
  }
 
  let syncedCount = 0;
- let latestState: UserLearningState | undefined;
+ let latestState: Optional<UserLearningState>;
 
  for (const mutation of pending) {
   const syncingMutation = await markLearningStateMutationSyncing(mutation);

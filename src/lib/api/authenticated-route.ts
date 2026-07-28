@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import "server-only";
 
 import type { SupabaseClient, User } from "@supabase/supabase-js";
@@ -11,9 +12,11 @@ type AuthenticatedRouteContext = {
  user: User;
 };
 
-type AuthenticatedRouteResult =
- | { authenticated: true; context: AuthenticatedRouteContext }
- | { authenticated: false; response: NextResponse };
+type AuthenticatedRouteResultMap = {
+ authenticated: { authenticated: true; context: AuthenticatedRouteContext };
+ unauthenticated: { authenticated: false; response: NextResponse };
+};
+type AuthenticatedRouteResult = AuthenticatedRouteResultMap[keyof AuthenticatedRouteResultMap];
 
 export function apiError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, ...(code ? { code } : {}) }, { status });
@@ -39,7 +42,7 @@ export async function requireAuthenticatedRoute(): Promise<AuthenticatedRouteRes
  };
 }
 
-export function privateNoStoreJson(body: unknown, init?: Omit<ResponseInit, "headers">) {
+export function privateNoStoreJson(body: JsonFieldValue, init?: Omit<ResponseInit, "headers">) {
  return NextResponse.json(body, {
   ...init,
   headers: { "Cache-Control": "private, no-store" },

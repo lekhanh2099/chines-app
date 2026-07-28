@@ -30,10 +30,10 @@ import {
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
+ GrammarExerciseTypeSchema,
+ GrammarPointContentSchema,
+ GrammarPointWithProgressSchema,
  sentenceInsightSchema,
- type GrammarExerciseContent,
- type GrammarExerciseType,
- type GrammarPointWithProgress,
  type GrammarPointContent,
  type AiDefinitionExample,
  type AiVocabResponse,
@@ -41,23 +41,56 @@ import {
  type SentenceInsightResponse,
 } from "@/types/database";
 
-type RawProviderResult = {
- content: string | null;
- error: string | null;
-};
+const RawProviderResultSchema = z.object({
+ content: z.string().nullable(),
+ error: z.string().nullable(),
+});
+type RawProviderResult = z.infer<typeof RawProviderResultSchema>;
 
 type StructuredRequestResult<T> = {
- data: T | null;
- error: string | null;
+ data: z.infer<z.ZodNullable<z.ZodType<T>>>;
+ error: z.infer<typeof NullableStringSchema>;
 };
 
+const NullableStringSchema = z.string().nullable();
+type NullableString = z.infer<typeof NullableStringSchema>;
+type NullableAbortSignal = Parameters<typeof throwIfAborted>[0];
+const ProviderSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);
+const ManagedProviderSchema = ProviderSchema.or(z.literal("Groq"));
+const NullableAiVocabResponseSchema = aiAnalysisSchema.nullable();
+const NullableSentenceInsightResponseSchema = sentenceInsightSchema.nullable();
+
 type AiRequestOptions = {
- promptTemplate?: string | null;
- geminiModel?: string | null;
+ promptTemplate?: NullableString;
+ geminiModel?: NullableString;
  userApiKeys?: UserApiKeyCredential[];
- abortSignal?: AbortSignal | null;
+ abortSignal?: NullableAbortSignal;
  allowGroq?: boolean;
 };
+
+const openAiCompatibleResponseSchema = z.object({
+ choices: z
+  .array(
+   z.object({
+    message: z.object({ content: z.string().optional() }).optional(),
+   }),
+  )
+  .optional(),
+});
+
+const geminiResponseSchema = z.object({
+ candidates: z
+  .array(
+   z.object({
+    content: z
+     .object({
+      parts: z.array(z.object({ text: z.string().optional() })).optional(),
+     })
+     .optional(),
+   }),
+  )
+  .optional(),
+});
 
 /* ══════════════════════════════════════════
    System Prompt
@@ -69,7 +102,7 @@ Follow the user prompt exactly.
 Return valid JSON only.
 Do not include markdown fences or commentary.`;
 
-const wordPrompt = (hanzi: string, promptTemplate?: string | null) =>
+const wordPrompt = (hanzi: string, promptTemplate?: NullableString) =>
  renderWordLookupPrompt(hanzi, promptTemplate);
 
 const SENTENCE_SYSTEM_PROMPT = `You are a Chinese-Vietnamese translation and grammar engine.
@@ -78,7 +111,7 @@ Follow the user prompt exactly.
 Return valid JSON only.
 Do not include markdown fences or commentary.`;
 
-const sentencePrompt = (text: string, promptTemplate?: string | null) =>
+const sentencePrompt = (text: string, promptTemplate?: NullableString) =>
  renderSentenceLookupPrompt(text, promptTemplate);
 
 const GRAMMAR_SYSTEM_PROMPT = `You are a Chinese grammar curriculum designer for Vietnamese learners.
@@ -89,11 +122,11 @@ Keep explanations practical, concise, and suitable for self-study.`;
 
 function grammarFillPrompt(input: {
  title: string;
- pinyin?: string | null;
- vietnameseTitle?: string | null;
- level?: string | null;
- category?: string | null;
- existing?: GrammarPointContent | null;
+ pinyin?: NullableString;
+ vietnameseTitle?: NullableString;
+ level?: NullableString;
+ category?: NullableString;
+ existing?: z.infer<z.ZodNullable<z.ZodType<GrammarPointContent>>>;
 }) {
  return `Fill missing study content for this Chinese grammar point.
 
@@ -143,10 +176,10 @@ async function callDeepSeekRaw(
  systemPrompt: string,
  prompt: string,
  options?: {
-  apiKey?: string | null;
-  model?: string | null;
+  apiKey?: NullableString;
+  model?: NullableString;
   useOutageTracking?: boolean;
-  abortSignal?: AbortSignal | null;
+  abortSignal?: NullableAbortSignal;
  },
 ): Promise<RawProviderResult> {
  const isUserKey = !!options?.apiKey;
@@ -216,10 +249,9 @@ async function callDeepSeekRaw(
    };
   }
 
-  const json: unknown = await res.json();
-  const content = (json as Record<string, unknown[]>)?.choices?.[0] as
-   Record<string, Record<string, string>> | undefined;
-  if (!content?.message?.content) {
+  const json = openAiCompatibleResponseSchema.parse(await res.json());
+  const content = json.choices?.[0]?.message?.content;
+  if (!content) {
    return {
     content: null,
     error: "DeepSeek trả về response rỗng.",
@@ -227,7 +259,7 @@ async function callDeepSeekRaw(
   }
 
   return {
-   content: content.message.content,
+   content,
    error: null,
   };
  } catch (err) {
@@ -253,8 +285,8 @@ async function callGeminiRaw(
  systemPrompt: string,
  prompt: string,
  model: GeminiModelId,
- apiKey?: string | null,
- abortSignal?: AbortSignal | null,
+ apiKey?: NullableString,
+ abortSignal?: NullableAbortSignal,
 ): Promise<RawProviderResult> {
  const isUserKey = !!apiKey;
 
@@ -324,12 +356,8 @@ async function callGeminiRaw(
    };
   }
 
-  const json: unknown = await res.json();
-  const content = (
-   json as {
-    candidates?: { content?: { parts?: { text?: string }[] } }[];
-   }
-  )?.candidates?.[0]?.content?.parts?.[0]?.text;
+  const json = geminiResponseSchema.parse(await res.json());
+  const content = json.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!content) {
    return {
     content: null,
@@ -354,8 +382,8 @@ async function callOpenAiRaw(
  systemPrompt: string,
  prompt: string,
  apiKey: string,
- model?: string | null,
- abortSignal?: AbortSignal | null,
+ model?: NullableString,
+ abortSignal?: NullableAbortSignal,
 ): Promise<RawProviderResult> {
  const resolvedModel = model || "gpt-4.1-mini";
 
@@ -392,9 +420,7 @@ async function callOpenAiRaw(
    };
   }
 
-  const json = (await res.json()) as {
-   choices?: { message?: { content?: string } }[];
-  };
+  const json = openAiCompatibleResponseSchema.parse(await res.json());
   const content = json.choices?.[0]?.message?.content;
 
   if (!content) {
@@ -418,8 +444,8 @@ async function callGroqRaw(
  systemPrompt: string,
  prompt: string,
  apiKey: string,
- model?: string | null,
- abortSignal?: AbortSignal | null,
+ model?: NullableString,
+ abortSignal?: NullableAbortSignal,
 ): Promise<RawProviderResult> {
  try {
   throwIfAborted(abortSignal);
@@ -448,7 +474,7 @@ async function callGroqRaw(
    return { content: null, error: formatManagedKeyError("Groq", res.status, errBody) };
   }
 
-  const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+  const json = openAiCompatibleResponseSchema.parse(await res.json());
   const content = json.choices?.[0]?.message?.content;
   return content
    ? { content, error: null }
@@ -463,7 +489,7 @@ async function callGroqRaw(
 }
 
 function formatProviderError(
- provider: "Gemini" | "DeepSeek" | "OpenAI",
+ provider: z.infer<typeof ProviderSchema>,
  status: number,
  errorBody: string,
 ): string {
@@ -503,7 +529,7 @@ function formatProviderError(
 }
 
 function formatManagedKeyError(
- provider: "Gemini" | "DeepSeek" | "OpenAI" | "Groq",
+ provider: z.infer<typeof ManagedProviderSchema>,
  status: number,
  errorBody: string,
 ): string {
@@ -571,22 +597,17 @@ const BYOK_HIDDEN_SYSTEM_PROMPT = `You are a helpful Chinese language tutor spec
 function parseAndValidate<T>(
  raw: string,
  schema: z.ZodType<T>,
- fallback: (parsed: unknown) => boolean,
-): T | null {
+): z.infer<z.ZodNullable<z.ZodType<T>>> {
  try {
   let cleaned = raw.trim();
   if (cleaned.startsWith("```")) {
    cleaned = cleaned.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   }
-  const parsed: unknown = JSON.parse(cleaned);
+  const parsed = z.json().parse(JSON.parse(cleaned));
 
   const result = schema.safeParse(parsed);
   if (!result.success) {
    logger.error("[AI] Zod validation failed:", result.error.issues);
-   if (fallback(parsed)) {
-    logger.warn("[AI] Using unvalidated data as fallback");
-    return parsed as T;
-   }
    return null;
   }
 
@@ -769,9 +790,8 @@ async function requestStructuredJson<T>(
  prompt: string,
  geminiModel: GeminiModelId,
  schema: z.ZodType<T>,
- fallback: (parsed: unknown) => boolean,
  userApiKeys?: UserApiKeyCredential[],
- abortSignal?: AbortSignal | null,
+ abortSignal?: NullableAbortSignal,
  allowGroq = false,
 ): Promise<StructuredRequestResult<T>> {
  const providerErrors: string[] = [];
@@ -784,7 +804,7 @@ async function requestStructuredJson<T>(
  for (const userApiKey of selectedUserApiKey ? [selectedUserApiKey] : []) {
   throwIfAborted(abortSignal);
 
-  let rawResult: RawProviderResult | null = null;
+  let rawResult: z.infer<z.ZodNullable<typeof RawProviderResultSchema>> = null;
 
   if (userApiKey.provider === "deepseek") {
    rawResult = await callDeepSeekRaw(managedSystemPrompt, prompt, {
@@ -829,7 +849,7 @@ async function requestStructuredJson<T>(
   }
 
   if (rawResult.content) {
-   const managedKeyResult = parseAndValidate(rawResult.content, schema, fallback);
+   const managedKeyResult = parseAndValidate(rawResult.content, schema);
    if (managedKeyResult) {
     return { data: managedKeyResult, error: null };
    }
@@ -854,7 +874,7 @@ async function requestStructuredJson<T>(
 
  const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel, undefined, abortSignal);
  if (geminiRaw.content) {
-  const geminiResult = parseAndValidate(geminiRaw.content, schema, fallback);
+  const geminiResult = parseAndValidate(geminiRaw.content, schema);
   if (geminiResult) {
    return { data: geminiResult, error: null };
   }
@@ -876,7 +896,7 @@ async function requestStructuredJson<T>(
 export async function analyzeHanzi(
  hanzi: string,
  options?: AiRequestOptions,
-): Promise<AiVocabResponse | null> {
+): Promise<z.infer<typeof NullableAiVocabResponseSchema>> {
  const result = await analyzeHanziDetailed(hanzi, options);
  return result.data;
 }
@@ -894,7 +914,6 @@ export async function analyzeHanziDetailed(
   wordPrompt(hanzi, options?.promptTemplate),
   geminiModel,
   aiAnalysisSchema,
-  (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
   options?.allowGroq,
@@ -929,7 +948,6 @@ export async function analyzeHanziBasicDetailed(
   renderWordLookupBasicPrompt(hanzi),
   geminiModel,
   aiAnalysisSchema,
-  (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
   options?.allowGroq,
@@ -953,7 +971,7 @@ export async function analyzeHanziBasicDetailed(
 export async function analyzeSentence(
  text: string,
  options?: AiRequestOptions,
-): Promise<SentenceInsightResponse | null> {
+): Promise<z.infer<typeof NullableSentenceInsightResponseSchema>> {
  const result = await analyzeSentenceDetailed(text, options);
  return result.data;
 }
@@ -971,7 +989,6 @@ export async function analyzeSentenceDetailed(
   sentencePrompt(text, options?.promptTemplate),
   geminiModel,
   sentenceInsightSchema,
-  (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
   options?.allowGroq,
@@ -1004,8 +1021,8 @@ const grammarExerciseSchema = z.object({
   .enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"])
   .optional(),
  prompt: z.string().optional(),
- content: z.record(z.string(), z.unknown()).optional(),
- answer: z.record(z.string(), z.unknown()).optional(),
+ content: z.record(z.string(), z.json()).optional(),
+ answer: z.record(z.string(), z.json()).optional(),
  explanation: z.string().optional(),
 });
 
@@ -1038,8 +1055,8 @@ const grammarGeneratedExerciseSchema = z.object({
   "identify_error",
  ]),
  prompt: z.string(),
- content: z.record(z.string(), z.unknown()).optional(),
- answer: z.record(z.string(), z.unknown()),
+ content: z.record(z.string(), z.json()).optional(),
+ answer: z.record(z.string(), z.json()),
  explanation: z.string().optional(),
 });
 
@@ -1047,31 +1064,35 @@ const grammarExerciseSetSchema = z.object({
  exercises: z.array(grammarGeneratedExerciseSchema),
 });
 
-export type GrammarFillMissingResult = GrammarPointContent & {
- exercises?: {
-  exercise_type?: GrammarExerciseType;
-  prompt?: string;
-  content?: GrammarExerciseContent;
-  answer?: Record<string, unknown>;
-  explanation?: string;
- }[];
-};
+const GrammarExerciseSetInputSchema = z.object({
+ points: z.array(GrammarPointWithProgressSchema),
+ exerciseType: GrammarExerciseTypeSchema.or(z.literal("mixed")),
+ countPerType: z.number(),
+ lessonTitle: NullableStringSchema.optional(),
+ vocabulary: z
+  .array(
+   z.object({
+    hanzi: z.string(),
+    pinyin: z.string().optional(),
+    meaning: z.string().optional(),
+   }),
+  )
+  .optional(),
+});
 
-export type GrammarGeneratedExercise = {
- exercise_type: GrammarExerciseType;
- prompt: string;
- content?: GrammarExerciseContent;
- answer: Record<string, unknown>;
- explanation?: string;
-};
+const GrammarFillInputSchema = z.object({
+ title: z.string(),
+ pinyin: NullableStringSchema.optional(),
+ vietnameseTitle: NullableStringSchema.optional(),
+ level: NullableStringSchema.optional(),
+ category: NullableStringSchema.optional(),
+ existing: GrammarPointContentSchema.nullable().optional(),
+});
 
-function grammarExerciseSetPrompt(input: {
- points: GrammarPointWithProgress[];
- exerciseType: GrammarExerciseType | "mixed";
- countPerType: number;
- lessonTitle?: string | null;
- vocabulary?: { hanzi: string; pinyin?: string; meaning?: string }[];
-}) {
+export type GrammarFillMissingResult = z.infer<typeof grammarFillSchema>;
+export type GrammarGeneratedExercise = z.infer<typeof grammarGeneratedExerciseSchema>;
+
+function grammarExerciseSetPrompt(input: z.infer<typeof GrammarExerciseSetInputSchema>) {
  const compactPoints = input.points.map((point) => ({
   id: point.id,
   title: point.title,
@@ -1130,13 +1151,7 @@ Rules:
 }
 
 export async function generateGrammarExerciseSetDetailed(
- input: {
-  points: GrammarPointWithProgress[];
-  exerciseType: GrammarExerciseType | "mixed";
-  countPerType: number;
-  lessonTitle?: string | null;
-  vocabulary?: { hanzi: string; pinyin?: string; meaning?: string }[];
- },
+ input: z.infer<typeof GrammarExerciseSetInputSchema>,
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<{ exercises: GrammarGeneratedExercise[] }>> {
  const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
@@ -1145,14 +1160,13 @@ export async function generateGrammarExerciseSetDetailed(
   grammarExerciseSetPrompt(input),
   geminiModel,
   grammarExerciseSetSchema,
-  (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
  );
 
  if (result.data) {
   return {
-   data: result.data as { exercises: GrammarGeneratedExercise[] },
+   data: result.data,
    error: null,
   };
  }
@@ -1164,14 +1178,7 @@ export async function generateGrammarExerciseSetDetailed(
 }
 
 export async function generateGrammarFillMissingDetailed(
- input: {
-  title: string;
-  pinyin?: string | null;
-  vietnameseTitle?: string | null;
-  level?: string | null;
-  category?: string | null;
-  existing?: GrammarPointContent | null;
- },
+ input: z.infer<typeof GrammarFillInputSchema>,
  options?: AiRequestOptions,
 ): Promise<StructuredRequestResult<GrammarFillMissingResult>> {
  logger.info("[AI] Filling grammar:", input.title);
@@ -1183,14 +1190,13 @@ export async function generateGrammarFillMissingDetailed(
   grammarFillPrompt(input),
   geminiModel,
   grammarFillSchema,
-  (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
   options?.abortSignal,
  );
 
  if (result.data) {
   return {
-   data: result.data as GrammarFillMissingResult,
+   data: result.data,
    error: null,
   };
  }

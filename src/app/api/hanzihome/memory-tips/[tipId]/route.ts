@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -7,6 +8,7 @@ import {
  type UpdateMemoryTipPayload,
 } from "@/features/hanzihome/memory-tips/memory-tip.schema";
 import { createClient } from "@/lib/supabase/server";
+import type { TablesUpdate } from "@/types/supabase.generated";
 
 type RouteContext = {
  params: Promise<{
@@ -18,33 +20,20 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingMemoryTipsTable(code: string | undefined) {
+const OptionalCodeSchema = z.string().optional();
+const OptionalNullableTextSchema = z.string().nullable().optional();
+
+function isMissingMemoryTipsTable(code: z.infer<typeof OptionalCodeSchema>) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function nullableText(value: string | null | undefined) {
+function nullableText(value: z.infer<typeof OptionalNullableTextSchema>) {
  const trimmed = value?.trim() ?? "";
  return trimmed || null;
 }
 
 function buildUpdatePatch(payload: UpdateMemoryTipPayload) {
- const patch: {
-  tip_type?: UpdateMemoryTipPayload["tipType"];
-  title?: string;
-  body?: string;
-  formula?: string | null;
-  example_zh?: string | null;
-  example_pinyin?: string | null;
-  example_vi?: string | null;
-  source_type?: UpdateMemoryTipPayload["sourceType"];
-  source_lesson_id?: string | null;
-  source_item_id?: string | null;
-  source_label?: string | null;
-  tags?: string[];
-  weight?: number;
-  is_pinned?: boolean;
-  is_archived?: boolean;
- } = {};
+ const patch: TablesUpdate<"hanzihome_memory_tips"> = {};
 
  if (payload.tipType !== undefined) patch.tip_type = payload.tipType;
  if (payload.title !== undefined) patch.title = payload.title;
@@ -84,7 +73,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = updateMemoryTipPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

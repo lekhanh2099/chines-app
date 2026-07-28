@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { LooseItemGrid, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 
@@ -7,12 +8,14 @@ export function ExtraPayloadBlock({
  displayMode,
 }: {
  title: string;
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
 }) {
  if (!hasRenderableValue(value)) return null;
 
- const items = Array.isArray(value) ? value : [value];
+ const items = (Array.isArray(value) ? value : [value]).filter(
+  (item): item is JsonValue => item !== undefined,
+ );
 
  return (
   <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">

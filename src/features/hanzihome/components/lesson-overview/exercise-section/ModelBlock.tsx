@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import type { ReactNode } from "react";
 
 import { TextLineCard } from "../TextLineCard";
@@ -12,9 +13,9 @@ export function ModelBlock({
  renderValue,
 }: {
  title?: string;
- values: unknown[];
+ values: JsonValue[];
  displayMode: LessonDisplayMode;
- renderValue?: (value: unknown, index: number, content: ReactNode) => ReactNode;
+ renderValue?: (value: JsonFieldValue, index: number, content: ReactNode) => ReactNode;
 }) {
  const visibleValues = values.filter((value) => {
   if (answerToString(value)) return true;

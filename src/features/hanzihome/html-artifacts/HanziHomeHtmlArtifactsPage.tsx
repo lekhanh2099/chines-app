@@ -1,5 +1,6 @@
 "use client";
-import type { DragEvent, FormEvent, KeyboardEvent, MouseEvent, RefObject } from "react";
+import type { JsonFieldValue } from "@/types/json";
+import type { ComponentProps, DragEvent, FormEvent, KeyboardEvent, MouseEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -25,6 +26,7 @@ import {
  Trash2,
 } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -77,6 +79,13 @@ import type {
  HtmlArtifactSummary,
  HtmlArtifactType,
 } from "./html-artifact.schema";
+import {
+ htmlArtifactFolderColorSchema,
+ htmlArtifactFolderSchema,
+ htmlArtifactRuntimeStateSchema,
+ htmlArtifactSummarySchema,
+ htmlArtifactTypeSchema,
+} from "./html-artifact.schema";
 import { injectRuntimeStateBridge, isRuntimeStateMessage } from "./html-artifact-runtime-bridge";
 import {
  useCreateHtmlArtifactFolderMutation,
@@ -126,7 +135,7 @@ const folderColorSequence: HtmlArtifactFolderColor[] = [
  "slate",
 ];
 
-const artifactTypes = Object.keys(artifactTypeLabels) as HtmlArtifactType[];
+const artifactTypes = htmlArtifactTypeSchema.options;
 const emptyArtifactSummaries: HtmlArtifactSummary[] = [];
 const emptyArtifactFolders: HtmlArtifactFolder[] = [];
 const emptyRuntimeState: HtmlArtifactRuntimeState = {};
@@ -144,24 +153,49 @@ type ArtifactSaveOptions = {
 type ArtifactSubmitHandler = (
  formState: ArtifactFormState,
  options?: ArtifactSaveOptions,
-) => Promise<void> | void;
+) => Promise<void>;
 
-type PublishConnectionInfo = {
- sessionUserId: string | null;
- publishTokenEnabled: boolean;
- publishOwnerId: string | null;
- serviceRoleEnabled: boolean;
-};
+const NullableStringSchema = z.string().nullable();
+const NullableNumberSchema = z.number().nullable();
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+const NullableHtmlArtifactSchema = z
+ .object({
+  ...htmlArtifactSummarySchema.shape,
+  html: z.string(),
+ })
+ .nullable();
+const NullableHtmlArtifactSummarySchema = htmlArtifactSummarySchema.nullable();
+const PublishConnectionInfoSchema = z.object({
+ sessionUserId: NullableStringSchema,
+ publishTokenEnabled: z.boolean(),
+ publishOwnerId: NullableStringSchema,
+ serviceRoleEnabled: z.boolean(),
+});
+const NullablePublishConnectionInfoSchema = PublishConnectionInfoSchema.nullable();
+type PublishConnectionInfo = z.infer<typeof PublishConnectionInfoSchema>;
 
-type DeleteDialogState =
- | { kind: "artifact"; artifact: HtmlArtifact | HtmlArtifactSummary }
- | { kind: "folder"; folder: HtmlArtifactFolder };
+const DeleteDialogStateSchema = z.discriminatedUnion("kind", [
+ z.object({ kind: z.literal("artifact"), artifact: htmlArtifactSummarySchema }),
+ z.object({ kind: z.literal("folder"), folder: htmlArtifactFolderSchema }),
+]);
+const NullableDeleteDialogStateSchema = DeleteDialogStateSchema.nullable();
+type DeleteDialogState = z.infer<typeof DeleteDialogStateSchema>;
 
-type DragItem = { type: "artifact"; id: string } | { type: "folder"; id: string };
+const DragItemSchema = z.discriminatedUnion("type", [
+ z.object({ type: z.literal("artifact"), id: z.string() }),
+ z.object({ type: z.literal("folder"), id: z.string() }),
+]);
+const NullableDragItemSchema = DragItemSchema.nullable();
+type DragItem = z.infer<typeof DragItemSchema>;
 
-type MobilePane = "files" | "preview" | "edit";
-type InspectorTab = "files" | "edit";
-type PreviewMode = "iframe" | "editor";
+const MobilePaneSchema = z.enum(["files", "preview", "edit"]);
+const InspectorTabSchema = z.enum(["files", "edit"]);
+const PreviewModeSchema = z.enum(["iframe", "editor"]);
+const MoveDirectionSchema = z.enum(["up", "down"]);
+const RouteHistoryModeSchema = z.enum(["push", "replace"]);
+type MobilePane = z.infer<typeof MobilePaneSchema>;
+type InspectorTab = z.infer<typeof InspectorTabSchema>;
+type PreviewMode = z.infer<typeof PreviewModeSchema>;
 
 export function HanziHomeHtmlArtifactsPage() {
  const pathname = usePathname();
@@ -169,7 +203,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const searchParams = useSearchParams();
  const artifactsQuery = useHtmlArtifactSummariesQuery();
  const selectedIdFromUrl = searchParams.get("artifactId");
- const selectedId: string | "new" | null = selectedIdFromUrl === "new" ? "new" : selectedIdFromUrl;
+ const selectedId: z.infer<typeof NullableStringSchema> =
+  selectedIdFromUrl === "new" ? "new" : selectedIdFromUrl;
  const [activeFolderId, setActiveFolderId] = useState<FolderFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
@@ -177,24 +212,27 @@ export function HanziHomeHtmlArtifactsPage() {
  const [previewMode, setPreviewMode] = useState<PreviewMode>("iframe");
  const isPreviewFocused = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { setContentFullscreen } = appShellStore.actions;
- const [draftPreview, setDraftPreview] = useState<{
-  targetId: string;
-  form: ArtifactFormState;
- } | null>(null);
+ const [draftPreview, setDraftPreview] = useState<
+  Nullable<{
+   targetId: string;
+   form: ArtifactFormState;
+  }>
+ >(null);
  const isDesktopShell = useHtmlArtifactsDesktopShell();
  const [isCreateFolderOpen, setIsCreateFolderOpen] = useState(false);
  const [isPublishDialogOpen, setIsPublishDialogOpen] = useState(false);
  const [folderDraft, setFolderDraft] = useState<{
   name: string;
-  parentFolderId: string | null;
+  parentFolderId: Nullable<string>;
   color: HtmlArtifactFolderColor;
  }>({
   name: "",
   parentFolderId: null,
   color: "blue",
  });
- const [deleteDialog, setDeleteDialog] = useState<DeleteDialogState | null>(null);
- const [dragItem, setDragItem] = useState<DragItem | null>(null);
+ const [deleteDialog, setDeleteDialog] =
+  useState<z.infer<typeof NullableDeleteDialogStateSchema>>(null);
+ const [dragItem, setDragItem] = useState<z.infer<typeof NullableDragItemSchema>>(null);
  const createMutation = useCreateHtmlArtifactMutation();
  const updateMutation = useUpdateHtmlArtifactMutation();
  const deleteMutation = useDeleteHtmlArtifactMutation();
@@ -202,11 +240,13 @@ export function HanziHomeHtmlArtifactsPage() {
  const updateFolderMutation = useUpdateHtmlArtifactFolderMutation();
  const deleteFolderMutation = useDeleteHtmlArtifactFolderMutation();
  const updateRuntimeStateMutation = useUpdateHtmlArtifactRuntimeStateMutation();
- const runtimeStateSaveTimerRef = useRef<number | null>(null);
- const latestRuntimeStateSaveRef = useRef<{
-  artifactId: string;
-  state: HtmlArtifactRuntimeState;
- } | null>(null);
+ const runtimeStateSaveTimerRef = useRef<z.infer<typeof NullableNumberSchema>>(null);
+ const latestRuntimeStateSaveRef = useRef<
+  Nullable<{
+   artifactId: string;
+   state: HtmlArtifactRuntimeState;
+  }>
+ >(null);
 
  useEffect(() => {
   return () => setContentFullscreen(false);
@@ -250,7 +290,7 @@ export function HanziHomeHtmlArtifactsPage() {
   setDraftPreview({ targetId: draftPreviewTargetId, form });
  };
 
- const previewArtifact = useMemo<HtmlArtifact | null>(() => {
+ const previewArtifact = useMemo<Nullable<HtmlArtifact>>(() => {
   if (!activeDraftPreviewForm) return selectedArtifact;
   if (!selectedArtifact && !activeDraftPreviewForm.html.trim()) return null;
 
@@ -290,8 +330,8 @@ export function HanziHomeHtmlArtifactsPage() {
   activeFolderId !== "all" && activeFolderId !== "unfiled" ? activeFolderId : null;
 
  const navigateToArtifact = (
-  artifactId: string | "new" | null,
-  mode: "push" | "replace" = "push",
+  artifactId: Nullable<string>,
+  mode: z.infer<typeof RouteHistoryModeSchema> = "push",
  ) => {
   const nextParams = new URLSearchParams(searchParams.toString());
 
@@ -389,7 +429,7 @@ export function HanziHomeHtmlArtifactsPage() {
   void createFolder();
  };
 
- const moveArtifactToFolder = async (artifactId: string, folderId: string | null) => {
+ const moveArtifactToFolder = async (artifactId: string, folderId: Nullable<string>) => {
   const artifact = artifacts.find((item) => item.id === artifactId);
   if (!artifact || artifact.folderId === folderId) return;
 
@@ -404,7 +444,7 @@ export function HanziHomeHtmlArtifactsPage() {
   }
  };
 
- const moveFolderToParent = async (folderId: string, parentFolderId: string | null) => {
+ const moveFolderToParent = async (folderId: string, parentFolderId: Nullable<string>) => {
   const folder = folders.find((item) => item.id === folderId);
   if (!folder || folder.parentFolderId === parentFolderId) return;
 
@@ -427,7 +467,10 @@ export function HanziHomeHtmlArtifactsPage() {
   }
  };
 
- const moveFolderByDirection = async (folderId: string, direction: "up" | "down") => {
+ const moveFolderByDirection = async (
+  folderId: string,
+  direction: z.infer<typeof MoveDirectionSchema>,
+ ) => {
   const folder = folders.find((item) => item.id === folderId);
   if (!folder) return;
 
@@ -459,7 +502,7 @@ export function HanziHomeHtmlArtifactsPage() {
   }
  };
 
- const dropOnFolder = (folderId: string | null) => {
+ const dropOnFolder = (folderId: Nullable<string>) => {
   if (!dragItem) return;
 
   if (dragItem.type === "artifact") {
@@ -844,11 +887,11 @@ function RightInspectorPane({
 }: {
  activeFolderId: FolderFilter;
  activeTab: InspectorTab;
- artifact: HtmlArtifact | null;
+ artifact: Nullable<HtmlArtifact>;
  artifacts: HtmlArtifactSummary[];
- defaultFolderId: string | null;
- dragItem: DragItem | null;
- error: unknown;
+ defaultFolderId: Nullable<string>;
+ dragItem: Nullable<DragItem>;
+ error: ReturnType<typeof useHtmlArtifactSummariesQuery>["error"];
  filteredArtifacts: HtmlArtifactSummary[];
  folders: HtmlArtifactFolder[];
  isDeleting: boolean;
@@ -856,7 +899,7 @@ function RightInspectorPane({
  isLoading: boolean;
  isSaving: boolean;
  searchQuery: string;
- selectedId: string | null;
+ selectedId: Nullable<string>;
  onCreateArtifact: () => void;
  onCreateFolder: () => void;
  onCopyArtifactLink: (artifactId: string) => void;
@@ -865,12 +908,12 @@ function RightInspectorPane({
  onDeleteActiveFolder: () => void;
  onDragEnd: () => void;
  onDragStart: (item: DragItem) => void;
- onDropOnFolder: (folderId: string | null) => void;
+ onDropOnFolder: (folderId: Nullable<string>) => void;
  onEditArtifact: (artifactId: string) => void;
  onSearchChange: (value: string) => void;
  onSelectArtifact: (id: string) => void;
  onSelectFolder: (folderId: FolderFilter) => void;
- onReorderFolder: (folderId: string, direction: "up" | "down") => void;
+ onReorderFolder: (folderId: string, direction: z.infer<typeof MoveDirectionSchema>) => void;
  onOpenPublishDialog: () => void;
  onDraftChange: (formState: ArtifactFormState) => void;
  onSubmit: ArtifactSubmitHandler;
@@ -1033,11 +1076,11 @@ function DirectoryPane({
  embedded?: boolean;
  folders: HtmlArtifactFolder[];
  filteredArtifacts: HtmlArtifactSummary[];
- dragItem: DragItem | null;
+ dragItem: Nullable<DragItem>;
  isLoading: boolean;
- error: unknown;
+ error: ReturnType<typeof useHtmlArtifactSummariesQuery>["error"];
  searchQuery: string;
- selectedId: string | null;
+ selectedId: Nullable<string>;
  isFolderMutating: boolean;
  onCreateArtifact: () => void;
  onCreateFolder: () => void;
@@ -1046,12 +1089,12 @@ function DirectoryPane({
  onDeleteActiveFolder: () => void;
  onDragEnd: () => void;
  onDragStart: (item: DragItem) => void;
- onDropOnFolder: (folderId: string | null) => void;
+ onDropOnFolder: (folderId: Nullable<string>) => void;
  onEditArtifact: (artifactId: string) => void;
  onSearchChange: (value: string) => void;
  onSelectArtifact: (id: string) => void;
  onSelectFolder: (folderId: FolderFilter) => void;
- onReorderFolder: (folderId: string, direction: "up" | "down") => void;
+ onReorderFolder: (folderId: string, direction: z.infer<typeof MoveDirectionSchema>) => void;
 }) {
  const folderTree = useMemo(() => buildFolderTree(folders), [folders]);
 
@@ -1231,7 +1274,7 @@ function FolderRow({
  color: HtmlArtifactFolderColor;
  count: number;
  depth: number;
- dragItem: DragItem | null;
+ dragItem: Nullable<DragItem>;
  name: string;
  folderId?: string;
  canMoveDown?: boolean;
@@ -1340,13 +1383,13 @@ function FolderTreeRow({
 }: {
  activeFolderId: FolderFilter;
  artifacts: HtmlArtifactSummary[];
- dragItem: DragItem | null;
+ dragItem: Nullable<DragItem>;
  folder: FolderTreeNode;
  siblings: HtmlArtifactFolder[];
  onDragEnd: () => void;
  onDragStart: (item: DragItem) => void;
- onDropOnFolder: (folderId: string | null) => void;
- onReorderFolder: (folderId: string, direction: "up" | "down") => void;
+ onDropOnFolder: (folderId: Nullable<string>) => void;
+ onReorderFolder: (folderId: string, direction: z.infer<typeof MoveDirectionSchema>) => void;
  onSelectFolder: (folderId: FolderFilter) => void;
  depth?: number;
 }) {
@@ -1414,15 +1457,15 @@ function PreviewPane({
  onSubmit,
  onToggleFocus,
 }: {
- defaultFolderId: string | null;
- editorArtifact: HtmlArtifact | null;
+ defaultFolderId: Nullable<string>;
+ editorArtifact: Nullable<HtmlArtifact>;
  folders: HtmlArtifactFolder[];
  isFocused: boolean;
  isDeleting: boolean;
  isSaving: boolean;
  mode: PreviewMode;
- selectedArtifact: HtmlArtifact | null;
- selectedSummary: HtmlArtifactSummary | null;
+ selectedArtifact: Nullable<HtmlArtifact>;
+ selectedSummary: Nullable<HtmlArtifactSummary>;
  runtimeState: HtmlArtifactRuntimeState;
  isFetching: boolean;
  onDelete: () => void;
@@ -1432,14 +1475,14 @@ function PreviewPane({
  onSubmit: ArtifactSubmitHandler;
  onToggleFocus: () => void;
 }) {
- const iframeRef = useRef<HTMLIFrameElement | null>(null);
+ const iframeRef = useRef<HTMLIFrameElement>(null);
  const iframeSrcDoc =
   selectedArtifact && !isFetching
    ? injectRuntimeStateBridge(selectedArtifact.html, selectedArtifact.id, runtimeState)
    : "";
 
  useEffect(() => {
-  const handleMessage = (event: MessageEvent<unknown>) => {
+  const handleMessage = (event: MessageEvent<JsonFieldValue>) => {
    if (event.source !== iframeRef.current?.contentWindow) return;
    if (!isRuntimeStateMessage(event.data)) return;
 
@@ -1616,7 +1659,7 @@ function StableHtmlArtifactIframe({
 }: {
  artifact: HtmlArtifact;
  initialSrcDoc: string;
- iframeRef: RefObject<HTMLIFrameElement | null>;
+ iframeRef: ComponentProps<"iframe">["ref"];
 }) {
  const [frameSrc] = useState(() =>
   URL.createObjectURL(new Blob([initialSrcDoc], { type: "text/html;charset=utf-8" })),
@@ -1646,17 +1689,11 @@ function maskToken(token: string) {
  return `${token.slice(0, 12)}...${token.slice(-8)}`;
 }
 
-function parsePublishConnectionInfo(value: unknown): PublishConnectionInfo | null {
- if (!value || typeof value !== "object") return null;
-
- const item = value as Partial<Record<keyof PublishConnectionInfo, unknown>>;
-
- return {
-  sessionUserId: typeof item.sessionUserId === "string" ? item.sessionUserId : null,
-  publishTokenEnabled: item.publishTokenEnabled === true,
-  publishOwnerId: typeof item.publishOwnerId === "string" ? item.publishOwnerId : null,
-  serviceRoleEnabled: item.serviceRoleEnabled === true,
- };
+function parsePublishConnectionInfo(
+ value: JsonFieldValue,
+): z.infer<typeof NullablePublishConnectionInfoSchema> {
+ const parsed = PublishConnectionInfoSchema.safeParse(value);
+ return parsed.success ? parsed.data : null;
 }
 
 function KeyValueRow({ label, value }: { label: string; value: string }) {
@@ -1673,15 +1710,17 @@ function PublishConnectionDialog({
  isOpen,
  onOpenChange,
 }: {
- selectedArtifact: HtmlArtifact | null;
+ selectedArtifact: Nullable<HtmlArtifact>;
  isOpen: boolean;
  onOpenChange: (open: boolean) => void;
 }) {
  const endpointPath = "/api/hanzihome/html-artifacts/publish";
  const displayEndpoint = `https://your-domain.com${endpointPath}`;
  const supabase = useMemo(() => createBrowserSupabaseClient(), []);
- const [connectionInfo, setConnectionInfo] = useState<PublishConnectionInfo | null>(null);
- const [sessionAccessToken, setSessionAccessToken] = useState<string | null>(null);
+ const [connectionInfo, setConnectionInfo] =
+  useState<z.infer<typeof NullablePublishConnectionInfoSchema>>(null);
+ const [sessionAccessToken, setSessionAccessToken] =
+  useState<z.infer<typeof NullableStringSchema>>(null);
  const [isLoadingConnection, setIsLoadingConnection] = useState(false);
  const exampleArtifactId = selectedArtifact?.id ?? "optional-stable-uuid";
  const exampleTitle = selectedArtifact?.title ?? "SC3 Mock Exam 04";
@@ -1739,7 +1778,7 @@ function PublishConnectionDialog({
      supabase.auth.getSession(),
     ]);
 
-    const statusJson: unknown = await statusResponse.json().catch(() => null);
+    const statusJson: JsonFieldValue = await statusResponse.json().catch(() => null);
     if (ignore) return;
 
     setConnectionInfo(parsePublishConnectionInfo(statusJson));
@@ -1886,8 +1925,8 @@ function PublishConnectionDialog({
 }
 
 function EditorPane(props: {
- artifact: HtmlArtifact | null;
- defaultFolderId: string | null;
+ artifact: Nullable<HtmlArtifact>;
+ defaultFolderId: Nullable<string>;
  embedded?: boolean;
  folders: HtmlArtifactFolder[];
  htmlOnly?: boolean;
@@ -1919,7 +1958,7 @@ function ConfirmDeleteDialog({
  onConfirm,
  onOpenChange,
 }: {
- deleteDialog: DeleteDialogState | null;
+ deleteDialog: Nullable<DeleteDialogState>;
  isDeleting: boolean;
  onCancel: () => void;
  onConfirm: () => void;
@@ -1962,13 +2001,17 @@ function CreateFolderDialog({
  onOpenChange,
  onSubmit,
 }: {
- folderDraft: { name: string; parentFolderId: string | null; color: HtmlArtifactFolderColor };
+ folderDraft: {
+  name: string;
+  parentFolderId: Nullable<string>;
+  color: HtmlArtifactFolderColor;
+ };
  folders: HtmlArtifactFolder[];
  isOpen: boolean;
  isSaving: boolean;
  onFolderDraftChange: (draft: {
   name: string;
-  parentFolderId: string | null;
+  parentFolderId: Nullable<string>;
   color: HtmlArtifactFolderColor;
  }) => void;
  onOpenChange: (open: boolean) => void;
@@ -2072,8 +2115,8 @@ function ArtifactForm({
  onDelete,
  htmlOnly = false,
 }: {
- artifact: HtmlArtifact | null;
- defaultFolderId: string | null;
+ artifact: Nullable<HtmlArtifact>;
+ defaultFolderId: Nullable<string>;
  folders: HtmlArtifactFolder[];
  isSaving: boolean;
  isDeleting: boolean;

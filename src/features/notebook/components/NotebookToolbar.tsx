@@ -52,10 +52,10 @@ export function NotebookToolbar({
  const toolbarRef = useRef<HTMLDivElement>(null);
  const [isCompact, setIsCompact] = useState(false);
  const [filtersOpen, setFiltersOpen] = useState(false);
- const views = [
-  { id: "cards" as const, label: "Thẻ học", icon: Grid2X2 },
-  { id: "compare" as const, label: "So sánh", icon: GitCompareArrows },
-  { id: "matrix" as const, label: "Tổng hợp", icon: TableProperties },
+ const views: { id: NotebookViewMode; label: string; icon: typeof Grid2X2 }[] = [
+  { id: "cards", label: "Thẻ học", icon: Grid2X2 },
+  { id: "compare", label: "So sánh", icon: GitCompareArrows },
+  { id: "matrix", label: "Tổng hợp", icon: TableProperties },
  ];
  const activeSectionLabel = data[sectionId].label;
  const activeGroupLabel =

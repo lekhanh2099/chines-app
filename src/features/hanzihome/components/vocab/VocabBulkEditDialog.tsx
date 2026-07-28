@@ -1,9 +1,12 @@
 "use client";
 
-import { useDeferredValue, useMemo, useState } from "react";
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
+import { useDeferredValue, useMemo, useState, type ComponentProps } from "react";
 import { BookOpen, Layers3, Pencil, Trash2 } from "lucide-react";
 import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -37,10 +40,21 @@ import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.t
 
 import { asRecord, stringValue } from "../lesson-overview/utils";
 
-type EditableItem = VocabularyItem | HanziHomeVocabItem;
-type ManagerTab = "vocab" | "sections" | "examples";
-type Scope = "lesson" | "book" | "course";
-type SelectionMode = "ids" | "filter";
+type EditableItemMap = {
+ lesson: VocabularyItem;
+ deep: HanziHomeVocabItem;
+};
+type EditableItem = EditableItemMap[keyof EditableItemMap];
+const ManagerTabSchema = z.enum(["vocab", "sections", "examples"]);
+type ManagerTab = z.infer<typeof ManagerTabSchema>;
+const ScopeSchema = z.enum(["lesson", "book", "course"]);
+type Scope = z.infer<typeof ScopeSchema>;
+const SelectionModeSchema = z.enum(["ids", "filter"]);
+type SelectionMode = z.infer<typeof SelectionModeSchema>;
+const BulkOperationSchema = z.enum(["soft_delete", "restore", "purge"]);
+type BulkOperation = z.infer<typeof BulkOperationSchema>;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+type CheckboxState = Parameters<NonNullable<ComponentProps<typeof Checkbox>["onCheckedChange"]>>[0];
 type CoreRow = {
  id: string;
  hanzi: string;
@@ -77,7 +91,7 @@ function coreRow<TItem extends EditableItem>(item: TItem, getId: (item: TItem) =
 
 function applyCore<TItem extends EditableItem>(item: TItem, row: CoreRow): TItem {
  const next = structuredClone(item) as TItem;
- const record = next as unknown as Record<string, unknown>;
+ const record = next as JsonFieldValue as JsonObject;
  const meaning = asRecord(record.meaning);
  const pos = asRecord(record.pos);
  record.hanzi = row.hanzi.trim();
@@ -92,33 +106,41 @@ function applyCore<TItem extends EditableItem>(item: TItem, row: CoreRow): TItem
  return next;
 }
 
-type Preview = {
- rowCount: number;
- wordCount: number;
- fingerprint: string;
- breakdown: Record<string, number>;
- ownership: Record<string, number>;
- sample: Array<{ id: string; label: string }>;
-};
+const PreviewSchema = z.object({
+ rowCount: z.number(),
+ wordCount: z.number(),
+ fingerprint: z.string(),
+ breakdown: z.record(z.string(), z.number()),
+ ownership: z.record(z.string(), z.number()),
+ sample: z.array(z.object({ id: z.string(), label: z.string() })),
+});
+type Preview = z.infer<typeof PreviewSchema>;
 
-type ChildListRow = {
- id: string;
- vocabItemId: string;
- lessonId: string;
- word: string;
- label: string;
- sectionKey: string | null;
- ownerId: string | null;
- source: string;
- deletedAt: string | null;
-};
+const ChildListSchema = z.object({
+ page: z.number(),
+ pageSize: z.number(),
+ total: z.number(),
+ rows: z.array(
+  z.object({
+   id: z.string(),
+   vocabItemId: z.string(),
+   lessonId: z.string(),
+   word: z.string(),
+   label: z.string(),
+   sectionKey: z.string().nullable(),
+   ownerId: z.string().nullable(),
+   source: z.string(),
+   deletedAt: z.string().nullable(),
+  }),
+ ),
+});
+type ChildList = z.infer<typeof ChildListSchema>;
 
-type ChildList = {
- page: number;
- pageSize: number;
- total: number;
- rows: ChildListRow[];
-};
+const BulkResponseSchema = z.object({
+ list: ChildListSchema.optional(),
+ preview: PreviewSchema.optional(),
+ result: z.object({ changedCount: z.number() }).optional(),
+});
 
 const PAGE_SIZE = 25;
 const SECTION_FILTERS = [
@@ -131,21 +153,17 @@ const SECTION_FILTERS = [
  ["culture", "Văn hóa và ngữ cảnh"],
  ["notes", "Ghi chú"],
  ["custom", "Khác"],
-] as const;
+];
 
-async function bulkRequest(body: Record<string, unknown>) {
+async function bulkRequest(body: Partial<JsonObject>) {
  const response = await fetch("/api/hanzihome/content/vocab-children/bulk", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body),
  });
- const payload: unknown = await response.json().catch(() => null);
+ const payload: JsonFieldValue = await response.json().catch(() => null);
  if (!response.ok) throw new Error("Không thể thực hiện thao tác hàng loạt.");
- return payload as {
-  list?: ChildList;
-  preview?: Preview;
-  result?: { changedCount: number };
- };
+ return BulkResponseSchema.parse(payload);
 }
 
 export function VocabBulkEditDialog<TItem extends EditableItem>({
@@ -175,10 +193,8 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
  const [page, setPage] = useState(1);
  const [selectedIds, setSelectedIds] = useState<string[]>([]);
  const [selectionMode, setSelectionMode] = useState<SelectionMode>("ids");
- const [preview, setPreview] = useState<Preview | null>(null);
- const [pendingOperation, setPendingOperation] = useState<"soft_delete" | "restore" | "purge">(
-  "soft_delete",
- );
+ const [preview, setPreview] = useState<Nullable<Preview>>(null);
+ const [pendingOperation, setPendingOperation] = useState<BulkOperation>("soft_delete");
  const [purgeCount, setPurgeCount] = useState("");
  const [busy, setBusy] = useState(false);
  const deepItems = items.filter((item): item is TItem & HanziHomeVocabItem => "runtimeId" in item);
@@ -238,7 +254,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
  const localChildren = new Map(
   [...sections, ...examples].map((entry) => {
    const child = "section" in entry ? entry.section : entry.example;
-   return [child.id, entry] as const;
+   return [child.id, entry];
   }),
  );
 
@@ -283,7 +299,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
   }
  };
 
- const requestPreview = async (operation: "soft_delete" | "restore" | "purge") => {
+ const requestPreview = async (operation: BulkOperation) => {
   if (!scopeId) return toast.error("Scope hiện tại chưa có ID hợp lệ.");
   setBusy(true);
   try {
@@ -345,7 +361,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
   }
  };
 
- const toggle = (id: string, checked: boolean | "indeterminate") =>
+ const toggle = (id: string, checked: CheckboxState) =>
   setSelectedIds((current) => {
    setSelectionMode("ids");
    return checked === true
@@ -407,7 +423,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
          <Select
           value={scope}
           onValueChange={(value) => {
-           setScope(value as Scope);
+           const parsedScope = ScopeSchema.safeParse(value);
+           if (!parsedScope.success) return;
+           setScope(parsedScope.data);
            setPage(1);
            setSelectedIds([]);
            setSelectionMode("ids");

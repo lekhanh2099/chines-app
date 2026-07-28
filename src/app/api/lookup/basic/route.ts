@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { after, NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
@@ -51,7 +52,9 @@ function buildLookupResponse(vocabData: VocabData, cached: boolean, source: stri
  });
 }
 
-function hasUsableBasicMeaning(vocabData: VocabData | null): vocabData is VocabData {
+function hasUsableBasicMeaning(
+ vocabData: ReturnType<typeof getBasicVocabData>,
+): vocabData is VocabData {
  return !!vocabData?.meaning.trim();
 }
 
@@ -98,7 +101,7 @@ export async function POST(request: NextRequest) {
    return finalize(NextResponse.json({ error: "Unauthorized" }, { status: 401 }));
   }
 
-  const payload: unknown = await request.json();
+  const payload: JsonFieldValue = await request.json();
   const parsed = basicLookupSchema.safeParse(payload);
 
   if (!parsed.success) {

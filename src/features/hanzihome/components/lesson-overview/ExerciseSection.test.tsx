@@ -48,9 +48,9 @@ describe("ExerciseCard", () => {
   const displayMode = {
    ...DEFAULT_LESSON_DISPLAY_MODE,
    showAnswers: true,
-   hanziFont: "songti" as const,
-   hanziSize: "xl" as const,
-  };
+   hanziFont: "songti",
+   hanziSize: "xl",
+  } satisfies typeof DEFAULT_LESSON_DISPLAY_MODE;
 
   const html = renderToStaticMarkup(<ExerciseCard item={item} displayMode={displayMode} />);
 

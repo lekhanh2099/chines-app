@@ -1,9 +1,12 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import { readdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { z } from "zod";
 
-type DatasetId = "q2" | "q3";
+const DatasetIdSchema = z.enum(["q2", "q3"]);
+type DatasetId = z.infer<typeof DatasetIdSchema>;
 
-type JsonRecord = Record<string, unknown>;
+type JsonRecord = Record<string, JsonFieldValue>;
 
 type LessonSummary = {
  lessonIndex: number;
@@ -15,7 +18,7 @@ type LessonSummary = {
   en?: string;
  };
  folder: string;
- sourceRefs?: unknown;
+ sourceRefs?: JsonFieldValue;
  counts: LessonCounts;
 };
 
@@ -37,23 +40,23 @@ type LessonCounts = {
 const dbRoot = path.resolve(process.env.HANZIHOME_DB_ROOT ?? "data/hanzihome-db");
 const datasets: DatasetId[] = ["q2", "q3"];
 
-function asRecord(value: unknown): JsonRecord {
+function asRecord(value: JsonFieldValue): JsonRecord {
  return value && typeof value === "object" && !Array.isArray(value) ? (value as JsonRecord) : {};
 }
 
-function asString(value: unknown) {
+function asString(value: JsonFieldValue) {
  return typeof value === "string" ? value : "";
 }
 
-function asNumber(value: unknown) {
+function asNumber(value: JsonFieldValue) {
  return typeof value === "number" && Number.isFinite(value) ? value : 0;
 }
 
-async function readJson<T = unknown>(filePath: string): Promise<T> {
+async function readJson<T = JsonFieldValue>(filePath: string): Promise<T> {
  return JSON.parse(await readFile(filePath, "utf8")) as T;
 }
 
-async function writeJson(filePath: string, value: unknown) {
+async function writeJson(filePath: string, value: JsonFieldValue) {
  const next = `${JSON.stringify(value, null, 2)}\n`;
  const current = await readFile(filePath, "utf8").catch(() => "");
 
@@ -182,8 +185,8 @@ async function rebuildLesson(dataset: DatasetId, lessonFolder: string) {
 
  const relationDir = path.join(lessonRoot, "relations");
  const allRelations = await readJson<JsonRecord[]>(path.join(relationDir, "all.json"));
- const unresolved = await readJson<unknown[]>(path.join(relationDir, "unresolved.json"));
- const warnings = await readJson<unknown[]>(path.join(relationDir, "warnings.json"));
+ const unresolved = await readJson<JsonFieldValue[]>(path.join(relationDir, "unresolved.json"));
+ const warnings = await readJson<JsonFieldValue[]>(path.join(relationDir, "warnings.json"));
  const oldRelationIndex = await readJson<JsonRecord>(path.join(relationDir, "index.json"));
  const relationIndex = {
   ...oldRelationIndex,
@@ -322,7 +325,9 @@ async function validateStructure() {
    const allRelations = await readJson<Array<{ to?: { path?: string } }>>(
     path.join(lessonRoot, "relations/all.json"),
    );
-   const unresolved = await readJson<unknown[]>(path.join(lessonRoot, "relations/unresolved.json"));
+   const unresolved = await readJson<JsonFieldValue[]>(
+    path.join(lessonRoot, "relations/unresolved.json"),
+   );
 
    for (const item of sectionIndex) {
     if (!(await fileExists(path.join(lessonRoot, "sections", item.file)))) {

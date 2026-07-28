@@ -1,7 +1,8 @@
+import type { JsonValue } from "@/types/json";
 import { ExercisePill } from "../CommonCards";
 import { answerToString } from "../utils";
 
-export function WordBank({ values }: { values: unknown[] }) {
+export function WordBank({ values }: { values: JsonValue[] }) {
  const words = values.map(answerToString).filter(Boolean);
 
  if (words.length === 0) return null;

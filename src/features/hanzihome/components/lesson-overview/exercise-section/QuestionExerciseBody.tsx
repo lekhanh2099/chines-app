@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import {
  EditableNodeWrapper,
  NestedEditControls,
@@ -37,7 +38,7 @@ import {
  hasExercisePassagePayload,
 } from "./exercise-utils";
 
-function questionHasInlineAnswer(value: unknown) {
+function questionHasInlineAnswer(value: JsonFieldValue) {
  if (Array.isArray(value)) return value.length > 1;
 
  const question = asRecord(value);
@@ -66,8 +67,16 @@ function readingReferenceOrder(value: string) {
  return Number.isFinite(order) ? order : null;
 }
 
+type QuestionExerciseBodyProps = {
+ lessonId?: string;
+ itemPath?: EditableNodePath;
+ item: Exercise;
+ displayMode: LessonDisplayMode;
+ readingItems?: readonly ReadingItem[];
+};
+
 function resolveReferencedReadingItem(
- readingItems: readonly ReadingItem[] | undefined,
+ readingItems: QuestionExerciseBodyProps["readingItems"],
  readingReference: string,
 ) {
  if (!readingReference || !readingItems?.length) return undefined;
@@ -87,13 +96,7 @@ export function QuestionExerciseBody({
  item,
  displayMode,
  readingItems,
-}: {
- lessonId?: string;
- itemPath?: EditableNodePath;
- item: Exercise;
- displayMode: LessonDisplayMode;
- readingItems?: readonly ReadingItem[];
-}) {
+}: QuestionExerciseBodyProps) {
  const record = asRecord(item);
 
  const questions = arrayValue(record, "questions");

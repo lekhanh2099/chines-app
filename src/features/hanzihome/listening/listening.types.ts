@@ -1,10 +1,7 @@
 import type { HanziHomeEditableRecordMeta } from "@/features/hanzihome/types";
+import { z } from "zod";
 
-export const LISTENING_CATEGORIES = [
- "listening_comprehension",
- "pronunciation",
- "extra_practice",
-] as const;
+export const LISTENING_CATEGORIES = ["listening_comprehension", "pronunciation", "extra_practice"];
 
 export type ListeningCategory = (typeof LISTENING_CATEGORIES)[number];
 
@@ -20,7 +17,7 @@ export const LISTENING_ITEM_TYPES = [
  "oral_response",
  "shadowing",
  "dictation",
-] as const;
+];
 
 export type ListeningItemType = (typeof LISTENING_ITEM_TYPES)[number];
 
@@ -63,8 +60,10 @@ export type ListeningExerciseSection = {
  instructionVi?: string;
 };
 
-export type ListeningTranscriptVoice = "male" | "female" | "neutral";
-export type ListeningTranscriptMode = "dialogue" | "monologue";
+export const ListeningTranscriptVoiceSchema = z.enum(["male", "female", "neutral"]);
+export type ListeningTranscriptVoice = z.infer<typeof ListeningTranscriptVoiceSchema>;
+export const ListeningTranscriptModeSchema = z.enum(["dialogue", "monologue"]);
+export type ListeningTranscriptMode = z.infer<typeof ListeningTranscriptModeSchema>;
 
 export type ListeningTranscriptSpeaker = {
  id: string;
@@ -100,16 +99,16 @@ export type ListeningOption = {
  textVi?: string;
 };
 
-export type ListeningChoiceAnswer = { type: "choice"; value: string };
-export type ListeningBooleanAnswer = { type: "boolean"; value: boolean };
-export type ListeningTextAnswer = { type: "text"; accepted: string[] };
-export type ListeningMatchingAnswer = {
- type: "matching";
- pairs: Array<{ left: string; right: string }>;
-};
-
-export type ListeningAnswer =
- ListeningChoiceAnswer | ListeningBooleanAnswer | ListeningTextAnswer | ListeningMatchingAnswer;
+export const ListeningAnswerSchema = z.discriminatedUnion("type", [
+ z.object({ type: z.literal("choice"), value: z.string() }),
+ z.object({ type: z.literal("boolean"), value: z.boolean() }),
+ z.object({ type: z.literal("text"), accepted: z.array(z.string()) }),
+ z.object({
+  type: z.literal("matching"),
+  pairs: z.array(z.object({ left: z.string(), right: z.string() })),
+ }),
+]);
+export type ListeningAnswer = z.infer<typeof ListeningAnswerSchema>;
 
 export type ListeningItem = {
  id: string;
@@ -196,7 +195,7 @@ export const LISTENING_EXERCISE_TYPES = [
  "shadowing",
  "stress_choice",
  "fill_blank",
-] as const;
+];
 
 export type ListeningExerciseType = (typeof LISTENING_EXERCISE_TYPES)[number];
 

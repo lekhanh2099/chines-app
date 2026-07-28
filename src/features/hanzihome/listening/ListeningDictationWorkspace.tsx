@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { z } from "zod";
 import { Headphones, Keyboard, Play } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -176,7 +177,8 @@ export function ListeningDictationWorkspace() {
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const tts = useNativeMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
- const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+ const [selectedSectionId, setSelectedSectionId] =
+  useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [sidebarOpen, setSidebarOpen] = useState(true);
  const bundle = query.data;
  const selectedSection =

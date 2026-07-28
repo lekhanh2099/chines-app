@@ -1,7 +1,19 @@
 import type { HanziHomeModule } from "@/features/hanzihome/types";
+import { z } from "zod";
+import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
-export type HanziHomeSearchKind =
- "vocab" | "grammar" | "lesson_text" | "section" | "exercise" | "radical" | "note" | "navigation";
+export const HanziHomeSearchKindSchema = z.enum([
+ "vocab",
+ "grammar",
+ "lesson_text",
+ "section",
+ "exercise",
+ "radical",
+ "note",
+ "navigation",
+]);
+export type HanziHomeSearchKind = z.infer<typeof HanziHomeSearchKindSchema>;
+const SearchMetadataValueSchema = z.union([z.string(), z.number(), z.boolean(), z.null()]);
 
 export type HanziHomeSearchIndexItem = {
  id: string;
@@ -17,7 +29,7 @@ export type HanziHomeSearchIndexItem = {
  module?: HanziHomeModule;
  targetId?: string;
  href?: string;
- metadata?: Record<string, string | number | boolean | null>;
+ metadata?: Record<string, z.infer<typeof SearchMetadataValueSchema>>;
 };
 
 export type HanziHomeSearchOptions = {
@@ -34,11 +46,12 @@ export type HanziHomeSearchResult = {
  score: number;
 };
 
-export type HanziHomeSearchNavigationIntent = {
- id: string;
- courseId?: string;
- lessonId?: string;
- lessonNumber?: number;
- module?: HanziHomeModule;
- targetId?: string;
-};
+export const HanziHomeSearchNavigationIntentSchema = z.object({
+ id: z.string(),
+ courseId: z.string().optional(),
+ lessonId: z.string().optional(),
+ lessonNumber: z.number().optional(),
+ module: moduleSchema.optional(),
+ targetId: z.string().optional(),
+});
+export type HanziHomeSearchNavigationIntent = z.infer<typeof HanziHomeSearchNavigationIntentSchema>;

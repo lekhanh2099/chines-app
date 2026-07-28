@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { RotateCcw, Trash2 } from "lucide-react";
@@ -24,48 +25,10 @@ import {
 import type { PurgeableCanonicalEntityType } from "@/features/hanzihome/editing/direct-save";
 import { invalidateHanziHomeContent } from "@/features/hanzihome/editing/invalidate-content";
 import { isHanziHomeMutationConflict } from "@/features/hanzihome/editing/mutation-error";
-import { editableEntityTypes } from "@/features/hanzihome/editing/store/types";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
+import { deletedContentResponseSchema } from "@/features/hanzihome/schemas/canonical-content.schema";
 
-const deletedContentResponseSchema = z.object({
- items: z.array(
-  z.discriminatedUnion("kind", [
-   z.object({
-    kind: z.literal("canonical"),
-    entityType: z.enum([
-     "course",
-     "book",
-     "lesson",
-     "section",
-     "lesson_text",
-     "vocab_item",
-     "vocab_example",
-     "vocab_detail_section",
-     "grammar_point",
-     "grammar_example",
-     "grammar_detail_section",
-    ]),
-    entityId: z.string(),
-    label: z.string(),
-    parentEntityId: z.string().optional(),
-    lessonId: z.string().optional(),
-    deletedAt: z.string(),
-    updatedAt: z.string(),
-   }),
-   z.object({
-    kind: z.literal("nested"),
-    entityType: z.enum(editableEntityTypes),
-    entityId: z.string(),
-    label: z.string(),
-    parentEntityId: z.string().optional(),
-    lessonId: z.string().optional(),
-    sectionId: z.string(),
-    deletedAt: z.string(),
-    updatedAt: z.string(),
-   }),
-  ]),
- ),
-});
+const DeletedContentPresentationSchema = z.enum(["toolbar", "menu"]);
 
 type DeletedContentItem = z.infer<typeof deletedContentResponseSchema>["items"][number];
 type CanonicalDeletedContentItem = Extract<DeletedContentItem, { kind: "canonical" }>;
@@ -118,7 +81,7 @@ async function getDeletedContent() {
  const response = await fetch("/api/hanzihome/content/deleted", {
   headers: { Accept: "application/json" },
  });
- const payload: unknown = await response.json().catch(() => null);
+ const payload: JsonFieldValue = await response.json().catch(() => null);
  if (!response.ok) throw new Error("Không thể tải nội dung đã xóa");
  return deletedContentResponseSchema.parse(payload).items;
 }
@@ -126,10 +89,10 @@ async function getDeletedContent() {
 export function DeletedContentDialog({
  presentation = "toolbar",
 }: {
- presentation?: "toolbar" | "menu";
+ presentation?: z.infer<typeof DeletedContentPresentationSchema>;
 }) {
  const [open, setOpen] = useState(false);
- const [pendingItemKey, setPendingItemKey] = useState<string | null>(null);
+ const [pendingItemKey, setPendingItemKey] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const queryClient = useQueryClient();
  const deletedQuery = useQuery({
   queryKey: hanzihomeQueryKeys.deletedContent,

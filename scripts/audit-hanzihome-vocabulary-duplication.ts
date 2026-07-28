@@ -48,7 +48,7 @@ export type VocabularyDuplicationAuditReport = {
  removableBytes: number;
 };
 
-function normalizedPos(value: string | null) {
+function normalizedPos(value: z.infer<z.ZodNullable<z.ZodString>>) {
  const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
  const parsed = PartOfSpeechSchema.safeParse(normalized);
  return parsed.success ? parsed.data : "unknown";

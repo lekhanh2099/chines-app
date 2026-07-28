@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
 import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
 import { arrayValue, asRecord, stringValue } from "../utils";
@@ -7,7 +8,7 @@ export function VocabularyComparisonCard({
  value,
  displayMode,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
 }) {
  const block = asRecord(value);

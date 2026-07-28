@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { answerToString, asRecord, stringValue } from "../utils";
 import {
  matchingItemText,
@@ -21,10 +22,10 @@ export function matchingAnswerText({
  leftItems,
  rightItems,
 }: {
- answerValue: unknown;
+ answerValue: JsonFieldValue;
  index: number;
- leftItems: unknown[];
- rightItems: unknown[];
+ leftItems: JsonValue[];
+ rightItems: JsonValue[];
 }): MatchingAnswerView {
  if (
   typeof answerValue === "string" ||

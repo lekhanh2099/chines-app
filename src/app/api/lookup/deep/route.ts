@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
    return finalize(NextResponse.json({ error: "Unauthorized" }, { status: 401 }));
   }
 
-  const payload: unknown = await request.json();
+  const payload: JsonFieldValue = await request.json();
   const parsed = deepLookupSchema.safeParse(payload);
 
   if (!parsed.success) {
@@ -205,11 +206,11 @@ export async function POST(request: NextRequest) {
    ai_analysis: aiLookup.data,
   });
 
-  let legacyVocabId: string | undefined;
+  const legacyVocabId: { value?: string } = {};
 
   if (dictionaryEntry) {
    const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-   legacyVocabId = mirrored?.id;
+   legacyVocabId.value = mirrored?.id;
   } else {
    const mirrored = await upsertVocab(supabase, {
     hanzi: lookupText,
@@ -218,7 +219,7 @@ export async function POST(request: NextRequest) {
     meaning: getPrimaryMeaning(aiLookup.data, ""),
     ai_analysis: aiLookup.data,
    });
-   legacyVocabId = mirrored?.id;
+   legacyVocabId.value = mirrored?.id;
   }
   metrics.push({
    name: "persist",
@@ -229,7 +230,7 @@ export async function POST(request: NextRequest) {
   return finalize(
    buildLookupResponse(
     {
-     id: legacyVocabId,
+     id: legacyVocabId.value,
      dictionary_id: dictionaryEntry?.id,
      hanzi: lookupText,
      pinyin: aiLookup.data.pinyin || getPinyin(lookupText),

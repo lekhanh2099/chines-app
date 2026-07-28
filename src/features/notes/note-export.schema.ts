@@ -1,22 +1,11 @@
 import { z } from "zod";
-export type JsonValue = string | number | boolean | null | JsonValue[] | JsonObject;
-export type JsonObject = { [key: string]: JsonValue };
+import { JsonObjectSchema, JsonValueSchema, type JsonObject, type JsonValue } from "@/types/json";
+
+export { JsonObjectSchema, JsonValueSchema };
+export type { JsonObject, JsonValue };
 
 const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "general"]);
 const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
-
-export const JsonValueSchema: z.ZodType<JsonValue> = z.lazy(() =>
- z.union([
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.null(),
-  z.array(JsonValueSchema),
-  z.record(z.string(), JsonValueSchema),
- ]),
-);
-
-export const JsonObjectSchema: z.ZodType<JsonObject> = z.record(z.string(), JsonValueSchema);
 
 const NoteBodySchema = z.object({
  title: z.string().trim().min(1),
@@ -62,7 +51,9 @@ export const NoteExportPayloadSchema = z.object({
 
 export type NoteExportPayload = z.infer<typeof NoteExportPayloadSchema>;
 
-export function normalizeImportedNotePayload(value: unknown): NoteExportPayload {
+export function normalizeImportedNotePayload(
+ value: Parameters<typeof NoteExportPayloadSchema.safeParse>[0],
+): NoteExportPayload {
  const current = NoteExportPayloadSchema.safeParse(value);
  if (current.success) return current.data;
 

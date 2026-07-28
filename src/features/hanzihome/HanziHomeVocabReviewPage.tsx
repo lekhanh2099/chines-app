@@ -23,11 +23,13 @@ import {
  resolveReviewLessonTokens,
 } from "@/features/hanzihome/utils/review-selection-route";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
+import type { UserLearningState } from "@/features/hanzihome/types";
+import { z } from "zod";
 
 export function HanziHomeVocabReviewPage({
  reviewLessonsParam,
 }: {
- reviewLessonsParam: string | null;
+ reviewLessonsParam: z.infer<z.ZodNullable<z.ZodString>>;
 }) {
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const lessonTokens = useMemo(
@@ -81,7 +83,10 @@ export function HanziHomeVocabReviewPage({
  }, [lessons]);
 
  const answerReview = (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
+  item: {
+   type: UserLearningState["reviewHistory"][number]["type"];
+   id: string;
+  },
   result: ReviewResult,
  ) => {
   learning.appendReviewHistory(item, result);

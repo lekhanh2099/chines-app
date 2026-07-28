@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { PassageCard } from "../PassageCard";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
@@ -15,9 +16,9 @@ export function FieldListItem({
  displayMode,
  renderFallback,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
- renderFallback: (value: unknown) => React.ReactNode;
+ renderFallback: (value: JsonFieldValue) => React.ReactNode;
 }) {
  const record = asRecord(value);
  const zh = stringValue(record, "zh") || stringValue(record, "text");

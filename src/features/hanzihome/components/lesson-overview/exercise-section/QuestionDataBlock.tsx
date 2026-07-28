@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
@@ -11,7 +12,7 @@ export function QuestionDataBlock({
  displayMode,
 }: {
  title: string;
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
 }) {
  if (!hasRenderableValue(value)) return null;

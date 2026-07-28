@@ -1,12 +1,16 @@
+import { z } from "zod";
+
 export const REVIEW_LESSONS_QUERY_KEY = "reviewLessons";
+const OptionalNullableStringSchema = z.string().nullable().optional();
+const NullableStringSchema = z.string().nullable();
 
 export type ReviewLessonRouteOption = {
  id: string;
  lessonNumber: number;
- courseId?: string | null;
- bookId?: string | null;
- title?: string | null;
- titleZh?: string | null;
+ courseId?: z.infer<typeof OptionalNullableStringSchema>;
+ bookId?: z.infer<typeof OptionalNullableStringSchema>;
+ title?: z.infer<typeof OptionalNullableStringSchema>;
+ titleZh?: z.infer<typeof OptionalNullableStringSchema>;
 };
 
 function inferBookToken(lesson: ReviewLessonRouteOption) {
@@ -36,7 +40,9 @@ export function getReviewLessonToken(lesson: ReviewLessonRouteOption) {
  return `${bookToken}-b${lesson.lessonNumber}`;
 }
 
-export function parseReviewLessonTokensParam(value: string | null): string[] {
+export function parseReviewLessonTokensParam(
+ value: z.infer<typeof NullableStringSchema>,
+): string[] {
  if (!value) return [];
 
  return Array.from(

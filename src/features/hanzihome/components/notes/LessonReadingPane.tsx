@@ -1,5 +1,6 @@
 "use client";
 
+import type { JsonObject } from "@/types/json";
 import { Editor } from "@/components/editor/Editor";
 
 import { useDebouncedEditorSave } from "./useDebouncedEditorSave";
@@ -13,8 +14,8 @@ export function LessonReadingPane({
  className = "",
 }: {
  noteId: string;
- readingContent: Record<string, unknown>;
- onSave: (content: Record<string, unknown>) => void;
+ readingContent: JsonObject;
+ onSave: (content: JsonObject) => void;
  readOnly: boolean;
  toolbarVisible: boolean;
  className?: string;

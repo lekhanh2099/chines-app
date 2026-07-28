@@ -9,7 +9,10 @@ import {
  toArtifactFormState,
 } from "./html-artifact-page-utils";
 
-function folder(id: string, parentFolderId: string | null): HtmlArtifactFolder {
+function folder(
+ id: string,
+ parentFolderId: HtmlArtifactFolder["parentFolderId"],
+): HtmlArtifactFolder {
  return {
   id,
   ownerId: "user-1",

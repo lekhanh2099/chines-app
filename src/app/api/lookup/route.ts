@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = lookupSchema.safeParse(payload);
 
  if (!parsed.success) {
@@ -172,11 +173,11 @@ export async function POST(request: NextRequest) {
   ai_analysis: aiResult,
  });
 
- let legacyVocabId: string | undefined;
+ const legacyVocabId: { value?: string } = {};
 
  if (dictionaryEntry) {
   const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-  legacyVocabId = mirrored?.id;
+  legacyVocabId.value = mirrored?.id;
  } else {
   const mirrored = await upsertVocab(supabase, {
    hanzi: lookupText,
@@ -185,13 +186,13 @@ export async function POST(request: NextRequest) {
    meaning: getPrimaryMeaning(aiResult, ""),
    ai_analysis: aiResult,
   });
-  legacyVocabId = mirrored?.id;
+  legacyVocabId.value = mirrored?.id;
  }
 
  return NextResponse.json({
   cached: false,
   data: {
-   id: legacyVocabId,
+   id: legacyVocabId.value,
    dictionary_id: dictionaryEntry?.id,
    hanzi: lookupText,
    pinyin: aiResult.pinyin || getPinyin(lookupText),

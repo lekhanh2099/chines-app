@@ -1,21 +1,21 @@
-import type {
- HtmlArtifact,
- HtmlArtifactFolder,
- HtmlArtifactSummary,
- HtmlArtifactType,
-} from "./html-artifact.schema";
+import type { HtmlArtifactFolder, HtmlArtifactSummary } from "./html-artifact.schema";
+import { htmlArtifactSchema, htmlArtifactTypeSchema } from "./html-artifact.schema";
+import { z } from "zod";
 
-export type FolderFilter = "all" | "unfiled" | string;
+export type FolderFilter = string;
 
-export type ArtifactFormState = {
- title: string;
- folderId: string | null;
- artifactType: HtmlArtifactType;
- tagsInput: string;
- html: string;
-};
+const ArtifactFormStateSchema = z.object({
+ title: z.string(),
+ folderId: z.string().nullable(),
+ artifactType: htmlArtifactTypeSchema,
+ tagsInput: z.string(),
+ html: z.string(),
+});
+export type ArtifactFormState = z.infer<typeof ArtifactFormStateSchema>;
+const NullableHtmlArtifactSchema = htmlArtifactSchema.nullable();
 
-export type DraftSaveStatus = "idle" | "dirty" | "saved" | "error";
+const DraftSaveStatusSchema = z.enum(["idle", "dirty", "saved", "error"]);
+export type DraftSaveStatus = z.infer<typeof DraftSaveStatusSchema>;
 
 export type FolderTreeNode = HtmlArtifactFolder & { children: FolderTreeNode[] };
 
@@ -42,8 +42,8 @@ export function parseTags(input: string): string[] {
 }
 
 export function toArtifactFormState(
- artifact: HtmlArtifact | null,
- defaultFolderId: string | null,
+ artifact: z.infer<typeof NullableHtmlArtifactSchema>,
+ defaultFolderId: ArtifactFormState["folderId"],
 ): ArtifactFormState {
  if (!artifact) return { ...emptyArtifactForm, folderId: defaultFolderId };
 

@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { AnswerReveal } from "../CommonCards";
@@ -17,10 +18,10 @@ export function MatchingAnswerDetails({
  lessonId?: string;
  itemPath?: EditableNodePath;
  itemId: string;
- answers: unknown[];
+ answers: JsonValue[];
  sourceKey: string;
- leftItems: unknown[];
- rightItems: unknown[];
+ leftItems: JsonValue[];
+ rightItems: JsonValue[];
  showAnswers?: boolean;
 }) {
  if (answers.length === 0) return null;

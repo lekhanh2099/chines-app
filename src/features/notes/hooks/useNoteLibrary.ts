@@ -13,10 +13,16 @@ import {
  updateNoteFolder,
  updateNoteLibraryMetadata,
  type NoteFolder,
- type NoteFolderColor,
- type NoteSourceMetadata,
 } from "@/services/notes.service";
-import type { ReadingStatus } from "@/types/database";
+
+type CreateNoteFolderMutationInput = Parameters<typeof createNoteFolder>[2];
+type UpdateNoteFolderMutationInput = {
+ folderId: NoteFolder["id"];
+ changes: Parameters<typeof updateNoteFolder>[2];
+};
+type UpdateNoteLibraryMutationInput = Parameters<typeof updateNoteLibraryMetadata>[2] & {
+ noteId: Parameters<typeof updateNoteLibraryMetadata>[1];
+};
 
 export function useNoteFolders() {
  const supabaseRef = useRef(createClient());
@@ -39,12 +45,7 @@ export function useNoteFolderMutations() {
  const refresh = () => queryClient.invalidateQueries({ queryKey: noteQueryKeys.folders });
 
  const createMutation = useMutation({
-  mutationFn: async (input: {
-   name: string;
-   parentId?: string | null;
-   color?: NoteFolderColor;
-   position?: number;
-  }) => {
+  mutationFn: async (input: CreateNoteFolderMutationInput) => {
    const user = await getClientSessionUser(supabase);
    if (!user) throw new Error("Not authenticated");
    return createNoteFolder(supabase, user.id, input);
@@ -53,10 +54,8 @@ export function useNoteFolderMutations() {
  });
 
  const updateMutation = useMutation({
-  mutationFn: (input: {
-   folderId: string;
-   changes: Partial<Pick<NoteFolder, "name" | "parentId" | "color" | "position">>;
-  }) => updateNoteFolder(supabase, input.folderId, input.changes),
+  mutationFn: (input: UpdateNoteFolderMutationInput) =>
+   updateNoteFolder(supabase, input.folderId, input.changes),
   onSuccess: refresh,
  });
 
@@ -79,13 +78,8 @@ export function useUpdateNoteLibraryMetadata() {
  const queryClient = useQueryClient();
 
  return useMutation({
-  mutationFn: (input: {
-   noteId: string;
-   title?: string;
-   folderId?: string | null;
-   readingStatus?: ReadingStatus | null;
-   source?: NoteSourceMetadata | null;
-  }) => updateNoteLibraryMetadata(supabase, input.noteId, input),
+  mutationFn: (input: UpdateNoteLibraryMutationInput) =>
+   updateNoteLibraryMetadata(supabase, input.noteId, input),
   onSuccess: async (_, input) => {
    await Promise.all([
     queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot }),

@@ -7,9 +7,12 @@ import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import { getNoteByLessonNoteLink, type LessonNoteRelationType } from "@/services/notes.service";
+import { z } from "zod";
+
+const LessonLinkedNoteIdSchema = z.string().nullable().optional();
 
 export function useLessonLinkedNote(
- lessonId: string | null | undefined,
+ lessonId: z.input<typeof LessonLinkedNoteIdSchema>,
  relationType: LessonNoteRelationType = "main",
  fallbackLessonIds: string[] = [],
 ) {
@@ -17,7 +20,7 @@ export function useLessonLinkedNote(
  const supabase = supabaseRef.current;
 
  const lessonIds = [lessonId, ...fallbackLessonIds]
-  .filter((value): value is string => Boolean(value))
+  .flatMap((value) => (value ? [value] : []))
   .filter((value, index, source) => source.indexOf(value) === index);
 
  return useQuery({

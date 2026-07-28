@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -58,7 +59,7 @@ function statusForError(error: RpcError) {
  return 500;
 }
 
-function mutationError(message: string, status: number, details?: unknown) {
+function mutationError(message: string, status: number, details?: JsonFieldValue) {
  return NextResponse.json({ error: message, details }, { status });
 }
 
@@ -71,7 +72,7 @@ export async function PATCH(request: Request, context: RouteContext) {
 
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsedBody = updateRadicalPayloadSchema.safeParse(body);
  if (!parsedBody.success) {
   return mutationError("Invalid HanziHome radical payload", 400, z.flattenError(parsedBody.error));

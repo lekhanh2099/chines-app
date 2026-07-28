@@ -5,12 +5,19 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { IconButton } from "@/components/ui/icon-button";
 
+type ControlledPasswordProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ type?: never;
+};
+
 export function PasswordField({
  label,
  description,
  helperText,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledPasswordProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<string>();
  const [showPassword, setShowPassword] = useState(false);

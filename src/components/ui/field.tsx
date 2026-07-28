@@ -2,10 +2,14 @@
 
 import { useMemo } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { z } from "zod";
 
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+
+const FieldLegendVariantSchema = z.enum(["legend", "label"]);
+const FieldErrorSchema = z.object({ message: z.string().optional() }).optional();
 
 function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
  return (
@@ -24,7 +28,9 @@ function FieldLegend({
  className,
  variant = "legend",
  ...props
-}: React.ComponentProps<"legend"> & { variant?: "legend" | "label" }) {
+}: React.ComponentProps<"legend"> & {
+ variant?: z.infer<typeof FieldLegendVariantSchema>;
+}) {
  return (
   <legend
    data-slot="field-legend"
@@ -167,7 +173,7 @@ function FieldError({
  errors,
  ...props
 }: React.ComponentProps<"div"> & {
- errors?: Array<{ message?: string } | undefined>;
+ errors?: Array<z.infer<typeof FieldErrorSchema>>;
 }) {
  const content = useMemo(() => {
   if (children) {

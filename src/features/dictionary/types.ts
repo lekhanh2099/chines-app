@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import type {
  AiAnalysis,
  AiRelatedCompound,
@@ -5,6 +6,11 @@ import type {
  PersonalNoteMode,
  VocabData,
 } from "@/types/database";
+import { z } from "zod";
+
+const NullableStringSchema = z.string().nullable();
+const NullableBooleanSchema = z.boolean().nullable();
+const NullableNumberSchema = z.number().nullable();
 
 export type ExampleItem = {
  zh: string;
@@ -26,9 +32,9 @@ export type StructureComponent = {
 };
 
 export type HanziWriterInstance = {
- animateCharacter?: () => Promise<unknown>;
- hideCharacter?: (options?: { duration?: number }) => Promise<unknown>;
- quiz?: (options?: { onComplete?: () => void }) => Promise<unknown>;
+ animateCharacter?: () => Promise<JsonFieldValue>;
+ hideCharacter?: (options?: { duration?: number }) => Promise<JsonFieldValue>;
+ quiz?: (options?: { onComplete?: () => void }) => Promise<JsonFieldValue>;
  cancelQuiz?: () => void;
 };
 
@@ -39,7 +45,7 @@ export type DictionarySentenceViewModel = {
  isLoading: boolean;
  translation: string;
  pinyin: string;
- error: string | null;
+ error: z.infer<typeof NullableStringSchema>;
 };
 
 export type DictionaryWordLoadingViewModel = {
@@ -60,7 +66,7 @@ export type DictionaryWordReadyViewModel = {
  selectedCharacter: string;
  setActiveCharacter: (character: string) => void;
  vocabData: VocabData;
- ai: AiAnalysis | undefined;
+ ai: VocabData["ai_analysis"];
  meaningSummary: string;
  meaningItems: MeaningItem[];
  extraExamples: ExampleItem[];
@@ -70,9 +76,9 @@ export type DictionaryWordReadyViewModel = {
  hasLearningInsights: boolean;
  canRenderDashboard: boolean;
  isAiLoading: boolean;
- isSaved: boolean | null;
+ isSaved: z.infer<typeof NullableBooleanSchema>;
  isSaving: boolean;
- srsLevel: number | null;
+ srsLevel: z.infer<typeof NullableNumberSchema>;
  srsStatusLabel: string;
  savedPersonalNote: string;
  personalNoteMode: PersonalNoteMode;
@@ -82,7 +88,15 @@ export type DictionaryWordReadyViewModel = {
  handleSavePersonalNote: (note: string) => void;
 };
 
-export type DictionaryWordViewModel =
- DictionaryWordLoadingViewModel | DictionaryWordNotFoundViewModel | DictionaryWordReadyViewModel;
+type DictionaryWordViewModelMap = {
+ loading: DictionaryWordLoadingViewModel;
+ notFound: DictionaryWordNotFoundViewModel;
+ ready: DictionaryWordReadyViewModel;
+};
+export type DictionaryWordViewModel = DictionaryWordViewModelMap[keyof DictionaryWordViewModelMap];
 
-export type DictionaryPageViewModel = DictionarySentenceViewModel | DictionaryWordViewModel;
+type DictionaryPageViewModelMap = {
+ sentence: DictionarySentenceViewModel;
+ word: DictionaryWordViewModel;
+};
+export type DictionaryPageViewModel = DictionaryPageViewModelMap[keyof DictionaryPageViewModelMap];

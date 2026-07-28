@@ -1,7 +1,10 @@
-export type RevealStage = 0 | 1 | 2;
+import { z } from "zod";
+
+export const RevealStageSchema = z.union([z.literal(0), z.literal(1), z.literal(2)]);
+export type RevealStage = z.infer<typeof RevealStageSchema>;
 
 export function nextRevealStage(stage: RevealStage): RevealStage {
- return ((stage + 1) % 3) as RevealStage;
+ return RevealStageSchema.parse((stage + 1) % 3);
 }
 
 export function nextAvailableRevealStage(

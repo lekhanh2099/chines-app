@@ -1,3 +1,5 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import "server-only";
 
 import { z } from "zod";
@@ -57,24 +59,6 @@ import {
  type VocabRow,
 } from "./supabase-content-row.schemas";
 
-export type HanzihomeContentRepository = {
- getCatalogSummary: (options?: { includeLessons?: boolean }) => Promise<HanziHomeCatalogData>;
- getCourseLessonSummaries: (courseId: string) => Promise<HanziHomeLesson[]>;
- getLessonOverview: (lessonId: string) => Promise<LessonOverviewResource | null>;
- getLessonDetail: (lessonId: string | null | undefined) => Promise<HanziHomeLesson | null>;
- getLessonSections: (lessonId: string) => Promise<LessonSectionsResource | null>;
- getLessonSection: (sectionId: string) => Promise<Section | null>;
- getLessonVocabulary: (lessonId: string) => Promise<LessonVocabularyListResource | null>;
- getVocabDetail: (vocabId: string) => Promise<HanziHomeVocabItem | null>;
- getLessonGrammar: (lessonId: string) => Promise<LessonGrammarListResource | null>;
- getGrammarDetail: (grammarId: string) => Promise<GrammarViewModel | null>;
- getAggregateItems: (input: {
-  kind: AggregateKind;
-  filters: AggregateFilters;
- }) => Promise<AggregateResourceItem[]>;
- getSearchData: () => Promise<HanziHomeData>;
-};
-
 function groupBy<T, K>(items: T[], getKey: (item: T) => K) {
  const grouped = new Map<K, T[]>();
 
@@ -96,21 +80,24 @@ function countFromRelation(value: Array<{ count: number }>) {
  return value[0]?.count ?? 0;
 }
 
-function normalizeText(value: string | null | undefined) {
+const OptionalNullableStringSchema = z.string().nullable().optional();
+const NullableStringSchema = z.string().nullable();
+
+function normalizeText(value: z.infer<typeof OptionalNullableStringSchema>) {
  return value?.trim() ?? "";
 }
 
-function isMissingRequiredText(value: string | null | undefined) {
+function isMissingRequiredText(value: z.infer<typeof OptionalNullableStringSchema>) {
  return normalizeText(value).length === 0;
 }
 
-function normalizePos(value: string | null) {
+function normalizePos(value: z.infer<typeof NullableStringSchema>) {
  const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
  const parsed = PartOfSpeechSchema.safeParse(normalized);
  return parsed.success ? parsed.data : "unknown";
 }
 
-function normalizeLevel(value: string | null) {
+function normalizeLevel(value: z.infer<typeof NullableStringSchema>) {
  const parsed = ImportanceLevelSchema.safeParse(value ?? "unknown");
  return parsed.success ? parsed.data : "unknown";
 }
@@ -601,11 +588,14 @@ function lessonDetailToViewModel(row: LessonDetailRow): HanziHomeLesson {
  };
 }
 
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+const SupabaseOperationErrorSchema = z.object({ message: z.string() });
+
 async function requireRows<T>(
  operation: string,
  promise: PromiseLike<{
-  data: unknown;
-  error: { message: string } | null;
+  data: JsonFieldValue;
+  error: Nullable<z.infer<typeof SupabaseOperationErrorSchema>>;
  }>,
  schema: z.ZodType<T>,
 ) {
@@ -623,8 +613,8 @@ async function requirePagedRows<T>(
   from: number,
   to: number,
  ) => PromiseLike<{
-  data: unknown;
-  error: { message: string } | null;
+  data: JsonFieldValue;
+  error: Nullable<z.infer<typeof SupabaseOperationErrorSchema>>;
  }>,
 ) {
  const pageSize = 1_000;
@@ -831,23 +821,21 @@ async function getLessonSectionRow(sectionId: string) {
  return rows[0] ?? null;
 }
 
-function removeDeletedNestedNodes(value: unknown): unknown {
+function removeDeletedNestedNodes(value: JsonValue): JsonValue {
  if (Array.isArray(value)) {
   return value
+   .filter((item): item is JsonValue => item !== undefined)
    .filter(
     (item) =>
-     !item ||
-     typeof item !== "object" ||
-     Array.isArray(item) ||
-     !(item as Record<string, unknown>).deleted_at,
+     !item || typeof item !== "object" || Array.isArray(item) || !(item as JsonObject).deleted_at,
    )
    .map(removeDeletedNestedNodes);
  }
  if (!value || typeof value !== "object") return value;
  return Object.fromEntries(
-  Object.entries(value as Record<string, unknown>).map(([key, item]) => [
+  Object.entries(value as JsonObject).map(([key, item]) => [
    key,
-   removeDeletedNestedNodes(item),
+   item === undefined ? undefined : removeDeletedNestedNodes(item),
   ]),
  );
 }
@@ -1093,7 +1081,7 @@ function entityLessonId(entityId: string) {
  return entityId.includes("__") ? entityId.slice(0, entityId.indexOf("__")) : "";
 }
 
-export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
+export const supabaseHanziHomeContentRepository = {
  async getCatalogSummary({ includeLessons = false } = {}) {
   const client = await createClient();
   const [courseRows, bookRows, lessonRows, statsRows, radicals] = await Promise.all([
@@ -1178,32 +1166,32 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
   };
  },
 
- async getCourseLessonSummaries(courseId) {
+ async getCourseLessonSummaries(courseId: string) {
   return (await getLessonSummaryRows(courseId)).map(lessonSummaryToViewModel);
  },
 
- async getLessonOverview(lessonId) {
+ async getLessonOverview(lessonId: string) {
   const lesson = await this.getLessonDetail(lessonId);
   return lesson ? buildLessonOverviewResource(lesson) : null;
  },
 
- async getLessonDetail(lessonId) {
+ async getLessonDetail(lessonId: z.infer<typeof OptionalNullableStringSchema>) {
   if (!lessonId) return null;
   const row = await getLessonDetailRow(lessonId);
   return row ? lessonDetailToViewModel(row) : null;
  },
 
- async getLessonSections(lessonId) {
+ async getLessonSections(lessonId: string) {
   const lesson = await this.getLessonDetail(lessonId);
   return lesson ? buildLessonSectionsResource(lesson) : null;
  },
 
- async getLessonSection(sectionId) {
+ async getLessonSection(sectionId: string) {
   const row = await getLessonSectionRow(sectionId);
   return row ? lessonSectionRowToSection(row) : null;
  },
 
- async getLessonVocabulary(lessonId) {
+ async getLessonVocabulary(lessonId: string) {
   if (!lessonId) return null;
   const rows = await getLessonVocabularyRows(lessonId);
   return {
@@ -1213,7 +1201,7 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
   };
  },
 
- async getVocabDetail(vocabId) {
+ async getVocabDetail(vocabId: string) {
   const lessonId = entityLessonId(vocabId);
   if (!lessonId) return null;
   const rows = await getLessonVocabularyRows(lessonId);
@@ -1222,12 +1210,12 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
   return row ? vocabRowToViewModel(row) : null;
  },
 
- async getLessonGrammar(lessonId) {
+ async getLessonGrammar(lessonId: string) {
   const lesson = await this.getLessonDetail(lessonId);
   return lesson ? buildLessonGrammarResource(lesson) : null;
  },
 
- async getGrammarDetail(grammarId) {
+ async getGrammarDetail(grammarId: string) {
   const lessonId = entityLessonId(grammarId);
   if (!lessonId) return null;
   const lesson = await this.getLessonDetail(lessonId);
@@ -1237,3 +1225,5 @@ export const supabaseHanziHomeContentRepository: HanzihomeContentRepository = {
  getAggregateItems,
  getSearchData,
 };
+
+export type HanzihomeContentRepository = typeof supabaseHanziHomeContentRepository;

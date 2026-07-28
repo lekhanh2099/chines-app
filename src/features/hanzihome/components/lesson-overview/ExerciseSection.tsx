@@ -9,7 +9,7 @@ import { getHanziTypographyStyle } from "./hanzi-typography";
 
 const EXERCISE_PAGE_METADATA_PATTERN = /^Trang bài tập\s+\d+$/i;
 
-function meaningfulVietnameseTitle(value: string | undefined) {
+function meaningfulVietnameseTitle(value: Exercise["title_vi"]) {
  const title = value?.trim();
  return title && !EXERCISE_PAGE_METADATA_PATTERN.test(title) ? title : "";
 }

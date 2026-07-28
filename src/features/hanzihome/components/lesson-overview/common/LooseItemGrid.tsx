@@ -1,3 +1,4 @@
+import type { JsonValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
 import { EmptySectionState } from "./EmptySectionState";
@@ -10,7 +11,7 @@ export function LooseItemGrid({
  displayMode,
  emptyReason,
 }: {
- items: unknown[];
+ items: JsonValue[];
  displayMode: LessonDisplayMode;
  emptyReason?: string;
 }) {

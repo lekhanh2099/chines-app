@@ -6,6 +6,9 @@ import { X, FileText, Plus } from "lucide-react";
 import { noteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
 import { cn } from "@/lib/utils";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
+import { z } from "zod";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export function NoteTabBar({
  leading,
@@ -27,8 +30,8 @@ export function NoteTabBar({
  const scrollRef = useRef<HTMLDivElement>(null);
 
  // Drag state
- const [dragIndex, setDragIndex] = useState<number | null>(null);
- const [dropIndex, setDropIndex] = useState<number | null>(null);
+ const [dragIndex, setDragIndex] = useState<Nullable<number>>(null);
+ const [dropIndex, setDropIndex] = useState<Nullable<number>>(null);
 
  const handleWheel = useCallback((e: React.WheelEvent) => {
   if (scrollRef.current) {
@@ -41,8 +44,9 @@ export function NoteTabBar({
   setDragIndex(index);
   e.dataTransfer.effectAllowed = "move";
   // Minimal drag image — use the tab element itself
-  const el = e.currentTarget as HTMLElement;
-  e.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  e.dataTransfer.setDragImage(el, rect.width / 2, rect.height / 2);
  }, []);
 
  const handleDragOver = useCallback((e: React.DragEvent, index: number) => {

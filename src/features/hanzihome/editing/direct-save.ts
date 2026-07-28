@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonObjectSchema, JsonValueSchema, type JsonObject } from "@/types/json";
 import { z } from "zod";
 
 import type { EditableNodeRequest } from "./store/types";
@@ -78,7 +79,12 @@ const editableSectionSchema = z.looseObject({
  title_vi: z.string().default(""),
 });
 
-function mapVocabItem(value: unknown) {
+const mutationErrorPayloadSchema = z.object({
+ error: z.string().optional(),
+ details: JsonValueSchema.optional(),
+});
+
+function mapVocabItem(value: Parameters<typeof editableVocabSchema.parse>[0]) {
  const item = editableVocabSchema.parse(value);
  const meaning = item.meaning;
  const pos =
@@ -98,7 +104,7 @@ function mapVocabItem(value: unknown) {
  };
 }
 
-function mapGrammarPoint(value: unknown) {
+function mapGrammarPoint(value: Parameters<typeof editableGrammarPointSchema.parse>[0]) {
  const point = editableGrammarPointSchema.parse(value);
  const title = point.title || point.cleanTitle;
  return {
@@ -114,7 +120,7 @@ function mapGrammarPoint(value: unknown) {
  };
 }
 
-function mapExample(value: unknown) {
+function mapExample(value: Parameters<typeof editableExampleSchema.parse>[0]) {
  const example = editableExampleSchema.parse(value);
  return {
   zh: example.zh,
@@ -124,7 +130,7 @@ function mapExample(value: unknown) {
  };
 }
 
-function mapDetailSection(value: unknown) {
+function mapDetailSection(value: Parameters<typeof editableDetailSectionSchema.parse>[0]) {
  const section = editableDetailSectionSchema.parse(value);
  return {
   section_key: section.key || section.section_key,
@@ -133,7 +139,7 @@ function mapDetailSection(value: unknown) {
  };
 }
 
-function mapLesson(value: unknown) {
+function mapLesson(value: Parameters<typeof editableLessonSchema.parse>[0]) {
  const lesson = editableLessonSchema.parse(value);
  return {
   title_zh: lesson.title.zh,
@@ -145,7 +151,7 @@ function mapLesson(value: unknown) {
  };
 }
 
-function mapSection(value: unknown) {
+function mapSection(value: Parameters<typeof editableSectionSchema.parse>[0]) {
  const section = editableSectionSchema.parse(value);
  return {
   title: section.title,
@@ -154,7 +160,7 @@ function mapSection(value: unknown) {
  };
 }
 
-function mapListeningItem(value: unknown) {
+function mapListeningItem(value: Parameters<typeof listeningRuntimeItemSchema.parse>[0]) {
  const item = listeningRuntimeItemSchema.parse(value);
  return {
   prompt_zh: item.promptZh ?? null,
@@ -178,7 +184,7 @@ const resourceByEntityType = {
  grammar_point: "grammar-points",
  grammar_example: "grammar-examples",
  grammar_detail_section: "grammar-detail-sections",
-} as const satisfies Record<string, string>;
+} satisfies Record<string, string>;
 
 export type RestorableCanonicalEntityType = keyof typeof resourceByEntityType;
 
@@ -204,19 +210,14 @@ function resourceForEntityType(entityType: string) {
 }
 
 async function readMutationResponse(response: Response, fallback: string) {
- const payload: unknown = await response.json().catch(() => null);
+ const payload = mutationErrorPayloadSchema.safeParse(await response.json().catch(() => null));
  if (!response.ok) {
   const message =
-   payload && typeof payload === "object" && "error" in payload
-    ? String((payload as { error: unknown }).error)
-    : `${fallback} (${response.status})`;
-  const details =
-   payload && typeof payload === "object" && "details" in payload
-    ? (payload as { details: unknown }).details
-    : undefined;
+   payload.success && payload.data.error ? payload.data.error : `${fallback} (${response.status})`;
+  const details = payload.success ? payload.data.details : undefined;
   throw new HanziHomeMutationError(message, response.status, details);
  }
- return payload;
+ return payload.success ? payload.data : null;
 }
 
 export async function updateCanonicalContent({
@@ -229,7 +230,7 @@ export async function updateCanonicalContent({
  entityType: RestorableCanonicalEntityType;
  entityId: string;
  expectedUpdatedAt: string;
- changes: Record<string, unknown>;
+ changes: JsonObject;
  reason: string;
 }) {
  const resource = resourceForEntityType(entityType);
@@ -273,7 +274,7 @@ export async function createCanonicalContent({
  reason,
 }: {
  entityType: RestorableCanonicalEntityType;
- changes: Record<string, unknown>;
+ changes: JsonObject;
  reason: string;
 }) {
  const resource = resourceByEntityType[entityType];
@@ -286,7 +287,7 @@ export async function createCanonicalContent({
  return readMutationResponse(response, "Tạo nội dung thất bại");
 }
 
-function changesForEntity(entityType: string, value: unknown) {
+function changesForEntity(entityType: string, value: EditableNodeRequest["value"]) {
  switch (entityType) {
   case "lesson":
    return mapLesson(value);
@@ -309,10 +310,7 @@ function changesForEntity(entityType: string, value: unknown) {
  }
 }
 
-function changedFields(
- before: Record<string, unknown>,
- after: Record<string, unknown>,
-): Record<string, unknown> {
+function changedFields(before: JsonObject, after: JsonObject): JsonObject {
  return Object.fromEntries(
   Object.entries(after).filter(
    ([key, value]) => JSON.stringify(before[key]) !== JSON.stringify(value),
@@ -328,13 +326,13 @@ export async function saveEditableNodeDirectly({
 }: {
  node: EditableNodeRequest;
  record: HanziHomeEditableRecordMeta;
- after: unknown;
+ after: EditableNodeRequest["value"];
  reason: string;
 }) {
  const normalizedEntityType = record.entityType;
  const resource = resourceForEntityType(normalizedEntityType);
  let url: string;
- let body: Record<string, unknown>;
+ let body: JsonObject;
 
  if (
   normalizedEntityType === "vocab_detail_section" &&
@@ -356,7 +354,7 @@ export async function saveEditableNodeDirectly({
    expectedUpdatedAt: record.updatedAt,
    changes: {},
    nodePath: node.path,
-   after,
+   after: JsonValueSchema.parse(after),
   };
  } else if (resource) {
   const beforeChanges = changesForEntity(normalizedEntityType, node.value);
@@ -364,7 +362,10 @@ export async function saveEditableNodeDirectly({
   if (!beforeChanges || !afterChanges) {
    throw new Error(`Chưa hỗ trợ lưu ${normalizedEntityType}`);
   }
-  const changes = changedFields(beforeChanges, afterChanges);
+  const changes = changedFields(
+   JsonObjectSchema.parse(beforeChanges),
+   JsonObjectSchema.parse(afterChanges),
+  );
   if (Object.keys(changes).length === 0) {
    throw new Error("Không có thay đổi để lưu.");
   }
@@ -443,8 +444,11 @@ export async function restoreCanonicalContent({
 
 export type PurgeableCanonicalEntityType = Extract<
  RestorableCanonicalEntityType,
- "course" | "book" | "lesson"
+ z.infer<typeof PurgeableCanonicalEntityTypeSchema>
 >;
+export const PurgeableCanonicalEntityTypeSchema = z.enum(["course", "book", "lesson"]);
+export const ReorderDirectionSchema = z.union([z.literal(-1), z.literal(1)]);
+export type ReorderDirection = z.infer<typeof ReorderDirectionSchema>;
 
 export async function purgeDeletedCanonicalContent({
  entityType,

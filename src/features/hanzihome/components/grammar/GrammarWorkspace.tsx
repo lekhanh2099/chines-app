@@ -16,7 +16,7 @@ import {
  useHanziHomeEditMode,
  useHanziHomeFeatureSelector,
 } from "@/features/hanzihome/context/selectors";
-import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type NullableEditableNodePath } from "@/features/hanzihome/editing";
 import {
  LessonModuleFrame,
  LessonModuleSidebarRailItem,
@@ -76,7 +76,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
 
  const progress = state.progress.grammar || {};
  const bookmarks = state.bookmarks.grammar || [];
- const selectedPointPath = useMemo<EditableNodePath | null>(() => {
+ const selectedPointPath = useMemo<NullableEditableNodePath>(() => {
   if (!selectedPoint) return null;
 
   const index = lesson.grammar.findIndex((point) => point.id === selectedPoint.id);

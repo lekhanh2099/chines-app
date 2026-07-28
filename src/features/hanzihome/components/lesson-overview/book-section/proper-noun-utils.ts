@@ -1,6 +1,8 @@
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import { asRecord, stringValue } from "../utils";
 
-export function stringList(value: unknown) {
+export function stringList(value: JsonFieldValue) {
  if (!Array.isArray(value)) return [];
 
  return value.filter(
@@ -8,7 +10,7 @@ export function stringList(value: unknown) {
  );
 }
 
-export function properNounBackText(record: Record<string, unknown>) {
+export function properNounBackText(record: JsonObject) {
  const flashcard = asRecord(record.flashcard);
 
  return (
@@ -19,7 +21,7 @@ export function properNounBackText(record: Record<string, unknown>) {
  );
 }
 
-export function properNounFrontText(record: Record<string, unknown>) {
+export function properNounFrontText(record: JsonObject) {
  const flashcard = asRecord(record.flashcard);
 
  return (

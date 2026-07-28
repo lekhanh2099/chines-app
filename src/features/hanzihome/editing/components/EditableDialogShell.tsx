@@ -25,6 +25,7 @@ import { editRegistry } from "../editRegistry";
 import { saveEditableNodeDirectly } from "../direct-save";
 import { invalidateHanziHomeContent } from "../invalidate-content";
 import { isHanziHomeMutationConflict } from "../mutation-error";
+import type { EditableNodeRequest } from "../store/types";
 
 const formId = "hanzihome-node-edit-form";
 
@@ -39,7 +40,7 @@ export function EditableDialogShell() {
  const isBulkNode =
   activeNode?.entityType === "text_block" || activeNode?.entityType === "exercise";
 
- const saveDirectly = async (after: unknown) => {
+ const saveDirectly = async (after: EditableNodeRequest["value"]) => {
   if (!activeNode || isSaving) return;
   const record = services.resolveEditableRecord(activeNode);
   if (!record) {

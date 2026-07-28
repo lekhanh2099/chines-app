@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -22,11 +23,11 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingHtmlArtifactsTable(code: string | undefined) {
+function isMissingHtmlArtifactsTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function parseLimit(value: string | null) {
+function parseLimit(value: ReturnType<URLSearchParams["get"]>) {
  if (!value) return 100;
 
  const parsed = Number(value);
@@ -104,7 +105,7 @@ export async function POST(request: Request) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = createHtmlArtifactPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

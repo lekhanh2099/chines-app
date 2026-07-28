@@ -23,6 +23,7 @@ import {
 } from "@/features/hanzihome/utils/lesson-route";
 import { parseHanziHomeModule, resolveLessonModule } from "@/features/hanzihome/workspace-modules";
 import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/hanzihome/types";
+import type { ReviewItem } from "@/features/hanzihome/context/types";
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const router = useRouter();
@@ -175,10 +176,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   learning.updateGrammarProgress(id, status);
  };
 
- const answerReview = (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
-  result: ReviewResult,
- ) => {
+ const answerReview = (item: ReviewItem, result: ReviewResult) => {
   learning.appendReviewHistory(item, result);
 
   if (item.type === "vocab") {

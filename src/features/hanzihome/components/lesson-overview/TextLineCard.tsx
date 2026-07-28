@@ -5,6 +5,9 @@ import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/Native
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { getHanziTypographyStyle } from "./hanzi-typography";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
+import { z } from "zod";
+
+const TextLineCardVariantSchema = z.enum(["card", "reader"]);
 
 export function TextLineCard({
  speaker,
@@ -20,7 +23,7 @@ export function TextLineCard({
  pinyin?: string;
  vi?: string;
  displayMode?: LessonDisplayMode;
- variant?: "card" | "reader";
+ variant?: z.infer<typeof TextLineCardVariantSchema>;
  annotationTarget?: { lessonId: string; nodeType: string; nodeId: string };
 }) {
  return (

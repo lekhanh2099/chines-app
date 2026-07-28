@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "../src/types/json.ts";
 import { config as loadEnv } from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
@@ -15,13 +16,13 @@ const BASELINE = {
  sections: 118,
  items: 693,
  vocabulary: 466,
-} as const;
+};
 
 const lessonRowSchema = z.object({ id: z.string().min(1) });
 const sectionRowSchema = z.object({
  id: z.uuid(),
  lesson_id: z.string().min(1),
- payload: z.record(z.string(), z.unknown()),
+ payload: z.record(z.string(), z.json()),
 });
 const itemRowSchema = z.object({
  id: z.string().min(1),
@@ -29,18 +30,20 @@ const itemRowSchema = z.object({
  section_id: z.uuid(),
  item_type: z.string().min(1),
  prompt_zh: z.string().nullable(),
- transcript: z.unknown().nullable(),
- options: z.array(z.unknown()),
- answer: z.record(z.string(), z.unknown()).nullable(),
- metadata: z.record(z.string(), z.unknown()),
+ transcript: z.json().nullable(),
+ options: z.array(z.json()),
+ answer: z.record(z.string(), z.json()).nullable(),
+ metadata: z.record(z.string(), z.json()),
  quality_status: z.string().min(1),
  check_needed: z.boolean(),
  quality_issues: z.array(z.string()),
 });
 
+const PageErrorSchema = z.object({ message: z.string() });
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 type PageResult<T> = {
- data: T[] | null;
- error: { message: string } | null;
+ data: Nullable<T[]>;
+ error: Nullable<z.infer<typeof PageErrorSchema>>;
 };
 
 async function fetchPaged<T>(
@@ -57,7 +60,7 @@ async function fetchPaged<T>(
  }
 }
 
-function recordArray(value: unknown) {
+function recordArray(value: JsonFieldValue) {
  return Array.isArray(value) ? value : [];
 }
 
@@ -225,7 +228,7 @@ async function main() {
  if (!report.readyForJsonRemoval) process.exitCode = 1;
 }
 
-main().catch((error: unknown) => {
+main().catch((error: JsonFieldValue) => {
  console.error(error instanceof Error ? error.message : error);
  process.exitCode = 1;
 });

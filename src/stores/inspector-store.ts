@@ -6,18 +6,38 @@ import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import { containsChinese, extractChinese } from "@/lib/chinese-utils";
 import { logger } from "@/lib/logger";
 import { pinyin as getPinyin } from "pinyin-pro";
+import { z } from "zod";
 import {
  getBasicVocabData,
+ getVocabularyAnalysis,
  trackVocabLookup,
  getVocabByHanzi,
  classifyVocabType,
 } from "@/services/vocab.service";
-import type { VocabData, AiAnalysis, VocabWithProgress } from "@/types/database";
+import { aiAnalysisSchema } from "@/types/database";
+import type { VocabData, VocabWithProgress } from "@/types/database";
 
 const RECENT_LOOKUPS_KEY = "recent-lookups";
 const MAX_RECENT_LOOKUPS = 10;
 const MAX_INSPECTOR_CACHE_ITEMS = 80;
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+
+const BasicLookupResponseSchema = z.object({
+ data: z
+  .object({
+   id: z.string().optional(),
+   dictionary_id: z.string().optional(),
+   hanzi: z.string().optional(),
+   pinyin: z.string().optional(),
+   sino_vietnamese: z.string().nullable().optional(),
+   meaning: z.string().optional(),
+   analysis: aiAnalysisSchema.optional(),
+   ai_analysis: aiAnalysisSchema.optional(),
+  })
+  .optional(),
+});
 
 type InspectorCacheEntry = {
  vocab: VocabData;
@@ -32,7 +52,7 @@ export type InspectorOpenOptions = {
 const inspectorVocabCache = new Map<string, InspectorCacheEntry>();
 
 let activeLookupRequestId = 0;
-let activeBasicRequestController: AbortController | null = null;
+let activeBasicRequestController: Nullable<AbortController> = null;
 
 function getLookupCacheKey(text: string, lessonId?: string): string {
  const normalizedText = extractChinese(text).trim();
@@ -59,7 +79,7 @@ function setCachedVocab(text: string, vocab: VocabData, lessonId?: string) {
  }
 }
 
-function getCachedVocab(text: string, lessonId?: string): InspectorCacheEntry | null {
+function getCachedVocab(text: string, lessonId?: string): Nullable<InspectorCacheEntry> {
  const key = getLookupCacheKey(text, lessonId);
  if (!key) return null;
 
@@ -135,18 +155,9 @@ function abortLookupRequests() {
  activeBasicRequestController = null;
 }
 
-function parseLookupResponse(payload: {
- data?: {
-  id?: string;
-  dictionary_id?: string;
-  hanzi?: string;
-  pinyin?: string;
-  sino_vietnamese?: string | null;
-  meaning?: string;
-  analysis?: AiAnalysis;
-  ai_analysis?: AiAnalysis;
- };
-}): VocabData | null {
+function parseLookupResponse(
+ payload: z.infer<typeof BasicLookupResponseSchema>,
+): Nullable<VocabData> {
  if (!payload.data?.hanzi) {
   return null;
  }
@@ -158,7 +169,7 @@ function parseLookupResponse(payload: {
   pinyin: payload.data.pinyin || "",
   sino_vietnamese: payload.data.sino_vietnamese || undefined,
   meaning: payload.data.meaning || "",
-  ai_analysis: (payload.data.analysis || payload.data.ai_analysis || {}) as AiAnalysis,
+  ai_analysis: payload.data.analysis || payload.data.ai_analysis || {},
  };
 }
 
@@ -166,7 +177,7 @@ function hasTrackableLookupData(vocabData: VocabData): boolean {
  return !!(vocabData.hanzi && (vocabData.pinyin || vocabData.meaning || vocabData.sino_vietnamese));
 }
 
-function buildTrackedVocabListItem(vocabData: VocabData): VocabWithProgress | null {
+function buildTrackedVocabListItem(vocabData: VocabData): Nullable<VocabWithProgress> {
  if (!vocabData.id) {
   return null;
  }
@@ -176,7 +187,7 @@ function buildTrackedVocabListItem(vocabData: VocabData): VocabWithProgress | nu
   hanzi: vocabData.hanzi,
   pinyin: vocabData.pinyin,
   meaning: vocabData.meaning,
-  ai_analysis: (vocabData.ai_analysis || {}) as AiAnalysis,
+  ai_analysis: vocabData.ai_analysis || {},
   proficiency_level: 0,
   is_favorited: false,
   status: "new",
@@ -186,9 +197,9 @@ function buildTrackedVocabListItem(vocabData: VocabData): VocabWithProgress | nu
 
 type InspectorStore = {
  isOpen: boolean;
- anchorRect: DOMRect | null;
+ anchorRect: Nullable<DOMRect>;
  selectedText: string;
- vocabData: VocabData | null;
+ vocabData: Nullable<VocabData>;
  isLoading: boolean;
  recentLookups: VocabData[];
 };
@@ -320,20 +331,8 @@ export const inspectorStore = createStore<
      signal: basicController.signal,
     });
 
-    const lookupJson = (await lookupResponse.json()) as {
-     data?: {
-      id?: string;
-      dictionary_id?: string;
-      hanzi?: string;
-      pinyin?: string;
-      sino_vietnamese?: string | null;
-      meaning?: string;
-      analysis?: AiAnalysis;
-      ai_analysis?: AiAnalysis;
-     };
-    };
-
-    const parsedVocab = parseLookupResponse(lookupJson);
+    const lookupJson = BasicLookupResponseSchema.safeParse(await lookupResponse.json());
+    const parsedVocab = lookupJson.success ? parseLookupResponse(lookupJson.data) : null;
 
     if (lookupResponse.ok && parsedVocab) {
      resolvedVocab = getBasicVocabData({
@@ -352,7 +351,7 @@ export const inspectorStore = createStore<
        pinyin: vocab.pinyin || pinyinText,
        sino_vietnamese: vocab.sino_vietnamese || undefined,
        meaning: vocab.meaning || "",
-       ai_analysis: (vocab.ai_analysis || {}) as AiAnalysis,
+       ai_analysis: getVocabularyAnalysis(vocab),
       });
      } else {
       resolvedVocab = getBasicVocabData({

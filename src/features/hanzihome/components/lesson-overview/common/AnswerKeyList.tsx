@@ -1,3 +1,5 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
 import type { ReactNode } from "react";
 
 import {
@@ -7,7 +9,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { AnswerReveal } from "./AnswerReveal";
 
-function answerLabelValue(record: Record<string, unknown>, key: string) {
+function answerLabelValue(record: JsonObject, key: string) {
  const value = record[key];
 
  if (typeof value === "number" && Number.isFinite(value)) return `${value}`;
@@ -31,8 +33,8 @@ export function AnswerKeyList({
 }: {
  defaultOpen?: boolean;
  itemId: string;
- values: unknown[];
- renderAnswer?: (value: unknown, index: number, content: ReactNode) => ReactNode;
+ values: JsonValue[];
+ renderAnswer?: (value: JsonFieldValue, index: number, content: ReactNode) => ReactNode;
 }) {
  type AnswerEntry = {
   id: string;
@@ -40,41 +42,41 @@ export function AnswerKeyList({
   value: string;
   pinyin?: string;
   note?: string;
-  sourceValue: unknown;
+  sourceValue: JsonFieldValue;
   sourceIndex: number;
  };
 
- const answers = values
-  .map((answerValue, index): AnswerEntry | null => {
-   const answer = asRecord(answerValue);
-   const explicitLabel =
-    answerLabelValue(answer, "blank_no") ||
-    answerLabelValue(answer, "blankNo") ||
-    answerLabelValue(answer, "question_no") ||
-    answerLabelValue(answer, "questionNo") ||
-    stringValue(answer, "blank_id") ||
-    stringValue(answer, "question_id") ||
-    stringValue(answer, "label") ||
-    stringValue(answer, "id");
-   const label =
-    explicitLabel && !isTechnicalAnswerLabel(explicitLabel) ? explicitLabel : `${index + 1}`;
-   const value =
-    answerToString(answer.answer) ||
-    stringValue(answer, "sample_answer") ||
-    stringValue(answer, "answer_zh") ||
-    stringValue(answer, "value") ||
-    stringValue(answer, "text") ||
-    stringValue(answer, "zh") ||
-    answerToString(answerValue);
-   const pinyin = stringValue(answer, "answer_pinyin") || stringValue(answer, "pinyin");
-   const note =
-    stringValue(answer, "explanation_vi") ||
-    stringValue(answer, "note_vi") ||
-    stringValue(answer, "answer_vi") ||
-    stringValue(answer, "usage_note_vi");
+ const answers = values.flatMap((answerValue, index): AnswerEntry[] => {
+  const answer = asRecord(answerValue);
+  const explicitLabel =
+   answerLabelValue(answer, "blank_no") ||
+   answerLabelValue(answer, "blankNo") ||
+   answerLabelValue(answer, "question_no") ||
+   answerLabelValue(answer, "questionNo") ||
+   stringValue(answer, "blank_id") ||
+   stringValue(answer, "question_id") ||
+   stringValue(answer, "label") ||
+   stringValue(answer, "id");
+  const label =
+   explicitLabel && !isTechnicalAnswerLabel(explicitLabel) ? explicitLabel : `${index + 1}`;
+  const value =
+   answerToString(answer.answer) ||
+   stringValue(answer, "sample_answer") ||
+   stringValue(answer, "answer_zh") ||
+   stringValue(answer, "value") ||
+   stringValue(answer, "text") ||
+   stringValue(answer, "zh") ||
+   answerToString(answerValue);
+  const pinyin = stringValue(answer, "answer_pinyin") || stringValue(answer, "pinyin");
+  const note =
+   stringValue(answer, "explanation_vi") ||
+   stringValue(answer, "note_vi") ||
+   stringValue(answer, "answer_vi") ||
+   stringValue(answer, "usage_note_vi");
 
-   return value
-    ? {
+  return value
+   ? [
+      {
        id: `${itemId}-answer-${index}`,
        label,
        value,
@@ -82,10 +84,10 @@ export function AnswerKeyList({
        note: note || undefined,
        sourceValue: answerValue,
        sourceIndex: index,
-      }
-    : null;
-  })
-  .filter((answer): answer is AnswerEntry => answer !== null);
+      },
+     ]
+   : [];
+ });
 
  if (answers.length === 0) return null;
 

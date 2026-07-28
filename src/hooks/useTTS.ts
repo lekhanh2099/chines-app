@@ -2,17 +2,19 @@
 
 import { useCallback, useRef, useState } from "react";
 import { buildCacheKey, getCachedAudio, setCachedAudio } from "@/lib/tts-cache";
+import { z } from "zod";
 
 export type TTSOptions = {
  voice?: string;
  rate?: number;
 };
 
-type TTSState = {
- isSpeaking: boolean;
- isLoading: boolean;
- error: string | null;
-};
+const TTSStateSchema = z.object({
+ isSpeaking: z.boolean(),
+ isLoading: z.boolean(),
+ error: z.string().nullable(),
+});
+type TTSState = z.infer<typeof TTSStateSchema>;
 
 /**
  * Custom hook for TTS via ElevenLabs with browser SpeechSynthesis fallback.
@@ -27,8 +29,8 @@ export function useTTS() {
   isLoading: false,
   error: null,
  });
- const audioRef = useRef<HTMLAudioElement | null>(null);
- const objectUrlRef = useRef<string | null>(null);
+ const audioRef = useRef<HTMLAudioElement>(null);
+ const objectUrlRef = useRef<string>(null);
 
  const cleanup = useCallback(() => {
   if (audioRef.current) {

@@ -10,9 +10,9 @@ export function getLessonRouteValue(lessonNumber: number) {
 
 export function findLessonByRouteParam<TLesson extends LessonRouteSummary>(
  lessons: TLesson[],
- lessonParam: string | null | undefined,
- legacyLessonIdParam?: string | null,
- bookIdParam?: string | null,
+ lessonParam: z.infer<typeof OptionalNullableStringSchema>,
+ legacyLessonIdParam?: z.infer<typeof OptionalNullableStringSchema>,
+ bookIdParam?: z.infer<typeof OptionalNullableStringSchema>,
 ) {
  const scopedLessons = bookIdParam
   ? lessons.filter((lesson) => lesson.bookId === bookIdParam)
@@ -32,9 +32,9 @@ export function buildHanziHomeLessonHref({
  module,
 }: {
  courseId: string;
- bookId?: string | null;
- lessonNumber?: number | null;
- module?: string | null;
+ bookId?: z.infer<typeof OptionalNullableStringSchema>;
+ lessonNumber?: z.infer<typeof OptionalNullableNumberSchema>;
+ module?: z.infer<typeof OptionalNullableStringSchema>;
 }) {
  const params = new URLSearchParams();
  params.set("courseId", courseId);
@@ -53,3 +53,7 @@ export function buildHanziHomeLessonHref({
 
  return `/hanzihome?${params.toString()}`;
 }
+import { z } from "zod";
+
+const OptionalNullableStringSchema = z.string().nullable().optional();
+const OptionalNullableNumberSchema = z.number().nullable().optional();

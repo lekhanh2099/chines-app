@@ -53,12 +53,19 @@ import {
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
 import type { NoteFolder, NoteFolderColor, NoteListItem } from "@/services/notes.service";
+import { NoteFolderColorSchema, NoteFolderSchema } from "@/services/notes.service";
+import { z } from "zod";
 
-type FolderDialogState =
- | { mode: "create"; parentId: string | null }
- | { mode: "rename"; folder: NoteFolder }
- | { mode: "delete"; folder: NoteFolder }
- | null;
+const FolderDialogStateSchema = z
+ .discriminatedUnion("mode", [
+  z.object({ mode: z.literal("create"), parentId: z.string().nullable() }),
+  z.object({ mode: z.literal("rename"), folder: NoteFolderSchema }),
+  z.object({ mode: z.literal("delete"), folder: NoteFolderSchema }),
+ ])
+ .nullable();
+type FolderDialogState = z.infer<typeof FolderDialogStateSchema>;
+const FolderMoveDirectionSchema = z.union([z.literal(-1), z.literal(1)]);
+type FolderMoveDirection = z.infer<typeof FolderMoveDirectionSchema>;
 
 const smartViews: Array<{
  value: NoteLibraryView;
@@ -139,7 +146,7 @@ export function NotesLibraryNavigator({
   }
  };
 
- const moveFolder = async (folder: NoteFolder, direction: -1 | 1) => {
+ const moveFolder = async (folder: NoteFolder, direction: FolderMoveDirection) => {
   const siblings = folders
    .filter((item) => item.parentId === folder.parentId)
    .sort((a, b) => a.position - b.position);
@@ -246,7 +253,10 @@ export function NotesLibraryNavigator({
         <FieldLabel>Màu</FieldLabel>
         <Select
          value={folderColor}
-         onValueChange={(value) => setFolderColor(value as NoteFolderColor)}
+         onValueChange={(value) => {
+          const color = NoteFolderColorSchema.safeParse(value);
+          if (color.success) setFolderColor(color.data);
+         }}
         >
          <SelectTrigger width="full">
           <SelectValue />
@@ -303,9 +313,9 @@ function FolderNavigationRow({
  onCreateChild: (parentId: string) => void;
  onRename: (folder: NoteFolder) => void;
  onDelete: (folder: NoteFolder) => void;
- onMove: (folder: NoteFolder, direction: -1 | 1) => void;
+ onMove: (folder: NoteFolder, direction: FolderMoveDirection) => void;
 }) {
- const view = `folder:${folder.id}` as const;
+ const view: NoteLibraryView = `folder:${folder.id}`;
  const count = notes.filter((note) => note.folder_id === folder.id).length;
 
  return (

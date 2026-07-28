@@ -1,4 +1,14 @@
-export type SectionView = "all" | "meaning" | "etymology" | "comparisons" | "examples" | "notes";
+import { z } from "zod";
+
+export const SectionViewSchema = z.enum([
+ "all",
+ "meaning",
+ "etymology",
+ "comparisons",
+ "examples",
+ "notes",
+]);
+export type SectionView = z.infer<typeof SectionViewSchema>;
 
 export const sectionShortcutTabs: Array<{
  key: SectionView;

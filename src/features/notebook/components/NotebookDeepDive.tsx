@@ -3,12 +3,16 @@ import type { NotebookDeepDive } from "@/features/notebook/types";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-const DEEP_DIVE_SECTIONS = [
+const DEEP_DIVE_SECTIONS: {
+ key: keyof Omit<NotebookDeepDive, "src">;
+ label: string;
+ warning: boolean;
+}[] = [
  { key: "why", label: "Nghĩa lõi / sắc thái", warning: false },
  { key: "pos", label: "Vị trí / cấu trúc", warning: false },
  { key: "decision", label: "Tiêu chí chọn", warning: false },
  { key: "mistake", label: "Bẫy dễ sai", warning: true },
-] as const;
+];
 
 export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
  return (

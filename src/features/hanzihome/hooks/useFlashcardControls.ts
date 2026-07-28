@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 
 import type { ReviewResult } from "@/features/hanzihome/types";
+import { z } from "zod";
 
 type UseFlashcardControlsInput = {
  disabled?: boolean;
@@ -22,8 +23,9 @@ type SwipeHandlers = {
 };
 
 const SWIPE_DISTANCE = 56;
+const TouchPointSchema = z.object({ x: z.number(), y: z.number() });
 
-function shouldIgnoreKeyboardTarget(target: EventTarget | null) {
+function shouldIgnoreKeyboardTarget(target: KeyboardEvent["target"]) {
  return (
   target instanceof HTMLInputElement ||
   target instanceof HTMLTextAreaElement ||
@@ -43,7 +45,7 @@ export function useFlashcardControls({
  onOpenDetail,
  onSelectWritingCharacter,
 }: UseFlashcardControlsInput): SwipeHandlers {
- const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+ const touchStartRef = useRef<z.infer<typeof TouchPointSchema>>(null);
 
  useEffect(() => {
   if (disabled) return;

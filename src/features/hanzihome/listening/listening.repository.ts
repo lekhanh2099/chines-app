@@ -153,7 +153,7 @@ function buildRuntimeGroups(section: SectionRow, items: ItemRow[]) {
 export async function fetchListeningLessonBundle(
  supabase: SupabaseClient,
  lessonId: string,
-): Promise<ListeningLessonBundle | null> {
+): Promise<z.infer<z.ZodNullable<typeof listeningLessonBundleSchema>>> {
  const [lessonResult, sectionResult, itemResult] = await Promise.all([
   supabase
    .from("hanzihome_lessons")

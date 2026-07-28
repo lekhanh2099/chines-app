@@ -13,8 +13,10 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import {
+ ClientAiPromptSettingsSchema,
  loadClientAiPromptSettings,
  saveClientAiPromptSettings,
+ type ClientAiPromptSettings,
 } from "@/lib/ai-prompt-settings-client";
 import {
  DEFAULT_SENTENCE_LOOKUP_PROMPT,
@@ -26,28 +28,21 @@ import {
  DEFAULT_GEMINI_MODEL,
  DEFAULT_GEMINI_QUICK_MODEL,
  GEMINI_DETAIL_MODEL_OPTIONS,
+ GeminiModelIdSchema,
  getGeminiModelLabel,
- type GeminiModelId,
 } from "@/lib/gemini-models";
 import { toast } from "sonner";
 import { Bot, Gauge, RefreshCcw, Save, Sparkles } from "lucide-react";
 import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
-
-type AiPromptSettingsResponse = {
- wordLookupPrompt: string;
- sentenceLookupPrompt: string;
- geminiModel: GeminiModelId;
-};
+import { z } from "zod";
 
 export function SettingsPageContent() {
  const [wordLookupPrompt, setWordLookupPrompt] = useState(DEFAULT_WORD_LOOKUP_PROMPT);
  const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(DEFAULT_SENTENCE_LOOKUP_PROMPT);
- const [geminiModel, setGeminiModel] = useState<GeminiModelId>(DEFAULT_GEMINI_MODEL);
- const [savedSettings, setSavedSettings] = useState<{
-  wordLookupPrompt: string;
-  sentenceLookupPrompt: string;
-  geminiModel: GeminiModelId;
- } | null>(null);
+ const [geminiModel, setGeminiModel] =
+  useState<ClientAiPromptSettings["geminiModel"]>(DEFAULT_GEMINI_MODEL);
+ const [savedSettings, setSavedSettings] =
+  useState<z.infer<z.ZodNullable<typeof ClientAiPromptSettingsSchema>>>(null);
  const [isLoading, setIsLoading] = useState(true);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
@@ -68,7 +63,7 @@ export function SettingsPageContent() {
      throw new Error("load_failed");
     }
 
-    const data = (await response.json()) as AiPromptSettingsResponse;
+    const data = ClientAiPromptSettingsSchema.parse(await response.json());
     if (!isMounted) return;
 
     const merged = saveClientAiPromptSettings({
@@ -139,7 +134,7 @@ export function SettingsPageContent() {
     throw new Error(String(response.status));
    }
 
-   const data = (await response.json()) as AiPromptSettingsResponse;
+   const data = ClientAiPromptSettingsSchema.parse(await response.json());
    const synced = saveClientAiPromptSettings(data);
    setWordLookupPrompt(synced.wordLookupPrompt);
    setSentenceLookupPrompt(synced.sentenceLookupPrompt);
@@ -263,7 +258,7 @@ export function SettingsPageContent() {
      </label>
      <Select
       value={geminiModel}
-      onValueChange={(value) => setGeminiModel(value as GeminiModelId)}
+      onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
       disabled={isLoading || isSaving}
      >
       <SelectTrigger id="gemini-model" width="full" aria-label="Chọn model Gemini">

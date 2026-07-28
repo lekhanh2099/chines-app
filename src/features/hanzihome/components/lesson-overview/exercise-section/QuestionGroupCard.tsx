@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { LooseItemGrid } from "../CommonCards";
@@ -25,7 +26,7 @@ export function QuestionGroupCard({
  exerciseType: string;
  parentExerciseId: string;
  groupPath?: EditableNodePath;
- groupValue: unknown;
+ groupValue: JsonFieldValue;
  index: number;
  fallbackTitle: string;
  displayMode: LessonDisplayMode;

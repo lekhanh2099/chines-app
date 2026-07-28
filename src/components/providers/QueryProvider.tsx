@@ -3,7 +3,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 
-let browserQueryClient: QueryClient | null = null;
+const browserQueryClientState: { current?: QueryClient } = {};
 
 function makeQueryClient() {
  return new QueryClient({
@@ -17,11 +17,11 @@ function makeQueryClient() {
 }
 
 export function getQueryClient(): QueryClient {
- if (!browserQueryClient) {
-  browserQueryClient = makeQueryClient();
+ if (!browserQueryClientState.current) {
+  browserQueryClientState.current = makeQueryClient();
  }
 
- return browserQueryClient;
+ return browserQueryClientState.current;
 }
 
 export function QueryProvider({ children }: { children: React.ReactNode }) {

@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 
@@ -29,7 +30,7 @@ const createSectionSchema = z.object({
 });
 
 export async function POST(request: Request) {
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = createSectionSchema.safeParse(body);
  if (!parsed.success) {
   return mutationError("Invalid section payload", 400, z.flattenError(parsed.error));

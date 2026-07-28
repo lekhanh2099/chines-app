@@ -59,6 +59,9 @@ that match the files and behavior being changed.
 
 - Package manager: npm.
 - Runtime: Node.js 22 or newer.
+- TypeScript is the primary static-analysis contract. Keep it on the latest
+  version that passes the repository quality gate, and remove ancillary tooling
+  rather than pinning TypeScript solely for an incompatible optional audit.
 - Framework: Next.js App Router.
 - UI: React, TypeScript, Tailwind CSS 4, local shadcn-style source components.
 - Data/state: Supabase, TanStack Query, TanStack Form, TanStack Store, Zod.
@@ -183,13 +186,12 @@ promote it to a typed variant or reusable pattern.
 Do not add a variant for a one-off value merely to satisfy this rule. First
 decide whether the variation is a stable design-system contract.
 
-## 7. React and TypeScript rules
+## 7. React and strict TypeScript rules
 
 - Keep components focused on one interaction or rendering responsibility.
 - Prefer explicit domain names over `Wrapper`, `Container`, `Item`, or `Common`.
 - Do not introduce abstraction without real consumers and a stable semantic
   boundary.
-- Avoid `any`; parse `unknown` at boundaries.
 - Normalize IDs once at the boundary.
 - Keep transport types, domain/view models and rendered props distinct when
   they have different semantics.
@@ -198,6 +200,129 @@ decide whether the variation is a stable design-system contract.
 - Every effect MUST be explainable as synchronization with an external system,
   subscription, browser API, imperative integration, or analytics.
 - Errors MUST remain observable. Do not convert errors into fake empty states.
+
+### 7.1 No guessed types
+
+Every value crossing a component, hook, store, service, repository, route,
+script, test helper, persistence, provider, or database boundary MUST have an
+exact authoritative type.
+
+Agents MUST NOT guess or reconstruct a type from:
+
+- a sample payload;
+- current JSX usage;
+- a single caller;
+- a remembered library API;
+- a database query that was not inspected;
+- a similar-looking type elsewhere;
+- a runtime fallback or placeholder value.
+
+Before writing or changing a type, inspect its source of truth in this order:
+
+1. generated database or API contract;
+2. existing Zod schema;
+3. existing domain, service, query, store, or form contract;
+4. library-exported type from the installed version;
+5. the verified runtime boundary.
+
+If the source of truth cannot be identified, STOP before editing and report:
+
+1. the value whose type is unresolved;
+2. the owners and call sites inspected;
+3. the conflicting or missing contracts;
+4. the minimum structural decision required from the user.
+
+Local inference is allowed only when TypeScript derives it directly from an
+authoritative typed value. Inference MUST NOT be used to avoid defining or
+reusing the real boundary contract.
+
+### 7.2 Required type ownership
+
+- Runtime and domain contracts MUST be owned by Zod and exposed through
+  `z.infer`, `z.input`, or `z.output`.
+- Supabase rows and writes MUST use generated `Tables`, `TablesInsert`,
+  `TablesUpdate`, and indexed fields such as `Tables<"notes">["id"]`.
+- A field already owned by another type MUST use indexed access such as
+  `IType["id"]`; it MUST NOT be redeclared as `string`, `number`, or another
+  duplicate primitive.
+- React, DOM, Next.js, TanStack, Lexical, and other library contracts MUST use
+  their exported types or `ComponentProps`, `Parameters`, `ReturnType`, and
+  route-aware helpers such as `PageProps`.
+- External JSON, storage, file, environment, provider, and request data MUST be
+  parsed once with a concrete Zod schema at the owning boundary before entering
+  application state or UI.
+- Component props and client state MUST receive complete typed domain or
+  view-model values. Raw external payloads MUST NOT flow into render code.
+
+Do not create a Zod schema for DOM nodes, callbacks, component instances, or
+other library objects solely to imitate a library type. Use the installed
+library contract directly.
+
+### 7.3 Absolute bypass prohibition
+
+Owned source, scripts, and tests MUST NOT contain or introduce:
+
+- explicit `any` or `unknown`;
+- `z.any()` or `z.unknown()`;
+- type assertions with `as` or angle-bracket syntax;
+- chained or double assertions;
+- non-null assertions;
+- TypeScript suppressions or TypeScript-related ESLint disables;
+- handwritten or compatibility unions;
+- broad index signatures or `Record<string, ...>` for a known domain shape;
+- fake type guards;
+- optional, nullable, or fallback fields added only to silence TypeScript;
+- parsers, mappers, normalizers, serialization, or coercion added only to hide
+  an internal mismatch;
+- `String(...)`, `Number(...)`, boolean coercion, JSON round-tripping, empty
+  strings, zeroes, placeholder objects, or `"unknown"` used as type repair for
+  UI rendering;
+- compiler, ESLint, schema, or validation configuration changes that make an
+  invalid contract pass.
+
+Generated types, Zod-inferred unions, and unions required directly by an
+installed library signature MAY remain only after node-specific audit.
+Exceptions MUST be constrained to the exact AST node and occurrence count.
+Directory-wide, file-wide, text-only, or baseline allowlists are forbidden.
+
+Formatting an already-authoritative date, number, or text value for display is
+allowed. Converting an incorrectly typed value so it can render is forbidden.
+
+### 7.4 Fix the real owner
+
+When types conflict:
+
+1. identify both exact types;
+2. identify the authoritative owner;
+3. trace where the incorrect shape entered the system;
+4. fix the owner, query, schema, service, selector, store, or caller that is
+   wrong.
+
+MUST NOT widen a correct shared type, add a compatibility union, cast the
+value, parse an internal value again, or patch the mismatch inside JSX.
+
+If the correct fix requires changing a public API, route, persisted format,
+database schema, generated contract, or library-required signature, STOP AND
+CONFIRM with the exact conflict instead of bypassing it.
+
+Loading, empty, error, unsupported-data, and ready states MUST remain distinct.
+Malformed or incomplete data MUST NOT be converted into a fake renderable
+value.
+
+### 7.5 Enforcement
+
+`scripts/check-source-standards.mjs` MUST fail owned source for every forbidden
+construct above. The Supabase generated file MAY be excluded from the unsafe
+AST mutation gate but MUST remain in TypeScript typechecking.
+
+Do not weaken the gate, add a broad exception, or change a baseline to make a
+task pass. A type-clean task MUST NOT be reported as complete unless:
+
+- owned `any`, `unknown`, `z.any()`, and `z.unknown()` are zero;
+- assertions, non-null assertions, and suppressions are zero;
+- unreviewed handwritten unions are zero;
+- typecheck, source standards, lint, relevant tests, and the repository quality
+  gate pass.
 
 ## 8. UI and accessibility minimum
 
@@ -276,6 +401,9 @@ App-code completion normally requires:
 ```bash
 npm run check
 ```
+
+`npm run check` MUST keep TypeScript typechecking as a hard gate. Optional
+dependency-inventory tooling MUST NOT block a supported TypeScript upgrade.
 
 Also run targeted checks where relevant.
 

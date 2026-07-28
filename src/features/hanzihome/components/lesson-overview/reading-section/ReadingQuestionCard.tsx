@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { ExerciseQuestionCard } from "../CommonCards";
 import { answerToString, arrayValue, asRecord, stringValue } from "../utils";
 import { formatAnswer, objectText } from "./reading-utils";
@@ -13,7 +14,7 @@ export function ReadingQuestionCard({
 }: {
  itemId: string;
  readingType: string;
- questionValue: unknown;
+ questionValue: JsonFieldValue;
  index: number;
  showAnswers?: boolean;
  displayMode: LessonDisplayMode;

@@ -1,6 +1,18 @@
+import { z } from "zod";
+
 export const AUTO_API_KEY_PROVIDER = "auto";
 
-export const API_KEY_PROVIDER_OPTIONS = [
+export const ApiKeyProviderSchema = z.enum(["groq", "deepseek", "gemini", "openai"]);
+export type ApiKeyProvider = z.infer<typeof ApiKeyProviderSchema>;
+
+export const API_KEY_PROVIDER_OPTIONS: {
+ value: ApiKeyProvider;
+ label: string;
+ description: string;
+ placeholder: string;
+ docsUrl: string;
+ runtimeSupported: boolean;
+}[] = [
  {
   value: "groq",
   label: "Groq",
@@ -33,16 +45,19 @@ export const API_KEY_PROVIDER_OPTIONS = [
   docsUrl: "https://platform.openai.com/api-keys",
   runtimeSupported: true,
  },
-] as const;
+];
+const OptionalNullableProviderSchema = z.string().nullable().optional();
 
-export type ApiKeyProvider = (typeof API_KEY_PROVIDER_OPTIONS)[number]["value"];
-
-export function getApiKeyProviderLabel(provider?: string | null): string {
+export function getApiKeyProviderLabel(
+ provider?: z.infer<typeof OptionalNullableProviderSchema>,
+): string {
  return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.label || "Unknown";
 }
 
-export function isSupportedApiKeyProvider(provider?: string | null): provider is ApiKeyProvider {
- return API_KEY_PROVIDER_OPTIONS.some((option) => option.value === provider);
+export function isSupportedApiKeyProvider(
+ provider?: z.infer<typeof OptionalNullableProviderSchema>,
+): provider is ApiKeyProvider {
+ return ApiKeyProviderSchema.safeParse(provider).success;
 }
 
 export function getApiKeyProviderDocsUrl(provider: ApiKeyProvider): string {

@@ -4,7 +4,7 @@ export function renderMarkdownInline(text: string) {
  const parts: ReactNode[] = [];
  const pattern = /(`[^`\n]+`|\*\*[^*\n]+\*\*|__[^_\n]+__|\*[^*\n]+\*|_[^_\n]+_)/g;
  let lastIndex = 0;
- let match: RegExpExecArray | null;
+ let match: ReturnType<RegExp["exec"]>;
 
  while ((match = pattern.exec(text)) !== null) {
   const token = match[0];

@@ -1,8 +1,10 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import type { UserLearningState } from "@/features/hanzihome/types";
 import { normalizeLearningState } from "@/features/hanzihome/utils/learning-state";
+import { z } from "zod";
 
 import {
  deleteFromStore,
@@ -15,36 +17,41 @@ import {
 const LEARNING_STATE_RECORD_ID = "current";
 const LEARNING_STATE_PENDING_MUTATION_ID = "learning_state:current";
 
-export type LearningStateLocalRecord = {
- id: typeof LEARNING_STATE_RECORD_ID;
- state: UserLearningState;
- updatedAt: string;
- lastSyncedAt?: string;
- lastSyncError?: string;
-};
+const LearningStateLocalRecordSchema = z.object({
+ id: z.literal(LEARNING_STATE_RECORD_ID),
+ state: userLearningStateSchema,
+ updatedAt: z.string(),
+ lastSyncedAt: z.string().optional(),
+ lastSyncError: z.string().optional(),
+});
+export type LearningStateLocalRecord = z.infer<typeof LearningStateLocalRecordSchema>;
 
-export type PendingMutationStatus = "pending" | "syncing" | "failed";
+const PendingMutationStatusSchema = z.enum(["pending", "syncing", "failed"]);
+export type PendingMutationStatus = z.infer<typeof PendingMutationStatusSchema>;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-export type PendingLearningStateMutation = {
- id: typeof LEARNING_STATE_PENDING_MUTATION_ID;
- type: "learning_state.replace";
- status: PendingMutationStatus;
- payload: UserLearningState;
- createdAt: string;
- updatedAt: string;
- attemptCount: number;
- lastError?: string;
-};
+const PendingLearningStateMutationSchema = z.object({
+ id: z.literal(LEARNING_STATE_PENDING_MUTATION_ID),
+ type: z.literal("learning_state.replace"),
+ status: PendingMutationStatusSchema,
+ payload: userLearningStateSchema,
+ createdAt: z.string(),
+ updatedAt: z.string(),
+ attemptCount: z.number(),
+ lastError: z.string().optional(),
+});
+export type PendingLearningStateMutation = z.infer<typeof PendingLearningStateMutationSchema>;
 
-function parseLearningState(value: unknown): UserLearningState | null {
+function parseLearningState(value: JsonFieldValue): Nullable<UserLearningState> {
  const parsed = userLearningStateSchema.safeParse(value);
  return parsed.success ? normalizeLearningState(parsed.data) : null;
 }
 
-export async function readLocalLearningState(): Promise<LearningStateLocalRecord | null> {
- const record = await readFromStore<LearningStateLocalRecord>(
+export async function readLocalLearningState(): Promise<Nullable<LearningStateLocalRecord>> {
+ const record = await readFromStore(
   HANZIHOME_LOCAL_STORES.learningState,
   LEARNING_STATE_RECORD_ID,
+  LearningStateLocalRecordSchema,
  );
  const state = parseLearningState(record?.state);
 
@@ -97,16 +104,20 @@ export async function enqueueLearningStateSync(
  return mutation;
 }
 
-export async function readPendingLearningStateMutation(): Promise<PendingLearningStateMutation | null> {
- return readFromStore<PendingLearningStateMutation>(
+export async function readPendingLearningStateMutation(): Promise<
+ Nullable<PendingLearningStateMutation>
+> {
+ return readFromStore(
   HANZIHOME_LOCAL_STORES.pendingMutations,
   LEARNING_STATE_PENDING_MUTATION_ID,
+  PendingLearningStateMutationSchema,
  );
 }
 
 export async function listPendingLearningStateMutations(): Promise<PendingLearningStateMutation[]> {
- const mutations = await getAllFromStore<PendingLearningStateMutation>(
+ const mutations = await getAllFromStore(
   HANZIHOME_LOCAL_STORES.pendingMutations,
+  PendingLearningStateMutationSchema,
  );
 
  return mutations

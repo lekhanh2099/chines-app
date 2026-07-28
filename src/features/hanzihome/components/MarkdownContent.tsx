@@ -3,19 +3,23 @@
 import { cn } from "@/lib/utils";
 import { MarkdownParagraph } from "./MarkdownParagraph";
 import { renderMarkdownInline } from "./markdown-inline";
+import { z } from "zod";
 
 type MarkdownContentProps = {
  content: string;
  className?: string;
 };
 
-type MarkdownBlock =
- | { type: "heading"; level: 2 | 3 | 4; text: string }
- | { type: "paragraph"; text: string }
- | { type: "list"; ordered: boolean; items: string[] }
- | { type: "blockquote"; text: string }
- | { type: "table"; rows: string[][] }
- | { type: "hr" };
+const MarkdownHeadingLevelSchema = z.union([z.literal(2), z.literal(3), z.literal(4)]);
+const MarkdownBlockSchema = z.discriminatedUnion("type", [
+ z.object({ type: z.literal("heading"), level: MarkdownHeadingLevelSchema, text: z.string() }),
+ z.object({ type: z.literal("paragraph"), text: z.string() }),
+ z.object({ type: z.literal("list"), ordered: z.boolean(), items: z.array(z.string()) }),
+ z.object({ type: z.literal("blockquote"), text: z.string() }),
+ z.object({ type: z.literal("table"), rows: z.array(z.array(z.string())) }),
+ z.object({ type: z.literal("hr") }),
+]);
+type MarkdownBlock = z.infer<typeof MarkdownBlockSchema>;
 
 function normalizeNewlines(value: string) {
  return value.replace(/\r\n/g, "\n");

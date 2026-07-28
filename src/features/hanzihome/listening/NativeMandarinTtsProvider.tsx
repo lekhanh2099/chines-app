@@ -6,18 +6,22 @@ import { useNativeMandarinTts } from "./useNativeMandarinTts";
 
 type NativeMandarinTtsContextValue = ReturnType<typeof useNativeMandarinTts>;
 
-const NativeMandarinTtsContext = createContext<NativeMandarinTtsContextValue | null>(null);
+type NativeMandarinTtsContextState = { value?: NativeMandarinTtsContextValue };
+const NativeMandarinTtsContext = createContext<NativeMandarinTtsContextState>({});
 
 export function NativeMandarinTtsProvider({ children }: { children: ReactNode }) {
  const tts = useNativeMandarinTts();
 
  return (
-  <NativeMandarinTtsContext.Provider value={tts}>{children}</NativeMandarinTtsContext.Provider>
+  <NativeMandarinTtsContext.Provider value={{ value: tts }}>
+   {children}
+  </NativeMandarinTtsContext.Provider>
  );
 }
 
 export function useSharedNativeMandarinTts() {
  const context = useContext(NativeMandarinTtsContext);
- if (!context) throw new Error("useSharedNativeMandarinTts requires NativeMandarinTtsProvider");
- return context;
+ if (!context.value)
+  throw new Error("useSharedNativeMandarinTts requires NativeMandarinTtsProvider");
+ return context.value;
 }

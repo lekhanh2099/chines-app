@@ -1,15 +1,17 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { z } from "zod";
 
-export type Theme = "light" | "dark";
+export const ThemeSchema = z.enum(["light", "dark"]);
+export type Theme = z.infer<typeof ThemeSchema>;
 
 type ThemeContextValue = {
  theme: Theme;
  toggleTheme: () => void;
 };
 
-const ThemeContext = createContext<ThemeContextValue | null>(null);
+const ThemeContext = createContext<z.infer<z.ZodNullable<z.ZodType<ThemeContextValue>>>>(null);
 
 const STORAGE_KEY = "chines-app-theme";
 

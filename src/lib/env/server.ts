@@ -3,20 +3,28 @@ import "server-only";
 import { z } from "zod";
 
 const serverSecretsSchema = z.object({
- SUPABASE_SECRET_KEY: z.string().min(1).optional(),
- SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+ secret: z.string().min(1),
 });
 
-export function getSupabaseServerSecret(): string {
- const parsed = serverSecretsSchema
-  .refine((value) => value.SUPABASE_SECRET_KEY || value.SUPABASE_SERVICE_ROLE_KEY, {
-   message: "Set SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY",
-   path: ["SUPABASE_SECRET_KEY"],
-  })
-  .parse({
-   SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
-   SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
-  });
+const serverProcessEnvSchema = z
+ .object({
+  SUPABASE_SECRET_KEY: z.string().min(1).optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+ })
+ .refine((value) => value.SUPABASE_SECRET_KEY || value.SUPABASE_SERVICE_ROLE_KEY, {
+  message: "Set SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY",
+  path: ["SUPABASE_SECRET_KEY"],
+ })
+ .transform((value) => ({
+  secret: value.SUPABASE_SECRET_KEY ?? value.SUPABASE_SERVICE_ROLE_KEY,
+ }))
+ .pipe(serverSecretsSchema);
 
- return parsed.SUPABASE_SECRET_KEY ?? parsed.SUPABASE_SERVICE_ROLE_KEY!;
+export function getSupabaseServerSecret(): string {
+ const parsed = serverProcessEnvSchema.parse({
+  SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
+  SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+ });
+
+ return parsed.secret;
 }

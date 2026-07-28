@@ -3,27 +3,34 @@
 import { createStore } from "@tanstack/react-store";
 
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
-import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
-import type { LearningStatus } from "@/features/hanzihome/types";
+import type { LessonViewMode, PaneId, PaneLayout } from "./types";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
  type LessonDisplayMode,
 } from "@/features/hanzihome/components/lesson-overview/types";
 import { readWorkspacePreferences } from "./workspaceLayout";
+import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
+import { DraggedModuleSchema } from "./types";
+import { z } from "zod";
+
+const NullableDraggedModuleSchema = DraggedModuleSchema.nullable();
+const NullableStringSchema = z.string().nullable();
+const VocabStatusFilterSchema = learningStatusSchema.or(z.literal("all"));
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export type HanziHomeFeatureState = {
  editMode: boolean;
- activeNode: EditableNodeRequest | null;
+ activeNode: Nullable<EditableNodeRequest>;
  splitEnabled: boolean;
  paneLayout: PaneLayout;
  activePane: PaneId;
- draggedModule: DraggedModule | null;
+ draggedModule: z.infer<typeof NullableDraggedModuleSchema>;
  viewMode: LessonViewMode;
  splitPaneSize: number;
- vocabSelectedWordId: string | null;
+ vocabSelectedWordId: z.infer<typeof NullableStringSchema>;
  vocabSearchValue: string;
- vocabStatusFilter: "all" | LearningStatus;
- grammarSelectedPointId: string | null;
+ vocabStatusFilter: z.infer<typeof VocabStatusFilterSchema>;
+ grammarSelectedPointId: z.infer<typeof NullableStringSchema>;
  grammarSidebarOpen: boolean;
  lessonTextSelectedSectionId: string;
  lessonTextSidebarOpen: boolean;
@@ -31,22 +38,19 @@ export type HanziHomeFeatureState = {
  lessonTextDisplayMode: LessonDisplayMode;
 };
 
-type HanziHomeFeatureInitialSelections = Partial<
- Pick<
-  HanziHomeFeatureState,
-  | "vocabSelectedWordId"
-  | "grammarSelectedPointId"
-  | "lessonTextSelectedSectionId"
-  | "lessonTextDisplayMode"
- >
->;
+type HanziHomeFeatureInitialSelections = Partial<{
+ vocabSelectedWordId: HanziHomeFeatureState["vocabSelectedWordId"];
+ grammarSelectedPointId: HanziHomeFeatureState["grammarSelectedPointId"];
+ lessonTextSelectedSectionId: HanziHomeFeatureState["lessonTextSelectedSectionId"];
+ lessonTextDisplayMode: HanziHomeFeatureState["lessonTextDisplayMode"];
+}>;
 
 export function createHanziHomeFeatureStore(
  initialSelections: HanziHomeFeatureInitialSelections = {},
 ) {
  const preferences = readWorkspacePreferences();
 
- return createStore<HanziHomeFeatureState>({
+ const initialState: HanziHomeFeatureState = {
   editMode: false,
   activeNode: null,
   splitEnabled: preferences.splitEnabled,
@@ -65,7 +69,9 @@ export function createHanziHomeFeatureStore(
   lessonTextSidebarOpen: true,
   lessonTextSettingsOpen: false,
   lessonTextDisplayMode: initialSelections.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE,
- });
+ };
+
+ return createStore(initialState);
 }
 
 export type HanziHomeFeatureStore = ReturnType<typeof createHanziHomeFeatureStore>;

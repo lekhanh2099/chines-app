@@ -6,9 +6,20 @@
  * to support both client-side and server-side usage.
  */
 
+import type { JsonFieldValue, JsonObject } from "@/types/json";
+import type { Tables, TablesInsert } from "@/types/supabase.generated";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { z } from "zod";
 import { logger } from "@/lib/logger";
 import { extractChinese } from "@/lib/chinese-utils";
+import {
+ aiAnalysisSchema,
+ DbDictionaryCoreSchema,
+ DbVocabularySchema,
+ PersonalNoteModeSchema,
+ VocabDataSchema,
+ VocabTypeSchema,
+} from "@/types/database";
 import type {
  DbDictionaryCore,
  DbVocabulary,
@@ -25,24 +36,77 @@ import type {
  VocabType,
  VocabWithProgress,
 } from "@/types/database";
+import type { Database } from "@/types/supabase.generated";
 
-type UserVocabProgressRecord = {
- proficiency_level: number;
- is_favorited: boolean;
- dictionary_id?: string | null;
- personal_note?: string | null;
- personal_note_mode?: "normal" | "important" | null;
-};
+type AppSupabaseClient = SupabaseClient<Database>;
 
-function isMissingColumnError(error: unknown): boolean {
- const code =
-  typeof error === "object" && error !== null && "code" in error
-   ? String((error as { code?: unknown }).code || "")
-   : "";
- const message =
-  typeof error === "object" && error !== null && "message" in error
-   ? String((error as { message?: unknown }).message || "").toLowerCase()
-   : "";
+const NullableStringSchema = z.string().nullable();
+const NullableAiAnalysisSchema = aiAnalysisSchema.nullable();
+const NullableDbDictionaryCoreSchema = DbDictionaryCoreSchema.nullable();
+const NullableDbVocabularySchema = DbVocabularySchema.nullable();
+const DictionaryLookupCountSchema = DbDictionaryCoreSchema.pick({
+ id: true,
+ lookup_count: true,
+});
+const VocabularyAnalysisSourceSchema = DbVocabularySchema.pick({
+ analysis: true,
+ ai_analysis: true,
+ sino_vietnamese: true,
+}).nullable();
+const DictionaryMergeModeSchema = z.enum(["preserve-existing", "prefer-incoming"]);
+
+const UserVocabProgressRecordSchema = z.object({
+ proficiency_level: z.number(),
+ is_favorited: z.boolean(),
+ dictionary_id: NullableStringSchema.optional(),
+ personal_note: NullableStringSchema.optional(),
+ personal_note_mode: PersonalNoteModeSchema.nullable().optional(),
+});
+type UserVocabProgressRecord = z.infer<typeof UserVocabProgressRecordSchema>;
+const NullableUserVocabProgressRecordSchema = UserVocabProgressRecordSchema.nullable();
+
+const VocabIdentitySchema = z.object({ id: z.string() });
+const NullableVocabIdentitySchema = VocabIdentitySchema.nullable();
+const SaveVocabResultSchema = z.object({
+ vocabId: z.string(),
+ dictionaryId: z.string().optional(),
+ contextSchemaAvailable: z.boolean(),
+ noteSchemaAvailable: z.boolean(),
+});
+const NullableSaveVocabResultSchema = SaveVocabResultSchema.nullable();
+const TrackVocabResultSchema = SaveVocabResultSchema.pick({
+ vocabId: true,
+ dictionaryId: true,
+});
+const NullableTrackVocabResultSchema = TrackVocabResultSchema.nullable();
+const DeletedProgressSchema = z
+ .object({
+  dictionary_id: NullableStringSchema.optional(),
+ })
+ .nullable();
+const VocabWithProgressResultSchema = z.object({
+ vocab: VocabDataSchema,
+ srsLevel: z.number().nullable(),
+ isSaved: z.boolean(),
+ personalNote: z.string(),
+ personalNoteMode: PersonalNoteModeSchema,
+});
+
+const supabaseErrorLikeSchema = z.object({
+ code: z.string().optional().default(""),
+ message: z.string().optional().default(""),
+});
+
+type SupabaseErrorInput = Parameters<typeof supabaseErrorLikeSchema.safeParse>[0];
+
+function parseSupabaseError(error: SupabaseErrorInput) {
+ const parsed = supabaseErrorLikeSchema.safeParse(error);
+ return parsed.success ? parsed.data : { code: "", message: "" };
+}
+
+function isMissingColumnError(error: SupabaseErrorInput): boolean {
+ const { code, message: rawMessage } = parseSupabaseError(error);
+ const message = rawMessage.toLowerCase();
 
  return (
   code === "42703" ||
@@ -52,15 +116,9 @@ function isMissingColumnError(error: unknown): boolean {
  );
 }
 
-function isMissingDictionaryCacheSchemaError(error: unknown): boolean {
- const code =
-  typeof error === "object" && error !== null && "code" in error
-   ? String((error as { code?: unknown }).code || "")
-   : "";
- const message =
-  typeof error === "object" && error !== null && "message" in error
-   ? String((error as { message?: unknown }).message || "").toLowerCase()
-   : "";
+function isMissingDictionaryCacheSchemaError(error: SupabaseErrorInput): boolean {
+ const { code, message: rawMessage } = parseSupabaseError(error);
+ const message = rawMessage.toLowerCase();
 
  return (
   code === "42P01" ||
@@ -72,24 +130,15 @@ function isMissingDictionaryCacheSchemaError(error: unknown): boolean {
  );
 }
 
-function isRlsPolicyError(error: unknown): boolean {
- const code =
-  typeof error === "object" && error !== null && "code" in error
-   ? String((error as { code?: unknown }).code || "")
-   : "";
- const message =
-  typeof error === "object" && error !== null && "message" in error
-   ? String((error as { message?: unknown }).message || "").toLowerCase()
-   : "";
+function isRlsPolicyError(error: SupabaseErrorInput): boolean {
+ const { code, message: rawMessage } = parseSupabaseError(error);
+ const message = rawMessage.toLowerCase();
 
  return code === "42501" || message.includes("row-level security policy");
 }
 
-function errorMentionsColumn(error: unknown, columnName: string): boolean {
- const message =
-  typeof error === "object" && error !== null && "message" in error
-   ? String((error as { message?: unknown }).message || "").toLowerCase()
-   : "";
+function errorMentionsColumn(error: SupabaseErrorInput, columnName: string): boolean {
+ const message = parseSupabaseError(error).message.toLowerCase();
 
  return message.includes(columnName.toLowerCase());
 }
@@ -101,13 +150,16 @@ export function normalizeDictionaryHeadword(text: string): string {
 }
 
 /** Classify a vocab entry as word or sentence based on hanzi length and pinyin spaces */
-export function classifyVocabType(hanzi: string, pinyin?: string | null): VocabType {
+export function classifyVocabType(
+ hanzi: string,
+ pinyin?: z.infer<typeof NullableStringSchema>,
+): z.infer<typeof VocabTypeSchema> {
  if (hanzi.length > 4) return "sentence";
  if (pinyin && pinyin.split(" ").length > 3) return "sentence";
  return "word";
 }
 
-function normalizeRelatedCompounds(source: AiAnalysis): AiRelatedCompound[] | undefined {
+function normalizeRelatedCompounds(source: AiAnalysis): AiAnalysis["related_compounds"] {
  const normalizedCompounds = normalizeWordRelations(source.related_compounds);
 
  if (Array.isArray(source.related_compounds)) {
@@ -129,9 +181,7 @@ function normalizeRelatedCompounds(source: AiAnalysis): AiRelatedCompound[] | un
  return legacyWords.map((word) => ({ word }));
 }
 
-function normalizeDefinitionExamples(
- examples?: AiDefinitionExample[],
-): AiDefinitionExample[] | undefined {
+function normalizeDefinitionExamples(examples?: AiDefinitionExample[]): AiDefinition["examples"] {
  return examples
   ?.map((example) => ({
    ...example,
@@ -141,9 +191,7 @@ function normalizeDefinitionExamples(
   .filter((example) => example.cn || example.vi || example.py || example.pinyin);
 }
 
-function normalizeDefinitionMeanings(
- meanings?: AiDefinitionMeaning[],
-): AiDefinitionMeaning[] | undefined {
+function normalizeDefinitionMeanings(meanings?: AiDefinitionMeaning[]): AiDefinition["meanings"] {
  return meanings
   ?.map((item) => ({
    meaning: item.meaning?.trim(),
@@ -152,9 +200,7 @@ function normalizeDefinitionMeanings(
   .filter((item) => item.meaning || item.examples?.length);
 }
 
-function normalizeWordRelations(
- relations?: AiWordRelation[] | AiRelatedCompound[],
-): AiWordRelation[] | undefined {
+function normalizeWordRelations(relations?: AiWordRelation[]): AiAnalysis["synonyms"] {
  return relations
   ?.map((relation) => ({
    word: relation.word?.trim(),
@@ -165,8 +211,8 @@ function normalizeWordRelations(
 }
 
 function normalizeAnalysis(
- analysis?: AiAnalysis | null,
- sinoVietnamese?: string | null,
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ sinoVietnamese?: z.infer<typeof NullableStringSchema>,
 ): AiAnalysis {
  const source = analysis || {};
  const normalizedEtymology =
@@ -247,7 +293,7 @@ function normalizeAnalysis(
 }
 
 function getDictionaryDefinitionsFromAnalysis(
- analysis?: AiAnalysis | null,
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
  fallbackMeaning = "",
 ): DictionaryCoreDefinition[] {
  return getNormalizedDefinitions(analysis, fallbackMeaning)
@@ -267,7 +313,7 @@ function getDictionaryDefinitionsFromAnalysis(
 }
 
 function buildDictionaryCoreData(
- analysis?: AiAnalysis | null,
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
  fallbackMeaning = "",
 ): DictionaryCoreData {
  const normalized = normalizeAnalysis(analysis);
@@ -280,13 +326,10 @@ function buildDictionaryCoreData(
 }
 
 export function getDictionaryCoreAnalysis(
- entry?: Pick<DbDictionaryCore, "data" | "sino_vietnamese"> | null,
+ entry?: z.infer<typeof NullableDbDictionaryCoreSchema>,
 ): AiAnalysis {
- const data = (entry?.data || {}) as DictionaryCoreData;
- const embeddedAnalysis = normalizeAnalysis(
-  (data.ai_analysis || {}) as AiAnalysis,
-  entry?.sino_vietnamese || null,
- );
+ const data = entry?.data || {};
+ const embeddedAnalysis = normalizeAnalysis(data.ai_analysis || {}, entry?.sino_vietnamese || null);
  const definitions = (data.definitions || []).map((definition) => ({
   pos: definition.part_of_speech || "",
   meaning: definition.meaning || "",
@@ -309,9 +352,9 @@ export function getDictionaryCoreAnalysis(
 }
 
 export async function getDictionaryEntryByHeadword(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  headword: string,
-): Promise<DbDictionaryCore | null> {
+): Promise<z.infer<typeof NullableDbDictionaryCoreSchema>> {
  const lookupKey = normalizeDictionaryHeadword(headword);
  if (!lookupKey) {
   return null;
@@ -330,12 +373,18 @@ export async function getDictionaryEntryByHeadword(
   return null;
  }
 
- return (data as DbDictionaryCore | null) || null;
+ const parsed = DbDictionaryCoreSchema.safeParse(data);
+ if (!parsed.success) {
+  logger.error("[VocabService] invalid dictionary_core row:", parsed.error);
+  return null;
+ }
+
+ return parsed.data;
 }
 
 export async function incrementDictionaryLookupCount(
- supabase: SupabaseClient,
- entry: Pick<DbDictionaryCore, "id" | "lookup_count">,
+ supabase: AppSupabaseClient,
+ entry: z.infer<typeof DictionaryLookupCountSchema>,
 ): Promise<void> {
  const { error } = await supabase
   .from("dictionary_core")
@@ -348,16 +397,16 @@ export async function incrementDictionaryLookupCount(
 }
 
 export async function upsertDictionaryEntry(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  input: {
   headword: string;
   pinyin?: string;
   sinoVietnamese?: string;
   meaning?: string;
   ai_analysis?: AiAnalysis;
-  mergeMode?: "preserve-existing" | "prefer-incoming";
+  mergeMode?: z.infer<typeof DictionaryMergeModeSchema>;
  },
-): Promise<DbDictionaryCore | null> {
+): Promise<z.infer<typeof NullableDbDictionaryCoreSchema>> {
  const normalizedHeadword = normalizeDictionaryHeadword(input.headword);
  if (!normalizedHeadword) {
   return null;
@@ -406,10 +455,16 @@ export async function upsertDictionaryEntry(
   return null;
  }
 
- return data as DbDictionaryCore;
+ const parsed = DbDictionaryCoreSchema.safeParse(data);
+ if (!parsed.success) {
+  logger.error("[VocabService] invalid dictionary_core upsert row:", parsed.error);
+  return null;
+ }
+
+ return parsed.data;
 }
 
-function isMeaningfulValue(value: unknown): boolean {
+function isMeaningfulValue(value: JsonFieldValue): boolean {
  if (value == null) return false;
  if (typeof value === "string") return value.trim().length > 0;
  if (Array.isArray(value)) return value.length > 0;
@@ -417,11 +472,8 @@ function isMeaningfulValue(value: unknown): boolean {
  return true;
 }
 
-function mergeAnalysisPreserveExisting<T extends Record<string, unknown>>(
- existing: T,
- incoming: T,
-): T {
- const merged: Record<string, unknown> = { ...existing };
+function mergeAnalysisPreserveExisting<T extends JsonObject>(existing: T, incoming: T): T {
+ const merged: JsonObject = { ...existing };
 
  for (const [key, incomingValue] of Object.entries(incoming)) {
   if (!isMeaningfulValue(incomingValue)) continue;
@@ -441,8 +493,8 @@ function mergeAnalysisPreserveExisting<T extends Record<string, unknown>>(
    typeof incomingValue === "object"
   ) {
    merged[key] = mergeAnalysisPreserveExisting(
-    existingValue as Record<string, unknown>,
-    incomingValue as Record<string, unknown>,
+    existingValue as JsonObject,
+    incomingValue as JsonObject,
    );
   }
  }
@@ -450,11 +502,8 @@ function mergeAnalysisPreserveExisting<T extends Record<string, unknown>>(
  return merged as T;
 }
 
-function mergeAnalysisPreferIncoming<T extends Record<string, unknown>>(
- existing: T,
- incoming: T,
-): T {
- const merged: Record<string, unknown> = { ...existing };
+function mergeAnalysisPreferIncoming<T extends JsonObject>(existing: T, incoming: T): T {
+ const merged: JsonObject = { ...existing };
 
  for (const [key, incomingValue] of Object.entries(incoming)) {
   if (!isMeaningfulValue(incomingValue)) continue;
@@ -469,8 +518,8 @@ function mergeAnalysisPreferIncoming<T extends Record<string, unknown>>(
    typeof incomingValue === "object"
   ) {
    merged[key] = mergeAnalysisPreferIncoming(
-    existingValue as Record<string, unknown>,
-    incomingValue as Record<string, unknown>,
+    existingValue as JsonObject,
+    incomingValue as JsonObject,
    );
    continue;
   }
@@ -495,7 +544,7 @@ export function mapDictionaryEntryToVocabData(entry: DbDictionaryCore): VocabDat
 }
 
 export async function saveUserDictionaryRelationship(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  dictionaryId: string,
 ): Promise<boolean> {
@@ -518,15 +567,16 @@ export async function saveUserDictionaryRelationship(
 }
 
 export function getVocabularyAnalysis(
- vocab?: Pick<DbVocabulary, "analysis" | "ai_analysis" | "sino_vietnamese"> | null,
+ vocab?: z.infer<typeof VocabularyAnalysisSourceSchema>,
 ): AiAnalysis {
- return normalizeAnalysis(
-  (vocab?.analysis || vocab?.ai_analysis || {}) as AiAnalysis,
-  vocab?.sino_vietnamese || null,
- );
+ const parsed = aiAnalysisSchema.safeParse(vocab?.analysis || vocab?.ai_analysis || {});
+ return normalizeAnalysis(parsed.success ? parsed.data : {}, vocab?.sino_vietnamese || null);
 }
 
-export function getPrimaryMeaning(analysis?: AiAnalysis | null, fallbackMeaning = ""): string {
+export function getPrimaryMeaning(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ fallbackMeaning = "",
+): string {
  const normalized = normalizeAnalysis(analysis);
 
  return (
@@ -538,7 +588,7 @@ export function getPrimaryMeaning(analysis?: AiAnalysis | null, fallbackMeaning 
 }
 
 export function getBasicVocabularyAnalysis(
- analysis?: AiAnalysis | null,
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
  fallbackMeaning = "",
 ): AiAnalysis {
  const normalized = normalizeAnalysis(analysis);
@@ -579,7 +629,7 @@ export function getBasicVocabData(vocab: VocabData): VocabData {
  };
 }
 
-function hasStructuredEtymology(analysis?: AiAnalysis | null): boolean {
+function hasStructuredEtymology(analysis?: z.infer<typeof NullableAiAnalysisSchema>): boolean {
  const normalized = normalizeAnalysis(analysis);
  const etymology = normalized.etymology;
 
@@ -590,11 +640,13 @@ function hasStructuredEtymology(analysis?: AiAnalysis | null): boolean {
  );
 }
 
-function hasStructuredRelatedCompounds(analysis?: AiAnalysis | null): boolean {
+function hasStructuredRelatedCompounds(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): boolean {
  return Array.isArray(analysis?.related_compounds);
 }
 
-function hasExtendedLexicalFields(analysis?: AiAnalysis | null): boolean {
+function hasExtendedLexicalFields(analysis?: z.infer<typeof NullableAiAnalysisSchema>): boolean {
  return (
   Array.isArray(analysis?.synonyms) &&
   Array.isArray(analysis?.antonyms) &&
@@ -604,7 +656,9 @@ function hasExtendedLexicalFields(analysis?: AiAnalysis | null): boolean {
  );
 }
 
-export function hasInspectorDeepDiveData(analysis?: AiAnalysis | null): boolean {
+export function hasInspectorDeepDiveData(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): boolean {
  const normalized = normalizeAnalysis(analysis);
 
  if (!hasStructuredEtymology(analysis)) {
@@ -640,7 +694,9 @@ export function hasInspectorDeepDiveData(analysis?: AiAnalysis | null): boolean 
  );
 }
 
-export function isGenericEnglishFallbackAnalysis(analysis?: AiAnalysis | null): boolean {
+export function isGenericEnglishFallbackAnalysis(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): boolean {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return false;
 
@@ -667,7 +723,9 @@ export function isGenericEnglishFallbackAnalysis(analysis?: AiAnalysis | null): 
  return !hasVietnameseSpecificData;
 }
 
-export function hasDetailedVocabAnalysis(analysis?: AiAnalysis | null): boolean {
+export function hasDetailedVocabAnalysis(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): boolean {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return false;
 
@@ -698,7 +756,9 @@ export function hasDetailedVocabAnalysis(analysis?: AiAnalysis | null): boolean 
  );
 }
 
-export function getNormalizedRadicals(analysis?: AiAnalysis | null): AiRadical[] {
+export function getNormalizedRadicals(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): AiRadical[] {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return [];
 
@@ -714,7 +774,7 @@ export function getNormalizedRadicals(analysis?: AiAnalysis | null): AiRadical[]
 }
 
 export function getNormalizedDefinitions(
- analysis?: AiAnalysis | null,
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
  fallbackMeaning = "",
 ): AiDefinition[] {
  const normalized = normalizeAnalysis(analysis);
@@ -774,7 +834,9 @@ export function getNormalizedDefinitions(
  return [];
 }
 
-export function getNormalizedRelatedCompounds(analysis?: AiAnalysis | null): AiRelatedCompound[] {
+export function getNormalizedRelatedCompounds(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): AiRelatedCompound[] {
  const normalized = normalizeAnalysis(analysis);
 
  return (
@@ -784,7 +846,9 @@ export function getNormalizedRelatedCompounds(analysis?: AiAnalysis | null): AiR
  );
 }
 
-export function getNormalizedSynonyms(analysis?: AiAnalysis | null): AiWordRelation[] {
+export function getNormalizedSynonyms(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): AiWordRelation[] {
  const normalized = normalizeAnalysis(analysis);
 
  return (
@@ -793,7 +857,9 @@ export function getNormalizedSynonyms(analysis?: AiAnalysis | null): AiWordRelat
  );
 }
 
-export function getNormalizedAntonyms(analysis?: AiAnalysis | null): AiWordRelation[] {
+export function getNormalizedAntonyms(
+ analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+): AiWordRelation[] {
  const normalized = normalizeAnalysis(analysis);
 
  return (
@@ -808,9 +874,9 @@ export function getNormalizedAntonyms(analysis?: AiAnalysis | null): AiWordRelat
 
 /** Fetch a single vocabulary by hanzi text */
 export async function getVocabByHanzi(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  hanzi: string,
-): Promise<DbVocabulary | null> {
+): Promise<z.infer<typeof NullableDbVocabularySchema>> {
  const { data, error } = await supabase
   .from("vocabularies")
   .select("*")
@@ -818,12 +884,18 @@ export async function getVocabByHanzi(
   .single();
 
  if (error || !data) return null;
- return data as DbVocabulary;
+ const parsed = DbVocabularySchema.safeParse(data);
+ if (!parsed.success) {
+  logger.error("[VocabService] invalid vocabularies row:", parsed.error);
+  return null;
+ }
+
+ return parsed.data;
 }
 
 /** Fetch user's vocabulary list with progress */
 export async function getUserVocabList(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<VocabWithProgress[]> {
  const { data: progress } = await supabase
@@ -839,6 +911,7 @@ export async function getUserVocabList(
     pinyin,
     sino_vietnamese,
     meaning,
+    analysis,
     ai_analysis,
     created_at
    )
@@ -848,16 +921,17 @@ export async function getUserVocabList(
 
  if (!progress) return [];
 
- return progress
-  .filter((p) => p.vocabularies)
-  .map((p) => {
-   const v = p.vocabularies as unknown as DbVocabulary;
-   const analysis = getVocabularyAnalysis(v);
-   let status: VocabWithProgress["status"] = "new";
-   if (p.proficiency_level >= 4) status = "mastered";
-   else if (p.proficiency_level >= 2) status = "learning";
+ return progress.flatMap((p) => {
+  const v = p.vocabularies;
+  if (!v) return [];
+  const analysis = getVocabularyAnalysis(v);
+  const proficiencyLevel = p.proficiency_level ?? 0;
+  let status: VocabWithProgress["status"] = "new";
+  if (proficiencyLevel >= 4) status = "mastered";
+  else if (proficiencyLevel >= 2) status = "learning";
 
-   return {
+  return [
+   {
     id: v.id,
     hanzi: v.hanzi,
     pinyin: v.pinyin || "",
@@ -865,12 +939,13 @@ export async function getUserVocabList(
     meaning: getPrimaryMeaning(analysis, v.meaning || ""),
     ai_analysis: analysis,
     source: getVocabSource(analysis),
-    proficiency_level: p.proficiency_level,
-    is_favorited: p.is_favorited,
+    proficiency_level: proficiencyLevel,
+    is_favorited: p.is_favorited ?? false,
     status,
     type: classifyVocabType(v.hanzi, v.pinyin),
-   };
-  });
+   },
+  ];
+ });
 }
 
 function getVocabSource(analysis: AiAnalysis): VocabWithProgress["source"] {
@@ -906,52 +981,70 @@ function parseVocabSource(notes?: string): VocabWithProgress["source"] {
 }
 
 export async function getUserVocabProgressRecord(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  lookup: {
   vocabId?: string;
   dictionaryId?: string;
  },
-): Promise<UserVocabProgressRecord | null> {
- const runQuery = async <T extends Record<string, unknown>>(columns: string) => {
-  let query = supabase.from("user_vocab_progress").select(columns).eq("user_id", userId);
+): Promise<z.infer<typeof NullableUserVocabProgressRecordSchema>> {
+ let fullQuery = supabase
+  .from("user_vocab_progress")
+  .select("proficiency_level, is_favorited, dictionary_id, personal_note, personal_note_mode")
+  .eq("user_id", userId);
 
-  if (lookup.vocabId) {
-   query = query.eq("vocab_id", lookup.vocabId);
-  }
+ if (lookup.vocabId) {
+  fullQuery = fullQuery.eq("vocab_id", lookup.vocabId);
+ }
 
-  if (lookup.dictionaryId) {
-   query = query.eq("dictionary_id", lookup.dictionaryId);
-  }
+ if (lookup.dictionaryId) {
+  fullQuery = fullQuery.eq("dictionary_id", lookup.dictionaryId);
+ }
 
-  const result = await query.maybeSingle();
-
-  return {
-   data: (result.data as T | null) ?? null,
-   error: result.error,
-  };
- };
-
- const fullResult = await runQuery<UserVocabProgressRecord>(
-  "proficiency_level, is_favorited, dictionary_id, personal_note, personal_note_mode",
- );
+ const fullResult = await fullQuery.maybeSingle();
 
  if (!fullResult.error) {
-  return fullResult.data;
+  return fullResult.data
+   ? {
+      proficiency_level: fullResult.data.proficiency_level ?? 0,
+      is_favorited: fullResult.data.is_favorited ?? false,
+      dictionary_id: fullResult.data.dictionary_id,
+      personal_note: fullResult.data.personal_note,
+      personal_note_mode:
+       fullResult.data.personal_note_mode === "important"
+        ? "important"
+        : fullResult.data.personal_note_mode === "normal"
+          ? "normal"
+          : null,
+     }
+   : null;
  }
 
  if (!isMissingColumnError(fullResult.error)) {
   return null;
  }
 
- const legacyDictionaryResult = await runQuery<
-  Pick<UserVocabProgressRecord, "proficiency_level" | "is_favorited" | "dictionary_id">
- >("proficiency_level, is_favorited, dictionary_id");
+ let legacyDictionaryQuery = supabase
+  .from("user_vocab_progress")
+  .select("proficiency_level, is_favorited, dictionary_id")
+  .eq("user_id", userId);
+
+ if (lookup.vocabId) {
+  legacyDictionaryQuery = legacyDictionaryQuery.eq("vocab_id", lookup.vocabId);
+ }
+
+ if (lookup.dictionaryId) {
+  legacyDictionaryQuery = legacyDictionaryQuery.eq("dictionary_id", lookup.dictionaryId);
+ }
+
+ const legacyDictionaryResult = await legacyDictionaryQuery.maybeSingle();
 
  if (!legacyDictionaryResult.error) {
   return legacyDictionaryResult.data
    ? {
-      ...legacyDictionaryResult.data,
+      proficiency_level: legacyDictionaryResult.data.proficiency_level ?? 0,
+      is_favorited: legacyDictionaryResult.data.is_favorited ?? false,
+      dictionary_id: legacyDictionaryResult.data.dictionary_id,
       personal_note: null,
       personal_note_mode: null,
      }
@@ -962,14 +1055,22 @@ export async function getUserVocabProgressRecord(
   return null;
  }
 
- const legacyResult = await runQuery<
-  Pick<UserVocabProgressRecord, "proficiency_level" | "is_favorited">
- >("proficiency_level, is_favorited");
+ let legacyQuery = supabase
+  .from("user_vocab_progress")
+  .select("proficiency_level, is_favorited")
+  .eq("user_id", userId);
+
+ if (lookup.vocabId) {
+  legacyQuery = legacyQuery.eq("vocab_id", lookup.vocabId);
+ }
+
+ const legacyResult = await legacyQuery.maybeSingle();
 
  if (!legacyResult.error) {
   return legacyResult.data
    ? {
-      ...legacyResult.data,
+      proficiency_level: legacyResult.data.proficiency_level ?? 0,
+      is_favorited: legacyResult.data.is_favorited ?? false,
       dictionary_id: null,
       personal_note: null,
       personal_note_mode: null,
@@ -982,16 +1083,10 @@ export async function getUserVocabProgressRecord(
 
 /** Fetch vocab + user SRS progress for a specific word */
 export async function getVocabWithProgress(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  hanzi: string,
  userId: string,
-): Promise<{
- vocab: VocabData;
- srsLevel: number | null;
- isSaved: boolean;
- personalNote: string;
- personalNoteMode: "normal" | "important";
-}> {
+): Promise<z.infer<typeof VocabWithProgressResultSchema>> {
  const [vocab, dictionaryEntry] = await Promise.all([
   getVocabByHanzi(supabase, hanzi),
   getDictionaryEntryByHeadword(supabase, hanzi),
@@ -1030,7 +1125,7 @@ export async function getVocabWithProgress(
   ai_analysis: resolvedAnalysis,
  };
 
- let progress: UserVocabProgressRecord | null = null;
+ let progress: z.infer<typeof NullableUserVocabProgressRecordSchema> = null;
 
  if (vocab?.id) {
   progress = await getUserVocabProgressRecord(supabase, userId, {
@@ -1063,7 +1158,7 @@ export async function getVocabWithProgress(
 
 /** Upsert vocabulary record (e.g., from inspector save or AI result) */
 export async function upsertVocab(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  data: {
   hanzi: string;
   pinyin?: string;
@@ -1071,7 +1166,7 @@ export async function upsertVocab(
   meaning?: string;
   ai_analysis?: AiAnalysis;
  },
-): Promise<{ id: string } | null> {
+): Promise<z.infer<typeof NullableVocabIdentitySchema>> {
  const normalizedAnalysis = normalizeAnalysis(data.ai_analysis, data.sinoVietnamese);
  const resolvedMeaning = getPrimaryMeaning(normalizedAnalysis, data.meaning || "");
  const resolvedSinoVietnamese =
@@ -1079,9 +1174,9 @@ export async function upsertVocab(
 
  const { data: vocabularyId, error } = await supabase.rpc("upsert_legacy_vocabulary_cache", {
   p_hanzi: data.hanzi,
-  p_pinyin: data.pinyin || null,
-  p_sino_vietnamese: resolvedSinoVietnamese || null,
-  p_meaning: resolvedMeaning || null,
+  p_pinyin: data.pinyin || undefined,
+  p_sino_vietnamese: resolvedSinoVietnamese || undefined,
+  p_meaning: resolvedMeaning || undefined,
   p_analysis: normalizedAnalysis,
  });
 
@@ -1094,9 +1189,9 @@ export async function upsertVocab(
 }
 
 export async function syncDictionaryEntryToLegacyVocab(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  entry: DbDictionaryCore,
-): Promise<{ id: string } | null> {
+): Promise<z.infer<typeof NullableVocabIdentitySchema>> {
  const vocabData = mapDictionaryEntryToVocabData(entry);
 
  return upsertVocab(supabase, {
@@ -1110,22 +1205,17 @@ export async function syncDictionaryEntryToLegacyVocab(
 
 /** Save/bookmark a vocabulary for a user (adds to SRS) */
 export async function saveVocabToSrs(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  vocabData: VocabData,
  options?: {
   contextSentence?: string;
   contextTranslation?: string;
   personalNote?: string;
-  personalNoteMode?: "normal" | "important";
-  dictionaryMergeMode?: "preserve-existing" | "prefer-incoming";
+  personalNoteMode?: z.infer<typeof PersonalNoteModeSchema>;
+  dictionaryMergeMode?: z.infer<typeof DictionaryMergeModeSchema>;
  },
-): Promise<{
- vocabId: string;
- dictionaryId?: string;
- contextSchemaAvailable: boolean;
- noteSchemaAvailable: boolean;
-} | null> {
+): Promise<z.infer<typeof NullableSaveVocabResultSchema>> {
  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
   headword: vocabData.hanzi,
   pinyin: vocabData.pinyin,
@@ -1187,7 +1277,7 @@ export async function saveVocabToSrs(
    "[VocabService] Falling back to legacy user_vocab_progress schema; migration may be missing.",
   );
 
-  const fallbackPayload: Record<string, string | boolean | null> = {
+  const fallbackPayload: TablesInsert<"user_vocab_progress"> = {
    user_id: userId,
    vocab_id: vocab.id,
    dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
@@ -1266,10 +1356,10 @@ export async function saveVocabToSrs(
 
 /** Track a looked-up vocabulary in the user's personal list without forcing favorite/SRS state. */
 export async function trackVocabLookup(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  vocabData: VocabData,
-): Promise<{ vocabId: string; dictionaryId?: string } | null> {
+): Promise<z.infer<typeof NullableTrackVocabResultSchema>> {
  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
   headword: vocabData.hanzi,
   pinyin: vocabData.pinyin,
@@ -1338,13 +1428,11 @@ export async function trackVocabLookup(
 
 /** Delete a vocabulary from user's SRS tracking */
 export async function removeVocabFromSrs(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  vocabId: string,
 ): Promise<boolean> {
- let deletedProgress: {
-  dictionary_id?: string | null;
- } | null = null;
+ let deletedProgress: z.infer<typeof DeletedProgressSchema> = null;
 
  const { data, error: initialError } = await supabase
   .from("user_vocab_progress")
@@ -1354,7 +1442,7 @@ export async function removeVocabFromSrs(
   .select("dictionary_id")
   .maybeSingle();
 
- deletedProgress = (data as { dictionary_id?: string | null } | null) || null;
+ deletedProgress = data || null;
  let error = initialError;
 
  if (error && isMissingColumnError(error)) {

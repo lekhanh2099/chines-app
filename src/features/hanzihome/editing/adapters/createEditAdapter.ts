@@ -1,10 +1,11 @@
+import type { JsonFieldValue } from "@/types/json";
 import type { EditAdapter, EditFieldDefinition } from "./types";
 
-function asEditableRecord(value: unknown): { [key: string]: unknown } {
+function asEditableRecord(value: JsonFieldValue): { [key: string]: JsonFieldValue } {
  return value && typeof value === "object" && !Array.isArray(value) ? { ...value } : {};
 }
 
-function fieldToString(value: unknown, kind: EditFieldDefinition["kind"]) {
+function fieldToString(value: JsonFieldValue, kind: EditFieldDefinition["kind"]) {
  if (kind === "string-list") {
   return Array.isArray(value)
    ? value.filter((item): item is string => typeof item === "string").join("\n")
@@ -22,7 +23,11 @@ function fieldToString(value: unknown, kind: EditFieldDefinition["kind"]) {
  return typeof value === "string" || typeof value === "number" ? String(value) : "";
 }
 
-function stringToFieldValue(value: string, kind: EditFieldDefinition["kind"], fallback: unknown) {
+function stringToFieldValue(
+ value: string,
+ kind: EditFieldDefinition["kind"],
+ fallback: JsonFieldValue,
+) {
  if (kind === "string-list") {
   return value
    .split("\n")

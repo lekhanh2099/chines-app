@@ -1,9 +1,13 @@
+import type { JsonValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import type { LessonDisplayMode } from "../types";
+import { z } from "zod";
 import { asRecord, stringValue } from "../utils";
 import { letterLabel } from "./exercise-utils";
 import { MatchingOptionCard } from "./MatchingOptionCard";
+
+const MatchingColumnLabelModeSchema = z.enum(["number", "letter"]);
 
 export function MatchingColumn({
  lessonId,
@@ -19,9 +23,9 @@ export function MatchingColumn({
  itemPath?: EditableNodePath;
  itemId: string;
  title: string;
- values: unknown[];
+ values: JsonValue[];
  sourceKey: string;
- labelMode: "number" | "letter";
+ labelMode: z.infer<typeof MatchingColumnLabelModeSchema>;
  displayMode: LessonDisplayMode;
 }) {
  if (values.length === 0) return null;

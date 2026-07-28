@@ -1,3 +1,4 @@
+import type { JsonFieldValue, JsonValue } from "@/types/json";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { isReadingClozeExercise } from "./exercise-utils";
@@ -8,8 +9,8 @@ export function ExerciseRenderIssues({
  answers,
 }: {
  item: Exercise;
- passage: unknown;
- answers: unknown[];
+ passage: JsonFieldValue;
+ answers: JsonValue[];
 }) {
  const issueMeta = isReadingClozeExercise(item, passage, answers);
  if (!issueMeta) return null;

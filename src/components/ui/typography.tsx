@@ -69,7 +69,7 @@ const defaultElementByVariant = {
  caption: "span",
  overline: "span",
  code: "code",
-} as const;
+};
 
 type TypographyOwnProps<T extends React.ElementType> = VariantProps<typeof typographyVariants> & {
  as?: T;

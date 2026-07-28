@@ -2,13 +2,19 @@ import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 
+type ControlledSelectProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+};
+
 export function SelectField({
  label,
  description,
  helperText,
  options,
  ...rest
-}: Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "value" | "onChange" | "onBlur"> &
+}: Omit<React.SelectHTMLAttributes<HTMLSelectElement>, keyof ControlledSelectProps> &
  Omit<FieldItemProps, "field"> & {
   options: { label: string; value: string }[];
  }) {

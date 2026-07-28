@@ -1,3 +1,4 @@
+import type { JsonObject } from "@/types/json";
 import type { AnyFieldApi } from "@tanstack/react-form";
 
 export function FieldInfo({
@@ -17,9 +18,7 @@ export function FieldInfo({
    {!isValid ? (
     <p className="text-xs text-danger-text">
      {errors
-      .map((e) =>
-       typeof e === "string" ? e : (e as Record<string, unknown>)?.message || String(e),
-      )
+      .map((e) => (typeof e === "string" ? e : (e as JsonObject)?.message || String(e)))
       .join(", ")}
     </p>
    ) : helperText ? (

@@ -1,21 +1,22 @@
+import type { JsonObject, JsonValue } from "@/types/json";
 import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { DeepVocabularyItem } from "@/features/hanzihome/schemas/vocab.types";
+import { z } from "zod";
+import {
+ hanziReaderFontSchema,
+ hanziReaderSizeSchema,
+ learningStatusSchema,
+ lessonTextRevealModeSchema,
+ moduleSchema,
+ progressItemSchema,
+ reviewResultSchema,
+ userLearningStateSchema,
+} from "@/features/hanzihome/schemas/learning-state.schema";
 
-export type HanziHomeModule =
- | "overview"
- | "lessonText"
- | "practice"
- | "listening"
- | "dictation"
- | "script"
- | "notes"
- | "vocab"
- | "grammar"
- | "radicals"
- | "review";
+export type HanziHomeModule = z.infer<typeof moduleSchema>;
 
-export type LearningStatus = "new" | "learning" | "known" | "hard";
-export type ReviewResult = "again" | "hard" | "known";
+export type LearningStatus = z.infer<typeof learningStatusSchema>;
+export type ReviewResult = z.infer<typeof reviewResultSchema>;
 
 export type HanziHomeCourseType = string;
 
@@ -38,25 +39,29 @@ export type HanziHomeCourseBook = {
  updatedAt?: string;
 };
 
-export type HanziHomeEditableRecordMeta = {
- entityType: string;
- entityId: string;
- dbId: string;
- updatedAt: string;
- parentEntityType?: string;
- parentEntityId?: string;
- sectionDbId?: string;
- fieldPath?: Array<string | number>;
- order?: number;
- orderField?: string;
-};
+export const EditableFieldPathSchema = z.array(z.union([z.string(), z.number()]));
+const NullableStrokeCountSchema = z.number().nullable();
+
+export const HanziHomeEditableRecordMetaSchema = z.object({
+ entityType: z.string(),
+ entityId: z.string(),
+ dbId: z.string(),
+ updatedAt: z.string(),
+ parentEntityType: z.string().optional(),
+ parentEntityId: z.string().optional(),
+ sectionDbId: z.string().optional(),
+ fieldPath: EditableFieldPathSchema.optional(),
+ order: z.number().optional(),
+ orderField: z.string().optional(),
+});
+export type HanziHomeEditableRecordMeta = z.infer<typeof HanziHomeEditableRecordMetaSchema>;
 
 export type StaticRadicalData = {
  id: string;
  index: number;
  radical: string;
  nameVi?: string;
- strokes?: number | null;
+ strokes?: z.infer<typeof NullableStrokeCountSchema>;
  coreMeaning: {
   modern?: string;
   history?: string;
@@ -161,12 +166,12 @@ export type HanziHomeLesson = {
  id: string;
  legacyLessonId?: string;
  dbSource?: {
-  dataset: "q2" | "q3";
+  dataset: z.infer<typeof HanziHomeDatasetSchema>;
   lessonFolder: string;
-  lessonMeta: unknown;
+  lessonMeta: JsonValue;
   sectionFilesById: Record<string, string>;
   vocabularyItemFilesByRuntimeId: Record<string, string>;
-  vocabularyItemPayloadsByRuntimeId: Record<string, unknown>;
+  vocabularyItemPayloadsByRuntimeId: JsonObject;
  };
  lessonNumber: number;
  titleZh: string;
@@ -205,7 +210,9 @@ export type HanziHomeData = {
  meta: HanziHomeMeta;
 };
 
-export type HanziHomeCatalogSource = "db" | "static" | "empty";
+export const HanziHomeDatasetSchema = z.enum(["q2", "q3"]);
+export const HanziHomeCatalogSourceSchema = z.enum(["db", "static", "empty"]);
+export type HanziHomeCatalogSource = z.infer<typeof HanziHomeCatalogSourceSchema>;
 
 export type HanziHomeCourseStats = {
  bookCount: number;
@@ -229,48 +236,11 @@ export type HanziHomeCatalogData = {
  meta: HanziHomeMeta;
 };
 
-export type LearningProgressItem = {
- level: number;
- status: LearningStatus;
- lastReviewedAt?: string;
-};
-
-export type HanziReaderFont = "system" | "songti" | "pinyin";
-export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
-export type LessonTextRevealMode = "always" | "tap";
-
-export type LessonTextDisplaySettings = {
- showPinyin: boolean;
- showMeaning: boolean;
- showAnswers: boolean;
- hanziFont: HanziReaderFont;
- hanziSize: HanziReaderSize;
- revealMode: LessonTextRevealMode;
-};
-
-export type UserLearningState = {
- settings: {
-  lastCourseId?: string;
-  lastLessonId?: string;
-  lastModule?: HanziHomeModule;
-  density?: "comfortable" | "compact" | "focus";
-  vocabDetailTab?: string;
-  lessonTextDisplayMode?: LessonTextDisplaySettings;
- };
- progress: {
-  vocab?: Record<string, LearningProgressItem>;
-  grammar?: Record<string, LearningProgressItem>;
- };
- bookmarks: {
-  lessons?: string[];
-  vocab?: string[];
-  grammar?: string[];
-  radicals?: string[];
- };
- reviewHistory: Array<{
-  type: "vocab" | "grammar" | "radical";
-  id: string;
-  result: ReviewResult;
-  answeredAt: string;
- }>;
-};
+export type LearningProgressItem = z.infer<typeof progressItemSchema>;
+export type HanziReaderFont = z.infer<typeof hanziReaderFontSchema>;
+export type HanziReaderSize = z.infer<typeof hanziReaderSizeSchema>;
+export type LessonTextRevealMode = z.infer<typeof lessonTextRevealModeSchema>;
+export type UserLearningState = z.infer<typeof userLearningStateSchema>;
+export type LessonTextDisplaySettings = NonNullable<
+ UserLearningState["settings"]["lessonTextDisplayMode"]
+>;

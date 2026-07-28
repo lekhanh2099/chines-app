@@ -2,7 +2,11 @@
 
 import { ModuleSplitWorkspaceContent } from "@/features/hanzihome/components/layout/ModuleSplitWorkspaceContent";
 import { HanziHomeFeatureProvider } from "@/features/hanzihome/context/HanziHomeFeatureProvider";
-import type { LearningSyncUiState, StudyModule } from "@/features/hanzihome/context/types";
+import type {
+ LearningSyncUiState,
+ ReviewItem,
+ StudyModule,
+} from "@/features/hanzihome/context/types";
 import type {
  HanziHomeLesson,
  LearningStatus,
@@ -21,10 +25,7 @@ type ModuleSplitWorkspaceProps = {
  onMarkVocab: (id: string, status: LearningStatus) => void;
  onBookmarkGrammar: (id: string) => void;
  onMarkGrammar: (id: string, status: LearningStatus) => void;
- onAnswerReview: (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
-  result: ReviewResult,
- ) => void;
+ onAnswerReview: (item: ReviewItem, result: ReviewResult) => void;
 };
 
 export function ModuleSplitWorkspace(props: ModuleSplitWorkspaceProps) {

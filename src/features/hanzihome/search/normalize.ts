@@ -1,4 +1,7 @@
+import { z } from "zod";
+
 const TOKEN_SPLIT_PATTERN = /[\s,.;:!?()[\]{}"'“”‘’/\\|+\-_=<>，。；：！？、]+/u;
+export const SearchTextInputSchema = z.string().nullable().optional();
 
 export function normalizeSearchText(value: string) {
  return value
@@ -10,7 +13,7 @@ export function normalizeSearchText(value: string) {
   .replace(/\s+/g, " ");
 }
 
-export function tokenizeSearchText(...values: Array<string | null | undefined>) {
+export function tokenizeSearchText(...values: Array<z.input<typeof SearchTextInputSchema>>) {
  const tokens = new Set<string>();
 
  values.forEach((value) => {

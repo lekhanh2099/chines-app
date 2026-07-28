@@ -1,5 +1,6 @@
 "use client";
 
+import { z } from "zod";
 import {
  createHtmlArtifactPayloadSchema,
  createHtmlArtifactFolderPayloadSchema,
@@ -21,49 +22,22 @@ import {
  type UpdateHtmlArtifactRuntimeStatePayload,
 } from "./html-artifact.schema";
 
-export const htmlArtifactsQueryKey = ["hanzihome", "html-artifacts"] as const;
-export const htmlArtifactRuntimeStateQueryKey = (artifactId: string) =>
- [...htmlArtifactsQueryKey, artifactId, "runtime-state"] as const;
+export const htmlArtifactsQueryKey = ["hanzihome", "html-artifacts"];
+export const htmlArtifactRuntimeStateQueryKey = (artifactId: string) => [
+ ...htmlArtifactsQueryKey,
+ artifactId,
+ "runtime-state",
+];
 
-const htmlArtifactsResponseSchema = {
- parse(json: unknown) {
-  const items = Array.isArray((json as { items?: unknown }).items)
-   ? (json as { items: unknown[] }).items
-   : [];
-  const folders = Array.isArray((json as { folders?: unknown }).folders)
-   ? (json as { folders: unknown[] }).folders
-   : [];
-
-  return {
-   items: items.map((item) => htmlArtifactSummarySchema.parse(item)),
-   folders: folders.map((folder) => htmlArtifactFolderSchema.parse(folder)),
-  };
- },
-};
-
-const htmlArtifactResponseSchema = {
- parse(json: unknown) {
-  return {
-   item: htmlArtifactSchema.parse((json as { item?: unknown }).item),
-  };
- },
-};
-
-const htmlArtifactFolderResponseSchema = {
- parse(json: unknown) {
-  return {
-   item: htmlArtifactFolderSchema.parse((json as { item?: unknown }).item),
-  };
- },
-};
-
-const htmlArtifactRuntimeStateResponseSchema = {
- parse(json: unknown) {
-  return {
-   state: htmlArtifactRuntimeStateSchema.parse((json as { state?: unknown }).state ?? {}),
-  };
- },
-};
+const htmlArtifactsResponseSchema = z.object({
+ items: z.array(htmlArtifactSummarySchema),
+ folders: z.array(htmlArtifactFolderSchema),
+});
+const htmlArtifactResponseSchema = z.object({ item: htmlArtifactSchema });
+const htmlArtifactFolderResponseSchema = z.object({ item: htmlArtifactFolderSchema });
+const htmlArtifactRuntimeStateResponseSchema = z.object({
+ state: htmlArtifactRuntimeStateSchema,
+});
 
 export class HtmlArtifactsApiError extends Error {
  status: number;
@@ -78,7 +52,7 @@ export class HtmlArtifactsApiError extends Error {
 }
 
 async function parseApiError(response: Response) {
- const json: unknown = await response.json().catch(() => null);
+ const json = z.json().parse(await response.json().catch(() => null));
 
  if (json && typeof json === "object") {
   const error = "error" in json ? json.error : undefined;
@@ -95,7 +69,7 @@ async function parseApiError(response: Response) {
 }
 
 async function readJsonOrThrow(response: Response) {
- if (response.ok) return response.json() as Promise<unknown>;
+ if (response.ok) return z.json().parse(await response.json());
 
  throw await parseApiError(response);
 }

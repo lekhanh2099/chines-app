@@ -2,13 +2,20 @@ import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 
+type ControlledRadioProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ type?: never;
+};
+
 export function RadioField({
  label,
  description,
  helperText,
  options,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledRadioProps> &
  Omit<FieldItemProps, "field"> & {
   options: { label: string; value: string }[];
  }) {

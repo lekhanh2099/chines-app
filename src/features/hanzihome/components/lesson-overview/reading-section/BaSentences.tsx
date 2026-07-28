@@ -1,7 +1,8 @@
+import type { JsonValue } from "@/types/json";
 import { ExercisePill } from "../CommonCards";
 import { answerToString } from "../utils";
 
-export function BaSentences({ itemId, values }: { itemId: string; values: unknown[] }) {
+export function BaSentences({ itemId, values }: { itemId: string; values: JsonValue[] }) {
  const sentences = values.map(answerToString).filter(Boolean);
 
  if (sentences.length === 0) return null;

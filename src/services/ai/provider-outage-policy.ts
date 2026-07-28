@@ -1,6 +1,8 @@
 import { DEFAULT_GEMINI_MODEL, type GeminiModelId } from "@/lib/gemini-models";
+import { z } from "zod";
 
-export type ProviderName = "Gemini" | "DeepSeek" | "OpenAI";
+export const ProviderNameSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);
+export type ProviderName = z.infer<typeof ProviderNameSchema>;
 
 type ProviderOutageState = {
  unavailableUntil: number;
@@ -16,7 +18,7 @@ function getProviderOutageKey(provider: ProviderName, geminiModel?: GeminiModelI
 export function getProviderSkipReason(
  provider: ProviderName,
  geminiModel?: GeminiModelId,
-): string | null {
+): z.infer<z.ZodNullable<z.ZodString>> {
  const key = getProviderOutageKey(provider, geminiModel);
  const outage = providerOutages.get(key);
  if (!outage) return null;

@@ -3,9 +3,12 @@
 import * as React from "react";
 import { X } from "lucide-react";
 import { Dialog as DialogPrimitive } from "radix-ui";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const SheetSideSchema = z.enum(["right", "bottom"]);
 
 export function Sheet({
  open,
@@ -17,7 +20,7 @@ export function Sheet({
  open: boolean;
  onOpenChange: (open: boolean) => void;
  children: React.ReactNode;
- side?: "right" | "bottom";
+ side?: z.infer<typeof SheetSideSchema>;
  className?: string;
 }) {
  return (

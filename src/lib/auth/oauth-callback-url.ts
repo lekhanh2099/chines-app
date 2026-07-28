@@ -12,7 +12,7 @@ export function buildOAuthCallbackUrl({
 }: {
  currentOrigin: string;
  configuredAppUrl?: string;
- next?: string | null;
+ next?: Parameters<typeof getSafeNextPath>[0];
 }) {
  const callbackOrigin =
   !isLocalOrigin(currentOrigin) && configuredAppUrl

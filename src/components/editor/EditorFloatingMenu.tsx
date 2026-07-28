@@ -54,7 +54,7 @@ import { FONT_FAMILIES, QUICK_HANZI_FONT_FAMILIES } from "./toolbar-options";
 import type { NoteListItem } from "@/services/notes.service";
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
- contextElement?: Element | null;
+ contextElement?: Element;
 };
 
 type DraftSelection = {
@@ -127,10 +127,10 @@ export default function EditorFloatingMenu() {
  const [isHighlight, setIsHighlight] = useState(false);
  const [fontFamily, setFontFamily] = useState("");
  const [showFontMenu, setShowFontMenu] = useState(false);
- const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
- const noteTextareaRef = useRef<HTMLTextAreaElement | null>(null);
- const linkSearchInputRef = useRef<HTMLInputElement | null>(null);
- const inlineNoteTextareaRef = useRef<HTMLTextAreaElement | null>(null);
+ const selectionAnchorRef = useRef<SelectionAnchor>(null);
+ const noteTextareaRef = useRef<HTMLTextAreaElement>(null);
+ const linkSearchInputRef = useRef<HTMLInputElement>(null);
+ const inlineNoteTextareaRef = useRef<HTMLTextAreaElement>(null);
  const latestDraftRef = useRef<DraftSelection>({
   text: "",
   contextSentence: "",
@@ -197,13 +197,13 @@ export default function EditorFloatingMenu() {
     );
     return nextFallbackRect ?? nextRect;
    },
-   contextElement: editor.getRootElement(),
+   contextElement: editor.getRootElement() ?? undefined,
   };
   setHasAnchor(true);
   return true;
  }, [editor]);
 
- const getAnchor = useCallback(() => selectionAnchorRef.current as unknown as Element | null, []);
+ const getAnchor = useCallback(() => selectionAnchorRef.current, []);
 
  const clearSelectionState = useCallback(() => {
   latestDraftRef.current = { text: "", contextSentence: "" };
@@ -365,7 +365,7 @@ export default function EditorFloatingMenu() {
  );
 
  const applyInlineStyle = useCallback(
-  (styles: Record<string, string | null>) => {
+  (styles: Parameters<typeof $patchStyleText>[1]) => {
    editor.update(() => {
     const selection = $getSelection();
     if ($isRangeSelection(selection)) {

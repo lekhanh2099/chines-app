@@ -109,7 +109,7 @@ describe("TanStack Store migration", () => {
   vi.stubGlobal(
    "fetch",
    vi.fn(
-    (_input: RequestInfo | URL, init?: RequestInit) =>
+    (_input: Parameters<typeof fetch>[0], init?: RequestInit) =>
      new Promise<Response>((_resolve, reject) => {
       init?.signal?.addEventListener("abort", () => {
        reject(new DOMException("Aborted", "AbortError"));

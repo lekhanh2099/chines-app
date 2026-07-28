@@ -23,11 +23,11 @@ import {
  isSentenceLikeQuery,
  normalizeExample,
 } from "@/features/dictionary/utils";
+import { z } from "zod";
 
 export function useDictionaryPageViewModel(): DictionaryPageViewModel {
- const params = useParams<{ hanzi: string | string[] }>();
- const paramValue = Array.isArray(params.hanzi) ? params.hanzi[0] : params.hanzi;
- const rawText = decodeURIComponent(paramValue || "");
+ const params = useParams<{ hanzi: string }>();
+ const rawText = decodeURIComponent(params.hanzi || "");
  const chineseCharacters = getUniqueChineseCharacters(rawText);
  const isSentenceView = isSentenceLikeQuery(rawText);
 
@@ -49,7 +49,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   mode: "sentence",
  });
 
- const [activeCharacter, setActiveCharacter] = useState<string | null>(null);
+ const [activeCharacter, setActiveCharacter] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
 
  const requestAiAnalysis = useCallback(() => {
   triggerAi(undefined, {
@@ -190,10 +190,13 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
  const handleSave = () => {
   if (isSaving) return;
 
-  saveToSrs(vocabData, {
-   onSuccess: () => toast.success(`Đã lưu \"${vocabData.hanzi}\" vào SRS!`),
-   onError: () => toast.error("Không thể lưu từ vựng"),
-  });
+  saveToSrs(
+   { vocabData },
+   {
+    onSuccess: () => toast.success(`Đã lưu \"${vocabData.hanzi}\" vào SRS!`),
+    onError: () => toast.error("Không thể lưu từ vựng"),
+   },
+  );
  };
 
  const handleSavePersonalNote = (note: string) => {

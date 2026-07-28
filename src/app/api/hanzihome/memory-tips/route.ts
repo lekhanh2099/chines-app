@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -15,16 +16,18 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingMemoryTipsTable(code: string | undefined) {
+function isMissingMemoryTipsTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function nullableText(value: string | null | undefined) {
+const OptionalNullableTextSchema = z.string().nullable().optional();
+
+function nullableText(value: z.infer<typeof OptionalNullableTextSchema>) {
  const trimmed = value?.trim() ?? "";
  return trimmed || null;
 }
 
-function parseLimit(value: string | null) {
+function parseLimit(value: ReturnType<URLSearchParams["get"]>) {
  if (!value) return 200;
 
  const parsed = Number(value);
@@ -103,7 +106,7 @@ export async function POST(request: Request) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = createMemoryTipPayloadSchema.safeParse(body);
 
  if (!parsed.success) {

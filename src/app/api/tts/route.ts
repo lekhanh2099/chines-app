@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { ElevenLabsClient } from "@elevenlabs/elevenlabs-js";
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "TTS service not configured" }, { status: 503 });
  }
 
- const payload: unknown = await request.json();
+ const payload: JsonFieldValue = await request.json();
  const parsed = ttsSchema.safeParse(payload);
 
  if (!parsed.success) {

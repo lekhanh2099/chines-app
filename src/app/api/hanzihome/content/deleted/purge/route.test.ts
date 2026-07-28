@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { getUser, rpc } = vi.hoisted(() => ({
@@ -12,13 +13,13 @@ vi.mock("@/features/hanzihome/server/canonical-content-mutation", () => ({
  mutationError: (message: string, status: number) => Response.json({ error: message }, { status }),
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
- privateNoStoreJson: (body: unknown) =>
+ privateNoStoreJson: (body: JsonFieldValue) =>
   Response.json(body, { headers: { "Cache-Control": "private, no-store" } }),
 }));
 
 import { POST } from "./route";
 
-function request(body: unknown) {
+function request(body: JsonFieldValue) {
  return new Request("https://app.example/api/hanzihome/content/deleted/purge", {
   method: "POST",
   headers: { "Content-Type": "application/json" },

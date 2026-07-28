@@ -1,5 +1,10 @@
+import type { JsonValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
+import { z } from "zod";
 import { answerToString, arrayValue, asRecord, hasClozeAnswerValue, stringValue } from "../utils";
 import type { ClozeAnswer, PassageLine } from "./types";
+
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export const BLANK_MARKER_SOURCE =
  "(?:([①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\\d+)|[（(]\\s*(\\d+)\\s*[）)]|\\[\\s*(\\d+)\\s*\\])\\s*(?:[_＿]{2,}|…{2,}|\\.\\.\\.+)";
@@ -29,14 +34,14 @@ const CIRCLED_NUMBER_MAP: Record<string, number> = {
  "⑳": 20,
 };
 
-export function blankLabelToNumber(label: string): number | null {
+export function blankLabelToNumber(label: string): Nullable<number> {
  if (label in CIRCLED_NUMBER_MAP) return CIRCLED_NUMBER_MAP[label];
 
  const direct = Number.parseInt(label, 10);
  return Number.isFinite(direct) ? direct : null;
 }
 
-function numberValue(record: Record<string, unknown>, key: string): number | null {
+function numberValue(record: JsonObject, key: string): Nullable<number> {
  const value = record[key];
 
  if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -46,7 +51,7 @@ function numberValue(record: Record<string, unknown>, key: string): number | nul
  return Number.isFinite(direct) ? direct : null;
 }
 
-function numberFromLabelSuffix(label: string): number | null {
+function numberFromLabelSuffix(label: string): Nullable<number> {
  const direct = Number.parseInt(label, 10);
  if (Number.isFinite(direct)) return direct;
 
@@ -56,7 +61,7 @@ function numberFromLabelSuffix(label: string): number | null {
  return Number.isFinite(suffixNumber) ? suffixNumber : null;
 }
 
-export function answerIndexFromRecord(record: Record<string, unknown>) {
+export function answerIndexFromRecord(record: JsonObject) {
  const directNumber =
   numberValue(record, "blank") ??
   numberValue(record, "blank_no") ??
@@ -81,7 +86,7 @@ export function answerIndexFromRecord(record: Record<string, unknown>) {
  return /^\d+$/.test(id) ? Number.parseInt(id, 10) : null;
 }
 
-function answerTextFromRecord(record: Record<string, unknown>) {
+function answerTextFromRecord(record: JsonObject) {
  return (
   stringValue(record, "answer") ||
   stringValue(record, "answer_zh") ||
@@ -93,33 +98,35 @@ function answerTextFromRecord(record: Record<string, unknown>) {
  );
 }
 
-function normalizeClozeAnswers(values: unknown[]): ClozeAnswer[] {
- return values
-  .map((value, index): ClozeAnswer | null => {
-   if (typeof value === "string" || typeof value === "number") {
-    const answer = answerToString(value);
+function normalizeClozeAnswers(values: JsonValue[]): ClozeAnswer[] {
+ return values.flatMap((value, index): ClozeAnswer[] => {
+  if (typeof value === "string" || typeof value === "number") {
+   const answer = answerToString(value);
 
-    return answer
-     ? {
+   return answer
+    ? [
+       {
         key: `${index + 1}`,
         label: `${index + 1}`,
         answer,
-       }
-     : null;
-   }
+       },
+      ]
+    : [];
+  }
 
-   const record = asRecord(value);
-   const answer = answerTextFromRecord(record);
-   if (!answer) return null;
+  const record = asRecord(value);
+  const answer = answerTextFromRecord(record);
+  if (!answer) return [];
 
-   const answerIndex = answerIndexFromRecord(record);
-   const stableKey =
-    stringValue(record, "blank_id") ||
-    stringValue(record, "question_id") ||
-    stringValue(record, "id") ||
-    `${answerIndex ?? index + 1}`;
+  const answerIndex = answerIndexFromRecord(record);
+  const stableKey =
+   stringValue(record, "blank_id") ||
+   stringValue(record, "question_id") ||
+   stringValue(record, "id") ||
+   `${answerIndex ?? index + 1}`;
 
-   return {
+  return [
+   {
     key: stableKey,
     label: answerIndex ? `${answerIndex}` : stableKey,
     answer,
@@ -129,12 +136,12 @@ function normalizeClozeAnswers(values: unknown[]): ClozeAnswer[] {
      stringValue(record, "note_vi") ||
      stringValue(record, "answer_vi") ||
      stringValue(record, "usage_note_vi"),
-   };
-  })
-  .filter((answer): answer is ClozeAnswer => Boolean(answer));
+   },
+  ];
+ });
 }
 
-function firstNonEmptyAnswerSource(passageRecord: Record<string, unknown>, answers: unknown[]) {
+function firstNonEmptyAnswerSource(passageRecord: JsonObject, answers: JsonValue[]) {
  if (answers.length > 0) return answers;
 
  const sourceKeys = [
@@ -154,10 +161,7 @@ function firstNonEmptyAnswerSource(passageRecord: Record<string, unknown>, answe
  return [];
 }
 
-export function clozeAnswersFromSources(
- passageRecord: Record<string, unknown>,
- answers: unknown[],
-) {
+export function clozeAnswersFromSources(passageRecord: JsonObject, answers: JsonValue[]) {
  const normalizedAnswers = normalizeClozeAnswers(firstNonEmptyAnswerSource(passageRecord, answers));
  const answerMap = new Map<string, ClozeAnswer>();
 
@@ -264,7 +268,7 @@ export function completedTextFromPassageLines(
 }
 
 export function passageLinesFromParagraphs(
- paragraphs: unknown[],
+ paragraphs: JsonValue[],
  itemId: string,
  answerMap: Map<string, ClozeAnswer>,
 ) {
@@ -274,29 +278,31 @@ export function passageLinesFromParagraphs(
   return plainBlankIndex;
  };
 
- return paragraphs
-  .map((paragraphValue, index): PassageLine | null => {
-   if (typeof paragraphValue === "string") {
-    const text = withMissingBlankNumbers(paragraphValue.trim(), answerMap, nextBlankNumber);
+ return paragraphs.flatMap((paragraphValue, index): PassageLine[] => {
+  if (typeof paragraphValue === "string") {
+   const text = withMissingBlankNumbers(paragraphValue.trim(), answerMap, nextBlankNumber);
 
-    return text
-     ? {
+   return text
+    ? [
+       {
         id: `${itemId}-passage-paragraph-${index}`,
         zh: text,
-       }
-     : null;
-   }
+       },
+      ]
+    : [];
+  }
 
-   const paragraph = asRecord(paragraphValue);
-   const zh =
-    stringValue(paragraph, "zh") ||
-    stringValue(paragraph, "text") ||
-    stringValue(paragraph, "text_with_blanks") ||
-    stringValue(paragraph, "completed_text");
+  const paragraph = asRecord(paragraphValue);
+  const zh =
+   stringValue(paragraph, "zh") ||
+   stringValue(paragraph, "text") ||
+   stringValue(paragraph, "text_with_blanks") ||
+   stringValue(paragraph, "completed_text");
 
-   if (!zh) return null;
+  if (!zh) return [];
 
-   return {
+  return [
+   {
     id: stringValue(paragraph, "id") || `${itemId}-passage-paragraph-${index}`,
     zh: withMissingBlankNumbers(zh, answerMap, nextBlankNumber),
     pinyin: stringValue(paragraph, "pinyin"),
@@ -304,12 +310,12 @@ export function passageLinesFromParagraphs(
      stringValue(paragraph, "vi") ||
      stringValue(paragraph, "translation_vi") ||
      stringValue(paragraph, "meaning_vi"),
-   };
-  })
-  .filter((line): line is PassageLine => Boolean(line));
+   },
+  ];
+ });
 }
 
-export function clozeTextFromSegments(segments: unknown[]) {
+export function clozeTextFromSegments(segments: JsonValue[]) {
  return segments
   .map((segmentValue, index) => {
    const segment = asRecord(segmentValue);

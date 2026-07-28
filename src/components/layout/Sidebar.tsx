@@ -77,7 +77,7 @@ const mainItems: NavItem[] = [
 
 const secondaryItems: NavItem[] = [];
 
-const mobileItems = [mainItems[0], mainItems[1], mainItems[2], mainItems[3], mainItems[9]] as const;
+const mobileItems = [mainItems[0], mainItems[1], mainItems[2], mainItems[3], mainItems[9]];
 
 const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
  "/": "Home",

@@ -1,19 +1,33 @@
 import type { AggregateFilters, AggregateKind } from "./repositories/hanzihome-content-resources";
+import { z } from "zod";
+
+const LessonResourceKindSchema = z.enum(["overview", "sections", "vocabulary", "grammar"]);
 
 export const hanzihomeQueryKeys = {
- root: ["hanzihome"] as const,
- catalogRoot: ["hanzihome", "catalog"] as const,
- catalog: (includeLessons: boolean) => ["hanzihome", "catalog", { includeLessons }] as const,
- courseLessonsRoot: ["hanzihome", "course-lessons"] as const,
- courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId] as const,
- lessonDetail: (lessonId: string | null) => ["hanzihome", "lesson-detail", lessonId] as const,
- lessonResource: (lessonId: string, resource: "overview" | "sections" | "vocabulary" | "grammar") =>
-  ["hanzihome", "lesson-resource", lessonId, resource] as const,
- aggregate: (kind: AggregateKind, filters: AggregateFilters) =>
-  ["hanzihome", `aggregate-${kind}`, filters] as const,
- listeningLesson: (lessonId: string) => ["hanzihome", "listening", "lesson", lessonId] as const,
- canEdit: ["hanzihome", "can-edit"] as const,
- searchIndexRoot: ["hanzihome", "search-index"] as const,
- searchIndex: ["hanzihome", "search-index", "v2"] as const,
- deletedContent: ["hanzihome", "deleted-content"] as const,
+ root: ["hanzihome"],
+ catalogRoot: ["hanzihome", "catalog"],
+ catalog: (includeLessons: boolean) => ["hanzihome", "catalog", { includeLessons }],
+ courseLessonsRoot: ["hanzihome", "course-lessons"],
+ courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId],
+ lessonDetail: (lessonId: z.infer<z.ZodNullable<z.ZodString>>) => [
+  "hanzihome",
+  "lesson-detail",
+  lessonId,
+ ],
+ lessonResource: (lessonId: string, resource: z.infer<typeof LessonResourceKindSchema>) => [
+  "hanzihome",
+  "lesson-resource",
+  lessonId,
+  resource,
+ ],
+ aggregate: (kind: AggregateKind, filters: AggregateFilters) => [
+  "hanzihome",
+  `aggregate-${kind}`,
+  filters,
+ ],
+ listeningLesson: (lessonId: string) => ["hanzihome", "listening", "lesson", lessonId],
+ canEdit: ["hanzihome", "can-edit"],
+ searchIndexRoot: ["hanzihome", "search-index"],
+ searchIndex: ["hanzihome", "search-index", "v2"],
+ deletedContent: ["hanzihome", "deleted-content"],
 };

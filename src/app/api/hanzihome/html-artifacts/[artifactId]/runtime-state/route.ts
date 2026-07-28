@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -17,18 +18,19 @@ type RouteContext = {
 };
 
 type RuntimeStateRow = {
- state: unknown;
+ state: JsonFieldValue;
 };
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-function isMissingRuntimeStateTable(code: string | undefined) {
+function isMissingRuntimeStateTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function mapRuntimeState(row: RuntimeStateRow | null) {
+function mapRuntimeState(row: Nullable<RuntimeStateRow>) {
  const parsed = htmlArtifactRuntimeStateSchema.safeParse(row?.state ?? {});
 
  return parsed.success ? parsed.data : {};
@@ -104,7 +106,7 @@ export async function PUT(request: Request, context: RouteContext) {
   return jsonError("Unauthorized", 401);
  }
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = updateHtmlArtifactRuntimeStatePayloadSchema.safeParse(body);
 
  if (!parsed.success) {

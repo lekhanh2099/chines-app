@@ -1,48 +1,68 @@
+import { parseErrorLike, type ErrorInput } from "@/types/error";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { logger } from "@/lib/logger";
-import {
- getApiKeyProviderLabel,
- getMaskedApiKey,
- type ApiKeyProvider,
-} from "@/lib/api-key-providers";
+import { getApiKeyProviderLabel, getMaskedApiKey } from "@/lib/api-key-providers";
 import { decryptApiKey, encryptApiKey } from "@/lib/encryption";
-import type { DbUserApiKey } from "@/types/database";
+import { DbUserApiKeySchema, type DbUserApiKey } from "@/types/database";
+import type { Database, TablesUpdate } from "@/types/supabase.generated";
+import { z } from "zod";
 
-type SupabaseErrorLike = {
- code?: string | null;
- message?: string | null;
- details?: string | null;
- hint?: string | null;
-};
+type AppSupabaseClient = SupabaseClient<Database>;
 
-export type UserApiKey = {
- id: string;
- userId: string;
- provider: ApiKeyProvider;
- label: string;
- maskedKey: string;
- isActive: boolean;
- priority: number;
- defaultModel: string | null;
- lastValidatedAt: string | null;
- createdAt: string;
- updatedAt: string;
-};
+const SupabaseErrorLikeSchema = z.object({
+ code: z.string().nullable().optional(),
+ message: z.string().nullable().optional(),
+ details: z.string().nullable().optional(),
+ hint: z.string().nullable().optional(),
+});
 
-export type UserApiKeyCredential = UserApiKey & {
- apiKey: string;
-};
+const UserApiKeySchema = z.object({
+ id: z.string(),
+ userId: z.string(),
+ provider: DbUserApiKeySchema.shape.provider,
+ label: z.string(),
+ maskedKey: z.string(),
+ isActive: z.boolean(),
+ priority: z.number(),
+ defaultModel: z.string().nullable(),
+ lastValidatedAt: z.string().nullable(),
+ createdAt: z.string(),
+ updatedAt: z.string(),
+});
+export type UserApiKey = z.infer<typeof UserApiKeySchema>;
 
-export type CreateUserApiKeyResult = {
- key: UserApiKey | null;
- error: string | null;
-};
+const UserApiKeyCredentialSchema = UserApiKeySchema.extend({ apiKey: z.string() });
+export type UserApiKeyCredential = z.infer<typeof UserApiKeyCredentialSchema>;
 
-export type UserApiKeysSchemaStatus = {
- ready: boolean;
- reason: "ok" | "missing-table" | "schema-error";
- message: string | null;
-};
+const CreateUserApiKeyResultSchema = z.object({
+ key: UserApiKeySchema.nullable(),
+ error: z.string().nullable(),
+});
+export type CreateUserApiKeyResult = z.infer<typeof CreateUserApiKeyResultSchema>;
+
+const UserApiKeysSchemaStatusSchema = z.object({
+ ready: z.boolean(),
+ reason: z.enum(["ok", "missing-table", "schema-error"]),
+ message: z.string().nullable(),
+});
+export type UserApiKeysSchemaStatus = z.infer<typeof UserApiKeysSchemaStatusSchema>;
+
+const NullableUserApiKeySchema = UserApiKeySchema.nullable();
+const NullableUserApiKeyListSchema = z.array(UserApiKeySchema).nullable();
+const MoveDirectionSchema = z.enum(["up", "down"]);
+
+const CreateUserApiKeyInputSchema = z.object({
+ provider: DbUserApiKeySchema.shape.provider,
+ apiKey: z.string(),
+ label: z.string().optional(),
+ defaultModel: z.string().nullable().optional(),
+});
+
+const UpdateUserApiKeyInputSchema = z.object({
+ label: z.string().optional(),
+ isActive: z.boolean().optional(),
+ defaultModel: z.string().nullable().optional(),
+});
 
 function normalizeUserApiKey(row: DbUserApiKey): UserApiKey {
  return {
@@ -70,15 +90,8 @@ function sortRuntimeCredentials(keys: UserApiKeyCredential[]): UserApiKeyCredent
  });
 }
 
-function getUserApiKeysSchemaStatusFromError(error: unknown): UserApiKeysSchemaStatus {
- const code =
-  typeof error === "object" && error !== null && "code" in error
-   ? String((error as { code?: unknown }).code || "")
-   : "";
- const message =
-  typeof error === "object" && error !== null && "message" in error
-   ? String((error as { message?: unknown }).message || "")
-   : "";
+function getUserApiKeysSchemaStatusFromError(error: ErrorInput): UserApiKeysSchemaStatus {
+ const { code, message } = parseErrorLike(error);
  const normalizedMessage = message.toLowerCase();
 
  if (
@@ -122,28 +135,29 @@ function getUserApiKeysSchemaStatusFromError(error: unknown): UserApiKeysSchemaS
  };
 }
 
-function formatApiKeyStorageError(error: SupabaseErrorLike | null | undefined): string {
- if (!error) {
+function formatApiKeyStorageError(error: ErrorInput): string {
+ const parsed = SupabaseErrorLikeSchema.safeParse(error);
+ if (!parsed.success) {
   return "Không xác định được lỗi lưu API key.";
  }
 
- if (error.code === "23503") {
+ if (parsed.data.code === "23503") {
   return "Database đang dùng ràng buộc user_api_keys cũ hoặc thiếu bản ghi user profile. Hãy chạy migration repair mới cho user_api_keys rồi thử lại.";
  }
 
- if (error.code === "42501") {
+ if (parsed.data.code === "42501") {
   return "Database chưa có đủ RLS policy cho user_api_keys. Hãy apply lại migration mới rồi thử lại.";
  }
 
- if (error.code === "23505") {
+ if (parsed.data.code === "23505") {
   return "API key này đã tồn tại hoặc đang trùng với dữ liệu hiện có.";
  }
 
- return error.message || "Không lưu được API key.";
+ return parsed.data.message || "Không lưu được API key.";
 }
 
 async function listUserApiKeysRaw(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<{ data: DbUserApiKey[]; schemaStatus: UserApiKeysSchemaStatus }> {
  const { data, error } = await supabase
@@ -166,7 +180,7 @@ async function listUserApiKeysRaw(
  }
 
  return {
-  data: data as DbUserApiKey[],
+  data: DbUserApiKeySchema.array().parse(data),
   schemaStatus: {
    ready: true,
    reason: "ok",
@@ -176,7 +190,7 @@ async function listUserApiKeysRaw(
 }
 
 export async function getUserApiKeysSchemaStatus(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<UserApiKeysSchemaStatus> {
  const result = await listUserApiKeysRaw(supabase, userId);
@@ -184,7 +198,7 @@ export async function getUserApiKeysSchemaStatus(
 }
 
 export async function isUserApiKeysSchemaReady(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<boolean> {
  const result = await getUserApiKeysSchemaStatus(supabase, userId);
@@ -192,7 +206,7 @@ export async function isUserApiKeysSchemaReady(
 }
 
 async function migrateLegacyDeepSeekKeyForUser(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  existingKeys: DbUserApiKey[],
 ): Promise<boolean> {
@@ -242,7 +256,7 @@ async function migrateLegacyDeepSeekKeyForUser(
 }
 
 export async function listUserApiKeys(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<UserApiKey[]> {
  const initial = await listUserApiKeysRaw(supabase, userId);
@@ -263,7 +277,7 @@ export async function listUserApiKeys(
 }
 
 export async function getActiveUserApiKeyCredentials(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<UserApiKeyCredential[]> {
  const existingKeys = await listUserApiKeys(supabase, userId);
@@ -288,7 +302,8 @@ export async function getActiveUserApiKeyCredentials(
   return [];
  }
 
- const credentials = (data as DbUserApiKey[])
+ const credentials = DbUserApiKeySchema.array()
+  .parse(data)
   .map((row) => {
    try {
     return {
@@ -306,14 +321,9 @@ export async function getActiveUserApiKeyCredentials(
 }
 
 export async function createUserApiKey(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
- input: {
-  provider: ApiKeyProvider;
-  apiKey: string;
-  label?: string;
-  defaultModel?: string | null;
- },
+ input: z.infer<typeof CreateUserApiKeyInputSchema>,
 ): Promise<CreateUserApiKeyResult> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return {
@@ -349,31 +359,27 @@ export async function createUserApiKey(
   logger.error("[ApiKeys] create error:", error);
   return {
    key: null,
-   error: formatApiKeyStorageError(error as SupabaseErrorLike | null),
+   error: formatApiKeyStorageError(error),
   };
  }
 
  return {
-  key: normalizeUserApiKey(data as DbUserApiKey),
+  key: normalizeUserApiKey(DbUserApiKeySchema.parse(data)),
   error: null,
  };
 }
 
 export async function updateUserApiKey(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  keyId: string,
- patch: {
-  label?: string;
-  isActive?: boolean;
-  defaultModel?: string | null;
- },
-): Promise<UserApiKey | null> {
+ patch: z.infer<typeof UpdateUserApiKeyInputSchema>,
+): Promise<z.infer<typeof NullableUserApiKeySchema>> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return null;
  }
 
- const payload: Record<string, unknown> = {
+ const payload: TablesUpdate<"user_api_keys"> = {
   updated_at: new Date().toISOString(),
  };
 
@@ -404,11 +410,11 @@ export async function updateUserApiKey(
   return null;
  }
 
- return normalizeUserApiKey(data as DbUserApiKey);
+ return normalizeUserApiKey(DbUserApiKeySchema.parse(data));
 }
 
 export async function deleteUserApiKey(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  keyId: string,
 ): Promise<boolean> {
@@ -432,11 +438,11 @@ export async function deleteUserApiKey(
 }
 
 export async function moveUserApiKey(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
  keyId: string,
- direction: "up" | "down",
-): Promise<UserApiKey[] | null> {
+ direction: z.infer<typeof MoveDirectionSchema>,
+): Promise<z.infer<typeof NullableUserApiKeyListSchema>> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return null;
  }
@@ -476,7 +482,7 @@ export async function moveUserApiKey(
 }
 
 export async function resequenceUserApiKeys(
- supabase: SupabaseClient,
+ supabase: AppSupabaseClient,
  userId: string,
 ): Promise<UserApiKey[]> {
  const keys = await listUserApiKeys(supabase, userId);

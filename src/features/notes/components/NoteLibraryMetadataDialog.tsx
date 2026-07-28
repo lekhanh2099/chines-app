@@ -32,18 +32,17 @@ import { normalizeReadingUrl } from "@/features/notes/note-library-utils";
 import type { NoteDetail } from "@/services/notes.service";
 import type { ReadingStatus } from "@/types/database";
 
-type NoteLibraryMetadataTarget = Pick<
- NoteDetail,
- | "id"
- | "title"
- | "folder_id"
- | "reading_status"
- | "source_url"
- | "source_label"
- | "source_author"
- | "source_published_at"
- | "source_captured_at"
->;
+type NoteLibraryMetadataTarget = {
+ id: NoteDetail["id"];
+ title: NoteDetail["title"];
+ folder_id: NoteDetail["folder_id"];
+ reading_status: NoteDetail["reading_status"];
+ source_url: NoteDetail["source_url"];
+ source_label: NoteDetail["source_label"];
+ source_author: NoteDetail["source_author"];
+ source_published_at: NoteDetail["source_published_at"];
+ source_captured_at: NoteDetail["source_captured_at"];
+};
 
 export function NoteLibraryMetadataDialog({
  note,

@@ -1,11 +1,12 @@
+import type { ComponentType, ReactNode } from "react";
 import { z } from "zod";
 
-export const IOptionSchema = z.object({
- value: z.union([z.string(), z.number()]),
- label: z.any(),
- icon: z.any().optional(),
- isDisabled: z.boolean().optional(),
- disabled: z.boolean().optional(),
-});
+export const IOptionValueSchema = z.union([z.string(), z.number()]);
 
-export type IOption = z.infer<typeof IOptionSchema>;
+export type IOption = {
+ value: z.infer<typeof IOptionValueSchema>;
+ label: ReactNode;
+ icon?: ComponentType;
+ isDisabled?: boolean;
+ disabled?: boolean;
+};

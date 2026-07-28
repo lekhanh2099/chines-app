@@ -1,16 +1,19 @@
 "use client";
 
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const PanelToggleSizeSchema = z.enum(["sm", "md"]);
 
 type PanelToggleButtonProps = {
  open: boolean;
  onOpenChange: (open: boolean) => void;
  label: string;
  className?: string;
- size?: "sm" | "md";
+ size?: z.infer<typeof PanelToggleSizeSchema>;
 };
 
 export function PanelToggleButton({

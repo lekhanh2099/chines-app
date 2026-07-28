@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
@@ -9,7 +10,7 @@ export function ProperNounCard({
  displayMode,
  debugMode,
 }: {
- item: unknown;
+ item: JsonFieldValue;
  displayMode: LessonDisplayMode;
  debugMode: boolean;
 }) {

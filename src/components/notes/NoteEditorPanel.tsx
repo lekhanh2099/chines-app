@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
@@ -26,7 +27,7 @@ import {
  Upload,
 } from "lucide-react";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
-import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/note-export.schema";
+import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { noteTabsStore } from "@/stores/note-tabs-store";
 import { splitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,7 @@ import {
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
+import { z } from "zod";
 import {
  useNoteFolderMutations,
  useNoteFolders,
@@ -51,9 +53,16 @@ import {
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
- mobileHeaderActionsContainer?: HTMLElement | null;
- desktopActionsContainer?: HTMLElement | null;
+ mobileHeaderActionsContainer?: ReturnType<Document["getElementById"]>;
+ desktopActionsContainer?: ReturnType<Document["getElementById"]>;
 }
+
+const NullableJsonObjectSchema = JsonObjectSchema.nullable();
+const OptionalNullableJsonObjectSchema = NullableJsonObjectSchema.optional();
+const NullableBooleanSchema = z.boolean().nullable();
+const OptionalNullableStringSchema = z.string().nullable().optional();
+const NullableStringSchema = z.string().nullable();
+const SaveStatusSchema = z.enum(["idle", "saving", "saved", "error"]);
 
 function createDownloadFileName(title: string): string {
  const slug = title
@@ -66,7 +75,7 @@ function createDownloadFileName(title: string): string {
  return `${slug || "ghi-chu"}.json`;
 }
 
-function downloadJsonFile(fileName: string, value: unknown) {
+function downloadJsonFile(fileName: string, value: JsonFieldValue) {
  const blob = new Blob([JSON.stringify(value, null, 2)], { type: "application/json" });
  const url = URL.createObjectURL(blob);
  const link = document.createElement("a");
@@ -124,24 +133,25 @@ export function NoteEditorPanel({
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
- const [importedContent, setImportedContent] = useState<JsonObject | null>(null);
- const [importedReadingContent, setImportedReadingContent] = useState<
-  JsonObject | null | undefined
- >(undefined);
+ const [importedContent, setImportedContent] =
+  useState<z.infer<typeof NullableJsonObjectSchema>>(null);
+ const [importedReadingContent, setImportedReadingContent] =
+  useState<z.infer<typeof OptionalNullableJsonObjectSchema>>(undefined);
  const isMobileViewport = useSyncExternalStore(
   subscribeToMobileViewport,
   getMobileViewportSnapshot,
   () => false,
  );
- const [readOnlyOverride, setReadOnlyOverride] = useState<boolean | null>(null);
+ const [readOnlyOverride, setReadOnlyOverride] =
+  useState<z.infer<typeof NullableBooleanSchema>>(null);
  const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const [importVersion, setImportVersion] = useState(0);
- const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- const pendingContentRef = useRef<Record<string, unknown> | null>(null);
- const readingSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- const pendingReadingRef = useRef<Record<string, unknown> | null>(null);
- const importInputRef = useRef<HTMLInputElement | null>(null);
+ const saveTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+ const pendingContentRef = useRef<JsonObject>(null);
+ const readingSaveTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+ const pendingReadingRef = useRef<JsonObject>(null);
+ const importInputRef = useRef<HTMLInputElement>(null);
  const splitViewSynced = useRef(false);
 
  // Sync tab title with note title
@@ -163,7 +173,7 @@ export function NoteEditorPanel({
  }, [note, noteId, setSplitView]);
 
  const handleChange = useCallback(
-  (json: Record<string, unknown>) => {
+  (json: JsonObject) => {
    pendingContentRef.current = json;
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
    saveTimerRef.current = setTimeout(() => {
@@ -177,7 +187,7 @@ export function NoteEditorPanel({
  );
 
  const handleReadingChange = useCallback(
-  (json: Record<string, unknown>) => {
+  (json: JsonObject) => {
    pendingReadingRef.current = json;
    if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
    readingSaveTimerRef.current = setTimeout(() => {
@@ -252,11 +262,9 @@ export function NoteEditorPanel({
     title: note.title,
     tags: note.tags ?? [],
     category: note.category,
-    content: importedContent ?? (note.content as JsonObject),
+    content: importedContent ?? note.content,
     readingContent:
-     importedReadingContent !== undefined
-      ? importedReadingContent
-      : (note.reading_content as JsonObject | null),
+     importedReadingContent !== undefined ? importedReadingContent : note.reading_content,
     splitViewEnabled: note.split_view_enabled,
     readingStatus: note.reading_status,
     folder: folder
@@ -287,7 +295,7 @@ export function NoteEditorPanel({
  const handleImportFile = useCallback(
   async (file: File) => {
    try {
-    const rawPayload: unknown = JSON.parse(await file.text());
+    const rawPayload: JsonFieldValue = JSON.parse(await file.text());
     const importedPayload = normalizeImportedNotePayload(rawPayload);
     const hasLibraryMetadata =
      typeof rawPayload === "object" &&
@@ -317,10 +325,10 @@ export function NoteEditorPanel({
     }
 
     if (hasLibraryMetadata) {
-     let importedFolderId: string | null | undefined;
+     let importedFolderId: z.infer<typeof OptionalNullableStringSchema>;
      if (importedPayload.note.folder) {
       const folderSpec = importedPayload.note.folder;
-      let parentId: string | null = null;
+      let parentId: z.infer<typeof NullableStringSchema> = null;
       if (folderSpec.parentName) {
        const existingParent = noteFoldersQuery.data?.find(
         (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
@@ -382,7 +390,7 @@ export function NoteEditorPanel({
   ],
  );
 
- const displaySaveStatus: "idle" | "saving" | "saved" | "error" = isSaving
+ const displaySaveStatus: z.infer<typeof SaveStatusSchema> = isSaving
   ? "saving"
   : saveStatus === "success"
     ? "saved"
@@ -390,11 +398,9 @@ export function NoteEditorPanel({
       ? "error"
       : "idle";
 
- const noteContent = importedContent ?? (note?.content as Record<string, unknown> | null);
+ const noteContent = importedContent ?? note?.content ?? null;
  const readingContent =
-  importedReadingContent !== undefined
-   ? importedReadingContent
-   : (note?.reading_content as Record<string, unknown> | null);
+  importedReadingContent !== undefined ? importedReadingContent : (note?.reading_content ?? null);
 
  return (
   <div
@@ -678,7 +684,7 @@ export function NoteEditorPanel({
  );
 }
 
-type SaveStatus = "idle" | "saving" | "saved" | "error";
+type SaveStatus = z.infer<typeof SaveStatusSchema>;
 
 function SaveStatusBadge({ status }: { status: SaveStatus }) {
  if (status === "idle") return null;

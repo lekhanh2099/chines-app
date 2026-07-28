@@ -96,7 +96,8 @@ export type NotebookTerm = z.infer<typeof NotebookTermSchema>;
 export type NotebookComparison = z.infer<typeof NotebookComparisonSchema>;
 export type NotebookSection = z.infer<typeof NotebookSectionSchema>;
 export type NotebookSeedData = z.infer<typeof NotebookSeedDataSchema>;
-export type NotebookViewMode = "cards" | "compare" | "matrix";
+export const NotebookViewModeSchema = z.enum(["cards", "compare", "matrix"]);
+export type NotebookViewMode = z.infer<typeof NotebookViewModeSchema>;
 
 export type NotebookItem = NotebookTerm & {
  id: string;

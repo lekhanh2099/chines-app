@@ -4,6 +4,7 @@
  * Each tab = { noteId, title }. One tab is "active" at a time.
  * Persists open tabs to localStorage so they survive refresh.
  */
+import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
@@ -32,7 +33,7 @@ const storageConfig = {
  version: 1,
  schema: noteTabsDataSchema,
  fallback: fallbackState,
- migrateLegacy: (value: unknown) => {
+ migrateLegacy: (value: JsonFieldValue) => {
   const parsed = noteTabsDataSchema.safeParse(value);
   return parsed.success ? parsed.data : null;
  },
@@ -40,7 +41,7 @@ const storageConfig = {
 
 type NoteTabsState = {
  tabs: NoteTab[];
- activeNoteId: string | null;
+ activeNoteId: NoteTabsData["activeNoteId"];
  hasHydrated: boolean;
 };
 
@@ -48,7 +49,7 @@ function loadState(): NoteTabsData {
  return readVersionedStorage(getBrowserStorage(), storageConfig);
 }
 
-function saveState(tabs: NoteTab[], activeNoteId: string | null) {
+function saveState(tabs: NoteTab[], activeNoteId: NoteTabsData["activeNoteId"]) {
  writeVersionedStorage(getBrowserStorage(), storageConfig, { tabs, activeNoteId });
 }
 

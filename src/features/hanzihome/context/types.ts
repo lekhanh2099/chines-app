@@ -1,35 +1,52 @@
 "use client";
 
+import type { JsonFieldValue } from "@/types/json";
+import { z } from "zod";
 import type {
  HanziHomeLesson,
- HanziHomeModule,
  LearningStatus,
  ReviewResult,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import {
+ learningStatusSchema,
+ moduleSchema,
+} from "@/features/hanzihome/schemas/learning-state.schema";
 
-export type StudyModule = Exclude<HanziHomeModule, "radicals">;
-export type PaneId = "left" | "right";
-export type LessonViewMode = "study" | "debug";
+export const StudyModuleSchema = moduleSchema.exclude(["radicals"]);
+export const PaneIdSchema = z.enum(["left", "right"]);
+export const LessonViewModeSchema = z.enum(["study", "debug"]);
+export const EditingToolsPresentationSchema = z.enum(["toolbar", "menu"]);
+export const PaneLayoutSchema = z.object({
+ left: z.array(StudyModuleSchema),
+ right: z.array(StudyModuleSchema),
+ activeLeft: StudyModuleSchema,
+ activeRight: StudyModuleSchema,
+});
 
-export type DraggedModule = {
- module: StudyModule;
- sourcePane: PaneId;
-};
+export type StudyModule = z.infer<typeof StudyModuleSchema>;
+export type PaneId = z.infer<typeof PaneIdSchema>;
+export type LessonViewMode = z.infer<typeof LessonViewModeSchema>;
+export type EditingToolsPresentation = z.infer<typeof EditingToolsPresentationSchema>;
 
-export type PaneLayout = {
- left: StudyModule[];
- right: StudyModule[];
- activeLeft: StudyModule;
- activeRight: StudyModule;
-};
+export const DraggedModuleSchema = z.object({
+ module: StudyModuleSchema,
+ sourcePane: PaneIdSchema,
+});
+export const NullableDraggedModuleSchema = DraggedModuleSchema.nullable();
+export type DraggedModule = z.infer<typeof DraggedModuleSchema>;
+export type NullableDraggedModule = z.infer<typeof NullableDraggedModuleSchema>;
+
+export type PaneLayout = z.infer<typeof PaneLayoutSchema>;
+
+export const LearningSyncStatusSchema = z.enum(["synced", "pending", "syncing", "error"]);
 
 export type LearningSyncUiState = {
- status: "synced" | "pending" | "syncing" | "error";
+ status: z.infer<typeof LearningSyncStatusSchema>;
  pendingCount: number;
- lastError: string | null;
+ lastError: z.infer<z.ZodNullable<z.ZodString>>;
  isOnline: boolean;
- retry: () => Promise<unknown>;
+ retry: () => Promise<JsonFieldValue>;
 };
 
 export type HanziHomeFeatureRuntime = {
@@ -44,8 +61,11 @@ export type HanziHomeFeatureRuntime = {
  markVocab: (id: string, status: LearningStatus) => void;
  bookmarkGrammar: (id: string) => void;
  markGrammar: (id: string, status: LearningStatus) => void;
- answerReview: (
-  item: { type: "vocab" | "grammar" | "radical"; id: string },
-  result: ReviewResult,
- ) => void;
+ answerReview: (item: z.infer<typeof ReviewItemSchema>, result: ReviewResult) => void;
 };
+
+export const ReviewItemSchema = z.object({
+ type: z.enum(["vocab", "grammar", "radical"]),
+ id: z.string(),
+});
+export type ReviewItem = z.infer<typeof ReviewItemSchema>;

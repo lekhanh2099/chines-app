@@ -9,6 +9,7 @@
  * Persists user overrides in localStorage.
  */
 
+import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
@@ -27,7 +28,7 @@ const storageConfig = {
  version: 1,
  schema: routeOverridesSchema,
  fallback: {} as RouteOverrides,
- migrateLegacy: (value: unknown) => {
+ migrateLegacy: (value: JsonFieldValue) => {
   const parsed = routeOverridesSchema.safeParse(value);
   return parsed.success ? parsed.data : null;
  },

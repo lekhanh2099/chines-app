@@ -47,9 +47,8 @@ export function LessonSplitNoteEditor({
   );
  }
 
- const readingContent =
-  (note.reading_content as Record<string, unknown> | null) ?? createLessonReadingContent(lesson);
- const content = note.content as Record<string, unknown> | null;
+ const readingContent = note.reading_content ?? createLessonReadingContent(lesson);
+ const content = note.content;
  const splitEnabled = note.split_view_enabled ?? true;
 
  return (

@@ -1,7 +1,7 @@
 import type { CultureNote } from "@/features/hanzihome/schemas/vocab.types";
 import { VocabReadingSection } from "./VocabReadingSection";
 
-export function CultureSection({ culture }: { culture: CultureNote | undefined }) {
+export function CultureSection({ culture }: { culture?: CultureNote }) {
  if (!culture) return null;
 
  return (

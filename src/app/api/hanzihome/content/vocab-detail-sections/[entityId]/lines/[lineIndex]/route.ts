@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import { mutationEnvelopeSchema } from "@/features/hanzihome/schemas/canonical-content.schema";
@@ -26,7 +27,7 @@ export async function PATCH(request: Request, context: RouteContext) {
  } = await sessionClient.auth.getUser();
  if (!user) return mutationError("Unauthorized", 401);
 
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = lineMutationSchema.safeParse(body);
  if (!parsed.success) {
   return mutationError("Invalid detail line mutation", 400, z.flattenError(parsed.error));

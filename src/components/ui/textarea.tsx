@@ -1,8 +1,11 @@
 import * as React from "react";
+import { z } from "zod";
 import { cn } from "@/lib/utils";
 
+const TextareaFontSchema = z.enum(["sans", "mono"]);
+
 type TextareaProps = React.ComponentProps<"textarea"> & {
- font?: "sans" | "mono";
+ font?: z.infer<typeof TextareaFontSchema>;
 };
 
 function Textarea({ className, font = "sans", ...props }: TextareaProps) {

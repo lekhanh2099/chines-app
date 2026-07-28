@@ -6,17 +6,24 @@ import type {
  HanziHomeVocabItem,
 } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
+import { z } from "zod";
+import {
+ aggregateGrammarItemSchema,
+ aggregateVocabItemSchema,
+} from "@/features/hanzihome/hanzihome-api.schemas";
 
-export type LessonSectionKind =
- | "lessonText"
- | "vocabulary"
- | "grammar"
- | "exercises"
- | "reading"
- | "notes"
- | "properNouns"
- | "characterWriting"
- | "summary";
+export const LessonSectionKindSchema = z.enum([
+ "lessonText",
+ "vocabulary",
+ "grammar",
+ "exercises",
+ "reading",
+ "notes",
+ "properNouns",
+ "characterWriting",
+ "summary",
+]);
+export type LessonSectionKind = z.infer<typeof LessonSectionKindSchema>;
 
 export type LessonSectionResource = {
  id: string;
@@ -66,7 +73,8 @@ export type LessonSectionsResource = {
  total: number;
 };
 
-export type AggregateKind = "vocab" | "grammar";
+export const AggregateKindSchema = z.enum(["vocab", "grammar"]);
+export type AggregateKind = z.infer<typeof AggregateKindSchema>;
 
 export type AggregateFilters = {
  courseId: string;
@@ -75,40 +83,14 @@ export type AggregateFilters = {
  q: string;
 };
 
-export type AggregateVocabItem = {
- id: string;
- courseId: string;
- bookId: string;
- lessonId: string;
- lessonNumber: number;
- lessonOrder: number;
- lessonTitle: string;
- word: string;
- pinyin: string;
- hanViet: string;
- meaning: string;
- category: string;
- level?: string | null;
- pos?: {
-  vi?: string | null;
-  zh?: string | null;
- } | null;
-};
+export type AggregateVocabItem = z.infer<typeof aggregateVocabItemSchema>;
+export type AggregateGrammarItem = z.infer<typeof aggregateGrammarItemSchema>;
 
-export type AggregateGrammarItem = {
- id: string;
- courseId: string;
- bookId: string;
- lessonId: string;
- lessonNumber: number;
- lessonOrder: number;
- lessonTitle: string;
- title: string;
- cleanTitle: string;
- core: string;
+type AggregateResourceItemMap = {
+ vocab: AggregateVocabItem;
+ grammar: AggregateGrammarItem;
 };
-
-export type AggregateResourceItem = AggregateVocabItem | AggregateGrammarItem;
+export type AggregateResourceItem = AggregateResourceItemMap[keyof AggregateResourceItemMap];
 
 export function attachLessonVocabularyResource(
  lesson: HanziHomeLesson,

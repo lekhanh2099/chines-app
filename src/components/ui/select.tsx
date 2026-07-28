@@ -2,9 +2,13 @@
 
 import * as React from "react";
 import { Select as SelectPrimitive } from "radix-ui";
+import { z } from "zod";
 
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
+
+const SelectTriggerSizeSchema = z.enum(["sm", "default"]);
+const SelectTriggerWidthSchema = z.enum(["content", "full"]);
 
 function Select({ ...props }: React.ComponentProps<typeof SelectPrimitive.Root>) {
  return <SelectPrimitive.Root data-slot="select" {...props} />;
@@ -31,8 +35,8 @@ function SelectTrigger({
  children,
  ...props
 }: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
- size?: "sm" | "default";
- width?: "content" | "full";
+ size?: z.infer<typeof SelectTriggerSizeSchema>;
+ width?: z.infer<typeof SelectTriggerWidthSchema>;
 }) {
  return (
   <SelectPrimitive.Trigger

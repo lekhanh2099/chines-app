@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { z } from "zod";
 
 import {
  fetchHanziHomeLessonDetail,
@@ -19,6 +20,7 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 
 const lessonResourceStaleTime = Infinity;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export function useHanziHomeLessonDetailResource(lessonId: string) {
  return useQuery({
@@ -29,7 +31,7 @@ export function useHanziHomeLessonDetailResource(lessonId: string) {
  });
 }
 
-export function useHanziHomeLessonOverview(lessonId: string): LessonOverviewResource | null {
+export function useHanziHomeLessonOverview(lessonId: string): Nullable<LessonOverviewResource> {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId);
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
 
@@ -40,7 +42,7 @@ export function useHanziHomeLessonOverview(lessonId: string): LessonOverviewReso
   : null;
 }
 
-export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
+export function useHanziHomeLessonSections(lessonId: string): Nullable<LessonSectionsResource> {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId);
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
 
@@ -52,7 +54,7 @@ export function useHanziHomeLessonSections(lessonId: string): LessonSectionsReso
 }
 
 export function useHanziHomeLessonVocabulary(lessonId: string) {
- return useQuery<LessonVocabularyListResource | null>({
+ return useQuery<Nullable<LessonVocabularyListResource>>({
   queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
   queryFn: () => fetchHanziHomeLessonVocabulary(lessonId),
   staleTime: lessonResourceStaleTime,
@@ -60,7 +62,7 @@ export function useHanziHomeLessonVocabulary(lessonId: string) {
  });
 }
 
-export function useHanziHomeLessonGrammar(lessonId: string): LessonGrammarListResource | null {
+export function useHanziHomeLessonGrammar(lessonId: string): Nullable<LessonGrammarListResource> {
  const query = useHanziHomeLessonDetailResource(lessonId);
 
  return query.data ? buildLessonGrammarResource(query.data) : null;

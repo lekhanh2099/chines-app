@@ -1,3 +1,4 @@
+import type { JsonFieldValue } from "@/types/json";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
@@ -8,7 +9,7 @@ export function SampleRetelling({
  lessonId,
  nodeId,
 }: {
- value: unknown;
+ value: JsonFieldValue;
  displayMode: LessonDisplayMode;
  lessonId?: string;
  nodeId?: string;

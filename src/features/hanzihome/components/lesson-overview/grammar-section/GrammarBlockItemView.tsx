@@ -1,6 +1,7 @@
+import type { JsonObject } from "@/types/json";
 import { asRecord, stringValue } from "../utils";
 
-export function GrammarBlockItemView({ item }: { item: Record<string, unknown> }) {
+export function GrammarBlockItemView({ item }: { item: JsonObject }) {
  const left = asRecord(item.left);
  const right = asRecord(item.right);
  const aspect = stringValue(item, "aspect");

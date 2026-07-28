@@ -2,13 +2,13 @@
 
 import { EditableNodeWrapper } from "./EditableNodeWrapper";
 import { isPrimaryEditableEntityType } from "../edit-visibility";
-import type { EditableNodePath, EditableEntityType } from "../store/types";
+import type { EditableNodePath, EditableEntityType, EditableNodeRequest } from "../store/types";
 
 type NestedEditableNode = {
  entityType: EditableEntityType;
  entityId: string;
  path: EditableNodePath;
- value: unknown;
+ value: EditableNodeRequest["value"];
  label: string;
 };
 

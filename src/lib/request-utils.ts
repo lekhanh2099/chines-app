@@ -1,22 +1,32 @@
+import { z } from "zod";
+
+const ErrorNameSchema = z.object({
+ name: z.string(),
+});
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+const ServerTimingHeaderValueSchema = z.union([
+ z.string(),
+ z.number(),
+ z.boolean(),
+ z.null(),
+ z.undefined(),
+]);
+
 export type ServerTimingMetric = {
  name: string;
  durationMs: number;
 };
 
-export function isAbortError(error: unknown): boolean {
+export function isAbortError(error: Parameters<typeof ErrorNameSchema.safeParse>[0]): boolean {
  if (error instanceof DOMException) {
   return error.name === "AbortError";
  }
 
- return (
-  typeof error === "object" &&
-  error !== null &&
-  "name" in error &&
-  String((error as { name?: unknown }).name || "") === "AbortError"
- );
+ const parsed = ErrorNameSchema.safeParse(error);
+ return parsed.success && parsed.data.name === "AbortError";
 }
 
-export function throwIfAborted(signal?: AbortSignal | null): void {
+export function throwIfAborted(signal?: Nullable<AbortSignal>): void {
  if (!signal?.aborted) {
   return;
  }
@@ -24,18 +34,17 @@ export function throwIfAborted(signal?: AbortSignal | null): void {
  throw new DOMException("The operation was aborted.", "AbortError");
 }
 
-export function createRequestSignal(timeoutMs: number, signal?: AbortSignal | null): AbortSignal {
+export function createRequestSignal(
+ timeoutMs: number,
+ signal?: Nullable<AbortSignal>,
+): AbortSignal {
  const timeoutSignal = AbortSignal.timeout(timeoutMs);
  if (!signal) {
   return timeoutSignal;
  }
 
- const abortSignalWithAny = AbortSignal as typeof AbortSignal & {
-  any?: (signals: AbortSignal[]) => AbortSignal;
- };
-
- if (typeof abortSignalWithAny.any === "function") {
-  return abortSignalWithAny.any([signal, timeoutSignal]);
+ if (typeof AbortSignal.any === "function") {
+  return AbortSignal.any([signal, timeoutSignal]);
  }
 
  return signal.aborted ? signal : timeoutSignal;
@@ -44,7 +53,7 @@ export function createRequestSignal(timeoutMs: number, signal?: AbortSignal | nu
 export function applyServerTimingHeaders(
  headers: Headers,
  metrics: ServerTimingMetric[],
- extraHeaders?: Record<string, string | number | boolean | null | undefined>,
+ extraHeaders?: Record<string, z.infer<typeof ServerTimingHeaderValueSchema>>,
 ) {
  const timingValue = metrics
   .filter((metric) => Number.isFinite(metric.durationMs) && metric.durationMs >= 0)

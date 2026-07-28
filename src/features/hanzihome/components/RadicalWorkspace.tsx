@@ -18,6 +18,7 @@ import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanE
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 
 import { RadicalEditDialog } from "./RadicalEditDialog";
 
@@ -25,8 +26,11 @@ type RadicalWorkspaceProps = {
  radicals: StaticRadicalData[];
 };
 
-type RadicalView = "grid" | "list";
-type StrokeFilter = "all" | "1" | "2" | "3" | "4" | "5-6" | "7+";
+const RadicalViewSchema = z.enum(["grid", "list"]);
+type RadicalView = z.infer<typeof RadicalViewSchema>;
+const StrokeFilterSchema = z.enum(["all", "1", "2", "3", "4", "5-6", "7+"]);
+type StrokeFilter = z.infer<typeof StrokeFilterSchema>;
+type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 const strokeFilters: Array<{ value: StrokeFilter; label: string }> = [
  { value: "all", label: "Tất cả" },
@@ -38,7 +42,7 @@ const strokeFilters: Array<{ value: StrokeFilter; label: string }> = [
  { value: "7+", label: "7+ nét" },
 ];
 
-function matchesStrokeFilter(strokes: number | null | undefined, filter: StrokeFilter) {
+function matchesStrokeFilter(strokes: StaticRadicalData["strokes"], filter: StrokeFilter) {
  if (filter === "all") return true;
  if (strokes == null) return false;
  if (filter === "5-6") return strokes >= 5 && strokes <= 6;
@@ -67,13 +71,13 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  const canEdit = useHanziHomeCanEdit();
  const intentRadicalId =
   (searchIntent?.module === "radicals" ? searchIntent.targetId : null) ?? null;
- const [selectedId, setSelectedId] = useState<string | null>(intentRadicalId);
+ const [selectedId, setSelectedId] = useState<Nullable<string>>(intentRadicalId);
  const [detailOpen, setDetailOpen] = useState(Boolean(intentRadicalId));
  const [searchValue, setSearchValue] = useState("");
  const [strokeFilter, setStrokeFilter] = useState<StrokeFilter>("all");
  const [view, setView] = useState<RadicalView>("grid");
  const [editMode, setEditMode] = useState(false);
- const [editingRadical, setEditingRadical] = useState<StaticRadicalData | null>(null);
+ const [editingRadical, setEditingRadical] = useState<Nullable<StaticRadicalData>>(null);
 
  const filterCounts = useMemo(
   () =>

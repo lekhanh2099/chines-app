@@ -20,7 +20,10 @@ function hasActiveSelection(container: HTMLElement): boolean {
  return !!(selection.anchorNode && container.contains(selection.anchorNode));
 }
 
-function isInteractiveChild(target: EventTarget | null, container: HTMLElement): boolean {
+function isInteractiveChild(
+ target: MouseEvent<HTMLDivElement>["target"],
+ container: HTMLElement,
+): boolean {
  if (!(target instanceof Element)) return false;
  const interactiveTarget = target.closest("button, a, input, textarea, select, [role='button']");
  return !!interactiveTarget && interactiveTarget !== container;

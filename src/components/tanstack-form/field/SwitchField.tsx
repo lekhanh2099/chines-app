@@ -2,12 +2,19 @@ import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 
+type ControlledSwitchProps = {
+ value?: never;
+ onChange?: never;
+ onBlur?: never;
+ type?: never;
+};
+
 export function SwitchField({
  label,
  description,
  helperText,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "onBlur" | "type"> &
+}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledSwitchProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<boolean>();
 
