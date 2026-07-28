@@ -6,6 +6,7 @@ describe("HanziHome workspace module routing", () => {
  it("rejects unknown URL module values", () => {
   expect(parseHanziHomeModule("unknown")).toBeNull();
   expect(parseHanziHomeModule("grammar")).toBe("grammar");
+  expect(parseHanziHomeModule("practice")).toBe("practice");
  });
 
  it("keeps standard lessons out of listening-only modules", () => {

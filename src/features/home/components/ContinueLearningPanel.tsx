@@ -8,6 +8,7 @@ import type { HomeLessonTarget } from "@/features/home/types";
 const moduleLabels = {
  overview: "Tổng quan",
  lessonText: "Bài khóa",
+ practice: "Bài tập",
  listening: "Luyện nghe",
  dictation: "Nghe chép",
  script: "Script",

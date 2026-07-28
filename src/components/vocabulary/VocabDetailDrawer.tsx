@@ -1,8 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff, X } from "lucide-react";
+import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import type { HanziReaderFont } from "@/features/hanzihome/components/lesson-overview/types";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/chinese-utils";
@@ -17,6 +29,11 @@ import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import type { AiAnalysis, SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
+const drawerFontOptions: Array<{ value: HanziReaderFont; label: string }> = [
+ { value: "system", label: "Hệ thống" },
+ { value: "songti", label: "Songti" },
+ { value: "pinyin", label: "Kai" },
+];
 
 type HanziWriterInstance = {
  animateCharacter?: () => Promise<unknown>;
@@ -61,6 +78,7 @@ export function VocabDetailDrawer() {
  const smartData = detailQuery.data;
  const displayMeaning = getDisplayMeaning(mode, smartData);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
+ const [hanziFont, setHanziFont] = useState<HanziReaderFont>("system");
 
  const handleSpeak = () => {
   const speechText = mode === "sentence" ? text : smartData?.entry.hanzi || text;
@@ -95,111 +113,130 @@ export function VocabDetailDrawer() {
  }
 
  return (
-  <div className="fixed inset-0 z-10000 pointer-events-none">
-   <button
-    type="button"
-    aria-label="Đóng chi tiết từ vựng"
-    className="absolute inset-0 bg-foreground/20 backdrop-blur-[1px] pointer-events-auto"
-    onClick={closeDetailDrawer}
+  <Sheet
+   open={isOpen}
+   onOpenChange={(open) => {
+    if (!open) closeDetailDrawer();
+   }}
+   side="right"
+   className="sm:max-w-[44rem]"
+  >
+   <SheetHeader
+    title={mode === "sentence" ? "Chi tiết câu" : "Chi tiết từ vựng"}
+    onClose={closeDetailDrawer}
    />
-   <aside className="absolute right-0 top-0 h-full w-full max-w-176 border-l border-border-default bg-bg-primary shadow-2xl pointer-events-auto">
-    <div className="flex h-full flex-col">
-     <div className="sticky top-0 z-10 border-b border-border-default bg-bg-card/95 backdrop-blur px-5 py-4">
-      <div className="flex items-start justify-between gap-3">
-       <div className="min-w-0">
-        <div className="flex items-center gap-2">
-         <h2 className="text-2xl font-black leading-none text-text-primary">
-          {smartData?.entry.hanzi || text}
-         </h2>
-         <button
-          type="button"
-          onClick={handleSpeak}
-          disabled={isTTSLoading}
-          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover: disabled:opacity-50"
-          title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
-         >
-          {isTTSLoading ? (
-           <Loader2 className="h-4 w-4 animate-spin " />
-          ) : isSpeaking ? (
-           <VolumeOff className="h-4 w-4 " />
-          ) : (
-           <Volume2 className="h-4 w-4" />
-          )}
-         </button>
-        </div>
-        {smartData?.entry.pinyin && <p className="mt-1 font-semibold ">{smartData.entry.pinyin}</p>}
-       </div>
-
-       <div className="flex items-center gap-2">
-        <div className="rounded-2xl border border-border-default bg-bg-primary px-3 py-2 text-right">
-         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-text-muted">SRS</p>
-         <p className="text-xs font-semibold text-text-primary">
-          {smartData?.isSaved ? "Đã lưu" : "Chưa lưu"}
-         </p>
-        </div>
-        <button
-         type="button"
-         onClick={closeDetailDrawer}
-         className="rounded-full p-2 text-text-muted transition-colors hover:bg-bg-primary hover:text-text-primary"
-         title="Đóng"
-        >
-         <X className="h-4 w-4" />
-        </button>
-       </div>
-      </div>
+   <div className="grid gap-3 border-b border-border-default px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
+    <div className="min-w-0">
+     <div className="flex items-center gap-2">
+      <p
+       className="truncate text-3xl font-black leading-tight text-text-primary"
+       lang="zh-CN"
+       style={{ fontFamily: getHanziFontFamily(hanziFont) }}
+      >
+       {smartData?.entry.hanzi || text}
+      </p>
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-toolbar"
+       onClick={handleSpeak}
+       disabled={isTTSLoading}
+       aria-label={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
+      >
+       {isTTSLoading ? (
+        <Loader2 className="animate-spin" />
+       ) : isSpeaking ? (
+        <VolumeOff />
+       ) : (
+        <Volume2 />
+       )}
+      </Button>
      </div>
-
-     <div className="flex-1 overflow-y-auto scrollbar-soft px-5 py-4">
-      {detailQuery.isLoading ? (
-       <div className="flex h-40 items-center justify-center gap-2 text-text-muted">
-        <Loader2 className="h-4 w-4 animate-spin " />
-        Đang tải chi tiết từ vựng...
-       </div>
-      ) : detailQuery.isError ? (
-       <div className="rounded-2xl border border-danger/30 bg-danger-subtle px-4 py-3 text-danger-text">
-        {detailQuery.error instanceof Error
-         ? detailQuery.error.message
-         : "Không thể tải dữ liệu chi tiết"}
-       </div>
-      ) : !smartData ? (
-       <div className="rounded-2xl border border-border-default bg-bg-card px-4 py-6 text-text-muted">
-        Không có dữ liệu để hiển thị.
-       </div>
-      ) : mode === "sentence" ? (
-       <SentenceDetailPanel
-        key={`${smartData.selection}-sentence`}
-        text={text}
-        smartData={smartData}
-        onCharacterSelect={(character) =>
-         openDetailDrawer({
-          text: character,
-          contextSentence: text,
-          mode: "word",
-         })
-        }
-        onSave={handleSave}
-        isSaving={detailQuery.isSaving}
-       />
-      ) : (
-       <WordDetailPanel
-        key={`${smartData.selection}-word`}
-        smartData={smartData}
-        onDrillCharacter={(character) =>
-         openDetailDrawer({
-          text: character,
-          contextSentence: text,
-          mode: "word",
-         })
-        }
-        onSave={handleSave}
-        isSaving={detailQuery.isSaving}
-        displayMeaning={displayMeaning}
-       />
-      )}
-     </div>
+     {smartData?.entry.pinyin && (
+      <p className="mt-1 font-semibold text-accent-text">{smartData.entry.pinyin}</p>
+     )}
     </div>
-   </aside>
-  </div>
+    <label className="grid gap-1">
+     <span className="text-xs font-bold text-text-muted">Kiểu chữ Hán</span>
+     <Select
+      value={hanziFont}
+      onValueChange={(value) => {
+       if (value === "system" || value === "songti" || value === "pinyin") {
+        setHanziFont(value);
+       }
+      }}
+     >
+      <SelectTrigger size="sm" aria-label="Chọn kiểu chữ Hán">
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end">
+       {drawerFontOptions.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+         <span
+          lang="zh-CN"
+          className="text-lg"
+          style={{ fontFamily: getHanziFontFamily(option.value) }}
+         >
+          文
+         </span>
+         {option.label}
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+    </label>
+   </div>
+
+   <SheetBody>
+    {detailQuery.isLoading ? (
+     <div className="flex h-40 items-center justify-center gap-2 text-text-muted">
+      <Loader2 className="h-4 w-4 animate-spin " />
+      Đang tải chi tiết từ vựng...
+     </div>
+    ) : detailQuery.isError ? (
+     <div className="rounded-2xl border border-danger/30 bg-danger-subtle px-4 py-3 text-danger-text">
+      {detailQuery.error instanceof Error
+       ? detailQuery.error.message
+       : "Không thể tải dữ liệu chi tiết"}
+     </div>
+    ) : !smartData ? (
+     <div className="rounded-2xl border border-border-default bg-bg-card px-4 py-6 text-text-muted">
+      Không có dữ liệu để hiển thị.
+     </div>
+    ) : mode === "sentence" ? (
+     <SentenceDetailPanel
+      key={`${smartData.selection}-sentence`}
+      text={text}
+      smartData={smartData}
+      onCharacterSelect={(character) =>
+       openDetailDrawer({
+        text: character,
+        contextSentence: text,
+        mode: "word",
+       })
+      }
+      onSave={handleSave}
+      isSaving={detailQuery.isSaving}
+     />
+    ) : (
+     <WordDetailPanel
+      key={`${smartData.selection}-word`}
+      smartData={smartData}
+      onDrillCharacter={(character) =>
+       openDetailDrawer({
+        text: character,
+        contextSentence: text,
+        mode: "word",
+       })
+      }
+      onSave={handleSave}
+      isSaving={detailQuery.isSaving}
+      displayMeaning={displayMeaning}
+      hanziFont={hanziFont}
+     />
+    )}
+   </SheetBody>
+  </Sheet>
  );
 }
 
@@ -209,12 +246,14 @@ function WordDetailPanel({
  onSave,
  isSaving,
  displayMeaning,
+ hanziFont,
 }: {
  smartData: NonNullable<ReturnType<typeof useSmartSelectionInsights>["data"]>;
  onDrillCharacter: (character: string) => void;
  onSave: (noteDraft: string) => void;
  isSaving: boolean;
  displayMeaning: string;
+ hanziFont: HanziReaderFont;
 }) {
  const ai = smartData.entry.ai_analysis as AiAnalysis | undefined;
  const radicals = getNormalizedRadicals(ai);
@@ -303,7 +342,7 @@ function WordDetailPanel({
     </div>
 
     <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
-     <CharacterWriterCard character={visualCharacter} />
+     <CharacterWriterCard character={visualCharacter} hanziFont={hanziFont} />
 
      <div className="grid gap-3 md:grid-cols-2">
       <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
@@ -332,11 +371,7 @@ function WordDetailPanel({
        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
         Lục thư
        </p>
-       {etymologyType && (
-        <span className="inline-flex rounded-full bg-purple-subtle px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-text">
-         {etymologyType}
-        </span>
-       )}
+       {etymologyType && <Badge variant="accent">{etymologyType}</Badge>}
        <p className="mt-2 leading-relaxed text-text-secondary">
         {etymologyText || "Chưa có phân tích nguồn gốc."}
        </p>
@@ -345,11 +380,9 @@ function WordDetailPanel({
     </div>
    </section>
    {ai?.mnemonic_story && (
-    <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/70 p-3">
-     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-700 mb-1.5">
-      AI gợi ý mẹo nhớ
-     </p>
-     <p className=" leading-relaxed text-amber-900">{ai.mnemonic_story}</p>
+    <div className="mt-3 rounded-xl bg-warning-subtle p-3">
+     <p className="mb-1.5 text-xs font-bold text-warning-text">AI gợi ý mẹo nhớ</p>
+     <p className="leading-relaxed text-text-primary">{ai.mnemonic_story}</p>
     </div>
    )}
 
@@ -378,11 +411,7 @@ function WordDetailPanel({
           <span className="rounded-full bg-accent px-2 py-1 text-[10px] font-bold ">
            {index + 1}
           </span>
-          {definition.pos && (
-           <span className="rounded-full bg-purple-subtle px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-text">
-            {definition.pos}
-           </span>
-          )}
+          {definition.pos && <Badge variant="info">{definition.pos}</Badge>}
          </div>
          <p className="mt-2 font-semibold text-text-primary">
           {definition.meaning || definition.text}
@@ -631,7 +660,13 @@ function RelationList({
  );
 }
 
-function CharacterWriterCard({ character }: { character: string }) {
+function CharacterWriterCard({
+ character,
+ hanziFont,
+}: {
+ character: string;
+ hanziFont: HanziReaderFont;
+}) {
  const containerRef = useRef<HTMLDivElement>(null);
  const writerRef = useRef<HanziWriterInstance | null>(null);
 
@@ -653,6 +688,7 @@ function CharacterWriterCard({ character }: { character: string }) {
    container.textContent = character;
    container.style.fontSize = "88px";
    container.style.fontWeight = "700";
+   container.style.fontFamily = getHanziFontFamily(hanziFont);
    container.style.color = getThemeColor("--foreground");
   };
 
@@ -727,7 +763,7 @@ function CharacterWriterCard({ character }: { character: string }) {
    writerRef.current = null;
    container.innerHTML = "";
   };
- }, [character]);
+ }, [character, hanziFont]);
 
  return (
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">

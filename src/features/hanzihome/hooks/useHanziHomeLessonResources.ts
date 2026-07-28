@@ -11,6 +11,7 @@ import {
  buildLessonGrammarResource,
  buildLessonOverviewResource,
  buildLessonSectionsResource,
+ attachLessonVocabularyResource,
  type LessonGrammarListResource,
  type LessonOverviewResource,
  type LessonSectionsResource,
@@ -19,7 +20,7 @@ import {
 
 const lessonResourceStaleTime = Infinity;
 
-function useHanziHomeLessonDetailResource(lessonId: string) {
+export function useHanziHomeLessonDetailResource(lessonId: string) {
  return useQuery({
   queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
   queryFn: () => fetchHanziHomeLessonDetail(lessonId),
@@ -29,15 +30,25 @@ function useHanziHomeLessonDetailResource(lessonId: string) {
 }
 
 export function useHanziHomeLessonOverview(lessonId: string): LessonOverviewResource | null {
- const query = useHanziHomeLessonDetailResource(lessonId);
+ const detailQuery = useHanziHomeLessonDetailResource(lessonId);
+ const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
 
- return query.data ? buildLessonOverviewResource(query.data) : null;
+ return detailQuery.data && vocabularyQuery.data
+  ? buildLessonOverviewResource(
+     attachLessonVocabularyResource(detailQuery.data, vocabularyQuery.data),
+    )
+  : null;
 }
 
 export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
- const query = useHanziHomeLessonDetailResource(lessonId);
+ const detailQuery = useHanziHomeLessonDetailResource(lessonId);
+ const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
 
- return query.data ? buildLessonSectionsResource(query.data) : null;
+ return detailQuery.data && vocabularyQuery.data
+  ? buildLessonSectionsResource(
+     attachLessonVocabularyResource(detailQuery.data, vocabularyQuery.data),
+    )
+  : null;
 }
 
 export function useHanziHomeLessonVocabulary(lessonId: string) {

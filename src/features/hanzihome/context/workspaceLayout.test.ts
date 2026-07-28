@@ -12,10 +12,26 @@ describe("workspace pane layout", () => {
   expect(normalizePaneLayout(defaultPaneLayout)).toEqual(defaultPaneLayout);
  });
 
+ it("appends a newly available module without changing the saved module order", () => {
+  expect(
+   normalizePaneLayout({
+    left: ["lessonText", "overview", "notes"],
+    right: ["review", "vocab", "grammar"],
+    activeLeft: "lessonText",
+    activeRight: "review",
+   }),
+  ).toEqual({
+   left: ["lessonText", "overview", "notes"],
+   right: ["review", "vocab", "grammar", "practice"],
+   activeLeft: "lessonText",
+   activeRight: "review",
+  });
+ });
+
  it("moves a module between panes for drag and drop or pane selection", () => {
   expect(moveModuleInLayout(defaultPaneLayout, "vocab", "right", "left", 1)).toEqual({
    left: ["overview", "vocab", "lessonText", "notes"],
-   right: ["grammar", "review"],
+   right: ["grammar", "review", "practice"],
    activeLeft: "vocab",
    activeRight: "grammar",
   });
@@ -24,7 +40,7 @@ describe("workspace pane layout", () => {
  it("copies the lesson text viewer between panes so each pane can select its own section", () => {
   expect(moveModuleInLayout(defaultPaneLayout, "lessonText", "left", "right", 1)).toEqual({
    left: ["overview", "lessonText", "notes"],
-   right: ["vocab", "lessonText", "grammar", "review"],
+   right: ["vocab", "lessonText", "grammar", "review", "practice"],
    activeLeft: "overview",
    activeRight: "lessonText",
   });
@@ -35,7 +51,7 @@ describe("workspace pane layout", () => {
 
   expect(moveModuleInLayout(duplicatedLayout, "lessonText", "right", "right", 3)).toEqual({
    left: ["overview", "lessonText", "notes"],
-   right: ["vocab", "grammar", "review", "lessonText"],
+   right: ["vocab", "grammar", "review", "lessonText", "practice"],
    activeLeft: "overview",
    activeRight: "lessonText",
   });

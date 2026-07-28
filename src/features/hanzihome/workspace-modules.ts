@@ -12,6 +12,7 @@ const moduleValues = [
  "vocab",
  "grammar",
  "review",
+ "practice",
  "radicals",
 ] as const satisfies readonly HanziHomeModule[];
 
@@ -22,6 +23,7 @@ const standardLessonModules = new Set<StudyModule>([
  "vocab",
  "grammar",
  "review",
+ "practice",
 ]);
 const listeningLessonModules = new Set<StudyModule>(["listening", "dictation"]);
 

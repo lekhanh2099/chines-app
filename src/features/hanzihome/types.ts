@@ -4,6 +4,7 @@ import type { DeepVocabularyItem } from "@/features/hanzihome/schemas/vocab.type
 export type HanziHomeModule =
  | "overview"
  | "lessonText"
+ | "practice"
  | "listening"
  | "dictation"
  | "script"

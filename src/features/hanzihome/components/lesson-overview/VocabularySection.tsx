@@ -56,6 +56,7 @@ export function VocabMiniGrid({
    <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
     {items.map((item) => {
      const meaning = vocabMeaning(item);
+     const hanviet = stringValue(asRecord(item), "hanviet");
      return (
       <div key={item.id} className="study-content-surface rounded-xl border p-3">
        <div className="flex flex-wrap items-center gap-2">
@@ -71,6 +72,7 @@ export function VocabMiniGrid({
          <p className="font-bold text-accent-text">{item.pinyin}</p>
         )}
        </div>
+       {hanviet && <p className="text-sm font-bold text-text-muted">{hanviet}</p>}
        {meaning && <p className=" font-semibold leading-relaxed text-text-secondary">{meaning}</p>}
        {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
       </div>

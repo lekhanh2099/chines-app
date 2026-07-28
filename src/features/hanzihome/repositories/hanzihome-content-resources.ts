@@ -1,4 +1,5 @@
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import { VocabularyItemSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import type {
  GrammarViewModel,
  HanziHomeLesson,
@@ -109,6 +110,68 @@ export type AggregateGrammarItem = {
 
 export type AggregateResourceItem = AggregateVocabItem | AggregateGrammarItem;
 
+export function attachLessonVocabularyResource(
+ lesson: HanziHomeLesson,
+ resource: LessonVocabularyListResource,
+): HanziHomeLesson {
+ const vocab = resource.items;
+ const sourceLesson = lesson.sourceLesson
+  ? {
+     lesson: {
+      ...lesson.sourceLesson.lesson,
+      sections: lesson.sourceLesson.lesson.sections.map((section) =>
+       section.type === "vocabulary"
+        ? {
+           ...section,
+           items: vocab.map((item) =>
+            VocabularyItemSchema.parse({
+             id: item.id,
+             type: "vocabulary_item",
+             order: item.order,
+             hanzi: item.hanzi,
+             pinyin: item.pinyin,
+             hanviet: item.meaning.hanviet,
+             meaning_vi: item.meaning.meaning_vi,
+             meaning_en: item.meaning.meaning_en,
+             pos: item.pos.normalized,
+             tags: item.tags,
+             examples: item.examples.map((example) => ({
+              id: example.id,
+              zh: example.zh,
+              pinyin: example.pinyin,
+              vi: example.vi,
+              source_ref: example.source_ref,
+              grammar_refs: example.grammar_refs,
+              vocab_refs: example.vocab_refs,
+             })),
+             audio_key: item.audio_key,
+             check_needed: item.check_needed,
+            }),
+           ),
+          }
+        : section,
+      ),
+     },
+    }
+  : undefined;
+
+ return {
+  ...lesson,
+  vocab,
+  vocabCategories: Array.from(new Set(vocab.map((item) => item.category))).map((nameVi) => ({
+   nameVi,
+   words: vocab.filter((item) => item.category === nameVi).map((item) => item.hanzi),
+  })),
+  vocabCount: resource.total,
+  vocabIds: vocab.map((item) => item.runtimeId),
+  notes: {
+   ...lesson.notes,
+   vocabularyText: vocab.map((item) => `${item.hanzi} · ${item.pinyin}`).join("\n"),
+  },
+  sourceLesson,
+ };
+}
+
 function getSectionResourceCount(section: Section) {
  if ("items" in section && Array.isArray(section.items)) {
   return section.items.length;
@@ -154,7 +217,12 @@ function buildLessonSectionHref(lesson: HanziHomeLesson, type: string) {
      ? "grammar"
      : type === "notes"
        ? "notes"
-       : "lessonText";
+       : type === "exercises" ||
+           type === "reading" ||
+           type === "communication" ||
+           type === "character_writing"
+         ? "practice"
+         : "lessonText";
 
  return buildHanziHomeLessonHref({
   courseId: lesson.courseId || "",

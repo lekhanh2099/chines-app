@@ -172,7 +172,7 @@ function buildTextItems(lesson: HanziHomeLesson) {
     subtitle: lessonContext(lesson, sectionType === "reading" ? "Đọc hiểu" : "Bài khóa"),
     body: stringsFromValue(sectionRecord).join(" "),
     lesson,
-    module: "lessonText",
+    module: sectionType === "reading" ? "practice" : "lessonText",
     targetId: section.id,
    }),
   );
@@ -196,7 +196,7 @@ function buildTextItems(lesson: HanziHomeLesson) {
      subtitle: lessonContext(lesson, sectionTitle),
      body: stringsFromValue(block).join(" "),
      lesson,
-     module: "lessonText",
+     module: sectionType === "reading" ? "practice" : "lessonText",
      targetId: section.id,
      metadata: {
       contentNodeId: targetId,
@@ -231,7 +231,7 @@ function buildExerciseItems(lesson: HanziHomeLesson) {
      subtitle: lessonContext(lesson, "Bài tập"),
      body: stringsFromValue(exercise).join(" "),
      lesson,
-     module: "lessonText",
+     module: "practice",
      targetId: section.id,
      metadata: {
       exerciseType: text(exercise, "type") || "unknown",
@@ -258,6 +258,7 @@ function buildLessonNavigationItems(lesson: HanziHomeLesson) {
  const modules: Array<[HanziHomeModule, string]> = [
   ["overview", "Tổng quan"],
   ["lessonText", "Bài khóa"],
+  ["practice", "Bài tập"],
   ["vocab", "Từ vựng"],
   ["grammar", "Ngữ pháp"],
   ["review", "Ôn tập"],

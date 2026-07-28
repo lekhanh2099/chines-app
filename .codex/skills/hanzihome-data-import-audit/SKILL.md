@@ -24,6 +24,12 @@ Read [references/audit-checklist.md](references/audit-checklist.md) for required
 ## Rules
 
 - Static artifacts are migration/bootstrap inputs, never app runtime fallbacks.
+- `hanzihome_vocab_items` is the single canonical vocabulary parent.
+  Vocabulary lesson-section payloads must persist `items: []`; examples and
+  detail sections are normalized child content, not duplicate vocab sources.
+- Reject duplicate active vocabulary words or phrases within the same lesson
+  using `(lesson_id, word, pinyin)`. Do not reject a legitimate recurrence in a
+  different lesson.
 - Missing pinyin or meaning stays missing and is marked for review; do not invent `-`, generic meaning, or a false clean status.
 - Preserve source file, source entity ID, ordering, and parent relationship when available.
 - Unknown fields must be mapped, explicitly ignored with a reason, or reported as unmapped.

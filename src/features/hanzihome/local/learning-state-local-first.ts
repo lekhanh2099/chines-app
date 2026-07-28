@@ -32,6 +32,10 @@ export type LearningStateSyncResult = {
  error?: string;
 };
 
+const remoteRefreshCooldownMs = 15_000;
+let remoteRefreshInFlight: Promise<UserLearningState | null> | null = null;
+let lastRemoteRefreshAt = 0;
+
 function isBrowserOnline() {
  return typeof navigator === "undefined" || navigator.onLine;
 }
@@ -65,17 +69,26 @@ export async function saveLearningStateLocalFirst(state: UserLearningState): Pro
 
 export async function refreshLearningStateFromRemoteIfClean(): Promise<UserLearningState | null> {
  if (!isBrowserOnline()) return null;
+ if (remoteRefreshInFlight) return remoteRefreshInFlight;
+ if (Date.now() - lastRemoteRefreshAt < remoteRefreshCooldownMs) return null;
 
- const pending = await readPendingLearningStateMutation();
- if (pending) return null;
+ remoteRefreshInFlight = (async () => {
+  const pending = await readPendingLearningStateMutation();
+  if (pending) return null;
 
- const remoteState = normalizeLearningState(await fetchHanziHomeLearningState());
- await writeLocalLearningState({
-  state: remoteState,
-  lastSyncedAt: new Date().toISOString(),
+  const remoteState = normalizeLearningState(await fetchHanziHomeLearningState());
+  await writeLocalLearningState({
+   state: remoteState,
+   lastSyncedAt: new Date().toISOString(),
+  });
+  lastRemoteRefreshAt = Date.now();
+
+  return remoteState;
+ })().finally(() => {
+  remoteRefreshInFlight = null;
  });
 
- return remoteState;
+ return remoteRefreshInFlight;
 }
 
 function shouldApplySyncResult(

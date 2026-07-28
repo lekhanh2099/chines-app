@@ -10,6 +10,7 @@ const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
 const moduleSchema = z.enum([
  "overview",
  "lessonText",
+ "practice",
  "listening",
  "dictation",
  "script",

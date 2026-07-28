@@ -7,14 +7,7 @@ import { Popover } from "@base-ui/react";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
- Select,
- SelectContent,
- SelectGroup,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import {
@@ -119,20 +112,14 @@ export function LessonModuleFrame({
      <div className="flex flex-wrap items-center justify-between gap-2">
       <div className={cn("flex min-w-0 items-center gap-2", compact && "flex-1")}>
        {compact && mobileNavigation ? (
-        <Select value={mobileNavigation.value} onValueChange={mobileNavigation.onChange}>
-         <SelectTrigger size="sm" width="full" aria-label={`Chọn ${sidebarLabel.toLowerCase()}`}>
-          <SelectValue />
-         </SelectTrigger>
-         <SelectContent align="start">
-          <SelectGroup>
-           {mobileNavigation.items.map((item) => (
-            <SelectItem key={item.value} value={item.value}>
-             {item.label}
-            </SelectItem>
-           ))}
-          </SelectGroup>
-         </SelectContent>
-        </Select>
+        <SegmentedControl
+         value={mobileNavigation.value}
+         items={mobileNavigation.items.map((item) => ({
+          key: item.value,
+          label: item.label,
+         }))}
+         onChange={mobileNavigation.onChange}
+        />
        ) : (
         <Button
          type="button"

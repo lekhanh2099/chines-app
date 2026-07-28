@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
 
 type VocabListProps = {
@@ -65,6 +66,7 @@ export function VocabList({
  onSelectWord,
 }: VocabListProps) {
  const [isWordPickerOpen, setIsWordPickerOpen] = useState(!compact);
+ const isCoarsePointer = useCoarsePointer();
  const resizeBounds = compact ? compactPickerResizeBounds : normalPickerResizeBounds;
  const [wordPickerHeight, setWordPickerHeight] = useState(resizeBounds.defaultHeight);
  const statusItems: Array<{
@@ -125,18 +127,17 @@ export function VocabList({
  };
 
  return (
-  <Card
-   padding="sm"
-   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-  >
-   <div className="grid gap-2">
-    <div className="flex flex-wrap items-center justify-between gap-2">
-     <div>
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ vựng bài này</p>
-      <p className=" font-bold text-text-secondary">{words.length} từ đang hiển thị</p>
+  <Card variant="section" padding="md">
+   <div className="grid gap-3">
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div className="grid gap-0.5">
+      <h2 className="text-base font-black text-text-primary">Từ vựng bài này</h2>
+      <p className="text-sm font-medium text-text-muted">
+       {words.length} từ phù hợp · Tab để chuyển nhanh
+      </p>
      </div>
 
-     <div className="flex flex-wrap items-center gap-1">
+     <div className="flex flex-wrap items-center gap-1.5">
       {actions}
       {statusItems.map((item) => {
        const Icon = item.icon;
@@ -147,8 +148,8 @@ export function VocabList({
          key={item.value}
          type="button"
          variant={active ? "active" : "outline"}
-         size="sm"
-         className="h-7 px-2 text-xs"
+         size="compact"
+         aria-pressed={active}
          onClick={() => onStatusFilterChange(item.value)}
         >
          <Icon className="h-3.5 w-3.5" />
@@ -158,9 +159,9 @@ export function VocabList({
       })}
       <Button
        type="button"
-       variant="outline"
-       size="sm"
-       className="h-7 px-2 text-xs"
+       variant="ghost"
+       size="compact"
+       aria-expanded={isWordPickerOpen}
        onClick={() => setIsWordPickerOpen((current) => !current)}
       >
        {isWordPickerOpen ? (
@@ -173,21 +174,20 @@ export function VocabList({
      </div>
     </div>
 
-    <div className="grid gap-2 md:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]">
+    <div className="grid gap-2 lg:grid-cols-[minmax(18rem,28rem)_minmax(0,1fr)]">
      <label className="relative block">
       <span className="sr-only">Tìm từ vựng trong bài</span>
       <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
       <Input
        value={searchValue}
        onChange={(event) => onSearchChange(event.target.value)}
-       placeholder="Tìm từ, pinyin, nghĩa..."
-       className="h-9 rounded-xl bg-bg-primary pl-9  font-bold"
+       placeholder="Tìm Hán tự, pinyin, Hán Việt hoặc nghĩa"
+       className="pl-9"
       />
      </label>
 
-     <p className="hidden items-center rounded-xl border border-border-default bg-bg-subtle px-3 text-xs font-bold text-text-muted md:flex">
-      Tab / Shift+Tab để chuyển từ nhanh. Dùng search để lọc theo Hán tự, pinyin, Hán Việt hoặc
-      nghĩa.
+     <p className="hidden items-center text-sm leading-relaxed text-text-muted lg:flex">
+      Chọn một từ để xem nghĩa, ví dụ và cách dùng. Shift+Tab quay lại từ trước.
      </p>
     </div>
 
@@ -198,8 +198,11 @@ export function VocabList({
     ) : isWordPickerOpen ? (
      <div className="grid gap-1">
       <div
-       className="flex flex-wrap content-start gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft"
-       style={{ height: wordPickerHeight }}
+       className={cn(
+        "flex flex-wrap content-start gap-2 rounded-xl bg-bg-subtle p-2",
+        isCoarsePointer ? "overflow-visible" : "overflow-y-auto scrollbar-soft",
+       )}
+       style={isCoarsePointer ? undefined : { height: wordPickerHeight }}
       >
        {words.map((word) => {
         const wordId = getVocabItemKey(word);
@@ -214,7 +217,7 @@ export function VocabList({
           onClick={() => onSelectWord(wordId)}
           variant={active ? "active" : "outline"}
           className={cn(
-           "h-auto gap-1.5 px-2 py-1.5",
+           "h-auto min-h-11 gap-1.5 px-3 py-2",
            status === "hard" && !active && "border-warning/45",
            status === "known" && !active && "border-success/35",
           )}
@@ -240,23 +243,25 @@ export function VocabList({
         );
        })}
       </div>
-      <button
-       type="button"
-       className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20"
-       aria-label="Đổi chiều cao danh sách từ vựng"
-       aria-orientation="horizontal"
-       aria-valuemax={resizeBounds.maxHeight}
-       aria-valuemin={resizeBounds.minHeight}
-       aria-valuenow={wordPickerHeight}
-       role="separator"
-       onPointerDown={startWordPickerResize}
-       onKeyDown={handleResizeKeyDown}
-      >
-       <span className="h-1 w-12 rounded-full bg-border-default transition-colors group-hover:bg-text-muted/40" />
-      </button>
+      {!isCoarsePointer && (
+       <button
+        type="button"
+        className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20"
+        aria-label="Đổi chiều cao danh sách từ vựng"
+        aria-orientation="horizontal"
+        aria-valuemax={resizeBounds.maxHeight}
+        aria-valuemin={resizeBounds.minHeight}
+        aria-valuenow={wordPickerHeight}
+        role="separator"
+        onPointerDown={startWordPickerResize}
+        onKeyDown={handleResizeKeyDown}
+       >
+        <span className="h-1 w-12 rounded-full bg-border-default transition-colors group-hover:bg-text-muted/40" />
+       </button>
+      )}
      </div>
     ) : (
-     <p className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 text-xs font-bold text-text-muted">
+     <p className="rounded-xl bg-bg-subtle px-3 py-2 text-sm font-medium text-text-muted">
       Danh sách từ đang thu gọn. Dùng search hoặc bấm “Danh sách” để mở lại.
      </p>
     )}

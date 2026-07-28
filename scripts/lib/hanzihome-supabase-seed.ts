@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
+import { isDeepStrictEqual } from "node:util";
 import path from "node:path";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { config as loadEnv } from "dotenv";
@@ -7,6 +8,7 @@ import { z } from "zod";
 
 import { SectionSchema } from "../../src/features/hanzihome/schemas/hanyu-lesson.schema.ts";
 import type { Section } from "../../src/features/hanzihome/schemas/hanyu-lesson.types.ts";
+import { PartOfSpeechSchema } from "../../src/features/hanzihome/schemas/vocab.schema.ts";
 
 export const HANZIHOME_DATASETS = ["q2", "q3"] as const;
 export type HanziHomeDataset = (typeof HANZIHOME_DATASETS)[number];
@@ -1047,6 +1049,40 @@ export function remapPortableLessonIds(
  return value;
 }
 
+function normalizedVocabularyPos(value: string | null) {
+ const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
+ const parsed = PartOfSpeechSchema.safeParse(normalized);
+ return parsed.success ? parsed.data : "unknown";
+}
+
+export function lessonSectionPayloadForDatabase(
+ payload: Section,
+ vocabularyItems: VocabItemRow[],
+): Section {
+ if (payload.type !== "vocabulary" || payload.items.length !== vocabularyItems.length) {
+  return payload;
+ }
+
+ const vocabularyById = new Map(vocabularyItems.map((item) => [item.id, item]));
+ const exact = payload.items.every((item) => {
+  const vocabularyItem = vocabularyById.get(item.id);
+  return (
+   vocabularyItem &&
+   item.order === vocabularyItem.item_order &&
+   item.hanzi === vocabularyItem.word &&
+   item.pinyin === vocabularyItem.pinyin &&
+   item.meaning_vi === vocabularyItem.meaning &&
+   item.pos === normalizedVocabularyPos(vocabularyItem.pos_vi) &&
+   isDeepStrictEqual(
+    item.tags.slice().sort((left, right) => left.localeCompare(right)),
+    (vocabularyItem.tags ?? []).slice().sort((left, right) => left.localeCompare(right)),
+   )
+  );
+ });
+
+ return exact ? { ...payload, items: [] } : payload;
+}
+
 async function loadLessonSeed(params: {
  datasetRoot: string;
  lessonFolder: string;
@@ -1056,6 +1092,8 @@ async function loadLessonSeed(params: {
  bookId: string;
  targetLessonPrefix?: string;
 }) {
+ const lessonSectionStartIndex = params.seed.lessonSections.length;
+ const lessonVocabStartIndex = params.seed.vocabItems.length;
  const folderPath = path.join(params.datasetRoot, params.lessonFolder);
  const sourceLessonMeta = await readJsonFile(
   path.join(folderPath, "lesson.json"),
@@ -1217,6 +1255,78 @@ async function loadLessonSeed(params: {
   params.seed.vocabDetailSections.push(
    ...detailSections.map((section) => ({ ...section, imported_at: params.importedAt })),
   );
+ }
+
+ const lessonVocabularyItems = params.seed.vocabItems.slice(lessonVocabStartIndex);
+ for (let index = lessonSectionStartIndex; index < params.seed.lessonSections.length; index += 1) {
+  const section = params.seed.lessonSections[index];
+  if (section?.lesson_id !== lessonMeta.id || section.payload.type !== "vocabulary") continue;
+
+  for (const item of section.payload.items) {
+   const idExists = lessonVocabularyItems.some((vocabularyItem) => vocabularyItem.id === item.id);
+   const naturalKeyExists = lessonVocabularyItems.some(
+    (vocabularyItem) => vocabularyItem.word === item.hanzi && vocabularyItem.pinyin === item.pinyin,
+   );
+   const orderExists = lessonVocabularyItems.some(
+    (vocabularyItem) => vocabularyItem.item_order === item.order,
+   );
+   if (idExists || naturalKeyExists || orderExists) continue;
+
+   const vocabularyItem: VocabItemRow = {
+    id: item.id,
+    lesson_id: lessonMeta.id,
+    course_id: params.courseId,
+    book_id: params.bookId,
+    owner_id: null,
+    source: "seed",
+    item_order: item.order,
+    word: item.hanzi,
+    pinyin: item.pinyin,
+    han_viet: "",
+    meaning: item.meaning_vi,
+    meaning_en: item.meaning_en || null,
+    tags: item.tags,
+    category: "Từ vựng",
+    level: null,
+    pos_vi: item.pos,
+    pos_zh: null,
+    tone: null,
+    source_file: section.source_file,
+    imported_at: params.importedAt,
+   };
+   params.seed.vocabItems.push(vocabularyItem);
+   lessonVocabularyItems.push(vocabularyItem);
+   item.examples.forEach((example, exampleIndex) => {
+    const exampleOrder = exampleIndex + 1;
+    const exampleExists = params.seed.vocabExamples.some(
+     (vocabExample) =>
+      vocabExample.id === example.id ||
+      (vocabExample.vocab_item_id === item.id && vocabExample.example_order === exampleOrder),
+    );
+    if (exampleExists) return;
+
+    params.seed.vocabExamples.push({
+     id: example.id,
+     vocab_item_id: item.id,
+     lesson_id: lessonMeta.id,
+     owner_id: null,
+     source: "seed",
+     example_order: exampleOrder,
+     zh: example.zh,
+     pinyin: example.pinyin || null,
+     vi: example.vi || null,
+     note: null,
+     imported_at: params.importedAt,
+    });
+   });
+  }
+ }
+
+ for (let index = lessonSectionStartIndex; index < params.seed.lessonSections.length; index += 1) {
+  const section = params.seed.lessonSections[index];
+  if (section?.lesson_id === lessonMeta.id) {
+   section.payload = lessonSectionPayloadForDatabase(section.payload, lessonVocabularyItems);
+  }
  }
 
  const grammarEntry = remappedSectionIndex.find((section) => section.type === "grammar");

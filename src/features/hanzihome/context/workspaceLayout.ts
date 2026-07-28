@@ -20,6 +20,7 @@ export const studyModules = [
  "vocab",
  "grammar",
  "review",
+ "practice",
 ] as const satisfies readonly StudyModule[];
 
 const splitStudyModules = [
@@ -29,13 +30,14 @@ const splitStudyModules = [
  "vocab",
  "grammar",
  "review",
+ "practice",
 ] as const satisfies readonly StudyModule[];
 
 const splitStudyModuleSet = new Set<StudyModule>(splitStudyModules);
 
 export const defaultPaneLayout: PaneLayout = {
  left: ["overview", "lessonText", "notes"],
- right: ["vocab", "grammar", "review"],
+ right: ["vocab", "grammar", "review", "practice"],
  activeLeft: "overview",
  activeRight: "vocab",
 };

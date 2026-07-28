@@ -1,6 +1,7 @@
 import {
  BookOpen,
  FileText,
+ ListChecks,
  GraduationCap,
  Headphones,
  Home,
@@ -24,6 +25,7 @@ export type ModuleMeta = {
 export const moduleMeta = {
  overview: { key: "overview", label: "Tổng quan", icon: Home },
  lessonText: { key: "lessonText", label: "Bài khóa", icon: FileText },
+ practice: { key: "practice", label: "Bài tập", icon: ListChecks },
  listening: { key: "listening", label: "Luyện nghe", icon: Headphones },
  dictation: { key: "dictation", label: "Nghe chép", icon: Keyboard },
  script: { key: "script", label: "Script", icon: ScrollText },
@@ -40,6 +42,7 @@ const standardModuleKeys = [
  "vocab",
  "grammar",
  "review",
+ "practice",
 ] as const satisfies readonly StudyModule[];
 
 const listeningModuleKeys = ["listening", "dictation"] as const satisfies readonly StudyModule[];

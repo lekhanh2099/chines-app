@@ -38,6 +38,16 @@ export function LessonModuleContent({
     />
    );
    break;
+  case "practice":
+   content = (
+    <LessonTextInlineEditor
+     compact={compact}
+     selectedSectionId={lessonTextSelectedSectionId}
+     onSelectSection={onSelectLessonTextSection}
+     practiceOnly
+    />
+   );
+   break;
   case "listening":
    content = <ListeningWorkspace />;
    break;
@@ -48,7 +58,7 @@ export function LessonModuleContent({
    content = <ListeningWorkspace />;
    break;
   case "notes":
-   content = <LessonNoteAccessCard />;
+   content = <LessonNoteAccessCard compact={compact} />;
    break;
   case "vocab":
    content = <VocabWorkspace compact={compact} />;

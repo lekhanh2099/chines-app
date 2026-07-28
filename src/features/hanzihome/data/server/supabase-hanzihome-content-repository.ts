@@ -511,7 +511,7 @@ function buildSourceLesson(row: LessonDetailRow) {
   .filter((section) => section.section_type !== "listening")
   .slice()
   .sort((left, right) => left.section_order - right.section_order)
-  .map(lessonSectionRowToSection);
+  .map((section) => lessonSectionRowToSection(section));
 
  if (sections.length === 0) {
   return undefined;
@@ -728,7 +728,7 @@ async function getCatalogStatsRows() {
 
 async function getLessonDetailRow(lessonId: string) {
  const client = await createClient();
- const [shellRows, sections, vocab, grammar] = await Promise.all([
+ const [shellRows, sections, grammar] = await Promise.all([
   requireRows(
    `lesson shell ${lessonId}`,
    client
@@ -771,18 +771,6 @@ async function getLessonDetailRow(lessonId: string) {
    z.array(lessonSectionRowSchema),
   ),
   requireRows(
-   `lesson vocabulary shell ${lessonId}`,
-   client
-    .from("hanzihome_vocab_items")
-    .select(
-     "id,lesson_id,course_id,book_id,item_order,word,pinyin,han_viet,meaning,meaning_en,category,level,pos_vi,pos_zh,tone,tags,updated_at",
-    )
-    .eq("lesson_id", lessonId)
-    .is("deleted_at", null)
-    .order("item_order"),
-   z.array(vocabCoreRowSchema),
-  ),
-  requireRows(
    `lesson grammar ${lessonId}`,
    client
     .from("hanzihome_grammar_points")
@@ -805,7 +793,7 @@ async function getLessonDetailRow(lessonId: string) {
   ? lessonDetailRowSchema.parse({
      ...shell,
      sections,
-     vocab: vocab.map((item) => ({ ...item, examples: [], details: [] })),
+     vocab: [],
      grammar,
     })
   : null;

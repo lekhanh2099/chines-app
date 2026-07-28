@@ -18,6 +18,7 @@ import { resolveRecentLearning } from "./recent-learning";
 const moduleLabels: Record<HanziHomeModule, string> = {
  overview: "Tổng quan",
  lessonText: "Bài khóa",
+ practice: "Bài tập",
  listening: "Luyện nghe",
  dictation: "Nghe chép",
  script: "Script",

@@ -281,6 +281,10 @@ function verifySectionParity(
    continue;
   }
 
+  if (parsedPayload.data.type === "vocabulary" && parsedPayload.data.items.length > 0) {
+   errors.push(`Lesson vocabulary section ${row.id} still duplicates normalized vocabulary items`);
+  }
+
   assert(
    row.source_section_id === expected.source_section_id,
    `Lesson section ${row.id} source_section_id mismatch`,

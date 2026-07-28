@@ -35,7 +35,10 @@ vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => 
  saveHanziHomeLearningState: api.save,
 }));
 
-import { syncPendingLearningStateMutations } from "./learning-state-local-first";
+import {
+ refreshLearningStateFromRemoteIfClean,
+ syncPendingLearningStateMutations,
+} from "./learning-state-local-first";
 
 const pendingMutation: PendingLearningStateMutation = {
  id: "learning_state:current",
@@ -51,10 +54,30 @@ describe("learning-state local-first sync", () => {
  beforeEach(() => {
   vi.clearAllMocks();
   vi.stubGlobal("navigator", { onLine: true });
+  store.list.mockReset();
+  store.readPending.mockReset();
+  api.fetch.mockReset();
+  api.save.mockReset();
   store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValue([]);
   store.markSyncing.mockResolvedValue(pendingMutation);
   store.readPending.mockResolvedValue(pendingMutation);
   api.save.mockResolvedValue(emptyLearningState);
+ });
+
+ it("deduplicates concurrent clean-state refreshes", async () => {
+  store.readPending.mockResolvedValue(null);
+  api.fetch.mockResolvedValue(emptyLearningState);
+
+  const [first, second] = await Promise.all([
+   refreshLearningStateFromRemoteIfClean(),
+   refreshLearningStateFromRemoteIfClean(),
+  ]);
+  const cooldownResult = await refreshLearningStateFromRemoteIfClean();
+
+  expect(api.fetch).toHaveBeenCalledOnce();
+  expect(first).toEqual(emptyLearningState);
+  expect(second).toEqual(emptyLearningState);
+  expect(cooldownResult).toBeNull();
  });
 
  it("clears the queue only after the matching mutation is saved", async () => {

@@ -1,7 +1,7 @@
 export function PopularFontPreview({ word }: { word: string }) {
  return (
-  <p className="font-popular-xingkai mt-1 truncate text-8xl leading-none text-text-primary">
+  <span className="font-popular-xingkai block truncate text-6xl leading-none text-text-primary sm:text-7xl">
    {word}
-  </p>
+  </span>
  );
 }

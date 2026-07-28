@@ -13,6 +13,24 @@ Browser UI
 
 Supabase is the runtime source for courses, books, lessons, study resources, learning state, notes, and user-owned artifacts. External JSON is accepted only by explicit import, seed, migration, or audit scripts.
 
+## Vocabulary ownership
+
+`hanzihome_vocab_items` is the single canonical parent for vocabulary words and
+phrases. `hanzihome_vocab_examples` and
+`hanzihome_vocab_detail_sections` are normalized children of that parent, not
+parallel vocabulary sources.
+
+Vocabulary lesson sections preserve section metadata and ordering with
+`payload.items = []`. The lesson mini-grid, vocab workspace, review and editor
+all consume the dedicated normalized vocabulary resource through the same
+TanStack Query cache. Derived mini-grid items must never be persisted back into
+the lesson-section payload.
+
+An active word or phrase is unique within its lesson by
+`(lesson_id, word, pinyin)`. Recurrence across different lessons is allowed.
+This invariant is enforced by the active database unique index and by seed
+validation.
+
 ## Read contracts
 
 | Screen/resource         | Owner                               | Payload rule                                | Query key family           |

@@ -8,11 +8,15 @@ export function PersonalNotePane({
  noteId,
  content,
  onSave,
+ readOnly,
+ toolbarVisible,
  className = "",
 }: {
  noteId: string;
  content: Record<string, unknown> | null;
  onSave: (content: Record<string, unknown>) => void;
+ readOnly: boolean;
+ toolbarVisible: boolean;
  className?: string;
 }) {
  const debouncedSave = useDebouncedEditorSave({
@@ -25,12 +29,16 @@ export function PersonalNotePane({
    <div className="border-b border-warning/20 bg-warning-subtle px-4 py-2 text-xs font-black uppercase tracking-wide text-warning-text">
     Ghi chú
    </div>
-   <Editor
-    key={`lesson-note-${noteId}`}
-    initialContent={content}
-    onChange={debouncedSave}
-    seamless
-   />
+   <div className="lesson-note-pane-content">
+    <Editor
+     key={`lesson-note-${noteId}`}
+     initialContent={content}
+     onChange={debouncedSave}
+     readOnly={readOnly}
+     toolbarVisible={toolbarVisible}
+     seamless
+    />
+   </div>
   </section>
  );
 }

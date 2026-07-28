@@ -1,23 +1,26 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
-
-const lessonDetailStaleTime = Infinity;
+import { attachLessonVocabularyResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import {
+ useHanziHomeLessonDetailResource,
+ useHanziHomeLessonVocabulary,
+} from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 
 export function useHanziHomeLesson(lessonId: string | null) {
- const query = useQuery({
-  queryKey: hanzihomeQueryKeys.lessonDetail(lessonId),
-  queryFn: () => fetchHanziHomeLessonDetail(lessonId ?? ""),
-  staleTime: lessonDetailStaleTime,
-  enabled: Boolean(lessonId),
- });
+ const detailQuery = useHanziHomeLessonDetailResource(lessonId ?? "");
+ const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId ?? "");
+ const lesson =
+  detailQuery.data && vocabularyQuery.data
+   ? attachLessonVocabularyResource(detailQuery.data, vocabularyQuery.data)
+   : null;
 
  return {
-  ...query,
-  lesson: query.data ?? null,
-  isLoading: Boolean(lessonId) && query.isPending,
-  isError: query.isError,
+  ...detailQuery,
+  refetch: async () => {
+   await Promise.all([detailQuery.refetch(), vocabularyQuery.refetch()]);
+  },
+  lesson,
+  isLoading: Boolean(lessonId) && (detailQuery.isPending || vocabularyQuery.isPending),
+  isError: detailQuery.isError || vocabularyQuery.isError,
  };
 }

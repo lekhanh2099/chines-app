@@ -287,11 +287,6 @@ export function getDictionaryCoreAnalysis(
   (data.ai_analysis || {}) as AiAnalysis,
   entry?.sino_vietnamese || null,
  );
-
- if (Object.keys(embeddedAnalysis).length) {
-  return embeddedAnalysis;
- }
-
  const definitions = (data.definitions || []).map((definition) => ({
   pos: definition.part_of_speech || "",
   meaning: definition.meaning || "",
@@ -301,7 +296,11 @@ export function getDictionaryCoreAnalysis(
 
  return normalizeAnalysis(
   {
-   definitions,
+   ...embeddedAnalysis,
+   definitions:
+    embeddedAnalysis.definitions && embeddedAnalysis.definitions.length > 0
+     ? embeddedAnalysis.definitions
+     : definitions,
    sino_vietnamese: entry?.sino_vietnamese || undefined,
    han_viet: entry?.sino_vietnamese || undefined,
   },

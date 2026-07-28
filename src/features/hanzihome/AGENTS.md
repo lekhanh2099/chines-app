@@ -30,6 +30,23 @@ MUST NOT:
 - silently use static files as a runtime fallback;
 - silently convert shared seed rows into user-owned rows.
 
+Vocabulary has one canonical runtime ownership model:
+
+- `hanzihome_vocab_items` owns each vocabulary word or phrase;
+- `hanzihome_vocab_examples` and `hanzihome_vocab_detail_sections` are child
+  content, not additional vocabulary sources;
+- vocabulary lesson sections preserve ordering and metadata only; their
+  persisted `payload.items` MUST remain empty;
+- mini-grid, lesson view models, vocab workspace, review and editing MUST share
+  the normalized vocabulary resource/query cache;
+- one active word or phrase is unique within a lesson by
+  `(lesson_id, word, pinyin)`;
+- the same word or phrase MAY appear in a different lesson.
+
+Import, seed, migration or editing work MUST NOT recreate vocabulary items in a
+lesson-section payload, maintain two independently editable vocab copies, or
+weaken the active lesson/word/pinyin uniqueness invariant.
+
 Editing seed content requires an explicit policy:
 
 - admin seed edit; or

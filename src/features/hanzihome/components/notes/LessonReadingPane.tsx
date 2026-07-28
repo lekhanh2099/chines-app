@@ -8,11 +8,15 @@ export function LessonReadingPane({
  noteId,
  readingContent,
  onSave,
+ readOnly,
+ toolbarVisible,
  className = "",
 }: {
  noteId: string;
  readingContent: Record<string, unknown>;
  onSave: (content: Record<string, unknown>) => void;
+ readOnly: boolean;
+ toolbarVisible: boolean;
  className?: string;
 }) {
  const debouncedSave = useDebouncedEditorSave({
@@ -25,12 +29,16 @@ export function LessonReadingPane({
    <div className="border-b border-info/20 bg-info-subtle px-4 py-2 text-xs font-black uppercase tracking-wide text-info-text">
     Bài đọc
    </div>
-   <Editor
-    key={`lesson-reading-${noteId}`}
-    initialContent={readingContent}
-    onChange={debouncedSave}
-    seamless
-   />
+   <div className="lesson-note-pane-content">
+    <Editor
+     key={`lesson-reading-${noteId}`}
+     initialContent={readingContent}
+     onChange={debouncedSave}
+     readOnly={readOnly}
+     toolbarVisible={toolbarVisible}
+     seamless
+    />
+   </div>
   </section>
  );
 }

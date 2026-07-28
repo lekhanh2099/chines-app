@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 import {
@@ -11,6 +11,7 @@ import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
+import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getBasicVocabData,
  getDictionaryEntryByHeadword,
@@ -50,8 +51,8 @@ function buildLookupResponse(vocabData: VocabData, cached: boolean, source: stri
  });
 }
 
-function hasUsableBasicData(vocabData: VocabData | null): vocabData is VocabData {
- return !!(vocabData && (vocabData.pinyin || vocabData.sino_vietnamese || vocabData.meaning));
+function hasUsableBasicMeaning(vocabData: VocabData | null): vocabData is VocabData {
+ return !!vocabData?.meaning.trim();
 }
 
 export async function POST(request: NextRequest) {
@@ -144,19 +145,16 @@ export async function POST(request: NextRequest) {
   const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
   if (cachedDictionary) {
+   const cachedDictionaryVocab = getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary));
    metrics.push({
     name: "cache",
     durationMs: performance.now() - cacheStartedAt,
    });
-   source = "dictionary_core";
-   cached = true;
-   return finalize(
-    buildLookupResponse(
-     getBasicVocabData(mapDictionaryEntryToVocabData(cachedDictionary)),
-     true,
-     source,
-    ),
-   );
+   if (hasUsableBasicMeaning(cachedDictionaryVocab)) {
+    source = "dictionary_core";
+    cached = true;
+    return finalize(buildLookupResponse(cachedDictionaryVocab, true, source));
+   }
   }
 
   const cachedWord = await getVocabByHanzi(supabase, lookupText);
@@ -175,7 +173,7 @@ export async function POST(request: NextRequest) {
     ai_analysis: getVocabularyAnalysis(cachedWord),
    });
 
-   if (hasUsableBasicData(cachedVocab)) {
+   if (hasUsableBasicMeaning(cachedVocab)) {
     source = "legacy_vocab";
     cached = true;
     return finalize(buildLookupResponse(cachedVocab, true, source));
@@ -188,8 +186,11 @@ export async function POST(request: NextRequest) {
 
   const aiStartedAt = performance.now();
   aiStatus = "running";
+  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
   const basicLookup = await analyzeHanziBasicDetailed(lookupText, {
    geminiModel: DEFAULT_GEMINI_QUICK_MODEL,
+   userApiKeys,
+   allowGroq: true,
    abortSignal: request.signal,
   });
   metrics.push({
@@ -209,7 +210,7 @@ export async function POST(request: NextRequest) {
      ai_analysis: getVocabularyAnalysis(cachedWord),
     });
 
-    if (hasUsableBasicData(fallbackVocab)) {
+    if (hasUsableBasicMeaning(fallbackVocab)) {
      source = "legacy_vocab_fallback";
      cached = true;
      return finalize(buildLookupResponse(fallbackVocab, true, source));
@@ -239,57 +240,31 @@ export async function POST(request: NextRequest) {
 
   throwIfAborted(request.signal);
 
-  const persistStartedAt = performance.now();
-  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-   headword: lookupText,
-   pinyin: basicVocab.pinyin,
-   sinoVietnamese: basicVocab.sino_vietnamese,
-   meaning: basicVocab.meaning,
-   ai_analysis: basicVocab.ai_analysis,
-  });
-
-  if (dictionaryEntry) {
-   const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-   metrics.push({
-    name: "persist",
-    durationMs: performance.now() - persistStartedAt,
+  after(async () => {
+   const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+    headword: lookupText,
+    pinyin: basicVocab.pinyin,
+    sinoVietnamese: basicVocab.sino_vietnamese,
+    meaning: basicVocab.meaning,
+    ai_analysis: basicVocab.ai_analysis,
    });
-   source = "ai_basic";
-   return finalize(
-    buildLookupResponse(
-     {
-      ...getBasicVocabData(mapDictionaryEntryToVocabData(dictionaryEntry)),
-      id: mirrored?.id,
-     },
-     false,
-     source,
-    ),
-   );
-  }
 
-  const mirrored = await upsertVocab(supabase, {
-   hanzi: basicVocab.hanzi,
-   pinyin: basicVocab.pinyin,
-   sinoVietnamese: basicVocab.sino_vietnamese,
-   meaning: basicVocab.meaning,
-   ai_analysis: basicVocab.ai_analysis,
+   if (dictionaryEntry) {
+    await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
+    return;
+   }
+
+   await upsertVocab(supabase, {
+    hanzi: basicVocab.hanzi,
+    pinyin: basicVocab.pinyin,
+    sinoVietnamese: basicVocab.sino_vietnamese,
+    meaning: basicVocab.meaning,
+    ai_analysis: basicVocab.ai_analysis,
+   });
   });
-  metrics.push({
-   name: "persist",
-   durationMs: performance.now() - persistStartedAt,
-  });
+
   source = "ai_basic";
-
-  return finalize(
-   buildLookupResponse(
-    {
-     ...basicVocab,
-     id: mirrored?.id,
-    },
-    false,
-    source,
-   ),
-  );
+  return finalize(buildLookupResponse(basicVocab, false, source));
  } catch (error) {
   if (isAbortError(error) || request.signal.aborted) {
    source = "aborted";

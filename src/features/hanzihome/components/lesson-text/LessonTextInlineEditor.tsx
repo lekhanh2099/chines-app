@@ -31,14 +31,22 @@ import { speechTextForSections } from "./lesson-section-speech";
 
 type LessonTextInlineEditorProps = {
  compact?: boolean;
+ practiceOnly?: boolean;
  selectedSectionId: string;
  onSelectSection: (sectionId: string) => void;
 };
 
 const allSectionsId = "__all_lesson_sections__";
+const practiceSectionTypes = new Set<Section["type"]>([
+ "exercises",
+ "reading",
+ "communication",
+ "character_writing",
+]);
 
 export function LessonTextInlineEditor({
  compact = false,
+ practiceOnly = false,
  selectedSectionId,
  onSelectSection,
 }: LessonTextInlineEditorProps) {
@@ -48,13 +56,16 @@ export function LessonTextInlineEditor({
  const sectionResource = useHanziHomeLessonSections(lesson.id);
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
- const sourceSections = useMemo(
-  () =>
+ const sourceSections = useMemo(() => {
+  const sections =
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
    sectionResource?.sections ??
-   [],
-  [lesson.sourceLesson, sectionResource],
- );
+   [];
+
+  return sections.filter((section) =>
+   practiceOnly ? practiceSectionTypes.has(section.type) : !practiceSectionTypes.has(section.type),
+  );
+ }, [lesson.sourceLesson, practiceOnly, sectionResource]);
  const readingItems = useMemo(
   () => sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
   [sourceSections],
@@ -92,7 +103,7 @@ export function LessonTextInlineEditor({
    />
 
    <div className="grid max-h-[calc(100dvh-15rem)] gap-2 overflow-y-auto pr-1 scrollbar-soft">
-    {sourceSections.map((section, index) => {
+    {sourceSections.map((section) => {
      const Icon = sectionIcons[section.type] ?? FileText;
      const active = !showAllSections && selectedSection?.id === section.id;
 
@@ -100,7 +111,7 @@ export function LessonTextInlineEditor({
       <LessonModuleSidebarItem
        key={section.id}
        selected={active}
-       title={`${index + 1}. ${sectionTitle(section)}`}
+       title={`${section.order}. ${sectionTitle(section)}`}
        subtitle={sectionSubtitle(section)}
        icon={<Icon className="h-4 w-4" />}
        onClick={() => onSelectSection(section.id)}
@@ -118,7 +129,7 @@ export function LessonTextInlineEditor({
     selected={showAllSections}
     onClick={() => onSelectSection(allSectionsId)}
    />
-   {sourceSections.map((section, index) => {
+   {sourceSections.map((section) => {
     const Icon = sectionIcons[section.type] ?? FileText;
     const active = !showAllSections && selectedSection?.id === section.id;
 
@@ -126,7 +137,7 @@ export function LessonTextInlineEditor({
      <LessonModuleSidebarRailItem
       key={section.id}
       icon={<Icon className="h-4 w-4" />}
-      label={`${index + 1}. ${sectionTitle(section)}`}
+      label={`${section.order}. ${sectionTitle(section)}`}
       selected={active}
       onClick={() => onSelectSection(section.id)}
      />
@@ -143,10 +154,12 @@ export function LessonTextInlineEditor({
     </HanziHomeCommandBarPortal>
    ) : null}
    <LessonModuleFrame
-    title="Bài khóa"
+    title={practiceOnly ? "Bài tập và đọc hiểu" : "Bài khóa"}
     subtitle={
      showAllSections
-      ? "Toàn bộ nội dung bài"
+      ? practiceOnly
+        ? "Luyện tập, đọc hiểu và thực hành"
+        : "Toàn bộ nội dung bài"
       : selectedSection
         ? sectionTitle(selectedSection)
         : "Chưa có nội dung"
@@ -163,9 +176,9 @@ export function LessonTextInlineEditor({
      value: showAllSections ? allSectionsId : (selectedSection?.id ?? allSectionsId),
      items: [
       { value: allSectionsId, label: "Xem toàn bộ" },
-      ...sourceSections.map((section, index) => ({
+      ...sourceSections.map((section) => ({
        value: section.id,
-       label: `${index + 1}. ${sectionTitle(section)}`,
+       label: `${section.order}. ${sectionTitle(section)}`,
       })),
      ],
      onChange: onSelectSection,
@@ -199,7 +212,9 @@ export function LessonTextInlineEditor({
     ) : (
      <Card padding="sm" className="rounded-xl sm:p-4">
       <div className="rounded-xl border border-border-default bg-bg-subtle p-3  font-semibold text-text-muted sm:p-4">
-       Chưa có bài khóa trong JSON của bài này.
+       {practiceOnly
+        ? "Bài này chưa có bài tập hoặc nội dung đọc hiểu."
+        : "Chưa có bài khóa trong JSON của bài này."}
       </div>
      </Card>
     )}

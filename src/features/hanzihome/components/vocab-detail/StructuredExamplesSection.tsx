@@ -18,7 +18,7 @@ export function StructuredExamplesSection({
  return (
   <section
    id="vocab-examples"
-   className="grid gap-4 rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+   className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
   >
    <h3 className="flex items-center gap-2 text-lg font-black text-text-primary">
     <BookOpen className="h-5 w-5 text-accent-text" />
@@ -28,15 +28,8 @@ export function StructuredExamplesSection({
    <div className="grid gap-3">
     {item.examples.map((example, index) => {
      const content = (
-      <div
-       className={[
-        "grid gap-2 rounded-xl border p-4",
-        index === 0
-         ? "border-accent/30 bg-bg-subtle shadow-theme-sm"
-         : "border-border-default bg-bg-primary",
-       ].join(" ")}
-      >
-       <div className="rounded-lg border border-accent/25 bg-bg-primary/60 p-4">
+      <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
+       <div className="grid gap-1">
         <p className="text-2xl font-black leading-relaxed text-text-primary">
          {renderHighlightedVocabText(example.zh, keyword)}
         </p>
@@ -47,7 +40,7 @@ export function StructuredExamplesSection({
        </div>
 
        {example.analysis_vi && (
-        <p className="border-t border-border-default pt-2 leading-relaxed text-accent-text">
+        <p className="border-t border-border-default pt-3 leading-relaxed text-accent-text">
          {example.analysis_vi}
         </p>
        )}

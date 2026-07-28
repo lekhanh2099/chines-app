@@ -1,9 +1,8 @@
 "use client";
 
-import { FileText, Loader2, Plus } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { LinkedContentSkeleton } from "@/features/hanzihome/components/LinkedContentSkeleton";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
@@ -13,7 +12,7 @@ import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote"
 import { LessonSplitNoteEditor } from "./LessonSplitNoteEditor";
 import { createPersonalNoteContent } from "./lessonNoteContent";
 
-export function LessonNoteAccessCard() {
+export function LessonNoteAccessCard({ compact = false }: { compact?: boolean }) {
  const { lesson } = useHanziHomeRuntime();
  const linkedNoteQuery = useLessonLinkedNote(
   lesson.id,
@@ -42,38 +41,12 @@ export function LessonNoteAccessCard() {
  };
 
  return (
-  <Card padding="lg" className="rounded-xl">
-   <div className="grid gap-4">
-    <div className="flex flex-wrap items-start justify-between gap-4">
-     <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
-       <FileText className="h-5 w-5" />
-      </span>
-      <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ghi chú bài học</p>
-       <h2 className="text-xl font-black text-text-primary">Ghi chú riêng của bài</h2>
-      </div>
-     </div>
-     {!note ? (
-      <Button
-       type="button"
-       disabled={linkedNoteQuery.isLoading || isCreating}
-       onClick={handleCreate}
-      >
-       {linkedNoteQuery.isLoading || isCreating ? (
-        <Loader2 className="h-4 w-4 animate-spin" />
-       ) : (
-        <Plus className="h-4 w-4" />
-       )}
-       Tạo ghi chú cho bài
-      </Button>
-     ) : null}
-    </div>
-
+  <Card padding="lg" className={compact ? "h-full min-h-0 rounded-xl" : "rounded-xl"}>
+   <div className={compact ? "grid h-full min-h-0 gap-4" : "grid gap-4"}>
     {linkedNoteQuery.isLoading ? (
      <LinkedContentSkeleton label="Đang kiểm tra ghi chú của bài" />
     ) : note ? (
-     <LessonSplitNoteEditor noteId={note.id} />
+     <LessonSplitNoteEditor noteId={note.id} fillHeight={compact} />
     ) : (
      <button
       type="button"
@@ -81,7 +54,14 @@ export function LessonNoteAccessCard() {
       disabled={isCreating}
       className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left  font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
      >
-      Chưa có ghi chú riêng cho bài này. Bấm để tạo ghi chú liên kết với bài học.
+      {isCreating ? (
+       <span className="inline-flex items-center gap-2">
+        <Loader2 className="h-4 w-4 animate-spin" />
+        Đang tạo ghi chú cho bài...
+       </span>
+      ) : (
+       "Chưa có ghi chú riêng cho bài này. Bấm để tạo ghi chú liên kết với bài học."
+      )}
      </button>
     )}
    </div>

@@ -31,6 +31,7 @@
   "data:hanzihome:import-vocab-enrichment": "node --experimental-strip-types scripts/import-hanzihome-vocab-enrichment.ts",
   "data:hanzihome:listening-audit": "node --experimental-strip-types scripts/audit-hanzihome-listening-supabase.ts",
   "data:hanzihome:vocab-audit": "node --experimental-strip-types scripts/audit-hanzihome-vocab-content.ts",
+  "data:hanzihome:vocab-duplication-audit": "node --experimental-strip-types scripts/audit-hanzihome-vocabulary-duplication.ts",
   "format": "prettier --write .",
   "format:check": "prettier --check .",
   "start": "next start",

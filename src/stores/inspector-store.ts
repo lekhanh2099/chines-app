@@ -69,8 +69,12 @@ function getCachedVocab(text: string, lessonId?: string): InspectorCacheEntry | 
   if (Date.now() - inMemory.cachedAt > CACHE_TTL_MS) {
    inspectorVocabCache.delete(key);
   } else {
-   setCachedVocab(text, inMemory.vocab, lessonId);
-   return inMemory;
+   const normalizedVocab = getBasicVocabData(inMemory.vocab);
+   if (normalizedVocab.meaning.trim()) {
+    setCachedVocab(text, normalizedVocab, lessonId);
+    return inspectorVocabCache.get(key) || null;
+   }
+   inspectorVocabCache.delete(key);
   }
  }
 
@@ -82,7 +86,12 @@ function getCachedVocab(text: string, lessonId?: string): InspectorCacheEntry | 
   return null;
  }
 
- setCachedVocab(text, recentMatch);
+ const normalizedRecentMatch = getBasicVocabData(recentMatch);
+ if (!normalizedRecentMatch.meaning.trim()) {
+  return null;
+ }
+
+ setCachedVocab(text, normalizedRecentMatch);
  return inspectorVocabCache.get(key) || null;
 }
 

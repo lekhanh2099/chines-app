@@ -53,6 +53,27 @@ Supabase/import payload
 
 Identify unsupported or guessed shapes before coding.
 
+### Vocabulary source invariant
+
+For vocabulary work, trace and preserve this ownership:
+
+```text
+hanzihome_vocab_items
+→ hanzihome_vocab_examples / hanzihome_vocab_detail_sections
+→ dedicated lesson vocabulary resource and query cache
+→ mini-grid / workspace / review / editor
+```
+
+Vocabulary lesson sections contain metadata and ordering only. Persist
+`payload.items` as `[]`; never hydrate and write those derived mini-grid items
+back to the section row.
+
+One active word or phrase is unique within its lesson by
+`(lesson_id, word, pinyin)`. The same vocabulary may intentionally recur in a
+different lesson. Before adding or importing an item, reuse the existing
+lesson-scoped canonical row or report a conflict; do not create a second source
+or weaken the unique key.
+
 ## 4. Persistence
 
 Normal edit:

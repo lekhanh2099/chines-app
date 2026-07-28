@@ -21,6 +21,18 @@ function learningStateWithFont(hanziFont: string) {
 }
 
 describe("learning-state reader font compatibility", () => {
+ it("preserves the practice module in persisted navigation", () => {
+  const parsed = userLearningStateSchema.parse({
+   ...learningStateWithFont("system"),
+   settings: {
+    ...learningStateWithFont("system").settings,
+    lastModule: "practice",
+   },
+  });
+
+  expect(parsed.settings.lastModule).toBe("practice");
+ });
+
  it.each(["kai", "mengshen"])("migrates legacy %s to system", (hanziFont) => {
   const parsed = userLearningStateSchema.parse(learningStateWithFont(hanziFont));
 
