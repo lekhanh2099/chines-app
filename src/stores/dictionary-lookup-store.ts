@@ -9,7 +9,7 @@
  * Persists user overrides in localStorage.
  */
 
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
 import {
@@ -50,52 +50,59 @@ function getDefaultForRoute(routeKey: string): boolean {
 type DictionaryLookupState = {
  overrides: RouteOverrides;
  hasHydrated: boolean;
- hydrate: () => void;
- /** Whether lookup is enabled for the given pathname */
- isEnabled: (pathname: string) => boolean;
- /** Toggle lookup for the given pathname */
- toggle: (pathname: string) => void;
- /** Explicitly set lookup for a pathname */
- setEnabled: (pathname: string, enabled: boolean) => void;
 };
 
-export const useDictionaryLookupStore = create<DictionaryLookupState>((set, get) => ({
- // Must be stable for SSR + first client render.
- // Do not read localStorage here, otherwise Header hydration can mismatch.
- overrides: {},
- hasHydrated: false,
-
- hydrate: () => {
-  if (get().hasHydrated) return;
-  set({
-   overrides: readVersionedStorage(getBrowserStorage(), storageConfig),
-   hasHydrated: true,
-  });
+export const dictionaryLookupStore = createStore<
+ DictionaryLookupState,
+ {
+  hydrate: () => void;
+  isEnabled: (pathname: string) => boolean;
+  toggle: (pathname: string) => void;
+  setEnabled: (pathname: string, enabled: boolean) => void;
+ }
+>(
+ {
+  // Must be stable for SSR + first client render.
+  // Do not read localStorage here, otherwise Header hydration can mismatch.
+  overrides: {},
+  hasHydrated: false,
  },
+ ({ setState, get }) => ({
+  hydrate: () => {
+   if (get().hasHydrated) return;
+   setState((state) => ({
+    ...state,
+    overrides: readVersionedStorage(getBrowserStorage(), storageConfig),
+    hasHydrated: true,
+   }));
+  },
 
- isEnabled: (pathname: string) => {
-  const key = getRouteKey(pathname);
-  const { overrides } = get();
+  isEnabled: (pathname: string) => {
+   const key = getRouteKey(pathname);
+   const { overrides } = get();
 
-  if (key in overrides) return overrides[key];
-  return getDefaultForRoute(key);
- },
+   if (key in overrides) return overrides[key];
+   return getDefaultForRoute(key);
+  },
 
- toggle: (pathname: string) => {
-  const key = getRouteKey(pathname);
-  const current = get().isEnabled(pathname);
-  const next = !current;
-  const newOverrides = { ...get().overrides, [key]: next };
+  toggle: (pathname: string) => {
+   const key = getRouteKey(pathname);
+   const current = getDefaultForRoute(key);
+   const overrides = get().overrides;
+   const enabled = key in overrides ? overrides[key] : current;
+   const next = !enabled;
+   const newOverrides = { ...get().overrides, [key]: next };
 
-  writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
-  set({ overrides: newOverrides, hasHydrated: true });
- },
+   writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
+   setState((state) => ({ ...state, overrides: newOverrides, hasHydrated: true }));
+  },
 
- setEnabled: (pathname: string, enabled: boolean) => {
-  const key = getRouteKey(pathname);
-  const newOverrides = { ...get().overrides, [key]: enabled };
+  setEnabled: (pathname: string, enabled: boolean) => {
+   const key = getRouteKey(pathname);
+   const newOverrides = { ...get().overrides, [key]: enabled };
 
-  writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
-  set({ overrides: newOverrides, hasHydrated: true });
- },
-}));
+   writeVersionedStorage(getBrowserStorage(), storageConfig, newOverrides);
+   setState((state) => ({ ...state, overrides: newOverrides, hasHydrated: true }));
+  },
+ }),
+);

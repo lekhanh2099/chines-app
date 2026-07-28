@@ -61,7 +61,7 @@ that match the files and behavior being changed.
 - Runtime: Node.js 22 or newer.
 - Framework: Next.js App Router.
 - UI: React, TypeScript, Tailwind CSS 4, local shadcn-style source components.
-- Data/state: Supabase, TanStack Query, TanStack Form, Zustand, Zod.
+- Data/state: Supabase, TanStack Query, TanStack Form, TanStack Store, Zod.
 - UI primitive dependencies include both Radix and Base UI.
 - `src/components/ui/**` is the design-system primitive boundary.
 - Local component source is the source of truth, not generic shadcn examples.
@@ -108,7 +108,7 @@ A value MUST have one source of truth.
 - Server state: TanStack Query.
 - Form values, validation, dirty state and submission: TanStack Form.
 - Small transient interaction state: local React state.
-- Cross-feature client preferences: an existing scoped Zustand store.
+- Cross-feature client preferences: an existing scoped TanStack Store.
 - Purely derived values: compute from current inputs; do not mirror them into
   state.
 - Persisted browser state: versioned schema, safe parsing and migration.

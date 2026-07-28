@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
+import { useSelector } from "@tanstack/react-store";
 import { BookOpenText, ChevronDown, FilePlus2, NotebookPen } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -36,7 +37,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes.service";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
 import type { NoteCategory, ReadingStatus } from "@/types/database";
 
 type CreateMode = "note" | "reading";
@@ -67,7 +68,7 @@ export function NoteCreateDialog({
  const [mode, setMode] = useState<CreateMode | null>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
- const focusModeEnabled = useFocusModeStore((state) => state.enabled);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
 
  const form = useForm({
   defaultValues: {

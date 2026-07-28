@@ -179,15 +179,15 @@ survive feature boundaries.
 
 ## 4. State ownership matrix
 
-| State                             | Owner                         |
-| --------------------------------- | ----------------------------- |
-| Route, deep link, browser history | Next.js route/search params   |
-| Remote cached data                | TanStack Query                |
-| Form input and validation         | TanStack Form                 |
-| Small transient UI state          | local React state             |
-| Cross-feature preference          | existing scoped Zustand store |
-| Derived filters/options/counts    | pure calculation              |
-| Browser persistence               | versioned storage adapter     |
+| State                             | Owner                          |
+| --------------------------------- | ------------------------------ |
+| Route, deep link, browser history | Next.js route/search params    |
+| Remote cached data                | TanStack Query                 |
+| Form input and validation         | TanStack Form                  |
+| Small transient UI state          | local React state              |
+| Cross-feature preference          | existing scoped TanStack Store |
+| Derived filters/options/counts    | pure calculation               |
+| Browser persistence               | versioned storage adapter      |
 
 ## 5. Extraction rules
 

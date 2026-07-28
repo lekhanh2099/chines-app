@@ -1,11 +1,15 @@
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 
 type AppShellState = {
  isContentFullscreen: boolean;
- setContentFullscreen: (fullscreen: boolean) => void;
 };
 
-export const useAppShellStore = create<AppShellState>((set) => ({
- isContentFullscreen: false,
- setContentFullscreen: (isContentFullscreen) => set({ isContentFullscreen }),
+export const appShellStore = createStore<
+ AppShellState,
+ {
+  setContentFullscreen: (fullscreen: boolean) => void;
+ }
+>({ isContentFullscreen: false }, ({ setState }) => ({
+ setContentFullscreen: (isContentFullscreen) =>
+  setState((state) => ({ ...state, isContentFullscreen })),
 }));

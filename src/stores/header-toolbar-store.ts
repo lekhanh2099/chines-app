@@ -1,14 +1,17 @@
 import type { ReactNode } from "react";
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 
 type HeaderToolbarState = {
  content: ReactNode;
- setContent: (content: ReactNode) => void;
- clearContent: () => void;
 };
 
-export const useHeaderToolbarStore = create<HeaderToolbarState>((set) => ({
- content: null,
- setContent: (content) => set({ content }),
- clearContent: () => set({ content: null }),
+export const headerToolbarStore = createStore<
+ HeaderToolbarState,
+ {
+  setContent: (content: ReactNode) => void;
+  clearContent: () => void;
+ }
+>({ content: null }, ({ setState }) => ({
+ setContent: (content) => setState((state) => ({ ...state, content })),
+ clearContent: () => setState((state) => ({ ...state, content: null })),
 }));

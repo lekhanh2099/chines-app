@@ -1,17 +1,18 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useSelector } from "@tanstack/react-store";
 import { FileText, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
 
 export function NewNoteStarter() {
  const router = useRouter();
  const createNoteMutation = useCreateNote();
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
 
  function handleCreate() {
   if (focusModeEnabled) {

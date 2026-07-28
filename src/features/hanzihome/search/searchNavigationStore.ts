@@ -1,6 +1,6 @@
 "use client";
 
-import { createStore, useStore } from "@tanstack/react-store";
+import { createStore, useSelector } from "@tanstack/react-store";
 
 import type { HanziHomeSearchNavigationIntent } from "./types";
 
@@ -28,5 +28,5 @@ export function clearHanziHomeSearchNavigationIntent() {
 }
 
 export function useHanziHomeSearchNavigationIntent() {
- return useStore(searchNavigationStore, (state) => state.intent);
+ return useSelector(searchNavigationStore, (state) => state.intent);
 }

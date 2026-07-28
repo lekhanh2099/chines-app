@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { Popover } from "@base-ui/react";
@@ -26,8 +27,8 @@ import {
 } from "lucide-react";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { normalizeImportedNotePayload, type JsonObject } from "@/features/notes/note-export.schema";
-import { useNoteTabsStore } from "@/stores/note-tabs-store";
-import { useSplitViewStore } from "@/stores/split-view-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
+import { splitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
 import {
  Dialog,
@@ -39,7 +40,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import {
  useNoteFolderMutations,
@@ -111,14 +112,14 @@ export function NoteEditorPanel({
   isDeleting,
  } = useNoteDetail(noteId);
 
- const closeTab = useNoteTabsStore((s) => s.closeTab);
- const updateTabTitle = useNoteTabsStore((s) => s.updateTabTitle);
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const { closeTab, updateTabTitle } = noteTabsStore.actions;
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const noteFoldersQuery = useNoteFolders();
  const { createMutation: createFolderMutation } = useNoteFolderMutations();
  const updateLibraryMetadataMutation = useUpdateNoteLibraryMetadata();
- const isSplitView = useSplitViewStore((s) => s.isSplitView(noteId));
- const toggleSplitView = useSplitViewStore((s) => s.toggleSplitView);
+ const activeNotes = useSelector(splitViewStore, (state) => state.activeNotes);
+ const isSplitView = activeNotes[noteId] ?? false;
+ const { toggleSplitView } = splitViewStore.actions;
  const router = useRouter();
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -151,7 +152,7 @@ export function NoteEditorPanel({
  }, [note?.title, noteId, updateTabTitle]);
 
  // Sync split view state from DB on initial load
- const setSplitView = useSplitViewStore((s) => s.setSplitView);
+ const { setSplitView } = splitViewStore.actions;
  useEffect(() => {
   if (note && !splitViewSynced.current) {
    if (note.split_view_enabled) {

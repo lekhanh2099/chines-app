@@ -1,6 +1,7 @@
 "use client";
 import type { DragEvent, FormEvent, KeyboardEvent, MouseEvent, RefObject } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
@@ -48,7 +49,7 @@ import {
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { createClient as createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
-import { useAppShellStore } from "@/stores/app-shell-store";
+import { appShellStore } from "@/stores/app-shell-store";
 import {
  formatHtmlArtifactDate as formatDate,
  formatHtmlSource,
@@ -174,8 +175,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
  const [inspectorTab, setInspectorTab] = useState<InspectorTab>("files");
  const [previewMode, setPreviewMode] = useState<PreviewMode>("iframe");
- const isPreviewFocused = useAppShellStore((state) => state.isContentFullscreen);
- const setContentFullscreen = useAppShellStore((state) => state.setContentFullscreen);
+ const isPreviewFocused = useSelector(appShellStore, (state) => state.isContentFullscreen);
+ const { setContentFullscreen } = appShellStore.actions;
  const [draftPreview, setDraftPreview] = useState<{
   targetId: string;
   form: ArtifactFormState;

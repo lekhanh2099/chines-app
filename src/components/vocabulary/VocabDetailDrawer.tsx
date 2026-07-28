@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,7 @@ import {
  getNormalizedRadicals,
  getNormalizedSynonyms,
 } from "@/services/vocab.service";
-import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import type { AiAnalysis, SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
@@ -69,8 +70,11 @@ function getUniqueCharacters(text: string) {
 }
 
 export function VocabDetailDrawer() {
- const { isOpen, text, contextSentence, mode, closeDetailDrawer, openDetailDrawer } =
-  useVocabDetailDrawerStore();
+ const isOpen = useSelector(vocabDetailDrawerStore, (state) => state.isOpen);
+ const text = useSelector(vocabDetailDrawerStore, (state) => state.text);
+ const contextSentence = useSelector(vocabDetailDrawerStore, (state) => state.contextSentence);
+ const mode = useSelector(vocabDetailDrawerStore, (state) => state.mode);
+ const { closeDetailDrawer, openDetailDrawer } = vocabDetailDrawerStore.actions;
  const detailQuery = useSmartSelectionInsights(text, contextSentence, {
   enabled: isOpen && !!text,
   mode,

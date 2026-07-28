@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $getSelectionStyleValueForProperty, $patchStyleText } from "@lexical/selection";
@@ -44,8 +45,8 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import { cn } from "@/lib/utils";
-import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { usePathname } from "next/navigation";
 import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
 import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
@@ -135,9 +136,10 @@ export default function EditorFloatingMenu() {
   contextSentence: "",
  });
  const pathname = usePathname();
- const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
- const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
- const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
+ useSelector(dictionaryLookupStore, (state) => state.overrides);
+ const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
+ const { hydrate: hydrateLookupSettings } = dictionaryLookupStore.actions;
+ const { openDetailDrawer } = vocabDetailDrawerStore.actions;
 
  const debouncedSelection = useDebounce(draftSelection, DEBOUNCE_DELAY);
  const selectedText = debouncedSelection.text;

@@ -1,6 +1,6 @@
 "use client";
 
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import { getQueryClient } from "@/components/providers/QueryProvider";
 import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import { containsChinese, extractChinese } from "@/lib/chinese-utils";
@@ -191,216 +191,227 @@ type InspectorStore = {
  vocabData: VocabData | null;
  isLoading: boolean;
  recentLookups: VocabData[];
- openInspector: (text: string, options?: InspectorOpenOptions) => Promise<void>;
- closeInspector: () => void;
- loadRecentLookups: () => void;
 };
 
-export const useInspectorStore = create<InspectorStore>((set, get) => ({
- isOpen: false,
- anchorRect: null,
- selectedText: "",
- vocabData: null,
- isLoading: false,
- recentLookups: [],
-
- loadRecentLookups: () => {
-  const recentLookups = loadRecentLookups();
-  recentLookups.forEach((item) => setCachedVocab(item.hanzi, item));
-  set({ recentLookups });
+export const inspectorStore = createStore<
+ InspectorStore,
+ {
+  openInspector: (text: string, options?: InspectorOpenOptions) => Promise<void>;
+  closeInspector: () => void;
+  loadRecentLookups: () => void;
+ }
+>(
+ {
+  isOpen: false,
+  anchorRect: null,
+  selectedText: "",
+  vocabData: null,
+  isLoading: false,
+  recentLookups: [],
  },
+ ({ setState, get }) => ({
+  loadRecentLookups: () => {
+   const recentLookups = loadRecentLookups();
+   recentLookups.forEach((item) => setCachedVocab(item.hanzi, item));
+   setState((state) => ({ ...state, recentLookups }));
+  },
 
- openInspector: async (text: string, options = {}) => {
-  if (!containsChinese(text)) return;
+  openInspector: async (text: string, options = {}) => {
+   if (!containsChinese(text)) return;
 
-  const chineseText = extractChinese(text);
-  if (!chineseText) {
-   return;
-  }
-
-  const queryClient = getQueryClient();
-
-  const trackLookupInBackground = async (vocabData: VocabData) => {
-   if (!hasTrackableLookupData(vocabData)) {
+   const chineseText = extractChinese(text);
+   if (!chineseText) {
     return;
    }
 
-   try {
-    const { createClient } = await import("@/lib/supabase/client");
-    const supabase = createClient();
-    const {
-     data: { session },
-    } = await supabase.auth.getSession();
-    const userId = session?.user.id;
-    if (!userId) {
+   const queryClient = getQueryClient();
+
+   const trackLookupInBackground = async (vocabData: VocabData) => {
+    if (!hasTrackableLookupData(vocabData)) {
      return;
     }
 
-    const tracked = await trackVocabLookup(supabase, userId, { ...vocabData });
-    if (!tracked?.vocabId) {
-     return;
-    }
+    try {
+     const { createClient } = await import("@/lib/supabase/client");
+     const supabase = createClient();
+     const {
+      data: { session },
+     } = await supabase.auth.getSession();
+     const userId = session?.user.id;
+     if (!userId) {
+      return;
+     }
 
-    const trackedVocabData: VocabData = {
-     ...vocabData,
-     id: tracked.vocabId,
-     dictionary_id: tracked.dictionaryId || vocabData.dictionary_id,
-    };
-    const listItem = buildTrackedVocabListItem(trackedVocabData);
-    if (!listItem) {
-     return;
-    }
+     const tracked = await trackVocabLookup(supabase, userId, { ...vocabData });
+     if (!tracked?.vocabId) {
+      return;
+     }
 
-    queryClient.setQueryData<VocabWithProgress[]>(dictionaryQueryKeys.vocabListRoot, (current) => {
-     const existing = current || [];
-     const withoutDuplicate = existing.filter((item) => item.id !== listItem.id);
-     return [listItem, ...withoutDuplicate];
-    });
-   } catch (error) {
-    logger.error("[InspectorStore] track lookup failed:", error);
+     const trackedVocabData: VocabData = {
+      ...vocabData,
+      id: tracked.vocabId,
+      dictionary_id: tracked.dictionaryId || vocabData.dictionary_id,
+     };
+     const listItem = buildTrackedVocabListItem(trackedVocabData);
+     if (!listItem) {
+      return;
+     }
+
+     queryClient.setQueryData<VocabWithProgress[]>(dictionaryQueryKeys.vocabListRoot, (current) => {
+      const existing = current || [];
+      const withoutDuplicate = existing.filter((item) => item.id !== listItem.id);
+      return [listItem, ...withoutDuplicate];
+     });
+    } catch (error) {
+     logger.error("[InspectorStore] track lookup failed:", error);
+    }
+   };
+
+   activeLookupRequestId += 1;
+   const requestId = activeLookupRequestId;
+   abortLookupRequests();
+
+   const cachedVocab = getCachedVocab(chineseText, options.lessonId);
+   if (cachedVocab) {
+    const updatedRecent = updateRecentLookups(
+     get().recentLookups,
+     cachedVocab.vocab,
+     loadRecentLookups(),
+     options.lessonId,
+    );
+
+    setState((state) => ({
+     ...state,
+     isOpen: true,
+     anchorRect: options.anchorRect || get().anchorRect,
+     selectedText: chineseText,
+     isLoading: false,
+     vocabData: cachedVocab.vocab,
+     recentLookups: updatedRecent,
+    }));
+
+    void trackLookupInBackground(cachedVocab.vocab);
+    return;
    }
-  };
 
-  activeLookupRequestId += 1;
-  const requestId = activeLookupRequestId;
-  abortLookupRequests();
+   setState((state) => ({
+    ...state,
+    isOpen: true,
+    anchorRect: options.anchorRect || get().anchorRect,
+    selectedText: chineseText,
+    isLoading: true,
+    vocabData: null,
+   }));
 
-  const cachedVocab = getCachedVocab(chineseText, options.lessonId);
-  if (cachedVocab) {
-   const updatedRecent = updateRecentLookups(
+   const pinyinText = getPinyin(chineseText);
+   const basicController = new AbortController();
+   activeBasicRequestController = basicController;
+
+   let resolvedVocab: VocabData;
+
+   try {
+    const lookupResponse = await fetch("/api/lookup/basic", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({
+      text: chineseText,
+      lessonId: options.lessonId,
+     }),
+     signal: basicController.signal,
+    });
+
+    const lookupJson = (await lookupResponse.json()) as {
+     data?: {
+      id?: string;
+      dictionary_id?: string;
+      hanzi?: string;
+      pinyin?: string;
+      sino_vietnamese?: string | null;
+      meaning?: string;
+      analysis?: AiAnalysis;
+      ai_analysis?: AiAnalysis;
+     };
+    };
+
+    const parsedVocab = parseLookupResponse(lookupJson);
+
+    if (lookupResponse.ok && parsedVocab) {
+     resolvedVocab = getBasicVocabData({
+      ...parsedVocab,
+      pinyin: parsedVocab.pinyin || pinyinText,
+     });
+    } else {
+     const { createClient } = await import("@/lib/supabase/client");
+     const supabase = createClient();
+     const vocab = await getVocabByHanzi(supabase, chineseText);
+
+     if (vocab) {
+      resolvedVocab = getBasicVocabData({
+       id: vocab.id,
+       hanzi: vocab.hanzi,
+       pinyin: vocab.pinyin || pinyinText,
+       sino_vietnamese: vocab.sino_vietnamese || undefined,
+       meaning: vocab.meaning || "",
+       ai_analysis: (vocab.ai_analysis || {}) as AiAnalysis,
+      });
+     } else {
+      resolvedVocab = getBasicVocabData({
+       hanzi: chineseText,
+       pinyin: pinyinText,
+       meaning: "",
+       ai_analysis: {},
+      });
+     }
+    }
+   } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError") {
+     return;
+    }
+
+    resolvedVocab = getBasicVocabData({
+     hanzi: chineseText,
+     pinyin: pinyinText,
+     meaning: "",
+     ai_analysis: {},
+    });
+   } finally {
+    if (activeBasicRequestController === basicController) {
+     activeBasicRequestController = null;
+    }
+   }
+
+   if (requestId !== activeLookupRequestId) {
+    return;
+   }
+
+   const updated = updateRecentLookups(
     get().recentLookups,
-    cachedVocab.vocab,
+    resolvedVocab,
     loadRecentLookups(),
     options.lessonId,
    );
 
-   set({
-    isOpen: true,
-    anchorRect: options.anchorRect || get().anchorRect,
-    selectedText: chineseText,
+   setState((state) => ({
+    ...state,
+    vocabData: resolvedVocab,
     isLoading: false,
-    vocabData: cachedVocab.vocab,
-    recentLookups: updatedRecent,
-   });
+    recentLookups: updated,
+   }));
 
-   void trackLookupInBackground(cachedVocab.vocab);
-   return;
-  }
+   void trackLookupInBackground(resolvedVocab);
+  },
 
-  set({
-   isOpen: true,
-   anchorRect: options.anchorRect || get().anchorRect,
-   selectedText: chineseText,
-   isLoading: true,
-   vocabData: null,
-  });
-
-  const pinyinText = getPinyin(chineseText);
-  const basicController = new AbortController();
-  activeBasicRequestController = basicController;
-
-  let resolvedVocab: VocabData;
-
-  try {
-   const lookupResponse = await fetch("/api/lookup/basic", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-     text: chineseText,
-     lessonId: options.lessonId,
-    }),
-    signal: basicController.signal,
-   });
-
-   const lookupJson = (await lookupResponse.json()) as {
-    data?: {
-     id?: string;
-     dictionary_id?: string;
-     hanzi?: string;
-     pinyin?: string;
-     sino_vietnamese?: string | null;
-     meaning?: string;
-     analysis?: AiAnalysis;
-     ai_analysis?: AiAnalysis;
-    };
-   };
-
-   const parsedVocab = parseLookupResponse(lookupJson);
-
-   if (lookupResponse.ok && parsedVocab) {
-    resolvedVocab = getBasicVocabData({
-     ...parsedVocab,
-     pinyin: parsedVocab.pinyin || pinyinText,
-    });
-   } else {
-    const { createClient } = await import("@/lib/supabase/client");
-    const supabase = createClient();
-    const vocab = await getVocabByHanzi(supabase, chineseText);
-
-    if (vocab) {
-     resolvedVocab = getBasicVocabData({
-      id: vocab.id,
-      hanzi: vocab.hanzi,
-      pinyin: vocab.pinyin || pinyinText,
-      sino_vietnamese: vocab.sino_vietnamese || undefined,
-      meaning: vocab.meaning || "",
-      ai_analysis: (vocab.ai_analysis || {}) as AiAnalysis,
-     });
-    } else {
-     resolvedVocab = getBasicVocabData({
-      hanzi: chineseText,
-      pinyin: pinyinText,
-      meaning: "",
-      ai_analysis: {},
-     });
-    }
-   }
-  } catch (error) {
-   if (error instanceof DOMException && error.name === "AbortError") {
-    return;
-   }
-
-   resolvedVocab = getBasicVocabData({
-    hanzi: chineseText,
-    pinyin: pinyinText,
-    meaning: "",
-    ai_analysis: {},
-   });
-  } finally {
-   if (activeBasicRequestController === basicController) {
-    activeBasicRequestController = null;
-   }
-  }
-
-  if (requestId !== activeLookupRequestId) {
-   return;
-  }
-
-  const updated = updateRecentLookups(
-   get().recentLookups,
-   resolvedVocab,
-   loadRecentLookups(),
-   options.lessonId,
-  );
-
-  set({
-   vocabData: resolvedVocab,
-   isLoading: false,
-   recentLookups: updated,
-  });
-
-  void trackLookupInBackground(resolvedVocab);
- },
-
- closeInspector: () => {
-  activeLookupRequestId += 1;
-  abortLookupRequests();
-  set({
-   isOpen: false,
-   anchorRect: null,
-   selectedText: "",
-   vocabData: null,
-   isLoading: false,
-  });
- },
-}));
+  closeInspector: () => {
+   activeLookupRequestId += 1;
+   abortLookupRequests();
+   setState((state) => ({
+    ...state,
+    isOpen: false,
+    anchorRect: null,
+    selectedText: "",
+    vocabData: null,
+    isLoading: false,
+   }));
+  },
+ }),
+);

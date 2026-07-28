@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useSelector } from "@tanstack/react-store";
 import {
  BookOpenCheck,
  BookOpenText,
@@ -18,8 +19,8 @@ import {
 } from "lucide-react";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
-import { useSidebarStore } from "@/stores/sidebar-store";
-import { useAppShellStore } from "@/stores/app-shell-store";
+import { sidebarStore } from "@/stores/sidebar-store";
+import { appShellStore } from "@/stores/app-shell-store";
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -144,12 +145,11 @@ function NavRow({
 }
 
 export function Sidebar() {
- const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
+ const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
- const isCollapsed = useSidebarStore((s) => s.isCollapsed);
- const toggleSidebar = useSidebarStore((s) => s.toggle);
- const hydrateSidebar = useSidebarStore((s) => s.hydrate);
+ const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
+ const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
  const isHanziHomeRoute = pathname === "/hanzihome";
  const effectiveCollapsed = isCollapsed;
 
@@ -238,7 +238,7 @@ export function Sidebar() {
 }
 
 export function MobileBottomNavigation() {
- const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
+ const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
 

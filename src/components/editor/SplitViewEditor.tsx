@@ -9,9 +9,10 @@
 
 import type { CSSProperties } from "react";
 import { useCallback, useRef } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { Editor } from "./Editor";
 import { ResizableDivider } from "./ResizableDivider";
-import { useSplitViewStore } from "@/stores/split-view-store";
+import { splitViewStore } from "@/stores/split-view-store";
 import { BookOpen, FileText } from "lucide-react";
 
 interface SplitViewEditorProps {
@@ -38,8 +39,9 @@ export function SplitViewEditor({
  toolbarVisible = true,
 }: SplitViewEditorProps) {
  const containerRef = useRef<HTMLDivElement>(null);
- const dividerPosition = useSplitViewStore((s) => s.getDividerPosition(noteId));
- const setDividerPosition = useSplitViewStore((s) => s.setDividerPosition);
+ const dividerPositions = useSelector(splitViewStore, (state) => state.dividerPositions);
+ const dividerPosition = dividerPositions[noteId] ?? 50;
+ const { setDividerPosition } = splitViewStore.actions;
  const splitStyle = {
   "--split-pane-leading-size": `${dividerPosition}%`,
   "--split-pane-trailing-size": `${100 - dividerPosition}%`,

@@ -1,6 +1,6 @@
 "use client";
 
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import type { SmartSelectionMode } from "@/types/database";
 
 type OpenDetailPayload = {
@@ -14,30 +14,38 @@ type VocabDetailDrawerStore = {
  text: string;
  contextSentence: string;
  mode: SmartSelectionMode;
- openDetailDrawer: (payload: OpenDetailPayload) => void;
- closeDetailDrawer: () => void;
 };
 
-export const useVocabDetailDrawerStore = create<VocabDetailDrawerStore>((set) => ({
- isOpen: false,
- text: "",
- contextSentence: "",
- mode: "word",
- openDetailDrawer: ({ text, contextSentence, mode = "word" }) => {
-  const trimmedText = text.trim();
-  set({
-   isOpen: !!trimmedText,
-   text: trimmedText,
-   contextSentence: contextSentence?.trim() || trimmedText,
-   mode,
-  });
+export const vocabDetailDrawerStore = createStore<
+ VocabDetailDrawerStore,
+ {
+  openDetailDrawer: (payload: OpenDetailPayload) => void;
+  closeDetailDrawer: () => void;
+ }
+>(
+ {
+  isOpen: false,
+  text: "",
+  contextSentence: "",
+  mode: "word",
  },
- closeDetailDrawer: () => {
-  set({
-   isOpen: false,
-   text: "",
-   contextSentence: "",
-   mode: "word",
-  });
- },
-}));
+ ({ setState }) => ({
+  openDetailDrawer: ({ text, contextSentence, mode = "word" }) => {
+   const trimmedText = text.trim();
+   setState(() => ({
+    isOpen: !!trimmedText,
+    text: trimmedText,
+    contextSentence: contextSentence?.trim() || trimmedText,
+    mode,
+   }));
+  },
+  closeDetailDrawer: () => {
+   setState(() => ({
+    isOpen: false,
+    text: "",
+    contextSentence: "",
+    mode: "word",
+   }));
+  },
+ }),
+);

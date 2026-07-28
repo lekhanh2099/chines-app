@@ -5,7 +5,7 @@
  * Default: expanded (not collapsed).
  */
 
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
 import {
@@ -26,26 +26,36 @@ const storageConfig = {
 
 type SidebarState = {
  isCollapsed: boolean;
- toggle: () => void;
- setCollapsed: (collapsed: boolean) => void;
- hydrate: () => void;
 };
 
-export const useSidebarStore = create<SidebarState>((set, get) => ({
- isCollapsed: false,
-
- toggle: () => {
-  const next = !get().isCollapsed;
-  writeVersionedStorage(getBrowserStorage(), storageConfig, next);
-  set({ isCollapsed: next });
+export const sidebarStore = createStore<
+ SidebarState,
+ {
+  toggle: () => void;
+  setCollapsed: (collapsed: boolean) => void;
+  hydrate: () => void;
+ }
+>(
+ {
+  isCollapsed: false,
  },
+ ({ setState, get }) => ({
+  toggle: () => {
+   const next = !get().isCollapsed;
+   writeVersionedStorage(getBrowserStorage(), storageConfig, next);
+   setState((state) => ({ ...state, isCollapsed: next }));
+  },
 
- setCollapsed: (collapsed: boolean) => {
-  writeVersionedStorage(getBrowserStorage(), storageConfig, collapsed);
-  set({ isCollapsed: collapsed });
- },
+  setCollapsed: (collapsed: boolean) => {
+   writeVersionedStorage(getBrowserStorage(), storageConfig, collapsed);
+   setState((state) => ({ ...state, isCollapsed: collapsed }));
+  },
 
- hydrate: () => {
-  set({ isCollapsed: readVersionedStorage(getBrowserStorage(), storageConfig) });
- },
-}));
+  hydrate: () => {
+   setState((state) => ({
+    ...state,
+    isCollapsed: readVersionedStorage(getBrowserStorage(), storageConfig),
+   }));
+  },
+ }),
+);

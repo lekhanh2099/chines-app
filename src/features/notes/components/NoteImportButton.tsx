@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { useRouter } from "next/navigation";
 import { Upload } from "lucide-react";
 import { toast } from "sonner";
@@ -9,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { useNoteFolderMutations, useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
 
 export function NoteImportButton({
@@ -24,7 +25,7 @@ export function NoteImportButton({
  const createNoteMutation = useCreateNote();
  const foldersQuery = useNoteFolders();
  const { createMutation: createFolderMutation } = useNoteFolderMutations();
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
 
  async function handleImport(file: File) {
   if (focusModeEnabled) {

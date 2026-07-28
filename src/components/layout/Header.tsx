@@ -4,6 +4,7 @@ import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import { LockKeyhole, Search } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 import { type Theme, useTheme } from "./ThemeProvider";
 import {
@@ -18,10 +19,10 @@ import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import { containsChinese } from "@/lib/chinese-utils";
-import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
-import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
-import { useAppShellStore } from "@/stores/app-shell-store";
+import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
+import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { appShellStore } from "@/stores/app-shell-store";
 import { Button } from "@/components/ui/button";
 import {
  Select,
@@ -73,7 +74,7 @@ type SimpleHeaderBreadcrumb = {
 };
 
 export function Header({ user }: { user?: User | null }) {
- const isContentFullscreen = useAppShellStore((state) => state.isContentFullscreen);
+ const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
  const [searchValue, setSearchValue] = useState("");
@@ -81,12 +82,12 @@ export function Header({ user }: { user?: User | null }) {
  const pathname = usePathname();
  const router = useRouter();
  const searchParams = useSearchParams();
- const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
- const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
- const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
- const toggleFocusMode = useFocusModeStore((s) => s.toggle);
- const headerToolbarContent = useHeaderToolbarStore((s) => s.content);
+ useSelector(dictionaryLookupStore, (state) => state.overrides);
+ const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
+ const { toggle: toggleLookup, hydrate: hydrateLookupSettings } = dictionaryLookupStore.actions;
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
+ const { toggle: toggleFocusMode } = focusModeStore.actions;
+ const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
  const isRadicalsWorkspaceRoute = pathname === "/radicals";
  const isHanziHomeLessonWorkspaceRoute =

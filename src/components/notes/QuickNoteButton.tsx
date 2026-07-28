@@ -4,10 +4,11 @@ import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 import { Loader2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
 import { cn } from "@/lib/utils";
 
 interface QuickNoteButtonProps {
@@ -26,7 +27,7 @@ export function QuickNoteButton({
  const [isCreating, setIsCreating] = useState(false);
  const supabase = createClient();
  const router = useRouter();
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
 
  const handleCreate = async () => {
   if (isCreating) return;

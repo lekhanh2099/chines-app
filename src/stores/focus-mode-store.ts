@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
 import {
@@ -12,9 +12,6 @@ const STORAGE_KEY = "hanzihome-focus-mode";
 type FocusModeState = {
  enabled: boolean;
  hasHydrated: boolean;
- hydrate: () => void;
- setEnabled: (enabled: boolean) => void;
- toggle: () => void;
 };
 
 const storageConfig = {
@@ -25,29 +22,40 @@ const storageConfig = {
  migrateLegacy: (value: unknown) => (typeof value === "boolean" ? value : null),
 };
 
-export const useFocusModeStore = create<FocusModeState>((set, get) => ({
- enabled: false,
- hasHydrated: false,
-
- hydrate: () => {
-  if (get().hasHydrated) return;
-  set({
-   enabled: readVersionedStorage(getBrowserStorage(), storageConfig),
-   hasHydrated: true,
-  });
+export const focusModeStore = createStore<
+ FocusModeState,
+ {
+  hydrate: () => void;
+  setEnabled: (enabled: boolean) => void;
+  toggle: () => void;
+ }
+>(
+ {
+  enabled: false,
+  hasHydrated: false,
  },
+ ({ setState, get }) => ({
+  hydrate: () => {
+   if (get().hasHydrated) return;
+   setState((state) => ({
+    ...state,
+    enabled: readVersionedStorage(getBrowserStorage(), storageConfig),
+    hasHydrated: true,
+   }));
+  },
 
- setEnabled: (enabled) => {
-  writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
-  set({ enabled, hasHydrated: true });
- },
+  setEnabled: (enabled) => {
+   writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
+   setState((state) => ({ ...state, enabled, hasHydrated: true }));
+  },
 
- toggle: () => {
-  const enabled = !get().enabled;
-  writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
-  set({ enabled, hasHydrated: true });
- },
-}));
+  toggle: () => {
+   const enabled = !get().enabled;
+   writeVersionedStorage(getBrowserStorage(), storageConfig, enabled);
+   setState((state) => ({ ...state, enabled, hasHydrated: true }));
+  },
+ }),
+);
 
 export function getNoteIdFromNotesPath(pathname: string): string | null {
  const match = pathname.match(/^\/notes\/([^/?#]+)/);

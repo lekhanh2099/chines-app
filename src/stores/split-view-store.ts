@@ -5,7 +5,7 @@
  * Tracks the resizable divider position.
  */
 
-import { create } from "zustand";
+import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
 import {
@@ -19,17 +19,6 @@ interface SplitViewState {
  activeNotes: Record<string, boolean>;
  /** Map of noteId → left pane width percentage (30-70) */
  dividerPositions: Record<string, number>;
-
- /** Toggle split view for a note */
- toggleSplitView: (noteId: string) => void;
- /** Explicitly set split view state */
- setSplitView: (noteId: string, enabled: boolean) => void;
- /** Set divider position */
- setDividerPosition: (noteId: string, percent: number) => void;
- /** Check if split view is active for a note */
- isSplitView: (noteId: string) => boolean;
- /** Get divider position for a note */
- getDividerPosition: (noteId: string) => number;
 }
 
 const STORAGE_KEY = "split-view-state";
@@ -59,40 +48,50 @@ function saveState(activeNotes: Record<string, boolean>, dividerPositions: Recor
  writeVersionedStorage(getBrowserStorage(), storageConfig, { activeNotes, dividerPositions });
 }
 
-export const useSplitViewStore = create<SplitViewState>((set, get) => {
- const initial = loadState();
+const initialSplitViewState = loadState();
 
- return {
-  activeNotes: initial.activeNotes,
-  dividerPositions: initial.dividerPositions,
-
+export const splitViewStore = createStore<
+ SplitViewState,
+ {
+  toggleSplitView: (noteId: string) => void;
+  setSplitView: (noteId: string, enabled: boolean) => void;
+  setDividerPosition: (noteId: string, percent: number) => void;
+  isSplitView: (noteId: string) => boolean;
+  getDividerPosition: (noteId: string) => number;
+ }
+>(
+ {
+  activeNotes: initialSplitViewState.activeNotes,
+  dividerPositions: initialSplitViewState.dividerPositions,
+ },
+ ({ setState, get }) => ({
   toggleSplitView: (noteId) => {
-   set((state) => {
+   setState((state) => {
     const current = state.activeNotes[noteId] ?? false;
     const activeNotes = { ...state.activeNotes, [noteId]: !current };
     saveState(activeNotes, state.dividerPositions);
-    return { activeNotes };
+    return { ...state, activeNotes };
    });
   },
 
   setSplitView: (noteId, enabled) => {
-   set((state) => {
+   setState((state) => {
     const activeNotes = { ...state.activeNotes, [noteId]: enabled };
     saveState(activeNotes, state.dividerPositions);
-    return { activeNotes };
+    return { ...state, activeNotes };
    });
   },
 
   setDividerPosition: (noteId, percent) => {
    const clamped = Math.min(70, Math.max(30, percent));
-   set((state) => {
+   setState((state) => {
     const dividerPositions = { ...state.dividerPositions, [noteId]: clamped };
     saveState(state.activeNotes, dividerPositions);
-    return { dividerPositions };
+    return { ...state, dividerPositions };
    });
   },
 
   isSplitView: (noteId) => get().activeNotes[noteId] ?? false,
   getDividerPosition: (noteId) => get().dividerPositions[noteId] ?? DEFAULT_SPLIT,
- };
-});
+ }),
+);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useStore } from "@tanstack/react-store";
+import { useSelector } from "@tanstack/react-store";
 import { Plus } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -113,7 +113,7 @@ export function LessonContentCreateDialog({
    }
   },
  });
- const kind = useStore(form.store, (state) => state.values.kind);
+ const kind = useSelector(form.store, (state) => state.values.kind);
 
  return (
   <Dialog open={open} onOpenChange={setOpen}>

@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { usePathname, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
-import { isFocusNavigationAllowed, useFocusModeStore } from "@/stores/focus-mode-store";
-import { useNoteTabsStore } from "@/stores/note-tabs-store";
+import { focusModeStore, isFocusNavigationAllowed } from "@/stores/focus-mode-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
 
 const FOCUS_MODE_WARNING =
  "Focus mode đang bật. Bạn chỉ có thể ở lại bài hiện tại hoặc chọn tab ghi chú đang mở.";
 
 function getOpenNoteIds() {
- return useNoteTabsStore.getState().tabs.map((tab) => tab.noteId);
+ return noteTabsStore.get().tabs.map((tab) => tab.noteId);
 }
 
 function warnFocusBlocked() {
@@ -22,8 +23,8 @@ export function FocusModeRouteGuard() {
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const searchParamsString = searchParams.toString();
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
- const hydrateFocusMode = useFocusModeStore((s) => s.hydrate);
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
+ const { hydrate: hydrateFocusMode } = focusModeStore.actions;
  const currentHrefRef = useRef<string | null>(null);
 
  useEffect(() => {

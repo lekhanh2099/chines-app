@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { useRouter } from "next/navigation";
 import { NoteTabBar } from "@/components/notes/NoteTabBar";
 import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
-import { useNoteTabsStore } from "@/stores/note-tabs-store";
-import { useFocusModeStore } from "@/stores/focus-mode-store";
-import { useHeaderToolbarStore } from "@/stores/header-toolbar-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
+import { headerToolbarStore } from "@/stores/header-toolbar-store";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import type { NoteListItem } from "@/services/notes.service";
 import {
@@ -36,14 +37,13 @@ interface NoteTabContainerProps {
 }
 
 export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContainerProps) {
- const tabs = useNoteTabsStore((s) => s.tabs);
- const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
- const hasHydrated = useNoteTabsStore((s) => s.hasHydrated);
- const hydrateTabs = useNoteTabsStore((s) => s.hydrate);
- const openTab = useNoteTabsStore((s) => s.openTab);
- const focusModeEnabled = useFocusModeStore((s) => s.enabled);
- const setHeaderToolbar = useHeaderToolbarStore((s) => s.setContent);
- const clearHeaderToolbar = useHeaderToolbarStore((s) => s.clearContent);
+ const tabs = useSelector(noteTabsStore, (state) => state.tabs);
+ const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
+ const hasHydrated = useSelector(noteTabsStore, (state) => state.hasHydrated);
+ const { hydrate: hydrateTabs, openTab } = noteTabsStore.actions;
+ const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
+ const { setContent: setHeaderToolbar, clearContent: clearHeaderToolbar } =
+  headerToolbarStore.actions;
  const { data: notes } = useNotesList();
  const router = useRouter();
  const hadTabsRef = useRef(false);
@@ -119,10 +119,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   const handler = (e: Event) => {
    const { noteId, noteTitle } = (e as CustomEvent).detail;
    if (noteId) {
-    if (
-     focusModeEnabled &&
-     !useNoteTabsStore.getState().tabs.some((tab) => tab.noteId === noteId)
-    ) {
+    if (focusModeEnabled && !noteTabsStore.get().tabs.some((tab) => tab.noteId === noteId)) {
      toast.warning("Focus mode đang bật. Không mở thêm ghi chú mới.");
      return;
     }

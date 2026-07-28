@@ -1,13 +1,13 @@
 "use client";
 
-import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
-import { useInspectorStore } from "@/stores/inspector-store";
+import { useSelector } from "@tanstack/react-store";
+import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { inspectorStore } from "@/stores/inspector-store";
 
 export function useVocabInspector() {
- const openInspector = useInspectorStore((state) => state.openInspector);
- const closeInspector = useInspectorStore((state) => state.closeInspector);
- const isOpen = useInspectorStore((state) => state.isOpen);
- const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
+ const isOpen = useSelector(inspectorStore, (state) => state.isOpen);
+ const { openInspector, closeInspector } = inspectorStore.actions;
+ const { openDetailDrawer } = vocabDetailDrawerStore.actions;
 
  return { openInspector, closeInspector, isOpen, openDetailDrawer };
 }

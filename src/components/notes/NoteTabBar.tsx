@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef, useCallback, useState, type ReactNode, type Ref } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { X, FileText, Plus } from "lucide-react";
-import { useNoteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
+import { noteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
 import { cn } from "@/lib/utils";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
@@ -19,11 +20,9 @@ export function NoteTabBar({
  onCreateNote?: () => void;
  focusLocked?: boolean;
 }) {
- const tabs = useNoteTabsStore((s) => s.tabs);
- const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
- const setActive = useNoteTabsStore((s) => s.setActive);
- const closeTab = useNoteTabsStore((s) => s.closeTab);
- const reorderTabs = useNoteTabsStore((s) => s.reorderTabs);
+ const tabs = useSelector(noteTabsStore, (state) => state.tabs);
+ const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
+ const { setActive, closeTab, reorderTabs } = noteTabsStore.actions;
  const isCoarsePointer = useCoarsePointer();
  const scrollRef = useRef<HTMLDivElement>(null);
 

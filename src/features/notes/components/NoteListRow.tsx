@@ -48,7 +48,7 @@ import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibra
 import { readingStatusLabels } from "@/features/notes/note-library-utils";
 import { cn } from "@/lib/utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import { useNoteTabsStore } from "@/stores/note-tabs-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
 import type { ReadingStatus } from "@/types/database";
 import type { LessonLookup } from "./noteContext";
 import { getNoteContext } from "./noteContext";
@@ -89,7 +89,7 @@ export function NoteListRow({
  const folderBreadcrumb = getFolderBreadcrumb(note.folder_id, folders);
  const metadataMutation = useUpdateNoteLibraryMetadata();
  const deleteMutation = useDeleteNoteFromList();
- const closeTab = useNoteTabsStore((state) => state.closeTab);
+ const { closeTab } = noteTabsStore.actions;
  const [metadataOpen, setMetadataOpen] = useState(false);
  const [deleteOpen, setDeleteOpen] = useState(false);
  const sortedFolders = useMemo(

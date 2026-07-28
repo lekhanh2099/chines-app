@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSelector } from "@tanstack/react-store";
 import { usePathname } from "next/navigation";
 import {
  BasePopover as Popover,
@@ -14,9 +15,9 @@ import { logger } from "@/lib/logger";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
-import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
-import { useInspectorStore } from "@/stores/inspector-store";
-import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { inspectorStore } from "@/stores/inspector-store";
+import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { useTTS } from "@/hooks/useTTS";
 import type { VocabData } from "@/types/database";
 import {
@@ -49,10 +50,14 @@ function getSinoVietnamese(vocabData: VocabData | null) {
 }
 
 export function VocabInspectorProvider({ children }: { children: React.ReactNode }) {
- const { isOpen, anchorRect, openInspector, closeInspector, selectedText } = useInspectorStore();
+ const isOpen = useSelector(inspectorStore, (state) => state.isOpen);
+ const anchorRect = useSelector(inspectorStore, (state) => state.anchorRect);
+ const selectedText = useSelector(inspectorStore, (state) => state.selectedText);
+ const { openInspector, closeInspector } = inspectorStore.actions;
  const pathname = usePathname();
- const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
- const hydrateLookupSettings = useDictionaryLookupStore((s) => s.hydrate);
+ const overrides = useSelector(dictionaryLookupStore, (state) => state.overrides);
+ const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
+ const { hydrate: hydrateLookupSettings } = dictionaryLookupStore.actions;
 
  const handleClose = () => {
   closeInspector();
@@ -95,7 +100,7 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
 
   document.addEventListener("mouseup", handleMouseUp);
   return () => document.removeEventListener("mouseup", handleMouseUp);
- }, [openInspector, lookupEnabled]);
+ }, [openInspector, lookupEnabled, overrides]);
 
  return (
   <>
@@ -138,15 +143,15 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
 }
 
 function InspectorCard({ onClose }: InspectorCardProps) {
- const vocabData = useInspectorStore((state) => state.vocabData);
- const isLoading = useInspectorStore((state) => state.isLoading);
- const selectedText = useInspectorStore((state) => state.selectedText);
+ const vocabData = useSelector(inspectorStore, (state) => state.vocabData);
+ const isLoading = useSelector(inspectorStore, (state) => state.isLoading);
+ const selectedText = useSelector(inspectorStore, (state) => state.selectedText);
  const supabaseRef = useRef(createClient());
  const supabase = supabaseRef.current;
 
  const [isSaving, setIsSaving] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
- const openDetailDrawer = useVocabDetailDrawerStore((state) => state.openDetailDrawer);
+ const { openDetailDrawer } = vocabDetailDrawerStore.actions;
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSaveToVocab = async () => {
