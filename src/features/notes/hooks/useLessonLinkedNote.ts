@@ -9,10 +9,8 @@ import { noteQueryKeys } from "@/features/notes/query-keys";
 import { getNoteByLessonNoteLink, type LessonNoteRelationType } from "@/services/notes.service";
 import { z } from "zod";
 
-const LessonLinkedNoteIdSchema = z.string().nullable().optional();
-
 export function useLessonLinkedNote(
- lessonId: z.input<typeof LessonLinkedNoteIdSchema>,
+ lessonId: z.input<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
  relationType: LessonNoteRelationType = "main",
  fallbackLessonIds: string[] = [],
 ) {

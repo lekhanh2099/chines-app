@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue } from "@/types/json";
 import type { JsonObject } from "@/types/json";
 import { useDeferredValue, useMemo, useState, type ComponentProps } from "react";
@@ -134,7 +136,6 @@ const ChildListSchema = z.object({
   }),
  ),
 });
-type ChildList = z.infer<typeof ChildListSchema>;
 
 const BulkResponseSchema = z.object({
  list: ChildListSchema.optional(),
@@ -183,7 +184,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
   [getEntityId, items],
  );
  const [open, setOpen] = useState(false);
- const [tab, setTab] = useState<ManagerTab>("vocab");
+ const [tab, setTab] = useState<ManagerTab>(ManagerTabSchema.enum.vocab);
  const [rows, setRows] = useState(initialRows);
  const [scope, setScope] = useState<Scope>("lesson");
  const [query, setQuery] = useState("");
@@ -192,9 +193,11 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
  const [showDeleted, setShowDeleted] = useState(false);
  const [page, setPage] = useState(1);
  const [selectedIds, setSelectedIds] = useState<string[]>([]);
- const [selectionMode, setSelectionMode] = useState<SelectionMode>("ids");
+ const [selectionMode, setSelectionMode] = useState<SelectionMode>(SelectionModeSchema.enum.ids);
  const [preview, setPreview] = useState<Nullable<Preview>>(null);
- const [pendingOperation, setPendingOperation] = useState<BulkOperation>("soft_delete");
+ const [pendingOperation, setPendingOperation] = useState<BulkOperation>(
+  BulkOperationSchema.enum.soft_delete,
+ );
  const [purgeCount, setPurgeCount] = useState("");
  const [busy, setBusy] = useState(false);
  const deepItems = items.filter((item): item is TItem & HanziHomeVocabItem => "runtimeId" in item);
@@ -418,7 +421,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
      ) : (
       <div className="grid gap-3">
        <div className="grid gap-2 md:grid-cols-[11rem_11rem_minmax(0,1fr)_auto]">
-        <label className="grid gap-1 text-sm font-bold">
+        <Label variant="label" weight="bold" className="grid gap-1">
          Phạm vi
          <Select
           value={scope}
@@ -440,9 +443,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
            <SelectItem value="course">Giáo trình hiện tại</SelectItem>
           </SelectContent>
          </Select>
-        </label>
+        </Label>
         {tab === "sections" ? (
-         <label className="grid gap-1 text-sm font-bold">
+         <Label variant="label" weight="bold" className="grid gap-1">
           Loại section
           <Select
            value={sectionFilter}
@@ -464,11 +467,11 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
             ))}
            </SelectContent>
           </Select>
-         </label>
+         </Label>
         ) : (
          <span aria-hidden />
         )}
-        <label className="grid gap-1 text-sm font-bold">
+        <Label variant="label" weight="bold" className="grid gap-1">
          Tìm nội dung
          <Input
           value={query}
@@ -480,7 +483,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
           }}
           placeholder="Tiêu đề, Hán tự, nghĩa..."
          />
-        </label>
+        </Label>
         <div className="flex flex-wrap items-end gap-2">
          <Button
           type="button"
@@ -513,10 +516,10 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
         </div>
        </div>
        <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-text-muted">
-        <p>
+        <StudyInstructionText>
          {childList?.total ?? 0} kết quả · Trang {childList?.page ?? page}. Chọn trang chỉ tác động
          các dòng đang thấy; chọn toàn bộ áp dụng đúng bộ lọc hiện tại.
-        </p>
+        </StudyInstructionText>
         <div className="flex flex-wrap gap-2">
          <Button
           type="button"
@@ -557,7 +560,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
        </div>
        {!showDeleted && createWord?.editMeta ? (
         <div className="flex flex-wrap items-end gap-2 rounded-xl border border-border-subtle bg-bg-subtle p-3">
-         <label className="grid min-w-56 gap-1 text-sm font-bold">
+         <Label variant="label" weight="bold" className="grid min-w-56 gap-1">
           Thêm vào một từ
           <Select value={createWord.runtimeId} onValueChange={setCreateWordId}>
            <SelectTrigger width="full">
@@ -571,7 +574,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
             ))}
            </SelectContent>
           </Select>
-         </label>
+         </Label>
          <CreateNormalizedChildDialog
           family="vocab"
           lessonId={lessonId}
@@ -581,35 +584,42 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
        ) : null}
        <div className="grid gap-2">
         {childListQuery.isPending ? (
-         <p className="rounded-xl border border-border-subtle p-4 text-text-muted">Đang tải…</p>
+         <StudyInstructionText tone="muted" className="rounded-xl border border-border-subtle p-4">
+          Đang tải…
+         </StudyInstructionText>
         ) : childListQuery.isError ? (
          <div className="flex items-center justify-between gap-3 rounded-xl border border-danger/30 p-4">
-          <p>Không thể tải danh sách section/ví dụ.</p>
+          <StudyInstructionText>Không thể tải danh sách section/ví dụ.</StudyInstructionText>
           <Button type="button" variant="outline" onClick={() => childListQuery.refetch()}>
            Thử lại
           </Button>
          </div>
         ) : !childList?.rows.length ? (
-         <p className="rounded-xl border border-border-subtle p-4 text-text-muted">
+         <StudyInstructionText tone="muted" className="rounded-xl border border-border-subtle p-4">
           Không có nội dung phù hợp.
-         </p>
+         </StudyInstructionText>
         ) : (
          childList.rows.map((row) => {
           const localEntry = localChildren.get(row.id);
           const content = (
-           <label className="flex min-h-12 items-start gap-3 rounded-xl border border-border-default bg-bg-primary p-3">
+           <Label
+            variant="label"
+            className="flex min-h-12 items-start gap-3 rounded-xl border border-border-default bg-bg-primary p-3"
+           >
             <Checkbox
              checked={selectionMode === "filter" || selectedIds.includes(row.id)}
              onCheckedChange={(checked) => toggle(row.id, checked)}
              aria-label={`Chọn ${row.label}`}
             />
             <span className="min-w-0">
-             <strong className="block text-text-primary">{row.label}</strong>
-             <span className="text-sm text-text-muted">
+             <StudyInstructionText as="strong" tone="default" className="block">
+              {row.label}
+             </StudyInstructionText>
+             <StudyInstructionText as="span" variant="bodySmall" tone="muted">
               {row.word} · {row.sectionKey ?? "Ví dụ"} · {row.lessonId}
-             </span>
+             </StudyInstructionText>
             </span>
-           </label>
+           </Label>
           );
           if (!localEntry || showDeleted) return <div key={row.id}>{content}</div>;
           const child = "section" in localEntry ? localEntry.section : localEntry.example;
@@ -658,9 +668,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
          >
           Trang trước
          </Button>
-         <span className="text-sm text-text-muted">
+         <StudyInstructionText as="span" variant="bodySmall" tone="muted">
           {page}/{Math.ceil(childList.total / PAGE_SIZE)}
-         </span>
+         </StudyInstructionText>
          <Button
           type="button"
           size="sm"
@@ -703,27 +713,27 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
       </DialogDescription>
      </DialogHeader>
      <DialogBody className="grid gap-2">
-      <p>
+      <StudyInstructionText>
        <strong>Scope:</strong> {scope} · {scopeId}
-      </p>
-      <p>
+      </StudyInstructionText>
+      <StudyInstructionText>
        <strong>Số dòng:</strong> {preview?.rowCount ?? 0}
-      </p>
-      <p>
+      </StudyInstructionText>
+      <StudyInstructionText>
        <strong>Số từ bị ảnh hưởng:</strong> {preview?.wordCount ?? 0}
-      </p>
-      <p>
+      </StudyInstructionText>
+      <StudyInstructionText>
        <strong>Ownership:</strong> {JSON.stringify(preview?.ownership ?? {})}
-      </p>
+      </StudyInstructionText>
       {pendingOperation === "purge" ? (
-       <label className="grid gap-1 font-bold">
+       <Label variant="label" weight="bold" className="grid gap-1">
         Nhập lại số dòng để xóa vĩnh viễn
         <Input
          inputMode="numeric"
          value={purgeCount}
          onChange={(event) => setPurgeCount(event.target.value)}
         />
-       </label>
+       </Label>
       ) : null}
      </DialogBody>
      <DialogFooter>

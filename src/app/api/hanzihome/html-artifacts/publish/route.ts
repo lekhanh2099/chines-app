@@ -106,7 +106,7 @@ async function getPublishAuthContext(request: Request): Promise<PublishAuthResul
    context: {
     supabase: createServiceSupabaseClient(),
     ownerId,
-    authMode: "publish_token",
+    authMode: PublishAuthModeSchema.enum.publish_token,
    },
   };
  }

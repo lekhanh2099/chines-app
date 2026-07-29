@@ -34,7 +34,6 @@ export const htmlArtifactFolderRowSchema = z.object({
 });
 
 export type HtmlArtifactRow = z.infer<typeof htmlArtifactRowSchema>;
-export type HtmlArtifactFolderRow = z.infer<typeof htmlArtifactFolderRowSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function mapBase(row: HtmlArtifactRow) {

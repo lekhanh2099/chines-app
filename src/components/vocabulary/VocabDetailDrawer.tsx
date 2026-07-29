@@ -1,10 +1,14 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { Badge } from "@/components/ui/badge";
 import {
  Select,
@@ -130,13 +134,18 @@ export function VocabDetailDrawer() {
    <div className="grid gap-3 border-b border-border-default px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
     <div className="min-w-0">
      <div className="flex items-center gap-2">
-      <p
-       className="truncate text-3xl font-black leading-tight text-text-primary"
+      <Typography
+       as="p"
+       variant="display"
+       tone="default"
+       weight="black"
+       clamp="one"
+       leading="tight"
        lang="zh-CN"
        style={{ fontFamily: getHanziFontFamily(hanziFont) }}
       >
        {smartData?.entry.hanzi || text}
-      </p>
+      </Typography>
       <Button
        type="button"
        variant="ghost"
@@ -155,11 +164,15 @@ export function VocabDetailDrawer() {
       </Button>
      </div>
      {smartData?.entry.pinyin && (
-      <p className="mt-1 font-semibold text-accent-text">{smartData.entry.pinyin}</p>
+      <Typography as="p" tone="accent" weight="semibold" className="mt-1">
+       {smartData.entry.pinyin}
+      </Typography>
      )}
     </div>
-    <label className="grid gap-1">
-     <span className="text-xs font-bold text-text-muted">Kiểu chữ Hán</span>
+    <Label variant="label" className="grid gap-1">
+     <Typography variant="caption" tone="muted" weight="bold">
+      Kiểu chữ Hán
+     </Typography>
      <Select
       value={hanziFont}
       onValueChange={(value) => {
@@ -174,19 +187,20 @@ export function VocabDetailDrawer() {
       <SelectContent align="end">
        {drawerFontOptions.map((option) => (
         <SelectItem key={option.value} value={option.value}>
-         <span
+         <Typography
+          as="span"
           lang="zh-CN"
-          className="text-lg"
+          variant="sectionTitle"
           style={{ fontFamily: getHanziFontFamily(option.value) }}
          >
           文
-         </span>
+         </Typography>
          {option.label}
         </SelectItem>
        ))}
       </SelectContent>
      </Select>
-    </label>
+    </Label>
    </div>
 
    <SheetBody>
@@ -288,14 +302,27 @@ function WordDetailPanel({
    <div className="rounded-2xl border border-border-default bg-bg-card p-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <div>
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Header</p>
-      <p className="mt-1 text-base font-semibold text-text-primary">{displayMeaning}</p>
+      <Typography
+       as="p"
+       variant="overline"
+       tone="muted"
+       weight="bold"
+       scale="micro"
+       tracking="extraLoose"
+       transform="uppercase"
+      >
+       Header
+      </Typography>
+      <Typography as="p" tone="default" weight="semibold" className="mt-1">
+       {displayMeaning}
+      </Typography>
      </div>
-     <button
+     <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover: disabled:opacity-50"
+      variant="outline"
+      className="inline-flex"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -305,41 +332,49 @@ function WordDetailPanel({
        <BookmarkPlus className="h-4 w-4" />
       )}
       {smartData.isSaved ? "Đã lưu" : "Lưu"}
-     </button>
+     </Button>
     </div>
    </div>
 
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
      <div>
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Giải phẫu</p>
+      <Typography
+       as="p"
+       variant="overline"
+       tone="muted"
+       weight="bold"
+       scale="micro"
+       tracking="extraLoose"
+       transform="uppercase"
+      >
+       Giải phẫu
+      </Typography>
       {characters.length > 1 && (
        <div className="mt-2 flex flex-wrap gap-2">
         {characters.map((character) => (
-         <button
+         <Chip
           key={character}
-          type="button"
+          size="sm"
+          pressed={visualCharacter === character}
+          variant={visualCharacter === character ? "accent" : "default"}
           onClick={() => setActiveCharacter(character)}
-          className={`inline-flex h-8 min-w-8 items-center justify-center rounded-md border px-2 font-bold transition-colors ${
-           visualCharacter === character
-            ? "border-accent bg-accent "
-            : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover: "
-          }`}
          >
           {character}
-         </button>
+         </Chip>
         ))}
        </div>
       )}
      </div>
      {visualCharacter && visualCharacter !== smartData.entry.hanzi && (
-      <button
+      <Button
        type="button"
        onClick={() => onDrillCharacter(visualCharacter)}
-       className="text-xs font-semibold  hover: -hover"
+       variant="ghost"
+       className="-hover"
       >
        Tra riêng chữ này
-      </button>
+      </Button>
      )}
     </div>
 
@@ -348,9 +383,18 @@ function WordDetailPanel({
 
      <div className="grid gap-3 md:grid-cols-2">
       <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
+       <Typography
+        as="p"
+        variant="overline"
+        tone="muted"
+        weight="bold"
+        scale="micro"
+        tracking="extraLoose"
+        transform="uppercase"
+        className="mb-2"
+       >
         Bộ thủ
-       </p>
+       </Typography>
        {radicals.length > 0 ? (
         <div className="space-y-2">
          {radicals.slice(0, 4).map((radical, index) => (
@@ -358,40 +402,70 @@ function WordDetailPanel({
            key={`${radical.char || radical.meaning || "radical"}-${index}`}
            className="rounded-2xl border border-border-default bg-bg-card px-3 py-2"
           >
-           <p className="text-base font-bold text-text-primary">{radical.char || "?"}</p>
-           <p className="text-xs font-semibold ">{radical.pinyin}</p>
-           <p className="text-xs text-text-secondary">{radical.meaning}</p>
+           <Typography as="p" tone="default" weight="bold">
+            {radical.char || "?"}
+           </Typography>
+           <Typography as="p" variant="caption" weight="semibold">
+            {radical.pinyin}
+           </Typography>
+           <Typography as="p" variant="caption" tone="secondary">
+            {radical.meaning}
+           </Typography>
           </div>
          ))}
         </div>
        ) : (
-        <p className=" text-text-muted">Chưa có dữ liệu bộ thủ.</p>
+        <Typography as="p" tone="muted">
+         Chưa có dữ liệu bộ thủ.
+        </Typography>
        )}
       </div>
 
       <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
+       <Typography
+        as="p"
+        variant="overline"
+        tone="muted"
+        weight="bold"
+        scale="micro"
+        tracking="extraLoose"
+        transform="uppercase"
+        className="mb-2"
+       >
         Lục thư
-       </p>
+       </Typography>
        {etymologyType && <Badge variant="accent">{etymologyType}</Badge>}
-       <p className="mt-2 leading-relaxed text-text-secondary">
+       <Typography as="p" tone="secondary" leading="relaxed" className="mt-2">
         {etymologyText || "Chưa có phân tích nguồn gốc."}
-       </p>
+       </Typography>
       </div>
      </div>
     </div>
    </section>
    {ai?.mnemonic_story && (
     <div className="mt-3 rounded-xl bg-warning-subtle p-3">
-     <p className="mb-1.5 text-xs font-bold text-warning-text">AI gợi ý mẹo nhớ</p>
-     <p className="leading-relaxed text-text-primary">{ai.mnemonic_story}</p>
+     <Typography as="p" variant="caption" tone="warning" weight="bold" className="mb-1.5">
+      AI gợi ý mẹo nhớ
+     </Typography>
+     <Typography as="p" tone="default" leading="relaxed">
+      {ai.mnemonic_story}
+     </Typography>
     </div>
    )}
 
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+    <Typography
+     as="p"
+     variant="overline"
+     tone="muted"
+     weight="bold"
+     scale="micro"
+     tracking="extraLoose"
+     transform="uppercase"
+     className="mb-3"
+    >
      Ngữ nghĩa & Ví dụ
-    </p>
+    </Typography>
     <div className="space-y-4">
      {definitions.length > 0 ? (
       definitions.map((definition, index) => {
@@ -410,14 +484,19 @@ function WordDetailPanel({
          className="rounded-2xl border border-border-default bg-bg-primary p-3"
         >
          <div className="flex items-center gap-2">
-          <span className="rounded-full bg-accent px-2 py-1 text-[10px] font-bold ">
+          <Typography
+           variant="caption"
+           weight="bold"
+           scale="micro"
+           className="rounded-full bg-accent px-2 py-1"
+          >
            {index + 1}
-          </span>
+          </Typography>
           {definition.pos && <Badge variant="info">{definition.pos}</Badge>}
          </div>
-         <p className="mt-2 font-semibold text-text-primary">
+         <Typography as="p" tone="default" weight="semibold" className="mt-2">
           {definition.meaning || definition.text}
-         </p>
+         </Typography>
          {definitionExamples.length > 0 && (
           <div className="mt-3 space-y-2 border-l-2 border-accent/20 pl-3">
            {definitionExamples.map((example, exampleIndex) => (
@@ -436,9 +515,17 @@ function WordDetailPanel({
 
      {examples.length > 0 && (
       <div className="space-y-2">
-       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+       <Typography
+        as="p"
+        variant="overline"
+        tone="muted"
+        weight="bold"
+        scale="micro"
+        tracking="extraLoose"
+        transform="uppercase"
+       >
         Ví dụ nổi bật
-       </p>
+       </Typography>
        <div className="grid gap-2 md:grid-cols-2">
         {examples.slice(0, 4).map((example, index) => (
          <ExampleCard key={`${example.zh}-${index}`} example={example} />
@@ -448,9 +535,17 @@ function WordDetailPanel({
      )}
 
      <div className="space-y-2">
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+      <Typography
+       as="p"
+       variant="overline"
+       tone="muted"
+       weight="bold"
+       scale="micro"
+       tracking="extraLoose"
+       transform="uppercase"
+      >
        Từ ghép liên quan
-      </p>
+      </Typography>
       <div className="space-y-3">
        <RelationList
         title="Từ ghép"
@@ -477,24 +572,34 @@ function WordDetailPanel({
 
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
-     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+     <Typography
+      as="p"
+      variant="overline"
+      tone="muted"
+      weight="bold"
+      scale="micro"
+      tracking="extraLoose"
+      transform="uppercase"
+     >
       Ghi chú cá nhân
-     </p>
-     <button
+     </Typography>
+     <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover: disabled:opacity-50"
+      variant="outline"
+      className="inline-flex"
      >
       {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
       Lưu note
-     </button>
+     </Button>
     </div>
-    <textarea
+    <Textarea
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
+     density="comfortable"
+     className="w-full"
     />
    </section>
   </div>
@@ -519,30 +624,56 @@ function SentenceDetailPanel({
  return (
   <div className="space-y-5">
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
+    <Typography
+     as="p"
+     variant="overline"
+     tone="muted"
+     weight="bold"
+     scale="micro"
+     tracking="extraLoose"
+     transform="uppercase"
+     className="mb-2"
+    >
      Dịch nghĩa
-    </p>
-    <p className=" leading-relaxed text-text-primary">
+    </Typography>
+    <Typography as="p" tone="default" leading="relaxed">
      {smartData.translation || smartData.entry.meaning || "Chưa có bản dịch."}
-    </p>
+    </Typography>
    </section>
 
    {smartData.grammar_points.length > 0 && (
     <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-     <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+     <Typography
+      as="p"
+      variant="overline"
+      tone="muted"
+      weight="bold"
+      scale="micro"
+      tracking="extraLoose"
+      transform="uppercase"
+      className="mb-3"
+     >
       Ghi chú ngữ pháp
-     </p>
+     </Typography>
      <div className="space-y-2">
       {smartData.grammar_points.map((point, index) => (
        <div
         key={`${point.pattern || "grammar"}-${index}`}
         className="rounded-2xl border border-border-default bg-bg-primary p-3"
        >
-        <p className="text-xs font-semibold uppercase tracking-wide ">
+        <Typography
+         as="p"
+         variant="overline"
+         weight="semibold"
+         tracking="wide"
+         transform="uppercase"
+        >
          {point.pattern || `Điểm ${index + 1}`}
-        </p>
+        </Typography>
         {point.explanation && (
-         <p className="mt-1 leading-relaxed text-text-secondary">{point.explanation}</p>
+         <Typography as="p" tone="secondary" leading="relaxed" className="mt-1">
+          {point.explanation}
+         </Typography>
         )}
        </div>
       ))}
@@ -551,27 +682,40 @@ function SentenceDetailPanel({
    )}
 
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+    <Typography
+     as="p"
+     variant="overline"
+     tone="muted"
+     weight="bold"
+     scale="micro"
+     tracking="extraLoose"
+     transform="uppercase"
+     className="mb-3"
+    >
      Bấm từng hán tự để học sâu
-    </p>
+    </Typography>
     <div className="flex flex-wrap gap-2">
      {Array.from(text).map((char, index) =>
       HANZI_CHAR_REGEX.test(char) ? (
-       <button
+       <Button
         key={`${char}-${index}`}
         type="button"
         onClick={() => onCharacterSelect(char)}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-border-default bg-bg-primary px-2 text-base font-bold text-text-primary transition-colors hover:border-accent hover: "
+        variant="outline"
+        size="icon-sm"
+        className="inline-flex min-w-10"
        >
         {char}
-       </button>
+       </Button>
       ) : (
-       <span
+       <Typography
+        as="span"
         key={`${char}-${index}`}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-bg-subtle px-2 text-text-muted"
+        tone="muted"
+        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-bg-subtle px-2"
        >
         {char}
-       </span>
+       </Typography>
       ),
      )}
     </div>
@@ -579,24 +723,34 @@ function SentenceDetailPanel({
 
    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
-     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+     <Typography
+      as="p"
+      variant="overline"
+      tone="muted"
+      weight="bold"
+      scale="micro"
+      tracking="extraLoose"
+      transform="uppercase"
+     >
       Ghi chú cá nhân
-     </p>
-     <button
+     </Typography>
+     <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover: disabled:opacity-50"
+      variant="outline"
+      className="inline-flex"
      >
       {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
       Lưu note
-     </button>
+     </Button>
     </div>
-    <textarea
+    <Textarea
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
      placeholder="Ghi chú cách hiểu câu, cấu trúc hoặc lỗi dễ mắc..."
-     className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-text-primary outline-none placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
+     density="comfortable"
+     className="w-full"
     />
    </section>
   </div>
@@ -606,9 +760,19 @@ function SentenceDetailPanel({
 function ExampleCard({ example }: { example: { zh: string; pinyin: string; vi: string } }) {
  return (
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-   <p className=" font-medium text-text-primary">{example.zh}</p>
-   {example.pinyin && <p className="text-xs font-semibold ">{example.pinyin}</p>}
-   {example.vi && <p className="text-xs text-text-secondary italic">{example.vi}</p>}
+   <Typography as="p" tone="default" weight="medium">
+    {example.zh}
+   </Typography>
+   {example.pinyin && (
+    <Typography as="p" variant="caption" weight="semibold">
+     {example.pinyin}
+    </Typography>
+   )}
+   {example.vi && (
+    <Typography as="p" variant="caption" tone="secondary" emphasis="italic">
+     {example.vi}
+    </Typography>
+   )}
   </div>
  );
 }
@@ -626,7 +790,17 @@ function RelationList({
 }) {
  return (
   <div className="space-y-2">
-   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">{title}</p>
+   <Typography
+    as="p"
+    variant="overline"
+    tone="muted"
+    weight="bold"
+    scale="micro"
+    tracking="extraLoose"
+    transform="uppercase"
+   >
+    {title}
+   </Typography>
    {items.length > 0 ? (
     <div className="space-y-2">
      {items.map((item, index) => {
@@ -634,22 +808,30 @@ function RelationList({
       if (!word) return null;
 
       return (
-       <button
+       <Button
         key={`${title}-${word}-${index}`}
         type="button"
         onClick={() => onSelect(word)}
-        className="flex w-full items-start justify-between gap-3 rounded-2xl border border-accent/20 bg-accent/8 px-3 py-2.5 text-left transition-colors hover:bg-accent/15"
+        variant="outline"
+        align="start"
+        className="flex w-full"
        >
         <div className="min-w-0">
          <div className="flex flex-wrap items-center gap-2">
-          <span className="text-base font-bold text-text-primary">{word}</span>
-          {item.pinyin && <span className="text-xs font-semibold ">{item.pinyin}</span>}
+          <Typography tone="default" weight="bold">
+           {word}
+          </Typography>
+          {item.pinyin && (
+           <Typography variant="caption" weight="semibold">
+            {item.pinyin}
+           </Typography>
+          )}
          </div>
-         <p className="mt-1 leading-relaxed text-text-secondary">
+         <Typography as="p" tone="secondary" leading="relaxed" className="mt-1">
           {item.meaning || "Chưa có nghĩa."}
-         </p>
+         </Typography>
         </div>
-       </button>
+       </Button>
       );
      })}
     </div>

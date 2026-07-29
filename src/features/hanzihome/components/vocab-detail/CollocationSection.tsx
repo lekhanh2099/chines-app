@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { Collocation } from "@/features/hanzihome/schemas/vocab.types";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
@@ -23,13 +24,23 @@ export function CollocationSection({
     {collocations.map((collocation, index) => (
      <div key={collocation.id || index}>
       <div className="rounded-xl border border-border-default bg-bg-primary p-3">
-       <p className="font-black text-text-primary">{collocation.zh}</p>
-       {collocation.pinyin && <p className="italic text-text-muted">{collocation.pinyin}</p>}
-       {collocation.vi && <p>{collocation.vi}</p>}
-       {collocation.pattern && (
-        <p className="font-semibold text-accent-text">{collocation.pattern}</p>
+       <StudyInstructionText tone="default" weight="black">
+        {collocation.zh}
+       </StudyInstructionText>
+       {collocation.pinyin && (
+        <StudyInstructionText tone="muted" emphasis="italic">
+         {collocation.pinyin}
+        </StudyInstructionText>
        )}
-       {collocation.note_vi && <p className="text-text-muted">{collocation.note_vi}</p>}
+       {collocation.vi && <StudyInstructionText>{collocation.vi}</StudyInstructionText>}
+       {collocation.pattern && (
+        <StudyInstructionText tone="accent" weight="semibold">
+         {collocation.pattern}
+        </StudyInstructionText>
+       )}
+       {collocation.note_vi && (
+        <StudyInstructionText tone="muted">{collocation.note_vi}</StudyInstructionText>
+       )}
       </div>
      </div>
     ))}

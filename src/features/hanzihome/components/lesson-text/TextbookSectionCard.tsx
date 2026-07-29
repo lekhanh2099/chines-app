@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { BookSectionContent } from "@/features/hanzihome/components/LessonOverview";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
@@ -26,12 +28,23 @@ export function TextbookSectionCard({
   <>
    <article className="grid gap-3">
     <div>
-     <p className="text-[0.7rem] font-black uppercase tracking-wide text-text-muted">
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      scale="fine"
+      tracking="wide"
+      transform="uppercase"
+     >
       {section.type.replaceAll("_", " ")}
-     </p>
-     <h2 className="text-lg font-black text-text-primary sm:text-xl">{sectionTitle(section)}</h2>
+     </StudyInstructionText>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+      {sectionTitle(section)}
+     </Typography>
      {sectionSubtitle(section) && (
-      <p className=" font-semibold text-text-muted">{sectionSubtitle(section)}</p>
+      <StudyInstructionText tone="muted" weight="semibold">
+       {sectionSubtitle(section)}
+      </StudyInstructionText>
      )}
     </div>
 

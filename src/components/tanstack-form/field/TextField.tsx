@@ -3,6 +3,7 @@ import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { IOptionValueSchema } from "@/types/option";
 import { z } from "zod";
+import { Input } from "@/components/ui/input";
 
 type TextFieldOwnedProps = {
  required?: never;
@@ -29,11 +30,12 @@ export function TextField({
    helperText={helperText}
    {...rest}
   >
-   <input
+   <Input
     value={field.state.value}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="h-12 w-full rounded-2xl border border-border-default bg-bg-input px-4 text-base text-text-primary outline-none transition-all placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
+    density="comfortable"
+    surface="field"
     {...inputProps}
    />
   </FieldItem>

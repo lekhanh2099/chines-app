@@ -27,7 +27,6 @@ const LearningStateLocalRecordSchema = z.object({
 export type LearningStateLocalRecord = z.infer<typeof LearningStateLocalRecordSchema>;
 
 const PendingMutationStatusSchema = z.enum(["pending", "syncing", "failed"]);
-export type PendingMutationStatus = z.infer<typeof PendingMutationStatusSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 const PendingLearningStateMutationSchema = z.object({

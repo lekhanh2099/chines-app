@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -89,7 +91,9 @@ export function VocabDetailPanel({
  if (!word) {
   return (
    <Card variant="subtle" padding="lg">
-    <p className="font-semibold text-text-muted">Chọn một từ để xem chi tiết.</p>
+    <StudyInstructionText tone="muted" weight="semibold">
+     Chọn một từ để xem chi tiết.
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -171,8 +175,12 @@ export function VocabDetailPanel({
      <Card variant="default" padding="md">
       <div className="grid gap-4">
        <div>
-        <h2 className="font-black text-text-primary">Nét viết</h2>
-        <p className="text-sm text-text-muted">Xem thứ tự nét hoặc luyện viết từng chữ.</p>
+        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+         Nét viết
+        </Typography>
+        <StudyInstructionText variant="bodySmall" tone="muted">
+         Xem thứ tự nét hoặc luyện viết từng chữ.
+        </StudyInstructionText>
        </div>
 
        {writableCharacters.length > 1 && (

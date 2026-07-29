@@ -1,3 +1,5 @@
+import { Typography } from "@/components/ui/typography";
+import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { CircleAlert, Sparkles } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -15,12 +17,16 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
     <div className="flex items-start justify-between gap-4">
      <div className="grid gap-1">
       <div className="flex flex-wrap items-baseline gap-3">
-       <h2 lang="zh-CN" className="font-hanzi text-4xl font-black text-text-primary">
+       <LearnerHanziText as="h2" variant="sectionTitle" tone="default" weight="black">
         {item.term}
-       </h2>
-       <span className="font-bold text-accent-text">{item.p}</span>
+       </LearnerHanziText>
+       <Typography as="span" tone="accent" weight="bold">
+        {item.p}
+       </Typography>
       </div>
-      <p className="text-base font-bold text-text-secondary">{item.vi}</p>
+      <Typography as="p" tone="secondary" weight="bold">
+       {item.vi}
+      </Typography>
      </div>
      <div className="flex flex-wrap justify-end gap-1">
       {item.tags.slice(0, 2).map((tag) => (
@@ -36,41 +42,81 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
       <Sparkles className="h-4 w-4" />
       Bản chất
      </div>
-     <p className="font-semibold leading-6 text-text-primary">{item.essence}</p>
+     <Typography as="p" tone="default" weight="semibold" leading="standard">
+      {item.essence}
+     </Typography>
     </div>
 
     <div className="grid gap-2">
-     <p className="text-xs font-black uppercase tracking-[0.16em] text-text-muted">Công thức</p>
-     <p
+     <Typography
+      as="p"
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="loose"
+      transform="uppercase"
+     >
+      Công thức
+     </Typography>
+     <Typography
+      as="p"
       lang="zh-CN"
-      className="rounded-xl border border-border-default bg-bg-card/80 px-4 py-3 font-mono text-sm font-bold text-accent-text"
+      variant="code"
+      tone="accent"
+      weight="bold"
+      className="rounded-xl border border-border-default bg-bg-card/80 px-4 py-3"
      >
       {item.pattern}
-     </p>
+     </Typography>
     </div>
 
     <div className="grid gap-3 sm:grid-cols-2">
      <div className="rounded-xl bg-bg-subtle p-4 grid gap-2">
-      <p className="text-xs font-black uppercase tracking-[0.14em] text-text-muted">Dùng khi</p>
-      <p className="text-sm font-medium leading-6 text-text-secondary">{item.use}</p>
+      <Typography
+       as="p"
+       variant="overline"
+       tone="muted"
+       weight="black"
+       tracking="overline"
+       transform="uppercase"
+      >
+       Dùng khi
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="secondary" weight="medium" leading="standard">
+       {item.use}
+      </Typography>
      </div>
      <div className="rounded-xl bg-bg-subtle p-4 grid gap-2">
-      <p className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.14em] text-danger">
+      <Typography
+       as="p"
+       variant="overline"
+       tone="dangerStrong"
+       weight="black"
+       tracking="overline"
+       transform="uppercase"
+       className="flex items-center gap-1.5"
+      >
        <CircleAlert className="h-4 w-4" />
        Tránh
-      </p>
-      <p className="text-sm font-medium leading-6 text-text-secondary">{item.avoid}</p>
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="secondary" weight="medium" leading="standard">
+       {item.avoid}
+      </Typography>
      </div>
     </div>
 
     <NotebookDeepDive deepDive={deepDive} />
 
     <div className="border-t border-border-default pt-4 grid gap-1">
-     <p lang="zh-CN" className="font-hanzi text-2xl leading-relaxed text-text-primary">
+     <LearnerHanziText as="p" variant="pageTitle" tone="default" leading="relaxed">
       {item.ex[0]}
-     </p>
-     <p className="text-sm font-semibold italic text-accent-text">{item.ex[1]}</p>
-     <p className="text-sm font-medium text-text-muted">{item.ex[2]}</p>
+     </LearnerHanziText>
+     <Typography as="p" variant="bodySmall" tone="accent" weight="semibold" emphasis="italic">
+      {item.ex[1]}
+     </Typography>
+     <Typography as="p" variant="bodySmall" tone="muted" weight="medium">
+      {item.ex[2]}
+     </Typography>
     </div>
    </div>
   </Card>

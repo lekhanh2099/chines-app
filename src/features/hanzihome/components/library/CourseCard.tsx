@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -93,15 +95,26 @@ export function CourseCard({
   >
    <div className="flex min-w-0 items-center justify-between gap-3">
     <div className="flex min-w-0 items-center gap-2">
-     <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+     <StudyInstructionText
+      as="span"
+      tone="accent"
+      className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle"
+     >
       <BookMarked className="size-4" />
-     </span>
+     </StudyInstructionText>
 
      <div className="min-w-0 flex-1">
       <div className="flex min-w-0 items-center gap-1.5">
-       <h4 className="truncate text-base font-black leading-snug text-text-primary">
+       <Typography
+        as="h4"
+        variant="cardTitle"
+        tone="default"
+        weight="black"
+        clamp="one"
+        leading="snug"
+       >
         {book.shortTitle || book.title}
-       </h4>
+       </Typography>
        {editMode ? (
         <BookCrudActions book={book} canMoveUp={canMoveBookUp} canMoveDown={canMoveBookDown} />
        ) : null}

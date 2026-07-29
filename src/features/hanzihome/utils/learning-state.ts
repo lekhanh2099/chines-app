@@ -6,7 +6,9 @@ import type {
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { z } from "zod";
 
-const PartialLearningStateSchema = userLearningStateSchema.partial().nullable().optional();
+type PartialLearningState = z.infer<
+ z.ZodOptional<z.ZodNullable<ReturnType<typeof userLearningStateSchema.partial>>>
+>;
 
 export const emptyLearningState: UserLearningState = {
  settings: {},
@@ -23,9 +25,7 @@ export const emptyLearningState: UserLearningState = {
  reviewHistory: [],
 };
 
-export function normalizeLearningState(
- value: z.infer<typeof PartialLearningStateSchema>,
-): UserLearningState {
+export function normalizeLearningState(value: PartialLearningState): UserLearningState {
  return {
   settings: value?.settings || {},
   progress: {

@@ -14,6 +14,11 @@ import {
 } from "@/components/ui/dialog";
 import { GrammarPointReader } from "@/features/hanzihome/components/grammar/GrammarPointReader";
 import {
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
  hasCultureContent,
  hasWarningContent,
 } from "@/features/hanzihome/components/vocab-detail/content-checks";
@@ -53,16 +58,20 @@ function ReviewVocabDetailContent({
      <div className="grid gap-3">
       <div className="flex flex-wrap items-start justify-between gap-3">
        <div className="min-w-0 grid gap-1">
-        <h2
-         className="break-words font-hanzi text-5xl font-black leading-tight tracking-normal text-text-primary"
-         lang="zh-CN"
+        <HanziText
+         as="h2"
+         size="review"
+         weight="black"
+         leading="tight"
+         tracking="normal"
+         wrapping="breakWords"
         >
          {word.hanzi}
-        </h2>
-        <p className="text-lg font-black text-accent-text">
+        </HanziText>
+        <PinyinText as="p" variant="sectionTitle" tone="accent">
          {word.pinyin}
          {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
-        </p>
+        </PinyinText>
        </div>
 
        <Button
@@ -85,14 +94,22 @@ function ReviewVocabDetailContent({
 
       <div className="grid gap-2 text-base font-semibold leading-relaxed text-text-primary">
        {word.meaning.short_definition_vi && (
-        <p className="text-lg font-black">{word.meaning.short_definition_vi}</p>
+        <StudyInstructionText variant="sectionTitle" weight="black">
+         {word.meaning.short_definition_vi}
+        </StudyInstructionText>
        )}
-       {displayMeaning && <p>{displayMeaning}</p>}
-       {naturalTranslations.length > 0 && <p>Tự nhiên: {naturalTranslations.join(", ")}</p>}
-       {word.meaning.register_vi && <p>Sắc thái: {word.meaning.register_vi}</p>}
-       {word.meaning.usage_domain_vi && <p>Phạm vi dùng: {word.meaning.usage_domain_vi}</p>}
+       {displayMeaning && <StudyInstructionText>{displayMeaning}</StudyInstructionText>}
+       {naturalTranslations.length > 0 && (
+        <StudyInstructionText>Tự nhiên: {naturalTranslations.join(", ")}</StudyInstructionText>
+       )}
+       {word.meaning.register_vi && (
+        <StudyInstructionText>Sắc thái: {word.meaning.register_vi}</StudyInstructionText>
+       )}
+       {word.meaning.usage_domain_vi && (
+        <StudyInstructionText>Phạm vi dùng: {word.meaning.usage_domain_vi}</StudyInstructionText>
+       )}
        {word.meaning.notes.map((note) => (
-        <p key={note.text_vi}>{note.text_vi}</p>
+        <StudyInstructionText key={note.text_vi}>{note.text_vi}</StudyInstructionText>
        ))}
       </div>
      </div>
@@ -100,15 +117,33 @@ function ReviewVocabDetailContent({
 
     {word.examples[0]?.zh && (
      <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-2">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ví dụ nhanh</p>
-      <p className="text-xl font-black leading-relaxed text-text-primary" lang="zh-CN">
+      <StudyInstructionText
+       variant="overline"
+       tone="muted"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       Ví dụ nhanh
+      </StudyInstructionText>
+      <StudyInstructionText
+       variant="sectionTitle"
+       tone="default"
+       weight="black"
+       leading="relaxed"
+       lang="zh-CN"
+      >
        {word.examples[0].zh}
-      </p>
+      </StudyInstructionText>
       {word.examples[0].pinyin && (
-       <p className="font-bold text-accent-text">{word.examples[0].pinyin}</p>
+       <StudyInstructionText tone="accent" weight="bold">
+        {word.examples[0].pinyin}
+       </StudyInstructionText>
       )}
       {word.examples[0].vi && (
-       <p className="font-semibold text-text-muted">{word.examples[0].vi}</p>
+       <StudyInstructionText tone="muted" weight="semibold">
+        {word.examples[0].vi}
+       </StudyInstructionText>
       )}
      </section>
     )}
@@ -124,7 +159,15 @@ function ReviewVocabDetailContent({
    <aside className="grid min-w-0 content-start gap-4">
     {word.word_formation.characters.length > 0 && (
      <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-3">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Cấu tạo chữ</p>
+      <StudyInstructionText
+       variant="overline"
+       tone="muted"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       Cấu tạo chữ
+      </StudyInstructionText>
       <WordFormationPreview formation={word.word_formation} />
      </section>
     )}

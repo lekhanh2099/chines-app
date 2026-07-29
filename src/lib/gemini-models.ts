@@ -89,22 +89,23 @@ export const GeminiModelIdSchema = z
  .string()
  .refine((model) => GEMINI_TEXT_MODEL_OPTIONS.some((option) => option.value === model));
 export type GeminiModelId = z.infer<typeof GeminiModelIdSchema>;
-const OptionalNullableModelSchema = z.string().nullable().optional();
 
 export function isGeminiModelId(
- model: z.infer<typeof OptionalNullableModelSchema>,
+ model: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
 ): model is GeminiModelId {
  return GEMINI_TEXT_MODEL_OPTIONS.some((option) => option.value === model);
 }
 
 export function normalizeGeminiModel(
- model?: z.infer<typeof OptionalNullableModelSchema>,
+ model?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
 ): GeminiModelId {
  const matched = GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model);
  return matched?.value || DEFAULT_GEMINI_MODEL;
 }
 
-export function getGeminiModelLabel(model?: z.infer<typeof OptionalNullableModelSchema>): string {
+export function getGeminiModelLabel(
+ model?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
+): string {
  return (
   GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === model)?.label ||
   GEMINI_TEXT_MODEL_OPTIONS.find((option) => option.value === DEFAULT_GEMINI_MODEL)?.label ||

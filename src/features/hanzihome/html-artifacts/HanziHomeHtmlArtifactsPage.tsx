@@ -1,6 +1,17 @@
 "use client";
+
+import { Label } from "@/components/ui/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
-import type { ComponentProps, DragEvent, FormEvent, KeyboardEvent, MouseEvent } from "react";
+import type {
+ ComponentProps,
+ CSSProperties,
+ DragEvent,
+ FormEvent,
+ KeyboardEvent,
+ MouseEvent,
+} from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -80,9 +91,7 @@ import type {
  HtmlArtifactType,
 } from "./html-artifact.schema";
 import {
- htmlArtifactFolderColorSchema,
  htmlArtifactFolderSchema,
- htmlArtifactRuntimeStateSchema,
  htmlArtifactSummarySchema,
  htmlArtifactTypeSchema,
 } from "./html-artifact.schema";
@@ -117,13 +126,21 @@ const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
  slate: "bg-bg-subtle text-text-secondary ring-border-default",
 };
 
-const folderColorSwatchClasses: Record<HtmlArtifactFolderColor, string> = {
- blue: "border-info bg-info",
- purple: "border-purple bg-purple",
- green: "border-success bg-success",
- orange: "border-warning bg-warning",
- rose: "border-danger bg-danger",
- slate: "border-border-default bg-text-muted",
+type FolderColorSwatchStyle = {
+ backgroundColor: CSSProperties["backgroundColor"];
+ borderColor: CSSProperties["borderColor"];
+};
+
+const folderColorSwatchStyles: Record<HtmlArtifactFolderColor, FolderColorSwatchStyle> = {
+ blue: { backgroundColor: "var(--color-info)", borderColor: "var(--color-info)" },
+ purple: { backgroundColor: "var(--color-purple)", borderColor: "var(--color-purple)" },
+ green: { backgroundColor: "var(--color-success)", borderColor: "var(--color-success)" },
+ orange: { backgroundColor: "var(--color-warning)", borderColor: "var(--color-warning)" },
+ rose: { backgroundColor: "var(--color-danger)", borderColor: "var(--color-danger)" },
+ slate: {
+  backgroundColor: "var(--color-text-muted)",
+  borderColor: "var(--color-border-default)",
+ },
 };
 
 const folderColorSequence: HtmlArtifactFolderColor[] = [
@@ -156,40 +173,43 @@ type ArtifactSubmitHandler = (
 ) => Promise<void>;
 
 const NullableStringSchema = z.string().nullable();
-const NullableNumberSchema = z.number().nullable();
+
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-const NullableHtmlArtifactSchema = z
- .object({
-  ...htmlArtifactSummarySchema.shape,
-  html: z.string(),
- })
- .nullable();
-const NullableHtmlArtifactSummarySchema = htmlArtifactSummarySchema.nullable();
 const PublishConnectionInfoSchema = z.object({
  sessionUserId: NullableStringSchema,
  publishTokenEnabled: z.boolean(),
  publishOwnerId: NullableStringSchema,
  serviceRoleEnabled: z.boolean(),
 });
-const NullablePublishConnectionInfoSchema = PublishConnectionInfoSchema.nullable();
-type PublishConnectionInfo = z.infer<typeof PublishConnectionInfoSchema>;
 
-const DeleteDialogStateSchema = z.discriminatedUnion("kind", [
- z.object({ kind: z.literal("artifact"), artifact: htmlArtifactSummarySchema }),
- z.object({ kind: z.literal("folder"), folder: htmlArtifactFolderSchema }),
-]);
-const NullableDeleteDialogStateSchema = DeleteDialogStateSchema.nullable();
-type DeleteDialogState = z.infer<typeof DeleteDialogStateSchema>;
+type DeleteDialogState = z.infer<
+ z.ZodDiscriminatedUnion<
+  [
+   z.ZodObject<{
+    kind: z.ZodLiteral<"artifact">;
+    artifact: typeof htmlArtifactSummarySchema;
+   }>,
+   z.ZodObject<{
+    kind: z.ZodLiteral<"folder">;
+    folder: typeof htmlArtifactFolderSchema;
+   }>,
+  ],
+  "kind"
+ >
+>;
 
-const DragItemSchema = z.discriminatedUnion("type", [
- z.object({ type: z.literal("artifact"), id: z.string() }),
- z.object({ type: z.literal("folder"), id: z.string() }),
-]);
-const NullableDragItemSchema = DragItemSchema.nullable();
-type DragItem = z.infer<typeof DragItemSchema>;
+type DragItem = z.infer<
+ z.ZodDiscriminatedUnion<
+  [
+   z.ZodObject<{ type: z.ZodLiteral<"artifact">; id: z.ZodString }>,
+   z.ZodObject<{ type: z.ZodLiteral<"folder">; id: z.ZodString }>,
+  ],
+  "type"
+ >
+>;
 
 const MobilePaneSchema = z.enum(["files", "preview", "edit"]);
-const InspectorTabSchema = z.enum(["files", "edit"]);
+const InspectorTabSchema = z.enum([MobilePaneSchema.enum.files, "edit"]);
 const PreviewModeSchema = z.enum(["iframe", "editor"]);
 const MoveDirectionSchema = z.enum(["up", "down"]);
 const RouteHistoryModeSchema = z.enum(["push", "replace"]);
@@ -203,13 +223,13 @@ export function HanziHomeHtmlArtifactsPage() {
  const searchParams = useSearchParams();
  const artifactsQuery = useHtmlArtifactSummariesQuery();
  const selectedIdFromUrl = searchParams.get("artifactId");
- const selectedId: z.infer<typeof NullableStringSchema> =
+ const selectedId: z.infer<z.ZodNullable<z.ZodString>> =
   selectedIdFromUrl === "new" ? "new" : selectedIdFromUrl;
  const [activeFolderId, setActiveFolderId] = useState<FolderFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
- const [inspectorTab, setInspectorTab] = useState<InspectorTab>("files");
- const [previewMode, setPreviewMode] = useState<PreviewMode>("iframe");
+ const [inspectorTab, setInspectorTab] = useState<InspectorTab>(InspectorTabSchema.enum.files);
+ const [previewMode, setPreviewMode] = useState<PreviewMode>(PreviewModeSchema.enum.iframe);
  const isPreviewFocused = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { setContentFullscreen } = appShellStore.actions;
  const [draftPreview, setDraftPreview] = useState<
@@ -230,9 +250,8 @@ export function HanziHomeHtmlArtifactsPage() {
   parentFolderId: null,
   color: "blue",
  });
- const [deleteDialog, setDeleteDialog] =
-  useState<z.infer<typeof NullableDeleteDialogStateSchema>>(null);
- const [dragItem, setDragItem] = useState<z.infer<typeof NullableDragItemSchema>>(null);
+ const [deleteDialog, setDeleteDialog] = useState<Nullable<DeleteDialogState>>(null);
+ const [dragItem, setDragItem] = useState<Nullable<DragItem>>(null);
  const createMutation = useCreateHtmlArtifactMutation();
  const updateMutation = useUpdateHtmlArtifactMutation();
  const deleteMutation = useDeleteHtmlArtifactMutation();
@@ -240,7 +259,7 @@ export function HanziHomeHtmlArtifactsPage() {
  const updateFolderMutation = useUpdateHtmlArtifactFolderMutation();
  const deleteFolderMutation = useDeleteHtmlArtifactFolderMutation();
  const updateRuntimeStateMutation = useUpdateHtmlArtifactRuntimeStateMutation();
- const runtimeStateSaveTimerRef = useRef<z.infer<typeof NullableNumberSchema>>(null);
+ const runtimeStateSaveTimerRef = useRef<z.infer<z.ZodNullable<z.ZodNumber>>>(null);
  const latestRuntimeStateSaveRef = useRef<
   Nullable<{
    artifactId: string;
@@ -331,7 +350,7 @@ export function HanziHomeHtmlArtifactsPage() {
 
  const navigateToArtifact = (
   artifactId: Nullable<string>,
-  mode: z.infer<typeof RouteHistoryModeSchema> = "push",
+  mode: z.infer<typeof RouteHistoryModeSchema> = RouteHistoryModeSchema.enum.push,
  ) => {
   const nextParams = new URLSearchParams(searchParams.toString());
 
@@ -827,22 +846,21 @@ function MobilePaneTabs({
      const active = activePane === pane.key;
 
      return (
-      <button
+      <Button
        key={pane.key}
        type="button"
        role="tab"
        aria-selected={active}
-       className={cn(
-        "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-lg px-2 text-xs font-black transition-colors",
-        active
-         ? "app-active-item border"
-         : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
-       )}
+       variant={active ? "active" : "ghost"}
+       size="tab"
+       className="min-w-0"
        onClick={() => onChange(pane.key)}
       >
        <Icon className="h-3.5 w-3.5 shrink-0" />
-       <span className="truncate">{pane.label}</span>
-      </button>
+       <StudyInstructionText as="span" clamp="one">
+        {pane.label}
+       </StudyInstructionText>
+      </Button>
      );
     })}
    </div>
@@ -1004,26 +1022,30 @@ function InspectorTabButton({
  onClick: () => void;
 }) {
  return (
-  <button
+  <Button
    type="button"
    role="tab"
    aria-selected={active}
-   className={cn(
-    "inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-lg px-2 text-sm font-black transition-colors",
-    active
-     ? "app-active-item border"
-     : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
-   )}
+   variant={active ? "active" : "ghost"}
+   size="toolbar"
+   className="min-w-0"
    onClick={onClick}
   >
    <Icon className="h-4 w-4 shrink-0" />
-   <span className="truncate">{label}</span>
+   <StudyInstructionText as="span" clamp="one">
+    {label}
+   </StudyInstructionText>
    {typeof count === "number" ? (
-    <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-[0.68rem] text-text-muted">
+    <StudyInstructionText
+     tone="muted"
+     variant="caption"
+     scale="relativeSmall"
+     className="rounded-full bg-bg-subtle px-2 py-0.5"
+    >
      {count}
-    </span>
+    </StudyInstructionText>
    ) : null}
-  </button>
+  </Button>
  );
 }
 
@@ -1107,10 +1129,17 @@ function DirectoryPane({
   >
    <div className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-card px-4">
     <div className="flex min-w-0 items-center gap-2">
-     <h2 className="text-sm font-black text-text-primary">Thư mục</h2>
-     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+      Thư mục
+     </Typography>
+     <StudyInstructionText
+      variant="caption"
+      tone="muted"
+      weight="black"
+      className="rounded-full bg-bg-subtle px-3 py-1"
+     >
       {folders.length}
-     </span>
+     </StudyInstructionText>
     </div>
     <Button
      type="button"
@@ -1133,7 +1162,7 @@ function DirectoryPane({
       onChange={(event) => onSearchChange(event.target.value)}
       aria-label="Tìm tệp HTML"
       placeholder="Tìm tệp"
-      className="h-10 pl-9"
+      adornment="start"
      />
     </div>
    </div>
@@ -1186,7 +1215,7 @@ function DirectoryPane({
       type="button"
       variant="ghost"
       size="sm"
-      className="justify-start text-danger hover:bg-danger-subtle"
+      align="start"
       disabled={isFolderMutating}
       onClick={onDeleteActiveFolder}
      >
@@ -1198,10 +1227,17 @@ function DirectoryPane({
 
    <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-subtle px-4">
     <div className="flex min-w-0 items-center gap-2">
-     <h3 className="text-sm font-black text-text-primary">Tệp</h3>
-     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+      Tệp
+     </Typography>
+     <StudyInstructionText
+      variant="caption"
+      tone="muted"
+      weight="black"
+      className="rounded-full bg-bg-subtle px-3 py-1"
+     >
       {filteredArtifacts.length}
-     </span>
+     </StudyInstructionText>
     </div>
     <div className="flex shrink-0 items-center gap-2">
      <Button type="button" size="sm" onClick={onCreateArtifact}>
@@ -1215,18 +1251,26 @@ function DirectoryPane({
     {isLoading && <ArtifactDirectorySkeleton />}
 
     {Boolean(error) && (
-     <p
+     <StudyInstructionText
       role="alert"
-      className="rounded-lg border border-destructive/20 bg-destructive/10 p-3 text-sm font-bold text-destructive"
+      variant="label"
+      tone="danger"
+      weight="bold"
+      className="rounded-lg border border-destructive/20 bg-destructive/10 p-3"
      >
       Không tải được tệp HTML.
-     </p>
+     </StudyInstructionText>
     )}
 
     {!isLoading && !error && filteredArtifacts.length === 0 && (
-     <p className="rounded-lg border border-dashed border-border-default bg-bg-subtle p-3 text-sm font-bold text-text-muted">
+     <StudyInstructionText
+      variant="label"
+      tone="muted"
+      weight="bold"
+      className="rounded-lg border border-dashed border-border-default bg-bg-subtle p-3"
+     >
       Thư mục này chưa có tệp.
-     </p>
+     </StudyInstructionText>
     )}
 
     {filteredArtifacts.length > 0 && (
@@ -1320,9 +1364,11 @@ function FolderRow({
    )}
    style={{ paddingLeft: `${8 + depth * 16}px` }}
   >
-   <button
+   <Button
     type="button"
-    className="flex min-h-9 min-w-0 flex-1 items-center gap-2 text-left"
+    variant="ghost"
+    align="start"
+    className="flex min-w-0 flex-1"
     onClick={onClick}
    >
     <span
@@ -1333,14 +1379,25 @@ function FolderRow({
     >
      <Folder className="h-3.5 w-3.5" />
     </span>
-    <span className="min-w-0 flex-1 truncate">{name}</span>
-    <span className="rounded-full bg-bg-card px-1.5 text-[0.68rem] text-text-muted">{count}</span>
-   </button>
+    <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">
+     {name}
+    </StudyInstructionText>
+    <StudyInstructionText
+     tone="muted"
+     variant="caption"
+     scale="relativeSmall"
+     className="rounded-full bg-bg-card px-1.5"
+    >
+     {count}
+    </StudyInstructionText>
+   </Button>
    {folderId ? (
     <span className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
-     <button
+     <Button
       type="button"
-      className="flex h-7 w-7 items-center justify-center rounded-md text-text-muted hover:bg-bg-card hover:text-text-primary disabled:opacity-30"
+      variant="ghost"
+      size="compact"
+      className="flex w-7"
       aria-label={`Đưa ${name} lên`}
       disabled={!canMoveUp}
       onClick={(event) => {
@@ -1349,10 +1406,12 @@ function FolderRow({
       }}
      >
       <ArrowUp className="h-3.5 w-3.5" />
-     </button>
-     <button
+     </Button>
+     <Button
       type="button"
-      className="flex h-7 w-7 items-center justify-center rounded-md text-text-muted hover:bg-bg-card hover:text-text-primary disabled:opacity-30"
+      variant="ghost"
+      size="compact"
+      className="flex w-7"
       aria-label={`Đưa ${name} xuống`}
       disabled={!canMoveDown}
       onClick={(event) => {
@@ -1361,7 +1420,7 @@ function FolderRow({
       }}
      >
       <ArrowDown className="h-3.5 w-3.5" />
-     </button>
+     </Button>
     </span>
    ) : null}
   </div>
@@ -1500,14 +1559,14 @@ function PreviewPane({
   <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
    <div className="flex h-14 shrink-0 items-center justify-between gap-3 border-b border-border-default bg-bg-card px-4">
     <div className="min-w-0">
-     <h2 className="truncate text-sm font-black text-text-primary">
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black" clamp="one">
       {getArtifactTitle(selectedArtifact ?? selectedSummary)}
-     </h2>
-     <p className="truncate text-sm font-medium text-text-muted">
+     </Typography>
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="medium" clamp="one">
       {selectedArtifact?.updatedAt
        ? `Cập nhật ${formatDate(selectedArtifact.updatedAt)}`
        : "Xem trước"}
-     </p>
+     </StudyInstructionText>
     </div>
     <div className="flex shrink-0 items-center gap-2">
      <div
@@ -1624,21 +1683,20 @@ function PreviewModeButton({
  onClick: () => void;
 }) {
  return (
-  <button
+  <Button
    type="button"
    role="tab"
    aria-selected={active}
-   className={cn(
-    "inline-flex h-8 min-w-0 items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-black transition-colors",
-    active
-     ? "app-active-item border"
-     : "text-text-muted hover:bg-bg-card/70 hover:text-text-primary",
-   )}
+   variant={active ? "active" : "ghost"}
+   size="compact"
+   className="min-w-0"
    onClick={onClick}
   >
    <Icon className="h-3.5 w-3.5 shrink-0" />
-   <span className="truncate">{label}</span>
-  </button>
+   <StudyInstructionText as="span" clamp="one">
+    {label}
+   </StudyInstructionText>
+  </Button>
  );
 }
 
@@ -1691,7 +1749,7 @@ function maskToken(token: string) {
 
 function parsePublishConnectionInfo(
  value: JsonFieldValue,
-): z.infer<typeof NullablePublishConnectionInfoSchema> {
+): z.infer<z.ZodNullable<typeof PublishConnectionInfoSchema>> {
  const parsed = PublishConnectionInfoSchema.safeParse(value);
  return parsed.success ? parsed.data : null;
 }
@@ -1699,8 +1757,18 @@ function parsePublishConnectionInfo(
 function KeyValueRow({ label, value }: { label: string; value: string }) {
  return (
   <div className="grid gap-1 rounded-lg border border-border-default bg-bg-subtle px-3 py-2">
-   <span className="text-[0.68rem] font-black uppercase text-text-muted">{label}</span>
-   <span className="break-all font-mono text-xs font-bold text-text-primary">{value}</span>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    transform="uppercase"
+    scale="relativeSmall"
+   >
+    {label}
+   </StudyInstructionText>
+   <StudyInstructionText variant="code" tone="default" weight="bold" wrapping="breakAll">
+    {value}
+   </StudyInstructionText>
   </div>
  );
 }
@@ -1718,9 +1786,9 @@ function PublishConnectionDialog({
  const displayEndpoint = `https://your-domain.com${endpointPath}`;
  const supabase = useMemo(() => createBrowserSupabaseClient(), []);
  const [connectionInfo, setConnectionInfo] =
-  useState<z.infer<typeof NullablePublishConnectionInfoSchema>>(null);
+  useState<z.infer<z.ZodNullable<typeof PublishConnectionInfoSchema>>>(null);
  const [sessionAccessToken, setSessionAccessToken] =
-  useState<z.infer<typeof NullableStringSchema>>(null);
+  useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [isLoadingConnection, setIsLoadingConnection] = useState(false);
  const exampleArtifactId = selectedArtifact?.id ?? "optional-stable-uuid";
  const exampleTitle = selectedArtifact?.title ?? "SC3 Mock Exam 04";
@@ -1818,11 +1886,15 @@ function PublishConnectionDialog({
       <section className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
        <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-         <p className="text-xs font-black uppercase text-text-muted">Endpoint</p>
-         <p className="break-all font-mono text-sm font-bold text-text-primary">{endpointPath}</p>
-         <p className="mt-1 text-xs font-bold text-text-muted">
+         <StudyInstructionText variant="overline" tone="muted" weight="black" transform="uppercase">
+          Endpoint
+         </StudyInstructionText>
+         <StudyInstructionText variant="code" tone="default" weight="bold" wrapping="breakAll">
+          {endpointPath}
+         </StudyInstructionText>
+         <StudyInstructionText variant="caption" tone="muted" weight="bold" className="mt-1">
           Copy sẽ tự dùng domain hiện tại của app.
-         </p>
+         </StudyInstructionText>
         </div>
         <Button
          type="button"
@@ -1840,10 +1912,12 @@ function PublishConnectionDialog({
       <div className="grid gap-3 sm:grid-cols-2">
        <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
         <div>
-         <p className="text-sm font-black text-text-primary">Auth user token</p>
-         <p className="mt-1 text-sm font-semibold text-text-muted">
+         <StudyInstructionText variant="label" tone="default" weight="black">
+          Auth user token
+         </StudyInstructionText>
+         <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="mt-1">
           Gửi Supabase access token trong header. DB chỉ cho ghi tệp của owner này.
-         </p>
+         </StudyInstructionText>
         </div>
         <KeyValueRow label="Owner" value={connectionInfo?.sessionUserId ?? "Đang đọc..."} />
         <KeyValueRow label="Token" value={isLoadingConnection ? "Đang đọc..." : tokenPreview} />
@@ -1864,10 +1938,12 @@ function PublishConnectionDialog({
        </div>
        <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
         <div>
-         <p className="text-sm font-black text-text-primary">Publish token</p>
-         <p className="mt-1 text-sm font-semibold text-text-muted">
+         <StudyInstructionText variant="label" tone="default" weight="black">
+          Publish token
+         </StudyInstructionText>
+         <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="mt-1">
           Token này nằm trong env server; UI chỉ show trạng thái và owner đang nhận file.
-         </p>
+         </StudyInstructionText>
         </div>
         <KeyValueRow
          label="Status"
@@ -1889,7 +1965,9 @@ function PublishConnectionDialog({
 
       <section className="grid gap-2">
        <div className="flex items-center justify-between gap-2">
-        <p className="text-sm font-black text-text-primary">Ví dụ fetch</p>
+        <StudyInstructionText variant="label" tone="default" weight="black">
+         Ví dụ fetch
+        </StudyInstructionText>
         <Button
          type="button"
          variant="outline"
@@ -1907,10 +1985,15 @@ function PublishConnectionDialog({
        </pre>
       </section>
 
-      <p className="rounded-xl border border-primary/20 bg-primary/10 p-3 text-sm font-bold text-primary">
+      <StudyInstructionText
+       variant="label"
+       tone="primary"
+       weight="bold"
+       className="rounded-xl border border-primary/20 bg-primary/10 p-3"
+      >
        <code>mode: &quot;upsert&quot;</code> sẽ update khi có <code>artifactId</code>, còn không có
        thì tạo tệp mới.
-      </p>
+      </StudyInstructionText>
      </div>
     </DialogBody>
 
@@ -2035,7 +2118,7 @@ function CreateFolderDialog({
      </DialogHeader>
 
      <DialogBody>
-      <label className="grid gap-1.5 text-sm font-bold text-text-primary">
+      <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
        Tên thư mục
        <Input
         value={folderDraft.name}
@@ -2049,7 +2132,7 @@ function CreateFolderDialog({
         required
         autoFocus
        />
-      </label>
+      </Label>
 
       <fieldset className="grid gap-2">
        <legend className="text-sm font-bold text-text-primary">Màu</legend>
@@ -2057,14 +2140,13 @@ function CreateFolderDialog({
         {folderColorSequence.map((color) => {
          const selected = folderDraft.color === color;
          return (
-          <button
+          <Button
            key={color}
            type="button"
-           className={cn(
-            "h-11 w-11 rounded-full border-2 shadow-theme-sm ring-offset-2 ring-offset-bg-card transition",
-            folderColorSwatchClasses[color],
-            selected ? "ring-2 ring-ring" : "opacity-80 hover:opacity-100",
-           )}
+           variant="swatch"
+           size="icon"
+           aria-pressed={selected}
+           style={folderColorSwatchStyles[color]}
            onClick={() =>
             onFolderDraftChange({
              ...folderDraft,
@@ -2072,7 +2154,6 @@ function CreateFolderDialog({
             })
            }
            aria-label={`Chọn màu ${color}`}
-           aria-pressed={selected}
           />
          );
         })}
@@ -2201,17 +2282,18 @@ function ArtifactForm({
        required
       />
      ) : (
-      <h2 className="truncate font-black text-text-primary">{artifact ? "Sửa tệp" : "Tạo tệp"}</h2>
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black" clamp="one">
+       {artifact ? "Sửa tệp" : "Tạo tệp"}
+      </Typography>
      )}
      {htmlOnly ? (
-      <p
-       className={cn(
-        "text-xs font-bold",
-        saveStatus === "error" ? "text-danger" : "text-text-muted",
-       )}
+      <StudyInstructionText
+       variant="caption"
+       tone={saveStatus === "error" ? "dangerStrong" : "muted"}
+       weight="bold"
       >
        {getDraftSaveLabel(saveStatus, Boolean(artifact))}
-      </p>
+      </StudyInstructionText>
      ) : null}
     </div>
     <div className="flex gap-2">
@@ -2252,7 +2334,7 @@ function ArtifactForm({
 
    {!htmlOnly ? (
     <>
-     <label className="grid gap-1.5 text-sm font-bold text-text-primary">
+     <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
       Tiêu đề
       <Input
        value={form.title}
@@ -2261,7 +2343,7 @@ function ArtifactForm({
        placeholder="SC3 Mock Exam 03"
        required
       />
-     </label>
+     </Label>
 
      <div className="grid gap-1.5 text-sm font-bold text-text-primary">
       <span>Thư mục</span>
@@ -2323,7 +2405,7 @@ function ArtifactForm({
        </Select>
       </div>
 
-      <label className="grid gap-1.5 text-sm font-bold text-text-primary">
+      <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
        Tag
        <Input
         value={form.tagsInput}
@@ -2333,7 +2415,7 @@ function ArtifactForm({
         aria-label="Tag của tệp HTML"
         placeholder="SC3, mock, bổ ngữ"
        />
-      </label>
+      </Label>
      </div>
     </>
    ) : null}
@@ -2342,17 +2424,16 @@ function ArtifactForm({
     {!htmlOnly ? (
      <div className="flex items-center justify-between gap-2">
       <div className="min-w-0">
-       <span id="html-source-label" className="text-sm font-bold text-text-primary">
+       <StudyInstructionText id="html-source-label" variant="label" tone="default" weight="bold">
         HTML
-       </span>
-       <p
-        className={cn(
-         "text-xs font-bold",
-         saveStatus === "error" ? "text-danger" : "text-text-muted",
-        )}
+       </StudyInstructionText>
+       <StudyInstructionText
+        variant="caption"
+        tone={saveStatus === "error" ? "dangerStrong" : "muted"}
+        weight="bold"
        >
         {getDraftSaveLabel(saveStatus, Boolean(artifact))}
-       </p>
+       </StudyInstructionText>
       </div>
       <Button
        type="button"
@@ -2473,8 +2554,12 @@ function ArtifactListButton({
   >
    <div className="flex min-w-0 items-start justify-between gap-3">
     <div className="grid min-w-0 gap-1">
-     <span className="truncate text-sm font-black text-text-primary">{artifact.title}</span>
-     <p className="text-xs font-black text-text-muted">{formatDate(artifact.updatedAt)}</p>
+     <StudyInstructionText variant="label" tone="default" weight="black" clamp="one">
+      {artifact.title}
+     </StudyInstructionText>
+     <StudyInstructionText variant="caption" tone="muted" weight="black">
+      {formatDate(artifact.updatedAt)}
+     </StudyInstructionText>
     </div>
     <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100">
      <ArtifactCardAction icon={ExternalLink} label="Mở tệp" onClick={stopAction(onClick)} />
@@ -2484,21 +2569,37 @@ function ArtifactListButton({
     </div>
    </div>
    <div className="flex flex-wrap gap-1.5">
-    <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.68rem] font-black text-text-muted">
+    <StudyInstructionText
+     tone="muted"
+     weight="black"
+     variant="caption"
+     scale="relativeSmall"
+     className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
+    >
      {artifactTypeLabels[artifact.artifactType]}
-    </span>
+    </StudyInstructionText>
     {artifact.tags.slice(0, 3).map((tag) => (
-     <span
+     <StudyInstructionText
       key={`${artifact.id}-${tag}`}
-      className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.68rem] font-black text-text-muted"
+      tone="muted"
+      weight="black"
+      variant="caption"
+      scale="relativeSmall"
+      className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
      >
       {tag}
-     </span>
+     </StudyInstructionText>
     ))}
     {artifact.tags.length > 3 ? (
-     <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.68rem] font-black text-text-muted">
+     <StudyInstructionText
+      tone="muted"
+      weight="black"
+      variant="caption"
+      scale="relativeSmall"
+      className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
+     >
       +{artifact.tags.length - 3}
-     </span>
+     </StudyInstructionText>
     ) : null}
    </div>
   </div>
@@ -2517,17 +2618,15 @@ function ArtifactCardAction({
  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }) {
  return (
-  <button
+  <Button
    type="button"
    aria-label={label}
    title={label}
-   className={cn(
-    "flex h-8 w-8 items-center justify-center rounded-lg border bg-bg-card text-text-muted shadow-theme-sm transition-colors hover:border-primary/30 hover:text-primary",
-    danger && "hover:border-danger/30 hover:bg-danger-subtle hover:text-danger",
-   )}
+   variant={danger ? "destructive" : "outline"}
+   size="icon-toolbar"
    onClick={onClick}
   >
    <Icon className="h-3.5 w-3.5" />
-  </button>
+  </Button>
  );
 }

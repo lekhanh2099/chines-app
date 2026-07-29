@@ -16,53 +16,74 @@ const SupabaseErrorLikeSchema = z.object({
  hint: z.string().nullable().optional(),
 });
 
-const UserApiKeySchema = z.object({
- id: z.string(),
- userId: z.string(),
- provider: DbUserApiKeySchema.shape.provider,
- label: z.string(),
- maskedKey: z.string(),
- isActive: z.boolean(),
- priority: z.number(),
- defaultModel: z.string().nullable(),
- lastValidatedAt: z.string().nullable(),
- createdAt: z.string(),
- updatedAt: z.string(),
-});
-export type UserApiKey = z.infer<typeof UserApiKeySchema>;
+export type UserApiKey = {
+ id: DbUserApiKey["id"];
+ userId: DbUserApiKey["user_id"];
+ provider: DbUserApiKey["provider"];
+ label: DbUserApiKey["label"];
+ maskedKey: DbUserApiKey["masked_key"];
+ isActive: DbUserApiKey["is_active"];
+ priority: DbUserApiKey["priority"];
+ defaultModel: DbUserApiKey["default_model"];
+ lastValidatedAt: DbUserApiKey["last_validated_at"];
+ createdAt: DbUserApiKey["created_at"];
+ updatedAt: DbUserApiKey["updated_at"];
+};
 
-const UserApiKeyCredentialSchema = UserApiKeySchema.extend({ apiKey: z.string() });
-export type UserApiKeyCredential = z.infer<typeof UserApiKeyCredentialSchema>;
+export type UserApiKeyCredential = z.infer<
+ z.ZodObject<{
+  id: z.ZodType<UserApiKey["id"]>;
+  userId: z.ZodType<UserApiKey["userId"]>;
+  provider: z.ZodType<UserApiKey["provider"]>;
+  label: z.ZodType<UserApiKey["label"]>;
+  maskedKey: z.ZodType<UserApiKey["maskedKey"]>;
+  isActive: z.ZodType<UserApiKey["isActive"]>;
+  priority: z.ZodType<UserApiKey["priority"]>;
+  defaultModel: z.ZodType<UserApiKey["defaultModel"]>;
+  lastValidatedAt: z.ZodType<UserApiKey["lastValidatedAt"]>;
+  createdAt: z.ZodType<UserApiKey["createdAt"]>;
+  updatedAt: z.ZodType<UserApiKey["updatedAt"]>;
+  apiKey: z.ZodString;
+ }>
+>;
 
-const CreateUserApiKeyResultSchema = z.object({
- key: UserApiKeySchema.nullable(),
- error: z.string().nullable(),
-});
-export type CreateUserApiKeyResult = z.infer<typeof CreateUserApiKeyResultSchema>;
+export type CreateUserApiKeyResult = z.infer<
+ z.ZodObject<{
+  key: z.ZodNullable<z.ZodType<UserApiKey>>;
+  error: z.ZodNullable<z.ZodString>;
+ }>
+>;
 
-const UserApiKeysSchemaStatusSchema = z.object({
- ready: z.boolean(),
- reason: z.enum(["ok", "missing-table", "schema-error"]),
- message: z.string().nullable(),
-});
-export type UserApiKeysSchemaStatus = z.infer<typeof UserApiKeysSchemaStatusSchema>;
+export type UserApiKeysSchemaStatus = z.infer<
+ z.ZodObject<{
+  ready: z.ZodBoolean;
+  reason: z.ZodEnum<{
+   ok: "ok";
+   "missing-table": "missing-table";
+   "schema-error": "schema-error";
+  }>;
+  message: z.ZodNullable<z.ZodString>;
+ }>
+>;
 
-const NullableUserApiKeySchema = UserApiKeySchema.nullable();
-const NullableUserApiKeyListSchema = z.array(UserApiKeySchema).nullable();
 const MoveDirectionSchema = z.enum(["up", "down"]);
 
-const CreateUserApiKeyInputSchema = z.object({
- provider: DbUserApiKeySchema.shape.provider,
- apiKey: z.string(),
- label: z.string().optional(),
- defaultModel: z.string().nullable().optional(),
-});
+type CreateUserApiKeyInput = z.infer<
+ z.ZodObject<{
+  provider: typeof DbUserApiKeySchema.shape.provider;
+  apiKey: z.ZodString;
+  label: z.ZodOptional<z.ZodString>;
+  defaultModel: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+ }>
+>;
 
-const UpdateUserApiKeyInputSchema = z.object({
- label: z.string().optional(),
- isActive: z.boolean().optional(),
- defaultModel: z.string().nullable().optional(),
-});
+type UpdateUserApiKeyInput = z.infer<
+ z.ZodObject<{
+  label: z.ZodOptional<z.ZodString>;
+  isActive: z.ZodOptional<z.ZodBoolean>;
+  defaultModel: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+ }>
+>;
 
 function normalizeUserApiKey(row: DbUserApiKey): UserApiKey {
  return {
@@ -323,7 +344,7 @@ export async function getActiveUserApiKeyCredentials(
 export async function createUserApiKey(
  supabase: AppSupabaseClient,
  userId: string,
- input: z.infer<typeof CreateUserApiKeyInputSchema>,
+ input: CreateUserApiKeyInput,
 ): Promise<CreateUserApiKeyResult> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return {
@@ -373,8 +394,8 @@ export async function updateUserApiKey(
  supabase: AppSupabaseClient,
  userId: string,
  keyId: string,
- patch: z.infer<typeof UpdateUserApiKeyInputSchema>,
-): Promise<z.infer<typeof NullableUserApiKeySchema>> {
+ patch: UpdateUserApiKeyInput,
+): Promise<z.infer<z.ZodNullable<z.ZodType<UserApiKey>>>> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return null;
  }
@@ -442,7 +463,7 @@ export async function moveUserApiKey(
  userId: string,
  keyId: string,
  direction: z.infer<typeof MoveDirectionSchema>,
-): Promise<z.infer<typeof NullableUserApiKeyListSchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodArray<z.ZodType<UserApiKey>>>>> {
  if (!(await isUserApiKeysSchemaReady(supabase, userId))) {
   return null;
  }
@@ -453,7 +474,7 @@ export async function moveUserApiKey(
   return null;
  }
 
- const targetIndex = direction === "up" ? index - 1 : index + 1;
+ const targetIndex = direction === MoveDirectionSchema.enum.up ? index - 1 : index + 1;
  if (targetIndex < 0 || targetIndex >= keys.length) {
   return keys;
  }

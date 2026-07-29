@@ -57,6 +57,11 @@ rg -n 'from "@base-ui/react|from "radix-ui|from "@radix-ui/' src \
 Do not create a second Button, Dialog, Select, DropdownMenu, Tooltip, Chip,
 Typography or Switch visual language inside a feature.
 
+Canonical inventory components are active contracts. A component having no
+current consumer is not permission to recreate its semantics locally. When the
+need matches Typography, Avatar, Switch, Chip, EmptyState, or another canonical
+contract, use that component and make it a real consumer.
+
 ## 3. Primitive boundary
 
 Feature code MUST NOT import Base UI or Radix primitives directly.
@@ -92,6 +97,21 @@ Special rules:
 - Form adapters compose shared UI and must not create a parallel system.
 - Legacy component paths gain no new consumers without justification.
 - Do not create an alias-only pattern around an existing primitive.
+
+Application `h1`–`h6` and `p` JSX is forbidden outside the Typography
+implementation. Use `Typography` with the correct `as` element and semantic
+variant. Native structural elements must not carry a parallel typography recipe.
+
+Inside HanziHome, distinguish the contracts explicitly:
+
+- app/page/panel hierarchy: Typography;
+- Chinese learner text, pinyin, reading-size and study typography:
+  `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
+  `TranslationText`, `StudyInstructionText`, or `HanziFontPreview`.
+
+Typography and learner-text call sites use typed props for tone, weight, scale,
+leading and tracking. Their `className` may contain parent-owned layout only;
+font, text size, text color, line height and tracking utilities are forbidden.
 
 ## 5. Variant design
 

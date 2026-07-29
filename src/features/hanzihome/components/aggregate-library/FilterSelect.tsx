@@ -1,3 +1,4 @@
+import { Label } from "@/components/ui/label";
 export function FilterSelect({
  label,
  value,
@@ -10,21 +11,18 @@ export function FilterSelect({
  onChange: (value: string) => void;
 }) {
  return (
-  <label className="grid gap-1.5">
-   <span className="text-xs font-black uppercase tracking-wide text-text-muted">{label}</span>
-   <select
-    aria-label={label}
+  <Label variant="label" className="grid gap-1.5">
+   <Typography as="span" variant="overline" tone="muted">
+    {label}
+   </Typography>
+   <OptionSelect
+    ariaLabel={label}
     value={value}
-    onChange={(event) => onChange(event.target.value)}
-    className="h-11 min-w-0 rounded-xl border border-border-default bg-bg-input px-3  font-bold text-text-primary outline-none"
-   >
-    <option value="">Tất cả</option>
-    {options.map((option) => (
-     <option key={option.value} value={option.value}>
-      {option.label}
-     </option>
-    ))}
-   </select>
-  </label>
+    options={[{ value: "", label: "Tất cả" }, ...options]}
+    onValueChange={onChange}
+   />
+  </Label>
  );
 }
+import { OptionSelect } from "@/components/ui/option-select";
+import { Typography } from "@/components/ui/typography";

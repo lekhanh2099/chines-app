@@ -4,13 +4,9 @@ const ErrorNameSchema = z.object({
  name: z.string(),
 });
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-const ServerTimingHeaderValueSchema = z.union([
- z.string(),
- z.number(),
- z.boolean(),
- z.null(),
- z.undefined(),
-]);
+type ServerTimingHeaderValue = z.infer<
+ z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull, z.ZodUndefined]>
+>;
 
 export type ServerTimingMetric = {
  name: string;
@@ -53,7 +49,7 @@ export function createRequestSignal(
 export function applyServerTimingHeaders(
  headers: Headers,
  metrics: ServerTimingMetric[],
- extraHeaders?: Record<string, z.infer<typeof ServerTimingHeaderValueSchema>>,
+ extraHeaders?: Record<string, ServerTimingHeaderValue>,
 ) {
  const timingValue = metrics
   .filter((metric) => Number.isFinite(metric.durationMs) && metric.durationMs >= 0)

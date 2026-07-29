@@ -191,7 +191,7 @@ export function EditableNodeWrapper({
       size="icon-sm"
       aria-label={`Đưa ${label || entityId} lên`}
       disabled={isReordering || record?.order === 1}
-      className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
+      className="w-7"
       onClick={() => void reorderNode(-1)}
      >
       <ArrowUp className="h-3.5 w-3.5" />
@@ -202,7 +202,7 @@ export function EditableNodeWrapper({
       size="icon-sm"
       aria-label={`Đưa ${label || entityId} xuống`}
       disabled={isReordering}
-      className="h-7 w-7 bg-bg-card/95 shadow-theme-sm"
+      className="w-7"
       onClick={() => void reorderNode(1)}
      >
       <ArrowDown className="h-3.5 w-3.5" />
@@ -221,7 +221,7 @@ export function EditableNodeWrapper({
        size="icon-sm"
        aria-label={`Xóa ${label || entityId}`}
        disabled={isDeleting}
-       className="h-7 w-7 bg-bg-card/95 text-danger-text shadow-theme-sm"
+       className="w-7"
       >
        <Trash2 className="h-3.5 w-3.5" />
       </Button>

@@ -1,3 +1,6 @@
+"use client";
+
+import { Typography } from "@/components/ui/typography";
 /**
  * NodeHoverPlugin — Shows a floating tooltip when hovering over
  * InternalLinkNode elements in the editor.
@@ -5,11 +8,10 @@
  * InlineNoteNode handles its own tooltip via React (DecoratorNode).
  * This plugin covers InternalLinkNode which uses raw DOM (TextNode subclass).
  */
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { createPortal } from "react-dom";
+import { FloatingLayer } from "@/components/ui/floating-layer";
 
 type TooltipState = {
  noteTitle: string;
@@ -85,9 +87,9 @@ export default function NodeHoverPlugin() {
  const left = tooltip.rect.left + tooltip.rect.width / 2;
 
  return createPortal(
-  <div
+  <FloatingLayer
    data-link-tooltip
-   className="pointer-events-auto fixed z-[10000] -translate-x-1/2 -translate-y-full animate-in fade-in zoom-in-95 duration-150"
+   variant="editorControls"
    style={{ top, left }}
    onMouseEnter={() => {
     clearTimers();
@@ -97,16 +99,26 @@ export default function NodeHoverPlugin() {
    }}
   >
    <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow-theme-lg">
-    <span className="mb-0.5 block text-[10px] font-semibold uppercase tracking-widest text-accent-text">
+    <Typography
+     variant="overline"
+     tone="accent"
+     weight="semibold"
+     scale="micro"
+     transform="uppercase"
+     tracking="widest"
+     className="mb-0.5 block"
+    >
      Ghi chú liên kết
-    </span>
-    <span className="block max-w-52 truncate  font-medium text-text-secondary">
+    </Typography>
+    <Typography tone="secondary" weight="medium" clamp="one" className="block max-w-52">
      {tooltip.noteTitle}
-    </span>
-    <span className="mt-1 block text-[10px] text-text-muted">Click để mở</span>
+    </Typography>
+    <Typography variant="caption" tone="muted" scale="micro" className="mt-1 block">
+     Click để mở
+    </Typography>
    </div>
    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-bg-elevated" />
-  </div>,
+  </FloatingLayer>,
   document.body,
  );
 }

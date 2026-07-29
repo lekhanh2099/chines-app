@@ -13,8 +13,6 @@ import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-stat
 import { DraggedModuleSchema } from "./types";
 import { z } from "zod";
 
-const NullableDraggedModuleSchema = DraggedModuleSchema.nullable();
-const NullableStringSchema = z.string().nullable();
 const VocabStatusFilterSchema = learningStatusSchema.or(z.literal("all"));
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
@@ -24,13 +22,13 @@ export type HanziHomeFeatureState = {
  splitEnabled: boolean;
  paneLayout: PaneLayout;
  activePane: PaneId;
- draggedModule: z.infer<typeof NullableDraggedModuleSchema>;
+ draggedModule: z.infer<z.ZodNullable<typeof DraggedModuleSchema>>;
  viewMode: LessonViewMode;
  splitPaneSize: number;
- vocabSelectedWordId: z.infer<typeof NullableStringSchema>;
+ vocabSelectedWordId: z.infer<z.ZodNullable<z.ZodString>>;
  vocabSearchValue: string;
  vocabStatusFilter: z.infer<typeof VocabStatusFilterSchema>;
- grammarSelectedPointId: z.infer<typeof NullableStringSchema>;
+ grammarSelectedPointId: z.infer<z.ZodNullable<z.ZodString>>;
  grammarSidebarOpen: boolean;
  lessonTextSelectedSectionId: string;
  lessonTextSidebarOpen: boolean;
@@ -61,7 +59,7 @@ export function createHanziHomeFeatureStore(
   splitPaneSize: preferences.splitPaneSize,
   vocabSelectedWordId: initialSelections.vocabSelectedWordId ?? null,
   vocabSearchValue: "",
-  vocabStatusFilter: "all",
+  vocabStatusFilter: VocabStatusFilterSchema.options[1].value,
   grammarSelectedPointId: initialSelections.grammarSelectedPointId ?? null,
   grammarSidebarOpen: true,
   lessonTextSelectedSectionId:

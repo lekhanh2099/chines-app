@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 
 import { NotebookContent } from "@/features/notebook/components/NotebookContent";
@@ -65,14 +66,27 @@ export function NotebookPage() {
    <section className="grid gap-3">
     <div className="flex flex-wrap items-end justify-between gap-3 px-1">
      <div>
-      <h2 className="text-2xl font-black text-text-primary">
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
        {section.label} · <span lang="zh-CN">{section.zh}</span>
-      </h2>
-      <p className="mt-1 max-w-4xl text-sm font-medium leading-6 text-text-muted">{section.desc}</p>
+      </Typography>
+      <Typography
+       as="p"
+       variant="bodySmall"
+       tone="muted"
+       weight="medium"
+       leading="standard"
+       className="mt-1 max-w-4xl"
+      >
+       {section.desc}
+      </Typography>
      </div>
-     <span className="rounded-xl bg-[#20233a] px-3 py-2 text-xs font-black text-white">
+     <Typography
+      variant="caption"
+      weight="black"
+      className="rounded-xl bg-[#20233a] px-3 py-2 text-white"
+     >
       {section.terms.length} mục · {section.groups.length} nhóm · {section.compares.length} cặp
-     </span>
+     </Typography>
     </div>
     <NotebookSectionGuide section={section} />
     <NotebookContent items={visibleItems} comparisons={visibleComparisons} viewMode={viewMode} />

@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import {
  cleanGrammarDisplayLine,
@@ -14,9 +16,9 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
 
  return (
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
-   <h4 className="text-base font-black text-text-primary">
+   <Typography as="h4" variant="cardTitle" tone="default" weight="black">
     {cleanGrammarDisplayLine(section.title)}
-   </h4>
+   </Typography>
 
    {importantLines.length > 0 && (
     <div className="grid gap-2">
@@ -29,13 +31,25 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
         className="rounded-xl border border-info/30 bg-bg-primary px-3 py-2 shadow-theme-sm"
        >
         {parts.label && (
-         <p className="text-xs font-black uppercase tracking-[0.16em] text-info-text">
+         <StudyInstructionText
+          variant="overline"
+          tone="info"
+          weight="black"
+          tracking="loose"
+          transform="uppercase"
+         >
           {parts.label}
-         </p>
+         </StudyInstructionText>
         )}
-        <p className="mt-1 font-mono font-black leading-relaxed text-text-primary sm:text-base">
+        <StudyInstructionText
+         variant="code"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+         className="mt-1"
+        >
          {cleanGrammarDisplayLine(parts.value)}
-        </p>
+        </StudyInstructionText>
        </div>
       );
      })}

@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import type { ReviewDeckMode } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { deckModeOptions } from "./reviewDeckModes";
@@ -22,9 +24,23 @@ export function ReviewHeader({
  return (
   <div className="flex flex-wrap items-end justify-between gap-3">
    <div>
-    <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">Ôn tập</p>
-    <h2 className="text-2xl font-black text-text-primary">{title}</h2>
-    {description && <p className="font-semibold text-text-muted">{description}</p>}
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="extraLoose"
+     transform="uppercase"
+    >
+     Ôn tập
+    </StudyInstructionText>
+    <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+     {title}
+    </Typography>
+    {description && (
+     <StudyInstructionText tone="muted" weight="semibold">
+      {description}
+     </StudyInstructionText>
+    )}
    </div>
 
    {modes.length > 1 && (

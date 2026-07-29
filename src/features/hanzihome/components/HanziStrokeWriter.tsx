@@ -111,14 +111,16 @@ export function HanziStrokeWriter({
      style={{ width: size, height: size }}
      aria-label={`Nét viết chữ ${character}`}
     />
-    <button
+    <Button
      type="button"
      onClick={onRelay}
-     className="absolute top-0 right-0 grid h-8 w-8 place-items-center rounded-full bg-bg-subtle text-text-muted transition-colors hover:bg-accent-subtle hover:text-text-primary"
+     variant="ghost"
+     size="icon-round"
+     className="absolute top-0 right-0 grid w-8"
      aria-label="Phát lại nét viết"
     >
      <RotateCcw className="h-4 w-4" />
-    </button>
+    </Button>
    </div>
 
    {showActions && (
@@ -136,8 +138,9 @@ export function HanziStrokeWriter({
    )}
 
    {!showActions && (
-    <button
+    <Button
      type="button"
+     variant="ghost"
      className="hidden"
      data-hanzi-quiz-trigger
      onClick={() => writerRef.current?.quiz()}

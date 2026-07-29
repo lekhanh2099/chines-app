@@ -20,14 +20,11 @@ function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
 }
 
-const OptionalCodeSchema = z.string().optional();
-const OptionalNullableTextSchema = z.string().nullable().optional();
-
-function isMissingMemoryTipsTable(code: z.infer<typeof OptionalCodeSchema>) {
+function isMissingMemoryTipsTable(code: z.infer<z.ZodOptional<z.ZodString>>) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function nullableText(value: z.infer<typeof OptionalNullableTextSchema>) {
+function nullableText(value: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>) {
  const trimmed = value?.trim() ?? "";
  return trimmed || null;
 }

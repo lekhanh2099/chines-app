@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import type { JsonObject } from "@/types/json";
 import type { ReactNode } from "react";
@@ -99,18 +100,18 @@ export function AnswerKeyList({
       renderAnswer(
        answer.sourceValue,
        answer.sourceIndex,
-       <p className=" font-bold text-accent-text">
+       <StudyInstructionText tone="accent" weight="bold">
         {answer.label}: {answer.value}
         {answer.pinyin && ` · ${answer.pinyin}`}
         {answer.note && ` — ${answer.note}`}
-       </p>,
+       </StudyInstructionText>,
       )
      ) : (
-      <p className=" font-bold text-accent-text">
+      <StudyInstructionText tone="accent" weight="bold">
        {answer.label}: {answer.value}
        {answer.pinyin && ` · ${answer.pinyin}`}
        {answer.note && ` — ${answer.note}`}
-      </p>
+      </StudyInstructionText>
      )}
     </span>
    ))}

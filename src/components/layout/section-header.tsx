@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type * as React from "react";
 import { cn } from "@/lib/utils";
 
@@ -18,8 +19,22 @@ function SectionHeader({ title, description, trailing, className }: SectionHeade
  return (
   <div className={cn("flex flex-wrap items-start justify-between gap-3", className)}>
    <div>
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">{title}</p>
-    {description && <p className="mt-1  text-text-muted">{description}</p>}
+    <Typography
+     as="p"
+     variant="overline"
+     tone="muted"
+     weight="bold"
+     scale="micro"
+     tracking="extraLoose"
+     transform="uppercase"
+    >
+     {title}
+    </Typography>
+    {description && (
+     <Typography as="p" tone="muted" className="mt-1">
+      {description}
+     </Typography>
+    )}
    </div>
    {trailing}
   </div>

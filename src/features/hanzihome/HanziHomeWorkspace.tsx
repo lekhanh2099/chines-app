@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -238,13 +239,13 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
 
  return (
   <main className="hanzihome-static-page hanzihome-workspace-page">
-   <h1 className="sr-only">
+   <Typography as="h1" variant="pageTitle" className="sr-only">
     {resolvedActiveModule === "radicals"
      ? "Bộ thủ HanziHome"
      : lesson
        ? `Bài học ${lesson.title}`
        : "Không gian học HanziHome"}
-   </h1>
+   </Typography>
    <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
     {resolvedActiveModule === "radicals" ? (
      <RadicalWorkspace

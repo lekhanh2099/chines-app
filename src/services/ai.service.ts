@@ -30,35 +30,33 @@ import {
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
- GrammarExerciseTypeSchema,
- GrammarPointContentSchema,
- GrammarPointWithProgressSchema,
  sentenceInsightSchema,
- type GrammarPointContent,
  type AiDefinitionExample,
  type AiVocabResponse,
  type AiWordRelation,
  type SentenceInsightResponse,
 } from "@/types/database";
 
-const RawProviderResultSchema = z.object({
- content: z.string().nullable(),
- error: z.string().nullable(),
-});
-type RawProviderResult = z.infer<typeof RawProviderResultSchema>;
+type RawProviderResult = z.infer<
+ z.ZodObject<{
+  content: z.ZodNullable<z.ZodString>;
+  error: z.ZodNullable<z.ZodString>;
+ }>
+>;
 
 type StructuredRequestResult<T> = {
  data: z.infer<z.ZodNullable<z.ZodType<T>>>;
- error: z.infer<typeof NullableStringSchema>;
+ error: z.infer<z.ZodNullable<z.ZodString>>;
 };
 
-const NullableStringSchema = z.string().nullable();
-type NullableString = z.infer<typeof NullableStringSchema>;
+type NullableString = z.infer<z.ZodNullable<z.ZodString>>;
 type NullableAbortSignal = Parameters<typeof throwIfAborted>[0];
-const ProviderSchema = z.enum(["Gemini", "DeepSeek", "OpenAI"]);
-const ManagedProviderSchema = ProviderSchema.or(z.literal("Groq"));
-const NullableAiVocabResponseSchema = aiAnalysisSchema.nullable();
-const NullableSentenceInsightResponseSchema = sentenceInsightSchema.nullable();
+type Provider = z.infer<z.ZodEnum<{ Gemini: "Gemini"; DeepSeek: "DeepSeek"; OpenAI: "OpenAI" }>>;
+type ManagedProvider = z.infer<
+ z.ZodUnion<
+  [z.ZodEnum<{ Gemini: "Gemini"; DeepSeek: "DeepSeek"; OpenAI: "OpenAI" }>, z.ZodLiteral<"Groq">]
+ >
+>;
 
 type AiRequestOptions = {
  promptTemplate?: NullableString;
@@ -113,60 +111,6 @@ Do not include markdown fences or commentary.`;
 
 const sentencePrompt = (text: string, promptTemplate?: NullableString) =>
  renderSentenceLookupPrompt(text, promptTemplate);
-
-const GRAMMAR_SYSTEM_PROMPT = `You are a Chinese grammar curriculum designer for Vietnamese learners.
-
-Return valid JSON only.
-Do not include markdown fences or commentary.
-Keep explanations practical, concise, and suitable for self-study.`;
-
-function grammarFillPrompt(input: {
- title: string;
- pinyin?: NullableString;
- vietnameseTitle?: NullableString;
- level?: NullableString;
- category?: NullableString;
- existing?: z.infer<z.ZodNullable<z.ZodType<GrammarPointContent>>>;
-}) {
- return `Fill missing study content for this Chinese grammar point.
-
-Grammar point:
-- title: ${input.title}
-- pinyin: ${input.pinyin || ""}
-- Vietnamese title: ${input.vietnameseTitle || ""}
-- level: ${input.level || ""}
-- category: ${input.category || ""}
-
-Existing content, if any:
-${JSON.stringify(input.existing || {}, null, 2)}
-
-Return JSON with this shape:
-{
-  "quick_example": { "zh": "...", "pinyin": "...", "vi": "..." },
-  "explanation": "...",
-  "structures": ["..."],
-  "usage_notes": ["..."],
-  "common_mistakes": ["..."],
-  "comparisons": ["..."],
-  "examples": [{ "zh": "...", "pinyin": "...", "vi": "...", "note": "..." }],
-  "exercises": [
-    {
-      "exercise_type": "fill_blank",
-      "prompt": "...",
-      "content": { "accepted_answers": ["..."] },
-      "answer": { "text": "..." },
-      "explanation": "..."
-    }
-  ]
-}
-
-Rules:
-- Prefer Vietnamese explanations.
-- Include Chinese examples with pinyin and Vietnamese translation.
-- Generate 2-4 exercises using fill_blank and multiple_choice first.
-- Do not mention that fields were missing.
-- Do not wrap the response in markdown.`;
-}
 
 /* ══════════════════════════════════════════
    Provider: DeepSeek
@@ -488,11 +432,7 @@ async function callGroqRaw(
  }
 }
 
-function formatProviderError(
- provider: z.infer<typeof ProviderSchema>,
- status: number,
- errorBody: string,
-): string {
+function formatProviderError(provider: Provider, status: number, errorBody: string): string {
  const body = errorBody.toLowerCase();
 
  if (provider === "Gemini") {
@@ -529,7 +469,7 @@ function formatProviderError(
 }
 
 function formatManagedKeyError(
- provider: z.infer<typeof ManagedProviderSchema>,
+ provider: ManagedProvider,
  status: number,
  errorBody: string,
 ): string {
@@ -804,7 +744,7 @@ async function requestStructuredJson<T>(
  for (const userApiKey of selectedUserApiKey ? [selectedUserApiKey] : []) {
   throwIfAborted(abortSignal);
 
-  let rawResult: z.infer<z.ZodNullable<typeof RawProviderResultSchema>> = null;
+  let rawResult: z.infer<z.ZodNullable<z.ZodType<RawProviderResult>>> = null;
 
   if (userApiKey.provider === "deepseek") {
    rawResult = await callDeepSeekRaw(managedSystemPrompt, prompt, {
@@ -889,18 +829,6 @@ async function requestStructuredJson<T>(
  };
 }
 
-/* ══════════════════════════════════════════
-   Public API
-   ══════════════════════════════════════════ */
-
-export async function analyzeHanzi(
- hanzi: string,
- options?: AiRequestOptions,
-): Promise<z.infer<typeof NullableAiVocabResponseSchema>> {
- const result = await analyzeHanziDetailed(hanzi, options);
- return result.data;
-}
-
 export async function analyzeHanziDetailed(
  hanzi: string,
  options?: AiRequestOptions,
@@ -968,14 +896,6 @@ export async function analyzeHanziBasicDetailed(
  };
 }
 
-export async function analyzeSentence(
- text: string,
- options?: AiRequestOptions,
-): Promise<z.infer<typeof NullableSentenceInsightResponseSchema>> {
- const result = await analyzeSentenceDetailed(text, options);
- return result.data;
-}
-
 export async function analyzeSentenceDetailed(
  text: string,
  options?: AiRequestOptions,
@@ -1007,203 +927,5 @@ export async function analyzeSentenceDetailed(
   error:
    result.error ||
    "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
- };
-}
-
-const grammarQuickExampleSchema = z.object({
- zh: z.string().optional(),
- pinyin: z.string().optional(),
- vi: z.string().optional(),
-});
-
-const grammarExerciseSchema = z.object({
- exercise_type: z
-  .enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"])
-  .optional(),
- prompt: z.string().optional(),
- content: z.record(z.string(), z.json()).optional(),
- answer: z.record(z.string(), z.json()).optional(),
- explanation: z.string().optional(),
-});
-
-const grammarFillSchema = z.object({
- quick_example: grammarQuickExampleSchema.optional(),
- explanation: z.string().optional(),
- structures: z.array(z.string()).optional(),
- usage_notes: z.array(z.string()).optional(),
- common_mistakes: z.array(z.string()).optional(),
- comparisons: z.array(z.string()).optional(),
- examples: z
-  .array(
-   z.object({
-    zh: z.string(),
-    pinyin: z.string(),
-    vi: z.string(),
-    note: z.string().optional(),
-   }),
-  )
-  .optional(),
- exercises: z.array(grammarExerciseSchema).optional(),
-});
-
-const grammarGeneratedExerciseSchema = z.object({
- exercise_type: z.enum([
-  "fill_blank",
-  "multiple_choice",
-  "reorder_sentence",
-  "translate_zh",
-  "identify_error",
- ]),
- prompt: z.string(),
- content: z.record(z.string(), z.json()).optional(),
- answer: z.record(z.string(), z.json()),
- explanation: z.string().optional(),
-});
-
-const grammarExerciseSetSchema = z.object({
- exercises: z.array(grammarGeneratedExerciseSchema),
-});
-
-const GrammarExerciseSetInputSchema = z.object({
- points: z.array(GrammarPointWithProgressSchema),
- exerciseType: GrammarExerciseTypeSchema.or(z.literal("mixed")),
- countPerType: z.number(),
- lessonTitle: NullableStringSchema.optional(),
- vocabulary: z
-  .array(
-   z.object({
-    hanzi: z.string(),
-    pinyin: z.string().optional(),
-    meaning: z.string().optional(),
-   }),
-  )
-  .optional(),
-});
-
-const GrammarFillInputSchema = z.object({
- title: z.string(),
- pinyin: NullableStringSchema.optional(),
- vietnameseTitle: NullableStringSchema.optional(),
- level: NullableStringSchema.optional(),
- category: NullableStringSchema.optional(),
- existing: GrammarPointContentSchema.nullable().optional(),
-});
-
-export type GrammarFillMissingResult = z.infer<typeof grammarFillSchema>;
-export type GrammarGeneratedExercise = z.infer<typeof grammarGeneratedExerciseSchema>;
-
-function grammarExerciseSetPrompt(input: z.infer<typeof GrammarExerciseSetInputSchema>) {
- const compactPoints = input.points.map((point) => ({
-  id: point.id,
-  title: point.title,
-  pinyin: point.pinyin,
-  vietnamese_title: point.vietnamese_title,
-  category: point.category,
-  explanation: point.content.explanation,
-  structures: point.content.structures,
-  quick_example: point.content.quick_example,
-  examples: point.content.examples?.slice(0, 4),
-  notes: point.content.usage_notes?.slice(0, 4),
- }));
- const types =
-  input.exerciseType === "mixed"
-   ? ["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]
-   : [input.exerciseType];
- return `Generate a fresh Chinese grammar exercise set for Vietnamese learners.
-
-Lesson: ${input.lessonTitle || ""}
-Exercise types: ${types.join(", ")}
-Count per type: ${input.countPerType}
-
-Grammar points:
-${JSON.stringify(compactPoints, null, 2)}
-
-Useful vocabulary from the same lesson:
-${JSON.stringify(input.vocabulary || [], null, 2)}
-
-Return JSON only:
-{
-  "exercises": [
-    {
-      "exercise_type": "fill_blank | multiple_choice | reorder_sentence | translate_zh | identify_error",
-      "prompt": "...",
-      "content": {
-        "choices": [{ "id": "A", "text": "..." }],
-        "accepted_answers": ["..."],
-        "tokens": ["..."],
-        "required_terms": ["..."],
-        "sample_answer": "..."
-      },
-      "answer": { "text": "..." } or { "choice": "A", "text": "..." },
-      "explanation": "Vietnamese explanation after checking"
-    }
-  ]
-}
-
-Rules:
-- Generate at least countPerType exercises for every requested type.
-- Every exercise must be meaningfully different. Do not repeat the same prompt with only numbering changed.
-- Use the grammar points and lesson vocabulary naturally.
-- Do not reveal the answer in multiple_choice option explanations before checking.
-- For translate_zh, include content.required_terms as the core Chinese phrases required for deterministic checking.
-- For reorder_sentence, include content.tokens shuffled and answer.text as the correct full sentence.
-- Vietnamese explanations should be concise and practical.`;
-}
-
-export async function generateGrammarExerciseSetDetailed(
- input: z.infer<typeof GrammarExerciseSetInputSchema>,
- options?: AiRequestOptions,
-): Promise<StructuredRequestResult<{ exercises: GrammarGeneratedExercise[] }>> {
- const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
- const result = await requestStructuredJson(
-  GRAMMAR_SYSTEM_PROMPT,
-  grammarExerciseSetPrompt(input),
-  geminiModel,
-  grammarExerciseSetSchema,
-  options?.userApiKeys,
-  options?.abortSignal,
- );
-
- if (result.data) {
-  return {
-   data: result.data,
-   error: null,
-  };
- }
-
- return {
-  data: null,
-  error: result.error || "Không thể tạo bài tập ngữ pháp lúc này.",
- };
-}
-
-export async function generateGrammarFillMissingDetailed(
- input: z.infer<typeof GrammarFillInputSchema>,
- options?: AiRequestOptions,
-): Promise<StructuredRequestResult<GrammarFillMissingResult>> {
- logger.info("[AI] Filling grammar:", input.title);
-
- const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
-
- const result = await requestStructuredJson(
-  GRAMMAR_SYSTEM_PROMPT,
-  grammarFillPrompt(input),
-  geminiModel,
-  grammarFillSchema,
-  options?.userApiKeys,
-  options?.abortSignal,
- );
-
- if (result.data) {
-  return {
-   data: result.data,
-   error: null,
-  };
- }
-
- logger.error("[AI] All providers failed for grammar:", input.title);
- return {
-  data: null,
-  error: result.error || "Không thể bổ sung ngữ pháp lúc này vì tất cả AI provider đều thất bại.",
  };
 }

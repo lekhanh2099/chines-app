@@ -37,7 +37,6 @@ export const mutationResponseSchema = z.object({
 
 export type CanonicalEntityType = z.infer<typeof canonicalEntityTypeSchema>;
 export type CanonicalMutationOperation = z.infer<typeof canonicalMutationOperationSchema>;
-export type MutationEnvelope = z.infer<typeof mutationEnvelopeSchema>;
 
 const deletedContentBaseSchema = z.object({
  entityId: z.string(),

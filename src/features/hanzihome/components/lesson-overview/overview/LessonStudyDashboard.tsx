@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { GraduationCap, Headphones, Tags } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -45,12 +47,22 @@ export function LessonStudyDashboard({
   <Card padding="lg" className="rounded-xl grid gap-3 content-start">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0">
-     <p className="text-xs font-black uppercase tracking-wide text-primary">Bài học</p>
-     <h2 className="text-2xl font-black leading-tight text-text-primary">{heading.zhTitle}</h2>
-     <p className="font-bold text-text-muted">
+     <StudyInstructionText
+      variant="overline"
+      tone="primary"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Bài học
+     </StudyInstructionText>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black" leading="tight">
+      {heading.zhTitle}
+     </Typography>
+     <StudyInstructionText tone="muted" weight="bold">
       {heading.volume}
       {heading.pinyinTitle && ` · ${heading.pinyinTitle}`}
-     </p>
+     </StudyInstructionText>
     </div>
     <div className="flex flex-wrap gap-2">
      {lesson.tags?.includes("listening") ? (
@@ -127,10 +139,18 @@ export function LessonStudyDashboard({
     <Card padding="lg" className="rounded-xl grid gap-3 content-start">
      <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
         Lộ trình bài này
-       </p>
-       <h2 className="text-lg font-black text-text-primary">Học theo đúng cấu trúc sách</h2>
+       </StudyInstructionText>
+       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+        Học theo đúng cấu trúc sách
+       </Typography>
       </div>
       <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("lessonText")}>
        Mở bài khóa

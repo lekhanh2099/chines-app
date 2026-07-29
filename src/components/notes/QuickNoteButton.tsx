@@ -24,8 +24,8 @@ interface QuickNoteButtonProps {
 
 export function QuickNoteButton({
  className = "",
- variant = "default",
- size = "md",
+ variant = QuickNoteVariantSchema.enum.default,
+ size = QuickNoteSizeSchema.enum.md,
  compactOnTablet = false,
 }: QuickNoteButtonProps) {
  const [isCreating, setIsCreating] = useState(false);
@@ -86,12 +86,13 @@ export function QuickNoteButton({
   return (
    <Button
     type="button"
-    variant="outline"
+    variant="dashed"
+    size="list"
     onClick={handleCreate}
     disabled={isCreating || focusModeEnabled}
     aria-label="Tạo ghi chú nhanh"
     title="Tạo ghi chú nhanh"
-    className={cn("min-h-14 w-full border-dashed text-text-muted", className)}
+    className={cn("w-full", className)}
    >
     {isCreating ? <Loader2 className="size-4 animate-spin" /> : <Zap className="size-4" />}
     Ghi chú nhanh

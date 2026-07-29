@@ -2,6 +2,7 @@ import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
 import { useId } from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 type ControlledTextareaProps = {
  value?: never;
@@ -28,14 +29,15 @@ export function TextareaField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <textarea
+   <Textarea
     id={id}
     name={field.name}
     value={field.state.value}
     aria-invalid={!field.state.meta.isValid}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="min-h-[120px] w-full resize-none rounded-2xl border border-border-default bg-bg-primary p-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
+    density="comfortable"
+    resize="none"
     {...rest}
    />
   </FieldItem>

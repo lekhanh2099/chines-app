@@ -1,5 +1,10 @@
 "use client";
 
+import {
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Lightbulb, Sigma } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { VocabWritingCue } from "@/features/hanzihome/components/VocabWritingCue";
@@ -26,17 +31,19 @@ export function StudyReviewBack({
    <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid min-w-0 gap-1">
-      <p className="font-pinyin text-xl font-black text-text-primary">{item.source.pinyin}</p>
+      <PinyinText as="p" variant="sectionTitle" tone="default" weight="black">
+       {item.source.pinyin}
+      </PinyinText>
 
-      <p className="text-base font-bold text-text-secondary">
+      <StudyInstructionText tone="secondary" weight="bold">
        {item.source.meaning.hanviet} · {getVocabDisplayMeaning(item.source)}
-      </p>
+      </StudyInstructionText>
      </div>
 
      <Button
       type="button"
       variant="outline"
-      className="shrink-0 rounded-lg"
+      className="shrink-0"
       onMouseDown={(event) => event.stopPropagation()}
       onTouchStart={(event) => event.stopPropagation()}
       onClick={(event) => {
@@ -61,13 +68,21 @@ export function StudyReviewBack({
 
     {example && (
      <div className="grid gap-1 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm sm:p-4">
-      <p className="font-hanzi text-base font-black text-text-primary" lang="zh-CN">
+      <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
        {example.zh}
-      </p>
+      </HanziText>
 
-      {example.pinyin && <p className="font-pinyin font-bold text-text-muted">{example.pinyin}</p>}
+      {example.pinyin && (
+       <PinyinText as="p" tone="muted" weight="bold">
+        {example.pinyin}
+       </PinyinText>
+      )}
 
-      {example.vi && <p className="font-semibold text-text-secondary">{example.vi}</p>}
+      {example.vi && (
+       <StudyInstructionText tone="secondary" weight="semibold">
+        {example.vi}
+       </StudyInstructionText>
+      )}
      </div>
     )}
    </div>
@@ -83,18 +98,26 @@ export function StudyReviewBack({
      <div className="exercise-answer-surface grid gap-2 rounded-xl border p-3">
       <div className="flex items-center gap-2">
        <Lightbulb className="h-4 w-4 text-primary" />
-       <p className="text-xs font-black uppercase tracking-wide text-primary">Ý nghĩa</p>
+       <StudyInstructionText
+        variant="overline"
+        tone="primary"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Ý nghĩa
+       </StudyInstructionText>
       </div>
-      <p className="text-base font-bold leading-relaxed text-text-primary">
+      <StudyInstructionText tone="default" weight="bold" leading="relaxed">
        {item.source.core || item.answer}
-      </p>
+      </StudyInstructionText>
      </div>
     </div>
 
     <Button
      type="button"
      variant="outline"
-     className="shrink-0 rounded-lg"
+     className="shrink-0"
      onMouseDown={(event) => event.stopPropagation()}
      onTouchStart={(event) => event.stopPropagation()}
      onClick={(event) => {
@@ -113,21 +136,33 @@ export function StudyReviewBack({
     <div className="rounded-xl border border-info/30 bg-info-subtle p-3 grid gap-2">
      <div className="flex items-center gap-2">
       <Sigma className="h-4 w-4 text-info-text" />
-      <p className="text-xs font-black uppercase tracking-wide text-info-text">Công thức</p>
+      <StudyInstructionText
+       variant="overline"
+       tone="info"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       Công thức
+      </StudyInstructionText>
      </div>
-     <p className="font-mono text-base font-black text-info-text">
+     <StudyInstructionText variant="code" tone="info" weight="black">
       {item.source.structuresView[0]}
-     </p>
+     </StudyInstructionText>
     </div>
    )}
 
    {example && (
     <div className="rounded-xl border border-border-default bg-bg-primary p-3 shadow-theme-sm sm:p-4">
-     <p className="font-hanzi text-base font-black text-text-primary" lang="zh-CN">
+     <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
       {example.zh}
-     </p>
+     </HanziText>
 
-     {example.vi && <p className="font-semibold text-text-secondary">{example.vi}</p>}
+     {example.vi && (
+      <StudyInstructionText tone="secondary" weight="semibold">
+       {example.vi}
+      </StudyInstructionText>
+     )}
     </div>
    )}
   </div>

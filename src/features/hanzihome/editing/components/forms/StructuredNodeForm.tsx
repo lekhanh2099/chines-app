@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { z } from "zod";
 
@@ -104,7 +105,9 @@ export function StructuredNodeForm({ value, adapter, formId, onSubmit }: Structu
      <div key={field.key} className="grid gap-4">
       {field.group && field.group !== previousGroup ? (
        <div className="border-t border-border-default pt-4 first:border-t-0 first:pt-0">
-        <h3 className="font-bold text-text-primary">{field.group}</h3>
+        <Typography as="h3" variant="cardTitle" tone="default" weight="bold">
+         {field.group}
+        </Typography>
        </div>
       ) : null}
       <form.AppField name={field.key}>

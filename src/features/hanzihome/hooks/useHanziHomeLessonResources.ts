@@ -9,12 +9,8 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import {
- buildLessonGrammarResource,
- buildLessonOverviewResource,
  buildLessonSectionsResource,
  attachLessonVocabularyResource,
- type LessonGrammarListResource,
- type LessonOverviewResource,
  type LessonSectionsResource,
  type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
@@ -29,17 +25,6 @@ export function useHanziHomeLessonDetailResource(lessonId: string) {
   staleTime: lessonResourceStaleTime,
   enabled: Boolean(lessonId),
  });
-}
-
-export function useHanziHomeLessonOverview(lessonId: string): Nullable<LessonOverviewResource> {
- const detailQuery = useHanziHomeLessonDetailResource(lessonId);
- const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
-
- return detailQuery.data && vocabularyQuery.data
-  ? buildLessonOverviewResource(
-     attachLessonVocabularyResource(detailQuery.data, vocabularyQuery.data),
-    )
-  : null;
 }
 
 export function useHanziHomeLessonSections(lessonId: string): Nullable<LessonSectionsResource> {
@@ -60,10 +45,4 @@ export function useHanziHomeLessonVocabulary(lessonId: string) {
   staleTime: lessonResourceStaleTime,
   enabled: Boolean(lessonId),
  });
-}
-
-export function useHanziHomeLessonGrammar(lessonId: string): Nullable<LessonGrammarListResource> {
- const query = useHanziHomeLessonDetailResource(lessonId);
-
- return query.data ? buildLessonGrammarResource(query.data) : null;
 }

@@ -15,7 +15,6 @@ import { runtimeDeepVocabularyItemSchema } from "@/features/hanzihome/schemas/ru
 import type {
  GrammarViewModel,
  HanziHomeCatalogCourse,
- HanziHomeCatalogData,
  HanziHomeData,
  HanziHomeEditableRecordMeta,
  HanziHomeLesson,
@@ -31,10 +30,6 @@ import {
  type AggregateKind,
  type AggregateResourceItem,
  type AggregateVocabItem,
- type LessonGrammarListResource,
- type LessonOverviewResource,
- type LessonSectionsResource,
- type LessonVocabularyListResource,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
  aggregateGrammarRowSchema,
@@ -80,24 +75,21 @@ function countFromRelation(value: Array<{ count: number }>) {
  return value[0]?.count ?? 0;
 }
 
-const OptionalNullableStringSchema = z.string().nullable().optional();
-const NullableStringSchema = z.string().nullable();
-
-function normalizeText(value: z.infer<typeof OptionalNullableStringSchema>) {
+function normalizeText(value: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>) {
  return value?.trim() ?? "";
 }
 
-function isMissingRequiredText(value: z.infer<typeof OptionalNullableStringSchema>) {
+function isMissingRequiredText(value: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>) {
  return normalizeText(value).length === 0;
 }
 
-function normalizePos(value: z.infer<typeof NullableStringSchema>) {
+function normalizePos(value: z.infer<z.ZodNullable<z.ZodString>>) {
  const normalized = value?.trim().toLowerCase().replaceAll(" ", "_") ?? "unknown";
  const parsed = PartOfSpeechSchema.safeParse(normalized);
  return parsed.success ? parsed.data : "unknown";
 }
 
-function normalizeLevel(value: z.infer<typeof NullableStringSchema>) {
+function normalizeLevel(value: z.infer<z.ZodNullable<z.ZodString>>) {
  const parsed = ImportanceLevelSchema.safeParse(value ?? "unknown");
  return parsed.success ? parsed.data : "unknown";
 }
@@ -589,13 +581,13 @@ function lessonDetailToViewModel(row: LessonDetailRow): HanziHomeLesson {
 }
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-const SupabaseOperationErrorSchema = z.object({ message: z.string() });
+type SupabaseOperationError = z.infer<z.ZodObject<{ message: z.ZodString }>>;
 
 async function requireRows<T>(
  operation: string,
  promise: PromiseLike<{
   data: JsonFieldValue;
-  error: Nullable<z.infer<typeof SupabaseOperationErrorSchema>>;
+  error: Nullable<SupabaseOperationError>;
  }>,
  schema: z.ZodType<T>,
 ) {
@@ -614,7 +606,7 @@ async function requirePagedRows<T>(
   to: number,
  ) => PromiseLike<{
   data: JsonFieldValue;
-  error: Nullable<z.infer<typeof SupabaseOperationErrorSchema>>;
+  error: Nullable<SupabaseOperationError>;
  }>,
 ) {
  const pageSize = 1_000;
@@ -1175,7 +1167,7 @@ export const supabaseHanziHomeContentRepository = {
   return lesson ? buildLessonOverviewResource(lesson) : null;
  },
 
- async getLessonDetail(lessonId: z.infer<typeof OptionalNullableStringSchema>) {
+ async getLessonDetail(lessonId: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>) {
   if (!lessonId) return null;
   const row = await getLessonDetailRow(lessonId);
   return row ? lessonDetailToViewModel(row) : null;

@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
@@ -33,15 +34,24 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       description="Ưu tiên hiểu toàn câu trước, sau đó bóc tách từng hán tự khi cần."
      />
 
-     <h1 className="break-words text-3xl font-black leading-snug text-text-primary">
+     <Typography
+      as="h1"
+      variant="pageTitle"
+      tone="default"
+      weight="black"
+      leading="snug"
+      wrapping="breakWords"
+     >
       {viewModel.text}
-     </h1>
+     </Typography>
 
      {viewModel.pinyin && (
       <Card variant="subtle" padding="sm">
        <div className="flex flex-col gap-1">
         <SectionHeader title="Pinyin" />
-        <p className="break-words  font-semibold  ">{viewModel.pinyin}</p>
+        <Typography as="p" weight="semibold" wrapping="breakWords">
+         {viewModel.pinyin}
+        </Typography>
        </div>
       </Card>
      )}
@@ -56,9 +66,13 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
          <span className="sr-only">Đang dịch câu</span>
         </div>
        ) : viewModel.translation ? (
-        <p className="break-words  leading-relaxed text-text-primary">{viewModel.translation}</p>
+        <Typography as="p" tone="default" leading="relaxed" wrapping="breakWords">
+         {viewModel.translation}
+        </Typography>
        ) : (
-        <p className=" text-text-muted">{viewModel.error || "Chưa có bản dịch cho câu này."}</p>
+        <Typography as="p" tone="muted">
+         {viewModel.error || "Chưa có bản dịch cho câu này."}
+        </Typography>
        )}
       </div>
      </Card>
@@ -85,12 +99,14 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
             {character}
            </Link>
           ) : (
-           <span
+           <Typography
+            as="span"
             key={`${character}-${index}`}
-            className="inline-flex h-9 min-w-9 items-center justify-center rounded-2xl  bg-bg-subtle px-3  text-text-muted"
+            tone="muted"
+            className="inline-flex h-9 min-w-9 items-center justify-center rounded-2xl bg-bg-subtle px-3"
            >
             {character}
-           </span>
+           </Typography>
           ),
          )}
         </div>

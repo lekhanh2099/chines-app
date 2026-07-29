@@ -1,9 +1,9 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
 import { useState } from "react";
 import type { ReactNode } from "react";
-import { Popover } from "@base-ui/react";
 import type { User } from "@supabase/supabase-js";
 import {
  BookOpenCheck,
@@ -23,6 +23,12 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import type { Theme } from "@/components/layout/ThemeProvider";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
 import { LessonReadingSettingsDialogContent } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
@@ -118,67 +124,76 @@ export function ProfileSettingsMenu({
  return (
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <Popover.Trigger
-    className={cn(
-     "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text shadow-theme-sm outline-none transition hover:bg-bg-elevated focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20",
-     focusModeEnabled && "border-warning/35 bg-warning-subtle text-warning-text",
-    )}
+    render={
+     <Button
+      variant={focusModeEnabled ? "avatarWarning" : "avatar"}
+      size="icon-round"
+      className="shrink-0"
+     />
+    }
     aria-label="Mở hồ sơ và cài đặt học"
     title="Hồ sơ và cài đặt"
    >
-    {showAvatar && profile.avatarUrl ? (
-     // Google profile images are user metadata and can use changing CDN hosts.
-     // eslint-disable-next-line @next/next/no-img-element
-     <img
-      src={profile.avatarUrl}
-      alt=""
-      className="h-full w-full rounded-full object-cover"
-      referrerPolicy="no-referrer"
-      onError={() => setFailedAvatarUrl(profile.avatarUrl)}
-     />
-    ) : (
-     profile.initial
-    )}
+    <Avatar size="md" tone={focusModeEnabled ? "neutral" : "accent"}>
+     {showAvatar && profile.avatarUrl ? (
+      <AvatarImage
+       src={profile.avatarUrl}
+       alt=""
+       referrerPolicy="no-referrer"
+       onError={() => setFailedAvatarUrl(profile.avatarUrl)}
+      />
+     ) : null}
+     <AvatarFallback>{profile.initial}</AvatarFallback>
+    </Avatar>
    </Popover.Trigger>
    <Popover.Portal>
-    <Popover.Positioner
+    <BasePopoverPositioner
      side="bottom"
      align="end"
      sideOffset={10}
      collisionPadding={12}
      positionMethod="fixed"
-     style={{ zIndex: 90 }}
     >
-     <Popover.Popup
-      initialFocus={false}
-      finalFocus={false}
-      className="max-h-[calc(100dvh-1rem)] w-[min(23rem,calc(100vw-1rem))] overflow-x-hidden overflow-y-auto rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg scrollbar-soft"
-     >
+     <BasePopoverPopup initialFocus={false} finalFocus={false} variant="profile">
       <div className="flex items-center gap-3 border-b border-border-default px-3 py-3">
-       <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border-default bg-accent-subtle text-sm font-black text-accent-text">
+       <Avatar size="lg" tone="accent">
         {showAvatar && profile.avatarUrl ? (
-         // eslint-disable-next-line @next/next/no-img-element
-         <img
+         <AvatarImage
           src={profile.avatarUrl}
           alt=""
-          className="h-full w-full object-cover"
           referrerPolicy="no-referrer"
           onError={() => setFailedAvatarUrl(profile.avatarUrl)}
          />
-        ) : (
-         profile.initial
-        )}
-       </div>
+        ) : null}
+        <AvatarFallback>{profile.initial}</AvatarFallback>
+       </Avatar>
        <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-black text-text-primary">{profile.name}</p>
-        <p className="flex items-center gap-1.5 truncate text-xs font-semibold text-text-muted">
+        <Typography as="p" variant="label" tone="default" weight="black" clamp="one">
+         {profile.name}
+        </Typography>
+        <Typography
+         as="p"
+         variant="caption"
+         tone="muted"
+         weight="semibold"
+         clamp="one"
+         className="flex items-center gap-1.5"
+        >
          <Mail className="h-3 w-3 shrink-0" />
-         <span className="truncate">{profile.email}</span>
-        </p>
+         <Typography as="span" clamp="one">
+          {profile.email}
+         </Typography>
+        </Typography>
        </div>
-       <span className="flex shrink-0 items-center gap-1 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary">
+       <Typography
+        variant="caption"
+        tone="secondary"
+        weight="black"
+        className="flex shrink-0 items-center gap-1 rounded-lg border border-border-default bg-bg-card px-2 py-1"
+       >
         <ShieldCheck className="h-3 w-3" />
         {profile.providerLabel}
-       </span>
+       </Typography>
       </div>
 
       <div className="px-3 pt-3 text-xs font-black uppercase tracking-wide text-text-muted">
@@ -239,15 +254,16 @@ export function ProfileSettingsMenu({
        <Button
         type="button"
         variant="ghost"
-        className="min-h-11 w-full justify-start gap-3 rounded-xl px-3 py-2 text-danger hover:bg-danger-subtle hover:text-danger"
+        align="start"
+        className="w-full"
         onClick={handleLogout}
        >
         <LogOut className="h-4 w-4" />
         Đăng xuất
        </Button>
       </div>
-     </Popover.Popup>
-    </Popover.Positioner>
+     </BasePopoverPopup>
+    </BasePopoverPositioner>
    </Popover.Portal>
    <Dialog open={readingSettingsOpen} onOpenChange={setReadingSettingsOpen}>
     <LessonReadingSettingsDialogContent
@@ -274,22 +290,26 @@ function SettingsNavigationRow({
  onClick: () => void;
 }) {
  return (
-  <Button
-   type="button"
-   variant="ghost"
-   className="min-h-14 w-full justify-start gap-3 rounded-xl px-3 py-2 text-left"
-   onClick={onClick}
-  >
+  <Button type="button" variant="ghost" align="start" className="w-full" onClick={onClick}>
    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-bg-card text-current shadow-theme-sm">
     {icon}
    </span>
    <span className="grid min-w-0 flex-1 gap-0.5">
-    <span className="text-sm font-black text-text-primary">{label}</span>
-    <span className="truncate text-xs font-semibold text-text-muted">{description}</span>
+    <Typography variant="label" tone="default" weight="black">
+     {label}
+    </Typography>
+    <Typography variant="caption" tone="muted" weight="semibold" clamp="one">
+     {description}
+    </Typography>
    </span>
-   <span className="shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary">
+   <Typography
+    variant="caption"
+    tone="secondary"
+    weight="black"
+    className="shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1"
+   >
     {value}
-   </span>
+   </Typography>
   </Button>
  );
 }
@@ -305,15 +325,26 @@ function SettingsStatusRow({
 }) {
  return (
   <div className="flex min-h-12 items-center gap-3 rounded-xl px-3 py-2">
-   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle text-text-secondary">
+   <Typography
+    as="span"
+    tone="secondary"
+    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle"
+   >
     {icon}
-   </span>
+   </Typography>
    <div className="min-w-0 flex-1">
-    <p className="text-sm font-bold text-text-primary">{label}</p>
+    <Typography as="p" variant="label" tone="default" weight="bold">
+     {label}
+    </Typography>
    </div>
-   <span className="shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary">
+   <Typography
+    variant="caption"
+    tone="secondary"
+    weight="black"
+    className="shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1"
+   >
     {value}
-   </span>
+   </Typography>
   </div>
  );
 }
@@ -338,29 +369,35 @@ function SettingsActionRow({
  return (
   <Button
    type="button"
-   variant={active && !warning ? "active" : "ghost"}
-   className={cn(
-    "min-h-14 w-full justify-start gap-3 rounded-xl px-3 py-2 text-left",
-    warning && "bg-warning-subtle text-warning-text hover:bg-warning-subtle",
-   )}
+   variant={warning ? "warning" : active ? "active" : "ghost"}
+   size="list"
+   align="start"
+   className="w-full"
    onClick={onClick}
   >
    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-bg-card text-current shadow-theme-sm">
     {icon}
    </span>
    <span className="grid min-w-0 flex-1 gap-0.5">
-    <span className="text-sm font-black text-text-primary">{label}</span>
-    <span className="truncate text-xs font-semibold text-text-muted">{description}</span>
+    <Typography variant="label" tone="default" weight="black">
+     {label}
+    </Typography>
+    <Typography variant="caption" tone="muted" weight="semibold" clamp="one">
+     {description}
+    </Typography>
    </span>
-   <span
+   <Typography
+    variant="caption"
+    tone={warning ? "warning" : active ? "accent" : "secondary"}
+    weight="black"
     className={cn(
-     "shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1 text-xs font-black text-text-secondary",
-     active && "border-primary/25 text-accent-text",
-     warning && "border-warning/30 text-warning-text",
+     "shrink-0 rounded-lg border border-border-default bg-bg-card px-2 py-1",
+     active && "border-primary/25",
+     warning && "border-warning/30",
     )}
    >
     {value}
-   </span>
+   </Typography>
   </Button>
  );
 }

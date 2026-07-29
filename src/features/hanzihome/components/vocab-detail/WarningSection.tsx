@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { Warning } from "@/features/hanzihome/schemas/vocab.types";
 import { VocabReadingSection } from "./VocabReadingSection";
 
@@ -10,22 +11,28 @@ export function WarningSection({ warnings }: { warnings: Warning[] }) {
       key={warning.id}
       className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3"
      >
-      {warning.rule_vi && <p className="font-black text-text-primary">{warning.rule_vi}</p>}
-      {warning.explanation_vi && <p>{warning.explanation_vi}</p>}
+      {warning.rule_vi && (
+       <StudyInstructionText tone="default" weight="black">
+        {warning.rule_vi}
+       </StudyInstructionText>
+      )}
+      {warning.explanation_vi && (
+       <StudyInstructionText>{warning.explanation_vi}</StudyInstructionText>
+      )}
       {warning.wrong_examples.map((example) => (
-       <p key={`wrong-${example.zh}`} className="text-danger">
+       <StudyInstructionText key={`wrong-${example.zh}`} tone="dangerStrong">
         Sai: {example.zh} {example.vi ? `- ${example.vi}` : ""}
-       </p>
+       </StudyInstructionText>
       ))}
       {warning.correct_examples.map((example) => (
-       <p key={`correct-${example.zh}`} className="text-success">
+       <StudyInstructionText key={`correct-${example.zh}`} tone="successStrong">
         Đúng: {example.zh} {example.vi ? `- ${example.vi}` : ""}
-       </p>
+       </StudyInstructionText>
       ))}
       {warning.natural_examples.map((example) => (
-       <p key={`natural-${example.zh}`}>
+       <StudyInstructionText key={`natural-${example.zh}`}>
         Tự nhiên: {example.zh} {example.vi ? `- ${example.vi}` : ""}
-       </p>
+       </StudyInstructionText>
       ))}
      </div>
     ))}

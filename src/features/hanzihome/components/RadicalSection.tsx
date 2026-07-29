@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +18,9 @@ export function RadicalSection({
     className,
    )}
   >
-   <h4 className="text-base font-black text-text-primary">{title}</h4>
+   <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+    {title}
+   </Typography>
    {children}
   </section>
  );

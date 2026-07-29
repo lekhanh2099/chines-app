@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { BookOpenText, Layers3, Lightbulb, Repeat2 } from "lucide-react";
 
@@ -13,9 +14,15 @@ const actions = [
 export function HomeQuickActions() {
  return (
   <section aria-labelledby="quick-actions-title">
-   <h2 id="quick-actions-title" className="text-lg font-black text-text-primary">
+   <Typography
+    as="h2"
+    variant="sectionTitle"
+    id="quick-actions-title"
+    tone="default"
+    weight="black"
+   >
     Truy cập nhanh
-   </h2>
+   </Typography>
    <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-2">
     {actions.map((action) => {
      const Icon = action.icon;

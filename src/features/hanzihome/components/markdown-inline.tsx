@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 export function renderMarkdownInline(text: string) {
@@ -15,12 +16,15 @@ export function renderMarkdownInline(text: string) {
   const key = `${match.index}-${token}`;
   if (token.startsWith("`")) {
    parts.push(
-    <code
+    <StudyInstructionText
+     as="code"
      key={key}
-     className="rounded bg-bg-subtle px-1 py-0.5 font-mono text-[0.95em] text-text-primary"
+     variant="code"
+     tone="default"
+     className="rounded bg-bg-subtle px-1 py-0.5"
     >
      {token.slice(1, -1)}
-    </code>,
+    </StudyInstructionText>,
    );
   } else if (token.startsWith("**") || token.startsWith("__")) {
    parts.push(<strong key={key}>{token.slice(2, -2)}</strong>);

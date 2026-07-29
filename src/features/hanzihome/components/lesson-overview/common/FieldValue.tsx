@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue } from "@/types/json";
 import { PassageCard } from "../PassageCard";
 import type { LessonDisplayMode } from "../types";
@@ -19,12 +20,18 @@ export function FieldValue({
 }) {
  if (typeof value === "string" || typeof value === "number") {
   return (
-   <p className="whitespace-pre-wrap  font-semibold leading-relaxed text-text-secondary">{value}</p>
+   <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed" wrapping="preWrap">
+    {value}
+   </StudyInstructionText>
   );
  }
 
  if (typeof value === "boolean") {
-  return <p className=" font-semibold text-text-secondary">{value ? "Có" : "Không"}</p>;
+  return (
+   <StudyInstructionText tone="secondary" weight="semibold">
+    {value ? "Có" : "Không"}
+   </StudyInstructionText>
+  );
  }
 
  if (Array.isArray(value)) {
@@ -66,17 +73,25 @@ export function FieldValue({
 
  return (
   <div className="grid gap-1  font-semibold text-text-secondary">
-   {primary && <p className="text-text-primary">{primary}</p>}
-   {displayMode.showMeaning && secondary && secondary !== primary && <p>{secondary}</p>}
+   {primary && <StudyInstructionText tone="default">{primary}</StudyInstructionText>}
+   {displayMode.showMeaning && secondary && secondary !== primary && (
+    <StudyInstructionText>{secondary}</StudyInstructionText>
+   )}
 
    {!primary &&
     Object.entries(record)
      .filter(([, entryValue]) => hasRenderableValue(entryValue))
      .map(([key, entryValue]) => (
       <div key={key} className="grid gap-1 rounded-lg bg-bg-primary px-3 py-2">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
         {getFieldLabel(key)}
-       </p>
+       </StudyInstructionText>
        <FieldValue value={entryValue} displayMode={displayMode} />
       </div>
      ))}

@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
@@ -64,7 +66,9 @@ export function ReorderExerciseBody({
     const questionId = stringValue(question, "id") || `${item.id}-reorder-${questionIndex}`;
     const content = (
      <section className="exercise-question-surface grid gap-3 rounded-xl border p-3 sm:p-4">
-      <h5 className="font-black text-text-primary">Nhóm {questionIndex + 1}</h5>
+      <Typography as="h5" variant="cardTitle" tone="default" weight="black">
+       Nhóm {questionIndex + 1}
+      </Typography>
       <div className="grid gap-2 sm:grid-cols-2">
        {options.map((option, optionIndex) => (
         <MatchingOptionCard
@@ -77,7 +81,9 @@ export function ReorderExerciseBody({
       </div>
       {answer ? (
        <AnswerReveal defaultOpen={displayMode.showAnswers} label="Xem thứ tự đúng">
-        <p className="font-black text-accent-text">{answer}</p>
+        <StudyInstructionText tone="accent" weight="black">
+         {answer}
+        </StudyInstructionText>
        </AnswerReveal>
       ) : null}
      </section>

@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import { formatDistanceToNow } from "date-fns";
 import { vi } from "date-fns/locale";
 import Link from "next/link";
@@ -41,13 +42,24 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
        </HomeIconTile>
 
        <span className="min-w-0 flex-1">
-        <span className="block truncate font-bold text-text-primary group-hover:text-accent-text">
+        <Typography
+         tone="default"
+         weight="bold"
+         clamp="one"
+         stateTone="groupAccent"
+         className="block"
+        >
          {note.title || "Ghi chú chưa đặt tên"}
-        </span>
-        <span className="mt-0.5 flex items-center gap-1 text-xs font-semibold text-text-muted">
+        </Typography>
+        <Typography
+         variant="caption"
+         tone="muted"
+         weight="semibold"
+         className="mt-0.5 flex items-center gap-1"
+        >
          <Clock3 className="h-3 w-3" />
          {formatDistanceToNow(new Date(note.updated_at), { addSuffix: true, locale: vi })}
-        </span>
+        </Typography>
        </span>
 
        <HomeArrowIcon />
@@ -56,7 +68,9 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
     </div>
    ) : (
     <div className="mt-4 rounded-2xl border border-dashed border-border-default px-4 py-6 text-center">
-     <p className="text-sm font-bold text-text-secondary">Chưa có ghi chú gần đây.</p>
+     <Typography as="p" variant="label" tone="secondary" weight="bold">
+      Chưa có ghi chú gần đây.
+     </Typography>
      <Link
       href="/notes?action=new"
       className="mt-2 inline-block text-sm font-bold text-accent-text"

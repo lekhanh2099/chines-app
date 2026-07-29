@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ErrorInput } from "@/types/error";
 import { JsonValueSchema, type JsonObject } from "@/types/json";
 import CodeMirror from "@uiw/react-codemirror";
@@ -255,7 +257,7 @@ function RadicalEditDialogContent({
  const queryClient = useQueryClient();
  const initialValues = useMemo(() => valuesFromRadical(radical), [radical]);
  const before = useMemo(() => columnValuesFromRadical(radical), [radical]);
- const [mode, setMode] = useState<EditMode>("fields");
+ const [mode, setMode] = useState<EditMode>(EditModeSchema.enum.fields);
  const [jsonValue, setJsonValue] = useState(() => JSON.stringify(before, null, 2));
  const [jsonError, setJsonError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [isJsonSubmitting, setIsJsonSubmitting] = useState(false);
@@ -344,18 +346,14 @@ function RadicalEditDialogContent({
         {(field) => <field.TextField label="Tên tiếng Việt" />}
        </form.AppField>
        <form.AppField name="modernMeaning">
-        {(field) => <field.Textarea label="Ý nghĩa hiện đại" textareaClassName="min-h-24" />}
+        {(field) => <field.Textarea label="Ý nghĩa hiện đại" />}
        </form.AppField>
        <form.AppField name="historyMeaning">
-        {(field) => <field.Textarea label="Nguồn gốc / lịch sử" textareaClassName="min-h-24" />}
+        {(field) => <field.Textarea label="Nguồn gốc / lịch sử" />}
        </form.AppField>
        <form.AppField name="variantsText">
         {(field) => (
-         <field.Textarea
-          label="Biến thể"
-          description="Mỗi dòng: dạng | ghi chú"
-          textareaClassName="min-h-28 font-mono text-sm"
-         />
+         <field.Textarea label="Biến thể" description="Mỗi dòng: dạng | ghi chú" font="mono" />
         )}
        </form.AppField>
        <form.AppField name="relatedComponentsText">
@@ -363,28 +361,23 @@ function RadicalEditDialogContent({
          <field.Textarea
           label="Thành phần liên quan"
           description="Mỗi dòng: dạng | ghi chú"
-          textareaClassName="min-h-32 font-mono text-sm"
+          density="comfortable"
+          font="mono"
          />
         )}
        </form.AppField>
        <form.AppField name="recognition">
-        {(field) => <field.Textarea label="Nhận diện" textareaClassName="min-h-24" />}
+        {(field) => <field.Textarea label="Nhận diện" />}
        </form.AppField>
        <form.AppField name="distinguishText">
-        {(field) => (
-         <field.Textarea
-          label="Phân biệt"
-          description="Mỗi dòng là một ghi chú."
-          textareaClassName="min-h-28"
-         />
-        )}
+        {(field) => <field.Textarea label="Phân biệt" description="Mỗi dòng là một ghi chú." />}
        </form.AppField>
        <form.AppField name="groupsText">
         {(field) => (
          <field.Textarea
           label="Nhóm chữ thường gặp"
           description="Mỗi dòng: Tên nhóm: 字 字 字"
-          textareaClassName="min-h-24 font-mono text-sm"
+          font="mono"
          />
         )}
        </form.AppField>
@@ -398,12 +391,9 @@ function RadicalEditDialogContent({
         void submitJson();
        }}
       >
-       <label
-        id="hanzihome-radical-json-edit-label"
-        className="text-sm font-bold text-text-primary"
-       >
+       <Label id="hanzihome-radical-json-edit-label" variant="label" tone="default" weight="bold">
         JSON
-       </label>
+       </Label>
        <div className="h-[clamp(26rem,58dvh,42rem)] overflow-hidden rounded-xl border border-border-default bg-bg-primary shadow-inner focus-within:ring-2 focus-within:ring-ring [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full">
         <CodeMirror
          aria-labelledby="hanzihome-radical-json-edit-label"
@@ -426,7 +416,11 @@ function RadicalEditDialogContent({
          }}
         />
        </div>
-       {jsonError ? <p className="text-sm font-medium text-destructive">{jsonError}</p> : null}
+       {jsonError ? (
+        <StudyInstructionText variant="bodySmall" tone="danger" weight="medium">
+         {jsonError}
+        </StudyInstructionText>
+       ) : null}
       </form>
      )}
     </div>

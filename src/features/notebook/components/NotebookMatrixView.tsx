@@ -1,3 +1,5 @@
+import { Typography } from "@/components/ui/typography";
+import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { Card } from "@/components/ui/card";
 import type { NotebookItem } from "@/features/notebook/types";
 
@@ -19,19 +21,28 @@ export function NotebookMatrixView({ items }: { items: NotebookItem[] }) {
       {items.map((item) => (
        <tr key={item.id} className="border-t border-border-default align-top">
         <td className="px-5 py-5 grid gap-1">
-         <strong lang="zh-CN" className="block font-hanzi text-3xl text-text-primary">
+         <LearnerHanziText as="strong" size="display" tone="default" className="block">
           {item.term}
-         </strong>
-         <span className="block text-sm font-bold text-accent-text">{item.p}</span>
-         <span className="block text-sm font-semibold text-text-secondary">{item.vi}</span>
+         </LearnerHanziText>
+         <Typography variant="label" tone="accent" weight="bold" className="block">
+          {item.p}
+         </Typography>
+         <Typography variant="bodySmall" tone="secondary" weight="semibold" className="block">
+          {item.vi}
+         </Typography>
         </td>
         <td className="max-w-xs px-5 py-5 text-sm font-medium leading-6 text-text-secondary">
          {item.essence}
         </td>
         <td className="px-5 py-5">
-         <span className="block rounded-xl bg-accent-subtle px-3 py-2 font-mono text-sm font-bold text-accent-text">
+         <Typography
+          variant="code"
+          tone="accent"
+          weight="bold"
+          className="block rounded-xl bg-accent-subtle px-3 py-2"
+         >
           {item.pattern}
-         </span>
+         </Typography>
         </td>
         <td className="max-w-xs px-5 py-5 text-sm font-medium leading-6 text-text-secondary">
          {item.use}

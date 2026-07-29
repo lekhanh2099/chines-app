@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowLeft, Lightbulb, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
@@ -59,18 +61,30 @@ export function HanziHomeMemoryTipsPage() {
    <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
+      <StudyInstructionText
+       as="span"
+       tone="info"
+       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
+      >
        <Lightbulb className="h-6 w-6" />
-      </span>
+      </StudyInstructionText>
 
       <div className="grid min-w-0 gap-1">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">HanziHome</p>
-       <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        HanziHome
+       </StudyInstructionText>
+       <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
         Quản lý nhắc nhanh
-       </h1>
-       <p className=" font-semibold text-text-muted">
+       </Typography>
+       <StudyInstructionText tone="muted" weight="semibold">
         Chỉ các tip bạn tự thêm hoặc lưu từ từ vựng/ngữ pháp mới hiện ở đây.
-       </p>
+       </StudyInstructionText>
       </div>
      </div>
 
@@ -98,20 +112,22 @@ export function HanziHomeMemoryTipsPage() {
 
    {tipsQuery.error && (
     <Card className="rounded-xl border border-border-default">
-     <p role="alert" className=" font-bold text-destructive">
+     <StudyInstructionText role="alert" tone="danger" weight="bold">
       Không tải được nhắc nhanh.
-     </p>
+     </StudyInstructionText>
     </Card>
    )}
 
    {!tipsQuery.isLoading && !tipsQuery.error && tips.length === 0 && (
     <Card className="rounded-xl border border-dashed border-border-default bg-bg-card">
      <div className="grid gap-3 text-center">
-      <p className="text-lg font-black text-text-primary">Chưa có nhắc nhanh nào</p>
-      <p className="mx-auto max-w-xl  font-semibold text-text-muted">
+      <StudyInstructionText variant="sectionTitle" tone="default" weight="black">
+       Chưa có nhắc nhanh nào
+      </StudyInstructionText>
+      <StudyInstructionText tone="muted" weight="semibold" className="mx-auto max-w-xl">
        Global card ngoài thư viện sẽ chưa hiện. Khi bạn thêm tip ở đây hoặc bấm “Lưu nhắc nhanh”
        trong từ vựng/ngữ pháp, app mới bắt đầu random tips của bạn.
-      </p>
+      </StudyInstructionText>
       <div className="flex justify-center">
        <MemoryTipDialog
         trigger={
@@ -137,20 +153,37 @@ export function HanziHomeMemoryTipsPage() {
         <div className="flex flex-wrap items-start justify-between gap-3">
          <div className="grid min-w-0 gap-1">
           <div className="flex flex-wrap items-center gap-2">
-           <span className="rounded-full bg-bg-subtle px-2.5 py-1 text-xs font-black text-text-muted">
+           <StudyInstructionText
+            variant="caption"
+            tone="muted"
+            weight="black"
+            className="rounded-full bg-bg-subtle px-2.5 py-1"
+           >
             {tipTypeLabels[tip.tipType]}
-           </span>
+           </StudyInstructionText>
            {tip.isPinned && (
-            <span className="rounded-full bg-info-subtle px-2.5 py-1 text-xs font-black text-info-text">
+            <StudyInstructionText
+             variant="caption"
+             tone="info"
+             weight="black"
+             className="rounded-full bg-info-subtle px-2.5 py-1"
+            >
              Đang ghim
-            </span>
+            </StudyInstructionText>
            )}
           </div>
 
-          <h2 className="text-xl font-black text-text-primary">{tip.title}</h2>
-          <p className="whitespace-pre-line  font-semibold leading-relaxed text-text-secondary">
+          <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+           {tip.title}
+          </Typography>
+          <StudyInstructionText
+           tone="secondary"
+           weight="semibold"
+           leading="relaxed"
+           wrapping="preLine"
+          >
            {tip.body}
-          </p>
+          </StudyInstructionText>
          </div>
 
          <div className="flex flex-wrap gap-2">
@@ -190,15 +223,25 @@ export function HanziHomeMemoryTipsPage() {
 
         {(tip.formula || tip.exampleZh) && (
          <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
-          {tip.formula && <p className=" font-black text-info-text">{tip.formula}</p>}
+          {tip.formula && (
+           <StudyInstructionText tone="info" weight="black">
+            {tip.formula}
+           </StudyInstructionText>
+          )}
           {tip.exampleZh && (
            <div className="grid gap-1">
-            <p className="font-black text-text-primary">{tip.exampleZh}</p>
+            <StudyInstructionText tone="default" weight="black">
+             {tip.exampleZh}
+            </StudyInstructionText>
             {tip.examplePinyin && (
-             <p className="text-xs font-semibold text-text-secondary">{tip.examplePinyin}</p>
+             <StudyInstructionText variant="caption" tone="secondary" weight="semibold">
+              {tip.examplePinyin}
+             </StudyInstructionText>
             )}
             {tip.exampleVi && (
-             <p className="text-xs font-semibold text-text-muted">{tip.exampleVi}</p>
+             <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+              {tip.exampleVi}
+             </StudyInstructionText>
             )}
            </div>
           )}
@@ -208,12 +251,15 @@ export function HanziHomeMemoryTipsPage() {
         {tip.tags.length > 0 && (
          <div className="flex flex-wrap gap-2">
           {tip.tags.map((tag) => (
-           <span
+           <StudyInstructionText
             key={`${tip.id}-${tag}`}
-            className="rounded-full border border-border-default bg-bg-subtle px-2.5 py-1 text-xs font-bold text-text-muted"
+            variant="caption"
+            tone="muted"
+            weight="bold"
+            className="rounded-full border border-border-default bg-bg-subtle px-2.5 py-1"
            >
             {tag}
-           </span>
+           </StudyInstructionText>
           ))}
          </div>
         )}

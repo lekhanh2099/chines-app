@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { BookOpenCheck, NotebookPen, NotebookTabs } from "lucide-react";
 
@@ -58,11 +59,30 @@ export function HomeResourceLinks() {
         </HomeIconTile>
         <HomeArrowIcon className="transition group-hover:text-accent-text" />
        </div>
-       <h3 className="mt-4 text-base font-black text-text-primary">{resource.title}</h3>
-       <p className="mt-1 text-sm font-medium leading-5 text-text-muted">{resource.description}</p>
-       <p className="mt-auto pt-4 text-xs font-black uppercase tracking-[0.1em] text-accent-text">
+       <Typography as="h3" variant="cardTitle" tone="default" weight="black" className="mt-4">
+        {resource.title}
+       </Typography>
+       <Typography
+        as="p"
+        variant="bodySmall"
+        tone="muted"
+        weight="medium"
+        leading="compact"
+        className="mt-1"
+       >
+        {resource.description}
+       </Typography>
+       <Typography
+        as="p"
+        variant="overline"
+        tone="accent"
+        weight="black"
+        transform="uppercase"
+        tracking="subtle"
+        className="mt-auto pt-4"
+       >
         {resource.meta}
-       </p>
+       </Typography>
       </Link>
      );
     })}

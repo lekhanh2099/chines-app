@@ -4,6 +4,7 @@ import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { properNounBackText, properNounFrontText, stringList } from "./proper-noun-utils";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { HanziText, PinyinText, TranslationText, StudyInstructionText } from "../hanzi-typography";
 
 export function ProperNounCard({
  item,
@@ -31,32 +32,48 @@ export function ProperNounCard({
    <div className="grid gap-1">
     {hanzi && (
      <div className="flex items-center gap-1.5">
-      <h4 className="text-2xl font-black leading-none text-text-primary" lang="zh-CN">
+      <HanziText as="h4" size="card" weight="black" leading="none">
        {hanzi}
-      </h4>
+      </HanziText>
       <NativeMandarinSpeakButton text={hanzi} />
      </div>
     )}
 
-    {displayMode.showPinyin && pinyin && <p className=" font-black text-primary">{pinyin}</p>}
+    {displayMode.showPinyin && pinyin && (
+     <PinyinText as="p" tone="accent" weight="black">
+      {pinyin}
+     </PinyinText>
+    )}
 
     {displayMode.showMeaning && meaning && (
-     <p className=" font-semibold leading-relaxed text-text-secondary">{meaning}</p>
+     <TranslationText as="p" weight="semibold" leading="relaxed">
+      {meaning}
+     </TranslationText>
     )}
    </div>
 
    {(pos || posDetailVi) && (
     <div className="flex flex-wrap gap-2">
      {pos && (
-      <span className="rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       className="rounded-full border border-border-default bg-bg-subtle px-3 py-1"
+      >
        {pos}
-      </span>
+      </StudyInstructionText>
      )}
 
      {posDetailVi && posDetailVi !== pos && (
-      <span className="rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       className="rounded-full border border-border-default bg-bg-subtle px-3 py-1"
+      >
        {posDetailVi}
-      </span>
+      </StudyInstructionText>
      )}
     </div>
    )}
@@ -64,12 +81,15 @@ export function ProperNounCard({
    {tags.length > 0 && (
     <div className="flex flex-wrap gap-2">
      {tags.map((tag) => (
-      <span
+      <StudyInstructionText
        key={tag}
-       className="rounded-full bg-accent-subtle px-3 py-1 text-xs font-black text-accent-text"
+       variant="caption"
+       tone="accent"
+       weight="black"
+       className="rounded-full bg-accent-subtle px-3 py-1"
       >
        {tag.replaceAll("_", " ")}
-      </span>
+      </StudyInstructionText>
      ))}
     </div>
    )}
@@ -81,12 +101,15 @@ export function ProperNounCard({
      </summary>
      <div className="flex flex-wrap gap-2">
       {modes.map((mode) => (
-       <span
+       <StudyInstructionText
         key={mode}
-        className="rounded-full border border-border-default bg-bg-primary px-3 py-1 text-xs font-black text-text-muted"
+        variant="caption"
+        tone="muted"
+        weight="black"
+        className="rounded-full border border-border-default bg-bg-primary px-3 py-1"
        >
         {mode.replaceAll("_", " → ")}
-       </span>
+       </StudyInstructionText>
       ))}
      </div>
     </details>

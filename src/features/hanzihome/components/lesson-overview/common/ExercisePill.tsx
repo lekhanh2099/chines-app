@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import { containsHanziText, ReaderHanziText, StudyInstructionText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 
 export function ExercisePill({
@@ -11,13 +11,26 @@ export function ExercisePill({
 }) {
  const hanzi = typeof children === "string" && containsHanziText(children);
 
+ if (hanzi && displayMode && typeof children === "string") {
+  return (
+   <ReaderHanziText
+    displayMode={displayMode}
+    weight="bold"
+    leading="learner"
+    className="study-content-surface rounded-lg border px-3 py-2"
+   >
+    {children}
+   </ReaderHanziText>
+  );
+ }
+
  return (
-  <span
-   className="study-content-surface rounded-lg border px-3 py-2 font-bold leading-[1.7]"
-   lang={hanzi ? "zh-CN" : undefined}
-   style={hanzi && displayMode ? getHanziTypographyStyle(displayMode) : undefined}
+  <StudyInstructionText
+   weight="bold"
+   leading="learner"
+   className="study-content-surface rounded-lg border px-3 py-2"
   >
    {children}
-  </span>
+  </StudyInstructionText>
  );
 }

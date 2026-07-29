@@ -1,6 +1,6 @@
 # UI Component Inventory
 
-Status date: 2026-07-17
+Status date: 2026-07-29
 
 This inventory records canonical UI contracts, legacy paths and missing patterns.
 It is a routing document for contributors and agents, not a mandate to migrate
@@ -15,6 +15,8 @@ the entire repository in one pass.
 | DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical                   | action menus, checkbox/radio menu items and submenus        |
 | Tooltip          | `src/components/ui/tooltip.tsx`           | canonical                   | supplementary mouse/keyboard hints only                     |
 | Select           | `src/components/ui/select.tsx`            | canonical primitive         | single-value selection                                      |
+| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter           | string-valued option-array selection                        |
+| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical                   | string-valued exclusive choice                              |
 | Switch           | `src/components/ui/switch.tsx`            | canonical                   | boolean settings                                            |
 | Chip             | `src/components/ui/chip.tsx`              | canonical interactive token | filters, removable actions and compact selectable controls  |
 | Badge            | `src/components/ui/badge.tsx`             | canonical static token      | status/category labels                                      |
@@ -24,6 +26,7 @@ the entire repository in one pass.
 | Popover          | `src/components/ui/base-popover.tsx`      | canonical existing          | contextual non-menu content                                 |
 | Card             | `src/components/ui/card.tsx`              | canonical existing          | visual section surfaces                                     |
 | Input            | `src/components/ui/input.tsx`             | canonical existing          | text input                                                  |
+| Textarea         | `src/components/ui/textarea.tsx`          | canonical existing          | multiline text input                                        |
 | Checkbox         | `src/components/ui/checkbox.tsx`          | canonical existing          | independent boolean selection                               |
 | Separator        | `src/components/ui/separator.tsx`         | canonical existing          | semantic visual separation                                  |
 | Tabs             | `src/components/ui/tabs.tsx`              | local custom contract       | content switching                                           |
@@ -43,15 +46,10 @@ an alias-only `ActionMenu` wrapper. Create a semantic `ActionMenu` pattern only
 when two or more consumers require the same richer product anatomy beyond the
 DropdownMenu primitive.
 
-## Legacy or parallel contracts
-
-New consumers must not be added without a compatibility reason:
-
-```text
-src/components/ui/select/index.tsx
-src/components/tanstack-form/field/SelectField.tsx
-src/components/ui/icon-button.tsx
-```
+Canonical inventory entries are active contracts. An entry with few or no
+current consumers remains available for the next matching surface, but feature
+code must not rebuild the same contract locally. Current adoption is enforced
+for application typography outside HanziHome learner-rendering surfaces.
 
 ## Deliberately deferred
 
@@ -60,7 +58,6 @@ The following remain candidates, not approved primitives:
 - Alert/callout;
 - Skeleton standardization;
 - Command/listbox composite;
-- OptionSelect adapter consolidation;
 - SettingsMenu row anatomy;
 - form field system consolidation.
 
@@ -79,14 +76,14 @@ Add them only after consumer inventory proves repeated semantics.
    - typed Dialog variants;
    - EmptyState;
    - later CommandDialog composite.
-4. Select consolidation.
-5. Tooltip migration for icon-only controls currently relying on `title`.
-6. Typography adoption by repeated shell/page patterns, not Chinese study text.
+4. Tooltip migration for icon-only controls currently relying on `title`.
 
 ## Important distinction
 
 General application typography belongs to `Typography`.
 
 Chinese lesson text, pinyin, reading-size preferences and Hanzi font selection
-remain owned by HanziHome-specific typography helpers. Do not flatten those
-learning semantics into the generic Typography component.
+use the feature components in
+`src/features/hanzihome/components/lesson-overview/hanzi-typography.tsx`.
+Generic Chinese text outside HanziHome uses
+`src/components/patterns/learner-text.tsx`.

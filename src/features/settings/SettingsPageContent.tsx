@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -180,11 +182,13 @@ export function SettingsPageContent() {
       <Bot className="h-3.5 w-3.5" />
       AI Settings
      </div>
-     <h1 className="text-3xl font-bold text-text-primary">Cài đặt tra cứu AI</h1>
-     <p className="leading-6 text-text-secondary">
+     <Typography as="h1" variant="pageTitle" tone="default" weight="bold">
+      Cài đặt tra cứu AI
+     </Typography>
+     <Typography as="p" tone="secondary" leading="standard">
       Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model mạnh
       chỉ chạy khi bạn chủ động mở phần chi tiết.
-     </p>
+     </Typography>
      <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
       {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
      </Badge>
@@ -215,21 +219,29 @@ export function SettingsPageContent() {
 
    <section className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
     <div className="space-y-2">
-     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+     <Typography
+      as="h2"
+      variant="sectionTitle"
+      tone="default"
+      weight="bold"
+      className="flex items-center gap-2"
+     >
       <Gauge className="size-5 text-accent-text" />
       Tra nhanh và dịch nghĩa
-     </h2>
-     <p className="max-w-3xl  leading-6 text-text-secondary">
+     </Typography>
+     <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
       Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key.
-     </p>
+     </Typography>
     </div>
 
     <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
      <div>
-      <p className="font-semibold text-text-primary">
+      <Typography as="p" tone="default" weight="semibold">
        {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
-      </p>
-      <p className="mt-1 text-sm text-text-muted">Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.</p>
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+       Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.
+      </Typography>
      </div>
      <Badge variant="success" size="md">
       Không cần key cá nhân
@@ -242,20 +254,26 @@ export function SettingsPageContent() {
 
    <section className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
     <div className="space-y-2">
-     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+     <Typography
+      as="h2"
+      variant="sectionTitle"
+      tone="default"
+      weight="bold"
+      className="flex items-center gap-2"
+     >
       <Sparkles className="size-5 text-accent-text" />
       Xem chi tiết
-     </h2>
-     <p className="max-w-3xl leading-6 text-text-secondary">
+     </Typography>
+     <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
       Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app
       dùng model Gemini hệ thống đã chọn bên dưới.
-     </p>
+     </Typography>
     </div>
 
     <div className="grid max-w-xl gap-2">
-     <label htmlFor="gemini-model" className="font-semibold text-text-primary">
+     <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
       Model chi tiết mặc định
-     </label>
+     </Label>
      <Select
       value={geminiModel}
       onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
@@ -275,9 +293,9 @@ export function SettingsPageContent() {
        ))}
       </SelectContent>
      </Select>
-     <p className="text-sm leading-5 text-text-muted">
+     <Typography as="p" variant="bodySmall" tone="muted" leading="compact">
       {selectedDetailModel?.description || "Model cũ đang được giữ. Chọn model mới để cập nhật."}
-     </p>
+     </Typography>
     </div>
    </section>
 
@@ -286,11 +304,13 @@ export function SettingsPageContent() {
    <div className="space-y-4">
     <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
      <div className="space-y-2">
-      <h2 className="text-xl font-bold text-text-primary">Lookup Prompts</h2>
-      <p className="max-w-3xl  leading-6 text-text-secondary">
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+       Lookup Prompts
+      </Typography>
+      <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
        Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để
        giảm độ trễ và lượng token.
-      </p>
+      </Typography>
      </div>
 
      <div className="flex flex-wrap items-center gap-3">
@@ -360,8 +380,12 @@ function PromptPanel({
   <div className="rounded-2xl border border-border-default bg-bg-primary p-6 shadow-theme-sm">
    <div className="mb-4 flex items-start justify-between gap-4">
     <div className="space-y-2">
-     <h2 className="text-xl font-bold text-text-primary">{title}</h2>
-     <p className=" leading-6 text-text-secondary">{description}</p>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+      {title}
+     </Typography>
+     <Typography as="p" tone="secondary" leading="standard">
+      {description}
+     </Typography>
     </div>
 
     <div className="flex items-center gap-2">
@@ -380,7 +404,9 @@ function PromptPanel({
       ? `Có placeholder ${placeholderToken}`
       : `Thiếu placeholder ${placeholderToken}`}
     </Badge>
-    <span className="text-text-muted">{value.length} ký tự</span>
+    <Typography as="span" tone="muted">
+     {value.length} ký tự
+    </Typography>
    </div>
 
    <Textarea

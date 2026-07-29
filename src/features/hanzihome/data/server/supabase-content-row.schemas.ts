@@ -245,7 +245,6 @@ export const aggregateGrammarRowSchema = grammarCoreRowSchema.extend({
 
 export type LessonSummaryRow = z.output<typeof lessonSummaryRowSchema>;
 export type LessonDetailRow = z.output<typeof lessonDetailRowSchema>;
-export type LessonShellRow = z.output<typeof lessonShellRowSchema>;
 export type VocabRow = z.output<typeof vocabRowSchema>;
 export type GrammarRow = z.output<typeof grammarRowSchema>;
 export type RadicalRow = z.output<typeof radicalRowSchema>;

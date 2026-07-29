@@ -68,7 +68,11 @@ export function matchesNoteFacets(
   sourceHost: string;
  },
 ): boolean {
- if (input.category !== "all" && note.category !== input.category) return false;
+ if (
+  input.category !== NoteCategoryFilterSchema.options[1].value &&
+  note.category !== input.category
+ )
+  return false;
  if (input.sourceHost !== "all" && note.source_host !== input.sourceHost) return false;
  return true;
 }

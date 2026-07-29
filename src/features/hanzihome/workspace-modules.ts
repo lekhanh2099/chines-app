@@ -29,10 +29,8 @@ const standardLessonModules = new Set<StudyModule>([
 ]);
 const listeningLessonModules = new Set<StudyModule>(["listening", "dictation"]);
 
-const OptionalNullableModuleInputSchema = z.string().nullable().optional();
-
 export function parseHanziHomeModule(
- value: z.infer<typeof OptionalNullableModuleInputSchema>,
+ value: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
 ): z.infer<z.ZodNullable<typeof moduleSchema>> {
  return moduleValues.find((item) => item === value) ?? null;
 }

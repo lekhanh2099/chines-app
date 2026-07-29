@@ -1,6 +1,11 @@
 "use client";
 
-import { useState, type CSSProperties, type KeyboardEvent, type MouseEvent } from "react";
+import {
+ PinyinText,
+ ReaderHanziText,
+ TranslationText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { useState, type KeyboardEvent, type MouseEvent } from "react";
 
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
@@ -34,7 +39,6 @@ export function ProgressiveStudyText({
  pinyin,
  vi,
  displayMode,
- hanziStyle,
  className,
  annotationTarget,
 }: {
@@ -42,7 +46,6 @@ export function ProgressiveStudyText({
  pinyin?: string;
  vi?: string;
  displayMode: LessonDisplayMode;
- hanziStyle?: CSSProperties;
  className?: string;
  annotationTarget?: { lessonId: string; nodeType: string; nodeId: string };
 }) {
@@ -85,14 +88,13 @@ export function ProgressiveStudyText({
    ? annotationContext.getAnnotations(annotationTarget, zh)
    : [];
  const hanziContent = (
-  <p
+  <ReaderHanziText
+   displayMode={displayMode}
    aria-hidden={tapMode && stage !== 0}
-   className={cn(
-    "min-w-0 whitespace-pre-wrap leading-[1.7] text-text-primary",
-    tapMode && stage !== 0 && "invisible pointer-events-none",
-   )}
-   lang="zh-CN"
-   style={hanziStyle}
+   tone="default"
+   leading="learner"
+   wrapping="preWrap"
+   className={cn("min-w-0", tapMode && stage !== 0 && "invisible pointer-events-none")}
    data-no-inspector={annotationTarget ? "true" : undefined}
    data-study-annotation-node={annotationTarget ? "true" : undefined}
    data-lesson-id={annotationTarget?.lessonId}
@@ -104,7 +106,7 @@ export function ProgressiveStudyText({
     annotations={annotations}
     onOpen={(annotation) => annotationContext?.openAnnotation(annotation)}
    />
-  </p>
+  </ReaderHanziText>
  );
 
  return (
@@ -126,40 +128,57 @@ export function ProgressiveStudyText({
     <div className="grid min-w-0 [&>*]:[grid-area:1/1]">
      {hanziContent}
      {pinyin ? (
-      <p
+      <PinyinText
        aria-hidden={stage !== 1}
-       className={cn(
-        "min-w-0 self-start whitespace-pre-wrap text-sm font-semibold leading-relaxed text-accent-text break-words",
-        stage !== 1 && "invisible pointer-events-none",
-       )}
+       variant="bodySmall"
+       tone="accent"
+       weight="semibold"
+       leading="relaxed"
+       wrapping="preWrap"
+       className={cn("min-w-0 self-start", stage !== 1 && "invisible pointer-events-none")}
       >
        {pinyin}
-      </p>
+      </PinyinText>
      ) : null}
      {vi ? (
-      <p
+      <TranslationText
        aria-hidden={stage !== 2}
-       className={cn(
-        "min-w-0 self-start whitespace-pre-wrap text-sm font-medium leading-relaxed text-text-muted break-words sm:text-base",
-        stage !== 2 && "invisible pointer-events-none",
-       )}
+       variant="bodySmall"
+       weight="medium"
+       leading="relaxed"
+       wrapping="preWrap"
+       className={cn("min-w-0 self-start", stage !== 2 && "invisible pointer-events-none")}
       >
        {vi}
-      </p>
+      </TranslationText>
      ) : null}
     </div>
    ) : (
     <>
      {hanziContent}
      {pinyin && displayMode.showPinyin ? (
-      <p className="min-w-0 whitespace-pre-wrap text-sm font-semibold leading-relaxed text-accent-text break-words">
+      <PinyinText
+       variant="bodySmall"
+       tone="accent"
+       weight="semibold"
+       leading="relaxed"
+       wrapping="preWrap"
+       className="min-w-0"
+      >
        {pinyin}
-      </p>
+      </PinyinText>
      ) : null}
      {vi && displayMode.showMeaning ? (
-      <p className="min-w-0 whitespace-pre-wrap text-sm font-medium leading-relaxed text-text-muted break-words sm:text-base">
+      <TranslationText
+       variant="bodySmall"
+       tone="muted"
+       weight="medium"
+       leading="relaxed"
+       wrapping="preWrap"
+       className="min-w-0"
+      >
        {vi}
-      </p>
+      </TranslationText>
      ) : null}
     </>
    )}

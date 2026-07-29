@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
 import { answerToString } from "../utils";
 import { DataPill } from "./DataPill";
@@ -9,7 +10,15 @@ export function WordBank({ words }: { words: JsonValue[] }) {
 
  return (
   <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ cho sẵn</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Từ cho sẵn
+   </StudyInstructionText>
    <div className="flex flex-wrap gap-2">
     {wordBank.map((word, index) => (
      <DataPill key={`${word}-${index}`} label={word} />

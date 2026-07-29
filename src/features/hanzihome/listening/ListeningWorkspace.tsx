@@ -7,7 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
-import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ ReaderHanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonModuleFrame,
  LessonModuleSidebarRailItem,
@@ -61,7 +64,9 @@ export function ListeningWorkspace() {
   return (
    <Card variant="default" padding="lg" className="flex min-h-64 items-center justify-center gap-2">
     <Spinner />
-    <span className="font-bold text-text-muted">Đang tải bài luyện nghe…</span>
+    <StudyInstructionText as="span" tone="muted" weight="bold">
+     Đang tải bài luyện nghe…
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -73,10 +78,12 @@ export function ListeningWorkspace() {
     padding="lg"
     className="grid min-h-64 place-content-center gap-2 text-center"
    >
-    <p className="font-black text-text-primary">Không tải được bài luyện nghe</p>
-    <p className="text-sm text-text-muted">
+    <StudyInstructionText tone="default" weight="black">
+     Không tải được bài luyện nghe
+    </StudyInstructionText>
+    <StudyInstructionText variant="bodySmall" tone="muted">
      {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
-    </p>
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -88,9 +95,15 @@ export function ListeningWorkspace() {
     if (sections.length === 0) return null;
     return (
      <div key={category} className="grid gap-1.5">
-      <p className="px-1 pt-2 text-[0.65rem] font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       scale="micro"
+       className="px-1 pt-2"
+      >
        {listeningCategoryLabels[category]}
-      </p>
+      </StudyInstructionText>
       {sections.map((section, index) => (
        <LessonModuleSidebarItem
         key={section.id}
@@ -122,7 +135,11 @@ export function ListeningWorkspace() {
      {bundle.sections.map((section, index) => (
       <LessonModuleSidebarRailItem
        key={section.id}
-       icon={<span className="text-xs font-black">{index + 1}</span>}
+       icon={
+        <StudyInstructionText as="span" variant="caption" weight="black">
+         {index + 1}
+        </StudyInstructionText>
+       }
        label={section.titleZh}
        selected={section.id === selectedSection.id}
        onClick={() => setSelectedSectionId(section.id)}
@@ -158,15 +175,13 @@ export function ListeningWorkspace() {
      <Badge variant="purple" className="w-fit">
       Bài luyện nghe
      </Badge>
-     <h2
-      lang="zh-CN"
-      className="leading-relaxed text-text-primary"
-      style={getHanziTypographyStyle(displayMode, { size: "lg" })}
-     >
+     <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
       {selectedSection.titleZh}
-     </h2>
+     </ReaderHanziText>
      {selectedSection.titleVi ? (
-      <p className="text-sm font-medium text-text-muted">{selectedSection.titleVi}</p>
+      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+       {selectedSection.titleVi}
+      </StudyInstructionText>
      ) : null}
      {selectedSection.suggestionsZh.length > 0 ? (
       <div className="flex flex-wrap gap-1.5 pt-1">

@@ -62,7 +62,6 @@ export const API_KEY_MODEL_OPTIONS: Record<ApiKeyProvider, readonly ApiKeyModelO
   },
  ],
 };
-const OptionalNullableModelSchema = z.string().nullable().optional();
 
 export function getApiKeyModelOptions(provider: ApiKeyProvider) {
  return API_KEY_MODEL_OPTIONS[provider];
@@ -76,20 +75,9 @@ export function isApiKeyModelSupported(provider: ApiKeyProvider, model: string):
  return API_KEY_MODEL_OPTIONS[provider].some((option) => option.value === model);
 }
 
-export function getApiKeyModelLabel(
- provider: ApiKeyProvider,
- model?: z.infer<typeof OptionalNullableModelSchema>,
-): string {
- return (
-  API_KEY_MODEL_OPTIONS[provider].find((option) => option.value === model)?.label ||
-  model ||
-  "Chưa chọn model"
- );
-}
-
 export function getApiKeyModelDescription(
  provider: ApiKeyProvider,
- model?: z.infer<typeof OptionalNullableModelSchema>,
+ model?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
 ): string {
  return (
   API_KEY_MODEL_OPTIONS[provider].find((option) => option.value === model)?.description ||

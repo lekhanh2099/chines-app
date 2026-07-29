@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { CharacterWritingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
@@ -23,18 +24,26 @@ export function WritingCard({
   <div className="rounded-xl border border-border-default bg-bg-primary p-3 grid gap-2">
    <div className="grid gap-1">
     <div className="flex items-center gap-1.5">
-     <p className="text-4xl font-black text-text-primary" lang="zh-CN">
+     <StudyInstructionText variant="display" tone="default" weight="black" lang="zh-CN">
       {item.hanzi}
-     </p>
+     </StudyInstructionText>
      <NativeMandarinSpeakButton text={item.hanzi} />
     </div>
     {displayMode.showPinyin && item.pinyin && (
-     <p className="font-bold text-accent-text">{item.pinyin}</p>
+     <StudyInstructionText tone="accent" weight="bold">
+      {item.pinyin}
+     </StudyInstructionText>
     )}
     {displayMode.showMeaning && meaningVi && (
-     <p className="font-semibold text-text-secondary">{meaningVi}</p>
+     <StudyInstructionText tone="secondary" weight="semibold">
+      {meaningVi}
+     </StudyInstructionText>
     )}
-    {item.radical && <p className=" font-semibold text-text-muted">Bộ: {item.radical}</p>}
+    {item.radical && (
+     <StudyInstructionText tone="muted" weight="semibold">
+      Bộ: {item.radical}
+     </StudyInstructionText>
+    )}
    </div>
    <div className="flex flex-wrap gap-1.5 text-xs font-bold text-text-muted">
     {item.stroke_count && (

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -48,11 +49,12 @@ export function LessonNoteAccessCard({ compact = false }: { compact?: boolean })
     ) : note ? (
      <LessonSplitNoteEditor noteId={note.id} fillHeight={compact} />
     ) : (
-     <button
+     <Button
       type="button"
       onClick={handleCreate}
       disabled={isCreating}
-      className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left  font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
+      variant="outline"
+      align="start"
      >
       {isCreating ? (
        <span className="inline-flex items-center gap-2">
@@ -62,7 +64,7 @@ export function LessonNoteAccessCard({ compact = false }: { compact?: boolean })
       ) : (
        "Chưa có ghi chú riêng cho bài này. Bấm để tạo ghi chú liên kết với bài học."
       )}
-     </button>
+     </Button>
     )}
    </div>
   </Card>

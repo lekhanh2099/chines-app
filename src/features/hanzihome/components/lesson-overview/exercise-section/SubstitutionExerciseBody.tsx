@@ -1,8 +1,9 @@
+import { Typography } from "@/components/ui/typography";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, ExerciseQuestionCard, LooseItemGrid } from "../CommonCards";
-import { getHanziTypographyStyle } from "../hanzi-typography";
+import { StudyInstructionText, ReaderHanziText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, arrayValue, asRecord, nonEmptyStrings, stringValue } from "../utils";
 import { EditableAnswerKeyList } from "./EditableAnswerKeyList";
@@ -87,7 +88,9 @@ export function SubstitutionExerciseBody({
         key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
         className="exercise-card-surface grid gap-2 rounded-xl border p-3"
        >
-        <h5 className="font-black text-text-primary">{partTitle}</h5>
+        <Typography as="h5" variant="cardTitle" tone="default" weight="black">
+         {partTitle}
+        </Typography>
 
         <ModelBlock
          title="Mẫu trong phần"
@@ -273,34 +276,52 @@ export function SubstitutionExerciseBody({
         >
          {itemModel.length > 0 && (
           <div className="exercise-answer-surface grid gap-1.5 rounded-lg border p-3">
-           <p className="text-xs font-black uppercase tracking-wide text-accent-text">Mẫu</p>
+           <StudyInstructionText
+            variant="overline"
+            tone="accent"
+            weight="black"
+            tracking="wide"
+            transform="uppercase"
+           >
+            Mẫu
+           </StudyInstructionText>
            {itemModel.map((line, li) => (
-            <p
+            <ReaderHanziText
+             displayMode={displayMode}
              key={`${item.id}-model-${index}-${li}`}
-             className="font-black leading-[1.7] text-text-primary"
-             lang="zh-CN"
-             style={getHanziTypographyStyle(displayMode)}
+             tone="default"
+             weight="black"
+             leading="learner"
             >
              {answerToString(line)}
-            </p>
+            </ReaderHanziText>
            ))}
           </div>
          )}
          {itemPrompts.length > 0 && (
           <div className="grid gap-1.5">
-           <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+           <StudyInstructionText
+            variant="overline"
+            tone="muted"
+            weight="black"
+            tracking="wide"
+            transform="uppercase"
+           >
             Gợi ý thay thế
-           </p>
+           </StudyInstructionText>
            <div className="flex flex-wrap gap-1.5">
             {itemPrompts.map((prompt, pi) => (
-             <span
+             <ReaderHanziText
+              displayMode={displayMode}
+              size="md"
               key={`${item.id}-prompt-${index}-${pi}`}
-              className="rounded-md border border-border-default bg-bg-card px-2 py-1 text-xs font-bold text-text-secondary"
-              lang="zh-CN"
-              style={getHanziTypographyStyle(displayMode, { size: "md" })}
+              variant="caption"
+              tone="secondary"
+              weight="bold"
+              className="rounded-md border border-border-default bg-bg-card px-2 py-1"
              >
               {answerToString(prompt)}
-             </span>
+             </ReaderHanziText>
             ))}
            </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Typography } from "@/components/ui/typography";
 import { MarkdownParagraph } from "./MarkdownParagraph";
 import { renderMarkdownInline } from "./markdown-inline";
 import { z } from "zod";
@@ -92,7 +93,7 @@ function parseMarkdownBlocks(content: string): MarkdownBlock[] {
    const rawLevel = headingMatch[1]?.length ?? 2;
    const level = rawLevel <= 2 ? 2 : rawLevel === 3 ? 3 : 4;
    blocks.push({
-    type: "heading",
+    type: MarkdownBlockSchema.options[0].shape.type.value,
     level,
     text: headingMatch[2]?.trim() ?? "",
    });
@@ -178,33 +179,26 @@ export function MarkdownContent({ content, className }: MarkdownContentProps) {
   <div className={cn("grid min-w-0 gap-4", className)}>
    {blocks.map((block, index) => {
     if (block.type === "heading") {
-     const headingClass =
-      block.level === 2 ? "text-lg" : block.level === 3 ? "text-base" : "text-sm";
-     const className = cn(
-      "font-black leading-snug tracking-normal text-text-primary",
-      headingClass,
-     );
-
      if (block.level === 2) {
       return (
-       <h2 key={`${index}-${block.text}`} className={className}>
+       <Typography as="h2" variant="sectionTitle" key={`${index}-${block.text}`}>
         {renderMarkdownInline(block.text)}
-       </h2>
+       </Typography>
       );
      }
 
      if (block.level === 3) {
       return (
-       <h3 key={`${index}-${block.text}`} className={className}>
+       <Typography as="h3" variant="cardTitle" key={`${index}-${block.text}`}>
         {renderMarkdownInline(block.text)}
-       </h3>
+       </Typography>
       );
      }
 
      return (
-      <h4 key={`${index}-${block.text}`} className={className}>
+      <Typography as="h4" variant="label" key={`${index}-${block.text}`}>
        {renderMarkdownInline(block.text)}
-      </h4>
+      </Typography>
      );
     }
 

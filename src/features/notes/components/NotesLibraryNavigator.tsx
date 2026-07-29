@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import {
  BookOpen,
@@ -168,7 +169,17 @@ export function NotesLibraryNavigator({
   <>
    <nav aria-label="Thư viện ghi chú" className="grid content-start gap-5">
     <section className="grid gap-1">
-     <h2 className="px-2 text-xs font-black uppercase tracking-wide text-text-muted">Thư viện</h2>
+     <Typography
+      as="h2"
+      variant="sectionTitle"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+      className="px-2"
+     >
+      Thư viện
+     </Typography>
      {smartViews.map((view) => {
       const Icon = view.icon;
       const count = notes.filter((note) => matchesNoteLibraryView(note, view.value)).length;
@@ -182,7 +193,9 @@ export function NotesLibraryNavigator({
        >
         <Icon />
         {view.label}
-        <span className="ml-auto text-xs text-text-muted">{count}</span>
+        <Typography variant="caption" tone="muted" className="ml-auto">
+         {count}
+        </Typography>
        </Button>
       );
      })}
@@ -190,19 +203,35 @@ export function NotesLibraryNavigator({
 
     <section className="grid gap-1">
      <div className="flex items-center justify-between gap-2 px-2">
-      <h2 className="text-xs font-black uppercase tracking-wide text-text-muted">Folder</h2>
+      <Typography
+       as="h2"
+       variant="sectionTitle"
+       tone="muted"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       Folder
+      </Typography>
       <Button
        variant="ghost"
        size="icon-toolbar"
        aria-label="Tạo folder"
-       onClick={() => openDialog({ mode: "create", parentId: null })}
+       onClick={() =>
+        openDialog({
+         mode: FolderDialogStateSchema.unwrap().options[0].shape.mode.value,
+         parentId: null,
+        })
+       }
       >
        <FolderPlus />
       </Button>
      </div>
 
      {folderTree.length === 0 ? (
-      <p className="px-2 py-2 text-sm font-medium text-text-muted">Chưa có folder.</p>
+      <Typography as="p" variant="bodySmall" tone="muted" weight="medium" className="px-2 py-2">
+       Chưa có folder.
+      </Typography>
      ) : (
       folderTree.map((folder) => (
        <FolderNavigationRow
@@ -329,8 +358,12 @@ function FolderNavigationRow({
      onClick={() => onChoose(view)}
     >
      <Folder />
-     <span className="truncate">{folder.name}</span>
-     <span className="ml-auto text-xs text-text-muted">{count}</span>
+     <Typography as="span" clamp="one">
+      {folder.name}
+     </Typography>
+     <Typography variant="caption" tone="muted" className="ml-auto">
+      {count}
+     </Typography>
     </Button>
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
@@ -347,7 +380,7 @@ function FolderNavigationRow({
       <DropdownMenuItem onSelect={() => onRename(folder)}>
        <Pencil /> Đổi tên
       </DropdownMenuItem>
-      <DropdownMenuItem onSelect={() => onMove(folder, -1)}>
+      <DropdownMenuItem onSelect={() => onMove(folder, FolderMoveDirectionSchema.options[0].value)}>
        <ChevronUp /> Đưa lên
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => onMove(folder, 1)}>

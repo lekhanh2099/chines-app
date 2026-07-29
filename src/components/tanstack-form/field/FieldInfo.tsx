@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type { JsonObject } from "@/types/json";
 import type { AnyFieldApi } from "@tanstack/react-form";
 
@@ -16,13 +17,15 @@ export function FieldInfo({
  return (
   <div className="mt-1 flex items-start justify-between gap-1">
    {!isValid ? (
-    <p className="text-xs text-danger-text">
+    <Typography as="p" variant="caption" tone="danger">
      {errors
       .map((e) => (typeof e === "string" ? e : (e as JsonObject)?.message || String(e)))
       .join(", ")}
-    </p>
+    </Typography>
    ) : helperText ? (
-    <p className="text-xs text-text-muted">{helperText}</p>
+    <Typography as="p" variant="caption" tone="muted">
+     {helperText}
+    </Typography>
    ) : null}
   </div>
  );

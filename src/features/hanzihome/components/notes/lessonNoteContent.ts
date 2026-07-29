@@ -30,7 +30,10 @@ function paragraph(text: string) {
  };
 }
 
-function heading(text: string, tag: z.infer<typeof LessonNoteHeadingTagSchema> = "h2") {
+function heading(
+ text: string,
+ tag: z.infer<typeof LessonNoteHeadingTagSchema> = LessonNoteHeadingTagSchema.enum.h2,
+) {
  return {
   children: [textNode(text, 1)],
   direction: "ltr",

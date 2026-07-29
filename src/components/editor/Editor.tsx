@@ -112,10 +112,9 @@ const SAFE_HTML_IMPORT = buildImportMap({
 });
 
 /* ── Types ── */
-const InitialEditorContentSchema = JsonObjectSchema.nullable();
 
 interface EditorProps {
- initialContent?: z.infer<typeof InitialEditorContentSchema>;
+ initialContent?: z.infer<z.ZodNullable<typeof JsonObjectSchema>>;
  onChange?: (json: JsonObject) => void;
  readOnly?: boolean;
  toolbarVisible?: boolean;

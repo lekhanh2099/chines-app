@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -19,11 +20,27 @@ export function HomeSectionHeader({
  return (
   <div className={cn("flex items-end justify-between gap-3", className)}>
    <div className="min-w-0">
-    <h2 id={id} className="text-lg font-black tracking-tight text-text-primary">
+    <Typography
+     as="h2"
+     variant="sectionTitle"
+     id={id}
+     tone="default"
+     weight="black"
+     tracking="tight"
+    >
      {title}
-    </h2>
+    </Typography>
     {description && (
-     <p className="mt-1 text-sm font-semibold leading-5 text-text-muted">{description}</p>
+     <Typography
+      as="p"
+      variant="bodySmall"
+      tone="muted"
+      weight="semibold"
+      leading="compact"
+      className="mt-1"
+     >
+      {description}
+     </Typography>
     )}
    </div>
    {action}
@@ -42,14 +59,16 @@ export function HomeGlassSection({ className, ...props }: ComponentPropsWithoutR
 
 export function HomeIconTile({ children, className }: { children: ReactNode; className?: string }) {
  return (
-  <span
+  <Typography
+   as="span"
+   tone="accent"
    className={cn(
-    "flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle text-accent-text shadow-theme-sm",
+    "flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle shadow-theme-sm",
     className,
    )}
   >
    {children}
-  </span>
+  </Typography>
  );
 }
 

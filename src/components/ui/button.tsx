@@ -21,6 +21,10 @@ const buttonVariants = cva(
      "border-border-default bg-bg-subtle text-text-secondary shadow-theme-sm hover:bg-bg-elevated hover:text-text-primary",
     surfaceCard:
      "border-border-default bg-bg-card text-text-primary shadow-theme-sm hover:bg-bg-elevated",
+    avatar:
+     "border-border-default bg-accent-subtle text-accent-text shadow-theme-sm hover:bg-bg-elevated",
+    avatarWarning:
+     "border-warning/35 bg-warning-subtle text-warning-text shadow-theme-sm hover:bg-bg-elevated",
     menu:
      "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted data-[highlighted]:bg-muted",
     menuActive: "app-active-item w-full justify-start shadow-none",
@@ -28,6 +32,14 @@ const buttonVariants = cva(
      "w-full justify-start border-transparent bg-transparent text-danger-text shadow-none hover:bg-danger-subtle focus-visible:border-danger/40 focus-visible:ring-danger/20",
     destructive:
      "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+    warning:
+     "border-warning/30 bg-warning-subtle text-warning-text hover:bg-warning-subtle focus-visible:border-warning/50 focus-visible:ring-warning/20",
+    dashed:
+     "border-dashed border-border-default bg-transparent text-text-muted hover:border-primary/30 hover:bg-bg-subtle hover:text-text-primary",
+    success:
+     "border-success bg-success-subtle text-success-text hover:bg-success-subtle focus-visible:border-success focus-visible:ring-success/20",
+    swatch:
+     "border-2 shadow-theme-sm opacity-80 ring-offset-2 ring-offset-bg-card hover:opacity-100 aria-pressed:opacity-100 aria-pressed:ring-2 aria-pressed:ring-ring",
     link: "text-primary underline-offset-4 hover:underline",
    },
    size: {
@@ -53,11 +65,45 @@ const buttonVariants = cva(
     "icon-lg": "size-11",
     "icon-toolbar": "size-9 rounded-lg",
     "icon-round": "size-10 rounded-full",
+    "responsive-compact": "size-9 rounded-lg sm:h-10 sm:w-auto sm:max-w-44 sm:px-3",
+    list: "min-h-14 gap-3 rounded-xl px-3 py-2",
+    tab: "h-9 min-h-9 gap-1.5 rounded-lg px-2 sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
+    card: "h-auto min-h-11 gap-4 rounded-xl p-4",
+    result: "h-auto gap-3 rounded-lg px-3 py-2.5",
+    spacious: "min-h-12 gap-2 rounded-2xl px-8 py-3",
+   },
+   align: {
+    center: "justify-center text-center",
+    start: "justify-start text-left",
+    between: "justify-between",
+   },
+   wrap: {
+    nowrap: "whitespace-nowrap",
+    normal: "whitespace-normal",
+   },
+   layout: {
+    inline: "inline-flex",
+    grid: "grid",
+   },
+   emphasis: {
+    normal: "",
+    overline: "uppercase tracking-wide",
+   },
+   validation: {
+    none: "",
+    warning: "border-warning/45",
+    success: "border-success/35",
+    dropTarget: "hover:border-accent/60",
    },
   },
   defaultVariants: {
    variant: "default",
    size: "default",
+   align: "center",
+   wrap: "nowrap",
+   layout: "inline",
+   emphasis: "normal",
+   validation: "none",
   },
  },
 );
@@ -66,6 +112,11 @@ function Button({
  className,
  variant = "default",
  size = "default",
+ align = "center",
+ wrap = "nowrap",
+ layout = "inline",
+ emphasis = "normal",
+ validation = "none",
  asChild = false,
  ...props
 }: React.ComponentProps<"button"> &
@@ -79,7 +130,9 @@ function Button({
    data-slot="button"
    data-variant={variant}
    data-size={size}
-   className={cn(buttonVariants({ variant, size, className }))}
+   className={cn(
+    buttonVariants({ variant, size, align, wrap, layout, emphasis, validation, className }),
+   )}
    {...(!asChild ? { type: "button" } : {})}
    {...props}
   />

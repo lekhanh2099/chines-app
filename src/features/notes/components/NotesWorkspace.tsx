@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useDeferredValue, useMemo, useState } from "react";
 import { Filter, Library } from "lucide-react";
 import { useSearchParams } from "next/navigation";
@@ -173,9 +174,9 @@ export function NotesWorkspace() {
     }
    >
     <div className="flex min-w-0 flex-wrap items-center gap-2">
-     <span className="flex items-center gap-2 text-sm font-bold text-text-secondary">
+     <Typography variant="label" tone="secondary" weight="bold" className="flex items-center gap-2">
       <Filter className="size-4" /> Bộ lọc
-     </span>
+     </Typography>
      <Select
       value={category}
       onValueChange={(value) => {

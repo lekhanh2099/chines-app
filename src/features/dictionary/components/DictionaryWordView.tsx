@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
@@ -30,7 +31,9 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
   return (
    <PageContainer>
     <div className="flex h-full flex-col items-center justify-center gap-4">
-     <p className="text-text-muted">Không tìm thấy từ vựng.</p>
+     <Typography as="p" tone="muted">
+      Không tìm thấy từ vựng.
+     </Typography>
      <Link href="/hanzihome" className=" font-medium  transition-colors hover: -hover">
       Quay về HanziHome
      </Link>
@@ -54,7 +57,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <Button
       variant="outline"
       size="sm"
-      className="h-12 rounded-xl font-black shadow-theme-sm"
+
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       title="Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import"
@@ -81,9 +84,9 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
        >
         <div className="flex flex-col gap-2">
          <SectionHeader title="Dễ nhầm" />
-         <p className=" leading-relaxed text-danger-text">
+         <Typography as="p" tone="danger" leading="relaxed">
           {viewModel.ai?.confusion || viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes}
-         </p>
+         </Typography>
         </div>
        </Card>
       )}

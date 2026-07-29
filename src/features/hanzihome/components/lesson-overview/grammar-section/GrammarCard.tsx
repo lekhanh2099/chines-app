@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { GrammarPoint } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
@@ -20,8 +22,18 @@ export function GrammarCard({
  const content = (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-4">
    <div>
-    <h4 className="text-lg font-black text-text-primary">{item.title_vi || item.title}</h4>
-    <p className="text-xs font-bold uppercase tracking-wide text-text-muted">{item.title}</p>
+    <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+     {item.title_vi || item.title}
+    </Typography>
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="bold"
+     tracking="wide"
+     transform="uppercase"
+    >
+     {item.title}
+    </StudyInstructionText>
    </div>
    <div className="grid gap-2">
     {item.blocks.map((block, index) => (

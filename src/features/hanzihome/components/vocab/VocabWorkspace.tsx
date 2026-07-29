@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useCallback, useEffect, useMemo } from "react";
 import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPanel";
 import { VocabList } from "@/features/hanzihome/components/VocabList";
@@ -116,7 +117,9 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
  if (vocabularyQuery.isError) {
   return (
    <Card padding="lg" className="grid justify-items-start gap-3">
-    <p className="font-semibold text-text-primary">Không tải được dữ liệu từ vựng của bài.</p>
+    <StudyInstructionText tone="default" weight="semibold">
+     Không tải được dữ liệu từ vựng của bài.
+    </StudyInstructionText>
     <Button type="button" variant="outline" onClick={() => vocabularyQuery.refetch()}>
      Thử lại
     </Button>

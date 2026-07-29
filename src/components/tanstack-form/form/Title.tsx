@@ -1,12 +1,15 @@
-import { cn } from "@/lib/utils";
+import { Typography } from "@/components/ui/typography";
 
 type Props = React.ComponentProps<"h2">;
 
 export function Title({ className, ...props }: Props) {
  return (
-  <h2
+  <Typography
+   as="h2"
+   variant="sectionTitle"
+   weight="bold"
    data-slot="form-title"
-   className={cn("text-xl font-bold text-text-primary", className)}
+   className={className}
    {...props}
   />
  );

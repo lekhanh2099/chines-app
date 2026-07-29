@@ -13,10 +13,8 @@ describe("LessonReadingSettings", () => {
   expect(html).toContain("Hệ thống");
   expect(html).toContain("Songti");
   expect(html).toContain("Pinyin");
-  expect(html).not.toContain('<span class="truncate">Kai</span>');
-  expect(html).not.toContain('<span class="truncate">Mộng Thần</span>');
-  expect(html).toMatch(
-   /<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span class="truncate">Hệ thống<\/span>/,
-  );
+  expect(html).not.toContain(">Kai</span>");
+  expect(html).not.toContain(">Mộng Thần</span>");
+  expect(html).toMatch(/<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span[^>]*>Hệ thống<\/span>/);
  });
 });

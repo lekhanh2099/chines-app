@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Columns2, CloudOff, RefreshCcw, WifiOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -43,17 +44,24 @@ function LearningSyncStatusPill() {
 
  if (hasOfflinePendingWrites) {
   return (
-   <span className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-2.5 text-xs font-bold text-amber-800 shadow-theme-sm dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-200">
+   <StudyInstructionText
+    variant="caption"
+    weight="bold"
+    className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-2.5 text-amber-800 shadow-theme-sm dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-200"
+   >
     <WifiOff className="h-3.5 w-3.5" />
     <span className="hidden sm:inline">Đã lưu offline</span>
     <span className="sm:hidden">Offline</span>
-   </span>
+   </StudyInstructionText>
   );
  }
 
  return (
-  <span
-   className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-destructive/20 bg-destructive/10 px-2 text-xs font-bold text-destructive shadow-theme-sm"
+  <StudyInstructionText
+   variant="caption"
+   tone="danger"
+   weight="bold"
+   className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-destructive/20 bg-destructive/10 px-2 shadow-theme-sm"
    title={sync.lastError || "Tiến độ đã lưu trên máy này, nhưng chưa sync lên server."}
   >
    <CloudOff className="h-3.5 w-3.5" />
@@ -63,7 +71,7 @@ function LearningSyncStatusPill() {
     type="button"
     variant="ghost"
     size="icon-xs"
-    className="h-6 w-6 rounded-md text-current hover:bg-destructive/15"
+    className="w-6"
     aria-label="Thử sync lại tiến độ"
     title="Thử sync lại tiến độ"
     onClick={() => {
@@ -72,7 +80,7 @@ function LearningSyncStatusPill() {
    >
     <RefreshCcw className="h-3 w-3" />
    </Button>
-  </span>
+  </StudyInstructionText>
  );
 }
 

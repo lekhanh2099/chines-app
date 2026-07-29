@@ -1,4 +1,4 @@
-import { getHanziTypographyStyle } from "../hanzi-typography";
+import { ReaderHanziText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 import { ClozeInlineText } from "./ClozeInlineText";
 import type { ClozeAnswer } from "./types";
@@ -17,18 +17,19 @@ export function ClozeText({
  return (
   <div className="grid gap-3">
    {paragraphs.map((paragraph, paragraphIndex) => (
-    <p
+    <ReaderHanziText
+     displayMode={displayMode}
      key={`${paragraph.slice(0, 32)}-${paragraphIndex}`}
-     className="whitespace-pre-wrap leading-relaxed text-text-primary"
-     lang="zh-CN"
-     style={getHanziTypographyStyle(displayMode)}
+     tone="default"
+     leading="relaxed"
+     wrapping="preWrap"
     >
      <ClozeInlineText
       showAnswers={displayMode.showAnswers}
       text={paragraph}
       answerMap={answerMap}
      />
-    </p>
+    </ReaderHanziText>
    ))}
   </div>
  );

@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname } from "next/navigation";
@@ -199,9 +200,17 @@ function InspectorCard({ onClose }: InspectorCardProps) {
    <div className="border-b border-border-default bg-bg-card">
     <div className="flex items-center justify-between gap-2 px-3 py-2">
      <div className="min-w-0">
-      <p lang="zh-CN" className="truncate text-2xl font-bold leading-tight text-text-primary">
+      <Typography
+       as="p"
+       lang="zh-CN"
+       variant="pageTitle"
+       tone="default"
+       weight="bold"
+       clamp="one"
+       leading="tight"
+      >
        {vocabData?.hanzi || selectedText || "词"}
-      </p>
+      </Typography>
      </div>
 
      <div className="flex items-center gap-1">

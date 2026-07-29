@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { ArrowRight, LayoutGrid, List, Pencil, Search, X } from "lucide-react";
 
@@ -13,7 +14,10 @@ import {
  HanziHomeCommandBarPortal,
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { RadicalDetailPanel } from "@/features/hanzihome/components/RadicalDetailPanel";
-import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ getHanziFontFamily,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
@@ -33,7 +37,7 @@ type StrokeFilter = z.infer<typeof StrokeFilterSchema>;
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 const strokeFilters: Array<{ value: StrokeFilter; label: string }> = [
- { value: "all", label: "Tất cả" },
+ { value: StrokeFilterSchema.enum.all, label: "Tất cả" },
  { value: "1", label: "1 nét" },
  { value: "2", label: "2 nét" },
  { value: "3", label: "3 nét" },
@@ -75,7 +79,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  const [detailOpen, setDetailOpen] = useState(Boolean(intentRadicalId));
  const [searchValue, setSearchValue] = useState("");
  const [strokeFilter, setStrokeFilter] = useState<StrokeFilter>("all");
- const [view, setView] = useState<RadicalView>("grid");
+ const [view, setView] = useState<RadicalView>(RadicalViewSchema.enum.grid);
  const [editMode, setEditMode] = useState(false);
  const [editingRadical, setEditingRadical] = useState<Nullable<StaticRadicalData>>(null);
 
@@ -112,7 +116,9 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
  if (radicals.length === 0) {
   return (
    <Card padding="lg" className="rounded-xl">
-    <p className="font-semibold text-text-muted">Chưa có dữ liệu bộ thủ.</p>
+    <StudyInstructionText tone="muted" weight="semibold">
+     Chưa có dữ liệu bộ thủ.
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -139,12 +145,18 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      <section className="grid gap-3" aria-labelledby="radical-filter-heading">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
        <div>
-        <h2 id="radical-filter-heading" className="text-xl font-black text-text-primary">
+        <Typography
+         as="h2"
+         variant="sectionTitle"
+         id="radical-filter-heading"
+         tone="default"
+         weight="black"
+        >
          Lọc theo số nét
-        </h2>
-        <p className="text-sm font-medium text-text-muted">
+        </Typography>
+        <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
          Duyệt {radicals.length} bộ thủ theo độ phức tạp hoặc tìm theo tên và ý nghĩa.
-        </p>
+        </StudyInstructionText>
        </div>
        <div className="relative min-w-0 lg:w-80">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
@@ -153,7 +165,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
          onChange={(event) => setSearchValue(event.target.value)}
          placeholder="Tìm bộ thủ, tên, nghĩa..."
          aria-label="Tìm bộ thủ"
-         className="pl-9"
+         adornment="start"
         />
        </div>
       </div>
@@ -167,14 +179,15 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
           type="button"
           variant={active ? "active" : "surfaceCard"}
           size="sm"
-          className="min-w-max justify-between gap-3 px-3"
+          align="between"
+          className="min-w-max"
           aria-pressed={active}
           onClick={() => setStrokeFilter(filter.value)}
          >
           {filter.label}
-          <span className="text-xs tabular-nums text-text-muted">
+          <StudyInstructionText as="span" variant="caption" tone="muted" className="tabular-nums">
            {filterCounts.get(filter.value)}
-          </span>
+          </StudyInstructionText>
          </Button>
         );
        })}
@@ -184,12 +197,20 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      <section className="grid gap-3" aria-labelledby="radical-list-heading">
       <div className="flex items-center justify-between gap-3 border-t border-border-default pt-5 lg:pt-7">
        <div className="min-w-0">
-        <h2 id="radical-list-heading" className="text-2xl font-black text-text-primary">
+        <Typography
+         as="h2"
+         variant="sectionTitle"
+         id="radical-list-heading"
+         tone="default"
+         weight="black"
+        >
          {strokeFilter === "all"
           ? "Tất cả bộ thủ"
           : strokeFilters.find((filter) => filter.value === strokeFilter)?.label}
-        </h2>
-        <p className="text-sm font-medium text-text-muted">{visibleRadicals.length} kết quả</p>
+        </Typography>
+        <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+         {visibleRadicals.length} kết quả
+        </StudyInstructionText>
        </div>
        <div className="flex shrink-0 rounded-xl border border-border-default bg-bg-card p-1 shadow-theme-sm">
         <Button
@@ -233,8 +254,12 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
        </div>
       ) : (
        <Card variant="subtle" padding="lg" className="text-center">
-        <p className="font-semibold text-text-primary">Không có bộ thủ phù hợp.</p>
-        <p className="mt-1 text-sm text-text-muted">Thử đổi số nét hoặc từ khóa tìm kiếm.</p>
+        <StudyInstructionText tone="default" weight="semibold">
+         Không có bộ thủ phù hợp.
+        </StudyInstructionText>
+        <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
+         Thử đổi số nét hoặc từ khóa tìm kiếm.
+        </StudyInstructionText>
        </Card>
       )}
      </section>
@@ -285,11 +310,16 @@ function RadicalBrowseCard({
   (radical.groups?.reduce((total, group) => total + group.chars.length, 0) ?? 0);
 
  return (
-  <button
+  <Button
    type="button"
+   variant="surfaceCard"
+   size="card"
+   align="start"
+   wrap="normal"
+   layout="grid"
    onClick={onOpen}
    className={cn(
-    "group grid min-w-0 gap-4 rounded-xl border border-border-default bg-bg-card p-4 text-left shadow-theme-sm transition-colors hover:border-primary/25 hover:bg-bg-elevated focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20",
+    "group min-w-0",
     compact ? "sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center" : "content-between",
    )}
   >
@@ -310,27 +340,38 @@ function RadicalBrowseCard({
 
    <div className="min-w-0">
     <div className="flex flex-wrap items-center gap-2">
-     <h3 className="truncate text-lg font-black text-text-primary">
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
       {radical.nameVi || "Chưa có tên"}
-     </h3>
+     </Typography>
      {compact ? (
       <Badge variant="info" size="sm">
        {radical.strokes ?? "?"} nét
       </Badge>
      ) : null}
     </div>
-    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-text-muted">
+    <StudyInstructionText
+     variant="bodySmall"
+     tone="muted"
+     clamp="two"
+     leading="relaxed"
+     className="mt-1"
+    >
      {radical.coreMeaning.modern || radical.recognition || "Chưa có mô tả."}
-    </p>
-    <p className="mt-3 text-xs font-semibold text-text-muted">
+    </StudyInstructionText>
+    <StudyInstructionText variant="caption" tone="muted" weight="semibold" className="mt-3">
      #{radical.index} · {supportingCount} mục liên quan
-    </p>
+    </StudyInstructionText>
    </div>
 
-   <span className="flex items-center gap-1.5 text-sm font-bold text-accent-text">
+   <StudyInstructionText
+    variant="label"
+    tone="accent"
+    weight="bold"
+    className="flex items-center gap-1.5"
+   >
     Xem chi tiết
     <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-   </span>
-  </button>
+   </StudyInstructionText>
+  </Button>
  );
 }

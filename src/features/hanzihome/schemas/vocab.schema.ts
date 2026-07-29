@@ -65,42 +65,6 @@ export const NoteSchema = z.object({
  check_needed: z.boolean().default(false),
 });
 
-// Source / root metadata
-
-export const SourceFileSchema = z.object({
- name: NonEmptyStringSchema,
- type: z
-  .enum(["markdown", "docx", "pdf_scan", "pdf_text", "manual", "json", "unknown"])
-  .default("markdown"),
- check_needed: z.boolean().default(false),
- notes: z.array(NoteSchema).default([]),
-});
-
-export const LessonSourceSchema = z.object({
- book: z.string().default("Hanyu Jiaocheng"),
- volume: NonEmptyStringSchema,
- volume_vi: OptionalStringSchema,
-
- lesson_index: z.number().int().positive(),
- lesson_number_cn: OptionalStringSchema,
-
- lesson_title_cn: NonEmptyStringSchema,
- lesson_title_pinyin: OptionalStringSchema,
- lesson_title_vi: OptionalStringSchema,
- lesson_title_en: OptionalStringSchema,
-
- source_files: z.array(SourceFileSchema).default([]),
- notes: z.array(NoteSchema).default([]),
-});
-
-export const LessonTitleSchema = z.object({
- zh: NonEmptyStringSchema,
- pinyin: OptionalStringSchema,
- vi: OptionalStringSchema,
- en: OptionalStringSchema,
- notes: z.array(NoteSchema).default([]),
-});
-
 // POS / tags
 
 export const PartOfSpeechSchema = z.enum([
@@ -152,16 +116,6 @@ export const PosSchema = z.preprocess(
 );
 
 export const ImportanceLevelSchema = z.enum(["A+++", "A++", "A+", "A", "B+", "B", "C", "unknown"]);
-
-// Lesson overview groups
-
-export const VocabularyGroupSchema = z.object({
- id: IdSchema,
- order: z.number().int().positive(),
- title_vi: NonEmptyStringSchema,
- words: z.array(NonEmptyStringSchema).default([]),
- notes: z.array(NoteSchema).default([]),
-});
 
 // Meaning
 
@@ -546,73 +500,4 @@ export const DeepVocabularyItemSchema = z.object({
 
  notes: z.array(NoteSchema).default([]),
  check_needed: z.boolean().default(false),
-});
-
-// Parse metadata
-
-export const ParseWarningSchema = z.object({
- type: z.enum([
-  "MISSING_FIELD",
-  "LOW_CONFIDENCE",
-  "UNSTRUCTURED_TEXT_LEFT",
-  "CHECK_NEEDED",
-  "PARSER_ERROR",
- ]),
- message: NonEmptyStringSchema,
- item_id: OptionalStringSchema,
- severity: z.enum(["info", "warning", "error"]).default("warning"),
- notes: z.array(NoteSchema).default([]),
-});
-
-export const ParseMetaSchema = z.object({
- parser_version: z.string().default("deep-vocab-parser-v2.1.0"),
- source_format: z.enum(["markdown", "json", "manual"]).default("markdown"),
-
- total_items: z.number().int().nonnegative().default(0),
- checked_items: z.number().int().nonnegative().default(0),
- check_needed_items: z.number().int().nonnegative().default(0),
-
- structured_fields_ratio: z.number().min(0).max(1).default(1),
- unstructured_fields_count: z.number().int().nonnegative().default(0),
-
- warnings: z.array(ParseWarningSchema).default([]),
- notes: z.array(NoteSchema).default([]),
-});
-
-// Root lesson schema
-
-export const DeepVocabularyLessonSchema = z.object({
- schema_version: z.literal("deep_vocab_v2.1.0").default("deep_vocab_v2.1.0"),
- content_type: z.literal("hanyu_deep_vocabulary_lesson").default("hanyu_deep_vocabulary_lesson"),
-
- source: LessonSourceSchema,
-
- lesson: z.object({
-  id: IdSchema,
-  title: LessonTitleSchema,
-  tags: StringArraySchema,
-  notes: z.array(NoteSchema).default([]),
- }),
-
- overview: z.object({
-  groups: z.array(VocabularyGroupSchema).default([]),
-  note_vi: OptionalStringSchema,
-  notes: z.array(NoteSchema).default([]),
- }),
-
- items: z.array(DeepVocabularyItemSchema).default([]),
-
- parse_meta: ParseMetaSchema.default({
-  parser_version: "deep-vocab-parser-v2.1.0",
-  source_format: "markdown",
-  total_items: 0,
-  checked_items: 0,
-  check_needed_items: 0,
-  structured_fields_ratio: 1,
-  unstructured_fields_count: 0,
-  warnings: [],
-  notes: [],
- }),
-
- notes: z.array(NoteSchema).default([]),
 });

@@ -17,38 +17,36 @@ type AppSupabaseClient = SupabaseClient<Database>;
    Types
    ══════════════════════════════════════════ */
 
-const LessonNoteTargetTypeSchema = z.literal("hanzihome_lesson");
-const LessonNoteRelationTypeSchema = z.enum([
- "main",
- "lesson_text",
- "vocab",
- "grammar",
- "annotation",
-]);
-export type LessonNoteTargetType = z.infer<typeof LessonNoteTargetTypeSchema>;
-export type LessonNoteRelationType = z.infer<typeof LessonNoteRelationTypeSchema>;
+export type LessonNoteTargetType = z.infer<z.ZodLiteral<"hanzihome_lesson">>;
+export type LessonNoteRelationType = z.infer<
+ z.ZodEnum<{
+  main: "main";
+  lesson_text: "lesson_text";
+  vocab: "vocab";
+  grammar: "grammar";
+  annotation: "annotation";
+ }>
+>;
 
-const NoteLinkSummarySchema = z.object({
- noteId: z.string(),
- targetType: LessonNoteTargetTypeSchema,
- targetKey: z.string(),
- relationType: LessonNoteRelationTypeSchema,
- updatedAt: z.string(),
-});
-export type NoteLinkSummary = z.infer<typeof NoteLinkSummarySchema>;
+export type NoteLinkSummary = z.infer<
+ z.ZodObject<{
+  noteId: z.ZodString;
+  targetType: z.ZodType<LessonNoteTargetType>;
+  targetKey: z.ZodString;
+  relationType: z.ZodType<LessonNoteRelationType>;
+  updatedAt: z.ZodString;
+ }>
+>;
 
 export type NoteListItem = NoteListRow & {
  links: NoteLinkSummary[];
 };
 
-const NoteDetailSchema = DbNoteSchema.extend({
- links: z.array(NoteLinkSummarySchema),
-});
-const NullableNoteDetailSchema = NoteDetailSchema.nullable();
-const NullableDbNoteSchema = DbNoteSchema.nullable();
-export type NoteDetail = z.infer<typeof NoteDetailSchema>;
-type NullableNoteDetail = z.infer<typeof NullableNoteDetailSchema>;
-type NullableDbNote = z.infer<typeof NullableDbNoteSchema>;
+export type NoteDetail = z.infer<
+ z.ZodObject<typeof DbNoteSchema.shape & { links: z.ZodArray<z.ZodType<NoteLinkSummary>> }>
+>;
+type NullableNoteDetail = z.infer<z.ZodNullable<z.ZodType<NoteDetail>>>;
+type NullableDbNote = z.infer<z.ZodNullable<typeof DbNoteSchema>>;
 
 export const NoteFolderColorSchema = z.enum(["purple", "blue", "green", "orange", "rose", "slate"]);
 export type NoteFolderColor = z.infer<typeof NoteFolderColorSchema>;
@@ -61,20 +59,20 @@ const NoteSourceMetadataSchema = z.object({
  publishedAt: z.string().nullable(),
  capturedAt: z.string().nullable(),
 });
-export type NoteSourceMetadata = z.infer<typeof NoteSourceMetadataSchema>;
 
-const CreateNoteInputSchema = z.object({
- title: z.string(),
- tags: z.array(z.string()),
- category: DbNoteSchema.shape.category.optional(),
- content: JsonObjectSchema.optional(),
- readingContent: JsonObjectSchema.nullable().optional(),
- splitViewEnabled: z.boolean().optional(),
- folderId: z.string().nullable().optional(),
- readingStatus: DbNoteSchema.shape.reading_status.optional(),
- source: NoteSourceMetadataSchema.nullable().optional(),
-});
-export type CreateNoteInput = z.infer<typeof CreateNoteInputSchema>;
+export type CreateNoteInput = z.infer<
+ z.ZodObject<{
+  title: z.ZodString;
+  tags: z.ZodArray<z.ZodString>;
+  category: z.ZodOptional<typeof DbNoteSchema.shape.category>;
+  content: z.ZodOptional<typeof JsonObjectSchema>;
+  readingContent: z.ZodOptional<z.ZodNullable<typeof JsonObjectSchema>>;
+  splitViewEnabled: z.ZodOptional<z.ZodBoolean>;
+  folderId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+  readingStatus: z.ZodOptional<typeof DbNoteSchema.shape.reading_status>;
+  source: z.ZodOptional<z.ZodNullable<typeof NoteSourceMetadataSchema>>;
+ }>
+>;
 
 export const NoteFolderSchema = z.object({
  id: z.string(),
@@ -88,24 +86,21 @@ export const NoteFolderSchema = z.object({
 });
 export type NoteFolder = z.infer<typeof NoteFolderSchema>;
 
-const NullableNoteIdentitySchema = DbNoteSchema.pick({
- id: true,
- short_id: true,
-}).nullable();
+type CreateNoteFolderInput = z.infer<
+ z.ZodObject<{
+  name: z.ZodString;
+  parentId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+  color: z.ZodOptional<typeof NoteFolderColorSchema>;
+  position: z.ZodOptional<z.ZodNumber>;
+ }>
+>;
 
-const CreateNoteFolderInputSchema = z.object({
- name: z.string(),
- parentId: z.string().nullable().optional(),
- color: NoteFolderColorSchema.optional(),
- position: z.number().optional(),
-});
-
-const UpdateNoteFolderInputSchema = NoteFolderSchema.pick({
- name: true,
- parentId: true,
- color: true,
- position: true,
-}).partial();
+type UpdateNoteFolderInput = {
+ name?: NoteFolder["name"];
+ parentId?: NoteFolder["parentId"];
+ color?: NoteFolder["color"];
+ position?: NoteFolder["position"];
+};
 
 export const UpdateNoteLibraryMetadataInputSchema = z.object({
  title: z.string().optional(),
@@ -464,26 +459,6 @@ export async function updateSplitViewEnabled(
  return true;
 }
 
-/** Resolve a short_id to the full note (for URL redirects) */
-export async function getNoteByShortId(
- supabase: AppSupabaseClient,
- shortId: string,
- userId: string,
-): Promise<z.infer<typeof NullableNoteIdentitySchema>> {
- const { data, error } = await supabase
-  .from("notes")
-  .select("id, short_id")
-  .eq("short_id", shortId)
-  .eq("user_id", userId)
-  .single();
-
- if (error) {
-  logger.error("[NotesService] fetch by short_id error:", error);
-  return null;
- }
- return data;
-}
-
 /** Search notes by title (for link-to-note feature) */
 export async function searchNotesByTitle(
  supabase: AppSupabaseClient,
@@ -526,7 +501,7 @@ export async function getNoteFolders(
 export async function createNoteFolder(
  supabase: AppSupabaseClient,
  userId: string,
- input: z.infer<typeof CreateNoteFolderInputSchema>,
+ input: CreateNoteFolderInput,
 ): Promise<NoteFolder> {
  const { data, error } = await supabase
   .from("note_folders")
@@ -547,7 +522,7 @@ export async function createNoteFolder(
 export async function updateNoteFolder(
  supabase: AppSupabaseClient,
  folderId: string,
- input: z.infer<typeof UpdateNoteFolderInputSchema>,
+ input: UpdateNoteFolderInput,
 ): Promise<NoteFolder> {
  const changes: TablesUpdate<"note_folders"> = {};
  if (input.name !== undefined) changes.name = input.name.trim();

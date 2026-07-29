@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { EditableNodeWrapper } from "./EditableNodeWrapper";
 import { isPrimaryEditableEntityType } from "../edit-visibility";
 import type { EditableNodePath, EditableEntityType, EditableNodeRequest } from "../store/types";
@@ -30,7 +31,15 @@ export function NestedEditControls({
 
  return (
   <div className="flex flex-wrap items-center gap-2 rounded-xl border border-dashed border-accent/40 bg-accent-subtle/35 p-2">
-   <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="accent"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    {title}
+   </StudyInstructionText>
    {visibleNodes.map((node) => (
     <EditableNodeWrapper
      key={`${node.entityType}-${node.entityId}-${node.path.join(".")}`}

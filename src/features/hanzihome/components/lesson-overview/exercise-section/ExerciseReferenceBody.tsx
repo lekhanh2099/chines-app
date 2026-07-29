@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { PenLine } from "lucide-react";
 
 import type { EditableNodePath } from "@/features/hanzihome/editing";
@@ -37,12 +38,16 @@ export function ExerciseReferenceBody({
     <PenLine className="h-4 w-4" />
    </span>
    <div className="grid gap-1">
-    <p className="font-black text-text-primary">Luyện trong mục Viết chữ Hán</p>
-    <p className="text-sm font-semibold leading-5 text-text-secondary">
+    <StudyInstructionText tone="default" weight="black">
+     Luyện trong mục Viết chữ Hán
+    </StudyInstructionText>
+    <StudyInstructionText variant="bodySmall" tone="secondary" weight="semibold" leading="compact">
      Bài này dùng ô luyện nét và chữ ở đề mục Viết chữ Hán của cùng bài học.
-    </p>
+    </StudyInstructionText>
     {reference ? (
-     <p className="text-xs font-bold text-text-muted">Tham chiếu: {reference}</p>
+     <StudyInstructionText variant="caption" tone="muted" weight="bold">
+      Tham chiếu: {reference}
+     </StudyInstructionText>
     ) : null}
    </div>
   </div>

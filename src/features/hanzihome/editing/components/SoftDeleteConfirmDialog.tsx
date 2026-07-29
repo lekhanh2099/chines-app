@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { type ReactElement, useState } from "react";
 import { Trash2 } from "lucide-react";
 
@@ -55,9 +56,9 @@ export function SoftDeleteConfirmDialog({
      </DialogDescription>
     </DialogHeader>
     <DialogBody>
-     <p className="text-sm font-medium leading-6 text-text-secondary">
+     <StudyInstructionText variant="bodySmall" tone="secondary" weight="medium" leading="standard">
       Nội dung này sẽ không còn xuất hiện trong chế độ học cho đến khi được khôi phục.
-     </p>
+     </StudyInstructionText>
     </DialogBody>
     <DialogFooter>
      <DialogClose asChild>

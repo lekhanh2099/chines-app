@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { Card } from "@/components/ui/card";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 
@@ -11,8 +13,18 @@ export function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
   >
    <article className="grid gap-3">
     <div className="grid gap-1">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{reading.title}</p>
-     <h2 className="text-2xl font-black tracking-normal text-text-primary">Bài đọc áp dụng</h2>
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      {reading.title}
+     </StudyInstructionText>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black" tracking="normal">
+      Bài đọc áp dụng
+     </Typography>
     </div>
 
     <MarkdownContent content={reading.contentMd} className="gap-3" />

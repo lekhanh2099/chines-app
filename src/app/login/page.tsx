@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -178,14 +179,21 @@ export default function LoginPage() {
     <div className="app-brand-gradient mb-5 grid size-12 place-items-center rounded-2xl shadow-theme-sm">
      <BookOpen className="size-6" aria-hidden="true" />
     </div>
-    <h2 className="text-center text-2xl font-bold tracking-tight text-text-primary">
+    <Typography
+     as="h2"
+     variant="sectionTitle"
+     tone="default"
+     weight="bold"
+     align="center"
+     tracking="tight"
+    >
      {isLogin ? "Chào mừng trở lại HanziHome" : "Tạo tài khoản HanziHome"}
-    </h2>
-    <p className="mt-2 max-w-sm text-center leading-6 text-text-secondary">
+    </Typography>
+    <Typography as="p" tone="secondary" align="center" leading="standard" className="mt-2 max-w-sm">
      {isLogin
       ? "Tiếp tục bài học, ghi chú và lịch ôn tập của bạn."
       : "Lưu bài học, ghi chú và tiến độ ôn tập trên mọi thiết bị."}
-    </p>
+    </Typography>
    </div>
 
    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -260,6 +268,7 @@ export default function LoginPage() {
         <Button
          type="submit"
          disabled={!canSubmit || isSubmitting || oauthLoading}
+         variant="ghost"
          className="w-full mt-2"
         >
          {isSubmitting ? (
@@ -275,19 +284,19 @@ export default function LoginPage() {
       </form.Subscribe>
 
       <div className="mt-6 flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
-       <p>
+       <Typography as="p">
         {isLogin ? "Chưa có tài khoản?" : "Đã có tài khoản?"}{" "}
-        <button
+        <Button
          type="button"
          onClick={() => {
           setIsLogin(!isLogin);
           form.reset();
          }}
-         className="  hover:underline font-medium focus:outline-none"
+         variant="ghost"
         >
          {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
-        </button>
-       </p>
+        </Button>
+       </Typography>
       </div>
      </form>
     </div>

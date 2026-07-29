@@ -5,6 +5,30 @@ import ts from "typescript";
 const ROOTS = ["src", "scripts"];
 const SOURCE_EXTENSIONS = new Set([".js", ".jsx", ".mjs", ".mts", ".ts", ".tsx"]);
 const IGNORED_DIRECTORIES = new Set(["node_modules", ".next", "coverage"]);
+const NEXT_APP_ENTRYPOINT_NAMES = new Set([
+ "apple-icon",
+ "default",
+ "error",
+ "global-error",
+ "icon",
+ "layout",
+ "loading",
+ "manifest",
+ "not-found",
+ "opengraph-image",
+ "page",
+ "robots",
+ "route",
+ "sitemap",
+ "template",
+ "twitter-image",
+]);
+const NEXT_ROOT_ENTRYPOINT_NAMES = new Set([
+ "instrumentation",
+ "instrumentation-client",
+ "middleware",
+ "proxy",
+]);
 
 const DEPRECATED_ZOD_PATTERNS = [
  { pattern: /z\.string\([^)]*\)[^;\n]*(?<!z)\.email\s*\(/, replacement: "z.email()" },
@@ -51,9 +75,188 @@ function listSourceFiles(directory) {
  });
 }
 
-const failures = [];
+function normalizePath(file) {
+ return path.relative(process.cwd(), path.resolve(file)).split(path.sep).join("/");
+}
 
-for (const file of ROOTS.flatMap(listSourceFiles)) {
+function isTestFile(file) {
+ return /\.(?:spec|test)\.[cm]?[jt]sx?$/.test(file);
+}
+
+function isDeclarationFile(file) {
+ return file.endsWith(".d.ts");
+}
+
+function isNextEntrypoint(file) {
+ const extension = path.extname(file);
+ const baseName = path.basename(file, extension);
+
+ if (file.startsWith("src/app/") && NEXT_APP_ENTRYPOINT_NAMES.has(baseName)) {
+  return true;
+ }
+
+ return (
+  path.dirname(file) === "src" &&
+  NEXT_ROOT_ENTRYPOINT_NAMES.has(baseName) &&
+  SOURCE_EXTENSIONS.has(extension)
+ );
+}
+
+function isUiLibraryEntrypoint(file) {
+ return file.startsWith("src/components/ui/") || file.startsWith("src/components/patterns/");
+}
+
+function getPackageScriptEntrypoints(sourceFileSet) {
+ const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+ const entrypoints = new Set();
+ const scriptFilePattern = /(?:^|[\s"'=])(scripts\/[^\s"';&|]+?\.[cm]?[jt]sx?)/g;
+
+ for (const command of Object.values(packageJson.scripts ?? {})) {
+  for (const match of command.matchAll(scriptFilePattern)) {
+   const file = normalizePath(match[1]);
+   if (sourceFileSet.has(file)) {
+    entrypoints.add(file);
+   }
+  }
+ }
+
+ return entrypoints;
+}
+
+function loadCompilerOptions() {
+ const configFile = ts.readConfigFile("tsconfig.json", ts.sys.readFile);
+ if (configFile.error) {
+  throw new Error(ts.flattenDiagnosticMessageText(configFile.error.messageText, "\n"));
+ }
+
+ const parsed = ts.parseJsonConfigFileContent(configFile.config, ts.sys, process.cwd());
+ if (parsed.errors.length > 0) {
+  throw new Error(
+   parsed.errors
+    .map((error) => ts.flattenDiagnosticMessageText(error.messageText, "\n"))
+    .join("\n"),
+  );
+ }
+
+ return parsed.options;
+}
+
+function collectModuleSpecifiers(sourceFile) {
+ const specifiers = new Set();
+
+ const visit = (node) => {
+  if (
+   (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) &&
+   node.moduleSpecifier &&
+   ts.isStringLiteral(node.moduleSpecifier)
+  ) {
+   specifiers.add(node.moduleSpecifier.text);
+  } else if (
+   ts.isImportEqualsDeclaration(node) &&
+   ts.isExternalModuleReference(node.moduleReference) &&
+   node.moduleReference.expression &&
+   ts.isStringLiteral(node.moduleReference.expression)
+  ) {
+   specifiers.add(node.moduleReference.expression.text);
+  } else if (
+   ts.isCallExpression(node) &&
+   (node.expression.kind === ts.SyntaxKind.ImportKeyword ||
+    (ts.isIdentifier(node.expression) && node.expression.text === "require")) &&
+   node.arguments.length === 1 &&
+   ts.isStringLiteral(node.arguments[0])
+  ) {
+   specifiers.add(node.arguments[0].text);
+  } else if (
+   ts.isImportTypeNode(node) &&
+   ts.isLiteralTypeNode(node.argument) &&
+   ts.isStringLiteral(node.argument.literal)
+  ) {
+   specifiers.add(node.argument.literal.text);
+  }
+
+  ts.forEachChild(node, visit);
+ };
+
+ visit(sourceFile);
+ return specifiers;
+}
+
+function findUnreachableSourceFiles(files) {
+ const sourceFileSet = new Set(files.map(normalizePath));
+ const compilerOptions = loadCompilerOptions();
+ const moduleResolutionCache = ts.createModuleResolutionCache(
+  process.cwd(),
+  (file) => file,
+  compilerOptions,
+ );
+ const dependencies = new Map();
+
+ for (const file of sourceFileSet) {
+  const source = fs.readFileSync(file, "utf8");
+  const sourceFile = ts.createSourceFile(
+   file,
+   source,
+   ts.ScriptTarget.Latest,
+   true,
+   file.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  );
+  const resolvedDependencies = new Set();
+
+  for (const specifier of collectModuleSpecifiers(sourceFile)) {
+   const resolution = ts.resolveModuleName(
+    specifier,
+    path.resolve(file),
+    compilerOptions,
+    ts.sys,
+    moduleResolutionCache,
+   ).resolvedModule;
+
+   if (!resolution) continue;
+
+   const resolvedFile = normalizePath(resolution.resolvedFileName);
+   if (sourceFileSet.has(resolvedFile)) {
+    resolvedDependencies.add(resolvedFile);
+   }
+  }
+
+  dependencies.set(file, resolvedDependencies);
+ }
+
+ const entrypoints = new Set(
+  [...sourceFileSet].filter(
+   (file) =>
+    isNextEntrypoint(file) ||
+    isUiLibraryEntrypoint(file) ||
+    isTestFile(file) ||
+    isDeclarationFile(file),
+  ),
+ );
+ for (const file of getPackageScriptEntrypoints(sourceFileSet)) {
+  entrypoints.add(file);
+ }
+
+ const reachable = new Set();
+ const pending = [...entrypoints];
+
+ while (pending.length > 0) {
+  const file = pending.pop();
+  if (reachable.has(file)) continue;
+  reachable.add(file);
+
+  for (const dependency of dependencies.get(file) ?? []) {
+   if (!reachable.has(dependency)) {
+    pending.push(dependency);
+   }
+  }
+ }
+
+ return [...sourceFileSet].filter((file) => !reachable.has(file)).sort();
+}
+
+const failures = [];
+const sourceFiles = ROOTS.flatMap(listSourceFiles);
+
+for (const file of sourceFiles) {
  const source = fs.readFileSync(file, "utf8");
  const lines = source.split("\n");
 
@@ -117,9 +320,15 @@ for (const file of ROOTS.flatMap(listSourceFiles)) {
  }
 }
 
+for (const file of findUnreachableSourceFiles(sourceFiles)) {
+ failures.push(
+  `${file} is not reachable from a framework, UI-library, test, declaration, or package-script entrypoint`,
+ );
+}
+
 if (failures.length > 0) {
  console.error(failures.join("\n"));
  process.exitCode = 1;
 } else {
- console.info("Source architecture and deprecated-API checks passed.");
+ console.info("Source architecture, type-safety, and module-reachability checks passed.");
 }

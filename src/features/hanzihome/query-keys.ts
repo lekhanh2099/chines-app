@@ -18,7 +18,7 @@ export const hanzihomeQueryKeys = {
   "hanzihome",
   "lesson-resource",
   lessonId,
-  resource,
+  LessonResourceKindSchema.enum[resource],
  ],
  aggregate: (kind: AggregateKind, filters: AggregateFilters) => [
   "hanzihome",

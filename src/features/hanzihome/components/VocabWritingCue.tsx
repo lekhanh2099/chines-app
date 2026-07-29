@@ -1,5 +1,9 @@
 "use client";
 
+import {
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useState } from "react";
 
 import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWriter";
@@ -142,29 +146,39 @@ export function VocabWritingCue({
 
     {!compact && (
      <div className="grid content-start gap-2  leading-relaxed text-text-secondary">
-      <p>
-       <span className="font-bold text-text-primary">Bính âm:</span>{" "}
-       <span className="font-pinyin font-black">{info.pinyin}</span>
-      </p>
+      <StudyInstructionText>
+       <StudyInstructionText as="span" tone="default" weight="bold">
+        Bính âm:
+       </StudyInstructionText>{" "}
+       <PinyinText as="span" weight="black">
+        {info.pinyin}
+       </PinyinText>
+      </StudyInstructionText>
 
-      <p>
-       <span className="font-bold text-text-primary">Hán Việt:</span> {info.hanViet}
-      </p>
+      <StudyInstructionText>
+       <StudyInstructionText as="span" tone="default" weight="bold">
+        Hán Việt:
+       </StudyInstructionText>{" "}
+       {info.hanViet}
+      </StudyInstructionText>
 
-      <p>
-       <span className="font-bold text-text-primary">Nghĩa:</span> {info.meaning}
-      </p>
+      <StudyInstructionText>
+       <StudyInstructionText as="span" tone="default" weight="bold">
+        Nghĩa:
+       </StudyInstructionText>{" "}
+       {info.meaning}
+      </StudyInstructionText>
 
       {info.lines.length > 0 ? (
        <div className="grid gap-1 border-t border-border-default pt-2">
         {info.lines.map((line) => (
-         <p key={line}>{line}</p>
+         <StudyInstructionText key={line}>{line}</StudyInstructionText>
         ))}
        </div>
       ) : (
-       <p className="border-t border-border-default pt-2 text-text-muted">
+       <StudyInstructionText tone="muted" className="border-t border-border-default pt-2">
         Chưa có ghi chú cấu tạo chữ cho mục này.
-       </p>
+       </StudyInstructionText>
       )}
      </div>
     )}

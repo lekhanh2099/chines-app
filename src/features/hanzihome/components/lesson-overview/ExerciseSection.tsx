@@ -5,7 +5,7 @@ import { ExerciseBody } from "./exercise-section/ExerciseBody";
 import { RawExerciseDataDetails } from "./exercise-section/RawExerciseDataDetails";
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
-import { getHanziTypographyStyle } from "./hanzi-typography";
+import { ReaderHanziText, StudyInstructionText } from "./hanzi-typography";
 
 const EXERCISE_PAGE_METADATA_PATTERN = /^Trang bài tập\s+\d+$/i;
 
@@ -42,22 +42,31 @@ export function ExerciseCard({
  const content = (
   <article className="exercise-card-surface grid gap-4 rounded-xl border p-4 shadow-theme-sm sm:p-5">
    <div className="flex items-start justify-between gap-3">
-    <span className="study-chip-accent flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border text-sm font-black">
+    <StudyInstructionText
+     variant="label"
+     weight="black"
+     className="study-chip-accent flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border"
+    >
      {item.order}
-    </span>
+    </StudyInstructionText>
     <div className="grid gap-1 min-w-0 flex-1">
-     <h4
-      lang="zh-CN"
-      className="font-black leading-tight text-text-primary"
-      style={getHanziTypographyStyle(displayMode, { size: "md" })}
-     >
+     <ReaderHanziText as="h4" displayMode={displayMode} size="md" weight="black" leading="tight">
       {title}
-     </h4>
+     </ReaderHanziText>
      {displayMode.showMeaning && titleVi && titleVi !== title ? (
-      <p className="text-sm font-semibold leading-6 text-text-muted">{titleVi}</p>
+      <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" leading="standard">
+       {titleVi}
+      </StudyInstructionText>
      ) : null}
      {instructionText && (
-      <p className="text-sm font-semibold leading-6 text-text-secondary">{instructionText}</p>
+      <StudyInstructionText
+       variant="bodySmall"
+       tone="secondary"
+       weight="semibold"
+       leading="standard"
+      >
+       {instructionText}
+      </StudyInstructionText>
      )}
     </div>
    </div>

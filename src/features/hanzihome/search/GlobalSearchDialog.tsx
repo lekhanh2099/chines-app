@@ -1,5 +1,8 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useDeferredValue, useMemo, useState } from "react";
 import { BookOpenCheck, LoaderCircle, Search } from "lucide-react";
 
@@ -109,14 +112,17 @@ export function GlobalSearchDialog({
 
     <div className="relative border-b border-border-default">
      <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-text-muted" />
-     <input
+     <Input
       autoFocus
       value={query}
       onChange={(event) => handleQueryChange(event.target.value)}
       onKeyDown={handleKeyDown}
       placeholder="Tìm Hán tự, pinyin, nghĩa, ngữ pháp, bài học..."
       aria-label="Tìm toàn bộ HanziHome"
-      className="h-14 w-full bg-transparent pl-12 pr-12 text-base font-semibold text-text-primary outline-none placeholder:font-medium placeholder:text-text-muted"
+      density="comfortable"
+      surface="transparent"
+      adornment="both"
+      className="w-full"
      />
      {searchIndex.isFetching && (
       <LoaderCircle className="absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 animate-spin text-text-muted" />
@@ -128,21 +134,29 @@ export function GlobalSearchDialog({
      role="listbox"
     >
      {canLookupDirectly && (
-      <button
+      <Button
        type="button"
        onClick={() => onDirectLookup(trimmedQuery)}
-       className="mb-1 flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left hover:bg-bg-subtle"
+       variant="ghost"
+       align="start"
+       className="mb-1 flex w-full"
       >
-       <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+       <StudyInstructionText
+        as="span"
+        tone="accent"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-subtle"
+       >
         <BookOpenCheck className="h-4 w-4" />
-       </span>
+       </StudyInstructionText>
        <span>
-        <span className="block font-bold text-text-primary">Tra từ “{trimmedQuery}”</span>
-        <span className="block text-sm font-medium text-text-muted">
+        <StudyInstructionText tone="default" weight="bold" className="block">
+         Tra từ “{trimmedQuery}”
+        </StudyInstructionText>
+        <StudyInstructionText variant="bodySmall" tone="muted" weight="medium" className="block">
          Mở bảng phân tích chữ và từ điển nhanh
-        </span>
+        </StudyInstructionText>
        </span>
-      </button>
+      </Button>
      )}
 
      {visibleItems.map((item, index) => (
@@ -157,17 +171,23 @@ export function GlobalSearchDialog({
 
      {!searchIndex.isLoading && trimmedQuery && visibleItems.length === 0 && (
       <div className="px-4 py-10 text-center grid gap-1">
-       <p className="font-bold text-text-primary">Không tìm thấy nội dung phù hợp.</p>
-       <p className="text-sm font-medium text-text-muted">
+       <StudyInstructionText tone="default" weight="bold">
+        Không tìm thấy nội dung phù hợp.
+       </StudyInstructionText>
+       <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
         Thử Hán tự, pinyin không dấu, nghĩa tiếng Việt hoặc tên bài.
-       </p>
+       </StudyInstructionText>
       </div>
      )}
 
      {searchIndex.isError && (
       <div className="px-4 py-10 text-center grid gap-1">
-       <p className="font-bold text-danger">Không tải được chỉ mục tìm kiếm.</p>
-       <p className="text-sm font-medium text-text-muted">Đóng và mở lại để thử lại.</p>
+       <StudyInstructionText tone="dangerStrong" weight="bold">
+        Không tải được chỉ mục tìm kiếm.
+       </StudyInstructionText>
+       <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+        Đóng và mở lại để thử lại.
+       </StudyInstructionText>
       </div>
      )}
     </div>

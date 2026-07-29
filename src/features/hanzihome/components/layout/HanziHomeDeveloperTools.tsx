@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useState, type ReactNode } from "react";
 import { SlidersHorizontal } from "lucide-react";
 
@@ -111,17 +112,31 @@ function HanziHomeCompactDeveloperTools({
       <BasePopoverPopup variant="menu" initialFocus={false} finalFocus={false}>
        {developerToolsEnabled ? (
         <section className="grid gap-1">
-         <p className="px-1 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+         <StudyInstructionText
+          variant="overline"
+          tone="muted"
+          weight="black"
+          tracking="wide"
+          transform="uppercase"
+          className="px-1 py-1"
+         >
           Chế độ xem
-         </p>
+         </StudyInstructionText>
          <LessonViewModeToggle presentation="menu" />
         </section>
        ) : null}
        {children ? (
         <section className="grid gap-1 border-t border-border-default pt-2 first:border-t-0 first:pt-0">
-         <p className="px-1 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+         <StudyInstructionText
+          variant="overline"
+          tone="muted"
+          weight="black"
+          tracking="wide"
+          transform="uppercase"
+          className="px-1 py-1"
+         >
           Không gian học
-         </p>
+         </StudyInstructionText>
          <div id={HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID} className="grid gap-1">
           {children}
          </div>
@@ -129,9 +144,16 @@ function HanziHomeCompactDeveloperTools({
        ) : null}
        {showEditingTools ? (
         <section className="grid gap-1 border-t border-border-default pt-2 first:border-t-0 first:pt-0">
-         <p className="px-1 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+         <StudyInstructionText
+          variant="overline"
+          tone="muted"
+          weight="black"
+          tracking="wide"
+          transform="uppercase"
+          className="px-1 py-1"
+         >
           Chỉnh sửa nội dung
-         </p>
+         </StudyInstructionText>
          <div className="grid gap-1">
           <HanziHomeEditingTools includeDialogShell={false} presentation="menu" />
          </div>

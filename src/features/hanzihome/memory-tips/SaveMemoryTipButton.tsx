@@ -17,7 +17,10 @@ type SaveMemoryTipButtonProps = {
  variant?: z.infer<typeof SaveMemoryTipButtonVariantSchema>;
 };
 
-export function SaveMemoryTipButton({ payload, variant = "outline" }: SaveMemoryTipButtonProps) {
+export function SaveMemoryTipButton({
+ payload,
+ variant = SaveMemoryTipButtonVariantSchema.enum.outline,
+}: SaveMemoryTipButtonProps) {
  const createMutation = useCreateMemoryTipMutation();
 
  return (

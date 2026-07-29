@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
 import { ExerciseQuestionCard } from "../CommonCards";
 import { asRecord, stringValue } from "../utils";
@@ -18,7 +19,15 @@ export function GeneratedQuestions({
 
  return (
   <div className="grid gap-2">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Câu hỏi đọc hiểu</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Câu hỏi đọc hiểu
+   </StudyInstructionText>
    {values.map((questionValue, index) => {
     const question = asRecord(questionValue);
     const title =

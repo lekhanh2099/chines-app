@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useRouter } from "next/navigation";
@@ -166,7 +167,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   return (
    <div className="flex h-full flex-col items-center justify-center bg-bg-primary text-text-muted">
     <FileText className="w-10 h-10 mb-3 opacity-40" />
-    <p className="text-sm">Chọn một ghi chú để bắt đầu</p>
+    <Typography as="p" variant="bodySmall">
+     Chọn một ghi chú để bắt đầu
+    </Typography>
    </div>
   );
  }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
 import { useMemo, useState } from "react";
 import { Pencil, Play } from "lucide-react";
 
@@ -9,11 +10,13 @@ import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ StudyInstructionText,
+ ReaderHanziText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
-import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
@@ -99,7 +102,15 @@ function ItemHeader({
    <Badge variant="purple" className="size-8 justify-center rounded-lg p-0">
     {index + 1}
    </Badge>
-   <p className="text-xs font-black uppercase tracking-wide text-success">{typeLabel(type)}</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="successStrong"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    {typeLabel(type)}
+   </StudyInstructionText>
    {onEdit ? (
     <Button
      type="button"
@@ -186,11 +197,13 @@ function ChoiceItems({
     />
     <div lang="zh-CN" className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
      <div className="grid gap-1">
-      <p className="leading-relaxed text-text-primary" style={getHanziTypographyStyle(displayMode)}>
+      <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">
        {item.promptZh ?? "Nghe và chọn đáp án đúng"}
-      </p>
+      </ReaderHanziText>
       {revealMeaning && item.metadata.promptVi ? (
-       <p className="text-sm font-medium text-text-muted">{item.metadata.promptVi}</p>
+       <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+        {item.metadata.promptVi}
+       </StudyInstructionText>
       ) : null}
      </div>
      <ExerciseAudioButton
@@ -210,23 +223,35 @@ function ChoiceItems({
         type="button"
         role="radio"
         aria-checked={isSelected}
-        variant={isSelected ? "active" : "outline"}
-        className={cn(
-         "h-auto min-h-12 justify-start whitespace-normal px-3 py-2 text-left",
-         optionIsCorrect && "border-success bg-success-subtle text-success-text",
-         optionIsWrong && "border-destructive bg-destructive/10 text-destructive",
-        )}
+        variant={
+         optionIsCorrect
+          ? "success"
+          : optionIsWrong
+            ? "destructive"
+            : isSelected
+              ? "active"
+              : "outline"
+        }
+        size="list"
+        align="start"
+        wrap="normal"
         onClick={() => onSelect(item.id, option.key)}
        >
-        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-current text-xs font-black">
+        <StudyInstructionText
+         variant="caption"
+         weight="black"
+         className="flex size-6 shrink-0 items-center justify-center rounded-full border border-current"
+        >
          {option.key}
-        </span>
+        </StudyInstructionText>
         <span className="grid min-w-0 gap-0.5">
-         <span lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
+         <ReaderHanziText displayMode={displayMode}>
           <StressText text={option.textZh} stress={option.stress} />
-         </span>
+         </ReaderHanziText>
          {revealMeaning && option.textVi ? (
-          <span className="text-xs font-medium text-text-muted">{option.textVi}</span>
+          <StudyInstructionText variant="caption" tone="muted" weight="medium">
+           {option.textVi}
+          </StudyInstructionText>
          ) : null}
         </span>
        </Button>
@@ -250,9 +275,14 @@ function ChoiceItems({
       </Button>
      ) : null}
      {isChecked ? (
-      <span className={cn("text-sm font-bold", isCorrect ? "text-success" : "text-destructive")}>
+      <StudyInstructionText
+       as="span"
+       variant="bodySmall"
+       tone={isCorrect ? "successStrong" : "danger"}
+       weight="bold"
+      >
        {isCorrect ? "✓ Chính xác" : `✕ Chưa đúng · đáp án ${correct ?? "—"}`}
-      </span>
+      </StudyInstructionText>
      ) : null}
     </div>
     {item.transcript && revealScript ? (
@@ -306,11 +336,13 @@ function AnswerItems({
    />
    <div lang="zh-CN" className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
     <div className="grid gap-1">
-     <p className="leading-relaxed text-text-primary" style={getHanziTypographyStyle(displayMode)}>
+     <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">
       {item.promptZh}
-     </p>
+     </ReaderHanziText>
      {showMeaning && item.metadata.promptVi ? (
-      <p className="text-sm font-medium text-text-muted">{item.metadata.promptVi}</p>
+      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+       {item.metadata.promptVi}
+      </StudyInstructionText>
      ) : null}
     </div>
     <ExerciseAudioButton
@@ -322,7 +354,7 @@ function AnswerItems({
    <Textarea
     value={answers[item.id] ?? ""}
     placeholder={
-     exerciseType === "oral_response"
+     exerciseType === AnswerExerciseTypeSchema.enum.oral_response
       ? "Soạn câu trả lời hoặc dàn ý để tự nói…"
       : "Nhập câu trả lời bằng tiếng Trung…"
     }
@@ -345,12 +377,22 @@ function AnswerItems({
    )}
    {revealed[item.id] && item.metadata.sampleAnswerZh ? (
     <Card variant="subtle" padding="sm" className="rounded-xl">
-     <p className="text-xs font-black uppercase tracking-wide text-success">Đáp án gợi ý</p>
-     <p lang="zh-CN" className="text-text-primary" style={getHanziTypographyStyle(displayMode)}>
+     <StudyInstructionText
+      variant="overline"
+      tone="successStrong"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Đáp án gợi ý
+     </StudyInstructionText>
+     <ReaderHanziText displayMode={displayMode} tone="default">
       {item.metadata.sampleAnswerZh}
-     </p>
+     </ReaderHanziText>
      {showMeaning && item.metadata.sampleAnswerVi ? (
-      <p className="text-sm text-text-muted">{item.metadata.sampleAnswerVi}</p>
+      <StudyInstructionText variant="bodySmall" tone="muted">
+       {item.metadata.sampleAnswerVi}
+      </StudyInstructionText>
      ) : null}
     </Card>
    ) : null}
@@ -392,7 +434,7 @@ function BooleanItems({
   const expected = item.answer?.type === "boolean" ? String(item.answer.value) : "";
   const isChecked = checked[item.id] ?? false;
   const isCorrect = isChecked && selected === expected;
-  const sameDifferent = exerciseType === "same_different";
+  const sameDifferent = exerciseType === BooleanExerciseTypeSchema.enum.same_different;
   return (
    <Card key={item.id} variant="section" padding="md" className="grid gap-3 rounded-xl">
     <ItemHeader
@@ -401,13 +443,9 @@ function BooleanItems({
      onEdit={onEditItem ? () => onEditItem(item) : undefined}
     />
     <div className="grid items-start gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
-     <p
-      lang="zh-CN"
-      className="leading-relaxed text-text-primary"
-      style={getHanziTypographyStyle(displayMode)}
-     >
+     <ReaderHanziText displayMode={displayMode} tone="default" leading="relaxed">
       {sameDifferent ? item.metadata.printedPinyin : item.promptZh}
-     </p>
+     </ReaderHanziText>
      <ExerciseAudioButton
       promptText={sameDifferent ? (item.metadata.heardZh ?? item.promptZh) : item.promptZh}
       transcriptText={item.transcript?.full.zh ?? transcriptText}
@@ -438,21 +476,30 @@ function BooleanItems({
       </Button>
      ) : null}
      {isChecked ? (
-      <span className={cn("text-sm font-bold", isCorrect ? "text-success" : "text-destructive")}>
+      <StudyInstructionText
+       as="span"
+       variant="bodySmall"
+       tone={isCorrect ? "successStrong" : "danger"}
+       weight="bold"
+      >
        {isCorrect ? "✓ Chính xác" : "✕ Chưa đúng"}
-      </span>
+      </StudyInstructionText>
      ) : null}
     </div>
     {sameDifferent && revealed[item.id] ? (
      <Card variant="subtle" padding="sm" className="rounded-xl">
-      <p lang="zh-CN" className="text-text-primary" style={getHanziTypographyStyle(displayMode)}>
+      <ReaderHanziText displayMode={displayMode} tone="default">
        {item.metadata.heardZh}
-      </p>
-      <p className="text-sm font-semibold text-accent-text">{item.metadata.heardPinyin}</p>
+      </ReaderHanziText>
+      <StudyInstructionText variant="bodySmall" tone="accent" weight="semibold">
+       {item.metadata.heardPinyin}
+      </StudyInstructionText>
      </Card>
     ) : null}
     {isChecked && item.explanationVi && showMeaning ? (
-     <p className="text-sm font-medium text-text-muted">{item.explanationVi}</p>
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+      {item.explanationVi}
+     </StudyInstructionText>
     ) : null}
    </Card>
   );
@@ -493,24 +540,28 @@ function FillBlankItems({
      type="fill_blank"
      onEdit={onEditItem ? () => onEditItem(item) : undefined}
     />
-    <div
+    <ReaderHanziText
+     as="div"
+     displayMode={displayMode}
      className="flex flex-wrap items-center gap-2"
-     lang="zh-CN"
-     style={getHanziTypographyStyle(displayMode)}
     >
-     <span className="font-black">{index + 1}.</span>
-     <span className="font-bold">{parts[0]}</span>
+     <StudyInstructionText as="span" weight="black">
+      {index + 1}.
+     </StudyInstructionText>
+     <StudyInstructionText as="span" weight="bold">
+      {parts[0]}
+     </StudyInstructionText>
      <Input
       value={answers[item.id] ?? ""}
       aria-label={`Đáp án câu ${index + 1}`}
-      className={cn(
-       "w-28",
-       isChecked && (isCorrect ? "border-success bg-success-subtle" : "border-destructive"),
-      )}
+      validation={isChecked ? (isCorrect ? "success" : "danger") : "none"}
+      className="w-28"
       onChange={(event) => onAnswer(item.id, event.target.value)}
      />
-     <span className="font-bold">{parts[1]}</span>
-    </div>
+     <StudyInstructionText as="span" weight="bold">
+      {parts[1]}
+     </StudyInstructionText>
+    </ReaderHanziText>
     <ExerciseAudioButton
      promptText={item.promptZh}
      transcriptText={item.transcript?.full.zh ?? transcriptText}
@@ -521,9 +572,14 @@ function FillBlankItems({
       Kiểm tra
      </Button>
      {isChecked ? (
-      <span className={cn("text-sm font-bold", isCorrect ? "text-success" : "text-destructive")}>
+      <StudyInstructionText
+       as="span"
+       variant="bodySmall"
+       tone={isCorrect ? "successStrong" : "danger"}
+       weight="bold"
+      >
        {isCorrect ? "✓ Chính xác" : `✕ ${item.metadata.answerDisplay ?? accepted[0] ?? ""}`}
-      </span>
+      </StudyInstructionText>
      ) : null}
     </div>
    </Card>
@@ -554,12 +610,13 @@ function ShadowingItems({
 
  return groups.map(([groupId, groupItems]) => (
   <Card key={groupId} variant="section" padding="md" className="grid gap-2 rounded-xl">
-   <p className="font-black text-text-primary">
+   <StudyInstructionText tone="default" weight="black">
     {groupItems[0]?.metadata.groupTitleZh} · {groupItems[0]?.metadata.groupTitleVi}
-   </p>
+   </StudyInstructionText>
    {groupItems.map((item) => (
-    <label
+    <Label
      key={item.id}
+     variant="label"
      className="grid cursor-pointer grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-2 border-b border-border-default py-2 last:border-b-0"
     >
      <Checkbox
@@ -569,11 +626,15 @@ function ShadowingItems({
       }
      />
      <span lang="zh-CN" className="min-w-0">
-      <span className="block text-text-primary" style={getHanziTypographyStyle(displayMode)}>
+      <ReaderHanziText displayMode={displayMode} as="span" tone="default" className="block">
        {item.promptZh}
-      </span>
-      <span className="block text-sm font-semibold text-accent-text">{item.metadata.pinyin}</span>
-      <span className="block text-sm text-text-muted">{item.metadata.translationVi}</span>
+      </ReaderHanziText>
+      <StudyInstructionText variant="bodySmall" tone="accent" weight="semibold" className="block">
+       {item.metadata.pinyin}
+      </StudyInstructionText>
+      <StudyInstructionText variant="bodySmall" tone="muted" className="block">
+       {item.metadata.translationVi}
+      </StudyInstructionText>
      </span>
      <span className="flex items-center gap-1">
       {onEditItem ? (
@@ -604,7 +665,7 @@ function ShadowingItems({
        Đọc theo
       </Button>
      </span>
-    </label>
+    </Label>
    ))}
   </Card>
  ));
@@ -639,9 +700,7 @@ function MatchingItem({
   <Card variant="section" padding="md" className="grid gap-3 rounded-xl">
    <ItemHeader index={0} type="matching" onEdit={onEditItem ? () => onEditItem(item) : undefined} />
    <div className="grid gap-1">
-    <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
-     {item.promptZh}
-    </p>
+    <ReaderHanziText displayMode={displayMode}>{item.promptZh}</ReaderHanziText>
     <ExerciseAudioButton
      promptText={item.promptZh}
      transcriptText={item.transcript?.full.zh ?? transcriptText}
@@ -655,13 +714,16 @@ function MatchingItem({
        key={entry.id}
        type="button"
        variant={activeLeft === entry.id ? "active" : "outline"}
-       className="h-auto justify-start whitespace-normal py-2 text-left"
+       align="start"
+       wrap="normal"
        onClick={() => setActiveLeft(entry.id)}
       >
-       <span lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
-        {entry.textZh}
-       </span>
-       {entry.textVi ? <span className="text-xs text-text-muted">{entry.textVi}</span> : null}
+       <ReaderHanziText displayMode={displayMode}>{entry.textZh}</ReaderHanziText>
+       {entry.textVi ? (
+        <StudyInstructionText as="span" variant="caption" tone="muted">
+         {entry.textVi}
+        </StudyInstructionText>
+       ) : null}
       </Button>
      ))}
     </div>
@@ -671,18 +733,21 @@ function MatchingItem({
        key={entry.id}
        type="button"
        variant="outline"
-       className="h-auto justify-between whitespace-normal py-2 text-left"
+       align="start"
+       wrap="normal"
        onClick={() => {
         setAssignments((current) => ({ ...current, [entry.id]: activeLeft }));
         setChecked(false);
        }}
       >
-       <span lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
+       <ReaderHanziText displayMode={displayMode}>
         {entry.textZh}
         {entry.textVi ? (
-         <span className="block text-xs text-text-muted">{entry.textVi}</span>
+         <StudyInstructionText as="span" variant="caption" tone="muted" className="block">
+          {entry.textVi}
+         </StudyInstructionText>
         ) : null}
-       </span>
+       </ReaderHanziText>
        <Badge variant="purple">
         {left.find((candidate) => candidate.id === assignments[entry.id])?.textVi ?? "Chưa nối"}
        </Badge>
@@ -703,9 +768,14 @@ function MatchingItem({
      Làm lại
     </Button>
     {checked ? (
-     <span className={cn("text-sm font-bold", isCorrect ? "text-success" : "text-destructive")}>
+     <StudyInstructionText
+      as="span"
+      variant="bodySmall"
+      tone={isCorrect ? "successStrong" : "danger"}
+      weight="bold"
+     >
       {isCorrect ? "✓ Nối chính xác" : "✕ Còn cặp chưa đúng"}
-     </span>
+     </StudyInstructionText>
     ) : null}
    </div>
   </Card>

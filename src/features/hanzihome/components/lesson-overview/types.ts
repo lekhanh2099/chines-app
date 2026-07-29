@@ -1,4 +1,4 @@
-import type { HanyuLesson, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type {
  HanziReaderFont,
  HanziReaderSize,
@@ -24,8 +24,4 @@ export type BookSection = {
  type: Section["type"];
  order: number;
  section: Section;
-};
-
-export type SourceLessonOverviewProps = {
- lessonDocument: HanyuLesson;
 };

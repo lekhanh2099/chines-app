@@ -7,7 +7,15 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const BasePopoverVariantSchema = z.enum(["default", "actions", "lookup", "menu"]);
+const BasePopoverVariantSchema = z.enum([
+ "default",
+ "actions",
+ "lookup",
+ "menu",
+ "profile",
+ "mobileActions",
+ "moduleMenu",
+]);
 
 type BasePopoverPopupProps = Omit<React.ComponentProps<typeof Popover.Popup>, "className"> & {
  variant?: z.infer<typeof BasePopoverVariantSchema>;
@@ -22,6 +30,12 @@ const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, strin
   "w-80 max-w-[calc(100vw-1rem)] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg",
  menu:
   "grid w-72 max-w-[calc(100vw-1rem)] gap-2 rounded-xl border border-border-default bg-bg-elevated p-2 text-sm shadow-theme-lg",
+ profile:
+  "max-h-[calc(100dvh-1rem)] w-[min(23rem,calc(100vw-1rem))] overflow-x-hidden overflow-y-auto scrollbar-soft rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg",
+ mobileActions:
+  "w-[min(19rem,calc(100vw-1rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg",
+ moduleMenu:
+  "max-h-[min(24rem,calc(100dvh-7rem))] w-[min(20rem,calc(100vw-1rem))] overflow-y-auto scrollbar-soft rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg",
 };
 
 type BasePopoverTriggerOwnedProps = {
@@ -49,7 +63,10 @@ function BasePopoverPositioner({
  return <Popover.Positioner className={cn("z-120", className)} {...props} />;
 }
 
-function BasePopoverPopup({ variant = "default", ...props }: BasePopoverPopupProps) {
+function BasePopoverPopup({
+ variant = BasePopoverVariantSchema.enum.default,
+ ...props
+}: BasePopoverPopupProps) {
  return (
   <Popover.Popup
    className={popupVariants[variant]}

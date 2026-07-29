@@ -1,5 +1,10 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -284,19 +289,32 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         </span>
 
         <div className="grid min-w-0 gap-1">
-         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+         <StudyInstructionText
+          variant="overline"
+          tone="muted"
+          weight="black"
+          tracking="wide"
+          transform="uppercase"
+         >
           HanziHome Library
-         </p>
-         <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
+         </StudyInstructionText>
+         <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
           {title}
-         </h1>
-         <p className=" font-semibold text-text-muted">{description}</p>
+         </Typography>
+         <StudyInstructionText tone="muted" weight="semibold">
+          {description}
+         </StudyInstructionText>
         </div>
        </div>
 
-       <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+       <StudyInstructionText
+        variant="caption"
+        tone="muted"
+        weight="black"
+        className="rounded-full bg-bg-subtle px-3 py-1"
+       >
         {items.length} mục
-       </span>
+       </StudyInstructionText>
       </div>
 
       <div className="rounded-xl bg-bg-primary">
@@ -324,19 +342,28 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
     <Card className="sticky top-0 z-20 rounded-xl border border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur">
      <div className="grid gap-3 xl:grid-cols-[minmax(16rem,1.2fr)_repeat(3,minmax(9rem,0.8fr))_auto] xl:items-end">
-      <label className="grid gap-1.5">
-       <span className="text-xs font-black uppercase tracking-wide text-text-muted">Từ khóa</span>
+      <Label variant="label" className="grid gap-1.5">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Từ khóa
+       </StudyInstructionText>
        <div className="flex h-11 items-center gap-2 rounded-xl border border-border-default bg-bg-input px-3">
         <Search className="h-4 w-4 text-text-muted" />
-        <input
+        <Input
          value={filters.q}
          onChange={(event) => updateFilter("q", event.target.value)}
          aria-label={kind === "vocab" ? "Tìm từ vựng" : "Tìm ngữ pháp"}
          placeholder={kind === "vocab" ? "Hán tự, pinyin, nghĩa..." : "Tiêu đề, cấu trúc..."}
-         className="h-full min-w-0 flex-1 bg-transparent font-semibold text-text-primary outline-none placeholder:text-text-muted"
+         surface="transparent"
+         className="min-w-0 flex-1"
         />
        </div>
-      </label>
+      </Label>
 
       <FilterSelect
        label="Course"
@@ -368,14 +395,15 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        }))}
       />
 
-      <button
+      <Button
        type="button"
        onClick={resetFilters}
        disabled={!hasActiveFilters}
-       className="h-11 rounded-xl border border-border-default bg-bg-subtle px-4  font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-50"
+       variant="outline"
+       size="icon"
       >
        Xóa lọc
-      </button>
+      </Button>
      </div>
     </Card>
 
@@ -404,18 +432,23 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       {shouldShowAggregateList && query.isLoading && <AggregateLibrarySkeleton />}
 
       {shouldShowAggregateList && query.isError && (
-       <p role="alert" className="rounded-xl bg-danger-subtle p-4  font-bold text-danger-text">
+       <StudyInstructionText
+        role="alert"
+        tone="danger"
+        weight="bold"
+        className="rounded-xl bg-danger-subtle p-4"
+       >
         {(query.error as Error).message}
-       </p>
+       </StudyInstructionText>
       )}
 
       {shouldShowAggregateList &&
        !query.isLoading &&
        !query.isError &&
        groupedItems.length === 0 && (
-        <p className="rounded-xl bg-bg-subtle p-4  font-bold text-text-muted">
+        <StudyInstructionText tone="muted" weight="bold" className="rounded-xl bg-bg-subtle p-4">
          Không tìm thấy mục phù hợp.
-        </p>
+        </StudyInstructionText>
        )}
 
       {shouldShowAggregateList &&
@@ -423,10 +456,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         <section key={group.lessonId} className="grid gap-2">
          <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
-           <h2 className="text-base font-black text-text-primary">
+           <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
             {formatLessonHeading(group.lessonNumber, group.lessonTitle)}
-           </h2>
-           <p className="text-xs font-bold text-text-muted">{group.items.length} mục</p>
+           </Typography>
+           <StudyInstructionText variant="caption" tone="muted" weight="bold">
+            {group.items.length} mục
+           </StudyInstructionText>
           </div>
 
           <div className="flex flex-wrap gap-1.5">

@@ -27,7 +27,7 @@ const OPENAI_MODEL_PREFERENCES = ["gpt-5-mini", "gpt-5-nano", "gpt-4.1-mini", "g
 
 const providerEnum = ApiKeyProviderSchema;
 const RequestedProviderSchema = z.union([z.literal(AUTO_API_KEY_PROVIDER), providerEnum]);
-const ProviderDetectionModeSchema = z.enum(["auto", "manual"]);
+type ProviderDetectionMode = z.infer<z.ZodEnum<{ auto: "auto"; manual: "manual" }>>;
 const providerModelsResponseSchema = z.object({
  data: z.array(z.object({ id: z.string() })).optional(),
 });
@@ -76,20 +76,24 @@ const deleteSchema = z.object({
  keyId: z.uuid(),
 });
 
-const ProviderValidationResultSchema = z.discriminatedUnion("valid", [
- z.object({
-  valid: z.literal(true),
-  provider: ApiKeyProviderSchema,
-  defaultModel: z.string().nullable(),
-  detectedVia: ProviderDetectionModeSchema,
-  message: z.string().optional(),
- }),
- z.object({
-  valid: z.literal(false),
-  error: z.string(),
- }),
-]);
-type ProviderValidationResult = z.infer<typeof ProviderValidationResultSchema>;
+type ProviderValidationResult = z.infer<
+ z.ZodDiscriminatedUnion<
+  [
+   z.ZodObject<{
+    valid: z.ZodLiteral<true>;
+    provider: typeof ApiKeyProviderSchema;
+    defaultModel: z.ZodNullable<z.ZodString>;
+    detectedVia: z.ZodType<ProviderDetectionMode>;
+    message: z.ZodOptional<z.ZodString>;
+   }>,
+   z.ZodObject<{
+    valid: z.ZodLiteral<false>;
+    error: z.ZodString;
+   }>,
+  ],
+  "valid"
+ >
+>;
 
 export async function GET() {
  const supabase = await createClient();
@@ -357,7 +361,7 @@ function getProviderCandidates(apiKey: string): ApiKeyProvider[] {
 async function validateByProvider(
  apiKey: string,
  provider: ApiKeyProvider,
- detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
+ detectedVia: ProviderDetectionMode,
 ): Promise<ProviderValidationResult> {
  if (provider === "deepseek") {
   return validateDeepSeekKey(apiKey, detectedVia);
@@ -376,7 +380,7 @@ async function validateByProvider(
 
 async function validateGroqKey(
  apiKey: string,
- detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
+ detectedVia: ProviderDetectionMode,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("gsk_")) {
   return {
@@ -417,7 +421,7 @@ async function validateGroqKey(
 
 async function validateDeepSeekKey(
  apiKey: string,
- detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
+ detectedVia: ProviderDetectionMode,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("sk-")) {
   return {
@@ -476,7 +480,7 @@ async function validateDeepSeekKey(
 
 async function validateGeminiKey(
  apiKey: string,
- detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
+ detectedVia: ProviderDetectionMode,
 ): Promise<ProviderValidationResult> {
  try {
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`, {
@@ -526,7 +530,7 @@ async function validateGeminiKey(
 
 async function validateOpenAiKey(
  apiKey: string,
- detectedVia: z.infer<typeof ProviderDetectionModeSchema>,
+ detectedVia: ProviderDetectionMode,
 ): Promise<ProviderValidationResult> {
  if (!apiKey.startsWith("sk-")) {
   return {

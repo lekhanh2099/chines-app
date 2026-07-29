@@ -1,11 +1,13 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
+import { OptionSelect } from "@/components/ui/option-select";
+import type { IOption } from "@/types/option";
 
 type ControlledSelectProps = {
  value?: never;
- onChange?: never;
- onBlur?: never;
+ onValueChange?: never;
+ options?: never;
 };
 
 export function SelectField({
@@ -14,9 +16,9 @@ export function SelectField({
  helperText,
  options,
  ...rest
-}: Omit<React.SelectHTMLAttributes<HTMLSelectElement>, keyof ControlledSelectProps> &
+}: Omit<React.ComponentProps<typeof OptionSelect>, keyof ControlledSelectProps> &
  Omit<FieldItemProps, "field"> & {
-  options: { label: string; value: string }[];
+  options: IOption[];
  }) {
  const field = useFieldContext<string>();
 
@@ -28,23 +30,15 @@ export function SelectField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <select
-    name={field.name}
+   <OptionSelect
     value={field.state.value}
-    onChange={(e) => field.handleChange(e.target.value)}
-    onBlur={field.handleBlur}
-    className="h-12 w-full appearance-none rounded-2xl border border-border-default bg-bg-primary px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
+    options={options}
+    onValueChange={(value) => {
+     field.handleChange(value);
+     field.handleBlur();
+    }}
     {...rest}
-   >
-    <option value="" disabled>
-     Select an option...
-    </option>
-    {options.map((option) => (
-     <option key={option.value} value={option.value}>
-      {option.label}
-     </option>
-    ))}
-   </select>
+   />
   </FieldItem>
  );
 }

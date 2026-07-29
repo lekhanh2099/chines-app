@@ -1,5 +1,7 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
+import { Input } from "@/components/ui/input";
 import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import { LockKeyhole, Search } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
@@ -448,17 +450,17 @@ function HeaderSearchForm({
    )}
   >
    <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
-   <input
+   <Input
     value={value}
     onFocus={onOpen}
     onClick={onOpen}
     onChange={(event) => onChange(event.target.value)}
     placeholder="Tìm toàn bộ HanziHome"
     aria-label="Tìm toàn bộ HanziHome"
-    className={cn(
-     "h-10 w-full rounded-xl border border-border-default bg-bg-card/80 pl-10 pr-3 font-medium text-text-primary shadow-theme-sm outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 sm:pr-4 xl:h-11",
-     routeToolbarActive && "xl:w-[min(34rem,34vw)]",
-    )}
+    density="search"
+    surface="card"
+    adornment="start"
+    className={cn("w-full", routeToolbarActive && "xl:w-[min(34rem,34vw)]")}
    />
   </form>
  );
@@ -499,7 +501,8 @@ function HeaderUtilityArea({
      onClick={onOpenSearch}
      aria-label="Mở tìm kiếm HanziHome"
      title="Tìm toàn bộ HanziHome"
-     className="h-10 min-h-10 w-10 px-0 xl:hidden"
+     size="icon-sm"
+     className="w-10 xl:hidden"
     >
      <Search className="h-5 w-5" />
     </Button>
@@ -522,12 +525,15 @@ function HeaderUtilityArea({
 
 function FocusModePill() {
  return (
-  <span
-   className="hidden size-9 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-warning/30 bg-warning-subtle p-0 text-xs font-black text-warning-text shadow-theme-sm sm:inline-flex 2xl:h-9 2xl:w-auto 2xl:px-2.5"
+  <Typography
+   variant="caption"
+   tone="warning"
+   weight="black"
+   className="hidden size-9 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-warning/30 bg-warning-subtle p-0 shadow-theme-sm sm:inline-flex 2xl:h-9 2xl:w-auto 2xl:px-2.5"
    title="Focus mode đang bật"
   >
    <LockKeyhole className="h-3.5 w-3.5" />
    <span className="hidden 2xl:inline">Focus</span>
-  </span>
+  </Typography>
  );
 }

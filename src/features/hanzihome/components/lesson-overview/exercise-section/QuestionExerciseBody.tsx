@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue } from "@/types/json";
 import {
  EditableNodeWrapper,
@@ -270,9 +271,13 @@ export function QuestionExerciseBody({
    <InfoBlock title="Chức năng giao tiếp" value={functionText} />
 
    {pattern && (
-    <p className="exercise-answer-surface rounded-xl border p-3 font-black text-accent-text">
+    <StudyInstructionText
+     tone="accent"
+     weight="black"
+     className="exercise-answer-surface rounded-xl border p-3"
+    >
      {pattern}
-    </p>
+    </StudyInstructionText>
    )}
 
    {(stringValue(model, "prompt") || stringValue(model, "answer")) && (

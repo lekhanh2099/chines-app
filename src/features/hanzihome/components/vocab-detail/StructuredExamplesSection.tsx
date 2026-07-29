@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { BookOpen } from "lucide-react";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
@@ -20,29 +22,43 @@ export function StructuredExamplesSection({
    id="vocab-examples"
    className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
   >
-   <h3 className="flex items-center gap-2 text-lg font-black text-text-primary">
+   <Typography
+    as="h3"
+    variant="cardTitle"
+    tone="default"
+    weight="black"
+    className="flex items-center gap-2"
+   >
     <BookOpen className="h-5 w-5 text-accent-text" />
     Ví dụ
-   </h3>
+   </Typography>
 
    <div className="grid gap-3">
     {item.examples.map((example, index) => {
      const content = (
       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
        <div className="grid gap-1">
-        <p className="text-2xl font-black leading-relaxed text-text-primary">
+        <StudyInstructionText variant="pageTitle" tone="default" weight="black" leading="relaxed">
          {renderHighlightedVocabText(example.zh, keyword)}
-        </p>
+        </StudyInstructionText>
         {example.pinyin && (
-         <p className="font-bold italic leading-relaxed text-text-muted">{example.pinyin}</p>
+         <StudyInstructionText tone="muted" weight="bold" leading="relaxed" emphasis="italic">
+          {example.pinyin}
+         </StudyInstructionText>
         )}
-        <p className="font-semibold leading-relaxed text-text-secondary">{example.vi}</p>
+        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+         {example.vi}
+        </StudyInstructionText>
        </div>
 
        {example.analysis_vi && (
-        <p className="border-t border-border-default pt-3 leading-relaxed text-accent-text">
+        <StudyInstructionText
+         tone="accent"
+         leading="relaxed"
+         className="border-t border-border-default pt-3"
+        >
          {example.analysis_vi}
-        </p>
+        </StudyInstructionText>
        )}
       </div>
      );

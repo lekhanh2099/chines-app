@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { SectionHeader } from "@/components/layout/section-header";
@@ -77,7 +78,7 @@ function DictionaryCharacterSidebar({
         key={character}
         variant={selectedCharacter === character ? "default" : "outline"}
         size="sm"
-        className="min-w-10 px-3"
+        className="min-w-10"
         onClick={() => onSelectCharacter(character)}
        >
         {character}
@@ -109,7 +110,9 @@ function DictionaryCharacterSidebar({
          </Badge>
         )}
        </div>
-       <p className=" leading-relaxed text-text-secondary">{mnemonic_story || etymologyText}</p>
+       <Typography as="p" tone="secondary" leading="relaxed">
+        {mnemonic_story || etymologyText}
+       </Typography>
       </div>
      </Card>
     )}
@@ -150,27 +153,43 @@ function AnatomyOverview({
         <div key={`${item.symbol}-${item.label}-${index}`} className="flex items-center gap-2">
          <Card variant="default" padding="sm" className="rounded-2xl ">
           <div className="text-center">
-           <p className="text-lg font-black text-text-primary">{item.symbol}</p>
-           {item.label && <p className="text-xs leading-tight text-text-muted">{item.label}</p>}
+           <Typography as="p" variant="sectionTitle" tone="default" weight="black">
+            {item.symbol}
+           </Typography>
+           {item.label && (
+            <Typography as="p" variant="caption" tone="muted" leading="tight">
+             {item.label}
+            </Typography>
+           )}
           </div>
          </Card>
          {index < structureItems.length - 1 && (
-          <span className=" font-bold text-text-muted">+</span>
+          <Typography tone="muted" weight="bold">
+           +
+          </Typography>
          )}
         </div>
        ))}
-       <span className=" font-bold text-text-muted">=</span>
+       <Typography tone="muted" weight="bold">
+        =
+       </Typography>
        <Card
         variant="subtle"
         padding="sm"
         className="rounded-2xl  border-accent/20 bg-accent/10 text-center"
        >
-        <p className="text-lg font-black  ">{character}</p>
-        <p className="text-xs leading-tight  /80">kết quả</p>
+        <Typography as="p" variant="sectionTitle" weight="black">
+         {character}
+        </Typography>
+        <Typography as="p" variant="caption" leading="tight">
+         kết quả
+        </Typography>
        </Card>
       </div>
      ) : (
-      <p className=" text-text-muted">Chưa có dữ liệu cấu tạo chi tiết.</p>
+      <Typography as="p" tone="muted">
+       Chưa có dữ liệu cấu tạo chi tiết.
+      </Typography>
      )}
     </div>
    </Card>
@@ -187,15 +206,17 @@ function AnatomyOverview({
         className="rounded-2xl "
        >
         <div className="flex items-start gap-3">
-         <span className="min-w-6 text-lg font-black text-text-primary">
+         <Typography variant="sectionTitle" tone="default" weight="black" className="min-w-6">
           {component.part || "?"}
-         </span>
+         </Typography>
          <div className="min-w-0">
-          <p className=" font-semibold text-text-primary">
+          <Typography as="p" tone="default" weight="semibold">
            {component.name || component.meaning || "Thành phần phụ"}
-          </p>
+          </Typography>
           {component.name && component.meaning && (
-           <p className="text-xs text-text-muted">{component.meaning}</p>
+           <Typography as="p" variant="caption" tone="muted">
+            {component.meaning}
+           </Typography>
           )}
          </div>
         </div>

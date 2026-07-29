@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useState } from "react";
 import Link from "next/link";
 import { ExternalLink, Eye, PanelTopClose, PanelTopOpen, Pencil, Save } from "lucide-react";
@@ -55,18 +56,37 @@ export function LessonSplitNoteEditor({
   <div className={fillHeight ? "flex h-full min-h-0 flex-col gap-3" : "grid gap-3"}>
    <div className="flex flex-wrap items-center justify-between gap-3">
     <div className="flex flex-wrap gap-2">
-     <span className="rounded-full bg-info-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-info-text">
+     <StudyInstructionText
+      variant="overline"
+      tone="info"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+      className="rounded-full bg-info-subtle px-3 py-1"
+     >
       Bài đọc
-     </span>
-     <span className="rounded-full bg-warning-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-warning-text">
+     </StudyInstructionText>
+     <StudyInstructionText
+      variant="overline"
+      tone="warning"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+      className="rounded-full bg-warning-subtle px-3 py-1"
+     >
       Ghi chú
-     </span>
+     </StudyInstructionText>
     </div>
     <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-     <span className="inline-flex items-center gap-1.5 text-xs font-bold text-text-muted">
+     <StudyInstructionText
+      variant="caption"
+      tone="muted"
+      weight="bold"
+      className="inline-flex items-center gap-1.5"
+     >
       <Save className="h-3.5 w-3.5" />
       {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
-     </span>
+     </StudyInstructionText>
      <Button
       type="button"
       variant={readOnly ? "active" : "outline"}

@@ -7,9 +7,7 @@ import {
 } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { z } from "zod";
 
-const LessonIdSchema = z.string().nullable();
-
-export function useHanziHomeLesson(lessonId: z.infer<typeof LessonIdSchema>) {
+export function useHanziHomeLesson(lessonId: z.infer<z.ZodNullable<z.ZodString>>) {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId ?? "");
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId ?? "");
  const lesson =

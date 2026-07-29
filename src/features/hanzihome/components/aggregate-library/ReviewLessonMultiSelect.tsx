@@ -1,3 +1,6 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Input } from "@/components/ui/input";
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { Check, ChevronDown, RotateCcw, Search, X } from "lucide-react";
 
@@ -75,16 +78,29 @@ export function ReviewLessonMultiSelect({
   <section className="grid gap-2.5">
    <div className="flex flex-wrap items-center justify-between gap-2">
     <div className="min-w-0">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Chọn bài để ôn</p>
-     <h2 className="text-base font-black text-text-primary">
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Chọn bài để ôn
+     </StudyInstructionText>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
       {kind === "vocab" ? "Ôn từ vựng theo bài" : "Ôn ngữ pháp theo bài"}
-     </h2>
+     </Typography>
     </div>
 
     <div className="flex shrink-0 flex-wrap items-center gap-1.5">
-     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+     <StudyInstructionText
+      variant="caption"
+      tone="muted"
+      weight="black"
+      className="rounded-full bg-bg-subtle px-3 py-1"
+     >
       {selectedCount} bài
-     </span>
+     </StudyInstructionText>
 
      {activeLessonTitle && (
       <Button type="button" size="sm" variant="outline" onClick={onCloseReview}>
@@ -114,7 +130,15 @@ export function ReviewLessonMultiSelect({
 
    {selectedLessons.length > 0 && (
     <div className="flex flex-wrap items-center gap-2">
-     <span className="text-xs font-black uppercase tracking-wide text-text-muted">Đã chọn</span>
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Đã chọn
+     </StudyInstructionText>
 
      {selectedLessons.slice(0, 6).map((lesson) => (
       <Button
@@ -122,7 +146,7 @@ export function ReviewLessonMultiSelect({
        type="button"
        variant="surfaceCard"
        onClick={() => onToggleLesson(lesson.id)}
-       className="gap-1.5 rounded-full px-3 py-1.5 text-xs font-black"
+
        title={`Bỏ ${formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}`}
       >
        <span>{formatLessonHeading(lesson.lessonNumber, lesson.titleZh || lesson.title)}</span>
@@ -131,38 +155,45 @@ export function ReviewLessonMultiSelect({
      ))}
 
      {selectedLessons.length > 6 && (
-      <span className="rounded-full bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       className="rounded-full bg-bg-subtle px-3 py-1.5"
+      >
        +{selectedLessons.length - 6} bài nữa
-      </span>
+      </StudyInstructionText>
      )}
 
-     <Button
-      type="button"
-      variant="ghost"
-      onClick={clearSelectedLessons}
-      className="rounded-full px-3 py-1 text-xs font-black"
-     >
+     <Button type="button" variant="ghost" onClick={clearSelectedLessons}>
       Xóa hết
      </Button>
     </div>
    )}
 
    {selectedLessons.length === 0 && (
-    <p className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-2 text-sm font-bold text-text-muted">
+    <StudyInstructionText
+     variant="label"
+     tone="muted"
+     weight="bold"
+     className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-2"
+    >
      Chưa chọn bài. Bấm “Chọn bài” để tìm nhanh theo số bài hoặc tên bài.
-    </p>
+    </StudyInstructionText>
    )}
 
    {isPickerOpen && (
     <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-2">
      <div className="relative">
       <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
-      <input
+      <Input
        value={query}
        onChange={(event) => setQuery(event.target.value)}
        aria-label="Tìm bài để ôn"
        placeholder="Tìm bài, ví dụ: Bài 10..."
-       className="h-11 w-full rounded-xl border border-border-default bg-bg-input pl-9 pr-3 text-sm font-bold text-text-primary outline-none transition-colors focus:border-accent"
+       surface="field"
+       adornment="start"
+       className="w-full"
       />
      </div>
 
@@ -178,7 +209,7 @@ export function ReviewLessonMultiSelect({
           type="button"
           variant={selected ? "active" : "surfaceCard"}
           onClick={() => onToggleLesson(lesson.id)}
-          className="justify-start gap-2 rounded-xl px-3 py-2 text-left text-sm font-black"
+          align="start"
          >
           <span
            className={[
@@ -188,14 +219,21 @@ export function ReviewLessonMultiSelect({
           >
            {selected && <Check className="h-3.5 w-3.5" />}
           </span>
-          <span className="min-w-0 truncate">{title}</span>
+          <StudyInstructionText as="span" clamp="one" className="min-w-0">
+           {title}
+          </StudyInstructionText>
          </Button>
         );
        })
       ) : (
-       <p className="col-span-full px-2 py-4 text-sm font-bold text-text-muted">
+       <StudyInstructionText
+        variant="label"
+        tone="muted"
+        weight="bold"
+        className="col-span-full px-2 py-4"
+       >
         Không tìm thấy bài phù hợp.
-       </p>
+       </StudyInstructionText>
       )}
      </div>
     </div>

@@ -1,11 +1,12 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import { TextLineCard } from "./TextLineCard";
-import { getHanziTypographyStyle } from "./hanzi-typography";
+import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
 import { AnswerList } from "./passage-card/AnswerList";
 import { ClozeText } from "./passage-card/ClozeText";
 import { PassageLineBlock } from "./passage-card/PassageLineBlock";
@@ -132,8 +133,16 @@ export function PassageCard({
   <div className="exercise-card-surface grid gap-3 rounded-xl border p-3 sm:p-4">
    {(passageTitle || instructionText) && (
     <div className="grid gap-1">
-     {passageTitle && <h5 className="font-black text-text-primary">{passageTitle}</h5>}
-     {instructionText && <p className=" font-semibold text-text-muted">{instructionText}</p>}
+     {passageTitle && (
+      <Typography as="h5" variant="cardTitle" tone="default" weight="black">
+       {passageTitle}
+      </Typography>
+     )}
+     {instructionText && (
+      <StudyInstructionText tone="muted" weight="semibold">
+       {instructionText}
+      </StudyInstructionText>
+     )}
     </div>
    )}
 
@@ -171,10 +180,14 @@ export function PassageCard({
         <NativeMandarinSpeakButton text={completedPassageText || passageText || clozeText} />
        </div>
        {displayMode.showPinyin && passagePinyin && (
-        <p className="text-xs font-bold italic text-text-muted sm:text-sm">{passagePinyin}</p>
+        <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">
+         {passagePinyin}
+        </StudyInstructionText>
        )}
        {displayMode.showMeaning && passageMeaning && (
-        <p className="font-semibold leading-relaxed text-text-secondary">{passageMeaning}</p>
+        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+         {passageMeaning}
+        </StudyInstructionText>
        )}
       </div>
      ) : (
@@ -192,14 +205,24 @@ export function PassageCard({
 
    {displayMode.showAnswers && completedPassageText && completedPassageText !== passageText && (
     <div className="exercise-answer-surface grid gap-1 rounded-lg border p-3">
-     <p className="text-xs font-black uppercase tracking-wide text-accent-text">Bản hoàn chỉnh</p>
-     <p
-      className="whitespace-pre-wrap leading-8 text-text-primary"
-      lang="zh-CN"
-      style={getHanziTypographyStyle(displayMode, { size: "lg" })}
+     <StudyInstructionText
+      variant="overline"
+      tone="accent"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Bản hoàn chỉnh
+     </StudyInstructionText>
+     <ReaderHanziText
+      displayMode={displayMode}
+      size="lg"
+      tone="default"
+      leading="spacious"
+      wrapping="preWrap"
      >
       {completedPassageText}
-     </p>
+     </ReaderHanziText>
     </div>
    )}
 

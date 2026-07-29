@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
@@ -35,23 +36,48 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
        </HomeIconTile>
 
        <span className="min-w-0 flex-1">
-        <span className="block text-xs font-black uppercase tracking-[0.14em] text-text-muted">
+        <Typography
+         variant="overline"
+         tone="muted"
+         weight="black"
+         tracking="overline"
+         transform="uppercase"
+         className="block"
+        >
          {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
-        </span>
-        <span className="mt-1 block truncate text-lg font-black text-text-primary">
+        </Typography>
+        <Typography
+         variant="sectionTitle"
+         tone="default"
+         weight="black"
+         clamp="one"
+         className="mt-1 block"
+        >
          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-        </span>
-        <span className="mt-0.5 block truncate text-sm font-semibold text-text-muted">
+        </Typography>
+        <Typography
+         variant="bodySmall"
+         tone="muted"
+         weight="semibold"
+         clamp="one"
+         className="mt-0.5 block"
+        >
          {lesson.courseTitle} · {moduleLabels[lesson.module]}
-        </span>
+        </Typography>
        </span>
 
        <ArrowRight className="h-5 w-5 shrink-0 text-text-primary" />
       </Link>
      ) : (
-      <p className="mt-6 rounded-xl border border-border-default bg-bg-primary px-4 py-3 text-sm font-bold text-text-primary">
+      <Typography
+       as="p"
+       variant="label"
+       tone="default"
+       weight="bold"
+       className="mt-6 rounded-xl border border-border-default bg-bg-primary px-4 py-3"
+      >
        Chưa có bài học khả dụng.
-      </p>
+      </Typography>
      )}
     </div>
 

@@ -73,5 +73,3 @@ export const userLearningStateSchema = z.object({
   )
   .default([]),
 });
-
-export type UserLearningStatePayload = z.infer<typeof userLearningStateSchema>;

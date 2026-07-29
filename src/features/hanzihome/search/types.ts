@@ -13,7 +13,7 @@ export const HanziHomeSearchKindSchema = z.enum([
  "navigation",
 ]);
 export type HanziHomeSearchKind = z.infer<typeof HanziHomeSearchKindSchema>;
-const SearchMetadataValueSchema = z.union([z.string(), z.number(), z.boolean(), z.null()]);
+type SearchMetadataValue = z.infer<z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>>;
 
 export type HanziHomeSearchIndexItem = {
  id: string;
@@ -29,7 +29,7 @@ export type HanziHomeSearchIndexItem = {
  module?: HanziHomeModule;
  targetId?: string;
  href?: string;
- metadata?: Record<string, z.infer<typeof SearchMetadataValueSchema>>;
+ metadata?: Record<string, SearchMetadataValue>;
 };
 
 export type HanziHomeSearchOptions = {

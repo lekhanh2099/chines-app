@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useId } from "react";
 import { Play, Square, Volume2 } from "lucide-react";
 
@@ -44,14 +46,20 @@ export function NativeMandarinTtsControls({
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
    <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
     <div className="flex min-w-0 items-start gap-2">
-     <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+     <StudyInstructionText
+      as="span"
+      tone="accent"
+      className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle"
+     >
       <Volume2 className="size-4" />
-     </span>
+     </StudyInstructionText>
      <div className="min-w-0">
-      <p className="text-sm font-black text-text-primary">Thiết lập nghe</p>
-      <p className="text-xs font-medium leading-relaxed text-text-muted">
+      <StudyInstructionText variant="label" tone="default" weight="black">
+       Thiết lập nghe
+      </StudyInstructionText>
+      <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
        {tts.error ?? "Giọng Mandarin Trung Quốc đại lục do thiết bị cung cấp."}
-      </p>
+      </StudyInstructionText>
      </div>
     </div>
 
@@ -109,9 +117,12 @@ export function NativeMandarinTtsControls({
 
    {showPracticePreferences ? (
     <div className="flex flex-wrap gap-2 border-t border-border-default pt-2.5">
-     <label
+     <Label
       htmlFor={hideScriptId}
-      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3 text-xs font-bold text-text-secondary"
+      variant="caption"
+      tone="secondary"
+      weight="bold"
+      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3"
      >
       <Checkbox
        id={hideScriptId}
@@ -119,10 +130,13 @@ export function NativeMandarinTtsControls({
        onCheckedChange={(checked) => onHideScriptBeforeCheckChange(checked === true)}
       />
       Ẩn script trước khi làm
-     </label>
-     <label
+     </Label>
+     <Label
       htmlFor={showTranslationId}
-      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3 text-xs font-bold text-text-secondary"
+      variant="caption"
+      tone="secondary"
+      weight="bold"
+      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3"
      >
       <Checkbox
        id={showTranslationId}
@@ -130,7 +144,7 @@ export function NativeMandarinTtsControls({
        onCheckedChange={(checked) => onShowTranslationAfterCheckChange(checked === true)}
       />
       Hiện bản dịch sau khi kiểm tra
-     </label>
+     </Label>
     </div>
    ) : null}
   </div>

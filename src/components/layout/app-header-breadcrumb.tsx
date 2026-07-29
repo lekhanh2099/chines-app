@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 import Link from "next/link";
 
@@ -71,7 +72,9 @@ export function AppHeaderBreadcrumbLink({
  const content = (
   <>
    {icon}
-   <span className="min-w-0 truncate">{children}</span>
+   <Typography as="span" clamp="one" className="min-w-0">
+    {children}
+   </Typography>
   </>
  );
 
@@ -119,7 +122,9 @@ export function AppHeaderBreadcrumbPage({
     className,
    )}
   >
-   <span className="min-w-0 truncate">{children}</span>
+   <Typography as="span" clamp="one" className="min-w-0">
+    {children}
+   </Typography>
   </BreadcrumbPage>
  );
 }

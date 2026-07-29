@@ -6,7 +6,6 @@ import {
  hanziReaderFontSchema,
  hanziReaderSizeSchema,
  learningStatusSchema,
- lessonTextRevealModeSchema,
  moduleSchema,
  progressItemSchema,
  reviewResultSchema,
@@ -40,7 +39,6 @@ export type HanziHomeCourseBook = {
 };
 
 export const EditableFieldPathSchema = z.array(z.union([z.string(), z.number()]));
-const NullableStrokeCountSchema = z.number().nullable();
 
 export const HanziHomeEditableRecordMetaSchema = z.object({
  entityType: z.string(),
@@ -61,7 +59,7 @@ export type StaticRadicalData = {
  index: number;
  radical: string;
  nameVi?: string;
- strokes?: z.infer<typeof NullableStrokeCountSchema>;
+ strokes?: z.infer<z.ZodNullable<z.ZodNumber>>;
  coreMeaning: {
   modern?: string;
   history?: string;
@@ -239,7 +237,6 @@ export type HanziHomeCatalogData = {
 export type LearningProgressItem = z.infer<typeof progressItemSchema>;
 export type HanziReaderFont = z.infer<typeof hanziReaderFontSchema>;
 export type HanziReaderSize = z.infer<typeof hanziReaderSizeSchema>;
-export type LessonTextRevealMode = z.infer<typeof lessonTextRevealModeSchema>;
 export type UserLearningState = z.infer<typeof userLearningStateSchema>;
 export type LessonTextDisplaySettings = NonNullable<
  UserLearningState["settings"]["lessonTextDisplayMode"]

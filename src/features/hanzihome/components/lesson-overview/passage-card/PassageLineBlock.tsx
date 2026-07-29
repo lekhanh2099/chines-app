@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { ClozeText } from "./ClozeText";
@@ -25,10 +26,14 @@ export function PassageLineBlock({
     <div className="grid gap-2">
      <ClozeText text={line.zh} answerMap={answerMap} displayMode={displayMode} />
      {displayMode.showPinyin && line.pinyin && (
-      <p className="text-xs font-bold italic text-text-muted sm:text-sm">{line.pinyin}</p>
+      <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">
+       {line.pinyin}
+      </StudyInstructionText>
      )}
      {displayMode.showMeaning && line.vi && (
-      <p className="font-semibold leading-relaxed text-text-secondary">{line.vi}</p>
+      <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+       {line.vi}
+      </StudyInstructionText>
      )}
     </div>
    ) : (

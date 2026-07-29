@@ -1,6 +1,6 @@
 import type { ErrorInput } from "@/types/error";
 import { HtmlArtifactsApiError } from "./html-artifact-api";
-import { htmlArtifactSummarySchema, type HtmlArtifactSummary } from "./html-artifact.schema";
+import { htmlArtifactSummarySchema } from "./html-artifact.schema";
 import { z } from "zod";
 
 export async function formatHtmlSource(source: string): Promise<string> {

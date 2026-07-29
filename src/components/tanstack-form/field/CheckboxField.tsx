@@ -1,12 +1,14 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Typography } from "@/components/ui/typography";
 
 type ControlledCheckboxProps = {
- value?: never;
- onChange?: never;
+ checked?: never;
+ onCheckedChange?: never;
  onBlur?: never;
- type?: never;
+ name?: never;
 };
 
 export function CheckboxField({
@@ -14,7 +16,7 @@ export function CheckboxField({
  description,
  helperText,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledCheckboxProps> &
+}: Omit<React.ComponentProps<typeof Checkbox>, keyof ControlledCheckboxProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<boolean>();
 
@@ -27,16 +29,18 @@ export function CheckboxField({
    helperText={helperText}
   >
    <div className="mt-1 flex items-center gap-2">
-    <input
-     type="checkbox"
+    <Checkbox
      name={field.name}
      checked={field.state.value}
-     onChange={(e) => field.handleChange(e.target.checked)}
+     onCheckedChange={(checked) => field.handleChange(checked === true)}
      onBlur={field.handleBlur}
-     className="size-5 rounded-2xl border-border-default bg-bg-primary text-primary focus:ring-primary"
      {...rest}
     />
-    {label && <span className="font-medium text-text-secondary">{label}</span>}
+    {label && (
+     <Typography as="span" variant="bodySmall" tone="secondary">
+      {label}
+     </Typography>
+    )}
    </div>
   </FieldItem>
  );

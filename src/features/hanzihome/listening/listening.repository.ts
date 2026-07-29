@@ -9,7 +9,7 @@ import {
  listeningOptionSchema,
  listeningTranscriptSchema,
 } from "./listening.schemas.ts";
-import type { ListeningExerciseType, ListeningLessonBundle } from "./listening.types.ts";
+import type { ListeningExerciseType } from "./listening.types.ts";
 
 const LESSON_SELECT = "id,title_zh,title_vi";
 const SECTION_SELECT = "id,source_section_id,section_order,title,title_vi,payload";

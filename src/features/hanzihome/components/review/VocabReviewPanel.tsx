@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { useCallback, useState } from "react";
 import { RotateCcw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -113,10 +115,12 @@ export function VocabReviewPanel({
      />
 
      <div className="grid gap-2 rounded-xl border border-dashed border-border-default bg-bg-subtle p-4">
-      <h2 className="text-2xl font-black text-text-primary">Chưa có thẻ để ôn</h2>
-      <p className="font-semibold text-text-muted">
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+       Chưa có thẻ để ôn
+      </Typography>
+      <StudyInstructionText tone="muted" weight="semibold">
        Deck này chưa có dữ liệu phù hợp. Thử đổi sang “Tất cả” hoặc thêm từ vựng/ngữ pháp cho bài.
-      </p>
+      </StudyInstructionText>
      </div>
     </div>
    </Card>
@@ -139,8 +143,12 @@ export function VocabReviewPanel({
      />
 
      <div className="grid gap-2 rounded-xl bg-bg-subtle p-4">
-      <h2 className="text-2xl font-black text-text-primary">Đã hết lượt ôn</h2>
-      <p className="font-semibold text-text-muted">Bạn đã đi qua toàn bộ thẻ ôn trong deck này.</p>
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+       Đã hết lượt ôn
+      </Typography>
+      <StudyInstructionText tone="muted" weight="semibold">
+       Bạn đã đi qua toàn bộ thẻ ôn trong deck này.
+      </StudyInstructionText>
      </div>
 
      <div className="flex flex-wrap justify-center gap-2">
@@ -181,9 +189,15 @@ export function VocabReviewPanel({
        </Badge>
       </div>
 
-      <span className="font-black uppercase tracking-wide text-text-muted">
+      <StudyInstructionText
+       variant="overline"
+       tone="muted"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
        {session.state.index + 1} / {session.items.length}
-      </span>
+      </StudyInstructionText>
      </div>
 
      <div className="h-3 overflow-hidden rounded-full bg-bg-subtle">
@@ -233,9 +247,9 @@ export function VocabReviewPanel({
      </Button>
     </div>
 
-    <p className="text-center text-xs font-bold text-text-muted">
+    <StudyInstructionText variant="caption" tone="muted" weight="bold" align="center">
      Space mở đáp án · P/N hoặc ←/→ trước/tiếp · D xem chi tiết
-    </p>
+    </StudyInstructionText>
    </div>
   </Card>
  );

@@ -2,7 +2,7 @@ import type { TextBlock } from "@/features/hanzihome/schemas/hanyu-lesson.types"
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";
-import { getHanziTypographyStyle } from "./hanzi-typography";
+import { ReaderHanziText, StudyInstructionText } from "./hanzi-typography";
 import type { LessonDisplayMode } from "./types";
 
 export function TextBlockView({
@@ -25,15 +25,13 @@ export function TextBlockView({
  const content = (
   <section className="exercise-card-surface grid gap-3 rounded-lg border px-3 py-3 sm:gap-4 sm:px-4">
    <div className="grid gap-1">
-    <h4
-     lang="zh-CN"
-     className="leading-relaxed text-text-primary"
-     style={getHanziTypographyStyle(displayMode, { size: "lg" })}
-    >
+    <ReaderHanziText as="h4" displayMode={displayMode} size="lg" leading="relaxed">
      {block.title}
-    </h4>
+    </ReaderHanziText>
     {displayMode.showMeaning && block.title_vi && block.title_vi !== block.title ? (
-     <p className="text-sm font-semibold text-text-muted">{block.title_vi}</p>
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold">
+      {block.title_vi}
+     </StudyInstructionText>
     ) : null}
    </div>
 
@@ -80,7 +78,11 @@ export function TextBlockView({
      key={scene.id}
      className="exercise-question-surface grid gap-2 rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3"
     >
-     {scene.summary_vi && <p className=" font-bold text-text-muted">{scene.summary_vi}</p>}
+     {scene.summary_vi && (
+      <StudyInstructionText tone="muted" weight="bold">
+       {scene.summary_vi}
+      </StudyInstructionText>
+     )}
      {scene.lines.map((line, lineIndex) => {
       const card = (
        <TextLineCard

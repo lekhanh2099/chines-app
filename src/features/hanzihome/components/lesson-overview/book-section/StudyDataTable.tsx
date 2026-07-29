@@ -1,6 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import type { LessonDisplayMode } from "../types";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import { AdaptiveStudyText } from "../hanzi-typography";
 import { answerToString, asRecord, stringValue } from "../utils";
 
 export type StudyTableData = {
@@ -66,21 +66,23 @@ function StudyTableCell({
  displayMode: LessonDisplayMode;
  header?: boolean;
 }) {
- const hanzi = containsHanziText(text);
  const Element = header ? "th" : "td";
 
  return (
-  <Element
+  <AdaptiveStudyText
+   as={Element}
+   text={text || "—"}
+   displayMode={displayMode}
+   hanziSize="md"
+   tone={header ? "default" : "secondary"}
+   weight={header ? "black" : "semibold"}
+   leading={header ? "normal" : "relaxed"}
    className={
     header
-     ? "border-b border-border-default bg-bg-subtle px-3 py-2.5 text-left font-black text-text-primary"
-     : "border-b border-border-default/70 px-3 py-2.5 align-top font-semibold leading-relaxed text-text-secondary last:border-b-0"
+     ? "border-b border-border-default bg-bg-subtle px-3 py-2.5 text-left"
+     : "border-b border-border-default/70 px-3 py-2.5 align-top last:border-b-0"
    }
-   lang={hanzi ? "zh-CN" : undefined}
-   style={hanzi ? getHanziTypographyStyle(displayMode, { size: "md" }) : undefined}
-  >
-   {text || "—"}
-  </Element>
+  />
  );
 }
 

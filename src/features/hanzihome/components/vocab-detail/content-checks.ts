@@ -1,6 +1,5 @@
 import type {
  Comparison,
- CultureNote,
  Meaning,
  Warning,
  WordFormation,

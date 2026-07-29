@@ -1,7 +1,15 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 export function OverviewStatPill({ label }: { label: string }) {
  return (
-  <span className="rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+  <StudyInstructionText
+   variant="overline"
+   tone="muted"
+   weight="black"
+   tracking="wide"
+   transform="uppercase"
+   className="rounded-full border border-border-default bg-bg-subtle px-3 py-1"
+  >
    {label}
-  </span>
+  </StudyInstructionText>
  );
 }

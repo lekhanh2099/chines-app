@@ -9,7 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
-import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ ReaderHanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  LessonModuleFrame,
@@ -107,8 +110,12 @@ function DictationCards({
         {index + 1}
        </Badge>
        <div className="min-w-0 flex-1">
-        <p className="text-sm font-black text-text-primary">Câu {index + 1}</p>
-        <p className="truncate text-xs font-semibold text-text-muted">Nghe → chép → kiểm tra</p>
+        <StudyInstructionText variant="label" tone="default" weight="black">
+         Câu {index + 1}
+        </StudyInstructionText>
+        <StudyInstructionText variant="caption" tone="muted" weight="semibold" clamp="one">
+         Nghe → chép → kiểm tra
+        </StudyInstructionText>
        </div>
        <Button type="button" variant="surface" size="sm" onClick={() => onSpeak(expectedText)}>
         <Play data-icon="inline-start" />
@@ -120,7 +127,8 @@ function DictationCards({
        value={answer}
        rows={3}
        lang="zh-CN"
-       className="min-h-20 rounded-xl bg-bg-subtle"
+       density="compact"
+       surface="field"
        aria-label={`Bài chép chính tả đoạn ${index + 1}`}
        placeholder="Nghe và chép lại bằng chữ Hán…"
        onChange={(event) => {
@@ -197,7 +205,9 @@ export function ListeningDictationWorkspace() {
   return (
    <Card variant="default" padding="lg" className="flex min-h-64 items-center justify-center gap-2">
     <Spinner />
-    <span className="font-bold text-text-muted">Đang tải bài nghe chép…</span>
+    <StudyInstructionText as="span" tone="muted" weight="bold">
+     Đang tải bài nghe chép…
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -209,10 +219,12 @@ export function ListeningDictationWorkspace() {
     padding="lg"
     className="grid min-h-64 place-content-center gap-2 text-center"
    >
-    <p className="font-black text-text-primary">Không tải được bài nghe chép</p>
-    <p className="text-sm text-text-muted">
+    <StudyInstructionText tone="default" weight="black">
+     Không tải được bài nghe chép
+    </StudyInstructionText>
+    <StudyInstructionText variant="bodySmall" tone="muted">
      {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
-    </p>
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -224,9 +236,15 @@ export function ListeningDictationWorkspace() {
     if (sections.length === 0) return null;
     return (
      <div key={category} className="grid gap-1.5">
-      <p className="px-1 pt-2 text-[0.65rem] font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       scale="micro"
+       className="px-1 pt-2"
+      >
        {listeningCategoryLabels[category]}
-      </p>
+      </StudyInstructionText>
       {sections.map((section, index) => (
        <LessonModuleSidebarItem
         key={section.id}
@@ -258,7 +276,11 @@ export function ListeningDictationWorkspace() {
      {bundle.sections.map((section, index) => (
       <LessonModuleSidebarRailItem
        key={section.id}
-       icon={<span className="text-xs font-black">{index + 1}</span>}
+       icon={
+        <StudyInstructionText as="span" variant="caption" weight="black">
+         {index + 1}
+        </StudyInstructionText>
+       }
        label={section.titleZh}
        selected={section.id === selectedSection.id}
        onClick={() => setSelectedSectionId(section.id)}
@@ -278,15 +300,13 @@ export function ListeningDictationWorkspace() {
        <Badge variant="purple" className="mb-1 w-fit">
         Bài nghe chép
        </Badge>
-       <h2
-        lang="zh-CN"
-        className="leading-relaxed text-text-primary"
-        style={getHanziTypographyStyle(displayMode, { size: "lg" })}
-       >
+       <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
         {selectedSection.titleZh}
-       </h2>
+       </ReaderHanziText>
        {selectedSection.titleVi ? (
-        <p className="text-sm font-medium text-text-muted">{selectedSection.titleVi}</p>
+        <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+         {selectedSection.titleVi}
+        </StudyInstructionText>
        ) : null}
       </div>
      </div>
@@ -302,8 +322,12 @@ export function ListeningDictationWorkspace() {
      />
     ) : (
      <Card variant="subtle" padding="lg" className="rounded-xl text-center">
-      <p className="font-black text-text-primary">Phần này chưa có script để nghe chép.</p>
-      <p className="mt-1 text-sm text-text-muted">Chọn đề mục khác có nội dung ghi âm.</p>
+      <StudyInstructionText tone="default" weight="black">
+       Phần này chưa có script để nghe chép.
+      </StudyInstructionText>
+      <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
+       Chọn đề mục khác có nội dung ghi âm.
+      </StudyInstructionText>
      </Card>
     )}
    </div>

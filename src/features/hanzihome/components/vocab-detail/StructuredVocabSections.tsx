@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
@@ -96,9 +97,9 @@ export function StructuredVocabSections({
        <VocabReadingSection id={`vocab-${section.id}`} title={section.title}>
         <div className="grid gap-2">
          {section.lines.map((line, index) => (
-          <p key={`${section.id}-${index}`} className="leading-relaxed text-text-primary">
+          <StudyInstructionText key={`${section.id}-${index}`} tone="default" leading="relaxed">
            {line}
-          </p>
+          </StudyInstructionText>
          ))}
         </div>
        </VocabReadingSection>,

@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookOpen, FileCode2, GraduationCap, LibraryBig, Rows3 } from "lucide-react";
@@ -81,18 +83,26 @@ export function HanziHomeLibraryHome() {
     <RecentLearningCard courses={courses} books={books} lessons={lessons} />
 
     <div className="min-w-0 grid gap-0.5">
-     <h2 id="course-library-heading" className="text-base font-black text-text-primary">
+     <Typography
+      as="h2"
+      variant="sectionTitle"
+      id="course-library-heading"
+      tone="default"
+      weight="black"
+     >
       Các bộ giáo trình
-     </h2>
-     <p className="text-sm font-medium text-text-secondary">
+     </Typography>
+     <StudyInstructionText variant="bodySmall" tone="secondary" weight="medium">
       Chọn bộ, cấp độ, quyển rồi mở đúng bài bạn muốn học.
-     </p>
+     </StudyInstructionText>
     </div>
    </div>
 
    {courses.length === 0 ? (
     <Card variant="glass" padding="lg">
-     <p className=" font-semibold text-text-muted">Chưa tìm thấy khóa học trong HanziHome.</p>
+     <StudyInstructionText tone="muted" weight="semibold">
+      Chưa tìm thấy khóa học trong HanziHome.
+     </StudyInstructionText>
     </Card>
    ) : (
     <section
@@ -125,12 +135,20 @@ function LibraryStat({
 }) {
  return (
   <div className="app-glass-surface flex min-w-0 items-center gap-2.5 rounded-xl border px-3 py-2 shadow-theme-sm">
-   <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
+   <StudyInstructionText
+    as="span"
+    tone="accent"
+    className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle"
+   >
     <Icon className="h-4 w-4" />
-   </span>
+   </StudyInstructionText>
    <div className="min-w-0 grid gap-1">
-    <p className="text-base font-black leading-none text-text-primary sm:text-lg">{value}</p>
-    <p className="truncate text-xs font-bold text-text-secondary">{label}</p>
+    <StudyInstructionText variant="cardTitle" tone="default" weight="black" leading="none">
+     {value}
+    </StudyInstructionText>
+    <StudyInstructionText variant="caption" tone="secondary" weight="bold" clamp="one">
+     {label}
+    </StudyInstructionText>
    </div>
   </div>
  );

@@ -4,6 +4,7 @@ import { useFieldContext } from "../hooks/form-context";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { IconButton } from "@/components/ui/icon-button";
+import { Input } from "@/components/ui/input";
 
 type ControlledPasswordProps = {
  value?: never;
@@ -31,13 +32,15 @@ export function PasswordField({
    helperText={helperText}
   >
    <div className="relative">
-    <input
+    <Input
      type={showPassword ? "text" : "password"}
      name={field.name}
      value={field.state.value || ""}
      onChange={(e) => field.handleChange(e.target.value)}
      onBlur={field.handleBlur}
-     className="h-12 w-full rounded-2xl border border-border-default bg-bg-input px-4 pr-12 text-base text-text-primary outline-none transition-all placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
+     density="comfortable"
+     surface="field"
+     adornment="end"
      {...rest}
     />
     <IconButton

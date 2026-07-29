@@ -7,6 +7,11 @@ import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { PopularFontPreview } from "./PopularFontPreview";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import {
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 
 export function VocabDetailHeader({
  word,
@@ -26,21 +31,26 @@ export function VocabDetailHeader({
    <div className="grid min-w-0 gap-3">
     <div className="grid min-w-0 gap-1.5">
      <div className="flex items-start gap-2">
-      <h2
-       className={[
-        "min-w-0 leading-none tracking-normal text-text-primary",
-        compact ? "text-5xl" : "text-6xl sm:text-7xl",
-       ].join(" ")}
-       lang="zh-CN"
+      <HanziText
+       as="h2"
+       size={compact ? "review" : "detail"}
+       leading="none"
+       tracking="normal"
+       className="min-w-0"
       >
        {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
-      </h2>
+      </HanziText>
       <NativeMandarinSpeakButton text={word.hanzi} />
      </div>
-     <p className={["font-black text-accent-text", compact ? "text-lg" : "text-xl"].join(" ")}>
+     <PinyinText
+      as="p"
+      variant={compact ? "sectionTitle" : "pageTitle"}
+      tone="accent"
+      weight="black"
+     >
       {word.pinyin}
       {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
-     </p>
+     </PinyinText>
     </div>
 
     <div className="flex flex-wrap items-center gap-2">
@@ -77,38 +87,46 @@ export function VocabDetailHeader({
    </div>
 
    <div className="grid min-w-0 gap-2 border-t border-border-default pt-4 lg:border-l lg:border-t-0 lg:pl-5 lg:pt-0">
-    <p className="text-xs font-bold text-text-muted">NGHĨA VÀ CÁCH DÙNG</p>
+    <StudyInstructionText variant="caption" tone="muted" weight="bold">
+     NGHĨA VÀ CÁCH DÙNG
+    </StudyInstructionText>
     {word.meaning.short_definition_vi && (
-     <p className="text-xl font-black leading-snug text-text-primary">
+     <StudyInstructionText variant="sectionTitle" tone="default" weight="black" leading="snug">
       {word.meaning.short_definition_vi}
-     </p>
+     </StudyInstructionText>
     )}
     {word.meaning.meaning_vi && word.meaning.meaning_vi !== word.meaning.short_definition_vi && (
-     <p className="text-base font-semibold leading-relaxed text-text-secondary">
+     <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
       {word.meaning.meaning_vi}
-     </p>
+     </StudyInstructionText>
     )}
     {word.meaning.textbook_focus_vi && (
-     <p className="max-w-[72ch] leading-relaxed text-text-secondary">
+     <StudyInstructionText tone="secondary" leading="relaxed" className="max-w-[72ch]">
       {word.meaning.textbook_focus_vi}
-     </p>
+     </StudyInstructionText>
     )}
     {word.meaning.natural_translations_vi.length > 0 && (
-     <p className="leading-relaxed text-text-secondary">
-      <span className="font-bold text-text-primary">Cách nói tự nhiên:</span>{" "}
+     <StudyInstructionText tone="secondary" leading="relaxed">
+      <StudyInstructionText as="span" tone="default" weight="bold">
+       Cách nói tự nhiên:
+      </StudyInstructionText>{" "}
       {word.meaning.natural_translations_vi.join(", ")}
-     </p>
+     </StudyInstructionText>
     )}
     {word.meaning.register_vi && (
-     <p className="text-sm text-text-secondary">Sắc thái: {word.meaning.register_vi}</p>
+     <StudyInstructionText variant="bodySmall" tone="secondary">
+      Sắc thái: {word.meaning.register_vi}
+     </StudyInstructionText>
     )}
     {word.meaning.usage_domain_vi && (
-     <p className="text-sm text-text-secondary">Phạm vi dùng: {word.meaning.usage_domain_vi}</p>
+     <StudyInstructionText variant="bodySmall" tone="secondary">
+      Phạm vi dùng: {word.meaning.usage_domain_vi}
+     </StudyInstructionText>
     )}
     {word.meaning.notes.map((note) => (
-     <p key={note.text_vi} className="text-sm leading-relaxed text-text-muted">
+     <StudyInstructionText key={note.text_vi} variant="bodySmall" tone="muted" leading="relaxed">
       {note.text_vi}
-     </p>
+     </StudyInstructionText>
     ))}
    </div>
   </div>

@@ -2,56 +2,11 @@ import { z } from "zod";
 import {
  LISTENING_CATEGORIES,
  LISTENING_ITEM_TYPES,
- type ListeningItem,
- type ListeningOption,
  LISTENING_EXERCISE_TYPES,
 } from "./listening.types.ts";
 
-type RefinementContext = {
- addIssue(issue: { code: "custom"; message: string; path: PropertyKey[] }): void;
-};
-
 const optionalTrimmedText = z.string().trim().min(1).optional();
 const itemTypeSchema = z.enum(LISTENING_ITEM_TYPES);
-
-export const listeningCourseSchema = z.object({
- id: z.string().min(1),
- slug: z.string().min(1),
- title: z.string().min(1),
- subtitle: optionalTrimmedText,
- type: z.literal("listening"),
- order: z.number().int().nonnegative(),
-});
-
-export const listeningBookSchema = z.object({
- id: z.string().min(1),
- courseId: z.string().min(1),
- title: z.string().min(1),
- shortTitle: optionalTrimmedText,
- order: z.number().int().positive(),
-});
-
-export const listeningLessonSchema = z.object({
- id: z.string().min(1),
- bookId: z.string().min(1),
- lessonNumber: z.number().int().positive(),
- order: z.number().int().positive(),
- titleZh: z.string().trim().min(1),
-});
-
-export const listeningCatalogSchema = z.object({
- course: listeningCourseSchema,
- books: z.array(listeningBookSchema).min(1),
- lessons: z.array(listeningLessonSchema).min(1),
-});
-
-export const listeningExerciseSectionSchema = z.object({
- id: z.string().min(1),
- order: z.number().int().positive(),
- category: z.enum(LISTENING_CATEGORIES),
- instructionZh: optionalTrimmedText,
- instructionVi: optionalTrimmedText,
-});
 
 export const listeningTranscriptSpeakerSchema = z.object({
  id: z.string().min(1),
@@ -119,122 +74,6 @@ export const listeningAnswerSchema = z.discriminatedUnion("type", [
    .min(1),
  }),
 ]);
-
-export const listeningItemSchema = z
- .object({
-  id: z.string().min(1),
-  sectionId: z.string().min(1),
-  order: z.number().int().positive(),
-  type: itemTypeSchema,
-  transcript: listeningTranscriptSchema.optional(),
-  promptZh: optionalTrimmedText,
-  options: z.array(listeningOptionSchema).min(2).optional(),
-  answer: listeningAnswerSchema.optional(),
-  explanationVi: optionalTrimmedText,
- })
- .superRefine((item: ListeningItem, ctx: RefinementContext) => {
-  if (!item.transcript && !item.promptZh && !item.options?.length) {
-   ctx.addIssue({
-    code: "custom",
-    message: "Mỗi item phải có transcript, promptZh hoặc options",
-    path: ["promptZh"],
-   });
-  }
-
-  const answer = item.answer;
-  if (
-   answer?.type === "choice" &&
-   !item.options?.some((option: ListeningOption) => option.key === answer.value)
-  ) {
-   ctx.addIssue({
-    code: "custom",
-    message: "Đáp án choice không khớp options",
-    path: ["answer"],
-   });
-  }
- });
-
-export const listeningVocabularyItemSchema = z.object({
- id: z.string().min(1),
- order: z.number().int().positive(),
- word: z.string().trim().min(1),
- pinyin: z.string().trim().min(1),
- meaningVi: z.string().trim().min(1),
- pos: optionalTrimmedText,
- isSeparable: z.literal(true).optional(),
-});
-
-const itemFileMapSchema = z.record(z.string(), z.string().min(1)).superRefine((value, ctx) => {
- const allowed = new Set<string>(LISTENING_ITEM_TYPES);
- for (const key of Object.keys(value)) {
-  if (!allowed.has(key)) {
-   ctx.addIssue({
-    code: "custom",
-    message: `Item type không hợp lệ: ${key}`,
-    path: [key],
-   });
-  }
- }
-});
-
-const itemCountMapSchema = z
- .record(z.string(), z.number().int().nonnegative())
- .superRefine((value, ctx) => {
-  const allowed = new Set<string>(LISTENING_ITEM_TYPES);
-  for (const key of Object.keys(value)) {
-   if (!allowed.has(key)) {
-    ctx.addIssue({
-     code: "custom",
-     message: `Item count type không hợp lệ: ${key}`,
-     path: [key],
-    });
-   }
-  }
- });
-
-export const listeningLessonCountsSchema = z.object({
- sections: z.number().int().nonnegative(),
- items: z.number().int().nonnegative(),
- vocabulary: z.number().int().nonnegative(),
- itemsByType: itemCountMapSchema,
-});
-
-export const listeningLessonManifestSchema = z.object({
- schemaVersion: z.literal("3.0.0"),
- lessonId: z.string().min(1),
- bookId: z.string().min(1),
- lessonNumber: z.number().int().positive(),
- files: z.object({
-  sections: z.string().min(1),
-  vocabulary: z.string().min(1),
-  items: itemFileMapSchema,
- }),
- counts: listeningLessonCountsSchema,
-});
-
-export const listeningLessonShardRefSchema = z.object({
- lessonId: z.string().min(1),
- bookId: z.string().min(1),
- lessonNumber: z.number().int().positive(),
- manifest: z.string().min(1),
- counts: listeningLessonCountsSchema,
-});
-
-export const listeningDatasetManifestSchema = z.object({
- schemaVersion: z.literal("3.0.0"),
- datasetId: z.string().min(1),
- courseId: z.string().min(1),
- catalog: z.string().min(1),
- lessons: z.array(listeningLessonShardRefSchema).min(1),
- totals: z.object({
-  books: z.number().int().nonnegative(),
-  lessons: z.number().int().nonnegative(),
-  sections: z.number().int().nonnegative(),
-  items: z.number().int().nonnegative(),
-  vocabulary: z.number().int().nonnegative(),
-  itemsByType: itemCountMapSchema,
- }),
-});
 
 export const listeningExerciseTypeSchema = z.enum(LISTENING_EXERCISE_TYPES);
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import {
  API_KEY_PROVIDER_OPTIONS,
@@ -169,14 +171,20 @@ export default function ApiKeyManagerSection() {
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="flex max-w-3xl flex-col gap-2">
-     <h2 className="flex items-center gap-2 text-xl font-bold text-text-primary">
+     <Typography
+      as="h2"
+      variant="sectionTitle"
+      tone="default"
+      weight="bold"
+      className="flex items-center gap-2"
+     >
       <Cpu className="size-5 text-accent-text" />
       API key cá nhân cho Xem chi tiết
-     </h2>
-     <p className=" leading-6 text-text-secondary">
+     </Typography>
+     <Typography as="p" tone="secondary" leading="standard">
       Tất cả model trong phần này đều cần API key cá nhân. Provider có thể cấp quota miễn phí, nhưng
       app vẫn cần key để gọi API. Khi request lỗi, app không tự đổi key hoặc model.
-     </p>
+     </Typography>
     </div>
 
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -194,9 +202,9 @@ export default function ApiKeyManagerSection() {
 
       <DialogBody>
        <div className="grid gap-2">
-        <label htmlFor="api-key-provider" className="font-semibold text-text-primary">
+        <Label htmlFor="api-key-provider" variant="label" tone="default" weight="semibold">
          Provider
-        </label>
+        </Label>
         <Select
          value={provider}
          onValueChange={(value) => {
@@ -219,9 +227,9 @@ export default function ApiKeyManagerSection() {
        </div>
 
        <div className="grid gap-2">
-        <label htmlFor="api-key-model" className="font-semibold text-text-primary">
+        <Label htmlFor="api-key-model" variant="label" tone="default" weight="semibold">
          Model
-        </label>
+        </Label>
         <Select value={model} onValueChange={setModel}>
          <SelectTrigger id="api-key-model" width="full">
           <SelectValue />
@@ -234,15 +242,17 @@ export default function ApiKeyManagerSection() {
           ))}
          </SelectContent>
         </Select>
-        <p className="text-sm text-text-muted">
+        <Typography as="p" variant="bodySmall" tone="muted">
          {modelOptions.find((option) => option.value === model)?.description}
-        </p>
+        </Typography>
        </div>
 
        {selectedProviderOption ? (
         <div className="grid gap-1 text-sm text-text-secondary">
-         <p className="font-semibold text-text-primary">{selectedProviderOption.label}</p>
-         <p>{selectedProviderOption.description}</p>
+         <Typography as="p" tone="default" weight="semibold">
+          {selectedProviderOption.label}
+         </Typography>
+         <Typography as="p">{selectedProviderOption.description}</Typography>
          <a
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"
@@ -255,18 +265,22 @@ export default function ApiKeyManagerSection() {
         </div>
        ) : null}
 
-       <label className="flex flex-col gap-2">
-        <span className=" font-semibold text-text-primary">Tên hiển thị</span>
+       <Label variant="label" className="flex flex-col gap-2">
+        <Typography tone="default" weight="semibold">
+         Tên hiển thị
+        </Typography>
         <Input
          value={label}
          onChange={(event) => setLabel(event.target.value)}
          placeholder="Ví dụ: Groq tra từ"
          maxLength={80}
         />
-       </label>
+       </Label>
 
-       <label className="flex flex-col gap-2">
-        <span className=" font-semibold text-text-primary">API key</span>
+       <Label variant="label" className="flex flex-col gap-2">
+        <Typography tone="default" weight="semibold">
+         API key
+        </Typography>
         <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] gap-2">
          <Input
           type={showKey ? "text" : "password"}
@@ -296,7 +310,7 @@ export default function ApiKeyManagerSection() {
           <ClipboardPaste />
          </Button>
         </div>
-       </label>
+       </Label>
       </DialogBody>
 
       <DialogFooter>
@@ -323,14 +337,18 @@ export default function ApiKeyManagerSection() {
     </div>
    )}
 
-   <p className="mt-5 text-sm text-text-muted">
+   <Typography as="p" variant="bodySmall" tone="muted" className="mt-5">
     {summary.total} key · {summary.active} đang bật · chỉ áp dụng khi mở phân tích chi tiết
-   </p>
+   </Typography>
 
    {query.isError ? (
     <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
-     <p className="font-semibold">Không tải được danh sách API key.</p>
-     <p className="text-sm">Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.</p>
+     <Typography as="p" weight="semibold">
+      Không tải được danh sách API key.
+     </Typography>
+     <Typography as="p" variant="bodySmall">
+      Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.
+     </Typography>
      <Button variant="outline" size="sm" onClick={() => void query.refetch()}>
       Thử lại
      </Button>
@@ -346,12 +364,14 @@ export default function ApiKeyManagerSection() {
       <KeyRound className="h-5 w-5" />
      </div>
      <div>
-      <p className="text-base font-semibold text-text-primary">Chưa có API key cá nhân</p>
-      <p className="mt-1 text-sm leading-5 text-text-secondary">
+      <Typography as="p" tone="default" weight="semibold">
+       Chưa có API key cá nhân
+      </Typography>
+      <Typography as="p" variant="bodySmall" tone="secondary" leading="compact" className="mt-1">
        {schemaReady
         ? "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết."
         : "Apply migration database trước, rồi quay lại thêm key."}
-      </p>
+      </Typography>
      </div>
     </div>
    ) : (
@@ -386,13 +406,19 @@ export default function ApiKeyManagerSection() {
           </div>
 
           <div className="min-w-0">
-           <h3 className="truncate text-base font-bold text-text-primary">{key.label}</h3>
-           <p className="mt-1 truncate font-mono text-sm text-text-secondary">{key.maskedKey}</p>
+           <Typography as="h3" variant="cardTitle" tone="default" weight="bold" clamp="one">
+            {key.label}
+           </Typography>
+           <Typography as="p" variant="code" tone="secondary" clamp="one" className="mt-1">
+            {key.maskedKey}
+           </Typography>
           </div>
          </div>
 
          <div className="grid min-w-0 gap-1.5">
-          <span className="text-xs font-semibold text-text-muted">Model sử dụng</span>
+          <Typography variant="caption" tone="muted" weight="semibold">
+           Model sử dụng
+          </Typography>
           <Select
            value={key.defaultModel || getDefaultApiKeyModel(key.provider)}
            onValueChange={(value) => void handleModelChange(key.id, value)}
@@ -415,9 +441,9 @@ export default function ApiKeyManagerSection() {
             ))}
            </SelectContent>
           </Select>
-          <span className="text-xs leading-5 text-text-muted">
+          <Typography as="span" variant="caption" tone="muted" leading="compact">
            {getApiKeyModelDescription(key.provider, key.defaultModel)}
-          </span>
+          </Typography>
          </div>
 
          <div className="flex flex-wrap items-center gap-2 lg:justify-end">

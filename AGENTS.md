@@ -155,6 +155,24 @@ need
 Do not overwrite an installed shadcn component automatically. Inspect local
 code and consumers, then use CLI dry-run/diff before any merge.
 
+Canonical components are active contracts, not placeholders for possible future
+use. When `Typography`, `Avatar`, `Switch`, `Chip`, `EmptyState`, or another
+inventory component matches the required semantics, feature code MUST use it
+instead of recreating the same visual or interaction contract with raw JSX.
+
+Application headings, body copy, captions, overlines, and code-style text MUST
+use `Typography`. Feature and route code MUST NOT render raw `h1`–`h6` or `p`
+elements for application typography. `Typography` still emits the appropriate
+native semantic element through its `as` contract.
+
+Native structural and semantic elements remain valid when they are not
+recreating an application typography contract. HanziHome learner content MUST
+use its feature-owned `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`,
+`PinyinText`, `TranslationText`, `StudyInstructionText`, or
+`HanziFontPreview`; generic Chinese text outside HanziHome uses
+`LearnerHanziText`. These component call sites MUST NOT pass typography utility
+classes, language metadata, or inline font/size styles.
+
 ## 6. `className` ownership
 
 Shared primitives own their internal visual contract.

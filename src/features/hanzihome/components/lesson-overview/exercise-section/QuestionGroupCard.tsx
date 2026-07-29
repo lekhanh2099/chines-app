@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
@@ -55,10 +57,14 @@ export function QuestionGroupCard({
  return (
   <div className="exercise-card-surface grid gap-3 rounded-xl border p-3">
    <div>
-    <h5 className="font-black text-text-primary">
+    <Typography as="h5" variant="cardTitle" tone="default" weight="black">
      {index + 1}. {title}
-    </h5>
-    {note && <p className=" font-semibold text-text-muted">{note}</p>}
+    </Typography>
+    {note && (
+     <StudyInstructionText tone="muted" weight="semibold">
+      {note}
+     </StudyInstructionText>
+    )}
    </div>
 
    <WordBank values={wordBank} displayMode={displayMode} />

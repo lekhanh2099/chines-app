@@ -1,18 +1,16 @@
-import type { HtmlArtifactFolder, HtmlArtifactSummary } from "./html-artifact.schema";
-import { htmlArtifactSchema, htmlArtifactTypeSchema } from "./html-artifact.schema";
+import type { HtmlArtifact, HtmlArtifactFolder, HtmlArtifactSummary } from "./html-artifact.schema";
+import { htmlArtifactSchema } from "./html-artifact.schema";
 import { z } from "zod";
 
 export type FolderFilter = string;
 
-const ArtifactFormStateSchema = z.object({
- title: z.string(),
- folderId: z.string().nullable(),
- artifactType: htmlArtifactTypeSchema,
- tagsInput: z.string(),
- html: z.string(),
-});
-export type ArtifactFormState = z.infer<typeof ArtifactFormStateSchema>;
-const NullableHtmlArtifactSchema = htmlArtifactSchema.nullable();
+export type ArtifactFormState = {
+ title: HtmlArtifact["title"];
+ folderId: HtmlArtifact["folderId"];
+ artifactType: HtmlArtifact["artifactType"];
+ html: HtmlArtifact["html"];
+ tagsInput: string;
+};
 
 const DraftSaveStatusSchema = z.enum(["idle", "dirty", "saved", "error"]);
 export type DraftSaveStatus = z.infer<typeof DraftSaveStatusSchema>;
@@ -42,7 +40,7 @@ export function parseTags(input: string): string[] {
 }
 
 export function toArtifactFormState(
- artifact: z.infer<typeof NullableHtmlArtifactSchema>,
+ artifact: z.infer<z.ZodNullable<typeof htmlArtifactSchema>>,
  defaultFolderId: ArtifactFormState["folderId"],
 ): ArtifactFormState {
  if (!artifact) return { ...emptyArtifactForm, folderId: defaultFolderId };
@@ -68,7 +66,7 @@ export function getArtifactFormSaveKey(formState: ArtifactFormState): string {
 
 export function getDraftSaveLabel(status: DraftSaveStatus, hasArtifact: boolean) {
  if (!hasArtifact) return "Chưa tạo DB";
- if (status === "dirty") return "Có thay đổi chưa lưu";
+ if (status === DraftSaveStatusSchema.enum.dirty) return "Có thay đổi chưa lưu";
  if (status === "error") return "Lỗi lưu DB";
  return "Đã lưu DB";
 }

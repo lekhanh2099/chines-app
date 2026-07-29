@@ -13,12 +13,11 @@ import type {
  DOMConversionMap,
  DOMConversionOutput,
  DOMExportOutput,
- LexicalNode,
  NodeKey,
  SerializedLexicalNode,
  Spread,
 } from "lexical";
-import { DecoratorNode, $getNodeByKey } from "lexical";
+import { DecoratorNode } from "lexical";
 import { JSX } from "react";
 
 /* ── Serialized shape (stored in Supabase JSONB) ── */
@@ -204,16 +203,4 @@ export function $createPinyinNode(
  forceShow: boolean = false,
 ): PinyinNode {
  return new PinyinNode(chinese, pinyin, forceShow);
-}
-
-export function $isPinyinNode(node: LexicalNode | null | undefined): node is PinyinNode {
- return node instanceof PinyinNode;
-}
-
-/** Toggle forceShow on a PinyinNode by key */
-export function $togglePinyinForceShow(nodeKey: NodeKey): void {
- const node = $getNodeByKey(nodeKey);
- if ($isPinyinNode(node)) {
-  node.setForceShow(!node.getForceShow());
- }
 }

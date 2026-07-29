@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
@@ -67,27 +69,49 @@ export function RecentLearningCard({
     padding="md"
     className="flex flex-col gap-3 rounded-xl sm:flex-row sm:items-center"
    >
-    <span className="app-brand-gradient flex size-11 shrink-0 items-center justify-center rounded-xl text-primary-foreground shadow-theme-sm">
+    <StudyInstructionText
+     as="span"
+     tone="inverse"
+     className="app-brand-gradient flex size-11 shrink-0 items-center justify-center rounded-xl shadow-theme-sm"
+    >
      <BookOpenCheck className="size-5" />
-    </span>
+    </StudyInstructionText>
 
     <div className="min-w-0 flex-1">
      <div className="flex flex-wrap items-center gap-2">
-      <h2 id="recent-learning-heading" className="text-base font-black text-text-primary">
+      <Typography
+       as="h2"
+       variant="sectionTitle"
+       id="recent-learning-heading"
+       tone="default"
+       weight="black"
+      >
        Vừa học
-      </h2>
+      </Typography>
       <Badge variant="purple">{moduleLabels[lastModule]}</Badge>
      </div>
-     <p className="mt-1 truncate text-lg font-black text-text-primary">
+     <StudyInstructionText
+      variant="sectionTitle"
+      tone="default"
+      weight="black"
+      clamp="one"
+      className="mt-1"
+     >
       Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-     </p>
-     <p className="mt-0.5 truncate text-sm font-medium text-text-muted">
+     </StudyInstructionText>
+     <StudyInstructionText
+      variant="bodySmall"
+      tone="muted"
+      weight="medium"
+      clamp="one"
+      className="mt-0.5"
+     >
       {course.title}
       {book ? ` · ${book.shortTitle || book.title}` : ""}
-     </p>
+     </StudyInstructionText>
     </div>
 
-    <Button asChild className="w-full sm:w-auto">
+    <Button asChild variant="ghost" className="w-full sm:w-auto">
      <Link href={href} prefetch={false}>
       Học tiếp
       <ArrowRight data-icon="inline-end" />

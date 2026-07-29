@@ -4,7 +4,7 @@ import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
 import { hasRenderableValue } from "../CommonCards";
 import { lineTextFromValue } from "./exercise-utils";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import { AdaptiveStudyText, StudyInstructionText, ReaderHanziText } from "../hanzi-typography";
 
 export function QuestionDataBlock({
  title,
@@ -24,14 +24,23 @@ export function QuestionDataBlock({
 
   return (
    <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
-    <p
-     className="whitespace-pre-wrap font-semibold leading-[1.7] text-text-primary"
-     lang={containsHanziText(text) ? "zh-CN" : undefined}
-     style={containsHanziText(text) ? getHanziTypographyStyle(displayMode) : undefined}
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="wide"
+     transform="uppercase"
     >
-     {text}
-    </p>
+     {title}
+    </StudyInstructionText>
+    <AdaptiveStudyText
+     text={text}
+     displayMode={displayMode}
+     tone="default"
+     weight="semibold"
+     leading="learner"
+     wrapping="preWrap"
+    />
    </div>
   );
  }
@@ -43,17 +52,27 @@ export function QuestionDataBlock({
 
   return (
    <div className="study-content-surface grid gap-2 rounded-lg border px-3 py-2">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="wide"
+     transform="uppercase"
+    >
+     {title}
+    </StudyInstructionText>
     <div className="grid gap-1">
      {visibleLines.map((line, index) => (
-      <p
+      <ReaderHanziText
+       displayMode={displayMode}
        key={`${title}-${index}`}
-       className="whitespace-pre-wrap font-semibold leading-relaxed text-text-primary"
-       lang="zh-CN"
-       style={getHanziTypographyStyle(displayMode)}
+       tone="default"
+       weight="semibold"
+       leading="relaxed"
+       wrapping="preWrap"
       >
        {line}
-      </p>
+      </ReaderHanziText>
      ))}
     </div>
    </div>
@@ -76,7 +95,15 @@ export function QuestionDataBlock({
  if (zh) {
   return (
    <div className="study-content-surface grid gap-1 rounded-lg border px-3 py-2">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="wide"
+     transform="uppercase"
+    >
+     {title}
+    </StudyInstructionText>
     <TextLineCard zh={zh} pinyin={pinyin} vi={vi} displayMode={displayMode} variant="reader" />
    </div>
   );

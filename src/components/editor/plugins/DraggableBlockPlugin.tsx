@@ -1,3 +1,7 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 /**
  * DraggableBlockPlugin — Playground-style drag handle for block reordering.
  *
@@ -6,8 +10,6 @@
  * Bullet, Numbered, Check, Quote, Code). The grip handle supports
  * native drag-and-drop reordering with a drop indicator line.
  */
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
  $getNodeByKey,
@@ -391,8 +393,9 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
     className={`draggable-block-menu ${visible ? "visible" : ""}`}
     style={{ top: pos.top, left: pos.left }}
    >
-    <button
+    <Button
      type="button"
+     variant="ghost"
      className="draggable-block-add"
      onClick={() => {
       setShowBlockMenu(!showBlockMenu);
@@ -401,7 +404,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
      title="Click to add below"
     >
      <Plus className="w-3.5 h-3.5" />
-    </button>
+    </Button>
     <div
      className="draggable-block-handle"
      draggable
@@ -419,7 +422,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
      className="draggable-block-insert-menu"
      style={{ top: pos.top + 28, left: pos.left }}
     >
-     <input
+     <Input
       type="text"
       className="draggable-block-insert-filter"
       placeholder="Filter blocks..."
@@ -431,15 +434,16 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
       {filteredOptions.map((opt) => {
        const Icon = opt.icon;
        return (
-        <button
+        <Button
          key={opt.key}
          type="button"
+         variant="ghost"
          className="draggable-block-insert-item"
          onClick={() => handleInsertBlock(opt.key)}
         >
          <Icon className="w-4 h-4" />
          <span>{opt.label}</span>
-        </button>
+        </Button>
        );
       })}
       {filteredOptions.length === 0 && (

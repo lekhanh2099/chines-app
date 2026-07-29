@@ -1,5 +1,8 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Typography } from "@/components/ui/typography";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
@@ -44,7 +47,6 @@ import { Button } from "@/components/ui/button";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
-import { cn } from "@/lib/utils";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { usePathname } from "next/navigation";
@@ -81,12 +83,9 @@ function FormatButton({
 }) {
  return (
   <Button
-   variant="ghost"
-   size="icon-sm"
-   className={cn(
-    "h-8 w-8 min-w-0 rounded-xl border border-transparent px-0 text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-    active && "border-primary/25 bg-accent-subtle text-accent-text",
-   )}
+   variant={active ? "active" : "ghost"}
+   size="icon-toolbar"
+   className="min-w-0"
    onMouseDown={preserveEditorSelection}
    onClick={(event) => {
     preserveEditorSelection(event);
@@ -608,69 +607,110 @@ export default function EditorFloatingMenu() {
          smartMode === "word" ? (
           <div className="flex flex-col gap-3 rounded-2xl border border-border-default bg-bg-subtle px-4 py-3">
            <div className="text-center">
-            <p className="text-xl font-bold text-text-primary">{smartData.entry.hanzi}</p>
+            <Typography as="p" variant="sectionTitle" tone="default" weight="bold">
+             {smartData.entry.hanzi}
+            </Typography>
             {smartData.entry.pinyin && (
-             <p className="mt-1  font-semibold text-accent-text">{smartData.entry.pinyin}</p>
+             <Typography as="p" tone="accent" weight="semibold" className="mt-1">
+              {smartData.entry.pinyin}
+             </Typography>
             )}
            </div>
            <div className="grid gap-2 sm:grid-cols-3">
             <div className="rounded-xl border border-border-default bg-bg-card px-3 py-2 text-text-primary shadow-theme-sm">
-             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+             <Typography
+              as="p"
+              variant="overline"
+              tone="muted"
+              weight="semibold"
+              scale="micro"
+              tracking="loose"
+              transform="uppercase"
+             >
               Từ loại
-             </p>
-             <p className="mt-1  font-semibold text-text-secondary">
+             </Typography>
+             <Typography as="p" tone="secondary" weight="semibold" className="mt-1">
               {smartData.definitions[0]?.pos || smartData.entry.ai_analysis?.word_type || "Chưa rõ"}
-             </p>
+             </Typography>
             </div>
             <div className="rounded-xl border border-border-default bg-bg-card px-3 py-2 text-text-primary shadow-theme-sm">
-             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+             <Typography
+              as="p"
+              variant="overline"
+              tone="muted"
+              weight="semibold"
+              scale="micro"
+              tracking="loose"
+              transform="uppercase"
+             >
               Pinyin
-             </p>
-             <p className="mt-1  font-semibold text-accent-text">
+             </Typography>
+             <Typography as="p" tone="accent" weight="semibold" className="mt-1">
               {smartData.entry.pinyin || "Chưa rõ"}
-             </p>
+             </Typography>
             </div>
             <div className="rounded-xl border border-border-default bg-bg-card px-3 py-2 text-text-primary shadow-theme-sm">
-             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+             <Typography
+              as="p"
+              variant="overline"
+              tone="muted"
+              weight="semibold"
+              scale="micro"
+              tracking="loose"
+              transform="uppercase"
+             >
               Nghĩa
-             </p>
-             <p className="mt-1 line-clamp-2  font-semibold text-text-secondary">
+             </Typography>
+             <Typography as="p" tone="secondary" weight="semibold" clamp="two" className="mt-1">
               {smartData.meaning_summary ||
                smartData.definitions[0]?.meaning ||
                smartData.definitions[0]?.text ||
                smartData.entry.meaning ||
                "Chưa có nghĩa"}
-             </p>
+             </Typography>
             </div>
            </div>
            <div className="rounded-xl border border-border-default bg-bg-card px-3 py-3 text-center text-text-primary shadow-theme-sm">
-            <p className=" font-medium leading-6 text-text-secondary">
+            <Typography as="p" tone="secondary" weight="medium" leading="standard">
              {smartData.meaning_summary ||
               smartData.definitions[0]?.meaning ||
               smartData.definitions[0]?.text ||
               smartData.entry.meaning ||
               "Chưa có nghĩa cho selection này"}
-            </p>
+            </Typography>
             {smartData.definitions[1] && (
-             <p className="mt-1 text-xs leading-5 text-text-muted">
+             <Typography as="p" variant="caption" tone="muted" leading="compact" className="mt-1">
               {smartData.definitions[1].meaning || smartData.definitions[1].text}
-             </p>
+             </Typography>
             )}
            </div>
           </div>
          ) : (
           <div className="flex flex-col gap-2 rounded-2xl border border-border-default bg-bg-subtle px-4 py-3">
            <div className="rounded-xl bg-bg-subtle px-3 py-2 text-center">
-            <p className=" font-semibold leading-6 text-text-primary">{smartData.selection}</p>
+            <Typography as="p" tone="default" weight="semibold" leading="standard">
+             {smartData.selection}
+            </Typography>
             {smartData.entry.pinyin && (
-             <p className="mt-1 text-xs text-text-muted">{smartData.entry.pinyin}</p>
+             <Typography as="p" variant="caption" tone="muted" className="mt-1">
+              {smartData.entry.pinyin}
+             </Typography>
             )}
            </div>
 
            <div className="flex flex-col gap-1.5">
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+            <Typography
+             as="p"
+             variant="overline"
+             tone="muted"
+             weight="semibold"
+             align="center"
+             scale="micro"
+             tracking="extraLoose"
+             transform="uppercase"
+            >
              Dịch nghĩa
-            </p>
+            </Typography>
             <div className="rounded-xl border border-border-default px-3 py-2  leading-6 text-text-secondary">
              {smartData.translation || "Chưa có bản dịch cho câu này"}
             </div>
@@ -695,7 +735,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="icon-sm"
-            className="h-8 w-8 min-w-0 rounded-2xl -full px-0 text-text-muted hover:bg-bg-subtle hover:text-text-primary"
+            className="w-8 min-w-0 -full"
             onMouseDown={preserveEditorSelection}
             onClick={handleSave}
             disabled={isSaving || !smartData || smartData.isSaved}
@@ -712,7 +752,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="icon-sm"
-            className="h-8 w-8 min-w-0 rounded-2xl -full px-0 text-text-muted hover:bg-bg-subtle hover:text-text-primary"
+            className="w-8 min-w-0 -full"
             onMouseDown={preserveEditorSelection}
             onClick={handleSpeak}
             disabled={!detailTarget && !selectedText}
@@ -721,12 +761,9 @@ export default function EditorFloatingMenu() {
             <Volume2 className="h-4 w-4" />
            </Button>
            <Button
-            variant="ghost"
-            size="icon-sm"
-            className={cn(
-             "h-8 w-8 min-w-0 rounded-2xl -full px-0 text-amber-700 hover:bg-amber-50 hover:text-amber-800",
-             showNote && "bg-amber-100 text-amber-700",
-            )}
+            variant={showNote ? "warning" : "ghost"}
+            size="icon-toolbar"
+            className="min-w-0"
             onMouseDown={preserveEditorSelection}
             onClick={handleToggleNote}
             title="Ghi chú important"
@@ -736,7 +773,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="sm"
-            className="h-8 rounded-2xl -full px-3 text-text-muted hover:bg-bg-subtle hover:text-text-primary"
+            className="-full"
             onMouseDown={preserveEditorSelection}
             onClick={(event) => {
              preserveEditorSelection(event);
@@ -761,12 +798,9 @@ export default function EditorFloatingMenu() {
         <div className="flex flex-wrap items-center justify-end gap-1">
          {/* ── Link to note + Quick note (always visible) ── */}
          <Button
-          variant="ghost"
-          size="icon-sm"
-          className={cn(
-           "h-8 w-8 min-w-0 rounded-xl border border-transparent px-0 text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-           showLinkSearch && "border-primary/25 bg-accent-subtle text-accent-text",
-          )}
+          variant={showLinkSearch ? "active" : "ghost"}
+          size="icon-toolbar"
+          className="min-w-0"
           onMouseDown={preserveEditorSelection}
           onClick={handleToggleLinkSearch}
           title="Liên kết ghi chú (Ctrl+K)"
@@ -774,12 +808,10 @@ export default function EditorFloatingMenu() {
           <Link2 className="h-4 w-4" />
          </Button>
          <Button
-          variant="ghost"
-          size="icon-sm"
-          className={cn(
-           "h-8 w-8 min-w-0 rounded-xl border border-transparent px-0 text-warning-text hover:bg-warning-subtle",
-           showInlineNote && "border-warning/30 bg-warning-subtle text-warning-text",
-          )}
+          variant="warning"
+          size="icon-toolbar"
+          className="min-w-0"
+          aria-pressed={showInlineNote}
           onMouseDown={preserveEditorSelection}
           onClick={handleToggleInlineNote}
           title="Ghi chú nhanh"
@@ -790,12 +822,9 @@ export default function EditorFloatingMenu() {
 
          <div className="relative">
           <Button
-           variant="ghost"
-           size="sm"
-           className={cn(
-            "h-8 min-w-0 rounded-xl border border-transparent px-2 text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-            (fontFamily || showFontMenu) && "border-primary/25 bg-accent-subtle text-accent-text",
-           )}
+           variant={fontFamily || showFontMenu ? "active" : "ghost"}
+           size="compact"
+           className="min-w-0"
            onMouseDown={preserveEditorSelection}
            onClick={(event) => {
             preserveEditorSelection(event);
@@ -807,19 +836,18 @@ export default function EditorFloatingMenu() {
            title="Đổi font chữ"
           >
            <Type className="h-4 w-4" />
-           <span className="max-w-24 truncate text-xs font-semibold">
+           <Typography variant="caption" weight="semibold" clamp="one" className="max-w-24">
             {FONT_FAMILIES.find(([value]) => value === fontFamily)?.[1] || "Font"}
-           </span>
+           </Typography>
           </Button>
           <div className="ml-1 inline-flex h-8 items-center gap-0.5 rounded-xl bg-bg-subtle/70 p-0.5">
            {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
-            <button
+            <Button
              key={`quick-${label}`}
              type="button"
-             className={cn(
-              "h-7 min-w-8 rounded-lg px-2 text-center text-[11px] font-black text-text-secondary transition-colors hover:bg-bg-primary hover:text-text-primary",
-              fontFamily === value && "bg-bg-primary text-accent-text shadow-theme-sm",
-             )}
+             variant={fontFamily === value ? "active" : "surface"}
+             size="compact"
+             className="min-w-8"
              style={{ fontFamily: value }}
              onMouseDown={preserveEditorSelection}
              onClick={(event) => {
@@ -829,7 +857,7 @@ export default function EditorFloatingMenu() {
              title={label}
             >
              {label.replace("FZKTPY", "")}
-            </button>
+            </Button>
            ))}
           </div>
           {showFontMenu ? (
@@ -838,13 +866,13 @@ export default function EditorFloatingMenu() {
             onMouseDown={preserveEditorSelection}
            >
             {FONT_FAMILIES.map(([value, label]) => (
-             <button
+             <Button
               key={value || "default"}
               type="button"
-              className={cn(
-               "flex w-full items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-left text-xs font-semibold text-text-secondary hover:bg-bg-subtle hover:text-text-primary",
-               fontFamily === value && "bg-accent-subtle text-accent-text",
-              )}
+              variant={fontFamily === value ? "menuActive" : "menu"}
+              size="compact"
+              align="between"
+              className="w-full"
               style={value ? { fontFamily: value } : undefined}
               onMouseDown={preserveEditorSelection}
               onClick={(event) => {
@@ -854,7 +882,7 @@ export default function EditorFloatingMenu() {
              >
               <span>{label}</span>
               {fontFamily === value ? <Check className="h-3.5 w-3.5" /> : null}
-             </button>
+             </Button>
             ))}
            </div>
           ) : null}
@@ -912,13 +940,20 @@ export default function EditorFloatingMenu() {
        {showNote && (
         <div className="mt-2 overflow-hidden rounded-xl border border-yellow-100 bg-yellow-50 p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center justify-between gap-2">
-          <span className="rounded-2xl -full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+          <Typography
+           variant="overline"
+           weight="semibold"
+           tracking="wide"
+           scale="micro"
+           transform="uppercase"
+           className="rounded-2xl -full bg-amber-100 px-2 py-0.5 text-amber-700"
+          >
            Important
-          </span>
+          </Typography>
           <Button
            variant="ghost"
            size="sm"
-           className="h-8 min-w-0 rounded-xl px-2 text-amber-700 hover:bg-amber-100"
+           className="min-w-0"
            onMouseDown={preserveEditorSelection}
            onClick={handleSaveNote}
            disabled={isSaving || !smartData}
@@ -927,7 +962,7 @@ export default function EditorFloatingMenu() {
            Lưu note
           </Button>
          </div>
-         <textarea
+         <Textarea
           ref={noteTextareaRef}
           value={noteDraft}
           onMouseDown={(event) => {
@@ -939,7 +974,9 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setNoteDraft(event.target.value)}
-          className="min-h-23 w-full resize-y rounded-xl border border-warning/30 bg-transparent px-3 py-2  text-text-secondary outline-none placeholder:text-text-muted focus:border-warning"
+          density="compact"
+          surface="transparent"
+          className="w-full"
           placeholder="Ghi chú nhanh..."
          />
         </div>
@@ -950,9 +987,11 @@ export default function EditorFloatingMenu() {
         <div className="mt-2 overflow-hidden rounded-xl border border-primary/20 bg-accent-subtle p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center gap-2">
           <Search className="h-4 w-4 text-accent-text" />
-          <span className="text-xs font-semibold text-accent-text">Liên kết ghi chú</span>
+          <Typography variant="caption" tone="accent" weight="semibold">
+           Liên kết ghi chú
+          </Typography>
          </div>
-         <input
+         <Input
           ref={linkSearchInputRef}
           type="text"
           value={linkSearchQuery}
@@ -975,7 +1014,8 @@ export default function EditorFloatingMenu() {
            }
           }}
           placeholder="Tìm theo tiêu đề ghi chú..."
-          className="w-full rounded-xl border border-border-default bg-bg-input px-3 py-1.5  text-text-primary outline-none placeholder:text-text-muted focus:border-accent-muted"
+          surface="field"
+          className="w-full"
          />
          {isSearching && (
           <div className="mt-2 flex items-center gap-2 text-xs text-accent-text">
@@ -985,22 +1025,26 @@ export default function EditorFloatingMenu() {
          {!isSearching && linkSearchResults.length > 0 && (
           <div className="mt-2 flex max-h-36 flex-col gap-0.5 overflow-y-auto scrollbar-soft">
            {linkSearchResults.map((note) => (
-            <button
+            <Button
              key={note.id}
              onMouseDown={preserveEditorSelection}
              onClick={(event) => {
               preserveEditorSelection(event);
               handleInsertNoteLink(note);
              }}
-             className="w-full text-left rounded-2xl  px-3 py-1.5  text-text-primary transition-colors hover:bg-accent-subtle"
+             variant="ghost"
+             align="start"
+             className="w-full"
             >
              {note.title}
-            </button>
+            </Button>
            ))}
           </div>
          )}
          {!isSearching && linkSearchQuery && linkSearchResults.length === 0 && (
-          <p className="mt-2 text-xs text-text-muted">Không tìm thấy ghi chú nào</p>
+          <Typography as="p" variant="caption" tone="muted" className="mt-2">
+           Không tìm thấy ghi chú nào
+          </Typography>
          )}
         </div>
        )}
@@ -1009,13 +1053,21 @@ export default function EditorFloatingMenu() {
        {showInlineNote && (
         <div className="mt-2 overflow-hidden rounded-xl border border-info/20 bg-info-subtle p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center justify-between gap-2">
-          <span className="rounded-2xl -full bg-info-subtle px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-info-text">
+          <Typography
+           variant="overline"
+           tone="info"
+           weight="semibold"
+           tracking="wide"
+           scale="micro"
+           transform="uppercase"
+           className="rounded-2xl -full bg-info-subtle px-2 py-0.5"
+          >
            Ghi chú nhanh
-          </span>
+          </Typography>
           <Button
            variant="ghost"
            size="sm"
-           className="h-7 min-w-0 rounded-xl px-2 text-xs text-info-text hover:bg-info-subtle"
+           className="min-w-0"
            onMouseDown={preserveEditorSelection}
            onClick={handleSaveInlineNote}
           >
@@ -1023,7 +1075,7 @@ export default function EditorFloatingMenu() {
            Lưu
           </Button>
          </div>
-         <textarea
+         <Textarea
           ref={inlineNoteTextareaRef}
           value={inlineNoteDraft}
           onMouseDown={(event) => {
@@ -1035,7 +1087,9 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setInlineNoteDraft(event.target.value)}
-          className="min-h-16 w-full resize-y rounded-xl border border-info/30 bg-transparent px-3 py-2  text-text-secondary outline-none placeholder:text-text-muted focus:border-info"
+          density="compact"
+          surface="transparent"
+          className="w-full"
           placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
          />
         </div>

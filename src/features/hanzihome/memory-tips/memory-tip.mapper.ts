@@ -26,8 +26,6 @@ export const memoryTipRowSchema = z.object({
  updated_at: z.string(),
 });
 
-export type MemoryTipRow = z.infer<typeof memoryTipRowSchema>;
-
 export function mapMemoryTipRow(row: JsonFieldValue): MemoryTip {
  const parsed = memoryTipRowSchema.parse(row);
 

@@ -28,10 +28,11 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
   }
 
   const container = containerRef.current;
+  const writerState = writerRef.current;
   let isActive = true;
 
-  writerRef.current.value?.cancelQuiz?.();
-  delete writerRef.current.value;
+  writerState.value?.cancelQuiz?.();
+  delete writerState.value;
   setQuizMode(false);
   container.className = writerContainerClassName;
   container.innerHTML = "";
@@ -103,7 +104,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
       charDataLoader: () => charData,
      }) as HanziWriterInstance;
 
-     writerRef.current.value = writer;
+     writerState.value = writer;
      requestAnimationFrame(() => {
       if (!isActive) {
        return;
@@ -125,8 +126,8 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
   return () => {
    isActive = false;
-   writerRef.current.value?.cancelQuiz?.();
-   delete writerRef.current.value;
+   writerState.value?.cancelQuiz?.();
+   delete writerState.value;
    container.innerHTML = "";
   };
  }, [character]);
@@ -154,14 +155,14 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
    <div ref={containerRef} className={writerContainerClassName} />
 
    <div className="flex flex-wrap items-center justify-center gap-2">
-    <Button variant="outline" size="sm" className="min-w-0 px-3" onClick={handlePlayAnimation}>
+    <Button variant="outline" size="sm" className="min-w-0" onClick={handlePlayAnimation}>
      <Play className="h-3.5 w-3.5" />
      Nét viết
     </Button>
     <Button
      variant="ghost"
      size="sm"
-     className="min-w-0 px-3"
+     className="min-w-0"
      onClick={handleQuizMode}
      disabled={quizMode}
     >

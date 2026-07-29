@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { Check, ChevronDown, Search, X } from "lucide-react";
 
@@ -42,8 +44,12 @@ export function OptionalFieldsMultiSelect({
   <section className="grid gap-2">
    <div className="flex items-center justify-between gap-2">
     <div>
-     <h3 className="text-sm font-bold text-text-primary">Field optional</h3>
-     <p className="text-xs text-text-muted">Mặc định chỉ hiện field đang dùng trong UI học.</p>
+     <Typography as="h3" variant="cardTitle" tone="default" weight="bold">
+      Field optional
+     </Typography>
+     <StudyInstructionText variant="caption" tone="muted">
+      Mặc định chỉ hiện field đang dùng trong UI học.
+     </StudyInstructionText>
     </div>
     <Button type="button" variant="ghost" size="sm" onClick={onReset}>
      Mặc định
@@ -59,16 +65,29 @@ export function OptionalFieldsMultiSelect({
      >
       <div className="flex min-w-0 flex-1 items-center gap-2">
        {firstSelectedGroup ? (
-        <span className="min-w-0 max-w-full truncate rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-primary">
+        <StudyInstructionText
+         variant="label"
+         tone="default"
+         weight="bold"
+         clamp="one"
+         className="min-w-0 max-w-full rounded-full border border-border-default bg-bg-subtle px-2 py-1"
+        >
          {firstSelectedGroup.label}
-        </span>
+        </StudyInstructionText>
        ) : (
-        <span className="px-1 text-sm font-semibold text-text-muted">Chọn field optional...</span>
+        <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="px-1">
+         Chọn field optional...
+        </StudyInstructionText>
        )}
        {remainingSelectedCount > 0 ? (
-        <span className="rounded-full border border-border-default bg-bg-subtle px-2 py-1 text-sm font-bold text-text-secondary">
+        <StudyInstructionText
+         variant="label"
+         tone="secondary"
+         weight="bold"
+         className="rounded-full border border-border-default bg-bg-subtle px-2 py-1"
+        >
          +{remainingSelectedCount}
-        </span>
+        </StudyInstructionText>
        ) : null}
       </div>
       <ChevronDown className="h-4 w-4 shrink-0 text-text-muted" />
@@ -105,24 +124,16 @@ export function OptionalFieldsMultiSelect({
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Tìm field optional..."
-          className="pl-9"
+          adornment="start"
          />
         </div>
         <div className="flex items-center justify-between gap-2 text-sm">
-         <button
-          type="button"
-          className="font-bold text-primary underline-offset-4 hover:underline"
-          onClick={onReset}
-         >
+         <Button type="button" variant="ghost" onClick={onReset}>
           Unselect all
-         </button>
-         <button
-          type="button"
-          className="font-bold text-primary underline-offset-4 hover:underline"
-          onClick={onSelectAll}
-         >
+         </Button>
+         <Button type="button" variant="ghost" onClick={onSelectAll}>
           Select all
-         </button>
+         </Button>
         </div>
        </div>
        <div className="max-h-72 overflow-y-auto border-t border-border-default py-1 scrollbar-soft">
@@ -130,33 +141,43 @@ export function OptionalFieldsMultiSelect({
          filteredGroups.map((fieldGroup) => {
           const checked = fieldGroup.keys.every((key) => selectedKeys.has(key));
           return (
-           <button
+           <Button
             key={fieldGroup.label}
             type="button"
-            className={cn(
-             "flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-bold transition-colors",
-             checked
-              ? "bg-bg-primary text-text-primary"
-              : "text-text-secondary hover:bg-bg-subtle hover:text-text-primary",
-            )}
+            variant={checked ? "surfaceCard" : "menu"}
+            size="list"
+            align="start"
+            className="w-full"
             onClick={() => onToggleGroup(fieldGroup.keys, !checked)}
            >
             <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-border-default">
              {checked ? <Check className="h-4 w-4 text-primary" /> : null}
             </span>
-            <span className="min-w-0 flex-1 truncate">{fieldGroup.label}</span>
+            <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">
+             {fieldGroup.label}
+            </StudyInstructionText>
             {fieldGroup.keys.length > 1 ? (
-             <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs text-text-muted">
+             <StudyInstructionText
+              variant="caption"
+              tone="muted"
+              className="rounded-full bg-bg-subtle px-2 py-0.5"
+             >
               {fieldGroup.keys.length}
-             </span>
+             </StudyInstructionText>
             ) : null}
-           </button>
+           </Button>
           );
          })
         ) : (
-         <p className="px-4 py-6 text-center text-sm font-semibold text-text-muted">
+         <StudyInstructionText
+          variant="bodySmall"
+          tone="muted"
+          weight="semibold"
+          align="center"
+          className="px-4 py-6"
+         >
           Không có field phù hợp.
-         </p>
+         </StudyInstructionText>
         )}
        </div>
       </Popover.Popup>

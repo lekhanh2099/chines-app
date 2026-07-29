@@ -42,7 +42,9 @@ const memoryTipFormSchema = z.object({
  tagsText: z.string().trim(),
  isPinned: z.boolean(),
 });
-const MemoryTipDefaultsSchema = z.union([createMemoryTipPayloadSchema.partial(), memoryTipSchema]);
+type MemoryTipDefaults = z.infer<
+ z.ZodUnion<[ReturnType<typeof createMemoryTipPayloadSchema.partial>, typeof memoryTipSchema]>
+>;
 
 type MemoryTipFormValues = z.infer<typeof memoryTipFormSchema>;
 
@@ -91,9 +93,7 @@ function toUpdatePayload(value: MemoryTipFormValues): UpdateMemoryTipPayload {
  };
 }
 
-function getDefaultValues(
- defaultValues?: z.infer<typeof MemoryTipDefaultsSchema>,
-): MemoryTipFormValues {
+function getDefaultValues(defaultValues?: MemoryTipDefaults): MemoryTipFormValues {
  return {
   tipType: defaultValues?.tipType ?? "custom",
   title: defaultValues?.title ?? "",

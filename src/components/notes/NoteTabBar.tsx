@@ -1,5 +1,7 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/button";
 import { useRef, useCallback, useState, type ReactNode, type Ref } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { X, FileText, Plus } from "lucide-react";
@@ -116,16 +118,18 @@ export function NoteTabBar({
     ) : (
      <div className="min-w-0 flex-1" />
     )}
-    <button
+    <Button
      type="button"
-     className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-primary text-accent-text shadow-theme-sm transition-colors hover:bg-accent-subtle disabled:opacity-50 md:flex"
+     variant="outline"
+     size="toolbar"
+     className="hidden w-9 shrink-0 md:flex"
      onClick={onCreateNote}
      disabled={focusLocked}
      title={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
      aria-label={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
     >
      <Plus className="h-4 w-4" />
-    </button>
+    </Button>
     <div
      ref={actionsRef}
      className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2 md:max-w-[min(56vw,44rem)] md:flex-none"
@@ -193,15 +197,14 @@ function TabItem({
     className={cn("w-3.5 h-3.5 shrink-0 transition-colors", isActive ? " " : "text-text-muted/60")}
    />
 
-   <span className="truncate flex-1 min-w-0 px-1">{tab.title}</span>
+   <Typography as="span" clamp="one" className="flex-1 min-w-0 px-1">
+    {tab.title}
+   </Typography>
 
-   <button
-    className={cn(
-     "flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-all",
-     isActive
-      ? "text-text-muted hover:text-text-primary hover:bg-bg-subtle"
-      : "opacity-0 group-hover:opacity-100 text-text-muted hover:text-text-primary hover:bg-bg-subtle",
-    )}
+   <Button
+    variant="ghost"
+    size="icon-xs"
+    className={cn("shrink-0", isActive ? "" : "opacity-0 group-hover:opacity-100")}
     aria-label={`Đóng tab ${tab.title}`}
     disabled={focusLocked}
     onClick={(e) => {
@@ -212,7 +215,7 @@ function TabItem({
     title={focusLocked ? "Focus mode đang giữ tab hiện tại" : "Đóng tab"}
    >
     <X className="w-3 h-3" />
-   </button>
+   </Button>
   </div>
  );
 }

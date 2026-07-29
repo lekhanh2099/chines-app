@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -22,9 +24,21 @@ export function HanziHomeWorkspaceMessage({
     <Card padding="lg" className="rounded-xl">
      <div className="grid gap-2.5">
       <div>
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
-       <h1 className="text-2xl font-black text-text-primary">{title}</h1>
-       <p className=" font-semibold text-text-muted">{description}</p>
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        {eyebrow}
+       </StudyInstructionText>
+       <Typography as="h1" variant="pageTitle" tone="default" weight="black">
+        {title}
+       </Typography>
+       <StudyInstructionText tone="muted" weight="semibold">
+        {description}
+       </StudyInstructionText>
       </div>
       {showLibraryLink || onRetry ? (
        <div className="flex flex-wrap gap-2">

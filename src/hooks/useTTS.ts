@@ -9,12 +9,13 @@ export type TTSOptions = {
  rate?: number;
 };
 
-const TTSStateSchema = z.object({
- isSpeaking: z.boolean(),
- isLoading: z.boolean(),
- error: z.string().nullable(),
-});
-type TTSState = z.infer<typeof TTSStateSchema>;
+type TTSState = z.infer<
+ z.ZodObject<{
+  isSpeaking: z.ZodBoolean;
+  isLoading: z.ZodBoolean;
+  error: z.ZodNullable<z.ZodString>;
+ }>
+>;
 
 /**
  * Custom hook for TTS via ElevenLabs with browser SpeechSynthesis fallback.

@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { VocabReviewPanel } from "./VocabReviewPanel";
 import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
@@ -19,7 +20,9 @@ export function LessonVocabReviewPanel() {
  if (vocabularyQuery.isError) {
   return (
    <Card padding="lg" className="grid justify-items-start gap-3">
-    <p className="font-semibold text-text-primary">Không tải được bộ ôn tập.</p>
+    <StudyInstructionText tone="default" weight="semibold">
+     Không tải được bộ ôn tập.
+    </StudyInstructionText>
     <Button type="button" variant="outline" onClick={() => vocabularyQuery.refetch()}>
      Thử lại
     </Button>

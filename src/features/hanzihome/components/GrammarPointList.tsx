@@ -1,15 +1,15 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { GrammarViewModel, LearningStatus } from "@/features/hanzihome/types";
 import { z } from "zod";
 
-const SelectedGrammarPointIdSchema = z.string().nullable();
-
 type GrammarPointListProps = {
  points: GrammarViewModel[];
- selectedPointId: z.infer<typeof SelectedGrammarPointIdSchema>;
+ selectedPointId: z.infer<z.ZodNullable<z.ZodString>>;
  progress: Record<string, { status: LearningStatus }>;
  onSelectPoint: (pointId: string) => void;
  allPointId?: string;
@@ -25,7 +25,9 @@ export function GrammarPointList({
  return (
   <div className="flex min-w-0 max-w-full flex-col gap-3 overflow-hidden">
    <div className="flex items-center justify-between gap-3">
-    <h2 className="text-base font-black text-text-primary">Điểm ngữ pháp</h2>
+    <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+     Điểm ngữ pháp
+    </Typography>
     <Badge>{points.length} mục</Badge>
    </div>
 
@@ -34,14 +36,23 @@ export function GrammarPointList({
      <Button
       type="button"
       variant={selectedPointId === allPointId ? "active" : "surface"}
-      className="h-auto min-h-14 w-full min-w-0 max-w-full justify-start gap-2 overflow-hidden whitespace-normal rounded-lg p-2.5 text-left"
+      align="start"
+      wrap="normal"
+      className="w-full min-w-0 max-w-full overflow-hidden"
       onClick={() => onSelectPoint(allPointId)}
      >
       <span className="min-w-0 flex-1">
-       <span className="block line-clamp-2  font-black">Xem toàn bộ</span>
-       <span className="block line-clamp-2 text-xs font-semibold opacity-80">
+       <StudyInstructionText as="span" weight="black" clamp="two" className="block">
+        Xem toàn bộ
+       </StudyInstructionText>
+       <StudyInstructionText
+        variant="caption"
+        weight="semibold"
+        clamp="two"
+        className="block opacity-80"
+       >
         Hiển thị tất cả điểm ngữ pháp trong một trang
-       </span>
+       </StudyInstructionText>
       </span>
      </Button>
     )}
@@ -51,18 +62,33 @@ export function GrammarPointList({
       key={point.id}
       type="button"
       variant={point.id === selectedPointId ? "active" : "surface"}
-      className="h-auto min-h-14 w-full min-w-0 max-w-full justify-start gap-2 overflow-hidden whitespace-normal rounded-lg p-2.5 text-left"
+      align="start"
+      wrap="normal"
+      className="w-full min-w-0 max-w-full overflow-hidden"
       onClick={() => onSelectPoint(point.id)}
      >
       <span className="min-w-0 flex-1">
-       <span className="block line-clamp-2  font-black">{point.cleanTitle}</span>
-       <span className="block line-clamp-2 text-xs font-semibold opacity-80">
+       <StudyInstructionText as="span" weight="black" clamp="two" className="block">
+        {point.cleanTitle}
+       </StudyInstructionText>
+       <StudyInstructionText
+        variant="caption"
+        weight="semibold"
+        clamp="two"
+        className="block opacity-80"
+       >
         {point.core || point.structuresView[0] || "Chưa có mô tả"}
-       </span>
+       </StudyInstructionText>
       </span>
-      <span className="shrink-0 rounded-full border border-current/20 px-1.5 py-0.5 text-[0.65rem] font-bold uppercase">
+      <StudyInstructionText
+       variant="overline"
+       weight="bold"
+       scale="micro"
+       transform="uppercase"
+       className="shrink-0 rounded-full border border-current/20 px-1.5 py-0.5"
+      >
        {progress[point.id]?.status || "new"}
-      </span>
+      </StudyInstructionText>
      </Button>
     ))}
    </div>

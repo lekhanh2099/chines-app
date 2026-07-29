@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -24,12 +26,26 @@ export function LessonPreviewCard({
    <div className="grid gap-3">
     <div className="flex items-start justify-between gap-3">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
+      <StudyInstructionText
+       as="span"
+       tone="accent"
+       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle"
+      >
        <Icon className="h-5 w-5" />
-      </span>
+      </StudyInstructionText>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">{eyebrow}</p>
-       <h2 className="text-lg font-black text-text-primary">{title}</h2>
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        {eyebrow}
+       </StudyInstructionText>
+       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+        {title}
+       </Typography>
       </div>
      </div>
 

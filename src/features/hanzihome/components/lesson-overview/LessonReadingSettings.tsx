@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { Eye, Settings2, Type } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { z } from "zod";
 
-import { getHanziFontFamily } from "./hanzi-typography";
+import { HanziFontPreview, HanziText, StudyInstructionText } from "./hanzi-typography";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
 const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
@@ -39,7 +40,7 @@ const visibilityOptions: Array<{
  key: z.infer<typeof LessonReadingVisibilityKeySchema>;
  label: string;
 }> = [
- { key: "showPinyin", label: "Pinyin" },
+ { key: LessonReadingVisibilityKeySchema.enum.showPinyin, label: "Pinyin" },
  { key: "showMeaning", label: "Nghĩa" },
  { key: "showAnswers", label: "Đáp án" },
 ];
@@ -101,14 +102,12 @@ export function LessonReadingSettings({
         aria-pressed={active}
         onClick={() => onChange({ hanziFont: option.value })}
        >
-        <span
-         lang="zh-CN"
-         className="text-base leading-none"
-         style={{ fontFamily: getHanziFontFamily(option.value) }}
-        >
+        <HanziFontPreview as="span" font={option.value} leading="none">
          文
-        </span>
-        <span className="truncate">{option.label}</span>
+        </HanziFontPreview>
+        <StudyInstructionText as="span" clamp="one">
+         {option.label}
+        </StudyInstructionText>
        </Button>
       );
      })}
@@ -124,16 +123,21 @@ export function LessonReadingSettings({
         key={option.value}
         variant={active ? "active" : "surfaceCard"}
         size="sm"
-        className="h-auto min-w-0 flex-col gap-0.5 py-1.5 whitespace-normal"
+        wrap="normal"
+        className="min-w-0 flex-col"
         aria-pressed={active}
         onClick={() => onChange({ hanziSize: option.value })}
        >
-        <span
-         className={cn("leading-none", index < 2 ? "text-sm" : index < 4 ? "text-base" : "text-lg")}
+        <HanziText
+         as="span"
+         size={index < 2 ? "small" : index < 4 ? "medium" : "large"}
+         leading="none"
         >
          {option.sample}
-        </span>
-        <span className="text-[0.65rem] leading-tight">{option.label}</span>
+        </HanziText>
+        <StudyInstructionText as="span" variant="caption" leading="tight" scale="micro">
+         {option.label}
+        </StudyInstructionText>
        </Button>
       );
      })}
@@ -160,9 +164,9 @@ export function LessonReadingSettings({
      </Button>
     </div>
     {displayMode.revealMode === "tap" ? (
-     <p className="text-xs font-medium leading-relaxed text-text-muted">
+     <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
       Mỗi lần bấm sẽ thay nội dung cùng một vị trí: Hán tự, Pinyin, nghĩa rồi quay lại.
-     </p>
+     </StudyInstructionText>
     ) : null}
    </SettingsGroup>
 
@@ -182,7 +186,9 @@ export function LessonReadingSettings({
         disabled={disabled}
         onClick={() => onChange({ [option.key]: !active })}
        >
-        <span className="truncate">{option.label}</span>
+        <StudyInstructionText as="span" clamp="one">
+         {option.label}
+        </StudyInstructionText>
        </Button>
       );
      })}
@@ -203,10 +209,17 @@ function SettingsGroup({
 }) {
  return (
   <section className="grid gap-1.5 rounded-lg border border-border-default bg-bg-subtle p-2">
-   <h3 className="flex items-center gap-1.5 text-xs font-black uppercase text-text-muted [&_svg]:size-3.5">
+   <Typography
+    as="h3"
+    variant="cardTitle"
+    tone="muted"
+    weight="black"
+    transform="uppercase"
+    className="flex items-center gap-1.5 [&_svg]:size-3.5"
+   >
     {icon}
     {label}
-   </h3>
+   </Typography>
    {children}
   </section>
  );

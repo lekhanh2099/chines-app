@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
 import { answerToString, asRecord, stringValue } from "../utils";
-import { getHanziTypographyStyle } from "../hanzi-typography";
+import { StudyInstructionText, ReaderHanziText } from "../hanzi-typography";
 
 export function ModelBlock({
  title = "Mẫu",
@@ -33,7 +33,15 @@ export function ModelBlock({
 
  return (
   <div className="exercise-answer-surface grid gap-2 rounded-xl border p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-accent-text">{title}</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="accent"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    {title}
+   </StudyInstructionText>
    <div className="grid gap-2">
     {visibleValues.map((value, index) => {
      const record = asRecord(value);
@@ -53,13 +61,9 @@ export function ModelBlock({
 
      if (typeof value === "string") {
       const content = (
-       <p
-        className="font-black leading-[1.7] text-text-primary"
-        lang="zh-CN"
-        style={getHanziTypographyStyle(displayMode)}
-       >
+       <ReaderHanziText displayMode={displayMode} tone="default" weight="black" leading="learner">
         {zh}
-       </p>
+       </ReaderHanziText>
       );
 
       return <div key={key}>{renderValue ? renderValue(value, index, content) : content}</div>;

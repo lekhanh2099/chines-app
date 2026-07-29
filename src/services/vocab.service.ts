@@ -22,7 +22,6 @@ import {
 } from "@/types/database";
 import type {
  DbDictionaryCore,
- DbVocabulary,
  AiAnalysis,
  AiDefinition,
  AiDefinitionExample,
@@ -33,64 +32,59 @@ import type {
  DictionaryCoreData,
  DictionaryCoreDefinition,
  VocabData,
- VocabType,
- VocabWithProgress,
 } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
 
 type AppSupabaseClient = SupabaseClient<Database>;
 
-const NullableStringSchema = z.string().nullable();
-const NullableAiAnalysisSchema = aiAnalysisSchema.nullable();
-const NullableDbDictionaryCoreSchema = DbDictionaryCoreSchema.nullable();
-const NullableDbVocabularySchema = DbVocabularySchema.nullable();
-const DictionaryLookupCountSchema = DbDictionaryCoreSchema.pick({
- id: true,
- lookup_count: true,
-});
-const VocabularyAnalysisSourceSchema = DbVocabularySchema.pick({
- analysis: true,
- ai_analysis: true,
- sino_vietnamese: true,
-}).nullable();
+type DictionaryLookupCount = {
+ id: DbDictionaryCore["id"];
+ lookup_count: DbDictionaryCore["lookup_count"];
+};
+type VocabularyAnalysisSource = z.infer<
+ z.ZodNullable<
+  z.ZodObject<{
+   analysis: typeof DbVocabularySchema.shape.analysis;
+   ai_analysis: typeof DbVocabularySchema.shape.ai_analysis;
+   sino_vietnamese: typeof DbVocabularySchema.shape.sino_vietnamese;
+  }>
+ >
+>;
 const DictionaryMergeModeSchema = z.enum(["preserve-existing", "prefer-incoming"]);
 
-const UserVocabProgressRecordSchema = z.object({
- proficiency_level: z.number(),
- is_favorited: z.boolean(),
- dictionary_id: NullableStringSchema.optional(),
- personal_note: NullableStringSchema.optional(),
- personal_note_mode: PersonalNoteModeSchema.nullable().optional(),
-});
-type UserVocabProgressRecord = z.infer<typeof UserVocabProgressRecordSchema>;
-const NullableUserVocabProgressRecordSchema = UserVocabProgressRecordSchema.nullable();
+type UserVocabProgressRow = Tables<"user_vocab_progress">;
+type UserVocabProgressRecord = {
+ proficiency_level: NonNullable<UserVocabProgressRow["proficiency_level"]>;
+ is_favorited: NonNullable<UserVocabProgressRow["is_favorited"]>;
+ dictionary_id: UserVocabProgressRow["dictionary_id"];
+ personal_note: UserVocabProgressRow["personal_note"];
+ personal_note_mode: z.infer<z.ZodNullable<typeof PersonalNoteModeSchema>>;
+};
 
-const VocabIdentitySchema = z.object({ id: z.string() });
-const NullableVocabIdentitySchema = VocabIdentitySchema.nullable();
-const SaveVocabResultSchema = z.object({
- vocabId: z.string(),
- dictionaryId: z.string().optional(),
- contextSchemaAvailable: z.boolean(),
- noteSchemaAvailable: z.boolean(),
-});
-const NullableSaveVocabResultSchema = SaveVocabResultSchema.nullable();
-const TrackVocabResultSchema = SaveVocabResultSchema.pick({
- vocabId: true,
- dictionaryId: true,
-});
-const NullableTrackVocabResultSchema = TrackVocabResultSchema.nullable();
-const DeletedProgressSchema = z
- .object({
-  dictionary_id: NullableStringSchema.optional(),
- })
- .nullable();
-const VocabWithProgressResultSchema = z.object({
- vocab: VocabDataSchema,
- srsLevel: z.number().nullable(),
- isSaved: z.boolean(),
- personalNote: z.string(),
- personalNoteMode: PersonalNoteModeSchema,
-});
+type VocabIdentity = z.infer<z.ZodObject<{ id: z.ZodString }>>;
+
+type SaveVocabResult = z.infer<
+ z.ZodObject<{
+  vocabId: z.ZodString;
+  dictionaryId: z.ZodOptional<z.ZodString>;
+  contextSchemaAvailable: z.ZodBoolean;
+  noteSchemaAvailable: z.ZodBoolean;
+ }>
+>;
+
+type TrackVocabResult = {
+ vocabId: SaveVocabResult["vocabId"];
+ dictionaryId?: SaveVocabResult["dictionaryId"];
+};
+type VocabWithProgressResult = z.infer<
+ z.ZodObject<{
+  vocab: typeof VocabDataSchema;
+  srsLevel: z.ZodNullable<z.ZodNumber>;
+  isSaved: z.ZodBoolean;
+  personalNote: z.ZodString;
+  personalNoteMode: typeof PersonalNoteModeSchema;
+ }>
+>;
 
 const supabaseErrorLikeSchema = z.object({
  code: z.string().optional().default(""),
@@ -152,7 +146,7 @@ export function normalizeDictionaryHeadword(text: string): string {
 /** Classify a vocab entry as word or sentence based on hanzi length and pinyin spaces */
 export function classifyVocabType(
  hanzi: string,
- pinyin?: z.infer<typeof NullableStringSchema>,
+ pinyin?: z.infer<z.ZodNullable<z.ZodString>>,
 ): z.infer<typeof VocabTypeSchema> {
  if (hanzi.length > 4) return "sentence";
  if (pinyin && pinyin.split(" ").length > 3) return "sentence";
@@ -211,8 +205,8 @@ function normalizeWordRelations(relations?: AiWordRelation[]): AiAnalysis["synon
 }
 
 function normalizeAnalysis(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
- sinoVietnamese?: z.infer<typeof NullableStringSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
+ sinoVietnamese?: z.infer<z.ZodNullable<z.ZodString>>,
 ): AiAnalysis {
  const source = analysis || {};
  const normalizedEtymology =
@@ -293,7 +287,7 @@ function normalizeAnalysis(
 }
 
 function getDictionaryDefinitionsFromAnalysis(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
  fallbackMeaning = "",
 ): DictionaryCoreDefinition[] {
  return getNormalizedDefinitions(analysis, fallbackMeaning)
@@ -313,7 +307,7 @@ function getDictionaryDefinitionsFromAnalysis(
 }
 
 function buildDictionaryCoreData(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
  fallbackMeaning = "",
 ): DictionaryCoreData {
  const normalized = normalizeAnalysis(analysis);
@@ -326,7 +320,7 @@ function buildDictionaryCoreData(
 }
 
 export function getDictionaryCoreAnalysis(
- entry?: z.infer<typeof NullableDbDictionaryCoreSchema>,
+ entry?: z.infer<z.ZodNullable<typeof DbDictionaryCoreSchema>>,
 ): AiAnalysis {
  const data = entry?.data || {};
  const embeddedAnalysis = normalizeAnalysis(data.ai_analysis || {}, entry?.sino_vietnamese || null);
@@ -354,7 +348,7 @@ export function getDictionaryCoreAnalysis(
 export async function getDictionaryEntryByHeadword(
  supabase: AppSupabaseClient,
  headword: string,
-): Promise<z.infer<typeof NullableDbDictionaryCoreSchema>> {
+): Promise<z.infer<z.ZodNullable<typeof DbDictionaryCoreSchema>>> {
  const lookupKey = normalizeDictionaryHeadword(headword);
  if (!lookupKey) {
   return null;
@@ -384,7 +378,7 @@ export async function getDictionaryEntryByHeadword(
 
 export async function incrementDictionaryLookupCount(
  supabase: AppSupabaseClient,
- entry: z.infer<typeof DictionaryLookupCountSchema>,
+ entry: DictionaryLookupCount,
 ): Promise<void> {
  const { error } = await supabase
   .from("dictionary_core")
@@ -406,7 +400,7 @@ export async function upsertDictionaryEntry(
   ai_analysis?: AiAnalysis;
   mergeMode?: z.infer<typeof DictionaryMergeModeSchema>;
  },
-): Promise<z.infer<typeof NullableDbDictionaryCoreSchema>> {
+): Promise<z.infer<z.ZodNullable<typeof DbDictionaryCoreSchema>>> {
  const normalizedHeadword = normalizeDictionaryHeadword(input.headword);
  if (!normalizedHeadword) {
   return null;
@@ -415,7 +409,7 @@ export async function upsertDictionaryEntry(
  const existing = await getDictionaryEntryByHeadword(supabase, normalizedHeadword);
  const existingAnalysis = getDictionaryCoreAnalysis(existing);
  const incomingAnalysis = normalizeAnalysis(input.ai_analysis);
- const mergeMode = input.mergeMode || "preserve-existing";
+ const mergeMode = input.mergeMode || DictionaryMergeModeSchema.enum["preserve-existing"];
  const resolvedAnalysis = Object.keys(incomingAnalysis).length
   ? normalizeAnalysis(
      mergeMode === "prefer-incoming"
@@ -566,15 +560,13 @@ export async function saveUserDictionaryRelationship(
  return true;
 }
 
-export function getVocabularyAnalysis(
- vocab?: z.infer<typeof VocabularyAnalysisSourceSchema>,
-): AiAnalysis {
+export function getVocabularyAnalysis(vocab?: VocabularyAnalysisSource): AiAnalysis {
  const parsed = aiAnalysisSchema.safeParse(vocab?.analysis || vocab?.ai_analysis || {});
  return normalizeAnalysis(parsed.success ? parsed.data : {}, vocab?.sino_vietnamese || null);
 }
 
 export function getPrimaryMeaning(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
  fallbackMeaning = "",
 ): string {
  const normalized = normalizeAnalysis(analysis);
@@ -588,7 +580,7 @@ export function getPrimaryMeaning(
 }
 
 export function getBasicVocabularyAnalysis(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
  fallbackMeaning = "",
 ): AiAnalysis {
  const normalized = normalizeAnalysis(analysis);
@@ -629,7 +621,9 @@ export function getBasicVocabData(vocab: VocabData): VocabData {
  };
 }
 
-function hasStructuredEtymology(analysis?: z.infer<typeof NullableAiAnalysisSchema>): boolean {
+function hasStructuredEtymology(
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
+): boolean {
  const normalized = normalizeAnalysis(analysis);
  const etymology = normalized.etymology;
 
@@ -641,12 +635,14 @@ function hasStructuredEtymology(analysis?: z.infer<typeof NullableAiAnalysisSche
 }
 
 function hasStructuredRelatedCompounds(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): boolean {
  return Array.isArray(analysis?.related_compounds);
 }
 
-function hasExtendedLexicalFields(analysis?: z.infer<typeof NullableAiAnalysisSchema>): boolean {
+function hasExtendedLexicalFields(
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
+): boolean {
  return (
   Array.isArray(analysis?.synonyms) &&
   Array.isArray(analysis?.antonyms) &&
@@ -657,7 +653,7 @@ function hasExtendedLexicalFields(analysis?: z.infer<typeof NullableAiAnalysisSc
 }
 
 export function hasInspectorDeepDiveData(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): boolean {
  const normalized = normalizeAnalysis(analysis);
 
@@ -695,7 +691,7 @@ export function hasInspectorDeepDiveData(
 }
 
 export function isGenericEnglishFallbackAnalysis(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): boolean {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return false;
@@ -724,7 +720,7 @@ export function isGenericEnglishFallbackAnalysis(
 }
 
 export function hasDetailedVocabAnalysis(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): boolean {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return false;
@@ -757,7 +753,7 @@ export function hasDetailedVocabAnalysis(
 }
 
 export function getNormalizedRadicals(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): AiRadical[] {
  const normalized = normalizeAnalysis(analysis);
  if (!Object.keys(normalized).length) return [];
@@ -774,7 +770,7 @@ export function getNormalizedRadicals(
 }
 
 export function getNormalizedDefinitions(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
  fallbackMeaning = "",
 ): AiDefinition[] {
  const normalized = normalizeAnalysis(analysis);
@@ -835,7 +831,7 @@ export function getNormalizedDefinitions(
 }
 
 export function getNormalizedRelatedCompounds(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): AiRelatedCompound[] {
  const normalized = normalizeAnalysis(analysis);
 
@@ -847,7 +843,7 @@ export function getNormalizedRelatedCompounds(
 }
 
 export function getNormalizedSynonyms(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): AiWordRelation[] {
  const normalized = normalizeAnalysis(analysis);
 
@@ -858,7 +854,7 @@ export function getNormalizedSynonyms(
 }
 
 export function getNormalizedAntonyms(
- analysis?: z.infer<typeof NullableAiAnalysisSchema>,
+ analysis?: z.infer<z.ZodNullable<typeof aiAnalysisSchema>>,
 ): AiWordRelation[] {
  const normalized = normalizeAnalysis(analysis);
 
@@ -876,7 +872,7 @@ export function getNormalizedAntonyms(
 export async function getVocabByHanzi(
  supabase: AppSupabaseClient,
  hanzi: string,
-): Promise<z.infer<typeof NullableDbVocabularySchema>> {
+): Promise<z.infer<z.ZodNullable<typeof DbVocabularySchema>>> {
  const { data, error } = await supabase
   .from("vocabularies")
   .select("*")
@@ -893,93 +889,6 @@ export async function getVocabByHanzi(
  return parsed.data;
 }
 
-/** Fetch user's vocabulary list with progress */
-export async function getUserVocabList(
- supabase: AppSupabaseClient,
- userId: string,
-): Promise<VocabWithProgress[]> {
- const { data: progress } = await supabase
-  .from("user_vocab_progress")
-  .select(
-   `
-   vocab_id,
-   proficiency_level,
-   is_favorited,
-   vocabularies (
-    id,
-    hanzi,
-    pinyin,
-    sino_vietnamese,
-    meaning,
-    analysis,
-    ai_analysis,
-    created_at
-   )
-  `,
-  )
-  .eq("user_id", userId);
-
- if (!progress) return [];
-
- return progress.flatMap((p) => {
-  const v = p.vocabularies;
-  if (!v) return [];
-  const analysis = getVocabularyAnalysis(v);
-  const proficiencyLevel = p.proficiency_level ?? 0;
-  let status: VocabWithProgress["status"] = "new";
-  if (proficiencyLevel >= 4) status = "mastered";
-  else if (proficiencyLevel >= 2) status = "learning";
-
-  return [
-   {
-    id: v.id,
-    hanzi: v.hanzi,
-    pinyin: v.pinyin || "",
-    sino_vietnamese: v.sino_vietnamese || undefined,
-    meaning: getPrimaryMeaning(analysis, v.meaning || ""),
-    ai_analysis: analysis,
-    source: getVocabSource(analysis),
-    proficiency_level: proficiencyLevel,
-    is_favorited: p.is_favorited ?? false,
-    status,
-    type: classifyVocabType(v.hanzi, v.pinyin),
-   },
-  ];
- });
-}
-
-function getVocabSource(analysis: AiAnalysis): VocabWithProgress["source"] {
- const metadata = analysis.source_metadata;
- if (metadata?.lesson_key) {
-  return {
-   courseKey: metadata.course_key,
-   lessonKey: metadata.lesson_key,
-   lessonNumber: metadata.lesson_number ?? null,
-   lessonTitle: metadata.lesson_title,
-   rowNumber: metadata.row_number ?? null,
-   category: metadata.category,
-   sourceFile: metadata.source_file,
-  };
- }
-
- return parseVocabSource(analysis.notes);
-}
-
-function parseVocabSource(notes?: string): VocabWithProgress["source"] {
- if (!notes) return undefined;
-
- const match = notes.match(/Source:\s*(L(\d{1,2})(?:-\d{1,2})?)\s*#\d+(?:,\s*([^\n]+))?/i);
- if (!match) return undefined;
-
- const lessonNumber = Number.parseInt(match[2] || "", 10);
-
- return {
-  lessonKey: match[1].toUpperCase(),
-  lessonNumber: Number.isFinite(lessonNumber) ? lessonNumber : null,
-  category: match[3]?.trim(),
- };
-}
-
 export async function getUserVocabProgressRecord(
  supabase: AppSupabaseClient,
  userId: string,
@@ -987,7 +896,7 @@ export async function getUserVocabProgressRecord(
   vocabId?: string;
   dictionaryId?: string;
  },
-): Promise<z.infer<typeof NullableUserVocabProgressRecordSchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodType<UserVocabProgressRecord>>>> {
  let fullQuery = supabase
   .from("user_vocab_progress")
   .select("proficiency_level, is_favorited, dictionary_id, personal_note, personal_note_mode")
@@ -1086,7 +995,7 @@ export async function getVocabWithProgress(
  supabase: AppSupabaseClient,
  hanzi: string,
  userId: string,
-): Promise<z.infer<typeof VocabWithProgressResultSchema>> {
+): Promise<VocabWithProgressResult> {
  const [vocab, dictionaryEntry] = await Promise.all([
   getVocabByHanzi(supabase, hanzi),
   getDictionaryEntryByHeadword(supabase, hanzi),
@@ -1125,7 +1034,7 @@ export async function getVocabWithProgress(
   ai_analysis: resolvedAnalysis,
  };
 
- let progress: z.infer<typeof NullableUserVocabProgressRecordSchema> = null;
+ let progress: z.infer<z.ZodNullable<z.ZodType<UserVocabProgressRecord>>> = null;
 
  if (vocab?.id) {
   progress = await getUserVocabProgressRecord(supabase, userId, {
@@ -1166,7 +1075,7 @@ export async function upsertVocab(
   meaning?: string;
   ai_analysis?: AiAnalysis;
  },
-): Promise<z.infer<typeof NullableVocabIdentitySchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodType<VocabIdentity>>>> {
  const normalizedAnalysis = normalizeAnalysis(data.ai_analysis, data.sinoVietnamese);
  const resolvedMeaning = getPrimaryMeaning(normalizedAnalysis, data.meaning || "");
  const resolvedSinoVietnamese =
@@ -1191,7 +1100,7 @@ export async function upsertVocab(
 export async function syncDictionaryEntryToLegacyVocab(
  supabase: AppSupabaseClient,
  entry: DbDictionaryCore,
-): Promise<z.infer<typeof NullableVocabIdentitySchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodType<VocabIdentity>>>> {
  const vocabData = mapDictionaryEntryToVocabData(entry);
 
  return upsertVocab(supabase, {
@@ -1215,7 +1124,7 @@ export async function saveVocabToSrs(
   personalNoteMode?: z.infer<typeof PersonalNoteModeSchema>;
   dictionaryMergeMode?: z.infer<typeof DictionaryMergeModeSchema>;
  },
-): Promise<z.infer<typeof NullableSaveVocabResultSchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodType<SaveVocabResult>>>> {
  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
   headword: vocabData.hanzi,
   pinyin: vocabData.pinyin,
@@ -1359,7 +1268,7 @@ export async function trackVocabLookup(
  supabase: AppSupabaseClient,
  userId: string,
  vocabData: VocabData,
-): Promise<z.infer<typeof NullableTrackVocabResultSchema>> {
+): Promise<z.infer<z.ZodNullable<z.ZodType<TrackVocabResult>>>> {
  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
   headword: vocabData.hanzi,
   pinyin: vocabData.pinyin,
@@ -1424,54 +1333,4 @@ export async function trackVocabLookup(
   vocabId: vocab.id,
   dictionaryId: dictionaryEntry?.id || vocabData.dictionary_id,
  };
-}
-
-/** Delete a vocabulary from user's SRS tracking */
-export async function removeVocabFromSrs(
- supabase: AppSupabaseClient,
- userId: string,
- vocabId: string,
-): Promise<boolean> {
- let deletedProgress: z.infer<typeof DeletedProgressSchema> = null;
-
- const { data, error: initialError } = await supabase
-  .from("user_vocab_progress")
-  .delete()
-  .eq("user_id", userId)
-  .eq("vocab_id", vocabId)
-  .select("dictionary_id")
-  .maybeSingle();
-
- deletedProgress = data || null;
- let error = initialError;
-
- if (error && isMissingColumnError(error)) {
-  const legacyDeleteResult = await supabase
-   .from("user_vocab_progress")
-   .delete()
-   .eq("user_id", userId)
-   .eq("vocab_id", vocabId);
-
-  error = legacyDeleteResult.error;
-  deletedProgress = null;
- }
-
- if (error) {
-  logger.error("[VocabService] remove from SRS error:", error);
-  return false;
- }
-
- if (deletedProgress?.dictionary_id) {
-  const relationResult = await supabase
-   .from("user_vocabularies")
-   .delete()
-   .eq("user_id", userId)
-   .eq("dictionary_id", deletedProgress.dictionary_id);
-
-  if (relationResult.error && !isMissingDictionaryCacheSchemaError(relationResult.error)) {
-   logger.error("[VocabService] remove user_vocabularies relation error:", relationResult.error);
-  }
- }
-
- return true;
 }

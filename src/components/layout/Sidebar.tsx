@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -134,11 +135,21 @@ function NavRow({
    )}
   >
    <Icon className={cn("h-4 w-4 shrink-0", active && "text-accent-text")} />
-   {!collapsed && <span className="min-w-0 flex-1 truncate">{item.name}</span>}
+   {!collapsed && (
+    <Typography as="span" clamp="one" className="min-w-0 flex-1">
+     {item.name}
+    </Typography>
+   )}
    {!collapsed && item.badge && (
-    <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-black text-primary-foreground">
+    <Typography
+     variant="caption"
+     tone="inverse"
+     weight="black"
+     scale="micro"
+     className="rounded-full bg-primary px-2 py-0.5"
+    >
      {item.badge}
-    </span>
+    </Typography>
    )}
   </Link>
  );
@@ -175,7 +186,9 @@ export function Sidebar() {
     {!effectiveCollapsed ? (
      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
       <AppLogoMark />
-      <span className="truncate font-black text-text-primary">HanziHome</span>
+      <Typography tone="default" weight="black" clamp="one">
+       HanziHome
+      </Typography>
      </Link>
     ) : null}
     <PanelToggleButton
@@ -227,9 +240,9 @@ export function Sidebar() {
        <Flame className="h-4 w-4" />
        Học theo bài
       </div>
-      <p className="text-xs font-bold text-text-muted">
+      <Typography as="p" variant="caption" tone="muted" weight="bold">
        Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
-      </p>
+      </Typography>
      </div>
     </div>
    ) : null}
@@ -261,7 +274,9 @@ export function MobileBottomNavigation() {
        )}
       >
        <Icon className="h-5 w-5 shrink-0" />
-       <span className="max-w-full truncate">{mobileLabels[item.href]}</span>
+       <Typography as="span" clamp="one" className="max-w-full">
+        {mobileLabels[item.href]}
+       </Typography>
       </Link>
      );
     })}

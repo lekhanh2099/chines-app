@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import { EmptySectionState, LooseItemGrid, hasRenderableValue } from "../CommonCards";
@@ -46,15 +47,29 @@ export function SummarySectionView({
      key={group.id}
      className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3"
     >
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">{group.title}</p>
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      {group.title}
+     </StudyInstructionText>
      <div className="grid gap-2">
       {group.items.map((item) => (
        <div
         key={item.id}
         className="rounded-lg border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
        >
-        <p className="font-black text-text-primary">{item.label}</p>
-        {item.detail && <p className="text-xs font-semibold text-text-muted">{item.detail}</p>}
+        <StudyInstructionText tone="default" weight="black">
+         {item.label}
+        </StudyInstructionText>
+        {item.detail && (
+         <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+          {item.detail}
+         </StudyInstructionText>
+        )}
        </div>
       ))}
      </div>

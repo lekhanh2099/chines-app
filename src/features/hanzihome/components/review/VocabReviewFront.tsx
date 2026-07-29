@@ -3,6 +3,10 @@
 import { BookOpen } from "lucide-react";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import {
+ HanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 
 export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "vocab" }> }) {
  const example = item.source.examples.find((entry) => entry.zh)?.zh;
@@ -12,19 +16,30 @@ export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "
    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
     <BookOpen className="h-5 w-5" />
    </div>
-   <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="extraLoose"
+    transform="uppercase"
+   >
     Nhớ nghĩa và cách dùng
-   </p>
+   </StudyInstructionText>
    <div className="flex items-center justify-center gap-2">
-    <h3 className="text-6xl font-black tracking-normal text-text-primary" lang="zh-CN">
+    <HanziText as="h3" size="hero" weight="black" tracking="normal">
      {item.prompt}
-    </h3>
+    </HanziText>
     <NativeMandarinSpeakButton text={item.prompt} />
    </div>
    {example && (
-    <p className="mx-auto max-w-2xl rounded-xl bg-bg-subtle p-3 text-base font-bold leading-relaxed text-text-primary">
+    <StudyInstructionText
+     tone="default"
+     weight="bold"
+     leading="relaxed"
+     className="mx-auto max-w-2xl rounded-xl bg-bg-subtle p-3"
+    >
      {example}
-    </p>
+    </StudyInstructionText>
    )}
   </div>
  );

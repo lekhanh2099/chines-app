@@ -1,3 +1,7 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Typography } from "@/components/ui/typography";
+import { LearnerHanziText } from "@/components/patterns/learner-text";
 import type { JsonFieldValue } from "@/types/json";
 import { parseErrorLike, type ErrorInput } from "@/types/error";
 import Link from "next/link";
@@ -265,13 +269,22 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
      <div className="flex flex-wrap items-start justify-between gap-4">
       <div className="grid gap-1">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">SRS từ vựng</p>
-       <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
+       <Typography
+        as="p"
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        SRS từ vựng
+       </Typography>
+       <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
         Kho ôn tập từ đã lưu
-       </h1>
-       <p className=" font-semibold text-text-muted">
+       </Typography>
+       <Typography as="p" tone="muted" weight="semibold">
         Danh sách từ đã bấm lưu từ tra từ điển hoặc inspector.
-       </p>
+       </Typography>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -290,28 +303,26 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
      <form className="flex min-w-0 items-center gap-2 rounded-xl border border-border-default bg-bg-input px-3">
       <Search className="h-4 w-4 text-text-muted" />
-      <input
+      <Input
        name="q"
        defaultValue={resolvedSearchParams?.q ?? ""}
        aria-label="Tìm trong kho ôn tập từ vựng"
        placeholder="Tìm Hán tự, pinyin, Hán Việt, nghĩa..."
-       className="h-11 min-w-0 flex-1 bg-transparent  font-semibold text-text-primary outline-none placeholder:text-text-muted"
+       surface="transparent"
+       className="min-w-0 flex-1"
       />
-      <button
-       type="submit"
-       className="min-h-11 rounded-lg bg-bg-inverse px-4 text-xs font-black text-text-inverse"
-      >
+      <Button type="submit" variant="ghost">
        Tìm
-      </button>
+      </Button>
      </form>
     </Card>
 
     {missingSchema && (
      <Card className="rounded-xl border border-warning/30 bg-warning-subtle">
-      <p className=" font-bold text-warning-text">
+      <Typography as="p" tone="warning" weight="bold">
        Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho `user_vocab_progress`
        trước khi route này có dữ liệu.
-      </p>
+      </Typography>
      </Card>
     )}
 
@@ -320,10 +331,12 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
       <div className="grid place-items-center gap-3 py-10 text-center">
        <Sparkles className="h-8 w-8 text-text-muted" />
        <div className="grid gap-1">
-        <h2 className="text-xl font-black text-text-primary">Chưa có từ trong SRS</h2>
-        <p className=" font-semibold text-text-muted">
+        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+         Chưa có từ trong SRS
+        </Typography>
+        <Typography as="p" tone="muted" weight="semibold">
          Mở một từ ở từ điển rồi bấm “Lưu vào SRS” để thêm vào kho ôn.
-        </p>
+        </Typography>
        </div>
       </div>
      </Card>
@@ -339,30 +352,49 @@ export default async function DictionarySrsPage({ searchParams }: DictionarySrsP
        >
         <div className="flex items-start justify-between gap-3">
          <div className="min-w-0">
-          <h2
-           className="font-hanzi text-3xl font-black leading-none text-text-primary"
-           lang="zh-CN"
+          <LearnerHanziText
+           as="h2"
+           variant="sectionTitle"
+           tone="default"
+           weight="black"
+           leading="none"
           >
            {item.hanzi}
-          </h2>
-          <p className="mt-1 truncate  font-black text-accent-text">
+          </LearnerHanziText>
+          <Typography as="p" tone="accent" weight="black" clamp="one" className="mt-1">
            {item.pinyin || "Chưa có pinyin"}
-          </p>
+          </Typography>
          </div>
          <Badge variant={item.saved ? "success" : "default"}>{getLevelLabel(item.level)}</Badge>
         </div>
 
         <div className="grid gap-1 text-sm">
          {item.hanViet && (
-          <p className="font-black uppercase tracking-wide text-text-primary">{item.hanViet}</p>
+          <Typography
+           as="p"
+           variant="overline"
+           tone="default"
+           weight="black"
+           tracking="wide"
+           transform="uppercase"
+          >
+           {item.hanViet}
+          </Typography>
          )}
-         <p className="line-clamp-2 font-semibold text-text-secondary">
+         <Typography as="p" tone="secondary" weight="semibold" clamp="two">
           {item.meaning || "Chưa có nghĩa phù hợp"}
-         </p>
+         </Typography>
          {item.note && (
-          <p className="line-clamp-2 rounded-lg bg-bg-subtle px-2.5 py-2 text-xs font-bold text-text-muted">
+          <Typography
+           as="p"
+           variant="caption"
+           tone="muted"
+           weight="bold"
+           clamp="two"
+           className="rounded-lg bg-bg-subtle px-2.5 py-2"
+          >
            {item.note}
-          </p>
+          </Typography>
          )}
         </div>
        </Link>

@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { LooseItemGrid, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
@@ -19,7 +20,15 @@ export function ExtraPayloadBlock({
 
  return (
   <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">{title}</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    {title}
+   </StudyInstructionText>
    <LooseItemGrid items={items} displayMode={displayMode} />
   </div>
  );

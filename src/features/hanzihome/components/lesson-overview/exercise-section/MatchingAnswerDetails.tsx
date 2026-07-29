@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
@@ -40,20 +41,22 @@ export function MatchingAnswerDetails({
      const answerId = stringValue(answerRecord, "id") || answer.id;
      const content = (
       <div className="rounded-lg bg-bg-primary px-3 py-2 grid gap-1">
-       <p className=" font-black text-accent-text">
+       <StudyInstructionText tone="accent" weight="black">
         {answer.leftLabel} → {answer.rightLabel}
-       </p>
+       </StudyInstructionText>
 
        {(answer.leftText || answer.rightText) && (
-        <p className="font-semibold leading-relaxed text-text-secondary">
+        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
          {answer.leftText}
          {answer.leftText && answer.rightText && " → "}
          {answer.rightText}
-        </p>
+        </StudyInstructionText>
        )}
 
        {answer.explanation && (
-        <p className="text-xs font-semibold text-text-muted">{answer.explanation}</p>
+        <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+         {answer.explanation}
+        </StudyInstructionText>
        )}
       </div>
      );

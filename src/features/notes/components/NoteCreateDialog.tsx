@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { useSelector } from "@tanstack/react-store";
@@ -98,7 +99,7 @@ export function NoteCreateDialog({
      tags: parseTags(value.tags),
      category: value.category,
      content: emptyDocument,
-     readingContent: mode === "reading" ? emptyDocument : undefined,
+     readingContent: mode === CreateModeSchema.enum.reading ? emptyDocument : undefined,
      splitViewEnabled: mode === "reading",
      folderId: value.folderId === "unfiled" ? null : value.folderId,
      readingStatus: mode === "reading" ? value.readingStatus : null,
@@ -141,16 +142,18 @@ export function NoteCreateDialog({
       <NotebookPen />
       <span>
        <strong className="block">Ghi chú thường</strong>
-       <span className="text-xs font-medium text-text-muted">Ý tưởng và ghi chú tự do.</span>
+       <Typography variant="caption" tone="muted" weight="medium">
+        Ý tưởng và ghi chú tự do.
+       </Typography>
       </span>
      </DropdownMenuItem>
      <DropdownMenuItem onSelect={() => openMode("reading")}>
       <BookOpenText />
       <span>
        <strong className="block">Bài đọc</strong>
-       <span className="text-xs font-medium text-text-muted">
+       <Typography variant="caption" tone="muted" weight="medium">
         Tạo ghi chú đọc và thêm nội dung sau.
-       </span>
+       </Typography>
       </span>
      </DropdownMenuItem>
     </DropdownMenuContent>

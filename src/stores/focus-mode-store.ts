@@ -9,7 +9,6 @@ import {
 } from "@/lib/versioned-storage";
 
 const STORAGE_KEY = "hanzihome-focus-mode";
-const FocusNoteIdSchema = z.string().nullable();
 
 type FocusModeState = {
  enabled: boolean;
@@ -59,7 +58,7 @@ export const focusModeStore = createStore<
  }),
 );
 
-export function getNoteIdFromNotesPath(pathname: string): z.infer<typeof FocusNoteIdSchema> {
+export function getNoteIdFromNotesPath(pathname: string): z.infer<z.ZodNullable<z.ZodString>> {
  const match = pathname.match(/^\/notes\/([^/?#]+)/);
  return match?.[1] ? decodeURIComponent(match[1]) : null;
 }

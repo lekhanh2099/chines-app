@@ -19,19 +19,6 @@ const splitPaneSizeKey = "hanzihome:module-split-size:v1";
 export const developerToolsEnabled = process.env.NODE_ENV === "development";
 export const contentEditingEnabled = true;
 
-export const studyModules = [
- "overview",
- "lessonText",
- "listening",
- "dictation",
- "script",
- "notes",
- "vocab",
- "grammar",
- "review",
- "practice",
-] satisfies readonly StudyModule[];
-
 const splitStudyModules = [
  "overview",
  "lessonText",
@@ -61,7 +48,7 @@ const paneLayoutInputSchema = z.object({
 
 export function parseStudyModule(
  value: Parameters<typeof NullableStudyModuleSchema.safeParse>[0],
-): z.infer<typeof NullableStudyModuleSchema> {
+): z.infer<z.ZodNullable<typeof StudyModuleSchema>> {
  const parsed = NullableStudyModuleSchema.safeParse(value);
  return parsed.success ? parsed.data : null;
 }

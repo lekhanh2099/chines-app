@@ -21,7 +21,7 @@ export function PanelToggleButton({
  onOpenChange,
  label,
  className,
- size = "sm",
+ size = PanelToggleSizeSchema.enum.sm,
 }: PanelToggleButtonProps) {
  const nextOpen = !open;
  const actionLabel = `${nextOpen ? "Mở" : "Thu gọn"} ${label.toLowerCase()}`;
@@ -32,7 +32,7 @@ export function PanelToggleButton({
    type="button"
    variant="surfaceCard"
    size={size === "sm" ? "icon-xs" : "icon-sm"}
-   className={cn("shrink-0 border-border-default shadow-theme-sm", className)}
+   className={cn("shrink-0", className)}
    aria-label={actionLabel}
    title={actionLabel}
    onClick={() => onOpenChange(nextOpen)}

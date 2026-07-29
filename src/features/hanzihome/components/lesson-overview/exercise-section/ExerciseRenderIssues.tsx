@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
@@ -44,12 +45,14 @@ export function ExerciseRenderIssues({
 
  return (
   <div className="grid gap-2 rounded-xl border border-danger/35 bg-danger-subtle p-3 text-sm">
-   <p className="font-black text-danger">Không thể render đầy đủ bài tập</p>
-   <p className="font-semibold text-text-secondary">
+   <StudyInstructionText tone="dangerStrong" weight="black">
+    Không thể render đầy đủ bài tập
+   </StudyInstructionText>
+   <StudyInstructionText tone="secondary" weight="semibold">
     type: {item.type}
     {variant && ` · variant: ${variant}`}
     {renderer && ` · renderer: ${renderer}`}
-   </p>
+   </StudyInstructionText>
    <ul className="grid list-disc gap-1 pl-5 font-semibold text-danger">
     {issues.map((issue) => (
      <li key={issue}>{issue}</li>

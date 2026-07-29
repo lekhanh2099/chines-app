@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { Comparison } from "@/features/hanzihome/schemas/vocab.types";
 import { ComparisonGroup } from "./ComparisonGroup";
 import { VocabReadingSection } from "./VocabReadingSection";
@@ -39,7 +40,7 @@ export function ComparisonSection({ comparison }: { comparison: Comparison }) {
      />
     )}
     {comparison.usage_rules.map((rule) => (
-     <p key={rule}>{rule}</p>
+     <StudyInstructionText key={rule}>{rule}</StudyInstructionText>
     ))}
    </div>
   </VocabReadingSection>

@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { BookCopy, BookOpenCheck, Headphones, LibraryBig, Shapes } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -45,21 +47,41 @@ export function CourseCollectionSection({
   <Card variant="glass" padding="none" className="grid gap-3 rounded-2xl p-3 sm:p-4">
    <header className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">
     <div className="flex min-w-0 items-center gap-3">
-     <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
+     <StudyInstructionText
+      as="span"
+      tone="accent"
+      className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle"
+     >
       <GroupIcon className="size-5" />
-     </span>
+     </StudyInstructionText>
      <div className="min-w-0">
-      <p className="text-xs font-black uppercase tracking-wide text-accent-text">Bộ giáo trình</p>
+      <StudyInstructionText
+       variant="overline"
+       tone="accent"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       Bộ giáo trình
+      </StudyInstructionText>
       <div className="flex flex-wrap items-center gap-2">
-       <h3 id={`${group.key}-collection-heading`} className="text-lg font-black text-text-primary">
+       <Typography
+        as="h3"
+        variant="cardTitle"
+        id={`${group.key}-collection-heading`}
+        tone="default"
+        weight="black"
+       >
         {group.title}
-       </h3>
+       </Typography>
        {group.isDraft ? <Badge variant="warning">Dữ liệu nháp</Badge> : null}
        {group.key === "boyaSecondEdition" ? (
         <Badge variant="warning">Thiếu Cao cấp III</Badge>
        ) : null}
       </div>
-      <p className="text-sm font-medium text-text-muted">{group.description}</p>
+      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+       {group.description}
+      </StudyInstructionText>
      </div>
     </div>
     <div className="flex shrink-0 flex-wrap items-center gap-2">
@@ -84,21 +106,38 @@ export function CourseCollectionSection({
        >
         <header className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
          <div className="flex min-w-0 items-center gap-2.5">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-bg-primary text-accent-text shadow-theme-sm">
+          <StudyInstructionText
+           as="span"
+           tone="accent"
+           className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-bg-primary shadow-theme-sm"
+          >
            <BookOpenCheck className="size-4" />
-          </span>
+          </StudyInstructionText>
           <div className="min-w-0">
            <div className="flex flex-wrap items-center gap-2">
             <Badge variant="purple" size="sm">
              Cấp {courseIndex + 1}/{group.courses.length}
             </Badge>
-            <h4 id={`${course.id}-heading`} className="text-base font-black text-text-primary">
+            <Typography
+             as="h4"
+             variant="cardTitle"
+             id={`${course.id}-heading`}
+             tone="default"
+             weight="black"
+            >
              {course.title}
-            </h4>
+            </Typography>
             {editMode ? <CourseCrudActions course={course} /> : null}
            </div>
            {course.subtitle ? (
-            <p className="mt-0.5 text-xs font-semibold text-text-muted">{course.subtitle}</p>
+            <StudyInstructionText
+             variant="caption"
+             tone="muted"
+             weight="semibold"
+             className="mt-0.5"
+            >
+             {course.subtitle}
+            </StudyInstructionText>
            ) : null}
           </div>
          </div>
@@ -106,7 +145,9 @@ export function CourseCollectionSection({
           <Badge variant="default" size="sm">
            {courseBooks.length} quyển
           </Badge>
-          <span className="text-xs font-bold text-text-muted">{course.stats.lessonCount} bài</span>
+          <StudyInstructionText variant="caption" tone="muted" weight="bold">
+           {course.stats.lessonCount} bài
+          </StudyInstructionText>
          </div>
         </header>
 
@@ -125,9 +166,14 @@ export function CourseCollectionSection({
           ))}
          </div>
         ) : (
-         <p className="rounded-xl border border-dashed border-border-default bg-bg-primary px-3 py-2 text-sm font-semibold text-text-muted">
+         <StudyInstructionText
+          variant="bodySmall"
+          tone="muted"
+          weight="semibold"
+          className="rounded-xl border border-dashed border-border-default bg-bg-primary px-3 py-2"
+         >
           Cấp độ này chưa có quyển học.
-         </p>
+         </StudyInstructionText>
         )}
        </section>
       ),
@@ -135,7 +181,9 @@ export function CourseCollectionSection({
     </div>
    ) : (
     <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-3">
-     <p className="text-sm font-semibold text-text-muted">Bộ giáo trình này chưa có quyển học.</p>
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold">
+      Bộ giáo trình này chưa có quyển học.
+     </StudyInstructionText>
     </div>
    )}
   </Card>

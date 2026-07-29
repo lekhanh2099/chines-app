@@ -46,15 +46,12 @@ export function HanziHomeStudyTabs<T extends string>({
        key={item.key}
        type="button"
        variant={selected ? "active" : "ghost"}
-       size={compact ? "sm" : "default"}
+       size={compact ? "toolbar" : "tab"}
        role="tab"
        aria-selected={selected}
        disabled={item.disabled}
        onClick={() => onChange(item.key)}
-       className={cn(
-        "h-9 min-h-9 shrink-0 gap-1.5 rounded-lg px-2 font-bold sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
-        compact && "px-2 text-xs",
-       )}
+       className="shrink-0"
       >
        {Icon ? <Icon data-icon="inline-start" /> : null}
        <span className="sm:hidden">{item.shortLabel ?? item.label}</span>

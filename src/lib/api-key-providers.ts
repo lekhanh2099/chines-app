@@ -46,18 +46,11 @@ export const API_KEY_PROVIDER_OPTIONS: {
   runtimeSupported: true,
  },
 ];
-const OptionalNullableProviderSchema = z.string().nullable().optional();
 
 export function getApiKeyProviderLabel(
- provider?: z.infer<typeof OptionalNullableProviderSchema>,
+ provider?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
 ): string {
  return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.label || "Unknown";
-}
-
-export function isSupportedApiKeyProvider(
- provider?: z.infer<typeof OptionalNullableProviderSchema>,
-): provider is ApiKeyProvider {
- return ApiKeyProviderSchema.safeParse(provider).success;
 }
 
 export function getApiKeyProviderDocsUrl(provider: ApiKeyProvider): string {

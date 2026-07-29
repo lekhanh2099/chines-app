@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
 import { ExercisePill } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
@@ -16,7 +17,15 @@ export function SupplementaryPills({
 
  return (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Từ bổ sung</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Từ bổ sung
+   </StudyInstructionText>
    <div className="flex flex-wrap gap-2">
     {values.map((wordValue, index) => {
      const word = asRecord(wordValue);

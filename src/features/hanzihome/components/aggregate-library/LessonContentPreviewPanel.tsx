@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
 import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import Link from "next/link";
@@ -210,25 +212,37 @@ function LessonContentModuleSelector({
   <section className="grid gap-3">
    <div className="flex flex-wrap items-start justify-between gap-2">
     <div className="grid gap-1">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
       Bước 2 · Nội dung hiển thị
-     </p>
-     <h2 className="text-base font-black text-text-primary">Chọn phần muốn xem trong bài</h2>
-     <p className="text-sm font-semibold text-text-muted">
+     </StudyInstructionText>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+      Chọn phần muốn xem trong bài
+     </Typography>
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold">
       Bật/tắt từng phần hoặc dùng preset nhanh. Phần preview bên dưới sẽ đổi theo bài đã chọn.
-     </p>
+     </StudyInstructionText>
     </div>
 
     <div className="flex flex-wrap items-center gap-2">
-     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-primary">
+     <StudyInstructionText
+      variant="caption"
+      tone="primary"
+      weight="black"
+      className="rounded-full bg-bg-subtle px-3 py-1"
+     >
       {selectedModules.length} phần
-     </span>
+     </StudyInstructionText>
      <Button
       type="button"
       variant="surface"
       onClick={() => onApplyPreset([])}
       disabled={!hasSelection}
-      className="rounded-full px-3 py-1 text-xs font-black"
      >
       Bỏ chọn
      </Button>
@@ -247,7 +261,6 @@ function LessonContentModuleSelector({
        onClick={() => onToggleModule(module.value)}
        aria-pressed={isSelected}
        title={module.description}
-       className="rounded-full px-3 py-1.5 text-sm font-black"
       >
        {module.label}
       </Button>
@@ -256,26 +269,38 @@ function LessonContentModuleSelector({
    </div>
 
    <div className="flex flex-wrap items-center gap-1.5">
-    <span className="text-xs font-black uppercase tracking-wide text-text-muted">Preset</span>
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="wide"
+     transform="uppercase"
+    >
+     Preset
+    </StudyInstructionText>
     {LESSON_CONTENT_PRESETS.map((preset) => (
      <Button
       key={preset.label}
       type="button"
       variant="surfaceCard"
       onClick={() => onApplyPreset(preset.modules)}
-      className="rounded-full px-3 py-1 text-xs font-black"
      >
       {preset.label}
      </Button>
     ))}
    </div>
 
-   <p className="rounded-xl bg-bg-subtle px-3 py-2 text-sm font-black text-text-primary">
+   <StudyInstructionText
+    variant="label"
+    tone="default"
+    weight="black"
+    className="rounded-xl bg-bg-subtle px-3 py-2"
+   >
     Đang xem:{" "}
-    <span className="text-primary">
+    <StudyInstructionText as="span" tone="primary">
      {selectedModuleLabels.length > 0 ? selectedModuleLabels.join(" + ") : "Chưa chọn nội dung"}
-    </span>
-   </p>
+    </StudyInstructionText>
+   </StudyInstructionText>
   </section>
  );
 }
@@ -291,17 +316,27 @@ function SelectedLessonContentPreview({
 }) {
  if (selectedLessonCount === 0) {
   return (
-   <p className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-bold text-text-muted">
+   <StudyInstructionText
+    variant="label"
+    tone="muted"
+    weight="bold"
+    className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4"
+   >
     Chọn một hoặc nhiều bài ở trên để xem nội dung theo phần.
-   </p>
+   </StudyInstructionText>
   );
  }
 
  if (selectedModules.length === 0) {
   return (
-   <p className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-bold text-text-muted">
+   <StudyInstructionText
+    variant="label"
+    tone="muted"
+    weight="bold"
+    className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4"
+   >
     Chọn ít nhất một phần nội dung để hiển thị.
-   </p>
+   </StudyInstructionText>
   );
  }
 
@@ -339,14 +374,16 @@ function SelectedLessonContentPreview({
      >
       <div className="flex flex-wrap items-center justify-between gap-2">
        <div>
-        <h3 className="text-base font-black text-text-primary">
+        <Typography as="h3" variant="cardTitle" tone="default" weight="black">
          Bài {lesson.lessonNumber}: {lesson.titleZh}
-        </h3>
-        <p className="text-sm font-bold text-text-muted">{lesson.title}</p>
+        </Typography>
+        <StudyInstructionText variant="label" tone="muted" weight="bold">
+         {lesson.title}
+        </StudyInstructionText>
        </div>
 
        {lesson.courseId && (
-        <Button asChild variant="surface" className="rounded-xl px-3 py-1.5 text-xs font-black">
+        <Button asChild variant="surface">
          <Link
           href={buildHanziHomeLessonHref({
            courseId: lesson.courseId,
@@ -389,9 +426,15 @@ function LessonModulePreview({
   <section className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
    <div className="flex items-center justify-between gap-3">
     <span>{moduleMeta?.label ?? module}</span>
-    <span className="rounded-full bg-bg-subtle px-2 py-1 text-[11px] font-black text-text-muted">
+    <StudyInstructionText
+     variant="caption"
+     tone="muted"
+     weight="black"
+     scale="micro"
+     className="rounded-full bg-bg-subtle px-2 py-1"
+    >
      {itemCount} mục
-    </span>
+    </StudyInstructionText>
    </div>
 
    <CompactModuleContent lesson={lesson} module={module} sections={sections} />
@@ -484,20 +527,38 @@ function CompactLessonText({ sections }: { sections: LessonSectionMatch[] }) {
    {lines.slice(0, 2).map((line) => (
     <div key={line.id} className="rounded-xl bg-bg-subtle px-3 py-2">
      {line.speaker && (
-      <span className="mr-2 rounded-full bg-bg-card px-2 py-0.5 text-[11px] font-black text-text-muted">
+      <StudyInstructionText
+       variant="caption"
+       tone="muted"
+       weight="black"
+       scale="micro"
+       className="mr-2 rounded-full bg-bg-card px-2 py-0.5"
+      >
        {line.speaker}
-      </span>
+      </StudyInstructionText>
      )}
      {line.zh && (
-      <p lang="zh-CN" className="line-clamp-2 text-base font-black text-text-primary">
+      <StudyInstructionText
+       lang="zh-CN"
+       variant="cardTitle"
+       tone="default"
+       weight="black"
+       clamp="two"
+      >
        {line.zh}
-      </p>
+      </StudyInstructionText>
      )}
-     {line.vi && <p className="line-clamp-2 text-sm font-bold text-text-muted">{line.vi}</p>}
+     {line.vi && (
+      <StudyInstructionText variant="label" tone="muted" weight="bold" clamp="two">
+       {line.vi}
+      </StudyInstructionText>
+     )}
     </div>
    ))}
    {lines.length > 2 && (
-    <p className="text-xs font-black text-text-muted">+{lines.length - 2} dòng nữa trong bài.</p>
+    <StudyInstructionText variant="caption" tone="muted" weight="black">
+     +{lines.length - 2} dòng nữa trong bài.
+    </StudyInstructionText>
    )}
   </div>
  );
@@ -529,19 +590,27 @@ function CompactVocabulary({
        className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2"
       >
        <div className="flex flex-wrap items-baseline gap-2">
-        <span lang="zh-CN" className="text-lg font-black text-text-primary">
+        <StudyInstructionText lang="zh-CN" variant="sectionTitle" tone="default" weight="black">
          {hanzi || "—"}
-        </span>
-        {pinyin && <span className="text-xs font-black text-primary">{pinyin}</span>}
+        </StudyInstructionText>
+        {pinyin && (
+         <StudyInstructionText variant="caption" tone="primary" weight="black">
+          {pinyin}
+         </StudyInstructionText>
+        )}
        </div>
-       {meaning && <p className="line-clamp-2 text-xs font-bold text-text-muted">{meaning}</p>}
+       {meaning && (
+        <StudyInstructionText variant="caption" tone="muted" weight="bold" clamp="two">
+         {meaning}
+        </StudyInstructionText>
+       )}
       </div>
      );
     })}
     {sourceItems.length > 12 && (
-     <p className="col-span-full text-xs font-black text-text-muted">
+     <StudyInstructionText variant="caption" tone="muted" weight="black" className="col-span-full">
       +{sourceItems.length - 12} từ nữa.
-     </p>
+     </StudyInstructionText>
     )}
    </div>
   );
@@ -557,20 +626,22 @@ function CompactVocabulary({
      className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2"
     >
      <div className="flex flex-wrap items-baseline gap-2">
-      <span lang="zh-CN" className="text-lg font-black text-text-primary">
+      <StudyInstructionText lang="zh-CN" variant="sectionTitle" tone="default" weight="black">
        {word.hanzi}
-      </span>
-      <span className="text-xs font-black text-primary">{word.pinyin}</span>
+      </StudyInstructionText>
+      <StudyInstructionText variant="caption" tone="primary" weight="black">
+       {word.pinyin}
+      </StudyInstructionText>
      </div>
-     <p className="line-clamp-2 text-xs font-bold text-text-muted">
+     <StudyInstructionText variant="caption" tone="muted" weight="bold" clamp="two">
       {getVocabDisplayMeaning(word)}
-     </p>
+     </StudyInstructionText>
     </div>
    ))}
    {lesson.vocab.length > 12 && (
-    <p className="col-span-full text-xs font-black text-text-muted">
+    <StudyInstructionText variant="caption" tone="muted" weight="black" className="col-span-full">
      +{lesson.vocab.length - 12} từ nữa.
-    </p>
+    </StudyInstructionText>
    )}
   </div>
  );
@@ -595,16 +666,20 @@ function CompactGrammar({
       key={stringValue(item, "id") || `${index}`}
       className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2"
      >
-      <h4 className="font-black text-text-primary">{itemTitle(item) || "Điểm ngữ pháp"}</h4>
+      <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+       {itemTitle(item) || "Điểm ngữ pháp"}
+      </Typography>
       {instructionText(item.core) && (
-       <p className="line-clamp-2 text-sm font-bold text-text-muted">
+       <StudyInstructionText variant="label" tone="muted" weight="bold" clamp="two">
         {instructionText(item.core)}
-       </p>
+       </StudyInstructionText>
       )}
      </div>
     ))}
     {sourceItems.length > 8 && (
-     <p className="text-xs font-black text-text-muted">+{sourceItems.length - 8} mục nữa.</p>
+     <StudyInstructionText variant="caption" tone="muted" weight="black">
+      +{sourceItems.length - 8} mục nữa.
+     </StudyInstructionText>
     )}
    </div>
   );
@@ -616,12 +691,20 @@ function CompactGrammar({
   <div className="grid gap-1.5">
    {lesson.grammar.slice(0, 8).map((point) => (
     <div key={point.id} className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2">
-     <h4 className="font-black text-text-primary">{point.cleanTitle}</h4>
-     {point.core && <p className="line-clamp-2 text-sm font-bold text-text-muted">{point.core}</p>}
+     <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+      {point.cleanTitle}
+     </Typography>
+     {point.core && (
+      <StudyInstructionText variant="label" tone="muted" weight="bold" clamp="two">
+       {point.core}
+      </StudyInstructionText>
+     )}
     </div>
    ))}
    {lesson.grammar.length > 8 && (
-    <p className="text-xs font-black text-text-muted">+{lesson.grammar.length - 8} mục nữa.</p>
+    <StudyInstructionText variant="caption" tone="muted" weight="black">
+     +{lesson.grammar.length - 8} mục nữa.
+    </StudyInstructionText>
    )}
   </div>
  );
@@ -648,14 +731,18 @@ function CompactGenericItems({
      key={stringValue(item, "id") || `${index}`}
      className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 grid gap-1"
     >
-     <h4 className="font-black text-text-primary">{itemTitle(item) || `Mục ${index + 1}`}</h4>
+     <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+      {itemTitle(item) || `Mục ${index + 1}`}
+     </Typography>
      {instructionText(item.instruction) && (
-      <p className="text-sm font-bold text-text-muted">{instructionText(item.instruction)}</p>
+      <StudyInstructionText variant="label" tone="muted" weight="bold">
+       {instructionText(item.instruction)}
+      </StudyInstructionText>
      )}
      {getQuestionLikeText(item) && (
-      <p className="line-clamp-2 text-sm font-semibold text-text-secondary">
+      <StudyInstructionText variant="bodySmall" tone="secondary" weight="semibold" clamp="two">
        {getQuestionLikeText(item)}
-      </p>
+      </StudyInstructionText>
      )}
     </div>
    ))}
@@ -665,8 +752,13 @@ function CompactGenericItems({
 
 function CompactEmpty({ label }: { label: string }) {
  return (
-  <p className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-2 text-sm font-bold text-text-muted">
+  <StudyInstructionText
+   variant="label"
+   tone="muted"
+   weight="bold"
+   className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-2"
+  >
    {label}
-  </p>
+  </StudyInstructionText>
  );
 }

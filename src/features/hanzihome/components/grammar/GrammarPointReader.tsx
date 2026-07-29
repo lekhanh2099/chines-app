@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,7 +44,9 @@ export function GrammarPointReader({
  if (!point) {
   return (
    <Card padding="lg" className="rounded-xl">
-    <p className="font-semibold text-text-muted">Bài này chưa có điểm ngữ pháp.</p>
+    <StudyInstructionText tone="muted" weight="semibold">
+     Bài này chưa có điểm ngữ pháp.
+    </StudyInstructionText>
    </Card>
   );
  }
@@ -62,7 +66,9 @@ export function GrammarPointReader({
       <Badge variant="info" className="w-fit">
        {status}
       </Badge>
-      <h2 className="text-2xl font-black tracking-normal text-text-primary">{point.cleanTitle}</h2>
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black" tracking="normal">
+       {point.cleanTitle}
+      </Typography>
      </div>
      <div className="flex flex-wrap gap-2">
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
@@ -85,7 +91,9 @@ export function GrammarPointReader({
 
     {relatedVocab.length > 0 && (
      <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Từ vựng liên quan trong bài</h3>
+      <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+       Từ vựng liên quan trong bài
+      </Typography>
       <div className="flex flex-wrap gap-2">
        {relatedVocab.map((word) => (
         <Badge key={getVocabItemKey(word)} variant="accent" size="lg">

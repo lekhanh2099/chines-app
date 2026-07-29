@@ -1,11 +1,12 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
+import { Typography } from "@/components/ui/typography";
 import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { Popover } from "@base-ui/react";
 import { Editor } from "@/components/editor/Editor";
 import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
@@ -32,6 +33,11 @@ import { noteTabsStore } from "@/stores/note-tabs-store";
 import { splitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
 import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/base-popover";
+import {
  Dialog,
  DialogClose,
  DialogContent,
@@ -57,11 +63,6 @@ interface NoteEditorPanelProps {
  desktopActionsContainer?: ReturnType<Document["getElementById"]>;
 }
 
-const NullableJsonObjectSchema = JsonObjectSchema.nullable();
-const OptionalNullableJsonObjectSchema = NullableJsonObjectSchema.optional();
-const NullableBooleanSchema = z.boolean().nullable();
-const OptionalNullableStringSchema = z.string().nullable().optional();
-const NullableStringSchema = z.string().nullable();
 const SaveStatusSchema = z.enum(["idle", "saving", "saved", "error"]);
 
 function createDownloadFileName(title: string): string {
@@ -134,16 +135,16 @@ export function NoteEditorPanel({
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
  const [importedContent, setImportedContent] =
-  useState<z.infer<typeof NullableJsonObjectSchema>>(null);
+  useState<z.infer<z.ZodNullable<typeof JsonObjectSchema>>>(null);
  const [importedReadingContent, setImportedReadingContent] =
-  useState<z.infer<typeof OptionalNullableJsonObjectSchema>>(undefined);
+  useState<z.infer<z.ZodOptional<z.ZodNullable<typeof JsonObjectSchema>>>>(undefined);
  const isMobileViewport = useSyncExternalStore(
   subscribeToMobileViewport,
   getMobileViewportSnapshot,
   () => false,
  );
  const [readOnlyOverride, setReadOnlyOverride] =
-  useState<z.infer<typeof NullableBooleanSchema>>(null);
+  useState<z.infer<z.ZodNullable<z.ZodBoolean>>>(null);
  const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const [importVersion, setImportVersion] = useState(0);
@@ -325,10 +326,10 @@ export function NoteEditorPanel({
     }
 
     if (hasLibraryMetadata) {
-     let importedFolderId: z.infer<typeof OptionalNullableStringSchema>;
+     let importedFolderId: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
      if (importedPayload.note.folder) {
       const folderSpec = importedPayload.note.folder;
-      let parentId: z.infer<typeof NullableStringSchema> = null;
+      let parentId: z.infer<z.ZodNullable<z.ZodString>> = null;
       if (folderSpec.parentName) {
        const existingParent = noteFoldersQuery.data?.find(
         (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
@@ -391,7 +392,7 @@ export function NoteEditorPanel({
  );
 
  const displaySaveStatus: z.infer<typeof SaveStatusSchema> = isSaving
-  ? "saving"
+  ? SaveStatusSchema.enum.saving
   : saveStatus === "success"
     ? "saved"
     : saveStatus === "error"
@@ -411,11 +412,13 @@ export function NoteEditorPanel({
     <NoteEditorSkeleton />
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
-     <p className="text-text-muted">Không tìm thấy ghi chú.</p>
+     <Typography as="p" tone="muted">
+      Không tìm thấy ghi chú.
+     </Typography>
     </div>
    ) : (
     <>
-     <input
+     <Input
       ref={importInputRef}
       type="file"
       accept="application/json,.json"
@@ -432,28 +435,42 @@ export function NoteEditorPanel({
           <SaveStatusBadge status={displaySaveStatus} />
 
           <Popover.Root open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} modal={false}>
-           <Popover.Trigger className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border-default bg-bg-card text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 xl:hidden">
+           <Popover.Trigger
+            render={
+             <Button
+              variant="outline"
+              size="icon-round"
+              className="shrink-0 xl:hidden"
+              aria-label="Tùy chọn ghi chú"
+             />
+            }
+           >
             <SlidersHorizontal className="size-4" />
             <span className="sr-only">Tùy chọn ghi chú</span>
            </Popover.Trigger>
            <Popover.Portal>
-            <Popover.Positioner
+            <BasePopoverPositioner
              side="bottom"
              align="end"
              sideOffset={8}
              collisionPadding={8}
              positionMethod="fixed"
-             style={{ zIndex: 90 }}
             >
-             <Popover.Popup
-              initialFocus={false}
-              finalFocus={false}
-              className="w-[min(19rem,calc(100vw-1rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg"
-             >
-              <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">Chế độ</p>
+             <BasePopoverPopup initialFocus={false} finalFocus={false} variant="mobileActions">
+              <Typography
+               as="p"
+               variant="overline"
+               tone="muted"
+               weight="black"
+               transform="uppercase"
+               className="px-2.5 py-1.5"
+              >
+               Chế độ
+              </Typography>
               <Button
                variant={!isReadOnlyMode ? "active" : "ghost"}
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                onClick={() => {
                 setReadOnlyOverride(!isReadOnlyMode);
                 setMobileActionsOpen(false);
@@ -464,7 +481,8 @@ export function NoteEditorPanel({
               </Button>
               <Button
                variant={isSplitView ? "active" : "ghost"}
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                onClick={() => {
                 handleToggleSplitView();
                 setMobileActionsOpen(false);
@@ -476,7 +494,8 @@ export function NoteEditorPanel({
               {!isReadOnlyMode ? (
                <Button
                 variant={isToolbarVisible ? "active" : "ghost"}
-                className="w-full justify-start px-2.5 text-sm"
+                align="start"
+                className="w-full"
                 onClick={() => {
                  setIsToolbarVisible((current) => !current);
                  setMobileActionsOpen(false);
@@ -488,11 +507,21 @@ export function NoteEditorPanel({
               ) : null}
 
               <div className="my-1 h-px bg-border-default" />
-              <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">Ghi chú</p>
+              <Typography
+               as="p"
+               variant="overline"
+               tone="muted"
+               weight="black"
+               transform="uppercase"
+               className="px-2.5 py-1.5"
+              >
+               Ghi chú
+              </Typography>
               <NoteLibraryMetadataDialog note={note} compact />
               <Button
                variant="ghost"
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                onClick={() => {
                 setMobileActionsOpen(false);
                 requestAnimationFrame(() => importInputRef.current?.click());
@@ -502,7 +531,8 @@ export function NoteEditorPanel({
               </Button>
               <Button
                variant="ghost"
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                onClick={() => {
                 handleExport();
                 setMobileActionsOpen(false);
@@ -512,7 +542,8 @@ export function NoteEditorPanel({
               </Button>
               <Button
                variant="ghost"
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                disabled={focusModeEnabled}
                onClick={() => {
                 setMobileActionsOpen(false);
@@ -523,7 +554,8 @@ export function NoteEditorPanel({
               </Button>
               <Button
                variant="ghost"
-               className="w-full justify-start px-2.5 text-sm"
+               align="start"
+               className="w-full"
                disabled={focusModeEnabled}
                onClick={() => {
                 closeTab(noteId);
@@ -534,7 +566,8 @@ export function NoteEditorPanel({
               </Button>
               <Button
                variant="ghost"
-               className="w-full justify-start px-2.5 text-sm text-danger-text hover:bg-danger-subtle"
+               align="start"
+               className="w-full"
                onClick={() => {
                 setMobileActionsOpen(false);
                 requestAnimationFrame(() => setShowDeleteConfirm(true));
@@ -542,8 +575,8 @@ export function NoteEditorPanel({
               >
                <Trash2 /> Xóa ghi chú
               </Button>
-             </Popover.Popup>
-            </Popover.Positioner>
+             </BasePopoverPopup>
+            </BasePopoverPositioner>
            </Popover.Portal>
           </Popover.Root>
          </div>,
@@ -597,7 +630,7 @@ export function NoteEditorPanel({
            onClick={() => importInputRef.current?.click()}
            title="Import ghi chú"
            aria-label="Import ghi chú"
-           className="hidden shrink-0 rounded-full xl:inline-flex"
+           className="hidden shrink-0 xl:inline-flex"
           >
            <Upload />
           </Button>
@@ -608,7 +641,7 @@ export function NoteEditorPanel({
            onClick={handleExport}
            title="Export ghi chú"
            aria-label="Export ghi chú"
-           className="hidden shrink-0 rounded-full xl:inline-flex"
+           className="hidden shrink-0 xl:inline-flex"
           >
            <Download />
           </Button>
@@ -619,7 +652,7 @@ export function NoteEditorPanel({
            size="icon-sm"
            title="Xóa ghi chú"
            aria-label="Xóa ghi chú"
-           className="shrink-0 rounded-full text-danger-text"
+           className="shrink-0"
            onClick={() => setShowDeleteConfirm(true)}
           >
            <Trash2 />

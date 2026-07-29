@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
@@ -50,9 +51,16 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
    <div className="flex flex-col gap-4">
     <div className="min-w-0 flex-1">
      <div className="flex flex-wrap items-center gap-3">
-      <h1 className="text-4xl font-black tracking-tight text-text-primary sm:text-5xl">
+      <Typography
+       as="h1"
+       variant="pageTitle"
+       tone="default"
+       weight="black"
+       scale="hero"
+       tracking="tight"
+      >
        {viewModel.vocabData.hanzi}
-      </h1>
+      </Typography>
       <IconButton
        onClick={handleSpeak}
        disabled={isTTSLoading}
@@ -75,7 +83,9 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      <div className="flex flex-wrap items-center gap-2.5">
       [
       {viewModel.vocabData.pinyin && (
-       <p className="text-lg font-semibold  sm:text-xl">{viewModel.vocabData.pinyin}</p>
+       <Typography as="p" variant="sectionTitle" weight="semibold">
+        {viewModel.vocabData.pinyin}
+       </Typography>
       )}
       {viewModel.ai?.hsk_level && (
        <Badge size="sm" variant="info">
@@ -95,11 +105,19 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {radicals.map((radical, index) => (
          <div key={`${radical.char || radical.meaning || "radical"}-${index}`}>
           <div className="flex items-start gap-1">
-           <span className="shrink-0 text-2xl font-black text-text-primary">{radical.char}</span>
+           <Typography variant="pageTitle" tone="default" weight="black" className="shrink-0">
+            {radical.char}
+           </Typography>
            <div className="min-w-0 flex gap-1">
-            {radical.pinyin && <p className="text-xs font-semibold ">{radical.pinyin}</p>}
+            {radical.pinyin && (
+             <Typography as="p" variant="caption" weight="semibold">
+              {radical.pinyin}
+             </Typography>
+            )}
             {radical.meaning && (
-             <p className=" leading-relaxed text-text-primary">{radical.meaning}</p>
+             <Typography as="p" tone="default" leading="relaxed">
+              {radical.meaning}
+             </Typography>
             )}
            </div>
           </div>
@@ -110,15 +128,23 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      </div>
 
      {viewModel.meaningSummary && (
-      <p className="max-w-3xl leading-relaxed text-text-secondary sm:text-base">
+      <Typography as="p" tone="secondary" leading="relaxed" className="max-w-3xl">
        [{viewModel.meaningSummary}]
-      </p>
+      </Typography>
      )}
      {viewModel.ai?.source_metadata && (
-      <p className="mt-3 text-xs font-bold uppercase tracking-wide text-text-muted">
+      <Typography
+       as="p"
+       variant="overline"
+       tone="muted"
+       weight="bold"
+       tracking="wide"
+       transform="uppercase"
+       className="mt-3"
+      >
        {viewModel.ai.source_metadata.lesson_title || viewModel.ai.source_metadata.lesson_key}
        {viewModel.ai.source_metadata.category ? ` · ${viewModel.ai.source_metadata.category}` : ""}
-      </p>
+      </Typography>
      )}
     </div>
 
@@ -160,24 +186,31 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
      <div className="space-y-2">
       {hanViet && (
-       <p className=" leading-relaxed text-text-secondary">
-        <span className="font-bold text-text-primary">Âm Hán Việt:</span> {hanViet}
-       </p>
+       <Typography as="p" tone="secondary" leading="relaxed">
+        <Typography as="span" tone="default" weight="bold">
+         Âm Hán Việt:
+        </Typography>{" "}
+        {hanViet}
+       </Typography>
       )}
       {ai.han_viet_note && (
-       <p className=" leading-relaxed text-text-secondary">{ai.han_viet_note}</p>
+       <Typography as="p" tone="secondary" leading="relaxed">
+        {ai.han_viet_note}
+       </Typography>
       )}
-      <p className=" leading-relaxed text-text-secondary">
-       <span className="font-bold text-text-primary">Nghĩa:</span>{" "}
+      <Typography as="p" tone="secondary" leading="relaxed">
+       <Typography as="span" tone="default" weight="bold">
+        Nghĩa:
+       </Typography>{" "}
        {meaningDetail || "Chưa có nghĩa chi tiết."}
-      </p>
+      </Typography>
      </div>
     </DocSection>
 
     <DocSection index={2} title="Chiết tự">
-     <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+     <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
       {ai.decomposition || "Chưa có chiết tự."}
-     </p>
+     </Typography>
     </DocSection>
 
     <DocSection index={3} title="So sánh từ gần nghĩa">
@@ -214,15 +247,15 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     </DocSection>
 
     <DocSection index={6} title="Trung Việt / văn hóa">
-     <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+     <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
       {ai.cultural_note || "Chưa có ghi chú văn hóa."}
-     </p>
+     </Typography>
     </DocSection>
 
     <DocSection index={7} title="Lưu ý">
-     <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+     <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
       {ai.usage_note || "Chưa có lưu ý riêng."}
-     </p>
+     </Typography>
     </DocSection>
    </div>
   </SectionWrapper>
@@ -245,7 +278,16 @@ function DocSection({
      <Badge variant="accent" size="sm">
       {index}
      </Badge>
-     <p className=" font-black uppercase tracking-wide text-text-primary">{title}</p>
+     <Typography
+      as="p"
+      variant="overline"
+      tone="default"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      {title}
+     </Typography>
     </div>
     {children}
    </div>
@@ -254,7 +296,11 @@ function DocSection({
 }
 
 function EmptyDocText() {
- return <p className=" text-text-muted">Chưa có dữ liệu cho phần này.</p>;
+ return (
+  <Typography as="p" tone="muted">
+   Chưa có dữ liệu cho phần này.
+  </Typography>
+ );
 }
 
 function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
@@ -291,9 +337,9 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
            {meaning.pos && <Badge size="sm">{meaning.pos}</Badge>}
           </div>
 
-          <p className=" font-semibold leading-relaxed text-text-primary sm:text-base">
+          <Typography as="p" tone="default" weight="semibold" leading="relaxed">
            {meaning.meaning}
-          </p>
+          </Typography>
 
           {meaning.examples.length > 0 && (
            <div className="flex flex-col gap-2 border-l-2 border-accent/20 pl-3">
@@ -311,7 +357,9 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
       </div>
      ) : (
       <Card variant="subtle" padding="sm">
-       <p className=" text-text-muted">Chưa có dữ liệu nghĩa để hiển thị.</p>
+       <Typography as="p" tone="muted">
+        Chưa có dữ liệu nghĩa để hiển thị.
+       </Typography>
       </Card>
      )}
 
@@ -374,7 +422,9 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
     </div>
    ) : (
     <Card variant="subtle" padding="sm">
-     <p className=" text-text-muted">Chưa có dữ liệu từ liên quan.</p>
+     <Typography as="p" tone="muted">
+      Chưa có dữ liệu từ liên quan.
+     </Typography>
     </Card>
    )}
   </SectionWrapper>
@@ -398,9 +448,9 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Chiết tự" trailing={<Layers3 className="h-4 w-4 " />} />
-       <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
         {viewModel.ai.decomposition}
-       </p>
+       </Typography>
       </div>
      </Card>
     )}
@@ -436,9 +486,9 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Trung Việt" trailing={<Globe2 className="h-4 w-4 " />} />
-       <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
         {viewModel.ai.cultural_note}
-       </p>
+       </Typography>
       </div>
      </Card>
     )}
@@ -447,9 +497,9 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
      <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Lưu ý" />
-       <p className="whitespace-pre-line leading-relaxed text-text-secondary">
+       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
         {viewModel.ai.usage_note}
-       </p>
+       </Typography>
       </div>
      </Card>
     )}
@@ -458,7 +508,9 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
      <Card variant="subtle" padding="sm" className="rounded-2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Ghi chú dùng từ" />
-       <p className=" leading-relaxed text-text-secondary">{viewModel.ai.notes}</p>
+       <Typography as="p" tone="secondary" leading="relaxed">
+        {viewModel.ai.notes}
+       </Typography>
       </div>
      </Card>
     )}
@@ -471,8 +523,12 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
       {viewModel.ai.usage_logic.map((item, index) => (
        <Card key={`${item}-${index}`} variant="default" padding="sm" className="rounded-2xl">
         <div className="flex items-start gap-2">
-         <span className="mt-0.5 text-xs ">●</span>
-         <span className=" leading-relaxed text-text-secondary">{item}</span>
+         <Typography variant="caption" className="mt-0.5">
+          ●
+         </Typography>
+         <Typography as="span" tone="secondary" leading="relaxed">
+          {item}
+         </Typography>
         </div>
        </Card>
       ))}
@@ -512,7 +568,7 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
     value={note}
     onChange={(event) => setNote(event.target.value)}
     placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
-    className="min-h-40 rounded-2xl px-6 py-5"
+    density="comfortable"
    />
   </SectionWrapper>
  );
@@ -521,10 +577,24 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
 function ExampleRow({ example }: { example: ExampleItem }) {
  return (
   <div className="flex flex-col gap-1">
-   <p className=" font-medium text-text-primary">{example.zh}</p>
-   {example.pinyin && <p className="text-xs font-semibold ">{example.pinyin}</p>}
-   {example.vi && <p className="text-xs italic text-text-muted">{example.vi}</p>}
-   {example.note && <p className="text-xs leading-relaxed text-text-secondary">→ {example.note}</p>}
+   <Typography as="p" tone="default" weight="medium">
+    {example.zh}
+   </Typography>
+   {example.pinyin && (
+    <Typography as="p" variant="caption" weight="semibold">
+     {example.pinyin}
+    </Typography>
+   )}
+   {example.vi && (
+    <Typography as="p" variant="caption" tone="muted" emphasis="italic">
+     {example.vi}
+    </Typography>
+   )}
+   {example.note && (
+    <Typography as="p" variant="caption" tone="secondary" leading="relaxed">
+     → {example.note}
+    </Typography>
+   )}
   </div>
  );
 }
@@ -543,7 +613,9 @@ function BulletList({ items }: { items: string[] }) {
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-     <span className=" leading-relaxed text-text-secondary">{item}</span>
+     <Typography as="span" tone="secondary" leading="relaxed">
+      {item}
+     </Typography>
     </div>
    ))}
   </div>
@@ -584,10 +656,18 @@ function WordRelationGrid({
         >
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-           <p className="text-base font-bold text-text-primary">{word}</p>
-           {item.pinyin && <p className="text-xs font-semibold ">{item.pinyin}</p>}
+           <Typography as="p" tone="default" weight="bold">
+            {word}
+           </Typography>
+           {item.pinyin && (
+            <Typography as="p" variant="caption" weight="semibold">
+             {item.pinyin}
+            </Typography>
+           )}
           </div>
-          <p className=" leading-relaxed text-text-secondary">{item.meaning || "Chưa có nghĩa."}</p>
+          <Typography as="p" tone="secondary" leading="relaxed">
+           {item.meaning || "Chưa có nghĩa."}
+          </Typography>
          </div>
         </Card>
        </Link>
@@ -596,7 +676,9 @@ function WordRelationGrid({
     </div>
    ) : (
     <Card variant="subtle" padding="sm">
-     <p className=" text-text-muted">{emptyText}</p>
+     <Typography as="p" tone="muted">
+      {emptyText}
+     </Typography>
     </Card>
    )}
   </div>
@@ -627,8 +709,12 @@ function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; load
   <Card variant="subtle" padding="sm">
    <div className="flex flex-col items-center gap-4 text-center">
     <div className="space-y-2">
-     <p className=" font-semibold text-text-primary">Chưa có phân tích chuyên sâu cho mục này.</p>
-     <p className=" text-text-muted">Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.</p>
+     <Typography as="p" tone="default" weight="semibold">
+      Chưa có phân tích chuyên sâu cho mục này.
+     </Typography>
+     <Typography as="p" tone="muted">
+      Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.
+     </Typography>
     </div>
 
     <Button variant="outline" size="sm" onClick={onRequest} disabled={loading}>

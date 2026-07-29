@@ -1,7 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
 import { PassageCard } from "../PassageCard";
 import { TextLineCard } from "../TextLineCard";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import { containsHanziText, ReaderHanziText, StudyInstructionText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 import {
  answerToString,
@@ -59,21 +59,21 @@ export function GenericItemCard({
 
  return (
   <article className="study-content-surface grid gap-2 rounded-xl border p-3">
-   <h4
-    className="font-black leading-tight text-text-primary"
-    lang={containsHanziText(title) ? "zh-CN" : undefined}
-    style={
-     containsHanziText(title) ? getHanziTypographyStyle(displayMode, { size: "md" }) : undefined
-    }
-   >
-    {title}
-   </h4>
+   {containsHanziText(title) ? (
+    <ReaderHanziText as="h4" displayMode={displayMode} size="md" weight="black" leading="tight">
+     {title}
+    </ReaderHanziText>
+   ) : (
+    <StudyInstructionText as="h4" variant="cardTitle">
+     {title}
+    </StudyInstructionText>
+   )}
 
    {hanzi && hanzi !== title && (
     <div className="flex items-center gap-1.5">
-     <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
+     <ReaderHanziText as="p" displayMode={displayMode}>
       {hanzi}
-     </p>
+     </ReaderHanziText>
      <NativeMandarinSpeakButton text={hanzi} />
     </div>
    )}
@@ -83,14 +83,22 @@ export function GenericItemCard({
    )}
 
    {displayMode.showPinyin && pinyin && (
-    <p className=" font-bold italic text-text-muted">{pinyin}</p>
+    <StudyInstructionText tone="muted" weight="bold" emphasis="italic">
+     {pinyin}
+    </StudyInstructionText>
    )}
 
    {displayMode.showMeaning && meaning && (
-    <p className=" font-semibold text-text-secondary">{meaning}</p>
+    <StudyInstructionText tone="secondary" weight="semibold">
+     {meaning}
+    </StudyInstructionText>
    )}
 
-   {functionVi && <p className=" font-semibold text-text-secondary">{functionVi}</p>}
+   {functionVi && (
+    <StudyInstructionText tone="secondary" weight="semibold">
+     {functionVi}
+    </StudyInstructionText>
+   )}
 
    <PassageCard
     itemId={stringValue(item, "id") || title}
@@ -128,7 +136,15 @@ export function GenericItemCard({
 
    {examples.length > 0 && (
     <div className="grid gap-2">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ví dụ</p>
+     <StudyInstructionText
+      variant="overline"
+      tone="muted"
+      weight="black"
+      tracking="wide"
+      transform="uppercase"
+     >
+      Ví dụ
+     </StudyInstructionText>
      {examples.map((exampleValue, index) => {
       const example = asRecord(exampleValue);
       const exampleZh =

@@ -1,5 +1,8 @@
 "use client";
 
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";
@@ -30,41 +33,41 @@ export function FormCheckbox({
 
  return (
   <div className={cn("grid gap-2", className)}>
-   <label
-    htmlFor={inputId}
-    className="flex cursor-pointer items-start gap-3 rounded-2xl -lg border border-border-default bg-bg-primary p-3"
-   >
-    <input
+   <Label htmlFor={inputId} variant="label" surface="fieldCard" className="cursor-pointer">
+    <Checkbox
      id={inputId}
      name={field.name}
-     type="checkbox"
-     checked={Boolean(field.state.value)}
+     checked={field.state.value}
      disabled={disabled}
      aria-invalid={Boolean(error)}
      aria-describedby={getDescribedBy(descriptionId, error ? errorId : undefined)}
-     className="mt-1 size-4 accent-primary disabled:cursor-not-allowed disabled:opacity-50"
+     className="mt-1"
      onBlur={field.handleBlur}
-     onChange={(event) => field.handleChange(event.target.checked)}
+     onCheckedChange={(checked) => field.handleChange(checked === true)}
     />
 
     <span className="grid gap-1">
-     <span className="font-black text-text-primary">
+     <Typography as="span" tone="default" weight="black">
       {label}
-      {required && <span className="ml-1 text-destructive">*</span>}
-     </span>
+      {required && (
+       <Typography as="span" tone="danger" className="ml-1">
+        *
+       </Typography>
+      )}
+     </Typography>
 
      {description && (
-      <span id={descriptionId} className="text-xs font-semibold text-text-muted">
+      <Typography id={descriptionId} variant="caption" tone="muted" weight="semibold">
        {description}
-      </span>
+      </Typography>
      )}
     </span>
-   </label>
+   </Label>
 
    {error && (
-    <p id={errorId} role="alert" className=" font-bold text-destructive">
+    <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
-    </p>
+    </Typography>
    )}
   </div>
  );

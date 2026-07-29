@@ -56,18 +56,19 @@ const aiPromptSettingsStorageConfig = {
  },
 };
 
-const LegacyAiPromptSettingsSchema = z
- .object({
-  wordLookupPrompt: z.string().optional(),
-  sentenceLookupPrompt: z.string().optional(),
-  geminiModel: z.string().optional(),
- })
- .nullable()
- .optional();
+type LegacyAiPromptSettings = z.input<
+ z.ZodOptional<
+  z.ZodNullable<
+   z.ZodObject<{
+    wordLookupPrompt: z.ZodOptional<z.ZodString>;
+    sentenceLookupPrompt: z.ZodOptional<z.ZodString>;
+    geminiModel: z.ZodOptional<z.ZodString>;
+   }>
+  >
+ >
+>;
 
-function normalizeSettings(
- settings: z.input<typeof LegacyAiPromptSettingsSchema>,
-): ClientAiPromptSettings {
+function normalizeSettings(settings: LegacyAiPromptSettings): ClientAiPromptSettings {
  return {
   wordLookupPrompt: getWordLookupPromptTemplate(settings?.wordLookupPrompt),
   sentenceLookupPrompt: getSentenceLookupPromptTemplate(settings?.sentenceLookupPrompt),

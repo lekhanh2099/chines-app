@@ -51,7 +51,5 @@ export const updateMemoryTipPayloadSchema = createMemoryTipPayloadSchema.partial
 });
 
 export type MemoryTip = z.infer<typeof memoryTipSchema>;
-export type MemoryTipType = z.infer<typeof memoryTipTypeSchema>;
-export type MemoryTipSourceType = z.infer<typeof memoryTipSourceTypeSchema>;
 export type CreateMemoryTipPayload = z.input<typeof createMemoryTipPayloadSchema>;
 export type UpdateMemoryTipPayload = z.input<typeof updateMemoryTipPayloadSchema>;

@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
@@ -140,7 +141,9 @@ export function NoteListRow({
 
       <div className="grid min-w-0 gap-1.5">
        <div className="flex min-w-0 flex-wrap items-center gap-2">
-        <span className="truncate font-bold text-text-primary">{context.displayTitle}</span>
+        <Typography tone="default" weight="bold" clamp="one">
+         {context.displayTitle}
+        </Typography>
         {note.reading_status ? (
          <Badge variant="purple" size="sm">
           {readingStatusLabels[note.reading_status]}
@@ -155,22 +158,33 @@ export function NoteListRow({
        <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
         {folderBreadcrumb ? <span>{folderBreadcrumb}</span> : null}
         {folderBreadcrumb && (note.source_label || context.subtitle) ? <span>/</span> : null}
-        <span className="truncate">{note.source_label || context.subtitle}</span>
+        <Typography as="span" clamp="one">
+         {note.source_label || context.subtitle}
+        </Typography>
         {note.source_author ? <span>· {note.source_author}</span> : null}
        </div>
 
        <div className="flex flex-wrap items-center gap-1.5">
         {context.badges.slice(1, 4).map((tag) => (
-         <span
+         <Typography
           key={tag}
-          className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5 text-[0.65rem] font-bold text-text-muted"
+          variant="caption"
+          tone="muted"
+          weight="bold"
+          scale="micro"
+          className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
          >
           {tag}
-         </span>
+         </Typography>
         ))}
-        <span className="flex items-center gap-1 text-xs font-semibold text-text-muted">
+        <Typography
+         variant="caption"
+         tone="muted"
+         weight="semibold"
+         className="flex items-center gap-1"
+        >
          <Clock className="size-3.5" /> {updatedAt}
-        </span>
+        </Typography>
        </div>
       </div>
      </div>

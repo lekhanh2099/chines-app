@@ -63,7 +63,7 @@ export function CreateNormalizedChildDialog({
   pinyin: "",
   vi: "",
   note: "",
-  sectionKey: family === "vocab" ? "notes" : "usage",
+  sectionKey: family === NormalizedChildFamilySchema.enum.vocab ? "notes" : "usage",
   title: "",
   lines: "",
  };

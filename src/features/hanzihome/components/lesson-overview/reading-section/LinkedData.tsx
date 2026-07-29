@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 export function LinkedData({
  exerciseRef,
  linkedReadingId,
@@ -9,10 +10,24 @@ export function LinkedData({
 
  return (
   <div className="exercise-card-surface grid gap-1 rounded-xl border p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Liên kết trong bài</p>
-   {exerciseRef && <p className="font-bold text-text-primary">Bài tập liên quan: {exerciseRef}</p>}
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Liên kết trong bài
+   </StudyInstructionText>
+   {exerciseRef && (
+    <StudyInstructionText tone="default" weight="bold">
+     Bài tập liên quan: {exerciseRef}
+    </StudyInstructionText>
+   )}
    {linkedReadingId && (
-    <p className="font-bold text-text-primary">Bài đọc liên quan: {linkedReadingId}</p>
+    <StudyInstructionText tone="default" weight="bold">
+     Bài đọc liên quan: {linkedReadingId}
+    </StudyInstructionText>
    )}
   </div>
  );

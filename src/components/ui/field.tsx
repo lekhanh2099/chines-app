@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useMemo } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { z } from "zod";
@@ -9,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
 const FieldLegendVariantSchema = z.enum(["legend", "label"]);
-const FieldErrorSchema = z.object({ message: z.string().optional() }).optional();
+type FieldErrorItem = z.infer<z.ZodOptional<z.ZodObject<{ message: z.ZodOptional<z.ZodString> }>>>;
 
 function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
  return (
@@ -26,7 +27,7 @@ function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
 
 function FieldLegend({
  className,
- variant = "legend",
+ variant = FieldLegendVariantSchema.enum.legend,
  ...props
 }: React.ComponentProps<"legend"> & {
  variant?: z.infer<typeof FieldLegendVariantSchema>;
@@ -127,10 +128,16 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
 
 function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
  return (
-  <p
+  <Typography
+   as="p"
+   variant="bodySmall"
+   tone="muted"
+   weight="normal"
+   align="left"
+   leading="normal"
    data-slot="field-description"
    className={cn(
-    "text-left  leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5",
+    "group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5",
     "last:mt-0 nth-last-2:-mt-1",
     "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
     className,
@@ -173,7 +180,7 @@ function FieldError({
  errors,
  ...props
 }: React.ComponentProps<"div"> & {
- errors?: Array<z.infer<typeof FieldErrorSchema>>;
+ errors?: Array<FieldErrorItem>;
 }) {
  const content = useMemo(() => {
   if (children) {

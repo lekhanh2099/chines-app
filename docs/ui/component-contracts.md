@@ -8,30 +8,31 @@ customized local components.
 
 ## 1. Selection matrix
 
-| Need                               | Canonical contract                      | Notes                                            |
-| ---------------------------------- | --------------------------------------- | ------------------------------------------------ |
-| Text action / CTA                  | `Button`                                | Use semantic variant and interaction density     |
-| Icon-only action                   | `Button` icon size + optional `Tooltip` | Always retain an accessible name                 |
-| Modal task                         | `Dialog`                                | Choose typed size, placement and scroll mode     |
-| Destructive confirmation           | confirmation Dialog pattern             | Consequence and pending state must be explicit   |
-| Side or bottom panel               | `Sheet`                                 | Side is a responsive behavior contract           |
-| Non-modal contextual content       | shared Popover wrapper                  | Not an action menu                               |
-| Action/function list               | `DropdownMenu`                          | Full keyboard/menu semantics                     |
-| Supplementary hint                 | `Tooltip`                               | Never hide required information in a tooltip     |
-| Single-value selection             | `src/components/ui/select.tsx`          | Composable primitive                             |
-| Option-array convenience selection | target `OptionSelect` adapter           | Legacy `select/index.tsx` gains no new consumers |
-| Boolean setting                    | `Switch`                                | Use label and description outside the control    |
-| Independent boolean selection      | `Checkbox`                              | Checkbox semantics                               |
-| Interactive compact filter/action  | `Chip`                                  | Optional `pressed` exposes `aria-pressed`        |
-| Static status/category             | `Badge`                                 | Not clickable                                    |
-| Application text hierarchy         | `Typography`                            | Do not replace HanziHome study typography        |
-| Avatar/profile image               | `Avatar`                                | Always include fallback initials                 |
-| Visual section/card                | `Card`                                  | Use the current local API                        |
-| Divider                            | `Separator`                             | Avoid repeated border-div recipes                |
-| Compact exclusive options          | `SegmentedControl`                      | Small single-choice set                          |
-| Content tabs                       | local `Tabs` contract                   | Not standard shadcn Tabs                         |
-| Empty/no-result state              | `EmptyState`                            | Initial, empty and error remain distinct         |
-| Search command surface             | target `CommandDialog`                  | Deferred until Global Search migration           |
+| Need                              | Canonical contract                      | Notes                                          |
+| --------------------------------- | --------------------------------------- | ---------------------------------------------- |
+| Text action / CTA                 | `Button`                                | Use semantic variant and interaction density   |
+| Icon-only action                  | `Button` icon size + optional `Tooltip` | Always retain an accessible name               |
+| Modal task                        | `Dialog`                                | Choose typed size, placement and scroll mode   |
+| Destructive confirmation          | confirmation Dialog pattern             | Consequence and pending state must be explicit |
+| Side or bottom panel              | `Sheet`                                 | Side is a responsive behavior contract         |
+| Non-modal contextual content      | shared Popover wrapper                  | Not an action menu                             |
+| Action/function list              | `DropdownMenu`                          | Full keyboard/menu semantics                   |
+| Supplementary hint                | `Tooltip`                               | Never hide required information in a tooltip   |
+| Single-value selection            | `src/components/ui/select.tsx`          | Composable primitive                           |
+| String option-array selection     | `OptionSelect`                          | Typed convenience adapter over `Select`        |
+| Radio selection                   | `RadioGroup`                            | Typed string-valued exclusive choice           |
+| Boolean setting                   | `Switch`                                | Use label and description outside the control  |
+| Independent boolean selection     | `Checkbox`                              | Checkbox semantics                             |
+| Interactive compact filter/action | `Chip`                                  | Optional `pressed` exposes `aria-pressed`      |
+| Static status/category            | `Badge`                                 | Not clickable                                  |
+| Application text hierarchy        | `Typography`                            | Do not replace HanziHome study typography      |
+| Avatar/profile image              | `Avatar`                                | Always include fallback initials               |
+| Visual section/card               | `Card`                                  | Use the current local API                      |
+| Divider                           | `Separator`                             | Avoid repeated border-div recipes              |
+| Compact exclusive options         | `SegmentedControl`                      | Small single-choice set                        |
+| Content tabs                      | local `Tabs` contract                   | Not standard shadcn Tabs                       |
+| Empty/no-result state             | `EmptyState`                            | Initial, empty and error remain distinct       |
+| Search command surface            | target `CommandDialog`                  | Deferred until Global Search migration         |
 
 See `docs/ui/component-inventory.md` for implementation status and migration
 priority.
@@ -48,6 +49,8 @@ src/components/ui/chip.tsx
 src/components/ui/dialog.tsx
 src/components/ui/dropdown-menu.tsx
 src/components/ui/input.tsx
+src/components/ui/option-select.tsx
+src/components/ui/radio-group.tsx
 src/components/ui/select.tsx
 src/components/ui/separator.tsx
 src/components/ui/sheet.tsx
@@ -61,12 +64,11 @@ src/components/ui/segmented-control.tsx
 src/components/patterns/empty-state.tsx
 ```
 
-Known legacy/parallel paths:
+Feature-owned learner typography:
 
 ```text
-src/components/ui/select/index.tsx
-src/components/tanstack-form/field/SelectField.tsx
-src/components/ui/icon-button.tsx
+src/features/hanzihome/components/lesson-overview/hanzi-typography.tsx
+src/components/patterns/learner-text.tsx
 ```
 
 ## 3. Primitive, pattern and feature ownership
@@ -222,9 +224,20 @@ code
 
 Tone, weight, alignment and line clamp are typed separately.
 
+Canonical application typography is mandatory, not opt-in. Route, layout and
+feature code uses `Typography` for headings, paragraphs, captions, overlines
+and code-style application text. It does not recreate those contracts with raw
+`h1`–`h6` or `p` JSX.
+
+`Typography` preserves semantic HTML through its `as` prop. Native structural
+or semantic elements remain valid only when they do not recreate an application
+typography recipe.
+
 HanziHome Chinese text, pinyin, font selection and learner reading-size controls
-remain feature-owned. Preserve `lang="zh-CN"` and current study typography
-helpers.
+use `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
+`TranslationText`, `StudyInstructionText` or `HanziFontPreview`. These owners
+set language metadata and reader font/size. Call sites MUST NOT repair learner
+text with `lang`, inline typography `style`, or font/size utility classes.
 
 ## 11. Avatar
 

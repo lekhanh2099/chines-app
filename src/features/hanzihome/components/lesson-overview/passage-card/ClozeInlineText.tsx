@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 import type { ClozeAnswer } from "./types";
@@ -28,14 +29,20 @@ export function ClozeInlineText({
   }
 
   nodes.push(
-   <span
+   <StudyInstructionText
     key={`${label}-${matchIndex}`}
-    className="exercise-answer-surface mx-1 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-lg border px-2 py-0.5 text-[0.62em] font-black leading-none text-accent-text shadow-sm"
+    tone="accent"
+    weight="black"
+    leading="none"
+    scale="cloze"
+    className="exercise-answer-surface mx-1 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-lg border px-2 py-0.5 shadow-sm"
     title={answer?.note}
    >
-    <span className="text-[0.78em] opacity-75">{marker}</span>
+    <StudyInstructionText as="span" variant="caption" className="opacity-75">
+     {marker}
+    </StudyInstructionText>
     <span>{showAnswers ? answer?.answer || matchText : "____"}</span>
-   </span>,
+   </StudyInstructionText>,
   );
 
   lastIndex = matchIndex + matchText.length;

@@ -1,12 +1,13 @@
+import { Label } from "@/components/ui/label";
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Typography } from "@/components/ui/typography";
 
 type ControlledRadioProps = {
  value?: never;
- onChange?: never;
- onBlur?: never;
- type?: never;
+ onValueChange?: never;
 };
 
 export function RadioField({
@@ -15,7 +16,7 @@ export function RadioField({
  helperText,
  options,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledRadioProps> &
+}: Omit<React.ComponentProps<typeof RadioGroup>, keyof ControlledRadioProps> &
  Omit<FieldItemProps, "field"> & {
   options: { label: string; value: string }[];
  }) {
@@ -29,22 +30,25 @@ export function RadioField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <div className="mt-2 flex flex-col gap-2">
+   <RadioGroup
+    name={field.name}
+    value={field.state.value}
+    onValueChange={(value) => {
+     field.handleChange(value);
+     field.handleBlur();
+    }}
+    className="mt-2"
+    {...rest}
+   >
     {options.map((option) => (
-     <label key={option.value} className="flex cursor-pointer items-center gap-2">
-      <input
-       type="radio"
-       name={field.name}
-       value={option.value}
-       checked={field.state.value === option.value}
-       onChange={() => field.handleChange(option.value)}
-       onBlur={field.handleBlur}
-       className="size-4 border-border-default text-primary focus:ring-primary"
-      />
-      <span className="text-text-secondary">{option.label}</span>
-     </label>
+     <Label key={option.value} variant="label" className="flex cursor-pointer items-center gap-2">
+      <RadioGroupItem value={option.value} />
+      <Typography as="span" variant="bodySmall" tone="secondary">
+       {option.label}
+      </Typography>
+     </Label>
     ))}
-   </div>
+   </RadioGroup>
   </FieldItem>
  );
 }

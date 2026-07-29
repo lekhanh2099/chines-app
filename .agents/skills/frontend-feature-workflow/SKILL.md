@@ -153,8 +153,6 @@ Run only applicable targeted commands before the full gate.
 
 For UI, load and follow `frontend-ui-system`.
 
-For data/import changes, run the relevant `data:hanzihome:*` scripts.
-
 ## 9. Handoff
 
 Report:

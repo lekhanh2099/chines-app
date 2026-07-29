@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue } from "@/types/json";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -87,7 +88,7 @@ async function getDeletedContent() {
 }
 
 export function DeletedContentDialog({
- presentation = "toolbar",
+ presentation = DeletedContentPresentationSchema.enum.toolbar,
 }: {
  presentation?: z.infer<typeof DeletedContentPresentationSchema>;
 }) {
@@ -196,9 +197,13 @@ export function DeletedContentDialog({
     </DialogHeader>
     <DialogBody className="max-h-[65vh] overflow-y-auto">
      {deletedQuery.isPending ? (
-      <p className="text-sm text-text-muted">Đang tải...</p>
+      <StudyInstructionText variant="bodySmall" tone="muted">
+       Đang tải...
+      </StudyInstructionText>
      ) : deletedQuery.isError ? (
-      <p className="text-sm text-danger-text">{deletedQuery.error.message}</p>
+      <StudyInstructionText variant="bodySmall" tone="danger">
+       {deletedQuery.error.message}
+      </StudyInstructionText>
      ) : deletedQuery.data?.length ? (
       <div className="grid gap-2">
        {deletedQuery.data.map((item) => {
@@ -210,10 +215,12 @@ export function DeletedContentDialog({
           className="flex items-center justify-between gap-3 rounded-lg border border-border-default p-3"
          >
           <div className="min-w-0">
-           <p className="truncate font-bold text-text-primary">{item.label}</p>
-           <p className="text-xs text-text-muted">
+           <StudyInstructionText tone="default" weight="bold" clamp="one">
+            {item.label}
+           </StudyInstructionText>
+           <StudyInstructionText variant="caption" tone="muted">
             {entityLabel(item.entityType)} · {new Date(item.deletedAt).toLocaleString("vi-VN")}
-           </p>
+           </StudyInstructionText>
           </div>
           <div className="flex w-full shrink-0 flex-wrap justify-end gap-2 sm:w-auto">
            {isPurgeableItem(item) ? (
@@ -244,7 +251,9 @@ export function DeletedContentDialog({
        })}
       </div>
      ) : (
-      <p className="text-sm text-text-muted">Không có nội dung đã xóa.</p>
+      <StudyInstructionText variant="bodySmall" tone="muted">
+       Không có nội dung đã xóa.
+      </StudyInstructionText>
      )}
     </DialogBody>
    </DialogContent>

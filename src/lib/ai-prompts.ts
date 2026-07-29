@@ -365,8 +365,7 @@ function isLegacyDefaultTemplate(template: string, placeholder: string): boolean
  return legacyTemplates.some((legacyTemplate) => legacyTemplate.trim() === template);
 }
 
-const OptionalNullableTemplateSchema = z.string().nullable().optional();
-type OptionalNullableTemplate = z.infer<typeof OptionalNullableTemplateSchema>;
+type OptionalNullableTemplate = z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
 
 function normalizeTemplate(
  template: OptionalNullableTemplate,

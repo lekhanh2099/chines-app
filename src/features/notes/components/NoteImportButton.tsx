@@ -1,5 +1,6 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
 import { useRef } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { useRouter } from "next/navigation";
@@ -93,7 +94,7 @@ export function NoteImportButton({
 
  return (
   <>
-   <input
+   <Input
     ref={fileInputRef}
     type="file"
     accept="application/json,.json"

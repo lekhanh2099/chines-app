@@ -1,10 +1,15 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { Check, ListTree, PanelLeftOpen } from "lucide-react";
-import { Popover } from "@base-ui/react";
 
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
+import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SegmentedControl } from "@/components/ui/segmented-control";
@@ -55,7 +60,7 @@ export function LessonModuleSidebarRailItem({
    type="button"
    variant={selected ? "active" : "ghost"}
    size="icon-sm"
-   className="h-9 w-9 shrink-0 rounded-lg border"
+   className="w-9 shrink-0"
    aria-label={label}
    title={label}
    onClick={onClick}
@@ -126,7 +131,7 @@ export function LessonModuleFrame({
          type="button"
          variant="outline"
          size="sm"
-         className="h-8 px-2.5 text-xs"
+
          onClick={() => setSidebarSheetOpen(true)}
         >
          <PanelLeftOpen className="h-4 w-4" />
@@ -135,20 +140,34 @@ export function LessonModuleFrame({
        )}
 
        <div className={cn("min-w-0", compact && "hidden")}>
-        <p className="hidden line-clamp-2 font-black text-text-primary sm:block">{title}</p>
+        <StudyInstructionText tone="default" weight="black" clamp="two" className="hidden sm:block">
+         {title}
+        </StudyInstructionText>
         {subtitle && (
-         <p className="hidden line-clamp-2 text-xs font-semibold text-text-muted sm:block">
+         <StudyInstructionText
+          variant="caption"
+          tone="muted"
+          weight="semibold"
+          clamp="two"
+          className="hidden sm:block"
+         >
           {subtitle}
-         </p>
+         </StudyInstructionText>
         )}
        </div>
       </div>
 
       <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
        {sidebarSummary && !compact && (
-        <span className="study-chip rounded-lg border px-2 py-1 text-xs font-black uppercase tracking-wide">
+        <StudyInstructionText
+         variant="overline"
+         weight="black"
+         tracking="wide"
+         transform="uppercase"
+         className="study-chip rounded-lg border px-2 py-1"
+        >
          {sidebarSummary}
-        </span>
+        </StudyInstructionText>
        )}
        {actions}
       </div>
@@ -176,9 +195,17 @@ export function LessonModuleFrame({
        >
         <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2">
          <div className="flex items-center justify-between gap-2 border-b border-border-default pb-2">
-          <span className="min-w-0 truncate text-xs font-black uppercase tracking-wide text-text-muted">
+          <StudyInstructionText
+           variant="overline"
+           tone="muted"
+           weight="black"
+           tracking="wide"
+           clamp="one"
+           transform="uppercase"
+           className="min-w-0"
+          >
            {sidebarLabel}
-          </span>
+          </StudyInstructionText>
           <div className="flex shrink-0 items-center gap-1.5">
            {actions}
            <PanelToggleButton
@@ -250,29 +277,41 @@ function MobileModuleNavigation({
  return (
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <HanziHomeCommandBarPortal targetId={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}>
-    <Popover.Trigger className="inline-flex h-9 w-9 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-border-default bg-bg-card px-0 text-sm font-semibold text-text-primary shadow-theme-sm outline-none hover:bg-accent-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 sm:h-10 sm:w-auto sm:max-w-44 sm:px-3 xl:hidden">
+    <Popover.Trigger
+     render={
+      <Button
+       variant="outline"
+       size="responsive-compact"
+       className="shrink-0 xl:hidden"
+       aria-label={`Chọn ${navigation.label.toLowerCase()}`}
+      />
+     }
+    >
      <ListTree className="size-4 shrink-0" />
-     <span className="hidden truncate sm:inline">{navigation.label}</span>
+     <StudyInstructionText clamp="one" className="hidden sm:inline">
+      {navigation.label}
+     </StudyInstructionText>
      <span className="sr-only">Chọn {navigation.label.toLowerCase()}</span>
     </Popover.Trigger>
    </HanziHomeCommandBarPortal>
    <Popover.Portal>
-    <Popover.Positioner
+    <BasePopoverPositioner
      side="bottom"
      align="end"
      sideOffset={8}
      collisionPadding={8}
      positionMethod="fixed"
-     style={{ zIndex: 90 }}
     >
-     <Popover.Popup
-      initialFocus={false}
-      finalFocus={false}
-      className="max-h-[min(24rem,calc(100dvh-7rem))] w-[min(20rem,calc(100vw-1rem))] overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg scrollbar-soft"
-     >
-      <p className="px-2.5 py-1.5 text-xs font-black uppercase text-text-muted">
+     <BasePopoverPopup initialFocus={false} finalFocus={false} variant="moduleMenu">
+      <StudyInstructionText
+       variant="overline"
+       tone="muted"
+       weight="black"
+       transform="uppercase"
+       className="px-2.5 py-1.5"
+      >
        {navigation.label}
-      </p>
+      </StudyInstructionText>
       {navigation.items.map((item) => {
        const selected = item.value === navigation.value;
        return (
@@ -280,19 +319,22 @@ function MobileModuleNavigation({
          key={item.value}
          type="button"
          variant={selected ? "active" : "ghost"}
-         className="w-full justify-start px-2.5 text-left text-sm"
+         align="start"
+         className="w-full"
          onClick={() => {
           navigation.onChange(item.value);
           setOpen(false);
          }}
         >
-         <span className="min-w-0 flex-1 truncate">{item.label}</span>
+         <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">
+          {item.label}
+         </StudyInstructionText>
          {selected ? <Check className="size-4" /> : null}
         </Button>
        );
       })}
-     </Popover.Popup>
-    </Popover.Positioner>
+     </BasePopoverPopup>
+    </BasePopoverPositioner>
    </Popover.Portal>
   </Popover.Root>
  );

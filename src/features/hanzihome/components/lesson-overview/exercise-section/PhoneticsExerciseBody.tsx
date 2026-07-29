@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { Exercise } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 
@@ -66,8 +68,14 @@ export function PhoneticsExerciseBody({
       className="exercise-question-surface grid gap-3 rounded-xl border p-3 sm:p-4"
      >
       <div>
-       <h5 className="font-black text-text-primary">{title}</h5>
-       {instruction && <p className=" font-semibold text-text-muted">{instruction}</p>}
+       <Typography as="h5" variant="cardTitle" tone="default" weight="black">
+        {title}
+       </Typography>
+       {instruction && (
+        <StudyInstructionText tone="muted" weight="semibold">
+         {instruction}
+        </StudyInstructionText>
+       )}
       </div>
 
       {isPairGroup ? (
@@ -84,9 +92,15 @@ export function PhoneticsExerciseBody({
            key={stringValue(entry, "id") || `${item.id}-pair-${partIndex}-${index}`}
            className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 rounded-xl border border-border-default bg-bg-card px-3 py-3"
           >
-           <span className="text-center font-black text-text-primary">{left}</span>
-           <span className="text-xs font-black text-text-muted">/</span>
-           <span className="text-center font-black text-text-primary">{right}</span>
+           <StudyInstructionText tone="default" weight="black" align="center">
+            {left}
+           </StudyInstructionText>
+           <StudyInstructionText variant="caption" tone="muted" weight="black">
+            /
+           </StudyInstructionText>
+           <StudyInstructionText tone="default" weight="black" align="center">
+            {right}
+           </StudyInstructionText>
           </div>
          );
         })}

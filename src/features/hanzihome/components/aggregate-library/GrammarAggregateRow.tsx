@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
@@ -15,10 +17,12 @@ export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
    prefetch={false}
    className="grid gap-1 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-border-hover hover:bg-bg-elevated"
   >
-   <h3 className="line-clamp-1 font-black text-text-primary sm:text-base">
+   <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
     {item.cleanTitle || item.title}
-   </h3>
-   <p className="line-clamp-2  font-bold text-text-secondary">{item.core}</p>
+   </Typography>
+   <StudyInstructionText tone="secondary" weight="bold" clamp="two">
+    {item.core}
+   </StudyInstructionText>
   </Link>
  );
 }

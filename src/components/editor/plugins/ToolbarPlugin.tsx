@@ -1,3 +1,8 @@
+"use client";
+
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 /**
  * ToolbarPlugin — Playground-style toolbar for the Lexical editor.
  *
@@ -11,8 +16,7 @@
  *  - Text alignment (Left, Center, Right, Justify)
  *  - Global Pinyin toggle
  */
-"use client";
-
+import { Typography } from "@/components/ui/typography";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
  $getSelection,
@@ -148,7 +152,7 @@ function ToolbarButton({
  className?: string;
 }) {
  return (
-  <button
+  <Button
    type="button"
    disabled={disabled}
    onMouseDown={pf}
@@ -160,7 +164,7 @@ function ToolbarButton({
     .join(" ")}
   >
    {children}
-  </button>
+  </Button>
  );
 }
 
@@ -197,18 +201,19 @@ function Dropdown({
 
  return (
   <div ref={ref} className="toolbar-dropdown">
-   <button
+   <Button
     type="button"
     disabled={disabled}
     onMouseDown={pf}
     onClick={() => setOpen(!open)}
+    variant="ghost"
     className="toolbar-item toolbar-dropdown-trigger"
     title={buttonTitle || buttonLabel}
    >
     {buttonIcon}
     <span className="toolbar-dropdown-label">{buttonLabel}</span>
     <ChevronDown className="toolbar-chevron" />
-   </button>
+   </Button>
    {open && (
     <div className="toolbar-dropdown-panel" onMouseDown={pf} onClick={() => setOpen(false)}>
      {children}
@@ -230,7 +235,7 @@ function DropdownItem({
  style?: React.CSSProperties;
 }) {
  return (
-  <button
+  <Button
    type="button"
    onMouseDown={pf}
    onClick={onClick}
@@ -238,7 +243,7 @@ function DropdownItem({
    className={`toolbar-dropdown-item ${active ? "active" : ""}`}
   >
    {children}
-  </button>
+  </Button>
  );
 }
 
@@ -265,17 +270,18 @@ function FontSizeControl({
 
  return (
   <div className="toolbar-font-size">
-   <button
+   <Button
     type="button"
     disabled={disabled || parseInt(inputVal) <= MIN_FONT_SIZE}
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) - 1))}
+    variant="ghost"
     className="toolbar-font-size-btn"
     title="Decrease font size"
    >
     <Minus className="w-3 h-3" />
-   </button>
-   <input
+   </Button>
+   <Input
     type="text"
     value={inputVal}
     disabled={disabled}
@@ -291,16 +297,17 @@ function FontSizeControl({
      }
     }}
    />
-   <button
+   <Button
     type="button"
     disabled={disabled || parseInt(inputVal) >= MAX_FONT_SIZE}
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) + 1))}
+    variant="ghost"
     className="toolbar-font-size-btn"
     title="Increase font size"
    >
     <Plus className="w-3 h-3" />
-   </button>
+   </Button>
   </div>
  );
 }
@@ -336,11 +343,12 @@ function ColorPicker({
 
  return (
   <div ref={ref} className="toolbar-dropdown">
-   <button
+   <Button
     type="button"
     disabled={disabled}
     onMouseDown={pf}
     onClick={() => setOpen(!open)}
+    variant="ghost"
     className="toolbar-item toolbar-color-trigger"
     title={label}
    >
@@ -356,12 +364,12 @@ function ColorPicker({
      />
     </span>
     <ChevronDown className="toolbar-chevron" />
-   </button>
+   </Button>
    {open && (
     <div className="toolbar-dropdown-panel toolbar-color-panel" onMouseDown={pf}>
      <div className="toolbar-color-grid">
       {colors.map((c) => (
-       <button
+       <Button
         key={c.value || "default"}
         type="button"
         onMouseDown={pf}
@@ -377,7 +385,7 @@ function ColorPicker({
         }}
        >
         {!c.value && <span className="toolbar-color-reset">✕</span>}
-       </button>
+       </Button>
       ))}
      </div>
     </div>
@@ -448,16 +456,18 @@ function InsertTableDialog({ editor, onClose }: { editor: LexicalEditor; onClose
   <div className="insert-table-dialog-overlay" onMouseDown={onClose}>
    <div className="insert-table-dialog" onMouseDown={(e) => e.stopPropagation()}>
     <div className="insert-table-dialog-header">
-     <h3>Insert Table</h3>
-     <button type="button" onClick={onClose} className="insert-table-dialog-close">
+     <Typography as="h3" variant="cardTitle">
+      Insert Table
+     </Typography>
+     <Button type="button" onClick={onClose} variant="ghost" className="insert-table-dialog-close">
       <X className="w-4 h-4" />
-     </button>
+     </Button>
     </div>
     <div className="insert-table-dialog-divider" />
     <div className="insert-table-dialog-body">
-     <label className="insert-table-dialog-label">
+     <Label variant="label" className="insert-table-dialog-label">
       <span>Rows</span>
-      <input
+      <Input
        type="number"
        min={1}
        max={500}
@@ -465,10 +475,10 @@ function InsertTableDialog({ editor, onClose }: { editor: LexicalEditor; onClose
        onChange={(e) => setRows(e.target.value)}
        className="insert-table-dialog-input"
       />
-     </label>
-     <label className="insert-table-dialog-label">
+     </Label>
+     <Label variant="label" className="insert-table-dialog-label">
       <span>Columns</span>
-      <input
+      <Input
        type="number"
        min={1}
        max={50}
@@ -479,12 +489,17 @@ function InsertTableDialog({ editor, onClose }: { editor: LexicalEditor; onClose
         if (e.key === "Enter") handleConfirm();
        }}
       />
-     </label>
+     </Label>
     </div>
     <div className="insert-table-dialog-footer">
-     <button type="button" onClick={handleConfirm} className="insert-table-dialog-confirm">
+     <Button
+      type="button"
+      onClick={handleConfirm}
+      variant="ghost"
+      className="insert-table-dialog-confirm"
+     >
       Confirm
-     </button>
+     </Button>
     </div>
    </div>
   </div>
@@ -510,44 +525,47 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
  return (
   <>
    <div ref={ref} className="toolbar-dropdown">
-    <button
+    <Button
      type="button"
      disabled={!isEditable}
      onMouseDown={pf}
      onClick={() => setOpen(!open)}
+     variant="ghost"
      className="toolbar-item toolbar-dropdown-trigger"
      title="Insert"
     >
      <Plus className="w-3.5 h-3.5" />
      <span className="toolbar-dropdown-label">Insert</span>
      <ChevronDown className="toolbar-chevron" />
-    </button>
+    </Button>
     {open && (
      <div className="toolbar-dropdown-panel" onMouseDown={pf}>
-      <button
+      <Button
        type="button"
        onMouseDown={pf}
        onClick={() => {
         editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined);
         setOpen(false);
        }}
+       variant="ghost"
        className="toolbar-dropdown-item"
       >
        <SeparatorHorizontal className="w-4 h-4 mr-2 shrink-0" />
        Horizontal Rule
-      </button>
-      <button
+      </Button>
+      <Button
        type="button"
        onMouseDown={pf}
        onClick={() => {
         setShowTableDialog(true);
         setOpen(false);
        }}
+       variant="ghost"
        className="toolbar-dropdown-item"
       >
        <Table className="w-4 h-4 mr-2 shrink-0" />
        Table
-      </button>
+      </Button>
      </div>
     )}
    </div>
@@ -761,18 +779,17 @@ export default function ToolbarPlugin() {
    >
     <div className="grid grid-cols-3 gap-1 border-b border-border-default p-1">
      {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
-      <button
+      <Button
        key={`quick-${label}`}
        type="button"
        onMouseDown={pf}
        onClick={() => applyStyle({ "font-family": value })}
        style={{ fontFamily: value }}
-       className={`rounded-md px-2 py-1 text-xs font-black ${
-        fontFamily === value ? "bg-accent-subtle text-accent-text" : "text-text-secondary"
-       }`}
+       variant={fontFamily === value ? "active" : "surface"}
+       size="compact"
       >
        {label.replace("FZKTPY", "")}
-      </button>
+      </Button>
      ))}
     </div>
     {FONT_FAMILIES.map(([value, label]) => (

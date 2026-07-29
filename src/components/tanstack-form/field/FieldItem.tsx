@@ -1,3 +1,5 @@
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import type { AnyFieldApi } from "@tanstack/react-form";
 import { FieldInfo } from "./FieldInfo";
 
@@ -21,11 +23,20 @@ export function FieldItem({
  return (
   <div className="flex flex-col">
    {label && (
-    <label className=" font-semibold text-text-secondary mb-2">
-     {label} {required && <span className="text-danger-text">*</span>}
-    </label>
+    <Label variant="label" tone="secondary" weight="semibold" className="mb-2">
+     {label}{" "}
+     {required && (
+      <Typography as="span" tone="danger">
+       *
+      </Typography>
+     )}
+    </Label>
    )}
-   {description && <p className="text-xs text-text-muted mb-2">{description}</p>}
+   {description && (
+    <Typography as="p" variant="caption" tone="muted" className="mb-2">
+     {description}
+    </Typography>
+   )}
    {children}
    <FieldInfo field={field} helperText={helperText} />
   </div>

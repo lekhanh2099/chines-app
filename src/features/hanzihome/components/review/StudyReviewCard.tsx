@@ -1,5 +1,6 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useFlashcardControls } from "@/features/hanzihome/hooks/useFlashcardControls";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { GrammarReviewFront } from "./GrammarReviewFront";
@@ -47,11 +48,11 @@ export function StudyReviewCard({
       onSelectedWritingIndexChange={onSelectedWritingIndexChange}
      />
     ) : (
-     <p className="rounded-xl bg-bg-subtle p-4 font-bold text-text-muted">
+     <StudyInstructionText tone="muted" weight="bold" className="rounded-xl bg-bg-subtle p-4">
       {isGrammar
        ? "Tự nhớ ý nghĩa, công thức và ví dụ trước khi mở đáp án."
        : "Bấm vào thẻ hoặc nhấn Space để lật đáp án."}
-     </p>
+     </StudyInstructionText>
     )}
    </div>
   </div>

@@ -8,7 +8,7 @@ import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/Vocab
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
-import { getHanziTypographyStyle } from "./hanzi-typography";
+import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
 import { asRecord, stringValue } from "./utils";
 
 function vocabMeaning(item: VocabularyItem) {
@@ -60,20 +60,31 @@ export function VocabMiniGrid({
      return (
       <div key={item.id} className="study-content-surface rounded-xl border p-3">
        <div className="flex flex-wrap items-center gap-2">
-        <p
-         className="font-black leading-[1.5] text-text-primary"
-         lang="zh-CN"
-         style={getHanziTypographyStyle(displayMode)}
+        <ReaderHanziText
+         displayMode={displayMode}
+         tone="default"
+         weight="black"
+         leading="compactLearner"
         >
          {item.hanzi}
-        </p>
+        </ReaderHanziText>
         <NativeMandarinSpeakButton text={item.hanzi} />
         {displayMode.showPinyin && item.pinyin && (
-         <p className="font-bold text-accent-text">{item.pinyin}</p>
+         <StudyInstructionText tone="accent" weight="bold">
+          {item.pinyin}
+         </StudyInstructionText>
         )}
        </div>
-       {hanviet && <p className="text-sm font-bold text-text-muted">{hanviet}</p>}
-       {meaning && <p className=" font-semibold leading-relaxed text-text-secondary">{meaning}</p>}
+       {hanviet && (
+        <StudyInstructionText variant="label" tone="muted" weight="bold">
+         {hanviet}
+        </StudyInstructionText>
+       )}
+       {meaning && (
+        <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+         {meaning}
+        </StudyInstructionText>
+       )}
        {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
       </div>
      );

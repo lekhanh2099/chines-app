@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 /**
  * InlineNoteNode — Custom Lexical DecoratorNode for inline annotations.
  *
@@ -7,11 +8,11 @@
  */
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { FloatingLayer } from "@/components/ui/floating-layer";
 import type {
  DOMConversionMap,
  DOMConversionOutput,
  DOMExportOutput,
- LexicalNode,
  NodeKey,
  SerializedLexicalNode,
  Spread,
@@ -29,13 +30,15 @@ export type SerializedInlineNoteNode = Spread<
 >;
 
 const urlPattern = /https?:\/\/[^\s<>"'）)\]}]+/gi;
-const TooltipPositionSchema = z
- .object({
-  top: z.number(),
-  left: z.number(),
-  placement: z.enum(["top", "bottom"]),
- })
- .nullable();
+type TooltipPosition = z.infer<
+ z.ZodNullable<
+  z.ZodObject<{
+   top: z.ZodNumber;
+   left: z.ZodNumber;
+   placement: z.ZodEnum<{ top: "top"; bottom: "bottom" }>;
+  }>
+ >
+>;
 
 function renderLinkifiedText(value: string): ReactNode[] {
  const parts: ReactNode[] = [];
@@ -96,8 +99,7 @@ function InlineNoteComponent({
  nodeKey: NodeKey;
 }) {
  const [showTooltip, setShowTooltip] = useState(false);
- const [tooltipPosition, setTooltipPosition] =
-  useState<z.infer<typeof TooltipPositionSchema>>(null);
+ const [tooltipPosition, setTooltipPosition] = useState<TooltipPosition>(null);
  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
  const spanRef = useRef<HTMLSpanElement>(null);
 
@@ -156,8 +158,8 @@ function InlineNoteComponent({
     tooltipPosition &&
     typeof document !== "undefined" &&
     createPortal(
-     <span
-      className="fixed z-[100000] whitespace-pre-wrap rounded-xl border border-border-default bg-bg-elevated px-3 py-2 text-xs leading-relaxed text-text-secondary shadow-theme-lg"
+     <FloatingLayer
+      variant="editorTooltip"
       style={{
        left: tooltipPosition.left,
        top: tooltipPosition.top,
@@ -169,9 +171,17 @@ function InlineNoteComponent({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
      >
-      <span className="mb-1 block text-[10px] font-semibold uppercase tracking-widest text-sky-500">
+      <Typography
+       variant="overline"
+       weight="semibold"
+       scale="micro"
+       transform="uppercase"
+       tone="sky"
+       tracking="widest"
+       className="mb-1 block"
+      >
        Ghi chú
-      </span>
+      </Typography>
       {renderLinkifiedText(noteText)}
       <span
        className={[
@@ -181,7 +191,7 @@ function InlineNoteComponent({
          : "bottom-full border-b-bg-elevated",
        ].join(" ")}
       />
-     </span>,
+     </FloatingLayer>,
      document.body,
     )}
   </span>
@@ -285,8 +295,4 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
 
 export function $createInlineNoteNode(text: string, noteText: string): InlineNoteNode {
  return $applyNodeReplacement(new InlineNoteNode(text, noteText));
-}
-
-export function $isInlineNoteNode(node: LexicalNode | null | undefined): node is InlineNoteNode {
- return node instanceof InlineNoteNode;
 }

@@ -23,7 +23,7 @@ type SwipeHandlers = {
 };
 
 const SWIPE_DISTANCE = 56;
-const TouchPointSchema = z.object({ x: z.number(), y: z.number() });
+type TouchPoint = z.infer<z.ZodObject<{ x: z.ZodNumber; y: z.ZodNumber }>>;
 
 function shouldIgnoreKeyboardTarget(target: KeyboardEvent["target"]) {
  return (
@@ -45,7 +45,7 @@ export function useFlashcardControls({
  onOpenDetail,
  onSelectWritingCharacter,
 }: UseFlashcardControlsInput): SwipeHandlers {
- const touchStartRef = useRef<z.infer<typeof TouchPointSchema>>(null);
+ const touchStartRef = useRef<TouchPoint>(null);
 
  useEffect(() => {
   if (disabled) return;

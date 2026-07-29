@@ -5,7 +5,11 @@ type LogLevel = z.infer<typeof LogLevelSchema>;
 type LogDetails = Parameters<Console["error"]>;
 
 function write(level: LogLevel, message: string, details: LogDetails) {
- if (process.env.NODE_ENV === "production" && (level === "debug" || level === "info")) return;
+ if (
+  process.env.NODE_ENV === "production" &&
+  (level === LogLevelSchema.enum.debug || level === "info")
+ )
+  return;
 
  console[level](message, ...details);
 }

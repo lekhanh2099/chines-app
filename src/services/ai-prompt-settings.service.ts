@@ -1,26 +1,18 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { logger } from "@/lib/logger";
-import {
- DEFAULT_SENTENCE_LOOKUP_PROMPT,
- DEFAULT_WORD_LOOKUP_PROMPT,
- getSentenceLookupPromptTemplate,
- getWordLookupPromptTemplate,
-} from "@/lib/ai-prompts";
-import {
- DEFAULT_GEMINI_MODEL,
- GeminiModelIdSchema,
- normalizeGeminiModel,
-} from "@/lib/gemini-models";
+import { getSentenceLookupPromptTemplate, getWordLookupPromptTemplate } from "@/lib/ai-prompts";
+import { GeminiModelIdSchema, normalizeGeminiModel } from "@/lib/gemini-models";
 import type { DbUserAiPromptSettings } from "@/types/database";
 import type { Database } from "@/types/supabase.generated";
 
-const UserAiPromptSettingsSchema = z.object({
- wordLookupPrompt: z.string(),
- sentenceLookupPrompt: z.string(),
- geminiModel: GeminiModelIdSchema,
-});
-export type UserAiPromptSettings = z.infer<typeof UserAiPromptSettingsSchema>;
+export type UserAiPromptSettings = z.infer<
+ z.ZodObject<{
+  wordLookupPrompt: z.ZodString;
+  sentenceLookupPrompt: z.ZodString;
+  geminiModel: typeof GeminiModelIdSchema;
+ }>
+>;
 type PromptSettingsRow = {
  word_lookup_prompt: DbUserAiPromptSettings["word_lookup_prompt"];
  sentence_lookup_prompt: DbUserAiPromptSettings["sentence_lookup_prompt"];
@@ -28,12 +20,6 @@ type PromptSettingsRow = {
 };
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 type AppSupabaseClient = SupabaseClient<Database>;
-
-export const defaultUserAiPromptSettings: UserAiPromptSettings = {
- wordLookupPrompt: DEFAULT_WORD_LOOKUP_PROMPT,
- sentenceLookupPrompt: DEFAULT_SENTENCE_LOOKUP_PROMPT,
- geminiModel: DEFAULT_GEMINI_MODEL,
-};
 
 function normalizeRow(row: Nullable<PromptSettingsRow>): UserAiPromptSettings {
  return {

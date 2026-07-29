@@ -1,6 +1,6 @@
 import type { JsonValue } from "@/types/json";
 import { answerToString, asRecord, stringValue } from "../utils";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import { AdaptiveStudyText, StudyInstructionText } from "../hanzi-typography";
 import type { LessonDisplayMode } from "../types";
 
 export function QuestionChoiceList({
@@ -30,17 +30,25 @@ export function QuestionChoiceList({
 
  return (
   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2 grid gap-2">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Lựa chọn</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Lựa chọn
+   </StudyInstructionText>
    <div className="grid gap-1">
     {choices.map((choice, index) => (
-     <p
+     <AdaptiveStudyText
       key={`${choice.label}-${index}`}
-      className="font-semibold leading-[1.7] text-text-primary"
-      lang={containsHanziText(choice.text) ? "zh-CN" : undefined}
-      style={containsHanziText(choice.text) ? getHanziTypographyStyle(displayMode) : undefined}
-     >
-      <span className="font-black text-accent-text">{choice.label}.</span> {choice.text}
-     </p>
+      text={`${choice.label}. ${choice.text}`}
+      displayMode={displayMode}
+      tone="default"
+      weight="semibold"
+      leading="learner"
+     />
     ))}
    </div>
   </div>

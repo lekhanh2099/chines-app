@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonValue } from "@/types/json";
 import { answerToString } from "../utils";
 
@@ -8,16 +9,26 @@ export function RetellOutline({ itemId, values }: { itemId: string; values: Json
 
  return (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Dàn ý kể lại</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Dàn ý kể lại
+   </StudyInstructionText>
    <div className="grid gap-2">
     {outline.map((line, index) => (
-     <p
+     <StudyInstructionText
       key={`${itemId}-retell-${index}`}
-      className="rounded-lg bg-bg-primary px-3 py-2  font-bold text-text-primary"
+      tone="default"
+      weight="bold"
+      className="rounded-lg bg-bg-primary px-3 py-2"
       lang="zh-CN"
      >
       {index + 1}. {line}
-     </p>
+     </StudyInstructionText>
     ))}
    </div>
   </div>

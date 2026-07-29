@@ -133,7 +133,7 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
     : note.title || "Ghi chú chưa đặt tên";
 
   return {
-   kind: "lesson",
+   kind: NoteContextKindSchema.enum.lesson,
    displayTitle,
    title: "Ghi chú bài học",
    subtitle: lessonTitle,
@@ -160,8 +160,4 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
   subtitle: categoryLabels[note.category],
   badges: uniqueBadges([categoryLabels[note.category], ...noteTags]),
  };
-}
-
-export function getCategoryLabel(category: NoteWithContext["category"]): string {
- return categoryLabels[category];
 }

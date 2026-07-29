@@ -1,3 +1,5 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import type { ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import {
  EditableNodeWrapper,
@@ -113,8 +115,14 @@ export function ReadingCard({
  const content = (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
-    <h4 className="font-black text-text-primary">{item.title_vi || item.title}</h4>
-    {instructionText && <p className=" font-semibold text-text-muted">{instructionText}</p>}
+    <Typography as="h4" variant="cardTitle" tone="default" weight="black">
+     {item.title_vi || item.title}
+    </Typography>
+    {instructionText && (
+     <StudyInstructionText tone="muted" weight="semibold">
+      {instructionText}
+     </StudyInstructionText>
+    )}
    </div>
 
    {lessonId && path && passageSegments ? (

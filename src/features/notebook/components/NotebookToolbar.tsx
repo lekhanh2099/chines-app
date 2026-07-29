@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { useEffect, useRef, useState } from "react";
 import {
  ChevronDown,
@@ -19,8 +21,6 @@ import type {
  NotebookSeedData,
  NotebookViewMode,
 } from "@/features/notebook/types";
-import { cn } from "@/lib/utils";
-
 const compactEnterScrollTop = 240;
 const compactExitScrollTop = 32;
 
@@ -93,11 +93,11 @@ export function NotebookToolbar({
   <Button
    key={id}
    type="button"
-   size="sm"
+   size={isCompact ? "toolbar" : "sm"}
    variant={sectionId === id ? "active" : "surfaceCard"}
    aria-pressed={sectionId === id}
    onClick={() => onSectionChange(id)}
-   className={cn("shrink-0 font-black", isCompact ? "h-9 min-h-9 px-2.5 text-xs" : "px-3 text-sm")}
+   className="shrink-0"
   >
    {data[id].label}
   </Button>
@@ -109,10 +109,9 @@ export function NotebookToolbar({
    <Button
     key={view.id}
     type="button"
-    size="sm"
+    size={isCompact ? "toolbar" : "sm"}
     variant={viewMode === view.id ? "active" : "ghost"}
     aria-pressed={viewMode === view.id}
-    className={cn(isCompact && "h-9 min-h-9 px-2 text-xs")}
     onClick={() => onViewModeChange(view.id)}
    >
     <Icon className="h-4 w-4" />
@@ -125,11 +124,11 @@ export function NotebookToolbar({
   <>
    <Button
     type="button"
-    size="sm"
+    size={isCompact ? "toolbar" : "sm"}
     variant={groupId === "all" ? "active" : "surfaceCard"}
     aria-pressed={groupId === "all"}
     onClick={() => onGroupChange("all")}
-    className={cn("shrink-0 text-xs font-black", isCompact ? "h-9 min-h-9 px-2.5" : "px-3")}
+    className="shrink-0"
    >
     Tất cả
    </Button>
@@ -137,11 +136,11 @@ export function NotebookToolbar({
     <Button
      key={group.id}
      type="button"
-     size="sm"
+     size={isCompact ? "toolbar" : "sm"}
      variant={groupId === group.id ? "active" : "surfaceCard"}
      aria-pressed={groupId === group.id}
      onClick={() => onGroupChange(group.id)}
-     className={cn("shrink-0 text-xs font-black", isCompact ? "h-9 min-h-9 px-2.5" : "px-3")}
+     className="shrink-0"
     >
      {group.name}
     </Button>
@@ -156,22 +155,24 @@ export function NotebookToolbar({
     className="sticky top-2 z-30 grid gap-2 bg-none bg-bg-card/95 p-2 shadow-theme-lg backdrop-blur-xl sm:top-3 sm:p-2.5"
    >
     <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center">
-     <label className="relative block min-w-0 flex-1">
+     <Label variant="label" className="relative block min-w-0 flex-1">
       <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
       <span className="sr-only">Tìm trong sổ tay</span>
-      <input
+      <Input
        value={query}
        onChange={(event) => onQueryChange(event.target.value)}
        placeholder="Tìm: 只要, zhiyao, chỉ cần..."
-       className="h-9 w-full rounded-lg border border-border-default bg-bg-card/90 pl-9 pr-3 text-xs font-medium text-text-primary outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/15"
+       density="compact"
+       adornment="start"
+       className="w-full"
       />
-     </label>
+     </Label>
      <div className="hidden shrink-0 gap-1 rounded-xl bg-bg-subtle p-1 md:flex">{viewButtons}</div>
      <Button
       type="button"
       variant={filtersOpen ? "default" : "outline"}
       size="sm"
-      className="h-9 shrink-0 px-2.5 text-xs"
+      className="shrink-0"
       aria-expanded={filtersOpen}
       onClick={() => setFiltersOpen((open) => !open)}
      >
@@ -213,16 +214,17 @@ export function NotebookToolbar({
    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
 
    <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-    <label className="relative block min-w-0 flex-1">
+    <Label variant="label" className="relative block min-w-0 flex-1">
      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
      <span className="sr-only">Tìm trong sổ tay</span>
-     <input
+     <Input
       value={query}
       onChange={(event) => onQueryChange(event.target.value)}
       placeholder="Tìm: 只要, zhiyao, chỉ cần, trái dự đoán..."
-      className="h-11 w-full rounded-xl border border-border-default bg-bg-card/90 pl-10 pr-4 text-sm font-medium text-text-primary outline-none transition focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/15"
+      adornment="start"
+      className="w-full"
      />
-    </label>
+    </Label>
     <div className="flex flex-wrap gap-1 rounded-xl bg-bg-subtle p-1">{viewButtons}</div>
    </div>
 

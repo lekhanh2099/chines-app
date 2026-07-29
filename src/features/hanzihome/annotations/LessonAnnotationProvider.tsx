@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { parseErrorLike, type ErrorInput } from "@/types/error";
 import {
  createContext,
@@ -234,7 +236,10 @@ export function LessonAnnotationProvider({
    return;
   }
   setNoteText("");
-  setNoteDialog({ kind: "anchor", anchor: selectionDraft.anchor });
+  setNoteDialog({
+   kind: NoteDialogSchema.options[0].shape.kind.value,
+   anchor: selectionDraft.anchor,
+  });
   closeSelectionMenu();
  };
 
@@ -341,17 +346,18 @@ export function LessonAnnotationProvider({
       </DialogDescription>
      </DialogHeader>
      <DialogBody>
-      <label className="grid gap-2 text-sm font-bold text-text-secondary">
+      <Label variant="label" tone="secondary" weight="bold" className="grid gap-2">
        Nội dung ghi chú
-       <textarea
+       <Textarea
         value={noteText}
         onChange={(event) => setNoteText(event.target.value)}
         rows={6}
         autoFocus
-        className="min-h-32 w-full resize-y rounded-xl border border-border-default bg-bg-primary px-3 py-2 font-medium text-text-primary outline-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20"
+        density="comfortable"
+        className="w-full"
         placeholder="Điều cần nhớ về đoạn này…"
        />
-      </label>
+      </Label>
      </DialogBody>
      <DialogFooter>
       {noteDialog?.kind === "annotation" ? (

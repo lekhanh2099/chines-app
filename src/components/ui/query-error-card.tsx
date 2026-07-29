@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -15,8 +16,12 @@ export function QueryErrorCard({
  return (
   <Card role="alert" variant="subtle" padding="lg" className="grid gap-3">
    <div className="grid gap-1">
-    <h2 className="text-base font-black text-text-primary">{title}</h2>
-    <p className="text-sm font-medium text-text-secondary">{description}</p>
+    <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+     {title}
+    </Typography>
+    <Typography as="p" variant="bodySmall" tone="secondary" weight="medium">
+     {description}
+    </Typography>
    </div>
    <Button type="button" variant="surfaceCard" className="w-fit" onClick={onRetry}>
     Thử tải lại

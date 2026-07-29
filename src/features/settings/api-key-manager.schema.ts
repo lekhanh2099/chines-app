@@ -54,6 +54,4 @@ export const moveApiKeyResponseSchema = z.object({
 export const deleteApiKeyResponseSchema = z.object({
  success: z.literal(true),
 });
-
-export type ManagedApiKey = z.output<typeof managedApiKeySchema>;
 export type ApiKeysResponse = z.output<typeof apiKeysResponseSchema>;

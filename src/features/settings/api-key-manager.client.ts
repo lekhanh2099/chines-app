@@ -8,10 +8,10 @@ import {
  moveApiKeyResponseSchema,
  updateApiKeyResponseSchema,
 } from "./api-key-manager.schema";
-import { ApiKeyProviderSchema, type ApiKeyProvider } from "@/lib/api-key-providers";
+import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
 
 const endpoint = "/api/settings/api-keys";
-const ApiKeyProviderInputSchema = z.union([ApiKeyProviderSchema, z.literal("auto")]);
+type ApiKeyProviderInput = z.infer<z.ZodUnion<[typeof ApiKeyProviderSchema, z.ZodLiteral<"auto">]>>;
 export const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
 
 async function requestApiKeys<T>(schema: z.ZodType<T>, init?: RequestInit): Promise<T> {
@@ -42,7 +42,7 @@ export function fetchManagedApiKeys() {
 export function addManagedApiKey(input: {
  apiKey: string;
  label?: string;
- provider: z.infer<typeof ApiKeyProviderInputSchema>;
+ provider: ApiKeyProviderInput;
  model?: string;
 }) {
  return requestApiKeys(addApiKeyResponseSchema, {

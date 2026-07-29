@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { useMemo } from "react";
 import Link from "next/link";
 import { Lightbulb, Pencil, Pin, PinOff, Plus, RefreshCw, Settings } from "lucide-react";
@@ -96,15 +98,36 @@ export function GlobalMemoryTipCard({
    >
     <div className="grid h-full min-h-32 gap-3">
      <div className="flex min-w-0 gap-3">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
+      <StudyInstructionText
+       as="span"
+       tone="info"
+       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
+      >
        <Lightbulb className="h-4 w-4" />
-      </span>
+      </StudyInstructionText>
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Nhắc nhanh</p>
-       <h2 className="text-base font-black text-text-primary">Chưa có mẹo nhớ</h2>
-       <p className="mt-1 line-clamp-2 text-sm font-semibold leading-relaxed text-text-secondary">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Nhắc nhanh
+       </StudyInstructionText>
+       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+        Chưa có mẹo nhớ
+       </Typography>
+       <StudyInstructionText
+        variant="bodySmall"
+        tone="secondary"
+        weight="semibold"
+        clamp="two"
+        leading="relaxed"
+        className="mt-1"
+       >
         Thêm tip ngắn để app nhắc lại khi bạn quay về trang học.
-       </p>
+       </StudyInstructionText>
       </div>
      </div>
 
@@ -142,26 +165,48 @@ export function GlobalMemoryTipCard({
   >
    <div className="relative grid w-full gap-3">
     {contentOnly && selectedTip.isPinned ? (
-     <span
-      className="absolute right-0 top-0 rounded-full bg-bg-subtle/80 p-1.5 text-accent-text"
+     <StudyInstructionText
+      as="span"
+      tone="accent"
+      className="absolute right-0 top-0 rounded-full bg-bg-subtle/80 p-1.5"
       aria-label="Tip đã ghim"
      >
       <Pin className="h-3.5 w-3.5" />
-     </span>
+     </StudyInstructionText>
     ) : null}
 
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="flex min-w-0 gap-3">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle text-info-text">
+      <StudyInstructionText
+       as="span"
+       tone="info"
+       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
+      >
        <Lightbulb className="h-4 w-4" />
-      </span>
+      </StudyInstructionText>
 
       <div className="min-w-0 pr-8">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Nhắc nhanh</p>
-       <h2 className="line-clamp-1 text-base font-black text-text-primary">{selectedTip.title}</h2>
-       <p className="line-clamp-2 whitespace-pre-line  font-semibold leading-relaxed text-text-secondary">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Nhắc nhanh
+       </StudyInstructionText>
+       <Typography as="h2" variant="sectionTitle" tone="default" weight="black" clamp="one">
+        {selectedTip.title}
+       </Typography>
+       <StudyInstructionText
+        tone="secondary"
+        weight="semibold"
+        clamp="two"
+        leading="relaxed"
+        wrapping="preLine"
+       >
         {selectedTip.body}
-       </p>
+       </StudyInstructionText>
       </div>
      </div>
 
@@ -224,15 +269,25 @@ export function GlobalMemoryTipCard({
 
     {!compact && (selectedTip.formula || selectedTip.exampleZh) && (
      <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
-      {selectedTip.formula && <p className=" font-black text-info-text">{selectedTip.formula}</p>}
+      {selectedTip.formula && (
+       <StudyInstructionText tone="info" weight="black">
+        {selectedTip.formula}
+       </StudyInstructionText>
+      )}
       {selectedTip.exampleZh && (
        <div className="grid gap-1">
-        <p className="font-black text-text-primary">{selectedTip.exampleZh}</p>
+        <StudyInstructionText tone="default" weight="black">
+         {selectedTip.exampleZh}
+        </StudyInstructionText>
         {selectedTip.examplePinyin && (
-         <p className="text-xs font-semibold text-text-secondary">{selectedTip.examplePinyin}</p>
+         <StudyInstructionText variant="caption" tone="secondary" weight="semibold">
+          {selectedTip.examplePinyin}
+         </StudyInstructionText>
         )}
         {selectedTip.exampleVi && (
-         <p className="text-xs font-semibold text-text-muted">{selectedTip.exampleVi}</p>
+         <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+          {selectedTip.exampleVi}
+         </StudyInstructionText>
         )}
        </div>
       )}

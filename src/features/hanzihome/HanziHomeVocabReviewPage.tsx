@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useQueries } from "@tanstack/react-query";
@@ -105,13 +107,21 @@ export function HanziHomeVocabReviewPage({
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
      <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="grid gap-1">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Ôn tập</p>
-       <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
+       <StudyInstructionText
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Ôn tập
+       </StudyInstructionText>
+       <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
         Ôn từ vựng
-       </h1>
-       <p className="font-semibold text-text-muted">
+       </Typography>
+       <StudyInstructionText tone="muted" weight="semibold">
         {activeReviewTitle || "Chọn bài ở màn tổng hợp từ để bắt đầu ôn."}
-       </p>
+       </StudyInstructionText>
       </div>
 
       <Button asChild variant="outline">
@@ -129,10 +139,12 @@ export function HanziHomeVocabReviewPage({
       className="rounded-xl border border-dashed border-border-default bg-bg-primary text-center shadow-theme-sm"
      >
       <div className="grid gap-3">
-       <h2 className="text-xl font-black text-text-primary">Chưa chọn bài để ôn</h2>
-       <p className="font-semibold text-text-muted">
+       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+        Chưa chọn bài để ôn
+       </Typography>
+       <StudyInstructionText tone="muted" weight="semibold">
         Về màn tổng hợp từ, tick một hoặc nhiều bài rồi bấm bắt đầu ôn.
-       </p>
+       </StudyInstructionText>
        <div>
         <Button asChild>
          <Link href="/vocab">Chọn bài ôn</Link>
@@ -143,9 +155,14 @@ export function HanziHomeVocabReviewPage({
     )}
 
     {error instanceof Error && (
-     <p role="alert" className="rounded-xl bg-danger-subtle p-4 font-bold text-danger-text">
+     <StudyInstructionText
+      role="alert"
+      tone="danger"
+      weight="bold"
+      className="rounded-xl bg-danger-subtle p-4"
+     >
       {error.message}
-     </p>
+     </StudyInstructionText>
     )}
 
     {isLoading && <VocabReviewSkeleton />}

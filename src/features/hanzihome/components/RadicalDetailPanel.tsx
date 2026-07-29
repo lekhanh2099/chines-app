@@ -1,9 +1,13 @@
+import { Typography } from "@/components/ui/typography";
 import { Pencil } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RadicalSection } from "@/features/hanzihome/components/RadicalSection";
-import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziFontPreview,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
@@ -35,10 +39,16 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
    ) : null}
 
    <div className="flex flex-wrap items-center gap-4 lg:col-span-2">
-    <div className="app-brand-gradient flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-xl text-5xl font-black leading-none text-primary-foreground shadow-theme-sm sm:size-24 sm:text-6xl">
-     <span lang="zh-CN" style={{ fontFamily: getHanziFontFamily("songti") }}>
+    <div className="app-brand-gradient flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-theme-sm sm:size-24">
+     <HanziFontPreview
+      font="songti"
+      size="radicalHero"
+      tone="inverse"
+      weight="black"
+      leading="none"
+     >
       {radical.radical}
-     </span>
+     </HanziFontPreview>
     </div>
     <NativeMandarinSpeakButton text={radical.radical} />
     <div className="min-w-0">
@@ -46,14 +56,18 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
       <Badge>#{radical.index}</Badge>
       <Badge variant="info">{radical.strokes ?? "?"} nét</Badge>
      </div>
-     <h2 className="text-2xl font-black text-text-primary">{radical.nameVi || "Chưa có tên"}</h2>
+     <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+      {radical.nameVi || "Chưa có tên"}
+     </Typography>
     </div>
    </div>
 
    <RadicalSection title="Ý nghĩa cốt lõi">
-    <p>{radical.coreMeaning.modern || "Chưa có mô tả hiện đại."}</p>
+    <StudyInstructionText>
+     {radical.coreMeaning.modern || "Chưa có mô tả hiện đại."}
+    </StudyInstructionText>
     {radical.coreMeaning.history ? (
-     <p className="text-text-muted">{radical.coreMeaning.history}</p>
+     <StudyInstructionText tone="muted">{radical.coreMeaning.history}</StudyInstructionText>
     ) : null}
    </RadicalSection>
 
@@ -77,14 +91,12 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
         key={`${component.form}-${component.note}`}
         className="grid gap-1 rounded-lg border border-border-subtle bg-bg-elevated p-3"
        >
-        <p
-         className="text-2xl font-black text-text-primary"
-         lang="zh-CN"
-         style={{ fontFamily: getHanziFontFamily("songti") }}
-        >
+        <HanziFontPreview as="p" font="songti" variant="pageTitle" tone="default" weight="black">
          {component.form}
-        </p>
-        <p className="text-sm text-text-secondary">{component.note}</p>
+        </HanziFontPreview>
+        <StudyInstructionText variant="bodySmall" tone="secondary">
+         {component.note}
+        </StudyInstructionText>
        </div>
       ))}
      </div>
@@ -92,7 +104,9 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
    ) : null}
 
    <RadicalSection title="Nhận diện">
-    <p>{radical.recognition || "Chưa có ghi chú nhận diện."}</p>
+    <StudyInstructionText>
+     {radical.recognition || "Chưa có ghi chú nhận diện."}
+    </StudyInstructionText>
    </RadicalSection>
 
    {radical.distinguish.length > 0 ? (
@@ -110,13 +124,13 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
      <div className="grid gap-3">
       {groups.map((group) => (
        <div key={group.name} className="grid gap-2">
-        <p className="font-black text-text-primary">{group.name}</p>
+        <StudyInstructionText tone="default" weight="black">
+         {group.name}
+        </StudyInstructionText>
         <div className="flex flex-wrap gap-2">
          {group.chars.map((char) => (
           <Badge key={`${group.name}-${char}`} variant="info" size="lg">
-           <span lang="zh-CN" style={{ fontFamily: getHanziFontFamily("songti") }}>
-            {char}
-           </span>
+           <HanziFontPreview font="songti">{char}</HanziFontPreview>
           </Badge>
          ))}
         </div>

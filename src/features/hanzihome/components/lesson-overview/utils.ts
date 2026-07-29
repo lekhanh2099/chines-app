@@ -1,6 +1,6 @@
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import type { JsonObject } from "@/types/json";
-import type { HanyuLesson, Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 import type { BookSection } from "./types";

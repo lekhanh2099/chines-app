@@ -1,3 +1,5 @@
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
 import type { ReactNode } from "react";
 import { z } from "zod";
@@ -44,23 +46,27 @@ export function FieldShell({
 }: FieldShellProps) {
  return (
   <div className={cn("grid gap-2", className)}>
-   <label htmlFor={inputId} className="font-black text-text-primary">
+   <Label htmlFor={inputId} variant="label" tone="default" weight="black">
     {label}
-    {required && <span className="ml-1 text-destructive">*</span>}
-   </label>
+    {required && (
+     <Typography as="span" tone="danger" className="ml-1">
+      *
+     </Typography>
+    )}
+   </Label>
 
    {children}
 
    {description && (
-    <p id={descriptionId} className="text-xs font-semibold text-text-muted">
+    <Typography as="p" id={descriptionId} variant="caption" tone="muted" weight="semibold">
      {description}
-    </p>
+    </Typography>
    )}
 
    {error && (
-    <p id={errorId} role="alert" className=" font-bold text-destructive">
+    <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
-    </p>
+    </Typography>
    )}
   </div>
  );

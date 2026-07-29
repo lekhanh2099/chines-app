@@ -1,12 +1,15 @@
+import { Label } from "@/components/ui/label";
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
+import { Switch } from "@/components/ui/switch";
+import { Typography } from "@/components/ui/typography";
 
 type ControlledSwitchProps = {
- value?: never;
- onChange?: never;
+ checked?: never;
+ onCheckedChange?: never;
  onBlur?: never;
- type?: never;
+ name?: never;
 };
 
 export function SwitchField({
@@ -14,7 +17,7 @@ export function SwitchField({
  description,
  helperText,
  ...rest
-}: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledSwitchProps> &
+}: Omit<React.ComponentProps<typeof Switch>, keyof ControlledSwitchProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<boolean>();
 
@@ -26,21 +29,20 @@ export function SwitchField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <label className="mt-1 flex cursor-pointer items-center gap-3">
-    <div className="relative">
-     <input
-      type="checkbox"
-      className="sr-only peer"
-      name={field.name}
-      checked={field.state.value}
-      onChange={(e) => field.handleChange(e.target.checked)}
-      onBlur={field.handleBlur}
-      {...rest}
-     />
-     <div className="peer h-6 w-11 rounded-full bg-bg-subtle transition-colors peer-checked:bg-accent peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-ring after:absolute after:left-[2px] after:top-[2px] after:size-5 after:rounded-full after:border after:border-border-default after:bg-bg-primary after:content-[''] after:transition-all peer-checked:after:translate-x-full" />
-    </div>
-    {label && <span className="font-medium text-text-secondary">{label}</span>}
-   </label>
+   <Label variant="label" className="mt-1 flex cursor-pointer items-center gap-3">
+    <Switch
+     name={field.name}
+     checked={field.state.value}
+     onCheckedChange={(checked) => field.handleChange(checked)}
+     onBlur={field.handleBlur}
+     {...rest}
+    />
+    {label && (
+     <Typography as="span" variant="bodySmall" tone="secondary">
+      {label}
+     </Typography>
+    )}
+   </Label>
   </FieldItem>
  );
 }

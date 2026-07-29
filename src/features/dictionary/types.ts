@@ -1,16 +1,11 @@
 import type { JsonFieldValue } from "@/types/json";
 import type {
- AiAnalysis,
  AiRelatedCompound,
  AiWordRelation,
  PersonalNoteMode,
  VocabData,
 } from "@/types/database";
 import { z } from "zod";
-
-const NullableStringSchema = z.string().nullable();
-const NullableBooleanSchema = z.boolean().nullable();
-const NullableNumberSchema = z.number().nullable();
 
 export type ExampleItem = {
  zh: string;
@@ -45,7 +40,7 @@ export type DictionarySentenceViewModel = {
  isLoading: boolean;
  translation: string;
  pinyin: string;
- error: z.infer<typeof NullableStringSchema>;
+ error: z.infer<z.ZodNullable<z.ZodString>>;
 };
 
 export type DictionaryWordLoadingViewModel = {
@@ -76,9 +71,9 @@ export type DictionaryWordReadyViewModel = {
  hasLearningInsights: boolean;
  canRenderDashboard: boolean;
  isAiLoading: boolean;
- isSaved: z.infer<typeof NullableBooleanSchema>;
+ isSaved: z.infer<z.ZodNullable<z.ZodBoolean>>;
  isSaving: boolean;
- srsLevel: z.infer<typeof NullableNumberSchema>;
+ srsLevel: z.infer<z.ZodNullable<z.ZodNumber>>;
  srsStatusLabel: string;
  savedPersonalNote: string;
  personalNoteMode: PersonalNoteMode;

@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -29,7 +30,16 @@ export function WorkspaceCommandHeader({
    <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
     <div className="grid min-w-0 gap-1">
      <div className="flex min-w-0 flex-wrap items-center gap-2">
-      <h1 className="min-w-0 truncate text-xl font-bold text-text-primary">{title}</h1>
+      <Typography
+       as="h1"
+       variant="pageTitle"
+       tone="default"
+       weight="bold"
+       clamp="one"
+       className="min-w-0"
+      >
+       {title}
+      </Typography>
       {badge}
      </div>
      {description ? (

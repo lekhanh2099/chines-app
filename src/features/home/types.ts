@@ -12,7 +12,6 @@ export const HomeLessonTargetSchema = z.object({
  module: moduleSchema,
  isRecent: z.boolean(),
 });
-export type HomeLessonTarget = z.infer<typeof HomeLessonTargetSchema>;
 
 export type HomeDashboardModel = {
  lesson: z.infer<z.ZodNullable<typeof HomeLessonTargetSchema>>;

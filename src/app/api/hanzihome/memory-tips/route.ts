@@ -20,9 +20,7 @@ function isMissingMemoryTipsTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-const OptionalNullableTextSchema = z.string().nullable().optional();
-
-function nullableText(value: z.infer<typeof OptionalNullableTextSchema>) {
+function nullableText(value: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>) {
  const trimmed = value?.trim() ?? "";
  return trimmed || null;
 }

@@ -8,7 +8,6 @@ const MAX_UTTERANCE_LENGTH = 140;
 export const MandarinVoiceProfileSchema = z.enum(["male", "female", "neutral"]);
 export type MandarinVoiceProfile = z.infer<typeof MandarinVoiceProfileSchema>;
 export type MandarinSpeechSegment = { text: string; voice?: MandarinVoiceProfile };
-const NullableStringSchema = z.string().nullable();
 
 function normalizeLanguage(language: string) {
  return language.trim().toLowerCase().replaceAll("_", "-");
@@ -77,8 +76,8 @@ export function useNativeMandarinTts() {
  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
  const [selectedVoiceUri, setSelectedVoiceUri] = useState("");
  const [isSpeaking, setIsSpeaking] = useState(false);
- const [speakingText, setSpeakingText] = useState<z.infer<typeof NullableStringSchema>>(null);
- const [error, setError] = useState<z.infer<typeof NullableStringSchema>>(null);
+ const [speakingText, setSpeakingText] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
+ const [error, setError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
  const [rate, setRate] = useState(1);
  const speechRunRef = useRef(0);
 

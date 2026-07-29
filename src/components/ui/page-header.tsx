@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -16,13 +17,27 @@ export function PageHeader({
  return (
   <header className={cn("flex flex-wrap items-start justify-between gap-4", className)}>
    <div className="min-w-0 max-w-3xl">
-    <h1 className="text-2xl font-black leading-tight tracking-tight text-text-primary sm:text-3xl">
+    <Typography
+     as="h1"
+     variant="pageTitle"
+     tone="default"
+     weight="black"
+     leading="tight"
+     tracking="tight"
+    >
      {title}
-    </h1>
+    </Typography>
     {description ? (
-     <p className="mt-2 text-sm font-medium leading-6 text-text-muted sm:text-base">
+     <Typography
+      as="p"
+      variant="bodySmall"
+      tone="muted"
+      weight="medium"
+      leading="standard"
+      className="mt-2"
+     >
       {description}
-     </p>
+     </Typography>
     ) : null}
    </div>
    {actions ? <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div> : null}

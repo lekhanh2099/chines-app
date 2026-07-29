@@ -81,11 +81,9 @@ export function ModuleTabButton({
     onDragEnd();
    }}
    onDragEnd={onDragEnd}
-   className={cn(
-    "shrink-0 cursor-grab select-none gap-1.5 rounded-lg font-black active:cursor-grabbing sm:gap-2",
-    isDragging && "opacity-40",
-    isDropTarget && "hover:border-accent/60",
-   )}
+   size="toolbar"
+   validation={isDropTarget ? "dropTarget" : "none"}
+   className={cn("shrink-0 cursor-grab active:cursor-grabbing", isDragging && "opacity-40")}
   >
    <Icon data-icon="inline-start" />
    {meta.label}

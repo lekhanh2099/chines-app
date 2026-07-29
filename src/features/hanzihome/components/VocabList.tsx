@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import { useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import {
  Bookmark,
@@ -17,7 +19,10 @@ import { Input } from "@/components/ui/input";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
-import { getHanziTypographyStyle } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ ReaderHanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
 import { z } from "zod";
@@ -79,7 +84,7 @@ export function VocabList({
   label: string;
   icon: typeof Circle;
  }> = [
-  { value: "all", label: "Tất cả", icon: Circle },
+  { value: VocabStatusFilterSchema.options[0].value, label: "Tất cả", icon: Circle },
   { value: "learning", label: "Đang học", icon: Flame },
   { value: "hard", label: "Còn khó", icon: Flame },
   { value: "known", label: "Đã biết", icon: CheckCircle2 },
@@ -136,10 +141,12 @@ export function VocabList({
    <div className="grid gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-0.5">
-      <h2 className="text-base font-black text-text-primary">Từ vựng bài này</h2>
-      <p className="text-sm font-medium text-text-muted">
+      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+       Từ vựng bài này
+      </Typography>
+      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
        {words.length} từ phù hợp · Tab để chuyển nhanh
-      </p>
+      </StudyInstructionText>
      </div>
 
      <div className="flex flex-wrap items-center gap-1.5">
@@ -180,26 +187,31 @@ export function VocabList({
     </div>
 
     <div className="grid gap-2 lg:grid-cols-[minmax(18rem,28rem)_minmax(0,1fr)]">
-     <label className="relative block">
+     <Label variant="label" className="relative block">
       <span className="sr-only">Tìm từ vựng trong bài</span>
       <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
       <Input
        value={searchValue}
        onChange={(event) => onSearchChange(event.target.value)}
        placeholder="Tìm Hán tự, pinyin, Hán Việt hoặc nghĩa"
-       className="pl-9"
+       adornment="start"
       />
-     </label>
+     </Label>
 
-     <p className="hidden items-center text-sm leading-relaxed text-text-muted lg:flex">
+     <StudyInstructionText
+      variant="bodySmall"
+      tone="muted"
+      leading="relaxed"
+      className="hidden items-center lg:flex"
+     >
       Chọn một từ để xem nghĩa, ví dụ và cách dùng. Shift+Tab quay lại từ trước.
-     </p>
+     </StudyInstructionText>
     </div>
 
     {words.length === 0 ? (
-     <p className="rounded-xl bg-bg-subtle p-3  font-semibold text-text-muted">
+     <StudyInstructionText tone="muted" weight="semibold" className="rounded-xl bg-bg-subtle p-3">
       Không có từ phù hợp bộ lọc.
-     </p>
+     </StudyInstructionText>
     ) : isWordPickerOpen ? (
      <div className="grid gap-1">
       <div
@@ -221,37 +233,37 @@ export function VocabList({
           type="button"
           onClick={() => onSelectWord(wordId)}
           variant={active ? "active" : "outline"}
-          className={cn(
-           "h-auto min-h-11 gap-1.5 px-3 py-2",
-           status === "hard" && !active && "border-warning/45",
-           status === "known" && !active && "border-success/35",
-          )}
+          validation={
+           !active && status === "hard"
+            ? "warning"
+            : !active && status === "known"
+              ? "success"
+              : "none"
+          }
          >
-          <span
-           style={getHanziTypographyStyle(
-            {
-             showPinyin: true,
-             showMeaning: false,
-             showAnswers: false,
-             hanziFont: "system",
-             hanziSize: "2xl",
-             revealMode: "always",
-            },
-            { size: "xl" },
-           )}
-           lang="zh-CN"
+          <ReaderHanziText
+           displayMode={{
+            showPinyin: true,
+            showMeaning: false,
+            showAnswers: false,
+            hanziFont: "system",
+            hanziSize: "2xl",
+            revealMode: "always",
+           }}
+           size="xl"
           >
            {word.hanzi}
-          </span>
+          </ReaderHanziText>
           {bookmarked && <Bookmark className="h-3 w-3 fill-current" />}
          </Button>
         );
        })}
       </div>
       {!isCoarsePointer && (
-       <button
+       <Button
         type="button"
-        className="group flex h-3 cursor-row-resize items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20"
+        variant="ghost"
+        className="group flex cursor-row-resize"
         aria-label="Đổi chiều cao danh sách từ vựng"
         aria-orientation="horizontal"
         aria-valuemax={resizeBounds.maxHeight}
@@ -262,13 +274,18 @@ export function VocabList({
         onKeyDown={handleResizeKeyDown}
        >
         <span className="h-1 w-12 rounded-full bg-border-default transition-colors group-hover:bg-text-muted/40" />
-       </button>
+       </Button>
       )}
      </div>
     ) : (
-     <p className="rounded-xl bg-bg-subtle px-3 py-2 text-sm font-medium text-text-muted">
+     <StudyInstructionText
+      variant="bodySmall"
+      tone="muted"
+      weight="medium"
+      className="rounded-xl bg-bg-subtle px-3 py-2"
+     >
       Danh sách từ đang thu gọn. Dùng search hoặc bấm “Danh sách” để mở lại.
-     </p>
+     </StudyInstructionText>
     )}
    </div>
   </Card>

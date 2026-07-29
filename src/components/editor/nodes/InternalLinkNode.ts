@@ -11,7 +11,6 @@ import {
  type DOMConversionOutput,
  type DOMExportOutput,
  type EditorConfig,
- type LexicalNode,
  type NodeKey,
  type RangeSelection,
  type SerializedTextNode,
@@ -163,10 +162,4 @@ export function $createInternalLinkNode(
  text: string,
 ): InternalLinkNode {
  return $applyNodeReplacement(new InternalLinkNode(noteId, noteTitle, text));
-}
-
-export function $isInternalLinkNode(
- node: LexicalNode | null | undefined,
-): node is InternalLinkNode {
- return node instanceof InternalLinkNode;
 }

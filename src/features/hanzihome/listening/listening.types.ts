@@ -21,45 +21,6 @@ export const LISTENING_ITEM_TYPES = [
 
 export type ListeningItemType = (typeof LISTENING_ITEM_TYPES)[number];
 
-export type ListeningCourse = {
- id: string;
- slug: string;
- title: string;
- subtitle?: string;
- type: "listening";
- order: number;
-};
-
-export type ListeningBook = {
- id: string;
- courseId: string;
- title: string;
- shortTitle?: string;
- order: number;
-};
-
-export type ListeningLesson = {
- id: string;
- bookId: string;
- lessonNumber: number;
- order: number;
- titleZh: string;
-};
-
-export type ListeningCatalog = {
- course: ListeningCourse;
- books: ListeningBook[];
- lessons: ListeningLesson[];
-};
-
-export type ListeningExerciseSection = {
- id: string;
- order: number;
- category: ListeningCategory;
- instructionZh?: string;
- instructionVi?: string;
-};
-
 export const ListeningTranscriptVoiceSchema = z.enum(["male", "female", "neutral"]);
 export type ListeningTranscriptVoice = z.infer<typeof ListeningTranscriptVoiceSchema>;
 export const ListeningTranscriptModeSchema = z.enum(["dialogue", "monologue"]);
@@ -109,72 +70,6 @@ export const ListeningAnswerSchema = z.discriminatedUnion("type", [
  }),
 ]);
 export type ListeningAnswer = z.infer<typeof ListeningAnswerSchema>;
-
-export type ListeningItem = {
- id: string;
- sectionId: string;
- order: number;
- type: ListeningItemType;
- transcript?: ListeningTranscript;
- promptZh?: string;
- options?: ListeningOption[];
- answer?: ListeningAnswer;
- explanationVi?: string;
-};
-
-export type ListeningVocabularyItem = {
- id: string;
- order: number;
- word: string;
- pinyin: string;
- meaningVi: string;
- pos?: string;
- isSeparable?: true;
-};
-
-export type ListeningLessonCounts = {
- sections: number;
- items: number;
- vocabulary: number;
- itemsByType: Partial<Record<ListeningItemType, number>>;
-};
-
-export type ListeningLessonManifest = {
- schemaVersion: "3.0.0";
- lessonId: string;
- bookId: string;
- lessonNumber: number;
- files: {
-  sections: string;
-  vocabulary: string;
-  items: Partial<Record<ListeningItemType, string>>;
- };
- counts: ListeningLessonCounts;
-};
-
-export type ListeningLessonShardRef = {
- lessonId: string;
- bookId: string;
- lessonNumber: number;
- manifest: string;
- counts: ListeningLessonCounts;
-};
-
-export type ListeningDatasetManifest = {
- schemaVersion: "3.0.0";
- datasetId: string;
- courseId: string;
- catalog: string;
- lessons: ListeningLessonShardRef[];
- totals: {
-  books: number;
-  lessons: number;
-  sections: number;
-  items: number;
-  vocabulary: number;
-  itemsByType: Partial<Record<ListeningItemType, number>>;
- };
-};
 
 export type ListeningItemQuery = {
  lessonId: string;

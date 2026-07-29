@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
@@ -21,10 +23,18 @@ export function AllGrammarPointReader({
      <article className="rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
       <div className="grid gap-3">
        <div className="grid gap-1">
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        <StudyInstructionText
+         variant="overline"
+         tone="muted"
+         weight="black"
+         tracking="wide"
+         transform="uppercase"
+        >
          Điểm ngữ pháp {index + 1}
-        </p>
-        <h2 className="text-xl font-black text-text-primary">{point.cleanTitle}</h2>
+        </StudyInstructionText>
+        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
+         {point.cleanTitle}
+        </Typography>
        </div>
 
        <StructuredGrammarContent

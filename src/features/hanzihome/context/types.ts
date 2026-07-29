@@ -8,10 +8,7 @@ import type {
  ReviewResult,
  UserLearningState,
 } from "@/features/hanzihome/types";
-import {
- learningStatusSchema,
- moduleSchema,
-} from "@/features/hanzihome/schemas/learning-state.schema";
+import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
 export const StudyModuleSchema = moduleSchema.exclude(["radicals"]);
 export const PaneIdSchema = z.enum(["left", "right"]);

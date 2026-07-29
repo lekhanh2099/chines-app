@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue } from "@/types/json";
 import { TextLineCard } from "../TextLineCard";
 import type { LessonDisplayMode } from "../types";
@@ -22,7 +23,15 @@ export function SampleRetelling({
 
  return (
   <div className="exercise-card-surface grid gap-2 rounded-xl border p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">Bài kể mẫu</p>
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Bài kể mẫu
+   </StudyInstructionText>
    <TextLineCard
     zh={zh || vi}
     pinyin={stringValue(sample, "pinyin")}

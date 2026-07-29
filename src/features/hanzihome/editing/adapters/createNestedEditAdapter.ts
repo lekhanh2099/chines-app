@@ -3,8 +3,7 @@ import { z } from "zod";
 
 import type { EditAdapter, EditFieldDefinition, EditFieldKind } from "./types";
 
-const NestedPathSchema = z.array(z.union([z.string(), z.number()]));
-type NestedPath = z.infer<typeof NestedPathSchema>;
+type NestedPath = Array<z.infer<z.ZodUnion<[z.ZodString, z.ZodNumber]>>>;
 type NestedValue = JsonObject[string];
 type OptionalText = z.infer<z.ZodOptional<z.ZodString>>;
 

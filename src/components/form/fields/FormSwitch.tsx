@@ -1,9 +1,12 @@
 "use client";
 
+import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/typography";
 import { useId, type ReactNode } from "react";
 
 import { useFieldContext } from "@/components/form/form-context";
 import { getDescribedBy, getFieldError } from "@/components/form/fields/field-utils";
+import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 
 type FormSwitchProps = {
@@ -26,47 +29,38 @@ export function FormSwitch({ label, description, disabled, required, className }
  return (
   <div className={cn("grid gap-2", className)}>
    <div className="flex items-start justify-between gap-4 rounded-2xl -lg border border-border-default bg-bg-primary p-3">
-    <label htmlFor={inputId} className="grid cursor-pointer gap-1">
-     <span className="font-black text-text-primary">
+    <Label htmlFor={inputId} variant="label" className="grid cursor-pointer gap-1">
+     <Typography as="span" tone="default" weight="black">
       {label}
-      {required && <span className="ml-1 text-destructive">*</span>}
-     </span>
+      {required && (
+       <Typography as="span" tone="danger" className="ml-1">
+        *
+       </Typography>
+      )}
+     </Typography>
 
      {description && (
-      <span id={descriptionId} className="text-xs font-semibold text-text-muted">
+      <Typography id={descriptionId} variant="caption" tone="muted" weight="semibold">
        {description}
-      </span>
+      </Typography>
      )}
-    </label>
+    </Label>
 
-    <button
+    <Switch
      id={inputId}
-     type="button"
-     role="switch"
-     aria-checked={checked}
+     checked={checked}
      aria-invalid={Boolean(error)}
      aria-describedby={getDescribedBy(descriptionId, error ? errorId : undefined)}
      disabled={disabled}
-     className={cn(
-      "relative h-6 w-11 shrink-0 rounded-full border border-border-default transition-colors disabled:cursor-not-allowed disabled:opacity-50",
-      checked ? "bg-primary" : "bg-bg-subtle",
-     )}
      onBlur={field.handleBlur}
-     onClick={() => field.handleChange(!checked)}
-    >
-     <span
-      className={cn(
-       "absolute top-1/2 size-5 -translate-y-1/2 rounded-full bg-bg-primary shadow-theme-sm transition-transform",
-       checked ? "translate-x-5" : "translate-x-0.5",
-      )}
-     />
-    </button>
+     onCheckedChange={field.handleChange}
+    />
    </div>
 
    {error && (
-    <p id={errorId} role="alert" className=" font-bold text-destructive">
+    <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
-    </p>
+    </Typography>
    )}
   </div>
  );

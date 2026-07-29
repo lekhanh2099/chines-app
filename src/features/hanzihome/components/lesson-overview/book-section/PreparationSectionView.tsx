@@ -1,3 +1,4 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { GenericItemCard } from "../CommonCards";
 import { TextLineCard } from "../TextLineCard";
@@ -34,9 +35,13 @@ function PreparationItem({
   if (zh) {
    return (
     <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3">
-     <span className="study-chip-accent flex h-7 min-w-7 items-center justify-center rounded-lg border px-2 text-xs font-black">
+     <StudyInstructionText
+      variant="caption"
+      weight="black"
+      className="study-chip-accent flex h-7 min-w-7 items-center justify-center rounded-lg border px-2"
+     >
       {index + 1}
-     </span>
+     </StudyInstructionText>
      <TextLineCard zh={zh} pinyin={pinyin} vi={vi} displayMode={displayMode} variant="reader" />
     </div>
    );
@@ -44,9 +49,14 @@ function PreparationItem({
 
   if (vi) {
    return (
-    <p className="rounded-xl border border-border-default bg-bg-subtle px-4 py-3 font-semibold leading-relaxed text-text-secondary">
+    <StudyInstructionText
+     tone="secondary"
+     weight="semibold"
+     leading="relaxed"
+     className="rounded-xl border border-border-default bg-bg-subtle px-4 py-3"
+    >
      {vi}
-    </p>
+    </StudyInstructionText>
    );
   }
  }

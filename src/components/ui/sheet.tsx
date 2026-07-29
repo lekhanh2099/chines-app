@@ -14,7 +14,7 @@ export function Sheet({
  open,
  onOpenChange,
  children,
- side = "right",
+ side = SheetSideSchema.enum.right,
  className,
 }: {
  open: boolean;

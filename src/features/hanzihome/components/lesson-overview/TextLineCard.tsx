@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
-import { getHanziTypographyStyle } from "./hanzi-typography";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
 import { z } from "zod";
 
@@ -15,7 +14,7 @@ export function TextLineCard({
  pinyin,
  vi,
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
- variant = "card",
+ variant = TextLineCardVariantSchema.enum.card,
  annotationTarget,
 }: {
  speaker?: string;
@@ -48,7 +47,6 @@ export function TextLineCard({
      pinyin={pinyin}
      vi={vi}
      displayMode={displayMode}
-     hanziStyle={getHanziTypographyStyle(displayMode)}
      annotationTarget={annotationTarget}
     />
     <NativeMandarinSpeakButton text={zh} />

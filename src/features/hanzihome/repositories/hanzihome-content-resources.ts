@@ -264,16 +264,6 @@ export function buildLessonSectionsResource(lesson: HanziHomeLesson): LessonSect
  return { lessonId: lesson.id, sections, total: sections.length };
 }
 
-export function buildLessonVocabularyResource(
- lesson: HanziHomeLesson,
-): LessonVocabularyListResource {
- return {
-  lessonId: lesson.id,
-  items: lesson.vocab,
-  total: lesson.vocab.length,
- };
-}
-
 export function buildLessonGrammarResource(lesson: HanziHomeLesson): LessonGrammarListResource {
  return {
   lessonId: lesson.id,

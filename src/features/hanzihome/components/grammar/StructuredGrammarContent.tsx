@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { Lightbulb, Sigma } from "lucide-react";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
@@ -45,42 +47,74 @@ export function StructuredGrammarContent({
    {point.core && (
     <section className="rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
      <div className="flex items-center gap-2">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary text-primary">
+      <StudyInstructionText
+       as="span"
+       tone="primary"
+       className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary"
+      >
        <Lightbulb className="h-4 w-4" />
-      </span>
-      <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">Ý nghĩa cần nhớ</p>
+      </StudyInstructionText>
+      <StudyInstructionText
+       variant="overline"
+       tone="primary"
+       weight="black"
+       tracking="extraLoose"
+       transform="uppercase"
+      >
+       Ý nghĩa cần nhớ
+      </StudyInstructionText>
      </div>
-     <p className="mt-3 text-base font-bold leading-relaxed text-text-primary sm:text-lg">
+     <StudyInstructionText tone="default" weight="bold" leading="relaxed" className="mt-3">
       {cleanGrammarDisplayLine(point.core)}
-     </p>
+     </StudyInstructionText>
     </section>
    )}
 
    {point.structuresView.length > 0 && (
     <section className="grid gap-3 rounded-xl border border-info/30 bg-info-subtle/45 p-4">
      <div className="flex items-center gap-2">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary text-info-text">
+      <StudyInstructionText
+       as="span"
+       tone="info"
+       className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary"
+      >
        <Sigma className="h-4 w-4" />
-      </span>
+      </StudyInstructionText>
       <div>
-       <p className="text-xs font-black uppercase tracking-[0.18em] text-info-text">Công thức</p>
-       <h3 className="text-base font-black text-text-primary">Mẫu cần nhớ</h3>
+       <StudyInstructionText
+        variant="overline"
+        tone="info"
+        weight="black"
+        tracking="extraLoose"
+        transform="uppercase"
+       >
+        Công thức
+       </StudyInstructionText>
+       <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+        Mẫu cần nhớ
+       </Typography>
       </div>
      </div>
      {point.structuresView.map((structure, index) => (
-      <p
+      <StudyInstructionText
        key={`${point.id}-structure-${index}`}
-       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 font-mono text-base font-black leading-relaxed text-info-text shadow-theme-sm sm:text-lg"
+       variant="code"
+       tone="info"
+       weight="black"
+       leading="relaxed"
+       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 shadow-theme-sm"
       >
        {cleanGrammarDisplayLine(structure)}
-      </p>
+      </StudyInstructionText>
      ))}
     </section>
    )}
 
    {detailSections.length > 0 && (
     <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+      Chi tiết
+     </Typography>
      {detailSections.map((section, index) => {
       const content = <GrammarDetailSectionCard section={section} />;
 
@@ -109,16 +143,29 @@ export function StructuredGrammarContent({
 
    {!hasExampleDetailSection && examples.length > 0 && (
     <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+      Ví dụ nhanh
+     </Typography>
      {examples.map((example, index) => {
       const content = (
        <div className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4">
-        <p className="text-lg font-black leading-relaxed text-text-primary">{example.zh}</p>
+        <StudyInstructionText
+         variant="sectionTitle"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+        >
+         {example.zh}
+        </StudyInstructionText>
         {example.pinyin && (
-         <p className="text-xs font-semibold leading-relaxed text-info-text">{example.pinyin}</p>
+         <StudyInstructionText variant="caption" tone="info" weight="semibold" leading="relaxed">
+          {example.pinyin}
+         </StudyInstructionText>
         )}
         {example.vi && (
-         <p className="font-semibold leading-relaxed text-text-secondary">{example.vi}</p>
+         <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
+          {example.vi}
+         </StudyInstructionText>
         )}
        </div>
       );
@@ -148,11 +195,13 @@ export function StructuredGrammarContent({
 
    {point.notes.length > 0 && (
     <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">Lưu ý / bẫy sai</h3>
+     <Typography as="h3" variant="cardTitle" tone="default" weight="black">
+      Lưu ý / bẫy sai
+     </Typography>
      {point.notes.map((note, index) => (
-      <p key={`${point.id}-note-${index}`} className="leading-relaxed text-text-secondary">
+      <StudyInstructionText key={`${point.id}-note-${index}`} tone="secondary" leading="relaxed">
        {note}
-      </p>
+      </StudyInstructionText>
      ))}
     </section>
    )}

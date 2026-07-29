@@ -1,5 +1,7 @@
 "use client";
 
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Typography } from "@/components/ui/typography";
 import { GraduationCap } from "lucide-react";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 
@@ -10,13 +12,23 @@ export function GrammarReviewFront({ item }: { item: Extract<ReviewItem, { type:
     <GraduationCap className="h-5 w-5" />
    </div>
    <div className="text-center grid gap-2">
-    <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+    <StudyInstructionText
+     variant="overline"
+     tone="muted"
+     weight="black"
+     tracking="extraLoose"
+     transform="uppercase"
+    >
      Nhận diện ngữ pháp
-    </p>
-    <h3 className="text-3xl font-black tracking-tight text-text-primary">{item.prompt}</h3>
+    </StudyInstructionText>
+    <Typography as="h3" variant="cardTitle" tone="default" weight="black" tracking="tight">
+     {item.prompt}
+    </Typography>
    </div>
    <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-4">
-    <p className="font-black text-text-primary">Trước khi mở đáp án, tự trả lời:</p>
+    <StudyInstructionText tone="default" weight="black">
+     Trước khi mở đáp án, tự trả lời:
+    </StudyInstructionText>
     <ul className="grid gap-1 font-semibold leading-relaxed text-text-secondary">
      <li>Ý nghĩa cốt lõi là gì?</li>
      <li>Công thức / pattern chính là gì?</li>

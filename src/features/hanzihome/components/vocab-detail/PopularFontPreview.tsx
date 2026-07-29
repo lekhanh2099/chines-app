@@ -1,7 +1,8 @@
+import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 export function PopularFontPreview({ word }: { word: string }) {
  return (
-  <span className="font-popular-xingkai block truncate text-6xl leading-none text-text-primary sm:text-7xl">
+  <HanziText as="span" font="popular" size="detail" leading="none" clamp="one" className="block">
    {word}
-  </span>
+  </HanziText>
  );
 }

@@ -6,7 +6,12 @@ import type { LessonDisplayMode } from "../types";
 import { arrayValue, asRecord, stringValue } from "../utils";
 import { GrammarBlockItemView } from "./GrammarBlockItemView";
 import { GrammarMicroPractice } from "./GrammarMicroPractice";
-import { containsHanziText, getHanziTypographyStyle } from "../hanzi-typography";
+import {
+ AdaptiveStudyText,
+ containsHanziText,
+ ReaderHanziText,
+ StudyInstructionText,
+} from "../hanzi-typography";
 
 export function GrammarBlockView({
  lessonId,
@@ -37,42 +42,50 @@ export function GrammarBlockView({
 
  const content = (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3">
-   <h5
-    className="font-black leading-tight text-text-primary"
-    lang={containsHanziText(block.title) ? "zh-CN" : undefined}
-    style={
-     containsHanziText(block.title)
-      ? getHanziTypographyStyle(displayMode, { size: "md" })
-      : undefined
-    }
-   >
-    {block.title}
-   </h5>
-   {contentText && <p className=" font-semibold text-text-secondary">{contentText}</p>}
+   {containsHanziText(block.title) ? (
+    <ReaderHanziText as="h5" displayMode={displayMode} size="md" weight="black" leading="tight">
+     {block.title}
+    </ReaderHanziText>
+   ) : (
+    <StudyInstructionText as="h5" variant="cardTitle">
+     {block.title}
+    </StudyInstructionText>
+   )}
+   {contentText && (
+    <StudyInstructionText tone="secondary" weight="semibold">
+     {contentText}
+    </StudyInstructionText>
+   )}
    {pattern && (
-    <p
-     className="rounded-lg bg-accent-subtle px-3 py-2 font-black leading-[1.7] text-accent-text"
-     lang={containsHanziText(pattern) ? "zh-CN" : undefined}
-     style={containsHanziText(pattern) ? getHanziTypographyStyle(displayMode) : undefined}
-    >
-     {pattern}
-    </p>
+    <AdaptiveStudyText
+     text={pattern}
+     displayMode={displayMode}
+     tone="accent"
+     weight="black"
+     leading="learner"
+     className="rounded-lg bg-accent-subtle px-3 py-2"
+    />
    )}
    {displayMode.showMeaning && meaning && (
-    <p className=" font-semibold text-text-secondary">{meaning}</p>
+    <StudyInstructionText tone="secondary" weight="semibold">
+     {meaning}
+    </StudyInstructionText>
    )}
    {formulas.length > 0 && (
     <div className="grid gap-2">
      {formulas.map((formula, index) => {
       const formulaContent = (
-       <p
-        className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2 font-black leading-[1.7] text-info-text"
-        lang="zh-CN"
-        style={getHanziTypographyStyle(displayMode, { size: "md" })}
+       <ReaderHanziText
+        displayMode={displayMode}
+        size="md"
+        tone="info"
+        weight="black"
+        leading="learner"
+        className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2"
        >
         {stringValue(formula, "label") ? `${stringValue(formula, "label")}: ` : ""}
         {stringValue(formula, "pattern")}
-       </p>
+       </ReaderHanziText>
       );
 
       return lessonId && path ? (
@@ -163,9 +176,9 @@ export function GrammarBlockView({
    {notes.length > 0 && (
     <div className="grid gap-1">
      {notes.map((note, index) => (
-      <p key={`${block.id}-note-${index}`} className="font-semibold text-text-secondary">
+      <StudyInstructionText key={`${block.id}-note-${index}`} tone="secondary" weight="semibold">
        {note}
-      </p>
+      </StudyInstructionText>
      ))}
     </div>
    )}
