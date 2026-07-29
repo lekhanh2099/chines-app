@@ -331,7 +331,7 @@ function HanziHomeBreadcrumbNav({
  return (
   <AppHeaderBreadcrumb
    aria-label="Chuyển nhanh bài HanziHome"
-   className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(34rem,56vw)]"
+   className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(42rem,70vw)]"
   >
    <AppHeaderBreadcrumbItem className="hidden md:flex">
     <AppHeaderBreadcrumbLink
@@ -345,7 +345,7 @@ function HanziHomeBreadcrumbNav({
    </AppHeaderBreadcrumbItem>
    <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
    <AppHeaderBreadcrumbItem className="hidden 2xl:flex">
-    <AppHeaderBreadcrumbPage className="max-w-48" title={breadcrumb.selectedCourse.title}>
+    <AppHeaderBreadcrumbPage title={breadcrumb.selectedCourse.title}>
      {breadcrumb.selectedCourse.title}
     </AppHeaderBreadcrumbPage>
    </AppHeaderBreadcrumbItem>
