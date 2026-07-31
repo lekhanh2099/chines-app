@@ -16,27 +16,35 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 
-import type { useNativeMandarinTts } from "./useNativeMandarinTts";
+import type { useTTS } from "@/hooks/useTTS";
 
-export type NativeMandarinTtsController = ReturnType<typeof useNativeMandarinTts>;
+export type MandarinTtsController = ReturnType<typeof useTTS>;
 
-type NativeMandarinTtsControlsProps = {
+const rateOptions = [
+ { value: "0.75", rate: 0.75 },
+ { value: "0.9", rate: 0.9 },
+ { value: "1", rate: 1 },
+ { value: "1.1", rate: 1.1 },
+ { value: "1.25", rate: 1.25 },
+];
+
+type MandarinTtsControlsProps = {
  text: string;
- tts: NativeMandarinTtsController;
+ tts: MandarinTtsController;
  hideScriptBeforeCheck?: boolean;
  onHideScriptBeforeCheckChange?: (checked: boolean) => void;
  showTranslationAfterCheck?: boolean;
  onShowTranslationAfterCheckChange?: (checked: boolean) => void;
 };
 
-export function NativeMandarinTtsControls({
+export function MandarinTtsControls({
  text,
  tts,
  hideScriptBeforeCheck,
  onHideScriptBeforeCheckChange,
  showTranslationAfterCheck,
  onShowTranslationAfterCheckChange,
-}: NativeMandarinTtsControlsProps) {
+}: MandarinTtsControlsProps) {
  const hideScriptId = useId();
  const showTranslationId = useId();
  const showPracticePreferences =
@@ -58,13 +66,13 @@ export function NativeMandarinTtsControls({
        Thiết lập nghe
       </StudyInstructionText>
       <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
-       {tts.error ?? "Giọng Mandarin Trung Quốc đại lục do thiết bị cung cấp."}
+       {tts.error ?? "Giọng Mandarin zh-CN từ Microsoft Edge Read Aloud."}
       </StudyInstructionText>
      </div>
     </div>
 
     <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
-     <Select value={tts.selectedVoiceUri} onValueChange={tts.setSelectedVoiceUri}>
+     <Select value={tts.selectedVoiceName} onValueChange={tts.setSelectedVoiceName}>
       <SelectTrigger
        size="sm"
        aria-label="Chọn giọng Mandarin"
@@ -75,23 +83,29 @@ export function NativeMandarinTtsControls({
       <SelectContent align="end">
        <SelectGroup>
         {tts.voices.map((voice) => (
-         <SelectItem key={voice.voiceURI} value={voice.voiceURI}>
-          {voice.name} · {voice.localService ? "native" : "online"}
+         <SelectItem key={voice.shortName} value={voice.shortName}>
+          {voice.name} · {voice.gender}
          </SelectItem>
         ))}
        </SelectGroup>
       </SelectContent>
      </Select>
 
-     <Select value={String(tts.rate)} onValueChange={(value) => tts.setRate(Number(value))}>
+     <Select
+      value={rateOptions.find((option) => option.rate === tts.rate)?.value}
+      onValueChange={(value) => {
+       const option = rateOptions.find((candidate) => candidate.value === value);
+       if (option) tts.setRate(option.rate);
+      }}
+     >
       <SelectTrigger size="sm" aria-label="Chọn tốc độ đọc" className="w-24 bg-bg-card">
        <SelectValue />
       </SelectTrigger>
       <SelectContent align="end">
        <SelectGroup>
-        {["0.75", "0.9", "1", "1.1", "1.25"].map((value) => (
-         <SelectItem key={value} value={value}>
-          {value}×
+        {rateOptions.map((option) => (
+         <SelectItem key={option.value} value={option.value}>
+          {option.value}×
          </SelectItem>
         ))}
        </SelectGroup>

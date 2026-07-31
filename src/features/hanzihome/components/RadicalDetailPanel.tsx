@@ -8,7 +8,7 @@ import {
  HanziFontPreview,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalDetailPanelProps = {
@@ -50,7 +50,7 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
       {radical.radical}
      </HanziFontPreview>
     </div>
-    <NativeMandarinSpeakButton text={radical.radical} />
+    <MandarinSpeakButton text={radical.radical} />
     <div className="min-w-0">
      <div className="mb-2 flex flex-wrap items-center gap-2">
       <Badge>#{radical.index}</Badge>

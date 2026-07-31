@@ -15,7 +15,7 @@ import { ExerciseQuestionCard } from "./ExerciseQuestionCard";
 import { FieldValueBlock } from "./FieldValueBlock";
 import { getRenderableFields } from "./generic-field-utils";
 import { RawDataDetails } from "./RawDataDetails";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 export function GenericItemCard({
  value,
@@ -74,7 +74,7 @@ export function GenericItemCard({
      <ReaderHanziText as="p" displayMode={displayMode}>
       {hanzi}
      </ReaderHanziText>
-     <NativeMandarinSpeakButton text={hanzi} />
+     <MandarinSpeakButton text={hanzi} />
     </div>
    )}
 

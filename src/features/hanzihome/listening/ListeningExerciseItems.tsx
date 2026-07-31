@@ -25,7 +25,6 @@ import type {
  ListeningRuntimeItem,
  ListeningTranscript,
 } from "./listening.types";
-import type { MandarinSpeechSegment } from "./useNativeMandarinTts";
 
 type ListeningExerciseItemsProps = {
  exerciseType: ListeningExerciseType;
@@ -38,7 +37,7 @@ type ListeningExerciseItemsProps = {
  showTranslationAfterCheck: boolean;
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onSpeakSequence: (segments: MandarinSpeechSegment[]) => void;
+ onSpeakSequence: (segments: string[]) => void;
  lessonId: string;
 };
 

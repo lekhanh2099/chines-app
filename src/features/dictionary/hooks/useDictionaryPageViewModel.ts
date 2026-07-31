@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { toast } from "sonner";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
+import { useTTS } from "@/hooks/useTTS";
 import {
  getNormalizedAntonyms,
  getNormalizedDefinitions,
@@ -26,6 +27,7 @@ import {
 import { z } from "zod";
 
 export function useDictionaryPageViewModel(): DictionaryPageViewModel {
+ const { speak } = useTTS();
  const params = useParams<{ hanzi: string }>();
  const rawText = decodeURIComponent(params.hanzi || "");
  const chineseCharacters = getUniqueChineseCharacters(rawText);
@@ -176,15 +178,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
          : "Thuần thục";
 
  const handleSpeak = () => {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-   return;
-  }
-
-  const utterance = new SpeechSynthesisUtterance(vocabData.hanzi);
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.8;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
+  void speak(vocabData.hanzi);
  };
 
  const handleSave = () => {

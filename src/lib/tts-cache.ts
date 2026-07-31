@@ -1,6 +1,6 @@
 /**
  * IndexedDB-based audio cache for TTS.
- * Stores audio blobs keyed by text + voice to avoid redundant API calls.
+ * Stores audio blobs keyed by text + voice + rate to avoid redundant API calls.
  */
 import { z } from "zod";
 
@@ -31,8 +31,8 @@ function openDb(): Promise<IDBDatabase> {
  });
 }
 
-export function buildCacheKey(text: string, voice?: string): string {
- return `${voice || "default"}::${text}`;
+export function buildCacheKey(text: string, voice: string, rate: number): string {
+ return `${voice}::${rate}::${text}`;
 }
 
 export async function getCachedAudio(

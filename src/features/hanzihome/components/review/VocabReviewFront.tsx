@@ -2,7 +2,7 @@
 
 import { BookOpen } from "lucide-react";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import {
  HanziText,
  StudyInstructionText,
@@ -29,7 +29,7 @@ export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "
     <HanziText as="h3" size="hero" weight="black" tracking="normal">
      {item.prompt}
     </HanziText>
-    <NativeMandarinSpeakButton text={item.prompt} />
+    <MandarinSpeakButton text={item.prompt} />
    </div>
    {example && (
     <StudyInstructionText

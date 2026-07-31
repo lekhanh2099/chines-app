@@ -1,7 +1,7 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { CharacterWritingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
 import { asRecord, stringValue } from "./utils";
@@ -27,7 +27,7 @@ export function WritingCard({
      <StudyInstructionText variant="display" tone="default" weight="black" lang="zh-CN">
       {item.hanzi}
      </StudyInstructionText>
-     <NativeMandarinSpeakButton text={item.hanzi} />
+     <MandarinSpeakButton text={item.hanzi} />
     </div>
     {displayMode.showPinyin && item.pinyin && (
      <StudyInstructionText tone="accent" weight="bold">

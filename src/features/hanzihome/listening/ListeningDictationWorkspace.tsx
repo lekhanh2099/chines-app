@@ -23,7 +23,8 @@ import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
-import { NativeMandarinTtsControls } from "./NativeMandarinTtsControls";
+import { MandarinTtsControls } from "./MandarinTtsControls";
+import { useSharedMandarinTts } from "./MandarinTtsProvider";
 import { listeningCategoryLabels } from "./listening.labels";
 import type { ListeningCategory } from "./listening.types";
 import {
@@ -32,8 +33,6 @@ import {
  type ListeningTranscriptEntry,
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
-import { useNativeMandarinTts } from "./useNativeMandarinTts";
-import type { MandarinSpeechSegment } from "./useNativeMandarinTts";
 
 function normalizeDictationText(text: string) {
  return text
@@ -85,7 +84,7 @@ function DictationCards({
  entries: ListeningTranscriptEntry[];
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
- onSpeakSequence: (segments: MandarinSpeechSegment[]) => void;
+ onSpeakSequence: (segments: string[]) => void;
 }) {
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -183,7 +182,7 @@ function DictationCards({
 export function ListeningDictationWorkspace() {
  const runtime = useHanziHomeRuntime();
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
- const tts = useNativeMandarinTts();
+ const tts = useSharedMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
  const [selectedSectionId, setSelectedSectionId] =
   useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
@@ -291,7 +290,7 @@ export function ListeningDictationWorkspace() {
    actions={<Badge variant="purple">{transcriptEntries.length} đoạn</Badge>}
   >
    <div className="grid gap-2.5">
-    <NativeMandarinTtsControls text={playAllText} tts={tts} />
+    <MandarinTtsControls text={playAllText} tts={tts} />
 
     <Card variant="glass" padding="md" className="grid gap-1.5 rounded-xl">
      <div className="flex items-start gap-2">

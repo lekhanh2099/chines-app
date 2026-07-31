@@ -5,7 +5,7 @@ import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
 import type { VocabularyItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
 import { VocabBulkEditDialog } from "@/features/hanzihome/components/vocab/VocabBulkEditDialog";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import type { LessonDisplayMode } from "./types";
 import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
@@ -68,7 +68,7 @@ export function VocabMiniGrid({
         >
          {item.hanzi}
         </ReaderHanziText>
-        <NativeMandarinSpeakButton text={item.hanzi} />
+        <MandarinSpeakButton text={item.hanzi} />
         {displayMode.showPinyin && item.pinyin && (
          <StudyInstructionText tone="accent" weight="bold">
           {item.pinyin}

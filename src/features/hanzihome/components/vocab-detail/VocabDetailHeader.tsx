@@ -6,7 +6,7 @@ import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemory
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { PopularFontPreview } from "./PopularFontPreview";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import {
  HanziText,
  PinyinText,
@@ -40,7 +40,7 @@ export function VocabDetailHeader({
       >
        {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
       </HanziText>
-      <NativeMandarinSpeakButton text={word.hanzi} />
+      <MandarinSpeakButton text={word.hanzi} />
      </div>
      <PinyinText
       as="p"

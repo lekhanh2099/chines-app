@@ -3,7 +3,7 @@ import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { properNounBackText, properNounFrontText, stringList } from "./proper-noun-utils";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { HanziText, PinyinText, TranslationText, StudyInstructionText } from "../hanzi-typography";
 
 export function ProperNounCard({
@@ -35,7 +35,7 @@ export function ProperNounCard({
       <HanziText as="h4" size="card" weight="black" leading="none">
        {hanzi}
       </HanziText>
-      <NativeMandarinSpeakButton text={hanzi} />
+      <MandarinSpeakButton text={hanzi} />
      </div>
     )}
 

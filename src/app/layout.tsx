@@ -7,7 +7,7 @@ import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Geist, LXGW_WenKai_Mono_TC } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { NativeMandarinTtsProvider } from "@/features/hanzihome/listening/NativeMandarinTtsProvider";
+import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans", preload: false });
 const lxgwWenKaiMonoTc = LXGW_WenKai_Mono_TC({
@@ -43,9 +43,9 @@ export default function RootLayout({
     <ThemeProvider>
      <TooltipProvider>
       <QueryProvider>
-       <NativeMandarinTtsProvider>
+       <MandarinTtsProvider>
         <VocabInspectorProvider>{children}</VocabInspectorProvider>
-       </NativeMandarinTtsProvider>
+       </MandarinTtsProvider>
       </QueryProvider>
       <AppToaster />
      </TooltipProvider>

@@ -3,7 +3,7 @@
 import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import { TextLineCard } from "./TextLineCard";
 import { StudyInstructionText, ReaderHanziText } from "./hanzi-typography";
@@ -177,7 +177,7 @@ export function PassageCard({
           displayMode={clozeDisplayMode}
          />
         </div>
-        <NativeMandarinSpeakButton text={completedPassageText || passageText || clozeText} />
+        <MandarinSpeakButton text={completedPassageText || passageText || clozeText} />
        </div>
        {displayMode.showPinyin && passagePinyin && (
         <StudyInstructionText variant="caption" tone="muted" weight="bold" emphasis="italic">

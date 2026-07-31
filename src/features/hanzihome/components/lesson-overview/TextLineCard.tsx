@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
@@ -49,7 +49,7 @@ export function TextLineCard({
      displayMode={displayMode}
      annotationTarget={annotationTarget}
     />
-    <NativeMandarinSpeakButton text={zh} />
+    <MandarinSpeakButton text={zh} />
    </div>
   </div>
  );

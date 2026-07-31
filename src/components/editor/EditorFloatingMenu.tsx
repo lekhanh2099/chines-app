@@ -46,6 +46,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
+import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/chinese-utils";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
@@ -101,6 +102,7 @@ function FormatButton({
 
 export default function EditorFloatingMenu() {
  const [editor] = useLexicalComposerContext();
+ const { speak } = useTTS();
  const [isViewportHidden, setIsViewportHidden] = useState(false);
  const [hasAnchor, setHasAnchor] = useState(false);
  const [showNote, setShowNote] = useState(false);
@@ -427,12 +429,7 @@ export default function EditorFloatingMenu() {
 
   const speechText = smartMode === "sentence" ? selectedText : detailTarget;
   if (!speechText) return;
-
-  const utterance = new SpeechSynthesisUtterance(speechText);
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.88;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
+  void speak(speechText);
  };
 
  const handleToggleNote = (event: React.MouseEvent<HTMLButtonElement>) => {

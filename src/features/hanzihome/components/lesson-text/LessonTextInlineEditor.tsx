@@ -25,7 +25,7 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
-import { NativeMandarinSpeakButton } from "@/features/hanzihome/listening/NativeMandarinSpeakButton";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
 import { speechTextForSections } from "./lesson-section-speech";
 
@@ -88,9 +88,7 @@ export function LessonTextInlineEditor({
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
- const readingControls = (
-  <NativeMandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />
- );
+ const readingControls = <MandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />;
 
  const sidebar = (
   <div className="grid gap-2">

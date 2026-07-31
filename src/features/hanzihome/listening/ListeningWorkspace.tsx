@@ -20,9 +20,9 @@ import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 
 import { ListeningExerciseItems } from "./ListeningExerciseItems";
-import { NativeMandarinTtsControls } from "./NativeMandarinTtsControls";
+import { MandarinTtsControls } from "./MandarinTtsControls";
+import { useSharedMandarinTts } from "./MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
-import { useNativeMandarinTts } from "./useNativeMandarinTts";
 import { itemsForListeningSection } from "./listening.view-model";
 import { listeningCategoryLabels } from "./listening.labels";
 import type { ListeningCategory } from "./listening.types";
@@ -31,7 +31,7 @@ import { z } from "zod";
 export function ListeningWorkspace() {
  const runtime = useHanziHomeRuntime();
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
- const tts = useNativeMandarinTts();
+ const tts = useSharedMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
  const [selectedSectionId, setSelectedSectionId] =
   useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
@@ -150,7 +150,7 @@ export function ListeningWorkspace() {
    actions={<Badge variant="purple">{selectedItems.length} câu</Badge>}
   >
    <div className="grid gap-2.5">
-    <NativeMandarinTtsControls
+    <MandarinTtsControls
      text={playAllText}
      tts={tts}
      hideScriptBeforeCheck={hideScriptBeforeCheck}

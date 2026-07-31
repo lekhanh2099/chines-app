@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import { SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
-import { NativeMandarinTtsProvider } from "@/features/hanzihome/listening/NativeMandarinTtsProvider";
+import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
 import { BookSectionContent } from "./BookSectionContent";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
@@ -39,12 +39,12 @@ describe("BookSectionContent", () => {
   });
 
   const html = renderToStaticMarkup(
-   <NativeMandarinTtsProvider>
+   <MandarinTtsProvider>
     <BookSectionContent
      section={section}
      displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showMeaning: true }}
     />
-   </NativeMandarinTtsProvider>,
+   </MandarinTtsProvider>,
   );
 
   expect(html).toContain("这一课讲的是一个中国人到美国后的故事。");

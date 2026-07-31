@@ -5,9 +5,9 @@ import { Square, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-import { useSharedNativeMandarinTts } from "./NativeMandarinTtsProvider";
+import { useSharedMandarinTts } from "./MandarinTtsProvider";
 
-export function NativeMandarinSpeakButton({
+export function MandarinSpeakButton({
  text,
  className,
  actionLabel,
@@ -16,7 +16,7 @@ export function NativeMandarinSpeakButton({
  className?: string;
  actionLabel?: string;
 }) {
- const tts = useSharedNativeMandarinTts();
+ const tts = useSharedMandarinTts();
  const normalizedText = text.trim();
  const active = tts.isSpeaking && tts.speakingText === normalizedText;
  const unavailable = !normalizedText || !tts.selectedVoice;

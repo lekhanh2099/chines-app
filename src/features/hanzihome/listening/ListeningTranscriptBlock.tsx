@@ -9,8 +9,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 
-import type { ListeningTranscript, ListeningTranscriptVoice } from "./listening.types";
-import type { MandarinSpeechSegment } from "./useNativeMandarinTts";
+import type { ListeningTranscript } from "./listening.types";
 
 export function ListeningTranscriptBlock({
  transcript,
@@ -20,8 +19,8 @@ export function ListeningTranscriptBlock({
 }: {
  transcript: ListeningTranscript;
  displayMode: LessonDisplayMode;
- onSpeak: (text: string, voice?: ListeningTranscriptVoice) => void;
- onSpeakSequence: (segments: MandarinSpeechSegment[]) => void;
+ onSpeak: (text: string) => void;
+ onSpeakSequence: (segments: string[]) => void;
 }) {
  const speakerById = new Map(transcript.speakers.map((speaker) => [speaker.id, speaker]));
 
@@ -46,11 +45,8 @@ export function ListeningTranscriptBlock({
       onClick={() =>
        onSpeakSequence(
         transcript.lines.length > 0
-         ? transcript.lines.map((line) => ({
-            text: line.zh,
-            voice: speakerById.get(line.speakerId)?.voice,
-           }))
-         : [{ text: transcript.full.zh, voice: "neutral" }],
+         ? transcript.lines.map((line) => line.zh)
+         : [transcript.full.zh],
        )
       }
      >
@@ -113,7 +109,7 @@ export function ListeningTranscriptBlock({
          size="icon-sm"
          aria-label={`Đọc dòng ${line.order}`}
          title={`Đọc dòng ${line.order}`}
-         onClick={() => onSpeak(line.zh, speaker?.voice)}
+         onClick={() => onSpeak(line.zh)}
         >
          <Play />
         </Button>
