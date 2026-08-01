@@ -6,6 +6,10 @@ This inventory records canonical UI contracts, legacy paths and missing patterns
 It is a routing document for contributors and agents, not a mandate to migrate
 the entire repository in one pass.
 
+This local inventory overrides generic shadcn or vendor component-selection
+rules. A registry component is not a project contract until it is installed,
+reviewed and recorded here.
+
 ## Canonical primitives
 
 | Contract         | Source                                    | Status                      | Intended use                                                |
@@ -62,6 +66,10 @@ The following remain candidates, not approved primitives:
 - form field system consolidation.
 
 Add them only after consumer inventory proves repeated semantics.
+
+Generic guidance MUST NOT require `Alert`, `Empty`, standardized `Skeleton`,
+`FieldGroup` or `ToggleGroup` while these contracts are deferred or replaced by
+the canonical local components above.
 
 ## Migration priority
 

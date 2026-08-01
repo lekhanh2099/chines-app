@@ -11,10 +11,17 @@ Keep schema history reproducible and preserve the study/edit flow while database
 
 ## Preflight
 
-1. Read root `AGENTS.md`, `supabase/AGENTS.md`, and accepted ADRs.
+1. Read root `AGENTS.md`, `supabase/AGENTS.md`,
+   `docs/agent/skill-authoring.md`, and accepted ADRs.
 2. Inspect related migrations, live generated types, server repository queries, route authorization, and tests.
-3. Define ownership (`seed`, `custom`, or `user_override`), stable IDs, parent relationships, read payload impact, rollback/forward-fix path, and lock/rewrite risk.
-4. If seed-edit policy, exercise shape, or required destructive child replacement is unclear, stop and ask.
+3. State the exact local, branch, staging, or production target. Inspect
+   migration drift and define ownership (`seed`, `custom`, or `user_override`),
+   stable IDs, parent relationships, existing-row safety, read payload impact
+   and lock/rewrite risk.
+4. Choose and document either rollback or forward-fix for this migration; do
+   not claim both without an executable path.
+5. If seed-edit policy, exercise shape, required destructive child replacement,
+   target environment, or production authorization is unclear, stop and ask.
 
 ## Migration workflow
 
@@ -22,7 +29,8 @@ Keep schema history reproducible and preserve the study/edit flow while database
 2. Make policy/grant/function changes explicit. Resolve identity server-side and verify parent-child membership from rows, not request claims.
 3. Prefer additive/backfill/enforce sequencing for populated tables. Use transactions where partial application would be unsafe.
 4. Keep normal edits row/node-level. Name bulk replacement separately and make it transactional.
-5. Apply first to a local, branch, or otherwise safe environment unless the user explicitly authorizes production.
+5. Apply first to the stated local, branch, or otherwise safe environment unless
+   the user explicitly authorizes production.
 6. Refresh `src/types/supabase.generated.ts`, update Zod/API contracts, and run targeted tests plus required repository checks.
 7. Run Supabase security/performance advisors when live access is available and report unresolved findings.
 
@@ -30,4 +38,7 @@ Read [references/migration-review.md](references/migration-review.md) before app
 
 ## Output
 
-Report the invariant, migration path, authorization/ownership behavior, affected read/write contracts, verification evidence, live environment touched, and residual deployment risk.
+Report the precedent, invariant, migration path, drift state, existing-row and
+lock risk, chosen rollback or forward-fix, authorization/ownership behavior,
+affected read/write contracts, verification evidence, exact environment
+touched, and residual deployment risk.

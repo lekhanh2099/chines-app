@@ -18,6 +18,7 @@ cat AGENTS.md
 cat docs/ui/component-contracts.md
 cat docs/ui/component-inventory.md
 cat docs/ui/ui-verification.md
+cat docs/agent/skill-authoring.md
 git status --short
 ```
 
@@ -201,12 +202,20 @@ ad-hoc debt
 
 Follow `docs/ui/ui-verification.md`.
 
-A visual claim requires rendering.
+A visual claim requires rendering. Logic-only work that does not make a visual
+or interaction claim does not require the full viewport matrix.
 
-Verify applicable desktop, iPad portrait, mobile, keyboard,
-loading/empty/error, dark mode and console states.
+Use:
 
-Then run:
+- Fast: render the affected state/viewport for a local visual regression.
+- Subsystem: verify affected desktop/iPad/mobile, keyboard and state variants.
+- Full: verify shared primitive or multi-surface consumers plus the repository
+  gate.
+
+Verify only applicable desktop, iPad portrait, mobile, keyboard,
+loading/empty/error, dark mode and console states; report what was not checked.
+
+For the full path or app-code completion, run:
 
 ```bash
 npm run check
@@ -218,6 +227,8 @@ Report:
 
 ```text
 Component contract used:
+Precedent used:
+Authoritative contract:
 New/extended contract:
 Meaningful consumers:
 Feature-local exceptions:

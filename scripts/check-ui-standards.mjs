@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const ROOT = process.cwd();
@@ -65,11 +66,8 @@ function classNameAttribute(node) {
  );
 }
 
-const failures = [];
-
-for (const file of listSourceFiles(SRC)) {
- const isUiOwner = file.includes(UI_BOUNDARY);
- const source = fs.readFileSync(file, "utf8");
+export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOUNDARY) }) {
+ const failures = [];
  const sourceFile = ts.createSourceFile(
   file,
   source,
@@ -140,12 +138,29 @@ for (const file of listSourceFiles(SRC)) {
  };
 
  visit(sourceFile);
+ return failures;
 }
 
-if (failures.length > 0) {
- console.error("UI-system violations detected:");
- console.error(failures.map((entry) => `- ${entry}`).join("\n"));
- process.exitCode = 1;
-} else {
- console.info("UI-system check passed with no baseline.");
+export function runUiCheck() {
+ const failures = [];
+
+ for (const file of listSourceFiles(SRC)) {
+  const source = fs.readFileSync(file, "utf8");
+  failures.push(...inspectUiSource({ file, source }));
+ }
+
+ if (failures.length > 0) {
+  console.error("UI-system violations detected:");
+  console.error(failures.map((entry) => `- ${entry}`).join("\n"));
+  process.exitCode = 1;
+ } else {
+  console.info("UI-system check passed with no baseline.");
+ }
+}
+
+const isMainModule =
+ process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (isMainModule) {
+ runUiCheck();
 }

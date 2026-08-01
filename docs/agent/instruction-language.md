@@ -3,6 +3,9 @@
 Agent instructions work best when they define observable behavior, scope,
 evidence and stop conditions.
 
+Repository authority is explicit: user requirements, nearest `AGENTS.md`, local
+contracts/source, repository skills, then vendor or generic guidance.
+
 ## 1. Use normative words consistently
 
 - **MUST**: required and verifiable.
@@ -76,6 +79,10 @@ states.
 Definition of done:
 List executable checks and manual flows.
 
+Verification tier:
+Choose fast, subsystem or full and state the evidence that would require
+escalation.
+
 Confirmation:
 Stop only for decisions required by `docs/agent/risk-confirmation.md`.
 
@@ -88,14 +95,31 @@ Before coding, report:
 5. risk and confirmation requirement.
 
 After coding, report:
-1. files changed;
-2. behavior preserved;
-3. checks run;
-4. UI states verified;
-5. residual risks.
+1. precedent and authoritative contract;
+2. data/state flow and invariant protected;
+3. files changed and behavior preserved;
+4. checks and UI/browser evidence;
+5. broader abstraction rejected;
+6. residual risks and unverified states.
 ```
 
-## 4. Review wording
+## 4. Claim-evidence ledger
+
+Require evidence that can falsify each material claim:
+
+| Claim                | Evidence                                                 |
+| -------------------- | -------------------------------------------------------- |
+| Correct type         | generated, schema, domain or installed-library owner     |
+| Correct state owner  | producer, consumer and mutation path                     |
+| No sibling impact    | focused mutation assertion or before/after diff          |
+| UI verified          | environment, auth state, route, viewport and interaction |
+| Codebase-consistent  | named local precedent                                    |
+| Regression prevented | test that reproduces the reported failure                |
+
+Browser evidence also reports console/network inspection and known unverified
+states. A signed-out redirect does not verify an authenticated flow.
+
+## 5. Review wording
 
 Ask for evidence, not confidence:
 
@@ -139,7 +163,7 @@ local source, and use the local API. Do not overwrite a customized primitive
 without a diff, consumer inventory and confirmation.
 ```
 
-## 5. Completion wording
+## 6. Completion wording
 
 Allowed:
 

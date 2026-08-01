@@ -21,6 +21,8 @@ git status --short
 
 Also load `frontend-feature-workflow`.
 
+Read `docs/agent/skill-authoring.md`.
+
 Load `frontend-ui-system` when the task changes UI.
 
 ## 2. Classify mode and entity
@@ -95,6 +97,13 @@ MUST NOT:
 
 STOP AND CONFIRM when the ownership or seed-edit policy is unclear.
 
+### Import and bulk edit
+
+Validate the complete input at the owning boundary, reconcile record counts and
+stable identities, then produce a preview/diff before persistence. Leave
+mismatches untouched and report them. Preview is evidence, not write
+authorization.
+
 ## 5. Exercises
 
 Exercise persistence is high risk.
@@ -141,11 +150,14 @@ Report:
 ```text
 Mode:
 Entity/node:
+Precedent used:
 Read contract:
 Write contract:
+Data flow:
 Stable ID:
 Query invalidation:
 Sibling preservation:
+Invariant protected:
 Checks:
 Unsupported shapes:
 Residual data risk:

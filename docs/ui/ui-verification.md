@@ -2,6 +2,16 @@
 
 A visual or interaction task is not complete after typecheck.
 
+Use the smallest applicable tier:
+
+- Fast: render the affected state and viewport for a local visual regression.
+- Subsystem: verify affected responsive, keyboard and state variants.
+- Full: verify shared primitive or multi-surface consumers and run the full
+  repository gate.
+
+Logic-only work that makes no visual or interaction claim does not require the
+full viewport matrix.
+
 ## 1. Required states
 
 Inspect every affected surface in relevant states:
@@ -122,12 +132,15 @@ Verify:
 For UI tasks, report:
 
 ```text
+Environment:
+Authentication state:
 Rendered routes:
 Viewports:
 Mouse/touch interactions:
 Keyboard interactions:
 Loading/empty/error states:
 Console warnings/errors:
+Failed network requests:
 Known unverified states:
 ```
 

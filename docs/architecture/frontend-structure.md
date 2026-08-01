@@ -177,6 +177,13 @@ survive feature boundaries.
 - Browser APIs and client stores stay below a Client boundary.
 - Route handlers validate input and derive trusted identity server-side.
 
+## Installed dependency authority
+
+For framework and library behavior, inspect the lockfile/installed version,
+local source, installed exported types and version-matched documentation before
+the semver range in `package.json` or remembered APIs. Generic or latest
+upstream examples do not override the installed contract.
+
 ## 4. State ownership matrix
 
 | State                             | Owner                          |

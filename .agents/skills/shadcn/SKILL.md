@@ -9,6 +9,20 @@ allowed-tools: Bash(npx shadcn@latest *), Bash(pnpm dlx shadcn@latest *), Bash(b
 
 A framework for building ui, components and design systems. Components are added as source code to the user's project via the CLI.
 
+## Repository override
+
+In `chines-app`, root/nested `AGENTS.md`, local component source,
+`docs/ui/component-contracts.md` and `docs/ui/component-inventory.md` override
+every generic recommendation in this skill. A registry component that is not
+installed and locally approved is not an existing project contract.
+Read `docs/agent/skill-authoring.md` before applying this workflow.
+
+Use the repository's `EmptyState`, form adapters and current selection controls.
+Do not require `Alert`, `Empty`, standardized `Skeleton`, `FieldGroup` or
+`ToggleGroup` when the local inventory marks that contract as deferred or uses
+a different canonical component. Use the CLI to inspect upstream APIs; do not
+let upstream composition create a parallel local UI system.
+
 > **IMPORTANT:** Run all CLI commands using the project's package runner: `npx shadcn@latest`, `pnpm dlx shadcn@latest`, or `bunx --bun shadcn@latest` — based on the project's `packageManager`. Examples below use `npx shadcn@latest` but substitute the correct runner for the project.
 
 ## Current Project Context
@@ -28,7 +42,8 @@ The JSON above contains the project config and installed components. Use `npx sh
 
 ## Critical Rules
 
-These rules are **always enforced**. Each links to a file with Incorrect/Correct code pairs.
+These generic rules apply only when they do not conflict with the repository
+override above. Each links to a file with Incorrect/Correct code pairs.
 
 ### Styling & Tailwind → [styling.md](./rules/styling.md)
 
@@ -42,10 +57,13 @@ These rules are **always enforced**. Each links to a file with Incorrect/Correct
 
 ### Forms & Inputs → [forms.md](./rules/forms.md)
 
-- **Forms use `FieldGroup` + `Field`.** Never use raw `div` with `space-y-*` or `grid gap-*` for form layout.
+- **Forms use the repository TanStack Form adapters.** Use `FieldGroup` +
+  `Field` only after the local inventory approves that contract.
 - **`InputGroup` uses `InputGroupInput`/`InputGroupTextarea`.** Never raw `Input`/`Textarea` inside `InputGroup`.
 - **Buttons inside inputs use `InputGroup` + `InputGroupAddon`.**
-- **Option sets (2–7 choices) use `ToggleGroup`.** Don't loop `Button` with manual active state.
+- **Option sets use the locally approved `SegmentedControl`, `RadioGroup`,
+  `OptionSelect`, or another documented contract.** Do not introduce
+  `ToggleGroup` solely because it exists upstream.
 - **`FieldSet` + `FieldLegend` for grouping related checkboxes/radios.** Don't use a `div` with a heading.
 - **Field validation uses `data-invalid` + `aria-invalid`.** `data-invalid` on `Field`, `aria-invalid` on the control. For disabled: `data-disabled` on `Field`, `disabled` on the control.
 
@@ -62,11 +80,13 @@ These rules are **always enforced**. Each links to a file with Incorrect/Correct
 ### Use Components, Not Custom Markup → [composition.md](./rules/composition.md)
 
 - **Use existing components before custom markup.** Check if a component exists before writing a styled `div`.
-- **Callouts use `Alert`.** Don't build custom styled divs.
-- **Empty states use `Empty`.** Don't build custom empty state markup.
+- **Callouts follow the local inventory.** `Alert` remains unavailable until
+  the repository approves it.
+- **Empty states use the repository `EmptyState`.**
 - **Toast via `sonner`.** Use `toast()` from `sonner`.
 - **Use `Separator`** instead of `<hr>` or `<div className="border-t">`.
-- **Use `Skeleton`** for loading placeholders. No custom `animate-pulse` divs.
+- **Loading placeholders follow existing feature and inventory contracts.**
+  Skeleton standardization remains deferred.
 - **Use `Badge`** instead of custom styled spans.
 
 ### Icons → [icons.md](./rules/icons.md)
@@ -91,20 +111,8 @@ These rules are **always enforced**. Each links to a file with Incorrect/Correct
 These are the most common patterns that differentiate correct shadcn/ui code. For edge cases, see the linked rule files above.
 
 ```tsx
-// Form layout: FieldGroup + Field, not div + Label.
-<FieldGroup>
-  <Field>
-    <FieldLabel htmlFor="email">Email</FieldLabel>
-    <Input id="email" />
-  </Field>
-</FieldGroup>
-
-// Validation: data-invalid on Field, aria-invalid on the control.
-<Field data-invalid>
-  <FieldLabel>Email</FieldLabel>
-  <Input aria-invalid />
-  <FieldDescription>Invalid email.</FieldDescription>
-</Field>
+// In chines-app, use the existing TanStack Form field components.
+// Do not introduce upstream FieldGroup/Field until the local inventory approves them.
 
 // Icons in buttons: data-icon, no sizing classes.
 <Button>
@@ -131,15 +139,15 @@ These are the most common patterns that differentiate correct shadcn/ui code. Fo
 | -------------------------- | --------------------------------------------------------------------------------------------------- |
 | Button/action              | `Button` with appropriate variant                                                                   |
 | Form inputs                | `Input`, `Select`, `Combobox`, `Switch`, `Checkbox`, `RadioGroup`, `Textarea`, `InputOTP`, `Slider` |
-| Toggle between 2–5 options | `ToggleGroup` + `ToggleGroupItem`                                                                   |
+| Toggle between 2–5 options | Local `SegmentedControl`, `RadioGroup`, or documented selection contract                           |
 | Data display               | `Table`, `Card`, `Badge`, `Avatar`                                                                  |
 | Navigation                 | `Sidebar`, `NavigationMenu`, `Breadcrumb`, `Tabs`, `Pagination`                                     |
 | Overlays                   | `Dialog` (modal), `Sheet` (side panel), `Drawer` (bottom sheet), `AlertDialog` (confirmation)       |
-| Feedback                   | `sonner` (toast), `Alert`, `Progress`, `Skeleton`, `Spinner`                                        |
+| Feedback                   | Installed local feedback contract; `sonner` for toast                                               |
 | Command palette            | `Command` inside `Dialog`                                                                           |
 | Charts                     | `Chart` (wraps Recharts)                                                                            |
 | Layout                     | `Card`, `Separator`, `Resizable`, `ScrollArea`, `Accordion`, `Collapsible`                          |
-| Empty states               | `Empty`                                                                                             |
+| Empty states               | Repository `EmptyState`                                                                             |
 | Menus                      | `DropdownMenu`, `ContextMenu`, `Menubar`                                                            |
 | Tooltips/info              | `Tooltip`, `HoverCard`, `Popover`                                                                   |
 | Chat / conversation UI     | `MessageScroller`, `Message`, `Bubble`, `Attachment`, `Marker`                                      |

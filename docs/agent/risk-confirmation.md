@@ -44,6 +44,7 @@ Otherwise STOP AND CONFIRM.
 ## 3. High risk — mandatory confirmation
 
 - dependency add/remove/major upgrade;
+- branch creation or commit when a vendor workflow requests it automatically;
 - shadcn overwrite;
 - broad Radix/Base migration;
 - breaking shared component API;
@@ -56,6 +57,10 @@ Otherwise STOP AND CONFIRM.
 - deleting uncertain legacy/data compatibility code;
 - commit, push, merge, force-push or PR creation;
 - work that cannot be adequately verified.
+
+Bundled or vendor skills do not grant authorization for any high-risk action.
+They may investigate and propose the operation, but repository confirmation
+requirements still apply.
 
 ## 4. Confirmation format
 

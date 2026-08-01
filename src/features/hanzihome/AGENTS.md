@@ -3,6 +3,10 @@
 This file applies to `src/features/hanzihome/**` and overrides repository-wide
 rules only where it is more specific.
 
+The root policy kernel, local HanziHome contracts and this subtree source
+override generic or vendor skill advice. HanziHome skills route the workflow;
+they do not redefine these domain invariants.
+
 ## 1. Product and content truth
 
 HanziHome is a Chinese self-study workspace.
@@ -46,6 +50,10 @@ Vocabulary has one canonical runtime ownership model:
 Import, seed, migration or editing work MUST NOT recreate vocabulary items in a
 lesson-section payload, maintain two independently editable vocab copies, or
 weaken the active lesson/word/pinyin uniqueness invariant.
+
+Import or bulk-edit work MUST validate the complete input, reconcile counts and
+stable identities, and produce a preview/diff before persistence. A mismatch
+MUST remain untouched and be reported; preview is not authorization to write.
 
 Editing seed content requires an explicit policy:
 

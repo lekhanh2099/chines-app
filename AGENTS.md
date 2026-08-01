@@ -22,6 +22,17 @@ Normative words are intentional:
 More specific `AGENTS.md` files apply to their directory subtree and override
 this file where they are more specific.
 
+Authority order is:
+
+1. explicit user requirements;
+2. nearest applicable `AGENTS.md`, then this root contract;
+3. local generated types, installed documentation, contracts and source;
+4. repository skills and domain documentation;
+5. bundled, vendor or generic skill guidance.
+
+Local repository authority always overrides conflicting vendor or generic
+guidance.
+
 ## 1. Load the correct instructions
 
 Before a non-trivial task:
@@ -329,15 +340,26 @@ value.
 
 ### 7.5 Enforcement
 
-`scripts/check-source-standards.mjs` MUST fail owned source for every forbidden
-construct above. The Supabase generated file MAY be excluded from the unsafe
-AST mutation gate but MUST remain in TypeScript typechecking.
+`scripts/check-source-standards.mjs` MUST fail machine-detectable unsafe syntax:
+explicit `any`/`unknown`, unconstrained Zod schemas, unaudited handwritten
+unions, unaudited assertions, non-null assertions and TypeScript suppressions.
+Semantic bypasses such as fake guards, internal reparsing, coercion and contract
+weakening require source-flow and diff review because syntax alone cannot prove
+their intent. The Supabase generated file MAY be excluded from the unsafe AST
+mutation gate but MUST remain in TypeScript typechecking.
 
-Do not weaken the gate, add a broad exception, or change a baseline to make a
-task pass. A type-clean task MUST NOT be reported as complete unless:
+Pre-existing type assertions may remain only through an exact AST exception
+budget containing the file, assertion kind, normalized expression, asserted
+type, occurrence count and reason. New, changed or excess assertions and stale
+exceptions MUST fail. Directory-wide and file-wide assertion exceptions are
+forbidden. This budget is debt and MUST only shrink.
+
+Do not weaken the gate, add a broad exception, or grow a budget to make a task
+pass. A type-clean task MUST NOT be reported as complete unless:
 
 - owned `any`, `unknown`, `z.any()`, and `z.unknown()` are zero;
-- assertions, non-null assertions, and suppressions are zero;
+- non-null assertions and suppressions are zero;
+- no unaudited assertion exists and the exact assertion budget did not grow;
 - unreviewed handwritten unions are zero;
 - typecheck, source standards, lint, relevant tests, and the repository quality
   gate pass.
@@ -361,6 +383,45 @@ A styled Popover with `role="menu"` is not a complete menu contract unless its
 items and keyboard behavior follow the same interaction model.
 
 ## 9. Working method
+
+### 9.1 Workflow tiers
+
+Choose the smallest verification tier that can falsify the implementation:
+
+- **Fast path**: one local owner, no shared/public contract change, and one
+  targeted deterministic regression test can prove the behavior.
+- **Subsystem path**: a feature boundary, shared additive component, query,
+  form, store, API/Zod boundary, renderer family, or several consumers inside
+  one subsystem are affected.
+- **Full path**: dependency, schema, route/public API, persisted state, shared
+  contract migration, multi-surface UI, release preparation, or another
+  repository-wide risk is involved.
+
+Start with targeted proof. Escalate when consumer search, the diff, a failed
+check, or risk classification shows that a wider contract is affected.
+`npm run check` remains the full repository gate for app-code completion and
+release preparation; it is not the first feedback loop for every small edit.
+
+Regression work MUST reproduce the failure before or alongside the change. Add
+the smallest deterministic test at the lowest boundary that still reproduces
+the real failure.
+
+### 9.2 Evidence and learning from code
+
+Non-trivial handoffs MUST identify:
+
+- the concrete local precedent used;
+- the authoritative contract and its owner;
+- the relevant data/state flow;
+- the invariant protected by the test;
+- why the diff is the smallest coherent scope;
+- any broader abstraction considered and rejected;
+- environment, authentication state and unverified states for browser claims.
+
+Production code should teach through explicit ownership, names, direct data
+flow and invariant-focused tests. Comments explain non-obvious domain,
+security, library or compatibility constraints; they MUST NOT narrate syntax or
+turn production files into tutorials.
 
 Before editing:
 
@@ -440,10 +501,15 @@ End non-trivial work with:
 ```text
 Scope:
 Root cause / contract gap:
+Precedent used:
+Authoritative contract:
+Data / state flow:
+Invariant protected:
 Files changed:
 Behavior preserved:
 Checks run:
 UI states verified:
+Rejected broader abstraction:
 Risk level:
 Residual risks / unsupported states:
 Confirmation still required:

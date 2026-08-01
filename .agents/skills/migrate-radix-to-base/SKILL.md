@@ -11,6 +11,13 @@ Be precise; never guess a mapping. When a prop or part is not in these
 reference files, check `node_modules/@base-ui/react/**/*.d.ts` before
 transforming, and record gaps in the report.
 
+In `chines-app`, root `AGENTS.md`, local UI contracts and the risk-confirmation
+policy override this vendor workflow. Investigation and a migration proposal
+come first. STOP AND CONFIRM before creating a branch, installing/removing a
+dependency, overwriting a wrapper, creating migration report files, committing,
+or starting a broad migration.
+Read `docs/agent/skill-authoring.md` before applying this workflow.
+
 ## Preflight (always)
 
 1. `npx shadcn@latest info --json` (or the project's runner): gives the
@@ -19,11 +26,13 @@ transforming, and record gaps in the report.
 2. Detect the package manager (packageManager field / lockfile:
    pnpm-lock.yaml, bun.lock, yarn.lock, package-lock.json) and use IT for
    every install. Never leave a stale lockfile.
-3. Require a clean git tree; work on a branch; one commit per component.
+3. Inspect git state and preserve unrelated work. Propose a branch and commit
+   strategy, but do not create either without explicit confirmation.
 4. Baseline check BEFORE touching dependencies: run the project's
    typecheck/build so pre-existing failures are never attributed to you.
-5. Install `@base-ui/react` alongside radix. Radix packages are removed only
-   after the LAST component is migrated (both coexist fine).
+5. Inspect whether `@base-ui/react` and Radix already coexist. Dependency
+   mutation requires confirmation; Radix packages are removed only after the
+   last approved component is migrated.
 
 ## Strategy: golden pair first, transformation engine second
 
@@ -123,8 +132,9 @@ full build.
 
 Typecheck per file, build per batch, full build at the end vs the baseline.
 
-Reports live in a `.migration/` directory at the project root, ONE FILE PER
-COMPONENT: `.migration/<component>.md` (e.g. `.migration/accordion.md`).
+After explicit approval, reports may live in a `.migration/` directory at the
+project root, one file per component. Do not create report files during
+investigation or when the user requested only a review/plan.
 Rules:
 - Each run writes (or fully overwrites) the file for each component it
   migrated. Re-running a component replaces its report; never touch other

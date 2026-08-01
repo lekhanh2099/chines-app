@@ -24,6 +24,7 @@ Read:
 
 ```bash
 cat docs/architecture/frontend-structure.md
+cat docs/agent/skill-authoring.md
 ```
 
 When UI is involved, also load `frontend-ui-system`.
@@ -52,6 +53,17 @@ Choose the primary category:
 
 Do not mix categories merely because adjacent code is imperfect.
 
+Choose a verification tier:
+
+- Fast: one local owner, no shared/public contract change, targeted regression
+  proof is sufficient.
+- Subsystem: a feature boundary, query, form, store, API/Zod boundary,
+  renderer family, shared additive component, or several local consumers.
+- Full: dependency, schema, route/public API, persisted state, shared migration,
+  multi-surface behavior, or release preparation.
+
+Start targeted and escalate only when evidence shows a wider contract.
+
 ## 3. Trace before editing
 
 Trace the real path:
@@ -76,6 +88,10 @@ Identify:
 - root cause or missing contract.
 
 Do not patch only the visible symptom.
+
+For regression work, reproduce the reported failure before or alongside the
+change. Test the lowest boundary that still fails for the real regression; do
+not substitute an easier test that cannot prove it.
 
 ## 4. State ownership
 
@@ -140,16 +156,17 @@ Do not use confirmation to avoid investigation.
 
 ## 8. Verification
 
-Use targeted commands first, then the repository gate for app-code changes:
+Use the selected tier. Fast and subsystem feedback starts with applicable
+targeted commands:
 
 ```bash
 npm run typecheck
 npm run lint
 npm run test:run
-npm run check
 ```
 
-Run only applicable targeted commands before the full gate.
+Run `npm run check` once for the full path, app-code completion or release
+preparation.
 
 For UI, load and follow `frontend-ui-system`.
 
@@ -160,9 +177,14 @@ Report:
 ```text
 Scope:
 Root cause / contract gap:
+Precedent used:
+Authoritative contract:
+Data / state flow:
+Invariant protected:
 Files changed:
 Behavior preserved:
 Checks run:
+Rejected broader abstraction:
 Risk:
 Residual risks:
 Confirmation still required:

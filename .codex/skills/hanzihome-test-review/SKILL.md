@@ -11,12 +11,17 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 
 ## Workflow
 
-1. Read root `AGENTS.md`, the changed files, their call sites, and current tests.
+1. Read root `AGENTS.md`, `docs/agent/skill-authoring.md`, the changed files,
+   their call sites, and current tests.
 2. Map the change onto [references/coverage-matrix.md](references/coverage-matrix.md).
 3. Identify the highest-risk unproven contract: state transition, response validation, renderer shape, node isolation, authorization, or migration invariant.
-4. Add the smallest deterministic test at the lowest useful boundary. Prefer pure schema/mapper tests, then hook/component integration, then route/database integration, then a focused end-to-end smoke flow.
+4. Add the smallest deterministic test at the lowest boundary that still
+   reproduces the real failure. Prefer schema/mapper tests only when they can
+   fail for that regression; otherwise use hook/component, route/database, or a
+   focused end-to-end flow.
 5. Use representative real shapes and sparse/error variants. Do not assert fabricated fixtures that cannot occur in the app.
-6. Run targeted tests first, then the repository quality gate `npm run check` for source changes.
+6. Run targeted tests first. Escalate to subsystem checks, then run
+   `npm run check` for app-code completion or the full path.
 
 ## Required assertions by change type
 
@@ -28,4 +33,6 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 
 ## Output
 
-List behaviors already covered, false-confidence tests, new tests added, commands/results, manual checks still required, and remaining risk by severity.
+List the precedent, authoritative contract, reproduced failure, protected
+invariant, behaviors already covered, false-confidence tests, new tests added,
+commands/results, manual checks still required, and remaining risk by severity.
