@@ -77,9 +77,15 @@ const staticHanziTextFonts: Record<z.infer<typeof StaticHanziTextFontSchema>, st
 };
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
- system: "var(--font-hanzi)",
- songti: '"Hanzi Songti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif',
+ system: '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", serif',
+ songti: 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif',
+ "noto-sans":
+  'var(--font-reading-noto-sans), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif',
  pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", serif',
+ kaiti: '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", serif',
+ fangsong: '"FangSong", "STFangsong", "FangSong_GB2312", serif',
+ "ma-shan": 'var(--font-reading-ma-shan), "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif',
+ xiaowei: 'var(--font-reading-xiaowei), "ZCOOL XiaoWei", "Kaiti SC", "KaiTi", serif',
 };
 
 const hanziFontSizes: Record<HanziReaderSize, string> = {
@@ -92,11 +98,17 @@ const hanziFontSizes: Record<HanziReaderSize, string> = {
 
 const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
  system: 400,
- songti: 500,
+ songti: 400,
+ "noto-sans": 400,
  pinyin: 500,
+ kaiti: 400,
+ fangsong: 400,
+ "ma-shan": 400,
+ xiaowei: 400,
 };
 
 const HAN_SCRIPT_PATTERN = /\p{Script=Han}/u;
+const HANZI_SEGMENT_PATTERN = /(\p{Script=Han}+)/gu;
 
 export function containsHanziText(value: string): boolean {
  return HAN_SCRIPT_PATTERN.test(value);
@@ -159,15 +171,27 @@ export function AdaptiveStudyText({
  hanziSize,
  ...props
 }: AdaptiveStudyTextProps) {
- if (containsHanziText(text)) {
-  return (
-   <ReaderHanziText displayMode={displayMode} size={hanziSize} {...props}>
-    {text}
-   </ReaderHanziText>
-  );
- }
+ const { as, className, ...typographyProps } = props;
 
- return <StudyInstructionText {...props}>{text}</StudyInstructionText>;
+ return (
+  <StudyInstructionText as={as} className={className} {...typographyProps}>
+   {text.split(HANZI_SEGMENT_PATTERN).map((segment, index) =>
+    containsHanziText(segment) ? (
+     <ReaderHanziText
+      key={index}
+      as="span"
+      displayMode={displayMode}
+      size={hanziSize}
+      {...typographyProps}
+     >
+      {segment}
+     </ReaderHanziText>
+    ) : (
+     segment
+    ),
+   )}
+  </StudyInstructionText>
+ );
 }
 
 export function HanziFontPreview({

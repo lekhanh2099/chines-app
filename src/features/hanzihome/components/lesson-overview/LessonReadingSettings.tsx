@@ -22,8 +22,13 @@ import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./type
 
 const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
  { value: "system", label: "Hệ thống" },
- { value: "songti", label: "Songti" },
+ { value: "songti", label: "Noto Serif SC" },
+ { value: "noto-sans", label: "Noto Sans SC" },
  { value: "pinyin", label: "Pinyin" },
+ { value: "kaiti", label: "Khải thư · 楷体" },
+ { value: "fangsong", label: "Phỏng Tống · 仿宋" },
+ { value: "ma-shan", label: "Ma Shan Zheng" },
+ { value: "xiaowei", label: "ZCOOL XiaoWei" },
 ];
 
 const sizeOptions: Array<{ value: HanziReaderSize; label: string; sample: string }> = [

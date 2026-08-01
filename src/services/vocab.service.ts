@@ -367,6 +367,10 @@ export async function getDictionaryEntryByHeadword(
   return null;
  }
 
+ if (!data) {
+  return null;
+ }
+
  const parsed = DbDictionaryCoreSchema.safeParse(data);
  if (!parsed.success) {
   logger.error("[VocabService] invalid dictionary_core row:", parsed.error);

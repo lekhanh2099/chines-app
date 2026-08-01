@@ -39,9 +39,12 @@ describe("learning-state reader font compatibility", () => {
   expect(parsed.settings.lessonTextDisplayMode?.hanziFont).toBe("system");
  });
 
- it.each(["system", "songti", "pinyin"])("preserves supported %s", (hanziFont) => {
-  const parsed = userLearningStateSchema.parse(learningStateWithFont(hanziFont));
+ it.each(["system", "songti", "noto-sans", "pinyin", "kaiti", "fangsong", "ma-shan", "xiaowei"])(
+  "preserves supported %s",
+  (hanziFont) => {
+   const parsed = userLearningStateSchema.parse(learningStateWithFont(hanziFont));
 
-  expect(parsed.settings.lessonTextDisplayMode?.hanziFont).toBe(hanziFont);
- });
+   expect(parsed.settings.lessonTextDisplayMode?.hanziFont).toBe(hanziFont);
+  },
+ );
 });

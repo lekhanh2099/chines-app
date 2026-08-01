@@ -3,9 +3,22 @@ import * as z from "zod";
 export const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 export const reviewResultSchema = z.enum(["again", "hard", "known"]);
 export const hanziReaderFontSchema = z
- .enum(["system", "songti", "pinyin", "kai", "mengshen"])
+ .enum([
+  "system",
+  "songti",
+  "noto-sans",
+  "pinyin",
+  "kaiti",
+  "fangsong",
+  "ma-shan",
+  "xiaowei",
+  "kai",
+  "mengshen",
+ ])
  .transform((font) => (font === "kai" || font === "mengshen" ? "system" : font))
- .pipe(z.enum(["system", "songti", "pinyin"]));
+ .pipe(
+  z.enum(["system", "songti", "noto-sans", "pinyin", "kaiti", "fangsong", "ma-shan", "xiaowei"]),
+ );
 export const hanziReaderSizeSchema = z.enum(["md", "lg", "xl", "2xl", "3xl"]);
 export const lessonTextRevealModeSchema = z.enum(["always", "tap"]);
 export const moduleSchema = z.enum([

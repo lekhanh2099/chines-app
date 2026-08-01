@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { ExerciseSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 
 import { ExerciseCard } from "./ExerciseSection";
+import { AdaptiveStudyText } from "./hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 
 describe("ExerciseCard", () => {
@@ -57,6 +58,21 @@ describe("ExerciseCard", () => {
   expect(html).toContain("他在美国待了三年");
   expect(html).toContain("居然一句英语都不会说");
   expect(html).toContain("font-size:clamp(1.375rem, 4vw, 1.75rem)");
-  expect(html).toContain("Hanzi Songti");
+  expect(html).toContain("Noto Serif SC");
+ });
+
+ it("applies the reader font only to Han text in mixed exercise content", () => {
+  const html = renderToStaticMarkup(
+   <AdaptiveStudyText
+    as="div"
+    text="Cấu trúc: 主语 + 补语 + 了"
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+   />,
+  );
+
+  expect(html).toMatch(
+   /<div[^>]*>Cấu trúc: <span[^>]*lang="zh-CN"[^>]*>主语<\/span> \+ <span[^>]*>补语<\/span> \+ <span[^>]*>了<\/span><\/div>/,
+  );
+  expect(html).not.toMatch(/<div[^>]*font-family=/);
  });
 });
