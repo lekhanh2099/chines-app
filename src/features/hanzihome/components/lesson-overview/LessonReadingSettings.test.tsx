@@ -24,7 +24,10 @@ describe("LessonReadingSettings", () => {
   expect(html).toMatch(/<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span[^>]*>Hệ thống<\/span>/);
  });
 
- it("uses the Khải thư stack for the system reader font", () => {
-  expect(getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont)).toContain('"Kaiti SC"');
+ it("uses the self-hosted Khải thư font for system and Khải thư modes", () => {
+  expect(getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont)).toContain(
+   "var(--font-lxgw-wenkai-mono-tc)",
+  );
+  expect(getHanziFontFamily("kaiti")).toContain("var(--font-lxgw-wenkai-mono-tc)");
  });
 });

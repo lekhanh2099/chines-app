@@ -310,7 +310,14 @@
  --color-bg-inverse: var(--bg-inverse);
 
  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
- --font-hanzi: "Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", serif;
+ --font-hanzi: var(
+  --font-lxgw-wenkai-mono-tc,
+  "PingFang TC",
+  "PingFang SC",
+  "Microsoft JhengHei",
+  "Microsoft YaHei",
+  serif
+ );
  --font-pinyin: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
 }

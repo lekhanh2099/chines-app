@@ -5,11 +5,24 @@ import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Geist, Ma_Shan_Zheng, Noto_Sans_SC, Noto_Serif_SC, ZCOOL_XiaoWei } from "next/font/google";
+import {
+ Geist,
+ LXGW_WenKai_Mono_TC,
+ Ma_Shan_Zheng,
+ Noto_Sans_SC,
+ Noto_Serif_SC,
+ ZCOOL_XiaoWei,
+} from "next/font/google";
 import { cn } from "@/lib/utils";
 import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans", preload: false });
+const lxgwWenKaiMonoTc = LXGW_WenKai_Mono_TC({
+ weight: ["400", "700"],
+ variable: "--font-lxgw-wenkai-mono-tc",
+ preload: false,
+ fallback: ["PingFang TC", "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei"],
+});
 const notoSerifSc = Noto_Serif_SC({
  weight: "variable",
  variable: "--font-reading-noto-serif",
@@ -58,6 +71,7 @@ export default function RootLayout({
    className={cn(
     "font-sans",
     geist.variable,
+    lxgwWenKaiMonoTc.variable,
     notoSerifSc.variable,
     notoSansSc.variable,
     maShanZheng.variable,
