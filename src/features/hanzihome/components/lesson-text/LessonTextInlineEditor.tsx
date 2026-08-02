@@ -88,7 +88,9 @@ export function LessonTextInlineEditor({
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
- const readingControls = <MandarinSpeakButton text={visibleSpeechText} actionLabel="Đọc cả đoạn" />;
+ const readingControls = (
+  <MandarinSpeakButton text={visibleSpeechText} actionLabel={compact ? undefined : "Đọc cả đoạn"} />
+ );
 
  const sidebar = (
   <div className="grid gap-2">

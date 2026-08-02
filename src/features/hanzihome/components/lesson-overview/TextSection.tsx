@@ -123,16 +123,18 @@ export function TextBlockView({
     <div className="exercise-question-surface rounded-lg border px-3 sm:px-4">
      {narrativeParagraphs.map((paragraph, index) => {
       const card = (
-       <TextLineCard
-        zh={paragraph.zh}
-        pinyin={paragraph.pinyin}
-        vi={paragraph.vi}
-        displayMode={displayMode}
-        variant="reader"
-        annotationTarget={
-         lessonId ? { lessonId, nodeType: "text_paragraph", nodeId: paragraph.id } : undefined
-        }
-       />
+       <div className={index === 0 ? undefined : "border-t border-border-muted"}>
+        <TextLineCard
+         zh={paragraph.zh}
+         pinyin={paragraph.pinyin}
+         vi={paragraph.vi}
+         displayMode={displayMode}
+         variant="reader"
+         annotationTarget={
+          lessonId ? { lessonId, nodeType: "text_paragraph", nodeId: paragraph.id } : undefined
+         }
+        />
+       </div>
       );
 
       return lessonId && path ? (

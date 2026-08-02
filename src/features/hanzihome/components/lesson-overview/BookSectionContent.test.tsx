@@ -105,4 +105,36 @@ describe("BookSectionContent", () => {
   expect(html).not.toContain("source_table_index");
   expect(html).not.toContain("table_index");
  });
+
+ it("renders narrative paragraphs without adding labels to learner text", () => {
+  const section = SectionSchema.parse({
+   id: "lesson-text",
+   type: "text",
+   order: 1,
+   title: "Bài khóa",
+   blocks: [
+    {
+     id: "narrative-1",
+     type: "text_narrative",
+     order: 1,
+     title: "好人难当",
+     paragraphs: [
+      { id: "paragraph-1", order: 1, zh: "第一段。", pinyin: "Dì yī duàn.", vi: "Đoạn một." },
+      { id: "paragraph-2", order: 2, zh: "第二段。", pinyin: "Dì èr duàn.", vi: "Đoạn hai." },
+     ],
+    },
+   ],
+  });
+
+  const html = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <BookSectionContent section={section} displayMode={DEFAULT_LESSON_DISPLAY_MODE} />
+   </MandarinTtsProvider>,
+  );
+
+  expect(html).toContain("第一段。");
+  expect(html).toContain("第二段。");
+  expect(html).not.toContain("Đoạn 1");
+  expect(html).not.toContain("Đoạn 2");
+ });
 });
