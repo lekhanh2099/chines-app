@@ -52,3 +52,31 @@ serve as production tutorials.
 Review a skill when its dependency family, local contract, referenced command,
 inventory status or architecture owner changes. Broken references, stale
 commands and conflicts with local source are release-blocking skill defects.
+
+## Agent update cadence
+
+For work that takes longer than one tool call, report only new evidence or a
+decision at these points: scope/preflight, root-cause discovery, before a
+high-risk mutation, after targeted proof, and before the full gate. A long
+running command should receive a status update within approximately one minute
+when new output is available. Do not send unchanged progress messages.
+
+## Review scorecard
+
+Review a skill on a 100-point scale:
+
+- authority and precedence: 10;
+- scope and minimal diff: 10;
+- authoritative types and runtime boundaries: 15;
+- executable anti-bypass enforcement: 15;
+- state/data ownership: 10;
+- regression proof: 10;
+- UI/accessibility evidence: 8;
+- migration/security safety: 8;
+- workflow efficiency: 6;
+- learning-from-code: 5;
+- drift/update discipline: 3.
+
+The score is a review aid, not permission to weaken a hard gate. A skill with a
+broken reference, stale command or local-contract conflict cannot be considered
+ready regardless of its numeric score.

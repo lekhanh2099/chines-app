@@ -423,6 +423,11 @@ flow and invariant-focused tests. Comments explain non-obvious domain,
 security, library or compatibility constraints; they MUST NOT narrate syntax or
 turn production files into tutorials.
 
+For long-running work, agent updates should occur at scope/preflight,
+root-cause discovery, before high-risk mutation, after targeted proof and before
+the full gate. Updates add evidence or a decision; unchanged progress is not a
+status update.
+
 Before editing:
 
 1. Inspect `git status --short`.

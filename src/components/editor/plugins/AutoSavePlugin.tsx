@@ -9,9 +9,14 @@
 import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import { useEffect } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import type { EditorState } from "lexical";
 
 interface AutoSavePluginProps {
  onChange?: (json: JsonObject) => void;
+}
+
+export function serializeEditorState(editorState: EditorState): JsonObject {
+ return JsonObjectSchema.parse(editorState.toJSON());
 }
 
 export default function AutoSavePlugin({ onChange }: AutoSavePluginProps) {
@@ -24,7 +29,7 @@ export default function AutoSavePlugin({ onChange }: AutoSavePluginProps) {
    // Only fire when there are actual changes
    if (dirtyElements.size === 0 && dirtyLeaves.size === 0) return;
 
-   const json = JsonObjectSchema.parse(editorState.toJSON());
+   const json = serializeEditorState(editorState);
    onChange(json);
   });
  }, [editor, onChange]);

@@ -8,7 +8,7 @@ import {
 } from "@lexical/table";
 import { describe, expect, it } from "vitest";
 
-import { JsonObjectSchema } from "@/types/json";
+import { serializeEditorState } from "@/components/editor/plugins/AutoSavePlugin";
 
 describe("Lexical JSON persistence", () => {
  it("accepts optional fields emitted by registered Lexical nodes", () => {
@@ -28,8 +28,8 @@ describe("Lexical JSON persistence", () => {
    { discrete: true },
   );
 
-  const serializedEditorState = editor.getEditorState().toJSON();
+  const serializedEditorState = serializeEditorState(editor.getEditorState());
 
-  expect(JsonObjectSchema.safeParse(serializedEditorState).success).toBe(true);
+  expect(serializedEditorState).toEqual(editor.getEditorState().toJSON());
  });
 });
