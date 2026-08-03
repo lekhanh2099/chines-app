@@ -1,5 +1,4 @@
 import { Typography } from "@/components/ui/typography";
-import type { JsonObject } from "@/types/json";
 import type { AnyFieldApi } from "@tanstack/react-form";
 
 export function FieldInfo({
@@ -19,7 +18,19 @@ export function FieldInfo({
    {!isValid ? (
     <Typography as="p" variant="caption" tone="danger">
      {errors
-      .map((e) => (typeof e === "string" ? e : (e as JsonObject)?.message || String(e)))
+      .map((error) => {
+       if (typeof error === "string") return error;
+       if (error instanceof Error) return error.message;
+       if (
+        typeof error === "object" &&
+        error !== null &&
+        "message" in error &&
+        typeof error.message === "string"
+       ) {
+        return error.message;
+       }
+       return "Giá trị không hợp lệ.";
+      })
       .join(", ")}
     </Typography>
    ) : helperText ? (

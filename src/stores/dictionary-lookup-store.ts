@@ -27,7 +27,7 @@ const storageConfig = {
  key: STORAGE_KEY,
  version: 1,
  schema: routeOverridesSchema,
- fallback: {} as RouteOverrides,
+ fallback: {},
  migrateLegacy: (value: JsonFieldValue) => {
   const parsed = routeOverridesSchema.safeParse(value);
   return parsed.success ? parsed.data : null;

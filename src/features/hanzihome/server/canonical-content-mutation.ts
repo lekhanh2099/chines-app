@@ -1,5 +1,5 @@
 import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonObject } from "@/types/json";
 import "server-only";
 
 import { NextResponse } from "next/server";
@@ -76,7 +76,7 @@ export async function mutateCanonicalContent({
  }
 
  const inputChanges = transformChanges
-  ? transformChanges(parsedBody.data.changes as JsonObject)
+  ? transformChanges(JsonObjectSchema.parse(parsedBody.data.changes))
   : parsedBody.data.changes;
  const parsedChanges = getCanonicalChangesSchema(parsedEntityType, parsedOperation).safeParse(
   inputChanges,

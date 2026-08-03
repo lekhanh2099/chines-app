@@ -5,6 +5,7 @@ import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import {
  API_KEY_PROVIDER_OPTIONS,
+ ApiKeyProviderSchema,
  getApiKeyProviderDocsUrl,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
@@ -208,9 +209,10 @@ export default function ApiKeyManagerSection() {
         <Select
          value={provider}
          onValueChange={(value) => {
-          const nextProvider = value as ApiKeyProvider;
-          setProvider(nextProvider);
-          setModel(getDefaultApiKeyModel(nextProvider));
+          const parsedProvider = ApiKeyProviderSchema.safeParse(value);
+          if (!parsedProvider.success) return;
+          setProvider(parsedProvider.data);
+          setModel(getDefaultApiKeyModel(parsedProvider.data));
          }}
         >
          <SelectTrigger id="api-key-provider" width="full">

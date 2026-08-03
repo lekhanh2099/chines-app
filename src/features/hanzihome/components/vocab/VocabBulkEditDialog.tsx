@@ -2,8 +2,7 @@
 
 import { Label } from "@/components/ui/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import { useDeferredValue, useMemo, useState, type ComponentProps } from "react";
 import { BookOpen, Layers3, Pencil, Trash2 } from "lucide-react";
 import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -31,6 +30,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { useHanziHomeFeatureContext } from "@/features/hanzihome/context/hanzihomeFeatureContext";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { saveEditableNodeDirectly } from "@/features/hanzihome/editing/direct-save";
 import { invalidateHanziHomeContent } from "@/features/hanzihome/editing/invalidate-content";
 import type { EditableNodePath } from "@/features/hanzihome/editing";
@@ -92,8 +92,8 @@ function coreRow<TItem extends EditableItem>(item: TItem, getId: (item: TItem) =
 }
 
 function applyCore<TItem extends EditableItem>(item: TItem, row: CoreRow): TItem {
- const next = structuredClone(item) as TItem;
- const record = next as JsonFieldValue as JsonObject;
+ const next = structuredClone(item);
+ const record = JsonObjectSchema.parse(next);
  const meaning = asRecord(record.meaning);
  const pos = asRecord(record.pos);
  record.hanzi = row.hanzi.trim();
@@ -224,8 +224,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
      : [sectionFilter];
  const childListQuery = useQuery({
   queryKey: [
-   "hanzihome",
-   "vocab-child-manager",
+   ...hanzihomeQueryKeys.vocabChildManagerRoot,
    entityType,
    scope,
    scopeId,
@@ -354,9 +353,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
    setSelectedIds([]);
    setSelectionMode("ids");
    await queryClient.invalidateQueries({
-    queryKey: ["hanzihome", "lesson-resource", lessonId, "vocabulary"],
+    queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
    });
-   await queryClient.invalidateQueries({ queryKey: ["hanzihome", "vocab-child-manager"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.vocabChildManagerRoot });
   } catch (error) {
    toast.error(error instanceof Error ? error.message : "Selection đã thay đổi. Hãy preview lại.");
   } finally {

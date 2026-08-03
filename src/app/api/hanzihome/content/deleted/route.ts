@@ -1,5 +1,4 @@
-import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import { z } from "zod";
 
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
@@ -63,9 +62,10 @@ function collectDeletedNestedNodes({
    collectDeletedNestedNodes({ value: item, sectionId, sectionUpdatedAt, lessonId }),
   );
  }
- if (!value || typeof value !== "object") return [];
+ const parsedValue = JsonObjectSchema.safeParse(value);
+ if (!parsedValue.success) return [];
 
- const record = value as JsonObject;
+ const record = parsedValue.data;
  const children = Object.values(record).flatMap((item) =>
   collectDeletedNestedNodes({ value: item, sectionId, sectionUpdatedAt, lessonId }),
  );

@@ -1,4 +1,3 @@
-import type { HanziHomeModule } from "@/features/hanzihome/types";
 import { z } from "zod";
 import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 
@@ -13,24 +12,30 @@ export const HanziHomeSearchKindSchema = z.enum([
  "navigation",
 ]);
 export type HanziHomeSearchKind = z.infer<typeof HanziHomeSearchKindSchema>;
-type SearchMetadataValue = z.infer<z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>>;
+const searchMetadataValueSchema = z.union([z.string(), z.number(), z.boolean(), z.null()]);
 
-export type HanziHomeSearchIndexItem = {
- id: string;
- kind: HanziHomeSearchKind;
- title: string;
- subtitle?: string;
- searchText: string;
- courseId?: string;
- courseTitle?: string;
- bookId?: string;
- lessonId?: string;
- lessonNumber?: number;
- module?: HanziHomeModule;
- targetId?: string;
- href?: string;
- metadata?: Record<string, SearchMetadataValue>;
-};
+export const HanziHomeSearchIndexItemSchema = z.object({
+ id: z.string(),
+ kind: HanziHomeSearchKindSchema,
+ title: z.string(),
+ subtitle: z.string().optional(),
+ searchText: z.string(),
+ courseId: z.string().optional(),
+ courseTitle: z.string().optional(),
+ bookId: z.string().optional(),
+ lessonId: z.string().optional(),
+ lessonNumber: z.number().optional(),
+ module: moduleSchema.optional(),
+ targetId: z.string().optional(),
+ href: z.string().optional(),
+ metadata: z.record(z.string(), searchMetadataValueSchema).optional(),
+});
+
+export const HanziHomeSearchIndexResponseSchema = z.object({
+ items: z.array(HanziHomeSearchIndexItemSchema),
+});
+
+export type HanziHomeSearchIndexItem = z.infer<typeof HanziHomeSearchIndexItemSchema>;
 
 export type HanziHomeSearchOptions = {
  limit?: number;

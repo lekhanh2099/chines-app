@@ -6,6 +6,7 @@
  * to support both client-side and server-side usage.
  */
 
+import { JsonObjectSchema } from "@/types/json";
 import type { JsonFieldValue, JsonObject } from "@/types/json";
 import type { Tables, TablesInsert } from "@/types/supabase.generated";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -417,8 +418,18 @@ export async function upsertDictionaryEntry(
  const resolvedAnalysis = Object.keys(incomingAnalysis).length
   ? normalizeAnalysis(
      mergeMode === "prefer-incoming"
-      ? mergeAnalysisPreferIncoming(existingAnalysis, incomingAnalysis)
-      : mergeAnalysisPreserveExisting(existingAnalysis, incomingAnalysis),
+      ? aiAnalysisSchema.parse(
+         mergeAnalysisPreferIncoming(
+          JsonObjectSchema.parse(existingAnalysis),
+          JsonObjectSchema.parse(incomingAnalysis),
+         ),
+        )
+      : aiAnalysisSchema.parse(
+         mergeAnalysisPreserveExisting(
+          JsonObjectSchema.parse(existingAnalysis),
+          JsonObjectSchema.parse(incomingAnalysis),
+         ),
+        ),
     )
   : existingAnalysis;
  const resolvedMeaning =
@@ -470,7 +481,7 @@ function isMeaningfulValue(value: JsonFieldValue): boolean {
  return true;
 }
 
-function mergeAnalysisPreserveExisting<T extends JsonObject>(existing: T, incoming: T): T {
+function mergeAnalysisPreserveExisting(existing: JsonObject, incoming: JsonObject): JsonObject {
  const merged: JsonObject = { ...existing };
 
  for (const [key, incomingValue] of Object.entries(incoming)) {
@@ -482,50 +493,34 @@ function mergeAnalysisPreserveExisting<T extends JsonObject>(existing: T, incomi
    continue;
   }
 
-  if (
-   existingValue &&
-   incomingValue &&
-   !Array.isArray(existingValue) &&
-   !Array.isArray(incomingValue) &&
-   typeof existingValue === "object" &&
-   typeof incomingValue === "object"
-  ) {
-   merged[key] = mergeAnalysisPreserveExisting(
-    existingValue as JsonObject,
-    incomingValue as JsonObject,
-   );
+  const existingObject = JsonObjectSchema.safeParse(existingValue);
+  const incomingObject = JsonObjectSchema.safeParse(incomingValue);
+  if (existingObject.success && incomingObject.success) {
+   merged[key] = mergeAnalysisPreserveExisting(existingObject.data, incomingObject.data);
   }
  }
 
- return merged as T;
+ return merged;
 }
 
-function mergeAnalysisPreferIncoming<T extends JsonObject>(existing: T, incoming: T): T {
+function mergeAnalysisPreferIncoming(existing: JsonObject, incoming: JsonObject): JsonObject {
  const merged: JsonObject = { ...existing };
 
  for (const [key, incomingValue] of Object.entries(incoming)) {
   if (!isMeaningfulValue(incomingValue)) continue;
 
   const existingValue = merged[key];
-  if (
-   existingValue &&
-   incomingValue &&
-   !Array.isArray(existingValue) &&
-   !Array.isArray(incomingValue) &&
-   typeof existingValue === "object" &&
-   typeof incomingValue === "object"
-  ) {
-   merged[key] = mergeAnalysisPreferIncoming(
-    existingValue as JsonObject,
-    incomingValue as JsonObject,
-   );
+  const existingObject = JsonObjectSchema.safeParse(existingValue);
+  const incomingObject = JsonObjectSchema.safeParse(incomingValue);
+  if (existingObject.success && incomingObject.success) {
+   merged[key] = mergeAnalysisPreferIncoming(existingObject.data, incomingObject.data);
    continue;
   }
 
   merged[key] = incomingValue;
  }
 
- return merged as T;
+ return merged;
 }
 
 export function mapDictionaryEntryToVocabData(entry: DbDictionaryCore): VocabData {

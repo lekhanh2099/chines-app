@@ -1,13 +1,25 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useRef } from "react";
 import {
  getClientAiPromptSettingsFingerprint,
  loadClientAiPromptSettings,
 } from "@/lib/ai-prompt-settings-client";
 import { extractChinese, isChineseOnlyText } from "@/lib/chinese-utils";
 import { enqueueSelectionLookup } from "@/lib/selection-lookup-queue";
-import type { PersonalNoteMode, SmartSelectionMode, SmartSelectionResult } from "@/types/database";
+import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { JsonValueSchema } from "@/types/json";
+import {
+ PersonalNoteModeSchema,
+ SmartSelectionResultSchema,
+ type PersonalNoteMode,
+ type SmartSelectionMode,
+ type SmartSelectionResult,
+} from "@/types/database";
+import { saveVocabToSrs } from "@/services/vocab.service";
+import { z } from "zod";
 
 function resolveMode(selection: string): SmartSelectionMode {
  return selection.length <= 2 ? "word" : "sentence";
@@ -22,6 +34,8 @@ export function useSmartSelectionInsights(
  },
 ) {
  const queryClient = useQueryClient();
+ const supabaseRef = useRef(createClient());
+ const supabase = supabaseRef.current;
  const trimmedSelection = selectedText.trim();
  const chineseSelection = extractChinese(trimmedSelection);
  const lookupKey = chineseSelection || trimmedSelection;
@@ -31,16 +45,17 @@ export function useSmartSelectionInsights(
  const promptSettings = loadClientAiPromptSettings();
  const settingsFingerprint = getClientAiPromptSettingsFingerprint(promptSettings);
  const cacheVersion = "smart-selection-v3";
+ const queryKey = [
+  "editor-smart-selection",
+  cacheVersion,
+  lookupKey,
+  contextSentence,
+  mode,
+  settingsFingerprint,
+ ];
 
  const query = useQuery<SmartSelectionResult>({
-  queryKey: [
-   "editor-smart-selection",
-   cacheVersion,
-   lookupKey,
-   contextSentence,
-   mode,
-   settingsFingerprint,
-  ],
+  queryKey,
   enabled: enabled && isChineseSelection && !!lookupKey,
   staleTime: 1000 * 60 * 8,
   gcTime: 1000 * 60 * 30,
@@ -56,14 +71,17 @@ export function useSmartSelectionInsights(
      }),
     });
 
-    const json = (await res.json()) as SmartSelectionResult & {
-     error?: string;
-    };
+    const payload = JsonValueSchema.parse(await res.json().catch(() => null));
     if (!res.ok) {
-     throw new Error(json.error || "Không thể lấy dữ liệu selection");
+     const parsedError = z.object({ error: z.string().optional() }).safeParse(payload);
+     throw new Error(
+      parsedError.success && parsedError.data.error
+       ? parsedError.data.error
+       : "Không thể lấy dữ liệu selection",
+     );
     }
 
-    return json;
+    return SmartSelectionResultSchema.parse(payload);
    }),
  });
 
@@ -73,20 +91,37 @@ export function useSmartSelectionInsights(
     throw new Error("Không có dữ liệu để lưu");
    }
 
-   return payload || {};
+   const user = await getClientSessionUser(supabase);
+   if (!user) throw new Error("Not authenticated");
+
+   const personalNoteMode = payload?.personalNoteMode
+    ? PersonalNoteModeSchema.parse(payload.personalNoteMode)
+    : undefined;
+   const result = await saveVocabToSrs(supabase, user.id, query.data.entry, {
+    contextSentence: query.data.context_sentence,
+    personalNote: payload?.personalNote,
+    personalNoteMode,
+   });
+
+   if (!result) throw new Error("Không thể lưu selection vào kho ôn tập");
+   if (payload?.personalNote?.trim() && !result.noteSchemaAvailable) {
+    throw new Error(
+     "Database chưa có cột personal_note. Chạy migration user_vocab_progress trước.",
+    );
+   }
+
+   return result;
   },
   onSuccess: (_result, payload) => {
-   queryClient.setQueryData<typeof query.data>(
-    ["editor-smart-selection", cacheVersion, lookupKey, contextSentence, mode, settingsFingerprint],
-    (old) =>
-     old
-      ? {
-         ...old,
-         isSaved: true,
-         personal_note: payload?.personalNote ?? old.personal_note,
-         personal_note_mode: payload?.personalNoteMode ?? old.personal_note_mode,
-        }
-      : old,
+   queryClient.setQueryData<typeof query.data>(queryKey, (old) =>
+    old
+     ? {
+        ...old,
+        isSaved: true,
+        personal_note: payload?.personalNote ?? old.personal_note,
+        personal_note_mode: payload?.personalNoteMode ?? old.personal_note_mode,
+       }
+     : old,
    );
   },
  });

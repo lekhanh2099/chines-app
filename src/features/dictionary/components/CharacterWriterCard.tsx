@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { PenTool, Play } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import type { HanziWriterInstance } from "@/features/dictionary/types";
+
+type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
+type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
 
 const writerContainerClassName =
  "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-2xl border border-border-default bg-bg-card text-8xl font-bold text-text-primary";
@@ -102,7 +104,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
       showOutline: true,
       showCharacter: true,
       charDataLoader: () => charData,
-     }) as HanziWriterInstance;
+     });
 
      writerState.value = writer;
      requestAnimationFrame(() => {

@@ -1,4 +1,3 @@
-import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 // Common helpers
@@ -32,7 +31,7 @@ const FlexibleStringSchema = z.preprocess((value) => {
  }
 
  if (value && typeof value === "object" && "radical" in value) {
-  const radical = (value as { radical?: JsonFieldValue }).radical;
+  const radical = value.radical;
   return typeof radical === "string" ? radical : "";
  }
 
@@ -255,11 +254,10 @@ export const RelatedWordSchema = z.preprocess(
   }
 
   if (value && typeof value === "object" && "word" in value) {
-   const record = value as { word?: JsonFieldValue };
-   if (Array.isArray(record.word)) {
+   if (Array.isArray(value.word)) {
     return {
      ...value,
-     word: record.word.map(String).join("、"),
+     word: value.word.map(String).join("、"),
     };
    }
   }

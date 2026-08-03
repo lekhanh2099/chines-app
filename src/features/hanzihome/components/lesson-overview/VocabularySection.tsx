@@ -38,18 +38,17 @@ export function VocabMiniGrid({
  displayMode: LessonDisplayMode;
 }) {
  const editMode = useHanziHomeEditMode();
- const canBulkEdit = Boolean(editMode && lessonId && itemsPath && items.length > 0);
 
  return (
   <div className="grid gap-2">
-   {canBulkEdit ? (
+   {editMode && lessonId && itemsPath && items.length > 0 ? (
     <div className="flex items-center justify-end">
      <VocabBulkEditDialog
-      lessonId={lessonId as string}
+      lessonId={lessonId}
       parentSectionId={parentSectionId}
       items={items}
       getEntityId={(item) => item.id}
-      getItemPath={(_, index) => [...(itemsPath as EditableNodePath), index]}
+      getItemPath={(_, index) => [...itemsPath, index]}
      />
     </div>
    ) : null}

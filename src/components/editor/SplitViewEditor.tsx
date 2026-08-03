@@ -33,6 +33,11 @@ interface SplitViewEditorProps {
  toolbarVisible?: boolean;
 }
 
+type SplitViewStyle = CSSProperties & {
+ "--split-pane-leading-size": string;
+ "--split-pane-trailing-size": string;
+};
+
 export function SplitViewEditor({
  noteId,
  noteContent,
@@ -46,10 +51,10 @@ export function SplitViewEditor({
  const dividerPositions = useSelector(splitViewStore, (state) => state.dividerPositions);
  const dividerPosition = dividerPositions[noteId] ?? 50;
  const { setDividerPosition } = splitViewStore.actions;
- const splitStyle = {
+ const splitStyle: SplitViewStyle = {
   "--split-pane-leading-size": `${dividerPosition}%`,
   "--split-pane-trailing-size": `${100 - dividerPosition}%`,
- } as CSSProperties;
+ };
 
  const handleResize = useCallback(
   (percent: number) => {

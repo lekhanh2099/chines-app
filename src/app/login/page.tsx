@@ -70,6 +70,11 @@ export default function LoginPage() {
  const [oauthLoading, setOauthLoading] = useState(false);
  const [isLogin, setIsLogin] = useState(true);
  const activeSchema = useMemo(() => (isLogin ? loginSchema : signUpSchema), [isLogin]);
+ const defaultValues: LoginFormValues = {
+  email: "",
+  password: "",
+  confirmPassword: "",
+ };
 
  useEffect(() => {
   const url = new URL(window.location.href);
@@ -125,11 +130,7 @@ export default function LoginPage() {
  }
 
  const form = useAppForm({
-  defaultValues: {
-   email: "",
-   password: "",
-   confirmPassword: "",
-  } as LoginFormValues,
+  defaultValues,
   validators: { onChange: activeSchema, onSubmit: activeSchema },
   onSubmit: async ({ value }) => {
    const supabase = createClient();

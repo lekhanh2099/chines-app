@@ -1,4 +1,3 @@
-import type { JsonFieldValue } from "@/types/json";
 import type {
  AiRelatedCompound,
  AiWordRelation,
@@ -24,13 +23,6 @@ export type StructureComponent = {
  part?: string;
  name?: string;
  meaning?: string;
-};
-
-export type HanziWriterInstance = {
- animateCharacter?: () => Promise<JsonFieldValue>;
- hideCharacter?: (options?: { duration?: number }) => Promise<JsonFieldValue>;
- quiz?: (options?: { onComplete?: () => void }) => Promise<JsonFieldValue>;
- cancelQuiz?: () => void;
 };
 
 export type DictionarySentenceViewModel = {

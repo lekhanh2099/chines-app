@@ -1,5 +1,4 @@
-import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonFieldValue } from "@/types/json";
 import type { HtmlArtifactRuntimeState } from "./html-artifact.schema";
 
 type RuntimeStateMessage = {
@@ -39,9 +38,10 @@ function isRuntimeState(value: JsonFieldValue): value is HtmlArtifactRuntimeStat
 }
 
 export function isRuntimeStateMessage(value: JsonFieldValue): value is RuntimeStateMessage {
- if (!value || typeof value !== "object") return false;
+ const parsed = JsonObjectSchema.safeParse(value);
+ if (!parsed.success) return false;
 
- const message = value as JsonObject;
+ const message = parsed.data;
  return (
   message.source === "hanzihome-html-artifact-runtime" &&
   message.type === "runtime-state" &&

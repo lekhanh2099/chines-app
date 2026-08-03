@@ -14,7 +14,7 @@ import {
  getVocabByHanzi,
  classifyVocabType,
 } from "@/services/vocab.service";
-import { aiAnalysisSchema } from "@/types/database";
+import { aiAnalysisSchema, VocabDataSchema } from "@/types/database";
 import type { VocabData, VocabWithProgress } from "@/types/database";
 
 const RECENT_LOOKUPS_KEY = "recent-lookups";
@@ -119,7 +119,9 @@ function loadRecentLookups(): VocabData[] {
  if (typeof window === "undefined") return [];
  try {
   const stored = localStorage.getItem(RECENT_LOOKUPS_KEY);
-  return stored ? JSON.parse(stored) : [];
+  if (!stored) return [];
+  const parsed = VocabDataSchema.array().safeParse(JSON.parse(stored));
+  return parsed.success ? parsed.data : [];
  } catch {
   return [];
  }

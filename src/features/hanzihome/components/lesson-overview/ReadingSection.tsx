@@ -49,15 +49,17 @@ export function ReadingCard({
  const passage = getPassageLikeValue(record, { includeText: true });
  const clozeAnswers = getClozeAnswerValues(record);
  const directPassage = asRecord(record.passage);
+ const passageSegmentsPath: EditableNodePath = ["passage", "segments"];
+ const segmentsPath: EditableNodePath = ["segments"];
  const passageSegments =
   arrayValue(directPassage, "segments").length > 0
    ? {
-      path: ["passage", "segments"] as EditableNodePath,
+      path: passageSegmentsPath,
       values: arrayValue(directPassage, "segments"),
      }
    : arrayValue(record, "segments").length > 0
      ? {
-        path: ["segments"] as EditableNodePath,
+        path: segmentsPath,
         values: arrayValue(record, "segments"),
        }
      : null;

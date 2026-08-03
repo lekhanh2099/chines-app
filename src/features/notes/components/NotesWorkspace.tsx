@@ -69,11 +69,13 @@ export function NotesWorkspace() {
  const sourceOptions = useMemo(
   () =>
    Array.from(
-    new Map(
-     notes
-      .filter((note) => note.source_host)
-      .map((note) => [note.source_host as string, note.source_label || note.source_host]),
-    ).entries(),
+    notes
+     .reduce((options, note) => {
+      if (!note.source_host) return options;
+      options.set(note.source_host, note.source_label || note.source_host);
+      return options;
+     }, new Map<string, string>())
+     .entries(),
    ).sort((a, b) => String(a[1]).localeCompare(String(b[1]), "vi")),
   [notes],
  );

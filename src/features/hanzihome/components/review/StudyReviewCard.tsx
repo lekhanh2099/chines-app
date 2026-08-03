@@ -33,6 +33,11 @@ export function StudyReviewCard({
    role="button"
    tabIndex={0}
    onClick={onReveal}
+   onKeyDown={(event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    onReveal();
+   }}
    onTouchStart={touchHandlers.onTouchStart}
    onTouchEnd={touchHandlers.onTouchEnd}
    className="grid min-h-80 w-full touch-pan-y select-none place-items-center rounded-xl border border-border-default bg-bg-primary p-3 text-center shadow-theme-sm transition-colors hover:border-accent-muted sm:p-4"

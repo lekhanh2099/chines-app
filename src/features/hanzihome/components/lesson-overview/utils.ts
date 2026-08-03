@@ -1,12 +1,17 @@
-import type { JsonFieldValue, JsonValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import {
+ JsonObjectSchema,
+ type JsonFieldValue,
+ type JsonObject,
+ type JsonValue,
+} from "@/types/json";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 import type { BookSection } from "./types";
 
 export function asRecord(value: JsonFieldValue): JsonObject {
- return value && typeof value === "object" && !Array.isArray(value) ? (value as JsonObject) : {};
+ const parsed = JsonObjectSchema.safeParse(value);
+ return parsed.success ? parsed.data : {};
 }
 
 export function stringValue(record: JsonObject, key: string) {

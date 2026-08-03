@@ -1,11 +1,11 @@
-import type { JsonFieldValue } from "@/types/json";
+import { JsonValueSchema } from "@/types/json";
 import { listeningLessonBundleSchema } from "./listening.schemas";
 
 export async function fetchHanziHomeListeningLesson(lessonId: string) {
  const response = await fetch(`/api/hanzihome/listening/lessons/${encodeURIComponent(lessonId)}`, {
   cache: "no-store",
  });
- const payload = (await response.json()) as JsonFieldValue;
+ const payload = JsonValueSchema.parse(await response.json().catch(() => null));
 
  if (!response.ok) {
   const message =

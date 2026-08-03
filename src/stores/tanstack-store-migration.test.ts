@@ -105,6 +105,14 @@ describe("TanStack Store migration", () => {
   expect(focusModeStore.get()).toEqual({ enabled: true, hasHydrated: true });
  });
 
+ it("ignores malformed inspector lookup storage instead of exposing raw JSON", () => {
+  localStorage.setItem("recent-lookups", JSON.stringify([{ hanzi: "你好" }]));
+
+  inspectorStore.actions.loadRecentLookups();
+
+  expect(inspectorStore.get().recentLookups).toEqual([]);
+ });
+
  it("keeps inspector request state observable and cancellable", async () => {
   vi.stubGlobal(
    "fetch",

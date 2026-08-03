@@ -1,6 +1,6 @@
 "use client";
 
-import type { JsonFieldValue } from "@/types/json";
+import { JsonObjectSchema } from "@/types/json";
 import {
  Children,
  cloneElement,
@@ -106,10 +106,8 @@ export function EditableNodeWrapper({
  const record = services.resolveEditableRecord(baseNode);
  const canReorder =
   Boolean(record?.order && record.orderField) && record?.entityType === entityType;
- const valueId =
-  value && typeof value === "object" && !Array.isArray(value) && "id" in value
-   ? (value as { id?: JsonFieldValue }).id
-   : undefined;
+ const parsedValue = JsonObjectSchema.safeParse(value);
+ const valueId = parsedValue.success ? parsedValue.data.id : undefined;
  const canDelete =
   Boolean(record) &&
   (record?.entityType === entityType || (typeof valueId === "string" && valueId === entityId));

@@ -30,7 +30,7 @@ import {
 } from "@/features/notes/hooks/useNoteLibrary";
 import { normalizeReadingUrl } from "@/features/notes/note-library-utils";
 import type { NoteDetail } from "@/services/notes.service";
-import type { ReadingStatus } from "@/types/database";
+import { ReadingStatusSchema } from "@/types/database";
 
 type NoteLibraryMetadataTarget = {
  id: NoteDetail["id"];
@@ -89,11 +89,12 @@ export function NoteLibraryMetadataDialog({
 
   try {
    const normalized = sourceUrl.trim() ? normalizeReadingUrl(sourceUrl) : null;
+   const parsedReadingStatus = ReadingStatusSchema.safeParse(readingStatus);
    await mutation.mutateAsync({
     noteId: note.id,
     title: nextTitle,
     folderId: folderId === "unfiled" ? null : folderId,
-    readingStatus: readingStatus === "none" ? null : (readingStatus as ReadingStatus),
+    readingStatus: parsedReadingStatus.success ? parsedReadingStatus.data : null,
     source:
      normalized === null
       ? null

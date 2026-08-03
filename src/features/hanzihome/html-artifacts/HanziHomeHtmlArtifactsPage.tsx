@@ -2380,12 +2380,14 @@ function ArtifactForm({
        <span>Loại tệp</span>
        <Select
         value={form.artifactType}
-        onValueChange={(value) =>
+        onValueChange={(value) => {
+         const parsedArtifactType = htmlArtifactTypeSchema.safeParse(value);
+         if (!parsedArtifactType.success) return;
          updateForm((current) => ({
           ...current,
-          artifactType: value as HtmlArtifactType,
-         }))
-        }
+          artifactType: parsedArtifactType.data,
+         }));
+        }}
        >
         <SelectTrigger
          aria-label="Chọn loại tệp HTML"

@@ -29,5 +29,6 @@ export const hanzihomeQueryKeys = {
  canEdit: ["hanzihome", "can-edit"],
  searchIndexRoot: ["hanzihome", "search-index"],
  searchIndex: ["hanzihome", "search-index", "v2"],
+ vocabChildManagerRoot: ["hanzihome", "vocab-child-manager"],
  deletedContent: ["hanzihome", "deleted-content"],
 };

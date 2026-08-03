@@ -1,5 +1,4 @@
-import type { JsonFieldValue, JsonValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonFieldValue, type JsonValue } from "@/types/json";
 import "server-only";
 
 import { z } from "zod";
@@ -819,13 +818,17 @@ function removeDeletedNestedNodes(value: JsonValue): JsonValue {
    .filter((item): item is JsonValue => item !== undefined)
    .filter(
     (item) =>
-     !item || typeof item !== "object" || Array.isArray(item) || !(item as JsonObject).deleted_at,
+     !item ||
+     typeof item !== "object" ||
+     Array.isArray(item) ||
+     !JsonObjectSchema.parse(item).deleted_at,
    )
    .map(removeDeletedNestedNodes);
  }
  if (!value || typeof value !== "object") return value;
+ const parsedValue = JsonObjectSchema.parse(value);
  return Object.fromEntries(
-  Object.entries(value as JsonObject).map(([key, item]) => [
+  Object.entries(parsedValue).map(([key, item]) => [
    key,
    item === undefined ? undefined : removeDeletedNestedNodes(item),
   ]),

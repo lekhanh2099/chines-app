@@ -128,7 +128,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  );
 
  const query = useQuery({
-  queryKey: ["hanzihome", `aggregate-${kind}`, filters],
+  queryKey: hanzihomeQueryKeys.aggregate(kind, filters),
   queryFn: () => fetchHanziHomeAggregateItems({ kind, filters }),
   staleTime: Infinity,
  });
@@ -438,7 +438,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
         weight="bold"
         className="rounded-xl bg-danger-subtle p-4"
        >
-        {(query.error as Error).message}
+        {query.error?.message ?? "Không thể tải dữ liệu tổng hợp."}
        </StudyInstructionText>
       )}
 

@@ -1,5 +1,4 @@
-import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
 import type {
  HanziHomeData,
  HanziHomeLesson,
@@ -15,7 +14,8 @@ type UnknownRecord = JsonObject;
 const MAX_SEARCH_TEXT_LENGTH = 1_500;
 
 function asRecord(value: JsonFieldValue): UnknownRecord {
- return value && typeof value === "object" && !Array.isArray(value) ? (value as UnknownRecord) : {};
+ const parsed = JsonObjectSchema.safeParse(value);
+ return parsed.success ? parsed.data : {};
 }
 
 function text(record: UnknownRecord, key: string) {
@@ -30,7 +30,7 @@ function stringsFromValue(value: JsonFieldValue, depth = 0): string[] {
  if (Array.isArray(value)) return value.flatMap((item) => stringsFromValue(item, depth + 1));
  if (!value || typeof value !== "object") return [];
 
- return Object.entries(value as UnknownRecord).flatMap(([key, child]) =>
+ return Object.entries(value).flatMap(([key, child]) =>
   key === "id" || key.endsWith("_refs") || key === "source_refs"
    ? []
    : stringsFromValue(child, depth + 1),

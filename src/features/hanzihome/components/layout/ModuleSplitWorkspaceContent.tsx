@@ -29,7 +29,11 @@ import {
  useHanziHomeWorkspaceLayout,
 } from "@/features/hanzihome/context/selectors";
 import type { PaneId, StudyModule } from "@/features/hanzihome/context/types";
-import { developerToolsEnabled, setPaneActive } from "@/features/hanzihome/context/workspaceLayout";
+import {
+ developerToolsEnabled,
+ parseStudyModule,
+ setPaneActive,
+} from "@/features/hanzihome/context/workspaceLayout";
 
 function LearningSyncStatusPill() {
  const runtime = useHanziHomeRuntime();
@@ -185,7 +189,10 @@ export function ModuleSplitWorkspaceContent() {
     <div className="xl:hidden">
      <Select
       value={runtime.activeModule}
-      onValueChange={(module) => selectModule(module as StudyModule)}
+      onValueChange={(module) => {
+       const selectedModule = parseStudyModule(module);
+       if (selectedModule) selectModule(selectedModule);
+      }}
      >
       <SelectTrigger
        aria-label="Chọn nội dung học"

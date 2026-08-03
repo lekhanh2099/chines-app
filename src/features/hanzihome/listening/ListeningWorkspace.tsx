@@ -25,7 +25,7 @@ import { useSharedMandarinTts } from "./MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
 import { itemsForListeningSection } from "./listening.view-model";
 import { listeningCategoryLabels } from "./listening.labels";
-import type { ListeningCategory } from "./listening.types";
+import { LISTENING_CATEGORIES } from "./listening.types";
 import { z } from "zod";
 
 export function ListeningWorkspace() {
@@ -90,7 +90,7 @@ export function ListeningWorkspace() {
 
  const sidebar = (
   <div className="grid content-start gap-2">
-   {(Object.keys(listeningCategoryLabels) as ListeningCategory[]).map((category) => {
+   {LISTENING_CATEGORIES.map((category) => {
     const sections = bundle.sections.filter((section) => section.category === category);
     if (sections.length === 0) return null;
     return (

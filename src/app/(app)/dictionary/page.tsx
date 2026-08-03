@@ -143,23 +143,29 @@ function buildSavedItems({
  const vocabById = new Map(vocabRows.map((row) => [row.id, row]));
  const dictionaryById = new Map(dictionaryRows.map((row) => [row.id, row]));
 
- return progressRows.map((progress) => {
+ return progressRows.flatMap((progress) => {
   const vocab = vocabById.get(progress.vocab_id);
   const dictionary = progress.dictionary_id ? dictionaryById.get(progress.dictionary_id) : null;
+  const hanzi = dictionary?.headword || vocab?.hanzi;
+
+  if (!hanzi) return [];
+
   const analysis = getMeaningFromAnalysis(dictionary?.ai_analysis);
 
-  return {
-   id: progress.vocab_id,
-   dictionaryId: progress.dictionary_id || undefined,
-   hanzi: dictionary?.headword || vocab?.hanzi || progress.vocab_id,
-   pinyin: dictionary?.pinyin || vocab?.pinyin || "",
-   hanViet: dictionary?.sino_vietnamese || vocab?.sino_vietnamese || analysis.hanViet || "",
-   meaning: analysis.meaning || vocab?.meaning || "",
-   level: progress.proficiency_level ?? 0,
-   saved: progress.is_favorited ?? true,
-   note: progress.personal_note || "",
-   updatedAt: progress.updated_at || "",
-  };
+  return [
+   {
+    id: progress.vocab_id,
+    dictionaryId: progress.dictionary_id || undefined,
+    hanzi,
+    pinyin: dictionary?.pinyin || vocab?.pinyin || "",
+    hanViet: dictionary?.sino_vietnamese || vocab?.sino_vietnamese || analysis.hanViet || "",
+    meaning: analysis.meaning || vocab?.meaning || "",
+    level: progress.proficiency_level ?? 0,
+    saved: progress.is_favorited ?? true,
+    note: progress.personal_note || "",
+    updatedAt: progress.updated_at || "",
+   },
+  ];
  });
 }
 
