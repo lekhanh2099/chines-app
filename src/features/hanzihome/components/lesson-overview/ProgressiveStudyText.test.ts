@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
-import { ProgressiveStudyText } from "./ProgressiveStudyText";
+import { getActiveCharacterIndex, ProgressiveStudyText } from "./ProgressiveStudyText";
 import {
  nextAvailableRevealStage,
  nextRevealStage,
@@ -10,6 +10,13 @@ import {
 } from "./progressive-reveal";
 
 describe("progressive study text", () => {
+ it("maps audio progress to the character currently being read", () => {
+  expect(getActiveCharacterIndex(6, 0, 6, 0)).toBe(0);
+  expect(getActiveCharacterIndex(6, 0, 6, 0.5)).toBe(3);
+  expect(getActiveCharacterIndex(6, 2, 4, 0)).toBe(2);
+  expect(getActiveCharacterIndex(6, 2, 4, 0.75)).toBe(5);
+ });
+
  it("cycles Hanzi to Pinyin to meaning and back to Hanzi", () => {
   expect(nextRevealStage(0)).toBe(1);
   expect(nextRevealStage(1)).toBe(2);
@@ -72,5 +79,62 @@ describe("progressive study text", () => {
   expect(markup).toContain("[grid-area:1/1]");
   expect(markup.match(/invisible/g)).toHaveLength(2);
   expect(markup.match(/aria-hidden="true"/g)).toHaveLength(2);
+ });
+
+ it("renders each Hanzi character as a reading action when playback is available", () => {
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "离家的时候",
+    pinyin: "Lí jiā de shíhou",
+    vi: "Lúc rời khỏi nhà",
+    displayMode: {
+     showPinyin: true,
+     showMeaning: true,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+    readingPlayback: {
+     canSpeak: true,
+     isSpeaking: true,
+     progress: 0.5,
+     speakingText: "离家的时候",
+     speak: async () => undefined,
+    },
+    readingMode: true,
+   }),
+  );
+
+  expect(markup.match(/aria-label="Đọc từ chữ/g)).toHaveLength(5);
+  expect(markup.match(/aria-current="true"/g)).toHaveLength(1);
+  expect(markup).toContain("reading-progress-highlight");
+  expect(markup).toContain('data-no-inspector="true"');
+ });
+
+ it("keeps character actions disabled until reading mode starts", () => {
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "离家的时候",
+    displayMode: {
+     showPinyin: true,
+     showMeaning: true,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+    readingPlayback: {
+     canSpeak: true,
+     isSpeaking: true,
+     progress: 0.5,
+     speakingText: "离家的时候",
+     speak: async () => undefined,
+    },
+   }),
+  );
+
+  expect(markup).not.toContain('aria-label="Đọc từ chữ');
+  expect(markup).toContain("离家的时候");
  });
 });

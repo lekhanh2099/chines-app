@@ -1,6 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
 import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
@@ -16,6 +19,8 @@ export function TextLineCard({
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  variant = TextLineCardVariantSchema.enum.card,
  annotationTarget,
+ interactiveReading = false,
+ readingMode = false,
 }: {
  speaker?: string;
  zh: string;
@@ -24,7 +29,11 @@ export function TextLineCard({
  displayMode?: LessonDisplayMode;
  variant?: z.infer<typeof TextLineCardVariantSchema>;
  annotationTarget?: { lessonId: string; nodeType: string; nodeId: string };
+ interactiveReading?: boolean;
+ readingMode?: boolean;
 }) {
+ const tts = useSharedMandarinTts();
+
  return (
   <div
    className={cn(
@@ -48,8 +57,20 @@ export function TextLineCard({
      vi={vi}
      displayMode={displayMode}
      annotationTarget={annotationTarget}
+     readingPlayback={
+      interactiveReading
+       ? {
+          canSpeak: Boolean(tts.selectedVoice),
+          isSpeaking: tts.isSpeaking,
+          progress: tts.progress,
+          speakingText: tts.speakingText,
+          speak: tts.speak,
+         }
+       : undefined
+     }
+     readingMode={readingMode}
     />
-    <MandarinSpeakButton text={zh} />
+    <MandarinSpeakButton text={zh} disabled={readingMode} />
    </div>
   </div>
  );

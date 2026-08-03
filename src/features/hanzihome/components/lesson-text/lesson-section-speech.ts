@@ -1,6 +1,6 @@
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
-export function speechTextForSections(sections: readonly Section[]) {
+export function speechSegmentsForSections(sections: readonly Section[]) {
  return sections
   .filter((section) => section.type === "text")
   .flatMap((section) =>
@@ -12,14 +12,19 @@ export function speechTextForSections(sections: readonly Section[]) {
        .toSorted((left, right) => left.order - right.order)
        .flatMap((scene) => scene.lines.toSorted((left, right) => left.order - right.order));
       const lines = sceneLines.length > 0 ? sceneLines : block.lines;
-      return lines.toSorted((left, right) => left.order - right.order).map((line) => line.zh);
+      return lines
+       .toSorted((left, right) => left.order - right.order)
+       .map((line) => line.zh.trim());
      }
 
      const paragraphs = block.paragraphs.toSorted((left, right) => left.order - right.order);
      const lines = block.lines.toSorted((left, right) => left.order - right.order);
-     return (paragraphs.length > 0 ? paragraphs : lines).map((item) => item.zh);
+     return (paragraphs.length > 0 ? paragraphs : lines).map((item) => item.zh.trim());
     }),
   )
-  .filter(Boolean)
-  .join("\n");
+  .filter((text) => text.length > 0);
+}
+
+export function speechTextForSections(sections: readonly Section[]) {
+ return speechSegmentsForSections(sections).join("\n");
 }

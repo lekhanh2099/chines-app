@@ -65,6 +65,8 @@ const buttonVariants = cva(
     "icon-lg": "size-11",
     "icon-toolbar": "size-9 rounded-lg",
     "icon-round": "size-10 rounded-full",
+    inline:
+     "min-h-0 min-w-[1.25em] h-auto gap-0 rounded-md px-0.5 py-0.5 align-baseline font-inherit leading-[inherit] select-text",
     "responsive-compact": "size-9 rounded-lg sm:h-10 sm:w-auto sm:max-w-44 sm:px-3",
     list: "min-h-14 gap-3 rounded-xl px-3 py-2",
     tab: "h-9 min-h-9 gap-1.5 rounded-lg px-2 sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",

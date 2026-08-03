@@ -1956,6 +1956,15 @@ hr.editor-hr.selected {
  background-color: rgba(147, 197, 253, 0.6);
 }
 
+.reading-progress-highlight {
+ background-color: var(--accent-subtle);
+ color: var(--accent-text);
+ text-decoration: underline;
+ text-decoration-color: var(--accent);
+ text-decoration-thickness: 0.1em;
+ text-underline-offset: 0.12em;
+}
+
 /* ── Tablet/mobile: Stack panes vertically when the app shell leaves a narrow content pane. ── */
 @media (max-width: 1023px) {
  .split-view-container {

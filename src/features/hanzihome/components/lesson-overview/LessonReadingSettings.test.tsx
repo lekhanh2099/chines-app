@@ -2,8 +2,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
 import { LessonReadingSettings } from "./LessonReadingSettings";
-import { getHanziFontFamily } from "./hanzi-typography";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
+import { getHanziFontFamily, getHanziTypographyStyle } from "./hanzi-typography";
+import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 
 describe("LessonReadingSettings", () => {
  it("offers the supported reader fonts and selects system by default", () => {
@@ -24,10 +24,16 @@ describe("LessonReadingSettings", () => {
   expect(html).toMatch(/<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span[^>]*>Hệ thống<\/span>/);
  });
 
- it("uses the self-hosted Khải thư font for system and Khải thư modes", () => {
-  expect(getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont)).toContain(
-   "var(--font-lxgw-wenkai-mono-tc)",
-  );
+ it("uses Khải thư before the self-hosted fallback when the reader font changes", () => {
+  const kaitiDisplayMode: LessonDisplayMode = {
+   ...DEFAULT_LESSON_DISPLAY_MODE,
+   hanziFont: "kaiti",
+  };
+
+  expect(getHanziFontFamily("kaiti")).toContain('"Kaiti SC"');
   expect(getHanziFontFamily("kaiti")).toContain("var(--font-lxgw-wenkai-mono-tc)");
+  expect(getHanziTypographyStyle(kaitiDisplayMode).fontFamily).not.toBe(
+   getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily,
+  );
  });
 });

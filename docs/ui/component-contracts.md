@@ -137,6 +137,7 @@ toolbar
 menu
 icon-toolbar
 icon-round
+inline
 ```
 
 Rules:

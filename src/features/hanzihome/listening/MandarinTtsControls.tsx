@@ -117,12 +117,18 @@ export function MandarinTtsControls({
       variant="surfaceCard"
       size="sm"
       disabled={!text.trim() || !tts.selectedVoice}
-      onClick={() => tts.speak(text)}
+      onClick={() => tts.speakSequence(text.split("\n"))}
      >
       <Play data-icon="inline-start" />
       Phát cả phần
      </Button>
-     <Button type="button" variant="ghost" size="sm" disabled={!tts.isSpeaking} onClick={tts.stop}>
+     <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      disabled={!tts.isSpeaking && !tts.isLoading}
+      onClick={tts.stop}
+     >
       <Square data-icon="inline-start" />
       Dừng
      </Button>

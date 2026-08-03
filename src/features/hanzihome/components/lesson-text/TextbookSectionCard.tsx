@@ -17,12 +17,16 @@ export function TextbookSectionCard({
  sectionPath,
  displayMode,
  readingItems,
+ interactiveReading,
+ readingMode,
 }: {
  lessonId: string;
  section: Section;
  sectionPath: EditableNodePath;
  displayMode: LessonDisplayMode;
  readingItems?: readonly ReadingItem[];
+ interactiveReading: boolean;
+ readingMode: boolean;
 }) {
  return (
   <>
@@ -54,6 +58,8 @@ export function TextbookSectionCard({
      sectionPath={sectionPath}
      displayMode={displayMode}
      readingItems={readingItems}
+     interactiveReading={interactiveReading}
+     readingMode={readingMode}
     />
    </article>
   </>

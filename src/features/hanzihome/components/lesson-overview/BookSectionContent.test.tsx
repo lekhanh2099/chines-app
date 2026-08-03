@@ -5,6 +5,7 @@ import { SectionSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema"
 import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
 import { BookSectionContent } from "./BookSectionContent";
+import { speechSegmentsForSections } from "../lesson-text/lesson-section-speech";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 
 describe("BookSectionContent", () => {
@@ -132,9 +133,62 @@ describe("BookSectionContent", () => {
    </MandarinTtsProvider>,
   );
 
+  expect(speechSegmentsForSections([section])).toEqual(["第一段。", "第二段。"]);
   expect(html).toContain("第一段。");
   expect(html).toContain("第二段。");
+  expect(html).not.toContain('aria-label="Đọc từ chữ');
   expect(html).not.toContain("Đoạn 1");
   expect(html).not.toContain("Đoạn 2");
+
+  const readingHtml = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <BookSectionContent
+     section={section}
+     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+     interactiveReading
+     readingMode
+    />
+   </MandarinTtsProvider>,
+  );
+
+  expect(readingHtml.match(/aria-label="Đọc từ chữ/g)).toHaveLength(6);
+ });
+
+ it("keeps dialogue lines ordered and falls back to direct lines", () => {
+  const section = SectionSchema.parse({
+   id: "lesson-dialogue",
+   type: "text",
+   order: 1,
+   title: "Bài khóa",
+   blocks: [
+    {
+     id: "dialogue-1",
+     type: "text_dialogue",
+     order: 2,
+     title: "对话",
+     lines: [
+      { id: "line-2", order: 2, zh: "第二句。" },
+      { id: "line-1", order: 1, zh: "第一句。" },
+     ],
+    },
+    {
+     id: "narrative-1",
+     type: "text_narrative",
+     order: 1,
+     title: "旁白",
+     lines: [
+      { id: "line-4", order: 2, zh: "第四句。" },
+      { id: "line-3", order: 1, zh: "第三句。" },
+     ],
+    },
+   ],
+  });
+
+  expect(speechSegmentsForSections([section])).toEqual([
+   "第三句。",
+   "第四句。",
+   "第一句。",
+   "第二句。",
+  ]);
  });
 });

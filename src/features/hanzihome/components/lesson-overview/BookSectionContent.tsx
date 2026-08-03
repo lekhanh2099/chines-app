@@ -24,6 +24,8 @@ export function BookSectionContent({
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  debugMode = false,
  readingItems,
+ interactiveReading = false,
+ readingMode = false,
 }: {
  lessonId?: string;
  section: Section;
@@ -31,6 +33,8 @@ export function BookSectionContent({
  displayMode?: LessonDisplayMode;
  debugMode?: boolean;
  readingItems?: readonly ReadingItem[];
+ interactiveReading?: boolean;
+ readingMode?: boolean;
 }) {
  const renderSectionFallback = () =>
   hasRenderableValue(section) ? (
@@ -56,6 +60,8 @@ export function BookSectionContent({
         block={block}
         path={sectionPath ? [...sectionPath, "blocks", index] : undefined}
         displayMode={displayMode}
+        interactiveReading={interactiveReading}
+        readingMode={readingMode}
        />
       ))}
      </div>

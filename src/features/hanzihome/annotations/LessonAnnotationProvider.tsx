@@ -67,6 +67,7 @@ const NoteDialogSchema = z.discriminatedUnion("kind", [
 type AnnotationContextValue = {
  getAnnotations: (target: AnnotationTarget, text: string) => ResolvedLessonTextAnnotation[];
  openAnnotation: (annotation: LessonTextAnnotation) => void;
+ closeAnnotation: () => void;
 };
 
 const AnnotationContext = createContext<Nullable<AnnotationContextValue>>(null);
@@ -247,6 +248,12 @@ export function LessonAnnotationProvider({
   setNoteText(annotation.noteText);
   setNoteDialog({ kind: "annotation", annotation });
  }, []);
+ const closeAnnotation = useCallback(() => {
+  setSelectionDraft(null);
+  setNoteDialog(null);
+  setNoteText("");
+  window.getSelection()?.removeAllRanges();
+ }, []);
 
  const saveNote = async () => {
   if (!noteDialog || !noteText.trim()) return;
@@ -282,8 +289,8 @@ export function LessonAnnotationProvider({
  };
 
  const contextValue = useMemo(
-  () => ({ getAnnotations, openAnnotation }),
-  [getAnnotations, openAnnotation],
+  () => ({ getAnnotations, openAnnotation, closeAnnotation }),
+  [closeAnnotation, getAnnotations, openAnnotation],
  );
 
  return (

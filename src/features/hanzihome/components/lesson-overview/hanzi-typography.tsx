@@ -83,8 +83,7 @@ const hanziFontFamilies: Record<HanziReaderFont, string> = {
  "noto-sans":
   'var(--font-reading-noto-sans), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif',
  pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", serif',
- kaiti:
-  'var(--font-lxgw-wenkai-mono-tc), "PingFang TC", "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", serif',
+ kaiti: '"Kaiti SC", "KaiTi", var(--font-lxgw-wenkai-mono-tc), serif',
  fangsong: '"FangSong", "STFangsong", "FangSong_GB2312", serif',
  "ma-shan": 'var(--font-reading-ma-shan), "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif',
  xiaowei: 'var(--font-reading-xiaowei), "ZCOOL XiaoWei", "Kaiti SC", "KaiTi", serif',

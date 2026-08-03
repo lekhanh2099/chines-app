@@ -10,11 +10,15 @@ export function TextBlockView({
  block,
  path,
  displayMode,
+ interactiveReading = false,
+ readingMode = false,
 }: {
  lessonId?: string;
  block: TextBlock;
  path?: EditableNodePath;
  displayMode: LessonDisplayMode;
+ interactiveReading?: boolean;
+ readingMode?: boolean;
 }) {
  const directLines = block.lines;
  const narrativeParagraphs = block.type === "text_narrative" ? block.paragraphs : [];
@@ -45,6 +49,8 @@ export function TextBlockView({
         pinyin={line.pinyin}
         vi={line.vi}
         displayMode={displayMode}
+        interactiveReading={interactiveReading}
+        readingMode={readingMode}
         variant="reader"
         annotationTarget={
          lessonId ? { lessonId, nodeType: "text_line", nodeId: line.id } : undefined
@@ -91,6 +97,8 @@ export function TextBlockView({
         pinyin={line.pinyin}
         vi={line.vi}
         displayMode={displayMode}
+        interactiveReading={interactiveReading}
+        readingMode={readingMode}
         variant="reader"
         annotationTarget={
          lessonId ? { lessonId, nodeType: "text_line", nodeId: line.id } : undefined
@@ -129,6 +137,8 @@ export function TextBlockView({
          pinyin={paragraph.pinyin}
          vi={paragraph.vi}
          displayMode={displayMode}
+         interactiveReading={interactiveReading}
+         readingMode={readingMode}
          variant="reader"
          annotationTarget={
           lessonId ? { lessonId, nodeType: "text_paragraph", nodeId: paragraph.id } : undefined

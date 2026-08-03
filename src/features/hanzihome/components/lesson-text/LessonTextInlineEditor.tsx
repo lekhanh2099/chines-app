@@ -1,9 +1,10 @@
 "use client";
 
 import { FileText, Layers } from "lucide-react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Card } from "@/components/ui/card";
+import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
  HanziHomeCommandBarPortal,
@@ -25,9 +26,11 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 
-import { speechTextForSections } from "./lesson-section-speech";
+import { speechSegmentsForSections } from "./lesson-section-speech";
 
 type LessonTextInlineEditorProps = {
  compact?: boolean;
@@ -56,6 +59,10 @@ export function LessonTextInlineEditor({
  const sectionResource = useHanziHomeLessonSections(lesson.id);
  const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
+ const { stop: stopTts } = useSharedMandarinTts();
+ const { closeInspector } = useVocabInspector();
+ const annotationContext = useLessonAnnotationContext();
+ const [isReadingMode, setIsReadingMode] = useState(false);
  const sourceSections = useMemo(() => {
   const sections =
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
@@ -72,13 +79,18 @@ export function LessonTextInlineEditor({
  );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
- const visibleSpeechText = useMemo(
+ const visibleSpeechSegments = useMemo(
   () =>
-   speechTextForSections(
+   speechSegmentsForSections(
     showAllSections ? sourceSections : selectedSection ? [selectedSection] : [],
    ),
   [selectedSection, showAllSections, sourceSections],
  );
+ const visibleSpeechText = visibleSpeechSegments.join("\n");
+ useEffect(() => {
+  stopTts();
+ }, [selectedSectionId, practiceOnly, stopTts, visibleSpeechText]);
+ useEffect(() => () => stopTts(), [stopTts]);
  const sectionPathFor = (section: Section): EditableNodePath => {
   const sourceIndex =
    lesson.sourceLesson?.lesson.sections.findIndex(
@@ -88,8 +100,23 @@ export function LessonTextInlineEditor({
   return ["lesson", "sections", sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section)];
  };
 
+ const enterReadingMode = () => {
+  closeInspector();
+  annotationContext?.closeAnnotation();
+  setIsReadingMode(true);
+ };
+ const exitReadingMode = () => setIsReadingMode(false);
+
  const readingControls = (
-  <MandarinSpeakButton text={visibleSpeechText} actionLabel={compact ? undefined : "Đọc cả đoạn"} />
+  <MandarinSpeakButton
+   text={visibleSpeechText}
+   segments={visibleSpeechSegments}
+   actionLabel={compact ? undefined : "Đọc cả đoạn"}
+   activeOverride={isReadingMode}
+   onStart={enterReadingMode}
+   onStop={exitReadingMode}
+   onFinish={exitReadingMode}
+  />
  );
 
  const sidebar = (
@@ -197,6 +224,8 @@ export function LessonTextInlineEditor({
          sectionPath={sectionPathFor(section)}
          displayMode={displayMode}
          readingItems={readingItems}
+         interactiveReading={!practiceOnly}
+         readingMode={isReadingMode}
         />
        ))
       ) : selectedSection ? (
@@ -206,6 +235,8 @@ export function LessonTextInlineEditor({
         sectionPath={sectionPathFor(selectedSection)}
         displayMode={displayMode}
         readingItems={readingItems}
+        interactiveReading={!practiceOnly}
+        readingMode={isReadingMode}
        />
       ) : null}
      </div>
