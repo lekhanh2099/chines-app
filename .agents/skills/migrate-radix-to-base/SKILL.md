@@ -34,6 +34,20 @@ Read `docs/agent/skill-authoring.md` before applying this workflow.
    mutation requires confirmation; Radix packages are removed only after the
    last approved component is migrated.
 
+## Tier routing
+
+- **Fast:** investigate one wrapper or consumer without changing dependencies,
+  files, or public props; installed `.d.ts` and a focused typecheck are enough.
+- **Subsystem:** migrate one approved primitive family with known consumers;
+  use the golden pair, consumer sweep, targeted checks and manual interaction
+  evidence.
+- **Full:** change `components.json`, dependencies, shared APIs, or multiple
+  primitive families; require explicit confirmation, baseline comparison and
+  the full repository gate.
+
+Investigation may stay fast, but any mutation of a wrapper, branch, dependency,
+report file, commit, or broad migration follows the confirmation policy.
+
 ## Strategy: golden pair first, transformation engine second
 
 - **Golden pair via the CLI (preferred).** If the project is shadcn with a
@@ -135,6 +149,10 @@ Typecheck per file, build per batch, full build at the end vs the baseline.
 After explicit approval, reports may live in a `.migration/` directory at the
 project root, one file per component. Do not create report files during
 investigation or when the user requested only a review/plan.
+
+Every handoff also reports the selected tier, local inventory, authoritative
+installed contract, consumer sweep, files changed, behavior deltas, commands,
+manual interaction evidence, and residual Radix/dependency risk.
 Rules:
 - Each run writes (or fully overwrites) the file for each component it
   migrated. Re-running a component replaces its report; never touch other

@@ -39,6 +39,18 @@ State:
 
 Do not start with a large parent dialog or full-object payload.
 
+### Verification tier
+
+- **Fast:** one node, mapper, or query owner; no shared write contract; a
+  deterministic boundary test can reproduce the failure.
+- **Subsystem:** a lesson resource, renderer family, query invalidation,
+  import/bulk-edit path, or several consumers share the affected contract.
+- **Full:** schema, migration, persisted format, authorization, or
+  multi-surface study/edit behavior is involved.
+
+Start with the smallest deterministic proof and escalate when sibling,
+authorization, data-shape, or persistence evidence crosses the local boundary.
+
 ## 3. Trace the contract
 
 ```text
@@ -158,6 +170,7 @@ Stable ID:
 Query invalidation:
 Sibling preservation:
 Invariant protected:
+Tier selected:
 Checks:
 Unsupported shapes:
 Residual data risk:

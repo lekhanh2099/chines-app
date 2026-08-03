@@ -50,9 +50,17 @@ Before a non-trivial task:
    - HanziHome content editing, Supabase-backed lesson data, vocab, grammar,
      exercises, reading, renderers, or edit persistence:
      `.agents/skills/hanzihome-content-editing/SKILL.md`
+   - HanziHome test coverage, regression proof, renderer/API/state contract
+     review, or CI readiness:
+     `.codex/skills/hanzihome-test-review/SKILL.md`
+   - Supabase schema, migration, RLS, RPC, generated-type, or migration-drift
+     work:
+     `.codex/skills/hanzihome-supabase-migration/SKILL.md`
    - shadcn component APIs, registry operations, `components.json`, component
      installation, or upstream component docs:
      `.agents/skills/shadcn/SKILL.md`
+   - Radix UI to Base UI investigation or migration:
+     `.agents/skills/migrate-radix-to-base/SKILL.md`
 4. For UI work, read:
    - `docs/ui/component-contracts.md`
    - `docs/ui/ui-verification.md`

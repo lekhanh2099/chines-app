@@ -23,6 +23,18 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 6. Run targeted tests first. Escalate to subsystem checks, then run
    `npm run check` for app-code completion or the full path.
 
+## Verification tiers
+
+- **Fast:** a schema, mapper, selector, or deterministic boundary test can
+  reproduce the failure without changing a shared contract.
+- **Subsystem:** a hook, component, route, renderer family, query cache, or
+  edit flow needs stateful proof across several local consumers.
+- **Full:** a migration, authorization contract, persisted format, shared API,
+  or release/CI claim requires repository-wide verification.
+
+Select the lowest tier that can falsify the change, then escalate when the
+consumer graph or risk classification crosses that boundary.
+
 ## Required assertions by change type
 
 - Query: first pending render, error vs empty, retry, cache-key variables, stale/refetch behavior.
@@ -35,4 +47,5 @@ Judge coverage by protected behavior and failure modes, not test-file count or a
 
 List the precedent, authoritative contract, reproduced failure, protected
 invariant, behaviors already covered, false-confidence tests, new tests added,
-commands/results, manual checks still required, and remaining risk by severity.
+selected tier, commands/results, manual checks still required, and remaining
+risk by severity.

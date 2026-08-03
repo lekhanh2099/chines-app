@@ -36,9 +36,21 @@ Keep schema history reproducible and preserve the study/edit flow while database
 
 Read [references/migration-review.md](references/migration-review.md) before approval.
 
+## Verification tiers
+
+- **Fast:** read-only migration/contract review with no file, schema, or live
+  target mutation; static drift and ownership evidence is sufficient.
+- **Subsystem:** one local migration plus generated types, repository queries,
+  authorization and focused tests are affected.
+- **Full:** live drift, RLS/RPC, production authorization, populated-table
+  locking, generated-contract refresh, or release verification is involved.
+
+Database mutations always escalate to the full risk path when the target,
+authorization, rollback/forward-fix, or existing-row impact is not explicit.
+
 ## Output
 
 Report the precedent, invariant, migration path, drift state, existing-row and
 lock risk, chosen rollback or forward-fix, authorization/ownership behavior,
 affected read/write contracts, verification evidence, exact environment
-touched, and residual deployment risk.
+touched, selected tier, and residual deployment risk.

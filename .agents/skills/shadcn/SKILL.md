@@ -23,6 +23,19 @@ Do not require `Alert`, `Empty`, standardized `Skeleton`, `FieldGroup` or
 a different canonical component. Use the CLI to inspect upstream APIs; do not
 let upstream composition create a parallel local UI system.
 
+## Tier routing
+
+- **Fast:** inspect one existing primitive and its consumers; no registry,
+  dependency, or shared API mutation; a local source/contract check is enough.
+- **Subsystem:** add or extend one approved component/pattern with several
+  consumers; use CLI diff, consumer search, targeted tests and UI checks.
+- **Full:** overwrite a primitive, change a preset/dependency, migrate a
+  primitive family, or affect multiple surfaces; require confirmation and the
+  full repository gate.
+
+Start with local inventory and installed source. Escalate when the proposed
+change crosses a primitive boundary, dependency, registry, or shared consumer.
+
 > **IMPORTANT:** Run all CLI commands using the project's package runner: `npx shadcn@latest`, `pnpm dlx shadcn@latest`, or `bunx --bun shadcn@latest` — based on the project's `packageManager`. Examples below use `npx shadcn@latest` but substitute the correct runner for the project.
 
 ## Current Project Context
@@ -210,6 +223,25 @@ When the user asks to update a component from upstream while keeping their local
    - Has local changes → read the local file, analyze the diff, and apply upstream updates while preserving local modifications.
    - User says "just update everything" → use `--overwrite`, but confirm first.
 4. **Never use `--overwrite` without the user's explicit approval.**
+
+## Handoff evidence
+
+Report:
+
+```text
+Tier selected:
+Local inventory and source inspected:
+Installed/registry contract:
+Consumers searched:
+Decision: use | extend | create | justified exception
+CLI diff/dry-run evidence:
+Keyboard/responsive/state verification:
+Files changed:
+Residual UI or dependency risk:
+```
+
+Do not claim a component update is safe from a registry diff alone; the local
+source, consumer contract and applicable rendered states remain authoritative.
 
 ## Quick Reference
 
