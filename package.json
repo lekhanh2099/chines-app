@@ -87,7 +87,7 @@
   "postcss": "^8.5.23",
   "supabase": "^2.109.1",
   "tailwindcss": "^4",
-  "typescript": "^6.0.3",
+  "typescript": "npm:@typescript/typescript6@^6.0.2",
   "vitest": "^4.1.7"
  }
 }
