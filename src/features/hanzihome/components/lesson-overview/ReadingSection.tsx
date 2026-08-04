@@ -47,6 +47,10 @@ export function ReadingCard({
  const instructionText = stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
  const passage = getPassageLikeValue(record, { includeText: true });
+ const passageRecord = asRecord(passage);
+ const passageTitle = stringValue(passageRecord, "title_vi") || stringValue(passageRecord, "title");
+ const readingTitle = item.title_vi || item.title;
+ const showPassageTitle = passageTitle !== readingTitle && passageTitle !== item.title;
  const clozeAnswers = getClozeAnswerValues(record);
  const directPassage = asRecord(record.passage);
  const passageSegmentsPath: EditableNodePath = ["passage", "segments"];
@@ -174,6 +178,7 @@ export function ReadingCard({
     answers={clozeAnswers}
     displayMode={displayMode}
     lessonId={lessonId}
+    showTitle={showPassageTitle}
    />
 
    {!passage && (

@@ -253,7 +253,10 @@ export function isReadingClozeExercise(
  const renderer = stringValue(rendering, "renderer");
  const variant = stringValue(record, "variant");
  const isReadingCloze =
-  item.type === "reading_fill_blank" || variant.includes("cloze") || renderer.includes("cloze");
+  item.type === "reading_fill_blank" ||
+  item.type === "reading_cloze" ||
+  variant.includes("cloze") ||
+  renderer.includes("cloze");
  if (!isReadingCloze) return null;
 
  const passageText = passageTextForDiagnostics(passage);
@@ -262,7 +265,9 @@ export function isReadingClozeExercise(
  const readingReference =
   stringValue(record, "reading_ref") ||
   stringValue(record, "reading_id") ||
-  stringValue(record, "linked_reading_id");
+  stringValue(record, "json_item_id") ||
+  stringValue(record, "linked_reading_id") ||
+  stringValue(record, "linked_section_id");
 
  return {
   renderer,

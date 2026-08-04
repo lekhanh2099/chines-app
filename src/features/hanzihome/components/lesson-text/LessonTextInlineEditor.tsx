@@ -77,6 +77,10 @@ export function LessonTextInlineEditor({
   () => sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
   [sourceSections],
  );
+ const readingSections = useMemo(
+  () => sourceSections.filter((section) => section.type === "reading"),
+  [sourceSections],
+ );
  const selectedSection = sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections = selectedSectionId === allSectionsId || !selectedSection;
  const visibleSpeechSegments = useMemo(
@@ -224,6 +228,7 @@ export function LessonTextInlineEditor({
          sectionPath={sectionPathFor(section)}
          displayMode={displayMode}
          readingItems={readingItems}
+         readingSections={readingSections}
          interactiveReading={!practiceOnly}
          readingMode={isReadingMode}
         />
@@ -235,6 +240,7 @@ export function LessonTextInlineEditor({
         sectionPath={sectionPathFor(selectedSection)}
         displayMode={displayMode}
         readingItems={readingItems}
+        readingSections={readingSections}
         interactiveReading={!practiceOnly}
         readingMode={isReadingMode}
        />

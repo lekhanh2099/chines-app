@@ -12,7 +12,7 @@ export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
  showPinyin: true,
  showMeaning: false,
  showAnswers: false,
- hanziFont: "system",
+ hanziFont: "kaiti",
  hanziSize: "3xl",
  revealMode: "always",
 };

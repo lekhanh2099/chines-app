@@ -8,10 +8,12 @@ export function ExerciseRenderIssues({
  item,
  passage,
  answers,
+ hasStructuredQuestionGroups,
 }: {
  item: Exercise;
  passage: JsonFieldValue;
  answers: JsonValue[];
+ hasStructuredQuestionGroups: boolean;
 }) {
  const issueMeta = isReadingClozeExercise(item, passage, answers);
  if (!issueMeta) return null;
@@ -19,7 +21,7 @@ export function ExerciseRenderIssues({
  const { answerCount, markerCount, readingReference, renderer, variant } = issueMeta;
  const issues: string[] = [];
 
- if (!passage) {
+ if (!passage && !hasStructuredQuestionGroups) {
   issues.push(
    readingReference
     ? `Chỉ có tham chiếu bài đọc "${readingReference}", chưa có passage được resolve để render.`

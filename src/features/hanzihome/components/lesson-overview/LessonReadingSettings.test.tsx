@@ -3,10 +3,10 @@ import { describe, expect, it, vi } from "vitest";
 
 import { LessonReadingSettings } from "./LessonReadingSettings";
 import { getHanziFontFamily, getHanziTypographyStyle } from "./hanzi-typography";
-import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 
 describe("LessonReadingSettings", () => {
- it("offers the supported reader fonts and selects system by default", () => {
+ it("offers the supported reader fonts and selects Khải thư by default", () => {
   const html = renderToStaticMarkup(
    <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
   );
@@ -21,19 +21,17 @@ describe("LessonReadingSettings", () => {
   expect(html).toContain("ZCOOL XiaoWei");
   expect(html).not.toContain(">Kai</span>");
   expect(html).not.toContain(">Mộng Thần</span>");
-  expect(html).toMatch(/<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span[^>]*>Hệ thống<\/span>/);
+  expect(html).toMatch(
+   /<button[^>]*aria-pressed="true"[^>]*>[\s\S]*?<span[^>]*>Khải thư · 楷体<\/span>/,
+  );
  });
 
- it("uses Khải thư before the self-hosted fallback when the reader font changes", () => {
-  const kaitiDisplayMode: LessonDisplayMode = {
-   ...DEFAULT_LESSON_DISPLAY_MODE,
-   hanziFont: "kaiti",
-  };
+ it("uses Khải thư for the default and system reader font", () => {
+  const kaitiFontFamily = getHanziFontFamily("kaiti");
 
-  expect(getHanziFontFamily("kaiti")).toContain('"Kaiti SC"');
-  expect(getHanziFontFamily("kaiti")).toContain("var(--font-lxgw-wenkai-mono-tc)");
-  expect(getHanziTypographyStyle(kaitiDisplayMode).fontFamily).not.toBe(
-   getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily,
-  );
+  expect(kaitiFontFamily).toContain('"Kaiti SC"');
+  expect(kaitiFontFamily).toContain("var(--font-lxgw-wenkai-mono-tc)");
+  expect(getHanziFontFamily("system")).toBe(kaitiFontFamily);
+  expect(getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily).toBe(kaitiFontFamily);
  });
 });

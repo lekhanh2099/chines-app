@@ -94,6 +94,8 @@ export function getPassageLikeValue(
   ...mergedRenderableArrays(directPassageRecord, supplementaryVocabKeys),
   ...mergedRenderableArrays(record, supplementaryVocabKeys),
  ];
+ const instruction = directPassageRecord.instruction ?? record.instruction;
+ const rendering = directPassageRecord.rendering ?? record.rendering;
 
  if (directPassageHasPayload) {
   return {
@@ -157,7 +159,8 @@ export function getPassageLikeValue(
     arrayValue(directPassageRecord, "cloze_answers"),
     arrayValue(record, "cloze_answers"),
    ),
-   rendering: directPassageRecord.rendering ?? record.rendering,
+   ...(instruction === undefined ? {} : { instruction }),
+   ...(rendering === undefined ? {} : { rendering }),
   };
  }
 
@@ -199,7 +202,6 @@ export function getPassageLikeValue(
   id: stringValue(record, "id"),
   title: stringValue(record, "title_vi") || stringValue(record, "title"),
   title_vi: stringValue(record, "title_vi"),
-  instruction: record.instruction,
   text_with_blanks: text,
   completed_text: completedText,
   pinyin: stringValue(record, "pinyin"),
@@ -212,7 +214,8 @@ export function getPassageLikeValue(
   answers: arrayValue(record, "answers"),
   answer_key: arrayValue(record, "answer_key"),
   cloze_answers: arrayValue(record, "cloze_answers"),
-  rendering: record.rendering,
+  ...(instruction === undefined ? {} : { instruction }),
+  ...(rendering === undefined ? {} : { rendering }),
  };
 
  return Object.values(passage).some(hasTextLikeValue) ? passage : undefined;

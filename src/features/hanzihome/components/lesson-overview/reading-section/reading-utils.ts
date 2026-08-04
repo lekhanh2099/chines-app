@@ -3,7 +3,19 @@ import { answerToString, asRecord, stringValue } from "../utils";
 
 export function formatAnswer(value: JsonFieldValue): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
- return answerToString(value);
+
+ const record = asRecord(value);
+ return (
+  answerToString(value) ||
+  stringValue(record, "answer") ||
+  stringValue(record, "answer_zh") ||
+  stringValue(record, "sample_answer") ||
+  stringValue(record, "correct") ||
+  stringValue(record, "correct_sentence") ||
+  stringValue(record, "value") ||
+  stringValue(record, "text") ||
+  stringValue(record, "zh")
+ );
 }
 
 export function objectText(

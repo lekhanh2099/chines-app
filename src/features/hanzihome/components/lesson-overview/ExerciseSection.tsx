@@ -1,4 +1,8 @@
-import type { Exercise, ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type {
+ Exercise,
+ ReadingItem,
+ Section,
+} from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 
 import { ExerciseBody } from "./exercise-section/ExerciseBody";
@@ -22,6 +26,7 @@ export function ExerciseCard({
  displayMode,
  debugMode = false,
  readingItems,
+ readingSections,
 }: {
  lessonId?: string;
  parentSectionId?: string;
@@ -30,6 +35,7 @@ export function ExerciseCard({
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
  readingItems?: readonly ReadingItem[];
+ readingSections?: readonly Section[];
 }) {
  const record = asRecord(item);
  const instruction = asRecord(record.instruction);
@@ -77,6 +83,7 @@ export function ExerciseCard({
     item={item}
     displayMode={displayMode}
     readingItems={readingItems}
+    readingSections={readingSections}
    />
 
    {debugMode && <RawExerciseDataDetails value={item} />}

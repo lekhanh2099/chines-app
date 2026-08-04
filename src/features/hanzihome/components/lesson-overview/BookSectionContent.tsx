@@ -24,6 +24,7 @@ export function BookSectionContent({
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
  debugMode = false,
  readingItems,
+ readingSections,
  interactiveReading = false,
  readingMode = false,
 }: {
@@ -33,6 +34,7 @@ export function BookSectionContent({
  displayMode?: LessonDisplayMode;
  debugMode?: boolean;
  readingItems?: readonly ReadingItem[];
+ readingSections?: readonly Section[];
  interactiveReading?: boolean;
  readingMode?: boolean;
 }) {
@@ -164,6 +166,7 @@ export function BookSectionContent({
         displayMode={displayMode}
         debugMode={debugMode}
         readingItems={readingItems}
+        readingSections={readingSections}
        />
       ))}
      </div>

@@ -11,6 +11,7 @@ export function ReadingQuestionCard({
  index,
  showAnswers = false,
  displayMode,
+ answerOverride,
 }: {
  itemId: string;
  readingType: string;
@@ -18,11 +19,14 @@ export function ReadingQuestionCard({
  index: number;
  showAnswers?: boolean;
  displayMode: LessonDisplayMode;
+ answerOverride?: JsonFieldValue;
 }) {
  if (Array.isArray(questionValue)) {
   const values = questionValue.map(answerToString);
   const title = values[0] || "Câu hỏi";
-  const answer = readingType === "reading_multiple_choice" ? values.at(-1) : values[1];
+  const answer =
+   formatAnswer(answerOverride) ||
+   (readingType === "reading_multiple_choice" ? values.at(-1) : values[1]);
 
   return (
    <ExerciseQuestionCard
@@ -41,11 +45,15 @@ export function ReadingQuestionCard({
   typeof questionValue === "number" ||
   typeof questionValue === "boolean"
  ) {
+  const answer = formatAnswer(answerOverride);
+
   return (
    <ExerciseQuestionCard
     key={`${itemId}-question-${index}`}
     index={index + 1}
     title={String(questionValue)}
+    answer={answer}
+    showAnswer={showAnswers}
     displayMode={displayMode}
    />
   );
@@ -79,6 +87,7 @@ export function ReadingQuestionCard({
   "Câu hỏi";
 
  const answer =
+  formatAnswer(answerOverride) ||
   formatAnswer(question.answer) ||
   stringValue(answerRecord, "zh") ||
   stringValue(answerRecord, "vi") ||

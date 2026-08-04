@@ -30,12 +30,14 @@ export function PassageCard({
  answers = [],
  displayMode,
  lessonId,
+ showTitle = true,
 }: {
  itemId: string;
  passage: JsonFieldValue;
  answers?: JsonValue[];
  displayMode: LessonDisplayMode;
  lessonId?: string;
+ showTitle?: boolean;
 }) {
  const [manualAnswerListOpen, setManualAnswerListOpen] = useState(false);
  const passageRecord = asRecord(passage);
@@ -131,9 +133,9 @@ export function PassageCard({
 
  return (
   <div className="exercise-card-surface grid gap-3 rounded-xl border p-3 sm:p-4">
-   {(passageTitle || instructionText) && (
+   {((showTitle && passageTitle) || instructionText) && (
     <div className="grid gap-1">
-     {passageTitle && (
+     {showTitle && passageTitle && (
       <Typography as="h5" variant="cardTitle" tone="default" weight="black">
        {passageTitle}
       </Typography>

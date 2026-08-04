@@ -5,7 +5,11 @@ import {
  NestedEditControls,
  type EditableNodePath,
 } from "@/features/hanzihome/editing";
-import type { Exercise, ReadingItem } from "@/features/hanzihome/schemas/hanyu-lesson.types";
+import type {
+ Exercise,
+ ReadingItem,
+ Section,
+} from "@/features/hanzihome/schemas/hanyu-lesson.types";
 
 import {
  EmptySectionState,
@@ -14,6 +18,7 @@ import {
  hasRenderableValue,
 } from "../CommonCards";
 import { PassageCard } from "../PassageCard";
+import { ReadingQuestionCard } from "../reading-section/ReadingQuestionCard";
 import type { LessonDisplayMode } from "../types";
 import {
  arrayValue,
@@ -38,6 +43,16 @@ import {
  formatAnswer,
  hasExercisePassagePayload,
 } from "./exercise-utils";
+import { getExerciseRendererMeta } from "./exercise-renderer-registry";
+
+type QuestionExerciseBodyProps = {
+ lessonId?: string;
+ itemPath?: EditableNodePath;
+ item: Exercise;
+ displayMode: LessonDisplayMode;
+ readingItems?: readonly ReadingItem[];
+ readingSections?: readonly Section[];
+};
 
 function questionHasInlineAnswer(value: JsonFieldValue) {
  if (Array.isArray(value)) return value.length > 1;
@@ -61,42 +76,57 @@ function questionHasInlineAnswer(value: JsonFieldValue) {
 }
 
 function readingReferenceOrder(value: string) {
- const match = /^reading[_-](\d+)$/i.exec(value);
+ const match = /^reading[_-](\d+)(?:[_-][a-z0-9]+)*$/i.exec(value);
  if (!match) return null;
 
  const order = Number.parseInt(match[1], 10);
  return Number.isFinite(order) ? order : null;
 }
 
-type QuestionExerciseBodyProps = {
- lessonId?: string;
- itemPath?: EditableNodePath;
- item: Exercise;
- displayMode: LessonDisplayMode;
- readingItems?: readonly ReadingItem[];
-};
+function readingSectionReferenceOrder(value: string) {
+ const match = /^section_(\d+)_reading$/i.exec(value);
+ if (!match) return null;
+
+ const order = Number.parseInt(match[1], 10);
+ return Number.isFinite(order) ? order : null;
+}
 
 function resolveReferencedReadingItem(
  readingItems: QuestionExerciseBodyProps["readingItems"],
+ readingSections: QuestionExerciseBodyProps["readingSections"],
  readingReference: string,
 ) {
- if (!readingReference || !readingItems?.length) return undefined;
+ if (!readingReference) return undefined;
 
- const exactMatch = readingItems.find((readingItem) => readingItem.id === readingReference);
+ const exactMatch = readingItems?.find((readingItem) => readingItem.id === readingReference);
  if (exactMatch) return exactMatch;
 
  const referencedOrder = readingReferenceOrder(readingReference);
- if (referencedOrder === null) return undefined;
+ if (referencedOrder !== null) {
+  const matchingItems =
+   readingItems?.filter((readingItem) => readingItem.order === referencedOrder) ?? [];
 
- return readingItems.find((readingItem) => readingItem.order === referencedOrder);
+  return matchingItems.length === 1 ? matchingItems[0] : undefined;
+ }
+
+ const sectionOrder = readingSectionReferenceOrder(readingReference);
+ if (sectionOrder === null) return undefined;
+
+ // Imported section references retain their source order after runtime section IDs are normalized.
+ const matchingItems =
+  readingSections
+   ?.filter((section) => section.type === "reading" && section.order === sectionOrder)
+   .flatMap((section) => (section.type === "reading" ? section.items : [])) ?? [];
+
+ return matchingItems.length === 1 ? matchingItems[0] : undefined;
 }
-
 export function QuestionExerciseBody({
  lessonId,
  itemPath,
  item,
  displayMode,
  readingItems,
+ readingSections,
 }: QuestionExerciseBodyProps) {
  const record = asRecord(item);
 
@@ -140,8 +170,14 @@ export function QuestionExerciseBody({
  const readingReference =
   stringValue(record, "reading_ref") ||
   stringValue(record, "reading_id") ||
-  stringValue(record, "linked_reading_id");
- const referencedReading = resolveReferencedReadingItem(readingItems, readingReference);
+  stringValue(record, "json_item_id") ||
+  stringValue(record, "linked_reading_id") ||
+  stringValue(record, "linked_section_id");
+ const referencedReading = resolveReferencedReadingItem(
+  readingItems,
+  readingSections,
+  readingReference,
+ );
  const referencedReadingRecord = asRecord(referencedReading);
 
  const supplementaryWords = [
@@ -157,11 +193,21 @@ export function QuestionExerciseBody({
  const hasPassagePayload = hasExercisePassagePayload(record);
  const directClozeAnswers = getClozeAnswerValues(record);
  const referencedClozeAnswers = getClozeAnswerValues(referencedReadingRecord);
- const clozeAnswers = directClozeAnswers.length > 0 ? directClozeAnswers : referencedClozeAnswers;
- const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const passage =
   (hasPassagePayload ? getPassageLikeValue(record, { includeText: true }) : undefined) ??
   getPassageLikeValue(referencedReadingRecord, { includeText: true });
+ const passageRecord = asRecord(passage);
+ const passageTitle = stringValue(passageRecord, "title_vi") || stringValue(passageRecord, "title");
+ const showPassageTitle =
+  Boolean(passageTitle) && passageTitle !== item.title && passageTitle !== item.title_vi;
+ const passageClozeAnswers = getClozeAnswerValues(asRecord(passage));
+ const clozeAnswers =
+  directClozeAnswers.length > 0
+   ? directClozeAnswers
+   : referencedClozeAnswers.length > 0
+     ? referencedClozeAnswers
+     : passageClozeAnswers;
+ const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const directPassage = asRecord(record.passage);
  const passageSegmentsPath: EditableNodePath = ["passage", "segments"];
  const segmentsPath: EditableNodePath = ["segments"];
@@ -188,7 +234,27 @@ export function QuestionExerciseBody({
  const isReadingCloze =
   Boolean(passage) &&
   clozeAnswerCount > 0 &&
-  (item.type === "reading_fill_blank" || variant.includes("cloze") || renderer.includes("cloze"));
+  (item.type === "reading_fill_blank" ||
+   item.type === "reading_cloze" ||
+   variant.includes("cloze") ||
+   renderer.includes("cloze"));
+ const questionsOnlyProvideClozeAnswers =
+  isReadingCloze &&
+  questions.length > 0 &&
+  questions.every((questionValue) => {
+   const question = asRecord(questionValue);
+
+   return (
+    hasClozeAnswerValue(questionValue) &&
+    !stringValue(question, "prompt") &&
+    !stringValue(question, "question") &&
+    !stringValue(question, "text") &&
+    !stringValue(asRecord(question.statement), "zh") &&
+    !stringValue(asRecord(question.statement), "vi")
+   );
+  });
+ const hasStructuredQuestionGroups = parts.length > 0 || groups.length > 0;
+ const isReadingExercise = getExerciseRendererMeta(item.type).family === "reading";
  const questionAnswersAreInline =
   questions.length > 0 &&
   questions.every((questionValue, index) => {
@@ -227,6 +293,10 @@ export function QuestionExerciseBody({
   {
    title: "Câu sai",
    value: firstArrayByKeys(record, ["wrong_examples", "wrong_sentences"]),
+  },
+  {
+   title: "Gợi ý kể lại",
+   value: arrayValue(record, "retell_prompts"),
   },
   {
    title: "Bài đọc liên quan",
@@ -339,10 +409,16 @@ export function QuestionExerciseBody({
      passage={passage}
      answers={clozeAnswers}
      displayMode={displayMode}
+     showTitle={showPassageTitle}
     />
    ) : null}
 
-   <ExerciseRenderIssues item={item} passage={passage} answers={clozeAnswers} />
+   <ExerciseRenderIssues
+    item={item}
+    passage={passage}
+    answers={clozeAnswers}
+    hasStructuredQuestionGroups={hasStructuredQuestionGroups}
+   />
 
    {items.length > 0 &&
     (lessonId && itemPath ? (
@@ -447,11 +523,21 @@ export function QuestionExerciseBody({
     </div>
    )}
 
-   {questions.length > 0 && !isReadingCloze ? (
+   {questions.length > 0 && (!isReadingCloze || !questionsOnlyProvideClozeAnswers) ? (
     <div className="grid gap-2">
      {questions.map((questionValue, index) => {
       const questionId = stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`;
-      const questionCard = (
+      const questionCard = isReadingExercise ? (
+       <ReadingQuestionCard
+        itemId={item.id}
+        readingType={item.type}
+        questionValue={questionValue}
+        index={index}
+        showAnswers={displayMode.showAnswers}
+        displayMode={displayMode}
+        answerOverride={answerKey[index]}
+       />
+      ) : (
        <QuestionCard
         itemId={item.id}
         exerciseType={item.type}
