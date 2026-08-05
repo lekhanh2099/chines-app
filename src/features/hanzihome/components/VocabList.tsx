@@ -2,7 +2,7 @@
 
 import { Label } from "@/components/ui/label";
 import { Typography } from "@/components/ui/typography";
-import { useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
+import { useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import {
  Bookmark,
  CheckCircle2,
@@ -45,14 +45,12 @@ type VocabListProps = {
 };
 
 const normalPickerResizeBounds = {
- defaultHeight: 192,
  minHeight: 128,
  maxHeight: 520,
  step: 16,
 };
 
 const compactPickerResizeBounds = {
- defaultHeight: 128,
  minHeight: 96,
  maxHeight: 320,
  step: 16,
@@ -78,7 +76,9 @@ export function VocabList({
  const [isWordPickerOpen, setIsWordPickerOpen] = useState(!compact);
  const isCoarsePointer = useCoarsePointer();
  const resizeBounds = compact ? compactPickerResizeBounds : normalPickerResizeBounds;
- const [wordPickerHeight, setWordPickerHeight] = useState(resizeBounds.defaultHeight);
+ const wordPickerListRef = useRef<HTMLDivElement>(null);
+ const [wordPickerHeight, setWordPickerHeight] = useState(resizeBounds.minHeight);
+ const [isWordPickerHeightOverridden, setIsWordPickerHeightOverridden] = useState(false);
  const statusItems: Array<{
   value: VocabStatusFilter;
   label: string;
@@ -90,18 +90,18 @@ export function VocabList({
   { value: "known", label: "Đã biết", icon: CheckCircle2 },
  ];
  const updateWordPickerHeight = (nextHeight: number) => {
+  setIsWordPickerHeightOverridden(true);
   setWordPickerHeight(clampValue(nextHeight, resizeBounds.minHeight, resizeBounds.maxHeight));
  };
  const adjustWordPickerHeight = (delta: number) => {
-  setWordPickerHeight((current) =>
-   clampValue(current + delta, resizeBounds.minHeight, resizeBounds.maxHeight),
-  );
+  updateWordPickerHeight((wordPickerListRef.current?.clientHeight ?? wordPickerHeight) + delta);
  };
  const startWordPickerResize = (event: PointerEvent<HTMLButtonElement>) => {
   event.preventDefault();
 
   const startY = event.clientY;
-  const startHeight = wordPickerHeight;
+  const startHeight = wordPickerListRef.current?.clientHeight ?? wordPickerHeight;
+  updateWordPickerHeight(startHeight);
 
   const handlePointerMove = (moveEvent: globalThis.PointerEvent) => {
    updateWordPickerHeight(startHeight + moveEvent.clientY - startY);
@@ -215,11 +215,18 @@ export function VocabList({
     ) : isWordPickerOpen ? (
      <div className="grid gap-1">
       <div
+       ref={wordPickerListRef}
        className={cn(
         "flex flex-wrap content-start gap-2 rounded-xl bg-bg-subtle p-2",
         isCoarsePointer ? "overflow-visible" : "overflow-y-auto scrollbar-soft",
        )}
-       style={isCoarsePointer ? undefined : { height: wordPickerHeight }}
+       style={
+        isCoarsePointer
+         ? undefined
+         : isWordPickerHeightOverridden
+           ? { height: wordPickerHeight }
+           : { maxHeight: resizeBounds.maxHeight }
+       }
       >
        {words.map((word) => {
         const wordId = getVocabItemKey(word);
@@ -268,7 +275,10 @@ export function VocabList({
         aria-orientation="horizontal"
         aria-valuemax={resizeBounds.maxHeight}
         aria-valuemin={resizeBounds.minHeight}
-        aria-valuenow={wordPickerHeight}
+        aria-valuenow={isWordPickerHeightOverridden ? wordPickerHeight : undefined}
+        aria-valuetext={
+         isWordPickerHeightOverridden ? `${wordPickerHeight} px` : "Tự động theo nội dung"
+        }
         role="separator"
         onPointerDown={startWordPickerResize}
         onKeyDown={handleResizeKeyDown}
