@@ -180,8 +180,7 @@ export function DeletedContentDialog({
     <Button
      type="button"
      variant={presentation === "menu" ? "menu" : "outline"}
-     size="sm"
-     role={presentation === "menu" ? "menuitem" : undefined}
+     size={presentation === "menu" ? "menu" : "toolbar"}
     >
      <Trash2 className="h-4 w-4" />
      Nội dung đã xóa

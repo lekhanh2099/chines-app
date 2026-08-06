@@ -171,13 +171,7 @@ export function ModuleSplitWorkspaceContent() {
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
    <HanziHomeDeveloperTools inline>
-    <Button
-     type="button"
-     variant="menu"
-     size="sm"
-     role="menuitem"
-     onClick={() => actions.setSplitEnabled(false)}
-    >
+    <Button type="button" variant="menu" size="menu" onClick={() => actions.setSplitEnabled(false)}>
      <Columns2 />
      Đóng chia đôi màn hình
     </Button>
@@ -221,6 +215,7 @@ export function ModuleSplitWorkspaceContent() {
       value={runtime.activeModule}
       items={lessonTabs}
       onChange={selectModule}
+      compact
       className="bg-transparent p-0 shadow-none"
      />
     </div>
@@ -232,7 +227,7 @@ export function ModuleSplitWorkspaceContent() {
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
     <HanziHomeDeveloperTools inline>
-     <Button type="button" variant="menu" size="sm" role="menuitem" onClick={enableSplit}>
+     <Button type="button" variant="menu" size="menu" onClick={enableSplit}>
       <Columns2 />
       Chia đôi màn hình
      </Button>

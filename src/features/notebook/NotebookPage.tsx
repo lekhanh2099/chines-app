@@ -1,6 +1,7 @@
 "use client";
 
 import { Typography } from "@/components/ui/typography";
+import { Badge } from "@/components/ui/badge";
 import { useMemo, useState } from "react";
 
 import { NotebookContent } from "@/features/notebook/components/NotebookContent";
@@ -80,13 +81,9 @@ export function NotebookPage() {
        {section.desc}
       </Typography>
      </div>
-     <Typography
-      variant="caption"
-      weight="black"
-      className="rounded-xl bg-[#20233a] px-3 py-2 text-white"
-     >
+     <Badge variant="purple" size="md">
       {section.terms.length} mục · {section.groups.length} nhóm · {section.compares.length} cặp
-     </Typography>
+     </Badge>
     </div>
     <NotebookSectionGuide section={section} />
     <NotebookContent items={visibleItems} comparisons={visibleComparisons} viewMode={viewMode} />

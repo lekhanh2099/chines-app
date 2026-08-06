@@ -17,6 +17,7 @@ customized local components.
 | Side or bottom panel              | `Sheet`                                 | Side is a responsive behavior contract         |
 | Non-modal contextual content      | shared Popover wrapper                  | Not an action menu                             |
 | Action/function list              | `DropdownMenu`                          | Full keyboard/menu semantics                   |
+| Compact preference inside a menu  | `DropdownMenuCheckboxItem`              | Keeps checkbox-menu semantics                  |
 | Supplementary hint                | `Tooltip`                               | Never hide required information in a tooltip   |
 | Single-value selection            | `src/components/ui/select.tsx`          | Composable primitive                           |
 | String option-array selection     | `OptionSelect`                          | Typed convenience adapter over `Select`        |
@@ -86,7 +87,6 @@ Examples:
 
 ```text
 EmptyState
-SettingsMenu
 CommandDialog
 ResponsiveOverlay
 ```
@@ -144,6 +144,10 @@ Rules:
 
 - non-submit buttons default to `type="button"`;
 - submit buttons set `type="submit"`;
+- command bars use `toolbar` for labeled actions and `icon-toolbar` for icon-only controls;
+  `sm` remains a standalone touch-sized action, not a compact toolbar default;
+- contextual navigation buttons use `navigation` while inactive and `active` while selected;
+  this preserves the global Sidebar's row treatment without sharing its route ownership;
 - icon-only buttons require an accessible label;
 - toggle buttons expose state with `aria-pressed` or use Switch;
 - destructive menu actions use `menuDestructive`;
@@ -184,6 +188,44 @@ Use `DropdownMenu` for a list of actions/functions. It owns:
 Use Popover for contextual interactive content that is not an application menu.
 
 Do not set `role="menu"` on arbitrary Popover children.
+
+## 7.1 Settings information architecture and surface roles
+
+Global preferences have one entry point in the Header:
+
+- Gear opens `DropdownMenu` quick preferences; its HanziHome reader action opens an anchored,
+  feature-owned Popover that keeps the existing `useLearningState` owner and reuses the reader
+  control grid, with `/settings?section=reading` remaining the full hub;
+- Avatar opens identity/provider context and logout only;
+- `/settings?section=app|reading|ai` owns grouped settings content.
+
+Use a labeled `Switch` for a full settings-page row. Use
+`DropdownMenuCheckboxItem` for the equivalent compact Gear action; do not
+render an unannounced Button toggle in either surface.
+
+The reader quick panel is contextual interactive content, not a nested menu: it is anchored to the
+Gear and reuses the reader grid's Button `aria-pressed` contract for font, size, reveal and
+visibility choices. Do not add a third-level menu for reader controls.
+
+Global visual recipes have explicit ownership:
+
+- `nova-shell-*` is app chrome only;
+- `nova-page` is the calm content canvas;
+- `app-gradient-hero` is limited to Home and HanziHome library heroes;
+- `app-glass-surface` is limited to direct supporting content in those heroes
+  or an explicitly typed overlay surface;
+- `hanzihome-liquid-*` is limited to HanziHome Header/workspace panels;
+- `app-brand-gradient` is identity and compact emphasis only.
+
+Feature code uses semantic tokens and existing primitives. It must not add a
+new page-specific global surface recipe, arbitrary color utility, or arbitrary
+gradient utility.
+
+Navigation remains scoped by information architecture: the global Sidebar owns
+route Links, while HanziHome's module sidebar owns contextual section buttons.
+They are not one shared component, but both use the same 40px navigation-row
+grammar: subdued inactive row, `app-active-item` selected row, and an optional
+context subtitle or collapsed rail.
 
 ## 8. Tooltip
 
@@ -251,7 +293,7 @@ recreate fallback behavior.
 ## 12. Switch
 
 Use Switch for boolean settings such as lookup, theme preference or focus mode
-when the interaction is a direct on/off state.
+when the interaction is a direct on/off state in a settings page.
 
 The visible row label and description remain outside the Switch. The control
 needs an accessible label or labelled relationship.

@@ -34,4 +34,15 @@ describe("LessonReadingSettings", () => {
   expect(getHanziFontFamily("system")).toBe(kaitiFontFamily);
   expect(getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily).toBe(kaitiFontFamily);
  });
+
+ it("renders the complete reader-control grid reused by quick settings", () => {
+  const markup = renderToStaticMarkup(
+   <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
+  );
+
+  expect(markup).toContain("ZCOOL XiaoWei");
+  expect(markup).toContain("Cực lớn");
+  expect(markup).toContain("Bấm để mở");
+  expect(markup).toContain("Đáp án");
+ });
 });

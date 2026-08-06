@@ -5,7 +5,7 @@ import type { NotebookItem } from "@/features/notebook/types";
 
 export function NotebookMatrixView({ items }: { items: NotebookItem[] }) {
  return (
-  <Card variant="glass" padding="none" className="overflow-hidden">
+  <Card variant="section" padding="none" className="overflow-hidden">
    <div className="overflow-x-auto">
     <table className="w-full min-w-[52rem] border-collapse text-left">
      <thead className="bg-bg-subtle/80">

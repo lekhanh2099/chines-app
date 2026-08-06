@@ -19,6 +19,8 @@ export function LessonViewModeToggle({
 
  return (
   <div
+   role="group"
+   aria-label="Chế độ xem"
    className={presentation === "menu" ? "grid gap-1" : "flex shrink-0 rounded-lg bg-bg-subtle p-1"}
   >
    {lessonViewModes.map((value) => (
@@ -34,9 +36,8 @@ export function LessonViewModeToggle({
          ? "active"
          : "ghost"
      }
-     size="sm"
-     role={presentation === "menu" ? "menuitemradio" : undefined}
-     aria-checked={presentation === "menu" ? mode === value : undefined}
+     size={presentation === "menu" ? "menu" : "toolbar"}
+     aria-pressed={mode === value}
      onClick={() => setViewMode(value)}
     >
      {value === "study" ? <GraduationCap /> : <Bug />}

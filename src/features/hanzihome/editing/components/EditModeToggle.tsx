@@ -21,9 +21,8 @@ export function EditModeToggle({
    variant={
     presentation === "menu" ? (editMode ? "menuActive" : "menu") : editMode ? "active" : "outline"
    }
-   size="sm"
-   role={presentation === "menu" ? "menuitemcheckbox" : undefined}
-   aria-checked={presentation === "menu" ? editMode : undefined}
+   size={presentation === "menu" ? "menu" : "toolbar"}
+   aria-pressed={editMode}
    onClick={() => setEditMode(!editMode)}
   >
    {editMode ? <X className="h-4 w-4" /> : <Pencil className="h-4 w-4" />}

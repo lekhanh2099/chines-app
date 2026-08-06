@@ -2,8 +2,9 @@
 
 import { Typography } from "@/components/ui/typography";
 import { Input } from "@/components/ui/input";
-import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
-import { LockKeyhole, Search } from "lucide-react";
+import { FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { BookOpenCheck, Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
+import Link from "next/link";
 import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
@@ -21,6 +22,15 @@ import {
 import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import {
+ DropdownMenu,
+ DropdownMenuCheckboxItem,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { containsChinese } from "@/lib/chinese-utils";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
@@ -42,6 +52,7 @@ import {
  getLessonRouteValue,
 } from "@/features/hanzihome/utils/lesson-route";
 import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
+import { HanziHomeReadingQuickSettingsPanel } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import {
  clearHanziHomeSearchNavigationIntent,
  setHanziHomeSearchNavigationIntent,
@@ -89,9 +100,10 @@ export function Header({ user }: { user?: Nullable<User> }) {
  const searchParams = useSearchParams();
  useSelector(dictionaryLookupStore, (state) => state.overrides);
  const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
- const { toggle: toggleLookup, hydrate: hydrateLookupSettings } = dictionaryLookupStore.actions;
+ const { setEnabled: setLookupEnabled, hydrate: hydrateLookupSettings } =
+  dictionaryLookupStore.actions;
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
- const { toggle: toggleFocusMode } = focusModeStore.actions;
+ const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
  const isRadicalsWorkspaceRoute = pathname === "/radicals";
@@ -266,8 +278,8 @@ export function Header({ user }: { user?: Nullable<User> }) {
       lookupEnabled={lookupEnabled}
       onOpenSearch={() => setSearchOpen(true)}
       onToggleTheme={toggleTheme}
-      onToggleLookup={() => toggleLookup(pathname)}
-      onToggleFocusMode={toggleFocusMode}
+      onLookupEnabledChange={(enabled) => setLookupEnabled(pathname, enabled)}
+      onFocusModeEnabledChange={setFocusModeEnabled}
      />
     </div>
     <GlobalSearchDialog
@@ -474,8 +486,8 @@ function HeaderUtilityArea({
  lookupEnabled,
  onOpenSearch,
  onToggleTheme,
- onToggleLookup,
- onToggleFocusMode,
+ onLookupEnabledChange,
+ onFocusModeEnabledChange,
 }: {
  routeToolbarActive: boolean;
  focusModeEnabled: boolean;
@@ -484,9 +496,14 @@ function HeaderUtilityArea({
  lookupEnabled: boolean;
  onOpenSearch: () => void;
  onToggleTheme: () => void;
- onToggleLookup: () => void;
- onToggleFocusMode: () => void;
+ onLookupEnabledChange: (enabled: boolean) => void;
+ onFocusModeEnabledChange: (enabled: boolean) => void;
 }) {
+ const [quickSettingsOpen, setQuickSettingsOpen] = useState(false);
+ const [readerQuickSettingsOpen, setReaderQuickSettingsOpen] = useState(false);
+ const quickSettingsTriggerRef = useRef<HTMLButtonElement>(null);
+ const shouldOpenReaderQuickSettingsRef = useRef(false);
+
  return (
   <div
    className={cn(
@@ -510,15 +527,95 @@ function HeaderUtilityArea({
 
    {focusModeEnabled ? <FocusModePill /> : null}
 
-   <ProfileSettingsMenu
-    user={user}
-    theme={theme}
-    lookupEnabled={lookupEnabled}
-    focusModeEnabled={focusModeEnabled}
-    onToggleTheme={onToggleTheme}
-    onToggleLookup={onToggleLookup}
-    onToggleFocusMode={onToggleFocusMode}
+   <DropdownMenu open={quickSettingsOpen} onOpenChange={setQuickSettingsOpen}>
+    <DropdownMenuTrigger asChild>
+     <Button
+      ref={quickSettingsTriggerRef}
+      type="button"
+      variant="outline"
+      size="icon-sm"
+      aria-label="Mở cài đặt nhanh"
+      title="Cài đặt nhanh"
+     >
+      <Settings />
+     </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent
+     align="end"
+     width="md"
+     onCloseAutoFocus={(event) => {
+      if (!shouldOpenReaderQuickSettingsRef.current) return;
+
+      event.preventDefault();
+      shouldOpenReaderQuickSettingsRef.current = false;
+      setReaderQuickSettingsOpen(true);
+     }}
+    >
+     <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
+     <DropdownMenuCheckboxItem
+      checked={theme === "dark"}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={onToggleTheme}
+     >
+      {theme === "dark" ? <Sun /> : <Moon />}
+      Giao diện tối
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuCheckboxItem
+      checked={lookupEnabled}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={onLookupEnabledChange}
+     >
+      <Languages />
+      Tra từ trên trang này
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuCheckboxItem
+      checked={focusModeEnabled}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={(enabled) => {
+       if (enabled && !focusModeEnabled) {
+        toast.warning(
+         "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+         { duration: 5200 },
+        );
+       }
+
+       onFocusModeEnabledChange(enabled);
+      }}
+     >
+      <LockKeyhole />
+      Focus mode
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuSeparator />
+     <DropdownMenuItem
+      onSelect={() => {
+       shouldOpenReaderQuickSettingsRef.current = true;
+      }}
+     >
+      <BookOpenCheck />
+      Thiết lập đọc
+     </DropdownMenuItem>
+     <DropdownMenuSeparator />
+     <DropdownMenuItem asChild>
+      <Link href="/settings?section=reading">
+       <Settings />
+       Mở cài đặt đọc
+      </Link>
+     </DropdownMenuItem>
+     <DropdownMenuItem asChild>
+      <Link href="/settings?section=app">
+       <Settings />
+       Mở tất cả cài đặt
+      </Link>
+     </DropdownMenuItem>
+    </DropdownMenuContent>
+   </DropdownMenu>
+   <HanziHomeReadingQuickSettingsPanel
+    open={readerQuickSettingsOpen}
+    onOpenChange={setReaderQuickSettingsOpen}
+    anchor={quickSettingsTriggerRef}
+    finalFocus={quickSettingsTriggerRef}
    />
+   <ProfileSettingsMenu user={user} focusModeEnabled={focusModeEnabled} />
   </div>
  );
 }

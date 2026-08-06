@@ -171,7 +171,7 @@ export function ListeningWorkspace() {
      </Button>
     </div>
 
-    <Card variant="glass" padding="md" className="grid gap-1.5 rounded-xl">
+    <Card variant="section" padding="md" className="grid gap-1.5">
      <Badge variant="purple" className="w-fit">
       Bài luyện nghe
      </Badge>

@@ -123,8 +123,7 @@ export function LessonContentCreateDialog({
     <Button
      type="button"
      variant={presentation === "menu" ? "menu" : "outline"}
-     size="sm"
-     role={presentation === "menu" ? "menuitem" : undefined}
+     size={presentation === "menu" ? "menu" : "toolbar"}
     >
      <Plus className="h-4 w-4" />
      Thêm nội dung

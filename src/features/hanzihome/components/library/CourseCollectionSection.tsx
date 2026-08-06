@@ -44,7 +44,7 @@ export function CourseCollectionSection({
  const hasBooks = coursesWithBooks.some((entry) => entry.books.length > 0);
 
  return (
-  <Card variant="glass" padding="none" className="grid gap-3 rounded-2xl p-3 sm:p-4">
+  <Card variant="section" padding="md" className="grid gap-3">
    <header className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">
     <div className="flex min-w-0 items-center gap-3">
      <StudyInstructionText

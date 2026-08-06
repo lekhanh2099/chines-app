@@ -1,5 +1,5 @@
 import { Typography } from "@/components/ui/typography";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -45,15 +45,6 @@ export function HomeSectionHeader({
    </div>
    {action}
   </div>
- );
-}
-
-export function HomeGlassSection({ className, ...props }: ComponentPropsWithoutRef<"section">) {
- return (
-  <section
-   {...props}
-   className={cn("app-glass-surface rounded-2xl border p-5 shadow-theme-lg", className)}
-  />
  );
 }
 

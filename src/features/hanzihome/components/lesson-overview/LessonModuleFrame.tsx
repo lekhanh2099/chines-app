@@ -60,7 +60,7 @@ export function LessonModuleSidebarRailItem({
    type="button"
    variant={selected ? "active" : "ghost"}
    size="icon-sm"
-   className="w-9 shrink-0"
+   className="size-10 shrink-0"
    aria-label={label}
    title={label}
    onClick={onClick}

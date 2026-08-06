@@ -1,19 +1,9 @@
 "use client";
 
 import { Typography } from "@/components/ui/typography";
-import { Eye, Settings2, Type } from "lucide-react";
+import { Eye, Type } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
-import {
- DialogBody,
- DialogClose,
- DialogContent,
- DialogDescription,
- DialogFooter,
- DialogHeader,
- DialogTitle,
-} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { z } from "zod";
 
@@ -31,7 +21,11 @@ const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
  { value: "xiaowei", label: "ZCOOL XiaoWei" },
 ];
 
-const sizeOptions: Array<{ value: HanziReaderSize; label: string; sample: string }> = [
+const sizeOptions: Array<{
+ value: HanziReaderSize;
+ label: string;
+ sample: string;
+}> = [
  { value: "md", label: "Vừa", sample: "A" },
  { value: "lg", label: "Lớn", sample: "A" },
  { value: "xl", label: "Rất lớn", sample: "A" },
@@ -50,43 +44,19 @@ const visibilityOptions: Array<{
  { key: "showAnswers", label: "Đáp án" },
 ];
 
+const revealOptions: Array<{
+ value: LessonDisplayMode["revealMode"];
+ label: string;
+}> = [
+ { value: "always", label: "Hiện sẵn" },
+ { value: "tap", label: "Bấm để mở" },
+];
+
 type LessonReadingSettingsProps = {
  displayMode: LessonDisplayMode;
  onChange: (updates: Partial<LessonDisplayMode>) => void;
  className?: string;
 };
-
-export function LessonReadingSettingsDialogContent({
- displayMode,
- isLoading = false,
- onChange,
-}: LessonReadingSettingsProps & { isLoading?: boolean }) {
- return (
-  <DialogContent>
-   <DialogHeader>
-    <DialogTitle icon={<Settings2 />}>Thiết lập đọc</DialogTitle>
-    <DialogDescription>Điều chỉnh cách hiển thị nội dung tiếng Trung.</DialogDescription>
-   </DialogHeader>
-   <DialogBody>
-    {isLoading ? (
-     <div className="flex min-h-48 items-center justify-center gap-2 text-sm font-bold text-text-muted">
-      <Spinner />
-      Đang tải cài đặt đọc…
-     </div>
-    ) : (
-     <LessonReadingSettings displayMode={displayMode} onChange={onChange} />
-    )}
-   </DialogBody>
-   <DialogFooter>
-    <DialogClose asChild>
-     <Button type="button" variant="default" size="sm">
-      Xong
-     </Button>
-    </DialogClose>
-   </DialogFooter>
-  </DialogContent>
- );
-}
 
 export function LessonReadingSettings({
  displayMode,
@@ -151,22 +121,20 @@ export function LessonReadingSettings({
 
    <SettingsGroup icon={<Eye />} label="Cách mở nội dung">
     <div className="grid grid-cols-2 gap-1.5">
-     <Button
-      variant={displayMode.revealMode === "always" ? "active" : "surfaceCard"}
-      size="sm"
-      aria-pressed={displayMode.revealMode === "always"}
-      onClick={() => onChange({ revealMode: "always" })}
-     >
-      Hiện sẵn
-     </Button>
-     <Button
-      variant={displayMode.revealMode === "tap" ? "active" : "surfaceCard"}
-      size="sm"
-      aria-pressed={displayMode.revealMode === "tap"}
-      onClick={() => onChange({ revealMode: "tap" })}
-     >
-      Bấm để mở
-     </Button>
+     {revealOptions.map((option) => {
+      const active = displayMode.revealMode === option.value;
+      return (
+       <Button
+        key={option.value}
+        variant={active ? "active" : "surfaceCard"}
+        size="sm"
+        aria-pressed={active}
+        onClick={() => onChange({ revealMode: option.value })}
+       >
+        {option.label}
+       </Button>
+      );
+     })}
     </div>
     {displayMode.revealMode === "tap" ? (
      <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">

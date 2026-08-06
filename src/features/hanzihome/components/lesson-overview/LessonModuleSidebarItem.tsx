@@ -25,7 +25,8 @@ export function LessonModuleSidebarItem({
  return (
   <Button
    type="button"
-   variant={selected ? "active" : "surface"}
+   variant={selected ? "active" : "navigation"}
+   size="menu"
    onClick={onClick}
    align="start"
    wrap="normal"
@@ -33,12 +34,13 @@ export function LessonModuleSidebarItem({
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
    <span className="min-w-0 flex-1">
-    <StudyInstructionText as="span" weight="black" clamp="two" className="block">
+    <StudyInstructionText as="span" tone="inherit" weight="black" clamp="two" className="block">
      {title}
     </StudyInstructionText>
     {subtitle && (
      <StudyInstructionText
       variant="caption"
+      tone="inherit"
       weight="semibold"
       clamp="two"
       className="mt-0.5 block opacity-80"
@@ -48,7 +50,7 @@ export function LessonModuleSidebarItem({
     )}
    </span>
    {marker && (
-    <StudyInstructionText variant="caption" weight="bold" className="shrink-0">
+    <StudyInstructionText variant="caption" tone="inherit" weight="bold" className="shrink-0">
      {marker}
     </StudyInstructionText>
    )}

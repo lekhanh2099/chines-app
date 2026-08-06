@@ -41,7 +41,6 @@ reviewed and recorded here.
 | Pattern           | Source                                    | Status                                  |
 | ----------------- | ----------------------------------------- | --------------------------------------- |
 | EmptyState        | `src/components/patterns/empty-state.tsx` | canonical                               |
-| SettingsMenu      | target                                    | deferred until Profile migration        |
 | CommandDialog     | target                                    | deferred until Global Search migration  |
 | ResponsiveOverlay | target                                    | defer until repeated contract is proven |
 
@@ -62,7 +61,7 @@ The following remain candidates, not approved primitives:
 - Alert/callout;
 - Skeleton standardization;
 - Command/listbox composite;
-- SettingsMenu row anatomy;
+- SettingsMenu row anatomy beyond the Header Gear and `/settings` hub;
 - form field system consolidation.
 
 Add them only after consumer inventory proves repeated semantics.
@@ -73,18 +72,21 @@ the canonical local components above.
 
 ## Migration priority
 
-1. Profile settings menu:
-   - Avatar;
-   - Badge;
-   - Switch;
-   - DropdownMenu or SettingsMenu pattern.
-2. HanziHome tools:
+1. HanziHome tools:
    - DropdownMenu item/radio contracts.
-3. Global Search:
+2. Global Search:
    - typed Dialog variants;
    - EmptyState;
    - later CommandDialog composite.
-4. Tooltip migration for icon-only controls currently relying on `title`.
+3. Tooltip migration for icon-only controls currently relying on `title`.
+
+## Settled settings IA
+
+The Header Gear is a layout composition using `DropdownMenu` checkbox items
+and a feature-owned HanziHome reader Popover anchored to the Gear. Avatar
+remains a profile/logout Popover. The grouped settings hub uses local `Tabs`
+plus labeled `Switch` rows. Do not create a generic `SettingsMenu` wrapper
+until a second stable consumer proves richer shared anatomy.
 
 ## Important distinction
 

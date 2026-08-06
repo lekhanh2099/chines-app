@@ -99,7 +99,7 @@ export function HanziHomeLibraryHome() {
    </div>
 
    {courses.length === 0 ? (
-    <Card variant="glass" padding="lg">
+    <Card variant="section" padding="lg">
      <StudyInstructionText tone="muted" weight="semibold">
       Chưa tìm thấy khóa học trong HanziHome.
      </StudyInstructionText>

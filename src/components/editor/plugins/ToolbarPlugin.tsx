@@ -154,6 +154,8 @@ function ToolbarButton({
  return (
   <Button
    type="button"
+   variant="ghost"
+   size="icon-toolbar"
    disabled={disabled}
    onMouseDown={pf}
    onClick={onClick}
@@ -207,6 +209,7 @@ function Dropdown({
     onMouseDown={pf}
     onClick={() => setOpen(!open)}
     variant="ghost"
+    size="toolbar"
     className="toolbar-item toolbar-dropdown-trigger"
     title={buttonTitle || buttonLabel}
    >
@@ -237,6 +240,8 @@ function DropdownItem({
  return (
   <Button
    type="button"
+   variant="menu"
+   size="menu"
    onMouseDown={pf}
    onClick={onClick}
    style={style}
@@ -276,16 +281,19 @@ function FontSizeControl({
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) - 1))}
     variant="ghost"
+    size="compact"
     className="toolbar-font-size-btn"
     title="Decrease font size"
    >
     <Minus className="w-3 h-3" />
    </Button>
-   <Input
+   {inputVal}
+   {/* <Input
     type="text"
     value={inputVal}
     disabled={disabled}
-    className="toolbar-font-size-input"
+    density="compact"
+    className="toolbar-font-size-input w-14! h-fit! text-center! text-sm! font-medium!"
     onMouseDown={pf}
     onChange={(e) => setInputVal(e.target.value.replace(/\D/g, ""))}
     onBlur={() => applySize(inputVal)}
@@ -296,13 +304,14 @@ function FontSizeControl({
       if (e.target instanceof HTMLInputElement) e.target.blur();
      }
     }}
-   />
+   /> */}
    <Button
     type="button"
     disabled={disabled || parseInt(inputVal) >= MAX_FONT_SIZE}
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) + 1))}
     variant="ghost"
+    size="compact"
     className="toolbar-font-size-btn"
     title="Increase font size"
    >
@@ -349,6 +358,7 @@ function ColorPicker({
     onMouseDown={pf}
     onClick={() => setOpen(!open)}
     variant="ghost"
+    size="icon-toolbar"
     className="toolbar-item toolbar-color-trigger"
     title={label}
    >
@@ -377,6 +387,7 @@ function ColorPicker({
          onSelect(c.value);
          setOpen(false);
         }}
+        size="compact"
         title={c.label}
         className={`toolbar-color-swatch ${activeColor === c.value ? "active" : ""}`}
         style={{
@@ -531,6 +542,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
      onMouseDown={pf}
      onClick={() => setOpen(!open)}
      variant="ghost"
+     size="toolbar"
      className="toolbar-item toolbar-dropdown-trigger"
      title="Insert"
     >
@@ -543,6 +555,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
       <Button
        type="button"
        onMouseDown={pf}
+       size="menu"
        onClick={() => {
         editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined);
         setOpen(false);
@@ -556,6 +569,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
       <Button
        type="button"
        onMouseDown={pf}
+       size="menu"
        onClick={() => {
         setShowTableDialog(true);
         setOpen(false);

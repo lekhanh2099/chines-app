@@ -64,11 +64,7 @@ export function RecentLearningCard({
 
  return (
   <section aria-labelledby="recent-learning-heading">
-   <Card
-    variant="glass"
-    padding="md"
-    className="flex flex-col gap-3 rounded-xl sm:flex-row sm:items-center"
-   >
+   <Card variant="section" padding="md" className="flex flex-col gap-3 sm:flex-row sm:items-center">
     <StudyInstructionText
      as="span"
      tone="inverse"
@@ -125,9 +121,9 @@ export function RecentLearningCard({
 function RecentLearningSkeleton() {
  return (
   <Card
-   variant="glass"
+   variant="section"
    padding="md"
-   className="flex animate-pulse items-center gap-3 rounded-xl"
+   className="flex animate-pulse items-center gap-3"
    aria-label="Đang tải bài vừa học"
   >
    <span className="size-11 shrink-0 rounded-xl bg-bg-subtle" />

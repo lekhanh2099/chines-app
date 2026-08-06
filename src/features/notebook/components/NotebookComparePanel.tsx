@@ -22,7 +22,7 @@ export function NotebookComparePanel({
      .filter((item): item is NotebookItem => Boolean(item));
 
     return (
-     <Card key={comparison.id} variant="glass" padding="lg">
+     <Card key={comparison.id} variant="section" padding="lg">
       <div className="grid gap-5">
        <div className="flex items-start gap-3">
         <Typography

@@ -1,12 +1,12 @@
 import { Typography } from "@/components/ui/typography";
 import { BookOpenCheck, ListChecks } from "lucide-react";
 
-import { GlassPanel } from "@/components/ui/glass-panel";
+import { Card } from "@/components/ui/card";
 import type { NotebookSection } from "@/features/notebook/types";
 
 export function NotebookSectionGuide({ section }: { section: NotebookSection }) {
  return (
-  <GlassPanel className="grid gap-4 p-4 sm:p-5">
+  <Card variant="section" padding="lg" className="grid gap-4">
    <div className="flex items-center gap-3">
     <Typography
      as="span"
@@ -86,6 +86,6 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
      ))}
     </div>
    </details>
-  </GlassPanel>
+  </Card>
  );
 }

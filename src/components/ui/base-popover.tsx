@@ -50,7 +50,7 @@ type BasePopoverTriggerProps = Omit<
 function BasePopoverTrigger({ active = false, ...props }: BasePopoverTriggerProps) {
  return (
   <Popover.Trigger
-   render={<Button variant={active ? "active" : "outline"} size="sm" />}
+   render={<Button variant={active ? "active" : "outline"} size="toolbar" />}
    {...props}
   />
  );
@@ -67,13 +67,7 @@ function BasePopoverPopup({
  variant = BasePopoverVariantSchema.enum.default,
  ...props
 }: BasePopoverPopupProps) {
- return (
-  <Popover.Popup
-   className={popupVariants[variant]}
-   role={variant === "menu" ? "menu" : undefined}
-   {...props}
-  />
- );
+ return <Popover.Popup className={popupVariants[variant]} {...props} />;
 }
 
 export { Popover as BasePopover, BasePopoverPopup, BasePopoverPositioner, BasePopoverTrigger };

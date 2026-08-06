@@ -16,6 +16,7 @@ const buttonVariants = cva(
      "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
     ghost:
      "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+    navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
     active: "app-active-item",
     surface:
      "border-border-default bg-bg-subtle text-text-secondary shadow-theme-sm hover:bg-bg-elevated hover:text-text-primary",

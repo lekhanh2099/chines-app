@@ -12,7 +12,7 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
  const deepDive = getNotebookDeepDive(item);
 
  return (
-  <Card variant="glass" padding="none" className="overflow-hidden">
+  <Card variant="section" padding="none" className="overflow-hidden">
    <div className="grid gap-4 p-5">
     <div className="flex items-start justify-between gap-4">
      <div className="grid gap-1">

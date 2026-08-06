@@ -292,7 +292,7 @@ export function ListeningDictationWorkspace() {
    <div className="grid gap-2.5">
     <MandarinTtsControls text={playAllText} tts={tts} />
 
-    <Card variant="glass" padding="md" className="grid gap-1.5 rounded-xl">
+    <Card variant="section" padding="md" className="grid gap-1.5">
      <div className="flex items-start gap-2">
       <Headphones className="mt-0.5 size-5 shrink-0 text-primary" />
       <div className="min-w-0">

@@ -39,6 +39,8 @@ const TYPOGRAPHY_CLASS_PATTERN =
 const PRIMITIVE_VISUAL_CLASS_PATTERN =
  /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|")|border(?:-|")|bg-|shadow(?:-|")|ring-|outline-|accent-|p[trblxy]?-\S+)/;
 const ARBITRARY_Z_INDEX_PATTERN = /\bz-\[[^\]]+\]/;
+const FEATURE_VISUAL_ESCAPE_HATCH_PATTERN =
+ /\b(?:bg|text|border|ring|outline|fill|stroke)-\[(?:#|rgb\(|hsl\(|oklch\(|color-mix\()|\b(?:bg|from|via|to)-\[[^\]]*(?:linear-gradient|radial-gradient|conic-gradient)\(/;
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -114,6 +116,9 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
     const classNameSource = className.getText(sourceFile);
     if (ARBITRARY_Z_INDEX_PATTERN.test(classNameSource)) {
      failures.push(`featureOwnedZIndex: ${location(sourceFile, className)}`);
+    }
+    if (FEATURE_VISUAL_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
+     failures.push(`featureVisualEscapeHatch: ${location(sourceFile, className)}`);
     }
     if (INLINE_TEXT_TAGS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
      failures.push(`styledIntrinsicText: ${location(sourceFile, className)} uses <${tagName}>`);

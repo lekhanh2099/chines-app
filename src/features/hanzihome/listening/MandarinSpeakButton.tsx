@@ -43,7 +43,7 @@ export function MandarinSpeakButton({
   <Button
    type="button"
    variant={active ? "active" : actionLabel ? "outline" : "ghost"}
-   size={actionLabel ? "sm" : "icon-xs"}
+   size={actionLabel ? "toolbar" : "icon-xs"}
    className={cn("shrink-0", className)}
    disabled={disabled || (!active && unavailable)}
    title={

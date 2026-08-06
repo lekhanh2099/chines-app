@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { GlassPanel } from "@/components/ui/glass-panel";
+import { Card } from "@/components/ui/card";
 import type {
  NotebookGroup,
  NotebookSectionId,
@@ -150,9 +150,11 @@ export function NotebookToolbar({
 
  if (isCompact) {
   return (
-   <GlassPanel
+   <Card
     ref={toolbarRef}
-    className="sticky top-2 z-30 grid gap-2 bg-none bg-bg-card/95 p-2 shadow-theme-lg backdrop-blur-xl sm:top-3 sm:p-2.5"
+    variant="section"
+    padding="sm"
+    className="sticky top-2 z-30 grid gap-2 sm:top-3"
    >
     <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center">
      <Label variant="label" className="relative block min-w-0 flex-1">
@@ -202,14 +204,16 @@ export function NotebookToolbar({
       </div>
      </div>
     )}
-   </GlassPanel>
+   </Card>
   );
  }
 
  return (
-  <GlassPanel
+  <Card
    ref={toolbarRef}
-   className="sticky top-2 z-30 grid gap-3 bg-none bg-bg-card/95 p-3 shadow-theme-lg sm:top-3 sm:p-4"
+   variant="section"
+   padding="md"
+   className="sticky top-2 z-30 grid gap-3 sm:top-3"
   >
    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
 
@@ -229,6 +233,6 @@ export function NotebookToolbar({
    </div>
 
    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{groupButtons}</div>
-  </GlassPanel>
+  </Card>
  );
 }

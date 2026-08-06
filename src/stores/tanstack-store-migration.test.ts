@@ -10,7 +10,7 @@ vi.mock("@/lib/supabase/client", () => ({
 
 import { appShellStore } from "./app-shell-store";
 import { dictionaryLookupStore } from "./dictionary-lookup-store";
-import { focusModeStore } from "./focus-mode-store";
+import { focusModeStore, isFocusNavigationAllowed } from "./focus-mode-store";
 import { headerToolbarStore } from "./header-toolbar-store";
 import { inspectorStore } from "./inspector-store";
 import { noteTabsStore } from "./note-tabs-store";
@@ -35,7 +35,7 @@ function createStorage(): Storage {
 describe("TanStack Store migration", () => {
  beforeEach(() => {
   const localStorage = createStorage();
-  vi.stubGlobal("window", { localStorage });
+  vi.stubGlobal("window", { localStorage, location: { origin: "http://localhost" } });
   vi.stubGlobal("localStorage", localStorage);
 
   appShellStore.setState(() => ({ isContentFullscreen: false }));
@@ -83,6 +83,7 @@ describe("TanStack Store migration", () => {
  });
 
  it("preserves versioned persistence and hydration behavior", () => {
+  dictionaryLookupStore.actions.setEnabled("/", false);
   dictionaryLookupStore.actions.setEnabled("/notes/1", true);
   focusModeStore.actions.setEnabled(true);
   sidebarStore.actions.setCollapsed(true);
@@ -90,6 +91,7 @@ describe("TanStack Store migration", () => {
   splitViewStore.actions.setSplitView("note-1", true);
   splitViewStore.actions.setDividerPosition("note-1", 80);
 
+  expect(dictionaryLookupStore.actions.isEnabled("/")).toBe(false);
   expect(dictionaryLookupStore.actions.isEnabled("/notes/1")).toBe(true);
   expect(focusModeStore.get()).toEqual({ enabled: true, hasHydrated: true });
   expect(sidebarStore.get().isCollapsed).toBe(true);
@@ -103,6 +105,37 @@ describe("TanStack Store migration", () => {
   focusModeStore.setState(() => ({ enabled: false, hasHydrated: false }));
   focusModeStore.actions.hydrate();
   expect(focusModeStore.get()).toEqual({ enabled: true, hasHydrated: true });
+ });
+
+ it("keeps focus mode navigation inside the current lesson or an open note", () => {
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/hanzihome?courseId=course-1&lesson=lesson-1",
+    targetHref: "http://localhost/hanzihome?courseId=course-1&lesson=lesson-2",
+    openNoteIds: [],
+   }),
+  ).toBe(false);
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/hanzihome?courseId=course-1&lesson=lesson-1",
+    targetHref: "http://localhost/hanzihome?courseId=course-1&lesson=lesson-1",
+    openNoteIds: [],
+   }),
+  ).toBe(true);
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/notes/note-1",
+    targetHref: "http://localhost/notes/note-2",
+    openNoteIds: ["note-1"],
+   }),
+  ).toBe(false);
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/notes/note-1",
+    targetHref: "http://localhost/notes/note-2",
+    openNoteIds: ["note-2"],
+   }),
+  ).toBe(true);
  });
 
  it("ignores malformed inspector lookup storage instead of exposing raw JSON", () => {

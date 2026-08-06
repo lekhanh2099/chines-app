@@ -41,6 +41,22 @@ describe("UI standards guard", () => {
   ]);
  });
 
+ it("rejects arbitrary color and gradient utility recipes outside the UI boundary", () => {
+  const failures = inspect(
+   'export function Example() { return <div className="bg-[#20233a] text-[rgb(255,255,255)] bg-[linear-gradient(120deg,#fff,#000)]" />; }',
+  );
+
+  expect(failures).toEqual([expect.stringContaining("featureVisualEscapeHatch")]);
+ });
+
+ it("allows semantic surface tokens outside the UI boundary", () => {
+  expect(
+   inspect(
+    'export function Example() { return <div className="bg-bg-card text-text-primary shadow-theme-sm" />; }',
+   ),
+  ).toEqual([]);
+ });
+
  it("allows primitive implementation details inside the UI owner boundary", () => {
   expect(
    inspectUiSource({
