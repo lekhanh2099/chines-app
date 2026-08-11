@@ -1,40 +1,29 @@
 import type * as React from "react";
-import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 
-const IconButtonVariantSchema = z.enum(["default", "ghost", "accent"]);
-const IconButtonSizeSchema = z.enum(["sm", "md", "lg"]);
+type IconButtonVariant = "default" | "ghost" | "accent";
+type IconButtonSize = "sm" | "md" | "lg";
 type IconButtonOverrideProp = "variant" | "size";
 
 type IconButtonProps = Omit<React.ComponentProps<typeof Button>, IconButtonOverrideProp> & {
- variant?: z.infer<typeof IconButtonVariantSchema>;
- size?: z.infer<typeof IconButtonSizeSchema>;
+ variant?: IconButtonVariant;
+ size?: IconButtonSize;
 };
 
-const variantMap: Record<
- z.infer<typeof IconButtonVariantSchema>,
- React.ComponentProps<typeof Button>["variant"]
-> = {
+const variantMap: Record<IconButtonVariant, React.ComponentProps<typeof Button>["variant"]> = {
  default: "outline",
  ghost: "ghost",
  accent: "default",
 };
 
-const sizeMap: Record<
- z.infer<typeof IconButtonSizeSchema>,
- React.ComponentProps<typeof Button>["size"]
-> = {
+const sizeMap: Record<IconButtonSize, React.ComponentProps<typeof Button>["size"]> = {
  sm: "icon-toolbar",
  md: "icon-toolbar",
  lg: "icon",
 };
 
-function IconButton({
- variant = IconButtonVariantSchema.enum.default,
- size = IconButtonSizeSchema.enum.md,
- ...props
-}: IconButtonProps) {
+function IconButton({ variant = "default", size = "md", ...props }: IconButtonProps) {
  return <Button type="button" variant={variantMap[variant]} size={sizeMap[size]} {...props} />;
 }
 
