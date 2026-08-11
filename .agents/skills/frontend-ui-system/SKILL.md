@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.1"
+  version: "3.2"
 ---
 
 # Frontend UI System
@@ -185,6 +185,14 @@ Use the canonical matrix and inventory.
 Rules:
 
 - DropdownMenu is the action-menu primitive.
+- A menu row that represents a category with multiple immediate choices uses
+  `DropdownMenuSub` + `DropdownMenuSubTrigger` + `DropdownMenuSubContent`.
+- Do not turn a normal desktop dropdown into a fake multi-page flow by replacing
+  the root menu content and adding a manual “Back” row. Native submenus preserve
+  orientation and keep sibling actions reachable.
+- Submenu triggers should expose the current value when it materially helps
+  scanning. Direct commands remain `DropdownMenuItem`; independent booleans use
+  checkbox items instead of unnecessary submenus.
 - Repeated edit/reorder/delete icon clusters normally become one action menu.
 - Popover is not an action menu.
 - Tooltip is supplementary only.
@@ -240,6 +248,13 @@ Global navigation and page content have different jobs:
 
 - Sidebar owns the app sitemap;
 - Home focuses on continuation and attention, not duplicate route cards;
+- Home desktop composition uses available width for primary work plus an
+  attention/progress rail when meaningful user state exists. Do not create a
+  wide grid and then cap the primary child so a decorative empty middle column
+  appears;
+- do not fill Home with generic shortcuts merely to occupy space. Useful Home
+  density comes from learning state, review attention, recent work and one
+  contextual reminder;
 - contextual module navigation stays inside the owning feature;
 - the active global route remains visible in its expanded Sidebar group.
 
@@ -269,8 +284,13 @@ Feature-specific quick settings stay where their context exists.
 For HanziHome:
 
 - reader font/size/reveal/visibility live in the lesson workspace toolbar;
+- grouped reader choices in the quick menu use real DropdownMenu submenus;
 - reader font choices show a real Hanzi font preview;
 - `/settings?section=reading` remains the complete reading-settings hub;
+- full reading settings include a live content preview that demonstrates the
+  selected font, size, reveal behavior, pinyin/meaning visibility and answer
+  visibility. On wide screens the preview may sit beside controls; on narrow
+  screens it follows controls in normal document flow;
 - Avatar owns identity/provider/logout only.
 
 ## 12. Destructive actions
