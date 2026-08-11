@@ -21,7 +21,7 @@ import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/ty
 import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import {
- ReaderHanziText,
+ HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
@@ -245,19 +245,9 @@ export function VocabList({
               : "none"
           }
          >
-          <ReaderHanziText
-           displayMode={{
-            showPinyin: true,
-            showMeaning: false,
-            showAnswers: false,
-            hanziFont: "system",
-            hanziSize: "2xl",
-            revealMode: "always",
-           }}
-           size="xl"
-          >
+          <HanziText as="span" size="card" leading="none">
            {word.hanzi}
-          </ReaderHanziText>
+          </HanziText>
           {bookmarked ? <Bookmark /> : null}
          </Button>
         );
