@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -18,8 +19,10 @@ export type SegmentedControlGroup<T extends string = string> = {
  items: SegmentedControlItem<T>[];
 };
 
-type SegmentedControlSurface = "subtle" | "transparent";
-type SegmentedControlDensity = "toolbar" | "touch";
+const SegmentedControlSurfaceSchema = z.enum(["subtle", "transparent"]);
+const SegmentedControlDensitySchema = z.enum(["toolbar", "touch"]);
+export type SegmentedControlSurface = z.infer<typeof SegmentedControlSurfaceSchema>;
+export type SegmentedControlDensity = z.infer<typeof SegmentedControlDensitySchema>;
 
 function getSegmentedControlGroups<T extends string>({
  items = [],
@@ -45,8 +48,8 @@ export function SegmentedControl<T extends string>({
  onChange,
  className,
  itemClassName,
- surface = "subtle",
- density = "toolbar",
+ surface = SegmentedControlSurfaceSchema.enum.subtle,
+ density = SegmentedControlDensitySchema.enum.toolbar,
  "aria-label": ariaLabel,
 }: {
  value: T;
@@ -67,7 +70,9 @@ export function SegmentedControl<T extends string>({
    aria-label={ariaLabel}
    className={cn(
     "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain",
-    surface === "subtle" ? "rounded-lg bg-bg-subtle/70 p-0.5" : "bg-transparent p-0",
+    surface === SegmentedControlSurfaceSchema.enum.subtle
+     ? "rounded-lg bg-bg-subtle/70 p-0.5"
+     : "bg-transparent p-0",
     className,
    )}
   >
@@ -86,7 +91,9 @@ export function SegmentedControl<T extends string>({
         <Button
          key={item.key}
          type="button"
-         size={density === "touch" ? "touch" : "toolbar"}
+         size={
+          density === SegmentedControlDensitySchema.enum.touch ? "touch" : "toolbar"
+         }
          variant={active ? "active" : "navigation"}
          disabled={item.disabled}
          aria-pressed={active}
