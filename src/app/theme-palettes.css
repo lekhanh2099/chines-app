@@ -2,8 +2,24 @@
  * Accent palettes deliberately do not own page/card/popover/background tokens.
  * The canvas stays neutral so changing palette never washes the whole product
  * in a brand tint. Palettes own interactive emphasis only: primary, accent,
- * ring, active navigation and the matching chart accent.
+ * ring, active navigation and the matching brand/chart accent.
+ *
+ * Success, warning, danger, info and semantic purple remain stable regardless
+ * of the selected palette; a green theme must not turn a purple category badge
+ * green or change the meaning of a status color.
  */
+
+[data-theme="light"] {
+ --purple: oklch(0.52 0.18 303);
+ --purple-subtle: oklch(0.956 0.025 303);
+ --purple-text: oklch(0.45 0.15 303);
+}
+
+[data-theme="dark"] {
+ --purple: oklch(0.75 0.15 303);
+ --purple-subtle: oklch(0.3 0.035 303);
+ --purple-text: oklch(0.84 0.1 303);
+}
 
 [data-theme="light"][data-palette="editorial"] {
  --primary: oklch(0.48 0.17 270);
