@@ -70,7 +70,11 @@ export function PageHeader({
     ) : null}
     {meta ? <div className={compact ? "mt-2" : "mt-3"}>{meta}</div> : null}
    </div>
-   {actions ? <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div> : null}
+   {actions ? (
+    <div className="flex w-full max-w-full flex-wrap items-center gap-2 sm:w-auto sm:shrink-0">
+     {actions}
+    </div>
+   ) : null}
   </header>
  );
 }
