@@ -27,12 +27,12 @@ export function PageHeader({
  return (
   <header
    className={cn(
-    "flex flex-wrap items-start justify-between",
+    "flex min-w-0 flex-wrap items-start justify-between",
     compact ? "gap-3" : "gap-4",
     className,
    )}
   >
-   <div className="min-w-0 max-w-3xl">
+   <div className="min-w-0 max-w-3xl flex-[1_1_18rem]">
     {eyebrow ? (
      <Typography
       as="div"
@@ -71,7 +71,7 @@ export function PageHeader({
     {meta ? <div className={compact ? "mt-2" : "mt-3"}>{meta}</div> : null}
    </div>
    {actions ? (
-    <div className="flex w-full max-w-full flex-wrap items-center gap-2 sm:w-auto sm:shrink-0">
+    <div className="flex w-full min-w-0 max-w-full flex-wrap items-center gap-2 sm:w-auto sm:flex-[0_1_auto] sm:justify-end">
      {actions}
     </div>
    ) : null}
