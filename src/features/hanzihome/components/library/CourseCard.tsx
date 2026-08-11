@@ -1,16 +1,15 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookMarked } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
 import {
  Select,
  SelectContent,
@@ -18,6 +17,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Typography } from "@/components/ui/typography";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 import type {
@@ -88,31 +88,16 @@ export function CourseCard({
  };
 
  return (
-  <Card
-   variant="section"
-   padding="none"
-   className="group flex min-w-0 flex-col gap-2 rounded-xl p-2.5 transition-colors hover:border-primary/25 hover:bg-bg-elevated"
-  >
-   <div className="flex min-w-0 items-center justify-between gap-3">
-    <div className="flex min-w-0 items-center gap-2">
-     <StudyInstructionText
-      as="span"
-      tone="accent"
-      className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-subtle"
-     >
-      <BookMarked className="size-4" />
-     </StudyInstructionText>
+  <Card variant="section" padding="sm" className="flex min-w-0 flex-col gap-2">
+   <div className="flex min-w-0 items-start justify-between gap-3">
+    <div className="flex min-w-0 items-start gap-2">
+     <IconTile size="sm">
+      <BookMarked />
+     </IconTile>
 
      <div className="min-w-0 flex-1">
       <div className="flex min-w-0 items-center gap-1.5">
-       <Typography
-        as="h4"
-        variant="cardTitle"
-        tone="default"
-        weight="black"
-        clamp="one"
-        leading="snug"
-       >
+       <Typography as="h4" variant="cardTitle" weight="black" clamp="one" leading="snug">
         {book.shortTitle || book.title}
        </Typography>
        {editMode ? (
@@ -122,53 +107,59 @@ export function CourseCard({
      </div>
     </div>
 
-    <div className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-text-muted sm:flex">
+    <div className="hidden shrink-0 items-center gap-1.5 sm:flex">
      <Badge variant="default" size="sm">
       {visibleLessonCount} bài
      </Badge>
-     <span>{visibleVocabCount} từ</span>
-     <span aria-hidden="true">·</span>
-     <span>{visibleGrammarCount} ngữ pháp</span>
+     <Typography variant="caption" tone="muted" weight="bold">
+      {visibleVocabCount} từ · {visibleGrammarCount} ngữ pháp
+     </Typography>
     </div>
    </div>
 
-   <div className="grid min-h-9">
-    {bookLessons.length > 0 ? (
-     <div className="flex min-w-0 items-center gap-1.5">
-      <div className="min-w-0 flex-1">
-       <Select value={effectiveLessonId} onValueChange={setSelectedLessonId}>
-        <SelectTrigger
-         size="sm"
-         width="full"
-         aria-label={`Chọn bài trong ${book.shortTitle || book.title}`}
-        >
-         <SelectValue placeholder="Chọn bài" />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {bookLessons.map((lesson) => (
-          <SelectItem key={lesson.id} value={lesson.id}>
-           Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
-      </div>
-
-      {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-      <Button asChild size="sm" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
-       <Link
-        href={href}
-        prefetch={false}
-        onMouseEnter={prefetchSelectedLesson}
-        onFocus={prefetchSelectedLesson}
+   {bookLessons.length > 0 ? (
+    <div className="flex min-w-0 items-center gap-1.5">
+     <div className="min-w-0 flex-1">
+      <Select value={effectiveLessonId} onValueChange={setSelectedLessonId}>
+       <SelectTrigger
+        size="sm"
+        width="full"
+        aria-label={`Chọn bài trong ${book.shortTitle || book.title}`}
        >
-        Mở
-        <ArrowRight data-icon="inline-end" />
-       </Link>
-      </Button>
+        <SelectValue placeholder="Chọn bài" />
+       </SelectTrigger>
+       <SelectContent align="start">
+        {bookLessons.map((lesson) => (
+         <SelectItem key={lesson.id} value={lesson.id}>
+          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
      </div>
-    ) : null}
-   </div>
+
+     {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
+     <Button
+      asChild
+      size="toolbar"
+      aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}
+     >
+      <Link
+       href={href}
+       prefetch={false}
+       onMouseEnter={prefetchSelectedLesson}
+       onFocus={prefetchSelectedLesson}
+      >
+       Mở
+       <ArrowRight data-icon="inline-end" />
+      </Link>
+     </Button>
+    </div>
+   ) : (
+    <Typography as="p" variant="caption" tone="muted">
+     Quyển này chưa có bài học.
+    </Typography>
+   )}
   </Card>
  );
 }
