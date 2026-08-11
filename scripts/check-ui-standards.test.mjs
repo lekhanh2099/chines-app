@@ -100,19 +100,32 @@ describe("UI standards guard", () => {
   ).toEqual([]);
  });
 
- it("rejects feature-owned rings, thick borders and arbitrary radii", () => {
+ it("allows horizontal margin only for genuine inline text separation", () => {
+  expect(
+   inspect(
+    'export function Example() { return <span className="inline-flex mx-1 rounded-lg">token</span>; }',
+   ),
+  ).toEqual([]);
+
+  expect(inspect('export function Example() { return <div className="mx-1" />; }')).toEqual([
+   expect.stringContaining("fixedMarginSpacing"),
+  ]);
+ });
+
+ it("rejects feature-owned rings, thick borders, arbitrary radii and oversized radii", () => {
   const failures = inspect(
-   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-2" /><div className="rounded-[13px]" /></>; }',
+   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-2" /><div className="rounded-[13px]" /><div className="rounded-2xl" /></>; }',
   );
 
   expect(failures).toEqual([
    expect.stringContaining("featureOwnedRing"),
    expect.stringContaining("featureThickBorder"),
    expect.stringContaining("featureArbitraryRadius"),
+   expect.stringContaining("featureLargeRadius"),
   ]);
  });
 
- it("allows stable feature surfaces while owners still govern shared primitives", () => {
+ it("allows stable feature surfaces within the shared radius scale", () => {
   expect(
    inspect(
     'export function Example() { return <div className="rounded-xl border border-border-default bg-bg-card" />; }',
