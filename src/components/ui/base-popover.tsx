@@ -17,6 +17,7 @@ const BasePopoverVariantSchema = z.enum([
  "moduleMenu",
  "selector",
 ]);
+const BasePopoverTriggerWidthSchema = z.enum(["auto", "full"]);
 
 type BasePopoverPopupProps = Omit<React.ComponentProps<typeof Popover.Popup>, "className"> & {
  variant?: z.infer<typeof BasePopoverVariantSchema>;
@@ -48,12 +49,25 @@ type BasePopoverTriggerOwnedProps = {
 type BasePopoverTriggerProps = Omit<
  React.ComponentProps<typeof Popover.Trigger>,
  keyof BasePopoverTriggerOwnedProps
-> & { active?: boolean };
+> & {
+ active?: boolean;
+ width?: z.infer<typeof BasePopoverTriggerWidthSchema>;
+};
 
-function BasePopoverTrigger({ active = false, ...props }: BasePopoverTriggerProps) {
+function BasePopoverTrigger({
+ active = false,
+ width = BasePopoverTriggerWidthSchema.enum.auto,
+ ...props
+}: BasePopoverTriggerProps) {
  return (
   <Popover.Trigger
-   render={<Button variant={active ? "active" : "outline"} size="toolbar" />}
+   render={
+    <Button
+     variant={active ? "active" : "outline"}
+     size="toolbar"
+     className={width === BasePopoverTriggerWidthSchema.enum.full ? "w-full" : undefined}
+    />
+   }
    {...props}
   />
  );
@@ -79,4 +93,5 @@ export {
  BasePopoverPositioner,
  BasePopoverTrigger,
  BasePopoverVariantSchema,
+ BasePopoverTriggerWidthSchema,
 };
