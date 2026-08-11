@@ -4,10 +4,14 @@ import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import { ArrowRight, LayoutGrid, List, Pencil, Search, X } from "lucide-react";
 
+import { ActionCard } from "@/components/ui/action-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Chip } from "@/components/ui/chip";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
@@ -15,7 +19,7 @@ import {
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { RadicalDetailPanel } from "@/features/hanzihome/components/RadicalDetailPanel";
 import {
- getHanziFontFamily,
+ HanziFontPreview,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
@@ -115,7 +119,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
 
  if (radicals.length === 0) {
   return (
-   <Card padding="lg" className="rounded-xl">
+   <Card padding="lg">
     <StudyInstructionText tone="muted" weight="semibold">
      Chưa có dữ liệu bộ thủ.
     </StudyInstructionText>
@@ -130,7 +134,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
      <Button
       type="button"
       variant={editMode ? "active" : "outline"}
-      size="icon-sm"
+      size="icon-toolbar"
       onClick={() => setEditMode((current) => !current)}
       title={editMode ? "Tắt chế độ sửa bộ thủ" : "Bật chế độ sửa bộ thủ"}
       aria-label={editMode ? "Tắt chế độ sửa bộ thủ" : "Bật chế độ sửa bộ thủ"}
@@ -174,21 +178,19 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
        {strokeFilters.map((filter) => {
         const active = strokeFilter === filter.value;
         return (
-         <Button
+         <Chip
           key={filter.value}
           type="button"
-          variant={active ? "active" : "surfaceCard"}
-          size="sm"
-          align="between"
-          className="min-w-max"
-          aria-pressed={active}
+          variant={active ? "accent" : "default"}
+          size="touch"
+          pressed={active}
           onClick={() => setStrokeFilter(filter.value)}
          >
           {filter.label}
-          <StudyInstructionText as="span" variant="caption" tone="muted" className="tabular-nums">
+          <Typography as="span" variant="caption" tone="muted" weight="bold">
            {filterCounts.get(filter.value)}
-          </StudyInstructionText>
-         </Button>
+          </Typography>
+         </Chip>
         );
        })}
       </div>
@@ -212,28 +214,17 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
          {visibleRadicals.length} kết quả
         </StudyInstructionText>
        </div>
-       <div className="flex shrink-0 rounded-xl border border-border-default bg-bg-card p-1 shadow-theme-sm">
-        <Button
-         type="button"
-         variant={view === "grid" ? "active" : "ghost"}
-         size="icon-xs"
-         aria-label="Hiển thị dạng lưới"
-         aria-pressed={view === "grid"}
-         onClick={() => setView("grid")}
-        >
-         <LayoutGrid />
-        </Button>
-        <Button
-         type="button"
-         variant={view === "list" ? "active" : "ghost"}
-         size="icon-xs"
-         aria-label="Hiển thị dạng danh sách"
-         aria-pressed={view === "list"}
-         onClick={() => setView("list")}
-        >
-         <List />
-        </Button>
-       </div>
+       <SegmentedControl<RadicalView>
+        value={view}
+        items={[
+         { key: RadicalViewSchema.enum.grid, label: "Lưới", icon: LayoutGrid },
+         { key: RadicalViewSchema.enum.list, label: "Danh sách", icon: List },
+        ]}
+        onChange={setView}
+        density="toolbar"
+        aria-label="Kiểu hiển thị bộ thủ"
+        className="w-auto"
+       />
       </div>
 
       {visibleRadicals.length > 0 ? (
@@ -253,11 +244,11 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
         ))}
        </div>
       ) : (
-       <Card variant="subtle" padding="lg" className="text-center">
-        <StudyInstructionText tone="default" weight="semibold">
+       <Card variant="subtle" padding="lg">
+        <StudyInstructionText tone="default" weight="semibold" align="center">
          Không có bộ thủ phù hợp.
         </StudyInstructionText>
-        <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
+        <StudyInstructionText variant="bodySmall" tone="muted" align="center" className="mt-1">
          Thử đổi số nét hoặc từ khóa tìm kiếm.
         </StudyInstructionText>
        </Card>
@@ -310,27 +301,22 @@ function RadicalBrowseCard({
   (radical.groups?.reduce((total, group) => total + group.chars.length, 0) ?? 0);
 
  return (
-  <Button
-   type="button"
-   variant="surfaceCard"
-   size="card"
-   align="start"
-   wrap="normal"
-   layout="grid"
+  <ActionCard
+   padding="md"
    onClick={onOpen}
    className={cn(
-    "group min-w-0",
+    "group grid min-w-0 gap-4",
     compact ? "sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center" : "content-between",
    )}
   >
    <div
     className={cn("flex min-w-0 gap-3", compact ? "items-center" : "items-start justify-between")}
    >
-    <div className="app-brand-gradient flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl text-3xl font-black leading-none text-primary-foreground shadow-theme-sm">
-     <span lang="zh-CN" style={{ fontFamily: getHanziFontFamily("songti") }}>
+    <IconTile tone="inverse" size="lg">
+     <HanziFontPreview font="songti" size="card" tone="inverse" weight="black" leading="none">
       {radical.radical}
-     </span>
-    </div>
+     </HanziFontPreview>
+    </IconTile>
     {compact ? null : (
      <Badge variant="info" size="sm">
       {radical.strokes ?? "?"} nét
@@ -363,7 +349,8 @@ function RadicalBrowseCard({
     </StudyInstructionText>
    </div>
 
-   <StudyInstructionText
+   <Typography
+    as="span"
     variant="label"
     tone="accent"
     weight="bold"
@@ -371,7 +358,7 @@ function RadicalBrowseCard({
    >
     Xem chi tiết
     <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-   </StudyInstructionText>
-  </Button>
+   </Typography>
+  </ActionCard>
  );
 }
