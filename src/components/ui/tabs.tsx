@@ -159,16 +159,20 @@ export function Tabs<T extends string>({
 export function TabsContent({
  children,
  value,
+ active,
  className,
 }: {
  children: React.ReactNode;
- value: string;
+ value?: string;
+ active?: boolean;
  className?: string;
 }) {
  const context = React.useContext(TabsContext);
- if (context.value !== value) return null;
+ const panelValue = value ?? context.value;
+ const isActive = value === undefined ? active === true : context.value === value;
+ if (!isActive) return null;
 
- const index = context.itemKeys.indexOf(value);
+ const index = context.itemKeys.indexOf(panelValue);
  if (index < 0) return null;
 
  return (
