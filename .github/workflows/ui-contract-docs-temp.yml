@@ -1,0 +1,78 @@
+name: Temporary UI contract docs updater
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-docs:
+    if: github.event.pull_request.head.ref == 'refactor/ui-system-ux-architecture'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+      - name: Update final micro UI contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path, old, new, count=1):
+              file = Path(path)
+              text = file.read_text()
+              found = text.count(old)
+              if found != count:
+                  raise SystemExit(f"{path}: expected {count}, found {found}: {old!r}")
+              file.write_text(text.replace(old, new))
+
+          skill = ".agents/skills/frontend-ui-system/SKILL.md"
+          replace(skill, 'version: "3.10"', 'version: "3.11"')
+          replace(
+              skill,
+              'Standalone settings choices remain touch-sized even when displayed in a grid.\n',
+              '''Standalone settings choices remain touch-sized even when displayed in a grid.\n\n### Micro geometry and spacing\n\nTreat border, radius, focus and spacing as system contracts rather than finishing details:\n\n```text\ncontrols / inputs / menu rows : rounded-lg\ncards / panels / overlays     : rounded-xl\npill semantics                : rounded-full\ncheckbox                      : compact square radius owned by Checkbox\ndefault structural border     : 1px border-border-default\nform control border           : 1px border-input\nfocus                         : shared focus-ring owner, never feature-built ring utilities\n```\n\nSibling/component rhythm is parent-owned. Prefer `grid/flex + gap` and container padding over `mt-*`, `mb-*`, `ml-*`, `mr-*`, `space-x-*` or `space-y-*` on children. Auto margin remains valid for alignment. Horizontal margin is acceptable only for genuine inline text separation where there is no parent layout box that can own a gap. Do not replace margin with meaningless padding merely to satisfy a checker.\n\nOverlay elevation follows one shared layer ladder: modal backdrop `100`, modal content `101`, menu/select/popover/floating content `120`, tooltip `130`. Feature code never repairs z-index locally.\n''',
+          )
+
+          contracts = "docs/ui/component-contracts.md"
+          replace(
+              contracts,
+              '`scripts/check-ui-standards.mjs` enforces this for canonical visual contracts,\nincluding Button, form controls, Card, Badge, SelectTrigger, PageHeader,\nSegmentedControl and IconTile. Do not add a baseline to hide violations.\n',
+              '''`scripts/check-ui-standards.mjs` enforces this for canonical visual contracts,\nincluding Button, form controls, Card, Badge, SelectTrigger, PageHeader,\nSegmentedControl and IconTile. Do not add a baseline to hide violations.\n\n### Micro geometry contract\n\n```text\ncontrol / field / menu item       -> rounded-lg\ncard / panel / popover / dialog   -> rounded-xl\npill/status/filter semantics      -> rounded-full\ncheckbox                           -> owner-specific compact square radius\nstructural/card border             -> 1px border-border-default\nform field border                  -> 1px border-input\nsemantic border                    -> success/warning/danger/info tokens only\nfocus-visible                      -> shared focus ring helper/primitive owner\n```\n\nFeature code does not introduce `rounded-2xl`, `rounded-3xl`, arbitrary radius,\n`border-2+`, or ring recipes to make a component look more important. A stronger\nhierarchy comes from spacing, typography and surface semantics rather than a new\nradius dialect.\n''',
+          )
+          replace(
+              contracts,
+              'Controls in the same command row use the same family. A compact Select next to a\nButton uses Select `sm` + Button `toolbar`, not 36px next to 44px.\n',
+              '''Controls in the same command row use the same family. A compact Select next to a\nButton uses Select `sm` + Button `toolbar`, not 36px next to 44px.\n\nComponent rhythm is also shared: parent layout owns sibling spacing through `gap`\nand container padding. Fixed child margins and `space-x/space-y` are not the normal\ncomposition primitive. `mx-auto`/`ml-auto`/`mr-auto` remain valid alignment tools;\nsmall horizontal margin remains valid inside true inline text flow where a parent\nlayout gap cannot represent the typography.\n''',
+          )
+
+          verification = "docs/ui/ui-verification.md"
+          replace(
+              verification,
+              '- neutral canvas, opaque surfaces and 1px border hierarchy;\n- controls at `rounded-lg`; cards/panels/overlays at `rounded-xl`;\n',
+              '''- neutral canvas, opaque surfaces and 1px border hierarchy;\n- controls at `rounded-lg`; cards/panels/overlays at `rounded-xl`;\n- no accidental `rounded-2xl/3xl`, arbitrary radius or 2px+ feature borders;\n- focus-visible treatment is the same across Button/Input/Textarea/Select/Checkbox/Radio/Switch/Chip;\n- no feature-owned ring or z-index repair;\n- sibling rhythm is parent `gap`/padding rather than child margins or `space-x/space-y`;\n''',
+          )
+          PY
+      - run: npm run format
+      - run: git checkout -- .github/workflows/ui-contract-docs-temp.yml
+      - name: Commit final UI contracts
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "docs: lock micro UI consistency contract"
+          git push origin "HEAD:${HEAD_REF}"
