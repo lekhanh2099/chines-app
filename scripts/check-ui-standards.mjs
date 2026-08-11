@@ -57,6 +57,17 @@ const FEATURE_VISUAL_ESCAPE_HATCH_PATTERN =
  /\b(?:bg|text|border|ring|outline|fill|stroke)-\[(?:#|rgb\(|hsl\(|oklch\(|color-mix\()|\b(?:bg|from|via|to)-\[[^\]]*(?:linear-gradient|radial-gradient|conic-gradient)\(/;
 const FEATURE_SURFACE_ESCAPE_HATCH_PATTERN =
  /\b(?:app-glass-surface|app-gradient-hero|backdrop-blur(?:-[\w-]+)?|shadow-theme-lg)\b/;
+const FIXED_MARGIN_CLASS_PATTERN =
+ /(?:^|[\s"'`])(?:[a-z0-9-]+:)*-?m(?:[trblxy])?-(?!auto(?:[\s"'`}]|$)|0(?:[\s"'`}]|$))[^\s"'`}]*/i;
+const SPACE_BETWEEN_CLASS_PATTERN =
+ /\b(?:[a-z0-9-]+:)*space-[xy]-(?!0(?:[\s"'`}]|$))[^\s"'`}]*/i;
+const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
+const FEATURE_RING_CLASS_PATTERN =
+ /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
+const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
+const RADIUS_CLASS_PATTERN = /\brounded(?:\b|-[^\s"'`}]*)/;
+const BORDER_CLASS_PATTERN = /\bborder(?:\b|-[^\s"'`}]*)/;
+const BACKGROUND_CLASS_PATTERN = /\bbg-[^\s"'`}]*/;
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -109,6 +120,20 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   file.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
  );
 
+ const inspectSpacing = (className) => {
+  const classNameSource = className.getText(sourceFile);
+  if (FIXED_MARGIN_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(
+    `fixedMarginSpacing: ${location(sourceFile, className)} uses child margin; compose spacing with parent gap/padding`,
+   );
+  }
+  if (SPACE_BETWEEN_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(
+    `spaceBetweenSpacing: ${location(sourceFile, className)} uses space-x/space-y; compose spacing with parent gap`,
+   );
+  }
+ };
+
  const inspectClassName = (className, tagName) => {
   const classNameSource = className.getText(sourceFile);
   if (ARBITRARY_Z_INDEX_PATTERN.test(classNameSource)) {
@@ -119,6 +144,24 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   }
   if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
    failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);
+  }
+  if (ARBITRARY_RADIUS_PATTERN.test(classNameSource)) {
+   failures.push(`featureArbitraryRadius: ${location(sourceFile, className)}`);
+  }
+  if (FEATURE_RING_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(`featureOwnedRing: ${location(sourceFile, className)}`);
+  }
+  if (THICK_BORDER_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(`featureThickBorder: ${location(sourceFile, className)}`);
+  }
+  if (
+   RADIUS_CLASS_PATTERN.test(classNameSource) &&
+   BORDER_CLASS_PATTERN.test(classNameSource) &&
+   BACKGROUND_CLASS_PATTERN.test(classNameSource)
+  ) {
+   failures.push(
+    `featureSurfaceRecipe: ${location(sourceFile, className)} recreates radius + border + background outside an owner`,
+   );
   }
   if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
    failures.push(`typographyClassName: ${location(sourceFile, className)} uses typed style tokens`);
@@ -157,17 +200,20 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    failures.push(`featureOwnedZIndex: ${location(sourceFile, node)}`);
   }
 
-  if (!isUiOwner && (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node))) {
+  if (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) {
    const tagName = jsxTagNameText(node.tagName);
-   if (UI_INTRINSIC_CONTROL_TAGS.has(tagName)) {
-    failures.push(`rawInteractiveControl: ${location(sourceFile, node)} uses <${tagName}>`);
-   }
-   if (APPLICATION_TYPOGRAPHY_TAGS.has(tagName)) {
-    failures.push(`rawApplicationTypography: ${location(sourceFile, node)} uses <${tagName}>`);
-   }
-
    const className = classNameAttribute(node);
-   if (className) inspectClassName(className, tagName);
+   if (className) inspectSpacing(className);
+
+   if (!isUiOwner) {
+    if (UI_INTRINSIC_CONTROL_TAGS.has(tagName)) {
+     failures.push(`rawInteractiveControl: ${location(sourceFile, node)} uses <${tagName}>`);
+    }
+    if (APPLICATION_TYPOGRAPHY_TAGS.has(tagName)) {
+     failures.push(`rawApplicationTypography: ${location(sourceFile, node)} uses <${tagName}>`);
+    }
+    if (className) inspectClassName(className, tagName);
+   }
   }
 
   ts.forEachChild(node, visit);
