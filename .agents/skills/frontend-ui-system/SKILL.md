@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.4"
+  version: "3.5"
 ---
 
 # Frontend UI System
@@ -92,6 +92,29 @@ input must not keep producing state changes.
 For shared shell interaction state, store only the interaction contract. Example:
 `globalSearchStore` owns `open/query`; HanziHome search results/course/lesson
 data stay in feature Query state.
+
+### 3.1 Runtime-backed finite types
+
+The repository source gate rejects handwritten unions and explicit `unknown`.
+UI work must therefore reuse an authoritative runtime or owner contract instead
+of recreating a TypeScript-only approximation.
+
+Rules:
+
+- finite app-owned choices use `z.enum(...)` plus `z.infer<typeof Schema>`;
+- nullable app-owned values use a nullable Zod schema rather than `string | null`;
+- wrapper components reuse the primitive's exported/inferred prop type instead
+  of restating values such as `"subtle" | "transparent"`;
+- mapped presentation values use the owner component prop type, for example
+  `NonNullable<ComponentProps<typeof Badge>["variant"]>`;
+- Query/hook result fields reuse `ReturnType<typeof hook>["field"]` or an
+  exported schema-derived domain type instead of `unknown` or a handwritten
+  result union;
+- `Omit`/`Pick` key sets that need multiple app-owned keys must come from a
+  schema-derived key type rather than a string-literal union.
+
+Do not add source-check exceptions for new application code merely to preserve
+convenient handwritten types. The runtime/owner contract is the source of truth.
 
 ## 4. Shared shell boundary
 
