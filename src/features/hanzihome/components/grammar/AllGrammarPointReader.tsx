@@ -1,7 +1,9 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import {
+ HanziAwareText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { StructuredGrammarContent } from "@/features/hanzihome/components/grammar/StructuredGrammarContent";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
@@ -32,9 +34,13 @@ export function AllGrammarPointReader({
         >
          Điểm ngữ pháp {index + 1}
         </StudyInstructionText>
-        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-         {point.cleanTitle}
-        </Typography>
+        <HanziAwareText
+         as="h2"
+         text={point.cleanTitle}
+         variant="sectionTitle"
+         tone="default"
+         weight="black"
+        />
        </div>
 
        <StructuredGrammarContent
