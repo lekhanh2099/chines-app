@@ -10,12 +10,14 @@ const buttonSource = fs.readFileSync(
  path.join(process.cwd(), "src/components/ui/button.tsx"),
  "utf8",
 );
+const cardSource = fs.readFileSync(path.join(process.cwd(), "src/components/ui/card.tsx"), "utf8");
 
 const forbiddenFoundationProperties = [
  "--background:",
  "--card:",
  "--popover:",
  "--border:",
+ "--bg-card:",
  "--bg-subtle:",
  "--bg-elevated:",
  "--border-default:",
@@ -41,10 +43,13 @@ describe("theme palette contract", () => {
   }
  });
 
- it("allows restrained canvas and card tint without recoloring neutral foundations", () => {
+ it("allows restrained canvas and Card tint without recoloring neutral foundations", () => {
   expect(paletteCss).toContain("--canvas-background:");
   expect(paletteCss).toContain("--bg-primary: var(--canvas-background)");
-  expect(paletteCss).toContain("--bg-card: color-mix(in oklch, var(--card)");
+  expect(paletteCss).toContain(
+   "--theme-card-background: color-mix(in oklch, var(--card)",
+  );
+  expect(cardSource).toContain("--theme-card-background,var(--bg-card)");
 
   for (const property of forbiddenFoundationProperties) {
    expect(paletteCss).not.toContain(property);
