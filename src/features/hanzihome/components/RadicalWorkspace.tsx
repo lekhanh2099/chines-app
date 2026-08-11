@@ -19,7 +19,7 @@ import {
 } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { RadicalDetailPanel } from "@/features/hanzihome/components/RadicalDetailPanel";
 import {
- HanziFontPreview,
+ HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
@@ -313,9 +313,9 @@ function RadicalBrowseCard({
     className={cn("flex min-w-0 gap-3", compact ? "items-center" : "items-start justify-between")}
    >
     <IconTile tone="inverse" size="lg">
-     <HanziFontPreview font="songti" size="card" tone="inverse" weight="black" leading="none">
+     <HanziText size="card" tone="inverse" weight="black" leading="none">
       {radical.radical}
-     </HanziFontPreview>
+     </HanziText>
     </IconTile>
     {compact ? null : (
      <Badge variant="info" size="sm">
