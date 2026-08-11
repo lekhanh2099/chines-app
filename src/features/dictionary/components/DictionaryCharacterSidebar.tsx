@@ -8,6 +8,8 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SegmentedControl } from "@/components/ui/segmented-control";
+import { Separator } from "@/components/ui/separator";
 import { getNormalizedRadicals } from "@/services/vocab.service";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
 import type { StructureComponent } from "@/features/dictionary/types";
@@ -32,12 +34,12 @@ function DictionaryCharacterSidebar({
    <Card
     variant="subtle"
     padding="md"
-    className="grid animate-pulse gap-4 rounded-2xl"
+    className="grid animate-pulse gap-4"
     aria-busy="true"
     aria-live="polite"
    >
     <div className="h-5 w-36 rounded-md bg-bg-card" />
-    <div className="mx-auto size-48 rounded-2xl bg-bg-card" />
+    <div className="mx-auto size-48 rounded-xl bg-bg-card" />
     <div className="grid gap-2">
      <div className="h-4 w-full rounded-md bg-bg-card" />
      <div className="h-4 w-3/4 rounded-md bg-bg-card" />
@@ -51,73 +53,62 @@ function DictionaryCharacterSidebar({
  const radicals = getNormalizedRadicals(ai);
  const etymologyType = typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
  const etymologyText = typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
- const mnemonic_story = ai?.mnemonic_story;
+ const mnemonicStory = ai?.mnemonic_story;
 
  return (
-  <div className="flex flex-col gap-4">
-   <SectionWrapper className="rounded-2xl ">
-    <SectionHeader
-     title="Tập viết chữ"
-     description="Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng."
-     trailing={
-      parentText !== selectedCharacter ? (
-       <Link
-        href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}
-        className=" font-semibold   transition-colors hover: -hover"
-       >
-        Tra riêng
-       </Link>
-      ) : null
-     }
+  <SectionWrapper>
+   <SectionHeader
+    title="Tập viết chữ"
+    description="Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng."
+    trailing={
+     parentText !== selectedCharacter ? (
+      <Button asChild variant="outline" size="toolbar">
+       <Link href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}>Tra riêng</Link>
+      </Button>
+     ) : null
+    }
+   />
+
+   {characters.length > 1 ? (
+    <SegmentedControl<string>
+     value={selectedCharacter}
+     items={characters.map((character) => ({ key: character, label: character }))}
+     onChange={onSelectCharacter}
+     density="touch"
+     aria-label="Chọn chữ để phân tích"
     />
+   ) : null}
 
-    {characters.length > 1 && (
-     <div className="flex flex-wrap gap-2">
-      {characters.map((character) => (
-       <Button
-        key={character}
-        variant={selectedCharacter === character ? "default" : "outline"}
-        size="sm"
-        className="min-w-10"
-        onClick={() => onSelectCharacter(character)}
-       >
-        {character}
-       </Button>
-      ))}
-     </div>
-    )}
+   <div className="flex justify-center">
+    <CharacterWriterCard character={selectedCharacter} />
+   </div>
 
-    <div className="flex justify-center">
-     <CharacterWriterCard character={selectedCharacter} />
-    </div>
+   {radicals.length > 0 || ai?.components?.length || etymologyText ? (
+    <AnatomyOverview
+     character={selectedCharacter}
+     radicals={radicals}
+     components={ai?.components || []}
+    />
+   ) : null}
 
-    {(radicals.length > 0 || ai?.components?.length || etymologyText) && (
-     <AnatomyOverview
-      character={selectedCharacter}
-      radicals={radicals}
-      components={ai?.components || []}
-     />
-    )}
-
-    {(etymologyText || mnemonic_story) && (
-     <Card variant="subtle" padding="sm" className="rounded-2xl ">
-      <div className="flex flex-col gap-2">
-       <div className="flex items-center gap-2">
-        <SectionHeader title={mnemonic_story ? "Mẹo nhớ" : "Nguồn gốc"} />
-        {etymologyType && (
-         <Badge variant="purple" size="sm" className="w-fit">
-          {etymologyType}
-         </Badge>
-        )}
-       </div>
-       <Typography as="p" tone="secondary" leading="relaxed">
-        {mnemonic_story || etymologyText}
-       </Typography>
+   {etymologyText || mnemonicStory ? (
+    <Card variant="subtle" padding="sm">
+     <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+       <SectionHeader title={mnemonicStory ? "Mẹo nhớ" : "Nguồn gốc"} />
+       {etymologyType ? (
+        <Badge variant="purple" size="sm">
+         {etymologyType}
+        </Badge>
+       ) : null}
       </div>
-     </Card>
-    )}
-   </SectionWrapper>
-  </div>
+      <Typography as="p" tone="secondary" leading="relaxed">
+       {mnemonicStory || etymologyText}
+      </Typography>
+     </div>
+    </Card>
+   ) : null}
+  </SectionWrapper>
  );
 }
 
@@ -143,69 +134,57 @@ function AnatomyOverview({
  ).filter((item) => item.symbol || item.label);
 
  return (
-  <div className="flex flex-col gap-4">
-   <Card variant="subtle" padding="sm" className="rounded-2xl ">
-    <div className="flex flex-col gap-3">
-     <SectionHeader title="Sơ đồ cấu tạo" />
-     {structureItems.length > 0 ? (
-      <div className="flex flex-wrap items-center gap-2">
-       {structureItems.map((item, index) => (
-        <div key={`${item.symbol}-${item.label}-${index}`} className="flex items-center gap-2">
-         <Card variant="default" padding="sm" className="rounded-2xl ">
-          <div className="text-center">
-           <Typography as="p" variant="sectionTitle" tone="default" weight="black">
-            {item.symbol}
-           </Typography>
-           {item.label && (
-            <Typography as="p" variant="caption" tone="muted" leading="tight">
-             {item.label}
-            </Typography>
-           )}
-          </div>
-         </Card>
-         {index < structureItems.length - 1 && (
-          <Typography tone="muted" weight="bold">
-           +
+  <div className="grid gap-4">
+   <section className="grid gap-3" aria-label="Sơ đồ cấu tạo">
+    <SectionHeader title="Sơ đồ cấu tạo" />
+    {structureItems.length > 0 ? (
+     <div className="flex flex-wrap items-center gap-2">
+      {structureItems.map((item, index) => (
+       <div key={`${item.symbol}-${item.label}-${index}`} className="flex items-center gap-2">
+        <Card variant="subtle" padding="sm" className="text-center">
+         <Typography as="p" variant="sectionTitle" tone="default" weight="black">
+          {item.symbol}
+         </Typography>
+         {item.label ? (
+          <Typography as="p" variant="caption" tone="muted" leading="tight">
+           {item.label}
           </Typography>
-         )}
-        </div>
-       ))}
-       <Typography tone="muted" weight="bold">
-        =
-       </Typography>
-       <Card
-        variant="subtle"
-        padding="sm"
-        className="rounded-2xl  border-accent/20 bg-accent/10 text-center"
-       >
-        <Typography as="p" variant="sectionTitle" weight="black">
-         {character}
-        </Typography>
-        <Typography as="p" variant="caption" leading="tight">
-         kết quả
-        </Typography>
-       </Card>
-      </div>
-     ) : (
-      <Typography as="p" tone="muted">
-       Chưa có dữ liệu cấu tạo chi tiết.
+         ) : null}
+        </Card>
+        {index < structureItems.length - 1 ? (
+         <Typography tone="muted" weight="bold">
+          +
+         </Typography>
+        ) : null}
+       </div>
+      ))}
+      <Typography tone="muted" weight="bold">
+       =
       </Typography>
-     )}
-    </div>
-   </Card>
+      <Card variant="subtle" padding="sm" className="text-center">
+       <Typography as="p" variant="sectionTitle" tone="accent" weight="black">
+        {character}
+       </Typography>
+       <Typography as="p" variant="caption" tone="muted" leading="tight">
+        kết quả
+       </Typography>
+      </Card>
+     </div>
+    ) : (
+     <Typography as="p" tone="muted">
+      Chưa có dữ liệu cấu tạo chi tiết.
+     </Typography>
+    )}
+   </section>
 
-   {components.length > 0 && (
-    <Card variant="subtle" padding="sm" className="rounded-2xl ">
-     <div className="flex flex-col gap-2">
+   {components.length > 0 ? (
+    <>
+     <Separator />
+     <section className="grid gap-3" aria-label="Thành phần">
       <SectionHeader title="Thành phần" />
-      {components.map((component, index) => (
-       <Card
-        key={`${component.part || "component"}-${index}`}
-        variant="default"
-        padding="sm"
-        className="rounded-2xl "
-       >
-        <div className="flex items-start gap-3">
+      <div className="grid gap-3">
+       {components.map((component, index) => (
+        <div key={`${component.part || "component"}-${index}`} className="flex items-start gap-3">
          <Typography variant="sectionTitle" tone="default" weight="black" className="min-w-6">
           {component.part || "?"}
          </Typography>
@@ -213,18 +192,18 @@ function AnatomyOverview({
           <Typography as="p" tone="default" weight="semibold">
            {component.name || component.meaning || "Thành phần phụ"}
           </Typography>
-          {component.name && component.meaning && (
+          {component.name && component.meaning ? (
            <Typography as="p" variant="caption" tone="muted">
             {component.meaning}
            </Typography>
-          )}
+          ) : null}
          </div>
         </div>
-       </Card>
-      ))}
-     </div>
-    </Card>
-   )}
+       ))}
+      </div>
+     </section>
+    </>
+   ) : null}
   </div>
  );
 }
