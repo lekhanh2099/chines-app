@@ -50,6 +50,17 @@ describe("UI standards guard", () => {
   ]);
  });
 
+ it("rejects namespace component visual bypasses", () => {
+  expect(
+   inspect(
+    'export function Example() { return <><Popover.Trigger className="rounded-xl bg-bg-card px-3" /><Popover.Popup className="border bg-bg-elevated p-2" /></>; }',
+   ),
+  ).toEqual([
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+  ]);
+ });
+
  it("rejects descendant styling that reaches into canonical component anatomy", () => {
   const failures = inspect(
    'export function Example() { return <PageHeader className="[&_h1]:text-2xl [&_p]:leading-5" />; }',
