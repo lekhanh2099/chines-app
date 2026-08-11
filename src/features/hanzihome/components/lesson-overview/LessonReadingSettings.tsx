@@ -1,5 +1,6 @@
 "use client";
 
+import { type ReactNode } from "react";
 import { Eye, Type } from "lucide-react";
 import { z } from "zod";
 
@@ -13,7 +14,6 @@ import { cn } from "@/lib/utils";
 
 import {
  HanziFontPreview,
- HanziText,
  ReaderHanziText,
  StudyInstructionText,
 } from "./hanzi-typography";
@@ -203,15 +203,15 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
       Đây là cách nội dung học sẽ hiển thị với thiết lập hiện tại.
      </Typography>
     </div>
-    <HanziText
+    <ReaderHanziText
      as="span"
      displayMode={displayMode}
-     size="medium"
+     size="lg"
      leading="none"
      tone="accent"
     >
      文
-    </HanziText>
+    </ReaderHanziText>
    </div>
 
    <div className="mt-5">
@@ -272,9 +272,9 @@ function SettingsGroup({
  label,
  children,
 }: {
- icon: React.ReactNode;
+ icon: ReactNode;
  label: string;
- children: React.ReactNode;
+ children: ReactNode;
 }) {
  return (
   <section className="grid gap-3">
