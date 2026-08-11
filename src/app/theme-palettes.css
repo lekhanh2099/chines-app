@@ -21,6 +21,14 @@
  --purple-text: oklch(0.84 0.1 303);
 }
 
+[data-theme][data-palette] {
+ --bg-primary: var(--canvas-background);
+}
+
+[data-theme][data-palette] .app-active-item {
+ color: var(--primary);
+}
+
 [data-theme="light"][data-palette="editorial"] {
  --canvas-background: oklch(0.975 0.012 270);
  --primary: oklch(0.48 0.17 270);
