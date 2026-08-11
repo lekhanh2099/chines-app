@@ -1,7 +1,4 @@
-import {
- HanziAwareText,
- StudyInstructionText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { Card } from "@/components/ui/card";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
