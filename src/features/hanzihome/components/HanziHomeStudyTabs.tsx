@@ -4,7 +4,10 @@ import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { SegmentedControl } from "@/components/ui/segmented-control";
+import {
+ SegmentedControl,
+ type SegmentedControlSurface,
+} from "@/components/ui/segmented-control";
 
 export type HanziHomeStudyTab<T extends string> = {
  key: T;
@@ -20,7 +23,7 @@ type HanziHomeStudyTabsProps<T extends string> = {
  items: readonly HanziHomeStudyTab<T>[];
  onChange: (value: T) => void;
  compact?: boolean;
- surface?: "subtle" | "transparent";
+ surface?: SegmentedControlSurface;
  className?: string;
 };
 
