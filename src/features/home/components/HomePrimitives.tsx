@@ -1,7 +1,7 @@
-import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
+import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 export function HomeSectionHeader({
@@ -18,8 +18,8 @@ export function HomeSectionHeader({
  className?: string;
 }) {
  return (
-  <div className={cn("flex items-end justify-between gap-3", className)}>
-   <div className="min-w-0">
+  <div className={cn("flex flex-wrap items-end justify-between gap-x-3 gap-y-2", className)}>
+   <div className="min-w-0 flex-[1_1_14rem]">
     <Typography
      as="h2"
      variant="sectionTitle"
@@ -43,7 +43,7 @@ export function HomeSectionHeader({
      </Typography>
     ) : null}
    </div>
-   {action}
+   {action ? <div className="shrink-0">{action}</div> : null}
   </div>
  );
 }
