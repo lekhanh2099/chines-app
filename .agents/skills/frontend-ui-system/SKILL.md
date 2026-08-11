@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.0"
+  version: "3.1"
 ---
 
 # Frontend UI System
@@ -35,11 +35,11 @@ npx shadcn@latest add <component> --dry-run
 npx shadcn@latest add <component> --diff
 ```
 
-## 2. Start from the user goal, not the existing screen
+## 2. Start from the user goal, not the old screen
 
-A UI refactor is allowed to change information architecture and flow when the
-current flow creates duplication, hidden state, unnecessary steps or weak task
-orientation. Preserving old JSX is not a product requirement.
+A UI refactor MAY change information architecture and flow when the current
+flow creates duplicated navigation, hidden state, unnecessary steps, weak task
+orientation or interaction clutter. Preserving old JSX is not a product goal.
 
 Before coding, write:
 
@@ -59,13 +59,13 @@ Business/data invariants that must not change:
 
 Then decide whether to preserve, simplify, merge, move or remove a step.
 
-Do not change a flow because it merely looks cleaner. The new flow must reduce
+Do not change a flow only because it looks cleaner. The replacement must reduce
 friction, improve orientation, expose state more clearly or remove duplicated
-navigation/action anatomy.
+interaction anatomy.
 
-## 3. State ownership before component ownership
+## 3. State ownership — TanStack/router first
 
-Use the TanStack ecosystem and router according to ownership:
+Use one authoritative owner:
 
 ```text
 server/cache state       -> TanStack Query
@@ -78,18 +78,46 @@ derived value            -> compute from authoritative inputs
 
 MUST NOT:
 
-- mirror Query data into local state without an explicit editable-draft contract;
-- mirror derived route/form/store values into `useState`;
-- use `useEffect` to repair pure derivation;
-- create update loops by synchronizing two owners bidirectionally;
-- use timeouts, random keys or force renders as state repair;
+- mirror Query data into local state without an editable-draft contract;
+- mirror Form/Store/route values into local state;
+- use effects for pure derivation;
+- synchronize two owners bidirectionally;
+- repair stale state with timeouts, random keys or force renders;
 - hide loading/error/empty behind one fallback value.
 
-Effects are for external synchronization, subscriptions, browser APIs or
-imperative integrations. Every state-writing effect must have a stable guard
-that makes repeated execution idempotent.
+Every state-writing effect must represent a real ownership/external-system
+bridge and be idempotent. Running it repeatedly with the same authoritative
+input must not keep producing state changes.
 
-## 4. Inventory before JSX
+For shared shell interaction state, store only the interaction contract. Example:
+`globalSearchStore` owns `open/query`; HanziHome search results/course/lesson
+data stay in feature Query state.
+
+## 4. Shared shell boundary
+
+`src/components/layout/**` owns global chrome only. Shared shell components MUST
+NOT import feature implementation code.
+
+Feature context is registered through a generic boundary:
+
+```text
+feature
+ -> owner-safe shared store/slot
+ -> Header renders slot
+```
+
+Current examples:
+
+- `HanziHomeHeaderContextBridge` registers the lesson breadcrumb through
+  `headerToolbarStore`;
+- `HanziHomeGlobalSearchBridge` consumes `globalSearchStore` while keeping
+  search data/result navigation inside the feature;
+- HanziHome reader quick settings stay in the lesson workspace toolbar.
+
+Do not move HanziHome catalog hooks, lesson routing, reader settings or search
+result logic back into Header.
+
+## 5. Inventory before JSX
 
 Report:
 
@@ -103,7 +131,7 @@ Missing contract:
 Decision: use | extend | create | justified local exception
 ```
 
-Search:
+Search locally when possible:
 
 ```bash
 find src/components/ui -maxdepth 2 -type f | sort
@@ -116,13 +144,13 @@ Do not create a second Button, Card, PageHeader, IconTile, Dialog, Select,
 DropdownMenu, Tooltip, Chip, Typography, Switch or SegmentedControl visual
 language inside a feature.
 
-## 5. Primitive boundary and `className`
+## 6. Primitive boundary and `className`
 
 Feature code MUST NOT import Base UI or Radix primitives directly.
 
 Shared primitives own:
 
-- internal tokens and typography;
+- tokens and typography;
 - border/radius/background/shadow;
 - interaction anatomy;
 - hover/focus/active/disabled/invalid behavior;
@@ -133,10 +161,10 @@ Shared primitives own:
 Feature code owns labels, data, callbacks, business conditions, parent layout,
 responsive placement and external spacing.
 
-A canonical component call site may use `className` only for parent-owned
-layout. It MUST NOT visually repair the component.
+Canonical call-site `className` is layout-only. It MUST NOT visually repair the
+component.
 
-Forbidden examples:
+Forbidden:
 
 ```tsx
 <Card className="rounded-xl border bg-bg-card p-4" />
@@ -144,38 +172,38 @@ Forbidden examples:
 <PageHeader className="[&_h1]:text-2xl" />
 ```
 
-When a valid variation repeats, extend the semantic owner with a typed prop or
-variant. Do not add one-off pixel variants.
+When valid variation repeats, extend the semantic owner with a typed API.
+Do not add one-off pixel variants.
 
 `scripts/check-ui-standards.mjs` is the executable guard. Never add a baseline
 or broad exception to make a migration pass.
 
-## 6. Component choice
+## 7. Component choice
 
 Use the canonical matrix and inventory.
 
-Special rules:
+Rules:
 
 - DropdownMenu is the action-menu primitive.
-- Repeated edit/reorder/delete icon clusters should normally become one action menu.
-- A styled Popover is not a Menu.
-- Tooltip contains supplementary information only.
+- Repeated edit/reorder/delete icon clusters normally become one action menu.
+- Popover is not an action menu.
+- Tooltip is supplementary only.
 - Badge is static status/category; ordinary counts are usually Typography.
 - Chip is interactive.
 - IconTile owns decorative icon-container visuals.
-- Toggle Buttons require exposed state; full settings booleans use Switch.
+- Direct boolean preferences use Switch on settings pages.
 - SegmentedControl is a compact pressed single-choice group.
 - Tabs are only for real tab/panel semantics; never hand-build partial tab ARIA.
 - A keyboard search surface is a composite, not Input + Dialog alone.
 - EmptyState owns empty/no-result presentation; errors remain separate.
-- Form adapters compose shared UI and must not create a parallel control system.
+- Form adapters compose shared UI and do not create a parallel control system.
 - Do not create alias-only wrappers around existing primitives.
 
-Application headings and paragraphs use Typography. HanziHome learner content
-uses the feature-owned learner typography. Learner typography must not become a
-generic badge, pill, icon tile or surface wrapper.
+Application headings/paragraphs use Typography. HanziHome learner content uses
+feature-owned learner typography. Learner typography must not become a generic
+badge, pill, icon tile or surface wrapper.
 
-## 7. Interaction density
+## 8. Interaction density
 
 Use one density family per control row:
 
@@ -186,11 +214,11 @@ menu             : 40px
 inline text      : content-sized
 ```
 
-A compact Select next to a Button uses Select `sm` + Button `toolbar`. Do not
-pair 36px and 44px controls in the same command row unless the hierarchy
-explicitly requires it.
+A compact Select next to a Button uses Select `sm` + Button `toolbar`.
+Do not pair 36px and 44px controls in one command row without an explicit
+hierarchy reason.
 
-## 8. Surface and information hierarchy
+## 9. Surface and information hierarchy
 
 Do not equate hierarchy with more cards.
 
@@ -213,9 +241,9 @@ Global navigation and page content have different jobs:
 - Sidebar owns the app sitemap;
 - Home focuses on continuation and attention, not duplicate route cards;
 - contextual module navigation stays inside the owning feature;
-- the active global route must remain visible in its expanded Sidebar group.
+- the active global route remains visible in its expanded Sidebar group.
 
-## 9. Page and shell ownership
+## 10. Page and shell ownership
 
 Normal pages use PageContainer.
 
@@ -224,34 +252,38 @@ not subtract guessed Header/mobile-nav heights with `calc(100dvh - ...)`.
 Contained workspaces inherit `h-full min-h-0` and assign overflow to the actual
 pane.
 
-PageHeader owns title/description hierarchy and supports typed density. Do not
-reach into its descendants with CSS selectors.
+PageHeader owns title/description hierarchy and typed density. Do not reach into
+its descendants with CSS selectors.
 
-## 10. Settings and contextual controls
+## 11. Settings and contextual controls
 
-Header Gear always contains global preferences. Feature-specific quick settings
-appear only when the feature context is active.
+Header Gear is global only:
+
+- Theme;
+- route-scoped lookup;
+- Focus mode;
+- link to full Settings.
+
+Feature-specific quick settings stay where their context exists.
 
 For HanziHome:
 
-- Theme / lookup / Focus are global quick preferences;
-- reader font/size/reveal/visibility appear only in a lesson workspace;
-- reader font choices show a real font preview;
-- `/settings?section=reading` remains the complete settings hub;
+- reader font/size/reveal/visibility live in the lesson workspace toolbar;
+- reader font choices show a real Hanzi font preview;
+- `/settings?section=reading` remains the complete reading-settings hub;
 - Avatar owns identity/provider/logout only.
 
-## 11. Destructive actions
+## 12. Destructive actions
 
-A destructive user-facing action must have one of:
+A destructive user-facing action requires one of:
 
 - explicit confirmation with consequence and pending state; or
 - a clearly recoverable Undo flow.
 
-If the backend operation is soft-delete/archive, copy should describe the
-recoverable behavior accurately. Do not silently archive from an always-visible
-red button.
+If backend behavior is soft-delete/archive, copy should describe recoverability.
+Do not expose permanent red delete buttons across every editable row.
 
-## 12. Accessibility
+## 13. Accessibility
 
 Use primitive-native semantics.
 
@@ -262,16 +294,16 @@ Verify:
 - menu trigger/items and destructive tone;
 - dialog title, focus, Escape and return focus;
 - Select semantics;
-- segmented single-choice announcement;
+- SegmentedControl selected state;
 - visible focus;
 - keyboard operation;
 - touch target size;
-- `aria-current` for active route navigation;
-- no hidden active route in collapsed navigation groups.
+- `aria-current` for active routes;
+- active route is not hidden inside a collapsed navigation group.
 
 Do not add ARIA to compensate for the wrong interaction model.
 
-## 13. Visual system
+## 14. Visual system
 
 Preserve semantic tokens and shared surface grammar.
 
@@ -290,7 +322,10 @@ legitimate local exception
 ad-hoc debt
 ```
 
-## 14. Verification
+Named Tailwind palette enforcement is not yet a complete machine-proven repo
+contract. Do not claim it is clean without executable migration evidence.
+
+## 15. Verification
 
 Follow `docs/ui/ui-verification.md`.
 
@@ -306,19 +341,19 @@ For app-code completion run:
 npm run check
 ```
 
-If the environment cannot execute the full gate or render the requested
-viewports, state that explicitly. Never translate source inspection into a false
-claim that the UI was visually verified.
+If the environment cannot execute the full gate or render authenticated
+viewports, state that explicitly. Never translate source inspection or a Vercel
+build into a false claim that the full UI matrix passed.
 
-## 15. Handoff
+## 16. Handoff
 
 Report:
 
 ```text
 User-flow change:
 State owners:
+Shell/feature boundary changes:
 Component contracts used/extended:
-Precedent used:
 Meaningful consumers:
 Removed duplicated recipes:
 Feature-local compositions:
