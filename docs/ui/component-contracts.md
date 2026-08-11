@@ -1,44 +1,43 @@
 # UI Component Contracts
 
-This is the canonical guide for choosing and composing UI in `chines-app`.
+This is the canonical UI/UX contract for `chines-app`.
 
-Local source code is the source of truth. Generic shadcn, Radix and Base UI
-documentation helps with concepts and upstream APIs but MUST NOT override
-customized local components.
+Local source code is the source of truth. Generic shadcn, Radix, Base UI and
+framework examples are reference material only and MUST NOT override customized
+local components or product interaction contracts.
 
 ## 1. Selection matrix
 
-| Need                              | Canonical contract                      | Notes                                          |
-| --------------------------------- | --------------------------------------- | ---------------------------------------------- |
-| Text action / CTA                 | `Button`                                | Use semantic variant and interaction density   |
-| Icon-only action                  | `Button` icon size + optional `Tooltip` | Always retain an accessible name               |
-| Modal task                        | `Dialog`                                | Choose typed size, placement and scroll mode   |
-| Destructive confirmation          | confirmation Dialog pattern             | Consequence and pending state must be explicit |
-| Side or bottom panel              | `Sheet`                                 | Side is a responsive behavior contract         |
-| Non-modal contextual content      | shared Popover wrapper                  | Not an action menu                             |
-| Action/function list              | `DropdownMenu`                          | Full keyboard/menu semantics                   |
-| Compact preference inside a menu  | `DropdownMenuCheckboxItem`              | Keeps checkbox-menu semantics                  |
-| Supplementary hint                | `Tooltip`                               | Never hide required information in a tooltip   |
-| Single-value selection            | `src/components/ui/select.tsx`          | Composable primitive                           |
-| String option-array selection     | `OptionSelect`                          | Typed convenience adapter over `Select`        |
-| Radio selection                   | `RadioGroup`                            | Typed string-valued exclusive choice           |
-| Boolean setting                   | `Switch`                                | Use label and description outside the control  |
-| Independent boolean selection     | `Checkbox`                              | Checkbox semantics                             |
-| Interactive compact filter/action | `Chip`                                  | Optional `pressed` exposes `aria-pressed`      |
-| Static status/category            | `Badge`                                 | Not clickable; do not use for ordinary counts  |
-| Application text hierarchy        | `Typography`                            | Do not replace HanziHome study typography      |
-| Avatar/profile image              | `Avatar`                                | Always include fallback initials               |
-| Decorative icon tile              | `IconTile`                              | Owns tile tone, radius and icon size            |
-| Visual section/card               | `Card`                                  | Typed surface, padding and interactive state    |
-| Divider                           | `Separator`                             | Avoid repeated border-div recipes              |
-| Compact exclusive options         | `SegmentedControl`                      | Small single-choice set, exposes `aria-pressed`|
-| Content tabs                      | local `Tabs` contract                   | Use only when content-panel semantics are real |
-| Empty/no-result state             | `EmptyState`                            | Initial, empty and error remain distinct       |
-| Page heading                      | `PageHeader`                            | Typed density; no descendant restyling         |
-| Search command surface            | target `CommandDialog`                  | Deferred until Global Search migration         |
+| Need                              | Canonical contract                      | Notes |
+| --------------------------------- | --------------------------------------- | ----- |
+| Text action / CTA                 | `Button`                                | semantic variant + density |
+| Icon-only action                  | `Button` icon size + optional `Tooltip` | always keep an accessible name |
+| Modal task                        | `Dialog`                                | typed size, placement, scroll ownership |
+| Destructive confirmation          | confirmation Dialog pattern             | explicit consequence + pending state |
+| Side or bottom panel              | `Sheet`                                 | responsive panel contract |
+| Non-modal contextual content      | shared Popover wrapper                  | not an action menu |
+| Action/function list              | `DropdownMenu`                          | keyboard/menu semantics |
+| Compact preference in a menu      | `DropdownMenuCheckboxItem`              | checkbox-menu semantics |
+| Supplementary hint                | `Tooltip`                               | never required information |
+| Single-value selection            | `Select`                                | local Radix wrapper |
+| String option-array selection     | `OptionSelect`                          | typed convenience adapter |
+| Radio selection                   | `RadioGroup`                            | exclusive choice |
+| Boolean setting                   | `Switch`                                | label/description outside control |
+| Independent boolean selection     | `Checkbox`                              | checkbox semantics |
+| Interactive compact token         | `Chip`                                  | filter/removable/pressed token |
+| Static status/category            | `Badge`                                 | not clickable; ordinary counts are text |
+| Application text hierarchy        | `Typography`                            | not Hanzi learner text |
+| Avatar/profile image              | `Avatar`                                | fallback initials required |
+| Decorative icon tile              | `IconTile`                              | owns tile tone/radius/icon size |
+| Visual section/card               | `Card`                                  | typed surface/padding/interaction |
+| Divider                           | `Separator`                             | semantic separation |
+| Compact exclusive options         | `SegmentedControl`                      | pressed single-choice group |
+| Content tabs                      | local `Tabs`                            | only real tab/panel semantics |
+| Empty/no-result state             | `EmptyState`                            | empty is not error |
+| Page heading                      | `PageHeader`                            | typed density; no descendant repair |
+| Search command surface            | current HanziHome search bridge         | shell owns open/query state only |
 
-See `docs/ui/component-inventory.md` for implementation status and migration
-priority.
+See `docs/ui/component-inventory.md` for implementation status.
 
 ## 2. Canonical source paths
 
@@ -69,19 +68,19 @@ src/components/ui/segmented-control.tsx
 src/components/patterns/empty-state.tsx
 ```
 
-Feature-owned learner typography:
+Learner typography remains feature/domain owned:
 
 ```text
 src/features/hanzihome/components/lesson-overview/hanzi-typography.tsx
 src/components/patterns/learner-text.tsx
 ```
 
-## 3. Primitive, pattern and feature ownership
+## 3. Primitive, pattern, feature and shell ownership
 
 ### Primitive
 
 Owns element/primitive anatomy, semantics, focus, disabled/invalid behavior,
-tokens, variants, internal icon sizing and overlay stacking.
+tokens, variants, density, internal icon sizing and overlay stacking.
 
 ### Pattern
 
@@ -91,34 +90,76 @@ Examples:
 
 ```text
 EmptyState
-CommandDialog
-ResponsiveOverlay
+future CommandDialog
+future ResponsiveOverlay
 ```
 
 ### Feature
 
-Owns product labels, data, business rules, query/form/store integration and
-callbacks.
+Owns product labels, domain data, business conditions, query/form behavior,
+feature-specific navigation and contextual UI.
 
-Feature code MUST NOT reproduce primitive or pattern anatomy.
+Feature code MUST NOT reproduce primitive anatomy.
 
-A feature may own a repeated product-specific composition only when the
-composition has a stable domain meaning. Example:
-`LibraryCrudActionsMenu` owns the course/book/lesson edit-action grammar; it
-does not replace `DropdownMenu` itself.
+Stable product-specific compositions MAY remain in a feature when their meaning
+is domain-specific. Example: `LibraryCrudActionsMenu` represents the
+course/book/lesson edit grammar; it does not replace DropdownMenu.
 
-## 4. `className` ownership
+### Shell
 
-Allowed at canonical-component call sites:
+`src/components/layout/**` owns global application chrome only. Shared shell
+components MUST NOT import feature implementation code.
+
+Feature-specific Header content is inverted through a shell boundary:
+
+```text
+feature
+  -> owner-safe headerToolbarStore registration
+  -> Header renders shared slot
+```
+
+Global search interaction state is similarly split:
+
+```text
+Header / Cmd+K
+  -> globalSearchStore { open, query }
+  -> feature search bridge owns query data/results/navigation
+```
+
+The shared store carries interaction state, not duplicated server/domain data.
+
+## 4. State ownership
+
+Use one authoritative owner:
+
+```text
+URL/shareable navigation     -> route/search params
+server/cache state           -> TanStack Query
+form/validation/dirty state  -> TanStack Form
+cross-feature client UI      -> scoped TanStack Store
+transient local interaction  -> local React state
+pure derivation              -> compute from authoritative inputs
+```
+
+Do not mirror Query, Form, Store or route state into local React state without a
+real draft/bridge contract.
+
+Every state-writing effect must synchronize an external/ownership boundary and
+must be idempotent. Running it again with the same authoritative input must not
+continue producing state changes.
+
+## 5. `className` ownership
+
+Allowed at canonical component call sites:
 
 - parent-imposed width/max-width;
 - grid/flex placement;
 - responsive visibility;
-- parent-owned scroll constraints;
 - external spacing owned by the parent;
+- parent-owned scroll constraints;
 - `sr-only` and equivalent accessibility utilities.
 
-Forbidden at canonical-component call sites:
+Forbidden at canonical component call sites:
 
 - color/tone;
 - border appearance;
@@ -129,50 +170,50 @@ Forbidden at canonical-component call sites:
 - hover/focus/active recipes;
 - overlay z-index;
 - primitive-owned icon sizing;
-- descendant selectors that reach into component anatomy, such as
-  `[&_h1]:...` or `[&_p]:...`.
+- descendant selectors reaching into component anatomy, e.g. `[&_h1]:...`.
 
-A repeated valid variation becomes a semantic typed variant. A one-off pixel
-value does not automatically justify a new variant.
+Repeated valid visual variation becomes a typed semantic API on the owner.
+One-off pixels do not justify a variant.
 
 `scripts/check-ui-standards.mjs` enforces this for canonical visual contracts,
 including Button, form controls, Card, Badge, SelectTrigger, PageHeader,
 SegmentedControl and IconTile. Do not add a baseline to hide violations.
 
-## 4.1 App-page and scroll ownership
+## 6. App page, viewport and scroll ownership
 
-`PageContainer` owns the normal application-page frame. Its direct content is
-fluid (`w-full min-w-0`) with responsive gutters; it MUST NOT center or apply a
-page-level `max-width`.
+`PageContainer` owns the normal application page frame. Pages remain fluid and
+use responsive gutters; they do not add page-level centered max-width shells.
 
-The authenticated App Shell owns the available viewport and normal page scroll.
-Feature pages MUST NOT subtract guessed Header or mobile-navigation heights
-with `calc(100dvh - ...)`. A contained workspace that needs internal scrolling
-inherits `h-full min-h-0` from the shell and assigns overflow only to the actual
-pane that scrolls.
+The authenticated App Shell owns available viewport height and normal route
+scrolling. Feature pages MUST NOT subtract guessed Header/mobile-navigation
+heights with `calc(100dvh - ...)`.
 
-Reading measure, review cards and dialogs may constrain their own content when
-that improves comprehension or the task. Those constraints stay inside the
-feature surface; they must not shrink the application page or create empty side
-gutters on desktop.
-
-## 5. Interaction density
-
-Density is a cross-component contract, not a component-local nickname.
+Contained workspaces inherit:
 
 ```text
-Touch / standalone action : 44px minimum (`Button sm/default`, default Input/Select)
-Toolbar / command bar      : 36px (`toolbar`, `icon-toolbar`, compact Input, sm Select)
-Menu row                   : 40px (`menu`)
-Inline text action         : content-sized (`inline`)
+h-full min-h-0
 ```
 
-Controls sharing one row MUST use the same density family. Do not pair a 36px
-Select with a 44px Button inside a compact toolbar.
+and place overflow only on the pane that actually scrolls.
 
-## 6. Button
+Reading measure, review cards and dialogs may constrain their own internal
+content where comprehension requires it.
 
-Stable variants express meaning. Stable sizes express interaction density.
+## 7. Interaction density
+
+Density is shared across controls:
+
+```text
+Touch / standalone action : 44px minimum
+Toolbar / command bar      : 36px
+Menu row                   : 40px
+Inline text action         : content-sized
+```
+
+Controls in the same command row use the same family. A compact Select next to a
+Button uses Select `sm` + Button `toolbar`, not 36px next to 44px.
+
+## 8. Button
 
 Preferred semantic sizes:
 
@@ -186,25 +227,25 @@ icon-round
 inline
 ```
 
-Legacy aliases may remain while consumers are migrated, but new feature code
-must choose the semantic family above.
+Legacy aliases may remain while older consumers migrate but new code should not
+expand that taxonomy.
 
 Rules:
 
 - non-submit buttons default to `type="button"`;
-- submit buttons set `type="submit"`;
-- command bars use `toolbar` for labeled actions and `icon-toolbar` for icon-only controls;
-- contextual navigation buttons use `navigation` while inactive and `active` while selected;
-- icon-only buttons require an accessible label;
-- toggle buttons expose state with `aria-pressed` or use Switch;
-- destructive menu actions use the destructive DropdownMenu tone or `menuDestructive` where a Button row is appropriate;
+- submit buttons explicitly use `type="submit"`;
+- command bars use `toolbar` / `icon-toolbar`;
+- navigation rows use `navigation` / `active`;
+- icon-only controls require accessible names;
+- toggles expose `aria-pressed` or use Switch/Checkbox;
 - loading actions remain disabled and visibly pending.
 
-## 7. Card and surface hierarchy
+## 9. Card and surface hierarchy
 
-`Card` owns radius, border, surface, padding and interactive hover/focus state.
+Card owns radius, border, background, padding, elevation and interactive
+hover/focus state.
 
-Stable variants include:
+Stable variants:
 
 ```text
 default
@@ -214,97 +255,87 @@ elevated
 interactive
 ```
 
-`interactive` may be composed with `asChild` for a Link when the complete card
-is one navigation target.
+`interactive` may use `asChild` when the entire card is one Link/action target.
 
-Do not write:
+Do not write feature recipes such as:
 
 ```tsx
 <Card className="rounded-xl border bg-bg-card p-4 hover:bg-bg-elevated" />
 ```
 
-Use typed `variant` and `padding` instead.
-
 Avoid card-in-card-in-card hierarchy. Prefer:
 
 ```text
-major surface Card
-  section heading
+major surface
+  heading
   Separator / whitespace
-  terminal interactive cards or rows
+  terminal interactive card or row
 ```
 
-A hierarchy level that only groups children usually does not need its own
-background, radius and border.
+A grouping level does not automatically deserve its own border/background.
 
-## 8. PageHeader and IconTile
+## 10. PageHeader, IconTile, Badge and Typography
 
-`PageHeader` owns the title/description hierarchy and supports typed density.
-Callers provide title, description, optional eyebrow, meta and actions. They do
-not restyle internal `h1` or `p` nodes through descendant selectors.
+`PageHeader` owns title/description hierarchy. Callers provide title,
+description, optional eyebrow/meta/actions and typed density. They do not style
+its internal headings through selectors.
 
-`IconTile` is the canonical decorative square/icon container. Typography and
-learner-text components must not be used as generic visual wrappers for icon
-tiles, status pills or badges.
+`IconTile` owns decorative icon-container visuals. Typography/learner-text must
+not be used as generic visual wrappers for icon tiles or status pills.
 
-## 9. Dialog
+`Badge` is static status/category metadata. Ordinary facts like `25 bài`,
+`2 quyển`, `695 từ` normally use subdued Typography instead of creating a field
+of pills.
 
-`DialogContent` supports:
+General application text uses `Typography`.
 
-```text
-size: sm | md | lg | xl | command | editor
-placement: center | top
-scrollMode: body | content | none
-surface: default | glass
-```
+HanziHome Chinese text, pinyin, reading-size and learner typography use
+`HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
+`TranslationText`, `StudyInstructionText` or `HanziFontPreview`.
 
-Every dialog requires a title, managed focus, Escape behavior, focus
-restoration and an explicit async state when applicable.
+## 11. Dialog and destructive actions
 
-Destructive flows require either a confirmation dialog with the consequence and
-pending state, or an explicit recoverable Undo contract. A button labeled
-"Xóa" must not silently perform an unrecoverable operation.
+Every dialog requires a title, managed focus, Escape behavior, focus return and
+an explicit async state when applicable.
 
-## 10. DropdownMenu and Popover
+A destructive user-facing action requires either:
 
-Use `DropdownMenu` for a list of actions/functions. It owns:
+- confirmation with consequence + pending state; or
+- an explicit recoverable Undo contract.
 
-- trigger state;
-- managed focus;
-- arrow-key navigation;
-- typeahead;
-- checkbox/radio items;
-- submenus;
-- disabled/destructive states;
-- close and focus return.
+If the backend is soft-delete/archive, copy must say the content is recoverable.
+A permanent red delete cluster is not the default editing UI.
 
-Use Popover for contextual interactive content that is not an application menu.
-Do not set `role="menu"` on arbitrary Popover children.
+## 12. DropdownMenu and Popover
 
-Repeated edit/reorder/delete icon clusters are action menus, not toolbars. The
-HanziHome library uses one overflow menu per course/book/lesson and keeps delete
-confirmation separate from the menu primitive.
+DropdownMenu is the action/function list contract and owns managed focus,
+arrow-key navigation, typeahead, disabled/destructive states, submenus and focus
+return.
 
-## 10.1 Settings information architecture
+Popover is for non-menu contextual interactive content.
 
-Global preferences have one Header entry point:
+Repeated edit/reorder/delete icon clusters should become one overflow action
+menu. HanziHome Library uses one menu per course/book/lesson and a separate
+confirmation dialog for delete.
 
-- Gear always exposes global Theme, lookup and Focus preferences;
-- HanziHome reader controls appear in Gear only while an actual lesson
-  workspace is active;
-- reader font choices preview the selected Hanzi font rather than exposing only
-  a font name;
-- `/settings?section=reading` remains the full reader-settings hub;
-- Avatar owns identity/provider context and logout only.
+## 13. Settings information architecture
 
-Use a labeled `Switch` for a full settings-page row. Use
-`DropdownMenuCheckboxItem` for the equivalent compact Gear action.
+Global settings entry points are intentionally narrow:
 
-Reader quick settings use the second-level DropdownMenu contract: the top-level
-menu lists reader groups and selecting one replaces that menu content with its
-radio or checkbox choices plus an explicit return item.
+- Header Gear contains only global Theme, route-scoped lookup and Focus mode,
+  plus a link to the full Settings hub;
+- Avatar contains identity/provider context and logout only;
+- `/settings?section=app|reading|ai` remains the complete settings hub.
 
-## 11. Navigation and page information architecture
+HanziHome reader settings are contextual learner controls, so their quick entry
+lives in the lesson workspace toolbar, not in global Gear. The reader menu owns
+font, size, reveal and visibility groups and links to full reading settings.
+Font choices preview the actual Hanzi font.
+
+Use Switch for full settings-page boolean rows. Use menu checkbox/radio items
+inside compact menus.
+
+## 14. Navigation and Home information architecture
 
 The global Sidebar owns the application sitemap. Home MUST NOT recreate the
 same sitemap as large navigation cards.
@@ -317,116 +348,63 @@ What recent work should I continue?
 What needs attention next?
 ```
 
-The Sidebar groups routes as Học, Luyện, Năng lực and Cá nhân. When pathname
-changes, the group containing the active route must be expanded so the current
-location is never hidden inside a collapsed group. Users may keep other groups
-open.
+Sidebar groups routes as Học, Luyện, Năng lực and Cá nhân. When pathname
+changes, the group containing the active route must become expanded so the
+current location is never hidden. User-opened unrelated groups may stay open.
 
-HanziHome module navigation is contextual, not a second global Sidebar.
+HanziHome module navigation is contextual and remains inside the feature.
 
-## 12. SegmentedControl and Tabs
+## 15. SegmentedControl and Tabs
 
-Use `SegmentedControl` for a compact exclusive option set such as view mode,
-active pane or module selector when the interaction is a pressed single-choice
-group. It owns the active/inactive Button grammar and exposes `aria-pressed`.
-It supports typed surface and density; callers do not repair its background or
-padding with `className`.
+Use SegmentedControl for compact pressed single-choice sets such as view mode,
+active pane or module selection. It owns active/inactive Button grammar and
+`aria-pressed`.
 
-Use `Tabs` only when the interaction truly exposes content-panel tab semantics.
-Do not hand-build `role="tab"` on Buttons without the complete tab keyboard and
-panel relationship contract.
-
-## 13. Chip and Badge
-
-`Badge` is static status/category metadata. It owns pill anatomy and icon size.
-Ordinary numeric facts such as "25 bài" or "2 quyển" normally render as subdued
-Typography; do not turn every count into a Badge.
-
-`Chip` is an interactive compact control. Use `pressed` only for selectable
-chips so the component exposes `aria-pressed`.
-
-## 14. Typography
-
-General shell/page hierarchy uses Typography variants:
-
-```text
-display
-pageTitle
-sectionTitle
-cardTitle
-body
-bodySmall
-label
-caption
-overline
-code
-```
-
-Canonical application typography is mandatory. Route, layout and feature code
-uses `Typography` for headings, paragraphs, captions, overlines and code-style
-application text.
-
-HanziHome Chinese text, pinyin, font selection and learner reading-size controls
-use `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
-`TranslationText`, `StudyInstructionText` or `HanziFontPreview`. These owners
-set language metadata and reader font/size.
-
-Learner typography is for learner content. It must not become a generic wrapper
-for borders, icon tiles, status pills or application metadata.
-
-## 15. Avatar
-
-Use Avatar with AvatarImage and AvatarFallback. Fallback initials are mandatory.
-Provider identity is static metadata and uses Badge rather than a hand-built
-Typography pill.
+Use Tabs only for true tab/panel semantics. Do not hand-build partial
+`role="tab"` implementations without complete keyboard and panel relationships.
 
 ## 16. Select
 
-Canonical UI value is normalized once, normally to string.
+Select owns control appearance. Feature code owns options and business disabled
+conditions.
 
-Form adapters own value conversion, validation, description/error association
-and blur handling. Feature code owns options and business disabled conditions.
-
-`SelectTrigger` supports a typed `breadcrumb` variant for Header lesson
-selection. Header/layout code must not export a visual class recipe to repair the
-Select primitive from the outside.
+`SelectTrigger variant="breadcrumb"` is the canonical compact Header lesson
+selector appearance. Layout code must not export CSS recipes to restyle Select
+from outside.
 
 ## 17. Search/command
 
-A keyboard-selected search surface is a composite widget, not only Input inside
-Dialog. It must define input/result relationship, selection, Arrow keys, Enter,
-Escape, loading, initial state, empty state, error, direct actions, close control
-and focus restoration.
+A keyboard-selected search surface is a composite, not Input + Dialog alone.
+
+Current architecture deliberately separates:
+
+- `globalSearchStore`: open/query interaction state used by Header and Cmd/Ctrl+K;
+- `HanziHomeGlobalSearchBridge`: current product search data, course/lesson
+  context, result navigation and direct dictionary lookup;
+- `GlobalSearchDialog`: feature search UI.
+
+Do not move HanziHome catalog/query/navigation logic back into Header. A future
+feature-neutral search product may replace the bridge only through an explicit
+migration.
 
 ## 18. Visual system
 
 Global visual recipes have explicit ownership:
 
-- `nova-shell-*` is opaque app chrome with a 1px divider only;
+- `nova-shell-*` is opaque global chrome;
 - `nova-page` is the neutral content canvas;
 - `app-gradient-hero` and `app-glass-surface` are compatibility aliases only;
 - `hanzihome-liquid-*` is limited to HanziHome workspace chrome;
-- `app-brand-gradient` is identity and compact emphasis only.
+- `app-brand-gradient` is compact identity/emphasis only.
 
-Flat-surface grammar is shared across the app: controls use `rounded-lg`, while
-cards, panels and overlays use `rounded-xl`; cards and shell surfaces rely on a
-1px semantic border rather than decorative shadow. Feature and layout code must
-not add `backdrop-blur`, legacy hero/glass recipes or large overlay shadows.
+Controls use `rounded-lg`; cards/panels/overlays use `rounded-xl`. Semantic 1px
+borders establish most hierarchy. Overlay elevation belongs to overlay
+primitives.
 
-Feature code uses semantic tokens. Named/raw color recipes belong to tokens or
-primitive owners, not feature JSX.
+Feature code uses semantic tokens and must not introduce raw palette/gradient
+recipes to solve local visual problems.
 
-## 19. Developer API surface
-
-Developer API documentation is a feature page, not a third-party Swagger
-surface. It composes PageHeader, Card, Badge, Button, Separator and Typography;
-endpoint details reuse native semantic `details` / `summary` disclosure.
-
-Never render or copy a browser/Supabase user access token in the page.
-Integration-key raw secrets are revealed once only by the key manager and are
-not retained in client state after its Dialog closes.
-
-## 20. shadcn workflow
+## 19. shadcn workflow
 
 Before add/update:
 
@@ -440,7 +418,7 @@ npx shadcn@latest add <component> --diff
 Read local source and consumers. STOP AND CONFIRM before overwrite, dependency
 addition or breaking API migration.
 
-## 21. Feature checklist
+## 20. Feature checklist
 
 Before JSX:
 
@@ -460,14 +438,16 @@ Risk:
 
 After implementation:
 
-- no direct primitive-library import in feature code;
+- no feature implementation import inside shared shell components;
+- no direct primitive-library import in features;
 - no duplicated visual/control recipe;
 - no canonical primitive repaired by visual `className`;
 - no inaccessible custom interaction;
 - no blank loading/initial state;
 - no hard-coded shell-height subtraction;
-- server state remains in TanStack Query;
-- form state remains in TanStack Form;
-- URL/shareable state remains in route/search params;
-- desktop, iPad and mobile checked when visual behavior changed;
-- component choice and residual risk documented in the handoff.
+- server state stays in TanStack Query;
+- form state stays in TanStack Form;
+- cross-feature client interaction stays in scoped TanStack Store;
+- URL/shareable state stays in route/search params;
+- desktop/iPad/mobile are actually rendered when visual behavior changes;
+- component choice and residual risk are documented in handoff.
