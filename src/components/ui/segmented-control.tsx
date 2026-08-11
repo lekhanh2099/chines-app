@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export type SegmentedControlItem<T extends string = string> = {
@@ -38,6 +39,7 @@ export function SegmentedControl<T extends string>({
  onChange,
  className,
  itemClassName,
+ "aria-label": ariaLabel,
 }: {
  value: T;
  items?: SegmentedControlItem<T>[];
@@ -45,11 +47,14 @@ export function SegmentedControl<T extends string>({
  onChange: (key: T) => void;
  className?: string;
  itemClassName?: string;
+ "aria-label"?: string;
 }) {
  const resolvedGroups = getSegmentedControlGroups({ items, groups });
 
  return (
   <div
+   role="group"
+   aria-label={ariaLabel}
    className={cn(
     "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
     className,
@@ -57,9 +62,9 @@ export function SegmentedControl<T extends string>({
   >
    {resolvedGroups.map((group, groupIndex) => (
     <div key={group.key} className="flex shrink-0 items-center gap-1">
-     {groupIndex > 0 && (
+     {groupIndex > 0 ? (
       <span aria-hidden="true" className="h-6 w-px shrink-0 rounded-full bg-border-default" />
-     )}
+     ) : null}
 
      <div className="flex items-center gap-1">
       {group.items.map((item) => {
@@ -67,23 +72,19 @@ export function SegmentedControl<T extends string>({
        const active = value === item.key;
 
        return (
-        <button
+        <Button
          key={item.key}
          type="button"
+         size="toolbar"
+         variant={active ? "active" : "navigation"}
          disabled={item.disabled}
-         data-active={active ? "true" : "false"}
+         aria-pressed={active}
          onClick={() => onChange(item.key)}
-         className={cn(
-          "flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-md px-2.5  font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
-          active
-           ? "app-active-item"
-           : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
-          itemClassName,
-         )}
+         className={cn("shrink-0", itemClassName)}
         >
-         {Icon ? <Icon className="h-4 w-4" /> : null}
+         {Icon ? <Icon data-icon="inline-start" /> : null}
          {item.label}
-        </button>
+        </Button>
        );
       })}
      </div>
