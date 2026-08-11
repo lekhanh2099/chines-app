@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const badgeVariants = cva(
- "inline-flex items-center rounded-full font-bold uppercase tracking-[0.18em]",
+ "inline-flex items-center gap-1.5 rounded-full font-bold uppercase tracking-[0.18em] [&_svg]:size-3.5 [&_svg]:shrink-0",
  {
   variants: {
    variant: {
@@ -32,7 +32,7 @@ type BadgeProps = React.ComponentProps<"span"> & VariantProps<typeof badgeVarian
 
 function Badge({ className, variant, size, children, ...rest }: BadgeProps) {
  return (
-  <span className={cn(badgeVariants({ variant, size, className }))} {...rest}>
+  <span data-slot="badge" className={cn(badgeVariants({ variant, size }), className)} {...rest}>
    {children}
   </span>
  );
