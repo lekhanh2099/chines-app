@@ -2,16 +2,21 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 
+import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
- "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+ cn(
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all select-none active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  focusRingClassName,
+  invalidFocusRingClassName,
+ ),
  {
   variants: {
    variant: {
     default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90",
     outline:
-     "border-border bg-bg-card hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input dark:hover:bg-muted",
+     "border-border-default bg-bg-input text-text-primary hover:border-primary/25 hover:bg-bg-subtle aria-expanded:bg-bg-subtle aria-expanded:text-text-primary",
     secondary:
      "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
     ghost:
