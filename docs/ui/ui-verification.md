@@ -46,6 +46,10 @@ Check:
 - horizontal overflow;
 - neutral canvas, opaque surfaces and 1px border hierarchy;
 - controls at `rounded-lg`; cards/panels/overlays at `rounded-xl`;
+- no accidental `rounded-2xl/3xl`, arbitrary radius or 2px+ feature borders;
+- focus-visible treatment is the same across Button/Input/Textarea/Select/Checkbox/Radio/Switch/Chip;
+- no feature-owned ring or z-index repair;
+- sibling rhythm is parent `gap`/padding rather than child margins or `space-x/space-y`;
 - no feature surface recreates canonical Card/Button/Select recipes;
 - toolbar wrapping and consistent control heights;
 - Header alignment and route-context replacement;

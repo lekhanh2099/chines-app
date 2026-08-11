@@ -179,6 +179,24 @@ One-off pixels do not justify a variant.
 including Button, form controls, Card, Badge, SelectTrigger, PageHeader,
 SegmentedControl and IconTile. Do not add a baseline to hide violations.
 
+### Micro geometry contract
+
+```text
+control / field / menu item       -> rounded-lg
+card / panel / popover / dialog   -> rounded-xl
+pill/status/filter semantics      -> rounded-full
+checkbox                           -> owner-specific compact square radius
+structural/card border             -> 1px border-border-default
+form field border                  -> 1px border-input
+semantic border                    -> success/warning/danger/info tokens only
+focus-visible                      -> shared focus ring helper/primitive owner
+```
+
+Feature code does not introduce `rounded-2xl`, `rounded-3xl`, arbitrary radius,
+`border-2+`, or ring recipes to make a component look more important. A stronger
+hierarchy comes from spacing, typography and surface semantics rather than a new
+radius dialect.
+
 ## 6. App page, viewport and scroll ownership
 
 `PageContainer` owns the normal application page frame. Pages remain fluid and
@@ -212,6 +230,12 @@ Inline text action         : content-sized
 
 Controls in the same command row use the same family. A compact Select next to a
 Button uses Select `sm` + Button `toolbar`, not 36px next to 44px.
+
+Component rhythm is also shared: parent layout owns sibling spacing through `gap`
+and container padding. Fixed child margins and `space-x/space-y` are not the normal
+composition primitive. `mx-auto`/`ml-auto`/`mr-auto` remain valid alignment tools;
+small horizontal margin remains valid inside true inline text flow where a parent
+layout gap cannot represent the typography.
 
 ## 8. Button
 

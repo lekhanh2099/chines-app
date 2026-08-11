@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.10"
+  version: "3.11"
 ---
 
 # Frontend UI System
@@ -150,6 +150,24 @@ inline text      : content-sized
 Do not mix 36px and 44px controls in the same command row without an intentional hierarchy reason.
 
 Standalone settings choices remain touch-sized even when displayed in a grid.
+
+### Micro geometry and spacing
+
+Treat border, radius, focus and spacing as system contracts rather than finishing details:
+
+```text
+controls / inputs / menu rows : rounded-lg
+cards / panels / overlays     : rounded-xl
+pill semantics                : rounded-full
+checkbox                      : compact square radius owned by Checkbox
+default structural border     : 1px border-border-default
+form control border           : 1px border-input
+focus                         : shared focus-ring owner, never feature-built ring utilities
+```
+
+Sibling/component rhythm is parent-owned. Prefer `grid/flex + gap` and container padding over `mt-*`, `mb-*`, `ml-*`, `mr-*`, `space-x-*` or `space-y-*` on children. Auto margin remains valid for alignment. Horizontal margin is acceptable only for genuine inline text separation where there is no parent layout box that can own a gap. Do not replace margin with meaningless padding merely to satisfy a checker.
+
+Overlay elevation follows one shared layer ladder: modal backdrop `100`, modal content `101`, menu/select/popover/floating content `120`, tooltip `130`. Feature code never repairs z-index locally.
 
 ## 9. Surface hierarchy
 
