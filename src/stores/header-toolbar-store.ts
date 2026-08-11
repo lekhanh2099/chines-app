@@ -1,9 +1,13 @@
 import type { ReactNode } from "react";
 import { createStore } from "@tanstack/react-store";
+import { z } from "zod";
+
+const HeaderToolbarOwnerIdSchema = z.string().nullable();
+type HeaderToolbarOwnerId = z.infer<typeof HeaderToolbarOwnerIdSchema>;
 
 type HeaderToolbarState = {
  content: ReactNode;
- ownerId: string | null;
+ ownerId: HeaderToolbarOwnerId;
 };
 
 export const headerToolbarStore = createStore<
