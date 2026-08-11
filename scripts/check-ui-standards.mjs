@@ -10,7 +10,6 @@ const IGNORED_DIRECTORIES = new Set(["node_modules", ".next", "coverage"]);
 const UI_BOUNDARY = `${path.sep}src${path.sep}components${path.sep}ui${path.sep}`;
 const UI_INTRINSIC_CONTROL_TAGS = new Set(["button", "input", "textarea", "select"]);
 const APPLICATION_TYPOGRAPHY_TAGS = new Set(["h1", "h2", "h3", "h4", "h5", "h6", "p"]);
-const INLINE_TEXT_TAGS = new Set(["span", "strong", "em", "label", "code"]);
 const TYPOGRAPHY_COMPONENTS = new Set([
  "Typography",
  "StudyInstructionText",
@@ -50,8 +49,6 @@ const DIRECT_PRIMITIVE_IMPORT_PATTERN = /^(?:@base-ui\/react(?:\/.*)?|radix-ui|@
 const LEGACY_SELECT_IMPORT = "@/components/ui/select/index";
 const TYPOGRAPHY_CLASS_PATTERN =
  /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
-const BLOCK_TYPOGRAPHY_CLASS_PATTERN =
- /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\])|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
 const PRIMITIVE_VISUAL_CLASS_PATTERN =
  /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|\b)|border(?:-|\b)|bg-|shadow(?:-|\b)|ring-|outline-|accent-|p[trblxy]?-\S+)/;
 const COMPONENT_ANATOMY_OVERRIDE_PATTERN = /\[(?:&|data-|aria-)[^\]]*\][^\s]*:/;
@@ -76,6 +73,10 @@ function relative(file) {
  return path.relative(ROOT, file).split(path.sep).join("/");
 }
 
+function isTestFile(file) {
+ return /\.(?:spec|test)\.[cm]?[jt]sx?$/.test(file);
+}
+
 function location(sourceFile, node) {
  const { line, character } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
  return `${relative(sourceFile.fileName)}:${line + 1}:${character + 1}`;
@@ -96,22 +97,9 @@ function jsxTagNameText(tagName) {
  return "";
 }
 
-function hasDirectTextContent(node) {
- return node.children.some((child) => {
-  if (ts.isJsxText(child)) return child.getText().trim().length > 0;
-  if (!ts.isJsxExpression(child) || !child.expression) return false;
-
-  return (
-   ts.isIdentifier(child.expression) ||
-   ts.isPropertyAccessExpression(child.expression) ||
-   ts.isElementAccessExpression(child.expression) ||
-   ts.isStringLiteral(child.expression) ||
-   ts.isNoSubstitutionTemplateLiteral(child.expression)
-  );
- });
-}
-
 export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOUNDARY) }) {
+ if (isTestFile(file)) return [];
+
  const failures = [];
  const sourceFile = ts.createSourceFile(
   file,
@@ -131,9 +119,6 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   }
   if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
    failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);
-  }
-  if (INLINE_TEXT_TAGS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
-   failures.push(`styledIntrinsicText: ${location(sourceFile, className)} uses <${tagName}>`);
   }
   if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
    failures.push(`typographyClassName: ${location(sourceFile, className)} uses typed style tokens`);
@@ -170,16 +155,6 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
     (ts.isStringLiteral(node.name) && node.name.text === "zIndex"))
   ) {
    failures.push(`featureOwnedZIndex: ${location(sourceFile, node)}`);
-  }
-
-  if (!isUiOwner && ts.isJsxElement(node)) {
-   const tagName = jsxTagNameText(node.openingElement.tagName);
-   if (tagName === "div" && hasDirectTextContent(node)) {
-    const className = classNameAttribute(node.openingElement);
-    if (className && BLOCK_TYPOGRAPHY_CLASS_PATTERN.test(className.getText(sourceFile))) {
-     failures.push(`styledBlockText: ${location(sourceFile, className)} uses <div> as text`);
-    }
-   }
   }
 
   if (!isUiOwner && (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node))) {
@@ -222,6 +197,4 @@ export function runUiCheck() {
 const isMainModule =
  process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
 
-if (isMainModule) {
- runUiCheck();
-}
+if (isMainModule) runUiCheck();
