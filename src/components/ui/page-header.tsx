@@ -32,30 +32,36 @@ export function PageHeader({
     className,
    )}
   >
-   <div className="min-w-0 max-w-3xl flex-[1_1_18rem]">
-    {eyebrow ? (
+   <div
+    className={cn(
+     "grid min-w-0 max-w-3xl flex-[1_1_18rem]",
+     compact ? "gap-2" : "gap-3",
+    )}
+   >
+    <div className={cn("grid", compact ? "gap-1" : "gap-1.5")}>
+     {eyebrow ? (
+      <Typography
+       as="div"
+       variant="overline"
+       tone="muted"
+       weight="black"
+       tracking="wide"
+       transform="uppercase"
+      >
+       {eyebrow}
+      </Typography>
+     ) : null}
      <Typography
-      as="div"
-      variant="overline"
-      tone="muted"
+      as="h1"
+      variant={compact ? "sectionTitle" : "pageTitle"}
+      tone="default"
       weight="black"
-      tracking="wide"
-      transform="uppercase"
-      className={compact ? "mb-1" : "mb-1.5"}
+      leading="tight"
+      tracking="tight"
      >
-      {eyebrow}
+      {title}
      </Typography>
-    ) : null}
-    <Typography
-     as="h1"
-     variant={compact ? "sectionTitle" : "pageTitle"}
-     tone="default"
-     weight="black"
-     leading="tight"
-     tracking="tight"
-    >
-     {title}
-    </Typography>
+    </div>
     {description ? (
      <Typography
       as="p"
@@ -63,12 +69,11 @@ export function PageHeader({
       tone="muted"
       weight="medium"
       leading={compact ? "compact" : "standard"}
-      className={compact ? "mt-1" : "mt-2"}
      >
       {description}
      </Typography>
     ) : null}
-    {meta ? <div className={compact ? "mt-2" : "mt-3"}>{meta}</div> : null}
+    {meta ? <div>{meta}</div> : null}
    </div>
    {actions ? (
     <div className="flex w-full min-w-0 max-w-full flex-wrap items-center gap-2 sm:w-auto sm:flex-[0_1_auto] sm:justify-end">
