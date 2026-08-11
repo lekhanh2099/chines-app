@@ -26,10 +26,10 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
  return (
   <section aria-labelledby="continue-learning-title">
    {lesson ? (
-    <ActionCard padding="lg" asChild className="block w-full">
+    <ActionCard padding="lg" asChild className="grid w-full gap-4">
      <Link href={lesson.href} prefetch={false}>
       <span className="flex min-w-0 items-start justify-between gap-3">
-       <span className="min-w-0">
+       <span className="grid min-w-0 gap-1">
         <Typography
          id="continue-learning-title"
          as="h2"
@@ -47,20 +47,20 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          tone="muted"
          weight="semibold"
          leading="compact"
-         className="mt-1 block"
+         className="block"
         >
          Quay lại đúng bài và nội dung bạn đang theo dõi.
         </Typography>
        </span>
-       <HomeArrowIcon className="mt-1" />
+       <HomeArrowIcon />
       </span>
 
-      <span className="mt-4 flex min-w-0 items-center gap-3 sm:gap-4">
+      <span className="flex min-w-0 items-center gap-3 sm:gap-4">
        <IconTile size="md">
         <BookOpenCheck />
        </IconTile>
 
-       <span className="min-w-0 flex-1">
+       <span className="grid min-w-0 flex-1 gap-0.5">
         <Typography
          variant="overline"
          tone="muted"
@@ -76,7 +76,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          tone="default"
          weight="black"
          clamp="one"
-         className="mt-1 block"
+         className="block"
         >
          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
         </Typography>
@@ -85,7 +85,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          tone="muted"
          weight="semibold"
          clamp="one"
-         className="mt-0.5 block"
+         className="block"
         >
          {lesson.courseTitle} · {moduleLabels[lesson.module]}
         </Typography>
@@ -94,7 +94,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
      </Link>
     </ActionCard>
    ) : (
-    <Card variant="section" padding="lg">
+    <Card variant="section" padding="lg" className="grid gap-1">
      <Typography
       id="continue-learning-title"
       as="h2"
@@ -104,7 +104,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
      >
       Học tiếp
      </Typography>
-     <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+     <Typography as="p" variant="bodySmall" tone="muted">
       Chưa có bài học khả dụng.
      </Typography>
     </Card>
