@@ -141,7 +141,7 @@ export function NotesWorkspace() {
  );
 
  return (
-  <div className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]">
+  <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
    <WorkspaceCommandHeader
     title="Ghi chú"
     badge={
@@ -154,7 +154,7 @@ export function NotesWorkspace() {
      <>
       <Button
        variant="outline"
-       size="icon-lg"
+       size="icon-toolbar"
        className="xl:hidden"
        aria-label="Mở thư viện"
        onClick={() => setNavigatorOpen(true)}
@@ -167,6 +167,7 @@ export function NotesWorkspace() {
         onChange={(event) => setSearchQuery(event.target.value)}
         aria-label="Tìm ghi chú"
         placeholder="Tìm tiêu đề, nguồn, folder, tag..."
+        density="compact"
        />
       </div>
       <QuickNoteButton variant="outline" compactOnTablet />
