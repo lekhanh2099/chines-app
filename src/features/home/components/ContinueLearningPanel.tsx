@@ -2,6 +2,7 @@ import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { BookOpenCheck } from "lucide-react";
 
+import { ActionCard } from "@/components/ui/action-card";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
@@ -34,8 +35,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
    <div className="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]">
     <div className="min-w-0">
      {lesson ? (
-      <Card
-       variant="interactive"
+      <ActionCard
        padding="lg"
        asChild
        className="flex w-full items-center gap-4 xl:max-w-2xl"
@@ -78,7 +78,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
 
         <HomeArrowIcon />
        </Link>
-      </Card>
+      </ActionCard>
      ) : (
       <Card variant="section" padding="lg" className="flex items-center xl:max-w-2xl">
        <Typography as="p" variant="label" tone="default" weight="bold">
