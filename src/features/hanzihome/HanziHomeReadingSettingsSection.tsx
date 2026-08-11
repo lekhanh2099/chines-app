@@ -1,10 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
 import {
  DropdownMenuCheckboxItem,
  DropdownMenuItem,
@@ -14,6 +12,9 @@ import {
  DropdownMenuSeparator,
  DropdownMenuShortcut,
 } from "@/components/ui/dropdown-menu";
+import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
+import { HanziFontPreview } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonReadingSettings,
  fontOptions,
@@ -161,6 +162,9 @@ export function HanziHomeReadingQuickSettingsMenu({
         value={option.value}
         onSelect={(event) => event.preventDefault()}
        >
+        <HanziFontPreview as="span" font={option.value} leading="none">
+         文
+        </HanziFontPreview>
         {option.label}
        </DropdownMenuRadioItem>
       ))}
