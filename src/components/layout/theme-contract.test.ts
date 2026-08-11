@@ -6,6 +6,10 @@ import { describe, expect, it } from "vitest";
 import { THEME_PALETTE_META, ThemePaletteSchema } from "./theme-contract";
 
 const paletteCss = fs.readFileSync(path.join(process.cwd(), "src/app/theme-palettes.css"), "utf8");
+const buttonSource = fs.readFileSync(
+ path.join(process.cwd(), "src/components/ui/button.tsx"),
+ "utf8",
+);
 
 const forbiddenSurfaceProperties = [
  "--background:",
@@ -55,5 +59,9 @@ describe("theme palette contract", () => {
   expect(paletteCss).toContain("--sidebar-accent:");
   expect(paletteCss).toContain(".app-active-item");
   expect(paletteCss).toContain("color: var(--primary)");
+ });
+
+ it("lets active buttons theme nested Typography instead of resetting to body text", () => {
+  expect(buttonSource).toContain("[&_[data-slot=typography]]:text-inherit");
  });
 });
