@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.2"
+  version: "3.3"
 ---
 
 # Frontend UI System
@@ -226,6 +226,10 @@ A compact Select next to a Button uses Select `sm` + Button `toolbar`.
 Do not pair 36px and 44px controls in one command row without an explicit
 hierarchy reason.
 
+Settings choice tiles and other standalone direct-touch preferences use the
+44px touch family. Do not shrink them to toolbar density merely because several
+choices appear in a grid. Toolbar density remains for contextual command bars.
+
 ## 9. Surface and information hierarchy
 
 Do not equate hierarchy with more cards.
@@ -248,17 +252,17 @@ Global navigation and page content have different jobs:
 
 - Sidebar owns the app sitemap;
 - Home focuses on continuation and attention, not duplicate route cards;
-- Home desktop composition uses available width for primary work plus an
-  attention/progress rail when meaningful user state exists. Do not create a
-  wide grid and then cap the primary child so a decorative empty middle column
-  appears;
+- Home wide/tablet composition uses available width for primary work plus an
+  attention/progress rail when both columns can keep a readable minimum width.
+  Do not create a wide grid and then cap the primary child so a decorative empty
+  middle column appears;
 - do not fill Home with generic shortcuts merely to occupy space. Useful Home
   density comes from learning state, review attention, recent work and one
   contextual reminder;
 - contextual module navigation stays inside the owning feature;
 - the active global route remains visible in its expanded Sidebar group.
 
-## 10. Page and shell ownership
+## 10. Page, shell and tablet ownership
 
 Normal pages use PageContainer.
 
@@ -267,10 +271,21 @@ not subtract guessed Header/mobile-nav heights with `calc(100dvh - ...)`.
 Contained workspaces inherit `h-full min-h-0` and assign overflow to the actual
 pane.
 
+Treat iPad portrait around 820px as a tablet workspace, not a squeezed desktop.
+The current shell keeps the persistent full Sidebar for `lg` and wider; below
+`lg`, quick bottom navigation remains visible and a full-navigation Sheet must
+keep the complete sitemap reachable. A compact bottom bar must never make
+secondary routes undiscoverable.
+
+A meaningful two-column page may begin at `md` when each column has an explicit
+readable minimum (roughly 16rem or stronger content-specific evidence) and no
+horizontal overflow. Do not postpone every useful composition until `xl` when
+that causes avoidable vertical stacking or empty tablet space.
+
 PageHeader owns title/description hierarchy and typed density. Do not reach into
 its descendants with CSS selectors.
 
-## 11. Settings and contextual controls
+## 11. Settings, reader fonts and contextual controls
 
 Header Gear is global only:
 
@@ -289,9 +304,22 @@ For HanziHome:
 - `/settings?section=reading` remains the complete reading-settings hub;
 - full reading settings include a live content preview that demonstrates the
   selected font, size, reveal behavior, pinyin/meaning visibility and answer
-  visibility. On wide screens the preview may sit beside controls; on narrow
-  screens it follows controls in normal document flow;
+  visibility. On tablet/wide screens the preview may sit beside controls when
+  both columns retain readable width; on narrow screens it follows controls in
+  normal document flow;
 - Avatar owns identity/provider/logout only.
+
+Reader content is `zh-CN` / Mainland-oriented. Font stacks for reader choices
+must therefore fall back to Simplified-Chinese-capable faces. Do not use a
+Traditional-Chinese-only web font as the fallback for a Mainland reader option.
+A named local font such as Kaiti may exist on one operating system and be absent
+on another; local font names are not a cross-platform delivery mechanism.
+
+If a named reader style must look identical on iOS, Android, desktop and web,
+ship the correct Simplified-Chinese font asset through the app (normally
+`next/font/local`) and make that asset the owner of the option. Until such an
+asset exists, use a deterministic bundled Simplified-Chinese fallback and do not
+pretend it is the exact named calligraphic face.
 
 ## 12. Destructive actions
 
@@ -319,7 +347,8 @@ Verify:
 - keyboard operation;
 - touch target size;
 - `aria-current` for active routes;
-- active route is not hidden inside a collapsed navigation group.
+- active route is not hidden inside a collapsed navigation group;
+- tablet/mobile quick navigation has an explicit path to every global route.
 
 Do not add ARIA to compensate for the wrong interaction model.
 
