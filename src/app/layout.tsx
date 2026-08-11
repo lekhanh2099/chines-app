@@ -54,6 +54,8 @@ export default function RootLayout({
   <html
    lang="en"
    data-theme="light"
+   data-theme-mode="system"
+   data-palette="editorial"
    suppressHydrationWarning
    className={cn(
     "font-sans",
