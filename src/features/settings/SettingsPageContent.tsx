@@ -8,11 +8,11 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { PageContainer } from "@/components/layout/page-container";
-import { useTheme } from "@/components/layout/ThemeProvider";
 import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Label } from "@/components/ui/label";
 import { PageHeader } from "@/components/ui/page-header";
 import {
@@ -22,6 +22,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
@@ -49,6 +50,8 @@ import {
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
+import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
+
 export const SettingsSectionSchema = z.enum(["app", "reading", "ai"]);
 const SettingsSectionParamSchema = z.string().optional();
 
@@ -71,7 +74,6 @@ const focusModeEnabledMessage =
 export function SettingsPageContent({ sectionValue, readingSettings }: SettingsPageContentProps) {
  const section = resolveSettingsSection(sectionValue);
  const router = useRouter();
- const { theme, toggleTheme } = useTheme();
  useSelector(dictionaryLookupStore, (state) => state.overrides);
  const globalLookupEnabled = dictionaryLookupStore.actions.isEnabled("/");
  const notesLookupEnabled = dictionaryLookupStore.actions.isEnabled("/notes");
@@ -225,50 +227,48 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      }}
     >
      <TabsContent active={section === SettingsSectionSchema.enum.app} className="mt-4 grid gap-4">
-      <SectionHeading
-       title="Cài đặt ứng dụng"
-       description="Các thay đổi dưới đây giữ nguyên storage và phạm vi đang dùng trong ứng dụng."
-      />
+      <AppearanceSettingsSection />
 
-      <div className="grid gap-3">
-       <SettingsToggle
-        id="theme-mode"
-        label="Giao diện tối"
-        description="Đổi giao diện sáng tối cho toàn bộ ứng dụng."
-        checked={theme === "dark"}
-        onCheckedChange={toggleTheme}
-        tone="accent"
+      <Card variant="section" padding="lg" className="grid gap-3">
+       <SectionHeading
+        title="Hành vi học tập"
+        description="Các lựa chọn có tác động toàn ứng dụng được gom ở đây; cài đặt đọc chuyên biệt nằm trong mục Đọc."
        />
-       <SettingsToggle
-        id="global-dictionary-lookup"
-        label="Tra từ mặc định"
-        description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
-        checked={globalLookupEnabled}
-        onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
-        tone="accent"
-       />
-       <SettingsToggle
-        id="notes-dictionary-lookup"
-        label="Tra từ trong Ghi chú"
-        description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
-        checked={notesLookupEnabled}
-        onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
-        tone="accent"
-       />
-       <SettingsToggle
-        id="focus-mode"
-        label="Focus mode"
-        description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
-        checked={focusModeEnabled}
-        onCheckedChange={(enabled) => {
-         if (enabled && !focusModeEnabled) {
-          toast.warning(focusModeEnabledMessage, { duration: 5200 });
-         }
-         setFocusModeEnabled(enabled);
-        }}
-        tone="warning"
-       />
-      </div>
+
+       <div className="grid">
+        <SettingsToggleRow
+         id="global-dictionary-lookup"
+         label="Tra từ mặc định"
+         description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
+         checked={globalLookupEnabled}
+         onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
+         tone="accent"
+        />
+        <Separator />
+        <SettingsToggleRow
+         id="notes-dictionary-lookup"
+         label="Tra từ trong Ghi chú"
+         description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
+         checked={notesLookupEnabled}
+         onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
+         tone="accent"
+        />
+        <Separator />
+        <SettingsToggleRow
+         id="focus-mode"
+         label="Focus mode"
+         description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
+         checked={focusModeEnabled}
+         onCheckedChange={(enabled) => {
+          if (enabled && !focusModeEnabled) {
+           toast.warning(focusModeEnabledMessage, { duration: 5200 });
+          }
+          setFocusModeEnabled(enabled);
+         }}
+         tone="warning"
+        />
+       </div>
+      </Card>
      </TabsContent>
 
      <TabsContent active={section === SettingsSectionSchema.enum.reading} className="mt-4">
@@ -444,29 +444,21 @@ function SectionHeading({
  icon?: ReactNode;
 }) {
  return (
-  <div className="min-w-0 max-w-3xl">
-   <Typography
-    as="h2"
-    variant="sectionTitle"
-    tone="default"
-    weight="bold"
-    className="flex items-center gap-2"
-   >
-    {icon ? (
-     <Typography as="span" tone="accent" className="flex shrink-0">
-      {icon}
-     </Typography>
-    ) : null}
-    {title}
-   </Typography>
-   <Typography as="p" tone="secondary" leading="standard" className="mt-1">
-    {description}
-   </Typography>
+  <div className="flex min-w-0 max-w-3xl items-start gap-3">
+   {icon ? <IconTile tone="accent" size="sm">{icon}</IconTile> : null}
+   <div className="min-w-0">
+    <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+     {title}
+    </Typography>
+    <Typography as="p" tone="secondary" leading="standard" className="mt-1">
+     {description}
+    </Typography>
+   </div>
   </div>
  );
 }
 
-function SettingsToggle({
+function SettingsToggleRow({
  id,
  label,
  description,
@@ -484,7 +476,7 @@ function SettingsToggle({
  const descriptionId = `${id}-description`;
 
  return (
-  <Card variant="section" padding="md" className="flex items-center justify-between gap-4">
+  <div className="flex min-w-0 items-center justify-between gap-4 py-3">
    <div className="min-w-0 space-y-1">
     <Label htmlFor={id} variant="label" tone="default" weight="bold">
      {label}
@@ -500,7 +492,7 @@ function SettingsToggle({
     aria-describedby={descriptionId}
     tone={tone}
    />
-  </Card>
+  </div>
  );
 }
 
