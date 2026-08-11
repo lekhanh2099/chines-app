@@ -26,19 +26,42 @@ describe("UI standards guard", () => {
 
  it("allows parent-owned layout classes on canonical primitives", () => {
   expect(
-   inspect('export function Example() { return <Button className="w-full md:hidden" />; }'),
+   inspect(
+    'export function Example() { return <><Button className="w-full md:hidden" /><Card className="grid gap-3" /><SelectTrigger className="w-full" /></>; }',
+   ),
   ).toEqual([]);
  });
 
  it("rejects primitive-owned visual classes and arbitrary feature z-index", () => {
   const failures = inspect(
-   'export function Example() { return <><Button className="bg-primary px-4" /><div className="z-[99]" /></>; }',
+   'export function Example() { return <><Button className="bg-primary px-4" /><Card className="rounded-xl border bg-bg-card p-4" /><Badge className="text-xs" /><div className="z-[99]" /></>; }',
   );
 
   expect(failures).toEqual([
    expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
    expect.stringContaining("featureOwnedZIndex"),
   ]);
+ });
+
+ it("rejects descendant styling that reaches into canonical component anatomy", () => {
+  const failures = inspect(
+   'export function Example() { return <PageHeader className="[&_h1]:text-2xl [&_p]:leading-5" />; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("componentAnatomyOverride"),
+  ]);
+ });
+
+ it("rejects select trigger visual repair at feature call sites", () => {
+  expect(
+   inspect(
+    'export function Example() { return <SelectTrigger className="h-10 rounded-lg bg-bg-card px-3 text-sm shadow-none" />; }',
+   ),
+  ).toEqual([expect.stringContaining("primitiveClassName")]);
  });
 
  it("rejects arbitrary color and gradient utility recipes outside the UI boundary", () => {
@@ -57,7 +80,7 @@ describe("UI standards guard", () => {
   expect(failures).toEqual([expect.stringContaining("featureSurfaceEscapeHatch")]);
  });
 
- it("allows semantic surface tokens outside the UI boundary", () => {
+ it("allows semantic surface tokens outside the UI boundary on non-primitive layout", () => {
   expect(
    inspect(
     'export function Example() { return <div className="bg-bg-card text-text-primary shadow-theme-sm" />; }',
