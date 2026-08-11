@@ -1,21 +1,29 @@
 "use client";
 
 import { BookOpen } from "lucide-react";
-import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
-import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
+
+import { IconTile } from "@/components/ui/icon-tile";
 import {
  HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
-export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "vocab" }> }) {
+export function VocabReviewFront({
+ item,
+ speakButtonClassName,
+}: {
+ item: Extract<ReviewItem, { type: "vocab" }>;
+ speakButtonClassName?: string;
+}) {
  const example = item.source.examples.find((entry) => entry.zh)?.zh;
 
  return (
   <div className="grid gap-3">
-   <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
-    <BookOpen className="h-5 w-5" />
-   </div>
+   <IconTile size="lg" tone="accent" className="mx-auto">
+    <BookOpen />
+   </IconTile>
    <StudyInstructionText
     variant="overline"
     tone="muted"
@@ -29,18 +37,20 @@ export function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "
     <HanziText as="h3" size="hero" weight="black" tracking="normal">
      {item.prompt}
     </HanziText>
-    <MandarinSpeakButton text={item.prompt} />
+    <MandarinSpeakButton text={item.prompt} className={speakButtonClassName} />
    </div>
-   {example && (
-    <StudyInstructionText
+   {example ? (
+    <HanziText
+     as="p"
+     size="inherit"
      tone="default"
      weight="bold"
      leading="relaxed"
      className="mx-auto max-w-2xl rounded-xl bg-bg-subtle p-3"
     >
      {example}
-    </StudyInstructionText>
-   )}
+    </HanziText>
+   ) : null}
   </div>
  );
 }
