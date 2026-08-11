@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.9"
+  version: "3.10"
 ---
 
 # Frontend UI System
@@ -234,14 +234,14 @@ Theme ownership is split deliberately:
 
 ```text
 light/dark mode -> neutral foundations: raw card, popover, input, elevated surfaces,
-                   border hierarchy, base text hierarchy
-accent palette  -> restrained outer-canvas tint, very light default Card/shell tint,
+                   generic control/shell surface, border hierarchy, base text hierarchy
+accent palette  -> restrained outer-canvas tint, very light Card-only tint,
                    primary, accent, focus ring, selected/active navigation,
                    brand-oriented chart emphasis
 semantic state  -> success, warning, danger, info, semantic purple
 ```
 
-A palette MAY tint the outer canvas clearly and default Card/shell surfaces lightly through the shared aliases `--bg-primary` and `--bg-card`. It MUST NOT redefine the raw `--card` foundation or recolor Popover/Dialog/input/border/text foundations. The Card tint must be materially weaker than the canvas/active emphasis so content hierarchy remains calm.
+A palette MAY tint the outer canvas clearly and the shared Card primitive lightly through `--bg-primary` and `--theme-card-background`. It MUST NOT redefine the raw `--card` foundation or the generic `--bg-card` alias used by outline controls/shell chrome, and it must not recolor Popover/Dialog/input/border/text foundations. The Card tint must be materially weaker than the canvas/active emphasis so content hierarchy remains calm.
 
 Active interaction text and icons must use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
 
@@ -268,7 +268,7 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
 
-For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify outer canvas tint, weaker Card/shell tint, neutral Popover/Dialog/input/borders, and selected/focus/primary/active text emphasis separately.
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify outer canvas tint, weaker Card-only tint, neutral shell/controls/Popover/Dialog/input/borders, and selected/focus/primary/active text emphasis separately.
 
 For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
 
