@@ -23,11 +23,11 @@ export function LessonOverview() {
     onOpenModule={runtime.selectModule}
    />
 
-   {fallbackMarkdown && !lesson.sourceLesson && (
-    <Card padding="lg" className="rounded-xl">
+   {fallbackMarkdown && !lesson.sourceLesson ? (
+    <Card variant="section" padding="lg">
      <MarkdownContent content={fallbackMarkdown} />
     </Card>
-   )}
+   ) : null}
 
    <LessonNoteAccessCard />
   </div>
