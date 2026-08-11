@@ -178,7 +178,7 @@ export function Sidebar() {
  return (
   <aside
    className={cn(
-    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 md:flex",
+    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 lg:flex",
     isCollapsed ? "w-16" : "w-64",
    )}
   >
@@ -292,7 +292,7 @@ export function MobileBottomNavigation() {
  return (
   <nav
    aria-label="Điều hướng nhanh"
-   className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden"
+   className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden"
   >
    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
     {mobileItems.map((item) => {
