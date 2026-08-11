@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
+ HanziInlineText,
  StudyInstructionText,
  ReaderHanziText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -73,7 +74,7 @@ export function ListeningTranscriptBlock({
          casing="natural"
          className="w-fit"
         >
-         {speaker?.labelZh ?? line.speakerId}
+         <HanziInlineText text={speaker?.labelZh ?? line.speakerId} />
         </Badge>
         {speaker?.labelVi ? (
          <StudyInstructionText tone="muted" weight="semibold" className="mt-1 block">
