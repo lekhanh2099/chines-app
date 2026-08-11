@@ -9,6 +9,7 @@ import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
 
 const SelectTriggerSizeSchema = z.enum(["sm", "default"]);
 const SelectTriggerWidthSchema = z.enum(["content", "full"]);
+const SelectTriggerVariantSchema = z.enum(["default", "breadcrumb"]);
 
 function Select({ ...props }: React.ComponentProps<typeof SelectPrimitive.Root>) {
  return <SelectPrimitive.Root data-slot="select" {...props} />;
@@ -32,19 +33,28 @@ function SelectTrigger({
  className,
  size = SelectTriggerSizeSchema.enum.default,
  width = SelectTriggerWidthSchema.enum.content,
+ variant = SelectTriggerVariantSchema.enum.default,
  children,
  ...props
 }: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
  size?: z.infer<typeof SelectTriggerSizeSchema>;
  width?: z.infer<typeof SelectTriggerWidthSchema>;
+ variant?: z.infer<typeof SelectTriggerVariantSchema>;
 }) {
+ const defaultAppearance =
+  "border-input bg-transparent py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9 data-[size=sm]:rounded-[min(var(--radius-md),10px)]";
+ const breadcrumbAppearance =
+  "h-8 min-h-8 border-transparent bg-transparent px-2 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle [&_svg]:text-text-muted";
+
  return (
   <SelectPrimitive.Trigger
    data-slot="select-trigger"
    data-size={size}
    data-width={width}
+   data-variant={variant}
    className={cn(
-    "flex w-fit items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 data-placeholder:text-muted-foreground data-[size=default]:h-11 data-[size=sm]:h-9 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "flex w-fit items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    variant === "breadcrumb" ? breadcrumbAppearance : defaultAppearance,
     className,
    )}
    {...props}
@@ -116,7 +126,7 @@ function SelectItem({
   <SelectPrimitive.Item
    data-slot="select-item"
    className={cn(
-    "relative flex min-h-10 w-full cursor-default items-center gap-2 rounded-lg py-2 pr-8 pl-2.5  leading-snug outline-hidden select-none focus:bg-accent focus:text-foreground not-data-[variant=destructive]:focus:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+    "relative flex min-h-10 w-full cursor-default items-center gap-2 rounded-lg py-2 pr-8 pl-2.5 leading-snug outline-hidden select-none focus:bg-accent focus:text-foreground not-data-[variant=destructive]:focus:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
     className,
    )}
    {...props}
