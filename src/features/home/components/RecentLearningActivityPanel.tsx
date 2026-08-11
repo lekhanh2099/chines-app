@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { vi } from "date-fns/locale";
 import { History } from "lucide-react";
@@ -21,7 +22,7 @@ const resultVariants = {
  again: "danger",
 } satisfies Record<
  HomeDashboardModel["recentActivity"][number]["result"],
- "danger" | "success" | "warning"
+ NonNullable<ComponentProps<typeof Badge>["variant"]>
 >;
 
 export function RecentLearningActivityPanel({
