@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import Link from "next/link";
 import { Bookmark, CheckCircle2, History, Repeat2 } from "lucide-react";
 
@@ -85,7 +85,7 @@ function PulseStat({
  icon: ReactNode;
  value: number;
  label: string;
- tone: "accent" | "info" | "neutral" | "warning";
+ tone: NonNullable<ComponentProps<typeof IconTile>["tone"]>;
 }) {
  return (
   <div className="flex min-w-0 items-start gap-3">
