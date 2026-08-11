@@ -25,6 +25,8 @@ const source = hanziHomeVocabItemSchema.parse({
  meaning: { meaning_vi: "mặc dù" },
  examples: [
   {
+   id: "review-vocab-01-example-01",
+   order: 1,
    zh: "有问题你尽管问。",
    pinyin: "Yǒu wèntí nǐ jǐnguǎn wèn.",
    vi: "Có vấn đề gì thì bạn cứ hỏi.",
