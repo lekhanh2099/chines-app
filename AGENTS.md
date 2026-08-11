@@ -10,524 +10,249 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # chines-app — Repository Agent Contract
 
-This file defines repository-wide rules for AI agents and contributors.
-
-Normative words are intentional:
-
-- **MUST / MUST NOT**: hard requirement.
-- **SHOULD / SHOULD NOT**: default; deviations need evidence.
-- **MAY**: optional.
-- **STOP AND CONFIRM**: do not mutate until the user decides.
-
-More specific `AGENTS.md` files apply to their directory subtree and override
-this file where they are more specific.
+This file defines repository-wide engineering rules for AI agents and contributors.
+More specific `AGENTS.md` files override this file for their subtree.
 
 Authority order is:
 
 1. explicit user requirements;
 2. nearest applicable `AGENTS.md`, then this root contract;
-3. local generated types, installed documentation, contracts and source;
+3. generated types, installed documentation, local contracts and source;
 4. repository skills and domain documentation;
-5. bundled, vendor or generic skill guidance.
+5. vendor or generic guidance.
 
-Local repository authority always overrides conflicting vendor or generic
-guidance.
+Local repository truth always overrides remembered framework/library behavior.
 
-## 1. Load the correct instructions
+## 1. Load only relevant instructions
 
 Before a non-trivial task:
 
 1. Read this file.
-2. Read the nearest nested `AGENTS.md` for every file you may touch.
-3. Read the matching repo skill:
-   - General React/Next.js implementation, debugging, refactoring, state,
-     forms, queries, routes, API, or cleanup:
-     `.agents/skills/frontend-feature-workflow/SKILL.md`
-   - UI, UX, component reuse, Dialog, Button, Select, Popover, Menu, Sheet,
-     Tabs, Card, Input, command/search, responsive layout, accessibility, or
-     visual consistency:
-     `.agents/skills/frontend-ui-system/SKILL.md`
-   - HanziHome content editing, Supabase-backed lesson data, vocab, grammar,
-     exercises, reading, renderers, or edit persistence:
-     `.agents/skills/hanzihome-content-editing/SKILL.md`
-   - HanziHome test coverage, regression proof, renderer/API/state contract
-     review, or CI readiness:
-     `.codex/skills/hanzihome-test-review/SKILL.md`
-   - Supabase schema, migration, RLS, RPC, generated-type, or migration-drift
-     work:
-     `.codex/skills/hanzihome-supabase-migration/SKILL.md`
-   - shadcn component APIs, registry operations, `components.json`, component
-     installation, or upstream component docs:
-     `.agents/skills/shadcn/SKILL.md`
-   - Radix UI to Base UI investigation or migration:
-     `.agents/skills/migrate-radix-to-base/SKILL.md`
-4. For UI work, read:
-   - `docs/ui/component-contracts.md`
-   - `docs/ui/ui-verification.md`
-5. For architecture or state ownership, read:
-   - `docs/architecture/frontend-structure.md`
-6. For risky work, read:
-   - `docs/agent/risk-confirmation.md`
-7. For task wording and completion language, read:
-   - `docs/agent/instruction-language.md`
+2. Read the nearest nested `AGENTS.md` for every target file.
+3. Read the matching skill:
+   - general React/Next/state/forms/queries/refactor: `.agents/skills/frontend-feature-workflow/SKILL.md`;
+   - UI/UX/design-system/responsive/accessibility: `.agents/skills/frontend-ui-system/SKILL.md`;
+   - HanziHome content/data/editing: `.agents/skills/hanzihome-content-editing/SKILL.md`;
+   - regression/test review: `.codex/skills/hanzihome-test-review/SKILL.md`;
+   - Supabase migrations/RLS/generated types: `.codex/skills/hanzihome-supabase-migration/SKILL.md`;
+   - shadcn component work: `.agents/skills/shadcn/SKILL.md`;
+   - Radix/Base investigation: `.agents/skills/migrate-radix-to-base/SKILL.md`.
+4. For UI work also read `docs/ui/component-contracts.md` and `docs/ui/ui-verification.md`.
+5. For architecture/state ownership read `docs/architecture/frontend-structure.md`.
+6. For high-risk work read `docs/agent/risk-confirmation.md`.
 
-Do not load every detailed document for every task. Load only the instructions
-that match the files and behavior being changed.
+Do not load every repository document for every task.
 
 ## 2. Verified project truth
 
 - Package manager: npm.
-- Runtime: Node.js 22 or newer.
-- TypeScript is the primary static-analysis contract. Keep it on the latest
-  version that passes the repository quality gate, and remove ancillary tooling
-  rather than pinning TypeScript solely for an incompatible optional audit.
+- Runtime: Node.js 22+.
 - Framework: Next.js App Router.
-- UI: React, TypeScript, Tailwind CSS 4, local shadcn-style source components.
+- UI: React, TypeScript, Tailwind CSS 4, local shadcn-style components.
 - Data/state: Supabase, TanStack Query, TanStack Form, TanStack Store, Zod.
-- UI primitive dependencies include both Radix and Base UI.
 - `src/components/ui/**` is the design-system primitive boundary.
-- Local component source is the source of truth, not generic shadcn examples.
-- `npm run check` is the repository quality gate.
+- Local component source is authoritative.
+- `npm run check` is the full repository quality gate used by CI/release work.
 
-Before assuming an API, inspect `package.json`, `components.json`, the local
-component implementation, and version-matched framework documentation.
+For Next.js behavior, inspect the installed version-matched docs under `node_modules/next/dist/docs/` before relying on memory.
 
 ## 3. Repository boundaries
 
-Use the current ownership model:
-
 ```text
-src/app/                 routing, layouts, route handlers, thin composition
+src/app/                 routes, layouts, route handlers, thin composition
 src/components/ui/       low-level reusable UI primitives
 src/components/patterns/ reusable cross-feature interaction patterns
-src/components/form/     TanStack Form adapters using the shared UI system
-src/components/layout/   application shell and cross-route layout
-src/features/<feature>/  feature UI, domain behavior, feature hooks and schemas
-src/lib/                 infrastructure and framework-agnostic helpers
-src/services/            server/data service orchestration
+src/components/form/     TanStack Form adapters
+src/components/layout/   app shell and cross-route layout
+src/features/<feature>/  feature UI, behavior, hooks and schemas
+src/lib/                 infrastructure/framework-agnostic helpers
+src/services/            data/service orchestration
 src/stores/              truly cross-feature client state
-scripts/                 audits, import, migration and build tooling
+scripts/                 CI/release/audit/import tooling
 ```
 
 Rules:
 
-- Route pages MUST remain thin.
-- Feature business behavior MUST remain in its feature.
-- Shared code MUST NOT import feature implementation code.
-- Feature code MUST NOT import another feature's internal implementation.
-- Client Components MUST NOT import server-only modules.
-- External data MUST be validated or normalized at a boundary.
-- Generated files MUST NOT be edited manually unless the generator contract is
-  understood and the source generator is updated.
-- Do not create a new global folder or architecture layer without proving the
-  current ownership model cannot express the requirement.
+- Route pages stay thin.
+- Feature behavior stays in its feature.
+- Shared code must not import feature implementation code.
+- Client Components must not import server-only modules.
+- External/untrusted data is validated or normalized at its owning boundary.
+- Generated files are not edited manually unless the generator contract is understood.
+- Do not create a new global architecture layer without proving the current model cannot express the requirement.
 
 ## 4. State ownership
 
-A value MUST have one source of truth.
+One value has one authoritative owner:
 
-- URL/shareable navigation state: route/search params.
-- Server state: TanStack Query.
-- Form values, validation, dirty state and submission: TanStack Form.
-- Small transient interaction state: local React state.
-- Cross-feature client preferences: an existing scoped TanStack Store.
-- Purely derived values: compute from current inputs; do not mirror them into
-  state.
-- Persisted browser state: versioned schema, safe parsing and migration.
+```text
+URL/shareable navigation -> route/search params
+server/remote state       -> TanStack Query
+form state                -> TanStack Form
+cross-feature client UI   -> scoped TanStack Store
+local transient UI        -> local React state
+pure derivation           -> compute from current inputs
+persisted browser state   -> versioned schema + safe parsing/migration
+```
 
-MUST NOT:
+Do not:
 
-- copy query data into local state without an explicit editable-draft contract;
-- mirror form values into `useState`;
-- repair stale state with `setTimeout`, random keys, or force-render logic;
+- mirror Query/Form/Store/route values into local state;
 - use `useEffect` for pure derivation;
-- hide loading, error and empty states behind the same fallback value.
+- synchronize two state owners bidirectionally;
+- repair rendering with timeout/random keys/force-render;
+- hide error/loading/empty behind one fallback value.
+
+Every state-writing effect must represent a real external-system/subscription/imperative bridge and be idempotent.
 
 ## 5. UI component boundary
 
-Feature and layout code MUST use project components before custom markup.
+Feature/layout code uses project components before custom controls.
 
-Primitive-library imports from `radix-ui`, `@radix-ui/*`, or
-`@base-ui/react*` are allowed only inside:
+Primitive-library imports from `radix-ui`, `@radix-ui/*`, or `@base-ui/react*` belong inside `src/components/ui/**` or a documented integration adapter.
 
-- `src/components/ui/**`;
-- explicitly documented third-party integration adapters.
-
-Feature code MUST NOT create a new visual control by styling raw
-`button`, `input`, `select`, dialog, popover, or menu markup unless:
-
-1. no current primitive/composite can represent the required semantics;
-2. the interaction is intentionally native or library-specific;
-3. the reason is documented in the change;
-4. repeated use is promoted to a shared primitive or pattern.
-
-Before adding or changing UI, classify the need:
+Before adding UI:
 
 ```text
 need
-→ existing primitive?
-→ existing pattern/composite?
-→ missing reusable contract?
-→ use | extend | create | justified local exception
+-> existing primitive?
+-> existing pattern/composite?
+-> missing stable reusable contract?
+-> use | extend | create | justified local exception
 ```
 
-Do not overwrite an installed shadcn component automatically. Inspect local
-code and consumers, then use CLI dry-run/diff before any merge.
+Application headings/body/captions use `Typography`. HanziHome learner content uses its feature-owned Hanzi/Pinyin/translation typography. Do not use learner typography as a generic badge, pill or surface wrapper.
 
-Canonical components are active contracts, not placeholders for possible future
-use. When `Typography`, `Avatar`, `Switch`, `Chip`, `EmptyState`, or another
-inventory component matches the required semantics, feature code MUST use it
-instead of recreating the same visual or interaction contract with raw JSX.
+### `className` ownership
 
-Application headings, body copy, captions, overlines, and code-style text MUST
-use `Typography`. Feature and route code MUST NOT render raw `h1`–`h6` or `p`
-elements for application typography. `Typography` still emits the appropriate
-native semantic element through its `as` contract.
+Shared primitives own:
 
-Native structural and semantic elements remain valid when they are not
-recreating an application typography contract. HanziHome learner content MUST
-use its feature-owned `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`,
-`PinyinText`, `TranslationText`, `StudyInstructionText`, or
-`HanziFontPreview`; generic Chinese text outside HanziHome uses
-`LearnerHanziText`. These component call sites MUST NOT pass typography utility
-classes, language metadata, or inline font/size styles.
-
-## 6. `className` ownership
-
-Shared primitives own their internal visual contract.
-
-Allowed at call sites:
-
-- parent-imposed width or max-width;
-- grid/flex placement;
-- responsive visibility;
-- external margin only when the parent owns spacing;
-- parent-owned scroll constraints;
-- `sr-only` and similar accessibility utilities.
-
-Forbidden at call sites:
-
-- component color/tone;
-- border appearance;
-- radius;
-- internal padding or density;
+- visual tokens;
+- border/radius/background/shadow;
+- internal spacing/density;
 - typography;
-- shadow;
-- hover/focus/active styling;
-- overlay z-index;
-- icon sizing that the primitive owns.
+- focus/hover/active/disabled behavior;
+- overlay stack;
+- internal icon sizing.
 
-If an allowed layout adjustment repeats in at least two meaningful consumers,
-promote it to a typed variant or reusable pattern.
+Feature call sites may own parent layout, width constraints, placement, responsive visibility, external spacing and scroll constraints.
 
-Do not add a variant for a one-off value merely to satisfy this rule. First
-decide whether the variation is a stable design-system contract.
+If a visual variation repeats, extend the semantic owner with a typed API instead of repairing it at call sites.
 
-## 7. React and strict TypeScript rules
+## 6. TypeScript and runtime contracts
 
-- Keep components focused on one interaction or rendering responsibility.
-- Prefer explicit domain names over `Wrapper`, `Container`, `Item`, or `Common`.
-- Do not introduce abstraction without real consumers and a stable semantic
-  boundary.
-- Normalize IDs once at the boundary.
-- Keep transport types, domain/view models and rendered props distinct when
-  they have different semantics.
-- Do not memoize by default. `useMemo` and `useCallback` require a concrete
-  correctness or performance reason.
-- Every effect MUST be explainable as synchronization with an external system,
-  subscription, browser API, imperative integration, or analytics.
-- Errors MUST remain observable. Do not convert errors into fake empty states.
+TypeScript is the primary static contract. Zod is the runtime-boundary contract, not a replacement for ordinary TypeScript modeling.
 
-### 7.1 No guessed types
+### Authoritative types
 
-Every value crossing a component, hook, store, service, repository, route,
-script, test helper, persistence, provider, or database boundary MUST have an
-exact authoritative type.
+Before defining or changing a boundary type, inspect in this order:
 
-Agents MUST NOT guess or reconstruct a type from:
-
-- a sample payload;
-- current JSX usage;
-- a single caller;
-- a remembered library API;
-- a database query that was not inspected;
-- a similar-looking type elsewhere;
-- a runtime fallback or placeholder value.
-
-Before writing or changing a type, inspect its source of truth in this order:
-
-1. generated database or API contract;
+1. generated DB/API contract;
 2. existing Zod schema;
-3. existing domain, service, query, store, or form contract;
-4. library-exported type from the installed version;
-5. the verified runtime boundary.
+3. existing service/query/store/form/domain contract;
+4. installed library-exported type;
+5. verified runtime boundary.
 
-If the source of truth cannot be identified, STOP before editing and report:
+Use indexed access, `ComponentProps`, `Parameters`, `ReturnType`, generated Supabase helpers, and library-owned types instead of redeclaring an existing contract.
 
-1. the value whose type is unresolved;
-2. the owners and call sites inspected;
-3. the conflicting or missing contracts;
-4. the minimum structural decision required from the user.
+### Zod usage
 
-Local inference is allowed only when TypeScript derives it directly from an
-authoritative typed value. Inference MUST NOT be used to avoid defining or
-reusing the real boundary contract.
+Use Zod for values that cross an actual runtime trust boundary, including:
 
-### 7.2 Required type ownership
+- external JSON/API responses;
+- request payloads;
+- localStorage/persisted browser data;
+- environment/provider/file input;
+- database content when generated/static typing is insufficient at runtime.
 
-- Runtime and domain contracts MUST be owned by Zod and exposed through
-  `z.infer`, `z.input`, or `z.output`.
-- Supabase rows and writes MUST use generated `Tables`, `TablesInsert`,
-  `TablesUpdate`, and indexed fields such as `Tables<"notes">["id"]`.
-- A field already owned by another type MUST use indexed access such as
-  `IType["id"]`; it MUST NOT be redeclared as `string`, `number`, or another
-  duplicate primitive.
-- React, DOM, Next.js, TanStack, Lexical, and other library contracts MUST use
-  their exported types or `ComponentProps`, `Parameters`, `ReturnType`, and
-  route-aware helpers such as `PageProps`.
-- External JSON, storage, file, environment, provider, and request data MUST be
-  parsed once with a concrete Zod schema at the owning boundary before entering
-  application state or UI.
-- Component props and client state MUST receive complete typed domain or
-  view-model values. Raw external payloads MUST NOT flow into render code.
+Do not create a Zod schema merely to avoid writing an ordinary internal TypeScript union, DOM type, callback type or component prop type.
 
-Do not create a Zod schema for DOM nodes, callbacks, component instances, or
-other library objects solely to imitate a library type. Use the installed
-library contract directly.
+### Unions and `unknown`
 
-### 7.3 Absolute bypass prohibition
+Handwritten unions/discriminated unions are valid for internal compile-time modeling when the contract is local and no runtime parsing is required. Prefer reusing an owner type when one already exists.
 
-Owned source, scripts, and tests MUST NOT contain or introduce:
+`unknown` is valid at a genuine untrusted/library/error boundary because it forces narrowing. It must be narrowed before entering domain state or rendered props. Do not replace `unknown` with `any` or a cast merely to silence TypeScript.
 
-- explicit `any` or `unknown`;
-- `z.any()` or `z.unknown()`;
-- type assertions with `as` or angle-bracket syntax;
-- chained or double assertions;
-- non-null assertions;
+### Hard prohibitions
+
+Owned application source must not introduce:
+
+- explicit `any`;
+- `z.any()` or `z.unknown()` as an unconstrained escape hatch;
+- type assertions used to force an incompatible value through the compiler;
+- chained/double assertions;
+- non-null assertions used as data repair;
 - TypeScript suppressions or TypeScript-related ESLint disables;
-- handwritten or compatibility unions;
-- broad index signatures or `Record<string, ...>` for a known domain shape;
-- fake type guards;
-- optional, nullable, or fallback fields added only to silence TypeScript;
-- parsers, mappers, normalizers, serialization, or coercion added only to hide
-  an internal mismatch;
-- `String(...)`, `Number(...)`, boolean coercion, JSON round-tripping, empty
-  strings, zeroes, placeholder objects, or `"unknown"` used as type repair for
-  UI rendering;
-- compiler, ESLint, schema, or validation configuration changes that make an
-  invalid contract pass.
+- fake guards/normalizers/coercion added only to hide an internal mismatch;
+- fallback/optional fields invented only to silence TypeScript.
 
-Generated types, Zod-inferred unions, and unions required directly by an
-installed library signature MAY remain only after node-specific audit.
-Exceptions MUST be constrained to the exact AST node and occurrence count.
-Directory-wide, file-wide, text-only, or baseline allowlists are forbidden.
+When types conflict, fix the authoritative owner/query/schema/service/store/caller. Do not widen a correct shared contract to accommodate an incorrect consumer.
 
-Formatting an already-authoritative date, number, or text value for display is
-allowed. Converting an incorrectly typed value so it can render is forbidden.
+`scripts/check-source-standards.mjs` intentionally checks only machine-detectable high-value rules: unsafe explicit `any`, unconstrained Zod escape hatches, assertions, non-null assertions, TypeScript suppressions, client/server import boundaries, deprecated Zod APIs, and unreachable owned modules. It does not ban normal TypeScript unions or properly narrowed `unknown`.
 
-### 7.4 Fix the real owner
+## 7. UI/accessibility minimum
 
-When types conflict:
+Interactive work preserves:
 
-1. identify both exact types;
-2. identify the authoritative owner;
-3. trace where the incorrect shape entered the system;
-4. fix the owner, query, schema, service, selector, store, or caller that is
-   wrong.
-
-MUST NOT widen a correct shared type, add a compatibility union, cast the
-value, parse an internal value again, or patch the mismatch inside JSX.
-
-If the correct fix requires changing a public API, route, persisted format,
-database schema, generated contract, or library-required signature, STOP AND
-CONFIRM with the exact conflict instead of bypassing it.
-
-Loading, empty, error, unsupported-data, and ready states MUST remain distinct.
-Malformed or incomplete data MUST NOT be converted into a fake renderable
-value.
-
-### 7.5 Enforcement
-
-`scripts/check-source-standards.mjs` MUST fail machine-detectable unsafe syntax:
-explicit `any`/`unknown`, unconstrained Zod schemas, unaudited handwritten
-unions, unaudited assertions, non-null assertions and TypeScript suppressions.
-Semantic bypasses such as fake guards, internal reparsing, coercion and contract
-weakening require source-flow and diff review because syntax alone cannot prove
-their intent. The Supabase generated file MAY be excluded from the unsafe AST
-mutation gate but MUST remain in TypeScript typechecking.
-
-Pre-existing type assertions may remain only through an exact AST exception
-budget containing the file, assertion kind, normalized expression, asserted
-type, occurrence count and reason. New, changed or excess assertions and stale
-exceptions MUST fail. Directory-wide and file-wide assertion exceptions are
-forbidden. This budget is debt and MUST only shrink.
-
-Do not weaken the gate, add a broad exception, or grow a budget to make a task
-pass. A type-clean task MUST NOT be reported as complete unless:
-
-- owned `any`, `unknown`, `z.any()`, and `z.unknown()` are zero;
-- non-null assertions and suppressions are zero;
-- no unaudited assertion exists and the exact assertion budget did not grow;
-- unreviewed handwritten unions are zero;
-- typecheck, source standards, lint, relevant tests, and the repository quality
-  gate pass.
-
-## 8. UI and accessibility minimum
-
-Interactive work MUST preserve:
-
-- keyboard access;
-- visible focus;
 - correct button/link semantics;
-- explicit toggle state (`aria-pressed`, Switch, Checkbox, or equivalent);
-- Dialog title and managed focus;
-- Menu trigger/menu item semantics;
-- loading, empty, error, disabled and stale states;
-- touch-sized targets where the app is used on iPad/mobile;
+- keyboard operation and visible focus;
+- explicit selected/toggle state;
+- Dialog/Menu/Select semantics;
+- loading/empty/error/disabled states;
+- touch targets appropriate for iPad/mobile;
 - no accidental horizontal overflow;
-- Chinese text language metadata where appropriate.
+- Chinese language/font metadata where required.
 
-A styled Popover with `role="menu"` is not a complete menu contract unless its
-items and keyboard behavior follow the same interaction model.
+Do not add ARIA to compensate for the wrong interaction model.
 
-## 9. Working method
+## 8. Working method
 
-### 9.1 Workflow tiers
+### Workflow tiers
 
-Choose the smallest verification tier that can falsify the implementation:
+Use the smallest verification tier that can falsify the change:
 
-- **Fast path**: one local owner, no shared/public contract change, and one
-  targeted deterministic regression test can prove the behavior.
-- **Subsystem path**: a feature boundary, shared additive component, query,
-  form, store, API/Zod boundary, renderer family, or several consumers inside
-  one subsystem are affected.
-- **Full path**: dependency, schema, route/public API, persisted state, shared
-  contract migration, multi-surface UI, release preparation, or another
-  repository-wide risk is involved.
+- **Fast path**: one local owner, targeted lint/type/test or direct reproduction.
+- **Subsystem path**: feature/shared additive contract, targeted checks plus affected consumers/states.
+- **Full path**: dependency/schema/public API/persisted state/shared migration/multi-surface/release work, ending with `npm run check`.
 
-Start with targeted proof. Escalate when consumer search, the diff, a failed
-check, or risk classification shows that a wider contract is affected.
-`npm run check` remains the full repository gate for app-code completion and
-release preparation; it is not the first feedback loop for every small edit.
+`npm run check` is deliberately a full CI/release gate. It is not a pre-commit hook and not the first feedback loop for a small edit.
 
-Regression work MUST reproduce the failure before or alongside the change. Add
-the smallest deterministic test at the lowest boundary that still reproduces
-the real failure.
+There is no repository pre-commit gate that runs the full suite. Local commits must stay cheap; CI/PR owns full-repository validation. Developers may run targeted commands before commit and `npm run check` before merge/release when appropriate.
 
-### 9.2 Evidence and learning from code
+Regression work reproduces the failure before or alongside the change and adds the smallest deterministic test that proves the invariant.
 
-Non-trivial handoffs MUST identify:
+For UI claims, source inspection is insufficient: render/interact with the affected viewport/state when the environment supports it.
 
-- the concrete local precedent used;
-- the authoritative contract and its owner;
-- the relevant data/state flow;
-- the invariant protected by the test;
-- why the diff is the smallest coherent scope;
-- any broader abstraction considered and rejected;
-- environment, authentication state and unverified states for browser claims.
+## 9. Risk and confirmation
 
-Production code should teach through explicit ownership, names, direct data
-flow and invariant-focused tests. Comments explain non-obvious domain,
-security, library or compatibility constraints; they MUST NOT narrate syntax or
-turn production files into tutorials.
+Read `docs/agent/risk-confirmation.md` for high-risk work.
 
-For long-running work, agent updates should occur at scope/preflight,
-root-cause discovery, before high-risk mutation, after targeted proof and before
-the full gate. Updates add evidence or a decision; unchanged progress is not a
-status update.
+STOP AND CONFIRM before unapproved:
 
-Before editing:
-
-1. Inspect `git status --short`.
-2. Identify the entry point and direct consumers.
-3. Trace data and state ownership.
-4. Identify existing primitive/pattern contracts.
-5. State the root cause or implementation gap.
-6. Classify risk.
-7. Propose the smallest coherent change.
-8. STOP AND CONFIRM only when required by the risk policy.
-
-While editing:
-
-- Keep the diff focused.
-- Preserve unrelated user changes.
-- Do not mix UI redesign, data migration and persistence changes unless the
-  request explicitly requires all three.
-- Do not perform broad search-and-replace for component migrations.
-- Migrate one surface or interaction contract at a time.
-
-Before completion:
-
-1. Inspect the final diff.
-2. Run targeted checks.
-3. Run `npm run check` for app-code changes.
-4. For UI work, render and interact with the affected surface.
-5. Report exact checks and unresolved risks.
-
-## 10. Risk and confirmation
-
-Use `docs/agent/risk-confirmation.md`.
-
-Always STOP AND CONFIRM before:
-
-- database schema, RLS, auth or production-data mutation;
+- DB schema/RLS/auth/production-data mutation;
 - dependency installation/removal or major upgrade;
-- overwriting local shadcn primitives;
-- Radix-to-Base migration;
-- breaking shared component API;
-- repository-wide component migration;
-- route/public API/persisted-state contract change;
-- global token or brand-system redesign;
-- destructive Git operations, commit, push, merge or PR creation;
-- deleting code whose reachability or data compatibility is uncertain.
+- breaking public API/route/persisted-state changes;
+- destructive Git operations, merge or production deployment;
+- deleting code whose reachability/data compatibility is uncertain.
 
-Do not ask for confirmation merely to avoid reading the source. Investigate
-first and present a recommendation.
+Do not ask for confirmation merely to avoid investigation.
 
-## 11. Verification
+## 10. Verification and completion language
 
-Use scripts from `package.json`.
+Use targeted checks during implementation. Use `npm run check` for full-path completion, PR/CI, or release preparation.
 
-App-code completion normally requires:
+Do not report a check as passed unless it actually ran. For visual claims, state the rendered viewport/state. If the environment cannot execute a required check, state that limitation directly.
 
-```bash
-npm run check
-```
-
-`npm run check` MUST keep TypeScript typechecking as a hard gate. Optional
-dependency-inventory tooling MUST NOT block a supported TypeScript upgrade.
-
-Also run targeted checks where relevant.
-
-A task MUST NOT be reported as complete when:
-
-- required checks were not run;
-- a check failed;
-- the UI was not rendered for a visual/interaction claim;
-- unsupported states remain;
-- the implementation depends on an unresolved product or data decision.
-
-## 12. Completion report
-
-End non-trivial work with:
+Non-trivial handoff should identify:
 
 ```text
 Scope:
 Root cause / contract gap:
-Precedent used:
-Authoritative contract:
-Data / state flow:
-Invariant protected:
+Authoritative owner:
+State/data flow:
 Files changed:
-Behavior preserved:
-Checks run:
-UI states verified:
-Rejected broader abstraction:
-Risk level:
-Residual risks / unsupported states:
-Confirmation still required:
+Behavior preserved / intentionally changed:
+Checks actually run:
+UI states actually rendered:
+Residual risk / unverified states:
 ```
-
-Use “implemented” or “changed” for code edits. Use “verified” only when there is
-evidence. Do not use “fixed”, “done”, “final”, or “production-ready” without
-completed verification.
