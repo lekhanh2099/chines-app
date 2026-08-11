@@ -52,6 +52,12 @@ At approximately 820px, the old `md` breakpoint showed the full 256px desktop Si
 - Font-choice tiles use the 44px touch density because they are standalone preferences, not command-bar actions.
 - Mobile remains one-column; segmented choices keep horizontal overflow behavior through the canonical `SegmentedControl`.
 
+## Shared mobile header behavior
+
+- `PageHeader` action groups now take the available mobile row and wrap within `max-width: 100%` before returning to auto width at `sm`.
+- This prevents multi-action headers such as Library, Dictionary and review pages from becoming an intrinsic-width overflow source on narrow screens.
+- The change stays in the shared owner rather than adding route-specific mobile width repairs.
+
 ## Source-audit notes
 
 Reviewed current responsive composition for:
@@ -66,7 +72,7 @@ Reviewed current responsive composition for:
 - Notebook list/compare surfaces;
 - Aggregate library filter composition.
 
-No source-proven change was made merely because a breakpoint looked different from desktop. Changes above are limited to cases where the current breakpoint removed useful space, reduced touch quality, or made global routes unreachable.
+No source-proven change was made merely because a breakpoint looked different from desktop. Changes above are limited to cases where the current breakpoint removed useful space, reduced touch quality, risked horizontal overflow, or made global routes unreachable.
 
 ## Skill contract
 
