@@ -147,7 +147,8 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
    if (window.location.pathname !== expected) {
     window.history.replaceState(null, "", expected);
    }
-  }, [activeNoteId]);
+  }
+ }, [activeNoteId]);
 
  // Navigate away when all tabs are closed (after having had tabs)
  useEffect(() => {
