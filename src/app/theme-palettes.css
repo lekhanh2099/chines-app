@@ -1,8 +1,8 @@
 /*
- * Accent palettes deliberately do not own page/card/popover/background tokens.
- * The canvas stays neutral so changing palette never washes the whole product
- * in a brand tint. Palettes own interactive emphasis only: primary, accent,
- * ring, active navigation and the matching brand/chart accent.
+ * Palette themes own two things: a restrained page-canvas tint and interactive
+ * emphasis. Cards, popovers, dialogs, inputs and borders stay on the neutral
+ * light/dark surface family so palette changes are perceptible without washing
+ * the whole product in a brand color.
  *
  * Success, warning, danger, info and semantic purple remain stable regardless
  * of the selected palette; a green theme must not turn a purple category badge
@@ -22,6 +22,7 @@
 }
 
 [data-theme="light"][data-palette="editorial"] {
+ --canvas-background: oklch(0.975 0.012 270);
  --primary: oklch(0.48 0.17 270);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.955 0.024 270);
@@ -36,6 +37,7 @@
 }
 
 [data-theme="light"][data-palette="jade"] {
+ --canvas-background: oklch(0.976 0.012 158);
  --primary: oklch(0.46 0.13 158);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.955 0.022 158);
@@ -50,6 +52,7 @@
 }
 
 [data-theme="light"][data-palette="warm"] {
+ --canvas-background: oklch(0.978 0.014 68);
  --primary: oklch(0.49 0.14 55);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.957 0.025 66);
@@ -64,6 +67,7 @@
 }
 
 [data-theme="light"][data-palette="plum"] {
+ --canvas-background: oklch(0.975 0.013 325);
  --primary: oklch(0.48 0.16 325);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.956 0.025 325);
@@ -78,6 +82,7 @@
 }
 
 [data-theme="light"][data-palette="mono"] {
+ --canvas-background: oklch(0.978 0 0);
  --primary: oklch(0.3 0 0);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.95 0 0);
@@ -92,6 +97,7 @@
 }
 
 [data-theme="light"][data-palette="tea"] {
+ --canvas-background: oklch(0.978 0.013 118);
  --primary: oklch(0.45 0.1 118);
  --primary-foreground: oklch(0.99 0 0);
  --accent: oklch(0.956 0.021 118);
@@ -106,6 +112,7 @@
 }
 
 [data-theme="dark"][data-palette="editorial"] {
+ --canvas-background: oklch(0.215 0.014 270);
  --primary: oklch(0.73 0.16 270);
  --primary-foreground: oklch(0.18 0.01 270);
  --accent: oklch(0.295 0.04 270);
@@ -120,6 +127,7 @@
 }
 
 [data-theme="dark"][data-palette="jade"] {
+ --canvas-background: oklch(0.216 0.014 158);
  --primary: oklch(0.75 0.14 158);
  --primary-foreground: oklch(0.18 0.015 158);
  --accent: oklch(0.295 0.035 158);
@@ -134,6 +142,7 @@
 }
 
 [data-theme="dark"][data-palette="warm"] {
+ --canvas-background: oklch(0.218 0.015 65);
  --primary: oklch(0.78 0.13 65);
  --primary-foreground: oklch(0.19 0.015 65);
  --accent: oklch(0.3 0.035 65);
@@ -148,6 +157,7 @@
 }
 
 [data-theme="dark"][data-palette="plum"] {
+ --canvas-background: oklch(0.215 0.015 325);
  --primary: oklch(0.74 0.15 325);
  --primary-foreground: oklch(0.18 0.01 325);
  --accent: oklch(0.3 0.04 325);
@@ -162,6 +172,7 @@
 }
 
 [data-theme="dark"][data-palette="mono"] {
+ --canvas-background: oklch(0.218 0 0);
  --primary: oklch(0.84 0 0);
  --primary-foreground: oklch(0.17 0 0);
  --accent: oklch(0.3 0 0);
@@ -176,6 +187,7 @@
 }
 
 [data-theme="dark"][data-palette="tea"] {
+ --canvas-background: oklch(0.217 0.013 118);
  --primary: oklch(0.76 0.1 118);
  --primary-foreground: oklch(0.18 0.015 118);
  --accent: oklch(0.295 0.025 118);
