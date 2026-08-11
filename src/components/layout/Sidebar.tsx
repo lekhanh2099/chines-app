@@ -154,21 +154,11 @@ export function Sidebar() {
  const activeGroupId = navigationGroups.find((group) =>
   group.items.some((item) => isActive(pathname, searchParams, item.href)),
  )?.id;
- const [expandedGroupIds, setExpandedGroupIds] = useState<string[]>(() =>
-  activeGroupId ? [activeGroupId] : [],
- );
+ const [manuallyExpandedGroupIds, setManuallyExpandedGroupIds] = useState<string[]>([]);
 
  useEffect(() => {
   hydrateSidebar();
  }, [hydrateSidebar]);
-
- useEffect(() => {
-  if (!activeGroupId) return;
-
-  setExpandedGroupIds((current) =>
-   current.includes(activeGroupId) ? current : [...current, activeGroupId],
-  );
- }, [activeGroupId]);
 
  if (isContentFullscreen) return null;
 
@@ -227,7 +217,8 @@ export function Sidebar() {
     ) : (
      <div className="grid content-start gap-1.5">
       {navigationGroups.map((group) => {
-       const groupOpen = expandedGroupIds.includes(group.id);
+       const groupOpen =
+        group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
        const GroupIcon = group.icon;
 
        return (
@@ -240,13 +231,15 @@ export function Sidebar() {
           className="w-full"
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
-          onClick={() =>
-           setExpandedGroupIds((current) =>
+          onClick={() => {
+           if (group.id === activeGroupId) return;
+
+           setManuallyExpandedGroupIds((current) =>
             current.includes(group.id)
              ? current.filter((groupId) => groupId !== group.id)
              : [...current, group.id],
-           )
-          }
+           );
+          }}
          >
           <span className="flex min-w-0 items-center gap-3">
            <GroupIcon data-icon="inline-start" />
