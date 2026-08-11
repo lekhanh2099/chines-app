@@ -28,23 +28,28 @@ export function FormSwitch({ label, description, disabled, required, className }
 
  return (
   <div className={cn("grid gap-2", className)}>
-   <div className="flex items-start justify-between gap-4 rounded-2xl -lg border border-border-default bg-bg-primary p-3">
-    <Label htmlFor={inputId} variant="label" className="grid cursor-pointer gap-1">
-     <Typography as="span" tone="default" weight="black">
+   <Label
+    htmlFor={inputId}
+    variant="label"
+    surface="fieldCard"
+    className="cursor-pointer justify-between gap-4"
+   >
+    <span className="grid min-w-0 gap-1">
+     <Typography as="span" tone="default" weight="black" className="inline-flex items-baseline gap-1">
       {label}
-      {required && (
-       <Typography as="span" tone="danger" className="ml-1">
+      {required ? (
+       <Typography as="span" tone="danger">
         *
        </Typography>
-      )}
+      ) : null}
      </Typography>
 
-     {description && (
+     {description ? (
       <Typography id={descriptionId} variant="caption" tone="muted" weight="semibold">
        {description}
       </Typography>
-     )}
-    </Label>
+     ) : null}
+    </span>
 
     <Switch
      id={inputId}
@@ -55,13 +60,13 @@ export function FormSwitch({ label, description, disabled, required, className }
      onBlur={field.handleBlur}
      onCheckedChange={field.handleChange}
     />
-   </div>
+   </Label>
 
-   {error && (
+   {error ? (
     <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
     </Typography>
-   )}
+   ) : null}
   </div>
  );
 }
