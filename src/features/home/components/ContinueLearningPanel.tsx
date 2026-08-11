@@ -4,11 +4,8 @@ import { BookOpenCheck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
- HomeArrowIcon,
- HomeIconTile,
- HomeSectionHeader,
-} from "@/features/home/components/HomePrimitives";
+import { IconTile } from "@/components/ui/icon-tile";
+import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type { HomeDashboardModel } from "@/features/home/types";
 
@@ -46,9 +43,9 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
        className="w-full xl:max-w-2xl"
       >
        <Link href={lesson.href} prefetch={false}>
-        <HomeIconTile>
-         <BookOpenCheck className="h-5 w-5" />
-        </HomeIconTile>
+        <IconTile size="lg">
+         <BookOpenCheck />
+        </IconTile>
 
         <span className="min-w-0 flex-1">
          <Typography
