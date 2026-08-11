@@ -80,12 +80,15 @@ describe("LessonReadingSettings", () => {
   );
  });
 
- it("uses Khải thư for the default and system reader font", () => {
+ it("keeps Khải thư as the default while using a Simplified-Chinese fallback on unsupported devices", () => {
   const kaitiFontFamily = getHanziFontFamily("kaiti");
+  const systemFontFamily = getHanziFontFamily("system");
 
   expect(kaitiFontFamily).toContain('"Kaiti SC"');
-  expect(kaitiFontFamily).toContain("var(--font-lxgw-wenkai-mono-tc)");
-  expect(getHanziFontFamily("system")).toBe(kaitiFontFamily);
+  expect(kaitiFontFamily).toContain("var(--font-reading-noto-serif)");
+  expect(kaitiFontFamily).not.toContain("font-lxgw-wenkai-mono-tc");
+  expect(systemFontFamily).toContain("system-ui");
+  expect(systemFontFamily).not.toBe(kaitiFontFamily);
   expect(getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily).toBe(kaitiFontFamily);
  });
 
