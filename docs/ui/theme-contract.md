@@ -13,11 +13,13 @@ root attributes. `src/app/theme-palettes.css` owns palette token overrides.
 
 ## 1. Surface ownership
 
-A palette is an accent system with a restrained canvas tint, not a full page skin.
+A palette is a restrained product tint, not a full page skin.
 
 Palette MAY own:
 
 - the page canvas alias `--bg-primary` through a palette-specific `--canvas-background`;
+- the default Card/shell alias `--bg-card` as a low-percentage mix of the neutral
+  `--card` foundation and the selected `--primary`;
 - `--primary` and its foreground;
 - `--accent` and its foreground;
 - `--ring`;
@@ -27,17 +29,17 @@ Palette MAY own:
 Palette MUST NOT own:
 
 - the neutral `--background` foundation token;
-- Card background;
+- the neutral `--card` foundation token itself;
 - Popover/Dialog background;
-- neutral elevated/subtle surfaces;
+- neutral elevated surfaces;
 - input surface;
 - border hierarchy;
 - normal text hierarchy.
 
-Light/dark mode therefore owns the neutral surface family while the selected palette
-may tint only the outer page canvas enough to make the theme perceptible. A Plum
-palette may give the page a restrained plum cast and Plum active controls, but Card,
-Popover, Dialog and borders remain on the neutral light/dark hierarchy.
+Light/dark mode therefore still owns the structural surface family. The palette can
+make the product perceptibly themed in two controlled layers: the outer canvas has
+the clearest tint and default Card/shell surfaces receive a much lighter tint. Popover,
+Dialog, input, borders and text stay neutral so learning content keeps stable contrast.
 
 The active interaction contract uses the selected palette color for both the active
 surface emphasis and active text/icon color. Nested `Typography` inside an active
@@ -57,15 +59,15 @@ purple  -> semantic purple/category tokens
 ```
 
 A Jade palette must not turn a purple category badge green. A Plum palette may tint
-the outer canvas but must not turn every card or semantic state purple. Theme palettes
+canvas and default cards, but it must not redefine semantic state colors. Theme palettes
 must never redefine success, warning, danger or info simply to make the screen feel
 more coordinated.
 
 ## 3. Light and dark pairs
 
 Every palette requires both a light and dark token set. Dark mode is not a simple
-inversion of the light accent: foreground contrast, active text and canvas tint must
-be selected independently for the dark neutral surface family.
+inversion of the light accent: foreground contrast, active text, canvas tint and Card
+tint must remain legible against the dark foundation.
 
 `system` mode resolves from `prefers-color-scheme`; the stored palette remains
 unchanged when the operating system switches between light and dark.
@@ -80,8 +82,9 @@ Appearance settings expose:
 - a short description of the current palette.
 
 Palette choices are standalone touch targets. They must not be represented as small
-toolbar controls. Changing palette should visibly change the outer page canvas plus
-selected/active emphasis without reducing reading contrast inside content surfaces.
+toolbar controls. Changing palette should visibly change the outer page canvas, lightly
+change Card/shell surfaces and change selected/active emphasis without reducing reading
+contrast inside content-heavy surfaces.
 
 ## 5. Adding a palette
 
@@ -91,10 +94,12 @@ To add a palette:
 2. Add user-facing metadata to `THEME_PALETTE_META`.
 3. Define light and dark selectors in `theme-palettes.css`.
 4. Define a restrained `--canvas-background` plus the palette-owned emphasis tokens.
-5. Keep Card/Popover/Dialog/input/border/text foundation tokens neutral.
-6. Add/keep a swatch selector.
-7. Run `theme-contract.test.ts` and the normal UI gate.
-8. Render at least Settings plus one content-heavy learning surface in light and dark
+5. Keep raw `--card` neutral; derive `--bg-card` only through the shared low-percentage
+   palette mix.
+6. Keep Popover/Dialog/input/border/text foundation tokens neutral.
+7. Add/keep a swatch selector.
+8. Run `theme-contract.test.ts` and the normal UI gate.
+9. Render at least Settings plus one content-heavy learning surface in light and dark
    mode before claiming visual verification.
 
 Do not add feature-local palette classes or a second theme store.
