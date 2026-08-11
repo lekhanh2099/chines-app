@@ -1,9 +1,11 @@
 import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
+import { z } from "zod";
 
 import { cn } from "@/lib/utils";
 
-type PageHeaderDensity = "default" | "compact";
+const PageHeaderDensitySchema = z.enum(["default", "compact"]);
+type PageHeaderDensity = z.infer<typeof PageHeaderDensitySchema>;
 
 export function PageHeader({
  title,
@@ -11,7 +13,7 @@ export function PageHeader({
  actions,
  eyebrow,
  meta,
- density = "default",
+ density = PageHeaderDensitySchema.enum.default,
  className,
 }: {
  title: string;
@@ -22,7 +24,7 @@ export function PageHeader({
  density?: PageHeaderDensity;
  className?: string;
 }) {
- const compact = density === "compact";
+ const compact = density === PageHeaderDensitySchema.enum.compact;
 
  return (
   <header
