@@ -226,7 +226,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       router.push(`/settings?section=${nextSection}`, { scroll: false });
      }}
     >
-     <TabsContent active={section === SettingsSectionSchema.enum.app} className="mt-4 grid gap-4">
+     <TabsContent active={section === SettingsSectionSchema.enum.app} className="grid gap-4 pt-4">
       <AppearanceSettingsSection />
 
       <Card variant="section" padding="lg" className="grid gap-3">
@@ -271,25 +271,25 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </Card>
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.reading} className="mt-4">
+     <TabsContent active={section === SettingsSectionSchema.enum.reading} className="pt-4">
       {readingSettings}
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="mt-4 grid gap-5">
+     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="grid gap-5 pt-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-       <div className="min-w-0 max-w-3xl">
+       <div className="grid min-w-0 max-w-3xl gap-2">
         <Badge variant="accent" size="md">
          <Bot />
          AI Settings
         </Badge>
-        <Typography as="h2" variant="sectionTitle" weight="bold" className="mt-2">
+        <Typography as="h2" variant="sectionTitle" weight="bold">
          Cài đặt tra cứu AI
         </Typography>
-        <Typography as="p" tone="secondary" leading="standard" className="mt-1">
+        <Typography as="p" tone="secondary" leading="standard">
          Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model
          mạnh chỉ chạy khi bạn chủ động mở phần chi tiết.
         </Typography>
-        <div className="mt-3">
+        <div>
          <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
           {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
          </Badge>
@@ -363,11 +363,11 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
        />
 
        <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
-        <div>
+        <div className="grid gap-1">
          <Typography as="p" tone="default" weight="semibold">
           {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
          </Typography>
-         <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+         <Typography as="p" variant="bodySmall" tone="muted">
           Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.
          </Typography>
         </div>
@@ -382,7 +382,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
       <ApiKeyManagerSection />
 
-      <div className="space-y-4">
+      <div className="grid gap-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <SectionHeading
          title="Lookup Prompts"
@@ -450,11 +450,11 @@ function SectionHeading({
      {icon}
     </IconTile>
    ) : null}
-   <div className="min-w-0">
+   <div className="grid min-w-0 gap-1">
     <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
      {title}
     </Typography>
-    <Typography as="p" tone="secondary" leading="standard" className="mt-1">
+    <Typography as="p" tone="secondary" leading="standard">
      {description}
     </Typography>
    </div>
@@ -481,7 +481,7 @@ function SettingsToggleRow({
 
  return (
   <div className="flex min-w-0 items-center justify-between gap-4 py-3">
-   <div className="min-w-0 space-y-1">
+   <div className="grid min-w-0 gap-1">
     <Label htmlFor={id} variant="label" tone="default" weight="bold">
      {label}
     </Label>
@@ -522,9 +522,9 @@ function PromptPanel({
  const hasPlaceholder = value.includes(placeholderToken);
 
  return (
-  <Card variant="default" padding="lg">
-   <div className="mb-4 flex items-start justify-between gap-4">
-    <div className="space-y-2">
+  <Card variant="default" padding="lg" className="grid gap-4">
+   <div className="flex items-start justify-between gap-4">
+    <div className="grid gap-2">
      <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
       {title}
      </Typography>
@@ -543,7 +543,7 @@ function PromptPanel({
     </div>
    </div>
 
-   <div className="mb-3 flex items-center justify-between">
+   <div className="flex items-center justify-between gap-3">
     <Badge variant={hasPlaceholder ? "success" : "danger"} size="sm">
      {hasPlaceholder
       ? `Có placeholder ${placeholderToken}`
