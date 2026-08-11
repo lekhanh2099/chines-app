@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
+import {
+ moduleSchema,
+ reviewResultSchema,
+} from "@/features/hanzihome/schemas/learning-state.schema";
 import type { NoteListItem } from "@/services/notes.service";
 
 export const HomeLessonTargetSchema = z.object({
@@ -21,9 +24,18 @@ export const HomeLearningPulseSchema = z.object({
  bookmarkedCount: z.number().int().nonnegative(),
 });
 
+export const HomeRecentActivityItemSchema = z.object({
+ key: z.string(),
+ label: z.string(),
+ kindLabel: z.string(),
+ result: reviewResultSchema,
+ answeredAt: z.string(),
+});
+
 export type HomeDashboardModel = {
  lesson: z.infer<z.ZodNullable<typeof HomeLessonTargetSchema>>;
  learningPulse: z.infer<typeof HomeLearningPulseSchema>;
+ recentActivity: Array<z.infer<typeof HomeRecentActivityItemSchema>>;
  recentNotes: NoteListItem[];
  isLoading: boolean;
 };
