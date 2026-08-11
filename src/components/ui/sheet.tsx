@@ -26,11 +26,11 @@ export function Sheet({
  return (
   <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
    <DialogPrimitive.Portal>
-    <DialogPrimitive.Overlay className="fixed inset-0 z-[100] bg-overlay" />
+    <DialogPrimitive.Overlay className="fixed inset-0 z-100 bg-overlay" />
     <DialogPrimitive.Content
      aria-describedby={undefined}
      className={cn(
-      "fixed z-[101] flex max-w-full flex-col overflow-hidden border-border-default bg-bg-card shadow-theme-lg outline-none",
+      "fixed z-101 flex max-w-full flex-col overflow-hidden border-border-default bg-bg-card shadow-theme-lg outline-none",
       side === "right"
        ? "right-0 top-0 h-full w-full border-l sm:max-w-2xl"
        : "inset-x-0 bottom-0 max-h-[82dvh] w-full rounded-t-xl border border-b-0",
@@ -54,9 +54,9 @@ export function SheetHeader({ title, onClose }: { title: string; onClose: () => 
     <Button
      type="button"
      variant="outline"
-     size="icon-sm"
+     size="icon-round"
      onClick={onClose}
-     className="shrink-0 rounded-full"
+     className="shrink-0"
      aria-label="Đóng"
     >
      <X />
