@@ -33,6 +33,7 @@ describe("StructuredExamplesSection", () => {
   expect(html).toContain('lang="zh-CN"');
   expect(html).toContain("font-hanzi");
   expect(html).toContain("<mark");
-  expect(html).toContain("尽管今天下雨");
+  expect(html).toContain("尽管");
+  expect(html).toContain("今天下雨，他还是骑自行车来了。");
  });
 });
