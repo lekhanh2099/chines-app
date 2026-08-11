@@ -1,8 +1,9 @@
 /*
- * Palette themes own two things: a restrained page-canvas tint and interactive
- * emphasis. Cards, popovers, dialogs, inputs and borders stay on the neutral
- * light/dark surface family so palette changes are perceptible without washing
- * the whole product in a brand color.
+ * Palette themes own restrained product tint plus interactive emphasis.
+ * The outer canvas receives the clearest tint. Default Card/shell surfaces get
+ * a much lighter tint through --bg-card, while popovers, dialogs, inputs,
+ * borders and the raw --card foundation remain neutral so reading hierarchy is
+ * still calm and predictable.
  *
  * Success, warning, danger, info and semantic purple remain stable regardless
  * of the selected palette; a green theme must not turn a purple category badge
@@ -23,6 +24,14 @@
 
 [data-theme][data-palette] {
  --bg-primary: var(--canvas-background);
+}
+
+[data-theme="light"][data-palette] {
+ --bg-card: color-mix(in oklch, var(--card) 94%, var(--primary));
+}
+
+[data-theme="dark"][data-palette] {
+ --bg-card: color-mix(in oklch, var(--card) 92%, var(--primary));
 }
 
 [data-theme][data-palette] .app-active-item {
