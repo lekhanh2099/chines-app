@@ -1,6 +1,7 @@
+import { Loader2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useFormContext } from "../hooks/form-context";
-import { Loader2 } from "lucide-react";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
  requireDirtyCheck?: boolean;
@@ -27,15 +28,8 @@ export function SubscribeButton({
      isLoading;
 
     return (
-     <Button
-      type="submit"
-      variant="default"
-      size="spacious"
-      {...props}
-      disabled={disabled}
-      className={className}
-     >
-      {(state.isSubmitting || isLoading) && <Loader2 className="w-5 h-5 animate-spin" />}
+     <Button type="submit" variant="default" size="touch" {...props} disabled={disabled} className={className}>
+      {state.isSubmitting || isLoading ? <Loader2 data-icon="inline-start" className="animate-spin" /> : null}
       {children}
      </Button>
     );
