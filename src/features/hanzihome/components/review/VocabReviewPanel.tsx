@@ -101,11 +101,8 @@ export function VocabReviewPanel({
 
  if (session.items.length === 0) {
   return (
-   <Card
-    padding="lg"
-    className="w-full max-w-3xl justify-self-center rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-   >
-    <div className="grid gap-3 text-center">
+   <Card variant="elevated" padding="lg" className="w-full max-w-3xl justify-self-center">
+    <div className="grid gap-5 text-center">
      <ReviewHeader
       mode={mode}
       modes={modes}
@@ -114,7 +111,7 @@ export function VocabReviewPanel({
       onModeChange={resetWithMode}
      />
 
-     <div className="grid gap-2 rounded-xl border border-dashed border-border-default bg-bg-subtle p-4">
+     <div className="grid gap-2 py-4">
       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
        Chưa có thẻ để ôn
       </Typography>
@@ -129,11 +126,8 @@ export function VocabReviewPanel({
 
  if (!item || session.state.completed) {
   return (
-   <Card
-    padding="lg"
-    className="w-full max-w-3xl justify-self-center rounded-xl border border-border-default bg-bg-primary text-center shadow-theme-sm"
-   >
-    <div className="grid gap-3">
+   <Card variant="elevated" padding="lg" className="w-full max-w-3xl justify-self-center">
+    <div className="grid gap-5 text-center">
      <ReviewHeader
       mode={mode}
       modes={modes}
@@ -142,7 +136,7 @@ export function VocabReviewPanel({
       onModeChange={resetWithMode}
      />
 
-     <div className="grid gap-2 rounded-xl bg-bg-subtle p-4">
+     <div className="grid gap-2 py-4">
       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
        Đã hết lượt ôn
       </Typography>
@@ -156,7 +150,7 @@ export function VocabReviewPanel({
        Trở lại thẻ cuối
       </Button>
       <Button onClick={session.reset}>
-       <RotateCcw className="h-4 w-4" />
+       <RotateCcw data-icon="inline-start" />
        Ôn lại
       </Button>
      </div>
@@ -168,10 +162,7 @@ export function VocabReviewPanel({
  const progress = Math.round(((session.state.index + 1) / session.items.length) * 100);
 
  return (
-  <Card
-   padding="lg"
-   className="w-full max-w-4xl justify-self-center rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-  >
+  <Card variant="elevated" padding="lg" className="w-full max-w-4xl justify-self-center">
    <div className="grid gap-3">
     <ReviewHeader
      mode={mode}
@@ -183,11 +174,9 @@ export function VocabReviewPanel({
 
     <div className="grid gap-2">
      <div className="flex flex-wrap items-center justify-between gap-3">
-      <div className="flex flex-wrap items-center gap-2">
-       <Badge variant={item.type === "vocab" ? "accent" : "info"}>
-        {item.type === "vocab" ? "Từ vựng" : "Ngữ pháp"}
-       </Badge>
-      </div>
+      <Badge variant={item.type === "vocab" ? "accent" : "info"}>
+       {item.type === "vocab" ? "Từ vựng" : "Ngữ pháp"}
+      </Badge>
 
       <StudyInstructionText
        variant="overline"
@@ -200,7 +189,7 @@ export function VocabReviewPanel({
       </StudyInstructionText>
      </div>
 
-     <div className="h-3 overflow-hidden rounded-full bg-bg-subtle">
+     <div className="h-2 overflow-hidden rounded-full bg-bg-subtle" aria-hidden="true">
       <div className="h-full rounded-full bg-accent" style={{ inlineSize: `${progress}%` }} />
      </div>
     </div>
