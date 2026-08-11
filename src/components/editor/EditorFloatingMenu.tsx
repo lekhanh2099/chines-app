@@ -750,9 +750,7 @@ export default function EditorFloatingMenu() {
           </FormatButton>
           <FormatButton
            active={isSubscript}
-           onClick={() => formatText("subscript")}
-           title="Subscript"
-          >
+           onClick={() => formatText("subscript")} title="Subscript">
            <Subscript />
           </FormatButton>
           <FormatButton
@@ -920,9 +918,9 @@ function SmartLookupSummary({
 }: {
  smartLoading: boolean;
  smartError: boolean;
- error: unknown;
+ error: ReturnType<typeof useSmartSelectionInsights>["error"];
  smartData: ReturnType<typeof useSmartSelectionInsights>["data"];
- smartMode: "word" | "sentence";
+ smartMode: ReturnType<typeof useSmartSelectionInsights>["mode"];
 }) {
  if (smartLoading) {
   return (
