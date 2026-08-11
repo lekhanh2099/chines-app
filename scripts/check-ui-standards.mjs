@@ -43,6 +43,8 @@ const VISUAL_PRIMITIVE_COMPONENTS = new Set([
  "DropdownMenuContent",
  "DropdownMenuSubContent",
  "BasePopoverPopup",
+ "Popover.Popup",
+ "Popover.Trigger",
 ]);
 const DIRECT_PRIMITIVE_IMPORT_PATTERN = /^(?:@base-ui\/react(?:\/.*)?|radix-ui|@radix-ui\/.*)$/;
 const LEGACY_SELECT_IMPORT = "@/components/ui/select/index";
@@ -83,6 +85,15 @@ function classNameAttribute(node) {
  return node.attributes.properties.find(
   (attribute) => ts.isJsxAttribute(attribute) && attribute.name.text === "className",
  );
+}
+
+function jsxTagNameText(tagName) {
+ if (ts.isIdentifier(tagName)) return tagName.text;
+ if (ts.isPropertyAccessExpression(tagName)) {
+  const owner = jsxTagNameText(tagName.expression);
+  return owner ? `${owner}.${tagName.name.text}` : tagName.name.text;
+ }
+ return "";
 }
 
 function hasDirectTextContent(node) {
@@ -165,8 +176,8 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    failures.push(`featureOwnedZIndex: ${location(sourceFile, node)}`);
   }
 
-  if (!isUiOwner && ts.isJsxElement(node) && ts.isIdentifier(node.openingElement.tagName)) {
-   const tagName = node.openingElement.tagName.text;
+  if (!isUiOwner && ts.isJsxElement(node)) {
+   const tagName = jsxTagNameText(node.openingElement.tagName);
    if (tagName === "div" && hasDirectTextContent(node)) {
     const className = classNameAttribute(node.openingElement);
     if (className && BLOCK_TYPOGRAPHY_CLASS_PATTERN.test(className.getText(sourceFile))) {
@@ -175,12 +186,8 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    }
   }
 
-  if (
-   !isUiOwner &&
-   (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) &&
-   ts.isIdentifier(node.tagName)
-  ) {
-   const tagName = node.tagName.text;
+  if (!isUiOwner && (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node))) {
+   const tagName = jsxTagNameText(node.tagName);
    if (UI_INTRINSIC_CONTROL_TAGS.has(tagName)) {
     failures.push(`rawInteractiveControl: ${location(sourceFile, node)} uses <${tagName}>`);
    }
