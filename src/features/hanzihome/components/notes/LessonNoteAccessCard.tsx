@@ -42,7 +42,7 @@ export function LessonNoteAccessCard({ compact = false }: { compact?: boolean })
  };
 
  return (
-  <Card padding="lg" className={compact ? "h-full min-h-0 rounded-xl" : "rounded-xl"}>
+  <Card padding="lg" className={compact ? "h-full min-h-0" : undefined}>
    <div className={compact ? "grid h-full min-h-0 gap-4" : "grid gap-4"}>
     {linkedNoteQuery.isLoading ? (
      <LinkedContentSkeleton label="Đang kiểm tra ghi chú của bài" />
@@ -55,10 +55,11 @@ export function LessonNoteAccessCard({ compact = false }: { compact?: boolean })
       disabled={isCreating}
       variant="outline"
       align="start"
+      wrap="normal"
      >
       {isCreating ? (
        <span className="inline-flex items-center gap-2">
-        <Loader2 className="h-4 w-4 animate-spin" />
+        <Loader2 className="animate-spin" />
         Đang tạo ghi chú cho bài...
        </span>
       ) : (
