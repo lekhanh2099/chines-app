@@ -7,10 +7,7 @@ import type { GrammarReading } from "./grammar-reading";
 
 export function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
  return (
-  <Card
-   padding="lg"
-   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-  >
+  <Card variant="section" padding="lg">
    <article className="grid gap-3">
     <div className="grid gap-1">
      <StudyInstructionText
