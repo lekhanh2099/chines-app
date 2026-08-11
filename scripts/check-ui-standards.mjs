@@ -59,8 +59,11 @@ const FEATURE_SURFACE_ESCAPE_HATCH_PATTERN =
  /\b(?:app-glass-surface|app-gradient-hero|backdrop-blur(?:-[\w-]+)?|shadow-theme-lg)\b/;
 const FIXED_MARGIN_CLASS_PATTERN =
  /(?:^|[\s"'`])(?:[a-z0-9-]+:)*-?m(?:[trblxy])?-(?!auto(?:[\s"'`}]|$)|0(?:[\s"'`}]|$))[^\s"'`}]*/i;
+const INLINE_HORIZONTAL_MARGIN_PATTERN = /(?:^|\s)(?:[a-z0-9-]+:)*mx-[^\s"'`}]*/i;
+const INLINE_LAYOUT_PATTERN = /\binline(?:-flex|-block)?\b/;
 const SPACE_BETWEEN_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*space-[xy]-(?!0(?:[\s"'`}]|$))[^\s"'`}]*/i;
 const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
+const FEATURE_LARGE_RADIUS_PATTERN = /\brounded-(?:2xl|3xl)\b/;
 const FEATURE_RING_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
 const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
 
@@ -117,7 +120,12 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
 
  const inspectSpacing = (className) => {
   const classNameSource = className.getText(sourceFile);
-  if (FIXED_MARGIN_CLASS_PATTERN.test(classNameSource)) {
+  const fixedMarginMatch = classNameSource.match(FIXED_MARGIN_CLASS_PATTERN)?.[0] ?? "";
+  const inlineHorizontalSpacing =
+   INLINE_LAYOUT_PATTERN.test(classNameSource) &&
+   INLINE_HORIZONTAL_MARGIN_PATTERN.test(fixedMarginMatch.trimStart());
+
+  if (fixedMarginMatch && !inlineHorizontalSpacing) {
    failures.push(
     `fixedMarginSpacing: ${location(sourceFile, className)} uses child margin; compose spacing with parent gap/padding`,
    );
@@ -142,6 +150,11 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   }
   if (ARBITRARY_RADIUS_PATTERN.test(classNameSource)) {
    failures.push(`featureArbitraryRadius: ${location(sourceFile, className)}`);
+  }
+  if (FEATURE_LARGE_RADIUS_PATTERN.test(classNameSource)) {
+   failures.push(
+    `featureLargeRadius: ${location(sourceFile, className)} uses 2xl/3xl radius outside a visual owner`,
+   );
   }
   if (FEATURE_RING_CLASS_PATTERN.test(classNameSource)) {
    failures.push(`featureOwnedRing: ${location(sourceFile, className)}`);
