@@ -15,6 +15,9 @@ export type SegmentedControlGroup<T extends string = string> = {
  items: SegmentedControlItem<T>[];
 };
 
+type SegmentedControlSurface = "subtle" | "transparent";
+type SegmentedControlDensity = "toolbar" | "touch";
+
 function getSegmentedControlGroups<T extends string>({
  items = [],
  groups,
@@ -39,6 +42,8 @@ export function SegmentedControl<T extends string>({
  onChange,
  className,
  itemClassName,
+ surface = "subtle",
+ density = "toolbar",
  "aria-label": ariaLabel,
 }: {
  value: T;
@@ -47,6 +52,8 @@ export function SegmentedControl<T extends string>({
  onChange: (key: T) => void;
  className?: string;
  itemClassName?: string;
+ surface?: SegmentedControlSurface;
+ density?: SegmentedControlDensity;
  "aria-label"?: string;
 }) {
  const resolvedGroups = getSegmentedControlGroups({ items, groups });
@@ -56,7 +63,8 @@ export function SegmentedControl<T extends string>({
    role="group"
    aria-label={ariaLabel}
    className={cn(
-    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
+    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain",
+    surface === "subtle" ? "rounded-lg bg-bg-subtle/70 p-0.5" : "bg-transparent p-0",
     className,
    )}
   >
@@ -75,7 +83,7 @@ export function SegmentedControl<T extends string>({
         <Button
          key={item.key}
          type="button"
-         size="toolbar"
+         size={density === "touch" ? "sm" : "toolbar"}
          variant={active ? "active" : "navigation"}
          disabled={item.disabled}
          aria-pressed={active}
