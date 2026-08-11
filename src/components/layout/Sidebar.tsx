@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
@@ -138,15 +139,9 @@ function NavRow({
      </Typography>
     ) : null}
     {!collapsed && item.badge ? (
-     <Typography
-      variant="caption"
-      tone="inverse"
-      weight="black"
-      scale="micro"
-      className="ml-auto rounded-full bg-primary px-2 py-0.5"
-     >
+     <Badge variant="accent" size="sm" className="ml-auto">
       {item.badge}
-     </Typography>
+     </Badge>
     ) : null}
    </Link>
   </Button>
