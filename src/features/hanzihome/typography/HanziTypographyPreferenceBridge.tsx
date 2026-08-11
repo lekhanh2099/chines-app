@@ -3,14 +3,14 @@
 import { useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import {
- getHanziFontFamily,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { loadLearningStateLocalFirst } from "@/features/hanzihome/local/learning-state-local-first";
 import { emptyLearningState, normalizeLearningState } from "@/features/hanzihome/utils/learning-state";
 
-const learningStateQueryKey = ["hanzihome", "learning-state"] as const;
+const learningStateQueryKey = ["hanzihome", "learning-state"];
+const defaultHanziFontFamily =
+ 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif';
 
 export function HanziTypographyPreferenceBridge() {
  const learningStateQuery = useQuery({
@@ -35,5 +35,10 @@ export function HanziTypographyPreferenceBridge() {
   };
  }, [displayMode.hanziFont, fontFamily]);
 
- return null;
+ return (
+  <style>{`
+   :root { --font-hanzi: ${defaultHanziFontFamily}; }
+   :where([lang="zh-CN"]) { font-family: var(--font-hanzi); }
+  `}</style>
+ );
 }
