@@ -1,10 +1,10 @@
 ---
 name: frontend-ui-system
-description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use for information architecture, user flow, component reuse, design system, controls, settings, navigation, responsive layout, iPad/mobile, accessibility, typography, tokens, states, or visual consistency.
+description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use for information architecture, user flow, component reuse, design system, controls, settings, navigation, responsive layout, iPad/mobile, accessibility, typography, tokens, states, theme/color ownership, or visual consistency.
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.6"
+  version: "3.7"
 ---
 
 # Frontend UI System
@@ -20,6 +20,9 @@ cat docs/ui/component-inventory.md
 cat docs/ui/ui-verification.md
 cat docs/architecture/frontend-structure.md
 ```
+
+For theme, color, appearance mode or palette work, also read
+[`docs/ui/theme-contract.md`](../../../docs/ui/theme-contract.md).
 
 Read the local primitive/pattern source before changing or recreating it. Local source overrides generic examples.
 
@@ -221,11 +224,25 @@ Verify:
 
 Do not add ARIA to compensate for the wrong interaction model.
 
-## 15. Visual system
+## 15. Visual and theme system
 
 Preserve semantic tokens and shared surface grammar. Do not add feature-local hard-coded colors, arbitrary gradients/shadows, overlay z-index, duplicate active palettes or legacy glass recipes.
 
-Classify recipes as:
+Theme ownership is split deliberately:
+
+```text
+light/dark mode -> neutral canvas, card, popover, elevated/subtle surfaces,
+                   border hierarchy, base text hierarchy
+accent palette  -> primary, accent, focus ring, selected/active navigation,
+                   brand-oriented chart emphasis
+semantic state  -> success, warning, danger, info, semantic purple
+```
+
+A palette MUST NOT tint the page canvas or default Card/Popover/Dialog surface. Selecting Plum may make active controls plum, but it must not make the entire Settings page pink. Selecting Jade must not turn success or semantic-purple categories into the palette color.
+
+Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral surface family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
+
+Classify visual recipes as:
 
 ```text
 primitive-owned
@@ -245,6 +262,8 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Fast: affected state/viewport.
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
+
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas/card/popover/border neutrality separately from selected/focus/primary emphasis.
 
 `npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
