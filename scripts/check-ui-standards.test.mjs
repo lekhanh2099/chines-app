@@ -27,17 +27,22 @@ describe("UI standards guard", () => {
  it("allows parent-owned layout classes on canonical primitives", () => {
   expect(
    inspect(
-    'export function Example() { return <><Button className="w-full md:hidden" /><Card className="grid gap-3" /><SelectTrigger className="w-full" /></>; }',
+    'export function Example() { return <><Button className="w-full md:hidden" /><Card className="grid gap-3" /><ActionCard className="w-full" /><Chip className="shrink-0" /><SelectTrigger className="w-full" /><DialogContent className="max-w-2xl" /></>; }',
    ),
   ).toEqual([]);
  });
 
  it("rejects primitive-owned visual classes and arbitrary feature z-index", () => {
   const failures = inspect(
-   'export function Example() { return <><Button className="bg-primary px-4" /><Card className="rounded-xl border bg-bg-card p-4" /><Badge className="text-xs" /><div className="z-[99]" /></>; }',
+   'export function Example() { return <><Button className="bg-primary px-4" /><Card className="rounded-xl border bg-bg-card p-4" /><ActionCard className="hover:bg-bg-elevated" /><Badge className="text-xs" /><Chip className="rounded-full px-3" /><DialogContent className="rounded-xl p-8" /><DropdownMenuContent className="shadow-theme-sm" /><BasePopoverPopup className="bg-bg-card" /><div className="z-[99]" /></>; }',
   );
 
   expect(failures).toEqual([
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
@@ -62,6 +67,25 @@ describe("UI standards guard", () => {
     'export function Example() { return <SelectTrigger className="h-10 rounded-lg bg-bg-card px-3 text-sm shadow-none" />; }',
    ),
   ).toEqual([expect.stringContaining("primitiveClassName")]);
+ });
+
+ it("rejects styled divs that are being used as application text", () => {
+  expect(
+   inspect(
+    'export function Example({ label }) { return <><div className="font-bold text-text-primary">Heading</div><div className="text-sm">{label}</div></>; }',
+   ),
+  ).toEqual([
+   expect.stringContaining("styledBlockText"),
+   expect.stringContaining("styledBlockText"),
+  ]);
+ });
+
+ it("allows layout divs that only compose typed text", () => {
+  expect(
+   inspect(
+    'export function Example() { return <div className="grid gap-2"><Typography weight="bold">Heading</Typography></div>; }',
+   ),
+  ).toEqual([]);
  });
 
  it("rejects arbitrary color and gradient utility recipes outside the UI boundary", () => {
