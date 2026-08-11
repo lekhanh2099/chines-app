@@ -4,6 +4,7 @@ import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
+import { EmptyState } from "@/components/patterns/empty-state";
 import { DictionaryCharacterSidebar } from "@/features/dictionary/components/DictionaryCharacterSidebar";
 import {
  DictionaryDocStructureSection,
@@ -30,34 +31,35 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
  if (viewModel.state === "not-found") {
   return (
    <PageContainer>
-    <div className="flex h-full flex-col items-center justify-center gap-4">
-     <Typography as="p" tone="muted">
-      Không tìm thấy từ vựng.
-     </Typography>
-     <Link href="/hanzihome" className=" font-medium  transition-colors hover: -hover">
-      Quay về HanziHome
-     </Link>
+    <div className="flex h-full items-center justify-center">
+     <EmptyState
+      title="Không tìm thấy từ vựng"
+      description="Từ này chưa có trong dữ liệu hiện tại."
+      actions={
+       <Button asChild variant="outline">
+        <Link href="/hanzihome">Quay về HanziHome</Link>
+       </Button>
+      }
+     />
     </div>
    </PageContainer>
   );
  }
 
  return (
-  <PageContainer className="bg-bg-primary">
+  <PageContainer>
    <div className="flex w-full min-w-0 flex-col gap-5">
     <div className="flex flex-wrap items-center justify-between gap-3">
-     <Link
-      href="/hanzihome"
-      className="inline-flex h-12 items-center gap-2 rounded-xl border border-border-default bg-bg-card px-4 font-black text-text-secondary shadow-theme-sm transition-colors hover:bg-bg-subtle"
-     >
-      <ArrowLeft className="h-4 w-4" />
-      HanziHome
-     </Link>
+     <Button asChild variant="outline" size="toolbar">
+      <Link href="/hanzihome">
+       <ArrowLeft data-icon="inline-start" />
+       HanziHome
+      </Link>
+     </Button>
 
      <Button
       variant="outline"
-      size="sm"
-
+      size="toolbar"
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       title="Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import"
@@ -76,12 +78,8 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] 2xl:grid-cols-[minmax(0,1fr)_460px]">
      <main className="flex min-w-0 flex-col gap-5">
       <DictionaryDocStructureSection viewModel={viewModel} />
-      {(viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion) && (
-       <Card
-        variant="subtle"
-        padding="md"
-        className="rounded-2xl border-danger/30 bg-danger-subtle"
-       >
+      {viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion ? (
+       <Card variant="subtle" padding="md">
         <div className="flex flex-col gap-2">
          <SectionHeader title="Dễ nhầm" />
          <Typography as="p" tone="danger" leading="relaxed">
@@ -89,7 +87,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
          </Typography>
         </div>
        </Card>
-      )}
+      ) : null}
       <DictionaryPersonalNoteSection viewModel={viewModel} />
      </main>
 
