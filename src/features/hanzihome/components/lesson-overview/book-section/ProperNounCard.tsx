@@ -1,10 +1,13 @@
 import type { JsonFieldValue } from "@/types/json";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Typography } from "@/components/ui/typography";
 import { RawDataDetails } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { asRecord, stringValue } from "../utils";
 import { properNounBackText, properNounFrontText, stringList } from "./proper-noun-utils";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
-import { HanziText, PinyinText, TranslationText, StudyInstructionText } from "../hanzi-typography";
+import { HanziText, PinyinText, TranslationText } from "../hanzi-typography";
 
 export function ProperNounCard({
  item,
@@ -28,94 +31,74 @@ export function ProperNounCard({
  const modes = stringList(flashcard.modes);
 
  return (
-  <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div className="grid gap-1">
-    {hanzi && (
-     <div className="flex items-center gap-1.5">
-      <HanziText as="h4" size="card" weight="black" leading="none">
-       {hanzi}
-      </HanziText>
-      <MandarinSpeakButton text={hanzi} />
-     </div>
-    )}
+  <Card asChild variant="section" padding="md">
+   <article className="grid gap-3">
+    <div className="grid gap-1">
+     {hanzi ? (
+      <div className="flex items-center gap-1.5">
+       <HanziText as="h4" size="card" weight="black" leading="none">
+        {hanzi}
+       </HanziText>
+       <MandarinSpeakButton text={hanzi} />
+      </div>
+     ) : null}
 
-    {displayMode.showPinyin && pinyin && (
-     <PinyinText as="p" tone="accent" weight="black">
-      {pinyin}
-     </PinyinText>
-    )}
+     {displayMode.showPinyin && pinyin ? (
+      <PinyinText as="p" tone="accent" weight="black">
+       {pinyin}
+      </PinyinText>
+     ) : null}
 
-    {displayMode.showMeaning && meaning && (
-     <TranslationText as="p" weight="semibold" leading="relaxed">
-      {meaning}
-     </TranslationText>
-    )}
-   </div>
-
-   {(pos || posDetailVi) && (
-    <div className="flex flex-wrap gap-2">
-     {pos && (
-      <StudyInstructionText
-       variant="caption"
-       tone="muted"
-       weight="black"
-       className="rounded-full border border-border-default bg-bg-subtle px-3 py-1"
-      >
-       {pos}
-      </StudyInstructionText>
-     )}
-
-     {posDetailVi && posDetailVi !== pos && (
-      <StudyInstructionText
-       variant="caption"
-       tone="muted"
-       weight="black"
-       className="rounded-full border border-border-default bg-bg-subtle px-3 py-1"
-      >
-       {posDetailVi}
-      </StudyInstructionText>
-     )}
+     {displayMode.showMeaning && meaning ? (
+      <TranslationText as="p" weight="semibold" leading="relaxed">
+       {meaning}
+      </TranslationText>
+     ) : null}
     </div>
-   )}
 
-   {tags.length > 0 && (
-    <div className="flex flex-wrap gap-2">
-     {tags.map((tag) => (
-      <StudyInstructionText
-       key={tag}
-       variant="caption"
-       tone="accent"
-       weight="black"
-       className="rounded-full bg-accent-subtle px-3 py-1"
-      >
-       {tag.replaceAll("_", " ")}
-      </StudyInstructionText>
-     ))}
-    </div>
-   )}
-
-   {modes.length > 0 && (
-    <details className="rounded-lg border border-border-default bg-bg-subtle p-3 grid gap-2">
-     <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">
-      Flashcard modes
-     </summary>
+    {pos || posDetailVi ? (
      <div className="flex flex-wrap gap-2">
-      {modes.map((mode) => (
-       <StudyInstructionText
-        key={mode}
-        variant="caption"
-        tone="muted"
-        weight="black"
-        className="rounded-full border border-border-default bg-bg-primary px-3 py-1"
-       >
-        {mode.replaceAll("_", " → ")}
-       </StudyInstructionText>
+      {pos ? <Badge>{pos}</Badge> : null}
+      {posDetailVi && posDetailVi !== pos ? <Badge>{posDetailVi}</Badge> : null}
+     </div>
+    ) : null}
+
+    {tags.length > 0 ? (
+     <div className="flex flex-wrap gap-2">
+      {tags.map((tag) => (
+       <Badge key={tag} variant="accent">
+        {tag.replaceAll("_", " ")}
+       </Badge>
       ))}
      </div>
-    </details>
-   )}
+    ) : null}
 
-   {debugMode && <RawDataDetails value={item} />}
-  </article>
+    {modes.length > 0 ? (
+     <Card asChild variant="subtle" padding="sm">
+      <details>
+       <summary className="cursor-pointer">
+        <Typography
+         as="span"
+         variant="overline"
+         tone="muted"
+         weight="black"
+         tracking="wide"
+         transform="uppercase"
+        >
+         Flashcard modes
+        </Typography>
+       </summary>
+       <div className="mt-2 flex flex-wrap gap-2">
+        {modes.map((mode) => (
+         <Badge key={mode}>{mode.replaceAll("_", " → ")}</Badge>
+        ))}
+       </div>
+      </details>
+     </Card>
+    ) : null}
+
+    {debugMode && <RawDataDetails value={item} />}
+   </article>
+  </Card>
  );
 }
