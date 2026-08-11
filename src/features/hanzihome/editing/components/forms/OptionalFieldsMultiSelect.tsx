@@ -1,14 +1,19 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
-import { Check, ChevronDown, Search, X } from "lucide-react";
+import { Check, Search, X } from "lucide-react";
 
-import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
+import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+ BasePopoverTrigger,
+} from "@/components/ui/base-popover";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
+import { Typography } from "@/components/ui/typography";
 
 export type OptionalFieldGroup = {
  label: string;
@@ -47,63 +52,48 @@ export function OptionalFieldsMultiSelect({
      <Typography as="h3" variant="cardTitle" tone="default" weight="bold">
       Field optional
      </Typography>
-     <StudyInstructionText variant="caption" tone="muted">
+     <Typography as="p" variant="caption" tone="muted">
       Mặc định chỉ hiện field đang dùng trong UI học.
-     </StudyInstructionText>
+     </Typography>
     </div>
-    <Button type="button" variant="ghost" size="sm" onClick={onReset}>
+    <Button type="button" variant="ghost" size="toolbar" onClick={onReset}>
      Mặc định
     </Button>
    </div>
+
    <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
     <div className="flex min-w-0 items-center gap-1">
-     <Popover.Trigger
-      className={cn(
-       "flex min-h-12 min-w-0 flex-1 items-center gap-2 rounded-lg border border-border-default bg-bg-primary px-2 py-1.5 text-left shadow-xs transition-colors outline-none hover:bg-bg-subtle focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20",
-       open && "border-primary/50 bg-accent-subtle",
-      )}
-     >
-      <div className="flex min-w-0 flex-1 items-center gap-2">
-       {firstSelectedGroup ? (
-        <StudyInstructionText
-         variant="label"
-         tone="default"
-         weight="bold"
-         clamp="one"
-         className="min-w-0 max-w-full rounded-full border border-border-default bg-bg-subtle px-2 py-1"
-        >
-         {firstSelectedGroup.label}
-        </StudyInstructionText>
-       ) : (
-        <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="px-1">
-         Chọn field optional...
-        </StudyInstructionText>
-       )}
-       {remainingSelectedCount > 0 ? (
-        <StudyInstructionText
-         variant="label"
-         tone="secondary"
-         weight="bold"
-         className="rounded-full border border-border-default bg-bg-subtle px-2 py-1"
-        >
-         +{remainingSelectedCount}
-        </StudyInstructionText>
-       ) : null}
-      </div>
-      <ChevronDown className="h-4 w-4 shrink-0 text-text-muted" />
-     </Popover.Trigger>
+     <div className="min-w-0 flex-1">
+      <BasePopoverTrigger active={open} width="full">
+       <span className="flex min-w-0 flex-1 items-center gap-2">
+        {firstSelectedGroup ? (
+         <Badge casing="natural" className="min-w-0 max-w-full">
+          {firstSelectedGroup.label}
+         </Badge>
+        ) : (
+         <Typography as="span" variant="bodySmall" tone="muted" weight="semibold" clamp="one">
+          Chọn field optional...
+         </Typography>
+        )}
+        {remainingSelectedCount > 0 ? (
+         <Badge casing="natural">+{remainingSelectedCount}</Badge>
+        ) : null}
+       </span>
+      </BasePopoverTrigger>
+     </div>
      {firstSelectedGroup ? (
       <Button
        type="button"
        variant="ghost"
-       size="icon-sm"
+       size="icon-toolbar"
        onClick={() => onToggleGroup(firstSelectedGroup.keys, false)}
        aria-label={`Ẩn ${firstSelectedGroup.label}`}
       >
-       <X className="h-3.5 w-3.5" />
+       <X />
       </Button>
      ) : null}
     </div>
+
     <Popover.Portal>
      <BasePopoverPositioner
       side="bottom"
@@ -112,14 +102,10 @@ export function OptionalFieldsMultiSelect({
       collisionPadding={12}
       positionMethod="fixed"
      >
-      <Popover.Popup
-       initialFocus={false}
-       finalFocus={false}
-       className="w-[min(36rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow"
-      >
+      <BasePopoverPopup variant="selector" initialFocus={false} finalFocus={false}>
        <div className="grid gap-3 p-3">
         <div className="relative">
-         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
          <Input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
@@ -127,16 +113,17 @@ export function OptionalFieldsMultiSelect({
           adornment="start"
          />
         </div>
-        <div className="flex items-center justify-between gap-2 text-sm">
-         <Button type="button" variant="ghost" onClick={onReset}>
+        <div className="flex items-center justify-between gap-2">
+         <Button type="button" variant="ghost" size="toolbar" onClick={onReset}>
           Unselect all
          </Button>
-         <Button type="button" variant="ghost" onClick={onSelectAll}>
+         <Button type="button" variant="ghost" size="toolbar" onClick={onSelectAll}>
           Select all
          </Button>
         </div>
        </div>
-       <div className="max-h-72 overflow-y-auto border-t border-border-default py-1 scrollbar-soft">
+       <Separator />
+       <div className="max-h-72 overflow-y-auto py-1 scrollbar-soft">
         {filteredGroups.length > 0 ? (
          filteredGroups.map((fieldGroup) => {
           const checked = fieldGroup.keys.every((key) => selectedKeys.has(key));
@@ -144,43 +131,30 @@ export function OptionalFieldsMultiSelect({
            <Button
             key={fieldGroup.label}
             type="button"
-            variant={checked ? "surfaceCard" : "menu"}
-            size="list"
+            variant={checked ? "active" : "menu"}
+            size="menu"
             align="start"
             className="w-full"
+            aria-pressed={checked}
             onClick={() => onToggleGroup(fieldGroup.keys, !checked)}
            >
-            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-border-default">
-             {checked ? <Check className="h-4 w-4 text-primary" /> : null}
-            </span>
-            <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">
+            <span className="flex w-4 shrink-0 justify-center">{checked ? <Check /> : null}</span>
+            <Typography as="span" clamp="one" className="min-w-0 flex-1">
              {fieldGroup.label}
-            </StudyInstructionText>
+            </Typography>
             {fieldGroup.keys.length > 1 ? (
-             <StudyInstructionText
-              variant="caption"
-              tone="muted"
-              className="rounded-full bg-bg-subtle px-2 py-0.5"
-             >
-              {fieldGroup.keys.length}
-             </StudyInstructionText>
+             <Badge casing="natural">{fieldGroup.keys.length}</Badge>
             ) : null}
            </Button>
           );
          })
         ) : (
-         <StudyInstructionText
-          variant="bodySmall"
-          tone="muted"
-          weight="semibold"
-          align="center"
-          className="px-4 py-6"
-         >
+         <Typography as="p" variant="bodySmall" tone="muted" weight="semibold" align="center" className="px-4 py-6">
           Không có field phù hợp.
-         </StudyInstructionText>
+         </Typography>
         )}
        </div>
-      </Popover.Popup>
+      </BasePopoverPopup>
      </BasePopoverPositioner>
     </Popover.Portal>
    </Popover.Root>
