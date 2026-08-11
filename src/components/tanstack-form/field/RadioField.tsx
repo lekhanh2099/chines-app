@@ -37,11 +37,10 @@ export function RadioField({
      field.handleChange(value);
      field.handleBlur();
     }}
-    className="mt-2"
     {...rest}
    >
     {options.map((option) => (
-     <Label key={option.value} variant="label" className="flex cursor-pointer items-center gap-2">
+     <Label key={option.value} variant="label" className="cursor-pointer gap-2">
       <RadioGroupItem value={option.value} />
       <Typography as="span" variant="bodySmall" tone="secondary">
        {option.label}
