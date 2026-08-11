@@ -41,8 +41,6 @@ const buttonVariants = cva(
     link: "text-primary underline-offset-4 hover:underline",
    },
    size: {
-    default:
-     "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
     touch:
      "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
     compact:
@@ -50,11 +48,8 @@ const buttonVariants = cva(
     toolbar:
      "min-h-9 gap-1.5 rounded-lg px-2.5 text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
     menu: "min-h-10 gap-2 rounded-lg px-2.5 text-sm",
-    xs: "min-h-11 gap-1 rounded-lg px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
     sm: "min-h-11 gap-1 rounded-lg px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
     lg: "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
-    "responsive-action":
-     "size-11 gap-1.5 2xl:w-auto 2xl:px-3 2xl:has-data-[icon=inline-end]:pr-2.5 2xl:has-data-[icon=inline-start]:pl-2.5",
     icon: "size-11",
     "icon-xs":
      "size-9 rounded-lg in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
@@ -67,8 +62,6 @@ const buttonVariants = cva(
     "responsive-compact": "size-9 rounded-lg sm:h-10 sm:w-auto sm:max-w-44 sm:px-3",
     list: "min-h-14 gap-3 rounded-lg px-3 py-2",
     tab: "h-9 min-h-9 gap-1.5 rounded-lg px-2 sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
-    card: "h-auto min-h-11 gap-4 rounded-xl p-4",
-    result: "h-auto gap-3 rounded-lg px-3 py-2.5",
     spacious: "min-h-12 gap-2 rounded-lg px-8 py-3",
    },
    align: {
@@ -97,7 +90,7 @@ const buttonVariants = cva(
   },
   defaultVariants: {
    variant: "default",
-   size: "default",
+   size: "touch",
    align: "center",
    wrap: "nowrap",
    layout: "inline",
@@ -110,7 +103,7 @@ const buttonVariants = cva(
 function Button({
  className,
  variant = "default",
- size = "default",
+ size = "touch",
  align = "center",
  wrap = "nowrap",
  layout = "inline",
