@@ -155,7 +155,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
       <DropdownMenuSubTrigger>
        <Type />
        Phông chữ
-       <Typography as="span" variant="caption" tone="muted" className="ml-auto max-w-28" clamp="one">
+       <Typography as="span" variant="caption" tone="muted" className="max-w-28" clamp="one">
         {fontOptions.find((option) => option.value === displayMode.hanziFont)?.label}
        </Typography>
       </DropdownMenuSubTrigger>
@@ -188,7 +188,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
       <DropdownMenuSubTrigger>
        <Type />
        Cỡ chữ
-       <Typography as="span" variant="caption" tone="muted" className="ml-auto">
+       <Typography as="span" variant="caption" tone="muted">
         {sizeOptions.find((option) => option.value === displayMode.hanziSize)?.label}
        </Typography>
       </DropdownMenuSubTrigger>
@@ -221,7 +221,7 @@ export function HanziHomeReadingQuickSettingsMenu() {
       <DropdownMenuSubTrigger>
        <Eye />
        Cách mở nội dung
-       <Typography as="span" variant="caption" tone="muted" className="ml-auto">
+       <Typography as="span" variant="caption" tone="muted">
         {revealOptions.find((option) => option.value === displayMode.revealMode)?.label}
        </Typography>
       </DropdownMenuSubTrigger>
