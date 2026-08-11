@@ -4,10 +4,14 @@ import * as React from "react";
 import { Switch as SwitchPrimitive } from "radix-ui";
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
 const switchVariants = cva(
- "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border border-border-default bg-bg-subtle outline-none transition-colors focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-transparent",
+ cn(
+  "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border border-border-default bg-bg-subtle transition-colors disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-transparent",
+  focusRingClassName,
+ ),
  {
   variants: {
    size: {
