@@ -49,7 +49,7 @@ describe("theme palette contract", () => {
   expect(paletteCss).toContain(
    "--theme-card-background: color-mix(in oklch, var(--card)",
   );
-  expect(cardSource).toContain("--theme-card-background,var(--bg-card)");
+  expect(cardSource).toContain("bg-[var(--theme-card-background)]");
 
   for (const property of forbiddenFoundationProperties) {
    expect(paletteCss).not.toContain(property);
