@@ -11,12 +11,11 @@ const buttonSource = fs.readFileSync(
  "utf8",
 );
 
-const forbiddenSurfaceProperties = [
+const forbiddenFoundationProperties = [
  "--background:",
  "--card:",
  "--popover:",
  "--border:",
- "--bg-card:",
  "--bg-subtle:",
  "--bg-elevated:",
  "--border-default:",
@@ -42,16 +41,17 @@ describe("theme palette contract", () => {
   }
  });
 
- it("allows a restrained canvas tint without giving palettes ownership of neutral surfaces", () => {
+ it("allows restrained canvas and card tint without recoloring neutral foundations", () => {
   expect(paletteCss).toContain("--canvas-background:");
   expect(paletteCss).toContain("--bg-primary: var(--canvas-background)");
+  expect(paletteCss).toContain("--bg-card: color-mix(in oklch, var(--card)");
 
-  for (const property of forbiddenSurfaceProperties) {
+  for (const property of forbiddenFoundationProperties) {
    expect(paletteCss).not.toContain(property);
   }
  });
 
- it("keeps palette ownership focused on canvas and interactive emphasis", () => {
+ it("keeps palette ownership focused on product tint and interactive emphasis", () => {
   expect(paletteCss).toContain("--primary:");
   expect(paletteCss).toContain("--accent:");
   expect(paletteCss).toContain("--ring:");
