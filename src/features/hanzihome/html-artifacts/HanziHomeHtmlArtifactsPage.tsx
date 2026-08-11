@@ -39,6 +39,7 @@ import {
 import { toast } from "sonner";
 import { z } from "zod";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
  Dialog,
@@ -875,7 +876,7 @@ function FolderRow({ acceptsFolderDrop = true, active, color, count, depth, drag
     <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">{name}</StudyInstructionText>
     <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">{count}</StudyInstructionText>
    </Button>
-   {folderId ? <span className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"><Button type="button" variant="ghost" size="compact" className="flex w-7" aria-label={`Đưa ${name} lên`} disabled={!canMoveUp} onClick={(event) => { event.stopPropagation(); onMoveUp?.(); }}><ArrowUp /></Button><Button type="button" variant="ghost" size="compact" className="flex w-7" aria-label={`Đưa ${name} xuống`} disabled={!canMoveDown} onClick={(event) => { event.stopPropagation(); onMoveDown?.(); }}><ArrowDown /></Button></span> : null}
+   {folderId ? <span className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"><Button type="button" variant="ghost" size="compact" className="flex w-7" aria-label={`Đưa ${name} lên`} disabled={!canMoveUp} onClick={(event) => { event.stopPropagation(); onMoveUp?.(); }}><ArrowUp /></Button><Button type="button" variant="ghost" size="compact" className="flex w-7" aria-label={`Đưa ${name} xuống`} disabled={!canMoveDown} onClick={(event) => { event.stopPropagation(); onMoveDown?.(); }}><ArrowDown /></Button></span> : null}
   </div>
  );
 }
