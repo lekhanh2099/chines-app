@@ -17,7 +17,6 @@ import {
  AppHeaderBreadcrumbItem,
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbSeparator,
- appHeaderBreadcrumbSelectTriggerClassName,
 } from "@/components/layout/app-header-breadcrumb";
 import {
  Select,
@@ -29,7 +28,6 @@ import {
 } from "@/components/ui/select";
 import { ArrowLeft, FileText } from "lucide-react";
 import { toast } from "sonner";
-import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 const OpenNoteTabDetailSchema = z.object({
@@ -149,8 +147,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
    if (window.location.pathname !== expected) {
     window.history.replaceState(null, "", expected);
    }
-  }
- }, [activeNoteId]);
+  }, [activeNoteId]);
 
  // Navigate away when all tabs are closed (after having had tabs)
  useEffect(() => {
@@ -264,10 +261,8 @@ function NoteQuickSelect({
      <Select value={selectedNoteId} onValueChange={onSelectNote}>
       <SelectTrigger
        aria-label="Chọn nhanh ghi chú"
-       className={cn(
-        appHeaderBreadcrumbSelectTriggerClassName,
-        "w-[min(10rem,40vw)] text-sm sm:w-64 xl:w-[24rem]",
-       )}
+       variant="breadcrumb"
+       className="w-[min(10rem,40vw)] sm:w-64 xl:w-[24rem]"
       >
        <SelectValue placeholder="Chọn ghi chú" />
       </SelectTrigger>
