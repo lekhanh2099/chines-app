@@ -1,7 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import { Input } from "@/components/ui/input";
 import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
 import Link from "next/link";
@@ -10,7 +8,51 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 import { z } from "zod";
-import { type Theme, useTheme } from "./ThemeProvider";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+ DropdownMenu,
+ DropdownMenuCheckboxItem,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { Typography } from "@/components/ui/typography";
+import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import {
+ HanziHomeReadingQuickSettingsActiveSectionSchema,
+ HanziHomeReadingQuickSettingsMenu,
+} from "@/features/hanzihome/HanziHomeReadingSettingsSection";
+import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
+import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
+import {
+ clearHanziHomeSearchNavigationIntent,
+ setHanziHomeSearchNavigationIntent,
+} from "@/features/hanzihome/search/searchNavigationStore";
+import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
+import {
+ findLessonByRouteParam,
+ getLessonRouteValue,
+} from "@/features/hanzihome/utils/lesson-route";
+import { containsChinese } from "@/lib/chinese-utils";
+import { cn } from "@/lib/utils";
+import { appShellStore } from "@/stores/app-shell-store";
+import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
+import { focusModeStore } from "@/stores/focus-mode-store";
+import { headerToolbarStore } from "@/stores/header-toolbar-store";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -21,47 +63,7 @@ import {
 } from "./app-header-breadcrumb";
 import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
-import {
- DropdownMenu,
- DropdownMenuCheckboxItem,
- DropdownMenuContent,
- DropdownMenuItem,
- DropdownMenuLabel,
- DropdownMenuSeparator,
- DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { containsChinese } from "@/lib/chinese-utils";
-import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
-import { appShellStore } from "@/stores/app-shell-store";
-import { Button } from "@/components/ui/button";
-import {
- Select,
- SelectContent,
- SelectGroup,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
-import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
-import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
-import {
- findLessonByRouteParam,
- getLessonRouteValue,
-} from "@/features/hanzihome/utils/lesson-route";
-import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
-import {
- HanziHomeReadingQuickSettingsActiveSectionSchema,
- HanziHomeReadingQuickSettingsMenu,
-} from "@/features/hanzihome/HanziHomeReadingSettingsSection";
-import {
- clearHanziHomeSearchNavigationIntent,
- setHanziHomeSearchNavigationIntent,
-} from "@/features/hanzihome/search/searchNavigationStore";
-import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
-import { cn } from "@/lib/utils";
+import { type Theme, useTheme } from "./ThemeProvider";
 
 type HanziHomeHeaderBreadcrumb = {
  courses: Array<{ id: string; title: string }>;
@@ -109,10 +111,8 @@ export function Header({ user }: { user?: Nullable<User> }) {
  const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
  const isHanziHomeRoute = pathname === "/hanzihome";
- const isRadicalsWorkspaceRoute = pathname === "/radicals";
  const isHanziHomeLessonWorkspaceRoute =
   isHanziHomeRoute &&
-  !isRadicalsWorkspaceRoute &&
   (searchParams.has("courseId") ||
    searchParams.has("lesson") ||
    searchParams.has("lessonId") ||
@@ -275,6 +275,7 @@ export function Header({ user }: { user?: Nullable<User> }) {
 
      <HeaderUtilityArea
       routeToolbarActive={hasRouteToolbar}
+      showReadingSettings={isHanziHomeLessonWorkspaceRoute}
       focusModeEnabled={focusModeEnabled}
       user={user}
       theme={theme}
@@ -327,9 +328,7 @@ function HeaderContextArea({
   );
  }
 
- if (simpleBreadcrumb) {
-  return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
- }
+ if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
 
  return <div className="min-w-0" />;
 }
@@ -366,13 +365,7 @@ function HanziHomeBreadcrumbNav({
    </AppHeaderBreadcrumbItem>
    <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
    <AppHeaderBreadcrumbItem className="min-w-0">
-    <Select
-     value={breadcrumb.selectedLesson.id}
-     disabled={focusModeEnabled}
-     onValueChange={(lessonId) => {
-      onNavigate(lessonId);
-     }}
-    >
+    <Select value={breadcrumb.selectedLesson.id} disabled={focusModeEnabled} onValueChange={onNavigate}>
      <SelectTrigger
       aria-label="Chọn bài học HanziHome"
       className={cn(
@@ -424,9 +417,7 @@ function getSimpleHeaderBreadcrumb(
  if (pathname === "/notebook") return { label: "Sổ tay" };
  if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
  if (pathname === "/settings") return { label: "Cài đặt" };
- if (pathname === "/radicals") {
-  return { label: "Bộ thủ" };
- }
+ if (pathname === "/radicals") return { label: "Bộ thủ" };
  if (pathname === "/hanzihome" && !isHanziHomeLessonWorkspaceRoute) return { label: "HanziHome" };
  if (pathname === "/vocab/review") {
   return { parent: { label: "Tổng hợp từ", href: "/vocab" }, label: "Ôn từ vựng" };
@@ -465,7 +456,7 @@ function HeaderSearchForm({
     routeToolbarActive && "xl:justify-self-center",
    )}
   >
-   <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+   <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
    <Input
     value={value}
     onFocus={onOpen}
@@ -484,6 +475,7 @@ function HeaderSearchForm({
 
 function HeaderUtilityArea({
  routeToolbarActive,
+ showReadingSettings,
  focusModeEnabled,
  user,
  theme,
@@ -494,6 +486,7 @@ function HeaderUtilityArea({
  onFocusModeEnabledChange,
 }: {
  routeToolbarActive: boolean;
+ showReadingSettings: boolean;
  focusModeEnabled: boolean;
  user?: Nullable<User>;
  theme: Theme;
@@ -506,6 +499,10 @@ function HeaderUtilityArea({
  const [quickSettingsOpen, setQuickSettingsOpen] = useState(false);
  const [activeReadingSettingsSection, setActiveReadingSettingsSection] =
   useState<z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>>(null);
+
+ useEffect(() => {
+  if (!showReadingSettings) setActiveReadingSettingsSection(null);
+ }, [showReadingSettings]);
 
  return (
   <div
@@ -521,10 +518,10 @@ function HeaderUtilityArea({
      onClick={onOpenSearch}
      aria-label="Mở tìm kiếm HanziHome"
      title="Tìm toàn bộ HanziHome"
-     size="icon-sm"
-     className="w-10 xl:hidden"
+     size="icon-toolbar"
+     className="xl:hidden"
     >
-     <Search className="h-5 w-5" />
+     <Search />
     </Button>
    ) : null}
 
@@ -541,7 +538,7 @@ function HeaderUtilityArea({
      <Button
       type="button"
       variant="outline"
-      size="icon-sm"
+      size="icon-toolbar"
       aria-label="Mở cài đặt nhanh"
       title="Cài đặt nhanh"
      >
@@ -549,7 +546,7 @@ function HeaderUtilityArea({
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="lg">
-     {activeReadingSettingsSection ? (
+     {showReadingSettings && activeReadingSettingsSection ? (
       <HanziHomeReadingQuickSettingsMenu
        activeSection={activeReadingSettingsSection}
        onActiveSectionChange={setActiveReadingSettingsSection}
@@ -590,18 +587,25 @@ function HeaderUtilityArea({
         <LockKeyhole />
         Focus mode
        </DropdownMenuCheckboxItem>
+
+       {showReadingSettings ? (
+        <>
+         <DropdownMenuSeparator />
+         <HanziHomeReadingQuickSettingsMenu
+          activeSection={null}
+          onActiveSectionChange={setActiveReadingSettingsSection}
+         />
+         <DropdownMenuSeparator />
+         <DropdownMenuItem asChild>
+          <Link href="/settings?section=reading">
+           <Settings />
+           Mở cài đặt đọc
+          </Link>
+         </DropdownMenuItem>
+        </>
+       ) : null}
+
        <DropdownMenuSeparator />
-       <HanziHomeReadingQuickSettingsMenu
-        activeSection={null}
-        onActiveSectionChange={setActiveReadingSettingsSection}
-       />
-       <DropdownMenuSeparator />
-       <DropdownMenuItem asChild>
-        <Link href="/settings?section=reading">
-         <Settings />
-         Mở cài đặt đọc
-        </Link>
-       </DropdownMenuItem>
        <DropdownMenuItem asChild>
         <Link href="/settings?section=app">
          <Settings />
@@ -619,15 +623,9 @@ function HeaderUtilityArea({
 
 function FocusModePill() {
  return (
-  <Typography
-   variant="caption"
-   tone="warning"
-   weight="black"
-   className="hidden size-9 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-warning/30 bg-warning-subtle p-0 shadow-theme-sm sm:inline-flex 2xl:h-9 2xl:w-auto 2xl:px-2.5"
-   title="Focus mode đang bật"
-  >
-   <LockKeyhole className="h-3.5 w-3.5" />
-   <span className="hidden 2xl:inline">Focus</span>
-  </Typography>
+  <Badge variant="warning" size="md" className="hidden sm:inline-flex" title="Focus mode đang bật">
+   <LockKeyhole />
+   Focus
+  </Badge>
  );
 }
