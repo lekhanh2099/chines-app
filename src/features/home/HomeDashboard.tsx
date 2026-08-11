@@ -17,22 +17,23 @@ export function HomeDashboard() {
 
  return (
   <PageContainer>
-   <div className="grid w-full gap-5">
+   <div className="mx-auto grid w-full max-w-[90rem] gap-4 sm:gap-5">
     <PageHeader
      title="Trang học"
      description="Tiếp tục bài đang học, xem phần cần ôn và quay lại những nội dung vừa dùng."
     />
 
-    <div className="grid gap-5 md:grid-cols-[minmax(0,1.3fr)_minmax(16rem,0.7fr)] md:items-start">
-     <div className="grid min-w-0 gap-5">
+    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
+     <div className="grid min-w-0 gap-4 sm:gap-5">
       <ContinueLearningPanel lesson={dashboard.lesson} />
-      <div className="grid gap-5 2xl:grid-cols-2">
-       <RecentNotesPanel notes={dashboard.recentNotes} />
-       <RecentLearningActivityPanel items={dashboard.recentActivity} />
-      </div>
+      <RecentNotesPanel notes={dashboard.recentNotes} />
+      <RecentLearningActivityPanel items={dashboard.recentActivity} />
      </div>
 
-     <aside className="grid min-w-0 gap-5" aria-label="Tổng quan học tập">
+     <aside
+      className="grid min-w-0 gap-4 sm:gap-5 xl:sticky xl:top-4"
+      aria-label="Tổng quan học tập"
+     >
       <HomeLearningPulse pulse={dashboard.learningPulse} />
       <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
      </aside>
