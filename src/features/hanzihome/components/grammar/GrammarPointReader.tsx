@@ -1,6 +1,10 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziAwareText,
+ HanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -66,9 +70,14 @@ export function GrammarPointReader({
       <Badge variant="info" className="w-fit">
        {status}
       </Badge>
-      <Typography as="h2" variant="sectionTitle" tone="default" weight="black" tracking="normal">
-       {point.cleanTitle}
-      </Typography>
+      <HanziAwareText
+       as="h2"
+       text={point.cleanTitle}
+       variant="sectionTitle"
+       tone="default"
+       weight="black"
+       tracking="normal"
+      />
      </div>
      <div className="flex flex-wrap gap-2">
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
@@ -96,8 +105,11 @@ export function GrammarPointReader({
       </Typography>
       <div className="flex flex-wrap gap-2">
        {relatedVocab.map((word) => (
-        <Badge key={getVocabItemKey(word)} variant="accent" size="lg">
-         {word.hanzi} · {getVocabDisplayMeaning(word)}
+        <Badge key={getVocabItemKey(word)} variant="accent" size="lg" casing="natural">
+         <HanziText as="span" size="inherit">
+          {word.hanzi}
+         </HanziText>
+         <span>· {getVocabDisplayMeaning(word)}</span>
         </Badge>
        ))}
       </div>
