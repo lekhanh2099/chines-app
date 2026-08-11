@@ -29,7 +29,7 @@ export function SwitchField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <Label variant="label" className="mt-1 flex cursor-pointer items-center gap-3">
+   <Label variant="label" className="cursor-pointer gap-3">
     <Switch
      name={field.name}
      checked={field.state.value}
@@ -37,11 +37,11 @@ export function SwitchField({
      onBlur={field.handleBlur}
      {...rest}
     />
-    {label && (
+    {label ? (
      <Typography as="span" variant="bodySmall" tone="secondary">
       {label}
      </Typography>
-    )}
+    ) : null}
    </Label>
   </FieldItem>
  );
