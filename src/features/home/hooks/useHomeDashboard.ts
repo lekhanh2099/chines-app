@@ -5,6 +5,7 @@ import { useMemo } from "react";
 
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
 import type { HomeDashboardModel } from "@/features/home/types";
 
@@ -35,6 +36,42 @@ export function useHomeDashboard(): HomeDashboardModel {
    (total, items) => total + (items?.length ?? 0),
    0,
   );
+  const vocabLabels = new Map<string, string>();
+  const grammarLabels = new Map<string, string>();
+  const radicalLabels = new Map<string, string>();
+
+  for (const catalogLesson of catalog.lessons) {
+   for (const word of catalogLesson.vocab) {
+    vocabLabels.set(getVocabItemKey(word), word.hanzi);
+   }
+   for (const point of catalogLesson.grammar) {
+    grammarLabels.set(point.id, point.cleanTitle || point.titleVi || point.title || point.core || point.id);
+   }
+  }
+
+  for (const radical of catalog.radicals) {
+   radicalLabels.set(
+    radical.id,
+    radical.nameVi ? `${radical.radical} · ${radical.nameVi}` : radical.radical,
+   );
+  }
+
+  const recentActivity = learning.state.reviewHistory
+   .slice(-4)
+   .reverse()
+   .map((item, index) => ({
+    key: `${item.type}:${item.id}:${item.answeredAt}:${index}`,
+    label:
+     item.type === "vocab"
+      ? vocabLabels.get(item.id) || item.id
+      : item.type === "grammar"
+        ? grammarLabels.get(item.id) || item.id
+        : radicalLabels.get(item.id) || item.id,
+    kindLabel:
+     item.type === "vocab" ? "Từ vựng" : item.type === "grammar" ? "Ngữ pháp" : "Bộ thủ",
+    result: item.result,
+    answeredAt: item.answeredAt,
+   }));
 
   return {
    lesson:
@@ -56,12 +93,14 @@ export function useHomeDashboard(): HomeDashboardModel {
     reviewedTodayCount,
     bookmarkedCount,
    },
+   recentActivity,
    recentNotes: recentNotes.data ?? [],
    isLoading: learning.isLoading || recentNotes.isLoading,
   };
  }, [
   catalog.courses,
   catalog.lessons,
+  catalog.radicals,
   learning.isLoading,
   learning.state,
   recentNotes.data,
