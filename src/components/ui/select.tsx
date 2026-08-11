@@ -4,6 +4,7 @@ import * as React from "react";
 import { Select as SelectPrimitive } from "radix-ui";
 import { z } from "zod";
 
+import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
 
@@ -42,7 +43,7 @@ function SelectTrigger({
  variant?: z.infer<typeof SelectTriggerVariantSchema>;
 }) {
  const defaultAppearance =
-  "border-input bg-transparent py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9 data-[size=sm]:rounded-[min(var(--radius-md),10px)]";
+  "border-input bg-bg-input py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9";
  const breadcrumbAppearance =
   "h-8 min-h-8 border-transparent bg-transparent px-2 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle [&_svg]:text-text-muted";
 
@@ -53,7 +54,9 @@ function SelectTrigger({
    data-width={width}
    data-variant={variant}
    className={cn(
-    "flex w-fit items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "flex w-fit items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    focusRingClassName,
+    invalidFocusRingClassName,
     variant === "breadcrumb" ? breadcrumbAppearance : defaultAppearance,
     className,
    )}
