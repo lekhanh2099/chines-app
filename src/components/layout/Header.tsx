@@ -1,10 +1,10 @@
 "use client";
 
-import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
 import Link from "next/link";
 import { type User } from "@supabase/supabase-js";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -21,36 +21,11 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import {
- Select,
- SelectContent,
- SelectGroup,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
-import {
- HanziHomeReadingQuickSettingsActiveSectionSchema,
- HanziHomeReadingQuickSettingsMenu,
-} from "@/features/hanzihome/HanziHomeReadingSettingsSection";
-import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
-import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
-import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
-import {
- clearHanziHomeSearchNavigationIntent,
- setHanziHomeSearchNavigationIntent,
-} from "@/features/hanzihome/search/searchNavigationStore";
-import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
-import {
- findLessonByRouteParam,
- getLessonRouteValue,
-} from "@/features/hanzihome/utils/lesson-route";
-import { containsChinese } from "@/lib/chinese-utils";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/app-shell-store";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
+import { globalSearchStore } from "@/stores/global-search-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
 import {
  AppHeaderBreadcrumb,
@@ -62,25 +37,6 @@ import {
 import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
 import { type Theme, useTheme } from "./ThemeProvider";
-
-type HanziHomeHeaderBreadcrumb = {
- courses: Array<{ id: string; title: string }>;
- selectedCourse: { id: string; title: string };
- selectedLesson: {
-  id: string;
-  lessonNumber: number;
-  title: string;
-  titleZh?: string;
-  bookId?: string;
- };
- lessons: Array<{
-  id: string;
-  lessonNumber: number;
-  title: string;
-  titleZh?: string;
-  bookId?: string;
- }>;
-};
 
 type SimpleHeaderBreadcrumb = {
  label: string;
@@ -95,12 +51,8 @@ type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 export function Header({ user }: { user?: Nullable<User> }) {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
- const { openInspector } = useVocabInspector();
- const [searchValue, setSearchValue] = useState("");
- const [searchOpen, setSearchOpen] = useState(false);
  const pathname = usePathname();
- const router = useRouter();
- const searchParams = useSearchParams();
+ const searchValue = useSelector(globalSearchStore, (state) => state.query);
  useSelector(dictionaryLookupStore, (state) => state.overrides);
  const lookupEnabled = dictionaryLookupStore.actions.isEnabled(pathname);
  const { setEnabled: setLookupEnabled, hydrate: hydrateLookupSettings } =
@@ -108,54 +60,8 @@ export function Header({ user }: { user?: Nullable<User> }) {
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
- const isHanziHomeRoute = pathname === "/hanzihome";
- const isHanziHomeLessonWorkspaceRoute =
-  isHanziHomeRoute &&
-  (searchParams.has("courseId") ||
-   searchParams.has("lesson") ||
-   searchParams.has("lessonId") ||
-   searchParams.has("module"));
- const catalogData = useHanziHomeCatalogData({ enabled: isHanziHomeLessonWorkspaceRoute });
- const selectedCourseId =
-  isHanziHomeLessonWorkspaceRoute && catalogData.courses.length > 0
-   ? searchParams.get("courseId") || catalogData.courses[0]?.id || ""
-   : "";
- const courseLessonsQuery = useHanziHomeCourseLessons(selectedCourseId, {
-  enabled: isHanziHomeLessonWorkspaceRoute && Boolean(selectedCourseId),
- });
- const hanzihomeBreadcrumb = useMemo(() => {
-  if (!isHanziHomeLessonWorkspaceRoute) return null;
-
-  const courses = catalogData.courses;
-  const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? courses[0];
-  const lessons = courseLessonsQuery.lessons;
-  const lessonFromUrl = searchParams.get("lesson");
-  const legacyLessonIdFromUrl = searchParams.get("lessonId");
-  const bookIdFromUrl = searchParams.get("bookId");
-  const selectedLesson =
-   findLessonByRouteParam(lessons, lessonFromUrl, legacyLessonIdFromUrl, bookIdFromUrl) ??
-   lessons[0];
-
-  if (!selectedCourse || !selectedLesson) return null;
-
-  return {
-   courses,
-   selectedCourse,
-   selectedLesson,
-   lessons,
-  };
- }, [
-  catalogData.courses,
-  courseLessonsQuery.lessons,
-  isHanziHomeLessonWorkspaceRoute,
-  searchParams,
-  selectedCourseId,
- ]);
- const simpleBreadcrumb = useMemo(
-  () => getSimpleHeaderBreadcrumb(pathname, isHanziHomeLessonWorkspaceRoute),
-  [isHanziHomeLessonWorkspaceRoute, pathname],
- );
- const hasRouteToolbar = Boolean(headerToolbarContent || hanzihomeBreadcrumb || simpleBreadcrumb);
+ const simpleBreadcrumb = getSimpleHeaderBreadcrumb(pathname);
+ const hasRouteToolbar = Boolean(headerToolbarContent || simpleBreadcrumb);
 
  useEffect(() => {
   hydrateLookupSettings();
@@ -165,83 +71,20 @@ export function Header({ user }: { user?: Nullable<User> }) {
   const handleKeyDown = (event: KeyboardEvent) => {
    if ((event.metaKey || event.ctrlKey) && event.key === "k") {
     event.preventDefault();
-    setSearchOpen(true);
+    globalSearchStore.actions.openSearch();
    }
   };
+
   document.addEventListener("keydown", handleKeyDown);
   return () => document.removeEventListener("keydown", handleKeyDown);
  }, []);
-
- const handleSearch = (event: FormEvent) => {
-  event.preventDefault();
-  setSearchOpen(true);
- };
-
- const handleDirectLookup = (query: string) => {
-  const trimmed = query.trim();
-  if (!containsChinese(trimmed)) return;
-
-  openInspector(trimmed);
-  setSearchOpen(false);
-  setSearchValue("");
- };
-
- const handleOpenSearchResult = (item: HanziHomeSearchIndexItem) => {
-  if (
-   focusModeEnabled &&
-   item.lessonId &&
-   item.lessonId !== hanzihomeBreadcrumb?.selectedLesson.id
-  ) {
-   toast.warning("Focus mode đang bật. Không thể chuyển sang bài khác.");
-   return;
-  }
-
-  clearHanziHomeSearchNavigationIntent();
-  if (item.module || item.targetId) {
-   setHanziHomeSearchNavigationIntent({
-    courseId: item.courseId,
-    lessonId: item.lessonId,
-    lessonNumber: item.lessonNumber,
-    module: item.module,
-    targetId: item.targetId,
-   });
-  }
-
-  if (item.href) router.push(item.href);
-  setSearchOpen(false);
-  setSearchValue("");
- };
-
- const navigateHanziHome = (lessonId: string) => {
-  if (focusModeEnabled) return;
-
-  const lesson = hanzihomeBreadcrumb?.lessons.find((item) => item.id === lessonId);
-  if (!lesson) return;
-
-  const nextParams = new URLSearchParams(searchParams.toString());
-  const currentModule = nextParams.get("module");
-
-  nextParams.set("courseId", selectedCourseId);
-  nextParams.set("lesson", getLessonRouteValue(lesson.lessonNumber));
-  if (lesson.bookId) nextParams.set("bookId", lesson.bookId);
-  else nextParams.delete("bookId");
-  nextParams.delete("lessonId");
-  if (currentModule) nextParams.set("module", currentModule);
-
-  router.push(`/hanzihome?${nextParams.toString()}`);
- };
 
  if (isContentFullscreen) return <FocusModeRouteGuard />;
 
  return (
   <>
    <FocusModeRouteGuard />
-   <header
-    className={cn(
-     "nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:h-14 sm:px-5 lg:px-7",
-     isHanziHomeRoute && "hanzihome-liquid-header",
-    )}
-   >
+   <header className="nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:h-14 sm:px-5 lg:px-7">
     <div
      className={cn(
       "grid h-12 w-full min-w-0 items-center gap-2 sm:h-14 sm:gap-3",
@@ -253,47 +96,36 @@ export function Header({ user }: { user?: Nullable<User> }) {
      {hasRouteToolbar ? (
       <HeaderContextArea
        toolbarContent={headerToolbarContent}
-       breadcrumb={hanzihomeBreadcrumb}
        simpleBreadcrumb={simpleBreadcrumb}
-       focusModeEnabled={focusModeEnabled}
-       onNavigateHanziHome={navigateHanziHome}
       />
      ) : null}
 
      <HeaderSearchForm
       value={searchValue}
       routeToolbarActive={hasRouteToolbar}
-      onSubmit={handleSearch}
-      onOpen={() => setSearchOpen(true)}
+      onSubmit={(event) => {
+       event.preventDefault();
+       globalSearchStore.actions.openSearch();
+      }}
+      onOpen={globalSearchStore.actions.openSearch}
       onChange={(value) => {
-       setSearchValue(value);
-       setSearchOpen(true);
+       globalSearchStore.actions.setQuery(value);
+       globalSearchStore.actions.openSearch();
       }}
      />
 
      <HeaderUtilityArea
       routeToolbarActive={hasRouteToolbar}
-      showReadingSettings={isHanziHomeLessonWorkspaceRoute}
       focusModeEnabled={focusModeEnabled}
       user={user}
       theme={theme}
       lookupEnabled={lookupEnabled}
-      onOpenSearch={() => setSearchOpen(true)}
+      onOpenSearch={globalSearchStore.actions.openSearch}
       onToggleTheme={toggleTheme}
       onLookupEnabledChange={(enabled) => setLookupEnabled(pathname, enabled)}
       onFocusModeEnabledChange={setFocusModeEnabled}
      />
     </div>
-    <GlobalSearchDialog
-     open={searchOpen}
-     query={searchValue}
-     courseId={hanzihomeBreadcrumb?.selectedCourse.id}
-     lessonId={hanzihomeBreadcrumb?.selectedLesson.id}
-     onOpenChange={setSearchOpen}
-     onQueryChange={setSearchValue}
-     onOpenResult={handleOpenSearchResult}
-     onDirectLookup={handleDirectLookup}
-    />
    </header>
   </>
  );
@@ -301,89 +133,18 @@ export function Header({ user }: { user?: Nullable<User> }) {
 
 function HeaderContextArea({
  toolbarContent,
- breadcrumb,
  simpleBreadcrumb,
- focusModeEnabled,
- onNavigateHanziHome,
 }: {
  toolbarContent: ReactNode;
- breadcrumb: Nullable<HanziHomeHeaderBreadcrumb>;
  simpleBreadcrumb: Nullable<SimpleHeaderBreadcrumb>;
- focusModeEnabled: boolean;
- onNavigateHanziHome: (lessonId: string) => void;
 }) {
  if (toolbarContent) {
   return <div className="flex min-w-0 items-center gap-2 overflow-hidden">{toolbarContent}</div>;
  }
 
- if (breadcrumb) {
-  return (
-   <HanziHomeBreadcrumbNav
-    breadcrumb={breadcrumb}
-    focusModeEnabled={focusModeEnabled}
-    onNavigate={onNavigateHanziHome}
-   />
-  );
- }
-
  if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
 
  return <div className="min-w-0" />;
-}
-
-function HanziHomeBreadcrumbNav({
- breadcrumb,
- focusModeEnabled,
- onNavigate,
-}: {
- breadcrumb: HanziHomeHeaderBreadcrumb;
- focusModeEnabled: boolean;
- onNavigate: (lessonId: string) => void;
-}) {
- return (
-  <AppHeaderBreadcrumb
-   aria-label="Chuyển nhanh bài HanziHome"
-   className="min-w-0 max-w-[min(12rem,48vw)] justify-self-start md:max-w-[min(42rem,70vw)]"
-  >
-   <AppHeaderBreadcrumbItem className="hidden md:flex">
-    <AppHeaderBreadcrumbLink
-     href="/hanzihome"
-     disabled={focusModeEnabled}
-     className="max-w-[9rem]"
-     title="HanziHome"
-    >
-     HanziHome
-    </AppHeaderBreadcrumbLink>
-   </AppHeaderBreadcrumbItem>
-   <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
-   <AppHeaderBreadcrumbItem className="hidden 2xl:flex">
-    <AppHeaderBreadcrumbPage title={breadcrumb.selectedCourse.title}>
-     {breadcrumb.selectedCourse.title}
-    </AppHeaderBreadcrumbPage>
-   </AppHeaderBreadcrumbItem>
-   <AppHeaderBreadcrumbSeparator className="hidden 2xl:flex" />
-   <AppHeaderBreadcrumbItem className="min-w-0">
-    <Select value={breadcrumb.selectedLesson.id} disabled={focusModeEnabled} onValueChange={onNavigate}>
-     <SelectTrigger
-      aria-label="Chọn bài học HanziHome"
-      variant="breadcrumb"
-      className="w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72"
-     >
-      <SelectValue />
-     </SelectTrigger>
-     <SelectContent align="start" className="min-w-[min(28rem,calc(100vw-2rem))]">
-      <SelectGroup>
-       {breadcrumb.lessons.map((lesson) => (
-        <SelectItem key={lesson.id} value={lesson.id}>
-         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
-        </SelectItem>
-       ))}
-      </SelectGroup>
-     </SelectContent>
-    </Select>
-   </AppHeaderBreadcrumbItem>
-  </AppHeaderBreadcrumb>
- );
 }
 
 function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcrumb }) {
@@ -406,15 +167,12 @@ function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcr
  );
 }
 
-function getSimpleHeaderBreadcrumb(
- pathname: string,
- isHanziHomeLessonWorkspaceRoute: boolean,
-): Nullable<SimpleHeaderBreadcrumb> {
+function getSimpleHeaderBreadcrumb(pathname: string): Nullable<SimpleHeaderBreadcrumb> {
  if (pathname === "/notebook") return { label: "Sổ tay" };
  if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
  if (pathname === "/settings") return { label: "Cài đặt" };
  if (pathname === "/radicals") return { label: "Bộ thủ" };
- if (pathname === "/hanzihome" && !isHanziHomeLessonWorkspaceRoute) return { label: "HanziHome" };
+ if (pathname === "/hanzihome") return { label: "HanziHome" };
  if (pathname === "/vocab/review") {
   return { parent: { label: "Tổng hợp từ", href: "/vocab" }, label: "Ôn từ vựng" };
  }
@@ -439,7 +197,7 @@ function HeaderSearchForm({
 }: {
  value: string;
  routeToolbarActive: boolean;
- onSubmit: (event: FormEvent) => void;
+ onSubmit: (event: FormEvent<HTMLFormElement>) => void;
  onOpen: () => void;
  onChange: (value: string) => void;
 }) {
@@ -471,7 +229,6 @@ function HeaderSearchForm({
 
 function HeaderUtilityArea({
  routeToolbarActive,
- showReadingSettings,
  focusModeEnabled,
  user,
  theme,
@@ -482,7 +239,6 @@ function HeaderUtilityArea({
  onFocusModeEnabledChange,
 }: {
  routeToolbarActive: boolean;
- showReadingSettings: boolean;
  focusModeEnabled: boolean;
  user?: Nullable<User>;
  theme: Theme;
@@ -492,14 +248,6 @@ function HeaderUtilityArea({
  onLookupEnabledChange: (enabled: boolean) => void;
  onFocusModeEnabledChange: (enabled: boolean) => void;
 }) {
- const [quickSettingsOpen, setQuickSettingsOpen] = useState(false);
- const [activeReadingSettingsSection, setActiveReadingSettingsSection] =
-  useState<z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>>(null);
-
- useEffect(() => {
-  if (!showReadingSettings) setActiveReadingSettingsSection(null);
- }, [showReadingSettings]);
-
  return (
   <div
    className={cn(
@@ -523,13 +271,7 @@ function HeaderUtilityArea({
 
    {focusModeEnabled ? <FocusModePill /> : null}
 
-   <DropdownMenu
-    open={quickSettingsOpen}
-    onOpenChange={(open) => {
-     setQuickSettingsOpen(open);
-     if (!open) setActiveReadingSettingsSection(null);
-    }}
-   >
+   <DropdownMenu>
     <DropdownMenuTrigger asChild>
      <Button
       type="button"
@@ -542,74 +284,47 @@ function HeaderUtilityArea({
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="lg">
-     {showReadingSettings && activeReadingSettingsSection ? (
-      <HanziHomeReadingQuickSettingsMenu
-       activeSection={activeReadingSettingsSection}
-       onActiveSectionChange={setActiveReadingSettingsSection}
-      />
-     ) : (
-      <>
-       <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
-       <DropdownMenuCheckboxItem
-        checked={theme === "dark"}
-        onSelect={(event) => event.preventDefault()}
-        onCheckedChange={onToggleTheme}
-       >
-        {theme === "dark" ? <Sun /> : <Moon />}
-        Giao diện tối
-       </DropdownMenuCheckboxItem>
-       <DropdownMenuCheckboxItem
-        checked={lookupEnabled}
-        onSelect={(event) => event.preventDefault()}
-        onCheckedChange={onLookupEnabledChange}
-       >
-        <Languages />
-        Tra từ trên trang này
-       </DropdownMenuCheckboxItem>
-       <DropdownMenuCheckboxItem
-        checked={focusModeEnabled}
-        onSelect={(event) => event.preventDefault()}
-        onCheckedChange={(enabled) => {
-         if (enabled && !focusModeEnabled) {
-          toast.warning(
-           "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
-           { duration: 5200 },
-          );
-         }
+     <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
+     <DropdownMenuCheckboxItem
+      checked={theme === "dark"}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={onToggleTheme}
+     >
+      {theme === "dark" ? <Sun /> : <Moon />}
+      Giao diện tối
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuCheckboxItem
+      checked={lookupEnabled}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={onLookupEnabledChange}
+     >
+      <Languages />
+      Tra từ trên trang này
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuCheckboxItem
+      checked={focusModeEnabled}
+      onSelect={(event) => event.preventDefault()}
+      onCheckedChange={(enabled) => {
+       if (enabled && !focusModeEnabled) {
+        toast.warning(
+         "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+         { duration: 5200 },
+        );
+       }
 
-         onFocusModeEnabledChange(enabled);
-        }}
-       >
-        <LockKeyhole />
-        Focus mode
-       </DropdownMenuCheckboxItem>
-
-       {showReadingSettings ? (
-        <>
-         <DropdownMenuSeparator />
-         <HanziHomeReadingQuickSettingsMenu
-          activeSection={null}
-          onActiveSectionChange={setActiveReadingSettingsSection}
-         />
-         <DropdownMenuSeparator />
-         <DropdownMenuItem asChild>
-          <Link href="/settings?section=reading">
-           <Settings />
-           Mở cài đặt đọc
-          </Link>
-         </DropdownMenuItem>
-        </>
-       ) : null}
-
-       <DropdownMenuSeparator />
-       <DropdownMenuItem asChild>
-        <Link href="/settings?section=app">
-         <Settings />
-         Mở tất cả cài đặt
-        </Link>
-       </DropdownMenuItem>
-      </>
-     )}
+       onFocusModeEnabledChange(enabled);
+      }}
+     >
+      <LockKeyhole />
+      Focus mode
+     </DropdownMenuCheckboxItem>
+     <DropdownMenuSeparator />
+     <DropdownMenuItem asChild>
+      <Link href="/settings?section=app">
+       <Settings />
+       Mở tất cả cài đặt
+      </Link>
+     </DropdownMenuItem>
     </DropdownMenuContent>
    </DropdownMenu>
    <ProfileSettingsMenu user={user} focusModeEnabled={focusModeEnabled} />
