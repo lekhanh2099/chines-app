@@ -2,66 +2,83 @@
 
 Status date: 2026-08-11
 
-This inventory records canonical UI contracts, feature-owned compositions and
-missing patterns. Local source and `docs/ui/component-contracts.md` override
-generic shadcn or vendor guidance.
+This inventory records canonical UI contracts, stable feature compositions and
+known future migrations. Local source and `docs/ui/component-contracts.md`
+override generic shadcn or vendor guidance.
 
 ## Canonical primitives
 
-| Contract         | Source                                    | Status                      | Intended use                                                |
-| ---------------- | ----------------------------------------- | --------------------------- | ----------------------------------------------------------- |
-| Button           | `src/components/ui/button.tsx`            | canonical                   | commands, CTAs, icon actions and navigation rows            |
-| Dialog           | `src/components/ui/dialog.tsx`            | canonical                   | modal tasks with typed size, placement and scroll ownership |
-| DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical                   | action menus, checkbox/radio items and submenus              |
-| Tooltip          | `src/components/ui/tooltip.tsx`           | canonical                   | supplementary mouse/keyboard hints only                     |
-| Select           | `src/components/ui/select.tsx`            | canonical                   | single-value selection; owns breadcrumb appearance          |
-| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter           | string-valued option-array selection                        |
-| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical                   | exclusive choice                                            |
-| Switch           | `src/components/ui/switch.tsx`            | canonical                   | boolean settings                                            |
-| Chip             | `src/components/ui/chip.tsx`              | canonical interactive token | filters and compact selectable actions                      |
-| Badge            | `src/components/ui/badge.tsx`             | canonical static token      | status/category labels; owns optional icon sizing           |
-| Typography       | `src/components/ui/typography.tsx`        | canonical application text  | page/section/body/label/caption hierarchy                   |
-| Avatar           | `src/components/ui/avatar.tsx`            | canonical                   | profile image and fallback initials                         |
-| IconTile         | `src/components/ui/icon-tile.tsx`         | canonical                   | decorative icon tile with typed tone and size               |
-| Sheet            | `src/components/ui/sheet.tsx`             | canonical                   | side/bottom responsive panels                               |
-| Popover          | `src/components/ui/base-popover.tsx`      | canonical                   | contextual non-menu content                                 |
-| Card             | `src/components/ui/card.tsx`              | canonical                   | section, subtle and interactive surfaces; supports asChild  |
-| Input            | `src/components/ui/input.tsx`             | canonical                   | text input with density and surface                         |
-| Textarea         | `src/components/ui/textarea.tsx`          | canonical                   | multiline text input                                        |
-| Checkbox         | `src/components/ui/checkbox.tsx`          | canonical                   | independent boolean selection                               |
-| Separator        | `src/components/ui/separator.tsx`         | canonical                   | semantic visual separation                                  |
-| PageHeader       | `src/components/ui/page-header.tsx`       | canonical                   | page heading, description, meta and actions                 |
-| Tabs             | `src/components/ui/tabs.tsx`              | canonical local contract    | content-panel switching                                     |
-| SegmentedControl | `src/components/ui/segmented-control.tsx` | canonical                   | compact exclusive choice; typed density/surface             |
+| Contract         | Source                                    | Status | Intended use |
+| ---------------- | ----------------------------------------- | ------ | ------------ |
+| Button           | `src/components/ui/button.tsx`            | canonical | commands, CTAs, icon actions, navigation rows |
+| Dialog           | `src/components/ui/dialog.tsx`            | canonical | modal tasks |
+| DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical | action/checkbox/radio menus |
+| Tooltip          | `src/components/ui/tooltip.tsx`           | canonical | supplementary hints |
+| Select           | `src/components/ui/select.tsx`            | canonical | single-value selection; breadcrumb variant |
+| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter | string option arrays |
+| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical | exclusive selection |
+| Switch           | `src/components/ui/switch.tsx`            | canonical | boolean settings |
+| Chip             | `src/components/ui/chip.tsx`              | canonical | interactive compact token |
+| Badge            | `src/components/ui/badge.tsx`             | canonical | static status/category |
+| Typography       | `src/components/ui/typography.tsx`        | canonical | application text hierarchy |
+| Avatar           | `src/components/ui/avatar.tsx`            | canonical | profile image/fallback |
+| IconTile         | `src/components/ui/icon-tile.tsx`         | canonical | decorative icon tile |
+| Sheet            | `src/components/ui/sheet.tsx`             | canonical | responsive side/bottom panels |
+| Popover          | `src/components/ui/base-popover.tsx`      | canonical | contextual non-menu content |
+| Card             | `src/components/ui/card.tsx`              | canonical | section/subtle/interactive surfaces |
+| Input            | `src/components/ui/input.tsx`             | canonical | text input + density |
+| Textarea         | `src/components/ui/textarea.tsx`          | canonical | multiline input |
+| Checkbox         | `src/components/ui/checkbox.tsx`          | canonical | independent boolean selection |
+| Separator        | `src/components/ui/separator.tsx`         | canonical | semantic separation |
+| PageHeader       | `src/components/ui/page-header.tsx`       | canonical | page heading/description/meta/actions |
+| Tabs             | `src/components/ui/tabs.tsx`              | canonical local contract | real content-panel tabs |
+| SegmentedControl | `src/components/ui/segmented-control.tsx` | canonical | compact pressed single-choice set |
 
 ## Canonical patterns
 
-| Pattern           | Source                                    | Status                                  |
-| ----------------- | ----------------------------------------- | --------------------------------------- |
-| EmptyState        | `src/components/patterns/empty-state.tsx` | canonical                               |
-| CommandDialog     | target                                    | deferred until Global Search migration  |
-| ResponsiveOverlay | target                                    | defer until repeated contract is proven |
+| Pattern           | Source                                    | Status |
+| ----------------- | ----------------------------------------- | ------ |
+| EmptyState        | `src/components/patterns/empty-state.tsx` | canonical |
+| CommandDialog     | target                                    | deferred until global-search product migration |
+| ResponsiveOverlay | target                                    | deferred until repeated contract is proven |
 
-## Feature-owned compositions
+## Stable feature-owned compositions
 
 These are product/domain compositions, not replacement primitives.
 
-| Composition              | Owner                                                        | Contract |
-| ------------------------ | ------------------------------------------------------------ | -------- |
-| Library CRUD actions     | `features/hanzihome/components/library/LibraryCrudActionsMenu.tsx` | one overflow menu per course/book/lesson; confirm delete |
-| HanziHome workspace bar  | `features/hanzihome/components/layout/WorkspaceToolbar.tsx`  | feature chrome only; children remain canonical controls |
-| HanziHome reader menu    | `features/hanzihome/HanziHomeReadingSettingsSection.tsx`     | contextual lesson-only quick reader preferences |
+| Composition | Owner | Contract |
+| ----------- | ----- | -------- |
+| Library CRUD actions | `src/features/hanzihome/components/library/LibraryCrudActionsMenu.tsx` | one overflow menu per course/book/lesson + confirmation delete |
+| HanziHome workspace bar | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx` | feature chrome; children remain canonical controls |
+| HanziHome reader quick menu | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx` | lesson-toolbar-only font/size/reveal/visibility preferences |
+| HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot |
+| HanziHome search bridge | `src/features/hanzihome/search/HanziHomeGlobalSearchBridge.tsx` | feature data/results/navigation over shared open/query interaction state |
 
-Do not promote a feature composition to `src/components/ui` unless its semantic
-contract is shared outside that feature.
+Do not promote these to `src/components/ui` unless the same semantic contract is
+proven outside the feature.
+
+## Shared shell interaction stores
+
+| Store | Scope |
+| ----- | ----- |
+| `header-toolbar-store.ts` | ReactNode slot registration for route/feature Header context; owner-safe cleanup |
+| `global-search-store.ts` | search open/query interaction state only; no search result/domain data |
+| `focus-mode-store.ts` | cross-route focus preference |
+| `dictionary-lookup-store.ts` | route-scoped lookup preference |
+
+Shared stores must not become a back door for copying TanStack Query/server data
+into global client state.
 
 ## Current information architecture
 
 - Sidebar owns the global route map: Học, Luyện, Năng lực and Cá nhân.
 - Home is a continuation dashboard, not a second sitemap.
 - Sidebar route changes guarantee the active route group is expanded.
-- Header Gear always owns global Theme / lookup / Focus preferences.
-- Reader settings appear in Gear only in a HanziHome lesson workspace.
+- Shared Header owns global search command state, global Gear preferences,
+  profile, and a generic context slot only.
+- Shared Header does not import HanziHome implementation code.
+- Gear contains global Theme / lookup / Focus preferences only.
+- Reader quick settings live in the HanziHome lesson workspace toolbar.
 - Avatar owns identity/provider context and logout only.
 - `/settings` remains the complete preferences hub.
 - HanziHome Library uses one major collection surface, separator-based course
@@ -76,18 +93,26 @@ contract is shared outside that feature.
 content-sized : inline text actions
 ```
 
-Input, Select and Button consumers sharing a row must use the same density
-family.
+Input, Select and Button consumers sharing a row use the same density family.
 
 ## Design-system enforcement
 
-`scripts/check-ui-standards.mjs` rejects visual `className` repair on canonical
-visual components, direct Radix/Base imports in features, raw application
-controls, raw application typography, anatomy-descendant overrides, arbitrary
-feature z-index and legacy glass/hero escape hatches.
+`scripts/check-ui-standards.mjs` rejects:
 
-The guard has no baseline. New debt must be fixed at the semantic owner rather
-than allowlisted.
+- direct Radix/Base imports outside the UI boundary;
+- raw application controls and application heading/paragraph typography;
+- visual `className` repair on canonical visual components;
+- component-anatomy descendant selectors;
+- arbitrary feature z-index;
+- arbitrary raw color/gradient escape hatches;
+- legacy glass/hero/large-elevation feature escape hatches.
+
+The guard has no baseline. Fix debt at the semantic owner instead of allowlisting
+new consumers.
+
+The current guard does not yet prove all named Tailwind palette utilities are
+absent. That expansion requires a repo-wide executable migration and must not be
+claimed from code-search inference alone.
 
 ## Deliberately deferred
 
@@ -95,29 +120,31 @@ The following remain candidates, not approved primitives:
 
 - Alert/callout;
 - Skeleton standardization;
-- Command/listbox composite;
+- feature-neutral command/listbox composite;
 - generic SettingsMenu row anatomy;
 - form field system consolidation;
 - generic CRUD ActionMenu alias.
 
-`DropdownMenu` is already the action-menu primitive. Do not add an alias-only
-wrapper. A richer cross-feature pattern requires at least two stable consumers
-with the same product anatomy.
+DropdownMenu is already the action-menu primitive. Do not create an alias-only
+wrapper.
 
 ## Migration priorities after this refactor
 
-1. Global Search: replace the current HanziHome-owned command surface with a
-   feature-neutral command/search boundary when its data contract is redesigned.
-2. Continue shrinking Header knowledge of HanziHome business data without
-   moving feature state into duplicated React state.
-3. Tooltip migration for remaining icon-only controls that rely only on `title`.
-4. Standardize skeletons only after repeated anatomy is proven.
+1. Replace the current HanziHome-backed global search product with a
+   feature-neutral command/search data contract only if multiple search domains
+   actually require it. Keep Header feature-neutral during that migration.
+2. Audit remaining `title`-only icon hints and migrate to Tooltip where the hint
+   adds value beyond the accessible name.
+3. Standardize skeleton anatomy only after repeated cross-feature structure is
+   proven.
+4. Expand named-palette enforcement only together with a full repo migration and
+   executable `npm run check` evidence.
 
 ## Visual system
 
 The app uses neutral opaque surfaces. Controls are `rounded-lg`;
 cards/panels/overlays are `rounded-xl`; semantic 1px borders establish most
-surface hierarchy. `Card` is flat by default. Overlay elevation remains inside
+surface hierarchy. Card is flat by default. Overlay elevation remains inside
 primitive owners.
 
 `app-gradient-hero` and `app-glass-surface` are compatibility aliases only.
@@ -125,7 +152,7 @@ Feature code must not add new consumers.
 
 ## Learner typography distinction
 
-General application text belongs to `Typography`.
+General application text belongs to Typography.
 
 Chinese lesson text, pinyin, reading-size preferences and Hanzi font selection
 use the feature components in
