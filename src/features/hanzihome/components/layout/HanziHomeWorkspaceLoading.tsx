@@ -5,7 +5,7 @@ export function HanziHomeWorkspaceLoading() {
   <main className="hanzihome-static-page" aria-busy="true" aria-live="polite">
    <div className="grid w-full max-w-full animate-pulse gap-2.5">
     <div className="h-11 rounded-xl border border-border-default bg-bg-card" />
-    <Card padding="md" className="grid gap-3 rounded-xl">
+    <Card padding="md" className="grid gap-3">
      <div className="flex items-center justify-between gap-3">
       <div className="grid flex-1 gap-2">
        <div className="h-3 w-24 rounded-full bg-bg-subtle" />
