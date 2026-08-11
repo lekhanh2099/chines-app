@@ -7,8 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
-import type { HomeDashboardModel } from "@/features/home/types";
 import { HomeSectionHeader } from "@/features/home/components/HomePrimitives";
+import type { HomeDashboardModel } from "@/features/home/types";
 
 const resultLabels = {
  known: "Đã biết",
@@ -42,7 +42,7 @@ export function RecentLearningActivityPanel({
     {items.length > 0 ? (
      <div className="mt-4 divide-y divide-border-default/70">
       {items.map((item) => (
-       <div key={item.key} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
+       <div key={item.key} className="flex min-w-0 items-start gap-3 py-3 first:pt-0 last:pb-0">
         <IconTile size="sm" tone="neutral">
          <History />
         </IconTile>
@@ -54,8 +54,11 @@ export function RecentLearningActivityPanel({
           {item.kindLabel} ·{" "}
           {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
          </Typography>
+         <Badge variant={resultVariants[item.result]} size="sm" className="mt-2 sm:hidden">
+          {resultLabels[item.result]}
+         </Badge>
         </div>
-        <Badge variant={resultVariants[item.result]} size="sm">
+        <Badge variant={resultVariants[item.result]} size="sm" className="hidden sm:inline-flex">
          {resultLabels[item.result]}
         </Badge>
        </div>
