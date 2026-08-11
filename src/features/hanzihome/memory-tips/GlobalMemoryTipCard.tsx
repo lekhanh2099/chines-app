@@ -1,15 +1,18 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import { useMemo } from "react";
 import Link from "next/link";
 import { Lightbulb, Pencil, Pin, PinOff, Plus, RefreshCw, Settings } from "lucide-react";
 import { toast } from "sonner";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
+import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { cn } from "@/lib/utils";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
@@ -57,7 +60,11 @@ export function GlobalMemoryTipCard({
   if (!showEmptyState) return null;
 
   return (
-   <Card padding="md" className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}>
+   <Card
+    variant="section"
+    padding="md"
+    className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+   >
     <div
      className="flex h-full min-h-28 animate-pulse items-center gap-3"
      aria-busy="true"
@@ -81,16 +88,16 @@ export function GlobalMemoryTipCard({
   if (!showEmptyState) return null;
 
   return (
-   <Card padding="md" className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}>
+   <Card
+    variant="section"
+    padding="md"
+    className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+   >
     <div className="grid h-full min-h-32 gap-3">
      <div className="flex min-w-0 gap-3">
-      <StudyInstructionText
-       as="span"
-       tone="info"
-       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
-      >
-       <Lightbulb className="h-4 w-4" />
-      </StudyInstructionText>
+      <IconTile size="sm" tone="info">
+       <Lightbulb />
+      </IconTile>
       <div className="min-w-0">
        <StudyInstructionText
         variant="overline"
@@ -121,15 +128,15 @@ export function GlobalMemoryTipCard({
       <div className="mt-auto flex flex-wrap gap-2">
        <MemoryTipDialog
         trigger={
-         <Button type="button" variant="outline" size="sm">
-          <Plus className="h-4 w-4" />
+         <Button type="button" variant="outline" size="toolbar">
+          <Plus />
           Thêm
          </Button>
         }
        />
-       <Button type="button" variant="ghost" size="sm" asChild>
+       <Button type="button" variant="ghost" size="toolbar" asChild>
         <Link href="/memory-tips" prefetch={false}>
-         <Settings className="h-4 w-4" />
+         <Settings />
          Quản lý
         </Link>
        </Button>
@@ -141,28 +148,28 @@ export function GlobalMemoryTipCard({
  }
 
  return (
-  <Card padding="md" className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}>
+  <Card
+   variant="section"
+   padding="md"
+   className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+  >
    <div className="relative grid w-full gap-3">
     {contentOnly && selectedTip.isPinned ? (
-     <StudyInstructionText
-      as="span"
-      tone="accent"
-      className="absolute right-0 top-0 rounded-full bg-bg-subtle/80 p-1.5"
+     <Badge
+      variant="accent"
+      size="sm"
+      className="absolute right-0 top-0"
       aria-label="Tip đã ghim"
      >
-      <Pin className="h-3.5 w-3.5" />
-     </StudyInstructionText>
+      <Pin />
+     </Badge>
     ) : null}
 
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="flex min-w-0 gap-3">
-      <StudyInstructionText
-       as="span"
-       tone="info"
-       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
-      >
-       <Lightbulb className="h-4 w-4" />
-      </StudyInstructionText>
+      <IconTile size="sm" tone="info">
+       <Lightbulb />
+      </IconTile>
 
       <div className="min-w-0 pr-8">
        <StudyInstructionText
@@ -191,45 +198,45 @@ export function GlobalMemoryTipCard({
 
      {!contentOnly ? (
       <div className="flex shrink-0 flex-wrap gap-2">
-       <Button type="button" variant="ghost" size="sm" onClick={pickNextTip}>
-        <RefreshCw className="h-4 w-4" />
+       <Button type="button" variant="ghost" size="toolbar" onClick={pickNextTip}>
+        <RefreshCw />
         Đổi câu
        </Button>
 
-       {canEditSelectedTip && (
+       {canEditSelectedTip ? (
         <MemoryTipDialog
          key={selectedTip.id}
          tip={selectedTip}
          trigger={
-          <Button type="button" variant="outline" size="sm">
-           <Pencil className="h-4 w-4" />
+          <Button type="button" variant="outline" size="toolbar">
+           <Pencil />
            Sửa
           </Button>
          }
         />
-       )}
+       ) : null}
 
        <MemoryTipDialog
         trigger={
-         <Button type="button" variant="outline" size="sm">
-          <Plus className="h-4 w-4" />
+         <Button type="button" variant="outline" size="toolbar">
+          <Plus />
           Thêm
          </Button>
         }
        />
 
-       <Button type="button" variant="ghost" size="sm" asChild>
+       <Button type="button" variant="ghost" size="toolbar" asChild>
         <Link href="/memory-tips" prefetch={false}>
-         <Settings className="h-4 w-4" />
+         <Settings />
          Quản lý
         </Link>
        </Button>
 
-       {canEditSelectedTip && (
+       {canEditSelectedTip ? (
         <Button
          type="button"
          variant={selectedTip.isPinned ? "default" : "outline"}
-         size="sm"
+         size="toolbar"
          onClick={togglePin}
         >
          {isMutating ? (
@@ -241,37 +248,40 @@ export function GlobalMemoryTipCard({
          )}
          {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
         </Button>
-       )}
+       ) : null}
       </div>
      ) : null}
     </div>
 
-    {!compact && (selectedTip.formula || selectedTip.exampleZh) && (
-     <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
-      {selectedTip.formula && (
-       <StudyInstructionText tone="info" weight="black">
-        {selectedTip.formula}
-       </StudyInstructionText>
-      )}
-      {selectedTip.exampleZh && (
-       <div className="grid gap-1">
-        <StudyInstructionText tone="default" weight="black">
-         {selectedTip.exampleZh}
+    {!compact && (selectedTip.formula || selectedTip.exampleZh) ? (
+     <>
+      <Separator />
+      <div className="grid gap-2">
+       {selectedTip.formula ? (
+        <StudyInstructionText tone="info" weight="black">
+         {selectedTip.formula}
         </StudyInstructionText>
-        {selectedTip.examplePinyin && (
-         <StudyInstructionText variant="caption" tone="secondary" weight="semibold">
-          {selectedTip.examplePinyin}
+       ) : null}
+       {selectedTip.exampleZh ? (
+        <div className="grid gap-1">
+         <StudyInstructionText tone="default" weight="black">
+          {selectedTip.exampleZh}
          </StudyInstructionText>
-        )}
-        {selectedTip.exampleVi && (
-         <StudyInstructionText variant="caption" tone="muted" weight="semibold">
-          {selectedTip.exampleVi}
-         </StudyInstructionText>
-        )}
-       </div>
-      )}
-     </div>
-    )}
+         {selectedTip.examplePinyin ? (
+          <StudyInstructionText variant="caption" tone="secondary" weight="semibold">
+           {selectedTip.examplePinyin}
+          </StudyInstructionText>
+         ) : null}
+         {selectedTip.exampleVi ? (
+          <StudyInstructionText variant="caption" tone="muted" weight="semibold">
+           {selectedTip.exampleVi}
+          </StudyInstructionText>
+         ) : null}
+        </div>
+       ) : null}
+      </div>
+     </>
+    ) : null}
    </div>
   </Card>
  );
