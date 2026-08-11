@@ -43,7 +43,7 @@ export function HomeLearningPulse({
      <PulseStat
       icon={<Repeat2 />}
       value={pulse.reviewCount}
-      label="Đang học / cần ôn"
+      label="Đang học / còn khó"
       tone="warning"
      />
      <PulseStat
@@ -68,7 +68,7 @@ export function HomeLearningPulse({
 
     <Typography as="p" variant="caption" tone="muted" className="mt-5">
      {pulse.trackedCount > 0
-      ? `${pulse.trackedCount} mục đã có trạng thái học. Số “cần ôn” gồm các mục đang học hoặc đang đánh dấu khó.`
+      ? `${pulse.trackedCount} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.`
       : "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật."}
     </Typography>
    </Card>
