@@ -1,11 +1,9 @@
 "use client";
 
-import { PageHeader } from "@/components/ui/page-header";
 import { PageContainer } from "@/components/layout/page-container";
+import { PageHeader } from "@/components/ui/page-header";
 import { ContinueLearningPanel } from "@/features/home/components/ContinueLearningPanel";
 import { HomeDashboardSkeleton } from "@/features/home/components/HomeDashboardSkeleton";
-import { HomeQuickActions } from "@/features/home/components/HomeQuickActions";
-import { HomeResourceLinks } from "@/features/home/components/HomeResourceLinks";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
 
@@ -16,18 +14,14 @@ export function HomeDashboard() {
 
  return (
   <PageContainer>
-   <div className="grid w-full gap-5">
+   <div className="grid w-full gap-6">
     <PageHeader
      title="Trang học"
-     description="Tiếp tục bài đang học, mở khu vực cần dùng và giữ các ghi chú gần đây trong tầm mắt."
+     description="Quay lại đúng nội dung đang học và tiếp tục những ghi chú gần đây. Điều hướng toàn bộ khu vực học nằm ở thanh bên."
     />
-    <div className="grid gap-5">
+    <div className="grid gap-6">
      <ContinueLearningPanel lesson={dashboard.lesson} />
-     <HomeResourceLinks />
-     <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]">
-      <RecentNotesPanel notes={dashboard.recentNotes} />
-      <HomeQuickActions />
-     </div>
+     <RecentNotesPanel notes={dashboard.recentNotes} />
     </div>
    </div>
   </PageContainer>
