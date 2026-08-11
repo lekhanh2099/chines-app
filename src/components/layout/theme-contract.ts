@@ -6,14 +6,7 @@ export type Theme = z.infer<typeof ThemeSchema>;
 export const ThemeModeSchema = z.enum(["system", "light", "dark"]);
 export type ThemeMode = z.infer<typeof ThemeModeSchema>;
 
-export const ThemePaletteSchema = z.enum([
- "editorial",
- "jade",
- "warm",
- "plum",
- "mono",
- "tea",
-]);
+export const ThemePaletteSchema = z.enum(["editorial", "jade", "warm", "plum", "mono", "tea"]);
 export type ThemePalette = z.infer<typeof ThemePaletteSchema>;
 
 type ThemePaletteMeta = {

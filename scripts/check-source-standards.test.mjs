@@ -21,9 +21,9 @@ describe("source standards unsafe-type guard", () => {
   expect(inspect("type Payload = any;")).toEqual([
    expect.stringContaining("uses an unsafe explicit any type"),
   ]);
-  expect(inspect("function read(value: unknown) { return typeof value === 'string' ? value : ''; }")).toEqual(
-   [],
-  );
+  expect(
+   inspect("function read(value: unknown) { return typeof value === 'string' ? value : ''; }"),
+  ).toEqual([]);
  });
 
  it("rejects a new type assertion", () => {

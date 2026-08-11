@@ -152,7 +152,12 @@ export function LessonStudyDashboard({
         Học theo đúng cấu trúc sách
        </Typography>
       </div>
-      <Button type="button" variant="outline" size="toolbar" onClick={() => onOpenModule("lessonText")}>
+      <Button
+       type="button"
+       variant="outline"
+       size="toolbar"
+       onClick={() => onOpenModule("lessonText")}
+      >
        Mở bài khóa
       </Button>
      </div>

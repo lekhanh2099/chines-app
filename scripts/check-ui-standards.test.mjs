@@ -92,7 +92,7 @@ describe("UI standards guard", () => {
   expect(
    inspectUiSource({
     file: "src/features/example/Example.test.tsx",
-    source: 'export function Mock() { return <button>Mock action</button>; }',
+    source: "export function Mock() { return <button>Mock action</button>; }",
    }),
   ).toEqual([]);
  });

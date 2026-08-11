@@ -52,8 +52,8 @@ export function AppearanceSettingsSection() {
       Giao diện
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted" leading="standard" className="mt-1">
-      Chế độ sáng tối và màu nhấn dùng chung toàn ứng dụng. Canvas, card, popover và border giữ
-      nền trung tính để nội dung học luôn là điểm tập trung.
+      Chế độ sáng tối và màu nhấn dùng chung toàn ứng dụng. Canvas, card, popover và border giữ nền
+      trung tính để nội dung học luôn là điểm tập trung.
      </Typography>
     </div>
    </div>

@@ -246,7 +246,15 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
  );
 }
 
-function DocSection({ index, title, children }: { index: number; title: string; children: ReactNode }) {
+function DocSection({
+ index,
+ title,
+ children,
+}: {
+ index: number;
+ title: string;
+ children: ReactNode;
+}) {
  return (
   <Card variant="subtle" padding="md">
    <div className="flex flex-col gap-3">
@@ -467,7 +475,15 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
  );
 }
 
-function InsightSection({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
+function InsightSection({
+ title,
+ icon,
+ children,
+}: {
+ title: string;
+ icon?: ReactNode;
+ children: ReactNode;
+}) {
  return (
   <Card variant="subtle" padding="md">
    <div className="grid gap-2">

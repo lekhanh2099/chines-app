@@ -445,7 +445,11 @@ function SectionHeading({
 }) {
  return (
   <div className="flex min-w-0 max-w-3xl items-start gap-3">
-   {icon ? <IconTile tone="accent" size="sm">{icon}</IconTile> : null}
+   {icon ? (
+    <IconTile tone="accent" size="sm">
+     {icon}
+    </IconTile>
+   ) : null}
    <div className="min-w-0">
     <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
      {title}
