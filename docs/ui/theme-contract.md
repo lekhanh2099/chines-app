@@ -18,7 +18,7 @@ A palette is a restrained product tint, not a full page skin.
 Palette MAY own:
 
 - the page canvas alias `--bg-primary` through a palette-specific `--canvas-background`;
-- the default Card/shell alias `--bg-card` as a low-percentage mix of the neutral
+- the Card-only token `--theme-card-background` as a low-percentage mix of the neutral
   `--card` foundation and the selected `--primary`;
 - `--primary` and its foreground;
 - `--accent` and its foreground;
@@ -30,6 +30,7 @@ Palette MUST NOT own:
 
 - the neutral `--background` foundation token;
 - the neutral `--card` foundation token itself;
+- the generic `--bg-card` alias used by controls/shell chrome;
 - Popover/Dialog background;
 - neutral elevated surfaces;
 - input surface;
@@ -38,8 +39,9 @@ Palette MUST NOT own:
 
 Light/dark mode therefore still owns the structural surface family. The palette can
 make the product perceptibly themed in two controlled layers: the outer canvas has
-the clearest tint and default Card/shell surfaces receive a much lighter tint. Popover,
-Dialog, input, borders and text stay neutral so learning content keeps stable contrast.
+the clearest tint and the shared Card primitive receives a much lighter tint. Shell
+chrome, outline controls, Popover, Dialog, input, borders and text stay neutral so
+learning content keeps stable contrast.
 
 The active interaction contract uses the selected palette color for both the active
 surface emphasis and active text/icon color. Nested `Typography` inside an active
@@ -83,8 +85,8 @@ Appearance settings expose:
 
 Palette choices are standalone touch targets. They must not be represented as small
 toolbar controls. Changing palette should visibly change the outer page canvas, lightly
-change Card/shell surfaces and change selected/active emphasis without reducing reading
-contrast inside content-heavy surfaces.
+change Card surfaces and change selected/active emphasis without tinting generic controls
+or reducing reading contrast inside content-heavy surfaces.
 
 ## 5. Adding a palette
 
@@ -94,8 +96,8 @@ To add a palette:
 2. Add user-facing metadata to `THEME_PALETTE_META`.
 3. Define light and dark selectors in `theme-palettes.css`.
 4. Define a restrained `--canvas-background` plus the palette-owned emphasis tokens.
-5. Keep raw `--card` neutral; derive `--bg-card` only through the shared low-percentage
-   palette mix.
+5. Keep raw `--card` and generic `--bg-card` neutral; derive only
+   `--theme-card-background` through the shared low-percentage palette mix.
 6. Keep Popover/Dialog/input/border/text foundation tokens neutral.
 7. Add/keep a swatch selector.
 8. Run `theme-contract.test.ts` and the normal UI gate.
