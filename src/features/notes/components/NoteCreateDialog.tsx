@@ -126,7 +126,7 @@ export function NoteCreateDialog({
    <DropdownMenu>
     <DropdownMenuTrigger asChild>
      <Button
-      size={compactOnTablet ? "responsive-action" : "lg"}
+      size={compactOnTablet ? "toolbar" : "lg"}
       disabled={focusModeEnabled}
       aria-label="Tạo ghi chú hoặc bài đọc"
       title="Tạo"
