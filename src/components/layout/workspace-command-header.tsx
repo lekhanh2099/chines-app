@@ -23,11 +23,11 @@ export function WorkspaceCommandHeader({
  return (
   <header
    className={cn(
-    "sticky top-0 z-20 grid shrink-0 gap-3 border-b border-border-default bg-bg-card px-3 py-3 sm:px-4 lg:gap-4 lg:px-6 lg:py-4 xl:px-8",
+    "sticky top-0 z-20 grid min-w-0 shrink-0 gap-3 border-b border-border-default bg-bg-card px-3 py-3 sm:px-4 lg:gap-4 lg:px-6 lg:py-4 xl:px-8",
     className,
    )}
   >
-   <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+   <div className="flex min-w-0 flex-col gap-2 md:flex-row md:flex-wrap md:items-start md:justify-between">
     <div className="grid min-w-0 gap-1">
      <div className="flex min-w-0 flex-wrap items-center gap-2">
       <Typography
@@ -48,7 +48,7 @@ export function WorkspaceCommandHeader({
     </div>
 
     {controls ? (
-     <div className="flex min-w-0 flex-wrap items-center gap-2 md:flex-1 md:flex-nowrap md:justify-end">
+     <div className="flex min-w-0 max-w-full flex-1 flex-wrap items-center justify-end gap-2">
       {controls}
      </div>
     ) : null}
