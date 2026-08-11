@@ -31,13 +31,20 @@ const VISUAL_PRIMITIVE_COMPONENTS = new Set([
  "Switch",
  "OptionSelect",
  "RadioGroup",
+ "Card",
+ "Badge",
+ "SelectTrigger",
+ "PageHeader",
+ "SegmentedControl",
+ "IconTile",
 ]);
 const DIRECT_PRIMITIVE_IMPORT_PATTERN = /^(?:@base-ui\/react(?:\/.*)?|radix-ui|@radix-ui\/.*)$/;
 const LEGACY_SELECT_IMPORT = "@/components/ui/select/index";
 const TYPOGRAPHY_CLASS_PATTERN =
  /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
 const PRIMITIVE_VISUAL_CLASS_PATTERN =
- /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|")|border(?:-|")|bg-|shadow(?:-|")|ring-|outline-|accent-|p[trblxy]?-\S+)/;
+ /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|\b)|border(?:-|\b)|bg-|shadow(?:-|\b)|ring-|outline-|accent-|p[trblxy]?-[^\s"']+)/;
+const COMPONENT_ANATOMY_OVERRIDE_PATTERN = /\[&_[^\]]+\]/;
 const ARBITRARY_Z_INDEX_PATTERN = /\bz-\[[^\]]+\]/;
 const FEATURE_VISUAL_ESCAPE_HATCH_PATTERN =
  /\b(?:bg|text|border|ring|outline|fill|stroke)-\[(?:#|rgb\(|hsl\(|oklch\(|color-mix\()|\b(?:bg|from|via|to)-\[[^\]]*(?:linear-gradient|radial-gradient|conic-gradient)\(/;
@@ -133,13 +140,17 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
       `typographyClassName: ${location(sourceFile, className)} uses typed style tokens`,
      );
     }
-    if (
-     VISUAL_PRIMITIVE_COMPONENTS.has(tagName) &&
-     PRIMITIVE_VISUAL_CLASS_PATTERN.test(classNameSource)
-    ) {
-     failures.push(
-      `primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`,
-     );
+    if (VISUAL_PRIMITIVE_COMPONENTS.has(tagName)) {
+     if (PRIMITIVE_VISUAL_CLASS_PATTERN.test(classNameSource)) {
+      failures.push(
+       `primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`,
+      );
+     }
+     if (COMPONENT_ANATOMY_OVERRIDE_PATTERN.test(classNameSource)) {
+      failures.push(
+       `componentAnatomyOverride: ${location(sourceFile, className)} reaches into component anatomy`,
+      );
+     }
     }
    }
   }
