@@ -52,8 +52,8 @@ export function AppearanceSettingsSection() {
       Giao diện
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted" leading="standard" className="mt-1">
-      Chế độ sáng tối và màu nhấn dùng chung toàn ứng dụng. Canvas, card, popover và border giữ nền
-      trung tính để nội dung học luôn là điểm tập trung.
+      Chế độ sáng tối quyết định hệ surface. Bảng màu thêm sắc nhẹ cho nền trang và đồng bộ màu
+      nhấn, focus, trạng thái chọn; card, popover và border vẫn giữ độ trung tính để nội dung dễ đọc.
      </Typography>
     </div>
    </div>
@@ -84,7 +84,7 @@ export function AppearanceSettingsSection() {
       Bảng màu giao diện
      </Typography>
      <Typography as="p" variant="caption" tone="muted" className="mt-1">
-      Chỉ đổi màu nhấn, focus, trạng thái chọn và navigation active; không nhuộm nền toàn trang.
+      Đổi sắc nền trang ở mức nhẹ và dùng cùng màu cho primary, focus, selected và navigation active.
      </Typography>
     </div>
 
