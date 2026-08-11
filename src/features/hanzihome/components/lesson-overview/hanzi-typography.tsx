@@ -18,7 +18,6 @@ const StaticHanziTextSizeSchema = z.enum([
  "hero",
  "radicalHero",
 ]);
-const StaticHanziTextFontSchema = z.enum(["standard", "popular"]);
 const StudyTextElementSchema = z.enum([
  "span",
  "p",
@@ -44,7 +43,6 @@ type StudyInstructionTextProps = Omit<TypographyProps<StudyTextElement>, "as"> &
 };
 type HanziTextProps = StudyTypographyProps & {
  size?: z.infer<typeof StaticHanziTextSizeSchema>;
- font?: z.infer<typeof StaticHanziTextFontSchema>;
 };
 type ReaderHanziTextProps = StudyTypographyProps & {
  displayMode: LessonDisplayMode;
@@ -70,10 +68,6 @@ const staticHanziTextSizes: Record<z.infer<typeof StaticHanziTextSizeSchema>, st
  detail: "text-6xl sm:text-7xl",
  hero: "text-6xl",
  radicalHero: "text-5xl sm:text-6xl",
-};
-const staticHanziTextFonts: Record<z.infer<typeof StaticHanziTextFontSchema>, string> = {
- standard: "font-hanzi",
- popular: "font-popular-xingkai",
 };
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
@@ -139,7 +133,6 @@ export function getHanziTypographyStyle(
 export function HanziText({
  as = StudyTextElementSchema.enum.span,
  size = StaticHanziTextSizeSchema.enum.card,
- font = StaticHanziTextFontSchema.enum.standard,
  className,
  ...props
 }: HanziTextProps) {
@@ -147,7 +140,7 @@ export function HanziText({
   <Typography
    as={as}
    lang="zh-CN"
-   className={cn(staticHanziTextFonts[font], staticHanziTextSizes[size], className)}
+   className={cn("font-hanzi", staticHanziTextSizes[size], className)}
    {...props}
   />
  );
@@ -248,9 +241,20 @@ export function StudyInstructionText({
  as = StudyTextElementSchema.enum.p,
  variant = "bodySmall",
  tone = "muted",
+ lang,
+ className,
  ...props
 }: StudyInstructionTextProps) {
- return <Typography as={as} variant={variant} tone={tone} {...props} />;
+ return (
+  <Typography
+   as={as}
+   lang={lang}
+   variant={variant}
+   tone={tone}
+   className={cn(lang === "zh-CN" && "font-hanzi", className)}
+   {...props}
+  />
+ );
 }
 
 export type {
