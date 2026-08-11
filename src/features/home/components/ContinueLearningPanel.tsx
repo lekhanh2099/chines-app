@@ -6,7 +6,6 @@ import { ActionCard } from "@/components/ui/action-card";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
-import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type { HomeDashboardModel } from "@/features/home/types";
 
 const moduleLabels = {
@@ -32,64 +31,55 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
     description="Quay lại đúng bài và nội dung bạn đang theo dõi."
     className="mb-3"
    />
-   <div className="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]">
-    <div className="min-w-0">
-     {lesson ? (
-      <ActionCard
-       padding="lg"
-       asChild
-       className="flex w-full items-center gap-4 xl:max-w-2xl"
-      >
-       <Link href={lesson.href} prefetch={false}>
-        <IconTile size="lg">
-         <BookOpenCheck />
-        </IconTile>
 
-        <span className="min-w-0 flex-1">
-         <Typography
-          variant="overline"
-          tone="muted"
-          weight="black"
-          tracking="overline"
-          transform="uppercase"
-          className="block"
-         >
-          {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
-         </Typography>
-         <Typography
-          variant="sectionTitle"
-          tone="default"
-          weight="black"
-          clamp="one"
-          className="mt-1 block"
-         >
-          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-         </Typography>
-         <Typography
-          variant="bodySmall"
-          tone="muted"
-          weight="semibold"
-          clamp="one"
-          className="mt-0.5 block"
-         >
-          {lesson.courseTitle} · {moduleLabels[lesson.module]}
-         </Typography>
-        </span>
+   {lesson ? (
+    <ActionCard padding="lg" asChild className="flex w-full items-center gap-4">
+     <Link href={lesson.href} prefetch={false}>
+      <IconTile size="lg">
+       <BookOpenCheck />
+      </IconTile>
 
-        <HomeArrowIcon />
-       </Link>
-      </ActionCard>
-     ) : (
-      <Card variant="section" padding="lg" className="flex items-center xl:max-w-2xl">
-       <Typography as="p" variant="label" tone="default" weight="bold">
-        Chưa có bài học khả dụng.
+      <span className="min-w-0 flex-1">
+       <Typography
+        variant="overline"
+        tone="muted"
+        weight="black"
+        tracking="overline"
+        transform="uppercase"
+        className="block"
+       >
+        {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
        </Typography>
-      </Card>
-     )}
-    </div>
+       <Typography
+        variant="sectionTitle"
+        tone="default"
+        weight="black"
+        clamp="one"
+        className="mt-1 block"
+       >
+        Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+       </Typography>
+       <Typography
+        variant="bodySmall"
+        tone="muted"
+        weight="semibold"
+        clamp="one"
+        className="mt-0.5 block"
+       >
+        {lesson.courseTitle} · {moduleLabels[lesson.module]}
+       </Typography>
+      </span>
 
-    <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
-   </div>
+      <HomeArrowIcon />
+     </Link>
+    </ActionCard>
+   ) : (
+    <Card variant="section" padding="lg" className="flex items-center">
+     <Typography as="p" variant="label" tone="default" weight="bold">
+      Chưa có bài học khả dụng.
+     </Typography>
+    </Card>
+   )}
   </section>
  );
 }
