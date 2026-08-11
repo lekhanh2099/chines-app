@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,9 @@ import { cn } from "@/lib/utils";
 export type SegmentedControlItem<T extends string = string> = {
  key: T;
  label: string;
+ compactLabel?: string;
  icon?: LucideIcon;
+ suffix?: ReactNode;
  disabled?: boolean;
 };
 
@@ -91,7 +94,15 @@ export function SegmentedControl<T extends string>({
          className={cn("shrink-0", itemClassName)}
         >
          {Icon ? <Icon data-icon="inline-start" /> : null}
-         {item.label}
+         {item.compactLabel ? (
+          <>
+           <span className="sm:hidden">{item.compactLabel}</span>
+           <span className="hidden sm:inline">{item.label}</span>
+          </>
+         ) : (
+          item.label
+         )}
+         {item.suffix}
         </Button>
        );
       })}
