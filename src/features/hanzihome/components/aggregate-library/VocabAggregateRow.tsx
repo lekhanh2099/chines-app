@@ -1,7 +1,7 @@
 import Link from "next/link";
 
+import { ActionCard } from "@/components/ui/action-card";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import {
  HanziText,
  StudyInstructionText,
@@ -11,8 +11,7 @@ import type { AggregateVocabItem } from "./aggregate-utils";
 
 export function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
  return (
-  <Card
-   variant="interactive"
+  <ActionCard
    padding="md"
    asChild
    className="grid gap-2 sm:grid-cols-[7rem_minmax(0,1fr)_auto] sm:items-center"
@@ -48,6 +47,6 @@ export function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
 
     <Badge size="sm">{item.category}</Badge>
    </Link>
-  </Card>
+  </ActionCard>
  );
 }
