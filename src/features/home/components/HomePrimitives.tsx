@@ -30,7 +30,7 @@ export function HomeSectionHeader({
     >
      {title}
     </Typography>
-    {description && (
+    {description ? (
      <Typography
       as="p"
       variant="bodySmall"
@@ -41,28 +41,13 @@ export function HomeSectionHeader({
      >
       {description}
      </Typography>
-    )}
+    ) : null}
    </div>
    {action}
   </div>
  );
 }
 
-export function HomeIconTile({ children, className }: { children: ReactNode; className?: string }) {
- return (
-  <Typography
-   as="span"
-   tone="accent"
-   className={cn(
-    "flex size-11 shrink-0 items-center justify-center rounded-lg border border-primary/15 bg-accent-subtle",
-    className,
-   )}
-  >
-   {children}
-  </Typography>
- );
-}
-
 export function HomeArrowIcon({ className }: { className?: string }) {
- return <ArrowRight className={cn("h-4 w-4 shrink-0 text-text-muted", className)} />;
+ return <ArrowRight className={cn("size-4 shrink-0 text-text-muted", className)} />;
 }
