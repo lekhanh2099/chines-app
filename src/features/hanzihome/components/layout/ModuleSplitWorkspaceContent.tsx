@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import { HanziHomeReadingQuickSettingsButton } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
@@ -167,6 +168,7 @@ export function ModuleSplitWorkspaceContent() {
     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
+   <HanziHomeReadingQuickSettingsButton />
    <HanziHomeDeveloperTools inline>
     <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
      <Columns2 />
@@ -220,6 +222,7 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
+    <HanziHomeReadingQuickSettingsButton />
     <HanziHomeDeveloperTools inline>
      <DropdownMenuItem onSelect={enableSplit}>
       <Columns2 />
