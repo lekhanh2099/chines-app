@@ -30,27 +30,32 @@ export function StudyReviewCard({
  touchHandlers,
 }: StudyReviewCardProps) {
  const isGrammar = item.type === "grammar";
- const front = isGrammar ? <GrammarReviewFront item={item} /> : <VocabReviewFront item={item} />;
+ const front = isGrammar ? (
+  <GrammarReviewFront item={item} />
+ ) : (
+  <VocabReviewFront item={item} speakButtonClassName={revealed ? undefined : "pointer-events-auto"} />
+ );
 
  if (!revealed) {
   return (
-   <ActionCard
-    padding="md"
-    onClick={onReveal}
-    onTouchStart={touchHandlers.onTouchStart}
-    onTouchEnd={touchHandlers.onTouchEnd}
-    className="grid min-h-80 w-full touch-pan-y select-none place-items-center text-center"
-    aria-label="Lật thẻ để xem đáp án"
-   >
-    <span className="grid w-full max-w-3xl gap-3">
+   <div className="relative grid min-h-80 w-full touch-pan-y select-none place-items-center text-center">
+    <ActionCard
+     padding="md"
+     onClick={onReveal}
+     onTouchStart={touchHandlers.onTouchStart}
+     onTouchEnd={touchHandlers.onTouchEnd}
+     className="absolute inset-0 h-full w-full"
+     aria-label="Lật thẻ để xem đáp án"
+    />
+    <div className="pointer-events-none relative z-10 grid w-full max-w-3xl gap-3 px-4 py-6">
      {front}
      <StudyInstructionText tone="muted" weight="bold">
       {isGrammar
        ? "Tự nhớ ý nghĩa, công thức và ví dụ trước khi mở đáp án."
        : "Bấm vào thẻ hoặc nhấn Enter / Space để lật đáp án."}
      </StudyInstructionText>
-    </span>
-   </ActionCard>
+    </div>
+   </div>
   );
  }
 
