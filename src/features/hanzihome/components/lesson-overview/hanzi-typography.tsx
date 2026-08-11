@@ -53,6 +53,12 @@ type AdaptiveStudyTextProps = StudyTypographyProps & {
  displayMode: LessonDisplayMode;
  hanziSize?: z.infer<typeof HanziTypographySizeSchema>;
 };
+type HanziAwareTextProps = Omit<StudyInstructionTextProps, "children"> & {
+ text: string;
+};
+type HanziInlineTextProps = {
+ text: string;
+};
 type HanziFontPreviewProps = StudyTypographyProps & {
  font: HanziReaderFont;
  size?: z.infer<typeof StaticHanziTextSizeSchema>;
@@ -162,6 +168,34 @@ export function ReaderHanziText({
  );
 }
 
+export function HanziInlineText({ text }: HanziInlineTextProps) {
+ return (
+  <>
+   {text.split(HANZI_SEGMENT_PATTERN).map((segment, index) =>
+    containsHanziText(segment) ? (
+     <span key={index} lang="zh-CN" className="font-hanzi">
+      {segment}
+     </span>
+    ) : (
+     segment
+    ),
+   )}
+  </>
+ );
+}
+
+export function HanziAwareText({
+ text,
+ as = StudyTextElementSchema.enum.p,
+ ...props
+}: HanziAwareTextProps) {
+ return (
+  <StudyInstructionText as={as} {...props}>
+   <HanziInlineText text={text} />
+  </StudyInstructionText>
+ );
+}
+
 export function AdaptiveStudyText({
  text,
  displayMode,
@@ -260,7 +294,9 @@ export function StudyInstructionText({
 export type {
  HanziTextProps,
  AdaptiveStudyTextProps,
+ HanziAwareTextProps,
  HanziFontPreviewProps,
+ HanziInlineTextProps,
  ReaderHanziTextProps,
  StudyInstructionTextProps,
  StudyTypographyProps,
