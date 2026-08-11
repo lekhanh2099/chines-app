@@ -2,7 +2,13 @@ import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { BookOpenText, Layers3, Lightbulb, Repeat2 } from "lucide-react";
 
-import { HomeIconTile } from "@/features/home/components/HomePrimitives";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+ HomeArrowIcon,
+ HomeIconTile,
+ HomeSectionHeader,
+} from "@/features/home/components/HomePrimitives";
 
 const actions = [
  { href: "/dictionary", label: "Ôn SRS", icon: Repeat2 },
@@ -14,33 +20,38 @@ const actions = [
 export function HomeQuickActions() {
  return (
   <section aria-labelledby="quick-actions-title">
-   <Typography
-    as="h2"
-    variant="sectionTitle"
-    id="quick-actions-title"
-    tone="default"
-    weight="black"
-   >
-    Truy cập nhanh
-   </Typography>
-   <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-2">
-    {actions.map((action) => {
-     const Icon = action.icon;
-     return (
-      <Link
-       key={action.href}
-       href={action.href}
-       prefetch={false}
-       className="flex min-h-20 items-center gap-3 rounded-xl border border-border-default bg-bg-card px-4 py-3 font-bold text-text-primary shadow-theme-sm transition hover:border-primary/25 hover:text-accent-text"
-      >
-       <HomeIconTile className="size-10">
-        <Icon className="size-5" />
-       </HomeIconTile>
-       <span>{action.label}</span>
-      </Link>
-     );
-    })}
-   </div>
+   <Card variant="section" padding="lg">
+    <HomeSectionHeader
+     id="quick-actions-title"
+     title="Truy cập nhanh"
+     description="Mở công cụ học thường dùng mà không rời luồng hiện tại."
+    />
+    <div className="mt-4 grid gap-1">
+     {actions.map((action) => {
+      const Icon = action.icon;
+      return (
+       <Button
+        key={action.href}
+        variant="navigation"
+        size="list"
+        align="start"
+        asChild
+        className="w-full"
+       >
+        <Link href={action.href} prefetch={false}>
+         <HomeIconTile className="size-9">
+          <Icon className="size-4" />
+         </HomeIconTile>
+         <Typography as="span" variant="label" tone="default" weight="bold">
+          {action.label}
+         </Typography>
+         <HomeArrowIcon className="ml-auto" />
+        </Link>
+       </Button>
+      );
+     })}
+    </div>
+   </Card>
   </section>
  );
 }

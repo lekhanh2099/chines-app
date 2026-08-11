@@ -23,7 +23,7 @@ export function WorkspaceCommandHeader({
  return (
   <header
    className={cn(
-    "sticky top-0 z-20 grid shrink-0 gap-3 border-b border-border-default bg-bg-card/95 px-3 py-3 shadow-theme-sm backdrop-blur sm:px-4 lg:gap-4 lg:px-6 lg:py-4 xl:px-8",
+    "sticky top-0 z-20 grid shrink-0 gap-3 border-b border-border-default bg-bg-card px-3 py-3 sm:px-4 lg:gap-4 lg:px-6 lg:py-4 xl:px-8",
     className,
    )}
   >

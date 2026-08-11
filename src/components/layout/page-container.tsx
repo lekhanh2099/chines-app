@@ -9,8 +9,8 @@ type PageContainerProps = React.ComponentProps<"div">;
  */
 function PageContainer({ className, children, ...rest }: PageContainerProps) {
  return (
-  <div className={cn("w-full", className)} {...rest}>
-   <div className="w-full px-4 py-5 sm:px-6 lg:px-8">{children}</div>
+  <div data-page className={cn("w-full min-w-0", className)} {...rest}>
+   <div className="w-full min-w-0 px-4 py-5 sm:px-6 lg:px-8">{children}</div>
   </div>
  );
 }

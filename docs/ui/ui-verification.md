@@ -44,6 +44,10 @@ HanziHome study and note surfaces prioritize iPad portrait behavior.
 Check:
 
 - horizontal overflow;
+- neutral canvas, opaque surface and 1px border hierarchy remain legible without
+  decorative glass or page-level gradients;
+- controls render at `rounded-lg`; cards, panels and overlays render at
+  `rounded-xl`; only primary CTAs and primitive-owned overlays carry elevation;
 - toolbar wrapping;
 - header height;
 - split-panel width;
@@ -55,6 +59,9 @@ Check:
   standalone 44px action density;
 - global and contextual sidebars retain their distinct information scope while
   sharing selected and inactive navigation-row treatment.
+- desktop Sidebar keeps Học, Luyện, Năng lực and Cá nhân visible, initially
+  opens the active route group, supports keyboard-accessible expand and collapse
+  for every group, and preserves direct route access in its collapsed rail.
 
 ## 3. Keyboard
 
@@ -110,9 +117,9 @@ Verify:
 
 - Gear and avatar triggers work with mouse, keyboard and touch;
 - Gear menu does not overflow viewport and checkbox state is announced;
-- Gear reader panel exposes the current font, size, reveal, Pinyin, meaning and answer choices
-  without routing away; its Button selected states remain announced, Escape returns focus to the
-  Gear and the loading/sync-error state is observable;
+- Gear lists reader groups without routing away; each second-level submenu exposes the current
+  font, size, reveal, Pinyin, meaning and answer choices. Radio/checkbox state remains announced,
+  Escape returns focus to the Gear, and loading/sync-error state is observable;
 - lookup keeps global and Notes scopes independent; theme and focus mode update
   without a Button-toggle semantic shortcut;
 - `/settings?section=app|reading|ai` deep-links, preserves the selected section
@@ -138,6 +145,17 @@ Verify:
 - direct dictionary action is reachable;
 - result count and no-results state are correct;
 - closing restores focus.
+
+### Developer API page
+
+- endpoint labels, method badges and curl samples remain readable without horizontal page overflow;
+- each endpoint starts collapsed; its native summary is reachable with Tab and toggles with Enter or Space;
+- every displayed operation has an explicit query/no-body state, expected request JSON and status/content-type-qualified response sample; audio responses clearly state that they are streams;
+- a raw integration key is revealed only after creation, never rendered again after the reveal dialog closes, and a Supabase/browser access token is never copied or rendered;
+- Copy curl actions are keyboard reachable and report success or failure;
+- key-create/revoke dialogs preserve keyboard focus, Escape behavior and focus return;
+- the registry covers current route handlers plus the documented direct Notes, annotations and SRS/progress flows;
+- mobile command, request and response samples scroll within their card rather than expanding the page width.
 
 ## 6. Evidence in handoff
 

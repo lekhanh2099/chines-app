@@ -26,14 +26,14 @@ export function Sheet({
  return (
   <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
    <DialogPrimitive.Portal>
-    <DialogPrimitive.Overlay className="fixed inset-0 z-[100] bg-overlay backdrop-blur-sm" />
+    <DialogPrimitive.Overlay className="fixed inset-0 z-[100] bg-overlay" />
     <DialogPrimitive.Content
      aria-describedby={undefined}
      className={cn(
       "fixed z-[101] flex max-w-full flex-col overflow-hidden border-border-default bg-bg-card shadow-theme-lg outline-none",
       side === "right"
-       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
-       : "inset-x-0 bottom-0 max-h-[82dvh] w-full rounded-t-2xl border border-b-0",
+       ? "right-0 top-0 h-full w-full border-l sm:max-w-2xl"
+       : "inset-x-0 bottom-0 max-h-[82dvh] w-full rounded-t-xl border border-b-0",
       className,
      )}
     >

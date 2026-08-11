@@ -124,6 +124,18 @@ Forbidden at call sites:
 A repeated valid variation becomes a semantic typed variant. A one-off pixel
 value does not automatically justify a new variant.
 
+## 4.1 App-page width
+
+`PageContainer` owns the normal application-page frame. Its direct content is
+fluid (`w-full min-w-0`) with only responsive gutters; it MUST NOT center or
+apply a page-level `max-width`. Home, Settings, Dictionary and API/docs are
+workspace surfaces and use this frame.
+
+Reading measure, review cards and dialogs may constrain their own content when
+that improves comprehension or the task. Those constraints stay inside the
+feature surface; they must not shrink the application page or create empty
+side gutters on desktop.
+
 ## 5. Button
 
 Stable variants express meaning. Stable sizes express interaction density.
@@ -193,9 +205,9 @@ Do not set `role="menu"` on arbitrary Popover children.
 
 Global preferences have one entry point in the Header:
 
-- Gear opens `DropdownMenu` quick preferences; its HanziHome reader action opens an anchored,
-  feature-owned Popover that keeps the existing `useLearningState` owner and reuses the reader
-  control grid, with `/settings?section=reading` remaining the full hub;
+- Gear opens `DropdownMenu` quick preferences; its HanziHome reader controls are grouped as
+  native second-level menu entries for font, size, reveal and visibility. They keep the existing
+  `useLearningState` owner, with `/settings?section=reading` remaining the full hub;
 - Avatar opens identity/provider context and logout only;
 - `/settings?section=app|reading|ai` owns grouped settings content.
 
@@ -203,29 +215,51 @@ Use a labeled `Switch` for a full settings-page row. Use
 `DropdownMenuCheckboxItem` for the equivalent compact Gear action; do not
 render an unannounced Button toggle in either surface.
 
-The reader quick panel is contextual interactive content, not a nested menu: it is anchored to the
-Gear and reuses the reader grid's Button `aria-pressed` contract for font, size, reveal and
-visibility choices. Do not add a third-level menu for reader controls.
+Reader quick settings use the `DropdownMenu` second-level contract: the top-level menu lists the
+reader groups and selecting one replaces that menu content with its radio or checkbox choices plus
+an explicit return item. Do not place the complete reader-control grid inside one popover or one
+submenu.
 
 Global visual recipes have explicit ownership:
 
-- `nova-shell-*` is app chrome only;
-- `nova-page` is the calm content canvas;
-- `app-gradient-hero` is limited to Home and HanziHome library heroes;
-- `app-glass-surface` is limited to direct supporting content in those heroes
-  or an explicitly typed overlay surface;
-- `hanzihome-liquid-*` is limited to HanziHome Header/workspace panels;
+- `nova-shell-*` is opaque app chrome with a 1px divider only;
+- `nova-page` is the neutral content canvas;
+- `app-gradient-hero` and `app-glass-surface` remain flat compatibility aliases;
+  feature code must not add new consumers;
+- `hanzihome-liquid-*` is limited to HanziHome Header/workspace panels and uses
+  the same opaque flat surface grammar;
 - `app-brand-gradient` is identity and compact emphasis only.
+
+Flat-surface grammar is shared across the app: controls use `rounded-lg`, while
+cards, panels and overlays use `rounded-xl`; cards and shell surfaces rely on a
+1px semantic border rather than decorative shadow. Only a primary CTA may use a
+very small control shadow; menu, Popover, Dialog and Sheet own their limited
+elevation inside the UI primitive boundary. Feature and layout code must not add
+`backdrop-blur`, `app-glass-surface`, `app-gradient-hero` or `shadow-theme-lg`.
 
 Feature code uses semantic tokens and existing primitives. It must not add a
 new page-specific global surface recipe, arbitrary color utility, or arbitrary
 gradient utility.
 
 Navigation remains scoped by information architecture: the global Sidebar owns
-route Links, while HanziHome's module sidebar owns contextual section buttons.
-They are not one shared component, but both use the same 40px navigation-row
-grammar: subdued inactive row, `app-active-item` selected row, and an optional
-context subtitle or collapsed rail.
+route Links, grouped as Học, Luyện, Năng lực and Cá nhân, while HanziHome's
+module sidebar owns contextual section buttons. The desktop Sidebar initially
+opens the group containing the active route, and users can expand or collapse
+every group from its 40px Button header; its collapsed rail keeps direct route
+access with grouped separators. They are not one shared component,
+but both use the same 40px navigation-row grammar: subdued inactive row,
+`app-active-item` selected row, and an optional context subtitle or collapsed
+rail.
+
+Developer API documentation is a feature page, not a third-party Swagger
+surface. It composes `PageHeader`, `Card`, `Badge`, `Button`, `Separator` and
+`Typography`; endpoint details reuse native semantic `details` / `summary`
+disclosure, as the existing lesson and Notebook disclosures do. The collapsed
+summary owns path, method and scope metadata; the expanded Card owns query,
+request and response-code samples plus the curl action. Never render or copy a
+browser/Supabase user access token in the page. Integration-key raw secrets are
+revealed once only by the key manager and are not retained in client state after
+its Dialog closes.
 
 ## 8. Tooltip
 

@@ -10,7 +10,7 @@ import { z } from "zod";
 import { HanziFontPreview, HanziText, StudyInstructionText } from "./hanzi-typography";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
-const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
+export const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
  { value: "system", label: "Hệ thống" },
  { value: "songti", label: "Noto Serif SC" },
  { value: "noto-sans", label: "Noto Sans SC" },
@@ -21,7 +21,7 @@ const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
  { value: "xiaowei", label: "ZCOOL XiaoWei" },
 ];
 
-const sizeOptions: Array<{
+export const sizeOptions: Array<{
  value: HanziReaderSize;
  label: string;
  sample: string;
@@ -35,7 +35,7 @@ const sizeOptions: Array<{
 
 const LessonReadingVisibilityKeySchema = z.enum(["showPinyin", "showMeaning", "showAnswers"]);
 
-const visibilityOptions: Array<{
+export const visibilityOptions: Array<{
  key: z.infer<typeof LessonReadingVisibilityKeySchema>;
  label: string;
 }> = [
@@ -44,7 +44,7 @@ const visibilityOptions: Array<{
  { key: "showAnswers", label: "Đáp án" },
 ];
 
-const revealOptions: Array<{
+export const revealOptions: Array<{
  value: LessonDisplayMode["revealMode"];
  label: string;
 }> = [
@@ -181,7 +181,7 @@ function SettingsGroup({
  children: React.ReactNode;
 }) {
  return (
-  <section className="grid gap-1.5 rounded-lg border border-border-default bg-bg-subtle p-2">
+  <section className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-2.5">
    <Typography
     as="h3"
     variant="cardTitle"

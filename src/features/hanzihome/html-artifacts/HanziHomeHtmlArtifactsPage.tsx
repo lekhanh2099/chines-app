@@ -2266,7 +2266,7 @@ function ArtifactForm({
  return (
   <form
    className={cn(
-    "flex min-h-full flex-col rounded-xl border-2 border-border-default bg-bg-card shadow-theme-lg",
+    "flex min-h-full flex-col rounded-xl border border-border-default bg-bg-card",
     htmlOnly ? "h-full gap-3 overflow-hidden p-3" : "gap-4 p-4",
    )}
    onSubmit={submitForm}

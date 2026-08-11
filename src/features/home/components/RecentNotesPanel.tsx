@@ -68,7 +68,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
       ))}
      </div>
     ) : (
-     <div className="mt-4 rounded-2xl border border-dashed border-border-default px-4 py-6 text-center">
+     <div className="mt-4 rounded-xl border border-dashed border-border-default px-4 py-6 text-center">
       <Typography as="p" variant="label" tone="secondary" weight="bold">
        Chưa có ghi chú gần đây.
       </Typography>

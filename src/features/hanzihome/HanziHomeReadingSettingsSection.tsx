@@ -3,22 +3,39 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import {
- BasePopover as Popover,
- BasePopoverPopup,
- BasePopoverPositioner,
-} from "@/components/ui/base-popover";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
-import { type ComponentProps, useRef } from "react";
-import { LessonReadingSettings } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
+import {
+ DropdownMenuCheckboxItem,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
+ DropdownMenuSeparator,
+ DropdownMenuShortcut,
+} from "@/components/ui/dropdown-menu";
+import {
+ LessonReadingSettings,
+ fontOptions,
+ revealOptions,
+ sizeOptions,
+ visibilityOptions,
+} from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { BookOpenCheck, CloudOff, RefreshCcw, X } from "lucide-react";
+import { ChevronLeft, Eye, RefreshCcw, Type } from "lucide-react";
+import { z } from "zod";
 
-type ReaderQuickSettingsAnchor = ComponentProps<typeof BasePopoverPositioner>["anchor"];
-type ReaderQuickSettingsFinalFocus = ComponentProps<typeof BasePopoverPopup>["finalFocus"];
-type ReaderQuickSettingsCloseButtonRef = ComponentProps<typeof Button>["ref"];
+export const HanziHomeReadingQuickSettingsSectionSchema = z.enum([
+ "font",
+ "size",
+ "reveal",
+ "visibility",
+]);
+
+export const HanziHomeReadingQuickSettingsActiveSectionSchema = z.nullable(
+ HanziHomeReadingQuickSettingsSectionSchema,
+);
 
 export function HanziHomeReadingSettingsSection() {
  const learning = useLearningState();
@@ -92,48 +109,14 @@ export function HanziHomeReadingSettingsSection() {
  );
 }
 
-export function HanziHomeReadingQuickSettingsPanel({
- open,
- onOpenChange,
- anchor,
- finalFocus,
+export function HanziHomeReadingQuickSettingsMenu({
+ activeSection,
+ onActiveSectionChange,
 }: {
- open: boolean;
- onOpenChange: (open: boolean) => void;
- anchor: ReaderQuickSettingsAnchor;
- finalFocus: ReaderQuickSettingsFinalFocus;
-}) {
- const closeButtonRef = useRef<HTMLButtonElement>(null);
-
- return (
-  <Popover.Root open={open} onOpenChange={(nextOpen) => onOpenChange(nextOpen)} modal="trap-focus">
-   <Popover.Portal>
-    <BasePopoverPositioner
-     anchor={anchor}
-     side="bottom"
-     align="end"
-     sideOffset={8}
-     collisionPadding={8}
-     positionMethod="fixed"
-    >
-     <BasePopoverPopup
-      aria-label="Thiết lập đọc"
-      initialFocus={closeButtonRef}
-      finalFocus={finalFocus}
-      variant="default"
-     >
-      {open ? <HanziHomeReadingQuickSettingsPanelContent closeButtonRef={closeButtonRef} /> : null}
-     </BasePopoverPopup>
-    </BasePopoverPositioner>
-   </Popover.Portal>
-  </Popover.Root>
- );
-}
-
-function HanziHomeReadingQuickSettingsPanelContent({
- closeButtonRef,
-}: {
- closeButtonRef: ReaderQuickSettingsCloseButtonRef;
+ activeSection: z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>;
+ onActiveSectionChange: (
+  section: z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>,
+ ) => void;
 }) {
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
@@ -142,76 +125,173 @@ function HanziHomeReadingQuickSettingsPanelContent({
   learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
  };
 
- return (
-  <div className="grid max-h-[calc(100dvh-5rem)] w-96 max-w-full gap-3 overflow-y-auto p-3 scrollbar-soft">
-   <div className="flex items-start justify-between gap-3">
-    <div className="min-w-0 space-y-0.5">
-     <Typography as="h2" variant="cardTitle" tone="default" weight="black">
-      <BookOpenCheck className="size-4 shrink-0" />
-      Thiết lập đọc
-     </Typography>
-     <Typography as="p" variant="caption" tone="muted" weight="medium">
-      Áp dụng ngay cho nội dung tiếng Trung.
-     </Typography>
-    </div>
-    <div className="flex shrink-0 items-center gap-1.5">
-     <Badge
-      variant={learning.isError ? "warning" : learning.isSaving ? "info" : "success"}
-      size="sm"
+ if (activeSection) {
+  return (
+   <>
+    <DropdownMenuItem
+     onSelect={(event) => {
+      event.preventDefault();
+      onActiveSectionChange(null);
+     }}
+    >
+     <ChevronLeft />
+     Quay lại cài đặt nhanh
+    </DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuLabel>
+     {activeSection === "font"
+      ? "Phông chữ"
+      : activeSection === "size"
+        ? "Cỡ chữ"
+        : activeSection === "reveal"
+          ? "Cách mở nội dung"
+          : "Hiển thị"}
+    </DropdownMenuLabel>
+    {activeSection === "font" ? (
+     <DropdownMenuRadioGroup
+      value={displayMode.hanziFont}
+      onValueChange={(value) => {
+       const option = fontOptions.find((candidate) => candidate.value === value);
+       if (option) updateDisplayMode({ hanziFont: option.value });
+      }}
      >
-      {learning.isError
-       ? "Cần đồng bộ"
-       : learning.isSaving
-         ? "Đang lưu"
-         : learning.isOnline
-           ? "Đã đồng bộ"
-           : "Cục bộ"}
-     </Badge>
-     <Popover.Close
-      render={
-       <Button
-        ref={closeButtonRef}
-        type="button"
-        variant="ghost"
-        size="icon-sm"
-        aria-label="Đóng thiết lập đọc"
-       />
-      }
+      {fontOptions.map((option) => (
+       <DropdownMenuRadioItem
+        key={option.value}
+        value={option.value}
+        onSelect={(event) => event.preventDefault()}
+       >
+        {option.label}
+       </DropdownMenuRadioItem>
+      ))}
+     </DropdownMenuRadioGroup>
+    ) : null}
+    {activeSection === "size" ? (
+     <DropdownMenuRadioGroup
+      value={displayMode.hanziSize}
+      onValueChange={(value) => {
+       const option = sizeOptions.find((candidate) => candidate.value === value);
+       if (option) updateDisplayMode({ hanziSize: option.value });
+      }}
      >
-      <X />
-     </Popover.Close>
-    </div>
-   </div>
+      {sizeOptions.map((option) => (
+       <DropdownMenuRadioItem
+        key={option.value}
+        value={option.value}
+        onSelect={(event) => event.preventDefault()}
+       >
+        {option.label}
+       </DropdownMenuRadioItem>
+      ))}
+     </DropdownMenuRadioGroup>
+    ) : null}
+    {activeSection === "reveal" ? (
+     <DropdownMenuRadioGroup
+      value={displayMode.revealMode}
+      onValueChange={(value) => {
+       const option = revealOptions.find((candidate) => candidate.value === value);
+       if (option) updateDisplayMode({ revealMode: option.value });
+      }}
+     >
+      {revealOptions.map((option) => (
+       <DropdownMenuRadioItem
+        key={option.value}
+        value={option.value}
+        onSelect={(event) => event.preventDefault()}
+       >
+        {option.label}
+       </DropdownMenuRadioItem>
+      ))}
+     </DropdownMenuRadioGroup>
+    ) : null}
+    {activeSection === "visibility"
+     ? visibilityOptions.map((option) => (
+        <DropdownMenuCheckboxItem
+         key={option.key}
+         checked={displayMode[option.key]}
+         disabled={
+          displayMode.revealMode === "tap" &&
+          (option.key === "showPinyin" || option.key === "showMeaning")
+         }
+         onSelect={(event) => event.preventDefault()}
+         onCheckedChange={(checked) => updateDisplayMode({ [option.key]: checked })}
+        >
+         {option.label}
+        </DropdownMenuCheckboxItem>
+       ))
+     : null}
+   </>
+  );
+ }
 
+ return (
+  <>
+   <DropdownMenuLabel>Thiết lập đọc</DropdownMenuLabel>
    {learning.isLoading ? (
-    <div className="flex min-h-36 items-center justify-center gap-2">
+    <DropdownMenuItem disabled>
      <Spinner />
-     <Typography variant="label" tone="muted" weight="bold">
-      Đang tải cài đặt đọc…
-     </Typography>
-    </div>
+     Đang tải cài đặt đọc…
+    </DropdownMenuItem>
    ) : (
-    <div className="grid gap-3">
-     {learning.isError ? (
-      <Card
-       variant="subtle"
-       padding="md"
-       className="flex flex-wrap items-center justify-between gap-3"
-      >
-       <Typography as="p" variant="bodySmall" tone="secondary" className="min-w-0 flex-1">
-        <CloudOff className="size-4 shrink-0" />
-        {learning.lastSyncError ||
-         "Chưa thể đồng bộ cài đặt đọc. Các thay đổi cục bộ vẫn được giữ."}
-       </Typography>
-       <Button type="button" variant="outline" size="sm" onClick={() => void learning.retrySync()}>
-        <RefreshCcw />
-        Thử đồng bộ lại
-       </Button>
-      </Card>
-     ) : null}
-     <LessonReadingSettings displayMode={displayMode} onChange={updateDisplayMode} />
-    </div>
+    <>
+     <DropdownMenuItem
+      onSelect={(event) => {
+       event.preventDefault();
+       onActiveSectionChange("font");
+      }}
+     >
+      <Type />
+      Phông chữ
+      <DropdownMenuShortcut>
+       {fontOptions.find((option) => option.value === displayMode.hanziFont)?.label}
+      </DropdownMenuShortcut>
+     </DropdownMenuItem>
+     <DropdownMenuItem
+      onSelect={(event) => {
+       event.preventDefault();
+       onActiveSectionChange("size");
+      }}
+     >
+      <Type />
+      Cỡ chữ
+      <DropdownMenuShortcut>
+       {sizeOptions.find((option) => option.value === displayMode.hanziSize)?.label}
+      </DropdownMenuShortcut>
+     </DropdownMenuItem>
+     <DropdownMenuSeparator />
+     <DropdownMenuLabel>Hiển thị</DropdownMenuLabel>
+     <DropdownMenuItem
+      onSelect={(event) => {
+       event.preventDefault();
+       onActiveSectionChange("reveal");
+      }}
+     >
+      <Eye />
+      Cách mở nội dung
+      <DropdownMenuShortcut>
+       {revealOptions.find((option) => option.value === displayMode.revealMode)?.label}
+      </DropdownMenuShortcut>
+     </DropdownMenuItem>
+     <DropdownMenuItem
+      onSelect={(event) => {
+       event.preventDefault();
+       onActiveSectionChange("visibility");
+      }}
+     >
+      <Eye />
+      Hiển thị
+     </DropdownMenuItem>
+    </>
    )}
-  </div>
+   {learning.isError ? (
+    <>
+     <DropdownMenuSeparator />
+     <DropdownMenuItem onSelect={() => void learning.retrySync()}>
+      <RefreshCcw />
+      Thử đồng bộ lại
+     </DropdownMenuItem>
+    </>
+   ) : null}
+  </>
  );
 }

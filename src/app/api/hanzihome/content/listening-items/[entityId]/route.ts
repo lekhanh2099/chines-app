@@ -7,7 +7,7 @@ import {
 } from "@/features/hanzihome/schemas/canonical-content.schema";
 import { updateListeningItemChangesSchema } from "@/features/hanzihome/listening/listening.schemas";
 import { mutationError } from "@/features/hanzihome/server/canonical-content-mutation";
-import { createClient } from "@/lib/supabase/server";
+import { requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +25,9 @@ function statusForMutationError(code: Parameters<typeof mutationError>[2]) {
 }
 
 export async function PATCH(request: Request, context: RouteContext) {
+ const auth = await requireAuthenticatedRoute();
+ if (!auth.authenticated) return auth.response;
+
  const { entityId } = await context.params;
  const body: JsonFieldValue = await request.json().catch(() => null);
  const envelope = mutationEnvelopeSchema.safeParse(body);
@@ -45,13 +48,15 @@ export async function PATCH(request: Request, context: RouteContext) {
   return mutationError("Invalid listening item changes", 400, z.flattenError(changes.error));
  }
 
- const supabase = await createClient();
- const { data, error } = await supabase.rpc("hanzihome_update_listening_item_as_user", {
-  p_entity_id: entityId,
-  p_expected_updated_at: envelope.data.expectedUpdatedAt,
-  p_changes: changes.data,
-  p_reason: envelope.data.reason,
- });
+ const { data, error } = await auth.context.supabase.rpc(
+  "hanzihome_update_listening_item_as_user",
+  {
+   p_entity_id: entityId,
+   p_expected_updated_at: envelope.data.expectedUpdatedAt,
+   p_changes: changes.data,
+   p_reason: envelope.data.reason,
+  },
+ );
 
  if (error) {
   return mutationError(error.message, statusForMutationError(error.code), error.code);

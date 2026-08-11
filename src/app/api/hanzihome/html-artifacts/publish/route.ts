@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { createHtmlArtifactPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { apiError, privateNoStoreJson } from "@/lib/api/authenticated-route";
 import { publicSupabaseEnv } from "@/lib/env/public";
 import { getSupabaseServerSecret } from "@/lib/env/server";
 import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
@@ -38,7 +39,7 @@ type PublishAuthResult = PublishAuthResultMap[keyof PublishAuthResultMap];
 type PublishPayload = z.output<typeof publishHtmlArtifactPayloadSchema>;
 
 function jsonError(message: string, status: number, code?: string) {
- return NextResponse.json({ error: message, code }, { status });
+ return apiError(message, status, code);
 }
 
 function isMissingHtmlArtifactsTable(code: Parameters<typeof jsonError>[2]) {
@@ -243,17 +244,14 @@ export async function GET() {
   return jsonError("Unauthorized", 401);
  }
 
- return NextResponse.json(
-  {
-   sessionUserId: user.id,
-   publishTokenEnabled: Boolean(process.env.HANZIHOME_HTML_PUBLISH_TOKEN),
-  },
-  {
-   headers: {
-    "Cache-Control": "no-store",
-   },
-  },
- );
+ return privateNoStoreJson({
+  sessionUserId: user.id,
+  publishTokenEnabled: Boolean(process.env.HANZIHOME_HTML_PUBLISH_TOKEN),
+  publishOwnerId: process.env.HANZIHOME_HTML_PUBLISH_OWNER_ID ?? null,
+  serviceRoleEnabled: Boolean(
+   process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY,
+  ),
+ });
 }
 
 export async function POST(request: Request) {
@@ -268,7 +266,7 @@ export async function POST(request: Request) {
  const parsed = publishHtmlArtifactPayloadSchema.safeParse(body);
 
  if (!parsed.success) {
-  return NextResponse.json(
+  return privateNoStoreJson(
    {
     error: "Invalid HTML artifact publish payload",
     issues: z.flattenError(parsed.error),
@@ -308,7 +306,7 @@ export async function POST(request: Request) {
   }
 
   if (data) {
-   return NextResponse.json({
+   return privateNoStoreJson({
     ok: true,
     mode: "updated",
     artifactId: data.id,
@@ -336,7 +334,7 @@ export async function POST(request: Request) {
   return jsonError("Could not publish HTML artifact", 500, error.code);
  }
 
- return NextResponse.json(
+ return privateNoStoreJson(
   {
    ok: true,
    mode: "created",

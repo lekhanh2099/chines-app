@@ -49,6 +49,14 @@ describe("UI standards guard", () => {
   expect(failures).toEqual([expect.stringContaining("featureVisualEscapeHatch")]);
  });
 
+ it("rejects legacy glass, blur, hero, and elevated-surface escape hatches outside the UI boundary", () => {
+  const failures = inspect(
+   'export function Example() { return <div className="app-glass-surface app-gradient-hero backdrop-blur-sm shadow-theme-lg" />; }',
+  );
+
+  expect(failures).toEqual([expect.stringContaining("featureSurfaceEscapeHatch")]);
+ });
+
  it("allows semantic surface tokens outside the UI boundary", () => {
   expect(
    inspect(
@@ -62,6 +70,16 @@ describe("UI standards guard", () => {
    inspectUiSource({
     file: "src/components/ui/button.tsx",
     source: 'export function Button() { return <button className="bg-primary px-4" />; }',
+    isUiOwner: true,
+   }),
+  ).toEqual([]);
+ });
+
+ it("allows overlay elevation inside the UI primitive boundary", () => {
+  expect(
+   inspectUiSource({
+    file: "src/components/ui/dialog.tsx",
+    source: 'export function Dialog() { return <div className="shadow-theme-lg" />; }',
     isUiOwner: true,
    }),
   ).toEqual([]);

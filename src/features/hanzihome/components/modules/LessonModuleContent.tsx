@@ -58,7 +58,7 @@ export function LessonModuleContent({
    content = <ListeningWorkspace />;
    break;
   case "notes":
-   content = <LessonNoteAccessCard compact={compact} />;
+   content = <LessonNoteAccessCard compact />;
    break;
   case "vocab":
    content = <VocabWorkspace compact={compact} />;

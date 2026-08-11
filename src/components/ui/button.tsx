@@ -5,13 +5,13 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
- "group/button inline-flex shrink-0 items-center justify-center rounded-xl border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+ "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
  {
   variants: {
    variant: {
-    default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90 hover:shadow",
+    default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90",
     outline:
-     "border-border bg-bg-card/80 shadow-theme-sm backdrop-blur hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+     "border-border bg-bg-card hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input dark:hover:bg-muted",
     secondary:
      "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
     ghost:
@@ -19,13 +19,10 @@ const buttonVariants = cva(
     navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
     active: "app-active-item",
     surface:
-     "border-border-default bg-bg-subtle text-text-secondary shadow-theme-sm hover:bg-bg-elevated hover:text-text-primary",
-    surfaceCard:
-     "border-border-default bg-bg-card text-text-primary shadow-theme-sm hover:bg-bg-elevated",
-    avatar:
-     "border-border-default bg-accent-subtle text-accent-text shadow-theme-sm hover:bg-bg-elevated",
-    avatarWarning:
-     "border-warning/35 bg-warning-subtle text-warning-text shadow-theme-sm hover:bg-bg-elevated",
+     "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
+    surfaceCard: "border-border-default bg-bg-card text-text-primary hover:bg-bg-elevated",
+    avatar: "border-border-default bg-accent-subtle text-accent-text hover:bg-bg-elevated",
+    avatarWarning: "border-warning/35 bg-warning-subtle text-warning-text hover:bg-bg-elevated",
     menu:
      "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted data-[highlighted]:bg-muted",
     menuActive: "app-active-item w-full justify-start shadow-none",
@@ -40,7 +37,7 @@ const buttonVariants = cva(
     success:
      "border-success bg-success-subtle text-success-text hover:bg-success-subtle focus-visible:border-success focus-visible:ring-success/20",
     swatch:
-     "border-2 shadow-theme-sm opacity-80 ring-offset-2 ring-offset-bg-card hover:opacity-100 aria-pressed:opacity-100 aria-pressed:ring-2 aria-pressed:ring-ring",
+     "border-2 opacity-80 ring-offset-2 ring-offset-bg-card hover:opacity-100 aria-pressed:opacity-100 aria-pressed:ring-2 aria-pressed:ring-ring",
     link: "text-primary underline-offset-4 hover:underline",
    },
    size: {
@@ -53,27 +50,26 @@ const buttonVariants = cva(
     toolbar:
      "min-h-9 gap-1.5 rounded-lg px-2.5 text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
     menu: "min-h-10 gap-2 rounded-lg px-2.5 text-sm",
-    xs: "min-h-11 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-    sm: "min-h-11 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
+    xs: "min-h-11 gap-1 rounded-lg px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
+    sm: "min-h-11 gap-1 rounded-lg px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
     lg: "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
     "responsive-action":
      "size-11 gap-1.5 2xl:w-auto 2xl:px-3 2xl:has-data-[icon=inline-end]:pr-2.5 2xl:has-data-[icon=inline-start]:pl-2.5",
     icon: "size-11",
     "icon-xs":
-     "size-9 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
-    "icon-sm":
-     "size-10 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
+     "size-9 rounded-lg in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
+    "icon-sm": "size-10 rounded-lg in-data-[slot=button-group]:rounded-lg",
     "icon-lg": "size-11",
     "icon-toolbar": "size-9 rounded-lg",
     "icon-round": "size-10 rounded-full",
     inline:
      "min-h-0 min-w-[1.25em] h-auto gap-0 rounded-md px-0.5 py-0.5 align-baseline font-inherit leading-[inherit] select-text",
     "responsive-compact": "size-9 rounded-lg sm:h-10 sm:w-auto sm:max-w-44 sm:px-3",
-    list: "min-h-14 gap-3 rounded-xl px-3 py-2",
+    list: "min-h-14 gap-3 rounded-lg px-3 py-2",
     tab: "h-9 min-h-9 gap-1.5 rounded-lg px-2 sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
     card: "h-auto min-h-11 gap-4 rounded-xl p-4",
     result: "h-auto gap-3 rounded-lg px-3 py-2.5",
-    spacious: "min-h-12 gap-2 rounded-2xl px-8 py-3",
+    spacious: "min-h-12 gap-2 rounded-lg px-8 py-3",
    },
    align: {
     center: "justify-center text-center",

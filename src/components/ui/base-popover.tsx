@@ -31,7 +31,7 @@ const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, strin
  menu:
   "grid w-72 max-w-[calc(100vw-1rem)] gap-2 rounded-xl border border-border-default bg-bg-elevated p-2 text-sm shadow-theme-lg",
  profile:
-  "max-h-[calc(100dvh-1rem)] w-[min(23rem,calc(100vw-1rem))] overflow-x-hidden overflow-y-auto scrollbar-soft rounded-2xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg",
+  "max-h-[calc(100dvh-1rem)] w-[min(23rem,calc(100vw-1rem))] overflow-x-hidden overflow-y-auto scrollbar-soft rounded-xl border border-border-default bg-bg-elevated p-2 shadow-theme-lg",
  mobileActions:
   "w-[min(19rem,calc(100vw-1rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg",
  moduleMenu:

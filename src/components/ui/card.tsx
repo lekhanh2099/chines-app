@@ -2,14 +2,14 @@ import type * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const cardVariants = cva("rounded-2xl border", {
+const cardVariants = cva("rounded-xl border", {
  variants: {
   variant: {
    default: "border-border-default bg-bg-card",
-   elevated: "border-border-default/80 bg-bg-card shadow",
-   section: "border-border-default/80 bg-bg-card shadow-theme-sm",
+   elevated: "border-border-default/80 bg-bg-card shadow-theme-sm",
+   section: "border-border-default/80 bg-bg-card",
    subtle: "border-border-default bg-bg-subtle",
-   glass: "app-glass-surface",
+   glass: "border-border-default bg-bg-card",
   },
   padding: {
    none: "",
@@ -19,7 +19,7 @@ const cardVariants = cva("rounded-2xl border", {
   },
  },
  defaultVariants: {
-  variant: "elevated",
+  variant: "default",
   padding: "md",
  },
 });

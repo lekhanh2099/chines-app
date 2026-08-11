@@ -10,6 +10,7 @@ import { z } from "zod";
 import { JsonObjectSchema } from "@/types/json";
 import { useAppForm } from "@/components/form";
 import { Button } from "@/components/ui/button";
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import {
  Dialog,
  DialogBody,
@@ -120,14 +121,17 @@ export function LessonContentCreateDialog({
  return (
   <Dialog open={open} onOpenChange={setOpen}>
    <DialogTrigger asChild>
-    <Button
-     type="button"
-     variant={presentation === "menu" ? "menu" : "outline"}
-     size={presentation === "menu" ? "menu" : "toolbar"}
-    >
-     <Plus className="h-4 w-4" />
-     Thêm nội dung
-    </Button>
+    {presentation === "menu" ? (
+     <DropdownMenuItem>
+      <Plus />
+      Thêm nội dung
+     </DropdownMenuItem>
+    ) : (
+     <Button type="button" variant="outline" size="toolbar">
+      <Plus className="h-4 w-4" />
+      Thêm nội dung
+     </Button>
+    )}
    </DialogTrigger>
    <DialogContent>
     <DialogHeader>

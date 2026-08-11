@@ -2,8 +2,8 @@
 
 import { Typography } from "@/components/ui/typography";
 import { Input } from "@/components/ui/input";
-import { FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from "react";
-import { BookOpenCheck, Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
+import { FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
+import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
 import Link from "next/link";
 import { type User } from "@supabase/supabase-js";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -52,7 +52,10 @@ import {
  getLessonRouteValue,
 } from "@/features/hanzihome/utils/lesson-route";
 import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";
-import { HanziHomeReadingQuickSettingsPanel } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
+import {
+ HanziHomeReadingQuickSettingsActiveSectionSchema,
+ HanziHomeReadingQuickSettingsMenu,
+} from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import {
  clearHanziHomeSearchNavigationIntent,
  setHanziHomeSearchNavigationIntent,
@@ -432,6 +435,7 @@ function getSimpleHeaderBreadcrumb(
  if (pathname === "/grammar") return { label: "Tổng hợp ngữ pháp" };
  if (pathname === "/memory-tips") return { label: "Nhắc nhanh" };
  if (pathname === "/html-artifacts") return { label: "Tệp HTML" };
+ if (pathname === "/api-docs") return { label: "API & tích hợp" };
  if (pathname.startsWith("/note/")) {
   return { parent: { label: "Ghi chú", href: "/notes" }, label: "Chia sẻ" };
  }
@@ -500,9 +504,8 @@ function HeaderUtilityArea({
  onFocusModeEnabledChange: (enabled: boolean) => void;
 }) {
  const [quickSettingsOpen, setQuickSettingsOpen] = useState(false);
- const [readerQuickSettingsOpen, setReaderQuickSettingsOpen] = useState(false);
- const quickSettingsTriggerRef = useRef<HTMLButtonElement>(null);
- const shouldOpenReaderQuickSettingsRef = useRef(false);
+ const [activeReadingSettingsSection, setActiveReadingSettingsSection] =
+  useState<z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>>(null);
 
  return (
   <div
@@ -527,10 +530,15 @@ function HeaderUtilityArea({
 
    {focusModeEnabled ? <FocusModePill /> : null}
 
-   <DropdownMenu open={quickSettingsOpen} onOpenChange={setQuickSettingsOpen}>
+   <DropdownMenu
+    open={quickSettingsOpen}
+    onOpenChange={(open) => {
+     setQuickSettingsOpen(open);
+     if (!open) setActiveReadingSettingsSection(null);
+    }}
+   >
     <DropdownMenuTrigger asChild>
      <Button
-      ref={quickSettingsTriggerRef}
       type="button"
       variant="outline"
       size="icon-sm"
@@ -540,81 +548,70 @@ function HeaderUtilityArea({
       <Settings />
      </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent
-     align="end"
-     width="md"
-     onCloseAutoFocus={(event) => {
-      if (!shouldOpenReaderQuickSettingsRef.current) return;
+    <DropdownMenuContent align="end" width="lg">
+     {activeReadingSettingsSection ? (
+      <HanziHomeReadingQuickSettingsMenu
+       activeSection={activeReadingSettingsSection}
+       onActiveSectionChange={setActiveReadingSettingsSection}
+      />
+     ) : (
+      <>
+       <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
+       <DropdownMenuCheckboxItem
+        checked={theme === "dark"}
+        onSelect={(event) => event.preventDefault()}
+        onCheckedChange={onToggleTheme}
+       >
+        {theme === "dark" ? <Sun /> : <Moon />}
+        Giao diện tối
+       </DropdownMenuCheckboxItem>
+       <DropdownMenuCheckboxItem
+        checked={lookupEnabled}
+        onSelect={(event) => event.preventDefault()}
+        onCheckedChange={onLookupEnabledChange}
+       >
+        <Languages />
+        Tra từ trên trang này
+       </DropdownMenuCheckboxItem>
+       <DropdownMenuCheckboxItem
+        checked={focusModeEnabled}
+        onSelect={(event) => event.preventDefault()}
+        onCheckedChange={(enabled) => {
+         if (enabled && !focusModeEnabled) {
+          toast.warning(
+           "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+           { duration: 5200 },
+          );
+         }
 
-      event.preventDefault();
-      shouldOpenReaderQuickSettingsRef.current = false;
-      setReaderQuickSettingsOpen(true);
-     }}
-    >
-     <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
-     <DropdownMenuCheckboxItem
-      checked={theme === "dark"}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={onToggleTheme}
-     >
-      {theme === "dark" ? <Sun /> : <Moon />}
-      Giao diện tối
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuCheckboxItem
-      checked={lookupEnabled}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={onLookupEnabledChange}
-     >
-      <Languages />
-      Tra từ trên trang này
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuCheckboxItem
-      checked={focusModeEnabled}
-      onSelect={(event) => event.preventDefault()}
-      onCheckedChange={(enabled) => {
-       if (enabled && !focusModeEnabled) {
-        toast.warning(
-         "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
-         { duration: 5200 },
-        );
-       }
-
-       onFocusModeEnabledChange(enabled);
-      }}
-     >
-      <LockKeyhole />
-      Focus mode
-     </DropdownMenuCheckboxItem>
-     <DropdownMenuSeparator />
-     <DropdownMenuItem
-      onSelect={() => {
-       shouldOpenReaderQuickSettingsRef.current = true;
-      }}
-     >
-      <BookOpenCheck />
-      Thiết lập đọc
-     </DropdownMenuItem>
-     <DropdownMenuSeparator />
-     <DropdownMenuItem asChild>
-      <Link href="/settings?section=reading">
-       <Settings />
-       Mở cài đặt đọc
-      </Link>
-     </DropdownMenuItem>
-     <DropdownMenuItem asChild>
-      <Link href="/settings?section=app">
-       <Settings />
-       Mở tất cả cài đặt
-      </Link>
-     </DropdownMenuItem>
+         onFocusModeEnabledChange(enabled);
+        }}
+       >
+        <LockKeyhole />
+        Focus mode
+       </DropdownMenuCheckboxItem>
+       <DropdownMenuSeparator />
+       <HanziHomeReadingQuickSettingsMenu
+        activeSection={null}
+        onActiveSectionChange={setActiveReadingSettingsSection}
+       />
+       <DropdownMenuSeparator />
+       <DropdownMenuItem asChild>
+        <Link href="/settings?section=reading">
+         <Settings />
+         Mở cài đặt đọc
+        </Link>
+       </DropdownMenuItem>
+       <DropdownMenuItem asChild>
+        <Link href="/settings?section=app">
+         <Settings />
+         Mở tất cả cài đặt
+        </Link>
+       </DropdownMenuItem>
+      </>
+     )}
     </DropdownMenuContent>
    </DropdownMenu>
-   <HanziHomeReadingQuickSettingsPanel
-    open={readerQuickSettingsOpen}
-    onOpenChange={setReaderQuickSettingsOpen}
-    anchor={quickSettingsTriggerRef}
-    finalFocus={quickSettingsTriggerRef}
-   />
    <ProfileSettingsMenu user={user} focusModeEnabled={focusModeEnabled} />
   </div>
  );

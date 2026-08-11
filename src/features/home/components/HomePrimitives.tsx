@@ -54,7 +54,7 @@ export function HomeIconTile({ children, className }: { children: ReactNode; cla
    as="span"
    tone="accent"
    className={cn(
-    "flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-accent-subtle shadow-theme-sm",
+    "flex size-11 shrink-0 items-center justify-center rounded-lg border border-primary/15 bg-accent-subtle",
     className,
    )}
   >

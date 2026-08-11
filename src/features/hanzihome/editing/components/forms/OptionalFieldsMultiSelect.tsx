@@ -115,7 +115,7 @@ export function OptionalFieldsMultiSelect({
       <Popover.Popup
        initialFocus={false}
        finalFocus={false}
-       className="w-[min(36rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg"
+       className="w-[min(36rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow"
       >
        <div className="grid gap-3 p-3">
         <div className="relative">

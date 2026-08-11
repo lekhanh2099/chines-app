@@ -11,9 +11,9 @@ const textareaVariants = cva(
  {
   variants: {
    density: {
-    compact: "min-h-20 rounded-xl px-3 py-2 text-sm leading-6",
-    default: "min-h-24 rounded-2xl px-4 py-3 leading-relaxed",
-    comfortable: "min-h-32 rounded-2xl px-4 py-3 leading-7",
+    compact: "min-h-20 rounded-lg px-3 py-2 text-sm leading-6",
+    default: "min-h-24 rounded-lg px-4 py-3 leading-relaxed",
+    comfortable: "min-h-32 rounded-lg px-4 py-3 leading-7",
    },
    surface: {
     default: "border-border-default bg-bg-primary",

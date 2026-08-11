@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
- "flex w-full rounded border text-text-primary ring-offset-bg-primary transition-colors placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/15 file:border-0 file:bg-transparent file:font-medium",
+ "flex w-full rounded-lg border text-text-primary ring-offset-bg-primary transition-colors placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/15 file:border-0 file:bg-transparent file:font-medium",
  {
   variants: {
    density: {
@@ -16,7 +16,7 @@ const inputVariants = cva(
    surface: {
     default: "border-border-default bg-bg-primary",
     field: "border-input bg-bg-input",
-    card: "border-border-default bg-bg-card/80 shadow-theme-sm",
+    card: "border-border-default bg-bg-card",
     transparent: "border-transparent bg-transparent",
    },
    adornment: {

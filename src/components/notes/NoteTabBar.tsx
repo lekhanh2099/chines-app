@@ -80,7 +80,7 @@ export function NoteTabBar({
  const hasTopRow = Boolean(leading || trailing);
 
  return (
-  <div className="hidden shrink-0 flex-col border-b border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur md:flex">
+  <div className="hidden shrink-0 flex-col border-b border-border-default bg-bg-card md:flex">
    {hasTopRow ? (
     <div className="flex min-h-14 min-w-0 items-center gap-2 border-b border-border-default/70 px-4 py-2">
      {leading ? <div className="flex min-w-0 flex-1 items-center gap-2">{leading}</div> : null}

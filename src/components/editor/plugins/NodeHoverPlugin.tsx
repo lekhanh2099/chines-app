@@ -98,7 +98,7 @@ export default function NodeHoverPlugin() {
     hide();
    }}
   >
-   <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow-theme-lg">
+   <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow">
     <Typography
      variant="overline"
      tone="accent"

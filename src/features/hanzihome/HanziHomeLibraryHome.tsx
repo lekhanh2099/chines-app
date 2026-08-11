@@ -47,7 +47,7 @@ export function HanziHomeLibraryHome() {
  return (
   <main className="flex w-full flex-col gap-3 px-4 py-4 sm:px-6 md:h-full md:min-h-0 md:overflow-hidden lg:px-8 lg:py-5">
    <div className="grid shrink-0 gap-3">
-    <section className="app-gradient-hero relative grid gap-3 overflow-hidden rounded-2xl border border-border-default p-4 shadow-theme-md">
+    <section className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-4">
      <PageHeader
       className="gap-3 [&_h1]:text-2xl [&_p]:mt-1 [&_p]:text-sm [&_p]:leading-5 [&_p]:text-text-primary/75"
       title="Thư viện học HanziHome"
@@ -134,7 +134,7 @@ function LibraryStat({
  value: number;
 }) {
  return (
-  <div className="app-glass-surface flex min-w-0 items-center gap-2.5 rounded-xl border px-3 py-2 shadow-theme-sm">
+  <div className="flex min-w-0 items-center gap-2.5 rounded-lg border border-border-default bg-bg-subtle px-3 py-2">
    <StudyInstructionText
     as="span"
     tone="accent"

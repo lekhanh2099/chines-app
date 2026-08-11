@@ -101,6 +101,14 @@ async function getProgressState(
 
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
+ const {
+  data: { user },
+ } = await supabase.auth.getUser();
+
+ if (!user) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+ }
+
  const body: JsonFieldValue = await request.json();
  const parsedBody = EditorContextRequestSchema.safeParse(body);
  if (!parsedBody.success) {
@@ -120,11 +128,8 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "Invalid selection" }, { status: 400 });
  }
 
- const {
-  data: { user },
- } = await supabase.auth.getUser();
- const promptSettings = user?.id ? await getUserAiPromptSettings(supabase, user.id) : null;
- const userApiKeys = user?.id ? await getActiveUserApiKeyCredentials(supabase, user.id) : [];
+ const promptSettings = await getUserAiPromptSettings(supabase, user.id);
+ const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
 
  const resolvedMode = mode || resolveMode(rawSelection);
  const normalizedChinese = extractChinese(rawSelection);
@@ -232,12 +237,7 @@ export async function POST(request: NextRequest) {
 
   const analysis = vocab.ai_analysis || {};
   const definitions = getNormalizedDefinitions(analysis, vocab.meaning);
-  const progress = await getProgressState(
-   user?.id || null,
-   vocab.id,
-   vocab.dictionary_id,
-   supabase,
-  );
+  const progress = await getProgressState(user.id, vocab.id, vocab.dictionary_id, supabase);
 
   // Extract deep analysis fields (etymology may be string or object)
   const etymologyRaw = analysis.etymology;
@@ -311,7 +311,7 @@ export async function POST(request: NextRequest) {
    ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
   },
  };
- const progress = await getProgressState(user?.id || null, entry.id, entry.dictionary_id, supabase);
+ const progress = await getProgressState(user.id, entry.id, entry.dictionary_id, supabase);
 
  const result: SmartSelectionResult = {
   mode: "sentence",

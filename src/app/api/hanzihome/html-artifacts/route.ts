@@ -1,5 +1,4 @@
 import type { JsonFieldValue } from "@/types/json";
-import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import {
@@ -8,6 +7,11 @@ import {
  mapHtmlArtifactSummaryRows,
 } from "@/features/hanzihome/html-artifacts/html-artifact.mapper";
 import { createHtmlArtifactPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import {
+ apiError,
+ privateNoStoreJson,
+ requireSessionOrBearerAuthenticatedRoute,
+} from "@/lib/api/authenticated-route";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -20,7 +24,7 @@ const folderColumns =
  "id, owner_id, parent_folder_id, name, color, position, created_at, updated_at";
 
 function jsonError(message: string, status: number, code?: string) {
- return NextResponse.json({ error: message, code }, { status });
+ return apiError(message, status, code);
 }
 
 function isMissingHtmlArtifactsTable(code: Parameters<typeof jsonError>[2]) {
@@ -37,14 +41,9 @@ function parseLimit(value: ReturnType<URLSearchParams["get"]>) {
 }
 
 export async function GET(request: Request) {
- const supabase = await createClient();
- const {
-  data: { user },
- } = await supabase.auth.getUser();
-
- if (!user) {
-  return jsonError("Unauthorized", 401);
- }
+ const auth = await requireSessionOrBearerAuthenticatedRoute(request);
+ if (!auth.authenticated) return auth.response;
+ const { supabase, user } = auth.context;
 
  const url = new URL(request.url);
  const limit = parseLimit(url.searchParams.get("limit"));
@@ -82,17 +81,10 @@ export async function GET(request: Request) {
   return jsonError("Could not load HTML artifact folders", 500, foldersResult.error.code);
  }
 
- return NextResponse.json(
-  {
-   items: mapHtmlArtifactSummaryRows(data ?? []),
-   folders: mapHtmlArtifactFolderRows(foldersResult.data ?? []),
-  },
-  {
-   headers: {
-    "Cache-Control": "no-store",
-   },
-  },
- );
+ return privateNoStoreJson({
+  items: mapHtmlArtifactSummaryRows(data ?? []),
+  folders: mapHtmlArtifactFolderRows(foldersResult.data ?? []),
+ });
 }
 
 export async function POST(request: Request) {
@@ -109,7 +101,7 @@ export async function POST(request: Request) {
  const parsed = createHtmlArtifactPayloadSchema.safeParse(body);
 
  if (!parsed.success) {
-  return NextResponse.json(
+  return privateNoStoreJson(
    {
     error: "Invalid HTML artifact payload",
     issues: z.flattenError(parsed.error),
@@ -140,5 +132,5 @@ export async function POST(request: Request) {
   return jsonError("Could not create HTML artifact", 500, error.code);
  }
 
- return NextResponse.json({ item: mapHtmlArtifactRow(data) }, { status: 201 });
+ return privateNoStoreJson({ item: mapHtmlArtifactRow(data) }, { status: 201 });
 }

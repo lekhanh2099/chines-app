@@ -51,7 +51,7 @@ export function HomeResourceLinks() {
        key={resource.href}
        href={resource.href}
        prefetch={false}
-       className="group flex min-h-40 flex-col rounded-2xl border border-border-default bg-bg-card p-5 shadow-theme-sm transition hover:-translate-y-0.5 hover:border-primary/25"
+       className="group flex min-h-40 flex-col rounded-xl border border-border-default bg-bg-card p-5 transition-colors hover:border-primary/25 hover:bg-bg-subtle"
       >
        <div className="flex items-start justify-between gap-3">
         <HomeIconTile className="size-10">

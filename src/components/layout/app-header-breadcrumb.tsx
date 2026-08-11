@@ -33,7 +33,7 @@ export function AppHeaderBreadcrumb({
   <Breadcrumb
    aria-label={ariaLabel}
    className={cn(
-    "inline-flex h-10 w-fit max-w-full min-w-0 justify-self-start overflow-hidden rounded-xl border border-border-default bg-bg-card px-1 shadow-theme-sm",
+    "inline-flex h-10 w-fit max-w-full min-w-0 justify-self-start overflow-hidden rounded-lg border border-border-default bg-bg-card px-1",
     className,
    )}
   >

@@ -198,7 +198,7 @@ export default function LoginPage() {
    </div>
 
    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div className="bg-bg-card py-8 px-4 shadow-theme-sm border border-border-default sm:rounded-2xl  sm:px-10">
+    <div className="border border-border-default bg-bg-card px-4 py-8 sm:rounded-xl sm:px-10">
      <Button
       type="button"
       variant="outline"
@@ -269,7 +269,7 @@ export default function LoginPage() {
         <Button
          type="submit"
          disabled={!canSubmit || isSubmitting || oauthLoading}
-         variant="ghost"
+         variant="default"
          className="w-full mt-2"
         >
          {isSubmitting ? (

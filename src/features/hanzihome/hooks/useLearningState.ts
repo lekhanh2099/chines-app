@@ -1,7 +1,7 @@
 "use client";
 
 import type { JsonFieldValue } from "@/types/json";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 
@@ -23,7 +23,23 @@ import {
 const learningStateQueryKey = ["hanzihome", "learning-state"];
 
 function getBrowserOnlineState() {
- return typeof navigator === "undefined" ? true : navigator.onLine;
+ return typeof window === "undefined" ? true : navigator.onLine;
+}
+
+function getServerOnlineState() {
+ return true;
+}
+
+function subscribeToBrowserOnlineState(onStoreChange: () => void) {
+ if (typeof window === "undefined") return () => undefined;
+
+ window.addEventListener("online", onStoreChange);
+ window.addEventListener("offline", onStoreChange);
+
+ return () => {
+  window.removeEventListener("online", onStoreChange);
+  window.removeEventListener("offline", onStoreChange);
+ };
 }
 
 export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
@@ -33,7 +49,11 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
  const [syncStatus, setSyncStatus] = useState<LearningStateSyncStatus>("synced");
  const [pendingSyncCount, setPendingSyncCount] = useState(0);
  const [lastSyncError, setLastSyncError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
- const [isOnline, setIsOnline] = useState(getBrowserOnlineState);
+ const isOnline = useSyncExternalStore(
+  subscribeToBrowserOnlineState,
+  getBrowserOnlineState,
+  getServerOnlineState,
+ );
  const query = useQuery({
   queryKey: learningStateQueryKey,
   queryFn: loadLearningStateLocalFirst,
@@ -130,24 +150,17 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
   void syncThenRefresh();
 
   const handleOnline = () => {
-   setIsOnline(true);
    void syncThenRefresh();
   };
-  const handleOffline = () => {
-   setIsOnline(false);
-  };
   const handleFocus = () => {
-   setIsOnline(getBrowserOnlineState());
    void syncThenRefresh();
   };
 
   window.addEventListener("online", handleOnline);
-  window.addEventListener("offline", handleOffline);
   window.addEventListener("focus", handleFocus);
 
   return () => {
    window.removeEventListener("online", handleOnline);
-   window.removeEventListener("offline", handleOffline);
    window.removeEventListener("focus", handleFocus);
   };
  }, [enabled, query.isSuccess, syncThenRefresh]);

@@ -1,8 +1,14 @@
 import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck } from "lucide-react";
+import { BookOpenCheck } from "lucide-react";
 
-import { HomeIconTile } from "@/features/home/components/HomePrimitives";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+ HomeArrowIcon,
+ HomeIconTile,
+ HomeSectionHeader,
+} from "@/features/home/components/HomePrimitives";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type { HomeDashboardModel } from "@/features/home/types";
 
@@ -22,70 +28,72 @@ const moduleLabels = {
 
 export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["lesson"] }) {
  return (
-  <section className="app-gradient-hero relative overflow-hidden rounded-2xl border p-5 shadow-theme-lg sm:p-7">
-   <div className="grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] xl:items-stretch">
+  <section aria-labelledby="continue-learning-title">
+   <HomeSectionHeader
+    id="continue-learning-title"
+    title="Học tiếp"
+    description="Quay lại đúng bài và nội dung bạn đang theo dõi."
+    className="mb-3"
+   />
+   <div className="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]">
     <div className="min-w-0">
      {lesson ? (
-      <Link
-       href={lesson.href}
-       prefetch={false}
-       className="app-glass-surface flex max-w-2xl items-center gap-4 rounded-2xl border p-4 shadow-theme-sm transition hover:-translate-y-0.5 hover:border-primary/25 sm:p-5"
+      <Button
+       variant="surfaceCard"
+       size="card"
+       align="start"
+       asChild
+       className="w-full xl:max-w-2xl"
       >
-       <HomeIconTile>
-        <BookOpenCheck className="h-5 w-5" />
-       </HomeIconTile>
+       <Link href={lesson.href} prefetch={false}>
+        <HomeIconTile>
+         <BookOpenCheck className="h-5 w-5" />
+        </HomeIconTile>
 
-       <span className="min-w-0 flex-1">
-        <Typography
-         variant="overline"
-         tone="muted"
-         weight="black"
-         tracking="overline"
-         transform="uppercase"
-         className="block"
-        >
-         {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
-        </Typography>
-        <Typography
-         variant="sectionTitle"
-         tone="default"
-         weight="black"
-         clamp="one"
-         className="mt-1 block"
-        >
-         Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-        </Typography>
-        <Typography
-         variant="bodySmall"
-         tone="muted"
-         weight="semibold"
-         clamp="one"
-         className="mt-0.5 block"
-        >
-         {lesson.courseTitle} · {moduleLabels[lesson.module]}
-        </Typography>
-       </span>
+        <span className="min-w-0 flex-1">
+         <Typography
+          variant="overline"
+          tone="muted"
+          weight="black"
+          tracking="overline"
+          transform="uppercase"
+          className="block"
+         >
+          {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
+         </Typography>
+         <Typography
+          variant="sectionTitle"
+          tone="default"
+          weight="black"
+          clamp="one"
+          className="mt-1 block"
+         >
+          Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+         </Typography>
+         <Typography
+          variant="bodySmall"
+          tone="muted"
+          weight="semibold"
+          clamp="one"
+          className="mt-0.5 block"
+         >
+          {lesson.courseTitle} · {moduleLabels[lesson.module]}
+         </Typography>
+        </span>
 
-       <ArrowRight className="h-5 w-5 shrink-0 text-text-primary" />
-      </Link>
+        <HomeArrowIcon />
+       </Link>
+      </Button>
      ) : (
-      <Typography
-       as="p"
-       variant="label"
-       tone="default"
-       weight="bold"
-       className="mt-6 rounded-xl border border-border-default bg-bg-primary px-4 py-3"
-      >
-       Chưa có bài học khả dụng.
-      </Typography>
+      <Card variant="section" padding="lg" className="flex items-center xl:max-w-2xl">
+       <Typography as="p" variant="label" tone="default" weight="bold">
+        Chưa có bài học khả dụng.
+       </Typography>
+      </Card>
      )}
     </div>
 
-    <GlobalMemoryTipCard
-     contentOnly
-     showEmptyState
-     className="app-glass-surface w-full self-center shadow-theme-sm xl:ml-auto xl:max-w-2xl"
-    />
+    <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />
    </div>
   </section>
  );

@@ -859,7 +859,7 @@ export default function EditorFloatingMenu() {
           </div>
           {showFontMenu ? (
            <div
-            className="absolute right-0 top-[calc(100%+0.25rem)] z-10 max-h-64 min-w-44 overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1 shadow-theme-lg"
+            className="absolute right-0 top-[calc(100%+0.25rem)] z-10 max-h-64 min-w-44 overflow-y-auto rounded-xl border border-border-default bg-bg-elevated p-1 shadow"
             onMouseDown={preserveEditorSelection}
            >
             {FONT_FAMILIES.map(([value, label]) => (

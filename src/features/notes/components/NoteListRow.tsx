@@ -207,7 +207,7 @@ export function NoteListRow({
         <DropdownMenuSubTrigger>
          <FolderInput /> Chuyển folder
         </DropdownMenuSubTrigger>
-        <DropdownMenuSubContent width="md">
+        <DropdownMenuSubContent sideOffset={4} width="md">
          <DropdownMenuItem onSelect={() => void updateMetadata({ folderId: null })}>
           <Inbox /> Chưa phân loại
          </DropdownMenuItem>

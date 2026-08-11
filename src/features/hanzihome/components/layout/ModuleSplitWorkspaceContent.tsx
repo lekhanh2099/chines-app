@@ -5,6 +5,7 @@ import { Columns2, CloudOff, RefreshCcw, WifiOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import {
  Select,
  SelectContent,
@@ -171,10 +172,10 @@ export function ModuleSplitWorkspaceContent() {
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
    <HanziHomeDeveloperTools inline>
-    <Button type="button" variant="menu" size="menu" onClick={() => actions.setSplitEnabled(false)}>
+    <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
      <Columns2 />
      Đóng chia đôi màn hình
-    </Button>
+    </DropdownMenuItem>
    </HanziHomeDeveloperTools>
   </div>
  ) : (
@@ -227,10 +228,10 @@ export function ModuleSplitWorkspaceContent() {
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
     <HanziHomeDeveloperTools inline>
-     <Button type="button" variant="menu" size="menu" onClick={enableSplit}>
+     <DropdownMenuItem onSelect={enableSplit}>
       <Columns2 />
       Chia đôi màn hình
-     </Button>
+     </DropdownMenuItem>
     </HanziHomeDeveloperTools>
    </div>
   </>

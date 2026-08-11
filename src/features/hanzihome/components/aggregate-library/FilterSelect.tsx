@@ -1,4 +1,9 @@
 import { Label } from "@/components/ui/label";
+import { OptionSelect } from "@/components/ui/option-select";
+import { Typography } from "@/components/ui/typography";
+
+const allFilterOptionValue = "__all__";
+
 export function FilterSelect({
  label,
  value,
@@ -17,12 +22,10 @@ export function FilterSelect({
    </Typography>
    <OptionSelect
     ariaLabel={label}
-    value={value}
-    options={[{ value: "", label: "Tất cả" }, ...options]}
-    onValueChange={onChange}
+    value={value === "" ? allFilterOptionValue : value}
+    options={[{ value: allFilterOptionValue, label: "Tất cả" }, ...options]}
+    onValueChange={(nextValue) => onChange(nextValue === allFilterOptionValue ? "" : nextValue)}
    />
   </Label>
  );
 }
-import { OptionSelect } from "@/components/ui/option-select";
-import { Typography } from "@/components/ui/typography";

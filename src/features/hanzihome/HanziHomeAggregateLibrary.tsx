@@ -340,7 +340,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
      </div>
     </Card>
 
-    <Card className="sticky top-0 z-20 rounded-xl border border-border-default bg-bg-card/95 shadow-theme-sm backdrop-blur">
+    <Card className="sticky top-0 z-20">
      <div className="grid gap-3 xl:grid-cols-[minmax(16rem,1.2fr)_repeat(3,minmax(9rem,0.8fr))_auto] xl:items-end">
       <Label variant="label" className="grid gap-1.5">
        <StudyInstructionText

@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import {
  Dialog,
  DialogBody,
@@ -177,14 +178,17 @@ export function DeletedContentDialog({
  return (
   <Dialog open={open} onOpenChange={setOpen}>
    <DialogTrigger asChild>
-    <Button
-     type="button"
-     variant={presentation === "menu" ? "menu" : "outline"}
-     size={presentation === "menu" ? "menu" : "toolbar"}
-    >
-     <Trash2 className="h-4 w-4" />
-     Nội dung đã xóa
-    </Button>
+    {presentation === "menu" ? (
+     <DropdownMenuItem>
+      <Trash2 />
+      Nội dung đã xóa
+     </DropdownMenuItem>
+    ) : (
+     <Button type="button" variant="outline" size="toolbar">
+      <Trash2 className="h-4 w-4" />
+      Nội dung đã xóa
+     </Button>
+    )}
    </DialogTrigger>
    <DialogContent className="max-w-3xl">
     <DialogHeader>

@@ -8,7 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const dropdownMenuContentVariants = cva(
- "z-[120] max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-xl border border-border-default bg-bg-elevated text-text-primary shadow-theme-lg outline-none scrollbar-soft data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+ "z-[120] max-h-[min(24rem,var(--radix-dropdown-menu-content-available-height))] max-w-[calc(100vw-1rem)] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-xl border border-border-default bg-bg-elevated text-text-primary shadow-theme-lg outline-none scrollbar-soft data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
  {
   variants: {
    width: {
@@ -197,7 +197,10 @@ function DropdownMenuShortcut({ className, ...props }: React.ComponentProps<"spa
  return (
   <span
    data-slot="dropdown-menu-shortcut"
-   className={cn("ml-auto text-xs font-semibold tracking-widest text-text-muted", className)}
+   className={cn(
+    "ml-auto max-w-28 truncate whitespace-nowrap text-xs font-semibold text-text-muted",
+    className,
+   )}
    {...props}
   />
  );

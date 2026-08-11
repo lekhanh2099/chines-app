@@ -14,7 +14,7 @@ const DialogClose = DialogPrimitive.Close;
 const DialogPortal = DialogPrimitive.Portal;
 
 const dialogContentVariants = cva(
- "fixed left-1/2 z-50 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] -translate-x-1/2 flex-col gap-0 rounded-2xl p-0 shadow-theme-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+ "fixed left-1/2 z-50 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] -translate-x-1/2 flex-col gap-0 rounded-xl p-0 shadow-theme-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
  {
   variants: {
    size: {
@@ -35,8 +35,8 @@ const dialogContentVariants = cva(
     none: "overflow-visible",
    },
    surface: {
-    default: "border-2 border-border-default bg-bg-card",
-    glass: "app-glass-surface border border-border-default/80",
+    default: "border border-border-default bg-bg-card",
+    glass: "border border-border-default bg-bg-card",
    },
   },
   defaultVariants: {
@@ -56,7 +56,7 @@ function DialogOverlay({
   <DialogPrimitive.Overlay
    data-slot="dialog-overlay"
    className={cn(
-    "fixed inset-0 z-50 bg-overlay backdrop-blur-sm",
+    "fixed inset-0 z-50 bg-overlay",
     "data-[state=open]:animate-in data-[state=closed]:animate-out",
     "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
     className,

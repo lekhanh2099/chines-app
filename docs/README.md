@@ -12,6 +12,7 @@
 - [Frontend cleanup audit](audits/frontend-cleanup-2026-07-16.md)
 - [Frontend user-flow coverage](testing/frontend-flow-coverage.md)
 - [Repository skill inventory and audit scorecard](agent/skill-inventory.md)
+- [Developer API v1 guide](developer-api.md)
 
 ## Historical product context
 

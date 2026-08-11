@@ -83,10 +83,32 @@ the canonical local components above.
 ## Settled settings IA
 
 The Header Gear is a layout composition using `DropdownMenu` checkbox items
-and a feature-owned HanziHome reader Popover anchored to the Gear. Avatar
-remains a profile/logout Popover. The grouped settings hub uses local `Tabs`
-plus labeled `Switch` rows. Do not create a generic `SettingsMenu` wrapper
-until a second stable consumer proves richer shared anatomy.
+and separate HanziHome reader submenus for font, size, reveal and visibility.
+Avatar remains a profile/logout Popover. The grouped settings hub uses local
+`Tabs` plus labeled `Switch` rows. Do not create a generic `SettingsMenu`
+wrapper until a second stable consumer proves richer shared anatomy.
+
+The global Sidebar is also layout-owned: it groups existing route Links under
+Học, Luyện, Năng lực and Cá nhân, initially opens the active route group, and
+lets users toggle every group from its header. This is not a reusable navigation
+primitive, and the Header Gear remains the sole global Settings entry point.
+
+The visual system uses neutral opaque surfaces: controls are `rounded-lg`,
+cards/panels/overlays are `rounded-xl`, and a semantic 1px border establishes
+surface hierarchy. `Card` is flat by default; only explicit `elevated` and
+primitive-owned overlays use small elevation. `app-gradient-hero` and
+`app-glass-surface` are compatibility aliases only, not options for new feature
+surface code.
+
+The developer API page is feature-owned. It composes `PageHeader`, `Card`,
+`Badge`, `Button`, `Separator` and `Typography`; static commands render inside
+a `Card` with `Typography` code semantics. Endpoint details use native semantic
+`details` / `summary`, not a generic Accordion or Swagger dependency. Do not
+introduce a generic Swagger or code-block dependency unless a second product
+surface proves that contract. Its API registry owns the public-v1 endpoint
+list, operation-level request/response examples and current-app inventory;
+integration-key management remains feature-local and must never surface a
+Supabase browser access token.
 
 ## Important distinction
 
