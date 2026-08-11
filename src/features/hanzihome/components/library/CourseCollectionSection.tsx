@@ -1,11 +1,13 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import { BookCopy, BookOpenCheck, Headphones, LibraryBig, Shapes } from "lucide-react";
 
+import { EmptyState } from "@/components/patterns/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
+import { Separator } from "@/components/ui/separator";
+import { Typography } from "@/components/ui/typography";
 import { CourseCard } from "@/features/hanzihome/components/library/CourseCard";
 import { CourseCrudActions } from "@/features/hanzihome/components/library/CourseCrudActions";
 import type {
@@ -44,32 +46,21 @@ export function CourseCollectionSection({
  const hasBooks = coursesWithBooks.some((entry) => entry.books.length > 0);
 
  return (
-  <Card variant="section" padding="md" className="grid gap-3">
-   <header className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">
-    <div className="flex min-w-0 items-center gap-3">
-     <StudyInstructionText
-      as="span"
-      tone="accent"
-      className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle"
-     >
-      <GroupIcon className="size-5" />
-     </StudyInstructionText>
+  <Card variant="section" padding="md" className="grid gap-4">
+   <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <div className="flex min-w-0 items-start gap-3">
+     <IconTile>
+      <GroupIcon />
+     </IconTile>
      <div className="min-w-0">
-      <StudyInstructionText
-       variant="overline"
-       tone="accent"
-       weight="black"
-       tracking="wide"
-       transform="uppercase"
-      >
+      <Typography variant="overline" tone="accent" weight="black" tracking="wide">
        Bộ giáo trình
-      </StudyInstructionText>
+      </Typography>
       <div className="flex flex-wrap items-center gap-2">
        <Typography
         as="h3"
         variant="cardTitle"
         id={`${group.key}-collection-heading`}
-        tone="default"
         weight="black"
        >
         {group.title}
@@ -79,112 +70,83 @@ export function CourseCollectionSection({
         <Badge variant="warning">Thiếu Cao cấp III</Badge>
        ) : null}
       </div>
-      <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
+      <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
        {group.description}
-      </StudyInstructionText>
+      </Typography>
      </div>
     </div>
-    <div className="flex shrink-0 flex-wrap items-center gap-2">
-     <Badge variant="purple">{group.courses.length} cấp độ</Badge>
-     <Badge variant="default">
-      {group.key === "boyaSecondEdition"
-       ? `${group.bookCount}/5 quyển`
-       : `${group.bookCount} quyển`}
-     </Badge>
-     <Badge variant="default">{group.lessonCount} bài</Badge>
-    </div>
+    <Typography variant="caption" tone="muted" weight="bold" className="shrink-0 sm:pt-1">
+     {group.courses.length} cấp độ · {group.bookCount} quyển · {group.lessonCount} bài
+    </Typography>
    </header>
 
-   {hasBooks ? (
-    <div className="grid gap-3" aria-labelledby={`${group.key}-collection-heading`}>
-     {coursesWithBooks.map(
-      ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => (
-       <section
-        key={course.id}
-        aria-labelledby={`${course.id}-heading`}
-        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-2.5 sm:p-3"
-       >
-        <header className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-         <div className="flex min-w-0 items-center gap-2.5">
-          <StudyInstructionText
-           as="span"
-           tone="accent"
-           className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-bg-primary shadow-theme-sm"
-          >
-           <BookOpenCheck className="size-4" />
-          </StudyInstructionText>
-          <div className="min-w-0">
-           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="purple" size="sm">
-             Cấp {courseIndex + 1}/{group.courses.length}
-            </Badge>
-            <Typography
-             as="h4"
-             variant="cardTitle"
-             id={`${course.id}-heading`}
-             tone="default"
-             weight="black"
-            >
-             {course.title}
-            </Typography>
-            {editMode ? <CourseCrudActions course={course} /> : null}
-           </div>
-           {course.subtitle ? (
-            <StudyInstructionText
-             variant="caption"
-             tone="muted"
-             weight="semibold"
-             className="mt-0.5"
-            >
-             {course.subtitle}
-            </StudyInstructionText>
-           ) : null}
-          </div>
-         </div>
-         <div className="flex shrink-0 items-center gap-2 pl-11 sm:pl-0">
-          <Badge variant="default" size="sm">
-           {courseBooks.length} quyển
-          </Badge>
-          <StudyInstructionText variant="caption" tone="muted" weight="bold">
-           {course.stats.lessonCount} bài
-          </StudyInstructionText>
-         </div>
-        </header>
+   <Separator />
 
-        {courseBooks.length > 0 ? (
-         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
-          {courseBooks.map((book, bookIndex) => (
-           <CourseCard
-            key={book.id}
-            course={course}
-            book={book}
-            lessons={courseLessons}
-            editMode={editMode}
-            canMoveBookUp={bookIndex > 0}
-            canMoveBookDown={bookIndex < courseBooks.length - 1}
-           />
-          ))}
+   {hasBooks ? (
+    <div className="grid gap-4" aria-labelledby={`${group.key}-collection-heading`}>
+     {coursesWithBooks.map(({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => (
+      <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
+       {courseIndex > 0 ? <Separator /> : null}
+       <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex min-w-0 items-start gap-2.5">
+         <IconTile size="sm" tone="neutral">
+          <BookOpenCheck />
+         </IconTile>
+         <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+           <Typography variant="caption" tone="accent" weight="black">
+            Cấp {courseIndex + 1}/{group.courses.length}
+           </Typography>
+           <Typography as="h4" variant="cardTitle" id={`${course.id}-heading`} weight="black">
+            {course.title}
+           </Typography>
+           {editMode ? <CourseCrudActions course={course} /> : null}
+          </div>
+          {course.subtitle ? (
+           <Typography as="p" variant="caption" tone="muted" weight="semibold" className="mt-0.5">
+            {course.subtitle}
+           </Typography>
+          ) : null}
          </div>
-        ) : (
-         <StudyInstructionText
-          variant="bodySmall"
-          tone="muted"
-          weight="semibold"
-          className="rounded-xl border border-dashed border-border-default bg-bg-primary px-3 py-2"
-         >
-          Cấp độ này chưa có quyển học.
-         </StudyInstructionText>
-        )}
-       </section>
-      ),
-     )}
+        </div>
+        <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
+         {courseBooks.length} quyển · {course.stats.lessonCount} bài
+        </Typography>
+       </header>
+
+       {courseBooks.length > 0 ? (
+        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+         {courseBooks.map((book, bookIndex) => (
+          <CourseCard
+           key={book.id}
+           course={course}
+           book={book}
+           lessons={courseLessons}
+           editMode={editMode}
+           canMoveBookUp={bookIndex > 0}
+           canMoveBookDown={bookIndex < courseBooks.length - 1}
+          />
+         ))}
+        </div>
+       ) : (
+        <EmptyState
+         size="compact"
+         surface="subtle"
+         align="start"
+         title="Chưa có quyển học"
+         description="Cấp độ này chưa có quyển được thêm vào thư viện."
+        />
+       )}
+      </section>
+     ))}
     </div>
    ) : (
-    <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle px-3 py-3">
-     <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold">
-      Bộ giáo trình này chưa có quyển học.
-     </StudyInstructionText>
-    </div>
+    <EmptyState
+     size="compact"
+     surface="subtle"
+     title="Bộ giáo trình chưa có quyển học"
+     description="Thêm quyển để bắt đầu tổ chức bài học trong bộ này."
+    />
    )}
   </Card>
  );
