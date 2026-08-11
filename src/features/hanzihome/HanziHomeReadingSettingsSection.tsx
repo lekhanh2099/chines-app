@@ -43,17 +43,13 @@ export function HanziHomeReadingSettingsSection() {
 
  return (
   <div className="grid gap-4">
-   <Card
-    variant="section"
-    padding="lg"
-    className="flex flex-wrap items-start justify-between gap-3"
-   >
+   <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0 space-y-1">
      <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
       Thiết lập đọc
      </Typography>
      <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-      Điều chỉnh font, cỡ chữ, pinyin, nghĩa và đáp án cho nội dung tiếng Trung.
+      Điều chỉnh font, cỡ chữ, cách mở nội dung, pinyin, nghĩa và đáp án. Khung xem trước cập nhật theo cùng thiết lập đang dùng trong bài học.
      </Typography>
     </div>
     <Badge
@@ -68,7 +64,7 @@ export function HanziHomeReadingSettingsSection() {
           ? "Đã đồng bộ"
           : "Lưu cục bộ"}
     </Badge>
-   </Card>
+   </div>
 
    {learning.isLoading ? (
     <Card
