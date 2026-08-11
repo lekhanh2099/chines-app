@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.3"
+  version: "3.4"
 ---
 
 # Frontend UI System
@@ -178,7 +178,7 @@ Do not add one-off pixel variants.
 `scripts/check-ui-standards.mjs` is the executable guard. Never add a baseline
 or broad exception to make a migration pass.
 
-## 7. Component choice
+## 7. Component choice and interaction composition
 
 Use the canonical matrix and inventory.
 
@@ -206,6 +206,12 @@ Rules:
 - EmptyState owns empty/no-result presentation; errors remain separate.
 - Form adapters compose shared UI and do not create a parallel control system.
 - Do not create alias-only wrappers around existing primitives.
+- A whole-card Button/ActionCard MUST NOT wrap another independent Button,
+  link, menu trigger, TTS control or other interactive descendant. If the card
+  itself is an action while content also has independent controls, compose the
+  card action and those controls as sibling interaction layers or use an
+  explicit non-interactive Card with separate actions. Never accept invalid
+  `button > button` HTML to preserve a click-anywhere affordance.
 
 Application headings/paragraphs use Typography. HanziHome learner content uses
 feature-owned learner typography. Learner typography must not become a generic
@@ -309,6 +315,26 @@ For HanziHome:
   normal document flow;
 - Avatar owns identity/provider/logout only.
 
+The selected Hanzi reader font is the authoritative learner-font preference for
+Chinese content across authenticated app surfaces. It is not limited to lesson
+paragraphs. Vocab pickers, review cards, examples, grammar patterns, radical
+labels, notebook/dictionary learner Hanzi and inspector content must resolve to
+the same preference unless the UI is explicitly demonstrating a font choice.
+
+Render contracts:
+
+- pure Hanzi learner content -> `HanziText`, `ReaderHanziText` or
+  `LearnerHanziText`;
+- mixed Vietnamese/Chinese content -> `HanziAwareText` / `HanziInlineText` so
+  only Han-script segments receive the reader font;
+- `StudyInstructionText lang="zh-CN"` is valid for explicitly Chinese content;
+- `HanziFontPreview` is preview-only for font-selection UI. It MUST NOT be used
+  to force Songti/Xingkai/etc. in normal learning content;
+- do not hard-code a synthetic `displayMode` with `hanziFont: "system"` inside a
+  feature merely to render a word chip;
+- local feature font selectors must not silently override the global reader
+  preference unless the product explicitly defines a separate typography scope.
+
 Reader content is `zh-CN` / Mainland-oriented. Font stacks for reader choices
 must therefore fall back to Simplified-Chinese-capable faces. Do not use a
 Traditional-Chinese-only web font as the fallback for a Mainland reader option.
@@ -338,6 +364,7 @@ Use primitive-native semantics.
 Verify:
 
 - button vs link;
+- no nested interactive controls such as `button > button`;
 - Switch/Checkbox/pressed state;
 - menu trigger/items and destructive tone;
 - dialog title, focus, Escape and return focus;
