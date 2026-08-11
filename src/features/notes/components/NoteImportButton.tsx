@@ -107,7 +107,7 @@ export function NoteImportButton({
    <Button
     type="button"
     variant="outline"
-    size={compactOnTablet ? "responsive-action" : "lg"}
+    size={compactOnTablet ? "toolbar" : "lg"}
     onClick={() => fileInputRef.current?.click()}
     disabled={createNoteMutation.isPending || focusModeEnabled}
     aria-label="Import ghi chú"
