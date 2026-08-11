@@ -1,6 +1,9 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziAwareText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -34,19 +37,24 @@ export function LessonModuleSidebarItem({
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
    <span className="min-w-0 flex-1">
-    <StudyInstructionText as="span" tone="inherit" weight="black" clamp="two" className="block">
-     {title}
-    </StudyInstructionText>
+    <HanziAwareText
+     as="span"
+     text={title}
+     tone="inherit"
+     weight="black"
+     clamp="two"
+     className="block"
+    />
     {subtitle && (
-     <StudyInstructionText
+     <HanziAwareText
+      as="span"
+      text={subtitle}
       variant="caption"
       tone="inherit"
       weight="semibold"
       clamp="two"
       className="mt-0.5 block opacity-80"
-     >
-      {subtitle}
-     </StudyInstructionText>
+     />
     )}
    </span>
    {marker && (
