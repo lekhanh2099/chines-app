@@ -244,11 +244,11 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
         ))}
        </div>
       ) : (
-       <Card variant="subtle" padding="lg">
+       <Card variant="subtle" padding="lg" className="grid gap-1">
         <StudyInstructionText tone="default" weight="semibold" align="center">
          Không có bộ thủ phù hợp.
         </StudyInstructionText>
-        <StudyInstructionText variant="bodySmall" tone="muted" align="center" className="mt-1">
+        <StudyInstructionText variant="bodySmall" tone="muted" align="center">
          Thử đổi số nét hoặc từ khóa tìm kiếm.
         </StudyInstructionText>
        </Card>
@@ -324,7 +324,7 @@ function RadicalBrowseCard({
     )}
    </div>
 
-   <div className="min-w-0">
+   <div className="grid min-w-0 gap-2">
     <div className="flex flex-wrap items-center gap-2">
      <Typography as="h3" variant="cardTitle" tone="default" weight="black" clamp="one">
       {radical.nameVi || "Chưa có tên"}
@@ -335,16 +335,10 @@ function RadicalBrowseCard({
       </Badge>
      ) : null}
     </div>
-    <StudyInstructionText
-     variant="bodySmall"
-     tone="muted"
-     clamp="two"
-     leading="relaxed"
-     className="mt-1"
-    >
+    <StudyInstructionText variant="bodySmall" tone="muted" clamp="two" leading="relaxed">
      {radical.coreMeaning.modern || radical.recognition || "Chưa có mô tả."}
     </StudyInstructionText>
-    <StudyInstructionText variant="caption" tone="muted" weight="semibold" className="mt-3">
+    <StudyInstructionText variant="caption" tone="muted" weight="semibold">
      #{radical.index} · {supportingCount} mục liên quan
     </StudyInstructionText>
    </div>

@@ -45,8 +45,8 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
      </HanziText>
     </div>
     <MandarinSpeakButton text={radical.radical} />
-    <div className="min-w-0">
-     <div className="mb-2 flex flex-wrap items-center gap-2">
+    <div className="grid min-w-0 gap-2">
+     <div className="flex flex-wrap items-center gap-2">
       <Badge>#{radical.index}</Badge>
       <Badge variant="info">{radical.strokes ?? "?"} nét</Badge>
      </div>

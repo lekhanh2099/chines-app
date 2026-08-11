@@ -336,7 +336,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
        >
         <Link href={`/dictionary/${encodeURIComponent(item.hanzi)}`} className="grid gap-3">
          <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
+          <div className="grid min-w-0 gap-1">
            <LearnerHanziText
             as="h2"
             variant="sectionTitle"
@@ -346,7 +346,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
            >
             {item.hanzi}
            </LearnerHanziText>
-           <Typography as="p" tone="accent" weight="black" clamp="one" className="mt-1">
+           <Typography as="p" tone="accent" weight="black" clamp="one">
             {item.pinyin || "Chưa có pinyin"}
            </Typography>
           </div>
@@ -363,7 +363,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
            {item.meaning || "Chưa có nghĩa phù hợp"}
           </Typography>
           {item.note ? (
-           <Card variant="subtle" padding="sm" className="mt-1">
+           <Card variant="subtle" padding="sm">
             <Typography as="p" variant="caption" tone="muted" weight="bold" clamp="two">
              {item.note}
             </Typography>

@@ -83,16 +83,15 @@ export function VocabWritingCue({
 
  return (
   <section
-   className={
+   className={[
+    "grid gap-2",
     !isShowAll
-     ? [
-        compact
-         ? "rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-         : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
-        className,
-       ].join(" ")
-     : className
-   }
+     ? compact
+       ? "rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+       : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4"
+     : "",
+    className,
+   ].join(" ")}
    onClick={(event) => event.stopPropagation()}
    onMouseDown={(event) => event.stopPropagation()}
    onTouchStart={(event) => event.stopPropagation()}
@@ -123,7 +122,7 @@ export function VocabWritingCue({
 
    <div
     className={[
-     "relative mt-2 grid gap-4 md:items-start",
+     "relative grid gap-4 md:items-start",
      compact || isShowAll ? "justify-items-center" : "md:grid-cols-[auto_minmax(0,1fr)]",
     ].join(" ")}
    >

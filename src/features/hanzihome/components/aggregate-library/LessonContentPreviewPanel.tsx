@@ -294,7 +294,7 @@ function LessonContentModuleSelector({
     variant="label"
     tone="default"
     weight="black"
-    className="rounded-xl bg-bg-subtle px-3 py-2"
+    className="grid gap-1 rounded-xl bg-bg-subtle px-3 py-2"
    >
     Đang xem:{" "}
     <StudyInstructionText as="span" tone="primary">
@@ -525,14 +525,14 @@ function CompactLessonText({ sections }: { sections: LessonSectionMatch[] }) {
  return (
   <div className="grid gap-2">
    {lines.slice(0, 2).map((line) => (
-    <div key={line.id} className="rounded-xl bg-bg-subtle px-3 py-2">
+    <div key={line.id} className="grid gap-1 rounded-xl bg-bg-subtle px-3 py-2">
      {line.speaker && (
       <StudyInstructionText
        variant="caption"
        tone="muted"
        weight="black"
        scale="micro"
-       className="mr-2 rounded-full bg-bg-card px-2 py-0.5"
+       className="w-fit rounded-full bg-bg-card px-2 py-0.5"
       >
        {line.speaker}
       </StudyInstructionText>

@@ -51,7 +51,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
  return (
   <SectionWrapper>
    <div className="grid gap-4">
-    <div className="min-w-0">
+    <div className="grid min-w-0 gap-2">
      <div className="flex flex-wrap items-center gap-3">
       <LearnerHanziText as="h2" size="display" weight="black" leading="tight">
        {viewModel.vocabData.hanzi}
@@ -75,7 +75,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
       {viewModel.ai?.word_type && <Badge size="md">{viewModel.ai.word_type}</Badge>}
      </div>
 
-     <div className="mt-1 flex flex-wrap items-center gap-2.5">
+     <div className="flex flex-wrap items-center gap-2.5">
       {viewModel.vocabData.pinyin && (
        <Typography as="p" variant="sectionTitle" tone="accent" weight="semibold">
         {viewModel.vocabData.pinyin}
@@ -94,7 +94,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      </div>
 
      {radicals.length > 0 && (
-      <div className="mt-3 grid gap-2">
+      <div className="grid gap-2">
        {radicals.map((radical, index) => (
         <div
          key={`${radical.char || radical.meaning || "radical"}-${index}`}
@@ -123,7 +123,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      )}
 
      {viewModel.meaningSummary && (
-      <Typography as="p" tone="secondary" leading="relaxed" className="mt-3 max-w-3xl">
+      <Typography as="p" tone="secondary" leading="relaxed" className="max-w-3xl">
        {viewModel.meaningSummary}
       </Typography>
      )}
@@ -135,7 +135,6 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
        weight="bold"
        tracking="wide"
        transform="uppercase"
-       className="mt-3"
       >
        {viewModel.ai.source_metadata.lesson_title || viewModel.ai.source_metadata.lesson_key}
        {viewModel.ai.source_metadata.category ? ` · ${viewModel.ai.source_metadata.category}` : ""}
@@ -181,7 +180,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
 
    <div className="grid gap-3">
     <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
-     <div className="space-y-2">
+     <div className="grid gap-2">
       {hanViet && (
        <Typography as="p" tone="secondary" leading="relaxed">
         <Typography as="span" tone="default" weight="bold">
@@ -662,7 +661,7 @@ function AiLoadingState() {
      </Typography>
     </div>
     <Separator />
-    <div className="space-y-2.5" aria-hidden="true">
+    <div className="grid gap-2.5" aria-hidden="true">
      <div className="h-4 w-4/5 animate-pulse rounded-lg bg-bg-card" />
      <div className="h-3 w-full animate-pulse rounded-lg bg-bg-card" />
      <div className="h-3 w-3/4 animate-pulse rounded-lg bg-bg-card" />
@@ -676,7 +675,7 @@ function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; load
  return (
   <Card variant="subtle" padding="md">
    <div className="flex flex-col items-center gap-4 text-center">
-    <div className="space-y-2">
+    <div className="grid gap-2">
      <Typography as="p" tone="default" weight="semibold">
       Chưa có phân tích chuyên sâu cho mục này.
      </Typography>

@@ -163,8 +163,8 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
 
  if (tabs.length === 0) {
   return (
-   <div className="flex h-full flex-col items-center justify-center bg-bg-primary text-text-muted">
-    <FileText className="w-10 h-10 mb-3 opacity-40" />
+   <div className="flex h-full flex-col items-center justify-center gap-3 bg-bg-primary text-text-muted">
+    <FileText className="size-10 opacity-40" />
     <Typography as="p" variant="bodySmall">
      Chọn một ghi chú để bắt đầu
     </Typography>

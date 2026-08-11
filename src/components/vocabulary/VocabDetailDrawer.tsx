@@ -120,7 +120,7 @@ export function VocabDetailDrawer() {
     onClose={closeDetailDrawer}
    />
    <div className="border-b border-border-default px-4 py-3 sm:px-5">
-    <div className="min-w-0">
+    <div className="grid min-w-0 gap-1">
      <div className="flex items-center gap-2">
       <HanziText as="p" size="review" tone="default" weight="black" clamp="one" leading="tight">
        {smartData?.entry.hanzi || text}
@@ -143,7 +143,7 @@ export function VocabDetailDrawer() {
       </Button>
      </div>
      {smartData?.entry.pinyin ? (
-      <PinyinText as="p" tone="accent" weight="semibold" className="mt-1">
+      <PinyinText as="p" tone="accent" weight="semibold">
        {smartData.entry.pinyin}
       </PinyinText>
      ) : null}
@@ -383,11 +383,11 @@ function WordDetailPanel({
     </div>
 
     {ai?.mnemonic_story ? (
-     <Card variant="subtle" padding="sm">
+     <Card variant="subtle" padding="sm" className="grid gap-1">
       <Typography as="p" variant="caption" tone="warning" weight="bold">
        AI gợi ý mẹo nhớ
       </Typography>
-      <HanziAwareText text={ai.mnemonic_story} tone="default" leading="relaxed" className="mt-1" />
+      <HanziAwareText text={ai.mnemonic_story} tone="default" leading="relaxed" />
      </Card>
     ) : null}
    </DetailSection>
@@ -662,7 +662,7 @@ function RelationList({
         wrap="normal"
         className="w-full"
        >
-        <span className="min-w-0">
+        <span className="grid min-w-0 gap-1">
          <span className="flex flex-wrap items-center gap-2">
           <HanziText as="span" size="medium" tone="default" weight="bold">
            {word}
@@ -678,7 +678,7 @@ function RelationList({
           variant="bodySmall"
           tone="secondary"
           leading="relaxed"
-          className="mt-1 block"
+          className="block"
          >
           {item.meaning || "Chưa có nghĩa."}
          </Typography>
