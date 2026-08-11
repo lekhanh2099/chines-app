@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { ArrowDown, ArrowUp, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -16,15 +15,14 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
- DialogTrigger,
 } from "@/components/ui/dialog";
+import { LibraryCrudActionsMenu } from "@/features/hanzihome/components/library/LibraryCrudActionsMenu";
 import {
  deleteCanonicalContent,
  reorderCanonicalContent,
  type ReorderDirection,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
-import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCourseBook } from "@/features/hanzihome/types";
 
@@ -87,9 +85,7 @@ export function BookCrudActions({
    });
    await Promise.all([
     queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.catalogRoot }),
-    queryClient.invalidateQueries({
-     queryKey: hanzihomeQueryKeys.courseLessons(book.courseId),
-    }),
+    queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.courseLessons(book.courseId) }),
    ]);
    toast.success("Đã xóa quyển. Có thể khôi phục trong Edit Mode.");
   } catch (error) {
@@ -117,14 +113,21 @@ export function BookCrudActions({
  }
 
  return (
-  <div className="flex shrink-0 items-center gap-1">
+  <>
+   <LibraryCrudActionsMenu
+    ariaLabel={`Tác vụ cho ${book.title}`}
+    itemType="quyển"
+    itemLabel={book.title}
+    disabled={!book.updatedAt}
+    canMoveUp={canMoveUp}
+    canMoveDown={canMoveDown}
+    onEdit={() => setOpen(true)}
+    onMoveUp={() => void reorderBook(-1)}
+    onMoveDown={() => void reorderBook(1)}
+    onDelete={deleteBook}
+   />
+
    <Dialog open={open} onOpenChange={setOpen}>
-    <DialogTrigger asChild>
-     <Button type="button" size="sm" variant="outline" aria-label={`Sửa ${book.title}`}>
-      <Pencil />
-      <span className="hidden sm:inline">Sửa</span>
-     </Button>
-    </DialogTrigger>
     <DialogContent>
      <DialogHeader>
       <DialogTitle>Sửa quyển</DialogTitle>
@@ -158,42 +161,6 @@ export function BookCrudActions({
      </form>
     </DialogContent>
    </Dialog>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Đưa ${book.title} lên`}
-    disabled={!book.updatedAt || !canMoveUp}
-    onClick={() => void reorderBook(-1)}
-   >
-    <ArrowUp />
-   </Button>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Đưa ${book.title} xuống`}
-    disabled={!book.updatedAt || !canMoveDown}
-    onClick={() => void reorderBook(1)}
-   >
-    <ArrowDown />
-   </Button>
-   <SoftDeleteConfirmDialog
-    itemType="quyển"
-    itemLabel={book.title}
-    onConfirm={deleteBook}
-    trigger={
-     <Button
-      type="button"
-      size="icon"
-      variant="destructive"
-      aria-label={`Xóa ${book.title}`}
-      disabled={!book.updatedAt}
-     >
-      <Trash2 />
-     </Button>
-    }
-   />
-  </div>
+  </>
  );
 }
