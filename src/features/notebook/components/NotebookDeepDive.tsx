@@ -17,7 +17,7 @@ const DEEP_DIVE_SECTIONS: {
 
 export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
  return (
-  <details className="group overflow-hidden rounded-2xl border border-purple/30 bg-bg-card open:pb-3">
+  <details className="group overflow-hidden rounded-xl border border-purple/30 bg-bg-card open:pb-3">
    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-base font-black text-purple-text marker:content-none [&::-webkit-details-marker]:hidden">
     <span>Phân tích sắc thái · vị trí · lỗi sai</span>
     <Typography
@@ -59,7 +59,7 @@ export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
       <div
        key={section.key}
        className={cn(
-        "grid gap-1.5 rounded-2xl border p-3",
+        "grid gap-1.5 rounded-xl border p-3",
         section.warning ? "border-warning/30 bg-warning-subtle" : "border-purple/20 bg-bg-primary",
        )}
       >

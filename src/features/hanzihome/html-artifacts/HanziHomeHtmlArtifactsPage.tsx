@@ -2180,7 +2180,7 @@ function HtmlSourceEditor({
  return (
   <div
    className={cn(
-    "html-source-editor overflow-hidden rounded-2xl border border-border-default bg-bg-primary shadow-inner [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
+    "html-source-editor overflow-hidden rounded-xl border border-border-default bg-bg-primary shadow-inner [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
     focusWithinRingClassName,
     fullHeight ? "min-h-0 flex-1" : "h-[clamp(18rem,48dvh,34rem)]",
    )}
@@ -2245,7 +2245,7 @@ function ArtifactListButton({
    onClick={onClick}
    onKeyDown={handleKeyDown}
    className={cn(
-    "group relative grid gap-2 rounded-2xl border p-3.5 text-left shadow-theme-sm transition-colors",
+    "group relative grid gap-2 rounded-xl border p-3.5 text-left shadow-theme-sm transition-colors",
     active
      ? "app-active-item"
      : "border-border-default bg-bg-card text-text-primary hover:border-primary/30 hover:bg-bg-elevated",

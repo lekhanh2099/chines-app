@@ -73,7 +73,7 @@ export function NoteList({
         {month}
        </Typography>
       ) : null}
-      <div className="overflow-hidden rounded-2xl border border-border-default bg-bg-card shadow-theme-sm">
+      <div className="overflow-hidden rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
        {monthNotes.map((note) => (
         <NoteListRow key={note.id} note={note} folders={folders} lessonLookup={lessonLookup} />
        ))}

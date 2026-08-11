@@ -25,7 +25,7 @@ export function StructuredExamplesSection({
  return (
   <section
    id="vocab-examples"
-   className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
+   className="grid gap-4 rounded-xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
   >
    <Typography
     as="h3"

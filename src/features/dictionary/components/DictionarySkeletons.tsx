@@ -42,7 +42,7 @@ export function DictionaryWordSkeleton() {
      <div className="h-12 w-32 rounded-xl bg-bg-subtle" />
      <div className="h-12 w-40 rounded-xl bg-bg-subtle" />
     </div>
-    <div className="min-h-56 rounded-2xl border border-border-default bg-bg-card p-5">
+    <div className="min-h-56 rounded-xl border border-border-default bg-bg-card p-5">
      <div className="grid gap-4">
       <div className="h-16 w-28 rounded-xl bg-bg-subtle" />
       <div className="h-5 w-48 rounded-md bg-bg-subtle" />
@@ -52,12 +52,12 @@ export function DictionaryWordSkeleton() {
     <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
      <div className="grid gap-5">
       {Array.from({ length: 3 }, (_, index) => (
-       <div key={index} className="h-44 rounded-2xl border border-border-default bg-bg-card" />
+       <div key={index} className="h-44 rounded-xl border border-border-default bg-bg-card" />
       ))}
      </div>
      <div className="grid content-start gap-5">
-      <div className="h-72 rounded-2xl border border-border-default bg-bg-card" />
-      <div className="h-40 rounded-2xl border border-border-default bg-bg-card" />
+      <div className="h-72 rounded-xl border border-border-default bg-bg-card" />
+      <div className="h-40 rounded-xl border border-border-default bg-bg-card" />
      </div>
     </div>
     <span className="sr-only">Đang tải dữ liệu từ điển</span>

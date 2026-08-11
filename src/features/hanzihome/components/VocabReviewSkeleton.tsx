@@ -12,7 +12,7 @@ export function VocabReviewSkeleton() {
     </div>
     <div className="h-10 w-24 rounded-xl bg-bg-subtle" />
    </div>
-   <div className="mx-auto grid min-h-80 w-full max-w-2xl place-items-center rounded-2xl border border-border-default bg-bg-primary p-6">
+   <div className="mx-auto grid min-h-80 w-full max-w-2xl place-items-center rounded-xl border border-border-default bg-bg-primary p-6">
     <div className="grid w-full max-w-lg gap-5">
      <div className="mx-auto h-12 w-40 rounded-xl bg-bg-subtle" />
      <div className="mx-auto h-6 w-64 max-w-full rounded-lg bg-bg-subtle" />

@@ -110,7 +110,7 @@ export function VocabWorkspace({ compact = false }: VocabWorkspaceProps) {
 
  if (vocabularyQuery.isPending) {
   return (
-   <div className="h-72 animate-pulse rounded-2xl bg-bg-subtle" aria-label="Đang tải từ vựng" />
+   <div className="h-72 animate-pulse rounded-xl bg-bg-subtle" aria-label="Đang tải từ vựng" />
   );
  }
 

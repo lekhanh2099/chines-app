@@ -33,7 +33,7 @@ export function NotesWorkspaceSkeleton() {
      ))}
     </aside>
     <div className="min-h-0 overflow-hidden px-3 py-3 sm:px-4 lg:px-6 lg:py-4 xl:px-8">
-     <div className="overflow-hidden rounded-2xl border border-border-default bg-bg-card shadow-theme-sm">
+     <div className="overflow-hidden rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
       {Array.from({ length: 6 }, (_, index) => (
        <div
         key={index}

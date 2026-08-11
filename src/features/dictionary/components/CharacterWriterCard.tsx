@@ -9,7 +9,7 @@ type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
 type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
 
 const writerContainerClassName =
- "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-2xl border border-border-default bg-bg-card text-8xl font-bold text-text-primary";
+ "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-xl border border-border-default bg-bg-card text-8xl font-bold text-text-primary";
 
 function getThemeColor(name: string) {
  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -153,7 +153,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
  };
 
  return (
-  <div className="flex w-full max-w-full min-w-0 flex-col items-center gap-3 overflow-hidden rounded-2xl border border-border-default bg-bg-primary p-4">
+  <div className="flex w-full max-w-full min-w-0 flex-col items-center gap-3 overflow-hidden rounded-xl border border-border-default bg-bg-primary p-4">
    <div ref={containerRef} className={writerContainerClassName} />
 
    <div className="flex flex-wrap items-center justify-center gap-2">
