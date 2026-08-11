@@ -32,7 +32,7 @@ const labelVariants = cva(
    },
    surface: {
     plain: "",
-    fieldCard: "items-start gap-3 rounded-2xl border border-border-default bg-bg-primary p-3",
+    fieldCard: "items-start gap-3 rounded-xl border border-border-default bg-bg-card p-3",
    },
   },
   defaultVariants: {
