@@ -17,7 +17,7 @@ const buttonVariants = cva(
     ghost:
      "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
     navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-    active: "app-active-item",
+    active: "app-active-item [&_[data-slot=typography]]:text-inherit",
     surface:
      "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
     surfaceCard: "border-border-default bg-bg-card text-text-primary hover:bg-bg-elevated",
@@ -25,7 +25,8 @@ const buttonVariants = cva(
     avatarWarning: "border-warning/35 bg-warning-subtle text-warning-text hover:bg-bg-elevated",
     menu:
      "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted data-[highlighted]:bg-muted",
-    menuActive: "app-active-item w-full justify-start shadow-none",
+    menuActive:
+     "app-active-item w-full justify-start shadow-none [&_[data-slot=typography]]:text-inherit",
     menuDestructive:
      "w-full justify-start border-transparent bg-transparent text-danger-text shadow-none hover:bg-danger-subtle focus-visible:border-danger/40 focus-visible:ring-danger/20",
     destructive:
