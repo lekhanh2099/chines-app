@@ -52,6 +52,8 @@ type MemoryTipDialogProps = {
  trigger?: ReactNode;
  defaultValues?: Partial<CreateMemoryTipPayload>;
  tip?: MemoryTip;
+ open?: boolean;
+ onOpenChange?: (open: boolean) => void;
  onCreated?: () => void;
  onSaved?: () => void;
 };
@@ -112,14 +114,21 @@ export function MemoryTipDialog({
  trigger,
  defaultValues,
  tip,
+ open,
+ onOpenChange,
  onCreated,
  onSaved,
 }: MemoryTipDialogProps) {
- const [open, setOpen] = useState(false);
+ const [internalOpen, setInternalOpen] = useState(false);
  const createMutation = useCreateMemoryTipMutation();
  const updateMutation = useUpdateMemoryTipMutation();
  const initialValues = useMemo(() => getDefaultValues(tip ?? defaultValues), [defaultValues, tip]);
  const isEditMode = Boolean(tip);
+ const resolvedOpen = open ?? internalOpen;
+ const updateOpen = (nextOpen: boolean) => {
+  if (onOpenChange) onOpenChange(nextOpen);
+  else setInternalOpen(nextOpen);
+ };
  const form = useAppForm({
   defaultValues: initialValues,
   validators: {
@@ -141,7 +150,7 @@ export function MemoryTipDialog({
     }
 
     form.reset();
-    setOpen(false);
+    updateOpen(false);
    } catch (error) {
     if (isDuplicateMemoryTipError(error)) {
      toast.info("Tip này đã được lưu rồi.");
@@ -162,14 +171,15 @@ export function MemoryTipDialog({
   createMutation.isPending || updateMutation.isPending || form.state.isSubmitting;
 
  return (
-  <Dialog open={open} onOpenChange={setOpen}>
-   <DialogTrigger asChild>
-    {trigger ?? (
-     <Button type="button" variant="outline" size="sm">
+  <Dialog open={resolvedOpen} onOpenChange={updateOpen}>
+   {trigger ? <DialogTrigger asChild>{trigger}</DialogTrigger> : null}
+   {!trigger && open === undefined ? (
+    <DialogTrigger asChild>
+     <Button type="button" variant="outline" size="toolbar">
       + Thêm
      </Button>
-    )}
-   </DialogTrigger>
+    </DialogTrigger>
+   ) : null}
 
    <DialogContent>
     <DialogHeader>
@@ -303,7 +313,7 @@ export function MemoryTipDialog({
        type="button"
        variant="outline"
        disabled={isSubmitting}
-       onClick={() => setOpen(false)}
+       onClick={() => updateOpen(false)}
       >
        Hủy
       </Button>
