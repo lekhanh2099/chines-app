@@ -43,11 +43,12 @@ export function useHomeDashboard(): HomeDashboardModel {
   for (const catalogLesson of catalog.lessons) {
    for (const word of catalogLesson.vocab) {
     vocabLabels.set(getVocabItemKey(word), word.hanzi);
+    vocabLabels.set(word.id, word.hanzi);
    }
    for (const point of catalogLesson.grammar) {
     grammarLabels.set(
      point.id,
-     point.cleanTitle || point.titleVi || point.title || point.core || point.id,
+     point.cleanTitle || point.titleVi || point.title || point.core || "Điểm ngữ pháp đã ôn",
     );
    }
   }
@@ -66,10 +67,10 @@ export function useHomeDashboard(): HomeDashboardModel {
     key: `${item.type}:${item.id}:${item.answeredAt}:${index}`,
     label:
      item.type === "vocab"
-      ? vocabLabels.get(item.id) || item.id
+      ? vocabLabels.get(item.id) || "Từ vựng đã ôn"
       : item.type === "grammar"
-        ? grammarLabels.get(item.id) || item.id
-        : radicalLabels.get(item.id) || item.id,
+        ? grammarLabels.get(item.id) || "Điểm ngữ pháp đã ôn"
+        : radicalLabels.get(item.id) || "Bộ thủ đã ôn",
     kindLabel: item.type === "vocab" ? "Từ vựng" : item.type === "grammar" ? "Ngữ pháp" : "Bộ thủ",
     result: item.result,
     answeredAt: item.answeredAt,
