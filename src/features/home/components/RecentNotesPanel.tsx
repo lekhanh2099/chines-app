@@ -14,7 +14,7 @@ import type { NoteListItem } from "@/services/notes.service";
 export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
  return (
   <section aria-labelledby="recent-notes-title">
-   <Card variant="section" padding="lg">
+   <Card variant="section" padding="lg" className="grid gap-4">
     <HomeSectionHeader
      id="recent-notes-title"
      title="Ghi chú mới cập nhật"
@@ -27,7 +27,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
     />
 
     {notes.length > 0 ? (
-     <div className="mt-4 divide-y divide-border-default/70">
+     <div className="divide-y divide-border-default/70">
       {notes.map((note) => (
        <Link
         key={note.id}
@@ -38,7 +38,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
          <FileText />
         </IconTile>
 
-        <span className="min-w-0 flex-1">
+        <span className="grid min-w-0 flex-1 gap-0.5">
          <Typography
           tone="default"
           weight="bold"
@@ -52,7 +52,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
           variant="caption"
           tone="muted"
           weight="semibold"
-          className="mt-0.5 flex items-center gap-1"
+          className="flex items-center gap-1"
          >
           <Clock3 className="size-3" />
           {formatDistanceToNow(new Date(note.updated_at), { addSuffix: true, locale: vi })}
@@ -68,7 +68,6 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
       size="compact"
       title="Chưa có ghi chú gần đây"
       description="Tạo một ghi chú khi cần giữ lại nội dung đang học."
-      className="mt-4"
       actions={
        <Button asChild size="compact">
         <Link href="/notes?action=new">Tạo ghi chú</Link>
