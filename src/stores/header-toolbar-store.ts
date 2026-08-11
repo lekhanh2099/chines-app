@@ -18,16 +18,13 @@ export const headerToolbarStore = createStore<
  }
 >({ content: null, ownerId: null }, ({ setState }) => ({
  setContent: (content) =>
-  setState((state) =>
-   state.ownerId === null && state.content === content
-    ? state
-    : { ...state, content, ownerId: null },
-  ),
+  setState((state) => {
+   if (state.ownerId !== null) return state;
+   return state.content === content ? state : { ...state, content };
+  }),
  clearContent: () =>
   setState((state) =>
-   state.ownerId === null && state.content === null
-    ? state
-    : { ...state, content: null, ownerId: null },
+   state.ownerId !== null || state.content === null ? state : { ...state, content: null },
   ),
  setOwnedContent: (ownerId, content) =>
   setState((state) =>
