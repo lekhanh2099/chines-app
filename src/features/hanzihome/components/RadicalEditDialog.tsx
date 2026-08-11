@@ -13,6 +13,7 @@ import { z, ZodError } from "zod";
 
 import { useAppForm } from "@/components/form";
 import { Button } from "@/components/ui/button";
+import { focusWithinRingClassName } from "@/components/ui/focus-ring";
 import {
  Dialog,
  DialogBody,
@@ -394,7 +395,9 @@ function RadicalEditDialogContent({
        <Label id="hanzihome-radical-json-edit-label" variant="label" tone="default" weight="bold">
         JSON
        </Label>
-       <div className="h-[clamp(26rem,58dvh,42rem)] overflow-hidden rounded-xl border border-border-default bg-bg-primary shadow-inner focus-within:ring-2 focus-within:ring-ring [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full">
+       <div
+        className={`h-[clamp(26rem,58dvh,42rem)] overflow-hidden rounded-xl border border-border-default bg-bg-primary shadow-inner [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full ${focusWithinRingClassName}`}
+       >
         <CodeMirror
          aria-labelledby="hanzihome-radical-json-edit-label"
          value={jsonValue}

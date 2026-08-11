@@ -51,6 +51,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { focusWithinRingClassName } from "@/components/ui/focus-ring";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import {
  Select,
@@ -119,12 +120,12 @@ const artifactTypeLabels: Record<HtmlArtifactType, string> = {
 };
 
 const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
- blue: "bg-info-subtle text-info-text ring-info/20",
- purple: "bg-purple-subtle text-purple-text ring-purple/20",
- green: "bg-success-subtle text-success-text ring-success/20",
- orange: "bg-warning-subtle text-warning-text ring-warning/20",
- rose: "bg-danger-subtle text-danger-text ring-danger/20",
- slate: "bg-bg-subtle text-text-secondary ring-border-default",
+ blue: "bg-info-subtle text-info-text border-info/20",
+ purple: "bg-purple-subtle text-purple-text border-purple/20",
+ green: "bg-success-subtle text-success-text border-success/20",
+ orange: "bg-warning-subtle text-warning-text border-warning/20",
+ rose: "bg-danger-subtle text-danger-text border-danger/20",
+ slate: "bg-bg-subtle text-text-secondary border-border-default",
 };
 
 type FolderColorSwatchStyle = {
@@ -1274,7 +1275,7 @@ function FolderRow({
    >
     <span
      className={cn(
-      "flex h-6 w-6 shrink-0 items-center justify-center rounded-md ring-1",
+      "flex h-6 w-6 shrink-0 items-center justify-center rounded-md border",
       folderColorClasses[color],
      )}
     >
@@ -2179,7 +2180,8 @@ function HtmlSourceEditor({
  return (
   <div
    className={cn(
-    "html-source-editor overflow-hidden rounded-2xl border border-border-default bg-bg-primary shadow-inner focus-within:ring-2 focus-within:ring-ring [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
+    "html-source-editor overflow-hidden rounded-2xl border border-border-default bg-bg-primary shadow-inner [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
+    focusWithinRingClassName,
     fullHeight ? "min-h-0 flex-1" : "h-[clamp(18rem,48dvh,34rem)]",
    )}
   >

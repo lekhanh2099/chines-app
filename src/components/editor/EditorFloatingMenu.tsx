@@ -671,7 +671,7 @@ export default function EditorFloatingMenu() {
            <StickyNote />
           </Button>
 
-          <Separator orientation="vertical" className="mx-1 h-5" />
+          <Separator orientation="vertical" className="h-5" />
 
           <DropdownMenu>
            <DropdownMenuTrigger asChild>
@@ -723,7 +723,7 @@ export default function EditorFloatingMenu() {
            </Button>
           ))}
 
-          <Separator orientation="vertical" className="mx-1 h-5" />
+          <Separator orientation="vertical" className="h-5" />
 
           <FormatButton active={isBold} onClick={() => formatText("bold")} title="Bold">
            <Bold />
@@ -759,7 +759,7 @@ export default function EditorFloatingMenu() {
           >
            <Superscript />
           </FormatButton>
-          <Separator orientation="vertical" className="mx-1 h-5" />
+          <Separator orientation="vertical" className="h-5" />
           <FormatButton active={isHighlight} onClick={toggleHighlight} title="Highlight">
            <Highlighter />
           </FormatButton>
@@ -950,12 +950,12 @@ function SmartLookupSummary({
  if (smartMode === "word") {
   return (
    <Card variant="subtle" padding="md" className="grid gap-3">
-    <div className="text-center">
+    <div className="grid gap-1 text-center">
      <Typography as="p" variant="sectionTitle" tone="default" weight="bold">
       {smartData.entry.hanzi}
      </Typography>
      {smartData.entry.pinyin ? (
-      <Typography as="p" tone="accent" weight="semibold" className="mt-1">
+      <Typography as="p" tone="accent" weight="semibold">
        {smartData.entry.pinyin}
       </Typography>
      ) : null}
@@ -983,7 +983,7 @@ function SmartLookupSummary({
 
     <Separator />
 
-    <div className="text-center">
+    <div className="grid gap-1 text-center">
      <Typography as="p" tone="secondary" weight="medium" leading="standard">
       {smartData.meaning_summary ||
        smartData.definitions[0]?.meaning ||
@@ -992,7 +992,7 @@ function SmartLookupSummary({
        "Chưa có nghĩa cho selection này"}
      </Typography>
      {smartData.definitions[1] ? (
-      <Typography as="p" variant="caption" tone="muted" leading="compact" className="mt-1">
+      <Typography as="p" variant="caption" tone="muted" leading="compact">
        {smartData.definitions[1].meaning || smartData.definitions[1].text}
       </Typography>
      ) : null}
@@ -1003,12 +1003,12 @@ function SmartLookupSummary({
 
  return (
   <Card variant="subtle" padding="md" className="grid gap-3">
-   <div className="text-center">
+   <div className="grid gap-1 text-center">
     <Typography as="p" tone="default" weight="semibold" leading="standard">
      {smartData.selection}
     </Typography>
     {smartData.entry.pinyin ? (
-     <Typography as="p" variant="caption" tone="muted" className="mt-1">
+     <Typography as="p" variant="caption" tone="muted">
       {smartData.entry.pinyin}
      </Typography>
     ) : null}

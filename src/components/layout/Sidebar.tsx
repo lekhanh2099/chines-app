@@ -195,7 +195,7 @@ export function Sidebar() {
     aria-label="Điều hướng chính"
     className={cn(
      "min-h-0 flex-1 overflow-y-auto py-3 scrollbar-soft",
-     isCollapsed ? "space-y-2 px-3" : "px-3",
+     isCollapsed ? "grid content-start gap-2 px-3" : "px-3",
     )}
    >
     {isCollapsed ? (

@@ -59,11 +59,9 @@ const FEATURE_SURFACE_ESCAPE_HATCH_PATTERN =
  /\b(?:app-glass-surface|app-gradient-hero|backdrop-blur(?:-[\w-]+)?|shadow-theme-lg)\b/;
 const FIXED_MARGIN_CLASS_PATTERN =
  /(?:^|[\s"'`])(?:[a-z0-9-]+:)*-?m(?:[trblxy])?-(?!auto(?:[\s"'`}]|$)|0(?:[\s"'`}]|$))[^\s"'`}]*/i;
-const SPACE_BETWEEN_CLASS_PATTERN =
- /\b(?:[a-z0-9-]+:)*space-[xy]-(?!0(?:[\s"'`}]|$))[^\s"'`}]*/i;
+const SPACE_BETWEEN_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*space-[xy]-(?!0(?:[\s"'`}]|$))[^\s"'`}]*/i;
 const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
-const FEATURE_RING_CLASS_PATTERN =
- /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
+const FEATURE_RING_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
 const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
 
 function listSourceFiles(directory) {

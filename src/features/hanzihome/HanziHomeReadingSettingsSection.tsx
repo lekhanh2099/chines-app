@@ -44,7 +44,7 @@ export function HanziHomeReadingSettingsSection() {
  return (
   <div className="grid gap-4">
    <div className="flex flex-wrap items-start justify-between gap-3">
-    <div className="min-w-0 space-y-1">
+    <div className="grid min-w-0 gap-1">
      <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
       Thiết lập đọc
      </Typography>

@@ -248,8 +248,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   const el = document.createElement("span");
   el.dataset.inlineNote = "true";
   el.dataset.noteText = this.__noteText;
-  el.className =
-   "rounded-md bg-info-subtle px-0.5 underline decoration-wavy decoration-info/50";
+  el.className = "rounded-md bg-info-subtle px-0.5 underline decoration-wavy decoration-info/50";
   el.textContent = this.__text;
   return { element: el };
  }

@@ -24,6 +24,7 @@ import { Chip } from "@/components/ui/chip";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PageHeader } from "@/components/ui/page-header";
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import {
  Select,
  SelectContent,
@@ -264,7 +265,9 @@ function ApiEndpointCard({
  return (
   <Card variant="default" padding="none" className="overflow-hidden">
    <details className="group">
-    <summary className="flex cursor-pointer list-none items-start justify-between gap-3 p-4 marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 sm:p-5 [&::-webkit-details-marker]:hidden">
+    <summary
+     className={`flex cursor-pointer list-none items-start justify-between gap-3 p-4 marker:content-none sm:p-5 [&::-webkit-details-marker]:hidden ${focusRingClassName}`}
+    >
      <div className="grid min-w-0 gap-2">
       <div className="flex flex-wrap items-center gap-2">
        <Badge variant="info">{methodLabel(operations)}</Badge>

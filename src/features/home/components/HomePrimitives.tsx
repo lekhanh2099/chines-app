@@ -31,13 +31,7 @@ export function HomeSectionHeader({
      {title}
     </Typography>
     {description ? (
-     <Typography
-      as="p"
-      variant="bodySmall"
-      tone="muted"
-      weight="semibold"
-      leading="compact"
-     >
+     <Typography as="p" variant="bodySmall" tone="muted" weight="semibold" leading="compact">
       {description}
      </Typography>
     ) : null}

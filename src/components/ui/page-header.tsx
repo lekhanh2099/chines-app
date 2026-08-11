@@ -32,12 +32,7 @@ export function PageHeader({
     className,
    )}
   >
-   <div
-    className={cn(
-     "grid min-w-0 max-w-3xl flex-[1_1_18rem]",
-     compact ? "gap-2" : "gap-3",
-    )}
-   >
+   <div className={cn("grid min-w-0 max-w-3xl flex-[1_1_18rem]", compact ? "gap-2" : "gap-3")}>
     <div className={cn("grid", compact ? "gap-1" : "gap-1.5")}>
      {eyebrow ? (
       <Typography

@@ -35,7 +35,12 @@ export function FormSwitch({ label, description, disabled, required, className }
     className="cursor-pointer justify-between gap-4"
    >
     <span className="grid min-w-0 gap-1">
-     <Typography as="span" tone="default" weight="black" className="inline-flex items-baseline gap-1">
+     <Typography
+      as="span"
+      tone="default"
+      weight="black"
+      className="inline-flex items-baseline gap-1"
+     >
       {label}
       {required ? (
        <Typography as="span" tone="danger">

@@ -28,9 +28,7 @@ export function AnswerReveal({
    >
     {label}
    </summary>
-   <div className="exercise-answer-surface grid gap-2 rounded-md border px-3 py-2">
-    {children}
-   </div>
+   <div className="exercise-answer-surface grid gap-2 rounded-md border px-3 py-2">{children}</div>
   </details>
  );
 }

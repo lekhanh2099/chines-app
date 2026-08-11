@@ -47,7 +47,12 @@ export function FormCheckbox({
     />
 
     <span className="grid gap-1">
-     <Typography as="span" tone="default" weight="black" className="inline-flex items-baseline gap-1">
+     <Typography
+      as="span"
+      tone="default"
+      weight="black"
+      className="inline-flex items-baseline gap-1"
+     >
       {label}
       {required ? (
        <Typography as="span" tone="danger">
