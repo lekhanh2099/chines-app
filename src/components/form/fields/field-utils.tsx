@@ -46,28 +46,28 @@ export function FieldShell({
 }: FieldShellProps) {
  return (
   <div className={cn("grid gap-2", className)}>
-   <Label htmlFor={inputId} variant="label" tone="default" weight="black">
+   <Label htmlFor={inputId} variant="label" tone="default" weight="black" className="gap-1">
     {label}
-    {required && (
-     <Typography as="span" tone="danger" className="ml-1">
+    {required ? (
+     <Typography as="span" tone="danger">
       *
      </Typography>
-    )}
+    ) : null}
    </Label>
 
    {children}
 
-   {description && (
+   {description ? (
     <Typography as="p" id={descriptionId} variant="caption" tone="muted" weight="semibold">
      {description}
     </Typography>
-   )}
+   ) : null}
 
-   {error && (
+   {error ? (
     <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
     </Typography>
-   )}
+   ) : null}
   </div>
  );
 }
