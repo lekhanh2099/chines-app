@@ -13,19 +13,16 @@ import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 const QuickNoteVariantSchema = z.enum(["default", "outline", "ghost", "dashed"]);
-const QuickNoteSizeSchema = z.enum(["sm", "md", "lg"]);
 
 interface QuickNoteButtonProps {
  className?: string;
  variant?: z.infer<typeof QuickNoteVariantSchema>;
- size?: z.infer<typeof QuickNoteSizeSchema>;
  compactOnTablet?: boolean;
 }
 
 export function QuickNoteButton({
  className = "",
  variant = QuickNoteVariantSchema.enum.default,
- size = QuickNoteSizeSchema.enum.md,
  compactOnTablet = false,
 }: QuickNoteButtonProps) {
  const [isCreating, setIsCreating] = useState(false);
@@ -82,36 +79,16 @@ export function QuickNoteButton({
   }
  };
 
- if (variant === "dashed") {
-  return (
-   <Button
-    type="button"
-    variant="dashed"
-    size="list"
-    onClick={handleCreate}
-    disabled={isCreating || focusModeEnabled}
-    aria-label="Tạo ghi chú nhanh"
-    title="Tạo ghi chú nhanh"
-    className={cn("w-full", className)}
-   >
-    {isCreating ? <Loader2 className="size-4 animate-spin" /> : <Zap className="size-4" />}
-    Ghi chú nhanh
-   </Button>
-  );
- }
-
- const buttonSize = size === "sm" ? "sm" : size === "lg" ? "lg" : "default";
-
  return (
   <Button
    type="button"
    variant={variant}
-   size={compactOnTablet ? "responsive-action" : buttonSize}
+   size={compactOnTablet ? "toolbar" : "touch"}
    onClick={handleCreate}
    disabled={isCreating || focusModeEnabled}
    aria-label="Tạo ghi chú nhanh"
    title="Tạo ghi chú nhanh"
-   className={className}
+   className={cn(variant === "dashed" && "w-full", className)}
   >
    {isCreating ? (
     <Loader2 data-icon="inline-start" className="size-4 animate-spin" />
