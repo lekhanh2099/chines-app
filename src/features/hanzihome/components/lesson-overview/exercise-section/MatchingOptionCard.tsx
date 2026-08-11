@@ -29,7 +29,7 @@ export function MatchingOptionCard({
     <StudyInstructionText
      variant="caption"
      weight="black"
-     className="study-chip-accent mt-0.5 shrink-0 rounded-md border px-2 py-0.5"
+     className="study-chip-accent shrink-0 translate-y-0.5 rounded-md border px-2 py-0.5"
     >
      {label}
     </StudyInstructionText>

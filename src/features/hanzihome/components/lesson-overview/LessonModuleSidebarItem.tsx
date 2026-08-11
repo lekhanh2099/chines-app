@@ -36,7 +36,7 @@ export function LessonModuleSidebarItem({
    className="w-full min-w-0 max-w-full overflow-hidden"
   >
    {icon && <span className="shrink-0 opacity-90">{icon}</span>}
-   <span className="min-w-0 flex-1">
+   <span className="grid min-w-0 flex-1 gap-0.5">
     <HanziAwareText
      as="span"
      text={title}
@@ -53,7 +53,7 @@ export function LessonModuleSidebarItem({
       tone="inherit"
       weight="semibold"
       clamp="two"
-      className="mt-0.5 block opacity-80"
+      className="block opacity-80"
      />
     )}
    </span>

@@ -49,7 +49,7 @@ export function StructuredGrammarContent({
     </div>
    ) : null}
    {point.core && (
-    <section className="rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
+    <section className="grid gap-3 rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
      <div className="flex items-center gap-2">
       <StudyInstructionText
        as="span"
@@ -73,7 +73,6 @@ export function StructuredGrammarContent({
       tone="default"
       weight="bold"
       leading="relaxed"
-      className="mt-3"
      />
     </section>
    )}

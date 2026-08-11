@@ -75,7 +75,7 @@ export function ProperNounCard({
 
     {modes.length > 0 ? (
      <Card asChild variant="subtle" padding="sm">
-      <details>
+      <details className="grid gap-2">
        <summary className="cursor-pointer">
         <Typography
          as="span"
@@ -88,7 +88,7 @@ export function ProperNounCard({
          Flashcard modes
         </Typography>
        </summary>
-       <div className="mt-2 flex flex-wrap gap-2">
+       <div className="flex flex-wrap gap-2">
         {modes.map((mode) => (
          <Badge key={mode}>{mode.replaceAll("_", " → ")}</Badge>
         ))}

@@ -89,7 +89,7 @@ export function LessonReadingSettings({
     className,
    )}
   >
-   <Card variant="section" padding="lg">
+   <Card variant="section" padding="lg" className="grid gap-5">
     <SettingsGroup icon={Type} label="Kiểu chữ">
      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
       {fontOptions.map((option) => {
@@ -114,7 +114,7 @@ export function LessonReadingSettings({
      </div>
     </SettingsGroup>
 
-    <Separator className="my-5" />
+    <Separator />
 
     <SettingsGroup icon={Type} label="Cỡ chữ">
      <SegmentedControl<HanziReaderSize>
@@ -129,7 +129,7 @@ export function LessonReadingSettings({
      />
     </SettingsGroup>
 
-    <Separator className="my-5" />
+    <Separator />
 
     <SettingsGroup icon={Eye} label="Cách mở nội dung">
      <SegmentedControl<LessonDisplayMode["revealMode"]>
@@ -150,7 +150,7 @@ export function LessonReadingSettings({
      ) : null}
     </SettingsGroup>
 
-    <Separator className="my-5" />
+    <Separator />
 
     <SettingsGroup icon={Eye} label="Hiển thị">
      <div className="divide-y divide-border-default">
@@ -162,11 +162,11 @@ export function LessonReadingSettings({
 
        return (
         <div key={option.key} className="flex min-h-14 items-center justify-between gap-4 py-2.5">
-         <div className="min-w-0">
+         <div className="grid min-w-0 gap-0.5">
           <Typography as="p" variant="label" tone="default" weight="bold">
            {option.label}
           </Typography>
-          <Typography as="p" variant="caption" tone="muted" className="mt-0.5">
+          <Typography as="p" variant="caption" tone="muted">
            {disabled ? "Được điều khiển bằng chế độ Bấm để mở." : option.description}
           </Typography>
          </div>
@@ -190,13 +190,13 @@ export function LessonReadingSettings({
 
 function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMode }) {
  return (
-  <Card variant="section" padding="lg" className="md:sticky md:top-4">
+  <Card variant="section" padding="lg" className="grid gap-5 md:sticky md:top-4">
    <div className="flex items-start justify-between gap-3">
-    <div>
+    <div className="grid gap-1">
      <Typography as="h3" variant="sectionTitle" tone="default" weight="black">
       Xem trước
      </Typography>
-     <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+     <Typography as="p" variant="bodySmall" tone="muted">
       Đây là cách nội dung học sẽ hiển thị với thiết lập hiện tại.
      </Typography>
     </div>
@@ -205,7 +205,7 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
     </ReaderHanziText>
    </div>
 
-   <div className="mt-5">
+   <div className="grid gap-3">
     <StudyInstructionText
      variant="overline"
      tone="muted"
@@ -215,7 +215,7 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
     >
      Bài đọc
     </StudyInstructionText>
-    <div className="mt-3">
+    <div>
      <ProgressiveStudyText
       key={displayMode.revealMode}
       zh="开始自己安排时间以后，我才发现，学得久比一时学得快更重要。"
@@ -226,9 +226,9 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
     </div>
    </div>
 
-   <Separator className="my-5" />
+   <Separator />
 
-   <div>
+   <div className="grid gap-2">
     <StudyInstructionText
      variant="overline"
      tone="muted"
@@ -238,18 +238,18 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
     >
      Bài tập
     </StudyInstructionText>
-    <StudyInstructionText as="p" tone="secondary" className="mt-2">
+    <StudyInstructionText as="p" tone="secondary">
      Hoàn thành câu với cấu trúc phù hợp:
     </StudyInstructionText>
-    <ReaderHanziText displayMode={displayMode} size="lg" className="mt-2 block">
+    <ReaderHanziText displayMode={displayMode} size="lg" className="block">
      我___开始自己安排时间，___发现每天复习一点更有效。
     </ReaderHanziText>
     {displayMode.showAnswers ? (
-     <StudyInstructionText as="p" tone="success" weight="bold" className="mt-2">
+     <StudyInstructionText as="p" tone="success" weight="bold">
       Đáp án hiển thị: 是从…以后才…
      </StudyInstructionText>
     ) : (
-     <StudyInstructionText as="p" variant="caption" tone="muted" className="mt-2">
+     <StudyInstructionText as="p" variant="caption" tone="muted">
       Đáp án đang ẩn theo thiết lập hiện tại.
      </StudyInstructionText>
     )}
