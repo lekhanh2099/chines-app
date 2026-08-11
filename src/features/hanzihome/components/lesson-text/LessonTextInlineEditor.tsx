@@ -4,6 +4,7 @@ import { FileText, Layers } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { Card } from "@/components/ui/card";
+import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import {
  HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID,
@@ -247,12 +248,12 @@ export function LessonTextInlineEditor({
       ) : null}
      </div>
     ) : (
-     <Card padding="sm" className="rounded-xl sm:p-4">
-      <div className="rounded-xl border border-border-default bg-bg-subtle p-3  font-semibold text-text-muted sm:p-4">
+     <Card variant="subtle" padding="md">
+      <Typography as="p" variant="bodySmall" tone="muted" weight="semibold">
        {practiceOnly
         ? "Bài này chưa có bài tập hoặc nội dung đọc hiểu."
         : "Chưa có bài khóa trong JSON của bài này."}
-      </div>
+      </Typography>
      </Card>
     )}
    </LessonModuleFrame>
