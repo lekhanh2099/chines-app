@@ -23,7 +23,7 @@ export function HomeDashboard() {
      description="Tiếp tục bài đang học, xem phần cần ôn và quay lại những nội dung vừa dùng."
     />
 
-    <div className="grid gap-5 xl:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.65fr)] xl:items-start">
+    <div className="grid gap-5 md:grid-cols-[minmax(0,1.3fr)_minmax(16rem,0.7fr)] md:items-start">
      <div className="grid min-w-0 gap-5">
       <ContinueLearningPanel lesson={dashboard.lesson} />
       <div className="grid gap-5 2xl:grid-cols-2">
