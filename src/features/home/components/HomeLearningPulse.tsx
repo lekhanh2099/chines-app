@@ -11,9 +11,9 @@ import type { HomeDashboardModel } from "@/features/home/types";
 export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learningPulse"] }) {
  return (
   <section aria-labelledby="home-learning-pulse-title">
-   <Card variant="section" padding="lg">
+   <Card variant="section" padding="lg" className="grid gap-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="min-w-0">
+     <div className="grid min-w-0 gap-1">
       <Typography
        id="home-learning-pulse-title"
        as="h2"
@@ -23,7 +23,7 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
       >
        Nhịp học
       </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+      <Typography as="p" variant="bodySmall" tone="muted">
        Những tín hiệu cần chú ý từ tiến độ hiện tại.
       </Typography>
      </div>
@@ -35,7 +35,7 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
      </Button>
     </div>
 
-    <div className="mt-5 grid grid-cols-2 gap-x-5 gap-y-5">
+    <div className="grid grid-cols-2 gap-5">
      <PulseStat
       icon={<Repeat2 />}
       value={pulse.reviewCount}
@@ -57,7 +57,7 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
      />
     </div>
 
-    <Typography as="p" variant="caption" tone="muted" className="mt-5">
+    <Typography as="p" variant="caption" tone="muted">
      {pulse.trackedCount > 0
       ? `${pulse.trackedCount} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.`
       : "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật."}
@@ -83,11 +83,11 @@ function PulseStat({
    <IconTile size="sm" tone={tone}>
     {icon}
    </IconTile>
-   <div className="min-w-0">
+   <div className="grid min-w-0 gap-0.5">
     <Typography as="p" variant="sectionTitle" tone="default" weight="black">
      {value}
     </Typography>
-    <Typography as="p" variant="caption" tone="muted" className="mt-0.5">
+    <Typography as="p" variant="caption" tone="muted">
      {label}
     </Typography>
    </div>
