@@ -32,7 +32,7 @@ export function RecentLearningActivityPanel({
 }) {
  return (
   <section aria-labelledby="recent-learning-activity-title">
-   <Card variant="section" padding="lg">
+   <Card variant="section" padding="lg" className="grid gap-4">
     <HomeSectionHeader
      id="recent-learning-activity-title"
      title="Hoạt động gần đây"
@@ -40,21 +40,23 @@ export function RecentLearningActivityPanel({
     />
 
     {items.length > 0 ? (
-     <div className="mt-4 divide-y divide-border-default/70">
+     <div className="divide-y divide-border-default/70">
       {items.map((item) => (
        <div key={item.key} className="flex min-w-0 items-start gap-3 py-3 first:pt-0 last:pb-0">
         <IconTile size="sm" tone="neutral">
          <History />
         </IconTile>
-        <div className="min-w-0 flex-1">
-         <Typography as="p" tone="default" weight="bold" clamp="one">
-          {item.label}
-         </Typography>
-         <Typography as="p" variant="caption" tone="muted" className="mt-0.5">
-          {item.kindLabel} ·{" "}
-          {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
-         </Typography>
-         <Badge variant={resultVariants[item.result]} size="sm" className="mt-2 sm:hidden">
+        <div className="grid min-w-0 flex-1 gap-2">
+         <div className="grid gap-0.5">
+          <Typography as="p" tone="default" weight="bold" clamp="one">
+           {item.label}
+          </Typography>
+          <Typography as="p" variant="caption" tone="muted">
+           {item.kindLabel} ·{" "}
+           {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
+          </Typography>
+         </div>
+         <Badge variant={resultVariants[item.result]} size="sm" className="w-fit sm:hidden">
           {resultLabels[item.result]}
          </Badge>
         </div>
@@ -65,7 +67,7 @@ export function RecentLearningActivityPanel({
       ))}
      </div>
     ) : (
-     <Typography as="p" variant="bodySmall" tone="muted" className="mt-4">
+     <Typography as="p" variant="bodySmall" tone="muted">
       Chưa có lượt ôn gần đây. Khi bạn đánh giá flashcard, hoạt động sẽ xuất hiện ở đây.
      </Typography>
     )}
