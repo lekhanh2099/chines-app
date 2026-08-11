@@ -16,7 +16,11 @@ function ActionCard({ className, padding, asChild = false, ...props }: ActionCar
  return (
   <Comp
    data-slot="action-card"
-   className={cn(cardVariants({ variant: "interactive", padding }), className)}
+   className={cn(
+    cardVariants({ variant: "interactive", padding }),
+    "text-left disabled:cursor-not-allowed disabled:opacity-50",
+    className,
+   )}
    {...(!asChild ? { type: "button" } : {})}
    {...props}
   />
