@@ -2,10 +2,14 @@ import * as React from "react";
 import { Slot } from "radix-ui";
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
 const chipVariants = cva(
- "inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border font-bold whitespace-nowrap outline-none transition-colors select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 data-[state=on]:border-primary/35 data-[state=on]:ring-2 data-[state=on]:ring-ring/15 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+ cn(
+  "inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border font-bold whitespace-nowrap transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=on]:border-primary/35 data-[state=on]:ring-2 data-[state=on]:ring-ring/15 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  focusRingClassName,
+ ),
  {
   variants: {
    variant: {
