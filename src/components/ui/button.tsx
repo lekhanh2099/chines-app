@@ -43,7 +43,7 @@ const buttonVariants = cva(
     success:
      "border-success bg-success-subtle text-success-text hover:bg-success-subtle focus-visible:border-success focus-visible:ring-success/20",
     swatch:
-     "border-2 opacity-80 ring-offset-2 ring-offset-bg-card hover:opacity-100 aria-pressed:opacity-100 aria-pressed:ring-2 aria-pressed:ring-ring",
+     "border-border-default opacity-80 hover:border-primary/45 hover:opacity-100 aria-pressed:border-primary aria-pressed:opacity-100",
     link: "text-primary underline-offset-4 hover:underline",
    },
    size: {
