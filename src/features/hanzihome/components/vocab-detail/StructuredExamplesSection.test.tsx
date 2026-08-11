@@ -15,6 +15,8 @@ const word = hanziHomeVocabItemSchema.parse({
  meaning: { meaning_vi: "mặc dù; cứ việc" },
  examples: [
   {
+   id: "vocab-example-font-01-example-01",
+   order: 1,
    zh: "尽管今天下雨，他还是骑自行车来了。",
    pinyin: "Jǐnguǎn jīntiān xiàyǔ, tā háishi qí zìxíngchē lái le.",
    vi: "Mặc dù hôm nay mưa, anh ấy vẫn đạp xe đến.",
