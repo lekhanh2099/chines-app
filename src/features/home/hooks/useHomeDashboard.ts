@@ -1,5 +1,6 @@
 "use client";
 
+import { isToday } from "date-fns";
 import { useMemo } from "react";
 
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
@@ -19,6 +20,21 @@ export function useHomeDashboard(): HomeDashboardModel {
   const lesson = recentLesson ?? fallbackLesson;
   const course = lesson ? catalog.courses.find((item) => item.id === lesson.courseId) : null;
   const lastModule = learning.state.settings.lastModule ?? "overview";
+  const progressItems = [
+   ...Object.values(learning.state.progress.vocab ?? {}),
+   ...Object.values(learning.state.progress.grammar ?? {}),
+  ];
+  const reviewCount = progressItems.filter(
+   (item) => item.status === "learning" || item.status === "hard",
+  ).length;
+  const knownCount = progressItems.filter((item) => item.status === "known").length;
+  const reviewedTodayCount = learning.state.reviewHistory.filter((item) =>
+   isToday(new Date(item.answeredAt)),
+  ).length;
+  const bookmarkedCount = Object.values(learning.state.bookmarks).reduce(
+   (total, items) => total + (items?.length ?? 0),
+   0,
+  );
 
   return {
    lesson:
@@ -33,6 +49,13 @@ export function useHomeDashboard(): HomeDashboardModel {
         isRecent: Boolean(recentLesson),
        }
      : null,
+   learningPulse: {
+    trackedCount: progressItems.length,
+    reviewCount,
+    knownCount,
+    reviewedTodayCount,
+    bookmarkedCount,
+   },
    recentNotes: recentNotes.data ?? [],
    isLoading: learning.isLoading || recentNotes.isLoading,
   };
@@ -40,7 +63,7 @@ export function useHomeDashboard(): HomeDashboardModel {
   catalog.courses,
   catalog.lessons,
   learning.isLoading,
-  learning.state.settings,
+  learning.state,
   recentNotes.data,
   recentNotes.isLoading,
  ]);
