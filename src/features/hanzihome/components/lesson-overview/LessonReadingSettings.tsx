@@ -89,7 +89,7 @@ export function LessonReadingSettings({
  return (
   <div
    className={cn(
-    "grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)] xl:items-start",
+    "grid min-w-0 gap-4 md:grid-cols-[minmax(0,1.2fr)_minmax(16rem,0.8fr)] md:items-start",
     className,
    )}
   >
@@ -102,7 +102,7 @@ export function LessonReadingSettings({
         <Button
          key={option.value}
          variant={active ? "active" : "surfaceCard"}
-         size="toolbar"
+         size="touch"
          aria-pressed={active}
          onClick={() => onChange({ hanziFont: option.value })}
         >
@@ -193,7 +193,7 @@ export function LessonReadingSettings({
 
 function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMode }) {
  return (
-  <Card variant="section" padding="lg" className="xl:sticky xl:top-4">
+  <Card variant="section" padding="lg" className="md:sticky md:top-4">
    <div className="flex items-start justify-between gap-3">
     <div>
      <Typography as="h3" variant="sectionTitle" tone="default" weight="black">
