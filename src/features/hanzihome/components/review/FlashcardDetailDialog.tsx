@@ -4,6 +4,7 @@ import { Bookmark } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
  Dialog,
  DialogBody,
@@ -54,69 +55,67 @@ function ReviewVocabDetailContent({
  return (
   <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)]">
    <div className="grid min-w-0 gap-4">
-    <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
-     <div className="grid gap-3">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-       <div className="min-w-0 grid gap-1">
-        <HanziText
-         as="h2"
-         size="review"
-         weight="black"
-         leading="tight"
-         tracking="normal"
-         wrapping="breakWords"
-        >
-         {word.hanzi}
-        </HanziText>
-        <PinyinText as="p" variant="sectionTitle" tone="accent">
-         {word.pinyin}
-         {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
-        </PinyinText>
-       </div>
-
-       <Button
-        type="button"
-        variant={bookmarked ? "default" : "outline"}
-        onClick={() => onToggleBookmark?.("vocab", item.id)}
+    <Card variant="section" padding="lg" className="grid gap-3">
+     <div className="flex flex-wrap items-start justify-between gap-3">
+      <div className="min-w-0 grid gap-1">
+       <HanziText
+        as="h2"
+        size="review"
+        weight="black"
+        leading="tight"
+        tracking="normal"
+        wrapping="breakWords"
        >
-        <Bookmark className="h-4 w-4" />
-        {bookmarked ? "Đã lưu" : "Lưu"}
-       </Button>
+        {word.hanzi}
+       </HanziText>
+       <PinyinText as="p" variant="sectionTitle" tone="accent">
+        {word.pinyin}
+        {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
+       </PinyinText>
       </div>
 
-      <div className="flex flex-wrap items-center gap-1.5">
-       {word.pos.raw_vi && <Badge variant="info">{word.pos.raw_vi}</Badge>}
-       {word.level_tag !== "unknown" && <Badge variant="danger">{word.level_tag}</Badge>}
-       <Badge variant={status === "known" ? "success" : status === "hard" ? "danger" : "default"}>
-        {status === "known" ? "Đã nhớ" : status === "hard" ? "Khó" : "Đang học"}
-       </Badge>
-      </div>
-
-      <div className="grid gap-2 text-base font-semibold leading-relaxed text-text-primary">
-       {word.meaning.short_definition_vi && (
-        <StudyInstructionText variant="sectionTitle" weight="black">
-         {word.meaning.short_definition_vi}
-        </StudyInstructionText>
-       )}
-       {displayMeaning && <StudyInstructionText>{displayMeaning}</StudyInstructionText>}
-       {naturalTranslations.length > 0 && (
-        <StudyInstructionText>Tự nhiên: {naturalTranslations.join(", ")}</StudyInstructionText>
-       )}
-       {word.meaning.register_vi && (
-        <StudyInstructionText>Sắc thái: {word.meaning.register_vi}</StudyInstructionText>
-       )}
-       {word.meaning.usage_domain_vi && (
-        <StudyInstructionText>Phạm vi dùng: {word.meaning.usage_domain_vi}</StudyInstructionText>
-       )}
-       {word.meaning.notes.map((note) => (
-        <StudyInstructionText key={note.text_vi}>{note.text_vi}</StudyInstructionText>
-       ))}
-      </div>
+      <Button
+       type="button"
+       variant={bookmarked ? "default" : "outline"}
+       onClick={() => onToggleBookmark?.("vocab", item.id)}
+      >
+       <Bookmark data-icon="inline-start" />
+       {bookmarked ? "Đã lưu" : "Lưu"}
+      </Button>
      </div>
-    </section>
+
+     <div className="flex flex-wrap items-center gap-1.5">
+      {word.pos.raw_vi && <Badge variant="info">{word.pos.raw_vi}</Badge>}
+      {word.level_tag !== "unknown" && <Badge variant="danger">{word.level_tag}</Badge>}
+      <Badge variant={status === "known" ? "success" : status === "hard" ? "danger" : "default"}>
+       {status === "known" ? "Đã nhớ" : status === "hard" ? "Khó" : "Đang học"}
+      </Badge>
+     </div>
+
+     <div className="grid gap-2">
+      {word.meaning.short_definition_vi && (
+       <StudyInstructionText variant="sectionTitle" weight="black">
+        {word.meaning.short_definition_vi}
+       </StudyInstructionText>
+      )}
+      {displayMeaning && <StudyInstructionText>{displayMeaning}</StudyInstructionText>}
+      {naturalTranslations.length > 0 && (
+       <StudyInstructionText>Tự nhiên: {naturalTranslations.join(", ")}</StudyInstructionText>
+      )}
+      {word.meaning.register_vi && (
+       <StudyInstructionText>Sắc thái: {word.meaning.register_vi}</StudyInstructionText>
+      )}
+      {word.meaning.usage_domain_vi && (
+       <StudyInstructionText>Phạm vi dùng: {word.meaning.usage_domain_vi}</StudyInstructionText>
+      )}
+      {word.meaning.notes.map((note) => (
+       <StudyInstructionText key={note.text_vi}>{note.text_vi}</StudyInstructionText>
+      ))}
+     </div>
+    </Card>
 
     {word.examples[0]?.zh && (
-     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-2">
+     <Card variant="subtle" padding="lg" className="grid gap-2">
       <StudyInstructionText
        variant="overline"
        tone="muted"
@@ -145,7 +144,7 @@ function ReviewVocabDetailContent({
         {word.examples[0].vi}
        </StudyInstructionText>
       )}
-     </section>
+     </Card>
     )}
 
     <StructuredVocabSections
@@ -158,7 +157,7 @@ function ReviewVocabDetailContent({
 
    <aside className="grid min-w-0 content-start gap-4">
     {word.word_formation.characters.length > 0 && (
-     <section className="rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm grid gap-3">
+     <Card variant="section" padding="lg" className="grid gap-3">
       <StudyInstructionText
        variant="overline"
        tone="muted"
@@ -169,7 +168,7 @@ function ReviewVocabDetailContent({
        Cấu tạo chữ
       </StudyInstructionText>
       <WordFormationPreview formation={word.word_formation} />
-     </section>
+     </Card>
     )}
 
     {hasCultureContent(word.culture_note) && <CultureSection culture={word.culture_note} />}
@@ -200,12 +199,12 @@ export function FlashcardDetailDialog({
 
  return (
   <Dialog open={open} onOpenChange={onOpenChange}>
-   <DialogContent className="flex h-[92vh] max-w-6xl flex-col gap-0 overflow-hidden p-0">
-    <DialogHeader className="shrink-0 border-b border-border-default px-6 py-5">
+   <DialogContent size="xl" className="h-[92vh]">
+    <DialogHeader>
      <DialogTitle>{item.type === "vocab" ? "Chi tiết từ vựng" : "Chi tiết ngữ pháp"}</DialogTitle>
      <DialogDescription>Xem lại nội dung đang ôn trong bài hiện tại.</DialogDescription>
     </DialogHeader>
-    <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft p-4">
+    <DialogBody>
      {item.type === "vocab" ? (
       <ReviewVocabDetailContent
        item={item}
