@@ -23,6 +23,7 @@ const chipVariants = cva(
     sm: "min-h-7 px-2 text-xs [&_svg:not([class*='size-'])]:size-3",
     md: "min-h-8 px-2.5 text-sm [&_svg:not([class*='size-'])]:size-3.5",
     lg: "min-h-10 px-3 text-sm [&_svg:not([class*='size-'])]:size-4",
+    touch: "min-h-11 px-3 text-sm [&_svg:not([class*='size-'])]:size-4",
    },
   },
   defaultVariants: {
