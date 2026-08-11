@@ -1,5 +1,6 @@
-import { MobileBottomNavigation, Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
+import { MobileBottomNavigation, Sidebar } from "@/components/layout/Sidebar";
+import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 
@@ -11,9 +12,7 @@ export default async function AppLayout({
  const supabase = await createClient();
  const { data, error } = await supabase.auth.getUser();
 
- if (error || !data?.user) {
-  redirect("/login");
- }
+ if (error || !data?.user) redirect("/login");
 
  const user = data.user;
 
@@ -22,6 +21,7 @@ export default async function AppLayout({
    <Sidebar />
    <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
     <Header user={user} />
+    <HanziHomeGlobalSearchBridge />
     <main className="page-shell nova-page relative min-h-0 flex-1 overflow-y-auto overscroll-contain scrollbar-soft">
      {children}
     </main>
