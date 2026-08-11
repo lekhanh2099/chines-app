@@ -17,19 +17,19 @@ type ThemePaletteMeta = {
 export const THEME_PALETTE_META: Record<ThemePalette, ThemePaletteMeta> = {
  editorial: {
   label: "Chàm biên tập",
-  description: "Chàm rõ, nghiêm túc, hợp học và biên tập nội dung dài.",
+  description: "Chàm rõ, nghiêm túc, với nền trang phớt lạnh cho nội dung dài.",
  },
  jade: {
   label: "Ngọc bích",
-  description: "Xanh cân bằng, dễ nhận trạng thái mà không lấn nội dung.",
+  description: "Xanh cân bằng, nền dịu và trạng thái active dễ nhận biết.",
  },
  warm: {
   label: "Trung tính ấm",
-  description: "Cam nâu tiết chế, thân thiện với phiên đọc lâu.",
+  description: "Cam nâu tiết chế, nền ấm nhẹ và thân thiện với phiên đọc lâu.",
  },
  plum: {
   label: "Mận tím",
-  description: "Tím mận làm màu nhấn; canvas và surface vẫn trung tính.",
+  description: "Tím mận có nền phớt nhẹ, active rõ nhưng không nhuộm các surface nội dung.",
  },
  mono: {
   label: "Trắng và đen",
@@ -37,6 +37,6 @@ export const THEME_PALETTE_META: Record<ThemePalette, ThemePaletteMeta> = {
  },
  tea: {
   label: "Trà xanh",
-  description: "Xanh trà ít bão hòa, dịu mắt và phù hợp học tập kéo dài.",
+  description: "Xanh trà ít bão hòa, nền nhẹ và phù hợp học tập kéo dài.",
  },
 };
