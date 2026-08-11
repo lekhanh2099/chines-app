@@ -1,7 +1,4 @@
-import {
- HanziAwareText,
- StudyInstructionText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
