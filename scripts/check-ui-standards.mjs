@@ -24,6 +24,7 @@ const TYPOGRAPHY_COMPONENTS = new Set([
  "Label",
 ]);
 const VISUAL_PRIMITIVE_COMPONENTS = new Set([
+ "ActionCard",
  "Button",
  "Input",
  "Textarea",
@@ -33,18 +34,23 @@ const VISUAL_PRIMITIVE_COMPONENTS = new Set([
  "RadioGroup",
  "Card",
  "Badge",
+ "Chip",
  "SelectTrigger",
  "PageHeader",
  "SegmentedControl",
  "IconTile",
+ "DialogContent",
+ "DropdownMenuContent",
+ "DropdownMenuSubContent",
+ "BasePopoverPopup",
 ]);
 const DIRECT_PRIMITIVE_IMPORT_PATTERN = /^(?:@base-ui\/react(?:\/.*)?|radix-ui|@radix-ui\/.*)$/;
 const LEGACY_SELECT_IMPORT = "@/components/ui/select/index";
 const TYPOGRAPHY_CLASS_PATTERN =
  /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
 const PRIMITIVE_VISUAL_CLASS_PATTERN =
- /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|\b)|border(?:-|\b)|bg-|shadow(?:-|\b)|ring-|outline-|accent-|p[trblxy]?-[^\s"']+)/;
-const COMPONENT_ANATOMY_OVERRIDE_PATTERN = /\[&_[^\]]+\]/;
+ /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|\b)|border(?:-|\b)|bg-|shadow(?:-|\b)|ring-|outline-|accent-|p[trblxy]?-\S+)/;
+const COMPONENT_ANATOMY_OVERRIDE_PATTERN = /\[(?:&|data-|aria-)[^\]]*\][^\s]*:/;
 const ARBITRARY_Z_INDEX_PATTERN = /\bz-\[[^\]]+\]/;
 const FEATURE_VISUAL_ESCAPE_HATCH_PATTERN =
  /\b(?:bg|text|border|ring|outline|fill|stroke)-\[(?:#|rgb\(|hsl\(|oklch\(|color-mix\()|\b(?:bg|from|via|to)-\[[^\]]*(?:linear-gradient|radial-gradient|conic-gradient)\(/;
@@ -77,6 +83,21 @@ function classNameAttribute(node) {
  );
 }
 
+function hasDirectTextContent(node) {
+ return node.children.some((child) => {
+  if (ts.isJsxText(child)) return child.getText().trim().length > 0;
+  if (!ts.isJsxExpression(child) || !child.expression) return false;
+
+  return (
+   ts.isIdentifier(child.expression) ||
+   ts.isPropertyAccessExpression(child.expression) ||
+   ts.isElementAccessExpression(child.expression) ||
+   ts.isStringLiteral(child.expression) ||
+   ts.isNoSubstitutionTemplateLiteral(child.expression)
+  );
+ });
+}
+
 export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOUNDARY) }) {
  const failures = [];
  const sourceFile = ts.createSourceFile(
@@ -86,6 +107,41 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   true,
   file.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
  );
+
+ const inspectClassName = (className, tagName) => {
+  const classNameSource = className.getText(sourceFile);
+  if (ARBITRARY_Z_INDEX_PATTERN.test(classNameSource)) {
+   failures.push(`featureOwnedZIndex: ${location(sourceFile, className)}`);
+  }
+  if (FEATURE_VISUAL_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
+   failures.push(`featureVisualEscapeHatch: ${location(sourceFile, className)}`);
+  }
+  if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
+   failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);
+  }
+  if (INLINE_TEXT_TAGS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(`styledIntrinsicText: ${location(sourceFile, className)} uses <${tagName}>`);
+  }
+  if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
+   failures.push(
+    `typographyClassName: ${location(sourceFile, className)} uses typed style tokens`,
+   );
+  }
+  if (
+   VISUAL_PRIMITIVE_COMPONENTS.has(tagName) &&
+   PRIMITIVE_VISUAL_CLASS_PATTERN.test(classNameSource)
+  ) {
+   failures.push(
+    `primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`,
+   );
+  }
+  if (
+   VISUAL_PRIMITIVE_COMPONENTS.has(tagName) &&
+   COMPONENT_ANATOMY_OVERRIDE_PATTERN.test(classNameSource)
+  ) {
+   failures.push(`componentAnatomyOverride: ${location(sourceFile, className)}`);
+  }
+ };
 
  const visit = (node) => {
   if (ts.isImportDeclaration(node) && ts.isStringLiteral(node.moduleSpecifier)) {
@@ -107,6 +163,16 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    failures.push(`featureOwnedZIndex: ${location(sourceFile, node)}`);
   }
 
+  if (!isUiOwner && ts.isJsxElement(node) && ts.isIdentifier(node.openingElement.tagName)) {
+   const tagName = node.openingElement.tagName.text;
+   if (tagName === "div" && hasDirectTextContent(node)) {
+    const className = classNameAttribute(node.openingElement);
+    if (className && TYPOGRAPHY_CLASS_PATTERN.test(className.getText(sourceFile))) {
+     failures.push(`styledBlockText: ${location(sourceFile, className)} uses <div> as text`);
+    }
+   }
+  }
+
   if (
    !isUiOwner &&
    (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) &&
@@ -121,38 +187,7 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    }
 
    const className = classNameAttribute(node);
-   if (className) {
-    const classNameSource = className.getText(sourceFile);
-    if (ARBITRARY_Z_INDEX_PATTERN.test(classNameSource)) {
-     failures.push(`featureOwnedZIndex: ${location(sourceFile, className)}`);
-    }
-    if (FEATURE_VISUAL_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
-     failures.push(`featureVisualEscapeHatch: ${location(sourceFile, className)}`);
-    }
-    if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
-     failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);
-    }
-    if (INLINE_TEXT_TAGS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
-     failures.push(`styledIntrinsicText: ${location(sourceFile, className)} uses <${tagName}>`);
-    }
-    if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
-     failures.push(
-      `typographyClassName: ${location(sourceFile, className)} uses typed style tokens`,
-     );
-    }
-    if (VISUAL_PRIMITIVE_COMPONENTS.has(tagName)) {
-     if (PRIMITIVE_VISUAL_CLASS_PATTERN.test(classNameSource)) {
-      failures.push(
-       `primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`,
-      );
-     }
-     if (COMPONENT_ANATOMY_OVERRIDE_PATTERN.test(classNameSource)) {
-      failures.push(
-       `componentAnatomyOverride: ${location(sourceFile, className)} reaches into component anatomy`,
-      );
-     }
-    }
-   }
+   if (className) inspectClassName(className, tagName);
   }
 
   ts.forEachChild(node, visit);
