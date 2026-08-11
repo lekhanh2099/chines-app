@@ -9,20 +9,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Chip } from "@/components/ui/chip";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
-import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { HanziReaderFont } from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ HanziAwareText,
+ HanziText,
+ PinyinText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/chinese-utils";
@@ -37,11 +32,6 @@ import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import type { SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
-const drawerFontOptions: Array<{ value: HanziReaderFont; label: string }> = [
- { value: "system", label: "Hệ thống" },
- { value: "songti", label: "Songti" },
- { value: "pinyin", label: "Kai" },
-];
 
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
 type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
@@ -85,7 +75,6 @@ export function VocabDetailDrawer() {
  const smartData = detailQuery.data;
  const displayMeaning = getDisplayMeaning(mode, smartData);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
- const [hanziFont, setHanziFont] = useState<HanziReaderFont>("system");
 
  const handleSpeak = () => {
   const speechText = mode === "sentence" ? text : smartData?.entry.hanzi || text;
@@ -130,21 +119,19 @@ export function VocabDetailDrawer() {
     title={mode === "sentence" ? "Chi tiết câu" : "Chi tiết từ vựng"}
     onClose={closeDetailDrawer}
    />
-   <div className="grid gap-3 border-b border-border-default px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
+   <div className="border-b border-border-default px-4 py-3 sm:px-5">
     <div className="min-w-0">
      <div className="flex items-center gap-2">
-      <Typography
+      <HanziText
        as="p"
-       variant="display"
+       size="review"
        tone="default"
        weight="black"
        clamp="one"
        leading="tight"
-       lang="zh-CN"
-       style={{ fontFamily: getHanziFontFamily(hanziFont) }}
       >
        {smartData?.entry.hanzi || text}
-      </Typography>
+      </HanziText>
       <Button
        type="button"
        variant="ghost"
@@ -157,41 +144,11 @@ export function VocabDetailDrawer() {
       </Button>
      </div>
      {smartData?.entry.pinyin ? (
-      <Typography as="p" tone="accent" weight="semibold" className="mt-1">
+      <PinyinText as="p" tone="accent" weight="semibold" className="mt-1">
        {smartData.entry.pinyin}
-      </Typography>
+      </PinyinText>
      ) : null}
     </div>
-    <Label variant="label" className="grid gap-1">
-     <Typography variant="caption" tone="muted" weight="bold">
-      Kiểu chữ Hán
-     </Typography>
-     <Select
-      value={hanziFont}
-      onValueChange={(value) => {
-       if (value === "system" || value === "songti" || value === "pinyin") setHanziFont(value);
-      }}
-     >
-      <SelectTrigger size="sm" aria-label="Chọn kiểu chữ Hán">
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="end">
-       {drawerFontOptions.map((option) => (
-        <SelectItem key={option.value} value={option.value}>
-         <Typography
-          as="span"
-          lang="zh-CN"
-          variant="sectionTitle"
-          style={{ fontFamily: getHanziFontFamily(option.value) }}
-         >
-          文
-         </Typography>
-         {option.label}
-        </SelectItem>
-       ))}
-      </SelectContent>
-     </Select>
-    </Label>
    </div>
 
    <SheetBody>
@@ -235,7 +192,6 @@ export function VocabDetailDrawer() {
       onSave={handleSave}
       isSaving={detailQuery.isSaving}
       displayMeaning={displayMeaning}
-      hanziFont={hanziFont}
      />
     )}
    </SheetBody>
@@ -280,14 +236,12 @@ function WordDetailPanel({
  onSave,
  isSaving,
  displayMeaning,
- hanziFont,
 }: {
  smartData: NonNullable<ReturnType<typeof useSmartSelectionInsights>["data"]>;
  onDrillCharacter: (character: string) => void;
  onSave: (noteDraft: string) => void;
  isSaving: boolean;
  displayMeaning: string;
- hanziFont: HanziReaderFont;
 }) {
  const ai = smartData.entry.ai_analysis;
  const radicals = getNormalizedRadicals(ai);
@@ -357,14 +311,16 @@ function WordDetailPanel({
         variant={visualCharacter === character ? "accent" : "default"}
         onClick={() => setActiveCharacter(character)}
        >
-        {character}
+        <HanziText as="span" size="medium" leading="none">
+         {character}
+        </HanziText>
        </Chip>
       ))}
      </div>
     ) : null}
 
     <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
-     <CharacterWriterCard character={visualCharacter} hanziFont={hanziFont} />
+     <CharacterWriterCard character={visualCharacter} />
      <div className="grid gap-4 md:grid-cols-2">
       <section className="grid gap-2">
        <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
@@ -374,13 +330,13 @@ function WordDetailPanel({
         <div className="grid gap-2">
          {radicals.slice(0, 4).map((radical, index) => (
           <div key={`${radical.char || radical.meaning || "radical"}-${index}`} className="grid gap-0.5">
-           <Typography as="p" tone="default" weight="bold">
+           <HanziText as="p" size="medium" tone="default" weight="bold">
             {radical.char || "?"}
-           </Typography>
+           </HanziText>
            {radical.pinyin ? (
-            <Typography as="p" variant="caption" tone="accent" weight="semibold">
+            <PinyinText as="p" variant="caption" tone="accent" weight="semibold">
              {radical.pinyin}
-            </Typography>
+            </PinyinText>
            ) : null}
            {radical.meaning ? (
             <Typography as="p" variant="caption" tone="secondary">
@@ -414,9 +370,12 @@ function WordDetailPanel({
       <Typography as="p" variant="caption" tone="warning" weight="bold">
        AI gợi ý mẹo nhớ
       </Typography>
-      <Typography as="p" tone="default" leading="relaxed" className="mt-1">
-       {ai.mnemonic_story}
-      </Typography>
+      <HanziAwareText
+       text={ai.mnemonic_story}
+       tone="default"
+       leading="relaxed"
+       className="mt-1"
+      />
      </Card>
     ) : null}
    </DetailSection>
@@ -443,9 +402,11 @@ function WordDetailPanel({
           </Typography>
           {definition.pos ? <Badge variant="info">{definition.pos}</Badge> : null}
          </div>
-         <Typography as="p" tone="default" weight="semibold">
-          {definition.meaning || definition.text}
-         </Typography>
+         <HanziAwareText
+          text={definition.meaning || definition.text || ""}
+          tone="default"
+          weight="semibold"
+         />
          {definitionExamples.length > 0 ? (
           <div className="grid gap-2 md:grid-cols-2">
            {definitionExamples.map((example, exampleIndex) => (
@@ -537,13 +498,15 @@ function SentenceDetailPanel({
       {smartData.grammar_points.map((point, index) => (
        <section key={`${point.pattern || "grammar"}-${index}`} className="grid gap-1">
         {index > 0 ? <Separator /> : null}
-        <Typography as="h4" variant="cardTitle" tone="accent" weight="bold">
-         {point.pattern || `Điểm ${index + 1}`}
-        </Typography>
+        <HanziAwareText
+         as="h4"
+         text={point.pattern || `Điểm ${index + 1}`}
+         variant="cardTitle"
+         tone="accent"
+         weight="bold"
+        />
         {point.explanation ? (
-         <Typography as="p" tone="secondary" leading="relaxed">
-          {point.explanation}
-         </Typography>
+         <HanziAwareText text={point.explanation} tone="secondary" leading="relaxed" />
         ) : null}
        </section>
       ))}
@@ -563,7 +526,9 @@ function SentenceDetailPanel({
         size="icon-toolbar"
         aria-label={`Tra chữ ${char}`}
        >
-        {char}
+        <HanziText as="span" size="medium" leading="none">
+         {char}
+        </HanziText>
        </Button>
       ) : (
        <Typography as="span" key={`${char}-${index}`} tone="muted" className="px-1 py-2">
@@ -598,13 +563,13 @@ function SentenceDetailPanel({
 function ExampleCard({ example }: { example: { zh: string; pinyin: string; vi: string } }) {
  return (
   <Card variant="subtle" padding="sm" className="grid gap-1">
-   <Typography as="p" tone="default" weight="medium">
+   <HanziText as="p" size="inherit" tone="default" weight="medium">
     {example.zh}
-   </Typography>
+   </HanziText>
    {example.pinyin ? (
-    <Typography as="p" variant="caption" tone="accent" weight="semibold">
+    <PinyinText as="p" variant="caption" tone="accent" weight="semibold">
      {example.pinyin}
-    </Typography>
+    </PinyinText>
    ) : null}
    {example.vi ? (
     <Typography as="p" variant="caption" tone="secondary" emphasis="italic">
@@ -649,13 +614,13 @@ function RelationList({
        >
         <span className="min-w-0">
          <span className="flex flex-wrap items-center gap-2">
-          <Typography as="span" tone="default" weight="bold">
+          <HanziText as="span" size="medium" tone="default" weight="bold">
            {word}
-          </Typography>
+          </HanziText>
           {item.pinyin ? (
-           <Typography as="span" variant="caption" tone="accent" weight="semibold">
+           <PinyinText as="span" variant="caption" tone="accent" weight="semibold">
             {item.pinyin}
-           </Typography>
+           </PinyinText>
           ) : null}
          </span>
          <Typography as="span" variant="bodySmall" tone="secondary" leading="relaxed" className="mt-1 block">
@@ -675,13 +640,7 @@ function RelationList({
  );
 }
 
-function CharacterWriterCard({
- character,
- hanziFont,
-}: {
- character: string;
- hanziFont: HanziReaderFont;
-}) {
+function CharacterWriterCard({ character }: { character: string }) {
  const containerRef = useRef<HTMLDivElement>(null);
  const writerRef = useRef<HanziWriterInstance>(null);
 
@@ -701,7 +660,6 @@ function CharacterWriterCard({
    container.textContent = character;
    container.style.fontSize = "88px";
    container.style.fontWeight = "700";
-   container.style.fontFamily = getHanziFontFamily(hanziFont);
    container.style.color = getThemeColor("--foreground");
   };
 
@@ -776,11 +734,16 @@ function CharacterWriterCard({
    writerRef.current = null;
    container.innerHTML = "";
   };
- }, [character, hanziFont]);
+ }, [character]);
 
  return (
   <Card variant="subtle" padding="sm" className="w-fit">
-   <div ref={containerRef} style={{ width: 160, height: 160, position: "relative" }} />
+   <div
+    ref={containerRef}
+    className="font-hanzi"
+    lang="zh-CN"
+    style={{ width: 160, height: 160, position: "relative" }}
+   />
   </Card>
  );
 }
