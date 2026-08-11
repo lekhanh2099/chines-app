@@ -98,26 +98,24 @@ export default function NodeHoverPlugin() {
     hide();
    }}
   >
-   <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow">
-    <Typography
-     variant="overline"
-     tone="accent"
-     weight="semibold"
-     scale="micro"
-     transform="uppercase"
-     tracking="widest"
-     className="mb-0.5 block"
-    >
-     Ghi chú liên kết
-    </Typography>
-    <Typography tone="secondary" weight="medium" clamp="one" className="block max-w-52">
-     {tooltip.noteTitle}
-    </Typography>
-    <Typography variant="caption" tone="muted" scale="micro" className="mt-1 block">
-     Click để mở
-    </Typography>
-   </div>
-   <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-bg-elevated" />
+   <Typography
+    variant="overline"
+    tone="accent"
+    weight="semibold"
+    scale="micro"
+    transform="uppercase"
+    tracking="widest"
+    className="block"
+   >
+    Ghi chú liên kết
+   </Typography>
+   <Typography tone="secondary" weight="medium" clamp="one" className="block max-w-52">
+    {tooltip.noteTitle}
+   </Typography>
+   <Typography variant="caption" tone="muted" scale="micro" className="block">
+    Click để mở
+   </Typography>
+   <span className="absolute left-1/2 top-full size-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-r border-border-default bg-bg-elevated" />
   </FloatingLayer>,
   document.body,
  );
