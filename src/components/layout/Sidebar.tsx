@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -16,6 +17,7 @@ import {
  Languages,
  Layers3,
  Lightbulb,
+ Menu,
  NotebookPen,
  NotebookTabs,
  PlugZap,
@@ -71,18 +73,11 @@ const navigationGroups: NavigationGroup[] = [
  { id: "personal", name: "Cá nhân", icon: NotebookPen, items: personalItems },
 ];
 
-const mobileItems = [
- learningItems[0],
- learningItems[1],
- learningItems[2],
- practiceItems[0],
- personalItems[0],
-];
+const mobileItems = [learningItems[0], learningItems[1], practiceItems[0], personalItems[0]];
 
 const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
  "/": "Home",
  "/hanzihome": "Học",
- "/notebook": "Sổ tay",
  "/dictionary": "SRS",
  "/notes": "Ghi chú",
 };
@@ -113,10 +108,12 @@ function NavRow({
  item,
  active,
  collapsed,
+ onNavigate,
 }: {
  item: NavItem;
  active: boolean;
  collapsed: boolean;
+ onNavigate?: () => void;
 }) {
  const Icon = item.icon;
 
@@ -131,7 +128,7 @@ function NavRow({
    title={collapsed ? item.name : undefined}
    className={collapsed ? "w-10" : "w-full"}
   >
-   <Link href={item.href} prefetch={false}>
+   <Link href={item.href} prefetch={false} onClick={onNavigate}>
     <Icon data-icon="inline-start" />
     {!collapsed ? (
      <Typography as="span" clamp="one" className="min-w-0 flex-1">
@@ -286,38 +283,87 @@ export function MobileBottomNavigation() {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
+ const [moreOpen, setMoreOpen] = useState(false);
+ const primaryRouteActive = mobileItems.some((item) => isActive(pathname, searchParams, item.href));
+ const moreActive = !primaryRouteActive;
 
  if (isContentFullscreen) return null;
 
  return (
-  <nav
-   aria-label="Điều hướng nhanh"
-   className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden"
-  >
-   <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
-    {mobileItems.map((item) => {
-     const Icon = item.icon;
-     const active = isActive(pathname, searchParams, item.href);
+  <>
+   <nav
+    aria-label="Điều hướng nhanh"
+    className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden"
+   >
+    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
+     {mobileItems.map((item) => {
+      const Icon = item.icon;
+      const active = isActive(pathname, searchParams, item.href);
 
-     return (
-      <Link
-       key={item.name}
-       href={item.href}
-       prefetch={false}
-       aria-current={active ? "page" : undefined}
-       className={cn(
-        "flex min-w-0 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 transition-colors",
-        active ? "app-active-item border" : "text-text-muted hover:bg-bg-subtle",
-       )}
-      >
-       <Icon className="size-5 shrink-0" />
-       <Typography as="span" variant="caption" weight="black" clamp="one" className="max-w-full">
-        {mobileLabels[item.href]}
-       </Typography>
-      </Link>
-     );
-    })}
-   </div>
-  </nav>
+      return (
+       <Button
+        key={item.name}
+        variant={active ? "active" : "navigation"}
+        size="touch"
+        layout="grid"
+        asChild
+        aria-current={active ? "page" : undefined}
+        className="w-full min-w-0 gap-0.5"
+       >
+        <Link href={item.href} prefetch={false}>
+         <Icon />
+         <Typography as="span" variant="caption" weight="black" clamp="one" className="max-w-full">
+          {mobileLabels[item.href]}
+         </Typography>
+        </Link>
+       </Button>
+      );
+     })}
+
+     <Button
+      type="button"
+      variant={moreActive ? "active" : "navigation"}
+      size="touch"
+      layout="grid"
+      aria-expanded={moreOpen}
+      aria-haspopup="dialog"
+      aria-label="Mở toàn bộ điều hướng"
+      className="w-full min-w-0 gap-0.5"
+      onClick={() => setMoreOpen(true)}
+     >
+      <Menu />
+      <Typography as="span" variant="caption" weight="black">
+       Thêm
+      </Typography>
+     </Button>
+    </div>
+   </nav>
+
+   <Sheet open={moreOpen} onOpenChange={setMoreOpen} side="bottom">
+    <SheetHeader title="Điều hướng" onClose={() => setMoreOpen(false)} />
+    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
+     <nav aria-label="Toàn bộ khu vực">
+      <div className="grid gap-5 sm:grid-cols-2">
+       {navigationGroups.map((group) => (
+        <section key={group.id} className="grid content-start gap-1.5" aria-label={group.name}>
+         <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
+          {group.name}
+         </Typography>
+         {group.items.map((item) => (
+          <NavRow
+           key={item.name}
+           item={item}
+           active={isActive(pathname, searchParams, item.href)}
+           collapsed={false}
+           onNavigate={() => setMoreOpen(false)}
+          />
+         ))}
+        </section>
+       ))}
+      </div>
+     </nav>
+    </SheetBody>
+   </Sheet>
+  </>
  );
 }
