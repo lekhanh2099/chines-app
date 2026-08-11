@@ -447,41 +447,33 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
             Mở bài
            </Link>
           </Button>
-          <Button
-           asChild
-           variant="outline"
-           size="toolbar"
-           onClick={(event) => {
-            if (kind !== "vocab") {
-             event.preventDefault();
-             startReview([group.lessonId]);
-            }
-           }}
-          >
-           <Link
-            href={
-             kind === "vocab"
-              ? buildVocabReviewHrefFromLessons([
-                 {
-                  id: group.lessonId,
-                  lessonNumber: group.lessonNumber,
-                  courseId: group.courseId,
-                  title: group.lessonTitle,
-                  titleZh: group.lessonTitle,
-                 },
-                ])
-              : buildHanziHomeLessonHref({
-                 courseId: group.courseId,
-                 bookId: group.bookId,
-                 lessonNumber: group.lessonNumber,
-                 module: "review",
-                })
-            }
-            prefetch={false}
+          {kind === "vocab" ? (
+           <Button asChild variant="outline" size="toolbar">
+            <Link
+             href={buildVocabReviewHrefFromLessons([
+              {
+               id: group.lessonId,
+               lessonNumber: group.lessonNumber,
+               courseId: group.courseId,
+               title: group.lessonTitle,
+               titleZh: group.lessonTitle,
+              },
+             ])}
+             prefetch={false}
+            >
+             Ôn bài
+            </Link>
+           </Button>
+          ) : (
+           <Button
+            type="button"
+            variant="outline"
+            size="toolbar"
+            onClick={() => startReview([group.lessonId])}
            >
             Ôn bài
-           </Link>
-          </Button>
+           </Button>
+          )}
          </div>
         </div>
 
