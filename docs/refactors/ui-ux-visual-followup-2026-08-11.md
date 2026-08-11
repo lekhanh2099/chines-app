@@ -15,8 +15,9 @@ This follow-up closes issues found from direct visual review after the first sys
   - reviews completed today;
   - bookmarks;
   - tracked-item context.
+- Added recent learning activity from existing review history, resolved to vocabulary, grammar or radical labels when catalog data is available.
 - Kept the SRS entry contextual to the learning pulse instead of adding generic navigation tiles.
-- Moved the contextual memory tip into the attention rail and kept recent notes in the primary work column.
+- Moved the contextual memory tip into the attention rail and kept recent notes/review activity in the primary work column.
 - Updated the Home loading skeleton to match the new information architecture.
 
 ## Dropdown and submenu interaction
@@ -42,6 +43,13 @@ This follow-up closes issues found from direct visual review after the first sys
   - exercise answer visibility.
 - On wide screens the preview sits beside controls; on narrow screens it follows controls in document flow.
 
+## Additional consistency cleanup
+
+- `GlobalMemoryTipCard` now uses `IconTile` for decorative icon containers instead of learner Typography as a visual wrapper.
+- Pinned state uses `Badge` rather than a hand-built Typography pill.
+- Reminder formula/example content is separated with `Separator` instead of nesting another bordered card inside the reminder card.
+- Reminder action rows use toolbar density consistently.
+
 ## Design-system guidance
 
 Updated `.agents/skills/frontend-ui-system/SKILL.md` to v3.2 with explicit rules:
@@ -56,6 +64,7 @@ Updated `.agents/skills/frontend-ui-system/SKILL.md` to v3.2 with explicit rules
 
 No new mirrored state was introduced.
 
-- Home pulse is derived from `useLearningState()` state and recent-note Query data.
+- Home pulse and recent activity are derived from `useLearningState()` plus catalog data.
+- Recent notes remain Query-owned.
 - Reader settings continue to write only through `useLearningState().updateSettings`.
 - Dropdown submenus rely on Radix menu state rather than feature-owned menu-page state.
