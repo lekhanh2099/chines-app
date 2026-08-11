@@ -1,13 +1,12 @@
 "use client";
 
-import { Check, Monitor, Moon, Palette, Sun } from "lucide-react";
+import { Check, Monitor, Moon, Palette, Sun, type LucideIcon } from "lucide-react";
 
 import {
  THEME_PALETTE_META,
  ThemeModeSchema,
  ThemePaletteSchema,
  type ThemeMode,
- type ThemePalette,
 } from "@/components/layout/theme-contract";
 import { useTheme } from "@/components/layout/ThemeProvider";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,7 @@ const themeModeItems: Array<{
  key: ThemeMode;
  label: string;
  compactLabel: string;
- icon: typeof Monitor;
+ icon: LucideIcon;
 }> = [
  {
   key: ThemeModeSchema.enum.system,
@@ -105,7 +104,7 @@ export function AppearanceSettingsSection() {
         size="touch"
         align="between"
         aria-pressed={selected}
-        onClick={() => setPalette(option.value as ThemePalette)}
+        onClick={() => setPalette(option.value)}
         className="w-full"
        >
         <span className="flex min-w-0 items-center gap-2">
