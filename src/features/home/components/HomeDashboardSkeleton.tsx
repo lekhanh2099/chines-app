@@ -10,7 +10,7 @@ export function HomeDashboardSkeleton() {
      <div className="mt-3 h-5 w-96 max-w-full rounded-md bg-bg-subtle" />
     </div>
 
-    <div className="grid gap-5 xl:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.65fr)] xl:items-start">
+    <div className="grid gap-5 md:grid-cols-[minmax(0,1.3fr)_minmax(16rem,0.7fr)] md:items-start">
      <div className="grid gap-5">
       <section className="grid gap-3">
        <div className="animate-pulse">
