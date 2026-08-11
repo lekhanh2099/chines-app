@@ -13,8 +13,17 @@ export const HomeLessonTargetSchema = z.object({
  isRecent: z.boolean(),
 });
 
+export const HomeLearningPulseSchema = z.object({
+ trackedCount: z.number().int().nonnegative(),
+ reviewCount: z.number().int().nonnegative(),
+ knownCount: z.number().int().nonnegative(),
+ reviewedTodayCount: z.number().int().nonnegative(),
+ bookmarkedCount: z.number().int().nonnegative(),
+});
+
 export type HomeDashboardModel = {
  lesson: z.infer<z.ZodNullable<typeof HomeLessonTargetSchema>>;
+ learningPulse: z.infer<typeof HomeLearningPulseSchema>;
  recentNotes: NoteListItem[];
  isLoading: boolean;
 };
