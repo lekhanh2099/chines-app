@@ -120,8 +120,14 @@ export function HanziHomeHeaderContextBridge({
 
  useEffect(() => {
   headerToolbarStore.actions.setOwnedContent(HEADER_OWNER_ID, content);
-  return () => headerToolbarStore.actions.clearOwnedContent(HEADER_OWNER_ID);
  }, [content]);
+
+ useEffect(
+  () => () => {
+   headerToolbarStore.actions.clearOwnedContent(HEADER_OWNER_ID);
+  },
+  [],
+ );
 
  return null;
 }
