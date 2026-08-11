@@ -2,8 +2,10 @@
 
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Typography } from "@/components/ui/typography";
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziAwareText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import {
  cleanGrammarDisplayLine,
@@ -18,9 +20,13 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
-   <Typography as="h4" variant="cardTitle" tone="default" weight="black">
-    {cleanGrammarDisplayLine(section.title)}
-   </Typography>
+   <HanziAwareText
+    as="h4"
+    text={cleanGrammarDisplayLine(section.title)}
+    variant="cardTitle"
+    tone="default"
+    weight="black"
+   />
 
    {importantLines.length > 0 ? (
     <div className="grid gap-3">
@@ -41,9 +47,13 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
           {parts.label}
          </StudyInstructionText>
         ) : null}
-        <StudyInstructionText variant="code" tone="default" weight="black" leading="relaxed">
-         {cleanGrammarDisplayLine(parts.value)}
-        </StudyInstructionText>
+        <HanziAwareText
+         text={cleanGrammarDisplayLine(parts.value)}
+         variant="code"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+        />
        </section>
       );
      })}
