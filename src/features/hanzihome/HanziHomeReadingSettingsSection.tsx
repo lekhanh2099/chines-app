@@ -1,16 +1,24 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
+import { ChevronLeft, Eye, RefreshCcw, Settings2, Type } from "lucide-react";
+import { z } from "zod";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
+ DropdownMenu,
  DropdownMenuCheckboxItem,
+ DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuLabel,
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
  DropdownMenuShortcut,
+ DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
@@ -24,8 +32,6 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { ChevronLeft, Eye, RefreshCcw, Type } from "lucide-react";
-import { z } from "zod";
 
 export const HanziHomeReadingQuickSettingsSectionSchema = z.enum([
  "font",
@@ -107,6 +113,51 @@ export function HanziHomeReadingSettingsSection() {
     </div>
    )}
   </div>
+ );
+}
+
+export function HanziHomeReadingQuickSettingsButton() {
+ const [open, setOpen] = useState(false);
+ const [activeSection, setActiveSection] =
+  useState<z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>>(null);
+
+ return (
+  <DropdownMenu
+   open={open}
+   onOpenChange={(nextOpen) => {
+    setOpen(nextOpen);
+    if (!nextOpen) setActiveSection(null);
+   }}
+  >
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     variant="outline"
+     size="icon-toolbar"
+     aria-label="Thiết lập đọc"
+     title="Thiết lập đọc"
+    >
+     <Settings2 />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="end" width="lg">
+    <HanziHomeReadingQuickSettingsMenu
+     activeSection={activeSection}
+     onActiveSectionChange={setActiveSection}
+    />
+    {activeSection === null ? (
+     <>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem asChild>
+       <Link href="/settings?section=reading">
+        <Settings2 />
+        Mở cài đặt đọc đầy đủ
+       </Link>
+      </DropdownMenuItem>
+     </>
+    ) : null}
+   </DropdownMenuContent>
+  </DropdownMenu>
  );
 }
 
