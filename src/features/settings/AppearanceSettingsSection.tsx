@@ -47,11 +47,11 @@ export function AppearanceSettingsSection() {
     <IconTile tone="accent" size="md">
      <Palette />
     </IconTile>
-    <div className="min-w-0">
+    <div className="grid min-w-0 gap-1">
      <Typography as="h2" variant="sectionTitle" weight="bold">
       Giao diện
      </Typography>
-     <Typography as="p" variant="bodySmall" tone="muted" leading="standard" className="mt-1">
+     <Typography as="p" variant="bodySmall" tone="muted" leading="standard">
       Chế độ sáng tối quyết định nền tảng surface. Bảng màu thêm sắc rõ hơn cho canvas, sắc nhẹ cho
       Card và dùng cùng màu cho primary, focus, trạng thái chọn; popover, input và border vẫn giữ hệ
       trung tính để nội dung dễ đọc.
@@ -60,11 +60,11 @@ export function AppearanceSettingsSection() {
    </div>
 
    <div className="grid gap-3">
-    <div>
+    <div className="grid gap-1">
      <Typography as="h3" variant="label" weight="bold">
       Chế độ sáng tối
      </Typography>
-     <Typography as="p" variant="caption" tone="muted" className="mt-1">
+     <Typography as="p" variant="caption" tone="muted">
       “Theo thiết bị” tự đổi khi hệ điều hành đổi giao diện.
      </Typography>
     </div>
@@ -80,11 +80,11 @@ export function AppearanceSettingsSection() {
    <Separator />
 
    <div className="grid gap-3">
-    <div>
+    <div className="grid gap-1">
      <Typography as="h3" variant="label" weight="bold">
       Bảng màu giao diện
      </Typography>
-     <Typography as="p" variant="caption" tone="muted" className="mt-1">
+     <Typography as="p" variant="caption" tone="muted">
       Đổi sắc nền trang, Card và màu primary/selected/navigation active theo cùng một palette.
      </Typography>
     </div>
