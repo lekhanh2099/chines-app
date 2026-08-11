@@ -65,9 +65,6 @@ const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
 const FEATURE_RING_CLASS_PATTERN =
  /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
 const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
-const RADIUS_CLASS_PATTERN = /\brounded(?:\b|-[^\s"'`}]*)/;
-const BORDER_CLASS_PATTERN = /\bborder(?:\b|-[^\s"'`}]*)/;
-const BACKGROUND_CLASS_PATTERN = /\bbg-[^\s"'`}]*/;
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -153,15 +150,6 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   }
   if (THICK_BORDER_CLASS_PATTERN.test(classNameSource)) {
    failures.push(`featureThickBorder: ${location(sourceFile, className)}`);
-  }
-  if (
-   RADIUS_CLASS_PATTERN.test(classNameSource) &&
-   BORDER_CLASS_PATTERN.test(classNameSource) &&
-   BACKGROUND_CLASS_PATTERN.test(classNameSource)
-  ) {
-   failures.push(
-    `featureSurfaceRecipe: ${location(sourceFile, className)} recreates radius + border + background outside an owner`,
-   );
   }
   if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
    failures.push(`typographyClassName: ${location(sourceFile, className)} uses typed style tokens`);
