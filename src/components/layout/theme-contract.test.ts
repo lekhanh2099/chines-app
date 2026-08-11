@@ -12,7 +12,6 @@ const forbiddenSurfaceProperties = [
  "--card:",
  "--popover:",
  "--border:",
- "--bg-primary:",
  "--bg-card:",
  "--bg-subtle:",
  "--bg-elevated:",
@@ -39,17 +38,22 @@ describe("theme palette contract", () => {
   }
  });
 
- it("does not let accent palettes own neutral canvas and surface tokens", () => {
+ it("allows a restrained canvas tint without giving palettes ownership of neutral surfaces", () => {
+  expect(paletteCss).toContain("--canvas-background:");
+  expect(paletteCss).toContain("--bg-primary: var(--canvas-background)");
+
   for (const property of forbiddenSurfaceProperties) {
    expect(paletteCss).not.toContain(property);
   }
  });
 
- it("keeps palette ownership focused on interactive emphasis", () => {
+ it("keeps palette ownership focused on canvas and interactive emphasis", () => {
   expect(paletteCss).toContain("--primary:");
   expect(paletteCss).toContain("--accent:");
   expect(paletteCss).toContain("--ring:");
   expect(paletteCss).toContain("--sidebar-primary:");
   expect(paletteCss).toContain("--sidebar-accent:");
+  expect(paletteCss).toContain(".app-active-item");
+  expect(paletteCss).toContain("color: var(--primary)");
  });
 });
