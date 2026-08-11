@@ -1,7 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
-import { Eye, Type } from "lucide-react";
+import { Eye, Type, type LucideIcon } from "lucide-react";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -94,7 +94,7 @@ export function LessonReadingSettings({
    )}
   >
    <Card variant="section" padding="lg">
-    <SettingsGroup icon={<Type />} label="Kiểu chữ">
+    <SettingsGroup icon={Type} label="Kiểu chữ">
      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
       {fontOptions.map((option) => {
        const active = displayMode.hanziFont === option.value;
@@ -120,7 +120,7 @@ export function LessonReadingSettings({
 
     <Separator className="my-5" />
 
-    <SettingsGroup icon={<Type />} label="Cỡ chữ">
+    <SettingsGroup icon={Type} label="Cỡ chữ">
      <SegmentedControl<HanziReaderSize>
       value={displayMode.hanziSize}
       items={sizeOptions.map((option) => ({
@@ -135,7 +135,7 @@ export function LessonReadingSettings({
 
     <Separator className="my-5" />
 
-    <SettingsGroup icon={<Eye />} label="Cách mở nội dung">
+    <SettingsGroup icon={Eye} label="Cách mở nội dung">
      <SegmentedControl<LessonDisplayMode["revealMode"]>
       value={displayMode.revealMode}
       items={revealOptions.map((option) => ({
@@ -155,7 +155,7 @@ export function LessonReadingSettings({
 
     <Separator className="my-5" />
 
-    <SettingsGroup icon={<Eye />} label="Hiển thị">
+    <SettingsGroup icon={Eye} label="Hiển thị">
      <div className="divide-y divide-border-default">
       {visibilityOptions.map((option) => {
        const active = displayMode[option.key];
@@ -268,20 +268,18 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
 }
 
 function SettingsGroup({
- icon,
+ icon: Icon,
  label,
  children,
 }: {
- icon: ReactNode;
+ icon: LucideIcon;
  label: string;
  children: ReactNode;
 }) {
  return (
   <section className="grid gap-3">
    <div className="flex items-center gap-2">
-    <span aria-hidden="true" className="text-text-muted">
-     {icon}
-    </span>
+    <Icon aria-hidden="true" className="size-4 text-text-muted" />
     <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
      {label}
     </Typography>
