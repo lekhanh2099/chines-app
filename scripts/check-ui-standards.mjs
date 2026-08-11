@@ -48,6 +48,8 @@ const DIRECT_PRIMITIVE_IMPORT_PATTERN = /^(?:@base-ui\/react(?:\/.*)?|radix-ui|@
 const LEGACY_SELECT_IMPORT = "@/components/ui/select/index";
 const TYPOGRAPHY_CLASS_PATTERN =
  /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
+const BLOCK_TYPOGRAPHY_CLASS_PATTERN =
+ /(?:^|\s)(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\])|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|line-clamp-|truncate|whitespace-pre-|break-(?:words|all))/;
 const PRIMITIVE_VISUAL_CLASS_PATTERN =
  /\b(?:text-(?:xs|sm|base|lg|xl|[2-9]xl|\[[^\]]+\]|text-|accent|primary|success|warning|danger|destructive|info|purple|burnt)|font-(?:normal|medium|semibold|bold|black|mono|hanzi|pinyin)|leading-|tracking-|uppercase|italic|capitalize|rounded(?:-|\b)|border(?:-|\b)|bg-|shadow(?:-|\b)|ring-|outline-|accent-|p[trblxy]?-\S+)/;
 const COMPONENT_ANATOMY_OVERRIDE_PATTERN = /\[(?:&|data-|aria-)[^\]]*\][^\s]*:/;
@@ -167,7 +169,7 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    const tagName = node.openingElement.tagName.text;
    if (tagName === "div" && hasDirectTextContent(node)) {
     const className = classNameAttribute(node.openingElement);
-    if (className && TYPOGRAPHY_CLASS_PATTERN.test(className.getText(sourceFile))) {
+    if (className && BLOCK_TYPOGRAPHY_CLASS_PATTERN.test(className.getText(sourceFile))) {
      failures.push(`styledBlockText: ${location(sourceFile, className)} uses <div> as text`);
     }
    }
