@@ -1,8 +1,7 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import { useState, type ReactNode } from "react";
 import Link from "next/link";
+import { useState, type ReactNode } from "react";
 import {
  BookmarkPlus,
  CheckCircle,
@@ -15,16 +14,20 @@ import {
  Volume2,
  VolumeOff,
 } from "lucide-react";
+
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
+import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { IconButton } from "@/components/ui/icon-button";
+import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
-import type { DictionaryWordReadyViewModel, ExampleItem } from "@/features/dictionary/types";
+import { Typography } from "@/components/ui/typography";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
+import type { DictionaryWordReadyViewModel, ExampleItem } from "@/features/dictionary/types";
 import { useTTS } from "@/hooks/useTTS";
 import { getNormalizedRadicals } from "@/services/vocab.service";
 
@@ -34,8 +37,7 @@ type DictionarySectionProps = {
 
 function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
  const { vocabData } = useVocabDetail(viewModel.selectedCharacter);
- const ai = vocabData?.ai_analysis;
- const radicals = getNormalizedRadicals(ai);
+ const radicals = getNormalizedRadicals(vocabData?.ai_analysis);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSpeak = () => {
@@ -48,28 +50,21 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
 
  return (
   <SectionWrapper>
-   <div className="flex flex-col gap-4">
-    <div className="min-w-0 flex-1">
+   <div className="grid gap-4">
+    <div className="min-w-0">
      <div className="flex flex-wrap items-center gap-3">
-      <Typography
-       as="h1"
-       variant="pageTitle"
-       tone="default"
-       weight="black"
-       scale="hero"
-       tracking="tight"
-      >
+      <LearnerHanziText as="h2" size="display" weight="black" leading="tight">
        {viewModel.vocabData.hanzi}
-      </Typography>
+      </LearnerHanziText>
       <IconButton
        onClick={handleSpeak}
        disabled={isTTSLoading}
        title={isSpeaking ? "Dừng phát âm" : "Đọc từ"}
       >
        {isTTSLoading ? (
-        <Loader2 className="h-4 w-4 animate-spin " />
+        <Loader2 className="animate-spin" />
        ) : isSpeaking ? (
-        <VolumeOff className=" " />
+        <VolumeOff />
        ) : (
         <Volume2 />
        )}
@@ -80,10 +75,9 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
       {viewModel.ai?.word_type && <Badge size="md">{viewModel.ai.word_type}</Badge>}
      </div>
 
-     <div className="flex flex-wrap items-center gap-2.5">
-      [
+     <div className="mt-1 flex flex-wrap items-center gap-2.5">
       {viewModel.vocabData.pinyin && (
-       <Typography as="p" variant="sectionTitle" weight="semibold">
+       <Typography as="p" variant="sectionTitle" tone="accent" weight="semibold">
         {viewModel.vocabData.pinyin}
        </Typography>
       )}
@@ -97,39 +91,40 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {viewModel.ai.tocfl_level}
        </Badge>
       )}
-      ]
-     </div>
-     <div>
-      {radicals.length > 0 && (
-       <div className="flex flex-col gap-2">
-        {radicals.map((radical, index) => (
-         <div key={`${radical.char || radical.meaning || "radical"}-${index}`}>
-          <div className="flex items-start gap-1">
-           <Typography variant="pageTitle" tone="default" weight="black" className="shrink-0">
-            {radical.char}
-           </Typography>
-           <div className="min-w-0 flex gap-1">
-            {radical.pinyin && (
-             <Typography as="p" variant="caption" weight="semibold">
-              {radical.pinyin}
-             </Typography>
-            )}
-            {radical.meaning && (
-             <Typography as="p" tone="default" leading="relaxed">
-              {radical.meaning}
-             </Typography>
-            )}
-           </div>
-          </div>
-         </div>
-        ))}
-       </div>
-      )}
      </div>
 
+     {radicals.length > 0 && (
+      <div className="mt-3 grid gap-2">
+       {radicals.map((radical, index) => (
+        <div
+         key={`${radical.char || radical.meaning || "radical"}-${index}`}
+         className="flex items-start gap-2"
+        >
+         <div className="shrink-0">
+          <LearnerHanziText size="title" weight="black">
+           {radical.char}
+          </LearnerHanziText>
+         </div>
+         <div className="min-w-0">
+          {radical.pinyin && (
+           <Typography as="p" variant="caption" weight="semibold">
+            {radical.pinyin}
+           </Typography>
+          )}
+          {radical.meaning && (
+           <Typography as="p" tone="secondary" leading="relaxed">
+            {radical.meaning}
+           </Typography>
+          )}
+         </div>
+        </div>
+       ))}
+      </div>
+     )}
+
      {viewModel.meaningSummary && (
-      <Typography as="p" tone="secondary" leading="relaxed" className="max-w-3xl">
-       [{viewModel.meaningSummary}]
+      <Typography as="p" tone="secondary" leading="relaxed" className="mt-3 max-w-3xl">
+       {viewModel.meaningSummary}
       </Typography>
      )}
      {viewModel.ai?.source_metadata && (
@@ -148,19 +143,21 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      )}
     </div>
 
-    <Button
-     onClick={viewModel.handleSave}
-     disabled={viewModel.isSaving || viewModel.isSaved === true}
-    >
-     {viewModel.isSaving ? (
-      <Loader2 className="h-4 w-4 animate-spin" />
-     ) : viewModel.isSaved === true ? (
-      <CheckCircle className="h-4 w-4" />
-     ) : (
-      <BookmarkPlus className="h-4 w-4" />
-     )}
-     {viewModel.isSaved === true ? "Đã lưu" : "Lưu vào SRS"}
-    </Button>
+    <div>
+     <Button
+      onClick={viewModel.handleSave}
+      disabled={viewModel.isSaving || viewModel.isSaved === true}
+     >
+      {viewModel.isSaving ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : viewModel.isSaved === true ? (
+       <CheckCircle data-icon="inline-start" />
+      ) : (
+       <BookmarkPlus data-icon="inline-start" />
+      )}
+      {viewModel.isSaved === true ? "Đã lưu" : "Lưu vào SRS"}
+     </Button>
+    </div>
    </div>
   </SectionWrapper>
  );
@@ -182,7 +179,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     description="Giữ đúng 7 phần để học sâu, ôn ví dụ và tránh nhầm."
    />
 
-   <div className="grid gap-4">
+   <div className="grid gap-3">
     <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
      <div className="space-y-2">
       {hanViet && (
@@ -218,20 +215,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
     </DocSection>
 
     <DocSection index={4} title="Cụm từ cố định">
-     {ai.collocations?.length ? (
-      <div className="grid gap-2 md:grid-cols-2">
-       {ai.collocations.map((item, index) => (
-        <div
-         key={`${item}-${index}`}
-         className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 font-semibold text-text-secondary"
-        >
-         {item}
-        </div>
-       ))}
-      </div>
-     ) : (
-      <EmptyDocText />
-     )}
+     {ai.collocations?.length ? <CompactTextGrid items={ai.collocations} /> : <EmptyDocText />}
     </DocSection>
 
     <DocSection index={5} title="Ví dụ">
@@ -262,24 +246,16 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
  );
 }
 
-function DocSection({
- index,
- title,
- children,
-}: {
- index: number;
- title: string;
- children: ReactNode;
-}) {
+function DocSection({ index, title, children }: { index: number; title: string; children: ReactNode }) {
  return (
-  <Card variant="subtle" padding="sm" className="rounded-2xl">
+  <Card variant="subtle" padding="md">
    <div className="flex flex-col gap-3">
     <div className="flex flex-wrap items-center gap-2">
      <Badge variant="accent" size="sm">
       {index}
      </Badge>
      <Typography
-      as="p"
+      as="h3"
       variant="overline"
       tone="default"
       weight="black"
@@ -323,12 +299,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
      {viewModel.meaningItems.length > 0 ? (
       <div className="flex flex-col gap-3">
        {viewModel.meaningItems.map((meaning, index) => (
-        <Card
-         key={`${meaning.meaning}-${index}`}
-         variant="subtle"
-         padding="sm"
-         className="rounded-2xl"
-        >
+        <Card key={`${meaning.meaning}-${index}`} variant="subtle" padding="md">
          <div className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center gap-2">
            <Badge variant="accent" size="sm">
@@ -356,7 +327,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
        ))}
       </div>
      ) : (
-      <Card variant="subtle" padding="sm">
+      <Card variant="subtle" padding="md">
        <Typography as="p" tone="muted">
         Chưa có dữ liệu nghĩa để hiển thị.
        </Typography>
@@ -421,7 +392,7 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
      />
     </div>
    ) : (
-    <Card variant="subtle" padding="sm">
+    <Card variant="subtle" padding="md">
      <Typography as="p" tone="muted">
       Chưa có dữ liệu từ liên quan.
      </Typography>
@@ -432,9 +403,7 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
 }
 
 function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps) {
- if (!viewModel.hasLearningInsights) {
-  return null;
- }
+ if (!viewModel.hasLearningInsights) return null;
 
  return (
   <SectionWrapper>
@@ -443,99 +412,69 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
     description="Tập trung vào mẹo nhớ, lỗi dễ nhầm và logic sử dụng."
    />
 
-   <div className="">
+   <div className="grid gap-3">
     {viewModel.ai?.decomposition && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Chiết tự" trailing={<Layers3 className="h-4 w-4 " />} />
-       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-        {viewModel.ai.decomposition}
-       </Typography>
-      </div>
-     </Card>
+     <InsightSection title="Chiết tự" icon={<Layers3 />}>
+      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
+       {viewModel.ai.decomposition}
+      </Typography>
+     </InsightSection>
     )}
 
     {viewModel.ai?.comparisons && viewModel.ai.comparisons.length > 0 && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="So sánh từ gần nghĩa" trailing={<ListChecks className="h-4 w-4 " />} />
-       <BulletList items={viewModel.ai.comparisons} />
-      </div>
-     </Card>
+     <InsightSection title="So sánh từ gần nghĩa" icon={<ListChecks />}>
+      <BulletList items={viewModel.ai.comparisons} />
+     </InsightSection>
     )}
 
     {viewModel.ai?.collocations && viewModel.ai.collocations.length > 0 && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Cụm từ cố định" />
-       <div className="grid gap-2 md:grid-cols-2">
-        {viewModel.ai.collocations.map((item, index) => (
-         <div
-          key={`${item}-${index}`}
-          className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 font-semibold text-text-secondary"
-         >
-          {item}
-         </div>
-        ))}
-       </div>
-      </div>
-     </Card>
+     <InsightSection title="Cụm từ cố định">
+      <CompactTextGrid items={viewModel.ai.collocations} />
+     </InsightSection>
     )}
 
     {viewModel.ai?.cultural_note && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Trung Việt" trailing={<Globe2 className="h-4 w-4 " />} />
-       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-        {viewModel.ai.cultural_note}
-       </Typography>
-      </div>
-     </Card>
+     <InsightSection title="Trung Việt" icon={<Globe2 />}>
+      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
+       {viewModel.ai.cultural_note}
+      </Typography>
+     </InsightSection>
     )}
 
     {viewModel.ai?.usage_note && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Lưu ý" />
-       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-        {viewModel.ai.usage_note}
-       </Typography>
-      </div>
-     </Card>
+     <InsightSection title="Lưu ý">
+      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
+       {viewModel.ai.usage_note}
+      </Typography>
+     </InsightSection>
     )}
 
     {viewModel.ai?.notes && (
-     <Card variant="subtle" padding="sm" className="rounded-2xl">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Ghi chú dùng từ" />
-       <Typography as="p" tone="secondary" leading="relaxed">
-        {viewModel.ai.notes}
-       </Typography>
-      </div>
-     </Card>
+     <InsightSection title="Ghi chú dùng từ">
+      <Typography as="p" tone="secondary" leading="relaxed">
+       {viewModel.ai.notes}
+      </Typography>
+     </InsightSection>
+    )}
+
+    {viewModel.ai?.usage_logic && viewModel.ai.usage_logic.length > 0 && (
+     <InsightSection title="Tư duy cốt lõi">
+      <BulletList items={viewModel.ai.usage_logic} />
+     </InsightSection>
     )}
    </div>
-
-   {viewModel.ai?.usage_logic && viewModel.ai.usage_logic.length > 0 && (
-    <Card variant="subtle" padding="sm">
-     <div className="flex flex-col gap-2">
-      <SectionHeader title="Tư duy cốt lõi" />
-      {viewModel.ai.usage_logic.map((item, index) => (
-       <Card key={`${item}-${index}`} variant="default" padding="sm" className="rounded-2xl">
-        <div className="flex items-start gap-2">
-         <Typography variant="caption" className="mt-0.5">
-          ●
-         </Typography>
-         <Typography as="span" tone="secondary" leading="relaxed">
-          {item}
-         </Typography>
-        </div>
-       </Card>
-      ))}
-     </div>
-    </Card>
-   )}
   </SectionWrapper>
+ );
+}
+
+function InsightSection({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
+ return (
+  <Card variant="subtle" padding="md">
+   <div className="grid gap-2">
+    <SectionHeader title={title} trailing={icon} />
+    {children}
+   </div>
+  </Card>
  );
 }
 
@@ -550,7 +489,7 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
     trailing={
      <Button
       variant="outline"
-      size="sm"
+      size="toolbar"
       onClick={() => viewModel.handleSavePersonalNote(note)}
       disabled={viewModel.isSaving}
      >
@@ -577,11 +516,11 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
 function ExampleRow({ example }: { example: ExampleItem }) {
  return (
   <div className="flex flex-col gap-1">
-   <Typography as="p" tone="default" weight="medium">
+   <LearnerHanziText as="p" weight="medium">
     {example.zh}
-   </Typography>
+   </LearnerHanziText>
    {example.pinyin && (
-    <Typography as="p" variant="caption" weight="semibold">
+    <Typography as="p" variant="caption" tone="accent" weight="semibold">
      {example.pinyin}
     </Typography>
    )}
@@ -601,7 +540,7 @@ function ExampleRow({ example }: { example: ExampleItem }) {
 
 function ExampleCard({ example }: { example: ExampleItem }) {
  return (
-  <Card variant="subtle" padding="sm" className="rounded-2xl">
+  <Card variant="subtle" padding="md">
    <ExampleRow example={example} />
   </Card>
  );
@@ -609,14 +548,28 @@ function ExampleCard({ example }: { example: ExampleItem }) {
 
 function BulletList({ items }: { items: string[] }) {
  return (
-  <div className="flex flex-col gap-2">
+  <div className="grid gap-2">
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
-     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+     <Typography as="span" tone="accent" aria-hidden="true">
+      •
+     </Typography>
      <Typography as="span" tone="secondary" leading="relaxed">
       {item}
      </Typography>
     </div>
+   ))}
+  </div>
+ );
+}
+
+function CompactTextGrid({ items }: { items: string[] }) {
+ return (
+  <div className="grid gap-2 md:grid-cols-2">
+   {items.map((item, index) => (
+    <Typography key={`${item}-${index}`} as="p" tone="secondary" weight="semibold">
+     {item}
+    </Typography>
    ))}
   </div>
  );
@@ -642,25 +595,24 @@ function WordRelationGrid({
     <div className="grid gap-3 md:grid-cols-2">
      {items.map((item, index) => {
       const word = item.word?.trim();
-
-      if (!word) {
-       return null;
-      }
+      if (!word) return null;
 
       return (
-       <Link key={`${title}-${word}-${index}`} href={`/dictionary/${encodeURIComponent(word)}`}>
-        <Card
-         variant="subtle"
-         padding="sm"
-         className="h-full rounded-2xl transition-colors hover:border-accent/30 hover:bg-bg-card-hover"
-        >
+       <Card
+        key={`${title}-${word}-${index}`}
+        asChild
+        variant="interactive"
+        padding="md"
+        className="h-full"
+       >
+        <Link href={`/dictionary/${encodeURIComponent(word)}`}>
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-           <Typography as="p" tone="default" weight="bold">
+           <LearnerHanziText as="p" weight="bold">
             {word}
-           </Typography>
+           </LearnerHanziText>
            {item.pinyin && (
-            <Typography as="p" variant="caption" weight="semibold">
+            <Typography as="span" variant="caption" tone="accent" weight="semibold">
              {item.pinyin}
             </Typography>
            )}
@@ -669,17 +621,15 @@ function WordRelationGrid({
            {item.meaning || "Chưa có nghĩa."}
           </Typography>
          </div>
-        </Card>
-       </Link>
+        </Link>
+       </Card>
       );
      })}
     </div>
    ) : (
-    <Card variant="subtle" padding="sm">
-     <Typography as="p" tone="muted">
-      {emptyText}
-     </Typography>
-    </Card>
+    <Typography as="p" tone="muted">
+     {emptyText}
+    </Typography>
    )}
   </div>
  );
@@ -687,17 +637,19 @@ function WordRelationGrid({
 
 function AiLoadingState() {
  return (
-  <Card variant="subtle" padding="sm">
-   <div className="flex flex-col gap-3">
-    <div className="flex items-center gap-2 text-xs font-bold ">
-     <Sparkles className="h-4 w-4 animate-pulse" />
-     Đang phân tích dữ liệu chuyên sâu...
+  <Card variant="subtle" padding="md">
+   <div className="grid gap-3">
+    <div className="flex items-center gap-2">
+     <Sparkles className="size-4 animate-pulse text-accent-text" />
+     <Typography as="p" variant="bodySmall" weight="bold">
+      Đang phân tích dữ liệu chuyên sâu...
+     </Typography>
     </div>
-    <div className="space-y-2.5">
-     <div className="h-4 w-4/5 animate-pulse rounded-2xl bg-bg-subtle" />
-     <div className="h-3 w-full animate-pulse rounded-2xl bg-bg-subtle" />
-     <div className="h-3 w-3/4 animate-pulse rounded-2xl bg-bg-subtle" />
-     <div className="h-3 w-5/6 animate-pulse rounded-2xl bg-bg-subtle" />
+    <Separator />
+    <div className="space-y-2.5" aria-hidden="true">
+     <div className="h-4 w-4/5 animate-pulse rounded-lg bg-bg-card" />
+     <div className="h-3 w-full animate-pulse rounded-lg bg-bg-card" />
+     <div className="h-3 w-3/4 animate-pulse rounded-lg bg-bg-card" />
     </div>
    </div>
   </Card>
@@ -706,7 +658,7 @@ function AiLoadingState() {
 
 function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; loading: boolean }) {
  return (
-  <Card variant="subtle" padding="sm">
+  <Card variant="subtle" padding="md">
    <div className="flex flex-col items-center gap-4 text-center">
     <div className="space-y-2">
      <Typography as="p" tone="default" weight="semibold">
@@ -717,7 +669,7 @@ function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; load
      </Typography>
     </div>
 
-    <Button variant="outline" size="sm" onClick={onRequest} disabled={loading}>
+    <Button variant="outline" size="toolbar" onClick={onRequest} disabled={loading}>
      {loading ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
      Phân tích bằng AI
     </Button>
