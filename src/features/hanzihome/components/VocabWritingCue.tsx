@@ -1,6 +1,7 @@
 "use client";
 
 import {
+ HanziText,
  PinyinText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -107,10 +108,12 @@ export function VocabWritingCue({
          type="button"
          onClick={() => selectCharacter(index)}
          variant={active ? "active" : "outline"}
-         size={compact ? "xs" : "default"}
-         lang="zh-CN"
+         size={compact ? "compact" : "touch"}
+         aria-label={`Xem nét viết chữ ${char}`}
         >
-         {char}
+         <HanziText as="span" size="medium" leading="none">
+          {char}
+         </HanziText>
         </Button>
        );
       })}
@@ -145,7 +148,7 @@ export function VocabWritingCue({
     </div>
 
     {!compact && (
-     <div className="grid content-start gap-2  leading-relaxed text-text-secondary">
+     <div className="grid content-start gap-2 leading-relaxed text-text-secondary">
       <StudyInstructionText>
        <StudyInstructionText as="span" tone="default" weight="bold">
         Bính âm:
