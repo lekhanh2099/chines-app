@@ -33,6 +33,7 @@ jobs:
       - run: npm install --global npm@11.6.1
       - run: npm ci
       - run: npm run format
+      - run: git checkout -- .github/workflows/format-refactor-temp.yml
 
       - name: Commit formatting
         env:
