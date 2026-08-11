@@ -6,7 +6,9 @@ import { useId } from "react";
 import { Play, Square, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import { IconTile } from "@/components/ui/icon-tile";
 import {
  Select,
  SelectContent,
@@ -15,6 +17,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 
 import type { useTTS } from "@/hooks/useTTS";
 
@@ -51,16 +54,12 @@ export function MandarinTtsControls({
   onHideScriptBeforeCheckChange !== undefined && onShowTranslationAfterCheckChange !== undefined;
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
+  <Card variant="subtle" padding="md" className="grid gap-3">
    <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
     <div className="flex min-w-0 items-start gap-2">
-     <StudyInstructionText
-      as="span"
-      tone="accent"
-      className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-subtle"
-     >
-      <Volume2 className="size-4" />
-     </StudyInstructionText>
+     <IconTile tone="accent" size="sm">
+      <Volume2 />
+     </IconTile>
      <div className="min-w-0">
       <StudyInstructionText variant="label" tone="default" weight="black">
        Thiết lập nghe
@@ -76,7 +75,7 @@ export function MandarinTtsControls({
       <SelectTrigger
        size="sm"
        aria-label="Chọn giọng Mandarin"
-       className="min-w-52 max-w-full bg-bg-card sm:min-w-64"
+       className="min-w-52 max-w-full sm:min-w-64"
       >
        <SelectValue placeholder="Chọn giọng Mandarin zh-CN" />
       </SelectTrigger>
@@ -98,7 +97,7 @@ export function MandarinTtsControls({
        if (option) tts.setRate(option.rate);
       }}
      >
-      <SelectTrigger size="sm" aria-label="Chọn tốc độ đọc" className="w-24 bg-bg-card">
+      <SelectTrigger size="sm" aria-label="Chọn tốc độ đọc" className="w-24">
        <SelectValue />
       </SelectTrigger>
       <SelectContent align="end">
@@ -115,7 +114,7 @@ export function MandarinTtsControls({
      <Button
       type="button"
       variant="surfaceCard"
-      size="sm"
+      size="toolbar"
       disabled={!text.trim() || !tts.selectedVoice}
       onClick={() => tts.speakSequence(text.split("\n"))}
      >
@@ -125,7 +124,7 @@ export function MandarinTtsControls({
      <Button
       type="button"
       variant="ghost"
-      size="sm"
+      size="toolbar"
       disabled={!tts.isSpeaking && !tts.isLoading}
       onClick={tts.stop}
      >
@@ -136,37 +135,40 @@ export function MandarinTtsControls({
    </div>
 
    {showPracticePreferences ? (
-    <div className="flex flex-wrap gap-2 border-t border-border-default pt-2.5">
-     <Label
-      htmlFor={hideScriptId}
-      variant="caption"
-      tone="secondary"
-      weight="bold"
-      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3"
-     >
-      <Checkbox
-       id={hideScriptId}
-       checked={hideScriptBeforeCheck}
-       onCheckedChange={(checked) => onHideScriptBeforeCheckChange(checked === true)}
-      />
-      Ẩn script trước khi làm
-     </Label>
-     <Label
-      htmlFor={showTranslationId}
-      variant="caption"
-      tone="secondary"
-      weight="bold"
-      className="flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-card px-3"
-     >
-      <Checkbox
-       id={showTranslationId}
-       checked={showTranslationAfterCheck}
-       onCheckedChange={(checked) => onShowTranslationAfterCheckChange(checked === true)}
-      />
-      Hiện bản dịch sau khi kiểm tra
-     </Label>
-    </div>
+    <>
+     <Separator />
+     <div className="flex flex-wrap gap-x-5 gap-y-2">
+      <Label
+       htmlFor={hideScriptId}
+       variant="caption"
+       tone="secondary"
+       weight="bold"
+       className="flex min-h-9 items-center gap-2"
+      >
+       <Checkbox
+        id={hideScriptId}
+        checked={hideScriptBeforeCheck}
+        onCheckedChange={(checked) => onHideScriptBeforeCheckChange(checked === true)}
+       />
+       Ẩn script trước khi làm
+      </Label>
+      <Label
+       htmlFor={showTranslationId}
+       variant="caption"
+       tone="secondary"
+       weight="bold"
+       className="flex min-h-9 items-center gap-2"
+      >
+       <Checkbox
+        id={showTranslationId}
+        checked={showTranslationAfterCheck}
+        onCheckedChange={(checked) => onShowTranslationAfterCheckChange(checked === true)}
+       />
+       Hiện bản dịch sau khi kiểm tra
+      </Label>
+     </div>
+    </>
    ) : null}
-  </div>
+  </Card>
  );
 }
