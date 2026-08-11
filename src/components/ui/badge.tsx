@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const badgeVariants = cva(
- "inline-flex items-center gap-1.5 rounded-full font-bold uppercase tracking-[0.18em] [&_svg]:size-3.5 [&_svg]:shrink-0",
+ "inline-flex items-center gap-1.5 rounded-full font-bold [&_svg]:size-3.5 [&_svg]:shrink-0",
  {
   variants: {
    variant: {
@@ -20,19 +20,28 @@ const badgeVariants = cva(
     md: "px-2.5 py-1 text-[0.625rem]",
     lg: "px-3 py-1.5 text-xs",
    },
+   casing: {
+    label: "uppercase tracking-[0.18em]",
+    natural: "normal-case tracking-normal",
+   },
   },
   defaultVariants: {
    variant: "default",
    size: "md",
+   casing: "label",
   },
  },
 );
 
 type BadgeProps = React.ComponentProps<"span"> & VariantProps<typeof badgeVariants>;
 
-function Badge({ className, variant, size, children, ...rest }: BadgeProps) {
+function Badge({ className, variant, size, casing, children, ...rest }: BadgeProps) {
  return (
-  <span data-slot="badge" className={cn(badgeVariants({ variant, size }), className)} {...rest}>
+  <span
+   data-slot="badge"
+   className={cn(badgeVariants({ variant, size, casing }), className)}
+   {...rest}
+  >
    {children}
   </span>
  );
