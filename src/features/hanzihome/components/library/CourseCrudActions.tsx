@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { ArrowDown, ArrowUp, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -16,15 +15,14 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
- DialogTrigger,
 } from "@/components/ui/dialog";
+import { LibraryCrudActionsMenu } from "@/features/hanzihome/components/library/LibraryCrudActionsMenu";
 import {
  deleteCanonicalContent,
  reorderCanonicalContent,
  type ReorderDirection,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
-import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeCatalogCourse } from "@/features/hanzihome/types";
 
@@ -111,13 +109,20 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
  }
 
  return (
-  <div className="flex items-center gap-1">
+  <>
+   <LibraryCrudActionsMenu
+    ariaLabel={`Tác vụ cho ${course.title}`}
+    itemType="khóa học"
+    itemLabel={course.title}
+    disabled={!course.updatedAt}
+    canMoveUp={course.order !== 1}
+    onEdit={() => setOpen(true)}
+    onMoveUp={() => void reorderCourse(-1)}
+    onMoveDown={() => void reorderCourse(1)}
+    onDelete={deleteCourse}
+   />
+
    <Dialog open={open} onOpenChange={setOpen}>
-    <DialogTrigger asChild>
-     <Button type="button" size="icon" variant="ghost" aria-label={`Sửa ${course.title}`}>
-      <Pencil className="h-4 w-4" />
-     </Button>
-    </DialogTrigger>
     <DialogContent>
      <DialogHeader>
       <DialogTitle>Sửa khóa học</DialogTitle>
@@ -157,42 +162,6 @@ export function CourseCrudActions({ course }: { course: HanziHomeCatalogCourse }
      </form>
     </DialogContent>
    </Dialog>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Đưa ${course.title} lên`}
-    disabled={!course.updatedAt || course.order === 1}
-    onClick={() => void reorderCourse(-1)}
-   >
-    <ArrowUp className="h-4 w-4" />
-   </Button>
-   <Button
-    type="button"
-    size="icon"
-    variant="ghost"
-    aria-label={`Đưa ${course.title} xuống`}
-    disabled={!course.updatedAt}
-    onClick={() => void reorderCourse(1)}
-   >
-    <ArrowDown className="h-4 w-4" />
-   </Button>
-   <SoftDeleteConfirmDialog
-    itemType="khóa học"
-    itemLabel={course.title}
-    onConfirm={deleteCourse}
-    trigger={
-     <Button
-      type="button"
-      size="icon"
-      variant="ghost"
-      aria-label={`Xóa ${course.title}`}
-      disabled={!course.updatedAt}
-     >
-      <Trash2 className="h-4 w-4 text-danger-text" />
-     </Button>
-    }
-   />
-  </div>
+  </>
  );
 }
