@@ -28,7 +28,7 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
      <Button
       type="button"
       variant="outline"
-      size="sm"
+      size="toolbar"
       disabled={!radical.editMeta}
       onClick={onEdit}
      >
