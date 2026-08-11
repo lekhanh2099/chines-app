@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemoryTipButton";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
-import { PopularFontPreview } from "./PopularFontPreview";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import {
  HanziText,
@@ -38,7 +37,7 @@ export function VocabDetailHeader({
        tracking="normal"
        className="min-w-0"
       >
-       {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
+       {word.hanzi}
       </HanziText>
       <MandarinSpeakButton text={word.hanzi} />
      </div>
