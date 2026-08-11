@@ -39,7 +39,6 @@ describe("UI standards guard", () => {
 
   expect(failures).toEqual([
    expect.stringContaining("primitiveClassName"),
-   expect.stringContaining("featureSurfaceRecipe"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
@@ -113,12 +112,12 @@ describe("UI standards guard", () => {
   ]);
  });
 
- it("rejects ad-hoc radius + border + background surface recipes", () => {
+ it("allows stable feature surfaces while owners still govern shared primitives", () => {
   expect(
    inspect(
     'export function Example() { return <div className="rounded-xl border border-border-default bg-bg-card" />; }',
    ),
-  ).toEqual([expect.stringContaining("featureSurfaceRecipe")]);
+  ).toEqual([]);
  });
 
  it("does not police ordinary styled structural text containers", () => {
