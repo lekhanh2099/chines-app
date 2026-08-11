@@ -46,7 +46,7 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
    </div>
 
    <Card asChild variant="subtle" padding="md">
-    <details className="group">
+    <details className="group grid gap-3">
      <summary className="flex cursor-pointer list-none items-center gap-2">
       <ListChecks className="size-4 text-accent-text" />
       <Typography as="span" variant="label" weight="black">
@@ -59,7 +59,7 @@ export function NotebookSectionGuide({ section }: { section: NotebookSection }) 
        Đóng
       </Typography>
      </summary>
-     <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {section.quick.map(([label, value]) => (
        <section key={`${label}-${value}`} className="grid gap-1">
         <Typography

@@ -98,7 +98,7 @@ export function GlobalMemoryTipCard({
       <IconTile size="sm" tone="info">
        <Lightbulb />
       </IconTile>
-      <div className="min-w-0">
+      <div className="grid min-w-0 gap-1">
        <StudyInstructionText
         variant="overline"
         tone="muted"
@@ -117,7 +117,6 @@ export function GlobalMemoryTipCard({
         weight="semibold"
         clamp="two"
         leading="relaxed"
-        className="mt-1"
        >
         Thêm tip ngắn để app nhắc lại khi bạn quay về trang học.
        </StudyInstructionText>

@@ -68,7 +68,7 @@ export function ListeningTranscriptBlock({
        key={`${line.speakerId}:${line.order}`}
        className="grid gap-2 py-3 sm:grid-cols-[4.5rem_minmax(0,1fr)]"
       >
-       <div>
+       <div className="grid gap-1">
         <Badge
          variant={speaker?.voice === "male" ? "info" : "purple"}
          casing="natural"
@@ -77,7 +77,7 @@ export function ListeningTranscriptBlock({
          <HanziInlineText text={speaker?.labelZh ?? line.speakerId} />
         </Badge>
         {speaker?.labelVi ? (
-         <StudyInstructionText tone="muted" weight="semibold" className="mt-1 block">
+         <StudyInstructionText tone="muted" weight="semibold" className="block">
           {speaker.labelVi}
          </StudyInstructionText>
         ) : null}

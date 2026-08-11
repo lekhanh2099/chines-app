@@ -67,17 +67,17 @@ export function RecentLearningCard({
      <BookOpenCheck />
     </IconTile>
 
-    <div className="min-w-0 flex-1">
+    <div className="grid min-w-0 flex-1 gap-1">
      <div className="flex flex-wrap items-center gap-2">
       <Typography as="h2" variant="sectionTitle" id="recent-learning-heading" weight="black">
        Vừa học
       </Typography>
       <Badge variant="purple">{moduleLabels[lastModule]}</Badge>
      </div>
-     <Typography variant="sectionTitle" weight="black" clamp="one" className="mt-1">
+     <Typography variant="sectionTitle" weight="black" clamp="one">
       Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
      </Typography>
-     <Typography variant="bodySmall" tone="muted" clamp="one" className="mt-0.5">
+     <Typography variant="bodySmall" tone="muted" clamp="one">
       {course.title}
       {book ? ` · ${book.shortTitle || book.title}` : ""}
      </Typography>

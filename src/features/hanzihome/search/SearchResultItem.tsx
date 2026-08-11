@@ -57,7 +57,7 @@ export function SearchResultItem({ item, selected, onSelect, onOpen }: SearchRes
    <IconTile size="sm">
     <Icon />
    </IconTile>
-   <span className="min-w-0">
+   <span className="grid min-w-0 gap-0.5">
     <span className="flex min-w-0 items-center gap-2">
      <Typography as="span" variant="label" tone="default" weight="bold" clamp="one">
       {item.title}
@@ -73,7 +73,7 @@ export function SearchResultItem({ item, selected, onSelect, onOpen }: SearchRes
       tone="muted"
       weight="medium"
       clamp="one"
-      className="mt-0.5 block"
+      className="block"
      >
       {item.subtitle}
      </Typography>

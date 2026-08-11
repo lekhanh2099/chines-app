@@ -164,15 +164,15 @@ function MemoryTipCard({
  return (
   <Card variant="section" padding="lg" className="grid gap-3">
    <div className="flex items-start justify-between gap-3">
-    <div className="min-w-0 flex-1">
-     <div className="mb-2 flex flex-wrap items-center gap-2">
+    <div className="grid min-w-0 flex-1 gap-1">
+     <div className="flex flex-wrap items-center gap-2">
       <Badge variant="default">{tipTypeLabels[tip.tipType]}</Badge>
       {tip.isPinned ? <Badge variant="info">Đang ghim</Badge> : null}
      </div>
      <Typography as="h2" variant="sectionTitle" weight="black">
       {tip.title}
      </Typography>
-     <Typography as="p" variant="body" tone="secondary" wrapping="preLine" className="mt-1">
+     <Typography as="p" variant="body" tone="secondary" wrapping="preLine">
       {tip.body}
      </Typography>
     </div>

@@ -133,7 +133,7 @@ export function GlobalSearchDialog({
     </div>
 
     <div
-     className="min-h-0 flex-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
+     className="grid min-h-0 flex-1 content-start gap-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
      role="listbox"
     >
      {canLookupDirectly && (
@@ -142,7 +142,7 @@ export function GlobalSearchDialog({
        onClick={() => onDirectLookup(trimmedQuery)}
        variant="ghost"
        align="start"
-       className="mb-1 flex w-full"
+       className="flex w-full"
       >
        <IconTile tone="accent" size="sm">
         <BookOpenCheck />

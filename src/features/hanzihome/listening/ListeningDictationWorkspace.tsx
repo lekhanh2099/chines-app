@@ -215,11 +215,11 @@ export function ListeningDictationWorkspace() {
  if (query.isError || !bundle || !selectedSection) {
   return (
    <Card variant="default" padding="lg" className="grid min-h-64 place-content-center gap-2">
-    <div className="text-center">
+    <div className="grid gap-1 text-center">
      <StudyInstructionText tone="default" weight="black">
       Không tải được bài nghe chép
      </StudyInstructionText>
-     <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
+     <StudyInstructionText variant="bodySmall" tone="muted">
       {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
      </StudyInstructionText>
     </div>
@@ -293,9 +293,9 @@ export function ListeningDictationWorkspace() {
 
     <Card variant="section" padding="md" className="grid gap-1.5">
      <div className="flex items-start gap-2">
-      <Headphones className="mt-0.5 size-5 shrink-0 text-primary" />
-      <div className="min-w-0">
-       <Badge variant="purple" className="mb-1 w-fit">
+      <Headphones className="size-5 shrink-0 translate-y-0.5 text-primary" />
+      <div className="grid min-w-0 gap-1">
+       <Badge variant="purple" className="w-fit">
         Bài nghe chép
        </Badge>
        <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
@@ -320,11 +320,11 @@ export function ListeningDictationWorkspace() {
      />
     ) : (
      <Card variant="subtle" padding="lg">
-      <div className="text-center">
+      <div className="grid gap-1 text-center">
        <StudyInstructionText tone="default" weight="black">
         Phần này chưa có script để nghe chép.
        </StudyInstructionText>
-       <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
+       <StudyInstructionText variant="bodySmall" tone="muted">
         Chọn đề mục khác có nội dung ghi âm.
        </StudyInstructionText>
       </div>

@@ -129,7 +129,7 @@ export function NoteListRow({
    <article className="group grid grid-cols-[minmax(0,1fr)_auto] border-b border-border-default transition-colors last:border-b-0 hover:bg-bg-subtle/70">
     <Link href={`/notes/${note.id}`} className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4">
      <div className="flex min-w-0 items-start gap-3">
-      <IconTile tone={getContextTone(context.kind)} size="sm" className="mt-0.5">
+      <IconTile tone={getContextTone(context.kind)} size="sm" className="translate-y-0.5">
        {getContextIcon(context.kind)}
       </IconTile>
 

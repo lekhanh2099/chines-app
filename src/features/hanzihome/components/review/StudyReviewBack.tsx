@@ -162,7 +162,7 @@ function DetailButton({ onOpenDetail }: { onOpenDetail: () => void }) {
    }}
   >
    Xem chi tiết
-   <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
+   <kbd className="rounded-md bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
     D
    </kbd>
   </Button>

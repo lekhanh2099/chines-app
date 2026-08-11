@@ -68,17 +68,11 @@ export function NotebookPage() {
     />
     <section className="grid gap-3" aria-labelledby="notebook-section-heading">
      <div className="flex flex-wrap items-end justify-between gap-3 px-1">
-      <div>
+      <div className="grid gap-1">
        <Typography as="h1" id="notebook-section-heading" variant="sectionTitle" weight="black">
         {section.label} · <span lang="zh-CN">{section.zh}</span>
        </Typography>
-       <Typography
-        as="p"
-        variant="bodySmall"
-        tone="muted"
-        leading="standard"
-        className="mt-1 max-w-4xl"
-       >
+       <Typography as="p" variant="bodySmall" tone="muted" leading="standard" className="max-w-4xl">
         {section.desc}
        </Typography>
       </div>

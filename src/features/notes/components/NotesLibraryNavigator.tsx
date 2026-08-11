@@ -394,7 +394,7 @@ function FolderNavigationRow({
     </DropdownMenu>
    </div>
    {folder.children.length > 0 ? (
-    <div className="ml-5 grid gap-1 border-l border-border-default pl-2">
+    <div className="relative grid gap-1 pl-7 before:absolute before:inset-y-0 before:left-5 before:w-px before:bg-border-default">
      {folder.children.map((child) => (
       <FolderNavigationRow
        key={child.id}
