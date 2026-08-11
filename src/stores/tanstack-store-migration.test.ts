@@ -39,7 +39,7 @@ describe("TanStack Store migration", () => {
   vi.stubGlobal("localStorage", localStorage);
 
   appShellStore.setState(() => ({ isContentFullscreen: false }));
-  headerToolbarStore.setState(() => ({ content: null }));
+  headerToolbarStore.setState(() => ({ content: null, ownerId: null }));
   vocabDetailDrawerStore.setState(() => ({
    isOpen: false,
    text: "",
@@ -70,7 +70,7 @@ describe("TanStack Store migration", () => {
   });
 
   expect(appShellStore.get()).toEqual({ isContentFullscreen: true });
-  expect(headerToolbarStore.get()).toEqual({ content: "Toolbar" });
+  expect(headerToolbarStore.get()).toEqual({ content: "Toolbar", ownerId: null });
   expect(vocabDetailDrawerStore.get()).toEqual({
    isOpen: true,
    text: "你好",
