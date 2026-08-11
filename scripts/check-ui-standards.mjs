@@ -136,17 +136,13 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    failures.push(`styledIntrinsicText: ${location(sourceFile, className)} uses <${tagName}>`);
   }
   if (TYPOGRAPHY_COMPONENTS.has(tagName) && TYPOGRAPHY_CLASS_PATTERN.test(classNameSource)) {
-   failures.push(
-    `typographyClassName: ${location(sourceFile, className)} uses typed style tokens`,
-   );
+   failures.push(`typographyClassName: ${location(sourceFile, className)} uses typed style tokens`);
   }
   if (
    VISUAL_PRIMITIVE_COMPONENTS.has(tagName) &&
    PRIMITIVE_VISUAL_CLASS_PATTERN.test(classNameSource)
   ) {
-   failures.push(
-    `primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`,
-   );
+   failures.push(`primitiveClassName: ${location(sourceFile, className)} uses owned visual tokens`);
   }
   if (
    VISUAL_PRIMITIVE_COMPONENTS.has(tagName) &&

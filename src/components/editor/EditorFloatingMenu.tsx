@@ -41,10 +41,7 @@ import {
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
 
-import {
- BasePopover as Popover,
- BasePopoverPositioner,
-} from "@/components/ui/base-popover";
+import { BasePopover as Popover, BasePopoverPositioner } from "@/components/ui/base-popover";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -750,7 +747,9 @@ export default function EditorFloatingMenu() {
           </FormatButton>
           <FormatButton
            active={isSubscript}
-           onClick={() => formatText("subscript")} title="Subscript">
+           onClick={() => formatText("subscript")}
+           title="Subscript"
+          >
            <Subscript />
           </FormatButton>
           <FormatButton
@@ -808,7 +807,12 @@ export default function EditorFloatingMenu() {
 
         {showLinkSearch ? (
          <Card variant="subtle" padding="sm" className="grid gap-2">
-          <Typography variant="caption" tone="accent" weight="semibold" className="flex items-center gap-2">
+          <Typography
+           variant="caption"
+           tone="accent"
+           weight="semibold"
+           className="flex items-center gap-2"
+          >
            <Search className="size-4" />
            Liên kết ghi chú
           </Typography>

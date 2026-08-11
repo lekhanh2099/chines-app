@@ -45,7 +45,10 @@ export function useHomeDashboard(): HomeDashboardModel {
     vocabLabels.set(getVocabItemKey(word), word.hanzi);
    }
    for (const point of catalogLesson.grammar) {
-    grammarLabels.set(point.id, point.cleanTitle || point.titleVi || point.title || point.core || point.id);
+    grammarLabels.set(
+     point.id,
+     point.cleanTitle || point.titleVi || point.title || point.core || point.id,
+    );
    }
   }
 
@@ -67,8 +70,7 @@ export function useHomeDashboard(): HomeDashboardModel {
       : item.type === "grammar"
         ? grammarLabels.get(item.id) || item.id
         : radicalLabels.get(item.id) || item.id,
-    kindLabel:
-     item.type === "vocab" ? "Từ vựng" : item.type === "grammar" ? "Ngữ pháp" : "Bộ thủ",
+    kindLabel: item.type === "vocab" ? "Từ vựng" : item.type === "grammar" ? "Ngữ pháp" : "Bộ thủ",
     result: item.result,
     answeredAt: item.answeredAt,
    }));

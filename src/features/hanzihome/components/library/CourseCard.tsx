@@ -139,11 +139,7 @@ export function CourseCard({
      </div>
 
      {editMode && effectiveLesson ? <LessonCrudActions lesson={effectiveLesson} /> : null}
-     <Button
-      asChild
-      size="toolbar"
-      aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}
-     >
+     <Button asChild size="toolbar" aria-label={`Mở ${effectiveLesson?.titleZh || "bài học"}`}>
       <Link
        href={href}
        prefetch={false}

@@ -33,7 +33,10 @@ export function StudyReviewCard({
  const front = isGrammar ? (
   <GrammarReviewFront item={item} />
  ) : (
-  <VocabReviewFront item={item} speakButtonClassName={revealed ? undefined : "pointer-events-auto"} />
+  <VocabReviewFront
+   item={item}
+   speakButtonClassName={revealed ? undefined : "pointer-events-auto"}
+  />
  );
 
  if (!revealed) {

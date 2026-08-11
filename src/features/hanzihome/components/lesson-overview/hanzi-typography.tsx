@@ -82,8 +82,7 @@ const hanziFontFamilies: Record<HanziReaderFont, string> = {
  songti: 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif',
  "noto-sans":
   'var(--font-reading-noto-sans), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif',
- pinyin:
-  '"FZKTPY01", "Kaiti SC", "KaiTi", var(--font-reading-noto-serif), "Noto Serif SC", serif',
+ pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", var(--font-reading-noto-serif), "Noto Serif SC", serif',
  kaiti:
   '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", var(--font-reading-noto-serif), "Noto Serif SC", serif',
  fangsong:

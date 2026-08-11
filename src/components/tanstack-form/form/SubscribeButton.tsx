@@ -28,8 +28,17 @@ export function SubscribeButton({
      isLoading;
 
     return (
-     <Button type="submit" variant="default" size="touch" {...props} disabled={disabled} className={className}>
-      {state.isSubmitting || isLoading ? <Loader2 data-icon="inline-start" className="animate-spin" /> : null}
+     <Button
+      type="submit"
+      variant="default"
+      size="touch"
+      {...props}
+      disabled={disabled}
+      className={className}
+     >
+      {state.isSubmitting || isLoading ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : null}
       {children}
      </Button>
     );

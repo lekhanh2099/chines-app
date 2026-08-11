@@ -305,8 +305,8 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
     {missingSchema ? (
      <Card variant="subtle" padding="md">
       <Typography as="p" variant="bodySmall" tone="warning" weight="bold">
-       Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho
-       `user_vocab_progress` trước khi route này có dữ liệu.
+       Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho `user_vocab_progress`
+       trước khi route này có dữ liệu.
       </Typography>
      </Card>
     ) : null}
@@ -355,13 +355,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
 
          <div className="grid gap-1">
           {item.hanViet ? (
-           <Typography
-            as="p"
-            variant="overline"
-            tone="default"
-            weight="black"
-            tracking="wide"
-           >
+           <Typography as="p" variant="overline" tone="default" weight="black" tracking="wide">
             {item.hanViet}
            </Typography>
           ) : null}

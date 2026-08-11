@@ -124,7 +124,9 @@ export function Tabs<T extends string>({
             }
            } else if (event.key === "End") {
             event.preventDefault();
-            const reversedIndex = flatItems.toReversed().findIndex((candidate) => !candidate.disabled);
+            const reversedIndex = flatItems
+             .toReversed()
+             .findIndex((candidate) => !candidate.disabled);
             const lastIndex = reversedIndex < 0 ? -1 : flatItems.length - 1 - reversedIndex;
             const lastItem = flatItems[lastIndex];
             if (lastItem) {

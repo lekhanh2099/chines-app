@@ -155,12 +155,7 @@ export function GlobalMemoryTipCard({
   >
    <div className="relative grid w-full gap-3">
     {contentOnly && selectedTip.isPinned ? (
-     <Badge
-      variant="accent"
-      size="sm"
-      className="absolute right-0 top-0"
-      aria-label="Tip đã ghim"
-     >
+     <Badge variant="accent" size="sm" className="absolute right-0 top-0" aria-label="Tip đã ghim">
       <Pin />
      </Badge>
     ) : null}

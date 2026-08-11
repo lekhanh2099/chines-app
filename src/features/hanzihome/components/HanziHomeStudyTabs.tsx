@@ -4,10 +4,7 @@ import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
- SegmentedControl,
- type SegmentedControlSurface,
-} from "@/components/ui/segmented-control";
+import { SegmentedControl, type SegmentedControlSurface } from "@/components/ui/segmented-control";
 
 export type HanziHomeStudyTab<T extends string> = {
  key: T;
@@ -44,8 +41,7 @@ export function HanziHomeStudyTabs<T extends string>({
     compactLabel: item.shortLabel,
     icon: item.icon,
     disabled: item.disabled,
-    suffix:
-     item.badge !== undefined ? <Badge size="sm">{item.badge}</Badge> : undefined,
+    suffix: item.badge !== undefined ? <Badge size="sm">{item.badge}</Badge> : undefined,
    }))}
    onChange={onChange}
    density={compact ? "toolbar" : "touch"}

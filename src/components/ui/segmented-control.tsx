@@ -91,9 +91,7 @@ export function SegmentedControl<T extends string>({
         <Button
          key={item.key}
          type="button"
-         size={
-          density === SegmentedControlDensitySchema.enum.touch ? "touch" : "toolbar"
-         }
+         size={density === SegmentedControlDensitySchema.enum.touch ? "touch" : "toolbar"}
          variant={active ? "active" : "navigation"}
          disabled={item.disabled}
          aria-pressed={active}

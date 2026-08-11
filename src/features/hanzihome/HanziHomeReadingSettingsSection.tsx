@@ -49,7 +49,8 @@ export function HanziHomeReadingSettingsSection() {
       Thiết lập đọc
      </Typography>
      <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-      Điều chỉnh font, cỡ chữ, cách mở nội dung, pinyin, nghĩa và đáp án. Khung xem trước cập nhật theo cùng thiết lập đang dùng trong bài học.
+      Điều chỉnh font, cỡ chữ, cách mở nội dung, pinyin, nghĩa và đáp án. Khung xem trước cập nhật
+      theo cùng thiết lập đang dùng trong bài học.
      </Typography>
     </div>
     <Badge
@@ -89,7 +90,12 @@ export function HanziHomeReadingSettingsSection() {
         {learning.lastSyncError ||
          "Chưa thể đồng bộ cài đặt đọc. Các thay đổi cục bộ vẫn được giữ."}
        </Typography>
-       <Button type="button" variant="outline" size="toolbar" onClick={() => void learning.retrySync()}>
+       <Button
+        type="button"
+        variant="outline"
+        size="toolbar"
+        onClick={() => void learning.retrySync()}
+       >
         Thử đồng bộ lại
        </Button>
       </Card>

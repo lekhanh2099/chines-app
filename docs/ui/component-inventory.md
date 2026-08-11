@@ -8,63 +8,63 @@ override generic shadcn or vendor guidance.
 
 ## Canonical primitives
 
-| Contract         | Source                                    | Status | Intended use |
-| ---------------- | ----------------------------------------- | ------ | ------------ |
-| Button           | `src/components/ui/button.tsx`            | canonical | commands, CTAs, icon actions, navigation rows |
-| Dialog           | `src/components/ui/dialog.tsx`            | canonical | modal tasks |
-| DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical | action/checkbox/radio menus |
-| Tooltip          | `src/components/ui/tooltip.tsx`           | canonical | supplementary hints |
-| Select           | `src/components/ui/select.tsx`            | canonical | single-value selection; breadcrumb variant |
-| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter | string option arrays |
-| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical | exclusive selection |
-| Switch           | `src/components/ui/switch.tsx`            | canonical | boolean settings |
-| Chip             | `src/components/ui/chip.tsx`              | canonical | interactive compact token |
-| Badge            | `src/components/ui/badge.tsx`             | canonical | static status/category |
-| Typography       | `src/components/ui/typography.tsx`        | canonical | application text hierarchy |
-| Avatar           | `src/components/ui/avatar.tsx`            | canonical | profile image/fallback |
-| IconTile         | `src/components/ui/icon-tile.tsx`         | canonical | decorative icon tile |
-| Sheet            | `src/components/ui/sheet.tsx`             | canonical | responsive side/bottom panels |
-| Popover          | `src/components/ui/base-popover.tsx`      | canonical | contextual non-menu content |
-| Card             | `src/components/ui/card.tsx`              | canonical | section/subtle/interactive surfaces |
-| Input            | `src/components/ui/input.tsx`             | canonical | text input + density |
-| Textarea         | `src/components/ui/textarea.tsx`          | canonical | multiline input |
-| Checkbox         | `src/components/ui/checkbox.tsx`          | canonical | independent boolean selection |
-| Separator        | `src/components/ui/separator.tsx`         | canonical | semantic separation |
-| PageHeader       | `src/components/ui/page-header.tsx`       | canonical | page heading/description/meta/actions |
-| Tabs             | `src/components/ui/tabs.tsx`              | canonical local contract | real content-panel tabs |
-| SegmentedControl | `src/components/ui/segmented-control.tsx` | canonical | compact pressed single-choice set |
+| Contract         | Source                                    | Status                   | Intended use                                  |
+| ---------------- | ----------------------------------------- | ------------------------ | --------------------------------------------- |
+| Button           | `src/components/ui/button.tsx`            | canonical                | commands, CTAs, icon actions, navigation rows |
+| Dialog           | `src/components/ui/dialog.tsx`            | canonical                | modal tasks                                   |
+| DropdownMenu     | `src/components/ui/dropdown-menu.tsx`     | canonical                | action/checkbox/radio menus                   |
+| Tooltip          | `src/components/ui/tooltip.tsx`           | canonical                | supplementary hints                           |
+| Select           | `src/components/ui/select.tsx`            | canonical                | single-value selection; breadcrumb variant    |
+| OptionSelect     | `src/components/ui/option-select.tsx`     | canonical adapter        | string option arrays                          |
+| RadioGroup       | `src/components/ui/radio-group.tsx`       | canonical                | exclusive selection                           |
+| Switch           | `src/components/ui/switch.tsx`            | canonical                | boolean settings                              |
+| Chip             | `src/components/ui/chip.tsx`              | canonical                | interactive compact token                     |
+| Badge            | `src/components/ui/badge.tsx`             | canonical                | static status/category                        |
+| Typography       | `src/components/ui/typography.tsx`        | canonical                | application text hierarchy                    |
+| Avatar           | `src/components/ui/avatar.tsx`            | canonical                | profile image/fallback                        |
+| IconTile         | `src/components/ui/icon-tile.tsx`         | canonical                | decorative icon tile                          |
+| Sheet            | `src/components/ui/sheet.tsx`             | canonical                | responsive side/bottom panels                 |
+| Popover          | `src/components/ui/base-popover.tsx`      | canonical                | contextual non-menu content                   |
+| Card             | `src/components/ui/card.tsx`              | canonical                | section/subtle/interactive surfaces           |
+| Input            | `src/components/ui/input.tsx`             | canonical                | text input + density                          |
+| Textarea         | `src/components/ui/textarea.tsx`          | canonical                | multiline input                               |
+| Checkbox         | `src/components/ui/checkbox.tsx`          | canonical                | independent boolean selection                 |
+| Separator        | `src/components/ui/separator.tsx`         | canonical                | semantic separation                           |
+| PageHeader       | `src/components/ui/page-header.tsx`       | canonical                | page heading/description/meta/actions         |
+| Tabs             | `src/components/ui/tabs.tsx`              | canonical local contract | real content-panel tabs                       |
+| SegmentedControl | `src/components/ui/segmented-control.tsx` | canonical                | compact pressed single-choice set             |
 
 ## Canonical patterns
 
-| Pattern           | Source                                    | Status |
-| ----------------- | ----------------------------------------- | ------ |
-| EmptyState        | `src/components/patterns/empty-state.tsx` | canonical |
+| Pattern           | Source                                    | Status                                         |
+| ----------------- | ----------------------------------------- | ---------------------------------------------- |
+| EmptyState        | `src/components/patterns/empty-state.tsx` | canonical                                      |
 | CommandDialog     | target                                    | deferred until global-search product migration |
-| ResponsiveOverlay | target                                    | deferred until repeated contract is proven |
+| ResponsiveOverlay | target                                    | deferred until repeated contract is proven     |
 
 ## Stable feature-owned compositions
 
 These are product/domain compositions, not replacement primitives.
 
-| Composition | Owner | Contract |
-| ----------- | ----- | -------- |
-| Library CRUD actions | `src/features/hanzihome/components/library/LibraryCrudActionsMenu.tsx` | one overflow menu per course/book/lesson + confirmation delete |
-| HanziHome workspace bar | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx` | feature chrome; children remain canonical controls |
-| HanziHome reader quick menu | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx` | lesson-toolbar-only font/size/reveal/visibility preferences |
-| HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot |
-| HanziHome search bridge | `src/features/hanzihome/search/HanziHomeGlobalSearchBridge.tsx` | feature data/results/navigation over shared open/query interaction state |
+| Composition                     | Owner                                                                       | Contract                                                                 |
+| ------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Library CRUD actions            | `src/features/hanzihome/components/library/LibraryCrudActionsMenu.tsx`      | one overflow menu per course/book/lesson + confirmation delete           |
+| HanziHome workspace bar         | `src/features/hanzihome/components/layout/WorkspaceToolbar.tsx`             | feature chrome; children remain canonical controls                       |
+| HanziHome reader quick menu     | `src/features/hanzihome/HanziHomeReadingSettingsSection.tsx`                | lesson-toolbar-only font/size/reveal/visibility preferences              |
+| HanziHome Header context bridge | `src/features/hanzihome/components/layout/HanziHomeHeaderContextBridge.tsx` | owner-safe lesson breadcrumb registration into shared Header slot        |
+| HanziHome search bridge         | `src/features/hanzihome/search/HanziHomeGlobalSearchBridge.tsx`             | feature data/results/navigation over shared open/query interaction state |
 
 Do not promote these to `src/components/ui` unless the same semantic contract is
 proven outside the feature.
 
 ## Shared shell interaction stores
 
-| Store | Scope |
-| ----- | ----- |
-| `header-toolbar-store.ts` | ReactNode slot registration for route/feature Header context; owner-safe cleanup |
-| `global-search-store.ts` | search open/query interaction state only; no search result/domain data |
-| `focus-mode-store.ts` | cross-route focus preference |
-| `dictionary-lookup-store.ts` | route-scoped lookup preference |
+| Store                        | Scope                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------- |
+| `header-toolbar-store.ts`    | ReactNode slot registration for route/feature Header context; owner-safe cleanup |
+| `global-search-store.ts`     | search open/query interaction state only; no search result/domain data           |
+| `focus-mode-store.ts`        | cross-route focus preference                                                     |
+| `dictionary-lookup-store.ts` | route-scoped lookup preference                                                   |
 
 Shared stores must not become a back door for copying TanStack Query/server data
 into global client state.

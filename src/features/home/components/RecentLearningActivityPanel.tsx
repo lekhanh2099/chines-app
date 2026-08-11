@@ -51,7 +51,8 @@ export function RecentLearningActivityPanel({
           {item.label}
          </Typography>
          <Typography as="p" variant="caption" tone="muted" className="mt-0.5">
-          {item.kindLabel} · {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
+          {item.kindLabel} ·{" "}
+          {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
          </Typography>
         </div>
         <Badge variant={resultVariants[item.result]} size="sm">

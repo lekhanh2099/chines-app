@@ -12,11 +12,7 @@ import { Switch } from "@/components/ui/switch";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
-import {
- HanziFontPreview,
- ReaderHanziText,
- StudyInstructionText,
-} from "./hanzi-typography";
+import { HanziFontPreview, ReaderHanziText, StudyInstructionText } from "./hanzi-typography";
 import { ProgressiveStudyText } from "./ProgressiveStudyText";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
@@ -148,7 +144,8 @@ export function LessonReadingSettings({
      />
      {displayMode.revealMode === "tap" ? (
       <StudyInstructionText variant="caption" tone="muted" weight="medium" leading="relaxed">
-       Bấm trực tiếp vào câu để chuyển lần lượt Hán tự → Pinyin → nghĩa. Xem trước bên cạnh cũng hoạt động như nội dung thật.
+       Bấm trực tiếp vào câu để chuyển lần lượt Hán tự → Pinyin → nghĩa. Xem trước bên cạnh cũng
+       hoạt động như nội dung thật.
       </StudyInstructionText>
      ) : null}
     </SettingsGroup>
@@ -203,13 +200,7 @@ function ReadingSettingsPreview({ displayMode }: { displayMode: LessonDisplayMod
       Đây là cách nội dung học sẽ hiển thị với thiết lập hiện tại.
      </Typography>
     </div>
-    <ReaderHanziText
-     as="span"
-     displayMode={displayMode}
-     size="lg"
-     leading="none"
-     tone="accent"
-    >
+    <ReaderHanziText as="span" displayMode={displayMode} size="lg" leading="none" tone="accent">
      文
     </ReaderHanziText>
    </div>

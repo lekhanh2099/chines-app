@@ -26,9 +26,7 @@ const word = hanziHomeVocabItemSchema.parse({
 
 describe("StructuredExamplesSection", () => {
  it("renders Chinese example glyphs through the shared Hanzi font contract", () => {
-  const html = renderToStaticMarkup(
-   <StructuredExamplesSection item={word} keyword="尽管" />,
-  );
+  const html = renderToStaticMarkup(<StructuredExamplesSection item={word} keyword="尽管" />);
 
   expect(html).toContain('lang="zh-CN"');
   expect(html).toContain("font-hanzi");

@@ -111,7 +111,8 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  useEffect(() => {
   if (!selectedLesson || resolvedActiveModule === "radicals") return;
 
-  const hasCanonicalLesson = lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
+  const hasCanonicalLesson =
+   lessonNumberFromUrl === getLessonRouteValue(selectedLesson.lessonNumber);
   const hasCanonicalBook = !selectedLesson.bookId || bookIdFromUrl === selectedLesson.bookId;
   const hasLegacyLessonId = Boolean(legacyLessonIdFromUrl);
 

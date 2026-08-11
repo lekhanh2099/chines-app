@@ -5,12 +5,9 @@ import { Button } from "@/components/ui/button";
 
 const IconButtonVariantSchema = z.enum(["default", "ghost", "accent"]);
 const IconButtonSizeSchema = z.enum(["sm", "md", "lg"]);
-const IconButtonOverridePropSchema = z.enum(["variant", "size"]);
+type IconButtonOverrideProp = "variant" | "size";
 
-type IconButtonProps = Omit<
- React.ComponentProps<typeof Button>,
- z.infer<typeof IconButtonOverridePropSchema>
-> & {
+type IconButtonProps = Omit<React.ComponentProps<typeof Button>, IconButtonOverrideProp> & {
  variant?: z.infer<typeof IconButtonVariantSchema>;
  size?: z.infer<typeof IconButtonSizeSchema>;
 };

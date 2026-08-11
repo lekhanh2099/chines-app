@@ -142,9 +142,7 @@ export function LessonModuleFrame({
     </div>
 
     <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
-     {sidebarSummary && !compact ? (
-      <Badge casing="natural">{sidebarSummary}</Badge>
-     ) : null}
+     {sidebarSummary && !compact ? <Badge casing="natural">{sidebarSummary}</Badge> : null}
      {actions}
     </div>
    </div>
@@ -234,7 +232,12 @@ export function LessonModuleFrame({
     </div>
 
     {!compact ? (
-     <Sheet open={sidebarSheetOpen} onOpenChange={setSidebarSheetOpen} side="right" className="sm:max-w-md">
+     <Sheet
+      open={sidebarSheetOpen}
+      onOpenChange={setSidebarSheetOpen}
+      side="right"
+      className="sm:max-w-md"
+     >
       <SheetHeader title={sidebarLabel} onClose={() => setSidebarSheetOpen(false)} />
       <SheetBody>{sidebar}</SheetBody>
      </Sheet>
@@ -281,12 +284,7 @@ function MobileModuleNavigation({
     >
      <BasePopoverPopup initialFocus={false} finalFocus={false} variant="moduleMenu">
       <div className="px-2.5 py-1.5">
-       <StudyInstructionText
-        variant="overline"
-        tone="muted"
-        weight="black"
-        transform="uppercase"
-       >
+       <StudyInstructionText variant="overline" tone="muted" weight="black" transform="uppercase">
         {navigation.label}
        </StudyInstructionText>
       </div>

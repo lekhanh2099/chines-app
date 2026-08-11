@@ -657,7 +657,12 @@ function ShadowingItems({
         <Pencil />
        </Button>
       ) : null}
-      <Button type="button" variant="outline" size="toolbar" onClick={() => onSpeak(item.promptZh ?? "")}>
+      <Button
+       type="button"
+       variant="outline"
+       size="toolbar"
+       onClick={() => onSpeak(item.promptZh ?? "")}
+      >
        <Play data-icon="inline-start" />
        Đọc theo
       </Button>

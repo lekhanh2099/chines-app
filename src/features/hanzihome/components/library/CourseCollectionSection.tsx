@@ -84,61 +84,63 @@ export function CourseCollectionSection({
 
    {hasBooks ? (
     <div className="grid gap-4" aria-labelledby={`${group.key}-collection-heading`}>
-     {coursesWithBooks.map(({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => (
-      <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
-       {courseIndex > 0 ? <Separator /> : null}
-       <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex min-w-0 items-start gap-2.5">
-         <IconTile size="sm" tone="neutral">
-          <BookOpenCheck />
-         </IconTile>
-         <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2">
-           <Typography variant="caption" tone="accent" weight="black">
-            Cấp {courseIndex + 1}/{group.courses.length}
-           </Typography>
-           <Typography as="h4" variant="cardTitle" id={`${course.id}-heading`} weight="black">
-            {course.title}
-           </Typography>
-           {editMode ? <CourseCrudActions course={course} /> : null}
+     {coursesWithBooks.map(
+      ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => (
+       <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
+        {courseIndex > 0 ? <Separator /> : null}
+        <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+         <div className="flex min-w-0 items-start gap-2.5">
+          <IconTile size="sm" tone="neutral">
+           <BookOpenCheck />
+          </IconTile>
+          <div className="min-w-0">
+           <div className="flex flex-wrap items-center gap-2">
+            <Typography variant="caption" tone="accent" weight="black">
+             Cấp {courseIndex + 1}/{group.courses.length}
+            </Typography>
+            <Typography as="h4" variant="cardTitle" id={`${course.id}-heading`} weight="black">
+             {course.title}
+            </Typography>
+            {editMode ? <CourseCrudActions course={course} /> : null}
+           </div>
+           {course.subtitle ? (
+            <Typography as="p" variant="caption" tone="muted" weight="semibold" className="mt-0.5">
+             {course.subtitle}
+            </Typography>
+           ) : null}
           </div>
-          {course.subtitle ? (
-           <Typography as="p" variant="caption" tone="muted" weight="semibold" className="mt-0.5">
-            {course.subtitle}
-           </Typography>
-          ) : null}
          </div>
-        </div>
-        <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
-         {courseBooks.length} quyển · {course.stats.lessonCount} bài
-        </Typography>
-       </header>
+         <Typography variant="caption" tone="muted" weight="bold" className="pl-10 sm:pl-0">
+          {courseBooks.length} quyển · {course.stats.lessonCount} bài
+         </Typography>
+        </header>
 
-       {courseBooks.length > 0 ? (
-        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
-         {courseBooks.map((book, bookIndex) => (
-          <CourseCard
-           key={book.id}
-           course={course}
-           book={book}
-           lessons={courseLessons}
-           editMode={editMode}
-           canMoveBookUp={bookIndex > 0}
-           canMoveBookDown={bookIndex < courseBooks.length - 1}
-          />
-         ))}
-        </div>
-       ) : (
-        <EmptyState
-         size="compact"
-         surface="subtle"
-         align="start"
-         title="Chưa có quyển học"
-         description="Cấp độ này chưa có quyển được thêm vào thư viện."
-        />
-       )}
-      </section>
-     ))}
+        {courseBooks.length > 0 ? (
+         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+          {courseBooks.map((book, bookIndex) => (
+           <CourseCard
+            key={book.id}
+            course={course}
+            book={book}
+            lessons={courseLessons}
+            editMode={editMode}
+            canMoveBookUp={bookIndex > 0}
+            canMoveBookDown={bookIndex < courseBooks.length - 1}
+           />
+          ))}
+         </div>
+        ) : (
+         <EmptyState
+          size="compact"
+          surface="subtle"
+          align="start"
+          title="Chưa có quyển học"
+          description="Cấp độ này chưa có quyển được thêm vào thư viện."
+         />
+        )}
+       </section>
+      ),
+     )}
     </div>
    ) : (
     <EmptyState

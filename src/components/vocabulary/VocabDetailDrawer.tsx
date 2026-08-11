@@ -122,14 +122,7 @@ export function VocabDetailDrawer() {
    <div className="border-b border-border-default px-4 py-3 sm:px-5">
     <div className="min-w-0">
      <div className="flex items-center gap-2">
-      <HanziText
-       as="p"
-       size="review"
-       tone="default"
-       weight="black"
-       clamp="one"
-       leading="tight"
-      >
+      <HanziText as="p" size="review" tone="default" weight="black" clamp="one" leading="tight">
        {smartData?.entry.hanzi || text}
       </HanziText>
       <Button
@@ -140,7 +133,13 @@ export function VocabDetailDrawer() {
        disabled={isTTSLoading}
        aria-label={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
       >
-       {isTTSLoading ? <Loader2 className="animate-spin" /> : isSpeaking ? <VolumeOff /> : <Volume2 />}
+       {isTTSLoading ? (
+        <Loader2 className="animate-spin" />
+       ) : isSpeaking ? (
+        <VolumeOff />
+       ) : (
+        <Volume2 />
+       )}
       </Button>
      </div>
      {smartData?.entry.pinyin ? (
@@ -153,7 +152,11 @@ export function VocabDetailDrawer() {
 
    <SheetBody>
     {detailQuery.isLoading ? (
-     <Card variant="subtle" padding="lg" className="flex min-h-40 items-center justify-center gap-2">
+     <Card
+      variant="subtle"
+      padding="lg"
+      className="flex min-h-40 items-center justify-center gap-2"
+     >
       <Loader2 className="animate-spin" />
       <Typography tone="muted">Đang tải chi tiết từ vựng...</Typography>
      </Card>
@@ -274,7 +277,13 @@ function WordDetailPanel({
    <DetailSection
     title="Tóm tắt"
     actions={
-     <Button type="button" onClick={() => onSave(noteDraft)} disabled={isSaving} variant="outline" size="toolbar">
+     <Button
+      type="button"
+      onClick={() => onSave(noteDraft)}
+      disabled={isSaving}
+      variant="outline"
+      size="toolbar"
+     >
       {isSaving ? (
        <Loader2 data-icon="inline-start" className="animate-spin" />
       ) : smartData.isSaved ? (
@@ -295,7 +304,12 @@ function WordDetailPanel({
     title="Giải phẫu"
     actions={
      visualCharacter && visualCharacter !== smartData.entry.hanzi ? (
-      <Button type="button" onClick={() => onDrillCharacter(visualCharacter)} variant="outline" size="toolbar">
+      <Button
+       type="button"
+       onClick={() => onDrillCharacter(visualCharacter)}
+       variant="outline"
+       size="toolbar"
+      >
        Tra riêng chữ này
       </Button>
      ) : undefined
@@ -329,7 +343,10 @@ function WordDetailPanel({
        {radicals.length > 0 ? (
         <div className="grid gap-2">
          {radicals.slice(0, 4).map((radical, index) => (
-          <div key={`${radical.char || radical.meaning || "radical"}-${index}`} className="grid gap-0.5">
+          <div
+           key={`${radical.char || radical.meaning || "radical"}-${index}`}
+           className="grid gap-0.5"
+          >
            <HanziText as="p" size="medium" tone="default" weight="bold">
             {radical.char || "?"}
            </HanziText>
@@ -370,12 +387,7 @@ function WordDetailPanel({
       <Typography as="p" variant="caption" tone="warning" weight="bold">
        AI gợi ý mẹo nhớ
       </Typography>
-      <HanziAwareText
-       text={ai.mnemonic_story}
-       tone="default"
-       leading="relaxed"
-       className="mt-1"
-      />
+      <HanziAwareText text={ai.mnemonic_story} tone="default" leading="relaxed" className="mt-1" />
      </Card>
     ) : null}
    </DetailSection>
@@ -394,7 +406,10 @@ function WordDetailPanel({
          })) || [];
 
        return (
-        <section key={`${definition.text || definition.meaning || "definition"}-${index}`} className="grid gap-2">
+        <section
+         key={`${definition.text || definition.meaning || "definition"}-${index}`}
+         className="grid gap-2"
+        >
          {index > 0 ? <Separator /> : null}
          <div className="flex items-center gap-2">
           <Typography variant="overline" tone="accent" weight="black">
@@ -442,17 +457,42 @@ function WordDetailPanel({
 
     <Separator />
     <div className="grid gap-4">
-     <RelationList title="Từ ghép" items={relatedCompounds} emptyText="Chưa có từ ghép liên quan." onSelect={onDrillCharacter} />
-     <RelationList title="Đồng nghĩa" items={synonyms} emptyText="Chưa có từ đồng nghĩa cơ bản." onSelect={onDrillCharacter} />
-     <RelationList title="Trái nghĩa" items={antonyms} emptyText="Chưa có từ trái nghĩa cơ bản." onSelect={onDrillCharacter} />
+     <RelationList
+      title="Từ ghép"
+      items={relatedCompounds}
+      emptyText="Chưa có từ ghép liên quan."
+      onSelect={onDrillCharacter}
+     />
+     <RelationList
+      title="Đồng nghĩa"
+      items={synonyms}
+      emptyText="Chưa có từ đồng nghĩa cơ bản."
+      onSelect={onDrillCharacter}
+     />
+     <RelationList
+      title="Trái nghĩa"
+      items={antonyms}
+      emptyText="Chưa có từ trái nghĩa cơ bản."
+      onSelect={onDrillCharacter}
+     />
     </div>
    </DetailSection>
 
    <DetailSection
     title="Ghi chú cá nhân"
     actions={
-     <Button type="button" onClick={() => onSave(noteDraft)} disabled={isSaving} variant="outline" size="toolbar">
-      {isSaving ? <Loader2 data-icon="inline-start" className="animate-spin" /> : <Save data-icon="inline-start" />}
+     <Button
+      type="button"
+      onClick={() => onSave(noteDraft)}
+      disabled={isSaving}
+      variant="outline"
+      size="toolbar"
+     >
+      {isSaving ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : (
+       <Save data-icon="inline-start" />
+      )}
       Lưu note
      </Button>
     }
@@ -542,8 +582,18 @@ function SentenceDetailPanel({
    <DetailSection
     title="Ghi chú cá nhân"
     actions={
-     <Button type="button" onClick={() => onSave(noteDraft)} disabled={isSaving} variant="outline" size="toolbar">
-      {isSaving ? <Loader2 data-icon="inline-start" className="animate-spin" /> : <Save data-icon="inline-start" />}
+     <Button
+      type="button"
+      onClick={() => onSave(noteDraft)}
+      disabled={isSaving}
+      variant="outline"
+      size="toolbar"
+     >
+      {isSaving ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : (
+       <Save data-icon="inline-start" />
+      )}
       Lưu note
      </Button>
     }
@@ -623,7 +673,13 @@ function RelationList({
            </PinyinText>
           ) : null}
          </span>
-         <Typography as="span" variant="bodySmall" tone="secondary" leading="relaxed" className="mt-1 block">
+         <Typography
+          as="span"
+          variant="bodySmall"
+          tone="secondary"
+          leading="relaxed"
+          className="mt-1 block"
+         >
           {item.meaning || "Chưa có nghĩa."}
          </Typography>
         </span>

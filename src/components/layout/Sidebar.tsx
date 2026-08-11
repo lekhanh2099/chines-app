@@ -217,8 +217,7 @@ export function Sidebar() {
     ) : (
      <div className="grid content-start gap-1.5">
       {navigationGroups.map((group) => {
-       const groupOpen =
-        group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
+       const groupOpen = group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
        const GroupIcon = group.icon;
 
        return (
@@ -247,9 +246,7 @@ export function Sidebar() {
             {group.name}
            </Typography>
           </span>
-          <ChevronRight
-           className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")}
-          />
+          <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
          </Button>
 
          <div id={`sidebar-group-${group.id}`} hidden={!groupOpen} className="grid gap-1 pb-1 pl-2">

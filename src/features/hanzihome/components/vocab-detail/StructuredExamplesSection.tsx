@@ -43,7 +43,14 @@ export function StructuredExamplesSection({
      const content = (
       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
        <div className="grid gap-1">
-        <HanziText as="p" size="inherit" variant="pageTitle" tone="default" weight="black" leading="relaxed">
+        <HanziText
+         as="p"
+         size="inherit"
+         variant="pageTitle"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+        >
          {renderHighlightedVocabText(example.zh, keyword)}
         </HanziText>
         {example.pinyin && (

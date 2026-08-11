@@ -5,13 +5,7 @@ import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import {
- Geist,
- Ma_Shan_Zheng,
- Noto_Sans_SC,
- Noto_Serif_SC,
- ZCOOL_XiaoWei,
-} from "next/font/google";
+import { Geist, Ma_Shan_Zheng, Noto_Sans_SC, Noto_Serif_SC, ZCOOL_XiaoWei } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 

@@ -35,9 +35,13 @@ export function NotebookPage() {
   if (!normalizedQuery) return comparisons;
 
   return comparisons.filter((comparison) =>
-   [comparison.title, comparison.note, comparison.rule, comparison.danger, ...comparison.terms].some(
-    (value) => value.toLocaleLowerCase("vi").includes(normalizedQuery),
-   ),
+   [
+    comparison.title,
+    comparison.note,
+    comparison.rule,
+    comparison.danger,
+    ...comparison.terms,
+   ].some((value) => value.toLocaleLowerCase("vi").includes(normalizedQuery)),
   );
  }, [query, sectionId]);
 

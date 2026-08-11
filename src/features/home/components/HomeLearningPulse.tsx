@@ -8,11 +8,7 @@ import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
 import type { HomeDashboardModel } from "@/features/home/types";
 
-export function HomeLearningPulse({
- pulse,
-}: {
- pulse: HomeDashboardModel["learningPulse"];
-}) {
+export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learningPulse"] }) {
  return (
   <section aria-labelledby="home-learning-pulse-title">
    <Card variant="section" padding="lg">
@@ -46,12 +42,7 @@ export function HomeLearningPulse({
       label="Đang học / còn khó"
       tone="warning"
      />
-     <PulseStat
-      icon={<CheckCircle2 />}
-      value={pulse.knownCount}
-      label="Đã biết"
-      tone="info"
-     />
+     <PulseStat icon={<CheckCircle2 />} value={pulse.knownCount} label="Đã biết" tone="info" />
      <PulseStat
       icon={<History />}
       value={pulse.reviewedTodayCount}

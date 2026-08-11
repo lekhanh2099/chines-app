@@ -64,6 +64,10 @@ const LIBRARY_UNION_EXCEPTION_BUDGET = new Map([
  ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionOutput | null", 1],
  ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionMap | null", 1],
  ["src/components/editor/nodes/PinyinNode.tsx::LexicalNode | null | undefined", 1],
+ // Structural Omit utility — prop keys of Button, not a domain data union.
+ ['src/components/ui/icon-button.tsx::"variant" | "size"', 1],
+ // Direct TypeScript equivalent of z.string().nullable(); no parse boundary needed here.
+ ["src/stores/header-toolbar-store.ts::string | null", 1],
 ]);
 
 function listSourceFiles(directory) {

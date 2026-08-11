@@ -8,34 +8,34 @@ local components or product interaction contracts.
 
 ## 1. Selection matrix
 
-| Need                              | Canonical contract                      | Notes |
-| --------------------------------- | --------------------------------------- | ----- |
-| Text action / CTA                 | `Button`                                | semantic variant + density |
-| Icon-only action                  | `Button` icon size + optional `Tooltip` | always keep an accessible name |
-| Modal task                        | `Dialog`                                | typed size, placement, scroll ownership |
-| Destructive confirmation          | confirmation Dialog pattern             | explicit consequence + pending state |
-| Side or bottom panel              | `Sheet`                                 | responsive panel contract |
-| Non-modal contextual content      | shared Popover wrapper                  | not an action menu |
-| Action/function list              | `DropdownMenu`                          | keyboard/menu semantics |
-| Compact preference in a menu      | `DropdownMenuCheckboxItem`              | checkbox-menu semantics |
-| Supplementary hint                | `Tooltip`                               | never required information |
-| Single-value selection            | `Select`                                | local Radix wrapper |
-| String option-array selection     | `OptionSelect`                          | typed convenience adapter |
-| Radio selection                   | `RadioGroup`                            | exclusive choice |
-| Boolean setting                   | `Switch`                                | label/description outside control |
-| Independent boolean selection     | `Checkbox`                              | checkbox semantics |
-| Interactive compact token         | `Chip`                                  | filter/removable/pressed token |
-| Static status/category            | `Badge`                                 | not clickable; ordinary counts are text |
-| Application text hierarchy        | `Typography`                            | not Hanzi learner text |
-| Avatar/profile image              | `Avatar`                                | fallback initials required |
-| Decorative icon tile              | `IconTile`                              | owns tile tone/radius/icon size |
-| Visual section/card               | `Card`                                  | typed surface/padding/interaction |
-| Divider                           | `Separator`                             | semantic separation |
-| Compact exclusive options         | `SegmentedControl`                      | pressed single-choice group |
-| Content tabs                      | local `Tabs`                            | only real tab/panel semantics |
-| Empty/no-result state             | `EmptyState`                            | empty is not error |
-| Page heading                      | `PageHeader`                            | typed density; no descendant repair |
-| Search command surface            | current HanziHome search bridge         | shell owns open/query state only |
+| Need                          | Canonical contract                      | Notes                                   |
+| ----------------------------- | --------------------------------------- | --------------------------------------- |
+| Text action / CTA             | `Button`                                | semantic variant + density              |
+| Icon-only action              | `Button` icon size + optional `Tooltip` | always keep an accessible name          |
+| Modal task                    | `Dialog`                                | typed size, placement, scroll ownership |
+| Destructive confirmation      | confirmation Dialog pattern             | explicit consequence + pending state    |
+| Side or bottom panel          | `Sheet`                                 | responsive panel contract               |
+| Non-modal contextual content  | shared Popover wrapper                  | not an action menu                      |
+| Action/function list          | `DropdownMenu`                          | keyboard/menu semantics                 |
+| Compact preference in a menu  | `DropdownMenuCheckboxItem`              | checkbox-menu semantics                 |
+| Supplementary hint            | `Tooltip`                               | never required information              |
+| Single-value selection        | `Select`                                | local Radix wrapper                     |
+| String option-array selection | `OptionSelect`                          | typed convenience adapter               |
+| Radio selection               | `RadioGroup`                            | exclusive choice                        |
+| Boolean setting               | `Switch`                                | label/description outside control       |
+| Independent boolean selection | `Checkbox`                              | checkbox semantics                      |
+| Interactive compact token     | `Chip`                                  | filter/removable/pressed token          |
+| Static status/category        | `Badge`                                 | not clickable; ordinary counts are text |
+| Application text hierarchy    | `Typography`                            | not Hanzi learner text                  |
+| Avatar/profile image          | `Avatar`                                | fallback initials required              |
+| Decorative icon tile          | `IconTile`                              | owns tile tone/radius/icon size         |
+| Visual section/card           | `Card`                                  | typed surface/padding/interaction       |
+| Divider                       | `Separator`                             | semantic separation                     |
+| Compact exclusive options     | `SegmentedControl`                      | pressed single-choice group             |
+| Content tabs                  | local `Tabs`                            | only real tab/panel semantics           |
+| Empty/no-result state         | `EmptyState`                            | empty is not error                      |
+| Page heading                  | `PageHeader`                            | typed density; no descendant repair     |
+| Search command surface        | current HanziHome search bridge         | shell owns open/query state only        |
 
 See `docs/ui/component-inventory.md` for implementation status.
 

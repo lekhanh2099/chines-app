@@ -149,7 +149,14 @@ export function OptionalFieldsMultiSelect({
           );
          })
         ) : (
-         <Typography as="p" variant="bodySmall" tone="muted" weight="semibold" align="center" className="px-4 py-6">
+         <Typography
+          as="p"
+          variant="bodySmall"
+          tone="muted"
+          weight="semibold"
+          align="center"
+          className="px-4 py-6"
+         >
           Không có field phù hợp.
          </Typography>
         )}

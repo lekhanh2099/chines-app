@@ -23,7 +23,13 @@ const source = hanziHomeVocabItemSchema.parse({
  pos: "conjunction",
  tags: [],
  meaning: { meaning_vi: "mặc dù" },
- examples: [{ zh: "有问题你尽管问。", pinyin: "Yǒu wèntí nǐ jǐnguǎn wèn.", vi: "Có vấn đề gì thì bạn cứ hỏi." }],
+ examples: [
+  {
+   zh: "有问题你尽管问。",
+   pinyin: "Yǒu wèntí nǐ jǐnguǎn wèn.",
+   vi: "Có vấn đề gì thì bạn cứ hỏi.",
+  },
+ ],
  category: "lesson",
 });
 

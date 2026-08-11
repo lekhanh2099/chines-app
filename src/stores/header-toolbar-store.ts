@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 import { createStore } from "@tanstack/react-store";
-import { z } from "zod";
 
-const HeaderToolbarOwnerIdSchema = z.string().nullable();
-type HeaderToolbarOwnerId = z.infer<typeof HeaderToolbarOwnerIdSchema>;
+type HeaderToolbarOwnerId = string | null;
 
 type HeaderToolbarState = {
  content: ReactNode;
@@ -21,11 +19,15 @@ export const headerToolbarStore = createStore<
 >({ content: null, ownerId: null }, ({ setState }) => ({
  setContent: (content) =>
   setState((state) =>
-   state.ownerId === null && state.content === content ? state : { ...state, content, ownerId: null },
+   state.ownerId === null && state.content === content
+    ? state
+    : { ...state, content, ownerId: null },
   ),
  clearContent: () =>
   setState((state) =>
-   state.ownerId === null && state.content === null ? state : { ...state, content: null, ownerId: null },
+   state.ownerId === null && state.content === null
+    ? state
+    : { ...state, content: null, ownerId: null },
   ),
  setOwnedContent: (ownerId, content) =>
   setState((state) =>

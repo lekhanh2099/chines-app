@@ -445,8 +445,18 @@ function SectionHeading({
 }) {
  return (
   <div className="min-w-0 max-w-3xl">
-   <Typography as="h2" variant="sectionTitle" tone="default" weight="bold" className="flex items-center gap-2">
-    {icon ? <Typography as="span" tone="accent" className="flex shrink-0">{icon}</Typography> : null}
+   <Typography
+    as="h2"
+    variant="sectionTitle"
+    tone="default"
+    weight="bold"
+    className="flex items-center gap-2"
+   >
+    {icon ? (
+     <Typography as="span" tone="accent" className="flex shrink-0">
+      {icon}
+     </Typography>
+    ) : null}
     {title}
    </Typography>
    <Typography as="p" tone="secondary" leading="standard" className="mt-1">
