@@ -43,7 +43,7 @@ export function GrammarPointReader({
 }: GrammarPointReaderProps) {
  if (!point) {
   return (
-   <Card padding="lg" className="rounded-xl">
+   <Card padding="lg">
     <StudyInstructionText tone="muted" weight="semibold">
      Bài này chưa có điểm ngữ pháp.
     </StudyInstructionText>
@@ -59,7 +59,7 @@ export function GrammarPointReader({
   point.notes.length > 0;
 
  return (
-  <Card padding="lg" className="rounded-xl border-border-default bg-bg-primary">
+  <Card variant="section" padding="lg">
    <article className="flex flex-col gap-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid min-w-0 gap-1">
