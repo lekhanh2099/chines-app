@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Card } from "@/components/ui/card";
+import { ActionCard } from "@/components/ui/action-card";
 import { Typography } from "@/components/ui/typography";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
@@ -8,7 +8,7 @@ import type { AggregateGrammarItem } from "./aggregate-utils";
 
 export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
  return (
-  <Card variant="interactive" padding="md" asChild className="grid gap-1">
+  <ActionCard padding="md" asChild className="grid gap-1">
    <Link
     href={buildHanziHomeLessonHref({
      courseId: item.courseId,
@@ -25,6 +25,6 @@ export function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
      {item.core}
     </StudyInstructionText>
    </Link>
-  </Card>
+  </ActionCard>
  );
 }
