@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import Link from "next/link";
 import { Bookmark, CheckCircle2, History, Repeat2 } from "lucide-react";
 
@@ -49,7 +50,7 @@ export function HomeLearningPulse({
       icon={<CheckCircle2 />}
       value={pulse.knownCount}
       label="Đã biết"
-      tone="success"
+      tone="info"
      />
      <PulseStat
       icon={<History />}
@@ -81,10 +82,10 @@ function PulseStat({
  label,
  tone,
 }: {
- icon: React.ReactNode;
+ icon: ReactNode;
  value: number;
  label: string;
- tone: "accent" | "neutral" | "success" | "warning";
+ tone: "accent" | "info" | "neutral" | "warning";
 }) {
  return (
   <div className="flex min-w-0 items-start gap-3">
