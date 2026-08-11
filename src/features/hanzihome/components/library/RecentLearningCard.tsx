@@ -1,13 +1,13 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
+import { Typography } from "@/components/ui/typography";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type {
  HanziHomeCatalogCourse,
@@ -45,9 +45,7 @@ export function RecentLearningCard({
  const lastLessonId = learning.state.settings.lastLessonId;
  const lastModule = learning.state.settings.lastModule ?? "overview";
 
- if (learning.isLoading) {
-  return <RecentLearningSkeleton />;
- }
+ if (learning.isLoading) return <RecentLearningSkeleton />;
 
  const recentLearning = resolveRecentLearning({
   courses,
@@ -65,49 +63,27 @@ export function RecentLearningCard({
  return (
   <section aria-labelledby="recent-learning-heading">
    <Card variant="section" padding="md" className="flex flex-col gap-3 sm:flex-row sm:items-center">
-    <StudyInstructionText
-     as="span"
-     tone="inverse"
-     className="app-brand-gradient flex size-11 shrink-0 items-center justify-center rounded-xl shadow-theme-sm"
-    >
-     <BookOpenCheck className="size-5" />
-    </StudyInstructionText>
+    <IconTile size="lg" tone="inverse">
+     <BookOpenCheck />
+    </IconTile>
 
     <div className="min-w-0 flex-1">
      <div className="flex flex-wrap items-center gap-2">
-      <Typography
-       as="h2"
-       variant="sectionTitle"
-       id="recent-learning-heading"
-       tone="default"
-       weight="black"
-      >
+      <Typography as="h2" variant="sectionTitle" id="recent-learning-heading" weight="black">
        Vừa học
       </Typography>
       <Badge variant="purple">{moduleLabels[lastModule]}</Badge>
      </div>
-     <StudyInstructionText
-      variant="sectionTitle"
-      tone="default"
-      weight="black"
-      clamp="one"
-      className="mt-1"
-     >
+     <Typography variant="sectionTitle" weight="black" clamp="one" className="mt-1">
       Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-     </StudyInstructionText>
-     <StudyInstructionText
-      variant="bodySmall"
-      tone="muted"
-      weight="medium"
-      clamp="one"
-      className="mt-0.5"
-     >
+     </Typography>
+     <Typography variant="bodySmall" tone="muted" clamp="one" className="mt-0.5">
       {course.title}
       {book ? ` · ${book.shortTitle || book.title}` : ""}
-     </StudyInstructionText>
+     </Typography>
     </div>
 
-    <Button asChild variant="ghost" className="w-full sm:w-auto">
+    <Button asChild variant="outline" size="toolbar" className="w-full sm:w-auto">
      <Link href={href} prefetch={false}>
       Học tiếp
       <ArrowRight data-icon="inline-end" />
@@ -126,12 +102,12 @@ function RecentLearningSkeleton() {
    className="flex animate-pulse items-center gap-3"
    aria-label="Đang tải bài vừa học"
   >
-   <span className="size-11 shrink-0 rounded-xl bg-bg-subtle" />
+   <span className="size-11 shrink-0 rounded-lg bg-bg-subtle" />
    <span className="grid flex-1 gap-2">
     <span className="h-4 w-20 rounded-md bg-bg-subtle" />
     <span className="h-5 w-64 max-w-full rounded-md bg-bg-subtle" />
    </span>
-   <span className="hidden h-10 w-24 rounded-xl bg-bg-subtle sm:block" />
+   <span className="hidden h-9 w-24 rounded-lg bg-bg-subtle sm:block" />
   </Card>
  );
 }
