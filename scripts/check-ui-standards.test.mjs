@@ -39,6 +39,7 @@ describe("UI standards guard", () => {
 
   expect(failures).toEqual([
    expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("featureSurfaceRecipe"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
    expect.stringContaining("primitiveClassName"),
@@ -78,6 +79,46 @@ describe("UI standards guard", () => {
     'export function Example() { return <SelectTrigger className="h-10 rounded-lg bg-bg-card px-3 text-sm shadow-none" />; }',
    ),
   ).toEqual([expect.stringContaining("primitiveClassName")]);
+ });
+
+ it("rejects fixed margin and space-between utilities in component composition", () => {
+  const failures = inspect(
+   'export function Example() { return <><div className="mt-4" /><div className="sm:mb-3" /><div className="space-y-2" /></>; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("fixedMarginSpacing"),
+   expect.stringContaining("fixedMarginSpacing"),
+   expect.stringContaining("spaceBetweenSpacing"),
+  ]);
+ });
+
+ it("allows auto margins only as alignment mechanics", () => {
+  expect(
+   inspect(
+    'export function Example() { return <><div className="mx-auto" /><div className="ml-auto" /><div className="mr-auto" /></>; }',
+   ),
+  ).toEqual([]);
+ });
+
+ it("rejects feature-owned rings, thick borders and arbitrary radii", () => {
+  const failures = inspect(
+   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-2" /><div className="rounded-[13px]" /></>; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("featureOwnedRing"),
+   expect.stringContaining("featureThickBorder"),
+   expect.stringContaining("featureArbitraryRadius"),
+  ]);
+ });
+
+ it("rejects ad-hoc radius + border + background surface recipes", () => {
+  expect(
+   inspect(
+    'export function Example() { return <div className="rounded-xl border border-border-default bg-bg-card" />; }',
+   ),
+  ).toEqual([expect.stringContaining("featureSurfaceRecipe")]);
  });
 
  it("does not police ordinary styled structural text containers", () => {
@@ -137,6 +178,16 @@ describe("UI standards guard", () => {
     isUiOwner: true,
    }),
   ).toEqual([]);
+ });
+
+ it("still rejects fixed margin inside UI owners so spacing stays parent-driven", () => {
+  expect(
+   inspectUiSource({
+    file: "src/components/ui/example.tsx",
+    source: 'export function Example() { return <div className="mt-2" />; }',
+    isUiOwner: true,
+   }),
+  ).toEqual([expect.stringContaining("fixedMarginSpacing")]);
  });
 
  it("allows overlay elevation inside the UI primitive boundary", () => {
