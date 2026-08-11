@@ -7,8 +7,8 @@ import { type ComponentProps, type ReactNode, useEffect, useState } from "react"
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { useTheme } from "@/components/layout/ThemeProvider";
 import { PageContainer } from "@/components/layout/page-container";
+import { useTheme } from "@/components/layout/ThemeProvider";
 import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -57,7 +57,6 @@ export function resolveSettingsSection(value: z.input<typeof SettingsSectionPara
  if (!param.success) return SettingsSectionSchema.enum.app;
 
  const parsed = SettingsSectionSchema.safeParse(param.data);
-
  return parsed.success ? parsed.data : SettingsSectionSchema.enum.app;
 }
 
@@ -101,9 +100,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      credentials: "include",
     });
 
-    if (!response.ok) {
-     throw new Error("load_failed");
-    }
+    if (!response.ok) throw new Error("load_failed");
 
     const data = ClientAiPromptSettingsSchema.parse(await response.json());
     if (!isMounted) return;
@@ -136,9 +133,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     setHasLoaded(true);
     toast.info("Đang dùng AI prompt settings lưu cục bộ trên trình duyệt");
    } finally {
-    if (isMounted) {
-     setIsLoading(false);
-    }
+    if (isMounted) setIsLoading(false);
    }
   }
 
@@ -161,9 +156,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
    const response = await fetch("/api/settings/ai-prompts", {
     method: "PUT",
-    headers: {
-     "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     credentials: "include",
     body: JSON.stringify({
      wordLookupPrompt: normalized.wordLookupPrompt,
@@ -172,9 +165,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     }),
    });
 
-   if (!response.ok) {
-    throw new Error(String(response.status));
-   }
+   if (!response.ok) throw new Error(String(response.status));
 
    const data = ClientAiPromptSettingsSchema.parse(await response.json());
    const synced = saveClientAiPromptSettings(data);
@@ -216,7 +207,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
  return (
   <PageContainer>
-   <div className="grid w-full gap-5">
+   <main className="grid w-full gap-5">
     <PageHeader
      title="Cài đặt"
      description="Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản."
@@ -234,14 +225,10 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      }}
     >
      <TabsContent active={section === SettingsSectionSchema.enum.app} className="mt-4 grid gap-4">
-      <Card variant="section" padding="lg" className="grid gap-1">
-       <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
-        Cài đặt ứng dụng
-       </Typography>
-       <Typography as="p" tone="secondary" leading="standard">
-        Các thay đổi dưới đây giữ nguyên storage và phạm vi đang dùng trong ứng dụng.
-       </Typography>
-      </Card>
+      <SectionHeading
+       title="Cài đặt ứng dụng"
+       description="Các thay đổi dưới đây giữ nguyên storage và phạm vi đang dùng trong ứng dụng."
+      />
 
       <div className="grid gap-3">
        <SettingsToggle
@@ -277,7 +264,6 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          if (enabled && !focusModeEnabled) {
           toast.warning(focusModeEnabledMessage, { duration: 5200 });
          }
-
          setFocusModeEnabled(enabled);
         }}
         tone="warning"
@@ -289,23 +275,25 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       {readingSettings}
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="mt-4 grid gap-4">
-      <header className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-       <div className="max-w-3xl space-y-2">
-        <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
-         <Bot className="h-3.5 w-3.5" />
+     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="mt-4 grid gap-5">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+       <div className="min-w-0 max-w-3xl">
+        <Badge variant="accent" size="md">
+         <Bot />
          AI Settings
-        </div>
-        <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+        </Badge>
+        <Typography as="h2" variant="sectionTitle" weight="bold" className="mt-2">
          Cài đặt tra cứu AI
         </Typography>
-        <Typography as="p" tone="secondary" leading="standard">
+        <Typography as="p" tone="secondary" leading="standard" className="mt-1">
          Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model
          mạnh chỉ chạy khi bạn chủ động mở phần chi tiết.
         </Typography>
-        <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
-         {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
-        </Badge>
+        <div className="mt-3">
+         <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
+          {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
+         </Badge>
+        </div>
        </div>
 
        <div className="flex flex-wrap items-center gap-3">
@@ -329,25 +317,14 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          Lưu thay đổi
         </Button>
        </div>
-      </header>
+      </div>
 
       <Card variant="section" padding="lg" className="grid gap-4">
-       <div className="space-y-2">
-        <Typography
-         as="h3"
-         variant="sectionTitle"
-         tone="default"
-         weight="bold"
-         className="flex items-center gap-2"
-        >
-         <Sparkles className="size-5 text-accent-text" />
-         Xem chi tiết
-        </Typography>
-        <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-         Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app
-         dùng model Gemini hệ thống đã chọn bên dưới.
-        </Typography>
-       </div>
+       <SectionHeading
+        icon={<Sparkles />}
+        title="Xem chi tiết"
+        description="Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app dùng model Gemini hệ thống đã chọn bên dưới."
+       />
 
        <div className="grid max-w-xl gap-2">
         <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
@@ -379,21 +356,11 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </Card>
 
       <Card variant="section" padding="lg" className="grid gap-4">
-       <div className="space-y-2">
-        <Typography
-         as="h3"
-         variant="sectionTitle"
-         tone="default"
-         weight="bold"
-         className="flex items-center gap-2"
-        >
-         <Languages className="size-5 text-accent-text" />
-         Tra nhanh và dịch nghĩa
-        </Typography>
-        <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-         Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key.
-        </Typography>
-       </div>
+       <SectionHeading
+        icon={<Languages />}
+        title="Tra nhanh và dịch nghĩa"
+        description="Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key."
+       />
 
        <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
         <div>
@@ -417,15 +384,10 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
       <div className="space-y-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="space-y-2">
-         <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
-          Lookup Prompts
-         </Typography>
-         <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-          Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để
-          giảm độ trễ và lượng token.
-         </Typography>
-        </div>
+        <SectionHeading
+         title="Lookup Prompts"
+         description="Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để giảm độ trễ và lượng token."
+        />
 
         <div className="flex flex-wrap items-center gap-3">
          <Badge variant={hasUnsavedPromptChanges ? "warning" : "success"} size="md">
@@ -467,8 +429,30 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </div>
      </TabsContent>
     </Tabs>
-   </div>
+   </main>
   </PageContainer>
+ );
+}
+
+function SectionHeading({
+ title,
+ description,
+ icon,
+}: {
+ title: string;
+ description: string;
+ icon?: ReactNode;
+}) {
+ return (
+  <div className="min-w-0 max-w-3xl">
+   <Typography as="h2" variant="sectionTitle" tone="default" weight="bold" className="flex items-center gap-2">
+    {icon ? <Typography as="span" tone="accent" className="flex shrink-0">{icon}</Typography> : null}
+    {title}
+   </Typography>
+   <Typography as="p" tone="secondary" leading="standard" className="mt-1">
+    {description}
+   </Typography>
+  </div>
  );
 }
 
@@ -535,7 +519,7 @@ function PromptPanel({
   <Card variant="default" padding="lg">
    <div className="mb-4 flex items-start justify-between gap-4">
     <div className="space-y-2">
-     <Typography as="h4" variant="sectionTitle" tone="default" weight="bold">
+     <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
       {title}
      </Typography>
      <Typography as="p" tone="secondary" leading="standard">
@@ -553,13 +537,13 @@ function PromptPanel({
     </div>
    </div>
 
-   <div className="mb-3 flex items-center justify-between text-xs">
+   <div className="mb-3 flex items-center justify-between">
     <Badge variant={hasPlaceholder ? "success" : "danger"} size="sm">
      {hasPlaceholder
       ? `Có placeholder ${placeholderToken}`
       : `Thiếu placeholder ${placeholderToken}`}
     </Badge>
-    <Typography as="span" tone="muted">
+    <Typography as="span" variant="caption" tone="muted">
      {value.length} ký tự
     </Typography>
    </div>
