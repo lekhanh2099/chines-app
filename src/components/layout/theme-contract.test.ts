@@ -46,9 +46,7 @@ describe("theme palette contract", () => {
  it("allows restrained canvas and Card tint without recoloring neutral foundations", () => {
   expect(paletteCss).toContain("--canvas-background:");
   expect(paletteCss).toContain("--bg-primary: var(--canvas-background)");
-  expect(paletteCss).toContain(
-   "--theme-card-background: color-mix(in oklch, var(--card)",
-  );
+  expect(paletteCss).toContain("--theme-card-background: color-mix(in oklch, var(--card)");
   expect(cardSource).toContain("bg-[var(--theme-card-background)]");
 
   for (const property of forbiddenFoundationProperties) {

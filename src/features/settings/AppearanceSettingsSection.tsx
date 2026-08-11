@@ -52,9 +52,9 @@ export function AppearanceSettingsSection() {
       Giao diện
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted" leading="standard" className="mt-1">
-      Chế độ sáng tối quyết định nền tảng surface. Bảng màu thêm sắc rõ hơn cho canvas, sắc nhẹ
-      cho Card và dùng cùng màu cho primary, focus, trạng thái chọn; popover, input và border vẫn
-      giữ hệ trung tính để nội dung dễ đọc.
+      Chế độ sáng tối quyết định nền tảng surface. Bảng màu thêm sắc rõ hơn cho canvas, sắc nhẹ cho
+      Card và dùng cùng màu cho primary, focus, trạng thái chọn; popover, input và border vẫn giữ hệ
+      trung tính để nội dung dễ đọc.
      </Typography>
     </div>
    </div>
