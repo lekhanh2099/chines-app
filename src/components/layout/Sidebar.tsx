@@ -302,7 +302,14 @@ export function MobileBottomNavigation() {
        >
         <Link href={item.href} prefetch={false}>
          <Icon />
-         <Typography as="span" variant="caption" weight="black" clamp="one" className="max-w-full">
+         <Typography
+          as="span"
+          variant="caption"
+          scale="fine"
+          weight="black"
+          clamp="one"
+          className="max-w-full"
+         >
           {mobileLabels[item.href]}
          </Typography>
         </Link>
@@ -322,7 +329,7 @@ export function MobileBottomNavigation() {
       onClick={() => setMoreOpen(true)}
      >
       <Menu />
-      <Typography as="span" variant="caption" weight="black">
+      <Typography as="span" variant="caption" scale="fine" weight="black">
        Thêm
       </Typography>
      </Button>
