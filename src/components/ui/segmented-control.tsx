@@ -86,7 +86,7 @@ export function SegmentedControl<T extends string>({
         <Button
          key={item.key}
          type="button"
-         size={density === "touch" ? "sm" : "toolbar"}
+         size={density === "touch" ? "touch" : "toolbar"}
          variant={active ? "active" : "navigation"}
          disabled={item.disabled}
          aria-pressed={active}
