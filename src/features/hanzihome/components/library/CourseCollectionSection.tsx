@@ -52,7 +52,7 @@ export function CourseCollectionSection({
      <IconTile>
       <GroupIcon />
      </IconTile>
-     <div className="min-w-0">
+     <div className="grid min-w-0 gap-1">
       <Typography variant="overline" tone="accent" weight="black" tracking="wide">
        Bộ giáo trình
       </Typography>
@@ -70,7 +70,7 @@ export function CourseCollectionSection({
         <Badge variant="warning">Thiếu Cao cấp III</Badge>
        ) : null}
       </div>
-      <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+      <Typography as="p" variant="bodySmall" tone="muted">
        {group.description}
       </Typography>
      </div>
@@ -93,7 +93,7 @@ export function CourseCollectionSection({
           <IconTile size="sm" tone="neutral">
            <BookOpenCheck />
           </IconTile>
-          <div className="min-w-0">
+          <div className="grid min-w-0 gap-0.5">
            <div className="flex flex-wrap items-center gap-2">
             <Typography variant="caption" tone="accent" weight="black">
              Cấp {courseIndex + 1}/{group.courses.length}
@@ -104,7 +104,7 @@ export function CourseCollectionSection({
             {editMode ? <CourseCrudActions course={course} /> : null}
            </div>
            {course.subtitle ? (
-            <Typography as="p" variant="caption" tone="muted" weight="semibold" className="mt-0.5">
+            <Typography as="p" variant="caption" tone="muted" weight="semibold">
              {course.subtitle}
             </Typography>
            ) : null}
