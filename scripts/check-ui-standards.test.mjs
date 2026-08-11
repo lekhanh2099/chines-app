@@ -80,15 +80,21 @@ describe("UI standards guard", () => {
   ).toEqual([expect.stringContaining("primitiveClassName")]);
  });
 
- it("rejects styled divs that are being used as application text", () => {
+ it("does not police ordinary styled structural text containers", () => {
   expect(
    inspect(
     'export function Example({ label }) { return <><div className="font-bold text-text-primary">Heading</div><div className="text-sm">{label}</div></>; }',
    ),
-  ).toEqual([
-   expect.stringContaining("styledBlockText"),
-   expect.stringContaining("styledBlockText"),
-  ]);
+  ).toEqual([]);
+ });
+
+ it("ignores test markup so component mocks can use native controls", () => {
+  expect(
+   inspectUiSource({
+    file: "src/features/example/Example.test.tsx",
+    source: 'export function Mock() { return <button>Mock action</button>; }',
+   }),
+  ).toEqual([]);
  });
 
  it("allows layout divs that only compose typed text", () => {
