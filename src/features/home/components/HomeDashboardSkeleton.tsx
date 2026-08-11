@@ -29,26 +29,10 @@ export function HomeDashboardSkeleton() {
        </Card>
       </section>
 
-      <Card variant="section" padding="lg" className="animate-pulse">
-       <div className="flex items-center justify-between gap-3">
-        <div className="grid gap-1">
-         <div className="h-5 w-40 rounded-md bg-bg-subtle" />
-         <div className="h-3 w-52 max-w-full rounded-full bg-bg-subtle" />
-        </div>
-        <div className="h-4 w-16 rounded-md bg-bg-subtle" />
-       </div>
-       <div className="mt-4 divide-y divide-border-default/70">
-        {Array.from({ length: 3 }, (_, index) => (
-         <div key={index} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
-          <div className="size-8 rounded-lg bg-bg-subtle" />
-          <div className="grid flex-1 gap-1">
-           <div className="h-4 w-48 max-w-full rounded-md bg-bg-subtle" />
-           <div className="h-3 w-28 rounded-full bg-bg-subtle" />
-          </div>
-         </div>
-        ))}
-       </div>
-      </Card>
+      <div className="grid gap-5 2xl:grid-cols-2">
+       <HomeListSkeleton rows={3} />
+       <HomeListSkeleton rows={4} />
+      </div>
      </div>
 
      <aside className="grid gap-5">
@@ -86,5 +70,30 @@ export function HomeDashboardSkeleton() {
     </div>
    </div>
   </PageContainer>
+ );
+}
+
+function HomeListSkeleton({ rows }: { rows: number }) {
+ return (
+  <Card variant="section" padding="lg" className="animate-pulse">
+   <div className="flex items-center justify-between gap-3">
+    <div className="grid gap-1">
+     <div className="h-5 w-40 rounded-md bg-bg-subtle" />
+     <div className="h-3 w-52 max-w-full rounded-full bg-bg-subtle" />
+    </div>
+    <div className="h-4 w-16 rounded-md bg-bg-subtle" />
+   </div>
+   <div className="mt-4 divide-y divide-border-default/70">
+    {Array.from({ length: rows }, (_, index) => (
+     <div key={index} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
+      <div className="size-8 rounded-lg bg-bg-subtle" />
+      <div className="grid flex-1 gap-1">
+       <div className="h-4 w-48 max-w-full rounded-md bg-bg-subtle" />
+       <div className="h-3 w-28 rounded-full bg-bg-subtle" />
+      </div>
+     </div>
+    ))}
+   </div>
+  </Card>
  );
 }
