@@ -111,7 +111,7 @@ function HanziHomeCompactDeveloperTools({
        <DropdownMenuSubTrigger>
         <GraduationCap />
         Chế độ xem
-        <Typography as="span" variant="caption" tone="muted" className="ml-auto">
+        <Typography as="span" variant="caption" tone="muted" className="max-w-20" clamp="one">
          {viewMode === "study" ? "Học tập" : "Kiểm tra"}
         </Typography>
        </DropdownMenuSubTrigger>
