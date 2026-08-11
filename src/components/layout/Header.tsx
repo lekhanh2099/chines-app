@@ -29,7 +29,6 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import {
  HanziHomeReadingQuickSettingsActiveSectionSchema,
@@ -59,7 +58,6 @@ import {
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
- appHeaderBreadcrumbSelectTriggerClassName,
 } from "./app-header-breadcrumb";
 import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
@@ -368,10 +366,8 @@ function HanziHomeBreadcrumbNav({
     <Select value={breadcrumb.selectedLesson.id} disabled={focusModeEnabled} onValueChange={onNavigate}>
      <SelectTrigger
       aria-label="Chọn bài học HanziHome"
-      className={cn(
-       appHeaderBreadcrumbSelectTriggerClassName,
-       "w-[min(11rem,44vw)] text-sm md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72",
-      )}
+      variant="breadcrumb"
+      className="w-[min(11rem,44vw)] md:w-[min(16rem,44vw)] lg:w-[min(18rem,30vw)] xl:w-72"
      >
       <SelectValue />
      </SelectTrigger>
