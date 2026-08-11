@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.7"
+  version: "3.8"
 ---
 
 # Frontend UI System
@@ -231,14 +231,16 @@ Preserve semantic tokens and shared surface grammar. Do not add feature-local ha
 Theme ownership is split deliberately:
 
 ```text
-light/dark mode -> neutral canvas, card, popover, elevated/subtle surfaces,
+light/dark mode -> neutral foundation, card, popover, input, elevated/subtle surfaces,
                    border hierarchy, base text hierarchy
-accent palette  -> primary, accent, focus ring, selected/active navigation,
-                   brand-oriented chart emphasis
+accent palette  -> restrained outer-canvas tint, primary, accent, focus ring,
+                   selected/active navigation, brand-oriented chart emphasis
 semantic state  -> success, warning, danger, info, semantic purple
 ```
 
-A palette MUST NOT tint the page canvas or default Card/Popover/Dialog surface. Selecting Plum may make active controls plum, but it must not make the entire Settings page pink. Selecting Jade must not turn success or semantic-purple categories into the palette color.
+A palette MAY tint only the outer page canvas through the theme contract. It MUST NOT recolor default Card/Popover/Dialog/input surfaces or the neutral border/text hierarchy. Selecting Plum should make the page feel plum through a restrained canvas tint plus plum active controls; it must not wash every content surface pink. Selecting Jade must not turn success or semantic-purple categories into the palette color.
+
+Active interaction text and icons must use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
 
 Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral surface family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
 
@@ -263,7 +265,7 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
 
-For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas/card/popover/border neutrality separately from selected/focus/primary emphasis.
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify that the outer canvas changes with the palette while Card/Popover/Dialog/input/border neutrality remains stable, and verify selected/focus/primary/active text emphasis separately.
 
 `npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
