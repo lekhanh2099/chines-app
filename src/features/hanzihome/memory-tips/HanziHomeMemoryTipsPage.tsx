@@ -1,14 +1,26 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
-import Link from "next/link";
-import { ArrowLeft, Lightbulb, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { Lightbulb, MoreHorizontal, Pencil, Pin, PinOff, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
+import { PageContainer } from "@/components/layout/page-container";
+import { EmptyState } from "@/components/patterns/empty-state";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MemoryTipsSkeleton } from "@/features/hanzihome/memory-tips/MemoryTipsSkeleton";
 import { Card } from "@/components/ui/card";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { PageHeader } from "@/components/ui/page-header";
+import { QueryErrorCard } from "@/components/ui/query-error-card";
+import { Typography } from "@/components/ui/typography";
+import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
+import { MemoryTipsSkeleton } from "@/features/hanzihome/memory-tips/MemoryTipsSkeleton";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
 import { getUserVisibleMemoryTips } from "./memory-tip.utils";
@@ -50,224 +62,197 @@ export function HanziHomeMemoryTipsPage() {
  const archiveTip = async (tip: MemoryTip) => {
   try {
    await archiveMutation.mutateAsync(tip.id);
-   toast.success("Đã xóa nhắc nhanh");
+   toast.success("Đã chuyển nhắc nhanh vào mục đã xóa");
   } catch (error) {
    toast.error(error instanceof MemoryTipsApiError ? error.message : "Không thể xóa nhắc nhanh");
+   throw error;
   }
  };
 
+ if (tipsQuery.isLoading) {
+  return (
+   <PageContainer>
+    <MemoryTipsSkeleton />
+   </PageContainer>
+  );
+ }
+
  return (
-  <main className="flex w-full max-w-full flex-col gap-4 px-4 py-4 lg:px-8">
-   <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="flex min-w-0 items-start gap-3">
-      <StudyInstructionText
-       as="span"
-       tone="info"
-       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-info-subtle"
-      >
-       <Lightbulb className="h-6 w-6" />
-      </StudyInstructionText>
-
-      <div className="grid min-w-0 gap-1">
-       <StudyInstructionText
-        variant="overline"
-        tone="muted"
-        weight="black"
-        tracking="wide"
-        transform="uppercase"
-       >
-        HanziHome
-       </StudyInstructionText>
-       <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
-        Quản lý nhắc nhanh
-       </Typography>
-       <StudyInstructionText tone="muted" weight="semibold">
-        Chỉ các tip bạn tự thêm hoặc lưu từ từ vựng/ngữ pháp mới hiện ở đây.
-       </StudyInstructionText>
-      </div>
-     </div>
-
-     <div className="flex flex-wrap gap-2">
-      <Button type="button" variant="outline" asChild>
-       <Link href="/" prefetch={false}>
-        <ArrowLeft className="h-4 w-4" />
-        Về thư viện
-       </Link>
-      </Button>
-
+  <PageContainer>
+   <main className="grid w-full gap-5">
+    <PageHeader
+     eyebrow="HanziHome"
+     title="Nhắc nhanh"
+     description="Giữ lại công thức, mẹo phân biệt và ví dụ dễ quên để xem lại trong lúc học."
+     meta={
+      <Typography variant="caption" tone="muted" weight="bold">
+       {tips.length} mục đang dùng
+      </Typography>
+     }
+     actions={
       <MemoryTipDialog
        trigger={
-        <Button type="button">
-         <Plus className="h-4 w-4" />
+        <Button type="button" size="toolbar">
+         <Plus data-icon="inline-start" />
          Thêm nhắc nhanh
         </Button>
        }
       />
-     </div>
-    </div>
-   </Card>
+     }
+    />
 
-   {tipsQuery.isLoading && <MemoryTipsSkeleton />}
+    {tipsQuery.error ? (
+     <QueryErrorCard
+      title="Không tải được nhắc nhanh"
+      description="Dữ liệu nhắc nhanh hiện không khả dụng."
+      onRetry={() => void tipsQuery.refetch()}
+     />
+    ) : null}
 
-   {tipsQuery.error && (
-    <Card className="rounded-xl border border-border-default">
-     <StudyInstructionText role="alert" tone="danger" weight="bold">
-      Không tải được nhắc nhanh.
-     </StudyInstructionText>
-    </Card>
-   )}
-
-   {!tipsQuery.isLoading && !tipsQuery.error && tips.length === 0 && (
-    <Card className="rounded-xl border border-dashed border-border-default bg-bg-card">
-     <div className="grid gap-3 text-center">
-      <StudyInstructionText variant="sectionTitle" tone="default" weight="black">
-       Chưa có nhắc nhanh nào
-      </StudyInstructionText>
-      <StudyInstructionText tone="muted" weight="semibold" className="mx-auto max-w-xl">
-       Global card ngoài thư viện sẽ chưa hiện. Khi bạn thêm tip ở đây hoặc bấm “Lưu nhắc nhanh”
-       trong từ vựng/ngữ pháp, app mới bắt đầu random tips của bạn.
-      </StudyInstructionText>
-      <div className="flex justify-center">
+    {!tipsQuery.error && tips.length === 0 ? (
+     <EmptyState
+      surface="subtle"
+      size="spacious"
+      icon={<Lightbulb />}
+      title="Chưa có nhắc nhanh nào"
+      description="Thêm một tip ở đây hoặc lưu từ phần từ vựng/ngữ pháp để app có nội dung nhắc lại."
+      actions={
        <MemoryTipDialog
         trigger={
-         <Button type="button">
-          <Plus className="h-4 w-4" />
+         <Button type="button" size="toolbar">
+          <Plus data-icon="inline-start" />
           Thêm tip đầu tiên
          </Button>
         }
        />
-      </div>
+      }
+     />
+    ) : null}
+
+    {!tipsQuery.error && tips.length > 0 ? (
+     <section className="grid gap-3" aria-label="Danh sách nhắc nhanh">
+      {tips.map((tip) => (
+       <MemoryTipCard
+        key={tip.id}
+        tip={tip}
+        isMutating={isMutating}
+        onTogglePin={togglePin}
+        onArchive={archiveTip}
+       />
+      ))}
+     </section>
+    ) : null}
+   </main>
+  </PageContainer>
+ );
+}
+
+function MemoryTipCard({
+ tip,
+ isMutating,
+ onTogglePin,
+ onArchive,
+}: {
+ tip: MemoryTip;
+ isMutating: boolean;
+ onTogglePin: (tip: MemoryTip) => Promise<void>;
+ onArchive: (tip: MemoryTip) => Promise<void>;
+}) {
+ const [editOpen, setEditOpen] = useState(false);
+ const [deleteOpen, setDeleteOpen] = useState(false);
+
+ return (
+  <Card variant="section" padding="lg" className="grid gap-3">
+   <div className="flex items-start justify-between gap-3">
+    <div className="min-w-0 flex-1">
+     <div className="mb-2 flex flex-wrap items-center gap-2">
+      <Badge variant="default">{tipTypeLabels[tip.tipType]}</Badge>
+      {tip.isPinned ? <Badge variant="info">Đang ghim</Badge> : null}
      </div>
-    </Card>
-   )}
+     <Typography as="h2" variant="sectionTitle" weight="black">
+      {tip.title}
+     </Typography>
+     <Typography as="p" variant="body" tone="secondary" wrapping="preLine" className="mt-1">
+      {tip.body}
+     </Typography>
+    </div>
 
-   {tips.length > 0 && (
-    <section className="grid gap-3">
-     {tips.map((tip) => (
-      <Card
-       key={tip.id}
-       className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm"
+    <DropdownMenu>
+     <DropdownMenuTrigger asChild>
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-toolbar"
+       aria-label={`Tác vụ cho ${tip.title}`}
+       title="Tác vụ"
+       disabled={isMutating}
       >
-       <div className="grid gap-3">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-         <div className="grid min-w-0 gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <StudyInstructionText
-            variant="caption"
-            tone="muted"
-            weight="black"
-            className="rounded-full bg-bg-subtle px-2.5 py-1"
-           >
-            {tipTypeLabels[tip.tipType]}
-           </StudyInstructionText>
-           {tip.isPinned && (
-            <StudyInstructionText
-             variant="caption"
-             tone="info"
-             weight="black"
-             className="rounded-full bg-info-subtle px-2.5 py-1"
-            >
-             Đang ghim
-            </StudyInstructionText>
-           )}
-          </div>
+       <MoreHorizontal />
+      </Button>
+     </DropdownMenuTrigger>
+     <DropdownMenuContent align="end" width="md">
+      <DropdownMenuItem onSelect={() => setEditOpen(true)}>
+       <Pencil />
+       Sửa
+      </DropdownMenuItem>
+      <DropdownMenuItem onSelect={() => void onTogglePin(tip)}>
+       {tip.isPinned ? <PinOff /> : <Pin />}
+       {tip.isPinned ? "Bỏ ghim" : "Ghim"}
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem tone="destructive" onSelect={() => setDeleteOpen(true)}>
+       <Trash2 />
+       Xóa
+      </DropdownMenuItem>
+     </DropdownMenuContent>
+    </DropdownMenu>
+   </div>
 
-          <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-           {tip.title}
-          </Typography>
-          <StudyInstructionText
-           tone="secondary"
-           weight="semibold"
-           leading="relaxed"
-           wrapping="preLine"
-          >
-           {tip.body}
-          </StudyInstructionText>
-         </div>
+   {tip.formula || tip.exampleZh ? (
+    <Card variant="subtle" padding="sm" className="grid gap-2">
+     {tip.formula ? (
+      <Typography variant="label" tone="info" weight="black">
+       {tip.formula}
+      </Typography>
+     ) : null}
+     {tip.exampleZh ? (
+      <div className="grid gap-1">
+       <Typography tone="default" weight="black">
+        {tip.exampleZh}
+       </Typography>
+       {tip.examplePinyin ? (
+        <Typography variant="caption" tone="secondary" weight="semibold">
+         {tip.examplePinyin}
+        </Typography>
+       ) : null}
+       {tip.exampleVi ? (
+        <Typography variant="caption" tone="muted" weight="semibold">
+         {tip.exampleVi}
+        </Typography>
+       ) : null}
+      </div>
+     ) : null}
+    </Card>
+   ) : null}
 
-         <div className="flex flex-wrap gap-2">
-          <MemoryTipDialog
-           tip={tip}
-           trigger={
-            <Button type="button" variant="outline" size="sm" disabled={isMutating}>
-             <Pencil className="h-4 w-4" />
-             Sửa
-            </Button>
-           }
-          />
-
-          <Button
-           type="button"
-           variant={tip.isPinned ? "default" : "outline"}
-           size="sm"
-           disabled={isMutating}
-           onClick={() => void togglePin(tip)}
-          >
-           {tip.isPinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
-           {tip.isPinned ? "Bỏ ghim" : "Ghim"}
-          </Button>
-
-          <Button
-           type="button"
-           variant="destructive"
-           size="sm"
-           disabled={isMutating}
-           onClick={() => void archiveTip(tip)}
-          >
-           <Trash2 className="h-4 w-4" />
-           Xóa
-          </Button>
-         </div>
-        </div>
-
-        {(tip.formula || tip.exampleZh) && (
-         <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
-          {tip.formula && (
-           <StudyInstructionText tone="info" weight="black">
-            {tip.formula}
-           </StudyInstructionText>
-          )}
-          {tip.exampleZh && (
-           <div className="grid gap-1">
-            <StudyInstructionText tone="default" weight="black">
-             {tip.exampleZh}
-            </StudyInstructionText>
-            {tip.examplePinyin && (
-             <StudyInstructionText variant="caption" tone="secondary" weight="semibold">
-              {tip.examplePinyin}
-             </StudyInstructionText>
-            )}
-            {tip.exampleVi && (
-             <StudyInstructionText variant="caption" tone="muted" weight="semibold">
-              {tip.exampleVi}
-             </StudyInstructionText>
-            )}
-           </div>
-          )}
-         </div>
-        )}
-
-        {tip.tags.length > 0 && (
-         <div className="flex flex-wrap gap-2">
-          {tip.tags.map((tag) => (
-           <StudyInstructionText
-            key={`${tip.id}-${tag}`}
-            variant="caption"
-            tone="muted"
-            weight="bold"
-            className="rounded-full border border-border-default bg-bg-subtle px-2.5 py-1"
-           >
-            {tag}
-           </StudyInstructionText>
-          ))}
-         </div>
-        )}
-       </div>
-      </Card>
+   {tip.tags.length > 0 ? (
+    <div className="flex flex-wrap gap-2">
+     {tip.tags.map((tag) => (
+      <Badge key={`${tip.id}-${tag}`} variant="default" size="sm">
+       {tag}
+      </Badge>
      ))}
-    </section>
-   )}
-  </main>
+    </div>
+   ) : null}
+
+   <MemoryTipDialog tip={tip} open={editOpen} onOpenChange={setEditOpen} />
+   <SoftDeleteConfirmDialog
+    itemType="nhắc nhanh"
+    itemLabel={tip.title}
+    open={deleteOpen}
+    onOpenChange={setDeleteOpen}
+    onConfirm={() => onArchive(tip)}
+   />
+  </Card>
  );
 }
