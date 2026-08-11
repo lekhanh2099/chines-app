@@ -19,7 +19,7 @@ export function HomeSectionHeader({
 }) {
  return (
   <div className={cn("flex flex-wrap items-end justify-between gap-x-3 gap-y-2", className)}>
-   <div className="min-w-0 flex-[1_1_14rem]">
+   <div className="grid min-w-0 flex-[1_1_14rem] gap-1">
     <Typography
      as="h2"
      variant="sectionTitle"
@@ -37,7 +37,6 @@ export function HomeSectionHeader({
       tone="muted"
       weight="semibold"
       leading="compact"
-      className="mt-1"
      >
       {description}
      </Typography>
