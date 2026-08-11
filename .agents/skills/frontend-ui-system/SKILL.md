@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.8"
+  version: "3.9"
 ---
 
 # Frontend UI System
@@ -163,7 +163,7 @@ major surface
 
 Avoid card-inside-card-inside-card layouts. Use Badge for state/category, not every metadata count.
 
-Home is a continuation/attention surface, not a duplicate sitemap. Sidebar owns global route discovery.
+Home is a continuation/attention surface, not a duplicate sitemap. Sidebar owns global route discovery. Do not solve a sparse Home by adding route shortcuts or by stretching short cards to artificial heights. Use meaningful continuation/history/progress content, stack short activity surfaces when side-by-side placement creates a large dead zone, and keep opaque internal IDs out of learner-facing activity labels.
 
 ## 10. Shell, tablet and mobile
 
@@ -171,9 +171,11 @@ Normal pages use `PageContainer`. App Shell owns viewport height; feature pages 
 
 Treat iPad portrait around 820px as a tablet workspace, not squeezed desktop. Persistent Sidebar starts at `lg`; below that, quick navigation plus a full-navigation Sheet must keep all global routes reachable.
 
-Use two columns from `md` when both retain readable width and no horizontal overflow. Do not postpone every useful layout until `xl` if it creates empty tablet space.
+Responsive layout decisions must account for persistent shell chrome. A breakpoint is viewport-based, not container-based: when the Sidebar appears at `lg`, the remaining content width is much smaller than the viewport width. Do not activate a multi-column feature grid at the same breakpoint unless each resulting column remains readable. For Home, portrait tablet and sidebar-constrained tablet layouts stay one-column; the main/attention split begins only when the content area is genuinely wide enough.
 
-PageHeader owns title/description hierarchy. Actions must wrap/shrink without starving the title or overflowing the viewport.
+PageHeader and feature section headers must let titles, descriptions and actions wrap without starving text or creating horizontal overflow. Mobile list rows must protect the primary label with `min-w-0`; secondary badges/actions may move below the label instead of squeezing it.
+
+Use two columns only when both retain readable width and no horizontal overflow. Do not postpone useful layout unnecessarily, but do not use viewport breakpoints as a substitute for checking actual content width.
 
 ## 11. Settings and contextual controls
 
@@ -231,18 +233,19 @@ Preserve semantic tokens and shared surface grammar. Do not add feature-local ha
 Theme ownership is split deliberately:
 
 ```text
-light/dark mode -> neutral foundation, card, popover, input, elevated/subtle surfaces,
+light/dark mode -> neutral foundations: raw card, popover, input, elevated surfaces,
                    border hierarchy, base text hierarchy
-accent palette  -> restrained outer-canvas tint, primary, accent, focus ring,
-                   selected/active navigation, brand-oriented chart emphasis
+accent palette  -> restrained outer-canvas tint, very light default Card/shell tint,
+                   primary, accent, focus ring, selected/active navigation,
+                   brand-oriented chart emphasis
 semantic state  -> success, warning, danger, info, semantic purple
 ```
 
-A palette MAY tint only the outer page canvas through the theme contract. It MUST NOT recolor default Card/Popover/Dialog/input surfaces or the neutral border/text hierarchy. Selecting Plum should make the page feel plum through a restrained canvas tint plus plum active controls; it must not wash every content surface pink. Selecting Jade must not turn success or semantic-purple categories into the palette color.
+A palette MAY tint the outer canvas clearly and default Card/shell surfaces lightly through the shared aliases `--bg-primary` and `--bg-card`. It MUST NOT redefine the raw `--card` foundation or recolor Popover/Dialog/input/border/text foundations. The Card tint must be materially weaker than the canvas/active emphasis so content hierarchy remains calm.
 
 Active interaction text and icons must use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
 
-Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral surface family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
+Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral foundation family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
 
 Classify visual recipes as:
 
@@ -265,7 +268,9 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
 
-For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify that the outer canvas changes with the palette while Card/Popover/Dialog/input/border neutrality remains stable, and verify selected/focus/primary/active text emphasis separately.
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify outer canvas tint, weaker Card/shell tint, neutral Popover/Dialog/input/borders, and selected/focus/primary/active text emphasis separately.
+
+For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
 
 `npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
