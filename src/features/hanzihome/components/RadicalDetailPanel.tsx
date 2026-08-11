@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RadicalSection } from "@/features/hanzihome/components/RadicalSection";
 import {
- HanziFontPreview,
+ HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
@@ -40,15 +40,9 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
 
    <div className="flex flex-wrap items-center gap-4 lg:col-span-2">
     <div className="app-brand-gradient flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-theme-sm sm:size-24">
-     <HanziFontPreview
-      font="songti"
-      size="radicalHero"
-      tone="inverse"
-      weight="black"
-      leading="none"
-     >
+     <HanziText size="radicalHero" tone="inverse" weight="black" leading="none">
       {radical.radical}
-     </HanziFontPreview>
+     </HanziText>
     </div>
     <MandarinSpeakButton text={radical.radical} />
     <div className="min-w-0">
@@ -76,7 +70,10 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
      <div className="flex flex-wrap gap-2">
       {radical.variants.map((variant) => (
        <Badge key={`${variant.form}-${variant.note}`} variant="purple" size="lg">
-        {variant.form} · {variant.note}
+        <HanziText as="span" size="inherit">
+         {variant.form}
+        </HanziText>
+        <span>· {variant.note}</span>
        </Badge>
       ))}
      </div>
@@ -91,9 +88,9 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
         key={`${component.form}-${component.note}`}
         className="grid gap-1 rounded-lg border border-border-subtle bg-bg-elevated p-3"
        >
-        <HanziFontPreview as="p" font="songti" variant="pageTitle" tone="default" weight="black">
+        <HanziText as="p" size="large" variant="pageTitle" tone="default" weight="black">
          {component.form}
-        </HanziFontPreview>
+        </HanziText>
         <StudyInstructionText variant="bodySmall" tone="secondary">
          {component.note}
         </StudyInstructionText>
@@ -130,7 +127,9 @@ export function RadicalDetailPanel({ radical, editMode, onEdit }: RadicalDetailP
         <div className="flex flex-wrap gap-2">
          {group.chars.map((char) => (
           <Badge key={`${group.name}-${char}`} variant="info" size="lg">
-           <HanziFontPreview font="songti">{char}</HanziFontPreview>
+           <HanziText as="span" size="inherit">
+            {char}
+           </HanziText>
           </Badge>
          ))}
         </div>
