@@ -4,7 +4,7 @@ import { Slot } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 
-const themedCardSurface = "bg-[var(--theme-card-background,var(--bg-card))]";
+const themedCardSurface = "bg-[var(--theme-card-background)]";
 
 const cardVariants = cva("rounded-xl border", {
  variants: {
