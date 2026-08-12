@@ -110,7 +110,9 @@ function jsxTagNameText(tagName) {
 function isDirectPageContainerChild(node) {
  const renderedNode = ts.isJsxOpeningElement(node) ? node.parent : node;
  const parent = renderedNode.parent;
- return ts.isJsxElement(parent) && jsxTagNameText(parent.openingElement.tagName) === "PageContainer";
+ return (
+  ts.isJsxElement(parent) && jsxTagNameText(parent.openingElement.tagName) === "PageContainer"
+ );
 }
 
 export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOUNDARY) }) {
