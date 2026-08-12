@@ -138,7 +138,7 @@ This improves cross-platform consistency but is not a claim that Ma Shan Zheng i
 
 ## Verification status
 
-Final GitHub Actions run for HEAD `0dfcc527793559089bbbd5b01891ba66690b9f61` passed the full `npm run check` gate:
+GitHub Actions passed the full `npm run check` gate for the code HEAD immediately before this documentation-only verification update:
 
 - ESLint passed with zero warnings;
 - source, UI-system and API registry checks passed;
@@ -148,7 +148,7 @@ Final GitHub Actions run for HEAD `0dfcc527793559089bbbd5b01891ba66690b9f61` pas
 - production audit reported zero known vulnerabilities and no new/escalated advisories;
 - Next.js production build compiled successfully and generated all static pages.
 
-The Vercel status attached to that commit is currently blocked by the account build-rate limit, not by a compiler/test failure. GitHub CI provides the production-build evidence for the verified code HEAD.
+The final documentation-only HEAD must also pass the same CI gate before merge. The Vercel status has been blocked by the account build-rate limit, not by a compiler/test failure; GitHub CI is the authoritative production-build evidence for this branch.
 
 Full authenticated phone/iPad interaction render is still required before merge because build success cannot prove touch geometry or visual rhythm. Render approximately 390×844 and 820×1180 and verify:
 
