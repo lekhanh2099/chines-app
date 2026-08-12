@@ -17,7 +17,7 @@ export function HomeDashboard() {
 
  return (
   <PageContainer>
-   <div className="mx-auto grid w-full max-w-[90rem] gap-4 sm:gap-5">
+   <div className="grid w-full min-w-0 gap-4 sm:gap-5">
     <PageHeader
      title="Trang học"
      description="Tiếp tục bài đang học, xem phần cần ôn và quay lại những nội dung vừa dùng."
