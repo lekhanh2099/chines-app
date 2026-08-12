@@ -7,48 +7,94 @@ mode    -> system | light | dark
 palette -> editorial | jade | warm | plum | mono | tea
 ```
 
-The authoritative runtime contract lives in
-`src/components/layout/theme-contract.ts`. `ThemeProvider` owns persistence and
-root attributes. `src/app/theme-palettes.css` owns palette token overrides.
+The authoritative runtime contract lives in `src/components/layout/theme-contract.ts`.
+`ThemeProvider` owns persistence/root attributes, `src/app/theme-palettes.css` owns
+palette identity, and `src/app/surface-system.css` owns the semantic surface hierarchy.
 
-## 1. Surface ownership
+## 1. Surface hierarchy
 
-A palette is a restrained product tint, not a full page skin.
+Do not theme the app by independently tinting components. All normal application
+surfaces resolve through one ladder:
+
+```text
+surface-canvas   -> route/page background
+surface-subtle   -> grouped or secondary section
+surface-base     -> Card, shell chrome, study panel
+surface-raised   -> Popover/Dialog/elevated transient content
+surface-hover    -> hover on an interactive base surface
+surface-selected -> active/selected navigation or choice
+```
+
+This hierarchy follows the same design principle used by mature platform systems:
+background/surface roles communicate depth and grouping; brand color communicates
+selection and priority.
 
 Palette MAY own:
 
-- the page canvas alias `--bg-primary` through a palette-specific `--canvas-background`;
-- the Card-only token `--theme-card-background` as a low-percentage mix of the neutral
-  `--card` foundation and the selected `--primary`;
-- `--primary` and its foreground;
-- `--accent` and its foreground;
+- `--canvas-background`;
+- `--primary` and `--primary-foreground`;
+- `--accent` and `--accent-foreground`;
 - `--ring`;
-- active Sidebar/navigation emphasis;
+- Sidebar/navigation emphasis;
 - brand-oriented chart accent.
 
-Palette MUST NOT own:
+Palette MUST NOT redefine the raw structural foundations:
 
-- the neutral `--background` foundation token;
-- the neutral `--card` foundation token itself;
-- the generic `--bg-card` alias used by controls/shell chrome;
-- Popover/Dialog background;
-- neutral elevated surfaces;
-- input surface;
-- border hierarchy;
-- normal text hierarchy.
+- `--background`;
+- `--card`;
+- `--popover`;
+- `--border`;
+- semantic success/warning/danger/info colors.
 
-Light/dark mode therefore still owns the structural surface family. The palette can
-make the product perceptibly themed in two controlled layers: the outer canvas has
-the clearest tint and the shared Card primitive receives a much lighter tint. Shell
-chrome, outline controls, Popover, Dialog, input, borders and text stay neutral so
-learning content keeps stable contrast.
+`surface-system.css` derives the visible app surfaces from those foundations and the
+selected palette. The base surface receives only a restrained hint of the canvas tint;
+it must remain visually distinct from the canvas. Subtle surfaces sit between canvas
+and base. Raised surfaces remain the mode-owned Popover foundation.
 
-The active interaction contract uses the selected palette color for both the active
-surface emphasis and active text/icon color. Nested `Typography` inside an active
-Button must inherit that interaction color rather than resetting itself to normal
-body text.
+## 2. Alias ownership
 
-## 2. Semantic color independence
+Existing app aliases resolve through the surface ladder:
+
+```text
+--bg-primary       -> --surface-canvas
+--bg-card          -> --surface-base
+--bg-card-hover    -> --surface-hover
+--bg-subtle        -> --surface-subtle
+--bg-elevated      -> --surface-raised
+--theme-card-background -> --surface-base
+```
+
+Learning-specific aliases use the same roles. `study-content-surface`, exercise cards,
+study chips and HanziHome liquid panels must not bypass the ladder with raw `--card`.
+
+The result should read as one layered interface:
+
+```text
+canvas
+  shell / toolbar / Card / study panel
+    grouped subtle region
+      selected or interactive state
+```
+
+A route must not appear as unrelated white blocks floating on a colored canvas, nor as
+one uniformly tinted sheet with no depth cues.
+
+## 3. Selection, focus and borders
+
+Selection uses the palette; structure does not.
+
+```text
+selected background -> --surface-selected
+selected text/icon   -> --primary
+selected border      -> --surface-selected-border
+focus ring           -> --ring
+normal border        -> neutral --border
+```
+
+Do not recolor every border with the palette. Accent borders are for selected/focus
+states only. Normal Card, shell, toolbar and content boundaries stay neutral.
+
+## 4. Semantic color independence
 
 Semantic colors keep the same meaning in every palette:
 
@@ -60,48 +106,66 @@ info    -> info tokens
 purple  -> semantic purple/category tokens
 ```
 
-A Jade palette must not turn a purple category badge green. A Plum palette may tint
-canvas and default cards, but it must not redefine semantic state colors. Theme palettes
-must never redefine success, warning, danger or info simply to make the screen feel
-more coordinated.
+A Jade palette must not turn a purple category badge green. A Plum palette must not
+redefine warning/error simply to look coordinated. Theme color is never the only signal
+for state.
 
-## 3. Light and dark pairs
+## 5. Light and dark pairs
 
 Every palette requires both a light and dark token set. Dark mode is not a simple
-inversion of the light accent: foreground contrast, active text, canvas tint and Card
-tint must remain legible against the dark foundation.
+inversion. The surface ladder must preserve ordering in both modes:
 
-`system` mode resolves from `prefers-color-scheme`; the stored palette remains
-unchanged when the operating system switches between light and dark.
+```text
+canvas < subtle < base < raised
+```
 
-## 4. Settings UX
+where `<` means visually lower/less elevated, not a literal numeric color comparison.
+The selected surface must remain distinguishable without becoming a large saturated
+block.
+
+`system` mode resolves from `prefers-color-scheme`; the stored palette remains unchanged
+when the operating system switches between light and dark.
+
+## 6. Theme transition
+
+Do not animate every descendant during a theme change. That makes nested panels appear
+to repaint independently.
+
+The global contract is:
+
+- nested descendants change immediately;
+- only major structural surfaces and active navigation may cross-fade;
+- transition is short (about 140ms);
+- `prefers-reduced-motion: reduce` disables the transition.
+
+## 7. Settings UX
 
 Appearance settings expose:
 
 - one direct light/dark/system choice;
 - the complete palette set with a visual swatch;
 - a selected-state check;
-- a short description of the current palette.
+- a short description of the current palette;
+- a live preview that shows canvas, base surface, subtle grouping, text hierarchy and
+  selected state together.
 
-Palette choices are standalone touch targets. They must not be represented as small
-toolbar controls. Changing palette should visibly change the outer page canvas, lightly
-change Card surfaces and change selected/active emphasis without tinting generic controls
-or reducing reading contrast inside content-heavy surfaces.
+Palette choices are standalone touch targets. Changing palette should visibly affect
+canvas and selected emphasis while keeping content readability stable.
 
-## 5. Adding a palette
+## 8. Adding a palette
 
 To add a palette:
 
 1. Add its key to `ThemePaletteSchema`.
 2. Add user-facing metadata to `THEME_PALETTE_META`.
 3. Define light and dark selectors in `theme-palettes.css`.
-4. Define a restrained `--canvas-background` plus the palette-owned emphasis tokens.
-5. Keep raw `--card` and generic `--bg-card` neutral; derive only
-   `--theme-card-background` through the shared low-percentage palette mix.
-6. Keep Popover/Dialog/input/border/text foundation tokens neutral.
-7. Add/keep a swatch selector.
-8. Run `theme-contract.test.ts` and the normal UI gate.
-9. Render at least Settings plus one content-heavy learning surface in light and dark
-   mode before claiming visual verification.
+4. Define `--canvas-background`, primary/accent/ring and Sidebar emphasis only.
+5. Do not create feature-local background recipes.
+6. Keep semantic state colors independent.
+7. Keep the shared surface ladder intact; do not add a palette-specific Card recipe.
+8. Add/keep a swatch selector.
+9. Run `theme-contract.test.ts` and the normal UI gate.
+10. Render Settings plus at least one content-heavy learning surface in light and dark
+    before claiming visual verification.
 
-Do not add feature-local palette classes or a second theme store.
+Do not add a second theme store or feature-local palette classes.
