@@ -22,6 +22,7 @@ import {
  NotebookTabs,
  PlugZap,
  Repeat2,
+ Settings,
 } from "lucide-react";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
@@ -74,6 +75,9 @@ const navigationGroups: NavigationGroup[] = [
 ];
 
 const mobileItems = [learningItems[0], learningItems[1], practiceItems[0], personalItems[0]];
+const mobileUtilityItems: NavItem[] = [
+ { name: "Cài đặt", icon: Settings, href: "/settings?section=app" },
+];
 
 function isActive(pathname: string, searchParams: URLSearchParams, href: string) {
  const [base, rawQuery] = href.split("?");
@@ -338,6 +342,20 @@ export function MobileBottomNavigation() {
          ))}
         </section>
        ))}
+       <section className="grid content-start gap-1.5" aria-label="Hệ thống">
+        <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
+         Hệ thống
+        </Typography>
+        {mobileUtilityItems.map((item) => (
+         <NavRow
+          key={item.name}
+          item={item}
+          active={isActive(pathname, searchParams, item.href)}
+          collapsed={false}
+          onNavigate={() => setMoreOpen(false)}
+         />
+        ))}
+       </section>
       </div>
      </nav>
     </SheetBody>
