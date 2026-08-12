@@ -139,7 +139,11 @@ function HeaderContextArea({
  simpleBreadcrumb: Nullable<SimpleHeaderBreadcrumb>;
 }) {
  if (toolbarContent) {
-  return <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">{toolbarContent}</div>;
+  return (
+   <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">
+    {toolbarContent}
+   </div>
+  );
  }
 
  if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
