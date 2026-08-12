@@ -18,16 +18,18 @@ Authenticated mobile HanziHome reader exposed several defects at once:
 The reader now has two deliberate interaction models rather than one desktop pattern squeezed into every viewport:
 
 ```text
-phone / iPad / narrow touch workspace (< lg)
+phone / iPad / constrained workspace (< xl)
   -> one modal bottom Sheet
   -> touch-sized font, size, reveal and visibility controls
   -> Sheet owns focus, backdrop, scroll and safe-area
   -> bottom navigation is below the modal layer and cannot compete with the task
 
-wide desktop (>= lg)
+wide desktop (>= xl)
   -> compact DropdownMenu
   -> shallow nested submenus remain available for pointer/keyboard use
 ```
+
+The breakpoint follows the lesson workspace itself: the app already keeps module selection in compact form below `xl`, so reader settings do not switch to desktop submenu behavior earlier than the rest of the workspace.
 
 This is a responsive behavior change, not a CSS repositioning of the old submenu.
 
@@ -36,6 +38,8 @@ This is a responsive behavior change, not a CSS repositioning of the old submenu
 ### `HanziHomeReadingSettingsTrigger.tsx`
 
 New feature composition that owns the responsive choice between touch Sheet and desktop DropdownMenu. It reuses the same learning-state owner and the exported reader option contracts; it does not create a second settings store.
+
+The old standalone Dropdown-only quick-settings button was removed so future consumers cannot bypass the responsive entrypoint accidentally.
 
 ### `Sheet`
 
@@ -49,6 +53,8 @@ Shared Select content now has a viewport max width. The lesson module Select res
 
 The toolbar trigger becomes icon-only below `sm`, retaining its accessible name. This keeps the 36px command row from being starved by the low-priority text label.
 
+The view-mode choice was also flattened into the tools menu instead of opening another lateral submenu for only two choices.
+
 ### Hanzi font fallback
 
 `kaiti` continues to prefer native `Kaiti SC` / `KaiTi` when the platform provides it. When those fonts are absent, it now falls back to the already-delivered `Ma Shan Zheng` web-font variable before the generic Noto Serif fallback. The reader and font preview both use the same `getHanziFontFamily` owner.
@@ -58,12 +64,12 @@ This improves cross-platform consistency but is not a claim that Ma Shan Zheng i
 ## Regression protection
 
 - `LessonReadingSettings.test.tsx` locks the Kaiti fallback ordering.
-- `HanziHomeReadingSettingsTrigger.test.tsx` locks the responsive Sheet branch, complete touch controls, full-settings route and separate desktop menu branch.
+- `HanziHomeReadingSettingsTrigger.test.tsx` locks the Sheet branch through tablet layouts, complete touch controls, full-settings route and separate wide-desktop menu branch.
 - UI skill updated to v3.13 with the touch-overlay contract.
 
 ## Verification status
 
-- Vercel build/status on branch commit `a4fcfdae15a7a04be2afac82d2eb4adce82e4912`: success.
+- Vercel reported success on the branch during implementation; final HEAD still requires the normal branch/PR quality gate before merge.
 - Full authenticated phone/iPad interaction render was not available to the agent environment at this checkpoint.
 - Before merge, render the actual lesson workspace at approximately 390×844 and 820×1180 and verify:
   - opening reader settings produces one modal Sheet only;
