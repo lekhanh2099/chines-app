@@ -55,6 +55,7 @@ Check:
 - Header alignment and route-context replacement;
 - split-panel width;
 - touch targets;
+- visual icon/avatar size is allowed to be smaller than its 44px phone hit area;
 - dynamic viewport height and safe area;
 - popup collision/clipping;
 - command/editor rows use the 36px toolbar family;
@@ -131,13 +132,18 @@ Verify:
 - Sidebar shows Học, Luyện, Năng lực and Cá nhân on desktop;
 - navigating to a route in another group exposes the active route without closing unrelated user-opened groups;
 - collapsed rail preserves direct route access and accessible names;
-- mobile navigation exposes active route with `aria-current`;
+- phone quick navigation is icon-only, each destination keeps an accessible name and the active destination keeps `aria-current`;
+- phone quick-navigation targets remain 44px even though labels are visually hidden;
+- `Thêm` exposes every non-primary route plus the Settings destination so hiding the phone Header gear never makes Settings unreachable;
+- bottom navigation clears device safe-area without reserving obsolete label height;
 - Home contains continuation/recent-work content and does not duplicate the global sitemap as large navigation cards;
 - Home loading skeleton matches current hierarchy.
 
 ### Gear, profile and settings hub
 
-- Gear and avatar triggers work with mouse, keyboard and touch;
+- Gear and avatar triggers work with mouse, keyboard and touch where rendered;
+- phone Header may hide Gear to preserve route context; Settings remains reachable through `Thêm`;
+- phone profile keeps a 44px target even when the visible avatar is smaller;
 - Gear contains global Theme, route-scoped lookup, Focus and the full Settings link only;
 - reader controls are not duplicated in global Gear;
 - `/settings?section=app|reading|ai` deep-links, preserves selected section after refresh and rejects invalid section to `app`;
@@ -150,7 +156,8 @@ Verify:
 - the quick reader control is available from the lesson workspace toolbar only;
 - font/size/reveal/visibility menu groups expose current state;
 - font radio items visually preview the represented Hanzi font;
-- menu keyboard navigation and Escape/focus return work;
+- phone/iPad use one modal Sheet rather than parent + lateral submenu panels;
+- menu keyboard navigation and Escape/focus return work on desktop;
 - loading/sync-error state is observable;
 - full reading settings link routes to `/settings?section=reading`;
 - leaving lesson workspace unmounts the contextual control without persisting local menu-open state.
@@ -190,7 +197,16 @@ Verify:
 - Notes workspace fills available shell height without hard-coded subtraction;
 - desktop library pane and mobile Sheet remain usable after Header/mobile-nav size changes;
 - search, filters and create/import actions wrap without horizontal overflow;
-- loading/error states occupy a usable route surface.
+- loading/error states occupy a usable route surface;
+- phone note Header preserves title/quick-select width while showing only high-value contextual actions plus search/profile;
+- successful autosave does not permanently consume a phone Header slot, while saving and save-error states remain visible;
+- phone note action overflow opens one modal bottom Sheet with touch-sized rows rather than a long floating Popover;
+- read-only phone rendering normalizes imported inline font sizes without mutating stored note content;
+- switching to edit mode restores the stored formatting contract rather than persisting the mobile presentation override;
+- body/heading/quote rhythm fits the phone width without globally shrinking text to an unreadable size;
+- long code/preformatted teaching content wraps on phone and does not widen the document;
+- tables, when wider than the phone, scroll inside their own content region rather than causing page-level horizontal overflow;
+- phone reading surface removes redundant desktop card/inset padding while tablet/desktop keep their stronger frame.
 
 ### Notebook
 
