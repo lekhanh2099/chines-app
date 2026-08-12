@@ -76,11 +76,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
   <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
    <Popover.Trigger
     render={
-     <Button
-      variant={focusModeEnabled ? "warning" : "ghost"}
-      size="icon"
-      className="shrink-0"
-     />
+     <Button variant={focusModeEnabled ? "warning" : "ghost"} size="icon" className="shrink-0" />
     }
     aria-label="Mở hồ sơ"
     title="Hồ sơ"
