@@ -13,7 +13,7 @@ const cardVariants = cva("rounded-xl border", {
    elevated: `border-border-default/80 ${themedCardSurface} shadow-theme-sm`,
    section: `border-border-default/80 ${themedCardSurface}`,
    subtle: "border-border-default bg-bg-subtle",
-   interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-elevated focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`,
+   interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-card-hover focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`,
    glass: `border-border-default ${themedCardSurface}`,
   },
   padding: {
