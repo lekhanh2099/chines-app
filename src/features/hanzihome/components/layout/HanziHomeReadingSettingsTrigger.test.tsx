@@ -57,10 +57,10 @@ vi.mock("@/components/ui/sheet", () => ({
 import { HanziHomeReadingSettingsTrigger } from "./HanziHomeReadingSettingsTrigger";
 
 describe("HanziHomeReadingSettingsTrigger", () => {
- it("uses one sheet control surface for touch layouts and keeps the desktop menu separate", () => {
+ it("uses one sheet control surface through tablet layouts and keeps the wide desktop menu separate", () => {
   const markup = renderToStaticMarkup(<HanziHomeReadingSettingsTrigger />);
 
-  expect(markup).toContain("lg:hidden");
+  expect(markup).toContain("xl:hidden");
   expect(markup).toContain('aria-haspopup="dialog"');
   expect(markup).toContain("Phông chữ");
   expect(markup).toContain("Khải thư · 楷体");
@@ -68,7 +68,7 @@ describe("HanziHomeReadingSettingsTrigger", () => {
   expect(markup).toContain("Cách mở nội dung");
   expect(markup).toContain("Hiển thị");
   expect(markup).toContain("Mở cài đặt đọc đầy đủ");
-  expect(markup).toContain("hidden lg:block");
+  expect(markup).toContain("hidden xl:block");
   expect(markup).toContain("Desktop reader menu");
  });
 });
