@@ -133,6 +133,22 @@ describe("UI standards guard", () => {
   ).toEqual([]);
  });
 
+ it("rejects max-width on the direct fluid PageContainer root", () => {
+  expect(
+   inspect(
+    'export function Example() { return <PageContainer><div className="grid w-full max-w-7xl"><div className="max-w-prose" /></div></PageContainer>; }',
+   ),
+  ).toEqual([expect.stringContaining("pageRootMaxWidth")]);
+ });
+
+ it("allows readable measures inside a fluid PageContainer root", () => {
+  expect(
+   inspect(
+    'export function Example() { return <PageContainer><div className="grid w-full"><div className="max-w-prose" /></div></PageContainer>; }',
+   ),
+  ).toEqual([]);
+ });
+
  it("does not police ordinary styled structural text containers", () => {
   expect(
    inspect(
