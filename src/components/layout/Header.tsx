@@ -279,6 +279,7 @@ function HeaderUtilityArea({
       size="icon"
       aria-label="Mở cài đặt nhanh"
       title="Cài đặt nhanh"
+      className="hidden sm:inline-flex"
      >
       <Settings />
      </Button>
