@@ -10,13 +10,9 @@ import {
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
- DropdownMenuSub,
- DropdownMenuSubContent,
- DropdownMenuSubTrigger,
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Typography } from "@/components/ui/typography";
 import {
  contentEditingEnabled,
  developerToolsEnabled,
@@ -108,31 +104,22 @@ function HanziHomeCompactDeveloperTools({
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="md">
      {developerToolsEnabled ? (
-      <DropdownMenuSub>
-       <DropdownMenuSubTrigger>
-        <GraduationCap />
-        Chế độ xem
-        <Typography as="span" variant="caption" tone="muted" className="max-w-20" clamp="one">
-         {viewMode === "study" ? "Học tập" : "Kiểm tra"}
-        </Typography>
-       </DropdownMenuSubTrigger>
-       <DropdownMenuSubContent width="md">
-        <DropdownMenuLabel>Chế độ xem</DropdownMenuLabel>
-        <DropdownMenuRadioGroup
-         value={viewMode}
-         onValueChange={(value) => setViewMode(LessonViewModeSchema.parse(value))}
-        >
-         <DropdownMenuRadioItem value="study">
-          <GraduationCap />
-          Học tập
-         </DropdownMenuRadioItem>
-         <DropdownMenuRadioItem value="debug">
-          <Bug />
-          Kiểm tra dữ liệu
-         </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-       </DropdownMenuSubContent>
-      </DropdownMenuSub>
+      <>
+       <DropdownMenuLabel>Chế độ xem</DropdownMenuLabel>
+       <DropdownMenuRadioGroup
+        value={viewMode}
+        onValueChange={(value) => setViewMode(LessonViewModeSchema.parse(value))}
+       >
+        <DropdownMenuRadioItem value="study">
+         <GraduationCap />
+         Học tập
+        </DropdownMenuRadioItem>
+        <DropdownMenuRadioItem value="debug">
+         <Bug />
+         Kiểm tra dữ liệu
+        </DropdownMenuRadioItem>
+       </DropdownMenuRadioGroup>
+      </>
      ) : null}
 
      {children ? (
