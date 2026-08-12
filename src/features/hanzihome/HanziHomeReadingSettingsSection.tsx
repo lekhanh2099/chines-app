@@ -1,15 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { Eye, RefreshCcw, Settings2, Type } from "lucide-react";
+import { Eye, RefreshCcw, Type } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- DropdownMenu,
  DropdownMenuCheckboxItem,
- DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuLabel,
  DropdownMenuRadioGroup,
@@ -18,7 +15,6 @@ import {
  DropdownMenuSub,
  DropdownMenuSubContent,
  DropdownMenuSubTrigger,
- DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
@@ -104,34 +100,6 @@ export function HanziHomeReadingSettingsSection() {
     </div>
    )}
   </div>
- );
-}
-
-export function HanziHomeReadingQuickSettingsButton() {
- return (
-  <DropdownMenu>
-   <DropdownMenuTrigger asChild>
-    <Button
-     type="button"
-     variant="outline"
-     size="icon-toolbar"
-     aria-label="Thiết lập đọc"
-     title="Thiết lập đọc"
-    >
-     <Settings2 />
-    </Button>
-   </DropdownMenuTrigger>
-   <DropdownMenuContent align="end" width="lg">
-    <HanziHomeReadingQuickSettingsMenu />
-    <DropdownMenuSeparator />
-    <DropdownMenuItem asChild>
-     <Link href="/settings?section=reading">
-      <Settings2 />
-      Mở cài đặt đọc đầy đủ
-     </Link>
-    </DropdownMenuItem>
-   </DropdownMenuContent>
-  </DropdownMenu>
  );
 }
 
