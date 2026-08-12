@@ -84,10 +84,10 @@ export function Header({ user }: { user?: Nullable<User> }) {
  return (
   <>
    <FocusModeRouteGuard />
-   <header className="nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-3 sm:h-14 sm:px-5 lg:px-7">
+   <header className="nova-shell-header sticky top-0 z-50 flex h-12 w-full max-w-full min-w-0 shrink-0 items-center overflow-hidden border-b border-border-default px-2 sm:h-14 sm:px-5 lg:px-7">
     <div
      className={cn(
-      "grid h-12 w-full min-w-0 items-center gap-2 sm:h-14 sm:gap-3",
+      "grid h-12 w-full min-w-0 items-center gap-1.5 sm:h-14 sm:gap-3",
       hasRouteToolbar
        ? "grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)_auto]"
        : "grid-cols-[minmax(0,1fr)_auto]",
@@ -139,7 +139,7 @@ function HeaderContextArea({
  simpleBreadcrumb: Nullable<SimpleHeaderBreadcrumb>;
 }) {
  if (toolbarContent) {
-  return <div className="flex min-w-0 items-center gap-2 overflow-hidden">{toolbarContent}</div>;
+  return <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">{toolbarContent}</div>;
  }
 
  if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
@@ -251,18 +251,18 @@ function HeaderUtilityArea({
  return (
   <div
    className={cn(
-    "relative z-10 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2",
+    "relative z-10 flex min-w-0 shrink-0 items-center justify-end gap-0.5 sm:gap-1.5",
     routeToolbarActive && "col-start-2 row-start-1 xl:col-start-3",
    )}
   >
    {routeToolbarActive ? (
     <Button
      type="button"
-     variant="outline"
+     variant="ghost"
      onClick={onOpenSearch}
      aria-label="Mở tìm kiếm HanziHome"
      title="Tìm toàn bộ HanziHome"
-     size="icon-toolbar"
+     size="icon"
      className="xl:hidden"
     >
      <Search />
@@ -275,8 +275,8 @@ function HeaderUtilityArea({
     <DropdownMenuTrigger asChild>
      <Button
       type="button"
-      variant="outline"
-      size="icon-toolbar"
+      variant="ghost"
+      size="icon"
       aria-label="Mở cài đặt nhanh"
       title="Cài đặt nhanh"
      >
