@@ -138,21 +138,31 @@ This improves cross-platform consistency but is not a claim that Ma Shan Zheng i
 
 ## Verification status
 
-- Vercel builds are used as branch compile/deploy evidence.
-- GitHub Actions `npm run check` is the final repository gate for the branch; record only the final HEAD result in the PR handoff.
-- Full authenticated phone/iPad interaction render is still required before merge because build success cannot prove touch geometry or visual rhythm.
-- Before merge, render approximately 390×844 and 820×1180 and verify:
-  - phone bottom nav is icon-only, all five destinations remain reachable and active state is obvious;
-  - every phone nav/Header action has a usable touch region without oversized visible chrome;
-  - Settings is reachable through `Thêm` when the xs Header Gear is hidden;
-  - long note titles truncate without pushing search/profile off-screen;
-  - successful autosave does not reserve a permanent phone Header slot; saving/error remain visible;
-  - note actions use one bottom Sheet and the shell behind it is non-interactive;
-  - read-only imported font sizes follow the mobile rhythm and return to stored formatting in edit mode;
-  - code does not widen the note document and wide tables scroll only inside their own region;
-  - opening HanziHome reader settings produces one modal Sheet only;
-  - no font/size child panel appears beside the Sheet;
-  - bottom navigation is covered and non-interactive while reader settings are open;
-  - module Select remains inside viewport edges;
-  - selected reader font preview matches learner Hanzi rendering on the same device;
-  - Sheet footers clear device safe area.
+Final GitHub Actions run for HEAD `0dfcc527793559089bbbd5b01891ba66690b9f61` passed the full `npm run check` gate:
+
+- ESLint passed with zero warnings;
+- source, UI-system and API registry checks passed;
+- Next type generation + `tsc --noEmit` passed;
+- 66 test files / 276 tests passed;
+- Prettier format check passed;
+- production audit reported zero known vulnerabilities and no new/escalated advisories;
+- Next.js production build compiled successfully and generated all static pages.
+
+The Vercel status attached to that commit is currently blocked by the account build-rate limit, not by a compiler/test failure. GitHub CI provides the production-build evidence for the verified code HEAD.
+
+Full authenticated phone/iPad interaction render is still required before merge because build success cannot prove touch geometry or visual rhythm. Render approximately 390×844 and 820×1180 and verify:
+
+- phone bottom nav is icon-only, all five destinations remain reachable and active state is obvious;
+- every phone nav/Header action has a usable touch region without oversized visible chrome;
+- Settings is reachable through `Thêm` when the xs Header Gear is hidden;
+- long note titles truncate without pushing search/profile off-screen;
+- successful autosave does not reserve a permanent phone Header slot; saving/error remain visible;
+- note actions use one bottom Sheet and the shell behind it is non-interactive;
+- read-only imported font sizes follow the mobile rhythm and return to stored formatting in edit mode;
+- code does not widen the note document and wide tables scroll only inside their own region;
+- opening HanziHome reader settings produces one modal Sheet only;
+- no font/size child panel appears beside the Sheet;
+- bottom navigation is covered and non-interactive while reader settings are open;
+- module Select remains inside viewport edges;
+- selected reader font preview matches learner Hanzi rendering on the same device;
+- Sheet footers clear device safe area.
