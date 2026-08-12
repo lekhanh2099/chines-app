@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./theme-palettes.css";
+import "./surface-system.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { AppToaster } from "@/components/layout/AppToaster";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
