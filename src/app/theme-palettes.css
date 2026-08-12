@@ -1,9 +1,6 @@
 /*
- * Palette themes own restrained product tint plus interactive emphasis.
- * The outer canvas receives the clearest tint. Default Card surfaces get a much
- * lighter tint through --theme-card-background, while popovers, dialogs,
- * controls, shell chrome, borders and the raw --card foundation remain neutral
- * so reading hierarchy stays calm and predictable.
+ * Palette themes own restrained product identity and interactive emphasis.
+ * Surface hierarchy is intentionally NOT defined here; see surface-system.css.
  *
  * Success, warning, danger, info and semantic purple remain stable regardless
  * of the selected palette; a green theme must not turn a purple category badge
@@ -20,18 +17,6 @@
  --purple: oklch(0.75 0.15 303);
  --purple-subtle: oklch(0.3 0.035 303);
  --purple-text: oklch(0.84 0.1 303);
-}
-
-[data-theme][data-palette] {
- --bg-primary: var(--canvas-background);
-}
-
-[data-theme="light"][data-palette] {
- --theme-card-background: color-mix(in oklch, var(--card) 94%, var(--primary));
-}
-
-[data-theme="dark"][data-palette] {
- --theme-card-background: color-mix(in oklch, var(--card) 92%, var(--primary));
 }
 
 [data-theme][data-palette] .app-active-item {
