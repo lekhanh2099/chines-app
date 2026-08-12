@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Eye, Settings2, Type } from "lucide-react";
+import { Eye, Settings2, Type, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -59,7 +59,7 @@ export function HanziHomeReadingSettingsTrigger() {
     </Button>
    </div>
 
-   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" className="max-h-[92dvh]">
+   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
     <SheetHeader title="Thiết lập đọc" onClose={() => setSheetOpen(false)} />
     <SheetBody className="pb-6">
      {learning.isLoading ? (
@@ -231,7 +231,7 @@ function ReadingSettingsSheetControls({
  );
 }
 
-function SettingsGroupLabel({ icon: Icon, label }: { icon: typeof Type; label: string }) {
+function SettingsGroupLabel({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
  return (
   <div className="flex items-center gap-2">
    <Icon aria-hidden="true" className="size-4 text-text-muted" />
