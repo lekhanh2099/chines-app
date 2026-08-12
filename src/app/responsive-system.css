@@ -1,0 +1,90 @@
+/*
+ * Responsive system overrides.
+ *
+ * Base component geometry stays with its owner. This file only owns cross-surface
+ * viewport adaptations that need to remain synchronized across the app shell and
+ * the Lexical reading surface.
+ */
+
+@media (max-width: 47.999rem) {
+ :root {
+  --bottom-nav-height: 3.25rem;
+ }
+
+ /* Phone notes are a reading surface first: use the available width instead of
+    nesting the document in a desktop-style card with another inset frame. */
+ .note-editor-scroll {
+  border-inline: 0;
+  border-radius: 0;
+ }
+
+ .note-editor-scroll .editor-container {
+  padding: 0.875rem 1rem 1.25rem;
+ }
+
+ .note-editor-scroll .editor-placeholder {
+  inset-block-start: 0.875rem;
+  inset-inline-start: 1rem;
+ }
+
+ .note-editor-scroll .editor-input {
+  min-height: 100%;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+ }
+
+ .note-editor-scroll .editor-paragraph {
+  margin-block: 0.35rem;
+ }
+
+ .note-editor-scroll .editor-heading-h1 {
+  margin-block: 1.15em 0.45em;
+  font-size: 1.5em;
+  line-height: 1.24;
+ }
+
+ .note-editor-scroll .editor-heading-h2 {
+  margin-block: 1.05em 0.45em;
+  font-size: 1.3em;
+  line-height: 1.3;
+ }
+
+ .note-editor-scroll .editor-heading-h3 {
+  margin-block: 1em 0.4em;
+  font-size: 1.15em;
+  line-height: 1.35;
+ }
+
+ .note-editor-scroll .editor-quote {
+  margin-block: 0.7rem;
+  padding: 0.625rem 0.75rem;
+ }
+
+ /* A code block must not turn the whole phone document into a horizontal pan.
+    Desktop keeps preformatted horizontal scrolling; phones wrap long teaching
+    snippets because reading continuity is the primary task. */
+ .note-editor-scroll .editor-code {
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  padding: 0.75rem;
+  font-size: 0.85em;
+  line-height: 1.6;
+ }
+
+ .note-editor-scroll .editor-table {
+  display: block;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+ }
+
+ /* Imported desktop HTML can persist an inline font-size in Lexical state.
+    Preserve it while editing, but normalize it in the phone read-only view so
+    one pasted span cannot blow up the entire mobile reading rhythm. Headings
+    still keep their semantic size through their parent heading class. */
+ .note-editor-scroll .editor-shell[data-read-only] .editor-input [style*="font-size"] {
+  font-size: inherit !important;
+ }
+}
