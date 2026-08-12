@@ -530,10 +530,7 @@ export function NoteEditorPanel({
       side="bottom"
       height="tall"
      >
-      <SheetHeader
-       title="Tùy chọn ghi chú"
-       onClose={() => setMobileActionsOpen(false)}
-      />
+      <SheetHeader title="Tùy chọn ghi chú" onClose={() => setMobileActionsOpen(false)} />
       <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
        <section className="grid gap-1">
         <Typography
@@ -557,11 +554,7 @@ export function NoteEditorPanel({
           setMobileActionsOpen(false);
          }}
         >
-         {isReadOnlyMode ? (
-          <Pencil data-icon="inline-start" />
-         ) : (
-          <Eye data-icon="inline-start" />
-         )}
+         {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
          {isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chuyển sang chỉ xem"}
         </Button>
         <Button
@@ -708,12 +701,7 @@ export function NoteEditorPanel({
      </Sheet>
 
      {metadataOpen ? (
-      <NoteLibraryMetadataDialog
-       note={note}
-       open
-       onOpenChange={setMetadataOpen}
-       hideTrigger
-      />
+      <NoteLibraryMetadataDialog note={note} open onOpenChange={setMetadataOpen} hideTrigger />
      ) : null}
 
      <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
