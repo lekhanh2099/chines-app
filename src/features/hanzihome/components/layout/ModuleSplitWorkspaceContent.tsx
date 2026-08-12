@@ -16,10 +16,10 @@ import {
 } from "@/components/ui/select";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
-import { HanziHomeReadingQuickSettingsButton } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
+import { HanziHomeReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadingSettingsTrigger";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
 import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
@@ -162,13 +162,13 @@ export function ModuleSplitWorkspaceContent() {
  };
 
  const workspaceControls = effectiveSplitEnabled ? (
-  <div className="flex w-full min-w-0 items-center justify-end gap-2">
+  <div className="flex w-full min-w-0 items-center justify-end gap-1.5 sm:gap-2">
    <LearningSyncStatus />
    <div
     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
-   <HanziHomeReadingQuickSettingsButton />
+   <HanziHomeReadingSettingsTrigger />
    <HanziHomeDeveloperTools inline>
     <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
      <Columns2 />
@@ -216,13 +216,13 @@ export function ModuleSplitWorkspaceContent() {
      />
     </div>
    </div>
-   <div className="flex shrink-0 items-center gap-2">
+   <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
     <LearningSyncStatus />
     <div
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    <HanziHomeReadingQuickSettingsButton />
+    <HanziHomeReadingSettingsTrigger />
     <HanziHomeDeveloperTools inline>
      <DropdownMenuItem onSelect={enableSplit}>
       <Columns2 />
