@@ -66,6 +66,7 @@ const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
 const FEATURE_LARGE_RADIUS_PATTERN = /\brounded-(?:2xl|3xl)\b/;
 const FEATURE_RING_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
 const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
+const PAGE_ROOT_MAX_WIDTH_PATTERN = /\bmax-w-(?:\[[^\]]+\]|[^\s"'`}]*)/;
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -104,6 +105,12 @@ function jsxTagNameText(tagName) {
   return owner ? `${owner}.${tagName.name.text}` : tagName.name.text;
  }
  return "";
+}
+
+function isDirectPageContainerChild(node) {
+ const renderedNode = ts.isJsxOpeningElement(node) ? node.parent : node;
+ const parent = renderedNode.parent;
+ return ts.isJsxElement(parent) && jsxTagNameText(parent.openingElement.tagName) === "PageContainer";
 }
 
 export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOUNDARY) }) {
@@ -202,7 +209,17 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   if (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) {
    const tagName = jsxTagNameText(node.tagName);
    const className = classNameAttribute(node);
-   if (className) inspectSpacing(className);
+   if (className) {
+    inspectSpacing(className);
+    if (
+     isDirectPageContainerChild(node) &&
+     PAGE_ROOT_MAX_WIDTH_PATTERN.test(className.getText(sourceFile))
+    ) {
+     failures.push(
+      `pageRootMaxWidth: ${location(sourceFile, className)} constrains the fluid PageContainer root; constrain an inner content measure instead`,
+     );
+    }
+   }
 
    if (!isUiOwner) {
     if (UI_INTRINSIC_CONTROL_TAGS.has(tagName)) {
