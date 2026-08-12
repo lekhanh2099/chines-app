@@ -15,7 +15,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const headerBreadcrumbItemClassName =
- "inline-flex h-8 min-h-8 max-w-[min(14rem,32vw)] items-center gap-1.5 rounded-lg px-2 text-sm font-bold text-text-secondary transition-colors hover:bg-bg-subtle hover:text-text-primary";
+ "inline-flex h-11 min-h-11 max-w-[min(14rem,32vw)] items-center gap-1.5 rounded-lg px-1.5 text-sm font-bold text-text-secondary transition-colors hover:bg-bg-subtle hover:text-text-primary sm:h-8 sm:min-h-8 sm:px-2";
 
 export function AppHeaderBreadcrumb({
  children,
@@ -30,7 +30,7 @@ export function AppHeaderBreadcrumb({
   <Breadcrumb
    aria-label={ariaLabel}
    className={cn(
-    "inline-flex h-10 w-fit max-w-full min-w-0 justify-self-start overflow-hidden rounded-lg border border-border-default bg-bg-card px-1",
+    "inline-flex h-11 w-fit max-w-full min-w-0 justify-self-start overflow-hidden rounded-lg border border-transparent bg-transparent px-0 sm:h-10 sm:border-border-default sm:bg-bg-card sm:px-1",
     className,
    )}
   >
