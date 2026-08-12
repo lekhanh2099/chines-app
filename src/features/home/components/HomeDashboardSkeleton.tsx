@@ -5,7 +5,7 @@ export function HomeDashboardSkeleton() {
  return (
   <PageContainer>
    <div
-    className="mx-auto grid w-full max-w-[90rem] gap-4 sm:gap-5"
+    className="grid w-full min-w-0 gap-4 sm:gap-5"
     aria-busy="true"
     aria-label="Đang tải trang học"
    >
