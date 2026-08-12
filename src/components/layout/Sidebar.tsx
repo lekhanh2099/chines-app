@@ -75,13 +75,6 @@ const navigationGroups: NavigationGroup[] = [
 
 const mobileItems = [learningItems[0], learningItems[1], practiceItems[0], personalItems[0]];
 
-const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
- "/": "Home",
- "/hanzihome": "Học",
- "/dictionary": "SRS",
- "/notes": "Ghi chú",
-};
-
 function isActive(pathname: string, searchParams: URLSearchParams, href: string) {
  const [base, rawQuery] = href.split("?");
 
@@ -283,9 +276,9 @@ export function MobileBottomNavigation() {
   <>
    <nav
     aria-label="Điều hướng nhanh"
-    className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden"
+    className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.25rem+env(safe-area-inset-bottom))] pt-1 lg:hidden"
    >
-    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
+    <div className="mx-auto grid w-full max-w-md grid-cols-5 gap-0.5">
      {mobileItems.map((item) => {
       const Icon = item.icon;
       const active = isActive(pathname, searchParams, item.href);
@@ -294,24 +287,15 @@ export function MobileBottomNavigation() {
        <Button
         key={item.name}
         variant={active ? "active" : "navigation"}
-        size="touch"
-        layout="grid"
+        size="icon"
         asChild
         aria-current={active ? "page" : undefined}
-        className="w-full min-w-0 gap-0.5"
+        aria-label={item.name}
+        title={item.name}
+        className="justify-self-center"
        >
         <Link href={item.href} prefetch={false}>
          <Icon />
-         <Typography
-          as="span"
-          variant="caption"
-          scale="fine"
-          weight="black"
-          clamp="one"
-          className="max-w-full"
-         >
-          {mobileLabels[item.href]}
-         </Typography>
         </Link>
        </Button>
       );
@@ -320,18 +304,15 @@ export function MobileBottomNavigation() {
      <Button
       type="button"
       variant={moreActive ? "active" : "navigation"}
-      size="touch"
-      layout="grid"
+      size="icon"
       aria-expanded={moreOpen}
       aria-haspopup="dialog"
       aria-label="Mở toàn bộ điều hướng"
-      className="w-full min-w-0 gap-0.5"
+      title="Thêm"
+      className="justify-self-center"
       onClick={() => setMoreOpen(true)}
      >
       <Menu />
-      <Typography as="span" variant="caption" scale="fine" weight="black">
-       Thêm
-      </Typography>
      </Button>
     </div>
    </nav>
