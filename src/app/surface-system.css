@@ -12,16 +12,21 @@
  *   raised  -> popovers/dialogs/elevated transient content
  *   hover   -> interactive base-surface hover
  *   selected-> active/selected navigation or choice
+ *
+ * Important: hover/selected surfaces derive from the low-chroma accent role,
+ * not directly from the high-chroma primary role. Primary remains the text,
+ * icon, border and focus emphasis. This keeps interaction states in the same
+ * hue family as the canvas instead of producing a purple/pink jump on hover.
  */
 
 [data-theme][data-palette] {
  --surface-canvas: var(--canvas-background);
- --surface-base: color-mix(in oklch, var(--card) 96%, var(--surface-canvas));
+ --surface-base: color-mix(in oklch, var(--card) 90%, var(--surface-canvas));
  --surface-subtle: color-mix(in oklch, var(--card) 72%, var(--surface-canvas));
  --surface-raised: var(--popover);
- --surface-hover: color-mix(in oklch, var(--primary) 4%, var(--surface-base));
- --surface-selected: color-mix(in oklch, var(--primary) 9%, var(--surface-base));
- --surface-selected-border: color-mix(in oklch, var(--primary) 28%, var(--border));
+ --surface-hover: color-mix(in oklch, var(--accent) 38%, var(--surface-base));
+ --surface-selected: color-mix(in oklch, var(--accent) 72%, var(--surface-base));
+ --surface-selected-border: color-mix(in oklch, var(--primary) 24%, var(--border));
 
  /* Existing app aliases now resolve through one semantic surface ladder. */
  --bg-primary: var(--surface-canvas);
