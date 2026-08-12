@@ -524,8 +524,16 @@ export function NoteEditorPanel({
         )
       : null}
 
-     <Sheet open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} side="bottom" height="tall">
-      <SheetHeader title="Tùy chọn ghi chú" onClose={() => setMobileActionsOpen(false)} />
+     <Sheet
+      open={mobileActionsOpen}
+      onOpenChange={setMobileActionsOpen}
+      side="bottom"
+      height="tall"
+     >
+      <SheetHeader
+       title="Tùy chọn ghi chú"
+       onClose={() => setMobileActionsOpen(false)}
+      />
       <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
        <section className="grid gap-1">
         <Typography
@@ -549,7 +557,11 @@ export function NoteEditorPanel({
           setMobileActionsOpen(false);
          }}
         >
-         {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
+         {isReadOnlyMode ? (
+          <Pencil data-icon="inline-start" />
+         ) : (
+          <Eye data-icon="inline-start" />
+         )}
          {isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chuyển sang chỉ xem"}
         </Button>
         <Button
@@ -563,7 +575,11 @@ export function NoteEditorPanel({
           setMobileActionsOpen(false);
          }}
         >
-         {isSplitView ? <PanelLeftClose data-icon="inline-start" /> : <PanelLeft data-icon="inline-start" />}
+         {isSplitView ? (
+          <PanelLeftClose data-icon="inline-start" />
+         ) : (
+          <PanelLeft data-icon="inline-start" />
+         )}
          {isSplitView ? "Đóng split view" : "Mở split view"}
         </Button>
         {!isReadOnlyMode ? (
@@ -578,7 +594,11 @@ export function NoteEditorPanel({
            setMobileActionsOpen(false);
           }}
          >
-          {isToolbarVisible ? <PanelTopClose data-icon="inline-start" /> : <PanelTopOpen data-icon="inline-start" />}
+          {isToolbarVisible ? (
+           <PanelTopClose data-icon="inline-start" />
+          ) : (
+           <PanelTopOpen data-icon="inline-start" />
+          )}
           {isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
          </Button>
         ) : null}
