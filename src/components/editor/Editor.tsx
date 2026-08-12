@@ -111,8 +111,6 @@ const SAFE_HTML_IMPORT = buildImportMap({
  },
 });
 
-/* ── Types ── */
-
 interface EditorProps {
  initialContent?: z.infer<z.ZodNullable<typeof JsonObjectSchema>>;
  onChange?: (json: JsonObject) => void;
@@ -125,7 +123,6 @@ function Placeholder() {
  return <div className="editor-placeholder">Bắt đầu nhập nội dung...</div>;
 }
 
-/* ── Read-only toggle ── */
 function EditablePlugin({ readOnly }: { readOnly: boolean }) {
  const [editor] = useLexicalComposerContext();
  useEffect(() => {
@@ -134,7 +131,6 @@ function EditablePlugin({ readOnly }: { readOnly: boolean }) {
  return null;
 }
 
-/* ── Prefer rich HTML, then convert plain clipboard Markdown ── */
 function RichPastePlugin() {
  const [editor] = useLexicalComposerContext();
 
@@ -169,7 +165,6 @@ function RichPastePlugin() {
  return null;
 }
 
-/* ── Main Editor ── */
 export function Editor({
  initialContent,
  onChange,
@@ -216,12 +211,11 @@ export function Editor({
     className="editor-shell"
     data-editor-wrapper
     data-no-inspector
+    {...(readOnly ? { "data-read-only": "" } : {})}
     {...(seamless ? { "data-seamless": "" } : {})}
    >
-    {/* Toolbar */}
     {!readOnly && toolbarVisible ? <ToolbarPlugin /> : null}
 
-    {/* Editor body */}
     <div className="editor-container">
      <RichTextPlugin
       contentEditable={
@@ -235,7 +229,6 @@ export function Editor({
       ErrorBoundary={LexicalErrorBoundary}
      />
 
-     {/* Core plugins */}
      <HistoryPlugin />
      <ListPlugin />
      <CheckListPlugin />
@@ -245,11 +238,9 @@ export function Editor({
      <AutoLinkPlugin matchers={AUTO_LINK_MATCHERS} />
      <RichPastePlugin />
 
-     {/* State management */}
      <EditablePlugin readOnly={readOnly} />
      <AutoSavePlugin onChange={onChange} />
 
-     {/* Interactive plugins */}
      {!readOnly && (
       <>
        <FloatingToolbarPlugin />
