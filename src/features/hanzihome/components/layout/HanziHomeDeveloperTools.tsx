@@ -100,9 +100,10 @@ function HanziHomeCompactDeveloperTools({
       variant={editMode ? "active" : "outline"}
       size="toolbar"
       aria-label="Mở công cụ bài học"
+      title="Công cụ bài học"
      >
       <SlidersHorizontal />
-      Công cụ
+      <span className="hidden sm:inline">Công cụ</span>
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="md">
