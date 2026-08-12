@@ -77,15 +77,15 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
    <Popover.Trigger
     render={
      <Button
-      variant={focusModeEnabled ? "avatarWarning" : "avatar"}
-      size="icon-round"
+      variant={focusModeEnabled ? "warning" : "ghost"}
+      size="icon"
       className="shrink-0"
      />
     }
     aria-label="Mở hồ sơ"
     title="Hồ sơ"
    >
-    <Avatar size="md" tone={focusModeEnabled ? "neutral" : "accent"}>
+    <Avatar size="sm" tone={focusModeEnabled ? "neutral" : "accent"}>
      {showAvatar && profile.avatarUrl ? (
       <AvatarImage
        src={profile.avatarUrl}
