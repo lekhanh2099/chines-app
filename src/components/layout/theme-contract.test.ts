@@ -71,6 +71,20 @@ describe("theme palette contract", () => {
   expect(surfaceCss).toContain("--study-chip-accent-bg: var(--surface-selected)");
  });
 
+ it("keeps structural tint perceptible and interaction tint low-chroma", () => {
+  expect(surfaceCss).toContain(
+   "--surface-base: color-mix(in oklch, var(--card) 90%, var(--surface-canvas))",
+  );
+  expect(surfaceCss).toContain(
+   "--surface-hover: color-mix(in oklch, var(--accent) 38%, var(--surface-base))",
+  );
+  expect(surfaceCss).toContain(
+   "--surface-selected: color-mix(in oklch, var(--accent) 72%, var(--surface-base))",
+  );
+  expect(surfaceCss).not.toContain("--surface-hover: color-mix(in oklch, var(--primary)");
+  expect(surfaceCss).not.toContain("--surface-selected: color-mix(in oklch, var(--primary)");
+ });
+
  it("keeps Card variants on the shared surface ladder", () => {
   expect(cardSource).toContain('const themedCardSurface = "bg-[var(--theme-card-background)]"');
   expect(cardSource).toContain("hover:bg-bg-card-hover");
