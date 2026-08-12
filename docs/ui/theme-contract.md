@@ -47,9 +47,15 @@ Palette MUST NOT redefine the raw structural foundations:
 - semantic success/warning/danger/info colors.
 
 `surface-system.css` derives the visible app surfaces from those foundations and the
-selected palette. The base surface receives only a restrained hint of the canvas tint;
-it must remain visually distinct from the canvas. Subtle surfaces sit between canvas
-and base. Raised surfaces remain the mode-owned Popover foundation.
+selected palette. The base surface must receive a **perceptible but restrained** canvas
+tint: enough that Card/Header/Sidebar belong to the same theme, but not enough to flatten
+the interface into one colored sheet. Subtle surfaces sit between canvas and base.
+Raised surfaces remain the mode-owned Popover foundation.
+
+Hover and selected surfaces derive from the low-chroma `--accent` role plus the base
+surface. Do not mix high-chroma `--primary` directly into large surface backgrounds;
+that creates a hue/chroma jump even when the palette itself is coherent. `--primary`
+remains the emphasis color for selected text/icons, focus and selected borders.
 
 ## 2. Alias ownership
 
@@ -81,10 +87,11 @@ one uniformly tinted sheet with no depth cues.
 
 ## 3. Selection, focus and borders
 
-Selection uses the palette; structure does not.
+Selection uses the palette without turning the whole selected surface into the primary
+brand color.
 
 ```text
-selected background -> --surface-selected
+selected background -> --surface-selected (accent-derived)
 selected text/icon   -> --primary
 selected border      -> --surface-selected-border
 focus ring           -> --ring
@@ -150,7 +157,8 @@ Appearance settings expose:
   selected state together.
 
 Palette choices are standalone touch targets. Changing palette should visibly affect
-canvas and selected emphasis while keeping content readability stable.
+canvas, structural base surfaces and selected emphasis while keeping content readability
+stable.
 
 ## 8. Adding a palette
 
@@ -163,9 +171,10 @@ To add a palette:
 5. Do not create feature-local background recipes.
 6. Keep semantic state colors independent.
 7. Keep the shared surface ladder intact; do not add a palette-specific Card recipe.
-8. Add/keep a swatch selector.
-9. Run `theme-contract.test.ts` and the normal UI gate.
-10. Render Settings plus at least one content-heavy learning surface in light and dark
+8. Keep hover/selected backgrounds accent-derived; reserve primary for emphasis.
+9. Add/keep a swatch selector.
+10. Run `theme-contract.test.ts` and the normal UI gate.
+11. Render Settings plus at least one content-heavy learning surface in light and dark
     before claiming visual verification.
 
 Do not add a second theme store or feature-local palette classes.
