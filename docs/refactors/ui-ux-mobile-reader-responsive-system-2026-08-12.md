@@ -133,24 +133,14 @@ This improves cross-platform consistency but is not a claim that Ma Shan Zheng i
 
 - `LessonReadingSettings.test.tsx` locks the Kaiti fallback ordering.
 - `HanziHomeReadingSettingsTrigger.test.tsx` locks the Sheet branch through tablet layouts, complete touch controls, full-settings route and separate wide-desktop menu branch.
-- `docs/ui/ui-verification.md` now includes explicit phone shell and Notes read-mode checks.
-- UI skill updated to v3.14 with phone shell density, touch-target/artwork separation and mobile rich-text reading rules.
+- `docs/ui/ui-verification.md` includes explicit phone shell and Notes read-mode checks.
+- UI skill is v3.14 with phone shell density, touch-target/artwork separation and mobile rich-text reading rules.
 
-## Verification status
+## Verification requirements
 
-GitHub Actions passed the full `npm run check` gate for the code HEAD immediately before this documentation-only verification update:
+The branch must pass the full `npm run check` gate before merge: lint, source/UI/API checks, typecheck, unit tests, Prettier, production audit and production build.
 
-- ESLint passed with zero warnings;
-- source, UI-system and API registry checks passed;
-- Next type generation + `tsc --noEmit` passed;
-- 66 test files / 276 tests passed;
-- Prettier format check passed;
-- production audit reported zero known vulnerabilities and no new/escalated advisories;
-- Next.js production build compiled successfully and generated all static pages.
-
-The final documentation-only HEAD must also pass the same CI gate before merge. The Vercel status has been blocked by the account build-rate limit, not by a compiler/test failure; GitHub CI is the authoritative production-build evidence for this branch.
-
-Full authenticated phone/iPad interaction render is still required before merge because build success cannot prove touch geometry or visual rhythm. Render approximately 390×844 and 820×1180 and verify:
+Full authenticated phone/iPad interaction render is also required before merge because build success cannot prove touch geometry or visual rhythm. Render approximately 390×844 and 820×1180 and verify:
 
 - phone bottom nav is icon-only, all five destinations remain reachable and active state is obvious;
 - every phone nav/Header action has a usable touch region without oversized visible chrome;
