@@ -1,6 +1,7 @@
 "use client";
 
 import { Typography } from "@/components/ui/typography";
+import { Card } from "@/components/ui/card";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
 import { useState } from "react";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
@@ -132,7 +133,7 @@ export function PassageCard({
  if (!hasMainPayload) return null;
 
  return (
-  <div className="exercise-card-surface grid gap-3 rounded-xl border p-3 sm:p-4">
+  <Card variant="section" padding="md" className="grid gap-3">
    {((showTitle && passageTitle) || instructionText) && (
     <div className="grid gap-1">
      {showTitle && passageTitle && (
@@ -168,7 +169,7 @@ export function PassageCard({
    )}
 
    {(passageText || clozeText) && passageLines.length === 0 && (
-    <div className="rounded-xl border border-border-default bg-bg-primary p-3">
+    <Card variant="subtle" padding="md">
      {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
       <div className="grid gap-2">
        <div className="flex min-w-0 items-start gap-1.5">
@@ -202,11 +203,11 @@ export function PassageCard({
        annotationTarget={lessonId ? { lessonId, nodeType: "passage", nodeId: itemId } : undefined}
       />
      )}
-    </div>
+    </Card>
    )}
 
    {displayMode.showAnswers && completedPassageText && completedPassageText !== passageText && (
-    <div className="exercise-answer-surface grid gap-1 rounded-lg border p-3">
+    <Card variant="subtle" padding="md" className="grid gap-1">
      <StudyInstructionText
       variant="overline"
       tone="accent"
@@ -225,10 +226,10 @@ export function PassageCard({
      >
       {completedPassageText}
      </ReaderHanziText>
-    </div>
+    </Card>
    )}
 
    <AnswerList answers={answerList} open={answerListOpen} onOpenChange={setManualAnswerListOpen} />
-  </div>
+  </Card>
  );
 }

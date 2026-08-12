@@ -1,10 +1,10 @@
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
 
 export function LessonPreviewCard({
  icon: Icon,
@@ -22,19 +22,15 @@ export function LessonPreviewCard({
  children: ReactNode;
 }) {
  return (
-  <Card padding="lg" className="rounded-xl">
+  <Card variant="section" padding="lg">
    <div className="grid gap-3">
     <div className="flex items-start justify-between gap-3">
      <div className="flex min-w-0 items-start gap-3">
-      <StudyInstructionText
-       as="span"
-       tone="accent"
-       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle"
-      >
-       <Icon className="h-5 w-5" />
-      </StudyInstructionText>
+      <IconTile>
+       <Icon />
+      </IconTile>
       <div className="min-w-0">
-       <StudyInstructionText
+       <Typography
         variant="overline"
         tone="muted"
         weight="black"
@@ -42,14 +38,14 @@ export function LessonPreviewCard({
         transform="uppercase"
        >
         {eyebrow}
-       </StudyInstructionText>
+       </Typography>
        <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
         {title}
        </Typography>
       </div>
      </div>
 
-     <Button type="button" variant="outline" size="sm" onClick={onAction}>
+     <Button type="button" variant="outline" size="toolbar" onClick={onAction}>
       {actionLabel}
      </Button>
     </div>

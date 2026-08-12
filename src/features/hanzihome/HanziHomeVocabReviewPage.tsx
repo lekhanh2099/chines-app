@@ -1,14 +1,16 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useQueries } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
+import { z } from "zod";
 
+import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { PageHeader } from "@/components/ui/page-header";
+import { Typography } from "@/components/ui/typography";
 import {
  combineReviewLessons,
  formatSelectedLessonsLabel,
@@ -19,14 +21,12 @@ import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHome
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
-import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
+import type { HanziHomeLesson, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import {
  parseReviewLessonTokensParam,
  resolveReviewLessonTokens,
 } from "@/features/hanzihome/utils/review-selection-route";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
-import type { UserLearningState } from "@/features/hanzihome/types";
-import { z } from "zod";
 
 export function HanziHomeVocabReviewPage({
  reviewLessonsParam,
@@ -104,70 +104,43 @@ export function HanziHomeVocabReviewPage({
  return (
   <main className="hanzihome-static-page">
    <div className="grid gap-4">
-    <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
-     <div className="flex flex-wrap items-start justify-between gap-3">
-      <div className="grid gap-1">
-       <StudyInstructionText
-        variant="overline"
-        tone="muted"
-        weight="black"
-        tracking="wide"
-        transform="uppercase"
-       >
-        Ôn tập
-       </StudyInstructionText>
-       <Typography as="h1" variant="pageTitle" tone="default" weight="black" tracking="tight">
-        Ôn từ vựng
-       </Typography>
-       <StudyInstructionText tone="muted" weight="semibold">
-        {activeReviewTitle || "Chọn bài ở màn tổng hợp từ để bắt đầu ôn."}
-       </StudyInstructionText>
-      </div>
-
+    <PageHeader
+     eyebrow="Ôn tập"
+     title="Ôn từ vựng"
+     description={activeReviewTitle || "Chọn bài ở màn tổng hợp từ để bắt đầu ôn."}
+     actions={
       <Button asChild variant="outline">
        <Link href="/vocab">
-        <ArrowLeft className="h-4 w-4" />
+        <ArrowLeft data-icon="inline-start" />
         Về tổng hợp từ
        </Link>
       </Button>
-     </div>
-    </Card>
+     }
+    />
 
-    {lessonIds.length === 0 && (
-     <Card
-      padding="lg"
-      className="rounded-xl border border-dashed border-border-default bg-bg-primary text-center shadow-theme-sm"
-     >
-      <div className="grid gap-3">
-       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-        Chưa chọn bài để ôn
-       </Typography>
-       <StudyInstructionText tone="muted" weight="semibold">
-        Về màn tổng hợp từ, tick một hoặc nhiều bài rồi bấm bắt đầu ôn.
-       </StudyInstructionText>
-       <div>
-        <Button asChild>
-         <Link href="/vocab">Chọn bài ôn</Link>
-        </Button>
-       </div>
-      </div>
+    {lessonIds.length === 0 ? (
+     <EmptyState
+      title="Chưa chọn bài để ôn"
+      description="Về màn tổng hợp từ, tick một hoặc nhiều bài rồi bấm bắt đầu ôn."
+      actions={
+       <Button asChild>
+        <Link href="/vocab">Chọn bài ôn</Link>
+       </Button>
+      }
+     />
+    ) : null}
+
+    {error instanceof Error ? (
+     <Card variant="subtle" padding="md" role="alert">
+      <Typography as="p" variant="bodySmall" tone="danger" weight="bold">
+       {error.message}
+      </Typography>
      </Card>
-    )}
+    ) : null}
 
-    {error instanceof Error && (
-     <StudyInstructionText
-      role="alert"
-      tone="danger"
-      weight="bold"
-      className="rounded-xl bg-danger-subtle p-4"
-     >
-      {error.message}
-     </StudyInstructionText>
-    )}
+    {isLoading ? <VocabReviewSkeleton /> : null}
 
-    {isLoading && <VocabReviewSkeleton />}
-
-    {!isLoading && lessonIds.length > 0 && combinedReviewLesson && (
+    {!isLoading && lessonIds.length > 0 && combinedReviewLesson ? (
      <VocabReviewPanel
       lesson={combinedReviewLesson}
       learningState={learning.state}
@@ -179,7 +152,7 @@ export function HanziHomeVocabReviewPage({
       onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
       getItemLesson={(item) => lessonByReviewItemId.get(`${item.type}:${item.id}`) ?? null}
      />
-    )}
+    ) : null}
    </div>
   </main>
  );

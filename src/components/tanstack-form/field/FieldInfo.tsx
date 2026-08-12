@@ -14,7 +14,7 @@ export function FieldInfo({
  if (isValid && !helperText) return null;
 
  return (
-  <div className="mt-1 flex items-start justify-between gap-1">
+  <div className="flex items-start justify-between gap-1">
    {!isValid ? (
     <Typography as="p" variant="caption" tone="danger">
      {errors

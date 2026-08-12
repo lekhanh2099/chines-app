@@ -14,7 +14,7 @@ const DialogClose = DialogPrimitive.Close;
 const DialogPortal = DialogPrimitive.Portal;
 
 const dialogContentVariants = cva(
- "fixed left-1/2 z-50 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] -translate-x-1/2 flex-col gap-0 rounded-xl p-0 shadow-theme-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+ "fixed left-1/2 z-101 flex max-h-[calc(100dvh-1.5rem)] w-[calc(100%-2rem)] -translate-x-1/2 flex-col gap-0 rounded-xl p-0 shadow-theme-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
  {
   variants: {
    size: {
@@ -56,7 +56,7 @@ function DialogOverlay({
   <DialogPrimitive.Overlay
    data-slot="dialog-overlay"
    className={cn(
-    "fixed inset-0 z-50 bg-overlay",
+    "fixed inset-0 z-100 bg-overlay",
     "data-[state=open]:animate-in data-[state=closed]:animate-out",
     "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
     className,

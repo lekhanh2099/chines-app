@@ -506,7 +506,7 @@ export function NoteEditorPanel({
                </Button>
               ) : null}
 
-              <div className="my-1 h-px bg-border-default" />
+              <div className="h-3 py-1 before:block before:h-px before:bg-border-default" />
               <Typography
                as="p"
                variant="overline"
@@ -688,7 +688,7 @@ export function NoteEditorPanel({
         )
       : null}
      {isSplitView ? (
-      <div className="note-editor-split-panel m-1 min-h-0 flex-1 overflow-hidden sm:m-2 lg:m-4">
+      <div className="note-editor-split-panel min-h-0 flex-1 overflow-hidden p-1 sm:p-2 lg:p-4">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -701,7 +701,7 @@ export function NoteEditorPanel({
        />
       </div>
      ) : (
-      <div className="note-editor-scroll m-1 sm:m-2 lg:m-4">
+      <div className="note-editor-scroll p-1 sm:p-2 lg:p-4">
        <Editor
         key={`note-${importVersion}`}
         initialContent={noteContent}

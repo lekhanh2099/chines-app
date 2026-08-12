@@ -2,6 +2,7 @@
 
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Button } from "@/components/ui/button";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
 import { useDeferredValue, useMemo, useState } from "react";
 import { BookOpenCheck, LoaderCircle, Search } from "lucide-react";
@@ -100,7 +101,9 @@ export function GlobalSearchDialog({
  return (
   <Dialog open={open} onOpenChange={onOpenChange}>
    <DialogContent
-    className="top-[max(4rem,8vh)] flex h-[min(42rem,calc(100dvh-5rem))] max-w-3xl -translate-y-0 flex-col gap-0 overflow-hidden p-0"
+    size="command"
+    placement="top"
+    className="h-[min(42rem,calc(100dvh-5rem))]"
     aria-describedby="hanzihome-search-description"
    >
     <DialogHeader className="sr-only">
@@ -111,7 +114,7 @@ export function GlobalSearchDialog({
     </DialogHeader>
 
     <div className="relative border-b border-border-default">
-     <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-text-muted" />
+     <Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-text-muted" />
      <Input
       autoFocus
       value={query}
@@ -125,12 +128,12 @@ export function GlobalSearchDialog({
       className="w-full"
      />
      {searchIndex.isFetching && (
-      <LoaderCircle className="absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 animate-spin text-text-muted" />
+      <LoaderCircle className="absolute right-4 top-1/2 size-4 -translate-y-1/2 animate-spin text-text-muted" />
      )}
     </div>
 
     <div
-     className="min-h-0 flex-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
+     className="grid min-h-0 flex-1 content-start gap-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
      role="listbox"
     >
      {canLookupDirectly && (
@@ -139,16 +142,12 @@ export function GlobalSearchDialog({
        onClick={() => onDirectLookup(trimmedQuery)}
        variant="ghost"
        align="start"
-       className="mb-1 flex w-full"
+       className="flex w-full"
       >
-       <StudyInstructionText
-        as="span"
-        tone="accent"
-        className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-subtle"
-       >
-        <BookOpenCheck className="h-4 w-4" />
-       </StudyInstructionText>
-       <span>
+       <IconTile tone="accent" size="sm">
+        <BookOpenCheck />
+       </IconTile>
+       <span className="min-w-0">
         <StudyInstructionText tone="default" weight="bold" className="block">
          Tra từ “{trimmedQuery}”
         </StudyInstructionText>
@@ -170,7 +169,7 @@ export function GlobalSearchDialog({
      ))}
 
      {!searchIndex.isLoading && trimmedQuery && visibleItems.length === 0 && (
-      <div className="px-4 py-10 text-center grid gap-1">
+      <div className="grid gap-1 px-4 py-10 text-center">
        <StudyInstructionText tone="default" weight="bold">
         Không tìm thấy nội dung phù hợp.
        </StudyInstructionText>
@@ -179,22 +178,6 @@ export function GlobalSearchDialog({
        </StudyInstructionText>
       </div>
      )}
-
-     {searchIndex.isError && (
-      <div className="px-4 py-10 text-center grid gap-1">
-       <StudyInstructionText tone="dangerStrong" weight="bold">
-        Không tải được chỉ mục tìm kiếm.
-       </StudyInstructionText>
-       <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
-        Đóng và mở lại để thử lại.
-       </StudyInstructionText>
-      </div>
-     )}
-    </div>
-
-    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border-default bg-bg-subtle px-4 py-2 text-xs font-semibold text-text-muted">
-     <span>{trimmedQuery ? `${visibleItems.length} kết quả` : "Tìm trong toàn bộ HanziHome"}</span>
-     <span>↑↓ chọn · Enter mở · Esc đóng · ⌘K</span>
     </div>
    </DialogContent>
   </Dialog>

@@ -44,7 +44,7 @@ export function LessonStudyDashboard({
 }) {
  const heading = getLessonHeading(lesson);
  const header = (
-  <Card padding="lg" className="rounded-xl grid gap-3 content-start">
+  <Card padding="lg" className="grid content-start gap-3">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0">
      <StudyInstructionText
@@ -66,7 +66,7 @@ export function LessonStudyDashboard({
     </div>
     <div className="flex flex-wrap gap-2">
      {lesson.tags?.includes("listening") ? (
-      <Button type="button" size="sm" onClick={() => onOpenModule("listening")}>
+      <Button type="button" size="toolbar" onClick={() => onOpenModule("listening")}>
        <Headphones data-icon="inline-start" />
        Mở luyện nghe
       </Button>
@@ -136,7 +136,7 @@ export function LessonStudyDashboard({
    )}
 
    {sections.length > 0 && (
-    <Card padding="lg" className="rounded-xl grid gap-3 content-start">
+    <Card padding="lg" className="grid content-start gap-3">
      <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
        <StudyInstructionText
@@ -152,7 +152,12 @@ export function LessonStudyDashboard({
         Học theo đúng cấu trúc sách
        </Typography>
       </div>
-      <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("lessonText")}>
+      <Button
+       type="button"
+       variant="outline"
+       size="toolbar"
+       onClick={() => onOpenModule("lessonText")}
+      >
        Mở bài khóa
       </Button>
      </div>

@@ -1,10 +1,15 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
- "flex w-full rounded-lg border text-text-primary ring-offset-bg-primary transition-colors placeholder:text-text-muted focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/15 file:border-0 file:bg-transparent file:font-medium",
+ cn(
+  "flex w-full rounded-lg border text-text-primary transition-colors placeholder:text-text-muted disabled:cursor-not-allowed disabled:opacity-50 file:border-0 file:bg-transparent file:font-medium",
+  focusRingClassName,
+  invalidFocusRingClassName,
+ ),
  {
   variants: {
    density: {
@@ -14,7 +19,7 @@ const inputVariants = cva(
     search: "h-10 px-3 py-2 xl:h-11",
    },
    surface: {
-    default: "border-border-default bg-bg-primary",
+    default: "border-input bg-bg-input",
     field: "border-input bg-bg-input",
     card: "border-border-default bg-bg-card",
     transparent: "border-transparent bg-transparent",

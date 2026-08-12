@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { ArrowDown, ArrowUp, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -16,15 +15,14 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
- DialogTrigger,
 } from "@/components/ui/dialog";
+import { LibraryCrudActionsMenu } from "@/features/hanzihome/components/library/LibraryCrudActionsMenu";
 import {
  deleteCanonicalContent,
  reorderCanonicalContent,
  type ReorderDirection,
  updateCanonicalContent,
 } from "@/features/hanzihome/editing/direct-save";
-import { SoftDeleteConfirmDialog } from "@/features/hanzihome/editing/components/SoftDeleteConfirmDialog";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
@@ -125,13 +123,21 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
  }
 
  return (
-  <div className="flex items-center gap-0.5">
+  <>
+   <LibraryCrudActionsMenu
+    ariaLabel={`Tác vụ cho ${lesson.titleZh}`}
+    itemType="bài học"
+    itemLabel={lesson.titleZh}
+    disabled={!updatedAt}
+    canMoveUp={Boolean(order && order !== 1)}
+    canMoveDown={Boolean(order)}
+    onEdit={() => setOpen(true)}
+    onMoveUp={() => void reorderLesson(-1)}
+    onMoveDown={() => void reorderLesson(1)}
+    onDelete={deleteLesson}
+   />
+
    <Dialog open={open} onOpenChange={setOpen}>
-    <DialogTrigger asChild>
-     <Button type="button" size="icon-sm" variant="ghost" aria-label={`Sửa ${lesson.titleZh}`}>
-      <Pencil className="h-3.5 w-3.5" />
-     </Button>
-    </DialogTrigger>
     <DialogContent>
      <DialogHeader>
       <DialogTitle>Sửa bài học</DialogTitle>
@@ -174,43 +180,7 @@ export function LessonCrudActions({ lesson }: { lesson: HanziHomeLesson }) {
      </form>
     </DialogContent>
    </Dialog>
-   <Button
-    type="button"
-    size="icon-sm"
-    variant="ghost"
-    aria-label={`Đưa ${lesson.titleZh} lên`}
-    disabled={!updatedAt || !order || order === 1}
-    onClick={() => void reorderLesson(-1)}
-   >
-    <ArrowUp className="h-3.5 w-3.5" />
-   </Button>
-   <Button
-    type="button"
-    size="icon-sm"
-    variant="ghost"
-    aria-label={`Đưa ${lesson.titleZh} xuống`}
-    disabled={!updatedAt || !order}
-    onClick={() => void reorderLesson(1)}
-   >
-    <ArrowDown className="h-3.5 w-3.5" />
-   </Button>
-   <SoftDeleteConfirmDialog
-    itemType="bài học"
-    itemLabel={lesson.titleZh}
-    onConfirm={deleteLesson}
-    trigger={
-     <Button
-      type="button"
-      size="icon-sm"
-      variant="ghost"
-      aria-label={`Xóa ${lesson.titleZh}`}
-      disabled={!updatedAt}
-     >
-      <Trash2 className="h-3.5 w-3.5 text-danger-text" />
-     </Button>
-    }
-   />
-  </div>
+  </>
  );
 }
 

@@ -7,6 +7,8 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Lightbulb, Sigma } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { VocabWritingCue } from "@/features/hanzihome/components/VocabWritingCue";
 import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
@@ -28,7 +30,7 @@ export function StudyReviewBack({
   const example = item.source.examples[0];
 
   return (
-   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
+   <Card variant="subtle" padding="md" className="grid gap-3 text-left">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid min-w-0 gap-1">
       <PinyinText as="p" variant="sectionTitle" tone="default" weight="black">
@@ -40,22 +42,7 @@ export function StudyReviewBack({
       </StudyInstructionText>
      </div>
 
-     <Button
-      type="button"
-      variant="outline"
-      className="shrink-0"
-      onMouseDown={(event) => event.stopPropagation()}
-      onTouchStart={(event) => event.stopPropagation()}
-      onClick={(event) => {
-       event.stopPropagation();
-       onOpenDetail();
-      }}
-     >
-      Xem chi tiết
-      <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
-       D
-      </kbd>
-     </Button>
+     <DetailButton onOpenDetail={onOpenDetail} />
     </div>
 
     <VocabWritingCue
@@ -66,105 +53,118 @@ export function StudyReviewBack({
      onSelectedIndexChange={onSelectedWritingIndexChange}
     />
 
-    {example && (
-     <div className="grid gap-1 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm sm:p-4">
-      <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
-       {example.zh}
-      </HanziText>
+    {example ? (
+     <>
+      <Separator />
+      <section className="grid gap-1" aria-label="Ví dụ">
+       <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
+        {example.zh}
+       </HanziText>
 
-      {example.pinyin && (
-       <PinyinText as="p" tone="muted" weight="bold">
-        {example.pinyin}
-       </PinyinText>
-      )}
+       {example.pinyin ? (
+        <PinyinText as="p" tone="muted" weight="bold">
+         {example.pinyin}
+        </PinyinText>
+       ) : null}
 
-      {example.vi && (
-       <StudyInstructionText tone="secondary" weight="semibold">
-        {example.vi}
-       </StudyInstructionText>
-      )}
-     </div>
-    )}
-   </div>
+       {example.vi ? (
+        <StudyInstructionText tone="secondary" weight="semibold">
+         {example.vi}
+        </StudyInstructionText>
+       ) : null}
+      </section>
+     </>
+    ) : null}
+   </Card>
   );
  }
 
  const example = item.source.examplesParsed[0];
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
+  <Card variant="subtle" padding="md" className="grid gap-3 text-left">
    <div className="flex flex-wrap items-start justify-between gap-3">
-    <div className="grid min-w-0 flex-1 gap-2">
-     <div className="exercise-answer-surface grid gap-2 rounded-xl border p-3">
-      <div className="flex items-center gap-2">
-       <Lightbulb className="h-4 w-4 text-primary" />
-       <StudyInstructionText
-        variant="overline"
-        tone="primary"
-        weight="black"
-        tracking="wide"
-        transform="uppercase"
-       >
-        Ý nghĩa
-       </StudyInstructionText>
-      </div>
-      <StudyInstructionText tone="default" weight="bold" leading="relaxed">
-       {item.source.core || item.answer}
-      </StudyInstructionText>
-     </div>
-    </div>
-
-    <Button
-     type="button"
-     variant="outline"
-     className="shrink-0"
-     onMouseDown={(event) => event.stopPropagation()}
-     onTouchStart={(event) => event.stopPropagation()}
-     onClick={(event) => {
-      event.stopPropagation();
-      onOpenDetail();
-     }}
-    >
-     Xem chi tiết
-     <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
-      D
-     </kbd>
-    </Button>
-   </div>
-
-   {item.source.structuresView[0] && (
-    <div className="rounded-xl border border-info/30 bg-info-subtle p-3 grid gap-2">
+    <section className="grid min-w-0 flex-1 gap-2" aria-label="Ý nghĩa">
      <div className="flex items-center gap-2">
-      <Sigma className="h-4 w-4 text-info-text" />
+      <Lightbulb className="size-4 text-primary" />
       <StudyInstructionText
        variant="overline"
-       tone="info"
+       tone="primary"
        weight="black"
        tracking="wide"
        transform="uppercase"
       >
-       Công thức
+       Ý nghĩa
       </StudyInstructionText>
      </div>
-     <StudyInstructionText variant="code" tone="info" weight="black">
-      {item.source.structuresView[0]}
+     <StudyInstructionText tone="default" weight="bold" leading="relaxed">
+      {item.source.core || item.answer}
      </StudyInstructionText>
-    </div>
-   )}
+    </section>
 
-   {example && (
-    <div className="rounded-xl border border-border-default bg-bg-primary p-3 shadow-theme-sm sm:p-4">
-     <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
-      {example.zh}
-     </HanziText>
+    <DetailButton onOpenDetail={onOpenDetail} />
+   </div>
 
-     {example.vi && (
-      <StudyInstructionText tone="secondary" weight="semibold">
-       {example.vi}
+   {item.source.structuresView[0] ? (
+    <>
+     <Separator />
+     <section className="grid gap-2" aria-label="Công thức">
+      <div className="flex items-center gap-2">
+       <Sigma className="size-4 text-info-text" />
+       <StudyInstructionText
+        variant="overline"
+        tone="info"
+        weight="black"
+        tracking="wide"
+        transform="uppercase"
+       >
+        Công thức
+       </StudyInstructionText>
+      </div>
+      <StudyInstructionText variant="code" tone="info" weight="black">
+       {item.source.structuresView[0]}
       </StudyInstructionText>
-     )}
-    </div>
-   )}
-  </div>
+     </section>
+    </>
+   ) : null}
+
+   {example ? (
+    <>
+     <Separator />
+     <section className="grid gap-1" aria-label="Ví dụ">
+      <HanziText as="p" size="inherit" variant="cardTitle" tone="default" weight="black">
+       {example.zh}
+      </HanziText>
+      {example.vi ? (
+       <StudyInstructionText tone="secondary" weight="semibold">
+        {example.vi}
+       </StudyInstructionText>
+      ) : null}
+     </section>
+    </>
+   ) : null}
+  </Card>
+ );
+}
+
+function DetailButton({ onOpenDetail }: { onOpenDetail: () => void }) {
+ return (
+  <Button
+   type="button"
+   variant="outline"
+   size="toolbar"
+   className="shrink-0"
+   onMouseDown={(event) => event.stopPropagation()}
+   onTouchStart={(event) => event.stopPropagation()}
+   onClick={(event) => {
+    event.stopPropagation();
+    onOpenDetail();
+   }}
+  >
+   Xem chi tiết
+   <kbd className="rounded-md bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
+    D
+   </kbd>
+  </Button>
  );
 }

@@ -39,6 +39,7 @@ import {
 import { toast } from "sonner";
 import { z } from "zod";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
  Dialog,
@@ -50,6 +51,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { focusWithinRingClassName } from "@/components/ui/focus-ring";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import {
  Select,
@@ -118,12 +120,12 @@ const artifactTypeLabels: Record<HtmlArtifactType, string> = {
 };
 
 const folderColorClasses: Record<HtmlArtifactFolderColor, string> = {
- blue: "bg-info-subtle text-info-text ring-info/20",
- purple: "bg-purple-subtle text-purple-text ring-purple/20",
- green: "bg-success-subtle text-success-text ring-success/20",
- orange: "bg-warning-subtle text-warning-text ring-warning/20",
- rose: "bg-danger-subtle text-danger-text ring-danger/20",
- slate: "bg-bg-subtle text-text-secondary ring-border-default",
+ blue: "bg-info-subtle text-info-text border-info/20",
+ purple: "bg-purple-subtle text-purple-text border-purple/20",
+ green: "bg-success-subtle text-success-text border-success/20",
+ orange: "bg-warning-subtle text-warning-text border-warning/20",
+ rose: "bg-danger-subtle text-danger-text border-danger/20",
+ slate: "bg-bg-subtle text-text-secondary border-border-default",
 };
 
 type FolderColorSwatchStyle = {
@@ -354,21 +356,14 @@ export function HanziHomeHtmlArtifactsPage() {
  ) => {
   const nextParams = new URLSearchParams(searchParams.toString());
 
-  if (artifactId) {
-   nextParams.set("artifactId", artifactId);
-  } else {
-   nextParams.delete("artifactId");
-  }
+  if (artifactId) nextParams.set("artifactId", artifactId);
+  else nextParams.delete("artifactId");
 
   const queryString = nextParams.toString();
   const nextUrl = queryString ? `${pathname}?${queryString}` : pathname;
 
-  if (mode === "replace") {
-   router.replace(nextUrl);
-   return;
-  }
-
-  router.push(nextUrl);
+  if (mode === "replace") router.replace(nextUrl);
+  else router.push(nextUrl);
  };
 
  const queueRuntimeStateSave = (artifactId: string, state: HtmlArtifactRuntimeState) => {
@@ -382,13 +377,8 @@ export function HanziHomeHtmlArtifactsPage() {
    if (!payload) return;
 
    void updateRuntimeStateMutation
-    .mutateAsync({
-     artifactId: payload.artifactId,
-     input: { state: payload.state },
-    })
-    .catch(() => {
-     toast.error("Không thể sync đáp án trong iframe lên DB");
-    });
+    .mutateAsync({ artifactId: payload.artifactId, input: { state: payload.state } })
+    .catch(() => toast.error("Không thể sync đáp án trong iframe lên DB"));
   }, runtimeStateSaveDelayMs);
  };
 
@@ -402,20 +392,16 @@ export function HanziHomeHtmlArtifactsPage() {
   if (selectedId || artifacts.length === 0) return;
   const firstArtifactId = artifacts[0]?.id;
   if (!firstArtifactId) return;
-
   const nextParams = new URLSearchParams(searchParams.toString());
   nextParams.set("artifactId", firstArtifactId);
   router.replace(`${pathname}?${nextParams.toString()}`);
  }, [artifacts, pathname, router, searchParams, selectedId]);
 
- const resetForNewArtifact = () => {
-  navigateToArtifact("new");
- };
+ const resetForNewArtifact = () => navigateToArtifact("new");
 
  const openCreateFolderDialog = () => {
   const parentFolderId =
    activeFolderId !== "all" && activeFolderId !== "unfiled" ? activeFolderId : null;
-
   setFolderDraft({
    name: "",
    parentFolderId,
@@ -427,7 +413,6 @@ export function HanziHomeHtmlArtifactsPage() {
  const createFolder = async () => {
   const trimmedName = folderDraft.name.trim();
   if (!trimmedName) return;
-
   try {
    const folder = await createFolderMutation.mutateAsync({
     name: trimmedName,
@@ -451,12 +436,8 @@ export function HanziHomeHtmlArtifactsPage() {
  const moveArtifactToFolder = async (artifactId: string, folderId: Nullable<string>) => {
   const artifact = artifacts.find((item) => item.id === artifactId);
   if (!artifact || artifact.folderId === folderId) return;
-
   try {
-   await updateMutation.mutateAsync({
-    artifactId,
-    input: { folderId },
-   });
+   await updateMutation.mutateAsync({ artifactId, input: { folderId } });
    toast.success(folderId ? "Đã chuyển tệp vào thư mục" : "Đã bỏ tệp khỏi thư mục");
   } catch (error) {
    toast.error(getApiErrorMessage(error, "Không thể chuyển tệp"));
@@ -466,7 +447,6 @@ export function HanziHomeHtmlArtifactsPage() {
  const moveFolderToParent = async (folderId: string, parentFolderId: Nullable<string>) => {
   const folder = folders.find((item) => item.id === folderId);
   if (!folder || folder.parentFolderId === parentFolderId) return;
-
   if (
    parentFolderId &&
    (folderId === parentFolderId || hasFolderDescendant(folders, folderId, parentFolderId))
@@ -474,12 +454,8 @@ export function HanziHomeHtmlArtifactsPage() {
    toast.error("Không thể kéo thư mục vào chính nó hoặc thư mục con");
    return;
   }
-
   try {
-   await updateFolderMutation.mutateAsync({
-    folderId,
-    input: { parentFolderId },
-   });
+   await updateFolderMutation.mutateAsync({ folderId, input: { parentFolderId } });
    toast.success(parentFolderId ? "Đã lồng thư mục" : "Đã đưa thư mục ra ngoài");
   } catch (error) {
    toast.error(getApiErrorMessage(error, "Không thể chuyển thư mục"));
@@ -492,27 +468,20 @@ export function HanziHomeHtmlArtifactsPage() {
  ) => {
   const folder = folders.find((item) => item.id === folderId);
   if (!folder) return;
-
   const siblings = folders
    .filter((item) => item.parentFolderId === folder.parentFolderId)
    .slice()
    .sort((a, b) => a.position - b.position || a.name.localeCompare(b.name));
   const currentIndex = siblings.findIndex((item) => item.id === folderId);
   const nextIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;
-
   if (currentIndex < 0 || nextIndex < 0 || nextIndex >= siblings.length) return;
-
   const reordered = siblings.slice();
   const [movedFolder] = reordered.splice(currentIndex, 1);
   reordered.splice(nextIndex, 0, movedFolder);
-
   try {
    await Promise.all(
     reordered.map((item, index) =>
-     updateFolderMutation.mutateAsync({
-      folderId: item.id,
-      input: { position: index + 1 },
-     }),
+     updateFolderMutation.mutateAsync({ folderId: item.id, input: { position: index + 1 } }),
     ),
    );
    toast.success("Đã sắp xếp thư mục");
@@ -523,32 +492,21 @@ export function HanziHomeHtmlArtifactsPage() {
 
  const dropOnFolder = (folderId: Nullable<string>) => {
   if (!dragItem) return;
-
-  if (dragItem.type === "artifact") {
-   void moveArtifactToFolder(dragItem.id, folderId);
-  } else {
-   void moveFolderToParent(dragItem.id, folderId);
-  }
-
+  if (dragItem.type === "artifact") void moveArtifactToFolder(dragItem.id, folderId);
+  else void moveFolderToParent(dragItem.id, folderId);
   setDragItem(null);
  };
 
  const requestDeleteActiveFolder = () => {
   if (activeFolderId === "all" || activeFolderId === "unfiled") return;
   const folder = folders.find((item) => item.id === activeFolderId);
-  if (!folder) return;
-  setDeleteDialog({ kind: "folder", folder });
+  if (folder) setDeleteDialog({ kind: "folder", folder });
  };
-
  const requestDeleteSelectedArtifact = () => {
-  if (!selectedArtifact) return;
-  setDeleteDialog({ kind: "artifact", artifact: selectedArtifact });
+  if (selectedArtifact) setDeleteDialog({ kind: "artifact", artifact: selectedArtifact });
  };
-
- const requestDeleteArtifactSummary = (artifact: HtmlArtifactSummary) => {
+ const requestDeleteArtifactSummary = (artifact: HtmlArtifactSummary) =>
   setDeleteDialog({ kind: "artifact", artifact });
- };
-
  const editArtifactDetails = (artifactId: string) => {
   navigateToArtifact(artifactId);
   setInspectorTab("edit");
@@ -559,7 +517,6 @@ export function HanziHomeHtmlArtifactsPage() {
   const nextParams = new URLSearchParams(searchParams.toString());
   nextParams.set("artifactId", artifactId);
   const link = `${window.location.origin}${pathname}?${nextParams.toString()}`;
-
   try {
    await navigator.clipboard.writeText(link);
    toast.success("Đã copy link tệp");
@@ -570,7 +527,6 @@ export function HanziHomeHtmlArtifactsPage() {
 
  const confirmDelete = async () => {
   if (!deleteDialog) return;
-
   try {
    if (deleteDialog.kind === "folder") {
     await deleteFolderMutation.mutateAsync(deleteDialog.folder.id);
@@ -579,7 +535,6 @@ export function HanziHomeHtmlArtifactsPage() {
     toast.success("Đã xóa thư mục");
     return;
    }
-
    await deleteMutation.mutateAsync(deleteDialog.artifact.id);
    toast.success("Đã xóa tệp HTML");
    const nextArtifact =
@@ -604,7 +559,6 @@ export function HanziHomeHtmlArtifactsPage() {
    tags: parseTags(formState.tagsInput),
    html: formState.html,
   };
-
   try {
    if (selectedArtifact) {
     const nextArtifact = await updateMutation.mutateAsync({
@@ -619,18 +573,14 @@ export function HanziHomeHtmlArtifactsPage() {
     }
     return;
    }
-
    if (options.silent) return;
-
    const nextArtifact = await createMutation.mutateAsync(payload);
    navigateToArtifact(nextArtifact.id, "replace");
    setMobilePane("preview");
    setPreviewMode("iframe");
    toast.success("Đã tạo tệp HTML");
   } catch (error) {
-   if (!options.silent) {
-    toast.error(getApiErrorMessage(error, "Không thể lưu tệp HTML"));
-   }
+   if (!options.silent) toast.error(getApiErrorMessage(error, "Không thể lưu tệp HTML"));
    throw error;
   }
  };
@@ -833,7 +783,6 @@ function MobilePaneTabs({
   { key: "preview", label: "Xem trước", icon: Code2 },
   { key: "edit", label: "Sửa", icon: FileCode2 },
  ];
-
  return (
   <div className="shrink-0 border-b border-border-default bg-bg-card p-2">
    <div
@@ -844,7 +793,6 @@ function MobilePaneTabs({
     {panes.map((pane) => {
      const Icon = pane.icon;
      const active = activePane === pane.key;
-
      return (
       <Button
        key={pane.key}
@@ -960,7 +908,6 @@ function RightInspectorPane({
      />
     </div>
    </div>
-
    <div className="min-h-0 flex-1 overflow-hidden bg-bg-subtle">
     {activeTab === "files" ? (
      <DirectoryPane
@@ -1036,12 +983,7 @@ function InspectorTabButton({
     {label}
    </StudyInstructionText>
    {typeof count === "number" ? (
-    <StudyInstructionText
-     tone="muted"
-     variant="caption"
-     scale="relativeSmall"
-     className="rounded-full bg-bg-subtle px-2 py-0.5"
-    >
+    <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">
      {count}
     </StudyInstructionText>
    ) : null}
@@ -1051,19 +993,13 @@ function InspectorTabButton({
 
 function useHtmlArtifactsDesktopShell() {
  const [isDesktopShell, setIsDesktopShell] = useState(false);
-
  useEffect(() => {
   const query = window.matchMedia("(min-width: 1280px)");
   const updateShell = () => setIsDesktopShell(query.matches);
-
   updateShell();
   query.addEventListener("change", updateShell);
-
-  return () => {
-   query.removeEventListener("change", updateShell);
-  };
+  return () => query.removeEventListener("change", updateShell);
  }, []);
-
  return isDesktopShell;
 }
 
@@ -1119,7 +1055,6 @@ function DirectoryPane({
  onReorderFolder: (folderId: string, direction: z.infer<typeof MoveDirectionSchema>) => void;
 }) {
  const folderTree = useMemo(() => buildFolderTree(folders), [folders]);
-
  return (
   <aside
    className={cn(
@@ -1132,28 +1067,22 @@ function DirectoryPane({
      <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
       Thư mục
      </Typography>
-     <StudyInstructionText
-      variant="caption"
-      tone="muted"
-      weight="black"
-      className="rounded-full bg-bg-subtle px-3 py-1"
-     >
+     <StudyInstructionText variant="caption" tone="muted" weight="black">
       {folders.length}
      </StudyInstructionText>
     </div>
     <Button
      type="button"
      variant="outline"
-     size="sm"
+     size="toolbar"
      className="shrink-0"
      disabled={isFolderMutating}
      onClick={onCreateFolder}
     >
-     <FolderPlus className="h-4 w-4" />
+     <FolderPlus data-icon="inline-start" />
      Thư mục mới
     </Button>
    </div>
-
    <div className="grid shrink-0 gap-2 border-b border-border-default bg-bg-card p-3">
     <div className="relative">
      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
@@ -1166,7 +1095,6 @@ function DirectoryPane({
      />
     </div>
    </div>
-
    <div className="max-h-64 shrink-0 overflow-y-auto border-b border-border-default bg-bg-subtle p-3 scrollbar-soft">
     <div className="grid gap-1.5">
      <FolderRow
@@ -1214,65 +1142,42 @@ function DirectoryPane({
      <Button
       type="button"
       variant="ghost"
-      size="sm"
+      size="toolbar"
       align="start"
       disabled={isFolderMutating}
       onClick={onDeleteActiveFolder}
      >
-      <Trash2 className="h-4 w-4" />
+      <Trash2 data-icon="inline-start" />
       Xóa thư mục
      </Button>
     ) : null}
    </div>
-
    <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border-default bg-bg-subtle px-4">
     <div className="flex min-w-0 items-center gap-2">
      <Typography as="h3" variant="cardTitle" tone="default" weight="black">
       Tệp
      </Typography>
-     <StudyInstructionText
-      variant="caption"
-      tone="muted"
-      weight="black"
-      className="rounded-full bg-bg-subtle px-3 py-1"
-     >
+     <StudyInstructionText variant="caption" tone="muted" weight="black">
       {filteredArtifacts.length}
      </StudyInstructionText>
     </div>
-    <div className="flex shrink-0 items-center gap-2">
-     <Button type="button" size="sm" onClick={onCreateArtifact}>
-      <Plus className="h-4 w-4" />
-      Tệp mới
-     </Button>
-    </div>
+    <Button type="button" size="toolbar" onClick={onCreateArtifact}>
+     <Plus data-icon="inline-start" />
+     Tệp mới
+    </Button>
    </div>
-
    <div className="min-h-0 flex-1 overflow-y-auto bg-bg-subtle px-3 pb-4 pt-2 scrollbar-soft">
     {isLoading && <ArtifactDirectorySkeleton />}
-
     {Boolean(error) && (
-     <StudyInstructionText
-      role="alert"
-      variant="label"
-      tone="danger"
-      weight="bold"
-      className="rounded-lg border border-destructive/20 bg-destructive/10 p-3"
-     >
+     <StudyInstructionText role="alert" variant="label" tone="danger" weight="bold">
       Không tải được tệp HTML.
      </StudyInstructionText>
     )}
-
     {!isLoading && !error && filteredArtifacts.length === 0 && (
-     <StudyInstructionText
-      variant="label"
-      tone="muted"
-      weight="bold"
-      className="rounded-lg border border-dashed border-border-default bg-bg-subtle p-3"
-     >
+     <StudyInstructionText variant="label" tone="muted" weight="bold">
       Thư mục này chưa có tệp.
      </StudyInstructionText>
     )}
-
     {filteredArtifacts.length > 0 && (
      <div className="grid gap-2.5">
       {filteredArtifacts.map((artifact) => (
@@ -1334,18 +1239,15 @@ function FolderRow({
  const canDrop =
   dragItem?.type === "artifact" ||
   (dragItem?.type === "folder" && acceptsFolderDrop && dragItem.id !== folderId);
-
  const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
   if (!canDrop) return;
   event.preventDefault();
  };
-
  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
   if (!canDrop) return;
   event.preventDefault();
   onDrop();
  };
-
  return (
   <div
    draggable={Boolean(folderId) && !isCoarsePointer}
@@ -1373,7 +1275,7 @@ function FolderRow({
    >
     <span
      className={cn(
-      "flex h-6 w-6 shrink-0 items-center justify-center rounded-md ring-1",
+      "flex h-6 w-6 shrink-0 items-center justify-center rounded-md border",
       folderColorClasses[color],
      )}
     >
@@ -1382,17 +1284,12 @@ function FolderRow({
     <StudyInstructionText as="span" clamp="one" className="min-w-0 flex-1">
      {name}
     </StudyInstructionText>
-    <StudyInstructionText
-     tone="muted"
-     variant="caption"
-     scale="relativeSmall"
-     className="rounded-full bg-bg-card px-1.5"
-    >
+    <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">
      {count}
     </StudyInstructionText>
    </Button>
    {folderId ? (
-    <span className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+    <span className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 [@media(hover:none)]:opacity-100">
      <Button
       type="button"
       variant="ghost"
@@ -1405,7 +1302,7 @@ function FolderRow({
        onMoveUp?.();
       }}
      >
-      <ArrowUp className="h-3.5 w-3.5" />
+      <ArrowUp />
      </Button>
      <Button
       type="button"
@@ -1419,7 +1316,7 @@ function FolderRow({
        onMoveDown?.();
       }}
      >
-      <ArrowDown className="h-3.5 w-3.5" />
+      <ArrowDown />
      </Button>
     </span>
    ) : null}
@@ -1457,7 +1354,6 @@ function FolderTreeRow({
   .sort((a, b) => a.position - b.position || a.name.localeCompare(b.name))
   .map((item) => item.id);
  const siblingIndex = siblingIds.indexOf(folder.id);
-
  return (
   <>
    <FolderRow
@@ -1539,22 +1435,15 @@ function PreviewPane({
   selectedArtifact && !isFetching
    ? injectRuntimeStateBridge(selectedArtifact.html, selectedArtifact.id, runtimeState)
    : "";
-
  useEffect(() => {
   const handleMessage = (event: MessageEvent<JsonFieldValue>) => {
    if (event.source !== iframeRef.current?.contentWindow) return;
    if (!isRuntimeStateMessage(event.data)) return;
-
    onRuntimeStateChange(event.data.artifactId, event.data.state);
   };
-
   window.addEventListener("message", handleMessage);
-
-  return () => {
-   window.removeEventListener("message", handleMessage);
-  };
+  return () => window.removeEventListener("message", handleMessage);
  }, [onRuntimeStateChange]);
-
  return (
   <section className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden border-x border-border-default bg-bg-card">
    <div className="flex h-14 shrink-0 items-center justify-between gap-3 border-b border-border-default bg-bg-card px-4">
@@ -1587,13 +1476,12 @@ function PreviewPane({
        onClick={() => onModeChange("editor")}
       />
      </div>
-     <Button type="button" variant="outline" size="sm" onClick={onToggleFocus}>
-      {isFocused ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+     <Button type="button" variant="outline" size="toolbar" onClick={onToggleFocus}>
+      {isFocused ? <Minimize2 /> : <Maximize2 />}
       {isFocused ? "Thu nhỏ" : "Phóng to"}
      </Button>
     </div>
    </div>
-
    <div
     className={cn(
      "min-h-0 flex-1",
@@ -1623,8 +1511,10 @@ function PreviewPane({
       iframeRef={iframeRef}
      />
     ) : (
-     <div className="flex h-full items-center justify-center p-6 text-center text-sm font-bold text-text-muted">
-      Chọn một tệp đã lưu hoặc dán HTML rồi bấm Lưu.
+     <div className="flex h-full items-center justify-center p-6 text-center">
+      <StudyInstructionText tone="muted" weight="bold">
+       Chọn một tệp đã lưu hoặc dán HTML rồi bấm Lưu.
+      </StudyInstructionText>
      </div>
     )}
    </div>
@@ -1651,7 +1541,6 @@ function ArtifactDirectorySkeleton() {
   </div>
  );
 }
-
 function HtmlArtifactPreviewSkeleton() {
  return (
   <div
@@ -1670,7 +1559,6 @@ function HtmlArtifactPreviewSkeleton() {
   </div>
  );
 }
-
 function PreviewModeButton({
  active,
  icon: Icon,
@@ -1692,24 +1580,19 @@ function PreviewModeButton({
    className="min-w-0"
    onClick={onClick}
   >
-   <Icon className="h-3.5 w-3.5 shrink-0" />
+   <Icon />
    <StudyInstructionText as="span" clamp="one">
     {label}
    </StudyInstructionText>
   </Button>
  );
 }
-
 function getHtmlArtifactFrameKey(artifactId: string, html: string) {
  let hash = 0;
-
- for (let index = 0; index < html.length; index += 1) {
+ for (let index = 0; index < html.length; index += 1)
   hash = (hash * 31 + html.charCodeAt(index)) >>> 0;
- }
-
  return `${artifactId}-${html.length}-${hash.toString(36)}`;
 }
-
 function StableHtmlArtifactIframe({
  artifact,
  initialSrcDoc,
@@ -1722,13 +1605,7 @@ function StableHtmlArtifactIframe({
  const [frameSrc] = useState(() =>
   URL.createObjectURL(new Blob([initialSrcDoc], { type: "text/html;charset=utf-8" })),
  );
-
- useEffect(() => {
-  return () => {
-   URL.revokeObjectURL(frameSrc);
-  };
- }, [frameSrc]);
-
+ useEffect(() => () => URL.revokeObjectURL(frameSrc), [frameSrc]);
  return (
   <iframe
    ref={iframeRef}
@@ -1740,20 +1617,16 @@ function StableHtmlArtifactIframe({
   />
  );
 }
-
 function maskToken(token: string) {
  if (token.length <= 24) return "••••";
-
  return `${token.slice(0, 12)}...${token.slice(-8)}`;
 }
-
 function parsePublishConnectionInfo(
  value: JsonFieldValue,
 ): z.infer<z.ZodNullable<typeof PublishConnectionInfoSchema>> {
  const parsed = PublishConnectionInfoSchema.safeParse(value);
  return parsed.success ? parsed.data : null;
 }
-
 function KeyValueRow({ label, value }: { label: string; value: string }) {
  return (
   <div className="grid gap-1 rounded-lg border border-border-default bg-bg-subtle px-3 py-2">
@@ -1797,30 +1670,14 @@ function PublishConnectionDialog({
  const exampleHtml = selectedArtifact?.html
   ? selectedArtifact.html.slice(0, 96).trim()
   : '<!doctype html><html lang="vi"><head><meta charset="utf-8" /></head><body>...</body></html>';
- const buildFetchSnippet = (endpoint: string) => `await fetch("${endpoint}", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer <supabase-user-access-token-or-publish-token>"
-  },
-  body: JSON.stringify({
-    mode: "upsert",
-    artifactId: "${exampleArtifactId}",
-    title: ${JSON.stringify(exampleTitle)},
-    artifactType: "${exampleType}",
-    tags: ${JSON.stringify(exampleTags)},
-    folderId: null,
-    html: ${JSON.stringify(exampleHtml)}
-  })
-});`;
+ const buildFetchSnippet = (endpoint: string) =>
+  `await fetch("${endpoint}", {\n  method: "POST",\n  headers: {\n    "Content-Type": "application/json",\n    "Authorization": "Bearer <supabase-user-access-token-or-publish-token>"\n  },\n  body: JSON.stringify({\n    mode: "upsert",\n    artifactId: "${exampleArtifactId}",\n    title: ${JSON.stringify(exampleTitle)},\n    artifactType: "${exampleType}",\n    tags: ${JSON.stringify(exampleTags)},\n    folderId: null,\n    html: ${JSON.stringify(exampleHtml)}\n  })\n});`;
  const displayFetchSnippet = buildFetchSnippet(displayEndpoint);
- const getCurrentEndpoint = () => {
-  if (typeof window === "undefined") return displayEndpoint;
-
-  return new URL(endpointPath, window.location.origin).toString();
- };
+ const getCurrentEndpoint = () =>
+  typeof window === "undefined"
+   ? displayEndpoint
+   : new URL(endpointPath, window.location.origin).toString();
  const tokenPreview = sessionAccessToken ? maskToken(sessionAccessToken) : "Chưa có session token";
-
  const copyText = async (text: string, successMessage: string) => {
   try {
    await navigator.clipboard.writeText(text);
@@ -1829,26 +1686,18 @@ function PublishConnectionDialog({
    toast.error("Không copy được. Chọn text rồi copy thủ công.");
   }
  };
-
  useEffect(() => {
   if (!isOpen) return;
-
   let ignore = false;
-
   const loadConnectionInfo = async () => {
    setIsLoadingConnection(true);
    try {
     const [statusResponse, sessionResult] = await Promise.all([
-     fetch(endpointPath, {
-      method: "GET",
-      headers: { Accept: "application/json" },
-     }),
+     fetch(endpointPath, { method: "GET", headers: { Accept: "application/json" } }),
      supabase.auth.getSession(),
     ]);
-
     const statusJson: JsonFieldValue = await statusResponse.json().catch(() => null);
     if (ignore) return;
-
     setConnectionInfo(parsePublishConnectionInfo(statusJson));
     setSessionAccessToken(sessionResult.data.session?.access_token ?? null);
    } catch {
@@ -1860,17 +1709,14 @@ function PublishConnectionDialog({
     if (!ignore) setIsLoadingConnection(false);
    }
   };
-
   void loadConnectionInfo();
-
   return () => {
    ignore = true;
   };
  }, [isOpen, supabase]);
-
  return (
   <Dialog open={isOpen} onOpenChange={onOpenChange}>
-   <DialogContent className="max-w-2xl">
+   <DialogContent size="lg">
     <DialogHeader>
      <DialogTitle className="flex items-center gap-2">
       <PlugZap className="h-5 w-5 text-primary" />
@@ -1880,123 +1726,39 @@ function PublishConnectionDialog({
       Dùng endpoint này để tool khác gửi HTML vào Tệp HTML mà không cần mở app rồi copy paste.
      </DialogDescription>
     </DialogHeader>
-
     <DialogBody>
      <div className="grid gap-4">
       <section className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
-       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-         <StudyInstructionText variant="overline" tone="muted" weight="black" transform="uppercase">
-          Endpoint
-         </StudyInstructionText>
-         <StudyInstructionText variant="code" tone="default" weight="bold" wrapping="breakAll">
-          {endpointPath}
-         </StudyInstructionText>
-         <StudyInstructionText variant="caption" tone="muted" weight="bold" className="mt-1">
-          Copy sẽ tự dùng domain hiện tại của app.
-         </StudyInstructionText>
-        </div>
-        <Button
-         type="button"
-         variant="outline"
-         size="sm"
-         className="shrink-0"
-         onClick={() => void copyText(getCurrentEndpoint(), "Đã copy endpoint")}
-        >
-         <Copy className="h-4 w-4" />
-         Copy
-        </Button>
-       </div>
+       <StudyInstructionText variant="overline" tone="muted" weight="black" transform="uppercase">
+        Endpoint
+       </StudyInstructionText>
+       <StudyInstructionText variant="code" tone="default" weight="bold" wrapping="breakAll">
+        {endpointPath}
+       </StudyInstructionText>
+       <Button
+        type="button"
+        variant="outline"
+        size="toolbar"
+        onClick={() => void copyText(getCurrentEndpoint(), "Đã copy endpoint")}
+       >
+        <Copy data-icon="inline-start" />
+        Copy
+       </Button>
       </section>
-
       <div className="grid gap-3 sm:grid-cols-2">
-       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
-        <div>
-         <StudyInstructionText variant="label" tone="default" weight="black">
-          Auth user token
-         </StudyInstructionText>
-         <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="mt-1">
-          Gửi Supabase access token trong header. DB chỉ cho ghi tệp của owner này.
-         </StudyInstructionText>
-        </div>
-        <KeyValueRow label="Owner" value={connectionInfo?.sessionUserId ?? "Đang đọc..."} />
-        <KeyValueRow label="Token" value={isLoadingConnection ? "Đang đọc..." : tokenPreview} />
-        <Button
-         type="button"
-         variant="outline"
-         size="sm"
-         disabled={!sessionAccessToken}
-         onClick={() =>
-          sessionAccessToken
-           ? void copyText(sessionAccessToken, "Đã copy auth user token")
-           : toast.error("Không có session token để copy")
-         }
-        >
-         <Copy className="h-4 w-4" />
-         Copy auth token
-        </Button>
-       </div>
-       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-3">
-        <div>
-         <StudyInstructionText variant="label" tone="default" weight="black">
-          Publish token
-         </StudyInstructionText>
-         <StudyInstructionText variant="bodySmall" tone="muted" weight="semibold" className="mt-1">
-          Token này nằm trong env server; UI chỉ show trạng thái và owner đang nhận file.
-         </StudyInstructionText>
-        </div>
-        <KeyValueRow
-         label="Status"
-         value={
-          connectionInfo?.publishTokenEnabled
-           ? "Đã cấu hình"
-           : isLoadingConnection
-             ? "Đang đọc..."
-             : "Chưa cấu hình"
-         }
-        />
-        <KeyValueRow label="Owner" value={connectionInfo?.publishOwnerId ?? "Chưa cấu hình"} />
-        <KeyValueRow
-         label="Service role"
-         value={connectionInfo?.serviceRoleEnabled ? "Sẵn sàng" : "Chưa cấu hình"}
-        />
-       </div>
+       <KeyValueRow label="Owner" value={connectionInfo?.sessionUserId ?? "Đang đọc..."} />
+       <KeyValueRow label="Token" value={isLoadingConnection ? "Đang đọc..." : tokenPreview} />
       </div>
-
       <section className="grid gap-2">
-       <div className="flex items-center justify-between gap-2">
-        <StudyInstructionText variant="label" tone="default" weight="black">
-         Ví dụ fetch
-        </StudyInstructionText>
-        <Button
-         type="button"
-         variant="outline"
-         size="sm"
-         onClick={() =>
-          void copyText(buildFetchSnippet(getCurrentEndpoint()), "Đã copy ví dụ fetch")
-         }
-        >
-         <Copy className="h-4 w-4" />
-         Copy code
-        </Button>
-       </div>
+       <StudyInstructionText variant="label" tone="default" weight="black">
+        Ví dụ fetch
+       </StudyInstructionText>
        <pre className="max-h-80 overflow-auto rounded-xl border border-border-default bg-bg-primary p-3 text-xs font-semibold text-text-primary scrollbar-soft">
         <code>{displayFetchSnippet}</code>
        </pre>
       </section>
-
-      <StudyInstructionText
-       variant="label"
-       tone="primary"
-       weight="bold"
-       className="rounded-xl border border-primary/20 bg-primary/10 p-3"
-      >
-       <code>mode: &quot;upsert&quot;</code> sẽ update khi có <code>artifactId</code>, còn không có
-       thì tạo tệp mới.
-      </StudyInstructionText>
      </div>
     </DialogBody>
-
     <DialogFooter>
      <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
       Đóng
@@ -2020,7 +1782,6 @@ function EditorPane(props: {
  onDelete: () => void;
 }) {
  const { embedded = false, ...formProps } = props;
-
  return (
   <aside
    className={cn(
@@ -2033,7 +1794,6 @@ function EditorPane(props: {
   </aside>
  );
 }
-
 function ConfirmDeleteDialog({
  deleteDialog,
  isDeleting,
@@ -2053,10 +1813,9 @@ function ConfirmDeleteDialog({
  const description = isFolder
   ? `Tệp trong "${name}" sẽ được chuyển về Chưa phân loại.`
   : `"${name ?? "Tệp này"}" sẽ bị xóa khỏi database.`;
-
  return (
   <Dialog open={Boolean(deleteDialog)} onOpenChange={onOpenChange}>
-   <DialogContent className="max-w-md">
+   <DialogContent size="sm">
     <DialogHeader>
      <DialogTitle>{title}</DialogTitle>
      <DialogDescription>{description}</DialogDescription>
@@ -2066,8 +1825,7 @@ function ConfirmDeleteDialog({
       Hủy
      </Button>
      <Button type="button" variant="destructive" disabled={isDeleting} onClick={onConfirm}>
-      {isDeleting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
-      Xóa
+      {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}Xóa
      </Button>
     </DialogFooter>
    </DialogContent>
@@ -2084,11 +1842,7 @@ function CreateFolderDialog({
  onOpenChange,
  onSubmit,
 }: {
- folderDraft: {
-  name: string;
-  parentFolderId: Nullable<string>;
-  color: HtmlArtifactFolderColor;
- };
+ folderDraft: { name: string; parentFolderId: Nullable<string>; color: HtmlArtifactFolderColor };
  folders: HtmlArtifactFolder[];
  isOpen: boolean;
  isSaving: boolean;
@@ -2103,10 +1857,9 @@ function CreateFolderDialog({
  const parentFolder = folderDraft.parentFolderId
   ? folders.find((folder) => folder.id === folderDraft.parentFolderId)
   : null;
-
  return (
   <Dialog open={isOpen} onOpenChange={onOpenChange}>
-   <DialogContent className="max-w-md">
+   <DialogContent size="sm">
     <form className="grid gap-4" onSubmit={onSubmit}>
      <DialogHeader>
       <DialogTitle>Thư mục mới</DialogTitle>
@@ -2116,51 +1869,35 @@ function CreateFolderDialog({
         : "Đặt tên và màu để gom tệp HTML theo nhóm."}
       </DialogDescription>
      </DialogHeader>
-
      <DialogBody>
       <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
        Tên thư mục
        <Input
         value={folderDraft.name}
-        onChange={(event) =>
-         onFolderDraftChange({
-          ...folderDraft,
-          name: event.target.value,
-         })
-        }
+        onChange={(event) => onFolderDraftChange({ ...folderDraft, name: event.target.value })}
         placeholder="SC3 mock exams"
         required
         autoFocus
        />
       </Label>
-
       <fieldset className="grid gap-2">
        <legend className="text-sm font-bold text-text-primary">Màu</legend>
        <div className="flex flex-wrap gap-2">
-        {folderColorSequence.map((color) => {
-         const selected = folderDraft.color === color;
-         return (
-          <Button
-           key={color}
-           type="button"
-           variant="swatch"
-           size="icon"
-           aria-pressed={selected}
-           style={folderColorSwatchStyles[color]}
-           onClick={() =>
-            onFolderDraftChange({
-             ...folderDraft,
-             color,
-            })
-           }
-           aria-label={`Chọn màu ${color}`}
-          />
-         );
-        })}
+        {folderColorSequence.map((color) => (
+         <Button
+          key={color}
+          type="button"
+          variant="swatch"
+          size="icon"
+          aria-pressed={folderDraft.color === color}
+          style={folderColorSwatchStyles[color]}
+          onClick={() => onFolderDraftChange({ ...folderDraft, color })}
+          aria-label={`Chọn màu ${color}`}
+         />
+        ))}
        </div>
       </fieldset>
      </DialogBody>
-
      <DialogFooter>
       <Button
        type="button"
@@ -2171,12 +1908,7 @@ function CreateFolderDialog({
        Hủy
       </Button>
       <Button type="submit" disabled={isSaving || !folderDraft.name.trim()}>
-       {isSaving ? (
-        <Loader2 className="h-4 w-4 animate-spin" />
-       ) : (
-        <FolderPlus className="h-4 w-4" />
-       )}
-       Tạo thư mục
+       {isSaving ? <Loader2 className="animate-spin" /> : <FolderPlus />}Tạo thư mục
       </Button>
      </DialogFooter>
     </form>
@@ -2212,7 +1944,6 @@ function ArtifactForm({
  const [isFormattingHtml, setIsFormattingHtml] = useState(false);
  const [saveStatus, setSaveStatus] = useState<DraftSaveStatus>("idle");
  const latestFormRef = useRef(form);
-
  const updateForm = (updater: (current: ArtifactFormState) => ArtifactFormState) => {
   const next = updater(latestFormRef.current);
   setSaveStatus(
@@ -2225,11 +1956,9 @@ function ArtifactForm({
   setForm(next);
   onDraftChange(next);
  };
-
  useEffect(() => {
   latestFormRef.current = form;
  }, [form]);
-
  const submitForm = (event: FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   if (!form.html.trim()) {
@@ -2237,20 +1966,14 @@ function ArtifactForm({
    return;
   }
   void Promise.resolve(onSubmit(form))
-   .then(() => {
-    setSaveStatus("saved");
-   })
-   .catch(() => {
-    setSaveStatus("error");
-   });
+   .then(() => setSaveStatus("saved"))
+   .catch(() => setSaveStatus("error"));
  };
-
  const formatHtml = async () => {
   if (!form.html.trim()) {
    toast.error("Paste HTML trước khi format.");
    return;
   }
-
   setIsFormattingHtml(true);
   try {
    const formattedHtml = await formatHtmlSource(form.html);
@@ -2262,7 +1985,6 @@ function ArtifactForm({
    setIsFormattingHtml(false);
   }
  };
-
  return (
   <form
    className={cn(
@@ -2297,41 +2019,34 @@ function ArtifactForm({
      ) : null}
     </div>
     <div className="flex gap-2">
-     {artifact && !htmlOnly && (
+     {artifact && !htmlOnly ? (
       <Button
        type="button"
        variant="destructive"
-       size="sm"
+       size="toolbar"
        disabled={isDeleting || isSaving}
        onClick={onDelete}
       >
-       <Trash2 className="h-4 w-4" />
+       <Trash2 />
        Xóa
       </Button>
-     )}
+     ) : null}
      {htmlOnly ? (
       <Button
        type="button"
        variant="outline"
-       size="sm"
+       size="toolbar"
        disabled={isSaving || isDeleting || isFormattingHtml || !form.html.trim()}
        onClick={formatHtml}
       >
-       {isFormattingHtml ? (
-        <Loader2 className="h-3.5 w-3.5 animate-spin" />
-       ) : (
-        <Code2 className="h-3.5 w-3.5" />
-       )}
-       Định dạng
+       {isFormattingHtml ? <Loader2 className="animate-spin" /> : <Code2 />}Định dạng
       </Button>
      ) : null}
-     <Button type="submit" size="sm" disabled={isSaving || isDeleting}>
-      {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-      Lưu DB
+     <Button type="submit" size="toolbar" disabled={isSaving || isDeleting}>
+      {isSaving ? <Loader2 className="animate-spin" /> : <Save />}Lưu DB
      </Button>
     </div>
    </div>
-
    {!htmlOnly ? (
     <>
      <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
@@ -2344,22 +2059,17 @@ function ArtifactForm({
        required
       />
      </Label>
-
-     <div className="grid gap-1.5 text-sm font-bold text-text-primary">
-      <span>Thư mục</span>
+     <div className="grid gap-1.5">
+      <Typography as="span" variant="label" weight="bold">
+       Thư mục
+      </Typography>
       <Select
        value={form.folderId ?? noFolderValue}
        onValueChange={(value) =>
-        updateForm((current) => ({
-         ...current,
-         folderId: value === noFolderValue ? null : value,
-        }))
+        updateForm((current) => ({ ...current, folderId: value === noFolderValue ? null : value }))
        }
       >
-       <SelectTrigger
-        aria-label="Chọn thư mục cho tệp HTML"
-        className="h-10 w-full rounded-xl border-border-default bg-bg-primary px-3 text-sm font-bold text-text-primary shadow-none"
-       >
+       <SelectTrigger width="full" aria-label="Chọn thư mục cho tệp HTML">
         <SelectValue placeholder="Chọn thư mục" />
        </SelectTrigger>
        <SelectContent align="start">
@@ -2374,25 +2084,20 @@ function ArtifactForm({
        </SelectContent>
       </Select>
      </div>
-
      <div className="grid gap-3 sm:grid-cols-[160px_minmax(0,1fr)] lg:grid-cols-1 xl:grid-cols-[150px_minmax(0,1fr)]">
-      <div className="grid gap-1.5 text-sm font-bold text-text-primary">
-       <span>Loại tệp</span>
+      <div className="grid gap-1.5">
+       <Typography as="span" variant="label" weight="bold">
+        Loại tệp
+       </Typography>
        <Select
         value={form.artifactType}
         onValueChange={(value) => {
          const parsedArtifactType = htmlArtifactTypeSchema.safeParse(value);
          if (!parsedArtifactType.success) return;
-         updateForm((current) => ({
-          ...current,
-          artifactType: parsedArtifactType.data,
-         }));
+         updateForm((current) => ({ ...current, artifactType: parsedArtifactType.data }));
         }}
        >
-        <SelectTrigger
-         aria-label="Chọn loại tệp HTML"
-         className="h-10 w-full rounded-xl border-border-default bg-bg-primary px-3 text-sm font-bold text-text-primary shadow-none"
-        >
+        <SelectTrigger width="full" aria-label="Chọn loại tệp HTML">
          <SelectValue placeholder="Chọn loại" />
         </SelectTrigger>
         <SelectContent align="start">
@@ -2406,7 +2111,6 @@ function ArtifactForm({
         </SelectContent>
        </Select>
       </div>
-
       <Label variant="label" tone="default" weight="bold" className="grid gap-1.5">
        Tag
        <Input
@@ -2421,7 +2125,6 @@ function ArtifactForm({
      </div>
     </>
    ) : null}
-
    <div className="flex min-h-0 flex-1 flex-col gap-1.5">
     {!htmlOnly ? (
      <div className="flex items-center justify-between gap-2">
@@ -2440,16 +2143,11 @@ function ArtifactForm({
       <Button
        type="button"
        variant="outline"
-       size="sm"
+       size="toolbar"
        disabled={isSaving || isDeleting || isFormattingHtml || !form.html.trim()}
        onClick={formatHtml}
       >
-       {isFormattingHtml ? (
-        <Loader2 className="h-3.5 w-3.5 animate-spin" />
-       ) : (
-        <Code2 className="h-3.5 w-3.5" />
-       )}
-       Định dạng
+       {isFormattingHtml ? <Loader2 className="animate-spin" /> : <Code2 />}Định dạng
       </Button>
      </div>
     ) : (
@@ -2482,7 +2180,8 @@ function HtmlSourceEditor({
  return (
   <div
    className={cn(
-    "html-source-editor overflow-hidden rounded-2xl border border-border-default bg-bg-primary shadow-inner focus-within:ring-2 focus-within:ring-ring [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
+    "html-source-editor overflow-hidden rounded-xl border border-border-default bg-bg-primary shadow-inner [&_.cm-activeLine]:bg-primary/5 [&_.cm-activeLineGutter]:bg-primary/10 [&_.cm-content]:min-h-full [&_.cm-content]:py-3 [&_.cm-editor]:h-full [&_.cm-editor]:bg-bg-primary [&_.cm-focused]:outline-none [&_.cm-gutters]:border-border-default [&_.cm-gutters]:bg-bg-elevated/70 [&_.cm-line]:px-3 [&_.cm-scroller]:font-mono [&_.cm-scroller]:text-xs [&_.cm-theme-light]:h-full",
+    focusWithinRingClassName,
     fullHeight ? "min-h-0 flex-1" : "h-[clamp(18rem,48dvh,34rem)]",
    )}
   >
@@ -2507,7 +2206,6 @@ function HtmlSourceEditor({
   </div>
  );
 }
-
 function ArtifactListButton({
  artifact,
  active,
@@ -2537,7 +2235,6 @@ function ArtifactListButton({
   event.preventDefault();
   onClick();
  };
-
  return (
   <div
    role="button"
@@ -2548,7 +2245,7 @@ function ArtifactListButton({
    onClick={onClick}
    onKeyDown={handleKeyDown}
    className={cn(
-    "group relative grid  gap-2 rounded-2xl border p-3.5 text-left shadow-theme-sm transition-colors",
+    "group relative grid gap-2 rounded-xl border p-3.5 text-left shadow-theme-sm transition-colors",
     active
      ? "app-active-item"
      : "border-border-default bg-bg-card text-text-primary hover:border-primary/30 hover:bg-bg-elevated",
@@ -2571,43 +2268,17 @@ function ArtifactListButton({
     </div>
    </div>
    <div className="flex flex-wrap gap-1.5">
-    <StudyInstructionText
-     tone="muted"
-     weight="black"
-     variant="caption"
-     scale="relativeSmall"
-     className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
-    >
-     {artifactTypeLabels[artifact.artifactType]}
-    </StudyInstructionText>
+    <Badge size="sm">{artifactTypeLabels[artifact.artifactType]}</Badge>
     {artifact.tags.slice(0, 3).map((tag) => (
-     <StudyInstructionText
-      key={`${artifact.id}-${tag}`}
-      tone="muted"
-      weight="black"
-      variant="caption"
-      scale="relativeSmall"
-      className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
-     >
+     <Badge key={`${artifact.id}-${tag}`} size="sm">
       {tag}
-     </StudyInstructionText>
+     </Badge>
     ))}
-    {artifact.tags.length > 3 ? (
-     <StudyInstructionText
-      tone="muted"
-      weight="black"
-      variant="caption"
-      scale="relativeSmall"
-      className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
-     >
-      +{artifact.tags.length - 3}
-     </StudyInstructionText>
-    ) : null}
+    {artifact.tags.length > 3 ? <Badge size="sm">+{artifact.tags.length - 3}</Badge> : null}
    </div>
   </div>
  );
 }
-
 function ArtifactCardAction({
  danger = false,
  icon: Icon,
@@ -2628,7 +2299,7 @@ function ArtifactCardAction({
    size="icon-toolbar"
    onClick={onClick}
   >
-   <Icon className="h-3.5 w-3.5" />
+   <Icon />
   </Button>
  );
 }

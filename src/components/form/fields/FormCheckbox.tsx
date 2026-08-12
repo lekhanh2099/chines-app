@@ -41,34 +41,39 @@ export function FormCheckbox({
      disabled={disabled}
      aria-invalid={Boolean(error)}
      aria-describedby={getDescribedBy(descriptionId, error ? errorId : undefined)}
-     className="mt-1"
+     className="self-start translate-y-1"
      onBlur={field.handleBlur}
      onCheckedChange={(checked) => field.handleChange(checked === true)}
     />
 
     <span className="grid gap-1">
-     <Typography as="span" tone="default" weight="black">
+     <Typography
+      as="span"
+      tone="default"
+      weight="black"
+      className="inline-flex items-baseline gap-1"
+     >
       {label}
-      {required && (
-       <Typography as="span" tone="danger" className="ml-1">
+      {required ? (
+       <Typography as="span" tone="danger">
         *
        </Typography>
-      )}
+      ) : null}
      </Typography>
 
-     {description && (
+     {description ? (
       <Typography id={descriptionId} variant="caption" tone="muted" weight="semibold">
        {description}
       </Typography>
-     )}
+     ) : null}
     </span>
    </Label>
 
-   {error && (
+   {error ? (
     <Typography as="p" id={errorId} role="alert" tone="danger" weight="bold">
      {error}
     </Typography>
-   )}
+   ) : null}
   </div>
  );
 }

@@ -1,7 +1,7 @@
-import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
+import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 export function HomeSectionHeader({
@@ -18,8 +18,8 @@ export function HomeSectionHeader({
  className?: string;
 }) {
  return (
-  <div className={cn("flex items-end justify-between gap-3", className)}>
-   <div className="min-w-0">
+  <div className={cn("flex flex-wrap items-end justify-between gap-x-3 gap-y-2", className)}>
+   <div className="grid min-w-0 flex-[1_1_14rem] gap-1">
     <Typography
      as="h2"
      variant="sectionTitle"
@@ -30,39 +30,17 @@ export function HomeSectionHeader({
     >
      {title}
     </Typography>
-    {description && (
-     <Typography
-      as="p"
-      variant="bodySmall"
-      tone="muted"
-      weight="semibold"
-      leading="compact"
-      className="mt-1"
-     >
+    {description ? (
+     <Typography as="p" variant="bodySmall" tone="muted" weight="semibold" leading="compact">
       {description}
      </Typography>
-    )}
+    ) : null}
    </div>
-   {action}
+   {action ? <div className="shrink-0">{action}</div> : null}
   </div>
  );
 }
 
-export function HomeIconTile({ children, className }: { children: ReactNode; className?: string }) {
- return (
-  <Typography
-   as="span"
-   tone="accent"
-   className={cn(
-    "flex size-11 shrink-0 items-center justify-center rounded-lg border border-primary/15 bg-accent-subtle",
-    className,
-   )}
-  >
-   {children}
-  </Typography>
- );
-}
-
 export function HomeArrowIcon({ className }: { className?: string }) {
- return <ArrowRight className={cn("h-4 w-4 shrink-0 text-text-muted", className)} />;
+ return <ArrowRight className={cn("size-4 shrink-0 text-text-muted", className)} />;
 }

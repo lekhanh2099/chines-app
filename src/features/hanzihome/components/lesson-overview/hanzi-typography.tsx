@@ -18,7 +18,6 @@ const StaticHanziTextSizeSchema = z.enum([
  "hero",
  "radicalHero",
 ]);
-const StaticHanziTextFontSchema = z.enum(["standard", "popular"]);
 const StudyTextElementSchema = z.enum([
  "span",
  "p",
@@ -44,7 +43,6 @@ type StudyInstructionTextProps = Omit<TypographyProps<StudyTextElement>, "as"> &
 };
 type HanziTextProps = StudyTypographyProps & {
  size?: z.infer<typeof StaticHanziTextSizeSchema>;
- font?: z.infer<typeof StaticHanziTextFontSchema>;
 };
 type ReaderHanziTextProps = StudyTypographyProps & {
  displayMode: LessonDisplayMode;
@@ -54,6 +52,12 @@ type AdaptiveStudyTextProps = StudyTypographyProps & {
  text: string;
  displayMode: LessonDisplayMode;
  hanziSize?: z.infer<typeof HanziTypographySizeSchema>;
+};
+type HanziAwareTextProps = Omit<StudyInstructionTextProps, "children"> & {
+ text: string;
+};
+type HanziInlineTextProps = {
+ text: string;
 };
 type HanziFontPreviewProps = StudyTypographyProps & {
  font: HanziReaderFont;
@@ -71,19 +75,18 @@ const staticHanziTextSizes: Record<z.infer<typeof StaticHanziTextSizeSchema>, st
  hero: "text-6xl",
  radicalHero: "text-5xl sm:text-6xl",
 };
-const staticHanziTextFonts: Record<z.infer<typeof StaticHanziTextFontSchema>, string> = {
- standard: "font-hanzi",
- popular: "font-popular-xingkai",
-};
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
- system: '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", var(--font-lxgw-wenkai-mono-tc), serif',
+ system:
+  'system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", var(--font-reading-noto-sans), sans-serif',
  songti: 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif',
  "noto-sans":
   'var(--font-reading-noto-sans), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif',
- pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", serif',
- kaiti: '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", var(--font-lxgw-wenkai-mono-tc), serif',
- fangsong: '"FangSong", "STFangsong", "FangSong_GB2312", serif',
+ pinyin: '"FZKTPY01", "Kaiti SC", "KaiTi", var(--font-reading-noto-serif), "Noto Serif SC", serif',
+ kaiti:
+  '"Kaiti SC", "KaiTi", "STKaiti", "DFKai-SB", var(--font-reading-noto-serif), "Noto Serif SC", serif',
+ fangsong:
+  '"FangSong", "STFangsong", "FangSong_GB2312", var(--font-reading-noto-serif), "Noto Serif SC", serif',
  "ma-shan": 'var(--font-reading-ma-shan), "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif',
  xiaowei: 'var(--font-reading-xiaowei), "ZCOOL XiaoWei", "Kaiti SC", "KaiTi", serif',
 };
@@ -135,7 +138,6 @@ export function getHanziTypographyStyle(
 export function HanziText({
  as = StudyTextElementSchema.enum.span,
  size = StaticHanziTextSizeSchema.enum.card,
- font = StaticHanziTextFontSchema.enum.standard,
  className,
  ...props
 }: HanziTextProps) {
@@ -143,7 +145,7 @@ export function HanziText({
   <Typography
    as={as}
    lang="zh-CN"
-   className={cn(staticHanziTextFonts[font], staticHanziTextSizes[size], className)}
+   className={cn("font-hanzi", staticHanziTextSizes[size], className)}
    {...props}
   />
  );
@@ -162,6 +164,34 @@ export function ReaderHanziText({
    style={getHanziTypographyStyle(displayMode, { size })}
    {...props}
   />
+ );
+}
+
+export function HanziInlineText({ text }: HanziInlineTextProps) {
+ return (
+  <>
+   {text.split(HANZI_SEGMENT_PATTERN).map((segment, index) =>
+    containsHanziText(segment) ? (
+     <span key={index} lang="zh-CN" className="font-hanzi">
+      {segment}
+     </span>
+    ) : (
+     segment
+    ),
+   )}
+  </>
+ );
+}
+
+export function HanziAwareText({
+ text,
+ as = StudyTextElementSchema.enum.p,
+ ...props
+}: HanziAwareTextProps) {
+ return (
+  <StudyInstructionText as={as} {...props}>
+   <HanziInlineText text={text} />
+  </StudyInstructionText>
  );
 }
 
@@ -244,15 +274,28 @@ export function StudyInstructionText({
  as = StudyTextElementSchema.enum.p,
  variant = "bodySmall",
  tone = "muted",
+ lang,
+ className,
  ...props
 }: StudyInstructionTextProps) {
- return <Typography as={as} variant={variant} tone={tone} {...props} />;
+ return (
+  <Typography
+   as={as}
+   lang={lang}
+   variant={variant}
+   tone={tone}
+   className={cn(lang === "zh-CN" && "font-hanzi", className)}
+   {...props}
+  />
+ );
 }
 
 export type {
  HanziTextProps,
  AdaptiveStudyTextProps,
+ HanziAwareTextProps,
  HanziFontPreviewProps,
+ HanziInlineTextProps,
  ReaderHanziTextProps,
  StudyInstructionTextProps,
  StudyTypographyProps,

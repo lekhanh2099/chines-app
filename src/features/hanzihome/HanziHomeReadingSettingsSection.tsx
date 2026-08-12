@@ -1,19 +1,28 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Eye, RefreshCcw, Settings2, Type } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Spinner } from "@/components/ui/spinner";
-import { Typography } from "@/components/ui/typography";
 import {
+ DropdownMenu,
  DropdownMenuCheckboxItem,
+ DropdownMenuContent,
  DropdownMenuItem,
  DropdownMenuLabel,
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
- DropdownMenuShortcut,
+ DropdownMenuSub,
+ DropdownMenuSubContent,
+ DropdownMenuSubTrigger,
+ DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
+import { HanziFontPreview } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import {
  LessonReadingSettings,
  fontOptions,
@@ -23,19 +32,6 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/LessonReadingSettings";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { ChevronLeft, Eye, RefreshCcw, Type } from "lucide-react";
-import { z } from "zod";
-
-export const HanziHomeReadingQuickSettingsSectionSchema = z.enum([
- "font",
- "size",
- "reveal",
- "visibility",
-]);
-
-export const HanziHomeReadingQuickSettingsActiveSectionSchema = z.nullable(
- HanziHomeReadingQuickSettingsSectionSchema,
-);
 
 export function HanziHomeReadingSettingsSection() {
  const learning = useLearningState();
@@ -47,17 +43,14 @@ export function HanziHomeReadingSettingsSection() {
 
  return (
   <div className="grid gap-4">
-   <Card
-    variant="section"
-    padding="lg"
-    className="flex flex-wrap items-start justify-between gap-3"
-   >
-    <div className="min-w-0 space-y-1">
+   <div className="flex flex-wrap items-start justify-between gap-3">
+    <div className="grid min-w-0 gap-1">
      <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
       Thiết lập đọc
      </Typography>
      <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-      Điều chỉnh font, cỡ chữ, pinyin, nghĩa và đáp án cho nội dung tiếng Trung.
+      Điều chỉnh font, cỡ chữ, cách mở nội dung, pinyin, nghĩa và đáp án. Khung xem trước cập nhật
+      theo cùng thiết lập đang dùng trong bài học.
      </Typography>
     </div>
     <Badge
@@ -72,7 +65,7 @@ export function HanziHomeReadingSettingsSection() {
           ? "Đã đồng bộ"
           : "Lưu cục bộ"}
     </Badge>
-   </Card>
+   </div>
 
    {learning.isLoading ? (
     <Card
@@ -97,7 +90,12 @@ export function HanziHomeReadingSettingsSection() {
         {learning.lastSyncError ||
          "Chưa thể đồng bộ cài đặt đọc. Các thay đổi cục bộ vẫn được giữ."}
        </Typography>
-       <Button type="button" variant="outline" size="sm" onClick={() => void learning.retrySync()}>
+       <Button
+        type="button"
+        variant="outline"
+        size="toolbar"
+        onClick={() => void learning.retrySync()}
+       >
         Thử đồng bộ lại
        </Button>
       </Card>
@@ -109,15 +107,35 @@ export function HanziHomeReadingSettingsSection() {
  );
 }
 
-export function HanziHomeReadingQuickSettingsMenu({
- activeSection,
- onActiveSectionChange,
-}: {
- activeSection: z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>;
- onActiveSectionChange: (
-  section: z.infer<typeof HanziHomeReadingQuickSettingsActiveSectionSchema>,
- ) => void;
-}) {
+export function HanziHomeReadingQuickSettingsButton() {
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     variant="outline"
+     size="icon-toolbar"
+     aria-label="Thiết lập đọc"
+     title="Thiết lập đọc"
+    >
+     <Settings2 />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="end" width="lg">
+    <HanziHomeReadingQuickSettingsMenu />
+    <DropdownMenuSeparator />
+    <DropdownMenuItem asChild>
+     <Link href="/settings?section=reading">
+      <Settings2 />
+      Mở cài đặt đọc đầy đủ
+     </Link>
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
+
+export function HanziHomeReadingQuickSettingsMenu() {
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
 
@@ -125,87 +143,120 @@ export function HanziHomeReadingQuickSettingsMenu({
   learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
  };
 
- if (activeSection) {
-  return (
-   <>
-    <DropdownMenuItem
-     onSelect={(event) => {
-      event.preventDefault();
-      onActiveSectionChange(null);
-     }}
-    >
-     <ChevronLeft />
-     Quay lại cài đặt nhanh
+ return (
+  <>
+   <DropdownMenuLabel>Thiết lập đọc</DropdownMenuLabel>
+   {learning.isLoading ? (
+    <DropdownMenuItem disabled>
+     <Spinner />
+     Đang tải cài đặt đọc…
     </DropdownMenuItem>
-    <DropdownMenuSeparator />
-    <DropdownMenuLabel>
-     {activeSection === "font"
-      ? "Phông chữ"
-      : activeSection === "size"
-        ? "Cỡ chữ"
-        : activeSection === "reveal"
-          ? "Cách mở nội dung"
-          : "Hiển thị"}
-    </DropdownMenuLabel>
-    {activeSection === "font" ? (
-     <DropdownMenuRadioGroup
-      value={displayMode.hanziFont}
-      onValueChange={(value) => {
-       const option = fontOptions.find((candidate) => candidate.value === value);
-       if (option) updateDisplayMode({ hanziFont: option.value });
-      }}
-     >
-      {fontOptions.map((option) => (
-       <DropdownMenuRadioItem
-        key={option.value}
-        value={option.value}
-        onSelect={(event) => event.preventDefault()}
+   ) : (
+    <>
+     <DropdownMenuSub>
+      <DropdownMenuSubTrigger>
+       <Type />
+       Phông chữ
+       <Typography as="span" variant="caption" tone="muted" className="max-w-28" clamp="one">
+        {fontOptions.find((option) => option.value === displayMode.hanziFont)?.label}
+       </Typography>
+      </DropdownMenuSubTrigger>
+      <DropdownMenuSubContent width="lg">
+       <DropdownMenuLabel>Phông chữ</DropdownMenuLabel>
+       <DropdownMenuRadioGroup
+        value={displayMode.hanziFont}
+        onValueChange={(value) => {
+         const option = fontOptions.find((candidate) => candidate.value === value);
+         if (option) updateDisplayMode({ hanziFont: option.value });
+        }}
        >
-        {option.label}
-       </DropdownMenuRadioItem>
-      ))}
-     </DropdownMenuRadioGroup>
-    ) : null}
-    {activeSection === "size" ? (
-     <DropdownMenuRadioGroup
-      value={displayMode.hanziSize}
-      onValueChange={(value) => {
-       const option = sizeOptions.find((candidate) => candidate.value === value);
-       if (option) updateDisplayMode({ hanziSize: option.value });
-      }}
-     >
-      {sizeOptions.map((option) => (
-       <DropdownMenuRadioItem
-        key={option.value}
-        value={option.value}
-        onSelect={(event) => event.preventDefault()}
+        {fontOptions.map((option) => (
+         <DropdownMenuRadioItem
+          key={option.value}
+          value={option.value}
+          onSelect={(event) => event.preventDefault()}
+         >
+          <HanziFontPreview as="span" font={option.value} leading="none">
+           文
+          </HanziFontPreview>
+          {option.label}
+         </DropdownMenuRadioItem>
+        ))}
+       </DropdownMenuRadioGroup>
+      </DropdownMenuSubContent>
+     </DropdownMenuSub>
+
+     <DropdownMenuSub>
+      <DropdownMenuSubTrigger>
+       <Type />
+       Cỡ chữ
+       <Typography as="span" variant="caption" tone="muted">
+        {sizeOptions.find((option) => option.value === displayMode.hanziSize)?.label}
+       </Typography>
+      </DropdownMenuSubTrigger>
+      <DropdownMenuSubContent width="md">
+       <DropdownMenuLabel>Cỡ chữ</DropdownMenuLabel>
+       <DropdownMenuRadioGroup
+        value={displayMode.hanziSize}
+        onValueChange={(value) => {
+         const option = sizeOptions.find((candidate) => candidate.value === value);
+         if (option) updateDisplayMode({ hanziSize: option.value });
+        }}
        >
-        {option.label}
-       </DropdownMenuRadioItem>
-      ))}
-     </DropdownMenuRadioGroup>
-    ) : null}
-    {activeSection === "reveal" ? (
-     <DropdownMenuRadioGroup
-      value={displayMode.revealMode}
-      onValueChange={(value) => {
-       const option = revealOptions.find((candidate) => candidate.value === value);
-       if (option) updateDisplayMode({ revealMode: option.value });
-      }}
-     >
-      {revealOptions.map((option) => (
-       <DropdownMenuRadioItem
-        key={option.value}
-        value={option.value}
-        onSelect={(event) => event.preventDefault()}
+        {sizeOptions.map((option) => (
+         <DropdownMenuRadioItem
+          key={option.value}
+          value={option.value}
+          onSelect={(event) => event.preventDefault()}
+         >
+          {option.label}
+         </DropdownMenuRadioItem>
+        ))}
+       </DropdownMenuRadioGroup>
+      </DropdownMenuSubContent>
+     </DropdownMenuSub>
+
+     <DropdownMenuSeparator />
+     <DropdownMenuLabel>Hiển thị</DropdownMenuLabel>
+
+     <DropdownMenuSub>
+      <DropdownMenuSubTrigger>
+       <Eye />
+       Cách mở nội dung
+       <Typography as="span" variant="caption" tone="muted">
+        {revealOptions.find((option) => option.value === displayMode.revealMode)?.label}
+       </Typography>
+      </DropdownMenuSubTrigger>
+      <DropdownMenuSubContent width="md">
+       <DropdownMenuLabel>Cách mở nội dung</DropdownMenuLabel>
+       <DropdownMenuRadioGroup
+        value={displayMode.revealMode}
+        onValueChange={(value) => {
+         const option = revealOptions.find((candidate) => candidate.value === value);
+         if (option) updateDisplayMode({ revealMode: option.value });
+        }}
        >
-        {option.label}
-       </DropdownMenuRadioItem>
-      ))}
-     </DropdownMenuRadioGroup>
-    ) : null}
-    {activeSection === "visibility"
-     ? visibilityOptions.map((option) => (
+        {revealOptions.map((option) => (
+         <DropdownMenuRadioItem
+          key={option.value}
+          value={option.value}
+          onSelect={(event) => event.preventDefault()}
+         >
+          {option.label}
+         </DropdownMenuRadioItem>
+        ))}
+       </DropdownMenuRadioGroup>
+      </DropdownMenuSubContent>
+     </DropdownMenuSub>
+
+     <DropdownMenuSub>
+      <DropdownMenuSubTrigger>
+       <Eye />
+       Hiển thị lớp học
+      </DropdownMenuSubTrigger>
+      <DropdownMenuSubContent width="md">
+       <DropdownMenuLabel>Hiển thị lớp học</DropdownMenuLabel>
+       {visibilityOptions.map((option) => (
         <DropdownMenuCheckboxItem
          key={option.key}
          checked={displayMode[option.key]}
@@ -218,71 +269,12 @@ export function HanziHomeReadingQuickSettingsMenu({
         >
          {option.label}
         </DropdownMenuCheckboxItem>
-       ))
-     : null}
-   </>
-  );
- }
-
- return (
-  <>
-   <DropdownMenuLabel>Thiết lập đọc</DropdownMenuLabel>
-   {learning.isLoading ? (
-    <DropdownMenuItem disabled>
-     <Spinner />
-     Đang tải cài đặt đọc…
-    </DropdownMenuItem>
-   ) : (
-    <>
-     <DropdownMenuItem
-      onSelect={(event) => {
-       event.preventDefault();
-       onActiveSectionChange("font");
-      }}
-     >
-      <Type />
-      Phông chữ
-      <DropdownMenuShortcut>
-       {fontOptions.find((option) => option.value === displayMode.hanziFont)?.label}
-      </DropdownMenuShortcut>
-     </DropdownMenuItem>
-     <DropdownMenuItem
-      onSelect={(event) => {
-       event.preventDefault();
-       onActiveSectionChange("size");
-      }}
-     >
-      <Type />
-      Cỡ chữ
-      <DropdownMenuShortcut>
-       {sizeOptions.find((option) => option.value === displayMode.hanziSize)?.label}
-      </DropdownMenuShortcut>
-     </DropdownMenuItem>
-     <DropdownMenuSeparator />
-     <DropdownMenuLabel>Hiển thị</DropdownMenuLabel>
-     <DropdownMenuItem
-      onSelect={(event) => {
-       event.preventDefault();
-       onActiveSectionChange("reveal");
-      }}
-     >
-      <Eye />
-      Cách mở nội dung
-      <DropdownMenuShortcut>
-       {revealOptions.find((option) => option.value === displayMode.revealMode)?.label}
-      </DropdownMenuShortcut>
-     </DropdownMenuItem>
-     <DropdownMenuItem
-      onSelect={(event) => {
-       event.preventDefault();
-       onActiveSectionChange("visibility");
-      }}
-     >
-      <Eye />
-      Hiển thị
-     </DropdownMenuItem>
+       ))}
+      </DropdownMenuSubContent>
+     </DropdownMenuSub>
     </>
    )}
+
    {learning.isError ? (
     <>
      <DropdownMenuSeparator />

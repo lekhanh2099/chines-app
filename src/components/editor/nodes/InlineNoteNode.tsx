@@ -148,7 +148,7 @@ function InlineNoteComponent({
  return (
   <span
    ref={spanRef}
-   className="relative inline cursor-default rounded-2xl -sm bg-info-subtle px-0.5 decoration-info/50 decoration-wavy underline"
+   className="relative inline cursor-default rounded-md bg-info-subtle px-0.5 decoration-info/50 decoration-wavy underline"
    data-inline-note="true"
    onMouseEnter={handleMouseEnter}
    onMouseLeave={handleMouseLeave}
@@ -160,6 +160,7 @@ function InlineNoteComponent({
     createPortal(
      <FloatingLayer
       variant="editorTooltip"
+      className="grid gap-1"
       style={{
        left: tooltipPosition.left,
        top: tooltipPosition.top,
@@ -178,17 +179,17 @@ function InlineNoteComponent({
        transform="uppercase"
        tone="sky"
        tracking="widest"
-       className="mb-1 block"
+       className="block"
       >
        Ghi chú
       </Typography>
       {renderLinkifiedText(noteText)}
       <span
        className={[
-        "absolute left-1/2 -translate-x-1/2 border-4 border-transparent",
+        "absolute left-1/2 size-2 -translate-x-1/2 rotate-45 bg-bg-elevated",
         tooltipPosition.placement === "top"
-         ? "top-full border-t-bg-elevated"
-         : "bottom-full border-b-bg-elevated",
+         ? "top-full -translate-y-1/2 border-b border-r border-border-default"
+         : "bottom-full translate-y-1/2 border-l border-t border-border-default",
        ].join(" ")}
       />
      </FloatingLayer>,
@@ -247,8 +248,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   const el = document.createElement("span");
   el.dataset.inlineNote = "true";
   el.dataset.noteText = this.__noteText;
-  el.className =
-   "bg-info-subtle px-0.5 rounded-2xl -sm underline decoration-wavy decoration-info/50";
+  el.className = "rounded-md bg-info-subtle px-0.5 underline decoration-wavy decoration-info/50";
   el.textContent = this.__text;
   return { element: el };
  }

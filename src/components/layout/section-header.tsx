@@ -9,16 +9,11 @@ type SectionHeaderProps = {
  className?: string;
 };
 
-/**
- * Standardized section header with uppercase label + optional description.
- * Replaces the repeated pattern:
- *   <p className="text-[10px] font-bold uppercase tracking-[0.18em]...">Title</p>
- *   <p className="mt-1  text-text-muted">Description</p>
- */
+/** Standardized section header with optional description and trailing action. */
 function SectionHeader({ title, description, trailing, className }: SectionHeaderProps) {
  return (
   <div className={cn("flex flex-wrap items-start justify-between gap-3", className)}>
-   <div>
+   <div className="grid min-w-0 gap-1">
     <Typography
      as="p"
      variant="overline"
@@ -30,11 +25,11 @@ function SectionHeader({ title, description, trailing, className }: SectionHeade
     >
      {title}
     </Typography>
-    {description && (
-     <Typography as="p" tone="muted" className="mt-1">
+    {description ? (
+     <Typography as="p" tone="muted">
       {description}
      </Typography>
-    )}
+    ) : null}
    </div>
    {trailing}
   </div>

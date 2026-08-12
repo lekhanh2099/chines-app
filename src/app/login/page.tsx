@@ -175,9 +175,9 @@ export default function LoginPage() {
  });
 
  return (
-  <main className="flex min-h-dvh flex-col justify-center bg-bg-primary px-4 py-[max(3rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
-   <div className="flex flex-col items-center sm:mx-auto sm:w-full sm:max-w-md">
-    <div className="app-brand-gradient mb-5 grid size-12 place-items-center rounded-2xl shadow-theme-sm">
+  <main className="flex min-h-dvh flex-col justify-center gap-8 bg-bg-primary px-4 py-[max(3rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
+   <div className="grid justify-items-center gap-2 sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="app-brand-gradient grid size-12 place-items-center rounded-xl shadow-theme-sm">
      <BookOpen className="size-6" aria-hidden="true" />
     </div>
     <Typography
@@ -190,19 +190,19 @@ export default function LoginPage() {
     >
      {isLogin ? "Chào mừng trở lại HanziHome" : "Tạo tài khoản HanziHome"}
     </Typography>
-    <Typography as="p" tone="secondary" align="center" leading="standard" className="mt-2 max-w-sm">
+    <Typography as="p" tone="secondary" align="center" leading="standard" className="max-w-sm">
      {isLogin
       ? "Tiếp tục bài học, ghi chú và lịch ôn tập của bạn."
       : "Lưu bài học, ghi chú và tiến độ ôn tập trên mọi thiết bị."}
     </Typography>
    </div>
 
-   <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div className="border border-border-default bg-bg-card px-4 py-8 sm:rounded-xl sm:px-10">
+   <div className="sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="grid gap-6 border border-border-default bg-bg-card px-4 py-8 sm:rounded-xl sm:px-10">
      <Button
       type="button"
       variant="outline"
-      className="mb-6 w-full"
+      className="w-full"
       disabled={oauthLoading}
       onClick={signInWithGoogle}
      >
@@ -210,7 +210,7 @@ export default function LoginPage() {
       Tiếp tục với Google
      </Button>
 
-     <div className="mb-6 flex items-center gap-3 text-xs text-text-muted" aria-hidden="true">
+     <div className="flex items-center gap-3 text-xs text-text-muted" aria-hidden="true">
       <span className="h-px flex-1 bg-border-default" />
       hoặc dùng email
       <span className="h-px flex-1 bg-border-default" />
@@ -270,7 +270,7 @@ export default function LoginPage() {
          type="submit"
          disabled={!canSubmit || isSubmitting || oauthLoading}
          variant="default"
-         className="w-full mt-2"
+         className="w-full"
         >
          {isSubmitting ? (
           <Spinner data-icon="inline-start" />
@@ -284,7 +284,7 @@ export default function LoginPage() {
        )}
       </form.Subscribe>
 
-      <div className="mt-6 flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
+      <div className="flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
        <Typography as="p">
         {isLogin ? "Chưa có tài khoản?" : "Đã có tài khoản?"}{" "}
         <Button

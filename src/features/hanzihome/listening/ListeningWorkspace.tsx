@@ -159,17 +159,16 @@ export function ListeningWorkspace() {
      onShowTranslationAfterCheckChange={setShowTranslationAfterCheck}
     />
 
-    <div className="grid max-w-full gap-2 rounded-xl border border-border-default bg-bg-card p-2.5">
-     <Button
-      type="button"
-      variant={showScript ? "active" : "outline"}
-      size="sm"
-      className="w-fit"
-      onClick={() => setShowScript((current) => !current)}
-     >
-      {showScript ? "Ẩn toàn bộ script" : "Hiện toàn bộ script"}
-     </Button>
-    </div>
+    <Button
+     type="button"
+     variant={showScript ? "active" : "outline"}
+     size="toolbar"
+     className="w-fit"
+     aria-pressed={showScript}
+     onClick={() => setShowScript((current) => !current)}
+    >
+     {showScript ? "Ẩn toàn bộ script" : "Hiện toàn bộ script"}
+    </Button>
 
     <Card variant="section" padding="md" className="grid gap-1.5">
      <Badge variant="purple" className="w-fit">

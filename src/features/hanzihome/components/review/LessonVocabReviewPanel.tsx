@@ -13,7 +13,7 @@ export function LessonVocabReviewPanel() {
 
  if (vocabularyQuery.isPending) {
   return (
-   <div className="h-72 animate-pulse rounded-2xl bg-bg-subtle" aria-label="Đang tải bộ ôn tập" />
+   <div className="h-72 animate-pulse rounded-xl bg-bg-subtle" aria-label="Đang tải bộ ôn tập" />
   );
  }
 

@@ -9,7 +9,7 @@ const floatingLayerVariants = cva("fixed z-120", {
    editorTooltip:
     "whitespace-pre-wrap rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow-theme-lg",
    editorControls:
-    "pointer-events-auto -translate-x-1/2 -translate-y-full animate-in fade-in zoom-in-95 duration-150",
+    "pointer-events-auto grid -translate-x-1/2 -translate-y-full gap-1 rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow-theme-lg animate-in fade-in zoom-in-95 duration-150",
   },
  },
 });

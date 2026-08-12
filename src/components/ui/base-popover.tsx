@@ -15,7 +15,9 @@ const BasePopoverVariantSchema = z.enum([
  "profile",
  "mobileActions",
  "moduleMenu",
+ "selector",
 ]);
+const BasePopoverTriggerWidthSchema = z.enum(["auto", "full"]);
 
 type BasePopoverPopupProps = Omit<React.ComponentProps<typeof Popover.Popup>, "className"> & {
  variant?: z.infer<typeof BasePopoverVariantSchema>;
@@ -36,6 +38,8 @@ const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, strin
   "w-[min(19rem,calc(100vw-1rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg",
  moduleMenu:
   "max-h-[min(24rem,calc(100dvh-7rem))] w-[min(20rem,calc(100vw-1rem))] overflow-y-auto scrollbar-soft rounded-xl border border-border-default bg-bg-elevated p-1.5 text-sm shadow-theme-lg",
+ selector:
+  "w-[min(36rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg",
 };
 
 type BasePopoverTriggerOwnedProps = {
@@ -45,12 +49,25 @@ type BasePopoverTriggerOwnedProps = {
 type BasePopoverTriggerProps = Omit<
  React.ComponentProps<typeof Popover.Trigger>,
  keyof BasePopoverTriggerOwnedProps
-> & { active?: boolean };
+> & {
+ active?: boolean;
+ width?: z.infer<typeof BasePopoverTriggerWidthSchema>;
+};
 
-function BasePopoverTrigger({ active = false, ...props }: BasePopoverTriggerProps) {
+function BasePopoverTrigger({
+ active = false,
+ width = BasePopoverTriggerWidthSchema.enum.auto,
+ ...props
+}: BasePopoverTriggerProps) {
  return (
   <Popover.Trigger
-   render={<Button variant={active ? "active" : "outline"} size="toolbar" />}
+   render={
+    <Button
+     variant={active ? "active" : "outline"}
+     size="toolbar"
+     className={width === BasePopoverTriggerWidthSchema.enum.full ? "w-full" : undefined}
+    />
+   }
    {...props}
   />
  );
@@ -70,4 +87,11 @@ function BasePopoverPopup({
  return <Popover.Popup className={popupVariants[variant]} {...props} />;
 }
 
-export { Popover as BasePopover, BasePopoverPopup, BasePopoverPositioner, BasePopoverTrigger };
+export {
+ Popover as BasePopover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+ BasePopoverTrigger,
+ BasePopoverVariantSchema,
+ BasePopoverTriggerWidthSchema,
+};

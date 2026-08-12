@@ -1,12 +1,13 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
+import { Typography } from "@/components/ui/typography";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspaceSkeleton } from "@/features/hanzihome/components/RadicalWorkspaceSkeleton";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
+import { HanziHomeHeaderContextBridge } from "@/features/hanzihome/components/layout/HanziHomeHeaderContextBridge";
 import { HanziHomeWorkspaceLoading } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceLoading";
 import { HanziHomeWorkspaceMessage } from "@/features/hanzihome/components/layout/HanziHomeWorkspaceMessage";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
@@ -80,9 +81,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
   bookIdFromUrl,
  );
  const lessonFromLastState = courseLessons.find((item) => item.id === lastLessonId);
-
  const fallbackLesson = courseLessons[0] ?? null;
-
  const selectedLesson = lessonFromUrl || lessonFromLastState || fallbackLesson;
  const lessonId = selectedLesson?.id || "";
  const matchingSearchIntent =
@@ -191,9 +190,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
 
  const isLessonWorkspaceLoading =
   resolvedActiveModule !== "radicals" && (isCourseLessonsLoading || activeLessonDetail.isLoading);
-
  const isRadicalsLoading = resolvedActiveModule === "radicals" && catalogQuery.isPending;
-
  const hasLessonWorkspaceError =
   resolvedActiveModule !== "radicals" &&
   (catalogQuery.isError ||
@@ -201,13 +198,8 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
    activeLessonDetail.isError ||
    (!isCourseLessonsLoading && !selectedCourse));
 
- if (isLessonWorkspaceLoading) {
-  return <HanziHomeWorkspaceLoading />;
- }
-
- if (isRadicalsLoading) {
-  return <RadicalWorkspaceSkeleton />;
- }
+ if (isLessonWorkspaceLoading) return <HanziHomeWorkspaceLoading />;
+ if (isRadicalsLoading) return <RadicalWorkspaceSkeleton />;
 
  if (catalogQuery.isError || hasLessonWorkspaceError) {
   return (
@@ -238,45 +230,55 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  }
 
  return (
-  <main className="hanzihome-static-page hanzihome-workspace-page">
-   <Typography as="h1" variant="pageTitle" className="sr-only">
-    {resolvedActiveModule === "radicals"
-     ? "Bộ thủ HanziHome"
-     : lesson
-       ? `Bài học ${lesson.title}`
-       : "Không gian học HanziHome"}
-   </Typography>
-   <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
-    {resolvedActiveModule === "radicals" ? (
-     <RadicalWorkspace
-      key={matchingSearchIntent?.id ?? "radicals"}
-      radicals={catalogData.radicals}
-     />
-    ) : (
-     lesson && (
-      <ModuleSplitWorkspace
-       key={`${lesson.id}:${matchingSearchIntent?.id ?? "default"}`}
-       lesson={lesson}
-       learningState={learning.state}
-       learningSync={{
-        status: learning.syncStatus,
-        pendingCount: learning.pendingSyncCount,
-        lastError: learning.lastSyncError,
-        isOnline: learning.isOnline,
-        retry: learning.retrySync,
-       }}
-       activeModule={activeLessonModule}
-       onSelectModule={selectModule}
-       onUpdateLearningSettings={learning.updateSettings}
-       onBookmarkVocab={(id) => learning.toggleBookmark("vocab", id)}
-       onMarkVocab={markVocab}
-       onBookmarkGrammar={(id) => learning.toggleBookmark("grammar", id)}
-       onMarkGrammar={markGrammar}
-       onAnswerReview={answerReview}
+  <>
+   {resolvedActiveModule !== "radicals" && selectedCourse && selectedLesson ? (
+    <HanziHomeHeaderContextBridge
+     selectedCourseId={selectedCourseId}
+     selectedCourseTitle={selectedCourse.title}
+     selectedLesson={selectedLesson}
+     lessons={courseLessons}
+    />
+   ) : null}
+   <main className="hanzihome-static-page hanzihome-workspace-page">
+    <Typography as="h1" variant="pageTitle" className="sr-only">
+     {resolvedActiveModule === "radicals"
+      ? "Bộ thủ HanziHome"
+      : lesson
+        ? `Bài học ${lesson.title}`
+        : "Không gian học HanziHome"}
+    </Typography>
+    <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
+     {resolvedActiveModule === "radicals" ? (
+      <RadicalWorkspace
+       key={matchingSearchIntent?.id ?? "radicals"}
+       radicals={catalogData.radicals}
       />
-     )
-    )}
-   </div>
-  </main>
+     ) : (
+      lesson && (
+       <ModuleSplitWorkspace
+        key={`${lesson.id}:${matchingSearchIntent?.id ?? "default"}`}
+        lesson={lesson}
+        learningState={learning.state}
+        learningSync={{
+         status: learning.syncStatus,
+         pendingCount: learning.pendingSyncCount,
+         lastError: learning.lastSyncError,
+         isOnline: learning.isOnline,
+         retry: learning.retrySync,
+        }}
+        activeModule={activeLessonModule}
+        onSelectModule={selectModule}
+        onUpdateLearningSettings={learning.updateSettings}
+        onBookmarkVocab={(id) => learning.toggleBookmark("vocab", id)}
+        onMarkVocab={markVocab}
+        onBookmarkGrammar={(id) => learning.toggleBookmark("grammar", id)}
+        onMarkGrammar={markGrammar}
+        onAnswerReview={answerReview}
+       />
+      )
+     )}
+    </div>
+   </main>
+  </>
  );
 }

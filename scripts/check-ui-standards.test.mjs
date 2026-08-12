@@ -26,19 +26,152 @@ describe("UI standards guard", () => {
 
  it("allows parent-owned layout classes on canonical primitives", () => {
   expect(
-   inspect('export function Example() { return <Button className="w-full md:hidden" />; }'),
+   inspect(
+    'export function Example() { return <><Button className="w-full md:hidden" /><Card className="grid gap-3" /><ActionCard className="w-full" /><Chip className="shrink-0" /><SelectTrigger className="w-full" /><DialogContent className="max-w-2xl" /></>; }',
+   ),
   ).toEqual([]);
  });
 
  it("rejects primitive-owned visual classes and arbitrary feature z-index", () => {
   const failures = inspect(
-   'export function Example() { return <><Button className="bg-primary px-4" /><div className="z-[99]" /></>; }',
+   'export function Example() { return <><Button className="bg-primary px-4" /><Card className="rounded-xl border bg-bg-card p-4" /><ActionCard className="hover:bg-bg-elevated" /><Badge className="text-xs" /><Chip className="rounded-full px-3" /><DialogContent className="rounded-xl p-8" /><DropdownMenuContent className="shadow-theme-sm" /><BasePopoverPopup className="bg-bg-card" /><div className="z-[99]" /></>; }',
   );
 
   expect(failures).toEqual([
    expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
    expect.stringContaining("featureOwnedZIndex"),
   ]);
+ });
+
+ it("rejects namespace component visual bypasses", () => {
+  expect(
+   inspect(
+    'export function Example() { return <><Popover.Trigger className="rounded-xl bg-bg-card px-3" /><Popover.Popup className="border bg-bg-elevated p-2" /></>; }',
+   ),
+  ).toEqual([
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("primitiveClassName"),
+  ]);
+ });
+
+ it("rejects descendant styling that reaches into canonical component anatomy", () => {
+  const failures = inspect(
+   'export function Example() { return <PageHeader className="[&_h1]:text-2xl [&_p]:leading-5" />; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("primitiveClassName"),
+   expect.stringContaining("componentAnatomyOverride"),
+  ]);
+ });
+
+ it("rejects select trigger visual repair at feature call sites", () => {
+  expect(
+   inspect(
+    'export function Example() { return <SelectTrigger className="h-10 rounded-lg bg-bg-card px-3 text-sm shadow-none" />; }',
+   ),
+  ).toEqual([expect.stringContaining("primitiveClassName")]);
+ });
+
+ it("rejects fixed margin and space-between utilities in component composition", () => {
+  const failures = inspect(
+   'export function Example() { return <><div className="mt-4" /><div className="sm:mb-3" /><div className="space-y-2" /></>; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("fixedMarginSpacing"),
+   expect.stringContaining("fixedMarginSpacing"),
+   expect.stringContaining("spaceBetweenSpacing"),
+  ]);
+ });
+
+ it("allows auto margins only as alignment mechanics", () => {
+  expect(
+   inspect(
+    'export function Example() { return <><div className="mx-auto" /><div className="ml-auto" /><div className="mr-auto" /></>; }',
+   ),
+  ).toEqual([]);
+ });
+
+ it("allows horizontal margin only for genuine inline text separation", () => {
+  expect(
+   inspect(
+    'export function Example() { return <span className="inline-flex mx-1 rounded-lg">token</span>; }',
+   ),
+  ).toEqual([]);
+
+  expect(inspect('export function Example() { return <div className="mx-1" />; }')).toEqual([
+   expect.stringContaining("fixedMarginSpacing"),
+  ]);
+ });
+
+ it("rejects feature-owned rings, thick borders, arbitrary radii and oversized radii", () => {
+  const failures = inspect(
+   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-2" /><div className="rounded-[13px]" /><div className="rounded-2xl" /></>; }',
+  );
+
+  expect(failures).toEqual([
+   expect.stringContaining("featureOwnedRing"),
+   expect.stringContaining("featureThickBorder"),
+   expect.stringContaining("featureArbitraryRadius"),
+   expect.stringContaining("featureLargeRadius"),
+  ]);
+ });
+
+ it("allows stable feature surfaces within the shared radius scale", () => {
+  expect(
+   inspect(
+    'export function Example() { return <div className="rounded-xl border border-border-default bg-bg-card" />; }',
+   ),
+  ).toEqual([]);
+ });
+
+ it("rejects max-width on the direct fluid PageContainer root", () => {
+  expect(
+   inspect(
+    'export function Example() { return <PageContainer><div className="grid w-full max-w-7xl"><div className="max-w-prose" /></div></PageContainer>; }',
+   ),
+  ).toEqual([expect.stringContaining("pageRootMaxWidth")]);
+ });
+
+ it("allows readable measures inside a fluid PageContainer root", () => {
+  expect(
+   inspect(
+    'export function Example() { return <PageContainer><div className="grid w-full"><div className="max-w-prose" /></div></PageContainer>; }',
+   ),
+  ).toEqual([]);
+ });
+
+ it("does not police ordinary styled structural text containers", () => {
+  expect(
+   inspect(
+    'export function Example({ label }) { return <><div className="font-bold text-text-primary">Heading</div><div className="text-sm">{label}</div></>; }',
+   ),
+  ).toEqual([]);
+ });
+
+ it("ignores test markup so component mocks can use native controls", () => {
+  expect(
+   inspectUiSource({
+    file: "src/features/example/Example.test.tsx",
+    source: "export function Mock() { return <button>Mock action</button>; }",
+   }),
+  ).toEqual([]);
+ });
+
+ it("allows layout divs that only compose typed text", () => {
+  expect(
+   inspect(
+    'export function Example() { return <div className="grid gap-2"><Typography weight="bold">Heading</Typography></div>; }',
+   ),
+  ).toEqual([]);
  });
 
  it("rejects arbitrary color and gradient utility recipes outside the UI boundary", () => {
@@ -57,7 +190,7 @@ describe("UI standards guard", () => {
   expect(failures).toEqual([expect.stringContaining("featureSurfaceEscapeHatch")]);
  });
 
- it("allows semantic surface tokens outside the UI boundary", () => {
+ it("allows semantic surface tokens outside the UI boundary on non-primitive layout", () => {
   expect(
    inspect(
     'export function Example() { return <div className="bg-bg-card text-text-primary shadow-theme-sm" />; }',
@@ -73,6 +206,16 @@ describe("UI standards guard", () => {
     isUiOwner: true,
    }),
   ).toEqual([]);
+ });
+
+ it("still rejects fixed margin inside UI owners so spacing stays parent-driven", () => {
+  expect(
+   inspectUiSource({
+    file: "src/components/ui/example.tsx",
+    source: 'export function Example() { return <div className="mt-2" />; }',
+    isUiOwner: true,
+   }),
+  ).toEqual([expect.stringContaining("fixedMarginSpacing")]);
  });
 
  it("allows overlay elevation inside the UI primitive boundary", () => {

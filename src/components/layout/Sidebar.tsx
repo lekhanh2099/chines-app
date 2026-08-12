@@ -1,6 +1,8 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -10,12 +12,12 @@ import {
  BookOpenCheck,
  BookOpenText,
  ChevronRight,
- Flame,
  FileCode2,
  Home,
  Languages,
  Layers3,
  Lightbulb,
+ Menu,
  NotebookPen,
  NotebookTabs,
  PlugZap,
@@ -43,102 +45,39 @@ type NavigationGroup = {
 
 const learningItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
- {
-  name: "HanziHome",
-  icon: BookOpenCheck,
-  href: "/hanzihome",
- },
- {
-  name: "Sổ tay",
-  icon: NotebookTabs,
-  href: "/notebook",
- },
+ { name: "HanziHome", icon: BookOpenCheck, href: "/hanzihome" },
+ { name: "Sổ tay", icon: NotebookTabs, href: "/notebook" },
 ];
 
 const practiceItems: NavItem[] = [
- {
-  name: "SRS từ",
-  icon: Repeat2,
-  href: "/dictionary",
- },
- {
-  name: "Nhắc nhanh",
-  icon: Lightbulb,
-  href: "/memory-tips",
- },
+ { name: "SRS từ", icon: Repeat2, href: "/dictionary" },
+ { name: "Nhắc nhanh", icon: Lightbulb, href: "/memory-tips" },
 ];
 
 const competencyItems: NavItem[] = [
- {
-  name: "Tổng hợp từ",
-  icon: Languages,
-  href: "/vocab",
- },
- {
-  name: "Tổng hợp ngữ pháp",
-  icon: BookOpenText,
-  href: "/grammar",
- },
- {
-  name: "Bộ thủ",
-  icon: Layers3,
-  href: "/radicals",
- },
+ { name: "Tổng hợp từ", icon: Languages, href: "/vocab" },
+ { name: "Tổng hợp ngữ pháp", icon: BookOpenText, href: "/grammar" },
+ { name: "Bộ thủ", icon: Layers3, href: "/radicals" },
 ];
 
 const personalItems: NavItem[] = [
  { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
- {
-  name: "Tệp HTML",
-  icon: FileCode2,
-  href: "/html-artifacts",
- },
- {
-  name: "API & tích hợp",
-  icon: PlugZap,
-  href: "/api-docs",
- },
+ { name: "Tệp HTML", icon: FileCode2, href: "/html-artifacts" },
+ { name: "API & tích hợp", icon: PlugZap, href: "/api-docs" },
 ];
 
 const navigationGroups: NavigationGroup[] = [
- {
-  id: "learning",
-  name: "Học",
-  icon: BookOpenCheck,
-  items: learningItems,
- },
- {
-  id: "practice",
-  name: "Luyện",
-  icon: Repeat2,
-  items: practiceItems,
- },
- {
-  id: "competency",
-  name: "Năng lực",
-  icon: Languages,
-  items: competencyItems,
- },
- {
-  id: "personal",
-  name: "Cá nhân",
-  icon: NotebookPen,
-  items: personalItems,
- },
+ { id: "learning", name: "Học", icon: BookOpenCheck, items: learningItems },
+ { id: "practice", name: "Luyện", icon: Repeat2, items: practiceItems },
+ { id: "competency", name: "Năng lực", icon: Languages, items: competencyItems },
+ { id: "personal", name: "Cá nhân", icon: NotebookPen, items: personalItems },
 ];
 
-const mobileItems = [
- learningItems[0],
- learningItems[1],
- learningItems[2],
- practiceItems[0],
- personalItems[0],
-];
+const mobileItems = [learningItems[0], learningItems[1], practiceItems[0], personalItems[0]];
 
 const mobileLabels: Record<(typeof mobileItems)[number]["href"], string> = {
  "/": "Home",
  "/hanzihome": "Học",
- "/notebook": "Sổ tay",
  "/dictionary": "SRS",
  "/notes": "Ghi chú",
 };
@@ -169,46 +108,40 @@ function NavRow({
  item,
  active,
  collapsed,
+ onNavigate,
 }: {
  item: NavItem;
  active: boolean;
  collapsed: boolean;
+ onNavigate?: () => void;
 }) {
  const Icon = item.icon;
 
  return (
-  <Link
-   href={item.href}
-   prefetch={false}
+  <Button
+   variant={active ? "active" : "navigation"}
+   size="menu"
+   align={collapsed ? "center" : "start"}
+   asChild
    aria-current={active ? "page" : undefined}
    aria-label={collapsed ? item.name : undefined}
    title={collapsed ? item.name : undefined}
-   className={cn(
-    "group flex h-10 items-center gap-3 rounded-lg border  font-semibold transition-colors",
-    collapsed ? "w-10 justify-center px-0" : "px-3",
-    active
-     ? "app-active-item"
-     : "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-   )}
+   className={collapsed ? "w-10" : "w-full"}
   >
-   <Icon className={cn("h-4 w-4 shrink-0", active && "text-accent-text")} />
-   {!collapsed && (
-    <Typography as="span" clamp="one" className="min-w-0 flex-1">
-     {item.name}
-    </Typography>
-   )}
-   {!collapsed && item.badge && (
-    <Typography
-     variant="caption"
-     tone="inverse"
-     weight="black"
-     scale="micro"
-     className="rounded-full bg-primary px-2 py-0.5"
-    >
-     {item.badge}
-    </Typography>
-   )}
-  </Link>
+   <Link href={item.href} prefetch={false} onClick={onNavigate}>
+    <Icon data-icon="inline-start" />
+    {!collapsed ? (
+     <Typography as="span" clamp="one" className="min-w-0 flex-1">
+      {item.name}
+     </Typography>
+    ) : null}
+    {!collapsed && item.badge ? (
+     <Badge variant="accent" size="sm" className="ml-auto">
+      {item.badge}
+     </Badge>
+    ) : null}
+   </Link>
+  </Button>
  );
 }
 
@@ -218,14 +151,10 @@ export function Sidebar() {
  const searchParams = useSearchParams();
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
- const isHanziHomeRoute = pathname === "/hanzihome";
- const effectiveCollapsed = isCollapsed;
  const activeGroupId = navigationGroups.find((group) =>
   group.items.some((item) => isActive(pathname, searchParams, item.href)),
  )?.id;
- const [expandedGroupIds, setExpandedGroupIds] = useState<string[]>(() =>
-  activeGroupId ? [activeGroupId] : [],
- );
+ const [manuallyExpandedGroupIds, setManuallyExpandedGroupIds] = useState<string[]>([]);
 
  useEffect(() => {
   hydrateSidebar();
@@ -236,17 +165,17 @@ export function Sidebar() {
  return (
   <aside
    className={cn(
-    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 md:flex",
-    effectiveCollapsed ? "w-16" : "w-64",
+    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 lg:flex",
+    isCollapsed ? "w-16" : "w-64",
    )}
   >
    <div
     className={cn(
      "flex h-14 items-center border-b border-border-default",
-     effectiveCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
+     isCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
     )}
    >
-    {!effectiveCollapsed ? (
+    {!isCollapsed ? (
      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
       <AppLogoMark />
       <Typography tone="default" weight="black" clamp="one">
@@ -255,7 +184,7 @@ export function Sidebar() {
      </Link>
     ) : null}
     <PanelToggleButton
-     open={!effectiveCollapsed}
+     open={!isCollapsed}
      onOpenChange={toggleSidebar}
      label="thanh điều hướng"
      size="md"
@@ -266,10 +195,10 @@ export function Sidebar() {
     aria-label="Điều hướng chính"
     className={cn(
      "min-h-0 flex-1 overflow-y-auto py-3 scrollbar-soft",
-     effectiveCollapsed ? "space-y-2 px-3" : "px-3",
+     isCollapsed ? "grid content-start gap-2 px-3" : "px-3",
     )}
    >
-    {effectiveCollapsed ? (
+    {isCollapsed ? (
      navigationGroups.map((group, index) => (
       <div
        key={group.name}
@@ -288,15 +217,11 @@ export function Sidebar() {
     ) : (
      <div className="grid content-start gap-1.5">
       {navigationGroups.map((group) => {
-       const groupOpen = expandedGroupIds.includes(group.id);
+       const groupOpen = group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
        const GroupIcon = group.icon;
 
        return (
-        <section
-         key={group.name}
-         className={cn("grid gap-1 rounded-xl", groupOpen && "bg-bg-subtle/70 p-1")}
-         aria-label={group.name}
-        >
+        <section key={group.name} className="grid gap-1" aria-label={group.name}>
          <Button
           type="button"
           variant="navigation"
@@ -305,23 +230,23 @@ export function Sidebar() {
           className="w-full"
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
-          onClick={() =>
-           setExpandedGroupIds((current) =>
+          onClick={() => {
+           if (group.id === activeGroupId) return;
+
+           setManuallyExpandedGroupIds((current) =>
             current.includes(group.id)
              ? current.filter((groupId) => groupId !== group.id)
              : [...current, group.id],
-           )
-          }
+           );
+          }}
          >
           <span className="flex min-w-0 items-center gap-3">
-           <GroupIcon className="h-4 w-4 shrink-0" />
+           <GroupIcon data-icon="inline-start" />
            <Typography as="span" clamp="one" className="min-w-0 flex-1">
             {group.name}
            </Typography>
           </span>
-          <ChevronRight
-           className={cn("h-4 w-4 shrink-0 transition-transform", groupOpen && "rotate-90")}
-          />
+          <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
          </Button>
 
          <div id={`sidebar-group-${group.id}`} hidden={!groupOpen} className="grid gap-1 pb-1 pl-2">
@@ -340,20 +265,6 @@ export function Sidebar() {
      </div>
     )}
    </nav>
-
-   {!effectiveCollapsed && !isHanziHomeRoute ? (
-    <div className="border-t border-border-default px-4 py-3">
-     <div className="rounded-xl border border-border-default bg-bg-subtle/70 p-3">
-      <div className="flex items-center gap-2  font-bold text-text-primary">
-       <Flame className="h-4 w-4" />
-       Học theo bài
-      </div>
-      <Typography as="p" variant="caption" tone="muted" weight="bold">
-       Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
-      </Typography>
-     </div>
-    </div>
-   ) : null}
   </aside>
  );
 }
@@ -362,33 +273,94 @@ export function MobileBottomNavigation() {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
+ const [moreOpen, setMoreOpen] = useState(false);
+ const primaryRouteActive = mobileItems.some((item) => isActive(pathname, searchParams, item.href));
+ const moreActive = !primaryRouteActive;
 
  if (isContentFullscreen) return null;
 
  return (
-  <nav className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 md:hidden">
-   <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
-    {mobileItems.map((item) => {
-     const Icon = item.icon;
-     const active = isActive(pathname, searchParams, item.href);
-     return (
-      <Link
-       key={item.name}
-       href={item.href}
-       prefetch={false}
-       className={cn(
-        "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
-        active ? "app-active-item border" : "text-text-muted hover:bg-bg-subtle",
-       )}
-      >
-       <Icon className="h-5 w-5 shrink-0" />
-       <Typography as="span" clamp="one" className="max-w-full">
-        {mobileLabels[item.href]}
-       </Typography>
-      </Link>
-     );
-    })}
-   </div>
-  </nav>
+  <>
+   <nav
+    aria-label="Điều hướng nhanh"
+    className="nova-shell-header z-40 shrink-0 border-t border-border-default px-2 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden"
+   >
+    <div className="mx-auto grid w-full max-w-lg grid-cols-5 gap-1">
+     {mobileItems.map((item) => {
+      const Icon = item.icon;
+      const active = isActive(pathname, searchParams, item.href);
+
+      return (
+       <Button
+        key={item.name}
+        variant={active ? "active" : "navigation"}
+        size="touch"
+        layout="grid"
+        asChild
+        aria-current={active ? "page" : undefined}
+        className="w-full min-w-0 gap-0.5"
+       >
+        <Link href={item.href} prefetch={false}>
+         <Icon />
+         <Typography
+          as="span"
+          variant="caption"
+          scale="fine"
+          weight="black"
+          clamp="one"
+          className="max-w-full"
+         >
+          {mobileLabels[item.href]}
+         </Typography>
+        </Link>
+       </Button>
+      );
+     })}
+
+     <Button
+      type="button"
+      variant={moreActive ? "active" : "navigation"}
+      size="touch"
+      layout="grid"
+      aria-expanded={moreOpen}
+      aria-haspopup="dialog"
+      aria-label="Mở toàn bộ điều hướng"
+      className="w-full min-w-0 gap-0.5"
+      onClick={() => setMoreOpen(true)}
+     >
+      <Menu />
+      <Typography as="span" variant="caption" scale="fine" weight="black">
+       Thêm
+      </Typography>
+     </Button>
+    </div>
+   </nav>
+
+   <Sheet open={moreOpen} onOpenChange={setMoreOpen} side="bottom">
+    <SheetHeader title="Điều hướng" onClose={() => setMoreOpen(false)} />
+    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
+     <nav aria-label="Toàn bộ khu vực">
+      <div className="grid gap-5 sm:grid-cols-2">
+       {navigationGroups.map((group) => (
+        <section key={group.id} className="grid content-start gap-1.5" aria-label={group.name}>
+         <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
+          {group.name}
+         </Typography>
+         {group.items.map((item) => (
+          <NavRow
+           key={item.name}
+           item={item}
+           active={isActive(pathname, searchParams, item.href)}
+           collapsed={false}
+           onNavigate={() => setMoreOpen(false)}
+          />
+         ))}
+        </section>
+       ))}
+      </div>
+     </nav>
+    </SheetBody>
+   </Sheet>
+  </>
  );
 }

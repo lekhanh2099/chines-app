@@ -44,7 +44,7 @@ export function TextLineCard({
    )}
   >
    {speaker ? (
-    <Badge variant="purple" className="w-fit normal-case tracking-normal">
+    <Badge variant="purple" casing="natural" className="w-fit">
      {speaker}
     </Badge>
    ) : null}

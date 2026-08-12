@@ -15,12 +15,13 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Chip } from "@/components/ui/chip";
 import { Input } from "@/components/ui/input";
 import type { HanziHomeVocabItem, LearningStatus } from "@/features/hanzihome/types";
 import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import {
- ReaderHanziText,
+ HanziText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
@@ -156,17 +157,17 @@ export function VocabList({
        const active = statusFilter === item.value;
 
        return (
-        <Button
+        <Chip
          key={item.value}
          type="button"
-         variant={active ? "active" : "outline"}
-         size="compact"
-         aria-pressed={active}
+         variant={active ? "accent" : "default"}
+         size="md"
+         pressed={active}
          onClick={() => onStatusFilterChange(item.value)}
         >
-         <Icon className="h-3.5 w-3.5" />
+         <Icon />
          {item.label}
-        </Button>
+        </Chip>
        );
       })}
       <Button
@@ -176,11 +177,7 @@ export function VocabList({
        aria-expanded={isWordPickerOpen}
        onClick={() => setIsWordPickerOpen((current) => !current)}
       >
-       {isWordPickerOpen ? (
-        <ChevronUp className="h-3.5 w-3.5" />
-       ) : (
-        <ChevronDown className="h-3.5 w-3.5" />
-       )}
+       {isWordPickerOpen ? <ChevronUp /> : <ChevronDown />}
        {isWordPickerOpen ? "Ẩn từ" : "Danh sách"}
       </Button>
      </div>
@@ -209,7 +206,7 @@ export function VocabList({
     </div>
 
     {words.length === 0 ? (
-     <StudyInstructionText tone="muted" weight="semibold" className="rounded-xl bg-bg-subtle p-3">
+     <StudyInstructionText tone="muted" weight="semibold">
       Không có từ phù hợp bộ lọc.
      </StudyInstructionText>
     ) : isWordPickerOpen ? (
@@ -217,8 +214,8 @@ export function VocabList({
       <div
        ref={wordPickerListRef}
        className={cn(
-        "flex flex-wrap content-start gap-2 rounded-xl bg-bg-subtle p-2",
-        isCoarsePointer ? "overflow-visible" : "overflow-y-auto scrollbar-soft",
+        "flex flex-wrap content-start gap-2",
+        isCoarsePointer ? "overflow-visible" : "overflow-y-auto pr-1 scrollbar-soft",
        )}
        style={
         isCoarsePointer
@@ -248,25 +245,15 @@ export function VocabList({
               : "none"
           }
          >
-          <ReaderHanziText
-           displayMode={{
-            showPinyin: true,
-            showMeaning: false,
-            showAnswers: false,
-            hanziFont: "system",
-            hanziSize: "2xl",
-            revealMode: "always",
-           }}
-           size="xl"
-          >
+          <HanziText as="span" size="card" leading="none">
            {word.hanzi}
-          </ReaderHanziText>
-          {bookmarked && <Bookmark className="h-3 w-3 fill-current" />}
+          </HanziText>
+          {bookmarked ? <Bookmark /> : null}
          </Button>
         );
        })}
       </div>
-      {!isCoarsePointer && (
+      {!isCoarsePointer ? (
        <Button
         type="button"
         variant="ghost"
@@ -285,15 +272,10 @@ export function VocabList({
        >
         <span className="h-1 w-12 rounded-full bg-border-default transition-colors group-hover:bg-text-muted/40" />
        </Button>
-      )}
+      ) : null}
      </div>
     ) : (
-     <StudyInstructionText
-      variant="bodySmall"
-      tone="muted"
-      weight="medium"
-      className="rounded-xl bg-bg-subtle px-3 py-2"
-     >
+     <StudyInstructionText variant="bodySmall" tone="muted" weight="medium">
       Danh sách từ đang thu gọn. Dùng search hoặc bấm “Danh sách” để mở lại.
      </StudyInstructionText>
     )}

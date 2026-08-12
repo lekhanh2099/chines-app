@@ -6,7 +6,7 @@ export function HanziHomeLibrarySkeleton() {
    aria-live="polite"
   >
    <div className="grid animate-pulse gap-4">
-    <section className="grid gap-3 rounded-2xl border border-border-default bg-bg-card p-4 shadow-theme-sm">
+    <section className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-4 shadow-theme-sm">
      <div className="flex items-start justify-between gap-4">
       <div className="grid min-w-0 flex-1 gap-2">
        <div className="h-8 w-72 max-w-full rounded-lg bg-bg-subtle" />

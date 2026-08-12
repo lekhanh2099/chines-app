@@ -17,7 +17,6 @@ import {
  AppHeaderBreadcrumbItem,
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbSeparator,
- appHeaderBreadcrumbSelectTriggerClassName,
 } from "@/components/layout/app-header-breadcrumb";
 import {
  Select,
@@ -29,7 +28,6 @@ import {
 } from "@/components/ui/select";
 import { ArrowLeft, FileText } from "lucide-react";
 import { toast } from "sonner";
-import { cn } from "@/lib/utils";
 import { z } from "zod";
 
 const OpenNoteTabDetailSchema = z.object({
@@ -165,8 +163,8 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
 
  if (tabs.length === 0) {
   return (
-   <div className="flex h-full flex-col items-center justify-center bg-bg-primary text-text-muted">
-    <FileText className="w-10 h-10 mb-3 opacity-40" />
+   <div className="flex h-full flex-col items-center justify-center gap-3 bg-bg-primary text-text-muted">
+    <FileText className="size-10 opacity-40" />
     <Typography as="p" variant="bodySmall">
      Chọn một ghi chú để bắt đầu
     </Typography>
@@ -264,10 +262,8 @@ function NoteQuickSelect({
      <Select value={selectedNoteId} onValueChange={onSelectNote}>
       <SelectTrigger
        aria-label="Chọn nhanh ghi chú"
-       className={cn(
-        appHeaderBreadcrumbSelectTriggerClassName,
-        "w-[min(10rem,40vw)] text-sm sm:w-64 xl:w-[24rem]",
-       )}
+       variant="breadcrumb"
+       className="w-[min(10rem,40vw)] sm:w-64 xl:w-[24rem]"
       >
        <SelectValue placeholder="Chọn ghi chú" />
       </SelectTrigger>

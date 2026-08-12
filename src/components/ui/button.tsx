@@ -2,22 +2,27 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 
+import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
- "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+ cn(
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding font-semibold whitespace-nowrap transition-all select-none active:not-aria-[haspopup]:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  focusRingClassName,
+  invalidFocusRingClassName,
+ ),
  {
   variants: {
    variant: {
     default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90",
     outline:
-     "border-border bg-bg-card hover:border-primary/25 hover:bg-accent-subtle hover:text-accent-text aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input dark:hover:bg-muted",
+     "border-border-default bg-bg-input text-text-primary hover:border-primary/25 hover:bg-bg-subtle aria-expanded:bg-bg-subtle aria-expanded:text-text-primary",
     secondary:
      "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
     ghost:
      "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
     navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
-    active: "app-active-item",
+    active: "app-active-item [&_[data-slot=typography]]:text-inherit",
     surface:
      "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",
     surfaceCard: "border-border-default bg-bg-card text-text-primary hover:bg-bg-elevated",
@@ -25,7 +30,8 @@ const buttonVariants = cva(
     avatarWarning: "border-warning/35 bg-warning-subtle text-warning-text hover:bg-bg-elevated",
     menu:
      "w-full justify-start border-transparent bg-transparent text-text-primary shadow-none hover:bg-muted data-[highlighted]:bg-muted",
-    menuActive: "app-active-item w-full justify-start shadow-none",
+    menuActive:
+     "app-active-item w-full justify-start shadow-none [&_[data-slot=typography]]:text-inherit",
     menuDestructive:
      "w-full justify-start border-transparent bg-transparent text-danger-text shadow-none hover:bg-danger-subtle focus-visible:border-danger/40 focus-visible:ring-danger/20",
     destructive:
@@ -37,12 +43,10 @@ const buttonVariants = cva(
     success:
      "border-success bg-success-subtle text-success-text hover:bg-success-subtle focus-visible:border-success focus-visible:ring-success/20",
     swatch:
-     "border-2 opacity-80 ring-offset-2 ring-offset-bg-card hover:opacity-100 aria-pressed:opacity-100 aria-pressed:ring-2 aria-pressed:ring-ring",
+     "border-border-default opacity-80 hover:border-primary/45 hover:opacity-100 aria-pressed:border-primary aria-pressed:opacity-100",
     link: "text-primary underline-offset-4 hover:underline",
    },
    size: {
-    default:
-     "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
     touch:
      "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
     compact:
@@ -50,11 +54,8 @@ const buttonVariants = cva(
     toolbar:
      "min-h-9 gap-1.5 rounded-lg px-2.5 text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
     menu: "min-h-10 gap-2 rounded-lg px-2.5 text-sm",
-    xs: "min-h-11 gap-1 rounded-lg px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
     sm: "min-h-11 gap-1 rounded-lg px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
     lg: "min-h-11 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
-    "responsive-action":
-     "size-11 gap-1.5 2xl:w-auto 2xl:px-3 2xl:has-data-[icon=inline-end]:pr-2.5 2xl:has-data-[icon=inline-start]:pl-2.5",
     icon: "size-11",
     "icon-xs":
      "size-9 rounded-lg in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
@@ -64,12 +65,7 @@ const buttonVariants = cva(
     "icon-round": "size-10 rounded-full",
     inline:
      "min-h-0 min-w-[1.25em] h-auto gap-0 rounded-md px-0.5 py-0.5 align-baseline font-inherit leading-[inherit] select-text",
-    "responsive-compact": "size-9 rounded-lg sm:h-10 sm:w-auto sm:max-w-44 sm:px-3",
-    list: "min-h-14 gap-3 rounded-lg px-3 py-2",
     tab: "h-9 min-h-9 gap-1.5 rounded-lg px-2 sm:h-11 sm:min-h-11 sm:gap-2 sm:px-3",
-    card: "h-auto min-h-11 gap-4 rounded-xl p-4",
-    result: "h-auto gap-3 rounded-lg px-3 py-2.5",
-    spacious: "min-h-12 gap-2 rounded-lg px-8 py-3",
    },
    align: {
     center: "justify-center text-center",
@@ -97,7 +93,7 @@ const buttonVariants = cva(
   },
   defaultVariants: {
    variant: "default",
-   size: "default",
+   size: "touch",
    align: "center",
    wrap: "nowrap",
    layout: "inline",
@@ -110,7 +106,7 @@ const buttonVariants = cva(
 function Button({
  className,
  variant = "default",
- size = "default",
+ size = "touch",
  align = "center",
  wrap = "nowrap",
  layout = "inline",

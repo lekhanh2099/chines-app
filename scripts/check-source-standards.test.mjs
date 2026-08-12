@@ -17,6 +17,15 @@ function inspect(source, options = {}) {
 }
 
 describe("source standards unsafe-type guard", () => {
+ it("rejects explicit any but permits unknown when it is narrowed by application code", () => {
+  expect(inspect("type Payload = any;")).toEqual([
+   expect.stringContaining("uses an unsafe explicit any type"),
+  ]);
+  expect(
+   inspect("function read(value: unknown) { return typeof value === 'string' ? value : ''; }"),
+  ).toEqual([]);
+ });
+
  it("rejects a new type assertion", () => {
   expect(inspect("const value = payload as string;")).toEqual([
    expect.stringContaining("uses an unaudited type assertion"),

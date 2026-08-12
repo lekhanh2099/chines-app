@@ -1,9 +1,9 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Columns2, CloudOff, RefreshCcw, WifiOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import {
@@ -16,10 +16,12 @@ import {
 } from "@/components/ui/select";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import { HanziHomeReadingQuickSettingsButton } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { HanziHomeStudyTabs } from "@/features/hanzihome/components/HanziHomeStudyTabs";
 import { HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
 import { HanziHomeDeveloperTools } from "@/features/hanzihome/components/layout/HanziHomeDeveloperTools";
 import { WorkspacePane } from "@/features/hanzihome/components/layout/WorkspacePane";
+import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/WorkspaceToolbar";
 import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
@@ -36,7 +38,7 @@ import {
  setPaneActive,
 } from "@/features/hanzihome/context/workspaceLayout";
 
-function LearningSyncStatusPill() {
+function LearningSyncStatus() {
  const runtime = useHanziHomeRuntime();
  const sync = runtime.learningSync;
 
@@ -49,43 +51,38 @@ function LearningSyncStatusPill() {
 
  if (hasOfflinePendingWrites) {
   return (
-   <StudyInstructionText
-    variant="caption"
-    weight="bold"
-    className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-2.5 text-amber-800 shadow-theme-sm dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-200"
-   >
-    <WifiOff className="h-3.5 w-3.5" />
+   <Badge variant="warning" size="md">
+    <WifiOff />
     <span className="hidden sm:inline">Đã lưu offline</span>
     <span className="sm:hidden">Offline</span>
-   </StudyInstructionText>
+   </Badge>
   );
  }
 
  return (
-  <StudyInstructionText
-   variant="caption"
-   tone="danger"
-   weight="bold"
-   className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-destructive/20 bg-destructive/10 px-2 shadow-theme-sm"
-   title={sync.lastError || "Tiến độ đã lưu trên máy này, nhưng chưa sync lên server."}
-  >
-   <CloudOff className="h-3.5 w-3.5" />
-   <span className="hidden sm:inline">Chưa sync</span>
-   <span className="sm:hidden">Sync lỗi</span>
+  <div className="flex shrink-0 items-center gap-1">
+   <Badge
+    variant="danger"
+    size="md"
+    title={sync.lastError || "Tiến độ đã lưu trên máy này, nhưng chưa sync lên server."}
+   >
+    <CloudOff />
+    <span className="hidden sm:inline">Chưa sync</span>
+    <span className="sm:hidden">Sync lỗi</span>
+   </Badge>
    <Button
     type="button"
     variant="ghost"
-    size="icon-xs"
-    className="w-6"
+    size="icon-toolbar"
     aria-label="Thử sync lại tiến độ"
     title="Thử sync lại tiến độ"
     onClick={() => {
      void sync.retry();
     }}
    >
-    <RefreshCcw className="h-3 w-3" />
+    <RefreshCcw />
    </Button>
-  </StudyInstructionText>
+  </div>
  );
 }
 
@@ -166,11 +163,12 @@ export function ModuleSplitWorkspaceContent() {
 
  const workspaceControls = effectiveSplitEnabled ? (
   <div className="flex w-full min-w-0 items-center justify-end gap-2">
-   <LearningSyncStatusPill />
+   <LearningSyncStatus />
    <div
     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
+   <HanziHomeReadingQuickSettingsButton />
    <HanziHomeDeveloperTools inline>
     <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
      <Columns2 />
@@ -189,17 +187,14 @@ export function ModuleSplitWorkspaceContent() {
        if (selectedModule) selectModule(selectedModule);
       }}
      >
-      <SelectTrigger
-       aria-label="Chọn nội dung học"
-       className="h-10 w-full min-w-0 rounded-lg bg-bg-card px-3 text-sm shadow-none"
-      >
+      <SelectTrigger aria-label="Chọn nội dung học" size="sm" width="full">
        <SelectValue />
       </SelectTrigger>
       <SelectContent
        side="bottom"
        align="start"
        avoidCollisions={false}
-       className="max-h-80 min-w-[var(--radix-select-trigger-width)] text-sm"
+       className="max-h-80 min-w-[var(--radix-select-trigger-width)]"
       >
        <SelectGroup>
         {lessonTabs.map((item) => (
@@ -217,16 +212,17 @@ export function ModuleSplitWorkspaceContent() {
       items={lessonTabs}
       onChange={selectModule}
       compact
-      className="bg-transparent p-0 shadow-none"
+      surface="transparent"
      />
     </div>
    </div>
    <div className="flex shrink-0 items-center gap-2">
-    <LearningSyncStatusPill />
+    <LearningSyncStatus />
     <div
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
+    <HanziHomeReadingQuickSettingsButton />
     <HanziHomeDeveloperTools inline>
      <DropdownMenuItem onSelect={enableSplit}>
       <Columns2 />
@@ -250,9 +246,7 @@ export function ModuleSplitWorkspaceContent() {
  if (!effectiveSplitEnabled) {
   return (
    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-    <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-1 overflow-hidden rounded-lg p-0.5 sm:gap-2 sm:rounded-xl sm:p-1">
-     {workspaceControls}
-    </div>
+    <WorkspaceToolbar>{workspaceControls}</WorkspaceToolbar>
     <div className="grid h-full min-h-0 overflow-hidden">
      <div className="min-h-0 min-w-0 overflow-y-auto scrollbar-soft">
       <LessonModuleContent
@@ -269,25 +263,19 @@ export function ModuleSplitWorkspaceContent() {
 
  return (
   <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-   <div className="hanzihome-liquid-toolbar relative z-30 flex min-w-0 items-center justify-between gap-1 overflow-hidden rounded-lg p-0.5 sm:gap-2 sm:rounded-xl sm:p-1">
-    {workspaceControls}
-   </div>
+   <WorkspaceToolbar>{workspaceControls}</WorkspaceToolbar>
    <div className="grid h-full min-h-0 min-w-0 overflow-hidden">
     {isMobileSplit ? (
      <div className="grid h-full min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
       <SegmentedControl<PaneId>
        value={activePane}
        items={[
-        {
-         key: "left",
-         label: `Khung 1 · ${moduleMeta[paneLayout.activeLeft].label}`,
-        },
-        {
-         key: "right",
-         label: `Khung 2 · ${moduleMeta[paneLayout.activeRight].label}`,
-        },
+        { key: "left", label: `Khung 1 · ${moduleMeta[paneLayout.activeLeft].label}` },
+        { key: "right", label: `Khung 2 · ${moduleMeta[paneLayout.activeRight].label}` },
        ]}
        onChange={selectActivePane}
+       density="touch"
+       aria-label="Khung đang hiển thị"
       />
       <div className="grid min-h-0 min-w-0 overflow-hidden">
        <div className={activePane === "left" ? "min-h-0 min-w-0 overflow-hidden" : "hidden"}>

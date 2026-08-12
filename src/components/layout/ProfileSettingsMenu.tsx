@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import type { JsonFieldValue } from "@/types/json";
 import { useState } from "react";
 import type { User } from "@supabase/supabase-js";
@@ -10,12 +9,14 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
  BasePopover as Popover,
  BasePopoverPopup,
  BasePopoverPositioner,
 } from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 
 type ProfileSettingsMenuProps = {
  user?: z.infer<z.ZodNullable<z.ZodType<User>>>;
@@ -129,32 +130,28 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
          clamp="one"
          className="flex items-center gap-1.5"
         >
-         <Mail className="h-3 w-3 shrink-0" />
+         <Mail className="size-3 shrink-0" />
          <Typography as="span" clamp="one">
           {profile.email}
          </Typography>
         </Typography>
        </div>
-       <Typography
-        variant="caption"
-        tone="secondary"
-        weight="black"
-        className="flex shrink-0 items-center gap-1 rounded-lg border border-border-default bg-bg-card px-2 py-1"
-       >
-        <ShieldCheck className="h-3 w-3" />
+       <Badge variant="default" size="sm">
+        <ShieldCheck />
         {profile.providerLabel}
-       </Typography>
+       </Badge>
       </div>
 
-      <div className="grid gap-1 border-t border-border-default p-2">
+      <div className="p-2">
        <Button
         type="button"
-        variant="ghost"
+        variant="menuDestructive"
+        size="menu"
         align="start"
         className="w-full"
         onClick={handleLogout}
        >
-        <LogOut className="h-4 w-4" />
+        <LogOut data-icon="inline-start" />
         Đăng xuất
        </Button>
       </div>

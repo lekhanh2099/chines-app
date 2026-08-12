@@ -488,7 +488,7 @@ body {
 }
 
 .dark .app-active-item {
- color: oklch(0.88 0.11 286.7462);
+ color: var(--primary);
  box-shadow: none;
 }
 

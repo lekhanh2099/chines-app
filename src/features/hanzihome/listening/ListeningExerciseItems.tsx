@@ -1,6 +1,5 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
 import { useMemo, useState } from "react";
 import { Pencil, Play } from "lucide-react";
 
@@ -8,8 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
+import { Typography } from "@/components/ui/typography";
 import {
  StudyInstructionText,
  ReaderHanziText,
@@ -61,7 +63,7 @@ function ExerciseAudioButton({
   <Button
    type="button"
    variant="surface"
-   size="sm"
+   size="toolbar"
    className="w-fit shrink-0"
    title="Phát nội dung nghe trước, sau đó đọc câu hỏi"
    onClick={() => onSpeak(text)}
@@ -98,9 +100,12 @@ function ItemHeader({
 }) {
  return (
   <div className="flex items-center gap-2">
-   <Badge variant="purple" className="size-8 justify-center rounded-lg p-0">
-    {index + 1}
-   </Badge>
+   <IconTile size="sm">
+    <Typography variant="caption" weight="black">
+     {index + 1}
+    </Typography>
+   </IconTile>
+   <span className="sr-only">Câu {index + 1}.</span>
    <StudyInstructionText
     variant="overline"
     tone="successStrong"
@@ -114,7 +119,7 @@ function ItemHeader({
     <Button
      type="button"
      variant="outline"
-     size="icon-sm"
+     size="icon-toolbar"
      className="ml-auto"
      aria-label="Sửa câu luyện nghe"
      title="Sửa câu luyện nghe"
@@ -188,7 +193,7 @@ function ChoiceItems({
   const revealMeaning = showMeaning && (!showTranslationAfterCheck || isChecked);
 
   return (
-   <Card key={item.id} variant="section" padding="md" className="grid gap-3 rounded-xl">
+   <Card key={item.id} variant="section" padding="md" className="grid gap-3">
     <ItemHeader
      index={index}
      type={exerciseType}
@@ -231,18 +236,20 @@ function ChoiceItems({
               ? "active"
               : "outline"
         }
-        size="list"
+        size="touch"
         align="start"
         wrap="normal"
         onClick={() => onSelect(item.id, option.key)}
        >
-        <StudyInstructionText
+        <Typography
+         as="span"
          variant="caption"
          weight="black"
-         className="flex size-6 shrink-0 items-center justify-center rounded-full border border-current"
+         align="center"
+         className="w-6 shrink-0"
         >
          {option.key}
-        </StudyInstructionText>
+        </Typography>
         <span className="grid min-w-0 gap-0.5">
          <ReaderHanziText displayMode={displayMode}>
           <StressText text={option.textZh} stress={option.stress} />
@@ -260,7 +267,7 @@ function ChoiceItems({
     <div className="flex flex-wrap items-center gap-2">
      <Button
       type="button"
-      size="sm"
+      size="toolbar"
       disabled={!selected || correct === undefined}
       onClick={() => onCheck(item.id)}
      >
@@ -269,7 +276,12 @@ function ChoiceItems({
      {!hasPlayableText ? <Badge variant="warning">Chưa có nội dung nghe</Badge> : null}
      {correct === undefined ? <Badge variant="warning">Chưa có đáp án kiểm tra</Badge> : null}
      {item.transcript ? (
-      <Button type="button" variant="outline" size="sm" onClick={() => onToggleScript(item.id)}>
+      <Button
+       type="button"
+       variant="outline"
+       size="toolbar"
+       onClick={() => onToggleScript(item.id)}
+      >
        {revealScript ? "Ẩn script" : "Hiện script"}
       </Button>
      ) : null}
@@ -327,7 +339,7 @@ function AnswerItems({
  onEditItem?: ListeningItemEditHandler;
 }) {
  return items.map((item, index) => (
-  <Card key={item.id} variant="section" padding="md" className="grid gap-3 rounded-xl">
+  <Card key={item.id} variant="section" padding="md" className="grid gap-3">
    <ItemHeader
     index={index}
     type={exerciseType}
@@ -360,14 +372,14 @@ function AnswerItems({
     onChange={(event) => onAnswer(item.id, event.target.value)}
    />
    {exerciseType === "oral_response" ? (
-    <Badge variant="default" className="w-fit">
+    <Badge variant="default" casing="natural" className="w-fit">
      Không chấm tự động; nội dung chỉ giữ trong phiên học này.
     </Badge>
    ) : (
     <Button
      type="button"
      variant="outline"
-     size="sm"
+     size="toolbar"
      className="w-fit"
      onClick={() => onReveal(item.id)}
     >
@@ -375,7 +387,7 @@ function AnswerItems({
     </Button>
    )}
    {revealed[item.id] && item.metadata.sampleAnswerZh ? (
-    <Card variant="subtle" padding="sm" className="rounded-xl">
+    <Card variant="subtle" padding="sm">
      <StudyInstructionText
       variant="overline"
       tone="successStrong"
@@ -435,7 +447,7 @@ function BooleanItems({
   const isCorrect = isChecked && selected === expected;
   const sameDifferent = exerciseType === BooleanExerciseTypeSchema.enum.same_different;
   return (
-   <Card key={item.id} variant="section" padding="md" className="grid gap-3 rounded-xl">
+   <Card key={item.id} variant="section" padding="md" className="grid gap-3">
     <ItemHeader
      index={index}
      type={exerciseType}
@@ -452,25 +464,22 @@ function BooleanItems({
      />
     </div>
     <div className="flex flex-wrap items-center gap-2">
-     {[true, false].map((value) => {
-      const key = String(value);
-      return (
-       <Button
-        key={key}
-        type="button"
-        variant={selected === key ? "active" : "outline"}
-        size="sm"
-        onClick={() => onSelect(item.id, key)}
-       >
-        {value ? (sameDifferent ? "✓ Giống" : "✓ Đúng") : sameDifferent ? "✕ Khác" : "✕ Sai"}
-       </Button>
-      );
-     })}
-     <Button type="button" size="sm" disabled={!selected} onClick={() => onCheck(item.id)}>
+     <SegmentedControl<string>
+      value={selected ?? ""}
+      items={[
+       { key: "true", label: sameDifferent ? "✓ Giống" : "✓ Đúng" },
+       { key: "false", label: sameDifferent ? "✕ Khác" : "✕ Sai" },
+      ]}
+      onChange={(value) => onSelect(item.id, value)}
+      density="toolbar"
+      aria-label={`Chọn đáp án câu ${index + 1}`}
+      className="w-fit"
+     />
+     <Button type="button" size="toolbar" disabled={!selected} onClick={() => onCheck(item.id)}>
       Kiểm tra
      </Button>
      {sameDifferent ? (
-      <Button type="button" variant="outline" size="sm" onClick={() => onReveal(item.id)}>
+      <Button type="button" variant="outline" size="toolbar" onClick={() => onReveal(item.id)}>
        {revealed[item.id] ? "Ẩn script" : "Xem script"}
       </Button>
      ) : null}
@@ -486,7 +495,7 @@ function BooleanItems({
      ) : null}
     </div>
     {sameDifferent && revealed[item.id] ? (
-     <Card variant="subtle" padding="sm" className="rounded-xl">
+     <Card variant="subtle" padding="sm">
       <ReaderHanziText displayMode={displayMode} tone="default">
        {item.metadata.heardZh}
       </ReaderHanziText>
@@ -533,7 +542,7 @@ function FillBlankItems({
   const isCorrect = isChecked && accepted.includes(value);
   const parts = item.metadata.promptParts ?? [item.promptZh ?? "", ""];
   return (
-   <Card key={item.id} variant="section" padding="md" className="grid gap-3 rounded-xl">
+   <Card key={item.id} variant="section" padding="md" className="grid gap-3">
     <ItemHeader
      index={index}
      type="fill_blank"
@@ -567,7 +576,7 @@ function FillBlankItems({
      onSpeak={onSpeak}
     />
     <div className="flex items-center gap-2">
-     <Button type="button" size="sm" onClick={() => onCheck(item.id)}>
+     <Button type="button" size="toolbar" onClick={() => onCheck(item.id)}>
       Kiểm tra
      </Button>
      {isChecked ? (
@@ -608,18 +617,18 @@ function ShadowingItems({
  }, [items]);
 
  return groups.map(([groupId, groupItems]) => (
-  <Card key={groupId} variant="section" padding="md" className="grid gap-2 rounded-xl">
+  <Card key={groupId} variant="section" padding="md" className="grid gap-2">
    <StudyInstructionText tone="default" weight="black">
     {groupItems[0]?.metadata.groupTitleZh} · {groupItems[0]?.metadata.groupTitleVi}
    </StudyInstructionText>
    {groupItems.map((item) => (
-    <Label
+    <div
      key={item.id}
-     variant="label"
-     className="grid cursor-pointer grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-2 border-b border-border-default py-2 last:border-b-0"
+     className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-2 border-b border-border-default py-2 last:border-b-0"
     >
      <Checkbox
       checked={done[item.id] ?? false}
+      aria-label={`Đánh dấu đã luyện: ${item.promptZh ?? item.id}`}
       onCheckedChange={(checked) =>
        setDone((current) => ({ ...current, [item.id]: checked === true }))
       }
@@ -640,13 +649,10 @@ function ShadowingItems({
        <Button
         type="button"
         variant="outline"
-        size="icon-sm"
+        size="icon-toolbar"
         aria-label="Sửa câu luyện nghe"
         title="Sửa câu luyện nghe"
-        onClick={(event) => {
-         event.preventDefault();
-         onEditItem(item);
-        }}
+        onClick={() => onEditItem(item)}
        >
         <Pencil />
        </Button>
@@ -654,17 +660,14 @@ function ShadowingItems({
       <Button
        type="button"
        variant="outline"
-       size="sm"
-       onClick={(event) => {
-        event.preventDefault();
-        onSpeak(item.promptZh ?? "");
-       }}
+       size="toolbar"
+       onClick={() => onSpeak(item.promptZh ?? "")}
       >
        <Play data-icon="inline-start" />
        Đọc theo
       </Button>
      </span>
-    </Label>
+    </div>
    ))}
   </Card>
  ));
@@ -696,7 +699,7 @@ function MatchingItem({
   checked && right.every((rightItem) => assignments[rightItem.id] === expected.get(rightItem.id));
 
  return (
-  <Card variant="section" padding="md" className="grid gap-3 rounded-xl">
+  <Card variant="section" padding="md" className="grid gap-3">
    <ItemHeader index={0} type="matching" onEdit={onEditItem ? () => onEditItem(item) : undefined} />
    <div className="grid gap-1">
     <ReaderHanziText displayMode={displayMode}>{item.promptZh}</ReaderHanziText>
@@ -713,6 +716,7 @@ function MatchingItem({
        key={entry.id}
        type="button"
        variant={activeLeft === entry.id ? "active" : "outline"}
+       aria-pressed={activeLeft === entry.id}
        align="start"
        wrap="normal"
        onClick={() => setActiveLeft(entry.id)}
@@ -747,7 +751,7 @@ function MatchingItem({
          </StudyInstructionText>
         ) : null}
        </ReaderHanziText>
-       <Badge variant="purple">
+       <Badge variant="purple" casing="natural">
         {left.find((candidate) => candidate.id === assignments[entry.id])?.textVi ?? "Chưa nối"}
        </Badge>
       </Button>
@@ -757,13 +761,13 @@ function MatchingItem({
    <div className="flex items-center gap-2">
     <Button
      type="button"
-     size="sm"
+     size="toolbar"
      disabled={right.some((entry) => !assignments[entry.id])}
      onClick={() => setChecked(true)}
     >
      Kiểm tra
     </Button>
-    <Button type="button" variant="outline" size="sm" onClick={() => setAssignments({})}>
+    <Button type="button" variant="outline" size="toolbar" onClick={() => setAssignments({})}>
      Làm lại
     </Button>
     {checked ? (
@@ -829,7 +833,7 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
      <Button
       type="button"
       variant="outline"
-      size="sm"
+      size="toolbar"
       className="w-fit"
       onClick={() => setSharedScriptVisible((current) => !current)}
      >

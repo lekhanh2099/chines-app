@@ -1,6 +1,10 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziAwareText,
+ HanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { Lightbulb, Sigma } from "lucide-react";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
@@ -45,7 +49,7 @@ export function StructuredGrammarContent({
     </div>
    ) : null}
    {point.core && (
-    <section className="rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
+    <section className="grid gap-3 rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
      <div className="flex items-center gap-2">
       <StudyInstructionText
        as="span"
@@ -64,9 +68,12 @@ export function StructuredGrammarContent({
        Ý nghĩa cần nhớ
       </StudyInstructionText>
      </div>
-     <StudyInstructionText tone="default" weight="bold" leading="relaxed" className="mt-3">
-      {cleanGrammarDisplayLine(point.core)}
-     </StudyInstructionText>
+     <HanziAwareText
+      text={cleanGrammarDisplayLine(point.core)}
+      tone="default"
+      weight="bold"
+      leading="relaxed"
+     />
     </section>
    )}
 
@@ -96,16 +103,15 @@ export function StructuredGrammarContent({
       </div>
      </div>
      {point.structuresView.map((structure, index) => (
-      <StudyInstructionText
+      <HanziAwareText
        key={`${point.id}-structure-${index}`}
+       text={cleanGrammarDisplayLine(structure)}
        variant="code"
        tone="info"
        weight="black"
        leading="relaxed"
        className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 shadow-theme-sm"
-      >
-       {cleanGrammarDisplayLine(structure)}
-      </StudyInstructionText>
+      />
      ))}
     </section>
    )}
@@ -149,14 +155,16 @@ export function StructuredGrammarContent({
      {examples.map((example, index) => {
       const content = (
        <div className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4">
-        <StudyInstructionText
+        <HanziText
+         as="p"
+         size="inherit"
          variant="sectionTitle"
          tone="default"
          weight="black"
          leading="relaxed"
         >
          {example.zh}
-        </StudyInstructionText>
+        </HanziText>
         {example.pinyin && (
          <StudyInstructionText variant="caption" tone="info" weight="semibold" leading="relaxed">
           {example.pinyin}
@@ -199,9 +207,12 @@ export function StructuredGrammarContent({
       Lưu ý / bẫy sai
      </Typography>
      {point.notes.map((note, index) => (
-      <StudyInstructionText key={`${point.id}-note-${index}`} tone="secondary" leading="relaxed">
-       {note}
-      </StudyInstructionText>
+      <HanziAwareText
+       key={`${point.id}-note-${index}`}
+       text={note}
+       tone="secondary"
+       leading="relaxed"
+      />
      ))}
     </section>
    )}

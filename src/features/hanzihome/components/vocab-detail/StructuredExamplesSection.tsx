@@ -1,4 +1,9 @@
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziAwareText,
+ HanziText,
+ PinyinText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { BookOpen } from "lucide-react";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
@@ -20,7 +25,7 @@ export function StructuredExamplesSection({
  return (
   <section
    id="vocab-examples"
-   className="grid gap-4 rounded-2xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
+   className="grid gap-4 rounded-xl border border-border-default bg-bg-card p-4 shadow-theme-sm"
   >
    <Typography
     as="h3"
@@ -38,13 +43,20 @@ export function StructuredExamplesSection({
      const content = (
       <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
        <div className="grid gap-1">
-        <StudyInstructionText variant="pageTitle" tone="default" weight="black" leading="relaxed">
+        <HanziText
+         as="p"
+         size="inherit"
+         variant="pageTitle"
+         tone="default"
+         weight="black"
+         leading="relaxed"
+        >
          {renderHighlightedVocabText(example.zh, keyword)}
-        </StudyInstructionText>
+        </HanziText>
         {example.pinyin && (
-         <StudyInstructionText tone="muted" weight="bold" leading="relaxed" emphasis="italic">
+         <PinyinText as="p" tone="muted" weight="bold" leading="relaxed" emphasis="italic">
           {example.pinyin}
-         </StudyInstructionText>
+         </PinyinText>
         )}
         <StudyInstructionText tone="secondary" weight="semibold" leading="relaxed">
          {example.vi}
@@ -52,13 +64,12 @@ export function StructuredExamplesSection({
        </div>
 
        {example.analysis_vi && (
-        <StudyInstructionText
+        <HanziAwareText
+         text={example.analysis_vi}
          tone="accent"
          leading="relaxed"
          className="border-t border-border-default pt-3"
-        >
-         {example.analysis_vi}
-        </StudyInstructionText>
+        />
        )}
       </div>
      );

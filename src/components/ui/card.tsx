@@ -1,15 +1,20 @@
 import type * as React from "react";
-import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Slot } from "radix-ui";
+
+import { cn } from "@/lib/utils";
+
+const themedCardSurface = "bg-[var(--theme-card-background)]";
 
 const cardVariants = cva("rounded-xl border", {
  variants: {
   variant: {
-   default: "border-border-default bg-bg-card",
-   elevated: "border-border-default/80 bg-bg-card shadow-theme-sm",
-   section: "border-border-default/80 bg-bg-card",
+   default: `border-border-default ${themedCardSurface}`,
+   elevated: `border-border-default/80 ${themedCardSurface} shadow-theme-sm`,
+   section: `border-border-default/80 ${themedCardSurface}`,
    subtle: "border-border-default bg-bg-subtle",
-   glass: "border-border-default bg-bg-card",
+   interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-card-hover focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`,
+   glass: `border-border-default ${themedCardSurface}`,
   },
   padding: {
    none: "",
@@ -24,13 +29,18 @@ const cardVariants = cva("rounded-xl border", {
  },
 });
 
-type CardProps = React.ComponentProps<"div"> & VariantProps<typeof cardVariants>;
+type CardProps = React.ComponentProps<"div"> &
+ VariantProps<typeof cardVariants> & {
+  asChild?: boolean;
+ };
 
-function Card({ className, variant, padding, children, ...rest }: CardProps) {
+function Card({ className, variant, padding, asChild = false, children, ...rest }: CardProps) {
+ const Comp = asChild ? Slot.Root : "div";
+
  return (
-  <div className={cn(cardVariants({ variant, padding, className }))} {...rest}>
+  <Comp data-slot="card" className={cn(cardVariants({ variant, padding }), className)} {...rest}>
    {children}
-  </div>
+  </Comp>
  );
 }
 

@@ -17,6 +17,7 @@ import {
 import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import {
@@ -169,7 +170,7 @@ export default function ApiKeyManagerSection() {
  }
 
  return (
-  <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+  <Card variant="section" padding="lg" className="grid gap-5">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="flex max-w-3xl flex-col gap-2">
      <Typography
@@ -333,18 +334,18 @@ export default function ApiKeyManagerSection() {
    </div>
 
    {!schemaReady && (
-    <div className="mt-5 rounded-2xl border border-warning/30 bg-warning-subtle px-4 py-3 leading-6 text-warning-text">
+    <div className="rounded-xl border border-warning/30 bg-warning-subtle px-4 py-3 leading-6 text-warning-text">
      {schemaMessage ||
       "Database chưa sẵn sàng cho user_api_keys. Hãy apply migration hoặc repair migration rồi tải lại trang."}
     </div>
    )}
 
-   <Typography as="p" variant="bodySmall" tone="muted" className="mt-5">
+   <Typography as="p" variant="bodySmall" tone="muted">
     {summary.total} key · {summary.active} đang bật · chỉ áp dụng khi mở phân tích chi tiết
    </Typography>
 
    {query.isError ? (
-    <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
+    <div className="flex flex-col items-start gap-3 rounded-xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
      <Typography as="p" weight="semibold">
       Không tải được danh sách API key.
      </Typography>
@@ -356,20 +357,20 @@ export default function ApiKeyManagerSection() {
      </Button>
     </div>
    ) : isLoading ? (
-    <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border-default bg-bg-primary p-5  text-text-secondary">
+    <div className="flex items-center gap-3 rounded-xl border border-border-default bg-bg-primary p-5 text-text-secondary">
      <Loader2 className="h-4 w-4 animate-spin" />
      Đang tải danh sách API key...
     </div>
    ) : keys.length === 0 ? (
-    <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-border-default bg-bg-primary p-4">
-     <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
+    <div className="flex items-center gap-3 rounded-xl border border-dashed border-border-default bg-bg-primary p-4">
+     <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
       <KeyRound className="h-5 w-5" />
      </div>
-     <div>
+     <div className="grid gap-1">
       <Typography as="p" tone="default" weight="semibold">
        Chưa có API key cá nhân
       </Typography>
-      <Typography as="p" variant="bodySmall" tone="secondary" leading="compact" className="mt-1">
+      <Typography as="p" variant="bodySmall" tone="secondary" leading="compact">
        {schemaReady
         ? "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết."
         : "Apply migration database trước, rồi quay lại thêm key."}
@@ -377,14 +378,14 @@ export default function ApiKeyManagerSection() {
      </div>
     </div>
    ) : (
-    <div className="mt-6 divide-y divide-border-default border-y border-border-default">
+    <div className="divide-y divide-border-default border-y border-border-default">
      {keys.map((key, index) => {
       const isBusy = busyKeyId === key.id;
 
       return (
        <article key={key.id} className="py-4">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,22rem)_auto] lg:items-center">
-         <div className="min-w-0 space-y-2">
+         <div className="grid min-w-0 gap-2">
           <div className="flex flex-wrap items-center gap-2">
            <Badge
             variant={
@@ -407,11 +408,11 @@ export default function ApiKeyManagerSection() {
            </Badge>
           </div>
 
-          <div className="min-w-0">
+          <div className="grid min-w-0 gap-1">
            <Typography as="h3" variant="cardTitle" tone="default" weight="bold" clamp="one">
             {key.label}
            </Typography>
-           <Typography as="p" variant="code" tone="secondary" clamp="one" className="mt-1">
+           <Typography as="p" variant="code" tone="secondary" clamp="one">
             {key.maskedKey}
            </Typography>
           </div>
@@ -490,6 +491,6 @@ export default function ApiKeyManagerSection() {
      })}
     </div>
    )}
-  </section>
+  </Card>
  );
 }

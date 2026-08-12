@@ -1,25 +1,23 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { BookmarkPlus, Check, Loader2, Save, Volume2, VolumeOff } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
+
 import { Badge } from "@/components/ui/badge";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Chip } from "@/components/ui/chip";
+import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import type { HanziReaderFont } from "@/features/hanzihome/components/lesson-overview/types";
+import { Textarea } from "@/components/ui/textarea";
+import { Typography } from "@/components/ui/typography";
+import {
+ HanziAwareText,
+ HanziText,
+ PinyinText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/chinese-utils";
@@ -34,11 +32,6 @@ import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import type { SmartSelectionMode } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
-const drawerFontOptions: Array<{ value: HanziReaderFont; label: string }> = [
- { value: "system", label: "Hệ thống" },
- { value: "songti", label: "Songti" },
- { value: "pinyin", label: "Kai" },
-];
 
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
 type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
@@ -52,9 +45,7 @@ function getDisplayMeaning(
  data: ReturnType<typeof useSmartSelectionInsights>["data"],
 ) {
  if (!data) return "";
- if (mode === "sentence") {
-  return data.translation || data.entry.meaning || "";
- }
+ if (mode === "sentence") return data.translation || data.entry.meaning || "";
 
  return (
   data.meaning_summary ||
@@ -78,13 +69,12 @@ export function VocabDetailDrawer() {
  const mode = useSelector(vocabDetailDrawerStore, (state) => state.mode);
  const { closeDetailDrawer, openDetailDrawer } = vocabDetailDrawerStore.actions;
  const detailQuery = useSmartSelectionInsights(text, contextSentence, {
-  enabled: isOpen && !!text,
+  enabled: isOpen && Boolean(text),
   mode,
  });
  const smartData = detailQuery.data;
  const displayMeaning = getDisplayMeaning(mode, smartData);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
- const [hanziFont, setHanziFont] = useState<HanziReaderFont>("system");
 
  const handleSpeak = () => {
   const speechText = mode === "sentence" ? text : smartData?.entry.hanzi || text;
@@ -114,9 +104,7 @@ export function VocabDetailDrawer() {
   }
  };
 
- if (!isOpen) {
-  return null;
- }
+ if (!isOpen) return null;
 
  return (
   <Sheet
@@ -131,21 +119,12 @@ export function VocabDetailDrawer() {
     title={mode === "sentence" ? "Chi tiết câu" : "Chi tiết từ vựng"}
     onClose={closeDetailDrawer}
    />
-   <div className="grid gap-3 border-b border-border-default px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
-    <div className="min-w-0">
+   <div className="border-b border-border-default px-4 py-3 sm:px-5">
+    <div className="grid min-w-0 gap-1">
      <div className="flex items-center gap-2">
-      <Typography
-       as="p"
-       variant="display"
-       tone="default"
-       weight="black"
-       clamp="one"
-       leading="tight"
-       lang="zh-CN"
-       style={{ fontFamily: getHanziFontFamily(hanziFont) }}
-      >
+      <HanziText as="p" size="review" tone="default" weight="black" clamp="one" leading="tight">
        {smartData?.entry.hanzi || text}
-      </Typography>
+      </HanziText>
       <Button
        type="button"
        variant="ghost"
@@ -163,73 +142,45 @@ export function VocabDetailDrawer() {
        )}
       </Button>
      </div>
-     {smartData?.entry.pinyin && (
-      <Typography as="p" tone="accent" weight="semibold" className="mt-1">
+     {smartData?.entry.pinyin ? (
+      <PinyinText as="p" tone="accent" weight="semibold">
        {smartData.entry.pinyin}
-      </Typography>
-     )}
+      </PinyinText>
+     ) : null}
     </div>
-    <Label variant="label" className="grid gap-1">
-     <Typography variant="caption" tone="muted" weight="bold">
-      Kiểu chữ Hán
-     </Typography>
-     <Select
-      value={hanziFont}
-      onValueChange={(value) => {
-       if (value === "system" || value === "songti" || value === "pinyin") {
-        setHanziFont(value);
-       }
-      }}
-     >
-      <SelectTrigger size="sm" aria-label="Chọn kiểu chữ Hán">
-       <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="end">
-       {drawerFontOptions.map((option) => (
-        <SelectItem key={option.value} value={option.value}>
-         <Typography
-          as="span"
-          lang="zh-CN"
-          variant="sectionTitle"
-          style={{ fontFamily: getHanziFontFamily(option.value) }}
-         >
-          文
-         </Typography>
-         {option.label}
-        </SelectItem>
-       ))}
-      </SelectContent>
-     </Select>
-    </Label>
    </div>
 
    <SheetBody>
     {detailQuery.isLoading ? (
-     <div className="flex h-40 items-center justify-center gap-2 text-text-muted">
-      <Loader2 className="h-4 w-4 animate-spin " />
-      Đang tải chi tiết từ vựng...
-     </div>
+     <Card
+      variant="subtle"
+      padding="lg"
+      className="flex min-h-40 items-center justify-center gap-2"
+     >
+      <Loader2 className="animate-spin" />
+      <Typography tone="muted">Đang tải chi tiết từ vựng...</Typography>
+     </Card>
     ) : detailQuery.isError ? (
-     <div className="rounded-2xl border border-danger/30 bg-danger-subtle px-4 py-3 text-danger-text">
-      {detailQuery.error instanceof Error
-       ? detailQuery.error.message
-       : "Không thể tải dữ liệu chi tiết"}
-     </div>
+     <Card variant="subtle" padding="md" role="alert">
+      <Typography as="p" variant="bodySmall" tone="danger" weight="semibold">
+       {detailQuery.error instanceof Error
+        ? detailQuery.error.message
+        : "Không thể tải dữ liệu chi tiết"}
+      </Typography>
+     </Card>
     ) : !smartData ? (
-     <div className="rounded-2xl border border-border-default bg-bg-card px-4 py-6 text-text-muted">
-      Không có dữ liệu để hiển thị.
-     </div>
+     <Card variant="subtle" padding="lg">
+      <Typography as="p" tone="muted" align="center">
+       Không có dữ liệu để hiển thị.
+      </Typography>
+     </Card>
     ) : mode === "sentence" ? (
      <SentenceDetailPanel
       key={`${smartData.selection}-sentence`}
       text={text}
       smartData={smartData}
       onCharacterSelect={(character) =>
-       openDetailDrawer({
-        text: character,
-        contextSentence: text,
-        mode: "word",
-       })
+       openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
       }
       onSave={handleSave}
       isSaving={detailQuery.isSaving}
@@ -239,20 +190,46 @@ export function VocabDetailDrawer() {
       key={`${smartData.selection}-word`}
       smartData={smartData}
       onDrillCharacter={(character) =>
-       openDetailDrawer({
-        text: character,
-        contextSentence: text,
-        mode: "word",
-       })
+       openDetailDrawer({ text: character, contextSentence: text, mode: "word" })
       }
       onSave={handleSave}
       isSaving={detailQuery.isSaving}
       displayMeaning={displayMeaning}
-      hanziFont={hanziFont}
      />
     )}
    </SheetBody>
   </Sheet>
+ );
+}
+
+function DetailSection({
+ title,
+ actions,
+ children,
+}: {
+ title: string;
+ actions?: ReactNode;
+ children: ReactNode;
+}) {
+ return (
+  <Card asChild variant="section" padding="md">
+   <section className="grid gap-3">
+    <div className="flex items-center justify-between gap-3">
+     <Typography
+      as="h3"
+      variant="overline"
+      tone="muted"
+      weight="bold"
+      tracking="extraLoose"
+      transform="uppercase"
+     >
+      {title}
+     </Typography>
+     {actions}
+    </div>
+    {children}
+   </section>
+  </Card>
  );
 }
 
@@ -262,14 +239,12 @@ function WordDetailPanel({
  onSave,
  isSaving,
  displayMeaning,
- hanziFont,
 }: {
  smartData: NonNullable<ReturnType<typeof useSmartSelectionInsights>["data"]>;
  onDrillCharacter: (character: string) => void;
  onSave: (noteDraft: string) => void;
  isSaving: boolean;
  displayMeaning: string;
- hanziFont: HanziReaderFont;
 }) {
  const ai = smartData.entry.ai_analysis;
  const radicals = getNormalizedRadicals(ai);
@@ -298,119 +273,93 @@ function WordDetailPanel({
  const etymologyText = typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
 
  return (
-  <div className="space-y-5">
-   <div className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <div className="flex flex-wrap items-center justify-between gap-3">
-     <div>
-      <Typography
-       as="p"
-       variant="overline"
-       tone="muted"
-       weight="bold"
-       scale="micro"
-       tracking="extraLoose"
-       transform="uppercase"
-      >
-       Header
-      </Typography>
-      <Typography as="p" tone="default" weight="semibold" className="mt-1">
-       {displayMeaning}
-      </Typography>
-     </div>
+  <div className="grid gap-4">
+   <DetailSection
+    title="Tóm tắt"
+    actions={
      <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
       variant="outline"
-      className="inline-flex"
+      size="toolbar"
      >
       {isSaving ? (
-       <Loader2 className="h-4 w-4 animate-spin" />
+       <Loader2 data-icon="inline-start" className="animate-spin" />
       ) : smartData.isSaved ? (
-       <Check className="h-4 w-4 text-success" />
+       <Check data-icon="inline-start" className="text-success-text" />
       ) : (
-       <BookmarkPlus className="h-4 w-4" />
+       <BookmarkPlus data-icon="inline-start" />
       )}
       {smartData.isSaved ? "Đã lưu" : "Lưu"}
      </Button>
-    </div>
-   </div>
+    }
+   >
+    <Typography as="p" tone="default" weight="semibold" leading="standard">
+     {displayMeaning || "Chưa có nghĩa tóm tắt."}
+    </Typography>
+   </DetailSection>
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <div className="mb-3 flex items-center justify-between gap-3">
-     <div>
-      <Typography
-       as="p"
-       variant="overline"
-       tone="muted"
-       weight="bold"
-       scale="micro"
-       tracking="extraLoose"
-       transform="uppercase"
-      >
-       Giải phẫu
-      </Typography>
-      {characters.length > 1 && (
-       <div className="mt-2 flex flex-wrap gap-2">
-        {characters.map((character) => (
-         <Chip
-          key={character}
-          size="sm"
-          pressed={visualCharacter === character}
-          variant={visualCharacter === character ? "accent" : "default"}
-          onClick={() => setActiveCharacter(character)}
-         >
-          {character}
-         </Chip>
-        ))}
-       </div>
-      )}
-     </div>
-     {visualCharacter && visualCharacter !== smartData.entry.hanzi && (
+   <DetailSection
+    title="Giải phẫu"
+    actions={
+     visualCharacter && visualCharacter !== smartData.entry.hanzi ? (
       <Button
        type="button"
        onClick={() => onDrillCharacter(visualCharacter)}
-       variant="ghost"
-       className="-hover"
+       variant="outline"
+       size="toolbar"
       >
        Tra riêng chữ này
       </Button>
-     )}
-    </div>
+     ) : undefined
+    }
+   >
+    {characters.length > 1 ? (
+     <div className="flex flex-wrap gap-2">
+      {characters.map((character) => (
+       <Chip
+        key={character}
+        size="sm"
+        pressed={visualCharacter === character}
+        variant={visualCharacter === character ? "accent" : "default"}
+        onClick={() => setActiveCharacter(character)}
+       >
+        <HanziText as="span" size="medium" leading="none">
+         {character}
+        </HanziText>
+       </Chip>
+      ))}
+     </div>
+    ) : null}
 
     <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
-     <CharacterWriterCard character={visualCharacter} hanziFont={hanziFont} />
-
-     <div className="grid gap-3 md:grid-cols-2">
-      <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-       <Typography
-        as="p"
-        variant="overline"
-        tone="muted"
-        weight="bold"
-        scale="micro"
-        tracking="extraLoose"
-        transform="uppercase"
-        className="mb-2"
-       >
+     <CharacterWriterCard character={visualCharacter} />
+     <div className="grid gap-4 md:grid-cols-2">
+      <section className="grid gap-2">
+       <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
         Bộ thủ
        </Typography>
        {radicals.length > 0 ? (
-        <div className="space-y-2">
+        <div className="grid gap-2">
          {radicals.slice(0, 4).map((radical, index) => (
           <div
            key={`${radical.char || radical.meaning || "radical"}-${index}`}
-           className="rounded-2xl border border-border-default bg-bg-card px-3 py-2"
+           className="grid gap-0.5"
           >
-           <Typography as="p" tone="default" weight="bold">
+           <HanziText as="p" size="medium" tone="default" weight="bold">
             {radical.char || "?"}
-           </Typography>
-           <Typography as="p" variant="caption" weight="semibold">
-            {radical.pinyin}
-           </Typography>
-           <Typography as="p" variant="caption" tone="secondary">
-            {radical.meaning}
-           </Typography>
+           </HanziText>
+           {radical.pinyin ? (
+            <PinyinText as="p" variant="caption" tone="accent" weight="semibold">
+             {radical.pinyin}
+            </PinyinText>
+           ) : null}
+           {radical.meaning ? (
+            <Typography as="p" variant="caption" tone="secondary">
+             {radical.meaning}
+            </Typography>
+           ) : null}
           </div>
          ))}
         </div>
@@ -419,56 +368,34 @@ function WordDetailPanel({
          Chưa có dữ liệu bộ thủ.
         </Typography>
        )}
-      </div>
+      </section>
 
-      <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-       <Typography
-        as="p"
-        variant="overline"
-        tone="muted"
-        weight="bold"
-        scale="micro"
-        tracking="extraLoose"
-        transform="uppercase"
-        className="mb-2"
-       >
+      <section className="grid content-start gap-2">
+       <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
         Lục thư
        </Typography>
-       {etymologyType && <Badge variant="accent">{etymologyType}</Badge>}
-       <Typography as="p" tone="secondary" leading="relaxed" className="mt-2">
+       {etymologyType ? <Badge variant="accent">{etymologyType}</Badge> : null}
+       <Typography as="p" tone="secondary" leading="relaxed">
         {etymologyText || "Chưa có phân tích nguồn gốc."}
        </Typography>
-      </div>
+      </section>
      </div>
     </div>
-   </section>
-   {ai?.mnemonic_story && (
-    <div className="mt-3 rounded-xl bg-warning-subtle p-3">
-     <Typography as="p" variant="caption" tone="warning" weight="bold" className="mb-1.5">
-      AI gợi ý mẹo nhớ
-     </Typography>
-     <Typography as="p" tone="default" leading="relaxed">
-      {ai.mnemonic_story}
-     </Typography>
-    </div>
-   )}
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <Typography
-     as="p"
-     variant="overline"
-     tone="muted"
-     weight="bold"
-     scale="micro"
-     tracking="extraLoose"
-     transform="uppercase"
-     className="mb-3"
-    >
-     Ngữ nghĩa & Ví dụ
-    </Typography>
-    <div className="space-y-4">
-     {definitions.length > 0 ? (
-      definitions.map((definition, index) => {
+    {ai?.mnemonic_story ? (
+     <Card variant="subtle" padding="sm" className="grid gap-1">
+      <Typography as="p" variant="caption" tone="warning" weight="bold">
+       AI gợi ý mẹo nhớ
+      </Typography>
+      <HanziAwareText text={ai.mnemonic_story} tone="default" leading="relaxed" />
+     </Card>
+    ) : null}
+   </DetailSection>
+
+   <DetailSection title="Ngữ nghĩa & ví dụ">
+    {definitions.length > 0 ? (
+     <div className="grid gap-4">
+      {definitions.map((definition, index) => {
        const definitionExamples =
         definition.examples
          ?.filter((example) => example.cn || example.vi)
@@ -479,51 +406,44 @@ function WordDetailPanel({
          })) || [];
 
        return (
-        <div
+        <section
          key={`${definition.text || definition.meaning || "definition"}-${index}`}
-         className="rounded-2xl border border-border-default bg-bg-primary p-3"
+         className="grid gap-2"
         >
+         {index > 0 ? <Separator /> : null}
          <div className="flex items-center gap-2">
-          <Typography
-           variant="caption"
-           weight="bold"
-           scale="micro"
-           className="rounded-full bg-accent px-2 py-1"
-          >
-           {index + 1}
+          <Typography variant="overline" tone="accent" weight="black">
+           Nghĩa {index + 1}
           </Typography>
-          {definition.pos && <Badge variant="info">{definition.pos}</Badge>}
+          {definition.pos ? <Badge variant="info">{definition.pos}</Badge> : null}
          </div>
-         <Typography as="p" tone="default" weight="semibold" className="mt-2">
-          {definition.meaning || definition.text}
-         </Typography>
-         {definitionExamples.length > 0 && (
-          <div className="mt-3 space-y-2 border-l-2 border-accent/20 pl-3">
+         <HanziAwareText
+          text={definition.meaning || definition.text || ""}
+          tone="default"
+          weight="semibold"
+         />
+         {definitionExamples.length > 0 ? (
+          <div className="grid gap-2 md:grid-cols-2">
            {definitionExamples.map((example, exampleIndex) => (
             <ExampleCard key={`${example.zh}-${exampleIndex}`} example={example} />
            ))}
           </div>
-         )}
-        </div>
+         ) : null}
+        </section>
        );
-      })
-     ) : (
-      <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-text-muted">
-       {displayMeaning || "Chưa có dữ liệu nghĩa."}
-      </div>
-     )}
+      })}
+     </div>
+    ) : (
+     <Typography as="p" tone="muted">
+      {displayMeaning || "Chưa có dữ liệu nghĩa."}
+     </Typography>
+    )}
 
-     {examples.length > 0 && (
-      <div className="space-y-2">
-       <Typography
-        as="p"
-        variant="overline"
-        tone="muted"
-        weight="bold"
-        scale="micro"
-        tracking="extraLoose"
-        transform="uppercase"
-       >
+    {examples.length > 0 ? (
+     <>
+      <Separator />
+      <section className="grid gap-2">
+       <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
         Ví dụ nổi bật
        </Typography>
        <div className="grid gap-2 md:grid-cols-2">
@@ -531,69 +451,52 @@ function WordDetailPanel({
          <ExampleCard key={`${example.zh}-${index}`} example={example} />
         ))}
        </div>
-      </div>
-     )}
+      </section>
+     </>
+    ) : null}
 
-     <div className="space-y-2">
-      <Typography
-       as="p"
-       variant="overline"
-       tone="muted"
-       weight="bold"
-       scale="micro"
-       tracking="extraLoose"
-       transform="uppercase"
-      >
-       Từ ghép liên quan
-      </Typography>
-      <div className="space-y-3">
-       <RelationList
-        title="Từ ghép"
-        items={relatedCompounds}
-        emptyText="Chưa có từ ghép liên quan."
-        onSelect={onDrillCharacter}
-       />
-       <RelationList
-        title="Đồng nghĩa"
-        items={synonyms}
-        emptyText="Chưa có từ đồng nghĩa cơ bản."
-        onSelect={onDrillCharacter}
-       />
-       <RelationList
-        title="Trái nghĩa"
-        items={antonyms}
-        emptyText="Chưa có từ trái nghĩa cơ bản."
-        onSelect={onDrillCharacter}
-       />
-      </div>
-     </div>
+    <Separator />
+    <div className="grid gap-4">
+     <RelationList
+      title="Từ ghép"
+      items={relatedCompounds}
+      emptyText="Chưa có từ ghép liên quan."
+      onSelect={onDrillCharacter}
+     />
+     <RelationList
+      title="Đồng nghĩa"
+      items={synonyms}
+      emptyText="Chưa có từ đồng nghĩa cơ bản."
+      onSelect={onDrillCharacter}
+     />
+     <RelationList
+      title="Trái nghĩa"
+      items={antonyms}
+      emptyText="Chưa có từ trái nghĩa cơ bản."
+      onSelect={onDrillCharacter}
+     />
     </div>
-   </section>
+   </DetailSection>
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <div className="mb-3 flex items-center justify-between gap-3">
-     <Typography
-      as="p"
-      variant="overline"
-      tone="muted"
-      weight="bold"
-      scale="micro"
-      tracking="extraLoose"
-      transform="uppercase"
-     >
-      Ghi chú cá nhân
-     </Typography>
+   <DetailSection
+    title="Ghi chú cá nhân"
+    actions={
      <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
       variant="outline"
-      className="inline-flex"
+      size="toolbar"
      >
-      {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+      {isSaving ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : (
+       <Save data-icon="inline-start" />
+      )}
       Lưu note
      </Button>
-    </div>
+    }
+   >
     <Textarea
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
@@ -601,7 +504,7 @@ function WordDetailPanel({
      density="comfortable"
      className="w-full"
     />
-   </section>
+   </DetailSection>
   </div>
  );
 }
@@ -622,78 +525,36 @@ function SentenceDetailPanel({
  const [noteDraft, setNoteDraft] = useState(smartData.personal_note || "");
 
  return (
-  <div className="space-y-5">
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <Typography
-     as="p"
-     variant="overline"
-     tone="muted"
-     weight="bold"
-     scale="micro"
-     tracking="extraLoose"
-     transform="uppercase"
-     className="mb-2"
-    >
-     Dịch nghĩa
-    </Typography>
+  <div className="grid gap-4">
+   <DetailSection title="Dịch nghĩa">
     <Typography as="p" tone="default" leading="relaxed">
      {smartData.translation || smartData.entry.meaning || "Chưa có bản dịch."}
     </Typography>
-   </section>
+   </DetailSection>
 
-   {smartData.grammar_points.length > 0 && (
-    <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-     <Typography
-      as="p"
-      variant="overline"
-      tone="muted"
-      weight="bold"
-      scale="micro"
-      tracking="extraLoose"
-      transform="uppercase"
-      className="mb-3"
-     >
-      Ghi chú ngữ pháp
-     </Typography>
-     <div className="space-y-2">
+   {smartData.grammar_points.length > 0 ? (
+    <DetailSection title="Ghi chú ngữ pháp">
+     <div className="grid gap-3">
       {smartData.grammar_points.map((point, index) => (
-       <div
-        key={`${point.pattern || "grammar"}-${index}`}
-        className="rounded-2xl border border-border-default bg-bg-primary p-3"
-       >
-        <Typography
-         as="p"
-         variant="overline"
-         weight="semibold"
-         tracking="wide"
-         transform="uppercase"
-        >
-         {point.pattern || `Điểm ${index + 1}`}
-        </Typography>
-        {point.explanation && (
-         <Typography as="p" tone="secondary" leading="relaxed" className="mt-1">
-          {point.explanation}
-         </Typography>
-        )}
-       </div>
+       <section key={`${point.pattern || "grammar"}-${index}`} className="grid gap-1">
+        {index > 0 ? <Separator /> : null}
+        <HanziAwareText
+         as="h4"
+         text={point.pattern || `Điểm ${index + 1}`}
+         variant="cardTitle"
+         tone="accent"
+         weight="bold"
+        />
+        {point.explanation ? (
+         <HanziAwareText text={point.explanation} tone="secondary" leading="relaxed" />
+        ) : null}
+       </section>
       ))}
      </div>
-    </section>
-   )}
+    </DetailSection>
+   ) : null}
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <Typography
-     as="p"
-     variant="overline"
-     tone="muted"
-     weight="bold"
-     scale="micro"
-     tracking="extraLoose"
-     transform="uppercase"
-     className="mb-3"
-    >
-     Bấm từng hán tự để học sâu
-    </Typography>
+   <DetailSection title="Bấm từng hán tự để học sâu">
     <div className="flex flex-wrap gap-2">
      {Array.from(text).map((char, index) =>
       HANZI_CHAR_REGEX.test(char) ? (
@@ -702,49 +563,41 @@ function SentenceDetailPanel({
         type="button"
         onClick={() => onCharacterSelect(char)}
         variant="outline"
-        size="icon-sm"
-        className="inline-flex min-w-10"
+        size="icon-toolbar"
+        aria-label={`Tra chữ ${char}`}
        >
-        {char}
+        <HanziText as="span" size="medium" leading="none">
+         {char}
+        </HanziText>
        </Button>
       ) : (
-       <Typography
-        as="span"
-        key={`${char}-${index}`}
-        tone="muted"
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-bg-subtle px-2"
-       >
+       <Typography as="span" key={`${char}-${index}`} tone="muted" className="px-1 py-2">
         {char}
        </Typography>
       ),
      )}
     </div>
-   </section>
+   </DetailSection>
 
-   <section className="rounded-2xl border border-border-default bg-bg-card p-4">
-    <div className="mb-3 flex items-center justify-between gap-3">
-     <Typography
-      as="p"
-      variant="overline"
-      tone="muted"
-      weight="bold"
-      scale="micro"
-      tracking="extraLoose"
-      transform="uppercase"
-     >
-      Ghi chú cá nhân
-     </Typography>
+   <DetailSection
+    title="Ghi chú cá nhân"
+    actions={
      <Button
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
       variant="outline"
-      className="inline-flex"
+      size="toolbar"
      >
-      {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+      {isSaving ? (
+       <Loader2 data-icon="inline-start" className="animate-spin" />
+      ) : (
+       <Save data-icon="inline-start" />
+      )}
       Lưu note
      </Button>
-    </div>
+    }
+   >
     <Textarea
      value={noteDraft}
      onChange={(event) => setNoteDraft(event.target.value)}
@@ -752,28 +605,28 @@ function SentenceDetailPanel({
      density="comfortable"
      className="w-full"
     />
-   </section>
+   </DetailSection>
   </div>
  );
 }
 
 function ExampleCard({ example }: { example: { zh: string; pinyin: string; vi: string } }) {
  return (
-  <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
-   <Typography as="p" tone="default" weight="medium">
+  <Card variant="subtle" padding="sm" className="grid gap-1">
+   <HanziText as="p" size="inherit" tone="default" weight="medium">
     {example.zh}
-   </Typography>
-   {example.pinyin && (
-    <Typography as="p" variant="caption" weight="semibold">
+   </HanziText>
+   {example.pinyin ? (
+    <PinyinText as="p" variant="caption" tone="accent" weight="semibold">
      {example.pinyin}
-    </Typography>
-   )}
-   {example.vi && (
+    </PinyinText>
+   ) : null}
+   {example.vi ? (
     <Typography as="p" variant="caption" tone="secondary" emphasis="italic">
      {example.vi}
     </Typography>
-   )}
-  </div>
+   ) : null}
+  </Card>
  );
 }
 
@@ -789,20 +642,12 @@ function RelationList({
  onSelect: (word: string) => void;
 }) {
  return (
-  <div className="space-y-2">
-   <Typography
-    as="p"
-    variant="overline"
-    tone="muted"
-    weight="bold"
-    scale="micro"
-    tracking="extraLoose"
-    transform="uppercase"
-   >
+  <section className="grid gap-2">
+   <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
     {title}
    </Typography>
    {items.length > 0 ? (
-    <div className="space-y-2">
+    <div className="grid gap-2">
      {items.map((item, index) => {
       const word = item.word?.trim();
       if (!word) return null;
@@ -814,50 +659,49 @@ function RelationList({
         onClick={() => onSelect(word)}
         variant="outline"
         align="start"
-        className="flex w-full"
+        wrap="normal"
+        className="w-full"
        >
-        <div className="min-w-0">
-         <div className="flex flex-wrap items-center gap-2">
-          <Typography tone="default" weight="bold">
+        <span className="grid min-w-0 gap-1">
+         <span className="flex flex-wrap items-center gap-2">
+          <HanziText as="span" size="medium" tone="default" weight="bold">
            {word}
-          </Typography>
-          {item.pinyin && (
-           <Typography variant="caption" weight="semibold">
+          </HanziText>
+          {item.pinyin ? (
+           <PinyinText as="span" variant="caption" tone="accent" weight="semibold">
             {item.pinyin}
-           </Typography>
-          )}
-         </div>
-         <Typography as="p" tone="secondary" leading="relaxed" className="mt-1">
+           </PinyinText>
+          ) : null}
+         </span>
+         <Typography
+          as="span"
+          variant="bodySmall"
+          tone="secondary"
+          leading="relaxed"
+          className="block"
+         >
           {item.meaning || "Chưa có nghĩa."}
          </Typography>
-        </div>
+        </span>
        </Button>
       );
      })}
     </div>
    ) : (
-    <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-text-muted">
+    <Typography as="p" variant="bodySmall" tone="muted">
      {emptyText}
-    </div>
+    </Typography>
    )}
-  </div>
+  </section>
  );
 }
 
-function CharacterWriterCard({
- character,
- hanziFont,
-}: {
- character: string;
- hanziFont: HanziReaderFont;
-}) {
+function CharacterWriterCard({ character }: { character: string }) {
  const containerRef = useRef<HTMLDivElement>(null);
  const writerRef = useRef<HanziWriterInstance>(null);
 
  useEffect(() => {
-  if (!containerRef.current || !character || typeof window === "undefined") {
-   return;
-  }
+  if (!containerRef.current || !character || typeof window === "undefined") return;
 
   const container = containerRef.current;
   let isActive = true;
@@ -872,7 +716,6 @@ function CharacterWriterCard({
    container.textContent = character;
    container.style.fontSize = "88px";
    container.style.fontWeight = "700";
-   container.style.fontFamily = getHanziFontFamily(hanziFont);
    container.style.color = getThemeColor("--foreground");
   };
 
@@ -947,15 +790,16 @@ function CharacterWriterCard({
    writerRef.current = null;
    container.innerHTML = "";
   };
- }, [character, hanziFont]);
+ }, [character]);
 
  return (
-  <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
+  <Card variant="subtle" padding="sm" className="w-fit">
    <div
     ref={containerRef}
-    className="mx-auto rounded-xl border border-border-default bg-bg-card"
+    className="font-hanzi"
+    lang="zh-CN"
     style={{ width: 160, height: 160, position: "relative" }}
    />
-  </div>
+  </Card>
  );
 }

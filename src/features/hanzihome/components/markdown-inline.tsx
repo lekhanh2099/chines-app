@@ -1,4 +1,7 @@
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziInlineText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { ReactNode } from "react";
 
 export function renderMarkdownInline(text: string) {
@@ -10,7 +13,8 @@ export function renderMarkdownInline(text: string) {
  while ((match = pattern.exec(text)) !== null) {
   const token = match[0];
   if (match.index > lastIndex) {
-   parts.push(text.slice(lastIndex, match.index));
+   const plainText = text.slice(lastIndex, match.index);
+   parts.push(<HanziInlineText key={`${lastIndex}-plain`} text={plainText} />);
   }
 
   const key = `${match.index}-${token}`;
@@ -23,20 +27,28 @@ export function renderMarkdownInline(text: string) {
      tone="default"
      className="rounded bg-bg-subtle px-1 py-0.5"
     >
-     {token.slice(1, -1)}
+     <HanziInlineText text={token.slice(1, -1)} />
     </StudyInstructionText>,
    );
   } else if (token.startsWith("**") || token.startsWith("__")) {
-   parts.push(<strong key={key}>{token.slice(2, -2)}</strong>);
+   parts.push(
+    <strong key={key}>
+     <HanziInlineText text={token.slice(2, -2)} />
+    </strong>,
+   );
   } else {
-   parts.push(<em key={key}>{token.slice(1, -1)}</em>);
+   parts.push(
+    <em key={key}>
+     <HanziInlineText text={token.slice(1, -1)} />
+    </em>,
+   );
   }
 
   lastIndex = match.index + token.length;
  }
 
  if (lastIndex < text.length) {
-  parts.push(text.slice(lastIndex));
+  parts.push(<HanziInlineText key={`${lastIndex}-plain`} text={text.slice(lastIndex)} />);
  }
 
  return parts;

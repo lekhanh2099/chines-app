@@ -28,7 +28,7 @@ export function CheckboxField({
    required={rest?.required || false}
    helperText={helperText}
   >
-   <div className="mt-1 flex items-center gap-2">
+   <div className="flex items-center gap-2">
     <Checkbox
      name={field.name}
      checked={field.state.value}
@@ -36,11 +36,11 @@ export function CheckboxField({
      onBlur={field.handleBlur}
      {...rest}
     />
-    {label && (
+    {label ? (
      <Typography as="span" variant="bodySmall" tone="secondary">
       {label}
      </Typography>
-    )}
+    ) : null}
    </div>
   </FieldItem>
  );

@@ -1,57 +1,59 @@
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Typography } from "@/components/ui/typography";
+import {
+ HanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { CharacterAnalysis } from "@/features/hanzihome/schemas/vocab.types";
 
 export function CharacterAnalysisCard({ character }: { character: CharacterAnalysis }) {
  return (
-  <div className="grid max-w-2xs gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+  <Card variant="subtle" padding="md" className="grid max-w-2xs gap-2">
    <div className="flex flex-wrap items-center gap-2">
-    <StudyInstructionText variant="display" tone="default" weight="black" lang="zh-CN">
+    <HanziText size="review" tone="default" weight="black" leading="none">
      {character.hanzi}
-    </StudyInstructionText>
-    {character.lishu_vi && (
-     <StudyInstructionText as="span" tone="accent" weight="bold">
-      {character.lishu_vi}
-     </StudyInstructionText>
-    )}
-    {character.main_radical && (
-     <Button variant="destructive" size="xs">
+    </HanziText>
+    {character.lishu_vi ? <Badge variant="accent">{character.lishu_vi}</Badge> : null}
+    {character.main_radical ? (
+     <Badge variant="danger">
       {[
        character.main_radical.radical_name_vi,
        character.main_radical.radical_variant || character.main_radical.radical,
       ]
        .filter(Boolean)
        .join(" · ")}
-     </Button>
-    )}
+     </Badge>
+    ) : null}
    </div>
 
-   {character.modern_meaning_vi && (
+   {character.modern_meaning_vi ? (
     <StudyInstructionText>{character.modern_meaning_vi}</StudyInstructionText>
-   )}
-   {character.modern_logic_vi && (
+   ) : null}
+   {character.modern_logic_vi ? (
     <StudyInstructionText>{character.modern_logic_vi}</StudyInstructionText>
-   )}
-   {character.structure_note_vi && (
+   ) : null}
+   {character.structure_note_vi ? (
     <StudyInstructionText tone="muted">{character.structure_note_vi}</StudyInstructionText>
-   )}
+   ) : null}
 
-   {character.components.length > 0 && (
-    <div className="flex flex-wrap gap-2">
+   {character.components.length > 0 ? (
+    <div className="grid gap-1">
      {character.components.map((component) => (
-      <StudyInstructionText
+      <Typography
        as="span"
        key={`${character.hanzi}-${component.text}-${component.meaning_vi}`}
+       variant="bodySmall"
+       tone="secondary"
        weight="semibold"
-       className="rounded-lg border border-border-default px-2 py-1"
       >
        {[component.text, component.hanviet, component.meaning_vi, component.position_vi]
         .filter(Boolean)
         .join(" · ")}
-      </StudyInstructionText>
+      </Typography>
      ))}
     </div>
-   )}
-  </div>
+   ) : null}
+  </Card>
  );
 }

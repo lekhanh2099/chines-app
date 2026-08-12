@@ -50,7 +50,7 @@ export function NewNoteStarter() {
     actions={
      <Button
       type="button"
-      size="lg"
+      size="touch"
       onClick={handleCreate}
       disabled={createNoteMutation.isPending || focusModeEnabled}
      >

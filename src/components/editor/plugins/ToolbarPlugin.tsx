@@ -563,7 +563,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
        variant="ghost"
        className="toolbar-dropdown-item"
       >
-       <SeparatorHorizontal className="w-4 h-4 mr-2 shrink-0" />
+       <SeparatorHorizontal className="size-4 shrink-0" />
        Horizontal Rule
       </Button>
       <Button
@@ -577,7 +577,7 @@ function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEdita
        variant="ghost"
        className="toolbar-dropdown-item"
       >
-       <Table className="w-4 h-4 mr-2 shrink-0" />
+       <Table className="size-4 shrink-0" />
        Table
       </Button>
      </div>

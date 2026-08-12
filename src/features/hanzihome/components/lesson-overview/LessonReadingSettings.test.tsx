@@ -41,7 +41,10 @@ vi.mock("@/components/ui/dropdown-menu", () => {
   DropdownMenuRadioGroup: passthrough,
   DropdownMenuRadioItem: passthrough,
   DropdownMenuSeparator: () => null,
-  DropdownMenuShortcut: passthrough,
+  DropdownMenuSub: passthrough,
+  DropdownMenuSubContent: passthrough,
+  DropdownMenuSubTrigger: passthrough,
+  DropdownMenuTrigger: passthrough,
  };
 });
 
@@ -77,16 +80,19 @@ describe("LessonReadingSettings", () => {
   );
  });
 
- it("uses Khải thư for the default and system reader font", () => {
+ it("keeps Khải thư as the default while using a Simplified-Chinese fallback on unsupported devices", () => {
   const kaitiFontFamily = getHanziFontFamily("kaiti");
+  const systemFontFamily = getHanziFontFamily("system");
 
   expect(kaitiFontFamily).toContain('"Kaiti SC"');
-  expect(kaitiFontFamily).toContain("var(--font-lxgw-wenkai-mono-tc)");
-  expect(getHanziFontFamily("system")).toBe(kaitiFontFamily);
+  expect(kaitiFontFamily).toContain("var(--font-reading-noto-serif)");
+  expect(kaitiFontFamily).not.toContain("font-lxgw-wenkai-mono-tc");
+  expect(systemFontFamily).toContain("system-ui");
+  expect(systemFontFamily).not.toBe(kaitiFontFamily);
   expect(getHanziTypographyStyle(DEFAULT_LESSON_DISPLAY_MODE).fontFamily).toBe(kaitiFontFamily);
  });
 
- it("renders the complete reader-control grid reused by quick settings", () => {
+ it("renders the complete reader controls with a live preview", () => {
   const markup = renderToStaticMarkup(
    <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
   );
@@ -95,19 +101,23 @@ describe("LessonReadingSettings", () => {
   expect(markup).toContain("Cực lớn");
   expect(markup).toContain("Bấm để mở");
   expect(markup).toContain("Đáp án");
+  expect(markup).toContain("Xem trước");
+  expect(markup).toContain("开始自己安排时间以后");
  });
 
- it("renders the reader controls as a drill-in menu with a return action", () => {
+ it("renders quick reader categories as nested submenus", () => {
   const markup = renderToStaticMarkup(
    <DropdownMenu open>
     <DropdownMenuContent>
-     <HanziHomeReadingQuickSettingsMenu activeSection="font" onActiveSectionChange={vi.fn()} />
+     <HanziHomeReadingQuickSettingsMenu />
     </DropdownMenuContent>
    </DropdownMenu>,
   );
 
-  expect(markup).toContain("Quay lại cài đặt nhanh");
   expect(markup).toContain("Phông chữ");
+  expect(markup).toContain("Cỡ chữ");
+  expect(markup).toContain("Cách mở nội dung");
+  expect(markup).toContain("Hiển thị lớp học");
   expect(markup).toContain("ZCOOL XiaoWei");
  });
 });

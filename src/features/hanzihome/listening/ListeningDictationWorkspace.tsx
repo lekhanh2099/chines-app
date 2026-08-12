@@ -7,8 +7,10 @@ import { Headphones, Keyboard, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
+import { Typography } from "@/components/ui/typography";
 import {
  ReaderHanziText,
  StudyInstructionText,
@@ -100,14 +102,13 @@ function DictationCards({
     const showTranscript = revealed[entry.id] ?? isChecked;
 
     return (
-     <Card key={entry.id} variant="default" padding="md" className="grid gap-3 rounded-xl">
+     <Card key={entry.id} variant="default" padding="md" className="grid gap-3">
       <div className="flex min-w-0 items-center gap-2">
-       <Badge
-        variant={score === 100 ? "success" : "purple"}
-        className="size-8 justify-center rounded-lg p-0"
-       >
-        {index + 1}
-       </Badge>
+       <IconTile size="sm" tone={score === 100 ? "info" : "accent"}>
+        <Typography variant="caption" weight="black">
+         {index + 1}
+        </Typography>
+       </IconTile>
        <div className="min-w-0 flex-1">
         <StudyInstructionText variant="label" tone="default" weight="black">
          Câu {index + 1}
@@ -116,7 +117,7 @@ function DictationCards({
          Nghe → chép → kiểm tra
         </StudyInstructionText>
        </div>
-       <Button type="button" variant="surface" size="sm" onClick={() => onSpeak(expectedText)}>
+       <Button type="button" variant="surface" size="toolbar" onClick={() => onSpeak(expectedText)}>
         <Play data-icon="inline-start" />
         Nghe lại
        </Button>
@@ -140,7 +141,7 @@ function DictationCards({
       <div className="flex flex-wrap items-center gap-2">
        <Button
         type="button"
-        size="sm"
+        size="toolbar"
         disabled={!answer.trim()}
         onClick={() => {
          setChecked((current) => ({ ...current, [entry.id]: true }));
@@ -152,7 +153,7 @@ function DictationCards({
        <Button
         type="button"
         variant="outline"
-        size="sm"
+        size="toolbar"
         onClick={() => setRevealed((current) => ({ ...current, [entry.id]: !current[entry.id] }))}
        >
         {showTranscript ? "Ẩn script" : "Xem script"}
@@ -213,17 +214,15 @@ export function ListeningDictationWorkspace() {
 
  if (query.isError || !bundle || !selectedSection) {
   return (
-   <Card
-    variant="default"
-    padding="lg"
-    className="grid min-h-64 place-content-center gap-2 text-center"
-   >
-    <StudyInstructionText tone="default" weight="black">
-     Không tải được bài nghe chép
-    </StudyInstructionText>
-    <StudyInstructionText variant="bodySmall" tone="muted">
-     {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
-    </StudyInstructionText>
+   <Card variant="default" padding="lg" className="grid min-h-64 place-content-center gap-2">
+    <div className="grid gap-1 text-center">
+     <StudyInstructionText tone="default" weight="black">
+      Không tải được bài nghe chép
+     </StudyInstructionText>
+     <StudyInstructionText variant="bodySmall" tone="muted">
+      {query.error?.message ?? "Bài này chưa có dữ liệu nghe."}
+     </StudyInstructionText>
+    </div>
    </Card>
   );
  }
@@ -294,9 +293,9 @@ export function ListeningDictationWorkspace() {
 
     <Card variant="section" padding="md" className="grid gap-1.5">
      <div className="flex items-start gap-2">
-      <Headphones className="mt-0.5 size-5 shrink-0 text-primary" />
-      <div className="min-w-0">
-       <Badge variant="purple" className="mb-1 w-fit">
+      <Headphones className="size-5 shrink-0 translate-y-0.5 text-primary" />
+      <div className="grid min-w-0 gap-1">
+       <Badge variant="purple" className="w-fit">
         Bài nghe chép
        </Badge>
        <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">
@@ -320,13 +319,15 @@ export function ListeningDictationWorkspace() {
       onSpeakSequence={tts.speakSequence}
      />
     ) : (
-     <Card variant="subtle" padding="lg" className="rounded-xl text-center">
-      <StudyInstructionText tone="default" weight="black">
-       Phần này chưa có script để nghe chép.
-      </StudyInstructionText>
-      <StudyInstructionText variant="bodySmall" tone="muted" className="mt-1">
-       Chọn đề mục khác có nội dung ghi âm.
-      </StudyInstructionText>
+     <Card variant="subtle" padding="lg">
+      <div className="grid gap-1 text-center">
+       <StudyInstructionText tone="default" weight="black">
+        Phần này chưa có script để nghe chép.
+       </StudyInstructionText>
+       <StudyInstructionText variant="bodySmall" tone="muted">
+        Chọn đề mục khác có nội dung ghi âm.
+       </StudyInstructionText>
+      </div>
      </Card>
     )}
    </div>

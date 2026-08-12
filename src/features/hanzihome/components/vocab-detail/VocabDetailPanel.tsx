@@ -1,6 +1,9 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { useEffect, useState } from "react";
 
@@ -195,7 +198,9 @@ export function VocabDetailPanel({
            aria-pressed={index === activeWritableCharacterIndex}
            aria-label={`Xem nét viết chữ ${character}, vị trí ${index + 1}`}
           >
-           <span lang="zh-CN">{character}</span>
+           <HanziText as="span" size="medium" leading="none">
+            {character}
+           </HanziText>
           </Button>
          ))}
         </div>

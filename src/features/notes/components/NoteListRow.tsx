@@ -43,11 +43,11 @@ import {
  DropdownMenuSubTrigger,
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { IconTile } from "@/components/ui/icon-tile";
 import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
 import { useDeleteNoteFromList } from "@/features/notes/hooks/useNotesList";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { readingStatusLabels } from "@/features/notes/note-library-utils";
-import { cn } from "@/lib/utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
 import { noteTabsStore } from "@/stores/note-tabs-store";
 import { ReadingStatusSchema } from "@/types/database";
@@ -55,19 +55,18 @@ import { z } from "zod";
 import type { LessonLookup } from "./noteContext";
 import { getNoteContext } from "./noteContext";
 
-const contextIconClassName = "size-4 shrink-0";
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function getContextIcon(kind: ReturnType<typeof getNoteContext>["kind"]) {
- if (kind === "lesson") return <BookOpen className={contextIconClassName} />;
- if (kind === "quick") return <Zap className={contextIconClassName} />;
- return <NotebookPen className={contextIconClassName} />;
+ if (kind === "lesson") return <BookOpen />;
+ if (kind === "quick") return <Zap />;
+ return <NotebookPen />;
 }
 
-function getContextClasses(kind: ReturnType<typeof getNoteContext>["kind"]) {
- if (kind === "lesson") return "border-info/30 bg-info-subtle text-info-text";
- if (kind === "quick") return "border-warning/30 bg-warning-subtle text-warning-text";
- return "border-border-default bg-bg-subtle text-text-secondary";
+function getContextTone(kind: ReturnType<typeof getNoteContext>["kind"]) {
+ if (kind === "lesson") return "info";
+ if (kind === "quick") return "warning";
+ return "neutral";
 }
 
 function getFolderBreadcrumb(
@@ -130,14 +129,9 @@ export function NoteListRow({
    <article className="group grid grid-cols-[minmax(0,1fr)_auto] border-b border-border-default transition-colors last:border-b-0 hover:bg-bg-subtle/70">
     <Link href={`/notes/${note.id}`} className="min-w-0 px-3 py-3 sm:px-4 lg:px-5 lg:py-4">
      <div className="flex min-w-0 items-start gap-3">
-      <span
-       className={cn(
-        "mt-0.5 flex size-8 items-center justify-center rounded-lg border",
-        getContextClasses(context.kind),
-       )}
-      >
+      <IconTile tone={getContextTone(context.kind)} size="sm" className="translate-y-0.5">
        {getContextIcon(context.kind)}
-      </span>
+      </IconTile>
 
       <div className="grid min-w-0 gap-1.5">
        <div className="flex min-w-0 flex-wrap items-center gap-2">
@@ -145,37 +139,40 @@ export function NoteListRow({
          {context.displayTitle}
         </Typography>
         {note.reading_status ? (
-         <Badge variant="purple" size="sm">
+         <Badge variant="purple" size="sm" casing="natural">
           {readingStatusLabels[note.reading_status]}
          </Badge>
         ) : (
-         <Badge variant={context.kind === "lesson" ? "purple" : "default"} size="sm">
+         <Badge
+          variant={context.kind === "lesson" ? "purple" : "default"}
+          size="sm"
+          casing="natural"
+         >
           {context.title}
          </Badge>
         )}
        </div>
 
-       <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted">
+       <Typography
+        as="div"
+        variant="caption"
+        tone="muted"
+        weight="medium"
+        className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1"
+       >
         {folderBreadcrumb ? <span>{folderBreadcrumb}</span> : null}
         {folderBreadcrumb && (note.source_label || context.subtitle) ? <span>/</span> : null}
-        <Typography as="span" clamp="one">
+        <Typography as="span" variant="caption" tone="muted" weight="medium" clamp="one">
          {note.source_label || context.subtitle}
         </Typography>
         {note.source_author ? <span>· {note.source_author}</span> : null}
-       </div>
+       </Typography>
 
        <div className="flex flex-wrap items-center gap-1.5">
         {context.badges.slice(1, 4).map((tag) => (
-         <Typography
-          key={tag}
-          variant="caption"
-          tone="muted"
-          weight="bold"
-          scale="micro"
-          className="rounded-full border border-border-default bg-bg-subtle px-2 py-0.5"
-         >
+         <Badge key={tag} size="sm" casing="natural">
           {tag}
-         </Typography>
+         </Badge>
         ))}
         <Typography
          variant="caption"

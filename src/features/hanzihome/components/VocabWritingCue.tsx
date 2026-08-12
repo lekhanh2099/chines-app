@@ -1,6 +1,7 @@
 "use client";
 
 import {
+ HanziText,
  PinyinText,
  StudyInstructionText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
@@ -82,16 +83,15 @@ export function VocabWritingCue({
 
  return (
   <section
-   className={
+   className={[
+    "grid gap-2",
     !isShowAll
-     ? [
-        compact
-         ? "rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-         : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
-        className,
-       ].join(" ")
-     : className
-   }
+     ? compact
+       ? "rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+       : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4"
+     : "",
+    className,
+   ].join(" ")}
    onClick={(event) => event.stopPropagation()}
    onMouseDown={(event) => event.stopPropagation()}
    onTouchStart={(event) => event.stopPropagation()}
@@ -107,10 +107,12 @@ export function VocabWritingCue({
          type="button"
          onClick={() => selectCharacter(index)}
          variant={active ? "active" : "outline"}
-         size={compact ? "xs" : "default"}
-         lang="zh-CN"
+         size={compact ? "compact" : "touch"}
+         aria-label={`Xem nét viết chữ ${char}`}
         >
-         {char}
+         <HanziText as="span" size="medium" leading="none">
+          {char}
+         </HanziText>
         </Button>
        );
       })}
@@ -120,7 +122,7 @@ export function VocabWritingCue({
 
    <div
     className={[
-     "relative mt-2 grid gap-4 md:items-start",
+     "relative grid gap-4 md:items-start",
      compact || isShowAll ? "justify-items-center" : "md:grid-cols-[auto_minmax(0,1fr)]",
     ].join(" ")}
    >
@@ -145,7 +147,7 @@ export function VocabWritingCue({
     </div>
 
     {!compact && (
-     <div className="grid content-start gap-2  leading-relaxed text-text-secondary">
+     <div className="grid content-start gap-2 leading-relaxed text-text-secondary">
       <StudyInstructionText>
        <StudyInstructionText as="span" tone="default" weight="bold">
         Bính âm:

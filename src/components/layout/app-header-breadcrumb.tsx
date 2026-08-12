@@ -17,9 +17,6 @@ import { cn } from "@/lib/utils";
 const headerBreadcrumbItemClassName =
  "inline-flex h-8 min-h-8 max-w-[min(14rem,32vw)] items-center gap-1.5 rounded-lg px-2 text-sm font-bold text-text-secondary transition-colors hover:bg-bg-subtle hover:text-text-primary";
 
-export const appHeaderBreadcrumbSelectTriggerClassName =
- "h-8 min-h-8 min-w-0 rounded-lg border-transparent bg-transparent px-2 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:border-ring focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle *:data-[slot=select-value]:truncate [&_svg]:text-text-muted";
-
 export function AppHeaderBreadcrumb({
  children,
  className,

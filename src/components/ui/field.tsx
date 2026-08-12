@@ -36,10 +36,7 @@ function FieldLegend({
   <legend
    data-slot="field-legend"
    data-variant={variant}
-   className={cn(
-    "mb-1.5 font-medium data-[variant=label]: data-[variant=legend]:text-base",
-    className,
-   )}
+   className={cn("pb-1.5 font-medium data-[variant=legend]:text-base", className)}
    {...props}
   />
  );
@@ -63,9 +60,9 @@ const fieldVariants = cva("group/field flex w-full gap-2 data-[invalid=true]:tex
   orientation: {
    vertical: "flex-col *:w-full [&>.sr-only]:w-auto",
    horizontal:
-    "flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+    "flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:translate-y-px",
    responsive:
-    "flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+    "flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:translate-y-px",
   },
  },
  defaultVariants: {
@@ -118,7 +115,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
   <div
    data-slot="field-label"
    className={cn(
-    "flex w-fit items-center gap-2  font-medium group-data-[disabled=true]/field:opacity-50",
+    "flex w-fit items-center gap-2 font-medium group-data-[disabled=true]/field:opacity-50",
     className,
    )}
    {...props}
@@ -137,8 +134,7 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
    leading="normal"
    data-slot="field-description"
    className={cn(
-    "group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5",
-    "last:mt-0 nth-last-2:-mt-1",
+    "group-has-data-horizontal/field:text-balance",
     "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
     className,
    )}
@@ -158,10 +154,10 @@ function FieldSeparator({
   <div
    data-slot="field-separator"
    data-content={!!children}
-   className={cn("relative -my-2 h-5  group-data-[variant=outline]/field-group:-mb-2", className)}
+   className={cn("relative grid min-h-5 place-items-center", className)}
    {...props}
   >
-   <Separator className="absolute inset-0 top-1/2" />
+   <Separator className="absolute inset-x-0 top-1/2" />
    {children && (
     <span
      className="relative mx-auto block w-fit bg-background px-2 text-muted-foreground"
@@ -198,7 +194,7 @@ function FieldError({
   }
 
   return (
-   <ul className="ml-4 flex list-disc flex-col gap-1">
+   <ul className="flex list-inside list-disc flex-col gap-1">
     {uniqueErrors.map((error, index) => error?.message && <li key={index}>{error.message}</li>)}
    </ul>
   );
@@ -212,7 +208,7 @@ function FieldError({
   <div
    role="alert"
    data-slot="field-error"
-   className={cn(" font-normal text-destructive", className)}
+   className={cn("font-normal text-destructive", className)}
    {...props}
   >
    {content}

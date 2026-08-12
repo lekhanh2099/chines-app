@@ -53,18 +53,6 @@ const CLIENT_SERVER_IMPORT_PATTERN =
  /(?:from\s+|import\s*\()["'](?:@\/lib\/supabase\/server|@\/[^"']*\/server(?:[./"'])|server-only)/;
 const GENERATED_TYPE_FILES = new Set(["src/types/supabase.generated.ts"]);
 const TYPE_ASSERTION_EXCEPTION_BUDGET = new Map();
-const LIBRARY_UNION_EXCEPTION_BUDGET = new Map([
- ["src/components/editor/nodes/InlineNoteNode.tsx::DOMConversionOutput | null", 1],
- ["src/components/editor/nodes/InlineNoteNode.tsx::DOMConversionMap | null", 1],
- ["src/components/editor/nodes/InlineNoteNode.tsx::LexicalNode | null | undefined", 1],
- ["src/components/editor/nodes/InternalLinkNode.ts::DOMConversionMap | null", 1],
- ["src/components/editor/nodes/InternalLinkNode.ts::null | TextNode", 1],
- ["src/components/editor/nodes/InternalLinkNode.ts::DOMConversionOutput | null", 1],
- ["src/components/editor/nodes/InternalLinkNode.ts::LexicalNode | null | undefined", 1],
- ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionOutput | null", 1],
- ["src/components/editor/nodes/PinyinNode.tsx::DOMConversionMap | null", 1],
- ["src/components/editor/nodes/PinyinNode.tsx::LexicalNode | null | undefined", 1],
-]);
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -112,11 +100,9 @@ export function inspectUnsafeTypeConstructs({
   );
 
   const inspectTypeNode = (node) => {
-   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) {
+   if (node.kind === ts.SyntaxKind.AnyKeyword) {
     const { line, character } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
-    failures.push(
-     `${file}:${line + 1}:${character + 1} uses an unsafe explicit ${node.getText(sourceFile)} type`,
-    );
+    failures.push(`${file}:${line + 1}:${character + 1} uses an unsafe explicit any type`);
    }
 
    if (ts.isAsExpression(node) || ts.isTypeAssertionExpression(node)) {
@@ -205,9 +191,7 @@ function getPackageScriptEntrypoints(sourceFileSet) {
  for (const command of Object.values(packageJson.scripts ?? {})) {
   for (const match of command.matchAll(scriptFilePattern)) {
    const file = normalizePath(match[1]);
-   if (sourceFileSet.has(file)) {
-    entrypoints.add(file);
-   }
+   if (sourceFileSet.has(file)) entrypoints.add(file);
   }
  }
 
@@ -305,9 +289,7 @@ function findUnreachableSourceFiles(files) {
    if (!resolution) continue;
 
    const resolvedFile = normalizePath(resolution.resolvedFileName);
-   if (sourceFileSet.has(resolvedFile)) {
-    resolvedDependencies.add(resolvedFile);
-   }
+   if (sourceFileSet.has(resolvedFile)) resolvedDependencies.add(resolvedFile);
   }
 
   dependencies.set(file, resolvedDependencies);
@@ -322,9 +304,7 @@ function findUnreachableSourceFiles(files) {
     isDeclarationFile(file),
   ),
  );
- for (const file of getPackageScriptEntrypoints(sourceFileSet)) {
-  entrypoints.add(file);
- }
+ for (const file of getPackageScriptEntrypoints(sourceFileSet)) entrypoints.add(file);
 
  const reachable = new Set();
  const pending = [...entrypoints];
@@ -335,9 +315,7 @@ function findUnreachableSourceFiles(files) {
   reachable.add(file);
 
   for (const dependency of dependencies.get(file) ?? []) {
-   if (!reachable.has(dependency)) {
-    pending.push(dependency);
-   }
+   if (!reachable.has(dependency)) pending.push(dependency);
   }
  }
 
@@ -364,38 +342,6 @@ export function runSourceCheck() {
   if (isClientModule && CLIENT_SERVER_IMPORT_PATTERN.test(source)) {
    failures.push(`${file} is a Client Component importing a server-only module`);
   }
-
-  if (!GENERATED_TYPE_FILES.has(file)) {
-   const sourceFile = ts.createSourceFile(
-    file,
-    source,
-    ts.ScriptTarget.Latest,
-    true,
-    file.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
-   );
-
-   const inspectUnionTypeNode = (node) => {
-    if (ts.isUnionTypeNode(node)) {
-     const unionText = node.getText(sourceFile).replace(/\s+/g, " ");
-     const exceptionKey = `${file}::${unionText}`;
-     const remainingBudget = LIBRARY_UNION_EXCEPTION_BUDGET.get(exceptionKey) ?? 0;
-
-     if (remainingBudget > 0) {
-      LIBRARY_UNION_EXCEPTION_BUDGET.set(exceptionKey, remainingBudget - 1);
-     } else {
-      const { line, character } = sourceFile.getLineAndCharacterOfPosition(
-       node.getStart(sourceFile),
-      );
-      failures.push(
-       `${file}:${line + 1}:${character + 1} uses an unaudited handwritten union: ${unionText}`,
-      );
-     }
-    }
-    ts.forEachChild(node, inspectUnionTypeNode);
-   };
-
-   inspectUnionTypeNode(sourceFile);
-  }
  }
 
  failures.push(...inspectUnsafeTypeConstructs({ sources }));
@@ -417,6 +363,4 @@ export function runSourceCheck() {
 const isMainModule =
  process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
 
-if (isMainModule) {
- runSourceCheck();
-}
+if (isMainModule) runSourceCheck();

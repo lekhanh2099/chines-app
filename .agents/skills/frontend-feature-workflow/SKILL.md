@@ -1,10 +1,10 @@
 ---
 name: frontend-feature-workflow
-description: Implement, debug, refactor, review, or clean up React and Next.js code in the chines-app repository. Use for feature, page, route, component, hook, state ownership, TanStack Query, TanStack Form, Zod, API, TypeScript, architecture, performance, source cleanup, or any non-trivial change under src/.
-compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript
+description: Implement, debug, refactor, review, or clean up React and Next.js code in the chines-app repository. Use for feature, page, route, component, hook, state ownership, TanStack Query, TanStack Form, TanStack Store, Zod, API, TypeScript, architecture, performance, source cleanup, or any non-trivial change under src/.
+compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "2.0"
+  version: "2.1"
 ---
 
 # Frontend Feature Workflow
@@ -27,7 +27,8 @@ cat docs/architecture/frontend-structure.md
 cat docs/agent/skill-authoring.md
 ```
 
-When UI is involved, also load `frontend-ui-system`.
+When UI, UX, information architecture or interaction flow is involved, also
+load `frontend-ui-system`.
 
 For Next.js behavior, inspect the relevant installed documentation under:
 
@@ -43,9 +44,9 @@ Choose the primary category:
 
 - route/server composition;
 - data loading/query/cache;
-- local or global state;
+- local or cross-feature state;
 - form and validation;
-- UI interaction;
+- UI/UX interaction flow;
 - API/service;
 - Supabase persistence;
 - renderer/data normalization;
@@ -60,7 +61,8 @@ Choose a verification tier:
 - Subsystem: a feature boundary, query, form, store, API/Zod boundary,
   renderer family, shared additive component, or several local consumers.
 - Full: dependency, schema, route/public API, persisted state, shared migration,
-  multi-surface behavior, or release preparation.
+  information-architecture change, multi-surface behavior, or release
+  preparation.
 
 Start targeted and escalate only when evidence shows a wider contract.
 
@@ -84,7 +86,7 @@ Identify:
 - external boundaries;
 - direct consumers;
 - loading/empty/error states;
-- current component contract;
+- current component/flow contract;
 - root cause or missing contract.
 
 Do not patch only the visible symptom.
@@ -93,27 +95,62 @@ For regression work, reproduce the reported failure before or alongside the
 change. Test the lowest boundary that still fails for the real regression; do
 not substitute an easier test that cannot prove it.
 
-## 4. State ownership
+## 4. State ownership — TanStack first where it owns the problem
 
-Use the repository matrix:
+Use this matrix:
 
-- route state: URL/search params;
-- server state: TanStack Query;
-- form state: TanStack Form;
-- transient interaction: local state;
-- cross-feature client preference: existing scoped store;
-- derived data: pure calculation.
+```text
+URL/shareable navigation state  -> route/search params
+server/cache/async remote state -> TanStack Query
+form values/dirty/validation    -> TanStack Form
+cross-feature client UI/prefs   -> scoped TanStack Store
+local transient interaction     -> local React state
+purely derived values           -> compute from authoritative inputs
+```
+
+One value has one authoritative owner.
 
 Reject:
 
-- mirrored form/query state;
+- mirrored form/query/store/route state;
+- copying query data into `useState` without an explicit editable-draft contract;
 - effect-driven pure derivation;
+- two effects synchronizing the same value in opposite directions;
 - force render;
 - random keys as state repair;
 - `setTimeout` as render repair;
 - broad cache invalidation hiding unclear ownership.
 
-## 5. Plan
+Every state-writing effect must synchronize with an external system or bridge a
+verified ownership boundary, and it must be idempotent: running again with the
+same authoritative inputs cannot keep producing a state change. This is a hard
+review point for preventing update-depth loops.
+
+## 5. UI/UX flow changes
+
+When the user explicitly authorizes UX/system refactoring, preserving the old
+screen flow is not an invariant. The implementation MAY move, merge or remove
+steps when evidence shows duplicated navigation, hidden active state,
+unnecessary interaction cost or poor task orientation.
+
+Before changing flow, document:
+
+```text
+User goal:
+Current friction:
+New flow:
+State owner at every transition:
+Business/data invariants preserved:
+Back/deep-link behavior:
+Loading/error/empty behavior:
+Keyboard/touch behavior:
+```
+
+Changing flow does not authorize changing database semantics, persisted data,
+API contracts or authorization rules unless those changes are separately in
+scope.
+
+## 6. Plan
 
 Before mutation, report:
 
@@ -124,6 +161,7 @@ Files and consumers:
 State owner:
 Smallest coherent change:
 Behavior preserved:
+Intentional UX behavior changed:
 Risk:
 Confirmation required:
 Verification:
@@ -132,7 +170,7 @@ Verification:
 A smallest coherent change may span several files when a boundary contract is
 the root cause. It is not necessarily the fewest changed lines.
 
-## 6. Implementation
+## 7. Implementation
 
 - Keep route pages thin.
 - Keep feature behavior in the feature.
@@ -141,20 +179,24 @@ the root cause. It is not necessarily the fewest changed lines.
 - Keep errors observable.
 - Add abstractions only for stable repeated semantics.
 - Preserve unrelated changes.
-- Do not broaden scope into UI redesign or data migration without explicit
-  requirement.
+- Prefer the existing TanStack owner instead of adding a parallel React state
+  layer.
+- When a feature surface becomes complex because transport/domain/UI logic are
+  co-located in a route page, move the behavior into its feature before adding
+  more local styling or state.
+- Do not broaden into database/API migration without explicit requirement.
 
-When touching a shared component, search all consumers before changing its API.
+When touching a shared component, inspect its consumers and authoritative local
+contract before changing its API.
 
-## 7. Risk
+## 8. Risk
 
 Read `docs/agent/risk-confirmation.md`.
 
-STOP AND CONFIRM for high-risk work.
+STOP AND CONFIRM for high-risk work that has not already been explicitly
+authorized by the user. Do not use confirmation to avoid investigation.
 
-Do not use confirmation to avoid investigation.
-
-## 8. Verification
+## 9. Verification
 
 Use the selected tier. Fast and subsystem feedback starts with applicable
 targeted commands:
@@ -168,15 +210,20 @@ npm run test:run
 Run `npm run check` once for the full path, app-code completion or release
 preparation.
 
-For UI, load and follow `frontend-ui-system`.
+For UI/UX, load and follow `frontend-ui-system`, including actual viewport and
+keyboard verification when the environment supports rendering.
 
-## 9. Handoff
+If the environment cannot run the gate, state the exact missing capability and
+do not claim completion from source inspection alone.
+
+## 10. Handoff
 
 Report:
 
 ```text
 Scope:
 Root cause / contract gap:
+Intentional flow changes:
 Precedent used:
 Authoritative contract:
 Data / state flow:

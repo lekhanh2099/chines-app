@@ -4,11 +4,13 @@ import * as React from "react";
 import { Select as SelectPrimitive } from "radix-ui";
 import { z } from "zod";
 
+import { focusRingClassName, invalidFocusRingClassName } from "@/components/ui/focus-ring";
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
 
 const SelectTriggerSizeSchema = z.enum(["sm", "default"]);
 const SelectTriggerWidthSchema = z.enum(["content", "full"]);
+const SelectTriggerVariantSchema = z.enum(["default", "breadcrumb"]);
 
 function Select({ ...props }: React.ComponentProps<typeof SelectPrimitive.Root>) {
  return <SelectPrimitive.Root data-slot="select" {...props} />;
@@ -32,19 +34,30 @@ function SelectTrigger({
  className,
  size = SelectTriggerSizeSchema.enum.default,
  width = SelectTriggerWidthSchema.enum.content,
+ variant = SelectTriggerVariantSchema.enum.default,
  children,
  ...props
 }: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
  size?: z.infer<typeof SelectTriggerSizeSchema>;
  width?: z.infer<typeof SelectTriggerWidthSchema>;
+ variant?: z.infer<typeof SelectTriggerVariantSchema>;
 }) {
+ const defaultAppearance =
+  "border-input bg-bg-input py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9";
+ const breadcrumbAppearance =
+  "h-8 min-h-8 border-transparent bg-transparent px-2 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle [&_svg]:text-text-muted";
+
  return (
   <SelectPrimitive.Trigger
    data-slot="select-trigger"
    data-size={size}
    data-width={width}
+   data-variant={variant}
    className={cn(
-    "flex w-fit items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring/60 focus-visible:ring-2 focus-visible:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/15 data-placeholder:text-muted-foreground data-[size=default]:h-11 data-[size=sm]:h-9 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "flex w-fit items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    focusRingClassName,
+    invalidFocusRingClassName,
+    variant === "breadcrumb" ? breadcrumbAppearance : defaultAppearance,
     className,
    )}
    {...props}
@@ -71,7 +84,7 @@ function SelectContent({
     data-slot="select-content"
     data-align-trigger={position === "item-aligned"}
     className={cn(
-     "relative z-120 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[var(--radix-select-trigger-width)] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto scrollbar-soft rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-theme-lg duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+     "relative z-120 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[var(--radix-select-trigger-width)] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto scrollbar-soft rounded-xl border border-border-default bg-popover p-1 text-popover-foreground shadow-theme-lg duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
      position === "popper" &&
       "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
      className,
@@ -116,7 +129,7 @@ function SelectItem({
   <SelectPrimitive.Item
    data-slot="select-item"
    className={cn(
-    "relative flex min-h-10 w-full cursor-default items-center gap-2 rounded-lg py-2 pr-8 pl-2.5  leading-snug outline-hidden select-none focus:bg-accent focus:text-foreground not-data-[variant=destructive]:focus:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+    "relative flex min-h-10 w-full cursor-default items-center gap-2 rounded-lg py-2 pr-8 pl-2.5 leading-snug outline-hidden select-none focus:bg-accent focus:text-foreground not-data-[variant=destructive]:focus:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
     className,
    )}
    {...props}

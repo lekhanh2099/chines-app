@@ -1,7 +1,11 @@
 "use client";
 
-import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Typography } from "@/components/ui/typography";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import {
+ HanziAwareText,
+ StudyInstructionText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import {
  cleanGrammarDisplayLine,
@@ -15,22 +19,24 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
  const bodyLines = section.lines.filter((line) => !isImportantGrammarLine(line));
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
-   <Typography as="h4" variant="cardTitle" tone="default" weight="black">
-    {cleanGrammarDisplayLine(section.title)}
-   </Typography>
+  <Card variant="section" padding="md" className="grid gap-3">
+   <HanziAwareText
+    as="h4"
+    text={cleanGrammarDisplayLine(section.title)}
+    variant="cardTitle"
+    tone="default"
+    weight="black"
+   />
 
-   {importantLines.length > 0 && (
-    <div className="grid gap-2">
+   {importantLines.length > 0 ? (
+    <div className="grid gap-3">
      {importantLines.map((line, index) => {
       const parts = splitImportantGrammarLine(line);
 
       return (
-       <div
-        key={`${section.id}-important-line-${index}`}
-        className="rounded-xl border border-info/30 bg-bg-primary px-3 py-2 shadow-theme-sm"
-       >
-        {parts.label && (
+       <section key={`${section.id}-important-line-${index}`} className="grid gap-1">
+        {index > 0 ? <Separator /> : null}
+        {parts.label ? (
          <StudyInstructionText
           variant="overline"
           tone="info"
@@ -40,28 +46,29 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
          >
           {parts.label}
          </StudyInstructionText>
-        )}
-        <StudyInstructionText
+        ) : null}
+        <HanziAwareText
+         text={cleanGrammarDisplayLine(parts.value)}
          variant="code"
          tone="default"
          weight="black"
          leading="relaxed"
-         className="mt-1"
-        >
-         {cleanGrammarDisplayLine(parts.value)}
-        </StudyInstructionText>
-       </div>
+        />
+       </section>
       );
      })}
     </div>
-   )}
+   ) : null}
 
-   {bodyLines.length > 0 && (
-    <MarkdownContent
-     content={bodyLines.map(cleanGrammarDisplayLine).join("\n")}
-     className="gap-2"
-    />
-   )}
-  </div>
+   {bodyLines.length > 0 ? (
+    <>
+     {importantLines.length > 0 ? <Separator /> : null}
+     <MarkdownContent
+      content={bodyLines.map(cleanGrammarDisplayLine).join("\n")}
+      className="gap-2"
+     />
+    </>
+   ) : null}
+  </Card>
  );
 }

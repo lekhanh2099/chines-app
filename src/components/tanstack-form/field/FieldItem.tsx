@@ -21,22 +21,22 @@ export function FieldItem({
 }: FieldItemProps & { children: React.ReactNode }) {
  "use no memo";
  return (
-  <div className="flex flex-col">
-   {label && (
-    <Label variant="label" tone="secondary" weight="semibold" className="mb-2">
-     {label}{" "}
-     {required && (
+  <div className="grid gap-2">
+   {label ? (
+    <Label variant="label" tone="secondary" weight="semibold" className="gap-1">
+     {label}
+     {required ? (
       <Typography as="span" tone="danger">
        *
       </Typography>
-     )}
+     ) : null}
     </Label>
-   )}
-   {description && (
-    <Typography as="p" variant="caption" tone="muted" className="mb-2">
+   ) : null}
+   {description ? (
+    <Typography as="p" variant="caption" tone="muted">
      {description}
     </Typography>
-   )}
+   ) : null}
    {children}
    <FieldInfo field={field} helperText={helperText} />
   </div>

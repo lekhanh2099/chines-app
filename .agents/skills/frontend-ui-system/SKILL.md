@@ -1,192 +1,269 @@
 ---
 name: frontend-ui-system
-description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use when a task mentions component reuse, design system, Button, Dialog, Select, Popover, DropdownMenu, Menu, Tooltip, Chip, Badge, Typography, Avatar, Switch, Sheet, Tabs, Card, Input, form control, command palette, global search, settings menu, toolbar, responsive layout, iPad, mobile, Tailwind classes, tokens, accessibility, keyboard, focus, loading, empty, error, hover, or visual consistency.
-compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers
+description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use for information architecture, user flow, component reuse, design system, controls, settings, navigation, responsive layout, iPad/mobile, accessibility, typography, tokens, states, theme/color ownership, or visual consistency.
+compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "2.1"
+  version: "3.11"
 ---
 
 # Frontend UI System
 
 ## 1. Required context
 
-Read:
+Read only the relevant local contracts:
 
 ```bash
 cat AGENTS.md
 cat docs/ui/component-contracts.md
 cat docs/ui/component-inventory.md
 cat docs/ui/ui-verification.md
-cat docs/agent/skill-authoring.md
-git status --short
+cat docs/architecture/frontend-structure.md
 ```
 
-Read local source for every primitive or pattern being considered.
+For theme, color, appearance mode or palette work, also read
+[`docs/ui/theme-contract.md`](../../../docs/ui/theme-contract.md).
 
-When shadcn is involved:
+Read the local primitive/pattern source before changing or recreating it. Local source overrides generic examples.
 
-```bash
-npx shadcn@latest info --json
-npx shadcn@latest docs <component>
+For shadcn changes, inspect current source and use CLI dry-run/diff before overwriting anything.
+
+## 2. Start from the user goal
+
+A UI refactor may change information architecture or flow when the old flow creates duplicated navigation, hidden state, unnecessary steps, weak orientation or interaction clutter.
+
+Before coding, resolve:
+
+```text
+User goal:
+Current friction:
+Primary action:
+Information hierarchy:
+Flow/state transitions:
+Loading / empty / error / disabled states:
+Responsive + touch behavior:
+Keyboard/focus behavior:
+Data/state owner:
+Business/data invariants:
 ```
 
-Local source overrides generic examples.
+Do not preserve old JSX merely because it already exists. Do not change flow merely because another layout looks cleaner.
 
-## 2. Inventory before JSX
+## 3. State ownership
 
-Report:
+Use one authoritative owner:
+
+```text
+server/cache state       -> TanStack Query
+form state               -> TanStack Form
+cross-feature client UI  -> scoped TanStack Store
+shareable navigation     -> route/search params
+local transient UI       -> React local state
+derived value            -> compute directly
+```
+
+Do not mirror Query/Form/Store/route values into local state. Do not use `useEffect` for pure derivation. Every state-writing effect must represent a real browser/subscription/imperative/external-system bridge and be idempotent.
+
+Internal TypeScript unions/discriminated unions are valid when they model local compile-time state. Use Zod for runtime/external/persisted boundaries, not merely to avoid a union. `unknown` is valid at a true untrusted/library boundary when narrowed before domain/UI use. Follow the root `AGENTS.md` type contract.
+
+## 4. Shared shell boundary
+
+`src/components/layout/**` owns global chrome only and must not import feature implementation code.
+
+Feature-specific context enters shell through a generic owner-safe slot/store. HanziHome catalog/search/reader behavior stays in HanziHome; Header renders only generic shell state.
+
+## 5. Inventory before JSX
+
+Classify every reusable UI need:
 
 ```text
 Need:
 Existing primitive:
 Existing pattern:
+Existing feature composition:
 Current consumers:
 Missing contract:
 Decision: use | extend | create | justified local exception
 ```
 
-Search:
+Do not create a second Button, Card, PageHeader, IconTile, Dialog, Select, DropdownMenu, Tooltip, Chip, Typography, Switch, Tabs or SegmentedControl visual language inside a feature.
 
-```bash
-find src/components/ui -maxdepth 2 -type f | sort
-find src/components/patterns -maxdepth 3 -type f 2>/dev/null | sort
-rg -n 'from "@base-ui/react|from "radix-ui|from "@radix-ui/' src \
-  --glob '!src/components/ui/**'
-```
+## 6. Primitive ownership
 
-Do not create a second Button, Dialog, Select, DropdownMenu, Tooltip, Chip,
-Typography or Switch visual language inside a feature.
-
-Canonical inventory components are active contracts. A component having no
-current consumer is not permission to recreate its semantics locally. When the
-need matches Typography, Avatar, Switch, Chip, EmptyState, or another canonical
-contract, use that component and make it a real consumer.
-
-## 3. Primitive boundary
-
-Feature code MUST NOT import Base UI or Radix primitives directly.
+Feature code does not import Radix/Base primitives directly unless it is a documented integration adapter.
 
 Shared primitives own:
 
-- internal tokens;
-- interaction anatomy;
-- focus;
-- disabled/invalid behavior;
-- variants;
+- colors/tokens;
+- border/radius/background/shadow;
+- internal padding/density;
+- typography;
+- hover/focus/active/disabled/invalid behavior;
 - overlay stack;
 - internal icon sizing.
 
-Feature code owns labels, data, callbacks, business conditions and parent layout
-participation.
+Feature code owns labels, data, callbacks, business conditions, parent layout, responsive placement and external spacing.
 
-Follow the `className` contract in `docs/ui/component-contracts.md`.
-
-## 4. Component choice
-
-Use the canonical matrix and inventory.
-
-Special rules:
-
-- DropdownMenu is the canonical action-menu primitive.
-- A styled Popover is not automatically a Menu.
-- Tooltip contains supplementary information only.
-- Badge is static; Chip is interactive.
-- Toggle Buttons require exposed state; direct booleans should use Switch.
-- Typography is for app hierarchy, not HanziHome learner typography.
-- A keyboard search surface is a composite, not Input + Dialog alone.
-- Form adapters compose shared UI and must not create a parallel system.
-- Legacy component paths gain no new consumers without justification.
-- Do not create an alias-only pattern around an existing primitive.
-
-Application `h1`–`h6` and `p` JSX is forbidden outside the Typography
-implementation. Use `Typography` with the correct `as` element and semantic
-variant. Native structural elements must not carry a parallel typography recipe.
-
-Inside HanziHome, distinguish the contracts explicitly:
-
-- app/page/panel hierarchy: Typography;
-- Chinese learner text, pinyin, reading-size and study typography:
-  `HanziText`, `ReaderHanziText`, `AdaptiveStudyText`, `PinyinText`,
-  `TranslationText`, `StudyInstructionText`, or `HanziFontPreview`.
-
-Typography and learner-text call sites use typed props for tone, weight, scale,
-leading and tracking. Their `className` may contain parent-owned layout only;
-font, text size, text color, line height and tracking utilities are forbidden.
-
-## 5. Variant design
-
-Add a variant only when it represents a stable semantic or interaction contract.
-
-Good:
-
-```text
-toolbar density
-menu density
-destructive menu action
-top-placed command dialog
-static badge vs interactive chip
-```
+Call-site `className` is layout-only. Do not repair primitive visuals from feature code.
 
 Bad:
 
+```tsx
+<Card className="rounded-xl border bg-bg-card p-4" />
+<SelectTrigger className="h-10 bg-bg-card text-sm" />
+<PageHeader className="[&_h1]:text-2xl" />
+```
+
+When a variation repeats, extend the owner with a semantic typed API.
+
+`scripts/check-ui-standards.mjs` is a CI/repository guard for these project-specific ownership rules. Do not add a broad baseline or exception just to make a migration pass.
+
+## 7. Interaction composition
+
+Use the correct semantic primitive:
+
+- DropdownMenu = action menu.
+- A category with immediate child choices = real submenu.
+- Direct command = menu item.
+- Independent boolean = checkbox item/Switch depending surface.
+- Repeated edit/reorder/delete icons = usually one overflow menu.
+- Badge = static state/category, not generic numbers.
+- Chip = interactive filter/toggle.
+- IconTile = decorative icon container.
+- SegmentedControl = compact single-choice pressed group.
+- Tabs = actual tab/panel semantics with keyboard behavior.
+- EmptyState = empty/no-result presentation, not errors.
+
+Never nest interactive controls such as `button > button`. A click-anywhere card containing TTS/menu/buttons must use sibling interaction layers or a non-interactive Card with explicit actions.
+
+## 8. Density
+
+Use one density family per row:
+
 ```text
-purpleButtonForPageA
-width317
-specialSmallOnlyHere
+standalone/touch : 44px minimum
+toolbar/command  : 36px
+menu             : 40px
+inline text      : content-sized
 ```
 
-Before adding a variant, list current or planned meaningful consumers. Prefer
-additive APIs until a dedicated migration task approves breaking cleanup.
+Do not mix 36px and 44px controls in the same command row without an intentional hierarchy reason.
 
-## 6. shadcn changes
+Standalone settings choices remain touch-sized even when displayed in a grid.
 
-Before add/update:
+### Micro geometry and spacing
 
-```bash
-npx shadcn@latest add <component> --dry-run
-npx shadcn@latest add <component> --diff
+Treat border, radius, focus and spacing as system contracts rather than finishing details:
+
+```text
+controls / inputs / menu rows : rounded-lg
+cards / panels / overlays     : rounded-xl
+pill semantics                : rounded-full
+checkbox                      : compact square radius owned by Checkbox
+default structural border     : 1px border-border-default
+form control border           : 1px border-input
+focus                         : shared focus-ring owner, never feature-built ring utilities
 ```
 
-Then inspect consumers and local customization.
+Sibling/component rhythm is parent-owned. Prefer `grid/flex + gap` and container padding over `mt-*`, `mb-*`, `ml-*`, `mr-*`, `space-x-*` or `space-y-*` on children. Auto margin remains valid for alignment. Horizontal margin is acceptable only for genuine inline text separation where there is no parent layout box that can own a gap. Do not replace margin with meaningless padding merely to satisfy a checker.
 
-STOP AND CONFIRM before overwrite, breaking local API, dependency addition,
-Base/Radix migration or global preset/token application.
+Overlay elevation follows one shared layer ladder: modal backdrop `100`, modal content `101`, menu/select/popover/floating content `120`, tooltip `130`. Feature code never repairs z-index locally.
 
-## 7. UX contract
+## 9. Surface hierarchy
 
-Before coding, define user goal, primary action, hierarchy, loading,
-initial/empty, error, disabled, long-content, keyboard, touch, responsive and
-focus-return behavior.
+Hierarchy is not “more cards”. Prefer:
 
-Do not ship a blank initial panel when instruction, recent content, navigation
-or a compact EmptyState is required.
+```text
+major surface
+  -> whitespace / Separator
+  -> terminal interactive rows/cards only where needed
+```
 
-## 8. Accessibility
+Avoid card-inside-card-inside-card layouts. Use Badge for state/category, not every metadata count.
 
-Use primitive-native semantics.
+Home is a continuation/attention surface, not a duplicate sitemap. Sidebar owns global route discovery. Do not solve a sparse Home by adding route shortcuts or by stretching short cards to artificial heights. Use meaningful continuation/history/progress content, stack short activity surfaces when side-by-side placement creates a large dead zone, and keep opaque internal IDs out of learner-facing activity labels.
+
+## 10. Shell, tablet and mobile
+
+Normal pages use `PageContainer`. App Shell owns viewport height; feature pages do not subtract guessed header/nav sizes with hard-coded `calc(100dvh - ...)`.
+
+Treat iPad portrait around 820px as a tablet workspace, not squeezed desktop. Persistent Sidebar starts at `lg`; below that, quick navigation plus a full-navigation Sheet must keep all global routes reachable.
+
+Responsive layout decisions must account for persistent shell chrome. A breakpoint is viewport-based, not container-based: when the Sidebar appears at `lg`, the remaining content width is much smaller than the viewport width. Do not activate a multi-column feature grid at the same breakpoint unless each resulting column remains readable. For Home, portrait tablet and sidebar-constrained tablet layouts stay one-column; the main/attention split begins only when the content area is genuinely wide enough.
+
+PageHeader and feature section headers must let titles, descriptions and actions wrap without starving text or creating horizontal overflow. Mobile list rows must protect the primary label with `min-w-0`; secondary badges/actions may move below the label instead of squeezing it.
+
+Use two columns only when both retain readable width and no horizontal overflow. Do not postpone useful layout unnecessarily, but do not use viewport breakpoints as a substitute for checking actual content width.
+
+## 11. Settings and contextual controls
+
+Header Gear is global only: theme, route-scoped lookup, focus mode, link to full settings.
+
+Feature-specific reader controls stay in the lesson workspace.
+
+Reading settings should provide direct live preview of font, size, reveal behavior, pinyin, meaning and answers. On tablet/wide screens preview may sit beside controls; on narrow screens it follows in document flow.
+
+Use real DropdownMenu submenus for grouped quick choices instead of replacing the whole menu with a fake “Back” flow.
+
+## 12. Chinese learner typography
+
+The selected Hanzi reader font is the authoritative learner-font preference across authenticated learning surfaces unless a UI explicitly previews another font.
+
+Use:
+
+- pure Hanzi -> `HanziText`, `ReaderHanziText` or `LearnerHanziText`;
+- mixed Vietnamese/Chinese -> `HanziAwareText` / `HanziInlineText`;
+- pinyin -> `PinyinText`;
+- preview-only font samples -> `HanziFontPreview`.
+
+Do not force Songti/Xingkai/system font locally for normal learner content. Do not use a Traditional-Chinese-only web font as the fallback for Mainland `zh-CN` content.
+
+System font names such as Kaiti are not cross-platform delivery. If exact appearance must match iOS/Android/desktop, ship an appropriate Simplified-Chinese font asset; otherwise provide a deterministic Simplified-Chinese-capable fallback.
+
+HanziWriter stroke glyphs are vector data and are not expected to follow CSS font selection.
+
+## 13. Destructive actions
+
+User-facing destructive actions require either explicit confirmation with consequence/pending state or a clearly recoverable Undo flow. If backend behavior is soft delete/archive, copy must describe recoverability accurately.
+
+## 14. Accessibility
 
 Verify:
 
-- button vs link;
-- Switch/Checkbox/toggle state;
-- menu trigger and menu items;
-- dialog title/focus/Escape;
-- Select/combobox semantics;
-- Tooltip is supplementary;
+- correct button/link semantics;
+- no nested interactive controls;
+- Switch/Checkbox/pressed state;
+- menu trigger/items and destructive tone;
+- Dialog title/focus/Escape/return focus;
+- Select/Tabs/SegmentedControl keyboard behavior;
 - visible focus;
-- keyboard operation;
-- touch target size.
+- touch target size;
+- `aria-current` for active route;
+- active route stays discoverable in navigation;
+- tablet/mobile has a path to every global route.
 
-Do not add ARIA to compensate for an incorrect interaction model.
+Do not add ARIA to compensate for the wrong interaction model.
 
-## 9. Visual system
+## 15. Visual and theme system
 
-Preserve semantic tokens, active-state recipes, gradient/glass roles and shared
-overlay stacking.
+Preserve semantic tokens and shared surface grammar. Do not add feature-local hard-coded colors, arbitrary gradients/shadows, overlay z-index, duplicate active palettes or legacy glass recipes.
 
-Do not add feature-local hard-coded color, arbitrary gradient/shadow, overlay
-z-index, duplicated active palette or raw component recipe.
+Theme ownership is split deliberately:
+
+```text
+light/dark mode -> neutral foundations: raw card, popover, input, elevated surfaces,
+                   generic control/shell surface, border hierarchy, base text hierarchy
+accent palette  -> restrained outer-canvas tint, very light Card-only tint,
+                   primary, accent, focus ring, selected/active navigation,
+                   brand-oriented chart emphasis
+semantic state  -> success, warning, danger, info, semantic purple
+```
+
+A palette MAY tint the outer canvas clearly and the shared Card primitive lightly through `--bg-primary` and `--theme-card-background`. It MUST NOT redefine the raw `--card` foundation or the generic `--bg-card` alias used by outline controls/shell chrome, and it must not recolor Popover/Dialog/input/border/text foundations. The Card tint must be materially weaker than the canvas/active emphasis so content hierarchy remains calm.
+
+Active interaction text and icons must use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
+
+Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral foundation family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
 
 Classify visual recipes as:
 
@@ -194,48 +271,41 @@ Classify visual recipes as:
 primitive-owned
 token-owned
 brand/system recipe
+stable feature composition
 legitimate local exception
 ad-hoc debt
 ```
 
-## 10. Verification
+## 16. Verification
 
 Follow `docs/ui/ui-verification.md`.
 
-A visual claim requires rendering. Logic-only work that does not make a visual
-or interaction claim does not require the full viewport matrix.
+A visual claim requires rendering. Use the smallest tier that can falsify it:
 
-Use:
+- Fast: affected state/viewport.
+- Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
+- Full: shared primitive or multi-surface changes plus repository gate.
 
-- Fast: render the affected state/viewport for a local visual regression.
-- Subsystem: verify affected desktop/iPad/mobile, keyboard and state variants.
-- Full: verify shared primitive or multi-surface consumers plus the repository
-  gate.
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify outer canvas tint, weaker Card-only tint, neutral shell/controls/Popover/Dialog/input/borders, and selected/focus/primary/active text emphasis separately.
 
-Verify only applicable desktop, iPad portrait, mobile, keyboard,
-loading/empty/error, dark mode and console states; report what was not checked.
+For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
 
-For the full path or app-code completion, run:
+`npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
-```bash
-npm run check
-```
+If authenticated rendering or a full gate cannot run, state exactly what remains unverified.
 
-## 11. Handoff
+## 17. Handoff
 
-Report:
+Report only evidence-bearing items:
 
 ```text
-Component contract used:
-Precedent used:
-Authoritative contract:
-New/extended contract:
+User-flow change:
+State owners:
+Component contracts used/extended:
 Meaningful consumers:
-Feature-local exceptions:
-Rendered routes:
-Viewports:
-Keyboard flows:
-States:
-Checks:
-Residual UX/accessibility risk:
+Rendered routes/viewports:
+Keyboard/state verification:
+Checks actually run:
+Known unverified states:
+Residual UX/accessibility/architecture risk:
 ```

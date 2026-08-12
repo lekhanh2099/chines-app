@@ -7,12 +7,12 @@ import { type ComponentProps, type ReactNode, useEffect, useState } from "react"
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { useTheme } from "@/components/layout/ThemeProvider";
 import { PageContainer } from "@/components/layout/page-container";
 import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Label } from "@/components/ui/label";
 import { PageHeader } from "@/components/ui/page-header";
 import {
@@ -22,6 +22,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
@@ -49,6 +50,8 @@ import {
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
+import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
+
 export const SettingsSectionSchema = z.enum(["app", "reading", "ai"]);
 const SettingsSectionParamSchema = z.string().optional();
 
@@ -57,7 +60,6 @@ export function resolveSettingsSection(value: z.input<typeof SettingsSectionPara
  if (!param.success) return SettingsSectionSchema.enum.app;
 
  const parsed = SettingsSectionSchema.safeParse(param.data);
-
  return parsed.success ? parsed.data : SettingsSectionSchema.enum.app;
 }
 
@@ -72,7 +74,6 @@ const focusModeEnabledMessage =
 export function SettingsPageContent({ sectionValue, readingSettings }: SettingsPageContentProps) {
  const section = resolveSettingsSection(sectionValue);
  const router = useRouter();
- const { theme, toggleTheme } = useTheme();
  useSelector(dictionaryLookupStore, (state) => state.overrides);
  const globalLookupEnabled = dictionaryLookupStore.actions.isEnabled("/");
  const notesLookupEnabled = dictionaryLookupStore.actions.isEnabled("/notes");
@@ -101,9 +102,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      credentials: "include",
     });
 
-    if (!response.ok) {
-     throw new Error("load_failed");
-    }
+    if (!response.ok) throw new Error("load_failed");
 
     const data = ClientAiPromptSettingsSchema.parse(await response.json());
     if (!isMounted) return;
@@ -136,9 +135,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     setHasLoaded(true);
     toast.info("Đang dùng AI prompt settings lưu cục bộ trên trình duyệt");
    } finally {
-    if (isMounted) {
-     setIsLoading(false);
-    }
+    if (isMounted) setIsLoading(false);
    }
   }
 
@@ -161,9 +158,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
    const response = await fetch("/api/settings/ai-prompts", {
     method: "PUT",
-    headers: {
-     "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     credentials: "include",
     body: JSON.stringify({
      wordLookupPrompt: normalized.wordLookupPrompt,
@@ -172,9 +167,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     }),
    });
 
-   if (!response.ok) {
-    throw new Error(String(response.status));
-   }
+   if (!response.ok) throw new Error(String(response.status));
 
    const data = ClientAiPromptSettingsSchema.parse(await response.json());
    const synced = saveClientAiPromptSettings(data);
@@ -216,7 +209,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
  return (
   <PageContainer>
-   <div className="grid w-full gap-5">
+   <main className="grid w-full gap-5">
     <PageHeader
      title="Cài đặt"
      description="Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản."
@@ -233,79 +226,74 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       router.push(`/settings?section=${nextSection}`, { scroll: false });
      }}
     >
-     <TabsContent active={section === SettingsSectionSchema.enum.app} className="mt-4 grid gap-4">
-      <Card variant="section" padding="lg" className="grid gap-1">
-       <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
-        Cài đặt ứng dụng
-       </Typography>
-       <Typography as="p" tone="secondary" leading="standard">
-        Các thay đổi dưới đây giữ nguyên storage và phạm vi đang dùng trong ứng dụng.
-       </Typography>
+     <TabsContent active={section === SettingsSectionSchema.enum.app} className="grid gap-4 pt-4">
+      <AppearanceSettingsSection />
+
+      <Card variant="section" padding="lg" className="grid gap-3">
+       <SectionHeading
+        title="Hành vi học tập"
+        description="Các lựa chọn có tác động toàn ứng dụng được gom ở đây; cài đặt đọc chuyên biệt nằm trong mục Đọc."
+       />
+
+       <div className="grid">
+        <SettingsToggleRow
+         id="global-dictionary-lookup"
+         label="Tra từ mặc định"
+         description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
+         checked={globalLookupEnabled}
+         onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
+         tone="accent"
+        />
+        <Separator />
+        <SettingsToggleRow
+         id="notes-dictionary-lookup"
+         label="Tra từ trong Ghi chú"
+         description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
+         checked={notesLookupEnabled}
+         onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
+         tone="accent"
+        />
+        <Separator />
+        <SettingsToggleRow
+         id="focus-mode"
+         label="Focus mode"
+         description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
+         checked={focusModeEnabled}
+         onCheckedChange={(enabled) => {
+          if (enabled && !focusModeEnabled) {
+           toast.warning(focusModeEnabledMessage, { duration: 5200 });
+          }
+          setFocusModeEnabled(enabled);
+         }}
+         tone="warning"
+        />
+       </div>
       </Card>
-
-      <div className="grid gap-3">
-       <SettingsToggle
-        id="theme-mode"
-        label="Giao diện tối"
-        description="Đổi giao diện sáng tối cho toàn bộ ứng dụng."
-        checked={theme === "dark"}
-        onCheckedChange={toggleTheme}
-        tone="accent"
-       />
-       <SettingsToggle
-        id="global-dictionary-lookup"
-        label="Tra từ mặc định"
-        description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
-        checked={globalLookupEnabled}
-        onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
-        tone="accent"
-       />
-       <SettingsToggle
-        id="notes-dictionary-lookup"
-        label="Tra từ trong Ghi chú"
-        description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
-        checked={notesLookupEnabled}
-        onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
-        tone="accent"
-       />
-       <SettingsToggle
-        id="focus-mode"
-        label="Focus mode"
-        description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
-        checked={focusModeEnabled}
-        onCheckedChange={(enabled) => {
-         if (enabled && !focusModeEnabled) {
-          toast.warning(focusModeEnabledMessage, { duration: 5200 });
-         }
-
-         setFocusModeEnabled(enabled);
-        }}
-        tone="warning"
-       />
-      </div>
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.reading} className="mt-4">
+     <TabsContent active={section === SettingsSectionSchema.enum.reading} className="pt-4">
       {readingSettings}
      </TabsContent>
 
-     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="mt-4 grid gap-4">
-      <header className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-       <div className="max-w-3xl space-y-2">
-        <div className="inline-flex items-center gap-2 rounded-full bg-accent-subtle px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent-text">
-         <Bot className="h-3.5 w-3.5" />
+     <TabsContent active={section === SettingsSectionSchema.enum.ai} className="grid gap-5 pt-4">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+       <div className="grid min-w-0 max-w-3xl gap-2">
+        <Badge variant="accent" size="md">
+         <Bot />
          AI Settings
-        </div>
-        <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+        </Badge>
+        <Typography as="h2" variant="sectionTitle" weight="bold">
          Cài đặt tra cứu AI
         </Typography>
         <Typography as="p" tone="secondary" leading="standard">
          Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model
          mạnh chỉ chạy khi bạn chủ động mở phần chi tiết.
         </Typography>
-        <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
-         {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
-        </Badge>
+        <div>
+         <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
+          {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
+         </Badge>
+        </div>
        </div>
 
        <div className="flex flex-wrap items-center gap-3">
@@ -329,25 +317,14 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          Lưu thay đổi
         </Button>
        </div>
-      </header>
+      </div>
 
       <Card variant="section" padding="lg" className="grid gap-4">
-       <div className="space-y-2">
-        <Typography
-         as="h3"
-         variant="sectionTitle"
-         tone="default"
-         weight="bold"
-         className="flex items-center gap-2"
-        >
-         <Sparkles className="size-5 text-accent-text" />
-         Xem chi tiết
-        </Typography>
-        <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-         Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app
-         dùng model Gemini hệ thống đã chọn bên dưới.
-        </Typography>
-       </div>
+       <SectionHeading
+        icon={<Sparkles />}
+        title="Xem chi tiết"
+        description="Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app dùng model Gemini hệ thống đã chọn bên dưới."
+       />
 
        <div className="grid max-w-xl gap-2">
         <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
@@ -379,28 +356,18 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </Card>
 
       <Card variant="section" padding="lg" className="grid gap-4">
-       <div className="space-y-2">
-        <Typography
-         as="h3"
-         variant="sectionTitle"
-         tone="default"
-         weight="bold"
-         className="flex items-center gap-2"
-        >
-         <Languages className="size-5 text-accent-text" />
-         Tra nhanh và dịch nghĩa
-        </Typography>
-        <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-         Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key.
-        </Typography>
-       </div>
+       <SectionHeading
+        icon={<Languages />}
+        title="Tra nhanh và dịch nghĩa"
+        description="Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key."
+       />
 
        <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
-        <div>
+        <div className="grid gap-1">
          <Typography as="p" tone="default" weight="semibold">
           {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
          </Typography>
-         <Typography as="p" variant="bodySmall" tone="muted" className="mt-1">
+         <Typography as="p" variant="bodySmall" tone="muted">
           Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.
          </Typography>
         </div>
@@ -415,17 +382,12 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
       <ApiKeyManagerSection />
 
-      <div className="space-y-4">
+      <div className="grid gap-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="space-y-2">
-         <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
-          Lookup Prompts
-         </Typography>
-         <Typography as="p" tone="secondary" leading="standard" className="max-w-3xl">
-          Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để
-          giảm độ trễ và lượng token.
-         </Typography>
-        </div>
+        <SectionHeading
+         title="Lookup Prompts"
+         description="Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để giảm độ trễ và lượng token."
+        />
 
         <div className="flex flex-wrap items-center gap-3">
          <Badge variant={hasUnsavedPromptChanges ? "warning" : "success"} size="md">
@@ -467,12 +429,40 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </div>
      </TabsContent>
     </Tabs>
-   </div>
+   </main>
   </PageContainer>
  );
 }
 
-function SettingsToggle({
+function SectionHeading({
+ title,
+ description,
+ icon,
+}: {
+ title: string;
+ description: string;
+ icon?: ReactNode;
+}) {
+ return (
+  <div className="flex min-w-0 max-w-3xl items-start gap-3">
+   {icon ? (
+    <IconTile tone="accent" size="sm">
+     {icon}
+    </IconTile>
+   ) : null}
+   <div className="grid min-w-0 gap-1">
+    <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
+     {title}
+    </Typography>
+    <Typography as="p" tone="secondary" leading="standard">
+     {description}
+    </Typography>
+   </div>
+  </div>
+ );
+}
+
+function SettingsToggleRow({
  id,
  label,
  description,
@@ -490,8 +480,8 @@ function SettingsToggle({
  const descriptionId = `${id}-description`;
 
  return (
-  <Card variant="section" padding="md" className="flex items-center justify-between gap-4">
-   <div className="min-w-0 space-y-1">
+  <div className="flex min-w-0 items-center justify-between gap-4 py-3">
+   <div className="grid min-w-0 gap-1">
     <Label htmlFor={id} variant="label" tone="default" weight="bold">
      {label}
     </Label>
@@ -506,7 +496,7 @@ function SettingsToggle({
     aria-describedby={descriptionId}
     tone={tone}
    />
-  </Card>
+  </div>
  );
 }
 
@@ -532,10 +522,10 @@ function PromptPanel({
  const hasPlaceholder = value.includes(placeholderToken);
 
  return (
-  <Card variant="default" padding="lg">
-   <div className="mb-4 flex items-start justify-between gap-4">
-    <div className="space-y-2">
-     <Typography as="h4" variant="sectionTitle" tone="default" weight="bold">
+  <Card variant="default" padding="lg" className="grid gap-4">
+   <div className="flex items-start justify-between gap-4">
+    <div className="grid gap-2">
+     <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
       {title}
      </Typography>
      <Typography as="p" tone="secondary" leading="standard">
@@ -553,13 +543,13 @@ function PromptPanel({
     </div>
    </div>
 
-   <div className="mb-3 flex items-center justify-between text-xs">
+   <div className="flex items-center justify-between gap-3">
     <Badge variant={hasPlaceholder ? "success" : "danger"} size="sm">
      {hasPlaceholder
       ? `Có placeholder ${placeholderToken}`
       : `Thiếu placeholder ${placeholderToken}`}
     </Badge>
-    <Typography as="span" tone="muted">
+    <Typography as="span" variant="caption" tone="muted">
      {value.length} ký tự
     </Typography>
    </div>
