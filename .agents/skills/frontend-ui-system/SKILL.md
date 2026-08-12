@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.11"
+  version: "3.12"
 ---
 
 # Frontend UI System
@@ -253,17 +253,26 @@ Theme ownership is split deliberately:
 ```text
 light/dark mode -> neutral foundations: raw card, popover, input, elevated surfaces,
                    generic control/shell surface, border hierarchy, base text hierarchy
-accent palette  -> restrained outer-canvas tint, very light Card-only tint,
+accent palette  -> restrained outer-canvas tint, perceptible low-chroma base-surface tint,
                    primary, accent, focus ring, selected/active navigation,
                    brand-oriented chart emphasis
 semantic state  -> success, warning, danger, info, semantic purple
 ```
 
-A palette MAY tint the outer canvas clearly and the shared Card primitive lightly through `--bg-primary` and `--theme-card-background`. It MUST NOT redefine the raw `--card` foundation or the generic `--bg-card` alias used by outline controls/shell chrome, and it must not recolor Popover/Dialog/input/border/text foundations. The Card tint must be materially weaker than the canvas/active emphasis so content hierarchy remains calm.
+All application surfaces resolve through the semantic ladder in `surface-system.css`:
 
-Active interaction text and icons must use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
+```text
+canvas -> subtle -> base -> raised
+                  + hover / selected
+```
 
-Every palette requires a light and dark definition and must preserve readable foreground contrast on the neutral foundation family. Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
+`surface-base` must be visibly related to the canvas so Card/Header/Sidebar do not look like unrelated white islands, but remain lighter/calmer than the canvas. Hover and selected surface backgrounds derive from the palette's low-chroma `--accent`, not directly from high-chroma `--primary`. Reserve `--primary` for selected text/icons, selected borders, focus and primary actions.
+
+A palette MUST NOT redefine the raw `--card` foundation, Popover/Dialog/input/border/text foundations, or semantic status colors. Every palette requires a light and dark definition and must preserve readable foreground contrast.
+
+Active interaction text and icons use the selected palette emphasis. If `Typography` is nested inside an active Button/Menu item, the primitive owns the interaction state and nested text must inherit that active color rather than resetting to normal body text.
+
+Add palettes only through `ThemePaletteSchema`, `THEME_PALETTE_META` and `theme-palettes.css`; do not add a feature-local theme store or palette class system.
 
 Classify visual recipes as:
 
@@ -286,7 +295,7 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
 
-For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify outer canvas tint, weaker Card-only tint, neutral shell/controls/Popover/Dialog/input/borders, and selected/focus/primary/active text emphasis separately.
+For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas, base/subtle/raised surface separation, hover/selected coherence, neutral semantic-state independence, selected/focus/primary text emphasis and contrast separately.
 
 For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
 
