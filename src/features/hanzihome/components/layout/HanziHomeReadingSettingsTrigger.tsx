@@ -44,7 +44,7 @@ export function HanziHomeReadingSettingsTrigger() {
 
  return (
   <>
-   <div className="lg:hidden">
+   <div className="xl:hidden">
     <Button
      type="button"
      variant="outline"
@@ -101,7 +101,7 @@ export function HanziHomeReadingSettingsTrigger() {
     </SheetFooter>
    </Sheet>
 
-   <div className="hidden lg:block">
+   <div className="hidden xl:block">
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
       <Button
