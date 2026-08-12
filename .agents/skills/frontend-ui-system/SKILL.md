@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.12"
+  version: "3.13"
 ---
 
 # Frontend UI System
@@ -123,7 +123,7 @@ When a variation repeats, extend the owner with a semantic typed API.
 Use the correct semantic primitive:
 
 - DropdownMenu = action menu.
-- A category with immediate child choices = real submenu.
+- A category with immediate child choices = submenu on pointer/desktop layouts, not automatically on touch layouts.
 - Direct command = menu item.
 - Independent boolean = checkbox item/Switch depending surface.
 - Repeated edit/reorder/delete icons = usually one overflow menu.
@@ -195,6 +195,28 @@ PageHeader and feature section headers must let titles, descriptions and actions
 
 Use two columns only when both retain readable width and no horizontal overflow. Do not postpone useful layout unnecessarily, but do not use viewport breakpoints as a substitute for checking actual content width.
 
+### Touch overlay model
+
+Do not carry desktop lateral-submenu geometry into phone or iPad touch workspaces. A submenu that opens beside its parent can render the parent and child as two competing panels, overflow the viewport, and leave shell navigation interactive behind the user's current task.
+
+For contextual preference flows:
+
+```text
+pointer / wide desktop -> DropdownMenu + DropdownMenuSub when hierarchy is shallow
+touch / narrow layout  -> one modal Sheet or Dialog surface with the child choices inside it
+```
+
+On touch layouts:
+
+- keep exactly one active overlay surface for one settings task;
+- do not leave a parent menu visible while a child choice panel opens beside it;
+- the modal overlay owns focus, scroll, dismissal and safe-area handling;
+- modal content must cover/disable the bottom navigation rather than compete with it;
+- Select/Menu/Popover content must collision-constrain to the viewport;
+- iPad portrait follows the touch interaction model even when there is room for a narrow desktop submenu.
+
+A fake in-menu Back flow is not required when the choices fit in one Sheet. If a touch task truly needs multiple levels, keep navigation inside one modal surface rather than spawning lateral overlays.
+
 ## 11. Settings and contextual controls
 
 Header Gear is global only: theme, route-scoped lookup, focus mode, link to full settings.
@@ -203,7 +225,7 @@ Feature-specific reader controls stay in the lesson workspace.
 
 Reading settings should provide direct live preview of font, size, reveal behavior, pinyin, meaning and answers. On tablet/wide screens preview may sit beside controls; on narrow screens it follows in document flow.
 
-Use real DropdownMenu submenus for grouped quick choices instead of replacing the whole menu with a fake “Back” flow.
+Reader quick settings use the responsive overlay contract: phone/iPad use a single Sheet with touch-sized font/size/reveal/visibility controls; wide desktop may use DropdownMenu submenus. Do not expose the same lateral submenu interaction on touch simply because the desktop implementation already exists.
 
 ## 12. Chinese learner typography
 
@@ -218,7 +240,7 @@ Use:
 
 Do not force Songti/Xingkai/system font locally for normal learner content. Do not use a Traditional-Chinese-only web font as the fallback for Mainland `zh-CN` content.
 
-System font names such as Kaiti are not cross-platform delivery. If exact appearance must match iOS/Android/desktop, ship an appropriate Simplified-Chinese font asset; otherwise provide a deterministic Simplified-Chinese-capable fallback.
+System font names such as Kaiti are not cross-platform delivery. If exact appearance must match iOS/Android/desktop, ship an appropriate Simplified-Chinese font asset; otherwise provide a deterministic Simplified-Chinese-capable fallback from fonts already delivered by the app before falling back to generic serif/sans-serif.
 
 HanziWriter stroke glyphs are vector data and are not expected to follow CSS font selection.
 
@@ -298,6 +320,8 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas, base/subtle/raised surface separation, hover/selected coherence, neutral semantic-state independence, selected/focus/primary text emphasis and contrast separately.
 
 For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
+
+For touch reader controls, verify a narrow phone and iPad portrait with the reader settings open. There must be only one modal settings surface, no lateral submenu/off-screen child panel, no interactive bottom navigation behind the modal, no horizontal overflow, visible selected font/size state, and safe-area clearance at the bottom. Verify the wide-desktop menu separately because it intentionally uses a different pointer interaction model.
 
 `npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
