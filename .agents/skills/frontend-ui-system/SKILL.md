@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.13"
+  version: "3.14"
 ---
 
 # Frontend UI System
@@ -151,6 +151,8 @@ Do not mix 36px and 44px controls in the same command row without an intentional
 
 Standalone settings choices remain touch-sized even when displayed in a grid.
 
+A touch target and its visible artwork are separate contracts. A 44px interactive target may contain a smaller 28–32px avatar or icon. Do not enlarge the visible chrome merely to satisfy the hit area, and do not shrink the hit area merely to make a phone header look compact.
+
 ### Micro geometry and spacing
 
 Treat border, radius, focus and spacing as system contracts rather than finishing details:
@@ -195,6 +197,21 @@ PageHeader and feature section headers must let titles, descriptions and actions
 
 Use two columns only when both retain readable width and no horizontal overflow. Do not postpone useful layout unnecessarily, but do not use viewport breakpoints as a substitute for checking actual content width.
 
+### Phone shell density
+
+Phone chrome is not a scaled-down desktop toolbar. Prioritize orientation plus the next action and move low-frequency global controls into an existing full-navigation/settings surface.
+
+For the authenticated phone shell:
+
+- bottom quick navigation is icon-first; repeated destination labels may be visually hidden when every item keeps an accessible name and active `aria-current`;
+- each bottom-nav item still owns a standalone 44px touch target;
+- keep the bottom bar only as tall as its targets plus safe-area/padding rather than reserving desktop-like label height;
+- Header route context gets the flexible width; global utilities must not starve the title/select;
+- use ghost/icon chrome for routine phone utilities rather than outlining every 44px hit area;
+- low-frequency Settings may live in the full-navigation `Thêm` Sheet on phones while remaining directly available at wider breakpoints;
+- a saved/success indicator may disappear after success on phones, but saving and error states must remain observable;
+- do not show title + multiple status pills + contextual menu + search + settings + profile simultaneously merely because each control exists on desktop.
+
 ### Touch overlay model
 
 Do not carry desktop lateral-submenu geometry into phone or iPad touch workspaces. A submenu that opens beside its parent can render the parent and child as two competing panels, overflow the viewport, and leave shell navigation interactive behind the user's current task.
@@ -217,9 +234,23 @@ On touch layouts:
 
 A fake in-menu Back flow is not required when the choices fit in one Sheet. If a touch task truly needs multiple levels, keep navigation inside one modal surface rather than spawning lateral overlays.
 
+### Mobile reading surfaces
+
+Do not solve phone typography by globally shrinking every font. Diagnose the actual source first: inherited desktop spacing, persisted/imported inline font size, overly wide code/table content, or a reading measure that still assumes desktop.
+
+For rich-text notes and other document-like reading surfaces:
+
+- phone read-only presentation may normalize imported inline `font-size` to the mobile reading rhythm without mutating persisted content;
+- edit mode preserves the stored formatting so responsive presentation is not a data migration;
+- body copy remains comfortably readable; hierarchy is adjusted with relative heading scale and spacing rather than tiny text;
+- long code/preformatted teaching snippets wrap on phone when horizontal preservation is not semantically required;
+- genuinely tabular content gets a contained horizontal scroller rather than widening the whole document;
+- remove redundant nested card/inset padding on narrow screens so the document uses available width;
+- read-only actions that form a long command list use one modal Sheet with touch-sized rows instead of a small floating Popover.
+
 ## 11. Settings and contextual controls
 
-Header Gear is global only: theme, route-scoped lookup, focus mode, link to full settings.
+Header Gear is global only: theme, route-scoped lookup, focus mode, link to full settings. On phones it may be reached through the full-navigation Settings entry when direct Header placement would crowd route context.
 
 Feature-specific reader controls stay in the lesson workspace.
 
@@ -260,6 +291,7 @@ Verify:
 - Select/Tabs/SegmentedControl keyboard behavior;
 - visible focus;
 - touch target size;
+- visually hidden icon-only navigation retains an accessible name;
 - `aria-current` for active route;
 - active route stays discoverable in navigation;
 - tablet/mobile has a path to every global route.
@@ -322,6 +354,8 @@ For theme work, render at least Settings and one content-heavy learning surface 
 For Home, verify at minimum a narrow phone, iPad portrait, a sidebar-constrained tablet/landscape width, and desktop. Check section order, card width, long note/activity labels, bottom navigation clearance, absence of horizontal overflow, and whether the first viewport forms a coherent information hierarchy without an artificial dead zone.
 
 For touch reader controls, verify a narrow phone and iPad portrait with the reader settings open. There must be only one modal settings surface, no lateral submenu/off-screen child panel, no interactive bottom navigation behind the modal, no horizontal overflow, visible selected font/size state, and safe-area clearance at the bottom. Verify the wide-desktop menu separately because it intentionally uses a different pointer interaction model.
+
+For the phone shell and Notes reading view, verify title truncation, icon-only bottom navigation, 44px hit areas, full Settings reachability through `Thêm`, saving/error visibility, absence of a persistent success-status slot, code wrapping, table-contained overflow, normalized read-only imported font sizes and preservation of the original formatting after switching to edit mode.
 
 `npm run check` is the full CI/release gate, not a mandatory pre-commit step for every small edit. There is no repository hook that should run the complete suite on each commit.
 
