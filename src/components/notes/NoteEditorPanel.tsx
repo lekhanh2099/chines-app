@@ -23,6 +23,7 @@ import {
  PanelTopOpen,
  Pencil,
  Plus,
+ Settings2,
  SlidersHorizontal,
  Trash2,
  Upload,
@@ -33,11 +34,6 @@ import { noteTabsStore } from "@/stores/note-tabs-store";
 import { splitViewStore } from "@/stores/split-view-store";
 import { Button } from "@/components/ui/button";
 import {
- BasePopover as Popover,
- BasePopoverPopup,
- BasePopoverPositioner,
-} from "@/components/ui/base-popover";
-import {
  Dialog,
  DialogClose,
  DialogContent,
@@ -46,6 +42,8 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
@@ -134,6 +132,7 @@ export function NoteEditorPanel({
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
+ const [metadataOpen, setMetadataOpen] = useState(false);
  const [importedContent, setImportedContent] =
   useState<z.infer<z.ZodNullable<typeof JsonObjectSchema>>>(null);
  const [importedReadingContent, setImportedReadingContent] =
@@ -155,14 +154,12 @@ export function NoteEditorPanel({
  const importInputRef = useRef<HTMLInputElement>(null);
  const splitViewSynced = useRef(false);
 
- // Sync tab title with note title
  useEffect(() => {
   if (note?.title) {
    updateTabTitle(noteId, note.title);
   }
  }, [note?.title, noteId, updateTabTitle]);
 
- // Sync split view state from DB on initial load
  const { setSplitView } = splitViewStore.actions;
  useEffect(() => {
   if (note && !splitViewSynced.current) {
@@ -208,7 +205,6 @@ export function NoteEditorPanel({
   toast.success(newState ? "Đã bật chế độ Split View" : "Đã tắt Split View");
  }, [noteId, isSplitView, toggleSplitView, updateSplitView]);
 
- // Keyboard shortcut: Ctrl+Shift+S to toggle split view
  useEffect(() => {
   const handler = (e: KeyboardEvent) => {
    if (e.ctrlKey && e.shiftKey && e.key === "S" && isVisible) {
@@ -220,7 +216,6 @@ export function NoteEditorPanel({
   return () => document.removeEventListener("keydown", handler);
  }, [handleToggleSplitView, isVisible]);
 
- // Flush on unmount
  useEffect(() => {
   return () => {
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
@@ -431,154 +426,21 @@ export function NoteEditorPanel({
 
      {mobileHeaderActionsContainer && isVisible
       ? createPortal(
-         <div className="flex items-center gap-1.5 xl:hidden">
+         <div className="flex items-center gap-0.5 xl:hidden">
           <SaveStatusBadge status={displaySaveStatus} />
-
-          <Popover.Root open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} modal={false}>
-           <Popover.Trigger
-            render={
-             <Button
-              variant="outline"
-              size="icon-round"
-              className="shrink-0 xl:hidden"
-              aria-label="Tùy chọn ghi chú"
-             />
-            }
-           >
-            <SlidersHorizontal className="size-4" />
-            <span className="sr-only">Tùy chọn ghi chú</span>
-           </Popover.Trigger>
-           <Popover.Portal>
-            <BasePopoverPositioner
-             side="bottom"
-             align="end"
-             sideOffset={8}
-             collisionPadding={8}
-             positionMethod="fixed"
-            >
-             <BasePopoverPopup initialFocus={false} finalFocus={false} variant="mobileActions">
-              <Typography
-               as="p"
-               variant="overline"
-               tone="muted"
-               weight="black"
-               transform="uppercase"
-               className="px-2.5 py-1.5"
-              >
-               Chế độ
-              </Typography>
-              <Button
-               variant={!isReadOnlyMode ? "active" : "ghost"}
-               align="start"
-               className="w-full"
-               onClick={() => {
-                setReadOnlyOverride(!isReadOnlyMode);
-                setMobileActionsOpen(false);
-               }}
-              >
-               {isReadOnlyMode ? <Pencil /> : <Eye />}
-               {isReadOnlyMode ? "Chỉnh sửa" : "Chỉ xem"}
-              </Button>
-              <Button
-               variant={isSplitView ? "active" : "ghost"}
-               align="start"
-               className="w-full"
-               onClick={() => {
-                handleToggleSplitView();
-                setMobileActionsOpen(false);
-               }}
-              >
-               {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
-               {isSplitView ? "Đóng split" : "Mở split"}
-              </Button>
-              {!isReadOnlyMode ? (
-               <Button
-                variant={isToolbarVisible ? "active" : "ghost"}
-                align="start"
-                className="w-full"
-                onClick={() => {
-                 setIsToolbarVisible((current) => !current);
-                 setMobileActionsOpen(false);
-                }}
-               >
-                {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
-                {isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-               </Button>
-              ) : null}
-
-              <div className="h-3 py-1 before:block before:h-px before:bg-border-default" />
-              <Typography
-               as="p"
-               variant="overline"
-               tone="muted"
-               weight="black"
-               transform="uppercase"
-               className="px-2.5 py-1.5"
-              >
-               Ghi chú
-              </Typography>
-              <NoteLibraryMetadataDialog note={note} compact />
-              <Button
-               variant="ghost"
-               align="start"
-               className="w-full"
-               onClick={() => {
-                setMobileActionsOpen(false);
-                requestAnimationFrame(() => importInputRef.current?.click());
-               }}
-              >
-               <Upload /> Import
-              </Button>
-              <Button
-               variant="ghost"
-               align="start"
-               className="w-full"
-               onClick={() => {
-                handleExport();
-                setMobileActionsOpen(false);
-               }}
-              >
-               <Download /> Export
-              </Button>
-              <Button
-               variant="ghost"
-               align="start"
-               className="w-full"
-               disabled={focusModeEnabled}
-               onClick={() => {
-                setMobileActionsOpen(false);
-                router.push("/notes?action=new");
-               }}
-              >
-               <Plus /> Mở ghi chú mới
-              </Button>
-              <Button
-               variant="ghost"
-               align="start"
-               className="w-full"
-               disabled={focusModeEnabled}
-               onClick={() => {
-                closeTab(noteId);
-                setMobileActionsOpen(false);
-               }}
-              >
-               <PanelLeftClose /> Đóng tab hiện tại
-              </Button>
-              <Button
-               variant="ghost"
-               align="start"
-               className="w-full"
-               onClick={() => {
-                setMobileActionsOpen(false);
-                requestAnimationFrame(() => setShowDeleteConfirm(true));
-               }}
-              >
-               <Trash2 /> Xóa ghi chú
-              </Button>
-             </BasePopoverPopup>
-            </BasePopoverPositioner>
-           </Popover.Portal>
-          </Popover.Root>
+          <Button
+           type="button"
+           variant="ghost"
+           size="icon"
+           className="shrink-0 xl:hidden"
+           aria-label="Tùy chọn ghi chú"
+           title="Tùy chọn ghi chú"
+           aria-haspopup="dialog"
+           aria-expanded={mobileActionsOpen}
+           onClick={() => setMobileActionsOpen(true)}
+          >
+           <SlidersHorizontal />
+          </Button>
          </div>,
          mobileHeaderActionsContainer,
         )
@@ -657,38 +519,212 @@ export function NoteEditorPanel({
           >
            <Trash2 />
           </Button>
-          <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
-           <DialogContent className="max-w-md" showCloseButton={!isDeleting}>
-            <DialogHeader>
-             <DialogTitle>Xóa ghi chú?</DialogTitle>
-             <DialogDescription>
-              “{note.title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.
-             </DialogDescription>
-            </DialogHeader>
-            <DialogFooter>
-             <DialogClose asChild>
-              <Button type="button" variant="outline" disabled={isDeleting}>
-               Hủy
-              </Button>
-             </DialogClose>
-             <Button
-              type="button"
-              variant="destructive"
-              disabled={isDeleting}
-              onClick={() => void handleDelete()}
-             >
-              {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}
-              {isDeleting ? "Đang xóa..." : "Xóa"}
-             </Button>
-            </DialogFooter>
-           </DialogContent>
-          </Dialog>
          </div>,
          desktopActionsContainer,
         )
       : null}
+
+     <Sheet open={mobileActionsOpen} onOpenChange={setMobileActionsOpen} side="bottom" height="tall">
+      <SheetHeader title="Tùy chọn ghi chú" onClose={() => setMobileActionsOpen(false)} />
+      <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+       <section className="grid gap-1">
+        <Typography
+         as="h3"
+         variant="overline"
+         tone="muted"
+         weight="black"
+         transform="uppercase"
+         className="px-2.5"
+        >
+         Chế độ đọc
+        </Typography>
+        <Button
+         type="button"
+         variant={!isReadOnlyMode ? "active" : "menu"}
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          setReadOnlyOverride(!isReadOnlyMode);
+          setMobileActionsOpen(false);
+         }}
+        >
+         {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
+         {isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chuyển sang chỉ xem"}
+        </Button>
+        <Button
+         type="button"
+         variant={isSplitView ? "active" : "menu"}
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          handleToggleSplitView();
+          setMobileActionsOpen(false);
+         }}
+        >
+         {isSplitView ? <PanelLeftClose data-icon="inline-start" /> : <PanelLeft data-icon="inline-start" />}
+         {isSplitView ? "Đóng split view" : "Mở split view"}
+        </Button>
+        {!isReadOnlyMode ? (
+         <Button
+          type="button"
+          variant={isToolbarVisible ? "active" : "menu"}
+          size="touch"
+          align="start"
+          className="w-full"
+          onClick={() => {
+           setIsToolbarVisible((current) => !current);
+           setMobileActionsOpen(false);
+          }}
+         >
+          {isToolbarVisible ? <PanelTopClose data-icon="inline-start" /> : <PanelTopOpen data-icon="inline-start" />}
+          {isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+         </Button>
+        ) : null}
+       </section>
+
+       <Separator />
+
+       <section className="grid gap-1">
+        <Typography
+         as="h3"
+         variant="overline"
+         tone="muted"
+         weight="black"
+         transform="uppercase"
+         className="px-2.5"
+        >
+         Ghi chú
+        </Typography>
+        <Button
+         type="button"
+         variant="menu"
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          setMobileActionsOpen(false);
+          requestAnimationFrame(() => setMetadataOpen(true));
+         }}
+        >
+         <Settings2 data-icon="inline-start" />
+         Thông tin và đổi tên
+        </Button>
+        <Button
+         type="button"
+         variant="menu"
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          setMobileActionsOpen(false);
+          requestAnimationFrame(() => importInputRef.current?.click());
+         }}
+        >
+         <Upload data-icon="inline-start" />
+         Import
+        </Button>
+        <Button
+         type="button"
+         variant="menu"
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          handleExport();
+          setMobileActionsOpen(false);
+         }}
+        >
+         <Download data-icon="inline-start" />
+         Export
+        </Button>
+        <Button
+         type="button"
+         variant="menu"
+         size="touch"
+         align="start"
+         className="w-full"
+         disabled={focusModeEnabled}
+         onClick={() => {
+          setMobileActionsOpen(false);
+          router.push("/notes?action=new");
+         }}
+        >
+         <Plus data-icon="inline-start" />
+         Mở ghi chú mới
+        </Button>
+        <Button
+         type="button"
+         variant="menu"
+         size="touch"
+         align="start"
+         className="w-full"
+         disabled={focusModeEnabled}
+         onClick={() => {
+          closeTab(noteId);
+          setMobileActionsOpen(false);
+         }}
+        >
+         <PanelLeftClose data-icon="inline-start" />
+         Đóng tab hiện tại
+        </Button>
+        <Button
+         type="button"
+         variant="menuDestructive"
+         size="touch"
+         align="start"
+         className="w-full"
+         onClick={() => {
+          setMobileActionsOpen(false);
+          requestAnimationFrame(() => setShowDeleteConfirm(true));
+         }}
+        >
+         <Trash2 data-icon="inline-start" />
+         Xóa ghi chú
+        </Button>
+       </section>
+      </SheetBody>
+     </Sheet>
+
+     {metadataOpen ? (
+      <NoteLibraryMetadataDialog
+       note={note}
+       open
+       onOpenChange={setMetadataOpen}
+       hideTrigger
+      />
+     ) : null}
+
+     <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
+      <DialogContent className="max-w-md" showCloseButton={!isDeleting}>
+       <DialogHeader>
+        <DialogTitle>Xóa ghi chú?</DialogTitle>
+        <DialogDescription>
+         “{note.title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.
+        </DialogDescription>
+       </DialogHeader>
+       <DialogFooter>
+        <DialogClose asChild>
+         <Button type="button" variant="outline" disabled={isDeleting}>
+          Hủy
+         </Button>
+        </DialogClose>
+        <Button
+         type="button"
+         variant="destructive"
+         disabled={isDeleting}
+         onClick={() => void handleDelete()}
+        >
+         {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}
+         {isDeleting ? "Đang xóa..." : "Xóa"}
+        </Button>
+       </DialogFooter>
+      </DialogContent>
+     </Dialog>
+
      {isSplitView ? (
-      <div className="note-editor-split-panel min-h-0 flex-1 overflow-hidden p-1 sm:p-2 lg:p-4">
+      <div className="note-editor-split-panel min-h-0 flex-1 overflow-hidden p-0 sm:p-2 lg:p-4">
        <SplitViewEditor
         key={`split-${importVersion}`}
         noteId={noteId}
@@ -701,7 +737,7 @@ export function NoteEditorPanel({
        />
       </div>
      ) : (
-      <div className="note-editor-scroll p-1 sm:p-2 lg:p-4">
+      <div className="note-editor-scroll p-0 sm:p-2 lg:p-4">
        <Editor
         key={`note-${importVersion}`}
         initialContent={noteContent}
@@ -724,19 +760,22 @@ function SaveStatusBadge({ status }: { status: SaveStatus }) {
 
  const config = {
   saving: {
-   icon: <Cloud className="w-3.5 h-3.5 animate-pulse" />,
+   icon: <Cloud className="h-3.5 w-3.5 animate-pulse" />,
    label: "Đang lưu...",
    className: "text-text-muted",
+   visibility: "flex",
   },
   saved: {
-   icon: <Check className="w-3.5 h-3.5" />,
+   icon: <Check className="h-3.5 w-3.5" />,
    label: "Đã lưu",
    className: "text-success",
+   visibility: "hidden sm:flex",
   },
   error: {
-   icon: <CloudOff className="w-3.5 h-3.5" />,
+   icon: <CloudOff className="h-3.5 w-3.5" />,
    label: "Lỗi lưu",
    className: "text-danger",
+   visibility: "flex",
   },
  };
 
@@ -744,7 +783,7 @@ function SaveStatusBadge({ status }: { status: SaveStatus }) {
 
  return (
   <div
-   className={`flex h-9 items-center gap-1.5 rounded-xl px-1 text-xs font-medium ${c.className} animate-in fade-in xl:px-2`}
+   className={`${c.visibility} h-9 items-center gap-1.5 rounded-xl px-1 text-xs font-medium ${c.className} animate-in fade-in xl:px-2`}
    title={c.label}
    aria-label={c.label}
   >
