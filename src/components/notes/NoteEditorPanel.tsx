@@ -404,7 +404,7 @@ export function NoteEditorPanel({
    style={{ display: isVisible ? "flex" : "none" }}
   >
    {isLoading ? (
-    <NoteEditorSkeleton />
+    <NoteEditorSkeleton splitView={isSplitView} />
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
      <Typography as="p" tone="muted">

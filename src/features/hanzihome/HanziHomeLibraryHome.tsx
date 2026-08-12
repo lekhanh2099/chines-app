@@ -48,7 +48,7 @@ export function HanziHomeLibraryHome() {
 
  return (
   <PageContainer>
-   <main className="grid w-full gap-6">
+   <main className="grid w-full min-w-0 gap-6">
     <PageHeader
      title="Thư viện học HanziHome"
      description="Chọn giáo trình, cấp độ, quyển rồi mở đúng bài bạn muốn học."

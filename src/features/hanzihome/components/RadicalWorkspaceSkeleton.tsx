@@ -5,12 +5,12 @@ export function RadicalWorkspaceSkeleton() {
    aria-busy="true"
    aria-live="polite"
   >
-   <div className="mx-auto grid w-full max-w-7xl animate-pulse gap-5 p-2 sm:p-3 lg:gap-7 lg:p-5">
+   <div className="mx-auto grid w-full min-w-0 max-w-7xl animate-pulse gap-5 p-2 sm:p-3 lg:gap-7 lg:p-5">
     <div className="grid gap-3">
      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
       <div className="grid gap-2">
        <div className="h-6 w-40 rounded-md bg-bg-subtle" />
-       <div className="h-4 w-72 max-w-full rounded-md bg-bg-subtle" />
+       <div className="h-4 w-full max-w-72 rounded-md bg-bg-subtle" />
       </div>
       <div className="h-11 w-full rounded-xl bg-bg-subtle lg:w-80" />
      </div>

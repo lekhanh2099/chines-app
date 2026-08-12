@@ -209,13 +209,14 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
  return (
   <PageContainer>
-   <main className="grid w-full gap-5">
+   <main className="grid w-full min-w-0 gap-5">
     <PageHeader
      title="Cài đặt"
      description="Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản."
     />
 
     <Tabs<z.infer<typeof SettingsSectionSchema>>
+     className="min-w-0"
      value={section}
      items={[
       { key: SettingsSectionSchema.enum.app, label: "Ứng dụng", icon: Settings2 },

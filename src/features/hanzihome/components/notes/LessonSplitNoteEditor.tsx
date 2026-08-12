@@ -3,9 +3,27 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useState } from "react";
 import Link from "next/link";
-import { ExternalLink, Eye, PanelTopClose, PanelTopOpen, Pencil, Save } from "lucide-react";
+import {
+ ExternalLink,
+ Eye,
+ MoreHorizontal,
+ PanelLeft,
+ PanelTopClose,
+ PanelTopOpen,
+ Pencil,
+ Save,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+ DropdownMenu,
+ DropdownMenuCheckboxItem,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 
@@ -53,77 +71,111 @@ export function LessonSplitNoteEditor({
  const splitEnabled = note.split_view_enabled ?? true;
 
  return (
-  <div className={fillHeight ? "flex h-full min-h-0 flex-col gap-3" : "grid gap-3"}>
-   <div className="flex flex-wrap items-center justify-between gap-3">
-    <div className="flex flex-wrap gap-2">
-     <StudyInstructionText
-      variant="overline"
-      tone="info"
-      weight="black"
-      tracking="wide"
-      transform="uppercase"
-      className="rounded-full bg-info-subtle px-3 py-1"
-     >
-      Bài đọc
-     </StudyInstructionText>
-     <StudyInstructionText
-      variant="overline"
-      tone="warning"
-      weight="black"
-      tracking="wide"
-      transform="uppercase"
-      className="rounded-full bg-warning-subtle px-3 py-1"
-     >
-      Ghi chú
-     </StudyInstructionText>
-    </div>
-    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-     <StudyInstructionText
-      variant="caption"
-      tone="muted"
-      weight="bold"
-      className="inline-flex items-center gap-1.5"
-     >
-      <Save className="h-3.5 w-3.5" />
-      {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
-     </StudyInstructionText>
-     <Button
-      type="button"
-      variant={readOnly ? "active" : "outline"}
-      size="toolbar"
-      aria-pressed={readOnly}
-      onClick={() => setReadOnly((current) => !current)}
-     >
-      {readOnly ? <Eye /> : <Pencil />}
-      {readOnly ? "Chỉ xem" : "Chỉnh sửa"}
-     </Button>
-     {!readOnly ? (
+  <div className={fillHeight ? "flex h-full min-h-0 min-w-0 flex-col gap-3" : "grid min-w-0 gap-3"}>
+   <div className="flex min-w-0 items-center justify-between gap-2 sm:gap-3">
+    <StudyInstructionText
+     variant="caption"
+     tone="muted"
+     weight="bold"
+     className="inline-flex items-center gap-1.5"
+    >
+     <Save className="h-3.5 w-3.5" />
+     {isSaving || isReadingSaving ? "Đang lưu..." : "Autosave"}
+    </StudyInstructionText>
+    <div className="ml-auto flex min-w-0 items-center gap-2">
+     <div className="hidden flex-wrap items-center justify-end gap-2 sm:flex sm:gap-3">
       <Button
        type="button"
-       variant={toolbarVisible ? "active" : "outline"}
+       variant={readOnly ? "active" : "outline"}
        size="toolbar"
-       aria-pressed={toolbarVisible}
-       onClick={() => setToolbarVisible((current) => !current)}
+       aria-pressed={readOnly}
+       onClick={() => setReadOnly((current) => !current)}
       >
-       {toolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
-       {toolbarVisible ? "Ẩn toolbar" : "Hiện toolbar"}
+       {readOnly ? <Eye /> : <Pencil />}
+       {readOnly ? "Chỉ xem" : "Chỉnh sửa"}
       </Button>
-     ) : null}
-     <Button
-      type="button"
-      variant={splitEnabled ? "active" : "outline"}
-      size="toolbar"
-      aria-pressed={splitEnabled}
-      onClick={() => updateSplitView(!splitEnabled)}
-     >
-      {splitEnabled ? "Đóng Split" : "Mở Split"}
-     </Button>
-     <Button asChild variant="outline" size="toolbar">
-      <Link href={`/notes/${note.id}`} prefetch={false}>
-       <ExternalLink className="h-4 w-4" />
-       Mở note
-      </Link>
-     </Button>
+      {!readOnly ? (
+       <Button
+        type="button"
+        variant={toolbarVisible ? "active" : "outline"}
+        size="toolbar"
+        aria-pressed={toolbarVisible}
+        onClick={() => setToolbarVisible((current) => !current)}
+       >
+        {toolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
+        {toolbarVisible ? "Ẩn toolbar" : "Hiện toolbar"}
+       </Button>
+      ) : null}
+      <Button
+       type="button"
+       variant={splitEnabled ? "active" : "outline"}
+       size="toolbar"
+       aria-pressed={splitEnabled}
+       onClick={() => updateSplitView(!splitEnabled)}
+      >
+       {splitEnabled ? "Đóng Split" : "Mở Split"}
+      </Button>
+      <Button asChild variant="outline" size="toolbar">
+       <Link href={`/notes/${note.id}`} prefetch={false}>
+        <ExternalLink className="h-4 w-4" />
+        Mở note
+       </Link>
+      </Button>
+     </div>
+
+     <div className="flex items-center gap-2 sm:hidden">
+      <Button
+       type="button"
+       variant={readOnly ? "active" : "outline"}
+       size="toolbar"
+       aria-pressed={readOnly}
+       onClick={() => setReadOnly((current) => !current)}
+      >
+       {readOnly ? <Eye /> : <Pencil />}
+       {readOnly ? "Chỉ xem" : "Chỉnh sửa"}
+      </Button>
+      <DropdownMenu>
+       <DropdownMenuTrigger asChild>
+        <Button
+         type="button"
+         variant="outline"
+         size="icon-toolbar"
+         aria-label="Mở thêm tuỳ chọn ghi chú"
+         title="Tuỳ chọn ghi chú"
+        >
+         <MoreHorizontal />
+        </Button>
+       </DropdownMenuTrigger>
+       <DropdownMenuContent align="end" width="md">
+        <DropdownMenuLabel>Tuỳ chọn ghi chú</DropdownMenuLabel>
+        {!readOnly ? (
+         <DropdownMenuCheckboxItem
+          checked={toolbarVisible}
+          onSelect={(event) => event.preventDefault()}
+          onCheckedChange={setToolbarVisible}
+         >
+          {toolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
+          {toolbarVisible ? "Ẩn toolbar" : "Hiện toolbar"}
+         </DropdownMenuCheckboxItem>
+        ) : null}
+        <DropdownMenuCheckboxItem
+         checked={splitEnabled}
+         onSelect={(event) => event.preventDefault()}
+         onCheckedChange={updateSplitView}
+        >
+         <PanelLeft />
+         {splitEnabled ? "Đóng Split" : "Mở Split"}
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+         <Link href={`/notes/${note.id}`} prefetch={false}>
+          <ExternalLink />
+          Mở note đầy đủ
+         </Link>
+        </DropdownMenuItem>
+       </DropdownMenuContent>
+      </DropdownMenu>
+     </div>
     </div>
    </div>
 
@@ -206,31 +258,42 @@ export function LessonSplitNoteEditor({
 function LessonSplitNoteEditorSkeleton({ fillHeight }: { fillHeight: boolean }) {
  return (
   <div
-   className={fillHeight ? "grid h-full min-h-0 animate-pulse gap-3" : "grid animate-pulse gap-3"}
+   className={
+    fillHeight ? "flex h-full min-h-0 animate-pulse flex-col gap-3" : "grid animate-pulse gap-3"
+   }
    aria-busy="true"
    aria-live="polite"
   >
-   <div className="flex items-center justify-between gap-3">
-    <div className="flex gap-2">
-     <div className="h-7 w-20 rounded-full bg-bg-subtle" />
-     <div className="h-7 w-20 rounded-full bg-bg-subtle" />
-    </div>
-    <div className="flex gap-2">
-     <div className="h-11 w-28 rounded-xl bg-bg-subtle" />
-     <div className="h-11 w-24 rounded-xl bg-bg-subtle" />
+   <div className="flex min-w-0 items-center justify-between gap-2 sm:gap-3">
+    <div className="h-4 w-20 rounded bg-bg-subtle" />
+    <div className="ml-auto flex min-w-0 items-center gap-2">
+     <div className="hidden flex-wrap justify-end gap-2 sm:flex sm:gap-3">
+      <div className="h-9 w-28 rounded-lg bg-bg-subtle" />
+      <div className="h-9 w-24 rounded-lg bg-bg-subtle" />
+      <div className="h-9 w-24 rounded-lg bg-bg-subtle" />
+      <div className="h-9 w-24 rounded-lg bg-bg-subtle" />
+     </div>
+     <div className="flex items-center gap-2 sm:hidden">
+      <div className="h-9 w-28 rounded-lg bg-bg-subtle" />
+      <div className="size-9 rounded-lg bg-bg-subtle" />
+     </div>
     </div>
    </div>
    <div
     className={
      fillHeight
-      ? "grid min-h-0 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
+      ? "grid min-h-0 flex-1 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
       : "grid min-h-112 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid-cols-2"
     }
    >
     {Array.from({ length: 2 }, (_, paneIndex) => (
      <div
       key={paneIndex}
-      className="grid content-start gap-4 border-border-default p-5 lg:first:border-r"
+      className={
+       paneIndex === 0
+        ? "grid content-start gap-4 border-border-default p-5 lg:first:border-r"
+        : "hidden content-start gap-4 border-border-default p-5 lg:grid"
+      }
      >
       <div className="h-5 w-28 rounded-md bg-bg-subtle" />
       <div className="h-8 w-56 max-w-full rounded-lg bg-bg-subtle" />

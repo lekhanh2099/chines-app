@@ -102,8 +102,8 @@ export function HanziHomeVocabReviewPage({
  };
 
  return (
-  <main className="hanzihome-static-page">
-   <div className="grid gap-4">
+  <main className="hanzihome-static-page min-w-0">
+   <div className="grid min-w-0 gap-4">
     <PageHeader
      eyebrow="Ôn tập"
      title="Ôn từ vựng"

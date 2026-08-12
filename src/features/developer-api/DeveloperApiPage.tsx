@@ -681,7 +681,7 @@ curl --request GET \\
      )}
     </section>
 
-    <Card variant="subtle" padding="lg" className="grid gap-4">
+    <Card variant="subtle" padding="lg" className="grid min-w-0 gap-4">
      <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="grid gap-1">
        <div className="flex items-center gap-2">
@@ -701,13 +701,13 @@ curl --request GET \\
       </div>
      </div>
      <Separator />
-     <div className="grid gap-2">
+     <div className="grid min-w-0 gap-2">
       {currentApiInventory.map((entry) => (
        <Card
         key={entry.currentPath}
         variant="default"
         padding="sm"
-        className="grid gap-1 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center sm:gap-3"
+        className="grid min-w-0 gap-1 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center sm:gap-3"
        >
         <Badge variant={entry.exposure === "public-v1" ? "success" : "warning"}>
          {entry.methods.join(" · ")}
@@ -716,7 +716,7 @@ curl --request GET \\
          <Typography as="span" variant="code" tone="default" wrapping="breakAll">
           {entry.currentPath}
          </Typography>
-         <Typography as="span" variant="caption" tone="muted">
+         <Typography as="span" variant="caption" tone="muted" wrapping="breakAll">
           {entry.exposure === "public-v1" ? `v1: ${entry.v1Path}` : entry.internalReason}
          </Typography>
         </div>

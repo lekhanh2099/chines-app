@@ -2,12 +2,12 @@ import { Card } from "@/components/ui/card";
 
 export function MemoryTipsSkeleton() {
  return (
-  <div className="grid w-full animate-pulse gap-5" aria-busy="true">
+  <div className="grid w-full min-w-0 animate-pulse gap-5" aria-busy="true">
    <div className="flex flex-wrap items-start justify-between gap-4">
     <div className="grid gap-2">
      <div className="h-3 w-24 rounded-full bg-bg-subtle" />
      <div className="h-9 w-52 rounded-lg bg-bg-subtle" />
-     <div className="h-4 w-96 max-w-full rounded-md bg-bg-subtle" />
+     <div className="h-4 w-full max-w-96 rounded-md bg-bg-subtle" />
      <div className="h-3 w-28 rounded-full bg-bg-subtle" />
     </div>
     <div className="h-9 w-36 rounded-lg bg-bg-subtle" />

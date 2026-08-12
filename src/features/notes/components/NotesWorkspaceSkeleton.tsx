@@ -3,14 +3,14 @@ import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-he
 export function NotesWorkspaceSkeleton() {
  return (
   <div
-   className="flex h-[calc(100dvh_-_3.5rem_-_88px_-_env(safe-area-inset-bottom))] min-h-0 animate-pulse flex-col overflow-hidden bg-bg-primary md:h-[calc(100dvh_-_3.5rem)]"
+   className="flex h-full min-h-0 animate-pulse flex-col overflow-hidden bg-bg-primary"
    aria-busy="true"
    aria-live="polite"
   >
    <WorkspaceCommandHeader
     title={<span className="block h-6 w-28 rounded-md bg-bg-subtle" />}
     badge={<span className="block h-6 w-16 rounded-full bg-bg-subtle" />}
-    description={<span className="block h-4 w-96 max-w-full rounded-md bg-bg-subtle" />}
+    description={<span className="block h-4 w-full max-w-96 rounded-md bg-bg-subtle" />}
     controls={
      <>
       <div className="h-11 min-w-0 flex-1 rounded-xl bg-bg-subtle md:max-w-sm" />
@@ -41,7 +41,7 @@ export function NotesWorkspaceSkeleton() {
        >
         <div className="size-9 shrink-0 rounded-xl bg-bg-subtle" />
         <div className="grid min-w-0 flex-1 gap-2">
-         <div className="h-4 w-64 max-w-full rounded-md bg-bg-subtle" />
+         <div className="h-4 w-full max-w-64 rounded-md bg-bg-subtle" />
          <div className="h-3 w-40 rounded-full bg-bg-subtle" />
          <div className="h-5 w-24 rounded-full bg-bg-subtle" />
         </div>

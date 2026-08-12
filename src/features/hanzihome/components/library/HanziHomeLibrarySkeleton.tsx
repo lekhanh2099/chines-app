@@ -1,16 +1,16 @@
 export function HanziHomeLibrarySkeleton() {
  return (
   <main
-   className="flex w-full flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5"
+   className="flex w-full min-w-0 flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5"
    aria-busy="true"
    aria-live="polite"
   >
-   <div className="grid animate-pulse gap-4">
+   <div className="grid min-w-0 animate-pulse gap-4">
     <section className="grid gap-3 rounded-xl border border-border-default bg-bg-card p-4 shadow-theme-sm">
      <div className="flex items-start justify-between gap-4">
       <div className="grid min-w-0 flex-1 gap-2">
-       <div className="h-8 w-72 max-w-full rounded-lg bg-bg-subtle" />
-       <div className="h-4 w-96 max-w-full rounded-md bg-bg-subtle" />
+       <div className="h-8 w-full max-w-72 rounded-lg bg-bg-subtle" />
+       <div className="h-4 w-full max-w-96 rounded-md bg-bg-subtle" />
       </div>
       <div className="hidden gap-2 sm:flex">
        <div className="h-11 w-28 rounded-xl bg-bg-subtle" />
@@ -40,7 +40,7 @@ export function HanziHomeLibrarySkeleton() {
        <div className="size-9 shrink-0 rounded-lg bg-bg-subtle" />
        <div className="grid min-w-0 flex-1 gap-2">
         <div className="h-5 w-44 rounded-md bg-bg-subtle" />
-        <div className="h-3 w-64 max-w-full rounded-full bg-bg-subtle" />
+        <div className="h-3 w-full max-w-64 rounded-full bg-bg-subtle" />
        </div>
        <div className="hidden h-7 w-28 rounded-full bg-bg-subtle sm:block" />
       </div>

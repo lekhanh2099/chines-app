@@ -79,7 +79,7 @@ export function HanziHomeMemoryTipsPage() {
 
  return (
   <PageContainer>
-   <main className="grid w-full gap-5">
+   <main className="grid w-full min-w-0 gap-5">
     <PageHeader
      eyebrow="HanziHome"
      title="Nhắc nhanh"

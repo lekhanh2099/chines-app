@@ -1548,8 +1548,8 @@ function HtmlArtifactPreviewSkeleton() {
    aria-busy="true"
    aria-live="polite"
   >
-   <div className="h-8 w-64 max-w-full rounded-lg bg-bg-subtle" />
-   <div className="h-4 w-96 max-w-full rounded-md bg-bg-subtle" />
+   <div className="h-8 w-full max-w-64 rounded-lg bg-bg-subtle" />
+   <div className="h-4 w-full max-w-96 rounded-md bg-bg-subtle" />
    <div className="grid gap-3 sm:grid-cols-2">
     <div className="h-40 rounded-xl bg-bg-subtle" />
     <div className="h-40 rounded-xl bg-bg-subtle" />

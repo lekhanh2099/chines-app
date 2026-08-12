@@ -76,7 +76,7 @@ export function ReviewLessonMultiSelect({
 
  return (
   <section className="grid gap-2.5">
-   <div className="flex flex-wrap items-center justify-between gap-2">
+   <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
     <div className="min-w-0">
      <StudyInstructionText
       variant="overline"
@@ -92,7 +92,7 @@ export function ReviewLessonMultiSelect({
      </Typography>
     </div>
 
-    <div className="flex shrink-0 flex-wrap items-center gap-1.5">
+    <div className="flex min-w-0 w-full flex-wrap items-center gap-1.5 sm:w-auto sm:shrink-0">
      <StudyInstructionText
       variant="caption"
       tone="muted"

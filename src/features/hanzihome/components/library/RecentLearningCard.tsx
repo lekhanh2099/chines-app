@@ -105,7 +105,7 @@ function RecentLearningSkeleton() {
    <span className="size-11 shrink-0 rounded-lg bg-bg-subtle" />
    <span className="grid flex-1 gap-2">
     <span className="h-4 w-20 rounded-md bg-bg-subtle" />
-    <span className="h-5 w-64 max-w-full rounded-md bg-bg-subtle" />
+    <span className="h-5 w-full max-w-64 rounded-md bg-bg-subtle" />
    </span>
    <span className="hidden h-9 w-24 rounded-lg bg-bg-subtle sm:block" />
   </Card>

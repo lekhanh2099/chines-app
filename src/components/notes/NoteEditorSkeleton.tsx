@@ -2,9 +2,11 @@ import { cn } from "@/lib/utils";
 
 export function NoteEditorSkeleton({
  showTabBar = false,
+ splitView = false,
  className,
 }: {
  showTabBar?: boolean;
+ splitView?: boolean;
  className?: string;
 }) {
  return (
@@ -22,19 +24,19 @@ export function NoteEditorSkeleton({
    ) : null}
 
    <div className="grid min-h-0 flex-1 animate-pulse gap-3 p-3 sm:p-4">
-    <div className="flex h-12 items-center gap-2 rounded-xl border border-border-default bg-bg-card px-3">
+    <div className="flex h-12 min-w-0 items-center gap-2 overflow-hidden rounded-xl border border-border-default bg-bg-card px-3">
      {Array.from({ length: 8 }, (_, index) => (
       <div key={index} className={cn("h-7 rounded-lg bg-bg-subtle", index < 2 ? "w-7" : "w-12")} />
      ))}
     </div>
-    <div className="grid min-h-0 gap-3 lg:grid-cols-2">
-     {Array.from({ length: 2 }, (_, paneIndex) => (
+    <div className={cn("grid min-h-0 gap-3", splitView && "lg:grid-cols-2")}>
+     {Array.from({ length: splitView ? 2 : 1 }, (_, paneIndex) => (
       <div
        key={paneIndex}
        className="grid min-h-96 content-start gap-4 rounded-xl border border-border-default bg-bg-card p-5"
       >
        <div className="h-5 w-32 rounded-md bg-bg-subtle" />
-       <div className="h-8 w-64 max-w-full rounded-lg bg-bg-subtle" />
+       <div className="h-8 w-full max-w-64 rounded-lg bg-bg-subtle" />
        {Array.from({ length: 7 }, (_, lineIndex) => (
         <div
          key={lineIndex}

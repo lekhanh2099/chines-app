@@ -154,7 +154,7 @@ export function NotebookToolbar({
     ref={toolbarRef}
     variant="section"
     padding="sm"
-    className="sticky top-2 z-30 grid gap-2 sm:top-3"
+    className="sticky top-2 z-30 grid min-w-0 gap-2 sm:top-3"
    >
     <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center">
      <Label variant="label" className="relative block min-w-0 flex-1">
@@ -209,7 +209,7 @@ export function NotebookToolbar({
    ref={toolbarRef}
    variant="section"
    padding="md"
-   className="sticky top-2 z-30 grid gap-3 sm:top-3"
+   className="sticky top-2 z-30 grid min-w-0 gap-3 sm:top-3"
   >
    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-soft">{sectionButtons}</div>
 
