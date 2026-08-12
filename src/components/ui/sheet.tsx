@@ -9,18 +9,21 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const SheetSideSchema = z.enum(["right", "bottom"]);
+const SheetHeightSchema = z.enum(["default", "tall"]);
 
 export function Sheet({
  open,
  onOpenChange,
  children,
  side = SheetSideSchema.enum.right,
+ height = SheetHeightSchema.enum.default,
  className,
 }: {
  open: boolean;
  onOpenChange: (open: boolean) => void;
  children: React.ReactNode;
  side?: z.infer<typeof SheetSideSchema>;
+ height?: z.infer<typeof SheetHeightSchema>;
  className?: string;
 }) {
  return (
@@ -29,11 +32,12 @@ export function Sheet({
     <DialogPrimitive.Overlay className="fixed inset-0 z-100 bg-overlay" />
     <DialogPrimitive.Content
      aria-describedby={undefined}
+     data-height={height}
      className={cn(
       "fixed z-101 flex max-w-full flex-col overflow-hidden border-border-default bg-bg-card shadow-theme-lg outline-none",
       side === "right"
        ? "right-0 top-0 h-full w-full border-l sm:max-w-2xl"
-       : "inset-x-0 bottom-0 max-h-[82dvh] w-full rounded-t-xl border border-b-0",
+       : "inset-x-0 bottom-0 w-full rounded-t-xl border border-b-0 data-[height=default]:max-h-[82dvh] data-[height=tall]:max-h-[92dvh]",
       className,
      )}
     >
