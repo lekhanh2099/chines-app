@@ -193,7 +193,7 @@ export function ModuleSplitWorkspaceContent() {
       <SelectContent
        side="bottom"
        align="start"
-       avoidCollisions={false}
+       collisionPadding={8}
        className="max-h-80 min-w-[var(--radix-select-trigger-width)]"
       >
        <SelectGroup>
