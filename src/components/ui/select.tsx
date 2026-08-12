@@ -45,7 +45,7 @@ function SelectTrigger({
  const defaultAppearance =
   "border-input bg-bg-input py-2 pr-2 pl-2.5 data-[size=default]:h-11 data-[size=sm]:h-9";
  const breadcrumbAppearance =
-  "h-8 min-h-8 border-transparent bg-transparent px-2 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle [&_svg]:text-text-muted";
+  "h-11 min-h-11 border-transparent bg-transparent px-1.5 text-sm font-bold text-text-primary shadow-none hover:bg-bg-subtle focus-visible:bg-bg-subtle data-[state=open]:bg-bg-subtle sm:h-8 sm:min-h-8 sm:px-2 [&_svg]:text-text-muted";
 
  return (
   <SelectPrimitive.Trigger
