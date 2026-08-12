@@ -80,12 +80,16 @@ describe("LessonReadingSettings", () => {
   );
  });
 
- it("keeps Khải thư as the default while using a Simplified-Chinese fallback on unsupported devices", () => {
+ it("keeps Khải thư as the default with a deterministic shipped fallback before generic serif", () => {
   const kaitiFontFamily = getHanziFontFamily("kaiti");
   const systemFontFamily = getHanziFontFamily("system");
 
   expect(kaitiFontFamily).toContain('"Kaiti SC"');
+  expect(kaitiFontFamily).toContain("var(--font-reading-ma-shan)");
   expect(kaitiFontFamily).toContain("var(--font-reading-noto-serif)");
+  expect(kaitiFontFamily.indexOf("var(--font-reading-ma-shan)")).toBeLessThan(
+   kaitiFontFamily.indexOf("var(--font-reading-noto-serif)"),
+  );
   expect(kaitiFontFamily).not.toContain("font-lxgw-wenkai-mono-tc");
   expect(systemFontFamily).toContain("system-ui");
   expect(systemFontFamily).not.toBe(kaitiFontFamily);
@@ -105,7 +109,7 @@ describe("LessonReadingSettings", () => {
   expect(markup).toContain("开始自己安排时间以后");
  });
 
- it("renders quick reader categories as nested submenus", () => {
+ it("renders desktop quick reader categories as nested submenus", () => {
   const markup = renderToStaticMarkup(
    <DropdownMenu open>
     <DropdownMenuContent>
