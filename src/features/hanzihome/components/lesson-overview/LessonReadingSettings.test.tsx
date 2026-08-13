@@ -84,7 +84,11 @@ describe("LessonReadingSettings", () => {
   const kaitiFontFamily = getHanziFontFamily("kaiti");
   const systemFontFamily = getHanziFontFamily("system");
 
+  expect(kaitiFontFamily).toContain('"HanziHome Kaiti"');
   expect(kaitiFontFamily).toContain('"Kaiti SC"');
+  expect(kaitiFontFamily.indexOf('"HanziHome Kaiti"')).toBeLessThan(
+   kaitiFontFamily.indexOf('"Kaiti SC"'),
+  );
   expect(kaitiFontFamily.indexOf('"Kaiti SC"')).toBeLessThan(
    kaitiFontFamily.indexOf("var(--font-reading-noto-serif)"),
   );

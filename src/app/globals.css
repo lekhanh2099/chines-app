@@ -6,6 +6,14 @@
 @plugin "@tailwindcss/typography";
 
 @font-face {
+ font-family: "HanziHome Kaiti";
+ src: url("/fonts/gkai00mp.ttf") format("truetype");
+ font-display: swap;
+ font-style: normal;
+ font-weight: 400;
+}
+
+@font-face {
  font-family: "FZKTPY01";
  src: url("/fonts/FZKTPY01.ttf") format("truetype");
  font-display: swap;
