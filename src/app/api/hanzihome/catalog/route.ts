@@ -27,8 +27,10 @@ export async function GET(request: Request) {
   }
 
   const includeLessons = parseBooleanParam(url.searchParams.get("includeLessons"));
+  const includeRadicals = parseBooleanParam(url.searchParams.get("includeRadicals"));
   const catalog = await hanzihomeContentRepository.getCatalogSummary({
    includeLessons,
+   includeRadicals,
   });
 
   return privateNoStoreJson({ catalog });

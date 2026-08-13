@@ -32,14 +32,16 @@ const emptyCatalogData: HanziHomeCatalogData = {
 
 export function useHanziHomeCatalogQuery({
  includeLessons = false,
+ includeRadicals = false,
  enabled = true,
 }: {
  includeLessons?: boolean;
+ includeRadicals?: boolean;
  enabled?: boolean;
 } = {}) {
  const query = useQuery({
-  queryKey: hanzihomeQueryKeys.catalog(includeLessons),
-  queryFn: () => fetchHanziHomeCatalog({ includeLessons }),
+  queryKey: hanzihomeQueryKeys.catalog(includeLessons, includeRadicals),
+  queryFn: () => fetchHanziHomeCatalog({ includeLessons, includeRadicals }),
   staleTime: catalogStaleTime,
   enabled,
  });
@@ -53,6 +55,7 @@ export function useHanziHomeCatalogQuery({
 export function useHanziHomeCatalogData(
  options: {
   includeLessons?: boolean;
+  includeRadicals?: boolean;
   enabled?: boolean;
  } = {},
 ) {

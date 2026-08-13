@@ -12,8 +12,7 @@ import {
 } from "@/features/hanzihome/utils/learning-state";
 
 const learningStateQueryKey = ["hanzihome", "learning-state"];
-const defaultHanziFontFamily =
- 'var(--font-reading-noto-serif), "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif';
+const defaultHanziFontFamily = getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont);
 
 export function HanziTypographyPreferenceBridge() {
  const learningStateQuery = useQuery({

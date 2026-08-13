@@ -30,11 +30,14 @@ import type { ReviewItem } from "@/features/hanzihome/context/types";
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const router = useRouter();
  const searchParams = useSearchParams();
- const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: false });
- const catalogData = catalogQuery.data;
  const learning = useLearningState();
  const searchNavigationIntent = useHanziHomeSearchNavigationIntent();
  const moduleFromUrl = forcedModule ?? parseHanziHomeModule(searchParams.get("module"));
+ const catalogQuery = useHanziHomeCatalogQuery({
+  includeLessons: false,
+  includeRadicals: moduleFromUrl === "radicals",
+ });
+ const catalogData = catalogQuery.data;
  const searchParamsString = searchParams.toString();
  const lessonNumberFromUrl = searchParams.get("lesson");
  const legacyLessonIdFromUrl = searchParams.get("lessonId");

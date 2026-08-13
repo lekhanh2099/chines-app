@@ -27,6 +27,7 @@ export function BookSectionContent({
  readingSections,
  interactiveReading = false,
  readingMode = false,
+ documentMode = false,
 }: {
  lessonId?: string;
  section: Section;
@@ -37,6 +38,7 @@ export function BookSectionContent({
  readingSections?: readonly Section[];
  interactiveReading?: boolean;
  readingMode?: boolean;
+ documentMode?: boolean;
 }) {
  const renderSectionFallback = () =>
   hasRenderableValue(section) ? (
@@ -64,6 +66,7 @@ export function BookSectionContent({
         displayMode={displayMode}
         interactiveReading={interactiveReading}
         readingMode={readingMode}
+        documentMode={documentMode}
        />
       ))}
      </div>

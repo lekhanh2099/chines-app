@@ -6,7 +6,11 @@ const LessonResourceKindSchema = z.enum(["overview", "sections", "vocabulary", "
 export const hanzihomeQueryKeys = {
  root: ["hanzihome"],
  catalogRoot: ["hanzihome", "catalog"],
- catalog: (includeLessons: boolean) => ["hanzihome", "catalog", { includeLessons }],
+ catalog: (includeLessons: boolean, includeRadicals = false) => [
+  "hanzihome",
+  "catalog",
+  { includeLessons, includeRadicals },
+ ],
  courseLessonsRoot: ["hanzihome", "course-lessons"],
  courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId],
  lessonDetail: (lessonId: z.infer<z.ZodNullable<z.ZodString>>) => [

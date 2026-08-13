@@ -40,7 +40,7 @@ export function TextLineCard({
     "grid gap-1",
     variant === "card"
      ? "study-content-surface rounded-xl border p-3"
-     : "border-b border-border-default/70 py-2.5 last:border-b-0 sm:py-3",
+     : "border-b border-border-default/70 py-3 last:border-b-0 sm:py-3.5",
    )}
   >
    {speaker ? (

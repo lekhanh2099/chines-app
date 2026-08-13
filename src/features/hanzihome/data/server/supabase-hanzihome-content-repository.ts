@@ -1077,7 +1077,7 @@ function entityLessonId(entityId: string) {
 }
 
 export const supabaseHanziHomeContentRepository = {
- async getCatalogSummary({ includeLessons = false } = {}) {
+ async getCatalogSummary({ includeLessons = false, includeRadicals = false } = {}) {
   const client = await createClient();
   const [courseRows, bookRows, lessonRows, statsRows, radicals] = await Promise.all([
    requireRows(
@@ -1100,7 +1100,7 @@ export const supabaseHanziHomeContentRepository = {
    ),
    includeLessons ? getLessonSummaryRows() : Promise.resolve([]),
    includeLessons ? Promise.resolve([]) : getCatalogStatsRows(),
-   getRadicalsFromDatabase(),
+   includeRadicals ? getRadicalsFromDatabase() : Promise.resolve([]),
   ]);
   const lessons = lessonRows.map(lessonSummaryToViewModel);
   const statsByCourse = new Map(statsRows.map((row) => [row.course_id, row]));

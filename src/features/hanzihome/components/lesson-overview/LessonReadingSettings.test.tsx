@@ -65,9 +65,9 @@ describe("LessonReadingSettings", () => {
    <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
   );
 
-  expect(html).toContain("Hệ thống");
+  expect(html).not.toContain("Hệ thống");
   expect(html).toContain("Noto Serif SC");
-  expect(html).toContain("Noto Sans SC");
+  expect(html).not.toContain("Noto Sans SC");
   expect(html).toContain("Pinyin");
   expect(html).toContain("Khải thư · 楷体");
   expect(html).toContain("Phỏng Tống · 仿宋");
@@ -85,11 +85,13 @@ describe("LessonReadingSettings", () => {
   const systemFontFamily = getHanziFontFamily("system");
 
   expect(kaitiFontFamily).toContain('"Kaiti SC"');
-  expect(kaitiFontFamily).toContain("var(--font-reading-ma-shan)");
-  expect(kaitiFontFamily).toContain("var(--font-reading-noto-serif)");
-  expect(kaitiFontFamily.indexOf("var(--font-reading-ma-shan)")).toBeLessThan(
+  expect(kaitiFontFamily.indexOf('"Kaiti SC"')).toBeLessThan(
    kaitiFontFamily.indexOf("var(--font-reading-noto-serif)"),
   );
+  expect(kaitiFontFamily).not.toContain("var(--font-reading-ma-shan)");
+  expect(kaitiFontFamily).not.toContain('"Ma Shan Zheng"');
+  expect(kaitiFontFamily).not.toContain('"Popular Xingkai"');
+  expect(kaitiFontFamily).toContain("var(--font-reading-noto-serif)");
   expect(kaitiFontFamily).not.toContain("font-lxgw-wenkai-mono-tc");
   expect(systemFontFamily).toContain("system-ui");
   expect(systemFontFamily).not.toBe(kaitiFontFamily);

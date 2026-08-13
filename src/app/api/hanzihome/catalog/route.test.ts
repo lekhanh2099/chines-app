@@ -53,7 +53,7 @@ describe("GET /api/hanzihome/catalog", () => {
   await expect(response.json()).resolves.toEqual({
    catalog: { source: "db", courses: [] },
   });
-  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false });
+  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false, includeRadicals: false });
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 
@@ -66,7 +66,20 @@ describe("GET /api/hanzihome/catalog", () => {
   );
 
   expect(response.status).toBe(200);
-  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: true });
+  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: true, includeRadicals: false });
+  expect(getCourseLessonSummaries).not.toHaveBeenCalled();
+ });
+
+ it("loads radicals only when the radicals module requests them", async () => {
+  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], radicals: [] });
+
+  const response = await GET(
+   new Request("https://app.example/api/hanzihome/catalog?includeRadicals=1"),
+  );
+
+  expect(response.status).toBe(200);
+  expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false, includeRadicals: true });
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 

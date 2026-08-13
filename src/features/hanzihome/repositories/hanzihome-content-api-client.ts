@@ -71,11 +71,15 @@ async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
 
 export async function fetchHanziHomeCatalog(options: {
  includeLessons?: boolean;
+ includeRadicals?: boolean;
 }): Promise<HanziHomeCatalogData> {
  const params = new URLSearchParams();
 
  if (options.includeLessons) {
   params.set("includeLessons", "1");
+ }
+ if (options.includeRadicals) {
+  params.set("includeRadicals", "1");
  }
 
  const url = params.size ? `/api/hanzihome/catalog?${params.toString()}` : "/api/hanzihome/catalog";

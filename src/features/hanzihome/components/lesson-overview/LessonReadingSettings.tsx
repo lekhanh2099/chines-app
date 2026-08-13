@@ -17,9 +17,7 @@ import { ProgressiveStudyText } from "./ProgressiveStudyText";
 import type { HanziReaderFont, HanziReaderSize, LessonDisplayMode } from "./types";
 
 export const fontOptions: Array<{ value: HanziReaderFont; label: string }> = [
- { value: "system", label: "Hệ thống" },
  { value: "songti", label: "Noto Serif SC" },
- { value: "noto-sans", label: "Noto Sans SC" },
  { value: "pinyin", label: "Pinyin" },
  { value: "kaiti", label: "Khải thư · 楷体" },
  { value: "fangsong", label: "Phỏng Tống · 仿宋" },

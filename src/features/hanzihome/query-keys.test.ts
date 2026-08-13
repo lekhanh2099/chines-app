@@ -13,7 +13,7 @@ describe("hanzihomeQueryKeys", () => {
  it("keeps catalog variants below the catalog root", () => {
   expect(hanzihomeQueryKeys.catalog(false)).toEqual([
    ...hanzihomeQueryKeys.catalogRoot,
-   { includeLessons: false },
+   { includeLessons: false, includeRadicals: false },
   ]);
  });
 

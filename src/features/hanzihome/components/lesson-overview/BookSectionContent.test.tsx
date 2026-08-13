@@ -191,4 +191,31 @@ describe("BookSectionContent", () => {
    "第二句。",
   ]);
  });
+
+ it("renders text blocks as one document surface when requested", () => {
+  const section = SectionSchema.parse({
+   id: "lesson-text-surface",
+   type: "text",
+   order: 1,
+   title: "Bài khóa",
+   blocks: [
+    {
+     id: "narrative-1",
+     type: "text_narrative",
+     order: 1,
+     title: "好人难当",
+     paragraphs: [{ id: "paragraph-1", order: 1, zh: "第一段。" }],
+    },
+   ],
+  });
+
+  const html = renderToStaticMarkup(
+   <MandarinTtsProvider>
+    <BookSectionContent section={section} displayMode={DEFAULT_LESSON_DISPLAY_MODE} documentMode />
+   </MandarinTtsProvider>,
+  );
+
+  expect(html.match(/study-content-surface/g)).toBeNull();
+  expect(html).toContain("第一段。");
+ });
 });
