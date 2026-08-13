@@ -30,6 +30,8 @@ npm run build
 
 `npm run check` runs the required formatting, lint, type, test, and build gates. CI runs the same gates on every pull request.
 
+Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains a CI/PR check.
+
 ## Supabase workflow
 
 - Add schema changes as timestamped files under `supabase/migrations/`.

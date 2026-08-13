@@ -190,8 +190,8 @@ export function LessonTextInlineEditor({
     subtitle={
      showAllSections
       ? practiceOnly
-        ? "Luyện tập, đọc hiểu và thực hành"
-        : "Toàn bộ nội dung bài"
+       ? "Luyện tập, đọc hiểu và thực hành"
+       : "Toàn bộ nội dung bài"
       : selectedSection
         ? sectionTitle(selectedSection)
         : "Chưa có nội dung"

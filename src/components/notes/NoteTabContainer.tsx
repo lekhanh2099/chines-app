@@ -117,7 +117,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   }
   // Only run on mount or when the noteId changes
   // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [initialNoteId]);
+ }, [initialNoteId]); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
 
  // Listen for open-note-tab custom events (from InternalLinkNode etc.)
  useEffect(() => {

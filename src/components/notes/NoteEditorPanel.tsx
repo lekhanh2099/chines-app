@@ -228,7 +228,7 @@ export function NoteEditorPanel({
    }
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
- }, []);
+ }, []); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
 
  const handleDelete = useCallback(async () => {
   try {

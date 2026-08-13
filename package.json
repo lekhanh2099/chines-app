@@ -14,10 +14,10 @@
  "scripts": {
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
-  "format": "prettier --write .",
-  "format:check": "prettier --check .",
+  "format": "oxfmt --write .",
+  "format:check": "oxfmt --check .",
   "start": "next start",
-  "lint": "eslint --max-warnings=0",
+  "lint": "oxlint --deny-warnings .",
   "typecheck": "next typegen && tsc --noEmit",
   "test": "vitest",
   "test:run": "vitest run",
@@ -30,7 +30,8 @@
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
   "check": "npm run lint && npm run source:check && npm run ui:check && npm run api:check && npm run typecheck && npm run test:run && npm run format:check && npm run audit:prod && npm run build",
-  "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
+  "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs",
+  "prepare": "husky"
  },
  "dependencies": {
   "@base-ui/react": "^1.2.0",
@@ -80,13 +81,20 @@
   "@typescript/native": "npm:typescript@^7.0.2",
   "@vitest/coverage-v8": "^4.1.10",
   "dotenv": "^17.4.2",
-  "eslint": "^9.39.4",
-  "eslint-config-next": "^16.2.12",
+  "eslint-plugin-react": "^7.37.5",
+  "eslint-plugin-react-hooks": "^7.1.1",
   "husky": "^9.1.7",
+  "lint-staged": "^16.4.0",
+  "oxfmt": "^0.63.0",
+  "oxlint": "^1.78.0",
   "postcss": "^8.5.23",
   "supabase": "^2.109.1",
   "tailwindcss": "^4",
   "typescript": "npm:@typescript/typescript6@^6.0.2",
   "vitest": "^4.1.7"
+ },
+ "lint-staged": {
+  "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,json,jsonc,md,mdx,yml,yaml,css,scss}": "oxfmt --write --no-error-on-unmatched-pattern",
+  "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": "oxlint --deny-warnings --no-error-on-unmatched-pattern"
  }
 }

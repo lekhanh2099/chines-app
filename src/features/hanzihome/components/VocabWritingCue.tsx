@@ -87,8 +87,8 @@ export function VocabWritingCue({
     "grid gap-2",
     !isShowAll
      ? compact
-       ? "rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-       : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4"
+      ? "rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+      : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4"
      : "",
     className,
    ].join(" ")}

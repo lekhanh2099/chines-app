@@ -128,8 +128,8 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
   const displayTitle =
    lesson && (note.title === legacyGeneratedTitle || note.title === generatedTitle)
     ? lesson.bookTitle || lesson.courseTitle
-      ? `${lesson.bookTitle || lesson.courseTitle} · Bài ${lesson.lessonNumber}`
-      : `Bài ${lesson.lessonNumber}`
+     ? `${lesson.bookTitle || lesson.courseTitle} · Bài ${lesson.lessonNumber}`
+     : `Bài ${lesson.lessonNumber}`
     : note.title || "Ghi chú chưa đặt tên";
 
   return {

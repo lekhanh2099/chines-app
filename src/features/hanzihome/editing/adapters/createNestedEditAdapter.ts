@@ -105,8 +105,8 @@ function setValueAtPath(target: NestedValue, path: NestedPath, nextValue: JsonVa
   current =
    typeof segment === "number"
     ? Array.isArray(current)
-      ? current[segment]
-      : undefined
+     ? current[segment]
+     : undefined
     : isRecord(current)
       ? current[segment]
       : undefined;

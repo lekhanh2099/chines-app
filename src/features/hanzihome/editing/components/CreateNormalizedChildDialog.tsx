@@ -77,8 +77,8 @@ export function CreateNormalizedChildDialog({
     await createCanonicalContent({
      entityType: isVocab
       ? isExample
-        ? "vocab_example"
-        : "vocab_detail_section"
+       ? "vocab_example"
+       : "vocab_detail_section"
       : isExample
         ? "grammar_example"
         : "grammar_detail_section",

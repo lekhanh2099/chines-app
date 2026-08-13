@@ -202,7 +202,7 @@ export function Editor({
    },
   }),
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  [],
+  [], // oxlint-disable-line react-hooks-eslint/exhaustive-deps
  );
 
  return (

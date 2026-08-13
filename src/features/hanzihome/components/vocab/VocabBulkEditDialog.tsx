@@ -506,8 +506,8 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
           {showDeleted ? null : <Trash2 />}
           {showDeleted
            ? selectionMode === "filter"
-             ? `Khôi phục ${childList?.total ?? 0} kết quả`
-             : `Khôi phục ${selectedIds.length} dòng`
+            ? `Khôi phục ${childList?.total ?? 0} kết quả`
+            : `Khôi phục ${selectedIds.length} dòng`
            : selectionMode === "filter"
              ? `Xóa mềm ${childList?.total ?? 0} kết quả`
              : `Xóa mềm ${selectedIds.length} dòng`}

@@ -1,6 +1,6 @@
 # Repository skill inventory and audit scorecard
 
-Updated: 2026-08-11
+Updated: 2026-08-13
 
 This is the current-checkout inventory for repository skills. The canonical
 policy kernel remains [`AGENTS.md`](../../AGENTS.md); this document records
@@ -49,7 +49,7 @@ user request
 
 | Gate           | Purpose                                                                  | When it should block                |
 | -------------- | ------------------------------------------------------------------------ | ----------------------------------- |
-| `lint`         | ESLint correctness/conventions                                           | targeted development + CI           |
+| `lint`         | Oxlint correctness/conventions                                           | targeted development + CI           |
 | `typecheck`    | Next/TypeScript contract                                                 | targeted development + CI           |
 | `source:check` | unsafe casts/any/suppressions, client-server boundary, dead owned source | CI/full verification                |
 | `ui:check`     | design-system/component ownership drift                                  | UI subsystem/full verification + CI |
@@ -57,11 +57,15 @@ user request
 | `test:run`     | deterministic regression suite                                           | subsystem/full verification + CI    |
 | `audit:prod`   | production dependency advisory drift                                     | CI/release                          |
 | `build`        | production compilation                                                   | full verification/CI/release        |
-| `format:check` | repository formatting                                                    | CI/merge cleanliness                |
+| `format:check` | Oxfmt repository formatting                                              | CI/merge cleanliness                |
 
 There is deliberately no full-suite pre-commit hook. A small local commit must
 not be blocked by unrelated repository formatting, release audit or production
 build work. CI/PR is the authoritative full-repository gate.
+
+The staged pre-commit hook runs Oxfmt with write-back and Oxlint only for staged
+JavaScript/TypeScript and supported formatting files. It does not run tests,
+typecheck, audit or production build.
 
 ## Residual verification rule
 
