@@ -37,31 +37,116 @@ export const resultPotentialNode = knowledgeNodeSchema.parse({
   "不能看清楚 không sai tuyệt đối; 能 phủ định khả năng của cả cụm động từ, còn 看不清楚 gắn trực tiếp hành động 看 với kết quả 清楚.",
   "Không ghép V得/不C máy móc với mọi cặp động từ–bổ ngữ.",
  ],
- errorSubtypes: ["RESULT_NEG_BU", "POTENTIAL_AS_RESULT", "RESULT_AS_ABILITY", "MODAL_FOR_POTENTIAL_MARKED", "INVALID_POTENTIAL_FORM", "COMPLEMENT_SELECTION"],
+ errorSubtypes: [
+  "RESULT_NEG_BU",
+  "POTENTIAL_AS_RESULT",
+  "RESULT_AS_ABILITY",
+  "MODAL_FOR_POTENTIAL_MARKED",
+  "INVALID_POTENTIAL_FORM",
+  "COMPLEMENT_SELECTION",
+ ],
  minimalContrasts: [
-  { id: "rp-1", firstZh: "昨天我没听懂。", secondZh: "这个口音太重，我听不懂。", explanationVi: "Một câu kể lần nghe cụ thể nhưng không đạt kết quả hiểu; câu kia nói điều kiện hiện tại khiến không thể hiểu." },
-  { id: "rp-2", firstZh: "他解释以后，我终于听懂了。", secondZh: "你说慢一点，我听得懂。", explanationVi: "Một câu đạt kết quả cụ thể; câu kia xác nhận khả năng khi điều kiện phù hợp." },
+  {
+   id: "rp-1",
+   firstZh: "昨天我没听懂。",
+   secondZh: "这个口音太重，我听不懂。",
+   explanationVi:
+    "Một câu kể lần nghe cụ thể nhưng không đạt kết quả hiểu; câu kia nói điều kiện hiện tại khiến không thể hiểu.",
+  },
+  {
+   id: "rp-2",
+   firstZh: "他解释以后，我终于听懂了。",
+   secondZh: "你说慢一点，我听得懂。",
+   explanationVi: "Một câu đạt kết quả cụ thể; câu kia xác nhận khả năng khi điều kiện phù hợp.",
+  },
  ],
  anticipatedQuestions: [
-  { id: "rp-q1", questionVi: "没看懂 là quá khứ còn 看不懂 là hiện tại hả?", answerVi: "Không. Mốc thời gian do ngữ cảnh quyết định; điểm khác chính là kết quả của một lần đã xảy ra và khả năng đạt kết quả." },
-  { id: "rp-q2", questionVi: "能看懂 và 看得懂 khác gì?", answerVi: "Đều có thể nói khả năng; 能 có phạm vi rộng hơn, còn V得C gắn trực tiếp hành động với trạng thái kết quả C." },
-  { id: "rp-q3", questionVi: "我终于看得懂这篇文章了 sai không?", answerVi: "Không nhất thiết. Nó hợp khi nhấn năng lực đã thay đổi; nếu kể lần đọc này hiểu được thì 看懂了 trực tiếp hơn." },
+  {
+   id: "rp-q1",
+   questionVi: "没看懂 là quá khứ còn 看不懂 là hiện tại hả?",
+   answerVi:
+    "Không. Mốc thời gian do ngữ cảnh quyết định; điểm khác chính là kết quả của một lần đã xảy ra và khả năng đạt kết quả.",
+  },
+  {
+   id: "rp-q2",
+   questionVi: "能看懂 và 看得懂 khác gì?",
+   answerVi:
+    "Đều có thể nói khả năng; 能 có phạm vi rộng hơn, còn V得C gắn trực tiếp hành động với trạng thái kết quả C.",
+  },
+  {
+   id: "rp-q3",
+   questionVi: "我终于看得懂这篇文章了 sai không?",
+   answerVi:
+    "Không nhất thiết. Nó hợp khi nhấn năng lực đã thay đổi; nếu kể lần đọc này hiểu được thì 看懂了 trực tiếp hơn.",
+  },
  ],
  diagnosticTasks: [
-  { id: "rp-m1", dimension: "M1", taskType: "choose", promptVi: "Phân biệt kết quả của một lần đã xảy ra với khả năng chung trong điều kiện đang nói." },
-  { id: "rp-m2", dimension: "M2", taskType: "explain", promptVi: "Giải thích vì sao dùng 没 hay 不." },
-  { id: "rp-m3", dimension: "M3", taskType: "transform", promptVi: "Biến một cặp động từ–bổ ngữ kết quả qua bốn cách diễn đạt." },
-  { id: "rp-m4", dimension: "M4", taskType: "timed", promptVi: "Kể nhanh một việc đã thử nhưng không xong và một việc vốn không làm nổi." },
-  { id: "rp-m5", dimension: "M5", taskType: "transfer", promptVi: "Dùng với một cặp động từ–bổ ngữ kết quả mới." },
+  {
+   id: "rp-m1",
+   dimension: "M1",
+   taskType: "choose",
+   promptVi: "Phân biệt kết quả của một lần đã xảy ra với khả năng chung trong điều kiện đang nói.",
+  },
+  {
+   id: "rp-m2",
+   dimension: "M2",
+   taskType: "explain",
+   promptVi: "Giải thích vì sao dùng 没 hay 不.",
+  },
+  {
+   id: "rp-m3",
+   dimension: "M3",
+   taskType: "transform",
+   promptVi: "Biến một cặp động từ–bổ ngữ kết quả qua bốn cách diễn đạt.",
+  },
+  {
+   id: "rp-m4",
+   dimension: "M4",
+   taskType: "timed",
+   promptVi: "Kể nhanh một việc đã thử nhưng không xong và một việc vốn không làm nổi.",
+  },
+  {
+   id: "rp-m5",
+   dimension: "M5",
+   taskType: "transfer",
+   promptVi: "Dùng với một cặp động từ–bổ ngữ kết quả mới.",
+  },
  ],
  opportunityRules: [
-  { id: "rp-actual-failure-v1", opportunityType: "TYPE_1", ruleVi: "Đề bài ghi rõ đã thử trong một lần cụ thể nhưng kết quả không đạt.", humanReviewed: true, version: "1.0.0" },
-  { id: "rp-ambiguous-v1", opportunityType: "TYPE_3", ruleVi: "‘Tôi không hiểu’ không cho biết đã thử hay nói năng lực.", humanReviewed: true, version: "1.0.0" },
+  {
+   id: "rp-actual-failure-v1",
+   opportunityType: "TYPE_1",
+   ruleVi: "Đề bài ghi rõ đã thử trong một lần cụ thể nhưng kết quả không đạt.",
+   humanReviewed: true,
+   version: "1.0.0",
+  },
+  {
+   id: "rp-ambiguous-v1",
+   opportunityType: "TYPE_3",
+   ruleVi: "‘Tôi không hiểu’ không cho biết đã thử hay nói năng lực.",
+   humanReviewed: true,
+   version: "1.0.0",
+  },
  ],
  claims: [
-  { id: "rp-c1", statementVi: "Điểm đối lập trung tâm là kết quả thực tế và khả năng đạt kết quả, không phải chỉ là quá khứ hay hiện tại.", sourceIds: ["research-pack-v1", "ross-2024"], confidence: "high" },
+  {
+   id: "rp-c1",
+   statementVi:
+    "Điểm đối lập trung tâm là kết quả thực tế và khả năng đạt kết quả, không phải chỉ là quá khứ hay hiện tại.",
+   sourceIds: ["research-pack-v1", "ross-2024"],
+   confidence: "high",
+  },
  ],
- sources: [researchPackSource, officialChineseStandardSource, complementClassificationSource, directionalGrammaticalizationSource, directionalResultSource, ross2024Source, nguyen2023Source, hanDianShuowenSource],
+ sources: [
+  researchPackSource,
+  officialChineseStandardSource,
+  complementClassificationSource,
+  directionalGrammaticalizationSource,
+  directionalResultSource,
+  ross2024Source,
+  nguyen2023Source,
+  hanDianShuowenSource,
+ ],
  researchGapsVi: [
   "Chưa có danh mục đã rà độc lập cho từng cặp động từ–bổ ngữ.",
   "Vị trí tân ngữ trong bổ ngữ xu hướng kép cần thêm ví dụ ngữ liệu đã rà.",

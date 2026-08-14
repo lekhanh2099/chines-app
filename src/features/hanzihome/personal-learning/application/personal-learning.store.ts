@@ -14,7 +14,10 @@ import {
  type MasteryEvidence,
  type PersonalLearningStore,
 } from "../domain/personal-learning.schemas";
-import { deriveLearnerNodeState, getPersonalLearningAlgorithmVersion } from "../domain/personal-learning.state";
+import {
+ deriveLearnerNodeState,
+ getPersonalLearningAlgorithmVersion,
+} from "../domain/personal-learning.state";
 import { detectPersonalLearningHypotheses } from "./personal-learning.detector";
 
 export type PersonalLearningIngestionInput = {
@@ -119,10 +122,19 @@ export function ingestPersonalLearningAttemptInState(
  const hypotheses =
   input.sourceModule === "dictation"
    ? []
-   : detectPersonalLearningHypotheses(attempt.id, attempt.originalInput, context.now, context.createId);
+   : detectPersonalLearningHypotheses(
+      attempt.id,
+      attempt.originalInput,
+      context.now,
+      context.createId,
+     );
 
  return refreshNodeStates(
-  { ...store, attempts: [...store.attempts, attempt], hypotheses: [...store.hypotheses, ...hypotheses] },
+  {
+   ...store,
+   attempts: [...store.attempts, attempt],
+   hypotheses: [...store.hypotheses, ...hypotheses],
+  },
   context,
  );
 }
@@ -149,7 +161,10 @@ export function addPersonalLearningIntentInState(
  if (!store.attempts.some((entry) => entry.id === parsed.attemptId)) {
   throw new Error("Attempt not found.");
  }
- return refreshNodeStates({ ...store, intentRevisions: [...store.intentRevisions, parsed] }, context);
+ return refreshNodeStates(
+  { ...store, intentRevisions: [...store.intentRevisions, parsed] },
+  context,
+ );
 }
 
 export function resolvePersonalLearningHypothesisInState(
@@ -167,7 +182,11 @@ export function resolvePersonalLearningHypothesisInState(
  }
  const attempt = store.attempts.find((entry) => entry.id === hypothesis.attemptId);
  if (attempt === undefined) throw new Error("Attempt not found.");
- if (resolution === "accepted" && hypothesis.status === "needs-intent" && currentIntent(store, attempt) === null) {
+ if (
+  resolution === "accepted" &&
+  hypothesis.status === "needs-intent" &&
+  currentIntent(store, attempt) === null
+ ) {
   throw new Error("Intended meaning is required before confirmation.");
  }
  const updated = errorHypothesisSchema.parse({ ...hypothesis, status: resolution });
@@ -176,7 +195,8 @@ export function resolvePersonalLearningHypothesisInState(
   hypotheses: store.hypotheses.map((entry) => (entry.id === id ? updated : entry)),
  };
  if (resolution === "accepted") {
-  if (quality === undefined) throw new Error("Quality dimensions are required for confirmed annotations.");
+  if (quality === undefined)
+   throw new Error("Quality dimensions are required for confirmed annotations.");
   const annotation = errorAnnotationSchema.parse({
    id: context.createId(),
    attemptId: attempt.id,

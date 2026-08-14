@@ -1,4 +1,8 @@
-import { knowledgeNodeSchema, type KnowledgeNode, type KnowledgeNodeId } from "../domain/personal-learning.schemas";
+import {
+ knowledgeNodeSchema,
+ type KnowledgeNode,
+ type KnowledgeNodeId,
+} from "../domain/personal-learning.schemas";
 import { aspectNode } from "./knowledge-nodes-aspect";
 import { baBeiNode } from "./knowledge-nodes-ba-bei";
 import { conditionalsNode } from "./knowledge-nodes-conditionals";
