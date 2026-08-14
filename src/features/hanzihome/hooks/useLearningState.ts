@@ -14,6 +14,7 @@ import {
  type LearningStateSyncResult,
  type LearningStateSyncStatus,
 } from "@/features/hanzihome/local/learning-state-local-first";
+import { nextScheduledProgress } from "@/features/hanzihome/review/review-scheduler";
 import {
  emptyLearningState,
  nextProgress,
@@ -21,6 +22,8 @@ import {
 } from "@/features/hanzihome/utils/learning-state";
 
 const learningStateQueryKey = ["hanzihome", "learning-state"];
+
+type ReviewableProgressScope = keyof UserLearningState["progress"];
 
 function getBrowserOnlineState() {
  return typeof window === "undefined" ? true : navigator.onLine;
@@ -200,6 +203,43 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
       grammar: { ...current.progress.grammar, [id]: nextProgress(status) },
      },
     })),
+
+   recordReview: (
+    item: {
+     type: ReviewableProgressScope;
+     id: string;
+    },
+    result: ReviewResult,
+   ) =>
+    updateState((current) => {
+     const reviewedAt = new Date();
+     const currentProgress = current.progress[item.type] ?? {};
+     const nextItemProgress = nextScheduledProgress(
+      currentProgress[item.id],
+      result,
+      reviewedAt,
+     );
+
+     return {
+      ...current,
+      progress: {
+       ...current.progress,
+       [item.type]: {
+        ...currentProgress,
+        [item.id]: nextItemProgress,
+       },
+      },
+      reviewHistory: [
+       ...current.reviewHistory,
+       {
+        type: item.type,
+        id: item.id,
+        result,
+        answeredAt: reviewedAt.toISOString(),
+       },
+      ],
+     };
+    }),
 
    toggleBookmark: (scope: keyof UserLearningState["bookmarks"], id: string) =>
     updateState((current) => {
