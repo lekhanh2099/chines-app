@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import Link from "next/link";
-import { Bookmark, CheckCircle2, History, Repeat2 } from "lucide-react";
+import { CheckCircle2, CircleAlert, History, Repeat2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -24,42 +24,47 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
        Nhịp học
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       Những tín hiệu cần chú ý từ tiến độ hiện tại.
+       Ưu tiên việc cần làm tiếp theo thay vì chỉ đếm tổng tiến độ.
       </Typography>
      </div>
-     <Button variant="outline" size="toolbar" asChild>
-      <Link href="/dictionary" prefetch={false}>
-       <Repeat2 data-icon="inline-start" />
-       Mở SRS
-      </Link>
-     </Button>
+     <div className="flex flex-wrap items-center gap-2">
+      {pulse.weakPracticeCount > 0 ? (
+       <Button variant="outline" size="toolbar" asChild>
+        <Link href="/practice-errors" prefetch={false}>
+         <CircleAlert data-icon="inline-start" />
+         Luyện lỗi
+        </Link>
+       </Button>
+      ) : null}
+      <Button variant="outline" size="toolbar" asChild>
+       <Link href="/review" prefetch={false}>
+        <Repeat2 data-icon="inline-start" />
+        Ôn ngay
+       </Link>
+      </Button>
+     </div>
     </div>
 
     <div className="grid grid-cols-2 gap-5">
+     <PulseStat icon={<Repeat2 />} value={pulse.dueCount} label="Đến hạn" tone="warning" />
      <PulseStat
-      icon={<Repeat2 />}
-      value={pulse.reviewCount}
-      label="Đang học / còn khó"
-      tone="warning"
+      icon={<CircleAlert />}
+      value={pulse.weakPracticeCount}
+      label="Lỗi cần luyện"
+      tone="neutral"
      />
-     <PulseStat icon={<CheckCircle2 />} value={pulse.knownCount} label="Đã biết" tone="info" />
      <PulseStat
       icon={<History />}
       value={pulse.reviewedTodayCount}
       label="Đã ôn hôm nay"
       tone="accent"
      />
-     <PulseStat
-      icon={<Bookmark />}
-      value={pulse.bookmarkedCount}
-      label="Đã đánh dấu"
-      tone="neutral"
-     />
+     <PulseStat icon={<CheckCircle2 />} value={pulse.knownCount} label="Đã biết" tone="info" />
     </div>
 
     <Typography as="p" variant="caption" tone="muted">
      {pulse.trackedCount > 0
-      ? `${pulse.trackedCount} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.`
+      ? `${pulse.trackedCount} mục đã có trạng thái học. Lịch đến hạn dùng level và lần ôn gần nhất; lỗi luyện nghe hiện được giữ cục bộ trên trình duyệt này.`
       : "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật."}
     </Typography>
    </Card>
