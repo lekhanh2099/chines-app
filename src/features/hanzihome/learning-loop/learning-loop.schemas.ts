@@ -22,8 +22,8 @@ export const learningSessionSchema = z.strictObject({
  progressCurrent: z.number().int().nonnegative(),
  progressTotal: z.number().int().nonnegative(),
  status: learningSessionStatusSchema,
- startedAt: z.string().datetime(),
- updatedAt: z.string().datetime(),
+ startedAt: z.iso.datetime(),
+ updatedAt: z.iso.datetime(),
 });
 
 export const reviewItemKindSchema = z.enum([
@@ -54,12 +54,12 @@ export const reviewItemSchema = z.strictObject({
  userAnswer: z.string(),
  errorKey: z.string(),
  state: reviewItemStateSchema,
- dueAt: z.string().datetime(),
+ dueAt: z.iso.datetime(),
  intervalDays: z.number().int().nonnegative(),
  correctStreak: z.number().int().nonnegative(),
  lapseCount: z.number().int().nonnegative(),
- createdAt: z.string().datetime(),
- updatedAt: z.string().datetime(),
+ createdAt: z.iso.datetime(),
+ updatedAt: z.iso.datetime(),
 });
 
 export const reviewRatingSchema = z.enum(["again", "hard", "good"]);
@@ -73,7 +73,7 @@ export const learningEventSchema = z.strictObject({
  sourceHref: z.string().min(1),
  term: z.string().min(1).max(48),
  contextText: z.string().max(500),
- createdAt: z.string().datetime(),
+ createdAt: z.iso.datetime(),
 });
 
 export const learningLoopStateSchema = z.strictObject({
