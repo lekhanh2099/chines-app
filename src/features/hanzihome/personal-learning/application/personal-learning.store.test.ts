@@ -103,11 +103,7 @@ describe("personal-learning canonical store", () => {
    intendedMeaningVi: "Anh ấy nói rất nhanh.",
    createdAt: now,
   });
-  const withIntent = addPersonalLearningIntentInState(
-   detected,
-   revision,
-   mutationContext,
-  );
+  const withIntent = addPersonalLearningIntentInState(detected, revision, mutationContext);
   const accepted = resolvePersonalLearningHypothesisInState(
    withIntent,
    hypothesisId,
@@ -196,11 +192,7 @@ describe("personal-learning canonical store", () => {
    },
    mutationContext,
   );
-  const deleted = deletePersonalLearningAttemptInState(
-   accepted,
-   attemptId,
-   mutationContext,
-  );
+  const deleted = deletePersonalLearningAttemptInState(accepted, attemptId, mutationContext);
 
   expect(deleted.attempts).toHaveLength(0);
   expect(deleted.hypotheses).toHaveLength(0);
