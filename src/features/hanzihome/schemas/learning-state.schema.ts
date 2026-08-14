@@ -1,13 +1,7 @@
 import * as z from "zod";
 
-import {
- emptyLearningLoopState,
- learningLoopStateSchema,
-} from "@/features/hanzihome/learning-loop/learning-loop.schemas";
-import {
- emptyPersonalLearningStore,
- personalLearningStoreSchema,
-} from "@/features/hanzihome/personal-learning/domain/personal-learning.schemas";
+import { learningLoopStateSchema } from "@/features/hanzihome/learning-loop/learning-loop.schemas";
+import { personalLearningStoreSchema } from "@/features/hanzihome/personal-learning/domain/personal-learning.schemas";
 
 export const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 export const reviewResultSchema = z.enum(["again", "hard", "known"]);
@@ -74,8 +68,8 @@ export const userLearningStateSchema = z.object({
   .object({
    vocab: z.record(z.string(), progressItemSchema).optional(),
    grammar: z.record(z.string(), progressItemSchema).optional(),
-   learningLoop: learningLoopStateSchema.optional().default(emptyLearningLoopState),
-   personalLearning: personalLearningStoreSchema.optional().default(emptyPersonalLearningStore),
+   learningLoop: learningLoopStateSchema.optional(),
+   personalLearning: personalLearningStoreSchema.optional(),
   })
   .default({}),
  bookmarks: z

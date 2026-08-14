@@ -6,7 +6,10 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
-import type { ReviewRating } from "@/features/hanzihome/learning-loop/learning-loop.schemas";
+import {
+ emptyLearningLoopState,
+ type ReviewRating,
+} from "@/features/hanzihome/learning-loop/learning-loop.schemas";
 import {
  addReviewItemInState,
  rateReviewItemInState,
@@ -53,7 +56,9 @@ function subscribeToBrowserOnlineState(onStoreChange: () => void) {
 }
 
 function createLearningId(): string {
- if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
+ if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+  return crypto.randomUUID();
+ }
  return `00000000-0000-4000-8000-${Date.now().toString(16).padStart(12, "0").slice(-12)}`;
 }
 
@@ -222,7 +227,7 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      progress: {
       ...current.progress,
       learningLoop: recordLearningSessionInState(
-       current.progress.learningLoop,
+       current.progress.learningLoop ?? emptyLearningLoopState,
        input,
        createLearningId(),
       ),
@@ -234,7 +239,10 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      ...current,
      progress: {
       ...current.progress,
-      learningLoop: addReviewItemInState(current.progress.learningLoop, input),
+      learningLoop: addReviewItemInState(
+       current.progress.learningLoop ?? emptyLearningLoopState,
+       input,
+      ),
      },
     })),
 
@@ -243,7 +251,11 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      ...current,
      progress: {
       ...current.progress,
-      learningLoop: rateReviewItemInState(current.progress.learningLoop, id, rating),
+      learningLoop: rateReviewItemInState(
+       current.progress.learningLoop ?? emptyLearningLoopState,
+       id,
+       rating,
+      ),
      },
     })),
 
@@ -253,7 +265,7 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      progress: {
       ...current.progress,
       learningLoop: recordLearningEventInState(
-       current.progress.learningLoop,
+       current.progress.learningLoop ?? emptyLearningLoopState,
        input,
        createLearningId(),
       ),
