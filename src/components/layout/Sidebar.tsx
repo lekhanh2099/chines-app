@@ -51,7 +51,8 @@ const learningItems: NavItem[] = [
 ];
 
 const practiceItems: NavItem[] = [
- { name: "SRS từ", icon: Repeat2, href: "/dictionary" },
+ { name: "Ôn đến hạn", icon: Repeat2, href: "/review" },
+ { name: "Từ đã lưu", icon: Languages, href: "/dictionary" },
  { name: "Nhắc nhanh", icon: Lightbulb, href: "/memory-tips" },
 ];
 
