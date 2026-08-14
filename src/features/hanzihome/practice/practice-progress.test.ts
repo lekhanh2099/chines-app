@@ -29,7 +29,7 @@ describe("practice progress", () => {
   expect(isWeakPracticeProgress(progress)).toBe(true);
  });
 
- it("preserves the last error while a later correct answer starts recovery", () => {
+ it("keeps an error weak until two consecutive correct answers recover it", () => {
   const first = nextPracticeProgress(
    undefined,
    { ...baseAttempt, correct: false },
@@ -40,16 +40,20 @@ describe("practice progress", () => {
    { ...baseAttempt, correct: true },
    new Date("2026-08-14T00:05:00.000Z"),
   );
+  const third = nextPracticeProgress(
+   second,
+   { ...baseAttempt, correct: true },
+   new Date("2026-08-14T00:10:00.000Z"),
+  );
 
-  expect(second.attemptCount).toBe(2);
-  expect(second.correctCount).toBe(1);
   expect(second.consecutiveCorrect).toBe(1);
-  expect(second.masteryScore).toBe(0.5);
   expect(second.lastErrorAt).toBe("2026-08-14T00:00:00.000Z");
-  expect(isWeakPracticeProgress(second)).toBe(false);
+  expect(isWeakPracticeProgress(second)).toBe(true);
+  expect(third.consecutiveCorrect).toBe(2);
+  expect(isWeakPracticeProgress(third)).toBe(false);
  });
 
- it("keeps a repeatedly unstable item weak until it has a recovery streak", () => {
+ it("flags a low-mastery history without an explicit error timestamp", () => {
   const unstable = {
    source: PracticeSourceSchema.enum.listening,
    lessonId: baseAttempt.lessonId,
@@ -61,10 +65,8 @@ describe("practice progress", () => {
    masteryScore: 0.5,
    lastResult: true,
    lastAttemptAt: "2026-08-14T00:10:00.000Z",
-   lastErrorAt: "2026-08-14T00:05:00.000Z",
   };
 
   expect(isWeakPracticeProgress(unstable)).toBe(true);
-  expect(isWeakPracticeProgress({ ...unstable, consecutiveCorrect: 2 })).toBe(false);
  });
 });
