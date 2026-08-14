@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { RotateCcw, TimerReset } from "lucide-react";
+import { useSyncExternalStore } from "react";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { Badge } from "@/components/ui/badge";
@@ -34,16 +35,52 @@ const ratingLabel: Record<ReviewRating, string> = {
  good: "Ổn",
 };
 
+let reviewClockSnapshot = 0;
+
+function subscribeToReviewClock(onStoreChange: () => void) {
+ const refresh = () => {
+  reviewClockSnapshot = Date.now();
+  onStoreChange();
+ };
+
+ refresh();
+ const timer = window.setInterval(refresh, 60_000);
+ return () => window.clearInterval(timer);
+}
+
+function getReviewClockSnapshot() {
+ return reviewClockSnapshot;
+}
+
+function getReviewClockServerSnapshot() {
+ return 0;
+}
+
+function useReviewClock() {
+ return useSyncExternalStore(
+  subscribeToReviewClock,
+  getReviewClockSnapshot,
+  getReviewClockServerSnapshot,
+ );
+}
+
 export function LearningLoopReviewPage() {
  const learning = useLearningState();
  const loop = learning.state.progress.learningLoop;
- const now = Date.now();
- const dueItems = [...(loop?.reviewItems ?? [])]
-  .filter((item) => Date.parse(item.dueAt) <= now)
-  .sort((first, second) => first.dueAt.localeCompare(second.dueAt));
- const upcomingItems = [...(loop?.reviewItems ?? [])]
-  .filter((item) => Date.parse(item.dueAt) > now)
-  .sort((first, second) => first.dueAt.localeCompare(second.dueAt));
+ const now = useReviewClock();
+ const reviewItems = loop?.reviewItems ?? [];
+ const dueItems =
+  now === 0
+   ? []
+   : [...reviewItems]
+      .filter((item) => Date.parse(item.dueAt) <= now)
+      .sort((first, second) => first.dueAt.localeCompare(second.dueAt));
+ const upcomingItems =
+  now === 0
+   ? []
+   : [...reviewItems]
+      .filter((item) => Date.parse(item.dueAt) > now)
+      .sort((first, second) => first.dueAt.localeCompare(second.dueAt));
  const latestSession = loop?.latestSession ?? null;
 
  return (
@@ -92,7 +129,7 @@ export function LearningLoopReviewPage() {
       </Typography>
       <Badge variant={dueItems.length > 0 ? "warning" : "default"}>{dueItems.length}</Badge>
      </div>
-     {learning.isLoading ? (
+     {learning.isLoading || now === 0 ? (
       <Card variant="subtle" padding="lg">
        <Typography tone="muted">Đang tải hàng đợi ôn tập…</Typography>
       </Card>
