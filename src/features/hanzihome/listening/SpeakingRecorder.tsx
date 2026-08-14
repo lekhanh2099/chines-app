@@ -24,6 +24,7 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
  const streamRef = useRef<MediaStream | null>(null);
  const chunksRef = useRef<Blob[]>([]);
  const audioUrlRef = useRef<NullableString>(null);
+ const ignoreRecorderEventsRef = useRef(false);
  const [status, setStatus] = useState<RecorderStatus>("idle");
  const [audioUrl, setAudioUrl] = useState<NullableString>(null);
  const [errorMessage, setErrorMessage] = useState<NullableString>(null);
@@ -50,27 +51,38 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
    return;
   }
 
+  ignoreRecorderEventsRef.current = false;
   setStatus("requesting");
   setErrorMessage(null);
   replaceAudioUrl(null);
 
   try {
    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+   if (ignoreRecorderEventsRef.current) {
+    stream.getTracks().forEach((track) => track.stop());
+    return;
+   }
+
    const recorder = new MediaRecorder(stream);
    streamRef.current = stream;
    recorderRef.current = recorder;
    chunksRef.current = [];
 
    recorder.addEventListener("dataavailable", (event) => {
-    if (event.data.size > 0) chunksRef.current.push(event.data);
+    if (!ignoreRecorderEventsRef.current && event.data.size > 0) {
+     chunksRef.current.push(event.data);
+    }
    });
    recorder.addEventListener("stop", () => {
+    const ignored = ignoreRecorderEventsRef.current;
     const blob = new Blob(chunksRef.current, {
      type: recorder.mimeType || "audio/webm",
     });
     chunksRef.current = [];
     recorderRef.current = null;
     stopStream();
+
+    if (ignored) return;
 
     if (blob.size === 0) {
      setStatus("error");
@@ -84,6 +96,8 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
    recorder.addEventListener("error", () => {
     recorderRef.current = null;
     stopStream();
+    if (ignoreRecorderEventsRef.current) return;
+
     setStatus("error");
     setErrorMessage("Thu âm bị gián đoạn. Thử lại sau khi kiểm tra quyền micro.");
    });
@@ -92,6 +106,8 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
    setStatus("recording");
   } catch (error) {
    stopStream();
+   if (ignoreRecorderEventsRef.current) return;
+
    setStatus("error");
    setErrorMessage(
     error instanceof DOMException && error.name === "NotAllowedError"
@@ -110,6 +126,7 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
  }, []);
 
  const resetRecording = useCallback(() => {
+  ignoreRecorderEventsRef.current = true;
   const recorder = recorderRef.current;
   if (recorder && recorder.state !== "inactive") recorder.stop();
   recorderRef.current = null;
@@ -122,8 +139,11 @@ export function SpeakingRecorder({ label = "Thu âm phần luyện nói" }: { la
 
  useEffect(
   () => () => {
+   ignoreRecorderEventsRef.current = true;
    const recorder = recorderRef.current;
    if (recorder && recorder.state !== "inactive") recorder.stop();
+   recorderRef.current = null;
+   chunksRef.current = [];
    stopStream();
    if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
    audioUrlRef.current = null;

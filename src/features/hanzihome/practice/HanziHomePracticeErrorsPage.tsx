@@ -23,7 +23,11 @@ export function HanziHomePracticeErrorsPage() {
   () =>
    Object.values(practice.items)
     .filter(isWeakPracticeProgress)
-    .toSorted((left, right) => Date.parse(right.lastErrorAt ?? "") - Date.parse(left.lastErrorAt ?? "")),
+    .toSorted(
+     (left, right) =>
+      Date.parse(right.lastErrorAt ?? right.lastAttemptAt) -
+      Date.parse(left.lastErrorAt ?? left.lastAttemptAt),
+    ),
   [practice.items],
  );
 
