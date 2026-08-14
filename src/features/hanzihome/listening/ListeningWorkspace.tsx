@@ -22,6 +22,7 @@ import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/select
 import { ListeningExerciseItems } from "./ListeningExerciseItems";
 import { MandarinTtsControls } from "./MandarinTtsControls";
 import { useSharedMandarinTts } from "./MandarinTtsProvider";
+import { SpeakingRecorder } from "./SpeakingRecorder";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
 import { itemsForListeningSection } from "./listening.view-model";
 import { listeningCategoryLabels } from "./listening.labels";
@@ -119,6 +120,8 @@ export function ListeningWorkspace() {
    })}
   </div>
  );
+ const supportsSpeakingRecorder =
+  selectedSection.exerciseType === "oral_response" || selectedSection.exerciseType === "shadowing";
 
  return (
   <LessonModuleFrame
@@ -192,6 +195,17 @@ export function ListeningWorkspace() {
       </div>
      ) : null}
     </Card>
+
+    {supportsSpeakingRecorder ? (
+     <SpeakingRecorder
+      key={`recorder:${selectedSection.id}`}
+      label={
+       selectedSection.exerciseType === "shadowing"
+        ? "Thu âm để so sánh với câu mẫu"
+        : "Thu âm câu trả lời của bạn"
+      }
+     />
+    ) : null}
 
     <ListeningExerciseItems
      key={selectedSection.id}
