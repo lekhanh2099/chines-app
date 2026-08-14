@@ -28,6 +28,12 @@ import {
  type LearningStateSyncStatus,
 } from "@/features/hanzihome/local/learning-state-local-first";
 import {
+ pauseCalibrationInState,
+ startOrResumeCalibrationInState,
+ submitCalibrationAnswerInState,
+ type SubmitCalibrationInput,
+} from "@/features/hanzihome/personal-learning/application/personal-learning.calibration";
+import {
  addPersonalLearningEvidenceInState,
  addPersonalLearningIntentInState,
  deletePersonalLearningAttemptInState,
@@ -373,6 +379,43 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
       personalLearning: deletePersonalLearningAttemptInState(
        current.progress.personalLearning ?? emptyPersonalLearningStore,
        attemptId,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   startOrResumePersonalLearningCalibration: () =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: startOrResumeCalibrationInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   pausePersonalLearningCalibration: () =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: pauseCalibrationInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   submitPersonalLearningCalibrationAnswer: (input: SubmitCalibrationInput) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: submitCalibrationAnswerInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       input,
        createPersonalLearningContext(),
       ),
      },
