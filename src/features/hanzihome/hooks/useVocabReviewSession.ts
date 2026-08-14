@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useReducer } from "react";
+import { useCallback, useMemo, useReducer, useRef } from "react";
 import { z } from "zod";
 
 import { getReviewDueAt, isReviewDue } from "@/features/hanzihome/review/review-scheduler";
@@ -76,6 +76,10 @@ function reducer(state: ReviewState, action: ReviewAction): ReviewState {
  };
 }
 
+function itemKey(item: ReviewItem) {
+ return `${item.type}:${item.id}`;
+}
+
 function getRank(status: LearningStatus) {
  const rankByStatus: Record<LearningStatus, number> = {
   hard: 0,
@@ -131,7 +135,8 @@ export function useVocabReviewSession(input: {
  mode: ReviewDeckMode;
  shuffleSeed?: number;
 }) {
- const items = useMemo<ReviewItem[]>(() => {
+ const deckItemKeysRef = useRef<string[] | null>(null);
+ const allItems = useMemo<ReviewItem[]>(() => {
   const vocabItems: ReviewItem[] = input.vocab.map((item) => {
    const itemId = getVocabItemKey(item);
    const progress = input.vocabProgress[itemId];
@@ -163,7 +168,11 @@ export function useVocabReviewSession(input: {
    };
   });
 
-  const sortedItems = [...vocabItems, ...grammarItems]
+  return [...vocabItems, ...grammarItems];
+ }, [input.grammar, input.grammarProgress, input.vocab, input.vocabProgress]);
+
+ const eligibleItems = useMemo(() => {
+  const sortedItems = allItems
    .filter((item) => {
     if (input.mode === "vocab") return item.type === "vocab";
     if (input.mode === "grammar") return item.type === "grammar";
@@ -185,14 +194,18 @@ export function useVocabReviewSession(input: {
    .map(({ item }) => item);
 
   return input.shuffleSeed ? shuffleItems(sortedItems, input.shuffleSeed) : sortedItems;
- }, [
-  input.grammar,
-  input.grammarProgress,
-  input.mode,
-  input.shuffleSeed,
-  input.vocab,
-  input.vocabProgress,
- ]);
+ }, [allItems, input.mode, input.shuffleSeed]);
+
+ const items = useMemo(() => {
+  const deckKeys = deckItemKeysRef.current;
+  if (!deckKeys) return eligibleItems;
+
+  const itemByKey = new Map(allItems.map((item) => [itemKey(item), item]));
+  return deckKeys.flatMap((key) => {
+   const item = itemByKey.get(key);
+   return item ? [item] : [];
+  });
+ }, [allItems, eligibleItems]);
 
  const [state, dispatch] = useReducer(reducer, {
   index: 0,
@@ -202,15 +215,23 @@ export function useVocabReviewSession(input: {
 
  const reveal = useCallback(() => dispatch({ type: "reveal" }), []);
  const answer = useCallback(
-  (result: ReviewResult) => dispatch({ type: "answer", itemCount: items.length, result }),
-  [items.length],
+  (result: ReviewResult) => {
+   if (!deckItemKeysRef.current) {
+    deckItemKeysRef.current = items.map(itemKey);
+   }
+   dispatch({ type: "answer", itemCount: items.length, result });
+  },
+  [items],
  );
  const next = useCallback(
   () => dispatch({ type: "next", itemCount: items.length }),
   [items.length],
  );
  const previous = useCallback(() => dispatch({ type: "previous" }), []);
- const reset = useCallback(() => dispatch({ type: "reset" }), []);
+ const reset = useCallback(() => {
+  deckItemKeysRef.current = null;
+  dispatch({ type: "reset" });
+ }, []);
 
  return {
   items,
