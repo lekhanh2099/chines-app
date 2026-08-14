@@ -11,6 +11,7 @@ import { useSelector } from "@tanstack/react-store";
 import {
  BookOpenCheck,
  BookOpenText,
+ Brain,
  ChevronRight,
  FileCode2,
  Home,
@@ -59,6 +60,7 @@ const competencyItems: NavItem[] = [
  { name: "Tổng hợp từ", icon: Languages, href: "/vocab" },
  { name: "Tổng hợp ngữ pháp", icon: BookOpenText, href: "/grammar" },
  { name: "Bộ thủ", icon: Layers3, href: "/radicals" },
+ { name: "Học cá nhân", icon: Brain, href: "/personal-learning" },
 ];
 
 const personalItems: NavItem[] = [
