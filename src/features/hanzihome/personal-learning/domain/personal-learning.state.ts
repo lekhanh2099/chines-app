@@ -63,7 +63,9 @@ function decideState(
  );
  const failureAttemptIds = new Set(type1Failures.map((entry) => entry.attemptId));
  const failureModules = new Set(
-  attempts.filter((attempt) => failureAttemptIds.has(attempt.id)).map((attempt) => attempt.sourceModule),
+  attempts
+   .filter((attempt) => failureAttemptIds.has(attempt.id))
+   .map((attempt) => attempt.sourceModule),
  );
  const m1Success = countSuccess(evidence, "M1");
  const m2Success = countSuccess(evidence, "M2");
@@ -137,7 +139,9 @@ export function deriveLearnerNodeState(input: StateInput): {
  nodeState: LearnerNodeState;
  reasonCodes: string[];
 } {
- const nodeEvidence = input.evidence.filter((entry) => entry.knowledgeNodeId === input.knowledgeNodeId);
+ const nodeEvidence = input.evidence.filter(
+  (entry) => entry.knowledgeNodeId === input.knowledgeNodeId,
+ );
  const nodeAnnotations = input.annotations.filter(
   (entry) => entry.knowledgeNodeId === input.knowledgeNodeId,
  );
@@ -158,9 +162,9 @@ export function deriveLearnerNodeState(input: StateInput): {
    )
    .map((attempt) => attempt.sourceModule),
  );
- const lastObservedAt = [...nodeEvidence].sort((first, second) =>
-  second.observedAt.localeCompare(first.observedAt),
- )[0]?.observedAt ?? null;
+ const lastObservedAt =
+  [...nodeEvidence].sort((first, second) => second.observedAt.localeCompare(first.observedAt))[0]
+   ?.observedAt ?? null;
  const nextReviewAt =
   decision.state === "STABLE_TRANSFER"
    ? new Date(new Date(input.now).getTime() + 14 * 86_400_000).toISOString()
@@ -174,7 +178,10 @@ export function deriveLearnerNodeState(input: StateInput): {
    knowledgeNodeId: input.knowledgeNodeId,
    state: decision.state,
    evidenceCoverage: buildCoverage(nodeEvidence),
-   recurrenceRate: calculateRate(Math.max(0, failureModules.size - 1), Math.max(1, failureModules.size)),
+   recurrenceRate: calculateRate(
+    Math.max(0, failureModules.size - 1),
+    Math.max(1, failureModules.size),
+   ),
    type1ErrorRate: calculateRate(failures, type1Evidence.length),
    hintDependence: calculateRate(hinted, type1Evidence.length),
    lastObservedAt,

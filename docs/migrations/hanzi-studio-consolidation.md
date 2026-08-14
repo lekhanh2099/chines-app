@@ -21,24 +21,24 @@ The Hanzi Studio commit above is the parity reference for this migration. Later 
 
 ## Feature disposition
 
-| Hanzi Studio feature | Target owner | Action |
-| --- | --- | --- |
-| studio | HanziHome workspace/library | MERGE |
-| reading | HanziHome lesson text/reading | MERGE |
-| listening-lab | HanziHome listening | MERGE |
-| practice-lab | HanziHome practice/dictation | MERGE + ADAPT |
-| learning-loop | `hanzihome/learning-loop` | MOVE + ADAPT persistence |
-| personal-learning | `hanzihome/personal-learning` | MOVE + ADAPT persistence |
-| radicals | HanziHome radicals | MERGE |
-| hanzi-inspector | `hanzihome/hanzi-inspector` | MOVE + ADAPT UI |
-| contextual-pronunciation | HanziHome pronunciation/reader | MERGE |
-| polyphonic-characters | `hanzihome/polyphonic` | MOVE + ADAPT UI |
-| humanities | `hanzihome/humanities` | MOVE + ADAPT UI |
-| daily-reading | `hanzihome/daily-reading` | MOVE + ADAPT UI |
-| conversation | `hanzihome/conversation` | MOVE + ADAPT provider boundary |
-| ai-settings | app Settings | MERGE |
-| data-quality | HanziHome audit/debug owners | MERGE |
-| Convex/auth/account/session | existing chines-app platform | DROP source infrastructure |
+| Hanzi Studio feature        | Target owner                   | Action                         |
+| --------------------------- | ------------------------------ | ------------------------------ |
+| studio                      | HanziHome workspace/library    | MERGE                          |
+| reading                     | HanziHome lesson text/reading  | MERGE                          |
+| listening-lab               | HanziHome listening            | MERGE                          |
+| practice-lab                | HanziHome practice/dictation   | MERGE + ADAPT                  |
+| learning-loop               | `hanzihome/learning-loop`      | MOVE + ADAPT persistence       |
+| personal-learning           | `hanzihome/personal-learning`  | MOVE + ADAPT persistence       |
+| radicals                    | HanziHome radicals             | MERGE                          |
+| hanzi-inspector             | `hanzihome/hanzi-inspector`    | MOVE + ADAPT UI                |
+| contextual-pronunciation    | HanziHome pronunciation/reader | MERGE                          |
+| polyphonic-characters       | `hanzihome/polyphonic`         | MOVE + ADAPT UI                |
+| humanities                  | `hanzihome/humanities`         | MOVE + ADAPT UI                |
+| daily-reading               | `hanzihome/daily-reading`      | MOVE + ADAPT UI                |
+| conversation                | `hanzihome/conversation`       | MOVE + ADAPT provider boundary |
+| ai-settings                 | app Settings                   | MERGE                          |
+| data-quality                | HanziHome audit/debug owners   | MERGE                          |
+| Convex/auth/account/session | existing chines-app platform   | DROP source infrastructure     |
 
 ## Migration gates
 

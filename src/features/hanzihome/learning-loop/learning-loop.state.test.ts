@@ -76,12 +76,7 @@ describe("learning-loop state", () => {
    },
    now,
   );
-  const rated = rateReviewItemInState(
-   state,
-   "review:vocabulary:lesson-1:word-1",
-   "good",
-   now,
-  );
+  const rated = rateReviewItemInState(state, "review:vocabulary:lesson-1:word-1", "good", now);
 
   expect(rated.reviewItems[0]?.intervalDays).toBe(2);
   expect(rated.reviewItems[0]?.correctStreak).toBe(1);
