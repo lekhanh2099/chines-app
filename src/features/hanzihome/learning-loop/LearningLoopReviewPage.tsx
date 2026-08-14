@@ -35,6 +35,8 @@ const ratingLabel: Record<ReviewRating, string> = {
  good: "Ổn",
 };
 
+const reviewRatings: readonly ReviewRating[] = ["again", "hard", "good"];
+
 let reviewClockSnapshot = 0;
 
 function subscribeToReviewClock(onStoreChange: () => void) {
@@ -214,7 +216,7 @@ function ReviewQueueItem({
     ) : null}
    </div>
    <div className="flex flex-wrap gap-2">
-    {(["again", "hard", "good"] as const).map((rating) => (
+    {reviewRatings.map((rating) => (
      <Button
       key={rating}
       size="toolbar"
