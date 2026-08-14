@@ -68,6 +68,7 @@ export function nextPracticeProgress(
 export function isWeakPracticeProgress(item: PracticeProgressItem) {
  if (item.attemptCount === 0) return false;
  if (!item.lastResult) return true;
+ if (item.lastErrorAt) return item.consecutiveCorrect < 2;
 
- return item.attemptCount >= 3 && item.masteryScore < 0.7 && item.consecutiveCorrect < 2;
+ return item.attemptCount >= 3 && item.masteryScore < 0.7;
 }
