@@ -1,0 +1,31 @@
+name: Hanzi consolidation CI
+
+on:
+ push:
+  branches: [migration/hanzi-consolidation]
+
+permissions:
+ contents: read
+
+concurrency:
+ group: hanzi-consolidation-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ verify:
+  runs-on: ubuntu-latest
+  timeout-minutes: 20
+  env:
+   HUSKY: 0
+  steps:
+   - uses: actions/checkout@v5
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - run: npm run check
+     env:
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
