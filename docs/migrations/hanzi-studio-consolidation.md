@@ -53,4 +53,6 @@ Required parity evidence is grouped into:
 5. phone, iPad portrait, constrained tablet and desktop UI checks for affected surfaces;
 6. full `npm run check` on the final branch.
 
+The branch owns a dedicated CI workflow so every consolidation push can run the same `npm run check` gate without widening the normal `main` push trigger.
+
 Database schema/RLS changes, dependency changes, production data mutation and destructive cleanup remain separate confirmation boundaries under the repository risk policy.
