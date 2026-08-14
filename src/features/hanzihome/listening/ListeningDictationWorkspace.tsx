@@ -23,6 +23,7 @@ import {
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { buildDictationDiff } from "../practice/dictation-comparison";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import { MandarinTtsControls } from "./MandarinTtsControls";
@@ -35,46 +36,15 @@ import {
  type ListeningTranscriptEntry,
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
-
-function normalizeDictationText(text: string) {
- return text
-  .normalize("NFKC")
-  .toLocaleLowerCase("zh-CN")
-  .replace(/[\s\p{P}\p{S}]/gu, "");
-}
+import { calculateChineseAccuracy } from "../practice/text-comparison";
 
 function dictationText(entry: ListeningTranscriptEntry) {
  const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
  return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
 }
 
-function editDistance(left: string, right: string) {
- const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
-
- for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
-  const current = [leftIndex];
-  for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
-   current[rightIndex] = Math.min(
-    (current[rightIndex - 1] ?? 0) + 1,
-    (previous[rightIndex] ?? 0) + 1,
-    (previous[rightIndex - 1] ?? 0) + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1),
-   );
-  }
-  previous.splice(0, previous.length, ...current);
- }
-
- return previous[right.length] ?? 0;
-}
-
 function dictationScore(answer: string, expected: string) {
- const normalizedAnswer = normalizeDictationText(answer);
- const normalizedExpected = normalizeDictationText(expected);
- const length = Math.max(normalizedAnswer.length, normalizedExpected.length);
- if (length === 0) return 0;
- return Math.max(
-  0,
-  Math.round((1 - editDistance(normalizedAnswer, normalizedExpected) / length) * 100),
- );
+ return calculateChineseAccuracy(expected, answer);
 }
 
 function DictationCards({
@@ -99,6 +69,7 @@ function DictationCards({
     const isChecked = checked[entry.id] ?? false;
     const expectedText = dictationText(entry);
     const score = isChecked ? dictationScore(answer, expectedText) : null;
+    const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
     const showTranscript = revealed[entry.id] ?? isChecked;
 
     return (
@@ -164,6 +135,36 @@ function DictationCards({
         </Badge>
        ) : null}
       </div>
+
+      {score !== null && diff.length > 0 ? (
+       <div className="grid gap-1 rounded-control border border-border bg-surface-muted p-3">
+        <StudyInstructionText variant="caption" tone="muted" weight="black">
+         So sánh câu trả lời
+        </StudyInstructionText>
+        <Typography as="p" variant="bodySmall" lang="zh-CN" className="flex flex-wrap gap-x-0.5">
+         {diff.map((token, tokenIndex) => (
+          <span
+           data-dictation-diff={token.kind}
+           key={`${token.kind}:${tokenIndex}:${token.value}`}
+           title={
+            token.expected && token.actual && token.expected !== token.actual
+             ? `Đúng: ${token.expected}`
+             : undefined
+           }
+           className={
+            token.kind === "match"
+             ? "text-success-text"
+             : token.kind === "missing"
+               ? "text-warning-text line-through"
+               : "text-danger-text"
+           }
+          >
+           {token.kind === "missing" ? `(${token.expected})` : token.value}
+          </span>
+         ))}
+        </Typography>
+       </div>
+      ) : null}
 
       {showTranscript ? (
        <ListeningTranscriptBlock

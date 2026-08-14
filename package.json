@@ -12,6 +12,8 @@
   }
  },
  "scripts": {
+  "data:hanzihome:studio:import:preview": "node --experimental-strip-types scripts/hanzihome-studio-import.ts",
+  "data:hanzihome:studio:check": "node --experimental-strip-types scripts/hanzihome-studio-inventory.ts",
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
   "format": "oxfmt --write .",
