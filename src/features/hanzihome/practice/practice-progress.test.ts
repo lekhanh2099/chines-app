@@ -1,9 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { isWeakPracticeProgress, nextPracticeProgress } from "./practice-progress";
+import {
+ isWeakPracticeProgress,
+ nextPracticeProgress,
+ PracticeSourceSchema,
+} from "./practice-progress";
 
 const baseAttempt = {
- source: "listening" as const,
+ source: PracticeSourceSchema.enum.listening,
  lessonId: "lesson-1",
  itemId: "item-1",
  exerciseType: "single_choice",
@@ -47,7 +51,7 @@ describe("practice progress", () => {
 
  it("keeps a repeatedly unstable item weak until it has a recovery streak", () => {
   const unstable = {
-   source: baseAttempt.source,
+   source: PracticeSourceSchema.enum.listening,
    lessonId: baseAttempt.lessonId,
    itemId: baseAttempt.itemId,
    exerciseType: baseAttempt.exerciseType,
