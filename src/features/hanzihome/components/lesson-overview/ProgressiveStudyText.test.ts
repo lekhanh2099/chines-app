@@ -81,6 +81,24 @@ describe("progressive study text", () => {
   expect(markup.match(/aria-hidden="true"/g)).toHaveLength(2);
  });
 
+ it("derives contextual pinyin when a lesson line has no stored pinyin", () => {
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "一个人。",
+    displayMode: {
+     showPinyin: true,
+     showMeaning: false,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+   }),
+  );
+
+  expect(markup).toContain("yí gè rén。");
+ });
+
  it("renders each Hanzi character as a reading action when playback is available", () => {
   const markup = renderToStaticMarkup(
    createElement(ProgressiveStudyText, {

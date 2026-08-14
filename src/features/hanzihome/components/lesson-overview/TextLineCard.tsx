@@ -36,6 +36,7 @@ export function TextLineCard({
 
  return (
   <div
+   data-reader-segment-text={readingMode ? zh : undefined}
    className={cn(
     "grid gap-1",
     variant === "card"

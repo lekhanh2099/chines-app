@@ -4,6 +4,7 @@ import { GrammarWorkspace } from "@/features/hanzihome/components/grammar/Gramma
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/notes/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
+import { PracticeWorkspace } from "@/features/hanzihome/practice/PracticeWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/review/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/vocab/VocabWorkspace";
 import type { StudyModule } from "@/features/hanzihome/context/types";
@@ -40,11 +41,10 @@ export function LessonModuleContent({
    break;
   case "practice":
    content = (
-    <LessonTextInlineEditor
+    <PracticeWorkspace
      compact={compact}
      selectedSectionId={lessonTextSelectedSectionId}
      onSelectSection={onSelectLessonTextSection}
-     practiceOnly
     />
    );
    break;

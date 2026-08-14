@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { analyzeContextualPronunciation } from "./contextual-pronunciation";
+import {
+ analyzeContextualPronunciation,
+ formatContextualSpokenPinyin,
+} from "./contextual-pronunciation";
 
 describe("HanziHome contextual pronunciation", () => {
  it("keeps lexical and tone-sandhi readings aligned to Hanzi graphemes", () => {
@@ -21,6 +24,14 @@ describe("HanziHome contextual pronunciation", () => {
 
   const rejected = analyzeContextualPronunciation({ text: "中国", sourcePinyin: "hǎo" });
   expect(rejected.sourcePinyinStatus).toBe("rejected");
+  expect(rejected.glyphs.map((glyph) => glyph.lexicalReadingKey)).toEqual(["zhong1", "guo2"]);
+  expect(rejected.unresolved).toHaveLength(0);
+
+  const concatenated = analyzeContextualPronunciation({
+   text: "浙江省",
+   sourcePinyin: "Zhèjiāng shěng",
+  });
+  expect(concatenated.sourcePinyinStatus).toBe("aligned");
  });
 
  it("applies a sentence-scoped manual override without changing dictionary ownership", () => {
@@ -85,5 +96,10 @@ describe("HanziHome contextual pronunciation", () => {
   const classifier = analyzeContextualPronunciation({ text: "一个", sourcePinyin: "yī gè" });
   expect(classifier.glyphs[0]?.lexicalReadingKey).toBe("yi1");
   expect(classifier.glyphs[0]?.spokenReadingKey).toBe("yi2");
+ });
+
+ it("formats contextual spoken pinyin without losing punctuation", () => {
+  const analysis = analyzeContextualPronunciation({ text: "一个人。" });
+  expect(formatContextualSpokenPinyin(analysis)).toBe("yí gè rén。");
  });
 });

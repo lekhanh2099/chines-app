@@ -167,7 +167,7 @@ create table if not exists public.hanzihome_reader_annotations (
   updated_at timestamptz not null default now(),
   deleted_at timestamptz null,
   constraint hanzihome_reader_annotations_target_check check (
-    paragraph_id is not null or asset_id is not null
+    (paragraph_id is not null)::integer + (asset_id is not null)::integer = 1
   ),
   constraint hanzihome_reader_annotations_page_check check (
     asset_id is not null or page_number is null
@@ -260,6 +260,40 @@ begin
   return new;
 end;
 $$;
+
+create or replace function public.hanzihome_reader_annotations_parent_check()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  if new.paragraph_id is not null and not exists (
+    select 1
+    from public.hanzihome_reading_paragraphs paragraph
+    where paragraph.id = new.paragraph_id
+      and paragraph.document_id = new.document_id
+  ) then
+    raise exception 'Reader annotation paragraph does not belong to the document';
+  end if;
+
+  if new.asset_id is not null and not exists (
+    select 1
+    from public.hanzihome_reading_assets asset
+    where asset.id = new.asset_id
+      and (asset.document_id is null or asset.document_id = new.document_id)
+  ) then
+    raise exception 'Reader annotation asset does not belong to the document';
+  end if;
+
+  return new;
+end;
+$$;
+
+drop trigger if exists hanzihome_reader_annotations_parent_check
+  on public.hanzihome_reader_annotations;
+create trigger hanzihome_reader_annotations_parent_check
+before insert or update on public.hanzihome_reader_annotations
+for each row execute function public.hanzihome_reader_annotations_parent_check();
 
 do $$
 declare

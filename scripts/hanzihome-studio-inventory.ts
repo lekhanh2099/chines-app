@@ -4,6 +4,8 @@ import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 
+import { analyzeContextualPronunciation } from "../src/features/hanzihome/pronunciation/contextual-pronunciation.ts";
+
 const jsonValueSchema = z.json();
 type JsonValue = z.output<typeof jsonValueSchema>;
 
@@ -215,6 +217,8 @@ export type ReadingInventory = {
  vocabulary: number;
  exerciseGroups: number;
  exerciseItems: number;
+ pinyinSourceRejected: number;
+ pinyinUnresolved: number;
 };
 
 export type StudioInventory = {
@@ -247,6 +251,8 @@ export const studioInventoryBaseline = {
   vocabulary: 343,
   exerciseGroups: 69,
   exerciseItems: 291,
+  pinyinSourceRejected: 28,
+  pinyinUnresolved: 0,
  },
  hskReadingPassages: 50,
  hskGrammarItems: 577,
@@ -327,6 +333,11 @@ export function summarizeReadingCourse(
  course: z.output<typeof readingCourseSchema>,
 ): ReadingInventory {
  const studyLessons = [...course.coreLessons, ...course.mockLessons];
+ const pinyinAnalyses = studyLessons.flatMap((lesson) =>
+  lesson.paragraphs.map((paragraph) =>
+   analyzeContextualPronunciation({ text: paragraph.zh, sourcePinyin: paragraph.pinyin }),
+  ),
+ );
  return {
   coreLessons: course.coreLessons.length,
   mockLessons: course.mockLessons.length,
@@ -337,6 +348,13 @@ export function summarizeReadingCourse(
   exerciseItems: studyLessons.reduce(
    (total, lesson) =>
     total + lesson.exerciseGroups.reduce((groupTotal, group) => groupTotal + group.items.length, 0),
+   0,
+  ),
+  pinyinSourceRejected: pinyinAnalyses.filter(
+   (analysis) => analysis.sourcePinyinStatus === "rejected",
+  ).length,
+  pinyinUnresolved: pinyinAnalyses.reduce(
+   (total, analysis) => total + analysis.unresolved.length,
    0,
   ),
  };
@@ -365,10 +383,17 @@ function validatePositiveOrdering(values: number[], label: string) {
  }
 }
 
-function validateReadingReferences(course: z.output<typeof readingCourseSchema>) {
+export function validateReadingReferences(course: z.output<typeof readingCourseSchema>) {
  const unitIds = new Set(course.units.map((unit) => unit.id));
  const lessons = [...course.coreLessons, ...course.mockLessons];
  for (const lesson of lessons) {
+  const documentIds = new Set<string>();
+  const registerDocumentIds = (ids: string[], label: string) => {
+   for (const id of ids) {
+    if (documentIds.has(id)) throw new Error(`${label} reuses stable ID ${id}.`);
+    documentIds.add(id);
+   }
+  };
   if (lesson.unitId !== undefined && !unitIds.has(lesson.unitId)) {
    throw new Error(`Reading lesson ${lesson.id} references a missing unit ${lesson.unitId}.`);
   }
@@ -396,11 +421,28 @@ function validateReadingReferences(course: z.output<typeof readingCourseSchema>)
    lesson.exerciseGroups.map((group) => group.id),
    `${lesson.id} exercise groups`,
   );
-  for (const group of lesson.exerciseGroups)
+  registerDocumentIds(
+   lesson.paragraphs.map((paragraph) => paragraph.id),
+   `${lesson.id} paragraphs`,
+  );
+  registerDocumentIds(
+   lesson.vocabulary.map((item) => item.id),
+   `${lesson.id} vocabulary`,
+  );
+  registerDocumentIds(
+   lesson.exerciseGroups.map((group) => group.id),
+   `${lesson.id} exercise groups`,
+  );
+  for (const group of lesson.exerciseGroups) {
    uniqueIds(
     group.items.map((item) => item.id),
     `${group.id} exercise items`,
    );
+   registerDocumentIds(
+    group.items.map((item) => item.id),
+    `${group.id} exercise items`,
+   );
+  }
  }
 }
 

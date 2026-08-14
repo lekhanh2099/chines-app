@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { readingCourseSchema, summarizeReadingCourse } from "./hanzihome-studio-inventory";
+import {
+ readingCourseSchema,
+ summarizeReadingCourse,
+ validateReadingReferences,
+} from "./hanzihome-studio-inventory";
 
 describe("Hanzi Studio migration inventory", () => {
  it("summarizes typed Reader content deterministically", () => {
@@ -100,6 +104,8 @@ describe("Hanzi Studio migration inventory", () => {
    vocabulary: 1,
    exerciseGroups: 1,
    exerciseItems: 2,
+   pinyinSourceRejected: 0,
+   pinyinUnresolved: 0,
   });
  });
 
@@ -123,5 +129,63 @@ describe("Hanzi Studio migration inventory", () => {
   expect(inventoryKeys).not.toContain("dictionary");
   expect(inventoryKeys).not.toContain("radicals");
   expect(inventoryKeys).not.toContain("polyphonic");
+ });
+
+ it("rejects stable IDs reused across Reader content families", () => {
+  const course = readingCourseSchema.parse({
+   units: [{ id: "unit-1" }],
+   coreLessons: [
+    {
+     id: "core-1",
+     slug: "core-1",
+     titleZh: "核心课",
+     paragraphs: [
+      { id: "duplicate-1", order: 1, zh: "第一段", pinyin: "Dì yī duàn", vi: "", roleVi: "" },
+     ],
+     vocabulary: [
+      {
+       id: "duplicate-1",
+       order: 1,
+       hanzi: "核心",
+       pinyin: "héxīn",
+       meaningVi: "",
+       meaningInContextVi: "",
+       category: "noun",
+       categoryVi: "",
+       level: "",
+      },
+     ],
+     exerciseGroups: [
+      {
+       id: "group-1",
+       order: 1,
+       type: "notes",
+       titleZh: "笔记",
+       titleVi: "Ghi chú",
+       items: [
+        {
+         id: "item-1",
+         type: "note",
+         promptZh: "",
+         promptVi: "",
+         pinyin: "",
+         options: [],
+         answer: "",
+         answerZh: "",
+         answerVi: "",
+         scoring: "none",
+         answerSource: "source",
+         explanationVi: "",
+        },
+       ],
+      },
+     ],
+    },
+   ],
+   mockLessons: [],
+   reinforcementLessons: [],
+  });
+
+  expect(() => validateReadingReferences(course)).toThrow("reuses stable ID duplicate-1");
  });
 });

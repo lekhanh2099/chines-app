@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { buildCacheKey } from "@/lib/tts-cache";
-import { ttsClipDraftSchema } from "./tts-studio.schemas";
+import { splitTtsStudioText, ttsClipDraftSchema } from "./tts-studio.schemas";
 
 describe("HanziHome TTS Studio contracts", () => {
  it("uses the existing text/voice/rate cache contract for new clips", () => {
@@ -28,5 +28,11 @@ describe("HanziHome TTS Studio contracts", () => {
     cacheKey: buildCacheKey(text, voice, 1.25),
    }).success,
   ).toBe(false);
+ });
+
+ it("keeps sentence and paragraph segmentation deterministic", () => {
+  const text = "你好。\n\n世界！下一句？";
+  expect(splitTtsStudioText(text, "paragraph")).toEqual(["你好。", "世界！下一句？"]);
+  expect(splitTtsStudioText(text, "sentence")).toEqual(["你好。", "世界！", "下一句？"]);
  });
 });

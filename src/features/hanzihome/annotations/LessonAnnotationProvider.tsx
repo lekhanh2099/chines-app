@@ -177,7 +177,12 @@ export function LessonAnnotationProvider({
   const handleSelectionChange = () => captureSelection();
   const captureSettledSelection = (event: Event) => {
    const target = event.target;
-   if (target instanceof Element && target.closest("[data-no-inspector]")) return;
+   if (
+    target instanceof Element &&
+    target.closest("[data-no-inspector]") &&
+    !target.closest("[data-study-annotation-node]")
+   )
+    return;
    captureSelection(0);
   };
 

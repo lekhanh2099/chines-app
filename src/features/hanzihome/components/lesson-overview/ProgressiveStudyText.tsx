@@ -8,11 +8,15 @@ import {
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useTTS } from "@/hooks/useTTS";
-import { useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
+import { useMemo, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
 import type { ResolvedLessonTextAnnotation } from "@/features/hanzihome/annotations/types";
+import {
+ analyzeContextualPronunciation,
+ formatContextualSpokenPinyin,
+} from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import type { LessonDisplayMode } from "./types";
 import {
@@ -68,12 +72,21 @@ export function ProgressiveStudyText({
  const [speechText, setSpeechText] = useState("");
  const [speechStartIndex, setSpeechStartIndex] = useState(0);
  const annotationContext = useLessonAnnotationContext();
+ const contextualPronunciation = useMemo(
+  () => analyzeContextualPronunciation({ text: zh, sourcePinyin: pinyin ?? null }),
+  [pinyin, zh],
+ );
+ const contextualPinyin = useMemo(
+  () => formatContextualSpokenPinyin(contextualPronunciation),
+  [contextualPronunciation],
+ );
+ const displayPinyin = pinyin ?? contextualPinyin;
  const tapMode = displayMode.revealMode === "tap" && !readingMode;
  const characters = Array.from(zh);
 
  const advance = () =>
   setStage((current) =>
-   nextAvailableRevealStage(current, { hasPinyin: !!pinyin, hasMeaning: !!vi }),
+   nextAvailableRevealStage(current, { hasPinyin: !!displayPinyin, hasMeaning: !!vi }),
   );
 
  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -129,7 +142,7 @@ export function ProgressiveStudyText({
   readingPlayback?.progress ?? 0,
  );
  const annotations =
-  !readingMode && annotationTarget && annotationContext
+  annotationTarget && annotationContext
    ? annotationContext.getAnnotations(annotationTarget, zh)
    : [];
  const hanziContent = (
@@ -141,16 +154,16 @@ export function ProgressiveStudyText({
    wrapping="preWrap"
    className={cn("min-w-0", tapMode && stage !== 0 && "invisible pointer-events-none")}
    data-no-inspector={readingMode || annotationTarget ? "true" : undefined}
-   data-study-annotation-node={annotationTarget && !readingMode ? "true" : undefined}
-   data-lesson-id={readingMode ? undefined : annotationTarget?.lessonId}
-   data-node-type={readingMode ? undefined : annotationTarget?.nodeType}
-   data-node-id={readingMode ? undefined : annotationTarget?.nodeId}
+   data-study-annotation-node={annotationTarget ? "true" : undefined}
+   data-lesson-id={annotationTarget?.lessonId}
+   data-node-type={annotationTarget?.nodeType}
+   data-node-id={annotationTarget?.nodeId}
   >
    <AnnotatedText
     text={zh}
     annotations={annotations}
     onOpen={(annotation) => {
-     if (!readingMode) annotationContext?.openAnnotation(annotation);
+     annotationContext?.openAnnotation(annotation);
     }}
     readingMode={readingMode}
     readingPlayback={readingPlayback}
@@ -166,7 +179,6 @@ export function ProgressiveStudyText({
     "grid min-w-0",
     !tapMode && "gap-1",
     tapMode && "cursor-pointer select-text",
-    readingMode && "select-none",
     className,
    )}
    data-no-inspector={readingMode ? "true" : undefined}
@@ -180,7 +192,7 @@ export function ProgressiveStudyText({
    {tapMode ? (
     <div className="grid min-w-0 [&>*]:[grid-area:1/1]">
      {hanziContent}
-     {pinyin ? (
+     {displayPinyin ? (
       <PinyinText
        aria-hidden={stage !== 1}
        variant="bodySmall"
@@ -190,7 +202,7 @@ export function ProgressiveStudyText({
        wrapping="preWrap"
        className={cn("min-w-0 self-start", stage !== 1 && "invisible pointer-events-none")}
       >
-       {pinyin}
+       {displayPinyin}
       </PinyinText>
      ) : null}
      {vi ? (
@@ -209,7 +221,7 @@ export function ProgressiveStudyText({
    ) : (
     <>
      {hanziContent}
-     {pinyin && displayMode.showPinyin ? (
+     {displayPinyin && displayMode.showPinyin ? (
       <PinyinText
        variant="bodySmall"
        tone="accent"
@@ -218,7 +230,7 @@ export function ProgressiveStudyText({
        wrapping="preWrap"
        className="min-w-0"
       >
-       {pinyin}
+       {displayPinyin}
       </PinyinText>
      ) : null}
      {vi && displayMode.showMeaning ? (

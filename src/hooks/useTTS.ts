@@ -63,6 +63,7 @@ export function useTTS() {
  const audioRef = useRef<HTMLAudioElement>(null);
  const objectUrlRef = useRef<string>(null);
  const abortControllerRef = useRef<AbortController>(null);
+ const generationAbortControllerRef = useRef<AbortController>(null);
  const playbackRunRef = useRef(0);
  const sequenceSegmentsRef = useRef<string[]>([]);
  const sequenceIndexRef = useRef(0);
@@ -90,7 +91,9 @@ export function useTTS() {
  const stop = useCallback(() => {
   playbackRunRef.current += 1;
   abortControllerRef.current?.abort();
+  generationAbortControllerRef.current?.abort();
   abortControllerRef.current = null;
+  generationAbortControllerRef.current = null;
   cleanupAudio();
   setSpeakingText(null);
   setSpeakingRequestText(null);
@@ -132,6 +135,7 @@ export function useTTS() {
    controller.abort();
    playbackRunRef.current += 1;
    abortControllerRef.current?.abort();
+   generationAbortControllerRef.current?.abort();
    cleanupAudio();
   };
  }, [cleanupAudio]);
@@ -285,6 +289,59 @@ export function useTTS() {
   [cleanupAudio, loadAndPlay, selectedVoiceName, settlePlayback],
  );
 
+ const generateAudio = useCallback(
+  async (text: string): Promise<Blob | null> => {
+   const normalizedText = text.trim();
+   if (!normalizedText || !selectedVoiceName) {
+    setState((current) => ({
+     ...current,
+     error: normalizedText ? "Chưa có giọng Mandarin zh-CN khả dụng." : null,
+    }));
+    return null;
+   }
+
+   const cacheKey = buildCacheKey(normalizedText, selectedVoiceName, rate);
+   const cached = await getCachedAudio(cacheKey);
+   if (cached) return cached;
+
+   generationAbortControllerRef.current?.abort();
+   const controller = new AbortController();
+   generationAbortControllerRef.current = controller;
+
+   try {
+    const response = await fetch("/api/tts", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({
+      text: normalizedText,
+      voice: selectedVoiceName,
+      rate,
+     }),
+     signal: controller.signal,
+    });
+    if (!response.ok) throw new Error(`TTS API ${response.status}`);
+
+    const blob = await response.blob();
+    if (controller.signal.aborted) return null;
+    await setCachedAudio(cacheKey, blob);
+    setState((current) => ({ ...current, error: null }));
+    return blob;
+   } catch (error) {
+    if (controller.signal.aborted) return null;
+    setState((current) => ({
+     ...current,
+     error: error instanceof Error ? error.message : "Không tạo được audio Mandarin.",
+    }));
+    return null;
+   } finally {
+    if (generationAbortControllerRef.current === controller) {
+     generationAbortControllerRef.current = null;
+    }
+   }
+  },
+  [rate, selectedVoiceName],
+ );
+
  const finishSequence = useCallback(
   (runId: number) => {
    if (playbackRunRef.current !== runId) return;
@@ -363,6 +420,7 @@ export function useTTS() {
   setRate,
   speak,
   speakSequence,
+  generateAudio,
   stop,
   isSpeaking: state.isSpeaking,
   speakingText,

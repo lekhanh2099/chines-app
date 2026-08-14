@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { z } from "zod";
 import { Headphones, Keyboard, Play } from "lucide-react";
 
@@ -24,6 +24,7 @@ import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import { buildDictationDiff } from "../practice/dictation-comparison";
+import { createDictationAttempt, type DictationAttempt } from "../practice/dictation-session";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import { MandarinTtsControls } from "./MandarinTtsControls";
@@ -36,15 +37,10 @@ import {
  type ListeningTranscriptEntry,
 } from "./listening.view-model";
 import { useHanziHomeListeningLesson } from "./useHanziHomeListeningLesson";
-import { calculateChineseAccuracy } from "../practice/text-comparison";
 
 function dictationText(entry: ListeningTranscriptEntry) {
  const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
  return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
-}
-
-function dictationScore(answer: string, expected: string) {
- return calculateChineseAccuracy(expected, answer);
 }
 
 function DictationCards({
@@ -59,16 +55,18 @@ function DictationCards({
  onSpeakSequence: (segments: string[]) => void;
 }) {
  const [answers, setAnswers] = useState<Record<string, string>>({});
- const [checked, setChecked] = useState<Record<string, boolean>>({});
+ const [attempts, setAttempts] = useState<Record<string, DictationAttempt>>({});
  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+ const startedAtRef = useRef<Record<string, number>>({});
 
  return (
   <div className="grid gap-2.5">
    {entries.map((entry, index) => {
     const answer = answers[entry.id] ?? "";
-    const isChecked = checked[entry.id] ?? false;
+    const attempt = attempts[entry.id];
+    const isChecked = attempt !== undefined;
     const expectedText = dictationText(entry);
-    const score = isChecked ? dictationScore(answer, expectedText) : null;
+    const score = attempt?.score ?? null;
     const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
     const showTranscript = revealed[entry.id] ?? isChecked;
 
@@ -104,8 +102,13 @@ function DictationCards({
        placeholder="Nghe và chép lại bằng chữ Hán…"
        onChange={(event) => {
         const value = event.target.value;
+        startedAtRef.current[entry.id] ??= Date.now();
         setAnswers((current) => ({ ...current, [entry.id]: value }));
-        setChecked((current) => ({ ...current, [entry.id]: false }));
+        setAttempts((current) => {
+         const next = { ...current };
+         delete next[entry.id];
+         return next;
+        });
        }}
       />
 
@@ -115,7 +118,10 @@ function DictationCards({
         size="toolbar"
         disabled={!answer.trim()}
         onClick={() => {
-         setChecked((current) => ({ ...current, [entry.id]: true }));
+         const startedAt = startedAtRef.current[entry.id];
+         const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
+         const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);
+         setAttempts((current) => ({ ...current, [entry.id]: nextAttempt }));
          setRevealed((current) => ({ ...current, [entry.id]: true }));
         }}
        >

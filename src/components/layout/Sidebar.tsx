@@ -23,6 +23,7 @@ import {
  PlugZap,
  Repeat2,
  Settings,
+ Volume2,
 } from "lucide-react";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
@@ -47,12 +48,14 @@ type NavigationGroup = {
 const learningItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
  { name: "HanziHome", icon: BookOpenCheck, href: "/hanzihome" },
+ { name: "Reader PDF", icon: BookOpenText, href: "/reader" },
  { name: "Sổ tay", icon: NotebookTabs, href: "/notebook" },
 ];
 
 const practiceItems: NavItem[] = [
  { name: "SRS từ", icon: Repeat2, href: "/dictionary" },
  { name: "Nhắc nhanh", icon: Lightbulb, href: "/memory-tips" },
+ { name: "TTS Studio", icon: Volume2, href: "/tts" },
 ];
 
 const competencyItems: NavItem[] = [

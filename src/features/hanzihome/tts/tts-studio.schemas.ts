@@ -2,6 +2,9 @@ import { z } from "zod";
 
 import { buildCacheKey } from "@/lib/tts-cache";
 
+export const ttsSegmentModeSchema = z.enum(["sentence", "paragraph"]);
+export type TtsSegmentMode = z.output<typeof ttsSegmentModeSchema>;
+
 export const ttsFolderRowSchema = z.strictObject({
  id: z.uuid(),
  user_id: z.uuid(),
@@ -45,3 +48,20 @@ export const ttsClipDraftSchema = z
 export type TtsFolderRow = z.output<typeof ttsFolderRowSchema>;
 export type TtsClipRow = z.output<typeof ttsClipRowSchema>;
 export type TtsClipDraft = z.output<typeof ttsClipDraftSchema>;
+
+export function splitTtsStudioText(text: string, mode: TtsSegmentMode): string[] {
+ const normalized = text.trim();
+ if (!normalized) return [];
+
+ if (mode === "paragraph") {
+  return normalized
+   .split(/\n\s*\n/u)
+   .map((segment) => segment.trim())
+   .filter(Boolean);
+ }
+
+ return normalized
+  .split(/(?<=[。！？!?；;])\s*/u)
+  .map((segment) => segment.trim())
+  .filter(Boolean);
+}

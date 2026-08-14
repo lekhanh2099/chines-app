@@ -81,6 +81,33 @@ export type ContextualPronunciationAnalysis = {
  sourcePinyinStatus: "not-provided" | "aligned" | "rejected";
 };
 
+export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAnalysis): string {
+ const glyphByStart = new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph]));
+ const graphemes = [
+  ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(analysis.normalizedText),
+ ];
+ let output = "";
+ let previousWasHanzi = false;
+
+ for (const grapheme of graphemes) {
+  const glyph = glyphByStart.get(grapheme.index);
+  if (glyph !== undefined) {
+   const reading = glyph.spokenPinyin ?? glyph.lexicalPinyin;
+   if (reading !== null) {
+    if (previousWasHanzi) output += " ";
+    output += reading;
+    previousWasHanzi = true;
+    continue;
+   }
+  }
+
+  output += grapheme.segment;
+  previousWasHanzi = false;
+ }
+
+ return output;
+}
+
 const hanziPattern = /\p{Script=Han}/u;
 const latinPattern = /^\p{Script=Latin}+$/u;
 const numberPattern = /^\p{Number}+$/u;
@@ -96,24 +123,24 @@ function classify(value: string): PronunciationTokenType {
 }
 
 function normalizeReading(value: string): string | null {
- const direct = /^([a-zv]+)([1-5])$/u.exec(
+ const direct = /^([a-zv]+)([0-5])$/u.exec(
   value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v").replaceAll("ü", "v"),
  );
- if (direct !== null) return `${direct[1]}${direct[2]}`;
+ if (direct !== null) return `${direct[1]}${direct[2] === "0" ? "5" : direct[2]}`;
  const converted = convert(value, { format: "symbolToNum" });
  const compact = converted
   .normalize("NFC")
   .toLocaleLowerCase()
   .replaceAll("u:", "v")
   .replaceAll("ü", "v")
-  .replace(/[^a-zv1-5]/gu, "");
- const match = /^([a-zv]+)([1-5])$/u.exec(compact);
- return match === null ? null : `${match[1]}${match[2]}`;
+  .replace(/[^a-zv0-5]/gu, "");
+ const match = /^([a-zv]+)([0-5])$/u.exec(compact);
+ return match === null ? null : `${match[1]}${match[2] === "0" ? "5" : match[2]}`;
 }
 
 function displayPinyin(key: string | null): string | null {
  if (key === null) return null;
- return convert(key, { format: "numToSymbol" });
+ return convert(key, { format: "numToSymbol" }).replace(/([a-zv]+)5$/u, "$1");
 }
 
 function readingKeys(value: string[] | undefined): string[] {
@@ -124,18 +151,46 @@ function readingKeys(value: string[] | undefined): string[] {
  });
 }
 
-function sourcePinyinKeys(value: string): string[] {
- const converted = convert(value, { format: "symbolToNum" });
- const compact = (typeof converted === "string" ? converted : value)
-  .normalize("NFC")
-  .toLocaleLowerCase()
-  .replaceAll("u:", "v")
-  .replaceAll("ü", "v");
- return compact.split(/[\s'’-]+/u).flatMap((syllable) => {
-  const match = /^([a-zv]+)([1-5])?$/u.exec(syllable.replace(/[^a-zv1-5]/gu, ""));
-  if (match === null) return [];
-  return [`${match[1]}${match[2] ?? "5"}`];
- });
+function normalizeSourcePinyin(value: string): string {
+ const toneMarks = new Set([
+  "ā",
+  "á",
+  "ǎ",
+  "à",
+  "ē",
+  "é",
+  "ě",
+  "è",
+  "ī",
+  "í",
+  "ǐ",
+  "ì",
+  "ō",
+  "ó",
+  "ǒ",
+  "ò",
+  "ū",
+  "ú",
+  "ǔ",
+  "ù",
+  "ǖ",
+  "ǘ",
+  "ǚ",
+  "ǜ",
+  "ü",
+ ]);
+ let compact = "";
+ for (const character of value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v")) {
+  if (toneMarks.has(character) || /[a-zv0-5]/u.test(character)) compact += character;
+ }
+ return compact.replaceAll("ü", "v");
+}
+
+function sourcePinyinForms(key: string): string[] {
+ const display = displayPinyin(key);
+ const forms = [key, display === null ? null : normalizeSourcePinyin(display)];
+ if (key.endsWith("5")) forms.push(key.slice(0, -1));
+ return [...new Set(forms)].filter((value): value is string => value !== null);
 }
 
 function overrideReadingForGlyph(
@@ -193,19 +248,47 @@ function dictionaryToken(
 }
 
 function alignSourceKeys(
- keys: string[],
+ sourcePinyin: string,
  lexicalReadings: string[],
  spokenReadings: string[],
  alternatives: string[][],
 ): string[] | null {
- if (keys.length !== lexicalReadings.length || keys.length !== spokenReadings.length) return null;
- return keys.every((key, index) => {
-  const lexical = lexicalReadings[index];
-  const spoken = spokenReadings[index];
-  return key === lexical || key === spoken || (alternatives[index] ?? []).includes(key);
- })
-  ? keys
-  : null;
+ if (lexicalReadings.length !== spokenReadings.length) return null;
+ const compactSource = normalizeSourcePinyin(sourcePinyin);
+ const candidates = lexicalReadings.map((lexical, index) =>
+  [...new Set([lexical, spokenReadings[index], ...(alternatives[index] ?? [])])].sort(
+   (left, right) => right.length - left.length,
+  ),
+ );
+ const memo = new Map<string, string[] | null>();
+
+ function solve(index: number, offset: number): string[] | null {
+  const memoKey = `${index}:${offset}`;
+  const cached = memo.get(memoKey);
+  if (cached !== undefined) return cached;
+  if (index === candidates.length) {
+   const result = offset === compactSource.length ? [] : null;
+   memo.set(memoKey, result);
+   return result;
+  }
+
+  for (const candidate of candidates[index] ?? []) {
+   for (const form of sourcePinyinForms(candidate)) {
+    if (!compactSource.startsWith(form, offset)) continue;
+    const rest = solve(index + 1, offset + form.length);
+    if (rest !== null) {
+     const result = [candidate, ...rest];
+     memo.set(memoKey, result);
+     return result;
+    }
+   }
+  }
+
+  memo.set(memoKey, null);
+  return null;
+ }
+
+ return solve(0, 0);
 }
 
 export function analyzeContextualPronunciation(
@@ -263,12 +346,11 @@ export function analyzeContextualPronunciation(
   lexicalValues.length === hanziCount &&
   spokenValues.length === hanziCount &&
   alternatives.length === hanziCount;
- const sourceKeys = request.sourcePinyin === null ? null : sourcePinyinKeys(request.sourcePinyin);
  const sourceAlignment =
-  sourceKeys === null
+  request.sourcePinyin === null
    ? null
-   : alignSourceKeys(sourceKeys, lexicalValues, spokenValues, alternatives);
- const sourceAligned = sourceKeys === null || sourceAlignment !== null;
+   : alignSourceKeys(request.sourcePinyin, lexicalValues, spokenValues, alternatives);
+ const sourceAligned = request.sourcePinyin === null || sourceAlignment !== null;
  const glyphs: ContextualPronunciationGlyph[] = [];
  let hanziIndex = 0;
  for (const item of graphemes) {
@@ -281,7 +363,8 @@ export function analyzeContextualPronunciation(
   const overrideKey = overrideMatch?.key ?? null;
   const sourceKey =
    sourceAligned && sourceAlignment !== null ? (sourceAlignment[hanziIndex] ?? null) : null;
-  const sourceLexicalKey = item.segment === "一" || item.segment === "不" ? lexicalKey : sourceKey;
+  const sourceLexicalKey =
+   item.segment === "一" || item.segment === "不" ? lexicalKey : (sourceKey ?? lexicalKey);
   const selectedLexicalKey = overrideKey ?? sourceLexicalKey;
   const selectedSpokenKey = spokenKey;
   const selectedAlternatives = [
@@ -300,7 +383,7 @@ export function analyzeContextualPronunciation(
    confidence: overrideKey === null ? (readingsAligned && sourceAligned ? 0.94 : 0) : 1,
    evidence:
     overrideKey === null
-     ? sourceKeys !== null && sourceAligned
+     ? request.sourcePinyin !== null && sourceAligned
       ? ["source-pinyin"]
       : readingsAligned
         ? ["context-library"]
