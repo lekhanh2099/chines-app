@@ -141,9 +141,9 @@ describe("personal-learning calibration", () => {
    authorType: "user",
   });
   expect(next.evidence).toHaveLength(2);
-  expect(next.evidence.some((entry) => entry.dimension === "M3" && entry.outcome === "partial")).toBe(
-   true,
-  );
+  expect(
+   next.evidence.some((entry) => entry.dimension === "M3" && entry.outcome === "partial"),
+  ).toBe(true);
  });
 
  it("rejects an answer that is not for the current calibration item", () => {
