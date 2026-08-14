@@ -19,6 +19,8 @@ export const HomeLessonTargetSchema = z.object({
 export const HomeLearningPulseSchema = z.object({
  trackedCount: z.number().int().nonnegative(),
  reviewCount: z.number().int().nonnegative(),
+ dueCount: z.number().int().nonnegative(),
+ weakPracticeCount: z.number().int().nonnegative(),
  knownCount: z.number().int().nonnegative(),
  reviewedTodayCount: z.number().int().nonnegative(),
  bookmarkedCount: z.number().int().nonnegative(),
