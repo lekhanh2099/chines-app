@@ -19,6 +19,7 @@ import {
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeEditMode } from "@/features/hanzihome/context/selectors";
+import { practiceProgressStore } from "@/features/hanzihome/practice/practice-progress-store";
 import { z } from "zod";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
@@ -803,9 +804,43 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
   setSelections((current) => ({ ...current, [itemId]: value }));
   setChecked((current) => ({ ...current, [itemId]: false }));
  };
- const updateAnswer = (itemId: string, value: string) =>
+ const updateAnswer = (itemId: string, value: string) => {
   setAnswers((current) => ({ ...current, [itemId]: value }));
- const checkItem = (itemId: string) => setChecked((current) => ({ ...current, [itemId]: true }));
+  setChecked((current) => ({ ...current, [itemId]: false }));
+ };
+ const checkItem = (itemId: string) => {
+  if (checked[itemId]) return;
+
+  const item = props.items.find((candidate) => candidate.id === itemId);
+  let submittedAnswer: string | undefined;
+  let correct: boolean | undefined;
+
+  if (item?.answer?.type === "choice") {
+   submittedAnswer = selections[itemId];
+   if (submittedAnswer) correct = submittedAnswer === item.answer.value;
+  } else if (item?.answer?.type === "boolean") {
+   submittedAnswer = selections[itemId];
+   if (submittedAnswer) correct = submittedAnswer === String(item.answer.value);
+  } else if (props.exerciseType === "fill_blank" && item) {
+   submittedAnswer = (answers[itemId] ?? "").trim();
+   const accepted =
+    item.metadata.acceptedAnswers ?? (item.answer?.type === "text" ? item.answer.accepted : []);
+   if (submittedAnswer) correct = accepted.includes(submittedAnswer);
+  }
+
+  if (item && correct !== undefined) {
+   practiceProgressStore.actions.recordAttempt({
+    source: "listening",
+    lessonId: props.lessonId,
+    itemId: item.id,
+    exerciseType: props.exerciseType,
+    correct,
+    answer: submittedAnswer,
+   });
+  }
+
+  setChecked((current) => ({ ...current, [itemId]: true }));
+ };
  const revealItem = (itemId: string) =>
   setRevealed((current) => ({ ...current, [itemId]: !current[itemId] }));
  const toggleItemScript = (itemId: string) =>
