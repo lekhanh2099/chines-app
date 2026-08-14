@@ -28,6 +28,7 @@ jobs:
       cache: npm
    - run: npm install --global npm@11.6.1
    - run: npm ci
+   - run: npx oxlint --fix .
    - run: npm run format
    - name: Commit formatter output
      run: |
@@ -37,5 +38,5 @@ jobs:
       git config user.name "github-actions[bot]"
       git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       git add --all
-      git commit -m "style: apply oxfmt [autoformat]"
+      git commit -m "style: apply automated fixes [autoformat]"
       git push origin HEAD:migration/hanzi-consolidation
