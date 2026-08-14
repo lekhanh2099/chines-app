@@ -221,10 +221,10 @@ export function submitCalibrationAnswerInState(
 
  const reasonCodes = correct
   ? input.confidence === "guess"
-    ? ["CORRECT_GUESS"]
-    : input.confidence === "unsure"
-      ? ["CALIBRATION_SUCCESS", "LOW_CONFIDENCE"]
-      : ["CALIBRATION_SUCCESS"]
+   ? ["CORRECT_GUESS"]
+   : input.confidence === "unsure"
+     ? ["CALIBRATION_SUCCESS", "LOW_CONFIDENCE"]
+     : ["CALIBRATION_SUCCESS"]
   : input.selfCorrectionText.trim().length > 0
     ? ["CALIBRATION_FAILURE", "SELF_CORRECTION_ATTEMPTED"]
     : ["CALIBRATION_FAILURE"];
