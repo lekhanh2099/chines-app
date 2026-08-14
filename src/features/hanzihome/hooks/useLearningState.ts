@@ -28,12 +28,30 @@ import {
  type LearningStateSyncStatus,
 } from "@/features/hanzihome/local/learning-state-local-first";
 import {
+ addPersonalLearningEvidenceInState,
+ addPersonalLearningIntentInState,
+ deletePersonalLearningAttemptInState,
+ ingestPersonalLearningAttemptInState,
+ resolvePersonalLearningHypothesisInState,
+ type AcceptHypothesisInput,
+ type HypothesisResolution,
+ type PersonalLearningIngestionInput,
+} from "@/features/hanzihome/personal-learning/application/personal-learning.store";
+import {
+ attemptIntentRevisionSchema,
+ calibrationSessionSchema,
+ emptyPersonalLearningStore,
+ type CalibrationSession,
+ type MasteryEvidence,
+} from "@/features/hanzihome/personal-learning/domain/personal-learning.schemas";
+import {
  emptyLearningState,
  nextProgress,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
 const learningStateQueryKey = ["hanzihome", "learning-state"];
+const personalLearningUserId = "current-user";
 
 function getBrowserOnlineState() {
  return typeof window === "undefined" ? true : navigator.onLine;
@@ -60,6 +78,14 @@ function createLearningId(): string {
   return crypto.randomUUID();
  }
  return `00000000-0000-4000-8000-${Date.now().toString(16).padStart(12, "0").slice(-12)}`;
+}
+
+function createPersonalLearningContext() {
+ return {
+  now: new Date().toISOString(),
+  userId: personalLearningUserId,
+  createId: createLearningId,
+ };
 }
 
 export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
@@ -269,6 +295,98 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
        input,
        createLearningId(),
       ),
+     },
+    })),
+
+   ingestPersonalLearningAttempt: (input: PersonalLearningIngestionInput) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: ingestPersonalLearningAttemptInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       input,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   addPersonalLearningIntent: (attemptId: string, intendedMeaningVi: string) =>
+    updateState((current) => {
+     const context = createPersonalLearningContext();
+     const revision = attemptIntentRevisionSchema.parse({
+      id: context.createId(),
+      attemptId,
+      intendedMeaningVi,
+      createdAt: context.now,
+     });
+     return {
+      ...current,
+      progress: {
+       ...current.progress,
+       personalLearning: addPersonalLearningIntentInState(
+        current.progress.personalLearning ?? emptyPersonalLearningStore,
+        revision,
+        context,
+       ),
+      },
+     };
+    }),
+
+   addPersonalLearningEvidence: (evidence: MasteryEvidence) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: addPersonalLearningEvidenceInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       evidence,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   resolvePersonalLearningHypothesis: (
+    id: string,
+    resolution: HypothesisResolution,
+    quality?: AcceptHypothesisInput,
+   ) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: resolvePersonalLearningHypothesisInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       id,
+       resolution,
+       quality,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   deletePersonalLearningAttempt: (attemptId: string) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: deletePersonalLearningAttemptInState(
+       current.progress.personalLearning ?? emptyPersonalLearningStore,
+       attemptId,
+       createPersonalLearningContext(),
+      ),
+     },
+    })),
+
+   savePersonalLearningCalibration: (session: CalibrationSession | null) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      personalLearning: {
+       ...(current.progress.personalLearning ?? emptyPersonalLearningStore),
+       calibrationSession: session === null ? null : calibrationSessionSchema.parse(session),
+      },
      },
     })),
 
