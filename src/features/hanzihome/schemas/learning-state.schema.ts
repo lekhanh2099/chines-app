@@ -1,5 +1,10 @@
 import * as z from "zod";
 
+import {
+ emptyLearningLoopState,
+ learningLoopStateSchema,
+} from "@/features/hanzihome/learning-loop/learning-loop.schemas";
+
 export const learningStatusSchema = z.enum(["new", "learning", "known", "hard"]);
 export const reviewResultSchema = z.enum(["again", "hard", "known"]);
 export const hanziReaderFontSchema = z
@@ -65,6 +70,7 @@ export const userLearningStateSchema = z.object({
   .object({
    vocab: z.record(z.string(), progressItemSchema).optional(),
    grammar: z.record(z.string(), progressItemSchema).optional(),
+   learningLoop: learningLoopStateSchema.optional().default(emptyLearningLoopState),
   })
   .default({}),
  bookmarks: z

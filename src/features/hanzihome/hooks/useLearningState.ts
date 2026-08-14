@@ -6,6 +6,16 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
+import type { ReviewRating } from "@/features/hanzihome/learning-loop/learning-loop.schemas";
+import {
+ addReviewItemInState,
+ rateReviewItemInState,
+ recordLearningEventInState,
+ recordLearningSessionInState,
+ type AddReviewItemInput,
+ type RecordLearningEventInput,
+ type RecordLearningSessionInput,
+} from "@/features/hanzihome/learning-loop/learning-loop.state";
 import {
  loadLearningStateLocalFirst,
  refreshLearningStateFromRemoteIfClean,
@@ -40,6 +50,11 @@ function subscribeToBrowserOnlineState(onStoreChange: () => void) {
   window.removeEventListener("online", onStoreChange);
   window.removeEventListener("offline", onStoreChange);
  };
+}
+
+function createLearningId(): string {
+ if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
+ return `00000000-0000-4000-8000-${Date.now().toString(16).padStart(12, "0").slice(-12)}`;
 }
 
 export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
@@ -198,6 +213,50 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      progress: {
       ...current.progress,
       grammar: { ...current.progress.grammar, [id]: nextProgress(status) },
+     },
+    })),
+
+   recordLearningSession: (input: RecordLearningSessionInput) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      learningLoop: recordLearningSessionInState(
+       current.progress.learningLoop,
+       input,
+       createLearningId(),
+      ),
+     },
+    })),
+
+   addLearningReviewItem: (input: AddReviewItemInput) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      learningLoop: addReviewItemInState(current.progress.learningLoop, input),
+     },
+    })),
+
+   rateLearningReviewItem: (id: string, rating: ReviewRating) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      learningLoop: rateReviewItemInState(current.progress.learningLoop, id, rating),
+     },
+    })),
+
+   recordLearningEvent: (input: RecordLearningEventInput) =>
+    updateState((current) => ({
+     ...current,
+     progress: {
+      ...current.progress,
+      learningLoop: recordLearningEventInState(
+       current.progress.learningLoop,
+       input,
+       createLearningId(),
+      ),
      },
     })),
 

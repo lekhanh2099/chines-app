@@ -3,6 +3,7 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import { emptyLearningLoopState } from "@/features/hanzihome/learning-loop/learning-loop.schemas";
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { z } from "zod";
 
@@ -15,6 +16,7 @@ export const emptyLearningState: UserLearningState = {
  progress: {
   vocab: {},
   grammar: {},
+  learningLoop: emptyLearningLoopState,
  },
  bookmarks: {
   lessons: [],
@@ -31,6 +33,7 @@ export function normalizeLearningState(value: PartialLearningState): UserLearnin
   progress: {
    vocab: value?.progress?.vocab || {},
    grammar: value?.progress?.grammar || {},
+   learningLoop: value?.progress?.learningLoop || emptyLearningLoopState,
   },
   bookmarks: {
    lessons: value?.bookmarks?.lessons || [],
