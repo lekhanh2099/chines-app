@@ -5,6 +5,8 @@ import { useMemo } from "react";
 
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { usePracticeProgress } from "@/features/hanzihome/practice/usePracticeProgress";
+import { isReviewDue } from "@/features/hanzihome/review/review-scheduler";
 import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
 import type { HomeDashboardModel } from "@/features/home/types";
@@ -12,6 +14,7 @@ import type { HomeDashboardModel } from "@/features/home/types";
 export function useHomeDashboard(): HomeDashboardModel {
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const learning = useLearningState();
+ const practice = usePracticeProgress();
  const recentNotes = useRecentNotes(3);
 
  return useMemo(() => {
@@ -28,6 +31,7 @@ export function useHomeDashboard(): HomeDashboardModel {
   const reviewCount = progressItems.filter(
    (item) => item.status === "learning" || item.status === "hard",
   ).length;
+  const dueCount = progressItems.filter((item) => isReviewDue(item)).length;
   const knownCount = progressItems.filter((item) => item.status === "known").length;
   const reviewedTodayCount = learning.state.reviewHistory.filter((item) =>
    isToday(new Date(item.answeredAt)),
@@ -92,13 +96,15 @@ export function useHomeDashboard(): HomeDashboardModel {
    learningPulse: {
     trackedCount: progressItems.length,
     reviewCount,
+    dueCount,
+    weakPracticeCount: practice.weakCount,
     knownCount,
     reviewedTodayCount,
     bookmarkedCount,
    },
    recentActivity,
    recentNotes: recentNotes.data ?? [],
-   isLoading: learning.isLoading || recentNotes.isLoading,
+   isLoading: learning.isLoading || recentNotes.isLoading || !practice.hasHydrated,
   };
  }, [
   catalog.courses,
@@ -106,6 +112,8 @@ export function useHomeDashboard(): HomeDashboardModel {
   catalog.radicals,
   learning.isLoading,
   learning.state,
+  practice.hasHydrated,
+  practice.weakCount,
   recentNotes.data,
   recentNotes.isLoading,
  ]);
