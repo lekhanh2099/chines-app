@@ -82,6 +82,17 @@ export function VocabReviewPanel({
   [answer, item, onAnswer],
  );
 
+ const handleDetailAnswer = useCallback<ReviewAnswerHandler>(
+  (answeredItem, result) => {
+   if (!item || answeredItem.type !== item.type || answeredItem.id !== item.id) return;
+
+   onAnswer(answeredItem, result);
+   setDetailOpen(false);
+   answer(result);
+  },
+  [answer, item, onAnswer],
+ );
+
  const flashcardControls = useFlashcardControls({
   disabled: !item || session.state.completed || detailOpen,
   canOpenDetail: Boolean(item && session.state.revealed),
@@ -113,10 +124,12 @@ export function VocabReviewPanel({
 
      <div className="grid gap-2 py-4">
       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-       Chưa có thẻ để ôn
+       {mode === "due" ? "Không có mục đến hạn" : "Chưa có thẻ để ôn"}
       </Typography>
       <StudyInstructionText tone="muted" weight="semibold">
-       Deck này chưa có dữ liệu phù hợp. Thử đổi sang “Tất cả” hoặc thêm từ vựng/ngữ pháp cho bài.
+       {mode === "due"
+        ? "Các mục đã học hiện chưa đến lượt ôn lại. Có thể chuyển sang “Còn khó” nếu muốn luyện thêm."
+        : "Deck này chưa có dữ liệu phù hợp. Thử đổi chế độ hoặc thêm từ vựng/ngữ pháp cho bài."}
       </StudyInstructionText>
      </div>
     </div>
@@ -138,10 +151,12 @@ export function VocabReviewPanel({
 
      <div className="grid gap-2 py-4">
       <Typography as="h2" variant="sectionTitle" tone="default" weight="black">
-       Đã hết lượt ôn
+       {mode === "due" ? "Đã xử lý hết mục đến hạn" : "Đã hết lượt ôn"}
       </Typography>
       <StudyInstructionText tone="muted" weight="semibold">
-       Bạn đã đi qua toàn bộ thẻ ôn trong deck này.
+       {mode === "due"
+        ? "Hàng đợi của phiên này đã hoàn tất. Lịch ôn tiếp theo được tính từ kết quả vừa ghi."
+        : "Bạn đã đi qua toàn bộ thẻ ôn trong deck này."}
       </StudyInstructionText>
      </div>
 
@@ -151,7 +166,7 @@ export function VocabReviewPanel({
       </Button>
       <Button onClick={session.reset}>
        <RotateCcw data-icon="inline-start" />
-       Ôn lại
+       Tải lại deck
       </Button>
      </div>
     </div>
@@ -210,7 +225,7 @@ export function VocabReviewPanel({
      onOpenChange={setDetailOpen}
      learningState={learningState}
      lesson={lesson}
-     onAnswer={onAnswer}
+     onAnswer={handleDetailAnswer}
      onToggleBookmark={onToggleBookmark}
      itemLesson={getItemLesson?.(item) ?? lesson}
     />
