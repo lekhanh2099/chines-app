@@ -20,7 +20,9 @@ import {
  getKnowledgeNode,
 } from "@/features/hanzihome/personal-learning/data/knowledge-registry";
 import {
+ confidenceSchema,
  emptyPersonalLearningStore,
+ masteryDimensionSchema,
  type Confidence,
  type ErrorAnnotation,
  type LearnerNodeStatus,
@@ -38,14 +40,14 @@ const statusLabel: Record<LearnerNodeStatus, string> = {
  CONTESTED: "Cần xem lại",
 };
 
-const navItems = [
+const navItems: readonly (readonly [string, string])[] = [
  ["/personal-learning", "Tổng quan"],
  ["/personal-learning/today", "Hôm nay"],
  ["/personal-learning/progress", "Tiến độ"],
  ["/personal-learning/knowledge", "Kiến thức"],
  ["/personal-learning/errors", "Lỗi cần xem"],
  ["/personal-learning/calibration", "Hiệu chuẩn"],
-] as const;
+];
 
 type HubMode = "dashboard" | "today" | "progress" | "knowledge" | "errors";
 
@@ -255,7 +257,7 @@ export function PersonalLearningHubPage({ mode }: { mode: HubMode }) {
           <StateBadge state={resolvedState} />
          </div>
          <div className="flex flex-wrap gap-2">
-          {(["M1", "M2", "M3", "M4", "M5"] as const).map((dimension) => (
+          {masteryDimensionSchema.options.map((dimension) => (
            <Badge key={dimension} variant="default">
             {dimension}: {state?.evidenceCoverage[dimension] ?? 0}
            </Badge>
@@ -839,7 +841,7 @@ function CalibrationItemForm({
      Mức chắc chắn
     </Typography>
     <div className="flex flex-wrap gap-2">
-     {(["sure", "unsure", "guess"] as const).map((itemConfidence) => (
+     {confidenceSchema.options.map((itemConfidence) => (
       <Button
        key={itemConfidence}
        size="toolbar"
