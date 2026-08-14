@@ -62,8 +62,7 @@ const items = calibrationItemSchema.array().parse([
    "Đây là một lần nghe đã xảy ra nhưng không đạt kết quả, hay là giới hạn khả năng nói chung?",
   explanationVi:
    "没听懂 phủ định kết quả của lần nghe cụ thể. 听不懂 cho biết trong điều kiện hoặc năng lực hiện tại, kết quả “hiểu” không thể đạt được.",
-  selfCorrectionPromptVi:
-   "Viết lại câu và thêm một câu dùng cấu trúc còn lại theo nghĩa khả năng.",
+  selfCorrectionPromptVi: "Viết lại câu và thêm một câu dùng cấu trúc còn lại theo nghĩa khả năng.",
   parallelItemId: "result-parallel",
   opportunityRuleId: "rp-actual-failure-v1",
  },
