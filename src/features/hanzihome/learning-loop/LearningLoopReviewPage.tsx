@@ -172,8 +172,10 @@ export function LearningLoopReviewPage() {
          </Typography>
         </div>
         <Typography variant="caption" tone="muted">
-         <TimerReset className="mr-1 inline size-4" />
-         {new Date(item.dueAt).toLocaleString("vi-VN")}
+         <span className="inline-flex items-center gap-1">
+          <TimerReset className="size-4" />
+          {new Date(item.dueAt).toLocaleString("vi-VN")}
+         </span>
         </Typography>
        </Card>
       ))}
@@ -199,8 +201,10 @@ function ReviewQueueItem({
      <Badge variant="default">{item.state}</Badge>
      {item.lapseCount > 0 ? (
       <Badge variant="warning">
-       <RotateCcw className="mr-1 inline size-3.5" />
-       {item.lapseCount}
+       <span className="inline-flex items-center gap-1">
+        <RotateCcw className="size-3.5" />
+        {item.lapseCount}
+       </span>
       </Badge>
      ) : null}
     </div>
