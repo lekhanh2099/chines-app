@@ -39,6 +39,22 @@ jobs:
           ],
           "src/features/hanzihome/personal-learning/ui/PersonalLearningPages.tsx": [
               (" type KnowledgeNodeId,\n", ""),
+              (
+                  "const navItems = [\n [\"/personal-learning\", \"Tổng quan\"],\n [\"/personal-learning/today\", \"Hôm nay\"],\n [\"/personal-learning/progress\", \"Tiến độ\"],\n [\"/personal-learning/knowledge\", \"Kiến thức\"],\n [\"/personal-learning/errors\", \"Lỗi cần xem\"],\n [\"/personal-learning/calibration\", \"Hiệu chuẩn\"],\n] as const;",
+                  "const navItems: readonly (readonly [string, string])[] = [\n [\"/personal-learning\", \"Tổng quan\"],\n [\"/personal-learning/today\", \"Hôm nay\"],\n [\"/personal-learning/progress\", \"Tiến độ\"],\n [\"/personal-learning/knowledge\", \"Kiến thức\"],\n [\"/personal-learning/errors\", \"Lỗi cần xem\"],\n [\"/personal-learning/calibration\", \"Hiệu chuẩn\"],\n];",
+              ),
+              (
+                  " emptyPersonalLearningStore,\n type Confidence,",
+                  " confidenceSchema,\n emptyPersonalLearningStore,\n masteryDimensionSchema,\n type Confidence,",
+              ),
+              (
+                  '([\"M1\", \"M2\", \"M3\", \"M4\", \"M5\"] as const).map((dimension) =>',
+                  "masteryDimensionSchema.options.map((dimension) =>",
+              ),
+              (
+                  '([\"sure\", \"unsure\", \"guess\"] as const).map((itemConfidence) =>',
+                  "confidenceSchema.options.map((itemConfidence) =>",
+              ),
           ],
       }
       for filename, pairs in replacements.items():
