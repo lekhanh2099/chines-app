@@ -9,7 +9,6 @@ import {
  personalLearningStoreSchema,
  type AttemptIntentRevision,
  type ErrorAnnotation,
- type ErrorHypothesis,
  type LearningAttempt,
  type MasteryEvidence,
  type PersonalLearningStore,

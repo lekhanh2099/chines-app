@@ -23,7 +23,6 @@ import {
  emptyPersonalLearningStore,
  type Confidence,
  type ErrorAnnotation,
- type KnowledgeNodeId,
  type LearnerNodeStatus,
 } from "@/features/hanzihome/personal-learning/domain/personal-learning.schemas";
 
