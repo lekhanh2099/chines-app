@@ -5,6 +5,7 @@ import {
  deletePersonalLearningAttemptInState,
  ingestPersonalLearningAttemptInState,
  resolvePersonalLearningHypothesisInState,
+ type PersonalLearningIngestionInput,
 } from "@/features/hanzihome/personal-learning/application/personal-learning.store";
 import {
  attemptIntentRevisionSchema,
@@ -22,16 +23,16 @@ function context() {
  };
 }
 
-const writingInput = {
- sourceModule: "writing" as const,
+const writingInput: PersonalLearningIngestionInput = {
+ sourceModule: "writing",
  sourceItemId: "exercise-1",
  originalInput: "他说的很快。",
  intendedMeaningVi: null,
- inputMode: "text" as const,
- transcriptStatus: "not-applicable" as const,
+ inputMode: "text",
+ transcriptStatus: "not-applicable",
  assistanceUsed: false,
  durationMs: null,
- opportunityType: "TYPE_2" as const,
+ opportunityType: "TYPE_2",
 };
 
 describe("personal-learning canonical store", () => {
