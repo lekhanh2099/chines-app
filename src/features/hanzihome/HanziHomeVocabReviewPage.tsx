@@ -91,13 +91,8 @@ export function HanziHomeVocabReviewPage({
   },
   result: ReviewResult,
  ) => {
-  learning.appendReviewHistory(item, result);
-
-  if (item.type === "vocab") {
-   learning.updateVocabProgress(
-    item.id,
-    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
-   );
+  if (item.type === "vocab" || item.type === "grammar") {
+   learning.recordReview(item, result);
   }
  };
 
