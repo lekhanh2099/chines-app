@@ -28,7 +28,40 @@ jobs:
       cache: npm
    - run: npm install --global npm@11.6.1
    - run: npm ci
-   - run: npx oxlint --fix .
+   - name: Apply deterministic migration cleanup
+     run: |
+      python - <<'PY'
+      from pathlib import Path
+
+      replacements = {
+          "src/features/hanzihome/personal-learning/application/personal-learning.store.ts": [
+              (" type ErrorHypothesis,\n", ""),
+          ],
+          "src/features/hanzihome/personal-learning/ui/PersonalLearningPages.tsx": [
+              (" type KnowledgeNodeId,\n", ""),
+          ],
+      }
+      for filename, pairs in replacements.items():
+          path = Path(filename)
+          text = path.read_text()
+          for old, new in pairs:
+              text = text.replace(old, new)
+          path.write_text(text)
+
+      mock_paths = [
+          Path("src/features/hanzihome/components/layout/HanziHomeReadingSettingsTrigger.test.tsx"),
+          Path("src/features/hanzihome/components/lesson-overview/LessonReadingSettings.test.tsx"),
+      ]
+      methods = """  ingestPersonalLearningAttempt: () => undefined,\n  addPersonalLearningIntent: () => undefined,\n  addPersonalLearningEvidence: () => undefined,\n  resolvePersonalLearningHypothesis: () => undefined,\n  deletePersonalLearningAttempt: () => undefined,\n  startOrResumePersonalLearningCalibration: () => undefined,\n  pausePersonalLearningCalibration: () => undefined,\n  submitPersonalLearningCalibrationAnswer: () => undefined,\n  savePersonalLearningCalibration: () => undefined,\n"""
+      for path in mock_paths:
+          text = path.read_text()
+          if "ingestPersonalLearningAttempt" not in text:
+              marker = "  recordLearningEvent: () => undefined,\n"
+              if marker not in text:
+                  raise SystemExit(f"mock insertion marker missing: {path}")
+              text = text.replace(marker, marker + methods)
+              path.write_text(text)
+      PY
    - run: npm run format
    - name: Commit formatter output
      run: |
@@ -38,5 +71,5 @@ jobs:
       git config user.name "github-actions[bot]"
       git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       git add --all
-      git commit -m "style: apply automated fixes [autoformat]"
+      git commit -m "style: apply deterministic migration cleanup [autoformat]"
       git push origin HEAD:migration/hanzi-consolidation
