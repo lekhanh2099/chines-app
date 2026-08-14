@@ -21,11 +21,6 @@ function createContext() {
  };
 }
 
-function startStore(): PersonalLearningStore {
- const context = createContext();
- return startOrResumeCalibrationInState(emptyPersonalLearningStore, context);
-}
-
 describe("personal-learning calibration", () => {
  it("starts with one primary item per knowledge node", () => {
   const session = buildCalibrationSession(emptyPersonalLearningStore, createContext());
