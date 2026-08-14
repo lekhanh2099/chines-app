@@ -180,14 +180,8 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
  };
 
  const answerReview = (item: ReviewItem, result: ReviewResult) => {
-  learning.appendReviewHistory(item, result);
-
-  if (item.type === "vocab") {
-   markVocab(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
-  }
-
-  if (item.type === "grammar") {
-   markGrammar(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
+  if (item.type === "vocab" || item.type === "grammar") {
+   learning.recordReview(item, result);
   }
  };
 
