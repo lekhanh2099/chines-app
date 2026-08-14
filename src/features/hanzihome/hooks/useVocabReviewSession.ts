@@ -3,15 +3,17 @@
 import { useCallback, useMemo, useReducer } from "react";
 import { z } from "zod";
 
+import { getReviewDueAt, isReviewDue } from "@/features/hanzihome/review/review-scheduler";
 import type {
  GrammarViewModel,
  HanziHomeVocabItem,
+ LearningProgressItem,
  LearningStatus,
  ReviewResult,
 } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
-export const ReviewDeckModeSchema = z.enum(["all", "vocab", "grammar", "hard"]);
+export const ReviewDeckModeSchema = z.enum(["all", "vocab", "grammar", "hard", "due"]);
 export type ReviewDeckMode = z.infer<typeof ReviewDeckModeSchema>;
 
 type ReviewItemMap = {
@@ -21,6 +23,7 @@ type ReviewItemMap = {
   prompt: string;
   answer: string;
   status: LearningStatus;
+  progress?: LearningProgressItem;
   source: HanziHomeVocabItem;
  };
  grammar: {
@@ -29,6 +32,7 @@ type ReviewItemMap = {
   prompt: string;
   answer: string;
   status: LearningStatus;
+  progress?: LearningProgressItem;
   source: GrammarViewModel;
  };
 };
@@ -87,6 +91,14 @@ function getItemRank(item: ReviewItem) {
  return getRank(item.status);
 }
 
+function getDueRank(item: ReviewItem) {
+ const dueAt = getReviewDueAt(item.progress);
+ if (!dueAt) return Number.NEGATIVE_INFINITY;
+
+ const timestamp = Date.parse(dueAt);
+ return Number.isFinite(timestamp) ? timestamp : Number.POSITIVE_INFINITY;
+}
+
 function seededRandom(seed: number) {
  let value = seed % 2147483647;
  if (value <= 0) value += 2147483646;
@@ -114,15 +126,15 @@ function shuffleItems<T>(items: T[], seed: number): T[] {
 export function useVocabReviewSession(input: {
  vocab: HanziHomeVocabItem[];
  grammar: GrammarViewModel[];
- vocabProgress: Record<string, { status: LearningStatus }>;
- grammarProgress: Record<string, { status: LearningStatus }>;
+ vocabProgress: Record<string, LearningProgressItem>;
+ grammarProgress: Record<string, LearningProgressItem>;
  mode: ReviewDeckMode;
  shuffleSeed?: number;
 }) {
  const items = useMemo<ReviewItem[]>(() => {
   const vocabItems: ReviewItem[] = input.vocab.map((item) => {
    const itemId = getVocabItemKey(item);
-   const status = input.vocabProgress[itemId]?.status || "new";
+   const progress = input.vocabProgress[itemId];
 
    return {
     type: "vocab",
@@ -131,20 +143,22 @@ export function useVocabReviewSession(input: {
     answer: [item.pinyin, item.meaning.hanviet, getVocabDisplayMeaning(item)]
      .filter(Boolean)
      .join(" · "),
-    status,
+    status: progress?.status || "new",
+    progress,
     source: item,
    };
   });
 
   const grammarItems: ReviewItem[] = input.grammar.map((item) => {
-   const status = input.grammarProgress[item.id]?.status || "new";
+   const progress = input.grammarProgress[item.id];
 
    return {
     type: "grammar",
     id: item.id,
     prompt: item.cleanTitle,
     answer: item.core || item.structuresView[0] || "Chưa có mô tả.",
-    status,
+    status: progress?.status || "new",
+    progress,
     source: item,
    };
   });
@@ -154,13 +168,19 @@ export function useVocabReviewSession(input: {
     if (input.mode === "vocab") return item.type === "vocab";
     if (input.mode === "grammar") return item.type === "grammar";
     if (input.mode === "hard") return item.status === "hard";
+    if (input.mode === "due") return isReviewDue(item.progress);
     return true;
    })
    .map((item, index) => ({ item, index }))
    .sort((a, b) => {
-    if (input.mode !== "hard") return a.index - b.index;
+    if (input.mode === "due") {
+     return getDueRank(a.item) - getDueRank(b.item) || a.index - b.index;
+    }
+    if (input.mode === "hard") {
+     return getItemRank(a.item) - getItemRank(b.item) || a.index - b.index;
+    }
 
-    return getItemRank(a.item) - getItemRank(b.item) || a.index - b.index;
+    return a.index - b.index;
    })
    .map(({ item }) => item);
 
