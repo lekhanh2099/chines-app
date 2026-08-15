@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
  analyzeContextualPronunciation,
+ formatContextualPinyinRange,
  formatContextualSpokenPinyin,
 } from "./contextual-pronunciation";
 
@@ -101,5 +102,13 @@ describe("HanziHome contextual pronunciation", () => {
  it("formats contextual spoken pinyin without losing punctuation", () => {
   const analysis = analyzeContextualPronunciation({ text: "一个人。" });
   expect(formatContextualSpokenPinyin(analysis)).toBe("yí gè rén。");
+ });
+
+ it("formats the selected pinyin range for the Reader selection toolbar", () => {
+  const analysis = analyzeContextualPronunciation({
+   text: "浙江省绍",
+   sourcePinyin: "Zhèjiāng shěng shào",
+  });
+  expect(formatContextualPinyinRange(analysis, 0, 4)).toBe("zhè jiāng shěng shào");
  });
 });

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { usePathname } from "next/navigation";
 
 import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
@@ -15,9 +16,15 @@ const learningStateQueryKey = ["hanzihome", "learning-state"];
 const defaultHanziFontFamily = getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont);
 
 export function HanziTypographyPreferenceBridge() {
+ const pathname = usePathname();
+ const shouldLoadRemoteState =
+  pathname === "/hanzihome" ||
+  pathname.startsWith("/hanzihome/") ||
+  pathname.startsWith("/settings");
  const learningStateQuery = useQuery({
   queryKey: learningStateQueryKey,
   queryFn: loadLearningStateLocalFirst,
+  enabled: shouldLoadRemoteState,
  });
  const state = useMemo(
   () => normalizeLearningState(learningStateQuery.data ?? emptyLearningState),

@@ -26,6 +26,19 @@ describe("GET /api/hanzihome/lessons/:lessonId/vocabulary", () => {
   requireAuthenticatedRoute.mockReset();
  });
 
+ it("serves Studio lesson vocabulary without an auth or Supabase request", async () => {
+  const response = await GET(new Request("https://app.example/api"), {
+   params: Promise.resolve({ lessonId: "hanzihome-studio-reading:U3-R1" }),
+  });
+
+  expect(response.status).toBe(200);
+  expect(requireAuthenticatedRoute).not.toHaveBeenCalled();
+  expect(getLessonVocabulary).not.toHaveBeenCalled();
+  const payload = await response.json();
+  expect(payload.resource.lessonId).toBe("hanzihome-studio-reading:U3-R1");
+  expect(payload.resource.items.length).toBeGreaterThan(0);
+ });
+
  it("does not query vocabulary without an authenticated session", async () => {
   requireAuthenticatedRoute.mockResolvedValue({
    authenticated: false,

@@ -12,7 +12,7 @@ import { publicSupabaseEnv } from "@/lib/env/public";
 import { createClient } from "@/lib/supabase/server";
 import type { Database } from "@/types/supabase.generated";
 
-type AuthenticatedRouteContext = {
+export type AuthenticatedRouteContext = {
  supabase: SupabaseClient<Database>;
  user: User;
 };

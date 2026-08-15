@@ -44,22 +44,24 @@ describe("GET /api/hanzihome/catalog", () => {
 
  it("returns authenticated catalog data with private no-store caching", async () => {
   requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
-  getCatalogSummary.mockResolvedValue({ source: "db", courses: [] });
+  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], books: [], lessons: [] });
 
   const response = await GET(new Request("https://app.example/api/hanzihome/catalog"));
 
   expect(response.status).toBe(200);
   expect(response.headers.get("Cache-Control")).toBe("private, no-store");
-  await expect(response.json()).resolves.toEqual({
-   catalog: { source: "db", courses: [] },
-  });
+  const payload = await response.json();
+  expect(payload.catalog.source).toBe("db");
+  expect(payload.catalog.courses).toHaveLength(6);
+  expect(payload.catalog.books).toHaveLength(25);
+  expect(payload.catalog.lessons).toEqual([]);
   expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false, includeRadicals: false });
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 
  it("loads lightweight lesson summaries in the single catalog request when requested", async () => {
   requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
-  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], lessons: [] });
+  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], books: [], lessons: [] });
 
   const response = await GET(
    new Request("https://app.example/api/hanzihome/catalog?includeLessons=1"),
@@ -67,12 +69,40 @@ describe("GET /api/hanzihome/catalog", () => {
 
   expect(response.status).toBe(200);
   expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: true, includeRadicals: false });
+  const payload = await response.json();
+  expect(payload.catalog.courses).toHaveLength(6);
+  expect(payload.catalog.books).toHaveLength(25);
+  expect(payload.catalog.lessons).toHaveLength(302);
+  expect(getCourseLessonSummaries).not.toHaveBeenCalled();
+ });
+
+ it("loads Studio dictation lessons from the bundled static content", async () => {
+  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+
+  const response = await GET(
+   new Request("https://app.example/api/hanzihome/catalog?courseId=hanzihome-studio-dictation"),
+  );
+
+  const payload = await response.json();
+  expect(response.status).toBe(200);
+  expect(payload.lessons).toHaveLength(126);
+  expect(payload.lessons[0]).toMatchObject({
+   id: "hanzihome-studio-dictation:hsk5-lesson-01",
+   titleZh: "爱的细节",
+  });
+  expect(requireAuthenticatedRoute).not.toHaveBeenCalled();
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 
  it("loads radicals only when the radicals module requests them", async () => {
   requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
-  getCatalogSummary.mockResolvedValue({ source: "db", courses: [], radicals: [] });
+  getCatalogSummary.mockResolvedValue({
+   source: "db",
+   courses: [],
+   books: [],
+   lessons: [],
+   radicals: [],
+  });
 
   const response = await GET(
    new Request("https://app.example/api/hanzihome/catalog?includeRadicals=1"),

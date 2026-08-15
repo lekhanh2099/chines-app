@@ -36,7 +36,7 @@ export function MandarinSpeakButton({
  const requestText = normalizedSegments.join("\n");
  const requestActive = (tts.isSpeaking || tts.isLoading) && tts.speakingRequestText === requestText;
  const active = activeOverride ?? requestActive;
- const unavailable = !requestText || !tts.selectedVoice;
+ const unavailable = !requestText;
  const accessibleLabel = active ? "Dừng đọc" : actionLabel || `Đọc tiếng Trung: ${normalizedText}`;
 
  return (
@@ -50,7 +50,7 @@ export function MandarinSpeakButton({
     disabled
      ? "Tạm khóa trong chế độ đọc"
      : unavailable
-       ? (tts.error ?? "Chưa có giọng Mandarin zh-CN")
+       ? (tts.error ?? "Chưa có nội dung để đọc")
        : accessibleLabel
    }
    aria-label={accessibleLabel}

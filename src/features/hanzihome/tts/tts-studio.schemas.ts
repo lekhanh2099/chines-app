@@ -9,6 +9,7 @@ export const ttsFolderRowSchema = z.strictObject({
  id: z.uuid(),
  user_id: z.uuid(),
  name: z.string().trim().min(1),
+ revision: z.number().int().nonnegative(),
  created_at: z.iso.datetime({ offset: true }),
  updated_at: z.iso.datetime({ offset: true }),
 });
@@ -22,6 +23,7 @@ export const ttsClipRowSchema = z.strictObject({
  voice: z.string().trim().min(1),
  rate: z.number().positive().max(3),
  cache_key: z.string().trim().min(1),
+ revision: z.number().int().nonnegative(),
  created_at: z.iso.datetime({ offset: true }),
  updated_at: z.iso.datetime({ offset: true }),
 });
@@ -49,13 +51,21 @@ export type TtsFolderRow = z.output<typeof ttsFolderRowSchema>;
 export type TtsClipRow = z.output<typeof ttsClipRowSchema>;
 export type TtsClipDraft = z.output<typeof ttsClipDraftSchema>;
 
+export const ttsLibraryResponseSchema = z.strictObject({
+ folders: z.array(ttsFolderRowSchema),
+ clips: z.array(ttsClipRowSchema),
+});
+
+export const ttsFolderResponseSchema = z.strictObject({ folder: ttsFolderRowSchema });
+export const ttsClipResponseSchema = z.strictObject({ clip: ttsClipRowSchema });
+
 export function splitTtsStudioText(text: string, mode: TtsSegmentMode): string[] {
  const normalized = text.trim();
  if (!normalized) return [];
 
  if (mode === "paragraph") {
   return normalized
-   .split(/\n\s*\n/u)
+   .split(/\n+/u)
    .map((segment) => segment.trim())
    .filter(Boolean);
  }

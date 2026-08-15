@@ -51,6 +51,7 @@ type StructuredRequestResult<T> = {
 
 type NullableString = z.infer<z.ZodNullable<z.ZodString>>;
 type NullableAbortSignal = Parameters<typeof throwIfAborted>[0];
+type ProviderResponseMode = "json" | "text";
 type Provider = z.infer<z.ZodEnum<{ Gemini: "Gemini"; DeepSeek: "DeepSeek"; OpenAI: "OpenAI" }>>;
 type ManagedProvider = z.infer<
  z.ZodUnion<
@@ -124,6 +125,7 @@ async function callDeepSeekRaw(
   model?: NullableString;
   useOutageTracking?: boolean;
   abortSignal?: NullableAbortSignal;
+  responseMode?: ProviderResponseMode;
  },
 ): Promise<RawProviderResult> {
  const isUserKey = !!options?.apiKey;
@@ -168,7 +170,7 @@ async function callDeepSeekRaw(
     ],
     temperature: 0.3,
     max_tokens: 4096,
-    response_format: { type: "json_object" },
+    ...(options?.responseMode !== "text" ? { response_format: { type: "json_object" } } : {}),
    }),
    signal: createRequestSignal(60_000, options?.abortSignal),
   });
@@ -231,6 +233,7 @@ async function callGeminiRaw(
  model: GeminiModelId,
  apiKey?: NullableString,
  abortSignal?: NullableAbortSignal,
+ responseMode: ProviderResponseMode = "json",
 ): Promise<RawProviderResult> {
  const isUserKey = !!apiKey;
 
@@ -271,7 +274,7 @@ async function callGeminiRaw(
      generationConfig: {
       temperature: 0.3,
       maxOutputTokens: 4096,
-      responseMimeType: "application/json",
+      ...(responseMode === "json" ? { responseMimeType: "application/json" } : {}),
      },
     }),
     signal: createRequestSignal(60_000, abortSignal),
@@ -328,6 +331,7 @@ async function callOpenAiRaw(
  apiKey: string,
  model?: NullableString,
  abortSignal?: NullableAbortSignal,
+ responseMode: ProviderResponseMode = "json",
 ): Promise<RawProviderResult> {
  const resolvedModel = model || "gpt-4.1-mini";
 
@@ -350,7 +354,7 @@ async function callOpenAiRaw(
     ],
     ...(!isGpt5Model ? { temperature: 0.3 } : {}),
     ...(isGpt5Model ? { max_completion_tokens: 4096 } : { max_tokens: 4096 }),
-    response_format: { type: "json_object" },
+    ...(responseMode !== "text" ? { response_format: { type: "json_object" } } : {}),
    }),
    signal: createRequestSignal(60_000, abortSignal),
   });
@@ -390,6 +394,7 @@ async function callGroqRaw(
  apiKey: string,
  model?: NullableString,
  abortSignal?: NullableAbortSignal,
+ responseMode: ProviderResponseMode = "json",
 ): Promise<RawProviderResult> {
  try {
   throwIfAborted(abortSignal);
@@ -407,7 +412,7 @@ async function callGroqRaw(
     ],
     temperature: 0.2,
     max_completion_tokens: 4096,
-    response_format: { type: "json_object" },
+    ...(responseMode !== "text" ? { response_format: { type: "json_object" } } : {}),
    }),
    signal: createRequestSignal(30_000, abortSignal),
   });
@@ -928,4 +933,106 @@ export async function analyzeSentenceDetailed(
    result.error ||
    "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
  };
+}
+
+export const aiConversationMessageSchema = z.strictObject({
+ role: z.enum(["user", "assistant"]),
+ content: z.string().trim().min(1).max(6000),
+});
+
+export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
+
+const AI_CONVERSATION_SYSTEM_PROMPT = `You are a patient Chinese tutor for Vietnamese learners.
+Answer the conversation naturally and concisely.
+When Chinese appears, include accurate pinyin and a Vietnamese explanation when it helps.
+Stay focused on language learning, reading, pronunciation, grammar, vocabulary, translation, and practice.
+Do not claim to have access to private app data that was not provided by the learner.`;
+
+function renderConversationPrompt(messages: AiConversationMessage[]): string {
+ return messages
+  .map((message) => `${message.role === "user" ? "Learner" : "Tutor"}: ${message.content}`)
+  .join("\n\n");
+}
+
+export async function generateAiConversationReply(
+ messages: AiConversationMessage[],
+ options: {
+  userApiKeys: UserApiKeyCredential[];
+  abortSignal?: NullableAbortSignal;
+ },
+): Promise<{ data: string | null; error: string | null }> {
+ const parsedMessages = z.array(aiConversationMessageSchema).min(1).max(20).safeParse(messages);
+ if (!parsedMessages.success) {
+  return { data: null, error: "Nội dung hội thoại không hợp lệ." };
+ }
+
+ const selectedUserApiKey = options.userApiKeys[0];
+ if (!selectedUserApiKey) {
+  return {
+   data: null,
+   error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI.",
+  };
+ }
+
+ const prompt = renderConversationPrompt(parsedMessages.data);
+ const systemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${AI_CONVERSATION_SYSTEM_PROMPT}`;
+ let rawResult: RawProviderResult;
+
+ throwIfAborted(options.abortSignal);
+
+ if (selectedUserApiKey.provider === "deepseek") {
+  rawResult = await callDeepSeekRaw(systemPrompt, prompt, {
+   apiKey: selectedUserApiKey.apiKey,
+   model: selectedUserApiKey.defaultModel,
+   useOutageTracking: false,
+   abortSignal: options.abortSignal,
+   responseMode: "text",
+  });
+ } else if (selectedUserApiKey.provider === "gemini") {
+  if (!isGeminiModelId(selectedUserApiKey.defaultModel)) {
+   return {
+    data: null,
+    error: "Model Gemini đã lưu không còn hợp lệ. Hãy chọn lại model trong Cài đặt.",
+   };
+  }
+
+  rawResult = await callGeminiRaw(
+   systemPrompt,
+   prompt,
+   selectedUserApiKey.defaultModel,
+   selectedUserApiKey.apiKey,
+   options.abortSignal,
+   "text",
+  );
+ } else if (selectedUserApiKey.provider === "openai") {
+  rawResult = await callOpenAiRaw(
+   systemPrompt,
+   prompt,
+   selectedUserApiKey.apiKey,
+   selectedUserApiKey.defaultModel,
+   options.abortSignal,
+   "text",
+  );
+ } else {
+  rawResult = await callGroqRaw(
+   systemPrompt,
+   prompt,
+   selectedUserApiKey.apiKey,
+   selectedUserApiKey.defaultModel,
+   options.abortSignal,
+   "text",
+  );
+ }
+
+ if (!rawResult.content) {
+  return {
+   data: null,
+   error: rawResult.error || `${selectedUserApiKey.label} không trả về nội dung.`,
+  };
+ }
+
+ const content = rawResult.content.trim();
+ return content.length > 0
+  ? { data: content, error: null }
+  : { data: null, error: `${selectedUserApiKey.label} trả về nội dung rỗng.` };
 }

@@ -43,6 +43,9 @@ export function useHanziHomeCatalogQuery({
   queryKey: hanzihomeQueryKeys.catalog(includeLessons, includeRadicals),
   queryFn: () => fetchHanziHomeCatalog({ includeLessons, includeRadicals }),
   staleTime: catalogStaleTime,
+  gcTime: 30 * 60 * 1000,
+  retry: false,
+  refetchOnWindowFocus: false,
   enabled,
  });
 

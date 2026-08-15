@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
  parseReaderExerciseItemRow,
  readerAnnotationRowSchema,
+ readerAssetRowSchema,
  readerExerciseItemRowSchema,
  readerParagraphRowSchema,
  readerProgressRowSchema,
@@ -107,5 +108,27 @@ describe("HanziHome Reader row contracts", () => {
     answers: { "item-1": { answer: "A" } },
    }).success,
   ).toBe(false);
+ });
+
+ it("accepts local HanziHome resource URLs with checksummed rights metadata", () => {
+  expect(
+   readerAssetRowSchema.safeParse({
+    id: "asset-1",
+    document_id: null,
+    source: "seed",
+    asset_type: "pdf",
+    source_path: "public/resources/reader.pdf",
+    sha256: "a".repeat(64),
+    storage_bucket: null,
+    storage_path: null,
+    external_url: "/resources/reader.pdf",
+    mime_type: "application/pdf",
+    rights_status: "licensed",
+    redistribution_allowed: true,
+    metadata: { source: "hanzi-studio" },
+    created_at: "2026-08-14T00:00:00Z",
+    updated_at: "2026-08-14T00:00:00Z",
+   }).success,
+  ).toBe(true);
  });
 });

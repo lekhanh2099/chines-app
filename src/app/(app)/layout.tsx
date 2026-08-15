@@ -3,7 +3,6 @@ import { MobileBottomNavigation, Sidebar } from "@/components/layout/Sidebar";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
 import { createClient } from "@/lib/supabase/server";
-import { redirect } from "next/navigation";
 
 export default async function AppLayout({
  children,
@@ -12,10 +11,7 @@ export default async function AppLayout({
 }>) {
  const supabase = await createClient();
  const { data, error } = await supabase.auth.getUser();
-
- if (error || !data?.user) redirect("/login");
-
- const user = data.user;
+ const user = error ? undefined : (data.user ?? undefined);
 
  return (
   <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">

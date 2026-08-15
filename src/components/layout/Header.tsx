@@ -103,6 +103,7 @@ export function Header({ user }: { user?: Nullable<User> }) {
      <HeaderSearchForm
       value={searchValue}
       routeToolbarActive={hasRouteToolbar}
+      hidden={pathname === "/reader"}
       onSubmit={(event) => {
        event.preventDefault();
        globalSearchStore.actions.openSearch();
@@ -172,6 +173,9 @@ function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcr
 }
 
 function getSimpleHeaderBreadcrumb(pathname: string): Nullable<SimpleHeaderBreadcrumb> {
+ if (pathname === "/reader") {
+  return { parent: { label: "Học", href: "/hanzihome" }, label: "Trang học" };
+ }
  if (pathname === "/notebook") return { label: "Sổ tay" };
  if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
  if (pathname === "/settings") return { label: "Cài đặt" };
@@ -195,12 +199,14 @@ function getSimpleHeaderBreadcrumb(pathname: string): Nullable<SimpleHeaderBread
 function HeaderSearchForm({
  value,
  routeToolbarActive,
+ hidden,
  onSubmit,
  onOpen,
  onChange,
 }: {
  value: string;
  routeToolbarActive: boolean;
+ hidden: boolean;
  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
  onOpen: () => void;
  onChange: (value: string) => void;
@@ -210,7 +216,11 @@ function HeaderSearchForm({
    onSubmit={onSubmit}
    className={cn(
     "relative min-w-0",
-    routeToolbarActive ? "hidden xl:col-start-2 xl:row-start-1 xl:block" : "block",
+    hidden
+     ? "hidden"
+     : routeToolbarActive
+       ? "hidden xl:col-start-2 xl:row-start-1 xl:block"
+       : "block",
     routeToolbarActive && "xl:justify-self-center",
    )}
   >

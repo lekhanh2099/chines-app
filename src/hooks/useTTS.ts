@@ -42,6 +42,7 @@ function splitSpeechSegments(segments: readonly string[]) {
 type TTSState = z.infer<
  z.ZodObject<{
   isSpeaking: z.ZodBoolean;
+  isPaused: z.ZodBoolean;
   isLoading: z.ZodBoolean;
   error: z.ZodNullable<z.ZodString>;
  }>
@@ -50,10 +51,13 @@ type TTSState = z.infer<
 export function useTTS() {
  const [state, setState] = useState<TTSState>({
   isSpeaking: false,
+  isPaused: false,
   isLoading: false,
   error: null,
  });
  const [progress, setProgress] = useState(0);
+ const [currentTimeSeconds, setCurrentTimeSeconds] = useState(0);
+ const [durationSeconds, setDurationSeconds] = useState(0);
  const [voices, setVoices] = useState<TTSVoice[]>([]);
  const [selectedVoiceName, setSelectedVoiceName] = useState("");
  const [rate, setRate] = useState(DEFAULT_RATE);
@@ -64,6 +68,8 @@ export function useTTS() {
  const objectUrlRef = useRef<string>(null);
  const abortControllerRef = useRef<AbortController>(null);
  const generationAbortControllerRef = useRef<AbortController>(null);
+ const voiceLoadControllerRef = useRef<AbortController>(null);
+ const voiceLoadPromiseRef = useRef<Promise<TTSVoice[]> | null>(null);
  const playbackRunRef = useRef(0);
  const sequenceSegmentsRef = useRef<string[]>([]);
  const sequenceIndexRef = useRef(0);
@@ -71,9 +77,16 @@ export function useTTS() {
 
  const cleanupAudio = useCallback(() => {
   if (audioRef.current) {
-   audioRef.current.pause();
-   audioRef.current.removeAttribute("src");
-   audioRef.current.load();
+   const audio = audioRef.current;
+   audio.onended = null;
+   audio.onerror = null;
+   audio.onpause = null;
+   audio.onplay = null;
+   audio.onloadedmetadata = null;
+   audio.ontimeupdate = null;
+   audio.pause();
+   audio.removeAttribute("src");
+   audio.load();
    audioRef.current = null;
   }
   if (objectUrlRef.current) {
@@ -98,16 +111,41 @@ export function useTTS() {
   setSpeakingText(null);
   setSpeakingRequestText(null);
   setProgress(0);
+  setCurrentTimeSeconds(0);
+  setDurationSeconds(0);
   sequenceSegmentsRef.current = [];
   sequenceIndexRef.current = 0;
-  setState({ isSpeaking: false, isLoading: false, error: null });
+  setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
   settlePlayback();
  }, [cleanupAudio, settlePlayback]);
 
- useEffect(() => {
-  const controller = new AbortController();
+ const pause = useCallback(() => {
+  const audio = audioRef.current;
+  if (audio === null || audio.paused) return;
+  audio.pause();
+ }, []);
 
-  async function loadVoices() {
+ const resume = useCallback(() => {
+  const audio = audioRef.current;
+  if (audio === null || !audio.paused) return;
+  void audio.play().catch(() => {
+   setState((current) => ({
+    ...current,
+    isSpeaking: false,
+    isPaused: true,
+    error: "Trình duyệt đã chặn tiếp tục phát audio.",
+   }));
+  });
+ }, []);
+
+ const loadVoices = useCallback((): Promise<TTSVoice[]> => {
+  if (voices.length > 0) return Promise.resolve(voices);
+  const pending = voiceLoadPromiseRef.current;
+  if (pending !== null) return pending;
+
+  const controller = new AbortController();
+  voiceLoadControllerRef.current = controller;
+  const promise = (async () => {
    try {
     const response = await fetch("/api/tts", { signal: controller.signal });
     if (!response.ok) throw new Error(`TTS voices API ${response.status}`);
@@ -121,18 +159,31 @@ export function useTTS() {
       : (nextVoices[0]?.shortName ?? ""),
     );
     setState((current) => ({ ...current, error: null }));
+    return nextVoices;
    } catch (error) {
-    if (controller.signal.aborted) return;
+    if (controller.signal.aborted) return [];
     setState((current) => ({
      ...current,
      error: error instanceof Error ? error.message : "Không tải được giọng Mandarin zh-CN",
     }));
+    return [];
    }
-  }
+  })();
+  voiceLoadPromiseRef.current = promise;
+  void promise.then(
+   () => {
+    if (voiceLoadPromiseRef.current === promise) voiceLoadPromiseRef.current = null;
+   },
+   () => {
+    if (voiceLoadPromiseRef.current === promise) voiceLoadPromiseRef.current = null;
+   },
+  );
+  return promise;
+ }, [voices]);
 
-  void loadVoices();
+ useEffect(() => {
   return () => {
-   controller.abort();
+   voiceLoadControllerRef.current?.abort();
    playbackRunRef.current += 1;
    abortControllerRef.current?.abort();
    generationAbortControllerRef.current?.abort();
@@ -159,7 +210,7 @@ export function useTTS() {
     setSpeakingText(null);
     setSpeakingRequestText(null);
     setProgress(1);
-    setState({ isSpeaking: false, isLoading: false, error: null });
+    setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
     settlePlayback();
    };
    audio.onended = finish;
@@ -169,34 +220,52 @@ export function useTTS() {
     setSpeakingText(null);
     setSpeakingRequestText(null);
     setProgress(0);
+    setCurrentTimeSeconds(0);
+    setDurationSeconds(0);
     sequenceSegmentsRef.current = [];
     sequenceIndexRef.current = 0;
     setState({
      isSpeaking: false,
+     isPaused: false,
      isLoading: false,
      error: "Không thể phát audio từ Microsoft Edge Read Aloud.",
     });
     settlePlayback();
    };
-   audio.ontimeupdate = () => {
+   const syncTiming = () => {
     if (playbackRunRef.current !== runId) return;
-    if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
-
-    setProgress(Math.min(1, Math.max(0, audio.currentTime / audio.duration)));
+    const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 0;
+    const currentTime = Number.isFinite(audio.currentTime) ? Math.max(0, audio.currentTime) : 0;
+    setCurrentTimeSeconds(currentTime);
+    setDurationSeconds(duration);
+    if (duration > 0) setProgress(Math.min(1, Math.max(0, currentTime / duration)));
    };
+   audio.onloadedmetadata = syncTiming;
+   audio.ontimeupdate = syncTiming;
    setSpeakingText(text);
    setProgress(0);
-   setState({ isSpeaking: true, isLoading: false, error: null });
+   audio.onplay = () => {
+    if (playbackRunRef.current !== runId) return;
+    setState((current) => ({ ...current, isSpeaking: true, isPaused: false, error: null }));
+   };
+   audio.onpause = () => {
+    if (playbackRunRef.current !== runId || audio.ended) return;
+    setState((current) => ({ ...current, isSpeaking: false, isPaused: true }));
+   };
+   setState({ isSpeaking: true, isPaused: false, isLoading: false, error: null });
    void audio.play().catch(() => {
     if (playbackRunRef.current !== runId) return;
     cleanupAudio();
     setSpeakingText(null);
     setSpeakingRequestText(null);
     setProgress(0);
+    setCurrentTimeSeconds(0);
+    setDurationSeconds(0);
     sequenceSegmentsRef.current = [];
     sequenceIndexRef.current = 0;
     setState({
      isSpeaking: false,
+     isPaused: false,
      isLoading: false,
      error: "Trình duyệt đã chặn phát audio. Hãy chạm lại nút đọc.",
     });
@@ -207,8 +276,8 @@ export function useTTS() {
  );
 
  const loadAndPlay = useCallback(
-  async (text: string, runId: number, onComplete?: () => void) => {
-   const cacheKey = buildCacheKey(text, selectedVoiceName, rate);
+  async (text: string, runId: number, onComplete?: () => void, voiceName = selectedVoiceName) => {
+   const cacheKey = buildCacheKey(text, voiceName, rate);
    const cached = await getCachedAudio(cacheKey);
    if (playbackRunRef.current !== runId) return;
    if (cached) {
@@ -225,7 +294,7 @@ export function useTTS() {
      headers: { "Content-Type": "application/json" },
      body: JSON.stringify({
       text,
-      voice: selectedVoiceName,
+      voice: voiceName,
       rate,
      }),
      signal: controller.signal,
@@ -241,10 +310,13 @@ export function useTTS() {
     setSpeakingText(null);
     setSpeakingRequestText(null);
     setProgress(0);
+    setCurrentTimeSeconds(0);
+    setDurationSeconds(0);
     sequenceSegmentsRef.current = [];
     sequenceIndexRef.current = 0;
     setState({
      isSpeaking: false,
+     isPaused: false,
      isLoading: false,
      error: error instanceof Error ? error.message : "Microsoft Edge Read Aloud không khả dụng.",
     });
@@ -259,10 +331,10 @@ export function useTTS() {
  const speak = useCallback(
   async (text: string) => {
    const normalizedText = text.trim();
-   if (!normalizedText || !selectedVoiceName) {
+   if (!normalizedText) {
     setState((current) => ({
      ...current,
-     error: normalizedText ? "Chưa có giọng Mandarin zh-CN khả dụng." : null,
+     error: null,
     }));
     return;
    }
@@ -271,36 +343,53 @@ export function useTTS() {
    const runId = playbackRunRef.current;
    abortControllerRef.current?.abort();
    cleanupAudio();
+
+   const availableVoices = await loadVoices();
+   if (playbackRunRef.current !== runId) return;
+   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
+   if (!voiceName) return;
+
    sequenceSegmentsRef.current = [];
    sequenceIndexRef.current = 0;
    setSpeakingText(null);
    setSpeakingRequestText(normalizedText);
    setProgress(0);
-   setState({ isSpeaking: false, isLoading: true, error: null });
+   setCurrentTimeSeconds(0);
+   setDurationSeconds(0);
+   setState({ isSpeaking: false, isPaused: false, isLoading: true, error: null });
 
-   await loadAndPlay(normalizedText, runId, () => {
-    setSpeakingText(null);
-    setSpeakingRequestText(null);
-    setProgress(1);
-    setState({ isSpeaking: false, isLoading: false, error: null });
-    settlePlayback();
-   });
+   await loadAndPlay(
+    normalizedText,
+    runId,
+    () => {
+     setSpeakingText(null);
+     setSpeakingRequestText(null);
+     setProgress(1);
+     setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
+     settlePlayback();
+    },
+    voiceName,
+   );
   },
-  [cleanupAudio, loadAndPlay, selectedVoiceName, settlePlayback],
+  [cleanupAudio, loadAndPlay, loadVoices, selectedVoiceName, settlePlayback],
  );
 
  const generateAudio = useCallback(
   async (text: string): Promise<Blob | null> => {
    const normalizedText = text.trim();
-   if (!normalizedText || !selectedVoiceName) {
+   if (!normalizedText) {
     setState((current) => ({
      ...current,
-     error: normalizedText ? "Chưa có giọng Mandarin zh-CN khả dụng." : null,
+     error: null,
     }));
     return null;
    }
 
-   const cacheKey = buildCacheKey(normalizedText, selectedVoiceName, rate);
+   const availableVoices = await loadVoices();
+   const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
+   if (!voiceName) return null;
+
+   const cacheKey = buildCacheKey(normalizedText, voiceName, rate);
    const cached = await getCachedAudio(cacheKey);
    if (cached) return cached;
 
@@ -314,7 +403,7 @@ export function useTTS() {
      headers: { "Content-Type": "application/json" },
      body: JSON.stringify({
       text: normalizedText,
-      voice: selectedVoiceName,
+      voice: voiceName,
       rate,
      }),
      signal: controller.signal,
@@ -339,7 +428,7 @@ export function useTTS() {
     }
    }
   },
-  [rate, selectedVoiceName],
+  [loadVoices, rate, selectedVoiceName],
  );
 
  const finishSequence = useCallback(
@@ -350,14 +439,14 @@ export function useTTS() {
    setSpeakingText(null);
    setSpeakingRequestText(null);
    setProgress(1);
-   setState({ isSpeaking: false, isLoading: false, error: null });
+   setState({ isSpeaking: false, isPaused: false, isLoading: false, error: null });
    settlePlayback();
   },
   [settlePlayback],
  );
 
  const playNextSequenceSegment = useCallback(
-  async (runId: number) => {
+  async (runId: number, voiceName: string) => {
    if (playbackRunRef.current !== runId) return;
 
    const nextSegment = sequenceSegmentsRef.current[sequenceIndexRef.current];
@@ -366,11 +455,16 @@ export function useTTS() {
     return;
    }
 
-   setState({ isSpeaking: false, isLoading: true, error: null });
-   await loadAndPlay(nextSegment, runId, () => {
-    sequenceIndexRef.current += 1;
-    void playNextSequenceSegment(runId);
-   });
+   setState({ isSpeaking: false, isPaused: false, isLoading: true, error: null });
+   await loadAndPlay(
+    nextSegment,
+    runId,
+    () => {
+     sequenceIndexRef.current += 1;
+     void playNextSequenceSegment(runId, voiceName);
+    },
+    voiceName,
+   );
   },
   [finishSequence, loadAndPlay],
  );
@@ -382,13 +476,8 @@ export function useTTS() {
     .filter(Boolean)
     .join("\n");
    const normalizedSegments = splitSpeechSegments(segments);
-   if (normalizedSegments.length === 0 || !selectedVoiceName) {
+   if (normalizedSegments.length === 0) {
     stop();
-    if (normalizedSegments.length === 0) return;
-    setState((current) => ({
-     ...current,
-     error: "Chưa có giọng Mandarin zh-CN khả dụng.",
-    }));
     return;
    }
 
@@ -396,16 +485,25 @@ export function useTTS() {
    const runId = playbackRunRef.current;
    abortControllerRef.current?.abort();
    cleanupAudio();
-   sequenceSegmentsRef.current = normalizedSegments;
-   sequenceIndexRef.current = 0;
-   settledCallbackRef.current = onComplete ?? null;
-   setSpeakingText(null);
-   setSpeakingRequestText(requestedText);
-   setProgress(0);
-   setState({ isSpeaking: false, isLoading: true, error: null });
-   void playNextSequenceSegment(runId);
+
+   void loadVoices().then((availableVoices) => {
+    if (playbackRunRef.current !== runId) return;
+    const voiceName = selectedVoiceName || availableVoices[0]?.shortName || "";
+    if (!voiceName) return;
+
+    sequenceSegmentsRef.current = normalizedSegments;
+    sequenceIndexRef.current = 0;
+    settledCallbackRef.current = onComplete ?? null;
+    setSpeakingText(null);
+    setSpeakingRequestText(requestedText);
+    setProgress(0);
+    setCurrentTimeSeconds(0);
+    setDurationSeconds(0);
+    setState({ isSpeaking: false, isPaused: false, isLoading: true, error: null });
+    void playNextSequenceSegment(runId, voiceName);
+   });
   },
-  [cleanupAudio, playNextSequenceSegment, selectedVoiceName, stop],
+  [cleanupAudio, loadVoices, playNextSequenceSegment, selectedVoiceName, stop],
  );
 
  const selectedVoice =
@@ -413,6 +511,7 @@ export function useTTS() {
 
  return {
   voices,
+  loadVoices,
   selectedVoice,
   selectedVoiceName,
   setSelectedVoiceName,
@@ -420,12 +519,17 @@ export function useTTS() {
   setRate,
   speak,
   speakSequence,
+  pause,
+  resume,
   generateAudio,
   stop,
   isSpeaking: state.isSpeaking,
+  isPaused: state.isPaused,
   speakingText,
   speakingRequestText,
   progress,
+  currentTimeSeconds,
+  durationSeconds,
   isLoading: state.isLoading,
   error: state.error,
  };

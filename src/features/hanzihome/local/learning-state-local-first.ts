@@ -39,6 +39,7 @@ export type LearningStateSyncResult = {
 
 const remoteRefreshCooldownMs = 15_000;
 let remoteRefreshInFlight: Nullable<Promise<Nullable<UserLearningState>>> = null;
+let remoteSyncInFlight: Nullable<Promise<LearningStateSyncResult>> = null;
 let lastRemoteRefreshAt = 0;
 
 function isBrowserOnline() {
@@ -83,14 +84,18 @@ export async function refreshLearningStateFromRemoteIfClean(): Promise<
   const pending = await readPendingLearningStateMutation();
   if (pending) return null;
 
-  const remoteState = normalizeLearningState(await fetchHanziHomeLearningState());
-  await writeLocalLearningState({
-   state: remoteState,
-   lastSyncedAt: new Date().toISOString(),
-  });
-  lastRemoteRefreshAt = Date.now();
-
-  return remoteState;
+  try {
+   const remoteState = normalizeLearningState(await fetchHanziHomeLearningState());
+   await writeLocalLearningState({
+    state: remoteState,
+    lastSyncedAt: new Date().toISOString(),
+   });
+   return remoteState;
+  } finally {
+   // Failed/unauthenticated attempts must also respect the cooldown. Without
+   // this, every focus event retries the same request immediately.
+   lastRemoteRefreshAt = Date.now();
+  }
  })().finally(() => {
   remoteRefreshInFlight = null;
  });
@@ -106,6 +111,16 @@ function shouldApplySyncResult(
 }
 
 export async function syncPendingLearningStateMutations(): Promise<LearningStateSyncResult> {
+ if (remoteSyncInFlight) return remoteSyncInFlight;
+
+ remoteSyncInFlight = syncPendingLearningStateMutationsOnce().finally(() => {
+  remoteSyncInFlight = null;
+ });
+
+ return remoteSyncInFlight;
+}
+
+async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyncResult> {
  if (!isBrowserOnline()) {
   const pending = await listPendingLearningStateMutations().catch(() => []);
   return {

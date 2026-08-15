@@ -108,6 +108,18 @@ export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAn
  return output;
 }
 
+export function formatContextualPinyinRange(
+ analysis: ContextualPronunciationAnalysis,
+ start: number,
+ end: number,
+): string {
+ return analysis.glyphs
+  .filter((glyph) => glyph.start >= start && glyph.end <= end)
+  .map((glyph) => glyph.spokenPinyin ?? glyph.lexicalPinyin)
+  .filter((reading): reading is string => reading !== null)
+  .join(" ");
+}
+
 const hanziPattern = /\p{Script=Han}/u;
 const latinPattern = /^\p{Script=Latin}+$/u;
 const numberPattern = /^\p{Number}+$/u;
@@ -141,6 +153,10 @@ function normalizeReading(value: string): string | null {
 function displayPinyin(key: string | null): string | null {
  if (key === null) return null;
  return convert(key, { format: "numToSymbol" }).replace(/([a-zv]+)5$/u, "$1");
+}
+
+export function formatContextualReading(readingKey: string): string {
+ return displayPinyin(readingKey) ?? readingKey;
 }
 
 function readingKeys(value: string[] | undefined): string[] {

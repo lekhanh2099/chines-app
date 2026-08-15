@@ -8,6 +8,7 @@ import { logger } from "@/lib/logger";
 export const runtime = "nodejs";
 
 const MAX_TEXT_LENGTH = 10_000;
+const VOICE_LIST_TTL_MS = 5 * 60 * 1_000;
 const supportedRates = [0.75, 0.9, 1, 1.1, 1.25];
 const ttsSchema = z.object({
  text: z
@@ -27,8 +28,28 @@ async function getAuthenticatedUser() {
  return user;
 }
 
+type EdgeVoiceList = Awaited<ReturnType<typeof listVoices>>;
+
+let voiceListCache: { expiresAt: number; voices: EdgeVoiceList } | null = null;
+let voiceListInFlight: Promise<EdgeVoiceList> | null = null;
+
 async function getMandarinVoices() {
- const voices = await listVoices();
+ const now = Date.now();
+ if (voiceListCache !== null && voiceListCache.expiresAt > now) {
+  return voiceListCache.voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
+ }
+ if (voiceListInFlight !== null) {
+  const voices = await voiceListInFlight;
+  return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
+ }
+ voiceListInFlight = listVoices();
+ let voices: EdgeVoiceList;
+ try {
+  voices = await voiceListInFlight;
+  voiceListCache = { expiresAt: Date.now() + VOICE_LIST_TTL_MS, voices };
+ } finally {
+  voiceListInFlight = null;
+ }
  return voices.filter((voice) => voice.Locale.toLowerCase() === "zh-cn");
 }
 

@@ -20,6 +20,24 @@ export const pdfStrokeSchema = z.strictObject({
 export type PdfPoint = z.output<typeof pdfPointSchema>;
 export type PdfStroke = z.output<typeof pdfStrokeSchema>;
 
+export const pdfAnnotationPayloadSchema = z.strictObject({
+ strokes: z.array(pdfStrokeSchema),
+});
+
+export const pdfAnnotationRowSchema = z.strictObject({
+ id: z.uuid(),
+ user_id: z.uuid(),
+ asset_id: z.string().min(1),
+ page_number: z.number().int().positive(),
+ payload: pdfAnnotationPayloadSchema,
+ revision: z.number().int().nonnegative(),
+ created_at: z.iso.datetime({ offset: true }),
+ updated_at: z.iso.datetime({ offset: true }),
+});
+
+export type PdfAnnotationPayload = z.output<typeof pdfAnnotationPayloadSchema>;
+export type PdfAnnotationRow = z.output<typeof pdfAnnotationRowSchema>;
+
 export function createPdfStroke(
  tool: PdfDrawingTool,
  color: string,

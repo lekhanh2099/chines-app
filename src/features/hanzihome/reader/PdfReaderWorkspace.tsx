@@ -7,6 +7,7 @@ import {
  ExternalLink,
  Hand,
  Highlighter,
+ Info,
  Pen,
  Redo2,
  Trash2,
@@ -23,23 +24,31 @@ import {
  type TouchEvent,
  type WheelEvent,
 } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Typography } from "@/components/ui/typography";
+import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/base-popover";
 import { cn } from "@/lib/utils";
 
 import {
  appendPdfStrokePoint,
  createPdfStroke,
  erasePdfStrokesAtPoint,
+ pdfAnnotationPayloadSchema,
  pdfStrokePath,
  type PdfDrawingTool,
  type PdfPoint,
  type PdfStroke,
 } from "./pdf-annotations";
+import { fetchPdfAnnotation, savePdfAnnotation } from "./pdf-annotation-api";
 import {
  clampPdfZoom,
  nextPdfZoom,
@@ -49,72 +58,69 @@ import {
  previousPdfZoom,
  normalizedPdfPoint,
 } from "./pdf-viewer-utils";
-
-type PdfAsset = {
- id: string;
- title: string;
- resourceFile: string;
- pdfPage: number;
- printedPage: number;
- imageSrc: string;
-};
-
+import type { ReaderPdfAsset } from "./reader.schemas";
+import { hanzihomeQueryKeys } from "../query-keys";
 type PdfEditorTool = PdfDrawingTool | "eraser";
-type PdfAssetSeed = [string, string, string, number, number];
 
-const PDF_ASSET_SEEDS: PdfAssetSeed[] = [
- ["book-1-21", "Hán ngữ · Quyển 1 · trang 21", "hanyu-series-reading-book-1.pdf", 21, 21],
- ["book-1-25", "Hán ngữ · Quyển 1 · trang 25", "hanyu-series-reading-book-1.pdf", 25, 25],
- ["book-1-29", "Hán ngữ · Quyển 1 · trang 29", "hanyu-series-reading-book-1.pdf", 29, 29],
- ["book-1-40", "Hán ngữ · Quyển 1 · trang 40", "hanyu-series-reading-book-1.pdf", 40, 40],
- ["book-1-48", "Hán ngữ · Quyển 1 · trang 48", "hanyu-series-reading-book-1.pdf", 48, 48],
- ["book-1-52", "Hán ngữ · Quyển 1 · trang 52", "hanyu-series-reading-book-1.pdf", 52, 52],
- ["book-1-56", "Hán ngữ · Quyển 1 · trang 56", "hanyu-series-reading-book-1.pdf", 56, 56],
- ["book-1-83", "Hán ngữ · Quyển 1 · trang 83", "hanyu-series-reading-book-1.pdf", 83, 83],
- ["book-1-99", "Hán ngữ · Quyển 1 · trang 99", "hanyu-series-reading-book-1.pdf", 99, 99],
- ["book-1-103", "Hán ngữ · Quyển 1 · trang 103", "hanyu-series-reading-book-1.pdf", 103, 103],
- ["book-1-110", "Hán ngữ · Quyển 1 · trang 110", "hanyu-series-reading-book-1.pdf", 110, 110],
- ["book-1-131", "Hán ngữ · Quyển 1 · trang 131", "hanyu-series-reading-book-1.pdf", 131, 131],
- ["book-2-10", "Hán ngữ · Quyển 2 · trang 10", "hanyu-series-reading-book-2.pdf", 10, 10],
- ["book-2-32", "Hán ngữ · Quyển 2 · trang 32", "hanyu-series-reading-book-2.pdf", 32, 32],
- ["book-2-44", "Hán ngữ · Quyển 2 · trang 44", "hanyu-series-reading-book-2.pdf", 44, 44],
- ["book-2-54", "Hán ngữ · Quyển 2 · trang 54", "hanyu-series-reading-book-2.pdf", 54, 54],
- ["book-2-124", "Hán ngữ · Quyển 2 · trang 124", "hanyu-series-reading-book-2.pdf", 124, 124],
- ["book-2-129", "Hán ngữ · Quyển 2 · trang 129", "hanyu-series-reading-book-2.pdf", 129, 129],
- ["book-2-161", "Hán ngữ · Quyển 2 · trang 161", "hanyu-series-reading-book-2.pdf", 161, 161],
- ["book-2-171", "Hán ngữ · Quyển 2 · trang 171", "hanyu-series-reading-book-2.pdf", 171, 171],
- ["book-2-182", "Hán ngữ · Quyển 2 · trang 182", "hanyu-series-reading-book-2.pdf", 182, 182],
- ["book-2-200", "Hán ngữ · Quyển 2 · trang 200", "hanyu-series-reading-book-2.pdf", 200, 200],
- ["book-2-208", "Hán ngữ · Quyển 2 · trang 208", "hanyu-series-reading-book-2.pdf", 208, 208],
- ["book-2-254", "Hán ngữ · Quyển 2 · trang 254", "hanyu-series-reading-book-2.pdf", 254, 254],
-];
-
-const PDF_ASSETS: PdfAsset[] = PDF_ASSET_SEEDS.map(
- ([id, title, resourceFile, pdfPage, printedPage]) => ({
-  id,
-  title,
-  resourceFile,
-  pdfPage,
-  printedPage,
-  imageSrc: `/resources/pages/${resourceFile.replace(".pdf", "")}-page-${pdfPage}.webp`,
- }),
-);
+export function pdfAssetIdForDocument(
+ resourceFile: string,
+ pdfPage: number,
+ assets: ReadonlyArray<ReaderPdfAsset>,
+): string | null {
+ const asset = assets.find(
+  (candidate) => candidate.resourceFile === resourceFile && candidate.pdfPage === pdfPage,
+ );
+ return asset?.id ?? null;
+}
 
 const PEN_COLORS = ["#ef4444", "#2563eb", "#16a34a", "#f59e0b", "#111827"];
 
-function pdfHref(asset: PdfAsset) {
+function pdfHref(asset: ReaderPdfAsset) {
  return `/resources/${asset.resourceFile}#page=${asset.pdfPage}`;
+}
+
+function importedPdfAssetId(asset: ReaderPdfAsset) {
+ return `hanzihome-studio-asset:public/resources/${asset.resourceFile}`;
 }
 
 function updateStrokeAtId(strokes: readonly PdfStroke[], id: string, point: PdfPoint) {
  return strokes.map((stroke) => (stroke.id === id ? appendPdfStrokePoint(stroke, point) : stroke));
 }
 
-export function PdfReaderWorkspace() {
- const [selectedAssetId, setSelectedAssetId] = useState(PDF_ASSETS[0]?.id ?? "");
+type PdfReaderWorkspaceProps = {
+ initialAssetId?: string;
+ heading?: string;
+ description?: string;
+ badgeLabel?: string;
+ backHref?: string;
+ backLabel?: string;
+ metadata?: string;
+ notice?: string;
+ studyTasks?: string[];
+ badges?: string[];
+ initialAssets: ReadonlyArray<ReaderPdfAsset>;
+ showAssetPicker?: boolean;
+};
+
+export function PdfReaderWorkspace({
+ initialAssetId,
+ heading = "Tài liệu Hán ngữ",
+ description = "Trang preview đã được kiểm checksum; mở PDF gốc khi cần chuyển tới trang bất kỳ.",
+ badgeLabel = "Reader PDF",
+ backHref,
+ backLabel = "Quay lại",
+ metadata,
+ notice,
+ studyTasks = [],
+ badges = [],
+ initialAssets,
+ showAssetPicker = true,
+}: PdfReaderWorkspaceProps) {
+ const assets = initialAssets;
+ const [selectedAssetId, setSelectedAssetId] = useState(initialAssetId ?? assets[0]?.id ?? "");
  const selectedAsset = useMemo(
-  () => PDF_ASSETS.find((asset) => asset.id === selectedAssetId) ?? PDF_ASSETS[0],
-  [selectedAssetId],
+  () => assets.find((asset) => asset.id === selectedAssetId) ?? assets[0],
+  [assets, selectedAssetId],
  );
 
  if (!selectedAsset) {
@@ -132,46 +138,103 @@ export function PdfReaderWorkspace() {
    <Card variant="section" padding="md" className="grid gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
+      {backHref ? (
+       <Button type="button" variant="ghost" size="sm" asChild className="w-fit justify-self-start">
+        <a href={backHref}>{backLabel}</a>
+       </Button>
+      ) : null}
       <Badge variant="purple" className="w-fit">
-       Reader PDF
+       {badgeLabel}
       </Badge>
       <Typography as="h1" variant="sectionTitle" weight="black">
-       Tài liệu Hán ngữ
+       {heading}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       Trang preview đã được kiểm checksum; mở PDF gốc khi cần chuyển tới trang bất kỳ.
+       {metadata ?? description}
       </Typography>
      </div>
-     <Badge>{PDF_ASSETS.length} trang preview</Badge>
+     <div className="flex max-w-full flex-wrap items-start justify-end gap-2">
+      {notice ? (
+       <Popover.Root>
+        <Popover.Trigger
+         render={
+          <Button type="button" variant="outline" size="sm">
+           <Info data-icon="inline-start" />
+           Hướng dẫn luyện
+          </Button>
+         }
+        />
+        <Popover.Portal>
+         <BasePopoverPositioner side="bottom" align="end" sideOffset={8} collisionPadding={8}>
+          <BasePopoverPopup variant="default" initialFocus={false} finalFocus={false}>
+           <div className="grid max-w-sm gap-2 p-3 text-sm leading-6 text-foreground-muted">
+            <Typography as="p" variant="bodySmall" tone="muted">
+             {notice}
+            </Typography>
+            {studyTasks.length > 0 ? (
+             <ol className="grid gap-1 ps-5">
+              {studyTasks.map((task) => (
+               <li key={task}>{task}</li>
+              ))}
+             </ol>
+            ) : null}
+           </div>
+          </BasePopoverPopup>
+         </BasePopoverPositioner>
+        </Popover.Portal>
+       </Popover.Root>
+      ) : null}
+      {badges.length > 0 ? (
+       <div className="flex flex-wrap justify-end gap-1">
+        {badges.map((badge) => (
+         <Badge key={badge}>{badge}</Badge>
+        ))}
+       </div>
+      ) : notice ? null : (
+       <Badge>{assets.length} trang preview</Badge>
+      )}
+     </div>
     </div>
-    <div
-     className="flex max-w-full gap-2 overflow-x-auto pb-1 scrollbar-soft"
-     aria-label="Chọn trang PDF"
-    >
-     {PDF_ASSETS.map((asset) => (
-      <Button
-       key={asset.id}
-       type="button"
-       size="sm"
-       variant={asset.id === selectedAsset.id ? "active" : "outline"}
-       aria-pressed={asset.id === selectedAsset.id}
-       onClick={() => setSelectedAssetId(asset.id)}
-      >
-       {asset.title.replace("Hán ngữ · ", "")}
-      </Button>
-     ))}
-    </div>
+    {showAssetPicker ? (
+     <div
+      className="flex max-w-full gap-2 overflow-x-auto pb-1 scrollbar-soft"
+      aria-label="Chọn trang PDF"
+     >
+      {assets.map((asset) => (
+       <Button
+        key={asset.id}
+        type="button"
+        size="sm"
+        variant={asset.id === selectedAsset.id ? "active" : "outline"}
+        aria-pressed={asset.id === selectedAsset.id}
+        onClick={() => setSelectedAssetId(asset.id)}
+       >
+        {asset.title.replace("Hán ngữ · ", "")}
+       </Button>
+      ))}
+     </div>
+    ) : null}
    </Card>
    <PdfPageViewer key={selectedAsset.id} asset={selectedAsset} />
   </div>
  );
 }
 
-function PdfPageViewer({ asset }: { asset: PdfAsset }) {
+function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
  const viewerRef = useRef<HTMLElement>(null);
  const pageRef = useRef<HTMLDivElement>(null);
  const activeStrokeRef = useRef("");
  const pinchDistanceRef = useRef<number | null>(null);
+ const revisionRef = useRef(0);
+ const pendingSaveRef = useRef<PdfStroke[] | null>(null);
+ const savingRef = useRef(false);
+ const queryClient = useQueryClient();
+ const assetId = importedPdfAssetId(asset);
+ const annotationQuery = useQuery({
+  queryKey: hanzihomeQueryKeys.readerPdfAnnotation(assetId, asset.pdfPage),
+  queryFn: () => fetchPdfAnnotation({ assetId, pageNumber: asset.pdfPage }),
+  staleTime: 0,
+ });
  const [zoom, setZoom] = useState(100);
  const [fitToContainer, setFitToContainer] = useState(true);
  const [isFullscreen, setIsFullscreen] = useState(false);
@@ -181,9 +244,47 @@ function PdfPageViewer({ asset }: { asset: PdfAsset }) {
  const [color, setColor] = useState(PEN_COLORS[0] ?? "#ef4444");
  const [width, setWidth] = useState(4);
  const [eraserSize, setEraserSize] = useState(24);
- const [strokes, setStrokes] = useState<PdfStroke[]>([]);
+ const [localStrokes, setLocalStrokes] = useState<PdfStroke[] | null>(null);
  const [past, setPast] = useState<PdfStroke[][]>([]);
  const [future, setFuture] = useState<PdfStroke[][]>([]);
+ const [saveError, setSaveError] = useState("");
+ const remoteStrokes = annotationQuery.data?.payload.strokes ?? [];
+ const strokes = localStrokes ?? remoteStrokes;
+
+ useEffect(() => {
+  if (annotationQuery.isSuccess) revisionRef.current = annotationQuery.data?.revision ?? 0;
+ }, [annotationQuery.data, annotationQuery.isSuccess]);
+
+ useEffect(() => {
+  if (!annotationQuery.isSuccess || localStrokes === null) return;
+  pendingSaveRef.current = localStrokes;
+  if (savingRef.current) return;
+  savingRef.current = true;
+  void (async () => {
+   while (pendingSaveRef.current !== null) {
+    const snapshot = pendingSaveRef.current;
+    pendingSaveRef.current = null;
+    try {
+     const saved = await savePdfAnnotation({
+      assetId,
+      pageNumber: asset.pdfPage,
+      payload: pdfAnnotationPayloadSchema.parse({ strokes: snapshot }),
+      expectedRevision: revisionRef.current,
+     });
+     revisionRef.current = saved?.revision ?? revisionRef.current;
+     queryClient.setQueryData(
+      hanzihomeQueryKeys.readerPdfAnnotation(assetId, asset.pdfPage),
+      saved,
+     );
+     setSaveError("");
+    } catch (error) {
+     pendingSaveRef.current = null;
+     setSaveError(error instanceof Error ? error.message : "Không lưu được ghi chú PDF.");
+    }
+   }
+   savingRef.current = false;
+  })();
+ }, [annotationQuery.isSuccess, asset.pdfPage, assetId, localStrokes, queryClient]);
 
  useEffect(() => {
   const syncFullscreen = () => setIsFullscreen(document.fullscreenElement === viewerRef.current);
@@ -195,25 +296,25 @@ function PdfPageViewer({ asset }: { asset: PdfAsset }) {
   setPast((current) => [...current, strokes]);
   setFuture([]);
  };
- const replaceStrokes = (next: PdfStroke[]) => setStrokes(next);
+ const replaceStrokes = (next: PdfStroke[]) => setLocalStrokes(next);
  const undo = () => {
   const previous = past.at(-1);
   if (!previous) return;
   setPast((current) => current.slice(0, -1));
   setFuture((current) => [strokes, ...current]);
-  setStrokes(previous);
+  setLocalStrokes(previous);
  };
  const redo = () => {
   const next = future[0];
   if (!next) return;
   setFuture((current) => current.slice(1));
   setPast((current) => [...current, strokes]);
-  setStrokes(next);
+  setLocalStrokes(next);
  };
  const clear = () => {
   if (!strokes.length) return;
   checkpoint();
-  setStrokes([]);
+  setLocalStrokes([]);
  };
  const toggleFullscreen = async () => {
   const element = viewerRef.current;
@@ -373,6 +474,16 @@ function PdfPageViewer({ asset }: { asset: PdfAsset }) {
      </Button>
     </div>
    </header>
+
+   {annotationQuery.isError ? (
+    <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
+     Không tải được ghi chú PDF; nét mới sẽ được giữ trong phiên này.
+    </Typography>
+   ) : saveError ? (
+    <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
+     {saveError}
+    </Typography>
+   ) : null}
 
    <div
     className="relative grid min-h-0 flex-1 gap-2 overflow-auto overscroll-contain bg-bg-subtle px-3 py-4 sm:px-6"

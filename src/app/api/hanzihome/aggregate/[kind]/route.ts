@@ -3,6 +3,7 @@ import {
  AggregateKindSchema,
  type AggregateFilters,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+import { getStaticStudioAggregateItems } from "@/features/hanzihome/static-json/studio-static-content";
 import {
  apiError,
  privateNoStoreJson,
@@ -19,28 +20,34 @@ type RouteContext = {
 };
 
 export async function GET(request: Request, context: RouteContext) {
- const auth = await requireAuthenticatedRoute();
- if (!auth.authenticated) return auth.response;
-
- const { kind: rawKind } = await context.params;
- const kind = AggregateKindSchema.safeParse(rawKind);
-
- if (!kind.success) {
-  return apiError("Unsupported aggregate kind", 400, "UNSUPPORTED_AGGREGATE_KIND");
- }
-
- const url = new URL(request.url);
- const filters: AggregateFilters = {
-  courseId: url.searchParams.get("courseId") ?? "",
-  bookId: url.searchParams.get("bookId") ?? "",
-  lessonId: url.searchParams.get("lessonId") ?? "",
-  q: url.searchParams.get("q") ?? "",
- };
  try {
-  const items = await hanzihomeContentRepository.getAggregateItems({
-   kind: kind.data,
-   filters,
-  });
+  const { kind: rawKind } = await context.params;
+  const kind = AggregateKindSchema.safeParse(rawKind);
+
+  if (!kind.success) {
+   return apiError("Unsupported aggregate kind", 400, "UNSUPPORTED_AGGREGATE_KIND");
+  }
+
+  const url = new URL(request.url);
+  const filters: AggregateFilters = {
+   courseId: url.searchParams.get("courseId") ?? "",
+   bookId: url.searchParams.get("bookId") ?? "",
+   lessonId: url.searchParams.get("lessonId") ?? "",
+   q: url.searchParams.get("q") ?? "",
+  };
+  const scopedId = filters.courseId || filters.bookId || filters.lessonId;
+  const staticItems = getStaticStudioAggregateItems({ kind: kind.data, filters });
+  if (scopedId?.startsWith("hanzihome-studio-")) {
+   return privateNoStoreJson({ items: staticItems });
+  }
+
+  const auth = await requireAuthenticatedRoute();
+  if (!auth.authenticated) return auth.response;
+
+  const items = [
+   ...(await hanzihomeContentRepository.getAggregateItems({ kind: kind.data, filters })),
+   ...staticItems,
+  ];
 
   return privateNoStoreJson({ items });
  } catch {

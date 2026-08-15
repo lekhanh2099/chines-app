@@ -3,7 +3,7 @@
 import { Label } from "@/components/ui/label";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { useId } from "react";
-import { Play, Square, Volume2 } from "lucide-react";
+import { Pause, Play, Square, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -34,6 +34,7 @@ const rateOptions = [
 type MandarinTtsControlsProps = {
  text: string;
  tts: MandarinTtsController;
+ onPlayAll?: () => void;
  hideScriptBeforeCheck?: boolean;
  onHideScriptBeforeCheckChange?: (checked: boolean) => void;
  showTranslationAfterCheck?: boolean;
@@ -43,6 +44,7 @@ type MandarinTtsControlsProps = {
 export function MandarinTtsControls({
  text,
  tts,
+ onPlayAll,
  hideScriptBeforeCheck,
  onHideScriptBeforeCheckChange,
  showTranslationAfterCheck,
@@ -50,6 +52,7 @@ export function MandarinTtsControls({
 }: MandarinTtsControlsProps) {
  const hideScriptId = useId();
  const showTranslationId = useId();
+ const loadVoices = tts.loadVoices;
  const showPracticePreferences =
   onHideScriptBeforeCheckChange !== undefined && onShowTranslationAfterCheckChange !== undefined;
 
@@ -71,7 +74,13 @@ export function MandarinTtsControls({
     </div>
 
     <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
-     <Select value={tts.selectedVoiceName} onValueChange={tts.setSelectedVoiceName}>
+     <Select
+      value={tts.selectedVoiceName}
+      onValueChange={tts.setSelectedVoiceName}
+      onOpenChange={(open) => {
+       if (open) void loadVoices();
+      }}
+     >
       <SelectTrigger
        size="sm"
        aria-label="Chọn giọng Mandarin"
@@ -115,8 +124,8 @@ export function MandarinTtsControls({
       type="button"
       variant="surfaceCard"
       size="toolbar"
-      disabled={!text.trim() || !tts.selectedVoice}
-      onClick={() => tts.speakSequence(text.split("\n"))}
+      disabled={!text.trim() || tts.isLoading}
+      onClick={() => (onPlayAll ? onPlayAll() : tts.speakSequence(text.split("\n")))}
      >
       <Play data-icon="inline-start" />
       Phát cả phần
@@ -125,7 +134,17 @@ export function MandarinTtsControls({
       type="button"
       variant="ghost"
       size="toolbar"
-      disabled={!tts.isSpeaking && !tts.isLoading}
+      disabled={!tts.isSpeaking && !tts.isPaused}
+      onClick={tts.isPaused ? tts.resume : tts.pause}
+     >
+      {tts.isPaused ? <Play data-icon="inline-start" /> : <Pause data-icon="inline-start" />}
+      {tts.isPaused ? "Tiếp tục" : "Tạm dừng"}
+     </Button>
+     <Button
+      type="button"
+      variant="ghost"
+      size="toolbar"
+      disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
       onClick={tts.stop}
      >
       <Square data-icon="inline-start" />

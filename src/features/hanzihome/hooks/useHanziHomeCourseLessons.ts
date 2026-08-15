@@ -15,6 +15,9 @@ export function useHanziHomeCourseLessons(
   queryKey: hanzihomeQueryKeys.courseLessons(courseId),
   queryFn: () => fetchHanziHomeCourseLessons(courseId),
   staleTime: courseLessonsStaleTime,
+  gcTime: 30 * 60 * 1000,
+  retry: false,
+  refetchOnWindowFocus: false,
   enabled: enabled && Boolean(courseId),
  });
 

@@ -2,7 +2,7 @@
 
 HanziHome is a Chinese self-study application built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, TanStack Query/Form, and Supabase.
 
-The product flow is Course → Book/Volume → Lesson → Module. Supabase normalized tables are the runtime source for study content; JSON files are migration and audit inputs only.
+The product flow is Course → Book/Volume → Lesson → Module. Supabase normalized tables remain the runtime source for canonical HanziHome content; the reviewed Hanzi Studio Reader/practice corpus is an explicit checked-in static JSON runtime package. JSON is never a silent fallback for canonical Supabase content.
 
 ## Local setup
 
@@ -41,4 +41,4 @@ Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit 
 
 ## Documentation
 
-Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). Historical local-JSON PRDs are retained for product context but are explicitly superseded by the current Supabase runtime architecture.
+Start with [docs/README.md](docs/README.md), [current architecture](docs/architecture/current-system.md), and the repository [AGENTS.md](AGENTS.md). Historical local-JSON PRDs are retained for product context; the Hanzi Studio migration contract is documented in the current architecture, with static published content and Supabase-owned new user state.

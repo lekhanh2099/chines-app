@@ -13,6 +13,38 @@ function withSecurityHeaders(response: NextResponse) {
 }
 
 export async function updateSession(request: NextRequest) {
+ const pathname = request.nextUrl.pathname;
+
+ const isPublicReaderRoute =
+  pathname === "/reader" ||
+  pathname.startsWith("/reader/") ||
+  pathname === "/hsk" ||
+  pathname.startsWith("/hsk/");
+ const isPublicStaticLearningRoute =
+  isPublicReaderRoute ||
+  pathname === "/daily-reading" ||
+  pathname === "/dictation" ||
+  pathname === "/humanities" ||
+  pathname.startsWith("/humanities/") ||
+  pathname === "/personal-learning" ||
+  pathname === "/translation" ||
+  pathname === "/tts";
+
+ // API handlers own their authentication boundary. Running getUser here as
+ // well doubles the auth request for every API call and does not add route
+ // protection because the handlers validate the session before reading or
+ // mutating user data.
+ if (pathname === "/api" || pathname.startsWith("/api/")) {
+  return withSecurityHeaders(NextResponse.next({ request }));
+ }
+
+ // These pages are intentionally public. Their static content does not need
+ // middleware auth, and app-shell/user-state code still resolves an optional
+ // session when it is available.
+ if (isPublicStaticLearningRoute || pathname === "/auth/callback" || pathname === "/auth/confirm") {
+  return withSecurityHeaders(NextResponse.next({ request }));
+ }
+
  let supabaseResponse = NextResponse.next({
   request,
  });
@@ -42,23 +74,15 @@ export async function updateSession(request: NextRequest) {
   data: { user },
  } = await supabase.auth.getUser();
 
- const isLoginRoute = request.nextUrl.pathname === "/login";
- const isPublicRoute =
-  isLoginRoute ||
-  request.nextUrl.pathname === "/auth/callback" ||
-  request.nextUrl.pathname === "/auth/confirm";
+ const isLoginRoute = pathname === "/login";
 
- // If there is no user and the route is not public, redirect to login page.
- if (
-  !user &&
-  !isPublicRoute &&
-  !request.nextUrl.pathname.startsWith("/_next") &&
-  !request.nextUrl.pathname.startsWith("/api")
- ) {
+ // Public routes returned above do not reach this branch. Protect the app
+ // routes here while retaining the existing login-page redirect behavior.
+ if (!user && !isLoginRoute && !pathname.startsWith("/_next")) {
   const url = request.nextUrl.clone();
   url.pathname = "/login";
   url.search = "";
-  url.searchParams.set("next", `${request.nextUrl.pathname}${request.nextUrl.search}`);
+  url.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
   return withSecurityHeaders(NextResponse.redirect(url));
  }
 

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
 import type { PendingLearningStateMutation } from "./learning-state-local-store";
@@ -50,9 +50,14 @@ const pendingMutation: PendingLearningStateMutation = {
  attemptCount: 0,
 };
 
+let testClock = 0;
+
 describe("learning-state local-first sync", () => {
  beforeEach(() => {
   vi.clearAllMocks();
+  vi.useFakeTimers();
+  testClock += 1;
+  vi.setSystemTime(new Date(2_000_000_000_000 + testClock * 60_000));
   vi.stubGlobal("navigator", { onLine: true });
   store.list.mockReset();
   store.readPending.mockReset();
@@ -62,6 +67,20 @@ describe("learning-state local-first sync", () => {
   store.markSyncing.mockResolvedValue(pendingMutation);
   store.readPending.mockResolvedValue(pendingMutation);
   api.save.mockResolvedValue(emptyLearningState);
+ });
+
+ afterEach(() => {
+  vi.useRealTimers();
+ });
+
+ it("backs off after a failed clean-state refresh", async () => {
+  store.readPending.mockResolvedValue(null);
+  api.fetch.mockRejectedValue(new Error("Unauthorized"));
+
+  await expect(refreshLearningStateFromRemoteIfClean()).rejects.toThrow("Unauthorized");
+  expect(await refreshLearningStateFromRemoteIfClean()).toBeNull();
+
+  expect(api.fetch).toHaveBeenCalledOnce();
  });
 
  it("deduplicates concurrent clean-state refreshes", async () => {
@@ -78,6 +97,19 @@ describe("learning-state local-first sync", () => {
   expect(first).toEqual(emptyLearningState);
   expect(second).toEqual(emptyLearningState);
   expect(cooldownResult).toBeNull();
+ });
+
+ it("deduplicates concurrent pending-state syncs across mounted consumers", async () => {
+  const first = syncPendingLearningStateMutations();
+  const second = syncPendingLearningStateMutations();
+
+  await expect(Promise.all([first, second])).resolves.toEqual([
+   expect.objectContaining({ status: "synced", syncedCount: 1, pendingCount: 0 }),
+   expect.objectContaining({ status: "synced", syncedCount: 1, pendingCount: 0 }),
+  ]);
+  expect(api.save).toHaveBeenCalledOnce();
+  expect(store.markSyncing).toHaveBeenCalledOnce();
+  expect(store.clear).toHaveBeenCalledOnce();
  });
 
  it("clears the queue only after the matching mutation is saved", async () => {

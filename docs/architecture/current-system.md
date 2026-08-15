@@ -7,11 +7,17 @@ Browser UI
   → TanStack Query hooks
   → typed API client + Zod response validation
   → Next.js route handlers
-  → server-only HanziHome repository
-  → normalized Supabase tables/RPCs
+  → server-only HanziHome repository or static Studio content adapter
+  → normalized Supabase tables/RPCs or checked-in static JSON
 ```
 
-Supabase is the runtime source for courses, books, lessons, study resources, learning state, notes, and user-owned artifacts. External JSON is accepted only by explicit import, seed, migration, or audit scripts.
+Supabase remains the runtime source for canonical HanziHome courses, books,
+lessons, study resources, learning state, notes, and user-owned artifacts.
+The reviewed Hanzi Studio learning corpus is an explicit exception: its
+published content is loaded from the checked-in static package through a
+server-only adapter, while all new user state remains in HanziHome tables.
+External JSON is never silently used as a fallback for canonical Supabase
+content.
 
 ## Vocabulary ownership
 
@@ -33,13 +39,15 @@ validation.
 
 ## Read contracts
 
-| Screen/resource         | Owner                               | Payload rule                                | Query key family           |
-| ----------------------- | ----------------------------------- | ------------------------------------------- | -------------------------- |
-| Course library          | `/api/hanzihome/catalog`            | Summary and counts; lesson detail is opt-in | `hanzihome/catalog`        |
-| Course lesson picker    | catalog API with `courseId`         | Lesson summaries for one course             | `hanzihome/course-lessons` |
-| Lesson workspace        | `/api/hanzihome/lessons/[lessonId]` | One selected lesson detail                  | `hanzihome/lesson-detail`  |
-| Aggregate vocab/grammar | `/api/hanzihome/aggregate/[kind]`   | Explicit course/book/lesson/search scope    | `hanzihome/aggregate`      |
-| Learning state          | `/api/learning-state`               | Authenticated user state only               | `hanzihome/learning-state` |
+| Screen/resource         | Owner                                          | Payload rule                                | Query key family             |
+| ----------------------- | ---------------------------------------------- | ------------------------------------------- | ---------------------------- |
+| Course library          | `/api/hanzihome/catalog`                       | Summary and counts; lesson detail is opt-in | `hanzihome/catalog`          |
+| Course lesson picker    | catalog API with `courseId`                    | Lesson summaries for one course             | `hanzihome/course-lessons`   |
+| Lesson workspace        | `/api/hanzihome/lessons/[lessonId]`            | One selected lesson detail                  | `hanzihome/lesson-detail`    |
+| Aggregate vocab/grammar | `/api/hanzihome/aggregate/[kind]`              | Explicit course/book/lesson/search scope    | `hanzihome/aggregate`        |
+| Learning state          | `/api/learning-state`                          | Authenticated user state only               | `hanzihome/learning-state`   |
+| Studio Reader catalog   | `/api/hanzihome/reader/documents`              | One selected static collection at a time    | `hanzihome/reader/documents` |
+| Studio Reader document  | `/api/hanzihome/reader/documents/[documentId]` | One static document and resolved references | `hanzihome/reader/document`  |
 
 The browser client validates every response envelope before data reaches UI state. Loading, error, and empty are separate states; an API failure must not become an empty catalog.
 

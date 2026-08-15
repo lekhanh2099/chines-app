@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,6 +27,7 @@ import {
  type TranslationDirection,
  type TranslationPracticeState,
 } from "./translation-practice";
+import { savePracticeAttempt } from "./practice-attempt-api";
 
 export function TranslationPracticeWorkspace() {
  const runtime = useHanziHomeRuntime();
@@ -38,6 +39,8 @@ export function TranslationPracticeWorkspace() {
  const [activeIndex, setActiveIndex] = useState(0);
  const [direction, setDirection] = useState<TranslationDirection>("zh-vi");
  const [state, setState] = useState<TranslationPracticeState>(emptyTranslationPracticeState);
+ const [attemptSaveError, setAttemptSaveError] = useState("");
+ const startedAtRef = useRef<Record<string, number>>({});
  const segment = segments[activeIndex];
 
  if (!segment) {
@@ -61,6 +64,9 @@ export function TranslationPracticeWorkspace() {
  ).length;
 
  const updateDraft = (value: string) => {
+  if (value.trim() && startedAtRef.current[key] === undefined) {
+   startedAtRef.current[key] = Date.now();
+  }
   setState((current) => ({
    ...current,
    drafts: { ...current.drafts, [key]: value },
@@ -69,7 +75,22 @@ export function TranslationPracticeWorkspace() {
  };
 
  const checkAnswer = () => {
-  createTranslationAttempt(segment, direction, draft, null);
+  const startedAt = startedAtRef.current[key];
+  const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
+  const attempt = createTranslationAttempt(segment, direction, draft, responseMs);
+  delete startedAtRef.current[key];
+  setAttemptSaveError("");
+  void savePracticeAttempt({
+   surface: "translation",
+   contentId: segment.id,
+   direction,
+   answer: {
+    answer: attempt.answer,
+    reference: referenceText,
+   },
+   scorePercent: attempt.score,
+   responseMs: attempt.responseMs,
+  }).catch((error: Error) => setAttemptSaveError(error.message));
   setState((current) => ({
    ...current,
    checked: { ...current.checked, [key]: true },
@@ -133,69 +154,82 @@ export function TranslationPracticeWorkspace() {
     </div>
    </Card>
 
-   <Card variant="section" padding="md" className="grid gap-3">
-    <div className="flex items-center justify-between gap-2 text-sm text-foreground-muted">
-     <span>Đoạn {segment.order}</span>
-     <span>{Array.from(sourceText).length} ký tự</span>
-    </div>
-    {direction === "zh-vi" ? (
-     <ReaderHanziText displayMode={displayMode} leading="learner" wrapping="preWrap">
-      {sourceText}
-     </ReaderHanziText>
-    ) : (
-     <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
-      {sourceText}
-     </Typography>
-    )}
-    {segment.pinyin ? (
-     <PinyinText variant="bodySmall" tone="accent" weight="semibold">
-      {segment.pinyin}
-     </PinyinText>
-    ) : null}
-   </Card>
-
-   <Card variant="subtle" padding="md" className="grid gap-3">
-    <Textarea
-     value={draft}
-     onChange={(event) => updateDraft(event.target.value)}
-     placeholder={direction === "zh-vi" ? "Nhập bản dịch tiếng Việt…" : "Nhập câu tiếng Trung…"}
-     aria-label="Câu trả lời dịch"
-     className="min-h-36"
-     autoCapitalize="off"
-     autoCorrect="off"
-    />
-    <div className="flex flex-wrap gap-2">
-     <Button type="button" disabled={!draft.trim()} onClick={checkAnswer}>
-      Kiểm tra
-     </Button>
-     <Button
-      type="button"
-      variant="outline"
-      disabled={activeIndex === 0}
-      onClick={() => move(activeIndex - 1)}
-     >
-      Đoạn trước
-     </Button>
-     <Button
-      type="button"
-      variant="outline"
-      disabled={activeIndex >= segments.length - 1}
-      onClick={() => move(activeIndex + 1)}
-     >
-      Đoạn sau
-     </Button>
-    </div>
-    {checked ? (
-     <div className="grid gap-2 rounded-control border border-border bg-surface p-3">
-      <Typography as="p" variant="bodySmall" weight="black">
-       Điểm: {score ?? 0}/100
-      </Typography>
-      <TranslationText variant="bodySmall" tone="muted">
-       Đáp án tham chiếu: {referenceText}
-      </TranslationText>
+   <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+    <Card variant="section" padding="md" className="grid min-w-0 content-start gap-3">
+     <div className="flex items-center justify-between gap-2 text-sm text-foreground-muted">
+      <span>Đoạn {segment.order}</span>
+      <span>{Array.from(sourceText).length} ký tự</span>
      </div>
-    ) : null}
-   </Card>
+     {direction === "zh-vi" ? (
+      <ReaderHanziText displayMode={displayMode} leading="learner" wrapping="preWrap">
+       {sourceText}
+      </ReaderHanziText>
+     ) : (
+      <Typography as="p" variant="body" wrapping="preWrap" leading="relaxed">
+       {sourceText}
+      </Typography>
+     )}
+     {segment.pinyin ? (
+      <PinyinText variant="bodySmall" tone="accent" weight="semibold">
+       {segment.pinyin}
+      </PinyinText>
+     ) : null}
+     <Typography as="p" variant="caption" tone="muted">
+      Bản dịch tham chiếu sẽ hiện sau khi bạn kiểm tra câu trả lời.
+     </Typography>
+    </Card>
+
+    <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-3">
+     <Typography as="h3" variant="cardTitle" weight="black">
+      Bản dịch của bạn
+     </Typography>
+     <Textarea
+      value={draft}
+      onChange={(event) => updateDraft(event.target.value)}
+      placeholder={direction === "zh-vi" ? "Nhập bản dịch tiếng Việt…" : "Nhập câu tiếng Trung…"}
+      aria-label="Câu trả lời dịch"
+      className="min-h-36"
+      autoCapitalize="off"
+      autoCorrect="off"
+     />
+     <div className="flex flex-wrap gap-2">
+      <Button type="button" disabled={!draft.trim()} onClick={checkAnswer}>
+       Kiểm tra
+      </Button>
+      <Button
+       type="button"
+       variant="outline"
+       disabled={activeIndex === 0}
+       onClick={() => move(activeIndex - 1)}
+      >
+       Đoạn trước
+      </Button>
+      <Button
+       type="button"
+       variant="outline"
+       disabled={activeIndex >= segments.length - 1}
+       onClick={() => move(activeIndex + 1)}
+      >
+       Đoạn sau
+      </Button>
+     </div>
+     {attemptSaveError ? (
+      <Typography as="p" variant="caption" tone="danger">
+       {attemptSaveError}
+      </Typography>
+     ) : null}
+     {checked ? (
+      <div className="grid gap-2 rounded-control border border-border bg-surface p-3">
+       <Typography as="p" variant="bodySmall" weight="black">
+        Điểm: {score ?? 0}/100
+       </Typography>
+       <TranslationText variant="bodySmall" tone="muted">
+        Đáp án tham chiếu: {referenceText}
+       </TranslationText>
+      </div>
+     ) : null}
+    </Card>
+   </div>
   </div>
  );
 }

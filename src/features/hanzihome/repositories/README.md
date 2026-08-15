@@ -7,17 +7,22 @@ Current implementation:
 
 - Supabase is the runtime source for catalog, lesson detail, aggregate, and
   search data.
-- Static JSON is no longer a checked-in runtime fallback. Seed/bootstrap data
-  lives outside the app repo and can be supplied to data scripts with
-  `HANZIHOME_DB_ROOT=/path/to/hanzihome-db`.
+- The reviewed Hanzi Studio Reader/practice corpus is an explicit static
+  content family under `src/features/hanzihome/static-json/`; its server-only
+  adapter is used only by the Studio migration routes and is not a fallback for
+  canonical HanziHome content.
+- New Studio user state is persisted in HanziHome-owned Supabase tables. Old
+  Studio localStorage, IndexedDB, Convex state, and account data are never read.
 - `hanzihome-content-repository.ts` exports the server repository that maps
   Supabase rows into resource-like runtime contracts.
-- Feature UI should prefer repository methods or hooks that wrap repository
-  methods instead of importing seed JSON directly.
+- Feature UI should prefer repository methods or hooks that wrap repository or
+  static-content adapter methods instead of importing JSON directly.
 
 Repository contract:
 
 - Keep the repository contract stable where possible.
+- Keep static Studio content scoped to the migration adapter; do not merge it
+  into canonical Supabase queries or add a silent JSON fallback.
 - Overview should stay light: lesson metadata, sections, counts, progress, and
   small previews.
 - Module screens can request full-enough data for that screen, such as vocab

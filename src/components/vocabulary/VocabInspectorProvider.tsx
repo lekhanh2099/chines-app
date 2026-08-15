@@ -89,6 +89,12 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
      return;
     }
 
+    const selectionElement =
+     selection.anchorNode instanceof Element
+      ? selection.anchorNode
+      : selection.anchorNode?.parentElement;
+    if (selectionElement?.closest("[data-no-inspector]")) return;
+
     const text = selection.toString().trim();
     if (!text || !containsChinese(text)) return;
 

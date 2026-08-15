@@ -25,6 +25,8 @@ import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
 import { buildDictationDiff } from "../practice/dictation-comparison";
 import { createDictationAttempt, type DictationAttempt } from "../practice/dictation-session";
+import { savePracticeAttempt } from "../practice/practice-attempt-api";
+import { upsertLearningLoopItem } from "../learning-loop/learning-loop-api";
 
 import { ListeningTranscriptBlock } from "./ListeningTranscriptBlock";
 import { MandarinTtsControls } from "./MandarinTtsControls";
@@ -43,30 +45,43 @@ function dictationText(entry: ListeningTranscriptEntry) {
  return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
 }
 
-function DictationCards({
+export function DictationCards({
  entries,
  displayMode,
  onSpeak,
  onSpeakSequence,
+ onAttempt,
+ playbackMode,
+ passageText,
+ activeEntryId,
 }: {
  entries: ListeningTranscriptEntry[];
  displayMode: LessonDisplayMode;
  onSpeak: (text: string) => void;
  onSpeakSequence: (segments: string[]) => void;
+ onAttempt: (attempt: DictationAttempt) => void;
+ playbackMode: "sentence" | "paragraph" | "passage";
+ passageText: string;
+ activeEntryId?: string;
 }) {
  const [answers, setAnswers] = useState<Record<string, string>>({});
- const [attempts, setAttempts] = useState<Record<string, DictationAttempt>>({});
+ const [attemptHistory, setAttemptHistory] = useState<Record<string, DictationAttempt[]>>({});
+ const [dirtyAnswers, setDirtyAnswers] = useState<Record<string, boolean>>({});
  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
  const startedAtRef = useRef<Record<string, number>>({});
+ const visibleEntries =
+  activeEntryId === undefined ? entries : entries.filter((entry) => entry.id === activeEntryId);
 
  return (
   <div className="grid gap-2.5">
-   {entries.map((entry, index) => {
+   {visibleEntries.map((entry) => {
+    const index = entries.indexOf(entry);
     const answer = answers[entry.id] ?? "";
-    const attempt = attempts[entry.id];
-    const isChecked = attempt !== undefined;
+    const history = attemptHistory[entry.id] ?? [];
+    const attempt = history.at(-1);
+    const isChecked = attempt !== undefined && !dirtyAnswers[entry.id];
     const expectedText = dictationText(entry);
-    const score = attempt?.score ?? null;
+    const score = isChecked ? (attempt?.score ?? null) : null;
     const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
     const showTranscript = revealed[entry.id] ?? isChecked;
 
@@ -86,9 +101,38 @@ function DictationCards({
          Nghe → chép → kiểm tra
         </StudyInstructionText>
        </div>
-       <Button type="button" variant="surface" size="toolbar" onClick={() => onSpeak(expectedText)}>
+       <Button
+        type="button"
+        variant="surface"
+        size="toolbar"
+        onClick={() =>
+         (() => {
+          const startedAt = Date.now();
+          if (playbackMode === "passage") {
+           visibleEntries.forEach((candidate) => {
+            startedAtRef.current[candidate.id] ??= startedAt;
+           });
+           onSpeakSequence([passageText]);
+           return;
+          }
+          if (playbackMode === "paragraph") {
+           visibleEntries.forEach((candidate) => {
+            startedAtRef.current[candidate.id] ??= startedAt;
+           });
+           onSpeakSequence(entries.map(dictationText));
+           return;
+          }
+          startedAtRef.current[entry.id] ??= startedAt;
+          onSpeak(expectedText);
+         })()
+        }
+       >
         <Play data-icon="inline-start" />
-        Nghe lại
+        {playbackMode === "sentence"
+         ? "Nghe câu"
+         : playbackMode === "paragraph"
+           ? "Nghe đoạn"
+           : "Nghe toàn bài"}
        </Button>
       </div>
 
@@ -104,11 +148,7 @@ function DictationCards({
         const value = event.target.value;
         startedAtRef.current[entry.id] ??= Date.now();
         setAnswers((current) => ({ ...current, [entry.id]: value }));
-        setAttempts((current) => {
-         const next = { ...current };
-         delete next[entry.id];
-         return next;
-        });
+        setDirtyAnswers((current) => ({ ...current, [entry.id]: true }));
        }}
       />
 
@@ -121,8 +161,14 @@ function DictationCards({
          const startedAt = startedAtRef.current[entry.id];
          const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
          const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);
-         setAttempts((current) => ({ ...current, [entry.id]: nextAttempt }));
+         delete startedAtRef.current[entry.id];
+         setAttemptHistory((current) => ({
+          ...current,
+          [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
+         }));
+         setDirtyAnswers((current) => ({ ...current, [entry.id]: false }));
          setRevealed((current) => ({ ...current, [entry.id]: true }));
+         onAttempt(nextAttempt);
         }}
        >
         Kiểm tra
@@ -136,9 +182,19 @@ function DictationCards({
         {showTranscript ? "Ẩn script" : "Xem script"}
        </Button>
        {score !== null ? (
-        <Badge variant={score === 100 ? "success" : score >= 70 ? "warning" : "danger"}>
-         {score === 100 ? "Chính xác" : `Đúng ${score}%`}
-        </Badge>
+        <div className="flex flex-wrap items-center gap-2">
+         <Badge variant={score === 100 ? "success" : score >= 70 ? "warning" : "danger"}>
+          {score === 100 ? "Chính xác" : `Đúng ${score}%`}
+         </Badge>
+         <Typography as="span" variant="caption" tone="muted">
+          Lần thử {history.length}
+         </Typography>
+         {history.length > 1 ? (
+          <Typography as="span" variant="caption" tone="muted">
+           Điểm: {history.map((item) => `${item.score}%`).join(" → ")}
+          </Typography>
+         ) : null}
+        </div>
        ) : null}
       </div>
 
@@ -194,6 +250,8 @@ export function ListeningDictationWorkspace() {
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
  const [selectedSectionId, setSelectedSectionId] =
   useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
+ const [playbackMode, setPlaybackMode] = useState<"sentence" | "passage">("sentence");
+ const [attemptSaveError, setAttemptSaveError] = useState("");
  const [sidebarOpen, setSidebarOpen] = useState(true);
  const bundle = query.data;
  const selectedSection =
@@ -207,6 +265,45 @@ export function ListeningDictationWorkspace() {
   [selectedItems, selectedSection],
  );
  const playAllText = transcriptEntries.map(dictationText).join("\n");
+
+ const persistAttempt = (attempt: DictationAttempt) => {
+  setAttemptSaveError("");
+  void savePracticeAttempt({
+   surface: "dictation",
+   contentId: attempt.entryId,
+   direction: null,
+   answer: {
+    expectedText: attempt.expectedText,
+    answer: attempt.answer,
+    mistakeCount: attempt.mistakeCount,
+   },
+   scorePercent: attempt.score,
+   responseMs: attempt.responseMs,
+  }).catch((error: Error) => setAttemptSaveError(error.message));
+  if (attempt.mistakeCount > 0) {
+   const now = new Date().toISOString();
+   void upsertLearningLoopItem({
+    id: `dictation:${attempt.entryId}`,
+    stable_key: `dictation:${attempt.entryId}`,
+    kind: "dictation_mistake",
+    source_id: attempt.entryId,
+    source_href: "/dictation",
+    title_zh: "Dictation mistake",
+    title_vi: "Ôn lại lỗi chính tả",
+    prompt_zh: attempt.expectedText,
+    pinyin: "",
+    meaning_vi: "",
+    user_answer: attempt.answer,
+    error_key: `mistakes:${attempt.mistakeCount}`,
+    state: "new",
+    due_at: now,
+    interval_days: 0,
+    correct_streak: 0,
+    lapse_count: 0,
+    revision: 0,
+   }).catch((error: Error) => setAttemptSaveError(error.message));
+  }
+ };
 
  if (query.isPending) {
   return (
@@ -296,7 +393,39 @@ export function ListeningDictationWorkspace() {
    actions={<Badge variant="purple">{transcriptEntries.length} đoạn</Badge>}
   >
    <div className="grid gap-2.5">
+    <div
+     className="flex flex-wrap items-center gap-2"
+     role="group"
+     aria-label="Chế độ phát dictation"
+    >
+     <StudyInstructionText variant="caption" tone="muted" weight="black">
+      Phát lại:
+     </StudyInstructionText>
+     <Button
+      type="button"
+      size="sm"
+      variant={playbackMode === "sentence" ? "active" : "outline"}
+      aria-pressed={playbackMode === "sentence"}
+      onClick={() => setPlaybackMode("sentence")}
+     >
+      Theo câu
+     </Button>
+     <Button
+      type="button"
+      size="sm"
+      variant={playbackMode === "passage" ? "active" : "outline"}
+      aria-pressed={playbackMode === "passage"}
+      onClick={() => setPlaybackMode("passage")}
+     >
+      Theo đoạn
+     </Button>
+    </div>
     <MandarinTtsControls text={playAllText} tts={tts} />
+    {attemptSaveError ? (
+     <StudyInstructionText variant="caption" tone="danger">
+      {attemptSaveError}
+     </StudyInstructionText>
+    ) : null}
 
     <Card variant="section" padding="md" className="grid gap-1.5">
      <div className="flex items-start gap-2">
@@ -324,6 +453,9 @@ export function ListeningDictationWorkspace() {
       displayMode={displayMode}
       onSpeak={tts.speak}
       onSpeakSequence={tts.speakSequence}
+      onAttempt={persistAttempt}
+      playbackMode={playbackMode}
+      passageText={playAllText}
      />
     ) : (
      <Card variant="subtle" padding="lg">

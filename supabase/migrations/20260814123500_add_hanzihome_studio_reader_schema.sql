@@ -483,7 +483,7 @@ grant select, insert, update, delete on table
 to authenticated;
 
 comment on table public.hanzihome_reading_documents is
-  'Typed Reader documents imported from the authorized Hanzi Studio seed source. Runtime reads are Supabase-backed; static Studio JSON is not a fallback.';
+  'Typed Reader content contract retained for future authored rows. Published Hanzi Studio content is served from the checked-in static JSON package; runtime does not require content rows in this table.';
 
 comment on table public.hanzihome_reader_annotations is
   'New HanziHome Reader annotations only. Existing Studio localStorage, IndexedDB, Convex annotations, and other user state are not imported.';

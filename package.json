@@ -14,6 +14,7 @@
  "scripts": {
   "data:hanzihome:studio:import:preview": "node --experimental-strip-types scripts/hanzihome-studio-import.ts",
   "data:hanzihome:studio:check": "node --experimental-strip-types scripts/hanzihome-studio-inventory.ts",
+  "data:hanzihome:studio:assets:check": "node --experimental-strip-types scripts/hanzihome-studio-inventory.ts --check-assets --destination .",
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
   "format": "oxfmt --write .",

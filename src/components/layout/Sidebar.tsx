@@ -14,10 +14,13 @@ import {
  ChevronRight,
  FileCode2,
  Home,
+ Keyboard,
  Languages,
+ SearchCheck,
  Layers3,
  Lightbulb,
  Menu,
+ MessageCircle,
  NotebookPen,
  NotebookTabs,
  PlugZap,
@@ -47,20 +50,30 @@ type NavigationGroup = {
 
 const learningItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
- { name: "HanziHome", icon: BookOpenCheck, href: "/hanzihome" },
- { name: "Reader PDF", icon: BookOpenText, href: "/reader" },
+ { name: "Bài học", icon: BookOpenCheck, href: "/hanzihome" },
+ { name: "Đọc bài", icon: BookOpenText, href: "/reader" },
+ { name: "Bài đọc hôm nay", icon: Lightbulb, href: "/daily-reading" },
+ { name: "Đọc HSK", icon: BookOpenText, href: "/hsk" },
+ { name: "Ngữ pháp", icon: Languages, href: "/grammar" },
+ { name: "Văn sử & Dịch", icon: Languages, href: "/humanities" },
+ { name: "Personal Learning", icon: NotebookTabs, href: "/personal-learning" },
  { name: "Sổ tay", icon: NotebookTabs, href: "/notebook" },
 ];
 
 const practiceItems: NavItem[] = [
+ { name: "Chép chính tả", icon: Keyboard, href: "/dictation" },
+ { name: "Translation Studio", icon: Languages, href: "/translation" },
+ { name: "Tạo giọng đọc", icon: Volume2, href: "/tts" },
  { name: "SRS từ", icon: Repeat2, href: "/dictionary" },
  { name: "Nhắc nhanh", icon: Lightbulb, href: "/memory-tips" },
- { name: "TTS Studio", icon: Volume2, href: "/tts" },
+ { name: "Hanzi Inspector", icon: SearchCheck, href: "/inspector" },
+ { name: "AI Conversation", icon: MessageCircle, href: "/conversation" },
+ { name: "Learning Loop", icon: Repeat2, href: "/learning-loop" },
+ { name: "Data Quality", icon: SearchCheck, href: "/data-quality" },
 ];
 
 const competencyItems: NavItem[] = [
  { name: "Tổng hợp từ", icon: Languages, href: "/vocab" },
- { name: "Tổng hợp ngữ pháp", icon: BookOpenText, href: "/grammar" },
  { name: "Bộ thủ", icon: Layers3, href: "/radicals" },
 ];
 

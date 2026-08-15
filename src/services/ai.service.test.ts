@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { UserApiKeyCredential } from "./user-api-keys.service";
-import { analyzeHanziBasicDetailed } from "./ai.service";
+import { analyzeHanziBasicDetailed, generateAiConversationReply } from "./ai.service";
 import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 
 const groqCredential: UserApiKeyCredential = {
@@ -140,5 +140,38 @@ describe("Groq lookup routing", () => {
   expect(result.data?.meaning_summary).toBe("học tập");
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(fetchMock.mock.calls[0]?.[0]).toContain(DEFAULT_GEMINI_QUICK_MODEL);
+ });
+
+ it("requires a managed key for conversation and sends text mode", async () => {
+  const missingKey = await generateAiConversationReply(
+   [{ role: "user", content: "Giải thích 觉得 và 感觉" }],
+   { userApiKeys: [] },
+  );
+
+  expect(missingKey.data).toBeNull();
+  expect(missingKey.error).toContain("API key AI");
+
+  const fetchMock = vi.fn().mockResolvedValue(
+   new Response(
+    JSON.stringify({
+     choices: [{ message: { content: "觉得 (juéde) là cảm thấy hoặc cho rằng." } }],
+    }),
+    { status: 200 },
+   ),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const result = await generateAiConversationReply(
+   [
+    { role: "user", content: "Giải thích 觉得 và 感觉" },
+    { role: "assistant", content: "Mình sẽ giải thích ngắn gọn." },
+   ],
+   { userApiKeys: [groqCredential] },
+  );
+
+  expect(result.data).toContain("觉得");
+  expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body))).not.toHaveProperty(
+   "response_format",
+  );
  });
 });
