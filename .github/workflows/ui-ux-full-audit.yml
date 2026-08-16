@@ -36,11 +36,12 @@ jobs:
    - name: Install dependencies
      run: npm ci
 
-   - name: Format isolated audit helper
+   - name: Format isolated audit tooling
      run: |
       mkdir -p /tmp/ui-audit
-      npx oxfmt --write scripts/audit-ui-runtime.mjs
+      npx oxfmt --write scripts/audit-ui-runtime.mjs .github/workflows/ui-ux-full-audit.yml
       cp scripts/audit-ui-runtime.mjs /tmp/ui-audit/audit-ui-runtime.formatted.mjs
+      cp .github/workflows/ui-ux-full-audit.yml /tmp/ui-audit/ui-ux-full-audit.formatted.yml
 
    - name: Run full repository gate
      id: repo-check
