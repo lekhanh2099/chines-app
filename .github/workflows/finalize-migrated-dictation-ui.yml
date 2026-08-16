@@ -1,0 +1,126 @@
+name: Finalize migrated dictation UI
+
+on:
+ push:
+  branches: [audit/hanzi-ui-parity]
+
+permissions:
+ contents: write
+
+concurrency:
+ group: finalize-migrated-dictation-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ finalize:
+  if: ${{ !contains(github.event.head_commit.message, '[dictation-ui-finalized]') }}
+  runs-on: ubuntu-latest
+  timeout-minutes: 30
+  env:
+   HUSKY: 0
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: audit/hanzi-ui-parity
+      fetch-depth: 0
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - name: Keep pre-existing listening UI untouched
+     run: |
+      git fetch origin main
+      git checkout origin/main -- \
+       src/features/hanzihome/listening/ListeningDictationWorkspace.tsx \
+       src/features/hanzihome/listening/MandarinTtsControls.tsx
+   - name: Refactor only migrated dictation surface
+     run: |
+      python - <<'PY'
+      from pathlib import Path
+
+      path = Path("src/features/hanzihome/practice/StudioDictationWorkspace.tsx")
+      text = path.read_text()
+
+      def replace_once(old: str, new: str) -> None:
+       global text
+       if old not in text:
+        raise SystemExit(f"marker missing: {old[:140]!r}")
+       text = text.replace(old, new, 1)
+
+      def replace_between(start: str, end: str, replacement: str) -> None:
+       global text
+       a = text.find(start)
+       if a < 0:
+        raise SystemExit(f"start marker missing: {start[:140]!r}")
+       b = text.find(end, a)
+       if b < 0:
+        raise SystemExit(f"end marker missing: {end[:140]!r}")
+       text = text[:a] + replacement + text[b:]
+
+      replace_once(
+       'import { useMemo, useRef, useState } from "react";',
+       'import { useEffect, useMemo, useRef, useState } from "react";',
+      )
+      for old in [
+       'import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";\n',
+       'import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";\n',
+       'import { ListeningTransport } from "@/features/hanzihome/listening/ListeningTransport";\n',
+       'import { DictationCards } from "@/features/hanzihome/listening/ListeningDictationWorkspace";\n',
+      ]:
+       text = text.replace(old, "")
+      replace_once(
+       'import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";\n',
+       'import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";\nimport { StudioDictationPracticePanel } from "@/features/hanzihome/practice/StudioDictationPracticePanel";\nimport type { StudioDictationScriptMode } from "@/features/hanzihome/practice/StudioDictationSettingsMenu";\n',
+      )
+      replace_once(
+       ' const [loopCurrent, setLoopCurrent] = useState(false);\n const loopCurrentRef = useRef(false);\n',
+       ' const [loopCurrent, setLoopCurrent] = useState(false);\n const [autoAdvance, setAutoAdvance] = useState(false);\n const [scriptMode, setScriptMode] = useState<StudioDictationScriptMode>("hidden");\n const loopCurrentRef = useRef(false);\n const autoAdvanceRef = useRef(false);\n',
+      )
+      replace_once(
+       ' const ttsLibraryQuery = useQuery({\n',
+       ' useEffect(() => {\n  void tts.loadVoices();\n }, [tts.loadVoices]);\n const ttsLibraryQuery = useQuery({\n',
+      )
+      replace_once(
+       ''' const resetPracticeFlow = () => {\n  tts.stop();\n  loopCurrentRef.current = false;\n  setLoopCurrent(false);\n  setModeConfirmed(false);''',
+       ''' const resetPracticeFlow = () => {\n  tts.stop();\n  loopCurrentRef.current = false;\n  autoAdvanceRef.current = false;\n  setLoopCurrent(false);\n  setAutoAdvance(false);\n  setScriptMode("hidden");\n  setModeConfirmed(false);''',
+      )
+      replace_once(
+       ''' const playTransport = () => {\n  const activeEntry = sourceEntries[effectiveActiveEntryIndex];\n  const playbackTexts =\n   playbackMode === "passage"\n    ? sourceEntries.map(dictationEntryText).filter(Boolean)\n    : activeEntry\n      ? [dictationEntryText(activeEntry)].filter(Boolean)\n      : [];\n  if (playbackTexts.length === 0) return;\n\n  const play = () => {\n   tts.speakSequence(playbackTexts, () => {\n    if (loopCurrentRef.current) play();\n   });\n  };\n  play();\n };''',
+       ''' const playTransport = () => {\n  const activeEntry = sourceEntries[effectiveActiveEntryIndex];\n  const playbackTexts =\n   playbackMode === "passage"\n    ? sourceEntries.map(dictationEntryText).filter(Boolean)\n    : activeEntry\n      ? [dictationEntryText(activeEntry)].filter(Boolean)\n      : [];\n  if (playbackTexts.length === 0) return;\n\n  const play = () => {\n   tts.speakSequence(playbackTexts, () => {\n    if (loopCurrentRef.current) {\n     play();\n     return;\n    }\n    if (autoAdvanceRef.current && effectiveActiveEntryIndex < sourceEntries.length - 1) {\n     const nextIndex = effectiveActiveEntryIndex + 1;\n     const nextEntry = sourceEntries[nextIndex];\n     if (!nextEntry) return;\n     setActiveEntryId(nextEntry.id);\n     tts.speakSequence([dictationEntryText(nextEntry)]);\n    }\n   });\n  };\n  play();\n };''',
+      )
+      replace_once(
+       ''' const toggleTransportLoop = () => {\n  const next = !loopCurrentRef.current;\n  loopCurrentRef.current = next;\n  setLoopCurrent(next);\n };''',
+       ''' const changeTransportLoop = (next: boolean) => {\n  loopCurrentRef.current = next;\n  setLoopCurrent(next);\n  if (next) {\n   autoAdvanceRef.current = false;\n   setAutoAdvance(false);\n  }\n };\n const changeTransportAutoAdvance = (next: boolean) => {\n  autoAdvanceRef.current = next;\n  setAutoAdvance(next);\n  if (next) {\n   loopCurrentRef.current = false;\n   setLoopCurrent(false);\n  }\n };\n const toggleTransportLoop = () => changeTransportLoop(!loopCurrentRef.current);''',
+      )
+      text = text.replace('aria-label="Nguồn dictation"', 'aria-label="Nguồn nghe chép"')
+      text = text.replace('aria-label="Chọn bộ dictation"', 'aria-label="Chọn bộ nghe chép"')
+      text = text.replace('aria-label="Chọn tập dictation"', 'aria-label="Chọn tập nghe chép"')
+      text = text.replace('Không tìm thấy văn bản Reader trong static package.', 'Không tìm thấy bài đọc trong thư viện hiện tại.')
+      text = text.replace('Đang tải thư viện TTS…', 'Đang tải thư viện giọng đọc…')
+      text = text.replace('Chưa có clip TTS. Hãy tạo clip trong TTS Studio trước.', 'Chưa có bản ghi giọng đọc. Hãy tạo bản ghi trước khi luyện.')
+      text = text.replace('aria-label="Chọn clip TTS"', 'aria-label="Chọn bản ghi giọng đọc"')
+      text = text.replace('placeholder="Chọn clip TTS"', 'placeholder="Chọn bản ghi"')
+      text = text.replace('aria-label="Nội dung dictation tự dán"', 'aria-label="Nội dung nghe chép tự dán"')
+
+      practice_start = '   {sourceEntries.length > 0 ? (\n    practiceStarted ? (\n'
+      practice_end = '   ) : null}\n  </div>\n );\n}'
+      new_practice = '''   {sourceEntries.length > 0 && practiceStarted ? (\n    <div className="grid gap-4">\n     <section className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">\n      <div className="grid min-w-0 gap-1">\n       <Typography variant="overline" tone="accent" weight="black">\n        Bước 3 · Luyện nghe chép\n       </Typography>\n       <Typography as="h2" variant="sectionTitle" weight="black" clamp="one">\n        {initialReaderResource?.document.title_zh ??\n         selectedReaderResource?.document.title_zh ??\n         selectedSection?.titleZh ??\n         selectedClip?.title ??\n         "Nội dung tự chọn"}\n       </Typography>\n       <Typography variant="bodySmall" tone="muted" clamp="one">\n        {playbackMode === "sentence"\n         ? "Theo câu"\n         : playbackMode === "paragraph"\n           ? "Theo đoạn"\n           : "Toàn bài"}{" "}\n        ·{" "}\n        {initialReaderResource?.document.title_vi ||\n         selectedReaderResource?.document.title_vi ||\n         selectedSection?.titleVi ||\n         selectedClip?.title ||\n         "Nguồn tự chọn"}\n       </Typography>\n      </div>\n      <div className="flex shrink-0 flex-wrap gap-2">\n       <Button type="button" variant="outline" onClick={() => setPracticeStarted(false)}>\n        Đổi chế độ\n       </Button>\n       <Button type="button" variant="outline" onClick={resetPracticeFlow}>\n        Đổi bài / nguồn\n       </Button>\n      </div>\n     </section>\n\n     <StudioDictationPracticePanel\n      activeIndex={effectiveActiveEntryIndex}\n      autoAdvance={autoAdvance}\n      checkedCount={checkedEntryIds.size}\n      entries={sourceEntries}\n      isLoading={tts.isLoading}\n      isPaused={tts.isPaused}\n      isSpeaking={tts.isSpeaking}\n      loopCurrent={loopCurrent}\n      rate={tts.rate}\n      scriptMode={scriptMode}\n      selectedVoiceName={tts.selectedVoiceName}\n      voices={tts.voices}\n      onAttempt={persistAttempt}\n      onAutoAdvanceChange={changeTransportAutoAdvance}\n      onLoopCurrentChange={changeTransportLoop}\n      onNext={() =>\n       selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))\n      }\n      onPlayToggle={toggleTransportPlayback}\n      onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}\n      onRateChange={(next) => {\n       tts.stop();\n       tts.setRate(next);\n      }}\n      onRepeat={playTransport}\n      onScriptModeChange={setScriptMode}\n      onSelect={selectTransportEntry}\n      onStop={tts.stop}\n      onVoiceChange={(next) => {\n       tts.stop();\n       tts.setSelectedVoiceName(next);\n      }}\n     />\n     {attemptSaveError ? (\n      <Typography variant="caption" tone="danger">\n       {attemptSaveError}\n      </Typography>\n     ) : null}\n    </div>\n   ) : null}\n  </div>\n );\n}'''
+      replace_between(practice_start, practice_end, new_practice)
+      path.write_text(text)
+      PY
+   - name: Remove superseded migrated transport
+     run: git rm -f src/features/hanzihome/listening/ListeningTransport.tsx
+   - run: npm run format
+   - run: npm run check
+   - name: Commit verified migrated dictation UI
+     run: |
+      git rm -f .github/workflows/finalize-migrated-dictation-ui.yml
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add -A
+      git commit -m "fix(hanzihome): match migrated dictation UX to source [dictation-ui-finalized]"
+      git push origin HEAD:audit/hanzi-ui-parity
