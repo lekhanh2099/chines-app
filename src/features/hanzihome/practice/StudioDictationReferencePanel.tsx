@@ -26,9 +26,7 @@ function entryPinyin(entry: ListeningTranscriptEntry) {
 }
 
 function entryMeaning(entry: ListeningTranscriptEntry) {
- const lines = entry.transcript.lines
-  .map((line) => line.vi?.trim() ?? "")
-  .filter(Boolean);
+ const lines = entry.transcript.lines.map((line) => line.vi?.trim() ?? "").filter(Boolean);
  return lines.length > 0 ? lines.join("\n") : (entry.transcript.full.vi ?? "");
 }
 

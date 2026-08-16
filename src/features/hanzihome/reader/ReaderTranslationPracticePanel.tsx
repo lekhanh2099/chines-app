@@ -93,7 +93,10 @@ export function ReaderTranslationPracticePanel({
     aria-label="Hướng dịch Reader"
    />
 
-   <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10" aria-label="Đoạn dịch Reader">
+   <div
+    className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10"
+    aria-label="Đoạn dịch Reader"
+   >
     {segments.map((candidate, index) => (
      <Button
       key={candidate.id}
@@ -119,12 +122,7 @@ export function ReaderTranslationPracticePanel({
     </div>
 
     {direction === "zh-vi" ? (
-     <ReaderHanziText
-      displayMode={displayMode}
-      size="lg"
-      leading="relaxed"
-      wrapping="preWrap"
-     >
+     <ReaderHanziText displayMode={displayMode} size="lg" leading="relaxed" wrapping="preWrap">
       {sourceText}
      </ReaderHanziText>
     ) : (
@@ -156,7 +154,12 @@ export function ReaderTranslationPracticePanel({
    </Card>
 
    <div className="grid min-w-0 gap-2">
-    <Typography as="label" htmlFor={`reader-translation-${segment.id}`} variant="label" weight="black">
+    <Typography
+     as="label"
+     htmlFor={`reader-translation-${segment.id}`}
+     variant="label"
+     weight="black"
+    >
      Bản dịch của tôi
     </Typography>
     <Textarea
@@ -207,12 +210,7 @@ export function ReaderTranslationPracticePanel({
        Đáp án tham chiếu
       </Typography>
       {direction === "vi-zh" ? (
-       <ReaderHanziText
-        displayMode={displayMode}
-        size="md"
-        leading="relaxed"
-        wrapping="preWrap"
-       >
+       <ReaderHanziText displayMode={displayMode} size="md" leading="relaxed" wrapping="preWrap">
         {referenceText}
        </ReaderHanziText>
       ) : (

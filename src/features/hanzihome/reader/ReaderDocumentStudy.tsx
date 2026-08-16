@@ -56,7 +56,6 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
@@ -68,7 +67,6 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  PinyinText,
- ReaderHanziText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
@@ -119,6 +117,7 @@ import {
 } from "./reader-session";
 import { hanzihomeQueryKeys } from "../query-keys";
 import { ReaderExercisePanel } from "./ReaderExercisePanel";
+import { ReaderTranslationPracticePanel } from "./ReaderTranslationPracticePanel";
 import { ReaderHeaderContextBridge } from "./ReaderHeaderContextBridge";
 import { ReaderVocabularyPanel } from "./ReaderVocabularyPanel";
 import { ShadowingPracticePanel } from "./ShadowingPracticePanel";
@@ -128,7 +127,6 @@ import {
  createTranslationAttempt,
  scoreTranslationAttempt,
  translationReferenceText,
- translationSourceText,
  type TranslationDirection,
 } from "../practice/translation-practice";
 
@@ -1830,149 +1828,30 @@ export function ReaderDocumentStudy({
        {showVocabularyTab ? <ReaderVocabularyPanel vocabulary={resource.vocabulary} /> : null}
 
        {showTranslationTab ? (
-        <Card variant="section" padding="md" className="grid gap-3">
-         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="grid gap-1">
-           <Typography as="h3" variant="sectionTitle" weight="black">
-            Luyện dịch
-           </Typography>
-           <Typography variant="caption" tone="muted">
-            Luyện dịch hai chiều theo từng đoạn và lưu tiến độ học.
-           </Typography>
-          </div>
-          <Badge>
-           {translationSegments.length > 0
-            ? `${activeIndex + 1}/${translationSegments.length}`
-            : "0 đoạn"}
-          </Badge>
-         </div>
-         {translationSegment ? (
-          <>
-           <SegmentedControl<TranslationDirection>
-            value={translationDirection}
-            items={[
-             { key: "zh-vi", label: "Tiếng Trung → Tiếng Việt" },
-             { key: "vi-zh", label: "Tiếng Việt → Tiếng Trung" },
-            ]}
-            onChange={setTranslationDirection}
-            aria-label="Hướng dịch Reader"
-           />
-           <div
-            className="flex max-w-full gap-1 overflow-x-auto pb-1 scrollbar-soft"
-            aria-label="Đoạn dịch Reader"
-           >
-            {translationSegments.map((candidate) => (
-             <Button
-              key={candidate.id}
-              type="button"
-              size="sm"
-              variant={candidate.id === translationSegment.id ? "active" : "outline"}
-              aria-current={candidate.id === translationSegment.id ? "step" : undefined}
-              onClick={() => {
-               const paragraphIndex = paragraphs.findIndex(
-                (paragraph) => paragraph.id === candidate.id,
-               );
-               if (paragraphIndex >= 0) move(paragraphIndex);
-              }}
-             >
-              {candidate.order}
-             </Button>
-            ))}
-           </div>
-           <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-            <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-2">
-             <Typography as="p" variant="caption" tone="muted" weight="black">
-              Đoạn {translationSegment.order}
-             </Typography>
-             {translationDirection === "zh-vi" ? (
-              <ReaderHanziText
-               displayMode={displayMode}
-               size="lg"
-               leading="relaxed"
-               wrapping="preWrap"
-              >
-               {translationSourceText(translationSegment, translationDirection)}
-              </ReaderHanziText>
-             ) : (
-              <TranslationText variant="bodySmall" wrapping="preWrap">
-               {translationSourceText(translationSegment, translationDirection)}
-              </TranslationText>
-             )}
-             {translationDirection === "zh-vi" && translationSegment.pinyin ? (
-              <Card asChild variant="default" padding="none">
-               <details className="grid gap-1">
-                <summary className="cursor-pointer list-none px-3 py-2 [&::-webkit-details-marker]:hidden">
-                 <Typography as="span" variant="caption" tone="muted" weight="black">
-                  Xem pinyin khi bí
-                 </Typography>
-                </summary>
-                <PinyinText
-                 variant="caption"
-                 tone="accent"
-                 wrapping="preWrap"
-                 className="border-t border-border-default px-3 pb-3"
-                >
-                 {translationSegment.pinyin}
-                </PinyinText>
-               </details>
-              </Card>
-             ) : null}
-            </Card>
-            <div className="grid min-w-0 gap-2">
-             <Textarea
-              value={translationDraft}
-              onChange={(event) => updateTranslationDraft(event.target.value)}
-              placeholder={
-               translationDirection === "zh-vi"
-                ? "Nhập bản dịch tiếng Việt…"
-                : "Nhập câu tiếng Trung…"
-              }
-              aria-label="Câu trả lời dịch Reader"
-              rows={5}
-              autoCapitalize="off"
-              autoCorrect="off"
-             />
-             <div className="flex flex-wrap gap-2">
-              <Button type="button" disabled={!translationDraft.trim()} onClick={checkTranslation}>
-               Kiểm tra
-              </Button>
-              <Button
-               type="button"
-               variant="outline"
-               disabled={translationSegment.order <= 1}
-               onClick={() => move(activeIndex - 1)}
-              >
-               Đoạn trước
-              </Button>
-              <Button
-               type="button"
-               variant="outline"
-               disabled={translationSegment.order >= translationSegments.length}
-               onClick={() => move(activeIndex + 1)}
-              >
-               Đoạn sau
-              </Button>
-             </div>
-             {translationIsChecked ? (
-              <Card variant="subtle" padding="sm" className="grid gap-1">
-               <Typography variant="bodySmall" weight="black">
-                Điểm: {translationScore ?? 0}/100
-               </Typography>
-               <TranslationText variant="caption" tone="muted">
-                Đáp án tham chiếu:{" "}
-                {translationReferenceText(translationSegment, translationDirection)}
-               </TranslationText>
-              </Card>
-             ) : null}
-            </div>
-           </div>
-          </>
-         ) : (
-          <Typography variant="bodySmall" tone="muted">
-           Bài này chưa có đủ bản dịch để luyện.
-          </Typography>
-         )}
-        </Card>
+        <ReaderTranslationPracticePanel
+         activeIndex={activeIndex}
+         checked={translationIsChecked}
+         completedCount={
+          translationSegments.filter(
+           (candidate) => translationChecked[`${candidate.id}:${translationDirection}`] === true,
+          ).length
+         }
+         direction={translationDirection}
+         displayMode={displayMode}
+         draft={translationDraft}
+         score={translationScore}
+         segment={translationSegment}
+         segments={translationSegments}
+         onCheck={checkTranslation}
+         onDirectionChange={setTranslationDirection}
+         onDraftChange={updateTranslationDraft}
+         onNext={() => move(activeIndex + 1)}
+         onPrevious={() => move(activeIndex - 1)}
+         onSelect={(segmentId) => {
+          const paragraphIndex = paragraphs.findIndex((paragraph) => paragraph.id === segmentId);
+          if (paragraphIndex >= 0) move(paragraphIndex);
+         }}
+        />
        ) : null}
 
        {showDictationTab ? (

@@ -30,6 +30,7 @@ import {
 } from "@/features/hanzihome/practice/translation-practice";
 
 import { Badge } from "@/components/ui/badge";
+import { DailyReadingGrammarPanel } from "./DailyReadingGrammarPanel";
 import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { ReaderExercisePanel } from "./ReaderExercisePanel";
 import type { ReaderDocumentResource } from "./reader-content-api";
@@ -523,33 +524,7 @@ export function DailyReadingWorkspace({
          )}
         </Card>
        ) : null}
-       {activeTab === "grammar" ? (
-        <Card variant="section" padding="md" className="grid gap-3">
-         <Typography as="h3" variant="sectionTitle" weight="black">
-          Ngữ pháp
-         </Typography>
-         {grammarItems.map((grammar) => (
-          <Card key={grammar.id} variant="default" padding="sm" className="grid gap-1">
-           <Typography variant="cardTitle" weight="black">
-            {grammar.title}
-           </Typography>
-           <Typography variant="bodySmall" tone="muted">
-            {grammar.core}
-           </Typography>
-           {grammar.examplesParsed.slice(0, 2).map((example) => (
-            <Typography key={example.id} variant="caption" lang="zh-CN">
-             {example.zh} · {example.vi}
-            </Typography>
-           ))}
-          </Card>
-         ))}
-         {grammarItems.length === 0 ? (
-          <Typography variant="bodySmall" tone="muted">
-           Bài này chưa có mục ngữ pháp riêng.
-          </Typography>
-         ) : null}
-        </Card>
-       ) : null}
+       {activeTab === "grammar" ? <DailyReadingGrammarPanel grammarItems={grammarItems} /> : null}
        {activeTab === "translation" ? <DailyTranslationPanel resource={resource} /> : null}
        {activeTab === "source" ? (
         <Card variant="subtle" padding="md" className="grid gap-2">

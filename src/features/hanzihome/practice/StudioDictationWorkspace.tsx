@@ -26,6 +26,7 @@ import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-atte
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";
 import { StudioDictationPracticePanel } from "@/features/hanzihome/practice/StudioDictationPracticePanel";
+import { StudioDictationReferencePanel } from "@/features/hanzihome/practice/StudioDictationReferencePanel";
 import type { StudioDictationScriptMode } from "@/features/hanzihome/practice/StudioDictationSettingsMenu";
 import {
  itemsForListeningSection,
@@ -772,40 +773,68 @@ export function StudioDictationWorkspace({
       </div>
      </section>
 
-     <StudioDictationPracticePanel
-      activeIndex={effectiveActiveEntryIndex}
-      autoAdvance={autoAdvance}
-      checkedCount={checkedEntryIds.size}
-      entries={sourceEntries}
-      isLoading={tts.isLoading}
-      isPaused={tts.isPaused}
-      isSpeaking={tts.isSpeaking}
-      loopCurrent={loopCurrent}
-      rate={tts.rate}
-      scriptMode={scriptMode}
-      selectedVoiceName={tts.selectedVoiceName}
-      voices={tts.voices}
-      onAttempt={persistAttempt}
-      onAutoAdvanceChange={changeTransportAutoAdvance}
-      onLoopCurrentChange={changeTransportLoop}
-      onNext={() =>
-       selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))
-      }
-      onPlayToggle={toggleTransportPlayback}
-      onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}
-      onRateChange={(next) => {
-       tts.stop();
-       tts.setRate(next);
-      }}
-      onRepeat={playTransport}
-      onScriptModeChange={setScriptMode}
-      onSelect={selectTransportEntry}
-      onStop={tts.stop}
-      onVoiceChange={(next) => {
-       tts.stop();
-       tts.setSelectedVoiceName(next);
-      }}
-     />
+     <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="min-w-0">
+       <StudioDictationPracticePanel
+        activeIndex={effectiveActiveEntryIndex}
+        autoAdvance={autoAdvance}
+        checkedCount={checkedEntryIds.size}
+        entries={sourceEntries}
+        isLoading={tts.isLoading}
+        isPaused={tts.isPaused}
+        isSpeaking={tts.isSpeaking}
+        loopCurrent={loopCurrent}
+        rate={tts.rate}
+        scriptMode={scriptMode}
+        selectedVoiceName={tts.selectedVoiceName}
+        voices={tts.voices}
+        onAttempt={persistAttempt}
+        onAutoAdvanceChange={changeTransportAutoAdvance}
+        onLoopCurrentChange={changeTransportLoop}
+        onNext={() =>
+         selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))
+        }
+        onPlayToggle={toggleTransportPlayback}
+        onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}
+        onRateChange={(next) => {
+         tts.stop();
+         tts.setRate(next);
+        }}
+        onRepeat={playTransport}
+        onScriptModeChange={setScriptMode}
+        onSelect={selectTransportEntry}
+        onStop={tts.stop}
+        onVoiceChange={(next) => {
+         tts.stop();
+         tts.setSelectedVoiceName(next);
+        }}
+       />
+      </div>
+      <aside className="min-w-0 xl:sticky xl:top-3 xl:self-start">
+       <StudioDictationReferencePanel
+        activeIndex={effectiveActiveEntryIndex}
+        entries={sourceEntries}
+        isPlaybackActive={tts.isLoading || tts.isPaused || tts.isSpeaking}
+        sourceLabel={
+         selectedBook?.title || selectedSection?.titleVi || selectedClip?.title || "Bài đang học"
+        }
+        titleVi={
+         initialReaderResource?.document.title_vi ||
+         selectedReaderResource?.document.title_vi ||
+         selectedSection?.titleVi ||
+         selectedClip?.title ||
+         "Nguồn tự chọn"
+        }
+        titleZh={
+         initialReaderResource?.document.title_zh ??
+         selectedReaderResource?.document.title_zh ??
+         selectedSection?.titleZh ??
+         selectedClip?.title ??
+         "Nội dung tự chọn"
+        }
+       />
+      </aside>
+     </div>
      {attemptSaveError ? (
       <Typography variant="caption" tone="danger">
        {attemptSaveError}
