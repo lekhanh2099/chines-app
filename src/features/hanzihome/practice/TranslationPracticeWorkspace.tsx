@@ -108,17 +108,17 @@ export function TranslationPracticeWorkspace() {
    <Card variant="section" padding="md" className="grid gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
-      <Badge variant="purple" className="w-fit">
-       Translation Studio
+      <Badge variant="accent" className="w-fit" casing="natural">
+       Luyện dịch
       </Badge>
       <Typography as="h2" variant="sectionTitle" weight="black">
        Luyện dịch hai chiều
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       Chấm điểm deterministic, không gọi AI và không đọc dữ liệu progress của Studio.
+       Dịch theo từng đoạn, kiểm tra với đáp án tham chiếu và lưu tiến độ luyện tập.
       </Typography>
      </div>
-     <Badge>
+     <Badge casing="natural">
       {completedCount}/{segments.length} đoạn
      </Badge>
     </div>
@@ -126,8 +126,8 @@ export function TranslationPracticeWorkspace() {
     <SegmentedControl
      value={direction}
      items={[
-      { key: "zh-vi", label: "中文 → Tiếng Việt" },
-      { key: "vi-zh", label: "Tiếng Việt → 中文" },
+      { key: "zh-vi", label: "Tiếng Trung → Tiếng Việt" },
+      { key: "vi-zh", label: "Tiếng Việt → Tiếng Trung" },
      ]}
      onChange={(nextDirection) => {
       setDirection(nextDirection);
