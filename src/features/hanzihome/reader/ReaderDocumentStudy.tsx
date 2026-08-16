@@ -120,6 +120,7 @@ import {
 import { hanzihomeQueryKeys } from "../query-keys";
 import { ReaderExercisePanel } from "./ReaderExercisePanel";
 import { ReaderHeaderContextBridge } from "./ReaderHeaderContextBridge";
+import { ReaderVocabularyPanel } from "./ReaderVocabularyPanel";
 import { ShadowingPracticePanel } from "./ShadowingPracticePanel";
 import { savePracticeAttempt } from "../practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "../learning-loop/learning-loop-api";
@@ -1840,42 +1841,7 @@ export function ReaderDocumentStudy({
         </Card>
        ) : null}
 
-       {showVocabularyTab ? (
-        <Card variant="section" padding="md" className="grid gap-3">
-         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="grid gap-1">
-           <Typography as="h3" variant="sectionTitle" weight="black">
-            Từ vựng bài đọc
-           </Typography>
-           <Typography variant="caption" tone="muted">
-            Từ và cụm từ trong bài, tra nhanh theo chữ Hán, pinyin và nghĩa.
-           </Typography>
-          </div>
-          <Badge>{resource.vocabulary.length} từ</Badge>
-         </div>
-         {resource.vocabulary.length > 0 ? (
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-           {resource.vocabulary.map((vocabulary) => (
-            <Card key={vocabulary.id} variant="default" padding="sm" className="grid gap-1">
-             <Typography as="p" variant="body" lang="zh-CN" weight="black">
-              {vocabulary.word}
-             </Typography>
-             <PinyinText variant="caption" tone="accent">
-              {vocabulary.pinyin || "Chưa có pinyin"}
-             </PinyinText>
-             <Typography variant="caption" tone="muted">
-              {vocabulary.meaning || "Chưa có nghĩa"}
-             </Typography>
-            </Card>
-           ))}
-          </div>
-         ) : (
-          <Typography variant="bodySmall" tone="muted">
-           Bài này chưa có từ vựng liên kết.
-          </Typography>
-         )}
-        </Card>
-       ) : null}
+       {showVocabularyTab ? <ReaderVocabularyPanel vocabulary={resource.vocabulary} /> : null}
 
        {showTranslationTab ? (
         <Card variant="section" padding="md" className="grid gap-3">

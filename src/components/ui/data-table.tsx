@@ -15,7 +15,9 @@ function DataTable({ className, ...props }: React.ComponentProps<"table">) {
 }
 
 function DataTableHeader({ className, ...props }: React.ComponentProps<"thead">) {
- return <thead data-slot="data-table-header" className={cn("bg-bg-subtle", className)} {...props} />;
+ return (
+  <thead data-slot="data-table-header" className={cn("bg-bg-subtle", className)} {...props} />
+ );
 }
 
 function DataTableBody({ className, ...props }: React.ComponentProps<"tbody">) {
