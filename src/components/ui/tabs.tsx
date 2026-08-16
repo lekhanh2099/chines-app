@@ -15,8 +15,6 @@ type TabsContextValue = {
  itemKeys: string[];
 };
 
-type TabsVariant = "document" | "segmented";
-
 const TabsContext = React.createContext<TabsContextValue>({
  baseId: "tabs",
  value: "",
@@ -42,7 +40,6 @@ export function Tabs<T extends string>({
  children,
  className,
  listClassName,
- variant = "document",
  "aria-label": ariaLabel,
 }: {
  value: T;
@@ -52,7 +49,6 @@ export function Tabs<T extends string>({
  children?: React.ReactNode;
  className?: string;
  listClassName?: string;
- variant?: TabsVariant;
  "aria-label"?: string;
 }) {
  const generatedId = React.useId();
@@ -84,15 +80,13 @@ export function Tabs<T extends string>({
       aria-label={ariaLabel}
       aria-orientation="horizontal"
       className={cn(
-       variant === "document"
-        ? "grid min-w-0 grid-cols-2 gap-x-1 border-b border-border-default sm:grid-cols-3 lg:flex lg:flex-wrap"
-        : "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
+       "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
        listClassName,
       )}
      >
       {resolvedGroups.map((group, groupIndex) => (
        <React.Fragment key={group.key}>
-        {groupIndex > 0 && variant === "segmented" ? (
+        {groupIndex > 0 ? (
          <span aria-hidden="true" className="h-6 w-px shrink-0 bg-border-default" />
         ) : null}
         {group.items.map((item) => {
@@ -109,17 +103,10 @@ export function Tabs<T extends string>({
            aria-selected={selected}
            aria-controls={`${baseId}-panel-${flatIndex}`}
            tabIndex={selected ? 0 : -1}
-           size={variant === "document" ? "tab" : "toolbar"}
-           variant={variant === "document" ? "navigation" : selected ? "active" : "navigation"}
+           size="toolbar"
+           variant={selected ? "active" : "navigation"}
            disabled={item.disabled}
-           className={cn(
-            variant === "document"
-             ? "relative min-w-0 rounded-none border-x-0 border-t-0 border-b-2 border-b-transparent bg-transparent px-3 py-2.5 font-extrabold shadow-none lg:flex-none"
-             : "shrink-0",
-            variant === "document" && selected
-             ? "border-b-primary text-primary hover:bg-transparent hover:text-primary"
-             : undefined,
-           )}
+           className="shrink-0"
            onClick={() => onValueChange(item.key)}
            onKeyDown={(event) => {
             if (event.key === "ArrowRight") {
@@ -198,7 +185,7 @@ export function TabsContent({
 
  return (
   <div
-   id={`${context.baseId}-panel-${index}`}
+   id={`${context.baseId}-panel-${index}`
    role="tabpanel"
    aria-labelledby={`${context.baseId}-tab-${index}`}
    tabIndex={0}
