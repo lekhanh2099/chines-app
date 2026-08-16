@@ -68,8 +68,8 @@ const readerCollectionOptions: ReadonlyArray<
   href: "/daily-reading",
   glyph: "报",
   icon: FileText,
-  label: "今日阅读 · Bài đọc hôm nay",
-  title: "今日阅读 · Bài đọc hôm nay",
+  label: "Bài đọc hôm nay",
+  title: "Bài đọc hôm nay",
  },
  {
   kind: "core",
@@ -138,7 +138,7 @@ const readerUtilityOptions: ReadonlyArray<ReaderLibraryCardOption> = [
   glyph: "听",
   icon: Volume2,
   label: "Mở khu vực →",
-  title: "TTS Studio",
+  title: "Tạo giọng đọc",
  },
 ];
 
@@ -258,7 +258,7 @@ function ReaderResumePanel() {
      <div className="grid min-w-0 gap-1">
       <HanziAwareText as="h2" text={resumeItem.title_zh} variant="sectionTitle" weight="black" />
       <Typography as="p" variant="bodySmall" tone="secondary" clamp="one">
-       {[resumeItem.title_vi, resumeItem.kind === "reading_bookmark" ? "Đọc bài" : "Learning Loop"]
+       {[resumeItem.title_vi, resumeItem.kind === "reading_bookmark" ? "Đọc bài" : "Ôn tập"]
         .filter(Boolean)
         .join(" · ")}
       </Typography>

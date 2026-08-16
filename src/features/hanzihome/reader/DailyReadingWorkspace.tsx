@@ -48,12 +48,12 @@ const dailyTabSchema = z.enum([
 type DailyTab = z.output<typeof dailyTabSchema>;
 
 const dailyTabs: ReadonlyArray<{ id: DailyTab; label: string }> = [
- { id: "reader", label: "阅读" },
- { id: "questions", label: "问题" },
- { id: "vocabulary", label: "词汇" },
- { id: "grammar", label: "语法" },
- { id: "translation", label: "翻译" },
- { id: "source", label: "来源" },
+ { id: "reader", label: "Đọc bài" },
+ { id: "questions", label: "Câu hỏi" },
+ { id: "vocabulary", label: "Từ vựng" },
+ { id: "grammar", label: "Ngữ pháp" },
+ { id: "translation", label: "Bản dịch" },
+ { id: "source", label: "Nguồn" },
 ];
 
 function metadataString(resource: ReaderDocumentResource, key: string) {
@@ -102,7 +102,7 @@ function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource 
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Bài Daily Reading này chưa có đủ đoạn song ngữ để luyện dịch.
+     Bài này chưa có đủ đoạn song ngữ để luyện dịch.
     </Typography>
    </Card>
   );
@@ -153,8 +153,8 @@ function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource 
     <SegmentedControl<TranslationDirection>
      value={direction}
      items={[
-      { key: "zh-vi", label: "中文 → Tiếng Việt" },
-      { key: "vi-zh", label: "Tiếng Việt → 中文" },
+      { key: "zh-vi", label: "Tiếng Trung → Tiếng Việt" },
+      { key: "vi-zh", label: "Tiếng Việt → Tiếng Trung" },
      ]}
      onChange={(value) => {
       setDirection(value);
@@ -303,31 +303,33 @@ export function DailyReadingWorkspace({
 
  return (
   <div className="grid min-w-0 gap-6">
-   <div className="flex min-w-0 items-start gap-3">
-    <IconTile tone="info" size="md">
-     <FileText />
-    </IconTile>
-    <PageHeader
-     className="flex-1"
-     eyebrow="今日阅读"
-     title="Bài đọc tiếng Trung mỗi ngày"
-     description="Thư viện các bài đọc hằng ngày đã được kiểm tra và lưu trong HanziHome."
-     actions={
-      <>
-       <Button type="button" variant="outline" size="toolbar" asChild>
-        <Link href="/settings?section=reading" prefetch={false}>
-         <Settings data-icon="inline-start" />
-         Cài đặt đọc
-        </Link>
-       </Button>
-       <Button type="button" size="toolbar" disabled={latest === undefined} onClick={openSample}>
-        <FileText data-icon="inline-start" />
-        Mở bài mẫu
-       </Button>
-      </>
-     }
-    />
-   </div>
+   {requestedDocumentId.length === 0 ? (
+    <div className="flex min-w-0 items-start gap-3">
+     <IconTile tone="info" size="md">
+      <FileText />
+     </IconTile>
+     <PageHeader
+      className="flex-1"
+      eyebrow="Bài đọc hôm nay"
+      title="Bài đọc tiếng Trung mỗi ngày"
+      description="Thư viện các bài đọc hằng ngày đã được kiểm tra và lưu trong HanziHome."
+      actions={
+       <>
+        <Button type="button" variant="outline" size="toolbar" asChild>
+         <Link href="/settings?section=reading" prefetch={false}>
+          <Settings data-icon="inline-start" />
+          Cài đặt đọc
+         </Link>
+        </Button>
+        <Button type="button" size="toolbar" disabled={latest === undefined} onClick={openSample}>
+         <FileText data-icon="inline-start" />
+         Mở bài mẫu
+        </Button>
+       </>
+      }
+     />
+    </div>
+   ) : null}
 
    {requestedDocumentId.length === 0 ? (
     <>
@@ -412,13 +414,13 @@ export function DailyReadingWorkspace({
    {requestedDocumentId.length > 0 && resource === null ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="danger">
-      Không tìm thấy bài Daily Reading trong static package.
+      Không tìm thấy bài đọc hằng ngày trong dữ liệu hiện có.
      </Typography>
     </Card>
    ) : null}
    {resource ? (
     <div className="grid min-w-0 gap-3">
-     <Card variant="section" padding="md" className="grid gap-3">
+     <div className="grid gap-3 border-b border-border-default pb-4 sm:pb-5">
       <Button
        type="button"
        variant="ghost"
@@ -426,43 +428,51 @@ export function DailyReadingWorkspace({
        className="w-fit"
        onClick={() => setQuery({})}
       >
-       ← Daily Reading
+       ← Danh sách bài hằng ngày
       </Button>
-      <PageHeader
-       title={resource.document.title_zh}
-       description={resource.document.title_vi}
-       density="compact"
-       meta={
-        resource.document.title_pinyin ? (
-         <PinyinText variant="caption" tone="accent">
-          {resource.document.title_pinyin}
-         </PinyinText>
-        ) : undefined
-       }
-       actions={
+      <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
+       <div className="grid min-w-0 gap-1">
         <div className="flex flex-wrap gap-2">
-         {metadataString(resource, "published_date") ? (
-          <Badge>{metadataString(resource, "published_date")}</Badge>
+         {metadataString(resource, "level") ? (
+          <Badge variant="warning" casing="natural">
+           {metadataString(resource, "level")}
+          </Badge>
          ) : null}
          {metadataString(resource, "topic") ? (
-          <Badge>{metadataString(resource, "topic")}</Badge>
-         ) : null}
-         {metadataString(resource, "level") ? (
-          <Badge>{metadataString(resource, "level")}</Badge>
-         ) : null}
-         {metadataNumber(resource, "estimated_minutes") ? (
-          <Badge>{metadataNumber(resource, "estimated_minutes")} phút</Badge>
+          <Badge variant="info" casing="natural">
+           {metadataString(resource, "topic")}
+          </Badge>
          ) : null}
         </div>
-       }
-      />
-     </Card>
+        <HanziText as="h2" size="card" className="text-2xl sm:text-3xl" weight="black">
+         {resource.document.title_zh}
+        </HanziText>
+        <Typography variant="bodySmall" tone="muted">
+         {resource.document.title_pinyin ? (
+          <PinyinText as="span" variant="caption" tone="accent">
+           {resource.document.title_pinyin}
+          </PinyinText>
+         ) : null}
+         {resource.document.title_pinyin ? " · " : ""}
+         {resource.document.title_vi}
+        </Typography>
+       </div>
+       <div className="flex flex-wrap justify-end gap-2">
+        {metadataString(resource, "published_date") ? (
+         <Badge>{metadataString(resource, "published_date")}</Badge>
+        ) : null}
+        {metadataNumber(resource, "estimated_minutes") ? (
+         <Badge>{metadataNumber(resource, "estimated_minutes")} phút</Badge>
+        ) : null}
+       </div>
+      </div>
+     </div>
 
      <Tabs
       value={activeTab}
       items={[...dailyTabs].map((tab) => ({ key: tab.id, label: tab.label }))}
       onValueChange={(tab) => setQuery({ document: resource.document.id, tab })}
-      aria-label="Daily Reading sections"
+      aria-label="Các phần của bài đọc hằng ngày"
      >
       <TabsContent value={activeTab} className="pt-3">
        {activeTab === "reader" ? (
@@ -508,7 +518,7 @@ export function DailyReadingWorkspace({
           </div>
          ) : (
           <Typography variant="bodySmall" tone="muted">
-           Bài Daily này chưa có từ vựng trong static package.
+           Bài này chưa có từ vựng trong dữ liệu hiện có.
           </Typography>
          )}
         </Card>
@@ -535,7 +545,7 @@ export function DailyReadingWorkspace({
          ))}
          {grammarItems.length === 0 ? (
           <Typography variant="bodySmall" tone="muted">
-           Bài Daily này chưa có ngữ pháp trong static package.
+           Bài này chưa có mục ngữ pháp riêng.
           </Typography>
          ) : null}
         </Card>
@@ -548,10 +558,10 @@ export function DailyReadingWorkspace({
          </Typography>
          <Typography variant="bodySmall" tone="muted">
           {metadataString(resource, "adaptation_notice_vi") ??
-           "Nội dung static đã được review trước khi đóng gói."}
+           "Nội dung đã được rà soát trước khi đưa vào thư viện."}
          </Typography>
          <Typography variant="caption" tone="muted">
-          {metadataString(resource, "source_file") ?? "Hanzi Studio static source"}
+          {metadataString(resource, "source_file") ?? "Nguồn Hanzi Studio"}
          </Typography>
         </Card>
        ) : null}

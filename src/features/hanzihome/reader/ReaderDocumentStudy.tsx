@@ -358,7 +358,7 @@ export function ReaderDocumentStudy({
   [localState, remoteState],
  );
  const featureState = useMemo(() => readerFeatureStateFromSession(state), [state]);
- const pinyinMode = pinyinModeOverride ?? (state.showPinyin ? "contextual" : "off");
+ const pinyinMode = pinyinModeOverride ?? (state.showPinyin ? "focus" : "off");
  useEffect(() => {
   playbackStateRef.current = state;
  }, [state]);
@@ -1078,7 +1078,7 @@ export function ReaderDocumentStudy({
     selectedDocument={resource.document}
    />
    {!isHskDocument && showDocumentHeader ? (
-    <div className="grid min-w-0 gap-3 border-b border-border-default pb-4">
+    <div className="grid min-w-0 gap-3 border-b border-border-default pb-4 sm:pb-5">
      <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
       <div className="grid min-w-0 gap-1">
        <div className="flex flex-wrap gap-2">
@@ -1101,7 +1101,7 @@ export function ReaderDocumentStudy({
         variant="sectionTitle"
         weight="black"
         clamp="two"
-        className="text-3xl sm:text-4xl"
+        className="text-2xl sm:text-3xl"
        >
         {resource.document.title_zh}
        </Typography>
@@ -1112,7 +1112,7 @@ export function ReaderDocumentStudy({
          </PinyinText>
         ) : null}
         {resource.document.title_pinyin ? " · " : ""}
-        {resource.document.title_vi || resource.document.genre_vi || "HanziHome Reader"}
+        {resource.document.title_vi || resource.document.genre_vi || "Bài đọc"}
        </Typography>
       </div>
       <div className="flex min-w-0 flex-wrap justify-end gap-2">
@@ -1409,24 +1409,64 @@ export function ReaderDocumentStudy({
        ) : null}
 
        {showOverviewTab && !state.focusMode ? (
-        <Card variant="subtle" padding="md" className="grid gap-2">
-         <Typography as="h2" variant="cardTitle" weight="black">
-          {resource.document.analysis.mainIdeaVi || "Phân tích Reader"}
-         </Typography>
-         {resource.document.objectives_vi.length > 0 ? (
-          <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
-           {resource.document.objectives_vi.map((objective) => (
-            <li key={objective}>{objective}</li>
-           ))}
-          </ul>
-         ) : null}
-        </Card>
+        <div className="grid gap-4 lg:grid-cols-2">
+         <Card variant="subtle" padding="lg" className="grid content-start gap-3">
+          <Typography as="h2" variant="cardTitle" weight="black">
+           Bài này là gì?
+          </Typography>
+          <Typography variant="bodySmall" weight="black">
+           {resource.document.genre_vi || readerLessonLabel}
+          </Typography>
+          <Typography variant="bodySmall" tone="muted">
+           {resource.document.analysis.mainIdeaVi ||
+            "Đọc để nắm nội dung chính và cách triển khai của văn bản."}
+          </Typography>
+         </Card>
+         <Card variant="subtle" padding="lg" className="grid content-start gap-3">
+          <Typography as="h2" variant="cardTitle" weight="black">
+           Mục tiêu bài học
+          </Typography>
+          {resource.document.objectives_vi.length > 0 ? (
+           <ul className="grid gap-2 pl-5 text-sm text-foreground-muted">
+            {resource.document.objectives_vi.map((objective) => (
+             <li key={objective}>{objective}</li>
+            ))}
+           </ul>
+          ) : (
+           <Typography variant="bodySmall" tone="muted">
+            Đọc hiểu nội dung, nhận diện từ vựng trọng tâm và diễn đạt lại ý chính.
+           </Typography>
+          )}
+         </Card>
+         <Card variant="subtle" padding="lg" className="grid content-start gap-3">
+          <Typography as="h2" variant="cardTitle" weight="black">
+           Trước khi đọc
+          </Typography>
+          <ol className="grid gap-2 pl-5 text-sm text-foreground-muted">
+           <li>Đọc lướt tiêu đề và xác định chủ đề trước khi mở pinyin.</li>
+           <li>Đánh dấu câu hoặc cụm chưa chắc thay vì tra ngay từng từ.</li>
+           <li>Thử tóm tắt mỗi đoạn bằng một ý ngắn sau lần đọc đầu.</li>
+          </ol>
+         </Card>
+         <Card variant="subtle" padding="lg" className="grid content-start gap-3">
+          <Typography as="h2" variant="cardTitle" weight="black">
+           Nhịp học gợi ý
+          </Typography>
+          <ol className="grid gap-2 pl-5 text-sm text-foreground-muted">
+           <li>Đọc bài và nghe từng đoạn.</li>
+           <li>Làm bài tập khi nội dung còn mới.</li>
+           <li>Ôn từ vựng theo ngữ cảnh của bài.</li>
+           <li>Luyện dịch để kiểm tra khả năng diễn đạt.</li>
+           <li>Chép chính tả hoặc shadowing để củng cố nghe nói.</li>
+          </ol>
+         </Card>
+        </div>
        ) : null}
 
        {stateOwner === "daily" ? (
         <Card variant="subtle" padding="md" className="grid gap-2">
          <Typography as="h3" variant="cardTitle" weight="black">
-          Daily Reading context
+          Thông tin bài đọc
          </Typography>
          <div className="flex flex-wrap gap-2">
           {dailyPublishedDate ? <Badge>{dailyPublishedDate}</Badge> : null}
@@ -1444,7 +1484,7 @@ export function ReaderDocumentStudy({
        {stateOwner === "personal" ? (
         <Card variant="subtle" padding="md" className="grid gap-2">
          <Typography as="h3" variant="cardTitle" weight="black">
-          Personal Learning map
+          Bản đồ học cá nhân
          </Typography>
          {personalEssentialQuestion ? (
           <Typography as="p" variant="bodySmall" weight="black">
@@ -1465,7 +1505,7 @@ export function ReaderDocumentStudy({
          ) : null}
          {personalSourceIds.length > 0 ? (
           <Typography as="p" variant="caption" tone="muted">
-           Evidence: {personalSourceIds.join(", ")}
+           Nguồn: {personalSourceIds.join(", ")}
           </Typography>
          ) : null}
         </Card>
@@ -1473,7 +1513,7 @@ export function ReaderDocumentStudy({
 
        {showReaderTab ? (
         <>
-         <Card variant="section" padding="md" className="grid gap-0">
+         <Card variant="canvas" padding="md" className="grid gap-0">
           {paragraphs.map((paragraph, index) => {
            const analysis = analyses[index];
            if (analysis === undefined) return null;
@@ -1481,11 +1521,7 @@ export function ReaderDocumentStudy({
            return (
             <article
              key={paragraph.id}
-             className={
-              isActive
-               ? "grid gap-4 bg-bg-subtle py-5 first:pt-4 last:pb-0 sm:px-4"
-               : "grid gap-4 border-b border-border-default py-5 last:border-b-0 sm:px-4"
-             }
+             className="mx-auto grid w-full max-w-4xl gap-4 border-b border-border-default py-7 first:pt-4 last:border-b-0 last:pb-4 sm:px-4"
             >
              <div className="flex flex-wrap items-center justify-between gap-2">
               <Typography
@@ -1500,14 +1536,16 @@ export function ReaderDocumentStudy({
               </Typography>
               <Button
                type="button"
-               size="sm"
-               variant={isActive ? "active" : "ghost"}
+               size="icon-sm"
+               variant="ghost"
+               aria-label={`Nghe đoạn ${paragraph.paragraph_order}`}
+               title="Nghe đoạn này"
                onClick={() => {
                 move(index);
                 playParagraphAt(index);
                }}
               >
-               Nghe đoạn này
+               <Volume2 aria-hidden="true" />
               </Button>
              </div>
              <div
@@ -1698,7 +1736,7 @@ export function ReaderDocumentStudy({
                    variant="ghost"
                    onClick={removePronunciationOverride}
                   >
-                   Bỏ override của đoạn này
+                   Bỏ cách đọc tuỳ chỉnh
                   </Button>
                  ) : null}
                 </Card>
@@ -1770,7 +1808,7 @@ export function ReaderDocumentStudy({
        {showNotesTab && activeAnnotations.length > 0 ? (
         <Card variant="subtle" padding="md" className="grid gap-2">
          <Typography as="h2" variant="cardTitle" weight="black">
-          Annotation của đoạn này
+          Ghi chú của đoạn này
          </Typography>
          {activeAnnotations.map((annotation) => (
           <Card
@@ -1810,7 +1848,7 @@ export function ReaderDocumentStudy({
             Từ vựng bài đọc
            </Typography>
            <Typography variant="caption" tone="muted">
-            Từ và cụm từ được resolve từ vocabulary canonical của HanziHome.
+            Từ và cụm từ trong bài, tra nhanh theo chữ Hán, pinyin và nghĩa.
            </Typography>
           </div>
           <Badge>{resource.vocabulary.length} từ</Badge>
@@ -1844,10 +1882,10 @@ export function ReaderDocumentStudy({
          <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="grid gap-1">
            <Typography as="h3" variant="sectionTitle" weight="black">
-            Translation Studio
+            Luyện dịch
            </Typography>
            <Typography variant="caption" tone="muted">
-            Luyện dịch hai chiều theo từng đoạn, chấm deterministic và lưu attempt HanziHome.
+            Luyện dịch hai chiều theo từng đoạn và lưu tiến độ học.
            </Typography>
           </div>
           <Badge>
@@ -1861,8 +1899,8 @@ export function ReaderDocumentStudy({
            <SegmentedControl<TranslationDirection>
             value={translationDirection}
             items={[
-             { key: "zh-vi", label: "中文 → Tiếng Việt" },
-             { key: "vi-zh", label: "Tiếng Việt → 中文" },
+             { key: "zh-vi", label: "Tiếng Trung → Tiếng Việt" },
+             { key: "vi-zh", label: "Tiếng Việt → Tiếng Trung" },
             ]}
             onChange={setTranslationDirection}
             aria-label="Hướng dịch Reader"
@@ -1988,7 +2026,7 @@ export function ReaderDocumentStudy({
        {showDictationTab ? (
         <Card variant="section" padding="md" className="grid gap-3">
          <Badge variant="purple" className="w-fit">
-          Dictation Studio
+          Luyện nghe chép
          </Badge>
          <Typography as="h3" variant="sectionTitle" weight="black">
           Nghe và chép lại bài đọc
@@ -2003,7 +2041,7 @@ export function ReaderDocumentStudy({
             href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`}
             prefetch={false}
            >
-            Mở Dictation →
+            Mở chép chính tả →
            </Link>
           </Button>
           <Button type="button" variant="outline" asChild>
@@ -2011,7 +2049,7 @@ export function ReaderDocumentStudy({
             href={`/tts?text=${encodeURIComponent(paragraphs.map((paragraph) => paragraph.zh).join("\n"))}`}
             prefetch={false}
            >
-            Mở TTS Studio
+            Mở tạo giọng đọc
            </Link>
           </Button>
          </div>
