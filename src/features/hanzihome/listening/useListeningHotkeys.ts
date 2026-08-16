@@ -20,6 +20,8 @@ export type ListeningShortcutAction =
  | "stop"
  | "toggle-loop";
 
+type ListeningShortcutEvent = Pick<KeyboardEvent, "code" | "key">;
+
 function isEditableTarget(target: EventTarget | null) {
  if (!(target instanceof HTMLElement)) return false;
  return (
@@ -30,7 +32,9 @@ function isEditableTarget(target: EventTarget | null) {
  );
 }
 
-export function resolveListeningShortcut(event: KeyboardEvent): ListeningShortcutAction | null {
+export function resolveListeningShortcut(
+ event: ListeningShortcutEvent,
+): ListeningShortcutAction | null {
  switch (event.code) {
   case "Digit1":
   case "Numpad1":
@@ -76,6 +80,7 @@ export function useListeningHotkeys({
    if (
     event.defaultPrevented ||
     event.isComposing ||
+    event.altKey ||
     event.ctrlKey ||
     event.metaKey ||
     event.shiftKey ||
