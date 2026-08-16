@@ -11,7 +11,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 
-const shortcuts = [
+type ShortcutLegendItem = readonly [key: string, label: string];
+
+const shortcuts: ShortcutLegendItem[] = [
  ["1 / ←", "Phần trước"],
  ["2 / Space", "Phát / tạm dừng"],
  ["3 / R", "Nghe lại"],
@@ -19,7 +21,7 @@ const shortcuts = [
  ["5 / L", "Bật / tắt lặp"],
  ["Esc", "Dừng phát"],
  ["Ctrl/⌘ ↵", "Kiểm tra câu đang nhập"],
-] as const;
+];
 
 function ShortcutKey({ children }: { children: string }) {
  return (
