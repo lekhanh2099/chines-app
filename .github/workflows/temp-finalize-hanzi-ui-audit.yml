@@ -1,0 +1,105 @@
+name: Finalize Hanzi Studio UI audit
+
+on:
+  push:
+    branches: [audit/hanzi-ui-parity]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: finalize-hanzi-ui-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  finalize:
+    if: ${{ !contains(github.event.head_commit.message, '[hanzi-ui-audit-final]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      HUSKY: 0
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: audit/hanzi-ui-parity
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+      - name: Apply final source UI contract fixes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(text: str, old: str, new: str, label: str) -> str:
+              if old not in text:
+                  raise SystemExit(f"missing marker for {label}: {old[:180]!r}")
+              return text.replace(old, new, 1)
+
+          # Route/feature scrolling must go through the app viewport owner, not the browser window.
+          lesson_path = Path("src/features/hanzihome/components/lesson-text/LessonTextInlineEditor.tsx")
+          lesson = lesson_path.read_text()
+          lesson = replace_once(
+              lesson,
+              'import { Button } from "@/components/ui/button";\n',
+              'import { scrollAppContentToElement } from "@/components/layout/app-scroll";\nimport { Button } from "@/components/ui/button";\n',
+              "lesson shared scroll import",
+          )
+          lesson = replace_once(
+              lesson,
+              ' target?.scrollIntoView({ behavior: "smooth", block: "center" });',
+              ' scrollAppContentToElement(target ?? null, { behavior: "smooth", block: "center" });',
+              "lesson native scroll replacement",
+          )
+          lesson_path.write_text(lesson)
+
+          # Bind the route-level scroll owner into the target UI skill.
+          skill_path = Path(".agents/skills/frontend-ui-system/SKILL.md")
+          skill = skill_path.read_text()
+          marker = '- keep the chines-app primitive/state/data boundaries authoritative.\n'
+          addition = '- `AppScrollViewport` is the single route-level vertical scroll owner; feature code uses shared app-scroll helpers and must not call `window.scrollTo` or native `scrollIntoView` for route/section navigation.\n'
+          if addition not in skill:
+              skill = replace_once(skill, marker, marker + addition, "UI skill scroll ownership")
+          skill_path.write_text(skill)
+
+          # Document the same ownership in the component contract.
+          contracts_path = Path("docs/ui/component-contracts.md")
+          contracts = contracts_path.read_text()
+          scroll_section = '''\n## App scroll ownership\n\n`AppScrollViewport` owns the single route-level vertical scroll container inside the authenticated shell.\nGlobal header/sidebar/bottom navigation stay outside it. Feature code that needs section or reader positioning\nuses `getAppScrollContainer`, `scrollAppContentToTop`, or `scrollAppContentToElement` from the shared layout\nowner. Do not target `window` or call native `scrollIntoView` for app route/section navigation. Nested bounded\nscroll regions are allowed only when the component itself is explicitly a scrollable pane or rail.\n'''
+          if '## App scroll ownership' not in contracts:
+              contracts = contracts.rstrip() + '\n' + scroll_section
+          contracts_path.write_text(contracts)
+
+          verify_path = Path("docs/ui/ui-verification.md")
+          verify = verify_path.read_text()
+          verification_line = '- one route-level vertical scroll owner (`AppScrollViewport`); section navigation uses the shared app-scroll helper instead of `window`/native `scrollIntoView`;\n'
+          target = '- no decorative product gradients, feature raw-palette utilities, pixel font sizes, or fit-content layout patches;\n'
+          if verification_line not in verify:
+              verify = replace_once(verify, target, target + verification_line, "UI verification scroll ownership")
+          verify_path.write_text(verify)
+
+          # Extend the existing UI checker rather than introducing a second audit script.
+          check_path = Path("scripts/check-ui-standards.mjs")
+          check = check_path.read_text()
+          call_marker = '''  if (\n   !isUiOwner &&\n   ts.isPropertyAssignment(node) &&\n'''
+          call_guard = '''  if (!isUiOwner && ts.isCallExpression(node) && ts.isPropertyAccessExpression(node.expression)) {\n   const owner = node.expression.expression;\n   const method = node.expression.name.text;\n   if (method === "scrollIntoView") {\n    failures.push(\n     `nativeRouteScroll: ${location(sourceFile, node)} uses scrollIntoView; use shared app-scroll helpers`,\n    );\n   }\n   if (ts.isIdentifier(owner) && owner.text === "window" && method === "scrollTo") {\n    failures.push(\n     `windowRouteScroll: ${location(sourceFile, node)} uses window.scrollTo; use AppScrollViewport helpers`,\n    );\n   }\n   if (\n    ts.isPropertyAccessExpression(owner) &&\n    ts.isIdentifier(owner.expression) &&\n    owner.expression.text === "document" &&\n    owner.name.text === "documentElement" &&\n    method.startsWith("scroll")\n   ) {\n    failures.push(\n     `documentRouteScroll: ${location(sourceFile, node)} scrolls documentElement; use AppScrollViewport helpers`,\n    );\n   }\n  }\n\n'''
+          if 'nativeRouteScroll:' not in check:
+              check = replace_once(check, call_marker, call_guard + call_marker, "UI guard route scroll")
+          check_path.write_text(check)
+          PY
+      - run: npm run format
+      - run: npm run ui:check
+      - run: npm run check
+      - name: Commit verified audit
+        run: |
+          git rm -f .github/workflows/temp-finalize-hanzi-ui-audit.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "refactor(ui): finalize Hanzi Studio UX contract [hanzi-ui-audit-final]"
+          git push origin HEAD:audit/hanzi-ui-parity
