@@ -36,6 +36,12 @@ jobs:
    - name: Install dependencies
      run: npm ci
 
+   - name: Format isolated audit helper
+     run: |
+      mkdir -p /tmp/ui-audit
+      npx oxfmt --write scripts/audit-ui-runtime.mjs
+      cp scripts/audit-ui-runtime.mjs /tmp/ui-audit/audit-ui-runtime.formatted.mjs
+
    - name: Run full repository gate
      id: repo-check
      continue-on-error: true
