@@ -9,7 +9,7 @@ permissions:
 
 concurrency:
   group: finalize-hanzi-ui-audit-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   finalize:
@@ -41,7 +41,6 @@ jobs:
                   raise SystemExit(f"missing marker for {label}: {old[:180]!r}")
               return text.replace(old, new, 1)
 
-          # Route/feature scrolling must go through the app viewport owner, not the browser window.
           lesson_path = Path("src/features/hanzihome/components/lesson-text/LessonTextInlineEditor.tsx")
           lesson = lesson_path.read_text()
           lesson = replace_once(
@@ -58,7 +57,6 @@ jobs:
           )
           lesson_path.write_text(lesson)
 
-          # Bind the route-level scroll owner into the target UI skill.
           skill_path = Path(".agents/skills/frontend-ui-system/SKILL.md")
           skill = skill_path.read_text()
           marker = '- keep the chines-app primitive/state/data boundaries authoritative.\n'
@@ -67,7 +65,6 @@ jobs:
               skill = replace_once(skill, marker, marker + addition, "UI skill scroll ownership")
           skill_path.write_text(skill)
 
-          # Document the same ownership in the component contract.
           contracts_path = Path("docs/ui/component-contracts.md")
           contracts = contracts_path.read_text()
           scroll_section = '''\n## App scroll ownership\n\n`AppScrollViewport` owns the single route-level vertical scroll container inside the authenticated shell.\nGlobal header/sidebar/bottom navigation stay outside it. Feature code that needs section or reader positioning\nuses `getAppScrollContainer`, `scrollAppContentToTop`, or `scrollAppContentToElement` from the shared layout\nowner. Do not target `window` or call native `scrollIntoView` for app route/section navigation. Nested bounded\nscroll regions are allowed only when the component itself is explicitly a scrollable pane or rail.\n'''
@@ -83,7 +80,6 @@ jobs:
               verify = replace_once(verify, target, target + verification_line, "UI verification scroll ownership")
           verify_path.write_text(verify)
 
-          # Extend the existing UI checker rather than introducing a second audit script.
           check_path = Path("scripts/check-ui-standards.mjs")
           check = check_path.read_text()
           call_marker = '''  if (\n   !isUiOwner &&\n   ts.isPropertyAssignment(node) &&\n'''
