@@ -52,6 +52,22 @@ jobs:
       - name: Apply editor UI remediation
         run: node scripts/temp-editor-ui-remediate.mjs
 
+      - name: Patch drag alternative imports
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("src/components/editor/plugins/DraggableBlockPlugin.tsx")
+          source = path.read_text()
+          marker = "import {\n GripVertical,"
+          replacement = "import {\n ArrowDown,\n ArrowUp,\n GripVertical,"
+          if marker not in source and " ArrowDown," not in source:
+              raise SystemExit("drag icon import marker not found")
+          if marker in source:
+              source = source.replace(marker, replacement, 1)
+          path.write_text(source)
+          PY
+
       - name: Format changed files
         shell: bash
         run: git diff --name-only -z | xargs -0 -r npx oxfmt --write --no-error-on-unmatched-pattern
