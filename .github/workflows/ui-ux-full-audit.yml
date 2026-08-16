@@ -1,0 +1,122 @@
+name: UI UX Full Audit
+
+on:
+  push:
+    branches:
+      - audit/ui-ux-pro-max-full-2026-08-16
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-ux-full-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      HUSKY: 0
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+      HANZIHOME_DATA_SOURCE: seed
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Pin npm
+        run: npm install --global npm@11.6.1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format transient audit files
+        run: npx oxfmt --write scripts/audit-ui-runtime.mjs .github/workflows/ui-ux-full-audit.yml
+
+      - name: Run full repository gate
+        id: repo-check
+        continue-on-error: true
+        run: npm run check
+
+      - name: Build fallback for runtime evidence
+        id: fallback-build
+        if: steps.repo-check.outcome != 'success'
+        continue-on-error: true
+        run: npm run build
+
+      - name: Start isolated production server
+        if: steps.repo-check.outcome == 'success' || steps.fallback-build.outcome == 'success'
+        run: |
+          mkdir -p /tmp/ui-audit
+          npm start > /tmp/chines-app.log 2>&1 &
+          echo $! > /tmp/chines-app.pid
+          for attempt in $(seq 1 60); do
+            if curl --silent --fail http://127.0.0.1:3000/reader > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/chines-app.log
+          exit 1
+
+      - name: Start headless Chrome
+        if: steps.repo-check.outcome == 'success' || steps.fallback-build.outcome == 'success'
+        run: |
+          google-chrome --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir=/tmp/ui-audit/chrome about:blank > /tmp/ui-audit/chrome.log 2>&1 &
+          echo $! > /tmp/ui-audit/chrome.pid
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:9222/json/version > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/ui-audit/chrome.log
+          exit 1
+
+      - name: Render and audit responsive matrix
+        id: runtime-audit
+        if: steps.repo-check.outcome == 'success' || steps.fallback-build.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/audit-ui-runtime.mjs
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-ux-full-audit-${{ github.sha }}
+          path: |
+            /tmp/ui-audit
+            /tmp/chines-app.log
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Stop audit processes
+        if: always()
+        run: |
+          if [ -f /tmp/ui-audit/chrome.pid ]; then
+            kill "$(cat /tmp/ui-audit/chrome.pid)" || true
+          fi
+          if [ -f /tmp/chines-app.pid ]; then
+            kill "$(cat /tmp/chines-app.pid)" || true
+          fi
+
+      - name: Enforce audit result
+        if: always()
+        run: |
+          echo "Repository gate: ${{ steps.repo-check.outcome }}"
+          echo "Fallback build: ${{ steps.fallback-build.outcome }}"
+          echo "Runtime audit: ${{ steps.runtime-audit.outcome }}"
+          if [ "${{ steps.repo-check.outcome }}" != "success" ]; then
+            exit 1
+          fi
+          if [ "${{ steps.runtime-audit.outcome }}" != "success" ]; then
+            exit 1
+          fi
