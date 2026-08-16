@@ -17,15 +17,19 @@ import {
 import { buildDictationDiff, summarizeDictationDiff } from "./dictation-comparison";
 import { createDictationAttempt, type DictationAttempt } from "./dictation-session";
 
+type DictationTokenTone = "success" | "warning" | "danger";
+
 function expectedText(entry: ListeningTranscriptEntry) {
  const lines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
  return lines.length > 0 ? lines.join("\n") : entry.transcript.full.zh;
 }
 
-function tokenTone(kind: ReturnType<typeof buildDictationDiff>[number]["kind"]) {
- if (kind === "match") return "success" as const;
- if (kind === "missing") return "warning" as const;
- return "danger" as const;
+function tokenTone(
+ kind: ReturnType<typeof buildDictationDiff>[number]["kind"],
+): DictationTokenTone {
+ if (kind === "match") return "success";
+ if (kind === "missing") return "warning";
+ return "danger";
 }
 
 export function StudioDictationEditor({
