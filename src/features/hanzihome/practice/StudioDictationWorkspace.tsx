@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { pinyin as getPinyin } from "pinyin-pro";
@@ -19,16 +19,14 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "@/features/hanzihome/listening/useHanziHomeListeningLesson";
-import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";
-import { ListeningTransport } from "@/features/hanzihome/listening/ListeningTransport";
 import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";
-import { DictationCards } from "@/features/hanzihome/listening/ListeningDictationWorkspace";
+import { StudioDictationPracticePanel } from "@/features/hanzihome/practice/StudioDictationPracticePanel";
+import type { StudioDictationScriptMode } from "@/features/hanzihome/practice/StudioDictationSettingsMenu";
 import {
  itemsForListeningSection,
  transcriptsForListeningSection,
@@ -107,7 +105,14 @@ export function StudioDictationWorkspace({
  const [checkedEntryIds, setCheckedEntryIds] = useState<Set<string>>(() => new Set());
  const [attemptSaveError, setAttemptSaveError] = useState("");
  const [loopCurrent, setLoopCurrent] = useState(false);
+ const [autoAdvance, setAutoAdvance] = useState(false);
+ const [scriptMode, setScriptMode] = useState<StudioDictationScriptMode>("hidden");
  const loopCurrentRef = useRef(false);
+ const autoAdvanceRef = useRef(false);
+ const { loadVoices } = tts;
+ useEffect(() => {
+  void loadVoices();
+ }, [loadVoices]);
  const ttsLibraryQuery = useQuery({
   queryKey: ["hanzihome", "tts", "library"],
   queryFn: async () => {
@@ -244,15 +249,13 @@ export function StudioDictationWorkspace({
   sourceType,
   transcriptEntries,
  ]);
- const passageText = sourceEntries
-  .map((entry) => entry.transcript.full.zh)
-  .filter(Boolean)
-  .join("\n");
-
  const resetPracticeFlow = () => {
   tts.stop();
   loopCurrentRef.current = false;
+  autoAdvanceRef.current = false;
   setLoopCurrent(false);
+  setAutoAdvance(false);
+  setScriptMode("hidden");
   setModeConfirmed(false);
   setPracticeStarted(false);
   setActiveEntryId("");
@@ -266,11 +269,6 @@ export function StudioDictationWorkspace({
   0,
   sourceEntries.findIndex((entry) => entry.id === effectiveActiveEntryId),
  );
- const transportSegments = sourceEntries.map((entry, index) => ({
-  id: entry.id,
-  label: String(index + 1),
-  title: entry.title,
- }));
  const selectTransportEntry = (index: number) => {
   const nextEntry = sourceEntries[index];
   if (!nextEntry) return;
@@ -289,7 +287,17 @@ export function StudioDictationWorkspace({
 
   const play = () => {
    tts.speakSequence(playbackTexts, () => {
-    if (loopCurrentRef.current) play();
+    if (loopCurrentRef.current) {
+     play();
+     return;
+    }
+    if (autoAdvanceRef.current && effectiveActiveEntryIndex < sourceEntries.length - 1) {
+     const nextIndex = effectiveActiveEntryIndex + 1;
+     const nextEntry = sourceEntries[nextIndex];
+     if (!nextEntry) return;
+     setActiveEntryId(nextEntry.id);
+     tts.speakSequence([dictationEntryText(nextEntry)]);
+    }
    });
   };
   play();
@@ -306,11 +314,23 @@ export function StudioDictationWorkspace({
   }
   playTransport();
  };
- const toggleTransportLoop = () => {
-  const next = !loopCurrentRef.current;
+ const changeTransportLoop = (next: boolean) => {
   loopCurrentRef.current = next;
   setLoopCurrent(next);
+  if (next) {
+   autoAdvanceRef.current = false;
+   setAutoAdvance(false);
+  }
  };
+ const changeTransportAutoAdvance = (next: boolean) => {
+  autoAdvanceRef.current = next;
+  setAutoAdvance(next);
+  if (next) {
+   loopCurrentRef.current = false;
+   setLoopCurrent(false);
+  }
+ };
+ const toggleTransportLoop = () => changeTransportLoop(!loopCurrentRef.current);
  useListeningHotkeys({
   enabled: practiceStarted,
   onPrevious: () => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1)),
@@ -420,11 +440,11 @@ export function StudioDictationWorkspace({
         setSourceType(value);
         resetPracticeFlow();
        }}
-       aria-label="Nguồn dictation"
+       aria-label="Nguồn nghe chép"
       />
       {sourceType === "lesson" ? (
        <>
-        <div className="grid gap-2" aria-label="Chọn bộ dictation">
+        <div className="grid gap-2" aria-label="Chọn bộ nghe chép">
          <Typography variant="caption" tone="muted" weight="black">
           Bộ bài
          </Typography>
@@ -450,7 +470,7 @@ export function StudioDictationWorkspace({
          </div>
         </div>
         {selectedBook && selectedBook.volumes.length > 1 ? (
-         <div className="flex flex-wrap gap-2" aria-label="Chọn tập dictation">
+         <div className="flex flex-wrap gap-2" aria-label="Chọn tập nghe chép">
           {selectedBook.volumes.map((volume) => (
            <Button
             key={volume.id}
@@ -542,7 +562,7 @@ export function StudioDictationWorkspace({
       {sourceType === "reader" ? (
        initialReaderResource === null ? (
         <Typography variant="bodySmall" tone="danger">
-         Không tìm thấy văn bản Reader trong static package.
+         Không tìm thấy bài đọc trong thư viện hiện tại.
         </Typography>
        ) : (
         <Typography variant="bodySmall" tone="muted">
@@ -553,7 +573,7 @@ export function StudioDictationWorkspace({
       {sourceType === "library" ? (
        ttsLibraryQuery.isPending ? (
         <Typography variant="bodySmall" tone="muted">
-         Đang tải thư viện TTS…
+         Đang tải thư viện giọng đọc…
         </Typography>
        ) : ttsLibraryQuery.isError ? (
         <Typography variant="bodySmall" tone="danger">
@@ -561,7 +581,7 @@ export function StudioDictationWorkspace({
         </Typography>
        ) : ttsLibraryQuery.data?.clips.length === 0 ? (
         <Typography variant="bodySmall" tone="muted">
-         Chưa có clip TTS. Hãy tạo clip trong TTS Studio trước.
+         Chưa có bản ghi giọng đọc. Hãy tạo bản ghi trước khi luyện.
         </Typography>
        ) : (
         <Select
@@ -571,8 +591,8 @@ export function StudioDictationWorkspace({
           resetPracticeFlow();
          }}
         >
-         <SelectTrigger aria-label="Chọn clip TTS">
-          <SelectValue placeholder="Chọn clip TTS" />
+         <SelectTrigger aria-label="Chọn bản ghi giọng đọc">
+          <SelectValue placeholder="Chọn bản ghi" />
          </SelectTrigger>
          <SelectContent>
           <SelectGroup>
@@ -596,7 +616,7 @@ export function StudioDictationWorkspace({
         rows={5}
         lang="zh-CN"
         placeholder="Dán nội dung tiếng Trung để luyện nghe chép…"
-        aria-label="Nội dung dictation tự dán"
+        aria-label="Nội dung nghe chép tự dán"
        />
       ) : null}
       {sourceEntries.length > 0 && !modeConfirmed && !practiceStarted ? (
@@ -714,95 +734,84 @@ export function StudioDictationWorkspace({
      </div>
     </Card>
    ) : null}
-   {sourceEntries.length > 0 ? (
-    practiceStarted ? (
-     <Card variant="section" padding="md" className="grid gap-3">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-       <div className="grid gap-1">
-        <Typography as="h2" variant="sectionTitle" weight="black" lang="zh-CN">
-         {initialReaderResource?.document.title_zh ??
-          selectedReaderResource?.document.title_zh ??
-          selectedSection?.titleZh ??
-          selectedClip?.title ??
-          "Nội dung tự chọn"}
-        </Typography>
-        <Typography variant="bodySmall" tone="muted">
-         {initialReaderResource?.document.title_vi ||
-          selectedReaderResource?.document.title_vi ||
-          selectedSection?.titleVi ||
-          "Nghe và chép lại"}
-        </Typography>
-       </div>
-       <div className="flex flex-wrap items-center gap-2">
-        <Badge>
-         {checkedEntryIds.size}/{sourceEntries.length} phần đã chấm
-        </Badge>
-        <Button type="button" size="sm" variant="outline" onClick={() => setPracticeStarted(false)}>
-         Đổi chế độ
-        </Button>
-        <Button type="button" size="sm" variant="outline" onClick={resetPracticeFlow}>
-         Đổi bài / nguồn
-        </Button>
-       </div>
-      </div>
-      {sourceType === "lesson" && bundleQuery.data && selectedSection ? (
-       <div className="flex flex-wrap gap-2" aria-label="Đề mục dictation">
-        {bundleQuery.data.sections.map((section) => (
-         <Button
-          key={section.id}
-          type="button"
-          size="sm"
-          variant={section.id === selectedSection.id ? "active" : "outline"}
-          onClick={() => {
-           setSelectedSectionId(section.id);
-           resetPracticeFlow();
-          }}
-         >
-          {section.titleZh}
-         </Button>
-        ))}
-       </div>
-      ) : null}
-      <ListeningTransport
-       activeIndex={effectiveActiveEntryIndex}
-       segments={transportSegments}
-       playbackMode={playbackMode}
-       loopCurrent={loopCurrent}
-       isLoading={tts.isLoading}
-       isPaused={tts.isPaused}
-       isPlaying={tts.isSpeaking}
-       onModeChange={setPlaybackMode}
-       onSelect={selectTransportEntry}
-       onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}
-       onPlayToggle={toggleTransportPlayback}
-       onRepeat={playTransport}
-       onNext={() =>
-        selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))
-       }
-       onToggleLoop={toggleTransportLoop}
-       onStop={tts.stop}
-      />
-      <MandarinTtsControls text={passageText} tts={tts} showPlaybackActions={false} />
-      {attemptSaveError ? (
-       <Typography variant="caption" tone="danger">
-        {attemptSaveError}
+   {sourceEntries.length > 0 && practiceStarted ? (
+    <div className="grid gap-4">
+     <section className="flex flex-col gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="grid min-w-0 gap-1">
+       <Typography variant="overline" tone="accent" weight="black">
+        Bước 3 · Luyện nghe chép
        </Typography>
-      ) : null}
-      {sourceEntries.length > 0 ? (
-       <DictationCards
-        key={`${sourceType}:${selectedSection?.id ?? effectiveSelectedClipId}:${selectedReaderDocumentId}:${selectedLessonId}`}
-        entries={sourceEntries}
-        displayMode={DEFAULT_LESSON_DISPLAY_MODE}
-        onSpeak={tts.speak}
-        onSpeakSequence={tts.speakSequence}
-        onAttempt={persistAttempt}
-        playbackMode={playbackMode}
-        passageText={passageText}
-        activeEntryId={effectiveActiveEntryId}
-       />
-      ) : null}
-     </Card>
-    ) : null
+       <Typography as="h2" variant="sectionTitle" weight="black" clamp="one">
+        {initialReaderResource?.document.title_zh ??
+         selectedReaderResource?.document.title_zh ??
+         selectedSection?.titleZh ??
+         selectedClip?.title ??
+         "Nội dung tự chọn"}
+       </Typography>
+       <Typography variant="bodySmall" tone="muted" clamp="one">
+        {playbackMode === "sentence"
+         ? "Theo câu"
+         : playbackMode === "paragraph"
+           ? "Theo đoạn"
+           : "Toàn bài"}{" "}
+        ·{" "}
+        {initialReaderResource?.document.title_vi ||
+         selectedReaderResource?.document.title_vi ||
+         selectedSection?.titleVi ||
+         selectedClip?.title ||
+         "Nguồn tự chọn"}
+       </Typography>
+      </div>
+      <div className="flex shrink-0 flex-wrap gap-2">
+       <Button type="button" variant="outline" onClick={() => setPracticeStarted(false)}>
+        Đổi chế độ
+       </Button>
+       <Button type="button" variant="outline" onClick={resetPracticeFlow}>
+        Đổi bài / nguồn
+       </Button>
+      </div>
+     </section>
+
+     <StudioDictationPracticePanel
+      activeIndex={effectiveActiveEntryIndex}
+      autoAdvance={autoAdvance}
+      checkedCount={checkedEntryIds.size}
+      entries={sourceEntries}
+      isLoading={tts.isLoading}
+      isPaused={tts.isPaused}
+      isSpeaking={tts.isSpeaking}
+      loopCurrent={loopCurrent}
+      rate={tts.rate}
+      scriptMode={scriptMode}
+      selectedVoiceName={tts.selectedVoiceName}
+      voices={tts.voices}
+      onAttempt={persistAttempt}
+      onAutoAdvanceChange={changeTransportAutoAdvance}
+      onLoopCurrentChange={changeTransportLoop}
+      onNext={() =>
+       selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))
+      }
+      onPlayToggle={toggleTransportPlayback}
+      onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}
+      onRateChange={(next) => {
+       tts.stop();
+       tts.setRate(next);
+      }}
+      onRepeat={playTransport}
+      onScriptModeChange={setScriptMode}
+      onSelect={selectTransportEntry}
+      onStop={tts.stop}
+      onVoiceChange={(next) => {
+       tts.stop();
+       tts.setSelectedVoiceName(next);
+      }}
+     />
+     {attemptSaveError ? (
+      <Typography variant="caption" tone="danger">
+       {attemptSaveError}
+      </Typography>
+     ) : null}
+    </div>
    ) : null}
   </div>
  );

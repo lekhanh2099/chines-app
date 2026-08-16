@@ -84,20 +84,6 @@ export function DictationCards({
     const score = isChecked ? (attempt?.score ?? null) : null;
     const diff = isChecked ? buildDictationDiff(expectedText, answer) : [];
     const showTranscript = revealed[entry.id] ?? isChecked;
-    const submitAttempt = () => {
-     if (!answer.trim()) return;
-     const startedAt = startedAtRef.current[entry.id];
-     const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
-     const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);
-     delete startedAtRef.current[entry.id];
-     setAttemptHistory((current) => ({
-      ...current,
-      [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
-     }));
-     setDirtyAnswers((current) => ({ ...current, [entry.id]: false }));
-     setRevealed((current) => ({ ...current, [entry.id]: true }));
-     onAttempt(nextAttempt);
-    };
 
     return (
      <Card key={entry.id} variant="default" padding="md" className="grid gap-3">
@@ -158,12 +144,6 @@ export function DictationCards({
        surface="field"
        aria-label={`Bài chép chính tả đoạn ${index + 1}`}
        placeholder="Nghe và chép lại bằng chữ Hán…"
-       onKeyDown={(event) => {
-        if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-         event.preventDefault();
-         submitAttempt();
-        }
-       }}
        onChange={(event) => {
         const value = event.target.value;
         startedAtRef.current[entry.id] ??= Date.now();
@@ -173,7 +153,24 @@ export function DictationCards({
       />
 
       <div className="flex flex-wrap items-center gap-2">
-       <Button type="button" size="toolbar" disabled={!answer.trim()} onClick={submitAttempt}>
+       <Button
+        type="button"
+        size="toolbar"
+        disabled={!answer.trim()}
+        onClick={() => {
+         const startedAt = startedAtRef.current[entry.id];
+         const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
+         const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);
+         delete startedAtRef.current[entry.id];
+         setAttemptHistory((current) => ({
+          ...current,
+          [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
+         }));
+         setDirtyAnswers((current) => ({ ...current, [entry.id]: false }));
+         setRevealed((current) => ({ ...current, [entry.id]: true }));
+         onAttempt(nextAttempt);
+        }}
+       >
         Kiểm tra
        </Button>
        <Button

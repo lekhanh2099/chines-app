@@ -68,8 +68,8 @@ export function ListeningShortcutLegend() {
        tone="muted"
        className="border-t border-border-default pt-2"
       >
-       Khi đang gõ, phím 1–6 vẫn là phím tắt như Hanzi Studio. Dùng Alt + Space/R/L nếu cần gọi
-       lệnh chữ khi con trỏ đang ở ô nhập.
+       Khi đang gõ, phím 1–6 vẫn là phím tắt như Hanzi Studio. Dùng Alt + Space/R/L nếu cần gọi lệnh
+       chữ khi con trỏ đang ở ô nhập.
       </Typography>
      </BasePopoverPopup>
     </BasePopoverPositioner>

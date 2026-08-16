@@ -121,7 +121,8 @@ export function StudioDictationEditor({
       Phần {index + 1}/{total}
      </Typography>
      <Typography variant="caption" tone="muted">
-      {Array.from(target).length} ký tự · điểm tốt nhất {Math.max(0, ...history.map((item) => item.score))}%
+      {Array.from(target).length} ký tự · điểm tốt nhất{" "}
+      {Math.max(0, ...history.map((item) => item.score))}%
      </Typography>
     </div>
     {isChecked ? (

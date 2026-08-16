@@ -110,7 +110,10 @@ export function StudioDictationPracticePanel({
    </header>
 
    {entries.length > 1 ? (
-    <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10" aria-label="Chọn phần nghe">
+    <div
+     className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10"
+     aria-label="Chọn phần nghe"
+    >
      {entries.map((candidate, index) => (
       <Button
        key={candidate.id}
@@ -139,7 +142,11 @@ export function StudioDictationPracticePanel({
      </div>
      <div className="flex flex-wrap items-center gap-2">
       <Button type="button" disabled={isLoading} onClick={onPlayToggle}>
-       {isSpeaking && !isPaused ? <Pause data-icon="inline-start" /> : <Play data-icon="inline-start" />}
+       {isSpeaking && !isPaused ? (
+        <Pause data-icon="inline-start" />
+       ) : (
+        <Play data-icon="inline-start" />
+       )}
        {isLoading
         ? "Đang chuẩn bị"
         : isSpeaking && !isPaused
