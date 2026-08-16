@@ -161,7 +161,9 @@ export function findBrokenNavigationTargets({ routes, targets }) {
 }
 
 export function runRouteIntegrityCheck() {
- const routeEntrypoints = listFiles(APP_ROOT, (file) => ROUTE_ENTRY_PATTERN.test(path.basename(file)));
+ const routeEntrypoints = listFiles(APP_ROOT, (file) =>
+  ROUTE_ENTRY_PATTERN.test(path.basename(file)),
+ );
  const routes = Array.from(new Set(routeEntrypoints.map(routeFromAppEntrypoint))).sort();
  const sourceFiles = listFiles(SOURCE_ROOT, (file) => SOURCE_EXTENSIONS.has(path.extname(file)));
  const targets = sourceFiles.flatMap(collectNavigationTargets);
@@ -173,7 +175,9 @@ export function runRouteIntegrityCheck() {
  if (broken.length > 0) {
   console.error("Internal route integrity check failed:");
   for (const entry of broken) console.error(`- ${entry.location} -> ${entry.target}`);
-  console.error(`\nKnown App Router endpoints: ${routes.length}; checked targets: ${uniqueTargets.length}.`);
+  console.error(
+   `\nKnown App Router endpoints: ${routes.length}; checked targets: ${uniqueTargets.length}.`,
+  );
   process.exitCode = 1;
   return;
  }
