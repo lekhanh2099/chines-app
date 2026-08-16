@@ -308,7 +308,7 @@ export function TtsStudioWorkspace() {
     onValueChange={setWorkspaceTab}
     aria-label="Không gian tạo giọng đọc"
    >
-    <TabsContent value="compose" className="pt-3">
+    <TabsContent value="compose" className="pt-4 sm:pt-5">
      {workspaceTab === "compose" ? (
       <>
        <Card variant="subtle" padding="md" className="grid gap-3">
@@ -629,7 +629,7 @@ export function TtsStudioWorkspace() {
      ) : null}
     </TabsContent>
 
-    <TabsContent value="library" className="pt-3">
+    <TabsContent value="library" className="pt-4 sm:pt-5">
      {workspaceTab === "library" ? (
       <Card variant="section" padding="md" className="grid gap-2">
        <Typography as="h3" variant="cardTitle" weight="black">

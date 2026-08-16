@@ -62,8 +62,14 @@ export function ListeningShortcutLegend() {
         </div>
        ))}
       </div>
-      <Typography as="p" variant="caption" tone="muted" className="border-t border-border-default pt-2">
-       Khi đang gõ trong ô trả lời, các phím số và Space vẫn nhập bình thường; dùng Ctrl/⌘ + Enter để kiểm tra.
+      <Typography
+       as="p"
+       variant="caption"
+       tone="muted"
+       className="border-t border-border-default pt-2"
+      >
+       Khi đang gõ trong ô trả lời, các phím số và Space vẫn nhập bình thường; dùng Ctrl/⌘ + Enter
+       để kiểm tra.
       </Typography>
      </BasePopoverPopup>
     </BasePopoverPositioner>

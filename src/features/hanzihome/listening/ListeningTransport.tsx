@@ -118,14 +118,19 @@ export function ListeningTransport({
     >
      <ChevronLeft />
     </Button>
-    <Button
-     type="button"
-     size="lg"
-     disabled={!canPlay || isLoading}
-     onClick={onPlayToggle}
-    >
-     {isPlaying && !isPaused ? <Pause data-icon="inline-start" /> : <Play data-icon="inline-start" />}
-     {isLoading ? "Đang chuẩn bị" : isPlaying && !isPaused ? "Tạm dừng" : isPaused ? "Tiếp tục" : "Nghe"}
+    <Button type="button" size="lg" disabled={!canPlay || isLoading} onClick={onPlayToggle}>
+     {isPlaying && !isPaused ? (
+      <Pause data-icon="inline-start" />
+     ) : (
+      <Play data-icon="inline-start" />
+     )}
+     {isLoading
+      ? "Đang chuẩn bị"
+      : isPlaying && !isPaused
+        ? "Tạm dừng"
+        : isPaused
+          ? "Tiếp tục"
+          : "Nghe"}
     </Button>
     <Button
      type="button"

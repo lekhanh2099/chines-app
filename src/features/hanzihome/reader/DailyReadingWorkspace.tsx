@@ -474,7 +474,7 @@ export function DailyReadingWorkspace({
       onValueChange={(tab) => setQuery({ document: resource.document.id, tab })}
       aria-label="Các phần của bài đọc hằng ngày"
      >
-      <TabsContent value={activeTab} className="pt-3">
+      <TabsContent value={activeTab} className="pt-4 sm:pt-5">
        {activeTab === "reader" ? (
         <ReaderDocumentStudy key={resource.document.id} resource={resource} stateOwner="daily" />
        ) : null}

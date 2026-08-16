@@ -39,6 +39,7 @@ type MandarinTtsControlsProps = {
  onHideScriptBeforeCheckChange?: (checked: boolean) => void;
  showTranslationAfterCheck?: boolean;
  onShowTranslationAfterCheckChange?: (checked: boolean) => void;
+ showPlaybackActions?: boolean;
 };
 
 export function MandarinTtsControls({
@@ -49,6 +50,7 @@ export function MandarinTtsControls({
  onHideScriptBeforeCheckChange,
  showTranslationAfterCheck,
  onShowTranslationAfterCheckChange,
+ showPlaybackActions = true,
 }: MandarinTtsControlsProps) {
  const hideScriptId = useId();
  const showTranslationId = useId();
@@ -120,36 +122,40 @@ export function MandarinTtsControls({
       </SelectContent>
      </Select>
 
-     <Button
-      type="button"
-      variant="surfaceCard"
-      size="toolbar"
-      disabled={!text.trim() || tts.isLoading}
-      onClick={() => (onPlayAll ? onPlayAll() : tts.speakSequence(text.split("\n")))}
-     >
-      <Play data-icon="inline-start" />
-      Phát cả phần
-     </Button>
-     <Button
-      type="button"
-      variant="ghost"
-      size="toolbar"
-      disabled={!tts.isSpeaking && !tts.isPaused}
-      onClick={tts.isPaused ? tts.resume : tts.pause}
-     >
-      {tts.isPaused ? <Play data-icon="inline-start" /> : <Pause data-icon="inline-start" />}
-      {tts.isPaused ? "Tiếp tục" : "Tạm dừng"}
-     </Button>
-     <Button
-      type="button"
-      variant="ghost"
-      size="toolbar"
-      disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
-      onClick={tts.stop}
-     >
-      <Square data-icon="inline-start" />
-      Dừng
-     </Button>
+     {showPlaybackActions ? (
+      <>
+       <Button
+        type="button"
+        variant="surfaceCard"
+        size="toolbar"
+        disabled={!text.trim() || tts.isLoading}
+        onClick={() => (onPlayAll ? onPlayAll() : tts.speakSequence(text.split("\n")))}
+       >
+        <Play data-icon="inline-start" />
+        Phát cả phần
+       </Button>
+       <Button
+        type="button"
+        variant="ghost"
+        size="toolbar"
+        disabled={!tts.isSpeaking && !tts.isPaused}
+        onClick={tts.isPaused ? tts.resume : tts.pause}
+       >
+        {tts.isPaused ? <Play data-icon="inline-start" /> : <Pause data-icon="inline-start" />}
+        {tts.isPaused ? "Tiếp tục" : "Tạm dừng"}
+       </Button>
+       <Button
+        type="button"
+        variant="ghost"
+        size="toolbar"
+        disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
+        onClick={tts.stop}
+       >
+        <Square data-icon="inline-start" />
+        Dừng
+       </Button>
+      </>
+     ) : null}
     </div>
    </div>
 

@@ -1,14 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import {
- resolveListeningShortcut,
- type ListeningShortcutAction,
-} from "./useListeningHotkeys";
+import { resolveListeningShortcut, type ListeningShortcutAction } from "./useListeningHotkeys";
 
-type ShortcutCase = [
- event: { code: string; key: string },
- action: ListeningShortcutAction,
-];
+type ShortcutCase = [event: { code: string; key: string }, action: ListeningShortcutAction];
 
 const shortcutCases: ShortcutCase[] = [
  [{ code: "Digit1", key: "1" }, "previous"],

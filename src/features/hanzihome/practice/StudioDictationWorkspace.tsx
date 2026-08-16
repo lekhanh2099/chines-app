@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { pinyin as getPinyin } from "pinyin-pro";
@@ -23,6 +23,8 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import { useHanziHomeListeningLesson } from "@/features/hanzihome/listening/useHanziHomeListeningLesson";
 import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";
+import { ListeningTransport } from "@/features/hanzihome/listening/ListeningTransport";
+import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";
@@ -39,6 +41,11 @@ import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 const READER_DICTATION_BOOK_ID = "hanzihome-reader-course";
 type DictationSource = "lesson" | "library" | "custom" | "reader";
+
+function dictationEntryText(entry: ListeningTranscriptEntry) {
+ const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);
+ return spokenLines.length > 0 ? spokenLines.join("\n") : entry.transcript.full.zh;
+}
 
 function dictationLessonLabel(lesson: HanziHomeLesson) {
  const textMatch = lesson.id.match(/-text-(\d+)$/u);
@@ -99,6 +106,8 @@ export function StudioDictationWorkspace({
  const [activeEntryId, setActiveEntryId] = useState("");
  const [checkedEntryIds, setCheckedEntryIds] = useState<Set<string>>(() => new Set());
  const [attemptSaveError, setAttemptSaveError] = useState("");
+ const [loopCurrent, setLoopCurrent] = useState(false);
+ const loopCurrentRef = useRef(false);
  const ttsLibraryQuery = useQuery({
   queryKey: ["hanzihome", "tts", "library"],
   queryFn: async () => {
@@ -241,6 +250,9 @@ export function StudioDictationWorkspace({
   .join("\n");
 
  const resetPracticeFlow = () => {
+  tts.stop();
+  loopCurrentRef.current = false;
+  setLoopCurrent(false);
   setModeConfirmed(false);
   setPracticeStarted(false);
   setActiveEntryId("");
@@ -250,6 +262,65 @@ export function StudioDictationWorkspace({
  const effectiveActiveEntryId = sourceEntries.some((entry) => entry.id === activeEntryId)
   ? activeEntryId
   : (sourceEntries[0]?.id ?? "");
+ const effectiveActiveEntryIndex = Math.max(
+  0,
+  sourceEntries.findIndex((entry) => entry.id === effectiveActiveEntryId),
+ );
+ const transportSegments = sourceEntries.map((entry, index) => ({
+  id: entry.id,
+  label: String(index + 1),
+  title: entry.title,
+ }));
+ const selectTransportEntry = (index: number) => {
+  const nextEntry = sourceEntries[index];
+  if (!nextEntry) return;
+  tts.stop();
+  setActiveEntryId(nextEntry.id);
+ };
+ const playTransport = () => {
+  const activeEntry = sourceEntries[effectiveActiveEntryIndex];
+  const playbackTexts =
+   playbackMode === "passage"
+    ? sourceEntries.map(dictationEntryText).filter(Boolean)
+    : activeEntry
+      ? [dictationEntryText(activeEntry)].filter(Boolean)
+      : [];
+  if (playbackTexts.length === 0) return;
+
+  const play = () => {
+   tts.speakSequence(playbackTexts, () => {
+    if (loopCurrentRef.current) play();
+   });
+  };
+  play();
+ };
+ const toggleTransportPlayback = () => {
+  if (tts.isLoading) return;
+  if (tts.isPaused) {
+   tts.resume();
+   return;
+  }
+  if (tts.isSpeaking) {
+   tts.pause();
+   return;
+  }
+  playTransport();
+ };
+ const toggleTransportLoop = () => {
+  const next = !loopCurrentRef.current;
+  loopCurrentRef.current = next;
+  setLoopCurrent(next);
+ };
+ useListeningHotkeys({
+  enabled: practiceStarted,
+  onPrevious: () => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1)),
+  onPlayToggle: toggleTransportPlayback,
+  onRepeat: playTransport,
+  onNext: () =>
+   selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1)),
+  onToggleLoop: toggleTransportLoop,
+  onStop: tts.stop,
+ });
 
  const persistAttempt = (attempt: DictationAttempt) => {
   setCheckedEntryIds((current) => new Set(current).add(attempt.entryId));
@@ -692,63 +763,26 @@ export function StudioDictationWorkspace({
         ))}
        </div>
       ) : null}
-      {sourceEntries.length > 1 ? (
-       <div className="grid gap-2" role="group" aria-label="Chọn phần dictation">
-        <Typography variant="caption" tone="muted" weight="black">
-         Chọn phần luyện
-        </Typography>
-        <div className="flex flex-wrap gap-2">
-         {sourceEntries.map((entry, index) => (
-          <Button
-           key={entry.id}
-           type="button"
-           size="sm"
-           variant={entry.id === effectiveActiveEntryId ? "active" : "outline"}
-           onClick={() => setActiveEntryId(entry.id)}
-          >
-           {index + 1}
-          </Button>
-         ))}
-        </div>
-       </div>
-      ) : null}
-      <MandarinTtsControls text={passageText} tts={tts} />
-      <div
-       className="flex flex-wrap items-center gap-2"
-       role="group"
-       aria-label="Chế độ phát dictation"
-      >
-       <Typography as="span" variant="caption" tone="muted" weight="black">
-        Phát lại:
-       </Typography>
-       <Button
-        type="button"
-        size="sm"
-        variant={playbackMode === "sentence" ? "active" : "outline"}
-        onClick={() => setPlaybackMode("sentence")}
-       >
-        Theo câu
-       </Button>
-       <Button
-        type="button"
-        size="sm"
-        variant={playbackMode === "paragraph" ? "active" : "outline"}
-        onClick={() => setPlaybackMode("paragraph")}
-       >
-        Theo đoạn
-       </Button>
-       <Button
-        type="button"
-        size="sm"
-        variant={playbackMode === "passage" ? "active" : "outline"}
-        onClick={() => setPlaybackMode("passage")}
-       >
-        Toàn bài
-       </Button>
-       <Button type="button" size="sm" variant="outline" asChild>
-        <a href={`/tts?text=${encodeURIComponent(passageText)}`}>Mở TTS Studio</a>
-       </Button>
-      </div>
+      <ListeningTransport
+       activeIndex={effectiveActiveEntryIndex}
+       segments={transportSegments}
+       playbackMode={playbackMode}
+       loopCurrent={loopCurrent}
+       isLoading={tts.isLoading}
+       isPaused={tts.isPaused}
+       isPlaying={tts.isSpeaking}
+       onModeChange={setPlaybackMode}
+       onSelect={selectTransportEntry}
+       onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}
+       onPlayToggle={toggleTransportPlayback}
+       onRepeat={playTransport}
+       onNext={() =>
+        selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))
+       }
+       onToggleLoop={toggleTransportLoop}
+       onStop={tts.stop}
+      />
+      <MandarinTtsControls text={passageText} tts={tts} showPlaybackActions={false} />
       {attemptSaveError ? (
        <Typography variant="caption" tone="danger">
         {attemptSaveError}

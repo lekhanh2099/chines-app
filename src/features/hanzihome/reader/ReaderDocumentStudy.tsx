@@ -1165,7 +1165,7 @@ export function ReaderDocumentStudy({
     onValueChange={setWorkspaceTab}
     aria-label="Các phần của bài Reader"
    >
-    <TabsContent value={workspaceTab}>
+    <TabsContent value={workspaceTab} className="pt-4 sm:pt-5">
      <div
       className={
        state.focusMode
@@ -1514,86 +1514,72 @@ export function ReaderDocumentStudy({
 
        {showReaderTab ? (
         <>
-         <Card variant="canvas" padding="md" className="grid gap-0">
-          {paragraphs.map((paragraph, index) => {
-           const analysis = analyses[index];
-           if (analysis === undefined) return null;
-           const isActive = index === activeIndex;
-           return (
-            <article
-             key={paragraph.id}
-             className="mx-auto grid w-full max-w-4xl gap-4 border-b border-border-default py-7 first:pt-4 last:border-b-0 last:pb-4 sm:px-4"
+         <Card variant="section" padding="md">
+          <article className="grid gap-4">
+           <div className="flex flex-wrap items-center justify-between gap-2">
+            <Typography
+             as="p"
+             variant="caption"
+             tone="muted"
+             weight="black"
+             tracking="medium"
+             transform="uppercase"
             >
-             <div className="flex flex-wrap items-center justify-between gap-2">
-              <Typography
-               as="p"
-               variant="caption"
-               tone="muted"
-               weight="black"
-               tracking="medium"
-               transform="uppercase"
-              >
-               Đoạn {paragraph.paragraph_order}
-              </Typography>
-              <Button
-               type="button"
-               size="icon-sm"
-               variant="ghost"
-               aria-label={`Nghe đoạn ${paragraph.paragraph_order}`}
-               title="Nghe đoạn này"
-               onClick={() => {
-                move(index);
-                playParagraphAt(index);
-               }}
-              >
-               <Volume2 aria-hidden="true" />
-              </Button>
-             </div>
-             <div
-              data-no-inspector
-              data-reader-selection-paragraph={paragraph.id}
-              onMouseUp={() => captureSelection(index, paragraph, analysis)}
-              onPointerUp={() => captureSelection(index, paragraph, analysis)}
-              onTouchEnd={() => captureSelection(index, paragraph, analysis)}
-             >
-              <ContextualReaderText
-               analysis={analysis}
-               displayMode={displayMode}
-               activeCharacterIndex={isActive && isActiveSpeech ? activeCharacterIndex : -1}
-               showPinyin={pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)}
-               pinyinPresentation={
-                pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)
-                 ? "ruby"
-                 : "paragraph"
-               }
-               sourcePinyin={paragraph.pinyin}
-               onGlyphClick={(start) => {
-                const characterIndex = Array.from(analysis.normalizedText.slice(0, start)).length;
-                move(index);
-                playParagraphAt(index, characterIndex);
-               }}
-              />
-             </div>
-             {pinyinMode === "full" ? (
-              <div className="grid gap-1 border-l-2 border-border-strong pl-3">
-               <Typography as="h3" variant="caption" tone="muted" weight="black">
-                Pinyin
-               </Typography>
-               <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
-                {analysis.sourcePinyinStatus === "aligned" && paragraph.pinyin
-                 ? paragraph.pinyin
-                 : formatContextualSpokenPinyin(analysis)}
-               </PinyinText>
-              </div>
-             ) : null}
-             {state.showMeaning && paragraph.vi ? (
-              <TranslationText variant="bodySmall" tone="muted" wrapping="preWrap">
-               {paragraph.vi}
-              </TranslationText>
-             ) : null}
-            </article>
-           );
-          })}
+             Đoạn {activeParagraph.paragraph_order}
+            </Typography>
+            <Button
+             type="button"
+             size="icon-sm"
+             variant="ghost"
+             aria-label={`Nghe đoạn ${activeParagraph.paragraph_order}`}
+             title="Nghe đoạn này"
+             onClick={() => playParagraphAt(activeIndex)}
+            >
+             <Volume2 aria-hidden="true" />
+            </Button>
+           </div>
+           <div
+            data-no-inspector
+            data-reader-selection-paragraph={activeParagraph.id}
+            onMouseUp={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}
+            onPointerUp={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}
+            onTouchEnd={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}
+           >
+            <ContextualReaderText
+             analysis={activeAnalysis}
+             displayMode={displayMode}
+             activeCharacterIndex={isActiveSpeech ? activeCharacterIndex : -1}
+             showPinyin={pinyinMode === "contextual" || pinyinMode === "focus"}
+             pinyinPresentation={
+              pinyinMode === "contextual" || pinyinMode === "focus" ? "ruby" : "paragraph"
+             }
+             sourcePinyin={activeParagraph.pinyin}
+             onGlyphClick={(start) => {
+              const characterIndex = Array.from(
+               activeAnalysis.normalizedText.slice(0, start),
+              ).length;
+              playParagraphAt(activeIndex, characterIndex);
+             }}
+            />
+           </div>
+           {pinyinMode === "full" ? (
+            <div className="grid gap-1 border-l-2 border-border-strong pl-3">
+             <Typography as="h3" variant="caption" tone="muted" weight="black">
+              Pinyin
+             </Typography>
+             <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
+              {activeAnalysis.sourcePinyinStatus === "aligned" && activeParagraph.pinyin
+               ? activeParagraph.pinyin
+               : formatContextualSpokenPinyin(activeAnalysis)}
+             </PinyinText>
+            </div>
+           ) : null}
+           {state.showMeaning && activeParagraph.vi ? (
+            <TranslationText variant="bodySmall" tone="muted" wrapping="preWrap">
+             {activeParagraph.vi}
+            </TranslationText>
+           ) : null}
+          </article>
          </Card>
 
          {state.shadowing ? (
