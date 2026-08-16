@@ -185,7 +185,7 @@ export function TabsContent({
 
  return (
   <div
-   id={`${context.baseId}-panel-${index}`
+   id={`${context.baseId}-panel-${index}`}
    role="tabpanel"
    aria-labelledby={`${context.baseId}-tab-${index}`}
    tabIndex={0}
