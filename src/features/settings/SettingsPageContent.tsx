@@ -69,7 +69,7 @@ type SettingsPageContentProps = {
 };
 
 const focusModeEnabledMessage =
- "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.";
+ "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.";
 
 export function SettingsPageContent({ sectionValue, readingSettings }: SettingsPageContentProps) {
  const section = resolveSettingsSection(sectionValue);
@@ -133,7 +133,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      geminiModel: localSettings.geminiModel,
     });
     setHasLoaded(true);
-    toast.info("Đang dùng AI prompt settings lưu cục bộ trên trình duyệt");
+    toast.info("Đang dùng cài đặt lời nhắc AI lưu cục bộ trên trình duyệt");
    } finally {
     if (isMounted) setIsLoading(false);
    }
@@ -179,7 +179,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     sentenceLookupPrompt: synced.sentenceLookupPrompt,
     geminiModel: synced.geminiModel,
    });
-   toast.success("Đã lưu AI prompt settings");
+   toast.success("Đã lưu cài đặt lời nhắc AI");
   } catch {
    const fallback = loadClientAiPromptSettings();
    setWordLookupPrompt(fallback.wordLookupPrompt);
@@ -190,7 +190,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     sentenceLookupPrompt: fallback.sentenceLookupPrompt,
     geminiModel: fallback.geminiModel,
    });
-   toast.success("Đã lưu AI prompt settings trên trình duyệt này");
+   toast.success("Đã lưu cài đặt lời nhắc AI trên trình duyệt này");
   } finally {
    setIsSaving(false);
   }
@@ -240,7 +240,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         <SettingsToggleRow
          id="global-dictionary-lookup"
          label="Tra từ mặc định"
-         description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
+         description="Áp dụng trên các trang học và từ vựng; Ghi chú có tuỳ chọn riêng bên dưới."
          checked={globalLookupEnabled}
          onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
          tone="accent"
@@ -249,7 +249,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         <SettingsToggleRow
          id="notes-dictionary-lookup"
          label="Tra từ trong Ghi chú"
-         description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
+         description="Giữ tuỳ chọn riêng cho Ghi chú, không ảnh hưởng các trang học khác."
          checked={notesLookupEnabled}
          onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
          tone="accent"
@@ -257,8 +257,8 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         <Separator />
         <SettingsToggleRow
          id="focus-mode"
-         label="Focus mode"
-         description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
+         label="Chế độ tập trung"
+         description="Giữ bạn ở bài hiện tại cho đến khi tắt lại từ menu Tuỳ chọn hoặc trang này."
          checked={focusModeEnabled}
          onCheckedChange={(enabled) => {
           if (enabled && !focusModeEnabled) {
@@ -281,7 +281,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
        <div className="grid min-w-0 max-w-3xl gap-2">
         <Badge variant="accent" size="md">
          <Bot />
-         AI Settings
+         Cài đặt AI
         </Badge>
         <Typography as="h2" variant="sectionTitle" weight="bold">
          Cài đặt tra cứu AI
@@ -308,7 +308,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          disabled={isLoading || isSaving}
         >
          <RefreshCcw data-icon="inline-start" />
-         Reset mặc định
+         Đặt lại mặc định
         </Button>
         <Button
          onClick={handleSave}

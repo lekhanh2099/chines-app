@@ -178,7 +178,7 @@ export function ReaderCollectionWorkspace({
     readerHskVolumeLabels.get(id) ??
     metadataText(document, "volume_label_vi") ??
     metadataText(document, "volume_label_zh") ??
-    "HSK Reader";
+    "Bài đọc HSK";
    const group = groups.get(id) ?? { id, title, subtitle: "", description: "", documents: [] };
    group.documents.push(document);
    groups.set(id, group);
@@ -279,7 +279,7 @@ export function ReaderCollectionWorkspace({
      ) : null}
      {documents.length === 0 ? (
       <Typography variant="bodySmall" tone="muted">
-       Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.
+       Chưa có bài đọc trong thư viện hiện tại.
       </Typography>
      ) : (
       <>
@@ -375,14 +375,14 @@ export function ReaderCollectionWorkspace({
    {!showDocumentCatalog && resource === null && !invalidInitialSlug ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="danger">
-      Không tìm thấy tài liệu Reader trong static package.
+      Không tìm thấy tài liệu trong thư viện bài đọc.
      </Typography>
     </Card>
    ) : null}
    {invalidInitialSlug ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="danger">
-      Không tìm thấy bài đọc trong danh mục static Reader.
+      Không tìm thấy bài đọc trong danh mục hiện tại.
      </Typography>
     </Card>
    ) : null}

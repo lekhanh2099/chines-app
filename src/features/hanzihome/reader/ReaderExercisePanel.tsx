@@ -196,7 +196,8 @@ export function ReaderExercisePanel({
 
            {saved?.completed && saved.score !== 1 && item.payload.answerVi ? (
             <Typography variant="caption" tone="muted">
-             Đáp án tham chiếu: {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
+             Đáp án tham chiếu:{" "}
+             {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
             </Typography>
            ) : null}
           </article>

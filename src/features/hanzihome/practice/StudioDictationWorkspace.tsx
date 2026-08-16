@@ -104,7 +104,7 @@ export function StudioDictationWorkspace({
   queryFn: async () => {
    const response = await fetch("/api/hanzihome/tts/library", { cache: "no-store" });
    const payload = await response.json().catch(() => null);
-   if (!response.ok) throw new Error("Không tải được thư viện TTS.");
+   if (!response.ok) throw new Error("Không tải được thư viện giọng đọc.");
    return ttsLibraryResponseSchema.parse(payload);
   },
   enabled: sourceType === "library",
@@ -293,11 +293,11 @@ export function StudioDictationWorkspace({
 
  const sourceOptions: SegmentedControlItem<DictationSource>[] = [
   { key: "lesson", label: "Bài học / bài đọc HSK" },
-  { key: "library", label: "Từ thư viện TTS" },
+  { key: "library", label: "Từ thư viện giọng đọc" },
   { key: "custom", label: "Dán nội dung" },
  ];
  if (requestedDocumentId.length > 0) {
-  sourceOptions.unshift({ key: "reader", label: "Reader hiện tại" });
+  sourceOptions.unshift({ key: "reader", label: "Bài đọc hiện tại" });
  }
 
  return (
@@ -307,8 +307,8 @@ export function StudioDictationWorkspace({
      Phòng chép chính tả
     </Typography>
     <Typography as="p" variant="body" tone="muted">
-     Chọn bài HSK 3–6 theo giáo trình, tập và bài; hoặc dùng bản TTS đã lưu hay nội dung tự dán để
-     luyện nghe chép chính tả.
+     Chọn bài HSK 3–6 theo giáo trình, tập và bài; hoặc dùng bản giọng đọc đã lưu hay nội dung tự
+     dán để luyện nghe chép chính tả.
     </Typography>
    </div>
 
@@ -338,7 +338,7 @@ export function StudioDictationWorkspace({
     </Typography>
     {initialDictationLessons.length === 0 ? (
      <Typography variant="bodySmall" tone="muted">
-      Chưa có nội dung dictation được import.
+      Chưa có nội dung chép chính tả trong thư viện.
      </Typography>
     ) : (
      <div className="grid gap-3">

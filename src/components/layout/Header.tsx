@@ -258,7 +258,7 @@ function HeaderUtilityArea({
       onCheckedChange={(enabled) => {
        if (enabled && !focusModeEnabled) {
         toast.warning(
-         "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+         "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
          { duration: 5200 },
         );
        }

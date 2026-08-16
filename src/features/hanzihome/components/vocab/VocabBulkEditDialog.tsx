@@ -357,7 +357,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
    });
    await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.vocabChildManagerRoot });
   } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Selection đã thay đổi. Hãy preview lại.");
+   toast.error(
+    error instanceof Error ? error.message : "Danh sách đã thay đổi. Hãy xem trước lại.",
+   );
   } finally {
    setBusy(false);
   }
@@ -390,12 +392,12 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
     <DialogHeader>
      <DialogTitle>Quản lý từ vựng</DialogTitle>
      <DialogDescription>
-      Sửa trường lõi và quản lý riêng section, ví dụ. Không còn editor JSON gây hiểu nhầm phạm vi
-      lưu.
+      Sửa thông tin chính và quản lý riêng nội dung chi tiết, ví dụ.
      </DialogDescription>
     </DialogHeader>
     <DialogBody className="grid max-h-[calc(92dvh-11rem)] gap-4 overflow-y-auto">
      <Tabs
+      variant="segmented"
       value={tab}
       onValueChange={(value) => {
        setTab(value);
@@ -404,7 +406,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
       }}
       items={[
        { key: "vocab", label: "Từ vựng", icon: BookOpen },
-       { key: "sections", label: "Sections", icon: Layers3 },
+       { key: "sections", label: "Nội dung chi tiết", icon: Layers3 },
        { key: "examples", label: "Ví dụ", icon: BookOpen },
       ]}
      />
@@ -445,7 +447,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
         </Label>
         {tab === "sections" ? (
          <Label variant="label" weight="bold" className="grid gap-1">
-          Loại section
+          Loại nội dung
           <Select
            value={sectionFilter}
            onValueChange={(value) => {
@@ -588,7 +590,9 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
          </StudyInstructionText>
         ) : childListQuery.isError ? (
          <div className="flex items-center justify-between gap-3 rounded-xl border border-danger/30 p-4">
-          <StudyInstructionText>Không thể tải danh sách section/ví dụ.</StudyInstructionText>
+          <StudyInstructionText>
+           Không thể tải danh sách nội dung chi tiết và ví dụ.
+          </StudyInstructionText>
           <Button type="button" variant="outline" onClick={() => childListQuery.refetch()}>
            Thử lại
           </Button>
@@ -713,7 +717,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
      </DialogHeader>
      <DialogBody className="grid gap-2">
       <StudyInstructionText>
-       <strong>Scope:</strong> {scope} · {scopeId}
+       <strong>Phạm vi:</strong> {scope} · {scopeId}
       </StudyInstructionText>
       <StudyInstructionText>
        <strong>Số dòng:</strong> {preview?.rowCount ?? 0}
@@ -722,7 +726,7 @@ export function VocabBulkEditDialog<TItem extends EditableItem>({
        <strong>Số từ bị ảnh hưởng:</strong> {preview?.wordCount ?? 0}
       </StudyInstructionText>
       <StudyInstructionText>
-       <strong>Ownership:</strong> {JSON.stringify(preview?.ownership ?? {})}
+       <strong>Quyền sở hữu:</strong> {JSON.stringify(preview?.ownership ?? {})}
       </StudyInstructionText>
       {pendingOperation === "purge" ? (
        <Label variant="label" weight="bold" className="grid gap-1">
