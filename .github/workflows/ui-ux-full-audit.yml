@@ -62,17 +62,15 @@ jobs:
               raise SystemExit("target-density audit marker not found")
           source = source.replace(old_targets, new_targets, 1)
 
-          old_opened = '''    controlsExists: Boolean(controls && document.getElementById(controls)),
-                activeDescendant: input.getAttribute("aria-activedescendant"),'''
-          new_opened = '''    controlsExists: Boolean(controls && document.getElementById(controls)),
-                optionCount: controls ? (document.getElementById(controls)?.querySelectorAll('[role="option"]').length ?? 0) : 0,
-                activeDescendant: input.getAttribute("aria-activedescendant"),'''
-          if old_opened not in source:
-              raise SystemExit("combobox option-count audit marker not found")
-          source = source.replace(old_opened, new_opened, 1)
+          old_active = '    activeDescendant: input.getAttribute("aria-activedescendant"),'
+          new_active = '''    optionCount: controls ? (document.getElementById(controls)?.querySelectorAll('[role="option"]').length ?? 0) : 0,
+            activeDescendant: input.getAttribute("aria-activedescendant"),'''
+          if old_active not in source:
+              raise SystemExit("combobox active-descendant audit marker not found")
+          source = source.replace(old_active, new_active, 1)
 
-          old_guard = '''  if (globalSearch.afterArrow) {'''
-          new_guard = '''  if ((globalSearch.opened?.optionCount ?? 0) > 0 && globalSearch.afterArrow) {'''
+          old_guard = '  if (globalSearch.afterArrow) {'
+          new_guard = '  if ((globalSearch.opened?.optionCount ?? 0) > 0 && globalSearch.afterArrow) {'
           if old_guard not in source:
               raise SystemExit("combobox active-descendant guard marker not found")
           source = source.replace(old_guard, new_guard, 1)
