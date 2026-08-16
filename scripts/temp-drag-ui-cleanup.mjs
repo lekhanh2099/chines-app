@@ -57,6 +57,10 @@ function cleanupDraggableBlockMenu() {
   '   // Do not change the active block while interacting with the local controls.\n   if (menuRef.current?.contains(target)) return;\n',
  );
  source = source.replace(
+  '   } else if (!showBlockMenu) {\n    hideMenu();\n   }',
+  '   } else if (!insertOpen) {\n    hideMenu();\n   }',
+ );
+ source = source.replace(
   '  const onMouseLeave = () => {\n   if (!showBlockMenu) hideMenu();\n  };',
   '  const onMouseLeave = () => {\n   if (!insertOpen) hideMenu();\n  };',
  );
