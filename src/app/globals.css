@@ -66,6 +66,13 @@
 :root,
 [data-theme="light"] {
  color-scheme: light;
+ --font-reading-noto-serif:
+  "HanziHome Kaiti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+ --font-reading-noto-sans:
+  ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
+  "Noto Sans CJK SC", sans-serif;
+ --font-reading-ma-shan: "Popular Xingkai", "HanziHome Kaiti", "Kaiti SC", "KaiTi", serif;
+ --font-reading-xiaowei: "HanziHome Kaiti", "Kaiti SC", "KaiTi", serif;
  --theme-background: oklch(0.978 0.014 255);
  --theme-surface: oklch(0.998 0.003 255);
  --theme-surface-raised: oklch(0.992 0.007 255);
