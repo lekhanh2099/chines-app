@@ -197,6 +197,10 @@ async function navigate(client, route, viewport, theme = "light", reducedMotion 
   screenWidth: viewport.width,
   screenHeight: viewport.height,
  });
+ await client.send("Emulation.setTouchEmulationEnabled", {
+  enabled: viewport.width <= 820,
+  maxTouchPoints: viewport.width <= 820 ? 5 : 1,
+ });
  await client.send("Emulation.setEmulatedMedia", {
   features: [
    { name: "prefers-color-scheme", value: theme },
@@ -238,9 +242,13 @@ const AUDIT_EXPRESSION = `(() => {
   .map((element) => ({ child: textOf(element), parent: textOf(element.parentElement?.closest(selector) ?? element) }))
   .slice(0, 20);
  const targetFailures = interactive.flatMap((element) => {
-  if (element.getAttribute("data-slot") !== "button") return [];
+  const slot = element.getAttribute("data-slot") || "";
+  if (slot !== "button" && slot !== "chip") return [];
   const size = element.getAttribute("data-size") || "";
+  const coarsePointer = matchMedia("(pointer: coarse)").matches;
   let threshold = 0;
+  if (slot === "chip") threshold = coarsePointer ? 44 : 0;
+  else if (size === "compact") threshold = coarsePointer ? 44 : 32;
   if (size === "menu") threshold = 40;
   else if (["toolbar", "icon-toolbar", "tab"].includes(size) || element.closest('[role="toolbar"],[role="tablist"]')) threshold = 36;
   else if (["touch", "sm", "lg", "icon", "icon-sm", "icon-lg", "icon-round"].includes(size)) threshold = 44;
@@ -381,7 +389,9 @@ async function auditState(client, route, viewport, theme = "light", reducedMotio
  if (result.outOfBounds.length)
   warnings.push(`${context}: ${result.outOfBounds.length} visible elements cross viewport bounds`);
  if (contrastCandidates.length)
-  warnings.push(`${context}: ${contrastCandidates.length} simple rendered contrast candidates below AA`);
+  warnings.push(
+   `${context}: ${contrastCandidates.length} simple rendered contrast candidates below AA`,
+  );
  if ((result.metrics?.cls ?? 0) > 0.1)
   warnings.push(`${context}: observed CLS ${Number(result.metrics.cls).toFixed(3)}`);
  if ((result.metrics?.longTaskMax ?? 0) > 200)
@@ -603,8 +613,7 @@ async function main() {
    if (!globalSearch.afterArrow.focusStayedOnCombobox)
     failures.push(`${context}: DOM focus left combobox during active-descendant navigation`);
   }
-  if (globalSearch.remaining !== 0)
-   failures.push(`${context}: Escape did not close search dialog`);
+  if (globalSearch.remaining !== 0) failures.push(`${context}: Escape did not close search dialog`);
 
   const dictationChoices = await dictationChoiceCheck(client);
   if (!dictationChoices.found) failures.push(`${context}: source choice group missing`);
@@ -624,7 +633,9 @@ async function main() {
   if (ttsTargets.found) {
    for (const target of ttsTargets.targets) {
     if (target.width < 44 || target.height < 44)
-     failures.push(`${context}: ${target.label} is ${target.width}x${target.height}, expected 44x44 minimum`);
+     failures.push(
+      `${context}: ${target.label} is ${target.width}x${target.height}, expected 44x44 minimum`,
+     );
    }
   }
 

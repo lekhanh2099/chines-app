@@ -28,6 +28,8 @@ import {
 } from "@lexical/list";
 import { INSERT_TABLE_COMMAND } from "@lexical/table";
 import {
+ ArrowDown,
+ ArrowUp,
  GripVertical,
  Plus,
  AlignLeft,
@@ -266,6 +268,23 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  );
 
  // Drag start: resolve the hovered block to a Lexical node key
+ const moveHoveredBlock = useCallback(
+  (direction: "up" | "down") => {
+   const blockElement = hoveredBlockRef.current;
+   if (!blockElement) return;
+
+   editor.update(() => {
+    const node = $getNearestNodeFromDOMNode(blockElement);
+    if (!node) return;
+    const sibling = direction === "up" ? node.getPreviousSibling() : node.getNextSibling();
+    if (!sibling) return;
+    if (direction === "up") sibling.insertBefore(node);
+    else sibling.insertAfter(node);
+   });
+  },
+  [editor],
+ );
+
  const handleDragStart = useCallback(
   (e: React.DragEvent) => {
    const block = hoveredBlockRef.current;
@@ -404,6 +423,28 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
      title="Click to add below"
     >
      <Plus className="w-3.5 h-3.5" />
+    </Button>
+    <Button
+     type="button"
+     variant="ghost"
+     size="icon-toolbar"
+     aria-label="Di chuyển khối lên"
+     title="Di chuyển khối lên"
+     onMouseDown={(event) => event.preventDefault()}
+     onClick={() => moveHoveredBlock("up")}
+    >
+     <ArrowUp />
+    </Button>
+    <Button
+     type="button"
+     variant="ghost"
+     size="icon-toolbar"
+     aria-label="Di chuyển khối xuống"
+     title="Di chuyển khối xuống"
+     onMouseDown={(event) => event.preventDefault()}
+     onClick={() => moveHoveredBlock("down")}
+    >
+     <ArrowDown />
     </Button>
     <div
      className="draggable-block-handle"

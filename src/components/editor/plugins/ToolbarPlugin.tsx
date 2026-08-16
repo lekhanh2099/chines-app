@@ -2,7 +2,26 @@
 
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/dialog";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuRadioGroup,
+ DropdownMenuRadioItem,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 /**
  * ToolbarPlugin — Playground-style toolbar for the Lexical editor.
  *
@@ -16,8 +35,7 @@ import { Input } from "@/components/ui/input";
  *  - Text alignment (Left, Center, Right, Justify)
  *  - Global Pinyin toggle
  */
-import { Typography } from "@/components/ui/typography";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
  $getSelection,
  $isRangeSelection,
@@ -84,9 +102,8 @@ import {
  Outdent,
  Table,
  SeparatorHorizontal,
- X,
 } from "lucide-react";
-import { FONT_FAMILIES, QUICK_HANZI_FONT_FAMILIES } from "../toolbar-options";
+import { FONT_FAMILIES } from "../toolbar-options";
 
 /* ── Constants ── */
 
@@ -142,28 +159,24 @@ function ToolbarButton({
  onClick,
  title,
  children,
- className = "",
 }: {
  active?: boolean;
  disabled?: boolean;
  onClick: () => void;
  title: string;
  children: React.ReactNode;
- className?: string;
 }) {
  return (
   <Button
    type="button"
-   variant="ghost"
+   variant={active ? "active" : "ghost"}
    size="icon-toolbar"
    disabled={disabled}
    onMouseDown={pf}
    onClick={onClick}
    title={title}
    aria-label={title}
-   className={["toolbar-item", active ? "active" : "", disabled ? "disabled" : "", className]
-    .filter(Boolean)
-    .join(" ")}
+   aria-pressed={active === undefined ? undefined : active}
   >
    {children}
   </Button>
@@ -171,7 +184,7 @@ function ToolbarButton({
 }
 
 function Divider() {
- return <div className="toolbar-divider" />;
+ return <Separator orientation="vertical" />;
 }
 
 /* ── Dropdown ── */
@@ -189,40 +202,24 @@ function Dropdown({
  disabled?: boolean;
  children: React.ReactNode;
 }) {
- const [open, setOpen] = useState(false);
- const ref = useRef<HTMLDivElement>(null);
-
- useEffect(() => {
-  if (!open) return;
-  const close = (e: MouseEvent) => {
-   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
-  };
-  document.addEventListener("mousedown", close);
-  return () => document.removeEventListener("mousedown", close);
- }, [open]);
-
  return (
-  <div ref={ref} className="toolbar-dropdown">
-   <Button
-    type="button"
-    disabled={disabled}
-    onMouseDown={pf}
-    onClick={() => setOpen(!open)}
-    variant="ghost"
-    size="toolbar"
-    className="toolbar-item toolbar-dropdown-trigger"
-    title={buttonTitle || buttonLabel}
-   >
-    {buttonIcon}
-    <span className="toolbar-dropdown-label">{buttonLabel}</span>
-    <ChevronDown className="toolbar-chevron" />
-   </Button>
-   {open && (
-    <div className="toolbar-dropdown-panel" onMouseDown={pf} onClick={() => setOpen(false)}>
-     {children}
-    </div>
-   )}
-  </div>
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     disabled={disabled}
+     onMouseDown={pf}
+     variant="ghost"
+     size="toolbar"
+     title={buttonTitle || buttonLabel}
+    >
+     {buttonIcon}
+     <span className="max-w-24 truncate">{buttonLabel}</span>
+     <ChevronDown data-icon="inline-end" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start">{children}</DropdownMenuContent>
+  </DropdownMenu>
  );
 }
 
@@ -238,17 +235,9 @@ function DropdownItem({
  style?: React.CSSProperties;
 }) {
  return (
-  <Button
-   type="button"
-   variant="menu"
-   size="menu"
-   onMouseDown={pf}
-   onClick={onClick}
-   style={style}
-   className={`toolbar-dropdown-item ${active ? "active" : ""}`}
-  >
+  <DropdownMenuItem tone={active ? "accent" : "default"} onSelect={onClick} style={style}>
    {children}
-  </Button>
+  </DropdownMenuItem>
  );
 }
 
@@ -281,11 +270,11 @@ function FontSizeControl({
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) - 1))}
     variant="ghost"
-    size="compact"
-    className="toolbar-font-size-btn"
-    title="Decrease font size"
+    size="icon-toolbar"
+    aria-label="Giảm cỡ chữ"
+    title="Giảm cỡ chữ"
    >
-    <Minus className="w-3 h-3" />
+    <Minus />
    </Button>
    {inputVal}
    {/* <Input
@@ -311,11 +300,11 @@ function FontSizeControl({
     onMouseDown={pf}
     onClick={() => applySize(String(parseInt(inputVal) + 1))}
     variant="ghost"
-    size="compact"
-    className="toolbar-font-size-btn"
-    title="Increase font size"
+    size="icon-toolbar"
+    aria-label="Tăng cỡ chữ"
+    title="Tăng cỡ chữ"
    >
-    <Plus className="w-3 h-3" />
+    <Plus />
    </Button>
   </div>
  );
@@ -338,70 +327,49 @@ function ColorPicker({
  label: string;
  disabled?: boolean;
 }) {
- const [open, setOpen] = useState(false);
- const ref = useRef<HTMLDivElement>(null);
-
- useEffect(() => {
-  if (!open) return;
-  const close = (e: MouseEvent) => {
-   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
-  };
-  document.addEventListener("mousedown", close);
-  return () => document.removeEventListener("mousedown", close);
- }, [open]);
-
  return (
-  <div ref={ref} className="toolbar-dropdown">
-   <Button
-    type="button"
-    disabled={disabled}
-    onMouseDown={pf}
-    onClick={() => setOpen(!open)}
-    variant="ghost"
-    size="icon-toolbar"
-    className="toolbar-item toolbar-color-trigger"
-    title={label}
-   >
-    <span className="toolbar-color-icon">
-     {icon}
-     <span
-      className="toolbar-color-indicator"
-      style={{
-       backgroundColor:
-        activeColor || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
-       border: !activeColor ? "1px solid var(--border)" : "none",
-      }}
-     />
-    </span>
-    <ChevronDown className="toolbar-chevron" />
-   </Button>
-   {open && (
-    <div className="toolbar-dropdown-panel toolbar-color-panel" onMouseDown={pf}>
-     <div className="toolbar-color-grid">
-      {colors.map((c) => (
-       <Button
-        key={c.value || "default"}
-        type="button"
-        onMouseDown={pf}
-        onClick={() => {
-         onSelect(c.value);
-         setOpen(false);
-        }}
-        size="compact"
-        title={c.label}
-        className={`toolbar-color-swatch ${activeColor === c.value ? "active" : ""}`}
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     disabled={disabled}
+     onMouseDown={pf}
+     variant="ghost"
+     size="icon-toolbar"
+     title={label}
+     aria-label={label}
+    >
+     <span className="grid gap-0.5">
+      {icon}
+      <span
+       aria-hidden="true"
+       className="h-1 w-4 rounded-full border border-border-default"
+       style={{
+        backgroundColor:
+         activeColor || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
+       }}
+      />
+     </span>
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="start">
+    <DropdownMenuRadioGroup value={activeColor} onValueChange={onSelect}>
+     {colors.map((color) => (
+      <DropdownMenuRadioItem key={color.value || "default"} value={color.value}>
+       <span
+        aria-hidden="true"
+        className="size-4 rounded-full border border-border-default"
         style={{
          backgroundColor:
-          c.value || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
+          color.value || (label === "Text Color" ? "var(--text-primary)" : "transparent"),
         }}
-       >
-        {!c.value && <span className="toolbar-color-reset">✕</span>}
-       </Button>
-      ))}
-     </div>
-    </div>
-   )}
-  </div>
+       />
+       {color.label}
+      </DropdownMenuRadioItem>
+     ))}
+    </DropdownMenuRadioGroup>
+   </DropdownMenuContent>
+  </DropdownMenu>
  );
 }
 
@@ -445,147 +413,120 @@ function formatCode(editor: LexicalEditor) {
  });
 }
 
-/* ── Insert Table Dialog (Playground-style) ── */
+/* ── Insert Table Dialog ── */
 
 function InsertTableDialog({ editor, onClose }: { editor: LexicalEditor; onClose: () => void }) {
  const [rows, setRows] = useState("5");
  const [columns, setColumns] = useState("5");
 
  const handleConfirm = () => {
-  const r = parseInt(rows, 10);
-  const c = parseInt(columns, 10);
-  if (isNaN(r) || isNaN(c) || r < 1 || c < 1 || r > 500 || c > 50) return;
+  const rowCount = parseInt(rows, 10);
+  const columnCount = parseInt(columns, 10);
+  if (
+   isNaN(rowCount) ||
+   isNaN(columnCount) ||
+   rowCount < 1 ||
+   columnCount < 1 ||
+   rowCount > 500 ||
+   columnCount > 50
+  )
+   return;
   editor.dispatchCommand(INSERT_TABLE_COMMAND, {
-   columns: String(c),
-   rows: String(r),
+   columns: String(columnCount),
+   rows: String(rowCount),
    includeHeaders: true,
   });
   onClose();
  };
 
  return (
-  <div className="insert-table-dialog-overlay" onMouseDown={onClose}>
-   <div className="insert-table-dialog" onMouseDown={(e) => e.stopPropagation()}>
-    <div className="insert-table-dialog-header">
-     <Typography as="h3" variant="cardTitle">
-      Insert Table
-     </Typography>
-     <Button type="button" onClick={onClose} variant="ghost" className="insert-table-dialog-close">
-      <X className="w-4 h-4" />
-     </Button>
-    </div>
-    <div className="insert-table-dialog-divider" />
-    <div className="insert-table-dialog-body">
-     <Label variant="label" className="insert-table-dialog-label">
-      <span>Rows</span>
+  <Dialog
+   open
+   onOpenChange={(open) => {
+    if (!open) onClose();
+   }}
+  >
+   <DialogContent size="sm">
+    <DialogHeader>
+     <DialogTitle>Chèn bảng</DialogTitle>
+     <DialogDescription>Chọn số hàng và cột cho bảng mới.</DialogDescription>
+    </DialogHeader>
+    <DialogBody>
+     <Label variant="label" className="grid gap-1.5">
+      <span>Số hàng</span>
       <Input
        type="number"
        min={1}
        max={500}
        value={rows}
-       onChange={(e) => setRows(e.target.value)}
-       className="insert-table-dialog-input"
+       onChange={(event) => setRows(event.target.value)}
       />
      </Label>
-     <Label variant="label" className="insert-table-dialog-label">
-      <span>Columns</span>
+     <Label variant="label" className="grid gap-1.5">
+      <span>Số cột</span>
       <Input
        type="number"
        min={1}
        max={50}
        value={columns}
-       onChange={(e) => setColumns(e.target.value)}
-       className="insert-table-dialog-input"
-       onKeyDown={(e) => {
-        if (e.key === "Enter") handleConfirm();
+       onChange={(event) => setColumns(event.target.value)}
+       onKeyDown={(event) => {
+        if (event.key === "Enter") handleConfirm();
        }}
       />
      </Label>
-    </div>
-    <div className="insert-table-dialog-footer">
-     <Button
-      type="button"
-      onClick={handleConfirm}
-      variant="ghost"
-      className="insert-table-dialog-confirm"
-     >
-      Confirm
+    </DialogBody>
+    <DialogFooter>
+     <Button type="button" variant="outline" onClick={onClose}>
+      Hủy
      </Button>
-    </div>
-   </div>
-  </div>
+     <Button type="button" onClick={handleConfirm}>
+      Chèn bảng
+     </Button>
+    </DialogFooter>
+   </DialogContent>
+  </Dialog>
  );
 }
 
-/* ── + Insert Dropdown (Playground-style) ── */
+/* ── + Insert Dropdown ── */
 
 function InsertDropdown({ editor, isEditable }: { editor: LexicalEditor; isEditable: boolean }) {
- const [open, setOpen] = useState(false);
  const [showTableDialog, setShowTableDialog] = useState(false);
- const ref = useRef<HTMLDivElement>(null);
-
- useEffect(() => {
-  if (!open) return;
-  const close = (e: MouseEvent) => {
-   if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) setOpen(false);
-  };
-  document.addEventListener("mousedown", close);
-  return () => document.removeEventListener("mousedown", close);
- }, [open]);
 
  return (
   <>
-   <div ref={ref} className="toolbar-dropdown">
-    <Button
-     type="button"
-     disabled={!isEditable}
-     onMouseDown={pf}
-     onClick={() => setOpen(!open)}
-     variant="ghost"
-     size="toolbar"
-     className="toolbar-item toolbar-dropdown-trigger"
-     title="Insert"
-    >
-     <Plus className="w-3.5 h-3.5" />
-     <span className="toolbar-dropdown-label">Insert</span>
-     <ChevronDown className="toolbar-chevron" />
-    </Button>
-    {open && (
-     <div className="toolbar-dropdown-panel" onMouseDown={pf}>
-      <Button
-       type="button"
-       onMouseDown={pf}
-       size="menu"
-       onClick={() => {
-        editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined);
-        setOpen(false);
-       }}
-       variant="ghost"
-       className="toolbar-dropdown-item"
-      >
-       <SeparatorHorizontal className="size-4 shrink-0" />
-       Horizontal Rule
-      </Button>
-      <Button
-       type="button"
-       onMouseDown={pf}
-       size="menu"
-       onClick={() => {
-        setShowTableDialog(true);
-        setOpen(false);
-       }}
-       variant="ghost"
-       className="toolbar-dropdown-item"
-      >
-       <Table className="size-4 shrink-0" />
-       Table
-      </Button>
-     </div>
-    )}
-   </div>
-   {showTableDialog && (
+   <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+     <Button
+      type="button"
+      disabled={!isEditable}
+      onMouseDown={pf}
+      variant="ghost"
+      size="toolbar"
+      title="Chèn nội dung"
+     >
+      <Plus data-icon="inline-start" />
+      Chèn
+      <ChevronDown data-icon="inline-end" />
+     </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="start">
+     <DropdownMenuItem
+      onSelect={() => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)}
+     >
+      <SeparatorHorizontal />
+      Đường phân cách
+     </DropdownMenuItem>
+     <DropdownMenuItem onSelect={() => setShowTableDialog(true)}>
+      <Table />
+      Bảng
+     </DropdownMenuItem>
+    </DropdownMenuContent>
+   </DropdownMenu>
+   {showTableDialog ? (
     <InsertTableDialog editor={editor} onClose={() => setShowTableDialog(false)} />
-   )}
+   ) : null}
   </>
  );
 }
@@ -753,21 +694,28 @@ export default function ToolbarPlugin() {
     ════════════════════════════════════════════════════════ */
 
  return (
-  <div className="toolbar" onMouseDown={pf}>
+  <Card
+   role="toolbar"
+   aria-label="Công cụ định dạng ghi chú"
+   variant="section"
+   padding="sm"
+   className="flex flex-nowrap items-center gap-1 overflow-x-auto md:flex-wrap"
+   onMouseDown={pf}
+  >
    {/* ── Undo / Redo ── */}
    <ToolbarButton
     disabled={!canUndo || !isEditable}
     onClick={() => editor.dispatchCommand(UNDO_COMMAND, undefined)}
     title="Undo (⌘Z)"
    >
-    <Undo2 className="w-4 h-4" />
+    <Undo2 />
    </ToolbarButton>
    <ToolbarButton
     disabled={!canRedo || !isEditable}
     onClick={() => editor.dispatchCommand(REDO_COMMAND, undefined)}
     title="Redo (⇧⌘Z)"
    >
-    <Redo2 className="w-4 h-4" />
+    <Redo2 />
    </ToolbarButton>
    <Divider />
 
@@ -791,21 +739,6 @@ export default function ToolbarPlugin() {
     buttonTitle="Font family"
     disabled={!isEditable}
    >
-    <div className="grid grid-cols-3 gap-1 border-b border-border-default p-1">
-     {QUICK_HANZI_FONT_FAMILIES.map(([value, label]) => (
-      <Button
-       key={`quick-${label}`}
-       type="button"
-       onMouseDown={pf}
-       onClick={() => applyStyle({ "font-family": value })}
-       style={{ fontFamily: value }}
-       variant={fontFamily === value ? "active" : "surface"}
-       size="compact"
-      >
-       {label.replace("FZKTPY", "")}
-      </Button>
-     ))}
-    </div>
     {FONT_FAMILIES.map(([value, label]) => (
      <DropdownItem
       key={value}
@@ -835,7 +768,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")}
     title="Bold (⌘B)"
    >
-    <Bold className="w-4 h-4" />
+    <Bold />
    </ToolbarButton>
    <ToolbarButton
     active={isItalic}
@@ -843,7 +776,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")}
     title="Italic (⌘I)"
    >
-    <Italic className="w-4 h-4" />
+    <Italic />
    </ToolbarButton>
    <ToolbarButton
     active={isUnderline}
@@ -851,7 +784,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")}
     title="Underline (⌘U)"
    >
-    <Underline className="w-4 h-4" />
+    <Underline />
    </ToolbarButton>
    <ToolbarButton
     active={isStrikethrough}
@@ -859,7 +792,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")}
     title="Strikethrough"
    >
-    <Strikethrough className="w-4 h-4" />
+    <Strikethrough />
    </ToolbarButton>
    <ToolbarButton
     active={isCode}
@@ -867,14 +800,14 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")}
     title="Inline Code"
    >
-    <Code className="w-4 h-4" />
+    <Code />
    </ToolbarButton>
    <Divider />
 
    {/* ── Colors ── */}
    <ColorPicker
     label="Text Color"
-    icon={<Type className="w-4 h-4" />}
+    icon={<Type />}
     colors={TEXT_COLORS}
     activeColor={fontColor}
     onSelect={(c) => applyStyle({ color: c || null })}
@@ -882,7 +815,7 @@ export default function ToolbarPlugin() {
    />
    <ColorPicker
     label="Background Color"
-    icon={<Baseline className="w-4 h-4" />}
+    icon={<Baseline />}
     colors={BG_COLORS}
     activeColor={bgColor}
     onSelect={(c) => applyStyle({ "background-color": c || null })}
@@ -897,7 +830,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")}
     title="Left Align"
    >
-    <AlignLeft className="w-4 h-4" />
+    <AlignLeft />
    </ToolbarButton>
    <ToolbarButton
     active={elementFormat === "center"}
@@ -905,7 +838,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")}
     title="Center Align"
    >
-    <AlignCenter className="w-4 h-4" />
+    <AlignCenter />
    </ToolbarButton>
    <ToolbarButton
     active={elementFormat === "right"}
@@ -913,7 +846,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")}
     title="Right Align"
    >
-    <AlignRight className="w-4 h-4" />
+    <AlignRight />
    </ToolbarButton>
    <ToolbarButton
     active={elementFormat === "justify"}
@@ -921,21 +854,21 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")}
     title="Justify"
    >
-    <AlignJustify className="w-4 h-4" />
+    <AlignJustify />
    </ToolbarButton>
    <ToolbarButton
     disabled={!isEditable}
     onClick={() => editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)}
     title="Outdent"
    >
-    <Outdent className="w-4 h-4" />
+    <Outdent />
    </ToolbarButton>
    <ToolbarButton
     disabled={!isEditable}
     onClick={() => editor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)}
     title="Indent"
    >
-    <Indent className="w-4 h-4" />
+    <Indent />
    </ToolbarButton>
    <Divider />
 
@@ -946,7 +879,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)}
     title="Bullet List"
    >
-    <List className="w-4 h-4" />
+    <List />
    </ToolbarButton>
    <ToolbarButton
     active={blockType === "number"}
@@ -954,7 +887,7 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)}
     title="Numbered List"
    >
-    <ListOrdered className="w-4 h-4" />
+    <ListOrdered />
    </ToolbarButton>
    <ToolbarButton
     active={blockType === "check"}
@@ -962,12 +895,12 @@ export default function ToolbarPlugin() {
     onClick={() => editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)}
     title="Check List"
    >
-    <ListChecks className="w-4 h-4" />
+    <ListChecks />
    </ToolbarButton>
    <Divider />
 
    {/* ── + Insert Dropdown ── */}
    <InsertDropdown editor={editor} isEditable={isEditable} />
-  </div>
+  </Card>
  );
 }
