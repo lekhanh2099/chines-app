@@ -32,6 +32,7 @@ Before a non-trivial task:
 3. Read the matching skill:
    - general React/Next/state/forms/queries/refactor: `.agents/skills/frontend-feature-workflow/SKILL.md`;
    - UI/UX/design-system/responsive/accessibility: `.agents/skills/frontend-ui-system/SKILL.md`;
+   - broad UI/UX audit/research heuristics: read `.agents/skills/frontend-ui-system/SKILL.md` first, then `.agents/skills/ui-ux-pro-max/SKILL.md`; local UI contracts remain authoritative;
    - HanziHome content/data/editing: `.agents/skills/hanzihome-content-editing/SKILL.md`;
    - regression/test review: `.codex/skills/hanzihome-test-review/SKILL.md`;
    - Supabase migrations/RLS/generated types: `.codex/skills/hanzihome-supabase-migration/SKILL.md`;
