@@ -8,6 +8,7 @@ import {
  BasePopoverPositioner,
  BasePopoverTrigger,
 } from "@/components/ui/base-popover";
+import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 
 const shortcuts = [
@@ -22,8 +23,10 @@ const shortcuts = [
 
 function ShortcutKey({ children }: { children: string }) {
  return (
-  <kbd className="inline-flex min-h-6 items-center justify-center rounded-md border border-border-strong bg-bg-card px-1.5 font-mono text-xs font-bold text-foreground-muted shadow-theme-sm">
-   {children}
+  <kbd>
+   <Badge size="sm" casing="natural">
+    {children}
+   </Badge>
   </kbd>
  );
 }
