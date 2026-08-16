@@ -94,7 +94,7 @@ export function Header() {
  return (
   <>
    <FocusModeRouteGuard />
-   <header className="nova-shell-header relative z-50 w-full shrink-0 border-b border-border-default bg-bg-card/95 backdrop-blur-lg">
+   <header className="nova-shell-header relative z-50 w-full shrink-0">
     <div className="flex min-h-14 w-full min-w-0 items-center sm:min-h-16">
      <Link
       href="/reader"
