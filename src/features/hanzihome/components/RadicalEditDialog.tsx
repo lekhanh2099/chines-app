@@ -313,16 +313,15 @@ function RadicalEditDialogContent({
   <DialogContent className="max-h-[90vh] max-w-3xl overflow-hidden">
    <DialogHeader>
     <DialogTitle>Sửa bộ thủ {radical.radical}</DialogTitle>
-    <DialogDescription>Chỉnh thông tin của bộ thủ và lưu theo từng trường.</DialogDescription>
+    <DialogDescription>Lưu từng field của một dòng bộ thủ trong Supabase.</DialogDescription>
    </DialogHeader>
    <DialogBody className="max-h-[calc(90vh-12rem)] overflow-y-auto pr-1">
     <div className="grid gap-4">
      <Tabs
-      variant="segmented"
       value={mode}
       onValueChange={setMode}
       items={[
-       { key: "fields", label: "Thông tin", icon: ListChecks },
+       { key: "fields", label: "Field", icon: ListChecks },
        { key: "json", label: "JSON", icon: FileJson },
       ]}
      />
@@ -443,7 +442,7 @@ function RadicalEditDialogContent({
      }}
     >
      <RotateCcw className="h-4 w-4" />
-     Đặt lại
+     Reset
     </Button>
     <form.Subscribe selector={(state) => state.isSubmitting}>
      {(isSubmitting) => (
