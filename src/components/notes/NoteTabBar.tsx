@@ -1,16 +1,19 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import { Button } from "@/components/ui/button";
-import { useRef, useCallback, useState, type ReactNode, type Ref } from "react";
+import { useMemo, type ReactNode, type Ref } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { X, FileText, Plus } from "lucide-react";
-import { noteTabsStore, type NoteTab } from "@/stores/note-tabs-store";
-import { cn } from "@/lib/utils";
-import { useCoarsePointer } from "@/hooks/useCoarsePointer";
-import { z } from "zod";
+import { ChevronLeft, ChevronRight, Ellipsis, FileText, Plus, X } from "lucide-react";
 
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+import { Button } from "@/components/ui/button";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Tabs } from "@/components/ui/tabs";
+import { noteTabsStore } from "@/stores/note-tabs-store";
 
 export function NoteTabBar({
  leading,
@@ -27,57 +30,17 @@ export function NoteTabBar({
 }) {
  const tabs = useSelector(noteTabsStore, (state) => state.tabs);
  const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
- const { setActive, closeTab, reorderTabs } = noteTabsStore.actions;
- const isCoarsePointer = useCoarsePointer();
- const scrollRef = useRef<HTMLDivElement>(null);
-
- // Drag state
- const [dragIndex, setDragIndex] = useState<Nullable<number>>(null);
- const [dropIndex, setDropIndex] = useState<Nullable<number>>(null);
-
- const handleWheel = useCallback((e: React.WheelEvent) => {
-  if (scrollRef.current) {
-   e.preventDefault();
-   scrollRef.current.scrollLeft += e.deltaY;
-  }
- }, []);
-
- const handleDragStart = useCallback((e: React.DragEvent, index: number) => {
-  setDragIndex(index);
-  e.dataTransfer.effectAllowed = "move";
-  // Minimal drag image — use the tab element itself
-  const el = e.currentTarget;
-  const rect = el.getBoundingClientRect();
-  e.dataTransfer.setDragImage(el, rect.width / 2, rect.height / 2);
- }, []);
-
- const handleDragOver = useCallback((e: React.DragEvent, index: number) => {
-  e.preventDefault();
-  e.dataTransfer.dropEffect = "move";
-  setDropIndex(index);
- }, []);
-
- const handleDrop = useCallback(
-  (e: React.DragEvent, index: number) => {
-   e.preventDefault();
-   if (dragIndex !== null && dragIndex !== index) {
-    reorderTabs(dragIndex, index);
-   }
-   setDragIndex(null);
-   setDropIndex(null);
-  },
-  [dragIndex, reorderTabs],
+ const { setActive, closeTab, closeOthers, closeAll, reorderTabs } = noteTabsStore.actions;
+ const hasTopRow = Boolean(leading || trailing);
+ const currentTabId = activeNoteId ?? tabs[0]?.noteId ?? "";
+ const activeIndex = tabs.findIndex((tab) => tab.noteId === currentTabId);
+ const activeTab = activeIndex >= 0 ? tabs[activeIndex] : null;
+ const tabItems = useMemo(
+  () => tabs.map((tab) => ({ key: tab.noteId, label: tab.title, icon: FileText })),
+  [tabs],
  );
 
- const handleDragEnd = useCallback(() => {
-  setDragIndex(null);
-  setDropIndex(null);
- }, []);
-
- if (tabs.length === 0) return null;
-
- const visibleTabs = tabs.map((tab, index) => ({ tab, index }));
- const hasTopRow = Boolean(leading || trailing);
+ if (tabs.length === 0 || !currentTabId) return null;
 
  return (
   <div className="hidden shrink-0 flex-col border-b border-border-default bg-bg-card md:flex">
@@ -88,134 +51,87 @@ export function NoteTabBar({
     </div>
    ) : null}
    <div className="flex min-h-12 min-w-0 flex-nowrap items-center gap-2 overflow-hidden px-3 py-2 sm:px-4">
-    {visibleTabs.length > 0 ? (
-     <div
-      ref={scrollRef}
-      role="tablist"
-      aria-label="Ghi chú đang mở"
-      className="hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto scrollbar-none md:flex"
-      onWheel={handleWheel}
-     >
-      {visibleTabs.map(({ tab, index }) => (
-       <TabItem
-        key={tab.noteId}
-        tab={tab}
-        index={index}
-        isActive={tab.noteId === activeNoteId}
-        isDragging={dragIndex === index}
-        isDropTarget={dropIndex === index && dragIndex !== index}
-        focusLocked={focusLocked}
-        draggable={!focusLocked && !isCoarsePointer}
-        onActivate={() => setActive(tab.noteId)}
-        onClose={() => closeTab(tab.noteId)}
-        onDragStart={(e) => handleDragStart(e, index)}
-        onDragOver={(e) => handleDragOver(e, index)}
-        onDrop={(e) => handleDrop(e, index)}
-        onDragEnd={handleDragEnd}
-       />
-      ))}
-     </div>
-    ) : (
-     <div className="min-w-0 flex-1" />
-    )}
+    <Tabs
+     value={currentTabId}
+     items={tabItems}
+     onValueChange={setActive}
+     aria-label="Ghi chú đang mở"
+     className="min-w-0 flex-1"
+    />
+    {activeTab ? (
+     <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+       <Button
+        type="button"
+        variant="ghost"
+        size="icon-toolbar"
+        aria-label={`Tùy chọn tab ${activeTab.title}`}
+        title={`Tùy chọn tab ${activeTab.title}`}
+       >
+        <Ellipsis />
+       </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+       <DropdownMenuItem
+        disabled={activeIndex <= 0}
+        onSelect={() => reorderTabs(activeIndex, activeIndex - 1)}
+       >
+        <ChevronLeft />
+        Di chuyển sang trái
+       </DropdownMenuItem>
+       <DropdownMenuItem
+        disabled={activeIndex < 0 || activeIndex >= tabs.length - 1}
+        onSelect={() => reorderTabs(activeIndex, activeIndex + 1)}
+       >
+        <ChevronRight />
+        Di chuyển sang phải
+       </DropdownMenuItem>
+       <DropdownMenuSeparator />
+       <DropdownMenuItem
+        disabled={focusLocked}
+        onSelect={() => {
+         if (!focusLocked) closeTab(activeTab.noteId);
+        }}
+       >
+        <X />
+        Đóng tab hiện tại
+       </DropdownMenuItem>
+       <DropdownMenuItem
+        disabled={focusLocked || tabs.length <= 1}
+        onSelect={() => {
+         if (!focusLocked) closeOthers(activeTab.noteId);
+        }}
+       >
+        Đóng các tab khác
+       </DropdownMenuItem>
+       <DropdownMenuItem
+        disabled={focusLocked}
+        onSelect={() => {
+         if (!focusLocked) closeAll();
+        }}
+       >
+        Đóng tất cả tab
+       </DropdownMenuItem>
+      </DropdownMenuContent>
+     </DropdownMenu>
+    ) : null}
     <Button
      type="button"
      variant="outline"
-     size="toolbar"
-     className="hidden w-9 shrink-0 md:flex"
+     size="icon-toolbar"
+     className="shrink-0"
      onClick={onCreateNote}
      disabled={focusLocked}
      title={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
      aria-label={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
     >
-     <Plus className="h-4 w-4" />
+     <Plus />
     </Button>
     <div
      ref={actionsRef}
      className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto scrollbar-none empty:hidden sm:gap-2 md:max-w-[min(56vw,44rem)] md:flex-none"
     />
    </div>
-  </div>
- );
-}
-
-function TabItem({
- tab,
- isActive,
- isDragging,
- isDropTarget,
- focusLocked,
- draggable,
- onActivate,
- onClose,
- onDragStart,
- onDragOver,
- onDrop,
- onDragEnd,
-}: {
- tab: NoteTab;
- index: number;
- isActive: boolean;
- isDragging: boolean;
- isDropTarget: boolean;
- focusLocked: boolean;
- draggable: boolean;
- onActivate: () => void;
- onClose: () => void;
- onDragStart: (e: React.DragEvent) => void;
- onDragOver: (e: React.DragEvent) => void;
- onDrop: (e: React.DragEvent) => void;
- onDragEnd: () => void;
-}) {
- return (
-  <div
-   role="tab"
-   aria-selected={isActive}
-   draggable={draggable}
-   onDragStart={onDragStart}
-   onDragOver={onDragOver}
-   onDrop={onDrop}
-   onDragEnd={onDragEnd}
-   className={cn(
-    "group relative flex h-10 min-w-32 flex-1 basis-32 cursor-pointer select-none items-center gap-1 rounded-t-xl border border-b-0 px-2 text-[0.8125rem] transition-all duration-150",
-    isActive
-     ? "z-10 border-primary/25 bg-bg-primary font-black text-text-primary shadow-theme-sm"
-     : "border-border-default/70 bg-bg-subtle/55 font-semibold text-text-muted hover:border-border-default hover:bg-bg-primary hover:text-text-primary",
-    isDragging && "opacity-40",
-    isDropTarget && "border-l-2 border-l-accent",
-   )}
-   onClick={onActivate}
-   onAuxClick={(e) => {
-    if (e.button === 1) {
-     e.preventDefault();
-     onClose();
-    }
-   }}
-   title={tab.title}
-  >
-   <FileText
-    className={cn("w-3.5 h-3.5 shrink-0 transition-colors", isActive ? " " : "text-text-muted/60")}
-   />
-
-   <Typography as="span" clamp="one" className="flex-1 min-w-0 px-1">
-    {tab.title}
-   </Typography>
-
-   <Button
-    variant="ghost"
-    size="icon-xs"
-    className={cn("shrink-0", isActive ? "" : "opacity-0 group-hover:opacity-100")}
-    aria-label={`Đóng tab ${tab.title}`}
-    disabled={focusLocked}
-    onClick={(e) => {
-     e.stopPropagation();
-     if (focusLocked) return;
-     onClose();
-    }}
-    title={focusLocked ? "Focus mode đang giữ tab hiện tại" : "Đóng tab"}
-   >
-    <X className="w-3 h-3" />
-   </Button>
   </div>
  );
 }
