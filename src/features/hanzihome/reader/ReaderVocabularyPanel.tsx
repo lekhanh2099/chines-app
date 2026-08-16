@@ -1,6 +1,5 @@
 "use client";
 
-import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -50,17 +49,12 @@ export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabu
      <Badge casing="natural">{vocabulary.length} từ</Badge>
     </div>
     {vocabulary.length > 0 ? (
-     <label className="relative block max-w-md">
+     <label className="block max-w-md">
       <span className="sr-only">Tìm từ vựng</span>
-      <Search
-       aria-hidden="true"
-       className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-foreground-muted"
-      />
       <Input
        value={query}
        onChange={(event) => setQuery(event.target.value)}
        placeholder="Tìm chữ Hán, pinyin hoặc nghĩa…"
-       className="pl-9"
        autoComplete="off"
       />
      </label>
