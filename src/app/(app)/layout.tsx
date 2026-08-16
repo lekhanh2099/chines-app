@@ -12,17 +12,17 @@ export default async function AppLayout({
  await connection();
 
  return (
-  <div className="app-shell flex h-dvh w-full min-w-0 flex-col overflow-hidden bg-background text-foreground">
+  <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
    <HanziTypographyPreferenceBridge />
-   <Header />
-   <HanziHomeGlobalSearchBridge />
-   <div className="flex min-h-0 min-w-0 flex-1 overflow-hidden">
-    <Sidebar />
-    <main className="page-shell nova-page relative min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain scrollbar-soft">
+   <Sidebar />
+   <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+    <Header />
+    <HanziHomeGlobalSearchBridge />
+    <main className="page-shell nova-page relative min-h-0 flex-1 overflow-y-auto overscroll-contain scrollbar-soft">
      {children}
     </main>
+    <MobileBottomNavigation />
    </div>
-   <MobileBottomNavigation />
   </div>
  );
 }
