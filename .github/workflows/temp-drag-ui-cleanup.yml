@@ -1,0 +1,68 @@
+name: Temporary Drag UI Cleanup
+
+on:
+  push:
+    branches:
+      - audit/ui-ux-pro-max-full-2026-08-16
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temp-drag-ui-cleanup-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Pin npm
+        run: npm install --global npm@11.6.1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply final interaction cleanup
+        run: node scripts/temp-drag-ui-cleanup.mjs
+
+      - name: Format changed files
+        shell: bash
+        run: git diff --name-only -z | xargs -0 -r npx oxfmt --write --no-error-on-unmatched-pattern
+
+      - name: Run UI standards guard
+        run: npm run ui:check
+
+      - name: Run UI guard tests
+        run: npx vitest run scripts/check-ui-standards.test.mjs
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Run affected tests
+        run: npm run test:run -- --passWithNoTests src/components/editor src/features/hanzihome/components/lesson-overview
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No cleanup changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/components/editor scripts/audit-ui-runtime.mjs
+          git commit -m "fix(ui): finalize editor interaction accessibility"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
