@@ -1,0 +1,170 @@
+name: Fix migrated learning UI
+
+on:
+ push:
+  branches: [audit/hanzi-ui-parity]
+
+permissions:
+ contents: write
+
+concurrency:
+ group: fix-migrated-learning-ui-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ fix-and-verify:
+  if: ${{ !contains(github.event.head_commit.message, '[migrated-ui-fixed]') }}
+  runs-on: ubuntu-latest
+  timeout-minutes: 30
+  env:
+   HUSKY: 0
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: audit/hanzi-ui-parity
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - name: Correct migrated reader and dictation UX
+     run: |
+      python - <<'PY'
+      from pathlib import Path
+
+      def replace_once(path: Path, old: str, new: str) -> None:
+       text = path.read_text()
+       if old not in text:
+        raise SystemExit(f"marker missing in {path}: {old[:120]!r}")
+       path.write_text(text.replace(old, new, 1))
+
+      def replace_between(path: Path, start: str, end: str, replacement: str) -> None:
+       text = path.read_text()
+       start_index = text.find(start)
+       if start_index < 0:
+        raise SystemExit(f"start marker missing in {path}: {start[:120]!r}")
+       end_index = text.find(end, start_index)
+       if end_index < 0:
+        raise SystemExit(f"end marker missing in {path}: {end[:120]!r}")
+       path.write_text(text[:start_index] + replacement + text[end_index:])
+
+      reader = Path("src/features/hanzihome/reader/ReaderDocumentStudy.tsx")
+      replace_once(
+       reader,
+       '<TabsContent value={workspaceTab}>',
+       '<TabsContent value={workspaceTab} className="pt-4 sm:pt-5">',
+      )
+      replace_between(
+       reader,
+       '         <Card variant="canvas" padding="md" className="grid gap-0">\n',
+       '\n\n         {state.shadowing ? (',
+       '''         <Card variant="section" padding="md">\n          <article className="grid gap-4">\n           <div className="flex flex-wrap items-center justify-between gap-2">\n            <Typography\n             as="p"\n             variant="caption"\n             tone="muted"\n             weight="black"\n             tracking="medium"\n             transform="uppercase"\n            >\n             Đoạn {activeParagraph.paragraph_order}\n            </Typography>\n            <Button\n             type="button"\n             size="icon-sm"\n             variant="ghost"\n             aria-label={`Nghe đoạn ${activeParagraph.paragraph_order}`}\n             title="Nghe đoạn này"\n             onClick={() => playParagraphAt(activeIndex)}\n            >\n             <Volume2 aria-hidden="true" />\n            </Button>\n           </div>\n           <div\n            data-no-inspector\n            data-reader-selection-paragraph={activeParagraph.id}\n            onMouseUp={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}\n            onPointerUp={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}\n            onTouchEnd={() => captureSelection(activeIndex, activeParagraph, activeAnalysis)}\n           >\n            <ContextualReaderText\n             analysis={activeAnalysis}\n             displayMode={displayMode}\n             activeCharacterIndex={isActiveSpeech ? activeCharacterIndex : -1}\n             showPinyin={pinyinMode === "contextual" || pinyinMode === "focus"}\n             pinyinPresentation={\n              pinyinMode === "contextual" || pinyinMode === "focus" ? "ruby" : "paragraph"\n             }\n             sourcePinyin={activeParagraph.pinyin}\n             onGlyphClick={(start) => {\n              const characterIndex = Array.from(\n               activeAnalysis.normalizedText.slice(0, start),\n              ).length;\n              playParagraphAt(activeIndex, characterIndex);\n             }}\n            />\n           </div>\n           {pinyinMode === "full" ? (\n            <div className="grid gap-1 border-l-2 border-border-strong pl-3">\n             <Typography as="h3" variant="caption" tone="muted" weight="black">\n              Pinyin\n             </Typography>\n             <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">\n              {activeAnalysis.sourcePinyinStatus === "aligned" && activeParagraph.pinyin\n               ? activeParagraph.pinyin\n               : formatContextualSpokenPinyin(activeAnalysis)}\n             </PinyinText>\n            </div>\n           ) : null}\n           {state.showMeaning && activeParagraph.vi ? (\n            <TranslationText variant="bodySmall" tone="muted" wrapping="preWrap">\n             {activeParagraph.vi}\n            </TranslationText>\n           ) : null}\n          </article>\n         </Card>''',
+      )
+
+      daily = Path("src/features/hanzihome/reader/DailyReadingWorkspace.tsx")
+      daily.write_text(daily.read_text().replace('className="pt-3"', 'className="pt-4 sm:pt-5"'))
+
+      tts = Path("src/features/hanzihome/tts/TtsStudioWorkspace.tsx")
+      tts.write_text(tts.read_text().replace('className="pt-3"', 'className="pt-4 sm:pt-5"'))
+
+      controls = Path("src/features/hanzihome/listening/MandarinTtsControls.tsx")
+      replace_once(
+       controls,
+       ' showTranslationAfterCheck?: boolean;\n onShowTranslationAfterCheckChange?: (checked: boolean) => void;\n',
+       ' showTranslationAfterCheck?: boolean;\n onShowTranslationAfterCheckChange?: (checked: boolean) => void;\n showPlaybackActions?: boolean;\n',
+      )
+      replace_once(
+       controls,
+       ' showTranslationAfterCheck,\n onShowTranslationAfterCheckChange,\n}: MandarinTtsControlsProps) {',
+       ' showTranslationAfterCheck,\n onShowTranslationAfterCheckChange,\n showPlaybackActions = true,\n}: MandarinTtsControlsProps) {',
+      )
+      controls_text = controls.read_text()
+      buttons_start = controls_text.find('     <Button\n      type="button"\n      variant="surfaceCard"')
+      buttons_end_marker = '    </div>\n   </div>\n\n   {showPracticePreferences ? ('
+      buttons_end = controls_text.find(buttons_end_marker, buttons_start)
+      if buttons_start < 0 or buttons_end < 0:
+       raise SystemExit("Mandarin TTS playback action markers missing")
+      playback_buttons = controls_text[buttons_start:buttons_end]
+      controls.write_text(
+       controls_text[:buttons_start]
+       + '     {showPlaybackActions ? (\n      <>\n'
+       + playback_buttons.replace('     ', '       ', 1)
+       + '      </>\n     ) : null}\n'
+       + controls_text[buttons_end:]
+      )
+
+      studio = Path("src/features/hanzihome/practice/StudioDictationWorkspace.tsx")
+      replace_once(studio, 'import { useMemo, useState } from "react";', 'import { useMemo, useRef, useState } from "react";')
+      replace_once(
+       studio,
+       'import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";\n',
+       'import { MandarinTtsControls } from "@/features/hanzihome/listening/MandarinTtsControls";\nimport { ListeningTransport } from "@/features/hanzihome/listening/ListeningTransport";\nimport { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";\n',
+      )
+      replace_once(
+       studio,
+       'const READER_DICTATION_BOOK_ID = "hanzihome-reader-course";\ntype DictationSource = "lesson" | "library" | "custom" | "reader";\n',
+       'const READER_DICTATION_BOOK_ID = "hanzihome-reader-course";\ntype DictationSource = "lesson" | "library" | "custom" | "reader";\n\nfunction dictationEntryText(entry: ListeningTranscriptEntry) {\n const spokenLines = entry.transcript.lines.map((line) => line.zh.trim()).filter(Boolean);\n return spokenLines.length > 0 ? spokenLines.join("\\n") : entry.transcript.full.zh;\n}\n',
+      )
+      replace_once(
+       studio,
+       ' const [attemptSaveError, setAttemptSaveError] = useState("");\n',
+       ' const [attemptSaveError, setAttemptSaveError] = useState("");\n const [loopCurrent, setLoopCurrent] = useState(false);\n const loopCurrentRef = useRef(false);\n',
+      )
+      replace_once(
+       studio,
+       ''' const resetPracticeFlow = () => {\n  setModeConfirmed(false);\n  setPracticeStarted(false);\n  setActiveEntryId("");\n  setCheckedEntryIds(new Set());\n };''',
+       ''' const resetPracticeFlow = () => {\n  tts.stop();\n  loopCurrentRef.current = false;\n  setLoopCurrent(false);\n  setModeConfirmed(false);\n  setPracticeStarted(false);\n  setActiveEntryId("");\n  setCheckedEntryIds(new Set());\n };''',
+      )
+      replace_once(
+       studio,
+       ''' const effectiveActiveEntryId = sourceEntries.some((entry) => entry.id === activeEntryId)\n  ? activeEntryId\n  : (sourceEntries[0]?.id ?? "");\n\n const persistAttempt = (attempt: DictationAttempt) => {''',
+       ''' const effectiveActiveEntryId = sourceEntries.some((entry) => entry.id === activeEntryId)\n  ? activeEntryId\n  : (sourceEntries[0]?.id ?? "");\n const effectiveActiveEntryIndex = Math.max(\n  0,\n  sourceEntries.findIndex((entry) => entry.id === effectiveActiveEntryId),\n );\n const transportSegments = sourceEntries.map((entry, index) => ({\n  id: entry.id,\n  label: String(index + 1),\n  title: entry.title,\n }));\n const selectTransportEntry = (index: number) => {\n  const nextEntry = sourceEntries[index];\n  if (!nextEntry) return;\n  tts.stop();\n  setActiveEntryId(nextEntry.id);\n };\n const playTransport = () => {\n  const activeEntry = sourceEntries[effectiveActiveEntryIndex];\n  const playbackTexts =\n   playbackMode === "passage"\n    ? sourceEntries.map(dictationEntryText).filter(Boolean)\n    : activeEntry\n      ? [dictationEntryText(activeEntry)].filter(Boolean)\n      : [];\n  if (playbackTexts.length === 0) return;\n\n  const play = () => {\n   tts.speakSequence(playbackTexts, () => {\n    if (loopCurrentRef.current) play();\n   });\n  };\n  play();\n };\n const toggleTransportPlayback = () => {\n  if (tts.isLoading) return;\n  if (tts.isPaused) {\n   tts.resume();\n   return;\n  }\n  if (tts.isSpeaking) {\n   tts.pause();\n   return;\n  }\n  playTransport();\n };\n const toggleTransportLoop = () => {\n  const next = !loopCurrentRef.current;\n  loopCurrentRef.current = next;\n  setLoopCurrent(next);\n };\n useListeningHotkeys({\n  enabled: practiceStarted,\n  onPrevious: () => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1)),\n  onPlayToggle: toggleTransportPlayback,\n  onRepeat: playTransport,\n  onNext: () =>\n   selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1)),\n  onToggleLoop: toggleTransportLoop,\n  onStop: tts.stop,\n });\n\n const persistAttempt = (attempt: DictationAttempt) => {''',
+      )
+      replace_between(
+       studio,
+       '      {sourceEntries.length > 1 ? (\n',
+       '      {attemptSaveError ? (\n',
+       '''      <ListeningTransport\n       activeIndex={effectiveActiveEntryIndex}\n       segments={transportSegments}\n       playbackMode={playbackMode}\n       loopCurrent={loopCurrent}\n       isLoading={tts.isLoading}\n       isPaused={tts.isPaused}\n       isPlaying={tts.isSpeaking}\n       onModeChange={setPlaybackMode}\n       onSelect={selectTransportEntry}\n       onPrevious={() => selectTransportEntry(Math.max(0, effectiveActiveEntryIndex - 1))}\n       onPlayToggle={toggleTransportPlayback}\n       onRepeat={playTransport}\n       onNext={() =>\n        selectTransportEntry(Math.min(sourceEntries.length - 1, effectiveActiveEntryIndex + 1))\n       }\n       onToggleLoop={toggleTransportLoop}\n       onStop={tts.stop}\n      />\n      <MandarinTtsControls text={passageText} tts={tts} showPlaybackActions={false} />\n''',
+      )
+
+      dictation = Path("src/features/hanzihome/listening/ListeningDictationWorkspace.tsx")
+      replace_once(
+       dictation,
+       '''    const showTranscript = revealed[entry.id] ?? isChecked;\n\n    return (''',
+       '''    const showTranscript = revealed[entry.id] ?? isChecked;\n    const submitAttempt = () => {\n     if (!answer.trim()) return;\n     const startedAt = startedAtRef.current[entry.id];\n     const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);\n     const nextAttempt = createDictationAttempt(entry.id, expectedText, answer, responseMs);\n     delete startedAtRef.current[entry.id];\n     setAttemptHistory((current) => ({\n      ...current,\n      [entry.id]: [...(current[entry.id] ?? []), nextAttempt],\n     }));\n     setDirtyAnswers((current) => ({ ...current, [entry.id]: false }));\n     setRevealed((current) => ({ ...current, [entry.id]: true }));\n     onAttempt(nextAttempt);\n    };\n\n    return (''',
+      )
+      replace_once(
+       dictation,
+       '''       placeholder="Nghe và chép lại bằng chữ Hán…"\n       onChange={(event) => {''',
+       '''       placeholder="Nghe và chép lại bằng chữ Hán…"\n       onKeyDown={(event) => {\n        if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {\n         event.preventDefault();\n         submitAttempt();\n        }\n       }}\n       onChange={(event) => {''',
+      )
+      dictation_text = dictation.read_text()
+      check_start = dictation_text.find(
+       '       <Button\n        type="button"\n        size="toolbar"\n        disabled={!answer.trim()}\n        onClick={() => {'
+      )
+      check_end_marker = '       >\n        Kiểm tra\n       </Button>'
+      check_end = dictation_text.find(check_end_marker, check_start)
+      if check_start < 0 or check_end < 0:
+       raise SystemExit("dictation check button markers missing")
+      check_end += len(check_end_marker)
+      dictation.write_text(
+       dictation_text[:check_start]
+       + '''       <Button\n        type="button"\n        size="toolbar"\n        disabled={!answer.trim()}\n        onClick={submitAttempt}\n       >\n        Kiểm tra\n       </Button>'''
+       + dictation_text[check_end:]
+      )
+      PY
+   - name: Format migrated UI changes
+     run: npm run format
+   - name: Verify application
+     run: npm run check
+   - name: Commit verified migrated UI fixes
+     run: |
+      git rm -f .github/workflows/fix-migrated-learning-ui.yml
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add -A
+      git commit -m "fix(hanzihome): correct migrated reader and dictation UX [migrated-ui-fixed]"
+      git push origin HEAD:audit/hanzi-ui-parity
