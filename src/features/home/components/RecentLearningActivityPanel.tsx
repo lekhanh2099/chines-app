@@ -56,7 +56,11 @@ export function RecentLearningActivityPanel({
            {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
           </Typography>
          </div>
-         <Badge variant={resultVariants[item.result]} size="sm" className="w-fit sm:hidden">
+         <Badge
+          variant={resultVariants[item.result]}
+          size="sm"
+          className="justify-self-start sm:hidden"
+         >
           {resultLabels[item.result]}
          </Badge>
         </div>

@@ -67,7 +67,7 @@ export function ReaderTranslationPracticePanel({
   <Card variant="section" padding="md" className="grid min-w-0 gap-4">
    <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
     <div className="grid min-w-0 gap-2">
-     <Badge variant="warning" className="w-fit" casing="natural">
+     <Badge variant="warning" className="justify-self-start" casing="natural">
       Luyện dịch hai chiều
      </Badge>
      <Typography as="h2" variant="cardTitle" weight="black">

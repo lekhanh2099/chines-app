@@ -57,6 +57,11 @@ const FEATURE_VISUAL_ESCAPE_HATCH_PATTERN =
  /\b(?:bg|text|border|ring|outline|fill|stroke)-\[(?:#|rgb\(|hsl\(|oklch\(|color-mix\()|\b(?:bg|from|via|to)-\[[^\]]*(?:linear-gradient|radial-gradient|conic-gradient)\(/;
 const FEATURE_SURFACE_ESCAPE_HATCH_PATTERN =
  /\b(?:app-glass-surface|app-gradient-hero|backdrop-blur(?:-[\w-]+)?|shadow-theme-lg)\b/;
+const SOURCE_INTRINSIC_FIT_PATTERN = /\b(?:w-fit|h-fit|min-w-fit|max-w-fit|min-h-fit|max-h-fit)\b/;
+const SOURCE_PIXEL_FONT_PATTERN = /\btext-\[[0-9.]+px\]/;
+const SOURCE_RAW_PALETTE_PATTERN =
+ /\b(?:bg|text|border|ring|outline|fill|stroke)-(?:white|black|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|fuchsia|pink|rose)(?:-|\b)/;
+const SOURCE_DECORATIVE_GRADIENT_PATTERN = /\b(?:bg-gradient|bg-linear|bg-radial|bg-conic)(?:-|\b)/;
 const FIXED_MARGIN_CLASS_PATTERN =
  /(?:^|[\s"'`])(?:[a-z0-9-]+:)*-?m(?:[trblxy])?-(?!auto(?:[\s"'`}]|$)|0(?:[\s"'`}]|$))[^\s"'`}]*/i;
 const INLINE_HORIZONTAL_MARGIN_PATTERN = /(?:^|\s)(?:[a-z0-9-]+:)*mx-[^\s"'`}]*/i;
@@ -179,6 +184,18 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
   if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {
    failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);
   }
+  if (SOURCE_INTRINSIC_FIT_PATTERN.test(classNameSource)) {
+   failures.push(`sourceFitLayoutPatch: ${location(sourceFile, className)}`);
+  }
+  if (SOURCE_PIXEL_FONT_PATTERN.test(classNameSource)) {
+   failures.push(`sourcePixelFontSize: ${location(sourceFile, className)}`);
+  }
+  if (SOURCE_RAW_PALETTE_PATTERN.test(classNameSource)) {
+   failures.push(`sourceRawPaletteUtility: ${location(sourceFile, className)}`);
+  }
+  if (SOURCE_DECORATIVE_GRADIENT_PATTERN.test(classNameSource)) {
+   failures.push(`sourceDecorativeGradient: ${location(sourceFile, className)}`);
+  }
   if (ARBITRARY_RADIUS_PATTERN.test(classNameSource)) {
    failures.push(`featureArbitraryRadius: ${location(sourceFile, className)}`);
   }
@@ -269,6 +286,30 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
 
 export function runUiCheck() {
  const failures = [];
+
+ const themeCssFiles = [
+  "src/app/globals.css",
+  "src/app/theme-palettes.css",
+  "src/app/surface-system.css",
+ ];
+ const themePercentageColorPattern = /(?:color-mix\([^\n]*%|hsla?\([^\n]*%)/;
+ const pixelFontDeclarationPattern = /font-size:\s*[0-9.]+px/;
+ const decorativeCssGradientPattern = /(?:linear-gradient|radial-gradient|conic-gradient)\(/;
+ for (const relativePath of themeCssFiles) {
+  const absolutePath = path.join(ROOT, relativePath);
+  const lines = fs.readFileSync(absolutePath, "utf8").split("\n");
+  lines.forEach((line, index) => {
+   if (themePercentageColorPattern.test(line)) {
+    failures.push(`themePercentageColor: ${relativePath}:${index + 1}`);
+   }
+   if (pixelFontDeclarationPattern.test(line)) {
+    failures.push(`sourcePixelFontDeclaration: ${relativePath}:${index + 1}`);
+   }
+   if (decorativeCssGradientPattern.test(line)) {
+    failures.push(`sourceDecorativeCssGradient: ${relativePath}:${index + 1}`);
+   }
+  });
+ }
 
  for (const file of listSourceFiles(SRC)) {
   const source = fs.readFileSync(file, "utf8");

@@ -417,9 +417,9 @@ Global visual recipes have explicit ownership:
 
 - `nova-shell-*` is opaque global chrome;
 - `nova-page` is the neutral content canvas;
-- `app-gradient-hero` and `app-glass-surface` are compatibility aliases only;
+- `app-gradient-hero` and `app-glass-surface` are compatibility aliases that resolve to ordinary semantic surfaces;
 - `hanzihome-liquid-*` is limited to HanziHome workspace chrome;
-- `app-brand-gradient` is compact identity/emphasis only.
+- `app-brand-gradient` is a legacy class name that resolves to a solid semantic primary identity; decorative product gradients are prohibited.
 
 Controls use `rounded-lg`; cards/panels/overlays use `rounded-xl`. Semantic 1px
 borders establish most hierarchy. Overlay elevation belongs to overlay

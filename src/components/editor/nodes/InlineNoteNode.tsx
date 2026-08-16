@@ -67,7 +67,7 @@ function renderLinkifiedText(value: string): ReactNode[] {
     href={url}
     target="_blank"
     rel="noreferrer"
-    className="break-all font-bold text-sky-600 underline underline-offset-2 hover:text-info-text"
+    className="break-all font-bold text-info-text underline underline-offset-2 hover:text-info-text"
     onClick={(event) => event.stopPropagation()}
    >
     {url}

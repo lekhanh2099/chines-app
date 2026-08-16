@@ -92,7 +92,9 @@ describe("theme palette contract", () => {
 
  it("keeps Card variants on the shared source surface ladder", () => {
   expect(cardSource).toContain('default: "border-border-default bg-surface"');
-  expect(cardSource).toContain('elevated: "border-border-default bg-surface-raised shadow-theme-sm"');
+  expect(cardSource).toContain(
+   'elevated: "border-border-default bg-surface-raised shadow-theme-sm"',
+  );
   expect(cardSource).toContain('subtle: "border-border-default bg-surface-muted"');
   expect(cardSource).toContain("hover:bg-surface-hover");
   expect(cardSource).not.toContain("themedCardSurface");

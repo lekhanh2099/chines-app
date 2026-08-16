@@ -1091,7 +1091,7 @@ export function ReaderDocumentStudy({
         ) : null}
        </div>
        {resource.document.kind !== "core" ? (
-        <Badge variant="purple" className="w-fit">
+        <Badge variant="purple" className="justify-self-start">
          {resource.document.kind.toUpperCase()}
         </Badge>
        ) : null}
@@ -1856,7 +1856,7 @@ export function ReaderDocumentStudy({
 
        {showDictationTab ? (
         <Card variant="section" padding="md" className="grid gap-3">
-         <Badge variant="purple" className="w-fit">
+         <Badge variant="purple" className="justify-self-start">
           Luyện nghe chép
          </Badge>
          <Typography as="h3" variant="sectionTitle" weight="black">

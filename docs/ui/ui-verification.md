@@ -47,6 +47,8 @@ Check:
 - neutral canvas, opaque surfaces and 1px border hierarchy;
 - controls at `rounded-lg`; cards/panels/overlays at `rounded-xl`;
 - no accidental `rounded-2xl/3xl`, arbitrary radius or 2px+ feature borders;
+- no decorative product gradients, feature raw-palette utilities, pixel font sizes, or fit-content layout patches;
+- theme foundations use explicit numeric OKLCH/decimal alpha with no percentage color-mix recipes;
 - focus-visible treatment is the same across Button/Input/Textarea/Select/Checkbox/Radio/Switch/Chip;
 - no feature-owned ring or z-index repair;
 - sibling rhythm is parent `gap`/padding rather than child margins or `space-x/space-y`;

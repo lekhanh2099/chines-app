@@ -1,34 +1,13 @@
-/*
- * Semantic surface hierarchy.
- *
- * Palette owns a restrained canvas tint and selected/interactive emphasis.
- * Structural surfaces derive from the neutral light/dark foundations so the
- * app reads as one layered system instead of unrelated tinted boxes.
- *
- * Layer order:
- *   canvas  -> route background
- *   subtle  -> grouped/secondary section
- *   base    -> cards, shell chrome, study panels
- *   raised  -> popovers/dialogs/elevated transient content
- *   hover   -> interactive base-surface hover
- *   selected-> active/selected navigation or choice
- *
- * Important: hover/selected surfaces derive from the low-chroma accent role,
- * not directly from the high-chroma primary role. Primary remains the text,
- * icon, border and focus emphasis. This keeps interaction states in the same
- * hue family as the canvas instead of producing a purple/pink jump on hover.
- */
-
+/* Hanzi Studio Editorial Study Workspace surface contract. */
 [data-theme][data-palette] {
- --surface-canvas: var(--canvas-background);
- --surface-base: color-mix(in oklch, var(--card) 90%, var(--surface-canvas));
- --surface-subtle: color-mix(in oklch, var(--card) 72%, var(--surface-canvas));
- --surface-raised: var(--popover);
- --surface-hover: color-mix(in oklch, var(--accent) 38%, var(--surface-base));
- --surface-selected: color-mix(in oklch, var(--accent) 72%, var(--surface-base));
- --surface-selected-border: color-mix(in oklch, var(--primary) 24%, var(--border));
+ --surface-canvas: var(--theme-background);
+ --surface-base: var(--theme-surface);
+ --surface-subtle: var(--theme-surface-muted);
+ --surface-raised: var(--theme-surface-raised);
+ --surface-hover: var(--theme-surface-hover);
+ --surface-selected: var(--theme-primary-soft);
+ --surface-selected-border: var(--theme-primary);
 
- /* Existing app aliases now resolve through one semantic surface ladder. */
  --bg-primary: var(--surface-canvas);
  --bg-card: var(--surface-base);
  --bg-card-hover: var(--surface-hover);
@@ -36,7 +15,6 @@
  --bg-subtle: var(--surface-subtle);
  --theme-card-background: var(--surface-base);
 
- /* Learning surfaces use the same hierarchy instead of raw --card. */
  --study-surface: var(--surface-base);
  --study-surface-muted: var(--surface-subtle);
  --study-chip-bg: var(--surface-subtle);
@@ -56,14 +34,9 @@
 .app-active-item {
  border-color: var(--surface-selected-border);
  background: var(--surface-selected);
- color: var(--primary);
+ color: var(--theme-primary);
 }
 
-/*
- * Theme changes should feel coordinated, not like every nested node is
- * independently cross-fading. Disable the legacy all-descendants transition
- * and animate only major structural surfaces and selected navigation.
- */
 [data-theme-transitioning] * {
  transition-duration: 0ms !important;
 }

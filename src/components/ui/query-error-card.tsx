@@ -23,7 +23,7 @@ export function QueryErrorCard({
      {description}
     </Typography>
    </div>
-   <Button type="button" variant="surfaceCard" className="w-fit" onClick={onRetry}>
+   <Button type="button" variant="surfaceCard" onClick={onRetry}>
     Thử tải lại
    </Button>
   </Card>

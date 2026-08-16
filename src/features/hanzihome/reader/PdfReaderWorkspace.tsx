@@ -139,11 +139,17 @@ export function PdfReaderWorkspace({
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
       {backHref ? (
-       <Button type="button" variant="ghost" size="sm" asChild className="w-fit justify-self-start">
+       <Button
+        type="button"
+        variant="ghost"
+        size="sm"
+        asChild
+        className="justify-self-start justify-self-start"
+       >
         <a href={backHref}>{backLabel}</a>
        </Button>
       ) : null}
-      <Badge variant="purple" className="w-fit">
+      <Badge variant="purple" className="justify-self-start">
        {badgeLabel}
       </Badge>
       <Typography as="h1" variant="sectionTitle" weight="black">

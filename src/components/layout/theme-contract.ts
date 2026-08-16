@@ -16,16 +16,16 @@ type ThemePaletteMeta = {
 
 export const THEME_PALETTE_META: Record<ThemePalette, ThemePaletteMeta> = {
  editorial: {
-  label: "Chàm biên tập",
-  description: "Chàm rõ, nghiêm túc; canvas và Card phớt lạnh nhẹ cho nội dung dài.",
+  label: "Chàm Hanzi Studio",
+  description: "Chàm lạnh, mặt giấy sáng và nhấn indigo theo Editorial Study Workspace.",
  },
  jade: {
   label: "Ngọc bích",
   description: "Xanh cân bằng; canvas, Card dịu và trạng thái active dễ nhận biết.",
  },
  warm: {
-  label: "Trung tính ấm",
-  description: "Cam nâu tiết chế; canvas và Card ấm nhẹ, hợp với phiên đọc lâu.",
+  label: "Sepia ấm",
+  description: "Palette sepia của Hanzi Studio; ấm vừa đủ cho phiên đọc dài, vẫn giữ phân cấp rõ.",
  },
  plum: {
   label: "Mận tím",

@@ -108,7 +108,7 @@ export function TranslationPracticeWorkspace() {
    <Card variant="section" padding="md" className="grid gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
-      <Badge variant="accent" className="w-fit" casing="natural">
+      <Badge variant="accent" className="justify-self-start" casing="natural">
        Luyện dịch
       </Badge>
       <Typography as="h2" variant="sectionTitle" weight="black">

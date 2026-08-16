@@ -192,7 +192,7 @@ Preserve:
 - `lang="zh-CN"` for Chinese text where appropriate;
 - iPad portrait usability;
 - current study-flow scroll ownership;
-- gradient/glass brand roles defined by the shared UI system.
+- source-aligned semantic brand/surface roles defined by the shared UI system; compatibility gradient/glass class names must not render decorative gradients.
 
 Do not expose answer content by default in practice UI.
 

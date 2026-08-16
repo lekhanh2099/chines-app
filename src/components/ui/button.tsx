@@ -14,14 +14,16 @@ const buttonVariants = cva(
  {
   variants: {
    variant: {
-    default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90",
+    default:
+     "border-primary bg-primary text-primary-foreground shadow-theme-sm hover:border-primary-hover hover:bg-primary-hover",
     outline:
-     "border-border-default bg-bg-input text-text-primary hover:border-primary/25 hover:bg-bg-subtle aria-expanded:bg-bg-subtle aria-expanded:text-text-primary",
+     "border-border-default bg-surface text-foreground hover:border-border-strong hover:bg-surface-muted aria-expanded:bg-surface-muted aria-expanded:text-foreground",
     secondary:
-     "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+     "border-border-default bg-surface-muted text-foreground hover:bg-surface-hover aria-expanded:bg-surface-hover aria-expanded:text-foreground",
     ghost:
-     "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
-    navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
+     "hover:bg-surface-muted hover:text-foreground aria-expanded:bg-surface-muted aria-expanded:text-foreground",
+    navigation:
+     "border-transparent text-foreground-muted hover:bg-surface-muted hover:text-foreground",
     active: "app-active-item [&_[data-slot=typography]]:text-inherit",
     surface:
      "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated hover:text-text-primary",

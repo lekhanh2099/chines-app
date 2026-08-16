@@ -54,7 +54,7 @@ function SelectTrigger({
    data-width={width}
    data-variant={variant}
    className={cn(
-    "flex w-fit items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "inline-flex items-center justify-between gap-1.5 rounded-lg border whitespace-nowrap transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-muted-foreground data-[width=full]:w-full *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
     focusRingClassName,
     invalidFocusRingClassName,
     variant === "breadcrumb" ? breadcrumbAppearance : defaultAppearance,

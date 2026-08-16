@@ -1,180 +1,119 @@
 # Theme and color contract
 
-The application separates **appearance mode** from **accent palette**.
+`chines-app` implements Hanzi Studio's **Editorial Study Workspace** visual system while
+preserving the local shadcn primitive boundary and existing persisted theme keys.
+
+Source visual reference for this consolidation:
 
 ```text
-mode    -> system | light | dark
-palette -> editorial | jade | warm | plum | mono | tea
+lekhanh2099/hanzi-studio
+commit 0568e6cd15d868ac968dfe03533d99429a4e9fcf
+src/styles/theme.css
+docs/STYLE_GUIDE.md
+docs/engineering/UI_SYSTEM.md
+.agents/skills/hanzi-frontend-quality/SKILL.md
 ```
 
-The authoritative runtime contract lives in `src/components/layout/theme-contract.ts`.
-`ThemeProvider` owns persistence/root attributes, `src/app/theme-palettes.css` owns
-palette identity, and `src/app/surface-system.css` owns the semantic surface hierarchy.
-
-## 1. Surface hierarchy
-
-Do not theme the app by independently tinting components. All normal application
-surfaces resolve through one ladder:
+Local runtime ownership remains authoritative:
 
 ```text
-surface-canvas   -> route/page background
-surface-subtle   -> grouped or secondary section
-surface-base     -> Card, shell chrome, study panel
-surface-raised   -> Popover/Dialog/elevated transient content
-surface-hover    -> hover on an interactive base surface
-surface-selected -> active/selected navigation or choice
+ThemeProvider                  -> mode/palette persistence + root attributes
+src/app/globals.css            -> canonical light/dark foundations + shadcn aliases
+src/app/theme-palettes.css     -> palette overrides
+src/app/surface-system.css     -> surface-role aliases and transitions
+src/components/ui/**           -> visual primitive anatomy
 ```
 
-This hierarchy follows the same design principle used by mature platform systems:
-background/surface roles communicate depth and grouping; brand color communicates
-selection and priority.
+## 1. Product visual hierarchy
 
-Palette MAY own:
+Hanzi and the current learning unit dominate. Immediate study actions come second.
+Pinyin, Vietnamese meaning, metadata, source and settings are supporting layers.
 
-- `--canvas-background`;
-- `--primary` and `--primary-foreground`;
-- `--accent` and `--accent-foreground`;
-- `--ring`;
-- Sidebar/navigation emphasis;
-- brand-oriented chart accent.
+The app is a reading/practice workspace, not an analytics dashboard. Prefer authored
+document composition, whitespace and a small number of meaningful surfaces over grids
+of equal-weight cards, KPI tiles, decorative hero panels or nested card stacks.
 
-Palette MUST NOT redefine the raw structural foundations:
+Primary indigo is for the current primary action, active location, selection and
+playback progress. Accent teal supports audio and secondary learning state. It is not a
+second brand fill for large surfaces.
 
-- `--background`;
-- `--card`;
-- `--popover`;
-- `--border`;
-- semantic success/warning/danger/info colors.
-
-`surface-system.css` derives the visible app surfaces from those foundations and the
-selected palette. The base surface must receive a **perceptible but restrained** canvas
-tint: enough that Card/Header/Sidebar belong to the same theme, but not enough to flatten
-the interface into one colored sheet. Subtle surfaces sit between canvas and base.
-Raised surfaces remain the mode-owned Popover foundation.
-
-Hover and selected surfaces derive from the low-chroma `--accent` role plus the base
-surface. Do not mix high-chroma `--primary` directly into large surface backgrounds;
-that creates a hue/chroma jump even when the palette itself is coherent. `--primary`
-remains the emphasis color for selected text/icons, focus and selected borders.
-
-## 2. Alias ownership
-
-Existing app aliases resolve through the surface ladder:
+## 2. Canonical surface roles
 
 ```text
---bg-primary       -> --surface-canvas
---bg-card          -> --surface-base
---bg-card-hover    -> --surface-hover
---bg-subtle        -> --surface-subtle
---bg-elevated      -> --surface-raised
---theme-card-background -> --surface-base
+canvas          -> --theme-background
+work/document   -> --theme-surface / --theme-reading-canvas
+grouped support -> --theme-surface-muted
+overlay         -> --theme-surface-raised
+hover           -> --theme-surface-hover
+selected        -> --theme-primary-soft + --theme-primary emphasis
 ```
 
-Learning-specific aliases use the same roles. `study-content-surface`, exercise cards,
-study chips and HanziHome liquid panels must not bypass the ladder with raw `--card`.
+Existing aliases (`bg-card`, `bg-subtle`, `surface-base`, etc.) resolve to these roles.
+Feature code never invents another palette or card recipe.
 
-The result should read as one layered interface:
+## 3. Color syntax
+
+Authoritative theme colors use numeric `oklch()` channels and decimal alpha only.
+
+Forbidden in `globals.css` theme foundations, `theme-palettes.css` and
+`surface-system.css`:
+
+- HSL/HSLA percentage channels;
+- `color-mix(... N%, ...)` recipes;
+- raw RGB/hex theme definitions;
+- decorative gradients.
+
+This keeps the palette explicit and auditable. Tool-owned content colors such as a PDF
+annotation pen or rich-text authored color are data, not app-theme tokens, and stay
+inside their dedicated tool owner.
+
+## 4. Palette compatibility
+
+Persisted palette keys remain:
 
 ```text
-canvas
-  shell / toolbar / Card / study panel
-    grouped subtle region
-      selected or interactive state
+editorial | jade | warm | plum | mono | tea
 ```
 
-A route must not appear as unrelated white blocks floating on a colored canvas, nor as
-one uniformly tinted sheet with no depth cues.
+`editorial`, `jade`, `plum` and `mono` use the Hanzi Studio palette directly. The stored
+key `warm` renders the Hanzi Studio sepia palette without breaking existing localStorage.
+`tea` remains as a backwards-compatible extra palette but follows the same Editorial
+Study Workspace hierarchy.
 
-## 3. Selection, focus and borders
+Every palette defines light and dark states. Palette changes may alter the canonical
+source theme roles, but semantic warning/success/danger meaning must remain legible and
+interaction state may not depend on color alone.
 
-Selection uses the palette without turning the whole selected surface into the primary
-brand color.
+## 5. Geometry and motion
 
 ```text
-selected background -> --surface-selected (accent-derived)
-selected text/icon   -> --primary
-selected border      -> --surface-selected-border
-focus ring           -> --ring
-normal border        -> neutral --border
+control radius -> 0.625rem
+panel/card     -> 0.875rem
+dialog         -> 1rem
+touch target   -> 2.75rem minimum
 ```
 
-Do not recolor every border with the palette. Accent borders are for selected/focus
-states only. Normal Card, shell, toolbar and content boundaries stay neutral.
+Borders establish normal hierarchy. Shadows are restrained and reserved for focus or
+elevated/transient surfaces. Feature hover styles never translate or scale the hit
+target under the pointer. Theme transition is short and limited to major structural
+surfaces; reduced motion disables it.
 
-## 4. Semantic color independence
+## 6. Typography and learning content
 
-Semantic colors keep the same meaning in every palette:
+Font sizes use semantic Tailwind/rem values, never pixel declarations. Chinese learner
+content uses the feature-owned Hanzi/Pinyin/translation typography contracts. Reading
+support text never competes with canonical Hanzi.
 
-```text
-success -> success tokens
-warning -> warning tokens
-danger  -> danger tokens
-info    -> info tokens
-purple  -> semantic purple/category tokens
-```
+Do not use `w-fit`, `h-fit`, `fit-content`, `min-content` or `max-content` as layout
+repairs. Use wrapping, `min-w-0`, parent alignment, inline layout where intrinsically
+semantic, and bounded grid/flex composition.
 
-A Jade palette must not turn a purple category badge green. A Plum palette must not
-redefine warning/error simply to look coordinated. Theme color is never the only signal
-for state.
+## 7. Settings and verification
 
-## 5. Light and dark pairs
+Appearance settings expose system/light/dark plus every persisted palette. Theme work is
+not complete from source inspection alone. Render Settings and a content-heavy learning
+surface in light and dark, switch every palette, and verify mobile, iPad portrait and
+desktop when the environment supports browser rendering.
 
-Every palette requires both a light and dark token set. Dark mode is not a simple
-inversion. The surface ladder must preserve ordering in both modes:
-
-```text
-canvas < subtle < base < raised
-```
-
-where `<` means visually lower/less elevated, not a literal numeric color comparison.
-The selected surface must remain distinguishable without becoming a large saturated
-block.
-
-`system` mode resolves from `prefers-color-scheme`; the stored palette remains unchanged
-when the operating system switches between light and dark.
-
-## 6. Theme transition
-
-Do not animate every descendant during a theme change. That makes nested panels appear
-to repaint independently.
-
-The global contract is:
-
-- nested descendants change immediately;
-- only major structural surfaces and active navigation may cross-fade;
-- transition is short (about 140ms);
-- `prefers-reduced-motion: reduce` disables the transition.
-
-## 7. Settings UX
-
-Appearance settings expose:
-
-- one direct light/dark/system choice;
-- the complete palette set with a visual swatch;
-- a selected-state check;
-- a short description of the current palette;
-- a live preview that shows canvas, base surface, subtle grouping, text hierarchy and
-  selected state together.
-
-Palette choices are standalone touch targets. Changing palette should visibly affect
-canvas, structural base surfaces and selected emphasis while keeping content readability
-stable.
-
-## 8. Adding a palette
-
-To add a palette:
-
-1. Add its key to `ThemePaletteSchema`.
-2. Add user-facing metadata to `THEME_PALETTE_META`.
-3. Define light and dark selectors in `theme-palettes.css`.
-4. Define `--canvas-background`, primary/accent/ring and Sidebar emphasis only.
-5. Do not create feature-local background recipes.
-6. Keep semantic state colors independent.
-7. Keep the shared surface ladder intact; do not add a palette-specific Card recipe.
-8. Keep hover/selected backgrounds accent-derived; reserve primary for emphasis.
-9. Add/keep a swatch selector.
-10. Run `theme-contract.test.ts` and the normal UI gate.
-11. Render Settings plus at least one content-heavy learning surface in light and dark
-    before claiming visual verification.
-
-Do not add a second theme store or feature-local palette classes.
+`npm run ui:check` enforces the machine-detectable subset. `npm run check` remains the
+complete repository gate.

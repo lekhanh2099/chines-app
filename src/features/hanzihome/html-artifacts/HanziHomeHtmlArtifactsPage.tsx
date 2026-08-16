@@ -1485,7 +1485,7 @@ function PreviewPane({
    <div
     className={cn(
      "min-h-0 flex-1",
-     mode === "editor" ? "overflow-hidden" : "overflow-auto bg-white",
+     mode === "editor" ? "overflow-hidden" : "overflow-auto bg-surface",
     )}
    >
     {mode === "editor" ? (

@@ -426,7 +426,7 @@ export function DailyReadingWorkspace({
        type="button"
        variant="ghost"
        size="sm"
-       className="w-fit"
+       className="justify-self-start"
        onClick={() => setQuery({})}
       >
        ← Danh sách bài hằng ngày

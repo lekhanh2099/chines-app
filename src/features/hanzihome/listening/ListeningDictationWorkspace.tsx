@@ -431,7 +431,7 @@ export function ListeningDictationWorkspace() {
      <div className="flex items-start gap-2">
       <Headphones className="size-5 shrink-0 translate-y-0.5 text-primary" />
       <div className="grid min-w-0 gap-1">
-       <Badge variant="purple" className="w-fit">
+       <Badge variant="purple" className="justify-self-start">
         Bài nghe chép
        </Badge>
        <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">

@@ -293,7 +293,7 @@ function FontSizeControl({
     value={inputVal}
     disabled={disabled}
     density="compact"
-    className="toolbar-font-size-input w-14! h-fit! text-center! text-sm! font-medium!"
+    className="toolbar-font-size-input w-14! h-auto! text-center! text-sm! font-medium!"
     onMouseDown={pf}
     onChange={(e) => setInputVal(e.target.value.replace(/\D/g, ""))}
     onBlur={() => applySize(inputVal)}

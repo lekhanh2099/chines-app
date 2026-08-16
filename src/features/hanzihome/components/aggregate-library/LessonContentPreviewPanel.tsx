@@ -532,7 +532,7 @@ function CompactLessonText({ sections }: { sections: LessonSectionMatch[] }) {
        tone="muted"
        weight="black"
        scale="micro"
-       className="w-fit rounded-full bg-bg-card px-2 py-0.5"
+       className="justify-self-start rounded-full bg-bg-card px-2 py-0.5"
       >
        {line.speaker}
       </StudyInstructionText>

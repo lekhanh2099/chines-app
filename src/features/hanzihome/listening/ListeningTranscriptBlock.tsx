@@ -72,7 +72,7 @@ export function ListeningTranscriptBlock({
         <Badge
          variant={speaker?.voice === "male" ? "info" : "purple"}
          casing="natural"
-         className="w-fit"
+         className="justify-self-start"
         >
          <HanziInlineText text={speaker?.labelZh ?? line.speakerId} />
         </Badge>

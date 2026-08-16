@@ -214,7 +214,9 @@ export function ReviewLessonMultiSelect({
           <span
            className={[
             "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border",
-            selected ? "border-accent bg-accent text-white" : "border-border-default bg-bg-primary",
+            selected
+             ? "border-primary bg-primary-soft text-primary"
+             : "border-border-default bg-bg-primary",
            ].join(" ")}
           >
            {selected && <Check className="h-3.5 w-3.5" />}

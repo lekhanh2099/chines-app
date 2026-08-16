@@ -188,7 +188,7 @@ function AnnotationCards({
   <div className="grid gap-3 md:grid-cols-2">
    {annotations.map((annotation) => (
     <Card key={annotation.id} variant="subtle" padding="md" className="grid gap-2">
-     <Badge variant="accent" casing="natural" className="w-fit">
+     <Badge variant="accent" casing="natural" className="justify-self-start">
       {annotation.type}
      </Badge>
      <Typography as="h3" variant="cardTitle" weight="black">
@@ -472,11 +472,17 @@ function TrackDetail({
  return (
   <div className="grid min-w-0 gap-4">
    <Card variant="section" padding="md" className="grid gap-3">
-    <Button type="button" variant="ghost" align="start" className="w-fit" onClick={onBack}>
+    <Button
+     type="button"
+     variant="ghost"
+     align="start"
+     className="justify-self-start"
+     onClick={onBack}
+    >
      ← Danh sách {trackTitle(kind)}
     </Button>
     <div className="grid gap-1">
-     <Badge variant="purple" className="w-fit">
+     <Badge variant="purple" className="justify-self-start">
       Mô-đun {moduleNumber(kind, lessonIndex - 1)} · Bài {lessonIndex}/{total}
      </Badge>
      <Typography as="h1" variant="sectionTitle" weight="black">

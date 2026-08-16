@@ -4,17 +4,16 @@ import { Slot } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 
-const themedCardSurface = "bg-[var(--theme-card-background)]";
-
 const cardVariants = cva("rounded-xl border", {
  variants: {
   variant: {
-   default: `border-border-default ${themedCardSurface}`,
-   elevated: `border-border-default/80 ${themedCardSurface} shadow-theme-sm`,
-   section: `border-border-default/80 ${themedCardSurface}`,
-   subtle: "border-border-default bg-bg-subtle",
-   interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-card-hover focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`,
-   glass: `border-border-default ${themedCardSurface}`,
+   default: "border-border-default bg-surface",
+   elevated: "border-border-default bg-surface-raised shadow-theme-sm",
+   section: "border-border-default bg-surface",
+   subtle: "border-border-default bg-surface-muted",
+   interactive:
+    "border-border-default bg-surface transition-colors hover:border-border-strong hover:bg-surface-hover focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-soft",
+   glass: "border-border-default bg-surface",
   },
   padding: {
    none: "",

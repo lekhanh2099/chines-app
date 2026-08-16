@@ -32,7 +32,7 @@ const typographyVariants = cva("", {
    info: "text-info-text",
    purple: "text-purple-text",
    burntSiena: "text-burnt-siena",
-   sky: "text-sky-500",
+   sky: "text-info-text",
    inherit: "text-inherit",
   },
   weight: {
@@ -57,7 +57,7 @@ const typographyVariants = cva("", {
   },
   scale: {
    inherit: "",
-   micro: "text-[10px] leading-4",
+   micro: "text-[0.625rem] leading-4",
    fine: "text-[0.7rem]",
    relativeSmall: "text-[0.68rem]",
    cloze: "text-[0.62em]",

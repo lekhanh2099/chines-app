@@ -793,7 +793,7 @@ function CharacterWriterCard({ character }: { character: string }) {
  }, [character]);
 
  return (
-  <Card variant="subtle" padding="sm" className="w-fit">
+  <Card variant="subtle" padding="sm" className="justify-self-start">
    <div
     ref={containerRef}
     className="font-hanzi"

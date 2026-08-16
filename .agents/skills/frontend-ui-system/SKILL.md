@@ -28,6 +28,28 @@ Read the local primitive/pattern source before changing or recreating it. Local 
 
 For shadcn changes, inspect current source and use CLI dry-run/diff before overwriting anything.
 
+## 1A. Hanzi Studio Editorial Study Workspace binding
+
+For the Hanzi Studio consolidation, the visual reference is pinned to
+`lekhanh2099/hanzi-studio@0568e6cd15d868ac968dfe03533d99429a4e9fcf`. Apply the source
+`hanzi-frontend-quality` skill, `docs/STYLE_GUIDE.md`, `docs/engineering/UI_SYSTEM.md`, and
+`src/styles/theme.css` through chines-app owners rather than copying source primitives wholesale.
+
+Non-negotiable visual rules:
+
+- canonical learning content > immediate study action/current position > support/meta/settings;
+- Editorial Study Workspace, not analytics/dashboard card grids;
+- pale cool canvas + near-paper work surface in light mode; deep navy layers in dark mode;
+- primary is reserved for current action/location/selection/progress; accent supports audio/secondary state;
+- no decorative gradients, raw feature palette utilities, feature-local theme recipes, pixel font sizes, or `w-fit`/`h-fit`/`fit-content` layout patches;
+- authoritative theme colors use numeric OKLCH + decimal alpha, never HSL percentage channels or percentage `color-mix` recipes;
+- normal hierarchy is border/spacing/typography first; avoid card-inside-card and hairline soup;
+- hover must not move/scale the interactive hit target;
+- finite required choices wrap/grid instead of relying on sideways discovery;
+- keep the chines-app primitive/state/data boundaries authoritative.
+
+When the source and target component APIs differ, preserve the source behavior/visual hierarchy by extending the existing chines-app semantic owner. Do not introduce a second component dialect.
+
 ## 2. Start from the user goal
 
 A UI refactor may change information architecture or flow when the old flow creates duplicated navigation, hidden state, unnecessary steps, weak orientation or interaction clutter.

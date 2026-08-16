@@ -163,7 +163,7 @@ export function ListeningWorkspace() {
      type="button"
      variant={showScript ? "active" : "outline"}
      size="toolbar"
-     className="w-fit"
+     className="justify-self-start"
      aria-pressed={showScript}
      onClick={() => setShowScript((current) => !current)}
     >
@@ -171,7 +171,7 @@ export function ListeningWorkspace() {
     </Button>
 
     <Card variant="section" padding="md" className="grid gap-1.5">
-     <Badge variant="purple" className="w-fit">
+     <Badge variant="purple" className="justify-self-start">
       Bài luyện nghe
      </Badge>
      <ReaderHanziText as="h2" displayMode={displayMode} size="lg" leading="relaxed">

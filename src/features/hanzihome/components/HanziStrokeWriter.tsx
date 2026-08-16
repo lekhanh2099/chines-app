@@ -100,12 +100,12 @@ export function HanziStrokeWriter({
 
  return (
   <div
-   className={["grid w-fit gap-3", className].join(" ")}
+   className={["inline-grid gap-3", className].join(" ")}
    onClick={(event) => event.stopPropagation()}
    onMouseDown={(event) => event.stopPropagation()}
    onTouchStart={(event) => event.stopPropagation()}
   >
-   <div className="rounded-lg border border-border-default bg-bg-primary relative w-fit h-fit">
+   <div className="rounded-lg border border-border-default bg-bg-primary relative inline-grid">
     <div
      id={targetId}
      style={{ width: size, height: size }}

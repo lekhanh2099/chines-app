@@ -63,7 +63,7 @@ export function GlobalMemoryTipCard({
    <Card
     variant="section"
     padding="md"
-    className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+    className={cn(compact ? "overflow-hidden" : "min-h-28", className)}
    >
     <div
      className="flex h-full min-h-28 animate-pulse items-center gap-3"
@@ -91,7 +91,7 @@ export function GlobalMemoryTipCard({
    <Card
     variant="section"
     padding="md"
-    className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+    className={cn(compact ? "overflow-hidden" : "min-h-28", className)}
    >
     <div className="grid h-full min-h-32 gap-3">
      <div className="flex min-w-0 gap-3">
@@ -150,7 +150,7 @@ export function GlobalMemoryTipCard({
   <Card
    variant="section"
    padding="md"
-   className={cn(compact ? "max-h-fit overflow-hidden" : "min-h-28", className)}
+   className={cn(compact ? "overflow-hidden" : "min-h-28", className)}
   >
    <div className="relative grid w-full gap-3">
     {contentOnly && selectedTip.isPinned ? (

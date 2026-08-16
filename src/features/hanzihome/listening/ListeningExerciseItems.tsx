@@ -64,7 +64,7 @@ function ExerciseAudioButton({
    type="button"
    variant="surface"
    size="toolbar"
-   className="w-fit shrink-0"
+   className="justify-self-start shrink-0"
    title="Phát nội dung nghe trước, sau đó đọc câu hỏi"
    onClick={() => onSpeak(text)}
   >
@@ -372,7 +372,7 @@ function AnswerItems({
     onChange={(event) => onAnswer(item.id, event.target.value)}
    />
    {exerciseType === "oral_response" ? (
-    <Badge variant="default" casing="natural" className="w-fit">
+    <Badge variant="default" casing="natural" className="justify-self-start">
      Không chấm tự động; nội dung chỉ giữ trong phiên học này.
     </Badge>
    ) : (
@@ -380,7 +380,7 @@ function AnswerItems({
      type="button"
      variant="outline"
      size="toolbar"
-     className="w-fit"
+     className="justify-self-start"
      onClick={() => onReveal(item.id)}
     >
      {revealed[item.id] ? "Ẩn đáp án gợi ý" : "Xem đáp án gợi ý"}
@@ -473,7 +473,7 @@ function BooleanItems({
       onChange={(value) => onSelect(item.id, value)}
       density="toolbar"
       aria-label={`Chọn đáp án câu ${index + 1}`}
-      className="w-fit"
+      className="justify-self-start"
      />
      <Button type="button" size="toolbar" disabled={!selected} onClick={() => onCheck(item.id)}>
       Kiểm tra
@@ -834,7 +834,7 @@ export function ListeningExerciseItems(props: ListeningExerciseItemsProps) {
       type="button"
       variant="outline"
       size="toolbar"
-      className="w-fit"
+      className="justify-self-start"
       onClick={() => setSharedScriptVisible((current) => !current)}
      >
       {revealSharedScript ? "Ẩn script của đoạn" : "Hiện script của đoạn"}

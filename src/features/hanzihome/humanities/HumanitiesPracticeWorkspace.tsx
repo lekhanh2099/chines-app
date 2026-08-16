@@ -422,7 +422,7 @@ export function HumanitiesPracticeWorkspace({
          ]
       ).map(([levelTitle, levelDescription], index) => (
        <Card key={levelTitle} variant="subtle" padding="md" className="grid gap-2">
-        <Badge variant="purple" className="w-fit">
+        <Badge variant="purple" className="justify-self-start">
          {index + 1}
         </Badge>
         <Typography as="h3" variant="cardTitle" weight="black">
@@ -635,7 +635,7 @@ export function HumanitiesPracticeWorkspace({
      type="button"
      variant="ghost"
      align="start"
-     className="w-fit"
+     className="justify-self-start"
      onClick={() => {
       clearDocument();
       setActiveIndex(0);
@@ -645,7 +645,7 @@ export function HumanitiesPracticeWorkspace({
      ← Danh sách bài {trackTitle(activeTrack)}
     </Button>
     <div className="grid gap-1">
-     <Badge variant="purple" className="w-fit">
+     <Badge variant="purple" className="justify-self-start">
       Mô-đun {courseModuleOrder(activeTrack, selectedLessonIndex)} · Bài {selectedLessonIndex}/
       {trackDocuments.length}
      </Badge>

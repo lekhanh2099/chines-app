@@ -7,7 +7,7 @@ export function AppLogoMark({ className }: { className?: string }) {
   <span
    aria-hidden="true"
    className={cn(
-    "app-brand-gradient relative flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 text-white",
+    "app-brand-gradient relative flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 text-primary-foreground",
     className,
    )}
   >
