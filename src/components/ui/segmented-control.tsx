@@ -79,10 +79,7 @@ export function SegmentedControl<T extends string>({
    {resolvedGroups.map((group, groupIndex) => (
     <div
      key={group.key}
-     className={cn(
-      "flex items-center gap-1",
-      wraps ? "min-w-0 flex-wrap" : "shrink-0",
-     )}
+     className={cn("flex items-center gap-1", wraps ? "min-w-0 flex-wrap" : "shrink-0")}
     >
      {groupIndex > 0 ? (
       <span aria-hidden="true" className="h-6 w-px shrink-0 rounded-full bg-border-default" />

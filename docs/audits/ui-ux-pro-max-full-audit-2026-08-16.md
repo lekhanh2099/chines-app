@@ -376,7 +376,7 @@ Severity: **P1**
 The result region has:
 
 ```tsx
-role="listbox"
+role = "listbox";
 ```
 
 and each `SearchResultItem` is a Button rewritten as:
