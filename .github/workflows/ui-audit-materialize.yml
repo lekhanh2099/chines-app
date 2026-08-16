@@ -1,0 +1,63 @@
+name: UI audit materialize
+
+on:
+ push:
+  branches: [audit/hanzi-ui-parity]
+
+permissions:
+ contents: write
+
+concurrency:
+ group: ui-audit-materialize-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ materialize:
+  if: ${{ !contains(github.event.head_commit.message, '[ui-audit]') }}
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
+  env:
+   HUSKY: 0
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: audit/hanzi-ui-parity
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - name: Materialize reader parity patch
+     run: |
+      python - <<'PY'
+      from pathlib import Path
+      import textwrap
+
+      workflow = Path('.github/workflows/ui-audit-retry.yml').read_text()
+      start_marker = "      python - <<'PY'\n"
+      start = workflow.index(start_marker) + len(start_marker)
+      end = workflow.index("\n      PY", start)
+      script = textwrap.dedent(workflow[start:end])
+      exec(compile(script, 'ui-audit-retry-extracted.py', 'exec'), {})
+
+      reader = Path('src/features/hanzihome/reader/ReaderDocumentStudy.tsx')
+      text = reader.read_text()
+      text = text.replace(
+          '<Card variant="canvas" padding="none" className="grid gap-0 px-1 sm:px-3 lg:px-6">',
+          '<Card variant="canvas" padding="md" className="grid gap-0">',
+      )
+      reader.write_text(text)
+      PY
+   - name: Format audited reader files
+     run: npx --no-install oxfmt --write src/features/hanzihome/reader/ReaderDocumentStudy.tsx src/features/hanzihome/reader/DailyReadingWorkspace.tsx src/features/hanzihome/reader/ReaderWorkspace.tsx
+   - name: Commit materialized reader changes
+     run: |
+      if git diff --quiet -- src/features/hanzihome/reader/ReaderDocumentStudy.tsx src/features/hanzihome/reader/DailyReadingWorkspace.tsx src/features/hanzihome/reader/ReaderWorkspace.tsx; then
+       exit 0
+      fi
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add src/features/hanzihome/reader/ReaderDocumentStudy.tsx src/features/hanzihome/reader/DailyReadingWorkspace.tsx src/features/hanzihome/reader/ReaderWorkspace.tsx
+      git commit -m "refactor(ui): align reader surfaces with Hanzi Studio [ui-audit]"
+      git push origin HEAD:audit/hanzi-ui-parity
