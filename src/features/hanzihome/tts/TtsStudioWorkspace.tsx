@@ -439,7 +439,8 @@ export function TtsStudioWorkspace() {
            <Button
             key={`${index}:${segment}`}
             type="button"
-            size="sm"
+            size="icon"
+            aria-label={`Chọn mục nghe thử ${index + 1}`}
             variant={index === effectiveActiveSegmentIndex ? "active" : "outline"}
             onClick={() => setActiveSegmentIndex(index)}
            >

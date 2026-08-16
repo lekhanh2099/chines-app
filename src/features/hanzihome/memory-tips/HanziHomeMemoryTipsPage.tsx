@@ -79,7 +79,7 @@ export function HanziHomeMemoryTipsPage() {
 
  return (
   <PageContainer>
-   <main className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-5">
     <PageHeader
      eyebrow="HanziHome"
      title="Nhắc nhanh"
@@ -142,7 +142,7 @@ export function HanziHomeMemoryTipsPage() {
       ))}
      </section>
     ) : null}
-   </main>
+   </div>
   </PageContainer>
  );
 }

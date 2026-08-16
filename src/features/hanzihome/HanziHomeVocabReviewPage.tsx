@@ -102,7 +102,7 @@ export function HanziHomeVocabReviewPage({
  };
 
  return (
-  <main className="hanzihome-static-page min-w-0">
+  <div className="hanzihome-static-page min-w-0">
    <div className="grid min-w-0 gap-4">
     <PageHeader
      eyebrow="Ôn tập"
@@ -154,6 +154,6 @@ export function HanziHomeVocabReviewPage({
      />
     ) : null}
    </div>
-  </main>
+  </div>
  );
 }

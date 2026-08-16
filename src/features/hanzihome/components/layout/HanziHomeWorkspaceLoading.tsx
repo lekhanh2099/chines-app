@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 export function HanziHomeWorkspaceLoading() {
  return (
-  <main className="hanzihome-static-page" aria-busy="true" aria-live="polite">
+  <div className="hanzihome-static-page" aria-busy="true" aria-live="polite">
    <div className="grid w-full min-w-0 max-w-full animate-pulse gap-2.5">
     <div className="h-11 rounded-xl border border-border-default bg-bg-card" />
     <Card padding="md" className="grid min-w-0 gap-3">
@@ -28,6 +28,6 @@ export function HanziHomeWorkspaceLoading() {
     </Card>
     <span className="sr-only">Đang tải bài học</span>
    </div>
-  </main>
+  </div>
  );
 }

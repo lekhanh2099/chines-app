@@ -2,8 +2,8 @@ import { LearningLoopWorkspace } from "@/features/hanzihome/learning-loop/Learni
 
 export default function LearningLoopPage() {
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <LearningLoopWorkspace />
-  </main>
+  </div>
  );
 }

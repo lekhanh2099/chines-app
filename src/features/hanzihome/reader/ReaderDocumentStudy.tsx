@@ -1561,7 +1561,7 @@ export function ReaderDocumentStudy({
             />
            </div>
            {pinyinMode === "full" ? (
-            <div className="grid gap-1 border-l-2 border-border-strong pl-3">
+            <div className="grid gap-1 border-l border-border-strong pl-3">
              <Typography as="h3" variant="caption" tone="muted" weight="black">
               Pinyin
              </Typography>

@@ -15,7 +15,7 @@ export default async function ReaderCourseDocumentPage({
  const initialResource = selected === undefined ? null : await getReaderDocument(selected.id);
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="core"
     initialDocuments={initialDocuments}
@@ -24,6 +24,6 @@ export default async function ReaderCourseDocumentPage({
     description="Các bài đọc theo đơn nguyên, giữ nguyên thứ tự bài và bài luyện của Hanzi Studio."
     initialDocumentSlug={slug}
    />
-  </main>
+  </div>
  );
 }

@@ -1,6 +1,6 @@
 export function HanziHomeLibrarySkeleton() {
  return (
-  <main
+  <div
    className="flex w-full min-w-0 flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-5"
    aria-busy="true"
    aria-live="polite"
@@ -74,6 +74,6 @@ export function HanziHomeLibrarySkeleton() {
     ))}
    </div>
    <span className="sr-only">Đang tải thư viện HanziHome</span>
-  </main>
+  </div>
  );
 }
