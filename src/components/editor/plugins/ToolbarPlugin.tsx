@@ -695,7 +695,7 @@ export default function ToolbarPlugin() {
 
  return (
   <Card
-   role="toolbar"
+   role="group"
    aria-label="Công cụ định dạng ghi chú"
    variant="section"
    padding="sm"

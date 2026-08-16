@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 /**
  * DraggableBlockPlugin — Playground-style drag handle for block reordering.
  *
@@ -101,11 +106,9 @@ function getBlockElemByY(y: number, editor: LexicalEditor): NullableHTMLElement 
 function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  const menuRef = useRef<HTMLDivElement>(null);
  const dropLineRef = useRef<HTMLDivElement>(null);
- const blockMenuRef = useRef<HTMLDivElement>(null);
  const [visible, setVisible] = useState(false);
  const [pos, setPos] = useState({ top: 0, left: 0 });
- const [showBlockMenu, setShowBlockMenu] = useState(false);
- const [filterText, setFilterText] = useState("");
+ const [insertOpen, setInsertOpen] = useState(false);
 
  // We store the hovered block element directly — no position matching
  const hoveredBlockRef = useRef<HTMLElement>(null);
@@ -137,23 +140,6 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
   hoveredBlockRef.current = null;
  }, []);
 
- // Close block menu on outside click
- useEffect(() => {
-  if (!showBlockMenu) return;
-  const close = (e: MouseEvent) => {
-   if (
-    blockMenuRef.current &&
-    e.target instanceof Node &&
-    !blockMenuRef.current.contains(e.target)
-   ) {
-    setShowBlockMenu(false);
-    setFilterText("");
-   }
-  };
-  document.addEventListener("mousedown", close);
-  return () => document.removeEventListener("mousedown", close);
- }, [showBlockMenu]);
-
  // Track mouse movement over editor container (includes padding area for handles)
  useEffect(() => {
   const root = editor.getRootElement();
@@ -164,9 +150,8 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
   const onMouseMove = (e: MouseEvent) => {
    if (!(e.target instanceof HTMLElement)) return;
    const target = e.target;
-   // Don't change when hovering the menu itself or blockMenu
+   // Do not change the active block while interacting with the local controls.
    if (menuRef.current?.contains(target)) return;
-   if (blockMenuRef.current?.contains(target)) return;
 
    // Try direct DOM ancestry first
    let block = getBlockElemFromTarget(target, editor);
@@ -176,13 +161,13 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
    }
    if (block) {
     showMenu(block);
-   } else if (!showBlockMenu) {
+   } else if (!insertOpen) {
     hideMenu();
    }
   };
 
   const onMouseLeave = () => {
-   if (!showBlockMenu) hideMenu();
+   if (!insertOpen) hideMenu();
   };
 
   container.addEventListener("mousemove", onMouseMove);
@@ -191,7 +176,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
    container.removeEventListener("mousemove", onMouseMove);
    container.removeEventListener("mouseleave", onMouseLeave);
   };
- }, [editor, showMenu, hideMenu, showBlockMenu]);
+ }, [editor, showMenu, hideMenu, insertOpen]);
 
  // Insert a block of given type before the hovered block
  const handleInsertBlock = useCallback(
@@ -261,8 +246,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
     });
    }
 
-   setShowBlockMenu(false);
-   setFilterText("");
+   setInsertOpen(false);
   },
   [editor],
  );
@@ -400,10 +384,6 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
 
  if (!editor.getRootElement()) return null;
 
- const filteredOptions = filterText
-  ? BLOCK_INSERT_OPTIONS.filter((o) => o.label.toLowerCase().includes(filterText.toLowerCase()))
-  : BLOCK_INSERT_OPTIONS;
-
  return (
   <>
    {/* ── Block Menu (+ button and grip handle) ── */}
@@ -412,18 +392,31 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
     className={`draggable-block-menu ${visible ? "visible" : ""}`}
     style={{ top: pos.top, left: pos.left }}
    >
-    <Button
-     type="button"
-     variant="ghost"
-     className="draggable-block-add"
-     onClick={() => {
-      setShowBlockMenu(!showBlockMenu);
-      setFilterText("");
-     }}
-     title="Click to add below"
-    >
-     <Plus className="w-3.5 h-3.5" />
-    </Button>
+    <DropdownMenu open={insertOpen} onOpenChange={setInsertOpen}>
+     <DropdownMenuTrigger asChild>
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-toolbar"
+       aria-label="Chèn khối"
+       title="Chèn khối"
+       onMouseDown={(event) => event.preventDefault()}
+      >
+       <Plus />
+      </Button>
+     </DropdownMenuTrigger>
+     <DropdownMenuContent align="start" side="right">
+      {BLOCK_INSERT_OPTIONS.map((option) => {
+       const Icon = option.icon;
+       return (
+        <DropdownMenuItem key={option.key} onSelect={() => handleInsertBlock(option.key)}>
+         <Icon />
+         {option.label}
+        </DropdownMenuItem>
+       );
+      })}
+     </DropdownMenuContent>
+    </DropdownMenu>
     <Button
      type="button"
      variant="ghost"
@@ -446,53 +439,18 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
     >
      <ArrowDown />
     </Button>
-    <div
-     className="draggable-block-handle"
+    <Button
+     type="button"
+     variant="ghost"
+     size="icon-toolbar"
      draggable
      onDragStart={handleDragStart}
-     title="Drag to reorder"
+     aria-label="Kéo để sắp xếp khối"
+     title="Kéo để sắp xếp khối"
     >
-     <GripVertical className="w-3.5 h-3.5" />
-    </div>
+     <GripVertical />
+    </Button>
    </div>
-
-   {/* ── Block Type Insert Menu ── */}
-   {showBlockMenu && visible && (
-    <div
-     ref={blockMenuRef}
-     className="draggable-block-insert-menu"
-     style={{ top: pos.top + 28, left: pos.left }}
-    >
-     <Input
-      type="text"
-      className="draggable-block-insert-filter"
-      placeholder="Filter blocks..."
-      value={filterText}
-      onChange={(e) => setFilterText(e.target.value)}
-      autoFocus
-     />
-     <div className="draggable-block-insert-list">
-      {filteredOptions.map((opt) => {
-       const Icon = opt.icon;
-       return (
-        <Button
-         key={opt.key}
-         type="button"
-         variant="ghost"
-         className="draggable-block-insert-item"
-         onClick={() => handleInsertBlock(opt.key)}
-        >
-         <Icon className="w-4 h-4" />
-         <span>{opt.label}</span>
-        </Button>
-       );
-      })}
-      {filteredOptions.length === 0 && (
-       <div className="draggable-block-insert-empty">No results</div>
-      )}
-     </div>
-    </div>
-   )}
 
    {/* ── Drop Indicator Line ── */}
    <div ref={dropLineRef} className="draggable-block-dropline" style={{ display: "none" }} />

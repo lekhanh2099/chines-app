@@ -249,7 +249,7 @@ const AUDIT_EXPRESSION = `(() => {
   let threshold = 0;
   if (slot === "chip") threshold = coarsePointer ? 44 : 0;
   else if (size === "compact") threshold = coarsePointer ? 44 : 32;
-  if (size === "menu") threshold = 40;
+  else if (size === "menu") threshold = 40;
   else if (["toolbar", "icon-toolbar", "tab"].includes(size) || element.closest('[role="toolbar"],[role="tablist"]')) threshold = 36;
   else if (["touch", "sm", "lg", "icon", "icon-sm", "icon-lg", "icon-round"].includes(size)) threshold = 44;
   if (!threshold) return [];
