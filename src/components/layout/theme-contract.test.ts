@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import { THEME_PALETTE_META, ThemePaletteSchema } from "./theme-contract";
 
+const globalsCss = fs.readFileSync(path.join(process.cwd(), "src/app/globals.css"), "utf8");
 const paletteCss = fs.readFileSync(path.join(process.cwd(), "src/app/theme-palettes.css"), "utf8");
 const surfaceCss = fs.readFileSync(path.join(process.cwd(), "src/app/surface-system.css"), "utf8");
 const buttonSource = fs.readFileSync(
@@ -17,16 +18,17 @@ const forbiddenPaletteFoundationProperties = [
  "--background:",
  "--card:",
  "--popover:",
- "--border:",
  "--bg-card:",
  "--bg-subtle:",
  "--bg-elevated:",
  "--border-default:",
- "--border-strong:",
 ];
 
+const percentageColorRecipe = /(?:color-mix\([^\n]*%|hsla?\([^\n]*%)/;
+const decorativeGradient = /(?:linear-gradient|radial-gradient|conic-gradient)\(/;
+
 describe("theme palette contract", () => {
- it("keeps palette metadata complete, including the tea palette", () => {
+ it("keeps palette metadata complete, including the tea compatibility palette", () => {
   expect(ThemePaletteSchema.options).toContain("tea");
 
   for (const palette of ThemePaletteSchema.options) {
@@ -35,7 +37,7 @@ describe("theme palette contract", () => {
   }
  });
 
- it("defines every palette for both light and dark modes", () => {
+ it("defines every persisted palette for both light and dark modes", () => {
   for (const palette of ThemePaletteSchema.options) {
    for (const theme of ["light", "dark"]) {
     const selector = `[data-theme="${theme}"][data-palette="${palette}"]`;
@@ -44,57 +46,62 @@ describe("theme palette contract", () => {
   }
  });
 
- it("keeps raw light-dark foundations neutral and palette-owned roles restrained", () => {
-  expect(paletteCss).toContain("--canvas-background:");
-  expect(paletteCss).toContain("--primary:");
-  expect(paletteCss).toContain("--accent:");
-  expect(paletteCss).toContain("--ring:");
+ it("ports the Hanzi Studio Editorial Study Workspace foundation", () => {
+  expect(globalsCss).toContain("--theme-background: oklch(0.978 0.014 255)");
+  expect(globalsCss).toContain("--theme-surface: oklch(0.998 0.003 255)");
+  expect(globalsCss).toContain("--theme-reading-canvas: oklch(0.997 0.004 92)");
+  expect(globalsCss).toContain("--theme-primary: oklch(0.565 0.205 258)");
+  expect(globalsCss).toContain("--theme-accent: oklch(0.58 0.155 188)");
+  expect(globalsCss).toContain("--theme-background: oklch(0.17 0.035 264)");
+  expect(globalsCss).toContain("--theme-primary: oklch(0.72 0.17 258)");
+ });
+
+ it("keeps palettes on source semantic theme roles instead of redefining app foundations", () => {
+  expect(paletteCss).toContain("--theme-background:");
+  expect(paletteCss).toContain("--theme-primary:");
+  expect(paletteCss).toContain("--theme-primary-soft:");
+  expect(paletteCss).toContain("--theme-accent:");
 
   for (const property of forbiddenPaletteFoundationProperties) {
    expect(paletteCss).not.toContain(property);
   }
  });
 
- it("resolves the app through one semantic surface ladder", () => {
-  expect(surfaceCss).toContain("--surface-canvas:");
-  expect(surfaceCss).toContain("--surface-base:");
-  expect(surfaceCss).toContain("--surface-subtle:");
-  expect(surfaceCss).toContain("--surface-raised:");
-  expect(surfaceCss).toContain("--surface-hover:");
-  expect(surfaceCss).toContain("--surface-selected:");
+ it("uses explicit numeric theme colors with no percentage recipes or decorative gradients", () => {
+  for (const css of [globalsCss, paletteCss, surfaceCss]) {
+   expect(css).not.toMatch(percentageColorRecipe);
+   expect(css).not.toMatch(decorativeGradient);
+  }
+ });
+
+ it("resolves the app through one Hanzi Studio semantic surface ladder", () => {
+  expect(surfaceCss).toContain("--surface-canvas: var(--theme-background)");
+  expect(surfaceCss).toContain("--surface-base: var(--theme-surface)");
+  expect(surfaceCss).toContain("--surface-subtle: var(--theme-surface-muted)");
+  expect(surfaceCss).toContain("--surface-raised: var(--theme-surface-raised)");
+  expect(surfaceCss).toContain("--surface-hover: var(--theme-surface-hover)");
+  expect(surfaceCss).toContain("--surface-selected: var(--theme-primary-soft)");
+  expect(surfaceCss).toContain("--surface-selected-border: var(--theme-primary)");
   expect(surfaceCss).toContain("--bg-primary: var(--surface-canvas)");
   expect(surfaceCss).toContain("--bg-card: var(--surface-base)");
   expect(surfaceCss).toContain("--bg-subtle: var(--surface-subtle)");
-  expect(surfaceCss).toContain("--theme-card-background: var(--surface-base)");
   expect(surfaceCss).toContain("--study-surface: var(--surface-base)");
   expect(surfaceCss).toContain("--study-surface-muted: var(--surface-subtle)");
   expect(surfaceCss).toContain("--study-chip-accent-bg: var(--surface-selected)");
  });
 
- it("keeps structural tint perceptible and interaction tint low-chroma", () => {
-  expect(surfaceCss).toContain(
-   "--surface-base: color-mix(in oklch, var(--card) 90%, var(--surface-canvas))",
-  );
-  expect(surfaceCss).toContain(
-   "--surface-hover: color-mix(in oklch, var(--accent) 38%, var(--surface-base))",
-  );
-  expect(surfaceCss).toContain(
-   "--surface-selected: color-mix(in oklch, var(--accent) 72%, var(--surface-base))",
-  );
-  expect(surfaceCss).not.toContain("--surface-hover: color-mix(in oklch, var(--primary)");
-  expect(surfaceCss).not.toContain("--surface-selected: color-mix(in oklch, var(--primary)");
+ it("keeps Card variants on the shared source surface ladder", () => {
+  expect(cardSource).toContain('default: "border-border-default bg-surface"');
+  expect(cardSource).toContain('elevated: "border-border-default bg-surface-raised shadow-theme-sm"');
+  expect(cardSource).toContain('subtle: "border-border-default bg-surface-muted"');
+  expect(cardSource).toContain("hover:bg-surface-hover");
+  expect(cardSource).not.toContain("themedCardSurface");
  });
 
- it("keeps Card variants on the shared surface ladder", () => {
-  expect(cardSource).toContain('const themedCardSurface = "bg-[var(--theme-card-background)]"');
-  expect(cardSource).toContain("hover:bg-bg-card-hover");
-  expect(cardSource).not.toContain("hover:bg-bg-elevated");
- });
-
- it("themes active navigation through the selected surface role", () => {
+ it("themes active navigation through the selected source role", () => {
   expect(surfaceCss).toContain(".app-active-item");
   expect(surfaceCss).toContain("background: var(--surface-selected)");
-  expect(surfaceCss).toContain("color: var(--primary)");
+  expect(surfaceCss).toContain("color: var(--theme-primary)");
  });
 
  it("limits theme animation to structural surfaces and respects reduced motion", () => {
