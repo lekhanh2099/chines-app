@@ -24,3 +24,54 @@ jobs:
       - run: npm install --global npm@11.6.1
       - run: npm ci
       - run: npm run route:check
+      - run: npm run build
+      - name: Start production server
+        run: |
+          npm start -- -p 3000 > /tmp/chines-app.log 2>&1 &
+          echo $! > /tmp/chines-app.pid
+          for attempt in $(seq 1 40); do
+            if curl --silent --fail --max-time 2 http://127.0.0.1:3000/personal-learning > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/chines-app.log
+          exit 1
+      - name: Smoke-test every public learning route
+        run: |
+          routes=(
+            /reader
+            /reader/course
+            /reader/hsk
+            /hsk
+            /daily-reading
+            /dictation
+            /humanities
+            /humanities/history
+            /humanities/poetry
+            /personal-learning
+            /translation
+            /tts
+          )
+          failed=0
+          for route in "${routes[@]}"; do
+            status=$(curl --silent --output /tmp/route-body --write-out '%{http_code}' --max-time 30 "http://127.0.0.1:3000${route}" || true)
+            printf '%-28s %s\n' "$route" "$status"
+            if [ "$status" -lt 200 ] || [ "$status" -ge 400 ]; then
+              failed=1
+              echo "--- response for ${route} ---"
+              head -c 1000 /tmp/route-body || true
+              echo
+            fi
+          done
+          if [ "$failed" -ne 0 ]; then
+            echo "--- server log ---"
+            cat /tmp/chines-app.log
+            exit 1
+          fi
+      - name: Stop production server
+        if: always()
+        run: |
+          if [ -f /tmp/chines-app.pid ]; then
+            kill "$(cat /tmp/chines-app.pid)" || true
+          fi
