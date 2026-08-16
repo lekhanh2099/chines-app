@@ -15,6 +15,7 @@ const cardVariants = cva("rounded-xl border", {
    subtle: "border-border-default bg-bg-subtle",
    interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-card-hover focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`,
    glass: `border-border-default ${themedCardSurface}`,
+   canvas: `border-transparent ${themedCardSurface} shadow-none`,
   },
   padding: {
    none: "",
