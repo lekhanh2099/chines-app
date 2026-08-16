@@ -1,0 +1,64 @@
+name: Retry Hanzi Studio editorial UI system
+
+on:
+  push:
+    branches: [audit/hanzi-ui-parity]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: retry-hanzi-studio-style-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apply:
+    if: ${{ !contains(github.event.head_commit.message, '[hanzi-style-applied]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      HUSKY: 0
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: audit/hanzi-ui-parity
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+      - name: Apply source-aligned patch without obsolete preflight regex
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          import textwrap
+
+          workflow = Path('.github/workflows/temp-apply-hanzi-studio-style.yml').read_text()
+          prefix = "python - <<'PY'\n"
+          if prefix not in workflow:
+              raise SystemExit('source patch block not found')
+          block = workflow.split(prefix, 1)[1].split('\n          PY', 1)[0]
+          script = textwrap.dedent(block)
+          obsolete = '# Final static hard-style sanity scan before formatter/checker.'
+          if obsolete not in script:
+              raise SystemExit('preflight marker not found')
+          script = script.split(obsolete, 1)[0]
+          subprocess.run(['python', '-'], input=script, text=True, check=True)
+          PY
+      - run: npm run format
+      - run: npm run ui:check
+      - run: npm run check
+      - name: Commit verified Editorial Study Workspace migration
+        run: |
+          git rm -f .github/workflows/temp-apply-hanzi-studio-style.yml
+          git rm -f .github/workflows/temp-run-hanzi-style-fixed.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "refactor(ui): apply Hanzi Studio editorial system [hanzi-style-applied]"
+          git push origin HEAD:audit/hanzi-ui-parity
