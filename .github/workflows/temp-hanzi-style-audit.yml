@@ -1,0 +1,38 @@
+name: Temporary Hanzi Studio visual audit
+
+on:
+  push:
+    branches: [audit/hanzi-ui-parity]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: audit/hanzi-ui-parity
+      - name: Audit source-style UI rules
+        shell: bash
+        run: |
+          set +e
+          echo '=== fit/intrinsic layout patches ==='
+          rg -n --glob 'src/**/*.{ts,tsx,css}' '\b(w-fit|h-fit|min-w-fit|max-w-fit|min-h-fit|max-h-fit|fit-content|min-content|max-content)\b' src || true
+          echo '=== pixel font sizes ==='
+          rg -n --glob 'src/**/*.{ts,tsx,css}' '(text-\[[0-9.]+px\]|font-size:\s*[0-9.]+px)' src || true
+          echo '=== gradients ==='
+          rg -n --glob 'src/**/*.{ts,tsx,css}' '(linear-gradient|radial-gradient|conic-gradient|bg-gradient|from-[a-z]|via-[a-z]|to-[a-z])' src || true
+          echo '=== raw browser scroll owners ==='
+          rg -n --glob 'src/**/*.{ts,tsx}' '(scrollIntoView\(|window\.scrollTo\(|document\.documentElement\.scroll)' src || true
+          echo '=== viewport-height shell patches ==='
+          rg -n --glob 'src/**/*.{ts,tsx,css}' '(h-screen|min-h-screen|100dvh|100vh|100svh|100lvh)' src || true
+          echo '=== raw color literals in TS/TSX ==='
+          rg -n --glob 'src/**/*.{ts,tsx}' '(#[0-9A-Fa-f]{3,8}\b|rgb\(|rgba\(|hsl\(|hsla\(|oklch\()' src || true
+          echo '=== raw Tailwind palette utilities ==='
+          rg -n --glob 'src/**/*.{ts,tsx}' '\b(bg|text|border|ring|outline|fill|stroke)-(white|black|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|fuchsia|pink|rose)(-|\b)' src || true
+          echo '=== CSS files outside app/global owners ==='
+          find src -type f -name '*.css' ! -path 'src/app/*' -print | sort
+          echo '=== theme percent/color-mix usage ==='
+          rg -n '(color-mix\([^\n]*%|hsl\([^\n]*%|hsla\([^\n]*%)' src/app/globals.css src/app/theme-palettes.css src/app/surface-system.css || true
