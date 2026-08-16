@@ -1,0 +1,895 @@
+name: Apply Hanzi Studio editorial UI system
+
+on:
+  push:
+    branches: [audit/hanzi-ui-parity]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-hanzi-studio-style-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apply:
+    if: ${{ !contains(github.event.head_commit.message, '[hanzi-style-applied]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      HUSKY: 0
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: audit/hanzi-ui-parity
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+      - name: Apply Editorial Study Workspace contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def replace_once(text: str, old: str, new: str, label: str) -> str:
+              if old not in text:
+                  raise SystemExit(f"missing marker for {label}: {old[:180]!r}")
+              return text.replace(old, new, 1)
+
+          # ------------------------------------------------------------------
+          # 1. Canonical theme foundations — ported from Hanzi Studio 1.5.0.
+          #    Preserve chines-app token/API ownership while using source values.
+          # ------------------------------------------------------------------
+          globals_path = Path("src/app/globals.css")
+          globals_text = globals_path.read_text()
+          start = globals_text.index(':root,\n[data-theme="light"] {')
+          end = globals_text.index('/* Tailwind v4 Token Registration */')
+          theme_block = r''':root,
+          [data-theme="light"] {
+           color-scheme: light;
+           --theme-background: oklch(0.978 0.014 255);
+           --theme-surface: oklch(0.998 0.003 255);
+           --theme-surface-raised: oklch(0.992 0.007 255);
+           --theme-surface-muted: oklch(0.958 0.022 255);
+           --theme-surface-hover: oklch(0.935 0.034 255);
+           --theme-reading-canvas: oklch(0.997 0.004 92);
+           --theme-reading-foreground: oklch(0.185 0.027 264);
+           --theme-reading-muted: oklch(0.43 0.035 263);
+           --theme-foreground: oklch(0.235 0.035 264);
+           --theme-foreground-muted: oklch(0.46 0.038 263);
+           --theme-foreground-subtle: oklch(0.59 0.035 261);
+           --theme-border: oklch(0.875 0.029 258);
+           --theme-border-strong: oklch(0.73 0.055 258);
+           --theme-primary: oklch(0.565 0.205 258);
+           --theme-primary-hover: oklch(0.505 0.225 258);
+           --theme-primary-foreground: oklch(0.99 0.004 255);
+           --theme-primary-soft: oklch(0.928 0.055 258);
+           --theme-success: oklch(0.52 0.13 161);
+           --theme-success-soft: oklch(0.94 0.045 161);
+           --theme-warning: oklch(0.64 0.145 78);
+           --theme-warning-soft: oklch(0.95 0.055 80);
+           --theme-danger: oklch(0.56 0.205 27);
+           --theme-danger-soft: oklch(0.94 0.055 27);
+           --theme-accent: oklch(0.58 0.155 188);
+           --theme-accent-soft: oklch(0.93 0.052 188);
+           --theme-overlay: oklch(0.17 0.04 264 / 0.48);
+           --theme-scrollbar-thumb: oklch(0.66 0.055 258 / 0.62);
+           --theme-scrollbar-thumb-hover: oklch(0.53 0.085 258 / 0.82);
+           --theme-inverse-surface: oklch(0.22 0.045 264);
+           --theme-inverse-surface-raised: oklch(0.27 0.05 264);
+           --theme-inverse-canvas: oklch(0.15 0.038 264);
+           --theme-inverse-foreground: oklch(0.96 0.012 255);
+           --theme-inverse-muted: oklch(0.76 0.03 255);
+
+           --background: var(--theme-background);
+           --foreground: var(--theme-foreground);
+           --card: var(--theme-surface);
+           --card-foreground: var(--theme-foreground);
+           --popover: var(--theme-surface-raised);
+           --popover-foreground: var(--theme-foreground);
+           --primary: var(--theme-primary);
+           --primary-foreground: var(--theme-primary-foreground);
+           --secondary: var(--theme-surface-muted);
+           --secondary-foreground: var(--theme-foreground);
+           --muted: var(--theme-surface-muted);
+           --muted-foreground: var(--theme-foreground-muted);
+           --accent: var(--theme-primary-soft);
+           --accent-foreground: var(--theme-primary);
+           --destructive: var(--theme-danger);
+           --border: var(--theme-border);
+           --input: var(--theme-border);
+           --ring: var(--theme-primary);
+           --chart-1: var(--theme-success);
+           --chart-2: var(--theme-primary);
+           --chart-3: var(--theme-warning);
+           --chart-4: var(--theme-accent);
+           --chart-5: var(--theme-foreground-subtle);
+           --sidebar: var(--theme-surface);
+           --sidebar-foreground: var(--theme-foreground);
+           --sidebar-primary: var(--theme-primary);
+           --sidebar-primary-foreground: var(--theme-primary-foreground);
+           --sidebar-accent: var(--theme-primary-soft);
+           --sidebar-accent-foreground: var(--theme-primary);
+           --sidebar-border: var(--theme-border);
+           --sidebar-ring: var(--theme-primary);
+
+           --bg-primary: var(--theme-background);
+           --bg-card: var(--theme-surface);
+           --bg-card-hover: var(--theme-surface-hover);
+           --bg-elevated: var(--theme-surface-raised);
+           --bg-input: var(--theme-surface);
+           --bg-subtle: var(--theme-surface-muted);
+           --text-primary: var(--theme-foreground);
+           --text-secondary: var(--theme-foreground-muted);
+           --text-muted: var(--theme-foreground-subtle);
+           --text-inverse: var(--theme-primary-foreground);
+           --accent-hover: var(--theme-primary-hover);
+           --accent-subtle: var(--theme-primary-soft);
+           --accent-muted: var(--theme-primary-soft);
+           --accent-text: var(--theme-primary);
+           --warning: var(--theme-warning);
+           --warning-subtle: var(--theme-warning-soft);
+           --warning-text: var(--theme-warning);
+           --success: var(--theme-success);
+           --success-subtle: var(--theme-success-soft);
+           --success-text: var(--theme-success);
+           --danger: var(--theme-danger);
+           --danger-subtle: var(--theme-danger-soft);
+           --danger-text: var(--theme-danger);
+           --info: var(--theme-accent);
+           --info-subtle: var(--theme-accent-soft);
+           --info-text: var(--theme-accent);
+           --purple: var(--theme-accent);
+           --purple-subtle: var(--theme-accent-soft);
+           --purple-text: var(--theme-accent);
+           --border-hover: var(--theme-border-strong);
+
+           --study-surface: var(--theme-surface);
+           --study-surface-muted: var(--theme-surface-muted);
+           --study-chip-bg: var(--theme-surface-muted);
+           --study-chip-accent-bg: var(--theme-primary-soft);
+           --study-accent-border: var(--theme-border-strong);
+           --exercise-card-bg: var(--theme-surface);
+           --exercise-question-bg: var(--theme-surface-muted);
+           --exercise-answer-bg: var(--theme-surface);
+           --exercise-answer-hover-bg: var(--theme-surface-hover);
+           --exercise-answer-border: var(--theme-border-strong);
+
+           --shadow-sm: 0 0.0625rem 0.125rem oklch(0.3 0.08 260 / 0.12);
+           --shadow-md: 0 0.5rem 1.5rem oklch(0.3 0.08 260 / 0.08);
+           --shadow-lg: 0 0.875rem 2.5rem oklch(0.3 0.08 260 / 0.16);
+           --overlay: var(--theme-overlay);
+           --bg-inverse: var(--theme-inverse-surface);
+
+           --space-1: 0.25rem;
+           --space-2: 0.5rem;
+           --space-3: 0.75rem;
+           --space-4: 1rem;
+           --space-5: 1.25rem;
+           --space-6: 1.5rem;
+           --space-8: 2rem;
+           --space-10: 2.5rem;
+           --space-12: 3rem;
+           --radius: 0.625rem;
+           --radius-sm: 0.5rem;
+           --radius-md: 0.625rem;
+           --radius-lg: 0.625rem;
+           --radius-xl: 0.875rem;
+           --radius-2xl: 1rem;
+           --radius-3xl: 1rem;
+           --radius-pill: 999rem;
+           --shell-max: 96rem;
+           --reading-max: 64rem;
+           --flashcard-max: 48rem;
+           --sidebar-width: 15rem;
+           --filter-width: 17.5rem;
+           --bottom-nav-height: 4.5rem;
+           --topbar-height: 4rem;
+           --hanzihome-command-header-height: 3rem;
+           --border-thin: 0.0625rem;
+          }
+
+          [data-theme="dark"],
+          .dark {
+           color-scheme: dark;
+           --theme-background: oklch(0.17 0.035 264);
+           --theme-surface: oklch(0.215 0.04 264);
+           --theme-surface-raised: oklch(0.245 0.044 264);
+           --theme-surface-muted: oklch(0.275 0.047 264);
+           --theme-surface-hover: oklch(0.315 0.055 264);
+           --theme-reading-canvas: oklch(0.205 0.034 264);
+           --theme-reading-foreground: oklch(0.97 0.009 255);
+           --theme-reading-muted: oklch(0.75 0.03 255);
+           --theme-foreground: oklch(0.95 0.012 255);
+           --theme-foreground-muted: oklch(0.77 0.03 255);
+           --theme-foreground-subtle: oklch(0.66 0.035 255);
+           --theme-border: oklch(0.36 0.055 264);
+           --theme-border-strong: oklch(0.49 0.075 260);
+           --theme-primary: oklch(0.72 0.17 258);
+           --theme-primary-hover: oklch(0.78 0.145 258);
+           --theme-primary-foreground: oklch(0.17 0.045 264);
+           --theme-primary-soft: oklch(0.31 0.095 258);
+           --theme-success: oklch(0.72 0.13 161);
+           --theme-success-soft: oklch(0.29 0.06 161);
+           --theme-warning: oklch(0.78 0.14 78);
+           --theme-warning-soft: oklch(0.31 0.07 78);
+           --theme-danger: oklch(0.72 0.18 27);
+           --theme-danger-soft: oklch(0.31 0.08 27);
+           --theme-accent: oklch(0.74 0.14 188);
+           --theme-accent-soft: oklch(0.3 0.075 188);
+           --theme-overlay: oklch(0.07 0.02 264 / 0.74);
+           --theme-scrollbar-thumb: oklch(0.48 0.055 264 / 0.78);
+           --theme-scrollbar-thumb-hover: oklch(0.63 0.07 258 / 0.92);
+           --theme-inverse-surface: oklch(0.115 0.028 264);
+           --theme-inverse-surface-raised: oklch(0.17 0.035 264);
+           --theme-inverse-canvas: oklch(0.075 0.022 264);
+           --theme-inverse-foreground: oklch(0.97 0.008 255);
+           --theme-inverse-muted: oklch(0.76 0.03 255);
+
+           --shadow-sm: 0 0.0625rem 0.125rem oklch(0.055 0.018 264 / 0.32);
+           --shadow-md: 0 0.5rem 1.5rem oklch(0.055 0.018 264 / 0.28);
+           --shadow-lg: 0 0.875rem 2.5rem oklch(0.055 0.018 264 / 0.42);
+          }
+
+          '''
+          globals_text = globals_text[:start] + theme_block + globals_text[end:]
+
+          # Register the source semantic roles in Tailwind while retaining old aliases.
+          marker = ' --color-bg-primary: var(--bg-primary);\n'
+          additions = ''' --color-background: var(--theme-background);\n --color-surface: var(--theme-surface);\n --color-surface-raised: var(--theme-surface-raised);\n --color-surface-muted: var(--theme-surface-muted);\n --color-surface-hover: var(--theme-surface-hover);\n --color-reading-canvas: var(--theme-reading-canvas);\n --color-reading-foreground: var(--theme-reading-foreground);\n --color-reading-muted: var(--theme-reading-muted);\n --color-foreground: var(--theme-foreground);\n --color-foreground-muted: var(--theme-foreground-muted);\n --color-foreground-subtle: var(--theme-foreground-subtle);\n --color-border-strong: var(--theme-border-strong);\n --color-primary-hover: var(--theme-primary-hover);\n --color-primary-soft: var(--theme-primary-soft);\n\n'''
+          globals_text = replace_once(globals_text, marker, additions + marker, "Tailwind source semantic tokens")
+
+          # Remove decorative/global theme recipes that contradict the source contract.
+          globals_text = globals_text.replace(
+              'background: linear-gradient(135deg, rgb(20 184 166), rgb(117 72 246));',
+              'background: var(--theme-primary);',
+          )
+          replacements = {
+              'color-mix(in oklch, var(--primary) 30%, var(--border))': 'var(--theme-border-strong)',
+              'color-mix(in oklch, var(--primary) 9%, var(--card))': 'var(--theme-primary-soft)',
+              'color-mix(in srgb, currentColor 45%, transparent)': 'currentColor',
+              'color-mix(in srgb, var(--accent) 15%, transparent)': 'var(--theme-primary-soft)',
+              'color-mix(in srgb, var(--accent) 8%, transparent)': 'var(--theme-primary-soft)',
+              'color-mix(in srgb, var(--info) 15%, transparent)': 'var(--theme-accent-soft)',
+              'color-mix(in srgb, var(--accent) 25%, transparent)': 'var(--theme-primary-soft)',
+              'color-mix(in oklab, var(--bg-elevated) 92%, white)': 'var(--theme-surface-raised)',
+              'color-mix(in oklab, var(--ring) 24%, transparent)': 'var(--theme-primary-soft)',
+              'color-mix(in oklab, var(--primary) 32%, var(--border))': 'var(--theme-border-strong)',
+          }
+          for old, new in replacements.items():
+              globals_text = globals_text.replace(old, new)
+
+          # Source rule: font sizes use rem/semantic scale, never px.
+          px_font_replacements = {
+              'font-size: 15px;': 'font-size: 0.9375rem;',
+              'font-size: 14px;': 'font-size: 0.875rem;',
+              'font-size: 13px;': 'font-size: 0.8125rem;',
+              'font-size: 12px;': 'font-size: 0.75rem;',
+              'font-size: 11px;': 'font-size: 0.6875rem;',
+              'font-size: 10px;': 'font-size: 0.625rem;',
+          }
+          for old, new in px_font_replacements.items():
+              globals_text = globals_text.replace(old, new)
+          globals_path.write_text(globals_text)
+
+          palettes = r'''/*
+           * Hanzi Studio Editorial Study Workspace palettes.
+           *
+           * The persisted chines-app palette keys stay stable. `warm` intentionally
+           * maps to Hanzi Studio's sepia palette so existing stored preferences remain valid.
+           * Theme colors use numeric OKLCH channels and decimal alpha only: no HSL
+           * percentages and no percentage-based color-mix recipes.
+           */
+
+          [data-theme="light"][data-palette="editorial"] {
+           --theme-background: oklch(0.978 0.014 255);
+           --theme-primary: oklch(0.565 0.205 258);
+           --theme-primary-hover: oklch(0.505 0.225 258);
+           --theme-primary-soft: oklch(0.928 0.055 258);
+           --theme-accent: oklch(0.58 0.155 188);
+           --theme-accent-soft: oklch(0.93 0.052 188);
+          }
+
+          [data-theme="dark"][data-palette="editorial"] {
+           --theme-background: oklch(0.17 0.035 264);
+           --theme-primary: oklch(0.72 0.17 258);
+           --theme-primary-hover: oklch(0.78 0.145 258);
+           --theme-primary-soft: oklch(0.31 0.095 258);
+           --theme-accent: oklch(0.74 0.14 188);
+           --theme-accent-soft: oklch(0.3 0.075 188);
+          }
+
+          [data-theme="light"][data-palette="jade"] {
+           --theme-background: oklch(0.978 0.015 158);
+           --theme-surface-muted: oklch(0.957 0.022 158);
+           --theme-surface-hover: oklch(0.93 0.035 158);
+           --theme-reading-canvas: oklch(0.996 0.006 110);
+           --theme-border: oklch(0.868 0.03 158);
+           --theme-border-strong: oklch(0.71 0.06 158);
+           --theme-primary: oklch(0.49 0.14 158);
+           --theme-primary-hover: oklch(0.43 0.15 158);
+           --theme-primary-soft: oklch(0.92 0.055 158);
+           --theme-accent: oklch(0.63 0.13 82);
+           --theme-accent-soft: oklch(0.94 0.05 82);
+          }
+
+          [data-theme="dark"][data-palette="jade"] {
+           --theme-background: oklch(0.165 0.025 158);
+           --theme-surface: oklch(0.205 0.03 158);
+           --theme-surface-raised: oklch(0.235 0.034 158);
+           --theme-surface-muted: oklch(0.27 0.038 158);
+           --theme-surface-hover: oklch(0.31 0.045 158);
+           --theme-reading-canvas: oklch(0.195 0.025 150);
+           --theme-border: oklch(0.35 0.045 158);
+           --theme-border-strong: oklch(0.49 0.07 158);
+           --theme-primary: oklch(0.72 0.13 158);
+           --theme-primary-hover: oklch(0.78 0.11 158);
+           --theme-primary-soft: oklch(0.3 0.075 158);
+           --theme-accent: oklch(0.78 0.12 82);
+           --theme-accent-soft: oklch(0.3 0.065 82);
+          }
+
+          [data-theme="light"][data-palette="warm"] {
+           --theme-background: oklch(0.965 0.025 78);
+           --theme-surface: oklch(0.99 0.012 82);
+           --theme-surface-raised: oklch(0.982 0.018 82);
+           --theme-surface-muted: oklch(0.94 0.035 78);
+           --theme-surface-hover: oklch(0.91 0.045 76);
+           --theme-reading-canvas: oklch(0.985 0.018 88);
+           --theme-reading-foreground: oklch(0.23 0.035 52);
+           --theme-reading-muted: oklch(0.44 0.04 52);
+           --theme-foreground: oklch(0.27 0.04 52);
+           --theme-foreground-muted: oklch(0.48 0.04 52);
+           --theme-foreground-subtle: oklch(0.6 0.035 58);
+           --theme-border: oklch(0.84 0.045 72);
+           --theme-border-strong: oklch(0.68 0.07 65);
+           --theme-primary: oklch(0.5 0.13 48);
+           --theme-primary-hover: oklch(0.44 0.14 45);
+           --theme-primary-soft: oklch(0.91 0.07 58);
+           --theme-accent: oklch(0.58 0.12 145);
+           --theme-accent-soft: oklch(0.92 0.055 145);
+          }
+
+          [data-theme="dark"][data-palette="warm"] {
+           --theme-background: oklch(0.17 0.025 58);
+           --theme-surface: oklch(0.21 0.03 58);
+           --theme-surface-raised: oklch(0.24 0.035 58);
+           --theme-surface-muted: oklch(0.275 0.04 58);
+           --theme-surface-hover: oklch(0.315 0.047 58);
+           --theme-reading-canvas: oklch(0.2 0.026 62);
+           --theme-border: oklch(0.36 0.05 58);
+           --theme-border-strong: oklch(0.5 0.07 58);
+           --theme-primary: oklch(0.75 0.12 62);
+           --theme-primary-hover: oklch(0.8 0.1 62);
+           --theme-primary-soft: oklch(0.31 0.075 58);
+           --theme-accent: oklch(0.72 0.11 145);
+           --theme-accent-soft: oklch(0.29 0.06 145);
+          }
+
+          [data-theme="light"][data-palette="plum"] {
+           --theme-background: oklch(0.978 0.014 320);
+           --theme-surface-muted: oklch(0.955 0.024 320);
+           --theme-surface-hover: oklch(0.928 0.038 320);
+           --theme-reading-canvas: oklch(0.996 0.006 330);
+           --theme-border: oklch(0.87 0.032 320);
+           --theme-border-strong: oklch(0.71 0.065 320);
+           --theme-primary: oklch(0.52 0.18 320);
+           --theme-primary-hover: oklch(0.46 0.19 320);
+           --theme-primary-soft: oklch(0.92 0.06 320);
+           --theme-accent: oklch(0.58 0.14 205);
+           --theme-accent-soft: oklch(0.93 0.05 205);
+          }
+
+          [data-theme="dark"][data-palette="plum"] {
+           --theme-background: oklch(0.165 0.03 320);
+           --theme-surface: oklch(0.205 0.036 320);
+           --theme-surface-raised: oklch(0.235 0.04 320);
+           --theme-surface-muted: oklch(0.27 0.045 320);
+           --theme-surface-hover: oklch(0.31 0.055 320);
+           --theme-reading-canvas: oklch(0.195 0.03 320);
+           --theme-border: oklch(0.35 0.055 320);
+           --theme-border-strong: oklch(0.49 0.08 320);
+           --theme-primary: oklch(0.74 0.15 320);
+           --theme-primary-hover: oklch(0.8 0.12 320);
+           --theme-primary-soft: oklch(0.31 0.085 320);
+           --theme-accent: oklch(0.73 0.12 205);
+           --theme-accent-soft: oklch(0.3 0.065 205);
+          }
+
+          [data-theme="light"][data-palette="mono"] {
+           --theme-background: oklch(0.985 0 0);
+           --theme-surface: oklch(1 0 0);
+           --theme-surface-raised: oklch(0.995 0 0);
+           --theme-surface-muted: oklch(0.955 0 0);
+           --theme-surface-hover: oklch(0.92 0 0);
+           --theme-reading-canvas: oklch(1 0 0);
+           --theme-reading-foreground: oklch(0.12 0 0);
+           --theme-reading-muted: oklch(0.39 0 0);
+           --theme-foreground: oklch(0.16 0 0);
+           --theme-foreground-muted: oklch(0.42 0 0);
+           --theme-foreground-subtle: oklch(0.58 0 0);
+           --theme-border: oklch(0.84 0 0);
+           --theme-border-strong: oklch(0.62 0 0);
+           --theme-primary: oklch(0.18 0 0);
+           --theme-primary-hover: oklch(0.08 0 0);
+           --theme-primary-foreground: oklch(0.99 0 0);
+           --theme-primary-soft: oklch(0.91 0 0);
+           --theme-success: oklch(0.3 0 0);
+           --theme-success-soft: oklch(0.93 0 0);
+           --theme-warning: oklch(0.38 0 0);
+           --theme-warning-soft: oklch(0.9 0 0);
+           --theme-danger: oklch(0.22 0 0);
+           --theme-danger-soft: oklch(0.88 0 0);
+           --theme-accent: oklch(0.34 0 0);
+           --theme-accent-soft: oklch(0.92 0 0);
+          }
+
+          [data-theme="dark"][data-palette="mono"] {
+           --theme-background: oklch(0.08 0 0);
+           --theme-surface: oklch(0.12 0 0);
+           --theme-surface-raised: oklch(0.15 0 0);
+           --theme-surface-muted: oklch(0.19 0 0);
+           --theme-surface-hover: oklch(0.24 0 0);
+           --theme-reading-canvas: oklch(0.095 0 0);
+           --theme-reading-foreground: oklch(0.97 0 0);
+           --theme-reading-muted: oklch(0.73 0 0);
+           --theme-foreground: oklch(0.96 0 0);
+           --theme-foreground-muted: oklch(0.73 0 0);
+           --theme-foreground-subtle: oklch(0.61 0 0);
+           --theme-border: oklch(0.31 0 0);
+           --theme-border-strong: oklch(0.49 0 0);
+           --theme-primary: oklch(0.96 0 0);
+           --theme-primary-hover: oklch(0.84 0 0);
+           --theme-primary-foreground: oklch(0.08 0 0);
+           --theme-primary-soft: oklch(0.24 0 0);
+           --theme-success: oklch(0.82 0 0);
+           --theme-success-soft: oklch(0.21 0 0);
+           --theme-warning: oklch(0.78 0 0);
+           --theme-warning-soft: oklch(0.23 0 0);
+           --theme-danger: oklch(0.88 0 0);
+           --theme-danger-soft: oklch(0.22 0 0);
+           --theme-accent: oklch(0.8 0 0);
+           --theme-accent-soft: oklch(0.22 0 0);
+          }
+
+          /* Extra chines-app palette retained for persisted-state compatibility. */
+          [data-theme="light"][data-palette="tea"] {
+           --theme-background: oklch(0.978 0.013 118);
+           --theme-surface: oklch(0.998 0.003 118);
+           --theme-surface-raised: oklch(0.992 0.006 118);
+           --theme-surface-muted: oklch(0.958 0.021 118);
+           --theme-surface-hover: oklch(0.934 0.03 118);
+           --theme-reading-canvas: oklch(0.996 0.006 105);
+           --theme-border: oklch(0.87 0.028 118);
+           --theme-border-strong: oklch(0.71 0.055 118);
+           --theme-primary: oklch(0.49 0.11 118);
+           --theme-primary-hover: oklch(0.43 0.12 118);
+           --theme-primary-soft: oklch(0.92 0.05 118);
+           --theme-accent: oklch(0.62 0.11 75);
+           --theme-accent-soft: oklch(0.94 0.045 75);
+          }
+
+          [data-theme="dark"][data-palette="tea"] {
+           --theme-background: oklch(0.165 0.022 118);
+           --theme-surface: oklch(0.205 0.027 118);
+           --theme-surface-raised: oklch(0.235 0.03 118);
+           --theme-surface-muted: oklch(0.27 0.034 118);
+           --theme-surface-hover: oklch(0.31 0.04 118);
+           --theme-reading-canvas: oklch(0.195 0.023 112);
+           --theme-border: oklch(0.35 0.04 118);
+           --theme-border-strong: oklch(0.49 0.065 118);
+           --theme-primary: oklch(0.74 0.1 118);
+           --theme-primary-hover: oklch(0.79 0.09 118);
+           --theme-primary-soft: oklch(0.3 0.065 118);
+           --theme-accent: oklch(0.78 0.1 75);
+           --theme-accent-soft: oklch(0.3 0.055 75);
+          }
+
+          .theme-palette-swatch {
+           inline-size: 1.25rem;
+           block-size: 1.25rem;
+           flex: 0 0 auto;
+           border: 0.0625rem solid var(--theme-border);
+           border-radius: 999rem;
+           box-shadow: inset 0 0 0 0.0625rem var(--theme-surface-raised);
+          }
+
+          [data-theme-swatch="editorial"] { background: oklch(0.565 0.205 258); }
+          [data-theme-swatch="jade"] { background: oklch(0.49 0.14 158); }
+          [data-theme-swatch="warm"] { background: oklch(0.5 0.13 48); }
+          [data-theme-swatch="plum"] { background: oklch(0.52 0.18 320); }
+          [data-theme-swatch="mono"] { background: oklch(0.34 0 0); }
+          [data-theme-swatch="tea"] { background: oklch(0.49 0.11 118); }
+          '''
+          Path("src/app/theme-palettes.css").write_text(palettes)
+
+          surfaces = r'''/* Hanzi Studio Editorial Study Workspace surface contract. */
+          [data-theme][data-palette] {
+           --surface-canvas: var(--theme-background);
+           --surface-base: var(--theme-surface);
+           --surface-subtle: var(--theme-surface-muted);
+           --surface-raised: var(--theme-surface-raised);
+           --surface-hover: var(--theme-surface-hover);
+           --surface-selected: var(--theme-primary-soft);
+           --surface-selected-border: var(--theme-primary);
+
+           --bg-primary: var(--surface-canvas);
+           --bg-card: var(--surface-base);
+           --bg-card-hover: var(--surface-hover);
+           --bg-elevated: var(--surface-raised);
+           --bg-subtle: var(--surface-subtle);
+           --theme-card-background: var(--surface-base);
+
+           --study-surface: var(--surface-base);
+           --study-surface-muted: var(--surface-subtle);
+           --study-chip-bg: var(--surface-subtle);
+           --study-chip-accent-bg: var(--surface-selected);
+           --study-accent-border: var(--surface-selected-border);
+           --exercise-card-bg: var(--surface-base);
+           --exercise-question-bg: var(--surface-subtle);
+           --exercise-answer-bg: var(--surface-base);
+           --exercise-answer-hover-bg: var(--surface-hover);
+           --exercise-answer-border: var(--surface-selected-border);
+          }
+
+          .study-content-surface {
+           background: var(--surface-base);
+          }
+
+          .app-active-item {
+           border-color: var(--surface-selected-border);
+           background: var(--surface-selected);
+           color: var(--theme-primary);
+          }
+
+          [data-theme-transitioning] * {
+           transition-duration: 0ms !important;
+          }
+
+          [data-theme-transitioning] body,
+          [data-theme-transitioning] .nova-page,
+          [data-theme-transitioning] .nova-shell-header,
+          [data-theme-transitioning] .nova-shell-sidebar,
+          [data-theme-transitioning] [data-card],
+          [data-theme-transitioning] .hanzihome-liquid-toolbar,
+          [data-theme-transitioning] .hanzihome-liquid-panel,
+          [data-theme-transitioning] .hanzihome-liquid-header,
+          [data-theme-transitioning] .study-content-surface,
+          [data-theme-transitioning] .app-active-item {
+           transition-property: background-color, border-color, color;
+           transition-duration: 140ms !important;
+           transition-timing-function: ease-out;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+           [data-theme-transitioning] body,
+           [data-theme-transitioning] .nova-page,
+           [data-theme-transitioning] .nova-shell-header,
+           [data-theme-transitioning] .nova-shell-sidebar,
+           [data-theme-transitioning] [data-card],
+           [data-theme-transitioning] .hanzihome-liquid-toolbar,
+           [data-theme-transitioning] .hanzihome-liquid-panel,
+           [data-theme-transitioning] .hanzihome-liquid-header,
+           [data-theme-transitioning] .study-content-surface,
+           [data-theme-transitioning] .app-active-item {
+            transition-duration: 0ms !important;
+           }
+          }
+          '''
+          Path("src/app/surface-system.css").write_text(surfaces)
+
+          # ------------------------------------------------------------------
+          # 2. Shared primitive visual grammar.
+          # ------------------------------------------------------------------
+          card_path = Path("src/components/ui/card.tsx")
+          card = card_path.read_text()
+          card = card.replace('const themedCardSurface = "bg-[var(--theme-card-background)]";\n\n', '')
+          card = card.replace('default: `border-border-default ${themedCardSurface}`', 'default: "border-border-default bg-surface"')
+          card = card.replace('elevated: `border-border-default/80 ${themedCardSurface} shadow-theme-sm`', 'elevated: "border-border-default bg-surface-raised shadow-theme-sm"')
+          card = card.replace('section: `border-border-default/80 ${themedCardSurface}`', 'section: "border-border-default bg-surface"')
+          card = card.replace('subtle: "border-border-default bg-bg-subtle"', 'subtle: "border-border-default bg-surface-muted"')
+          card = card.replace('interactive: `border-border-default ${themedCardSurface} transition-colors hover:border-primary/25 hover:bg-bg-card-hover focus-visible:border-ring/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20`', 'interactive: "border-border-default bg-surface transition-colors hover:border-border-strong hover:bg-surface-hover focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-soft"')
+          card = card.replace('glass: `border-border-default ${themedCardSurface}`', 'glass: "border-border-default bg-surface"')
+          card_path.write_text(card)
+
+          button_path = Path("src/components/ui/button.tsx")
+          button = button_path.read_text()
+          button = button.replace('default: "bg-primary text-primary-foreground shadow-theme-sm hover:bg-primary/90"', 'default: "border-primary bg-primary text-primary-foreground shadow-theme-sm hover:border-primary-hover hover:bg-primary-hover"')
+          button = button.replace('"border-border-default bg-bg-input text-text-primary hover:border-primary/25 hover:bg-bg-subtle aria-expanded:bg-bg-subtle aria-expanded:text-text-primary"', '"border-border-default bg-surface text-foreground hover:border-border-strong hover:bg-surface-muted aria-expanded:bg-surface-muted aria-expanded:text-foreground"')
+          button = button.replace('"bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground"', '"border-border-default bg-surface-muted text-foreground hover:bg-surface-hover aria-expanded:bg-surface-hover aria-expanded:text-foreground"')
+          button = button.replace('"hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50"', '"hover:bg-surface-muted hover:text-foreground aria-expanded:bg-surface-muted aria-expanded:text-foreground"')
+          button = button.replace('navigation: "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary"', 'navigation: "border-transparent text-foreground-muted hover:bg-surface-muted hover:text-foreground"')
+          button_path.write_text(button)
+
+          typography_path = Path("src/components/ui/typography.tsx")
+          typography = typography_path.read_text()
+          typography = typography.replace('sky: "text-sky-500"', 'sky: "text-info-text"')
+          typography = typography.replace('micro: "text-[10px] leading-4"', 'micro: "text-[0.625rem] leading-4"')
+          typography_path.write_text(typography)
+
+          # ------------------------------------------------------------------
+          # 3. Whole-app hard-style audit fixes.
+          # ------------------------------------------------------------------
+          direct_replacements = {
+              Path("src/components/layout/AppLogoMark.tsx"): [('text-white', 'text-primary-foreground')],
+              Path("src/components/editor/nodes/InlineNoteNode.tsx"): [('text-sky-600', 'text-info-text')],
+              Path("src/features/hanzihome/html-artifacts/HanziHomeHtmlArtifactsPage.tsx"): [('overflow-auto bg-white', 'overflow-auto bg-surface')],
+              Path("src/features/hanzihome/components/aggregate-library/ReviewLessonMultiSelect.tsx"): [('border-accent bg-accent text-white', 'border-primary bg-primary-soft text-primary')],
+              Path("src/components/editor/plugins/ToolbarPlugin.tsx"): [('h-fit!', 'h-auto!')],
+          }
+          for path, pairs in direct_replacements.items():
+              text = path.read_text()
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              path.write_text(text)
+
+          # Remove fit-content utility patches from application call sites.
+          application_roots = [
+              Path("src/features"),
+              Path("src/components/layout"),
+              Path("src/components/vocabulary"),
+              Path("src/components/editor"),
+          ]
+          for root in application_roots:
+              for path in root.rglob("*.tsx"):
+                  text = path.read_text()
+                  original = text
+                  text = text.replace("grid w-fit", "inline-grid")
+                  text = text.replace("flex w-fit", "inline-flex")
+                  text = text.replace("max-h-fit ", "")
+                  text = text.replace(" max-h-fit", "")
+                  text = re.sub(r'(?<![\w-])w-fit(?![\w-])', 'justify-self-start', text)
+                  text = re.sub(r'(?<![\w-])h-fit(?![\w-])', 'self-start', text)
+                  if text != original:
+                      path.write_text(text)
+
+          # Primitive owners express content sizing structurally, not through fit utilities.
+          primitive_fit_replacements = {
+              Path("src/components/ui/field.tsx"): [
+                  ("flex w-fit gap-2", "inline-flex gap-2"),
+                  ("flex w-fit items-center", "inline-flex items-center"),
+                  ("block w-fit bg-background", "inline-block bg-background"),
+              ],
+              Path("src/components/ui/select.tsx"): [("flex w-fit items-center", "inline-flex items-center")],
+              Path("src/components/ui/query-error-card.tsx"): [(' className="w-fit"', '')],
+          }
+          for path, pairs in primitive_fit_replacements.items():
+              text = path.read_text()
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              path.write_text(text)
+
+          # Hanzi Writer's bounded glyph stage uses inline layout rather than fit patches.
+          writer_path = Path("src/features/hanzihome/components/HanziStrokeWriter.tsx")
+          writer = writer_path.read_text()
+          writer = writer.replace('"grid justify-self-start gap-3"', '"inline-grid gap-3"')
+          writer = writer.replace('relative justify-self-start self-start', 'relative inline-grid')
+          writer_path.write_text(writer)
+
+          # ------------------------------------------------------------------
+          # 4. Bind repository governance to the source UI contract.
+          # ------------------------------------------------------------------
+          theme_contract = r'''# Theme and color contract
+
+          `chines-app` implements Hanzi Studio's **Editorial Study Workspace** visual system while
+          preserving the local shadcn primitive boundary and existing persisted theme keys.
+
+          Source visual reference for this consolidation:
+
+          ```text
+          lekhanh2099/hanzi-studio
+          commit 0568e6cd15d868ac968dfe03533d99429a4e9fcf
+          src/styles/theme.css
+          docs/STYLE_GUIDE.md
+          docs/engineering/UI_SYSTEM.md
+          .agents/skills/hanzi-frontend-quality/SKILL.md
+          ```
+
+          Local runtime ownership remains authoritative:
+
+          ```text
+          ThemeProvider                  -> mode/palette persistence + root attributes
+          src/app/globals.css            -> canonical light/dark foundations + shadcn aliases
+          src/app/theme-palettes.css     -> palette overrides
+          src/app/surface-system.css     -> surface-role aliases and transitions
+          src/components/ui/**           -> visual primitive anatomy
+          ```
+
+          ## 1. Product visual hierarchy
+
+          Hanzi and the current learning unit dominate. Immediate study actions come second.
+          Pinyin, Vietnamese meaning, metadata, source and settings are supporting layers.
+
+          The app is a reading/practice workspace, not an analytics dashboard. Prefer authored
+          document composition, whitespace and a small number of meaningful surfaces over grids
+          of equal-weight cards, KPI tiles, decorative hero panels or nested card stacks.
+
+          Primary indigo is for the current primary action, active location, selection and
+          playback progress. Accent teal supports audio and secondary learning state. It is not a
+          second brand fill for large surfaces.
+
+          ## 2. Canonical surface roles
+
+          ```text
+          canvas          -> --theme-background
+          work/document   -> --theme-surface / --theme-reading-canvas
+          grouped support -> --theme-surface-muted
+          overlay         -> --theme-surface-raised
+          hover           -> --theme-surface-hover
+          selected        -> --theme-primary-soft + --theme-primary emphasis
+          ```
+
+          Existing aliases (`bg-card`, `bg-subtle`, `surface-base`, etc.) resolve to these roles.
+          Feature code never invents another palette or card recipe.
+
+          ## 3. Color syntax
+
+          Authoritative theme colors use numeric `oklch()` channels and decimal alpha only.
+
+          Forbidden in `globals.css` theme foundations, `theme-palettes.css` and
+          `surface-system.css`:
+
+          - HSL/HSLA percentage channels;
+          - `color-mix(... N%, ...)` recipes;
+          - raw RGB/hex theme definitions;
+          - decorative gradients.
+
+          This keeps the palette explicit and auditable. Tool-owned content colors such as a PDF
+          annotation pen or rich-text authored color are data, not app-theme tokens, and stay
+          inside their dedicated tool owner.
+
+          ## 4. Palette compatibility
+
+          Persisted palette keys remain:
+
+          ```text
+          editorial | jade | warm | plum | mono | tea
+          ```
+
+          `editorial`, `jade`, `plum` and `mono` use the Hanzi Studio palette directly. The stored
+          key `warm` renders the Hanzi Studio sepia palette without breaking existing localStorage.
+          `tea` remains as a backwards-compatible extra palette but follows the same Editorial
+          Study Workspace hierarchy.
+
+          Every palette defines light and dark states. Palette changes may alter the canonical
+          source theme roles, but semantic warning/success/danger meaning must remain legible and
+          interaction state may not depend on color alone.
+
+          ## 5. Geometry and motion
+
+          ```text
+          control radius -> 0.625rem
+          panel/card     -> 0.875rem
+          dialog         -> 1rem
+          touch target   -> 2.75rem minimum
+          ```
+
+          Borders establish normal hierarchy. Shadows are restrained and reserved for focus or
+          elevated/transient surfaces. Feature hover styles never translate or scale the hit
+          target under the pointer. Theme transition is short and limited to major structural
+          surfaces; reduced motion disables it.
+
+          ## 6. Typography and learning content
+
+          Font sizes use semantic Tailwind/rem values, never pixel declarations. Chinese learner
+          content uses the feature-owned Hanzi/Pinyin/translation typography contracts. Reading
+          support text never competes with canonical Hanzi.
+
+          Do not use `w-fit`, `h-fit`, `fit-content`, `min-content` or `max-content` as layout
+          repairs. Use wrapping, `min-w-0`, parent alignment, inline layout where intrinsically
+          semantic, and bounded grid/flex composition.
+
+          ## 7. Settings and verification
+
+          Appearance settings expose system/light/dark plus every persisted palette. Theme work is
+          not complete from source inspection alone. Render Settings and a content-heavy learning
+          surface in light and dark, switch every palette, and verify mobile, iPad portrait and
+          desktop when the environment supports browser rendering.
+
+          `npm run ui:check` enforces the machine-detectable subset. `npm run check` remains the
+          complete repository gate.
+          '''
+          Path("docs/ui/theme-contract.md").write_text(theme_contract)
+
+          skill_path = Path(".agents/skills/frontend-ui-system/SKILL.md")
+          skill = skill_path.read_text()
+          skill_marker = '## 2. Start from the user goal\n'
+          binding = '''## 1A. Hanzi Studio Editorial Study Workspace binding\n\nFor the Hanzi Studio consolidation, the visual reference is pinned to\n`lekhanh2099/hanzi-studio@0568e6cd15d868ac968dfe03533d99429a4e9fcf`. Apply the source\n`hanzi-frontend-quality` skill, `docs/STYLE_GUIDE.md`, `docs/engineering/UI_SYSTEM.md`, and\n`src/styles/theme.css` through chines-app owners rather than copying source primitives wholesale.\n\nNon-negotiable visual rules:\n\n- canonical learning content > immediate study action/current position > support/meta/settings;\n- Editorial Study Workspace, not analytics/dashboard card grids;\n- pale cool canvas + near-paper work surface in light mode; deep navy layers in dark mode;\n- primary is reserved for current action/location/selection/progress; accent supports audio/secondary state;\n- no decorative gradients, raw feature palette utilities, feature-local theme recipes, pixel font sizes, or `w-fit`/`h-fit`/`fit-content` layout patches;\n- authoritative theme colors use numeric OKLCH + decimal alpha, never HSL percentage channels or percentage `color-mix` recipes;\n- normal hierarchy is border/spacing/typography first; avoid card-inside-card and hairline soup;\n- hover must not move/scale the interactive hit target;\n- finite required choices wrap/grid instead of relying on sideways discovery;\n- keep the chines-app primitive/state/data boundaries authoritative.\n\nWhen the source and target component APIs differ, preserve the source behavior/visual hierarchy by extending the existing chines-app semantic owner. Do not introduce a second component dialect.\n\n'''
+          if binding not in skill:
+              skill = replace_once(skill, skill_marker, binding + skill_marker, "UI skill source binding")
+          skill_path.write_text(skill)
+
+          contracts_path = Path("docs/ui/component-contracts.md")
+          contracts = contracts_path.read_text()
+          contracts = contracts.replace(
+              '- `app-gradient-hero` and `app-glass-surface` are compatibility aliases only;\n- `hanzihome-liquid-*` is limited to HanziHome workspace chrome;\n- `app-brand-gradient` is compact identity/emphasis only.',
+              '- `app-gradient-hero` and `app-glass-surface` are compatibility aliases that resolve to ordinary semantic surfaces;\n- `hanzihome-liquid-*` is limited to HanziHome workspace chrome;\n- `app-brand-gradient` is a legacy class name that resolves to a solid semantic primary identity; decorative product gradients are prohibited.',
+          )
+          contracts_path.write_text(contracts)
+
+          verify_path = Path("docs/ui/ui-verification.md")
+          verify = verify_path.read_text()
+          verify_marker = '- no accidental `rounded-2xl/3xl`, arbitrary radius or 2px+ feature borders;\n'
+          verify_add = '- no decorative product gradients, feature raw-palette utilities, pixel font sizes, or fit-content layout patches;\n- theme foundations use explicit numeric OKLCH/decimal alpha with no percentage color-mix recipes;\n'
+          verify = replace_once(verify, verify_marker, verify_marker + verify_add, "UI verification source checks")
+          verify_path.write_text(verify)
+
+          hanzihome_agents = Path("src/features/hanzihome/AGENTS.md")
+          agent_text = hanzihome_agents.read_text()
+          agent_text = agent_text.replace(
+              '- gradient/glass brand roles defined by the shared UI system.',
+              '- source-aligned semantic brand/surface roles defined by the shared UI system; compatibility gradient/glass class names must not render decorative gradients.',
+          )
+          hanzihome_agents.write_text(agent_text)
+
+          theme_meta_path = Path("src/components/layout/theme-contract.ts")
+          theme_meta = theme_meta_path.read_text()
+          theme_meta = theme_meta.replace('label: "Chàm biên tập"', 'label: "Chàm Hanzi Studio"')
+          theme_meta = theme_meta.replace('description: "Chàm rõ, nghiêm túc; canvas và Card phớt lạnh nhẹ cho nội dung dài."', 'description: "Chàm lạnh, mặt giấy sáng và nhấn indigo theo Editorial Study Workspace."')
+          theme_meta = theme_meta.replace('label: "Trung tính ấm"', 'label: "Sepia ấm"')
+          theme_meta = theme_meta.replace('description: "Cam nâu tiết chế; canvas và Card ấm nhẹ, hợp với phiên đọc lâu."', 'description: "Palette sepia của Hanzi Studio; ấm vừa đủ cho phiên đọc dài, vẫn giữ phân cấp rõ."')
+          theme_meta_path.write_text(theme_meta)
+
+          # ------------------------------------------------------------------
+          # 5. Strengthen the existing UI guard; no new checker/script dialect.
+          # ------------------------------------------------------------------
+          check_path = Path("scripts/check-ui-standards.mjs")
+          check = check_path.read_text()
+          const_marker = 'const FEATURE_SURFACE_ESCAPE_HATCH_PATTERN =\n /\\b(?:app-glass-surface|app-gradient-hero|backdrop-blur(?:-[\\w-]+)?|shadow-theme-lg)\\b/;\n'
+          extra_consts = '''const SOURCE_INTRINSIC_FIT_PATTERN = /\\b(?:w-fit|h-fit|min-w-fit|max-w-fit|min-h-fit|max-h-fit)\\b/;\nconst SOURCE_PIXEL_FONT_PATTERN = /\\btext-\\[[0-9.]+px\\]/;\nconst SOURCE_RAW_PALETTE_PATTERN =\n /\\b(?:bg|text|border|ring|outline|fill|stroke)-(?:white|black|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|fuchsia|pink|rose)(?:-|\\b)/;\nconst SOURCE_DECORATIVE_GRADIENT_PATTERN = /\\b(?:bg-gradient|bg-linear|bg-radial|bg-conic)(?:-|\\b)/;\n'''
+          if 'SOURCE_INTRINSIC_FIT_PATTERN' not in check:
+              check = replace_once(check, const_marker, const_marker + extra_consts, "UI guard source constants")
+
+          inspect_marker = '  if (FEATURE_SURFACE_ESCAPE_HATCH_PATTERN.test(classNameSource)) {\n   failures.push(`featureSurfaceEscapeHatch: ${location(sourceFile, className)}`);\n  }\n'
+          inspect_add = '''  if (SOURCE_INTRINSIC_FIT_PATTERN.test(classNameSource)) {\n   failures.push(`sourceFitLayoutPatch: ${location(sourceFile, className)}`);\n  }\n  if (SOURCE_PIXEL_FONT_PATTERN.test(classNameSource)) {\n   failures.push(`sourcePixelFontSize: ${location(sourceFile, className)}`);\n  }\n  if (SOURCE_RAW_PALETTE_PATTERN.test(classNameSource)) {\n   failures.push(`sourceRawPaletteUtility: ${location(sourceFile, className)}`);\n  }\n  if (SOURCE_DECORATIVE_GRADIENT_PATTERN.test(classNameSource)) {\n   failures.push(`sourceDecorativeGradient: ${location(sourceFile, className)}`);\n  }\n'''
+          if 'sourceFitLayoutPatch' not in check:
+              check = replace_once(check, inspect_marker, inspect_marker + inspect_add, "UI guard source inspection")
+
+          run_marker = 'export function runUiCheck() {\n const failures = [];\n\n'
+          css_guard = ''' const themeCssFiles = [\n  "src/app/globals.css",\n  "src/app/theme-palettes.css",\n  "src/app/surface-system.css",\n ];\n const themePercentageColorPattern = /(?:color-mix\\([^\\n]*%|hsla?\\([^\\n]*%)/;\n const pixelFontDeclarationPattern = /font-size:\\s*[0-9.]+px/;\n const decorativeCssGradientPattern = /(?:linear-gradient|radial-gradient|conic-gradient)\\(/;\n for (const relativePath of themeCssFiles) {\n  const absolutePath = path.join(ROOT, relativePath);\n  const lines = fs.readFileSync(absolutePath, "utf8").split("\\n");\n  lines.forEach((line, index) => {\n   if (themePercentageColorPattern.test(line)) {\n    failures.push(`themePercentageColor: ${relativePath}:${index + 1}`);\n   }\n   if (pixelFontDeclarationPattern.test(line)) {\n    failures.push(`sourcePixelFontDeclaration: ${relativePath}:${index + 1}`);\n   }\n   if (decorativeCssGradientPattern.test(line)) {\n    failures.push(`sourceDecorativeCssGradient: ${relativePath}:${index + 1}`);\n   }\n  });\n }\n\n'''
+          if 'themePercentageColorPattern' not in check:
+              check = replace_once(check, run_marker, run_marker + css_guard, "UI guard CSS audit")
+          check_path.write_text(check)
+
+          # Final static hard-style sanity scan before formatter/checker.
+          forbidden_fit = re.compile(r'\\b(?:w-fit|h-fit|min-w-fit|max-w-fit|min-h-fit|max-h-fit)\\b')
+          pixel_font = re.compile(r'(?:text-\\[[0-9.]+px\\]|font-size:\\s*[0-9.]+px)')
+          raw_palette = re.compile(r'\\b(?:bg|text|border|ring|outline|fill|stroke)-(?:white|black|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|fuchsia|pink|rose)(?:-|\\b)')
+          violations = []
+          for path in Path('src').rglob('*'):
+              if not path.is_file() or path.suffix not in {'.ts', '.tsx', '.css'}:
+                  continue
+              text = path.read_text(errors='ignore')
+              if path.suffix in {'.ts', '.tsx'} and '/components/ui/' not in f'/{path.as_posix()}/':
+                  for line_no, line in enumerate(text.splitlines(), 1):
+                      if forbidden_fit.search(line): violations.append(f'fit {path}:{line_no}')
+                      if pixel_font.search(line): violations.append(f'px-font {path}:{line_no}')
+                      if raw_palette.search(line): violations.append(f'raw-palette {path}:{line_no}')
+          for path in [Path('src/app/globals.css'), Path('src/app/theme-palettes.css'), Path('src/app/surface-system.css')]:
+              for line_no, line in enumerate(path.read_text().splitlines(), 1):
+                  if re.search(r'(?:color-mix\\([^\\n]*%|hsla?\\([^\\n]*%)', line):
+                      violations.append(f'theme-percent {path}:{line_no}')
+                  if re.search(r'font-size:\\s*[0-9.]+px', line):
+                      violations.append(f'px-font {path}:{line_no}')
+                  if re.search(r'(?:linear-gradient|radial-gradient|conic-gradient)\\(', line):
+                      violations.append(f'gradient {path}:{line_no}')
+          if violations:
+              raise SystemExit('Editorial Study Workspace violations remain:\\n' + '\\n'.join(violations[:200]))
+          PY
+      - run: npm run format
+      - run: npm run ui:check
+      - run: npm run check
+      - name: Commit verified Editorial Study Workspace migration
+        run: |
+          git rm -f .github/workflows/temp-apply-hanzi-studio-style.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "refactor(ui): apply Hanzi Studio editorial system [hanzi-style-applied]"
+          git push origin HEAD:audit/hanzi-ui-parity
