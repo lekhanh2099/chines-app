@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+
 import {
  PinyinText,
  ReaderHanziText,
@@ -10,6 +12,8 @@ import { cn } from "@/lib/utils";
 
 import type { ContextualPronunciationAnalysis } from "../pronunciation/contextual-pronunciation";
 import { formatContextualSpokenPinyin } from "../pronunciation/contextual-pronunciation";
+
+const readerGraphemeSegmenter = new Intl.Segmenter("zh-CN", { granularity: "grapheme" });
 
 type ContextualReaderTextProps = {
  analysis: ContextualPronunciationAnalysis;
@@ -32,10 +36,14 @@ export function ContextualReaderText({
  sourcePinyin,
  onGlyphClick,
 }: ContextualReaderTextProps) {
- const glyphByStart = new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph]));
- const graphemes = [
-  ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(analysis.normalizedText),
- ];
+ const glyphByStart = useMemo(
+  () => new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph])),
+  [analysis.glyphs],
+ );
+ const graphemes = useMemo(
+  () => [...readerGraphemeSegmenter.segment(analysis.normalizedText)],
+  [analysis.normalizedText],
+ );
 
  const renderGrapheme = (grapheme: Intl.SegmentData, index: number) => {
   const glyph = glyphByStart.get(grapheme.index);

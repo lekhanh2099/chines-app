@@ -67,6 +67,12 @@ const FEATURE_LARGE_RADIUS_PATTERN = /\brounded-(?:2xl|3xl)\b/;
 const FEATURE_RING_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
 const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
 const PAGE_ROOT_MAX_WIDTH_PATTERN = /\bmax-w-(?:\[[^\]]+\]|[^\s"'`}]*)/;
+const MIGRATED_WORKSPACE_DIRECTORIES = [
+ "src/features/hanzihome/reader/",
+ "src/features/hanzihome/practice/",
+ "src/features/hanzihome/tts/",
+ "src/features/hanzihome/humanities/",
+];
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -96,6 +102,22 @@ function classNameAttribute(node) {
  return node.attributes.properties.find(
   (attribute) => ts.isJsxAttribute(attribute) && attribute.name.text === "className",
  );
+}
+
+function stringAttributeValue(node, name) {
+ const attribute = node.attributes.properties.find(
+  (candidate) =>
+   ts.isJsxAttribute(candidate) &&
+   candidate.name.text === name &&
+   candidate.initializer !== undefined &&
+   ts.isStringLiteral(candidate.initializer),
+ );
+ return attribute?.initializer.text;
+}
+
+function requiresCanonicalTabs(file) {
+ const relativePath = relative(file);
+ return MIGRATED_WORKSPACE_DIRECTORIES.some((directory) => relativePath.startsWith(directory));
 }
 
 function jsxTagNameText(tagName) {
@@ -224,6 +246,10 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    }
 
    if (!isUiOwner) {
+    const role = stringAttributeValue(node, "role");
+    if (requiresCanonicalTabs(file) && (role === "tab" || role === "tablist")) {
+     failures.push(`manualTabSemantics: ${location(sourceFile, node)} must use Tabs`);
+    }
     if (UI_INTRINSIC_CONTROL_TAGS.has(tagName)) {
      failures.push(`rawInteractiveControl: ${location(sourceFile, node)} uses <${tagName}>`);
     }

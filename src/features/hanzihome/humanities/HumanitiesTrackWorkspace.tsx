@@ -7,6 +7,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
 import {
  ReaderHanziText,
@@ -298,7 +299,7 @@ function ClaimsLayer({ resource }: { resource: ReaderDocumentResource }) {
      <Typography as="p" variant="bodySmall">
       {claim.statementVi}
      </Typography>
-     <div className="grid gap-2 rounded-control bg-bg-subtle p-3">
+     <Card variant="subtle" padding="sm" className="grid gap-2">
       {claim.evidence.map((evidence) => (
        <Typography
         key={`${evidence.sourceId}:${evidence.locator}`}
@@ -309,7 +310,7 @@ function ClaimsLayer({ resource }: { resource: ReaderDocumentResource }) {
         <strong>{evidence.relation}:</strong> {evidence.locator} · {evidence.note}
        </Typography>
       ))}
-     </div>
+     </Card>
      {claim.alternatives.length > 0 ? (
       <div className="grid gap-1">
        {claim.alternatives.map((alternative) => (
@@ -486,40 +487,32 @@ function TrackDetail({
      </Typography>
     </div>
    </Card>
-   <div
-    className="flex min-w-0 gap-1 overflow-x-auto border-b border-border-default pb-1 scrollbar-soft"
-    role="tablist"
+   <Tabs
+    value={tab}
+    items={[...tabs].map((item) => ({ key: item.id, label: item.label }))}
+    onValueChange={setTab}
     aria-label={`Các phần ${trackTitle(kind)}`}
    >
-    {tabs.map((item) => (
-     <Button
-      key={item.id}
-      type="button"
-      role="tab"
-      size="sm"
-      variant={tab === item.id ? "active" : "outline"}
-      aria-selected={tab === item.id}
-      onClick={() => setTab(item.id)}
-     >
-      {item.label}
-     </Button>
-    ))}
-   </div>
-   {tab === "text" ? <TextLayer resource={resource} kind={kind} /> : null}
-   {tab === "language" && kind === "poetry" ? (
-    <div className="grid gap-3">
-     <GlossaryCards resource={resource} />
-     <AnnotationCards resource={resource} filter={["grammar", "allusion"]} />
-    </div>
-   ) : null}
-   {tab === "language" && kind === "history" ? <HistoryTimelineLayer resource={resource} /> : null}
-   {tab === "poetics" && kind === "poetry" ? <PoetryPoeticsLayer resource={resource} /> : null}
-   {tab === "poetics" && kind === "history" ? <ClaimsLayer resource={resource} /> : null}
-   {tab === "interpretation" && kind === "poetry" ? <ClaimsLayer resource={resource} /> : null}
-   {tab === "interpretation" && kind === "history" ? (
-    <HistoryPerspectivesLayer resource={resource} />
-   ) : null}
-   {tab === "practice" ? <PracticeLayer resource={resource} /> : null}
+    <TabsContent value={tab} className="pt-3">
+     {tab === "text" ? <TextLayer resource={resource} kind={kind} /> : null}
+     {tab === "language" && kind === "poetry" ? (
+      <div className="grid gap-3">
+       <GlossaryCards resource={resource} />
+       <AnnotationCards resource={resource} filter={["grammar", "allusion"]} />
+      </div>
+     ) : null}
+     {tab === "language" && kind === "history" ? (
+      <HistoryTimelineLayer resource={resource} />
+     ) : null}
+     {tab === "poetics" && kind === "poetry" ? <PoetryPoeticsLayer resource={resource} /> : null}
+     {tab === "poetics" && kind === "history" ? <ClaimsLayer resource={resource} /> : null}
+     {tab === "interpretation" && kind === "poetry" ? <ClaimsLayer resource={resource} /> : null}
+     {tab === "interpretation" && kind === "history" ? (
+      <HistoryPerspectivesLayer resource={resource} />
+     ) : null}
+     {tab === "practice" ? <PracticeLayer resource={resource} /> : null}
+    </TabsContent>
+   </Tabs>
    <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
     <Typography as="span" variant="caption" tone="muted">
      Nghe văn bản
@@ -628,7 +621,7 @@ export function HumanitiesTrackWorkspace({
       ? "Bắt đầu từ bài bốn câu, đọc từng lớp; không yêu cầu biết vận luật chuyên sâu ngay từ đầu."
       : "Bắt đầu từ đoạn ngắn và ngụ ngôn; học cách đặt câu hỏi trước khi học niên đại phức tạp."}
     </Typography>
-    <div className="grid gap-1 rounded-lg bg-bg-subtle p-3">
+    <Card variant="subtle" padding="sm" className="grid gap-1">
      <Typography as="strong" variant="caption" tone="accent" weight="black">
       Bắt đầu từ đây
      </Typography>
@@ -637,7 +630,7 @@ export function HumanitiesTrackWorkspace({
        ? "Bắt đầu bằng cách tách nguyên văn, nghĩa từng câu, hình ảnh và bản dịch; chưa vội đoán “ý tác giả”."
        : "Bắt đầu bằng ba nhãn tiếng Việt: thông tin kiểm chứng được, diễn giải và nhận định còn tranh luận."}
      </Typography>
-    </div>
+    </Card>
    </Card>
    <section className="grid gap-3" aria-labelledby={`${kind}-library`}>
     <div className="grid gap-1">

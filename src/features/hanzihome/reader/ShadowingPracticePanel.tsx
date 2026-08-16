@@ -190,7 +190,11 @@ export function ShadowingPracticePanel({
     </div>
    </div>
 
-   <div className="grid gap-3 rounded-lg border border-border-default bg-bg-subtle p-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+   <Card
+    variant="subtle"
+    padding="sm"
+    className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end"
+   >
     <label className="grid gap-1">
      <Typography as="span" variant="caption" tone="muted" weight="bold">
       Khoảng chờ: {delayMs}ms
@@ -245,7 +249,7 @@ export function ShadowingPracticePanel({
      <Star data-icon="inline-start" />
      Đánh dấu khó
     </Button>
-   </div>
+   </Card>
 
    <div className="flex flex-wrap gap-2">
     <Button
@@ -286,15 +290,12 @@ export function ShadowingPracticePanel({
    </div>
 
    {attempts.length > 0 ? (
-    <div className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3">
+    <Card variant="subtle" padding="sm" className="grid gap-2">
      <Typography as="h4" variant="caption" weight="black">
       Bản ghi trong phiên này
      </Typography>
      {attempts.map((attempt, index) => (
-      <div
-       key={attempt.id}
-       className="grid gap-2 rounded-lg border border-border-default bg-bg-card p-3"
-      >
+      <Card key={attempt.id} variant="default" padding="sm" className="grid gap-2">
        <div className="flex min-w-0 flex-wrap items-center gap-2">
         <Typography variant="caption" tone="muted">
          Lần {attempts.length - index} · {attempt.durationSeconds}s
@@ -342,9 +343,9 @@ export function ShadowingPracticePanel({
          {attempt.saveError}
         </Typography>
        ) : null}
-      </div>
+      </Card>
      ))}
-    </div>
+    </Card>
    ) : null}
 
    {recorderError ? (

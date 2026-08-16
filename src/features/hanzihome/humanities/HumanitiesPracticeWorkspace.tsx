@@ -9,6 +9,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import {
@@ -351,24 +352,17 @@ export function HumanitiesPracticeWorkspace({
      <Button asChild variant="navigation" wrap="normal">
       <Link href="/reader">Reader</Link>
      </Button>
-     <Button
-      type="button"
-      role="tab"
-      aria-selected={activeTrack === "translation"}
-      variant={activeTrack === "translation" ? "active" : "outline"}
-      onClick={() => setActiveTrack("translation")}
-     >
-      Biên dịch
-     </Button>
-     <Button
-      type="button"
-      role="tab"
-      aria-selected={activeTrack === "interpreting"}
-      variant={activeTrack === "interpreting" ? "active" : "outline"}
-      onClick={() => setActiveTrack("interpreting")}
-     >
-      Phiên dịch
-     </Button>
+     <div className="col-span-2 sm:col-span-3">
+      <SegmentedControl
+       value={activeTrack}
+       items={[
+        { key: "translation", label: "Biên dịch" },
+        { key: "interpreting", label: "Phiên dịch" },
+       ]}
+       onChange={setActiveTrack}
+       aria-label="Chọn lộ trình dịch thuật"
+      />
+     </div>
     </nav>
     <Card variant="section" padding="md" className="grid gap-3">
      <div className="flex flex-wrap items-start justify-between gap-2">
@@ -391,7 +385,7 @@ export function HumanitiesPracticeWorkspace({
       Chọn một bài nền bên dưới để mở khu luyện tập. Bài đầu dùng câu ngắn và khung phân tích; bản
       tham khảo chỉ mở sau khi bạn tự làm.
      </Typography>
-     <div className="grid gap-1 rounded-lg bg-bg-subtle p-3">
+     <Card variant="subtle" padding="sm" className="grid gap-1">
       <Typography as="strong" variant="caption" tone="accent" weight="black">
        Bắt đầu từ đây
       </Typography>
@@ -400,7 +394,7 @@ export function HumanitiesPracticeWorkspace({
         ? "Đầu tiên học cách đọc yêu cầu, chia đơn vị ý, dịch nháp và kiểm tra; chỉ sau đó mới học thuật ngữ, văn phong và công nghệ."
         : "Đầu tiên học cách nghe ý, ghi chú, truyền đạt và tự kiểm tra; chỉ sau đó mới tăng độ dài và tốc độ."}
       </Typography>
-     </div>
+     </Card>
     </Card>
     <section className="grid gap-3" aria-labelledby="humanities-practice-levels">
      <div className="grid gap-1">
@@ -455,31 +449,29 @@ export function HumanitiesPracticeWorkspace({
        ? translationFoundationLessons
        : interpretingFoundationLessons
       ).map(([lessonTitle, question, explanation], index) => (
-       <details
-        key={lessonTitle}
-        className="group rounded-lg border border-border-default bg-bg-card"
-        open={index === 0}
-       >
-        <summary className="flex min-h-12 cursor-pointer list-none items-start gap-3 p-3 [&::-webkit-details-marker]:hidden">
-         <Badge variant="purple">{index + 1}</Badge>
-         <span className="grid gap-1">
-          <Typography as="strong" variant="bodySmall" weight="black">
-           {lessonTitle}
+       <Card asChild key={lessonTitle} variant="default" padding="none" className="group">
+        <details open={index === 0}>
+         <summary className="flex min-h-12 cursor-pointer list-none items-start gap-3 p-3 [&::-webkit-details-marker]:hidden">
+          <Badge variant="purple">{index + 1}</Badge>
+          <span className="grid gap-1">
+           <Typography as="strong" variant="bodySmall" weight="black">
+            {lessonTitle}
+           </Typography>
+           <Typography as="span" variant="caption" tone="muted">
+            {question}
+           </Typography>
+          </span>
+         </summary>
+         <div className="grid gap-2 border-t border-border-default p-4">
+          <Typography as="p" variant="bodySmall" tone="muted">
+           {explanation}
           </Typography>
-          <Typography as="span" variant="caption" tone="muted">
-           {question}
+          <Typography as="p" variant="caption" tone="muted">
+           Dấu hiệu đã hiểu: có thể giải thích lựa chọn và tự kiểm tra trước khi mở bản tham khảo.
           </Typography>
-         </span>
-        </summary>
-        <div className="grid gap-2 border-t border-border-default p-4">
-         <Typography as="p" variant="bodySmall" tone="muted">
-          {explanation}
-         </Typography>
-         <Typography as="p" variant="caption" tone="muted">
-          Dấu hiệu đã hiểu: có thể giải thích lựa chọn và tự kiểm tra trước khi mở bản tham khảo.
-         </Typography>
-        </div>
-       </details>
+         </div>
+        </details>
+       </Card>
       ))}
      </div>
     </section>

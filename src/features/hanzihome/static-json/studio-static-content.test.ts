@@ -4,7 +4,6 @@ vi.mock("server-only", () => ({}));
 
 import {
  getStaticStudioAggregateItems,
- getStaticStudioCatalog,
  getStaticStudioLessonDetail,
  getStaticStudioListeningLessonBundle,
  listStaticStudioCourseLessons,
@@ -49,13 +48,8 @@ describe("bundled Studio static content", () => {
  });
 
  it("materializes every static lesson and dictation bundle", () => {
-  const catalog = getStaticStudioCatalog();
-
-  for (const lesson of catalog.lessons) {
-   expect(getStaticStudioLessonDetail(lesson.id)?.id).toBe(lesson.id);
-  }
-
   for (const lesson of listStaticStudioCourseLessons("hanzihome-studio-dictation")) {
+   expect(getStaticStudioLessonDetail(lesson.id)?.id).toBe(lesson.id);
    const bundle = getStaticStudioListeningLessonBundle(lesson.id);
    expect(bundle?.lesson.id).toBe(lesson.id);
    expect(bundle?.sections.length).toBeGreaterThan(0);
@@ -65,7 +59,6 @@ describe("bundled Studio static content", () => {
 
  it("exposes canonical grammar and vocabulary through HanziHome contracts", () => {
   const grammarLesson = getStaticStudioLessonDetail("hanzihome-studio-grammar:lesson:HSK1");
-  const catalog = getStaticStudioCatalog();
   const grammarItems = getStaticStudioAggregateItems({
    kind: "grammar",
    filters: {
@@ -76,7 +69,6 @@ describe("bundled Studio static content", () => {
    },
   });
 
-  expect(catalog.courses).toHaveLength(6);
   expect(grammarLesson?.grammar.length).toBeGreaterThan(0);
   expect(grammarItems.length).toBe(577);
   expect(grammarItems[0]).toMatchObject({

@@ -56,7 +56,9 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
@@ -66,6 +68,7 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  PinyinText,
+ ReaderHanziText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
@@ -523,12 +526,15 @@ export function ReaderDocumentStudy({
       tts.progress,
      )
    : -1;
- const displayMode: LessonDisplayMode = {
-  ...DEFAULT_LESSON_DISPLAY_MODE,
-  hanziSize: "2xl",
-  showPinyin: pinyinMode !== "off",
-  showMeaning: state.showMeaning,
- };
+ const displayMode = useMemo<LessonDisplayMode>(
+  () => ({
+   ...DEFAULT_LESSON_DISPLAY_MODE,
+   hanziSize: "2xl",
+   showPinyin: pinyinMode !== "off",
+   showMeaning: state.showMeaning,
+  }),
+  [pinyinMode, state.showMeaning],
+ );
  const remoteRevision =
   stateOwner === "reader"
    ? (readerStateQuery.data?.progress?.revision ?? 0)
@@ -710,7 +716,19 @@ export function ReaderDocumentStudy({
 
  useEffect(() => {
   const onKeyDown = (event: KeyboardEvent) => {
-   if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement)
+   const target = event.target;
+   if (
+    event.defaultPrevented ||
+    event.altKey ||
+    event.ctrlKey ||
+    event.metaKey ||
+    event.shiftKey ||
+    event.isComposing ||
+    (target instanceof HTMLElement &&
+     target.closest(
+      "a, button, input, textarea, select, [contenteditable='true'], [role='button'], [role='combobox'], [role='menuitem'], [role='option'], [role='tab']",
+     ))
+   )
     return;
    if (event.key === "ArrowLeft") {
     event.preventDefault();
@@ -776,6 +794,10 @@ export function ReaderDocumentStudy({
  };
 
  const playCurrent = () => playParagraphAt(activeIndex);
+ const playContinuous = () => {
+  setState((current) => ({ ...current, autoAdvance: true, loopCurrent: false }));
+  playParagraphAt(activeIndex);
+ };
 
  const clearSelection = () => {
   setSelectedGlyph(null);
@@ -1030,6 +1052,7 @@ export function ReaderDocumentStudy({
  };
 
  const workspaceTabsEnabled = stateOwner === "reader";
+ const showDocumentHeader = stateOwner === "reader";
  const isHskDocument = resource.document.kind === "hsk";
  const readerUnitNumber = resource.document.unit_id?.replace(/^U/u, "") ?? "";
  const readerLessonLabel =
@@ -1054,7 +1077,7 @@ export function ReaderDocumentStudy({
     navigationDocuments={navigationDocuments}
     selectedDocument={resource.document}
    />
-   {!isHskDocument ? (
+   {!isHskDocument && showDocumentHeader ? (
     <div className="grid min-w-0 gap-3 border-b border-border-default pb-4">
      <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
       <div className="grid min-w-0 gap-1">
@@ -1127,489 +1150,603 @@ export function ReaderDocumentStudy({
     </Card>
    ) : null}
 
-   {workspaceTabsEnabled && !isHskDocument ? (
-    <div
-     className="flex min-w-0 flex-wrap gap-x-1 border-b border-border-default scrollbar-soft"
-     role="tablist"
-     aria-label="Các phần của bài Reader"
-    >
-     {readerWorkspaceTabs.map((tab) => (
-      <Button
-       key={tab.id}
-       type="button"
-       role="tab"
-       size="tab"
-       variant={workspaceTab === tab.id ? "active" : "navigation"}
-       aria-selected={workspaceTab === tab.id}
-       onClick={() => setWorkspaceTab(tab.id)}
-      >
-       <tab.icon data-icon="inline-start" aria-hidden="true" />
-       {tab.label}
-      </Button>
-     ))}
-    </div>
-   ) : null}
-
-   <div
-    className={
-     state.focusMode
-      ? "grid min-w-0 gap-3"
-      : "grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_18rem]"
+   <Tabs
+    value={workspaceTab}
+    items={
+     workspaceTabsEnabled && !isHskDocument
+      ? [...readerWorkspaceTabs].map((tab) => ({
+         key: tab.id,
+         label: tab.label,
+         icon: tab.icon,
+        }))
+      : []
     }
+    onValueChange={setWorkspaceTab}
+    aria-label="Các phần của bài Reader"
    >
-    <div className="grid min-w-0 gap-3">
-     {showReaderTab ? (
-      <Card
-       variant="subtle"
-       padding="sm"
-       className="sticky top-3 z-10 grid min-w-0 gap-2"
-       role="region"
-       aria-label="Điều khiển nghe bài đọc"
-      >
-       <div className="flex min-w-0 items-center justify-between gap-2 px-1">
-        <Typography variant="caption" tone="muted" weight="black">
-         <span className="block">
-          Đoạn {activeIndex + 1} / {paragraphs.length}
-         </span>
-         {isActiveSpeech ? (
-          <span className="font-normal tabular-nums">
-           {formatPlaybackTime(tts.currentTimeSeconds)} / {formatPlaybackTime(tts.durationSeconds)}
-          </span>
-         ) : null}
-        </Typography>
-        {isActiveSpeech ? (
-         <Typography variant="caption" tone="accent" weight="black" aria-live="polite">
-          {tts.isPaused ? "Đã tạm dừng" : "Đang đọc"} · {Math.round(tts.progress * 100)}%
-         </Typography>
-        ) : null}
-       </div>
-       {isActiveSpeech ? (
-        <div
-         className="h-1 overflow-hidden rounded-full bg-bg-subtle"
-         role="progressbar"
-         aria-label="Tiến độ đọc"
-         aria-valuemin={0}
-         aria-valuemax={100}
-         aria-valuenow={Math.round(tts.progress * 100)}
+    <TabsContent value={workspaceTab}>
+     <div
+      className={
+       state.focusMode
+        ? "grid min-w-0 content-start gap-3"
+        : "grid min-w-0 content-start items-start gap-4 xl:grid-cols-[minmax(0,1fr)_18rem]"
+      }
+     >
+      <div className="grid min-w-0 content-start gap-3">
+       {showReaderTab ? (
+        <Card
+         variant="subtle"
+         padding="sm"
+         className="sticky top-3 z-10 flex min-w-0 flex-wrap items-center gap-2"
+         role="region"
+         aria-label="Điều khiển nghe bài đọc"
         >
-         <div
-          className="h-full rounded-full bg-accent transition-[width] duration-150"
-          style={{ width: `${Math.round(tts.progress * 100)}%` }}
-         />
-        </div>
-       ) : null}
-       <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
-        <Button
-         type="button"
-         size="icon-sm"
-         variant="outline"
-         aria-label="Đoạn trước"
-         disabled={activeIndex === 0}
-         onClick={() => move(activeIndex - 1)}
-        >
-         <ChevronLeft aria-hidden="true" />
-        </Button>
-        <Button
-         type="button"
-         size="sm"
-         disabled={tts.isLoading}
-         onClick={() => {
-          if (tts.isPaused) tts.resume();
-          else playCurrent();
-         }}
-        >
-         {tts.isPaused ? "Tiếp tục" : tts.isSpeaking ? "Đang đọc" : "Nghe bài"}
-        </Button>
-        <Button
-         type="button"
-         size="icon-sm"
-         variant="outline"
-         aria-label="Nghe lại đoạn"
-         onClick={playCurrent}
-        >
-         <RotateCcw aria-hidden="true" />
-        </Button>
-        <Button
-         type="button"
-         size="icon-sm"
-         variant="outline"
-         aria-label="Dừng đoạn"
-         disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
-         onClick={() => {
-          playbackRunRef.current += 1;
-          tts.stop();
-         }}
-        >
-         <Square aria-hidden="true" />
-        </Button>
-        <Button
-         type="button"
-         size="icon-sm"
-         variant="outline"
-         aria-label="Đoạn sau"
-         disabled={activeIndex >= paragraphs.length - 1}
-         onClick={() => move(activeIndex + 1)}
-        >
-         <ChevronRight aria-hidden="true" />
-        </Button>
-       </div>
-       <div
-        className="flex min-w-0 flex-wrap items-center justify-end gap-2"
-        role="group"
-        aria-label="Công cụ và giọng Reader"
-       >
-        <DropdownMenu>
-         <DropdownMenuTrigger asChild>
-          <Button type="button" size="sm" variant="outline">
-           <Volume2 data-icon="inline-start" />
-           Giọng và tốc độ
-           <Typography as="span" variant="caption" tone="muted">
-            {tts.rate.toFixed(2)}×
+         <div className="flex min-w-0 flex-1 items-center justify-between gap-2 px-1">
+          <Typography variant="caption" tone="muted" weight="black">
+           <span className="block">
+            Đoạn {activeIndex + 1} / {paragraphs.length}
+           </span>
+           {isActiveSpeech ? (
+            <span className="font-normal tabular-nums">
+             {formatPlaybackTime(tts.currentTimeSeconds)} /{" "}
+             {formatPlaybackTime(tts.durationSeconds)}
+            </span>
+           ) : null}
+          </Typography>
+          {isActiveSpeech ? (
+           <Typography variant="caption" tone="accent" weight="black" aria-live="polite">
+            {tts.isPaused ? "Đã tạm dừng" : "Đang đọc"} · {Math.round(tts.progress * 100)}%
            </Typography>
-          </Button>
-         </DropdownMenuTrigger>
-         <DropdownMenuContent width="md">
-          <DropdownMenuLabel>Giọng và tốc độ</DropdownMenuLabel>
-          {tts.voices.length > 0 ? (
-           <div className="px-2.5 py-1.5">
-            <Select value={tts.selectedVoiceName} onValueChange={tts.setSelectedVoiceName}>
-             <SelectTrigger size="sm" aria-label="Chọn giọng Reader" className="w-full">
-              <SelectValue placeholder="Chọn giọng Mandarin" />
-             </SelectTrigger>
-             <SelectContent>
-              <SelectGroup>
-               {tts.voices.map((voice) => (
-                <SelectItem key={voice.shortName} value={voice.shortName}>
-                 {voice.name} · {voice.gender}
-                </SelectItem>
-               ))}
-              </SelectGroup>
-             </SelectContent>
-            </Select>
-           </div>
           ) : null}
-          <div className="px-2.5 py-1.5">
-           <Select
-            value={String(tts.rate)}
-            onValueChange={(value) => {
-             const nextRate = Number(value);
-             if (readerRateOptions.includes(nextRate)) tts.setRate(nextRate);
-            }}
-           >
-            <SelectTrigger size="sm" aria-label="Chọn tốc độ Reader" className="w-full">
-             <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-             <SelectGroup>
-              {readerRateOptions.map((rate) => (
-               <SelectItem key={rate} value={String(rate)}>
-                {rate}×
-               </SelectItem>
-              ))}
-             </SelectGroup>
-            </SelectContent>
-           </Select>
-          </div>
-         </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-         <DropdownMenuTrigger asChild>
-          <Button type="button" size="sm" variant="outline">
-           <Settings2 data-icon="inline-start" />
-           Công cụ học
-          </Button>
-         </DropdownMenuTrigger>
-         <DropdownMenuContent width="md">
-          <DropdownMenuLabel>Phát bài</DropdownMenuLabel>
-          <DropdownMenuCheckboxItem
-           checked={state.loopCurrent}
-           onCheckedChange={() => setState((current) => toggleReaderLoop(current))}
+         </div>
+         {isActiveSpeech ? (
+          <div
+           className="h-1 overflow-hidden rounded-full bg-bg-subtle"
+           role="progressbar"
+           aria-label="Tiến độ đọc"
+           aria-valuemin={0}
+           aria-valuemax={100}
+           aria-valuenow={Math.round(tts.progress * 100)}
           >
-           Lặp đoạn
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-           checked={state.autoAdvance}
-           onCheckedChange={() => setState((current) => toggleReaderAutoAdvance(current))}
-          >
-           Tự chuyển
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuLabel>Hiển thị và luyện tập</DropdownMenuLabel>
-          <DropdownMenuSub>
-           <DropdownMenuSubTrigger>
-            <Languages data-icon="inline-start" />
-            Chế độ pinyin
-            <DropdownMenuShortcut>{readerPinyinModeLabels[pinyinMode]}</DropdownMenuShortcut>
-           </DropdownMenuSubTrigger>
-           <DropdownMenuSubContent width="md">
-            <DropdownMenuLabel>Chế độ pinyin</DropdownMenuLabel>
-            <DropdownMenuRadioGroup
-             value={pinyinMode}
-             onValueChange={(value) => {
-              const parsed = readerPinyinModeSchema.safeParse(value);
-              if (parsed.success) updatePinyinMode(parsed.data);
-             }}
-            >
-             {readerPinyinModeSchema.options.map((mode) => (
-              <DropdownMenuRadioItem
-               key={mode}
-               value={mode}
-               onSelect={(event) => event.preventDefault()}
-              >
-               {readerPinyinModeLabels[mode]}
-              </DropdownMenuRadioItem>
-             ))}
-            </DropdownMenuRadioGroup>
-           </DropdownMenuSubContent>
-          </DropdownMenuSub>
-          <DropdownMenuCheckboxItem
-           checked={state.showMeaning}
-           onCheckedChange={() =>
-            setState((current) => ({ ...current, showMeaning: !current.showMeaning }))
-           }
-          >
-           Nghĩa Việt
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-           checked={state.focusMode}
-           onCheckedChange={() =>
-            setState((current) => ({ ...current, focusMode: !current.focusMode }))
-           }
-          >
-           Tập trung
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-           checked={state.shadowing}
-           onCheckedChange={() =>
-            setState((current) => ({ ...current, shadowing: !current.shadowing }))
-           }
-          >
-           Shadowing
-          </DropdownMenuCheckboxItem>
-         </DropdownMenuContent>
-        </DropdownMenu>
-       </div>
-      </Card>
-     ) : null}
-
-     {showOverviewTab && !state.focusMode ? (
-      <Card variant="subtle" padding="md" className="grid gap-2">
-       <Typography as="h2" variant="cardTitle" weight="black">
-        {resource.document.analysis.mainIdeaVi || "Phân tích Reader"}
-       </Typography>
-       {resource.document.objectives_vi.length > 0 ? (
-        <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
-         {resource.document.objectives_vi.map((objective) => (
-          <li key={objective}>{objective}</li>
-         ))}
-        </ul>
-       ) : null}
-      </Card>
-     ) : null}
-
-     {stateOwner === "daily" ? (
-      <Card variant="subtle" padding="md" className="grid gap-2">
-       <Typography as="h3" variant="cardTitle" weight="black">
-        Daily Reading context
-       </Typography>
-       <div className="flex flex-wrap gap-2">
-        {dailyPublishedDate ? <Badge>{dailyPublishedDate}</Badge> : null}
-        {dailyTopic ? <Badge>{dailyTopic}</Badge> : null}
-        {dailyLevel ? <Badge>{dailyLevel}</Badge> : null}
-       </div>
-       {dailyAdaptationNotice ? (
-        <Typography as="p" variant="bodySmall" tone="muted">
-         {dailyAdaptationNotice}
-        </Typography>
-       ) : null}
-      </Card>
-     ) : null}
-
-     {stateOwner === "personal" ? (
-      <Card variant="subtle" padding="md" className="grid gap-2">
-       <Typography as="h3" variant="cardTitle" weight="black">
-        Personal Learning map
-       </Typography>
-       {personalEssentialQuestion ? (
-        <Typography as="p" variant="bodySmall" weight="black">
-         Câu hỏi trọng tâm: {personalEssentialQuestion}
-        </Typography>
-       ) : null}
-       {personalKeyIdea ? (
-        <Typography as="p" variant="bodySmall" tone="muted">
-         Ý chính: {personalKeyIdea}
-        </Typography>
-       ) : null}
-       {personalMasteryChecklist.length > 0 ? (
-        <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
-         {personalMasteryChecklist.map((item) => (
-          <li key={item}>{item}</li>
-         ))}
-        </ul>
-       ) : null}
-       {personalSourceIds.length > 0 ? (
-        <Typography as="p" variant="caption" tone="muted">
-         Evidence: {personalSourceIds.join(", ")}
-        </Typography>
-       ) : null}
-      </Card>
-     ) : null}
-
-     {showReaderTab ? (
-      <>
-       <Card variant="section" padding="md" className="grid gap-0">
-        {paragraphs.map((paragraph, index) => {
-         const analysis = analyses[index];
-         if (analysis === undefined) return null;
-         const isActive = index === activeIndex;
-         return (
-          <article
-           key={paragraph.id}
-           className={
-            isActive
-             ? "grid gap-4 bg-bg-subtle py-5 first:pt-4 last:pb-0 sm:px-4"
-             : "grid gap-4 border-b border-border-default py-5 last:border-b-0 sm:px-4"
-           }
-          >
-           <div className="flex flex-wrap items-center justify-between gap-2">
-            <Typography
-             as="p"
-             variant="caption"
-             tone="muted"
-             weight="black"
-             tracking="medium"
-             transform="uppercase"
-            >
-             Đoạn {paragraph.paragraph_order}
-            </Typography>
-            <Button
-             type="button"
-             size="sm"
-             variant={isActive ? "active" : "ghost"}
-             onClick={() => {
-              move(index);
-              playParagraphAt(index);
-             }}
-            >
-             Nghe đoạn này
-            </Button>
-           </div>
            <div
-            data-no-inspector
-            data-reader-selection-paragraph={paragraph.id}
-            onMouseUp={() => captureSelection(index, paragraph, analysis)}
-            onPointerUp={() => captureSelection(index, paragraph, analysis)}
-            onTouchEnd={() => captureSelection(index, paragraph, analysis)}
-           >
-            <ContextualReaderText
-             analysis={analysis}
-             displayMode={displayMode}
-             activeCharacterIndex={isActive && isActiveSpeech ? activeCharacterIndex : -1}
-             showPinyin={pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)}
-             pinyinPresentation={
-              pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)
-               ? "ruby"
-               : "paragraph"
-             }
-             sourcePinyin={paragraph.pinyin}
-             onGlyphClick={(start) => {
-              const characterIndex = Array.from(analysis.normalizedText.slice(0, start)).length;
-              move(index);
-              playParagraphAt(index, characterIndex);
-             }}
-            />
-           </div>
-           {pinyinMode === "full" ? (
-            <div className="grid gap-1 border-l-2 border-border-strong pl-3">
-             <Typography as="h3" variant="caption" tone="muted" weight="black">
-              Pinyin
+            className="h-full rounded-full bg-accent transition-[width] duration-150"
+            style={{ width: `${Math.round(tts.progress * 100)}%` }}
+           />
+          </div>
+         ) : null}
+         <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
+          <Button
+           type="button"
+           size="icon-sm"
+           variant="outline"
+           aria-label="Đoạn trước"
+           disabled={activeIndex === 0}
+           onClick={() => move(activeIndex - 1)}
+          >
+           <ChevronLeft aria-hidden="true" />
+          </Button>
+          <Button
+           type="button"
+           size="sm"
+           disabled={tts.isLoading}
+           onClick={() => {
+            if (tts.isPaused) tts.resume();
+            else playContinuous();
+           }}
+          >
+           {tts.isPaused ? "Tiếp tục" : tts.isSpeaking ? "Đang đọc" : "Nghe bài"}
+          </Button>
+          <Button
+           type="button"
+           size="icon-sm"
+           variant="outline"
+           aria-label="Nghe lại đoạn"
+           onClick={playCurrent}
+          >
+           <RotateCcw aria-hidden="true" />
+          </Button>
+          <Button
+           type="button"
+           size="icon-sm"
+           variant="outline"
+           aria-label="Dừng đoạn"
+           disabled={!tts.isSpeaking && !tts.isPaused && !tts.isLoading}
+           onClick={() => {
+            playbackRunRef.current += 1;
+            tts.stop();
+           }}
+          >
+           <Square aria-hidden="true" />
+          </Button>
+          <Button
+           type="button"
+           size="icon-sm"
+           variant="outline"
+           aria-label="Đoạn sau"
+           disabled={activeIndex >= paragraphs.length - 1}
+           onClick={() => move(activeIndex + 1)}
+          >
+           <ChevronRight aria-hidden="true" />
+          </Button>
+         </div>
+         <div
+          className="flex min-w-0 flex-wrap items-center justify-end gap-2"
+          role="group"
+          aria-label="Công cụ và giọng Reader"
+         >
+          <DropdownMenu>
+           <DropdownMenuTrigger asChild>
+            <Button type="button" size="sm" variant="outline">
+             <Volume2 data-icon="inline-start" />
+             Giọng và tốc độ
+             <Typography as="span" variant="caption" tone="muted">
+              {tts.rate.toFixed(2)}×
              </Typography>
-             <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
-              {analysis.sourcePinyinStatus === "aligned" && paragraph.pinyin
-               ? paragraph.pinyin
-               : formatContextualSpokenPinyin(analysis)}
-             </PinyinText>
+            </Button>
+           </DropdownMenuTrigger>
+           <DropdownMenuContent width="md">
+            <DropdownMenuLabel>Giọng và tốc độ</DropdownMenuLabel>
+            {tts.voices.length > 0 ? (
+             <div className="px-2.5 py-1.5">
+              <Select value={tts.selectedVoiceName} onValueChange={tts.setSelectedVoiceName}>
+               <SelectTrigger size="sm" aria-label="Chọn giọng Reader" className="w-full">
+                <SelectValue placeholder="Chọn giọng Mandarin" />
+               </SelectTrigger>
+               <SelectContent>
+                <SelectGroup>
+                 {tts.voices.map((voice) => (
+                  <SelectItem key={voice.shortName} value={voice.shortName}>
+                   {voice.name} · {voice.gender}
+                  </SelectItem>
+                 ))}
+                </SelectGroup>
+               </SelectContent>
+              </Select>
+             </div>
+            ) : null}
+            <div className="px-2.5 py-1.5">
+             <Select
+              value={String(tts.rate)}
+              onValueChange={(value) => {
+               const nextRate = Number(value);
+               if (readerRateOptions.includes(nextRate)) tts.setRate(nextRate);
+              }}
+             >
+              <SelectTrigger size="sm" aria-label="Chọn tốc độ Reader" className="w-full">
+               <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+               <SelectGroup>
+                {readerRateOptions.map((rate) => (
+                 <SelectItem key={rate} value={String(rate)}>
+                  {rate}×
+                 </SelectItem>
+                ))}
+               </SelectGroup>
+              </SelectContent>
+             </Select>
             </div>
-           ) : null}
-           {state.showMeaning && paragraph.vi ? (
-            <TranslationText variant="bodySmall" tone="muted" wrapping="preWrap">
-             {paragraph.vi}
-            </TranslationText>
-           ) : null}
-          </article>
-         );
-        })}
-       </Card>
+           </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+           <DropdownMenuTrigger asChild>
+            <Button type="button" size="sm" variant="outline">
+             <Settings2 data-icon="inline-start" />
+             Công cụ học
+            </Button>
+           </DropdownMenuTrigger>
+           <DropdownMenuContent width="md">
+            <DropdownMenuLabel>Phát bài</DropdownMenuLabel>
+            <DropdownMenuCheckboxItem
+             checked={state.loopCurrent}
+             onCheckedChange={() => setState((current) => toggleReaderLoop(current))}
+            >
+             Lặp đoạn
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+             checked={state.autoAdvance}
+             onCheckedChange={() => setState((current) => toggleReaderAutoAdvance(current))}
+            >
+             Tự chuyển
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Hiển thị và luyện tập</DropdownMenuLabel>
+            <DropdownMenuSub>
+             <DropdownMenuSubTrigger>
+              <Languages data-icon="inline-start" />
+              Chế độ pinyin
+              <DropdownMenuShortcut>{readerPinyinModeLabels[pinyinMode]}</DropdownMenuShortcut>
+             </DropdownMenuSubTrigger>
+             <DropdownMenuSubContent width="md">
+              <DropdownMenuLabel>Chế độ pinyin</DropdownMenuLabel>
+              <DropdownMenuRadioGroup
+               value={pinyinMode}
+               onValueChange={(value) => {
+                const parsed = readerPinyinModeSchema.safeParse(value);
+                if (parsed.success) updatePinyinMode(parsed.data);
+               }}
+              >
+               {readerPinyinModeSchema.options.map((mode) => (
+                <DropdownMenuRadioItem
+                 key={mode}
+                 value={mode}
+                 onSelect={(event) => event.preventDefault()}
+                >
+                 {readerPinyinModeLabels[mode]}
+                </DropdownMenuRadioItem>
+               ))}
+              </DropdownMenuRadioGroup>
+             </DropdownMenuSubContent>
+            </DropdownMenuSub>
+            <DropdownMenuCheckboxItem
+             checked={state.showMeaning}
+             onCheckedChange={() =>
+              setState((current) => ({ ...current, showMeaning: !current.showMeaning }))
+             }
+            >
+             Nghĩa Việt
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+             checked={state.focusMode}
+             onCheckedChange={() =>
+              setState((current) => ({ ...current, focusMode: !current.focusMode }))
+             }
+            >
+             Tập trung
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem
+             checked={state.shadowing}
+             onCheckedChange={() =>
+              setState((current) => ({ ...current, shadowing: !current.shadowing }))
+             }
+            >
+             Shadowing
+            </DropdownMenuCheckboxItem>
+           </DropdownMenuContent>
+          </DropdownMenu>
+         </div>
+        </Card>
+       ) : null}
 
-       {state.shadowing ? (
-        <ShadowingPracticePanel
-         key={activeParagraph.id}
-         paragraph={activeParagraph}
-         activeIndex={activeIndex}
-         total={paragraphs.length}
-         onPrevious={() => move(activeIndex - 1)}
-         onNext={() => move(activeIndex + 1)}
+       {showOverviewTab && !state.focusMode ? (
+        <Card variant="subtle" padding="md" className="grid gap-2">
+         <Typography as="h2" variant="cardTitle" weight="black">
+          {resource.document.analysis.mainIdeaVi || "Phân tích Reader"}
+         </Typography>
+         {resource.document.objectives_vi.length > 0 ? (
+          <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
+           {resource.document.objectives_vi.map((objective) => (
+            <li key={objective}>{objective}</li>
+           ))}
+          </ul>
+         ) : null}
+        </Card>
+       ) : null}
+
+       {stateOwner === "daily" ? (
+        <Card variant="subtle" padding="md" className="grid gap-2">
+         <Typography as="h3" variant="cardTitle" weight="black">
+          Daily Reading context
+         </Typography>
+         <div className="flex flex-wrap gap-2">
+          {dailyPublishedDate ? <Badge>{dailyPublishedDate}</Badge> : null}
+          {dailyTopic ? <Badge>{dailyTopic}</Badge> : null}
+          {dailyLevel ? <Badge>{dailyLevel}</Badge> : null}
+         </div>
+         {dailyAdaptationNotice ? (
+          <Typography as="p" variant="bodySmall" tone="muted">
+           {dailyAdaptationNotice}
+          </Typography>
+         ) : null}
+        </Card>
+       ) : null}
+
+       {stateOwner === "personal" ? (
+        <Card variant="subtle" padding="md" className="grid gap-2">
+         <Typography as="h3" variant="cardTitle" weight="black">
+          Personal Learning map
+         </Typography>
+         {personalEssentialQuestion ? (
+          <Typography as="p" variant="bodySmall" weight="black">
+           Câu hỏi trọng tâm: {personalEssentialQuestion}
+          </Typography>
+         ) : null}
+         {personalKeyIdea ? (
+          <Typography as="p" variant="bodySmall" tone="muted">
+           Ý chính: {personalKeyIdea}
+          </Typography>
+         ) : null}
+         {personalMasteryChecklist.length > 0 ? (
+          <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
+           {personalMasteryChecklist.map((item) => (
+            <li key={item}>{item}</li>
+           ))}
+          </ul>
+         ) : null}
+         {personalSourceIds.length > 0 ? (
+          <Typography as="p" variant="caption" tone="muted">
+           Evidence: {personalSourceIds.join(", ")}
+          </Typography>
+         ) : null}
+        </Card>
+       ) : null}
+
+       {showReaderTab ? (
+        <>
+         <Card variant="section" padding="md" className="grid gap-0">
+          {paragraphs.map((paragraph, index) => {
+           const analysis = analyses[index];
+           if (analysis === undefined) return null;
+           const isActive = index === activeIndex;
+           return (
+            <article
+             key={paragraph.id}
+             className={
+              isActive
+               ? "grid gap-4 bg-bg-subtle py-5 first:pt-4 last:pb-0 sm:px-4"
+               : "grid gap-4 border-b border-border-default py-5 last:border-b-0 sm:px-4"
+             }
+            >
+             <div className="flex flex-wrap items-center justify-between gap-2">
+              <Typography
+               as="p"
+               variant="caption"
+               tone="muted"
+               weight="black"
+               tracking="medium"
+               transform="uppercase"
+              >
+               Đoạn {paragraph.paragraph_order}
+              </Typography>
+              <Button
+               type="button"
+               size="sm"
+               variant={isActive ? "active" : "ghost"}
+               onClick={() => {
+                move(index);
+                playParagraphAt(index);
+               }}
+              >
+               Nghe đoạn này
+              </Button>
+             </div>
+             <div
+              data-no-inspector
+              data-reader-selection-paragraph={paragraph.id}
+              onMouseUp={() => captureSelection(index, paragraph, analysis)}
+              onPointerUp={() => captureSelection(index, paragraph, analysis)}
+              onTouchEnd={() => captureSelection(index, paragraph, analysis)}
+             >
+              <ContextualReaderText
+               analysis={analysis}
+               displayMode={displayMode}
+               activeCharacterIndex={isActive && isActiveSpeech ? activeCharacterIndex : -1}
+               showPinyin={pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)}
+               pinyinPresentation={
+                pinyinMode === "contextual" || (pinyinMode === "focus" && isActive)
+                 ? "ruby"
+                 : "paragraph"
+               }
+               sourcePinyin={paragraph.pinyin}
+               onGlyphClick={(start) => {
+                const characterIndex = Array.from(analysis.normalizedText.slice(0, start)).length;
+                move(index);
+                playParagraphAt(index, characterIndex);
+               }}
+              />
+             </div>
+             {pinyinMode === "full" ? (
+              <div className="grid gap-1 border-l-2 border-border-strong pl-3">
+               <Typography as="h3" variant="caption" tone="muted" weight="black">
+                Pinyin
+               </Typography>
+               <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
+                {analysis.sourcePinyinStatus === "aligned" && paragraph.pinyin
+                 ? paragraph.pinyin
+                 : formatContextualSpokenPinyin(analysis)}
+               </PinyinText>
+              </div>
+             ) : null}
+             {state.showMeaning && paragraph.vi ? (
+              <TranslationText variant="bodySmall" tone="muted" wrapping="preWrap">
+               {paragraph.vi}
+              </TranslationText>
+             ) : null}
+            </article>
+           );
+          })}
+         </Card>
+
+         {state.shadowing ? (
+          <ShadowingPracticePanel
+           key={activeParagraph.id}
+           paragraph={activeParagraph}
+           activeIndex={activeIndex}
+           total={paragraphs.length}
+           onPrevious={() => move(activeIndex - 1)}
+           onNext={() => move(activeIndex + 1)}
+          />
+         ) : null}
+        </>
+       ) : null}
+
+       {showExercisesTab ? (
+        <ReaderExercisePanel
+         resource={resource}
+         answers={state.answers}
+         onAnswer={saveExerciseAnswer}
         />
        ) : null}
-      </>
-     ) : null}
 
-     {showExercisesTab ? (
-      <ReaderExercisePanel
-       resource={resource}
-       answers={state.answers}
-       onAnswer={saveExerciseAnswer}
-      />
-     ) : null}
-
-     {selectedText ? (
-      <Popover.Root
-       open
-       modal={false}
-       onOpenChange={(open) => {
-        if (!open) clearSelection();
-       }}
-      >
-       <Popover.Portal>
-        <BasePopoverPositioner
-         anchor={selectionAnchor}
-         side="top"
-         align="center"
-         sideOffset={10}
-         collisionPadding={8}
-         positionMethod="fixed"
+       {selectedText ? (
+        <Popover.Root
+         open
+         modal={false}
+         onOpenChange={(open) => {
+          if (!open) clearSelection();
+         }}
         >
-         <BasePopoverPopup
-          variant="lookup"
-          data-no-inspector
-          onMouseDown={(event) => event.preventDefault()}
-         >
-          <div className="grid gap-3 p-3">
-           <div className="flex items-start justify-between gap-2">
-            <div className="grid min-w-0 gap-0.5">
-             <Typography as="strong" variant="cardTitle" lang="zh-CN" clamp="one">
-              {selectedText}
-             </Typography>
-             <PinyinText variant="caption" tone="muted">
-              {selectedPinyin || "Chưa xác định pinyin"}
-             </PinyinText>
-            </div>
-            <Button
-             type="button"
-             size="icon-sm"
-             variant="ghost"
-             aria-label="Đóng thanh công cụ"
-             onClick={clearSelection}
-            >
-             <X aria-hidden="true" />
-            </Button>
-           </div>
-           {selectionMode === "quick" ? (
-            <>
-             <Typography variant="bodySmall" tone="muted">
-              {selectedVocabulary?.meaning || "Chưa có nghĩa offline chính xác cho cụm này."}
-             </Typography>
-             <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label="Thao tác đoạn chọn">
+         <Popover.Portal>
+          <BasePopoverPositioner
+           anchor={selectionAnchor}
+           side="top"
+           align="center"
+           sideOffset={10}
+           collisionPadding={8}
+           positionMethod="fixed"
+          >
+           <BasePopoverPopup
+            variant="lookup"
+            data-no-inspector
+            onMouseDown={(event) => event.preventDefault()}
+           >
+            <div className="grid gap-3 p-3">
+             <div className="flex items-start justify-between gap-2">
+              <div className="grid min-w-0 gap-0.5">
+               <Typography as="strong" variant="cardTitle" lang="zh-CN" clamp="one">
+                {selectedText}
+               </Typography>
+               <PinyinText variant="caption" tone="muted">
+                {selectedPinyin || "Chưa xác định pinyin"}
+               </PinyinText>
+              </div>
+              <Button
+               type="button"
+               size="icon-sm"
+               variant="ghost"
+               aria-label="Đóng thanh công cụ"
+               onClick={clearSelection}
+              >
+               <X aria-hidden="true" />
+              </Button>
+             </div>
+             {selectionMode === "quick" ? (
+              <>
+               <Typography variant="bodySmall" tone="muted">
+                {selectedVocabulary?.meaning || "Chưa có nghĩa offline chính xác cho cụm này."}
+               </Typography>
+               <div
+                className="grid grid-cols-3 gap-1"
+                role="toolbar"
+                aria-label="Thao tác đoạn chọn"
+               >
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="ghost"
+                 onClick={() => {
+                  openInspector(selectedText, { anchorRect: selectionRect ?? undefined });
+                  clearSelection();
+                 }}
+                >
+                 <Languages data-icon="inline-start" />
+                 Tra từ
+                </Button>
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="ghost"
+                 onClick={() => saveAnnotation("highlight")}
+                >
+                 <Highlighter data-icon="inline-start" />
+                 Đánh dấu
+                </Button>
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="ghost"
+                 onClick={() => setSelectionMode("note")}
+                >
+                 <StickyNote data-icon="inline-start" />
+                 Ghi chú
+                </Button>
+               </div>
+              </>
+             ) : (
+              <>
+               {selectedGlyph !== null ? (
+                <Card variant="subtle" padding="sm" className="grid gap-2">
+                 <div className="flex flex-wrap items-center justify-between gap-2">
+                  <Typography as="p" variant="caption" tone="muted" weight="black">
+                   Cách đọc theo ngữ cảnh
+                  </Typography>
+                  <Badge
+                   variant={
+                    selectedGlyph.evidence.includes("manual-override") ? "success" : "purple"
+                   }
+                  >
+                   {selectedGlyph.evidence.join(" · ")}
+                  </Badge>
+                 </div>
+                 <div className="flex flex-wrap gap-2" aria-label="Chọn cách đọc pinyin">
+                  {selectedGlyph.alternatives.map((readingKey) => (
+                   <Button
+                    key={readingKey}
+                    type="button"
+                    size="sm"
+                    variant={selectedGlyph.lexicalReadingKey === readingKey ? "active" : "outline"}
+                    onClick={() => savePronunciationOverride(readingKey)}
+                   >
+                    {formatContextualReading(readingKey)}
+                   </Button>
+                  ))}
+                 </div>
+                 {selectedOverride !== undefined ? (
+                  <Button
+                   type="button"
+                   size="sm"
+                   variant="ghost"
+                   onClick={removePronunciationOverride}
+                  >
+                   Bỏ override của đoạn này
+                  </Button>
+                 ) : null}
+                </Card>
+               ) : null}
+               <Textarea
+                value={noteDraft}
+                onChange={(event) => setNoteDraft(event.target.value)}
+                placeholder="Ghi chú cho đoạn chọn…"
+                aria-label="Ghi chú cho đoạn chọn"
+                rows={2}
+               />
+               <div className="flex justify-end gap-2">
+                <Button
+                 type="button"
+                 size="sm"
+                 variant="ghost"
+                 onClick={() => setSelectionMode("quick")}
+                >
+                 Huỷ
+                </Button>
+                <Button
+                 type="button"
+                 size="sm"
+                 disabled={!noteDraft.trim()}
+                 onClick={() => saveAnnotation("note")}
+                >
+                 Lưu ghi chú
+                </Button>
+               </div>
+              </>
+             )}
+             <div className="flex flex-wrap gap-1 border-t border-border-default pt-2">
+              <Button
+               type="button"
+               size="sm"
+               variant="ghost"
+               onClick={() => {
+                if (tts.isSpeaking) tts.stop();
+                else tts.speakSequence([selectedText]);
+               }}
+              >
+               <Volume2 data-icon="inline-start" />
+               Nghe
+              </Button>
+              <Button type="button" size="sm" variant="ghost" onClick={addSelectionToReview}>
+               <BookmarkPlus data-icon="inline-start" />
+               Ôn lại
+              </Button>
               <Button
                type="button"
                size="sm"
@@ -1619,519 +1756,420 @@ export function ReaderDocumentStudy({
                 clearSelection();
                }}
               >
-               <Languages data-icon="inline-start" />
-               Tra từ
-              </Button>
-              <Button
-               type="button"
-               size="sm"
-               variant="ghost"
-               onClick={() => saveAnnotation("highlight")}
-              >
-               <Highlighter data-icon="inline-start" />
-               Đánh dấu
-              </Button>
-              <Button
-               type="button"
-               size="sm"
-               variant="ghost"
-               onClick={() => setSelectionMode("note")}
-              >
-               <StickyNote data-icon="inline-start" />
-               Ghi chú
+               <Info data-icon="inline-start" />
+               Hiểu sâu
               </Button>
              </div>
-            </>
-           ) : (
-            <>
-             {selectedGlyph !== null ? (
-              <div className="grid gap-2 rounded-control border border-border bg-bg-subtle p-2">
-               <div className="flex flex-wrap items-center justify-between gap-2">
-                <Typography as="p" variant="caption" tone="muted" weight="black">
-                 Cách đọc theo ngữ cảnh
-                </Typography>
-                <Badge
-                 variant={selectedGlyph.evidence.includes("manual-override") ? "success" : "purple"}
-                >
-                 {selectedGlyph.evidence.join(" · ")}
-                </Badge>
-               </div>
-               <div className="flex flex-wrap gap-2" aria-label="Chọn cách đọc pinyin">
-                {selectedGlyph.alternatives.map((readingKey) => (
-                 <Button
-                  key={readingKey}
-                  type="button"
-                  size="sm"
-                  variant={selectedGlyph.lexicalReadingKey === readingKey ? "active" : "outline"}
-                  onClick={() => savePronunciationOverride(readingKey)}
-                 >
-                  {formatContextualReading(readingKey)}
-                 </Button>
-                ))}
-               </div>
-               {selectedOverride !== undefined ? (
-                <Button
-                 type="button"
-                 size="sm"
-                 variant="ghost"
-                 onClick={removePronunciationOverride}
-                >
-                 Bỏ override của đoạn này
-                </Button>
-               ) : null}
-              </div>
-             ) : null}
-             <Textarea
-              value={noteDraft}
-              onChange={(event) => setNoteDraft(event.target.value)}
-              placeholder="Ghi chú cho đoạn chọn…"
-              aria-label="Ghi chú cho đoạn chọn"
-              rows={2}
-             />
-             <div className="flex justify-end gap-2">
-              <Button
-               type="button"
-               size="sm"
-               variant="ghost"
-               onClick={() => setSelectionMode("quick")}
-              >
-               Huỷ
-              </Button>
-              <Button
-               type="button"
-               size="sm"
-               disabled={!noteDraft.trim()}
-               onClick={() => saveAnnotation("note")}
-              >
-               Lưu ghi chú
-              </Button>
-             </div>
-            </>
-           )}
-           <div className="flex flex-wrap gap-1 border-t border-border-default pt-2">
-            <Button
-             type="button"
-             size="sm"
-             variant="ghost"
-             onClick={() => {
-              if (tts.isSpeaking) tts.stop();
-              else tts.speakSequence([selectedText]);
-             }}
-            >
-             <Volume2 data-icon="inline-start" />
-             Nghe
-            </Button>
-            <Button type="button" size="sm" variant="ghost" onClick={addSelectionToReview}>
-             <BookmarkPlus data-icon="inline-start" />
-             Ôn lại
-            </Button>
-            <Button
-             type="button"
-             size="sm"
-             variant="ghost"
-             onClick={() => {
-              openInspector(selectedText, { anchorRect: selectionRect ?? undefined });
-              clearSelection();
-             }}
-            >
-             <Info data-icon="inline-start" />
-             Hiểu sâu
-            </Button>
+            </div>
+           </BasePopoverPopup>
+          </BasePopoverPositioner>
+         </Popover.Portal>
+        </Popover.Root>
+       ) : null}
+
+       {showNotesTab && activeAnnotations.length > 0 ? (
+        <Card variant="subtle" padding="md" className="grid gap-2">
+         <Typography as="h2" variant="cardTitle" weight="black">
+          Annotation của đoạn này
+         </Typography>
+         {activeAnnotations.map((annotation) => (
+          <Card
+           key={annotation.id}
+           variant="default"
+           padding="sm"
+           className="flex min-w-0 items-start justify-between gap-2"
+          >
+           <div className="grid min-w-0 gap-1">
+            <Typography as="p" variant="bodySmall" lang="zh-CN">
+             {annotation.selected_text || "Đoạn đánh dấu"}
+            </Typography>
+            {annotation.note_text ? (
+             <Typography as="p" variant="caption" tone="muted">
+              {annotation.note_text}
+             </Typography>
+            ) : null}
            </div>
-          </div>
-         </BasePopoverPopup>
-        </BasePopoverPositioner>
-       </Popover.Portal>
-      </Popover.Root>
-     ) : null}
-
-     {showNotesTab && activeAnnotations.length > 0 ? (
-      <Card variant="subtle" padding="md" className="grid gap-2">
-       <Typography as="h2" variant="cardTitle" weight="black">
-        Annotation của đoạn này
-       </Typography>
-       {activeAnnotations.map((annotation) => (
-        <div
-         key={annotation.id}
-         className="flex min-w-0 items-start justify-between gap-2 rounded-control border border-border p-2"
-        >
-         <div className="grid min-w-0 gap-1">
-          <Typography as="p" variant="bodySmall" lang="zh-CN">
-           {annotation.selected_text || "Đoạn đánh dấu"}
-          </Typography>
-          {annotation.note_text ? (
-           <Typography as="p" variant="caption" tone="muted">
-            {annotation.note_text}
-           </Typography>
-          ) : null}
-         </div>
-         <Button
-          type="button"
-          size="sm"
-          variant="ghost"
-          onClick={() => removeAnnotation(annotation.id, annotation.revision)}
-         >
-          Xoá
-         </Button>
-        </div>
-       ))}
-      </Card>
-     ) : null}
-
-     {showVocabularyTab ? (
-      <Card variant="section" padding="md" className="grid gap-3">
-       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="grid gap-1">
-         <Typography as="h3" variant="sectionTitle" weight="black">
-          Từ vựng bài đọc
-         </Typography>
-         <Typography variant="caption" tone="muted">
-          Từ và cụm từ được resolve từ vocabulary canonical của HanziHome.
-         </Typography>
-        </div>
-        <Badge>{resource.vocabulary.length} từ</Badge>
-       </div>
-       {resource.vocabulary.length > 0 ? (
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-         {resource.vocabulary.map((vocabulary) => (
-          <div key={vocabulary.id} className="grid gap-1 rounded-control border border-border p-3">
-           <Typography as="p" variant="body" lang="zh-CN" weight="black">
-            {vocabulary.word}
-           </Typography>
-           <PinyinText variant="caption" tone="accent">
-            {vocabulary.pinyin || "Chưa có pinyin"}
-           </PinyinText>
-           <Typography variant="caption" tone="muted">
-            {vocabulary.meaning || "Chưa có nghĩa"}
-           </Typography>
-          </div>
-         ))}
-        </div>
-       ) : (
-        <Typography variant="bodySmall" tone="muted">
-         Bài này chưa có từ vựng liên kết.
-        </Typography>
-       )}
-      </Card>
-     ) : null}
-
-     {showTranslationTab ? (
-      <Card variant="section" padding="md" className="grid gap-3">
-       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="grid gap-1">
-         <Typography as="h3" variant="sectionTitle" weight="black">
-          Translation Studio
-         </Typography>
-         <Typography variant="caption" tone="muted">
-          Luyện dịch hai chiều theo từng đoạn, chấm deterministic và lưu attempt HanziHome.
-         </Typography>
-        </div>
-        <Badge>
-         {translationSegments.length > 0
-          ? `${activeIndex + 1}/${translationSegments.length}`
-          : "0 đoạn"}
-        </Badge>
-       </div>
-       {translationSegment ? (
-        <>
-         <div className="grid grid-cols-2 gap-2" aria-label="Hướng dịch Reader">
-          <Button
-           type="button"
-           variant={translationDirection === "zh-vi" ? "active" : "outline"}
-           onClick={() => setTranslationDirection("zh-vi")}
-          >
-           中文 → Tiếng Việt
-          </Button>
-          <Button
-           type="button"
-           variant={translationDirection === "vi-zh" ? "active" : "outline"}
-           onClick={() => setTranslationDirection("vi-zh")}
-          >
-           Tiếng Việt → 中文
-          </Button>
-         </div>
-         <div
-          className="flex max-w-full gap-1 overflow-x-auto pb-1 scrollbar-soft"
-          aria-label="Đoạn dịch Reader"
-         >
-          {translationSegments.map((candidate) => (
            <Button
-            key={candidate.id}
             type="button"
             size="sm"
-            variant={candidate.id === translationSegment.id ? "active" : "outline"}
-            aria-current={candidate.id === translationSegment.id ? "step" : undefined}
-            onClick={() => {
-             const paragraphIndex = paragraphs.findIndex(
-              (paragraph) => paragraph.id === candidate.id,
-             );
-             if (paragraphIndex >= 0) move(paragraphIndex);
-            }}
+            variant="ghost"
+            onClick={() => removeAnnotation(annotation.id, annotation.revision)}
            >
-            {candidate.order}
+            Xoá
            </Button>
+          </Card>
+         ))}
+        </Card>
+       ) : null}
+
+       {showVocabularyTab ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="grid gap-1">
+           <Typography as="h3" variant="sectionTitle" weight="black">
+            Từ vựng bài đọc
+           </Typography>
+           <Typography variant="caption" tone="muted">
+            Từ và cụm từ được resolve từ vocabulary canonical của HanziHome.
+           </Typography>
+          </div>
+          <Badge>{resource.vocabulary.length} từ</Badge>
+         </div>
+         {resource.vocabulary.length > 0 ? (
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+           {resource.vocabulary.map((vocabulary) => (
+            <Card key={vocabulary.id} variant="default" padding="sm" className="grid gap-1">
+             <Typography as="p" variant="body" lang="zh-CN" weight="black">
+              {vocabulary.word}
+             </Typography>
+             <PinyinText variant="caption" tone="accent">
+              {vocabulary.pinyin || "Chưa có pinyin"}
+             </PinyinText>
+             <Typography variant="caption" tone="muted">
+              {vocabulary.meaning || "Chưa có nghĩa"}
+             </Typography>
+            </Card>
+           ))}
+          </div>
+         ) : (
+          <Typography variant="bodySmall" tone="muted">
+           Bài này chưa có từ vựng liên kết.
+          </Typography>
+         )}
+        </Card>
+       ) : null}
+
+       {showTranslationTab ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="grid gap-1">
+           <Typography as="h3" variant="sectionTitle" weight="black">
+            Translation Studio
+           </Typography>
+           <Typography variant="caption" tone="muted">
+            Luyện dịch hai chiều theo từng đoạn, chấm deterministic và lưu attempt HanziHome.
+           </Typography>
+          </div>
+          <Badge>
+           {translationSegments.length > 0
+            ? `${activeIndex + 1}/${translationSegments.length}`
+            : "0 đoạn"}
+          </Badge>
+         </div>
+         {translationSegment ? (
+          <>
+           <SegmentedControl<TranslationDirection>
+            value={translationDirection}
+            items={[
+             { key: "zh-vi", label: "中文 → Tiếng Việt" },
+             { key: "vi-zh", label: "Tiếng Việt → 中文" },
+            ]}
+            onChange={setTranslationDirection}
+            aria-label="Hướng dịch Reader"
+           />
+           <div
+            className="flex max-w-full gap-1 overflow-x-auto pb-1 scrollbar-soft"
+            aria-label="Đoạn dịch Reader"
+           >
+            {translationSegments.map((candidate) => (
+             <Button
+              key={candidate.id}
+              type="button"
+              size="sm"
+              variant={candidate.id === translationSegment.id ? "active" : "outline"}
+              aria-current={candidate.id === translationSegment.id ? "step" : undefined}
+              onClick={() => {
+               const paragraphIndex = paragraphs.findIndex(
+                (paragraph) => paragraph.id === candidate.id,
+               );
+               if (paragraphIndex >= 0) move(paragraphIndex);
+              }}
+             >
+              {candidate.order}
+             </Button>
+            ))}
+           </div>
+           <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+            <Card variant="subtle" padding="md" className="grid min-w-0 content-start gap-2">
+             <Typography as="p" variant="caption" tone="muted" weight="black">
+              Đoạn {translationSegment.order}
+             </Typography>
+             {translationDirection === "zh-vi" ? (
+              <ReaderHanziText
+               displayMode={displayMode}
+               size="lg"
+               leading="relaxed"
+               wrapping="preWrap"
+              >
+               {translationSourceText(translationSegment, translationDirection)}
+              </ReaderHanziText>
+             ) : (
+              <TranslationText variant="bodySmall" wrapping="preWrap">
+               {translationSourceText(translationSegment, translationDirection)}
+              </TranslationText>
+             )}
+             {translationDirection === "zh-vi" && translationSegment.pinyin ? (
+              <Card asChild variant="default" padding="none">
+               <details className="grid gap-1">
+                <summary className="cursor-pointer list-none px-3 py-2 [&::-webkit-details-marker]:hidden">
+                 <Typography as="span" variant="caption" tone="muted" weight="black">
+                  Xem pinyin khi bí
+                 </Typography>
+                </summary>
+                <PinyinText
+                 variant="caption"
+                 tone="accent"
+                 wrapping="preWrap"
+                 className="border-t border-border-default px-3 pb-3"
+                >
+                 {translationSegment.pinyin}
+                </PinyinText>
+               </details>
+              </Card>
+             ) : null}
+            </Card>
+            <div className="grid min-w-0 gap-2">
+             <Textarea
+              value={translationDraft}
+              onChange={(event) => updateTranslationDraft(event.target.value)}
+              placeholder={
+               translationDirection === "zh-vi"
+                ? "Nhập bản dịch tiếng Việt…"
+                : "Nhập câu tiếng Trung…"
+              }
+              aria-label="Câu trả lời dịch Reader"
+              rows={5}
+              autoCapitalize="off"
+              autoCorrect="off"
+             />
+             <div className="flex flex-wrap gap-2">
+              <Button type="button" disabled={!translationDraft.trim()} onClick={checkTranslation}>
+               Kiểm tra
+              </Button>
+              <Button
+               type="button"
+               variant="outline"
+               disabled={translationSegment.order <= 1}
+               onClick={() => move(activeIndex - 1)}
+              >
+               Đoạn trước
+              </Button>
+              <Button
+               type="button"
+               variant="outline"
+               disabled={translationSegment.order >= translationSegments.length}
+               onClick={() => move(activeIndex + 1)}
+              >
+               Đoạn sau
+              </Button>
+             </div>
+             {translationIsChecked ? (
+              <Card variant="subtle" padding="sm" className="grid gap-1">
+               <Typography variant="bodySmall" weight="black">
+                Điểm: {translationScore ?? 0}/100
+               </Typography>
+               <TranslationText variant="caption" tone="muted">
+                Đáp án tham chiếu:{" "}
+                {translationReferenceText(translationSegment, translationDirection)}
+               </TranslationText>
+              </Card>
+             ) : null}
+            </div>
+           </div>
+          </>
+         ) : (
+          <Typography variant="bodySmall" tone="muted">
+           Bài này chưa có đủ bản dịch để luyện.
+          </Typography>
+         )}
+        </Card>
+       ) : null}
+
+       {showDictationTab ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <Badge variant="purple" className="w-fit">
+          Dictation Studio
+         </Badge>
+         <Typography as="h3" variant="sectionTitle" weight="black">
+          Nghe và chép lại bài đọc
+         </Typography>
+         <Typography variant="bodySmall" tone="muted">
+          Mở workspace Dictation với toàn bộ đoạn đọc hiện tại và giữ nguyên flow chọn chế độ của
+          Studio.
+         </Typography>
+         <div className="flex flex-wrap gap-2">
+          <Button type="button" asChild>
+           <Link
+            href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`}
+            prefetch={false}
+           >
+            Mở Dictation →
+           </Link>
+          </Button>
+          <Button type="button" variant="outline" asChild>
+           <Link
+            href={`/tts?text=${encodeURIComponent(paragraphs.map((paragraph) => paragraph.zh).join("\n"))}`}
+            prefetch={false}
+           >
+            Mở TTS Studio
+           </Link>
+          </Button>
+         </div>
+        </Card>
+       ) : null}
+
+       {showAnalysisTab ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <Typography as="h3" variant="sectionTitle" weight="black">
+          Phân tích bài đọc
+         </Typography>
+         <Typography variant="bodySmall" tone="muted">
+          {resource.document.analysis.mainIdeaVi || "Chưa có mô tả phân tích chính."}
+         </Typography>
+         {resource.document.analysis.paragraphStructureVi.length > 0 ? (
+          <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
+           {resource.document.analysis.paragraphStructureVi.map((item) => (
+            <li key={item}>{item}</li>
+           ))}
+          </ul>
+         ) : null}
+         {resource.document.analysis.logicChainVi.length > 0 ? (
+          <Typography variant="bodySmall" tone="muted" wrapping="preWrap">
+           {resource.document.analysis.logicChainVi.join("\n")}
+          </Typography>
+         ) : null}
+         <div className="grid gap-2 border-t border-border-default pt-3">
+          <Typography as="strong" variant="caption" tone="accent">
+           Pinyin theo ngữ cảnh
+          </Typography>
+          {analyses.map((analysis, index) => (
+           <div key={paragraphs[index]?.id ?? index} className="flex flex-wrap items-center gap-2">
+            <Typography as="span" variant="caption" tone="muted">
+             Đoạn {index + 1}
+            </Typography>
+            <Badge variant={analysis.sourcePinyinStatus === "rejected" ? "warning" : "purple"}>
+             {analysis.sourcePinyinStatus === "aligned"
+              ? "Pinyin nguồn đã căn"
+              : analysis.sourcePinyinStatus === "rejected"
+                ? "Pinyin nguồn bị từ chối"
+                : "Pinyin sinh theo ngữ cảnh"}
+            </Badge>
+            {analysis.unresolved.length > 0 ? (
+             <Typography as="span" variant="caption" tone="danger">
+              Chưa nhận diện: {analysis.unresolved.map((item) => item.text).join(" ")}
+             </Typography>
+            ) : null}
+           </div>
           ))}
          </div>
-         <div className="grid min-w-0 gap-3 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-          <Card variant="subtle" padding="md" className="grid min-w-0 gap-2">
-           <Typography as="p" variant="caption" tone="muted" weight="black">
-            Đoạn {translationSegment.order}
-           </Typography>
-           {translationDirection === "zh-vi" ? (
-            <Typography as="p" variant="body" lang="zh-CN" wrapping="preWrap">
-             {translationSourceText(translationSegment, translationDirection)}
+        </Card>
+       ) : null}
+
+       {showSummaryTab ? (
+        <Card variant="section" padding="md" className="grid gap-3">
+         <Typography as="h3" variant="sectionTitle" weight="black">
+          Tóm tắt
+         </Typography>
+         {resource.document.summary.modelZh ? (
+          <Typography variant="body" lang="zh-CN" wrapping="preWrap">
+           {resource.document.summary.modelZh}
+          </Typography>
+         ) : null}
+         {resource.document.summary.rubricVi.length > 0 ? (
+          <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
+           {resource.document.summary.rubricVi.map((criterion) => (
+            <li key={criterion}>{criterion}</li>
+           ))}
+          </ul>
+         ) : null}
+         {!resource.document.summary.modelZh && resource.document.summary.rubricVi.length === 0 ? (
+          <Typography variant="bodySmall" tone="muted">
+           Bài này chưa có summary được review.
+          </Typography>
+         ) : null}
+        </Card>
+       ) : null}
+
+       {saveError ? (
+        <Typography as="p" variant="caption" tone="danger">
+         {saveError}
+        </Typography>
+       ) : null}
+      </div>
+      {!state.focusMode ? (
+       <aside className="grid content-start gap-3 xl:sticky xl:top-3 xl:self-start">
+        <Card variant="section" padding="md" className="grid gap-3">
+         <Typography
+          as="h2"
+          variant="caption"
+          tone="muted"
+          weight="black"
+          tracking="medium"
+          transform="uppercase"
+         >
+          Mục lục đoạn
+         </Typography>
+         <nav aria-label="Chọn đoạn để nghe" className="grid gap-1">
+          {paragraphs.map((paragraph, index) => (
+           <Button
+            key={paragraph.id}
+            type="button"
+            variant={index === activeIndex ? "active" : "ghost"}
+            align="start"
+            className="justify-start gap-2"
+            onClick={() => move(index)}
+           >
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-bg-subtle text-xs font-bold">
+             {index + 1}
+            </span>
+            <Typography as="span" variant="caption" tone="muted">
+             Đoạn {paragraph.paragraph_order}
             </Typography>
-           ) : (
-            <TranslationText variant="bodySmall" wrapping="preWrap">
-             {translationSourceText(translationSegment, translationDirection)}
-            </TranslationText>
-           )}
-           {translationSegment.pinyin ? (
-            <PinyinText variant="caption" tone="accent">
-             {translationSegment.pinyin}
-            </PinyinText>
-           ) : null}
-          </Card>
-          <div className="grid min-w-0 gap-2">
-           <Textarea
-            value={translationDraft}
-            onChange={(event) => updateTranslationDraft(event.target.value)}
-            placeholder={
-             translationDirection === "zh-vi"
-              ? "Nhập bản dịch tiếng Việt…"
-              : "Nhập câu tiếng Trung…"
-            }
-            aria-label="Câu trả lời dịch Reader"
-            rows={5}
-            autoCapitalize="off"
-            autoCorrect="off"
-           />
-           <div className="flex flex-wrap gap-2">
-            <Button type="button" disabled={!translationDraft.trim()} onClick={checkTranslation}>
-             Kiểm tra
-            </Button>
-            <Button
-             type="button"
-             variant="outline"
-             disabled={translationSegment.order <= 1}
-             onClick={() => move(activeIndex - 1)}
-            >
-             Đoạn trước
-            </Button>
-            <Button
-             type="button"
-             variant="outline"
-             disabled={translationSegment.order >= translationSegments.length}
-             onClick={() => move(activeIndex + 1)}
-            >
-             Đoạn sau
-            </Button>
-           </div>
-           {translationIsChecked ? (
-            <div className="grid gap-1 rounded-control border border-border bg-surface-muted p-3">
-             <Typography variant="bodySmall" weight="black">
-              Điểm: {translationScore ?? 0}/100
-             </Typography>
-             <TranslationText variant="caption" tone="muted">
-              Đáp án tham chiếu:{" "}
-              {translationReferenceText(translationSegment, translationDirection)}
-             </TranslationText>
-            </div>
-           ) : null}
+           </Button>
+          ))}
+         </nav>
+        </Card>
+        <Card variant="section" padding="md" className="grid gap-2">
+         <Typography
+          as="h2"
+          variant="caption"
+          tone="muted"
+          weight="black"
+          tracking="medium"
+          transform="uppercase"
+         >
+          Thông tin bài
+         </Typography>
+         <dl className="grid gap-2 text-sm">
+          <div>
+           <dt className="text-text-muted">Thể loại</dt>
+           <dd>{resource.document.genre_vi || "Reader"}</dd>
           </div>
-         </div>
-        </>
-       ) : (
-        <Typography variant="bodySmall" tone="muted">
-         Bài này chưa có đủ bản dịch để luyện.
-        </Typography>
-       )}
-      </Card>
-     ) : null}
-
-     {showDictationTab ? (
-      <Card variant="section" padding="md" className="grid gap-3">
-       <Badge variant="purple" className="w-fit">
-        Dictation Studio
-       </Badge>
-       <Typography as="h3" variant="sectionTitle" weight="black">
-        Nghe và chép lại bài đọc
-       </Typography>
-       <Typography variant="bodySmall" tone="muted">
-        Mở workspace Dictation với toàn bộ đoạn đọc hiện tại và giữ nguyên flow chọn chế độ của
-        Studio.
-       </Typography>
-       <div className="flex flex-wrap gap-2">
-        <Button type="button" asChild>
-         <Link
-          href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`}
-          prefetch={false}
-         >
-          Mở Dictation →
-         </Link>
-        </Button>
-        <Button type="button" variant="outline" asChild>
-         <Link
-          href={`/tts?text=${encodeURIComponent(paragraphs.map((paragraph) => paragraph.zh).join("\n"))}`}
-          prefetch={false}
-         >
-          Mở TTS Studio
-         </Link>
-        </Button>
-       </div>
-      </Card>
-     ) : null}
-
-     {showAnalysisTab ? (
-      <Card variant="section" padding="md" className="grid gap-3">
-       <Typography as="h3" variant="sectionTitle" weight="black">
-        Phân tích bài đọc
-       </Typography>
-       <Typography variant="bodySmall" tone="muted">
-        {resource.document.analysis.mainIdeaVi || "Chưa có mô tả phân tích chính."}
-       </Typography>
-       {resource.document.analysis.paragraphStructureVi.length > 0 ? (
-        <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
-         {resource.document.analysis.paragraphStructureVi.map((item) => (
-          <li key={item}>{item}</li>
-         ))}
-        </ul>
-       ) : null}
-       {resource.document.analysis.logicChainVi.length > 0 ? (
-        <Typography variant="bodySmall" tone="muted" wrapping="preWrap">
-         {resource.document.analysis.logicChainVi.join("\n")}
-        </Typography>
-       ) : null}
-       <div className="grid gap-2 border-t border-border-default pt-3">
-        <Typography as="strong" variant="caption" tone="accent">
-         Pinyin theo ngữ cảnh
-        </Typography>
-        {analyses.map((analysis, index) => (
-         <div key={paragraphs[index]?.id ?? index} className="flex flex-wrap items-center gap-2">
-          <Typography as="span" variant="caption" tone="muted">
-           Đoạn {index + 1}
-          </Typography>
-          <Badge variant={analysis.sourcePinyinStatus === "rejected" ? "warning" : "purple"}>
-           {analysis.sourcePinyinStatus === "aligned"
-            ? "Pinyin nguồn đã căn"
-            : analysis.sourcePinyinStatus === "rejected"
-              ? "Pinyin nguồn bị từ chối"
-              : "Pinyin sinh theo ngữ cảnh"}
-          </Badge>
-          {analysis.unresolved.length > 0 ? (
-           <Typography as="span" variant="caption" tone="danger">
-            Chưa nhận diện: {analysis.unresolved.map((item) => item.text).join(" ")}
-           </Typography>
+          <div>
+           <dt className="text-text-muted">Số đoạn</dt>
+           <dd>{paragraphs.length}</dd>
+          </div>
+          <div>
+           <dt className="text-text-muted">Từ vựng</dt>
+           <dd>{resource.vocabulary.length}</dd>
+          </div>
+          <div>
+           <dt className="text-text-muted">Bài tập</dt>
+           <dd>{resource.exerciseItems.length}</dd>
+          </div>
+          {resource.document.unit_id ? (
+           <div>
+            <dt className="text-text-muted">Đơn nguyên</dt>
+            <dd>{resource.document.unit_id.replace(/^U/u, "")}</dd>
+           </div>
           ) : null}
-         </div>
-        ))}
-       </div>
-      </Card>
-     ) : null}
-
-     {showSummaryTab ? (
-      <Card variant="section" padding="md" className="grid gap-3">
-       <Typography as="h3" variant="sectionTitle" weight="black">
-        Tóm tắt
-       </Typography>
-       {resource.document.summary.modelZh ? (
-        <Typography variant="body" lang="zh-CN" wrapping="preWrap">
-         {resource.document.summary.modelZh}
-        </Typography>
-       ) : null}
-       {resource.document.summary.rubricVi.length > 0 ? (
-        <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
-         {resource.document.summary.rubricVi.map((criterion) => (
-          <li key={criterion}>{criterion}</li>
-         ))}
-        </ul>
-       ) : null}
-       {!resource.document.summary.modelZh && resource.document.summary.rubricVi.length === 0 ? (
-        <Typography variant="bodySmall" tone="muted">
-         Bài này chưa có summary được review.
-        </Typography>
-       ) : null}
-      </Card>
-     ) : null}
-
-     {saveError ? (
-      <Typography as="p" variant="caption" tone="danger">
-       {saveError}
-      </Typography>
-     ) : null}
-    </div>
-    {!state.focusMode ? (
-     <aside className="grid content-start gap-3 xl:sticky xl:top-3 xl:self-start">
-      <Card variant="section" padding="md" className="grid gap-3">
-       <Typography
-        as="h2"
-        variant="caption"
-        tone="muted"
-        weight="black"
-        tracking="medium"
-        transform="uppercase"
-       >
-        Mục lục đoạn
-       </Typography>
-       <nav aria-label="Chọn đoạn để nghe" className="grid gap-1">
-        {paragraphs.map((paragraph, index) => (
-         <Button
-          key={paragraph.id}
-          type="button"
-          variant={index === activeIndex ? "active" : "ghost"}
-          align="start"
-          className="justify-start gap-2"
-          onClick={() => move(index)}
-         >
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-bg-subtle text-xs font-bold">
-           {index + 1}
-          </span>
-          <Typography as="span" variant="caption" tone="muted">
-           Đoạn {paragraph.paragraph_order}
-          </Typography>
-         </Button>
-        ))}
-       </nav>
-      </Card>
-      <Card variant="section" padding="md" className="grid gap-2">
-       <Typography
-        as="h2"
-        variant="caption"
-        tone="muted"
-        weight="black"
-        tracking="medium"
-        transform="uppercase"
-       >
-        Thông tin bài
-       </Typography>
-       <dl className="grid gap-2 text-sm">
-        <div>
-         <dt className="text-text-muted">Thể loại</dt>
-         <dd>{resource.document.genre_vi || "Reader"}</dd>
-        </div>
-        <div>
-         <dt className="text-text-muted">Số đoạn</dt>
-         <dd>{paragraphs.length}</dd>
-        </div>
-        <div>
-         <dt className="text-text-muted">Từ vựng</dt>
-         <dd>{resource.vocabulary.length}</dd>
-        </div>
-        <div>
-         <dt className="text-text-muted">Bài tập</dt>
-         <dd>{resource.exerciseItems.length}</dd>
-        </div>
-        {resource.document.unit_id ? (
-         <div>
-          <dt className="text-text-muted">Đơn nguyên</dt>
-          <dd>{resource.document.unit_id.replace(/^U/u, "")}</dd>
-         </div>
-        ) : null}
-       </dl>
-      </Card>
-     </aside>
-    ) : null}
-   </div>
+         </dl>
+        </Card>
+       </aside>
+      ) : null}
+     </div>
+    </TabsContent>
+   </Tabs>
   </div>
  );
 }

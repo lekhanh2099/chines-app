@@ -72,17 +72,14 @@ export function ReaderDataQualityWorkspace() {
       </div>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
        {countLabels.map(([key, label]) => (
-        <div
-         key={key}
-         className="grid gap-1 rounded-lg border border-border-default bg-bg-subtle p-3"
-        >
+        <Card key={key} variant="subtle" padding="sm" className="grid gap-1">
          <Typography variant="caption" tone="muted">
           {label}
          </Typography>
          <Typography variant="sectionTitle" weight="black">
           {query.data[key]}
          </Typography>
-        </div>
+        </Card>
        ))}
       </div>
      </Card>

@@ -16,8 +16,6 @@ import type {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import type {
  GrammarViewModel,
- HanziHomeCatalogCourse,
- HanziHomeCourseBook,
  HanziHomeLesson,
  HanziHomeVocabItem,
 } from "@/features/hanzihome/types";
@@ -473,47 +471,6 @@ export function getStaticStudioLessonDetail(lessonId: string): HanziHomeLesson |
   })),
   sourceLesson: staticSourceLesson(lesson),
  };
-}
-
-export function getStaticStudioCatalog() {
- const lessons = staticStudioSeed.canonical.lessons.map(lessonToSummary);
- const books: HanziHomeCourseBook[] = staticStudioSeed.canonical.books.map((book) => ({
-  id: book.id,
-  courseId: book.course_id,
-  title: book.title,
-  shortTitle: book.short_title ?? undefined,
-  order: book.book_order,
-  updatedAt: book.imported_at,
- }));
- const courses: HanziHomeCatalogCourse[] = staticStudioSeed.canonical.courses.map((course) => {
-  const courseLessons = lessons.filter((lesson) => lesson.courseId === course.id);
-  const courseBooks = books.filter((book) => book.courseId === course.id);
-  const vocabCount = staticStudioSeed.canonical.vocabItems.filter(
-   (item) => item.course_id === course.id,
-  ).length;
-  const grammarCount = staticStudioSeed.canonical.grammarPoints.filter(
-   (item) => item.course_id === course.id,
-  ).length;
-  return {
-   id: course.id,
-   slug: course.slug,
-   title: course.title,
-   subtitle: course.subtitle,
-   type: course.type,
-   order: course.course_order,
-   updatedAt: course.imported_at,
-   stats: {
-    bookCount: courseBooks.length,
-    lessonCount: courseLessons.length,
-    vocabCount,
-    grammarCount,
-   },
-   lastLessonId: courseLessons.at(-1)?.id,
-   fallbackLessonId: courseLessons[0]?.id,
-  };
- });
-
- return { courses, books, lessons };
 }
 
 function matchesStaticQuery(values: string[], query: string) {

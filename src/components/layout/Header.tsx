@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect } from "react";
+import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
 import Link from "next/link";
 import { type User } from "@supabase/supabase-js";
@@ -27,6 +27,8 @@ import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { globalSearchStore } from "@/stores/global-search-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -48,7 +50,7 @@ type SimpleHeaderBreadcrumb = {
 
 type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
-export function Header({ user }: { user?: Nullable<User> }) {
+export function Header() {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const pathname = usePathname();
@@ -60,12 +62,18 @@ export function Header({ user }: { user?: Nullable<User> }) {
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
+ const supabase = useMemo(() => createClient(), []);
+ const [user, setUser] = useState<Nullable<User>>(null);
  const simpleBreadcrumb = getSimpleHeaderBreadcrumb(pathname);
  const hasRouteToolbar = Boolean(headerToolbarContent || simpleBreadcrumb);
 
  useEffect(() => {
   hydrateLookupSettings();
  }, [hydrateLookupSettings]);
+
+ useEffect(() => {
+  void getClientSessionUser(supabase).then(setUser);
+ }, [supabase]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {

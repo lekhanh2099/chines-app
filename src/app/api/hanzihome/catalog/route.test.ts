@@ -52,8 +52,8 @@ describe("GET /api/hanzihome/catalog", () => {
   expect(response.headers.get("Cache-Control")).toBe("private, no-store");
   const payload = await response.json();
   expect(payload.catalog.source).toBe("db");
-  expect(payload.catalog.courses).toHaveLength(6);
-  expect(payload.catalog.books).toHaveLength(25);
+  expect(payload.catalog.courses).toEqual([]);
+  expect(payload.catalog.books).toEqual([]);
   expect(payload.catalog.lessons).toEqual([]);
   expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: false, includeRadicals: false });
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
@@ -70,27 +70,24 @@ describe("GET /api/hanzihome/catalog", () => {
   expect(response.status).toBe(200);
   expect(getCatalogSummary).toHaveBeenCalledWith({ includeLessons: true, includeRadicals: false });
   const payload = await response.json();
-  expect(payload.catalog.courses).toHaveLength(6);
-  expect(payload.catalog.books).toHaveLength(25);
-  expect(payload.catalog.lessons).toHaveLength(302);
+  expect(payload.catalog.courses).toEqual([]);
+  expect(payload.catalog.books).toEqual([]);
+  expect(payload.catalog.lessons).toEqual([]);
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 
- it("loads Studio dictation lessons from the bundled static content", async () => {
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+ it("does not expose Studio static lessons through the canonical catalog", async () => {
+  requireAuthenticatedRoute.mockResolvedValue({
+   authenticated: false,
+   response: new Response(null, { status: 401 }),
+  });
 
   const response = await GET(
    new Request("https://app.example/api/hanzihome/catalog?courseId=hanzihome-studio-dictation"),
   );
 
-  const payload = await response.json();
-  expect(response.status).toBe(200);
-  expect(payload.lessons).toHaveLength(126);
-  expect(payload.lessons[0]).toMatchObject({
-   id: "hanzihome-studio-dictation:hsk5-lesson-01",
-   titleZh: "爱的细节",
-  });
-  expect(requireAuthenticatedRoute).not.toHaveBeenCalled();
+  expect(response.status).toBe(401);
+  expect(requireAuthenticatedRoute).toHaveBeenCalledOnce();
   expect(getCourseLessonSummaries).not.toHaveBeenCalled();
  });
 

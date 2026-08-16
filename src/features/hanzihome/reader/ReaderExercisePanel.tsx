@@ -80,10 +80,7 @@ export function ReaderExercisePanel({
        const draft = drafts[item.id] ?? saved?.answer ?? "";
        const isAuto = item.payload.scoring === "auto";
        return (
-        <div
-         key={item.id}
-         className="grid gap-2 rounded-lg border border-border-default bg-bg-subtle p-3"
-        >
+        <Card key={item.id} variant="subtle" padding="sm" className="grid gap-2">
          <div className="flex flex-wrap items-start justify-between gap-2">
           <Typography as="p" variant="bodySmall" weight="bold">
            {index + 1}. {item.payload.promptVi || item.payload.promptZh}
@@ -166,7 +163,7 @@ export function ReaderExercisePanel({
            {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
           </Typography>
          ) : null}
-        </div>
+        </Card>
        );
       })}
      </section>

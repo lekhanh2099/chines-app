@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
 
 import { TtsStudioWorkspace } from "@/features/hanzihome/tts/TtsStudioWorkspace";
@@ -19,59 +19,38 @@ export function PracticeWorkspace({
 }) {
  const [translationOpen, setTranslationOpen] = useState(false);
  const [ttsStudioOpen, setTtsStudioOpen] = useState(false);
+ const workspaceTab = ttsStudioOpen ? "tts" : translationOpen ? "translation" : "exercises";
 
  return (
   <div className="grid min-w-0 gap-3">
-   <div className="flex flex-wrap gap-2" role="tablist" aria-label="Phòng luyện tập">
-    <Button
-     type="button"
-     variant={!translationOpen && !ttsStudioOpen ? "active" : "outline"}
-     role="tab"
-     aria-selected={!translationOpen && !ttsStudioOpen}
-     onClick={() => {
-      setTranslationOpen(false);
-      setTtsStudioOpen(false);
-     }}
-    >
-     Bài tập
-    </Button>
-    <Button
-     type="button"
-     variant={translationOpen ? "active" : "outline"}
-     role="tab"
-     aria-selected={translationOpen}
-     onClick={() => {
-      setTranslationOpen(true);
-      setTtsStudioOpen(false);
-     }}
-    >
-     Translation
-    </Button>
-    <Button
-     type="button"
-     variant={ttsStudioOpen ? "active" : "outline"}
-     role="tab"
-     aria-selected={ttsStudioOpen}
-     onClick={() => {
-      setTtsStudioOpen(true);
-      setTranslationOpen(false);
-     }}
-    >
-     TTS Studio
-    </Button>
-   </div>
-   {ttsStudioOpen ? (
-    <TtsStudioWorkspace />
-   ) : translationOpen ? (
-    <TranslationPracticeWorkspace />
-   ) : (
-    <LessonTextInlineEditor
-     compact={compact}
-     selectedSectionId={selectedSectionId}
-     onSelectSection={onSelectSection}
-     practiceOnly
-    />
-   )}
+   <Tabs
+    value={workspaceTab}
+    items={[
+     { key: "exercises", label: "Bài tập" },
+     { key: "translation", label: "Translation" },
+     { key: "tts", label: "TTS Studio" },
+    ]}
+    onValueChange={(value) => {
+     setTranslationOpen(value === "translation");
+     setTtsStudioOpen(value === "tts");
+    }}
+    aria-label="Phòng luyện tập"
+   >
+    <TabsContent value={workspaceTab} className="pt-3">
+     {ttsStudioOpen ? (
+      <TtsStudioWorkspace />
+     ) : translationOpen ? (
+      <TranslationPracticeWorkspace />
+     ) : (
+      <LessonTextInlineEditor
+       compact={compact}
+       selectedSectionId={selectedSectionId}
+       onSelectSection={onSelectSection}
+       practiceOnly
+      />
+     )}
+    </TabsContent>
+   </Tabs>
   </div>
  );
 }

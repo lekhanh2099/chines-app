@@ -8,6 +8,7 @@ import { pinyin as getPinyin } from "pinyin-pro";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SegmentedControl, type SegmentedControlItem } from "@/components/ui/segmented-control";
 import {
  Select,
  SelectContent,
@@ -290,6 +291,15 @@ export function StudioDictationWorkspace({
   }
  };
 
+ const sourceOptions: SegmentedControlItem<DictationSource>[] = [
+  { key: "lesson", label: "Bài học / bài đọc HSK" },
+  { key: "library", label: "Từ thư viện TTS" },
+  { key: "custom", label: "Dán nội dung" },
+ ];
+ if (requestedDocumentId.length > 0) {
+  sourceOptions.unshift({ key: "reader", label: "Reader hiện tại" });
+ }
+
  return (
   <div className="grid min-w-0 gap-4">
    <div className="grid gap-1">
@@ -332,62 +342,15 @@ export function StudioDictationWorkspace({
      </Typography>
     ) : (
      <div className="grid gap-3">
-      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Nguồn dictation">
-       {requestedDocumentId.length > 0 ? (
-        <Button
-         type="button"
-         role="tab"
-         size="sm"
-         variant={sourceType === "reader" ? "active" : "outline"}
-         aria-selected={sourceType === "reader"}
-         onClick={() => {
-          setSourceType("reader");
-          resetPracticeFlow();
-         }}
-        >
-         Reader hiện tại
-        </Button>
-       ) : null}
-       <Button
-        type="button"
-        role="tab"
-        size="sm"
-        variant={sourceType === "lesson" ? "active" : "outline"}
-        aria-selected={sourceType === "lesson"}
-        onClick={() => {
-         setSourceType("lesson");
-         resetPracticeFlow();
-        }}
-       >
-        Bài học / bài đọc HSK
-       </Button>
-       <Button
-        type="button"
-        role="tab"
-        size="sm"
-        variant={sourceType === "library" ? "active" : "outline"}
-        aria-selected={sourceType === "library"}
-        onClick={() => {
-         setSourceType("library");
-         resetPracticeFlow();
-        }}
-       >
-        Từ thư viện TTS
-       </Button>
-       <Button
-        type="button"
-        role="tab"
-        size="sm"
-        variant={sourceType === "custom" ? "active" : "outline"}
-        aria-selected={sourceType === "custom"}
-        onClick={() => {
-         setSourceType("custom");
-         resetPracticeFlow();
-        }}
-       >
-        Dán nội dung
-       </Button>
-      </div>
+      <SegmentedControl<DictationSource>
+       value={sourceType}
+       items={sourceOptions}
+       onChange={(value) => {
+        setSourceType(value);
+        resetPracticeFlow();
+       }}
+       aria-label="Nguồn dictation"
+      />
       {sourceType === "lesson" ? (
        <>
         <div className="grid gap-2" aria-label="Chọn bộ dictation">

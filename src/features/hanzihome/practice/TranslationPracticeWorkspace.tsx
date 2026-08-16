@@ -5,6 +5,7 @@ import { useMemo, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import {
@@ -99,6 +100,7 @@ export function TranslationPracticeWorkspace() {
 
  const move = (index: number) => {
   setActiveIndex(clampTranslationIndex(index, segments.length));
+  setAttemptSaveError("");
  };
 
  return (
@@ -121,22 +123,18 @@ export function TranslationPracticeWorkspace() {
      </Badge>
     </div>
 
-    <div className="grid grid-cols-2 gap-2" aria-label="Hướng dịch">
-     <Button
-      type="button"
-      variant={direction === "zh-vi" ? "active" : "outline"}
-      onClick={() => setDirection("zh-vi")}
-     >
-      中文 → Tiếng Việt
-     </Button>
-     <Button
-      type="button"
-      variant={direction === "vi-zh" ? "active" : "outline"}
-      onClick={() => setDirection("vi-zh")}
-     >
-      Tiếng Việt → 中文
-     </Button>
-    </div>
+    <SegmentedControl
+     value={direction}
+     items={[
+      { key: "zh-vi", label: "中文 → Tiếng Việt" },
+      { key: "vi-zh", label: "Tiếng Việt → 中文" },
+     ]}
+     onChange={(nextDirection) => {
+      setDirection(nextDirection);
+      setAttemptSaveError("");
+     }}
+     aria-label="Hướng dịch"
+    />
 
     <div className="grid grid-cols-5 gap-2 sm:grid-cols-8" aria-label="Đoạn dịch">
      {segments.map((candidate, index) => (
@@ -144,7 +142,13 @@ export function TranslationPracticeWorkspace() {
        key={candidate.id}
        type="button"
        size="sm"
-       variant={index === activeIndex ? "active" : "outline"}
+       variant={
+        index === activeIndex
+         ? "active"
+         : state.checked[`${candidate.id}:${direction}`] === true
+           ? "success"
+           : "outline"
+       }
        aria-current={index === activeIndex ? "step" : undefined}
        onClick={() => move(index)}
       >
@@ -161,7 +165,7 @@ export function TranslationPracticeWorkspace() {
       <span>{Array.from(sourceText).length} ký tự</span>
      </div>
      {direction === "zh-vi" ? (
-      <ReaderHanziText displayMode={displayMode} leading="learner" wrapping="preWrap">
+      <ReaderHanziText displayMode={displayMode} size="lg" leading="relaxed" wrapping="preWrap">
        {sourceText}
       </ReaderHanziText>
      ) : (
@@ -169,10 +173,25 @@ export function TranslationPracticeWorkspace() {
        {sourceText}
       </Typography>
      )}
-     {segment.pinyin ? (
-      <PinyinText variant="bodySmall" tone="accent" weight="semibold">
-       {segment.pinyin}
-      </PinyinText>
+     {direction === "zh-vi" && segment.pinyin ? (
+      <Card asChild variant="subtle" padding="none">
+       <details className="grid gap-2">
+        <summary className="cursor-pointer list-none px-3 py-2.5 [&::-webkit-details-marker]:hidden">
+         <Typography as="span" variant="bodySmall" tone="muted" weight="black">
+          Xem pinyin khi bí
+         </Typography>
+        </summary>
+        <PinyinText
+         variant="bodySmall"
+         tone="accent"
+         weight="semibold"
+         wrapping="preWrap"
+         className="border-t border-border-default px-3 pb-3"
+        >
+         {segment.pinyin}
+        </PinyinText>
+       </details>
+      </Card>
      ) : null}
      <Typography as="p" variant="caption" tone="muted">
       Bản dịch tham chiếu sẽ hiện sau khi bạn kiểm tra câu trả lời.
@@ -219,14 +238,14 @@ export function TranslationPracticeWorkspace() {
       </Typography>
      ) : null}
      {checked ? (
-      <div className="grid gap-2 rounded-control border border-border bg-surface p-3">
+      <Card variant="subtle" padding="sm" className="grid gap-2">
        <Typography as="p" variant="bodySmall" weight="black">
         Điểm: {score ?? 0}/100
        </Typography>
        <TranslationText variant="bodySmall" tone="muted">
         Đáp án tham chiếu: {referenceText}
        </TranslationText>
-      </div>
+      </Card>
      ) : null}
     </Card>
    </div>

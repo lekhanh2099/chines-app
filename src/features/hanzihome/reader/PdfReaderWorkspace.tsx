@@ -496,7 +496,11 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
     }}
    >
     <div className="sticky top-2 z-30 flex justify-center">
-     <div className="flex max-w-full flex-wrap items-center justify-center gap-1 rounded-xl border border-border bg-surface p-1 shadow-md">
+     <Card
+      variant="elevated"
+      padding="sm"
+      className="flex max-w-full flex-wrap items-center justify-center gap-1"
+     >
       <Button
        type="button"
        size="icon-toolbar"
@@ -574,10 +578,14 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       >
        <Pen />
       </Button>
-     </div>
+     </Card>
     </div>
     {drawingTool !== null && drawingTool !== "eraser" ? (
-     <div className="sticky top-16 z-20 flex max-w-full flex-wrap items-center justify-center gap-2 self-center rounded-lg border border-border bg-surface px-3 py-2 shadow">
+     <Card
+      variant="elevated"
+      padding="sm"
+      className="sticky top-16 z-20 flex max-w-full flex-wrap items-center justify-center gap-2 self-center"
+     >
       <div className="flex items-center gap-1" aria-label="Màu bút">
        {PEN_COLORS.map((preset) => (
         <Button
@@ -611,20 +619,27 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
         onChange={(event) => setWidth(Number(event.target.value))}
        />
       </label>
-     </div>
+     </Card>
     ) : null}
     {drawingTool === "eraser" ? (
-     <label className="sticky top-16 z-20 flex max-w-xs items-center gap-2 self-center rounded-lg border border-border bg-surface px-3 py-2 text-xs font-bold shadow">
-      <span>Cỡ tẩy {eraserSize}</span>
-      <Input
-       type="range"
-       min={12}
-       max={56}
-       value={eraserSize}
-       aria-label="Cỡ tẩy"
-       onChange={(event) => setEraserSize(Number(event.target.value))}
-      />
-     </label>
+     <Card
+      asChild
+      variant="elevated"
+      padding="sm"
+      className="sticky top-16 z-20 flex max-w-xs items-center gap-2 self-center"
+     >
+      <label>
+       <span>Cỡ tẩy {eraserSize}</span>
+       <Input
+        type="range"
+        min={12}
+        max={56}
+        value={eraserSize}
+        aria-label="Cỡ tẩy"
+        onChange={(event) => setEraserSize(Number(event.target.value))}
+       />
+      </label>
+     </Card>
     ) : null}
 
     <div className="grid justify-items-center gap-3 pt-4">

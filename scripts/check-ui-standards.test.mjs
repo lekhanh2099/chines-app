@@ -24,6 +24,20 @@ describe("UI standards guard", () => {
   ]);
  });
 
+ it("requires the canonical Tabs contract in migrated learning workspaces", () => {
+  expect(
+   inspectUiSource({
+    file: "src/features/hanzihome/reader/ReaderWorkspace.tsx",
+    source:
+     'export function ReaderWorkspace() { return <div role="tablist"><button role="tab">Reader</button></div>; }',
+   }),
+  ).toEqual([
+   expect.stringContaining("manualTabSemantics"),
+   expect.stringContaining("manualTabSemantics"),
+   expect.stringContaining("rawInteractiveControl"),
+  ]);
+ });
+
  it("allows parent-owned layout classes on canonical primitives", () => {
   expect(
    inspect(
