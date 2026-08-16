@@ -54,7 +54,6 @@ export function StudioDictationEditor({
  const [answers, setAnswers] = useState<Record<string, string>>({});
  const [attempts, setAttempts] = useState<Record<string, DictationAttempt[]>>({});
  const [checked, setChecked] = useState<Record<string, boolean>>({});
- const startedAtRef = useRef<Record<string, number>>({});
  const textareaRef = useRef<HTMLTextAreaElement>(null);
  const answer = answers[entry.id] ?? "";
  const history = attempts[entry.id] ?? [];
@@ -70,10 +69,7 @@ export function StudioDictationEditor({
 
  const checkCurrent = () => {
   if (!answer.trim()) return;
-  const startedAt = startedAtRef.current[entry.id];
-  const responseMs = startedAt === undefined ? null : Math.max(0, Date.now() - startedAt);
-  const nextAttempt = createDictationAttempt(entry.id, target, answer, responseMs);
-  delete startedAtRef.current[entry.id];
+  const nextAttempt = createDictationAttempt(entry.id, target, answer, null);
   setAttempts((current) => ({
    ...current,
    [entry.id]: [...(current[entry.id] ?? []), nextAttempt],
@@ -91,22 +87,23 @@ export function StudioDictationEditor({
   else checkCurrent();
  };
 
- const shortcutHandlers = createListeningHotkeyHandlers({
-  onConfirm: confirmOrEdit,
-  onNext,
-  onPlayToggle,
-  onPrevious,
-  onRepeat,
-  onStop,
-  onToggleLoop,
- });
-
  const onEditorKeyDown: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
   if (event.defaultPrevented) return;
   if (event.nativeEvent.isComposing && !event.altKey) return;
   const action = resolveListeningShortcut(event.nativeEvent, true);
   if (action === null) return;
-  const handled = runListeningShortcutAction(action, shortcutHandlers);
+  const handled = runListeningShortcutAction(
+   action,
+   createListeningHotkeyHandlers({
+    onConfirm: confirmOrEdit,
+    onNext,
+    onPlayToggle,
+    onPrevious,
+    onRepeat,
+    onStop,
+    onToggleLoop,
+   }),
+  );
   if (!handled) return;
   event.preventDefault();
   event.stopPropagation();
@@ -211,7 +208,6 @@ export function StudioDictationEditor({
       placeholder="Nghe và chép lại bằng chữ Hán…"
       onKeyDown={onEditorKeyDown}
       onChange={(event) => {
-       startedAtRef.current[entry.id] ??= Date.now();
        setAnswers((current) => ({ ...current, [entry.id]: event.target.value }));
        setChecked((current) => ({ ...current, [entry.id]: false }));
       }}
