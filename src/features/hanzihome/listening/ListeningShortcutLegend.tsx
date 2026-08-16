@@ -19,8 +19,8 @@ const shortcuts: ShortcutLegendItem[] = [
  ["3 / R", "Nghe lại"],
  ["4 / →", "Phần sau"],
  ["5 / L", "Bật / tắt lặp"],
+ ["6 / Ctrl/⌘ ↵", "Kiểm tra câu đang nhập"],
  ["Esc", "Dừng phát"],
- ["Ctrl/⌘ ↵", "Kiểm tra câu đang nhập"],
 ];
 
 function ShortcutKey({ children }: { children: string }) {
@@ -68,8 +68,8 @@ export function ListeningShortcutLegend() {
        tone="muted"
        className="border-t border-border-default pt-2"
       >
-       Khi đang gõ trong ô trả lời, các phím số và Space vẫn nhập bình thường; dùng Ctrl/⌘ + Enter
-       để kiểm tra.
+       Khi đang gõ, phím 1–6 vẫn là phím tắt như Hanzi Studio. Dùng Alt + Space/R/L nếu cần gọi
+       lệnh chữ khi con trỏ đang ở ô nhập.
       </Typography>
      </BasePopoverPopup>
     </BasePopoverPositioner>
