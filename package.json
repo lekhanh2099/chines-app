@@ -31,6 +31,7 @@
   "api:check": "node scripts/check-api-registry.mjs",
   "audit:prod": "node scripts/check-npm-audit.mjs",
   "audit:prod:raw": "npm audit --omit=dev --audit-level=moderate",
+  "audit:ui:runtime": "node scripts/audit-ui-runtime.mjs",
   "types:supabase": "node scripts/generate-supabase-types.mjs",
   "types:supabase:check": "node scripts/generate-supabase-types.mjs --check",
   "check": "npm run lint && npm run source:check && npm run route:check && npm run ui:check && npm run api:check && npm run typecheck && npm run test:run && npm run format:check && npm run audit:prod && npm run build",
