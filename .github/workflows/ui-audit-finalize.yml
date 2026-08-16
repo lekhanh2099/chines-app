@@ -1,0 +1,127 @@
+name: UI audit finalize
+
+on:
+ workflow_dispatch:
+ push:
+  branches: [audit/hanzi-ui-parity]
+
+permissions:
+ contents: write
+
+concurrency:
+ group: ui-audit-finalize-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ finalize:
+  if: ${{ !contains(github.event.head_commit.message, '[ui-audit-finalized]') }}
+  runs-on: ubuntu-latest
+  timeout-minutes: 25
+  env:
+   HUSKY: 0
+   NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: audit/hanzi-ui-parity
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - name: Normalize remaining learner-facing UI copy and dialog tabs
+     run: |
+      python - <<'PY'
+      from pathlib import Path
+
+      replacements = {
+       "src/components/layout/Header.tsx": [
+        ("Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.", "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở."),
+       ],
+       "src/features/settings/SettingsPageContent.tsx": [
+        ("Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.", "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở."),
+        ('label="Focus mode"', 'label="Chế độ tập trung"'),
+        ('description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."', 'description="Giữ bạn ở bài hiện tại cho đến khi tắt lại từ menu Tuỳ chọn hoặc trang này."'),
+        ('description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."', 'description="Áp dụng trên các trang học và từ vựng; Ghi chú có tuỳ chọn riêng bên dưới."'),
+        ('description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."', 'description="Giữ tuỳ chọn riêng cho Ghi chú, không ảnh hưởng các trang học khác."'),
+        ("AI Settings", "Cài đặt AI"),
+        ("Reset mặc định", "Đặt lại mặc định"),
+        ("AI prompt settings", "cài đặt lời nhắc AI"),
+       ],
+       "src/features/hanzihome/practice/StudioDictationWorkspace.tsx": [
+        ("Không tải được thư viện TTS.", "Không tải được thư viện giọng đọc."),
+        ('label: "Từ thư viện TTS"', 'label: "Từ thư viện giọng đọc"'),
+        ('label: "Reader hiện tại"', 'label: "Bài đọc hiện tại"'),
+        ("hoặc dùng bản TTS đã lưu hay nội dung tự dán", "hoặc dùng bản giọng đọc đã lưu hay nội dung tự dán"),
+        ("Chưa có nội dung dictation được import.", "Chưa có nội dung chép chính tả trong thư viện."),
+       ],
+       "src/features/hanzihome/tts/TtsStudioWorkspace.tsx": [
+        ("Không tải được thư viện TTS.", "Không tải được thư viện giọng đọc."),
+        ("Dữ liệu thư viện TTS không hợp lệ.", "Dữ liệu thư viện giọng đọc không hợp lệ."),
+        ("Không lưu được folder TTS.", "Không lưu được thư mục giọng đọc."),
+        ("Không tạo được audio cho clip.", "Không tạo được âm thanh cho bản ghi."),
+        ("Không thể tạo clip với thiết lập hiện tại.", "Không thể tạo bản ghi với thiết lập hiện tại."),
+        ("Không lưu được clip TTS.", "Không lưu được bản ghi âm."),
+        ('aria-label="Không gian TTS Studio"', 'aria-label="Không gian tạo giọng đọc"'),
+        ('aria-label="Tóm tắt nội dung TTS"', 'aria-label="Tóm tắt nội dung giọng đọc"'),
+        ("Chọn preset tốc độ", "Chọn tốc độ đọc"),
+        ("Lưu clip vào thư viện HanziHome", "Lưu bản ghi vào thư viện"),
+        ("Audio được tạo qua edge-tts-ts; thư mục, clip và thiết lập thuộc tài khoản HanziHome.", "Âm thanh được tạo theo giọng và tốc độ bạn đã chọn; thư mục và bản ghi được lưu cùng tài khoản."),
+        ('placeholder="Tên clip"', 'placeholder="Tên bản ghi"'),
+        ('aria-label="Tên clip TTS"', 'aria-label="Tên bản ghi âm"'),
+        ('placeholder="Tên folder mới"', 'placeholder="Tên thư mục mới"'),
+        ('aria-label="Tên folder TTS mới"', 'aria-label="Tên thư mục giọng đọc mới"'),
+        ("Tạo folder", "Tạo thư mục"),
+        ('aria-label="Folder TTS"', 'aria-label="Thư mục giọng đọc"'),
+        ("Lưu clip", "Lưu bản ghi"),
+        ("Thư viện clip", "Thư viện bản ghi"),
+        ("Chưa có clip nào. Hãy chuyển sang tab Soạn để tạo clip đầu tiên.", "Chưa có bản ghi nào. Hãy chuyển sang mục Soạn & nghe để tạo bản ghi đầu tiên."),
+        ('clip.title || "Clip chưa đặt tên"', 'clip.title || "Bản ghi chưa đặt tên"'),
+        ("Mở clip", "Mở bản ghi"),
+        ("Luyện dictation", "Luyện chép chính tả"),
+       ],
+       "src/features/hanzihome/reader/ReaderCollectionWorkspace.tsx": [
+        ("HSK Reader", "Bài đọc HSK"),
+        ("Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.", "Chưa có bài đọc trong thư viện hiện tại."),
+        ("Không tìm thấy tài liệu Reader trong static package.", "Không tìm thấy tài liệu trong thư viện bài đọc."),
+        ("Không tìm thấy bài đọc trong danh mục static Reader.", "Không tìm thấy bài đọc trong danh mục hiện tại."),
+       ],
+       "src/features/hanzihome/components/RadicalEditDialog.tsx": [
+        ('<Tabs\n      value={mode}', '<Tabs\n      variant="segmented"\n      value={mode}'),
+        ('{ key: "fields", label: "Field", icon: ListChecks }', '{ key: "fields", label: "Thông tin", icon: ListChecks }'),
+        ("Lưu từng field của một dòng bộ thủ trong Supabase.", "Chỉnh thông tin của bộ thủ và lưu theo từng trường."),
+        ("Reset", "Đặt lại"),
+       ],
+       "src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx": [
+        ('<Tabs\n      value={tab}', '<Tabs\n      variant="segmented"\n      value={tab}'),
+        ('{ key: "sections", label: "Sections", icon: Layers3 }', '{ key: "sections", label: "Nội dung chi tiết", icon: Layers3 }'),
+        ("Sửa trường lõi và quản lý riêng section, ví dụ. Không còn editor JSON gây hiểu nhầm phạm vi\n      lưu.", "Sửa thông tin chính và quản lý riêng nội dung chi tiết, ví dụ."),
+        ("Loại section", "Loại nội dung"),
+        ("Không thể tải danh sách section/ví dụ.", "Không thể tải danh sách nội dung chi tiết và ví dụ."),
+        ("Selection đã thay đổi. Hãy preview lại.", "Danh sách đã thay đổi. Hãy xem trước lại."),
+        ("Scope:", "Phạm vi:"),
+        ("Ownership:", "Quyền sở hữu:"),
+       ],
+      }
+
+      for filename, pairs in replacements.items():
+       path = Path(filename)
+       text = path.read_text()
+       for old, new in pairs:
+        text = text.replace(old, new)
+       path.write_text(text)
+      PY
+   - run: npm run format
+   - run: npm run check
+   - name: Commit verified audit changes
+     run: |
+      if git diff --quiet; then
+       exit 0
+      fi
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add src
+      git commit -m "refactor(ui): finish component and language parity audit [ui-audit-finalized]"
+      git push origin HEAD:audit/hanzi-ui-parity
