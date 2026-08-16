@@ -8,7 +8,7 @@ import {
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { useTTS } from "@/hooks/useTTS";
-import { useMemo, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
+import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 import { useLessonAnnotationContext } from "@/features/hanzihome/annotations/LessonAnnotationProvider";
@@ -83,11 +83,12 @@ export function ProgressiveStudyText({
  const displayPinyin = pinyin ?? contextualPinyin;
  const tapMode = displayMode.revealMode === "tap" && !readingMode;
  const characters = Array.from(zh);
+ const revealOptions = { hasPinyin: !!displayPinyin, hasMeaning: !!vi };
+ const nextStage = nextAvailableRevealStage(stage, revealOptions);
+ const revealActionLabel =
+  nextStage === 0 ? "Hiện Hán tự" : nextStage === 1 ? "Hiện Pinyin" : "Hiện nghĩa";
 
- const advance = () =>
-  setStage((current) =>
-   nextAvailableRevealStage(current, { hasPinyin: !!displayPinyin, hasMeaning: !!vi }),
-  );
+ const advance = () => setStage((current) => nextAvailableRevealStage(current, revealOptions));
 
  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
   if (
@@ -101,19 +102,6 @@ export function ProgressiveStudyText({
   advance();
  };
 
- const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-  if (
-   !shouldAdvanceReveal({
-    tapMode,
-    hasSelection: false,
-    interactiveChild: isInteractiveChild(event.target, event.currentTarget),
-    key: event.key,
-   })
-  )
-   return;
-  event.preventDefault();
-  advance();
- };
  const handleSpeakFromCharacter = (index: number) => {
   if (!readingPlayback) return;
 
@@ -178,46 +166,55 @@ export function ProgressiveStudyText({
    className={cn(
     "grid min-w-0",
     !tapMode && "gap-1",
-    tapMode && "cursor-pointer select-text",
+    tapMode && "cursor-pointer select-text gap-1",
     className,
    )}
    data-no-inspector={readingMode ? "true" : undefined}
-   role={tapMode ? "button" : undefined}
-   tabIndex={tapMode ? 0 : undefined}
-   aria-label={tapMode ? "Hiển thị lần lượt Hán tự, Pinyin và nghĩa" : undefined}
-   aria-live={tapMode ? "polite" : undefined}
    onClick={handleClick}
-   onKeyDown={handleKeyDown}
   >
    {tapMode ? (
-    <div className="grid min-w-0 [&>*]:[grid-area:1/1]">
-     {hanziContent}
-     {displayPinyin ? (
-      <PinyinText
-       aria-hidden={stage !== 1}
-       variant="bodySmall"
-       tone="accent"
-       weight="semibold"
-       leading="relaxed"
-       wrapping="preWrap"
-       className={cn("min-w-0 self-start", stage !== 1 && "invisible pointer-events-none")}
-      >
-       {displayPinyin}
-      </PinyinText>
-     ) : null}
-     {vi ? (
-      <TranslationText
-       aria-hidden={stage !== 2}
-       variant="bodySmall"
-       weight="medium"
-       leading="relaxed"
-       wrapping="preWrap"
-       className={cn("min-w-0 self-start", stage !== 2 && "invisible pointer-events-none")}
-      >
-       {vi}
-      </TranslationText>
-     ) : null}
-    </div>
+    <>
+     <div className="grid min-w-0 [&>*]:[grid-area:1/1]" aria-live="polite">
+      {hanziContent}
+      {displayPinyin ? (
+       <PinyinText
+        aria-hidden={stage !== 1}
+        variant="bodySmall"
+        tone="accent"
+        weight="semibold"
+        leading="relaxed"
+        wrapping="preWrap"
+        className={cn("min-w-0 self-start", stage !== 1 && "invisible pointer-events-none")}
+       >
+        {displayPinyin}
+       </PinyinText>
+      ) : null}
+      {vi ? (
+       <TranslationText
+        aria-hidden={stage !== 2}
+        variant="bodySmall"
+        weight="medium"
+        leading="relaxed"
+        wrapping="preWrap"
+        className={cn("min-w-0 self-start", stage !== 2 && "invisible pointer-events-none")}
+       >
+        {vi}
+       </TranslationText>
+      ) : null}
+     </div>
+     <Button
+      type="button"
+      variant="ghost"
+      size="compact"
+      align="start"
+      onClick={(event) => {
+       event.stopPropagation();
+       advance();
+      }}
+     >
+      {revealActionLabel}
+     </Button>
+    </>
    ) : (
     <>
      {hanziContent}
@@ -307,25 +304,21 @@ function AnnotatedText({
  )) {
   if (annotation.resolvedStartOffset < cursor) continue;
   output.push(text.slice(cursor, annotation.resolvedStartOffset));
+  const annotatedText = text.slice(annotation.resolvedStartOffset, annotation.resolvedEndOffset);
   output.push(
-   <mark
+   <Button
     key={annotation.id}
-    role="button"
-    tabIndex={0}
-    className="reading-highlight cursor-pointer rounded-sm"
+    type="button"
+    variant="ghost"
+    size="inline"
+    aria-label={`Mở ghi chú cho ${annotatedText}`}
     onClick={(event) => {
      event.stopPropagation();
      onOpen(annotation);
     }}
-    onKeyDown={(event) => {
-     if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      onOpen(annotation);
-     }
-    }}
    >
-    {text.slice(annotation.resolvedStartOffset, annotation.resolvedEndOffset)}
-   </mark>,
+    <mark className="reading-highlight rounded-sm">{annotatedText}</mark>
+   </Button>,
   );
   cursor = annotation.resolvedEndOffset;
  }
