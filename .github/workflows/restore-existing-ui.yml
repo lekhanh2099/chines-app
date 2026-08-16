@@ -1,0 +1,45 @@
+name: Restore existing UI ownership
+
+on:
+ push:
+  branches: [audit/hanzi-ui-parity]
+
+permissions:
+ contents: write
+
+concurrency:
+ group: restore-existing-ui-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ restore:
+  if: ${{ !contains(github.event.head_commit.message, '[existing-ui-restored]') }}
+  runs-on: ubuntu-latest
+  timeout-minutes: 10
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: audit/hanzi-ui-parity
+      fetch-depth: 0
+   - name: Restore pre-existing app surfaces exactly from main
+     run: |
+      git fetch origin main
+      git checkout origin/main -- \
+       'src/app/(app)/layout.tsx' \
+       'src/components/layout/Header.tsx' \
+       'src/components/layout/Sidebar.tsx' \
+       'src/components/layout/page-container.tsx' \
+       'src/components/ui/card.tsx' \
+       'src/components/ui/tabs.tsx' \
+       'src/features/hanzihome/components/RadicalEditDialog.tsx' \
+       'src/features/hanzihome/components/vocab/VocabBulkEditDialog.tsx' \
+       'src/features/settings/SettingsPageContent.tsx'
+      git rm -f --ignore-unmatch src/components/layout/AppNotificationMenu.tsx
+      git rm -f .github/workflows/restore-existing-ui.yml
+   - name: Commit restored ownership boundary
+     run: |
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add -A
+      git commit -m "fix(ui): keep existing HanziHome surfaces untouched [existing-ui-restored]"
+      git push origin HEAD:audit/hanzi-ui-parity
