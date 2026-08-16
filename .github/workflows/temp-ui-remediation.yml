@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: temporary-ui-remediation-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   remediate:
     if: github.actor != 'github-actions[bot]'
@@ -32,7 +36,9 @@ jobs:
         run: npm ci
 
       - name: Apply audited UI remediations
-        run: node scripts/temp-ui-remediate.mjs
+        run: |
+          node scripts/temp-ui-remediate.mjs
+          node scripts/temp-ui-remediate-followup.mjs
 
       - name: Format changed files
         shell: bash
