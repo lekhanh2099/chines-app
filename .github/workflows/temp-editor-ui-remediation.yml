@@ -35,6 +35,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Patch temporary runner parser typo
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/temp-editor-ui-remediate.mjs")
+          source = path.read_text()
+          old = r'source = source.replace(/,\n X,\n} from "lucide-react";/u'
+          new = r'source = source.replace(/,\n X,\n\} from "lucide-react";/u'
+          if old not in source:
+              raise SystemExit("temporary parser marker not found")
+          path.write_text(source.replace(old, new, 1))
+          PY
+
       - name: Apply editor UI remediation
         run: node scripts/temp-editor-ui-remediate.mjs
 
