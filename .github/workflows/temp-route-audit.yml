@@ -1,0 +1,26 @@
+name: Audit internal route integrity
+
+on:
+  push:
+    branches:
+      - audit/hanzi-ui-parity
+
+permissions:
+  contents: read
+
+jobs:
+  route-audit:
+    runs-on: ubuntu-24.04
+    env:
+      HUSKY: 0
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+      - run: npm run route:check
