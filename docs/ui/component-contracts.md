@@ -475,3 +475,11 @@ After implementation:
 - URL/shareable state stays in route/search params;
 - desktop/iPad/mobile are actually rendered when visual behavior changes;
 - component choice and residual risk are documented in handoff.
+
+## App scroll ownership
+
+`AppScrollViewport` owns the single route-level vertical scroll container inside the authenticated shell.
+Global header/sidebar/bottom navigation stay outside it. Feature code that needs section or reader positioning
+uses `getAppScrollContainer`, `scrollAppContentToTop`, or `scrollAppContentToElement` from the shared layout
+owner. Do not target `window` or call native `scrollIntoView` for app route/section navigation. Nested bounded
+scroll regions are allowed only when the component itself is explicitly a scrollable pane or rail.

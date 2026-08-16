@@ -47,6 +47,7 @@ Non-negotiable visual rules:
 - hover must not move/scale the interactive hit target;
 - finite required choices wrap/grid instead of relying on sideways discovery;
 - keep the chines-app primitive/state/data boundaries authoritative.
+- `AppScrollViewport` is the single route-level vertical scroll owner; feature code uses shared app-scroll helpers and must not call `window.scrollTo` or native `scrollIntoView` for route/section navigation.
 
 When the source and target component APIs differ, preserve the source behavior/visual hierarchy by extending the existing chines-app semantic owner. Do not introduce a second component dialect.
 

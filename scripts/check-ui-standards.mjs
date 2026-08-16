@@ -238,6 +238,32 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
    }
   }
 
+  if (!isUiOwner && ts.isCallExpression(node) && ts.isPropertyAccessExpression(node.expression)) {
+   const owner = node.expression.expression;
+   const method = node.expression.name.text;
+   if (method === "scrollIntoView") {
+    failures.push(
+     `nativeRouteScroll: ${location(sourceFile, node)} uses scrollIntoView; use shared app-scroll helpers`,
+    );
+   }
+   if (ts.isIdentifier(owner) && owner.text === "window" && method === "scrollTo") {
+    failures.push(
+     `windowRouteScroll: ${location(sourceFile, node)} uses window.scrollTo; use AppScrollViewport helpers`,
+    );
+   }
+   if (
+    ts.isPropertyAccessExpression(owner) &&
+    ts.isIdentifier(owner.expression) &&
+    owner.expression.text === "document" &&
+    owner.name.text === "documentElement" &&
+    method.startsWith("scroll")
+   ) {
+    failures.push(
+     `documentRouteScroll: ${location(sourceFile, node)} scrolls documentElement; use AppScrollViewport helpers`,
+    );
+   }
+  }
+
   if (
    !isUiOwner &&
    ts.isPropertyAssignment(node) &&

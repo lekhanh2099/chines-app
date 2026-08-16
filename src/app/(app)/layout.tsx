@@ -19,7 +19,9 @@ export default async function AppLayout({
    <div className="flex h-dvh min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
     <Header />
     <HanziHomeGlobalSearchBridge />
-    <AppScrollViewport className="page-shell nova-page scrollbar-soft">{children}</AppScrollViewport>
+    <AppScrollViewport className="page-shell nova-page scrollbar-soft">
+     {children}
+    </AppScrollViewport>
     <MobileBottomNavigation />
    </div>
   </div>

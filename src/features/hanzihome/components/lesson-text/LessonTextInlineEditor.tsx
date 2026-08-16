@@ -3,6 +3,7 @@
 import { FileText, Focus, Layers, ListEnd, Play, Repeat2, Square } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { scrollAppContentToElement } from "@/components/layout/app-scroll";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
@@ -118,7 +119,7 @@ export function LessonTextInlineEditor({
   const target = Array.from(
    document.querySelectorAll<HTMLElement>("[data-reader-segment-text]"),
   ).find((element) => element.dataset.readerSegmentText === text);
-  target?.scrollIntoView({ behavior: "smooth", block: "center" });
+  scrollAppContentToElement(target ?? null, { behavior: "smooth", block: "center" });
  }, []);
  const playReaderSegment = useCallback(
   (index: number, runId: number) => {
