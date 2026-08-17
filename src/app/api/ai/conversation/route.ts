@@ -84,12 +84,22 @@ export async function POST(request: Request) {
   auth.context.supabase,
   auth.context.user.id,
  );
- const selectedKey = userApiKeys[0];
- if (!selectedKey) {
+ if (userApiKeys.length === 0) {
   return apiError(
    "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI.",
    503,
    "AI_API_KEY_REQUIRED",
+  );
+ }
+
+ const selectedKey = parsed.data.apiKeyId
+  ? userApiKeys.find((key) => key.id === parsed.data.apiKeyId)
+  : userApiKeys[0];
+ if (!selectedKey) {
+  return apiError(
+   "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động.",
+   409,
+   "AI_API_KEY_UNAVAILABLE",
   );
  }
 
@@ -102,7 +112,7 @@ export async function POST(request: Request) {
 
  try {
   const result = await generateAiConversationReply(conversationMessages, {
-   userApiKeys,
+   userApiKeys: [selectedKey],
    abortSignal: request.signal,
   });
 
@@ -115,6 +125,8 @@ export async function POST(request: Request) {
     message: result.data,
     provider: getApiKeyProviderLabel(selectedKey.provider),
     model: selectedKey.defaultModel || "provider-default",
+    apiKeyId: selectedKey.id,
+    usage: null,
    }),
   );
  } catch (error) {
