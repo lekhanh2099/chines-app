@@ -1,7 +1,10 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { DEFAULT_AI_CONVERSATION_PROFILE } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
+import {
+ DEFAULT_AI_CONVERSATION_PROFILE,
+ type AiConversationMessage,
+} from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 
 const { getActiveUserApiKeyCredentials, generateAiConversationReply, requireAuthenticatedRoute } =
  vi.hoisted(() => ({
@@ -23,7 +26,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 
 import { POST } from "./route";
 
-const requestBody = (messages: Array<{ role: "user" | "assistant"; content: string }>) => ({
+const requestBody = (messages: AiConversationMessage[]) => ({
  messages,
  profile: DEFAULT_AI_CONVERSATION_PROFILE,
 });
@@ -127,8 +130,9 @@ describe("/api/ai/conversation", () => {
   ];
   getActiveUserApiKeyCredentials.mockResolvedValue(credentials);
   generateAiConversationReply.mockResolvedValue({ data: "继续吧", error: null });
-  const messages = Array.from({ length: 24 }, (_, index) => ({
-   role: index % 2 === 0 ? ("user" as const) : ("assistant" as const),
+  const roles: AiConversationMessage["role"][] = ["user", "assistant"];
+  const messages: AiConversationMessage[] = Array.from({ length: 24 }, (_, index) => ({
+   role: roles[index % roles.length] ?? "user",
    content: `message-${index}`,
   }));
 
