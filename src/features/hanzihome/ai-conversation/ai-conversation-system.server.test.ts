@@ -38,9 +38,8 @@ describe("system AI conversation", () => {
   expect(result).toEqual({ data: "你好，我们继续练习吧。", error: null });
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(String(fetchMock.mock.calls[0]?.[0])).toContain(SYSTEM_AI_CONVERSATION_MODEL);
-  expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body))).not.toHaveProperty(
-   "responseMimeType",
-  );
+  const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+  expect(requestBody.generationConfig).not.toHaveProperty("responseMimeType");
  });
 
  it("reports the missing server key without throwing", async () => {
