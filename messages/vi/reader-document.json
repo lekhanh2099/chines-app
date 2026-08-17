@@ -9,5 +9,8 @@
     "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
     "lessonPart": " · Bài {lesson}",
     "readingPart": " · Bài đọc {reading}"
+  },
+  "text": {
+    "playFromCharacter": "Đọc từ chữ {character}"
   }
 }

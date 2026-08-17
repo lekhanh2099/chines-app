@@ -9,5 +9,8 @@
     "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
     "lessonPart": " · 第 {lesson} 课",
     "readingPart": " · 阅读 {reading}"
+  },
+  "text": {
+    "playFromCharacter": "从“{character}”开始朗读"
   }
 }

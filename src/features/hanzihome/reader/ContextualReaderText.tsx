@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 import {
  PinyinText,
@@ -36,6 +37,7 @@ export function ContextualReaderText({
  sourcePinyin,
  onGlyphClick,
 }: ContextualReaderTextProps) {
+ const t = useTranslations("Reader.document.text");
  const glyphByStart = useMemo(
   () => new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph])),
   [analysis.glyphs],
@@ -66,6 +68,7 @@ export function ContextualReaderText({
     activateGlyph();
    }
   };
+  const playLabel = onGlyphClick ? t("playFromCharacter", { character: grapheme.segment }) : undefined;
   if (pinyinPresentation === "paragraph") {
    return (
     <span
@@ -78,7 +81,7 @@ export function ContextualReaderText({
      onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
      role={onGlyphClick ? "button" : undefined}
      tabIndex={onGlyphClick ? 0 : undefined}
-     aria-label={onGlyphClick ? `Đọc từ chữ ${grapheme.segment}` : undefined}
+     aria-label={playLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
@@ -97,7 +100,7 @@ export function ContextualReaderText({
      onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
      role={onGlyphClick ? "button" : undefined}
      tabIndex={onGlyphClick ? 0 : undefined}
-     aria-label={onGlyphClick ? `Đọc từ chữ ${grapheme.segment}` : undefined}
+     aria-label={playLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
@@ -116,7 +119,7 @@ export function ContextualReaderText({
     onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
     role={onGlyphClick ? "button" : undefined}
     tabIndex={onGlyphClick ? 0 : undefined}
-    aria-label={onGlyphClick ? `Đọc từ chữ ${grapheme.segment}` : undefined}
+    aria-label={playLabel}
     title={alternatives}
     aria-current={active ? "true" : undefined}
    >
