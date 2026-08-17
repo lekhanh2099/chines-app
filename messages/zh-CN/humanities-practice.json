@@ -1,0 +1,104 @@
+{
+  "tracks": {
+    "translation": {
+      "title": "笔译",
+      "description": "双向书面翻译练习，保存每次修改，并按信息单元检查，而不是只匹配一个标准答案。"
+    },
+    "interpreting": {
+      "title": "口译",
+      "description": "练习交替传译和视译，重点记录信息传达，而不是逐词匹配。"
+    }
+  },
+  "empty": "还没有已导入的 Translation/Interpreting 课程。",
+  "eyebrow": "精读 · 论证 · 翻译",
+  "nav": {
+    "aria": "人文与翻译导航",
+    "humanities": "人文与翻译",
+    "reader": "Reader",
+    "chooseTrack": "选择翻译学习路径",
+    "lessonList": "课程列表",
+    "previous": "上一课",
+    "next": "下一课"
+  },
+  "guide": {
+    "beginner": "适合初学者的路径",
+    "count": "本学段 {count} 课",
+    "chooseFoundation": "选择下面的基础课进入练习区。第一课使用短句和分析框架；在你自己完成之前不会显示参考答案。",
+    "startHere": "从这里开始",
+    "levelsTitle": "三个练习层级",
+    "levelsDescription": "从有指导的观察逐步进入独立翻译和自我修改。",
+    "foundationTitle": "开始练习前要先学的基础课",
+    "foundationDescription": "每一课基础内容都会先回答一个核心问题，再进入练习。",
+    "understood": "真正理解的标志：能解释自己的选择，并在打开参考答案前自行检查。",
+    "knowledge": "基础知识",
+    "skills": "需要练习的技能",
+    "workflow": "标准流程",
+    "mistakes": "初学者常见错误",
+    "library": "练习库",
+    "libraryDescription": "按课程顺序学习；每一课都会打开独立练习区。",
+    "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
+    "defaultGenre": "翻译练习"
+  },
+  "detail": {
+    "missingContent": "还没有已导入的课程内容。",
+    "back": "← {track}课程列表",
+    "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
+    "beginner": "适合初学者的路径",
+    "order": "按顺序完成本课",
+    "newbieGuide": "初学者指南",
+    "translationPrinciple": "笔译是在解决一个传达问题",
+    "interpretingPrinciple": "口译是在时间压力下完整保留信息",
+    "translationPrincipleDescription": "写越南语之前，要先判断说话者想传达什么、对谁说、在什么情境中。不要把每一个中文词机械替换成一个越南语词。",
+    "interpretingPrincipleDescription": "开口之前，要先抓住人物、动作、数字和逻辑关系。不要为了记住每个字而丢掉主要信息。",
+    "requiredUnits": "本课有 {count} 个必须保留的信息单元",
+    "referenceNotice": "参考答案只会在第一次作答后打开。只要完整保留意义、逻辑关系、术语和必要语气，其他表达方式也可以正确。",
+    "history": "本段历史：{count} 次",
+    "review": "复习"
+  },
+  "source": {
+    "title": "源文本",
+    "directionZhVi": "中文 → 越南语",
+    "directionViZh": "越南语 → 中文",
+    "segment": "第 {order}/{total} 段 · {source}",
+    "glossary": "必须保留的术语",
+    "noGlossary": "本课没有额外的必备术语。",
+    "zhViButton": "中文 → 越南语",
+    "viZhButton": "越南语 → 中文"
+  },
+  "answer": {
+    "title": "你的译文",
+    "unsaved": "新的修改尚未保存",
+    "saveRevision": "保存本次修改",
+    "interpreting": "口译",
+    "preparing": "准备 {seconds}s",
+    "ready": "已准备好",
+    "notesPlaceholder": "准备时记录关键信息…",
+    "notesAria": "口译笔记",
+    "stopRecording": "停止录音（{seconds}s）",
+    "requestingPermission": "正在请求权限…",
+    "startRecording": "开始录音",
+    "transcriptPlaceholder": "写下刚才的口译 transcript（可选）…",
+    "transcriptAria": "口译 transcript",
+    "selfMark": "自行标记已传达的信息",
+    "marks": {
+      "kept": "完整",
+      "partial": "部分",
+      "missed": "遗漏",
+      "unsure": "不确定"
+    },
+    "recordingError": "当前设备无法录音，或尚未授予麦克风权限。",
+    "translationPlaceholder": "在这里翻译。注意保留人物、动作、数字、否定和逻辑关系…",
+    "translationAria": "Humanities 作答",
+    "check": "检查",
+    "previousSegment": "上一段",
+    "nextSegment": "下一段",
+    "playSource": "播放原文",
+    "evaluationNotice": "系统只对有明确证据的部分评分。如果没有合适的人工评价，自然度、语气和文体必须保持未定状态。",
+    "backTranslationTitle": "通过回译检查意义丢失",
+    "backTranslationDescription": "把你的译文重新翻回源语言；差异可以帮助发现被遗漏或被添加的信息。",
+    "backTranslationPlaceholder": "输入回译…",
+    "backTranslationAria": "回译",
+    "score": "得分：{score}/100",
+    "reference": "参考答案："
+  }
+}
