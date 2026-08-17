@@ -4,7 +4,7 @@ description: Implement, debug, refactor, review, or clean up React and Next.js c
 compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "2.1"
+  version: "2.2"
 ---
 
 # Frontend Feature Workflow
@@ -25,6 +25,13 @@ Read:
 ```bash
 cat docs/architecture/frontend-structure.md
 cat docs/agent/skill-authoring.md
+```
+
+When navigation, routing, user-facing UI copy, locale selection or i18n is
+involved, also read:
+
+```bash
+cat docs/architecture/i18n.md
 ```
 
 When UI, UX, information architecture or interaction flow is involved, also
@@ -181,6 +188,14 @@ the root cause. It is not necessarily the fewest changed lines.
 - Preserve unrelated changes.
 - Prefer the existing TanStack owner instead of adding a parallel React state
   layer.
+- Application navigation uses locale-free logical hrefs through
+  `@/i18n/navigation`; do not hand-build locale prefixes in feature code.
+- User-facing interface copy uses semantic message keys owned by `Common`,
+  `Shell` or the relevant feature namespace. Reuse an existing key only when
+  the product meaning and interaction role are identical; do not key messages
+  by source-language sentences.
+- Course/lesson content remains owned by HanziHome data/view models and MUST NOT
+  be copied into UI locale catalogs merely for translation plumbing.
 - When a feature surface becomes complex because transport/domain/UI logic are
   co-located in a route page, move the behavior into its feature before adding
   more local styling or state.
