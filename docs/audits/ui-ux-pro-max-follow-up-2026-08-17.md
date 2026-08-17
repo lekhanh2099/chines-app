@@ -39,7 +39,7 @@ After:
 - Decorative oversized background Hanzi and the three-column launcher-card grid were removed from the landing.
 - The finite Reader collection switcher now wraps instead of depending on horizontal discovery.
 - The document grid delays the third column until `xl`, avoiding a three-column layout at the same breakpoint where the persistent desktop Sidebar first appears.
-- `ReaderResumePanel` no longer derives the initial rendered due-state from `Date.now()` during hydration; current time is captured after mount and the initial server/client render stays deterministic.
+- `ReaderResumePanel` keeps the resume panel gated behind the client session/query and captures the due-state reference in lazy state, so the initial server/client output stays deterministic without a synchronous effect state update.
 
 ## Remaining classifications
 
