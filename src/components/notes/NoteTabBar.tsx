@@ -3,6 +3,7 @@
 import { useMemo, type ReactNode, type Ref } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { ChevronLeft, ChevronRight, Ellipsis, FileText, Plus, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -28,6 +29,7 @@ export function NoteTabBar({
  onCreateNote?: () => void;
  focusLocked?: boolean;
 }) {
+ const t = useTranslations("Notes.tabs");
  const tabs = useSelector(noteTabsStore, (state) => state.tabs);
  const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
  const { setActive, closeTab, closeOthers, closeAll, reorderTabs } = noteTabsStore.actions;
@@ -42,6 +44,8 @@ export function NoteTabBar({
 
  if (tabs.length === 0 || !currentTabId) return null;
 
+ const createNoteLabel = focusLocked ? t("focusBlocksNew") : t("openMore");
+
  return (
   <div className="hidden shrink-0 flex-col border-b border-border-default bg-bg-card md:flex">
    {hasTopRow ? (
@@ -55,7 +59,7 @@ export function NoteTabBar({
      value={currentTabId}
      items={tabItems}
      onValueChange={setActive}
-     aria-label="Ghi chú đang mở"
+     aria-label={t("openTabs")}
      className="min-w-0 flex-1"
     />
     {activeTab ? (
@@ -65,8 +69,8 @@ export function NoteTabBar({
         type="button"
         variant="ghost"
         size="icon-toolbar"
-        aria-label={`Tùy chọn tab ${activeTab.title}`}
-        title={`Tùy chọn tab ${activeTab.title}`}
+        aria-label={t("options", { title: activeTab.title })}
+        title={t("options", { title: activeTab.title })}
        >
         <Ellipsis />
        </Button>
@@ -77,14 +81,14 @@ export function NoteTabBar({
         onSelect={() => reorderTabs(activeIndex, activeIndex - 1)}
        >
         <ChevronLeft />
-        Di chuyển sang trái
+        {t("moveLeft")}
        </DropdownMenuItem>
        <DropdownMenuItem
         disabled={activeIndex < 0 || activeIndex >= tabs.length - 1}
         onSelect={() => reorderTabs(activeIndex, activeIndex + 1)}
        >
         <ChevronRight />
-        Di chuyển sang phải
+        {t("moveRight")}
        </DropdownMenuItem>
        <DropdownMenuSeparator />
        <DropdownMenuItem
@@ -94,7 +98,7 @@ export function NoteTabBar({
         }}
        >
         <X />
-        Đóng tab hiện tại
+        {t("closeCurrent")}
        </DropdownMenuItem>
        <DropdownMenuItem
         disabled={focusLocked || tabs.length <= 1}
@@ -102,7 +106,7 @@ export function NoteTabBar({
          if (!focusLocked) closeOthers(activeTab.noteId);
         }}
        >
-        Đóng các tab khác
+        {t("closeOthers")}
        </DropdownMenuItem>
        <DropdownMenuItem
         disabled={focusLocked}
@@ -110,7 +114,7 @@ export function NoteTabBar({
          if (!focusLocked) closeAll();
         }}
        >
-        Đóng tất cả tab
+        {t("closeAll")}
        </DropdownMenuItem>
       </DropdownMenuContent>
      </DropdownMenu>
@@ -122,8 +126,8 @@ export function NoteTabBar({
      className="shrink-0"
      onClick={onCreateNote}
      disabled={focusLocked}
-     title={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
-     aria-label={focusLocked ? "Focus mode đang khóa mở ghi chú mới" : "Mở thêm ghi chú"}
+     title={createNoteLabel}
+     aria-label={createNoteLabel}
     >
      <Plus />
     </Button>

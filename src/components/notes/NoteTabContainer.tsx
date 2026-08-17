@@ -1,23 +1,21 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { useRouter } from "next/navigation";
-import { NoteTabBar } from "@/components/notes/NoteTabBar";
-import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
-import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
-import { noteTabsStore } from "@/stores/note-tabs-store";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { headerToolbarStore } from "@/stores/header-toolbar-store";
-import { useNotesList } from "@/features/notes/hooks/useNotesList";
-import type { NoteListItem } from "@/services/notes.service";
+import { ArrowLeft, FileText } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
+import { z } from "zod";
+
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/app-header-breadcrumb";
+import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
+import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
+import { NoteTabBar } from "@/components/notes/NoteTabBar";
 import {
  Select,
  SelectContent,
@@ -26,15 +24,18 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { ArrowLeft, FileText } from "lucide-react";
-import { toast } from "sonner";
-import { z } from "zod";
+import { Typography } from "@/components/ui/typography";
+import { useNotesList } from "@/features/notes/hooks/useNotesList";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import type { NoteListItem } from "@/services/notes.service";
+import { focusModeStore } from "@/stores/focus-mode-store";
+import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
 
 const OpenNoteTabDetailSchema = z.object({
  noteId: z.string(),
  noteTitle: z.string(),
 });
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 interface NoteTabContainerProps {
  /** If provided, ensure this note is opened + active on mount */
@@ -43,6 +44,7 @@ interface NoteTabContainerProps {
 }
 
 export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContainerProps) {
+ const t = useTranslations("Notes.tabs");
  const tabs = useSelector(noteTabsStore, (state) => state.tabs);
  const activeNoteId = useSelector(noteTabsStore, (state) => state.activeNoteId);
  const hasHydrated = useSelector(noteTabsStore, (state) => state.hasHydrated);
@@ -52,22 +54,22 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   headerToolbarStore.actions;
  const { data: notes } = useNotesList();
  const router = useRouter();
+ const pathname = usePathname();
  const hadTabsRef = useRef(false);
  const [mobileHeaderActionsContainer, setMobileHeaderActionsContainer] =
-  useState<Nullable<HTMLDivElement>>(null);
- const [desktopActionsContainer, setDesktopActionsContainer] =
-  useState<Nullable<HTMLDivElement>>(null);
+  useState<HTMLDivElement | null>(null);
+ const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(null);
 
  const selectableNotes = useMemo(
   () =>
    focusModeEnabled
     ? tabs.map((tab) => ({
        id: tab.noteId,
-       title: tab.title || "Ghi chú chưa đặt tên",
+       title: tab.title || t("untitled"),
        updated_at: "",
       }))
-    : mergeSelectableNotes(notes ?? [], tabs),
-  [focusModeEnabled, notes, tabs],
+    : mergeSelectableNotes(notes ?? [], tabs, t("untitled")),
+  [focusModeEnabled, notes, t, tabs],
  );
 
  const selectedNoteId = activeNoteId ?? tabs[0]?.noteId ?? "";
@@ -81,10 +83,10 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
     onSelectNote={(noteId) => {
      const note = selectableNotes.find((item) => item.id === noteId);
      if (focusModeEnabled && !tabs.some((tab) => tab.noteId === noteId)) {
-      toast.warning("Focus mode đang bật. Chỉ chọn được tab ghi chú đang mở.");
+      toast.warning(t("focusSelectBlocked"));
       return;
      }
-     openTab(noteId, note?.title || "Ghi chú chưa đặt tên");
+     openTab(noteId, note?.title || t("untitled"));
     }}
     actionsRef={setMobileHeaderActionsContainer}
    />,
@@ -98,6 +100,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   selectableNotes,
   selectedNoteId,
   setHeaderToolbar,
+  t,
   tabs,
  ]);
 
@@ -105,52 +108,46 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
   hydrateTabs();
  }, [hydrateTabs]);
 
- // Track whether we've ever had tabs open
  useEffect(() => {
   if (tabs.length > 0) hadTabsRef.current = true;
  }, [tabs.length]);
 
- // Open the initial note as a tab
  useEffect(() => {
   if (initialNoteId) {
    openTab(initialNoteId, initialTitle);
   }
-  // Only run on mount or when the noteId changes
+  // Only run on mount or when the noteId changes.
   // eslint-disable-next-line react-hooks/exhaustive-deps
  }, [initialNoteId]); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
 
- // Listen for open-note-tab custom events (from InternalLinkNode etc.)
  useEffect(() => {
-  const handler = (e: Event) => {
-   if (!(e instanceof CustomEvent)) return;
-   const detail = OpenNoteTabDetailSchema.safeParse(e.detail);
+  const handler = (event: Event) => {
+   if (!(event instanceof CustomEvent)) return;
+   const detail = OpenNoteTabDetailSchema.safeParse(event.detail);
    if (!detail.success) return;
    const { noteId, noteTitle } = detail.data;
-   if (noteId) {
-    if (focusModeEnabled && !noteTabsStore.get().tabs.some((tab) => tab.noteId === noteId)) {
-     toast.warning("Focus mode đang bật. Không mở thêm ghi chú mới.");
-     return;
-    }
+   if (!noteId) return;
 
-    openTab(noteId, noteTitle);
-    window.history.replaceState(null, "", `/notes/${noteId}`);
+   if (focusModeEnabled && !noteTabsStore.get().tabs.some((tab) => tab.noteId === noteId)) {
+    toast.warning(t("focusOpenBlocked"));
+    return;
    }
+
+   openTab(noteId, noteTitle);
+   router.replace(`/notes/${noteId}`, { scroll: false });
   };
   window.addEventListener("open-note-tab", handler);
   return () => window.removeEventListener("open-note-tab", handler);
- }, [focusModeEnabled, openTab]);
+ }, [focusModeEnabled, openTab, router, t]);
 
- // Sync URL when activeNoteId changes (e.g. tab click, tab close)
  useEffect(() => {
-  if (activeNoteId) {
-   const expected = `/notes/${activeNoteId}`;
-   if (window.location.pathname !== expected) {
-    window.history.replaceState(null, "", expected);
-   }
+  if (!activeNoteId) return;
+  const expected = `/notes/${activeNoteId}`;
+  if (pathname !== expected) {
+   router.replace(expected, { scroll: false });
   }
- }, [activeNoteId]);
+ }, [activeNoteId, pathname, router]);
 
- // Navigate away when all tabs are closed (after having had tabs)
  useEffect(() => {
   if (tabs.length === 0 && hadTabsRef.current) {
    router.replace("/notes?view=all");
@@ -166,7 +163,7 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
    <div className="flex h-full flex-col items-center justify-center gap-3 bg-bg-primary text-text-muted">
     <FileText className="size-10 opacity-40" />
     <Typography as="p" variant="bodySmall">
-     Chọn một ghi chú để bắt đầu
+     {t("empty")}
     </Typography>
    </div>
   );
@@ -203,13 +200,14 @@ type SelectableNote = {
 function mergeSelectableNotes(
  notes: NoteListItem[],
  tabs: Array<{ noteId: string; title: string }>,
+ untitled: string,
 ) {
  const notesById = new Map<string, SelectableNote>();
 
  for (const note of notes) {
   notesById.set(note.id, {
    id: note.id,
-   title: note.title || "Ghi chú chưa đặt tên",
+   title: note.title || untitled,
    updated_at: note.updated_at,
   });
  }
@@ -218,7 +216,7 @@ function mergeSelectableNotes(
   if (!notesById.has(tab.noteId)) {
    notesById.set(tab.noteId, {
     id: tab.noteId,
-    title: tab.title || "Ghi chú chưa đặt tên",
+    title: tab.title || untitled,
     updated_at: "",
    });
   }
@@ -240,10 +238,12 @@ function NoteQuickSelect({
  onSelectNote: (noteId: string) => void;
  actionsRef: ComponentProps<"div">["ref"];
 }) {
+ const t = useTranslations("Notes.tabs");
+
  return (
   <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
    <AppHeaderBreadcrumb
-    aria-label="Điều hướng ghi chú"
+    aria-label={t("navigation")}
     className="min-w-0 max-w-[min(12rem,48vw)] md:max-w-none"
    >
     <AppHeaderBreadcrumbItem className="hidden md:flex">
@@ -251,21 +251,21 @@ function NoteQuickSelect({
       href="/notes"
       disabled={focusLocked}
       icon={<ArrowLeft className="h-4 w-4" />}
-      title={focusLocked ? "Focus mode đang khóa rời khỏi ghi chú hiện tại" : "Ghi chú"}
+      title={focusLocked ? t("focusBlocksLeave") : t("back")}
       className="max-w-[9rem]"
      >
-      Ghi chú
+      {t("back")}
      </AppHeaderBreadcrumbLink>
     </AppHeaderBreadcrumbItem>
     <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
     <AppHeaderBreadcrumbItem className="min-w-0">
      <Select value={selectedNoteId} onValueChange={onSelectNote}>
       <SelectTrigger
-       aria-label="Chọn nhanh ghi chú"
+       aria-label={t("quickSelect")}
        variant="breadcrumb"
        className="w-[min(10rem,40vw)] sm:w-64 xl:w-[24rem]"
       >
-       <SelectValue placeholder="Chọn ghi chú" />
+       <SelectValue placeholder={t("selectPlaceholder")} />
       </SelectTrigger>
       <SelectContent align="start" className="min-w-[min(32rem,calc(100vw-2rem))] text-sm">
        <SelectGroup>
