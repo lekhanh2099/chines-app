@@ -1,10 +1,14 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { appLocales, isAppLocale, type AppLocale } from "@/i18n/config";
+import {
+ appLocales,
+ defaultAppLocale,
+ isAppLocale,
+ type AppLocale,
+} from "@/i18n/config";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 export function LocaleSwitcher() {
@@ -12,14 +16,13 @@ export function LocaleSwitcher() {
  const tCommon = useTranslations("Common");
  const tShell = useTranslations("Shell");
  const pathname = usePathname();
- const searchParams = useSearchParams();
  const router = useRouter();
- const activeLocale: AppLocale = isAppLocale(locale) ? locale : "vi";
+ const activeLocale: AppLocale = isAppLocale(locale) ? locale : defaultAppLocale;
 
  const changeLocale = (nextLocale: AppLocale) => {
   if (nextLocale === activeLocale) return;
-  const query = searchParams.toString();
-  router.replace(query ? `${pathname}?${query}` : pathname, { locale: nextLocale });
+  const search = typeof window === "undefined" ? "" : window.location.search;
+  router.replace(`${pathname}${search}`, { locale: nextLocale });
  };
 
  return (
