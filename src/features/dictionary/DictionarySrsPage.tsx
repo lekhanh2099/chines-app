@@ -174,13 +174,6 @@ function matchesQuery(item: SavedVocabItem, query: string, locale: string) {
  return haystack.toLocaleLowerCase(locale).includes(query);
 }
 
-function getLevelKey(level: number) {
- if (level <= 0) return "levels.new" as const;
- if (level <= 2) return "levels.reviewing" as const;
- if (level <= 4) return "levels.good" as const;
- return "levels.mastered" as const;
-}
-
 export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps) {
  const locale = await getLocale();
  const t = await getTranslations("Dictionary.srs");
@@ -191,7 +184,10 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
   data: { user },
  } = await supabase.auth.getUser();
 
- if (!user) redirect({ href: "/login", locale });
+ if (!user) {
+  redirect({ href: "/login", locale });
+  return null;
+ }
 
  let progressRows: ProgressRow[] = [];
  let missingSchema = false;
@@ -347,7 +343,17 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
             {item.pinyin || t("missingPinyin")}
            </Typography>
           </div>
-          <Badge variant={item.saved ? "success" : "default"}>{t(getLevelKey(item.level))}</Badge>
+          <Badge variant={item.saved ? "success" : "default"}>
+           {t(
+            item.level <= 0
+             ? "levels.new"
+             : item.level <= 2
+               ? "levels.reviewing"
+               : item.level <= 4
+                 ? "levels.good"
+                 : "levels.mastered",
+           )}
+          </Badge>
          </div>
 
          <div className="grid gap-1">

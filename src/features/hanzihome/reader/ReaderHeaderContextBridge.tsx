@@ -65,33 +65,34 @@ export function ReaderHeaderContextBridge({
  );
  const progressLabel = `${Math.max(1, selectedIndex + 1)}/${Math.max(1, navigationDocuments.length)}`;
  const sectionLabel = selectedDocument.kind === "hsk" ? t("hskSection") : t("lessonSection");
- const readerNavigationLabel = (document: ReaderDocumentRow): string => {
-  const unit = document.unit_id?.replace(/^U/u, "") ?? "";
-  if (document.kind === "core" && unit && document.reading_number !== null) {
-   return t("coreNavigationLabel", {
-    unit,
-    reading: document.reading_number,
-    title: document.title_zh,
-   });
-  }
-  if (document.kind === "hsk") {
-   const level = readMetadataNumber(document, "level");
-   const lesson = readMetadataNumber(document, "lesson_number");
-   const volume = level === null ? "HSK" : `HSK ${level}`;
-   const lessonLabel = lesson === null ? "" : t("lessonPart", { lesson });
-   const readingLabel =
-    document.reading_number === null ? "" : t("readingPart", { reading: document.reading_number });
-   return t("hskNavigationLabel", {
-    volume,
-    lesson: lessonLabel,
-    reading: readingLabel,
-    title: document.title_zh,
-   });
-  }
-  return `${document.title_zh}${document.title_vi ? ` — ${document.title_vi}` : ""}`;
- };
- const content = useMemo(
-  () => (
+ const content = useMemo(() => {
+  const readerNavigationLabel = (document: ReaderDocumentRow): string => {
+   const unit = document.unit_id?.replace(/^U/u, "") ?? "";
+   if (document.kind === "core" && unit && document.reading_number !== null) {
+    return t("coreNavigationLabel", {
+     unit,
+     reading: document.reading_number,
+     title: document.title_zh,
+    });
+   }
+   if (document.kind === "hsk") {
+    const level = readMetadataNumber(document, "level");
+    const lesson = readMetadataNumber(document, "lesson_number");
+    const volume = level === null ? "HSK" : `HSK ${level}`;
+    const lessonLabel = lesson === null ? "" : t("lessonPart", { lesson });
+    const readingLabel =
+     document.reading_number === null ? "" : t("readingPart", { reading: document.reading_number });
+    return t("hskNavigationLabel", {
+     volume,
+     lesson: lessonLabel,
+     reading: readingLabel,
+     title: document.title_zh,
+    });
+   }
+   return `${document.title_zh}${document.title_vi ? ` — ${document.title_vi}` : ""}`;
+  };
+
+  return (
    <AppHeaderBreadcrumb
     aria-label={t("navigationAria")}
     className="min-w-0 max-w-[min(44rem,78vw)] justify-self-start md:max-w-[min(64rem,78vw)]"
@@ -149,19 +150,18 @@ export function ReaderHeaderContextBridge({
      )}
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>
-  ),
-  [
-   backHref,
-   backLabel,
-   focusModeEnabled,
-   navigationDocuments,
-   progressLabel,
-   router,
-   sectionLabel,
-   selectedDocument,
-   t,
-  ],
- );
+  );
+ }, [
+  backHref,
+  backLabel,
+  focusModeEnabled,
+  navigationDocuments,
+  progressLabel,
+  router,
+  sectionLabel,
+  selectedDocument,
+  t,
+ ]);
 
  useEffect(() => {
   headerToolbarStore.actions.setOwnedContent(HEADER_OWNER_ID, content);

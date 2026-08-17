@@ -265,7 +265,6 @@ export function ReaderWorkspace({
   },
  ];
  const coreReaderOption = readerCollectionOptions.find((option) => option.kind === "core");
- if (!coreReaderOption) return null;
  const secondaryReaderOptions = readerCollectionOptions.filter((option) => option.kind !== "core");
  const groupedDocuments = useMemo(() => {
   const groups = new Map<string, ReaderDocumentRow[]>();
@@ -316,36 +315,38 @@ export function ReaderWorkspace({
       <div className="grid min-w-0 gap-3">
        {!showCollectionCatalog ? (
         <>
-         <Card
-          variant="section"
-          padding="lg"
-          className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
-         >
-          <div className="grid min-w-0 gap-2">
-           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant={coreReaderOption.badgeVariant} casing="natural">
-             {coreReaderOption.badge}
-            </Badge>
-            <Typography variant="caption" tone="muted">
-             {t("primary.startPoint")}
-            </Typography>
+         {coreReaderOption ? (
+          <Card
+           variant="section"
+           padding="lg"
+           className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+          >
+           <div className="grid min-w-0 gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+             <Badge variant={coreReaderOption.badgeVariant} casing="natural">
+              {coreReaderOption.badge}
+             </Badge>
+             <Typography variant="caption" tone="muted">
+              {t("primary.startPoint")}
+             </Typography>
+            </div>
+            <div className="grid min-w-0 gap-1">
+             <Typography as="h2" variant="sectionTitle" weight="black">
+              {coreReaderOption.title}
+             </Typography>
+             <Typography as="p" variant="bodySmall" tone="secondary">
+              {coreReaderOption.description}
+             </Typography>
+            </div>
            </div>
-           <div className="grid min-w-0 gap-1">
-            <Typography as="h2" variant="sectionTitle" weight="black">
-             {coreReaderOption.title}
-            </Typography>
-            <Typography as="p" variant="bodySmall" tone="secondary">
-             {coreReaderOption.description}
-            </Typography>
-           </div>
-          </div>
-          <Button type="button" variant="default" asChild>
-           <Link href={coreReaderOption.href} prefetch={false}>
-            <BookOpen data-icon="inline-start" />
-            {t("primary.openCourse")}
-           </Link>
-          </Button>
-         </Card>
+           <Button type="button" variant="default" asChild>
+            <Link href={coreReaderOption.href} prefetch={false}>
+             <BookOpen data-icon="inline-start" />
+             {t("primary.openCourse")}
+            </Link>
+           </Button>
+          </Card>
+         ) : null}
 
          <Card variant="section" padding="md" className="grid gap-2">
           <div className="grid gap-1">

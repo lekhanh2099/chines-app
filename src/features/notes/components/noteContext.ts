@@ -126,10 +126,11 @@ export function getNoteContext(
   const generatedTitle = lesson
    ? `${lesson.bookTitle ? `${lesson.bookTitle} · ` : ""}Bài ${lesson.lessonNumber} · ${lesson.title}`
    : null;
+  const lessonGroupTitle = lesson ? lesson.bookTitle || lesson.courseTitle : undefined;
   const displayTitle =
    lesson && (note.title === legacyGeneratedTitle || note.title === generatedTitle)
-    ? lesson.bookTitle || lesson.courseTitle
-     ? labels.bookLesson(lesson.bookTitle || lesson.courseTitle, lesson.lessonNumber)
+    ? lessonGroupTitle
+     ? labels.bookLesson(lessonGroupTitle, lesson.lessonNumber)
      : labels.lessonNumber(lesson.lessonNumber)
     : note.title || labels.untitled;
 
