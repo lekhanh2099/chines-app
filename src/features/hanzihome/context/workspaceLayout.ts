@@ -99,7 +99,12 @@ export function normalizePaneLayout(value: JsonFieldValue): PaneLayout {
  };
 }
 
-export function readWorkspacePreferences() {
+export function readWorkspacePreferences(): {
+ splitEnabled: boolean;
+ paneLayout: PaneLayout;
+ viewMode: LessonViewMode;
+ splitPaneSize: number;
+} {
  if (typeof window === "undefined") {
   return {
    splitEnabled: false,

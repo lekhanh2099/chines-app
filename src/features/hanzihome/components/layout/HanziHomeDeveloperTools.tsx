@@ -17,6 +17,7 @@ import {
  contentEditingEnabled,
  developerToolsEnabled,
 } from "@/features/hanzihome/context/workspaceLayout";
+import type { LessonViewMode } from "@/features/hanzihome/context/types";
 import { HanziHomeEditingDialogShell, HanziHomeEditingTools } from "@/features/hanzihome/editing";
 import { useHanziHomeCanEdit } from "@/features/hanzihome/hooks/useHanziHomeCanEdit";
 import {
@@ -25,7 +26,10 @@ import {
 } from "@/features/hanzihome/context/selectors";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
-import { z } from "zod";
+
+function isLessonViewMode(value: string): value is LessonViewMode {
+ return value === "study" || value === "debug";
+}
 
 export function HanziHomeDeveloperTools({
  inline = false,
@@ -108,7 +112,9 @@ function HanziHomeCompactDeveloperTools({
        <DropdownMenuLabel>Chế độ xem</DropdownMenuLabel>
        <DropdownMenuRadioGroup
         value={viewMode}
-        onValueChange={(value) => setViewMode(z.enum(["study", "debug"]).parse(value))}
+        onValueChange={(value) => {
+         if (isLessonViewMode(value)) setViewMode(value);
+        }}
        >
         <DropdownMenuRadioItem value="study">
          <GraduationCap />
