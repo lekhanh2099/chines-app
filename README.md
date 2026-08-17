@@ -18,17 +18,25 @@ The app runs at [http://localhost:3001](http://localhost:3001). Add a Supabase U
 
 ## Verification
 
+Use targeted gates while developing:
+
 ```bash
-npm run format:check
 npm run lint
+npm run source:check
+npm run route:check
+npm run ui:check
+npm run api:check
 npm run typecheck
 npm run test:run
-npm run deps:check
-npm run audit:prod
-npm run build
 ```
 
-`npm run check` runs the required formatting, lint, type, test, and build gates. CI runs the same gates on every pull request.
+Use the full repository gate before merge/release work:
+
+```bash
+npm run check
+```
+
+`npm run check` runs lint, source/route/UI/API contract checks, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build. CI runs this same full gate on pushes to `main` and on pull requests.
 
 Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains a CI/PR check.
 
