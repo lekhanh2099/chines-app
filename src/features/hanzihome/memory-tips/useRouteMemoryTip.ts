@@ -2,9 +2,10 @@
 
 import type { JsonFieldValue } from "@/types/json";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { z } from "zod";
 
+import { usePathname } from "@/i18n/navigation";
 import {
  getBrowserStorage,
  readVersionedStorage,
@@ -15,7 +16,6 @@ import type { MemoryTip } from "./memory-tip.schema";
 const recentIdsStorageKey = "hanzihome.memoryTips.recentIds";
 const maxRecentIds = 8;
 const emptyRecentIds: string[] = [];
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 const recentIdsStorageConfig = {
  key: recentIdsStorageKey,
  version: 1,
@@ -59,7 +59,7 @@ function getTipWeight(tip: MemoryTip) {
 function pickWeightedTip(
  tips: MemoryTip[],
  recentIds: string[],
- currentTipId?: Nullable<MemoryTip["id"]>,
+ currentTipId?: MemoryTip["id"] | null,
 ) {
  const activeTips = tips.filter((tip) => !tip.isArchived);
  const nonCurrentTips =
@@ -85,8 +85,8 @@ export function useRouteMemoryTip(tips: MemoryTip[]) {
  const searchParams = useSearchParams();
  const routeKey = `${pathname}?${searchParams.toString()}`;
  const tipsKey = useMemo(() => tips.map((tip) => tip.id).join("|"), [tips]);
- const [selectedTipId, setSelectedTipId] = useState<Nullable<MemoryTip["id"]>>(null);
- const selectedTipIdRef = useRef<MemoryTip["id"]>(null);
+ const [selectedTipId, setSelectedTipId] = useState<MemoryTip["id"] | null>(null);
+ const selectedTipIdRef = useRef<MemoryTip["id"] | null>(null);
 
  useEffect(() => {
   selectedTipIdRef.current = selectedTipId;

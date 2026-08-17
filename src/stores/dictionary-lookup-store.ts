@@ -13,6 +13,7 @@ import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
+import { stripLocaleFromPathname } from "@/i18n/config";
 import {
  getBrowserStorage,
  readVersionedStorage,
@@ -39,7 +40,8 @@ const storageConfig = {
  * Notes pages share one key, everything else is ON by default.
  */
 function getRouteKey(pathname: string): string {
- if (pathname.startsWith("/notes")) return "/notes";
+ const logicalPathname = stripLocaleFromPathname(pathname);
+ if (logicalPathname.startsWith("/notes")) return "/notes";
  return "global";
 }
 

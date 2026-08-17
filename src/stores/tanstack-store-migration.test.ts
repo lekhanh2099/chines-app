@@ -107,6 +107,16 @@ describe("TanStack Store migration", () => {
   expect(focusModeStore.get()).toEqual({ enabled: true, hasHydrated: true });
  });
 
+ it("shares route preferences across locale prefixes", () => {
+  expect(dictionaryLookupStore.actions.isEnabled("/vi/notes/note-1")).toBe(false);
+  expect(dictionaryLookupStore.actions.isEnabled("/en/dictionary")).toBe(true);
+
+  dictionaryLookupStore.actions.setEnabled("/en/notes/note-2", true);
+
+  expect(dictionaryLookupStore.actions.isEnabled("/vi/notes/note-1")).toBe(true);
+  expect(dictionaryLookupStore.actions.isEnabled("/zh-CN/notes/note-3")).toBe(true);
+ });
+
  it("keeps focus mode navigation inside the current lesson or an open note", () => {
   expect(
    isFocusNavigationAllowed({
@@ -133,6 +143,30 @@ describe("TanStack Store migration", () => {
    isFocusNavigationAllowed({
     currentHref: "http://localhost/notes/note-1",
     targetHref: "http://localhost/notes/note-2",
+    openNoteIds: ["note-2"],
+   }),
+  ).toBe(true);
+ });
+
+ it("treats locale changes as the same logical focus-mode route", () => {
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/vi/hanzihome?courseId=course-1&lesson=lesson-1",
+    targetHref: "http://localhost/en/hanzihome?courseId=course-1&lesson=lesson-1",
+    openNoteIds: [],
+   }),
+  ).toBe(true);
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/vi/hanzihome?courseId=course-1&lesson=lesson-1",
+    targetHref: "http://localhost/zh-CN/hanzihome?courseId=course-1&lesson=lesson-2",
+    openNoteIds: [],
+   }),
+  ).toBe(false);
+  expect(
+   isFocusNavigationAllowed({
+    currentHref: "http://localhost/vi/notes/note-2",
+    targetHref: "http://localhost/en/notes/note-2",
     openNoteIds: ["note-2"],
    }),
   ).toBe(true);
