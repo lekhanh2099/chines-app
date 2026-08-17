@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -50,11 +54,13 @@ export function ReaderTranslationPracticePanel({
  onPrevious: () => void;
  onSelect: (segmentId: string) => void;
 }) {
+ const t = useTranslations("Reader.study.translation");
+
  if (segment === undefined) {
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Bài này chưa có đủ bản dịch để luyện.
+     {t("empty")}
     </Typography>
    </Card>
   );
@@ -68,35 +74,31 @@ export function ReaderTranslationPracticePanel({
    <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
     <div className="grid min-w-0 gap-2">
      <Badge variant="warning" className="justify-self-start" casing="natural">
-      Luyện dịch hai chiều
+      {t("badge")}
      </Badge>
      <Typography as="h2" variant="cardTitle" weight="black">
-      Dịch theo từng đoạn, rồi đối chiếu
+      {t("title")}
      </Typography>
      <Typography variant="bodySmall" tone="muted" leading="relaxed">
-      Trung → Việt ưu tiên bám nghĩa và quan hệ logic. Việt → Trung ưu tiên cấu trúc câu, trật tự
-      thành phần và chữ Hán chính xác.
+      {t("description")}
      </Typography>
     </div>
     <Badge casing="natural">
-     {completedCount}/{segments.length} đoạn đã đối chiếu
+     {t("completed", { completed: completedCount, total: segments.length })}
     </Badge>
    </div>
 
    <SegmentedControl<TranslationDirection>
     value={direction}
     items={[
-     { key: "zh-vi", label: "中文 → Tiếng Việt" },
-     { key: "vi-zh", label: "Tiếng Việt → 中文" },
+     { key: "zh-vi", label: t("directionZhVi") },
+     { key: "vi-zh", label: t("directionViZh") },
     ]}
     onChange={onDirectionChange}
-    aria-label="Hướng dịch Reader"
+    aria-label={t("directionAria")}
    />
 
-   <div
-    className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10"
-    aria-label="Đoạn dịch Reader"
-   >
+   <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10" aria-label={t("segmentsAria")}>
     {segments.map((candidate, index) => (
      <Button
       key={candidate.id}
@@ -114,10 +116,10 @@ export function ReaderTranslationPracticePanel({
    <Card variant="default" padding="md" className="grid min-w-0 gap-3">
     <div className="flex flex-wrap items-center justify-between gap-2">
      <Typography variant="caption" weight="black">
-      Đoạn {segment.order}
+      {t("segment", { order: segment.order })}
      </Typography>
      <Typography variant="caption" tone="muted">
-      {Array.from(sourceText).length} ký tự
+      {t("characters", { count: Array.from(sourceText).length })}
      </Typography>
     </div>
 
@@ -136,7 +138,7 @@ export function ReaderTranslationPracticePanel({
       <details className="grid gap-2">
        <summary className="cursor-pointer list-none px-3 py-2.5 [&::-webkit-details-marker]:hidden">
         <Typography as="span" variant="bodySmall" tone="muted" weight="black">
-         Xem pinyin khi bí
+         {t("showPinyin")}
         </Typography>
        </summary>
        <PinyinText
@@ -160,18 +162,14 @@ export function ReaderTranslationPracticePanel({
      variant="label"
      weight="black"
     >
-     Bản dịch của tôi
+     {t("myTranslation")}
     </Typography>
     <Textarea
      id={`reader-translation-${segment.id}`}
      value={draft}
      onChange={(event) => onDraftChange(event.target.value)}
-     placeholder={
-      direction === "zh-vi"
-       ? "Dịch sát nghĩa, giữ rõ chủ ngữ, quan hệ logic và sắc thái…"
-       : "Viết lại bằng tiếng Trung tự nhiên…"
-     }
-     aria-label="Câu trả lời dịch Reader"
+     placeholder={direction === "zh-vi" ? t("placeholderZhVi") : t("placeholderViZh")}
+     aria-label={t("answerAria")}
      rows={7}
      autoCapitalize="off"
      autoCorrect="off"
@@ -180,10 +178,10 @@ export function ReaderTranslationPracticePanel({
 
    <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center">
     <Button type="button" disabled={!draft.trim()} onClick={onCheck}>
-     Đối chiếu bản dịch
+     {t("check")}
     </Button>
     <Button type="button" variant="ghost" disabled={activeIndex === 0} onClick={onPrevious}>
-     ← Đoạn trước
+     {t("previous")}
     </Button>
     <Button
      type="button"
@@ -191,7 +189,7 @@ export function ReaderTranslationPracticePanel({
      disabled={activeIndex >= segments.length - 1}
      onClick={onNext}
     >
-     Đoạn sau →
+     {t("next")}
     </Button>
    </div>
 
@@ -199,15 +197,15 @@ export function ReaderTranslationPracticePanel({
     <Card variant="subtle" padding="md" className="grid gap-3">
      <div className="flex flex-wrap items-baseline justify-between gap-2">
       <Typography variant="cardTitle" tone="accent" weight="black">
-       Mức khớp: {score ?? 0}/100
+       {t("match", { score: score ?? 0 })}
       </Typography>
       <Typography variant="caption" tone="muted">
-       Dùng đáp án tham chiếu để tự rà cách diễn đạt, không coi điểm là đáp án duy nhất.
+       {t("scoreNote")}
       </Typography>
      </div>
      <div className="grid gap-1">
       <Typography variant="caption" tone="muted" weight="black" transform="uppercase">
-       Đáp án tham chiếu
+       {t("reference")}
       </Typography>
       {direction === "vi-zh" ? (
        <ReaderHanziText displayMode={displayMode} size="md" leading="relaxed" wrapping="preWrap">

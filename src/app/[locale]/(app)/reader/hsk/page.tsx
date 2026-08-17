@@ -20,8 +20,6 @@ export default async function ReaderHskPage({
     kind="hsk"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
-    title="Thư viện bài đọc HSK"
-    description="50 bài đọc HSK 3–4 được sắp theo cấp độ, quyển và bài. Mỗi bài dùng chung trình đọc có TTS chạy theo chữ, pinyin, nghĩa và tra từ."
    />
   </div>
  );

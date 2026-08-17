@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -25,6 +26,7 @@ function normalizeSearch(value: string) {
 }
 
 export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabulary }) {
+ const t = useTranslations("Reader.study.vocabulary");
  const [query, setQuery] = useState("");
  const normalizedQuery = normalizeSearch(query);
  const filteredVocabulary = useMemo(() => {
@@ -40,21 +42,21 @@ export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabu
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
       <Typography as="h3" variant="sectionTitle" weight="black">
-       Từ vựng bài đọc
+       {t("title")}
       </Typography>
       <Typography variant="caption" tone="muted">
-       Tra nhanh theo chữ Hán, pinyin hoặc nghĩa trong bài.
+       {t("description")}
       </Typography>
      </div>
-     <Badge casing="natural">{vocabulary.length} từ</Badge>
+     <Badge casing="natural">{t("count", { count: vocabulary.length })}</Badge>
     </div>
     {vocabulary.length > 0 ? (
      <label className="block max-w-md">
-      <span className="sr-only">Tìm từ vựng</span>
+      <span className="sr-only">{t("searchLabel")}</span>
       <Input
        value={query}
        onChange={(event) => setQuery(event.target.value)}
-       placeholder="Tìm chữ Hán, pinyin hoặc nghĩa…"
+       placeholder={t("searchPlaceholder")}
        autoComplete="off"
       />
      </label>
@@ -64,22 +66,22 @@ export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabu
    {vocabulary.length === 0 ? (
     <div className="px-4 pb-4 sm:px-5">
      <Typography variant="bodySmall" tone="muted">
-      Bài này chưa có từ vựng liên kết.
+      {t("empty")}
      </Typography>
     </div>
    ) : filteredVocabulary.length === 0 ? (
     <div className="px-4 pb-4 sm:px-5">
      <Typography variant="bodySmall" tone="muted">
-      Không có từ nào khớp với tìm kiếm này.
+      {t("noResults")}
      </Typography>
     </div>
    ) : (
-    <DataTable aria-label="Từ vựng bài đọc">
+    <DataTable aria-label={t("tableAria")}>
      <DataTableHeader>
       <DataTableRow>
-       <DataTableHead>Từ / cụm từ</DataTableHead>
-       <DataTableHead>Pinyin</DataTableHead>
-       <DataTableHead>Nghĩa trong bài</DataTableHead>
+       <DataTableHead>{t("word")}</DataTableHead>
+       <DataTableHead>{t("pinyin")}</DataTableHead>
+       <DataTableHead>{t("meaning")}</DataTableHead>
       </DataTableRow>
      </DataTableHeader>
      <DataTableBody>
@@ -92,12 +94,12 @@ export function ReaderVocabularyPanel({ vocabulary }: { vocabulary: ReaderVocabu
         </DataTableCell>
         <DataTableCell>
          <PinyinText variant="bodySmall" tone="accent">
-          {item.pinyin || "Chưa có pinyin"}
+          {item.pinyin || t("missingPinyin")}
          </PinyinText>
         </DataTableCell>
         <DataTableCell>
          <Typography as="span" variant="bodySmall" tone="muted">
-          {item.meaning || "Chưa có nghĩa"}
+          {item.meaning || t("missingMeaning")}
          </Typography>
         </DataTableCell>
        </DataTableRow>

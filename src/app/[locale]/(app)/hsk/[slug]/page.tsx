@@ -20,8 +20,6 @@ export default async function HskReaderDocumentPage({
   <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="hsk"
-    title="HSK Reader"
-    description="50 bài đọc HSK 3–4 được sắp theo cấp độ, quyển và bài. Mỗi bài dùng chung trình đọc có TTS chạy theo chữ, pinyin, nghĩa và tra từ."
     initialDocumentSlug={slug}
     initialDocuments={initialDocuments}
     initialResource={initialResource}

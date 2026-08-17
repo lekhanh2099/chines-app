@@ -1,25 +1,24 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, type ComponentProps } from "react";
 import { BookOpen, ChevronRight } from "lucide-react";
-import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
-import type { ComponentProps } from "react";
-import { z } from "zod";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
+import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Link, usePathname } from "@/i18n/navigation";
 import { JsonObjectSchema } from "@/types/json";
 
-import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { PdfReaderWorkspace, pdfAssetIdForDocument } from "./PdfReaderWorkspace";
+import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import type { ReaderDocumentResource } from "./reader-content-api";
-import { readerKindSchema, type ReaderDocumentRow, type ReaderPdfAsset } from "./reader.schemas";
-import { HanziText } from "../components/lesson-overview/hanzi-typography";
+import type { ReaderDocumentRow, ReaderPdfAsset } from "./reader.schemas";
 
-type ReaderCollectionKind = z.output<typeof readerKindSchema>;
+type ReaderCollectionKind = ReaderDocumentRow["kind"];
 
 type ReaderDocumentGroup = {
  id: string;
@@ -30,12 +29,6 @@ type ReaderDocumentGroup = {
 };
 
 const readerHskVolumeOrder = ["hsk3-independent-passages", "hsk4-upper", "hsk4-lower"];
-
-const readerHskVolumeLabels = new Map<string, string>([
- ["hsk3-independent-passages", "HSK 3 · Bài đọc"],
- ["hsk4-upper", "HSK 4 · Quyển thượng"],
- ["hsk4-lower", "HSK 4 · Quyển hạ"],
-]);
 
 function readerRouteSlug(document: ReaderDocumentRow) {
  return document.kind === "hsk" ? document.slug.replace(/^hsk-/u, "") : document.slug;
@@ -147,16 +140,34 @@ export function ReaderCollectionWorkspace({
  initialPdfAssets = [],
 }: {
  kind: ReaderCollectionKind;
- title: string;
- description: string;
+ title?: string;
+ description?: string;
  initialDocumentSlug?: string;
  initialDocuments: ReadonlyArray<ReaderDocumentRow>;
  initialUnitReferenceDocuments?: ReadonlyArray<ReaderDocumentRow>;
  initialResource: ReaderDocumentResource | null;
  initialPdfAssets?: ReadonlyArray<ReaderPdfAsset>;
 }) {
+ const t = useTranslations("Reader.collection");
  const pathname = usePathname();
  const searchParams = useSearchParams();
+ const collectionCopy: Record<ReaderCollectionKind, { title: string; description: string }> = {
+  core: { title: t("kinds.core.title"), description: t("kinds.core.description") },
+  hsk: { title: t("kinds.hsk.title"), description: t("kinds.hsk.description") },
+  reinforcement: {
+   title: t("kinds.reinforcement.title"),
+   description: t("kinds.reinforcement.description"),
+  },
+  mock: { title: t("kinds.mock.title"), description: t("kinds.mock.description") },
+  daily: { title: t("kinds.daily.title"), description: t("kinds.daily.description") },
+  personal: { title: t("kinds.personal.title"), description: t("kinds.personal.description") },
+  humanities: {
+   title: t("kinds.humanities.title"),
+   description: t("kinds.humanities.description"),
+  },
+ };
+ const resolvedTitle = title ?? collectionCopy[kind].title;
+ const resolvedDescription = description ?? collectionCopy[kind].description;
  const documents = initialDocuments;
  const unitReferenceDocuments = initialUnitReferenceDocuments;
  const requestedDocumentId = searchParams.get("document") ?? "";
@@ -174,12 +185,26 @@ export function ReaderCollectionWorkspace({
   const groups = new Map<string, ReaderDocumentGroup>();
   for (const document of documents) {
    const id = metadataText(document, "volume_id") ?? "other";
-   const title =
-    readerHskVolumeLabels.get(id) ??
+   const translatedTitle =
+    id === "hsk3-independent-passages"
+     ? t("hskVolumes.hsk3")
+     : id === "hsk4-upper"
+       ? t("hskVolumes.hsk4Upper")
+       : id === "hsk4-lower"
+         ? t("hskVolumes.hsk4Lower")
+         : null;
+   const groupTitle =
+    translatedTitle ??
     metadataText(document, "volume_label_vi") ??
     metadataText(document, "volume_label_zh") ??
-    "Bài đọc HSK";
-   const group = groups.get(id) ?? { id, title, subtitle: "", description: "", documents: [] };
+    t("hskVolumes.default");
+   const group = groups.get(id) ?? {
+    id,
+    title: groupTitle,
+    subtitle: "",
+    description: "",
+    documents: [],
+   };
    group.documents.push(document);
    groups.set(id, group);
   }
@@ -205,7 +230,7 @@ export function ReaderCollectionWorkspace({
      );
     }),
    }));
- }, [documents]);
+ }, [documents, t]);
  const unitGroups = useMemo<ReaderDocumentGroup[]>(() => {
   const groups = new Map<string, ReaderDocumentGroup>();
   for (const document of documents) {
@@ -214,15 +239,22 @@ export function ReaderCollectionWorkspace({
     (candidate) =>
      candidate.unit_id === id && (kind !== "reinforcement" || candidate.kind === "core"),
    );
-   const title =
+   const groupTitle =
     id === "other"
-     ? "Tài liệu khác"
-     : `Đơn nguyên ${id.replace(/^U/u, "")} · ${
-        metadataText(firstDocument ?? document, "unit_title_zh") ?? "Reader"
-       }`;
+     ? t("otherDocuments")
+     : t("unitTitle", {
+        id: id.replace(/^U/u, ""),
+        title: metadataText(firstDocument ?? document, "unit_title_zh") ?? "Reader",
+       });
    const subtitle = metadataText(firstDocument ?? document, "unit_title_vi") ?? "";
-   const description = metadataText(firstDocument ?? document, "unit_focus_vi") ?? "";
-   const group = groups.get(id) ?? { id, title, subtitle, description, documents: [] };
+   const groupDescription = metadataText(firstDocument ?? document, "unit_focus_vi") ?? "";
+   const group = groups.get(id) ?? {
+    id,
+    title: groupTitle,
+    subtitle,
+    description: groupDescription,
+    documents: [],
+   };
    group.documents.push(document);
    groups.set(id, group);
   }
@@ -243,7 +275,7 @@ export function ReaderCollectionWorkspace({
           (right.reading_number ?? Number.MAX_SAFE_INTEGER),
         ),
    }));
- }, [documents, kind, unitReferenceDocuments]);
+ }, [documents, kind, t, unitReferenceDocuments]);
  const resource = selectedDocumentId.length > 0 ? initialResource : null;
  const reinforcementUnitReference =
   kind === "reinforcement" && resource !== null
@@ -259,11 +291,11 @@ export function ReaderCollectionWorkspace({
      </IconTile>
      <div className="grid min-w-0 gap-1">
       <Typography as="h1" variant="pageTitle" weight="black">
-       {title}
+       {resolvedTitle}
       </Typography>
-      {description ? (
+      {resolvedDescription ? (
        <Typography as="p" variant="body" tone="muted">
-        {description}
+        {resolvedDescription}
        </Typography>
       ) : null}
      </div>
@@ -274,12 +306,12 @@ export function ReaderCollectionWorkspace({
     <Card variant="section" padding="md" className="grid gap-3">
      {kind === "hsk" ? (
       <Typography variant="caption" tone="muted">
-       {documents.length} bài đọc
+       {t("readingCount", { count: documents.length })}
       </Typography>
      ) : null}
      {documents.length === 0 ? (
       <Typography variant="bodySmall" tone="muted">
-       Chưa có bài đọc trong thư viện hiện tại.
+       {t("empty")}
       </Typography>
      ) : (
       <>
@@ -291,7 +323,7 @@ export function ReaderCollectionWorkspace({
               {group.title}
              </Typography>
              <Typography variant="caption" tone="muted">
-              {group.documents.length} bài đọc
+              {t("readingCount", { count: group.documents.length })}
              </Typography>
             </div>
             <div className="grid gap-2 sm:grid-cols-2">
@@ -302,12 +334,15 @@ export function ReaderCollectionWorkspace({
                href={`${collectionPath}/${readerRouteSlug(document)}`}
                label={
                 metadataNumber(document, "lesson_number") !== null
-                 ? `Bài ${metadataNumber(document, "lesson_number")} · Bài đọc ${document.reading_number ?? ""}`
+                 ? t("hskLessonReading", {
+                    lesson: metadataNumber(document, "lesson_number") ?? "",
+                    reading: document.reading_number ?? "",
+                   })
                  : document.genre_vi || document.slug
                }
                metadata={[
-                `HSK ${metadataNumber(document, "level") ?? ""}`,
-                `${metadataNumber(document, "paragraphs") ?? 0} đoạn`,
+                t("hskLevel", { level: metadataNumber(document, "level") ?? "" }),
+                t("paragraphs", { count: metadataNumber(document, "paragraphs") ?? 0 }),
                ]}
                badgeVariant="warning"
                metadataBadgeVariant="success"
@@ -344,21 +379,21 @@ export function ReaderCollectionWorkspace({
                href={`${collectionPath}/${readerRouteSlug(document)}`}
                label={
                 kind === "reinforcement"
-                 ? "Luyện củng cố"
+                 ? t("reinforcementLabel")
                  : (metadataText(document, "reading_label_vi") ??
-                   `Bài ${document.reading_number ?? ""}`)
+                   t("readingNumber", { number: document.reading_number ?? "" }))
                }
                metadata={
                 kind === "reinforcement"
                  ? [
                     metadataText(document, "difficulty_vi") ?? "",
-                    `${metadataNumber(document, "estimated_minutes") ?? 0} phút`,
-                    `Trang ${metadataNumber(document, "printed_page") ?? ""}`,
+                    t("minutes", { count: metadataNumber(document, "estimated_minutes") ?? 0 }),
+                    t("page", { page: metadataNumber(document, "printed_page") ?? "" }),
                    ]
                  : [
-                    `${metadataNumber(document, "paragraphs") ?? 0} đoạn`,
-                    `${metadataNumber(document, "vocabulary") ?? 0} từ`,
-                    `${metadataNumber(document, "exercises") ?? 0} bài tập`,
+                    t("paragraphs", { count: metadataNumber(document, "paragraphs") ?? 0 }),
+                    t("vocabulary", { count: metadataNumber(document, "vocabulary") ?? 0 }),
+                    t("exercises", { count: metadataNumber(document, "exercises") ?? 0 }),
                    ]
                }
               />
@@ -375,14 +410,14 @@ export function ReaderCollectionWorkspace({
    {!showDocumentCatalog && resource === null && !invalidInitialSlug ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="danger">
-      Không tìm thấy tài liệu trong thư viện bài đọc.
+      {t("notFoundLibrary")}
      </Typography>
     </Card>
    ) : null}
    {invalidInitialSlug ? (
     <Card variant="subtle" padding="lg">
      <Typography variant="bodySmall" tone="danger">
-      Không tìm thấy bài đọc trong danh mục hiện tại.
+      {t("notFoundCatalog")}
      </Typography>
     </Card>
    ) : null}
@@ -392,14 +427,21 @@ export function ReaderCollectionWorkspace({
      initialAssetId={reinforcementPdfAssetId(resource.document, initialPdfAssets) ?? undefined}
      initialAssets={initialPdfAssets}
      heading={resource.document.title_zh}
-     badgeLabel="Luyện củng cố"
+     badgeLabel={t("reinforcementLabel")}
      backHref={collectionPath}
-     backLabel="Danh sách củng cố"
-     metadata={`${metadataText(reinforcementUnitReference ?? resource.document, "unit_title_zh") ?? ""} · ${metadataText(reinforcementUnitReference ?? resource.document, "unit_title_vi") ?? ""} · ${resource.document.title_vi} · Trang sách ${metadataNumber(resource.document, "printed_page") ?? ""}`}
+     backLabel={t("reinforcementBack")}
+     metadata={[
+      metadataText(reinforcementUnitReference ?? resource.document, "unit_title_zh") ?? "",
+      metadataText(reinforcementUnitReference ?? resource.document, "unit_title_vi") ?? "",
+      resource.document.title_vi,
+      t("printedPage", { page: metadataNumber(resource.document, "printed_page") ?? "" }),
+     ]
+      .filter(Boolean)
+      .join(" · ")}
      badges={[
-      `Đơn nguyên ${resource.document.unit_id?.replace(/^U/u, "") ?? ""}`,
-      "Luyện củng cố",
-      `${metadataNumber(resource.document, "estimated_minutes") ?? 0} phút`,
+      t("unitBadge", { id: resource.document.unit_id?.replace(/^U/u, "") ?? "" }),
+      t("reinforcementLabel"),
+      t("minutes", { count: metadataNumber(resource.document, "estimated_minutes") ?? 0 }),
      ]}
      notice={metadataText(resource.document, "notice_vi") ?? undefined}
      showAssetPicker={false}
@@ -410,7 +452,7 @@ export function ReaderCollectionWorkspace({
      key={resource.document.id}
      resource={resource}
      backHref={collectionPath}
-     backLabel={kind === "core" ? "Danh sách giáo trình" : `Danh sách ${title}`}
+     backLabel={kind === "core" ? t("coreBack") : t("backToList", { title: resolvedTitle })}
      navigationDocuments={documents}
      stateOwner={kind === "daily" ? "daily" : kind === "personal" ? "personal" : "reader"}
     />

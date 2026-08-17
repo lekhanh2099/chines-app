@@ -62,8 +62,6 @@ export default async function HumanitiesPage({
    </Card>
    <ReaderCollectionWorkspace
     kind="humanities"
-    title="Humanities"
-    description="Literature, history, translation và interpreting trong Reader HanziHome."
     initialDocuments={initialDocuments}
     initialResource={initialResource}
    />

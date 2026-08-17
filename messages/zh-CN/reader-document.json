@@ -1,0 +1,13 @@
+{
+  "header": {
+    "navigationAria": "阅读导航",
+    "study": "学习",
+    "hskSection": "HSK 阅读",
+    "lessonSection": "课文",
+    "chooseReading": "选择其他阅读",
+    "coreNavigationLabel": "主题 {unit} · 阅读 {reading} — {title}",
+    "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
+    "lessonPart": " · 第 {lesson} 课",
+    "readingPart": " · 阅读 {reading}"
+  }
+}

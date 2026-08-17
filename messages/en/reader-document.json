@@ -1,0 +1,13 @@
+{
+  "header": {
+    "navigationAria": "Reading navigation",
+    "study": "Study",
+    "hskSection": "HSK reading",
+    "lessonSection": "Lesson",
+    "chooseReading": "Choose another reading",
+    "coreNavigationLabel": "Topic {unit} · Reading {reading} — {title}",
+    "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
+    "lessonPart": " · Lesson {lesson}",
+    "readingPart": " · Reading {reading}"
+  }
+}

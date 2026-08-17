@@ -22,8 +22,6 @@ export default async function ReaderHskDocumentPage({
     kind="hsk"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
-    title="HSK Reader"
-    description="Đọc các passage HSK theo volume, có pinyin, nghĩa, TTS và bài luyện tập."
     initialDocumentSlug={slug}
    />
   </div>
