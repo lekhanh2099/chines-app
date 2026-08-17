@@ -16,11 +16,12 @@ import {
 } from "@/features/hanzihome/components/aggregate-library/aggregate-utils";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
 import { VocabReviewSkeleton } from "@/features/hanzihome/components/VocabReviewSkeleton";
+import type { ReviewItem } from "@/features/hanzihome/context/types";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
-import type { HanziHomeLesson, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
+import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 import {
  parseReviewLessonTokensParam,
  resolveReviewLessonTokens,
@@ -83,13 +84,7 @@ export function HanziHomeVocabReviewPage({
   return byId;
  }, [lessons]);
 
- const answerReview = (
-  item: {
-   type: UserLearningState["reviewHistory"][number]["type"];
-   id: string;
-  },
-  result: ReviewResult,
- ) => {
+ const answerReview = (item: ReviewItem, result: ReviewResult) => {
   learning.appendReviewHistory(item, result);
 
   if (item.type === "vocab") {

@@ -214,10 +214,7 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
     }),
 
    appendReviewHistory: (
-    item: {
-     type: UserLearningState["reviewHistory"][number]["type"];
-     id: string;
-    },
+    item: Pick<UserLearningState["reviewHistory"][number], "type" | "id" | "label">,
     result: ReviewResult,
    ) =>
     updateState((current) => ({

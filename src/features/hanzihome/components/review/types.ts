@@ -1,13 +1,8 @@
-import type { ReviewItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
+import type { ReviewItem as ReviewSessionItem } from "@/features/hanzihome/hooks/useVocabReviewSession";
+import type { ReviewItem } from "@/features/hanzihome/context/types";
 import type { HanziHomeLesson, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 
-export type ReviewAnswerHandler = (
- item: {
-  type: UserLearningState["reviewHistory"][number]["type"];
-  id: string;
- },
- result: ReviewResult,
-) => void;
+export type ReviewAnswerHandler = (item: ReviewItem, result: ReviewResult) => void;
 
 export type ReviewBookmarkHandler = (
  scope: keyof UserLearningState["bookmarks"],
@@ -15,7 +10,7 @@ export type ReviewBookmarkHandler = (
 ) => void;
 
 export type FlashcardDetailDialogProps = {
- item: ReviewItem;
+ item: ReviewSessionItem;
  open: boolean;
  onOpenChange: (open: boolean) => void;
  learningState: UserLearningState;

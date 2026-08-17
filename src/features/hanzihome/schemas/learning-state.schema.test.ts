@@ -48,3 +48,42 @@ describe("learning-state reader font compatibility", () => {
   },
  );
 });
+
+describe("learning-state review history compatibility", () => {
+ it("preserves an activity label when a new review event provides one", () => {
+  const parsed = userLearningStateSchema.parse({
+   settings: {},
+   progress: {},
+   bookmarks: {},
+   reviewHistory: [
+    {
+     type: "vocab",
+     id: "lesson-1__word-1",
+     label: "坚持",
+     result: "known",
+     answeredAt: "2026-08-17T01:00:00.000Z",
+    },
+   ],
+  });
+
+  expect(parsed.reviewHistory[0]?.label).toBe("坚持");
+ });
+
+ it("keeps legacy review events valid when they have no label", () => {
+  const parsed = userLearningStateSchema.parse({
+   settings: {},
+   progress: {},
+   bookmarks: {},
+   reviewHistory: [
+    {
+     type: "grammar",
+     id: "lesson-1__grammar-1",
+     result: "hard",
+     answeredAt: "2026-08-17T01:00:00.000Z",
+    },
+   ],
+  });
+
+  expect(parsed.reviewHistory[0]?.label).toBeUndefined();
+ });
+});

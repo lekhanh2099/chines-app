@@ -3,14 +3,15 @@
 import { isToday } from "date-fns";
 import { useMemo } from "react";
 
-import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import { useRecentNotes } from "@/features/notes/hooks/useRecentNotes";
+import { buildHomeRecentActivity } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel } from "@/features/home/types";
 
 export function useHomeDashboard(): HomeDashboardModel {
- const catalog = useHanziHomeCatalogData({ includeLessons: true });
+ const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
+ const catalog = catalogQuery.data;
  const learning = useLearningState();
  const recentNotes = useRecentNotes(3);
 
@@ -36,45 +37,7 @@ export function useHomeDashboard(): HomeDashboardModel {
    (total, items) => total + (items?.length ?? 0),
    0,
   );
-  const vocabLabels = new Map<string, string>();
-  const grammarLabels = new Map<string, string>();
-  const radicalLabels = new Map<string, string>();
-
-  for (const catalogLesson of catalog.lessons) {
-   for (const word of catalogLesson.vocab) {
-    vocabLabels.set(getVocabItemKey(word), word.hanzi);
-    vocabLabels.set(word.id, word.hanzi);
-   }
-   for (const point of catalogLesson.grammar) {
-    grammarLabels.set(
-     point.id,
-     point.cleanTitle || point.titleVi || point.title || point.core || "Điểm ngữ pháp đã ôn",
-    );
-   }
-  }
-
-  for (const radical of catalog.radicals) {
-   radicalLabels.set(
-    radical.id,
-    radical.nameVi ? `${radical.radical} · ${radical.nameVi}` : radical.radical,
-   );
-  }
-
-  const recentActivity = learning.state.reviewHistory
-   .slice(-4)
-   .reverse()
-   .map((item, index) => ({
-    key: `${item.type}:${item.id}:${item.answeredAt}:${index}`,
-    label:
-     item.type === "vocab"
-      ? vocabLabels.get(item.id) || "Từ vựng đã ôn"
-      : item.type === "grammar"
-        ? grammarLabels.get(item.id) || "Điểm ngữ pháp đã ôn"
-        : radicalLabels.get(item.id) || "Bộ thủ đã ôn",
-    kindLabel: item.type === "vocab" ? "Từ vựng" : item.type === "grammar" ? "Ngữ pháp" : "Bộ thủ",
-    result: item.result,
-    answeredAt: item.answeredAt,
-   }));
+  const recentActivity = buildHomeRecentActivity(learning.state.reviewHistory);
 
   return {
    lesson:
@@ -98,12 +61,12 @@ export function useHomeDashboard(): HomeDashboardModel {
    },
    recentActivity,
    recentNotes: recentNotes.data ?? [],
-   isLoading: learning.isLoading || recentNotes.isLoading,
+   isLoading: catalogQuery.isPending || learning.isLoading || recentNotes.isLoading,
   };
  }, [
   catalog.courses,
   catalog.lessons,
-  catalog.radicals,
+  catalogQuery.isPending,
   learning.isLoading,
   learning.state,
   recentNotes.data,

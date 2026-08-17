@@ -19,9 +19,6 @@ import { ReviewHeader } from "./ReviewHeader";
 import { StudyReviewCard } from "./StudyReviewCard";
 import { deckModeOptions } from "./reviewDeckModes";
 import type { ReviewAnswerHandler, ReviewBookmarkHandler } from "./types";
-import { z } from "zod";
-
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
@@ -32,7 +29,7 @@ type VocabReviewPanelProps = {
  description?: string;
  onAnswer: ReviewAnswerHandler;
  onToggleBookmark?: ReviewBookmarkHandler;
- getItemLesson?: (item: ReviewItem) => Nullable<HanziHomeLesson>;
+ getItemLesson?: (item: ReviewItem) => HanziHomeLesson | null;
 };
 
 export function VocabReviewPanel({
@@ -76,7 +73,7 @@ export function VocabReviewPanel({
   (result: ReviewResult) => {
    if (!item) return;
 
-   onAnswer({ type: item.type, id: item.id }, result);
+   onAnswer({ type: item.type, id: item.id, label: item.prompt }, result);
    answer(result);
   },
   [answer, item, onAnswer],
@@ -210,7 +207,9 @@ export function VocabReviewPanel({
      onOpenChange={setDetailOpen}
      learningState={learningState}
      lesson={lesson}
-     onAnswer={onAnswer}
+     onAnswer={(reviewItem, result) =>
+      onAnswer({ ...reviewItem, label: item.prompt }, result)
+     }
      onToggleBookmark={onToggleBookmark}
      itemLesson={getItemLesson?.(item) ?? lesson}
     />

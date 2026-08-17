@@ -80,6 +80,7 @@ export const userLearningStateSchema = z.object({
    z.object({
     type: z.enum(["vocab", "grammar", "radical"]),
     id: z.string(),
+    label: z.string().optional(),
     result: reviewResultSchema,
     answeredAt: z.string(),
    }),
