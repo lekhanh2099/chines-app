@@ -5,9 +5,8 @@ import {
  useHanziHomeLessonDetailResource,
  useHanziHomeLessonVocabulary,
 } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import { z } from "zod";
 
-export function useHanziHomeLesson(lessonId: z.infer<z.ZodNullable<z.ZodString>>) {
+export function useHanziHomeLesson(lessonId: string | null) {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId ?? "");
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId ?? "");
  const lesson =

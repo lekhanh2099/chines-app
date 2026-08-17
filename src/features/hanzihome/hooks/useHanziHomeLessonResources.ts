@@ -1,7 +1,6 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { z } from "zod";
 
 import {
  fetchHanziHomeLessonDetail,
@@ -16,7 +15,6 @@ import {
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 
 const lessonResourceStaleTime = Infinity;
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export function useHanziHomeLessonDetailResource(lessonId: string) {
  return useQuery({
@@ -27,7 +25,7 @@ export function useHanziHomeLessonDetailResource(lessonId: string) {
  });
 }
 
-export function useHanziHomeLessonSections(lessonId: string): Nullable<LessonSectionsResource> {
+export function useHanziHomeLessonSections(lessonId: string): LessonSectionsResource | null {
  const detailQuery = useHanziHomeLessonDetailResource(lessonId);
  const vocabularyQuery = useHanziHomeLessonVocabulary(lessonId);
 
@@ -39,7 +37,7 @@ export function useHanziHomeLessonSections(lessonId: string): Nullable<LessonSec
 }
 
 export function useHanziHomeLessonVocabulary(lessonId: string) {
- return useQuery<Nullable<LessonVocabularyListResource>>({
+ return useQuery<LessonVocabularyListResource | null>({
   queryKey: hanzihomeQueryKeys.lessonResource(lessonId, "vocabulary"),
   queryFn: () => fetchHanziHomeLessonVocabulary(lessonId),
   staleTime: lessonResourceStaleTime,

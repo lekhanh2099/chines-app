@@ -3,7 +3,6 @@
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import {
  HanziHomeEditableRecordMetaSchema,
- EditableFieldPathSchema,
  type HanziHomeEditableRecordMeta,
 } from "@/features/hanzihome/types";
 import type {
@@ -12,11 +11,8 @@ import type {
 } from "@/features/hanzihome/editing/store/types";
 import { z } from "zod";
 
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-type OptionalPathSegment = z.infer<z.ZodOptional<typeof EditableFieldPathSchema.element>>;
-
 export type HanziHomeFeatureServices = {
- resolveEditableRecord: (node: EditableNodeRequest) => Nullable<HanziHomeEditableRecordMeta>;
+ resolveEditableRecord: (node: EditableNodeRequest) => HanziHomeEditableRecordMeta | null;
 };
 
 function editableRecordKey(entityType: string, entityId: string) {
@@ -26,7 +22,7 @@ function editableRecordKey(entityType: string, entityId: string) {
 function resolveSectionEditableRecord(
  lesson: HanziHomeLesson,
  path: EditableNodePath,
-): Nullable<HanziHomeEditableRecordMeta> {
+): HanziHomeEditableRecordMeta | null {
  if (path[0] !== "lesson" || path[1] !== "sections") return null;
  const sectionIndex = numericSegment(path[2]);
  const section =
@@ -36,7 +32,7 @@ function resolveSectionEditableRecord(
  return lesson.editableRecords?.[editableRecordKey("section", section.id)] ?? null;
 }
 
-function numericSegment(value: OptionalPathSegment) {
+function numericSegment(value: EditableNodePath[number] | undefined) {
  if (typeof value === "number" && Number.isInteger(value)) return value;
  if (typeof value === "string" && value.trim()) {
   const parsed = Number(value);

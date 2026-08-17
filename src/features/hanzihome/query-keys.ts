@@ -1,7 +1,6 @@
 import type { AggregateFilters, AggregateKind } from "./repositories/hanzihome-content-resources";
-import { z } from "zod";
 
-const LessonResourceKindSchema = z.enum(["overview", "sections", "vocabulary", "grammar"]);
+type LessonResourceKind = "overview" | "sections" | "vocabulary" | "grammar";
 
 export const hanzihomeQueryKeys = {
  root: ["hanzihome"],
@@ -13,16 +12,12 @@ export const hanzihomeQueryKeys = {
  ],
  courseLessonsRoot: ["hanzihome", "course-lessons"],
  courseLessons: (courseId: string) => ["hanzihome", "course-lessons", courseId],
- lessonDetail: (lessonId: z.infer<z.ZodNullable<z.ZodString>>) => [
-  "hanzihome",
-  "lesson-detail",
-  lessonId,
- ],
- lessonResource: (lessonId: string, resource: z.infer<typeof LessonResourceKindSchema>) => [
+ lessonDetail: (lessonId: string | null) => ["hanzihome", "lesson-detail", lessonId],
+ lessonResource: (lessonId: string, resource: LessonResourceKind) => [
   "hanzihome",
   "lesson-resource",
   lessonId,
-  LessonResourceKindSchema.enum[resource],
+  resource,
  ],
  aggregate: (kind: AggregateKind, filters: AggregateFilters) => [
   "hanzihome",

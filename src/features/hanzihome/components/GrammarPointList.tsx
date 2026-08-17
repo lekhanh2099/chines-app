@@ -3,11 +3,10 @@
 import { Badge } from "@/components/ui/badge";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import type { GrammarViewModel, LearningStatus } from "@/features/hanzihome/types";
-import { z } from "zod";
 
 type GrammarPointListProps = {
  points: GrammarViewModel[];
- selectedPointId: z.infer<z.ZodNullable<z.ZodString>>;
+ selectedPointId: string | null;
  progress: Record<string, { status: LearningStatus }>;
  onSelectPoint: (pointId: string) => void;
  allPointId?: string;

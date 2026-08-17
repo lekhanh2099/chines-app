@@ -19,7 +19,6 @@ type LearningStateRow = {
  bookmarks: JsonFieldValue;
  review_history: JsonFieldValue;
 };
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
@@ -29,7 +28,7 @@ function isMissingLearningStateTable(code: Parameters<typeof jsonError>[2]) {
  return code === "42P01" || code === "PGRST205";
 }
 
-function rowToLearningState(row: Nullable<LearningStateRow>): UserLearningState {
+function rowToLearningState(row: LearningStateRow | null): UserLearningState {
  if (!row) return normalizeLearningState(emptyLearningState);
 
  const parsed = userLearningStateSchema.safeParse({
