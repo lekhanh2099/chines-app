@@ -50,6 +50,7 @@
   "darkTheme": "深色界面",
   "pageLookup": "在本页查词",
   "focusMode": "专注模式",
+  "focusModeShort": "专注",
   "focusModeActive": "专注模式已开启",
   "focusModeWarning": "专注模式已开启。你将留在当前课程中，只能切换当前栏目或已打开的笔记标签。",
   "openAllSettings": "打开全部设置"
