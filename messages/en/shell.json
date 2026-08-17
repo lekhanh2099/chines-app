@@ -50,6 +50,7 @@
   "darkTheme": "Dark theme",
   "pageLookup": "Look up words on this page",
   "focusMode": "Focus mode",
+  "focusModeShort": "Focus",
   "focusModeActive": "Focus mode is on",
   "focusModeWarning": "Focus mode is on. You will stay in the current lesson and can only switch the open section or notes tab.",
   "openAllSettings": "Open all settings"
