@@ -42,7 +42,18 @@
   "description": "Automatic mode uses the highest-priority enabled personal key; if none exists, the app uses the system Gemini runtime. Choosing a specific key always uses only that key.",
   "current": "Current runtime: {provider} · {model}",
   "loadError": "Could not load personal API keys. Automatic mode can still use the system Gemini runtime.",
-  "modelFallback": "provider default"
+  "modelFallback": "provider default",
+  "healthChecking": "Checking AI…",
+  "healthReady": "Ready · {provider} · {model}",
+  "recheck": "Check again",
+  "health": {
+   "missingSystemKey": "System Gemini is not configured. Add a personal key or configure GEMINI_API_KEY on the server.",
+   "invalidKey": "The API key is no longer valid or the provider is rejecting it.",
+   "quotaExhausted": "The API key is valid but its quota is exhausted or it is currently rate limited.",
+   "keyUnavailable": "The selected API key is no longer available for the current account.",
+   "providerUnavailable": "The provider is currently unavailable. Try again later.",
+   "networkError": "Could not check the AI runtime because of a network error."
+  }
  },
  "message": {
   "label": "Message",
