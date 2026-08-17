@@ -1,7 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Bot, RotateCcw, Send, Settings2, Sparkles, Trash2, UserRound } from "lucide-react";
+import {
+ Bot,
+ RefreshCcw,
+ RotateCcw,
+ Send,
+ Settings2,
+ Sparkles,
+ Trash2,
+ UserRound,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useAppForm } from "@/components/form";
@@ -30,10 +39,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
 import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
-import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 import { Link } from "@/i18n/navigation";
+import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
-import { sendAiConversationMessage } from "./ai-conversation-api";
+import {
+ fetchAiConversationRuntimeHealth,
+ sendAiConversationMessage,
+} from "./ai-conversation-api";
 import {
  saveAiConversationProfile,
  useAiConversationProfile,
@@ -47,6 +59,7 @@ import {
  DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
  type AiConversationProfile,
+ type AiConversationRuntimeHealth,
 } from "./ai-conversation.schemas";
 
 const AUTO_RUNTIME_KEY_ID = "auto";
@@ -66,6 +79,9 @@ export function AiConversationWorkspace() {
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
+ const [runtimeHealth, setRuntimeHealth] = useState<AiConversationRuntimeHealth | null>(null);
+ const [isHealthChecking, setIsHealthChecking] = useState(true);
+ const [healthRefreshId, setHealthRefreshId] = useState(0);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
  const personaLabels: Record<AiConversationProfile["persona"], string> = {
@@ -120,6 +136,38 @@ export function AiConversationWorkspace() {
  }, []);
 
  useEffect(() => {
+  if (isRuntimeLoading) return;
+
+  const controller = new AbortController();
+  setIsHealthChecking(true);
+  setRuntimeHealth(null);
+
+  void fetchAiConversationRuntimeHealth({
+   ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+   signal: controller.signal,
+  })
+   .then((health) => {
+    if (!controller.signal.aborted) setRuntimeHealth(health);
+   })
+   .catch(() => {
+    if (!controller.signal.aborted) {
+     setRuntimeHealth({
+      ready: false,
+      code: "network-error",
+      provider: null,
+      model: null,
+      source: null,
+     });
+    }
+   })
+   .finally(() => {
+    if (!controller.signal.aborted) setIsHealthChecking(false);
+   });
+
+  return () => controller.abort();
+ }, [healthRefreshId, isRuntimeLoading, runtimeKeyId]);
+
+ useEffect(() => {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
@@ -144,6 +192,7 @@ export function AiConversationWorkspace() {
     ? value
     : AUTO_RUNTIME_KEY_ID;
   setRuntimeKeyId(nextValue);
+  setError(null);
   if (nextValue === AUTO_RUNTIME_KEY_ID) {
    window.localStorage.removeItem(RUNTIME_KEY_STORAGE_KEY);
   } else {
@@ -153,7 +202,7 @@ export function AiConversationWorkspace() {
 
  const send = async () => {
   const content = draft.normalize("NFC").trim();
-  if (!content || isSending) return;
+  if (!content || isSending || !runtimeHealth?.ready) return;
 
   const userMessage: AiConversationMessage = { role: "user", content };
   const nextMessages = [...messages, userMessage];
@@ -181,6 +230,7 @@ export function AiConversationWorkspace() {
   } catch (caught) {
    if (controller.signal.aborted) return;
    setError(caught instanceof Error ? caught.message : t("message.sendError"));
+   setHealthRefreshId((current) => current + 1);
   } finally {
    if (requestRef.current === controller) {
     requestRef.current = null;
@@ -196,6 +246,25 @@ export function AiConversationWorkspace() {
     : runtimeKeys.length === 0 && !isRuntimeLoading
       ? t("runtime.empty")
       : t("runtime.description");
+ const healthMessage = isHealthChecking
+  ? t("runtime.healthChecking")
+  : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
+    ? t("runtime.healthReady", {
+       provider: runtimeHealth.provider,
+       model: runtimeHealth.model,
+      })
+    : runtimeHealth?.code === "missing-system-key"
+      ? t("runtime.health.missingSystemKey")
+      : runtimeHealth?.code === "invalid-key"
+        ? t("runtime.health.invalidKey")
+        : runtimeHealth?.code === "quota-exhausted"
+          ? t("runtime.health.quotaExhausted")
+          : runtimeHealth?.code === "key-unavailable"
+            ? t("runtime.health.keyUnavailable")
+            : runtimeHealth?.code === "provider-unavailable"
+              ? t("runtime.health.providerUnavailable")
+              : t("runtime.health.networkError");
+ const canSend = Boolean(runtimeHealth?.ready) && !isHealthChecking && !isSending;
 
  return (
   <div className="grid min-w-0 gap-5">
@@ -248,7 +317,7 @@ export function AiConversationWorkspace() {
      </Button>
     </div>
 
-    <div className="grid gap-2 border-y border-border-default py-3 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
+    <div className="grid gap-3 border-y border-border-default py-3 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
      <div className="grid gap-1.5">
       <Label htmlFor="ai-conversation-runtime" variant="label" weight="semibold">
        {t("runtime.label")}
@@ -267,9 +336,26 @@ export function AiConversationWorkspace() {
        </SelectContent>
       </Select>
      </div>
-     <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
-      {runtimeDescription}
-     </Typography>
+     <div className="grid gap-1.5">
+      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
+       {runtimeDescription}
+      </Typography>
+      <div className="flex flex-wrap items-center gap-2">
+       <Badge variant={runtimeHealth?.ready ? "success" : isHealthChecking ? "default" : "warning"}>
+        {healthMessage}
+       </Badge>
+       <Button
+        type="button"
+        variant="ghost"
+        size="sm"
+        onClick={() => setHealthRefreshId((current) => current + 1)}
+        disabled={isHealthChecking || isRuntimeLoading}
+       >
+        <RefreshCcw data-icon="inline-start" />
+        {t("runtime.recheck")}
+       </Button>
+      </div>
+     </div>
     </div>
 
     <div
@@ -342,7 +428,7 @@ export function AiConversationWorkspace() {
       <Typography variant="caption" tone="muted">
        {t("message.hint")}
       </Typography>
-      <Button type="submit" disabled={!draft.trim() || isSending}>
+      <Button type="submit" disabled={!draft.trim() || !canSend}>
        <Send data-icon="inline-start" />
        {isSending ? t("actions.sending") : t("actions.send")}
       </Button>
