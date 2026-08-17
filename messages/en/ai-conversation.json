@@ -34,22 +34,14 @@
  },
  "greeting": "你好，我是{name}。I am in “{role}” mode. Start in Chinese or tell me your goal for this practice session.",
  "fallbackInterest": "Chinese conversation",
- "stats": {
-  "learnerTurns": "Your turns",
-  "context": "Recent context",
-  "requests": "AI calls",
-  "provider": "Provider",
-  "model": "Model",
-  "messages": "{count} messages",
-  "notCalled": "Not called yet"
- },
  "runtime": {
   "label": "AI runtime",
-  "auto": "Automatic by key priority",
+  "auto": "Automatic — prefer personal key",
   "loading": "Loading API keys…",
-  "empty": "No enabled API key",
-  "description": "Choose a specific key when you want to know exactly which provider/model will be called. Automatic mode uses the highest-priority enabled key and does not silently switch to another key when a request fails.",
-  "loadError": "Could not load API keys. Automatic mode can still be used.",
+  "empty": "No enabled personal key — automatic mode will use the system Gemini runtime.",
+  "description": "Automatic mode uses the highest-priority enabled personal key; if none exists, the app uses the system Gemini runtime. Choosing a specific key always uses only that key.",
+  "current": "Current runtime: {provider} · {model}",
+  "loadError": "Could not load personal API keys. Automatic mode can still use the system Gemini runtime.",
   "modelFallback": "provider default"
  },
  "message": {
