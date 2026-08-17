@@ -91,6 +91,9 @@ function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource 
  const segment = segments[activeIndex];
  const score =
   segment !== undefined && checked ? scoreTranslationAttempt(segment, direction, draft) : null;
+ const completedCount = segments.filter((candidate) =>
+  completedKeys.has(`${candidate.id}:${direction}`),
+ ).length;
 
  const check = () => {
   if (segment === undefined) return;
@@ -132,7 +135,7 @@ function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource 
    <ReaderTranslationPracticePanel
     activeIndex={activeIndex}
     checked={checked}
-    completedCount={completedKeys.size}
+    completedCount={completedCount}
     direction={direction}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
     draft={draft}
