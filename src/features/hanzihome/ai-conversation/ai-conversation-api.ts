@@ -11,14 +11,18 @@ import {
 export async function sendAiConversationMessage(
  messages: AiConversationMessage[],
  profile: AiConversationProfile,
- signal?: AbortSignal,
+ options?: { apiKeyId?: string; signal?: AbortSignal },
 ): Promise<AiConversationResponse> {
- const payload = aiConversationRequestSchema.parse({ messages, profile });
+ const payload = aiConversationRequestSchema.parse({
+  messages,
+  profile,
+  ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
+ });
  const response = await fetch("/api/ai/conversation", {
   method: "POST",
   headers: { "Content-Type": "application/json", Accept: "application/json" },
   body: JSON.stringify(payload),
-  signal,
+  signal: options?.signal,
  });
  const body: JsonFieldValue = await response.json().catch(() => null);
 
