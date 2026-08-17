@@ -1,6 +1,8 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { DEFAULT_AI_CONVERSATION_PROFILE } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
+
 const { getActiveUserApiKeyCredentials, generateAiConversationReply, requireAuthenticatedRoute } =
  vi.hoisted(() => ({
   getActiveUserApiKeyCredentials: vi.fn(),
@@ -21,6 +23,11 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 
 import { POST } from "./route";
 
+const requestBody = (messages: Array<{ role: "user" | "assistant"; content: string }>) => ({
+ messages,
+ profile: DEFAULT_AI_CONVERSATION_PROFILE,
+});
+
 describe("/api/ai/conversation", () => {
  beforeEach(() => {
   getActiveUserApiKeyCredentials.mockReset();
@@ -36,7 +43,22 @@ describe("/api/ai/conversation", () => {
   const response = await POST(
    new Request("https://app.example/api/ai/conversation", {
     method: "POST",
-    body: JSON.stringify({ messages: [{ role: "user" }] }),
+    body: JSON.stringify({
+     messages: [{ role: "user" }],
+     profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(400);
+  expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+ });
+
+ it("requires a validated conversation profile", async () => {
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({ messages: [{ role: "user", content: "你好" }] }),
    }),
   );
 
@@ -50,7 +72,7 @@ describe("/api/ai/conversation", () => {
   const response = await POST(
    new Request("https://app.example/api/ai/conversation", {
     method: "POST",
-    body: JSON.stringify({ messages: [{ role: "user", content: "你好" }] }),
+    body: JSON.stringify(requestBody([{ role: "user", content: "你好" }])),
    }),
   );
 
@@ -59,27 +81,67 @@ describe("/api/ai/conversation", () => {
   expect(generateAiConversationReply).not.toHaveBeenCalled();
  });
 
- it("uses the authenticated user's managed credentials and validates the response", async () => {
-  const supabase = {};
-  const user = { id: "user-1" };
-  const credentials = [{ id: "key-1" }];
+ it("prepends stable profile context and reports the selected runtime", async () => {
+  const credentials = [
+   {
+    id: "key-1",
+    provider: "groq",
+    defaultModel: "openai/gpt-oss-20b",
+    label: "Groq Free",
+   },
+  ];
   getActiveUserApiKeyCredentials.mockResolvedValue(credentials);
   generateAiConversationReply.mockResolvedValue({ data: "你好，今天学习什么？", error: null });
 
   const response = await POST(
    new Request("https://app.example/api/ai/conversation", {
     method: "POST",
-    body: JSON.stringify({ messages: [{ role: "user", content: "你好" }] }),
+    body: JSON.stringify(requestBody([{ role: "user", content: "你好" }])),
    }),
   );
 
   expect(response.status).toBe(200);
-  expect(generateAiConversationReply).toHaveBeenCalledWith(
-   [{ role: "user", content: "你好" }],
-   expect.objectContaining({ userApiKeys: credentials }),
+  expect(generateAiConversationReply).toHaveBeenCalledTimes(1);
+  const [messages, options] = generateAiConversationReply.mock.calls[0];
+  expect(messages).toHaveLength(2);
+  expect(messages[0]).toMatchObject({ role: "user" });
+  expect(messages[0].content).toContain(DEFAULT_AI_CONVERSATION_PROFILE.displayName);
+  expect(messages[0].content).toContain("Thông tin cần nhớ");
+  expect(messages[1]).toEqual({ role: "user", content: "你好" });
+  expect(options).toEqual(expect.objectContaining({ userApiKeys: credentials }));
+  expect(await response.json()).toEqual({
+   message: "你好，今天学习什么？",
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+  });
+ });
+
+ it("keeps the profile plus the latest 19 conversation messages", async () => {
+  const credentials = [
+   {
+    id: "key-1",
+    provider: "groq",
+    defaultModel: "openai/gpt-oss-20b",
+    label: "Groq Free",
+   },
+  ];
+  getActiveUserApiKeyCredentials.mockResolvedValue(credentials);
+  generateAiConversationReply.mockResolvedValue({ data: "继续吧", error: null });
+  const messages = Array.from({ length: 24 }, (_, index) => ({
+   role: index % 2 === 0 ? ("user" as const) : ("assistant" as const),
+   content: `message-${index}`,
+  }));
+
+  await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify(requestBody(messages)),
+   }),
   );
-  expect(await response.json()).toEqual({ message: "你好，今天学习什么？" });
-  expect(user.id).toBe("user-1");
-  expect(supabase).toEqual({});
+
+  const [forwardedMessages] = generateAiConversationReply.mock.calls[0];
+  expect(forwardedMessages).toHaveLength(20);
+  expect(forwardedMessages[1].content).toBe("message-5");
+  expect(forwardedMessages.at(-1)?.content).toBe("message-23");
  });
 });
