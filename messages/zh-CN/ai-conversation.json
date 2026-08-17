@@ -42,7 +42,18 @@
   "description": "自动模式优先使用优先级最高的个人密钥；如果没有个人密钥，则使用系统 Gemini。选择具体密钥后，请求只会使用该密钥。",
   "current": "当前运行环境：{provider} · {model}",
   "loadError": "无法加载个人 API 密钥列表。自动模式仍可使用系统 Gemini。",
-  "modelFallback": "provider 默认模型"
+  "modelFallback": "provider 默认模型",
+  "healthChecking": "正在检查 AI…",
+  "healthReady": "可用 · {provider} · {model}",
+  "recheck": "重新检查",
+  "health": {
+   "missingSystemKey": "系统 Gemini 尚未配置。请添加个人密钥，或在服务器配置 GEMINI_API_KEY。",
+   "invalidKey": "API 密钥已失效，或 provider 正在拒绝该密钥。",
+   "quotaExhausted": "API 密钥有效，但当前额度已用完或正在被限流。",
+   "keyUnavailable": "所选 API 密钥已不再属于当前账户或已停用。",
+   "providerUnavailable": "Provider 当前不可用，请稍后重试。",
+   "networkError": "由于网络错误，无法检查 AI 运行环境。"
+  }
  },
  "message": {
   "label": "消息",
