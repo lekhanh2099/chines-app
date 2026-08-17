@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, RotateCcw, Send, Settings2, Sparkles, Trash2, UserRound } from "lucide-react";
 
+import { useAppForm } from "@/components/form";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -16,15 +17,6 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { IconTile } from "@/components/ui/icon-tile";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { Link } from "@/i18n/navigation";
@@ -38,6 +30,7 @@ import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
  aiConversationPersonaSchema,
+ aiConversationProfileSchema,
  aiConversationReplyModeSchema,
  DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
@@ -69,6 +62,23 @@ const replyModeLabels: Record<AiConversationProfile["replyMode"], string> = {
  bilingual: "Trung + Việt hỗ trợ",
 };
 
+const personaOptions = aiConversationPersonaSchema.options.map((value) => ({
+ value,
+ label: personaLabels[value],
+}));
+const levelOptions = aiConversationLearnerLevelSchema.options.map((value) => ({
+ value,
+ label: levelLabels[value],
+}));
+const correctionOptions = aiConversationCorrectionStyleSchema.options.map((value) => ({
+ value,
+ label: correctionLabels[value],
+}));
+const replyModeOptions = aiConversationReplyModeSchema.options.map((value) => ({
+ value,
+ label: replyModeLabels[value],
+}));
+
 function greetingFor(profile: AiConversationProfile): AiConversationMessage {
  const role = personaLabels[profile.persona];
  return {
@@ -79,9 +89,6 @@ function greetingFor(profile: AiConversationProfile): AiConversationMessage {
 
 export function AiConversationWorkspace() {
  const [profile, setProfile] = useState<AiConversationProfile>(DEFAULT_AI_CONVERSATION_PROFILE);
- const [profileDraft, setProfileDraft] = useState<AiConversationProfile>(
-  DEFAULT_AI_CONVERSATION_PROFILE,
- );
  const [isSetupOpen, setIsSetupOpen] = useState(false);
  const [messages, setMessages] = useState<AiConversationMessage[]>([
   greetingFor(DEFAULT_AI_CONVERSATION_PROFILE),
@@ -96,7 +103,6 @@ export function AiConversationWorkspace() {
  useEffect(() => {
   const storedProfile = loadAiConversationProfile();
   setProfile(storedProfile);
-  setProfileDraft(storedProfile);
   setMessages((current) =>
    current.length === 1 && current[0]?.role === "assistant"
     ? [greetingFor(storedProfile)]
@@ -120,15 +126,10 @@ export function AiConversationWorkspace() {
   setLastRuntime(null);
  };
 
- const saveProfile = () => {
-  const saved = saveAiConversationProfile(profileDraft);
+ const saveProfile = (nextProfile: AiConversationProfile) => {
+  const saved = saveAiConversationProfile(nextProfile);
   setProfile(saved);
-  setProfileDraft(saved);
   setIsSetupOpen(false);
- };
-
- const resetProfileDraft = () => {
-  setProfileDraft(DEFAULT_AI_CONVERSATION_PROFILE);
  };
 
  const send = async () => {
@@ -175,14 +176,7 @@ export function AiConversationWorkspace() {
      </Typography>
     </div>
     <div className="flex flex-wrap gap-2">
-     <Button
-      type="button"
-      variant="outline"
-      onClick={() => {
-       setProfileDraft(profile);
-       setIsSetupOpen(true);
-      }}
-     >
+     <Button type="button" variant="outline" onClick={() => setIsSetupOpen(true)}>
       <Settings2 data-icon="inline-start" />
       Thiết lập nhân vật
      </Button>
@@ -276,9 +270,9 @@ export function AiConversationWorkspace() {
       void send();
      }}
     >
-     <Label htmlFor="ai-conversation-message" variant="label" tone="default" weight="bold">
+     <label htmlFor="ai-conversation-message" className="sr-only">
       Tin nhắn
-     </Label>
+     </label>
      <Textarea
       id="ai-conversation-message"
       value={draft}
@@ -292,6 +286,7 @@ export function AiConversationWorkspace() {
       maxLength={6000}
       disabled={isSending}
       placeholder="例如：今天下班以后我想练习聊日常生活。"
+      aria-label="Tin nhắn hội thoại"
       className="min-h-24"
      />
      <div className="flex flex-wrap items-center justify-between gap-2">
@@ -306,14 +301,13 @@ export function AiConversationWorkspace() {
     </form>
    </Card>
 
-   <PersonaSetupDialog
-    open={isSetupOpen}
-    profile={profileDraft}
-    onOpenChange={setIsSetupOpen}
-    onProfileChange={setProfileDraft}
-    onReset={resetProfileDraft}
-    onSave={saveProfile}
-   />
+   {isSetupOpen ? (
+    <PersonaSetupDialog
+     initialProfile={profile}
+     onOpenChange={setIsSetupOpen}
+     onSave={saveProfile}
+    />
+   ) : null}
   </div>
  );
 }
@@ -332,27 +326,24 @@ function SessionStat({ label, value }: { label: string; value: string }) {
 }
 
 function PersonaSetupDialog({
- open,
- profile,
+ initialProfile,
  onOpenChange,
- onProfileChange,
- onReset,
  onSave,
 }: {
- open: boolean;
- profile: AiConversationProfile;
+ initialProfile: AiConversationProfile;
  onOpenChange: (open: boolean) => void;
- onProfileChange: (profile: AiConversationProfile) => void;
- onReset: () => void;
- onSave: () => void;
+ onSave: (profile: AiConversationProfile) => void;
 }) {
- const update = <Key extends keyof AiConversationProfile>(
-  key: Key,
-  value: AiConversationProfile[Key],
- ) => onProfileChange({ ...profile, [key]: value });
+ const form = useAppForm({
+  defaultValues: initialProfile,
+  validators: { onSubmit: aiConversationProfileSchema },
+  onSubmit: ({ value }) => {
+   onSave(value);
+  },
+ });
 
  return (
-  <Dialog open={open} onOpenChange={onOpenChange}>
+  <Dialog open onOpenChange={onOpenChange}>
    <DialogContent size="lg">
     <DialogHeader>
      <DialogTitle>Thiết lập nhân vật hội thoại</DialogTitle>
@@ -361,175 +352,85 @@ function PersonaSetupDialog({
       thiết bị hiện tại.
      </DialogDescription>
     </DialogHeader>
-    <DialogBody>
-     <div className="grid gap-5 md:grid-cols-2">
-      <div className="grid gap-2">
-       <Label htmlFor="conversation-persona" weight="semibold">
-        Vai trò
-       </Label>
-       <Select
-        value={profile.persona}
-        onValueChange={(value) => {
-         const parsed = aiConversationPersonaSchema.safeParse(value);
-         if (parsed.success) update("persona", parsed.data);
-        }}
-       >
-        <SelectTrigger id="conversation-persona" width="full">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {aiConversationPersonaSchema.options.map((value) => (
-          <SelectItem key={value} value={value}>
-           {personaLabels[value]}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
+    <form
+     onSubmit={(event) => {
+      event.preventDefault();
+      void form.handleSubmit();
+     }}
+    >
+     <DialogBody className="grid gap-5 md:grid-cols-2">
+      <form.AppField name="persona">
+       {(field) => <field.Select label="Vai trò" options={personaOptions} required />}
+      </form.AppField>
+      <form.AppField name="displayName">
+       {(field) => (
+        <field.TextField label="Tên nhân vật" required maxLength={40} placeholder="Ví dụ: 小林" />
+       )}
+      </form.AppField>
+      <form.AppField name="learnerLevel">
+       {(field) => <field.Select label="Trình độ của bạn" options={levelOptions} required />}
+      </form.AppField>
+      <form.AppField name="correctionStyle">
+       {(field) => <field.Select label="Cách sửa lỗi" options={correctionOptions} required />}
+      </form.AppField>
+      <div className="md:col-span-2">
+       <form.AppField name="replyMode">
+        {(field) => <field.Select label="Ngôn ngữ trả lời" options={replyModeOptions} required />}
+       </form.AppField>
       </div>
-
-      <div className="grid gap-2">
-       <Label htmlFor="conversation-name" weight="semibold">
-        Tên nhân vật
-       </Label>
-       <Input
-        id="conversation-name"
-        value={profile.displayName}
-        onChange={(event) => update("displayName", event.target.value.slice(0, 40))}
-        maxLength={40}
-        placeholder="Ví dụ: 小林"
-       />
+      <div className="md:col-span-2">
+       <form.AppField name="interests">
+        {(field) => (
+         <field.Textarea
+          label="Chủ đề muốn nói"
+          maxLength={300}
+          rows={3}
+          placeholder="Ví dụ: cuộc sống ở Trung Quốc, phim, công việc, đi ăn, du lịch…"
+         />
+        )}
+       </form.AppField>
       </div>
-
-      <div className="grid gap-2">
-       <Label htmlFor="conversation-level" weight="semibold">
-        Trình độ của bạn
-       </Label>
-       <Select
-        value={profile.learnerLevel}
-        onValueChange={(value) => {
-         const parsed = aiConversationLearnerLevelSchema.safeParse(value);
-         if (parsed.success) update("learnerLevel", parsed.data);
-        }}
-       >
-        <SelectTrigger id="conversation-level" width="full">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {aiConversationLearnerLevelSchema.options.map((value) => (
-          <SelectItem key={value} value={value}>
-           {levelLabels[value]}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
+      <div className="md:col-span-2">
+       <form.AppField name="characterNotes">
+        {(field) => (
+         <field.Textarea
+          label="Tính cách / cách nói"
+          maxLength={600}
+          rows={3}
+          placeholder="Ví dụ: nói như bạn cùng tuổi, thỉnh thoảng dùng khẩu ngữ phổ biến nhưng không lạm dụng slang."
+         />
+        )}
+       </form.AppField>
       </div>
-
-      <div className="grid gap-2">
-       <Label htmlFor="conversation-correction" weight="semibold">
-        Cách sửa lỗi
-       </Label>
-       <Select
-        value={profile.correctionStyle}
-        onValueChange={(value) => {
-         const parsed = aiConversationCorrectionStyleSchema.safeParse(value);
-         if (parsed.success) update("correctionStyle", parsed.data);
-        }}
-       >
-        <SelectTrigger id="conversation-correction" width="full">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {aiConversationCorrectionStyleSchema.options.map((value) => (
-          <SelectItem key={value} value={value}>
-           {correctionLabels[value]}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
+      <div className="md:col-span-2">
+       <form.AppField name="memoryNotes">
+        {(field) => (
+         <field.Textarea
+          label="Điều cần nhớ lâu dài"
+          description="Phần này được gửi lại ở mỗi lượt nên vẫn giữ được các thông tin cốt lõi khi đoạn chat dài."
+          maxLength={1200}
+          rows={4}
+          placeholder="Ví dụ: Tôi học khoảng HSK4, yếu trật tự từ và dịch Việt → Trung; ưu tiên 普通话 tại Trung Quốc đại lục."
+         />
+        )}
+       </form.AppField>
       </div>
-
-      <div className="grid gap-2 md:col-span-2">
-       <Label htmlFor="conversation-reply-mode" weight="semibold">
-        Ngôn ngữ trả lời
-       </Label>
-       <Select
-        value={profile.replyMode}
-        onValueChange={(value) => {
-         const parsed = aiConversationReplyModeSchema.safeParse(value);
-         if (parsed.success) update("replyMode", parsed.data);
-        }}
-       >
-        <SelectTrigger id="conversation-reply-mode" width="full">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {aiConversationReplyModeSchema.options.map((value) => (
-          <SelectItem key={value} value={value}>
-           {replyModeLabels[value]}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
-      </div>
-
-      <div className="grid gap-2 md:col-span-2">
-       <Label htmlFor="conversation-interests" weight="semibold">
-        Chủ đề muốn nói
-       </Label>
-       <Textarea
-        id="conversation-interests"
-        value={profile.interests}
-        onChange={(event) => update("interests", event.target.value.slice(0, 300))}
-        maxLength={300}
-        rows={3}
-        placeholder="Ví dụ: cuộc sống ở Trung Quốc, phim, công việc, đi ăn, du lịch…"
-       />
-      </div>
-
-      <div className="grid gap-2 md:col-span-2">
-       <Label htmlFor="conversation-character" weight="semibold">
-        Tính cách / cách nói
-       </Label>
-       <Textarea
-        id="conversation-character"
-        value={profile.characterNotes}
-        onChange={(event) => update("characterNotes", event.target.value.slice(0, 600))}
-        maxLength={600}
-        rows={3}
-        placeholder="Ví dụ: nói như bạn cùng tuổi, thỉnh thoảng dùng khẩu ngữ phổ biến nhưng không lạm dụng slang."
-       />
-      </div>
-
-      <div className="grid gap-2 md:col-span-2">
-       <Label htmlFor="conversation-memory" weight="semibold">
-        Điều cần nhớ lâu dài
-       </Label>
-       <Textarea
-        id="conversation-memory"
-        value={profile.memoryNotes}
-        onChange={(event) => update("memoryNotes", event.target.value.slice(0, 1200))}
-        maxLength={1200}
-        rows={4}
-        placeholder="Ví dụ: Tôi học khoảng HSK4, yếu trật tự từ và dịch Việt → Trung; ưu tiên 普通话 tại Trung Quốc đại lục."
-       />
-       <Typography variant="caption" tone="muted">
-        Phần này được gửi lại ở mỗi lượt nên vẫn giữ được các thông tin cốt lõi khi đoạn chat dài.
-       </Typography>
-      </div>
-     </div>
-    </DialogBody>
-    <DialogFooter>
-     <Button type="button" variant="ghost" onClick={onReset}>
-      <RotateCcw data-icon="inline-start" />
-      Mặc định
-     </Button>
-     <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
-      Hủy
-     </Button>
-     <Button type="button" onClick={onSave} disabled={!profile.displayName.trim()}>
-      Lưu thiết lập
-     </Button>
-    </DialogFooter>
+     </DialogBody>
+     <DialogFooter>
+      <Button
+       type="button"
+       variant="ghost"
+       onClick={() => form.reset(DEFAULT_AI_CONVERSATION_PROFILE)}
+      >
+       <RotateCcw data-icon="inline-start" />
+       Mặc định
+      </Button>
+      <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+       Hủy
+      </Button>
+      <Button type="submit">Lưu thiết lập</Button>
+     </DialogFooter>
+    </form>
    </DialogContent>
   </Dialog>
  );
