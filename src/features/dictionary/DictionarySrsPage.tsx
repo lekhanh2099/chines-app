@@ -1,6 +1,5 @@
 import { BookOpen, Search, Sparkles } from "lucide-react";
-import Link from "next/link";
-import { redirect } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { z } from "zod";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -12,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { PageHeader } from "@/components/ui/page-header";
 import { Typography } from "@/components/ui/typography";
+import { Link, redirect } from "@/i18n/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { parseErrorLike, type ErrorInput } from "@/types/error";
 import type { JsonFieldValue } from "@/types/json";
@@ -168,28 +168,30 @@ function buildSavedItems({
  });
 }
 
-function matchesQuery(item: SavedVocabItem, query: string) {
+function matchesQuery(item: SavedVocabItem, query: string, locale: string) {
  if (!query) return true;
  const haystack = [item.hanzi, item.pinyin, item.hanViet, item.meaning, item.note].join(" ");
- return haystack.toLocaleLowerCase("vi-VN").includes(query);
+ return haystack.toLocaleLowerCase(locale).includes(query);
 }
 
-function getLevelLabel(level: number) {
- if (level <= 0) return "Mới";
- if (level <= 2) return "Đang ôn";
- if (level <= 4) return "Tốt";
- return "Thuần thục";
+function getLevelKey(level: number) {
+ if (level <= 0) return "levels.new" as const;
+ if (level <= 2) return "levels.reviewing" as const;
+ if (level <= 4) return "levels.good" as const;
+ return "levels.mastered" as const;
 }
 
 export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps) {
+ const locale = await getLocale();
+ const t = await getTranslations("Dictionary.srs");
  const resolvedSearchParams = await searchParams;
- const query = (resolvedSearchParams?.q ?? "").trim().toLocaleLowerCase("vi-VN");
+ const query = (resolvedSearchParams?.q ?? "").trim().toLocaleLowerCase(locale);
  const supabase = await createClient();
  const {
   data: { user },
  } = await supabase.auth.getUser();
 
- if (!user) redirect("/login");
+ if (!user) redirect({ href: "/login", locale });
 
  let progressRows: ProgressRow[] = [];
  let missingSchema = false;
@@ -258,26 +260,26 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
   return parsed.success ? [parsed.data] : [];
  });
  const savedItems = buildSavedItems({ progressRows, vocabRows, dictionaryRows }).filter((item) =>
-  matchesQuery(item, query),
+  matchesQuery(item, query, locale),
  );
 
  return (
   <PageContainer>
    <main className="grid w-full min-w-0 gap-5">
     <PageHeader
-     eyebrow="SRS từ vựng"
-     title="Kho ôn tập từ đã lưu"
-     description="Tìm lại những từ đã lưu từ từ điển hoặc inspector và mở thẳng vào mục cần ôn."
+     eyebrow={t("eyebrow")}
+     title={t("title")}
+     description={t("description")}
      meta={
       <Typography variant="caption" tone="muted" weight="bold">
-       {savedItems.length} từ đang hiển thị
+       {t("showing", { count: savedItems.length })}
       </Typography>
      }
      actions={
       <Button asChild variant="outline" size="toolbar">
        <Link href="/vocab">
         <BookOpen data-icon="inline-start" />
-        Tổng hợp từ
+        {t("allVocab")}
        </Link>
       </Button>
      }
@@ -290,14 +292,14 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
        <Input
         name="q"
         defaultValue={resolvedSearchParams?.q ?? ""}
-        aria-label="Tìm trong kho ôn tập từ vựng"
-        placeholder="Tìm Hán tự, pinyin, Hán Việt, nghĩa..."
+        aria-label={t("searchAria")}
+        placeholder={t("searchPlaceholder")}
         density="compact"
         adornment="start"
        />
       </div>
       <Button type="submit" size="toolbar">
-       Tìm
+       {t("search")}
       </Button>
      </form>
     </Card>
@@ -305,8 +307,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
     {missingSchema ? (
      <Card variant="subtle" padding="md">
       <Typography as="p" variant="bodySmall" tone="warning" weight="bold">
-       Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho `user_vocab_progress`
-       trước khi route này có dữ liệu.
+       {t("missingSchema")}
       </Typography>
      </Card>
     ) : null}
@@ -316,17 +317,13 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
       surface="subtle"
       size="spacious"
       icon={<Sparkles />}
-      title={query ? "Không tìm thấy từ phù hợp" : "Chưa có từ trong SRS"}
-      description={
-       query
-        ? "Thử một từ khóa khác hoặc xóa nội dung tìm kiếm."
-        : "Mở một từ ở từ điển rồi bấm “Lưu vào SRS” để thêm vào kho ôn."
-      }
+      title={query ? t("emptySearchTitle") : t("emptyTitle")}
+      description={query ? t("emptySearchDescription") : t("emptyDescription")}
      />
     ) : null}
 
     {savedItems.length > 0 ? (
-     <section className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3" aria-label="Từ đã lưu">
+     <section className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3" aria-label={t("savedWordsAria")}>
       {savedItems.map((item) => (
        <Card
         key={`${item.id}:${item.dictionaryId ?? "legacy"}`}
@@ -347,10 +344,10 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
             {item.hanzi}
            </LearnerHanziText>
            <Typography as="p" tone="accent" weight="black" clamp="one">
-            {item.pinyin || "Chưa có pinyin"}
+            {item.pinyin || t("missingPinyin")}
            </Typography>
           </div>
-          <Badge variant={item.saved ? "success" : "default"}>{getLevelLabel(item.level)}</Badge>
+          <Badge variant={item.saved ? "success" : "default"}>{t(getLevelKey(item.level))}</Badge>
          </div>
 
          <div className="grid gap-1">
@@ -360,7 +357,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
            </Typography>
           ) : null}
           <Typography as="p" variant="bodySmall" tone="secondary" weight="semibold" clamp="two">
-           {item.meaning || "Chưa có nghĩa phù hợp"}
+           {item.meaning || t("missingMeaning")}
           </Typography>
           {item.note ? (
            <Card variant="subtle" padding="sm">

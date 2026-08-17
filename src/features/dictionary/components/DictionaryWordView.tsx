@@ -1,11 +1,17 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
+
 import { PageContainer } from "@/components/layout/page-container";
+import { SectionHeader } from "@/components/layout/section-header";
 import { EmptyState } from "@/components/patterns/empty-state";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
 import { DictionaryCharacterSidebar } from "@/features/dictionary/components/DictionaryCharacterSidebar";
+import { DictionaryWordSkeleton } from "@/features/dictionary/components/DictionarySkeletons";
 import {
  DictionaryDocStructureSection,
  DictionaryHeroSection,
@@ -13,31 +19,27 @@ import {
  DictionaryRelatedSection,
 } from "@/features/dictionary/components/DictionaryWordSections";
 import type { DictionaryWordViewModel } from "@/features/dictionary/types";
-import { Card } from "@/components/ui/card";
-import { SectionHeader } from "@/components/layout/section-header";
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
-import { DictionaryWordSkeleton } from "@/features/dictionary/components/DictionarySkeletons";
+import { Link } from "@/i18n/navigation";
 
 type DictionaryWordViewProps = {
  viewModel: DictionaryWordViewModel;
 };
 
 function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
- if (viewModel.state === "loading") {
-  return <DictionaryWordSkeleton />;
- }
+ const t = useTranslations("Dictionary.word");
+
+ if (viewModel.state === "loading") return <DictionaryWordSkeleton />;
 
  if (viewModel.state === "not-found") {
   return (
    <PageContainer>
     <div className="flex h-full items-center justify-center">
      <EmptyState
-      title="Không tìm thấy từ vựng"
-      description="Từ này chưa có trong dữ liệu hiện tại."
+      title={t("notFoundTitle")}
+      description={t("notFoundDescription")}
       actions={
        <Button asChild variant="outline">
-        <Link href="/hanzihome">Quay về HanziHome</Link>
+        <Link href="/hanzihome">{t("backHome")}</Link>
        </Button>
       }
      />
@@ -53,7 +55,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <Button asChild variant="outline" size="toolbar">
       <Link href="/hanzihome">
        <ArrowLeft data-icon="inline-start" />
-       HanziHome
+       {t("home")}
       </Link>
      </Button>
 
@@ -62,14 +64,14 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
       size="toolbar"
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
-      title="Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import"
+      title={t("supplementTitle")}
      >
       {viewModel.isAiLoading ? (
        <Spinner data-icon="inline-start" />
       ) : (
        <Sparkles data-icon="inline-start" />
       )}
-      Bổ sung phần thiếu
+      {t("supplement")}
      </Button>
     </div>
 
@@ -81,7 +83,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
       {viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion ? (
        <Card variant="subtle" padding="md">
         <div className="flex flex-col gap-2">
-         <SectionHeader title="Dễ nhầm" />
+         <SectionHeader title={t("confusion")} />
          <Typography as="p" tone="danger" leading="relaxed">
           {viewModel.ai?.confusion || viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes}
          </Typography>

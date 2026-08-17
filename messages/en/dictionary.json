@@ -1,0 +1,129 @@
+{
+ "srs": {
+  "eyebrow": "Vocabulary SRS",
+  "title": "Saved vocabulary review",
+  "description": "Find words saved from the dictionary or Inspector and jump directly to the item you want to review.",
+  "showing": "{count, plural, one {# word shown} other {# words shown}}",
+  "allVocab": "All vocabulary",
+  "searchAria": "Search saved vocabulary",
+  "searchPlaceholder": "Search Hanzi, pinyin, Sino-Vietnamese, meaning...",
+  "search": "Search",
+  "missingSchema": "The current database does not contain the vocabulary SRS table. Apply the `user_vocab_progress` migration before this route can display data.",
+  "emptySearchTitle": "No matching words",
+  "emptySearchDescription": "Try another search term or clear the search field.",
+  "emptyTitle": "No words in SRS yet",
+  "emptyDescription": "Open a dictionary entry and choose “Save to SRS” to add it to your review library.",
+  "savedWordsAria": "Saved words",
+  "missingPinyin": "No pinyin available",
+  "missingMeaning": "No suitable meaning available",
+  "levels": {"new": "New", "reviewing": "Reviewing", "good": "Good", "mastered": "Mastered"}
+ },
+ "word": {
+  "notFoundTitle": "Vocabulary entry not found",
+  "notFoundDescription": "This word is not available in the current data.",
+  "backHome": "Back to HanziHome",
+  "home": "HanziHome",
+  "supplementTitle": "Only fill missing sections; never overwrite imported data",
+  "supplement": "Fill missing sections",
+  "confusion": "Common confusion",
+  "speak": "Read word",
+  "stopSpeak": "Stop pronunciation",
+  "saved": "Saved",
+  "saveSrs": "Save to SRS",
+  "docsTitle": "Structured study view",
+  "docsDescription": "Keep the seven-part structure for deeper study, examples, and confusion checks.",
+  "sections": {
+   "hanViet": "Sino-Vietnamese & Vietnamese connections",
+   "hanVietLabel": "Sino-Vietnamese:",
+   "meaningLabel": "Meaning:",
+   "decomposition": "Character decomposition",
+   "comparisons": "Near-synonym comparison",
+   "collocations": "Fixed collocations",
+   "examples": "Examples",
+   "culture": "Chinese–Vietnamese / culture",
+   "usage": "Usage notes"
+  },
+  "missing": {
+   "detailMeaning": "No detailed meaning yet.",
+   "decomposition": "No decomposition yet.",
+   "culture": "No cultural note yet.",
+   "usage": "No specific usage note yet.",
+   "section": "No data for this section yet.",
+   "meaning": "No meaning data to display yet.",
+   "related": "No related-word data yet.",
+   "wordMeaning": "No meaning available."
+  },
+  "meaningSection": {
+   "title": "Definitions and examples",
+   "description": "Learn each meaning first and view its examples directly underneath.",
+   "count": "{count, plural, one {# meaning} other {# meanings}}",
+   "extraExamples": "More examples"
+  },
+  "related": {
+   "title": "Vocabulary connections",
+   "description": "Expand vocabulary through common compounds, synonyms, and antonyms.",
+   "count": "{count, plural, one {# item} other {# items}}",
+   "compounds": "Common compounds",
+   "compoundsEmpty": "No related compounds yet.",
+   "synonyms": "Synonyms",
+   "synonymsEmpty": "No basic synonyms yet.",
+   "antonyms": "Antonyms",
+   "antonymsEmpty": "No basic antonyms yet."
+  },
+  "insights": {
+   "title": "Memory aids and usage notes",
+   "description": "Focus on mnemonics, common traps, and usage logic.",
+   "decomposition": "Character decomposition",
+   "comparisons": "Near-synonym comparison",
+   "collocations": "Fixed collocations",
+   "culture": "Chinese–Vietnamese",
+   "usage": "Usage notes",
+   "usageNotes": "Word-use notes",
+   "coreLogic": "Core logic"
+  },
+  "personalNote": {
+   "title": "Personal note",
+   "description": "Save your own mnemonic, usage context, or points that are easy to confuse.",
+   "save": "Save note",
+   "placeholder": "Write your mnemonic, usage context, confusing points..."
+  },
+  "ai": {
+   "loading": "Analyzing detailed data...",
+   "emptyTitle": "No detailed analysis for this entry yet.",
+   "emptyDescription": "Use AI to add meanings, examples, and learning notes.",
+   "request": "Analyze with AI"
+  }
+ },
+ "sentence": {
+  "backHome": "HanziHome",
+  "title": "Sentence translation",
+  "description": "Understand the whole sentence first, then inspect individual Hanzi when needed.",
+  "pinyin": "Pinyin",
+  "translation": "Translation",
+  "translating": "Translating sentence",
+  "missingTranslation": "No translation is available for this sentence yet.",
+  "characters": "Inspect individual Hanzi",
+  "charactersDescription": "Each character opens its own dictionary page."
+ },
+ "sidebar": {
+  "loading": "Loading character structure",
+  "writing": "Character writing",
+  "writingDescription": "View stroke order and select individual characters in a word to practice them separately.",
+  "inspect": "Inspect separately",
+  "selectCharacter": "Choose a character to analyze",
+  "mnemonic": "Mnemonic",
+  "origin": "Origin",
+  "structureAria": "Character structure diagram",
+  "structure": "Character structure",
+  "result": "result",
+  "missingStructure": "No detailed structure data yet.",
+  "componentsAria": "Components",
+  "components": "Components",
+  "secondaryComponent": "Secondary component"
+ },
+ "writer": {
+  "correct": "Correct stroke writing!",
+  "strokes": "Stroke order",
+  "practice": "Practice writing"
+ }
+}

@@ -1,16 +1,18 @@
 import type { AppLocale } from "./config";
 
 async function loadViMessages() {
- const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor] = await Promise.all([
-  import("../../messages/vi/common.json"),
-  import("../../messages/vi/shell.json"),
-  import("../../messages/vi/auth.json"),
-  import("../../messages/vi/inspector.json"),
-  import("../../messages/vi/settings.json"),
-  import("../../messages/vi/notes.json"),
-  import("../../messages/vi/note-tabs.json"),
-  import("../../messages/vi/note-editor.json"),
- ]);
+ const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor, dictionary] =
+  await Promise.all([
+   import("../../messages/vi/common.json"),
+   import("../../messages/vi/shell.json"),
+   import("../../messages/vi/auth.json"),
+   import("../../messages/vi/inspector.json"),
+   import("../../messages/vi/settings.json"),
+   import("../../messages/vi/notes.json"),
+   import("../../messages/vi/note-tabs.json"),
+   import("../../messages/vi/note-editor.json"),
+   import("../../messages/vi/dictionary.json"),
+  ]);
 
  return {
   Common: common.default,
@@ -19,13 +21,14 @@ async function loadViMessages() {
   Inspector: inspector.default,
   Settings: settings.default,
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
+  Dictionary: dictionary.default,
  };
 }
 
 export type AppMessages = Awaited<ReturnType<typeof loadViMessages>>;
 
 async function loadEnMessages(): Promise<AppMessages> {
- const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor] =
+ const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor, dictionary] =
   await Promise.all([
    import("../../messages/en/common.json"),
    import("../../messages/en/shell.json"),
@@ -35,6 +38,7 @@ async function loadEnMessages(): Promise<AppMessages> {
    import("../../messages/en/notes.json"),
    import("../../messages/en/note-tabs.json"),
    import("../../messages/en/note-editor.json"),
+   import("../../messages/en/dictionary.json"),
   ]);
 
  return {
@@ -44,11 +48,12 @@ async function loadEnMessages(): Promise<AppMessages> {
   Inspector: inspector.default,
   Settings: settings.default,
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
+  Dictionary: dictionary.default,
  };
 }
 
 async function loadZhCnMessages(): Promise<AppMessages> {
- const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor] =
+ const [common, shell, auth, inspector, settings, notes, noteTabs, noteEditor, dictionary] =
   await Promise.all([
    import("../../messages/zh-CN/common.json"),
    import("../../messages/zh-CN/shell.json"),
@@ -58,6 +63,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
    import("../../messages/zh-CN/notes.json"),
    import("../../messages/zh-CN/note-tabs.json"),
    import("../../messages/zh-CN/note-editor.json"),
+   import("../../messages/zh-CN/dictionary.json"),
   ]);
 
  return {
@@ -67,6 +73,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Inspector: inspector.default,
   Settings: settings.default,
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
+  Dictionary: dictionary.default,
  };
 }
 

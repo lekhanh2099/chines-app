@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import {
  BookmarkPlus,
@@ -14,6 +13,7 @@ import {
  Volume2,
  VolumeOff,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -29,6 +29,7 @@ import { Typography } from "@/components/ui/typography";
 import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import type { DictionaryWordReadyViewModel, ExampleItem } from "@/features/dictionary/types";
 import { useTTS } from "@/hooks/useTTS";
+import { Link } from "@/i18n/navigation";
 import { getNormalizedRadicals } from "@/services/vocab.service";
 
 type DictionarySectionProps = {
@@ -36,6 +37,7 @@ type DictionarySectionProps = {
 };
 
 function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word");
  const { vocabData } = useVocabDetail(viewModel.selectedCharacter);
  const radicals = getNormalizedRadicals(vocabData?.ai_analysis);
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
@@ -59,7 +61,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
       <IconButton
        onClick={handleSpeak}
        disabled={isTTSLoading}
-       title={isSpeaking ? "Dừng phát âm" : "Đọc từ"}
+       title={isSpeaking ? t("stopSpeak") : t("speak")}
       >
        {isTTSLoading ? (
         <Loader2 className="animate-spin" />
@@ -154,7 +156,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
       ) : (
        <BookmarkPlus data-icon="inline-start" />
       )}
-      {viewModel.isSaved === true ? "Đã lưu" : "Lưu vào SRS"}
+      {viewModel.isSaved === true ? t("saved") : t("saveSrs")}
      </Button>
     </div>
    </div>
@@ -163,6 +165,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
 }
 
 function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word");
  const ai = viewModel.ai || {};
  const hanViet = ai.han_viet || ai.sino_vietnamese || viewModel.vocabData.sino_vietnamese || "";
  const meaningDetail =
@@ -173,18 +176,15 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
 
  return (
   <SectionWrapper>
-   <SectionHeader
-    title="Bản học theo file docs"
-    description="Giữ đúng 7 phần để học sâu, ôn ví dụ và tránh nhầm."
-   />
+   <SectionHeader title={t("docsTitle")} description={t("docsDescription")} />
 
    <div className="grid gap-3">
-    <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
+    <DocSection index={1} title={t("sections.hanViet")}>
      <div className="grid gap-2">
       {hanViet && (
        <Typography as="p" tone="secondary" leading="relaxed">
         <Typography as="span" tone="default" weight="bold">
-         Âm Hán Việt:
+         {t("sections.hanVietLabel")}
         </Typography>{" "}
         {hanViet}
        </Typography>
@@ -196,28 +196,36 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
       )}
       <Typography as="p" tone="secondary" leading="relaxed">
        <Typography as="span" tone="default" weight="bold">
-        Nghĩa:
+        {t("sections.meaningLabel")}
        </Typography>{" "}
-       {meaningDetail || "Chưa có nghĩa chi tiết."}
+       {meaningDetail || t("missing.detailMeaning")}
       </Typography>
      </div>
     </DocSection>
 
-    <DocSection index={2} title="Chiết tự">
+    <DocSection index={2} title={t("sections.decomposition")}>
      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-      {ai.decomposition || "Chưa có chiết tự."}
+      {ai.decomposition || t("missing.decomposition")}
      </Typography>
     </DocSection>
 
-    <DocSection index={3} title="So sánh từ gần nghĩa">
-     {ai.comparisons?.length ? <BulletList items={ai.comparisons} /> : <EmptyDocText />}
+    <DocSection index={3} title={t("sections.comparisons")}>
+     {ai.comparisons?.length ? (
+      <BulletList items={ai.comparisons} />
+     ) : (
+      <EmptyDocText text={t("missing.section")} />
+     )}
     </DocSection>
 
-    <DocSection index={4} title="Cụm từ cố định">
-     {ai.collocations?.length ? <CompactTextGrid items={ai.collocations} /> : <EmptyDocText />}
+    <DocSection index={4} title={t("sections.collocations")}>
+     {ai.collocations?.length ? (
+      <CompactTextGrid items={ai.collocations} />
+     ) : (
+      <EmptyDocText text={t("missing.section")} />
+     )}
     </DocSection>
 
-    <DocSection index={5} title="Ví dụ">
+    <DocSection index={5} title={t("sections.examples")}>
      {viewModel.extraExamples.length ? (
       <div className="grid gap-3">
        {viewModel.extraExamples.map((example, index) => (
@@ -225,19 +233,19 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
        ))}
       </div>
      ) : (
-      <EmptyDocText />
+      <EmptyDocText text={t("missing.section")} />
      )}
     </DocSection>
 
-    <DocSection index={6} title="Trung Việt / văn hóa">
+    <DocSection index={6} title={t("sections.culture")}>
      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-      {ai.cultural_note || "Chưa có ghi chú văn hóa."}
+      {ai.cultural_note || t("missing.culture")}
      </Typography>
     </DocSection>
 
-    <DocSection index={7} title="Lưu ý">
+    <DocSection index={7} title={t("sections.usage")}>
      <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
-      {ai.usage_note || "Chưa có lưu ý riêng."}
+      {ai.usage_note || t("missing.usage")}
      </Typography>
     </DocSection>
    </div>
@@ -245,15 +253,7 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
  );
 }
 
-function DocSection({
- index,
- title,
- children,
-}: {
- index: number;
- title: string;
- children: ReactNode;
-}) {
+function DocSection({ index, title, children }: { index: number; title: string; children: ReactNode }) {
  return (
   <Card variant="subtle" padding="md">
    <div className="flex flex-col gap-3">
@@ -278,23 +278,24 @@ function DocSection({
  );
 }
 
-function EmptyDocText() {
+function EmptyDocText({ text }: { text: string }) {
  return (
   <Typography as="p" tone="muted">
-   Chưa có dữ liệu cho phần này.
+   {text}
   </Typography>
  );
 }
 
 function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word");
  return (
   <SectionWrapper>
    <SectionHeader
-    title="Định nghĩa và ví dụ"
-    description="Học nghĩa trước, nhìn ví dụ ngay bên dưới từng nghĩa."
+    title={t("meaningSection.title")}
+    description={t("meaningSection.description")}
     trailing={
      viewModel.meaningItems.length > 0 ? (
-      <Badge size="sm">{viewModel.meaningItems.length} nghĩa</Badge>
+      <Badge size="sm">{t("meaningSection.count", { count: viewModel.meaningItems.length })}</Badge>
      ) : null
     }
    />
@@ -314,18 +315,13 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
            </Badge>
            {meaning.pos && <Badge size="sm">{meaning.pos}</Badge>}
           </div>
-
           <Typography as="p" tone="default" weight="semibold" leading="relaxed">
            {meaning.meaning}
           </Typography>
-
           {meaning.examples.length > 0 && (
            <div className="flex flex-col gap-2 border-l border-accent/20 pl-3">
             {meaning.examples.map((example, exampleIndex) => (
-             <ExampleRow
-              key={`${example.zh}-${example.pinyin}-${exampleIndex}`}
-              example={example}
-             />
+             <ExampleRow key={`${example.zh}-${example.pinyin}-${exampleIndex}`} example={example} />
             ))}
            </div>
           )}
@@ -336,14 +332,14 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
      ) : (
       <Card variant="subtle" padding="md">
        <Typography as="p" tone="muted">
-        Chưa có dữ liệu nghĩa để hiển thị.
+        {t("missing.meaning")}
        </Typography>
       </Card>
      )}
 
      {viewModel.extraExamples.length > 0 && (
       <div className="flex flex-col gap-2">
-       <SectionHeader title="Ví dụ mở rộng" />
+       <SectionHeader title={t("meaningSection.extraExamples")} />
        <div className="grid gap-3">
         {viewModel.extraExamples.slice(0, 8).map((example, index) => (
          <ExampleCard key={`${example.zh}-${example.pinyin}-extra-${index}`} example={example} />
@@ -360,48 +356,44 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
 }
 
 function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word");
  const hasAnyRelation =
-  viewModel.relatedCompounds.length > 0 ||
-  viewModel.synonyms.length > 0 ||
-  viewModel.antonyms.length > 0;
+  viewModel.relatedCompounds.length > 0 || viewModel.synonyms.length > 0 || viewModel.antonyms.length > 0;
+ const count = viewModel.relatedCompounds.length + viewModel.synonyms.length + viewModel.antonyms.length;
 
  return (
   <SectionWrapper>
    <SectionHeader
-    title="Liên hệ từ vựng"
-    description="Mở rộng vốn từ qua từ ghép, đồng nghĩa và trái nghĩa cơ bản."
-    trailing={
-     hasAnyRelation ? (
-      <Badge size="sm">
-       {viewModel.relatedCompounds.length + viewModel.synonyms.length + viewModel.antonyms.length}{" "}
-       mục
-      </Badge>
-     ) : null
-    }
+    title={t("related.title")}
+    description={t("related.description")}
+    trailing={hasAnyRelation ? <Badge size="sm">{t("related.count", { count })}</Badge> : null}
    />
 
    {hasAnyRelation ? (
     <div className="flex flex-col gap-4">
      <WordRelationGrid
-      title="Từ ghép thông dụng"
+      title={t("related.compounds")}
       items={viewModel.relatedCompounds}
-      emptyText="Chưa có từ ghép liên quan."
+      emptyText={t("related.compoundsEmpty")}
+      missingMeaning={t("missing.wordMeaning")}
      />
      <WordRelationGrid
-      title="Đồng nghĩa"
+      title={t("related.synonyms")}
       items={viewModel.synonyms}
-      emptyText="Chưa có từ đồng nghĩa cơ bản."
+      emptyText={t("related.synonymsEmpty")}
+      missingMeaning={t("missing.wordMeaning")}
      />
      <WordRelationGrid
-      title="Trái nghĩa"
+      title={t("related.antonyms")}
       items={viewModel.antonyms}
-      emptyText="Chưa có từ trái nghĩa cơ bản."
+      emptyText={t("related.antonymsEmpty")}
+      missingMeaning={t("missing.wordMeaning")}
      />
     </div>
    ) : (
     <Card variant="subtle" padding="md">
      <Typography as="p" tone="muted">
-      Chưa có dữ liệu từ liên quan.
+      {t("missing.related")}
      </Typography>
     </Card>
    )}
@@ -410,62 +402,53 @@ function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
 }
 
 function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word");
  if (!viewModel.hasLearningInsights) return null;
 
  return (
   <SectionWrapper>
-   <SectionHeader
-    title="Gợi nhớ và lưu ý"
-    description="Tập trung vào mẹo nhớ, lỗi dễ nhầm và logic sử dụng."
-   />
-
+   <SectionHeader title={t("insights.title")} description={t("insights.description")} />
    <div className="grid gap-3">
     {viewModel.ai?.decomposition && (
-     <InsightSection title="Chiết tự" icon={<Layers3 />}>
+     <InsightSection title={t("insights.decomposition")} icon={<Layers3 />}>
       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
        {viewModel.ai.decomposition}
       </Typography>
      </InsightSection>
     )}
-
     {viewModel.ai?.comparisons && viewModel.ai.comparisons.length > 0 && (
-     <InsightSection title="So sánh từ gần nghĩa" icon={<ListChecks />}>
+     <InsightSection title={t("insights.comparisons")} icon={<ListChecks />}>
       <BulletList items={viewModel.ai.comparisons} />
      </InsightSection>
     )}
-
     {viewModel.ai?.collocations && viewModel.ai.collocations.length > 0 && (
-     <InsightSection title="Cụm từ cố định">
+     <InsightSection title={t("insights.collocations")}>
       <CompactTextGrid items={viewModel.ai.collocations} />
      </InsightSection>
     )}
-
     {viewModel.ai?.cultural_note && (
-     <InsightSection title="Trung Việt" icon={<Globe2 />}>
+     <InsightSection title={t("insights.culture")} icon={<Globe2 />}>
       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
        {viewModel.ai.cultural_note}
       </Typography>
      </InsightSection>
     )}
-
     {viewModel.ai?.usage_note && (
-     <InsightSection title="Lưu ý">
+     <InsightSection title={t("insights.usage")}>
       <Typography as="p" tone="secondary" leading="relaxed" wrapping="preLine">
        {viewModel.ai.usage_note}
       </Typography>
      </InsightSection>
     )}
-
     {viewModel.ai?.notes && (
-     <InsightSection title="Ghi chú dùng từ">
+     <InsightSection title={t("insights.usageNotes")}>
       <Typography as="p" tone="secondary" leading="relaxed">
        {viewModel.ai.notes}
       </Typography>
      </InsightSection>
     )}
-
     {viewModel.ai?.usage_logic && viewModel.ai.usage_logic.length > 0 && (
-     <InsightSection title="Tư duy cốt lõi">
+     <InsightSection title={t("insights.coreLogic")}>
       <BulletList items={viewModel.ai.usage_logic} />
      </InsightSection>
     )}
@@ -474,15 +457,7 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
  );
 }
 
-function InsightSection({
- title,
- icon,
- children,
-}: {
- title: string;
- icon?: ReactNode;
- children: ReactNode;
-}) {
+function InsightSection({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
  return (
   <Card variant="subtle" padding="md">
    <div className="grid gap-2">
@@ -494,13 +469,14 @@ function InsightSection({
 }
 
 function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
+ const t = useTranslations("Dictionary.word.personalNote");
  const [note, setNote] = useState(viewModel.savedPersonalNote);
 
  return (
   <SectionWrapper>
    <SectionHeader
-    title="Ghi chú cá nhân"
-    description="Lưu cách nhớ, ngữ cảnh dùng hoặc điểm dễ nhầm của riêng anh."
+    title={t("title")}
+    description={t("description")}
     trailing={
      <Button
       variant="outline"
@@ -508,20 +484,15 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
       onClick={() => viewModel.handleSavePersonalNote(note)}
       disabled={viewModel.isSaving}
      >
-      {viewModel.isSaving ? (
-       <Spinner data-icon="inline-start" />
-      ) : (
-       <Save data-icon="inline-start" />
-      )}
-      Lưu note
+      {viewModel.isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+      {t("save")}
      </Button>
     }
    />
-
    <Textarea
     value={note}
     onChange={(event) => setNote(event.target.value)}
-    placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
+    placeholder={t("placeholder")}
     density="comfortable"
    />
   </SectionWrapper>
@@ -531,34 +502,22 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
 function ExampleRow({ example }: { example: ExampleItem }) {
  return (
   <div className="flex flex-col gap-1">
-   <LearnerHanziText as="p" weight="medium">
-    {example.zh}
-   </LearnerHanziText>
+   <LearnerHanziText as="p" weight="medium">{example.zh}</LearnerHanziText>
    {example.pinyin && (
-    <Typography as="p" variant="caption" tone="accent" weight="semibold">
-     {example.pinyin}
-    </Typography>
+    <Typography as="p" variant="caption" tone="accent" weight="semibold">{example.pinyin}</Typography>
    )}
    {example.vi && (
-    <Typography as="p" variant="caption" tone="muted" emphasis="italic">
-     {example.vi}
-    </Typography>
+    <Typography as="p" variant="caption" tone="muted" emphasis="italic">{example.vi}</Typography>
    )}
    {example.note && (
-    <Typography as="p" variant="caption" tone="secondary" leading="relaxed">
-     → {example.note}
-    </Typography>
+    <Typography as="p" variant="caption" tone="secondary" leading="relaxed">→ {example.note}</Typography>
    )}
   </div>
  );
 }
 
 function ExampleCard({ example }: { example: ExampleItem }) {
- return (
-  <Card variant="subtle" padding="md">
-   <ExampleRow example={example} />
-  </Card>
- );
+ return <Card variant="subtle" padding="md"><ExampleRow example={example} /></Card>;
 }
 
 function BulletList({ items }: { items: string[] }) {
@@ -566,12 +525,8 @@ function BulletList({ items }: { items: string[] }) {
   <div className="grid gap-2">
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
-     <Typography as="span" tone="accent" aria-hidden="true">
-      •
-     </Typography>
-     <Typography as="span" tone="secondary" leading="relaxed">
-      {item}
-     </Typography>
+     <Typography as="span" tone="accent" aria-hidden="true">•</Typography>
+     <Typography as="span" tone="secondary" leading="relaxed">{item}</Typography>
     </div>
    ))}
   </div>
@@ -582,9 +537,7 @@ function CompactTextGrid({ items }: { items: string[] }) {
  return (
   <div className="grid gap-2 md:grid-cols-2">
    {items.map((item, index) => (
-    <Typography key={`${item}-${index}`} as="p" tone="secondary" weight="semibold">
-     {item}
-    </Typography>
+    <Typography key={`${item}-${index}`} as="p" tone="secondary" weight="semibold">{item}</Typography>
    ))}
   </div>
  );
@@ -594,47 +547,32 @@ function WordRelationGrid({
  title,
  items,
  emptyText,
+ missingMeaning,
 }: {
  title: string;
  items: Array<{ word?: string; pinyin?: string; meaning?: string }>;
  emptyText: string;
+ missingMeaning: string;
 }) {
  return (
   <div className="flex flex-col gap-2">
-   <SectionHeader
-    title={title}
-    trailing={items.length > 0 ? <Badge size="sm">{items.length}</Badge> : null}
-   />
-
+   <SectionHeader title={title} trailing={items.length > 0 ? <Badge size="sm">{items.length}</Badge> : null} />
    {items.length > 0 ? (
     <div className="grid gap-3 md:grid-cols-2">
      {items.map((item, index) => {
       const word = item.word?.trim();
       if (!word) return null;
-
       return (
-       <Card
-        key={`${title}-${word}-${index}`}
-        asChild
-        variant="interactive"
-        padding="md"
-        className="h-full"
-       >
+       <Card key={`${title}-${word}-${index}`} asChild variant="interactive" padding="md" className="h-full">
         <Link href={`/dictionary/${encodeURIComponent(word)}`}>
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-           <LearnerHanziText as="p" weight="bold">
-            {word}
-           </LearnerHanziText>
+           <LearnerHanziText as="p" weight="bold">{word}</LearnerHanziText>
            {item.pinyin && (
-            <Typography as="span" variant="caption" tone="accent" weight="semibold">
-             {item.pinyin}
-            </Typography>
+            <Typography as="span" variant="caption" tone="accent" weight="semibold">{item.pinyin}</Typography>
            )}
           </div>
-          <Typography as="p" tone="secondary" leading="relaxed">
-           {item.meaning || "Chưa có nghĩa."}
-          </Typography>
+          <Typography as="p" tone="secondary" leading="relaxed">{item.meaning || missingMeaning}</Typography>
          </div>
         </Link>
        </Card>
@@ -642,23 +580,20 @@ function WordRelationGrid({
      })}
     </div>
    ) : (
-    <Typography as="p" tone="muted">
-     {emptyText}
-    </Typography>
+    <Typography as="p" tone="muted">{emptyText}</Typography>
    )}
   </div>
  );
 }
 
 function AiLoadingState() {
+ const t = useTranslations("Dictionary.word.ai");
  return (
   <Card variant="subtle" padding="md">
    <div className="grid gap-3">
     <div className="flex items-center gap-2">
      <Sparkles className="size-4 animate-pulse text-accent-text" />
-     <Typography as="p" variant="bodySmall" weight="bold">
-      Đang phân tích dữ liệu chuyên sâu...
-     </Typography>
+     <Typography as="p" variant="bodySmall" weight="bold">{t("loading")}</Typography>
     </div>
     <Separator />
     <div className="grid gap-2.5" aria-hidden="true">
@@ -672,21 +607,17 @@ function AiLoadingState() {
 }
 
 function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; loading: boolean }) {
+ const t = useTranslations("Dictionary.word.ai");
  return (
   <Card variant="subtle" padding="md">
    <div className="flex flex-col items-center gap-4 text-center">
     <div className="grid gap-2">
-     <Typography as="p" tone="default" weight="semibold">
-      Chưa có phân tích chuyên sâu cho mục này.
-     </Typography>
-     <Typography as="p" tone="muted">
-      Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.
-     </Typography>
+     <Typography as="p" tone="default" weight="semibold">{t("emptyTitle")}</Typography>
+     <Typography as="p" tone="muted">{t("emptyDescription")}</Typography>
     </div>
-
     <Button variant="outline" size="toolbar" onClick={onRequest} disabled={loading}>
      {loading ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
-     Phân tích bằng AI
+     {t("request")}
     </Button>
    </div>
   </Card>
