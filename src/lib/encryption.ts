@@ -25,9 +25,7 @@ function getSupabaseFallbackEncryptionKey(): Buffer | null {
  const secret = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
  if (!secret) return null;
 
- return createHash("sha256")
-  .update(`${FALLBACK_KEY_CONTEXT}\0${secret}`, "utf8")
-  .digest();
+ return createHash("sha256").update(`${FALLBACK_KEY_CONTEXT}\0${secret}`, "utf8").digest();
 }
 
 function getEncryptionKeys(): Buffer[] {

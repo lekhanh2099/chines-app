@@ -167,10 +167,7 @@ describe("/api/ai/conversation", () => {
    new Request("https://app.example/api/ai/conversation", {
     method: "POST",
     body: JSON.stringify(
-     requestBody(
-      [{ role: "user", content: "开始吧" }],
-      "22222222-2222-4222-8222-222222222222",
-     ),
+     requestBody([{ role: "user", content: "开始吧" }], "22222222-2222-4222-8222-222222222222"),
     ),
    }),
   );
@@ -199,10 +196,7 @@ describe("/api/ai/conversation", () => {
    new Request("https://app.example/api/ai/conversation", {
     method: "POST",
     body: JSON.stringify(
-     requestBody(
-      [{ role: "user", content: "你好" }],
-      "22222222-2222-4222-8222-222222222222",
-     ),
+     requestBody([{ role: "user", content: "你好" }], "22222222-2222-4222-8222-222222222222"),
     ),
    }),
   );

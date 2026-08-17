@@ -31,9 +31,7 @@ describe("system AI conversation", () => {
   );
   vi.stubGlobal("fetch", fetchMock);
 
-  const result = await generateSystemAiConversationReply([
-   { role: "user", content: "你好" },
-  ]);
+  const result = await generateSystemAiConversationReply([{ role: "user", content: "你好" }]);
 
   expect(result).toEqual({ data: "你好，我们继续练习吧。", error: null });
   expect(fetchMock).toHaveBeenCalledTimes(1);

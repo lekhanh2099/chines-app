@@ -43,10 +43,7 @@ import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema
 import { Link } from "@/i18n/navigation";
 import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
-import {
- fetchAiConversationRuntimeHealth,
- sendAiConversationMessage,
-} from "./ai-conversation-api";
+import { fetchAiConversationRuntimeHealth, sendAiConversationMessage } from "./ai-conversation-api";
 import {
  saveAiConversationProfile,
  useAiConversationProfile,
@@ -491,9 +488,7 @@ function PersonaSetupDialog({
        )}
       </form.AppField>
       <form.AppField name="learnerLevel">
-       {(field) => (
-        <field.Select label={t("setup.learnerLevel")} options={levelOptions} required />
-       )}
+       {(field) => <field.Select label={t("setup.learnerLevel")} options={levelOptions} required />}
       </form.AppField>
       <form.AppField name="correctionStyle">
        {(field) => (
@@ -502,7 +497,9 @@ function PersonaSetupDialog({
       </form.AppField>
       <div className="md:col-span-2">
        <form.AppField name="replyMode">
-        {(field) => <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />}
+        {(field) => (
+         <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />
+        )}
        </form.AppField>
       </div>
       <div className="md:col-span-2">

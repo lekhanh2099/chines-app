@@ -12,9 +12,10 @@ import {
 
 const endpoint = "/api/ai/conversation";
 
-export async function fetchAiConversationRuntimeHealth(
- options?: { apiKeyId?: string; signal?: AbortSignal },
-): Promise<AiConversationRuntimeHealth> {
+export async function fetchAiConversationRuntimeHealth(options?: {
+ apiKeyId?: string;
+ signal?: AbortSignal;
+}): Promise<AiConversationRuntimeHealth> {
  const response = await fetch(endpoint, {
   method: "POST",
   headers: { "Content-Type": "application/json", Accept: "application/json" },

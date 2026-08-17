@@ -12,11 +12,7 @@ describe("API key model discovery", () => {
  it("detects Groq and recommends the Chinese-focused compatible model", async () => {
   const fetchMock = vi.fn().mockResolvedValue(
    Response.json({
-    data: [
-     { id: "openai/gpt-oss-20b" },
-     { id: "qwen/qwen3.6-27b" },
-     { id: "whisper-large-v3" },
-    ],
+    data: [{ id: "openai/gpt-oss-20b" }, { id: "qwen/qwen3.6-27b" }, { id: "whisper-large-v3" }],
    }),
   );
   vi.stubGlobal("fetch", fetchMock);

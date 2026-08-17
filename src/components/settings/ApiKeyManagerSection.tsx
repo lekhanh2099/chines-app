@@ -119,8 +119,7 @@ export default function ApiKeyManagerSection() {
   .toSorted((left, right) => right.localeCompare(left))[0];
 
  const effectiveProvider =
-  discovery?.provider ??
-  (providerSelection === AUTO_API_KEY_PROVIDER ? null : providerSelection);
+  discovery?.provider ?? (providerSelection === AUTO_API_KEY_PROVIDER ? null : providerSelection);
  const selectedProviderOption = useMemo(
   () => API_KEY_PROVIDER_OPTIONS.find((option) => option.value === effectiveProvider) ?? null,
   [effectiveProvider],
@@ -130,7 +129,8 @@ export default function ApiKeyManagerSection() {
   const available = new Set(discovery.models);
   return getApiKeyModelOptions(discovery.provider).filter((option) => available.has(option.value));
  }, [discovery]);
- const selectedModelOption = discoveredModelOptions.find((option) => option.value === model) ?? null;
+ const selectedModelOption =
+  discoveredModelOptions.find((option) => option.value === model) ?? null;
  const formatDate = (value: string | null | undefined) =>
   value
    ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short" }).format(
@@ -491,9 +491,7 @@ export default function ApiKeyManagerSection() {
          disabled={!discovery || discoveredModelOptions.length === 0 || isDiscovering}
         >
          <SelectTrigger id="api-key-model" width="full">
-          <SelectValue
-           placeholder={discovery ? setupT("modelEmpty") : setupT("modelWaiting")}
-          />
+          <SelectValue placeholder={discovery ? setupT("modelEmpty") : setupT("modelWaiting")} />
          </SelectTrigger>
          <SelectContent align="start">
           {discoveredModelOptions.map((option) => (
@@ -506,7 +504,9 @@ export default function ApiKeyManagerSection() {
         </Select>
         <Typography as="p" variant="bodySmall" tone="muted">
          {selectedModelOption
-          ? t(getApiKeyModelDescriptionKey(discovery?.provider || "groq", selectedModelOption.value))
+          ? t(
+             getApiKeyModelDescriptionKey(discovery?.provider || "groq", selectedModelOption.value),
+            )
           : discovery
             ? setupT("modelHint")
             : setupT("modelWaiting")}
@@ -538,12 +538,7 @@ export default function ApiKeyManagerSection() {
        <Button
         onClick={() => void handleAddKey()}
         disabled={
-         !apiKey.trim() ||
-         !discovery ||
-         !model ||
-         isDiscovering ||
-         isSubmitting ||
-         !schemaReady
+         !apiKey.trim() || !discovery || !model || isDiscovering || isSubmitting || !schemaReady
         }
        >
         {isSubmitting ? (
@@ -711,7 +706,8 @@ export default function ApiKeyManagerSection() {
             <SelectValue />
            </SelectTrigger>
            <SelectContent align="start">
-            {key.defaultModel && !storedModelOptions.some((option) => option.value === key.defaultModel) ? (
+            {key.defaultModel &&
+            !storedModelOptions.some((option) => option.value === key.defaultModel) ? (
              <SelectItem value={key.defaultModel}>
               {key.defaultModel} ({t("ai.savedSuffix")})
              </SelectItem>

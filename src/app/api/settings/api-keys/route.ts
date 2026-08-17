@@ -24,10 +24,7 @@ import {
  updateUserApiKey,
 } from "@/services/user-api-keys.service";
 
-const RequestedProviderSchema = z.union([
- z.literal(AUTO_API_KEY_PROVIDER),
- ApiKeyProviderSchema,
-]);
+const RequestedProviderSchema = z.union([z.literal(AUTO_API_KEY_PROVIDER), ApiKeyProviderSchema]);
 
 const discoverKeySchema = z.strictObject({
  action: z.literal("discover"),
@@ -145,8 +142,7 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const requestedProvider: ApiKeyProviderSelection =
-  parsed.data.provider ?? AUTO_API_KEY_PROVIDER;
+ const requestedProvider: ApiKeyProviderSelection = parsed.data.provider ?? AUTO_API_KEY_PROVIDER;
  const discovery = await discoverApiKeyModels(
   parsed.data.apiKey,
   requestedProvider,
@@ -175,10 +171,7 @@ export async function POST(request: NextRequest) {
  });
 
  if (!created.key) {
-  return NextResponse.json(
-   { error: created.error || "Không thể lưu API key." },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: created.error || "Không thể lưu API key." }, { status: 500 });
  }
 
  return NextResponse.json({
@@ -221,18 +214,10 @@ export async function PATCH(request: NextRequest) {
  }
 
  if (parsed.data.action === "move") {
-  const keys = await moveUserApiKey(
-   supabase,
-   user.id,
-   parsed.data.keyId,
-   parsed.data.direction,
-  );
+  const keys = await moveUserApiKey(supabase, user.id, parsed.data.keyId, parsed.data.direction);
 
   if (!keys) {
-   return NextResponse.json(
-    { error: "Không thể cập nhật thứ tự key." },
-    { status: 500 },
-   );
+   return NextResponse.json({ error: "Không thể cập nhật thứ tự key." }, { status: 500 });
   }
 
   return NextResponse.json({
@@ -263,10 +248,7 @@ export async function PATCH(request: NextRequest) {
  });
 
  if (!updated) {
-  return NextResponse.json(
-   { error: "Không thể cập nhật API key." },
-   { status: 500 },
-  );
+  return NextResponse.json({ error: "Không thể cập nhật API key." }, { status: 500 });
  }
 
  return NextResponse.json({

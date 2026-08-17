@@ -18,7 +18,7 @@
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
   "format": "oxfmt --write .",
-  "format:check": "oxfmt --write . && git diff -- . ':!package.json' && exit 1",
+  "format:check": "oxfmt --check .",
   "start": "next start",
   "lint": "oxlint --deny-warnings .",
   "typecheck": "next typegen && tsc --noEmit",

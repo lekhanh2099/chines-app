@@ -12,9 +12,7 @@ import {
 import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
 
 const endpoint = "/api/settings/api-keys";
-type ApiKeyProviderInput = z.infer<
- z.ZodUnion<[typeof ApiKeyProviderSchema, z.ZodLiteral<"auto">]>
->;
+type ApiKeyProviderInput = z.infer<z.ZodUnion<[typeof ApiKeyProviderSchema, z.ZodLiteral<"auto">]>>;
 export const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
 
 async function requestApiKeys<T>(
@@ -25,18 +23,13 @@ async function requestApiKeys<T>(
  const response = await fetch(url, {
   credentials: "include",
   ...init,
-  headers: init?.body
-   ? { "Content-Type": "application/json", ...init.headers }
-   : init?.headers,
+  headers: init?.body ? { "Content-Type": "application/json", ...init.headers } : init?.headers,
  });
  const payload: JsonFieldValue = await response.json().catch(() => null);
 
  if (!response.ok) {
   const message =
-   payload &&
-   typeof payload === "object" &&
-   "error" in payload &&
-   typeof payload.error === "string"
+   payload && typeof payload === "object" && "error" in payload && typeof payload.error === "string"
     ? payload.error
     : "Yêu cầu API key thất bại.";
   throw new Error(message);
@@ -51,10 +44,7 @@ export function fetchManagedApiKeys() {
  return requestApiKeys(endpoint, apiKeysResponseSchema);
 }
 
-export function discoverManagedApiKey(input: {
- apiKey: string;
- provider: ApiKeyProviderInput;
-}) {
+export function discoverManagedApiKey(input: { apiKey: string; provider: ApiKeyProviderInput }) {
  return requestApiKeys(endpoint, discoverApiKeyResponseSchema, {
   method: "POST",
   body: JSON.stringify({ action: "discover", ...input }),

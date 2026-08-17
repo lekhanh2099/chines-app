@@ -44,9 +44,7 @@ export async function discoverApiKeyModels(
  abortSignal?: AbortSignal,
 ): Promise<ApiKeyDiscoveryResult> {
  const candidates =
-  providerSelection === AUTO_API_KEY_PROVIDER
-   ? getProviderCandidates(apiKey)
-   : [providerSelection];
+  providerSelection === AUTO_API_KEY_PROVIDER ? getProviderCandidates(apiKey) : [providerSelection];
  const errors: string[] = [];
 
  for (const provider of candidates) {
@@ -125,11 +123,7 @@ async function discoverProviderModels(
  }
 }
 
-function fetchProviderModels(
- apiKey: string,
- provider: ApiKeyProvider,
- abortSignal?: AbortSignal,
-) {
+function fetchProviderModels(apiKey: string, provider: ApiKeyProvider, abortSignal?: AbortSignal) {
  const signal = createRequestSignal(DISCOVERY_TIMEOUT_MS, abortSignal);
 
  if (provider === "gemini") {
@@ -167,11 +161,7 @@ async function parseLiveModels(response: Response, provider: ApiKeyProvider): Pr
 function getRecommendedModel(provider: ApiKeyProvider, models: string[]): string {
  const preferences: Record<ApiKeyProvider, readonly string[]> = {
   groq: ["qwen/qwen3.6-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b"],
-  gemini: [
-   "models/gemini-3.5-flash",
-   "models/gemini-2.5-flash",
-   "models/gemini-2.5-pro",
-  ],
+  gemini: ["models/gemini-3.5-flash", "models/gemini-2.5-flash", "models/gemini-2.5-pro"],
   deepseek: ["deepseek-v4-flash", "deepseek-v4-pro"],
   openai: ["gpt-5-mini", "gpt-5-nano", "gpt-4.1-mini", "gpt-4.1-nano"],
  };

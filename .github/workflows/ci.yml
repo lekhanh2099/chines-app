@@ -29,19 +29,7 @@ jobs:
 
    - run: npm install --global npm@11.6.1
    - run: npm ci
-   - run: npm run format
-   - uses: actions/upload-artifact@v4
-     with:
-      name: formatted-ai-files
-      path: |
-       src/app/api/ai/conversation/route.test.ts
-       src/app/api/settings/api-keys/route.ts
-       src/components/settings/ApiKeyManagerSection.tsx
-       src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx
-       src/features/hanzihome/ai-conversation/ai-conversation-api.ts
-       src/features/hanzihome/ai-conversation/ai-conversation-system.server.test.ts
-       src/features/settings/api-key-discovery.server.test.ts
-       src/features/settings/api-key-discovery.server.ts
-       src/features/settings/api-key-manager.client.ts
-       src/lib/encryption.ts
-   - run: git diff --exit-code
+   - run: npm run check
+     env:
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
