@@ -8,6 +8,6 @@ Read `AGENTS.md` before changing HanziHome code. Inspect the current data and re
 2. For edits, state the stable entity ID, owned fields, authorization check, parent relationship check, and invalidation scope.
 3. Add or update Zod boundary tests when an API/form contract changes.
 4. Add a timestamped Supabase migration for schema changes; never edit production schema only through the dashboard.
-5. Run `npm run check` and `npm run deps:check` before opening a pull request.
+5. Run the smallest targeted checks that can falsify the change, then run `npm run check` before merge/release work or when the change crosses a full-path boundary.
 
 Do not commit secrets, generated build output, raw production data, or app code that writes external static seed artifacts.
