@@ -15,6 +15,7 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
+import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -194,9 +195,9 @@ export function AiConversationWorkspace() {
    <Card variant="section" padding="md" className="grid min-w-0 gap-4">
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
      <div className="flex min-w-0 items-center gap-3">
-      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-subtle text-accent-text">
-       {profile.persona === "friend" ? <UserRound aria-hidden="true" /> : <Bot aria-hidden="true" />}
-      </div>
+      <IconTile tone="accent" size="md">
+       {profile.persona === "friend" ? <UserRound /> : <Bot />}
+      </IconTile>
       <div className="grid min-w-0 gap-1">
        <div className="flex flex-wrap items-center gap-2">
         <Typography as="h2" variant="sectionTitle" weight="bold">
@@ -244,7 +245,7 @@ export function AiConversationWorkspace() {
           : "max-w-[min(92%,46rem)] rounded-xl border border-border-default bg-bg-card px-3 py-2"
         }
        >
-        <Typography as="p" variant="bodySmall" className="whitespace-pre-wrap">
+        <Typography as="p" variant="bodySmall" wrapping="preWrap">
          {message.content}
         </Typography>
        </div>
