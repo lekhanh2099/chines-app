@@ -274,19 +274,21 @@ export function Sidebar() {
           <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
          </Button>
 
-         <div
-          id={`sidebar-group-${group.id}`}
-          hidden={!groupOpen}
-          className="ml-4 grid gap-1 border-l border-border-default pb-1 pl-2"
-         >
-          {group.items.map((item) => (
-           <NavRow
-            key={item.name}
-            item={item}
-            active={isActive(pathname, searchParams, item.href)}
-            collapsed={false}
-           />
-          ))}
+         <div className="grid gap-1 pl-4">
+          <div
+           id={`sidebar-group-${group.id}`}
+           hidden={!groupOpen}
+           className="grid gap-1 border-l border-border-default pb-1 pl-2"
+          >
+           {group.items.map((item) => (
+            <NavRow
+             key={item.name}
+             item={item}
+             active={isActive(pathname, searchParams, item.href)}
+             collapsed={false}
+            />
+           ))}
+          </div>
          </div>
         </section>
        );

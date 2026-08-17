@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
  BookOpen,
@@ -166,11 +166,7 @@ function ReaderResumePanel() {
   enabled: sessionQuery.data !== null && sessionQuery.data !== undefined,
   staleTime: 30_000,
  });
- const [now, setNow] = useState<number | null>(null);
-
- useEffect(() => {
-  setNow(Date.now());
- }, []);
+ const [now] = useState(() => Date.now());
 
  if (sessionQuery.isPending || !sessionQuery.data) return null;
  if (learningLoopQuery.isPending) {
@@ -191,8 +187,7 @@ function ReaderResumePanel() {
  }
 
  const items = learningLoopQuery.data;
- const dueCount =
-  now === null ? 0 : items.filter((item) => new Date(item.due_at).getTime() <= now).length;
+ const dueCount = items.filter((item) => new Date(item.due_at).getTime() <= now).length;
  const resumeItem = items.find((item) => item.kind === "reading_bookmark") ?? items[0] ?? null;
  if (resumeItem === null && dueCount === 0) return null;
 
