@@ -1,0 +1,5 @@
+{
+ "requests": "AI 调用次数",
+ "lastUsed": "最近使用",
+ "scope": "当前 usage 只记录本浏览器中成功的 AI 会话调用。不会估算费用或配额，因为价格和免费额度由各 provider 决定。"
+}
