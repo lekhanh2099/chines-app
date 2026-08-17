@@ -1,12 +1,11 @@
 "use client";
 
 import type { JsonFieldValue } from "@/types/json";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { LogOut, Mail, ShieldCheck } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { z } from "zod";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -17,9 +16,11 @@ import {
 } from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+import { useRouter } from "@/i18n/navigation";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 type ProfileSettingsMenuProps = {
- user?: z.infer<z.ZodNullable<z.ZodType<User>>>;
+ user?: User | null;
  focusModeEnabled: boolean;
 };
 
@@ -31,29 +32,38 @@ function readMetadataText(user: ProfileSettingsMenuProps["user"], keys: string[]
  return null;
 }
 
-function getProfile(user: ProfileSettingsMenuProps["user"]) {
- const email = user?.email ?? "Chưa có email";
- const emailName = user?.email?.split("@")[0] || "Bạn";
+function getProfile(
+ user: ProfileSettingsMenuProps["user"],
+ options: { missingEmail: string; defaultName: string; locale: string },
+) {
+ const email = user?.email ?? options.missingEmail;
+ const emailName = user?.email?.split("@")[0] || options.defaultName;
  const name = readMetadataText(user, ["full_name", "name", "display_name"]) ?? emailName;
  const avatarCandidate = readMetadataText(user, ["avatar_url", "picture"]);
  const avatarUrl = avatarCandidate?.startsWith("https://") ? avatarCandidate : null;
- const provider =
-  typeof user?.app_metadata?.provider === "string" ? user.app_metadata.provider : null;
+ const provider = typeof user?.app_metadata?.provider === "string" ? user.app_metadata.provider : null;
 
  return {
   name,
   email,
   avatarUrl,
-  initial: name.slice(0, 1).toLocaleUpperCase("vi-VN"),
+  initial: name.slice(0, 1).toLocaleUpperCase(options.locale),
   providerLabel: provider === "google" ? "Google" : provider === "email" ? "Email" : "Supabase",
  };
 }
 
 export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsMenuProps) {
  const router = useRouter();
+ const locale = useLocale();
+ const tCommon = useTranslations("Common");
+ const tShell = useTranslations("Shell");
  const [open, setOpen] = useState(false);
- const profile = getProfile(user);
- const [failedAvatarUrl, setFailedAvatarUrl] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
+ const profile = getProfile(user, {
+  missingEmail: tShell("profile.missingEmail"),
+  defaultName: tShell("profile.defaultName"),
+  locale,
+ });
+ const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
 
  const handleLogout = async () => {
@@ -62,12 +72,12 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
   const { error } = await supabase.auth.signOut();
 
   if (error) {
-   toast.error("Đăng xuất thất bại", { description: error.message });
+   toast.error(tShell("profile.logoutFailed"), { description: error.message });
    return;
   }
 
   setOpen(false);
-  toast.success("Đã đăng xuất");
+  toast.success(tShell("profile.logoutSuccess"));
   router.replace("/login");
   router.refresh();
  };
@@ -78,8 +88,8 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
     render={
      <Button variant={focusModeEnabled ? "warning" : "ghost"} size="icon" className="shrink-0" />
     }
-    aria-label="Mở hồ sơ"
-    title="Hồ sơ"
+    aria-label={tShell("profile.open")}
+    title={tShell("profile.title")}
    >
     <Avatar size="sm" tone={focusModeEnabled ? "neutral" : "accent"}>
      {showAvatar && profile.avatarUrl ? (
@@ -138,6 +148,13 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
        </Badge>
       </div>
 
+      <div className="grid gap-2 border-b border-border-default p-2">
+       <Typography variant="caption" tone="muted" weight="bold" className="px-1">
+        {tCommon("language")}
+       </Typography>
+       <LocaleSwitcher />
+      </div>
+
       <div className="p-2">
        <Button
         type="button"
@@ -148,7 +165,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
         onClick={handleLogout}
        >
         <LogOut data-icon="inline-start" />
-        Đăng xuất
+        {tCommon("actions.signOut")}
        </Button>
       </div>
      </BasePopoverPopup>

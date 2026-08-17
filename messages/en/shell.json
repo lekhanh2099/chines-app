@@ -1,0 +1,85 @@
+{
+ "navigation": {
+  "aria": {
+   "main": "Main navigation",
+   "quick": "Quick navigation",
+   "all": "All areas"
+  },
+  "groups": {
+   "learning": "Learn",
+   "practice": "Practice",
+   "competency": "Competency",
+   "personal": "Personal",
+   "system": "System"
+  },
+  "items": {
+   "home": "Home",
+   "lessons": "Lessons",
+   "reader": "Reading",
+   "dailyReading": "Daily reading",
+   "hskReading": "HSK reading",
+   "grammar": "Grammar",
+   "humanities": "Humanities & Translation",
+   "personalLearning": "Personal Learning",
+   "notebook": "Notebook",
+   "dictation": "Dictation",
+   "translationStudio": "Translation Studio",
+   "tts": "Text to speech",
+   "dictionary": "Vocabulary SRS",
+   "memoryTips": "Quick reminders",
+   "inspector": "Hanzi Inspector",
+   "conversation": "AI Conversation",
+   "learningLoop": "Learning Loop",
+   "dataQuality": "Data Quality",
+   "vocab": "Vocabulary library",
+   "radicals": "Radicals",
+   "notes": "Notes",
+   "htmlArtifacts": "HTML files",
+   "apiDocs": "API & integrations",
+   "settings": "Settings"
+  },
+  "sidebarLabel": "navigation sidebar",
+  "more": "More",
+  "openAll": "Open all navigation",
+  "sheetTitle": "Navigation"
+ },
+ "header": {
+  "search": "Search all of HanziHome",
+  "openSearch": "Open HanziHome search",
+  "quickSettings": "Quick settings",
+  "darkTheme": "Dark theme",
+  "pageLookup": "Look up words on this page",
+  "focusMode": "Focus mode",
+  "focusModeActive": "Focus mode is on",
+  "focusModeWarning": "Focus mode is on. You will stay in the current lesson and can only switch the open section or notes tab.",
+  "openAllSettings": "Open all settings"
+ },
+ "breadcrumbs": {
+  "study": "Learn",
+  "reader": "Study reader",
+  "notebook": "Notebook",
+  "dictionary": "Vocabulary SRS",
+  "settings": "Settings",
+  "radicals": "Radicals",
+  "hanzihome": "HanziHome",
+  "vocab": "Vocabulary library",
+  "vocabReview": "Vocabulary review",
+  "grammar": "Grammar library",
+  "memoryTips": "Quick reminders",
+  "htmlArtifacts": "HTML files",
+  "apiDocs": "API & integrations",
+  "notes": "Notes",
+  "sharedNote": "Shared note"
+ },
+ "profile": {
+  "open": "Open profile",
+  "title": "Profile",
+  "missingEmail": "No email available",
+  "defaultName": "You",
+  "logoutFailed": "Sign out failed",
+  "logoutSuccess": "Signed out"
+ },
+ "localeSwitcher": {
+  "label": "Change interface language"
+ }
+}

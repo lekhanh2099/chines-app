@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 
@@ -15,6 +15,7 @@ import {
 } from "@/features/hanzihome/search/searchNavigationStore";
 import type { HanziHomeSearchIndexItem } from "@/features/hanzihome/search/types";
 import { findLessonByRouteParam } from "@/features/hanzihome/utils/lesson-route";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { containsChinese } from "@/lib/chinese-utils";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { globalSearchStore } from "@/stores/global-search-store";

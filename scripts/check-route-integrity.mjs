@@ -33,7 +33,8 @@ function stripRouteGroup(segment) {
 
 export function routeFromAppEntrypoint(file) {
  const relative = path.relative(APP_ROOT, file).split(path.sep).join("/");
- const segments = relative.split("/").slice(0, -1).map(stripRouteGroup).filter(Boolean);
+ const rawSegments = relative.split("/").slice(0, -1).map(stripRouteGroup).filter(Boolean);
+ const segments = rawSegments[0] === "[locale]" ? rawSegments.slice(1) : rawSegments;
  return segments.length === 0 ? "/" : `/${segments.join("/")}`;
 }
 

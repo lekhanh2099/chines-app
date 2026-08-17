@@ -1,0 +1,15 @@
+{
+ "actions": {
+  "save": "Lưu",
+  "cancel": "Hủy",
+  "retry": "Thử lại",
+  "settings": "Cài đặt",
+  "signOut": "Đăng xuất"
+ },
+ "language": "Ngôn ngữ",
+ "locales": {
+  "vi": "Tiếng Việt",
+  "en": "English",
+  "zh-CN": "简体中文"
+ }
+}

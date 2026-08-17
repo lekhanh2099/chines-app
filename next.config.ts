@@ -1,4 +1,17 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+import { appLocales } from "./src/i18n/config";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+const legacyHanziHomeRedirects = [
+ ["/hanzihome/vocab/review", "/vocab/review"],
+ ["/hanzihome/vocab", "/vocab"],
+ ["/hanzihome/grammar", "/grammar"],
+ ["/hanzihome/memory-tips", "/memory-tips"],
+ ["/hanzihome/html-artifacts", "/html-artifacts"],
+] as const;
 
 const nextConfig: NextConfig = {
  devIndicators: false,
@@ -10,33 +23,20 @@ const nextConfig: NextConfig = {
  },
  async redirects() {
   return [
-   {
-    source: "/hanzihome/vocab/review",
-    destination: "/vocab/review",
+   ...legacyHanziHomeRedirects.map(([source, destination]) => ({
+    source,
+    destination,
     permanent: true,
-   },
-   {
-    source: "/hanzihome/vocab",
-    destination: "/vocab",
-    permanent: true,
-   },
-   {
-    source: "/hanzihome/grammar",
-    destination: "/grammar",
-    permanent: true,
-   },
-   {
-    source: "/hanzihome/memory-tips",
-    destination: "/memory-tips",
-    permanent: true,
-   },
-   {
-    source: "/hanzihome/html-artifacts",
-    destination: "/html-artifacts",
-    permanent: true,
-   },
+   })),
+   ...appLocales.flatMap((locale) =>
+    legacyHanziHomeRedirects.map(([source, destination]) => ({
+     source: `/${locale}${source}`,
+     destination: `/${locale}${destination}`,
+     permanent: true,
+    })),
+   ),
   ];
  },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

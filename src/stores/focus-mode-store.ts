@@ -2,6 +2,7 @@ import type { JsonFieldValue } from "@/types/json";
 import { createStore } from "@tanstack/react-store";
 import { z } from "zod";
 
+import { stripLocaleFromPathname } from "@/i18n/config";
 import {
  getBrowserStorage,
  readVersionedStorage,
@@ -58,8 +59,9 @@ export const focusModeStore = createStore<
  }),
 );
 
-export function getNoteIdFromNotesPath(pathname: string): z.infer<z.ZodNullable<z.ZodString>> {
- const match = pathname.match(/^\/notes\/([^/?#]+)/);
+export function getNoteIdFromNotesPath(pathname: string): string | null {
+ const logicalPathname = stripLocaleFromPathname(pathname);
+ const match = logicalPathname.match(/^\/notes\/([^/?#]+)/);
  return match?.[1] ? decodeURIComponent(match[1]) : null;
 }
 
@@ -74,18 +76,20 @@ export function isFocusNavigationAllowed({
 }) {
  const current = new URL(currentHref, window.location.origin);
  const target = new URL(targetHref, window.location.origin);
+ const currentPathname = stripLocaleFromPathname(current.pathname);
+ const targetPathname = stripLocaleFromPathname(target.pathname);
 
  if (current.origin !== target.origin) return false;
  if (current.href === target.href) return true;
 
- if (current.pathname.startsWith("/notes")) {
-  if (!target.pathname.startsWith("/notes")) return false;
-  const targetNoteId = getNoteIdFromNotesPath(target.pathname);
+ if (currentPathname.startsWith("/notes")) {
+  if (!targetPathname.startsWith("/notes")) return false;
+  const targetNoteId = getNoteIdFromNotesPath(targetPathname);
   return Boolean(targetNoteId && openNoteIds.includes(targetNoteId));
  }
 
- if (current.pathname === "/hanzihome") {
-  if (target.pathname !== "/hanzihome") return false;
+ if (currentPathname === "/hanzihome") {
+  if (targetPathname !== "/hanzihome") return false;
 
   const sameCourse = current.searchParams.get("courseId") === target.searchParams.get("courseId");
   const sameLesson =
@@ -95,5 +99,5 @@ export function isFocusNavigationAllowed({
   return sameCourse && sameLesson;
  }
 
- return current.pathname === target.pathname && current.search === target.search;
+ return currentPathname === targetPathname && current.search === target.search;
 }

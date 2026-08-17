@@ -2,12 +2,10 @@
 
 import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
-import Link from "next/link";
 import { type User } from "@supabase/supabase-js";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
-import { z } from "zod";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,6 +19,7 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/app-shell-store";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
@@ -40,17 +39,33 @@ import { FocusModeRouteGuard } from "./FocusModeRouteGuard";
 import { ProfileSettingsMenu } from "./ProfileSettingsMenu";
 import { type Theme, useTheme } from "./ThemeProvider";
 
+type BreadcrumbMessageKey =
+ | "breadcrumbs.study"
+ | "breadcrumbs.reader"
+ | "breadcrumbs.notebook"
+ | "breadcrumbs.dictionary"
+ | "breadcrumbs.settings"
+ | "breadcrumbs.radicals"
+ | "breadcrumbs.hanzihome"
+ | "breadcrumbs.vocab"
+ | "breadcrumbs.vocabReview"
+ | "breadcrumbs.grammar"
+ | "breadcrumbs.memoryTips"
+ | "breadcrumbs.htmlArtifacts"
+ | "breadcrumbs.apiDocs"
+ | "breadcrumbs.notes"
+ | "breadcrumbs.sharedNote";
+
 type SimpleHeaderBreadcrumb = {
- label: string;
+ labelKey: BreadcrumbMessageKey;
  parent?: {
-  label: string;
+  labelKey: BreadcrumbMessageKey;
   href: string;
  };
 };
 
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-
 export function Header() {
+ const t = useTranslations("Shell");
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const pathname = usePathname();
@@ -63,7 +78,7 @@ export function Header() {
  const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
  const supabase = useMemo(() => createClient(), []);
- const [user, setUser] = useState<Nullable<User>>(null);
+ const [user, setUser] = useState<User | null>(null);
  const simpleBreadcrumb = getSimpleHeaderBreadcrumb(pathname);
  const hasRouteToolbar = Boolean(headerToolbarContent || simpleBreadcrumb);
 
@@ -102,16 +117,14 @@ export function Header() {
      )}
     >
      {hasRouteToolbar ? (
-      <HeaderContextArea
-       toolbarContent={headerToolbarContent}
-       simpleBreadcrumb={simpleBreadcrumb}
-      />
+      <HeaderContextArea toolbarContent={headerToolbarContent} simpleBreadcrumb={simpleBreadcrumb} />
      ) : null}
 
      <HeaderSearchForm
       value={searchValue}
       routeToolbarActive={hasRouteToolbar}
       hidden={pathname === "/reader"}
+      searchLabel={t("header.search")}
       onSubmit={(event) => {
        event.preventDefault();
        globalSearchStore.actions.openSearch();
@@ -145,62 +158,73 @@ function HeaderContextArea({
  simpleBreadcrumb,
 }: {
  toolbarContent: ReactNode;
- simpleBreadcrumb: Nullable<SimpleHeaderBreadcrumb>;
+ simpleBreadcrumb: SimpleHeaderBreadcrumb | null;
 }) {
  if (toolbarContent) {
-  return (
-   <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">
-    {toolbarContent}
-   </div>
-  );
+  return <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">{toolbarContent}</div>;
  }
 
  if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
-
  return <div className="min-w-0" />;
 }
 
 function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcrumb }) {
+ const t = useTranslations("Shell");
+ const label = t(breadcrumb.labelKey);
+
  return (
   <AppHeaderBreadcrumb className="hidden min-w-0 md:inline-flex">
    {breadcrumb.parent ? (
     <>
      <AppHeaderBreadcrumbItem>
-      <AppHeaderBreadcrumbLink href={breadcrumb.parent.href} title={breadcrumb.parent.label}>
-       {breadcrumb.parent.label}
+      <AppHeaderBreadcrumbLink
+       href={breadcrumb.parent.href}
+       title={t(breadcrumb.parent.labelKey)}
+      >
+       {t(breadcrumb.parent.labelKey)}
       </AppHeaderBreadcrumbLink>
      </AppHeaderBreadcrumbItem>
      <AppHeaderBreadcrumbSeparator />
     </>
    ) : null}
    <AppHeaderBreadcrumbItem className="min-w-0">
-    <AppHeaderBreadcrumbPage title={breadcrumb.label}>{breadcrumb.label}</AppHeaderBreadcrumbPage>
+    <AppHeaderBreadcrumbPage title={label}>{label}</AppHeaderBreadcrumbPage>
    </AppHeaderBreadcrumbItem>
   </AppHeaderBreadcrumb>
  );
 }
 
-function getSimpleHeaderBreadcrumb(pathname: string): Nullable<SimpleHeaderBreadcrumb> {
+function getSimpleHeaderBreadcrumb(pathname: string): SimpleHeaderBreadcrumb | null {
  if (pathname === "/reader") {
-  return { parent: { label: "Học", href: "/hanzihome" }, label: "Trang học" };
+  return {
+   parent: { labelKey: "breadcrumbs.study", href: "/hanzihome" },
+   labelKey: "breadcrumbs.reader",
+  };
  }
- if (pathname === "/notebook") return { label: "Sổ tay" };
- if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) return { label: "SRS từ" };
- if (pathname === "/settings") return { label: "Cài đặt" };
- if (pathname === "/radicals") return { label: "Bộ thủ" };
- if (pathname === "/hanzihome") return { label: "HanziHome" };
+ if (pathname === "/notebook") return { labelKey: "breadcrumbs.notebook" };
+ if (pathname === "/dictionary" || pathname.startsWith("/dictionary/")) {
+  return { labelKey: "breadcrumbs.dictionary" };
+ }
+ if (pathname === "/settings") return { labelKey: "breadcrumbs.settings" };
+ if (pathname === "/radicals") return { labelKey: "breadcrumbs.radicals" };
+ if (pathname === "/hanzihome") return { labelKey: "breadcrumbs.hanzihome" };
  if (pathname === "/vocab/review") {
-  return { parent: { label: "Tổng hợp từ", href: "/vocab" }, label: "Ôn từ vựng" };
+  return {
+   parent: { labelKey: "breadcrumbs.vocab", href: "/vocab" },
+   labelKey: "breadcrumbs.vocabReview",
+  };
  }
- if (pathname === "/vocab") return { label: "Tổng hợp từ" };
- if (pathname === "/grammar") return { label: "Tổng hợp ngữ pháp" };
- if (pathname === "/memory-tips") return { label: "Nhắc nhanh" };
- if (pathname === "/html-artifacts") return { label: "Tệp HTML" };
- if (pathname === "/api-docs") return { label: "API & tích hợp" };
+ if (pathname === "/vocab") return { labelKey: "breadcrumbs.vocab" };
+ if (pathname === "/grammar") return { labelKey: "breadcrumbs.grammar" };
+ if (pathname === "/memory-tips") return { labelKey: "breadcrumbs.memoryTips" };
+ if (pathname === "/html-artifacts") return { labelKey: "breadcrumbs.htmlArtifacts" };
+ if (pathname === "/api-docs") return { labelKey: "breadcrumbs.apiDocs" };
  if (pathname.startsWith("/note/")) {
-  return { parent: { label: "Ghi chú", href: "/notes" }, label: "Chia sẻ" };
+  return {
+   parent: { labelKey: "breadcrumbs.notes", href: "/notes" },
+   labelKey: "breadcrumbs.sharedNote",
+  };
  }
-
  return null;
 }
 
@@ -208,6 +232,7 @@ function HeaderSearchForm({
  value,
  routeToolbarActive,
  hidden,
+ searchLabel,
  onSubmit,
  onOpen,
  onChange,
@@ -215,6 +240,7 @@ function HeaderSearchForm({
  value: string;
  routeToolbarActive: boolean;
  hidden: boolean;
+ searchLabel: string;
  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
  onOpen: () => void;
  onChange: (value: string) => void;
@@ -238,8 +264,8 @@ function HeaderSearchForm({
     onFocus={onOpen}
     onClick={onOpen}
     onChange={(event) => onChange(event.target.value)}
-    placeholder="Tìm toàn bộ HanziHome"
-    aria-label="Tìm toàn bộ HanziHome"
+    placeholder={searchLabel}
+    aria-label={searchLabel}
     density="search"
     surface="card"
     adornment="start"
@@ -262,7 +288,7 @@ function HeaderUtilityArea({
 }: {
  routeToolbarActive: boolean;
  focusModeEnabled: boolean;
- user?: Nullable<User>;
+ user?: User | null;
  theme: Theme;
  lookupEnabled: boolean;
  onOpenSearch: () => void;
@@ -270,6 +296,8 @@ function HeaderUtilityArea({
  onLookupEnabledChange: (enabled: boolean) => void;
  onFocusModeEnabledChange: (enabled: boolean) => void;
 }) {
+ const t = useTranslations("Shell");
+
  return (
   <div
    className={cn(
@@ -282,8 +310,8 @@ function HeaderUtilityArea({
      type="button"
      variant="ghost"
      onClick={onOpenSearch}
-     aria-label="Mở tìm kiếm HanziHome"
-     title="Tìm toàn bộ HanziHome"
+     aria-label={t("header.openSearch")}
+     title={t("header.search")}
      size="icon"
      className="xl:hidden"
     >
@@ -299,22 +327,22 @@ function HeaderUtilityArea({
       type="button"
       variant="ghost"
       size="icon"
-      aria-label="Mở cài đặt nhanh"
-      title="Cài đặt nhanh"
+      aria-label={t("header.quickSettings")}
+      title={t("header.quickSettings")}
       className="hidden sm:inline-flex"
      >
       <Settings />
      </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" width="lg">
-     <DropdownMenuLabel>Cài đặt nhanh</DropdownMenuLabel>
+     <DropdownMenuLabel>{t("header.quickSettings")}</DropdownMenuLabel>
      <DropdownMenuCheckboxItem
       checked={theme === "dark"}
       onSelect={(event) => event.preventDefault()}
       onCheckedChange={onToggleTheme}
      >
       {theme === "dark" ? <Sun /> : <Moon />}
-      Giao diện tối
+      {t("header.darkTheme")}
      </DropdownMenuCheckboxItem>
      <DropdownMenuCheckboxItem
       checked={lookupEnabled}
@@ -322,30 +350,26 @@ function HeaderUtilityArea({
       onCheckedChange={onLookupEnabledChange}
      >
       <Languages />
-      Tra từ trên trang này
+      {t("header.pageLookup")}
      </DropdownMenuCheckboxItem>
      <DropdownMenuCheckboxItem
       checked={focusModeEnabled}
       onSelect={(event) => event.preventDefault()}
       onCheckedChange={(enabled) => {
        if (enabled && !focusModeEnabled) {
-        toast.warning(
-         "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
-         { duration: 5200 },
-        );
+        toast.warning(t("header.focusModeWarning"), { duration: 5200 });
        }
-
        onFocusModeEnabledChange(enabled);
       }}
      >
       <LockKeyhole />
-      Focus mode
+      {t("header.focusMode")}
      </DropdownMenuCheckboxItem>
      <DropdownMenuSeparator />
      <DropdownMenuItem asChild>
       <Link href="/settings?section=app">
        <Settings />
-       Mở tất cả cài đặt
+       {t("header.openAllSettings")}
       </Link>
      </DropdownMenuItem>
     </DropdownMenuContent>
@@ -356,8 +380,9 @@ function HeaderUtilityArea({
 }
 
 function FocusModePill() {
+ const t = useTranslations("Shell");
  return (
-  <Badge variant="warning" size="md" className="hidden sm:inline-flex" title="Focus mode đang bật">
+  <Badge variant="warning" size="md" className="hidden sm:inline-flex" title={t("header.focusModeActive")}>
    <LockKeyhole />
    Focus
   </Badge>

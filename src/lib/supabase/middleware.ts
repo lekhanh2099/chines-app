@@ -1,6 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+import {
+ defaultAppLocale,
+ getLocaleFromPathname,
+ localizePathname,
+ stripLocaleFromPathname,
+} from "@/i18n/config";
 import { publicSupabaseEnv } from "@/lib/env/public";
 import type { Database } from "@/types/supabase.generated";
 
@@ -12,42 +18,54 @@ function withSecurityHeaders(response: NextResponse) {
  return response;
 }
 
-export async function updateSession(request: NextRequest) {
+function recreateResponseWithRequest(response: NextResponse, request: NextRequest) {
+ const nextResponse = NextResponse.next({ request });
+ response.headers.forEach((value, key) => nextResponse.headers.set(key, value));
+ response.cookies.getAll().forEach((cookie) => nextResponse.cookies.set(cookie));
+ return nextResponse;
+}
+
+export async function updateSession(request: NextRequest, initialResponse?: NextResponse) {
  const pathname = request.nextUrl.pathname;
+ const logicalPathname = stripLocaleFromPathname(pathname);
+ const locale = getLocaleFromPathname(pathname) ?? defaultAppLocale;
+ let supabaseResponse = initialResponse ?? NextResponse.next({ request });
+
+ if (!supabaseResponse.ok) return withSecurityHeaders(supabaseResponse);
 
  const isPublicReaderRoute =
-  pathname === "/reader" ||
-  pathname.startsWith("/reader/") ||
-  pathname === "/hsk" ||
-  pathname.startsWith("/hsk/");
+  logicalPathname === "/reader" ||
+  logicalPathname.startsWith("/reader/") ||
+  logicalPathname === "/hsk" ||
+  logicalPathname.startsWith("/hsk/");
  const isPublicStaticLearningRoute =
   isPublicReaderRoute ||
-  pathname === "/daily-reading" ||
-  pathname === "/dictation" ||
-  pathname === "/humanities" ||
-  pathname.startsWith("/humanities/") ||
-  pathname === "/personal-learning" ||
-  pathname === "/translation" ||
-  pathname === "/tts";
+  logicalPathname === "/daily-reading" ||
+  logicalPathname === "/dictation" ||
+  logicalPathname === "/humanities" ||
+  logicalPathname.startsWith("/humanities/") ||
+  logicalPathname === "/personal-learning" ||
+  logicalPathname === "/translation" ||
+  logicalPathname === "/tts";
 
  // API handlers own their authentication boundary. Running getUser here as
  // well doubles the auth request for every API call and does not add route
  // protection because the handlers validate the session before reading or
  // mutating user data.
- if (pathname === "/api" || pathname.startsWith("/api/")) {
-  return withSecurityHeaders(NextResponse.next({ request }));
+ if (logicalPathname === "/api" || logicalPathname.startsWith("/api/")) {
+  return withSecurityHeaders(supabaseResponse);
  }
 
  // These pages are intentionally public. Their static content does not need
  // middleware auth, and app-shell/user-state code still resolves an optional
  // session when it is available.
- if (isPublicStaticLearningRoute || pathname === "/auth/callback" || pathname === "/auth/confirm") {
-  return withSecurityHeaders(NextResponse.next({ request }));
+ if (
+  isPublicStaticLearningRoute ||
+  logicalPathname === "/auth/callback" ||
+  logicalPathname === "/auth/confirm"
+ ) {
+  return withSecurityHeaders(supabaseResponse);
  }
-
- let supabaseResponse = NextResponse.next({
-  request,
- });
 
  const supabase = createServerClient<Database>(publicSupabaseEnv.url, publicSupabaseEnv.key, {
   cookies: {
@@ -56,9 +74,7 @@ export async function updateSession(request: NextRequest) {
    },
    setAll(cookiesToSet) {
     cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
-    supabaseResponse = NextResponse.next({
-     request,
-    });
+    supabaseResponse = recreateResponseWithRequest(supabaseResponse, request);
     cookiesToSet.forEach(({ name, value, options }) =>
      supabaseResponse.cookies.set(name, value, options),
     );
@@ -74,22 +90,19 @@ export async function updateSession(request: NextRequest) {
   data: { user },
  } = await supabase.auth.getUser();
 
- const isLoginRoute = pathname === "/login";
+ const isLoginRoute = logicalPathname === "/login";
 
- // Public routes returned above do not reach this branch. Protect the app
- // routes here while retaining the existing login-page redirect behavior.
- if (!user && !isLoginRoute && !pathname.startsWith("/_next")) {
+ if (!user && !isLoginRoute && !logicalPathname.startsWith("/_next")) {
   const url = request.nextUrl.clone();
-  url.pathname = "/login";
+  url.pathname = localizePathname("/login", locale);
   url.search = "";
-  url.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
+  url.searchParams.set("next", localizePathname(`${logicalPathname}${request.nextUrl.search}`, locale));
   return withSecurityHeaders(NextResponse.redirect(url));
  }
 
- // If there is a user and the route is /login, redirect to dashboard.
  if (user && isLoginRoute) {
   const url = request.nextUrl.clone();
-  url.pathname = "/";
+  url.pathname = localizePathname("/", locale);
   url.search = "";
   return withSecurityHeaders(NextResponse.redirect(url));
  }

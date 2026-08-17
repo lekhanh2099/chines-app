@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { usePathname } from "next/navigation";
 
 import { getHanziFontFamily } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
@@ -11,6 +10,7 @@ import {
  emptyLearningState,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
+import { usePathname } from "@/i18n/navigation";
 
 const learningStateQueryKey = ["hanzihome", "learning-state"];
 const defaultHanziFontFamily = getHanziFontFamily(DEFAULT_LESSON_DISPLAY_MODE.hanziFont);

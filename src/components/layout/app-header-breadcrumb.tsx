@@ -2,8 +2,8 @@
 
 import { Typography } from "@/components/ui/typography";
 import type { ReactNode } from "react";
-import Link from "next/link";
 
+import { Link } from "@/i18n/navigation";
 import {
  Breadcrumb,
  BreadcrumbItem,
@@ -20,7 +20,7 @@ const headerBreadcrumbItemClassName =
 export function AppHeaderBreadcrumb({
  children,
  className,
- "aria-label": ariaLabel = "Điều hướng trang",
+ "aria-label": ariaLabel = "Page navigation",
 }: {
  children: ReactNode;
  className?: string;

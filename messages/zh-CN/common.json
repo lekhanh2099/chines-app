@@ -1,0 +1,15 @@
+{
+ "actions": {
+  "save": "保存",
+  "cancel": "取消",
+  "retry": "重试",
+  "settings": "设置",
+  "signOut": "退出登录"
+ },
+ "language": "语言",
+ "locales": {
+  "vi": "越南语",
+  "en": "英语",
+  "zh-CN": "简体中文"
+ }
+}

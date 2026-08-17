@@ -2,7 +2,7 @@
 
 import { Typography } from "@/components/ui/typography";
 import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
 import { z } from "zod";
 import { useAppForm } from "@/components/tanstack-form/hooks/form";
@@ -11,39 +11,24 @@ import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
 import { Button } from "@/components/ui/button";
 import { FieldGroup } from "@/components/ui/field";
 import { Spinner } from "@/components/ui/spinner";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import {
+ defaultAppLocale,
+ isAppLocale,
+ localizePathname,
+ stripLocaleFromPathname,
+} from "@/i18n/config";
+import { useRouter } from "@/i18n/navigation";
 import { buildOAuthCallbackUrl } from "@/lib/auth/oauth-callback-url";
 import { getSafeNextPath } from "@/lib/auth/safe-next-path";
 import { toast } from "sonner";
 import { BookOpen, LogIn, UserPlus } from "lucide-react";
 
-const emailSchema = z.string().trim().toLowerCase().pipe(z.email("Email không hợp lệ"));
-const passwordLoginSchema = z.string().min(1, "Vui lòng nhập mật khẩu");
-const strongPasswordSchema = z
- .string()
- .min(12, "Mật khẩu phải có ít nhất 12 ký tự")
- .regex(/[a-z]/, "Mật khẩu cần có chữ thường")
- .regex(/[A-Z]/, "Mật khẩu cần có chữ hoa")
- .regex(/[0-9]/, "Mật khẩu cần có chữ số")
- .regex(/[^A-Za-z0-9]/, "Mật khẩu cần có ký tự đặc biệt");
-
-const loginSchema = z.object({
- email: emailSchema,
- password: passwordLoginSchema,
- confirmPassword: z.string(),
-});
-
-const signUpSchema = z
- .object({
-  email: emailSchema,
-  password: strongPasswordSchema,
-  confirmPassword: z.string().min(1, "Vui lòng nhập lại mật khẩu"),
- })
- .refine((value) => value.password === value.confirmPassword, {
-  message: "Mật khẩu nhập lại chưa khớp",
-  path: ["confirmPassword"],
- });
-
-type LoginFormValues = z.infer<typeof loginSchema>;
+type LoginFormValues = {
+ email: string;
+ password: string;
+ confirmPassword: string;
+};
 
 function GoogleIcon() {
  return (
@@ -67,9 +52,40 @@ function GoogleIcon() {
 
 export default function LoginPage() {
  const router = useRouter();
+ const requestedLocale = useLocale();
+ const locale = isAppLocale(requestedLocale) ? requestedLocale : defaultAppLocale;
+ const t = useTranslations("Auth");
  const [oauthLoading, setOauthLoading] = useState(false);
  const [isLogin, setIsLogin] = useState(true);
- const activeSchema = useMemo(() => (isLogin ? loginSchema : signUpSchema), [isLogin]);
+ const schemas = useMemo(() => {
+  const emailSchema = z.string().trim().toLowerCase().pipe(z.email(t("validation.invalidEmail")));
+  const passwordLoginSchema = z.string().min(1, t("validation.passwordRequired"));
+  const strongPasswordSchema = z
+   .string()
+   .min(12, t("validation.passwordMin"))
+   .regex(/[a-z]/, t("validation.passwordLowercase"))
+   .regex(/[A-Z]/, t("validation.passwordUppercase"))
+   .regex(/[0-9]/, t("validation.passwordNumber"))
+   .regex(/[^A-Za-z0-9]/, t("validation.passwordSpecial"));
+  const loginSchema = z.object({
+   email: emailSchema,
+   password: passwordLoginSchema,
+   confirmPassword: z.string(),
+  });
+  const signUpSchema = z
+   .object({
+    email: emailSchema,
+    password: strongPasswordSchema,
+    confirmPassword: z.string().min(1, t("validation.confirmRequired")),
+   })
+   .refine((value) => value.password === value.confirmPassword, {
+    message: t("validation.confirmMismatch"),
+    path: ["confirmPassword"],
+   });
+
+  return { loginSchema, signUpSchema };
+ }, [t]);
+ const activeSchema = isLogin ? schemas.loginSchema : schemas.signUpSchema;
  const defaultValues: LoginFormValues = {
   email: "",
   password: "",
@@ -80,19 +96,19 @@ export default function LoginPage() {
   const url = new URL(window.location.href);
   if (!url.searchParams.has("authError")) return;
 
-  toast.error("Đăng nhập Google thất bại", {
-   description: "Không thể tạo phiên đăng nhập. Vui lòng thử lại.",
+  toast.error(t("google.loginFailed"), {
+   description: t("google.sessionFailed"),
   });
   url.searchParams.delete("authError");
   window.history.replaceState({}, "", `${url.pathname}${url.search}`);
- }, []);
+ }, [t]);
 
  useEffect(() => {
   const supabase = createClient();
   let active = true;
 
   void supabase.auth.getUser().then(({ data }) => {
-   if (active && data.user) router.replace(getSafeNextPathFromUrl());
+   if (active && data.user) router.replace(getLogicalNextPathFromUrl());
   });
 
   return () => {
@@ -100,9 +116,13 @@ export default function LoginPage() {
   };
  }, [router]);
 
- function getSafeNextPathFromUrl() {
+ function getLogicalNextPathFromUrl() {
   const next = new URL(window.location.href).searchParams.get("next");
-  return getSafeNextPath(next);
+  return stripLocaleFromPathname(getSafeNextPath(next));
+ }
+
+ function getLocalizedNextPathFromUrl() {
+  return localizePathname(getLogicalNextPathFromUrl(), locale);
  }
 
  async function signInWithGoogle() {
@@ -111,7 +131,7 @@ export default function LoginPage() {
   const callbackUrl = buildOAuthCallbackUrl({
    currentOrigin: window.location.origin,
    configuredAppUrl: process.env.NEXT_PUBLIC_APP_URL,
-   next: getSafeNextPathFromUrl(),
+   next: getLocalizedNextPathFromUrl(),
   });
 
   const { error } = await supabase.auth.signInWithOAuth({
@@ -122,8 +142,8 @@ export default function LoginPage() {
   });
 
   if (error) {
-   toast.error("Không thể mở đăng nhập Google", {
-    description: "Dịch vụ đăng nhập tạm thời không khả dụng. Vui lòng thử lại.",
+   toast.error(t("google.openFailed"), {
+    description: t("google.unavailable"),
    });
    setOauthLoading(false);
   }
@@ -142,32 +162,34 @@ export default function LoginPage() {
     });
 
     if (error) {
-     toast.error("Đăng nhập thất bại", {
-      description: "Email hoặc mật khẩu không đúng. Vui lòng thử lại.",
+     toast.error(t("toast.loginFailed"), {
+      description: t("toast.invalidCredentials"),
      });
      return;
     }
 
-    toast.success("Đăng nhập thành công");
-    router.replace(getSafeNextPathFromUrl());
+    toast.success(t("toast.loginSuccess"));
+    router.replace(getLogicalNextPathFromUrl());
     router.refresh();
    } else {
+    const confirmUrl = new URL("/auth/confirm", window.location.origin);
+    confirmUrl.searchParams.set("next", localizePathname("/", locale));
     const { error } = await supabase.auth.signUp({
      email: value.email,
      password: value.password,
      options: {
-      emailRedirectTo: new URL("/auth/confirm", window.location.origin).toString(),
+      emailRedirectTo: confirmUrl.toString(),
      },
     });
 
     if (error) {
-     toast.error("Đăng ký thất bại", {
-      description: "Không thể tạo tài khoản. Hãy kiểm tra thông tin hoặc thử lại sau.",
+     toast.error(t("toast.signupFailed"), {
+      description: t("toast.signupError"),
      });
      return;
     }
 
-    toast.success("Đăng ký thành công! Vui lòng kiểm tra email.");
+    toast.success(t("toast.signupSuccess"));
     setIsLogin(true);
     form.reset();
    }
@@ -176,7 +198,7 @@ export default function LoginPage() {
 
  return (
   <main className="flex min-h-dvh flex-col justify-center gap-8 bg-bg-primary px-4 py-[max(3rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
-   <div className="grid justify-items-center gap-2 sm:mx-auto sm:w-full sm:max-w-md">
+   <div className="grid justify-items-center gap-3 sm:mx-auto sm:w-full sm:max-w-md">
     <div className="app-brand-gradient grid size-12 place-items-center rounded-xl shadow-theme-sm">
      <BookOpen className="size-6" aria-hidden="true" />
     </div>
@@ -188,13 +210,12 @@ export default function LoginPage() {
      align="center"
      tracking="tight"
     >
-     {isLogin ? "Chào mừng trở lại HanziHome" : "Tạo tài khoản HanziHome"}
+     {isLogin ? t("title.login") : t("title.signup")}
     </Typography>
     <Typography as="p" tone="secondary" align="center" leading="standard" className="max-w-sm">
-     {isLogin
-      ? "Tiếp tục bài học, ghi chú và lịch ôn tập của bạn."
-      : "Lưu bài học, ghi chú và tiến độ ôn tập trên mọi thiết bị."}
+     {isLogin ? t("description.login") : t("description.signup")}
     </Typography>
+    <LocaleSwitcher />
    </div>
 
    <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -207,12 +228,12 @@ export default function LoginPage() {
       onClick={signInWithGoogle}
      >
       {oauthLoading ? <Spinner data-icon="inline-start" /> : <GoogleIcon />}
-      Tiếp tục với Google
+      {t("google.continue")}
      </Button>
 
      <div className="flex items-center gap-3 text-xs text-text-muted" aria-hidden="true">
       <span className="h-px flex-1 bg-border-default" />
-      hoặc dùng email
+      {t("emailDivider")}
       <span className="h-px flex-1 bg-border-default" />
      </div>
 
@@ -228,7 +249,7 @@ export default function LoginPage() {
        <form.AppField name="email">
         {() => (
          <TextField
-          label="Email"
+          label={t("fields.email")}
           inputProps={{
            type: "email",
            autoComplete: "email",
@@ -241,12 +262,10 @@ export default function LoginPage() {
        <form.AppField name="password">
         {() => (
          <PasswordField
-          label="Mật khẩu"
+          label={t("fields.password")}
           placeholder="••••••••"
           autoComplete={isLogin ? "current-password" : "new-password"}
-          helperText={
-           isLogin ? undefined : "Ít nhất 12 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt."
-          }
+          helperText={isLogin ? undefined : t("fields.passwordHint")}
          />
         )}
        </form.AppField>
@@ -255,7 +274,7 @@ export default function LoginPage() {
         <form.AppField name="confirmPassword">
          {() => (
           <PasswordField
-           label="Nhập lại mật khẩu"
+           label={t("fields.confirmPassword")}
            placeholder="••••••••••••"
            autoComplete="new-password"
           />
@@ -279,14 +298,14 @@ export default function LoginPage() {
          ) : (
           <UserPlus data-icon="inline-start" />
          )}
-         {isLogin ? "Đăng nhập" : "Đăng ký"}
+         {isLogin ? t("actions.login") : t("actions.signup")}
         </Button>
        )}
       </form.Subscribe>
 
       <div className="flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
        <Typography as="p">
-        {isLogin ? "Chưa có tài khoản?" : "Đã có tài khoản?"}{" "}
+        {isLogin ? t("switchMode.needAccount") : t("switchMode.haveAccount")}{" "}
         <Button
          type="button"
          onClick={() => {
@@ -295,7 +314,7 @@ export default function LoginPage() {
          }}
          variant="ghost"
         >
-         {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
+         {isLogin ? t("actions.signupNow") : t("actions.login")}
         </Button>
        </Typography>
       </div>

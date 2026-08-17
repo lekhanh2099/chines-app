@@ -1,0 +1,85 @@
+{
+ "navigation": {
+  "aria": {
+   "main": "Điều hướng chính",
+   "quick": "Điều hướng nhanh",
+   "all": "Toàn bộ khu vực"
+  },
+  "groups": {
+   "learning": "Học",
+   "practice": "Luyện",
+   "competency": "Năng lực",
+   "personal": "Cá nhân",
+   "system": "Hệ thống"
+  },
+  "items": {
+   "home": "Trang chủ",
+   "lessons": "Bài học",
+   "reader": "Đọc bài",
+   "dailyReading": "Bài đọc hôm nay",
+   "hskReading": "Đọc HSK",
+   "grammar": "Ngữ pháp",
+   "humanities": "Văn sử & Dịch",
+   "personalLearning": "Personal Learning",
+   "notebook": "Sổ tay",
+   "dictation": "Chép chính tả",
+   "translationStudio": "Translation Studio",
+   "tts": "Tạo giọng đọc",
+   "dictionary": "SRS từ",
+   "memoryTips": "Nhắc nhanh",
+   "inspector": "Hanzi Inspector",
+   "conversation": "AI Conversation",
+   "learningLoop": "Learning Loop",
+   "dataQuality": "Data Quality",
+   "vocab": "Tổng hợp từ",
+   "radicals": "Bộ thủ",
+   "notes": "Ghi chú",
+   "htmlArtifacts": "Tệp HTML",
+   "apiDocs": "API & tích hợp",
+   "settings": "Cài đặt"
+  },
+  "sidebarLabel": "thanh điều hướng",
+  "more": "Thêm",
+  "openAll": "Mở toàn bộ điều hướng",
+  "sheetTitle": "Điều hướng"
+ },
+ "header": {
+  "search": "Tìm toàn bộ HanziHome",
+  "openSearch": "Mở tìm kiếm HanziHome",
+  "quickSettings": "Cài đặt nhanh",
+  "darkTheme": "Giao diện tối",
+  "pageLookup": "Tra từ trên trang này",
+  "focusMode": "Focus mode",
+  "focusModeActive": "Focus mode đang bật",
+  "focusModeWarning": "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+  "openAllSettings": "Mở tất cả cài đặt"
+ },
+ "breadcrumbs": {
+  "study": "Học",
+  "reader": "Trang học",
+  "notebook": "Sổ tay",
+  "dictionary": "SRS từ",
+  "settings": "Cài đặt",
+  "radicals": "Bộ thủ",
+  "hanzihome": "HanziHome",
+  "vocab": "Tổng hợp từ",
+  "vocabReview": "Ôn từ vựng",
+  "grammar": "Tổng hợp ngữ pháp",
+  "memoryTips": "Nhắc nhanh",
+  "htmlArtifacts": "Tệp HTML",
+  "apiDocs": "API & tích hợp",
+  "notes": "Ghi chú",
+  "sharedNote": "Chia sẻ"
+ },
+ "profile": {
+  "open": "Mở hồ sơ",
+  "title": "Hồ sơ",
+  "missingEmail": "Chưa có email",
+  "defaultName": "Bạn",
+  "logoutFailed": "Đăng xuất thất bại",
+  "logoutSuccess": "Đã đăng xuất"
+ },
+ "localeSwitcher": {
+  "label": "Đổi ngôn ngữ giao diện"
+ }
+}
