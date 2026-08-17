@@ -4,7 +4,9 @@
   "cancel": "Hủy",
   "retry": "Thử lại",
   "settings": "Cài đặt",
-  "signOut": "Đăng xuất"
+  "signOut": "Đăng xuất",
+  "listen": "Nghe",
+  "stop": "Dừng"
  },
  "language": "Ngôn ngữ",
  "locales": {

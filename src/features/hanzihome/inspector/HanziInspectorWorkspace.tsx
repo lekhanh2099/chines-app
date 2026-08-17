@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, Square, Volume2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -36,6 +37,8 @@ const lookupResponseSchema = z.strictObject({
 type LookupResponse = z.output<typeof lookupResponseSchema>;
 
 export function HanziInspectorWorkspace() {
+ const t = useTranslations("Inspector");
+ const common = useTranslations("Common");
  const tts = useSharedMandarinTts();
  const [term, setTerm] = useState("");
  const [contextText, setContextText] = useState("");
@@ -77,9 +80,7 @@ export function HanziInspectorWorkspace() {
    const payload = JsonValueSchema.parse(await response.json().catch(() => null));
    const parsed = lookupResponseSchema.safeParse(payload);
    if (!response.ok || !parsed.success) {
-    throw new Error(
-     response.ok ? "Kết quả tra cứu không đúng contract." : "Không tra được dữ liệu.",
-    );
+    throw new Error(response.ok ? t("errors.contract") : t("errors.lookup"));
    }
    const nextLookup = parsed.data;
    const text = normalizedContext || nextLookup.data.hanzi;
@@ -101,7 +102,7 @@ export function HanziInspectorWorkspace() {
    setAnalysis(nextAnalysis);
   } catch (caught) {
    if (caught instanceof DOMException && caught.name === "AbortError") return;
-   setError(caught instanceof Error ? caught.message : "Không thể hoàn tất tra cứu.");
+   setError(caught instanceof Error ? caught.message : t("errors.complete"));
   } finally {
    if (!controller.signal.aborted) setIsLoading(false);
   }
@@ -111,10 +112,10 @@ export function HanziInspectorWorkspace() {
   <div className="grid min-w-0 gap-5">
    <div className="grid gap-1">
     <Typography as="h1" variant="pageTitle" weight="black">
-     Hanzi Inspector
+     {t("title")}
     </Typography>
     <Typography as="p" variant="body" tone="muted">
-     Tra cứu bằng dictionary HanziHome và kiểm tra cách đọc theo ngữ cảnh.
+     {t("description")}
     </Typography>
    </div>
 
@@ -122,32 +123,32 @@ export function HanziInspectorWorkspace() {
     <form className="grid gap-4" onSubmit={inspect}>
      <label className="grid gap-2">
       <Typography as="span" variant="label" weight="bold">
-       Từ hoặc Hán tự
+       {t("fields.term")}
       </Typography>
       <Input
        value={term}
        onChange={(event) => setTerm(event.target.value)}
        maxLength={48}
        autoComplete="off"
-       placeholder="例如：行"
+       placeholder={t("fields.termPlaceholder")}
       />
      </label>
      <label className="grid gap-2">
       <Typography as="span" variant="label" weight="bold">
-       Câu ngữ cảnh (không bắt buộc)
+       {t("fields.context")}
       </Typography>
       <Textarea
        value={contextText}
        onChange={(event) => setContextText(event.target.value)}
        maxLength={500}
-       placeholder="例如：我去银行办事。"
+       placeholder={t("fields.contextPlaceholder")}
        className="min-h-24"
       />
      </label>
      <div className="flex flex-wrap gap-2">
       <Button type="submit" disabled={!term.trim() || isLoading}>
        <Search data-icon="inline-start" />
-       {isLoading ? "Đang tra…" : "Inspect"}
+       {isLoading ? t("actions.inspecting") : t("actions.inspect")}
       </Button>
       <Button
        type="button"
@@ -156,7 +157,7 @@ export function HanziInspectorWorkspace() {
        onClick={() => tts.speakSequence([analyzedText])}
       >
        <Volume2 data-icon="inline-start" />
-       Nghe
+       {common("actions.listen")}
       </Button>
       <Button
        type="button"
@@ -165,7 +166,7 @@ export function HanziInspectorWorkspace() {
        onClick={tts.stop}
       >
        <Square data-icon="inline-start" />
-       Dừng
+       {common("actions.stop")}
       </Button>
      </div>
     </form>
@@ -188,7 +189,7 @@ export function HanziInspectorWorkspace() {
          {lookup.data.hanzi}
         </Typography>
         <Typography variant="body" tone="accent" lang="zh-Latn-pinyin">
-         {lookup.data.pinyin || "Chưa có pinyin"}
+         {lookup.data.pinyin || t("result.missingPinyin")}
         </Typography>
        </div>
        <Typography variant="caption" tone="muted">
@@ -197,12 +198,12 @@ export function HanziInspectorWorkspace() {
       </div>
       <div className="grid gap-1">
        <Typography variant="label" weight="bold">
-        Nghĩa
+        {t("result.meaning")}
        </Typography>
-       <Typography variant="body">{lookup.data.meaning || "Chưa có nghĩa"}</Typography>
+       <Typography variant="body">{lookup.data.meaning || t("result.missingMeaning")}</Typography>
        {lookup.data.sino_vietnamese ? (
         <Typography variant="bodySmall" tone="muted">
-         Hán Việt: {lookup.data.sino_vietnamese}
+         {t("result.sinoVietnamese", { value: lookup.data.sino_vietnamese })}
         </Typography>
        ) : null}
       </div>
@@ -210,10 +211,10 @@ export function HanziInspectorWorkspace() {
      <Card variant="section" padding="md" className="grid min-w-0 gap-4 overflow-hidden">
       <div className="grid gap-1">
        <Typography as="h2" variant="sectionTitle" weight="black">
-        Cách đọc trong ngữ cảnh
+        {t("result.contextReading")}
        </Typography>
        <Typography variant="bodySmall" tone="muted" lang="zh-Latn-pinyin">
-        {spokenPinyin || "Chưa xác định được cách đọc"}
+        {spokenPinyin || t("result.unresolvedReading")}
        </Typography>
       </div>
       <ContextualReaderText
@@ -223,12 +224,12 @@ export function HanziInspectorWorkspace() {
       />
       {analysis.unresolved.length > 0 ? (
        <Typography variant="caption" tone="warning">
-        Một số ký tự chưa có cách đọc chắc chắn; hãy kiểm tra lại context hoặc dictionary.
+        {t("result.unresolvedWarning")}
        </Typography>
       ) : null}
       {analysis.sourcePinyinStatus === "rejected" ? (
        <Typography variant="caption" tone="warning">
-        Pinyin nguồn không khớp độ dài văn bản nên đã không được dùng làm fallback.
+        {t("result.rejectedSourcePinyin")}
        </Typography>
       ) : null}
      </Card>

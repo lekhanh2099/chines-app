@@ -4,7 +4,9 @@
   "cancel": "取消",
   "retry": "重试",
   "settings": "设置",
-  "signOut": "退出登录"
+  "signOut": "退出登录",
+  "listen": "播放",
+  "stop": "停止"
  },
  "language": "语言",
  "locales": {

@@ -4,7 +4,9 @@
   "cancel": "Cancel",
   "retry": "Retry",
   "settings": "Settings",
-  "signOut": "Sign out"
+  "signOut": "Sign out",
+  "listen": "Listen",
+  "stop": "Stop"
  },
  "language": "Language",
  "locales": {
