@@ -5,6 +5,7 @@ import {
  addApiKeyResponseSchema,
  apiKeysResponseSchema,
  deleteApiKeyResponseSchema,
+ discoverApiKeyResponseSchema,
  moveApiKeyResponseSchema,
  updateApiKeyResponseSchema,
 } from "./api-key-manager.schema";
@@ -14,8 +15,8 @@ const endpoint = "/api/settings/api-keys";
 type ApiKeyProviderInput = z.infer<z.ZodUnion<[typeof ApiKeyProviderSchema, z.ZodLiteral<"auto">]>>;
 export const ApiKeyMoveDirectionSchema = z.enum(["up", "down"]);
 
-async function requestApiKeys<T>(schema: z.ZodType<T>, init?: RequestInit): Promise<T> {
- const response = await fetch(endpoint, {
+async function requestApiKeys<T>(url: string, schema: z.ZodType<T>, init?: RequestInit): Promise<T> {
+ const response = await fetch(url, {
   credentials: "include",
   ...init,
   headers: init?.body ? { "Content-Type": "application/json", ...init.headers } : init?.headers,
@@ -36,7 +37,14 @@ async function requestApiKeys<T>(schema: z.ZodType<T>, init?: RequestInit): Prom
 }
 
 export function fetchManagedApiKeys() {
- return requestApiKeys(apiKeysResponseSchema);
+ return requestApiKeys(endpoint, apiKeysResponseSchema);
+}
+
+export function discoverManagedApiKey(input: { apiKey: string; provider: ApiKeyProviderInput }) {
+ return requestApiKeys(`${endpoint}/discover`, discoverApiKeyResponseSchema, {
+  method: "POST",
+  body: JSON.stringify(input),
+ });
 }
 
 export function addManagedApiKey(input: {
@@ -45,21 +53,21 @@ export function addManagedApiKey(input: {
  provider: ApiKeyProviderInput;
  model?: string;
 }) {
- return requestApiKeys(addApiKeyResponseSchema, {
+ return requestApiKeys(endpoint, addApiKeyResponseSchema, {
   method: "POST",
   body: JSON.stringify(input),
  });
 }
 
 export function updateManagedApiKeyModel(input: { keyId: string; model: string }) {
- return requestApiKeys(updateApiKeyResponseSchema, {
+ return requestApiKeys(endpoint, updateApiKeyResponseSchema, {
   method: "PATCH",
   body: JSON.stringify({ action: "model", ...input }),
  });
 }
 
 export function toggleManagedApiKey(input: { keyId: string; isActive: boolean }) {
- return requestApiKeys(updateApiKeyResponseSchema, {
+ return requestApiKeys(endpoint, updateApiKeyResponseSchema, {
   method: "PATCH",
   body: JSON.stringify({ action: "toggle", ...input }),
  });
@@ -69,14 +77,14 @@ export function moveManagedApiKey(input: {
  keyId: string;
  direction: z.infer<typeof ApiKeyMoveDirectionSchema>;
 }) {
- return requestApiKeys(moveApiKeyResponseSchema, {
+ return requestApiKeys(endpoint, moveApiKeyResponseSchema, {
   method: "PATCH",
   body: JSON.stringify({ action: "move", ...input }),
  });
 }
 
 export function deleteManagedApiKey(keyId: string) {
- return requestApiKeys(deleteApiKeyResponseSchema, {
+ return requestApiKeys(endpoint, deleteApiKeyResponseSchema, {
   method: "DELETE",
   body: JSON.stringify({ keyId }),
  });
