@@ -1,0 +1,47 @@
+{
+  "header": {
+    "eyebrow": "今日阅读",
+    "title": "每日中文阅读",
+    "description": "HanziHome 中已经审核并保存的每日阅读资料库。",
+    "settings": "阅读设置",
+    "openSample": "打开示例"
+  },
+  "empty": {
+    "title": "还没有已收集的阅读",
+    "description": "HanziHome 目前只显示已经打包并审核的阅读内容。"
+  },
+  "sample": {
+    "eyebrow": "离线示例",
+    "title": "用示例体验 Reader，并非已收集文章",
+    "badge": "示例",
+    "topicCulture": "文化",
+    "topicFallback": "示例",
+    "levelFallback": "Daily",
+    "dateFallback": "示例",
+    "minutes": "{count} 分钟",
+    "read": "阅读"
+  },
+  "tabs": {
+    "reader": "阅读",
+    "questions": "问题",
+    "vocabulary": "词汇",
+    "grammar": "语法",
+    "translation": "翻译",
+    "source": "来源",
+    "aria": "每日阅读各部分"
+  },
+  "document": {
+    "notFound": "现有数据中未找到这篇每日阅读。",
+    "back": "← 每日阅读列表",
+    "minutes": "{count} 分钟"
+  },
+  "grammar": {
+    "empty": "这篇阅读还没有单独的语法项目。",
+    "evidence": "阅读原文中的例句"
+  },
+  "source": {
+    "title": "来源与编写说明",
+    "fallbackNotice": "该内容在加入资料库之前已经过审核。",
+    "fallbackSource": "Hanzi Studio 来源"
+  }
+}

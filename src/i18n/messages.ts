@@ -14,6 +14,7 @@ async function loadViMessages() {
   reader,
   readerStudy,
   readerDocument,
+  dailyReading,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -27,6 +28,7 @@ async function loadViMessages() {
   import("../../messages/vi/reader.json"),
   import("../../messages/vi/reader-study.json"),
   import("../../messages/vi/reader-document.json"),
+  import("../../messages/vi/daily-reading.json"),
  ]);
 
  return {
@@ -38,6 +40,7 @@ async function loadViMessages() {
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
   Dictionary: dictionary.default,
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
+  DailyReading: dailyReading.default,
  };
 }
 
@@ -57,6 +60,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   reader,
   readerStudy,
   readerDocument,
+  dailyReading,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -70,6 +74,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/reader.json"),
   import("../../messages/en/reader-study.json"),
   import("../../messages/en/reader-document.json"),
+  import("../../messages/en/daily-reading.json"),
  ]);
 
  return {
@@ -81,6 +86,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
   Dictionary: dictionary.default,
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
+  DailyReading: dailyReading.default,
  };
 }
 
@@ -98,6 +104,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   reader,
   readerStudy,
   readerDocument,
+  dailyReading,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -111,6 +118,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/reader.json"),
   import("../../messages/zh-CN/reader-study.json"),
   import("../../messages/zh-CN/reader-document.json"),
+  import("../../messages/zh-CN/daily-reading.json"),
  ]);
 
  return {
@@ -122,6 +130,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Notes: { ...notes.default, tabs: noteTabs.default, editor: noteEditor.default },
   Dictionary: dictionary.default,
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
+  DailyReading: dailyReading.default,
  };
 }
 
