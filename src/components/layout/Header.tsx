@@ -384,7 +384,7 @@ function FocusModePill() {
  return (
   <Badge variant="warning" size="md" className="hidden sm:inline-flex" title={t("header.focusModeActive")}>
    <LockKeyhole />
-   Focus
+   {t("header.focusModeShort")}
   </Badge>
  );
 }
