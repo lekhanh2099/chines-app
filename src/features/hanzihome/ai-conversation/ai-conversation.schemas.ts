@@ -58,7 +58,26 @@ export const aiConversationResponseSchema = z.strictObject({
  usage: aiConversationUsageSchema.nullable(),
 });
 
+export const aiConversationRuntimeHealthCodeSchema = z.enum([
+ "ready",
+ "key-unavailable",
+ "missing-system-key",
+ "invalid-key",
+ "quota-exhausted",
+ "provider-unavailable",
+ "network-error",
+]);
+
+export const aiConversationRuntimeHealthSchema = z.strictObject({
+ ready: z.boolean(),
+ code: aiConversationRuntimeHealthCodeSchema,
+ provider: z.string().trim().min(1).nullable(),
+ model: z.string().trim().min(1).nullable(),
+ source: z.enum(["personal", "system"]).nullable(),
+});
+
 export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
 export type AiConversationProfile = z.output<typeof aiConversationProfileSchema>;
 export type AiConversationUsage = z.output<typeof aiConversationUsageSchema>;
 export type AiConversationResponse = z.output<typeof aiConversationResponseSchema>;
+export type AiConversationRuntimeHealth = z.output<typeof aiConversationRuntimeHealthSchema>;
