@@ -3,6 +3,10 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import {
+ checkPersonalConversationRuntime,
+ checkSystemConversationRuntime,
+} from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
+import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
  type AiConversationMessage,
@@ -24,6 +28,11 @@ import {
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+const healthRequestSchema = z.strictObject({
+ action: z.literal("health"),
+ apiKeyId: z.uuid().optional(),
+});
 
 const personaInstructions: Record<AiConversationProfile["persona"], string> = {
  tutor:
@@ -80,6 +89,32 @@ export async function POST(request: Request) {
  if (!auth.authenticated) return auth.response;
 
  const body: JsonFieldValue = await request.json().catch(() => null);
+ const healthRequest = healthRequestSchema.safeParse(body);
+ if (healthRequest.success) {
+  const credentials = await getActiveUserApiKeyCredentials(
+   auth.context.supabase,
+   auth.context.user.id,
+  );
+  const selectedCredential = healthRequest.data.apiKeyId
+   ? credentials.find((credential) => credential.id === healthRequest.data.apiKeyId)
+   : credentials[0];
+
+  if (healthRequest.data.apiKeyId && !selectedCredential) {
+   return privateNoStoreJson({
+    ready: false,
+    code: "key-unavailable",
+    provider: null,
+    model: null,
+    source: "personal",
+   });
+  }
+
+  const health = selectedCredential
+   ? await checkPersonalConversationRuntime(selectedCredential, request.signal)
+   : await checkSystemConversationRuntime(request.signal);
+  return privateNoStoreJson(health);
+ }
+
  const parsed = aiConversationRequestSchema.safeParse(body);
  if (!parsed.success) {
   return apiError("Invalid AI conversation payload", 400, "INVALID_PAYLOAD");
