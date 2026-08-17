@@ -171,6 +171,7 @@ describe("/api/ai/conversation", () => {
       [{ role: "user", content: "开始吧" }],
       "22222222-2222-4222-8222-222222222222",
      ),
+    ),
    }),
   );
 
@@ -202,6 +203,7 @@ describe("/api/ai/conversation", () => {
       [{ role: "user", content: "你好" }],
       "22222222-2222-4222-8222-222222222222",
      ),
+    ),
    }),
   );
 
