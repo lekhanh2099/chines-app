@@ -41,14 +41,24 @@ export const DEFAULT_AI_CONVERSATION_PROFILE: AiConversationProfile = {
 export const aiConversationRequestSchema = z.strictObject({
  messages: z.array(aiConversationMessageSchema).min(1).max(24),
  profile: aiConversationProfileSchema,
+ apiKeyId: z.uuid().optional(),
+});
+
+export const aiConversationUsageSchema = z.strictObject({
+ inputTokens: z.number().int().nonnegative(),
+ outputTokens: z.number().int().nonnegative(),
+ totalTokens: z.number().int().nonnegative(),
 });
 
 export const aiConversationResponseSchema = z.strictObject({
  message: z.string().trim().min(1),
  provider: z.string().trim().min(1),
  model: z.string().trim().min(1),
+ apiKeyId: z.uuid(),
+ usage: aiConversationUsageSchema.nullable(),
 });
 
 export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
 export type AiConversationProfile = z.output<typeof aiConversationProfileSchema>;
+export type AiConversationUsage = z.output<typeof aiConversationUsageSchema>;
 export type AiConversationResponse = z.output<typeof aiConversationResponseSchema>;
