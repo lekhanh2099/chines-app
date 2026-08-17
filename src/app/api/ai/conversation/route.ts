@@ -8,6 +8,11 @@ import {
  type AiConversationMessage,
  type AiConversationProfile,
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
+import {
+ generateSystemAiConversationReply,
+ SYSTEM_AI_CONVERSATION_MODEL,
+ SYSTEM_AI_CONVERSATION_PROVIDER,
+} from "@/features/hanzihome/ai-conversation/ai-conversation-system.server";
 import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
 import { generateAiConversationReply } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
@@ -84,18 +89,10 @@ export async function POST(request: Request) {
   auth.context.supabase,
   auth.context.user.id,
  );
- if (userApiKeys.length === 0) {
-  return apiError(
-   "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI.",
-   503,
-   "AI_API_KEY_REQUIRED",
-  );
- }
-
  const selectedKey = parsed.data.apiKeyId
   ? userApiKeys.find((key) => key.id === parsed.data.apiKeyId)
   : userApiKeys[0];
- if (!selectedKey) {
+ if (parsed.data.apiKeyId && !selectedKey) {
   return apiError(
    "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động.",
    409,
@@ -111,10 +108,12 @@ export async function POST(request: Request) {
  const conversationMessages: AiConversationMessage[] = [profileMessage, ...recentMessages];
 
  try {
-  const result = await generateAiConversationReply(conversationMessages, {
-   userApiKeys: [selectedKey],
-   abortSignal: request.signal,
-  });
+  const result = selectedKey
+   ? await generateAiConversationReply(conversationMessages, {
+      userApiKeys: [selectedKey],
+      abortSignal: request.signal,
+     })
+   : await generateSystemAiConversationReply(conversationMessages, request.signal);
 
   if (!result.data) {
    return apiError(result.error || "AI provider không trả về nội dung.", 503, "AI_UNAVAILABLE");
@@ -123,9 +122,11 @@ export async function POST(request: Request) {
   return privateNoStoreJson(
    aiConversationResponseSchema.parse({
     message: result.data,
-    provider: getApiKeyProviderLabel(selectedKey.provider),
-    model: selectedKey.defaultModel || "provider-default",
-    apiKeyId: selectedKey.id,
+    provider: selectedKey
+     ? getApiKeyProviderLabel(selectedKey.provider)
+     : SYSTEM_AI_CONVERSATION_PROVIDER,
+    model: selectedKey?.defaultModel || SYSTEM_AI_CONVERSATION_MODEL,
+    apiKeyId: selectedKey?.id || null,
     usage: null,
    }),
   );
