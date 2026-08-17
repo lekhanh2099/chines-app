@@ -1,5 +1,15 @@
 {
- "requests": "AI 调用次数",
+ "title": "AI 会话使用情况",
+ "description": "把 AI 会话的调用统计集中放在设置中，而不是占用聊天页面的学习空间。",
+ "requests": "成功 AI 调用",
+ "inputTokens": "输入 tokens",
+ "outputTokens": "输出 tokens",
+ "totalTokens": "总 tokens",
  "lastUsed": "最近使用",
- "scope": "当前 usage 只记录本浏览器中成功的 AI 会话调用。不会估算费用或配额，因为价格和免费额度由各 provider 决定。"
+ "never": "暂无",
+ "empty": "当前浏览器还没有记录到成功的 AI 会话调用。",
+ "systemRuntime": "系统 Gemini",
+ "runtimeUsage": "{requests} 次 · {tokens} tokens",
+ "scope": "Usage 只保存在当前浏览器中，目前仅记录成功的 AI 会话调用。不会估算费用或配额，因为价格和免费额度由各 provider 决定。",
+ "scopeWithoutTokens": "Usage 只保存在当前浏览器中。Provider 目前没有为这些 AI 会话调用返回标准化 token 数据，因此 token 显示为 —，不会猜测数值。"
 }
