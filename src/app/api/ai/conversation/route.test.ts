@@ -6,16 +6,26 @@ import {
  type AiConversationMessage,
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 
-const { getActiveUserApiKeyCredentials, generateAiConversationReply, requireAuthenticatedRoute } =
- vi.hoisted(() => ({
-  getActiveUserApiKeyCredentials: vi.fn(),
-  generateAiConversationReply: vi.fn(),
-  requireAuthenticatedRoute: vi.fn(),
- }));
+const {
+ getActiveUserApiKeyCredentials,
+ generateAiConversationReply,
+ generateSystemAiConversationReply,
+ requireAuthenticatedRoute,
+} = vi.hoisted(() => ({
+ getActiveUserApiKeyCredentials: vi.fn(),
+ generateAiConversationReply: vi.fn(),
+ generateSystemAiConversationReply: vi.fn(),
+ requireAuthenticatedRoute: vi.fn(),
+}));
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/services/user-api-keys.service", () => ({ getActiveUserApiKeyCredentials }));
 vi.mock("@/services/ai.service", () => ({ generateAiConversationReply }));
+vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-system.server", () => ({
+ generateSystemAiConversationReply,
+ SYSTEM_AI_CONVERSATION_PROVIDER: "Google Gemini",
+ SYSTEM_AI_CONVERSATION_MODEL: "models/gemini-3.1-flash-lite",
+}));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
  apiError: (message: string, status: number, code?: string) =>
@@ -36,6 +46,7 @@ describe("/api/ai/conversation", () => {
  beforeEach(() => {
   getActiveUserApiKeyCredentials.mockReset();
   generateAiConversationReply.mockReset();
+  generateSystemAiConversationReply.mockReset();
   requireAuthenticatedRoute.mockReset();
   requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
@@ -70,8 +81,12 @@ describe("/api/ai/conversation", () => {
   expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
  });
 
- it("returns the observable setup state when no managed key is active", async () => {
+ it("uses the system Gemini runtime when no personal key is active", async () => {
   getActiveUserApiKeyCredentials.mockResolvedValue([]);
+  generateSystemAiConversationReply.mockResolvedValue({
+   data: "你好，我们开始吧。",
+   error: null,
+  });
 
   const response = await POST(
    new Request("https://app.example/api/ai/conversation", {
@@ -80,12 +95,19 @@ describe("/api/ai/conversation", () => {
    }),
   );
 
-  expect(response.status).toBe(503);
-  expect(await response.json()).toMatchObject({ code: "AI_API_KEY_REQUIRED" });
+  expect(response.status).toBe(200);
   expect(generateAiConversationReply).not.toHaveBeenCalled();
+  expect(generateSystemAiConversationReply).toHaveBeenCalledTimes(1);
+  expect(await response.json()).toEqual({
+   message: "你好，我们开始吧。",
+   provider: "Google Gemini",
+   model: "models/gemini-3.1-flash-lite",
+   apiKeyId: null,
+   usage: null,
+  });
  });
 
- it("prepends stable profile context and reports the selected runtime", async () => {
+ it("prepends stable profile context and reports the selected personal runtime", async () => {
   const credentials = [
    {
     id: "11111111-1111-4111-8111-111111111111",
@@ -106,6 +128,7 @@ describe("/api/ai/conversation", () => {
 
   expect(response.status).toBe(200);
   expect(generateAiConversationReply).toHaveBeenCalledTimes(1);
+  expect(generateSystemAiConversationReply).not.toHaveBeenCalled();
   const [messages, options] = generateAiConversationReply.mock.calls[0];
   expect(messages).toHaveLength(2);
   expect(messages[0]).toMatchObject({ role: "user" });
@@ -154,13 +177,14 @@ describe("/api/ai/conversation", () => {
   expect(response.status).toBe(200);
   const [, options] = generateAiConversationReply.mock.calls[0];
   expect(options.userApiKeys).toEqual([credentials[1]]);
+  expect(generateSystemAiConversationReply).not.toHaveBeenCalled();
   expect(await response.json()).toMatchObject({
    provider: "Google Gemini",
    apiKeyId: "22222222-2222-4222-8222-222222222222",
   });
  });
 
- it("rejects a selected key that is no longer active", async () => {
+ it("rejects a selected key that is no longer active instead of using the system runtime", async () => {
   getActiveUserApiKeyCredentials.mockResolvedValue([
    {
     id: "11111111-1111-4111-8111-111111111111",
@@ -184,6 +208,7 @@ describe("/api/ai/conversation", () => {
   expect(response.status).toBe(409);
   expect(await response.json()).toMatchObject({ code: "AI_API_KEY_UNAVAILABLE" });
   expect(generateAiConversationReply).not.toHaveBeenCalled();
+  expect(generateSystemAiConversationReply).not.toHaveBeenCalled();
  });
 
  it("keeps the profile plus the latest 19 conversation messages", async () => {
