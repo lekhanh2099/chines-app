@@ -331,6 +331,16 @@ export default function ApiKeyManagerSection() {
            setDiscoveryError(null);
            setModel("");
           }}
+          onPaste={(event) => {
+           const pasted = event.clipboardData.getData("text").trim();
+           if (!pasted) return;
+           event.preventDefault();
+           setApiKey(pasted);
+           setDiscovery(null);
+           setDiscoveryError(null);
+           setModel("");
+           void runDiscovery(pasted);
+          }}
           onBlur={() => {
            if (apiKey.trim() && !discovery && !isDiscovering) void runDiscovery(apiKey);
           }}
