@@ -26,9 +26,10 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 
 import { POST } from "./route";
 
-const requestBody = (messages: AiConversationMessage[]) => ({
+const requestBody = (messages: AiConversationMessage[], apiKeyId?: string) => ({
  messages,
  profile: DEFAULT_AI_CONVERSATION_PROFILE,
+ ...(apiKeyId ? { apiKeyId } : {}),
 });
 
 describe("/api/ai/conversation", () => {
@@ -87,7 +88,7 @@ describe("/api/ai/conversation", () => {
  it("prepends stable profile context and reports the selected runtime", async () => {
   const credentials = [
    {
-    id: "key-1",
+    id: "11111111-1111-4111-8111-111111111111",
     provider: "groq",
     defaultModel: "openai/gpt-oss-20b",
     label: "Groq Free",
@@ -116,13 +117,79 @@ describe("/api/ai/conversation", () => {
    message: "你好，今天学习什么？",
    provider: "Groq",
    model: "openai/gpt-oss-20b",
+   apiKeyId: "11111111-1111-4111-8111-111111111111",
+   usage: null,
   });
+ });
+
+ it("uses the explicitly selected active key without silent fallback", async () => {
+  const credentials = [
+   {
+    id: "11111111-1111-4111-8111-111111111111",
+    provider: "groq",
+    defaultModel: "openai/gpt-oss-20b",
+    label: "Groq Free",
+   },
+   {
+    id: "22222222-2222-4222-8222-222222222222",
+    provider: "gemini",
+    defaultModel: "models/gemini-3.5-flash",
+    label: "Gemini",
+   },
+  ];
+  getActiveUserApiKeyCredentials.mockResolvedValue(credentials);
+  generateAiConversationReply.mockResolvedValue({ data: "我们开始吧。", error: null });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify(
+     requestBody(
+      [{ role: "user", content: "开始吧" }],
+      "22222222-2222-4222-8222-222222222222",
+     ),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  const [, options] = generateAiConversationReply.mock.calls[0];
+  expect(options.userApiKeys).toEqual([credentials[1]]);
+  expect(await response.json()).toMatchObject({
+   provider: "Google Gemini",
+   apiKeyId: "22222222-2222-4222-8222-222222222222",
+  });
+ });
+
+ it("rejects a selected key that is no longer active", async () => {
+  getActiveUserApiKeyCredentials.mockResolvedValue([
+   {
+    id: "11111111-1111-4111-8111-111111111111",
+    provider: "groq",
+    defaultModel: "openai/gpt-oss-20b",
+    label: "Groq Free",
+   },
+  ]);
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify(
+     requestBody(
+      [{ role: "user", content: "你好" }],
+      "22222222-2222-4222-8222-222222222222",
+     ),
+   }),
+  );
+
+  expect(response.status).toBe(409);
+  expect(await response.json()).toMatchObject({ code: "AI_API_KEY_UNAVAILABLE" });
+  expect(generateAiConversationReply).not.toHaveBeenCalled();
  });
 
  it("keeps the profile plus the latest 19 conversation messages", async () => {
   const credentials = [
    {
-    id: "key-1",
+    id: "11111111-1111-4111-8111-111111111111",
     provider: "groq",
     defaultModel: "openai/gpt-oss-20b",
     label: "Groq Free",
