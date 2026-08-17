@@ -10,15 +10,18 @@ import {
  type AiConversationRuntimeHealth,
 } from "./ai-conversation.schemas";
 
+const endpoint = "/api/ai/conversation";
+
 export async function fetchAiConversationRuntimeHealth(
  options?: { apiKeyId?: string; signal?: AbortSignal },
 ): Promise<AiConversationRuntimeHealth> {
- const searchParams = new URLSearchParams();
- if (options?.apiKeyId) searchParams.set("apiKeyId", options.apiKeyId);
- const query = searchParams.size > 0 ? `?${searchParams.toString()}` : "";
- const response = await fetch(`/api/ai/conversation/health${query}`, {
-  method: "GET",
-  headers: { Accept: "application/json" },
+ const response = await fetch(endpoint, {
+  method: "POST",
+  headers: { "Content-Type": "application/json", Accept: "application/json" },
+  body: JSON.stringify({
+   action: "health",
+   ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
+  }),
   signal: options?.signal,
  });
  const body: JsonFieldValue = await response.json().catch(() => null);
@@ -40,7 +43,7 @@ export async function sendAiConversationMessage(
   profile,
   ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
  });
- const response = await fetch("/api/ai/conversation", {
+ const response = await fetch(endpoint, {
   method: "POST",
   headers: { "Content-Type": "application/json", Accept: "application/json" },
   body: JSON.stringify(payload),
