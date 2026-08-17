@@ -1,0 +1,77 @@
+{
+ "title": "Settings",
+ "description": "Customize the interface, reading experience, and AI lookup without mixing learning preferences with account settings.",
+ "tabs": {"app": "App", "reading": "Reading", "ai": "AI & API"},
+ "learningBehavior": {
+  "title": "Learning behavior",
+  "description": "App-wide learning preferences live here; reading-specific options stay in the Reading section.",
+  "globalLookup": "Default dictionary lookup",
+  "globalLookupDescription": "Applies across learning pages, vocabulary, and the dashboard; Notes has its own scope below.",
+  "notesLookup": "Dictionary lookup in Notes",
+  "notesLookupDescription": "Keeps a separate preference for Notes without affecting other learning pages.",
+  "focusMode": "Focus mode",
+  "focusModeDescription": "Locks route and lesson changes until you turn it off from Gear or this page.",
+  "focusModeEnabled": "Focus mode is on. You will stay in the current lesson and can only change the current section or open note tab."
+ },
+ "appearance": {
+  "title": "Appearance",
+  "description": "Light and dark mode define the base surfaces. Palettes add stronger canvas accents, lighter Card accents, and a consistent color for primary, focus, and selected states while popovers, inputs, and borders remain neutral for readability.",
+  "modeTitle": "Light and dark mode",
+  "modeDescription": "System automatically follows the operating system appearance.",
+  "modeAria": "Choose light or dark mode",
+  "modes": {"system": "System", "systemCompact": "System", "light": "Light", "dark": "Dark"},
+  "paletteTitle": "Interface palette",
+  "paletteDescription": "Changes page and Card surfaces plus primary, selected, and active-navigation colors as one palette.",
+  "paletteAria": "Choose interface palette",
+  "palettes": {
+   "editorial": {"label": "Hanzi Studio Indigo", "description": "Cool indigo, bright paper surfaces, and editorial study-workspace accents."},
+   "jade": {"label": "Jade", "description": "Balanced green with calm canvas and Card surfaces plus clear active states."},
+   "warm": {"label": "Warm Sepia", "description": "A restrained sepia palette for long reading sessions while preserving hierarchy."},
+   "plum": {"label": "Plum", "description": "Soft plum on canvas and Cards with clear active states without tinting popovers or inputs."},
+   "mono": {"label": "Black & White", "description": "Neutral contrast with almost all decorative color removed."},
+   "tea": {"label": "Green Tea", "description": "Low-saturation tea green with calm canvas and Card surfaces for extended study."}
+  }
+ },
+ "ai": {
+  "badge": "AI Settings", "title": "AI lookup settings",
+  "description": "Quick lookup prioritizes lesson and dictionary data. Lightweight AI runs only when cache misses; stronger models run only when you explicitly open details.",
+  "statusDirty": "Unsaved changes", "statusSynced": "Synced", "reset": "Reset defaults", "save": "Save changes",
+  "detailTitle": "Detailed analysis",
+  "detailDescription": "Used only for deeper analysis, examples, character structure, or grammar. If no personal key is configured, the app uses the system Gemini model selected below.",
+  "detailModelLabel": "Default detail model", "detailModelAria": "Choose Gemini model", "savedSuffix": "saved",
+  "legacyModel": "A legacy model is still stored. Choose a current model to update it.",
+  "quickTitle": "Quick lookup and meaning",
+  "quickDescription": "Flow: lesson vocabulary → shared dictionary → legacy cache → lightweight AI. No personal API key is required.",
+  "quickModelDescription": "Optimized for low-latency meanings and short Sino-Vietnamese readings.", "noPersonalKey": "No personal key required", "freeTier": "Free-tier eligible",
+  "localFallback": "Using AI prompt settings stored locally in this browser", "savedRemote": "AI prompt settings saved", "savedLocal": "AI prompt settings saved in this browser"
+ },
+ "prompts": {
+  "title": "Lookup Prompts", "description": "Advanced prompts are used only for detailed analysis. Quick lookup keeps a short fixed prompt to reduce latency and token usage.",
+  "dirty": "Prompt changes are unsaved", "synced": "Prompts synced", "save": "Save prompts",
+  "wordTitle": "Word Lookup Prompt", "wordDescription": "Used for words and short phrases. Keep the {token} placeholder so the backend can inject the lookup term.",
+  "sentenceTitle": "Sentence Lookup Prompt", "sentenceDescription": "Used for sentences and passages. Keep the {token} placeholder so the backend can inject the actual content.",
+  "unsaved": "Unsaved", "saved": "Saved", "restore": "Restore block", "hasPlaceholder": "Contains placeholder {token}", "missingPlaceholder": "Missing placeholder {token}", "characters": "{count} characters"
+ },
+ "apiKeys": {
+  "title": "Personal API keys for detailed analysis",
+  "description": "Every model in this section requires a personal API key. Providers may offer free quota, but the app still needs a key to call their API. Failed requests never trigger automatic key or model switching.",
+  "add": "Add API key", "added": "API key added.", "dialogTitle": "Add a new API key", "dialogDescription": "Choose a provider and model, then enter the matching key.",
+  "provider": "Provider", "model": "Model", "openDocs": "Open key page", "displayName": "Display name", "displayNamePlaceholder": "Example: Groq word lookup",
+  "apiKey": "API key", "apiKeyPlaceholder": "Paste API key here", "showKey": "Show API key", "hideKey": "Hide API key", "pasteKey": "Paste API key", "verifySave": "Verify and save",
+  "schemaNotReady": "The database is not ready for user_api_keys. Apply or repair the migration, then reload this page.",
+  "summary": "{total} keys · {active} enabled · used only for detailed analysis",
+  "loadError": "Unable to load API keys.", "loadErrorDescription": "Check the connection and try again. Existing key data has not been changed.", "loading": "Loading API keys...",
+  "empty": "No personal API keys yet", "emptyReady": "Quick lookup still uses the system model. Add a key only when you want a personal model for detailed analysis.", "emptyNotReady": "Apply the database migration first, then return here to add a key.",
+  "statusSelected": "In use", "statusActive": "Enabled", "statusPaused": "Paused", "modelUsed": "Model in use", "modelAria": "Model for {label}",
+  "moveUp": "Move up", "pause": "Pause", "resume": "Enable", "delete": "Delete",
+  "pasted": "API key pasted from the clipboard.", "clipboardError": "Unable to access the clipboard.", "keyRequired": "Enter an API key.", "addError": "Unable to add the API key.",
+  "modelChanged": "Model changed.", "modelChangeError": "Unable to change the model.", "toggleError": "Unable to update the key status.", "moveError": "Unable to change the key order.", "deleted": "API key deleted.", "deleteError": "Unable to delete the key.",
+  "providers": {"groq": "High-speed detailed word and sentence analysis through Groq BYOK.", "deepseek": "Uses the selected DeepSeek model for lookup and analysis.", "gemini": "Uses Google AI Studio / Gemini API.", "openai": "Uses the selected OpenAI model for lookup and analysis."},
+  "models": {
+   "gptOss20b": "Fast for short lookups; available on Groq Free Plan quota.", "gptOss120b": "Higher quality; available on Groq Free Plan quota.", "qwen36": "Well suited to Chinese content; available on Groq Free Plan quota.",
+   "deepseekFlash": "Newer model optimized for speed and frequent lookup.", "deepseekPro": "Newer model for tasks that need higher quality.",
+   "gemini35Flash": "Stable model for longer and more complex tasks.", "gemini31Pro": "Preview model for tasks that need stronger reasoning.", "gemini25Flash": "Balanced default for speed and quality.", "gemini25Pro": "Stronger model that may respond more slowly.",
+   "gpt5Mini": "Fast and suitable for structured lookup.", "gpt5Nano": "Lightest option for short tasks.", "gpt41Mini": "Stable model for JSON and instruction following.", "gpt41Nano": "Small and fast 4.1 model.", "legacy": "This model was saved by an older version. Choose a current model to update it."
+  }
+ }
+}
