@@ -44,7 +44,6 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { getApiKeyModelOptions, getDefaultApiKeyModel } from "@/lib/api-key-models";
@@ -351,7 +350,7 @@ export default function ApiKeyManagerSection() {
          <Button
           type="button"
           variant="outline"
-          size="icon-toolbar"
+          size="icon"
           onClick={() => setShowKey((current) => !current)}
           aria-label={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
           title={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
@@ -361,7 +360,7 @@ export default function ApiKeyManagerSection() {
          <Button
           type="button"
           variant="outline"
-          size="icon-toolbar"
+          size="icon"
           onClick={handlePaste}
           aria-label={t("apiKeys.pasteKey")}
           title={t("apiKeys.pasteKey")}
@@ -495,7 +494,10 @@ export default function ApiKeyManagerSection() {
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,22rem)_auto] lg:items-center">
          <div className="grid min-w-0 gap-2">
           <div className="flex flex-wrap items-center gap-2">
-           <Badge variant={providerOption?.accessTier === "free-tier" ? "success" : "default"} size="sm">
+           <Badge
+            variant={providerOption?.accessTier === "free-tier" ? "success" : "default"}
+            size="sm"
+           >
             {key.providerLabel}
            </Badge>
            <Badge
@@ -604,11 +606,23 @@ export default function ApiKeyManagerSection() {
       <DialogDescription>{t("apiKeys.deleteDescription")}</DialogDescription>
      </DialogHeader>
      <DialogFooter>
-      <Button variant="outline" onClick={() => setDeleteKeyId(null)} disabled={deleteMutation.isPending}>
+      <Button
+       variant="outline"
+       onClick={() => setDeleteKeyId(null)}
+       disabled={deleteMutation.isPending}
+      >
        {common("actions.cancel")}
       </Button>
-      <Button variant="destructive" onClick={() => void handleDeleteKey()} disabled={deleteMutation.isPending}>
-       {deleteMutation.isPending ? <Spinner data-icon="inline-start" /> : <Trash2 data-icon="inline-start" />}
+      <Button
+       variant="destructive"
+       onClick={() => void handleDeleteKey()}
+       disabled={deleteMutation.isPending}
+      >
+       {deleteMutation.isPending ? (
+        <Spinner data-icon="inline-start" />
+       ) : (
+        <Trash2 data-icon="inline-start" />
+       )}
        {t("apiKeys.deleteConfirm")}
       </Button>
      </DialogFooter>
