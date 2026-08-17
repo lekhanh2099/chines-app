@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { useQueries } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
-import { z } from "zod";
 
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/button";
@@ -31,7 +30,7 @@ import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 export function HanziHomeVocabReviewPage({
  reviewLessonsParam,
 }: {
- reviewLessonsParam: z.infer<z.ZodNullable<z.ZodString>>;
+ reviewLessonsParam: string | null;
 }) {
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
  const lessonTokens = useMemo(

@@ -1,15 +1,9 @@
 "use client";
 
 import type { JsonFieldValue } from "@/types/json";
+import { moduleSchema } from "@/features/hanzihome/schemas/learning-state.schema";
 import { z } from "zod";
-import {
- LessonViewModeSchema,
- StudyModuleSchema,
- type LessonViewMode,
- type PaneId,
- type PaneLayout,
- type StudyModule,
-} from "./types";
+import type { LessonViewMode, PaneId, PaneLayout, StudyModule } from "./types";
 
 const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
@@ -18,6 +12,9 @@ const splitPaneSizeKey = "hanzihome:module-split-size:v1";
 
 export const developerToolsEnabled = process.env.NODE_ENV === "development";
 export const contentEditingEnabled = true;
+
+const StudyModuleSchema = moduleSchema.exclude(["radicals"]);
+const LessonViewModeSchema = z.enum(["study", "debug"]);
 
 const splitStudyModules = [
  "overview",
@@ -46,9 +43,7 @@ const paneLayoutInputSchema = z.object({
  activeRight: StudyModuleSchema.optional(),
 });
 
-export function parseStudyModule(
- value: Parameters<typeof NullableStudyModuleSchema.safeParse>[0],
-): z.infer<z.ZodNullable<typeof StudyModuleSchema>> {
+export function parseStudyModule(value: JsonFieldValue): StudyModule | null {
  const parsed = NullableStudyModuleSchema.safeParse(value);
  return parsed.success ? parsed.data : null;
 }
@@ -109,7 +104,7 @@ export function readWorkspacePreferences() {
   return {
    splitEnabled: false,
    paneLayout: defaultPaneLayout,
-   viewMode: LessonViewModeSchema.parse("study"),
+   viewMode: "study" satisfies LessonViewMode,
    splitPaneSize: 48,
   };
  }
@@ -123,15 +118,17 @@ export function readWorkspacePreferences() {
  }
 
  const storedSize = Number(window.localStorage.getItem(splitPaneSizeKey));
+ const storedViewMode = LessonViewModeSchema.safeParse(
+  window.localStorage.getItem(lessonViewModeKey),
+ );
 
  return {
   splitEnabled: window.localStorage.getItem(splitEnabledKey) === "true",
   paneLayout,
-  viewMode: LessonViewModeSchema.parse(
-   developerToolsEnabled && window.localStorage.getItem(lessonViewModeKey) === "debug"
-    ? "debug"
-    : "study",
-  ),
+  viewMode:
+   developerToolsEnabled && storedViewMode.success && storedViewMode.data === "debug"
+    ? storedViewMode.data
+    : ("study" satisfies LessonViewMode),
   splitPaneSize:
    Number.isFinite(storedSize) && storedSize >= 38 && storedSize <= 62 ? storedSize : 48,
  };

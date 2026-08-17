@@ -3,32 +3,27 @@
 import { createStore } from "@tanstack/react-store";
 
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
-import type { LessonViewMode, PaneId, PaneLayout } from "./types";
+import type { LearningStatus } from "@/features/hanzihome/types";
+import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
  type LessonDisplayMode,
 } from "@/features/hanzihome/components/lesson-overview/types";
 import { readWorkspacePreferences } from "./workspaceLayout";
-import { learningStatusSchema } from "@/features/hanzihome/schemas/learning-state.schema";
-import { DraggedModuleSchema } from "./types";
-import { z } from "zod";
-
-const VocabStatusFilterSchema = learningStatusSchema.or(z.literal("all"));
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
 
 export type HanziHomeFeatureState = {
  editMode: boolean;
- activeNode: Nullable<EditableNodeRequest>;
+ activeNode: EditableNodeRequest | null;
  splitEnabled: boolean;
  paneLayout: PaneLayout;
  activePane: PaneId;
- draggedModule: z.infer<z.ZodNullable<typeof DraggedModuleSchema>>;
+ draggedModule: DraggedModule | null;
  viewMode: LessonViewMode;
  splitPaneSize: number;
- vocabSelectedWordId: z.infer<z.ZodNullable<z.ZodString>>;
+ vocabSelectedWordId: string | null;
  vocabSearchValue: string;
- vocabStatusFilter: z.infer<typeof VocabStatusFilterSchema>;
- grammarSelectedPointId: z.infer<z.ZodNullable<z.ZodString>>;
+ vocabStatusFilter: LearningStatus | "all";
+ grammarSelectedPointId: string | null;
  grammarSidebarOpen: boolean;
  lessonTextSelectedSectionId: string;
  lessonTextSidebarOpen: boolean;
@@ -59,7 +54,7 @@ export function createHanziHomeFeatureStore(
   splitPaneSize: preferences.splitPaneSize,
   vocabSelectedWordId: initialSelections.vocabSelectedWordId ?? null,
   vocabSearchValue: "",
-  vocabStatusFilter: VocabStatusFilterSchema.options[1].value,
+  vocabStatusFilter: "all",
   grammarSelectedPointId: initialSelections.grammarSelectedPointId ?? null,
   grammarSidebarOpen: true,
   lessonTextSelectedSectionId:

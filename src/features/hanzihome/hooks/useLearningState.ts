@@ -3,7 +3,6 @@
 import type { JsonFieldValue } from "@/types/json";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { z } from "zod";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
 import {
@@ -48,7 +47,7 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
  const syncInFlightRef = useRef<Promise<LearningStateSyncResult>>(null);
  const [syncStatus, setSyncStatus] = useState<LearningStateSyncStatus>("synced");
  const [pendingSyncCount, setPendingSyncCount] = useState(0);
- const [lastSyncError, setLastSyncError] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
+ const [lastSyncError, setLastSyncError] = useState<string | null>(null);
  const isOnline = useSyncExternalStore(
   subscribeToBrowserOnlineState,
   getBrowserOnlineState,

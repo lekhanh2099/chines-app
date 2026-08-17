@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useMemo, useReducer } from "react";
-import { z } from "zod";
 
 import type {
  GrammarViewModel,
@@ -11,8 +10,7 @@ import type {
 } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning, getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
-export const ReviewDeckModeSchema = z.enum(["all", "vocab", "grammar", "hard"]);
-export type ReviewDeckMode = z.infer<typeof ReviewDeckModeSchema>;
+export type ReviewDeckMode = "all" | "vocab" | "grammar" | "hard";
 
 type ReviewItemMap = {
  vocab: {
