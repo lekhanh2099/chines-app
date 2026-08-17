@@ -9,15 +9,17 @@ import type { AiConversationRuntimeHealth } from "./ai-conversation.schemas";
 
 const HEALTH_TIMEOUT_MS = 8_000;
 
+type RuntimeIdentity = Pick<AiConversationRuntimeHealth, "provider" | "model" | "source">;
+
 export async function checkPersonalConversationRuntime(
  credential: UserApiKeyCredential,
  abortSignal?: AbortSignal,
 ): Promise<AiConversationRuntimeHealth> {
  const request = getProviderHealthRequest(credential);
- const readyBase = {
+ const runtimeIdentity: RuntimeIdentity = {
   provider: getApiKeyProviderLabel(credential.provider),
   model: credential.defaultModel || "provider-default",
-  source: "personal" as const,
+  source: "personal",
  };
 
  try {
@@ -28,21 +30,21 @@ export async function checkPersonalConversationRuntime(
   });
 
   if (response.ok) {
-   return { ready: true, code: "ready", ...readyBase };
+   return { ready: true, code: "ready", ...runtimeIdentity };
   }
 
   if (response.status === 400 || response.status === 401 || response.status === 403) {
-   return { ready: false, code: "invalid-key", ...readyBase };
+   return { ready: false, code: "invalid-key", ...runtimeIdentity };
   }
 
   if (response.status === 402 || response.status === 429) {
-   return { ready: false, code: "quota-exhausted", ...readyBase };
+   return { ready: false, code: "quota-exhausted", ...runtimeIdentity };
   }
 
-  return { ready: false, code: "provider-unavailable", ...readyBase };
+  return { ready: false, code: "provider-unavailable", ...runtimeIdentity };
  } catch (error) {
   if (abortSignal?.aborted) throw error;
-  return { ready: false, code: "network-error", ...readyBase };
+  return { ready: false, code: "network-error", ...runtimeIdentity };
  }
 }
 
