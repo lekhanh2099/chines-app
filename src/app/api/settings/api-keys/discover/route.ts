@@ -9,6 +9,7 @@ import {
  getApiKeyProviderLabel,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
+import { createRequestSignal } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
 
 const DISCOVERY_TIMEOUT_MS = 10_000;
@@ -149,10 +150,7 @@ async function discoverProviderModels(
 }
 
 function fetchProviderModels(apiKey: string, provider: ApiKeyProvider, abortSignal: AbortSignal) {
- const signal = AbortSignal.any([
-  abortSignal,
-  AbortSignal.timeout(DISCOVERY_TIMEOUT_MS),
- ]);
+ const signal = createRequestSignal(DISCOVERY_TIMEOUT_MS, abortSignal);
 
  if (provider === "gemini") {
   return fetch("https://generativelanguage.googleapis.com/v1beta/models", {
