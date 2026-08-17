@@ -20,6 +20,7 @@ async function loadViMessages() {
   humanitiesPractice,
   aiConversation,
   aiUsage,
+  apiKeySetup,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -39,6 +40,7 @@ async function loadViMessages() {
   import("../../messages/vi/humanities-practice.json"),
   import("../../messages/vi/ai-conversation.json"),
   import("../../messages/vi/ai-usage.json"),
+  import("../../messages/vi/api-key-setup.json"),
  ]);
 
  return {
@@ -56,6 +58,7 @@ async function loadViMessages() {
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
   AiUsage: aiUsage.default,
+  ApiKeySetup: apiKeySetup.default,
  };
 }
 
@@ -81,6 +84,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   humanitiesPractice,
   aiConversation,
   aiUsage,
+  apiKeySetup,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -100,6 +104,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/humanities-practice.json"),
   import("../../messages/en/ai-conversation.json"),
   import("../../messages/en/ai-usage.json"),
+  import("../../messages/en/api-key-setup.json"),
  ]);
 
  return {
@@ -117,6 +122,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
   AiUsage: aiUsage.default,
+  ApiKeySetup: apiKeySetup.default,
  };
 }
 
@@ -140,6 +146,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   humanitiesPractice,
   aiConversation,
   aiUsage,
+  apiKeySetup,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -159,6 +166,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/humanities-practice.json"),
   import("../../messages/zh-CN/ai-conversation.json"),
   import("../../messages/zh-CN/ai-usage.json"),
+  import("../../messages/zh-CN/api-key-setup.json"),
  ]);
 
  return {
@@ -176,6 +184,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
   AiUsage: aiUsage.default,
+  ApiKeySetup: apiKeySetup.default,
  };
 }
 
