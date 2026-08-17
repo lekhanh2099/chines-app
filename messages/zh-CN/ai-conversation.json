@@ -34,22 +34,14 @@
  },
  "greeting": "你好，我是{name}。现在是“{role}”模式。你可以直接用中文开始，也可以先告诉我今天想练什么。",
  "fallbackInterest": "中文会话",
- "stats": {
-  "learnerTurns": "你的轮次",
-  "context": "近期上下文",
-  "requests": "AI 调用",
-  "provider": "Provider",
-  "model": "Model",
-  "messages": "{count} 条",
-  "notCalled": "尚未调用"
- },
  "runtime": {
   "label": "使用的 AI",
-  "auto": "按密钥优先级自动选择",
+  "auto": "自动——优先个人密钥",
   "loading": "正在加载 API 密钥…",
-  "empty": "没有已启用的 API 密钥",
-  "description": "选择具体密钥后，可以明确知道会调用哪个 provider/model。自动模式只使用优先级最高的已启用密钥，请求失败时不会静默切换到其他密钥。",
-  "loadError": "无法加载 API 密钥列表。仍可使用自动模式。",
+  "empty": "没有已启用的个人密钥——自动模式将使用系统 Gemini。",
+  "description": "自动模式优先使用优先级最高的个人密钥；如果没有个人密钥，则使用系统 Gemini。选择具体密钥后，请求只会使用该密钥。",
+  "current": "当前运行环境：{provider} · {model}",
+  "loadError": "无法加载个人 API 密钥列表。自动模式仍可使用系统 Gemini。",
   "modelFallback": "provider 默认模型"
  },
  "message": {
