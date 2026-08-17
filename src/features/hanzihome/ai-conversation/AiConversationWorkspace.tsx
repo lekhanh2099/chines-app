@@ -136,7 +136,11 @@ export function AiConversationWorkspace() {
   requestRef.current = controller;
 
   try {
-   const response = await sendAiConversationMessage(nextMessages.slice(-24), profile, controller.signal);
+   const response = await sendAiConversationMessage(
+    nextMessages.slice(-24),
+    profile,
+    controller.signal,
+   );
    setMessages((current) => [...current, { role: "assistant", content: response.message }]);
    setLastRuntime({ provider: response.provider, model: response.model });
   } catch (caught) {
@@ -160,8 +164,8 @@ export function AiConversationWorkspace() {
       Hội thoại AI
      </Typography>
      <Typography as="p" variant="body" tone="muted">
-      Luyện tiếng Trung với nhân vật và cách sửa lỗi do bạn chọn. Hồ sơ nhân vật được lưu trên
-      thiết bị; nội dung hội thoại vẫn chỉ tồn tại trong phiên hiện tại.
+      Luyện tiếng Trung với nhân vật và cách sửa lỗi do bạn chọn. Hồ sơ nhân vật được lưu trên thiết
+      bị; nội dung hội thoại vẫn chỉ tồn tại trong phiên hiện tại.
      </Typography>
     </div>
     <div className="flex flex-wrap gap-2">

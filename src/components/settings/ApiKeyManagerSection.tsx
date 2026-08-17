@@ -95,7 +95,9 @@ export default function ApiKeyManagerSection() {
  const schemaReady = query.data?.schemaReady ?? true;
  const isLoading = query.isPending;
  const isSubmitting = addMutation.isPending;
- const freeProviders = API_KEY_PROVIDER_OPTIONS.filter((option) => option.accessTier === "free-tier");
+ const freeProviders = API_KEY_PROVIDER_OPTIONS.filter(
+  (option) => option.accessTier === "free-tier",
+ );
  const freeTierKeyCount = keys.filter((key) =>
   freeProviders.some((providerOption) => providerOption.value === key.provider),
  ).length;
@@ -380,7 +382,11 @@ export default function ApiKeyManagerSection() {
         {common("actions.cancel")}
        </Button>
        <Button onClick={handleAddKey} disabled={!apiKey.trim() || isSubmitting || !schemaReady}>
-        {isSubmitting ? <Spinner data-icon="inline-start" /> : <ShieldCheck data-icon="inline-start" />}
+        {isSubmitting ? (
+         <Spinner data-icon="inline-start" />
+        ) : (
+         <ShieldCheck data-icon="inline-start" />
+        )}
         {t("apiKeys.verifySave")}
        </Button>
       </DialogFooter>
@@ -487,7 +493,9 @@ export default function ApiKeyManagerSection() {
     <div className="divide-y divide-border-default border-y border-border-default">
      {keys.map((key, index) => {
       const isBusy = busyKeyId === key.id;
-      const providerOption = API_KEY_PROVIDER_OPTIONS.find((option) => option.value === key.provider);
+      const providerOption = API_KEY_PROVIDER_OPTIONS.find(
+       (option) => option.value === key.provider,
+      );
 
       return (
        <article key={key.id} className="grid gap-4 py-4">
@@ -539,7 +547,9 @@ export default function ApiKeyManagerSection() {
            </SelectTrigger>
            <SelectContent align="start">
             {key.defaultModel &&
-            !getApiKeyModelOptions(key.provider).some((option) => option.value === key.defaultModel) ? (
+            !getApiKeyModelOptions(key.provider).some(
+             (option) => option.value === key.defaultModel,
+            ) ? (
              <SelectItem value={key.defaultModel}>
               {key.defaultModel} ({t("ai.savedSuffix")})
              </SelectItem>

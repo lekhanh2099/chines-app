@@ -11,11 +11,7 @@ export const aiConversationPersonaSchema = z.enum([
  "hsk-examiner",
  "grammar-coach",
 ]);
-export const aiConversationLearnerLevelSchema = z.enum([
- "beginner",
- "intermediate",
- "advanced",
-]);
+export const aiConversationLearnerLevelSchema = z.enum(["beginner", "intermediate", "advanced"]);
 export const aiConversationCorrectionStyleSchema = z.enum(["light", "balanced", "strict"]);
 export const aiConversationReplyModeSchema = z.enum(["adaptive", "chinese", "bilingual"]);
 
@@ -37,7 +33,8 @@ export const DEFAULT_AI_CONVERSATION_PROFILE: AiConversationProfile = {
  correctionStyle: "balanced",
  replyMode: "adaptive",
  interests: "đời sống Trung Quốc, phim ảnh, văn hóa, giao tiếp tự nhiên",
- characterNotes: "Nói tự nhiên như một người bạn Trung Quốc kiên nhẫn, không nói kiểu trợ lý máy móc.",
+ characterNotes:
+  "Nói tự nhiên như một người bạn Trung Quốc kiên nhẫn, không nói kiểu trợ lý máy móc.",
  memoryNotes: "",
 };
 

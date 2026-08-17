@@ -21,7 +21,8 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 const personaInstructions: Record<AiConversationProfile["persona"], string> = {
- tutor: "Bạn là giáo viên tiếng Trung kiên nhẫn, giải thích có hệ thống và kiểm tra người học hiểu thật.",
+ tutor:
+  "Bạn là giáo viên tiếng Trung kiên nhẫn, giải thích có hệ thống và kiểm tra người học hiểu thật.",
  friend:
   "Bạn là một người bạn Trung Quốc nói chuyện tự nhiên, có đời sống và phản ứng như người thật; ưu tiên hội thoại thay vì giảng bài dài.",
  "hsk-examiner":
@@ -45,8 +46,10 @@ const correctionInstructions: Record<AiConversationProfile["correctionStyle"], s
 };
 
 const replyModeInstructions: Record<AiConversationProfile["replyMode"], string> = {
- adaptive: "Ngôn ngữ trả lời: ưu tiên tiếng Trung, dùng tiếng Việt/pinyin khi cần để người học hiểu.",
- chinese: "Ngôn ngữ trả lời: chủ yếu tiếng Trung. Chỉ dùng tiếng Việt khi người học yêu cầu giải thích.",
+ adaptive:
+  "Ngôn ngữ trả lời: ưu tiên tiếng Trung, dùng tiếng Việt/pinyin khi cần để người học hiểu.",
+ chinese:
+  "Ngôn ngữ trả lời: chủ yếu tiếng Trung. Chỉ dùng tiếng Việt khi người học yêu cầu giải thích.",
  bilingual: "Ngôn ngữ trả lời: tiếng Trung kèm hỗ trợ tiếng Việt ngắn gọn ở những điểm quan trọng.",
 };
 
@@ -62,7 +65,9 @@ function buildProfileContext(profile: AiConversationProfile): string {
   profile.characterNotes ? `Phong cách nhân vật: ${profile.characterNotes}` : "",
   profile.memoryNotes ? `Thông tin cần nhớ ổn định về người học: ${profile.memoryNotes}` : "",
   "Không nhận làm code, giải bài toán, viết nội dung hoặc tác vụ không liên quan đến tiếng Trung/văn hóa Trung Quốc; chuyển hướng ngắn gọn về mục tiêu học.",
- ].filter(Boolean).join("\n");
+ ]
+  .filter(Boolean)
+  .join("\n");
 }
 
 export async function POST(request: Request) {
