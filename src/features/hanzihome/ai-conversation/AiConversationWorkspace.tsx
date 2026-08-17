@@ -17,6 +17,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { IconTile } from "@/components/ui/icon-tile";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { Link } from "@/i18n/navigation";
@@ -88,27 +89,15 @@ function greetingFor(profile: AiConversationProfile): AiConversationMessage {
 }
 
 export function AiConversationWorkspace() {
- const [profile, setProfile] = useState<AiConversationProfile>(DEFAULT_AI_CONVERSATION_PROFILE);
+ const [profile, setProfile] = useState<AiConversationProfile>(loadAiConversationProfile);
  const [isSetupOpen, setIsSetupOpen] = useState(false);
- const [messages, setMessages] = useState<AiConversationMessage[]>([
-  greetingFor(DEFAULT_AI_CONVERSATION_PROFILE),
- ]);
+ const [messages, setMessages] = useState<AiConversationMessage[]>(() => [greetingFor(profile)]);
  const [draft, setDraft] = useState("");
  const [isSending, setIsSending] = useState(false);
  const [error, setError] = useState<string | null>(null);
  const [lastRuntime, setLastRuntime] = useState<{ provider: string; model: string } | null>(null);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
-
- useEffect(() => {
-  const storedProfile = loadAiConversationProfile();
-  setProfile(storedProfile);
-  setMessages((current) =>
-   current.length === 1 && current[0]?.role === "assistant"
-    ? [greetingFor(storedProfile)]
-    : current,
-  );
- }, []);
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -270,9 +259,9 @@ export function AiConversationWorkspace() {
       void send();
      }}
     >
-     <label htmlFor="ai-conversation-message" className="sr-only">
+     <Label htmlFor="ai-conversation-message" className="sr-only">
       Tin nhắn
-     </label>
+     </Label>
      <Textarea
       id="ai-conversation-message"
       value={draft}
@@ -286,7 +275,6 @@ export function AiConversationWorkspace() {
       maxLength={6000}
       disabled={isSending}
       placeholder="例如：今天下班以后我想练习聊日常生活。"
-      aria-label="Tin nhắn hội thoại"
       className="min-h-24"
      />
      <div className="flex flex-wrap items-center justify-between gap-2">
