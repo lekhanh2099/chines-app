@@ -21,7 +21,7 @@ describe("GET /auth/confirm", () => {
 
   expect(response.status).toBe(307);
   expect(response.headers.get("location")).toBe(
-   "https://app.example/login?authError=invalid_confirmation",
+   "https://app.example/vi/login?authError=invalid_confirmation",
   );
   expect(verifyOtp).not.toHaveBeenCalled();
  });
@@ -57,7 +57,7 @@ describe("GET /auth/confirm", () => {
   );
 
   expect(response.headers.get("location")).toBe(
-   "https://app.example/login?authError=confirmation_failed",
+   "https://app.example/vi/login?authError=confirmation_failed",
   );
  });
 });

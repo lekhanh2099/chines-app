@@ -1,4 +1,4 @@
-export const appLocales = ["vi", "en", "zh-CN"] as const;
+export const appLocales = ["vi", "en", "zh-CN"] satisfies readonly ["vi", "en", "zh-CN"];
 
 export type AppLocale = (typeof appLocales)[number];
 

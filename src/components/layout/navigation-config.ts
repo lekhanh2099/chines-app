@@ -28,6 +28,14 @@ import {
  Volume2,
  Workflow,
 } from "lucide-react";
+import type { AppMessages } from "@/i18n/messages";
+
+type NavigationMessageKey = `navigation.items.${keyof AppMessages["Shell"]["navigation"]["items"]}`;
+type NavigationItemConfig = {
+ messageKey: NavigationMessageKey;
+ icon: typeof Home;
+ href: string;
+};
 
 export const navigationItems = {
  home: { messageKey: "navigation.items.home", icon: Home, href: "/" },
@@ -102,7 +110,32 @@ export const navigationItems = {
   icon: Settings,
   href: "/settings?section=app",
  },
-} as const;
+} satisfies {
+ home: NavigationItemConfig;
+ lessons: NavigationItemConfig;
+ reader: NavigationItemConfig;
+ dailyReading: NavigationItemConfig;
+ hskReading: NavigationItemConfig;
+ grammar: NavigationItemConfig;
+ humanities: NavigationItemConfig;
+ personalLearning: NavigationItemConfig;
+ notebook: NavigationItemConfig;
+ dictation: NavigationItemConfig;
+ translationStudio: NavigationItemConfig;
+ tts: NavigationItemConfig;
+ dictionary: NavigationItemConfig;
+ memoryTips: NavigationItemConfig;
+ inspector: NavigationItemConfig;
+ conversation: NavigationItemConfig;
+ learningLoop: NavigationItemConfig;
+ dataQuality: NavigationItemConfig;
+ vocab: NavigationItemConfig;
+ radicals: NavigationItemConfig;
+ notes: NavigationItemConfig;
+ htmlArtifacts: NavigationItemConfig;
+ apiDocs: NavigationItemConfig;
+ settings: NavigationItemConfig;
+};
 
 export type NavigationItemId = keyof typeof navigationItems;
 
@@ -151,12 +184,17 @@ export const navigationGroups = [
   icon: UserRound,
   itemIds: ["notes", "htmlArtifacts", "apiDocs"],
  },
-] as const satisfies ReadonlyArray<{
+] satisfies ReadonlyArray<{
  id: string;
  messageKey: `navigation.groups.${string}`;
  icon: typeof Home;
  itemIds: readonly NavigationItemId[];
 }>;
 
-export const mobileNavigationItemIds = ["home", "lessons", "dictation", "notes"] as const;
-export const mobileUtilityItemIds = ["settings"] as const;
+export const mobileNavigationItemIds = [
+ "home",
+ "lessons",
+ "dictation",
+ "notes",
+] satisfies readonly NavigationItemId[];
+export const mobileUtilityItemIds = ["settings"] satisfies readonly NavigationItemId[];

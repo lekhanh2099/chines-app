@@ -30,6 +30,7 @@ const NEXT_ROOT_ENTRYPOINT_NAMES = new Set([
  "middleware",
  "proxy",
 ]);
+const FRAMEWORK_CONVENTION_ENTRYPOINTS = new Set(["src/i18n/request.ts"]);
 
 const DEPRECATED_ZOD_PATTERNS = [
  { pattern: /z\.string\([^)]*\)[^;\n]*(?<!z)\.email\s*\(/, replacement: "z.email()" },
@@ -183,6 +184,10 @@ function isUiLibraryEntrypoint(file) {
  return file.startsWith("src/components/ui/") || file.startsWith("src/components/patterns/");
 }
 
+function isFrameworkConventionEntrypoint(file) {
+ return FRAMEWORK_CONVENTION_ENTRYPOINTS.has(file);
+}
+
 function getPackageScriptEntrypoints(sourceFileSet) {
  const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
  const entrypoints = new Set();
@@ -299,6 +304,7 @@ function findUnreachableSourceFiles(files) {
   [...sourceFileSet].filter(
    (file) =>
     isNextEntrypoint(file) ||
+    isFrameworkConventionEntrypoint(file) ||
     isUiLibraryEntrypoint(file) ||
     isTestFile(file) ||
     isDeclarationFile(file),

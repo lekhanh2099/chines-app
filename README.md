@@ -39,7 +39,7 @@ npm run check
 
 `npm run check` runs lint, source/route/UI/API contract checks, the HanziHome performance-boundary guard, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build.
 
-The GitHub Actions CI workflow is currently manual (`workflow_dispatch`); automatic push/PR triggers are intentionally paused. Until they are re-enabled, run `npm run check` before merge/release work or dispatch the CI workflow manually.
+The GitHub Actions CI workflow runs automatically for pushes to `main` and pull requests; it also remains available through manual `workflow_dispatch`. Run `npm run check` before merge/release work when local feedback is needed.
 
 Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains the release-quality gate.
 

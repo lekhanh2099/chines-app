@@ -20,7 +20,9 @@ describe("GET /auth/callback", () => {
   const response = await GET(new Request("https://app.example/auth/callback?next=%2Fhanzihome"));
 
   expect(response.status).toBe(307);
-  expect(response.headers.get("location")).toBe("https://app.example/login?authError=missing_code");
+  expect(response.headers.get("location")).toBe(
+   "https://app.example/vi/login?authError=missing_code",
+  );
   expect(exchangeCodeForSession).not.toHaveBeenCalled();
  });
 
@@ -41,7 +43,7 @@ describe("GET /auth/callback", () => {
   const response = await GET(new Request("https://app.example/auth/callback?code=expired"));
 
   expect(response.headers.get("location")).toBe(
-   "https://app.example/login?authError=code_exchange",
+   "https://app.example/vi/login?authError=code_exchange",
   );
  });
 
