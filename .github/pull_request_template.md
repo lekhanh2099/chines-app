@@ -11,12 +11,9 @@
 
 ## Verification
 
-- [ ] `npm run format:check`
-- [ ] `npm run lint`
-- [ ] `npm run typecheck`
-- [ ] `npm run test:run`
-- [ ] `npm run build`
-- [ ] Relevant manual study/edit flow checked
+- [ ] Targeted checks for the changed boundary ran
+- [ ] `npm run check`
+- [ ] Relevant manual study/edit/UI flow checked when behavior is user-facing
 
 ## Risk
 
