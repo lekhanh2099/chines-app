@@ -5,6 +5,7 @@ import { z } from "zod";
 import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
+ type AiConversationMessage,
  type AiConversationProfile,
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
@@ -88,10 +89,11 @@ export async function POST(request: Request) {
  }
 
  const recentMessages = parsed.data.messages.slice(-19);
- const conversationMessages = [
-  { role: "user" as const, content: buildProfileContext(parsed.data.profile) },
-  ...recentMessages,
- ];
+ const profileMessage: AiConversationMessage = {
+  role: "user",
+  content: buildProfileContext(parsed.data.profile),
+ };
+ const conversationMessages: AiConversationMessage[] = [profileMessage, ...recentMessages];
 
  try {
   const result = await generateAiConversationReply(conversationMessages, {
