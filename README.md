@@ -26,6 +26,7 @@ npm run source:check
 npm run route:check
 npm run ui:check
 npm run api:check
+npm run check:hanzihome:perf
 npm run typecheck
 npm run test:run
 ```
@@ -36,9 +37,11 @@ Use the full repository gate before merge/release work:
 npm run check
 ```
 
-`npm run check` runs lint, source/route/UI/API contract checks, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build. CI runs this same full gate on pushes to `main` and on pull requests.
+`npm run check` runs lint, source/route/UI/API contract checks, the HanziHome performance-boundary guard, type generation and type checking, deterministic tests, formatting verification, the production dependency audit, and a production build.
 
-Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains a CI/PR check.
+The GitHub Actions CI workflow is currently manual (`workflow_dispatch`); automatic push/PR triggers are intentionally paused. Until they are re-enabled, run `npm run check` before merge/release work or dispatch the CI workflow manually.
+
+Commits run Oxfmt and Oxlint only for staged files through the Husky pre-commit hook. The full `npm run check` gate remains the release-quality gate.
 
 ## Supabase workflow
 
