@@ -9,27 +9,39 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import {
+ Award,
+ BookMarked,
  BookOpenCheck,
  BookOpenText,
+ Brain,
+ ChevronLeft,
  ChevronRight,
  FileCode2,
+ GraduationCap,
  Home,
  Keyboard,
+ Landmark,
  Languages,
- SearchCheck,
  Layers3,
+ Library,
  Lightbulb,
+ ListTree,
  Menu,
  MessageCircle,
+ Newspaper,
  NotebookPen,
  NotebookTabs,
  PlugZap,
- Repeat2,
+ RefreshCcw,
+ SearchCheck,
  Settings,
+ ShieldCheck,
+ Target,
+ UserRound,
  Volume2,
+ Workflow,
 } from "lucide-react";
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
-import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
 import { sidebarStore } from "@/stores/sidebar-store";
 import { appShellStore } from "@/stores/app-shell-store";
 import { cn } from "@/lib/utils";
@@ -52,11 +64,11 @@ const learningItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
  { name: "Bài học", icon: BookOpenCheck, href: "/hanzihome" },
  { name: "Đọc bài", icon: BookOpenText, href: "/reader" },
- { name: "Bài đọc hôm nay", icon: Lightbulb, href: "/daily-reading" },
- { name: "Đọc HSK", icon: BookOpenText, href: "/hsk" },
- { name: "Ngữ pháp", icon: Languages, href: "/grammar" },
- { name: "Văn sử & Dịch", icon: Languages, href: "/humanities" },
- { name: "Personal Learning", icon: NotebookTabs, href: "/personal-learning" },
+ { name: "Bài đọc hôm nay", icon: Newspaper, href: "/daily-reading" },
+ { name: "Đọc HSK", icon: BookMarked, href: "/hsk" },
+ { name: "Ngữ pháp", icon: ListTree, href: "/grammar" },
+ { name: "Văn sử & Dịch", icon: Landmark, href: "/humanities" },
+ { name: "Personal Learning", icon: Brain, href: "/personal-learning" },
  { name: "Sổ tay", icon: NotebookTabs, href: "/notebook" },
 ];
 
@@ -64,16 +76,16 @@ const practiceItems: NavItem[] = [
  { name: "Chép chính tả", icon: Keyboard, href: "/dictation" },
  { name: "Translation Studio", icon: Languages, href: "/translation" },
  { name: "Tạo giọng đọc", icon: Volume2, href: "/tts" },
- { name: "SRS từ", icon: Repeat2, href: "/dictionary" },
+ { name: "SRS từ", icon: RefreshCcw, href: "/dictionary" },
  { name: "Nhắc nhanh", icon: Lightbulb, href: "/memory-tips" },
  { name: "Hanzi Inspector", icon: SearchCheck, href: "/inspector" },
  { name: "AI Conversation", icon: MessageCircle, href: "/conversation" },
- { name: "Learning Loop", icon: Repeat2, href: "/learning-loop" },
- { name: "Data Quality", icon: SearchCheck, href: "/data-quality" },
+ { name: "Learning Loop", icon: Workflow, href: "/learning-loop" },
+ { name: "Data Quality", icon: ShieldCheck, href: "/data-quality" },
 ];
 
 const competencyItems: NavItem[] = [
- { name: "Tổng hợp từ", icon: Languages, href: "/vocab" },
+ { name: "Tổng hợp từ", icon: Library, href: "/vocab" },
  { name: "Bộ thủ", icon: Layers3, href: "/radicals" },
 ];
 
@@ -84,10 +96,10 @@ const personalItems: NavItem[] = [
 ];
 
 const navigationGroups: NavigationGroup[] = [
- { id: "learning", name: "Học", icon: BookOpenCheck, items: learningItems },
- { id: "practice", name: "Luyện", icon: Repeat2, items: practiceItems },
- { id: "competency", name: "Năng lực", icon: Languages, items: competencyItems },
- { id: "personal", name: "Cá nhân", icon: NotebookPen, items: personalItems },
+ { id: "learning", name: "Học", icon: GraduationCap, items: learningItems },
+ { id: "practice", name: "Luyện", icon: Target, items: practiceItems },
+ { id: "competency", name: "Năng lực", icon: Award, items: competencyItems },
+ { id: "personal", name: "Cá nhân", icon: UserRound, items: personalItems },
 ];
 
 const mobileItems = [learningItems[0], learningItems[1], practiceItems[0], personalItems[0]];
@@ -175,109 +187,126 @@ export function Sidebar() {
 
  if (isContentFullscreen) return null;
 
+ const sidebarActionLabel = isCollapsed ? "Mở thanh điều hướng" : "Thu gọn thanh điều hướng";
+
  return (
   <aside
    className={cn(
-    "nova-shell-sidebar sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-hidden border-r border-border-default transition-all duration-200 lg:flex",
+    "nova-shell-sidebar relative sticky top-0 hidden h-dvh min-h-0 shrink-0 flex-col overflow-visible border-r border-border-default transition-all duration-200 lg:flex",
     isCollapsed ? "w-16" : "w-64",
    )}
   >
-   <div
-    className={cn(
-     "flex h-14 items-center border-b border-border-default",
-     isCollapsed ? "justify-center px-3" : "justify-between gap-2 px-4",
-    )}
-   >
-    {!isCollapsed ? (
-     <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
-      <AppLogoMark />
-      <Typography tone="default" weight="black" clamp="one">
-       HanziHome
-      </Typography>
-     </Link>
-    ) : null}
-    <PanelToggleButton
-     open={!isCollapsed}
-     onOpenChange={toggleSidebar}
-     label="thanh điều hướng"
-     size="md"
-    />
+   <div className="flex h-full min-h-0 flex-col overflow-hidden">
+    <div
+     className={cn(
+      "flex h-14 items-center border-b border-border-default",
+      isCollapsed ? "justify-center px-3" : "px-4",
+     )}
+    >
+     {isCollapsed ? (
+      <Link href="/" prefetch={false} aria-label="Trang chủ" title="Trang chủ">
+       <AppLogoMark />
+      </Link>
+     ) : (
+      <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3">
+       <AppLogoMark />
+       <Typography tone="default" weight="black" clamp="one">
+        HanziHome
+       </Typography>
+      </Link>
+     )}
+    </div>
+
+    <nav
+     id="sidebar-primary-navigation"
+     aria-label="Điều hướng chính"
+     className={cn(
+      "min-h-0 flex-1 overflow-y-auto py-3 scrollbar-soft",
+      isCollapsed ? "grid content-start gap-2 px-3" : "px-3",
+     )}
+    >
+     {isCollapsed ? (
+      navigationGroups.map((group, index) => (
+       <div
+        key={group.name}
+        className={cn("grid gap-1", index > 0 && "border-t border-border-default pt-2")}
+       >
+        {group.items.map((item) => (
+         <NavRow
+          key={item.name}
+          item={item}
+          active={isActive(pathname, searchParams, item.href)}
+          collapsed
+         />
+        ))}
+       </div>
+      ))
+     ) : (
+      <div className="grid content-start gap-1.5">
+       {navigationGroups.map((group) => {
+        const groupOpen = group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
+        const GroupIcon = group.icon;
+
+        return (
+         <section key={group.name} className="grid gap-1" aria-label={group.name}>
+          <Button
+           type="button"
+           variant="navigation"
+           size="menu"
+           align="between"
+           className="w-full"
+           aria-expanded={groupOpen}
+           aria-controls={`sidebar-group-${group.id}`}
+           onClick={() => {
+            if (group.id === activeGroupId) return;
+
+            setManuallyExpandedGroupIds((current) =>
+             current.includes(group.id)
+              ? current.filter((groupId) => groupId !== group.id)
+              : [...current, group.id],
+            );
+           }}
+          >
+           <span className="flex min-w-0 items-center gap-3">
+            <GroupIcon data-icon="inline-start" />
+            <Typography as="span" clamp="one" className="min-w-0 flex-1">
+             {group.name}
+            </Typography>
+           </span>
+           <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
+          </Button>
+
+          <div id={`sidebar-group-${group.id}`} hidden={!groupOpen} className="grid gap-1 pb-1 pl-2">
+           {group.items.map((item) => (
+            <NavRow
+             key={item.name}
+             item={item}
+             active={isActive(pathname, searchParams, item.href)}
+             collapsed={false}
+            />
+           ))}
+          </div>
+         </section>
+        );
+       })}
+      </div>
+     )}
+    </nav>
    </div>
 
-   <nav
-    aria-label="Điều hướng chính"
-    className={cn(
-     "min-h-0 flex-1 overflow-y-auto py-3 scrollbar-soft",
-     isCollapsed ? "grid content-start gap-2 px-3" : "px-3",
-    )}
+   <Button
+    type="button"
+    variant="ghost"
+    size="icon"
+    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2"
+    aria-label={sidebarActionLabel}
+    aria-expanded={!isCollapsed}
+    aria-controls="sidebar-primary-navigation"
+    title={sidebarActionLabel}
+    onClick={toggleSidebar}
    >
-    {isCollapsed ? (
-     navigationGroups.map((group, index) => (
-      <div
-       key={group.name}
-       className={cn("grid gap-1", index > 0 && "border-t border-border-default pt-2")}
-      >
-       {group.items.map((item) => (
-        <NavRow
-         key={item.name}
-         item={item}
-         active={isActive(pathname, searchParams, item.href)}
-         collapsed
-        />
-       ))}
-      </div>
-     ))
-    ) : (
-     <div className="grid content-start gap-1.5">
-      {navigationGroups.map((group) => {
-       const groupOpen = group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
-       const GroupIcon = group.icon;
-
-       return (
-        <section key={group.name} className="grid gap-1" aria-label={group.name}>
-         <Button
-          type="button"
-          variant="navigation"
-          size="menu"
-          align="between"
-          className="w-full"
-          aria-expanded={groupOpen}
-          aria-controls={`sidebar-group-${group.id}`}
-          onClick={() => {
-           if (group.id === activeGroupId) return;
-
-           setManuallyExpandedGroupIds((current) =>
-            current.includes(group.id)
-             ? current.filter((groupId) => groupId !== group.id)
-             : [...current, group.id],
-           );
-          }}
-         >
-          <span className="flex min-w-0 items-center gap-3">
-           <GroupIcon data-icon="inline-start" />
-           <Typography as="span" clamp="one" className="min-w-0 flex-1">
-            {group.name}
-           </Typography>
-          </span>
-          <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
-         </Button>
-
-         <div id={`sidebar-group-${group.id}`} hidden={!groupOpen} className="grid gap-1 pb-1 pl-2">
-          {group.items.map((item) => (
-           <NavRow
-            key={item.name}
-            item={item}
-            active={isActive(pathname, searchParams, item.href)}
-            collapsed={false}
-           />
-          ))}
-         </div>
-        </section>
-       );
-      })}
-     </div>
-    )}
-   </nav>
+    {isCollapsed ? <ChevronRight /> : <ChevronLeft />}
+   </Button>
   </aside>
  );
 }
