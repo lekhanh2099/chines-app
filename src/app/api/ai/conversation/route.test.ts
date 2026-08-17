@@ -106,7 +106,7 @@ describe("/api/ai/conversation", () => {
   expect(messages).toHaveLength(2);
   expect(messages[0]).toMatchObject({ role: "user" });
   expect(messages[0].content).toContain(DEFAULT_AI_CONVERSATION_PROFILE.displayName);
-  expect(messages[0].content).toContain("Thông tin cần nhớ");
+  expect(messages[0].content).toContain("Chủ đề người học quan tâm");
   expect(messages[1]).toEqual({ role: "user", content: "你好" });
   expect(options).toEqual(expect.objectContaining({ userApiKeys: credentials }));
   expect(await response.json()).toEqual({
