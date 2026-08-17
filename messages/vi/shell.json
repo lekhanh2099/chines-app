@@ -49,9 +49,10 @@
   "quickSettings": "Cài đặt nhanh",
   "darkTheme": "Giao diện tối",
   "pageLookup": "Tra từ trên trang này",
-  "focusMode": "Focus mode",
-  "focusModeActive": "Focus mode đang bật",
-  "focusModeWarning": "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
+  "focusMode": "Chế độ tập trung",
+  "focusModeShort": "Tập trung",
+  "focusModeActive": "Chế độ tập trung đang bật",
+  "focusModeWarning": "Chế độ tập trung đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.",
   "openAllSettings": "Mở tất cả cài đặt"
  },
  "breadcrumbs": {
