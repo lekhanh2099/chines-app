@@ -17,6 +17,7 @@ async function loadViMessages() {
   dailyReading,
   readerDataQuality,
   humanities,
+  humanitiesPractice,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -33,6 +34,7 @@ async function loadViMessages() {
   import("../../messages/vi/daily-reading.json"),
   import("../../messages/vi/reader-data-quality.json"),
   import("../../messages/vi/humanities.json"),
+  import("../../messages/vi/humanities-practice.json"),
  ]);
 
  return {
@@ -47,6 +49,7 @@ async function loadViMessages() {
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
   Humanities: humanities.default,
+  HumanitiesPractice: humanitiesPractice.default,
  };
 }
 
@@ -69,6 +72,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   dailyReading,
   readerDataQuality,
   humanities,
+  humanitiesPractice,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -85,6 +89,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/daily-reading.json"),
   import("../../messages/en/reader-data-quality.json"),
   import("../../messages/en/humanities.json"),
+  import("../../messages/en/humanities-practice.json"),
  ]);
 
  return {
@@ -99,6 +104,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
   Humanities: humanities.default,
+  HumanitiesPractice: humanitiesPractice.default,
  };
 }
 
@@ -119,6 +125,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   dailyReading,
   readerDataQuality,
   humanities,
+  humanitiesPractice,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -135,6 +142,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/daily-reading.json"),
   import("../../messages/zh-CN/reader-data-quality.json"),
   import("../../messages/zh-CN/humanities.json"),
+  import("../../messages/zh-CN/humanities-practice.json"),
  ]);
 
  return {
@@ -149,6 +157,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
   Humanities: humanities.default,
+  HumanitiesPractice: humanitiesPractice.default,
  };
 }
 
