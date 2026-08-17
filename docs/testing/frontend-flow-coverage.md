@@ -15,7 +15,7 @@
 
 ## Verification viewports
 
-- iPad portrait: approximately `820 × 1180` with the desktop sidebar visible.
+- iPad portrait: approximately `820 × 1180`, using the tablet/touch shell without the persistent desktop Sidebar; full global navigation must remain reachable through the responsive navigation model.
 - Desktop: `1440 × 900`.
 - Android-width: approximately `412 × 915`.
 
