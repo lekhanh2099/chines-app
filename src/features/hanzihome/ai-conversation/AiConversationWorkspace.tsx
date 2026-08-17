@@ -66,7 +66,6 @@ export function AiConversationWorkspace() {
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
- const [sessionRequests, setSessionRequests] = useState(0);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
  const personaLabels: Record<AiConversationProfile["persona"], string> = {
@@ -132,7 +131,6 @@ export function AiConversationWorkspace() {
   setDraft("");
   setError(null);
   setLastRuntime(null);
-  setSessionRequests(0);
  };
 
  const saveProfile = (nextProfile: AiConversationProfile) => {
@@ -174,7 +172,6 @@ export function AiConversationWorkspace() {
    });
    setMessages((current) => [...current, { role: "assistant", content: response.message }]);
    setLastRuntime({ provider: response.provider, model: response.model });
-   setSessionRequests((current) => current + 1);
    recordAiUsageEvent({
     apiKeyId: response.apiKeyId,
     provider: response.provider,
@@ -192,7 +189,13 @@ export function AiConversationWorkspace() {
   }
  };
 
- const learnerTurns = messages.filter((message) => message.role === "user").length;
+ const runtimeDescription = runtimeLoadError
+  ? t("runtime.loadError")
+  : lastRuntime
+    ? t("runtime.current", { provider: lastRuntime.provider, model: lastRuntime.model })
+    : runtimeKeys.length === 0 && !isRuntimeLoading
+      ? t("runtime.empty")
+      : t("runtime.description");
 
  return (
   <div className="grid min-w-0 gap-5">
@@ -265,23 +268,8 @@ export function AiConversationWorkspace() {
       </Select>
      </div>
      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
-      {runtimeLoadError
-       ? t("runtime.loadError")
-       : runtimeKeys.length === 0 && !isRuntimeLoading
-         ? t("runtime.empty")
-         : t("runtime.description")}
+      {runtimeDescription}
      </Typography>
-    </div>
-
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-     <SessionStat label={t("stats.learnerTurns")} value={String(learnerTurns)} />
-     <SessionStat
-      label={t("stats.context")}
-      value={t("stats.messages", { count: Math.min(messages.length, 20) })}
-     />
-     <SessionStat label={t("stats.requests")} value={String(sessionRequests)} />
-     <SessionStat label={t("stats.provider")} value={lastRuntime?.provider ?? t("stats.notCalled")} />
-     <SessionStat label={t("stats.model")} value={lastRuntime?.model ?? "—"} />
     </div>
 
     <div
@@ -369,19 +357,6 @@ export function AiConversationWorkspace() {
      onSave={saveProfile}
     />
    ) : null}
-  </div>
- );
-}
-
-function SessionStat({ label, value }: { label: string; value: string }) {
- return (
-  <div className="grid min-w-0 gap-0.5">
-   <Typography variant="caption" tone="muted">
-    {label}
-   </Typography>
-   <Typography weight="semibold" clamp="one">
-    {value}
-   </Typography>
   </div>
  );
 }
