@@ -4,13 +4,16 @@ import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
  type AiConversationMessage,
+ type AiConversationProfile,
+ type AiConversationResponse,
 } from "./ai-conversation.schemas";
 
 export async function sendAiConversationMessage(
  messages: AiConversationMessage[],
+ profile: AiConversationProfile,
  signal?: AbortSignal,
-) {
- const payload = aiConversationRequestSchema.parse({ messages });
+): Promise<AiConversationResponse> {
+ const payload = aiConversationRequestSchema.parse({ messages, profile });
  const response = await fetch("/api/ai/conversation", {
   method: "POST",
   headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -25,5 +28,5 @@ export async function sendAiConversationMessage(
   throw new Error(typeof error === "string" ? error : "AI conversation không hoàn tất.");
  }
 
- return aiConversationResponseSchema.parse(body).message;
+ return aiConversationResponseSchema.parse(body);
 }
