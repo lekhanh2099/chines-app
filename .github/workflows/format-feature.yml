@@ -1,0 +1,48 @@
+name: Format AI feature
+
+on:
+ pull_request:
+
+permissions:
+ contents: write
+
+jobs:
+ format:
+  if: github.event.pull_request.head.repo.full_name == github.repository
+  runs-on: ubuntu-latest
+  timeout-minutes: 10
+  env:
+   HUSKY: 0
+  steps:
+   - uses: actions/checkout@v5
+     with:
+      ref: ${{ github.event.pull_request.head.ref }}
+
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - run: >-
+      npx --no-install oxfmt --write
+      src/app/api/ai/conversation/route.ts
+      src/components/settings/ApiKeyManagerSection.tsx
+      src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx
+      src/features/hanzihome/ai-conversation/ai-conversation.schemas.ts
+
+   - name: Commit formatting
+     run: |
+      if git diff --quiet; then
+        echo "Files already formatted."
+        exit 0
+      fi
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add src/app/api/ai/conversation/route.ts \
+       src/components/settings/ApiKeyManagerSection.tsx \
+       src/features/hanzihome/ai-conversation/AiConversationWorkspace.tsx \
+       src/features/hanzihome/ai-conversation/ai-conversation.schemas.ts
+      git commit -m "style: format AI feature changes"
+      git push origin HEAD:${{ github.event.pull_request.head.ref }}
