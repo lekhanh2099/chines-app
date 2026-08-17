@@ -1,15 +1,8 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Typography } from "@/components/ui/typography";
-import { JsonObjectSchema, type JsonFieldValue, type JsonObject } from "@/types/json";
-import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { createPortal } from "react-dom";
-import { useRouter } from "next/navigation";
-import { Editor } from "@/components/editor/Editor";
-import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
-import { toast } from "sonner";
 import {
  Check,
  Cloud,
@@ -28,10 +21,12 @@ import {
  Trash2,
  Upload,
 } from "lucide-react";
-import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
-import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
-import { noteTabsStore } from "@/stores/note-tabs-store";
-import { splitViewStore } from "@/stores/split-view-store";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
+
+import { Editor } from "@/components/editor/Editor";
+import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
+import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { Button } from "@/components/ui/button";
 import {
  Dialog,
@@ -42,26 +37,32 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import { Typography } from "@/components/ui/typography";
 import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
-import { z } from "zod";
 import {
  useNoteFolderMutations,
  useNoteFolders,
  useUpdateNoteLibraryMetadata,
 } from "@/features/notes/hooks/useNoteLibrary";
+import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
+import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
+import { useRouter } from "@/i18n/navigation";
+import { focusModeStore } from "@/stores/focus-mode-store";
+import { noteTabsStore } from "@/stores/note-tabs-store";
+import { splitViewStore } from "@/stores/split-view-store";
+import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 interface NoteEditorPanelProps {
  noteId: string;
  isVisible: boolean;
- mobileHeaderActionsContainer?: ReturnType<Document["getElementById"]>;
- desktopActionsContainer?: ReturnType<Document["getElementById"]>;
+ mobileHeaderActionsContainer?: HTMLElement | null;
+ desktopActionsContainer?: HTMLElement | null;
 }
 
-const SaveStatusSchema = z.enum(["idle", "saving", "saved", "error"]);
+type SaveStatus = "idle" | "saving" | "saved" | "error";
 
 function createDownloadFileName(title: string): string {
  const slug = title
@@ -71,7 +72,7 @@ function createDownloadFileName(title: string): string {
   .replace(/^-+|-+$/g, "")
   .slice(0, 64);
 
- return `${slug || "ghi-chu"}.json`;
+ return `${slug || "note"}.json`;
 }
 
 function downloadJsonFile(fileName: string, value: JsonFieldValue) {
@@ -87,7 +88,6 @@ function downloadJsonFile(fileName: string, value: JsonFieldValue) {
 }
 
 const noteEditorActionButtonClassName = "shrink-0 rounded-full";
-
 const mobileReadOnlyQuery = "(max-width: 767px)";
 
 function subscribeToMobileViewport(onChange: () => void) {
@@ -106,6 +106,8 @@ export function NoteEditorPanel({
  mobileHeaderActionsContainer,
  desktopActionsContainer,
 }: NoteEditorPanelProps) {
+ const t = useTranslations("Notes.editor");
+ const common = useTranslations("Common");
  const {
   note,
   isLoading,
@@ -133,17 +135,16 @@ export function NoteEditorPanel({
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const [mobileActionsOpen, setMobileActionsOpen] = useState(false);
  const [metadataOpen, setMetadataOpen] = useState(false);
- const [importedContent, setImportedContent] =
-  useState<z.infer<z.ZodNullable<typeof JsonObjectSchema>>>(null);
- const [importedReadingContent, setImportedReadingContent] =
-  useState<z.infer<z.ZodOptional<z.ZodNullable<typeof JsonObjectSchema>>>>(undefined);
+ const [importedContent, setImportedContent] = useState<JsonObject | null>(null);
+ const [importedReadingContent, setImportedReadingContent] = useState<
+  JsonObject | null | undefined
+ >(undefined);
  const isMobileViewport = useSyncExternalStore(
   subscribeToMobileViewport,
   getMobileViewportSnapshot,
   () => false,
  );
- const [readOnlyOverride, setReadOnlyOverride] =
-  useState<z.infer<z.ZodNullable<z.ZodBoolean>>>(null);
+ const [readOnlyOverride, setReadOnlyOverride] = useState<boolean | null>(null);
  const isReadOnlyMode = readOnlyOverride ?? isMobileViewport;
  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
  const [importVersion, setImportVersion] = useState(0);
@@ -200,15 +201,15 @@ export function NoteEditorPanel({
 
  const handleToggleSplitView = useCallback(() => {
   toggleSplitView(noteId);
-  const newState = !isSplitView;
-  updateSplitView(newState);
-  toast.success(newState ? "Đã bật chế độ Split View" : "Đã tắt Split View");
- }, [noteId, isSplitView, toggleSplitView, updateSplitView]);
+  const nextState = !isSplitView;
+  updateSplitView(nextState);
+  toast.success(nextState ? t("splitEnabled") : t("splitDisabled"));
+ }, [isSplitView, noteId, t, toggleSplitView, updateSplitView]);
 
  useEffect(() => {
-  const handler = (e: KeyboardEvent) => {
-   if (e.ctrlKey && e.shiftKey && e.key === "S" && isVisible) {
-    e.preventDefault();
+  const handler = (event: KeyboardEvent) => {
+   if (event.ctrlKey && event.shiftKey && event.key === "S" && isVisible) {
+    event.preventDefault();
     handleToggleSplitView();
    }
   };
@@ -219,13 +220,9 @@ export function NoteEditorPanel({
  useEffect(() => {
   return () => {
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-   if (pendingContentRef.current) {
-    saveContent(pendingContentRef.current);
-   }
+   if (pendingContentRef.current) saveContent(pendingContentRef.current);
    if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
-   if (pendingReadingRef.current) {
-    saveReadingContent(pendingReadingRef.current);
-   }
+   if (pendingReadingRef.current) saveReadingContent(pendingReadingRef.current);
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []); // oxlint-disable-line react-hooks-eslint/exhaustive-deps
@@ -233,13 +230,13 @@ export function NoteEditorPanel({
  const handleDelete = useCallback(async () => {
   try {
    await deleteNoteMutation();
-   toast.success("Đã xoá ghi chú.");
+   toast.success(t("deleted"));
    setShowDeleteConfirm(false);
    closeTab(noteId);
   } catch {
-   toast.error("Không thể xóa ghi chú.");
+   toast.error(t("deleteError"));
   }
- }, [deleteNoteMutation, closeTab, noteId]);
+ }, [closeTab, deleteNoteMutation, noteId, t]);
 
  const handleExport = useCallback(() => {
   if (!note) return;
@@ -282,8 +279,8 @@ export function NoteEditorPanel({
      : null,
    },
   });
-  toast.success("Đã export ghi chú.");
- }, [importedContent, importedReadingContent, note, noteFoldersQuery.data]);
+  toast.success(t("exported"));
+ }, [importedContent, importedReadingContent, note, noteFoldersQuery.data, t]);
 
  const currentNoteTitle = note?.title;
  const currentNoteCategory = note?.category;
@@ -321,10 +318,10 @@ export function NoteEditorPanel({
     }
 
     if (hasLibraryMetadata) {
-     let importedFolderId: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
+     let importedFolderId: string | null | undefined;
      if (importedPayload.note.folder) {
       const folderSpec = importedPayload.note.folder;
-      let parentId: z.infer<z.ZodNullable<z.ZodString>> = null;
+      let parentId: string | null = null;
       if (folderSpec.parentName) {
        const existingParent = noteFoldersQuery.data?.find(
         (folder) => folder.parentId === null && folder.name === folderSpec.parentName,
@@ -363,22 +360,23 @@ export function NoteEditorPanel({
      });
     }
 
-    toast.success("Đã import vào ghi chú hiện tại.");
+    toast.success(t("imported"));
    } catch {
-    toast.error("File import không đúng định dạng ghi chú.");
+    toast.error(t("importError"));
    } finally {
     if (importInputRef.current) importInputRef.current.value = "";
    }
   },
   [
+   createFolderMutation,
    currentNoteCategory,
    currentNoteTitle,
+   noteFoldersQuery.data,
    noteId,
    saveContent,
    saveReadingContent,
+   t,
    updateCategory,
-   createFolderMutation,
-   noteFoldersQuery.data,
    updateLibraryMetadataMutation,
    updateSplitView,
    updateTabTitle,
@@ -386,8 +384,8 @@ export function NoteEditorPanel({
   ],
  );
 
- const displaySaveStatus: z.infer<typeof SaveStatusSchema> = isSaving
-  ? SaveStatusSchema.enum.saving
+ const displaySaveStatus: SaveStatus = isSaving
+  ? "saving"
   : saveStatus === "success"
     ? "saved"
     : saveStatus === "error"
@@ -397,6 +395,10 @@ export function NoteEditorPanel({
  const noteContent = importedContent ?? note?.content ?? null;
  const readingContent =
   importedReadingContent !== undefined ? importedReadingContent : (note?.reading_content ?? null);
+ const editModeLabel = isReadOnlyMode ? t("editMode") : t("viewMode");
+ const toolbarLabel = isToolbarVisible ? t("hideToolbar") : t("showToolbar");
+ const splitLabel = isSplitView ? t("disableSplit") : t("enableSplit");
+ const splitTitle = isSplitView ? t("disableSplitShortcut") : t("enableSplitShortcut");
 
  return (
   <div
@@ -408,7 +410,7 @@ export function NoteEditorPanel({
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
      <Typography as="p" tone="muted">
-      Không tìm thấy ghi chú.
+      {t("notFound")}
      </Typography>
     </div>
    ) : (
@@ -433,8 +435,8 @@ export function NoteEditorPanel({
            variant="ghost"
            size="icon"
            className="shrink-0 xl:hidden"
-           aria-label="Tùy chọn ghi chú"
-           title="Tùy chọn ghi chú"
+           aria-label={t("options")}
+           title={t("options")}
            aria-haspopup="dialog"
            aria-expanded={mobileActionsOpen}
            onClick={() => setMobileActionsOpen(true)}
@@ -455,8 +457,8 @@ export function NoteEditorPanel({
            variant={!isReadOnlyMode ? "active" : "outline"}
            size="icon-sm"
            onClick={() => setReadOnlyOverride(!isReadOnlyMode)}
-           title={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
-           aria-label={isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chỉ xem ghi chú"}
+           title={editModeLabel}
+           aria-label={editModeLabel}
            className={noteEditorActionButtonClassName}
           >
            {isReadOnlyMode ? <Eye /> : <Pencil />}
@@ -467,8 +469,8 @@ export function NoteEditorPanel({
             variant={isToolbarVisible ? "active" : "outline"}
             size="icon-sm"
             onClick={() => setIsToolbarVisible((current) => !current)}
-            title={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
-            aria-label={isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+            title={toolbarLabel}
+            aria-label={toolbarLabel}
             className={noteEditorActionButtonClassName}
            >
             {isToolbarVisible ? <PanelTopClose /> : <PanelTopOpen />}
@@ -479,8 +481,8 @@ export function NoteEditorPanel({
            variant={isSplitView ? "active" : "outline"}
            size="icon-sm"
            onClick={handleToggleSplitView}
-           title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
-           aria-label={`${isSplitView ? "Tắt" : "Bật"} Split View`}
+           title={splitTitle}
+           aria-label={splitLabel}
            className={noteEditorActionButtonClassName}
           >
            {isSplitView ? <PanelLeftClose /> : <PanelLeft />}
@@ -490,8 +492,8 @@ export function NoteEditorPanel({
            variant="outline"
            size="icon-sm"
            onClick={() => importInputRef.current?.click()}
-           title="Import ghi chú"
-           aria-label="Import ghi chú"
+           title={t("import")}
+           aria-label={t("import")}
            className="hidden shrink-0 xl:inline-flex"
           >
            <Upload />
@@ -501,8 +503,8 @@ export function NoteEditorPanel({
            variant="outline"
            size="icon-sm"
            onClick={handleExport}
-           title="Export ghi chú"
-           aria-label="Export ghi chú"
+           title={t("export")}
+           aria-label={t("export")}
            className="hidden shrink-0 xl:inline-flex"
           >
            <Download />
@@ -512,8 +514,8 @@ export function NoteEditorPanel({
            type="button"
            variant="outline"
            size="icon-sm"
-           title="Xóa ghi chú"
-           aria-label="Xóa ghi chú"
+           title={t("delete")}
+           aria-label={t("delete")}
            className="shrink-0"
            onClick={() => setShowDeleteConfirm(true)}
           >
@@ -530,7 +532,7 @@ export function NoteEditorPanel({
       side="bottom"
       height="tall"
      >
-      <SheetHeader title="Tùy chọn ghi chú" onClose={() => setMobileActionsOpen(false)} />
+      <SheetHeader title={t("options")} onClose={() => setMobileActionsOpen(false)} />
       <SheetBody className="grid content-start gap-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
        <section className="grid gap-1">
         <Typography
@@ -541,7 +543,7 @@ export function NoteEditorPanel({
          transform="uppercase"
          className="px-2.5"
         >
-         Chế độ đọc
+         {t("readMode")}
         </Typography>
         <Button
          type="button"
@@ -555,7 +557,7 @@ export function NoteEditorPanel({
          }}
         >
          {isReadOnlyMode ? <Pencil data-icon="inline-start" /> : <Eye data-icon="inline-start" />}
-         {isReadOnlyMode ? "Chuyển sang chỉnh sửa" : "Chuyển sang chỉ xem"}
+         {isReadOnlyMode ? t("editMode") : t("viewModeAction")}
         </Button>
         <Button
          type="button"
@@ -573,7 +575,7 @@ export function NoteEditorPanel({
          ) : (
           <PanelLeft data-icon="inline-start" />
          )}
-         {isSplitView ? "Đóng split view" : "Mở split view"}
+         {isSplitView ? t("closeSplit") : t("openSplit")}
         </Button>
         {!isReadOnlyMode ? (
          <Button
@@ -592,7 +594,7 @@ export function NoteEditorPanel({
           ) : (
            <PanelTopOpen data-icon="inline-start" />
           )}
-          {isToolbarVisible ? "Ẩn thanh định dạng" : "Hiện thanh định dạng"}
+          {toolbarLabel}
          </Button>
         ) : null}
        </section>
@@ -608,7 +610,7 @@ export function NoteEditorPanel({
          transform="uppercase"
          className="px-2.5"
         >
-         Ghi chú
+         {t("noteSection")}
         </Typography>
         <Button
          type="button"
@@ -622,7 +624,7 @@ export function NoteEditorPanel({
          }}
         >
          <Settings2 data-icon="inline-start" />
-         Thông tin và đổi tên
+         {t("metadata")}
         </Button>
         <Button
          type="button"
@@ -636,7 +638,7 @@ export function NoteEditorPanel({
          }}
         >
          <Upload data-icon="inline-start" />
-         Import
+         {t("importAction")}
         </Button>
         <Button
          type="button"
@@ -650,7 +652,7 @@ export function NoteEditorPanel({
          }}
         >
          <Download data-icon="inline-start" />
-         Export
+         {t("exportAction")}
         </Button>
         <Button
          type="button"
@@ -665,7 +667,7 @@ export function NoteEditorPanel({
          }}
         >
          <Plus data-icon="inline-start" />
-         Mở ghi chú mới
+         {t("openNew")}
         </Button>
         <Button
          type="button"
@@ -680,7 +682,7 @@ export function NoteEditorPanel({
          }}
         >
          <PanelLeftClose data-icon="inline-start" />
-         Đóng tab hiện tại
+         {t("closeCurrentTab")}
         </Button>
         <Button
          type="button"
@@ -694,7 +696,7 @@ export function NoteEditorPanel({
          }}
         >
          <Trash2 data-icon="inline-start" />
-         Xóa ghi chú
+         {t("delete")}
         </Button>
        </section>
       </SheetBody>
@@ -707,15 +709,13 @@ export function NoteEditorPanel({
      <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
       <DialogContent className="max-w-md" showCloseButton={!isDeleting}>
        <DialogHeader>
-        <DialogTitle>Xóa ghi chú?</DialogTitle>
-        <DialogDescription>
-         “{note.title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.
-        </DialogDescription>
+        <DialogTitle>{t("deleteTitle")}</DialogTitle>
+        <DialogDescription>{t("deleteDescription", { title: note.title })}</DialogDescription>
        </DialogHeader>
        <DialogFooter>
         <DialogClose asChild>
          <Button type="button" variant="outline" disabled={isDeleting}>
-          Hủy
+          {common("actions.cancel")}
          </Button>
         </DialogClose>
         <Button
@@ -725,7 +725,7 @@ export function NoteEditorPanel({
          onClick={() => void handleDelete()}
         >
          {isDeleting ? <Loader2 className="animate-spin" /> : <Trash2 />}
-         {isDeleting ? "Đang xóa..." : "Xóa"}
+         {isDeleting ? t("deleting") : t("delete")}
         </Button>
        </DialogFooter>
       </DialogContent>
@@ -761,42 +761,41 @@ export function NoteEditorPanel({
  );
 }
 
-type SaveStatus = z.infer<typeof SaveStatusSchema>;
-
 function SaveStatusBadge({ status }: { status: SaveStatus }) {
+ const t = useTranslations("Notes.editor.save");
  if (status === "idle") return null;
 
  const config = {
   saving: {
    icon: <Cloud className="h-3.5 w-3.5 animate-pulse" />,
-   label: "Đang lưu...",
+   label: t("saving"),
    className: "text-text-muted",
    visibility: "flex",
   },
   saved: {
    icon: <Check className="h-3.5 w-3.5" />,
-   label: "Đã lưu",
+   label: t("saved"),
    className: "text-success",
    visibility: "hidden sm:flex",
   },
   error: {
    icon: <CloudOff className="h-3.5 w-3.5" />,
-   label: "Lỗi lưu",
+   label: t("error"),
    className: "text-danger",
    visibility: "flex",
   },
  };
 
- const c = config[status];
+ const current = config[status];
 
  return (
   <div
-   className={`${c.visibility} h-9 items-center gap-1.5 rounded-xl px-1 text-xs font-medium ${c.className} animate-in fade-in xl:px-2`}
-   title={c.label}
-   aria-label={c.label}
+   className={`${current.visibility} h-9 items-center gap-1.5 rounded-xl px-1 text-xs font-medium ${current.className} animate-in fade-in xl:px-2`}
+   title={current.label}
+   aria-label={current.label}
   >
-   {c.icon}
-   <span className="hidden xl:inline">{c.label}</span>
+   {current.icon}
+   <span className="hidden xl:inline">{current.label}</span>
   </div>
  );
 }
