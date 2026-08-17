@@ -34,22 +34,14 @@
  },
  "greeting": "你好，我是{name}。Mình đang ở chế độ “{role}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
  "fallbackInterest": "Hội thoại tiếng Trung",
- "stats": {
-  "learnerTurns": "Lượt của bạn",
-  "context": "Ngữ cảnh gần",
-  "requests": "Lượt AI",
-  "provider": "Provider",
-  "model": "Model",
-  "messages": "{count} tin",
-  "notCalled": "Chưa gọi"
- },
  "runtime": {
   "label": "AI sử dụng",
-  "auto": "Tự động theo key ưu tiên",
+  "auto": "Tự động — ưu tiên key cá nhân",
   "loading": "Đang tải API key…",
-  "empty": "Chưa có API key đang bật",
-  "description": "Chọn một key cụ thể để biết chính xác provider/model nào được gọi. Chế độ tự động dùng key đang bật có ưu tiên cao nhất và không tự đổi sang key khác khi request lỗi.",
-  "loadError": "Không tải được danh sách API key. Bạn vẫn có thể dùng chế độ tự động.",
+  "empty": "Không có key cá nhân đang bật — chế độ tự động sẽ dùng Gemini hệ thống.",
+  "description": "Chế độ tự động dùng key cá nhân có ưu tiên cao nhất; nếu không có key cá nhân, app dùng Gemini hệ thống. Khi chọn key cụ thể, request chỉ dùng đúng key đó.",
+  "current": "Đang dùng: {provider} · {model}",
+  "loadError": "Không tải được danh sách key cá nhân. Chế độ tự động vẫn có thể dùng Gemini hệ thống.",
   "modelFallback": "model mặc định"
  },
  "message": {
