@@ -16,6 +16,7 @@ async function loadViMessages() {
   readerDocument,
   dailyReading,
   readerDataQuality,
+  humanities,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -31,6 +32,7 @@ async function loadViMessages() {
   import("../../messages/vi/reader-document.json"),
   import("../../messages/vi/daily-reading.json"),
   import("../../messages/vi/reader-data-quality.json"),
+  import("../../messages/vi/humanities.json"),
  ]);
 
  return {
@@ -44,6 +46,7 @@ async function loadViMessages() {
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
+  Humanities: humanities.default,
  };
 }
 
@@ -65,6 +68,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   readerDocument,
   dailyReading,
   readerDataQuality,
+  humanities,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -80,6 +84,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/reader-document.json"),
   import("../../messages/en/daily-reading.json"),
   import("../../messages/en/reader-data-quality.json"),
+  import("../../messages/en/humanities.json"),
  ]);
 
  return {
@@ -93,6 +98,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
+  Humanities: humanities.default,
  };
 }
 
@@ -112,6 +118,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   readerDocument,
   dailyReading,
   readerDataQuality,
+  humanities,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -127,6 +134,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/reader-document.json"),
   import("../../messages/zh-CN/daily-reading.json"),
   import("../../messages/zh-CN/reader-data-quality.json"),
+  import("../../messages/zh-CN/humanities.json"),
  ]);
 
  return {
@@ -140,6 +148,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Reader: { ...reader.default, study: readerStudy.default, document: readerDocument.default },
   DailyReading: dailyReading.default,
   ReaderDataQuality: readerDataQuality.default,
+  Humanities: humanities.default,
  };
 }
 

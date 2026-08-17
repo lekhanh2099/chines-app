@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,35 +18,10 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import type { ReaderDocumentResource } from "@/features/hanzihome/reader/reader-content-api";
 import type { ReaderDocumentRow } from "@/features/hanzihome/reader/reader.schemas";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 type HumanitiesTrackKind = "poetry" | "history";
 type TrackTab = "text" | "language" | "poetics" | "interpretation" | "practice";
-
-const poetryTabs: ReadonlyArray<{ id: TrackTab; label: string }> = [
- { id: "text", label: "Văn bản" },
- { id: "language", label: "Ngôn ngữ" },
- { id: "poetics", label: "Thi pháp" },
- { id: "interpretation", label: "Diễn giải" },
- { id: "practice", label: "Luyện tập" },
-];
-
-const historyTabs: ReadonlyArray<{ id: TrackTab; label: string }> = [
- { id: "text", label: "Nguồn" },
- { id: "language", label: "Dòng thời gian" },
- { id: "poetics", label: "Nhận định" },
- { id: "interpretation", label: "Góc nhìn" },
- { id: "practice", label: "Luyện tập" },
-];
-
-function trackTitle(kind: HumanitiesTrackKind) {
- return kind === "poetry" ? "Thơ văn" : "Lịch sử–tư tưởng";
-}
-
-function trackDescription(kind: HumanitiesTrackKind) {
- return kind === "poetry"
-  ? "Đọc tác phẩm theo từng lớp: nguyên văn, ngôn ngữ, thi pháp, diễn giải và thực hành."
-  : "Đọc văn bản nguồn, nối nhận định với bằng chứng và tập phân biệt thông tin kiểm chứng được với diễn giải.";
-}
 
 function moduleNumber(kind: HumanitiesTrackKind, index: number) {
  if (kind === "poetry") return index < 2 ? 2 : index < 5 ? 3 : 4;
@@ -58,12 +33,13 @@ function selectedPayload(resource: ReaderDocumentResource) {
 }
 
 function SourceReference({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Humanities.track");
  const source = selectedPayload(resource)?.source;
  if (source === undefined) return null;
  return (
   <Card variant="subtle" padding="md" className="grid gap-2">
    <Typography as="h3" variant="cardTitle" weight="black">
-    Nguồn bài đọc
+    {t("sourceTitle")}
    </Typography>
    <Typography as="p" variant="bodySmall" weight="black">
     {source.title}
@@ -90,11 +66,12 @@ function SourceReference({ resource }: { resource: ReaderDocumentResource }) {
 }
 
 function GlossaryCards({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Humanities.track");
  const glossary = selectedPayload(resource)?.glossary ?? [];
  if (glossary.length === 0) {
   return (
    <Typography as="p" variant="bodySmall" tone="muted">
-    Bài này không có mục từ cần chú giải thêm.
+    {t("glossaryEmpty")}
    </Typography>
   );
  }
@@ -127,15 +104,16 @@ function TextLayer({
  resource: ReaderDocumentResource;
  kind: HumanitiesTrackKind;
 }) {
+ const t = useTranslations("Humanities.track");
  const paragraphs = resource.paragraphs;
  return (
   <div className="grid min-w-0 gap-4">
    <Card variant="section" padding="md" className="grid gap-4">
     <div className="flex flex-wrap items-center justify-between gap-2">
      <Typography as="h2" variant="sectionTitle" weight="black">
-      {kind === "poetry" ? "Nguyên văn" : "Văn bản nguồn"}
+      {kind === "poetry" ? t("textTitlePoetry") : t("textTitleHistory")}
      </Typography>
-     <Badge casing="natural">{paragraphs.length} đoạn</Badge>
+     <Badge casing="natural">{t("paragraphCount", { count: paragraphs.length })}</Badge>
     </div>
     {paragraphs.map((paragraph) => (
      <article
@@ -143,7 +121,7 @@ function TextLayer({
       className="grid gap-2 border-b border-border-default pb-4 last:border-0 last:pb-0"
      >
       <Typography as="span" variant="overline" tone="accent" weight="black">
-       Đoạn {paragraph.paragraph_order}
+       {t("paragraph", { order: paragraph.paragraph_order })}
       </Typography>
       <ReaderHanziText
        displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: false, showMeaning: false }}
@@ -174,13 +152,14 @@ function AnnotationCards({
  resource: ReaderDocumentResource;
  filter?: string[];
 }) {
+ const t = useTranslations("Humanities.track");
  const annotations = (selectedPayload(resource)?.annotations ?? []).filter(
   (annotation) => filter === undefined || filter.includes(annotation.type),
  );
  if (annotations.length === 0) {
   return (
    <Typography as="p" variant="bodySmall" tone="muted">
-    Chưa có lớp chú giải cho phần này.
+    {t("annotationEmpty")}
    </Typography>
   );
  }
@@ -204,6 +183,7 @@ function AnnotationCards({
 }
 
 function PoetryPoeticsLayer({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Humanities.track.poetics");
  const poetry = selectedPayload(resource)?.poetry;
  if (poetry === undefined) return null;
  const segmentText = new Map(
@@ -213,7 +193,7 @@ function PoetryPoeticsLayer({ resource }: { resource: ReaderDocumentResource }) 
   <div className="grid gap-4 lg:grid-cols-2">
    <Card variant="section" padding="md" className="grid content-start gap-3">
     <Typography as="span" variant="overline" tone="accent" weight="black">
-     Hình thức
+     {t("form")}
     </Typography>
     <Typography as="strong" variant="body" weight="black">
      {poetry.form}
@@ -247,7 +227,7 @@ function PoetryPoeticsLayer({ resource }: { resource: ReaderDocumentResource }) 
    </Card>
    <Card variant="section" padding="md" className="grid content-start gap-3">
     <Typography as="span" variant="overline" tone="accent" weight="black">
-     Hình ảnh và chức năng
+     {t("imagery")}
     </Typography>
     {poetry.imagery.map((image) => (
      <div
@@ -266,7 +246,7 @@ function PoetryPoeticsLayer({ resource }: { resource: ReaderDocumentResource }) 
    {poetry.parallelism.length > 0 ? (
     <Card variant="section" padding="md" className="grid gap-2 lg:col-span-2">
      <Typography as="span" variant="overline" tone="accent" weight="black">
-      Đối và nhịp
+      {t("parallelism")}
      </Typography>
      {poetry.parallelism.map((item) => (
       <Typography
@@ -369,13 +349,14 @@ function HistoryTimelineLayer({ resource }: { resource: ReaderDocumentResource }
 }
 
 function HistoryPerspectivesLayer({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Humanities.track.history");
  const history = selectedPayload(resource)?.history;
  if (history === undefined) return null;
  return (
   <div className="grid gap-4 lg:grid-cols-2">
    <Card variant="section" padding="md" className="grid content-start gap-3">
     <Typography as="span" variant="overline" tone="accent" weight="black">
-     Chủ thể
+     {t("actors")}
     </Typography>
     {history.actors.map((actor) => (
      <div
@@ -396,7 +377,7 @@ function HistoryPerspectivesLayer({ resource }: { resource: ReaderDocumentResour
    </Card>
    <Card variant="section" padding="md" className="grid content-start gap-3">
     <Typography as="span" variant="overline" tone="accent" weight="black">
-     Các góc nhìn
+     {t("perspectives")}
     </Typography>
     {history.perspectives.map((perspective) => (
      <div
@@ -417,6 +398,7 @@ function HistoryPerspectivesLayer({ resource }: { resource: ReaderDocumentResour
 }
 
 function PracticeLayer({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Humanities.track.practice");
  const [revealed, setRevealed] = useState<ReadonlySet<string>>(() => new Set());
  const exercises = resource.exerciseItems;
  return (
@@ -437,11 +419,11 @@ function PracticeLayer({ resource }: { resource: ReaderDocumentResource }) {
        variant="outline"
        onClick={() => setRevealed((current) => new Set(current).add(exercise.id))}
       >
-       {isRevealed ? "Đã mở phương án tham khảo" : "Mở phương án tham khảo"}
+       {isRevealed ? t("revealed") : t("reveal")}
       </Button>
       {isRevealed ? (
        <Typography as="p" variant="bodySmall" tone="muted">
-        {exercise.payload.answerVi || exercise.payload.answer || "Chưa có phương án mẫu."}
+        {exercise.payload.answerVi || exercise.payload.answer || t("answerFallback")}
        </Typography>
       ) : null}
      </Card>
@@ -464,8 +446,25 @@ function TrackDetail({
  lessonIndex: number;
  total: number;
 }) {
- const tabs = kind === "poetry" ? poetryTabs : historyTabs;
- const [tab, setTab] = useState<TrackTab>(kind === "poetry" ? "text" : "text");
+ const t = useTranslations("Humanities.track");
+ const trackTitle = kind === "poetry" ? t("titles.poetry") : t("titles.history");
+ const tabs: ReadonlyArray<{ id: TrackTab; label: string }> =
+  kind === "poetry"
+   ? [
+      { id: "text", label: t("tabs.poetry.text") },
+      { id: "language", label: t("tabs.poetry.language") },
+      { id: "poetics", label: t("tabs.poetry.poetics") },
+      { id: "interpretation", label: t("tabs.poetry.interpretation") },
+      { id: "practice", label: t("tabs.poetry.practice") },
+     ]
+   : [
+      { id: "text", label: t("tabs.history.text") },
+      { id: "language", label: t("tabs.history.language") },
+      { id: "poetics", label: t("tabs.history.poetics") },
+      { id: "interpretation", label: t("tabs.history.interpretation") },
+      { id: "practice", label: t("tabs.history.practice") },
+     ];
+ const [tab, setTab] = useState<TrackTab>("text");
  const tts = useSharedMandarinTts();
  const paragraphs = resource.paragraphs;
  const ttsText = paragraphs.map((paragraph) => paragraph.zh).join(" ");
@@ -479,11 +478,15 @@ function TrackDetail({
      className="justify-self-start"
      onClick={onBack}
     >
-     ← Danh sách {trackTitle(kind)}
+     {t("detail.back", { track: trackTitle })}
     </Button>
     <div className="grid gap-1">
      <Badge variant="purple" className="justify-self-start">
-      Mô-đun {moduleNumber(kind, lessonIndex - 1)} · Bài {lessonIndex}/{total}
+      {t("detail.moduleLesson", {
+       module: moduleNumber(kind, lessonIndex - 1),
+       lesson: lessonIndex,
+       total,
+      })}
      </Badge>
      <Typography as="h1" variant="sectionTitle" weight="black">
       {resource.document.title_zh}
@@ -495,9 +498,9 @@ function TrackDetail({
    </Card>
    <Tabs
     value={tab}
-    items={[...tabs].map((item) => ({ key: item.id, label: item.label }))}
+    items={tabs.map((item) => ({ key: item.id, label: item.label }))}
     onValueChange={setTab}
-    aria-label={`Các phần ${trackTitle(kind)}`}
+    aria-label={t("detail.tabsAria", { track: trackTitle })}
    >
     <TabsContent value={tab} className="pt-3">
      {tab === "text" ? <TextLayer resource={resource} kind={kind} /> : null}
@@ -521,10 +524,10 @@ function TrackDetail({
    </Tabs>
    <Card variant="subtle" padding="sm" className="flex flex-wrap items-center gap-2">
     <Typography as="span" variant="caption" tone="muted">
-     Nghe văn bản
+     {t("detail.listenLabel")}
     </Typography>
     <Button type="button" size="sm" onClick={() => tts.speakSequence([ttsText])}>
-     Nghe bài
+     {t("detail.listen")}
     </Button>
    </Card>
   </div>
@@ -540,6 +543,8 @@ export function HumanitiesTrackWorkspace({
  initialDocuments: ReadonlyArray<ReaderDocumentRow>;
  initialResource: ReaderDocumentResource | null;
 }) {
+ const t = useTranslations("Humanities.track");
+ const shellT = useTranslations("Humanities.shell");
  const router = useRouter();
  const pathname = usePathname();
  const searchParams = useSearchParams();
@@ -557,6 +562,10 @@ export function HumanitiesTrackWorkspace({
   ? requestedDocumentId
   : "";
  const resource = selectedId.length > 0 ? initialResource : null;
+ const trackTitle = kind === "poetry" ? t("titles.poetry") : t("titles.history");
+ const trackDescription =
+  kind === "poetry" ? t("descriptions.poetry") : t("descriptions.history");
+
  if (selectedId.length > 0 && resource !== null) {
   const lessonIndex = Math.max(
    1,
@@ -572,79 +581,71 @@ export function HumanitiesTrackWorkspace({
    />
   );
  }
+
  return (
   <div className="grid min-w-0 gap-5">
    <header className="grid gap-2">
     <Typography as="span" variant="overline" tone="accent" weight="black">
-     Đọc sâu · Lập luận · Chuyển ngữ
+     {t("eyebrow")}
     </Typography>
     <Typography as="h1" variant="pageTitle" weight="black">
-     {trackTitle(kind)}
+     {trackTitle}
     </Typography>
     <Typography as="p" variant="body" tone="muted" className="max-w-3xl">
-     {trackDescription(kind)}
+     {trackDescription}
     </Typography>
    </header>
-   <nav
-    className="grid grid-cols-2 gap-2 sm:grid-cols-5"
-    aria-label="Điều hướng Văn sử & Dịch thuật"
-   >
+   <nav className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={shellT("navAria")}>
     <Button asChild variant="navigation" wrap="normal">
-     <Link href="/humanities">Chương trình</Link>
+     <Link href="/humanities">{shellT("nav.program")}</Link>
     </Button>
     <Button asChild variant={kind === "poetry" ? "active" : "navigation"} wrap="normal">
-     <Link href="/humanities/poetry">Thơ văn</Link>
+     <Link href="/humanities/poetry">{shellT("nav.poetry")}</Link>
     </Button>
     <Button asChild variant={kind === "history" ? "active" : "navigation"} wrap="normal">
-     <Link href="/humanities/history">Lịch sử–tư tưởng</Link>
+     <Link href="/humanities/history">{shellT("nav.history")}</Link>
     </Button>
     <Button asChild variant="navigation" wrap="normal">
-     <Link href="/translation">Biên dịch</Link>
+     <Link href="/translation">{shellT("nav.translation")}</Link>
     </Button>
     <Button asChild variant="navigation" wrap="normal">
-     <Link href="/translation?track=interpreting">Phiên dịch</Link>
+     <Link href="/translation?track=interpreting">{shellT("nav.interpreting")}</Link>
     </Button>
    </nav>
    <Card variant="section" padding="md" className="grid gap-3">
     <div className="flex flex-wrap items-start justify-between gap-2">
      <div className="grid gap-1">
       <Typography as="span" variant="caption" tone="accent" weight="black">
-       Có lộ trình cho người mới
+       {t("guide.beginner")}
       </Typography>
       <Typography as="h2" variant="sectionTitle" weight="black">
-       {trackTitle(kind)}
+       {trackTitle}
       </Typography>
      </div>
-     <Badge casing="natural">{documents.length} bài trong học phần</Badge>
+     <Badge casing="natural">{t("library.count", { count: documents.length })}</Badge>
     </div>
     <Typography as="p" variant="bodySmall" tone="muted">
-     {kind === "poetry"
-      ? "Học thơ giúp đọc câu cô đọng, nhận ra chủ thể bị lược, nghĩa cổ, hình ảnh và cách một bản dịch có thể đúng nghĩa nhưng khác nhau về nhịp và sắc thái."
-      : "Đọc sử–tư tưởng rèn khả năng phân biệt điều văn bản thật sự nói với cách người sau diễn giải, đồng thời kiểm tra bằng chứng và giới hạn của suy luận."}
+     {kind === "poetry" ? t("guide.poetryWhy") : t("guide.historyWhy")}
     </Typography>
     <Typography as="p" variant="bodySmall" tone="muted">
-     {kind === "poetry"
-      ? "Bắt đầu từ bài bốn câu, đọc từng lớp; không yêu cầu biết vận luật chuyên sâu ngay từ đầu."
-      : "Bắt đầu từ đoạn ngắn và ngụ ngôn; học cách đặt câu hỏi trước khi học niên đại phức tạp."}
+     {kind === "poetry" ? t("guide.poetryStart") : t("guide.historyStart")}
     </Typography>
     <Card variant="subtle" padding="sm" className="grid gap-1">
      <Typography as="strong" variant="caption" tone="accent" weight="black">
-      Bắt đầu từ đây
+      {t("guide.startHere")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted">
-      {kind === "poetry"
-       ? "Bắt đầu bằng cách tách nguyên văn, nghĩa từng câu, hình ảnh và bản dịch; chưa vội đoán “ý tác giả”."
-       : "Bắt đầu bằng ba nhãn tiếng Việt: thông tin kiểm chứng được, diễn giải và nhận định còn tranh luận."}
+      {kind === "poetry" ? t("guide.poetryMethod") : t("guide.historyMethod")}
      </Typography>
     </Card>
    </Card>
    <section className="grid gap-3" aria-labelledby={`${kind}-library`}>
     <div className="grid gap-1">
      <Typography as="h2" variant="sectionTitle" weight="black" id={`${kind}-library`}>
-      {kind === "poetry" ? "Thư viện bài thơ" : "Thư viện bài đọc"}
+      {kind === "poetry" ? t("library.poetry") : t("library.history")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted">
-      Chọn bài theo đúng thứ tự học phần; mỗi bài mở workspace riêng.
+      {t("library.description")}
      </Typography>
     </div>
     <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -668,7 +669,11 @@ export function HumanitiesTrackWorkspace({
         weight="black"
         className="w-full text-left"
        >
-        Mô-đun {moduleNumber(kind, index)} · Bài {index + 1}/{documents.length}
+        {t("library.moduleLesson", {
+         module: moduleNumber(kind, index),
+         lesson: index + 1,
+         total: documents.length,
+        })}
        </Typography>
        <Typography as="span" variant="bodySmall" weight="black" className="w-full text-left">
         {document.title_zh}
@@ -679,7 +684,7 @@ export function HumanitiesTrackWorkspace({
        <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
         {Array.isArray(document.source_metadata.tags)
          ? document.source_metadata.tags.join(" · ")
-         : "Mở bài"}
+         : t("library.open")}
        </Typography>
       </Button>
      ))}
