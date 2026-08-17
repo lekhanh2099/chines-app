@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
@@ -8,24 +9,23 @@ import { toast } from "sonner";
 import { focusModeStore, isFocusNavigationAllowed } from "@/stores/focus-mode-store";
 import { noteTabsStore } from "@/stores/note-tabs-store";
 
-const FOCUS_MODE_WARNING =
- "Focus mode đang bật. Bạn chỉ có thể ở lại bài hiện tại hoặc chọn tab ghi chú đang mở.";
-
 function getOpenNoteIds() {
  return noteTabsStore.get().tabs.map((tab) => tab.noteId);
 }
 
-function warnFocusBlocked() {
- toast.warning(FOCUS_MODE_WARNING, { duration: 4200 });
+function warnFocusBlocked(message: string) {
+ toast.warning(message, { duration: 4200 });
 }
 
 export function FocusModeRouteGuard() {
+ const t = useTranslations("Shell");
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const searchParamsString = searchParams.toString();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { hydrate: hydrateFocusMode } = focusModeStore.actions;
  const currentHrefRef = useRef({ initialized: false, href: "" });
+ const focusModeWarning = t("header.focusModeWarning");
 
  useEffect(() => {
   hydrateFocusMode();
@@ -69,7 +69,7 @@ export function FocusModeRouteGuard() {
 
    event.preventDefault();
    event.stopPropagation();
-   warnFocusBlocked();
+   warnFocusBlocked(focusModeWarning);
   };
 
   const handlePopState = () => {
@@ -81,7 +81,7 @@ export function FocusModeRouteGuard() {
     "",
     currentHref,
    );
-   warnFocusBlocked();
+   warnFocusBlocked(focusModeWarning);
   };
 
   document.addEventListener("click", handleClick, true);
@@ -91,7 +91,7 @@ export function FocusModeRouteGuard() {
    document.removeEventListener("click", handleClick, true);
    window.removeEventListener("popstate", handlePopState);
   };
- }, [focusModeEnabled]);
+ }, [focusModeEnabled, focusModeWarning]);
 
  return null;
 }
