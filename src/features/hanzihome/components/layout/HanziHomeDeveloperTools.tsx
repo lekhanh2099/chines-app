@@ -24,9 +24,9 @@ import {
  useHanziHomeFeatureSelector,
 } from "@/features/hanzihome/context/selectors";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
-import { LessonViewModeSchema } from "@/features/hanzihome/context/types";
 import { HANZIHOME_COMMAND_BAR_TOOLS_MENU_TARGET_ID } from "@/features/hanzihome/components/layout/HanziHomeCommandBarPortal";
-
+import { z } from "zod";
+const LessonViewModeSchema = z.enum(["study", "debug"]);
 export function HanziHomeDeveloperTools({
  inline = false,
  compact = false,
