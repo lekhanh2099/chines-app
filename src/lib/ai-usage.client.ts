@@ -4,6 +4,7 @@ import { z } from "zod";
 
 const AI_USAGE_STORAGE_KEY = "hanzihome.ai-usage.v1";
 const AI_USAGE_EVENT = "hanzihome:ai-usage-updated";
+export const SYSTEM_AI_USAGE_KEY = "system";
 
 export const aiProviderUsageSchema = z.strictObject({
  inputTokens: z.number().int().nonnegative(),
@@ -60,7 +61,7 @@ export function getAiUsageSnapshot(): AiUsageSnapshot {
 }
 
 export function recordAiUsageEvent(input: {
- apiKeyId: string;
+ apiKeyId: string | null;
  provider: string;
  model: string;
  usage: AiProviderUsage | null;
@@ -70,7 +71,8 @@ export function recordAiUsageEvent(input: {
  const current = readStoredSnapshot();
  const usage = input.usage ?? { inputTokens: 0, outputTokens: 0, totalTokens: 0 };
  const timestamp = new Date().toISOString();
- const currentKey = current.byKey[input.apiKeyId] ?? {
+ const usageKey = input.apiKeyId ?? SYSTEM_AI_USAGE_KEY;
+ const currentKey = current.byKey[usageKey] ?? {
   requests: 0,
   inputTokens: 0,
   outputTokens: 0,
@@ -87,7 +89,7 @@ export function recordAiUsageEvent(input: {
   lastUsedAt: timestamp,
   byKey: {
    ...current.byKey,
-   [input.apiKeyId]: {
+   [usageKey]: {
     requests: currentKey.requests + 1,
     inputTokens: currentKey.inputTokens + usage.inputTokens,
     outputTokens: currentKey.outputTokens + usage.outputTokens,
