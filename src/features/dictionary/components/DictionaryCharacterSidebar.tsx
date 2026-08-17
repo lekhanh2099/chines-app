@@ -87,7 +87,11 @@ function DictionaryCharacterSidebar({
    </div>
 
    {radicals.length > 0 || ai?.components?.length || etymologyText ? (
-    <AnatomyOverview character={selectedCharacter} radicals={radicals} components={ai?.components || []} />
+    <AnatomyOverview
+     character={selectedCharacter}
+     radicals={radicals}
+     components={ai?.components || []}
+    />
    ) : null}
 
    {etymologyText || mnemonicStory ? (
@@ -152,11 +156,15 @@ function AnatomyOverview({
          ) : null}
         </Card>
         {index < structureItems.length - 1 ? (
-         <Typography tone="muted" weight="bold">+</Typography>
+         <Typography tone="muted" weight="bold">
+          +
+         </Typography>
         ) : null}
        </div>
       ))}
-      <Typography tone="muted" weight="bold">=</Typography>
+      <Typography tone="muted" weight="bold">
+       =
+      </Typography>
       <Card variant="subtle" padding="sm" className="text-center">
        <Typography as="p" variant="sectionTitle" tone="accent" weight="black">
         {character}
@@ -167,7 +175,9 @@ function AnatomyOverview({
       </Card>
      </div>
     ) : (
-     <Typography as="p" tone="muted">{t("missingStructure")}</Typography>
+     <Typography as="p" tone="muted">
+      {t("missingStructure")}
+     </Typography>
     )}
    </section>
 
@@ -187,7 +197,9 @@ function AnatomyOverview({
            {component.name || component.meaning || t("secondaryComponent")}
           </Typography>
           {component.name && component.meaning ? (
-           <Typography as="p" variant="caption" tone="muted">{component.meaning}</Typography>
+           <Typography as="p" variant="caption" tone="muted">
+            {component.meaning}
+           </Typography>
           ) : null}
          </div>
         </div>

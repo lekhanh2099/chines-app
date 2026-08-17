@@ -68,7 +68,9 @@ export function ContextualReaderText({
     activateGlyph();
    }
   };
-  const playLabel = onGlyphClick ? t("playFromCharacter", { character: grapheme.segment }) : undefined;
+  const playLabel = onGlyphClick
+   ? t("playFromCharacter", { character: grapheme.segment })
+   : undefined;
   if (pinyinPresentation === "paragraph") {
    return (
     <span

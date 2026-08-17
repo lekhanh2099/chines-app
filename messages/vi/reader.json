@@ -1,124 +1,124 @@
 {
-  "home": {
-    "header": {
-      "title": "Đọc bài",
-      "description": "Tiếp tục bài đang học hoặc chọn một bộ đọc. Reader giữ phần đọc, nghe, tra từ và bài tập trong cùng một luồng học."
-    },
-    "options": {
-      "daily": {
-        "badge": "Mỗi ngày 1 bài mới",
-        "title": "Bài đọc hôm nay",
-        "description": "Đọc báo bản học tập, nghe, tra từ, làm câu hỏi và lưu toàn bộ lịch sử ngay trên thiết bị."
-      },
-      "core": {
-        "badge": "12 bài chính",
-        "title": "Giáo trình U3–U5",
-        "description": "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt."
-      },
-      "hsk": {
-        "badge": "50 đoạn HSK",
-        "title": "Đọc HSK",
-        "description": "Đọc 50 đoạn văn HSK 3–4 với TTS chạy theo chữ, pinyin, nghĩa tiếng Việt và tra từ dùng chung."
-      },
-      "reinforcement": {
-        "badge": "24 bài PDF",
-        "title": "Luyện củng cố",
-        "description": "PDF có phóng to, toàn màn hình, bút vẽ và đánh dấu lưu riêng theo từng trang."
-      },
-      "mock": {
-        "badge": "12 bài đọc lạ",
-        "title": "Thi thử / đọc lạ",
-        "description": "Luyện văn bản chưa gặp, bám cấu trúc kỹ năng của ba đơn nguyên."
-      }
-    },
-    "resume": {
-      "loadingAria": "Đang tải hoạt động học",
-      "error": "Không tải được trạng thái học tiếp. Các khu vực Reader vẫn sẵn sàng.",
-      "badge": "Học tiếp",
-      "dueCount": "{count} mục đến hạn",
-      "readingKind": "Đọc bài",
-      "reviewKind": "Ôn tập",
-      "ready": "Sẵn sàng ôn tập",
-      "continue": "Tiếp tục",
-      "reviewNow": "Ôn ngay"
-    },
-    "primary": {
-      "startPoint": "Điểm bắt đầu chính",
-      "openCourse": "Mở giáo trình"
-    },
-    "otherCollections": {
-      "title": "Chọn bộ đọc khác",
-      "description": "Chuyển sang bài đọc hằng ngày, HSK, PDF củng cố hoặc đọc lạ khi đúng mục tiêu buổi học."
-    },
-    "catalog": {
-      "aria": "Danh mục Reader đã nhập",
-      "back": "← Thư viện Reader",
-      "collectionsAria": "Bộ Reader",
-      "emptyStatic": "Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.",
-      "otherDocuments": "Tài liệu khác",
-      "unit": "Đơn nguyên {id}",
-      "chooseDocument": "Chọn một bài để mở Reader",
-      "documentCount": "{count} bài",
-      "metadata": "{paragraphs} đoạn · {vocabulary} từ · {exercises} bài",
-      "notFound": "Không tìm thấy tài liệu Reader trong static package."
-    }
+ "home": {
+  "header": {
+   "title": "Đọc bài",
+   "description": "Tiếp tục bài đang học hoặc chọn một bộ đọc. Reader giữ phần đọc, nghe, tra từ và bài tập trong cùng một luồng học."
   },
-  "collection": {
-    "kinds": {
-      "core": {
-        "title": "Giáo trình chính",
-        "description": "12 bài U3–U5 với đầy đủ dữ liệu đọc, bài tập, từ vựng, phân tích và ghi chú."
-      },
-      "hsk": {
-        "title": "Thư viện bài đọc HSK",
-        "description": "50 bài đọc HSK 3–4 được sắp theo cấp độ, quyển và bài. Mỗi bài dùng chung trình đọc có TTS chạy theo chữ, pinyin, nghĩa và tra từ."
-      },
-      "reinforcement": {
-        "title": "Luyện củng cố PDF",
-        "description": "Tài liệu luyện đọc từ PDF nguồn, giữ metadata trang và workspace học theo tài liệu."
-      },
-      "mock": {
-        "title": "Đọc lạ / mô phỏng kiểm tra",
-        "description": "Các bài đọc mô phỏng được sắp theo đơn nguyên để luyện đọc ngoài bài đã học."
-      },
-      "daily": {
-        "title": "Bài đọc hằng ngày",
-        "description": "Bài đọc mới theo ngày, dùng chung Reader để nghe, tra từ, làm câu hỏi và lưu tiến độ."
-      },
-      "personal": {
-        "title": "Học tập cá nhân",
-        "description": "Curriculum và bài tập cá nhân đã nhập, với tiến độ thuộc HanziHome."
-      },
-      "humanities": {
-        "title": "Văn sử & Dịch thuật",
-        "description": "Văn học, lịch sử, biên dịch và phiên dịch trong Reader HanziHome."
-      }
-    },
-    "hskVolumes": {
-      "hsk3": "HSK 3 · Bài đọc",
-      "hsk4Upper": "HSK 4 · Quyển thượng",
-      "hsk4Lower": "HSK 4 · Quyển hạ",
-      "default": "Bài đọc HSK"
-    },
-    "readingCount": "{count} bài đọc",
-    "empty": "Chưa có bài đọc trong thư viện hiện tại.",
-    "otherDocuments": "Tài liệu khác",
-    "unitTitle": "Đơn nguyên {id} · {title}",
-    "hskLessonReading": "Bài {lesson} · Bài đọc {reading}",
-    "hskLevel": "HSK {level}",
-    "paragraphs": "{count} đoạn",
-    "vocabulary": "{count} từ",
-    "exercises": "{count} bài tập",
-    "reinforcementLabel": "Luyện củng cố",
-    "readingNumber": "Bài {number}",
-    "minutes": "{count} phút",
-    "page": "Trang {page}",
-    "printedPage": "Trang sách {page}",
-    "unitBadge": "Đơn nguyên {id}",
-    "notFoundLibrary": "Không tìm thấy tài liệu trong thư viện bài đọc.",
-    "notFoundCatalog": "Không tìm thấy bài đọc trong danh mục hiện tại.",
-    "reinforcementBack": "Danh sách củng cố",
-    "coreBack": "Danh sách giáo trình",
-    "backToList": "Danh sách {title}"
+  "options": {
+   "daily": {
+    "badge": "Mỗi ngày 1 bài mới",
+    "title": "Bài đọc hôm nay",
+    "description": "Đọc báo bản học tập, nghe, tra từ, làm câu hỏi và lưu toàn bộ lịch sử ngay trên thiết bị."
+   },
+   "core": {
+    "badge": "12 bài chính",
+    "title": "Giáo trình U3–U5",
+    "description": "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt."
+   },
+   "hsk": {
+    "badge": "50 đoạn HSK",
+    "title": "Đọc HSK",
+    "description": "Đọc 50 đoạn văn HSK 3–4 với TTS chạy theo chữ, pinyin, nghĩa tiếng Việt và tra từ dùng chung."
+   },
+   "reinforcement": {
+    "badge": "24 bài PDF",
+    "title": "Luyện củng cố",
+    "description": "PDF có phóng to, toàn màn hình, bút vẽ và đánh dấu lưu riêng theo từng trang."
+   },
+   "mock": {
+    "badge": "12 bài đọc lạ",
+    "title": "Thi thử / đọc lạ",
+    "description": "Luyện văn bản chưa gặp, bám cấu trúc kỹ năng của ba đơn nguyên."
+   }
+  },
+  "resume": {
+   "loadingAria": "Đang tải hoạt động học",
+   "error": "Không tải được trạng thái học tiếp. Các khu vực Reader vẫn sẵn sàng.",
+   "badge": "Học tiếp",
+   "dueCount": "{count} mục đến hạn",
+   "readingKind": "Đọc bài",
+   "reviewKind": "Ôn tập",
+   "ready": "Sẵn sàng ôn tập",
+   "continue": "Tiếp tục",
+   "reviewNow": "Ôn ngay"
+  },
+  "primary": {
+   "startPoint": "Điểm bắt đầu chính",
+   "openCourse": "Mở giáo trình"
+  },
+  "otherCollections": {
+   "title": "Chọn bộ đọc khác",
+   "description": "Chuyển sang bài đọc hằng ngày, HSK, PDF củng cố hoặc đọc lạ khi đúng mục tiêu buổi học."
+  },
+  "catalog": {
+   "aria": "Danh mục Reader đã nhập",
+   "back": "← Thư viện Reader",
+   "collectionsAria": "Bộ Reader",
+   "emptyStatic": "Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.",
+   "otherDocuments": "Tài liệu khác",
+   "unit": "Đơn nguyên {id}",
+   "chooseDocument": "Chọn một bài để mở Reader",
+   "documentCount": "{count} bài",
+   "metadata": "{paragraphs} đoạn · {vocabulary} từ · {exercises} bài",
+   "notFound": "Không tìm thấy tài liệu Reader trong static package."
   }
+ },
+ "collection": {
+  "kinds": {
+   "core": {
+    "title": "Giáo trình chính",
+    "description": "12 bài U3–U5 với đầy đủ dữ liệu đọc, bài tập, từ vựng, phân tích và ghi chú."
+   },
+   "hsk": {
+    "title": "Thư viện bài đọc HSK",
+    "description": "50 bài đọc HSK 3–4 được sắp theo cấp độ, quyển và bài. Mỗi bài dùng chung trình đọc có TTS chạy theo chữ, pinyin, nghĩa và tra từ."
+   },
+   "reinforcement": {
+    "title": "Luyện củng cố PDF",
+    "description": "Tài liệu luyện đọc từ PDF nguồn, giữ metadata trang và workspace học theo tài liệu."
+   },
+   "mock": {
+    "title": "Đọc lạ / mô phỏng kiểm tra",
+    "description": "Các bài đọc mô phỏng được sắp theo đơn nguyên để luyện đọc ngoài bài đã học."
+   },
+   "daily": {
+    "title": "Bài đọc hằng ngày",
+    "description": "Bài đọc mới theo ngày, dùng chung Reader để nghe, tra từ, làm câu hỏi và lưu tiến độ."
+   },
+   "personal": {
+    "title": "Học tập cá nhân",
+    "description": "Curriculum và bài tập cá nhân đã nhập, với tiến độ thuộc HanziHome."
+   },
+   "humanities": {
+    "title": "Văn sử & Dịch thuật",
+    "description": "Văn học, lịch sử, biên dịch và phiên dịch trong Reader HanziHome."
+   }
+  },
+  "hskVolumes": {
+   "hsk3": "HSK 3 · Bài đọc",
+   "hsk4Upper": "HSK 4 · Quyển thượng",
+   "hsk4Lower": "HSK 4 · Quyển hạ",
+   "default": "Bài đọc HSK"
+  },
+  "readingCount": "{count} bài đọc",
+  "empty": "Chưa có bài đọc trong thư viện hiện tại.",
+  "otherDocuments": "Tài liệu khác",
+  "unitTitle": "Đơn nguyên {id} · {title}",
+  "hskLessonReading": "Bài {lesson} · Bài đọc {reading}",
+  "hskLevel": "HSK {level}",
+  "paragraphs": "{count} đoạn",
+  "vocabulary": "{count} từ",
+  "exercises": "{count} bài tập",
+  "reinforcementLabel": "Luyện củng cố",
+  "readingNumber": "Bài {number}",
+  "minutes": "{count} phút",
+  "page": "Trang {page}",
+  "printedPage": "Trang sách {page}",
+  "unitBadge": "Đơn nguyên {id}",
+  "notFoundLibrary": "Không tìm thấy tài liệu trong thư viện bài đọc.",
+  "notFoundCatalog": "Không tìm thấy bài đọc trong danh mục hiện tại.",
+  "reinforcementBack": "Danh sách củng cố",
+  "coreBack": "Danh sách giáo trình",
+  "backToList": "Danh sách {title}"
+ }
 }

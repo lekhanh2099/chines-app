@@ -563,8 +563,7 @@ export function HumanitiesTrackWorkspace({
   : "";
  const resource = selectedId.length > 0 ? initialResource : null;
  const trackTitle = kind === "poetry" ? t("titles.poetry") : t("titles.history");
- const trackDescription =
-  kind === "poetry" ? t("descriptions.poetry") : t("descriptions.history");
+ const trackDescription = kind === "poetry" ? t("descriptions.poetry") : t("descriptions.history");
 
  if (selectedId.length > 0 && resource !== null) {
   const lessonIndex = Math.max(

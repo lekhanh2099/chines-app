@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
- getLocaleFromPathname,
- localizePathname,
- stripLocaleFromPathname,
-} from "./config";
+import { getLocaleFromPathname, localizePathname, stripLocaleFromPathname } from "./config";
 
 describe("locale path helpers", () => {
  it("detects supported locale prefixes", () => {
@@ -23,9 +19,7 @@ describe("locale path helpers", () => {
 
  it("localizes logical and already-localized paths idempotently", () => {
   expect(localizePathname("/settings?section=app", "vi")).toBe("/vi/settings?section=app");
-  expect(localizePathname("/en/settings?section=app", "zh-CN")).toBe(
-   "/zh-CN/settings?section=app",
-  );
+  expect(localizePathname("/en/settings?section=app", "zh-CN")).toBe("/zh-CN/settings?section=app");
   expect(localizePathname("/", "en")).toBe("/en");
  });
 });

@@ -1,124 +1,124 @@
 {
-  "home": {
-    "header": {
-      "title": "阅读",
-      "description": "继续上次的阅读内容，或选择其他阅读集合。Reader 将阅读、听力、查词和练习集中在同一学习流程中。"
-    },
-    "options": {
-      "daily": {
-        "badge": "每天 1 篇新文章",
-        "title": "今日阅读",
-        "description": "阅读学习版文章，听音频、查词、完成问题，并在设备上保留学习记录。"
-      },
-      "core": {
-        "badge": "12 篇核心课文",
-        "title": "U3–U5 教材阅读",
-        "description": "阅读课文、完成练习、查选中文段、分析篇章结构并进行总结。"
-      },
-      "hsk": {
-        "badge": "50 段 HSK 阅读",
-        "title": "HSK 阅读",
-        "description": "阅读 50 段 HSK 3–4 级短文，支持文字同步 TTS、拼音、越南语释义和统一查词。"
-      },
-      "reinforcement": {
-        "badge": "24 篇 PDF 练习",
-        "title": "巩固练习",
-        "description": "PDF 支持缩放、全屏、绘画工具，并按页面分别保存标注。"
-      },
-      "mock": {
-        "badge": "12 篇陌生阅读",
-        "title": "模拟 / 陌生文本",
-        "description": "使用三个单元的技能结构练习未见过的文本。"
-      }
-    },
-    "resume": {
-      "loadingAria": "正在加载学习活动",
-      "error": "无法加载继续学习状态，但 Reader 各阅读区域仍可使用。",
-      "badge": "继续学习",
-      "dueCount": "{count} 个项目已到期",
-      "readingKind": "阅读",
-      "reviewKind": "复习",
-      "ready": "可以开始复习",
-      "continue": "继续",
-      "reviewNow": "立即复习"
-    },
-    "primary": {
-      "startPoint": "主要起点",
-      "openCourse": "打开教材阅读"
-    },
-    "otherCollections": {
-      "title": "选择其他阅读集合",
-      "description": "当学习目标更合适时，可切换到每日阅读、HSK、PDF 巩固或陌生文本。"
-    },
-    "catalog": {
-      "aria": "已导入的 Reader 目录",
-      "back": "← Reader 书库",
-      "collectionsAria": "Reader 阅读集合",
-      "emptyStatic": "应用中尚未打包静态 Reader 内容，请检查已打包的 JSON 文件。",
-      "otherDocuments": "其他资料",
-      "unit": "单元 {id}",
-      "chooseDocument": "选择一篇文章以打开 Reader",
-      "documentCount": "{count} 篇",
-      "metadata": "{paragraphs} 段 · {vocabulary} 个词 · {exercises} 个练习",
-      "notFound": "静态资源包中未找到该 Reader 文档。"
-    }
+ "home": {
+  "header": {
+   "title": "阅读",
+   "description": "继续上次的阅读内容，或选择其他阅读集合。Reader 将阅读、听力、查词和练习集中在同一学习流程中。"
   },
-  "collection": {
-    "kinds": {
-      "core": {
-        "title": "核心教材阅读",
-        "description": "U3–U5 共 12 篇阅读，包含阅读数据、练习、词汇、分析和笔记。"
-      },
-      "hsk": {
-        "title": "HSK 阅读库",
-        "description": "50 篇 HSK 3–4 级阅读，按级别、册次和课次整理。每篇共用支持文字同步 TTS、拼音、释义和查词的阅读器。"
-      },
-      "reinforcement": {
-        "title": "PDF 巩固练习",
-        "description": "基于原始 PDF 的阅读练习，保留页码元数据并使用面向文档的学习工作区。"
-      },
-      "mock": {
-        "title": "陌生文本 / 模拟阅读",
-        "description": "按单元整理模拟阅读，用于练习课外和未学过的文本。"
-      },
-      "daily": {
-        "title": "每日阅读",
-        "description": "按日期提供新文章，并共用 Reader 的听力、查词、答题和进度功能。"
-      },
-      "personal": {
-        "title": "个性化学习",
-        "description": "已导入的个人课程和练习，学习进度由 HanziHome 管理。"
-      },
-      "humanities": {
-        "title": "人文与翻译",
-        "description": "在 HanziHome Reader 中学习文学、历史、笔译与口译。"
-      }
-    },
-    "hskVolumes": {
-      "hsk3": "HSK 3 · 阅读",
-      "hsk4Upper": "HSK 4 · 上册",
-      "hsk4Lower": "HSK 4 · 下册",
-      "default": "HSK 阅读"
-    },
-    "readingCount": "{count} 篇阅读",
-    "empty": "当前阅读库中还没有文章。",
-    "otherDocuments": "其他资料",
-    "unitTitle": "单元 {id} · {title}",
-    "hskLessonReading": "第 {lesson} 课 · 阅读 {reading}",
-    "hskLevel": "HSK {level}",
-    "paragraphs": "{count} 段",
-    "vocabulary": "{count} 个词",
-    "exercises": "{count} 个练习",
-    "reinforcementLabel": "巩固练习",
-    "readingNumber": "阅读 {number}",
-    "minutes": "{count} 分钟",
-    "page": "第 {page} 页",
-    "printedPage": "书本第 {page} 页",
-    "unitBadge": "单元 {id}",
-    "notFoundLibrary": "阅读库中未找到该资料。",
-    "notFoundCatalog": "当前目录中未找到该阅读。",
-    "reinforcementBack": "巩固练习列表",
-    "coreBack": "教材阅读列表",
-    "backToList": "{title}列表"
+  "options": {
+   "daily": {
+    "badge": "每天 1 篇新文章",
+    "title": "今日阅读",
+    "description": "阅读学习版文章，听音频、查词、完成问题，并在设备上保留学习记录。"
+   },
+   "core": {
+    "badge": "12 篇核心课文",
+    "title": "U3–U5 教材阅读",
+    "description": "阅读课文、完成练习、查选中文段、分析篇章结构并进行总结。"
+   },
+   "hsk": {
+    "badge": "50 段 HSK 阅读",
+    "title": "HSK 阅读",
+    "description": "阅读 50 段 HSK 3–4 级短文，支持文字同步 TTS、拼音、越南语释义和统一查词。"
+   },
+   "reinforcement": {
+    "badge": "24 篇 PDF 练习",
+    "title": "巩固练习",
+    "description": "PDF 支持缩放、全屏、绘画工具，并按页面分别保存标注。"
+   },
+   "mock": {
+    "badge": "12 篇陌生阅读",
+    "title": "模拟 / 陌生文本",
+    "description": "使用三个单元的技能结构练习未见过的文本。"
+   }
+  },
+  "resume": {
+   "loadingAria": "正在加载学习活动",
+   "error": "无法加载继续学习状态，但 Reader 各阅读区域仍可使用。",
+   "badge": "继续学习",
+   "dueCount": "{count} 个项目已到期",
+   "readingKind": "阅读",
+   "reviewKind": "复习",
+   "ready": "可以开始复习",
+   "continue": "继续",
+   "reviewNow": "立即复习"
+  },
+  "primary": {
+   "startPoint": "主要起点",
+   "openCourse": "打开教材阅读"
+  },
+  "otherCollections": {
+   "title": "选择其他阅读集合",
+   "description": "当学习目标更合适时，可切换到每日阅读、HSK、PDF 巩固或陌生文本。"
+  },
+  "catalog": {
+   "aria": "已导入的 Reader 目录",
+   "back": "← Reader 书库",
+   "collectionsAria": "Reader 阅读集合",
+   "emptyStatic": "应用中尚未打包静态 Reader 内容，请检查已打包的 JSON 文件。",
+   "otherDocuments": "其他资料",
+   "unit": "单元 {id}",
+   "chooseDocument": "选择一篇文章以打开 Reader",
+   "documentCount": "{count} 篇",
+   "metadata": "{paragraphs} 段 · {vocabulary} 个词 · {exercises} 个练习",
+   "notFound": "静态资源包中未找到该 Reader 文档。"
   }
+ },
+ "collection": {
+  "kinds": {
+   "core": {
+    "title": "核心教材阅读",
+    "description": "U3–U5 共 12 篇阅读，包含阅读数据、练习、词汇、分析和笔记。"
+   },
+   "hsk": {
+    "title": "HSK 阅读库",
+    "description": "50 篇 HSK 3–4 级阅读，按级别、册次和课次整理。每篇共用支持文字同步 TTS、拼音、释义和查词的阅读器。"
+   },
+   "reinforcement": {
+    "title": "PDF 巩固练习",
+    "description": "基于原始 PDF 的阅读练习，保留页码元数据并使用面向文档的学习工作区。"
+   },
+   "mock": {
+    "title": "陌生文本 / 模拟阅读",
+    "description": "按单元整理模拟阅读，用于练习课外和未学过的文本。"
+   },
+   "daily": {
+    "title": "每日阅读",
+    "description": "按日期提供新文章，并共用 Reader 的听力、查词、答题和进度功能。"
+   },
+   "personal": {
+    "title": "个性化学习",
+    "description": "已导入的个人课程和练习，学习进度由 HanziHome 管理。"
+   },
+   "humanities": {
+    "title": "人文与翻译",
+    "description": "在 HanziHome Reader 中学习文学、历史、笔译与口译。"
+   }
+  },
+  "hskVolumes": {
+   "hsk3": "HSK 3 · 阅读",
+   "hsk4Upper": "HSK 4 · 上册",
+   "hsk4Lower": "HSK 4 · 下册",
+   "default": "HSK 阅读"
+  },
+  "readingCount": "{count} 篇阅读",
+  "empty": "当前阅读库中还没有文章。",
+  "otherDocuments": "其他资料",
+  "unitTitle": "单元 {id} · {title}",
+  "hskLessonReading": "第 {lesson} 课 · 阅读 {reading}",
+  "hskLevel": "HSK {level}",
+  "paragraphs": "{count} 段",
+  "vocabulary": "{count} 个词",
+  "exercises": "{count} 个练习",
+  "reinforcementLabel": "巩固练习",
+  "readingNumber": "阅读 {number}",
+  "minutes": "{count} 分钟",
+  "page": "第 {page} 页",
+  "printedPage": "书本第 {page} 页",
+  "unitBadge": "单元 {id}",
+  "notFoundLibrary": "阅读库中未找到该资料。",
+  "notFoundCatalog": "当前目录中未找到该阅读。",
+  "reinforcementBack": "巩固练习列表",
+  "coreBack": "教材阅读列表",
+  "backToList": "{title}列表"
+ }
 }

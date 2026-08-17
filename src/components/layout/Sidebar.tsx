@@ -180,7 +180,7 @@ export function Sidebar() {
          >
           <span className="flex min-w-0 flex-1 items-center gap-3">
            <GroupIcon data-icon="inline-start" />
-           <Typography as="span" clamp="one" className="min-w-0 flex-1">
+           <Typography as="span" clamp="one" className="min-w-0 flex-1 text-start">
             {groupLabel}
            </Typography>
           </span>
@@ -296,10 +296,7 @@ export function MobileBottomNavigation() {
          ))}
         </section>
        ))}
-       <section
-        className="grid content-start gap-1.5"
-        aria-label={t("navigation.groups.system")}
-       >
+       <section className="grid content-start gap-1.5" aria-label={t("navigation.groups.system")}>
         <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
          {t("navigation.groups.system")}
         </Typography>

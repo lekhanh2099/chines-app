@@ -10,39 +10,148 @@
   "title": "筛选",
   "allCategories": "所有分类",
   "allSources": "所有来源",
-  "categories": {"general": "通用", "grammar": "语法", "vocabulary": "词汇", "culture": "文化"}
+  "categories": { "general": "通用", "grammar": "语法", "vocabulary": "词汇", "culture": "文化" }
  },
- "loadError": {"title": "无法加载笔记库", "description": "笔记、文件夹或课程数据当前不可用。"},
- "views": {"library": "资料库", "recent": "最近", "inbox": "稍后阅读", "reading": "阅读中", "completed": "已读", "lesson": "按课程", "quick": "快速笔记", "unfiled": "未分类"},
+ "loadError": { "title": "无法加载笔记库", "description": "笔记、文件夹或课程数据当前不可用。" },
+ "views": {
+  "library": "资料库",
+  "recent": "最近",
+  "inbox": "稍后阅读",
+  "reading": "阅读中",
+  "completed": "已读",
+  "lesson": "按课程",
+  "quick": "快速笔记",
+  "unfiled": "未分类"
+ },
  "folders": {
-  "title": "文件夹", "create": "创建文件夹", "empty": "暂无文件夹。",
-  "deleteTitle": "删除文件夹", "renameTitle": "重命名文件夹", "createTitle": "创建文件夹",
-  "deleteDescription": "其中的笔记会变为未分类，子文件夹会移动到根级。", "description": "文件夹最多支持两级。",
-  "name": "文件夹名称", "color": "颜色",
-  "colors": {"purple": "紫色", "blue": "蓝色", "green": "绿色", "orange": "橙色", "rose": "玫红", "slate": "灰色"},
-  "options": "文件夹 {name} 的选项", "addChild": "添加子文件夹", "rename": "重命名", "moveUp": "上移", "moveDown": "下移", "delete": "删除文件夹",
-  "saveError": "无法保存文件夹。", "deleteError": "无法删除文件夹。", "sortError": "无法调整文件夹顺序。"
+  "title": "文件夹",
+  "create": "创建文件夹",
+  "empty": "暂无文件夹。",
+  "deleteTitle": "删除文件夹",
+  "renameTitle": "重命名文件夹",
+  "createTitle": "创建文件夹",
+  "deleteDescription": "其中的笔记会变为未分类，子文件夹会移动到根级。",
+  "description": "文件夹最多支持两级。",
+  "name": "文件夹名称",
+  "color": "颜色",
+  "colors": {
+   "purple": "紫色",
+   "blue": "蓝色",
+   "green": "绿色",
+   "orange": "橙色",
+   "rose": "玫红",
+   "slate": "灰色"
+  },
+  "options": "文件夹 {name} 的选项",
+  "addChild": "添加子文件夹",
+  "rename": "重命名",
+  "moveUp": "上移",
+  "moveDown": "下移",
+  "delete": "删除文件夹",
+  "saveError": "无法保存文件夹。",
+  "deleteError": "无法删除文件夹。",
+  "sortError": "无法调整文件夹顺序。"
  },
  "create": {
-  "triggerAria": "创建笔记或阅读", "trigger": "创建", "note": "普通笔记", "noteDescription": "自由记录想法和笔记。", "reading": "阅读", "readingDescription": "创建阅读笔记并稍后添加内容。",
-  "noteTitle": "创建笔记", "readingTitle": "创建阅读", "noteDialogDescription": "在资料库中创建一条自由笔记。", "readingDialogDescription": "创建空白阅读并在分栏视图中添加内容。",
-  "title": "标题", "titleRequired": "请输入标题。", "noteTitlePlaceholder": "笔记标题", "readingTitlePlaceholder": "阅读标题", "folder": "文件夹", "status": "状态", "category": "分类", "tags": "标签", "tagsPlaceholder": "HSK3, 备考", "createOpen": "创建并打开",
-  "focusBlocked": "专注模式已开启，无法创建新笔记。", "error": "无法创建笔记。"
+  "triggerAria": "创建笔记或阅读",
+  "trigger": "创建",
+  "note": "普通笔记",
+  "noteDescription": "自由记录想法和笔记。",
+  "reading": "阅读",
+  "readingDescription": "创建阅读笔记并稍后添加内容。",
+  "noteTitle": "创建笔记",
+  "readingTitle": "创建阅读",
+  "noteDialogDescription": "在资料库中创建一条自由笔记。",
+  "readingDialogDescription": "创建空白阅读并在分栏视图中添加内容。",
+  "title": "标题",
+  "titleRequired": "请输入标题。",
+  "noteTitlePlaceholder": "笔记标题",
+  "readingTitlePlaceholder": "阅读标题",
+  "folder": "文件夹",
+  "status": "状态",
+  "category": "分类",
+  "tags": "标签",
+  "tagsPlaceholder": "HSK3, 备考",
+  "createOpen": "创建并打开",
+  "focusBlocked": "专注模式已开启，无法创建新笔记。",
+  "error": "无法创建笔记。"
  },
- "import": {"label": "导入笔记", "button": "导入", "focusBlocked": "专注模式已开启，无法导入为新笔记。", "success": "笔记已导入。", "error": "导入文件不是有效的笔记格式。"},
- "quick": {"label": "创建快速笔记", "button": "快速笔记", "defaultTitle": "快速笔记 — {date}", "focusBlocked": "专注模式已开启，无法创建新笔记。", "error": "无法创建快速笔记"},
- "starter": {"defaultTitle": "我的第一条笔记", "title": "创建你的笔记空间", "description": "创建第一条笔记，用来保存课文、语法、词汇或自由笔记。", "action": "创建第一条笔记"},
- "list": {"emptyTitle": "没有符合条件的笔记", "emptyDescription": "可以调整筛选条件、导入笔记文件或创建新笔记。"},
- "readingStatus": {"none": "不适用", "inbox": "稍后阅读", "reading": "阅读中", "completed": "已读"},
+ "import": {
+  "label": "导入笔记",
+  "button": "导入",
+  "focusBlocked": "专注模式已开启，无法导入为新笔记。",
+  "success": "笔记已导入。",
+  "error": "导入文件不是有效的笔记格式。"
+ },
+ "quick": {
+  "label": "创建快速笔记",
+  "button": "快速笔记",
+  "defaultTitle": "快速笔记 — {date}",
+  "focusBlocked": "专注模式已开启，无法创建新笔记。",
+  "error": "无法创建快速笔记"
+ },
+ "starter": {
+  "defaultTitle": "我的第一条笔记",
+  "title": "创建你的笔记空间",
+  "description": "创建第一条笔记，用来保存课文、语法、词汇或自由笔记。",
+  "action": "创建第一条笔记"
+ },
+ "list": {
+  "emptyTitle": "没有符合条件的笔记",
+  "emptyDescription": "可以调整筛选条件、导入笔记文件或创建新笔记。"
+ },
+ "readingStatus": {
+  "none": "不适用",
+  "inbox": "稍后阅读",
+  "reading": "阅读中",
+  "completed": "已读"
+ },
  "row": {
-  "options": "{title} 的选项", "editMetadata": "编辑信息", "moveFolder": "移动到文件夹", "readingStatus": "阅读状态", "clearReadingStatus": "清除阅读状态", "delete": "删除笔记", "deleteTitle": "删除笔记？", "deleteDescription": "“{title}”将从你的笔记库中删除。", "deleting": "删除中...", "updatedError": "无法更新笔记。", "deleted": "笔记已删除。", "deleteError": "无法删除笔记。"
+  "options": "{title} 的选项",
+  "editMetadata": "编辑信息",
+  "moveFolder": "移动到文件夹",
+  "readingStatus": "阅读状态",
+  "clearReadingStatus": "清除阅读状态",
+  "delete": "删除笔记",
+  "deleteTitle": "删除笔记？",
+  "deleteDescription": "“{title}”将从你的笔记库中删除。",
+  "deleting": "删除中...",
+  "updatedError": "无法更新笔记。",
+  "deleted": "笔记已删除。",
+  "deleteError": "无法删除笔记。"
  },
  "metadata": {
-  "trigger": "笔记信息和标题", "title": "笔记信息", "description": "修改标题、文件夹、阅读状态和来源，不改变笔记正文。", "titleLabel": "标题", "titlePlaceholder": "笔记标题", "titleRequired": "请输入笔记标题。", "folder": "文件夹", "readingStatus": "阅读状态", "sourceUrl": "来源 URL", "sourceLabel": "来源名称", "sourceAuthor": "作者", "publishedAt": "发布日期", "success": "资料库信息已更新。", "error": "无法更新信息。"
+  "trigger": "笔记信息和标题",
+  "title": "笔记信息",
+  "description": "修改标题、文件夹、阅读状态和来源，不改变笔记正文。",
+  "titleLabel": "标题",
+  "titlePlaceholder": "笔记标题",
+  "titleRequired": "请输入笔记标题。",
+  "folder": "文件夹",
+  "readingStatus": "阅读状态",
+  "sourceUrl": "来源 URL",
+  "sourceLabel": "来源名称",
+  "sourceAuthor": "作者",
+  "publishedAt": "发布日期",
+  "success": "资料库信息已更新。",
+  "error": "无法更新信息。"
  },
  "context": {
-  "relations": {"main": "课程", "lesson_text": "课文", "vocab": "词汇", "grammar": "语法", "annotation": "标注"},
-  "categories": {"grammar": "语法", "vocabulary": "词汇", "culture": "文化", "general": "通用"},
-  "lessonNote": "课程笔记", "quickNote": "快速笔记", "normalNote": "普通笔记", "noLesson": "未关联课程", "quickBadge": "快速笔记", "untitled": "未命名笔记", "lessonNumber": "第 {number} 课", "bookLesson": "{book} · 第 {number} 课"
+  "relations": {
+   "main": "课程",
+   "lesson_text": "课文",
+   "vocab": "词汇",
+   "grammar": "语法",
+   "annotation": "标注"
+  },
+  "categories": { "grammar": "语法", "vocabulary": "词汇", "culture": "文化", "general": "通用" },
+  "lessonNote": "课程笔记",
+  "quickNote": "快速笔记",
+  "normalNote": "普通笔记",
+  "noLesson": "未关联课程",
+  "quickBadge": "快速笔记",
+  "untitled": "未命名笔记",
+  "lessonNumber": "第 {number} 课",
+  "bookLesson": "{book} · 第 {number} 课"
  }
 }

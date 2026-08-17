@@ -252,9 +252,7 @@ export function NotesLibraryNavigator({
           : t("folders.createTitle")}
       </DialogTitle>
       <DialogDescription>
-       {dialogState?.mode === "delete"
-        ? t("folders.deleteDescription")
-        : t("folders.description")}
+       {dialogState?.mode === "delete" ? t("folders.deleteDescription") : t("folders.description")}
       </DialogDescription>
      </DialogHeader>
      {dialogState?.mode === "delete" ? null : (

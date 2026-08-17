@@ -1,18 +1,18 @@
 {
-  "title": "Chất lượng dữ liệu Reader",
-  "description": "Kiểm tra tham chiếu nội dung runtime trước khi parity/cutover.",
-  "loading": "Đang kiểm tra dữ liệu…",
-  "publishedContent": "Nội dung đã xuất bản",
-  "healthy": "Không có orphan",
-  "warnings": "{count} cảnh báo",
-  "counts": {
-    "documents": "Tài liệu",
-    "paragraphs": "Đoạn",
-    "vocabularyLinks": "Liên kết từ vựng",
-    "exerciseGroups": "Nhóm bài tập",
-    "exerciseItems": "Mục bài tập",
-    "assets": "Tài nguyên"
-  },
-  "byKind": "Theo loại",
-  "runAgain": "Chạy lại audit"
+ "title": "Chất lượng dữ liệu Reader",
+ "description": "Kiểm tra tham chiếu nội dung runtime trước khi parity/cutover.",
+ "loading": "Đang kiểm tra dữ liệu…",
+ "publishedContent": "Nội dung đã xuất bản",
+ "healthy": "Không có orphan",
+ "warnings": "{count} cảnh báo",
+ "counts": {
+  "documents": "Tài liệu",
+  "paragraphs": "Đoạn",
+  "vocabularyLinks": "Liên kết từ vựng",
+  "exerciseGroups": "Nhóm bài tập",
+  "exerciseItems": "Mục bài tập",
+  "assets": "Tài nguyên"
+ },
+ "byKind": "Theo loại",
+ "runAgain": "Chạy lại audit"
 }

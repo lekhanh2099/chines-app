@@ -1,7 +1,7 @@
 {
  "title": "Cài đặt",
  "description": "Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản.",
- "tabs": {"app": "Ứng dụng", "reading": "Đọc", "ai": "AI & API"},
+ "tabs": { "app": "Ứng dụng", "reading": "Đọc", "ai": "AI & API" },
  "learningBehavior": {
   "title": "Hành vi học tập",
   "description": "Các lựa chọn có tác động toàn ứng dụng được gom ở đây; cài đặt đọc chuyên biệt nằm trong mục Đọc.",
@@ -19,59 +19,148 @@
   "modeTitle": "Chế độ sáng tối",
   "modeDescription": "“Theo thiết bị” tự đổi khi hệ điều hành đổi giao diện.",
   "modeAria": "Chọn chế độ sáng tối",
-  "modes": {"system": "Theo thiết bị", "systemCompact": "Thiết bị", "light": "Sáng", "dark": "Tối"},
+  "modes": {
+   "system": "Theo thiết bị",
+   "systemCompact": "Thiết bị",
+   "light": "Sáng",
+   "dark": "Tối"
+  },
   "paletteTitle": "Bảng màu giao diện",
   "paletteDescription": "Đổi sắc nền trang, Card và màu primary/selected/navigation active theo cùng một palette.",
   "paletteAria": "Chọn bảng màu giao diện",
   "palettes": {
-   "editorial": {"label": "Chàm Hanzi Studio", "description": "Chàm lạnh, mặt giấy sáng và nhấn indigo theo Editorial Study Workspace."},
-   "jade": {"label": "Ngọc bích", "description": "Xanh cân bằng; canvas, Card dịu và trạng thái active dễ nhận biết."},
-   "warm": {"label": "Sepia ấm", "description": "Palette sepia của Hanzi Studio; ấm vừa đủ cho phiên đọc dài, vẫn giữ phân cấp rõ."},
-   "plum": {"label": "Mận tím", "description": "Tím mận phớt nhẹ trên canvas và Card, active rõ mà không nhuộm popover/input."},
-   "mono": {"label": "Trắng và đen", "description": "Tương phản trung tính, gần như loại bỏ màu trang trí."},
-   "tea": {"label": "Trà xanh", "description": "Xanh trà ít bão hòa; canvas và Card dịu, phù hợp học tập kéo dài."}
+   "editorial": {
+    "label": "Chàm Hanzi Studio",
+    "description": "Chàm lạnh, mặt giấy sáng và nhấn indigo theo Editorial Study Workspace."
+   },
+   "jade": {
+    "label": "Ngọc bích",
+    "description": "Xanh cân bằng; canvas, Card dịu và trạng thái active dễ nhận biết."
+   },
+   "warm": {
+    "label": "Sepia ấm",
+    "description": "Palette sepia của Hanzi Studio; ấm vừa đủ cho phiên đọc dài, vẫn giữ phân cấp rõ."
+   },
+   "plum": {
+    "label": "Mận tím",
+    "description": "Tím mận phớt nhẹ trên canvas và Card, active rõ mà không nhuộm popover/input."
+   },
+   "mono": {
+    "label": "Trắng và đen",
+    "description": "Tương phản trung tính, gần như loại bỏ màu trang trí."
+   },
+   "tea": {
+    "label": "Trà xanh",
+    "description": "Xanh trà ít bão hòa; canvas và Card dịu, phù hợp học tập kéo dài."
+   }
   }
  },
  "ai": {
-  "badge": "AI Settings", "title": "Cài đặt tra cứu AI",
+  "badge": "AI Settings",
+  "title": "Cài đặt tra cứu AI",
   "description": "Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model mạnh chỉ chạy khi bạn chủ động mở phần chi tiết.",
-  "statusDirty": "Có thay đổi chưa lưu", "statusSynced": "Đã đồng bộ", "reset": "Reset mặc định", "save": "Lưu thay đổi",
+  "statusDirty": "Có thay đổi chưa lưu",
+  "statusSynced": "Đã đồng bộ",
+  "reset": "Reset mặc định",
+  "save": "Lưu thay đổi",
   "detailTitle": "Xem chi tiết",
   "detailDescription": "Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app dùng model Gemini hệ thống đã chọn bên dưới.",
-  "detailModelLabel": "Model chi tiết mặc định", "detailModelAria": "Chọn model Gemini", "savedSuffix": "đã lưu",
+  "detailModelLabel": "Model chi tiết mặc định",
+  "detailModelAria": "Chọn model Gemini",
+  "savedSuffix": "đã lưu",
   "legacyModel": "Model cũ đang được giữ. Chọn model mới để cập nhật.",
   "quickTitle": "Tra nhanh và dịch nghĩa",
   "quickDescription": "Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key.",
-  "quickModelDescription": "Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.", "noPersonalKey": "Không cần key cá nhân", "freeTier": "Free-tier eligible",
-  "localFallback": "Đang dùng AI prompt settings lưu cục bộ trên trình duyệt", "savedRemote": "Đã lưu AI prompt settings", "savedLocal": "Đã lưu AI prompt settings trên trình duyệt này"
+  "quickModelDescription": "Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.",
+  "noPersonalKey": "Không cần key cá nhân",
+  "freeTier": "Free-tier eligible",
+  "localFallback": "Đang dùng AI prompt settings lưu cục bộ trên trình duyệt",
+  "savedRemote": "Đã lưu AI prompt settings",
+  "savedLocal": "Đã lưu AI prompt settings trên trình duyệt này"
  },
  "prompts": {
-  "title": "Lookup Prompts", "description": "Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để giảm độ trễ và lượng token.",
-  "dirty": "Prompt có thay đổi chưa lưu", "synced": "Prompt đã đồng bộ", "save": "Lưu prompt mới",
-  "wordTitle": "Word Lookup Prompt", "wordDescription": "Dùng cho tra từ/cụm từ ngắn. Phải giữ placeholder {token} để backend thay từ cần tra vào prompt.",
-  "sentenceTitle": "Sentence Lookup Prompt", "sentenceDescription": "Dùng cho câu/đoạn văn. Phải giữ placeholder {token} để backend thay nội dung thật vào prompt.",
-  "unsaved": "Chưa lưu", "saved": "Đã lưu", "restore": "Khôi phục block", "hasPlaceholder": "Có placeholder {token}", "missingPlaceholder": "Thiếu placeholder {token}", "characters": "{count} ký tự"
+  "title": "Lookup Prompts",
+  "description": "Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để giảm độ trễ và lượng token.",
+  "dirty": "Prompt có thay đổi chưa lưu",
+  "synced": "Prompt đã đồng bộ",
+  "save": "Lưu prompt mới",
+  "wordTitle": "Word Lookup Prompt",
+  "wordDescription": "Dùng cho tra từ/cụm từ ngắn. Phải giữ placeholder {token} để backend thay từ cần tra vào prompt.",
+  "sentenceTitle": "Sentence Lookup Prompt",
+  "sentenceDescription": "Dùng cho câu/đoạn văn. Phải giữ placeholder {token} để backend thay nội dung thật vào prompt.",
+  "unsaved": "Chưa lưu",
+  "saved": "Đã lưu",
+  "restore": "Khôi phục block",
+  "hasPlaceholder": "Có placeholder {token}",
+  "missingPlaceholder": "Thiếu placeholder {token}",
+  "characters": "{count} ký tự"
  },
  "apiKeys": {
   "title": "API key cá nhân cho Xem chi tiết",
   "description": "Tất cả model trong phần này đều cần API key cá nhân. Provider có thể cấp quota miễn phí, nhưng app vẫn cần key để gọi API. Khi request lỗi, app không tự đổi key hoặc model.",
-  "add": "Thêm API key", "added": "Đã thêm API key.", "dialogTitle": "Thêm API key mới", "dialogDescription": "Chọn provider, model và nhập key tương ứng.",
-  "provider": "Provider", "model": "Model", "openDocs": "Mở trang lấy key", "displayName": "Tên hiển thị", "displayNamePlaceholder": "Ví dụ: Groq tra từ",
-  "apiKey": "API key", "apiKeyPlaceholder": "Dán API key vào đây", "showKey": "Hiện API key", "hideKey": "Ẩn API key", "pasteKey": "Dán API key", "verifySave": "Verify và lưu",
+  "add": "Thêm API key",
+  "added": "Đã thêm API key.",
+  "dialogTitle": "Thêm API key mới",
+  "dialogDescription": "Chọn provider, model và nhập key tương ứng.",
+  "provider": "Provider",
+  "model": "Model",
+  "openDocs": "Mở trang lấy key",
+  "displayName": "Tên hiển thị",
+  "displayNamePlaceholder": "Ví dụ: Groq tra từ",
+  "apiKey": "API key",
+  "apiKeyPlaceholder": "Dán API key vào đây",
+  "showKey": "Hiện API key",
+  "hideKey": "Ẩn API key",
+  "pasteKey": "Dán API key",
+  "verifySave": "Verify và lưu",
   "schemaNotReady": "Database chưa sẵn sàng cho user_api_keys. Hãy apply migration hoặc repair migration rồi tải lại trang.",
   "summary": "{total} key · {active} đang bật · chỉ áp dụng khi mở phân tích chi tiết",
-  "loadError": "Không tải được danh sách API key.", "loadErrorDescription": "Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.", "loading": "Đang tải danh sách API key...",
-  "empty": "Chưa có API key cá nhân", "emptyReady": "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết.", "emptyNotReady": "Apply migration database trước, rồi quay lại thêm key.",
-  "statusSelected": "Đang dùng", "statusActive": "Đang bật", "statusPaused": "Tạm dừng", "modelUsed": "Model sử dụng", "modelAria": "Model cho {label}",
-  "moveUp": "Đưa lên", "pause": "Tạm dừng", "resume": "Bật lại", "delete": "Xóa",
-  "pasted": "Đã dán key từ clipboard.", "clipboardError": "Không thể truy cập clipboard.", "keyRequired": "Vui lòng nhập API key.", "addError": "Không thể thêm API key.",
-  "modelChanged": "Đã đổi model.", "modelChangeError": "Không thể đổi model.", "toggleError": "Không thể cập nhật trạng thái key.", "moveError": "Không thể đổi thứ tự key.", "deleted": "Đã xóa API key.", "deleteError": "Không thể xóa key.",
-  "providers": {"groq": "Phân tích chi tiết từ và câu tốc độ cao bằng Groq BYOK.", "deepseek": "Dùng model DeepSeek đã chọn cho lookup và phân tích.", "gemini": "Dùng cho Google AI Studio / Gemini API.", "openai": "Dùng model OpenAI đã chọn cho lookup và phân tích."},
+  "loadError": "Không tải được danh sách API key.",
+  "loadErrorDescription": "Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.",
+  "loading": "Đang tải danh sách API key...",
+  "empty": "Chưa có API key cá nhân",
+  "emptyReady": "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết.",
+  "emptyNotReady": "Apply migration database trước, rồi quay lại thêm key.",
+  "statusSelected": "Đang dùng",
+  "statusActive": "Đang bật",
+  "statusPaused": "Tạm dừng",
+  "modelUsed": "Model sử dụng",
+  "modelAria": "Model cho {label}",
+  "moveUp": "Đưa lên",
+  "pause": "Tạm dừng",
+  "resume": "Bật lại",
+  "delete": "Xóa",
+  "pasted": "Đã dán key từ clipboard.",
+  "clipboardError": "Không thể truy cập clipboard.",
+  "keyRequired": "Vui lòng nhập API key.",
+  "addError": "Không thể thêm API key.",
+  "modelChanged": "Đã đổi model.",
+  "modelChangeError": "Không thể đổi model.",
+  "toggleError": "Không thể cập nhật trạng thái key.",
+  "moveError": "Không thể đổi thứ tự key.",
+  "deleted": "Đã xóa API key.",
+  "deleteError": "Không thể xóa key.",
+  "providers": {
+   "groq": "Phân tích chi tiết từ và câu tốc độ cao bằng Groq BYOK.",
+   "deepseek": "Dùng model DeepSeek đã chọn cho lookup và phân tích.",
+   "gemini": "Dùng cho Google AI Studio / Gemini API.",
+   "openai": "Dùng model OpenAI đã chọn cho lookup và phân tích."
+  },
   "models": {
-   "gptOss20b": "Nhanh cho lookup ngắn; có quota Groq Free Plan.", "gptOss120b": "Chất lượng cao hơn; có quota Groq Free Plan.", "qwen36": "Tốt cho nội dung tiếng Trung; có quota Groq Free Plan.",
-   "deepseekFlash": "Model mới, ưu tiên tốc độ và lookup thường xuyên.", "deepseekPro": "Model mới cho tác vụ cần chất lượng cao hơn.",
-   "gemini35Flash": "Model stable mới cho tác vụ dài và phức tạp hơn", "gemini31Pro": "Model preview cho tác vụ cần suy luận mạnh", "gemini25Flash": "Mặc định cân bằng giữa tốc độ và chất lượng", "gemini25Pro": "Model mạnh hơn, có thể chậm hơn",
-   "gpt5Mini": "Nhanh và phù hợp cho lookup có cấu trúc.", "gpt5Nano": "Nhẹ nhất cho tác vụ ngắn.", "gpt41Mini": "Model ổn định cho JSON và instruction following.", "gpt41Nano": "Model 4.1 nhỏ và nhanh.", "legacy": "Model đã lưu từ phiên bản trước. Chọn model mới để cập nhật."
+   "gptOss20b": "Nhanh cho lookup ngắn; có quota Groq Free Plan.",
+   "gptOss120b": "Chất lượng cao hơn; có quota Groq Free Plan.",
+   "qwen36": "Tốt cho nội dung tiếng Trung; có quota Groq Free Plan.",
+   "deepseekFlash": "Model mới, ưu tiên tốc độ và lookup thường xuyên.",
+   "deepseekPro": "Model mới cho tác vụ cần chất lượng cao hơn.",
+   "gemini35Flash": "Model stable mới cho tác vụ dài và phức tạp hơn",
+   "gemini31Pro": "Model preview cho tác vụ cần suy luận mạnh",
+   "gemini25Flash": "Mặc định cân bằng giữa tốc độ và chất lượng",
+   "gemini25Pro": "Model mạnh hơn, có thể chậm hơn",
+   "gpt5Mini": "Nhanh và phù hợp cho lookup có cấu trúc.",
+   "gpt5Nano": "Nhẹ nhất cho tác vụ ngắn.",
+   "gpt41Mini": "Model ổn định cho JSON và instruction following.",
+   "gpt41Nano": "Model 4.1 nhỏ và nhanh.",
+   "legacy": "Model đã lưu từ phiên bản trước. Chọn model mới để cập nhật."
   }
  }
 }

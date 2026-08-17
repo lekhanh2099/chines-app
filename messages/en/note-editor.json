@@ -32,5 +32,5 @@
  "deleteTitle": "Delete note?",
  "deleteDescription": "“{title}” will be removed from your notes library.",
  "deleting": "Deleting...",
- "save": {"saving": "Saving...", "saved": "Saved", "error": "Save failed"}
+ "save": { "saving": "Saving...", "saved": "Saved", "error": "Save failed" }
 }

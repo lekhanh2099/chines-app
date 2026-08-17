@@ -10,7 +10,12 @@
   "title": "Bộ lọc",
   "allCategories": "Mọi danh mục",
   "allSources": "Mọi nguồn",
-  "categories": {"general": "Chung", "grammar": "Ngữ pháp", "vocabulary": "Từ vựng", "culture": "Văn hóa"}
+  "categories": {
+   "general": "Chung",
+   "grammar": "Ngữ pháp",
+   "vocabulary": "Từ vựng",
+   "culture": "Văn hóa"
+  }
  },
  "loadError": {
   "title": "Không tải được thư viện ghi chú",
@@ -37,7 +42,14 @@
   "description": "Folder hỗ trợ tối đa hai tầng.",
   "name": "Tên folder",
   "color": "Màu",
-  "colors": {"purple": "Tím", "blue": "Xanh dương", "green": "Xanh lá", "orange": "Cam", "rose": "Hồng", "slate": "Xám"},
+  "colors": {
+   "purple": "Tím",
+   "blue": "Xanh dương",
+   "green": "Xanh lá",
+   "orange": "Cam",
+   "rose": "Hồng",
+   "slate": "Xám"
+  },
   "options": "Tùy chọn folder {name}",
   "addChild": "Thêm folder con",
   "rename": "Đổi tên",
@@ -133,8 +145,19 @@
   "error": "Không thể cập nhật thông tin."
  },
  "context": {
-  "relations": {"main": "Bài học", "lesson_text": "Bài khóa", "vocab": "Từ vựng", "grammar": "Ngữ pháp", "annotation": "Đánh dấu"},
-  "categories": {"grammar": "Ngữ pháp", "vocabulary": "Từ vựng", "culture": "Văn hóa", "general": "Chung"},
+  "relations": {
+   "main": "Bài học",
+   "lesson_text": "Bài khóa",
+   "vocab": "Từ vựng",
+   "grammar": "Ngữ pháp",
+   "annotation": "Đánh dấu"
+  },
+  "categories": {
+   "grammar": "Ngữ pháp",
+   "vocabulary": "Từ vựng",
+   "culture": "Văn hóa",
+   "general": "Chung"
+  },
   "lessonNote": "Ghi chú bài học",
   "quickNote": "Ghi chú nhanh",
   "normalNote": "Ghi chú thường",

@@ -16,7 +16,7 @@
   "savedWordsAria": "已收藏词汇",
   "missingPinyin": "暂无拼音",
   "missingMeaning": "暂无合适释义",
-  "levels": {"new": "新词", "reviewing": "复习中", "good": "良好", "mastered": "已掌握"}
+  "levels": { "new": "新词", "reviewing": "复习中", "good": "良好", "mastered": "已掌握" }
  },
  "word": {
   "notFoundTitle": "未找到词汇",

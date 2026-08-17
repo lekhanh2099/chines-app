@@ -186,9 +186,7 @@ export function ReaderExercisePanel({
                value={draft}
                onChange={(event) => setDraft(item.id, event.target.value)}
                placeholder={
-                item.item_type === "fill_blank"
-                 ? t("fillBlankPlaceholder")
-                 : t("answerPlaceholder")
+                item.item_type === "fill_blank" ? t("fillBlankPlaceholder") : t("answerPlaceholder")
                }
               />
              )}
@@ -205,7 +203,8 @@ export function ReaderExercisePanel({
 
            {saved?.completed && saved.score !== 1 && item.payload.answerVi ? (
             <Typography variant="caption" tone="muted">
-             {t("referenceAnswer")} {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
+             {t("referenceAnswer")}{" "}
+             {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
             </Typography>
            ) : null}
           </article>

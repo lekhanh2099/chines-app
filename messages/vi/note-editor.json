@@ -32,5 +32,5 @@
  "deleteTitle": "Xóa ghi chú?",
  "deleteDescription": "“{title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.",
  "deleting": "Đang xóa...",
- "save": {"saving": "Đang lưu...", "saved": "Đã lưu", "error": "Lỗi lưu"}
+ "save": { "saving": "Đang lưu...", "saved": "Đã lưu", "error": "Lỗi lưu" }
 }

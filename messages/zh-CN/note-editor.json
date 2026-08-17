@@ -32,5 +32,5 @@
  "deleteTitle": "删除笔记？",
  "deleteDescription": "“{title}”将从你的笔记库中删除。",
  "deleting": "删除中...",
- "save": {"saving": "保存中...", "saved": "已保存", "error": "保存失败"}
+ "save": { "saving": "保存中...", "saved": "已保存", "error": "保存失败" }
 }

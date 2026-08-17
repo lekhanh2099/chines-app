@@ -1,47 +1,47 @@
 {
-  "header": {
-    "eyebrow": "Today’s reading",
-    "title": "Daily Chinese reading",
-    "description": "A library of reviewed daily readings stored in HanziHome.",
-    "settings": "Reading settings",
-    "openSample": "Open sample"
-  },
-  "empty": {
-    "title": "No collected readings yet",
-    "description": "HanziHome currently shows only readings that have been packaged and reviewed."
-  },
-  "sample": {
-    "eyebrow": "Offline sample",
-    "title": "Try Reader with a sample, not a collected article",
-    "badge": "Sample",
-    "topicCulture": "Culture",
-    "topicFallback": "Sample",
-    "levelFallback": "Daily",
-    "dateFallback": "Sample",
-    "minutes": "{count} min",
-    "read": "Read"
-  },
-  "tabs": {
-    "reader": "Reading",
-    "questions": "Questions",
-    "vocabulary": "Vocabulary",
-    "grammar": "Grammar",
-    "translation": "Translation",
-    "source": "Source",
-    "aria": "Daily reading sections"
-  },
-  "document": {
-    "notFound": "This daily reading was not found in the available data.",
-    "back": "← Daily reading list",
-    "minutes": "{count} min"
-  },
-  "grammar": {
-    "empty": "This reading has no dedicated grammar items yet.",
-    "evidence": "Example sentence from the reading"
-  },
-  "source": {
-    "title": "Source and editorial notes",
-    "fallbackNotice": "This content was reviewed before being added to the library.",
-    "fallbackSource": "Hanzi Studio source"
-  }
+ "header": {
+  "eyebrow": "Today’s reading",
+  "title": "Daily Chinese reading",
+  "description": "A library of reviewed daily readings stored in HanziHome.",
+  "settings": "Reading settings",
+  "openSample": "Open sample"
+ },
+ "empty": {
+  "title": "No collected readings yet",
+  "description": "HanziHome currently shows only readings that have been packaged and reviewed."
+ },
+ "sample": {
+  "eyebrow": "Offline sample",
+  "title": "Try Reader with a sample, not a collected article",
+  "badge": "Sample",
+  "topicCulture": "Culture",
+  "topicFallback": "Sample",
+  "levelFallback": "Daily",
+  "dateFallback": "Sample",
+  "minutes": "{count} min",
+  "read": "Read"
+ },
+ "tabs": {
+  "reader": "Reading",
+  "questions": "Questions",
+  "vocabulary": "Vocabulary",
+  "grammar": "Grammar",
+  "translation": "Translation",
+  "source": "Source",
+  "aria": "Daily reading sections"
+ },
+ "document": {
+  "notFound": "This daily reading was not found in the available data.",
+  "back": "← Daily reading list",
+  "minutes": "{count} min"
+ },
+ "grammar": {
+  "empty": "This reading has no dedicated grammar items yet.",
+  "evidence": "Example sentence from the reading"
+ },
+ "source": {
+  "title": "Source and editorial notes",
+  "fallbackNotice": "This content was reviewed before being added to the library.",
+  "fallbackSource": "Hanzi Studio source"
+ }
 }

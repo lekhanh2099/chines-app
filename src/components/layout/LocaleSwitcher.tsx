@@ -10,12 +10,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import {
- appLocales,
- defaultAppLocale,
- isAppLocale,
- type AppLocale,
-} from "@/i18n/config";
+import { appLocales, defaultAppLocale, isAppLocale, type AppLocale } from "@/i18n/config";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 export function LocaleSwitcher() {

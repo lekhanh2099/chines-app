@@ -43,10 +43,7 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
-import {
- getApiKeyModelOptions,
- getDefaultApiKeyModel,
-} from "@/lib/api-key-models";
+import { getApiKeyModelOptions, getDefaultApiKeyModel } from "@/lib/api-key-models";
 import {
  API_KEY_PROVIDER_OPTIONS,
  ApiKeyProviderSchema,
@@ -260,7 +257,9 @@ export default function ApiKeyManagerSection() {
          <Typography as="p" tone="default" weight="semibold">
           {selectedProviderOption.label}
          </Typography>
-         <Typography as="p">{t(getApiKeyProviderDescriptionKey(selectedProviderOption.value))}</Typography>
+         <Typography as="p">
+          {t(getApiKeyProviderDescriptionKey(selectedProviderOption.value))}
+         </Typography>
          <a
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"

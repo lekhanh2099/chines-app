@@ -53,8 +53,7 @@ export const humanitiesPracticeContent: Record<
    {
     title: "Đọc yêu cầu dịch",
     question: "Ai sẽ đọc bản dịch và dùng nó để làm gì?",
-    explanation:
-     "Yêu cầu dịch quyết định sắc thái, mức giải thích và cách chọn từ trong bản đích.",
+    explanation: "Yêu cầu dịch quyết định sắc thái, mức giải thích và cách chọn từ trong bản đích.",
    },
    {
     title: "Chia câu thành đơn vị ý",
@@ -148,8 +147,7 @@ export const humanitiesPracticeContent: Record<
    {
     title: "Trình bày bằng lời",
     question: "Nói thế nào để người nghe theo kịp?",
-    explanation:
-     "Ưu tiên câu rõ, nhịp ổn định và từ nối giúp người nghe nhận ra cấu trúc.",
+    explanation: "Ưu tiên câu rõ, nhịp ổn định và từ nối giúp người nghe nhận ra cấu trúc.",
    },
    {
     title: "Phục hồi khi quên",
@@ -160,8 +158,7 @@ export const humanitiesPracticeContent: Record<
    {
     title: "Tự đánh giá bản ghi",
     question: "Dựa vào đâu để biết mình đã truyền đạt đủ?",
-    explanation:
-     "Đối chiếu từng đơn vị thông tin và nghe lại để sửa nội dung lẫn cách diễn đạt.",
+    explanation: "Đối chiếu từng đơn vị thông tin và nghe lại để sửa nội dung lẫn cách diễn đạt.",
    },
   ],
   levels: [

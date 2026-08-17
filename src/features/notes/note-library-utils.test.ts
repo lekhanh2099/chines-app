@@ -2,7 +2,11 @@ import { describe, expect, it } from "vitest";
 
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import type { NoteListItem } from "@/services/notes.service";
-import { buildLessonLookup, getNoteContext, type NoteContextLabels } from "./components/noteContext";
+import {
+ buildLessonLookup,
+ getNoteContext,
+ type NoteContextLabels,
+} from "./components/noteContext";
 import { normalizeReadingUrl, plainTextToEditorDocument } from "./note-library-utils";
 
 const testContextLabels: NoteContextLabels = {

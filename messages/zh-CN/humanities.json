@@ -1,90 +1,90 @@
 {
-  "shell": {
-    "eyebrow": "Humanities · 课程",
-    "title": "人文与翻译",
-    "description": "在同一个 HanziHome 工作区中选择精读、论证或翻译学习路径。",
-    "navAria": "人文与翻译导航",
-    "nav": {
-      "program": "课程",
-      "poetry": "诗文",
-      "history": "历史与思想",
-      "translation": "笔译",
-      "interpreting": "口译"
-    },
-    "summary": "{count} 课 Humanities",
-    "summaryDetail": "10 课诗文 · 5 课历史 · 20 课笔译 · 10 课口译"
+ "shell": {
+  "eyebrow": "Humanities · 课程",
+  "title": "人文与翻译",
+  "description": "在同一个 HanziHome 工作区中选择精读、论证或翻译学习路径。",
+  "navAria": "人文与翻译导航",
+  "nav": {
+   "program": "课程",
+   "poetry": "诗文",
+   "history": "历史与思想",
+   "translation": "笔译",
+   "interpreting": "口译"
   },
-  "track": {
-    "eyebrow": "精读 · 论证 · 翻译",
-    "titles": {
-      "poetry": "诗文",
-      "history": "历史与思想"
-    },
-    "descriptions": {
-      "poetry": "分层阅读作品：原文、语言、诗法、解读与练习。",
-      "history": "阅读原始文本，把观点与证据连接起来，并区分可核实信息与解释。"
-    },
-    "tabs": {
-      "poetry": {
-        "text": "文本",
-        "language": "语言",
-        "poetics": "诗法",
-        "interpretation": "解读",
-        "practice": "练习"
-      },
-      "history": {
-        "text": "来源",
-        "language": "时间线",
-        "poetics": "观点",
-        "interpretation": "视角",
-        "practice": "练习"
-      }
-    },
-    "sourceTitle": "阅读来源",
-    "glossaryEmpty": "这篇阅读没有额外需要注释的词条。",
-    "textTitlePoetry": "原文",
-    "textTitleHistory": "原始文本",
-    "paragraphCount": "{count} 段",
-    "paragraph": "第 {order} 段",
-    "annotationEmpty": "这一部分还没有注释层。",
-    "poetics": {
-      "form": "形式",
-      "imagery": "意象与功能",
-      "parallelism": "对仗与节奏"
-    },
-    "history": {
-      "actors": "主体",
-      "perspectives": "不同视角"
-    },
-    "practice": {
-      "revealed": "已显示参考方案",
-      "reveal": "显示参考方案",
-      "answerFallback": "暂时没有示例答案。"
-    },
-    "detail": {
-      "back": "← {track}列表",
-      "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
-      "tabsAria": "{track}各部分",
-      "listenLabel": "听全文",
-      "listen": "听文章"
-    },
-    "guide": {
-      "beginner": "适合初学者的路径",
-      "poetryWhy": "诗歌训练有助于阅读凝练句式、识别省略主语和古义、理解意象，并比较意义相近但节奏与语气不同的译文。",
-      "historyWhy": "历史与思想阅读训练你区分文本本身所说的内容与后人的解释，同时检查证据及推论的边界。",
-      "poetryStart": "从四句诗开始，逐层阅读；一开始不需要掌握复杂格律。",
-      "historyStart": "从短文和寓言开始；先学会提问，再进入复杂年代脉络。",
-      "startHere": "从这里开始",
-      "poetryMethod": "先分开原文、逐句意思、意象和译文，不要急着猜“作者本意”。",
-      "historyMethod": "先使用三个标签：可核实信息、解释、仍有争议的观点。"
-    },
-    "library": {
-      "poetry": "诗文库",
-      "history": "阅读库",
-      "description": "按课程顺序学习；每一课都会打开独立工作区。",
-      "count": "本学段 {count} 课",
-      "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
-      "open": "打开课程"
-    }
+  "summary": "{count} 课 Humanities",
+  "summaryDetail": "10 课诗文 · 5 课历史 · 20 课笔译 · 10 课口译"
+ },
+ "track": {
+  "eyebrow": "精读 · 论证 · 翻译",
+  "titles": {
+   "poetry": "诗文",
+   "history": "历史与思想"
+  },
+  "descriptions": {
+   "poetry": "分层阅读作品：原文、语言、诗法、解读与练习。",
+   "history": "阅读原始文本，把观点与证据连接起来，并区分可核实信息与解释。"
+  },
+  "tabs": {
+   "poetry": {
+    "text": "文本",
+    "language": "语言",
+    "poetics": "诗法",
+    "interpretation": "解读",
+    "practice": "练习"
+   },
+   "history": {
+    "text": "来源",
+    "language": "时间线",
+    "poetics": "观点",
+    "interpretation": "视角",
+    "practice": "练习"
+   }
+  },
+  "sourceTitle": "阅读来源",
+  "glossaryEmpty": "这篇阅读没有额外需要注释的词条。",
+  "textTitlePoetry": "原文",
+  "textTitleHistory": "原始文本",
+  "paragraphCount": "{count} 段",
+  "paragraph": "第 {order} 段",
+  "annotationEmpty": "这一部分还没有注释层。",
+  "poetics": {
+   "form": "形式",
+   "imagery": "意象与功能",
+   "parallelism": "对仗与节奏"
+  },
+  "history": {
+   "actors": "主体",
+   "perspectives": "不同视角"
+  },
+  "practice": {
+   "revealed": "已显示参考方案",
+   "reveal": "显示参考方案",
+   "answerFallback": "暂时没有示例答案。"
+  },
+  "detail": {
+   "back": "← {track}列表",
+   "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
+   "tabsAria": "{track}各部分",
+   "listenLabel": "听全文",
+   "listen": "听文章"
+  },
+  "guide": {
+   "beginner": "适合初学者的路径",
+   "poetryWhy": "诗歌训练有助于阅读凝练句式、识别省略主语和古义、理解意象，并比较意义相近但节奏与语气不同的译文。",
+   "historyWhy": "历史与思想阅读训练你区分文本本身所说的内容与后人的解释，同时检查证据及推论的边界。",
+   "poetryStart": "从四句诗开始，逐层阅读；一开始不需要掌握复杂格律。",
+   "historyStart": "从短文和寓言开始；先学会提问，再进入复杂年代脉络。",
+   "startHere": "从这里开始",
+   "poetryMethod": "先分开原文、逐句意思、意象和译文，不要急着猜“作者本意”。",
+   "historyMethod": "先使用三个标签：可核实信息、解释、仍有争议的观点。"
+  },
+  "library": {
+   "poetry": "诗文库",
+   "history": "阅读库",
+   "description": "按课程顺序学习；每一课都会打开独立工作区。",
+   "count": "本学段 {count} 课",
+   "moduleLesson": "模块 {module} · 第 {lesson}/{total} 课",
+   "open": "打开课程"
   }
+ }
 }

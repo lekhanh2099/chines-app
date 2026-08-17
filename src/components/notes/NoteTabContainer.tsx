@@ -58,7 +58,9 @@ export function NoteTabContainer({ initialNoteId, initialTitle }: NoteTabContain
  const hadTabsRef = useRef(false);
  const [mobileHeaderActionsContainer, setMobileHeaderActionsContainer] =
   useState<HTMLDivElement | null>(null);
- const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(null);
+ const [desktopActionsContainer, setDesktopActionsContainer] = useState<HTMLDivElement | null>(
+  null,
+ );
 
  const selectableNotes = useMemo(
   () =>

@@ -10,10 +10,7 @@ import { ContextualReaderText } from "./ContextualReaderText";
 
 function renderReaderText(element: ReactNode) {
  return renderToStaticMarkup(
-  <NextIntlClientProvider
-   locale="vi"
-   messages={{ Reader: { document: readerDocumentMessages } }}
-  >
+  <NextIntlClientProvider locale="vi" messages={{ Reader: { document: readerDocumentMessages } }}>
    {element}
   </NextIntlClientProvider>,
  );

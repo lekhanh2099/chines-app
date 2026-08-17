@@ -1,18 +1,18 @@
 {
-  "title": "Reader 数据质量",
-  "description": "在 parity / cutover 前检查运行时内容引用。",
-  "loading": "正在检查数据…",
-  "publishedContent": "已发布内容",
-  "healthy": "没有孤立引用",
-  "warnings": "{count} 个警告",
-  "counts": {
-    "documents": "文档",
-    "paragraphs": "段落",
-    "vocabularyLinks": "词汇链接",
-    "exerciseGroups": "练习组",
-    "exerciseItems": "练习项",
-    "assets": "资源"
-  },
-  "byKind": "按类型",
-  "runAgain": "重新运行审计"
+ "title": "Reader 数据质量",
+ "description": "在 parity / cutover 前检查运行时内容引用。",
+ "loading": "正在检查数据…",
+ "publishedContent": "已发布内容",
+ "healthy": "没有孤立引用",
+ "warnings": "{count} 个警告",
+ "counts": {
+  "documents": "文档",
+  "paragraphs": "段落",
+  "vocabularyLinks": "词汇链接",
+  "exerciseGroups": "练习组",
+  "exerciseItems": "练习项",
+  "assets": "资源"
+ },
+ "byKind": "按类型",
+ "runAgain": "重新运行审计"
 }

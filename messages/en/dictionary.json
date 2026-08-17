@@ -16,7 +16,7 @@
   "savedWordsAria": "Saved words",
   "missingPinyin": "No pinyin available",
   "missingMeaning": "No suitable meaning available",
-  "levels": {"new": "New", "reviewing": "Reviewing", "good": "Good", "mastered": "Mastered"}
+  "levels": { "new": "New", "reviewing": "Reviewing", "good": "Good", "mastered": "Mastered" }
  },
  "word": {
   "notFoundTitle": "Vocabulary entry not found",

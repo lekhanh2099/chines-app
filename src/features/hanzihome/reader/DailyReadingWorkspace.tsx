@@ -381,7 +381,9 @@ export function DailyReadingWorkspace({
          <Badge>{metadataString(resource, "published_date")}</Badge>
         ) : null}
         {metadataNumber(resource, "estimated_minutes") ? (
-         <Badge>{t("document.minutes", { count: metadataNumber(resource, "estimated_minutes") ?? 0 })}</Badge>
+         <Badge>
+          {t("document.minutes", { count: metadataNumber(resource, "estimated_minutes") ?? 0 })}
+         </Badge>
         ) : null}
        </div>
       </div>
@@ -414,7 +416,9 @@ export function DailyReadingWorkspace({
          }}
         />
        ) : null}
-       {activeTab === "vocabulary" ? <ReaderVocabularyPanel vocabulary={resource.vocabulary} /> : null}
+       {activeTab === "vocabulary" ? (
+        <ReaderVocabularyPanel vocabulary={resource.vocabulary} />
+       ) : null}
        {activeTab === "grammar" ? <DailyReadingGrammarPanel grammarItems={grammarItems} /> : null}
        {activeTab === "translation" ? <DailyTranslationPanel resource={resource} /> : null}
        {activeTab === "source" ? (

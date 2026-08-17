@@ -16,7 +16,7 @@
   "savedWordsAria": "Từ đã lưu",
   "missingPinyin": "Chưa có pinyin",
   "missingMeaning": "Chưa có nghĩa phù hợp",
-  "levels": {"new": "Mới", "reviewing": "Đang ôn", "good": "Tốt", "mastered": "Thuần thục"}
+  "levels": { "new": "Mới", "reviewing": "Đang ôn", "good": "Tốt", "mastered": "Thuần thục" }
  },
  "word": {
   "notFoundTitle": "Không tìm thấy từ vựng",

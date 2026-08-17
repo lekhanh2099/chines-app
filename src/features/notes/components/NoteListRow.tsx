@@ -66,7 +66,10 @@ function getContextTone(kind: ReturnType<typeof getNoteContext>["kind"]) {
  return "neutral";
 }
 
-function getFolderBreadcrumb(folderId: NoteListItem["folder_id"], folders: NoteFolder[]): string | null {
+function getFolderBreadcrumb(
+ folderId: NoteListItem["folder_id"],
+ folders: NoteFolder[],
+): string | null {
  if (!folderId) return null;
  const folder = folders.find((item) => item.id === folderId);
  if (!folder) return null;
@@ -100,7 +103,8 @@ export function NoteListRow({
  const [metadataOpen, setMetadataOpen] = useState(false);
  const [deleteOpen, setDeleteOpen] = useState(false);
  const sortedFolders = useMemo(
-  () => [...folders].sort((a, b) => a.position - b.position || a.name.localeCompare(b.name, locale)),
+  () =>
+   [...folders].sort((a, b) => a.position - b.position || a.name.localeCompare(b.name, locale)),
   [folders, locale],
  );
 
@@ -194,7 +198,11 @@ export function NoteListRow({
     <div className="flex items-start gap-1 px-2 py-3 lg:py-4">
      <DropdownMenu>
       <DropdownMenuTrigger asChild>
-       <Button variant="ghost" size="icon-toolbar" aria-label={t("row.options", { title: note.title })}>
+       <Button
+        variant="ghost"
+        size="icon-toolbar"
+        aria-label={t("row.options", { title: note.title })}
+       >
         <Ellipsis />
        </Button>
       </DropdownMenuTrigger>
@@ -261,7 +269,9 @@ export function NoteListRow({
     <DialogContent className="max-w-md" showCloseButton={!deleteMutation.isPending}>
      <DialogHeader>
       <DialogTitle>{t("row.deleteTitle")}</DialogTitle>
-      <DialogDescription>{t("row.deleteDescription", { title: context.displayTitle })}</DialogDescription>
+      <DialogDescription>
+       {t("row.deleteDescription", { title: context.displayTitle })}
+      </DialogDescription>
      </DialogHeader>
      <DialogFooter>
       <DialogClose asChild>

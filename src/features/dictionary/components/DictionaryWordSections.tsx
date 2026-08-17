@@ -253,7 +253,15 @@ function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
  );
 }
 
-function DocSection({ index, title, children }: { index: number; title: string; children: ReactNode }) {
+function DocSection({
+ index,
+ title,
+ children,
+}: {
+ index: number;
+ title: string;
+ children: ReactNode;
+}) {
  return (
   <Card variant="subtle" padding="md">
    <div className="flex flex-col gap-3">
@@ -321,7 +329,10 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
           {meaning.examples.length > 0 && (
            <div className="flex flex-col gap-2 border-l border-accent/20 pl-3">
             {meaning.examples.map((example, exampleIndex) => (
-             <ExampleRow key={`${example.zh}-${example.pinyin}-${exampleIndex}`} example={example} />
+             <ExampleRow
+              key={`${example.zh}-${example.pinyin}-${exampleIndex}`}
+              example={example}
+             />
             ))}
            </div>
           )}
@@ -358,8 +369,11 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
 function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
  const t = useTranslations("Dictionary.word");
  const hasAnyRelation =
-  viewModel.relatedCompounds.length > 0 || viewModel.synonyms.length > 0 || viewModel.antonyms.length > 0;
- const count = viewModel.relatedCompounds.length + viewModel.synonyms.length + viewModel.antonyms.length;
+  viewModel.relatedCompounds.length > 0 ||
+  viewModel.synonyms.length > 0 ||
+  viewModel.antonyms.length > 0;
+ const count =
+  viewModel.relatedCompounds.length + viewModel.synonyms.length + viewModel.antonyms.length;
 
  return (
   <SectionWrapper>
@@ -457,7 +471,15 @@ function DictionaryLearningInsightsSection({ viewModel }: DictionarySectionProps
  );
 }
 
-function InsightSection({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
+function InsightSection({
+ title,
+ icon,
+ children,
+}: {
+ title: string;
+ icon?: ReactNode;
+ children: ReactNode;
+}) {
  return (
   <Card variant="subtle" padding="md">
    <div className="grid gap-2">
@@ -484,7 +506,11 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
       onClick={() => viewModel.handleSavePersonalNote(note)}
       disabled={viewModel.isSaving}
      >
-      {viewModel.isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+      {viewModel.isSaving ? (
+       <Spinner data-icon="inline-start" />
+      ) : (
+       <Save data-icon="inline-start" />
+      )}
       {t("save")}
      </Button>
     }
@@ -502,22 +528,34 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
 function ExampleRow({ example }: { example: ExampleItem }) {
  return (
   <div className="flex flex-col gap-1">
-   <LearnerHanziText as="p" weight="medium">{example.zh}</LearnerHanziText>
+   <LearnerHanziText as="p" weight="medium">
+    {example.zh}
+   </LearnerHanziText>
    {example.pinyin && (
-    <Typography as="p" variant="caption" tone="accent" weight="semibold">{example.pinyin}</Typography>
+    <Typography as="p" variant="caption" tone="accent" weight="semibold">
+     {example.pinyin}
+    </Typography>
    )}
    {example.vi && (
-    <Typography as="p" variant="caption" tone="muted" emphasis="italic">{example.vi}</Typography>
+    <Typography as="p" variant="caption" tone="muted" emphasis="italic">
+     {example.vi}
+    </Typography>
    )}
    {example.note && (
-    <Typography as="p" variant="caption" tone="secondary" leading="relaxed">→ {example.note}</Typography>
+    <Typography as="p" variant="caption" tone="secondary" leading="relaxed">
+     → {example.note}
+    </Typography>
    )}
   </div>
  );
 }
 
 function ExampleCard({ example }: { example: ExampleItem }) {
- return <Card variant="subtle" padding="md"><ExampleRow example={example} /></Card>;
+ return (
+  <Card variant="subtle" padding="md">
+   <ExampleRow example={example} />
+  </Card>
+ );
 }
 
 function BulletList({ items }: { items: string[] }) {
@@ -525,8 +563,12 @@ function BulletList({ items }: { items: string[] }) {
   <div className="grid gap-2">
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
-     <Typography as="span" tone="accent" aria-hidden="true">•</Typography>
-     <Typography as="span" tone="secondary" leading="relaxed">{item}</Typography>
+     <Typography as="span" tone="accent" aria-hidden="true">
+      •
+     </Typography>
+     <Typography as="span" tone="secondary" leading="relaxed">
+      {item}
+     </Typography>
     </div>
    ))}
   </div>
@@ -537,7 +579,9 @@ function CompactTextGrid({ items }: { items: string[] }) {
  return (
   <div className="grid gap-2 md:grid-cols-2">
    {items.map((item, index) => (
-    <Typography key={`${item}-${index}`} as="p" tone="secondary" weight="semibold">{item}</Typography>
+    <Typography key={`${item}-${index}`} as="p" tone="secondary" weight="semibold">
+     {item}
+    </Typography>
    ))}
   </div>
  );
@@ -556,23 +600,38 @@ function WordRelationGrid({
 }) {
  return (
   <div className="flex flex-col gap-2">
-   <SectionHeader title={title} trailing={items.length > 0 ? <Badge size="sm">{items.length}</Badge> : null} />
+   <SectionHeader
+    title={title}
+    trailing={items.length > 0 ? <Badge size="sm">{items.length}</Badge> : null}
+   />
    {items.length > 0 ? (
     <div className="grid gap-3 md:grid-cols-2">
      {items.map((item, index) => {
       const word = item.word?.trim();
       if (!word) return null;
       return (
-       <Card key={`${title}-${word}-${index}`} asChild variant="interactive" padding="md" className="h-full">
+       <Card
+        key={`${title}-${word}-${index}`}
+        asChild
+        variant="interactive"
+        padding="md"
+        className="h-full"
+       >
         <Link href={`/dictionary/${encodeURIComponent(word)}`}>
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-           <LearnerHanziText as="p" weight="bold">{word}</LearnerHanziText>
+           <LearnerHanziText as="p" weight="bold">
+            {word}
+           </LearnerHanziText>
            {item.pinyin && (
-            <Typography as="span" variant="caption" tone="accent" weight="semibold">{item.pinyin}</Typography>
+            <Typography as="span" variant="caption" tone="accent" weight="semibold">
+             {item.pinyin}
+            </Typography>
            )}
           </div>
-          <Typography as="p" tone="secondary" leading="relaxed">{item.meaning || missingMeaning}</Typography>
+          <Typography as="p" tone="secondary" leading="relaxed">
+           {item.meaning || missingMeaning}
+          </Typography>
          </div>
         </Link>
        </Card>
@@ -580,7 +639,9 @@ function WordRelationGrid({
      })}
     </div>
    ) : (
-    <Typography as="p" tone="muted">{emptyText}</Typography>
+    <Typography as="p" tone="muted">
+     {emptyText}
+    </Typography>
    )}
   </div>
  );
@@ -593,7 +654,9 @@ function AiLoadingState() {
    <div className="grid gap-3">
     <div className="flex items-center gap-2">
      <Sparkles className="size-4 animate-pulse text-accent-text" />
-     <Typography as="p" variant="bodySmall" weight="bold">{t("loading")}</Typography>
+     <Typography as="p" variant="bodySmall" weight="bold">
+      {t("loading")}
+     </Typography>
     </div>
     <Separator />
     <div className="grid gap-2.5" aria-hidden="true">
@@ -612,8 +675,12 @@ function NoDataPlaceholder({ onRequest, loading }: { onRequest: () => void; load
   <Card variant="subtle" padding="md">
    <div className="flex flex-col items-center gap-4 text-center">
     <div className="grid gap-2">
-     <Typography as="p" tone="default" weight="semibold">{t("emptyTitle")}</Typography>
-     <Typography as="p" tone="muted">{t("emptyDescription")}</Typography>
+     <Typography as="p" tone="default" weight="semibold">
+      {t("emptyTitle")}
+     </Typography>
+     <Typography as="p" tone="muted">
+      {t("emptyDescription")}
+     </Typography>
     </div>
     <Button variant="outline" size="toolbar" onClick={onRequest} disabled={loading}>
      {loading ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}

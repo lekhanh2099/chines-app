@@ -1,124 +1,124 @@
 {
-  "home": {
-    "header": {
-      "title": "Reading",
-      "description": "Continue the reading you were studying or choose another collection. Reader keeps reading, listening, lookup, and exercises in one study flow."
-    },
-    "options": {
-      "daily": {
-        "badge": "1 new reading every day",
-        "title": "Today’s reading",
-        "description": "Read a study-ready article, listen, look up words, answer questions, and keep your history on the device."
-      },
-      "core": {
-        "badge": "12 core readings",
-        "title": "U3–U5 course readings",
-        "description": "Read the text, complete exercises, look up the selected passage, analyze structure, and summarize."
-      },
-      "hsk": {
-        "badge": "50 HSK passages",
-        "title": "HSK reading",
-        "description": "Read 50 HSK 3–4 passages with text-synced TTS, pinyin, Vietnamese meaning, and shared dictionary lookup."
-      },
-      "reinforcement": {
-        "badge": "24 PDF readings",
-        "title": "Reinforcement practice",
-        "description": "PDF practice with zoom, fullscreen, drawing tools, and page-specific annotations."
-      },
-      "mock": {
-        "badge": "12 unseen readings",
-        "title": "Mock / unseen reading",
-        "description": "Practice unfamiliar texts using the skill structure from the three units."
-      }
-    },
-    "resume": {
-      "loadingAria": "Loading study activity",
-      "error": "Unable to load your continue-studying status. Reader collections are still available.",
-      "badge": "Continue studying",
-      "dueCount": "{count, plural, one {# item due} other {# items due}}",
-      "readingKind": "Reading",
-      "reviewKind": "Review",
-      "ready": "Ready to review",
-      "continue": "Continue",
-      "reviewNow": "Review now"
-    },
-    "primary": {
-      "startPoint": "Primary starting point",
-      "openCourse": "Open course readings"
-    },
-    "otherCollections": {
-      "title": "Choose another reading collection",
-      "description": "Switch to daily reading, HSK, reinforcement PDFs, or unseen texts when that better matches the current study goal."
-    },
-    "catalog": {
-      "aria": "Imported Reader catalog",
-      "back": "← Reader library",
-      "collectionsAria": "Reader collections",
-      "emptyStatic": "No static Reader content is bundled in the app. Check the packaged JSON files.",
-      "otherDocuments": "Other documents",
-      "unit": "Unit {id}",
-      "chooseDocument": "Choose a reading to open Reader",
-      "documentCount": "{count, plural, one {# reading} other {# readings}}",
-      "metadata": "{paragraphs} paragraphs · {vocabulary} words · {exercises} exercises",
-      "notFound": "The Reader document was not found in the static package."
-    }
+ "home": {
+  "header": {
+   "title": "Reading",
+   "description": "Continue the reading you were studying or choose another collection. Reader keeps reading, listening, lookup, and exercises in one study flow."
   },
-  "collection": {
-    "kinds": {
-      "core": {
-        "title": "Core course readings",
-        "description": "Twelve U3–U5 readings with reading data, exercises, vocabulary, analysis, and notes."
-      },
-      "hsk": {
-        "title": "HSK reading library",
-        "description": "Fifty HSK 3–4 readings organized by level, volume, and lesson. Each one uses the shared reader with text-synced TTS, pinyin, meanings, and dictionary lookup."
-      },
-      "reinforcement": {
-        "title": "PDF reinforcement practice",
-        "description": "Reading practice from source PDFs with page metadata and a document-focused study workspace."
-      },
-      "mock": {
-        "title": "Unseen / mock reading",
-        "description": "Mock readings organized by unit for practice beyond the texts you have already studied."
-      },
-      "daily": {
-        "title": "Daily reading",
-        "description": "A new reading by date, using the shared Reader for listening, lookup, questions, and progress."
-      },
-      "personal": {
-        "title": "Personal learning",
-        "description": "Imported personal curriculum and exercises with progress owned by HanziHome."
-      },
-      "humanities": {
-        "title": "Humanities & Translation",
-        "description": "Literature, history, translation, and interpreting inside HanziHome Reader."
-      }
-    },
-    "hskVolumes": {
-      "hsk3": "HSK 3 · Readings",
-      "hsk4Upper": "HSK 4 · Upper volume",
-      "hsk4Lower": "HSK 4 · Lower volume",
-      "default": "HSK readings"
-    },
-    "readingCount": "{count, plural, one {# reading} other {# readings}}",
-    "empty": "There are no readings in the current library yet.",
-    "otherDocuments": "Other documents",
-    "unitTitle": "Unit {id} · {title}",
-    "hskLessonReading": "Lesson {lesson} · Reading {reading}",
-    "hskLevel": "HSK {level}",
-    "paragraphs": "{count, plural, one {# paragraph} other {# paragraphs}}",
-    "vocabulary": "{count, plural, one {# word} other {# words}}",
-    "exercises": "{count, plural, one {# exercise} other {# exercises}}",
-    "reinforcementLabel": "Reinforcement practice",
-    "readingNumber": "Reading {number}",
-    "minutes": "{count} min",
-    "page": "Page {page}",
-    "printedPage": "Book page {page}",
-    "unitBadge": "Unit {id}",
-    "notFoundLibrary": "The document was not found in the reading library.",
-    "notFoundCatalog": "The reading was not found in the current catalog.",
-    "reinforcementBack": "Reinforcement list",
-    "coreBack": "Course reading list",
-    "backToList": "{title} list"
+  "options": {
+   "daily": {
+    "badge": "1 new reading every day",
+    "title": "Today’s reading",
+    "description": "Read a study-ready article, listen, look up words, answer questions, and keep your history on the device."
+   },
+   "core": {
+    "badge": "12 core readings",
+    "title": "U3–U5 course readings",
+    "description": "Read the text, complete exercises, look up the selected passage, analyze structure, and summarize."
+   },
+   "hsk": {
+    "badge": "50 HSK passages",
+    "title": "HSK reading",
+    "description": "Read 50 HSK 3–4 passages with text-synced TTS, pinyin, Vietnamese meaning, and shared dictionary lookup."
+   },
+   "reinforcement": {
+    "badge": "24 PDF readings",
+    "title": "Reinforcement practice",
+    "description": "PDF practice with zoom, fullscreen, drawing tools, and page-specific annotations."
+   },
+   "mock": {
+    "badge": "12 unseen readings",
+    "title": "Mock / unseen reading",
+    "description": "Practice unfamiliar texts using the skill structure from the three units."
+   }
+  },
+  "resume": {
+   "loadingAria": "Loading study activity",
+   "error": "Unable to load your continue-studying status. Reader collections are still available.",
+   "badge": "Continue studying",
+   "dueCount": "{count, plural, one {# item due} other {# items due}}",
+   "readingKind": "Reading",
+   "reviewKind": "Review",
+   "ready": "Ready to review",
+   "continue": "Continue",
+   "reviewNow": "Review now"
+  },
+  "primary": {
+   "startPoint": "Primary starting point",
+   "openCourse": "Open course readings"
+  },
+  "otherCollections": {
+   "title": "Choose another reading collection",
+   "description": "Switch to daily reading, HSK, reinforcement PDFs, or unseen texts when that better matches the current study goal."
+  },
+  "catalog": {
+   "aria": "Imported Reader catalog",
+   "back": "← Reader library",
+   "collectionsAria": "Reader collections",
+   "emptyStatic": "No static Reader content is bundled in the app. Check the packaged JSON files.",
+   "otherDocuments": "Other documents",
+   "unit": "Unit {id}",
+   "chooseDocument": "Choose a reading to open Reader",
+   "documentCount": "{count, plural, one {# reading} other {# readings}}",
+   "metadata": "{paragraphs} paragraphs · {vocabulary} words · {exercises} exercises",
+   "notFound": "The Reader document was not found in the static package."
   }
+ },
+ "collection": {
+  "kinds": {
+   "core": {
+    "title": "Core course readings",
+    "description": "Twelve U3–U5 readings with reading data, exercises, vocabulary, analysis, and notes."
+   },
+   "hsk": {
+    "title": "HSK reading library",
+    "description": "Fifty HSK 3–4 readings organized by level, volume, and lesson. Each one uses the shared reader with text-synced TTS, pinyin, meanings, and dictionary lookup."
+   },
+   "reinforcement": {
+    "title": "PDF reinforcement practice",
+    "description": "Reading practice from source PDFs with page metadata and a document-focused study workspace."
+   },
+   "mock": {
+    "title": "Unseen / mock reading",
+    "description": "Mock readings organized by unit for practice beyond the texts you have already studied."
+   },
+   "daily": {
+    "title": "Daily reading",
+    "description": "A new reading by date, using the shared Reader for listening, lookup, questions, and progress."
+   },
+   "personal": {
+    "title": "Personal learning",
+    "description": "Imported personal curriculum and exercises with progress owned by HanziHome."
+   },
+   "humanities": {
+    "title": "Humanities & Translation",
+    "description": "Literature, history, translation, and interpreting inside HanziHome Reader."
+   }
+  },
+  "hskVolumes": {
+   "hsk3": "HSK 3 · Readings",
+   "hsk4Upper": "HSK 4 · Upper volume",
+   "hsk4Lower": "HSK 4 · Lower volume",
+   "default": "HSK readings"
+  },
+  "readingCount": "{count, plural, one {# reading} other {# readings}}",
+  "empty": "There are no readings in the current library yet.",
+  "otherDocuments": "Other documents",
+  "unitTitle": "Unit {id} · {title}",
+  "hskLessonReading": "Lesson {lesson} · Reading {reading}",
+  "hskLevel": "HSK {level}",
+  "paragraphs": "{count, plural, one {# paragraph} other {# paragraphs}}",
+  "vocabulary": "{count, plural, one {# word} other {# words}}",
+  "exercises": "{count, plural, one {# exercise} other {# exercises}}",
+  "reinforcementLabel": "Reinforcement practice",
+  "readingNumber": "Reading {number}",
+  "minutes": "{count} min",
+  "page": "Page {page}",
+  "printedPage": "Book page {page}",
+  "unitBadge": "Unit {id}",
+  "notFoundLibrary": "The document was not found in the reading library.",
+  "notFoundCatalog": "The reading was not found in the current catalog.",
+  "reinforcementBack": "Reinforcement list",
+  "coreBack": "Course reading list",
+  "backToList": "{title} list"
+ }
 }

@@ -98,7 +98,10 @@ export function ReaderTranslationPracticePanel({
     aria-label={t("directionAria")}
    />
 
-   <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10" aria-label={t("segmentsAria")}>
+   <div
+    className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10"
+    aria-label={t("segmentsAria")}
+   >
     {segments.map((candidate, index) => (
      <Button
       key={candidate.id}

@@ -60,7 +60,12 @@ function courseModuleOrder(track: HumanitiesPracticeTrack, lessonIndex: number):
 }
 
 type HumanitiesUnitMark = "kept" | "partial" | "missed" | "unsure";
-const interpretingMarks = ["kept", "partial", "missed", "unsure"] satisfies readonly HumanitiesUnitMark[];
+const interpretingMarks = [
+ "kept",
+ "partial",
+ "missed",
+ "unsure",
+] satisfies readonly HumanitiesUnitMark[];
 
 export function HumanitiesPracticeWorkspace({
  initialDocuments,
@@ -656,9 +661,7 @@ export function HumanitiesPracticeWorkspace({
       <Typography as="h2" variant="cardTitle" weight="black">
        {t("source.title")}
       </Typography>
-      <Badge>
-       {direction === "zh-vi" ? t("source.directionZhVi") : t("source.directionViZh")}
-      </Badge>
+      <Badge>{direction === "zh-vi" ? t("source.directionZhVi") : t("source.directionViZh")}</Badge>
      </div>
      <Typography as="p" variant="caption" tone="muted">
       {t("source.segment", {
@@ -695,7 +698,10 @@ export function HumanitiesPracticeWorkspace({
        </Typography>
       ) : (
        selectedPayload.glossary.map((entry) => (
-        <div key={entry.id} className="grid gap-1 border-b border-border-default pb-2 last:border-0">
+        <div
+         key={entry.id}
+         className="grid gap-1 border-b border-border-default pb-2 last:border-0"
+        >
          <Typography as="strong" variant="bodySmall" weight="black">
           {entry.headword} {entry.pinyin === null ? "" : entry.pinyin}
          </Typography>
@@ -807,7 +813,12 @@ export function HumanitiesPracticeWorkspace({
          </Button>
         )}
         {recorder.audioUrl ? (
-         <audio controls preload="metadata" src={recorder.audioUrl} className="min-w-0 max-w-full" />
+         <audio
+          controls
+          preload="metadata"
+          src={recorder.audioUrl}
+          className="min-w-0 max-w-full"
+         />
         ) : null}
        </div>
        <Textarea
@@ -947,7 +958,7 @@ export function HumanitiesPracticeWorkspace({
         {t("answer.score", { score: score ?? 0 })}
        </Typography>
        <TranslationText variant="bodySmall" tone="muted">
-        {t("answer.reference")} {" "}
+        {t("answer.reference")}{" "}
         {humanitiesEvaluation?.references[0]?.text ??
          (direction === "zh-vi" ? segment.vi : segment.zh)}
        </TranslationText>
@@ -958,7 +969,9 @@ export function HumanitiesPracticeWorkspace({
            key={unit.unitId}
            as="p"
            variant="caption"
-           tone={unit.status === "covered" ? "success" : unit.status === "missing" ? "danger" : "muted"}
+           tone={
+            unit.status === "covered" ? "success" : unit.status === "missing" ? "danger" : "muted"
+           }
           >
            {unit.status === "covered" ? "✓" : "•"} {unit.messageVi}
           </Typography>

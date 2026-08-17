@@ -58,7 +58,11 @@ export default function LoginPage() {
  const [oauthLoading, setOauthLoading] = useState(false);
  const [isLogin, setIsLogin] = useState(true);
  const schemas = useMemo(() => {
-  const emailSchema = z.string().trim().toLowerCase().pipe(z.email(t("validation.invalidEmail")));
+  const emailSchema = z
+   .string()
+   .trim()
+   .toLowerCase()
+   .pipe(z.email(t("validation.invalidEmail")));
   const passwordLoginSchema = z.string().min(1, t("validation.passwordRequired"));
   const strongPasswordSchema = z
    .string()
