@@ -15,6 +15,7 @@ import {
  Pause,
  Play,
  Plus,
+ RefreshCcw,
  ShieldCheck,
  Trash2,
 } from "lucide-react";
@@ -46,19 +47,25 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
+import {
+ discoverManagedApiKey,
+ type ApiKeyMoveDirectionSchema,
+} from "@/features/settings/api-key-manager.client";
+import type { DiscoverApiKeyResponse } from "@/features/settings/api-key-manager.schema";
+import {
+ getApiKeyModelDescriptionKey,
+ getApiKeyProviderDescriptionKey,
+} from "@/features/settings/model-description-keys";
+import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 import { getApiKeyModelOptions, getDefaultApiKeyModel } from "@/lib/api-key-models";
 import {
+ AUTO_API_KEY_PROVIDER,
  API_KEY_PROVIDER_OPTIONS,
  ApiKeyProviderSchema,
  getApiKeyProviderDocsUrl,
  getApiKeyProviderLimitsUrl,
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
-import {
- getApiKeyModelDescriptionKey,
- getApiKeyProviderDescriptionKey,
-} from "@/features/settings/model-description-keys";
-import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 
 const EMPTY_SUMMARY = {
  total: 0,
@@ -69,14 +76,22 @@ const EMPTY_SUMMARY = {
  openai: 0,
 };
 
+type ProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
+type MoveDirection = typeof ApiKeyMoveDirectionSchema._output;
+
 export default function ApiKeyManagerSection() {
  const t = useTranslations("Settings");
+ const setupT = useTranslations("ApiKeySetup");
  const common = useTranslations("Common");
  const locale = useLocale();
  const [isDialogOpen, setIsDialogOpen] = useState(false);
  const [deleteKeyId, setDeleteKeyId] = useState<string | null>(null);
- const [provider, setProvider] = useState<ApiKeyProvider>("groq");
- const [model, setModel] = useState(getDefaultApiKeyModel("groq"));
+ const [providerSelection, setProviderSelection] =
+  useState<ProviderSelection>(AUTO_API_KEY_PROVIDER);
+ const [discovery, setDiscovery] = useState<DiscoverApiKeyResponse | null>(null);
+ const [discoveryError, setDiscoveryError] = useState<string | null>(null);
+ const [isDiscovering, setIsDiscovering] = useState(false);
+ const [model, setModel] = useState("");
  const [label, setLabel] = useState("");
  const [apiKey, setApiKey] = useState("");
  const [showKey, setShowKey] = useState(false);
@@ -106,11 +121,19 @@ export default function ApiKeyManagerSection() {
   .filter((value): value is string => Boolean(value))
   .toSorted((left, right) => right.localeCompare(left))[0];
 
+ const effectiveProvider =
+  discovery?.provider ??
+  (providerSelection === AUTO_API_KEY_PROVIDER ? null : providerSelection);
  const selectedProviderOption = useMemo(
-  () => API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider) ?? null,
-  [provider],
+  () => API_KEY_PROVIDER_OPTIONS.find((option) => option.value === effectiveProvider) ?? null,
+  [effectiveProvider],
  );
- const modelOptions = useMemo(() => getApiKeyModelOptions(provider), [provider]);
+ const discoveredModelOptions = useMemo(() => {
+  if (!discovery) return [];
+  const available = new Set(discovery.models);
+  return getApiKeyModelOptions(discovery.provider).filter((option) => available.has(option.value));
+ }, [discovery]);
+ const selectedModelOption = discoveredModelOptions.find((option) => option.value === model) ?? null;
  const formatDate = (value: string | null | undefined) =>
   value
    ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short" }).format(
@@ -118,16 +141,74 @@ export default function ApiKeyManagerSection() {
      )
    : t("apiKeys.never");
 
+ function resetAddForm() {
+  setProviderSelection(AUTO_API_KEY_PROVIDER);
+  setDiscovery(null);
+  setDiscoveryError(null);
+  setIsDiscovering(false);
+  setModel("");
+  setLabel("");
+  setApiKey("");
+  setShowKey(false);
+ }
+
+ async function runDiscovery(
+  rawKey: string,
+  selectedProvider: ProviderSelection = providerSelection,
+ ) {
+  const normalizedKey = rawKey.trim();
+  if (!normalizedKey) {
+   setDiscovery(null);
+   setDiscoveryError(null);
+   setModel("");
+   return;
+  }
+
+  setIsDiscovering(true);
+  setDiscovery(null);
+  setDiscoveryError(null);
+  setModel("");
+  try {
+   const result = await discoverManagedApiKey({
+    apiKey: normalizedKey,
+    provider: selectedProvider,
+   });
+   setDiscovery(result);
+   setModel(result.recommendedModel);
+   if (!label.trim()) setLabel(result.providerLabel);
+  } catch (caught) {
+   const message = caught instanceof Error ? caught.message : setupT("checkError");
+   setDiscoveryError(message);
+  } finally {
+   setIsDiscovering(false);
+  }
+ }
+
  async function handlePaste() {
   try {
    const text = await navigator.clipboard.readText();
-   if (text) {
-    setApiKey(text.trim());
-    toast.info(t("apiKeys.pasted"));
-   }
+   const normalized = text.trim();
+   if (!normalized) return;
+   setApiKey(normalized);
+   toast.info(t("apiKeys.pasted"));
+   await runDiscovery(normalized);
   } catch {
    toast.error(t("apiKeys.clipboardError"));
   }
+ }
+
+ function handleProviderChange(value: string) {
+  const nextProvider: ProviderSelection =
+   value === AUTO_API_KEY_PROVIDER
+    ? AUTO_API_KEY_PROVIDER
+    : ApiKeyProviderSchema.safeParse(value).success
+      ? ApiKeyProviderSchema.parse(value)
+      : AUTO_API_KEY_PROVIDER;
+  setProviderSelection(nextProvider);
+  setDiscovery(null);
+  setDiscoveryError(null);
+  setModel("");
+  if (apiKey.trim()) void runDiscovery(apiKey, nextProvider);
  }
 
  async function handleAddKey() {
@@ -135,23 +216,23 @@ export default function ApiKeyManagerSection() {
    toast.error(t("apiKeys.keyRequired"));
    return;
   }
+  if (!discovery || !model) {
+   await runDiscovery(apiKey);
+   return;
+  }
 
   try {
-   await addMutation.mutateAsync({
+   const result = await addMutation.mutateAsync({
     apiKey: apiKey.trim(),
     label: label.trim() || undefined,
-    provider,
+    provider: discovery.provider,
     model,
    });
-   toast.success(t("apiKeys.added"));
-   setApiKey("");
-   setLabel("");
-   setProvider("groq");
-   setModel(getDefaultApiKeyModel("groq"));
-   setShowKey(false);
+   toast.success(result.message || t("apiKeys.added"));
+   resetAddForm();
    setIsDialogOpen(false);
-  } catch {
-   toast.error(t("apiKeys.addError"));
+  } catch (caught) {
+   toast.error(caught instanceof Error ? caught.message : setupT("saveError"));
   }
  }
 
@@ -159,27 +240,24 @@ export default function ApiKeyManagerSection() {
   try {
    await modelMutation.mutateAsync({ keyId, model: nextModel });
    toast.success(t("apiKeys.modelChanged"));
-  } catch {
-   toast.error(t("apiKeys.modelChangeError"));
+  } catch (caught) {
+   toast.error(caught instanceof Error ? caught.message : t("apiKeys.modelChangeError"));
   }
  }
 
  async function handleToggleKey(key: (typeof keys)[number]) {
   try {
    await toggleMutation.mutateAsync({ keyId: key.id, isActive: !key.isActive });
-  } catch {
-   toast.error(t("apiKeys.toggleError"));
+  } catch (caught) {
+   toast.error(caught instanceof Error ? caught.message : t("apiKeys.toggleError"));
   }
  }
 
- async function handleMoveKey(
-  keyId: string,
-  direction: Parameters<typeof moveMutation.mutateAsync>[0]["direction"],
- ) {
+ async function handleMoveKey(keyId: string, direction: MoveDirection) {
   try {
    await moveMutation.mutateAsync({ keyId, direction });
-  } catch {
-   toast.error(t("apiKeys.moveError"));
+  } catch (caught) {
+   toast.error(caught instanceof Error ? caught.message : t("apiKeys.moveError"));
   }
  }
 
@@ -189,8 +267,8 @@ export default function ApiKeyManagerSection() {
    await deleteMutation.mutateAsync(deleteKeyId);
    setDeleteKeyId(null);
    toast.success(t("apiKeys.deleted"));
-  } catch {
-   toast.error(t("apiKeys.deleteError"));
+  } catch (caught) {
+   toast.error(caught instanceof Error ? caught.message : t("apiKeys.deleteError"));
   }
  }
 
@@ -211,7 +289,13 @@ export default function ApiKeyManagerSection() {
      </div>
     </div>
 
-    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+    <Dialog
+     open={isDialogOpen}
+     onOpenChange={(open) => {
+      setIsDialogOpen(open);
+      if (!open) resetAddForm();
+     }}
+    >
      <DialogTrigger asChild>
       <Button disabled={isLoading || !schemaReady}>
        <Plus data-icon="inline-start" />
@@ -230,27 +314,68 @@ export default function ApiKeyManagerSection() {
         <ol className="grid gap-2 pl-5 text-sm text-text-secondary [list-style:decimal]">
          <li>{t("apiKeys.guideStep1")}</li>
          <li>{t("apiKeys.guideStep2")}</li>
-         <li>{t("apiKeys.guideStep3")}</li>
+         <li>{setupT("pasteAndCheck")}</li>
         </ol>
+       </div>
+
+       <div className="grid gap-2">
+        <Label htmlFor="api-key-value" variant="label" tone="default" weight="semibold">
+         {t("apiKeys.apiKey")}
+        </Label>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] gap-2">
+         <Input
+          id="api-key-value"
+          type={showKey ? "text" : "password"}
+          value={apiKey}
+          onChange={(event) => {
+           setApiKey(event.target.value);
+           setDiscovery(null);
+           setDiscoveryError(null);
+           setModel("");
+          }}
+          onBlur={() => {
+           if (apiKey.trim() && !discovery && !isDiscovering) void runDiscovery(apiKey);
+          }}
+          placeholder={selectedProviderOption?.placeholder || t("apiKeys.apiKeyPlaceholder")}
+          autoComplete="off"
+          spellCheck={false}
+         />
+         <Button
+          type="button"
+          variant="outline"
+          size="icon"
+          onClick={() => setShowKey((current) => !current)}
+          aria-label={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
+          title={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
+         >
+          {showKey ? <EyeOff /> : <Eye />}
+         </Button>
+         <Button
+          type="button"
+          variant="outline"
+          size="icon"
+          onClick={() => void handlePaste()}
+          aria-label={t("apiKeys.pasteKey")}
+          title={t("apiKeys.pasteKey")}
+         >
+          <ClipboardPaste />
+         </Button>
+        </div>
+        <Typography as="p" variant="caption" tone="muted">
+         {setupT("autoProviderHint")}
+        </Typography>
        </div>
 
        <div className="grid gap-2">
         <Label htmlFor="api-key-provider" variant="label" tone="default" weight="semibold">
          {t("apiKeys.provider")}
         </Label>
-        <Select
-         value={provider}
-         onValueChange={(value) => {
-          const parsedProvider = ApiKeyProviderSchema.safeParse(value);
-          if (!parsedProvider.success) return;
-          setProvider(parsedProvider.data);
-          setModel(getDefaultApiKeyModel(parsedProvider.data));
-         }}
-        >
+        <Select value={providerSelection} onValueChange={handleProviderChange}>
          <SelectTrigger id="api-key-provider" width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
+          <SelectItem value={AUTO_API_KEY_PROVIDER}>{setupT("autoProvider")}</SelectItem>
           {API_KEY_PROVIDER_OPTIONS.map((option) => (
            <SelectItem key={option.value} value={option.value}>
             {option.label}
@@ -260,10 +385,57 @@ export default function ApiKeyManagerSection() {
         </Select>
        </div>
 
+       {isDiscovering ? (
+        <Card variant="subtle" padding="sm">
+         <div className="flex items-center gap-2">
+          <Spinner />
+          <Typography variant="bodySmall" tone="secondary">
+           {setupT("checking")}
+          </Typography>
+         </div>
+        </Card>
+       ) : discovery ? (
+        <Card variant="subtle" padding="sm" className="grid gap-2">
+         <div className="flex flex-wrap items-center gap-2">
+          <Badge variant="success" casing="natural">
+           <ShieldCheck />
+           {setupT("ready", {
+            provider: discovery.providerLabel,
+            count: discovery.models.length,
+           })}
+          </Badge>
+          <Button type="button" variant="ghost" size="sm" onClick={() => void runDiscovery(apiKey)}>
+           <RefreshCcw data-icon="inline-start" />
+           {setupT("recheck")}
+          </Button>
+         </div>
+        </Card>
+       ) : discoveryError ? (
+        <Card variant="subtle" padding="sm" className="grid gap-2">
+         <Typography variant="bodySmall" tone="danger">
+          {discoveryError}
+         </Typography>
+         <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => void runDiscovery(apiKey)}
+         >
+          <RefreshCcw data-icon="inline-start" />
+          {setupT("recheck")}
+         </Button>
+        </Card>
+       ) : null}
+
        {selectedProviderOption ? (
         <div className="grid gap-3 border-y border-border-default py-3">
          <div className="flex flex-wrap items-center gap-2">
           <Typography weight="semibold">{selectedProviderOption.label}</Typography>
+          {discovery ? (
+           <Badge variant="info" casing="natural">
+            {setupT("providerDetected", { provider: selectedProviderOption.label })}
+           </Badge>
+          ) : null}
           <Badge
            variant={selectedProviderOption.accessTier === "free-tier" ? "success" : "default"}
            casing="natural"
@@ -305,20 +477,31 @@ export default function ApiKeyManagerSection() {
         <Label htmlFor="api-key-model" variant="label" tone="default" weight="semibold">
          {t("apiKeys.model")}
         </Label>
-        <Select value={model} onValueChange={setModel}>
+        <Select
+         value={model}
+         onValueChange={setModel}
+         disabled={!discovery || discoveredModelOptions.length === 0 || isDiscovering}
+        >
          <SelectTrigger id="api-key-model" width="full">
-          <SelectValue />
+          <SelectValue
+           placeholder={discovery ? setupT("modelEmpty") : setupT("modelWaiting")}
+          />
          </SelectTrigger>
          <SelectContent align="start">
-          {modelOptions.map((option) => (
+          {discoveredModelOptions.map((option) => (
            <SelectItem key={option.value} value={option.value}>
             {option.label}
+            {option.value === discovery?.recommendedModel ? ` · ${setupT("recommended")}` : ""}
            </SelectItem>
           ))}
          </SelectContent>
         </Select>
         <Typography as="p" variant="bodySmall" tone="muted">
-         {t(getApiKeyModelDescriptionKey(provider, model))}
+         {selectedModelOption
+          ? t(getApiKeyModelDescriptionKey(discovery?.provider || "groq", selectedModelOption.value))
+          : discovery
+            ? setupT("modelHint")
+            : setupT("modelWaiting")}
         </Typography>
        </div>
 
@@ -335,43 +518,6 @@ export default function ApiKeyManagerSection() {
         />
        </div>
 
-       <div className="grid gap-2">
-        <Label htmlFor="api-key-value" variant="label" tone="default" weight="semibold">
-         {t("apiKeys.apiKey")}
-        </Label>
-        <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] gap-2">
-         <Input
-          id="api-key-value"
-          type={showKey ? "text" : "password"}
-          value={apiKey}
-          onChange={(event) => setApiKey(event.target.value)}
-          placeholder={selectedProviderOption?.placeholder || t("apiKeys.apiKeyPlaceholder")}
-          autoComplete="off"
-          spellCheck={false}
-         />
-         <Button
-          type="button"
-          variant="outline"
-          size="icon"
-          onClick={() => setShowKey((current) => !current)}
-          aria-label={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
-          title={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
-         >
-          {showKey ? <EyeOff /> : <Eye />}
-         </Button>
-         <Button
-          type="button"
-          variant="outline"
-          size="icon"
-          onClick={handlePaste}
-          aria-label={t("apiKeys.pasteKey")}
-          title={t("apiKeys.pasteKey")}
-         >
-          <ClipboardPaste />
-         </Button>
-        </div>
-       </div>
-
        <Typography as="p" variant="caption" tone="muted">
         {t("apiKeys.quotaDisclaimer")}
        </Typography>
@@ -381,7 +527,17 @@ export default function ApiKeyManagerSection() {
        <Button variant="outline" onClick={() => setIsDialogOpen(false)} disabled={isSubmitting}>
         {common("actions.cancel")}
        </Button>
-       <Button onClick={handleAddKey} disabled={!apiKey.trim() || isSubmitting || !schemaReady}>
+       <Button
+        onClick={() => void handleAddKey()}
+        disabled={
+         !apiKey.trim() ||
+         !discovery ||
+         !model ||
+         isDiscovering ||
+         isSubmitting ||
+         !schemaReady
+        }
+       >
         {isSubmitting ? (
          <Spinner data-icon="inline-start" />
         ) : (
@@ -496,6 +652,7 @@ export default function ApiKeyManagerSection() {
       const providerOption = API_KEY_PROVIDER_OPTIONS.find(
        (option) => option.value === key.provider,
       );
+      const storedModelOptions = getApiKeyModelOptions(key.provider);
 
       return (
        <article key={key.id} className="grid gap-4 py-4">
@@ -546,15 +703,12 @@ export default function ApiKeyManagerSection() {
             <SelectValue />
            </SelectTrigger>
            <SelectContent align="start">
-            {key.defaultModel &&
-            !getApiKeyModelOptions(key.provider).some(
-             (option) => option.value === key.defaultModel,
-            ) ? (
+            {key.defaultModel && !storedModelOptions.some((option) => option.value === key.defaultModel) ? (
              <SelectItem value={key.defaultModel}>
               {key.defaultModel} ({t("ai.savedSuffix")})
              </SelectItem>
             ) : null}
-            {getApiKeyModelOptions(key.provider).map((option) => (
+            {storedModelOptions.map((option) => (
              <SelectItem key={option.value} value={option.value}>
               {option.label}
              </SelectItem>
