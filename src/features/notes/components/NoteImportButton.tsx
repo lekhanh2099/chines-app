@@ -1,22 +1,20 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
 import { useRef } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { useRouter } from "next/navigation";
 import { Upload } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
-import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
 import { useNoteFolderMutations, useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
-import { focusModeStore } from "@/stores/focus-mode-store";
+import { normalizeImportedNotePayload } from "@/features/notes/note-export.schema";
+import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes.service";
-import { z } from "zod";
-
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+import { focusModeStore } from "@/stores/focus-mode-store";
 
 export function NoteImportButton({
  className,
@@ -25,6 +23,7 @@ export function NoteImportButton({
  className?: string;
  compactOnTablet?: boolean;
 }) {
+ const t = useTranslations("Notes");
  const fileInputRef = useRef<HTMLInputElement>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
@@ -34,13 +33,13 @@ export function NoteImportButton({
 
  async function handleImport(file: File) {
   if (focusModeEnabled) {
-   toast.warning("Focus mode đang bật. Không thể import thành ghi chú mới.");
+   toast.warning(t("import.focusBlocked"));
    return;
   }
 
   try {
    const importedPayload = normalizeImportedNotePayload(JSON.parse(await file.text()));
-   let folderId: Nullable<NoteFolder["id"]> = null;
+   let folderId: NoteFolder["id"] | null = null;
    if (importedPayload.note.folder) {
     const folderSpec = importedPayload.note.folder;
     let parentId: NoteFolder["parentId"] = null;
@@ -83,10 +82,10 @@ export function NoteImportButton({
     readingStatus: importedPayload.note.readingStatus ?? null,
     source: importedPayload.note.source ?? null,
    });
-   toast.success("Đã import ghi chú.");
+   toast.success(t("import.success"));
    router.push(`/notes/${note.id}`);
   } catch {
-   toast.error("File import không đúng định dạng ghi chú.");
+   toast.error(t("import.error"));
   } finally {
    if (fileInputRef.current) fileInputRef.current.value = "";
   }
@@ -110,12 +109,12 @@ export function NoteImportButton({
     size={compactOnTablet ? "toolbar" : "lg"}
     onClick={() => fileInputRef.current?.click()}
     disabled={createNoteMutation.isPending || focusModeEnabled}
-    aria-label="Import ghi chú"
-    title="Import ghi chú"
+    aria-label={t("import.label")}
+    title={t("import.label")}
     className={className}
    >
     <Upload data-icon="inline-start" />
-    <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Import</span>
+    <span className={cn(compactOnTablet && "hidden 2xl:inline")}>{t("import.button")}</span>
    </Button>
   </>
  );

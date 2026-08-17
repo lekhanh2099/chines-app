@@ -1,8 +1,8 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useDeferredValue, useMemo, useState } from "react";
 import { Filter, Library } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 import { WorkspaceCommandHeader } from "@/components/layout/workspace-command-header";
@@ -19,6 +19,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+import { Typography } from "@/components/ui/typography";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useNoteFolders } from "@/features/notes/hooks/useNoteLibrary";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
@@ -28,8 +29,8 @@ import {
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import { NoteCategorySchema } from "@/types/database";
-import { z } from "zod";
+import { NoteCategorySchema, type NoteCategory } from "@/types/database";
+
 import { NewNoteStarter } from "./NewNoteStarter";
 import { NoteCreateDialog } from "./NoteCreateDialog";
 import { NoteImportButton } from "./NoteImportButton";
@@ -37,13 +38,16 @@ import { NoteList } from "./NoteList";
 import { NotesLibraryNavigator } from "./NotesLibraryNavigator";
 import { NotesWorkspaceSkeleton } from "./NotesWorkspaceSkeleton";
 import { buildLessonLookup, getNoteContext } from "./noteContext";
+import { useNoteContextLabels } from "./useNoteContextLabels";
 
 const emptyNotes: NoteListItem[] = [];
 const emptyFolders: NoteFolder[] = [];
-const NoteCategoryFilterSchema = z.union([NoteCategorySchema, z.literal("all")]);
-type NoteCategoryFilter = z.infer<typeof NoteCategoryFilterSchema>;
+type NoteCategoryFilter = NoteCategory | "all";
 
 export function NotesWorkspace() {
+ const t = useTranslations("Notes");
+ const locale = useLocale();
+ const contextLabels = useNoteContextLabels();
  const [searchQuery, setSearchQuery] = useState("");
  const [activeView, setActiveView] = useState<NoteLibraryView>("recent");
  const [category, setCategory] = useState<NoteCategoryFilter>("all");
@@ -76,8 +80,8 @@ export function NotesWorkspace() {
       return options;
      }, new Map<string, string>())
      .entries(),
-   ).sort((a, b) => String(a[1]).localeCompare(String(b[1]), "vi")),
-  [notes],
+   ).sort((a, b) => String(a[1]).localeCompare(String(b[1]), locale)),
+  [locale, notes],
  );
 
  const filteredNotes = useMemo(() => {
@@ -88,7 +92,7 @@ export function NotesWorkspace() {
    if (!matchesNoteFacets(note, { category, sourceHost })) return false;
    if (!normalizedSearch) return true;
 
-   const context = getNoteContext(note, lessonLookup);
+   const context = getNoteContext(note, lessonLookup, contextLabels);
    const searchableText = [
     note.title,
     note.category,
@@ -108,7 +112,16 @@ export function NotesWorkspace() {
 
    return searchableText.includes(normalizedSearch);
   });
- }, [activeView, category, deferredSearchQuery, folderNames, lessonLookup, notes, sourceHost]);
+ }, [
+  activeView,
+  category,
+  contextLabels,
+  deferredSearchQuery,
+  folderNames,
+  lessonLookup,
+  notes,
+  sourceHost,
+ ]);
 
  if (isNewAction) return <NewNoteStarter />;
 
@@ -120,8 +133,8 @@ export function NotesWorkspace() {
   return (
    <div className="p-4 sm:p-6">
     <QueryErrorCard
-     title="Không tải được thư viện ghi chú"
-     description="Danh sách ghi chú, folder hoặc dữ liệu bài học hiện không khả dụng."
+     title={t("loadError.title")}
+     description={t("loadError.description")}
      onRetry={() => {
       void Promise.all([notesQuery.refetch(), foldersQuery.refetch(), catalogQuery.refetch()]);
      }}
@@ -143,20 +156,20 @@ export function NotesWorkspace() {
  return (
   <div className="flex h-full min-h-0 flex-col overflow-hidden bg-bg-primary">
    <WorkspaceCommandHeader
-    title="Ghi chú"
+    title={t("title")}
     badge={
      <Badge variant="purple" size="sm">
-      {notes.length} note
+      {t("count", { count: notes.length })}
      </Badge>
     }
-    description="Lưu bài đọc, ghi chú theo bài học và ý tưởng cá nhân trong một thư viện."
+    description={t("description")}
     controls={
      <>
       <Button
        variant="outline"
        size="icon-toolbar"
        className="xl:hidden"
-       aria-label="Mở thư viện"
+       aria-label={t("openLibrary")}
        onClick={() => setNavigatorOpen(true)}
       >
        <Library />
@@ -165,8 +178,8 @@ export function NotesWorkspace() {
        <Input
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
-        aria-label="Tìm ghi chú"
-        placeholder="Tìm tiêu đề, nguồn, folder, tag..."
+        aria-label={t("searchLabel")}
+        placeholder={t("searchPlaceholder")}
         density="compact"
        />
       </div>
@@ -178,12 +191,16 @@ export function NotesWorkspace() {
    >
     <div className="flex min-w-0 flex-wrap items-center gap-2">
      <Typography variant="label" tone="secondary" weight="bold" className="flex items-center gap-2">
-      <Filter className="size-4" /> Bộ lọc
+      <Filter className="size-4" /> {t("filters.title")}
      </Typography>
      <Select
       value={category}
       onValueChange={(value) => {
-       const nextCategory = NoteCategoryFilterSchema.safeParse(value);
+       if (value === "all") {
+        setCategory("all");
+        return;
+       }
+       const nextCategory = NoteCategorySchema.safeParse(value);
        if (nextCategory.success) setCategory(nextCategory.data);
       }}
      >
@@ -191,11 +208,11 @@ export function NotesWorkspace() {
        <SelectValue />
       </SelectTrigger>
       <SelectContent>
-       <SelectItem value="all">Mọi danh mục</SelectItem>
-       <SelectItem value="general">Chung</SelectItem>
-       <SelectItem value="grammar">Ngữ pháp</SelectItem>
-       <SelectItem value="vocabulary">Từ vựng</SelectItem>
-       <SelectItem value="culture">Văn hóa</SelectItem>
+       <SelectItem value="all">{t("filters.allCategories")}</SelectItem>
+       <SelectItem value="general">{t("filters.categories.general")}</SelectItem>
+       <SelectItem value="grammar">{t("filters.categories.grammar")}</SelectItem>
+       <SelectItem value="vocabulary">{t("filters.categories.vocabulary")}</SelectItem>
+       <SelectItem value="culture">{t("filters.categories.culture")}</SelectItem>
       </SelectContent>
      </Select>
      <Select value={sourceHost} onValueChange={setSourceHost}>
@@ -203,7 +220,7 @@ export function NotesWorkspace() {
        <SelectValue />
       </SelectTrigger>
       <SelectContent>
-       <SelectItem value="all">Mọi nguồn</SelectItem>
+       <SelectItem value="all">{t("filters.allSources")}</SelectItem>
        {sourceOptions.map(([host, label]) => (
         <SelectItem key={host} value={host}>
          {label}
@@ -227,7 +244,7 @@ export function NotesWorkspace() {
    </div>
 
    <Sheet open={navigatorOpen} onOpenChange={setNavigatorOpen} side="right">
-    <SheetHeader title="Thư viện ghi chú" onClose={() => setNavigatorOpen(false)} />
+    <SheetHeader title={t("library")} onClose={() => setNavigatorOpen(false)} />
     <SheetBody>{navigator}</SheetBody>
    </Sheet>
   </div>

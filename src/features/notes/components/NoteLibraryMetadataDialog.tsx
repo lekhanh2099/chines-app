@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Settings2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,8 @@ export function NoteLibraryMetadataDialog({
  onOpenChange?: (open: boolean) => void;
  hideTrigger?: boolean;
 }) {
+ const t = useTranslations("Notes");
+ const common = useTranslations("Common");
  const [internalOpen, setInternalOpen] = useState(false);
  const open = controlledOpen ?? internalOpen;
  const setOpen = controlledOnOpenChange ?? setInternalOpen;
@@ -83,7 +86,7 @@ export function NoteLibraryMetadataDialog({
  const save = async () => {
   const nextTitle = title.trim();
   if (!nextTitle) {
-   toast.error("Nhập tiêu đề ghi chú.");
+   toast.error(t("metadata.titleRequired"));
    return;
   }
 
@@ -108,9 +111,9 @@ export function NoteLibraryMetadataDialog({
         },
    });
    setOpen(false);
-   toast.success("Đã cập nhật thông tin thư viện.");
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể cập nhật thông tin.");
+   toast.success(t("metadata.success"));
+  } catch {
+   toast.error(t("metadata.error"));
   }
  };
 
@@ -121,43 +124,41 @@ export function NoteLibraryMetadataDialog({
      <Button
       variant={compact ? "menu" : "outline"}
       size={compact ? "menu" : "icon-sm"}
-      aria-label="Thông tin và đổi tên ghi chú"
-      title="Thông tin và đổi tên ghi chú"
+      aria-label={t("metadata.trigger")}
+      title={t("metadata.trigger")}
       onClick={resetFields}
      >
       <Settings2 />
-      {compact ? "Thông tin và đổi tên" : null}
+      {compact ? t("metadata.trigger") : null}
      </Button>
     </DialogTrigger>
    ) : null}
    <DialogContent size="md">
     <DialogHeader>
-     <DialogTitle icon={<Settings2 />}>Thông tin ghi chú</DialogTitle>
-     <DialogDescription>
-      Đổi tiêu đề, folder, trạng thái đọc và nguồn mà không sửa nội dung note.
-     </DialogDescription>
+     <DialogTitle icon={<Settings2 />}>{t("metadata.title")}</DialogTitle>
+     <DialogDescription>{t("metadata.description")}</DialogDescription>
     </DialogHeader>
     <DialogBody>
      <FieldGroup>
       <Field>
-       <FieldLabel htmlFor="note-title">Tiêu đề</FieldLabel>
+       <FieldLabel htmlFor="note-title">{t("metadata.titleLabel")}</FieldLabel>
        <Input
         id="note-title"
         required
         value={title}
         onChange={(event) => setTitle(event.target.value)}
-        placeholder="Tiêu đề ghi chú"
+        placeholder={t("metadata.titlePlaceholder")}
        />
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
        <Field>
-        <FieldLabel>Folder</FieldLabel>
+        <FieldLabel>{t("metadata.folder")}</FieldLabel>
         <Select value={folderId} onValueChange={setFolderId}>
          <SelectTrigger width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent>
-          <SelectItem value="unfiled">Chưa phân loại</SelectItem>
+          <SelectItem value="unfiled">{t("views.unfiled")}</SelectItem>
           {(foldersQuery.data ?? []).map((folder) => (
            <SelectItem key={folder.id} value={folder.id}>
             {folder.parentId ? `↳ ${folder.name}` : folder.name}
@@ -167,23 +168,23 @@ export function NoteLibraryMetadataDialog({
         </Select>
        </Field>
        <Field>
-        <FieldLabel>Trạng thái đọc</FieldLabel>
+        <FieldLabel>{t("metadata.readingStatus")}</FieldLabel>
         <Select value={readingStatus} onValueChange={setReadingStatus}>
          <SelectTrigger width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent>
-          <SelectItem value="none">Không áp dụng</SelectItem>
-          <SelectItem value="inbox">Đọc sau</SelectItem>
-          <SelectItem value="reading">Đang đọc</SelectItem>
-          <SelectItem value="completed">Đã đọc</SelectItem>
+          <SelectItem value="none">{t("readingStatus.none")}</SelectItem>
+          <SelectItem value="inbox">{t("readingStatus.inbox")}</SelectItem>
+          <SelectItem value="reading">{t("readingStatus.reading")}</SelectItem>
+          <SelectItem value="completed">{t("readingStatus.completed")}</SelectItem>
          </SelectContent>
         </Select>
        </Field>
       </div>
 
       <Field>
-       <FieldLabel htmlFor="note-source-url">URL nguồn</FieldLabel>
+       <FieldLabel htmlFor="note-source-url">{t("metadata.sourceUrl")}</FieldLabel>
        <Input
         id="note-source-url"
         type="url"
@@ -194,7 +195,7 @@ export function NoteLibraryMetadataDialog({
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
        <Field>
-        <FieldLabel htmlFor="note-source-label">Tên nguồn</FieldLabel>
+        <FieldLabel htmlFor="note-source-label">{t("metadata.sourceLabel")}</FieldLabel>
         <Input
          id="note-source-label"
          value={sourceLabel}
@@ -202,7 +203,7 @@ export function NoteLibraryMetadataDialog({
         />
        </Field>
        <Field>
-        <FieldLabel htmlFor="note-source-author">Tác giả</FieldLabel>
+        <FieldLabel htmlFor="note-source-author">{t("metadata.sourceAuthor")}</FieldLabel>
         <Input
          id="note-source-author"
          value={sourceAuthor}
@@ -211,7 +212,7 @@ export function NoteLibraryMetadataDialog({
        </Field>
       </div>
       <Field>
-       <FieldLabel htmlFor="note-source-date">Ngày xuất bản</FieldLabel>
+       <FieldLabel htmlFor="note-source-date">{t("metadata.publishedAt")}</FieldLabel>
        <Input
         id="note-source-date"
         type="date"
@@ -223,10 +224,10 @@ export function NoteLibraryMetadataDialog({
     </DialogBody>
     <DialogFooter>
      <Button variant="outline" onClick={() => setOpen(false)}>
-      Hủy
+      {common("actions.cancel")}
      </Button>
      <Button disabled={mutation.isPending || !title.trim()} onClick={() => void save()}>
-      Lưu
+      {common("actions.save")}
      </Button>
     </DialogFooter>
    </DialogContent>

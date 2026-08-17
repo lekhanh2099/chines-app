@@ -1,11 +1,10 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { useSelector } from "@tanstack/react-store";
 import { BookOpenText, ChevronDown, FilePlus2, NotebookPen } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -35,26 +34,20 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { NoteFolder } from "@/services/notes.service";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { NoteCategorySchema, ReadingStatusSchema } from "@/types/database";
 import type { NoteCategory, ReadingStatus } from "@/types/database";
-import { z } from "zod";
 
-const CreateModeSchema = z.enum(["note", "reading"]);
-type CreateMode = z.infer<typeof CreateModeSchema>;
+type CreateMode = "note" | "reading";
 
 const DEFAULT_NOTE_CATEGORY: NoteCategory = "general";
 const DEFAULT_READING_STATUS: ReadingStatus = "reading";
-
-const noteCategoryOptions: Array<{ value: NoteCategory; label: string }> = [
- { value: "general", label: "Chung" },
- { value: "grammar", label: "Ngữ pháp" },
- { value: "vocabulary", label: "Từ vựng" },
- { value: "culture", label: "Văn hóa" },
-];
+const noteCategoryValues: NoteCategory[] = ["general", "grammar", "vocabulary", "culture"];
 
 function parseTags(value: string): string[] {
  return value
@@ -72,7 +65,9 @@ export function NoteCreateDialog({
  triggerClassName?: string;
  compactOnTablet?: boolean;
 }) {
- const [mode, setMode] = useState<z.infer<z.ZodNullable<typeof CreateModeSchema>>>(null);
+ const t = useTranslations("Notes");
+ const common = useTranslations("Common");
+ const [mode, setMode] = useState<CreateMode | null>(null);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
@@ -88,7 +83,7 @@ export function NoteCreateDialog({
   onSubmit: async ({ value }) => {
    if (!mode) return;
    if (focusModeEnabled) {
-    toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
+    toast.warning(t("create.focusBlocked"));
     return;
    }
 
@@ -99,7 +94,7 @@ export function NoteCreateDialog({
      tags: parseTags(value.tags),
      category: value.category,
      content: emptyDocument,
-     readingContent: mode === CreateModeSchema.enum.reading ? emptyDocument : undefined,
+     readingContent: mode === "reading" ? emptyDocument : undefined,
      splitViewEnabled: mode === "reading",
      folderId: value.folderId === "unfiled" ? null : value.folderId,
      readingStatus: mode === "reading" ? value.readingStatus : null,
@@ -109,8 +104,8 @@ export function NoteCreateDialog({
     setMode(null);
     form.reset();
     router.push(`/notes/${note.id}`);
-   } catch (error) {
-    toast.error(error instanceof Error ? error.message : "Không thể tạo ghi chú.");
+   } catch {
+    toast.error(t("create.error"));
    }
   },
  });
@@ -128,12 +123,12 @@ export function NoteCreateDialog({
      <Button
       size={compactOnTablet ? "toolbar" : "lg"}
       disabled={focusModeEnabled}
-      aria-label="Tạo ghi chú hoặc bài đọc"
-      title="Tạo"
+      aria-label={t("create.triggerAria")}
+      title={t("create.trigger")}
       className={triggerClassName}
      >
       <FilePlus2 data-icon="inline-start" />
-      <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Tạo</span>
+      <span className={cn(compactOnTablet && "hidden 2xl:inline")}>{t("create.trigger")}</span>
       <ChevronDown data-icon="inline-end" className={cn(compactOnTablet && "hidden 2xl:block")} />
      </Button>
     </DropdownMenuTrigger>
@@ -141,18 +136,18 @@ export function NoteCreateDialog({
      <DropdownMenuItem onSelect={() => openMode("note")}>
       <NotebookPen />
       <span>
-       <strong className="block">Ghi chú thường</strong>
+       <strong className="block">{t("create.note")}</strong>
        <Typography variant="caption" tone="muted" weight="medium">
-        Ý tưởng và ghi chú tự do.
+        {t("create.noteDescription")}
        </Typography>
       </span>
      </DropdownMenuItem>
      <DropdownMenuItem onSelect={() => openMode("reading")}>
       <BookOpenText />
       <span>
-       <strong className="block">Bài đọc</strong>
+       <strong className="block">{t("create.reading")}</strong>
        <Typography variant="caption" tone="muted" weight="medium">
-        Tạo ghi chú đọc và thêm nội dung sau.
+        {t("create.readingDescription")}
        </Typography>
       </span>
      </DropdownMenuItem>
@@ -163,12 +158,12 @@ export function NoteCreateDialog({
     <DialogContent size="md">
      <DialogHeader>
       <DialogTitle icon={mode === "reading" ? <BookOpenText /> : <NotebookPen />}>
-       {mode === "reading" ? "Tạo bài đọc" : "Tạo ghi chú"}
+       {mode === "reading" ? t("create.readingTitle") : t("create.noteTitle")}
       </DialogTitle>
       <DialogDescription>
        {mode === "reading"
-        ? "Tạo một bài đọc rỗng rồi thêm nội dung trong Split View."
-        : "Tạo một ghi chú tự do trong thư viện."}
+        ? t("create.readingDialogDescription")
+        : t("create.noteDialogDescription")}
       </DialogDescription>
      </DialogHeader>
 
@@ -185,19 +180,23 @@ export function NoteCreateDialog({
         <form.Field
          name="title"
          validators={{
-          onChange: ({ value }) => (!value.trim() ? "Nhập tiêu đề." : undefined),
+          onChange: ({ value }) => (!value.trim() ? t("create.titleRequired") : undefined),
          }}
         >
          {(field) => (
           <Field data-invalid={field.state.meta.errors.length > 0}>
-           <FieldLabel htmlFor={field.name}>Tiêu đề</FieldLabel>
+           <FieldLabel htmlFor={field.name}>{t("create.title")}</FieldLabel>
            <Input
             id={field.name}
             required
             value={field.state.value}
             onBlur={field.handleBlur}
             onChange={(event) => field.handleChange(event.target.value)}
-            placeholder={mode === "reading" ? "Tiêu đề bài đọc" : "Tiêu đề ghi chú"}
+            placeholder={
+             mode === "reading"
+              ? t("create.readingTitlePlaceholder")
+              : t("create.noteTitlePlaceholder")
+            }
             aria-invalid={field.state.meta.errors.length > 0}
            />
            {field.state.meta.errors.length > 0 ? (
@@ -213,14 +212,14 @@ export function NoteCreateDialog({
          <form.Field name="folderId">
           {(field) => (
            <Field>
-            <FieldLabel>Folder</FieldLabel>
+            <FieldLabel>{t("create.folder")}</FieldLabel>
             <Select value={field.state.value} onValueChange={field.handleChange}>
              <SelectTrigger width="full">
               <SelectValue />
              </SelectTrigger>
              <SelectContent>
               <SelectGroup>
-               <SelectItem value="unfiled">Chưa phân loại</SelectItem>
+               <SelectItem value="unfiled">{t("views.unfiled")}</SelectItem>
                {folders.map((folder) => (
                 <SelectItem key={folder.id} value={folder.id}>
                  {folder.parentId ? `↳ ${folder.name}` : folder.name}
@@ -237,7 +236,7 @@ export function NoteCreateDialog({
           <form.Field name="readingStatus">
            {(field) => (
             <Field>
-             <FieldLabel>Trạng thái</FieldLabel>
+             <FieldLabel>{t("create.status")}</FieldLabel>
              <Select
               value={field.state.value}
               onValueChange={(value) => {
@@ -249,9 +248,9 @@ export function NoteCreateDialog({
                <SelectValue />
               </SelectTrigger>
               <SelectContent>
-               <SelectItem value="inbox">Đọc sau</SelectItem>
-               <SelectItem value="reading">Đang đọc</SelectItem>
-               <SelectItem value="completed">Đã đọc</SelectItem>
+               <SelectItem value="inbox">{t("readingStatus.inbox")}</SelectItem>
+               <SelectItem value="reading">{t("readingStatus.reading")}</SelectItem>
+               <SelectItem value="completed">{t("readingStatus.completed")}</SelectItem>
               </SelectContent>
              </Select>
             </Field>
@@ -261,7 +260,7 @@ export function NoteCreateDialog({
           <form.Field name="category">
            {(field) => (
             <Field>
-             <FieldLabel>Danh mục</FieldLabel>
+             <FieldLabel>{t("create.category")}</FieldLabel>
              <Select
               value={field.state.value}
               onValueChange={(value) => {
@@ -273,9 +272,9 @@ export function NoteCreateDialog({
                <SelectValue />
               </SelectTrigger>
               <SelectContent>
-               {noteCategoryOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
-                 {option.label}
+               {noteCategoryValues.map((value) => (
+                <SelectItem key={value} value={value}>
+                 {t(`filters.categories.${value}`)}
                 </SelectItem>
                ))}
               </SelectContent>
@@ -290,12 +289,12 @@ export function NoteCreateDialog({
          <form.Field name="tags">
           {(field) => (
            <Field>
-            <FieldLabel htmlFor={field.name}>Tag</FieldLabel>
+            <FieldLabel htmlFor={field.name}>{t("create.tags")}</FieldLabel>
             <Input
              id={field.name}
              value={field.state.value}
              onChange={(event) => field.handleChange(event.target.value)}
-             placeholder="HSK3, ôn thi"
+             placeholder={t("create.tagsPlaceholder")}
             />
            </Field>
           )}
@@ -306,7 +305,7 @@ export function NoteCreateDialog({
 
       <DialogFooter>
        <Button type="button" variant="outline" onClick={() => setMode(null)}>
-        Hủy
+        {common("actions.cancel")}
        </Button>
        <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
@@ -314,7 +313,7 @@ export function NoteCreateDialog({
           {isSubmitting || createNoteMutation.isPending ? (
            <Spinner data-icon="inline-start" />
           ) : null}
-          {mode === "reading" ? "Tạo và mở" : "Tạo"}
+          {mode === "reading" ? t("create.createOpen") : t("create.trigger")}
          </Button>
         )}
        </form.Subscribe>

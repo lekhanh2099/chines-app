@@ -1,9 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
 import {
  BookOpen,
  CheckCircle2,
@@ -18,7 +15,7 @@ import {
  Trash2,
  Zap,
 } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
@@ -44,18 +41,18 @@ import {
  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { IconTile } from "@/components/ui/icon-tile";
+import { Typography } from "@/components/ui/typography";
+import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
 import { useUpdateNoteLibraryMetadata } from "@/features/notes/hooks/useNoteLibrary";
 import { useDeleteNoteFromList } from "@/features/notes/hooks/useNotesList";
-import { NoteLibraryMetadataDialog } from "@/features/notes/components/NoteLibraryMetadataDialog";
-import { readingStatusLabels } from "@/features/notes/note-library-utils";
+import { Link } from "@/i18n/navigation";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
 import { noteTabsStore } from "@/stores/note-tabs-store";
-import { ReadingStatusSchema } from "@/types/database";
-import { z } from "zod";
+import { ReadingStatusSchema, type ReadingStatus } from "@/types/database";
+
 import type { LessonLookup } from "./noteContext";
 import { getNoteContext } from "./noteContext";
-
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+import { useNoteContextLabels } from "./useNoteContextLabels";
 
 function getContextIcon(kind: ReturnType<typeof getNoteContext>["kind"]) {
  if (kind === "lesson") return <BookOpen />;
@@ -69,10 +66,7 @@ function getContextTone(kind: ReturnType<typeof getNoteContext>["kind"]) {
  return "neutral";
 }
 
-function getFolderBreadcrumb(
- folderId: NoteListItem["folder_id"],
- folders: NoteFolder[],
-): Nullable<string> {
+function getFolderBreadcrumb(folderId: NoteListItem["folder_id"], folders: NoteFolder[]): string | null {
  if (!folderId) return null;
  const folder = folders.find((item) => item.id === folderId);
  if (!folder) return null;
@@ -89,8 +83,16 @@ export function NoteListRow({
  folders: NoteFolder[];
  lessonLookup: LessonLookup;
 }) {
- const context = getNoteContext(note, lessonLookup);
- const updatedAt = format(new Date(note.updated_at), "dd/MM/yy", { locale: vi });
+ const t = useTranslations("Notes");
+ const common = useTranslations("Common");
+ const locale = useLocale();
+ const contextLabels = useNoteContextLabels();
+ const context = getNoteContext(note, lessonLookup, contextLabels);
+ const updatedAt = new Intl.DateTimeFormat(locale, {
+  day: "2-digit",
+  month: "2-digit",
+  year: "2-digit",
+ }).format(new Date(note.updated_at));
  const folderBreadcrumb = getFolderBreadcrumb(note.folder_id, folders);
  const metadataMutation = useUpdateNoteLibraryMetadata();
  const deleteMutation = useDeleteNoteFromList();
@@ -98,9 +100,11 @@ export function NoteListRow({
  const [metadataOpen, setMetadataOpen] = useState(false);
  const [deleteOpen, setDeleteOpen] = useState(false);
  const sortedFolders = useMemo(
-  () => [...folders].sort((a, b) => a.position - b.position || a.name.localeCompare(b.name)),
-  [folders],
+  () => [...folders].sort((a, b) => a.position - b.position || a.name.localeCompare(b.name, locale)),
+  [folders, locale],
  );
+
+ const readingStatusLabel = (status: ReadingStatus) => t(`readingStatus.${status}`);
 
  const updateMetadata = async (input: {
   folderId?: NoteListItem["folder_id"];
@@ -108,8 +112,8 @@ export function NoteListRow({
  }) => {
   try {
    await metadataMutation.mutateAsync({ noteId: note.id, ...input });
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể cập nhật ghi chú.");
+  } catch {
+   toast.error(t("row.updatedError"));
   }
  };
 
@@ -118,9 +122,9 @@ export function NoteListRow({
    await deleteMutation.mutateAsync(note.id);
    closeTab(note.id);
    setDeleteOpen(false);
-   toast.success("Đã xóa ghi chú.");
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể xóa ghi chú.");
+   toast.success(t("row.deleted"));
+  } catch {
+   toast.error(t("row.deleteError"));
   }
  };
 
@@ -140,7 +144,7 @@ export function NoteListRow({
         </Typography>
         {note.reading_status ? (
          <Badge variant="purple" size="sm" casing="natural">
-          {readingStatusLabels[note.reading_status]}
+          {readingStatusLabel(note.reading_status)}
          </Badge>
         ) : (
          <Badge
@@ -190,23 +194,23 @@ export function NoteListRow({
     <div className="flex items-start gap-1 px-2 py-3 lg:py-4">
      <DropdownMenu>
       <DropdownMenuTrigger asChild>
-       <Button variant="ghost" size="icon-toolbar" aria-label={`Tùy chọn ${note.title}`}>
+       <Button variant="ghost" size="icon-toolbar" aria-label={t("row.options", { title: note.title })}>
         <Ellipsis />
        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" width="md">
        <DropdownMenuItem onSelect={() => setMetadataOpen(true)}>
-        <Pencil /> Chỉnh thông tin
+        <Pencil /> {t("row.editMetadata")}
        </DropdownMenuItem>
 
        <DropdownMenuSeparator />
        <DropdownMenuSub>
         <DropdownMenuSubTrigger>
-         <FolderInput /> Chuyển folder
+         <FolderInput /> {t("row.moveFolder")}
         </DropdownMenuSubTrigger>
         <DropdownMenuSubContent sideOffset={4} width="md">
          <DropdownMenuItem onSelect={() => void updateMetadata({ folderId: null })}>
-          <Inbox /> Chưa phân loại
+          <Inbox /> {t("views.unfiled")}
          </DropdownMenuItem>
          {sortedFolders.map((folder) => (
           <DropdownMenuItem
@@ -220,7 +224,7 @@ export function NoteListRow({
        </DropdownMenuSub>
 
        <DropdownMenuSeparator />
-       <DropdownMenuLabel>Trạng thái đọc</DropdownMenuLabel>
+       <DropdownMenuLabel>{t("row.readingStatus")}</DropdownMenuLabel>
        {ReadingStatusSchema.options.map((status) => (
         <DropdownMenuItem
          key={status}
@@ -233,17 +237,17 @@ export function NoteListRow({
          ) : (
           <Inbox />
          )}
-         {readingStatusLabels[status]}
+         {readingStatusLabel(status)}
         </DropdownMenuItem>
        ))}
        {note.reading_status ? (
         <DropdownMenuItem onSelect={() => void updateMetadata({ readingStatus: null })}>
-         <FileText /> Bỏ trạng thái đọc
+         <FileText /> {t("row.clearReadingStatus")}
         </DropdownMenuItem>
        ) : null}
        <DropdownMenuSeparator />
        <DropdownMenuItem tone="destructive" onSelect={() => setDeleteOpen(true)}>
-        <Trash2 /> Xóa ghi chú
+        <Trash2 /> {t("row.delete")}
        </DropdownMenuItem>
       </DropdownMenuContent>
      </DropdownMenu>
@@ -256,15 +260,13 @@ export function NoteListRow({
    <Dialog open={deleteOpen} onOpenChange={setDeleteOpen}>
     <DialogContent className="max-w-md" showCloseButton={!deleteMutation.isPending}>
      <DialogHeader>
-      <DialogTitle>Xóa ghi chú?</DialogTitle>
-      <DialogDescription>
-       “{context.displayTitle}” sẽ bị xóa khỏi danh sách ghi chú của bạn.
-      </DialogDescription>
+      <DialogTitle>{t("row.deleteTitle")}</DialogTitle>
+      <DialogDescription>{t("row.deleteDescription", { title: context.displayTitle })}</DialogDescription>
      </DialogHeader>
      <DialogFooter>
       <DialogClose asChild>
        <Button type="button" variant="outline" disabled={deleteMutation.isPending}>
-        Hủy
+        {common("actions.cancel")}
        </Button>
       </DialogClose>
       <Button
@@ -274,7 +276,7 @@ export function NoteListRow({
        onClick={() => void handleDelete()}
       >
        {deleteMutation.isPending ? <Loader2 className="animate-spin" /> : <Trash2 />}
-       {deleteMutation.isPending ? "Đang xóa..." : "Xóa"}
+       {deleteMutation.isPending ? t("row.deleting") : t("row.delete")}
       </Button>
      </DialogFooter>
     </DialogContent>

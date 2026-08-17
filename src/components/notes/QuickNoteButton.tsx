@@ -1,30 +1,34 @@
 "use client";
 
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
-import { useRouter } from "next/navigation";
+import type { ComponentProps } from "react";
 import { useState } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { toast } from "sonner";
 import { Loader2, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { focusModeStore } from "@/stores/focus-mode-store";
-import { cn } from "@/lib/utils";
-import { z } from "zod";
+import { useLocale, useTranslations } from "next-intl";
+import { toast } from "sonner";
 
-const QuickNoteVariantSchema = z.enum(["default", "outline", "ghost", "dashed"]);
+import { Button } from "@/components/ui/button";
+import { useRouter } from "@/i18n/navigation";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { createClient } from "@/lib/supabase/client";
+import { cn } from "@/lib/utils";
+import { focusModeStore } from "@/stores/focus-mode-store";
+
+type QuickNoteVariant = ComponentProps<typeof Button>["variant"];
 
 interface QuickNoteButtonProps {
  className?: string;
- variant?: z.infer<typeof QuickNoteVariantSchema>;
+ variant?: QuickNoteVariant;
  compactOnTablet?: boolean;
 }
 
 export function QuickNoteButton({
  className = "",
- variant = QuickNoteVariantSchema.enum.default,
+ variant = "default",
  compactOnTablet = false,
 }: QuickNoteButtonProps) {
+ const t = useTranslations("Notes");
+ const locale = useLocale();
  const [isCreating, setIsCreating] = useState(false);
  const supabase = createClient();
  const router = useRouter();
@@ -33,7 +37,7 @@ export function QuickNoteButton({
  const handleCreate = async () => {
   if (isCreating) return;
   if (focusModeEnabled) {
-   toast.warning("Focus mode đang bật. Không thể tạo ghi chú mới.");
+   toast.warning(t("quick.focusBlocked"));
    return;
   }
 
@@ -47,13 +51,14 @@ export function QuickNoteButton({
    }
 
    const now = new Date();
-   const title = `Ghi chú nhanh — ${now.toLocaleDateString("vi-VN", {
+   const date = new Intl.DateTimeFormat(locale, {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-   })}`;
+   }).format(now);
+   const title = t("quick.defaultTitle", { date });
 
    const { data, error } = await supabase
     .from("notes")
@@ -73,7 +78,7 @@ export function QuickNoteButton({
 
    router.push(`/notes/${data.id}`);
   } catch {
-   toast.error("Không thể tạo ghi chú nhanh");
+   toast.error(t("quick.error"));
   } finally {
    setIsCreating(false);
   }
@@ -86,8 +91,8 @@ export function QuickNoteButton({
    size={compactOnTablet ? "toolbar" : "touch"}
    onClick={handleCreate}
    disabled={isCreating || focusModeEnabled}
-   aria-label="Tạo ghi chú nhanh"
-   title="Tạo ghi chú nhanh"
+   aria-label={t("quick.label")}
+   title={t("quick.label")}
    className={cn(variant === "dashed" && "w-full", className)}
   >
    {isCreating ? (
@@ -95,7 +100,7 @@ export function QuickNoteButton({
    ) : (
     <Zap data-icon="inline-start" className="size-4" />
    )}
-   <span className={cn(compactOnTablet && "hidden 2xl:inline")}>Ghi chú nhanh</span>
+   <span className={cn(compactOnTablet && "hidden 2xl:inline")}>{t("quick.button")}</span>
   </Button>
  );
 }

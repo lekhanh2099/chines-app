@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
 import {
  BookOpen,
@@ -18,6 +17,7 @@ import {
  Trash2,
  Zap,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -46,6 +46,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import { Typography } from "@/components/ui/typography";
 import { useNoteFolderMutations } from "@/features/notes/hooks/useNoteLibrary";
 import {
  buildNoteFolderTree,
@@ -54,32 +55,26 @@ import {
  type NoteLibraryView,
 } from "@/features/notes/note-library-utils";
 import type { NoteFolder, NoteFolderColor, NoteListItem } from "@/services/notes.service";
-import { NoteFolderColorSchema, NoteFolderSchema } from "@/services/notes.service";
-import { z } from "zod";
+import { NoteFolderColorSchema } from "@/services/notes.service";
 
-const FolderDialogStateSchema = z
- .discriminatedUnion("mode", [
-  z.object({ mode: z.literal("create"), parentId: z.string().nullable() }),
-  z.object({ mode: z.literal("rename"), folder: NoteFolderSchema }),
-  z.object({ mode: z.literal("delete"), folder: NoteFolderSchema }),
- ])
- .nullable();
-type FolderDialogState = z.infer<typeof FolderDialogStateSchema>;
-const FolderMoveDirectionSchema = z.union([z.literal(-1), z.literal(1)]);
-type FolderMoveDirection = z.infer<typeof FolderMoveDirectionSchema>;
+type FolderDialogState =
+ | { mode: "create"; parentId: string | null }
+ | { mode: "rename"; folder: NoteFolder }
+ | { mode: "delete"; folder: NoteFolder }
+ | null;
+type FolderMoveDirection = -1 | 1;
 
-const smartViews: Array<{
- value: NoteLibraryView;
- label: string;
+const smartViewDefinitions: Array<{
+ value: Exclude<NoteLibraryView, `folder:${string}`>;
  icon: typeof Clock3;
 }> = [
- { value: "recent", label: "Gần đây", icon: Clock3 },
- { value: "inbox", label: "Đọc sau", icon: Bookmark },
- { value: "reading", label: "Đang đọc", icon: BookOpen },
- { value: "completed", label: "Đã đọc", icon: CheckCircle2 },
- { value: "lesson", label: "Theo bài học", icon: NotebookPen },
- { value: "quick", label: "Ghi chú nhanh", icon: Zap },
- { value: "unfiled", label: "Chưa phân loại", icon: Inbox },
+ { value: "recent", icon: Clock3 },
+ { value: "inbox", icon: Bookmark },
+ { value: "reading", icon: BookOpen },
+ { value: "completed", icon: CheckCircle2 },
+ { value: "lesson", icon: NotebookPen },
+ { value: "quick", icon: Zap },
+ { value: "unfiled", icon: Inbox },
 ];
 
 export function NotesLibraryNavigator({
@@ -95,13 +90,15 @@ export function NotesLibraryNavigator({
  onViewChange: (view: NoteLibraryView) => void;
  onNavigate?: () => void;
 }) {
+ const t = useTranslations("Notes");
+ const common = useTranslations("Common");
  const [dialogState, setDialogState] = useState<FolderDialogState>(null);
  const [folderName, setFolderName] = useState("");
  const [folderColor, setFolderColor] = useState<NoteFolderColor>("purple");
  const folderTree = useMemo(() => buildNoteFolderTree(folders), [folders]);
  const { createMutation, updateMutation, deleteMutation } = useNoteFolderMutations();
 
- const openDialog = (state: NonNullable<FolderDialogState>) => {
+ const openDialog = (state: Exclude<FolderDialogState, null>) => {
   setFolderName(state.mode === "rename" ? state.folder.name : "");
   setFolderColor(state.mode === "rename" ? state.folder.color : "purple");
   setDialogState(state);
@@ -113,8 +110,7 @@ export function NotesLibraryNavigator({
  };
 
  const saveFolder = async () => {
-  if (!dialogState || dialogState.mode === "delete") return;
-  if (!folderName.trim()) return;
+  if (!dialogState || dialogState.mode === "delete" || !folderName.trim()) return;
 
   try {
    if (dialogState.mode === "create") {
@@ -131,8 +127,8 @@ export function NotesLibraryNavigator({
     });
    }
    setDialogState(null);
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể lưu folder.");
+  } catch {
+   toast.error(t("folders.saveError"));
   }
  };
 
@@ -142,8 +138,8 @@ export function NotesLibraryNavigator({
    await deleteMutation.mutateAsync(dialogState.folder.id);
    if (activeView === `folder:${dialogState.folder.id}`) onViewChange("unfiled");
    setDialogState(null);
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể xóa folder.");
+  } catch {
+   toast.error(t("folders.deleteError"));
   }
  };
 
@@ -160,14 +156,14 @@ export function NotesLibraryNavigator({
     updateMutation.mutateAsync({ folderId: folder.id, changes: { position: swap.position } }),
     updateMutation.mutateAsync({ folderId: swap.id, changes: { position: folder.position } }),
    ]);
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể sắp xếp folder.");
+  } catch {
+   toast.error(t("folders.sortError"));
   }
  };
 
  return (
   <>
-   <nav aria-label="Thư viện ghi chú" className="grid content-start gap-5">
+   <nav aria-label={t("library")} className="grid content-start gap-5">
     <section className="grid gap-1">
      <Typography
       as="h2"
@@ -178,9 +174,9 @@ export function NotesLibraryNavigator({
       transform="uppercase"
       className="px-2"
      >
-      Thư viện
+      {t("views.library")}
      </Typography>
-     {smartViews.map((view) => {
+     {smartViewDefinitions.map((view) => {
       const Icon = view.icon;
       const count = notes.filter((note) => matchesNoteLibraryView(note, view.value)).length;
       return (
@@ -192,7 +188,7 @@ export function NotesLibraryNavigator({
         onClick={() => chooseView(view.value)}
        >
         <Icon />
-        {view.label}
+        {t(`views.${view.value}`)}
         <Typography variant="caption" tone="muted" className="ml-auto">
          {count}
         </Typography>
@@ -211,18 +207,13 @@ export function NotesLibraryNavigator({
        tracking="wide"
        transform="uppercase"
       >
-       Folder
+       {t("folders.title")}
       </Typography>
       <Button
        variant="ghost"
        size="icon-toolbar"
-       aria-label="Tạo folder"
-       onClick={() =>
-        openDialog({
-         mode: FolderDialogStateSchema.unwrap().options[0].shape.mode.value,
-         parentId: null,
-        })
-       }
+       aria-label={t("folders.create")}
+       onClick={() => openDialog({ mode: "create", parentId: null })}
       >
        <FolderPlus />
       </Button>
@@ -230,7 +221,7 @@ export function NotesLibraryNavigator({
 
      {folderTree.length === 0 ? (
       <Typography as="p" variant="bodySmall" tone="muted" weight="medium" className="px-2 py-2">
-       Chưa có folder.
+       {t("folders.empty")}
       </Typography>
      ) : (
       folderTree.map((folder) => (
@@ -255,21 +246,21 @@ export function NotesLibraryNavigator({
      <DialogHeader>
       <DialogTitle>
        {dialogState?.mode === "delete"
-        ? "Xóa folder"
+        ? t("folders.deleteTitle")
         : dialogState?.mode === "rename"
-          ? "Đổi tên folder"
-          : "Tạo folder"}
+          ? t("folders.renameTitle")
+          : t("folders.createTitle")}
       </DialogTitle>
       <DialogDescription>
        {dialogState?.mode === "delete"
-        ? "Ghi chú sẽ về Chưa phân loại; folder con sẽ được đưa lên cấp gốc."
-        : "Folder hỗ trợ tối đa hai tầng."}
+        ? t("folders.deleteDescription")
+        : t("folders.description")}
       </DialogDescription>
      </DialogHeader>
      {dialogState?.mode === "delete" ? null : (
       <DialogBody>
        <Field>
-        <FieldLabel htmlFor="note-folder-name">Tên folder</FieldLabel>
+        <FieldLabel htmlFor="note-folder-name">{t("folders.name")}</FieldLabel>
         <Input
          id="note-folder-name"
          value={folderName}
@@ -279,7 +270,7 @@ export function NotesLibraryNavigator({
         />
        </Field>
        <Field>
-        <FieldLabel>Màu</FieldLabel>
+        <FieldLabel>{t("folders.color")}</FieldLabel>
         <Select
          value={folderColor}
          onValueChange={(value) => {
@@ -291,12 +282,12 @@ export function NotesLibraryNavigator({
           <SelectValue />
          </SelectTrigger>
          <SelectContent>
-          <SelectItem value="purple">Tím</SelectItem>
-          <SelectItem value="blue">Xanh dương</SelectItem>
-          <SelectItem value="green">Xanh lá</SelectItem>
-          <SelectItem value="orange">Cam</SelectItem>
-          <SelectItem value="rose">Hồng</SelectItem>
-          <SelectItem value="slate">Xám</SelectItem>
+          <SelectItem value="purple">{t("folders.colors.purple")}</SelectItem>
+          <SelectItem value="blue">{t("folders.colors.blue")}</SelectItem>
+          <SelectItem value="green">{t("folders.colors.green")}</SelectItem>
+          <SelectItem value="orange">{t("folders.colors.orange")}</SelectItem>
+          <SelectItem value="rose">{t("folders.colors.rose")}</SelectItem>
+          <SelectItem value="slate">{t("folders.colors.slate")}</SelectItem>
          </SelectContent>
         </Select>
        </Field>
@@ -304,7 +295,7 @@ export function NotesLibraryNavigator({
      )}
      <DialogFooter>
       <Button variant="outline" onClick={() => setDialogState(null)}>
-       Hủy
+       {common("actions.cancel")}
       </Button>
       <Button
        variant={dialogState?.mode === "delete" ? "destructive" : "default"}
@@ -316,7 +307,7 @@ export function NotesLibraryNavigator({
        }
        onClick={dialogState?.mode === "delete" ? deleteFolder : saveFolder}
       >
-       {dialogState?.mode === "delete" ? "Xóa" : "Lưu"}
+       {dialogState?.mode === "delete" ? t("folders.delete") : common("actions.save")}
       </Button>
      </DialogFooter>
     </DialogContent>
@@ -344,6 +335,7 @@ function FolderNavigationRow({
  onDelete: (folder: NoteFolder) => void;
  onMove: (folder: NoteFolder, direction: FolderMoveDirection) => void;
 }) {
+ const t = useTranslations("Notes.folders");
  const view: NoteLibraryView = `folder:${folder.id}`;
  const count = notes.filter((note) => note.folder_id === folder.id).length;
 
@@ -367,28 +359,28 @@ function FolderNavigationRow({
     </Button>
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
-      <Button variant="ghost" size="icon-toolbar" aria-label={`Tùy chọn folder ${folder.name}`}>
+      <Button variant="ghost" size="icon-toolbar" aria-label={t("options", { name: folder.name })}>
        <Ellipsis />
       </Button>
      </DropdownMenuTrigger>
      <DropdownMenuContent align="end">
       {folder.parentId === null ? (
        <DropdownMenuItem onSelect={() => onCreateChild(folder.id)}>
-        <FolderPlus /> Thêm folder con
+        <FolderPlus /> {t("addChild")}
        </DropdownMenuItem>
       ) : null}
       <DropdownMenuItem onSelect={() => onRename(folder)}>
-       <Pencil /> Đổi tên
+       <Pencil /> {t("rename")}
       </DropdownMenuItem>
-      <DropdownMenuItem onSelect={() => onMove(folder, FolderMoveDirectionSchema.options[0].value)}>
-       <ChevronUp /> Đưa lên
+      <DropdownMenuItem onSelect={() => onMove(folder, -1)}>
+       <ChevronUp /> {t("moveUp")}
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => onMove(folder, 1)}>
-       <ChevronDown /> Đưa xuống
+       <ChevronDown /> {t("moveDown")}
       </DropdownMenuItem>
       <DropdownMenuSeparator />
       <DropdownMenuItem tone="destructive" onSelect={() => onDelete(folder)}>
-       <Trash2 /> Xóa folder
+       <Trash2 /> {t("delete")}
       </DropdownMenuItem>
      </DropdownMenuContent>
     </DropdownMenu>

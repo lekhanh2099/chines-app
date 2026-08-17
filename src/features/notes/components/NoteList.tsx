@@ -1,13 +1,13 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useMemo } from "react";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
 import { FileText } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
+import { Typography } from "@/components/ui/typography";
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
+
 import type { LessonLookup } from "./noteContext";
 import { NoteCreateDialog } from "./NoteCreateDialog";
 import { NoteImportButton } from "./NoteImportButton";
@@ -24,17 +24,20 @@ export function NoteList({
  lessonLookup: LessonLookup;
  groupByMonth?: boolean;
 }) {
+ const t = useTranslations("Notes");
+ const locale = useLocale();
  const groups = useMemo<[string, NoteListItem[]][]>(() => {
   if (!groupByMonth) return [["", notes]];
+  const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" });
   const byMonth = new Map<string, NoteListItem[]>();
   for (const note of notes) {
-   const month = format(new Date(note.updated_at), "MMMM yyyy", { locale: vi });
+   const month = monthFormatter.format(new Date(note.updated_at));
    const existing = byMonth.get(month) ?? [];
    existing.push(note);
    byMonth.set(month, existing);
   }
   return Array.from(byMonth.entries());
- }, [groupByMonth, notes]);
+ }, [groupByMonth, locale, notes]);
 
  if (notes.length === 0) {
   return (
@@ -43,8 +46,8 @@ export function NoteList({
      className="max-w-sm"
      surface="card"
      icon={<FileText />}
-     title="Chưa có ghi chú phù hợp"
-     description="Thử đổi bộ lọc, import file note hoặc tạo ghi chú mới."
+     title={t("list.emptyTitle")}
+     description={t("list.emptyDescription")}
      actions={
       <>
        <NoteImportButton />
