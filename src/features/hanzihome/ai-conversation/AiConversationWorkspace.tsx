@@ -1,5 +1,6 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import {
  Bot,
@@ -59,7 +60,6 @@ import {
  DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
  type AiConversationProfile,
- type AiConversationRuntimeHealth,
 } from "./ai-conversation.schemas";
 
 const AUTO_RUNTIME_KEY_ID = "auto";
@@ -79,11 +79,20 @@ export function AiConversationWorkspace() {
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
- const [runtimeHealth, setRuntimeHealth] = useState<AiConversationRuntimeHealth | null>(null);
- const [isHealthChecking, setIsHealthChecking] = useState(true);
- const [healthRefreshId, setHealthRefreshId] = useState(0);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
+ const runtimeHealthQuery = useQuery({
+  queryKey: ["hanzihome", "ai-conversation", "runtime-health", runtimeKeyId],
+  queryFn: ({ signal }) =>
+   fetchAiConversationRuntimeHealth({
+    ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+    signal,
+   }),
+  enabled: !isRuntimeLoading,
+  retry: false,
+ });
+ const runtimeHealth = runtimeHealthQuery.data ?? null;
+ const isHealthChecking = runtimeHealthQuery.isFetching;
  const personaLabels: Record<AiConversationProfile["persona"], string> = {
   tutor: t("personas.tutor"),
   friend: t("personas.friend"),
@@ -134,38 +143,6 @@ export function AiConversationWorkspace() {
    cancelled = true;
   };
  }, []);
-
- useEffect(() => {
-  if (isRuntimeLoading) return;
-
-  const controller = new AbortController();
-  setIsHealthChecking(true);
-  setRuntimeHealth(null);
-
-  void fetchAiConversationRuntimeHealth({
-   ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
-   signal: controller.signal,
-  })
-   .then((health) => {
-    if (!controller.signal.aborted) setRuntimeHealth(health);
-   })
-   .catch(() => {
-    if (!controller.signal.aborted) {
-     setRuntimeHealth({
-      ready: false,
-      code: "network-error",
-      provider: null,
-      model: null,
-      source: null,
-     });
-    }
-   })
-   .finally(() => {
-    if (!controller.signal.aborted) setIsHealthChecking(false);
-   });
-
-  return () => controller.abort();
- }, [healthRefreshId, isRuntimeLoading, runtimeKeyId]);
 
  useEffect(() => {
   const viewport = messageViewportRef.current;
@@ -230,7 +207,7 @@ export function AiConversationWorkspace() {
   } catch (caught) {
    if (controller.signal.aborted) return;
    setError(caught instanceof Error ? caught.message : t("message.sendError"));
-   setHealthRefreshId((current) => current + 1);
+   void runtimeHealthQuery.refetch();
   } finally {
    if (requestRef.current === controller) {
     requestRef.current = null;
@@ -348,7 +325,7 @@ export function AiConversationWorkspace() {
         type="button"
         variant="ghost"
         size="sm"
-        onClick={() => setHealthRefreshId((current) => current + 1)}
+        onClick={() => void runtimeHealthQuery.refetch()}
         disabled={isHealthChecking || isRuntimeLoading}
        >
         <RefreshCcw data-icon="inline-start" />
