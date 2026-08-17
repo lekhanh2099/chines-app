@@ -54,7 +54,7 @@ export const aiConversationResponseSchema = z.strictObject({
  message: z.string().trim().min(1),
  provider: z.string().trim().min(1),
  model: z.string().trim().min(1),
- apiKeyId: z.uuid(),
+ apiKeyId: z.uuid().nullable(),
  usage: aiConversationUsageSchema.nullable(),
 });
 
