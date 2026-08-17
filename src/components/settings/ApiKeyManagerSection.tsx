@@ -47,10 +47,7 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
-import {
- discoverManagedApiKey,
- type ApiKeyMoveDirectionSchema,
-} from "@/features/settings/api-key-manager.client";
+import { discoverManagedApiKey } from "@/features/settings/api-key-manager.client";
 import type { DiscoverApiKeyResponse } from "@/features/settings/api-key-manager.schema";
 import {
  getApiKeyModelDescriptionKey,
@@ -77,7 +74,7 @@ const EMPTY_SUMMARY = {
 };
 
 type ProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
-type MoveDirection = typeof ApiKeyMoveDirectionSchema._output;
+type MoveDirection = "up" | "down";
 
 export default function ApiKeyManagerSection() {
  const t = useTranslations("Settings");
@@ -198,11 +195,12 @@ export default function ApiKeyManagerSection() {
  }
 
  function handleProviderChange(value: string) {
+  const parsedProvider = ApiKeyProviderSchema.safeParse(value);
   const nextProvider: ProviderSelection =
    value === AUTO_API_KEY_PROVIDER
     ? AUTO_API_KEY_PROVIDER
-    : ApiKeyProviderSchema.safeParse(value).success
-      ? ApiKeyProviderSchema.parse(value)
+    : parsedProvider.success
+      ? parsedProvider.data
       : AUTO_API_KEY_PROVIDER;
   setProviderSelection(nextProvider);
   setDiscovery(null);
