@@ -1,0 +1,47 @@
+{
+ "header": {
+  "eyebrow": "Bài đọc hôm nay",
+  "title": "Bài đọc tiếng Trung mỗi ngày",
+  "description": "Thư viện các bài đọc hằng ngày đã được kiểm tra và lưu trong HanziHome.",
+  "settings": "Cài đặt đọc",
+  "openSample": "Mở bài mẫu"
+ },
+ "empty": {
+  "title": "Chưa có bài đọc đã thu thập",
+  "description": "HanziHome hiện chỉ hiển thị thư viện bài đọc đã được đóng gói và kiểm tra."
+ },
+ "sample": {
+  "eyebrow": "Bài mẫu offline",
+  "title": "Dùng thử Reader, không phải bài đã thu thập",
+  "badge": "Bài mẫu",
+  "topicCulture": "Văn hóa",
+  "topicFallback": "Bài mẫu",
+  "levelFallback": "Daily",
+  "dateFallback": "Bài mẫu",
+  "minutes": "{count} phút",
+  "read": "Đọc bài"
+ },
+ "tabs": {
+  "reader": "Đọc bài",
+  "questions": "Câu hỏi",
+  "vocabulary": "Từ vựng",
+  "grammar": "Ngữ pháp",
+  "translation": "Bản dịch",
+  "source": "Nguồn",
+  "aria": "Các phần của bài đọc hằng ngày"
+ },
+ "document": {
+  "notFound": "Không tìm thấy bài đọc hằng ngày trong dữ liệu hiện có.",
+  "back": "← Danh sách bài hằng ngày",
+  "minutes": "{count} phút"
+ },
+ "grammar": {
+  "empty": "Bài này chưa có mục ngữ pháp riêng.",
+  "evidence": "Câu dẫn chứng nằm trong bài đọc"
+ },
+ "source": {
+  "title": "Nguồn và ghi chú biên soạn",
+  "fallbackNotice": "Nội dung đã được rà soát trước khi đưa vào thư viện.",
+  "fallbackSource": "Nguồn Hanzi Studio"
+ }
+}

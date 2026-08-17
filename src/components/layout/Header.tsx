@@ -117,7 +117,10 @@ export function Header() {
      )}
     >
      {hasRouteToolbar ? (
-      <HeaderContextArea toolbarContent={headerToolbarContent} simpleBreadcrumb={simpleBreadcrumb} />
+      <HeaderContextArea
+       toolbarContent={headerToolbarContent}
+       simpleBreadcrumb={simpleBreadcrumb}
+      />
      ) : null}
 
      <HeaderSearchForm
@@ -161,7 +164,11 @@ function HeaderContextArea({
  simpleBreadcrumb: SimpleHeaderBreadcrumb | null;
 }) {
  if (toolbarContent) {
-  return <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">{toolbarContent}</div>;
+  return (
+   <div className="flex min-w-0 items-center gap-1.5 overflow-hidden sm:gap-2">
+    {toolbarContent}
+   </div>
+  );
  }
 
  if (simpleBreadcrumb) return <SimpleRouteBreadcrumb breadcrumb={simpleBreadcrumb} />;
@@ -177,10 +184,7 @@ function SimpleRouteBreadcrumb({ breadcrumb }: { breadcrumb: SimpleHeaderBreadcr
    {breadcrumb.parent ? (
     <>
      <AppHeaderBreadcrumbItem>
-      <AppHeaderBreadcrumbLink
-       href={breadcrumb.parent.href}
-       title={t(breadcrumb.parent.labelKey)}
-      >
+      <AppHeaderBreadcrumbLink href={breadcrumb.parent.href} title={t(breadcrumb.parent.labelKey)}>
        {t(breadcrumb.parent.labelKey)}
       </AppHeaderBreadcrumbLink>
      </AppHeaderBreadcrumbItem>
@@ -382,9 +386,14 @@ function HeaderUtilityArea({
 function FocusModePill() {
  const t = useTranslations("Shell");
  return (
-  <Badge variant="warning" size="md" className="hidden sm:inline-flex" title={t("header.focusModeActive")}>
+  <Badge
+   variant="warning"
+   size="md"
+   className="hidden sm:inline-flex"
+   title={t("header.focusModeActive")}
+  >
    <LockKeyhole />
-   Focus
+   {t("header.focusModeShort")}
   </Badge>
  );
 }

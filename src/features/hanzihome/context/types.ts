@@ -37,10 +37,7 @@ export type LearningSyncUiState = {
  retry: () => Promise<JsonFieldValue>;
 };
 
-export type ReviewItem = Pick<
- UserLearningState["reviewHistory"][number],
- "type" | "id" | "label"
->;
+export type ReviewItem = Pick<UserLearningState["reviewHistory"][number], "type" | "id" | "label">;
 
 export type HanziHomeFeatureRuntime = {
  originalLesson: HanziHomeLesson;

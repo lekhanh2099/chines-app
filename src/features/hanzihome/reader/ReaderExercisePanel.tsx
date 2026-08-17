@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,17 +17,6 @@ import type { ReaderSessionState } from "./reader-session";
 
 type ReaderExerciseItem = ReaderDocumentResource["exerciseItems"][number];
 type ReaderExerciseGroupType = ReaderDocumentResource["exerciseGroups"][number]["exercise_type"];
-
-const exerciseGroupLabel: Record<ReaderExerciseGroupType, string> = {
- notes: "Ghi chú",
- vocabulary_review: "Ôn từ vựng",
- true_false: "Đúng / sai",
- multiple_choice: "Trắc nghiệm",
- short_answer: "Trả lời ngắn",
- fill_blank: "Điền từ",
- discussion: "Thảo luận",
- mock_questions: "Câu hỏi luyện tập",
-};
 
 function normalizedAnswer(value: string) {
  return value.normalize("NFC").trim().replace(/\s+/gu, "");
@@ -48,7 +38,18 @@ export function ReaderExercisePanel({
  answers: ReaderSessionState["answers"];
  onAnswer: (itemId: string, answer: ReaderAnswerState) => void;
 }) {
+ const t = useTranslations("Reader.study.exercise");
  const [drafts, setDrafts] = useState<Record<string, string>>({});
+ const exerciseGroupLabel: Record<ReaderExerciseGroupType, string> = {
+  notes: t("groupLabels.notes"),
+  vocabulary_review: t("groupLabels.vocabulary_review"),
+  true_false: t("groupLabels.true_false"),
+  multiple_choice: t("groupLabels.multiple_choice"),
+  short_answer: t("groupLabels.short_answer"),
+  fill_blank: t("groupLabels.fill_blank"),
+  discussion: t("groupLabels.discussion"),
+  mock_questions: t("groupLabels.mock_questions"),
+ };
 
  const submitAnswer = (item: ReaderExerciseItem, answer: string, completed = true) => {
   const expected = expectedAnswer(item);
@@ -72,10 +73,10 @@ export function ReaderExercisePanel({
   <div className="grid gap-5">
    <div className="grid gap-1">
     <Typography as="h3" variant="sectionTitle" weight="black">
-     Bài luyện tập
+     {t("title")}
     </Typography>
     <Typography variant="caption" tone="muted">
-     Làm theo từng nhóm bài; câu trả lời được lưu cùng tiến độ của bài đọc.
+     {t("description")}
     </Typography>
    </div>
 
@@ -89,7 +90,7 @@ export function ReaderExercisePanel({
          {exerciseGroupLabel[group.exercise_type]}
         </Badge>
         <Typography as="h4" variant="cardTitle" weight="black">
-         {group.title_zh || group.title_vi || "Bài tập"}
+         {group.title_zh || group.title_vi || t("fallbackTitle")}
         </Typography>
        </div>
        {group.title_vi && group.title_vi !== group.title_zh ? (
@@ -118,7 +119,11 @@ export function ReaderExercisePanel({
                variant={saved.score === 1 ? "success" : saved.score === 0 ? "danger" : "warning"}
                casing="natural"
               >
-               {saved.score === 1 ? "Đúng" : saved.score === 0 ? "Chưa đúng" : "Đã trả lời"}
+               {saved.score === 1
+                ? t("status.correct")
+                : saved.score === 0
+                  ? t("status.incorrect")
+                  : t("status.answered")}
               </Badge>
              ) : null}
             </div>
@@ -159,13 +164,13 @@ export function ReaderExercisePanel({
                aria-pressed={saved?.answer === value}
                onClick={() => submitAnswer(item, value)}
               >
-               {value === "True" ? "Đúng" : "Sai"}
+               {value === "True" ? t("true") : t("false")}
               </Button>
              ))}
             </div>
            ) : item.item_type === "note" || item.item_type === "answer_review" ? (
             <Typography variant="bodySmall" tone="muted">
-             {item.payload.explanationVi || item.payload.answerVi || "Xem lại ghi chú của bài học."}
+             {item.payload.explanationVi || item.payload.answerVi || t("reviewNote")}
             </Typography>
            ) : (
             <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
@@ -173,14 +178,16 @@ export function ReaderExercisePanel({
               <Textarea
                value={draft}
                onChange={(event) => setDraft(item.id, event.target.value)}
-               placeholder="Viết câu trả lời của bạn…"
+               placeholder={t("discussionPlaceholder")}
                rows={3}
               />
              ) : (
               <Input
                value={draft}
                onChange={(event) => setDraft(item.id, event.target.value)}
-               placeholder={item.item_type === "fill_blank" ? "Điền chữ Hán…" : "Câu trả lời…"}
+               placeholder={
+                item.item_type === "fill_blank" ? t("fillBlankPlaceholder") : t("answerPlaceholder")
+               }
               />
              )}
              <Button
@@ -189,14 +196,14 @@ export function ReaderExercisePanel({
               disabled={!draft.trim()}
               onClick={() => submitAnswer(item, draft)}
              >
-              {isAuto ? "Kiểm tra" : "Lưu câu trả lời"}
+              {isAuto ? t("check") : t("saveAnswer")}
              </Button>
             </div>
            )}
 
            {saved?.completed && saved.score !== 1 && item.payload.answerVi ? (
             <Typography variant="caption" tone="muted">
-             Đáp án tham chiếu:{" "}
+             {t("referenceAnswer")}{" "}
              {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
             </Typography>
            ) : null}

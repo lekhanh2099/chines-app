@@ -1,0 +1,18 @@
+{
+ "title": "Reader data quality",
+ "description": "Audit runtime content references before parity and cutover.",
+ "loading": "Checking data…",
+ "publishedContent": "Published content",
+ "healthy": "No orphan references",
+ "warnings": "{count, plural, one {# warning} other {# warnings}}",
+ "counts": {
+  "documents": "Documents",
+  "paragraphs": "Paragraphs",
+  "vocabularyLinks": "Vocabulary links",
+  "exerciseGroups": "Exercise groups",
+  "exerciseItems": "Exercise items",
+  "assets": "Assets"
+ },
+ "byKind": "By kind",
+ "runAgain": "Run audit again"
+}

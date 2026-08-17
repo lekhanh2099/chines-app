@@ -1,19 +1,13 @@
 import type { UserLearningState } from "@/features/hanzihome/types";
 import type { HomeRecentActivityItem } from "@/features/home/types";
 
-const fallbackLabelByType: Record<
- UserLearningState["reviewHistory"][number]["type"],
- string
-> = {
+const fallbackLabelByType: Record<UserLearningState["reviewHistory"][number]["type"], string> = {
  vocab: "Từ vựng đã ôn",
  grammar: "Điểm ngữ pháp đã ôn",
  radical: "Bộ thủ đã ôn",
 };
 
-const kindLabelByType: Record<
- UserLearningState["reviewHistory"][number]["type"],
- string
-> = {
+const kindLabelByType: Record<UserLearningState["reviewHistory"][number]["type"], string> = {
  vocab: "Từ vựng",
  grammar: "Ngữ pháp",
  radical: "Bộ thủ",

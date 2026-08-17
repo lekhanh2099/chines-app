@@ -17,8 +17,6 @@ export default async function HskReaderPage({
   <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="hsk"
-    title="Thư viện bài đọc HSK"
-    description=""
     initialDocuments={initialDocuments}
     initialResource={initialResource}
    />

@@ -1,13 +1,24 @@
+import type { ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it } from "vitest";
 
-import { analyzeContextualPronunciation } from "../pronunciation/contextual-pronunciation";
+import readerDocumentMessages from "../../../../messages/vi/reader-document.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { analyzeContextualPronunciation } from "../pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "./ContextualReaderText";
+
+function renderReaderText(element: ReactNode) {
+ return renderToStaticMarkup(
+  <NextIntlClientProvider locale="vi" messages={{ Reader: { document: readerDocumentMessages } }}>
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
 
 describe("ContextualReaderText", () => {
  it("renders Hanzi and contextual spoken pinyin with the HanziHome typography primitive", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "一个", sourcePinyin: "yī gè" })}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
@@ -19,7 +30,7 @@ describe("ContextualReaderText", () => {
  });
 
  it("keeps paragraph-mode glyph actions keyboard reachable", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "一个", sourcePinyin: "yī gè" })}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
@@ -34,7 +45,7 @@ describe("ContextualReaderText", () => {
  });
 
  it("preserves reviewed source phrase pinyin when alignment is valid", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "浙江", sourcePinyin: "Zhèjiāng" })}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
@@ -47,7 +58,7 @@ describe("ContextualReaderText", () => {
  });
 
  it("marks the active glyph while the reader is speaking", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "北京", sourcePinyin: "Běijīng" })}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}

@@ -1,14 +1,16 @@
 import type { NoteFolder, NoteListItem } from "@/services/notes.service";
-import { NoteCategorySchema, type ReadingStatus } from "@/types/database";
+import type { NoteCategory } from "@/types/database";
 import type { JsonObject } from "./note-export.schema";
-import { z } from "zod";
 
-export const NoteLibraryViewSchema = z.union([
- z.enum(["recent", "inbox", "reading", "completed", "lesson", "quick", "unfiled"]),
- z.templateLiteral(["folder:", z.string()]),
-]);
-export type NoteLibraryView = z.infer<typeof NoteLibraryViewSchema>;
-const NoteCategoryFilterSchema = z.union([NoteCategorySchema, z.literal("all")]);
+export type NoteLibraryView =
+ | "recent"
+ | "inbox"
+ | "reading"
+ | "completed"
+ | "lesson"
+ | "quick"
+ | "unfiled"
+ | `folder:${string}`;
 
 export type NoteFolderTreeNode = NoteFolder & { children: NoteFolderTreeNode[] };
 
@@ -64,21 +66,11 @@ export function matchesNoteLibraryView(note: NoteListItem, view: NoteLibraryView
 export function matchesNoteFacets(
  note: NoteListItem,
  input: {
-  category: z.infer<typeof NoteCategoryFilterSchema>;
+  category: NoteCategory | "all";
   sourceHost: string;
  },
 ): boolean {
- if (
-  input.category !== NoteCategoryFilterSchema.options[1].value &&
-  note.category !== input.category
- )
-  return false;
+ if (input.category !== "all" && note.category !== input.category) return false;
  if (input.sourceHost !== "all" && note.source_host !== input.sourceHost) return false;
  return true;
 }
-
-export const readingStatusLabels: Record<ReadingStatus, string> = {
- inbox: "Đọc sau",
- reading: "Đang đọc",
- completed: "Đã đọc",
-};

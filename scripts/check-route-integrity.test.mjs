@@ -5,11 +5,9 @@ import { routeFromAppEntrypoint } from "./check-route-integrity.mjs";
 
 describe("routeFromAppEntrypoint", () => {
  it("treats the top-level locale segment as routing infrastructure", () => {
-  expect(
-   routeFromAppEntrypoint(
-    path.resolve("src/app/[locale]/(app)/settings/page.tsx"),
-   ),
-  ).toBe("/settings");
+  expect(routeFromAppEntrypoint(path.resolve("src/app/[locale]/(app)/settings/page.tsx"))).toBe(
+   "/settings",
+  );
  });
 
  it("keeps unlocalized infrastructure routes unchanged", () => {

@@ -20,8 +20,6 @@ export default async function ReaderMockPage({
     kind="mock"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
-    title="Đọc lạ / mô phỏng kiểm tra"
-    description="Các bài đọc mô phỏng được sắp theo đơn nguyên để luyện đọc ngoài bài đã học."
    />
   </div>
  );

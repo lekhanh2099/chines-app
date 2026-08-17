@@ -1,8 +1,7 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import Link from "next/link";
-import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
+import { useTranslations } from "next-intl";
+
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Badge } from "@/components/ui/badge";
@@ -10,9 +9,12 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Separator } from "@/components/ui/separator";
-import { getNormalizedRadicals } from "@/services/vocab.service";
+import { Typography } from "@/components/ui/typography";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
+import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import type { StructureComponent } from "@/features/dictionary/types";
+import { Link } from "@/i18n/navigation";
+import { getNormalizedRadicals } from "@/services/vocab.service";
 
 type DictionaryCharacterSidebarProps = {
  characters: string[];
@@ -27,6 +29,7 @@ function DictionaryCharacterSidebar({
  onSelectCharacter,
  parentText,
 }: DictionaryCharacterSidebarProps) {
+ const t = useTranslations("Dictionary.sidebar");
  const { vocabData, isLoading } = useVocabDetail(selectedCharacter);
 
  if (isLoading || !vocabData) {
@@ -44,7 +47,7 @@ function DictionaryCharacterSidebar({
      <div className="h-4 w-full rounded-md bg-bg-card" />
      <div className="h-4 w-3/4 rounded-md bg-bg-card" />
     </div>
-    <span className="sr-only">Đang tải cấu tạo chữ</span>
+    <span className="sr-only">{t("loading")}</span>
    </Card>
   );
  }
@@ -58,12 +61,12 @@ function DictionaryCharacterSidebar({
  return (
   <SectionWrapper>
    <SectionHeader
-    title="Tập viết chữ"
-    description="Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng."
+    title={t("writing")}
+    description={t("writingDescription")}
     trailing={
      parentText !== selectedCharacter ? (
       <Button asChild variant="outline" size="toolbar">
-       <Link href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}>Tra riêng</Link>
+       <Link href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}>{t("inspect")}</Link>
       </Button>
      ) : null
     }
@@ -75,7 +78,7 @@ function DictionaryCharacterSidebar({
      items={characters.map((character) => ({ key: character, label: character }))}
      onChange={onSelectCharacter}
      density="touch"
-     aria-label="Chọn chữ để phân tích"
+     aria-label={t("selectCharacter")}
     />
    ) : null}
 
@@ -95,7 +98,7 @@ function DictionaryCharacterSidebar({
     <Card variant="subtle" padding="sm">
      <div className="flex flex-col gap-2">
       <div className="flex items-center gap-2">
-       <SectionHeader title={mnemonicStory ? "Mẹo nhớ" : "Nguồn gốc"} />
+       <SectionHeader title={mnemonicStory ? t("mnemonic") : t("origin")} />
        {etymologyType ? (
         <Badge variant="purple" size="sm">
          {etymologyType}
@@ -121,6 +124,7 @@ function AnatomyOverview({
  radicals: Array<{ char?: string; pinyin?: string; meaning?: string }>;
  components: StructureComponent[];
 }) {
+ const t = useTranslations("Dictionary.sidebar");
  const structureItems = (
   components.length > 0
    ? components.map((component) => ({
@@ -135,8 +139,8 @@ function AnatomyOverview({
 
  return (
   <div className="grid gap-4">
-   <section className="grid gap-3" aria-label="Sơ đồ cấu tạo">
-    <SectionHeader title="Sơ đồ cấu tạo" />
+   <section className="grid gap-3" aria-label={t("structureAria")}>
+    <SectionHeader title={t("structure")} />
     {structureItems.length > 0 ? (
      <div className="flex flex-wrap items-center gap-2">
       {structureItems.map((item, index) => (
@@ -166,13 +170,13 @@ function AnatomyOverview({
         {character}
        </Typography>
        <Typography as="p" variant="caption" tone="muted" leading="tight">
-        kết quả
+        {t("result")}
        </Typography>
       </Card>
      </div>
     ) : (
      <Typography as="p" tone="muted">
-      Chưa có dữ liệu cấu tạo chi tiết.
+      {t("missingStructure")}
      </Typography>
     )}
    </section>
@@ -180,8 +184,8 @@ function AnatomyOverview({
    {components.length > 0 ? (
     <>
      <Separator />
-     <section className="grid gap-3" aria-label="Thành phần">
-      <SectionHeader title="Thành phần" />
+     <section className="grid gap-3" aria-label={t("componentsAria")}>
+      <SectionHeader title={t("components")} />
       <div className="grid gap-3">
        {components.map((component, index) => (
         <div key={`${component.part || "component"}-${index}`} className="flex items-start gap-3">
@@ -190,7 +194,7 @@ function AnatomyOverview({
          </Typography>
          <div className="min-w-0">
           <Typography as="p" tone="default" weight="semibold">
-           {component.name || component.meaning || "Thành phần phụ"}
+           {component.name || component.meaning || t("secondaryComponent")}
           </Typography>
           {component.name && component.meaning ? (
            <Typography as="p" variant="caption" tone="muted">

@@ -1,14 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import viAuth from "../../messages/vi/auth.json";
-import viCommon from "../../messages/vi/common.json";
-import viShell from "../../messages/vi/shell.json";
-import enAuth from "../../messages/en/auth.json";
-import enCommon from "../../messages/en/common.json";
-import enShell from "../../messages/en/shell.json";
-import zhAuth from "../../messages/zh-CN/auth.json";
-import zhCommon from "../../messages/zh-CN/common.json";
-import zhShell from "../../messages/zh-CN/shell.json";
+import type { AppLocale } from "./config";
+import { loadAppMessages } from "./messages";
 
 function collectLeafKeys(value: object, prefix = ""): string[] {
  return Object.entries(value).flatMap(([key, nestedValue]) => {
@@ -20,17 +13,15 @@ function collectLeafKeys(value: object, prefix = ""): string[] {
  });
 }
 
-const localeMessages = {
- en: { Common: enCommon, Shell: enShell, Auth: enAuth },
- "zh-CN": { Common: zhCommon, Shell: zhShell, Auth: zhAuth },
-};
-const baseMessages = { Common: viCommon, Shell: viShell, Auth: viAuth };
+const translatedLocales = ["en", "zh-CN"] satisfies readonly AppLocale[];
 
 describe("i18n message contracts", () => {
- it.each(Object.entries(localeMessages))(
-  "%s exposes the same semantic keys as Vietnamese",
-  (_locale, messages) => {
-   expect(collectLeafKeys(messages).sort()).toEqual(collectLeafKeys(baseMessages).sort());
-  },
- );
+ it.each(translatedLocales)("%s exposes the same semantic keys as Vietnamese", async (locale) => {
+  const [baseMessages, translatedMessages] = await Promise.all([
+   loadAppMessages("vi"),
+   loadAppMessages(locale),
+  ]);
+
+  expect(collectLeafKeys(translatedMessages).sort()).toEqual(collectLeafKeys(baseMessages).sort());
+ });
 });

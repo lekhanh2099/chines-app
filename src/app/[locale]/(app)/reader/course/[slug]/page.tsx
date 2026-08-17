@@ -20,8 +20,6 @@ export default async function ReaderCourseDocumentPage({
     kind="core"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
-    title="Giáo trình chính"
-    description="Các bài đọc theo đơn nguyên, giữ nguyên thứ tự bài và bài luyện của Hanzi Studio."
     initialDocumentSlug={slug}
    />
   </div>

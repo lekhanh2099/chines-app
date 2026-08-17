@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -13,11 +17,13 @@ export function DailyReadingGrammarPanel({
 }: {
  grammarItems: ReadonlyArray<GrammarViewModel>;
 }) {
+ const t = useTranslations("DailyReading.grammar");
+
  if (grammarItems.length === 0) {
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Bài này chưa có mục ngữ pháp riêng.
+     {t("empty")}
     </Typography>
    </Card>
   );
@@ -65,7 +71,7 @@ export function DailyReadingGrammarPanel({
         tracking="wide"
         transform="uppercase"
        >
-        Câu dẫn chứng nằm trong bài đọc
+        {t("evidence")}
        </Typography>
       ) : null}
      </Card>

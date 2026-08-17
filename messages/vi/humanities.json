@@ -1,0 +1,90 @@
+{
+ "shell": {
+  "eyebrow": "Humanities · chương trình",
+  "title": "Văn sử & Dịch thuật",
+  "description": "Chọn track để đọc sâu, luyện lập luận hoặc chuyển ngữ trong cùng một workspace HanziHome.",
+  "navAria": "Điều hướng Văn sử & Dịch thuật",
+  "nav": {
+   "program": "Chương trình",
+   "poetry": "Thơ văn",
+   "history": "Lịch sử–tư tưởng",
+   "translation": "Biên dịch",
+   "interpreting": "Phiên dịch"
+  },
+  "summary": "{count} bài Humanities",
+  "summaryDetail": "10 thơ · 5 lịch sử · 20 biên dịch · 10 phiên dịch"
+ },
+ "track": {
+  "eyebrow": "Đọc sâu · Lập luận · Chuyển ngữ",
+  "titles": {
+   "poetry": "Thơ văn",
+   "history": "Lịch sử–tư tưởng"
+  },
+  "descriptions": {
+   "poetry": "Đọc tác phẩm theo từng lớp: nguyên văn, ngôn ngữ, thi pháp, diễn giải và thực hành.",
+   "history": "Đọc văn bản nguồn, nối nhận định với bằng chứng và tập phân biệt thông tin kiểm chứng được với diễn giải."
+  },
+  "tabs": {
+   "poetry": {
+    "text": "Văn bản",
+    "language": "Ngôn ngữ",
+    "poetics": "Thi pháp",
+    "interpretation": "Diễn giải",
+    "practice": "Luyện tập"
+   },
+   "history": {
+    "text": "Nguồn",
+    "language": "Dòng thời gian",
+    "poetics": "Nhận định",
+    "interpretation": "Góc nhìn",
+    "practice": "Luyện tập"
+   }
+  },
+  "sourceTitle": "Nguồn bài đọc",
+  "glossaryEmpty": "Bài này không có mục từ cần chú giải thêm.",
+  "textTitlePoetry": "Nguyên văn",
+  "textTitleHistory": "Văn bản nguồn",
+  "paragraphCount": "{count} đoạn",
+  "paragraph": "Đoạn {order}",
+  "annotationEmpty": "Chưa có lớp chú giải cho phần này.",
+  "poetics": {
+   "form": "Hình thức",
+   "imagery": "Hình ảnh và chức năng",
+   "parallelism": "Đối và nhịp"
+  },
+  "history": {
+   "actors": "Chủ thể",
+   "perspectives": "Các góc nhìn"
+  },
+  "practice": {
+   "revealed": "Đã mở phương án tham khảo",
+   "reveal": "Mở phương án tham khảo",
+   "answerFallback": "Chưa có phương án mẫu."
+  },
+  "detail": {
+   "back": "← Danh sách {track}",
+   "moduleLesson": "Mô-đun {module} · Bài {lesson}/{total}",
+   "tabsAria": "Các phần {track}",
+   "listenLabel": "Nghe văn bản",
+   "listen": "Nghe bài"
+  },
+  "guide": {
+   "beginner": "Có lộ trình cho người mới",
+   "poetryWhy": "Học thơ giúp đọc câu cô đọng, nhận ra chủ thể bị lược, nghĩa cổ, hình ảnh và cách một bản dịch có thể đúng nghĩa nhưng khác nhau về nhịp và sắc thái.",
+   "historyWhy": "Đọc sử–tư tưởng rèn khả năng phân biệt điều văn bản thật sự nói với cách người sau diễn giải, đồng thời kiểm tra bằng chứng và giới hạn của suy luận.",
+   "poetryStart": "Bắt đầu từ bài bốn câu, đọc từng lớp; không yêu cầu biết vận luật chuyên sâu ngay từ đầu.",
+   "historyStart": "Bắt đầu từ đoạn ngắn và ngụ ngôn; học cách đặt câu hỏi trước khi học niên đại phức tạp.",
+   "startHere": "Bắt đầu từ đây",
+   "poetryMethod": "Bắt đầu bằng cách tách nguyên văn, nghĩa từng câu, hình ảnh và bản dịch; chưa vội đoán “ý tác giả”.",
+   "historyMethod": "Bắt đầu bằng ba nhãn tiếng Việt: thông tin kiểm chứng được, diễn giải và nhận định còn tranh luận."
+  },
+  "library": {
+   "poetry": "Thư viện bài thơ",
+   "history": "Thư viện bài đọc",
+   "description": "Chọn bài theo đúng thứ tự học phần; mỗi bài mở workspace riêng.",
+   "count": "{count} bài trong học phần",
+   "moduleLesson": "Mô-đun {module} · Bài {lesson}/{total}",
+   "open": "Mở bài"
+  }
+ }
+}

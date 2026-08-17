@@ -1,0 +1,29 @@
+{
+ "title": "Hanzi Inspector",
+ "description": "Tra cứu bằng dictionary HanziHome và kiểm tra cách đọc theo ngữ cảnh.",
+ "fields": {
+  "term": "Từ hoặc Hán tự",
+  "context": "Câu ngữ cảnh (không bắt buộc)",
+  "termPlaceholder": "例如：行",
+  "contextPlaceholder": "例如：我去银行办事。"
+ },
+ "actions": {
+  "inspect": "Inspect",
+  "inspecting": "Đang tra…"
+ },
+ "errors": {
+  "contract": "Kết quả tra cứu không đúng contract.",
+  "lookup": "Không tra được dữ liệu.",
+  "complete": "Không thể hoàn tất tra cứu."
+ },
+ "result": {
+  "missingPinyin": "Chưa có pinyin",
+  "meaning": "Nghĩa",
+  "missingMeaning": "Chưa có nghĩa",
+  "sinoVietnamese": "Hán Việt: {value}",
+  "contextReading": "Cách đọc trong ngữ cảnh",
+  "unresolvedReading": "Chưa xác định được cách đọc",
+  "unresolvedWarning": "Một số ký tự chưa có cách đọc chắc chắn; hãy kiểm tra lại context hoặc dictionary.",
+  "rejectedSourcePinyin": "Pinyin nguồn không khớp độ dài văn bản nên đã không được dùng làm fallback."
+ }
+}

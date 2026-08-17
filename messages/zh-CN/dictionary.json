@@ -1,0 +1,129 @@
+{
+ "srs": {
+  "eyebrow": "词汇 SRS",
+  "title": "已收藏词汇复习库",
+  "description": "查找从词典或 Inspector 收藏的词语，并直接进入需要复习的条目。",
+  "showing": "当前显示 {count} 个词",
+  "allVocab": "全部词汇",
+  "searchAria": "搜索词汇复习库",
+  "searchPlaceholder": "搜索汉字、拼音、汉越音、释义...",
+  "search": "搜索",
+  "missingSchema": "当前数据库尚未包含词汇 SRS 表。请先应用 `user_vocab_progress` migration，本页面才能显示数据。",
+  "emptySearchTitle": "没有找到符合条件的词",
+  "emptySearchDescription": "请尝试其他关键词或清空搜索内容。",
+  "emptyTitle": "SRS 中还没有词汇",
+  "emptyDescription": "打开词典条目并点击“保存到 SRS”，即可加入复习库。",
+  "savedWordsAria": "已收藏词汇",
+  "missingPinyin": "暂无拼音",
+  "missingMeaning": "暂无合适释义",
+  "levels": { "new": "新词", "reviewing": "复习中", "good": "良好", "mastered": "已掌握" }
+ },
+ "word": {
+  "notFoundTitle": "未找到词汇",
+  "notFoundDescription": "当前数据中没有这个词。",
+  "backHome": "返回 HanziHome",
+  "home": "HanziHome",
+  "supplementTitle": "只补充缺失部分，不覆盖已导入的数据",
+  "supplement": "补充缺失内容",
+  "confusion": "易混淆",
+  "speak": "朗读词语",
+  "stopSpeak": "停止朗读",
+  "saved": "已保存",
+  "saveSrs": "保存到 SRS",
+  "docsTitle": "结构化学习视图",
+  "docsDescription": "保持七个学习部分，方便深入学习、复习例句并避免混淆。",
+  "sections": {
+   "hanViet": "汉越音与越南语联系",
+   "hanVietLabel": "汉越音：",
+   "meaningLabel": "释义：",
+   "decomposition": "拆字",
+   "comparisons": "近义词辨析",
+   "collocations": "固定搭配",
+   "examples": "例句",
+   "culture": "中越 / 文化",
+   "usage": "使用提示"
+  },
+  "missing": {
+   "detailMeaning": "暂无详细释义。",
+   "decomposition": "暂无拆字信息。",
+   "culture": "暂无文化说明。",
+   "usage": "暂无单独的使用提示。",
+   "section": "该部分暂无数据。",
+   "meaning": "暂无可显示的释义数据。",
+   "related": "暂无相关词数据。",
+   "wordMeaning": "暂无释义。"
+  },
+  "meaningSection": {
+   "title": "释义与例句",
+   "description": "先学习每个义项，再直接查看对应例句。",
+   "count": "{count} 个义项",
+   "extraExamples": "扩展例句"
+  },
+  "related": {
+   "title": "词汇关联",
+   "description": "通过常见复合词、同义词和反义词扩展词汇量。",
+   "count": "{count} 项",
+   "compounds": "常见复合词",
+   "compoundsEmpty": "暂无相关复合词。",
+   "synonyms": "同义词",
+   "synonymsEmpty": "暂无基础同义词。",
+   "antonyms": "反义词",
+   "antonymsEmpty": "暂无基础反义词。"
+  },
+  "insights": {
+   "title": "记忆提示与使用说明",
+   "description": "重点关注记忆方法、易错点和使用逻辑。",
+   "decomposition": "拆字",
+   "comparisons": "近义词辨析",
+   "collocations": "固定搭配",
+   "culture": "中越",
+   "usage": "使用提示",
+   "usageNotes": "用词说明",
+   "coreLogic": "核心逻辑"
+  },
+  "personalNote": {
+   "title": "个人笔记",
+   "description": "保存自己的记忆方法、使用语境或容易混淆的要点。",
+   "save": "保存笔记",
+   "placeholder": "记录记忆方法、使用语境、易混点..."
+  },
+  "ai": {
+   "loading": "正在分析详细数据...",
+   "emptyTitle": "该条目还没有详细分析。",
+   "emptyDescription": "使用 AI 补充释义、例句和学习提示。",
+   "request": "使用 AI 分析"
+  }
+ },
+ "sentence": {
+  "backHome": "HanziHome",
+  "title": "句子翻译",
+  "description": "先理解整句，再在需要时逐个查看汉字。",
+  "pinyin": "拼音",
+  "translation": "翻译",
+  "translating": "正在翻译句子",
+  "missingTranslation": "这句话暂时没有翻译。",
+  "characters": "逐字查询",
+  "charactersDescription": "每个汉字都会打开独立的词典页面。"
+ },
+ "sidebar": {
+  "loading": "正在加载字形结构",
+  "writing": "汉字书写",
+  "writingDescription": "查看笔顺，并在词语中选择单个汉字分别练习。",
+  "inspect": "单独查询",
+  "selectCharacter": "选择要分析的汉字",
+  "mnemonic": "记忆提示",
+  "origin": "字源",
+  "structureAria": "字形结构图",
+  "structure": "字形结构",
+  "result": "结果",
+  "missingStructure": "暂无详细字形结构数据。",
+  "componentsAria": "组成部分",
+  "components": "组成部分",
+  "secondaryComponent": "辅助部件"
+ },
+ "writer": {
+  "correct": "写对了！",
+  "strokes": "笔顺",
+  "practice": "练习书写"
+ }
+}

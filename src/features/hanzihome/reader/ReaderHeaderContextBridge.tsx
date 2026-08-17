@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useRouter } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { BookOpen } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import {
@@ -22,6 +22,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
+import { useRouter } from "@/i18n/navigation";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
 
@@ -45,23 +46,6 @@ function readMetadataNumber(document: ReaderDocumentRow, key: string) {
  return typeof nestedValue === "number" ? nestedValue : null;
 }
 
-function readerNavigationLabel(document: ReaderDocumentRow): string {
- const unit = document.unit_id?.replace(/^U/u, "") ?? "";
- if (document.kind === "core" && unit && document.reading_number !== null) {
-  return `Chủ đề ${unit} · Bài đọc ${document.reading_number} — ${document.title_zh}`;
- }
- if (document.kind === "hsk") {
-  const level = readMetadataNumber(document, "level");
-  const lesson = readMetadataNumber(document, "lesson_number");
-  const volume = level === null ? "HSK" : `HSK ${level}`;
-  const lessonLabel = lesson === null ? "" : ` · Bài ${lesson}`;
-  const readingLabel =
-   document.reading_number === null ? "" : ` · Bài đọc ${document.reading_number}`;
-  return `${volume}${lessonLabel}${readingLabel} — ${document.title_zh}`;
- }
- return `${document.title_zh}${document.title_vi ? ` — ${document.title_vi}` : ""}`;
-}
-
 export function ReaderHeaderContextBridge({
  backHref,
  backLabel,
@@ -73,22 +57,49 @@ export function ReaderHeaderContextBridge({
  navigationDocuments: ReadonlyArray<ReaderDocumentRow>;
  selectedDocument: ReaderDocumentRow;
 }) {
+ const t = useTranslations("Reader.document.header");
  const router = useRouter();
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const selectedIndex = navigationDocuments.findIndex(
   (document) => document.id === selectedDocument.id,
  );
  const progressLabel = `${Math.max(1, selectedIndex + 1)}/${Math.max(1, navigationDocuments.length)}`;
- const sectionLabel = selectedDocument.kind === "hsk" ? "Đọc HSK" : "Bài học";
- const content = useMemo(
-  () => (
+ const sectionLabel = selectedDocument.kind === "hsk" ? t("hskSection") : t("lessonSection");
+ const content = useMemo(() => {
+  const readerNavigationLabel = (document: ReaderDocumentRow): string => {
+   const unit = document.unit_id?.replace(/^U/u, "") ?? "";
+   if (document.kind === "core" && unit && document.reading_number !== null) {
+    return t("coreNavigationLabel", {
+     unit,
+     reading: document.reading_number,
+     title: document.title_zh,
+    });
+   }
+   if (document.kind === "hsk") {
+    const level = readMetadataNumber(document, "level");
+    const lesson = readMetadataNumber(document, "lesson_number");
+    const volume = level === null ? "HSK" : `HSK ${level}`;
+    const lessonLabel = lesson === null ? "" : t("lessonPart", { lesson });
+    const readingLabel =
+     document.reading_number === null ? "" : t("readingPart", { reading: document.reading_number });
+    return t("hskNavigationLabel", {
+     volume,
+     lesson: lessonLabel,
+     reading: readingLabel,
+     title: document.title_zh,
+    });
+   }
+   return `${document.title_zh}${document.title_vi ? ` — ${document.title_vi}` : ""}`;
+  };
+
+  return (
    <AppHeaderBreadcrumb
-    aria-label="Điều hướng bài đọc"
+    aria-label={t("navigationAria")}
     className="min-w-0 max-w-[min(44rem,78vw)] justify-self-start md:max-w-[min(64rem,78vw)]"
    >
     <AppHeaderBreadcrumbItem className="hidden md:flex">
      <AppHeaderBreadcrumbLink href="/reader" disabled={focusModeEnabled} icon={<BookOpen />}>
-      Học
+      {t("study")}
      </AppHeaderBreadcrumbLink>
     </AppHeaderBreadcrumbItem>
     <AppHeaderBreadcrumbSeparator className="hidden md:flex" />
@@ -114,7 +125,7 @@ export function ReaderHeaderContextBridge({
          variant="breadcrumb"
          width="full"
          className="min-w-0 max-w-none"
-         aria-label="Chọn bài đọc khác"
+         aria-label={t("chooseReading")}
         >
          <SelectValue />
         </SelectTrigger>
@@ -139,18 +150,18 @@ export function ReaderHeaderContextBridge({
      )}
     </AppHeaderBreadcrumbItem>
    </AppHeaderBreadcrumb>
-  ),
-  [
-   backHref,
-   backLabel,
-   focusModeEnabled,
-   navigationDocuments,
-   progressLabel,
-   router,
-   sectionLabel,
-   selectedDocument,
-  ],
- );
+  );
+ }, [
+  backHref,
+  backLabel,
+  focusModeEnabled,
+  navigationDocuments,
+  progressLabel,
+  router,
+  sectionLabel,
+  selectedDocument,
+  t,
+ ]);
 
  useEffect(() => {
   headerToolbarStore.actions.setOwnedContent(HEADER_OWNER_ID, content);

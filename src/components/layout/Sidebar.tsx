@@ -67,7 +67,7 @@ function NavRow({
    aria-current={active ? "page" : undefined}
    aria-label={collapsed ? label : undefined}
    title={collapsed ? label : undefined}
-   className={collapsed ? "w-10" : "w-full"}
+   className={collapsed ? "w-10" : "w-full min-w-0 overflow-hidden"}
   >
    <Link href={item.href} prefetch={false} onClick={onNavigate}>
     <Icon data-icon="inline-start" />
@@ -165,7 +165,7 @@ export function Sidebar() {
           variant="navigation"
           size="menu"
           align="between"
-          className="w-full"
+          className="w-full min-w-0"
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
           onClick={() => {
@@ -178,30 +178,28 @@ export function Sidebar() {
            );
           }}
          >
-          <span className="flex min-w-0 items-center gap-3">
+          <span className="flex min-w-0 flex-1 items-center gap-3">
            <GroupIcon data-icon="inline-start" />
-           <Typography as="span" clamp="one" className="min-w-0 flex-1">
+           <Typography as="span" clamp="one" className="min-w-0 flex-1 text-start">
             {groupLabel}
            </Typography>
           </span>
           <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
          </Button>
 
-         <div className="grid gap-1 pl-4">
-          <div
-           id={`sidebar-group-${group.id}`}
-           hidden={!groupOpen}
-           className="grid gap-1 border-l border-border-default pb-1 pl-2"
-          >
-           {group.itemIds.map((itemId) => (
-            <NavRow
-             key={itemId}
-             itemId={itemId}
-             active={isActive(pathname, searchParams, navigationItems[itemId].href)}
-             collapsed={false}
-            />
-           ))}
-          </div>
+         <div
+          id={`sidebar-group-${group.id}`}
+          hidden={!groupOpen}
+          className="grid gap-1 border-l border-border-default pb-1 pl-2"
+         >
+          {group.itemIds.map((itemId) => (
+           <NavRow
+            key={itemId}
+            itemId={itemId}
+            active={isActive(pathname, searchParams, navigationItems[itemId].href)}
+            collapsed={false}
+           />
+          ))}
          </div>
         </section>
        );
@@ -298,10 +296,7 @@ export function MobileBottomNavigation() {
          ))}
         </section>
        ))}
-       <section
-        className="grid content-start gap-1.5"
-        aria-label={t("navigation.groups.system")}
-       >
+       <section className="grid content-start gap-1.5" aria-label={t("navigation.groups.system")}>
         <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
          {t("navigation.groups.system")}
         </Typography>

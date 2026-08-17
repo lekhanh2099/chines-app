@@ -1,46 +1,10 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Typography } from "@/components/ui/typography";
 import { useMemo, useState } from "react";
-import {
- API_KEY_PROVIDER_OPTIONS,
- ApiKeyProviderSchema,
- getApiKeyProviderDocsUrl,
- type ApiKeyProvider,
-} from "@/lib/api-key-providers";
-import {
- getApiKeyModelDescription,
- getApiKeyModelOptions,
- getDefaultApiKeyModel,
-} from "@/lib/api-key-models";
-import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Spinner } from "@/components/ui/spinner";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
-import {
- Dialog,
- DialogBody,
- DialogContent,
- DialogDescription,
- DialogFooter,
- DialogHeader,
- DialogTitle,
- DialogTrigger,
-} from "@/components/ui/dialog";
-import { toast } from "sonner";
 import {
  Check,
  ClipboardPaste,
+ Cpu,
  Eye,
  EyeOff,
  ExternalLink,
@@ -51,8 +15,46 @@ import {
  Plus,
  ShieldCheck,
  Trash2,
- Cpu,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+ DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { Spinner } from "@/components/ui/spinner";
+import { Typography } from "@/components/ui/typography";
+import { getApiKeyModelOptions, getDefaultApiKeyModel } from "@/lib/api-key-models";
+import {
+ API_KEY_PROVIDER_OPTIONS,
+ ApiKeyProviderSchema,
+ getApiKeyProviderDocsUrl,
+ type ApiKeyProvider,
+} from "@/lib/api-key-providers";
+import {
+ getApiKeyModelDescriptionKey,
+ getApiKeyProviderDescriptionKey,
+} from "@/features/settings/model-description-keys";
+import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 
 const EMPTY_SUMMARY = {
  total: 0,
@@ -64,6 +66,8 @@ const EMPTY_SUMMARY = {
 };
 
 export default function ApiKeyManagerSection() {
+ const t = useTranslations("Settings");
+ const common = useTranslations("Common");
  const [isDialogOpen, setIsDialogOpen] = useState(false);
  const [provider, setProvider] = useState<ApiKeyProvider>("groq");
  const [model, setModel] = useState(getDefaultApiKeyModel("groq"));
@@ -83,7 +87,6 @@ export default function ApiKeyManagerSection() {
  const selectedKeyId = keys.find((key) => key.isActive)?.id ?? null;
  const summary = query.data?.summary ?? EMPTY_SUMMARY;
  const schemaReady = query.data?.schemaReady ?? true;
- const schemaMessage = query.data?.schemaMessage ?? null;
  const isLoading = query.isPending;
  const isSubmitting = addMutation.isPending;
 
@@ -97,44 +100,44 @@ export default function ApiKeyManagerSection() {
    const text = await navigator.clipboard.readText();
    if (text) {
     setApiKey(text.trim());
-    toast.info("Đã dán key từ clipboard.");
+    toast.info(t("apiKeys.pasted"));
    }
   } catch {
-   toast.error("Không thể truy cập clipboard.");
+   toast.error(t("apiKeys.clipboardError"));
   }
  }
 
  async function handleAddKey() {
   if (!apiKey.trim()) {
-   toast.error("Vui lòng nhập API key.");
+   toast.error(t("apiKeys.keyRequired"));
    return;
   }
 
   try {
-   const data = await addMutation.mutateAsync({
+   await addMutation.mutateAsync({
     apiKey: apiKey.trim(),
     label: label.trim() || undefined,
     provider,
     model,
    });
-   toast.success(data.message);
+   toast.success(t("apiKeys.added"));
    setApiKey("");
    setLabel("");
    setProvider("groq");
    setModel(getDefaultApiKeyModel("groq"));
    setShowKey(false);
    setIsDialogOpen(false);
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể thêm API key.");
+  } catch {
+   toast.error(t("apiKeys.addError"));
   }
  }
 
  async function handleModelChange(keyId: string, nextModel: string) {
   try {
    await modelMutation.mutateAsync({ keyId, model: nextModel });
-   toast.success("Đã đổi model.");
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể đổi model.");
+   toast.success(t("apiKeys.modelChanged"));
+  } catch {
+   toast.error(t("apiKeys.modelChangeError"));
   }
  }
 
@@ -144,8 +147,8 @@ export default function ApiKeyManagerSection() {
     keyId: key.id,
     isActive: !key.isActive,
    });
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể cập nhật trạng thái key.");
+  } catch {
+   toast.error(t("apiKeys.toggleError"));
   }
  }
 
@@ -155,17 +158,17 @@ export default function ApiKeyManagerSection() {
  ) {
   try {
    await moveMutation.mutateAsync({ keyId, direction });
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể đổi thứ tự key.");
+  } catch {
+   toast.error(t("apiKeys.moveError"));
   }
  }
 
  async function handleDeleteKey(keyId: string) {
   try {
    await deleteMutation.mutateAsync(keyId);
-   toast.success("Đã xóa API key.");
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : "Không thể xóa key.");
+   toast.success(t("apiKeys.deleted"));
+  } catch {
+   toast.error(t("apiKeys.deleteError"));
   }
  }
 
@@ -181,11 +184,10 @@ export default function ApiKeyManagerSection() {
       className="flex items-center gap-2"
      >
       <Cpu className="size-5 text-accent-text" />
-      API key cá nhân cho Xem chi tiết
+      {t("apiKeys.title")}
      </Typography>
      <Typography as="p" tone="secondary" leading="standard">
-      Tất cả model trong phần này đều cần API key cá nhân. Provider có thể cấp quota miễn phí, nhưng
-      app vẫn cần key để gọi API. Khi request lỗi, app không tự đổi key hoặc model.
+      {t("apiKeys.description")}
      </Typography>
     </div>
 
@@ -193,19 +195,19 @@ export default function ApiKeyManagerSection() {
      <DialogTrigger asChild>
       <Button disabled={isLoading || !schemaReady}>
        <Plus data-icon="inline-start" />
-       Thêm API key
+       {t("apiKeys.add")}
       </Button>
      </DialogTrigger>
      <DialogContent>
       <DialogHeader>
-       <DialogTitle>Thêm API key mới</DialogTitle>
-       <DialogDescription>Chọn provider, model và nhập key tương ứng.</DialogDescription>
+       <DialogTitle>{t("apiKeys.dialogTitle")}</DialogTitle>
+       <DialogDescription>{t("apiKeys.dialogDescription")}</DialogDescription>
       </DialogHeader>
 
       <DialogBody>
        <div className="grid gap-2">
         <Label htmlFor="api-key-provider" variant="label" tone="default" weight="semibold">
-         Provider
+         {t("apiKeys.provider")}
         </Label>
         <Select
          value={provider}
@@ -231,7 +233,7 @@ export default function ApiKeyManagerSection() {
 
        <div className="grid gap-2">
         <Label htmlFor="api-key-model" variant="label" tone="default" weight="semibold">
-         Model
+         {t("apiKeys.model")}
         </Label>
         <Select value={model} onValueChange={setModel}>
          <SelectTrigger id="api-key-model" width="full">
@@ -246,7 +248,7 @@ export default function ApiKeyManagerSection() {
          </SelectContent>
         </Select>
         <Typography as="p" variant="bodySmall" tone="muted">
-         {modelOptions.find((option) => option.value === model)?.description}
+         {t(getApiKeyModelDescriptionKey(provider, model))}
         </Typography>
        </div>
 
@@ -255,14 +257,16 @@ export default function ApiKeyManagerSection() {
          <Typography as="p" tone="default" weight="semibold">
           {selectedProviderOption.label}
          </Typography>
-         <Typography as="p">{selectedProviderOption.description}</Typography>
+         <Typography as="p">
+          {t(getApiKeyProviderDescriptionKey(selectedProviderOption.value))}
+         </Typography>
          <a
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-1 font-medium text-accent-text transition hover:underline"
          >
-          Mở trang lấy key
+          {t("apiKeys.openDocs")}
           <ExternalLink className="h-3.5 w-3.5" />
          </a>
         </div>
@@ -270,26 +274,26 @@ export default function ApiKeyManagerSection() {
 
        <Label variant="label" className="flex flex-col gap-2">
         <Typography tone="default" weight="semibold">
-         Tên hiển thị
+         {t("apiKeys.displayName")}
         </Typography>
         <Input
          value={label}
          onChange={(event) => setLabel(event.target.value)}
-         placeholder="Ví dụ: Groq tra từ"
+         placeholder={t("apiKeys.displayNamePlaceholder")}
          maxLength={80}
         />
        </Label>
 
        <Label variant="label" className="flex flex-col gap-2">
         <Typography tone="default" weight="semibold">
-         API key
+         {t("apiKeys.apiKey")}
         </Typography>
         <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] gap-2">
          <Input
           type={showKey ? "text" : "password"}
           value={apiKey}
           onChange={(event) => setApiKey(event.target.value)}
-          placeholder={selectedProviderOption?.placeholder || "Dán API key vào đây"}
+          placeholder={selectedProviderOption?.placeholder || t("apiKeys.apiKeyPlaceholder")}
           autoComplete="off"
           spellCheck={false}
          />
@@ -298,8 +302,8 @@ export default function ApiKeyManagerSection() {
           variant="outline"
           size="icon"
           onClick={() => setShowKey((current) => !current)}
-          aria-label={showKey ? "Ẩn API key" : "Hiện API key"}
-          title={showKey ? "Ẩn API key" : "Hiện API key"}
+          aria-label={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
+          title={showKey ? t("apiKeys.hideKey") : t("apiKeys.showKey")}
          >
           {showKey ? <EyeOff /> : <Eye />}
          </Button>
@@ -307,8 +311,8 @@ export default function ApiKeyManagerSection() {
           variant="outline"
           size="icon"
           onClick={handlePaste}
-          aria-label="Dán API key"
-          title="Dán API key"
+          aria-label={t("apiKeys.pasteKey")}
+          title={t("apiKeys.pasteKey")}
          >
           <ClipboardPaste />
          </Button>
@@ -318,7 +322,7 @@ export default function ApiKeyManagerSection() {
 
       <DialogFooter>
        <Button variant="outline" onClick={() => setIsDialogOpen(false)} disabled={isSubmitting}>
-        Hủy
+        {common("actions.cancel")}
        </Button>
        <Button onClick={handleAddKey} disabled={!apiKey.trim() || isSubmitting || !schemaReady}>
         {isSubmitting ? (
@@ -326,7 +330,7 @@ export default function ApiKeyManagerSection() {
         ) : (
          <ShieldCheck data-icon="inline-start" />
         )}
-        Verify và lưu
+        {t("apiKeys.verifySave")}
        </Button>
       </DialogFooter>
      </DialogContent>
@@ -335,31 +339,30 @@ export default function ApiKeyManagerSection() {
 
    {!schemaReady && (
     <div className="rounded-xl border border-warning/30 bg-warning-subtle px-4 py-3 leading-6 text-warning-text">
-     {schemaMessage ||
-      "Database chưa sẵn sàng cho user_api_keys. Hãy apply migration hoặc repair migration rồi tải lại trang."}
+     {t("apiKeys.schemaNotReady")}
     </div>
    )}
 
    <Typography as="p" variant="bodySmall" tone="muted">
-    {summary.total} key · {summary.active} đang bật · chỉ áp dụng khi mở phân tích chi tiết
+    {t("apiKeys.summary", { total: summary.total, active: summary.active })}
    </Typography>
 
    {query.isError ? (
     <div className="flex flex-col items-start gap-3 rounded-xl border border-danger/30 bg-danger/5 p-5 text-danger-text">
      <Typography as="p" weight="semibold">
-      Không tải được danh sách API key.
+      {t("apiKeys.loadError")}
      </Typography>
      <Typography as="p" variant="bodySmall">
-      Kiểm tra kết nối rồi thử lại. Dữ liệu key hiện tại chưa bị thay đổi.
+      {t("apiKeys.loadErrorDescription")}
      </Typography>
      <Button variant="outline" size="sm" onClick={() => void query.refetch()}>
-      Thử lại
+      {common("actions.retry")}
      </Button>
     </div>
    ) : isLoading ? (
     <div className="flex items-center gap-3 rounded-xl border border-border-default bg-bg-primary p-5 text-text-secondary">
      <Loader2 className="h-4 w-4 animate-spin" />
-     Đang tải danh sách API key...
+     {t("apiKeys.loading")}
     </div>
    ) : keys.length === 0 ? (
     <div className="flex items-center gap-3 rounded-xl border border-dashed border-border-default bg-bg-primary p-4">
@@ -368,12 +371,10 @@ export default function ApiKeyManagerSection() {
      </div>
      <div className="grid gap-1">
       <Typography as="p" tone="default" weight="semibold">
-       Chưa có API key cá nhân
+       {t("apiKeys.empty")}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="secondary" leading="compact">
-       {schemaReady
-        ? "Tra nhanh vẫn hoạt động bằng model hệ thống. Chỉ thêm key khi cần model riêng cho Xem chi tiết."
-        : "Apply migration database trước, rồi quay lại thêm key."}
+       {schemaReady ? t("apiKeys.emptyReady") : t("apiKeys.emptyNotReady")}
       </Typography>
      </div>
     </div>
@@ -404,7 +405,11 @@ export default function ApiKeyManagerSection() {
             size="sm"
            >
             {key.isActive ? <Check className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
-            {key.id === selectedKeyId ? "Đang dùng" : key.isActive ? "Đang bật" : "Tạm dừng"}
+            {key.id === selectedKeyId
+             ? t("apiKeys.statusSelected")
+             : key.isActive
+               ? t("apiKeys.statusActive")
+               : t("apiKeys.statusPaused")}
            </Badge>
           </div>
 
@@ -420,14 +425,14 @@ export default function ApiKeyManagerSection() {
 
          <div className="grid min-w-0 gap-1.5">
           <Typography variant="caption" tone="muted" weight="semibold">
-           Model sử dụng
+           {t("apiKeys.modelUsed")}
           </Typography>
           <Select
            value={key.defaultModel || getDefaultApiKeyModel(key.provider)}
            onValueChange={(value) => void handleModelChange(key.id, value)}
            disabled={isBusy || !schemaReady}
           >
-           <SelectTrigger width="full" aria-label={`Model cho ${key.label}`}>
+           <SelectTrigger width="full" aria-label={t("apiKeys.modelAria", { label: key.label })}>
             <SelectValue />
            </SelectTrigger>
            <SelectContent align="start">
@@ -435,7 +440,9 @@ export default function ApiKeyManagerSection() {
             !getApiKeyModelOptions(key.provider).some(
              (option) => option.value === key.defaultModel,
             ) ? (
-             <SelectItem value={key.defaultModel}>{key.defaultModel} (đã lưu)</SelectItem>
+             <SelectItem value={key.defaultModel}>
+              {key.defaultModel} ({t("ai.savedSuffix")})
+             </SelectItem>
             ) : null}
             {getApiKeyModelOptions(key.provider).map((option) => (
              <SelectItem key={option.value} value={option.value}>
@@ -445,7 +452,7 @@ export default function ApiKeyManagerSection() {
            </SelectContent>
           </Select>
           <Typography as="span" variant="caption" tone="muted" leading="compact">
-           {getApiKeyModelDescription(key.provider, key.defaultModel)}
+           {t(getApiKeyModelDescriptionKey(key.provider, key.defaultModel))}
           </Typography>
          </div>
 
@@ -457,7 +464,7 @@ export default function ApiKeyManagerSection() {
             onClick={() => handleMoveKey(key.id, "up")}
             disabled={isBusy || !schemaReady}
            >
-            Đưa lên
+            {t("apiKeys.moveUp")}
            </Button>
           ) : null}
           <Button
@@ -473,7 +480,7 @@ export default function ApiKeyManagerSection() {
            ) : (
             <Play data-icon="inline-start" />
            )}
-           {key.isActive ? "Tạm dừng" : "Bật lại"}
+           {key.isActive ? t("apiKeys.pause") : t("apiKeys.resume")}
           </Button>
           <Button
            variant="destructive"
@@ -482,7 +489,7 @@ export default function ApiKeyManagerSection() {
            disabled={isBusy || !schemaReady}
           >
            <Trash2 className="h-4 w-4" />
-           Xóa
+           {t("apiKeys.delete")}
           </Button>
          </div>
         </div>

@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PenTool, Play } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 
 type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
@@ -20,14 +22,13 @@ type CharacterWriterCardProps = {
 };
 
 function CharacterWriterCard({ character }: CharacterWriterCardProps) {
+ const t = useTranslations("Dictionary.writer");
  const containerRef = useRef<HTMLDivElement>(null);
  const writerRef = useRef<{ value?: HanziWriterInstance }>({});
  const [quizMode, setQuizMode] = useState(false);
 
  useEffect(() => {
-  if (!containerRef.current || typeof window === "undefined") {
-   return;
-  }
+  if (!containerRef.current || typeof window === "undefined") return;
 
   const container = containerRef.current;
   const writerState = writerRef.current;
@@ -40,9 +41,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
   container.innerHTML = "";
 
   const drawGrid = () => {
-   if (container.querySelector(".hanzi-grid-bg")) {
-    return;
-   }
+   if (container.querySelector(".hanzi-grid-bg")) return;
 
    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
    svg.setAttribute("class", "hanzi-grid-bg");
@@ -73,9 +72,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
   void import("hanzi-writer")
    .then(async (HanziWriterModule) => {
-    if (!isActive) {
-     return;
-    }
+    if (!isActive) return;
 
     const HanziWriter = HanziWriterModule.default;
     const strokeColor = getThemeColor("--foreground");
@@ -85,10 +82,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
     try {
      const charData = await HanziWriter.loadCharacterData(character);
-
-     if (!isActive) {
-      return;
-     }
+     if (!isActive) return;
 
      drawGrid();
      const writer = HanziWriter.create(container, character, {
@@ -108,10 +102,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
 
      writerState.value = writer;
      requestAnimationFrame(() => {
-      if (!isActive) {
-       return;
-      }
-
+      if (!isActive) return;
       void writer.hideCharacter?.({ duration: 0 })?.then(() => writer.animateCharacter?.());
      });
     } catch {
@@ -119,11 +110,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
     }
    })
    .catch(() => {
-    if (!isActive) {
-     return;
-    }
-
-    renderStaticCharacter();
+    if (isActive) renderStaticCharacter();
    });
 
   return () => {
@@ -139,14 +126,12 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
  };
 
  const handleQuizMode = () => {
-  if (!writerRef.current.value?.quiz) {
-   return;
-  }
+  if (!writerRef.current.value?.quiz) return;
 
   setQuizMode(true);
   void writerRef.current.value.quiz({
    onComplete: () => {
-    toast.success("Viết đúng rồi!");
+    toast.success(t("correct"));
     setQuizMode(false);
    },
   });
@@ -159,7 +144,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
    <div className="flex flex-wrap items-center justify-center gap-2">
     <Button variant="outline" size="sm" className="min-w-0" onClick={handlePlayAnimation}>
      <Play className="h-3.5 w-3.5" />
-     Nét viết
+     {t("strokes")}
     </Button>
     <Button
      variant="ghost"
@@ -169,7 +154,7 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
      disabled={quizMode}
     >
      <PenTool className="h-3.5 w-3.5" />
-     Tập viết
+     {t("practice")}
     </Button>
    </div>
   </div>

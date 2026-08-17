@@ -1,0 +1,20 @@
+{
+ "openTabs": "已打开的笔记",
+ "options": "标签页 {title} 的选项",
+ "moveLeft": "向左移动",
+ "moveRight": "向右移动",
+ "closeCurrent": "关闭当前标签页",
+ "closeOthers": "关闭其他标签页",
+ "closeAll": "关闭所有标签页",
+ "focusBlocksNew": "专注模式正在阻止打开新笔记",
+ "openMore": "打开更多笔记",
+ "focusSelectBlocked": "专注模式已开启，只能选择已经打开的笔记标签。",
+ "focusOpenBlocked": "专注模式已开启，无法打开更多笔记。",
+ "empty": "请选择一条笔记开始",
+ "untitled": "未命名笔记",
+ "navigation": "笔记导航",
+ "back": "笔记",
+ "focusBlocksLeave": "专注模式正在阻止离开当前笔记",
+ "quickSelect": "快速选择笔记",
+ "selectPlaceholder": "选择笔记"
+}

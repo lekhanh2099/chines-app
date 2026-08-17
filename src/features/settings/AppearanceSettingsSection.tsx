@@ -1,9 +1,9 @@
 "use client";
 
 import { Check, Monitor, Moon, Palette, Sun, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
- THEME_PALETTE_META,
  ThemeModeSchema,
  ThemePaletteSchema,
  type ThemeMode,
@@ -16,30 +16,40 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
 
-const themeModeItems: Array<{
- key: ThemeMode;
- label: string;
- compactLabel: string;
- icon: LucideIcon;
-}> = [
- {
-  key: ThemeModeSchema.enum.system,
-  label: "Theo thiết bị",
-  compactLabel: "Thiết bị",
-  icon: Monitor,
- },
- { key: ThemeModeSchema.enum.light, label: "Sáng", compactLabel: "Sáng", icon: Sun },
- { key: ThemeModeSchema.enum.dark, label: "Tối", compactLabel: "Tối", icon: Moon },
-];
-
-const paletteOptions = ThemePaletteSchema.options.map((value) => ({
- value,
- ...THEME_PALETTE_META[value],
-}));
-
 export function AppearanceSettingsSection() {
+ const t = useTranslations("Settings.appearance");
  const { mode, palette, setMode, setPalette } = useTheme();
- const selectedPalette = THEME_PALETTE_META[palette];
+ const themeModeItems: Array<{
+  key: ThemeMode;
+  label: string;
+  compactLabel: string;
+  icon: LucideIcon;
+ }> = [
+  {
+   key: ThemeModeSchema.enum.system,
+   label: t("modes.system"),
+   compactLabel: t("modes.systemCompact"),
+   icon: Monitor,
+  },
+  {
+   key: ThemeModeSchema.enum.light,
+   label: t("modes.light"),
+   compactLabel: t("modes.light"),
+   icon: Sun,
+  },
+  {
+   key: ThemeModeSchema.enum.dark,
+   label: t("modes.dark"),
+   compactLabel: t("modes.dark"),
+   icon: Moon,
+  },
+ ];
+ const paletteOptions = ThemePaletteSchema.options.map((value) => ({
+  value,
+  label: t(`palettes.${value}.label`),
+  description: t(`palettes.${value}.description`),
+ }));
+ const selectedPalette = paletteOptions.find((option) => option.value === palette);
 
  return (
   <Card variant="section" padding="lg" className="grid gap-5">
@@ -49,12 +59,10 @@ export function AppearanceSettingsSection() {
     </IconTile>
     <div className="grid min-w-0 gap-1">
      <Typography as="h2" variant="sectionTitle" weight="bold">
-      Giao diện
+      {t("title")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted" leading="standard">
-      Chế độ sáng tối quyết định nền tảng surface. Bảng màu thêm sắc rõ hơn cho canvas, sắc nhẹ cho
-      Card và dùng cùng màu cho primary, focus, trạng thái chọn; popover, input và border vẫn giữ hệ
-      trung tính để nội dung dễ đọc.
+      {t("description")}
      </Typography>
     </div>
    </div>
@@ -62,10 +70,10 @@ export function AppearanceSettingsSection() {
    <div className="grid gap-3">
     <div className="grid gap-1">
      <Typography as="h3" variant="label" weight="bold">
-      Chế độ sáng tối
+      {t("modeTitle")}
      </Typography>
      <Typography as="p" variant="caption" tone="muted">
-      “Theo thiết bị” tự đổi khi hệ điều hành đổi giao diện.
+      {t("modeDescription")}
      </Typography>
     </div>
     <SegmentedControl<ThemeMode>
@@ -73,7 +81,7 @@ export function AppearanceSettingsSection() {
      items={themeModeItems}
      onChange={setMode}
      density="touch"
-     aria-label="Chọn chế độ sáng tối"
+     aria-label={t("modeAria")}
     />
    </div>
 
@@ -82,16 +90,16 @@ export function AppearanceSettingsSection() {
    <div className="grid gap-3">
     <div className="grid gap-1">
      <Typography as="h3" variant="label" weight="bold">
-      Bảng màu giao diện
+      {t("paletteTitle")}
      </Typography>
      <Typography as="p" variant="caption" tone="muted">
-      Đổi sắc nền trang, Card và màu primary/selected/navigation active theo cùng một palette.
+      {t("paletteDescription")}
      </Typography>
     </div>
 
     <div
      role="group"
-     aria-label="Chọn bảng màu giao diện"
+     aria-label={t("paletteAria")}
      className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3"
     >
      {paletteOptions.map((option) => {
@@ -123,7 +131,7 @@ export function AppearanceSettingsSection() {
     </div>
 
     <Typography as="p" variant="caption" tone="muted" leading="standard">
-     {selectedPalette.description}
+     {selectedPalette?.description}
     </Typography>
    </div>
   </Card>

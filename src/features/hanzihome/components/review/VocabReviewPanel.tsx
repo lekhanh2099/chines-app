@@ -207,9 +207,7 @@ export function VocabReviewPanel({
      onOpenChange={setDetailOpen}
      learningState={learningState}
      lesson={lesson}
-     onAnswer={(reviewItem, result) =>
-      onAnswer({ ...reviewItem, label: item.prompt }, result)
-     }
+     onAnswer={(reviewItem, result) => onAnswer({ ...reviewItem, label: item.prompt }, result)}
      onToggleBookmark={onToggleBookmark}
      itemLesson={getItemLesson?.(item) ?? lesson}
     />

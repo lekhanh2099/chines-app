@@ -25,8 +25,6 @@ export default async function ReaderPracticeDocumentPage({
     initialUnitReferenceDocuments={initialUnitReferenceDocuments}
     initialPdfAssets={initialPdfAssets}
     initialResource={initialResource}
-    title="Luyện củng cố PDF"
-    description="Tài liệu luyện đọc từ PDF nguồn, giữ metadata trang và workspace học theo tài liệu."
     initialDocumentSlug={slug}
    />
   </div>

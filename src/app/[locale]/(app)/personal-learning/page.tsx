@@ -17,8 +17,6 @@ export default async function PersonalLearningPage({
   <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="personal"
-    title="Personal Learning"
-    description="Curriculum và bài tập cá nhân đã nhập, với tiến độ mới thuộc HanziHome."
     initialDocuments={initialDocuments}
     initialResource={initialResource}
    />

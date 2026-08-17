@@ -2,18 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Mic, Square, Star, Volume2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
-import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
+import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 
-import { useShadowingRecorder } from "./useShadowingRecorder";
 import type { ReaderDocumentResource } from "./reader-content-api";
+import { useShadowingRecorder } from "./useShadowingRecorder";
 
 type ShadowingAttempt = {
  confirmed: boolean;
@@ -40,6 +41,7 @@ export function ShadowingPracticePanel({
  onNext,
  onPrevious,
 }: ShadowingPracticePanelProps) {
+ const t = useTranslations("Reader.study.shadowing");
  const tts = useSharedMandarinTts();
  const stopTts = tts.stop;
  const recorder = useShadowingRecorder();
@@ -148,11 +150,11 @@ export function ShadowingPracticePanel({
 
  const recorderError =
   recorder.error === "permission-denied"
-   ? "Trình duyệt chưa cấp quyền microphone."
+   ? t("errors.permissionDenied")
    : recorder.error === "unsupported"
-     ? "Thiết bị/trình duyệt này chưa hỗ trợ ghi âm."
+     ? t("errors.unsupported")
      : recorder.error === "recording-failed"
-       ? "Không tạo được bản ghi. Hãy thử lại."
+       ? t("errors.recordingFailed")
        : null;
 
  return (
@@ -163,7 +165,7 @@ export function ShadowingPracticePanel({
       Shadowing
      </Typography>
      <Typography variant="caption" tone="muted">
-      Nghe mẫu, chờ {delayMs}ms rồi đọc theo đoạn {activeIndex + 1}/{total}.
+      {t("description", { delay: delayMs, current: activeIndex + 1, total })}
      </Typography>
     </div>
     <div className="flex items-center gap-1">
@@ -173,7 +175,7 @@ export function ShadowingPracticePanel({
       variant="ghost"
       disabled={activeIndex === 0 || isShadowing}
       onClick={onPrevious}
-      aria-label="Đoạn trước"
+      aria-label={t("previous")}
      >
       <ChevronLeft />
      </Button>
@@ -183,7 +185,7 @@ export function ShadowingPracticePanel({
       variant="ghost"
       disabled={activeIndex >= total - 1 || isShadowing}
       onClick={onNext}
-      aria-label="Đoạn sau"
+      aria-label={t("next")}
      >
       <ChevronRight />
      </Button>
@@ -197,7 +199,7 @@ export function ShadowingPracticePanel({
    >
     <label className="grid gap-1">
      <Typography as="span" variant="caption" tone="muted" weight="bold">
-      Khoảng chờ: {delayMs}ms
+      {t("delay", { delay: delayMs })}
      </Typography>
      <Input
       type="range"
@@ -207,7 +209,7 @@ export function ShadowingPracticePanel({
       value={delayMs}
       disabled={isShadowing}
       onChange={(event) => setDelayMs(Number(event.target.value))}
-      aria-label="Khoảng chờ shadowing"
+      aria-label={t("delayAria")}
      />
     </label>
     <Button
@@ -247,7 +249,7 @@ export function ShadowingPracticePanel({
      }}
     >
      <Star data-icon="inline-start" />
-     Đánh dấu khó
+     {t("markDifficult")}
     </Button>
    </Card>
 
@@ -259,12 +261,12 @@ export function ShadowingPracticePanel({
      onClick={() => tts.speakSequence([paragraph.zh])}
     >
      <Volume2 data-icon="inline-start" />
-     Nghe mẫu
+     {t("listen")}
     </Button>
     {isShadowing || recorder.isRecording ? (
      <Button type="button" variant="destructive" onClick={stopShadowing}>
       <Square data-icon="inline-start" />
-      Dừng ghi
+      {t("stopRecording")}
      </Button>
     ) : (
      <Button
@@ -273,7 +275,7 @@ export function ShadowingPracticePanel({
       onClick={() => void startShadowing()}
      >
       <Mic data-icon="inline-start" />
-      {recorder.isRequesting ? "Đang xin quyền…" : "Bắt đầu shadowing"}
+      {recorder.isRequesting ? t("requestingPermission") : t("start")}
      </Button>
     )}
     {recorder.isRecording ? (
@@ -284,7 +286,7 @@ export function ShadowingPracticePanel({
       className="inline-flex items-center gap-2 self-center"
      >
       <span className="size-2 animate-pulse rounded-full bg-danger" />
-      Đang ghi {recorder.durationSeconds}s
+      {t("recording", { seconds: recorder.durationSeconds })}
      </Typography>
     ) : null}
    </div>
@@ -292,26 +294,26 @@ export function ShadowingPracticePanel({
    {attempts.length > 0 ? (
     <Card variant="subtle" padding="sm" className="grid gap-2">
      <Typography as="h4" variant="caption" weight="black">
-      Bản ghi trong phiên này
+      {t("sessionRecordings")}
      </Typography>
      {attempts.map((attempt, index) => (
       <Card key={attempt.id} variant="default" padding="sm" className="grid gap-2">
        <div className="flex min-w-0 flex-wrap items-center gap-2">
         <Typography variant="caption" tone="muted">
-         Lần {attempts.length - index} · {attempt.durationSeconds}s
+         {t("attempt", { number: attempts.length - index, seconds: attempt.durationSeconds })}
         </Typography>
         <audio
          controls
          preload="metadata"
          src={attempt.url}
          className="min-w-0 flex-1"
-         aria-label="Bản ghi shadowing"
+         aria-label={t("audioAria")}
         />
        </div>
        <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
         <label className="grid gap-1">
          <Typography as="span" variant="caption" tone="muted" weight="bold">
-          Tự ghi transcript (không bắt buộc)
+          {t("transcriptLabel")}
          </Typography>
          <Textarea
           value={attempt.transcript}
@@ -325,7 +327,7 @@ export function ShadowingPracticePanel({
             ),
            )
           }
-          placeholder="Ghi lại câu bạn vừa nói…"
+          placeholder={t("transcriptPlaceholder")}
           rows={2}
          />
         </label>
@@ -335,7 +337,7 @@ export function ShadowingPracticePanel({
          disabled={!attempt.transcript.trim() || attempt.confirmed || attempt.isSaving}
          onClick={() => confirmAttempt(attempt)}
         >
-         {attempt.confirmed ? "Đã lưu" : attempt.isSaving ? "Đang lưu…" : "Lưu attempt"}
+         {attempt.confirmed ? t("saved") : attempt.isSaving ? t("saving") : t("saveAttempt")}
         </Button>
        </div>
        {attempt.saveError ? (

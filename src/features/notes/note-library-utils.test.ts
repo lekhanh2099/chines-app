@@ -2,8 +2,36 @@ import { describe, expect, it } from "vitest";
 
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import type { NoteListItem } from "@/services/notes.service";
+import {
+ buildLessonLookup,
+ getNoteContext,
+ type NoteContextLabels,
+} from "./components/noteContext";
 import { normalizeReadingUrl, plainTextToEditorDocument } from "./note-library-utils";
-import { buildLessonLookup, getNoteContext } from "./components/noteContext";
+
+const testContextLabels: NoteContextLabels = {
+ relations: {
+  main: "Bài học",
+  lesson_text: "Bài khóa",
+  vocab: "Từ vựng",
+  grammar: "Ngữ pháp",
+  annotation: "Đánh dấu",
+ },
+ categories: {
+  grammar: "Ngữ pháp",
+  vocabulary: "Từ vựng",
+  culture: "Văn hóa",
+  general: "Chung",
+ },
+ lessonNote: "Ghi chú bài học",
+ quickNote: "Ghi chú nhanh",
+ normalNote: "Ghi chú thường",
+ noLesson: "Không gắn với bài học",
+ quickBadge: "Quick note",
+ untitled: "Ghi chú chưa đặt tên",
+ lessonNumber: (number) => `Bài ${number}`,
+ bookLesson: (book, number) => `${book} · Bài ${number}`,
+};
 
 describe("note library utilities", () => {
  it("normalizes a reading URL and removes its fragment", () => {
@@ -72,7 +100,7 @@ describe("lesson note context", () => {
    ],
   };
 
-  expect(getNoteContext(note, buildLessonLookup([lesson]))).toMatchObject({
+  expect(getNoteContext(note, buildLessonLookup([lesson]), testContextLabels)).toMatchObject({
    displayTitle: "Quyển 2 Thượng · Bài 7",
    subtitle: "Câu chuyện thành ngữ · 成语故事",
    badges: ["Bài học", "ôn tập"],

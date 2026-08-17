@@ -96,7 +96,10 @@ export async function updateSession(request: NextRequest, initialResponse?: Next
   const url = request.nextUrl.clone();
   url.pathname = localizePathname("/login", locale);
   url.search = "";
-  url.searchParams.set("next", localizePathname(`${logicalPathname}${request.nextUrl.search}`, locale));
+  url.searchParams.set(
+   "next",
+   localizePathname(`${logicalPathname}${request.nextUrl.search}`, locale),
+  );
   return withSecurityHeaders(NextResponse.redirect(url));
  }
 

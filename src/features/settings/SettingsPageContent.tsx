@@ -2,7 +2,7 @@
 
 import { useSelector } from "@tanstack/react-store";
 import { Bot, Languages, RefreshCcw, Save, Settings2, Sparkles } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { type ComponentProps, type ReactNode, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -28,6 +28,7 @@ import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
+import { useRouter } from "@/i18n/navigation";
 import {
  ClientAiPromptSettingsSchema,
  loadClientAiPromptSettings,
@@ -51,6 +52,7 @@ import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
 import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
+import { getApiKeyModelDescriptionKey } from "./model-description-keys";
 
 export const SettingsSectionSchema = z.enum(["app", "reading", "ai"]);
 const SettingsSectionParamSchema = z.string().optional();
@@ -68,10 +70,8 @@ type SettingsPageContentProps = {
  readingSettings: ReactNode;
 };
 
-const focusModeEnabledMessage =
- "Focus mode đã bật. Bạn sẽ ở lại bài hiện tại; chỉ đổi đề mục hoặc tab ghi chú đang mở.";
-
 export function SettingsPageContent({ sectionValue, readingSettings }: SettingsPageContentProps) {
+ const t = useTranslations("Settings");
  const section = resolveSettingsSection(sectionValue);
  const router = useRouter();
  useSelector(dictionaryLookupStore, (state) => state.overrides);
@@ -84,8 +84,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
  const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(DEFAULT_SENTENCE_LOOKUP_PROMPT);
  const [geminiModel, setGeminiModel] =
   useState<ClientAiPromptSettings["geminiModel"]>(DEFAULT_GEMINI_MODEL);
- const [savedSettings, setSavedSettings] =
-  useState<z.infer<z.ZodNullable<typeof ClientAiPromptSettingsSchema>>>(null);
+ const [savedSettings, setSavedSettings] = useState<ClientAiPromptSettings | null>(null);
  const [isLoading, setIsLoading] = useState(true);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
@@ -133,7 +132,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      geminiModel: localSettings.geminiModel,
     });
     setHasLoaded(true);
-    toast.info("Đang dùng AI prompt settings lưu cục bộ trên trình duyệt");
+    toast.info(t("ai.localFallback"));
    } finally {
     if (isMounted) setIsLoading(false);
    }
@@ -144,7 +143,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
   return () => {
    isMounted = false;
   };
- }, []);
+ }, [t]);
 
  async function handleSave() {
   setIsSaving(true);
@@ -179,7 +178,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     sentenceLookupPrompt: synced.sentenceLookupPrompt,
     geminiModel: synced.geminiModel,
    });
-   toast.success("Đã lưu AI prompt settings");
+   toast.success(t("ai.savedRemote"));
   } catch {
    const fallback = loadClientAiPromptSettings();
    setWordLookupPrompt(fallback.wordLookupPrompt);
@@ -190,7 +189,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
     sentenceLookupPrompt: fallback.sentenceLookupPrompt,
     geminiModel: fallback.geminiModel,
    });
-   toast.success("Đã lưu AI prompt settings trên trình duyệt này");
+   toast.success(t("ai.savedLocal"));
   } finally {
    setIsSaving(false);
   }
@@ -210,18 +209,15 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
  return (
   <PageContainer>
    <main className="grid w-full min-w-0 gap-5">
-    <PageHeader
-     title="Cài đặt"
-     description="Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản."
-    />
+    <PageHeader title={t("title")} description={t("description")} />
 
     <Tabs<z.infer<typeof SettingsSectionSchema>>
      className="min-w-0"
      value={section}
      items={[
-      { key: SettingsSectionSchema.enum.app, label: "Ứng dụng", icon: Settings2 },
-      { key: SettingsSectionSchema.enum.reading, label: "Đọc", icon: Languages },
-      { key: SettingsSectionSchema.enum.ai, label: "AI & API", icon: Bot },
+      { key: SettingsSectionSchema.enum.app, label: t("tabs.app"), icon: Settings2 },
+      { key: SettingsSectionSchema.enum.reading, label: t("tabs.reading"), icon: Languages },
+      { key: SettingsSectionSchema.enum.ai, label: t("tabs.ai"), icon: Bot },
      ]}
      onValueChange={(nextSection) => {
       router.push(`/settings?section=${nextSection}`, { scroll: false });
@@ -232,15 +228,15 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
       <Card variant="section" padding="lg" className="grid gap-3">
        <SectionHeading
-        title="Hành vi học tập"
-        description="Các lựa chọn có tác động toàn ứng dụng được gom ở đây; cài đặt đọc chuyên biệt nằm trong mục Đọc."
+        title={t("learningBehavior.title")}
+        description={t("learningBehavior.description")}
        />
 
        <div className="grid">
         <SettingsToggleRow
          id="global-dictionary-lookup"
-         label="Tra từ mặc định"
-         description="Áp dụng trên các trang học, từ vựng và dashboard; Ghi chú có scope riêng bên dưới."
+         label={t("learningBehavior.globalLookup")}
+         description={t("learningBehavior.globalLookupDescription")}
          checked={globalLookupEnabled}
          onCheckedChange={(enabled) => setLookupEnabled("/", enabled)}
          tone="accent"
@@ -248,8 +244,8 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         <Separator />
         <SettingsToggleRow
          id="notes-dictionary-lookup"
-         label="Tra từ trong Ghi chú"
-         description="Giữ tùy chọn riêng cho `/notes`, không ảnh hưởng các trang học khác."
+         label={t("learningBehavior.notesLookup")}
+         description={t("learningBehavior.notesLookupDescription")}
          checked={notesLookupEnabled}
          onCheckedChange={(enabled) => setLookupEnabled("/notes", enabled)}
          tone="accent"
@@ -257,12 +253,12 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         <Separator />
         <SettingsToggleRow
          id="focus-mode"
-         label="Focus mode"
-         description="Khóa đổi route và bài học cho đến khi bạn tắt lại từ Gear hoặc trang này."
+         label={t("learningBehavior.focusMode")}
+         description={t("learningBehavior.focusModeDescription")}
          checked={focusModeEnabled}
          onCheckedChange={(enabled) => {
           if (enabled && !focusModeEnabled) {
-           toast.warning(focusModeEnabledMessage, { duration: 5200 });
+           toast.warning(t("learningBehavior.focusModeEnabled"), { duration: 5200 });
           }
           setFocusModeEnabled(enabled);
          }}
@@ -281,18 +277,17 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
        <div className="grid min-w-0 max-w-3xl gap-2">
         <Badge variant="accent" size="md">
          <Bot />
-         AI Settings
+         {t("ai.badge")}
         </Badge>
         <Typography as="h2" variant="sectionTitle" weight="bold">
-         Cài đặt tra cứu AI
+         {t("ai.title")}
         </Typography>
         <Typography as="p" tone="secondary" leading="standard">
-         Tra nhanh ưu tiên dữ liệu bài học và từ điển. AI nhẹ chỉ chạy khi cache không có; model
-         mạnh chỉ chạy khi bạn chủ động mở phần chi tiết.
+         {t("ai.description")}
         </Typography>
         <div>
          <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
-          {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Đã đồng bộ"}
+          {hasUnsavedChanges ? t("ai.statusDirty") : t("ai.statusSynced")}
          </Badge>
         </div>
        </div>
@@ -308,14 +303,14 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          disabled={isLoading || isSaving}
         >
          <RefreshCcw data-icon="inline-start" />
-         Reset mặc định
+         {t("ai.reset")}
         </Button>
         <Button
          onClick={handleSave}
          disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
         >
          {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-         Lưu thay đổi
+         {t("ai.save")}
         </Button>
        </div>
       </div>
@@ -323,25 +318,27 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       <Card variant="section" padding="lg" className="grid gap-4">
        <SectionHeading
         icon={<Sparkles />}
-        title="Xem chi tiết"
-        description="Chỉ dùng khi mở phân tích sâu, ví dụ, cấu tạo hoặc ngữ pháp. Nếu chưa thêm key cá nhân, app dùng model Gemini hệ thống đã chọn bên dưới."
+        title={t("ai.detailTitle")}
+        description={t("ai.detailDescription")}
        />
 
        <div className="grid max-w-xl gap-2">
         <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
-         Model chi tiết mặc định
+         {t("ai.detailModelLabel")}
         </Label>
         <Select
          value={geminiModel}
          onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
          disabled={isLoading || isSaving}
         >
-         <SelectTrigger id="gemini-model" width="full" aria-label="Chọn model Gemini">
+         <SelectTrigger id="gemini-model" width="full" aria-label={t("ai.detailModelAria")}>
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
           {!selectedDetailModel ? (
-           <SelectItem value={geminiModel}>{getGeminiModelLabel(geminiModel)} (đã lưu)</SelectItem>
+           <SelectItem value={geminiModel}>
+            {getGeminiModelLabel(geminiModel)} ({t("ai.savedSuffix")})
+           </SelectItem>
           ) : null}
           {GEMINI_DETAIL_MODEL_OPTIONS.map((option) => (
            <SelectItem key={option.value} value={option.value}>
@@ -351,7 +348,9 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
          </SelectContent>
         </Select>
         <Typography as="p" variant="bodySmall" tone="muted" leading="compact">
-         {selectedDetailModel?.description || "Model cũ đang được giữ. Chọn model mới để cập nhật."}
+         {selectedDetailModel
+          ? t(getApiKeyModelDescriptionKey("gemini", selectedDetailModel.value))
+          : t("ai.legacyModel")}
         </Typography>
        </div>
       </Card>
@@ -359,8 +358,8 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       <Card variant="section" padding="lg" className="grid gap-4">
        <SectionHeading
         icon={<Languages />}
-        title="Tra nhanh và dịch nghĩa"
-        description="Luồng: từ vựng bài học → từ điển chung → cache cũ → AI nhẹ. User không cần nhập API key."
+        title={t("ai.quickTitle")}
+        description={t("ai.quickDescription")}
        />
 
        <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
@@ -369,14 +368,14 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
           {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
          </Typography>
          <Typography as="p" variant="bodySmall" tone="muted">
-          Tối ưu độ trễ cho nghĩa và Hán Việt ngắn.
+          {t("ai.quickModelDescription")}
          </Typography>
         </div>
         <Badge variant="success" size="md">
-         Không cần key cá nhân
+         {t("ai.noPersonalKey")}
         </Badge>
         <Badge variant="info" size="md">
-         Free-tier eligible
+         {t("ai.freeTier")}
         </Badge>
        </div>
       </Card>
@@ -385,29 +384,26 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
 
       <div className="grid gap-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <SectionHeading
-         title="Lookup Prompts"
-         description="Các prompt nâng cao chỉ dùng cho phân tích chi tiết. Tra nhanh giữ prompt ngắn cố định để giảm độ trễ và lượng token."
-        />
+        <SectionHeading title={t("prompts.title")} description={t("prompts.description")} />
 
         <div className="flex flex-wrap items-center gap-3">
          <Badge variant={hasUnsavedPromptChanges ? "warning" : "success"} size="md">
-          {hasUnsavedPromptChanges ? "Prompt có thay đổi chưa lưu" : "Prompt đã đồng bộ"}
+          {hasUnsavedPromptChanges ? t("prompts.dirty") : t("prompts.synced")}
          </Badge>
          <Button
           onClick={handleSave}
           disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
          >
           {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-          Lưu prompt mới
+          {t("prompts.save")}
          </Button>
         </div>
        </div>
 
        <div className="grid gap-6 xl:grid-cols-2">
         <PromptPanel
-         title="Word Lookup Prompt"
-         description="Dùng cho tra từ/cụm từ ngắn. Phải giữ placeholder {WORD} để backend thay từ cần tra vào prompt."
+         title={t("prompts.wordTitle")}
+         description={t("prompts.wordDescription", { token: WORD_PLACEHOLDER })}
          placeholderToken={WORD_PLACEHOLDER}
          value={wordLookupPrompt}
          onChange={setWordLookupPrompt}
@@ -417,8 +413,8 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
         />
 
         <PromptPanel
-         title="Sentence Lookup Prompt"
-         description="Dùng cho câu/đoạn văn. Phải giữ placeholder {SENTENCE} để backend thay nội dung thật vào prompt."
+         title={t("prompts.sentenceTitle")}
+         description={t("prompts.sentenceDescription", { token: SENTENCE_PLACEHOLDER })}
          placeholderToken={SENTENCE_PLACEHOLDER}
          value={sentenceLookupPrompt}
          onChange={setSentenceLookupPrompt}
@@ -520,6 +516,7 @@ function PromptPanel({
  disabled: boolean;
  isDirty: boolean;
 }) {
+ const t = useTranslations("Settings.prompts");
  const hasPlaceholder = value.includes(placeholderToken);
 
  return (
@@ -536,10 +533,10 @@ function PromptPanel({
 
     <div className="flex items-center gap-2">
      <Badge variant={isDirty ? "warning" : "default"} size="sm">
-      {isDirty ? "Chưa lưu" : "Đã lưu"}
+      {isDirty ? t("unsaved") : t("saved")}
      </Badge>
      <Button size="sm" variant="ghost" onClick={() => onChange(defaultValue)} disabled={disabled}>
-      Khôi phục block
+      {t("restore")}
      </Button>
     </div>
    </div>
@@ -547,11 +544,11 @@ function PromptPanel({
    <div className="flex items-center justify-between gap-3">
     <Badge variant={hasPlaceholder ? "success" : "danger"} size="sm">
      {hasPlaceholder
-      ? `Có placeholder ${placeholderToken}`
-      : `Thiếu placeholder ${placeholderToken}`}
+      ? t("hasPlaceholder", { token: placeholderToken })
+      : t("missingPlaceholder", { token: placeholderToken })}
     </Badge>
     <Typography as="span" variant="caption" tone="muted">
-     {value.length} ký tự
+     {t("characters", { count: value.length })}
     </Typography>
    </div>
 

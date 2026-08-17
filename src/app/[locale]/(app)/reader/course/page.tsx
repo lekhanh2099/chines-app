@@ -20,8 +20,6 @@ export default async function ReaderCoursePage({
     kind="core"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
-    title="Giáo trình chính"
-    description="12 bài U3–U5 với đầy đủ dữ liệu đọc, bài tập, từ vựng, phân tích và ghi chú."
    />
   </div>
  );

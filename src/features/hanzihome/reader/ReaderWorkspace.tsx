@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ComponentProps } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
  BookOpen,
@@ -11,9 +11,8 @@ import {
  RotateCcw,
  type LucideIcon,
 } from "lucide-react";
-import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import type { ComponentProps } from "react";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,16 +20,17 @@ import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { PageHeader } from "@/components/ui/page-header";
 import { Typography } from "@/components/ui/typography";
+import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { fetchLearningLoopItems } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { createClient } from "@/lib/supabase/client";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { createClient } from "@/lib/supabase/client";
 import { JsonObjectSchema } from "@/types/json";
 
 import type { ReaderDocumentResource } from "./reader-content-api";
-import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { PdfReaderWorkspace } from "./PdfReaderWorkspace";
+import { ReaderDocumentStudy } from "./ReaderDocumentStudy";
 import { readerKindSchema, type ReaderDocumentRow, type ReaderPdfAsset } from "./reader.schemas";
 
 type ReaderSurface = "text" | "pdf";
@@ -53,65 +53,6 @@ function metadataCount(document: ReaderDocumentRow, key: string) {
  const nestedValue = counts.success ? counts.data[key] : undefined;
  return typeof nestedValue === "number" ? nestedValue : null;
 }
-
-const coreReaderOption: ReaderCollectionOption = {
- kind: "core",
- badge: "12 bài chính",
- badgeVariant: "success",
- description: "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt.",
- href: "/reader/course",
- icon: BookOpen,
- label: "Giáo trình U3–U5",
- title: "Giáo trình U3–U5",
-};
-
-const readerCollectionOptions: ReadonlyArray<ReaderCollectionOption> = [
- {
-  kind: "daily",
-  badge: "Mỗi ngày 1 bài mới",
-  badgeVariant: "warning",
-  description:
-   "Đọc báo bản học tập, nghe, tra từ, làm câu hỏi và lưu toàn bộ lịch sử ngay trên thiết bị.",
-  href: "/daily-reading",
-  icon: FileText,
-  label: "Bài đọc hôm nay",
-  title: "Bài đọc hôm nay",
- },
- coreReaderOption,
- {
-  kind: "hsk",
-  badge: "50 đoạn HSK",
-  badgeVariant: "success",
-  description:
-   "Đọc 50 đoạn văn HSK 3–4 với TTS chạy theo chữ, pinyin, nghĩa tiếng Việt và tra từ dùng chung.",
-  href: "/reader/hsk",
-  icon: BookOpen,
-  label: "Đọc HSK",
-  title: "Đọc HSK",
- },
- {
-  kind: "reinforcement",
-  badge: "24 bài PDF",
-  badgeVariant: "warning",
-  description: "PDF có phóng to, toàn màn hình, bút vẽ và đánh dấu lưu riêng theo từng trang.",
-  href: "/reader/practice",
-  icon: FileText,
-  label: "Luyện củng cố",
-  title: "Luyện củng cố",
- },
- {
-  kind: "mock",
-  badge: "12 bài đọc lạ",
-  badgeVariant: "success",
-  description: "Luyện văn bản chưa gặp, bám cấu trúc kỹ năng của ba đơn nguyên.",
-  href: "/reader/mock",
-  icon: Check,
-  label: "Thi thử / đọc lạ",
-  title: "Thi thử / đọc lạ",
- },
-];
-
-const secondaryReaderOptions = readerCollectionOptions.filter((option) => option.kind !== "core");
 
 function ReaderSourceRow({ option }: { option: ReaderCollectionOption }) {
  const Icon = option.icon;
@@ -154,6 +95,7 @@ function ReaderSourceRow({ option }: { option: ReaderCollectionOption }) {
 }
 
 function ReaderResumePanel() {
+ const t = useTranslations("Reader.home.resume");
  const supabase = useMemo(() => createClient(), []);
  const sessionQuery = useQuery({
   queryKey: ["hanzihome", "reader-home-session-user"],
@@ -171,7 +113,7 @@ function ReaderResumePanel() {
  if (sessionQuery.isPending || !sessionQuery.data) return null;
  if (learningLoopQuery.isPending) {
   return (
-   <Card variant="subtle" padding="lg" aria-label="Đang tải hoạt động học">
+   <Card variant="subtle" padding="lg" aria-label={t("loadingAria")}>
     <div className="h-20 animate-pulse rounded-lg bg-bg-card" />
    </Card>
   );
@@ -180,7 +122,7 @@ function ReaderResumePanel() {
   return (
    <Card variant="subtle" padding="md" role="alert">
     <Typography variant="bodySmall" tone="warning">
-     Không tải được trạng thái học tiếp. Các khu vực Reader vẫn sẵn sàng.
+     {t("error")}
     </Typography>
    </Card>
   );
@@ -200,11 +142,11 @@ function ReaderResumePanel() {
    <div className="grid min-w-0 gap-2">
     <div className="flex flex-wrap items-center gap-2">
      <Badge variant="warning" casing="natural">
-      Học tiếp
+      {t("badge")}
      </Badge>
      {dueCount > 0 ? (
       <Badge variant="warning" casing="natural">
-       {dueCount} mục đến hạn
+       {t("dueCount", { count: dueCount })}
       </Badge>
      ) : null}
     </div>
@@ -212,14 +154,17 @@ function ReaderResumePanel() {
      <div className="grid min-w-0 gap-1">
       <HanziAwareText as="h2" text={resumeItem.title_zh} variant="sectionTitle" weight="black" />
       <Typography as="p" variant="bodySmall" tone="secondary" clamp="one">
-       {[resumeItem.title_vi, resumeItem.kind === "reading_bookmark" ? "Đọc bài" : "Ôn tập"]
+       {[
+        resumeItem.title_vi,
+        resumeItem.kind === "reading_bookmark" ? t("readingKind") : t("reviewKind"),
+       ]
         .filter(Boolean)
         .join(" · ")}
       </Typography>
      </div>
     ) : (
      <Typography as="h2" variant="sectionTitle" weight="black">
-      Sẵn sàng ôn tập
+      {t("ready")}
      </Typography>
     )}
    </div>
@@ -228,7 +173,7 @@ function ReaderResumePanel() {
      <Button type="button" variant="default" asChild>
       <Link href={resumeItem.source_href} prefetch={false}>
        <Play data-icon="inline-start" />
-       Tiếp tục
+       {t("continue")}
       </Link>
      </Button>
     ) : null}
@@ -236,7 +181,7 @@ function ReaderResumePanel() {
      <Button type="button" variant="outline" asChild>
       <Link href="/learning-loop" prefetch={false}>
        <RotateCcw data-icon="inline-start" />
-       Ôn ngay
+       {t("reviewNow")}
       </Link>
      </Button>
     ) : null}
@@ -254,6 +199,7 @@ export function ReaderWorkspace({
  initialResource: ReaderDocumentResource | null;
  initialPdfAssets: ReadonlyArray<ReaderPdfAsset>;
 }) {
+ const t = useTranslations("Reader.home");
  const router = useRouter();
  const pathname = usePathname();
  const searchParams = useSearchParams();
@@ -266,6 +212,60 @@ export function ReaderWorkspace({
  const showCollectionCatalog = parsedReaderKind.success || requestedDocumentId.length > 0;
  const documents = initialDocuments;
  const selectedDocumentId = requestedDocumentId;
+ const readerCollectionOptions: ReadonlyArray<ReaderCollectionOption> = [
+  {
+   kind: "daily",
+   badge: t("options.daily.badge"),
+   badgeVariant: "warning",
+   description: t("options.daily.description"),
+   href: "/daily-reading",
+   icon: FileText,
+   label: t("options.daily.title"),
+   title: t("options.daily.title"),
+  },
+  {
+   kind: "core",
+   badge: t("options.core.badge"),
+   badgeVariant: "success",
+   description: t("options.core.description"),
+   href: "/reader/course",
+   icon: BookOpen,
+   label: t("options.core.title"),
+   title: t("options.core.title"),
+  },
+  {
+   kind: "hsk",
+   badge: t("options.hsk.badge"),
+   badgeVariant: "success",
+   description: t("options.hsk.description"),
+   href: "/reader/hsk",
+   icon: BookOpen,
+   label: t("options.hsk.title"),
+   title: t("options.hsk.title"),
+  },
+  {
+   kind: "reinforcement",
+   badge: t("options.reinforcement.badge"),
+   badgeVariant: "warning",
+   description: t("options.reinforcement.description"),
+   href: "/reader/practice",
+   icon: FileText,
+   label: t("options.reinforcement.title"),
+   title: t("options.reinforcement.title"),
+  },
+  {
+   kind: "mock",
+   badge: t("options.mock.badge"),
+   badgeVariant: "success",
+   description: t("options.mock.description"),
+   href: "/reader/mock",
+   icon: Check,
+   label: t("options.mock.title"),
+   title: t("options.mock.title"),
+  },
+ ];
+ const coreReaderOption = readerCollectionOptions.find((option) => option.kind === "core");
+ const secondaryReaderOptions = readerCollectionOptions.filter((option) => option.kind !== "core");
  const groupedDocuments = useMemo(() => {
   const groups = new Map<string, ReaderDocumentRow[]>();
   for (const document of documents) {
@@ -280,9 +280,9 @@ export function ReaderWorkspace({
     if (right === "other") return -1;
     return left.localeCompare(right, undefined, { numeric: true });
    })
-   .map(([id, documents]) => ({
+   .map(([id, grouped]) => ({
     id,
-    documents: documents.sort(
+    documents: grouped.sort(
      (left, right) =>
       (left.reading_number ?? Number.MAX_SAFE_INTEGER) -
       (right.reading_number ?? Number.MAX_SAFE_INTEGER),
@@ -300,8 +300,8 @@ export function ReaderWorkspace({
        <BookOpen aria-hidden="true" />
       </IconTile>
       <PageHeader
-       title="Đọc bài"
-       description="Tiếp tục bài đang học hoặc chọn một bộ đọc. Reader giữ phần đọc, nghe, tra từ và bài tập trong cùng một luồng học."
+       title={t("header.title")}
+       description={t("header.description")}
        className="min-w-0 flex-1"
       />
      </div>
@@ -315,44 +315,46 @@ export function ReaderWorkspace({
       <div className="grid min-w-0 gap-3">
        {!showCollectionCatalog ? (
         <>
-         <Card
-          variant="section"
-          padding="lg"
-          className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
-         >
-          <div className="grid min-w-0 gap-2">
-           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant={coreReaderOption.badgeVariant} casing="natural">
-             {coreReaderOption.badge}
-            </Badge>
-            <Typography variant="caption" tone="muted">
-             Điểm bắt đầu chính
-            </Typography>
+         {coreReaderOption ? (
+          <Card
+           variant="section"
+           padding="lg"
+           className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+          >
+           <div className="grid min-w-0 gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+             <Badge variant={coreReaderOption.badgeVariant} casing="natural">
+              {coreReaderOption.badge}
+             </Badge>
+             <Typography variant="caption" tone="muted">
+              {t("primary.startPoint")}
+             </Typography>
+            </div>
+            <div className="grid min-w-0 gap-1">
+             <Typography as="h2" variant="sectionTitle" weight="black">
+              {coreReaderOption.title}
+             </Typography>
+             <Typography as="p" variant="bodySmall" tone="secondary">
+              {coreReaderOption.description}
+             </Typography>
+            </div>
            </div>
-           <div className="grid min-w-0 gap-1">
-            <Typography as="h2" variant="sectionTitle" weight="black">
-             {coreReaderOption.title}
-            </Typography>
-            <Typography as="p" variant="bodySmall" tone="secondary">
-             {coreReaderOption.description}
-            </Typography>
-           </div>
-          </div>
-          <Button type="button" variant="default" asChild>
-           <Link href={coreReaderOption.href} prefetch={false}>
-            <BookOpen data-icon="inline-start" />
-            Mở giáo trình
-           </Link>
-          </Button>
-         </Card>
+           <Button type="button" variant="default" asChild>
+            <Link href={coreReaderOption.href} prefetch={false}>
+             <BookOpen data-icon="inline-start" />
+             {t("primary.openCourse")}
+            </Link>
+           </Button>
+          </Card>
+         ) : null}
 
          <Card variant="section" padding="md" className="grid gap-2">
           <div className="grid gap-1">
            <Typography as="h2" variant="cardTitle" weight="black">
-            Chọn bộ đọc khác
+            {t("otherCollections.title")}
            </Typography>
            <Typography as="p" variant="bodySmall" tone="muted">
-            Chuyển sang bài đọc hằng ngày, HSK, PDF củng cố hoặc đọc lạ khi đúng mục tiêu buổi học.
+            {t("otherCollections.description")}
            </Typography>
           </div>
           <div className="grid gap-1">
@@ -365,7 +367,7 @@ export function ReaderWorkspace({
        ) : null}
 
        {showCollectionCatalog ? (
-        <div className="grid min-w-0 gap-4" aria-label="Danh mục Reader đã nhập">
+        <div className="grid min-w-0 gap-4" aria-label={t("catalog.aria")}>
          <div className="flex min-w-0 flex-wrap items-center gap-2">
           <Button
            type="button"
@@ -380,9 +382,9 @@ export function ReaderWorkspace({
             });
            }}
           >
-           ← Thư viện Reader
+           {t("catalog.back")}
           </Button>
-          <div className="flex min-w-0 flex-wrap gap-2" aria-label="Bộ Reader">
+          <div className="flex min-w-0 flex-wrap gap-2" aria-label={t("catalog.collectionsAria")}>
            {readerCollectionOptions.map((option) => (
             <Button
              key={option.kind}
@@ -406,7 +408,7 @@ export function ReaderWorkspace({
          {requestedDocumentId.length === 0 ? (
           documents.length === 0 ? (
            <Typography variant="caption" tone="muted">
-            Chưa có static Reader content trong app. Kiểm tra file JSON đã được đóng gói.
+            {t("catalog.emptyStatic")}
            </Typography>
           ) : (
            groupedDocuments.map((group) => (
@@ -414,14 +416,16 @@ export function ReaderWorkspace({
              <div className="flex flex-wrap items-start justify-between gap-2 border-b border-border pb-3">
               <div className="grid gap-1">
                <Typography as="h3" variant="cardTitle" weight="black">
-                {group.id === "other" ? "Tài liệu khác" : `Đơn nguyên ${group.id}`}
+                {group.id === "other"
+                 ? t("catalog.otherDocuments")
+                 : t("catalog.unit", { id: group.id })}
                </Typography>
                <Typography as="p" variant="caption" tone="muted">
-                Chọn một bài để mở Reader
+                {t("catalog.chooseDocument")}
                </Typography>
               </div>
               <Typography variant="caption" tone="muted">
-               {group.documents.length} bài
+               {t("catalog.documentCount", { count: group.documents.length })}
               </Typography>
              </div>
              <div className="grid min-w-0 gap-2 sm:grid-cols-2 xl:grid-cols-3">
@@ -452,9 +456,11 @@ export function ReaderWorkspace({
                  {document.title_vi || document.genre_vi || document.kind.toUpperCase()}
                 </Typography>
                 <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-                 {metadataCount(document, "paragraphs") ?? 0} đoạn ·{" "}
-                 {metadataCount(document, "vocabulary") ?? 0} từ ·{" "}
-                 {metadataCount(document, "exercises") ?? 0} bài
+                 {t("catalog.metadata", {
+                  paragraphs: metadataCount(document, "paragraphs") ?? 0,
+                  vocabulary: metadataCount(document, "vocabulary") ?? 0,
+                  exercises: metadataCount(document, "exercises") ?? 0,
+                 })}
                 </Typography>
                </Button>
               ))}
@@ -471,7 +477,7 @@ export function ReaderWorkspace({
      {showCollectionCatalog && requestedDocumentId.length > 0 && resource === null ? (
       <Card variant="subtle" padding="lg">
        <Typography variant="bodySmall" tone="danger">
-        Không tìm thấy tài liệu Reader trong static package.
+        {t("catalog.notFound")}
        </Typography>
       </Card>
      ) : null}

@@ -41,7 +41,8 @@ function getProfile(
  const name = readMetadataText(user, ["full_name", "name", "display_name"]) ?? emailName;
  const avatarCandidate = readMetadataText(user, ["avatar_url", "picture"]);
  const avatarUrl = avatarCandidate?.startsWith("https://") ? avatarCandidate : null;
- const provider = typeof user?.app_metadata?.provider === "string" ? user.app_metadata.provider : null;
+ const provider =
+  typeof user?.app_metadata?.provider === "string" ? user.app_metadata.provider : null;
 
  return {
   name,

@@ -2,13 +2,15 @@
 
 import { useLocale, useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
 import {
- appLocales,
- defaultAppLocale,
- isAppLocale,
- type AppLocale,
-} from "@/i18n/config";
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { appLocales, defaultAppLocale, isAppLocale, type AppLocale } from "@/i18n/config";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 export function LocaleSwitcher() {
@@ -26,23 +28,24 @@ export function LocaleSwitcher() {
  };
 
  return (
-  <div
-   role="group"
-   aria-label={tShell("localeSwitcher.label")}
-   className="flex flex-wrap items-center gap-1"
+  <Select
+   value={activeLocale}
+   onValueChange={(value) => {
+    if (isAppLocale(value)) changeLocale(value);
+   }}
   >
-   {appLocales.map((item) => (
-    <Button
-     key={item}
-     type="button"
-     variant={item === activeLocale ? "active" : "ghost"}
-     size="sm"
-     aria-pressed={item === activeLocale}
-     onClick={() => changeLocale(item)}
-    >
-     {tCommon(`locales.${item}`)}
-    </Button>
-   ))}
-  </div>
+   <SelectTrigger width="full" size="sm" aria-label={tShell("localeSwitcher.label")}>
+    <SelectValue />
+   </SelectTrigger>
+   <SelectContent position="popper" align="start">
+    <SelectGroup>
+     {appLocales.map((item) => (
+      <SelectItem key={item} value={item}>
+       {tCommon(`locales.${item}`)}
+      </SelectItem>
+     ))}
+    </SelectGroup>
+   </SelectContent>
+  </Select>
  );
 }

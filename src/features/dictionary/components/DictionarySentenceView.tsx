@@ -1,22 +1,26 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
+
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Card } from "@/components/ui/card";
+import { Typography } from "@/components/ui/typography";
 import type { DictionarySentenceViewModel } from "@/features/dictionary/types";
 import { HANZI_CHAR_REGEX } from "@/features/dictionary/utils";
+import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 
 type DictionarySentenceViewProps = {
  viewModel: DictionarySentenceViewModel;
 };
 
 function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
+ const t = useTranslations("Dictionary.sentence");
+
  return (
   <PageContainer>
    <div className="w-full min-w-0">
@@ -26,14 +30,11 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-muted transition-colors hover:text-text-primary"
      >
       <ArrowLeft className="h-3.5 w-3.5" />
-      HanziHome
+      {t("backHome")}
      </Link>
 
      <SectionWrapper>
-      <SectionHeader
-       title="Dịch câu"
-       description="Ưu tiên hiểu toàn câu trước, sau đó bóc tách từng hán tự khi cần."
-      />
+      <SectionHeader title={t("title")} description={t("description")} />
 
       <Typography
        as="h1"
@@ -49,7 +50,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       {viewModel.pinyin && (
        <Card variant="subtle" padding="sm">
         <div className="flex flex-col gap-1">
-         <SectionHeader title="Pinyin" />
+         <SectionHeader title={t("pinyin")} />
          <Typography as="p" weight="semibold" wrapping="breakWords">
           {viewModel.pinyin}
          </Typography>
@@ -59,12 +60,12 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
 
       <Card variant="subtle" padding="sm">
        <div className="flex flex-col gap-2">
-        <SectionHeader title="Bản dịch" />
+        <SectionHeader title={t("translation")} />
         {viewModel.isLoading ? (
          <div className="grid animate-pulse gap-2" aria-busy="true" aria-live="polite">
           <div className="h-4 w-full rounded-md bg-bg-card" />
           <div className="h-4 w-5/6 rounded-md bg-bg-card" />
-          <span className="sr-only">Đang dịch câu</span>
+          <span className="sr-only">{t("translating")}</span>
          </div>
         ) : viewModel.translation ? (
          <Typography as="p" tone="default" leading="relaxed" wrapping="breakWords">
@@ -72,7 +73,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
          </Typography>
         ) : (
          <Typography as="p" tone="muted">
-          {viewModel.error || "Chưa có bản dịch cho câu này."}
+          {viewModel.error || t("missingTranslation")}
          </Typography>
         )}
        </div>
@@ -81,10 +82,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       {viewModel.characters.length > 0 && (
        <Card variant="subtle" padding="sm">
         <div className="flex flex-col gap-3">
-         <SectionHeader
-          title="Tra từng hán tự"
-          description="Mỗi ký tự dẫn tới một trang tra cứu riêng."
-         />
+         <SectionHeader title={t("characters")} description={t("charactersDescription")} />
 
          <div className="flex flex-wrap gap-2">
           {Array.from(viewModel.text).map((character, index) =>
