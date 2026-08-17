@@ -42,7 +42,18 @@
   "description": "Chế độ tự động dùng key cá nhân có ưu tiên cao nhất; nếu không có key cá nhân, app dùng Gemini hệ thống. Khi chọn key cụ thể, request chỉ dùng đúng key đó.",
   "current": "Đang dùng: {provider} · {model}",
   "loadError": "Không tải được danh sách key cá nhân. Chế độ tự động vẫn có thể dùng Gemini hệ thống.",
-  "modelFallback": "model mặc định"
+  "modelFallback": "model mặc định",
+  "healthChecking": "Đang kiểm tra AI…",
+  "healthReady": "Sẵn sàng · {provider} · {model}",
+  "recheck": "Kiểm tra lại",
+  "health": {
+   "missingSystemKey": "Gemini hệ thống chưa được cấu hình. Thêm key cá nhân hoặc cấu hình GEMINI_API_KEY trên server.",
+   "invalidKey": "API key không còn hợp lệ hoặc provider đang từ chối key này.",
+   "quotaExhausted": "API key hợp lệ nhưng hiện đã hết quota hoặc đang bị rate limit.",
+   "keyUnavailable": "API key đã chọn không còn khả dụng cho tài khoản hiện tại.",
+   "providerUnavailable": "Provider đang không khả dụng. Hãy kiểm tra lại sau.",
+   "networkError": "Không kiểm tra được AI runtime do lỗi kết nối."
+  }
  },
  "message": {
   "label": "Tin nhắn",
