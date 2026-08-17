@@ -11,6 +11,7 @@ const iconTileVariants = cva(
     accent: "border border-primary/15 bg-accent-subtle text-accent-text",
     neutral: "border border-border-default bg-bg-subtle text-text-secondary",
     info: "border border-info/20 bg-info-subtle text-info-text",
+    success: "border border-success/20 bg-success-subtle text-success-text",
     warning: "border border-warning/25 bg-warning-subtle text-warning-text",
     inverse: "app-brand-gradient border border-transparent text-text-inverse shadow-theme-sm",
    },
