@@ -51,6 +51,7 @@ import {
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
+import { AiConversationUsageSettings } from "./AiConversationUsageSettings";
 import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
 import { getApiKeyModelDescriptionKey } from "./model-description-keys";
 
@@ -381,6 +382,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
       </Card>
 
       <ApiKeyManagerSection />
+      <AiConversationUsageSettings />
 
       <div className="grid gap-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
