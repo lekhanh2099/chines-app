@@ -4,7 +4,6 @@ import type {
  PersonalNoteMode,
  VocabData,
 } from "@/types/database";
-import { z } from "zod";
 
 export type ExampleItem = {
  zh: string;
@@ -32,7 +31,7 @@ export type DictionarySentenceViewModel = {
  isLoading: boolean;
  translation: string;
  pinyin: string;
- error: z.infer<z.ZodNullable<z.ZodString>>;
+ error: string | null;
 };
 
 export type DictionaryWordLoadingViewModel = {
@@ -63,9 +62,9 @@ export type DictionaryWordReadyViewModel = {
  hasLearningInsights: boolean;
  canRenderDashboard: boolean;
  isAiLoading: boolean;
- isSaved: z.infer<z.ZodNullable<z.ZodBoolean>>;
+ isSaved: boolean | null;
  isSaving: boolean;
- srsLevel: z.infer<z.ZodNullable<z.ZodNumber>>;
+ srsLevel: number | null;
  srsStatusLabel: string;
  savedPersonalNote: string;
  personalNoteMode: PersonalNoteMode;

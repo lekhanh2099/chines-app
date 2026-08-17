@@ -22,7 +22,7 @@ import type {
  AggregateResourceItem,
 } from "./hanzihome-content-resources";
 
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
+type Nullable<T> = T | null;
 
 export class HanziHomeApiError extends Error {
  constructor(

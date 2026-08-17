@@ -1,41 +1,36 @@
-import { z } from "zod";
-
-import {
- moduleSchema,
- reviewResultSchema,
-} from "@/features/hanzihome/schemas/learning-state.schema";
+import type { HanziHomeModule, ReviewResult } from "@/features/hanzihome/types";
 import type { NoteListItem } from "@/services/notes.service";
 
-export const HomeLessonTargetSchema = z.object({
- href: z.string(),
- title: z.string(),
- titleZh: z.string(),
- courseTitle: z.string(),
- lessonNumber: z.number(),
- module: moduleSchema,
- isRecent: z.boolean(),
-});
+export type HomeLessonTarget = {
+ href: string;
+ title: string;
+ titleZh: string;
+ courseTitle: string;
+ lessonNumber: number;
+ module: HanziHomeModule;
+ isRecent: boolean;
+};
 
-export const HomeLearningPulseSchema = z.object({
- trackedCount: z.number().int().nonnegative(),
- reviewCount: z.number().int().nonnegative(),
- knownCount: z.number().int().nonnegative(),
- reviewedTodayCount: z.number().int().nonnegative(),
- bookmarkedCount: z.number().int().nonnegative(),
-});
+export type HomeLearningPulse = {
+ trackedCount: number;
+ reviewCount: number;
+ knownCount: number;
+ reviewedTodayCount: number;
+ bookmarkedCount: number;
+};
 
-export const HomeRecentActivityItemSchema = z.object({
- key: z.string(),
- label: z.string(),
- kindLabel: z.string(),
- result: reviewResultSchema,
- answeredAt: z.string(),
-});
+export type HomeRecentActivityItem = {
+ key: string;
+ label: string;
+ kindLabel: string;
+ result: ReviewResult;
+ answeredAt: string;
+};
 
 export type HomeDashboardModel = {
- lesson: z.infer<z.ZodNullable<typeof HomeLessonTargetSchema>>;
- learningPulse: z.infer<typeof HomeLearningPulseSchema>;
- recentActivity: Array<z.infer<typeof HomeRecentActivityItemSchema>>;
+ lesson: HomeLessonTarget | null;
+ learningPulse: HomeLearningPulse;
+ recentActivity: HomeRecentActivityItem[];
  recentNotes: NoteListItem[];
  isLoading: boolean;
 };

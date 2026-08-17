@@ -24,7 +24,6 @@ import {
  isSentenceLikeQuery,
  normalizeExample,
 } from "@/features/dictionary/utils";
-import { z } from "zod";
 
 export function useDictionaryPageViewModel(): DictionaryPageViewModel {
  const { speak } = useTTS();
@@ -51,7 +50,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   mode: "sentence",
  });
 
- const [activeCharacter, setActiveCharacter] = useState<z.infer<z.ZodNullable<z.ZodString>>>(null);
+ const [activeCharacter, setActiveCharacter] = useState<string | null>(null);
 
  const requestAiAnalysis = useCallback(() => {
   triggerAi(undefined, {
