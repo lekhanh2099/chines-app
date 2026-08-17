@@ -1,7 +1,6 @@
-import type { JsonFieldValue } from "@/types/json";
-import type { NoteDetail, NoteLinkSummary, NoteListItem } from "@/services/notes.service";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
-import { z } from "zod";
+import type { NoteDetail, NoteLinkSummary, NoteListItem } from "@/services/notes.service";
+import type { JsonFieldValue } from "@/types/json";
 
 type NoteWithContextMap = {
  list: NoteListItem;
@@ -9,9 +8,7 @@ type NoteWithContextMap = {
 };
 export type NoteWithContext = NoteWithContextMap[keyof NoteWithContextMap];
 
-const NoteContextKindSchema = z.enum(["lesson", "quick", "normal"]);
-export type NoteContextKind = z.infer<typeof NoteContextKindSchema>;
-type Optional<T> = z.infer<z.ZodOptional<z.ZodType<T>>>;
+export type NoteContextKind = "lesson" | "quick" | "normal";
 
 export type NoteContextView = {
  kind: NoteContextKind;
@@ -25,19 +22,17 @@ export type NoteContextView = {
 
 export type LessonLookup = Map<string, HanziHomeLesson>;
 
-const relationLabels: Record<NoteLinkSummary["relationType"], string> = {
- main: "Bài học",
- lesson_text: "Bài khóa",
- vocab: "Từ vựng",
- grammar: "Ngữ pháp",
- annotation: "Đánh dấu",
-};
-
-const categoryLabels: Record<NoteWithContext["category"], string> = {
- grammar: "Ngữ pháp",
- vocabulary: "Từ vựng",
- culture: "Văn hóa",
- general: "Chung",
+export type NoteContextLabels = {
+ relations: Record<NoteLinkSummary["relationType"], string>;
+ categories: Record<NoteWithContext["category"], string>;
+ lessonNote: string;
+ quickNote: string;
+ normalNote: string;
+ noLesson: string;
+ quickBadge: string;
+ untitled: string;
+ lessonNumber: (number: number) => string;
+ bookLesson: (book: string, number: number) => string;
 };
 
 export function buildLessonLookup(lessons: HanziHomeLesson[]): LessonLookup {
@@ -51,14 +46,14 @@ export function buildLessonLookup(lessons: HanziHomeLesson[]): LessonLookup {
  return lookup;
 }
 
-function getPrimaryLessonLink(note: NoteWithContext): Optional<NoteLinkSummary> {
+function getPrimaryLessonLink(note: NoteWithContext): NoteLinkSummary | undefined {
  return note.links.find((link) => link.targetType === "hanzihome_lesson");
 }
 
 function getLessonForNote(
  note: NoteWithContext,
  lessonLookup: LessonLookup,
-): Optional<HanziHomeLesson> {
+): HanziHomeLesson | undefined {
  const link = getPrimaryLessonLink(note);
  if (link) {
   const lesson = lessonLookup.get(link.targetKey);
@@ -97,7 +92,7 @@ function uniqueBadges(badges: JsonFieldValue[]): string[] {
  if (!badges || badges.length === 0) return uniqueBadgesList;
  for (const badge of badges) {
   if (typeof badge !== "string") continue;
-  const normalizedBadge = badge.trim().toLocaleLowerCase("vi-VN");
+  const normalizedBadge = badge.trim().toLocaleLowerCase();
   if (!normalizedBadge || seen.has(normalizedBadge)) continue;
   seen.add(normalizedBadge);
   uniqueBadgesList.push(badge);
@@ -106,7 +101,11 @@ function uniqueBadges(badges: JsonFieldValue[]): string[] {
  return uniqueBadgesList;
 }
 
-export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup): NoteContextView {
+export function getNoteContext(
+ note: NoteWithContext,
+ lessonLookup: LessonLookup,
+ labels: NoteContextLabels,
+): NoteContextView {
  const lesson = getLessonForNote(note, lessonLookup);
  const link = getPrimaryLessonLink(note);
  const noteTags = cleanTags(note.tags ?? []).filter(
@@ -114,13 +113,15 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
  );
 
  if (lesson || link || note.linked_lesson_id) {
-  const relationLabel = link ? relationLabels[link.relationType] : "Bài học";
+  const relationLabel = link ? labels.relations[link.relationType] : labels.relations.main;
   const fallbackTarget = link?.targetKey ?? note.linked_lesson_id ?? "";
   const lessonTitle = lesson
    ? [lesson.title, lesson.titleZh !== lesson.title ? lesson.titleZh : null]
       .filter(Boolean)
       .join(" · ")
    : compactRawTargetKey(fallbackTarget);
+
+  // These persisted title shapes predate i18n. Keep them only for compatibility detection.
   const legacyGeneratedTitle = lesson ? `Ghi chú: ${lesson.title}` : null;
   const generatedTitle = lesson
    ? `${lesson.bookTitle ? `${lesson.bookTitle} · ` : ""}Bài ${lesson.lessonNumber} · ${lesson.title}`
@@ -128,14 +129,14 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
   const displayTitle =
    lesson && (note.title === legacyGeneratedTitle || note.title === generatedTitle)
     ? lesson.bookTitle || lesson.courseTitle
-     ? `${lesson.bookTitle || lesson.courseTitle} · Bài ${lesson.lessonNumber}`
-     : `Bài ${lesson.lessonNumber}`
-    : note.title || "Ghi chú chưa đặt tên";
+     ? labels.bookLesson(lesson.bookTitle || lesson.courseTitle, lesson.lessonNumber)
+     : labels.lessonNumber(lesson.lessonNumber)
+    : note.title || labels.untitled;
 
   return {
-   kind: NoteContextKindSchema.enum.lesson,
+   kind: "lesson",
    displayTitle,
-   title: "Ghi chú bài học",
+   title: labels.lessonNote,
    subtitle: lessonTitle,
    relationLabel,
    lessonId: lesson?.id ?? fallbackTarget,
@@ -146,18 +147,18 @@ export function getNoteContext(note: NoteWithContext, lessonLookup: LessonLookup
  if ((note.tags ?? []).includes("quick-note")) {
   return {
    kind: "quick",
-   displayTitle: note.title || "Ghi chú chưa đặt tên",
-   title: "Ghi chú nhanh",
-   subtitle: "Không gắn với bài học",
-   badges: uniqueBadges(["Quick note", ...noteTags]),
+   displayTitle: note.title || labels.untitled,
+   title: labels.quickNote,
+   subtitle: labels.noLesson,
+   badges: uniqueBadges([labels.quickBadge, ...noteTags]),
   };
  }
 
  return {
   kind: "normal",
-  displayTitle: note.title || "Ghi chú chưa đặt tên",
-  title: "Ghi chú thường",
-  subtitle: categoryLabels[note.category],
-  badges: uniqueBadges([categoryLabels[note.category], ...noteTags]),
+  displayTitle: note.title || labels.untitled,
+  title: labels.normalNote,
+  subtitle: labels.categories[note.category],
+  badges: uniqueBadges([labels.categories[note.category], ...noteTags]),
  };
 }

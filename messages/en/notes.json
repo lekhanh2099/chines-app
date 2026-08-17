@@ -1,0 +1,48 @@
+{
+ "title": "Notes",
+ "description": "Keep readings, lesson notes, and personal ideas together in one library.",
+ "count": "{count, plural, one {# note} other {# notes}}",
+ "library": "Notes library",
+ "openLibrary": "Open library",
+ "searchLabel": "Search notes",
+ "searchPlaceholder": "Search title, source, folder, tag...",
+ "filters": {
+  "title": "Filters",
+  "allCategories": "All categories",
+  "allSources": "All sources",
+  "categories": {"general": "General", "grammar": "Grammar", "vocabulary": "Vocabulary", "culture": "Culture"}
+ },
+ "loadError": {"title": "Unable to load the notes library", "description": "Notes, folders, or lesson data are currently unavailable."},
+ "views": {"library": "Library", "recent": "Recent", "inbox": "Read later", "reading": "Reading", "completed": "Completed", "lesson": "By lesson", "quick": "Quick notes", "unfiled": "Unfiled"},
+ "folders": {
+  "title": "Folders", "create": "Create folder", "empty": "No folders yet.",
+  "deleteTitle": "Delete folder", "renameTitle": "Rename folder", "createTitle": "Create folder",
+  "deleteDescription": "Notes will become Unfiled and child folders will move to the root level.", "description": "Folders support up to two levels.",
+  "name": "Folder name", "color": "Color",
+  "colors": {"purple": "Purple", "blue": "Blue", "green": "Green", "orange": "Orange", "rose": "Rose", "slate": "Gray"},
+  "options": "Options for folder {name}", "addChild": "Add child folder", "rename": "Rename", "moveUp": "Move up", "moveDown": "Move down", "delete": "Delete folder",
+  "saveError": "Unable to save the folder.", "deleteError": "Unable to delete the folder.", "sortError": "Unable to reorder folders."
+ },
+ "create": {
+  "triggerAria": "Create a note or reading", "trigger": "Create", "note": "Note", "noteDescription": "Free-form ideas and notes.", "reading": "Reading", "readingDescription": "Create a reading note and add content later.",
+  "noteTitle": "Create note", "readingTitle": "Create reading", "noteDialogDescription": "Create a free-form note in your library.", "readingDialogDescription": "Create an empty reading and add content in Split View.",
+  "title": "Title", "titleRequired": "Enter a title.", "noteTitlePlaceholder": "Note title", "readingTitlePlaceholder": "Reading title", "folder": "Folder", "status": "Status", "category": "Category", "tags": "Tags", "tagsPlaceholder": "HSK3, exam review", "createOpen": "Create and open",
+  "focusBlocked": "Focus mode is on. You cannot create a new note.", "error": "Unable to create the note."
+ },
+ "import": {"label": "Import note", "button": "Import", "focusBlocked": "Focus mode is on. You cannot import a new note.", "success": "Note imported.", "error": "The import file is not a valid note export."},
+ "quick": {"label": "Create quick note", "button": "Quick note", "defaultTitle": "Quick note — {date}", "focusBlocked": "Focus mode is on. You cannot create a new note.", "error": "Unable to create a quick note"},
+ "starter": {"defaultTitle": "My first note", "title": "Create your notes space", "description": "Create your first note for lesson text, grammar, vocabulary, or free-form notes.", "action": "Create first note"},
+ "list": {"emptyTitle": "No matching notes", "emptyDescription": "Change the filters, import a note file, or create a new note."},
+ "readingStatus": {"none": "Not applicable", "inbox": "Read later", "reading": "Reading", "completed": "Completed"},
+ "row": {
+  "options": "Options for {title}", "editMetadata": "Edit details", "moveFolder": "Move to folder", "readingStatus": "Reading status", "clearReadingStatus": "Clear reading status", "delete": "Delete note", "deleteTitle": "Delete note?", "deleteDescription": "“{title}” will be removed from your notes library.", "deleting": "Deleting...", "updatedError": "Unable to update the note.", "deleted": "Note deleted.", "deleteError": "Unable to delete the note."
+ },
+ "metadata": {
+  "trigger": "Note details and title", "title": "Note details", "description": "Change the title, folder, reading status, and source without editing note content.", "titleLabel": "Title", "titlePlaceholder": "Note title", "titleRequired": "Enter a note title.", "folder": "Folder", "readingStatus": "Reading status", "sourceUrl": "Source URL", "sourceLabel": "Source name", "sourceAuthor": "Author", "publishedAt": "Publication date", "success": "Library details updated.", "error": "Unable to update the details."
+ },
+ "context": {
+  "relations": {"main": "Lesson", "lesson_text": "Lesson text", "vocab": "Vocabulary", "grammar": "Grammar", "annotation": "Annotation"},
+  "categories": {"grammar": "Grammar", "vocabulary": "Vocabulary", "culture": "Culture", "general": "General"},
+  "lessonNote": "Lesson note", "quickNote": "Quick note", "normalNote": "Note", "noLesson": "Not linked to a lesson", "quickBadge": "Quick note", "untitled": "Untitled note", "lessonNumber": "Lesson {number}", "bookLesson": "{book} · Lesson {number}"
+ }
+}
