@@ -20,6 +20,7 @@ export type SegmentedControlGroup<T extends string = string> = {
 
 export type SegmentedControlSurface = "subtle" | "transparent";
 export type SegmentedControlDensity = "toolbar" | "touch";
+export type SegmentedControlLayout = "scroll" | "wrap";
 
 function getSegmentedControlGroups<T extends string>({
  items = [],
@@ -47,6 +48,7 @@ export function SegmentedControl<T extends string>({
  itemClassName,
  surface = "subtle",
  density = "toolbar",
+ layout = "scroll",
  "aria-label": ariaLabel,
 }: {
  value: T;
@@ -57,27 +59,33 @@ export function SegmentedControl<T extends string>({
  itemClassName?: string;
  surface?: SegmentedControlSurface;
  density?: SegmentedControlDensity;
+ layout?: SegmentedControlLayout;
  "aria-label"?: string;
 }) {
  const resolvedGroups = getSegmentedControlGroups({ items, groups });
+ const wraps = layout === "wrap";
 
  return (
   <div
    role="group"
    aria-label={ariaLabel}
    className={cn(
-    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain",
+    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1",
+    wraps ? "flex-wrap overflow-visible" : "overflow-x-auto overscroll-x-contain",
     surface === "subtle" ? "rounded-lg bg-bg-subtle/70 p-0.5" : "bg-transparent p-0",
     className,
    )}
   >
    {resolvedGroups.map((group, groupIndex) => (
-    <div key={group.key} className="flex shrink-0 items-center gap-1">
+    <div
+     key={group.key}
+     className={cn("flex items-center gap-1", wraps ? "min-w-0 flex-wrap" : "shrink-0")}
+    >
      {groupIndex > 0 ? (
       <span aria-hidden="true" className="h-6 w-px shrink-0 rounded-full bg-border-default" />
      ) : null}
 
-     <div className="flex items-center gap-1">
+     <div className={cn("flex items-center gap-1", wraps && "min-w-0 flex-wrap")}>
       {group.items.map((item) => {
        const Icon = item.icon;
        const active = value === item.key;

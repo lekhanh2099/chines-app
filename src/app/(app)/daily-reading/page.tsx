@@ -18,12 +18,12 @@ export default async function DailyReadingPage({
   initialResource === null ? null : getStaticStudioLessonDetail(initialResource.document.lesson_id);
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <DailyReadingWorkspace
     initialDocuments={initialDocuments}
     initialResource={initialResource}
     initialLesson={initialLesson}
    />
-  </main>
+  </div>
  );
 }

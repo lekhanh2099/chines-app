@@ -280,7 +280,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
  return (
   <PageContainer>
-   <main className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-5">
     <PageHeader
      eyebrow="HanziHome Library"
      title={title}
@@ -490,7 +490,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       ))}
      </Card>
     ) : null}
-   </main>
+   </div>
   </PageContainer>
  );
 }

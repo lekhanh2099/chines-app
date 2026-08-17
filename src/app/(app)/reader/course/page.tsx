@@ -15,7 +15,7 @@ export default async function ReaderCoursePage({
  const initialResource = documentId.length > 0 ? await getReaderDocument(documentId) : null;
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="core"
     initialDocuments={initialDocuments}
@@ -23,6 +23,6 @@ export default async function ReaderCoursePage({
     title="Giáo trình chính"
     description="12 bài U3–U5 với đầy đủ dữ liệu đọc, bài tập, từ vựng, phân tích và ghi chú."
    />
-  </main>
+  </div>
  );
 }

@@ -17,7 +17,7 @@ export default async function ReaderHskDocumentPage({
  const initialResource = selected === undefined ? null : await getReaderDocument(selected.id);
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="hsk"
     initialDocuments={initialDocuments}
@@ -26,6 +26,6 @@ export default async function ReaderHskDocumentPage({
     description="Đọc các passage HSK theo volume, có pinyin, nghĩa, TTS và bài luyện tập."
     initialDocumentSlug={slug}
    />
-  </main>
+  </div>
  );
 }

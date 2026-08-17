@@ -70,14 +70,8 @@ const SPACE_BETWEEN_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*space-[xy]-(?!0(?:[\s"'`}
 const ARBITRARY_RADIUS_PATTERN = /\brounded-\[[^\]]+\]/;
 const FEATURE_LARGE_RADIUS_PATTERN = /\brounded-(?:2xl|3xl)\b/;
 const FEATURE_RING_CLASS_PATTERN = /\b(?:[a-z0-9-]+:)*(?:ring|ring-offset)-[^\s"'`}]*/i;
-const THICK_BORDER_CLASS_PATTERN = /\bborder-[2-9]\b/;
+const THICK_BORDER_CLASS_PATTERN = /\bborder(?:-[trblxy])?-[2-9]\b/;
 const PAGE_ROOT_MAX_WIDTH_PATTERN = /\bmax-w-(?:\[[^\]]+\]|[^\s"'`}]*)/;
-const MIGRATED_WORKSPACE_DIRECTORIES = [
- "src/features/hanzihome/reader/",
- "src/features/hanzihome/practice/",
- "src/features/hanzihome/tts/",
- "src/features/hanzihome/humanities/",
-];
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
@@ -121,8 +115,7 @@ function stringAttributeValue(node, name) {
 }
 
 function requiresCanonicalTabs(file) {
- const relativePath = relative(file);
- return MIGRATED_WORKSPACE_DIRECTORIES.some((directory) => relativePath.startsWith(directory));
+ return !isTestFile(file);
 }
 
 function jsxTagNameText(tagName) {
@@ -275,6 +268,17 @@ export function inspectUiSource({ file, source, isUiOwner = file.includes(UI_BOU
 
   if (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) {
    const tagName = jsxTagNameText(node.tagName);
+   const relativePath = relative(file);
+   const isNestedAppMain =
+    tagName === "main" &&
+    (relativePath.startsWith("src/app/(app)/") ||
+     relativePath.startsWith("src/features/hanzihome/") ||
+     relativePath.startsWith("src/features/notebook/"));
+   if (isNestedAppMain) {
+    failures.push(
+     `nestedAppMain: ${location(sourceFile, node)} must defer the primary landmark to AppScrollViewport`,
+    );
+   }
    const className = classNameAttribute(node);
    if (className) {
     inspectSpacing(className);

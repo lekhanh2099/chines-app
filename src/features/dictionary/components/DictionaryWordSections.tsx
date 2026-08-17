@@ -320,7 +320,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
           </Typography>
 
           {meaning.examples.length > 0 && (
-           <div className="flex flex-col gap-2 border-l-2 border-accent/20 pl-3">
+           <div className="flex flex-col gap-2 border-l border-accent/20 pl-3">
             {meaning.examples.map((example, exampleIndex) => (
              <ExampleRow
               key={`${example.zh}-${example.pinyin}-${exampleIndex}`}

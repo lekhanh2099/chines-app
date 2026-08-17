@@ -15,7 +15,7 @@ export default async function ReaderMockDocumentPage({
  const initialResource = selected === undefined ? null : await getReaderDocument(selected.id);
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <ReaderCollectionWorkspace
     kind="mock"
     initialDocuments={initialDocuments}
@@ -24,6 +24,6 @@ export default async function ReaderMockDocumentPage({
     description="Các bài đọc mô phỏng được sắp theo đơn nguyên để luyện đọc ngoài bài đã học."
     initialDocumentSlug={slug}
    />
-  </main>
+  </div>
  );
 }

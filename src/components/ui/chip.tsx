@@ -24,10 +24,10 @@ const chipVariants = cva(
     info: "border-info/30 bg-info-subtle text-info-text hover:bg-info-subtle/80",
    },
    size: {
-    sm: "min-h-7 px-2 text-xs [&_svg:not([class*='size-'])]:size-3",
-    md: "min-h-8 px-2.5 text-sm [&_svg:not([class*='size-'])]:size-3.5",
-    lg: "min-h-10 px-3 text-sm [&_svg:not([class*='size-'])]:size-4",
-    touch: "min-h-11 px-3 text-sm [&_svg:not([class*='size-'])]:size-4",
+    sm: "min-h-7 px-2 text-xs [&_svg:not([class*='size-'])]:size-3 [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:min-w-11",
+    md: "min-h-8 px-2.5 text-sm [&_svg:not([class*='size-'])]:size-3.5 [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:min-w-11",
+    lg: "min-h-10 px-3 text-sm [&_svg:not([class*='size-'])]:size-4 [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:min-w-11",
+    touch: "min-h-11 min-w-11 px-3 text-sm [&_svg:not([class*='size-'])]:size-4",
    },
   },
   defaultVariants: {

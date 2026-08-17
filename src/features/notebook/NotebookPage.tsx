@@ -52,7 +52,7 @@ export function NotebookPage() {
 
  return (
   <PageContainer>
-   <main className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-5">
     <NotebookToolbar
      data={notebookSeedData}
      sectionIds={notebookSectionIds}
@@ -83,7 +83,7 @@ export function NotebookPage() {
      <NotebookSectionGuide section={section} />
      <NotebookContent items={visibleItems} comparisons={visibleComparisons} viewMode={viewMode} />
     </section>
-   </main>
+   </div>
   </PageContainer>
  );
 }

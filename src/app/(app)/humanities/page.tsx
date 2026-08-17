@@ -20,7 +20,7 @@ export default async function HumanitiesPage({
  const initialResource = documentId.length > 0 ? await getReaderDocument(documentId) : null;
 
  return (
-  <main className="hanzihome-static-page min-w-0 grid gap-5 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 grid gap-5 p-3 sm:p-5 lg:p-6">
    <Card variant="section" padding="md" className="grid gap-3">
     <div className="grid gap-1">
      <Typography as="span" variant="overline" tone="accent" weight="black">
@@ -67,6 +67,6 @@ export default async function HumanitiesPage({
     initialDocuments={initialDocuments}
     initialResource={initialResource}
    />
-  </main>
+  </div>
  );
 }

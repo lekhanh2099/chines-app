@@ -2,8 +2,8 @@ import { AiConversationWorkspace } from "@/features/hanzihome/ai-conversation/Ai
 
 export default function ConversationPage() {
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <AiConversationWorkspace />
-  </main>
+  </div>
  );
 }

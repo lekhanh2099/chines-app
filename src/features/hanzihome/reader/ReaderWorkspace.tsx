@@ -9,8 +9,6 @@ import {
  FileText,
  Play,
  RotateCcw,
- Search,
- Volume2,
  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -37,11 +35,11 @@ import { readerKindSchema, type ReaderDocumentRow, type ReaderPdfAsset } from ".
 
 type ReaderSurface = "text" | "pdf";
 
-type ReaderLibraryCardOption = {
+type ReaderCollectionOption = {
+ kind: ReaderDocumentRow["kind"];
  badge: string;
  badgeVariant: ComponentProps<typeof Badge>["variant"];
  description: string;
- glyph: string;
  href: string;
  icon: LucideIcon;
  label: string;
@@ -56,9 +54,18 @@ function metadataCount(document: ReaderDocumentRow, key: string) {
  return typeof nestedValue === "number" ? nestedValue : null;
 }
 
-const readerCollectionOptions: ReadonlyArray<
- { kind: ReaderDocumentRow["kind"] } & ReaderLibraryCardOption
-> = [
+const coreReaderOption: ReaderCollectionOption = {
+ kind: "core",
+ badge: "12 bài chính",
+ badgeVariant: "success",
+ description: "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt.",
+ href: "/reader/course",
+ icon: BookOpen,
+ label: "Giáo trình U3–U5",
+ title: "Giáo trình U3–U5",
+};
+
+const readerCollectionOptions: ReadonlyArray<ReaderCollectionOption> = [
  {
   kind: "daily",
   badge: "Mỗi ngày 1 bài mới",
@@ -66,22 +73,11 @@ const readerCollectionOptions: ReadonlyArray<
   description:
    "Đọc báo bản học tập, nghe, tra từ, làm câu hỏi và lưu toàn bộ lịch sử ngay trên thiết bị.",
   href: "/daily-reading",
-  glyph: "报",
   icon: FileText,
   label: "Bài đọc hôm nay",
   title: "Bài đọc hôm nay",
  },
- {
-  kind: "core",
-  badge: "12 bài chính",
-  badgeVariant: "success",
-  description: "Đọc bài, làm bài tập, tra từ đúng vùng chọn, phân tích mạch bài và tóm tắt.",
-  href: "/reader/course",
-  glyph: "读",
-  icon: BookOpen,
-  label: "Giáo trình U3–U5",
-  title: "Giáo trình U3–U5",
- },
+ coreReaderOption,
  {
   kind: "hsk",
   badge: "50 đoạn HSK",
@@ -89,7 +85,6 @@ const readerCollectionOptions: ReadonlyArray<
   description:
    "Đọc 50 đoạn văn HSK 3–4 với TTS chạy theo chữ, pinyin, nghĩa tiếng Việt và tra từ dùng chung.",
   href: "/reader/hsk",
-  glyph: "阅",
   icon: BookOpen,
   label: "Đọc HSK",
   title: "Đọc HSK",
@@ -100,7 +95,6 @@ const readerCollectionOptions: ReadonlyArray<
   badgeVariant: "warning",
   description: "PDF có phóng to, toàn màn hình, bút vẽ và đánh dấu lưu riêng theo từng trang.",
   href: "/reader/practice",
-  glyph: "写",
   icon: FileText,
   label: "Luyện củng cố",
   title: "Luyện củng cố",
@@ -111,91 +105,51 @@ const readerCollectionOptions: ReadonlyArray<
   badgeVariant: "success",
   description: "Luyện văn bản chưa gặp, bám cấu trúc kỹ năng của ba đơn nguyên.",
   href: "/reader/mock",
-  glyph: "测",
   icon: Check,
   label: "Thi thử / đọc lạ",
   title: "Thi thử / đọc lạ",
  },
 ];
 
-const readerUtilityOptions: ReadonlyArray<ReaderLibraryCardOption> = [
- {
-  badge: "Theo ngữ cảnh",
-  badgeVariant: "warning",
-  description:
-   "Xem âm đọc, nghĩa trong câu, các âm khác và dữ liệu bộ thủ được nguồn hiện có hỗ trợ.",
-  href: "/inspector",
-  glyph: "查",
-  icon: Search,
-  label: "Mở khu vực →",
-  title: "Tra chữ trong câu",
- },
- {
-  badge: "Tạo MP3",
-  badgeVariant: "warning",
-  description: "Dán bất kỳ đoạn tiếng Trung nào, chọn giọng và tốc độ rồi nghe hoặc tải MP3.",
-  href: "/tts",
-  glyph: "听",
-  icon: Volume2,
-  label: "Mở khu vực →",
-  title: "Tạo giọng đọc",
- },
-];
+const secondaryReaderOptions = readerCollectionOptions.filter((option) => option.kind !== "core");
 
-const readerLibraryOptions: ReadonlyArray<ReaderLibraryCardOption> = [
- ...readerCollectionOptions.slice(0, 3),
- ...readerUtilityOptions.slice(0, 1),
- ...readerCollectionOptions.slice(3),
- ...readerUtilityOptions.slice(1),
-];
-
-function ReaderLibraryCard({ option }: { option: ReaderLibraryCardOption }) {
+function ReaderSourceRow({ option }: { option: ReaderCollectionOption }) {
  const Icon = option.icon;
 
  return (
-  <Card variant="interactive" padding="lg" className="min-h-56 overflow-hidden sm:min-h-64">
+  <Button
+   variant="navigation"
+   size="touch"
+   align="start"
+   wrap="normal"
+   layout="grid"
+   asChild
+   className="w-full"
+  >
    <Link
     href={option.href}
     prefetch={false}
-    className="group relative grid min-h-48 min-w-0 content-between gap-3"
+    className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-2 sm:grid-cols-[auto_minmax(0,1fr)_auto]"
    >
-    <span
-     aria-hidden="true"
-     className="pointer-events-none absolute -right-4 -bottom-12 select-none font-hanzi text-[8rem] leading-none font-bold text-text-muted/10 sm:text-[10rem]"
-    >
-     {option.glyph}
+    <IconTile tone="neutral" size="sm">
+     <Icon aria-hidden="true" />
+    </IconTile>
+    <span className="grid min-w-0 gap-0.5">
+     <Typography as="span" variant="bodySmall" weight="bold">
+      {option.title}
+     </Typography>
+     <Typography as="span" variant="caption" tone="muted" clamp="two">
+      {option.description}
+     </Typography>
     </span>
-    <div className="relative flex min-w-0 items-start justify-between gap-3">
+    <span className="col-start-2 flex min-w-0 items-center gap-2 sm:col-start-auto">
      <Badge variant={option.badgeVariant} size="sm" casing="natural">
       {option.badge}
      </Badge>
-     <IconTile tone="neutral" size="md">
-      <Icon aria-hidden="true" />
-     </IconTile>
-    </div>
-    <div className="relative grid min-w-0 max-w-[88%] gap-1.5">
-     <HanziAwareText
-      as="h2"
-      text={option.title}
-      variant="cardTitle"
-      weight="black"
-      className="text-left sm:text-2xl"
-     />
-     <Typography as="p" variant="bodySmall" tone="secondary" leading="standard">
-      {option.description}
-     </Typography>
-    </div>
-    <div className="relative flex items-center gap-1.5">
-     <Typography as="span" variant="bodySmall" tone="accent" weight="bold">
-      {option.label}
-     </Typography>
-     <ChevronRight
-      className="size-4 text-primary transition-transform group-hover:translate-x-0.5"
-      aria-hidden="true"
-     />
-    </div>
+     <ChevronRight aria-hidden="true" />
+    </span>
    </Link>
-  </Card>
+  </Button>
  );
 }
 
@@ -311,10 +265,6 @@ export function ReaderWorkspace({
  const requestedDocumentId = searchParams.get("document") ?? "";
  const showCollectionCatalog = parsedReaderKind.success || requestedDocumentId.length > 0;
  const documents = initialDocuments;
- const libraryCoreDocuments = useMemo(
-  () => (showCollectionCatalog && readerKind !== "core" ? [] : initialDocuments),
-  [initialDocuments, readerKind, showCollectionCatalog],
- );
  const selectedDocumentId = requestedDocumentId;
  const groupedDocuments = useMemo(() => {
   const groups = new Map<string, ReaderDocumentRow[]>();
@@ -339,42 +289,8 @@ export function ReaderWorkspace({
     ),
    }));
  }, [documents]);
- const unitSummaries = useMemo(() => {
-  const units = new Map<
-   string,
-   { documents: ReaderDocumentRow[]; title: string; subtitle: string; description: string }
-  >();
-  for (const document of libraryCoreDocuments) {
-   const id = document.unit_id ?? "other";
-   const titleZh =
-    typeof document.source_metadata.unit_title_zh === "string"
-     ? document.source_metadata.unit_title_zh
-     : null;
-   const titleVi =
-    typeof document.source_metadata.unit_title_vi === "string"
-     ? document.source_metadata.unit_title_vi
-     : null;
-   const focusVi =
-    typeof document.source_metadata.unit_focus_vi === "string"
-     ? document.source_metadata.unit_focus_vi
-     : null;
-   const current = units.get(id) ?? {
-    documents: [],
-    title:
-     id === "other"
-      ? "Tài liệu khác"
-      : `Đơn nguyên ${id.replace(/^U/u, "")} · ${titleZh ?? "Reader"}`,
-    subtitle: titleVi ?? "",
-    description: focusVi ?? "",
-   };
-   current.documents.push(document);
-   units.set(id, current);
-  }
-  return [...units.entries()].sort(([left], [right]) =>
-   left.localeCompare(right, undefined, { numeric: true }),
-  );
- }, [libraryCoreDocuments]);
  const resource = selectedDocumentId.length > 0 ? initialResource : null;
+
  return (
   <div className="grid min-w-0 gap-5 sm:gap-7">
    {!showCollectionCatalog ? (
@@ -384,8 +300,8 @@ export function ReaderWorkspace({
        <BookOpen aria-hidden="true" />
       </IconTile>
       <PageHeader
-       title="Không gian học tiếng Trung"
-       description="Đọc hiểu vẫn là lõi: 24 bài số hóa hiện có, 50 đoạn HSK 3–4, PDF luyện tập, TTS chạy theo chữ, dịch và chép chính tả HSK 3–6 dùng chung một không gian học."
+       title="Đọc bài"
+       description="Tiếp tục bài đang học hoặc chọn một bộ đọc. Reader giữ phần đọc, nghe, tra từ và bài tập trong cùng một luồng học."
        className="min-w-0 flex-1"
       />
      </div>
@@ -399,35 +315,55 @@ export function ReaderWorkspace({
       <div className="grid min-w-0 gap-3">
        {!showCollectionCatalog ? (
         <>
-         <div className="grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {readerLibraryOptions.map((option) => (
-           <ReaderLibraryCard key={option.href} option={option} />
-          ))}
-         </div>
-         <div className="grid gap-4 lg:grid-cols-3">
-          {unitSummaries.map(([unitId, unit]) => (
-           <Card key={unitId} variant="section" padding="lg" className="grid gap-3">
-            <div className="flex items-start justify-between gap-3">
-             <div className="grid min-w-0 gap-2">
-              <HanziAwareText as="h2" text={unit.title} variant="cardTitle" weight="black" />
-              <Typography as="p" variant="bodySmall" tone="secondary">
-               {unit.subtitle ? <strong>{unit.subtitle}. </strong> : null}
-               {unit.description}
-              </Typography>
-             </div>
-             <Badge variant="accent" casing="natural">
-              {unitId}
-             </Badge>
-            </div>
-            <Typography as="p" variant="caption" tone="muted">
-             {unit.documents.length} bài ·{" "}
-             {unit.documents.map((document) => document.title_zh).join(" · ")}
+         <Card
+          variant="section"
+          padding="lg"
+          className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+         >
+          <div className="grid min-w-0 gap-2">
+           <div className="flex flex-wrap items-center gap-2">
+            <Badge variant={coreReaderOption.badgeVariant} casing="natural">
+             {coreReaderOption.badge}
+            </Badge>
+            <Typography variant="caption" tone="muted">
+             Điểm bắt đầu chính
             </Typography>
-           </Card>
-          ))}
-         </div>
+           </div>
+           <div className="grid min-w-0 gap-1">
+            <Typography as="h2" variant="sectionTitle" weight="black">
+             {coreReaderOption.title}
+            </Typography>
+            <Typography as="p" variant="bodySmall" tone="secondary">
+             {coreReaderOption.description}
+            </Typography>
+           </div>
+          </div>
+          <Button type="button" variant="default" asChild>
+           <Link href={coreReaderOption.href} prefetch={false}>
+            <BookOpen data-icon="inline-start" />
+            Mở giáo trình
+           </Link>
+          </Button>
+         </Card>
+
+         <Card variant="section" padding="md" className="grid gap-2">
+          <div className="grid gap-1">
+           <Typography as="h2" variant="cardTitle" weight="black">
+            Chọn bộ đọc khác
+           </Typography>
+           <Typography as="p" variant="bodySmall" tone="muted">
+            Chuyển sang bài đọc hằng ngày, HSK, PDF củng cố hoặc đọc lạ khi đúng mục tiêu buổi học.
+           </Typography>
+          </div>
+          <div className="grid gap-1">
+           {secondaryReaderOptions.map((option) => (
+            <ReaderSourceRow key={option.href} option={option} />
+           ))}
+          </div>
+         </Card>
         </>
        ) : null}
+
        {showCollectionCatalog ? (
         <div className="grid min-w-0 gap-4" aria-label="Danh mục Reader đã nhập">
          <div className="flex min-w-0 flex-wrap items-center gap-2">
@@ -446,10 +382,7 @@ export function ReaderWorkspace({
           >
            ← Thư viện Reader
           </Button>
-          <div
-           className="flex min-w-0 gap-2 overflow-x-auto pb-1 scrollbar-soft"
-           aria-label="Bộ Reader"
-          >
+          <div className="flex min-w-0 flex-wrap gap-2" aria-label="Bộ Reader">
            {readerCollectionOptions.map((option) => (
             <Button
              key={option.kind}
@@ -491,7 +424,7 @@ export function ReaderWorkspace({
                {group.documents.length} bài
               </Typography>
              </div>
-             <div className="grid min-w-0 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+             <div className="grid min-w-0 gap-2 sm:grid-cols-2 xl:grid-cols-3">
               {group.documents.map((document) => (
                <Button
                 key={document.id}
@@ -534,6 +467,7 @@ export function ReaderWorkspace({
        ) : null}
       </div>
      </div>
+
      {showCollectionCatalog && requestedDocumentId.length > 0 && resource === null ? (
       <Card variant="subtle" padding="lg">
        <Typography variant="bodySmall" tone="danger">

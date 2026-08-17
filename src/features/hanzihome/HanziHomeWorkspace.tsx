@@ -242,7 +242,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
      lessons={courseLessons}
     />
    ) : null}
-   <main className="hanzihome-static-page hanzihome-workspace-page">
+   <div className="hanzihome-static-page hanzihome-workspace-page">
     <Typography as="h1" variant="pageTitle" className="sr-only">
      {resolvedActiveModule === "radicals"
       ? "Bộ thủ HanziHome"
@@ -281,7 +281,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
       )
      )}
     </div>
-   </main>
+   </div>
   </>
  );
 }

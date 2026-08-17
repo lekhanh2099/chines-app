@@ -441,6 +441,8 @@ export function StudioDictationWorkspace({
         setSourceType(value);
         resetPracticeFlow();
        }}
+       density="touch"
+       layout="wrap"
        aria-label="Nguồn nghe chép"
       />
       {sourceType === "lesson" ? (

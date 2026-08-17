@@ -4,7 +4,7 @@ import { StudyInstructionText } from "@/features/hanzihome/components/lesson-ove
 import { Button } from "@/components/ui/button";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useId, useMemo, useState } from "react";
 import { BookOpenCheck, LoaderCircle, Search } from "lucide-react";
 
 import {
@@ -43,6 +43,7 @@ export function GlobalSearchDialog({
  onDirectLookup,
 }: GlobalSearchDialogProps) {
  const [selectedIndex, setSelectedIndex] = useState(0);
+ const listboxId = useId();
  const deferredQuery = useDeferredValue(query);
  const searchIndex = useHanziHomeSearchIndex(open);
  const results = useMemo(
@@ -67,6 +68,8 @@ export function GlobalSearchDialog({
    .slice(0, 12);
  }, [courseId, deferredQuery, lessonId, results, searchIndex.data]);
  const safeSelectedIndex = Math.min(selectedIndex, Math.max(visibleItems.length - 1, 0));
+ const activeOptionId =
+  visibleItems.length > 0 ? `${listboxId}-option-${safeSelectedIndex}` : undefined;
  const trimmedQuery = query.trim();
  const canLookupDirectly = containsChinese(trimmedQuery);
 
@@ -121,7 +124,12 @@ export function GlobalSearchDialog({
       onChange={(event) => handleQueryChange(event.target.value)}
       onKeyDown={handleKeyDown}
       placeholder="Tìm Hán tự, pinyin, nghĩa, ngữ pháp, bài học..."
+      role="combobox"
       aria-label="Tìm toàn bộ HanziHome"
+      aria-autocomplete="list"
+      aria-controls={listboxId}
+      aria-expanded={open}
+      aria-activedescendant={activeOptionId}
       density="comfortable"
       surface="transparent"
       adornment="both"
@@ -132,11 +140,8 @@ export function GlobalSearchDialog({
      )}
     </div>
 
-    <div
-     className="grid min-h-0 flex-1 content-start gap-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
-     role="listbox"
-    >
-     {canLookupDirectly && (
+    {canLookupDirectly ? (
+     <div className="px-2 pt-2">
       <Button
        type="button"
        onClick={() => onDirectLookup(trimmedQuery)}
@@ -156,11 +161,19 @@ export function GlobalSearchDialog({
         </StudyInstructionText>
        </span>
       </Button>
-     )}
+     </div>
+    ) : null}
 
+    <div
+     id={listboxId}
+     className="grid min-h-0 flex-1 content-start gap-1 overscroll-contain overflow-y-auto px-2 py-2 scrollbar-soft"
+     role="listbox"
+     aria-label="Kết quả tìm kiếm HanziHome"
+    >
      {visibleItems.map((item, index) => (
       <SearchResultItem
        key={item.id}
+       id={`${listboxId}-option-${index}`}
        item={item}
        selected={index === safeSelectedIndex}
        onSelect={() => setSelectedIndex(index)}

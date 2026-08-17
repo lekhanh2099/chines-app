@@ -15,12 +15,12 @@ export default async function HumanitiesPoetryPage({
  const initialResource = documentId.length > 0 ? await getReaderDocument(documentId) : null;
 
  return (
-  <main className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
    <HumanitiesTrackWorkspace
     kind="poetry"
     initialDocuments={initialDocuments}
     initialResource={initialResource}
    />
-  </main>
+  </div>
  );
 }

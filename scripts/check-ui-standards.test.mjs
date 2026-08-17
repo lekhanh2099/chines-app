@@ -38,6 +38,28 @@ describe("UI standards guard", () => {
   ]);
  });
 
+ it("rejects manual tab semantics outside migrated workspace folders", () => {
+  expect(
+   inspectUiSource({
+    file: "src/features/hanzihome/html-artifacts/Example.tsx",
+    source:
+     'export function Example() { return <div role="tablist"><Button role="tab">File</Button></div>; }',
+   }),
+  ).toEqual([
+   expect.stringContaining("manualTabSemantics"),
+   expect.stringContaining("manualTabSemantics"),
+  ]);
+ });
+
+ it("rejects nested app main landmarks beneath AppScrollViewport", () => {
+  expect(
+   inspectUiSource({
+    file: "src/app/(app)/reader/page.tsx",
+    source: "export function Page() { return <main />; }",
+   }),
+  ).toEqual([expect.stringContaining("nestedAppMain")]);
+ });
+
  it("allows parent-owned layout classes on canonical primitives", () => {
   expect(
    inspect(
@@ -128,7 +150,7 @@ describe("UI standards guard", () => {
 
  it("rejects feature-owned rings, thick borders, arbitrary radii and oversized radii", () => {
   const failures = inspect(
-   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-2" /><div className="rounded-[13px]" /><div className="rounded-2xl" /></>; }',
+   'export function Example() { return <><div className="ring-2 ring-primary/20" /><div className="border-l-2" /><div className="rounded-[13px]" /><div className="rounded-2xl" /></>; }',
   );
 
   expect(failures).toEqual([

@@ -29,23 +29,25 @@ const kindConfig = {
 } satisfies Record<HanziHomeSearchIndexItem["kind"], { label: string; icon: typeof BookOpen }>;
 
 type SearchResultItemProps = {
+ id: string;
  item: HanziHomeSearchIndexItem;
  selected: boolean;
  onSelect: () => void;
  onOpen: () => void;
 };
 
-export function SearchResultItem({ item, selected, onSelect, onOpen }: SearchResultItemProps) {
+export function SearchResultItem({ id, item, selected, onSelect, onOpen }: SearchResultItemProps) {
  const config = kindConfig[item.kind];
  const Icon = config.icon;
 
  return (
   <Button
+   id={id}
    type="button"
    role="option"
    aria-selected={selected}
+   tabIndex={-1}
    onMouseEnter={onSelect}
-   onFocus={onSelect}
    onClick={onOpen}
    variant={selected ? "active" : "ghost"}
    size="menu"

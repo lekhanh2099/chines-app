@@ -41,6 +41,7 @@ import { z } from "zod";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SegmentedControl, type SegmentedControlItem } from "@/components/ui/segmented-control";
 import {
  Dialog,
  DialogBody,
@@ -607,7 +608,7 @@ export function HanziHomeHtmlArtifactsPage() {
  };
 
  return (
-  <main className="flex h-full min-h-0 w-full flex-col overflow-hidden">
+  <div className="flex h-full min-h-0 w-full flex-col overflow-hidden">
    <CreateFolderDialog
     folderDraft={folderDraft}
     folders={folders}
@@ -767,7 +768,7 @@ export function HanziHomeHtmlArtifactsPage() {
      </ResizablePanel>
     </ResizablePanelGroup>
    ) : null}
-  </main>
+  </div>
  );
 }
 
@@ -778,40 +779,21 @@ function MobilePaneTabs({
  activePane: MobilePane;
  onChange: (pane: MobilePane) => void;
 }) {
- const panes: Array<{ key: MobilePane; label: string; icon: typeof Folder }> = [
+ const panes: SegmentedControlItem<MobilePane>[] = [
   { key: "files", label: "Tệp", icon: Folder },
   { key: "preview", label: "Xem trước", icon: Code2 },
   { key: "edit", label: "Sửa", icon: FileCode2 },
  ];
  return (
   <div className="shrink-0 border-b border-border-default bg-bg-card p-2">
-   <div
-    role="tablist"
+   <SegmentedControl
+    value={activePane}
+    items={panes}
+    onChange={onChange}
+    density="touch"
+    layout="wrap"
     aria-label="Chọn vùng tệp HTML"
-    className="grid grid-cols-3 gap-1 rounded-xl bg-bg-subtle p-1"
-   >
-    {panes.map((pane) => {
-     const Icon = pane.icon;
-     const active = activePane === pane.key;
-     return (
-      <Button
-       key={pane.key}
-       type="button"
-       role="tab"
-       aria-selected={active}
-       variant={active ? "active" : "ghost"}
-       size="tab"
-       className="min-w-0"
-       onClick={() => onChange(pane.key)}
-      >
-       <Icon className="h-3.5 w-3.5 shrink-0" />
-       <StudyInstructionText as="span" clamp="one">
-        {pane.label}
-       </StudyInstructionText>
-      </Button>
-     );
-    })}
-   </div>
+   />
   </div>
  );
 }
@@ -886,26 +868,37 @@ function RightInspectorPane({
  onTabChange: (tab: InspectorTab) => void;
 }) {
  return (
-  <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l-2 border-border-default bg-bg-card">
+  <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l border-border-default bg-bg-card">
    <div className="flex h-14 shrink-0 items-center border-b border-border-default bg-bg-card px-3">
-    <div
-     role="tablist"
-     aria-label="HTML inspector"
-     className="grid w-full grid-cols-2 gap-1 rounded-xl bg-bg-subtle p-1"
-    >
-     <InspectorTabButton
-      active={activeTab === "files"}
-      icon={Folder}
-      label="Tệp"
-      count={filteredArtifacts.length}
+    <div className="grid w-full grid-cols-2 gap-1">
+     <Button
+      type="button"
+      variant={activeTab === "files" ? "active" : "ghost"}
+      size="toolbar"
+      className="min-w-0"
+      aria-pressed={activeTab === "files"}
       onClick={() => onTabChange("files")}
-     />
-     <InspectorTabButton
-      active={false}
-      icon={PlugZap}
-      label="Kết nối"
+     >
+      <Folder data-icon="inline-start" />
+      <StudyInstructionText as="span" clamp="one">
+       Tệp
+      </StudyInstructionText>
+      <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">
+       {filteredArtifacts.length}
+      </StudyInstructionText>
+     </Button>
+     <Button
+      type="button"
+      variant="ghost"
+      size="toolbar"
+      className="min-w-0"
       onClick={onOpenPublishDialog}
-     />
+     >
+      <PlugZap data-icon="inline-start" />
+      <StudyInstructionText as="span" clamp="one">
+       Kết nối
+      </StudyInstructionText>
+     </Button>
     </div>
    </div>
    <div className="min-h-0 flex-1 overflow-hidden bg-bg-subtle">
@@ -952,42 +945,6 @@ function RightInspectorPane({
     )}
    </div>
   </aside>
- );
-}
-
-function InspectorTabButton({
- active,
- count,
- icon: Icon,
- label,
- onClick,
-}: {
- active: boolean;
- count?: number;
- icon: typeof Folder;
- label: string;
- onClick: () => void;
-}) {
- return (
-  <Button
-   type="button"
-   role="tab"
-   aria-selected={active}
-   variant={active ? "active" : "ghost"}
-   size="toolbar"
-   className="min-w-0"
-   onClick={onClick}
-  >
-   <Icon className="h-4 w-4 shrink-0" />
-   <StudyInstructionText as="span" clamp="one">
-    {label}
-   </StudyInstructionText>
-   {typeof count === "number" ? (
-    <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">
-     {count}
-    </StudyInstructionText>
-   ) : null}
-  </Button>
  );
 }
 
@@ -1458,24 +1415,15 @@ function PreviewPane({
      </StudyInstructionText>
     </div>
     <div className="flex shrink-0 items-center gap-2">
-     <div
-      role="tablist"
+     <SegmentedControl
+      value={mode}
+      items={[
+       { key: "iframe", label: "iframe", icon: Code2 },
+       { key: "editor", label: "Chỉnh HTML", icon: FileCode2 },
+      ]}
+      onChange={onModeChange}
       aria-label="Chọn chế độ xem HTML"
-      className="flex rounded-xl bg-bg-subtle p-1"
-     >
-      <PreviewModeButton
-       active={mode === "iframe"}
-       icon={Code2}
-       label="iframe"
-       onClick={() => onModeChange("iframe")}
-      />
-      <PreviewModeButton
-       active={mode === "editor"}
-       icon={FileCode2}
-       label="Chỉnh HTML"
-       onClick={() => onModeChange("editor")}
-      />
-     </div>
+     />
      <Button type="button" variant="outline" size="toolbar" onClick={onToggleFocus}>
       {isFocused ? <Minimize2 /> : <Maximize2 />}
       {isFocused ? "Thu nhỏ" : "Phóng to"}
@@ -1557,34 +1505,6 @@ function HtmlArtifactPreviewSkeleton() {
    <div className="h-56 rounded-xl bg-bg-subtle" />
    <span className="sr-only">Đang tải bản xem trước HTML</span>
   </div>
- );
-}
-function PreviewModeButton({
- active,
- icon: Icon,
- label,
- onClick,
-}: {
- active: boolean;
- icon: typeof Code2;
- label: string;
- onClick: () => void;
-}) {
- return (
-  <Button
-   type="button"
-   role="tab"
-   aria-selected={active}
-   variant={active ? "active" : "ghost"}
-   size="compact"
-   className="min-w-0"
-   onClick={onClick}
-  >
-   <Icon />
-   <StudyInstructionText as="span" clamp="one">
-    {label}
-   </StudyInstructionText>
-  </Button>
  );
 }
 function getHtmlArtifactFrameKey(artifactId: string, html: string) {
@@ -1787,7 +1707,7 @@ function EditorPane(props: {
    className={cn(
     "h-full min-h-0 bg-bg-subtle p-4",
     props.htmlOnly ? "overflow-hidden" : "overflow-y-auto scrollbar-soft",
-    !embedded && "border-l-2 border-border-default",
+    !embedded && "border-l border-border-default",
    )}
   >
    <ArtifactForm {...formProps} />

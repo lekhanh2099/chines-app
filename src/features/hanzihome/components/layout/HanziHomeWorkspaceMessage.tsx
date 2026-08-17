@@ -18,7 +18,7 @@ export function HanziHomeWorkspaceMessage({
  onRetry?: () => void;
 }) {
  return (
-  <main className="hanzihome-static-page">
+  <div className="hanzihome-static-page">
    <div className="flex w-full max-w-full flex-col gap-2.5">
     <Card variant="section" padding="lg">
      <PageHeader
@@ -46,6 +46,6 @@ export function HanziHomeWorkspaceMessage({
      />
     </Card>
    </div>
-  </main>
+  </div>
  );
 }
