@@ -24,8 +24,8 @@ import { Link } from "@/i18n/navigation";
 
 import { sendAiConversationMessage } from "./ai-conversation-api";
 import {
- loadAiConversationProfile,
  saveAiConversationProfile,
+ useAiConversationProfile,
 } from "./ai-conversation-profile.client";
 import {
  aiConversationCorrectionStyleSchema,
@@ -89,15 +89,16 @@ function greetingFor(profile: AiConversationProfile): AiConversationMessage {
 }
 
 export function AiConversationWorkspace() {
- const [profile, setProfile] = useState<AiConversationProfile>(loadAiConversationProfile);
+ const profile = useAiConversationProfile();
  const [isSetupOpen, setIsSetupOpen] = useState(false);
- const [messages, setMessages] = useState<AiConversationMessage[]>(() => [greetingFor(profile)]);
+ const [messages, setMessages] = useState<AiConversationMessage[]>([]);
  const [draft, setDraft] = useState("");
  const [isSending, setIsSending] = useState(false);
  const [error, setError] = useState<string | null>(null);
  const [lastRuntime, setLastRuntime] = useState<{ provider: string; model: string } | null>(null);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
+ const displayMessages = [greetingFor(profile), ...messages];
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -109,15 +110,14 @@ export function AiConversationWorkspace() {
 
  const clearSession = () => {
   requestRef.current?.abort();
-  setMessages([greetingFor(profile)]);
+  setMessages([]);
   setDraft("");
   setError(null);
   setLastRuntime(null);
  };
 
  const saveProfile = (nextProfile: AiConversationProfile) => {
-  const saved = saveAiConversationProfile(nextProfile);
-  setProfile(saved);
+  saveAiConversationProfile(nextProfile);
   setIsSetupOpen(false);
  };
 
@@ -210,7 +210,7 @@ export function AiConversationWorkspace() {
 
     <div className="grid grid-cols-2 gap-3 border-y border-border-default py-3 sm:grid-cols-4">
      <SessionStat label="Lượt của bạn" value={String(learnerTurns)} />
-     <SessionStat label="Ngữ cảnh gần" value={`${Math.min(messages.length, 19)} tin`} />
+     <SessionStat label="Ngữ cảnh gần" value={`${Math.min(messages.length, 20)} tin`} />
      <SessionStat label="Provider" value={lastRuntime?.provider ?? "Chưa gọi"} />
      <SessionStat label="Model" value={lastRuntime?.model ?? "—"} />
     </div>
@@ -220,7 +220,7 @@ export function AiConversationWorkspace() {
      className="grid min-h-80 max-h-[60dvh] content-start gap-3 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4"
      aria-live="polite"
     >
-     {messages.map((message, index) => (
+     {displayMessages.map((message, index) => (
       <div
        key={`${message.role}-${index}`}
        className={message.role === "user" ? "flex justify-end" : "flex justify-start"}
@@ -283,7 +283,7 @@ export function AiConversationWorkspace() {
      />
      <div className="flex flex-wrap items-center justify-between gap-2">
       <Typography variant="caption" tone="muted">
-       Ctrl/Cmd + Enter để gửi · AI chỉ nhận tối đa 19 tin gần nhất + hồ sơ ghi nhớ ổn định.
+       Ctrl/Cmd + Enter để gửi · AI giữ tối đa 20 tin gần nhất + hồ sơ ghi nhớ ổn định.
       </Typography>
       <Button type="submit" disabled={!draft.trim() || isSending}>
        <Send data-icon="inline-start" />
