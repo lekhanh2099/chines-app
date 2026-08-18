@@ -38,6 +38,14 @@ function parseStructured<T>(raw: string, schema: z.ZodType<T>): T | null {
  }
 }
 
+function createSchemaRepairPrompt(prompt: string, phase: DailyReadingProviderPhase) {
+ const contract =
+  phase === "core"
+   ? "Return exactly one core object with titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, and paragraphs[{zh,vi,roleVi}]."
+   : "Return exactly one learning object with vocabulary[{hanzi,meaningVi,meaningInContextVi,categoryVi}], grammarPoints[{patternZh,explanationVi,evidenceSentenceZh}], questions[{type,promptZh,promptVi,answerZh,answerVi,evidenceParagraphNumbers}], sourcePhrasesZh, and verificationSummaryVi.";
+ return `${prompt}\n\nSCHEMA REPAIR: the previous JSON did not satisfy the required shape. ${contract} Include every required field, use no markdown, and do not add commentary.`;
+}
+
 async function requestStructured<T>({
  prompt,
  schema,
@@ -59,13 +67,24 @@ async function requestStructured<T>({
  const providerErrors: string[] = [];
  for (const credential of credentials) {
   throwIfAborted(signal);
-  const personal = await requestDailyReadingProvider({
-   credential,
-   prompt: boundedPrompt,
-   phase,
-   signal,
-  });
-  if (personal.content) {
+  const schemaRepairPrompt = createSchemaRepairPrompt(boundedPrompt, phase);
+  const attempts =
+   schemaRepairPrompt.length <= 5900 ? [boundedPrompt, schemaRepairPrompt] : [boundedPrompt];
+
+  for (let attemptIndex = 0; attemptIndex < attempts.length; attemptIndex += 1) {
+   const attemptPrompt = attempts[attemptIndex];
+   if (!attemptPrompt) continue;
+   const personal = await requestDailyReadingProvider({
+    credential,
+    prompt: attemptPrompt,
+    phase,
+    signal,
+   });
+   if (!personal.content) {
+    providerErrors.push(`${credential.label}: ${personal.error || "provider không trả về nội dung."}`);
+    break;
+   }
+
    const parsed = parseStructured(personal.content, schema);
    if (parsed !== null) {
     return {
@@ -74,10 +93,11 @@ async function requestStructured<T>({
      model: personal.model,
     };
    }
-   providerErrors.push(`${credential.label}: nội dung JSON không khớp schema Daily Reading.`);
-   continue;
+
+   if (attemptIndex === attempts.length - 1) {
+    providerErrors.push(`${credential.label}: nội dung JSON không khớp schema Daily Reading sau lần sửa tự động.`);
+   }
   }
-  providerErrors.push(`${credential.label}: ${personal.error || "provider không trả về nội dung."}`);
  }
 
  const system = await requestDailyReadingSystemGemini({ prompt: boundedPrompt, phase, signal });
@@ -115,7 +135,7 @@ function createCorePrompt(source: DailyReadingSourceCandidate, level: DailyReadi
   "Write a new 学习版 rather than copying the publisher's paragraph structure.",
   "Produce 5-7 complete paragraphs totaling about 480-720 Han characters.",
   "Each Vietnamese paragraph must closely translate its Chinese paragraph.",
-  "Return fields: titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, paragraphs[{zh,vi,roleVi}].",
+  "Return exactly one JSON object with fields: titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, paragraphs[{zh,vi,roleVi}]. Do not omit required fields or add commentary.",
   `Source title: ${source.titleZh}`,
   `Publisher: ${source.publisher}`,
   `Published at: ${source.publishedAt}`,
@@ -154,10 +174,10 @@ function createLearningPrompt(source: DailyReadingSourceCandidate, core: DailyRe
  const readingText = core.paragraphs.map((paragraph, index) => `P${index + 1}: ${paragraph.zh}`).join("\n");
  return [
   "Prepare learning material for the LOCKED READING TEXT. Do not change the reading.",
-  "Return vocabulary (10-14), grammarPoints (3-5), questions (5-6), sourcePhrasesZh, verificationSummaryVi.",
-  "Vocabulary hanzi must occur verbatim in the locked reading; include meaningVi, meaningInContextVi, categoryVi.",
-  "Grammar evidenceSentenceZh must be a complete sentence copied from the locked reading.",
-  "Questions must include main_idea, at least two detail, inference, summary; answer only from the reading; cite evidenceParagraphNumbers.",
+  "Return exactly one JSON object containing vocabulary (10-14), grammarPoints (3-5), questions (5-6), sourcePhrasesZh, verificationSummaryVi.",
+  "Vocabulary items require hanzi, meaningVi, meaningInContextVi, categoryVi; hanzi must occur verbatim in the locked reading.",
+  "Grammar items require patternZh, explanationVi, evidenceSentenceZh; evidenceSentenceZh must be a complete sentence copied from the locked reading.",
+  "Questions require type, promptZh, promptVi, answerZh, answerVi, evidenceParagraphNumbers; include main_idea, at least two detail, inference, summary; answer only from the reading.",
   "sourcePhrasesZh must be short exact phrases from source evidence and may be empty.",
   "LOCKED READING TEXT:",
   readingText,
