@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import { publicSupabaseEnv } from "@/lib/env/public";
 import { getSupabaseServerSecret } from "@/lib/env/server";
+import type { JsonObject } from "@/types/json";
 
 import type {
  AiConversationPersistedMessage,
@@ -49,7 +50,7 @@ const characterRowSchema = z.object({ id: z.uuid() });
 
 const messageRpcResultSchema = z.union([
  messageRowSchema,
- z.array(messageRowSchema).length(1).transform((rows) => rows[0]),
+ z.tuple([messageRowSchema]).transform(([row]) => row),
 ]);
 
 const DEFAULT_CHARACTER = {
@@ -112,7 +113,7 @@ async function requestPostgrest<T>({
  schema: z.ZodType<T>;
  params?: Readonly<Record<string, string>>;
  method?: "GET" | "POST";
- body?: Readonly<Record<string, unknown>>;
+ body?: JsonObject;
  prefer?: string;
 }): Promise<T> {
  const secret = getSupabaseServerSecret();
@@ -243,17 +244,18 @@ async function createConversation(userId: string, characterId: string) {
 }
 
 async function loadMessages(conversationId: string, userId: string, limit = 200) {
- return requestPostgrest({
+ const rows = await requestPostgrest({
   resource: "ai_messages",
   schema: z.array(messageRowSchema),
   params: {
    select: "id,seq,role,content,created_at",
    user_id: `eq.${userId}`,
    conversation_id: `eq.${conversationId}`,
-   order: "seq.asc",
+   order: "seq.desc",
    limit: String(limit),
   },
  });
+ return rows.reverse();
 }
 
 export async function loadLatestAiConversationSession(userId: string): Promise<AiConversationSession> {
@@ -291,7 +293,7 @@ export async function appendAiConversationMessage({
  content: string;
  clientMessageId?: string;
  replyToMessageId?: string;
- metadata?: Readonly<Record<string, string | null>>;
+ metadata?: JsonObject;
 }): Promise<AiConversationPersistedMessage> {
  const row = await requestPostgrest({
   resource: "rpc/ai_append_message",
