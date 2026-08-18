@@ -29,9 +29,11 @@ The existing lookup/model/provider/usage/prompt settings remain below this new s
   -> AiConversationSettingsSection
       -> TanStack Query: settings overview
       -> TanStack Mutation: account defaults
-      -> local transient state: Memory Manager open/filter/action view
-      -> lazy TanStack Query: active memories only while manager is opened
-      -> TanStack Mutation: edit / resolve / forget
+      -> local transient state: Memory Manager open
+      -> AiConversationMemoryManagerDialog
+          -> local transient state: filter/action view
+          -> lazy TanStack Query: active memories only while manager is opened
+          -> TanStack Mutation: edit / resolve / forget
 ```
 
 Persisted settings and memory lists are never copied into React state for rendering. Account defaults are optimistically updated in the Query cache and rolled back on mutation failure.
@@ -118,6 +120,7 @@ messages/zh-CN/ai-conversation-settings.json
 
 ```text
 src/features/settings/AiConversationSettingsSection.tsx
+src/features/settings/AiConversationMemoryManagerDialog.tsx
 src/features/settings/SettingsPageContent.tsx
 src/i18n/messages.ts
 src/i18n/messages.test.ts
