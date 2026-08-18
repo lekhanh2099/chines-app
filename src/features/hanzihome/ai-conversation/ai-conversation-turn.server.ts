@@ -18,7 +18,7 @@ import {
  type AiConversationContextState,
 } from "./ai-conversation-context.server";
 import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
-import type { AiConversationMessage, AiConversationProfile } from "./ai-conversation.schemas";
+import type { AiConversationMessage } from "./ai-conversation.schemas";
 
 export type PersistedTurnGenerationResult =
  | {
@@ -40,7 +40,6 @@ export async function generatePersistedAiConversationTurn({
  userId,
  recentMessages,
  contextState,
- learnerLevel,
  apiKeyId,
  signal,
 }: {
@@ -48,7 +47,6 @@ export async function generatePersistedAiConversationTurn({
  userId: string;
  recentMessages: AiConversationPersistedMessage[];
  contextState: AiConversationContextState;
- learnerLevel: AiConversationProfile["learnerLevel"];
  apiKeyId?: string;
  signal?: AbortSignal;
 }): Promise<PersistedTurnGenerationResult> {
@@ -68,7 +66,6 @@ export async function generatePersistedAiConversationTurn({
 
  const providerContext = buildAiConversationProviderContext({
   state: contextState,
-  learnerLevel,
   recentMessages,
  });
  const conversationMessages: AiConversationMessage[] = providerContext.messages.map((message) => ({
