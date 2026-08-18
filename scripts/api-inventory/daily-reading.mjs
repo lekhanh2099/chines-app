@@ -1,3 +1,5 @@
+export const dailyReadingInventoryFile = "scripts/api-inventory/daily-reading.mjs";
+
 function inventoryEntry(input) {
  return input;
 }
