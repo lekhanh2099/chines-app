@@ -51,7 +51,10 @@ function collectSearchFeatures(value: string): Set<string> {
  return features;
 }
 
-function lexicalRank(query: string, memories: AiConversationStoredMemory[]) {
+export function rankAiConversationMemoriesLexically(
+ query: string,
+ memories: AiConversationStoredMemory[],
+) {
  const normalizedQuery = normalizeSearchText(query);
  const queryFeatures = collectSearchFeatures(query);
 
@@ -59,6 +62,7 @@ function lexicalRank(query: string, memories: AiConversationStoredMemory[]) {
   .map((memory) => {
    const searchable = `${memory.memoryKey ?? ""} ${memory.content}`;
    const normalizedMemory = normalizeSearchText(searchable);
+   const normalizedContent = normalizeSearchText(memory.content);
    const memoryFeatures = collectSearchFeatures(searchable);
    let overlap = 0;
    for (const feature of queryFeatures) {
@@ -66,7 +70,7 @@ function lexicalRank(query: string, memories: AiConversationStoredMemory[]) {
    }
    const exact =
     normalizedQuery.length >= 2 &&
-    (normalizedMemory.includes(normalizedQuery) || normalizedQuery.includes(normalizedMemory));
+    (normalizedMemory.includes(normalizedQuery) || normalizedQuery.includes(normalizedContent));
    const ratio = queryFeatures.size > 0 ? overlap / queryFeatures.size : 0;
    return { memory, exact, overlap, ratio };
   })
@@ -174,7 +178,7 @@ export async function retrieveRelevantAiConversationMemories({
  const active = await loadActiveAiConversationMemories({ userId, characterId, limit: 80 });
  if (active.length === 0) return [];
 
- const lexical = lexicalRank(query, active);
+ const lexical = rankAiConversationMemoriesLexically(query, active);
  let semantic: AiConversationRecalledMemory[] = [];
  const embedding = await generateAiConversationMemoryEmbedding({
   text: query,
