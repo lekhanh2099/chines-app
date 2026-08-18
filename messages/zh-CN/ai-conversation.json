@@ -1,10 +1,11 @@
 {
  "title": "AI 会话",
- "description": "和持续存在的人物练习中文，会话设置按账户保存。刷新页面后仍可继续之前的对话。",
+ "description": "继续和你的角色聊天。会话历史、互动方式和上下文都会按账户保存。",
  "actions": {
   "setup": "会话设置",
   "apiKeys": "管理 API 密钥",
   "clear": "清空会话",
+  "more": "更多会话选项",
   "send": "发送",
   "sending": "发送中…",
   "saving": "保存中…",
@@ -42,6 +43,34 @@
  "character": {
   "defaultName": "小林"
  },
+ "relationship": {
+  "new": "刚认识",
+  "familiar": "熟悉了",
+  "friends": "朋友",
+  "close": "很熟"
+ },
+ "memory": {
+  "useLongTerm": "使用长期记忆",
+  "offShort": "不使用记忆",
+  "updateError": "无法更新会话记忆。"
+ },
+ "history": {
+  "title": "会话历史",
+  "open": "打开会话历史",
+  "newConversation": "新建会话",
+  "creating": "正在创建会话…",
+  "loading": "正在加载历史…",
+  "emptyTitle": "还没有会话",
+  "emptyDescription": "新建一个会话，继续和当前角色聊天。",
+  "listAria": "会话列表",
+  "untitled": "会话",
+  "actionsAria": "{title} 的选项",
+  "archive": "归档会话",
+  "archiveTitle": "归档这个会话？",
+  "archiveDescription": "“{title}”会从当前会话历史中隐藏，但内容不会被永久删除。",
+  "archiveConfirm": "归档",
+  "archiving": "正在归档…"
+ },
  "greeting": "你好，我是{name}。现在是“{mode}”模式。你可以直接用中文开始，也可以先告诉我今天想练什么。",
  "fallbackInterest": "中文会话",
  "runtime": {
@@ -53,6 +82,10 @@
   "current": "当前运行环境：{provider} · {model}",
   "loadError": "无法加载个人 API 密钥列表。自动模式仍可使用系统 Gemini。",
   "modelFallback": "provider 默认模型",
+  "compactChecking": "正在检查 AI",
+  "compactReady": "AI 可用 · {provider}",
+  "compactUnavailable": "AI 暂不可用",
+  "menuAria": "选择并检查 AI 运行环境",
   "healthChecking": "正在检查 AI…",
   "healthReady": "可用 · {provider} · {model}",
   "recheck": "重新检查",
@@ -68,7 +101,8 @@
  "message": {
   "label": "消息",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter 发送 · 当前会话和交互设置会保存到你的账户。",
+  "hint": "Ctrl/Cmd + Enter 发送 · 当前会话会保存到你的账户。",
+  "loadingConversation": "正在加载会话…",
   "replying": "{name} 正在回复…",
   "sendError": "无法发送会话。"
  },
