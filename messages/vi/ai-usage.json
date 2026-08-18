@@ -10,6 +10,7 @@
  "empty": "Chưa có lượt Hội thoại AI thành công trên trình duyệt này.",
  "systemRuntime": "Gemini hệ thống",
  "runtimeUsage": "{requests} lượt · {tokens} tokens",
+ "runtimeRequests": "{requests} lượt",
  "scope": "Usage chỉ được lưu trên trình duyệt này và hiện ghi nhận các lượt Hội thoại AI thành công. Không ước tính chi phí hoặc quota vì giá và free tier do provider quyết định.",
- "scopeWithoutTokens": "Usage chỉ được lưu trên trình duyệt này. Provider hiện chưa trả dữ liệu token chuẩn hóa cho các lượt Hội thoại AI này, nên token được hiển thị là — thay vì đoán số liệu."
+ "scopeWithoutTokens": "Usage chỉ được lưu trên trình duyệt này. Provider hiện chưa trả dữ liệu token chuẩn hóa, nên trang chỉ hiển thị những số liệu thực sự có thay vì ước đoán."
 }
