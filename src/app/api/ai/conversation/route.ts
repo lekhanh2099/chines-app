@@ -219,7 +219,9 @@ export async function POST(request: Request) {
 
  const updateSettingsRequest = updateSettingsRequestSchema.safeParse(body);
  if (updateSettingsRequest.success) {
-  const { conversationId, action: _action, ...settings } = updateSettingsRequest.data;
+  const { conversationId, mode, correctionStyle, replyMode, learnerLevel } =
+   updateSettingsRequest.data;
+  const settings = { mode, correctionStyle, replyMode, learnerLevel };
   try {
    const persistedSettings = await updateAiConversationSettings({
     userId: auth.context.user.id,
