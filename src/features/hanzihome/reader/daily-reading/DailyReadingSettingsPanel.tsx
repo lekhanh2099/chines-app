@@ -33,6 +33,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Switch } from "@/components/ui/switch";
@@ -182,10 +183,10 @@ export function DailyReadingSettingsPanel() {
  const activePipelineIndex = observedStage === null && release.isDue ? 0 : pipelineIndex(observedStage);
  const pipelineComplete = latestRun ? latestRun.status === "succeeded" : scheduledToday;
  const failedPipelineIndex = failedRun === null ? -1 : pipelineIndex(failedRun.stage);
- const tabItems = [
-  { key: "overview" as const, label: t("settings.tabs.overview") },
-  { key: "pipeline" as const, label: t("settings.tabs.pipeline") },
-  { key: "history" as const, label: t("settings.tabs.history") },
+ const tabItems: SegmentedControlItem<SettingsTab>[] = [
+  { key: "overview", label: t("settings.tabs.overview") },
+  { key: "pipeline", label: t("settings.tabs.pipeline") },
+  { key: "history", label: t("settings.tabs.history") },
  ];
 
  async function handleTestSource() {
@@ -422,7 +423,7 @@ export function DailyReadingSettingsPanel() {
        </div>
        {isAiFailure(failedRun) ? (
         <Button asChild type="button" variant="outline" size="toolbar" className="justify-self-start">
-         <Link href="/settings?section=ai" prefetch={false}>
+         <Link href="/settings?section=ai&panel=providers" prefetch={false}>
           {t("settings.actions.openAiSettings")}
          </Link>
         </Button>
