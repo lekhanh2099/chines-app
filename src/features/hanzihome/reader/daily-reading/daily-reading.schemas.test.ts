@@ -6,17 +6,17 @@ import {
 } from "./daily-reading.schemas";
 
 const legacyReading = {
- schemaVersion: "1.0.0" as const,
+ schemaVersion: "1.0.0",
  id: "daily-legacy",
  publishedDate: "2026-08-18",
  createdAt: "2026-08-18T03:00:00.000Z",
- releaseKind: "manual" as const,
+ releaseKind: "manual",
  titleZh: "城市博物馆的新展览",
  titleVi: "Triển lãm mới của bảo tàng thành phố",
  whyWorthReadingVi: "Bài đọc giúp luyện cách mô tả một hoạt động văn hóa.",
  adaptationNoticeVi: "Bản học tập được biên soạn từ nguồn báo chí.",
- topic: "culture" as const,
- level: "HSK5" as const,
+ topic: "culture",
+ level: "HSK5",
  estimatedMinutes: 8,
  paragraphs: Array.from({ length: 4 }, (_value, index) => ({
   id: `p${index + 1}`,
@@ -41,7 +41,7 @@ const legacyReading = {
  })),
  questions: Array.from({ length: 5 }, (_value, index) => ({
   id: `q${index + 1}`,
-  type: index === 0 ? ("main_idea" as const) : ("detail" as const),
+  type: index === 0 ? "main_idea" : "detail",
   promptZh: `问题${index + 1}是什么？`,
   promptVi: `Câu hỏi ${index + 1} là gì?`,
   answerZh: `答案${index + 1}。`,
