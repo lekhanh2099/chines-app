@@ -1,6 +1,11 @@
 import { z } from "zod";
 
-import { aiConversationUsageSchema } from "./ai-conversation.schemas";
+import {
+ aiConversationCorrectionStyleSchema,
+ aiConversationLearnerLevelSchema,
+ aiConversationReplyModeSchema,
+ aiConversationUsageSchema,
+} from "./ai-conversation.schemas";
 
 export const aiConversationModeSchema = z.enum([
  "natural",
@@ -24,14 +29,35 @@ export const aiConversationThreadSchema = z.strictObject({
  characterId: z.uuid(),
  title: z.string(),
  mode: aiConversationModeSchema,
- correctionStyle: z.enum(["light", "balanced", "strict"]),
- replyMode: z.enum(["adaptive", "chinese", "bilingual"]),
+ correctionStyle: aiConversationCorrectionStyleSchema,
+ replyMode: aiConversationReplyModeSchema,
  memoryPolicy: aiConversationMemoryPolicySchema,
+});
+
+export const aiConversationCharacterPresentationSchema = z.strictObject({
+ id: z.uuid(),
+ displayName: z.string().trim().min(1),
+ city: z.string(),
+ interests: z.array(z.string()),
 });
 
 export const aiConversationSessionSchema = z.strictObject({
  conversation: aiConversationThreadSchema.nullable(),
+ character: aiConversationCharacterPresentationSchema.nullable(),
+ learnerLevel: aiConversationLearnerLevelSchema,
  messages: z.array(aiConversationPersistedMessageSchema),
+});
+
+export const aiConversationSettingsUpdateSchema = z.strictObject({
+ mode: aiConversationModeSchema,
+ correctionStyle: aiConversationCorrectionStyleSchema,
+ replyMode: aiConversationReplyModeSchema,
+ learnerLevel: aiConversationLearnerLevelSchema,
+});
+
+export const aiConversationSettingsSchema = aiConversationSettingsUpdateSchema.extend({
+ conversationId: z.uuid(),
+ characterId: z.uuid(),
 });
 
 export const aiConversationTurnRequestSchema = z.strictObject({
@@ -55,5 +81,7 @@ export type AiConversationPersistedMessage = z.output<
  typeof aiConversationPersistedMessageSchema
 >;
 export type AiConversationSession = z.output<typeof aiConversationSessionSchema>;
+export type AiConversationSettings = z.output<typeof aiConversationSettingsSchema>;
+export type AiConversationSettingsUpdate = z.output<typeof aiConversationSettingsUpdateSchema>;
 export type AiConversationTurnRequest = z.output<typeof aiConversationTurnRequestSchema>;
 export type AiConversationTurnResponse = z.output<typeof aiConversationTurnResponseSchema>;
