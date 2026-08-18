@@ -1,4 +1,4 @@
-import type { JsonFieldValue } from "@/types/json";
+import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 import {
  aiConversationSessionSchema,
@@ -25,7 +25,7 @@ function readApiError(body: JsonFieldValue, fallback: string) {
  return typeof error === "string" ? error : fallback;
 }
 
-async function postConversationAction(body: Readonly<Record<string, JsonFieldValue>>, signal?: AbortSignal) {
+async function postConversationAction(body: JsonObject, signal?: AbortSignal) {
  const response = await fetch(endpoint, {
   method: "POST",
   headers: { "Content-Type": "application/json", Accept: "application/json" },
