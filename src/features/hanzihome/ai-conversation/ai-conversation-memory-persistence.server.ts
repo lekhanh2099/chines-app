@@ -152,7 +152,7 @@ async function requestMemoryPostgrest<T>({
 
  if (!response.ok) {
   const parsedError = postgrestErrorSchema.safeParse(payload);
-  const code = parsedError.success ? parsedError.data.code ?? null : null;
+  const code = parsedError.success ? (parsedError.data.code ?? null) : null;
   const message =
    parsedError.success && parsedError.data.message
     ? parsedError.data.message

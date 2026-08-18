@@ -12,7 +12,9 @@ const AiSettingsPanelParamSchema = z.string().optional();
 
 export type AiSettingsPanel = z.infer<typeof AiSettingsPanelSchema>;
 
-export function resolveAiSettingsPanel(value: z.input<typeof AiSettingsPanelParamSchema>): AiSettingsPanel {
+export function resolveAiSettingsPanel(
+ value: z.input<typeof AiSettingsPanelParamSchema>,
+): AiSettingsPanel {
  const param = AiSettingsPanelParamSchema.safeParse(value);
  if (!param.success) return AiSettingsPanelSchema.enum.conversation;
 

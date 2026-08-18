@@ -47,6 +47,7 @@
  "generated": {
   "description": "Tìm bài báo tiếng Trung thật, trích xuất nội dung nguồn rồi biên soạn thành 学习版 có từ vựng, ngữ pháp và câu hỏi. Bài được lưu cục bộ trên thiết bị này.",
   "generateNow": "Tìm và tạo bài ngay",
+  "resume": "Tiếp tục bài đang dở",
   "progressHint": "Có thể mất vài phút vì hệ thống phải tìm nguồn, biên soạn, kiểm tra và lưu bài.",
   "notFound": "Không tìm thấy bài Daily Reading đã lưu trên thiết bị này.",
   "library": {
@@ -133,6 +134,8 @@
   "actions": {
    "testSource": "Kiểm tra nguồn thật",
    "generateNow": "Tìm và tạo bài ngay",
+   "resume": "Tiếp tục bài đang dở",
+   "retry": "Thử tạo lại",
    "clear": "Xóa bài đã tạo",
    "viewPipeline": "Xem tiến trình",
    "openAiSettings": "Mở cài đặt AI"
@@ -150,7 +153,7 @@
    "learning": "Tạo bài học",
    "learningDescription": "Tạo từ vựng, ngữ pháp, câu hỏi và bằng chứng.",
    "validate": "Kiểm tra",
-   "validateDescription": "Rà schema, độ dài, nội dung trùng và bằng chứng.",
+   "validateDescription": "Rà schema, mức độ bám nguồn, nội dung trùng và bằng chứng.",
    "save": "Lưu bài",
    "saveDescription": "Lưu bản đạt chuẩn vào thiết bị này."
   },
@@ -160,7 +163,14 @@
    "empty": "Chưa có lần tạo bài nào.",
    "succeeded": "Hoàn tất",
    "pending": "Đang chạy",
-   "failed": "Thất bại"
+   "failed": "Thất bại",
+   "latest": "Lần mới nhất"
+  },
+  "errors": {
+   "tooShort": "Bản nháp chưa đạt kiểm tra chất lượng. Hệ thống đã thử sửa tự động nhưng chưa hoàn tất.",
+   "schema": "AI trả về bản nháp chưa đúng cấu trúc hoặc trường dữ liệu. Hệ thống đã thử sửa tự động nhưng chưa hoàn tất.",
+   "provider": "Chưa có AI provider nào hoàn tất bài. Hãy kiểm tra API key/model Groq; GEMINI_API_KEY chỉ là phương án dự phòng.",
+   "showTechnical": "Xem chi tiết kỹ thuật"
   },
   "clearDialog": {
    "title": "Xóa các bài Daily Reading đã tạo?",

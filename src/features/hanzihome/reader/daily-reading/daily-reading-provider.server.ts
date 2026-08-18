@@ -7,6 +7,11 @@ import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
+import {
+ dailyReadingCoreDraftSchema,
+ dailyReadingLearningDraftSchema,
+} from "./daily-reading.schemas";
+
 const openAiCompatibleResponseSchema = z.looseObject({
  choices: z
   .array(
@@ -21,7 +26,9 @@ const geminiResponseSchema = z.object({
  candidates: z
   .array(
    z.object({
-    content: z.object({ parts: z.array(z.object({ text: z.string().optional() })).optional() }).optional(),
+    content: z
+     .object({ parts: z.array(z.object({ text: z.string().optional() })).optional() })
+     .optional(),
    }),
   )
   .optional(),
@@ -34,6 +41,10 @@ Use natural Mainland simplified Chinese. Return one valid JSON object only, with
 
 const groqMaximumRateLimitRetries = 2;
 const groqMaximumRetryDelayMs = 60_000;
+const groqStrictStructuredOutputModels = new Set<string>([
+ "openai/gpt-oss-20b",
+ "openai/gpt-oss-120b",
+]);
 
 export type DailyReadingProviderPhase = "core" | "learning";
 
@@ -85,6 +96,32 @@ function groqRetryDelayMilliseconds(response: Response, detail: string) {
  return Math.min(Math.max(resolved + 250, 500), groqMaximumRetryDelayMs);
 }
 
+function groqStructuredResponseFormat(phase: DailyReadingProviderPhase) {
+ const jsonSchema = z.toJSONSchema(
+  phase === "core" ? dailyReadingCoreDraftSchema : dailyReadingLearningDraftSchema,
+  {
+   target: "draft-07",
+   override: ({ jsonSchema }) => {
+    delete jsonSchema.minLength;
+    delete jsonSchema.maxLength;
+    delete jsonSchema.minimum;
+    delete jsonSchema.maximum;
+    delete jsonSchema.minItems;
+    delete jsonSchema.maxItems;
+   },
+  },
+ );
+ delete jsonSchema.$schema;
+ return {
+  type: "json_schema",
+  json_schema: {
+   name: `daily_reading_${phase}`,
+   strict: true,
+   schema: jsonSchema,
+  },
+ };
+}
+
 async function waitForRetry(delayMs: number, signal?: AbortSignal) {
  throwIfAborted(signal);
  await new Promise<void>((resolve, reject) => {
@@ -112,7 +149,12 @@ async function requestGroq(
  phase: DailyReadingProviderPhase,
  signal?: AbortSignal,
 ): Promise<DailyReadingProviderResult> {
- const model = credential.defaultModel ?? getDefaultApiKeyModel("groq");
+ const configuredModel = credential.defaultModel ?? getDefaultApiKeyModel("groq");
+ const model = groqStrictStructuredOutputModels.has(configuredModel)
+  ? configuredModel
+  : getDefaultApiKeyModel("groq");
+ const supportsStrictStructuredOutput = groqStrictStructuredOutputModels.has(model);
+ let useStrictResponseFormat = supportsStrictStructuredOutput;
  const reasoning = model.startsWith("qwen/")
   ? { reasoning_effort: "none", reasoning_format: "hidden" }
   : model.startsWith("openai/gpt-oss-")
@@ -133,7 +175,9 @@ async function requestGroq(
      messages: [{ role: "user", content: combinedUserPrompt(prompt) }],
      temperature: 0.2,
      max_completion_tokens: groqOutputLimit(phase),
-     response_format: { type: "json_object" },
+     response_format: useStrictResponseFormat
+      ? groqStructuredResponseFormat(phase)
+      : { type: "json_object" },
      ...reasoning,
     }),
     cache: "no-store",
@@ -148,6 +192,16 @@ async function requestGroq(
    }
 
    const detail = await response.text().catch(() => "");
+   if (
+    response.status === 400 &&
+    useStrictResponseFormat &&
+    /Generated JSON does not match the expected schema|json_validate_failed|failed_generation/iu.test(
+     detail,
+    )
+   ) {
+    useStrictResponseFormat = false;
+    continue;
+   }
    if (response.status === 429 && attempt < groqMaximumRateLimitRetries) {
     await waitForRetry(groqRetryDelayMilliseconds(response, detail), signal);
     continue;
@@ -324,7 +378,10 @@ async function requestGeminiWithKey({
    return { content: null, error: "Gemini trả response envelope không hợp lệ.", model };
   }
   const content =
-   parsed.data.candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("").trim() ?? "";
+   parsed.data.candidates?.[0]?.content?.parts
+    ?.map((part) => part.text ?? "")
+    .join("")
+    .trim() ?? "";
   return {
    content: content.length > 0 ? content : null,
    error: content.length > 0 ? null : "Gemini trả nội dung rỗng.",

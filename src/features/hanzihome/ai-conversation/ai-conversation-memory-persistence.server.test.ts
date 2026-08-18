@@ -114,8 +114,8 @@ describe("AI conversation memory persistence boundary", () => {
    ),
   );
 
-  await expect(
-   claimAiConversationPostTurnJobs({ userId, conversationId }),
-  ).rejects.toBeInstanceOf(AiConversationMemoryPipelineNotReadyError);
+  await expect(claimAiConversationPostTurnJobs({ userId, conversationId })).rejects.toBeInstanceOf(
+   AiConversationMemoryPipelineNotReadyError,
+  );
  });
 });

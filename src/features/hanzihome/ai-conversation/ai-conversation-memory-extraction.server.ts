@@ -138,7 +138,7 @@ export async function extractAiConversationMemoryChanges({
   })}`,
   `Learner message: ${JSON.stringify(clipEvidence(userMessage, EXTRACTION_EVIDENCE_LIMIT))}`,
   `Assistant reply: ${JSON.stringify(clipEvidence(assistantMessage, EXTRACTION_EVIDENCE_LIMIT))}`,
-  "Return: {\"changes\":[{\"action\":...,\"kind\":...|null,\"targetMemoryId\":...|null,\"memoryKey\":...|null,\"content\":...|null,\"importance\":0..1,\"confidence\":0..1,\"scope\":\"global\"|\"character\"}]}",
+  'Return: {"changes":[{"action":...,"kind":...|null,"targetMemoryId":...|null,"memoryKey":...|null,"content":...|null,"importance":0..1,"confidence":0..1,"scope":"global"|"character"}]}',
  ].join("\n\n");
 
  return generateStructuredAiConversationData({

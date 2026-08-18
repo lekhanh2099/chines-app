@@ -42,7 +42,10 @@ function persistenceErrorResponse(error: unknown) {
  }
  if (error instanceof AiConversationSettingsPersistenceConfigurationError) {
   return NextResponse.json(
-   { error: "AI conversation persistence server secret is missing", code: "AI_PERSISTENCE_CONFIG_MISSING" },
+   {
+    error: "AI conversation persistence server secret is missing",
+    code: "AI_PERSISTENCE_CONFIG_MISSING",
+   },
    { status: 503 },
   );
  }
@@ -119,7 +122,10 @@ export async function PUT(request: NextRequest) {
   const persistenceResponse = persistenceErrorResponse(error);
   if (persistenceResponse) return persistenceResponse;
   logger.error("[AI Settings] preference update failed", error);
-  return NextResponse.json({ error: "Could not update AI conversation preferences" }, { status: 500 });
+  return NextResponse.json(
+   { error: "Could not update AI conversation preferences" },
+   { status: 500 },
+  );
  }
 }
 

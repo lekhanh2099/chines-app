@@ -980,7 +980,8 @@ export async function generateAiConversationReply(
 
  const prompt = renderConversationPrompt(parsedMessages.data);
  const systemPrompt =
-  options.systemContext?.trim() || `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${AI_CONVERSATION_SYSTEM_PROMPT}`;
+  options.systemContext?.trim() ||
+  `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${AI_CONVERSATION_SYSTEM_PROMPT}`;
  let rawResult: RawProviderResult;
 
  throwIfAborted(options.abortSignal);

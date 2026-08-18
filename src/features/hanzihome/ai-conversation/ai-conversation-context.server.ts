@@ -64,7 +64,8 @@ const modeInstructions: Record<AiConversationMode, string> = {
 };
 
 const correctionInstructions: Record<AiConversationThreadContext["correctionStyle"], string> = {
- light: "Correct only errors that change meaning or sound clearly unnatural; preserve conversation flow.",
+ light:
+  "Correct only errors that change meaning or sound clearly unnatural; preserve conversation flow.",
  balanced:
   "Correct important errors briefly after responding to the meaning, and give one natural alternative when useful.",
  strict:
@@ -74,7 +75,8 @@ const correctionInstructions: Record<AiConversationThreadContext["correctionStyl
 const replyModeInstructions: Record<AiConversationThreadContext["replyMode"], string> = {
  adaptive:
   "Prefer Chinese. Add pinyin or concise Vietnamese support only when it materially helps comprehension.",
- chinese: "Reply mainly in Chinese. Use Vietnamese only when the learner explicitly asks for explanation.",
+ chinese:
+  "Reply mainly in Chinese. Use Vietnamese only when the learner explicitly asks for explanation.",
  bilingual:
   "Use Chinese as the main response and add concise Vietnamese support for important learning points.",
 };
@@ -83,19 +85,24 @@ const learnerLevelInstructions: Record<AiConversationLearnerLevel, string> = {
  beginner: "Use short sentences, high-frequency vocabulary, and more scaffolding.",
  intermediate:
   "Use natural Mandarin with intermediate structures and vocabulary; do not oversimplify ordinary conversation.",
- advanced:
-  "Use natural, nuanced Mandarin and richer phrasing; avoid unnecessary simplification.",
+ advanced: "Use natural, nuanced Mandarin and richer phrasing; avoid unnecessary simplification.",
 };
 
 function relationshipInstruction(score: number | null) {
  const band = deriveAiConversationRelationshipBand(score);
- if (band === "new") return "The relationship is new. Be friendly but not overly intimate or presumptuous.";
- if (band === "familiar") return "The two already know each other. You may reference established conversational continuity naturally.";
- if (band === "friends") return "The two are friends. The tone may be relaxed and personally continuous without becoming clingy.";
+ if (band === "new")
+  return "The relationship is new. Be friendly but not overly intimate or presumptuous.";
+ if (band === "familiar")
+  return "The two already know each other. You may reference established conversational continuity naturally.";
+ if (band === "friends")
+  return "The two are friends. The tone may be relaxed and personally continuous without becoming clingy.";
  return "The two are close. You may use a warm, familiar tone while still respecting boundaries and the actual conversation history.";
 }
 
-function serializeDataBlock(label: string, value: Readonly<Record<string, string | number | string[] | null>>) {
+function serializeDataBlock(
+ label: string,
+ value: Readonly<Record<string, string | number | string[] | null>>,
+) {
  return `<${label}>\n${JSON.stringify(value)}\n</${label}>`;
 }
 

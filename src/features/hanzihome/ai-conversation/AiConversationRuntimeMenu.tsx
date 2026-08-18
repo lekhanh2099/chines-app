@@ -66,11 +66,12 @@ export function AiConversationRuntimeMenu({
               : runtimeHealth?.code === "provider-unavailable"
                 ? t("runtime.health.providerUnavailable")
                 : t("runtime.health.networkError");
- const triggerLabel = isRuntimeLoading || isHealthChecking
-  ? t("runtime.compactChecking")
-  : runtimeHealth?.ready && runtimeHealth.provider
-    ? t("runtime.compactReady", { provider: runtimeHealth.provider })
-    : t("runtime.compactUnavailable");
+ const triggerLabel =
+  isRuntimeLoading || isHealthChecking
+   ? t("runtime.compactChecking")
+   : runtimeHealth?.ready && runtimeHealth.provider
+     ? t("runtime.compactReady", { provider: runtimeHealth.provider })
+     : t("runtime.compactUnavailable");
 
  return (
   <DropdownMenu>

@@ -67,7 +67,8 @@ export type DailyReadingSourceDiscoveryReport = {
 };
 
 function createDecoder(contentType: string) {
- const charset = /charset\s*=\s*["']?([^;"'\s]+)/iu.exec(contentType)?.[1]?.toLowerCase() ?? "utf-8";
+ const charset =
+  /charset\s*=\s*["']?([^;"'\s]+)/iu.exec(contentType)?.[1]?.toLowerCase() ?? "utf-8";
  try {
   return new TextDecoder(charset === "gbk" || charset === "gb2312" ? "gb18030" : charset);
  } catch {
@@ -117,7 +118,8 @@ async function fetchText(url: string, timeout: number, accept: string): Promise<
   };
  } catch (error) {
   const timeoutFailure =
-   error instanceof Error && (error.name === "TimeoutError" || /timeout|aborted/iu.test(error.message));
+   error instanceof Error &&
+   (error.name === "TimeoutError" || /timeout|aborted/iu.test(error.message));
   return { failure: timeoutFailure ? "timeout" : "unreadable" };
  }
 }
@@ -125,7 +127,9 @@ async function fetchText(url: string, timeout: number, accept: string): Promise<
 function chinaNewsRollingListingUrls(now = new Date()) {
  return Array.from({ length: 3 }, (_value, offset) => {
   const date = new Date(now.getTime() - offset * 86_400_000);
-  const year = new Intl.DateTimeFormat("en", { timeZone: "Asia/Shanghai", year: "numeric" }).format(date);
+  const year = new Intl.DateTimeFormat("en", { timeZone: "Asia/Shanghai", year: "numeric" }).format(
+   date,
+  );
   const monthDay = new Intl.DateTimeFormat("en", {
    timeZone: "Asia/Shanghai",
    month: "2-digit",
@@ -140,18 +144,34 @@ function chinaNewsRollingListingUrls(now = new Date()) {
 async function discoverOfficialSources(recentTopics: readonly DailyReadingTopic[]) {
  const rssRequests = dailyReadingSourceRegistry.flatMap((entry) =>
   entry.rssUrls.map(async (url): Promise<DiscoveryAttempt> => {
-   const fetched = await fetchText(url, officialTimeoutMilliseconds, "application/rss+xml,application/xml,text/xml,*/*");
-   if (fetched.failure !== null) return { metadata: [], note: `rss:${entry.id}:${fetched.failure}`, ok: false };
-   return { metadata: parseDailyReadingRss(fetched.text, recentTopics), note: `rss:${entry.id}:ok`, ok: true };
+   const fetched = await fetchText(
+    url,
+    officialTimeoutMilliseconds,
+    "application/rss+xml,application/xml,text/xml,*/*",
+   );
+   if (fetched.failure !== null)
+    return { metadata: [], note: `rss:${entry.id}:${fetched.failure}`, ok: false };
+   return {
+    metadata: parseDailyReadingRss(fetched.text, recentTopics),
+    note: `rss:${entry.id}:ok`,
+    ok: true,
+   };
   }),
  );
  const listings = [
-  ...dailyReadingSourceRegistry.flatMap((entry) => entry.listingUrls.map((url) => ({ id: entry.id, url }))),
+  ...dailyReadingSourceRegistry.flatMap((entry) =>
+   entry.listingUrls.map((url) => ({ id: entry.id, url })),
+  ),
   ...chinaNewsRollingListingUrls().map((url) => ({ id: "chinanews-daily", url })),
  ];
  const listingRequests = listings.map(async ({ id, url }): Promise<DiscoveryAttempt> => {
-  const fetched = await fetchText(url, officialTimeoutMilliseconds, "text/html,application/xhtml+xml");
-  if (fetched.failure !== null) return { metadata: [], note: `listing:${id}:${fetched.failure}`, ok: false };
+  const fetched = await fetchText(
+   url,
+   officialTimeoutMilliseconds,
+   "text/html,application/xhtml+xml",
+  );
+  if (fetched.failure !== null)
+   return { metadata: [], note: `listing:${id}:${fetched.failure}`, ok: false };
   return {
    metadata: parseDailyReadingListing(fetched.text, fetched.finalUrl || url, recentTopics),
    note: `listing:${id}:ok`,
@@ -181,7 +201,9 @@ function parseGdeltPayload(text: string) {
  }
 }
 
-async function discoverGdelt(recentTopics: readonly DailyReadingTopic[]): Promise<DiscoveryAttempt> {
+async function discoverGdelt(
+ recentTopics: readonly DailyReadingTopic[],
+): Promise<DiscoveryAttempt> {
  const endpoint = new URL("https://api.gdeltproject.org/api/v2/doc/doc");
  endpoint.searchParams.set(
   "query",
@@ -220,7 +242,10 @@ async function discoverGdelt(recentTopics: readonly DailyReadingTopic[]): Promis
  return { metadata, note: "gdelt:ok", ok: true };
 }
 
-function deduplicateMetadata(candidates: readonly DailyReadingSourceMetadata[], excludedUrls: readonly string[]) {
+function deduplicateMetadata(
+ candidates: readonly DailyReadingSourceMetadata[],
+ excludedUrls: readonly string[],
+) {
  const excluded = new Set(
   excludedUrls.flatMap((url) => {
    const canonical = canonicalDailyReadingUrl(url);
@@ -231,17 +256,32 @@ function deduplicateMetadata(candidates: readonly DailyReadingSourceMetadata[], 
  for (const candidate of candidates) {
   if (excluded.has(candidate.url)) continue;
   const previous = byUrl.get(candidate.url);
-  if (previous === undefined || candidate.score > previous.score) byUrl.set(candidate.url, candidate);
+  if (previous === undefined || candidate.score > previous.score)
+   byUrl.set(candidate.url, candidate);
  }
- return [...byUrl.values()].sort((left, right) => right.score - left.score).slice(0, maximumExtractionCandidates);
+ return [...byUrl.values()]
+  .sort((left, right) => right.score - left.score)
+  .slice(0, maximumExtractionCandidates);
 }
 
 function emptyFailureCounts(): Record<ExtractionFailure, number> {
- return { timeout: 0, http: 0, "content-type": 0, "too-large": 0, unreadable: 0, parse: 0, domain: 0 };
+ return {
+  timeout: 0,
+  http: 0,
+  "content-type": 0,
+  "too-large": 0,
+  unreadable: 0,
+  parse: 0,
+  domain: 0,
+ };
 }
 
 async function extractCandidate(metadata: DailyReadingSourceMetadata): Promise<ExtractionResult> {
- const fetched = await fetchText(metadata.url, articleTimeoutMilliseconds, "text/html,application/xhtml+xml");
+ const fetched = await fetchText(
+  metadata.url,
+  articleTimeoutMilliseconds,
+  "text/html,application/xhtml+xml",
+ );
  if (fetched.failure !== null) return { source: null, failure: fetched.failure };
  if (!fetched.contentType.includes("text/html")) return { source: null, failure: "content-type" };
  const finalUrl = canonicalDailyReadingUrl(fetched.finalUrl || metadata.url);
@@ -267,11 +307,20 @@ export async function discoverDailyReadingSource(
  excludedUrls: readonly string[],
  recentTopics: readonly DailyReadingTopic[],
  onProgress?: (stage: "discovering" | "extracting") => void,
-): Promise<{ source: DailyReadingSourceCandidate | null; report: DailyReadingSourceDiscoveryReport }> {
+): Promise<{
+ source: DailyReadingSourceCandidate | null;
+ report: DailyReadingSourceDiscoveryReport;
+}> {
  onProgress?.("discovering");
- const [official, gdelt] = await Promise.all([discoverOfficialSources(recentTopics), discoverGdelt(recentTopics)]);
+ const [official, gdelt] = await Promise.all([
+  discoverOfficialSources(recentTopics),
+  discoverGdelt(recentTopics),
+ ]);
  const attempts = [...official, gdelt];
- const candidates = deduplicateMetadata(attempts.flatMap((attempt) => attempt.metadata), excludedUrls);
+ const candidates = deduplicateMetadata(
+  attempts.flatMap((attempt) => attempt.metadata),
+  excludedUrls,
+ );
  const failures = emptyFailureCounts();
  let attemptedExtractions = 0;
  onProgress?.("extracting");

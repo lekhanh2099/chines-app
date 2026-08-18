@@ -40,7 +40,7 @@ import type {
  AiConversationSettingsOverview,
 } from "./ai-conversation-settings.schema";
 
-const OVERVIEW_QUERY_KEY = ["settings", "ai-conversation", "overview"] as const;
+const OVERVIEW_QUERY_KEY = ["settings", "ai-conversation", "overview"];
 
 export function AiConversationSettingsSection() {
  const t = useTranslations("AiConversationSettings");

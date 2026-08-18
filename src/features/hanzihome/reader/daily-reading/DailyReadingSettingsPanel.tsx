@@ -171,6 +171,26 @@ export function DailyReadingSettingsPanel() {
  const latestRuns = library.runs.slice(0, 6);
  const latestRun = library.runs[0];
  const failedRun = !generating && latestRun?.status === "failed" ? latestRun : null;
+ const hasTechnicalErrorLabel = t.has("settings.errors.showTechnical");
+ const hasRetryLabel = t.has("settings.actions.retry");
+ const hasLatestLabel = t.has("settings.history.latest");
+ const generationActionLabel =
+  library.checkpoint !== null && t.has("settings.actions.resume")
+   ? t("settings.actions.resume")
+   : t("settings.actions.generateNow");
+ const summarizeRunError = (errorDetail: string) => {
+  if (/Bài đọc AI quá ngắn/iu.test(errorDetail)) {
+   return t.has("settings.errors.tooShort") ? t("settings.errors.tooShort") : errorDetail;
+  }
+  if (/Groq HTTP 400|Generated JSON does not match|JSON không khớp schema/iu.test(errorDetail)) {
+   return t.has("settings.errors.schema") ? t("settings.errors.schema") : errorDetail;
+  }
+  if (/GEMINI_API_KEY|Không có AI provider/iu.test(errorDetail)) {
+   return t.has("settings.errors.provider") ? t("settings.errors.provider") : errorDetail;
+  }
+  return errorDetail;
+ };
+ const failedRunSummary = failedRun === null ? null : summarizeRunError(failedRun.errorDetail);
  const scheduledToday = useMemo(
   () =>
    library.items.some(
@@ -178,9 +198,9 @@ export function DailyReadingSettingsPanel() {
    ),
   [library.items, release.dateKey],
  );
- const observedStage =
-  manualStage ?? latestRun?.stage ?? (scheduledToday ? "completed" : null);
- const activePipelineIndex = observedStage === null && release.isDue ? 0 : pipelineIndex(observedStage);
+ const observedStage = manualStage ?? latestRun?.stage ?? (scheduledToday ? "completed" : null);
+ const activePipelineIndex =
+  observedStage === null && release.isDue ? 0 : pipelineIndex(observedStage);
  const pipelineComplete = latestRun ? latestRun.status === "succeeded" : scheduledToday;
  const failedPipelineIndex = failedRun === null ? -1 : pipelineIndex(failedRun.stage);
  const tabItems: SegmentedControlItem<SettingsTab>[] = [
@@ -342,7 +362,7 @@ export function DailyReadingSettingsPanel() {
        disabled={testingSource || generating}
       >
        {generating ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
-       {t("settings.actions.generateNow")}
+       {generationActionLabel}
       </Button>
      </div>
 
@@ -355,10 +375,18 @@ export function DailyReadingSettingsPanel() {
           {t("settings.pipeline.failedAt", { stage: t(stageTranslationKey(failedRun.stage)) })}
          </Typography>
          <Typography variant="bodySmall" tone="muted" wrapping="breakWords">
-          {failedRun.errorDetail}
+          {failedRunSummary}
          </Typography>
         </div>
        </div>
+       {failedRunSummary !== failedRun.errorDetail && hasTechnicalErrorLabel ? (
+        <details className="grid gap-1">
+         <summary>{t("settings.errors.showTechnical")}</summary>
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {failedRun.errorDetail}
+         </Typography>
+        </details>
+       ) : null}
        <Button
         type="button"
         variant="outline"
@@ -418,15 +446,44 @@ export function DailyReadingSettingsPanel() {
          {t("settings.pipeline.failedAt", { stage: t(stageTranslationKey(failedRun.stage)) })}
         </Typography>
         <Typography variant="bodySmall" tone="muted" wrapping="breakWords">
-         {failedRun.errorDetail}
+         {failedRunSummary}
         </Typography>
        </div>
-       {isAiFailure(failedRun) ? (
-        <Button asChild type="button" variant="outline" size="toolbar" className="justify-self-start">
-         <Link href="/settings?section=ai&panel=providers" prefetch={false}>
-          {t("settings.actions.openAiSettings")}
-         </Link>
-        </Button>
+       {failedRunSummary !== failedRun.errorDetail && hasTechnicalErrorLabel ? (
+        <details className="grid gap-1">
+         <summary>{t("settings.errors.showTechnical")}</summary>
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {failedRun.errorDetail}
+         </Typography>
+        </details>
+       ) : null}
+       {library.checkpoint !== null || isAiFailure(failedRun) ? (
+        <div className="flex flex-wrap items-center gap-2">
+         <Button
+          type="button"
+          size="toolbar"
+          onClick={() => void handleGenerate()}
+          disabled={testingSource || generating}
+         >
+          {generating ? (
+           <Spinner data-icon="inline-start" />
+          ) : (
+           <Sparkles data-icon="inline-start" />
+          )}
+          {library.checkpoint !== null
+           ? generationActionLabel
+           : hasRetryLabel
+             ? t("settings.actions.retry")
+             : t("settings.actions.generateNow")}
+         </Button>
+         {isAiFailure(failedRun) ? (
+          <Button asChild type="button" variant="outline" size="toolbar">
+           <Link href="/settings?section=ai&panel=providers" prefetch={false}>
+            {t("settings.actions.openAiSettings")}
+           </Link>
+          </Button>
+         ) : null}
+        </div>
        ) : null}
       </Card>
      ) : null}
@@ -472,9 +529,8 @@ export function DailyReadingSettingsPanel() {
            <BookOpenText aria-hidden />
           )}
           <Typography variant="bodySmall" weight="semibold">
-           {run.kind === "scheduled"
-            ? t("generated.kind.scheduled")
-            : t("generated.kind.manual")} · {run.date}
+           {run.kind === "scheduled" ? t("generated.kind.scheduled") : t("generated.kind.manual")} ·{" "}
+           {run.date}
           </Typography>
           <Badge
            variant={
@@ -488,14 +544,33 @@ export function DailyReadingSettingsPanel() {
               ? t("settings.history.pending")
               : t("settings.history.failed")}
           </Badge>
-          <Badge variant={run.status === "failed" ? "danger" : "default"} size="sm" casing="natural">
+          <Badge
+           variant={run.status === "failed" ? "danger" : "default"}
+           size="sm"
+           casing="natural"
+          >
            {t(stageTranslationKey(run.stage))}
           </Badge>
+          {index === 0 && hasLatestLabel ? (
+           <Badge variant="info" size="sm" casing="natural">
+            {t("settings.history.latest")}
+           </Badge>
+          ) : null}
          </div>
          {run.errorDetail ? (
-          <Typography variant="caption" tone="muted" wrapping="breakWords">
-           {run.errorDetail}
-          </Typography>
+          <div className="grid gap-1">
+           <Typography variant="caption" tone="muted" wrapping="breakWords">
+            {summarizeRunError(run.errorDetail)}
+           </Typography>
+           {summarizeRunError(run.errorDetail) !== run.errorDetail && hasTechnicalErrorLabel ? (
+            <details>
+             <summary>{t("settings.errors.showTechnical")}</summary>
+             <Typography variant="caption" tone="muted" wrapping="breakWords">
+              {run.errorDetail}
+             </Typography>
+            </details>
+           ) : null}
+          </div>
          ) : null}
          {index < latestRuns.length - 1 ? <Separator /> : null}
         </div>

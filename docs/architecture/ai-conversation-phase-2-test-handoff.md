@@ -60,11 +60,11 @@ Internal actions:
 
 ```json
 {
-  "action": "message",
-  "conversationId": "uuid",
-  "clientMessageId": "uuid",
-  "content": "你好",
-  "apiKeyId": "optional uuid"
+ "action": "message",
+ "conversationId": "uuid",
+ "clientMessageId": "uuid",
+ "content": "你好",
+ "apiKeyId": "optional uuid"
 }
 ```
 

@@ -106,7 +106,8 @@ export function parseDailyReadingRss(xml: string, recentTopics: readonly DailyRe
    discoveryKind: "official-rss",
    titleZh: elementText(item, "title"),
    url: elementText(item, "link") || elementText(item, "guid"),
-   publishedAt: elementText(item, "pubDate") || elementText(item, "dc:date") || elementText(item, "date"),
+   publishedAt:
+    elementText(item, "pubDate") || elementText(item, "dc:date") || elementText(item, "date"),
    recentTopics,
   });
   return metadata === null ? [] : [metadata];
@@ -118,26 +119,26 @@ export function parseDailyReadingListing(
  listingUrl: string,
  recentTopics: readonly DailyReadingTopic[],
 ) {
- return Array.from(
-  html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/giu),
- ).flatMap((match) => {
-  let url: URL;
-  try {
-   url = new URL(match[1] ?? "", listingUrl);
-  } catch {
-   return [];
-  }
-  const publishedAt = publishedAtFromPath(url);
-  if (publishedAt === null) return [];
-  const metadata = metadataFromValues({
-   discoveryKind: "official-listing",
-   titleZh: textFromFragment(match[2] ?? ""),
-   url: url.toString(),
-   publishedAt,
-   recentTopics,
-  });
-  return metadata === null ? [] : [metadata];
- });
+ return Array.from(html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/giu)).flatMap(
+  (match) => {
+   let url: URL;
+   try {
+    url = new URL(match[1] ?? "", listingUrl);
+   } catch {
+    return [];
+   }
+   const publishedAt = publishedAtFromPath(url);
+   if (publishedAt === null) return [];
+   const metadata = metadataFromValues({
+    discoveryKind: "official-listing",
+    titleZh: textFromFragment(match[2] ?? ""),
+    url: url.toString(),
+    publishedAt,
+    recentTopics,
+   });
+   return metadata === null ? [] : [metadata];
+  },
+ );
 }
 
 function pagePublishedAt(html: string): string {
@@ -151,7 +152,9 @@ function pagePublishedAt(html: string): string {
   if (match === null) continue;
   if (match[2] !== undefined) {
    const [, year = "", month = "", day = "", hour = "00", minute = "00", second = "00"] = match;
-   const parsed = parseDate(`${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T${hour.padStart(2, "0")}:${minute}:${second}+08:00`);
+   const parsed = parseDate(
+    `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T${hour.padStart(2, "0")}:${minute}:${second}+08:00`,
+   );
    if (parsed !== null) return parsed;
   }
   const parsed = parseDate(match[1] ?? "");
@@ -160,7 +163,9 @@ function pagePublishedAt(html: string): string {
  return "";
 }
 
-export function extractDailyReadingSourceDocument(html: string): ParsedDailyReadingSourceDocument | null {
+export function extractDailyReadingSourceDocument(
+ html: string,
+): ParsedDailyReadingSourceDocument | null {
  const cleaned = html
   .replace(/<(script|style|svg|noscript|form|nav|footer)[^>]*>[\s\S]*?<\/\1>/giu, " ")
   .replace(/<!--([\s\S]*?)-->/gu, " ");

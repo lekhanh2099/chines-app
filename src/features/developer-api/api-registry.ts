@@ -1982,6 +1982,16 @@ export const currentApiInventory = [
    "AI conversation uses the authenticated HanziHome API-key manager and is not exposed to integration keys.",
  }),
  inventoryEntry({
+  currentPath: "/api/settings/ai-conversation",
+  methods: ["GET", "PUT", "PATCH", "DELETE"],
+  source: "route",
+  group: "AI",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "AI conversation settings and managed memories stay inside the signed-in HanziHome app.",
+ }),
+ inventoryEntry({
   currentPath: "/api/settings/ai-prompts",
   methods: ["GET", "PUT"],
   source: "route",

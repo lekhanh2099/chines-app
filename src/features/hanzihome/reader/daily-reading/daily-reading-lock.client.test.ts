@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { canAcquireDailyReadingLease, type DailyReadingLockRecord } from "./daily-reading-lock.client";
+import {
+ canAcquireDailyReadingLease,
+ type DailyReadingLockRecord,
+} from "./daily-reading-lock.client";
 
 const currentLease: DailyReadingLockRecord = {
  name: "chines-app:daily-reading-generation",

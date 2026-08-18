@@ -81,78 +81,98 @@ describe("i18n message contracts", () => {
   expect(aiConversation.greeting).not.toContain("{role}");
  });
 
- it.each(appLocales)("%s keeps the AI settings and memory manager message contract", async (locale) => {
-  const messages = await loadAppMessages(locale);
-  const settings = messages.AiConversationSettings;
+ it.each(appLocales)(
+  "%s keeps the AI settings and memory manager message contract",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
+   const settings = messages.AiConversationSettings;
 
-  expect(settings.overview.relationshipBands).toEqual(
-   expect.objectContaining({
-    new: expect.any(String),
-    familiar: expect.any(String),
-    friends: expect.any(String),
-    close: expect.any(String),
-   }),
-  );
-  expect(settings.memory.filters).toEqual(
-   expect.objectContaining({
-    all: expect.any(String),
-    global: expect.any(String),
-    character: expect.stringContaining("{name}"),
-    openLoops: expect.any(String),
-   }),
-  );
-  expect(settings.memory.relationshipWith).toContain("{name}");
-  expect(settings.memory.scopeCharacter).toContain("{name}");
-  expect(settings.memory.updated).toContain("{date}");
-  expect(settings.memory.actionsAria).toContain("{content}");
- });
+   expect(settings.overview.relationshipBands).toEqual(
+    expect.objectContaining({
+     new: expect.any(String),
+     familiar: expect.any(String),
+     friends: expect.any(String),
+     close: expect.any(String),
+    }),
+   );
+   expect(settings.memory.filters).toEqual(
+    expect.objectContaining({
+     all: expect.any(String),
+     global: expect.any(String),
+     character: expect.stringContaining("{name}"),
+     openLoops: expect.any(String),
+    }),
+   );
+   expect(settings.memory.relationshipWith).toContain("{name}");
+   expect(settings.memory.scopeCharacter).toContain("{name}");
+   expect(settings.memory.updated).toContain("{date}");
+   expect(settings.memory.actionsAria).toContain("{content}");
+  },
+ );
 
- it.each(appLocales)("%s keeps model/provider, advanced and usage copy contracts", async (locale) => {
-  const messages = await loadAppMessages(locale);
+ it.each(appLocales)(
+  "%s keeps model/provider, advanced and usage copy contracts",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
 
-  expect(messages.AiLookupSettings.modelProvider).toEqual(
-   expect.objectContaining({
-    title: expect.any(String),
-    description: expect.any(String),
-    dirty: expect.any(String),
-    synced: expect.any(String),
-    reset: expect.any(String),
-    save: expect.any(String),
-    keyActions: expect.stringContaining("{label}"),
-   }),
-  );
-  expect(messages.AiLookupSettings.advanced).toEqual(
-   expect.objectContaining({
-    title: expect.any(String),
-    description: expect.any(String),
-    open: expect.any(String),
-    close: expect.any(String),
-   }),
-  );
-  expect(messages.AiUsage.runtimeUsage).toContain("{tokens}");
-  expect(messages.AiUsage.runtimeRequests).toContain("{requests}");
- });
+   expect(messages.AiLookupSettings.modelProvider).toEqual(
+    expect.objectContaining({
+     title: expect.any(String),
+     description: expect.any(String),
+     dirty: expect.any(String),
+     synced: expect.any(String),
+     reset: expect.any(String),
+     save: expect.any(String),
+     keyActions: expect.stringContaining("{label}"),
+    }),
+   );
+   expect(messages.AiLookupSettings.advanced).toEqual(
+    expect.objectContaining({
+     title: expect.any(String),
+     description: expect.any(String),
+     open: expect.any(String),
+     close: expect.any(String),
+    }),
+   );
+   expect(messages.AiUsage.runtimeUsage).toContain("{tokens}");
+   expect(messages.AiUsage.runtimeRequests).toContain("{requests}");
+  },
+ );
 
- it.each(appLocales)("%s keeps Daily Reading settings navigation and failure copy", async (locale) => {
-  const messages = await loadAppMessages(locale);
-  const settings = messages.DailyReading.settings;
+ it.each(appLocales)(
+  "%s keeps Daily Reading settings navigation and failure copy",
+  async (locale) => {
+   const messages = await loadAppMessages(locale);
+   const settings = messages.DailyReading.settings;
 
-  expect(settings.tabs).toEqual(
-   expect.objectContaining({
-    overview: expect.any(String),
-    pipeline: expect.any(String),
-    history: expect.any(String),
-    aria: expect.any(String),
-   }),
-  );
-  expect(settings.actions).toEqual(
-   expect.objectContaining({
-    viewPipeline: expect.any(String),
-    openAiSettings: expect.any(String),
-   }),
-  );
-  expect(settings.pipeline.failedAt).toContain("{stage}");
-  expect(settings.toast.generationFailedAtStage).toContain("{stage}");
-  expect(settings.toast.generationFailedAtStage).toContain("{detail}");
- });
+   expect(settings.tabs).toEqual(
+    expect.objectContaining({
+     overview: expect.any(String),
+     pipeline: expect.any(String),
+     history: expect.any(String),
+     aria: expect.any(String),
+    }),
+   );
+   expect(settings.actions).toEqual(
+    expect.objectContaining({
+     viewPipeline: expect.any(String),
+     openAiSettings: expect.any(String),
+     resume: expect.any(String),
+     retry: expect.any(String),
+    }),
+   );
+   expect(settings.errors).toEqual(
+    expect.objectContaining({
+     tooShort: expect.any(String),
+     schema: expect.any(String),
+     provider: expect.any(String),
+     showTechnical: expect.any(String),
+    }),
+   );
+   expect(settings.history.latest).toEqual(expect.any(String));
+   expect(settings.pipeline.failedAt).toContain("{stage}");
+   expect(settings.toast.generationFailedAtStage).toContain("{stage}");
+   expect(settings.toast.generationFailedAtStage).toContain("{detail}");
+  },
+ );
 });

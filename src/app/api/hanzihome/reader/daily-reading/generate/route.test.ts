@@ -1,16 +1,23 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { dailyReadingGenerateStreamEventSchema, type DailyReadingGenerationStage } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+import {
+ dailyReadingGenerateStreamEventSchema,
+ type DailyReading,
+ type DailyReadingGenerationCheckpoint,
+ type DailyReadingGenerationStage,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 import type { JsonFieldValue } from "@/types/json";
 
 const {
  discoverDailyReadingSource,
  generateValidatedDailyReading,
+ generateValidatedDailyReadingFromCheckpoint,
  getActiveUserApiKeyCredentials,
  requireAuthenticatedRoute,
 } = vi.hoisted(() => ({
  discoverDailyReadingSource: vi.fn(),
  generateValidatedDailyReading: vi.fn(),
+ generateValidatedDailyReadingFromCheckpoint: vi.fn(),
  getActiveUserApiKeyCredentials: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
 }));
@@ -31,6 +38,7 @@ vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-source.server",
 }));
 vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-generation.server", () => ({
  generateValidatedDailyReading,
+ generateValidatedDailyReadingFromCheckpoint,
 }));
 
 import { POST } from "./route";
@@ -102,7 +110,7 @@ const reading = {
  generatedByProvider: "Google Gemini",
  generatedByModel: "gemini-test",
  pinyinReviewStatus: "auto-generated",
-};
+} satisfies DailyReading;
 
 const request = (body: JsonFieldValue) =>
  new Request("http://localhost/api/hanzihome/reader/daily-reading/generate", {
@@ -110,6 +118,19 @@ const request = (body: JsonFieldValue) =>
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body),
  });
+
+const checkpoint = {
+ source: reading.source,
+ core: {
+  titleZh: reading.titleZh,
+  titleVi: reading.titleVi,
+  whyWorthReadingVi: reading.whyWorthReadingVi,
+  topic: reading.topic,
+  level: reading.level,
+  estimatedMinutes: reading.estimatedMinutes,
+  paragraphs: reading.paragraphs.map(({ zh, vi, roleVi }) => ({ zh, vi, roleVi })),
+ },
+} satisfies DailyReadingGenerationCheckpoint;
 
 function parseEvents(responseText: string) {
  return responseText
@@ -149,16 +170,32 @@ describe("Daily Reading generate route", () => {
    },
   );
   generateValidatedDailyReading.mockImplementation(
-   async ({ onProgress }: { onProgress?: (stage: DailyReadingGenerationStage) => void }) => {
+   async ({
+    onProgress,
+    onCheckpoint,
+   }: {
+    onProgress?: (stage: DailyReadingGenerationStage) => void;
+    onCheckpoint?: (value: DailyReadingGenerationCheckpoint) => void;
+   }) => {
     onProgress?.("drafting");
+    onCheckpoint?.(checkpoint);
     onProgress?.("validating");
+    return reading;
+   },
+  );
+  generateValidatedDailyReadingFromCheckpoint.mockImplementation(
+   async ({ onProgress }: { onProgress?: (stage: DailyReadingGenerationStage) => void }) => {
+    onProgress?.("enriching");
     return reading;
    },
   );
  });
 
  it("rejects unauthenticated generation before touching providers", async () => {
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: false, response: Response.json({}) });
+  requireAuthenticatedRoute.mockResolvedValue({
+   authenticated: false,
+   response: Response.json({}),
+  });
 
   const response = await POST(
    request({ mode: "manual", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
@@ -183,6 +220,7 @@ describe("Daily Reading generate route", () => {
   expect(events.filter((event) => event.type === "progress").map((event) => event.stage)).toEqual(
    expect.arrayContaining(["discovering", "extracting", "drafting", "validating"]),
   );
+  expect(events).toEqual(expect.arrayContaining([{ type: "checkpoint", payload: checkpoint }]));
   expect(events.at(-1)).toMatchObject({
    type: "result",
    payload: { reading: { id: reading.id, titleZh: reading.titleZh } },
@@ -212,5 +250,28 @@ describe("Daily Reading generate route", () => {
    payload: { code: "source-unavailable" },
   });
   expect(generateValidatedDailyReading).not.toHaveBeenCalled();
+ });
+
+ it("resumes learning from a checkpoint without rediscovering the source", async () => {
+  const response = await POST(
+   request({
+    mode: "manual",
+    preferredLevel: "HSK5",
+    excludedUrls: [],
+    recentTopics: [],
+    checkpoint,
+   }),
+  );
+  const events = parseEvents(await response.text());
+
+  expect(events.map((event) => (event.type === "progress" ? event.stage : event.type))).toContain(
+   "enriching",
+  );
+  expect(events.at(-1)).toMatchObject({ type: "result", payload: { reading: { id: reading.id } } });
+  expect(discoverDailyReadingSource).not.toHaveBeenCalled();
+  expect(generateValidatedDailyReading).not.toHaveBeenCalled();
+  expect(generateValidatedDailyReadingFromCheckpoint).toHaveBeenCalledWith(
+   expect.objectContaining({ checkpoint }),
+  );
  });
 });

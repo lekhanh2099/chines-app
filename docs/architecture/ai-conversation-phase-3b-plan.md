@@ -106,12 +106,12 @@ Persisted settings command:
 
 ```json
 {
-  "action": "update-settings",
-  "conversationId": "uuid",
-  "mode": "natural | speaking-practice | grammar-coach | hskk-practice",
-  "correctionStyle": "light | balanced | strict",
-  "replyMode": "adaptive | chinese | bilingual",
-  "learnerLevel": "beginner | intermediate | advanced"
+ "action": "update-settings",
+ "conversationId": "uuid",
+ "mode": "natural | speaking-practice | grammar-coach | hskk-practice",
+ "correctionStyle": "light | balanced | strict",
+ "replyMode": "adaptive | chinese | bilingual",
+ "learnerLevel": "beginner | intermediate | advanced"
 }
 ```
 

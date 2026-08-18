@@ -141,9 +141,7 @@ describe("AI conversation client transport", () => {
  });
 
  it("archives through a recoverable lifecycle command instead of a browser delete", async () => {
-  const fetchMock = vi.fn().mockResolvedValue(
-   Response.json({ conversationId, archived: true }),
-  );
+  const fetchMock = vi.fn().mockResolvedValue(Response.json({ conversationId, archived: true }));
   vi.stubGlobal("fetch", fetchMock);
 
   await archiveAiConversation(conversationId);

@@ -120,6 +120,10 @@ export function GeneratedDailyReadingLibrary() {
  const { settings } = useDailyReadingSettings();
  const [generating, setGenerating] = useState(false);
  const [stage, setStage] = useState<DailyReadingGenerationStage | null>(null);
+ const generationActionLabel =
+  library.checkpoint !== null && t.has("generated.resume")
+   ? t("generated.resume")
+   : t("generated.generateNow");
 
  const readingHref = (id: string) => {
   const next = new URLSearchParams(searchParams.toString());
@@ -159,7 +163,7 @@ export function GeneratedDailyReadingLibrary() {
       </Button>
       <Button type="button" size="toolbar" onClick={() => void generate()} disabled={generating}>
        {generating ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
-       {t("generated.generateNow")}
+       {generationActionLabel}
       </Button>
      </>
     }
@@ -321,13 +325,7 @@ function Questions({ reading }: { reading: DailyReading }) {
  );
 }
 
-export function GeneratedDailyReadingView({
- id,
- onBack,
-}: {
- id: string;
- onBack(): void;
-}) {
+export function GeneratedDailyReadingView({ id, onBack }: { id: string; onBack(): void }) {
  const t = useTranslations("DailyReading");
  const library = useDailyReadingLibrary();
  const reading = library.items.find((item) => item.id === id) ?? null;
@@ -389,12 +387,7 @@ export function GeneratedDailyReadingView({
     </Typography>
    </div>
 
-   <Tabs
-    value={tab}
-    items={tabItems}
-    onValueChange={setTab}
-    aria-label={t("tabs.aria")}
-   >
+   <Tabs value={tab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
     <TabsContent value={tab} className="pt-4">
      {tab === "reader" ? (
       <div className="grid gap-4">
@@ -486,7 +479,13 @@ export function GeneratedDailyReadingView({
        <Typography variant="bodySmall" tone="muted">
         {reading.verificationSummaryVi}
        </Typography>
-       <Button type="button" variant="outline" size="toolbar" asChild className="justify-self-start">
+       <Button
+        type="button"
+        variant="outline"
+        size="toolbar"
+        asChild
+        className="justify-self-start"
+       >
         <a href={reading.source.url} target="_blank" rel="noreferrer">
          {t("generated.source.open")}
         </a>

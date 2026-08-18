@@ -27,7 +27,7 @@ afterEach(() => {
 });
 
 describe("Daily Reading provider transport", () => {
- it("uses Groq JSON mode with hidden reasoning for GPT OSS", async () => {
+ it("uses Groq strict structured output with hidden reasoning for GPT OSS", async () => {
   const fetchMock = vi.fn().mockResolvedValue(
    new Response(
     JSON.stringify({
@@ -52,15 +52,37 @@ describe("Daily Reading provider transport", () => {
    model: "openai/gpt-oss-20b",
    reasoning_effort: "low",
    reasoning_format: "hidden",
-   response_format: { type: "json_object" },
+   response_format: {
+    type: "json_schema",
+    json_schema: {
+     name: "daily_reading_core",
+     strict: true,
+    },
+   },
   });
+  expect(body.response_format.json_schema.schema).toMatchObject({
+   type: "object",
+   additionalProperties: false,
+   required: expect.arrayContaining([
+    "titleZh",
+    "titleVi",
+    "whyWorthReadingVi",
+    "topic",
+    "level",
+    "estimatedMinutes",
+    "paragraphs",
+   ]),
+  });
+  expect(
+   body.response_format.json_schema.schema.properties.paragraphs.items.properties.roleVi,
+  ).not.toHaveProperty("maxLength");
   expect(body.max_completion_tokens).toBe(3600);
   expect(body.messages).toHaveLength(1);
   expect(body.messages[0].role).toBe("user");
   expect(body.messages[0].content).toContain("Return one valid JSON object only");
  });
 
- it("disables Qwen reasoning while keeping JSON mode", async () => {
+ it("uses a strict Groq model when the saved model cannot guarantee the schema", async () => {
   const fetchMock = vi.fn().mockResolvedValue(
    new Response(
     JSON.stringify({
@@ -79,12 +101,58 @@ describe("Daily Reading provider transport", () => {
 
   const body = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
   expect(body).toMatchObject({
-   model: "qwen/qwen3.6-27b",
-   reasoning_effort: "none",
+   model: "openai/gpt-oss-20b",
+   reasoning_effort: "low",
    reasoning_format: "hidden",
-   response_format: { type: "json_object" },
+   response_format: {
+    type: "json_schema",
+    json_schema: {
+     name: "daily_reading_learning",
+     strict: true,
+    },
+   },
   });
   expect(body.max_completion_tokens).toBe(4800);
+ });
+
+ it("falls back to JSON object mode when Groq rejects generated strict JSON", async () => {
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValueOnce(
+    new Response(
+     JSON.stringify({
+      error: {
+       message: "Generated JSON does not match the expected schema.",
+       code: "json_validate_failed",
+      },
+     }),
+     { status: 400 },
+    ),
+   )
+   .mockResolvedValueOnce(
+    new Response(
+     JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({ titleZh: "结构修复成功" }) } }],
+     }),
+     { status: 200 },
+    ),
+   );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const result = await requestDailyReadingProvider({
+   credential: baseCredential,
+   prompt: "Return JSON for a Daily Reading core.",
+   phase: "core",
+  });
+
+  expect(result.content).toContain("结构修复成功");
+  expect(fetchMock).toHaveBeenCalledTimes(2);
+  expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body)).response_format.type).toBe(
+   "json_schema",
+  );
+  expect(JSON.parse(String(fetchMock.mock.calls[1]?.[1]?.body)).response_format).toEqual({
+   type: "json_object",
+  });
  });
 
  it("waits for Groq retry-after and retries the same structured request", async () => {

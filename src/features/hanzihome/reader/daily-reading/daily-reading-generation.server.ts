@@ -18,6 +18,7 @@ import {
  dailyReadingSchema,
  type DailyReading,
  type DailyReadingCoreDraft,
+ type DailyReadingGenerationCheckpoint,
  type DailyReadingGenerationKind,
  type DailyReadingGenerationStage,
  type DailyReadingLevel,
@@ -26,11 +27,14 @@ import {
 } from "./daily-reading.schemas";
 import { vietnamDailyReadingDateKey } from "./daily-reading.scheduler";
 
-const hanPattern = /[\u3400-\u9fff]/gu;
+const dailyReadingPromptMaximumCharacters = 20_000;
 
 function parseStructured<T>(raw: string, schema: z.ZodType<T>): T | null {
  try {
-  const cleaned = raw.trim().replace(/^```(?:json)?\s*/u, "").replace(/\s*```$/u, "");
+  const cleaned = raw
+   .trim()
+   .replace(/^```(?:json)?\s*/u, "")
+   .replace(/\s*```$/u, "");
   const parsed = schema.safeParse(JSON.parse(cleaned));
   return parsed.success ? parsed.data : null;
  } catch {
@@ -41,8 +45,8 @@ function parseStructured<T>(raw: string, schema: z.ZodType<T>): T | null {
 function createSchemaRepairPrompt(prompt: string, phase: DailyReadingProviderPhase) {
  const contract =
   phase === "core"
-   ? "Return exactly one core object with titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, and paragraphs[{zh,vi,roleVi}]."
-   : "Return exactly one learning object with vocabulary[{hanzi,meaningVi,meaningInContextVi,categoryVi}], grammarPoints[{patternZh,explanationVi,evidenceSentenceZh}], questions[{type,promptZh,promptVi,answerZh,answerVi,evidenceParagraphNumbers}], sourcePhrasesZh, and verificationSummaryVi.";
+   ? "Return exactly one core object with titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, and paragraphs[{zh,vi,roleVi}]. Use complete paragraphs and include every required field."
+   : "Return exactly one learning object with vocabulary[{hanzi,meaningVi,meaningInContextVi,categoryVi}], grammarPoints[{patternZh,explanationVi,evidenceSentenceZh}], questions[{type,promptZh,promptVi,answerZh,answerVi,evidenceParagraphNumbers}], sourcePhrasesZh, and verificationSummaryVi. Use 8-18 vocabulary items, 3-6 grammar points, and 5-8 questions.";
  return `${prompt}\n\nSCHEMA REPAIR: the previous JSON did not satisfy the required shape. ${contract} Include every required field, use no markdown, and do not add commentary.`;
 }
 
@@ -52,15 +56,17 @@ async function requestStructured<T>({
  phase,
  credentials,
  signal,
+ onProgress,
 }: {
  prompt: string;
  schema: z.ZodType<T>;
  phase: DailyReadingProviderPhase;
  credentials: UserApiKeyCredential[];
  signal?: AbortSignal;
+ onProgress?: (stage: DailyReadingGenerationStage) => void;
 }): Promise<{ data: T; provider: string; model: string }> {
  const boundedPrompt = prompt.normalize("NFC").trim();
- if (boundedPrompt.length === 0 || boundedPrompt.length > 5900) {
+ if (boundedPrompt.length === 0 || boundedPrompt.length > dailyReadingPromptMaximumCharacters) {
   throw new Error("Daily Reading prompt vượt giới hạn an toàn.");
  }
 
@@ -69,7 +75,9 @@ async function requestStructured<T>({
   throwIfAborted(signal);
   const schemaRepairPrompt = createSchemaRepairPrompt(boundedPrompt, phase);
   const attempts =
-   schemaRepairPrompt.length <= 5900 ? [boundedPrompt, schemaRepairPrompt] : [boundedPrompt];
+   schemaRepairPrompt.length <= dailyReadingPromptMaximumCharacters
+    ? [boundedPrompt, schemaRepairPrompt]
+    : [boundedPrompt];
 
   for (let attemptIndex = 0; attemptIndex < attempts.length; attemptIndex += 1) {
    const attemptPrompt = attempts[attemptIndex];
@@ -81,7 +89,9 @@ async function requestStructured<T>({
     signal,
    });
    if (!personal.content) {
-    providerErrors.push(`${credential.label}: ${personal.error || "provider không trả về nội dung."}`);
+    providerErrors.push(
+     `${credential.label}: ${personal.error || "provider không trả về nội dung."}`,
+    );
     break;
    }
 
@@ -94,8 +104,14 @@ async function requestStructured<T>({
     };
    }
 
+   if (attemptIndex < attempts.length - 1) {
+    onProgress?.(phase === "core" ? "repairing_core" : "repairing_learning");
+   }
+
    if (attemptIndex === attempts.length - 1) {
-    providerErrors.push(`${credential.label}: nội dung JSON không khớp schema Daily Reading sau lần sửa tự động.`);
+    providerErrors.push(
+     `${credential.label}: nội dung JSON không khớp schema Daily Reading sau lần sửa tự động.`,
+    );
    }
   }
  }
@@ -121,8 +137,8 @@ async function requestStructured<T>({
  );
 }
 
-function compactSourceEvidence(source: DailyReadingSourceCandidate, maxChars: number) {
- const normalized = source.extractedTextZh.replace(/\s+/gu, " ").trim();
+function compactSourceEvidence(extractedTextZh: string, maxChars: number) {
+ const normalized = extractedTextZh.replace(/\s+/gu, " ").trim();
  if (normalized.length <= maxChars) return normalized;
  const headLength = Math.floor(maxChars * 0.72);
  const tailLength = Math.floor(maxChars * 0.28);
@@ -133,14 +149,14 @@ function createCorePrompt(source: DailyReadingSourceCandidate, level: DailyReadi
  return [
   `Requested level: ${level}`,
   "Write a new 学习版 rather than copying the publisher's paragraph structure.",
-  "Produce 5-7 complete paragraphs totaling about 480-720 Han characters.",
+  "Produce as many complete paragraphs as the source and learning goal require. Do not pad, truncate, or optimize for an arbitrary character count.",
   "Each Vietnamese paragraph must closely translate its Chinese paragraph.",
   "Return exactly one JSON object with fields: titleZh, titleVi, whyWorthReadingVi, topic, level, estimatedMinutes, paragraphs[{zh,vi,roleVi}]. Do not omit required fields or add commentary.",
   `Source title: ${source.titleZh}`,
   `Publisher: ${source.publisher}`,
   `Published at: ${source.publishedAt}`,
   "SOURCE ARTICLE EVIDENCE:",
-  compactSourceEvidence(source, 3800),
+  compactSourceEvidence(source.extractedTextZh, 3800),
  ].join("\n");
 }
 
@@ -155,23 +171,31 @@ function createCoreRepairPrompt(
   "The previous reading-core attempt failed validation.",
   `Validation diagnostic: ${diagnostic.slice(0, 500)}`,
   "Regenerate the complete object. Do not return a patch.",
-  "Count Han characters before returning. Keep every factual claim source-bound.",
+  "Keep every factual claim source-bound.",
  ].join("\n");
 }
 
 function validateCore(source: DailyReadingSourceCandidate, core: DailyReadingCoreDraft) {
- const hanCount = core.paragraphs.map((paragraph) => paragraph.zh).join("").match(hanPattern)?.length ?? 0;
- if (hanCount < 420) throw new Error(`Bài đọc AI quá ngắn (${hanCount} Hán tự).`);
  const sourceCompact = source.extractedTextZh.replace(/\s+/gu, "");
- const readingCompact = core.paragraphs.map((paragraph) => paragraph.zh).join("").replace(/\s+/gu, "");
+ const readingCompact = core.paragraphs
+  .map((paragraph) => paragraph.zh)
+  .join("")
+  .replace(/\s+/gu, "");
  if (readingCompact.length > 180 && sourceCompact.includes(readingCompact.slice(0, 180))) {
   throw new Error("AI đã sao chép một đoạn nguồn quá dài thay vì biên soạn 学习版.");
  }
  return core;
 }
 
-function createLearningPrompt(source: DailyReadingSourceCandidate, core: DailyReadingCoreDraft) {
- const readingText = core.paragraphs.map((paragraph, index) => `P${index + 1}: ${paragraph.zh}`).join("\n");
+function createLearningPrompt(
+ sourceTitle: string,
+ publisher: string,
+ sourceEvidence: string,
+ core: DailyReadingCoreDraft,
+) {
+ const readingText = core.paragraphs
+  .map((paragraph, index) => `P${index + 1}: ${paragraph.zh}`)
+  .join("\n");
  return [
   "Prepare learning material for the LOCKED READING TEXT. Do not change the reading.",
   "Return exactly one JSON object containing vocabulary (10-14), grammarPoints (3-5), questions (5-6), sourcePhrasesZh, verificationSummaryVi.",
@@ -179,20 +203,25 @@ function createLearningPrompt(source: DailyReadingSourceCandidate, core: DailyRe
   "Grammar items require patternZh, explanationVi, evidenceSentenceZh; evidenceSentenceZh must be a complete sentence copied from the locked reading.",
   "Questions require type, promptZh, promptVi, answerZh, answerVi, evidenceParagraphNumbers; include main_idea, at least two detail, inference, summary; answer only from the reading.",
   "sourcePhrasesZh must be short exact phrases from source evidence and may be empty.",
+  `Source title: ${sourceTitle}`,
+  `Publisher: ${publisher}`,
   "LOCKED READING TEXT:",
   readingText,
-  "SOURCE EVIDENCE:",
-  compactSourceEvidence(source, 2100),
+  ...(sourceEvidence.length > 0
+   ? ["SOURCE EVIDENCE:", compactSourceEvidence(sourceEvidence, 2100)]
+   : ["SOURCE EVIDENCE: unavailable on this retry; sourcePhrasesZh may be empty."]),
  ].join("\n");
 }
 
 function createLearningRepairPrompt(
- source: DailyReadingSourceCandidate,
+ sourceTitle: string,
+ publisher: string,
+ sourceEvidence: string,
  core: DailyReadingCoreDraft,
  diagnostic: string,
 ) {
  return [
-  createLearningPrompt(source, core),
+  createLearningPrompt(sourceTitle, publisher, sourceEvidence, core),
   "",
   "The previous learning-apparatus attempt failed validation.",
   `Validation diagnostic: ${diagnostic.slice(0, 500)}`,
@@ -207,18 +236,25 @@ function normalizeSentence(value: string) {
 function validateLearning(core: DailyReadingCoreDraft, learning: DailyReadingLearningDraft) {
  const readingText = core.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  for (const item of learning.vocabulary) {
-  if (!readingText.includes(item.hanzi)) throw new Error(`Từ vựng không có trong bài: ${item.hanzi}`);
+  if (!readingText.includes(item.hanzi))
+   throw new Error(`Từ vựng không có trong bài: ${item.hanzi}`);
  }
  const readingSentences = core.paragraphs.flatMap(
   (paragraph) => paragraph.zh.match(/[^。！？!?]+[。！？!?]/gu) ?? [paragraph.zh],
  );
  for (const grammar of learning.grammarPoints) {
   const normalizedEvidence = normalizeSentence(grammar.evidenceSentenceZh);
-  const exists = readingSentences.some((sentence) => normalizeSentence(sentence) === normalizedEvidence);
+  const exists = readingSentences.some(
+   (sentence) => normalizeSentence(sentence) === normalizedEvidence,
+  );
   if (!exists) throw new Error(`Ví dụ ngữ pháp không khớp bài đọc: ${grammar.patternZh}`);
  }
  const questionTypes = new Set(learning.questions.map((question) => question.type));
- if (!questionTypes.has("main_idea") || !questionTypes.has("inference") || !questionTypes.has("summary")) {
+ if (
+  !questionTypes.has("main_idea") ||
+  !questionTypes.has("inference") ||
+  !questionTypes.has("summary")
+ ) {
   throw new Error("Bộ câu hỏi thiếu main idea, inference hoặc summary.");
  }
  const detailCount = learning.questions.filter((question) => question.type === "detail").length;
@@ -245,101 +281,92 @@ async function generateCore({
  onProgress?: (stage: DailyReadingGenerationStage) => void;
 }) {
  onProgress?.("drafting");
- const primary = await requestStructured({
-  prompt: createCorePrompt(source, preferredLevel),
-  schema: dailyReadingCoreDraftSchema,
-  phase: "core",
-  credentials,
-  signal,
- });
- try {
-  return { ...primary, data: validateCore(source, primary.data) };
- } catch (error) {
-  const diagnostic = error instanceof Error ? error.message : "Reading core validation failed.";
-  onProgress?.("repairing_core");
-  const repaired = await requestStructured({
-   prompt: createCoreRepairPrompt(source, preferredLevel, diagnostic),
+ let prompt = createCorePrompt(source, preferredLevel);
+ for (let attempt = 0; attempt < 3; attempt += 1) {
+  const candidate = await requestStructured({
+   prompt,
    schema: dailyReadingCoreDraftSchema,
    phase: "core",
    credentials,
    signal,
+   onProgress,
   });
-  return { ...repaired, data: validateCore(source, repaired.data) };
+  try {
+   return { ...candidate, data: validateCore(source, candidate.data) };
+  } catch (error) {
+   if (attempt === 2) throw error;
+   const diagnostic = error instanceof Error ? error.message : "Reading core validation failed.";
+   onProgress?.("repairing_core");
+   prompt = createCoreRepairPrompt(source, preferredLevel, diagnostic);
+  }
  }
+ throw new Error("Reading core generation did not produce a valid result.");
 }
 
 async function generateLearning({
- source,
+ sourceTitle,
+ publisher,
+ sourceEvidence,
  core,
  credentials,
  signal,
  onProgress,
 }: {
- source: DailyReadingSourceCandidate;
+ sourceTitle: string;
+ publisher: string;
+ sourceEvidence: string;
  core: DailyReadingCoreDraft;
  credentials: UserApiKeyCredential[];
  signal?: AbortSignal;
  onProgress?: (stage: DailyReadingGenerationStage) => void;
 }) {
  onProgress?.("enriching");
- const primary = await requestStructured({
-  prompt: createLearningPrompt(source, core),
-  schema: dailyReadingLearningDraftSchema,
-  phase: "learning",
-  credentials,
-  signal,
- });
- try {
-  return { ...primary, data: validateLearning(core, primary.data) };
- } catch (error) {
-  const diagnostic = error instanceof Error ? error.message : "Learning apparatus validation failed.";
-  onProgress?.("repairing_learning");
-  const repaired = await requestStructured({
-   prompt: createLearningRepairPrompt(source, core, diagnostic),
-   schema: dailyReadingLearningDraftSchema,
-   phase: "learning",
-   credentials,
-   signal,
-  });
-  return { ...repaired, data: validateLearning(core, repaired.data) };
+ let prompt = createLearningPrompt(sourceTitle, publisher, sourceEvidence, core);
+ for (let attempt = 0; attempt < 3; attempt += 1) {
+  try {
+   const result = await requestStructured({
+    prompt,
+    schema: dailyReadingLearningDraftSchema,
+    phase: "learning",
+    credentials,
+    signal,
+    onProgress,
+   });
+   return { ...result, data: validateLearning(core, result.data) };
+  } catch (error) {
+   if (attempt === 2) throw error;
+   const diagnostic =
+    error instanceof Error ? error.message : "Learning apparatus validation failed.";
+   onProgress?.("repairing_learning");
+   prompt = createLearningRepairPrompt(sourceTitle, publisher, sourceEvidence, core, diagnostic);
+  }
  }
+ throw new Error("Learning apparatus generation did not produce a valid result.");
 }
 
-export async function generateValidatedDailyReading({
+function finalizeDailyReading({
  source,
- preferredLevel,
+ sourceEvidence,
+ core,
+ learning,
  mode,
- credentials,
- signal,
- onProgress,
+ coreProvider,
+ coreModel,
+ learningProvider,
+ learningModel,
 }: {
- source: DailyReadingSourceCandidate;
- preferredLevel: DailyReadingLevel;
+ source: DailyReading["source"];
+ sourceEvidence: string;
+ core: DailyReadingCoreDraft;
+ learning: DailyReadingLearningDraft;
  mode: DailyReadingGenerationKind;
- credentials: UserApiKeyCredential[];
- signal?: AbortSignal;
- onProgress?: (stage: DailyReadingGenerationStage) => void;
-}): Promise<DailyReading> {
- const coreResult = await generateCore({
-  source,
-  preferredLevel,
-  credentials,
-  signal,
-  onProgress,
- });
- const core = coreResult.data;
- const learningResult = await generateLearning({
-  source,
-  core,
-  credentials,
-  signal,
-  onProgress,
- });
- const learning = learningResult.data;
- onProgress?.("validating");
+ coreProvider: string;
+ coreModel: string;
+ learningProvider: string;
+ learningModel: string;
+}): DailyReading {
  const now = new Date();
  const paragraphIds = core.paragraphs.map((_paragraph, index) => `p${index + 1}`);
- onProgress?.("finalizing");
  return dailyReadingSchema.parse({
   schemaVersion: "1.0.0",
   id: `daily-${vietnamDailyReadingDateKey(now)}-${crypto.randomUUID()}`,
@@ -384,19 +411,110 @@ export async function generateValidatedDailyReading({
     (number) => paragraphIds[number - 1] ?? paragraphIds[0] ?? "p1",
    ),
   })),
-  sourcePhrasesZh: learning.sourcePhrasesZh
-   .filter((phrase) => source.extractedTextZh.includes(phrase))
-   .slice(0, 6),
+  sourcePhrasesZh:
+   sourceEvidence.length > 0
+    ? learning.sourcePhrasesZh.filter((phrase) => sourceEvidence.includes(phrase)).slice(0, 6)
+    : [],
   verificationSummaryVi: learning.verificationSummaryVi,
-  source: {
-   titleZh: source.titleZh,
-   publisher: source.publisher,
-   url: source.url,
-   publishedAt: source.publishedAt,
-   capturedAt: now.toISOString(),
-  },
-  generatedByProvider: learningResult.provider || coreResult.provider,
-  generatedByModel: learningResult.model || coreResult.model || DEFAULT_GEMINI_QUICK_MODEL,
+  source,
+  generatedByProvider: learningProvider || coreProvider,
+  generatedByModel: learningModel || coreModel || DEFAULT_GEMINI_QUICK_MODEL,
   pinyinReviewStatus: "auto-generated",
  });
+}
+
+export async function generateValidatedDailyReading({
+ source,
+ preferredLevel,
+ mode,
+ credentials,
+ signal,
+ onProgress,
+ onCheckpoint,
+}: {
+ source: DailyReadingSourceCandidate;
+ preferredLevel: DailyReadingLevel;
+ mode: DailyReadingGenerationKind;
+ credentials: UserApiKeyCredential[];
+ signal?: AbortSignal;
+ onProgress?: (stage: DailyReadingGenerationStage) => void;
+ onCheckpoint?: (checkpoint: DailyReadingGenerationCheckpoint) => void;
+}): Promise<DailyReading> {
+ const coreResult = await generateCore({
+  source,
+  preferredLevel,
+  credentials,
+  signal,
+  onProgress,
+ });
+ const core = coreResult.data;
+ const sourceMetadata = {
+  titleZh: source.titleZh,
+  publisher: source.publisher,
+  url: source.url,
+  publishedAt: source.publishedAt,
+  capturedAt: new Date().toISOString(),
+ } satisfies DailyReading["source"];
+ onCheckpoint?.({ source: sourceMetadata, core });
+ const learningResult = await generateLearning({
+  sourceTitle: source.titleZh,
+  publisher: source.publisher,
+  sourceEvidence: source.extractedTextZh,
+  core,
+  credentials,
+  signal,
+  onProgress,
+ });
+ onProgress?.("validating");
+ const reading = finalizeDailyReading({
+  source: sourceMetadata,
+  sourceEvidence: source.extractedTextZh,
+  core,
+  learning: learningResult.data,
+  mode,
+  coreProvider: coreResult.provider,
+  coreModel: coreResult.model,
+  learningProvider: learningResult.provider,
+  learningModel: learningResult.model,
+ });
+ onProgress?.("finalizing");
+ return reading;
+}
+
+export async function generateValidatedDailyReadingFromCheckpoint({
+ checkpoint,
+ mode,
+ credentials,
+ signal,
+ onProgress,
+}: {
+ checkpoint: DailyReadingGenerationCheckpoint;
+ mode: DailyReadingGenerationKind;
+ credentials: UserApiKeyCredential[];
+ signal?: AbortSignal;
+ onProgress?: (stage: DailyReadingGenerationStage) => void;
+}): Promise<DailyReading> {
+ const learningResult = await generateLearning({
+  sourceTitle: checkpoint.source.titleZh,
+  publisher: checkpoint.source.publisher,
+  sourceEvidence: "",
+  core: checkpoint.core,
+  credentials,
+  signal,
+  onProgress,
+ });
+ onProgress?.("validating");
+ const reading = finalizeDailyReading({
+  source: checkpoint.source,
+  sourceEvidence: "",
+  core: checkpoint.core,
+  learning: learningResult.data,
+  mode,
+  coreProvider: learningResult.provider,
+  coreModel: learningResult.model,
+  learningProvider: learningResult.provider,
+  learningModel: learningResult.model,
+ });
+ onProgress?.("finalizing");
+ return reading;
 }

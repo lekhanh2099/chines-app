@@ -1,6 +1,8 @@
 import { NextRequest } from "next/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { aiConversationAccountPreferencesSchema } from "@/features/settings/ai-conversation-settings.schema";
+
 const {
  createClient,
  loadAiConversationSettingsOverview,
@@ -19,6 +21,11 @@ const {
  forgetAiConversationManagedMemory: vi.fn(),
 }));
 
+vi.mock("server-only", () => ({}));
+vi.mock("@/lib/env/public", () => ({
+ publicSupabaseEnv: { url: "https://example.supabase.co", key: "test-publishable-key" },
+}));
+vi.mock("@/lib/env/server", () => ({ getSupabaseServerSecret: () => "test-service-role-key" }));
 vi.mock("@/lib/supabase/server", () => ({ createClient }));
 vi.mock("@/features/settings/ai-conversation-settings-persistence.server", async () => {
  const actual = await vi.importActual<
@@ -39,13 +46,13 @@ import { DELETE, GET, PATCH, PUT } from "./route";
 
 const userId = "11111111-1111-4111-8111-111111111111";
 const memoryId = "33333333-3333-4333-8333-333333333333";
-const preferences = {
- defaultMode: "natural" as const,
- defaultCorrectionStyle: "balanced" as const,
- defaultReplyMode: "adaptive" as const,
- learnerLevel: "intermediate" as const,
+const preferences = aiConversationAccountPreferencesSchema.parse({
+ defaultMode: "natural",
+ defaultCorrectionStyle: "balanced",
+ defaultReplyMode: "adaptive",
+ learnerLevel: "intermediate",
  memoryEnabled: true,
-};
+});
 
 function authenticatedClient() {
  return {

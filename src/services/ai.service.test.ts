@@ -182,10 +182,9 @@ describe("Groq lookup routing", () => {
 
  it("sends trusted persisted context as a real system message for OpenAI-compatible BYOK", async () => {
   const fetchMock = vi.fn().mockResolvedValue(
-   new Response(
-    JSON.stringify({ choices: [{ message: { content: "最近怎么样？" } }] }),
-    { status: 200 },
-   ),
+   new Response(JSON.stringify({ choices: [{ message: { content: "最近怎么样？" } }] }), {
+    status: 200,
+   }),
   );
   vi.stubGlobal("fetch", fetchMock);
   const trustedContext = "[PRODUCT POLICY — HIGHEST PRIORITY]\nCharacter: 小林";

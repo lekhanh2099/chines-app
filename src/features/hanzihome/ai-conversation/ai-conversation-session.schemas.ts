@@ -114,9 +114,7 @@ export const aiConversationTurnResponseSchema = z.strictObject({
 
 export type AiConversationMode = z.output<typeof aiConversationModeSchema>;
 export type AiConversationMemoryPolicy = z.output<typeof aiConversationMemoryPolicySchema>;
-export type AiConversationPersistedMessage = z.output<
- typeof aiConversationPersistedMessageSchema
->;
+export type AiConversationPersistedMessage = z.output<typeof aiConversationPersistedMessageSchema>;
 export type AiConversationSession = z.output<typeof aiConversationSessionSchema>;
 export type AiConversationHistoryItem = z.output<typeof aiConversationHistoryItemSchema>;
 export type AiConversationSettings = z.output<typeof aiConversationSettingsSchema>;

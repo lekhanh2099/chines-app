@@ -47,6 +47,7 @@
  "generated": {
   "description": "先寻找真实中文新闻、提取来源内容，再生成包含词汇、语法和问题的学习版。生成的阅读保存在当前设备。",
   "generateNow": "立即查找并生成",
+  "resume": "继续未完成的阅读",
   "progressHint": "寻找来源、编写、校验和保存需要依次完成，因此可能需要几分钟。",
   "notFound": "未找到当前设备上已保存的这篇 Daily Reading。",
   "library": {
@@ -133,6 +134,8 @@
   "actions": {
    "testSource": "检查真实来源",
    "generateNow": "立即查找并生成",
+   "resume": "继续未完成的阅读",
+   "retry": "重新生成",
    "clear": "删除已生成阅读",
    "viewPipeline": "查看进度",
    "openAiSettings": "打开 AI 设置"
@@ -150,7 +153,7 @@
    "learning": "生成学习内容",
    "learningDescription": "生成词汇、语法、问题和证据。",
    "validate": "校验",
-   "validateDescription": "检查数据结构、长度、重复内容和证据。",
+   "validateDescription": "检查数据结构、来源依据、重复内容和证据。",
    "save": "保存",
    "saveDescription": "将通过校验的阅读保存到当前设备。"
   },
@@ -160,7 +163,14 @@
    "empty": "还没有生成任务。",
    "succeeded": "已完成",
    "pending": "运行中",
-   "failed": "失败"
+   "failed": "失败",
+   "latest": "最近一次"
+  },
+  "errors": {
+   "tooShort": "草稿未通过质量检查。系统已经尝试自动修正，但仍未完成。",
+   "schema": "AI 返回的草稿结构或字段值不符合要求。系统已经尝试自动修正，但仍未完成。",
+   "provider": "没有 AI provider 完成这篇阅读。请检查 Groq API key/model；GEMINI_API_KEY 仅作为备用方案。",
+   "showTechnical": "查看技术细节"
   },
   "clearDialog": {
    "title": "删除已生成的 Daily Reading？",

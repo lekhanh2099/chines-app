@@ -9,6 +9,8 @@ import type { JsonObject } from "@/types/json";
 import {
  aiConversationAccountPreferencesSchema,
  aiConversationManagedMemorySchema,
+ aiConversationMemoryForgottenResponseSchema,
+ aiConversationMemoryResolvedResponseSchema,
  aiConversationSettingsOverviewSchema,
  type AiConversationAccountPreferences,
  type AiConversationManagedMemory,
@@ -110,7 +112,13 @@ function buildServiceHeaders(secret: string, hasBody: boolean, prefer?: string) 
 }
 
 function isPersistenceNotReady(code: string | null, message: string) {
- if (code === "42P01" || code === "42703" || code === "PGRST202" || code === "PGRST204" || code === "PGRST205") {
+ if (
+  code === "42P01" ||
+  code === "42703" ||
+  code === "PGRST202" ||
+  code === "PGRST204" ||
+  code === "PGRST205"
+ ) {
   return true;
  }
  const normalized = message.toLowerCase();
@@ -147,7 +155,7 @@ async function requestPostgrest<T>({
 
  if (!response.ok) {
   const parsedError = postgrestErrorSchema.safeParse(payload);
-  const code = parsedError.success ? parsedError.data.code ?? null : null;
+  const code = parsedError.success ? (parsedError.data.code ?? null) : null;
   const message =
    parsedError.success && parsedError.data.message
     ? parsedError.data.message
@@ -285,7 +293,9 @@ export async function listAiConversationManagedMemories(
    limit: "200",
   },
  });
- const characterIds = [...new Set(rows.flatMap((row) => (row.character_id ? [row.character_id] : [])))];
+ const characterIds = [
+  ...new Set(rows.flatMap((row) => (row.character_id ? [row.character_id] : []))),
+ ];
  let characterNames = new Map<string, string>();
  if (characterIds.length > 0) {
   const characters = await requestPostgrest({
@@ -303,7 +313,7 @@ export async function listAiConversationManagedMemories(
   aiConversationManagedMemorySchema.parse({
    id: row.id,
    characterId: row.character_id,
-   characterName: row.character_id ? characterNames.get(row.character_id) ?? null : null,
+   characterName: row.character_id ? (characterNames.get(row.character_id) ?? null) : null,
    kind: row.kind,
    content: row.content,
    updatedAt: row.updated_at,
@@ -393,7 +403,7 @@ export async function resolveAiConversationManagedOpenLoop({
   params: { kind: "eq.open_loop" },
   body: { status: "resolved", updated_at: new Date().toISOString() },
  });
- return { memoryId: memory.id, resolved: true as const };
+ return aiConversationMemoryResolvedResponseSchema.parse({ memoryId: memory.id, resolved: true });
 }
 
 export async function forgetAiConversationManagedMemory({
@@ -404,5 +414,5 @@ export async function forgetAiConversationManagedMemory({
  memoryId: string;
 }) {
  const memory = await mutateSingleMemory({ userId, memoryId, method: "DELETE" });
- return { memoryId: memory.id, forgotten: true as const };
+ return aiConversationMemoryForgottenResponseSchema.parse({ memoryId: memory.id, forgotten: true });
 }

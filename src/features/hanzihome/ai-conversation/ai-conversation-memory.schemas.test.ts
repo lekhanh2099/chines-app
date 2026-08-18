@@ -72,8 +72,9 @@ describe("AI conversation memory lifecycle schema", () => {
    scope: "global",
   };
   expect(
-   aiConversationMemoryExtractionSchema.safeParse({ changes: Array.from({ length: 7 }, () => candidate) })
-    .success,
+   aiConversationMemoryExtractionSchema.safeParse({
+    changes: Array.from({ length: 7 }, () => candidate),
+   }).success,
   ).toBe(false);
  });
 });

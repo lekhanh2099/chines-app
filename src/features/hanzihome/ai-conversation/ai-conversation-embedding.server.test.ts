@@ -25,8 +25,9 @@ describe("AI conversation memory embedding adapter", () => {
  });
 
  it("uses a stable retrieval task and 768-dimensional Gemini embedding contract", async () => {
-  const values = Array.from({ length: AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS }, (_, index) =>
-   index / AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS,
+  const values = Array.from(
+   { length: AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS },
+   (_, index) => index / AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS,
   );
   const fetchMock = vi.fn().mockResolvedValue(Response.json({ embedding: { values } }));
   vi.stubGlobal("fetch", fetchMock);

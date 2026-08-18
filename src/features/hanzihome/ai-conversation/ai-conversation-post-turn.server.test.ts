@@ -48,7 +48,9 @@ vi.mock("./ai-conversation-memory-persistence.server", () => ({
  loadActiveAiConversationMemories,
  loadAiConversationPostTurnEvidence,
 }));
-vi.mock("./ai-conversation-memory-extraction.server", () => ({ extractAiConversationMemoryChanges }));
+vi.mock("./ai-conversation-memory-extraction.server", () => ({
+ extractAiConversationMemoryChanges,
+}));
 vi.mock("./ai-conversation-memory.server", () => ({
  enrichMissingAiConversationMemoryEmbeddings,
  isAiConversationLongTermMemoryEnabled: ({

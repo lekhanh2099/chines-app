@@ -94,9 +94,9 @@ describe("AI conversation long-term memory retrieval", () => {
  });
 
  it("skips all retrieval when memory is disabled or suppressed by explicit forget", async () => {
-  expect(
-   await retrieveRelevantAiConversationMemories({ ...baseInput, enabled: false }),
-  ).toEqual([]);
+  expect(await retrieveRelevantAiConversationMemories({ ...baseInput, enabled: false })).toEqual(
+   [],
+  );
   expect(
    await retrieveRelevantAiConversationMemories({ ...baseInput, suppressForForget: true }),
   ).toEqual([]);
@@ -106,7 +106,10 @@ describe("AI conversation long-term memory retrieval", () => {
 
  it("recalls an obvious Chinese memory through lexical fallback when embeddings are unavailable", async () => {
   loadActiveAiConversationMemories.mockResolvedValue([coffeeMemory, badmintonMemory]);
-  generateAiConversationMemoryEmbedding.mockResolvedValue({ available: false, reason: "missing-key" });
+  generateAiConversationMemoryEmbedding.mockResolvedValue({
+   available: false,
+   reason: "missing-key",
+  });
 
   const result = await retrieveRelevantAiConversationMemories(baseInput);
 
@@ -130,9 +133,9 @@ describe("AI conversation long-term memory retrieval", () => {
  });
 
  it("recognizes explicit forget wording before prompt construction", () => {
-  expect(isExplicitAiConversationForgetIntent("忘掉我刚才说喜欢羽毛球的事。" )).toBe(true);
-  expect(isExplicitAiConversationForgetIntent("Đừng nhớ chuyện tôi vừa kể nha." )).toBe(true);
-  expect(isExplicitAiConversationForgetIntent("今天想聊羽毛球。" )).toBe(false);
+  expect(isExplicitAiConversationForgetIntent("忘掉我刚才说喜欢羽毛球的事。")).toBe(true);
+  expect(isExplicitAiConversationForgetIntent("Đừng nhớ chuyện tôi vừa kể nha.")).toBe(true);
+  expect(isExplicitAiConversationForgetIntent("今天想聊羽毛球。")).toBe(false);
  });
 
  it("enriches a bounded set of missing memory embeddings opportunistically", async () => {

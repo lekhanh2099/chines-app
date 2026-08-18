@@ -3,14 +3,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {
- Archive,
- History,
- MessageSquarePlus,
- MoreHorizontal,
- Send,
- Settings2,
-} from "lucide-react";
+import { Archive, History, MessageSquarePlus, MoreHorizontal, Send, Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
 
@@ -73,14 +66,11 @@ import {
  aiConversationReplyModeSchema,
  type AiConversationMessage,
 } from "./ai-conversation.schemas";
-import {
- AiConversationRuntimeMenu,
- AUTO_RUNTIME_KEY_ID,
-} from "./AiConversationRuntimeMenu";
+import { AiConversationRuntimeMenu, AUTO_RUNTIME_KEY_ID } from "./AiConversationRuntimeMenu";
 
 const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
-const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"] as const;
-const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"] as const;
+const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"];
+const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"];
 const SESSION_STALE_TIME_MS = 30_000;
 
 type ManagedApiKey = ApiKeysResponse["keys"][number];
@@ -88,7 +78,7 @@ type RetryTurn = { clientMessageId: string; content: string };
 type ArchiveTarget = { id: string; title: string };
 
 function conversationSessionQueryKey(conversationId: string | null) {
- return [...SESSION_QUERY_ROOT, conversationId ?? "latest"] as const;
+ return [...SESSION_QUERY_ROOT, conversationId ?? "latest"];
 }
 
 export function AiConversationWorkspace() {
@@ -275,10 +265,7 @@ export function AiConversationWorkspace() {
   mutationFn: async (useMemory: boolean) => {
    const conversation = sessionQuery.data?.conversation;
    if (!conversation) throw new Error(t("memory.updateError"));
-   return updateAiConversationMemoryPolicy(
-    conversation.id,
-    useMemory ? "inherit" : "disabled",
-   );
+   return updateAiConversationMemoryPolicy(conversation.id, useMemory ? "inherit" : "disabled");
   },
   onSuccess: (state) => {
    queryClient.setQueryData<AiConversationSession>(
@@ -312,10 +299,7 @@ export function AiConversationWorkspace() {
   onSuccess: ({ archivedId, nextSession }) => {
    queryClient.removeQueries({ queryKey: conversationSessionQueryKey(archivedId), exact: true });
    if (nextSession?.conversation) {
-    queryClient.setQueryData(
-     conversationSessionQueryKey(nextSession.conversation.id),
-     nextSession,
-    );
+    queryClient.setQueryData(conversationSessionQueryKey(nextSession.conversation.id), nextSession);
     retryTurnRef.current = null;
     setDraft("");
     sendMutation.reset();
@@ -417,10 +401,7 @@ export function AiConversationWorkspace() {
  useEffect(() => {
   const resolvedConversationId = sessionQuery.data?.conversation?.id;
   if (!resolvedConversationId || resolvedConversationId === conversationIdFromUrl) return;
-  queryClient.setQueryData(
-   conversationSessionQueryKey(resolvedConversationId),
-   sessionQuery.data,
-  );
+  queryClient.setQueryData(conversationSessionQueryKey(resolvedConversationId), sessionQuery.data);
   navigateToConversation(resolvedConversationId);
  }, [conversationIdFromUrl, navigateToConversation, queryClient, sessionQuery.data]);
 
@@ -785,7 +766,9 @@ function ArchiveConversationDialog({
    <DialogContent size="sm">
     <DialogHeader>
      <DialogTitle>{t("history.archiveTitle")}</DialogTitle>
-     <DialogDescription>{t("history.archiveDescription", { title: target.title })}</DialogDescription>
+     <DialogDescription>
+      {t("history.archiveDescription", { title: target.title })}
+     </DialogDescription>
     </DialogHeader>
     {error ? (
      <DialogBody>

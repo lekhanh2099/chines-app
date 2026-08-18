@@ -127,10 +127,7 @@ export function SettingsPageContent({
      </TabsContent>
 
      <TabsContent active={section === SettingsSectionSchema.enum.ai} className="pt-4">
-      <AiSettingsWorkspace
-       panelValue={aiPanelValue}
-       dailyReadingSettings={dailyReadingSettings}
-      />
+      <AiSettingsWorkspace panelValue={aiPanelValue} dailyReadingSettings={dailyReadingSettings} />
      </TabsContent>
     </Tabs>
    </main>

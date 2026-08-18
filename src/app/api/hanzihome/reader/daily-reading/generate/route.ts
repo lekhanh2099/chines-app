@@ -12,7 +12,10 @@ import {
  type DailyReadingGenerationStage,
  type DailyReadingGenerateStreamEvent,
 } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
-import { generateValidatedDailyReading } from "@/features/hanzihome/reader/daily-reading/daily-reading-generation.server";
+import {
+ generateValidatedDailyReading,
+ generateValidatedDailyReadingFromCheckpoint,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-generation.server";
 import {
  discoverDailyReadingSource,
  formatDailyReadingSourceReport,
@@ -97,9 +100,29 @@ function createGenerationStream({
 
    void (async () => {
     try {
+     if (input.checkpoint) {
+      const reading = await generateValidatedDailyReadingFromCheckpoint({
+       checkpoint: input.checkpoint,
+       mode: input.mode,
+       credentials,
+       signal: generationController.signal,
+       onProgress: progress,
+      });
+      enqueue(
+       dailyReadingGenerateStreamEventSchema.parse({
+        type: "result",
+        payload: dailyReadingGenerateResponseSchema.parse({ reading }),
+       }),
+      );
+      return;
+     }
      let discovery: Awaited<ReturnType<typeof discoverDailyReadingSource>>;
      try {
-      discovery = await discoverDailyReadingSource(input.excludedUrls, input.recentTopics, progress);
+      discovery = await discoverDailyReadingSource(
+       input.excludedUrls,
+       input.recentTopics,
+       progress,
+      );
      } catch (error) {
       const detail = error instanceof Error ? error.message : "Source discovery failed.";
       fail("source-extraction-failed", detail);
@@ -119,6 +142,13 @@ function createGenerationStream({
       credentials,
       signal: generationController.signal,
       onProgress: progress,
+      onCheckpoint: (checkpoint) =>
+       enqueue(
+        dailyReadingGenerateStreamEventSchema.parse({
+         type: "checkpoint",
+         payload: checkpoint,
+        }),
+       ),
      });
      enqueue(
       dailyReadingGenerateStreamEventSchema.parse({

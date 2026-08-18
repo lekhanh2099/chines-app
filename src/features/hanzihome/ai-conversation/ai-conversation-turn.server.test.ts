@@ -40,7 +40,9 @@ vi.mock("./ai-conversation-memory-persistence.server", () => ({
  loadAiConversationMemoryEnabledPreference,
 }));
 vi.mock("./ai-conversation-post-turn.server", () => ({ processDueAiConversationPostTurnJobs }));
-vi.mock("./ai-conversation-memory-extraction.server", () => ({ resolveExplicitAiConversationForget }));
+vi.mock("./ai-conversation-memory-extraction.server", () => ({
+ resolveExplicitAiConversationForget,
+}));
 vi.mock("./ai-conversation-memory.server", () => ({
  isAiConversationLongTermMemoryEnabled: ({
   conversationPolicy,
@@ -212,7 +214,10 @@ describe("persisted AI conversation turn", () => {
    conversation: { ...contextState.conversation, memoryPolicy: "disabled" },
   };
   getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  generateSystemAiConversationReply.mockResolvedValue({ data: "我们聊聊现在的话题吧。", error: null });
+  generateSystemAiConversationReply.mockResolvedValue({
+   data: "我们聊聊现在的话题吧。",
+   error: null,
+  });
 
   await generatePersistedAiConversationTurn({
    supabase,
@@ -234,7 +239,10 @@ describe("persisted AI conversation turn", () => {
    },
   ];
   getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  generateSystemAiConversationReply.mockResolvedValue({ data: "好，我们不再用这个信息。", error: null });
+  generateSystemAiConversationReply.mockResolvedValue({
+   data: "好，我们不再用这个信息。",
+   error: null,
+  });
 
   await generatePersistedAiConversationTurn({
    supabase,

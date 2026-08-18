@@ -85,15 +85,14 @@ export function AiSettingsWorkspace({
  const [geminiModel, setGeminiModel] =
   useState<ClientAiPromptSettings["geminiModel"]>(DEFAULT_GEMINI_MODEL);
  const [savedSettings, setSavedSettings] = useState<ClientAiPromptSettings | null>(null);
- const [isLoading, setIsLoading] = useState(false);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
+ const isLoading = needsLookupSettings && !hasLoaded;
 
  useEffect(() => {
   if (!needsLookupSettings || hasLoaded) return;
 
   let isMounted = true;
-  setIsLoading(true);
 
   async function loadSettings() {
    const localSettings = loadClientAiPromptSettings();
@@ -136,8 +135,6 @@ export function AiSettingsWorkspace({
     });
     setHasLoaded(true);
     toast.info(t("ai.localFallback"));
-   } finally {
-    if (isMounted) setIsLoading(false);
    }
   }
 
@@ -281,9 +278,7 @@ export function AiSettingsWorkspace({
       <div className="flex flex-wrap items-center gap-2">
        {hasLoaded ? (
         <Badge variant={hasUnsavedModelChange ? "warning" : "success"} size="sm">
-         {hasUnsavedModelChange
-          ? lookupT("modelProvider.dirty")
-          : lookupT("modelProvider.synced")}
+         {hasUnsavedModelChange ? lookupT("modelProvider.dirty") : lookupT("modelProvider.synced")}
         </Badge>
        ) : null}
        <Button

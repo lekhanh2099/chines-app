@@ -8,7 +8,9 @@ import {
  dailyReadingGenerateStreamEventSchema,
  dailyReadingSourcePreviewResponseSchema,
  type DailyReading,
+ type DailyReadingCheckpointRecord,
  type DailyReadingErrorCode,
+ type DailyReadingGenerationCheckpoint,
  type DailyReadingGenerationKind,
  type DailyReadingGenerationStage,
  type DailyReadingLevel,
@@ -20,7 +22,10 @@ import {
  getDailyReadingSettingsServerSnapshot,
  getDailyReadingSettingsSnapshot,
  getDailyReadingSnapshot,
+ clearDailyReadingCheckpoint,
+ getDailyReadingCheckpoint,
  markDailyReadingRunInterrupted,
+ saveDailyReadingCheckpoint,
  saveDailyReadingRun,
  saveGeneratedDailyReading,
  subscribeDailyReading,
@@ -64,7 +69,8 @@ function generationInput() {
 }
 
 export async function testDailyReadingSource(): Promise<DailyReadingSourcePreviewResponse> {
- if (navigator.onLine === false) throw new DailyReadingClientError("offline", "Thiết bị đang offline.");
+ if (navigator.onLine === false)
+  throw new DailyReadingClientError("offline", "Thiết bị đang offline.");
  const controller = new AbortController();
  const timeout = window.setTimeout(() => controller.abort(), 90_000);
  try {
@@ -79,7 +85,10 @@ export async function testDailyReadingSource(): Promise<DailyReadingSourcePrevie
   if (!response.ok) throw await decodeFailure(response);
   const parsed = dailyReadingSourcePreviewResponseSchema.safeParse(await response.json());
   if (!parsed.success) {
-   throw new DailyReadingClientError("invalid-provider-response", "Kiểm tra nguồn trả dữ liệu không hợp lệ.");
+   throw new DailyReadingClientError(
+    "invalid-provider-response",
+    "Kiểm tra nguồn trả dữ liệu không hợp lệ.",
+   );
   }
   return parsed.data;
  } catch (error) {
@@ -104,6 +113,7 @@ async function parseStreamEvent(line: string) {
 async function readGenerationStream(
  response: Response,
  onProgress: (stage: DailyReadingGenerationStage) => void,
+ onCheckpoint: (checkpoint: DailyReadingGenerationCheckpoint) => void,
 ): Promise<DailyReading> {
  if (response.body === null) {
   throw new DailyReadingClientError(
@@ -131,10 +141,12 @@ async function readGenerationStream(
    );
   }
   if (event.type === "progress") emitProgress(event.stage);
+  if (event.type === "checkpoint") onCheckpoint(event.payload);
   if (event.type === "error") {
    throw new DailyReadingClientError(event.payload.code, event.payload.detail);
   }
-  if (event.type === "result") reading = dailyReadingGenerateResponseSchema.parse(event.payload).reading;
+  if (event.type === "result")
+   reading = dailyReadingGenerateResponseSchema.parse(event.payload).reading;
  };
 
  while (true) {
@@ -167,9 +179,13 @@ export async function generateDailyReadingNow(
   return await withDailyReadingGenerationLock(async () => {
    const now = new Date();
    const date = vietnamDailyReadingDateKey(now);
-   const runId = `daily-run:${kind}:${date}:${crypto.randomUUID()}`;
-   const attemptedAt = now.toISOString();
-   let stage: DailyReadingGenerationStage = "discovering";
+   const checkpointRecord = getDailyReadingCheckpoint();
+   const generationKind = checkpointRecord?.kind ?? kind;
+   const generationLevel = checkpointRecord?.preferredLevel ?? level;
+   const runId =
+    checkpointRecord?.runId ?? `daily-run:${generationKind}:${date}:${crypto.randomUUID()}`;
+   const attemptedAt = checkpointRecord?.attemptedAt ?? now.toISOString();
+   let stage: DailyReadingGenerationStage = checkpointRecord === null ? "discovering" : "enriching";
    const persistRun = (
     status: "pending" | "succeeded" | "failed",
     completedAt: string,
@@ -180,7 +196,7 @@ export async function generateDailyReadingNow(
     saveDailyReadingRun({
      id: runId,
      date,
-     kind,
+     kind: generationKind,
      status,
      stage,
      attemptedAt,
@@ -193,8 +209,6 @@ export async function generateDailyReadingNow(
    persistRun("pending", "", "", "", "");
    const interrupt = () => markDailyReadingRunInterrupted(runId);
    window.addEventListener("pagehide", interrupt, { once: true });
-   const controller = new AbortController();
-   const timeout = window.setTimeout(() => controller.abort(), 540_000);
 
    const progress = (nextStage: DailyReadingGenerationStage) => {
     stage = nextStage;
@@ -204,6 +218,17 @@ export async function generateDailyReadingNow(
     } catch {
      // Progress telemetry must not cancel an otherwise valid generation request.
     }
+   };
+   const checkpoint = (value: DailyReadingGenerationCheckpoint) => {
+    const record: DailyReadingCheckpointRecord = {
+     runId,
+     date,
+     kind: generationKind,
+     preferredLevel: generationLevel,
+     attemptedAt,
+     checkpoint: value,
+    };
+    saveDailyReadingCheckpoint(record);
    };
 
    try {
@@ -216,20 +241,25 @@ export async function generateDailyReadingNow(
      },
      credentials: "include",
      cache: "no-store",
-     body: JSON.stringify({
-      ...input,
-      mode: kind,
-      preferredLevel: level,
-     }),
-     signal: controller.signal,
+     body: JSON.stringify(
+      checkpointRecord === null
+       ? { ...input, mode: generationKind, preferredLevel: generationLevel }
+       : {
+          ...input,
+          mode: generationKind,
+          preferredLevel: generationLevel,
+          checkpoint: checkpointRecord.checkpoint,
+         },
+     ),
     });
     if (!response.ok) throw await decodeFailure(response);
     const contentType = response.headers.get("content-type") ?? "";
     const reading = contentType.includes("application/x-ndjson")
-     ? await readGenerationStream(response, progress)
+     ? await readGenerationStream(response, progress, checkpoint)
      : dailyReadingGenerateResponseSchema.parse(await response.json()).reading;
     progress("saving");
     const saved = saveGeneratedDailyReading(reading);
+    clearDailyReadingCheckpoint(runId);
     stage = "completed";
     persistRun("succeeded", new Date().toISOString(), "", "", saved.id);
     return saved;
@@ -238,7 +268,10 @@ export async function generateDailyReadingNow(
      error instanceof DailyReadingClientError
       ? error
       : error instanceof DOMException && error.name === "AbortError"
-        ? new DailyReadingClientError("timeout", "Tạo Daily Reading quá 9 phút và đã được hủy.")
+        ? new DailyReadingClientError(
+           "timeout",
+           "Tạo Daily Reading bị gián đoạn khi chờ server trả kết quả.",
+          )
         : new DailyReadingClientError(
            "provider-rejected",
            error instanceof Error ? error.message : "Không thể tạo Daily Reading.",
@@ -256,7 +289,6 @@ export async function generateDailyReadingNow(
     }
     throw resolved;
    } finally {
-    window.clearTimeout(timeout);
     window.removeEventListener("pagehide", interrupt);
    }
   });
@@ -269,7 +301,11 @@ export async function generateDailyReadingNow(
 }
 
 export function useDailyReadingLibrary() {
- return useSyncExternalStore(subscribeDailyReading, getDailyReadingSnapshot, getDailyReadingServerSnapshot);
+ return useSyncExternalStore(
+  subscribeDailyReading,
+  getDailyReadingSnapshot,
+  getDailyReadingServerSnapshot,
+ );
 }
 
 export function useDailyReadingSettings() {

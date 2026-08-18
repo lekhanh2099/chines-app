@@ -9,7 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 
-import type { AiConversationHistoryItem, AiConversationMode } from "./ai-conversation-session.schemas";
+import type {
+ AiConversationHistoryItem,
+ AiConversationMode,
+} from "./ai-conversation-session.schemas";
 
 type AiConversationHistorySheetProps = {
  open: boolean;

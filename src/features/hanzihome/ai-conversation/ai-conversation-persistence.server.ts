@@ -218,7 +218,7 @@ async function requestPostgrest<T>({
 
  if (!response.ok) {
   const parsedError = postgrestErrorSchema.safeParse(payload);
-  const code = parsedError.success ? parsedError.data.code ?? null : null;
+  const code = parsedError.success ? (parsedError.data.code ?? null) : null;
   const message =
    parsedError.success && parsedError.data.message
     ? parsedError.data.message
@@ -243,7 +243,9 @@ function resolveMemoryEnabled(
  return accountMemoryEnabled;
 }
 
-function toPersistedMessage(row: z.output<typeof messageRowSchema>): AiConversationPersistedMessage {
+function toPersistedMessage(
+ row: z.output<typeof messageRowSchema>,
+): AiConversationPersistedMessage {
  return {
   id: row.id,
   seq: row.seq,
@@ -262,7 +264,9 @@ function toCharacterPresentation(row: z.output<typeof characterContextRowSchema>
  };
 }
 
-function toHistoryItem(row: z.output<typeof conversationHistoryRowSchema>): AiConversationHistoryItem {
+function toHistoryItem(
+ row: z.output<typeof conversationHistoryRowSchema>,
+): AiConversationHistoryItem {
  return {
   id: row.id,
   characterId: row.character_id,
@@ -344,8 +348,7 @@ async function loadConversationPreferences(userId: string) {
   resource: "ai_conversation_preferences",
   schema: z.array(preferenceContextRowSchema),
   params: {
-   select:
-    "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
+   select: "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
    user_id: `eq.${userId}`,
    limit: "1",
   },
@@ -482,7 +485,9 @@ async function loadSessionForConversation({
  return toSession(conversation, character, relationship, resolvedPreferences, messages);
 }
 
-export async function loadLatestAiConversationSession(userId: string): Promise<AiConversationSession> {
+export async function loadLatestAiConversationSession(
+ userId: string,
+): Promise<AiConversationSession> {
  const [conversation, preferences] = await Promise.all([
   findLatestConversation(userId),
   loadConversationPreferences(userId),
@@ -522,14 +527,16 @@ export async function ensureAiConversationSession(userId: string): Promise<AiCon
   return loadSessionForConversation({ userId, conversation: existing, preferences });
  }
 
- const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
+ const characterId =
+  (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
  const conversation = await createConversation(userId, characterId, preferences);
  return loadSessionForConversation({ userId, conversation, preferences });
 }
 
 export async function createAiConversationSession(userId: string): Promise<AiConversationSession> {
  const preferences = await loadConversationPreferences(userId);
- const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
+ const characterId =
+  (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
  const conversation = await createConversation(userId, characterId, preferences);
  return loadSessionForConversation({ userId, conversation, preferences });
 }
@@ -594,8 +601,7 @@ export async function updateAiConversationSettings({
   schema: z.array(preferenceContextRowSchema).min(1),
   method: "POST",
   params: {
-   select:
-    "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
+   select: "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
    on_conflict: "user_id",
   },
   body: {

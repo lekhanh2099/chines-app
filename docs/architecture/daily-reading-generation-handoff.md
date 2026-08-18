@@ -34,18 +34,19 @@ The source-test endpoint returns only bounded metadata/report fields. Extracted 
 1. `discovering`
 2. `extracting`
 3. `drafting` / `repairing_core`
-4. `enriching` / `repairing_learning`
-5. `validating`
-6. `finalizing`
-7. browser-owned `saving`
-8. browser-owned `completed`
+4. `checkpoint` after the reading core is valid
+5. `enriching` / `repairing_learning`
+6. `validating`
+7. `finalizing`
+8. browser-owned `saving`
+9. browser-owned `completed`
 
 The server generates the reading in two structured stages:
 
 - reading core: title, learning value, level/topic, 4–8 paragraphs;
 - learning apparatus: vocabulary, grammar evidence, questions, source phrases, verification note.
 
-Each stage has one bounded repair attempt. Deterministic validation checks include minimum reading length, source-copy protection, vocabulary presence in the locked reading, grammar evidence matching a sentence in the locked reading, required question-type coverage, and evidence paragraph bounds.
+The reading core is checkpointed before learning enrichment starts. Learning enrichment retries from that locked core when a provider or validation attempt fails, and a later request can resume from the checkpoint without rediscovering or regenerating the source reading. Deterministic validation checks include source-copy protection, vocabulary presence in the locked reading, grammar evidence matching a sentence in the locked reading, required question-type coverage, and evidence paragraph bounds. Content is not rejected merely for missing an arbitrary character-count target.
 
 The active personal API key is tried first. If no usable personal structured result is produced, the configured system Gemini runtime is used. Provider choice does not weaken the same Zod/content validation boundary.
 
@@ -59,6 +60,7 @@ The browser stores a versioned Daily Reading ledger and settings in localStorage
 - Writes are verified after storage.
 - Quota pressure progressively compacts the archive rather than silently failing the current write.
 - Corrupt ledger content is preserved in a bounded recovery key before reset.
+- A failed generation keeps source metadata and the validated reading core in a separate checkpoint; raw publisher article text is never persisted.
 - Readings deduplicate by ID, source URL and content fingerprint.
 - Clearing generated readings requires a destructive confirmation dialog and intentionally keeps run history for diagnostics.
 
@@ -67,7 +69,7 @@ Scheduled retry behavior:
 - succeeded scheduled run: blocks another scheduled reading for that date;
 - fresh pending run: blocks for 15 minutes;
 - hard failure: backs off for 30 minutes;
-- interrupted/offline failure: can retry immediately;
+- interrupted/offline failure: can retry immediately, resuming from the checkpoint when one exists;
 - three hard failures for the date stop further automatic attempts.
 
 ## Cross-tab coordination
@@ -142,6 +144,7 @@ Verify at minimum:
 - automatic switch off prevents a due scheduled run;
 - source test finds a real source but creates/saves no reading;
 - manual generation displays stage progress and produces a locally persisted reading;
+- a failure after the reading core is valid offers a resume path that starts at learning enrichment;
 - generated article survives refresh and URL back/forward navigation;
 - source tab exposes the original source URL and the learning-edition notice;
 - generated title/paragraph/vocabulary pinyin is present and marked auto-generated;

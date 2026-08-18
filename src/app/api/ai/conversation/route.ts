@@ -71,7 +71,9 @@ const sessionRequestSchema = z.strictObject({
 });
 const ensureSessionRequestSchema = z.strictObject({ action: z.literal("ensure-session") });
 const historyRequestSchema = z.strictObject({ action: z.literal("history") });
-const createConversationRequestSchema = z.strictObject({ action: z.literal("create-conversation") });
+const createConversationRequestSchema = z.strictObject({
+ action: z.literal("create-conversation"),
+});
 const archiveConversationRequestSchema = z.strictObject({
  action: z.literal("archive-conversation"),
  conversationId: z.uuid(),
@@ -166,7 +168,11 @@ function persistenceBoundaryErrorResponse(error: unknown) {
   error instanceof AiConversationPersistenceRequestError &&
   error.code === "AI_CONVERSATION_NOT_FOUND"
  ) {
-  return apiError("Không tìm thấy hội thoại AI của tài khoản hiện tại.", 404, "AI_CONVERSATION_NOT_FOUND");
+  return apiError(
+   "Không tìm thấy hội thoại AI của tài khoản hiện tại.",
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+  );
  }
 
  if (
@@ -232,7 +238,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI conversation session persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI conversation session persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] persisted session load failed", error);
    return apiError("Không thể tải lịch sử hội thoại AI.", 500, "AI_CONVERSATION_LOAD_FAILED");
@@ -261,7 +269,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI conversation history persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI conversation history persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] history load failed", error);
    return apiError("Không thể tải danh sách hội thoại AI.", 500, "AI_CONVERSATION_HISTORY_FAILED");
@@ -277,7 +287,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI conversation create persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI conversation create persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] new conversation create failed", error);
    return apiError("Không thể tạo hội thoại AI mới.", 500, "AI_CONVERSATION_CREATE_FAILED");
@@ -296,7 +308,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI conversation archive persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI conversation archive persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] archive failed", error);
    return apiError("Không thể lưu trữ hội thoại AI.", 500, "AI_CONVERSATION_ARCHIVE_FAILED");
@@ -316,7 +330,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI memory policy persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI memory policy persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] memory policy update failed", error);
    return apiError("Không thể cập nhật bộ nhớ hội thoại.", 500, "AI_MEMORY_POLICY_UPDATE_FAILED");
@@ -431,7 +447,9 @@ export async function POST(request: Request) {
    const persistenceResponse = persistenceBoundaryErrorResponse(error);
    if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
-    return invalidPersistenceResponse("AI conversation persistence trả về dữ liệu không đúng contract.");
+    return invalidPersistenceResponse(
+     "AI conversation persistence trả về dữ liệu không đúng contract.",
+    );
    }
    logger.error("[AI Conversation] persisted turn failed", error);
    return apiError("AI conversation không hoàn tất.", 503, "AI_UNAVAILABLE");

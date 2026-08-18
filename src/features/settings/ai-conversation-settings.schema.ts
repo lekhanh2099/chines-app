@@ -42,7 +42,9 @@ export const aiConversationManagedMemorySchema = z.strictObject({
  updatedAt: z.iso.datetime({ offset: true }),
 });
 
-export const aiConversationManagedMemoryListSchema = z.array(aiConversationManagedMemorySchema).max(200);
+export const aiConversationManagedMemoryListSchema = z
+ .array(aiConversationManagedMemorySchema)
+ .max(200);
 
 export const aiConversationMemoryEditSchema = z.strictObject({
  memoryId: z.uuid(),

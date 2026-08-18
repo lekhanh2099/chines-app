@@ -47,6 +47,7 @@
  "generated": {
   "description": "Find a real Chinese news article, extract the source, then build a 学习版 with vocabulary, grammar, and questions. Generated readings are stored locally on this device.",
   "generateNow": "Find and create now",
+  "resume": "Continue unfinished reading",
   "progressHint": "This can take a few minutes because the source, reading, learning material, validation, and local save all run in sequence.",
   "notFound": "This locally saved Daily Reading could not be found.",
   "library": {
@@ -133,6 +134,8 @@
   "actions": {
    "testSource": "Test real source",
    "generateNow": "Find and create now",
+   "resume": "Continue unfinished reading",
+   "retry": "Try again",
    "clear": "Delete generated readings",
    "viewPipeline": "View progress",
    "openAiSettings": "Open AI settings"
@@ -150,7 +153,7 @@
    "learning": "Build lesson",
    "learningDescription": "Create vocabulary, grammar, questions, and evidence.",
    "validate": "Validate",
-   "validateDescription": "Check schema, length, duplication, and evidence.",
+   "validateDescription": "Check schema, source grounding, duplication, and evidence.",
    "save": "Save",
    "saveDescription": "Store the validated reading on this device."
   },
@@ -160,7 +163,14 @@
    "empty": "No generation runs yet.",
    "succeeded": "Completed",
    "pending": "Running",
-   "failed": "Failed"
+   "failed": "Failed",
+   "latest": "Latest run"
+  },
+  "errors": {
+   "tooShort": "The draft did not pass the quality checks. Automatic repair was attempted but did not finish.",
+   "schema": "The AI returned a draft with an invalid structure or field value. Automatic repair was attempted but did not finish.",
+   "provider": "No AI provider completed the reading. Check the Groq API key/model; GEMINI_API_KEY is only a fallback.",
+   "showTechnical": "Show technical details"
   },
   "clearDialog": {
    "title": "Delete generated Daily Readings?",

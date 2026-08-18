@@ -26,7 +26,11 @@ function errorResponse(code: DailyReadingErrorCode, detail: string, status: numb
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) {
-  return errorResponse("unauthorized", "Cần đăng nhập trước khi kiểm tra nguồn Daily Reading.", 401);
+  return errorResponse(
+   "unauthorized",
+   "Cần đăng nhập trước khi kiểm tra nguồn Daily Reading.",
+   401,
+  );
  }
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = dailyReadingSourcePreviewRequestSchema.safeParse(body);

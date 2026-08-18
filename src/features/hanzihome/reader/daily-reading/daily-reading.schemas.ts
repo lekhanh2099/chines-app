@@ -46,7 +46,7 @@ export const dailyReadingParagraphSchema = z.strictObject({
  zh: nonEmptyTextSchema.max(1600),
  pinyin: z.string().max(4000).default(""),
  vi: nonEmptyTextSchema.max(3000),
- roleVi: z.string().max(240),
+ roleVi: z.string(),
 });
 
 export const dailyReadingVocabularySchema = z.strictObject({
@@ -165,30 +165,6 @@ export const dailyReadingSourcePreviewResponseSchema = z.strictObject({
  }),
 });
 
-export const dailyReadingGenerateRequestSchema = dailyReadingSourcePreviewRequestSchema.extend({
- mode: dailyReadingGenerationKindSchema,
- preferredLevel: dailyReadingLevelSchema,
-});
-export const dailyReadingGenerateResponseSchema = z.strictObject({ reading: dailyReadingSchema });
-export const dailyReadingErrorResponseSchema = z.strictObject({
- code: dailyReadingErrorCodeSchema,
- detail: z.string().min(1).max(1000),
-});
-export const dailyReadingGenerateStreamEventSchema = z.discriminatedUnion("type", [
- z.strictObject({
-  type: z.literal("progress"),
-  stage: dailyReadingGenerationStageSchema,
- }),
- z.strictObject({
-  type: z.literal("result"),
-  payload: dailyReadingGenerateResponseSchema,
- }),
- z.strictObject({
-  type: z.literal("error"),
-  payload: dailyReadingErrorResponseSchema,
- }),
-]);
-
 export const dailyReadingCoreDraftSchema = z.strictObject({
  titleZh: nonEmptyTextSchema.max(240),
  titleVi: nonEmptyTextSchema.max(320),
@@ -201,7 +177,7 @@ export const dailyReadingCoreDraftSchema = z.strictObject({
    z.strictObject({
     zh: nonEmptyTextSchema.max(1600),
     vi: nonEmptyTextSchema.max(3000),
-    roleVi: z.string().max(240),
+    roleVi: z.string(),
    }),
   )
   .min(4)
@@ -247,6 +223,49 @@ export const dailyReadingLearningDraftSchema = z.strictObject({
  verificationSummaryVi: nonEmptyTextSchema.max(1400),
 });
 
+export const dailyReadingGenerationCheckpointSchema = z.strictObject({
+ source: dailyReadingSourceSchema,
+ core: dailyReadingCoreDraftSchema,
+});
+
+export const dailyReadingCheckpointRecordSchema = z.strictObject({
+ runId: nonEmptyTextSchema,
+ date: z.iso.date(),
+ kind: dailyReadingGenerationKindSchema,
+ preferredLevel: dailyReadingLevelSchema,
+ attemptedAt: z.iso.datetime({ offset: true }),
+ checkpoint: dailyReadingGenerationCheckpointSchema,
+});
+
+export const dailyReadingGenerateRequestSchema = dailyReadingSourcePreviewRequestSchema.extend({
+ mode: dailyReadingGenerationKindSchema,
+ preferredLevel: dailyReadingLevelSchema,
+ checkpoint: dailyReadingGenerationCheckpointSchema.optional(),
+});
+export const dailyReadingGenerateResponseSchema = z.strictObject({ reading: dailyReadingSchema });
+export const dailyReadingErrorResponseSchema = z.strictObject({
+ code: dailyReadingErrorCodeSchema,
+ detail: z.string().min(1).max(1000),
+});
+export const dailyReadingGenerateStreamEventSchema = z.discriminatedUnion("type", [
+ z.strictObject({
+  type: z.literal("progress"),
+  stage: dailyReadingGenerationStageSchema,
+ }),
+ z.strictObject({
+  type: z.literal("checkpoint"),
+  payload: dailyReadingGenerationCheckpointSchema,
+ }),
+ z.strictObject({
+  type: z.literal("result"),
+  payload: dailyReadingGenerateResponseSchema,
+ }),
+ z.strictObject({
+  type: z.literal("error"),
+  payload: dailyReadingErrorResponseSchema,
+ }),
+]);
+
 export type DailyReading = z.output<typeof dailyReadingSchema>;
 export type DailyReadingRun = z.output<typeof dailyReadingRunSchema>;
 export type DailyReadingSettings = z.output<typeof dailyReadingSettingsSchema>;
@@ -255,11 +274,19 @@ export type DailyReadingTopic = z.output<typeof dailyReadingTopicSchema>;
 export type DailyReadingGenerationKind = z.output<typeof dailyReadingGenerationKindSchema>;
 export type DailyReadingGenerationStage = z.output<typeof dailyReadingGenerationStageSchema>;
 export type DailyReadingErrorCode = z.output<typeof dailyReadingErrorCodeSchema>;
-export type DailyReadingGenerateStreamEvent = z.output<typeof dailyReadingGenerateStreamEventSchema>;
+export type DailyReadingGenerateStreamEvent = z.output<
+ typeof dailyReadingGenerateStreamEventSchema
+>;
 export type DailyReadingSourceCandidate = z.output<typeof dailyReadingSourceCandidateSchema>;
-export type DailyReadingSourcePreviewResponse = z.output<typeof dailyReadingSourcePreviewResponseSchema>;
+export type DailyReadingSourcePreviewResponse = z.output<
+ typeof dailyReadingSourcePreviewResponseSchema
+>;
 export type DailyReadingCoreDraft = z.output<typeof dailyReadingCoreDraftSchema>;
 export type DailyReadingLearningDraft = z.output<typeof dailyReadingLearningDraftSchema>;
+export type DailyReadingGenerationCheckpoint = z.output<
+ typeof dailyReadingGenerationCheckpointSchema
+>;
+export type DailyReadingCheckpointRecord = z.output<typeof dailyReadingCheckpointRecordSchema>;
 
 export const defaultDailyReadingSettings: DailyReadingSettings = {
  schemaVersion: "1.0.0",

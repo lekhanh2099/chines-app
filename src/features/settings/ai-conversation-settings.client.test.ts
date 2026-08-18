@@ -8,6 +8,7 @@ import {
  resolveAiConversationManagedOpenLoop,
  updateAiConversationAccountPreferences,
 } from "./ai-conversation-settings.client";
+import { aiConversationAccountPreferencesSchema } from "./ai-conversation-settings.schema";
 
 const memoryId = "33333333-3333-4333-8333-333333333333";
 
@@ -50,13 +51,13 @@ describe("Phase 6 AI settings client", () => {
  });
 
  it("persists account defaults with PUT", async () => {
-  const preferences = {
-   defaultMode: "grammar-coach" as const,
-   defaultCorrectionStyle: "strict" as const,
-   defaultReplyMode: "chinese" as const,
-   learnerLevel: "advanced" as const,
+  const preferences = aiConversationAccountPreferencesSchema.parse({
+   defaultMode: "grammar-coach",
+   defaultCorrectionStyle: "strict",
+   defaultReplyMode: "chinese",
+   learnerLevel: "advanced",
    memoryEnabled: false,
-  };
+  });
   const fetchMock = vi.fn().mockResolvedValue(Response.json(preferences));
   vi.stubGlobal("fetch", fetchMock);
 

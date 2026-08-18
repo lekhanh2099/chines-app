@@ -44,7 +44,10 @@ describe("Daily Reading source route", () => {
  });
 
  it("rejects unauthenticated source tests with the feature error contract", async () => {
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: false, response: Response.json({}) });
+  requireAuthenticatedRoute.mockResolvedValue({
+   authenticated: false,
+   response: Response.json({}),
+  });
 
   const response = await POST(request({ excludedUrls: [], recentTopics: [] }));
   const payload = dailyReadingErrorResponseSchema.parse(await response.json());

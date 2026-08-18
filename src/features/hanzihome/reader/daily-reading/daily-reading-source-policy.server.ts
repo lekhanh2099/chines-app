@@ -92,7 +92,11 @@ export function resolveDailyReadingTopic(title: string): DailyReadingTopic {
 
 export function isEligibleDailyReadingTitle(title: string) {
  const normalized = title.replace(/\s+/gu, " ").trim();
- return normalized.length >= 8 && !excludedTitlePattern.test(normalized) && preferredTitlePattern.test(normalized);
+ return (
+  normalized.length >= 8 &&
+  !excludedTitlePattern.test(normalized) &&
+  preferredTitlePattern.test(normalized)
+ );
 }
 
 export function canonicalDailyReadingUrl(value: string): string | null {
@@ -122,6 +126,7 @@ export function scoreDailyReadingMetadata(
  const freshness = Math.max(0, 45 - ageHours / 6);
  const diversity = recentTopics.includes(topic) ? 0 : 25;
  const titleScore = Math.min(18, Math.max(0, title.length - 8));
- const sourceScore = discoveryKind === "official-rss" ? 20 : discoveryKind === "official-listing" ? 16 : 8;
+ const sourceScore =
+  discoveryKind === "official-rss" ? 20 : discoveryKind === "official-listing" ? 16 : 8;
  return freshness + diversity + titleScore + sourceScore;
 }

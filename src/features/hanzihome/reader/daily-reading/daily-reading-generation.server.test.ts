@@ -3,6 +3,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
 import type {
+ DailyReadingCoreDraft,
+ DailyReadingGenerationCheckpoint,
  DailyReadingGenerationStage,
  DailyReadingSourceCandidate,
 } from "./daily-reading.schemas";
@@ -18,7 +20,10 @@ vi.mock("./daily-reading-provider.server", () => ({
  requestDailyReadingSystemGemini,
 }));
 
-import { generateValidatedDailyReading } from "./daily-reading-generation.server";
+import {
+ generateValidatedDailyReading,
+ generateValidatedDailyReadingFromCheckpoint,
+} from "./daily-reading-generation.server";
 
 const credential: UserApiKeyCredential = {
  id: "00000000-0000-4000-8000-000000000001",
@@ -83,7 +88,7 @@ const validCore = {
   vi: `Bản dịch tiếng Việt sát nghĩa của đoạn ${index + 1}, giữ nguyên quan hệ thông tin trong câu tiếng Trung.`,
   roleVi: index === 0 ? "mở vấn đề" : index === 4 ? "kết luận" : "thân bài",
  })),
-};
+} satisfies DailyReadingCoreDraft;
 
 const validLearning = {
  vocabulary: [
@@ -146,7 +151,8 @@ const validLearning = {
    promptZh: "请概括博物馆如何把参观变成学习过程。",
    promptVi: "Hãy khái quát cách bảo tàng biến tham quan thành quá trình học.",
    answerZh: "它通过展览、讲解、体验和讨论，让参观者观察信息、提出问题并总结理解。",
-   answerVi: "Qua triển lãm, thuyết minh, trải nghiệm và thảo luận, người xem quan sát, đặt câu hỏi và tổng kết.",
+   answerVi:
+    "Qua triển lãm, thuyết minh, trải nghiệm và thảo luận, người xem quan sát, đặt câu hỏi và tổng kết.",
    evidenceParagraphNumbers: [1, 3, 4],
   },
  ],
@@ -180,6 +186,7 @@ describe("validated Daily Reading generation", () => {
    .mockResolvedValueOnce(providerResult(validCore))
    .mockResolvedValueOnce(providerResult(validLearning));
   const progress: DailyReadingGenerationStage[] = [];
+  const checkpoints: DailyReadingGenerationCheckpoint[] = [];
 
   const reading = await generateValidatedDailyReading({
    source,
@@ -187,30 +194,69 @@ describe("validated Daily Reading generation", () => {
    mode: "manual",
    credentials: [credential],
    onProgress: (stage) => progress.push(stage),
+   onCheckpoint: (checkpoint) => checkpoints.push(checkpoint),
   });
 
   expect(reading.publishedDate).toBe("2026-08-18");
   expect(reading.titlePinyin.length).toBeGreaterThan(0);
   expect(reading.paragraphs.every((paragraph) => paragraph.pinyin.length > 0)).toBe(true);
   expect(reading.vocabulary.every((item) => item.pinyin.length > 0)).toBe(true);
-  expect(reading.vocabulary.every((item) => reading.paragraphs.some((p) => p.zh.includes(item.hanzi)))).toBe(
-   true,
-  );
+  expect(
+   reading.vocabulary.every((item) => reading.paragraphs.some((p) => p.zh.includes(item.hanzi))),
+  ).toBe(true);
   expect(reading.pinyinReviewStatus).toBe("auto-generated");
   expect(progress).toEqual(["drafting", "enriching", "validating", "finalizing"]);
+  expect(checkpoints).toHaveLength(1);
+  expect(checkpoints[0]?.core.titleZh).toBe(validCore.titleZh);
+  expect(checkpoints[0]?.source).not.toHaveProperty("extractedTextZh");
   expect(requestDailyReadingProvider).toHaveBeenCalledTimes(2);
   expect(requestDailyReadingSystemGemini).not.toHaveBeenCalled();
  });
 
- it("repairs a structurally valid but too-short core before generating learning material", async () => {
-  const tooShortCore = {
+ it("resumes learning from the locked core without the raw source text", async () => {
+  requestDailyReadingProvider.mockResolvedValueOnce(providerResult(validLearning));
+  const checkpoint = {
+   source: {
+    titleZh: source.titleZh,
+    publisher: source.publisher,
+    url: source.url,
+    publishedAt: source.publishedAt,
+    capturedAt: "2026-08-18T04:00:00.000Z",
+   },
+   core: validCore,
+  } satisfies DailyReadingGenerationCheckpoint;
+
+  const reading = await generateValidatedDailyReadingFromCheckpoint({
+   checkpoint,
+   mode: "manual",
+   credentials: [credential],
+  });
+
+  expect(reading.titleZh).toBe(validCore.titleZh);
+  expect(reading.sourcePhrasesZh).toEqual([]);
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(1);
+  expect(requestDailyReadingProvider.mock.calls[0]?.[0].prompt).not.toContain(
+   source.extractedTextZh,
+  );
+ });
+
+ it("accepts a concise source-grounded core without an artificial length minimum", async () => {
+  const conciseSentence =
+   "博物馆展示传统文化、展览和展品，讲解员邀请参与者观察生活方式，查找资料并理解公共教育。";
+  const conciseCore = {
    ...validCore,
-   paragraphs: validCore.paragraphs.map((paragraph) => ({ ...paragraph, zh: "博物馆介绍传统文化。" })),
+   paragraphs: validCore.paragraphs.map((paragraph) => ({ ...paragraph, zh: conciseSentence })),
+  };
+  const conciseLearning = {
+   ...validLearning,
+   grammarPoints: validLearning.grammarPoints.map((grammar) => ({
+    ...grammar,
+    evidenceSentenceZh: conciseSentence,
+   })),
   };
   requestDailyReadingProvider
-   .mockResolvedValueOnce(providerResult(tooShortCore))
-   .mockResolvedValueOnce(providerResult(validCore))
-   .mockResolvedValueOnce(providerResult(validLearning));
+   .mockResolvedValueOnce(providerResult(conciseCore))
+   .mockResolvedValueOnce(providerResult(conciseLearning));
   const progress: DailyReadingGenerationStage[] = [];
 
   const reading = await generateValidatedDailyReading({
@@ -222,15 +268,67 @@ describe("validated Daily Reading generation", () => {
   });
 
   expect(reading.releaseKind).toBe("scheduled");
-  expect(progress).toContain("repairing_core");
+  expect(reading.paragraphs[0]?.zh).toBe(conciseSentence);
+  expect(progress).toEqual(["drafting", "enriching", "validating", "finalizing"]);
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(2);
+ });
+
+ it("retries learning from the locked core after a provider failure", async () => {
+  requestDailyReadingProvider
+   .mockResolvedValueOnce(providerResult(validCore))
+   .mockResolvedValueOnce({
+    content: null,
+    error: "learning provider unavailable",
+    model: "gpt-4.1-mini",
+   })
+   .mockResolvedValueOnce(providerResult(validLearning));
+  const progress: DailyReadingGenerationStage[] = [];
+
+  const reading = await generateValidatedDailyReading({
+   source,
+   preferredLevel: "HSK5",
+   mode: "manual",
+   credentials: [credential],
+   onProgress: (stage) => progress.push(stage),
+  });
+
+  expect(reading.titleZh).toBe(validCore.titleZh);
+  expect(progress).toContain("repairing_learning");
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(3);
+ });
+
+ it("reports schema repair progress when a provider returns an invalid object", async () => {
+  requestDailyReadingProvider
+   .mockResolvedValueOnce(providerResult({ titleZh: validCore.titleZh }))
+   .mockResolvedValueOnce(providerResult(validCore))
+   .mockResolvedValueOnce(providerResult(validLearning));
+  const progress: DailyReadingGenerationStage[] = [];
+
+  await generateValidatedDailyReading({
+   source,
+   preferredLevel: "HSK5",
+   mode: "manual",
+   credentials: [credential],
+   onProgress: (stage) => progress.push(stage),
+  });
+
+  expect(progress).toEqual(["drafting", "repairing_core", "enriching", "validating", "finalizing"]);
   expect(requestDailyReadingProvider).toHaveBeenCalledTimes(3);
  });
 
  it("tries the next active BYOK credential before falling back to system Gemini", async () => {
   requestDailyReadingProvider
-   .mockResolvedValueOnce({ content: null, error: "primary provider unavailable", model: "gpt-4.1-mini" })
+   .mockResolvedValueOnce({
+    content: null,
+    error: "primary provider unavailable",
+    model: "gpt-4.1-mini",
+   })
    .mockResolvedValueOnce(providerResult(validCore, "models/gemini-2.5-flash"))
-   .mockResolvedValueOnce({ content: null, error: "primary provider unavailable", model: "gpt-4.1-mini" })
+   .mockResolvedValueOnce({
+    content: null,
+    error: "primary provider unavailable",
+    model: "gpt-4.1-mini",
+   })
    .mockResolvedValueOnce(providerResult(validLearning, "models/gemini-2.5-flash"));
 
   const reading = await generateValidatedDailyReading({

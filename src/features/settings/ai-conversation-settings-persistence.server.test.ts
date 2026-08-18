@@ -52,9 +52,7 @@ describe("Phase 6 AI settings persistence", () => {
   const fetchMock = vi
    .fn()
    .mockResolvedValueOnce(Response.json([preferenceRow]))
-   .mockResolvedValueOnce(
-    Response.json([{ id: characterId, display_name: "小林", city: "上海" }]),
-   )
+   .mockResolvedValueOnce(Response.json([{ id: characterId, display_name: "小林", city: "上海" }]))
    .mockResolvedValueOnce(Response.json([{ nickname: "", familiarity_score: 0.61 }]));
   vi.stubGlobal("fetch", fetchMock);
 
@@ -128,9 +126,7 @@ describe("Phase 6 AI settings persistence", () => {
      },
     ]),
    )
-   .mockResolvedValueOnce(
-    Response.json([{ id: characterId, display_name: "小林", city: "上海" }]),
-   );
+   .mockResolvedValueOnce(Response.json([{ id: characterId, display_name: "小林", city: "上海" }]));
   vi.stubGlobal("fetch", fetchMock);
 
   const memories = await listAiConversationManagedMemories(userId);
@@ -157,9 +153,9 @@ describe("Phase 6 AI settings persistence", () => {
  });
 
  it("edits only an active owned memory and clears stale embedding metadata", async () => {
-  const fetchMock = vi.fn().mockResolvedValue(
-   Response.json([{ ...memoryRow, content: "我现在更喜欢打排球。" }]),
-  );
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValue(Response.json([{ ...memoryRow, content: "我现在更喜欢打排球。" }]));
   vi.stubGlobal("fetch", fetchMock);
 
   await editAiConversationManagedMemory({
@@ -184,9 +180,11 @@ describe("Phase 6 AI settings persistence", () => {
  });
 
  it("resolves only active open loops", async () => {
-  const fetchMock = vi.fn().mockResolvedValue(
-   Response.json([{ ...memoryRow, kind: "open_loop", content: "下周参加HSKK。" }]),
-  );
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValue(
+    Response.json([{ ...memoryRow, kind: "open_loop", content: "下周参加HSKK。" }]),
+   );
   vi.stubGlobal("fetch", fetchMock);
 
   await expect(resolveAiConversationManagedOpenLoop({ userId, memoryId })).resolves.toEqual({

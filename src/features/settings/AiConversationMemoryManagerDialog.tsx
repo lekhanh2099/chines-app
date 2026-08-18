@@ -40,7 +40,7 @@ import {
 } from "./ai-conversation-settings.client";
 import type { AiConversationManagedMemory } from "./ai-conversation-settings.schema";
 
-const MEMORIES_QUERY_KEY = ["settings", "ai-conversation", "memories"] as const;
+const MEMORIES_QUERY_KEY = ["settings", "ai-conversation", "memories"];
 
 type MemoryFilter = "all" | "global" | "character" | "open-loops";
 type MemoryAction =
