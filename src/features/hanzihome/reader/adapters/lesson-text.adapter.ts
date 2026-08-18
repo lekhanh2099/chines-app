@@ -16,6 +16,10 @@ export type LessonTextReaderAdapterResult = {
  sectionBindings: ReadonlyMap<string, LessonReaderEditBinding>;
 };
 
+function childPath(parent: EditableNodePath, ...parts: Array<string | number>): EditableNodePath {
+ return [...parent, ...parts];
+}
+
 export function lessonTextToReaderDocument({
  documentId,
  lessonId,
@@ -43,7 +47,7 @@ export function lessonTextToReaderDocument({
   const orderedBlocks = [...section.blocks].sort((left, right) => left.order - right.order);
   for (const block of orderedBlocks) {
    const blockIndex = section.blocks.findIndex((candidate) => candidate.id === block.id);
-   const blockPath: EditableNodePath = [...sectionPath, "blocks", blockIndex];
+   const blockPath = childPath(sectionPath, "blocks", blockIndex);
    const segmentIds: string[] = [];
 
    if (block.type === "text_dialogue") {
@@ -56,7 +60,7 @@ export function lessonTextToReaderDocument({
       return {
        line,
        role: localIndex === 0 ? scene.summary_vi.trim() || undefined : undefined,
-       path: [...blockPath, "scenes", sceneIndex, "lines", lineIndex] as EditableNodePath,
+       path: childPath(blockPath, "scenes", sceneIndex, "lines", lineIndex),
       };
      });
     });
@@ -65,11 +69,11 @@ export function lessonTextToReaderDocument({
      .map((line) => ({
       line,
       role: undefined,
-      path: [
-       ...blockPath,
+      path: childPath(
+       blockPath,
        "lines",
        block.lines.findIndex((candidate) => candidate.id === line.id),
-      ] as EditableNodePath,
+      ),
      }));
     const lines = sceneLines.length > 0 ? sceneLines : directLines;
     for (const { line, path, role } of lines) {
@@ -98,52 +102,65 @@ export function lessonTextToReaderDocument({
       label: line.speaker.trim() || zh,
      });
     }
-   } else {
-    const paragraphs = [...block.paragraphs]
-     .sort((left, right) => left.order - right.order)
-     .map((paragraph) => ({
-      item: paragraph,
-      kind: "text_paragraph" as const,
-      path: [
-       ...blockPath,
-       "paragraphs",
-       block.paragraphs.findIndex((candidate) => candidate.id === paragraph.id),
-      ] as EditableNodePath,
-     }));
-    const lines = [...block.lines]
-     .sort((left, right) => left.order - right.order)
-     .map((line) => ({
-      item: line,
-      kind: "text_line" as const,
-      path: [
-       ...blockPath,
-       "lines",
-       block.lines.findIndex((candidate) => candidate.id === line.id),
-      ] as EditableNodePath,
-     }));
-    const items = paragraphs.length > 0 ? paragraphs : lines;
-    for (const { item, kind, path } of items) {
-     const zh = item.zh.trim();
+   } else if (block.paragraphs.length > 0) {
+    const orderedParagraphs = [...block.paragraphs].sort(
+     (left, right) => left.order - right.order,
+    );
+    for (const paragraph of orderedParagraphs) {
+     const zh = paragraph.zh.trim();
      if (!zh) continue;
-     segmentIds.push(item.id);
+     const paragraphIndex = block.paragraphs.findIndex(
+      (candidate) => candidate.id === paragraph.id,
+     );
+     const path = childPath(blockPath, "paragraphs", paragraphIndex);
+     segmentIds.push(paragraph.id);
      segments.push({
-      id: item.id,
-      kind: kind === "text_line" ? "sentence" : "paragraph",
+      id: paragraph.id,
+      kind: "paragraph",
       sectionId: block.id,
       zh,
-      pinyin: item.pinyin.trim() || undefined,
-      vi: item.vi.trim() || undefined,
+      pinyin: paragraph.pinyin.trim() || undefined,
+      vi: paragraph.vi.trim() || undefined,
       speechText: zh,
      });
-     segmentBindings.set(item.id, {
+     segmentBindings.set(paragraph.id, {
       lessonId,
-      entityType: kind,
-      entityId: item.id,
+      entityType: "text_paragraph",
+      entityId: paragraph.id,
       parentEntityType: "text_block",
       parentEntityId: block.id,
       path,
-      value: item,
+      value: paragraph,
       label: zh,
+     });
+    }
+   } else {
+    const orderedLines = [...block.lines].sort((left, right) => left.order - right.order);
+    for (const line of orderedLines) {
+     const zh = line.zh.trim();
+     if (!zh) continue;
+     const lineIndex = block.lines.findIndex((candidate) => candidate.id === line.id);
+     const path = childPath(blockPath, "lines", lineIndex);
+     segmentIds.push(line.id);
+     segments.push({
+      id: line.id,
+      kind: "sentence",
+      sectionId: block.id,
+      zh,
+      pinyin: line.pinyin.trim() || undefined,
+      vi: line.vi.trim() || undefined,
+      speaker: line.speaker.trim() ? { label: line.speaker.trim() } : undefined,
+      speechText: zh,
+     });
+     segmentBindings.set(line.id, {
+      lessonId,
+      entityType: "text_line",
+      entityId: line.id,
+      parentEntityType: "text_block",
+      parentEntityId: block.id,
+      path,
+      value: line,
+      label: line.speaker.trim() || zh,
      });
     }
    }
