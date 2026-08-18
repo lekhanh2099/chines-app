@@ -184,13 +184,14 @@ export function AiConversationWorkspace() {
    role: personaLabels[profile.persona],
   }),
  };
- const renderedMessages =
-  persistedMessages.length > 0
-   ? persistedMessages.map((message) => ({
-      key: message.id,
-      message: { role: message.role, content: message.content } satisfies AiConversationMessage,
-     }))
-   : [{ key: "greeting", message: greeting }];
+ const renderedMessages = sessionQuery.isError
+  ? []
+  : persistedMessages.length > 0
+    ? persistedMessages.map((message) => ({
+       key: message.id,
+       message: { role: message.role, content: message.content } satisfies AiConversationMessage,
+      }))
+    : [{ key: "greeting", message: greeting }];
  const pendingMessage =
   sendMutation.isPending && sendMutation.variables
    ? {
@@ -467,7 +468,7 @@ export function AiConversationWorkspace() {
        }}
        rows={1}
        maxLength={6000}
-       disabled={isSending}
+       disabled={isSending || sessionQuery.isError}
        placeholder={t("message.placeholder")}
        className="min-h-11 max-h-40 flex-1"
       />
