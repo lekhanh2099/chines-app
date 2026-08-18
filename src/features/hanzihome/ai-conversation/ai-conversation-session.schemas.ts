@@ -41,12 +41,32 @@ export const aiConversationCharacterPresentationSchema = z.strictObject({
  interests: z.array(z.string()),
 });
 
+export const aiConversationRelationshipPresentationSchema = z.strictObject({
+ nickname: z.string(),
+ familiarityScore: z.number().min(0).max(1),
+});
+
 export const aiConversationSessionSchema = z.strictObject({
  conversation: aiConversationThreadSchema.nullable(),
  character: aiConversationCharacterPresentationSchema.nullable(),
+ relationship: aiConversationRelationshipPresentationSchema.nullable(),
  learnerLevel: aiConversationLearnerLevelSchema,
+ memoryEnabled: z.boolean(),
  messages: z.array(aiConversationPersistedMessageSchema),
 });
+
+export const aiConversationHistoryItemSchema = z.strictObject({
+ id: z.uuid(),
+ characterId: z.uuid(),
+ title: z.string(),
+ mode: aiConversationModeSchema,
+ memoryPolicy: aiConversationMemoryPolicySchema,
+ lastMessageAt: z.iso.datetime({ offset: true }).nullable(),
+ createdAt: z.iso.datetime({ offset: true }),
+ updatedAt: z.iso.datetime({ offset: true }),
+});
+
+export const aiConversationHistorySchema = z.array(aiConversationHistoryItemSchema).max(50);
 
 export const aiConversationSettingsUpdateSchema = z.strictObject({
  mode: aiConversationModeSchema,
@@ -58,6 +78,17 @@ export const aiConversationSettingsUpdateSchema = z.strictObject({
 export const aiConversationSettingsSchema = aiConversationSettingsUpdateSchema.extend({
  conversationId: z.uuid(),
  characterId: z.uuid(),
+});
+
+export const aiConversationMemoryPolicyStateSchema = z.strictObject({
+ conversationId: z.uuid(),
+ memoryPolicy: aiConversationMemoryPolicySchema,
+ memoryEnabled: z.boolean(),
+});
+
+export const aiConversationArchiveResponseSchema = z.strictObject({
+ conversationId: z.uuid(),
+ archived: z.literal(true),
 });
 
 export const aiConversationPostTurnProcessResponseSchema = z.strictObject({
@@ -82,12 +113,18 @@ export const aiConversationTurnResponseSchema = z.strictObject({
 });
 
 export type AiConversationMode = z.output<typeof aiConversationModeSchema>;
+export type AiConversationMemoryPolicy = z.output<typeof aiConversationMemoryPolicySchema>;
 export type AiConversationPersistedMessage = z.output<
  typeof aiConversationPersistedMessageSchema
 >;
 export type AiConversationSession = z.output<typeof aiConversationSessionSchema>;
+export type AiConversationHistoryItem = z.output<typeof aiConversationHistoryItemSchema>;
 export type AiConversationSettings = z.output<typeof aiConversationSettingsSchema>;
 export type AiConversationSettingsUpdate = z.output<typeof aiConversationSettingsUpdateSchema>;
+export type AiConversationMemoryPolicyState = z.output<
+ typeof aiConversationMemoryPolicyStateSchema
+>;
+export type AiConversationArchiveResponse = z.output<typeof aiConversationArchiveResponseSchema>;
 export type AiConversationPostTurnProcessResponse = z.output<
  typeof aiConversationPostTurnProcessResponseSchema
 >;
