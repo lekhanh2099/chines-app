@@ -43,14 +43,34 @@ import {
 import { resolveDailyReadingReleaseState } from "./daily-reading.scheduler";
 import { removeGeneratedDailyReadings } from "./daily-reading-storage.client";
 
-const pipelineSteps = [
+type PipelineTitleKey =
+ | "settings.pipeline.schedule"
+ | "settings.pipeline.source"
+ | "settings.pipeline.reading"
+ | "settings.pipeline.learning"
+ | "settings.pipeline.validate"
+ | "settings.pipeline.save";
+type PipelineDescriptionKey =
+ | "settings.pipeline.scheduleDescription"
+ | "settings.pipeline.sourceDescription"
+ | "settings.pipeline.readingDescription"
+ | "settings.pipeline.learningDescription"
+ | "settings.pipeline.validateDescription"
+ | "settings.pipeline.saveDescription";
+type PipelineStep = {
+ key: string;
+ title: PipelineTitleKey;
+ description: PipelineDescriptionKey;
+};
+
+const pipelineSteps: readonly PipelineStep[] = [
  { key: "schedule", title: "settings.pipeline.schedule", description: "settings.pipeline.scheduleDescription" },
  { key: "source", title: "settings.pipeline.source", description: "settings.pipeline.sourceDescription" },
  { key: "reading", title: "settings.pipeline.reading", description: "settings.pipeline.readingDescription" },
  { key: "learning", title: "settings.pipeline.learning", description: "settings.pipeline.learningDescription" },
  { key: "validate", title: "settings.pipeline.validate", description: "settings.pipeline.validateDescription" },
  { key: "save", title: "settings.pipeline.save", description: "settings.pipeline.saveDescription" },
-] as const;
+];
 
 function pipelineIndex(stage: DailyReadingGenerationStage | null) {
  if (stage === null) return -1;
