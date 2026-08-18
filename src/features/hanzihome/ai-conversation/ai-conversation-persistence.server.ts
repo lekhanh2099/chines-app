@@ -10,6 +10,8 @@ import type { AiConversationContextState } from "./ai-conversation-context.serve
 import type {
  AiConversationPersistedMessage,
  AiConversationSession,
+ AiConversationSettings,
+ AiConversationSettingsUpdate,
 } from "./ai-conversation-session.schemas";
 
 const postgrestErrorSchema = z.object({
@@ -19,13 +21,23 @@ const postgrestErrorSchema = z.object({
  hint: z.string().nullable().optional(),
 });
 
+const conversationModeSchema = z.enum([
+ "natural",
+ "speaking-practice",
+ "grammar-coach",
+ "hskk-practice",
+]);
+const correctionStyleSchema = z.enum(["light", "balanced", "strict"]);
+const replyModeSchema = z.enum(["adaptive", "chinese", "bilingual"]);
+const learnerLevelSchema = z.enum(["beginner", "intermediate", "advanced"]);
+
 const conversationRowSchema = z.object({
  id: z.uuid(),
  character_id: z.uuid(),
  title: z.string(),
- mode: z.enum(["natural", "speaking-practice", "grammar-coach", "hskk-practice"]),
- correction_style: z.enum(["light", "balanced", "strict"]),
- reply_mode: z.enum(["adaptive", "chinese", "bilingual"]),
+ mode: conversationModeSchema,
+ correction_style: correctionStyleSchema,
+ reply_mode: replyModeSchema,
  memory_policy: z.enum(["inherit", "enabled", "disabled"]),
 });
 
@@ -73,7 +85,10 @@ const relationshipContextRowSchema = z.object({
 });
 
 const preferenceContextRowSchema = z.object({
- learner_level: z.enum(["beginner", "intermediate", "advanced"]),
+ default_mode: conversationModeSchema,
+ default_correction_style: correctionStyleSchema,
+ default_reply_mode: replyModeSchema,
+ learner_level: learnerLevelSchema,
 });
 
 const messageRpcResultSchema = z.union([
@@ -89,6 +104,13 @@ const DEFAULT_CHARACTER = {
  speaking_style: "以自然普通话交流；只有在学习者需要时才简短纠错或解释。",
  interests: ["日常生活", "电影", "文化", "城市生活", "语言交流"],
  identity_notes: "这是产品默认角色身份。用户本地保存的旧 memoryNotes 不会自动上传。",
+};
+
+const DEFAULT_CONVERSATION_PREFERENCES: z.output<typeof preferenceContextRowSchema> = {
+ default_mode: "natural",
+ default_correction_style: "balanced",
+ default_reply_mode: "adaptive",
+ learner_level: "intermediate",
 };
 
 export class AiConversationPersistenceNotReadyError extends Error {
@@ -169,7 +191,7 @@ async function requestPostgrest<T>({
  resource: string;
  schema: z.ZodType<T>;
  params?: Readonly<Record<string, string>>;
- method?: "GET" | "POST";
+ method?: "GET" | "POST" | "PATCH";
  body?: JsonObject;
  prefer?: string;
 }): Promise<T> {
@@ -210,8 +232,19 @@ function toPersistedMessage(row: z.output<typeof messageRowSchema>): AiConversat
  };
 }
 
+function toCharacterPresentation(row: z.output<typeof characterContextRowSchema>) {
+ return {
+  id: row.id,
+  displayName: row.display_name,
+  city: row.city,
+  interests: row.interests,
+ };
+}
+
 function toSession(
  conversation: z.output<typeof conversationRowSchema> | null,
+ character: z.output<typeof characterContextRowSchema> | null,
+ learnerLevel: z.output<typeof learnerLevelSchema>,
  messages: z.output<typeof messageRowSchema>[],
 ): AiConversationSession {
  return {
@@ -226,6 +259,8 @@ function toSession(
       memoryPolicy: conversation.memory_policy,
      }
    : null,
+  character: character ? toCharacterPresentation(character) : null,
+  learnerLevel,
   messages: messages.map(toPersistedMessage),
  };
 }
@@ -245,6 +280,19 @@ async function findLatestConversation(userId: string) {
  return rows[0] ?? null;
 }
 
+async function loadConversationPreferences(userId: string) {
+ const rows = await requestPostgrest({
+  resource: "ai_conversation_preferences",
+  schema: z.array(preferenceContextRowSchema),
+  params: {
+   select: "default_mode,default_correction_style,default_reply_mode,learner_level",
+   user_id: `eq.${userId}`,
+   limit: "1",
+  },
+ });
+ return rows[0] ?? DEFAULT_CONVERSATION_PREFERENCES;
+}
+
 async function findDefaultCharacterId(userId: string) {
  const rows = await requestPostgrest({
   resource: "ai_characters",
@@ -259,6 +307,30 @@ async function findDefaultCharacterId(userId: string) {
   },
  });
  return rows[0]?.id ?? null;
+}
+
+async function loadCharacter(userId: string, characterId: string) {
+ const rows = await requestPostgrest({
+  resource: "ai_characters",
+  schema: z.array(characterContextRowSchema),
+  params: {
+   select:
+    "id,display_name,city,age,background,personality,speaking_style,interests,identity_notes",
+   user_id: `eq.${userId}`,
+   id: `eq.${characterId}`,
+   archived_at: "is.null",
+   limit: "1",
+  },
+ });
+ const character = rows[0];
+ if (!character) {
+  throw new AiConversationPersistenceRequestError(
+   409,
+   "AI_CHARACTER_NOT_FOUND",
+   "AI character not found",
+  );
+ }
+ return character;
 }
 
 async function createDefaultCharacter(userId: string) {
@@ -276,7 +348,11 @@ async function createDefaultCharacter(userId: string) {
  return character.id;
 }
 
-async function createConversation(userId: string, characterId: string) {
+async function createConversation(
+ userId: string,
+ characterId: string,
+ preferences: z.output<typeof preferenceContextRowSchema>,
+) {
  const rows = await requestPostgrest({
   resource: "ai_conversations",
   schema: z.array(conversationRowSchema).min(1),
@@ -285,9 +361,9 @@ async function createConversation(userId: string, characterId: string) {
    user_id: userId,
    character_id: characterId,
    title: "",
-   mode: "natural",
-   correction_style: "balanced",
-   reply_mode: "adaptive",
+   mode: preferences.default_mode,
+   correction_style: preferences.default_correction_style,
+   reply_mode: preferences.default_reply_mode,
    memory_policy: "inherit",
   },
   prefer: "return=representation",
@@ -314,24 +390,111 @@ async function loadMessages(conversationId: string, userId: string, limit = 200)
  return rows.reverse();
 }
 
-export async function loadLatestAiConversationSession(userId: string): Promise<AiConversationSession> {
- const conversation = await findLatestConversation(userId);
- if (!conversation) return toSession(null, []);
+async function loadSessionForConversation({
+ userId,
+ conversation,
+ preferences,
+}: {
+ userId: string;
+ conversation: z.output<typeof conversationRowSchema>;
+ preferences?: z.output<typeof preferenceContextRowSchema>;
+}) {
+ const [messages, character, resolvedPreferences] = await Promise.all([
+  loadMessages(conversation.id, userId),
+  loadCharacter(userId, conversation.character_id),
+  preferences ? Promise.resolve(preferences) : loadConversationPreferences(userId),
+ ]);
+ return toSession(conversation, character, resolvedPreferences.learner_level, messages);
+}
 
- const messages = await loadMessages(conversation.id, userId);
- return toSession(conversation, messages);
+export async function loadLatestAiConversationSession(userId: string): Promise<AiConversationSession> {
+ const [conversation, preferences] = await Promise.all([
+  findLatestConversation(userId),
+  loadConversationPreferences(userId),
+ ]);
+ if (!conversation) return toSession(null, null, preferences.learner_level, []);
+
+ return loadSessionForConversation({ userId, conversation, preferences });
 }
 
 export async function ensureAiConversationSession(userId: string): Promise<AiConversationSession> {
- const existing = await findLatestConversation(userId);
+ const [existing, preferences] = await Promise.all([
+  findLatestConversation(userId),
+  loadConversationPreferences(userId),
+ ]);
  if (existing) {
-  const messages = await loadMessages(existing.id, userId);
-  return toSession(existing, messages);
+  return loadSessionForConversation({ userId, conversation: existing, preferences });
  }
 
  const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
- const conversation = await createConversation(userId, characterId);
- return toSession(conversation, []);
+ const conversation = await createConversation(userId, characterId, preferences);
+ return loadSessionForConversation({ userId, conversation, preferences });
+}
+
+export async function updateAiConversationSettings({
+ userId,
+ conversationId,
+ settings,
+}: {
+ userId: string;
+ conversationId: string;
+ settings: AiConversationSettingsUpdate;
+}): Promise<AiConversationSettings> {
+ const conversations = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(conversationRowSchema),
+  method: "PATCH",
+  params: {
+   select: "id,character_id,title,mode,correction_style,reply_mode,memory_policy",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversationId}`,
+   archived_at: "is.null",
+  },
+  body: {
+   mode: settings.mode,
+   correction_style: settings.correctionStyle,
+   reply_mode: settings.replyMode,
+   updated_at: new Date().toISOString(),
+  },
+  prefer: "return=representation",
+ });
+ const conversation = conversations[0];
+ if (!conversation) {
+  throw new AiConversationPersistenceRequestError(
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+   "AI conversation not found",
+  );
+ }
+
+ const preferences = await requestPostgrest({
+  resource: "ai_conversation_preferences",
+  schema: z.array(preferenceContextRowSchema).min(1),
+  method: "POST",
+  params: {
+   select: "default_mode,default_correction_style,default_reply_mode,learner_level",
+   on_conflict: "user_id",
+  },
+  body: {
+   user_id: userId,
+   learner_level: settings.learnerLevel,
+   updated_at: new Date().toISOString(),
+  },
+  prefer: "resolution=merge-duplicates,return=representation",
+ });
+ const preference = preferences[0];
+ if (!preference) {
+  throw new Error("AI conversation preference upsert returned no row");
+ }
+
+ return {
+  conversationId: conversation.id,
+  characterId: conversation.character_id,
+  mode: conversation.mode,
+  correctionStyle: conversation.correction_style,
+  replyMode: conversation.reply_mode,
+  learnerLevel: preference.learner_level,
+ };
 }
 
 export async function loadAiConversationContextState({
@@ -362,19 +525,8 @@ export async function loadAiConversationContextState({
   );
  }
 
- const [characters, relationships, preferences] = await Promise.all([
-  requestPostgrest({
-   resource: "ai_characters",
-   schema: z.array(characterContextRowSchema),
-   params: {
-    select:
-     "id,display_name,city,age,background,personality,speaking_style,interests,identity_notes",
-    user_id: `eq.${userId}`,
-    id: `eq.${conversation.character_id}`,
-    archived_at: "is.null",
-    limit: "1",
-   },
-  }),
+ const [character, relationships, preferences] = await Promise.all([
+  loadCharacter(userId, conversation.character_id),
   requestPostgrest({
    resource: "ai_relationship_states",
    schema: z.array(relationshipContextRowSchema),
@@ -385,26 +537,9 @@ export async function loadAiConversationContextState({
     limit: "1",
    },
   }),
-  requestPostgrest({
-   resource: "ai_conversation_preferences",
-   schema: z.array(preferenceContextRowSchema),
-   params: {
-    select: "learner_level",
-    user_id: `eq.${userId}`,
-    limit: "1",
-   },
-  }),
+  loadConversationPreferences(userId),
  ]);
- const character = characters[0];
- if (!character) {
-  throw new AiConversationPersistenceRequestError(
-   409,
-   "AI_CHARACTER_NOT_FOUND",
-   "AI character not found",
-  );
- }
  const relationship = relationships[0] ?? null;
- const learnerLevel = preferences[0]?.learner_level ?? "intermediate";
 
  return {
   conversation: {
@@ -435,7 +570,7 @@ export async function loadAiConversationContextState({
       revision: relationship.revision,
      }
    : null,
-  learnerLevel,
+  learnerLevel: preferences.learner_level,
  };
 }
 
