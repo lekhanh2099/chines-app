@@ -4,7 +4,11 @@ import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const API_ROOT = "src/app/api";
-const REGISTRY_FILE = "src/features/developer-api/api-registry.ts";
+const PUBLIC_REGISTRY_FILE = "src/features/developer-api/api-registry.ts";
+const INVENTORY_FILES = [
+ PUBLIC_REGISTRY_FILE,
+ "src/features/developer-api/daily-reading-api-registry.ts",
+];
 const HTTP_METHODS = new Set(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 const REQUIRED_DIRECT_FLOWS = new Set([
  "direct:notes-library",
@@ -165,39 +169,42 @@ function operationValues(object, failures) {
 }
 
 function collectInventoryEntries() {
- const source = fs.readFileSync(REGISTRY_FILE, "utf8");
- const sourceFile = ts.createSourceFile(REGISTRY_FILE, source, ts.ScriptTarget.Latest, true);
  const failures = [];
  const entries = [];
 
- function visit(node) {
-  if (
-   ts.isCallExpression(node) &&
-   ts.isIdentifier(node.expression) &&
-   node.expression.text === "inventoryEntry" &&
-   node.arguments.length === 1 &&
-   ts.isObjectLiteralExpression(node.arguments[0])
-  ) {
-   const currentPath = stringValue(node.arguments[0], "currentPath", failures);
-   const sourceKind = stringValue(node.arguments[0], "source", failures);
-   const exposure = stringValue(node.arguments[0], "exposure", failures);
-   const v1Path = nullableStringValue(node.arguments[0], "v1Path", failures);
-   const internalReason = nullableStringValue(node.arguments[0], "internalReason", failures);
-   const methods = methodValues(node.arguments[0], failures);
-   if (currentPath && sourceKind && exposure) {
-    entries.push({ currentPath, sourceKind, exposure, v1Path, internalReason, methods });
-   }
-  }
-  ts.forEachChild(node, visit);
- }
+ for (const registryFile of INVENTORY_FILES) {
+  const source = fs.readFileSync(registryFile, "utf8");
+  const sourceFile = ts.createSourceFile(registryFile, source, ts.ScriptTarget.Latest, true);
 
- visit(sourceFile);
+  function visit(node) {
+   if (
+    ts.isCallExpression(node) &&
+    ts.isIdentifier(node.expression) &&
+    node.expression.text === "inventoryEntry" &&
+    node.arguments.length === 1 &&
+    ts.isObjectLiteralExpression(node.arguments[0])
+   ) {
+    const currentPath = stringValue(node.arguments[0], "currentPath", failures);
+    const sourceKind = stringValue(node.arguments[0], "source", failures);
+    const exposure = stringValue(node.arguments[0], "exposure", failures);
+    const v1Path = nullableStringValue(node.arguments[0], "v1Path", failures);
+    const internalReason = nullableStringValue(node.arguments[0], "internalReason", failures);
+    const methods = methodValues(node.arguments[0], failures);
+    if (currentPath && sourceKind && exposure) {
+     entries.push({ currentPath, sourceKind, exposure, v1Path, internalReason, methods });
+    }
+   }
+   ts.forEachChild(node, visit);
+  }
+
+  visit(sourceFile);
+ }
  return { entries, failures };
 }
 
 function collectPublicEndpoints() {
- const source = fs.readFileSync(REGISTRY_FILE, "utf8");
- const sourceFile = ts.createSourceFile(REGISTRY_FILE, source, ts.ScriptTarget.Latest, true);
+ const source = fs.readFileSync(PUBLIC_REGISTRY_FILE, "utf8");
+ const sourceFile = ts.createSourceFile(PUBLIC_REGISTRY_FILE, source, ts.ScriptTarget.Latest, true);
  const failures = [];
  const entries = [];
 
