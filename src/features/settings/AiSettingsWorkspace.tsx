@@ -28,6 +28,7 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
+import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
@@ -223,14 +224,14 @@ export function AiSettingsWorkspace({
  const selectedDetailModel = GEMINI_DETAIL_MODEL_OPTIONS.find(
   (option) => option.value === geminiModel,
  );
- const tabItems = [
+ const tabItems: SegmentedControlItem<AiSettingsPanel>[] = [
   {
    key: AiSettingsPanelSchema.enum.conversation,
    label: navigationT("tabs.conversation"),
    icon: MessageCircle,
   },
   {
-   key: AiSettingsPanelSchema.enum.dailyReading,
+   key: AiSettingsPanelSchema.enum["daily-reading"],
    label: navigationT("tabs.dailyReading"),
    icon: Newspaper,
   },
@@ -265,7 +266,7 @@ export function AiSettingsWorkspace({
     <AiConversationSettingsSection />
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum.dailyReading} className="pt-4">
+   <TabsContent value={AiSettingsPanelSchema.enum["daily-reading"]} className="pt-4">
     {dailyReadingSettings}
    </TabsContent>
 
