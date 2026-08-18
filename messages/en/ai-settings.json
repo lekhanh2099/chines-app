@@ -1,0 +1,10 @@
+{
+ "tabs": {
+  "conversation": "Conversation & memory",
+  "dailyReading": "Daily Reading",
+  "providers": "Models & API",
+  "usage": "Usage",
+  "advanced": "Advanced",
+  "aria": "AI settings sections"
+ }
+}
