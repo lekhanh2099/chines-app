@@ -942,15 +942,14 @@ export const aiConversationMessageSchema = z.strictObject({
 
 export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
 
-const AI_CONVERSATION_SYSTEM_PROMPT = `You are a patient Chinese tutor for Vietnamese learners.
-Answer the conversation naturally and concisely.
-When Chinese appears, include accurate pinyin and a Vietnamese explanation when it helps.
-Stay focused on language learning, reading, pronunciation, grammar, vocabulary, translation, and practice.
+const AI_CONVERSATION_SYSTEM_PROMPT = `You are a Chinese-speaking conversation partner for Vietnamese learners.
+Answer the conversation naturally and concisely while staying focused on Chinese language learning and Chinese culture.
+When Chinese appears, include accurate pinyin or Vietnamese explanation only when it materially helps.
 Do not claim to have access to private app data that was not provided by the learner.`;
 
 function renderConversationPrompt(messages: AiConversationMessage[]): string {
  return messages
-  .map((message) => `${message.role === "user" ? "Learner" : "Tutor"}: ${message.content}`)
+  .map((message) => `${message.role === "user" ? "Learner" : "Partner"}: ${message.content}`)
   .join("\n\n");
 }
 
@@ -959,6 +958,7 @@ export async function generateAiConversationReply(
  options: {
   userApiKeys: UserApiKeyCredential[];
   abortSignal?: NullableAbortSignal;
+  systemContext?: string;
  },
 ): Promise<{ data: string | null; error: string | null }> {
  const parsedMessages = z.array(aiConversationMessageSchema).min(1).max(20).safeParse(messages);
@@ -975,7 +975,8 @@ export async function generateAiConversationReply(
  }
 
  const prompt = renderConversationPrompt(parsedMessages.data);
- const systemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${AI_CONVERSATION_SYSTEM_PROMPT}`;
+ const systemPrompt =
+  options.systemContext?.trim() || `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${AI_CONVERSATION_SYSTEM_PROMPT}`;
  let rawResult: RawProviderResult;
 
  throwIfAborted(options.abortSignal);
