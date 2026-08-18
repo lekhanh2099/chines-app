@@ -1,8 +1,6 @@
 import "server-only";
 
-import {
- sanitizeAiConversationReply,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-output";
+import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import {
  generateSystemAiConversationReply,
  SYSTEM_AI_CONVERSATION_MODEL,
@@ -69,9 +67,7 @@ export async function generatePersistedAiConversationTurn({
  signal?: AbortSignal;
 }): Promise<PersistedTurnGenerationResult> {
  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, userId);
- const selectedKey = apiKeyId
-  ? userApiKeys.find((key) => key.id === apiKeyId)
-  : userApiKeys[0];
+ const selectedKey = apiKeyId ? userApiKeys.find((key) => key.id === apiKeyId) : userApiKeys[0];
 
  if (apiKeyId && !selectedKey) {
   return {
@@ -125,16 +121,17 @@ export async function generatePersistedAiConversationTurn({
   }
  }
 
- const recalledMemories = learnerMessage
-  ? await retrieveRelevantAiConversationMemories({
-     userId,
-     characterId: resolvedContextState.character.id,
-     query: learnerMessage.content,
-     enabled: memoryEnabled,
-     suppressForForget: explicitForget,
-     signal,
-    })
-  : [];
+ const recalledMemories =
+  learnerMessage && memoryEnabled && !explicitForget
+   ? await retrieveRelevantAiConversationMemories({
+      userId,
+      characterId: resolvedContextState.character.id,
+      query: learnerMessage.content,
+      enabled: true,
+      suppressForForget: false,
+      signal,
+     })
+   : [];
  const providerContext = buildAiConversationProviderContext({
   state: resolvedContextState,
   recentMessages,
