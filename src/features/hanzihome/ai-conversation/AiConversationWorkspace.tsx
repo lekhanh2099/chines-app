@@ -1,8 +1,8 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import { RefreshCcw, RotateCcw, Send, Settings2, Trash2 } from "lucide-react";
+import { RefreshCcw, RotateCcw, Send, Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useAppForm } from "@/components/form";
@@ -34,16 +34,21 @@ import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema
 import { Link } from "@/i18n/navigation";
 import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
-import { fetchAiConversationRuntimeHealth, sendAiConversationMessage } from "./ai-conversation-api";
+import {
+ ensureAiConversationSession,
+ fetchAiConversationRuntimeHealth,
+ fetchAiConversationSession,
+ sendPersistedAiConversationMessage,
+} from "./ai-conversation-api";
 import {
  AiConversationMessageBubble,
  AiConversationTypingBubble,
 } from "./AiConversationMessageBubble";
-import { sanitizeAiConversationReply } from "./ai-conversation-output";
 import {
  saveAiConversationProfile,
  useAiConversationProfile,
 } from "./ai-conversation-profile.client";
+import type { AiConversationSession } from "./ai-conversation-session.schemas";
 import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
@@ -57,22 +62,26 @@ import {
 
 const AUTO_RUNTIME_KEY_ID = "auto";
 const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
+const SESSION_QUERY_KEY = ["hanzihome", "ai-conversation", "session"];
 type ManagedApiKey = ApiKeysResponse["keys"][number];
 
 export function AiConversationWorkspace() {
  const t = useTranslations("AiConversation");
+ const queryClient = useQueryClient();
  const profile = useAiConversationProfile();
  const [isSetupOpen, setIsSetupOpen] = useState(false);
- const [messages, setMessages] = useState<AiConversationMessage[]>([]);
  const [draft, setDraft] = useState("");
- const [isSending, setIsSending] = useState(false);
- const [error, setError] = useState<string | null>(null);
  const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
  const requestRef = useRef<AbortController | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
+ const sessionQuery = useQuery({
+  queryKey: SESSION_QUERY_KEY,
+  queryFn: ({ signal }) => fetchAiConversationSession({ signal }),
+  retry: false,
+ });
  const runtimeHealthQuery = useQuery({
   queryKey: ["hanzihome", "ai-conversation", "runtime-health", runtimeKeyId],
   queryFn: ({ signal }) =>
@@ -83,8 +92,72 @@ export function AiConversationWorkspace() {
   enabled: !isRuntimeLoading,
   retry: false,
  });
+ const sendMutation = useMutation({
+  retry: false,
+  mutationFn: async ({
+   content,
+   clientMessageId,
+   controller,
+  }: {
+   content: string;
+   clientMessageId: string;
+   controller: AbortController;
+  }) => {
+   const session = sessionQuery.data?.conversation
+    ? sessionQuery.data
+    : await ensureAiConversationSession({ signal: controller.signal });
+   const conversation = session.conversation;
+   if (!conversation) {
+    throw new Error(t("message.sendError"));
+   }
+
+   const turn = await sendPersistedAiConversationMessage(
+    conversation.id,
+    {
+     clientMessageId,
+     content,
+     profile,
+     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+    },
+    { signal: controller.signal },
+   );
+   return { session, turn };
+  },
+  onSuccess: ({ session, turn }) => {
+   const retainedMessages = session.messages.filter(
+    (message) => message.id !== turn.userMessage.id && message.id !== turn.assistantMessage.id,
+   );
+   const nextSession: AiConversationSession = {
+    conversation: session.conversation,
+    messages: [...retainedMessages, turn.userMessage, turn.assistantMessage].sort(
+     (left, right) => left.seq - right.seq,
+    ),
+   };
+   queryClient.setQueryData(SESSION_QUERY_KEY, nextSession);
+   recordAiUsageEvent({
+    apiKeyId: turn.apiKeyId,
+    provider: turn.provider,
+    model: turn.model,
+    usage: turn.usage,
+   });
+  },
+  onError: (_error, variables) => {
+   if (!variables.controller.signal.aborted) {
+    setDraft((current) => current || variables.content);
+    void sessionQuery.refetch();
+    void runtimeHealthQuery.refetch();
+   }
+  },
+  onSettled: (_data, _error, variables) => {
+   if (requestRef.current === variables.controller) {
+    requestRef.current = null;
+   }
+  },
+ });
  const runtimeHealth = runtimeHealthQuery.data ?? null;
  const isHealthChecking = runtimeHealthQuery.isFetching;
+ const isSending = sendMutation.isPending;
+ const persistedMessages = sessionQuery.data?.messages ?? [];
  const personaLabels: Record<AiConversationProfile["persona"], string> = {
   tutor: t("personas.tutor"),
   friend: t("personas.friend"),
@@ -103,8 +176,26 @@ export function AiConversationWorkspace() {
    role: personaLabels[profile.persona],
   }),
  };
- const displayMessages = [greeting, ...messages];
+ const renderedMessages =
+  persistedMessages.length > 0
+   ? persistedMessages.map((message) => ({
+      key: message.id,
+      message: { role: message.role, content: message.content } satisfies AiConversationMessage,
+     }))
+   : [{ key: "greeting", message: greeting }];
+ const pendingMessage = sendMutation.variables
+  ? {
+     key: `pending-${sendMutation.variables.clientMessageId}`,
+     message: {
+      role: "user" as const,
+      content: sendMutation.variables.content,
+     },
+    }
+  : null;
  const profileAvatar = profile.displayName.trim().slice(0, 1) || "AI";
+ const sessionError = sessionQuery.error instanceof Error ? sessionQuery.error.message : null;
+ const sendError = sendMutation.error instanceof Error ? sendMutation.error.message : null;
+ const visibleError = sendError || sessionError;
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -141,14 +232,7 @@ export function AiConversationWorkspace() {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
- }, [isSending, messages]);
-
- const clearSession = () => {
-  requestRef.current?.abort();
-  setMessages([]);
-  setDraft("");
-  setError(null);
- };
+ }, [isSending, persistedMessages.length]);
 
  const saveProfile = (nextProfile: AiConversationProfile) => {
   saveAiConversationProfile(nextProfile);
@@ -161,7 +245,7 @@ export function AiConversationWorkspace() {
     ? value
     : AUTO_RUNTIME_KEY_ID;
   setRuntimeKeyId(nextValue);
-  setError(null);
+  sendMutation.reset();
   if (nextValue === AUTO_RUNTIME_KEY_ID) {
    window.localStorage.removeItem(RUNTIME_KEY_STORAGE_KEY);
   } else {
@@ -169,46 +253,19 @@ export function AiConversationWorkspace() {
   }
  };
 
- const send = async () => {
+ const send = () => {
   const content = draft.normalize("NFC").trim();
-  if (!content || isSending || !runtimeHealth?.ready) return;
+  if (!content || isSending || !runtimeHealth?.ready || sessionQuery.isFetching) return;
 
-  const userMessage: AiConversationMessage = { role: "user", content };
-  const nextMessages = [...messages, userMessage];
-  setMessages(nextMessages);
-  setDraft("");
-  setError(null);
-  setIsSending(true);
   requestRef.current?.abort();
   const controller = new AbortController();
   requestRef.current = controller;
-
-  try {
-   const response = await sendAiConversationMessage(nextMessages.slice(-24), profile, {
-    ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
-    signal: controller.signal,
-   });
-   const assistantContent = sanitizeAiConversationReply(response.message);
-   if (!assistantContent) {
-    throw new Error(t("message.sendError"));
-   }
-   setMessages((current) => [...current, { role: "assistant", content: assistantContent }]);
-   recordAiUsageEvent({
-    apiKeyId: response.apiKeyId,
-    provider: response.provider,
-    model: response.model,
-    usage: response.usage,
-   });
-  } catch (caught) {
-   if (controller.signal.aborted) return;
-   setError(caught instanceof Error ? caught.message : t("message.sendError"));
-   void runtimeHealthQuery.refetch();
-  } finally {
-   if (requestRef.current === controller) {
-    requestRef.current = null;
-    setIsSending(false);
-   }
-  }
+  setDraft("");
+  sendMutation.mutate({
+   content,
+   clientMessageId: crypto.randomUUID(),
+   controller,
+  });
  };
 
  const runtimeNotice = runtimeLoadError
@@ -234,7 +291,12 @@ export function AiConversationWorkspace() {
             : runtimeHealth?.code === "provider-unavailable"
               ? t("runtime.health.providerUnavailable")
               : t("runtime.health.networkError");
- const canSend = Boolean(runtimeHealth?.ready) && !isHealthChecking && !isSending;
+ const canSend =
+  Boolean(runtimeHealth?.ready) &&
+  !isHealthChecking &&
+  !isSending &&
+  !sessionQuery.isFetching &&
+  !sessionQuery.isError;
 
  return (
   <div className="grid min-w-0 gap-5">
@@ -281,10 +343,6 @@ export function AiConversationWorkspace() {
        </Typography>
       </div>
      </div>
-     <Button type="button" variant="ghost" size="sm" onClick={clearSession}>
-      <Trash2 data-icon="inline-start" />
-      {t("actions.clear")}
-     </Button>
     </div>
 
     <div className="grid gap-2 border-t border-border-default px-3 py-3 sm:px-4 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
@@ -335,13 +393,20 @@ export function AiConversationWorkspace() {
      aria-live="polite"
      aria-relevant="additions text"
     >
-     {displayMessages.map((message, index) => (
+     {renderedMessages.map(({ key, message }) => (
       <AiConversationMessageBubble
-       key={`${message.role}-${index}`}
+       key={key}
        message={message}
        assistantName={profile.displayName}
       />
      ))}
+     {pendingMessage ? (
+      <AiConversationMessageBubble
+       key={pendingMessage.key}
+       message={pendingMessage.message}
+       assistantName={profile.displayName}
+      />
+     ) : null}
      {isSending ? (
       <AiConversationTypingBubble
        assistantName={profile.displayName}
@@ -350,10 +415,10 @@ export function AiConversationWorkspace() {
      ) : null}
     </div>
 
-    {error ? (
+    {visibleError ? (
      <div className="border-t border-border-default px-3 py-2 sm:px-4">
       <Typography variant="bodySmall" tone="danger">
-       {error}
+       {visibleError}
       </Typography>
      </div>
     ) : null}
@@ -362,7 +427,7 @@ export function AiConversationWorkspace() {
      className="grid gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
      onSubmit={(event) => {
       event.preventDefault();
-      void send();
+      send();
      }}
     >
      <Label htmlFor="ai-conversation-message" className="sr-only">
@@ -376,7 +441,7 @@ export function AiConversationWorkspace() {
        onKeyDown={(event) => {
         if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
          event.preventDefault();
-         void send();
+         send();
         }
        }}
        rows={1}
