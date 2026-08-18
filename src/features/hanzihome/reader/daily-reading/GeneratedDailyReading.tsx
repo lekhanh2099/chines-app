@@ -2,6 +2,7 @@
 
 import { ChevronRight, FileText, Settings, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -17,7 +18,7 @@ import {
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 import {
  generateDailyReadingNow,
@@ -58,12 +59,21 @@ const topicTranslationKey = {
  health: "generated.topic.health",
 } as const satisfies Record<DailyReadingTopic, string>;
 
-export function GeneratedDailyReadingLibrary({ onOpen }: { onOpen(id: string): void }) {
+export function GeneratedDailyReadingLibrary() {
  const t = useTranslations("DailyReading");
+ const router = useRouter();
+ const pathname = usePathname();
+ const searchParams = useSearchParams();
  const library = useDailyReadingLibrary();
  const { settings } = useDailyReadingSettings();
  const [generating, setGenerating] = useState(false);
  const [stage, setStage] = useState<DailyReadingGenerationStage | null>(null);
+
+ const readingHref = (id: string) => {
+  const next = new URLSearchParams(searchParams.toString());
+  next.set("generated", id);
+  return `${pathname}?${next.toString()}`;
+ };
 
  async function generate() {
   setGenerating(true);
@@ -73,7 +83,7 @@ export function GeneratedDailyReadingLibrary({ onOpen }: { onOpen(id: string): v
     onProgress: setStage,
    });
    toast.success(t("generated.toast.created", { title: reading.titleZh }));
-   onOpen(reading.id);
+   router.push(readingHref(reading.id), { scroll: false });
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("generated.toast.failed"));
   } finally {
@@ -152,12 +162,14 @@ export function GeneratedDailyReadingLibrary({ onOpen }: { onOpen(id: string): v
     ) : (
      <div className="grid gap-3 xl:grid-cols-2">
       {library.items.slice(0, 12).map((reading) => (
-       <Card key={reading.id} variant="interactive" padding="md">
-        <button
-         type="button"
-         className="group grid w-full min-w-0 gap-3 text-left"
-         onClick={() => onOpen(reading.id)}
-        >
+       <Card
+        key={reading.id}
+        asChild
+        variant="interactive"
+        padding="md"
+        className="group grid min-w-0 gap-3"
+       >
+        <Link href={readingHref(reading.id)} prefetch={false}>
          <div className="flex flex-wrap gap-2">
           <Badge variant={reading.releaseKind === "scheduled" ? "success" : "info"} size="sm">
            {reading.releaseKind === "scheduled"
@@ -192,7 +204,7 @@ export function GeneratedDailyReadingLibrary({ onOpen }: { onOpen(id: string): v
           </Typography>
           <ChevronRight aria-hidden />
          </div>
-        </button>
+        </Link>
        </Card>
       ))}
      </div>
