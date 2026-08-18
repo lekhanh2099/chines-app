@@ -3,6 +3,7 @@
 Status: ready for user-run integration test; database migration is not applied by the implementation agent.
 Branch: `feat/persistent-social-memory-ai-redesign`
 Migration prerequisite: `supabase/migrations/20260818095100_create_ai_conversation_persistence.sql`
+Current-contract note: Phase 3A has since removed the legacy local `profile` from the persisted message transport. The persistence/idempotency behavior in this handoff remains valid; use the updated request shape below.
 
 ## Scope completed in this checkpoint
 
@@ -23,22 +24,23 @@ open AI Conversation
 
 The client no longer owns the authoritative transcript for the new workspace flow.
 
-## Deliberate non-goals
+## Deliberate non-goals at the Phase 2 checkpoint
 
-This checkpoint does not implement:
+Phase 2 did not implement:
 
 - long-term memory extraction/retrieval;
 - relationship-state evolution;
 - summary compaction;
 - vector/PGroonga retrieval;
-- character/mode architecture cutover from the legacy local profile;
 - multi-conversation history/archive/delete UI;
 - conversation/settings visual redesign;
 - generated Supabase type refresh before a real schema target exists.
 
+Phase 3A subsequently moved persisted provider context to server-owned character/conversation/relationship/preference state. See `docs/architecture/ai-conversation-phase-3a-test-handoff.md` for that authority contract.
+
 The legacy full-transcript request contract remains temporarily available on `/api/ai/conversation` for compatibility, but the AI Conversation workspace uses the persisted action contract.
 
-## API action contract
+## Current persisted API action contract
 
 The already-registered internal route remains:
 
@@ -46,7 +48,7 @@ The already-registered internal route remains:
 POST /api/ai/conversation
 ```
 
-New internal actions:
+Internal actions:
 
 ```json
 { "action": "session" }
@@ -62,12 +64,11 @@ New internal actions:
   "conversationId": "uuid",
   "clientMessageId": "uuid",
   "content": "你好",
-  "profile": { "...": "temporary compatibility profile" },
   "apiKeyId": "optional uuid"
 }
 ```
 
-The message action intentionally contains only the new turn plus temporary compatibility profile data. It does not accept a client-owned transcript.
+The message action contains only the new turn command. It accepts neither a client-owned transcript nor the legacy local profile object.
 
 ## Retry contract
 
@@ -123,11 +124,11 @@ After the migration exists on that test target:
 3. Confirm one user bubble and one assistant bubble appear.
 4. Reload the page. Both persisted messages must still appear.
 5. Send a second turn. Reload again. Sequence/order must remain stable.
-6. In Network tools, inspect the new message request. It must contain `action`, `conversationId`, `clientMessageId`, `content`, `profile`, and optional `apiKeyId`; it must not contain a `messages` transcript array.
+6. In Network tools, inspect the new message request. It must contain `action`, `conversationId`, `clientMessageId`, `content`, and optional `apiKeyId`; it must contain neither a `messages` transcript array nor a `profile` object.
 7. Replay the exact same message request with the same `clientMessageId`. No duplicate user row or assistant row may be created.
 8. Simulate a provider failure, then retry the unchanged restored draft. The same logical user turn must be reused rather than inserted twice.
 9. Confirm another authenticated user cannot reuse the first user's `conversationId` to append a message.
-10. Confirm local legacy `memoryNotes` are not copied into `ai_memories` or another new persistence table by this phase.
+10. Confirm local legacy `memoryNotes` are not copied into `ai_memories` or another new persistence table.
 
 Expected core rows after the first successful turn:
 
@@ -137,7 +138,7 @@ ai_conversations:   1 active conversation if none existed
 ai_messages:        2 rows, seq 1 user + seq 2 assistant
 ```
 
-`ai_memories`, `ai_memory_evidence`, `ai_relationship_states`, and `ai_post_turn_jobs` are not expected to change in this phase.
+`ai_memories`, `ai_memory_evidence`, and `ai_post_turn_jobs` are not expected to change from a normal Phase 2/3A turn. `ai_relationship_states` is only read by Phase 3A if a row already exists; relationship evolution is not implemented yet.
 
 ## Repository checks added for this flow
 
@@ -146,7 +147,7 @@ Tests were added/extended to cover:
 - persisted session action routing;
 - server-owned turn persistence orchestration;
 - existing assistant reply short-circuit on retry;
-- client transport not sending a transcript array;
+- client transport not sending transcript/profile authority;
 - Postgres timestamptz offset parsing;
 - required `clientMessageId` and non-empty message content;
 - legacy AI conversation behavior remaining available during cutover.
@@ -170,6 +171,8 @@ SUPABASE_PROJECT_REF=<chosen-test-project-ref> npm run types:supabase
 
 Do not commit a generated type file from a different schema target.
 
-## Known boundary for the next checkpoint
+## Current boundary after Phase 3A
 
-The persisted flow still serializes the legacy local profile as compatibility context for provider generation. The database conversation fields and stable character identity do not yet own provider behavior. That ownership transfer belongs to Phase 3 and should only begin after this persistence flow is accepted.
+Persisted character identity, conversation behavior, relationship state, learner level and summary context are now reconstructed server-side. The browser-owned legacy profile remains in the current UI only as a temporary presentation/setup compatibility surface; it is not serialized into the persisted turn command.
+
+The next proposed checkpoint is Phase 3B: persisted mutation for conversation mode/correction/reply and learner-level preference, with the smallest compatible UI wiring before long-term memory work begins.
