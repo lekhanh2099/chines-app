@@ -4,7 +4,8 @@ import type {
  AiConversationMode,
  AiConversationPersistedMessage,
 } from "./ai-conversation-session.schemas";
-import type { AiConversationProfile } from "./ai-conversation.schemas";
+
+export type AiConversationLearnerLevel = "beginner" | "intermediate" | "advanced";
 
 export type AiConversationCharacterContext = {
  id: string;
@@ -39,6 +40,7 @@ export type AiConversationContextState = {
  conversation: AiConversationThreadContext;
  character: AiConversationCharacterContext;
  relationship: AiConversationRelationshipContext | null;
+ learnerLevel: AiConversationLearnerLevel;
 };
 
 export type AiConversationProviderContext = {
@@ -73,7 +75,7 @@ const replyModeInstructions: Record<AiConversationThreadContext["replyMode"], st
   "Use Chinese as the main response and add concise Vietnamese support for important learning points.",
 };
 
-const learnerLevelInstructions: Record<AiConversationProfile["learnerLevel"], string> = {
+const learnerLevelInstructions: Record<AiConversationLearnerLevel, string> = {
  beginner: "Use short sentences, high-frequency vocabulary, and more scaffolding.",
  intermediate:
   "Use natural Mandarin with intermediate structures and vocabulary; do not oversimplify ordinary conversation.",
@@ -102,11 +104,9 @@ function serializeDataBlock(label: string, value: Readonly<Record<string, string
 
 export function buildAiConversationProviderContext({
  state,
- learnerLevel,
  recentMessages,
 }: {
  state: AiConversationContextState;
- learnerLevel: AiConversationProfile["learnerLevel"];
  recentMessages: AiConversationPersistedMessage[];
 }): AiConversationProviderContext {
  const relationship = state.relationship;
@@ -122,7 +122,7 @@ export function buildAiConversationProviderContext({
   `Conversation mode: ${state.conversation.mode}. ${modeInstructions[state.conversation.mode]}`,
   `Correction style: ${state.conversation.correctionStyle}. ${correctionInstructions[state.conversation.correctionStyle]}`,
   `Reply mode: ${state.conversation.replyMode}. ${replyModeInstructions[state.conversation.replyMode]}`,
-  `Learner level: ${learnerLevel}. ${learnerLevelInstructions[learnerLevel]}`,
+  `Learner level: ${state.learnerLevel}. ${learnerLevelInstructions[state.learnerLevel]}`,
   relationshipInstruction(relationship?.familiarityScore ?? null),
   "When correcting Chinese, prioritize natural Mainland Mandarin and keep correction proportional to the selected mode/style.",
   "",
