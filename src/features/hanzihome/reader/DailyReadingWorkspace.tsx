@@ -235,7 +235,7 @@ export function DailyReadingWorkspace({
       actions={
        <>
         <Button type="button" variant="outline" size="toolbar" asChild>
-         <Link href="/settings?section=reading" prefetch={false}>
+         <Link href="/settings?section=ai&panel=daily-reading" prefetch={false}>
           <Settings data-icon="inline-start" />
           {t("header.settings")}
          </Link>
