@@ -1,10 +1,11 @@
 {
  "title": "AI Conversation",
- "description": "Practice Chinese with a persistent character and account-backed conversation settings. Conversation history remains available after reload so you can continue where you left off.",
+ "description": "Continue talking with your character. Conversation history, behavior, and context are saved to your account.",
  "actions": {
   "setup": "Conversation setup",
   "apiKeys": "Manage API keys",
   "clear": "Clear session",
+  "more": "More conversation options",
   "send": "Send",
   "sending": "Sending…",
   "saving": "Saving…",
@@ -42,6 +43,34 @@
  "character": {
   "defaultName": "小林"
  },
+ "relationship": {
+  "new": "New connection",
+  "familiar": "Familiar",
+  "friends": "Friends",
+  "close": "Close"
+ },
+ "memory": {
+  "useLongTerm": "Use long-term memory",
+  "offShort": "Memory off",
+  "updateError": "Could not update conversation memory."
+ },
+ "history": {
+  "title": "Conversation history",
+  "open": "Open conversation history",
+  "newConversation": "New conversation",
+  "creating": "Creating conversation…",
+  "loading": "Loading history…",
+  "emptyTitle": "No conversations yet",
+  "emptyDescription": "Create a new conversation to start talking with the current character.",
+  "listAria": "Conversation list",
+  "untitled": "Conversation",
+  "actionsAria": "Options for {title}",
+  "archive": "Archive conversation",
+  "archiveTitle": "Archive this conversation?",
+  "archiveDescription": "“{title}” will be hidden from active history. Its content is not permanently deleted.",
+  "archiveConfirm": "Archive",
+  "archiving": "Archiving…"
+ },
  "greeting": "你好，我是{name}。I am in “{mode}” mode. Start in Chinese or tell me your goal for this practice session.",
  "fallbackInterest": "Chinese conversation",
  "runtime": {
@@ -53,6 +82,10 @@
   "current": "Current runtime: {provider} · {model}",
   "loadError": "Could not load personal API keys. Automatic mode can still use the system Gemini runtime.",
   "modelFallback": "provider default",
+  "compactChecking": "Checking AI",
+  "compactReady": "AI ready · {provider}",
+  "compactUnavailable": "AI unavailable",
+  "menuAria": "Choose and check AI runtime",
   "healthChecking": "Checking AI…",
   "healthReady": "Ready · {provider} · {model}",
   "recheck": "Check again",
@@ -68,7 +101,8 @@
  "message": {
   "label": "Message",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter to send · The current conversation and behavior settings are saved to your account.",
+  "hint": "Ctrl/Cmd + Enter to send · The current conversation is saved to your account.",
+  "loadingConversation": "Loading conversation…",
   "replying": "{name} is replying…",
   "sendError": "Could not send the conversation."
  },
