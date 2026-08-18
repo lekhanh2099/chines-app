@@ -56,7 +56,6 @@ import {
  aiConversationLearnerLevelSchema,
  aiConversationReplyModeSchema,
  type AiConversationMessage,
- type AiConversationProfile,
 } from "./ai-conversation.schemas";
 
 const AUTO_RUNTIME_KEY_ID = "auto";
@@ -210,7 +209,7 @@ export function AiConversationWorkspace() {
   "grammar-coach": t("modes.grammarCoach"),
   "hskk-practice": t("modes.hskkPractice"),
  };
- const levelLabels: Record<AiConversationProfile["learnerLevel"], string> = {
+ const levelLabels: Record<AiConversationSettingsUpdate["learnerLevel"], string> = {
   beginner: t("levels.beginner"),
   intermediate: t("levels.intermediate"),
   advanced: t("levels.advanced"),
@@ -382,7 +381,10 @@ export function AiConversationWorkspace() {
      <Button
       type="button"
       variant="outline"
-      onClick={() => setIsSetupOpen(true)}
+      onClick={() => {
+       settingsMutation.reset();
+       setIsSetupOpen(true);
+      }}
       disabled={!currentSettings || sessionQuery.isFetching}
      >
       <Settings2 data-icon="inline-start" />
@@ -539,11 +541,12 @@ export function AiConversationWorkspace() {
     <ConversationSettingsDialog
      initialSettings={currentSettings}
      isSaving={settingsMutation.isPending}
-     saveError={
-      settingsMutation.error instanceof Error ? settingsMutation.error.message : null
-     }
+     saveError={settingsMutation.error instanceof Error ? settingsMutation.error.message : null}
      onOpenChange={(open) => {
-      if (!settingsMutation.isPending) setIsSetupOpen(open);
+      if (!settingsMutation.isPending) {
+       if (!open) settingsMutation.reset();
+       setIsSetupOpen(open);
+      }
      }}
      onSave={(settings) => settingsMutation.mutate(settings)}
     />
