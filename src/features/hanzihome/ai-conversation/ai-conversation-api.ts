@@ -88,10 +88,16 @@ export async function sendPersistedAiConversationMessage(
   clientMessageId: string;
   content: string;
   apiKeyId?: string;
+  /** Temporary caller compatibility only. Persisted transport intentionally ignores this field. */
+  profile?: AiConversationProfile;
  },
  options?: { signal?: AbortSignal },
 ): Promise<AiConversationTurnResponse> {
- const payload = aiConversationTurnRequestSchema.parse(input);
+ const payload = aiConversationTurnRequestSchema.parse({
+  clientMessageId: input.clientMessageId,
+  content: input.content,
+  ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
+ });
  const { response, payload: responseBody } = await postConversationAction(
   {
    action: "message",
