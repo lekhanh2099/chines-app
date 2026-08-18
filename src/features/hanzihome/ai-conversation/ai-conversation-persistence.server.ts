@@ -72,6 +72,10 @@ const relationshipContextRowSchema = z.object({
  revision: z.number().int().nonnegative(),
 });
 
+const preferenceContextRowSchema = z.object({
+ learner_level: z.enum(["beginner", "intermediate", "advanced"]),
+});
+
 const messageRpcResultSchema = z.union([
  messageRowSchema,
  z.tuple([messageRowSchema]).transform(([row]) => row),
@@ -326,34 +330,45 @@ export async function loadAiConversationContextState({
   throw new AiConversationPersistenceRequestError(404, "AI_CONVERSATION_NOT_FOUND", "AI conversation not found");
  }
 
- const characters = await requestPostgrest({
-  resource: "ai_characters",
-  schema: z.array(characterContextRowSchema),
-  params: {
-   select:
-    "id,display_name,city,age,background,personality,speaking_style,interests,identity_notes",
-   user_id: `eq.${userId}`,
-   id: `eq.${conversation.character_id}`,
-   archived_at: "is.null",
-   limit: "1",
-  },
- });
+ const [characters, relationships, preferences] = await Promise.all([
+  requestPostgrest({
+   resource: "ai_characters",
+   schema: z.array(characterContextRowSchema),
+   params: {
+    select:
+     "id,display_name,city,age,background,personality,speaking_style,interests,identity_notes",
+    user_id: `eq.${userId}`,
+    id: `eq.${conversation.character_id}`,
+    archived_at: "is.null",
+    limit: "1",
+   },
+  }),
+  requestPostgrest({
+   resource: "ai_relationship_states",
+   schema: z.array(relationshipContextRowSchema),
+   params: {
+    select: "nickname,familiarity_score,revision",
+    user_id: `eq.${userId}`,
+    character_id: `eq.${conversation.character_id}`,
+    limit: "1",
+   },
+  }),
+  requestPostgrest({
+   resource: "ai_conversation_preferences",
+   schema: z.array(preferenceContextRowSchema),
+   params: {
+    select: "learner_level",
+    user_id: `eq.${userId}`,
+    limit: "1",
+   },
+  }),
+ ]);
  const character = characters[0];
  if (!character) {
   throw new AiConversationPersistenceRequestError(409, "AI_CHARACTER_NOT_FOUND", "AI character not found");
  }
-
- const relationships = await requestPostgrest({
-  resource: "ai_relationship_states",
-  schema: z.array(relationshipContextRowSchema),
-  params: {
-   select: "nickname,familiarity_score,revision",
-   user_id: `eq.${userId}`,
-   character_id: `eq.${conversation.character_id}`,
-   limit: "1",
-  },
- });
  const relationship = relationships[0] ?? null;
+ const learnerLevel = preferences[0]?.learner_level ?? "intermediate";
 
  return {
   conversation: {
@@ -384,6 +399,7 @@ export async function loadAiConversationContextState({
       revision: relationship.revision,
      }
    : null,
+  learnerLevel,
  };
 }
 
