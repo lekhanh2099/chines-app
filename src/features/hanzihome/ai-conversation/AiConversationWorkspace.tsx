@@ -2,7 +2,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import { RefreshCcw, RotateCcw, Send, Settings2 } from "lucide-react";
+import { RefreshCcw, Send, Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useAppForm } from "@/components/form";
@@ -37,25 +37,24 @@ import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 import {
  ensureAiConversationSession,
  fetchAiConversationRuntimeHealth,
- fetchAiConversationSession,
  sendPersistedAiConversationMessage,
+ updateAiConversationSettings,
 } from "./ai-conversation-api";
 import {
  AiConversationMessageBubble,
  AiConversationTypingBubble,
 } from "./AiConversationMessageBubble";
 import {
- saveAiConversationProfile,
- useAiConversationProfile,
-} from "./ai-conversation-profile.client";
-import type { AiConversationSession } from "./ai-conversation-session.schemas";
+ aiConversationModeSchema,
+ aiConversationSettingsUpdateSchema,
+ type AiConversationMode,
+ type AiConversationSession,
+ type AiConversationSettingsUpdate,
+} from "./ai-conversation-session.schemas";
 import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
- aiConversationPersonaSchema,
- aiConversationProfileSchema,
  aiConversationReplyModeSchema,
- DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
  type AiConversationProfile,
 } from "./ai-conversation.schemas";
@@ -69,7 +68,6 @@ type RetryTurn = { clientMessageId: string; content: string };
 export function AiConversationWorkspace() {
  const t = useTranslations("AiConversation");
  const queryClient = useQueryClient();
- const profile = useAiConversationProfile();
  const [isSetupOpen, setIsSetupOpen] = useState(false);
  const [draft, setDraft] = useState("");
  const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
@@ -81,7 +79,7 @@ export function AiConversationWorkspace() {
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
  const sessionQuery = useQuery({
   queryKey: SESSION_QUERY_KEY,
-  queryFn: ({ signal }) => fetchAiConversationSession({ signal }),
+  queryFn: ({ signal }) => ensureAiConversationSession({ signal }),
   retry: false,
  });
  const runtimeHealthQuery = useQuery({
@@ -93,6 +91,41 @@ export function AiConversationWorkspace() {
    }),
   enabled: !isRuntimeLoading,
   retry: false,
+ });
+ const settingsMutation = useMutation({
+  retry: false,
+  mutationFn: async (settings: AiConversationSettingsUpdate) => {
+   const session = sessionQuery.data?.conversation
+    ? sessionQuery.data
+    : await ensureAiConversationSession();
+   const conversation = session.conversation;
+   if (!conversation) {
+    throw new Error(t("setup.saveError"));
+   }
+   return updateAiConversationSettings(conversation.id, settings);
+  },
+  onSuccess: (settings) => {
+   queryClient.setQueryData<AiConversationSession>(SESSION_QUERY_KEY, (current) => {
+    if (!current?.conversation || current.conversation.id !== settings.conversationId) {
+     return current;
+    }
+    return {
+     ...current,
+     learnerLevel: settings.learnerLevel,
+     conversation: {
+      ...current.conversation,
+      mode: settings.mode,
+      correctionStyle: settings.correctionStyle,
+      replyMode: settings.replyMode,
+     },
+    };
+   });
+   setIsSetupOpen(false);
+   void queryClient.invalidateQueries({ queryKey: SESSION_QUERY_KEY });
+  },
+  onError: () => {
+   void sessionQuery.refetch();
+  },
  });
  const sendMutation = useMutation({
   retry: false,
@@ -118,7 +151,6 @@ export function AiConversationWorkspace() {
     {
      clientMessageId,
      content,
-     profile,
      ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
     },
     { signal: controller.signal },
@@ -132,6 +164,8 @@ export function AiConversationWorkspace() {
    );
    const nextSession: AiConversationSession = {
     conversation: session.conversation,
+    character: session.character,
+    learnerLevel: session.learnerLevel,
     messages: [...retainedMessages, turn.userMessage, turn.assistantMessage].sort(
      (left, right) => left.seq - right.seq,
     ),
@@ -165,33 +199,40 @@ export function AiConversationWorkspace() {
  const runtimeHealth = runtimeHealthQuery.data ?? null;
  const isHealthChecking = runtimeHealthQuery.isFetching;
  const isSending = sendMutation.isPending;
- const persistedMessages = sessionQuery.data?.messages ?? [];
- const personaLabels: Record<AiConversationProfile["persona"], string> = {
-  tutor: t("personas.tutor"),
-  friend: t("personas.friend"),
-  "hsk-examiner": t("personas.hskExaminer"),
-  "grammar-coach": t("personas.grammarCoach"),
+ const session = sessionQuery.data ?? null;
+ const conversation = session?.conversation ?? null;
+ const character = session?.character ?? null;
+ const learnerLevel = session?.learnerLevel ?? aiConversationLearnerLevelSchema.enum.intermediate;
+ const persistedMessages = session?.messages ?? [];
+ const modeLabels: Record<AiConversationMode, string> = {
+  natural: t("modes.natural"),
+  "speaking-practice": t("modes.speakingPractice"),
+  "grammar-coach": t("modes.grammarCoach"),
+  "hskk-practice": t("modes.hskkPractice"),
  };
  const levelLabels: Record<AiConversationProfile["learnerLevel"], string> = {
   beginner: t("levels.beginner"),
   intermediate: t("levels.intermediate"),
   advanced: t("levels.advanced"),
  };
+ const assistantName = character?.displayName ?? t("character.defaultName");
+ const activeMode = conversation?.mode ?? aiConversationModeSchema.enum.natural;
  const greeting: AiConversationMessage = {
   role: "assistant",
   content: t("greeting", {
-   name: profile.displayName,
-   role: personaLabels[profile.persona],
+   name: assistantName,
+   mode: modeLabels[activeMode],
   }),
  };
- const renderedMessages = sessionQuery.isError
-  ? []
-  : persistedMessages.length > 0
-    ? persistedMessages.map((message) => ({
-       key: message.id,
-       message: { role: message.role, content: message.content } satisfies AiConversationMessage,
-      }))
-    : [{ key: "greeting", message: greeting }];
+ const renderedMessages =
+  sessionQuery.isPending || sessionQuery.isError
+   ? []
+   : persistedMessages.length > 0
+     ? persistedMessages.map((message) => ({
+        key: message.id,
+        message: { role: message.role, content: message.content } satisfies AiConversationMessage,
+       }))
+     : [{ key: "greeting", message: greeting }];
  const pendingMessage =
   sendMutation.isPending && sendMutation.variables
    ? {
@@ -202,10 +243,21 @@ export function AiConversationWorkspace() {
       } satisfies AiConversationMessage,
      }
    : null;
- const profileAvatar = profile.displayName.trim().slice(0, 1) || "AI";
+ const profileAvatar = assistantName.trim().slice(0, 1) || "AI";
+ const characterSummary = character
+  ? [character.city, ...character.interests].filter(Boolean).join(" · ")
+  : t("fallbackInterest");
  const sessionError = sessionQuery.error instanceof Error ? sessionQuery.error.message : null;
  const sendError = sendMutation.error instanceof Error ? sendMutation.error.message : null;
  const visibleError = sendError || sessionError;
+ const currentSettings: AiConversationSettingsUpdate | null = conversation
+  ? {
+     mode: conversation.mode,
+     correctionStyle: conversation.correctionStyle,
+     replyMode: conversation.replyMode,
+     learnerLevel,
+    }
+  : null;
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -243,11 +295,6 @@ export function AiConversationWorkspace() {
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
  }, [isSending, persistedMessages.length]);
-
- const saveProfile = (nextProfile: AiConversationProfile) => {
-  saveAiConversationProfile(nextProfile);
-  setIsSetupOpen(false);
- };
 
  const selectRuntimeKey = (value: string) => {
   const nextValue =
@@ -332,7 +379,12 @@ export function AiConversationWorkspace() {
      </Typography>
     </div>
     <div className="flex flex-wrap gap-2">
-     <Button type="button" variant="outline" onClick={() => setIsSetupOpen(true)}>
+     <Button
+      type="button"
+      variant="outline"
+      onClick={() => setIsSetupOpen(true)}
+      disabled={!currentSettings || sessionQuery.isFetching}
+     >
       <Settings2 data-icon="inline-start" />
       {t("actions.setup")}
      </Button>
@@ -351,17 +403,17 @@ export function AiConversationWorkspace() {
       <div className="grid min-w-0 gap-1">
        <div className="flex flex-wrap items-center gap-2">
         <Typography as="h2" variant="cardTitle" weight="bold">
-         {profile.displayName}
+         {assistantName}
         </Typography>
         <Badge variant="accent" casing="natural">
-         {personaLabels[profile.persona]}
+         {modeLabels[activeMode]}
         </Badge>
         <Badge variant="default" casing="natural">
-         {levelLabels[profile.learnerLevel]}
+         {levelLabels[learnerLevel]}
         </Badge>
        </div>
        <Typography variant="caption" tone="muted" clamp="one">
-        {profile.interests || t("fallbackInterest")}
+        {characterSummary}
        </Typography>
       </div>
      </div>
@@ -416,23 +468,19 @@ export function AiConversationWorkspace() {
      aria-relevant="additions text"
     >
      {renderedMessages.map(({ key, message }) => (
-      <AiConversationMessageBubble
-       key={key}
-       message={message}
-       assistantName={profile.displayName}
-      />
+      <AiConversationMessageBubble key={key} message={message} assistantName={assistantName} />
      ))}
      {pendingMessage ? (
       <AiConversationMessageBubble
        key={pendingMessage.key}
        message={pendingMessage.message}
-       assistantName={profile.displayName}
+       assistantName={assistantName}
       />
      ) : null}
      {isSending ? (
       <AiConversationTypingBubble
-       assistantName={profile.displayName}
-       label={t("message.replying", { name: profile.displayName })}
+       assistantName={assistantName}
+       label={t("message.replying", { name: assistantName })}
       />
      ) : null}
     </div>
@@ -487,32 +535,51 @@ export function AiConversationWorkspace() {
     </form>
    </Card>
 
-   {isSetupOpen ? (
-    <PersonaSetupDialog
-     initialProfile={profile}
-     onOpenChange={setIsSetupOpen}
-     onSave={saveProfile}
+   {isSetupOpen && currentSettings ? (
+    <ConversationSettingsDialog
+     initialSettings={currentSettings}
+     isSaving={settingsMutation.isPending}
+     saveError={
+      settingsMutation.error instanceof Error ? settingsMutation.error.message : null
+     }
+     onOpenChange={(open) => {
+      if (!settingsMutation.isPending) setIsSetupOpen(open);
+     }}
+     onSave={(settings) => settingsMutation.mutate(settings)}
     />
    ) : null}
   </div>
  );
 }
 
-function PersonaSetupDialog({
- initialProfile,
+function ConversationSettingsDialog({
+ initialSettings,
+ isSaving,
+ saveError,
  onOpenChange,
  onSave,
 }: {
- initialProfile: AiConversationProfile;
+ initialSettings: AiConversationSettingsUpdate;
+ isSaving: boolean;
+ saveError: string | null;
  onOpenChange: (open: boolean) => void;
- onSave: (profile: AiConversationProfile) => void;
+ onSave: (settings: AiConversationSettingsUpdate) => void;
 }) {
  const t = useTranslations("AiConversation");
- const personaOptions = [
-  { value: aiConversationPersonaSchema.enum.tutor, label: t("personas.tutor") },
-  { value: aiConversationPersonaSchema.enum.friend, label: t("personas.friend") },
-  { value: aiConversationPersonaSchema.enum["hsk-examiner"], label: t("personas.hskExaminer") },
-  { value: aiConversationPersonaSchema.enum["grammar-coach"], label: t("personas.grammarCoach") },
+ const modeOptions = [
+  { value: aiConversationModeSchema.enum.natural, label: t("modes.natural") },
+  {
+   value: aiConversationModeSchema.enum["speaking-practice"],
+   label: t("modes.speakingPractice"),
+  },
+  {
+   value: aiConversationModeSchema.enum["grammar-coach"],
+   label: t("modes.grammarCoach"),
+  },
+  {
+   value: aiConversationModeSchema.enum["hskk-practice"],
+   label: t("modes.hskkPractice"),
+  },
  ];
  const levelOptions = [
   { value: aiConversationLearnerLevelSchema.enum.beginner, label: t("levels.beginner") },
@@ -530,8 +597,8 @@ function PersonaSetupDialog({
   { value: aiConversationReplyModeSchema.enum.bilingual, label: t("replyModes.bilingual") },
  ];
  const form = useAppForm({
-  defaultValues: initialProfile,
-  validators: { onSubmit: aiConversationProfileSchema },
+  defaultValues: initialSettings,
+  validators: { onSubmit: aiConversationSettingsUpdateSchema },
   onSubmit: ({ value }) => {
    onSave(value);
   },
@@ -551,18 +618,8 @@ function PersonaSetupDialog({
      }}
     >
      <DialogBody className="grid gap-5 md:grid-cols-2">
-      <form.AppField name="persona">
-       {(field) => <field.Select label={t("setup.persona")} options={personaOptions} required />}
-      </form.AppField>
-      <form.AppField name="displayName">
-       {(field) => (
-        <field.TextField
-         label={t("setup.displayName")}
-         required
-         maxLength={40}
-         placeholder={t("setup.displayNamePlaceholder")}
-        />
-       )}
+      <form.AppField name="mode">
+       {(field) => <field.Select label={t("setup.mode")} options={modeOptions} required />}
       </form.AppField>
       <form.AppField name="learnerLevel">
        {(field) => <field.Select label={t("setup.learnerLevel")} options={levelOptions} required />}
@@ -572,64 +629,26 @@ function PersonaSetupDialog({
         <field.Select label={t("setup.correctionStyle")} options={correctionOptions} required />
        )}
       </form.AppField>
-      <div className="md:col-span-2">
-       <form.AppField name="replyMode">
-        {(field) => (
-         <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />
-        )}
-       </form.AppField>
-      </div>
-      <div className="md:col-span-2">
-       <form.AppField name="interests">
-        {(field) => (
-         <field.Textarea
-          label={t("setup.interests")}
-          maxLength={300}
-          rows={3}
-          placeholder={t("setup.interestsPlaceholder")}
-         />
-        )}
-       </form.AppField>
-      </div>
-      <div className="md:col-span-2">
-       <form.AppField name="characterNotes">
-        {(field) => (
-         <field.Textarea
-          label={t("setup.characterNotes")}
-          maxLength={600}
-          rows={3}
-          placeholder={t("setup.characterNotesPlaceholder")}
-         />
-        )}
-       </form.AppField>
-      </div>
-      <div className="md:col-span-2">
-       <form.AppField name="memoryNotes">
-        {(field) => (
-         <field.Textarea
-          label={t("setup.memoryNotes")}
-          description={t("setup.memoryNotesDescription")}
-          maxLength={1200}
-          rows={4}
-          placeholder={t("setup.memoryNotesPlaceholder")}
-         />
-        )}
-       </form.AppField>
-      </div>
+      <form.AppField name="replyMode">
+       {(field) => (
+        <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />
+       )}
+      </form.AppField>
+      {saveError ? (
+       <div className="md:col-span-2">
+        <Typography variant="bodySmall" tone="danger">
+         {saveError}
+        </Typography>
+       </div>
+      ) : null}
      </DialogBody>
      <DialogFooter>
-      <Button
-       type="button"
-       variant="ghost"
-       onClick={() => form.reset(DEFAULT_AI_CONVERSATION_PROFILE)}
-      >
-       <RotateCcw data-icon="inline-start" />
-       {t("actions.defaults")}
-      </Button>
-      <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+      <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isSaving}>
        {t("actions.cancel")}
       </Button>
-      <Button type="submit">{t("actions.save")}</Button>
+      <Button type="submit" disabled={isSaving}>
+       {isSaving ? t("actions.saving") : t("actions.save")}
+      </Button>
      </DialogFooter>
     </form>
    </DialogContent>
