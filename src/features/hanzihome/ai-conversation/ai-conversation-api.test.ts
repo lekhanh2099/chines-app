@@ -3,8 +3,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
  fetchAiConversationSession,
  sendPersistedAiConversationMessage,
+ updateAiConversationSettings,
 } from "./ai-conversation-api";
-import { DEFAULT_AI_CONVERSATION_PROFILE } from "./ai-conversation.schemas";
 
 const conversationId = "11111111-1111-4111-8111-111111111111";
 const characterId = "22222222-2222-4222-8222-222222222222";
@@ -47,6 +47,13 @@ describe("AI conversation client transport", () => {
      replyMode: "adaptive",
      memoryPolicy: "inherit",
     },
+    character: {
+     id: characterId,
+     displayName: "小林",
+     city: "上海",
+     interests: ["电影"],
+    },
+    learnerLevel: "intermediate",
     messages: [],
    }),
   );
@@ -62,6 +69,45 @@ describe("AI conversation client transport", () => {
     body: JSON.stringify({ action: "session" }),
    }),
   );
+ });
+
+ it("persists conversation behavior without legacy browser profile fields", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({
+    conversationId,
+    characterId,
+    mode: "grammar-coach",
+    correctionStyle: "strict",
+    replyMode: "chinese",
+    learnerLevel: "advanced",
+   }),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await updateAiConversationSettings(conversationId, {
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+
+  const expectedBody = JSON.stringify({
+   action: "update-settings",
+   conversationId,
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({
+    method: "POST",
+    body: expectedBody,
+   }),
+  );
+  expect(expectedBody).not.toContain('"profile"');
+  expect(expectedBody).not.toContain('"persona"');
  });
 
  it("sends only the new turn command instead of transcript or local profile", async () => {
@@ -93,7 +139,6 @@ describe("AI conversation client transport", () => {
   await sendPersistedAiConversationMessage(conversationId, {
    clientMessageId,
    content: "你好",
-   profile: DEFAULT_AI_CONVERSATION_PROFILE,
   });
 
   const expectedBody = JSON.stringify({
@@ -111,6 +156,5 @@ describe("AI conversation client transport", () => {
   );
   expect(expectedBody).not.toContain('"messages"');
   expect(expectedBody).not.toContain('"profile"');
-  expect(expectedBody).not.toContain(DEFAULT_AI_CONVERSATION_PROFILE.displayName);
  });
 });
