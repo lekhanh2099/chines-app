@@ -1,9 +1,11 @@
 import { z } from "zod";
 
-import { requireAuthenticatedRoute, apiError, privateNoStoreJson } from "@/lib/api/authenticated-route";
+import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 import {
+ dailyReadingErrorResponseSchema,
  dailyReadingSourcePreviewRequestSchema,
  dailyReadingSourcePreviewResponseSchema,
+ type DailyReadingErrorCode,
 } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 import {
  discoverDailyReadingSource,
@@ -13,22 +15,33 @@ import {
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+function errorResponse(code: DailyReadingErrorCode, detail: string, status: number) {
+ return privateNoStoreJson(
+  dailyReadingErrorResponseSchema.parse({ code, detail: detail.slice(0, 1000) }),
+  { status },
+ );
+}
+
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
- if (!auth.authenticated) return auth.response;
+ if (!auth.authenticated) {
+  return errorResponse("unauthorized", "Cần đăng nhập trước khi kiểm tra nguồn Daily Reading.", 401);
+ }
  const body: unknown = await request.json().catch(() => null);
  const parsed = dailyReadingSourcePreviewRequestSchema.safeParse(body);
- if (!parsed.success) return apiError("Yêu cầu kiểm tra nguồn không hợp lệ.", 400, "DAILY_READING_INVALID_REQUEST");
+ if (!parsed.success) {
+  return errorResponse("invalid-request", "Yêu cầu kiểm tra nguồn không hợp lệ.", 400);
+ }
  try {
   const discovery = await discoverDailyReadingSource(
    parsed.data.excludedUrls,
    parsed.data.recentTopics,
   );
   if (discovery.source === null) {
-   return apiError(
+   return errorResponse(
+    "source-unavailable",
     `Không tìm được bài báo gần đây có thể trích xuất an toàn. ${formatDailyReadingSourceReport(discovery.report)}`,
     503,
-    "DAILY_READING_SOURCE_UNAVAILABLE",
    );
   }
   const response = dailyReadingSourcePreviewResponseSchema.parse({
@@ -49,7 +62,12 @@ export async function POST(request: Request) {
   });
   return privateNoStoreJson(response);
  } catch (error) {
-  const detail = error instanceof z.ZodError ? "Nguồn bài báo không đúng contract." : error instanceof Error ? error.message : "Không thể kiểm tra nguồn.";
-  return apiError(detail, 500, "DAILY_READING_SOURCE_FAILED");
+  const detail =
+   error instanceof z.ZodError
+    ? "Nguồn bài báo không đúng contract."
+    : error instanceof Error
+      ? error.message
+      : "Không thể kiểm tra nguồn.";
+  return errorResponse("source-extraction-failed", detail, 500);
  }
 }
