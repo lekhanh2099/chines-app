@@ -1,12 +1,13 @@
 {
  "title": "AI Conversation",
- "description": "Practice Chinese with the character, correction style, and AI runtime you choose. The character profile is saved on this device; conversation content remains in the current session only.",
+ "description": "Practice Chinese with a persistent character and account-backed conversation settings. Conversation history remains available after reload so you can continue where you left off.",
  "actions": {
-  "setup": "Set up character",
+  "setup": "Conversation setup",
   "apiKeys": "Manage API keys",
   "clear": "Clear session",
   "send": "Send",
   "sending": "Sending…",
+  "saving": "Saving…",
   "defaults": "Defaults",
   "cancel": "Cancel",
   "save": "Save setup"
@@ -16,6 +17,12 @@
   "friend": "Chinese friend",
   "hskExaminer": "HSKK examiner",
   "grammarCoach": "Grammar coach"
+ },
+ "modes": {
+  "natural": "Natural conversation",
+  "speakingPractice": "Speaking practice",
+  "grammarCoach": "Grammar coach",
+  "hskkPractice": "HSKK practice"
  },
  "levels": {
   "beginner": "Beginner",
@@ -32,7 +39,10 @@
   "chinese": "Prefer Chinese",
   "bilingual": "Chinese + Vietnamese support"
  },
- "greeting": "你好，我是{name}。I am in “{role}” mode. Start in Chinese or tell me your goal for this practice session.",
+ "character": {
+  "defaultName": "小林"
+ },
+ "greeting": "你好，我是{name}。I am in “{mode}” mode. Start in Chinese or tell me your goal for this practice session.",
  "fallbackInterest": "Chinese conversation",
  "runtime": {
   "label": "AI runtime",
@@ -58,13 +68,15 @@
  "message": {
   "label": "Message",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter to send · AI keeps up to 20 recent messages plus the stable memory profile.",
+  "hint": "Ctrl/Cmd + Enter to send · The current conversation and behavior settings are saved to your account.",
   "replying": "{name} is replying…",
   "sendError": "Could not send the conversation."
  },
  "setup": {
-  "title": "Conversation character setup",
-  "description": "Choose the role, correction intensity, and details AI should remember. This profile is stored only in the browser on this device.",
+  "title": "Conversation setup",
+  "description": "Choose the conversation mode, correction intensity, and reply behavior for this conversation. Your learner level is stored on your account and used for subsequent turns.",
+  "mode": "Conversation mode",
+  "saveError": "Could not save conversation settings.",
   "persona": "Role",
   "displayName": "Character name",
   "displayNamePlaceholder": "Example: 小林",
