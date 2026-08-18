@@ -1,0 +1,17 @@
+{
+ "modelProvider": {
+  "title": "Model & provider",
+  "description": "Chọn model hệ thống cho tra cứu chi tiết và quản lý API key cá nhân. Các điều khiển hạ tầng nằm sau phần hội thoại và bộ nhớ để không lấn át mục tiêu học.",
+  "dirty": "Model có thay đổi chưa lưu",
+  "synced": "Model đã đồng bộ",
+  "reset": "Reset model",
+  "save": "Lưu model",
+  "keyActions": "Tác vụ cho API key {label}"
+ },
+ "advanced": {
+  "title": "Nâng cao",
+  "description": "Prompt tra từ và câu dành cho việc tinh chỉnh hành vi lookup. Mặc định đóng để giữ trang cài đặt tập trung vào các lựa chọn thường dùng.",
+  "open": "Mở cài đặt nâng cao",
+  "close": "Đóng cài đặt nâng cao"
+ }
+}
