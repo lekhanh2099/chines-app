@@ -87,7 +87,6 @@ export async function sendPersistedAiConversationMessage(
  input: {
   clientMessageId: string;
   content: string;
-  profile: AiConversationProfile;
   apiKeyId?: string;
  },
  options?: { signal?: AbortSignal },
