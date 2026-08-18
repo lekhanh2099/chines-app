@@ -1,11 +1,19 @@
 import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 import {
+ aiConversationArchiveResponseSchema,
+ aiConversationHistorySchema,
+ aiConversationMemoryPolicySchema,
+ aiConversationMemoryPolicyStateSchema,
  aiConversationSessionSchema,
  aiConversationSettingsSchema,
  aiConversationSettingsUpdateSchema,
  aiConversationTurnRequestSchema,
  aiConversationTurnResponseSchema,
+ type AiConversationArchiveResponse,
+ type AiConversationHistoryItem,
+ type AiConversationMemoryPolicy,
+ type AiConversationMemoryPolicyState,
  type AiConversationSession,
  type AiConversationSettings,
  type AiConversationSettingsUpdate,
@@ -60,9 +68,16 @@ export async function fetchAiConversationRuntimeHealth(options?: {
 }
 
 export async function fetchAiConversationSession(options?: {
+ conversationId?: string;
  signal?: AbortSignal;
 }): Promise<AiConversationSession> {
- const { response, payload } = await postConversationAction({ action: "session" }, options?.signal);
+ const { response, payload } = await postConversationAction(
+  {
+   action: "session",
+   ...(options?.conversationId ? { conversationId: options.conversationId } : {}),
+  },
+  options?.signal,
+ );
 
  if (!response.ok) {
   throw new Error(readApiError(payload, "Không thể tải lịch sử hội thoại AI."));
@@ -84,6 +99,59 @@ export async function ensureAiConversationSession(options?: {
  }
 
  return aiConversationSessionSchema.parse(payload);
+}
+
+export async function fetchAiConversationHistory(options?: {
+ signal?: AbortSignal;
+}): Promise<AiConversationHistoryItem[]> {
+ const { response, payload } = await postConversationAction({ action: "history" }, options?.signal);
+ if (!response.ok) {
+  throw new Error(readApiError(payload, "Không thể tải danh sách hội thoại AI."));
+ }
+ return aiConversationHistorySchema.parse(payload);
+}
+
+export async function createAiConversation(options?: {
+ signal?: AbortSignal;
+}): Promise<AiConversationSession> {
+ const { response, payload } = await postConversationAction(
+  { action: "create-conversation" },
+  options?.signal,
+ );
+ if (!response.ok) {
+  throw new Error(readApiError(payload, "Không thể tạo hội thoại AI mới."));
+ }
+ return aiConversationSessionSchema.parse(payload);
+}
+
+export async function archiveAiConversation(
+ conversationId: string,
+ options?: { signal?: AbortSignal },
+): Promise<AiConversationArchiveResponse> {
+ const { response, payload } = await postConversationAction(
+  { action: "archive-conversation", conversationId },
+  options?.signal,
+ );
+ if (!response.ok) {
+  throw new Error(readApiError(payload, "Không thể lưu trữ hội thoại AI."));
+ }
+ return aiConversationArchiveResponseSchema.parse(payload);
+}
+
+export async function updateAiConversationMemoryPolicy(
+ conversationId: string,
+ memoryPolicy: AiConversationMemoryPolicy,
+ options?: { signal?: AbortSignal },
+): Promise<AiConversationMemoryPolicyState> {
+ const policy = aiConversationMemoryPolicySchema.parse(memoryPolicy);
+ const { response, payload } = await postConversationAction(
+  { action: "update-memory-policy", conversationId, memoryPolicy: policy },
+  options?.signal,
+ );
+ if (!response.ok) {
+  throw new Error(readApiError(payload, "Không thể cập nhật bộ nhớ hội thoại."));
+ }
+ return aiConversationMemoryPolicyStateSchema.parse(payload);
 }
 
 export async function updateAiConversationSettings(
