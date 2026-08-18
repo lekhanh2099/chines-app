@@ -1,5 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { dailyReadingGenerateStreamEventSchema, type DailyReadingGenerationStage } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+import type { JsonFieldValue } from "@/types/json";
+
 const {
  discoverDailyReadingSource,
  generateValidatedDailyReading,
@@ -15,7 +18,7 @@ const {
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
- privateNoStoreJson: (body: unknown, init?: ResponseInit) =>
+ privateNoStoreJson: (body: JsonFieldValue, init?: ResponseInit) =>
   Response.json(body, {
    ...init,
    headers: { "Cache-Control": "private, no-store" },
@@ -37,23 +40,23 @@ const source = {
  publisher: "中国新闻网",
  url: "https://www.chinanews.com.cn/cul/2026/08-18/123.shtml",
  publishedAt: "2026-08-18T02:00:00.000Z",
- topic: "culture" as const,
+ topic: "culture",
  extractedTextZh: "文化".repeat(180),
 };
 
 const reading = {
- schemaVersion: "1.0.0" as const,
+ schemaVersion: "1.0.0",
  id: "daily-2026-08-18-test",
  publishedDate: "2026-08-18",
  createdAt: "2026-08-18T03:00:00.000Z",
- releaseKind: "manual" as const,
+ releaseKind: "manual",
  titleZh: "城市博物馆的新展览",
  titlePinyin: "chéng shì bó wù guǎn de xīn zhǎn lǎn",
  titleVi: "Triển lãm mới của bảo tàng thành phố",
  whyWorthReadingVi: "Bài đọc giúp luyện cách mô tả một hoạt động văn hóa.",
  adaptationNoticeVi: "Bản học tập được biên soạn từ nguồn báo chí.",
- topic: "culture" as const,
- level: "HSK5" as const,
+ topic: "culture",
+ level: "HSK5",
  estimatedMinutes: 8,
  paragraphs: Array.from({ length: 4 }, (_value, index) => ({
   id: `p${index + 1}`,
@@ -80,7 +83,7 @@ const reading = {
  })),
  questions: Array.from({ length: 5 }, (_value, index) => ({
   id: `q${index + 1}`,
-  type: index === 0 ? ("main_idea" as const) : ("detail" as const),
+  type: index === 0 ? "main_idea" : "detail",
   promptZh: `问题${index + 1}是什么？`,
   promptVi: `Câu hỏi ${index + 1} là gì?`,
   answerZh: `答案${index + 1}。`,
@@ -98,15 +101,23 @@ const reading = {
  },
  generatedByProvider: "Google Gemini",
  generatedByModel: "gemini-test",
- pinyinReviewStatus: "auto-generated" as const,
+ pinyinReviewStatus: "auto-generated",
 };
 
-const request = (body: unknown) =>
+const request = (body: JsonFieldValue) =>
  new Request("http://localhost/api/hanzihome/reader/daily-reading/generate", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body),
  });
+
+function parseEvents(responseText: string) {
+ return responseText
+  .trim()
+  .split("\n")
+  .filter(Boolean)
+  .map((line) => dailyReadingGenerateStreamEventSchema.parse(JSON.parse(line)));
+}
 
 describe("Daily Reading generate route", () => {
  beforeEach(() => {
@@ -117,7 +128,11 @@ describe("Daily Reading generate route", () => {
   });
   getActiveUserApiKeyCredentials.mockResolvedValue([]);
   discoverDailyReadingSource.mockImplementation(
-   async (_excluded: string[], _topics: string[], onProgress?: (stage: string) => void) => {
+   async (
+    _excluded: string[],
+    _topics: string[],
+    onProgress?: (stage: DailyReadingGenerationStage) => void,
+   ) => {
     onProgress?.("discovering");
     onProgress?.("extracting");
     return {
@@ -134,7 +149,7 @@ describe("Daily Reading generate route", () => {
    },
   );
   generateValidatedDailyReading.mockImplementation(
-   async ({ onProgress }: { onProgress?: (stage: string) => void }) => {
+   async ({ onProgress }: { onProgress?: (stage: DailyReadingGenerationStage) => void }) => {
     onProgress?.("drafting");
     onProgress?.("validating");
     return reading;
@@ -161,10 +176,7 @@ describe("Daily Reading generate route", () => {
   const response = await POST(
    request({ mode: "manual", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
   );
-  const events = (await response.text())
-   .trim()
-   .split("\n")
-   .map((line) => JSON.parse(line));
+  const events = parseEvents(await response.text());
 
   expect(response.status).toBe(200);
   expect(response.headers.get("content-type")).toContain("application/x-ndjson");
@@ -193,10 +205,7 @@ describe("Daily Reading generate route", () => {
   const response = await POST(
    request({ mode: "scheduled", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
   );
-  const events = (await response.text())
-   .trim()
-   .split("\n")
-   .map((line) => JSON.parse(line));
+  const events = parseEvents(await response.text());
 
   expect(events.at(-1)).toMatchObject({
    type: "error",
