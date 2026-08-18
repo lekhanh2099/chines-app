@@ -183,15 +183,16 @@ export function AiConversationWorkspace() {
       message: { role: message.role, content: message.content } satisfies AiConversationMessage,
      }))
    : [{ key: "greeting", message: greeting }];
- const pendingMessage = sendMutation.variables
-  ? {
-     key: `pending-${sendMutation.variables.clientMessageId}`,
-     message: {
-      role: "user" as const,
-      content: sendMutation.variables.content,
-     },
-    }
-  : null;
+ const pendingMessage =
+  sendMutation.isPending && sendMutation.variables
+   ? {
+      key: `pending-${sendMutation.variables.clientMessageId}`,
+      message: {
+       role: "user",
+       content: sendMutation.variables.content,
+      } satisfies AiConversationMessage,
+     }
+   : null;
  const profileAvatar = profile.displayName.trim().slice(0, 1) || "AI";
  const sessionError = sessionQuery.error instanceof Error ? sessionQuery.error.message : null;
  const sendError = sendMutation.error instanceof Error ? sendMutation.error.message : null;
