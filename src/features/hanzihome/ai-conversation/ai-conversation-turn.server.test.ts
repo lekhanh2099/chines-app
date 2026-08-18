@@ -41,13 +41,21 @@ vi.mock("./ai-conversation-memory-persistence.server", () => ({
 }));
 vi.mock("./ai-conversation-post-turn.server", () => ({ processDueAiConversationPostTurnJobs }));
 vi.mock("./ai-conversation-memory-extraction.server", () => ({ resolveExplicitAiConversationForget }));
-vi.mock("./ai-conversation-memory.server", async (importOriginal) => {
- const original = await importOriginal<typeof import("./ai-conversation-memory.server")>();
- return {
-  ...original,
-  retrieveRelevantAiConversationMemories,
- };
-});
+vi.mock("./ai-conversation-memory.server", () => ({
+ isAiConversationLongTermMemoryEnabled: ({
+  conversationPolicy,
+  userPreference,
+ }: {
+  conversationPolicy: "inherit" | "enabled" | "disabled";
+  userPreference: boolean;
+ }) => {
+  if (conversationPolicy === "disabled") return false;
+  if (conversationPolicy === "enabled") return true;
+  return userPreference;
+ },
+ isExplicitAiConversationForgetIntent: (content: string) => /(?:忘掉|别记|đừng nhớ|quên đi)/iu.test(content),
+ retrieveRelevantAiConversationMemories,
+}));
 
 import { generatePersistedAiConversationTurn } from "./ai-conversation-turn.server";
 
