@@ -7,12 +7,16 @@ import type {
  DailyReadingSourceCandidate,
 } from "./daily-reading.schemas";
 
-const { generateAiConversationReply } = vi.hoisted(() => ({
- generateAiConversationReply: vi.fn(),
+const { requestDailyReadingProvider, requestDailyReadingSystemGemini } = vi.hoisted(() => ({
+ requestDailyReadingProvider: vi.fn(),
+ requestDailyReadingSystemGemini: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/services/ai.service", () => ({ generateAiConversationReply }));
+vi.mock("./daily-reading-provider.server", () => ({
+ requestDailyReadingProvider,
+ requestDailyReadingSystemGemini,
+}));
 
 import { generateValidatedDailyReading } from "./daily-reading-generation.server";
 
@@ -37,7 +41,7 @@ const backupCredential: UserApiKeyCredential = {
  provider: "gemini",
  label: "Backup Gemini",
  priority: 1,
- defaultModel: "gemini-2.5-flash",
+ defaultModel: "models/gemini-2.5-flash",
  apiKey: "backup-test-key",
 };
 
@@ -151,8 +155,8 @@ const validLearning = {
   "Bản học tập chỉ sử dụng các ý được nguồn cung cấp và phần câu hỏi bám vào văn bản đã khóa.",
 };
 
-function personalResult(data: object) {
- return { data: JSON.stringify(data), error: null };
+function providerResult(data: object, model = "gpt-4.1-mini") {
+ return { content: JSON.stringify(data), error: null, model };
 }
 
 describe("validated Daily Reading generation", () => {
@@ -160,6 +164,11 @@ describe("validated Daily Reading generation", () => {
   vi.useFakeTimers();
   vi.setSystemTime(new Date("2026-08-18T04:00:00.000Z"));
   vi.clearAllMocks();
+  requestDailyReadingSystemGemini.mockResolvedValue({
+   content: null,
+   error: "system Gemini unavailable in test",
+   model: "models/gemini-3.1-flash-lite",
+  });
  });
 
  afterEach(() => {
@@ -167,9 +176,9 @@ describe("validated Daily Reading generation", () => {
  });
 
  it("builds pinyin and source-grounded learning data from two validated AI stages", async () => {
-  generateAiConversationReply
-   .mockResolvedValueOnce(personalResult(validCore))
-   .mockResolvedValueOnce(personalResult(validLearning));
+  requestDailyReadingProvider
+   .mockResolvedValueOnce(providerResult(validCore))
+   .mockResolvedValueOnce(providerResult(validLearning));
   const progress: DailyReadingGenerationStage[] = [];
 
   const reading = await generateValidatedDailyReading({
@@ -189,7 +198,8 @@ describe("validated Daily Reading generation", () => {
   );
   expect(reading.pinyinReviewStatus).toBe("auto-generated");
   expect(progress).toEqual(["drafting", "enriching", "validating", "finalizing"]);
-  expect(generateAiConversationReply).toHaveBeenCalledTimes(2);
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(2);
+  expect(requestDailyReadingSystemGemini).not.toHaveBeenCalled();
  });
 
  it("repairs a structurally valid but too-short core before generating learning material", async () => {
@@ -197,10 +207,10 @@ describe("validated Daily Reading generation", () => {
    ...validCore,
    paragraphs: validCore.paragraphs.map((paragraph) => ({ ...paragraph, zh: "博物馆介绍传统文化。" })),
   };
-  generateAiConversationReply
-   .mockResolvedValueOnce(personalResult(tooShortCore))
-   .mockResolvedValueOnce(personalResult(validCore))
-   .mockResolvedValueOnce(personalResult(validLearning));
+  requestDailyReadingProvider
+   .mockResolvedValueOnce(providerResult(tooShortCore))
+   .mockResolvedValueOnce(providerResult(validCore))
+   .mockResolvedValueOnce(providerResult(validLearning));
   const progress: DailyReadingGenerationStage[] = [];
 
   const reading = await generateValidatedDailyReading({
@@ -213,15 +223,15 @@ describe("validated Daily Reading generation", () => {
 
   expect(reading.releaseKind).toBe("scheduled");
   expect(progress).toContain("repairing_core");
-  expect(generateAiConversationReply).toHaveBeenCalledTimes(3);
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(3);
  });
 
  it("tries the next active BYOK credential before falling back to system Gemini", async () => {
-  generateAiConversationReply
-   .mockResolvedValueOnce({ data: null, error: "primary provider unavailable" })
-   .mockResolvedValueOnce(personalResult(validCore))
-   .mockResolvedValueOnce({ data: null, error: "primary provider unavailable" })
-   .mockResolvedValueOnce(personalResult(validLearning));
+  requestDailyReadingProvider
+   .mockResolvedValueOnce({ content: null, error: "primary provider unavailable", model: "gpt-4.1-mini" })
+   .mockResolvedValueOnce(providerResult(validCore, "models/gemini-2.5-flash"))
+   .mockResolvedValueOnce({ content: null, error: "primary provider unavailable", model: "gpt-4.1-mini" })
+   .mockResolvedValueOnce(providerResult(validLearning, "models/gemini-2.5-flash"));
 
   const reading = await generateValidatedDailyReading({
    source,
@@ -231,25 +241,32 @@ describe("validated Daily Reading generation", () => {
   });
 
   expect(reading.generatedByProvider).toBe("gemini");
-  expect(reading.generatedByModel).toBe("gemini-2.5-flash");
-  expect(generateAiConversationReply).toHaveBeenCalledTimes(4);
-  expect(generateAiConversationReply.mock.calls[0]?.[1].userApiKeys[0]?.id).toBe(credential.id);
-  expect(generateAiConversationReply.mock.calls[1]?.[1].userApiKeys[0]?.id).toBe(backupCredential.id);
+  expect(reading.generatedByModel).toBe("models/gemini-2.5-flash");
+  expect(requestDailyReadingProvider).toHaveBeenCalledTimes(4);
+  expect(requestDailyReadingProvider.mock.calls[0]?.[0].credential.id).toBe(credential.id);
+  expect(requestDailyReadingProvider.mock.calls[1]?.[0].credential.id).toBe(backupCredential.id);
+  expect(requestDailyReadingSystemGemini).not.toHaveBeenCalled();
  });
 
- it("normalizes a legacy null default model before calling a personal provider", async () => {
-  const legacyCredential: UserApiKeyCredential = { ...credential, defaultModel: null };
-  generateAiConversationReply
-   .mockResolvedValueOnce(personalResult(validCore))
-   .mockResolvedValueOnce(personalResult(validLearning));
+ it("falls back to system Gemini only after all personal providers fail", async () => {
+  requestDailyReadingProvider.mockResolvedValue({
+   content: null,
+   error: "personal provider unavailable",
+   model: "gpt-4.1-mini",
+  });
+  requestDailyReadingSystemGemini
+   .mockResolvedValueOnce(providerResult(validCore, "models/gemini-3.1-flash-lite"))
+   .mockResolvedValueOnce(providerResult(validLearning, "models/gemini-3.1-flash-lite"));
 
-  await generateValidatedDailyReading({
+  const reading = await generateValidatedDailyReading({
    source,
    preferredLevel: "HSK5",
    mode: "manual",
-   credentials: [legacyCredential],
+   credentials: [credential],
   });
 
-  expect(generateAiConversationReply.mock.calls[0]?.[1].userApiKeys[0]?.defaultModel).toBe("gpt-5-mini");
+  expect(reading.generatedByProvider).toBe("Google Gemini");
+  expect(reading.generatedByModel).toBe("models/gemini-3.1-flash-lite");
+  expect(requestDailyReadingSystemGemini).toHaveBeenCalledTimes(2);
  });
 });
