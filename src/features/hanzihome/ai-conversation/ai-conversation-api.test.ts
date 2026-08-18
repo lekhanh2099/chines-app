@@ -1,14 +1,40 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
+ archiveAiConversation,
+ createAiConversation,
+ fetchAiConversationHistory,
  fetchAiConversationSession,
  sendPersistedAiConversationMessage,
+ updateAiConversationMemoryPolicy,
  updateAiConversationSettings,
 } from "./ai-conversation-api";
 
 const conversationId = "11111111-1111-4111-8111-111111111111";
 const characterId = "22222222-2222-4222-8222-222222222222";
 const clientMessageId = "33333333-3333-4333-8333-333333333333";
+
+const sessionResponse = {
+ conversation: {
+  id: conversationId,
+  characterId,
+  title: "",
+  mode: "natural",
+  correctionStyle: "balanced",
+  replyMode: "adaptive",
+  memoryPolicy: "inherit",
+ },
+ character: {
+  id: characterId,
+  displayName: "小林",
+  city: "上海",
+  interests: ["电影"],
+ },
+ relationship: null,
+ learnerLevel: "intermediate",
+ memoryEnabled: true,
+ messages: [],
+};
 
 function persistedMessage({
  id,
@@ -35,38 +61,98 @@ describe("AI conversation client transport", () => {
   vi.unstubAllGlobals();
  });
 
- it("loads persisted session through the registered POST route", async () => {
+ it("loads a specific persisted session without sending transcript state", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(Response.json(sessionResponse));
+  vi.stubGlobal("fetch", fetchMock);
+
+  await fetchAiConversationSession({ conversationId });
+
+  const expectedBody = JSON.stringify({ action: "session", conversationId });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({ method: "POST", body: expectedBody }),
+  );
+  expect(expectedBody).not.toContain('"messages"');
+  expect(expectedBody).not.toContain('"profile"');
+ });
+
+ it("lists bounded conversation metadata through a dedicated command", async () => {
   const fetchMock = vi.fn().mockResolvedValue(
-   Response.json({
-    conversation: {
+   Response.json([
+    {
      id: conversationId,
      characterId,
-     title: "",
+     title: "周末计划",
      mode: "natural",
-     correctionStyle: "balanced",
-     replyMode: "adaptive",
      memoryPolicy: "inherit",
+     lastMessageAt: null,
+     createdAt: "2026-08-18T03:00:00+00:00",
+     updatedAt: "2026-08-18T03:00:00+00:00",
     },
-    character: {
-     id: characterId,
-     displayName: "小林",
-     city: "上海",
-     interests: ["电影"],
-    },
-    learnerLevel: "intermediate",
-    messages: [],
+   ]),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await fetchAiConversationHistory();
+
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({ body: JSON.stringify({ action: "history" }) }),
+  );
+ });
+
+ it("creates a new backend-owned conversation without client character identity", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(Response.json(sessionResponse));
+  vi.stubGlobal("fetch", fetchMock);
+
+  await createAiConversation();
+
+  const expectedBody = JSON.stringify({ action: "create-conversation" });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({ body: expectedBody }),
+  );
+  expect(expectedBody).not.toContain("characterId");
+  expect(expectedBody).not.toContain("profile");
+ });
+
+ it("updates no-memory policy without claiming temporary transcript semantics", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({
+    conversationId,
+    memoryPolicy: "disabled",
+    memoryEnabled: false,
    }),
   );
   vi.stubGlobal("fetch", fetchMock);
 
-  await fetchAiConversationSession();
+  await updateAiConversationMemoryPolicy(conversationId, "disabled");
 
-  expect(fetchMock).toHaveBeenCalledTimes(1);
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({
+    body: JSON.stringify({
+     action: "update-memory-policy",
+     conversationId,
+     memoryPolicy: "disabled",
+    }),
+   }),
+  );
+ });
+
+ it("archives through a recoverable lifecycle command instead of a browser delete", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({ conversationId, archived: true }),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await archiveAiConversation(conversationId);
+
   expect(fetchMock).toHaveBeenCalledWith(
    "/api/ai/conversation",
    expect.objectContaining({
     method: "POST",
-    body: JSON.stringify({ action: "session" }),
+    body: JSON.stringify({ action: "archive-conversation", conversationId }),
    }),
   );
  });
