@@ -3,12 +3,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
+import { dailyReadingInventoryFile } from "./api-inventory/daily-reading.mjs";
+
 const API_ROOT = "src/app/api";
 const PUBLIC_REGISTRY_FILE = "src/features/developer-api/api-registry.ts";
-const INVENTORY_FILES = [
- PUBLIC_REGISTRY_FILE,
- "src/features/developer-api/daily-reading-api-registry.ts",
-];
+const INVENTORY_FILES = [PUBLIC_REGISTRY_FILE, dailyReadingInventoryFile];
 const HTTP_METHODS = new Set(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 const REQUIRED_DIRECT_FLOWS = new Set([
  "direct:notes-library",
