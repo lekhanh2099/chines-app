@@ -1,0 +1,10 @@
+{
+ "tabs": {
+  "conversation": "对话与记忆",
+  "dailyReading": "每日阅读",
+  "providers": "模型与 API",
+  "usage": "使用情况",
+  "advanced": "高级设置",
+  "aria": "AI 设置分区"
+ }
+}
