@@ -98,28 +98,54 @@ async function requestStructured<T>({
  if (boundedPrompt.length === 0 || boundedPrompt.length > 5900) {
   throw new Error("Daily Reading prompt vượt giới hạn an toàn.");
  }
- const selected = credentials[0];
- if (selected) {
+
+ const providerErrors: string[] = [];
+ for (const credential of credentials) {
+  throwIfAborted(signal);
+  const runtimeCredential: UserApiKeyCredential = {
+   ...credential,
+   defaultModel: credential.defaultModel ?? getDefaultApiKeyModel(credential.provider),
+  };
   const personal = await generateAiConversationReply(
    [{ role: "user", content: boundedPrompt }],
-   { userApiKeys: [selected], abortSignal: signal, systemContext: systemPrompt },
+   { userApiKeys: [runtimeCredential], abortSignal: signal, systemContext: systemPrompt },
   );
   if (personal.data) {
    const parsed = parseStructured(personal.data, schema);
    if (parsed !== null) {
     return {
      data: parsed,
-     provider: selected.provider,
-     model: selected.defaultModel ?? getDefaultApiKeyModel(selected.provider),
+     provider: runtimeCredential.provider,
+     model: runtimeCredential.defaultModel,
     };
    }
+   providerErrors.push(`${runtimeCredential.label}: nội dung trả về không đúng schema Daily Reading.`);
+   continue;
   }
+  providerErrors.push(
+   `${runtimeCredential.label}: ${personal.error || "provider không trả về nội dung."}`,
+  );
  }
+
  const system = await callSystemGemini(boundedPrompt, signal);
- if (!system.data) throw new Error(system.error || "Không có AI provider khả dụng.");
- const parsed = parseStructured(system.data, schema);
- if (parsed === null) throw new Error("AI trả dữ liệu Daily Reading không đúng schema.");
- return { data: parsed, provider: "Google Gemini", model: DEFAULT_GEMINI_QUICK_MODEL };
+ if (system.data) {
+  const parsed = parseStructured(system.data, schema);
+  if (parsed !== null) {
+   return { data: parsed, provider: "Google Gemini", model: DEFAULT_GEMINI_QUICK_MODEL };
+  }
+  providerErrors.push("Gemini hệ thống: nội dung trả về không đúng schema Daily Reading.");
+ } else if (system.error) {
+  providerErrors.push(system.error);
+ }
+
+ if (credentials.length === 0 && !process.env.GEMINI_API_KEY) {
+  throw new Error(
+   "Không có AI provider khả dụng: chưa có API key cá nhân đang hoạt động và server chưa cấu hình GEMINI_API_KEY.",
+  );
+ }
+ throw new Error(
+  `Không có AI provider nào tạo được dữ liệu Daily Reading hợp lệ. ${providerErrors.join(" ")}`.trim(),
+ );
 }
 
 function compactSourceEvidence(source: DailyReadingSourceCandidate, maxChars: number) {
