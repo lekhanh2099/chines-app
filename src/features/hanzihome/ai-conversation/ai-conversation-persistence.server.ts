@@ -6,6 +6,7 @@ import { publicSupabaseEnv } from "@/lib/env/public";
 import { getSupabaseServerSecret } from "@/lib/env/server";
 import type { JsonObject } from "@/types/json";
 
+import type { AiConversationContextState } from "./ai-conversation-context.server";
 import type {
  AiConversationPersistedMessage,
  AiConversationSession,
@@ -28,6 +29,11 @@ const conversationRowSchema = z.object({
  memory_policy: z.enum(["inherit", "enabled", "disabled"]),
 });
 
+const conversationContextRowSchema = conversationRowSchema.extend({
+ summary: z.string(),
+ summary_until_seq: z.number().int().nonnegative(),
+});
+
 const messageRowSchema = z.object({
  id: z.uuid(),
  seq: z.number().int().positive(),
@@ -47,6 +53,24 @@ const assistantReplyRowSchema = messageRowSchema.extend({
 });
 
 const characterRowSchema = z.object({ id: z.uuid() });
+
+const characterContextRowSchema = z.object({
+ id: z.uuid(),
+ display_name: z.string().trim().min(1),
+ city: z.string(),
+ age: z.number().int().min(1).max(120).nullable(),
+ background: z.string(),
+ personality: z.string(),
+ speaking_style: z.string(),
+ interests: z.array(z.string()),
+ identity_notes: z.string(),
+});
+
+const relationshipContextRowSchema = z.object({
+ nickname: z.string(),
+ familiarity_score: z.number().min(0).max(1),
+ revision: z.number().int().nonnegative(),
+});
 
 const messageRpcResultSchema = z.union([
  messageRowSchema,
@@ -276,6 +300,91 @@ export async function ensureAiConversationSession(userId: string): Promise<AiCon
  const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
  const conversation = await createConversation(userId, characterId);
  return toSession(conversation, []);
+}
+
+export async function loadAiConversationContextState({
+ userId,
+ conversationId,
+}: {
+ userId: string;
+ conversationId: string;
+}): Promise<AiConversationContextState> {
+ const conversations = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(conversationContextRowSchema),
+  params: {
+   select:
+    "id,character_id,title,mode,correction_style,reply_mode,memory_policy,summary,summary_until_seq",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversationId}`,
+   archived_at: "is.null",
+   limit: "1",
+  },
+ });
+ const conversation = conversations[0];
+ if (!conversation) {
+  throw new AiConversationPersistenceRequestError(404, "AI_CONVERSATION_NOT_FOUND", "AI conversation not found");
+ }
+
+ const characters = await requestPostgrest({
+  resource: "ai_characters",
+  schema: z.array(characterContextRowSchema),
+  params: {
+   select:
+    "id,display_name,city,age,background,personality,speaking_style,interests,identity_notes",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversation.character_id}`,
+   archived_at: "is.null",
+   limit: "1",
+  },
+ });
+ const character = characters[0];
+ if (!character) {
+  throw new AiConversationPersistenceRequestError(409, "AI_CHARACTER_NOT_FOUND", "AI character not found");
+ }
+
+ const relationships = await requestPostgrest({
+  resource: "ai_relationship_states",
+  schema: z.array(relationshipContextRowSchema),
+  params: {
+   select: "nickname,familiarity_score,revision",
+   user_id: `eq.${userId}`,
+   character_id: `eq.${conversation.character_id}`,
+   limit: "1",
+  },
+ });
+ const relationship = relationships[0] ?? null;
+
+ return {
+  conversation: {
+   id: conversation.id,
+   characterId: conversation.character_id,
+   mode: conversation.mode,
+   correctionStyle: conversation.correction_style,
+   replyMode: conversation.reply_mode,
+   memoryPolicy: conversation.memory_policy,
+   summary: conversation.summary,
+   summaryUntilSeq: conversation.summary_until_seq,
+  },
+  character: {
+   id: character.id,
+   displayName: character.display_name,
+   city: character.city,
+   age: character.age,
+   background: character.background,
+   personality: character.personality,
+   speakingStyle: character.speaking_style,
+   interests: character.interests,
+   identityNotes: character.identity_notes,
+  },
+  relationship: relationship
+   ? {
+      nickname: relationship.nickname,
+      familiarityScore: relationship.familiarity_score,
+      revision: relationship.revision,
+     }
+   : null,
+ };
 }
 
 export async function appendAiConversationMessage({
