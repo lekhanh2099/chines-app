@@ -58,9 +58,13 @@ export async function generateSystemAiConversationReply(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
+     systemInstruction: {
+      parts: [{ text: resolvedSystemPrompt }],
+     },
      contents: [
       {
-       parts: [{ text: `${resolvedSystemPrompt}\n\n${renderConversationPrompt(messages)}` }],
+       role: "user",
+       parts: [{ text: renderConversationPrompt(messages) }],
       },
      ],
      generationConfig: {
