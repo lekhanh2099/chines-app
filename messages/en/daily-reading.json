@@ -104,6 +104,12 @@
  "settings": {
   "title": "New reading every day",
   "description": "Automatically find a real Chinese news article and create a 学习版 at 10:00. If the app is closed then, the first app open after 10:00 performs the catch-up run.",
+  "tabs": {
+   "overview": "Overview",
+   "pipeline": "Progress",
+   "history": "History",
+   "aria": "Daily Reading settings sections"
+  },
   "auto": {
    "title": "Automatic generation",
    "description": "At most one scheduled reading is created per day. Temporary failures retry with limits, and multiple tabs do not create duplicates.",
@@ -127,11 +133,14 @@
   "actions": {
    "testSource": "Test real source",
    "generateNow": "Find and create now",
-   "clear": "Delete generated readings"
+   "clear": "Delete generated readings",
+   "viewPipeline": "View progress",
+   "openAiSettings": "Open AI settings"
   },
   "pipeline": {
    "title": "Source check and generation",
    "description": "Current progress for the latest run. Validation steps keep the learning edition source-bound and schema-valid.",
+   "failedAt": "Latest run stopped at: {stage}",
    "schedule": "Release time",
    "scheduleDescription": "Wait for 10:00 or run manually.",
    "source": "Find source",
@@ -147,7 +156,7 @@
   },
   "history": {
    "title": "Run history",
-   "description": "The six most recent runs on this device.",
+   "description": "The six most recent runs on this device. Each row shows the exact running or failed stage.",
    "empty": "No generation runs yet.",
    "succeeded": "Completed",
    "pending": "Running",
@@ -165,6 +174,7 @@
    "sourceFailed": "The news source could not be tested.",
    "created": "Created: {title}",
    "generationFailed": "Daily Reading could not be created.",
+   "generationFailedAtStage": "Generation failed at {stage}: {detail}",
    "cleared": "Generated Daily Readings were removed from this device."
   }
  }
