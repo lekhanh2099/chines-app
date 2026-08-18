@@ -1,5 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import {
+ dailyReadingErrorResponseSchema,
+ dailyReadingSourcePreviewResponseSchema,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+import type { JsonFieldValue } from "@/types/json";
+
 const { discoverDailyReadingSource, requireAuthenticatedRoute } = vi.hoisted(() => ({
  discoverDailyReadingSource: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
@@ -8,7 +14,7 @@ const { discoverDailyReadingSource, requireAuthenticatedRoute } = vi.hoisted(() 
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
- privateNoStoreJson: (body: unknown, init?: ResponseInit) =>
+ privateNoStoreJson: (body: JsonFieldValue, init?: ResponseInit) =>
   Response.json(body, {
    ...init,
    headers: { "Cache-Control": "private, no-store" },
@@ -21,7 +27,7 @@ vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-source.server",
 
 import { POST } from "./route";
 
-const request = (body: unknown) =>
+const request = (body: JsonFieldValue) =>
  new Request("http://localhost/api/hanzihome/reader/daily-reading/source", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -41,9 +47,10 @@ describe("Daily Reading source route", () => {
   requireAuthenticatedRoute.mockResolvedValue({ authenticated: false, response: Response.json({}) });
 
   const response = await POST(request({ excludedUrls: [], recentTopics: [] }));
+  const payload = dailyReadingErrorResponseSchema.parse(await response.json());
 
   expect(response.status).toBe(401);
-  expect(await response.json()).toEqual({
+  expect(payload).toEqual({
    code: "unauthorized",
    detail: "Cần đăng nhập trước khi kiểm tra nguồn Daily Reading.",
   });
@@ -71,7 +78,7 @@ describe("Daily Reading source route", () => {
   });
 
   const response = await POST(request({ excludedUrls: [], recentTopics: ["science"] }));
-  const payload = await response.json();
+  const payload = dailyReadingSourcePreviewResponseSchema.parse(await response.json());
 
   expect(response.status).toBe(200);
   expect(payload.source).toMatchObject({
@@ -79,7 +86,6 @@ describe("Daily Reading source route", () => {
    topic: "culture",
    hanCharacters: 260,
   });
-  expect(payload.source.extractedTextZh).toBeUndefined();
   expect(payload.report).toEqual({
    discoveryEndpoints: 3,
    discoveryResponses: 2,
@@ -102,7 +108,7 @@ describe("Daily Reading source route", () => {
   });
 
   const response = await POST(request({ excludedUrls: [], recentTopics: [] }));
-  const payload = await response.json();
+  const payload = dailyReadingErrorResponseSchema.parse(await response.json());
 
   expect(response.status).toBe(503);
   expect(payload.code).toBe("source-unavailable");
