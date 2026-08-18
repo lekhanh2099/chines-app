@@ -54,6 +54,7 @@ export const aiConversationTurnResponseSchema = z.strictObject({
  usage: aiConversationUsageSchema.nullable(),
 });
 
+export type AiConversationMode = z.output<typeof aiConversationModeSchema>;
 export type AiConversationPersistedMessage = z.output<
  typeof aiConversationPersistedMessageSchema
 >;
