@@ -1,5 +1,6 @@
 import "server-only";
 
+import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 
 import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
@@ -16,6 +17,7 @@ import {
  type DailyReadingGenerationKind,
  type DailyReadingGenerationStage,
  type DailyReadingLevel,
+ type DailyReadingLearningDraft,
  type DailyReadingSourceCandidate,
 } from "./daily-reading.schemas";
 import { vietnamDailyReadingDateKey } from "./daily-reading.scheduler";
@@ -118,7 +120,9 @@ async function requestStructured<T>({
 function compactSourceEvidence(source: DailyReadingSourceCandidate, maxChars: number) {
  const normalized = source.extractedTextZh.replace(/\s+/gu, " ").trim();
  if (normalized.length <= maxChars) return normalized;
- return `${normalized.slice(0, Math.floor(maxChars * 0.72))}\n…\n${normalized.slice(-Math.floor(maxChars * 0.28))}`;
+ const headLength = Math.floor(maxChars * 0.72);
+ const tailLength = Math.floor(maxChars * 0.28);
+ return `${normalized.slice(0, headLength)}\n…\n${normalized.slice(-tailLength)}`;
 }
 
 function createCorePrompt(source: DailyReadingSourceCandidate, level: DailyReadingLevel) {
@@ -133,6 +137,21 @@ function createCorePrompt(source: DailyReadingSourceCandidate, level: DailyReadi
   `Published at: ${source.publishedAt}`,
   "SOURCE ARTICLE EVIDENCE:",
   compactSourceEvidence(source, 3800),
+ ].join("\n");
+}
+
+function createCoreRepairPrompt(
+ source: DailyReadingSourceCandidate,
+ level: DailyReadingLevel,
+ diagnostic: string,
+) {
+ return [
+  createCorePrompt(source, level),
+  "",
+  "The previous reading-core attempt failed validation.",
+  `Validation diagnostic: ${diagnostic.slice(0, 500)}`,
+  "Regenerate the complete object. Do not return a patch.",
+  "Count Han characters before returning. Keep every factual claim source-bound.",
  ].join("\n");
 }
 
@@ -163,11 +182,25 @@ function createLearningPrompt(source: DailyReadingSourceCandidate, core: DailyRe
  ].join("\n");
 }
 
+function createLearningRepairPrompt(
+ source: DailyReadingSourceCandidate,
+ core: DailyReadingCoreDraft,
+ diagnostic: string,
+) {
+ return [
+  createLearningPrompt(source, core),
+  "",
+  "The previous learning-apparatus attempt failed validation.",
+  `Validation diagnostic: ${diagnostic.slice(0, 500)}`,
+  "Regenerate the complete object, not a patch. Preserve the locked reading exactly.",
+ ].join("\n");
+}
+
 function normalizeSentence(value: string) {
  return value.replace(/\s+/gu, "").replace(/[“”‘’"'，。！？、；：,.!?;:（）()《》]/gu, "");
 }
 
-function validateLearning(core: DailyReadingCoreDraft, learning: z.output<typeof dailyReadingLearningDraftSchema>) {
+function validateLearning(core: DailyReadingCoreDraft, learning: DailyReadingLearningDraft) {
  const readingText = core.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  for (const item of learning.vocabulary) {
   if (!readingText.includes(item.hanzi)) throw new Error(`Từ vựng không có trong bài: ${item.hanzi}`);
@@ -194,6 +227,76 @@ function validateLearning(core: DailyReadingCoreDraft, learning: z.output<typeof
  return learning;
 }
 
+async function generateCore({
+ source,
+ preferredLevel,
+ credentials,
+ signal,
+ onProgress,
+}: {
+ source: DailyReadingSourceCandidate;
+ preferredLevel: DailyReadingLevel;
+ credentials: UserApiKeyCredential[];
+ signal?: AbortSignal;
+ onProgress?: (stage: DailyReadingGenerationStage) => void;
+}) {
+ onProgress?.("drafting");
+ const primary = await requestStructured({
+  prompt: createCorePrompt(source, preferredLevel),
+  schema: dailyReadingCoreDraftSchema,
+  credentials,
+  signal,
+ });
+ try {
+  return { ...primary, data: validateCore(source, primary.data) };
+ } catch (error) {
+  const diagnostic = error instanceof Error ? error.message : "Reading core validation failed.";
+  onProgress?.("repairing_core");
+  const repaired = await requestStructured({
+   prompt: createCoreRepairPrompt(source, preferredLevel, diagnostic),
+   schema: dailyReadingCoreDraftSchema,
+   credentials,
+   signal,
+  });
+  return { ...repaired, data: validateCore(source, repaired.data) };
+ }
+}
+
+async function generateLearning({
+ source,
+ core,
+ credentials,
+ signal,
+ onProgress,
+}: {
+ source: DailyReadingSourceCandidate;
+ core: DailyReadingCoreDraft;
+ credentials: UserApiKeyCredential[];
+ signal?: AbortSignal;
+ onProgress?: (stage: DailyReadingGenerationStage) => void;
+}) {
+ onProgress?.("enriching");
+ const primary = await requestStructured({
+  prompt: createLearningPrompt(source, core),
+  schema: dailyReadingLearningDraftSchema,
+  credentials,
+  signal,
+ });
+ try {
+  return { ...primary, data: validateLearning(core, primary.data) };
+ } catch (error) {
+  const diagnostic = error instanceof Error ? error.message : "Learning apparatus validation failed.";
+  onProgress?.("repairing_learning");
+  const repaired = await requestStructured({
+   prompt: createLearningRepairPrompt(source, core, diagnostic),
+   schema: dailyReadingLearningDraftSchema,
+   credentials,
+   signal,
+  });
+  return { ...repaired, data: validateLearning(core, repaired.data) };
+ }
+}
+
 export async function generateValidatedDailyReading({
  source,
  preferredLevel,
@@ -209,25 +312,26 @@ export async function generateValidatedDailyReading({
  signal?: AbortSignal;
  onProgress?: (stage: DailyReadingGenerationStage) => void;
 }): Promise<DailyReading> {
- onProgress?.("drafting");
- const coreResult = await requestStructured({
-  prompt: createCorePrompt(source, preferredLevel),
-  schema: dailyReadingCoreDraftSchema,
+ const coreResult = await generateCore({
+  source,
+  preferredLevel,
   credentials,
   signal,
+  onProgress,
  });
- const core = validateCore(source, coreResult.data);
- onProgress?.("enriching");
- const learningResult = await requestStructured({
-  prompt: createLearningPrompt(source, core),
-  schema: dailyReadingLearningDraftSchema,
+ const core = coreResult.data;
+ const learningResult = await generateLearning({
+  source,
+  core,
   credentials,
   signal,
+  onProgress,
  });
- const learning = validateLearning(core, learningResult.data);
+ const learning = learningResult.data;
  onProgress?.("validating");
  const now = new Date();
  const paragraphIds = core.paragraphs.map((_paragraph, index) => `p${index + 1}`);
+ onProgress?.("finalizing");
  return dailyReadingSchema.parse({
   schemaVersion: "1.0.0",
   id: `daily-${vietnamDailyReadingDateKey(now)}-${crypto.randomUUID()}`,
@@ -235,19 +339,31 @@ export async function generateValidatedDailyReading({
   createdAt: now.toISOString(),
   releaseKind: mode,
   titleZh: core.titleZh,
+  titlePinyin: getPinyin(core.titleZh),
   titleVi: core.titleVi,
   whyWorthReadingVi: core.whyWorthReadingVi,
   adaptationNoticeVi:
-   "Đây là bản học tập được biên soạn lại từ bài nguồn, không phải nguyên văn báo chí. Nội dung cần được đối chiếu nguồn khi dùng làm dữ kiện.",
+   "Đây là bản học tập được biên soạn lại từ bài nguồn, không phải nguyên văn báo chí. Pinyin được tạo tự động và cần đối chiếu lại khi luyện phát âm.",
   topic: core.topic,
   level: core.level,
   estimatedMinutes: core.estimatedMinutes,
   paragraphs: core.paragraphs.map((paragraph, index) => ({
    id: paragraphIds[index] ?? `p${index + 1}`,
    order: index + 1,
-   ...paragraph,
+   zh: paragraph.zh,
+   pinyin: getPinyin(paragraph.zh),
+   vi: paragraph.vi,
+   roleVi: paragraph.roleVi,
   })),
-  vocabulary: learning.vocabulary.map((item, index) => ({ id: `v${index + 1}`, order: index + 1, ...item })),
+  vocabulary: learning.vocabulary.map((item, index) => ({
+   id: `v${index + 1}`,
+   order: index + 1,
+   hanzi: item.hanzi,
+   pinyin: getPinyin(item.hanzi),
+   meaningVi: item.meaningVi,
+   meaningInContextVi: item.meaningInContextVi,
+   categoryVi: item.categoryVi,
+  })),
   grammarPoints: learning.grammarPoints.map((item, index) => ({ id: `g${index + 1}`, ...item })),
   questions: learning.questions.map((item, index) => ({
    id: `q${index + 1}`,
@@ -273,5 +389,6 @@ export async function generateValidatedDailyReading({
   },
   generatedByProvider: learningResult.provider || coreResult.provider,
   generatedByModel: learningResult.model || coreResult.model,
+  pinyinReviewStatus: "auto-generated",
  });
 }
