@@ -176,6 +176,7 @@ create table public.ai_memories (
   constraint ai_memories_importance_check check (importance >= 0 and importance <= 1),
   constraint ai_memories_confidence_check check (confidence >= 0 and confidence <= 1),
   constraint ai_memories_status_check check (status in ('active', 'superseded', 'resolved')),
+  constraint ai_memories_resolved_kind_check check (status <> 'resolved' or kind = 'open_loop'),
   constraint ai_memories_reinforcement_count_check check (reinforcement_count > 0),
   constraint ai_memories_id_user_unique unique (id, user_id),
   constraint ai_memories_character_fk
@@ -187,11 +188,10 @@ create table public.ai_memories (
     references public.ai_memories(id, user_id)
     on delete set null (superseded_by_id)
     deferrable initially deferred,
-  constraint ai_memories_superseded_state_check check (
-    (status = 'superseded' and superseded_by_id is not null)
-    or
-    (status <> 'superseded' and superseded_by_id is null)
-  )
+  constraint ai_memories_superseded_link_state_check
+    check (status = 'superseded' or superseded_by_id is null),
+  constraint ai_memories_superseded_not_self_check
+    check (superseded_by_id is null or superseded_by_id <> id)
 );
 
 create unique index ai_memories_active_global_key_unique_idx
