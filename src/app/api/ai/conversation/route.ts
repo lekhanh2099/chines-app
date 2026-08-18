@@ -8,7 +8,9 @@ import {
 } from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
 import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import {
+ AiConversationPersistenceConfigurationError,
  AiConversationPersistenceNotReadyError,
+ AiConversationPersistenceRequestError,
  appendAiConversationMessage,
  ensureAiConversationSession,
  findAssistantReplyForUserMessage,
@@ -34,6 +36,7 @@ import {
 } from "@/features/hanzihome/ai-conversation/ai-conversation-system.server";
 import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/ai-conversation-turn.server";
 import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
+import { logger } from "@/lib/logger";
 import { generateAiConversationReply } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
@@ -110,10 +113,37 @@ function buildProfileContext(profile: AiConversationProfile): string {
 
 function persistenceNotReadyResponse() {
  return apiError(
-  "AI conversation persistence chưa sẵn sàng. Hãy apply migration AI conversation trước khi test flow này.",
+  "Database chưa có schema hội thoại AI. Hãy apply migration AI conversation trước khi test flow persisted.",
   503,
   "AI_PERSISTENCE_NOT_READY",
  );
+}
+
+function persistenceBoundaryErrorResponse(error: unknown) {
+ if (error instanceof AiConversationPersistenceNotReadyError) {
+  return persistenceNotReadyResponse();
+ }
+
+ if (error instanceof AiConversationPersistenceConfigurationError) {
+  return apiError(
+   "Server chưa cấu hình Supabase secret cho AI persistence. Cần SUPABASE_SECRET_KEY hoặc SUPABASE_SERVICE_ROLE_KEY.",
+   503,
+   "AI_PERSISTENCE_CONFIG_MISSING",
+  );
+ }
+
+ if (
+  error instanceof AiConversationPersistenceRequestError &&
+  (error.status === 401 || error.status === 403 || error.code === "42501")
+ ) {
+  return apiError(
+   "Supabase server credential chưa có quyền truy cập AI persistence.",
+   503,
+   "AI_PERSISTENCE_ACCESS_FAILED",
+  );
+ }
+
+ return null;
 }
 
 export async function POST(request: Request) {
@@ -153,9 +183,9 @@ export async function POST(request: Request) {
    const session = await loadLatestAiConversationSession(auth.context.user.id);
    return privateNoStoreJson(aiConversationSessionSchema.parse(session));
   } catch (error) {
-   if (error instanceof AiConversationPersistenceNotReadyError) {
-    return persistenceNotReadyResponse();
-   }
+   const persistenceResponse = persistenceBoundaryErrorResponse(error);
+   if (persistenceResponse) return persistenceResponse;
+   logger.error("[AI Conversation] persisted session load failed", error);
    return apiError("Không thể tải lịch sử hội thoại AI.", 500, "AI_CONVERSATION_LOAD_FAILED");
   }
  }
@@ -166,9 +196,9 @@ export async function POST(request: Request) {
    const session = await ensureAiConversationSession(auth.context.user.id);
    return privateNoStoreJson(aiConversationSessionSchema.parse(session));
   } catch (error) {
-   if (error instanceof AiConversationPersistenceNotReadyError) {
-    return persistenceNotReadyResponse();
-   }
+   const persistenceResponse = persistenceBoundaryErrorResponse(error);
+   if (persistenceResponse) return persistenceResponse;
+   logger.error("[AI Conversation] persisted session create failed", error);
    return apiError("Không thể khởi tạo hội thoại AI.", 500, "AI_CONVERSATION_CREATE_FAILED");
   }
  }
@@ -253,9 +283,8 @@ export async function POST(request: Request) {
     }),
    );
   } catch (error) {
-   if (error instanceof AiConversationPersistenceNotReadyError) {
-    return persistenceNotReadyResponse();
-   }
+   const persistenceResponse = persistenceBoundaryErrorResponse(error);
+   if (persistenceResponse) return persistenceResponse;
    if (error instanceof z.ZodError) {
     return apiError(
      "AI conversation persistence trả về dữ liệu không đúng contract.",
@@ -263,6 +292,7 @@ export async function POST(request: Request) {
      "AI_PERSISTENCE_INVALID_RESPONSE",
     );
    }
+   logger.error("[AI Conversation] persisted turn failed", error);
    return apiError("AI conversation không hoàn tất.", 503, "AI_UNAVAILABLE");
   }
  }
