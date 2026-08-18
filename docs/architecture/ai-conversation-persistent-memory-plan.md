@@ -3,8 +3,10 @@
 Status: active implementation guardrail
 Branch: `feat/persistent-social-memory-ai-redesign`
 Baseline: `main` at `86f41ccb500953114f6410934f0d513f28b52e64`
-Current checkpoint: Phase 1 design complete; schema mutation not started
+Current checkpoint: Phase 3A trusted context ownership implemented in code; database migration remains unapplied by the implementation agent
 Detailed Phase 1 contract: `docs/architecture/ai-conversation-data-contract.md`
+Phase 2 test handoff: `docs/architecture/ai-conversation-phase-2-test-handoff.md`
+Phase 3A test handoff: `docs/architecture/ai-conversation-phase-3a-test-handoff.md`
 
 This document is the implementation boundary for the persistent social-memory and AI Conversation redesign. It exists to prevent opportunistic refactors and to make each delivery independently reviewable.
 
@@ -29,7 +31,7 @@ The user-facing product should feel like talking to a continuing character. Prov
 
 ## 2. Current verified baseline
 
-Current `main` behavior:
+Original `main` behavior at the branch baseline:
 
 - conversation messages are local React state and disappear after reload;
 - the browser sends recent transcript messages plus the profile to `/api/ai/conversation`;
@@ -38,7 +40,16 @@ Current `main` behavior:
 - `memoryNotes` is a browser-persisted manual profile field, not learned memory;
 - there is no persisted conversation, message, relationship or memory table;
 - Supabase `vector` is available but not installed;
-- the current conversation instruction hierarchy still frames the model primarily as a tutor, even when the selected mode is `friend`.
+- the conversation instruction hierarchy frames the model primarily as a tutor, even when the selected mode is `friend`.
+
+Current feature-branch implementation through Phase 3A:
+
+- core persistence migration exists in source but has not been applied by the implementation agent;
+- persisted workspace turns use backend-owned conversation/message history and idempotent message commands;
+- persisted turn transport no longer sends an authoritative transcript or local profile object;
+- stable character, conversation mode, relationship, learner level and thread summary are loaded server-side for provider context;
+- personal and system provider paths receive trusted context through system-level authority rather than lower-priority user text;
+- long-term memory extraction/retrieval remains intentionally unimplemented until Phase 4.
 
 ## 3. Hard architecture invariants
 
@@ -352,16 +363,17 @@ Exit criteria:
 
 ### Phase 1 — Domain contracts and migration design
 
-Status: design checkpoint complete; migration mutation pending explicit confirmation.
+Status: core persistence migration added to source; not applied to any Supabase target by the implementation agent.
 
-Scope:
+Scope completed:
 
 - inspect existing migration and generated-type conventions;
 - design exact table/index/RLS/ownership contracts;
 - split core persistence from retrieval-extension migration;
-- no conversation UI redesign yet.
+- add the core persistence migration after explicit approval;
+- no retrieval extension enablement.
 
-Resolved by the Phase 1 design:
+Resolved by Phase 1:
 
 ```text
 character ownership       = user-owned only
@@ -378,32 +390,33 @@ ANN index                 = not part of baseline
 local profile auto-import = prohibited
 ```
 
-Still required before mutation:
+Remaining deployment boundary:
 
-- exact first apply target;
-- permission to add the core persistence migration;
-- rollback mode for that target.
-
-Stop condition: schema/RLS/extension mutation requires explicit user confirmation under repository policy.
+- the user chooses/applies the schema target;
+- generated Supabase types are refreshed only after that target contains the migration;
+- no implementation-agent production/schema mutation without new explicit authorization.
 
 ### Phase 2 — Persisted conversation/message ownership
 
-Scope:
+Status: implementation complete in source; user-run DB integration verification pending.
 
-- conversation repository/service contract;
+Scope completed:
+
+- server-only conversation persistence repository;
 - message persistence;
-- stable sequence allocation;
+- stable sequence allocation through the migration RPC;
 - client-message idempotency;
 - assistant-reply idempotency;
-- backend-owned turn endpoint;
-- load/new/archive/delete conversation APIs required by this phase;
-- compatibility path for the current UI if required.
+- backend-owned turn action on the registered internal route;
+- persisted session loading and lazy first conversation creation;
+- workspace cutover to the persisted action contract;
+- retry contract preserving one logical user turn.
 
 Non-goal:
 
 - learned long-term memory retrieval/extraction.
 
-Exit proof:
+Exit proof expected after user integration test:
 
 - reload keeps transcript;
 - retrying the same `clientMessageId` does not duplicate the user turn;
@@ -411,25 +424,56 @@ Exit proof:
 - one user turn cannot acquire duplicate persisted assistant replies;
 - provider calls reconstruct recent transcript from backend data.
 
+Detailed handoff: `docs/architecture/ai-conversation-phase-2-test-handoff.md`.
+
 ### Phase 3 — Character, relationship and context builder
 
-Scope:
+Status: Phase 3A trusted context ownership implemented; Phase 3B persisted mode/preference mutation not started.
 
-- stable character identity;
-- conversation modes separated from character identity;
-- relationship-state owner;
-- instruction hierarchy rebuild;
-- context builder capable of product policy + character + relationship + summary + recent messages.
+#### Phase 3A — Trusted context ownership
+
+Scope completed:
+
+- stable character identity loaded server-side;
+- conversation mode/correction/reply behavior loaded from the conversation row;
+- optional relationship-state owner loaded server-side;
+- learner level loaded from `ai_conversation_preferences` with a server fallback of `intermediate`;
+- thread summary checkpoint included as context data;
+- product-policy/character/relationship/summary/recent-message hierarchy rebuilt;
+- character/relationship/summary data explicitly treated as untrusted data blocks rather than executable instructions;
+- persisted turn transport rejects client profile data;
+- BYOK OpenAI-compatible providers receive trusted context as a system message;
+- Gemini BYOK/system paths receive trusted context through `systemInstruction`.
 
 Non-goal:
 
 - semantic long-term-memory retrieval if Phase 4 is not yet complete.
 
+Exit proof encoded in focused tests, pending execution:
+
+- changing mode does not change character identity;
+- persisted client profile data is rejected/omitted;
+- recent user text is not copied into system-data blocks;
+- character/persona is no longer implemented as a lower-priority user message under a conflicting tutor identity;
+- both personal and system runtime paths receive the same authority hierarchy.
+
+Detailed handoff: `docs/architecture/ai-conversation-phase-3a-test-handoff.md`.
+
+#### Phase 3B — Persisted behavior mutation
+
+Next proposed scope:
+
+- authenticated mutation contract for conversation mode, correction style and reply mode;
+- authenticated user preference mutation for learner level;
+- smallest compatible current-UI wiring to persisted owners;
+- no final conversation/settings visual redesign yet.
+
 Exit proof:
 
-- switching mode does not change character identity;
-- `friend` is no longer implemented as a lower-priority user message under a tutor system identity;
-- character-specific state cannot leak between characters.
+- switching mode persists across reload;
+- switching mode leaves `character_id` unchanged;
+- learner level comes from persisted preference, not local profile storage;
+- cross-user mutation is rejected.
 
 ### Phase 4 — Long-term memory and post-turn pipeline
 
