@@ -119,7 +119,6 @@ function createGenerationStream({
       signal: generationController.signal,
       onProgress: progress,
      });
-     progress("completed");
      enqueue(
       dailyReadingGenerateStreamEventSchema.parse({
        type: "result",
