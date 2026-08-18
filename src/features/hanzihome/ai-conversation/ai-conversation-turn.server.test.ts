@@ -54,6 +54,7 @@ const contextState: AiConversationContextState = {
   identityNotes: "",
  },
  relationship: null,
+ learnerLevel: "intermediate",
 };
 
 const recentMessages: AiConversationPersistedMessage[] = [
@@ -88,7 +89,7 @@ describe("persisted AI conversation turn", () => {
   getActiveUserApiKeyCredentials.mockReset();
  });
 
- it("passes server-owned character and mode context as system authority to BYOK", async () => {
+ it("passes server-owned character mode and learner preference as system authority to BYOK", async () => {
   getActiveUserApiKeyCredentials.mockResolvedValue([groqKey]);
   generateAiConversationReply.mockResolvedValue({ data: "你好，最近怎么样？", error: null });
 
@@ -97,7 +98,6 @@ describe("persisted AI conversation turn", () => {
    userId: "user-1",
    recentMessages,
    contextState,
-   learnerLevel: "intermediate",
   });
 
   expect(result).toMatchObject({
@@ -111,6 +111,7 @@ describe("persisted AI conversation turn", () => {
   expect(options.systemContext).toContain("[PRODUCT POLICY — HIGHEST PRIORITY]");
   expect(options.systemContext).toContain('"displayName":"小林"');
   expect(options.systemContext).toContain("Conversation mode: natural");
+  expect(options.systemContext).toContain("Learner level: intermediate");
   expect(generateSystemAiConversationReply).not.toHaveBeenCalled();
  });
 
@@ -123,7 +124,6 @@ describe("persisted AI conversation turn", () => {
    userId: "user-1",
    recentMessages,
    contextState,
-   learnerLevel: "intermediate",
   });
 
   expect(result).toMatchObject({
@@ -137,6 +137,7 @@ describe("persisted AI conversation turn", () => {
   expect(signal).toBeUndefined();
   expect(systemContext).toContain('"displayName":"小林"');
   expect(systemContext).toContain("Conversation mode: natural");
+  expect(systemContext).toContain("Learner level: intermediate");
   expect(generateAiConversationReply).not.toHaveBeenCalled();
  });
 });
