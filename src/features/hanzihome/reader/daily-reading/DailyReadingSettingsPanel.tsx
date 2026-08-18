@@ -244,27 +244,27 @@ export function DailyReadingSettingsPanel() {
       {t("settings.pipeline.description")}
      </Typography>
     </div>
-    <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+    <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
      {pipelineSteps.map((step, index) => {
       const completed = scheduledToday || activePipelineIndex > index;
       const active = !scheduledToday && activePipelineIndex === index;
       return (
-       <Card key={step.key} variant="subtle" padding="sm" className="grid gap-2">
-        <div className="flex items-center gap-2">
-         <Badge variant={completed ? "success" : active ? "info" : "default"} size="sm">
-          {completed ? "✓" : index + 1}
-         </Badge>
+       <li key={step.key} className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-start gap-3">
+        <Badge variant={completed ? "success" : active ? "info" : "default"} size="sm">
+         {completed ? "✓" : index + 1}
+        </Badge>
+        <div className="grid min-w-0 gap-1">
          <Typography variant="label" weight="bold">
           {t(step.title)}
          </Typography>
+         <Typography variant="caption" tone="muted">
+          {t(step.description)}
+         </Typography>
         </div>
-        <Typography variant="caption" tone="muted">
-         {t(step.description)}
-        </Typography>
-       </Card>
+       </li>
       );
      })}
-    </div>
+    </ol>
    </div>
 
    <Separator />
