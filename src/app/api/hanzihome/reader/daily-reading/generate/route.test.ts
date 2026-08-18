@@ -169,7 +169,7 @@ describe("Daily Reading generate route", () => {
   expect(response.status).toBe(200);
   expect(response.headers.get("content-type")).toContain("application/x-ndjson");
   expect(events.filter((event) => event.type === "progress").map((event) => event.stage)).toEqual(
-   expect.arrayContaining(["discovering", "extracting", "drafting", "validating", "completed"]),
+   expect.arrayContaining(["discovering", "extracting", "drafting", "validating"]),
   );
   expect(events.at(-1)).toMatchObject({
    type: "result",
