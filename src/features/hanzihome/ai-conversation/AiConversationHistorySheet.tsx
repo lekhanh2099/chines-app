@@ -23,6 +23,7 @@ type AiConversationHistorySheetProps = {
  items: AiConversationHistoryItem[];
  isLoading: boolean;
  error: string | null;
+ disabled: boolean;
  isCreating: boolean;
  archivingConversationId: string | null;
  onOpenChange: (open: boolean) => void;
@@ -37,6 +38,7 @@ export function AiConversationHistorySheet({
  items,
  isLoading,
  error,
+ disabled,
  isCreating,
  archivingConversationId,
  onOpenChange,
@@ -61,7 +63,13 @@ export function AiConversationHistorySheet({
   <Sheet open={open} onOpenChange={onOpenChange} side="right">
    <SheetHeader title={t("history.title")} onClose={() => onOpenChange(false)} />
    <SheetBody className="grid content-start gap-4">
-    <Button type="button" variant="outline" size="touch" onClick={onCreate} disabled={isCreating}>
+    <Button
+     type="button"
+     variant="outline"
+     size="touch"
+     onClick={onCreate}
+     disabled={disabled || isCreating}
+    >
      <MessageSquarePlus data-icon="inline-start" />
      {isCreating ? t("history.creating") : t("history.newConversation")}
     </Button>
@@ -101,6 +109,7 @@ export function AiConversationHistorySheet({
           className="w-full min-w-0"
           aria-current={isCurrent ? "true" : undefined}
           onClick={() => onSelect(item.id)}
+          disabled={disabled}
          >
           <span className="grid min-w-0 gap-1">
            <Typography as="span" variant="bodySmall" weight="bold" clamp="one">
@@ -129,7 +138,7 @@ export function AiConversationHistorySheet({
             variant="ghost"
             size="icon-toolbar"
             aria-label={t("history.actionsAria", { title })}
-            disabled={archivingConversationId === item.id}
+            disabled={disabled || archivingConversationId === item.id}
            >
             <MoreHorizontal />
            </Button>
