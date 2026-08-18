@@ -43,5 +43,129 @@
   "title": "来源与编写说明",
   "fallbackNotice": "该内容在加入资料库之前已经过审核。",
   "fallbackSource": "Hanzi Studio 来源"
+ },
+ "generated": {
+  "description": "先寻找真实中文新闻、提取来源内容，再生成包含词汇、语法和问题的学习版。生成的阅读保存在当前设备。",
+  "generateNow": "立即查找并生成",
+  "progressHint": "寻找来源、编写、校验和保存需要依次完成，因此可能需要几分钟。",
+  "notFound": "未找到当前设备上已保存的这篇 Daily Reading。",
+  "library": {
+   "eyebrow": "本地资料库",
+   "title": "基于真实来源生成的阅读",
+   "description": "每篇阅读都先检查新闻来源域名和可提取正文，再由 AI 编写成学习版。",
+   "autoOn": "10:00 自动生成已开启",
+   "autoOff": "仅手动生成",
+   "emptyTitle": "当前设备还没有 AI 生成的阅读。",
+   "emptyDescription": "现在生成第一篇，或保持自动生成开启，在 10:00 后创建一篇 {level} 阅读。"
+  },
+  "toast": {
+   "created": "已生成：{title}",
+   "failed": "无法生成 Daily Reading。"
+  },
+  "kind": {
+   "scheduled": "自动",
+   "manual": "手动"
+  },
+  "stage": {
+   "discovering": "正在寻找新来源",
+   "extracting": "正在提取来源文章",
+   "drafting": "正在编写阅读",
+   "repairingCore": "正在修正阅读稿",
+   "enriching": "正在生成词汇、语法和问题",
+   "repairingLearning": "正在修正学习内容",
+   "validating": "正在校验内容",
+   "finalizing": "正在完成阅读",
+   "saving": "正在保存阅读",
+   "completed": "已完成"
+  },
+  "topic": {
+   "culture": "文化",
+   "education": "教育",
+   "history": "历史",
+   "language": "语言",
+   "science": "科学",
+   "society": "生活与社会",
+   "travel": "旅行",
+   "environment": "环境",
+   "health": "健康"
+  },
+  "questions": {
+   "showAnswer": "查看答案",
+   "hideAnswer": "隐藏答案"
+  },
+  "vocabulary": {
+   "inContext": "文中含义：{meaning}"
+  },
+  "source": {
+   "open": "打开来源文章",
+   "generatedBy": "AI：{provider} · {model}"
+  }
+ },
+ "settings": {
+  "title": "每天生成一篇新阅读",
+  "description": "每天 10:00 自动寻找真实中文新闻并生成学习版。如果当时应用未打开，则会在 10:00 后第一次打开应用时补跑。",
+  "auto": {
+   "title": "自动生成",
+   "description": "每天最多生成一篇自动阅读。临时失败会有限重试，多标签页不会重复生成。",
+   "on": "自动生成已开启",
+   "off": "自动生成已关闭",
+   "aria": "开启或关闭 Daily Reading 自动生成"
+  },
+  "level": {
+   "label": "默认等级"
+  },
+  "summary": {
+   "scheduleLabel": "发布时间",
+   "scheduleValue": "每天 10:00",
+   "libraryLabel": "本地资料库",
+   "libraryValue": "已保存 {count} 篇",
+   "todayLabel": "今天",
+   "todayReady": "自动阅读已生成",
+   "todayDue": "等待生成",
+   "todayWaiting": "还未到时间"
+  },
+  "actions": {
+   "testSource": "检查真实来源",
+   "generateNow": "立即查找并生成",
+   "clear": "删除已生成阅读"
+  },
+  "pipeline": {
+   "title": "来源检查与生成",
+   "description": "显示最近一次任务的当前进度。校验步骤确保学习版有来源依据并符合数据结构。",
+   "schedule": "到达发布时间",
+   "scheduleDescription": "等待 10:00，或手动执行。",
+   "source": "寻找来源",
+   "sourceDescription": "从允许的来源中寻找并提取一篇新文章。",
+   "reading": "编写阅读",
+   "readingDescription": "根据来源事实写一篇新的学习版。",
+   "learning": "生成学习内容",
+   "learningDescription": "生成词汇、语法、问题和证据。",
+   "validate": "校验",
+   "validateDescription": "检查数据结构、长度、重复内容和证据。",
+   "save": "保存",
+   "saveDescription": "将通过校验的阅读保存到当前设备。"
+  },
+  "history": {
+   "title": "任务历史",
+   "description": "当前设备最近六次运行。",
+   "empty": "还没有生成任务。",
+   "succeeded": "已完成",
+   "pending": "运行中",
+   "failed": "失败"
+  },
+  "clearDialog": {
+   "title": "删除已生成的 Daily Reading？",
+   "description": "这会删除当前浏览器中自动或手动生成的阅读。",
+   "body": "将删除 {count} 篇已保存阅读。任务历史仍会保留用于排查。",
+   "cancel": "取消",
+   "confirm": "删除已生成阅读"
+  },
+  "toast": {
+   "sourceReady": "来源可用：{publisher} · {title}",
+   "sourceFailed": "无法检查新闻来源。",
+   "created": "已生成：{title}",
+   "generationFailed": "无法生成 Daily Reading。",
+   "cleared": "已删除当前设备上的生成阅读。"
+  }
  }
 }
