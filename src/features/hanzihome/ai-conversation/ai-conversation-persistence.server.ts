@@ -32,7 +32,7 @@ const messageRowSchema = z.object({
  seq: z.number().int().positive(),
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
- created_at: z.iso.datetime(),
+ created_at: z.iso.datetime({ offset: true }),
 });
 
 const assistantRuntimeMetadataSchema = z.strictObject({
