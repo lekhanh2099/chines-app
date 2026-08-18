@@ -7,16 +7,33 @@ import {
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 
 const {
- getActiveUserApiKeyCredentials,
+ PersistenceNotReadyError,
+ appendAiConversationMessage,
+ ensureAiConversationSession,
+ findAssistantReplyForUserMessage,
  generateAiConversationReply,
+ generatePersistedAiConversationTurn,
  generateSystemAiConversationReply,
+ getActiveUserApiKeyCredentials,
+ loadLatestAiConversationSession,
+ loadRecentAiConversationMessages,
  requireAuthenticatedRoute,
-} = vi.hoisted(() => ({
- getActiveUserApiKeyCredentials: vi.fn(),
- generateAiConversationReply: vi.fn(),
- generateSystemAiConversationReply: vi.fn(),
- requireAuthenticatedRoute: vi.fn(),
-}));
+} = vi.hoisted(() => {
+ class PersistenceNotReadyError extends Error {}
+ return {
+  PersistenceNotReadyError,
+  appendAiConversationMessage: vi.fn(),
+  ensureAiConversationSession: vi.fn(),
+  findAssistantReplyForUserMessage: vi.fn(),
+  generateAiConversationReply: vi.fn(),
+  generatePersistedAiConversationTurn: vi.fn(),
+  generateSystemAiConversationReply: vi.fn(),
+  getActiveUserApiKeyCredentials: vi.fn(),
+  loadLatestAiConversationSession: vi.fn(),
+  loadRecentAiConversationMessages: vi.fn(),
+  requireAuthenticatedRoute: vi.fn(),
+ };
+});
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/services/user-api-keys.service", () => ({ getActiveUserApiKeyCredentials }));
@@ -25,6 +42,17 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-system.server", ()
  generateSystemAiConversationReply,
  SYSTEM_AI_CONVERSATION_PROVIDER: "Google Gemini",
  SYSTEM_AI_CONVERSATION_MODEL: "models/gemini-3.1-flash-lite",
+}));
+vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server", () => ({
+ AiConversationPersistenceNotReadyError: PersistenceNotReadyError,
+ appendAiConversationMessage,
+ ensureAiConversationSession,
+ findAssistantReplyForUserMessage,
+ loadLatestAiConversationSession,
+ loadRecentAiConversationMessages,
+}));
+vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-turn.server", () => ({
+ generatePersistedAiConversationTurn,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
@@ -42,15 +70,161 @@ const requestBody = (messages: AiConversationMessage[], apiKeyId?: string) => ({
  ...(apiKeyId ? { apiKeyId } : {}),
 });
 
+const userMessage = {
+ id: "11111111-1111-4111-8111-111111111111",
+ seq: 1,
+ role: "user" as const,
+ content: "你好",
+ createdAt: "2026-08-18T03:00:00+00:00",
+};
+const assistantMessage = {
+ id: "22222222-2222-4222-8222-222222222222",
+ seq: 2,
+ role: "assistant" as const,
+ content: "你好，今天过得怎么样？",
+ createdAt: "2026-08-18T03:00:01+00:00",
+};
+const conversationId = "33333333-3333-4333-8333-333333333333";
+
 describe("/api/ai/conversation", () => {
  beforeEach(() => {
-  getActiveUserApiKeyCredentials.mockReset();
+  appendAiConversationMessage.mockReset();
+  ensureAiConversationSession.mockReset();
+  findAssistantReplyForUserMessage.mockReset();
   generateAiConversationReply.mockReset();
+  generatePersistedAiConversationTurn.mockReset();
   generateSystemAiConversationReply.mockReset();
+  getActiveUserApiKeyCredentials.mockReset();
+  loadLatestAiConversationSession.mockReset();
+  loadRecentAiConversationMessages.mockReset();
   requireAuthenticatedRoute.mockReset();
   requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
    context: { supabase: {}, user: { id: "user-1" } },
+  });
+ });
+
+ it("loads the backend-owned persisted session", async () => {
+  loadLatestAiConversationSession.mockResolvedValue({ conversation: null, messages: [] });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({ action: "session" }),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  expect(loadLatestAiConversationSession).toHaveBeenCalledWith("user-1");
+  expect(await response.json()).toEqual({ conversation: null, messages: [] });
+  expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+ });
+
+ it("persists one user turn, rebuilds context from backend messages, then persists the reply", async () => {
+  appendAiConversationMessage
+   .mockResolvedValueOnce(userMessage)
+   .mockResolvedValueOnce(assistantMessage);
+  findAssistantReplyForUserMessage.mockResolvedValue(null);
+  loadRecentAiConversationMessages.mockResolvedValue([userMessage]);
+  generatePersistedAiConversationTurn.mockResolvedValue({
+   ok: true,
+   message: assistantMessage.content,
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+   apiKeyId: "44444444-4444-4444-8444-444444444444",
+  });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "message",
+     conversationId,
+     clientMessageId: "55555555-5555-4555-8555-555555555555",
+     content: userMessage.content,
+     profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  expect(appendAiConversationMessage).toHaveBeenNthCalledWith(
+   1,
+   expect.objectContaining({
+    userId: "user-1",
+    conversationId,
+    role: "user",
+    clientMessageId: "55555555-5555-4555-8555-555555555555",
+   }),
+  );
+  expect(loadRecentAiConversationMessages).toHaveBeenCalledWith({
+   userId: "user-1",
+   conversationId,
+   limit: 19,
+  });
+  expect(generatePersistedAiConversationTurn).toHaveBeenCalledWith(
+   expect.objectContaining({
+    userId: "user-1",
+    recentMessages: [userMessage],
+    profile: DEFAULT_AI_CONVERSATION_PROFILE,
+   }),
+  );
+  expect(appendAiConversationMessage).toHaveBeenNthCalledWith(
+   2,
+   expect.objectContaining({
+    role: "assistant",
+    replyToMessageId: userMessage.id,
+    metadata: {
+     provider: "Groq",
+     model: "openai/gpt-oss-20b",
+     apiKeyId: "44444444-4444-4444-8444-444444444444",
+    },
+   }),
+  );
+  expect(await response.json()).toMatchObject({
+   conversationId,
+   userMessage,
+   assistantMessage,
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+  });
+ });
+
+ it("returns an already persisted assistant reply without calling the provider again", async () => {
+  appendAiConversationMessage.mockResolvedValue(userMessage);
+  findAssistantReplyForUserMessage.mockResolvedValue({
+   message: assistantMessage,
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+   apiKeyId: null,
+  });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "message",
+     conversationId,
+     clientMessageId: "55555555-5555-4555-8555-555555555555",
+     content: userMessage.content,
+     profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  expect(findAssistantReplyForUserMessage).toHaveBeenCalledWith({
+   userId: "user-1",
+   conversationId,
+   userMessageId: userMessage.id,
+  });
+  expect(loadRecentAiConversationMessages).not.toHaveBeenCalled();
+  expect(generatePersistedAiConversationTurn).not.toHaveBeenCalled();
+  expect(appendAiConversationMessage).toHaveBeenCalledTimes(1);
+  expect(await response.json()).toMatchObject({
+   userMessage,
+   assistantMessage,
+   provider: "Groq",
   });
  });
 
