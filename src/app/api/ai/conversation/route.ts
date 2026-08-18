@@ -8,6 +8,19 @@ import {
 } from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
 import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import {
+ AiConversationPersistenceNotReadyError,
+ appendAiConversationMessage,
+ ensureAiConversationSession,
+ findAssistantReplyForUserMessage,
+ loadLatestAiConversationSession,
+ loadRecentAiConversationMessages,
+} from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
+import {
+ aiConversationSessionSchema,
+ aiConversationTurnRequestSchema,
+ aiConversationTurnResponseSchema,
+} from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
+import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
  type AiConversationMessage,
@@ -18,6 +31,7 @@ import {
  SYSTEM_AI_CONVERSATION_MODEL,
  SYSTEM_AI_CONVERSATION_PROVIDER,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-system.server";
+import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/ai-conversation-turn.server";
 import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
 import { generateAiConversationReply } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
@@ -33,6 +47,13 @@ export const revalidate = 0;
 const healthRequestSchema = z.strictObject({
  action: z.literal("health"),
  apiKeyId: z.uuid().optional(),
+});
+
+const sessionRequestSchema = z.strictObject({ action: z.literal("session") });
+const ensureSessionRequestSchema = z.strictObject({ action: z.literal("ensure-session") });
+const persistedTurnRequestSchema = aiConversationTurnRequestSchema.extend({
+ action: z.literal("message"),
+ conversationId: z.uuid(),
 });
 
 const personaInstructions: Record<AiConversationProfile["persona"], string> = {
@@ -86,6 +107,14 @@ function buildProfileContext(profile: AiConversationProfile): string {
   .join("\n");
 }
 
+function persistenceNotReadyResponse() {
+ return apiError(
+  "AI conversation persistence chưa sẵn sàng. Hãy apply migration AI conversation trước khi test flow này.",
+  503,
+  "AI_PERSISTENCE_NOT_READY",
+ );
+}
+
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
@@ -115,6 +144,123 @@ export async function POST(request: Request) {
    ? await checkPersonalConversationRuntime(selectedCredential, request.signal)
    : await checkSystemConversationRuntime(request.signal);
   return privateNoStoreJson(health);
+ }
+
+ const sessionRequest = sessionRequestSchema.safeParse(body);
+ if (sessionRequest.success) {
+  try {
+   const session = await loadLatestAiConversationSession(auth.context.user.id);
+   return privateNoStoreJson(aiConversationSessionSchema.parse(session));
+  } catch (error) {
+   if (error instanceof AiConversationPersistenceNotReadyError) {
+    return persistenceNotReadyResponse();
+   }
+   return apiError("Không thể tải lịch sử hội thoại AI.", 500, "AI_CONVERSATION_LOAD_FAILED");
+  }
+ }
+
+ const ensureSessionRequest = ensureSessionRequestSchema.safeParse(body);
+ if (ensureSessionRequest.success) {
+  try {
+   const session = await ensureAiConversationSession(auth.context.user.id);
+   return privateNoStoreJson(aiConversationSessionSchema.parse(session));
+  } catch (error) {
+   if (error instanceof AiConversationPersistenceNotReadyError) {
+    return persistenceNotReadyResponse();
+   }
+   return apiError("Không thể khởi tạo hội thoại AI.", 500, "AI_CONVERSATION_CREATE_FAILED");
+  }
+ }
+
+ const persistedTurnRequest = persistedTurnRequestSchema.safeParse(body);
+ if (persistedTurnRequest.success) {
+  const userId = auth.context.user.id;
+  const payload = persistedTurnRequest.data;
+
+  try {
+   const userMessage = await appendAiConversationMessage({
+    userId,
+    conversationId: payload.conversationId,
+    role: "user",
+    content: payload.content,
+    clientMessageId: payload.clientMessageId,
+   });
+
+   const existingReply = await findAssistantReplyForUserMessage({
+    userId,
+    conversationId: payload.conversationId,
+    userMessageId: userMessage.id,
+   });
+
+   if (existingReply) {
+    return privateNoStoreJson(
+     aiConversationTurnResponseSchema.parse({
+      conversationId: payload.conversationId,
+      userMessage,
+      assistantMessage: existingReply.message,
+      provider: existingReply.provider,
+      model: existingReply.model,
+      apiKeyId: existingReply.apiKeyId,
+      usage: null,
+     }),
+    );
+   }
+
+   const recentMessages = await loadRecentAiConversationMessages({
+    userId,
+    conversationId: payload.conversationId,
+    limit: 19,
+   });
+   const generated = await generatePersistedAiConversationTurn({
+    supabase: auth.context.supabase,
+    userId,
+    recentMessages,
+    profile: payload.profile,
+    ...(payload.apiKeyId ? { apiKeyId: payload.apiKeyId } : {}),
+    signal: request.signal,
+   });
+
+   if (!generated.ok) {
+    return apiError(generated.message, generated.status, generated.code);
+   }
+
+   const assistantMessage = await appendAiConversationMessage({
+    userId,
+    conversationId: payload.conversationId,
+    role: "assistant",
+    content: generated.message,
+    replyToMessageId: userMessage.id,
+    metadata: {
+     provider: generated.provider,
+     model: generated.model,
+     apiKeyId: generated.apiKeyId,
+    },
+   });
+
+   return privateNoStoreJson(
+    aiConversationTurnResponseSchema.parse({
+     conversationId: payload.conversationId,
+     userMessage,
+     assistantMessage,
+     provider: generated.provider,
+     model: generated.model,
+     apiKeyId: generated.apiKeyId,
+     usage: null,
+    }),
+   );
+  } catch (error) {
+   if (error instanceof AiConversationPersistenceNotReadyError) {
+    return persistenceNotReadyResponse();
+   }
+   if (error instanceof z.ZodError) {
+    return apiError(
+     "AI conversation persistence trả về dữ liệu không đúng contract.",
+     502,
+     "AI_PERSISTENCE_INVALID_RESPONSE",
+    );
+   }
+   return apiError("AI conversation không hoàn tất.", 503, "AI_UNAVAILABLE");
+  }
  }
 
  const parsed = aiConversationRequestSchema.safeParse(body);
