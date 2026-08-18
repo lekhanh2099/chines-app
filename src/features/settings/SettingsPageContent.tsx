@@ -1,7 +1,16 @@
 "use client";
 
 import { useSelector } from "@tanstack/react-store";
-import { Bot, Languages, RefreshCcw, Save, Settings2, Sparkles } from "lucide-react";
+import {
+ Bot,
+ ChevronDown,
+ ChevronUp,
+ Languages,
+ RefreshCcw,
+ Save,
+ Settings2,
+ Sparkles,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ComponentProps, type ReactNode, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -74,6 +83,7 @@ type SettingsPageContentProps = {
 
 export function SettingsPageContent({ sectionValue, readingSettings }: SettingsPageContentProps) {
  const t = useTranslations("Settings");
+ const lookupT = useTranslations("AiLookupSettings");
  const section = resolveSettingsSection(sectionValue);
  const router = useRouter();
  useSelector(dictionaryLookupStore, (state) => state.overrides);
@@ -90,6 +100,7 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
  const [isLoading, setIsLoading] = useState(true);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
+ const [advancedOpen, setAdvancedOpen] = useState(false);
 
  useEffect(() => {
   let isMounted = true;
@@ -147,51 +158,68 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
   };
  }, [t]);
 
- async function handleSave() {
-  setIsSaving(true);
+ async function persistAiLookupSettings(nextSettings: ClientAiPromptSettings) {
+  const normalized = saveClientAiPromptSettings(nextSettings);
 
   try {
-   const normalized = saveClientAiPromptSettings({
-    wordLookupPrompt,
-    sentenceLookupPrompt,
-    geminiModel,
-   });
-
    const response = await fetch("/api/settings/ai-prompts", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
-    body: JSON.stringify({
-     wordLookupPrompt: normalized.wordLookupPrompt,
-     sentenceLookupPrompt: normalized.sentenceLookupPrompt,
-     geminiModel: normalized.geminiModel,
-    }),
+    body: JSON.stringify(normalized),
    });
 
    if (!response.ok) throw new Error(String(response.status));
 
    const data = ClientAiPromptSettingsSchema.parse(await response.json());
-   const synced = saveClientAiPromptSettings(data);
-   setWordLookupPrompt(synced.wordLookupPrompt);
-   setSentenceLookupPrompt(synced.sentenceLookupPrompt);
-   setGeminiModel(synced.geminiModel);
-   setSavedSettings({
-    wordLookupPrompt: synced.wordLookupPrompt,
-    sentenceLookupPrompt: synced.sentenceLookupPrompt,
-    geminiModel: synced.geminiModel,
-   });
-   toast.success(t("ai.savedRemote"));
+   return { settings: saveClientAiPromptSettings(data), remote: true };
   } catch {
-   const fallback = loadClientAiPromptSettings();
-   setWordLookupPrompt(fallback.wordLookupPrompt);
-   setSentenceLookupPrompt(fallback.sentenceLookupPrompt);
-   setGeminiModel(fallback.geminiModel);
-   setSavedSettings({
-    wordLookupPrompt: fallback.wordLookupPrompt,
-    sentenceLookupPrompt: fallback.sentenceLookupPrompt,
-    geminiModel: fallback.geminiModel,
+   return { settings: normalized, remote: false };
+  }
+ }
+
+ async function handleSaveModel() {
+  if (!savedSettings) return;
+  setIsSaving(true);
+
+  try {
+   const persisted = await persistAiLookupSettings({
+    wordLookupPrompt: savedSettings.wordLookupPrompt,
+    sentenceLookupPrompt: savedSettings.sentenceLookupPrompt,
+    geminiModel,
    });
-   toast.success(t("ai.savedLocal"));
+   setGeminiModel(persisted.settings.geminiModel);
+   setSavedSettings((current) =>
+    current ? { ...current, geminiModel: persisted.settings.geminiModel } : persisted.settings,
+   );
+   toast.success(persisted.remote ? t("ai.savedRemote") : t("ai.savedLocal"));
+  } finally {
+   setIsSaving(false);
+  }
+ }
+
+ async function handleSavePrompts() {
+  if (!savedSettings) return;
+  setIsSaving(true);
+
+  try {
+   const persisted = await persistAiLookupSettings({
+    wordLookupPrompt,
+    sentenceLookupPrompt,
+    geminiModel: savedSettings.geminiModel,
+   });
+   setWordLookupPrompt(persisted.settings.wordLookupPrompt);
+   setSentenceLookupPrompt(persisted.settings.sentenceLookupPrompt);
+   setSavedSettings((current) =>
+    current
+     ? {
+        ...current,
+        wordLookupPrompt: persisted.settings.wordLookupPrompt,
+        sentenceLookupPrompt: persisted.settings.sentenceLookupPrompt,
+       }
+     : persisted.settings,
+   );
+   toast.success(persisted.remote ? t("ai.savedRemote") : t("ai.savedLocal"));
   } finally {
    setIsSaving(false);
   }
@@ -203,7 +231,6 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
   !!savedSettings && sentenceLookupPrompt !== savedSettings.sentenceLookupPrompt;
  const hasUnsavedPromptChanges = hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
  const hasUnsavedModelChange = !!savedSettings && geminiModel !== savedSettings.geminiModel;
- const hasUnsavedChanges = hasUnsavedPromptChanges || hasUnsavedModelChange;
  const selectedDetailModel = GEMINI_DETAIL_MODEL_OPTIONS.find(
   (option) => option.value === geminiModel,
  );
@@ -277,158 +304,186 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      <TabsContent active={section === SettingsSectionSchema.enum.ai} className="grid gap-5 pt-4">
       <AiConversationSettingsSection />
 
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-       <div className="grid min-w-0 max-w-3xl gap-2">
-        <Badge variant="accent" size="md">
-         <Bot />
-         {t("ai.badge")}
-        </Badge>
-        <Typography as="h2" variant="sectionTitle" weight="bold">
-         {t("ai.title")}
-        </Typography>
-        <Typography as="p" tone="secondary" leading="standard">
-         {t("ai.description")}
-        </Typography>
-        <div>
-         <Badge variant={hasUnsavedChanges ? "warning" : "success"} size="md">
-          {hasUnsavedChanges ? t("ai.statusDirty") : t("ai.statusSynced")}
+      <Card variant="section" padding="lg" className="grid gap-4">
+       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <SectionHeading
+         icon={<Sparkles />}
+         title={lookupT("modelProvider.title")}
+         description={lookupT("modelProvider.description")}
+        />
+        <div className="flex flex-wrap items-center gap-2">
+         <Badge variant={hasUnsavedModelChange ? "warning" : "success"} size="sm">
+          {hasUnsavedModelChange
+           ? lookupT("modelProvider.dirty")
+           : lookupT("modelProvider.synced")}
          </Badge>
+         <Button
+          variant="outline"
+          size="toolbar"
+          onClick={() => setGeminiModel(DEFAULT_GEMINI_MODEL)}
+          disabled={isLoading || isSaving}
+         >
+          <RefreshCcw data-icon="inline-start" />
+          {lookupT("modelProvider.reset")}
+         </Button>
+         <Button
+          size="toolbar"
+          onClick={() => void handleSaveModel()}
+          disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedModelChange}
+         >
+          {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+          {lookupT("modelProvider.save")}
+         </Button>
         </div>
        </div>
 
-       <div className="flex flex-wrap items-center gap-3">
-        <Button
-         variant="outline"
-         onClick={() => {
-          setWordLookupPrompt(DEFAULT_WORD_LOOKUP_PROMPT);
-          setSentenceLookupPrompt(DEFAULT_SENTENCE_LOOKUP_PROMPT);
-          setGeminiModel(DEFAULT_GEMINI_MODEL);
-         }}
-         disabled={isLoading || isSaving}
-        >
-         <RefreshCcw data-icon="inline-start" />
-         {t("ai.reset")}
-        </Button>
-        <Button
-         onClick={handleSave}
-         disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
-        >
-         {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-         {t("ai.save")}
-        </Button>
-       </div>
-      </div>
+       <Separator />
 
-      <Card variant="section" padding="lg" className="grid gap-4">
-       <SectionHeading
-        icon={<Sparkles />}
-        title={t("ai.detailTitle")}
-        description={t("ai.detailDescription")}
-       />
-
-       <div className="grid max-w-xl gap-2">
-        <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
-         {t("ai.detailModelLabel")}
-        </Label>
-        <Select
-         value={geminiModel}
-         onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
-         disabled={isLoading || isSaving}
-        >
-         <SelectTrigger id="gemini-model" width="full" aria-label={t("ai.detailModelAria")}>
-          <SelectValue />
-         </SelectTrigger>
-         <SelectContent align="start">
-          {!selectedDetailModel ? (
-           <SelectItem value={geminiModel}>
-            {getGeminiModelLabel(geminiModel)} ({t("ai.savedSuffix")})
-           </SelectItem>
-          ) : null}
-          {GEMINI_DETAIL_MODEL_OPTIONS.map((option) => (
-           <SelectItem key={option.value} value={option.value}>
-            {option.label}
-           </SelectItem>
-          ))}
-         </SelectContent>
-        </Select>
-        <Typography as="p" variant="bodySmall" tone="muted" leading="compact">
-         {selectedDetailModel
-          ? t(getApiKeyModelDescriptionKey("gemini", selectedDetailModel.value))
-          : t("ai.legacyModel")}
-        </Typography>
-       </div>
-      </Card>
-
-      <Card variant="section" padding="lg" className="grid gap-4">
-       <SectionHeading
-        icon={<Languages />}
-        title={t("ai.quickTitle")}
-        description={t("ai.quickDescription")}
-       />
-
-       <div className="flex flex-wrap items-center gap-3 border-t border-border-default pt-4">
+       <div className="grid gap-2">
         <div className="grid gap-1">
-         <Typography as="p" tone="default" weight="semibold">
-          {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
+         <Typography as="h3" variant="cardTitle" weight="bold">
+          {t("ai.detailTitle")}
          </Typography>
          <Typography as="p" variant="bodySmall" tone="muted">
-          {t("ai.quickModelDescription")}
+          {t("ai.detailDescription")}
          </Typography>
         </div>
-        <Badge variant="success" size="md">
-         {t("ai.noPersonalKey")}
-        </Badge>
-        <Badge variant="info" size="md">
-         {t("ai.freeTier")}
-        </Badge>
+        <div className="grid max-w-xl gap-2">
+         <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
+          {t("ai.detailModelLabel")}
+         </Label>
+         <Select
+          value={geminiModel}
+          onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
+          disabled={isLoading || isSaving}
+         >
+          <SelectTrigger id="gemini-model" width="full" aria-label={t("ai.detailModelAria")}>
+           <SelectValue />
+          </SelectTrigger>
+          <SelectContent align="start">
+           {!selectedDetailModel ? (
+            <SelectItem value={geminiModel}>
+             {getGeminiModelLabel(geminiModel)} ({t("ai.savedSuffix")})
+            </SelectItem>
+           ) : null}
+           {GEMINI_DETAIL_MODEL_OPTIONS.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+             {option.label}
+            </SelectItem>
+           ))}
+          </SelectContent>
+         </Select>
+         <Typography as="p" variant="bodySmall" tone="muted" leading="compact">
+          {selectedDetailModel
+           ? t(getApiKeyModelDescriptionKey("gemini", selectedDetailModel.value))
+           : t("ai.legacyModel")}
+         </Typography>
+        </div>
+       </div>
+
+       <Separator />
+
+       <div className="grid gap-2">
+        <Typography as="h3" variant="cardTitle" weight="bold">
+         {t("ai.quickTitle")}
+        </Typography>
+        <Typography as="p" variant="bodySmall" tone="muted">
+         {t("ai.quickDescription")}
+        </Typography>
+        <div className="flex flex-wrap items-center gap-3">
+         <div className="grid gap-1">
+          <Typography as="p" tone="default" weight="semibold">
+           {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
+          </Typography>
+          <Typography as="p" variant="bodySmall" tone="muted">
+           {t("ai.quickModelDescription")}
+          </Typography>
+         </div>
+         <Badge variant="success" size="sm">
+          {t("ai.noPersonalKey")}
+         </Badge>
+         <Badge variant="info" size="sm">
+          {t("ai.freeTier")}
+         </Badge>
+        </div>
        </div>
       </Card>
 
       <ApiKeyManagerSection />
       <AiConversationUsageSettings />
 
-      <div className="grid gap-4">
+      <Card variant="section" padding="lg" className="grid gap-4">
        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <SectionHeading title={t("prompts.title")} description={t("prompts.description")} />
-
-        <div className="flex flex-wrap items-center gap-3">
-         <Badge variant={hasUnsavedPromptChanges ? "warning" : "success"} size="md">
+        <SectionHeading
+         icon={<Settings2 />}
+         title={lookupT("advanced.title")}
+         description={lookupT("advanced.description")}
+        />
+        <div className="flex flex-wrap items-center gap-2">
+         <Badge variant={hasUnsavedPromptChanges ? "warning" : "default"} size="sm">
           {hasUnsavedPromptChanges ? t("prompts.dirty") : t("prompts.synced")}
          </Badge>
          <Button
-          onClick={handleSave}
-          disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
+          variant="outline"
+          size="toolbar"
+          aria-expanded={advancedOpen}
+          aria-controls="ai-advanced-prompt-settings"
+          onClick={() => setAdvancedOpen((open) => !open)}
          >
-          {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-          {t("prompts.save")}
+          {advancedOpen ? <ChevronUp data-icon="inline-start" /> : <ChevronDown data-icon="inline-start" />}
+          {advancedOpen ? lookupT("advanced.close") : lookupT("advanced.open")}
          </Button>
         </div>
        </div>
 
-       <div className="grid gap-6 xl:grid-cols-2">
-        <PromptPanel
-         title={t("prompts.wordTitle")}
-         description={t("prompts.wordDescription", { token: WORD_PLACEHOLDER })}
-         placeholderToken={WORD_PLACEHOLDER}
-         value={wordLookupPrompt}
-         onChange={setWordLookupPrompt}
-         defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
-         disabled={isLoading || isSaving}
-         isDirty={hasUnsavedWordPrompt}
-        />
+       {advancedOpen ? (
+        <div id="ai-advanced-prompt-settings" className="grid gap-4">
+         <Separator />
+         <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+          <div className="grid min-w-0 max-w-3xl gap-1">
+           <Typography as="h3" variant="cardTitle" weight="bold">
+            {t("prompts.title")}
+           </Typography>
+           <Typography as="p" variant="bodySmall" tone="muted">
+            {t("prompts.description")}
+           </Typography>
+          </div>
+          <Button
+           size="toolbar"
+           onClick={() => void handleSavePrompts()}
+           disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
+          >
+           {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+           {t("prompts.save")}
+          </Button>
+         </div>
 
-        <PromptPanel
-         title={t("prompts.sentenceTitle")}
-         description={t("prompts.sentenceDescription", { token: SENTENCE_PLACEHOLDER })}
-         placeholderToken={SENTENCE_PLACEHOLDER}
-         value={sentenceLookupPrompt}
-         onChange={setSentenceLookupPrompt}
-         defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
-         disabled={isLoading || isSaving}
-         isDirty={hasUnsavedSentencePrompt}
-        />
-       </div>
-      </div>
+         <div className="grid gap-6 xl:grid-cols-2">
+          <PromptPanel
+           title={t("prompts.wordTitle")}
+           description={t("prompts.wordDescription", { token: WORD_PLACEHOLDER })}
+           placeholderToken={WORD_PLACEHOLDER}
+           value={wordLookupPrompt}
+           onChange={setWordLookupPrompt}
+           defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
+           disabled={isLoading || isSaving}
+           isDirty={hasUnsavedWordPrompt}
+          />
+
+          <PromptPanel
+           title={t("prompts.sentenceTitle")}
+           description={t("prompts.sentenceDescription", { token: SENTENCE_PLACEHOLDER })}
+           placeholderToken={SENTENCE_PLACEHOLDER}
+           value={sentenceLookupPrompt}
+           onChange={setSentenceLookupPrompt}
+           defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
+           disabled={isLoading || isSaving}
+           isDirty={hasUnsavedSentencePrompt}
+          />
+         </div>
+        </div>
+       ) : null}
+      </Card>
      </TabsContent>
     </Tabs>
    </main>
@@ -528,7 +583,7 @@ function PromptPanel({
   <Card variant="default" padding="lg" className="grid gap-4">
    <div className="flex items-start justify-between gap-4">
     <div className="grid gap-2">
-     <Typography as="h3" variant="sectionTitle" tone="default" weight="bold">
+     <Typography as="h4" variant="cardTitle" tone="default" weight="bold">
       {title}
      </Typography>
      <Typography as="p" tone="secondary" leading="standard">
