@@ -16,9 +16,14 @@ import {
  loadAiConversationPostTurnEvidence,
 } from "./ai-conversation-memory-persistence.server";
 import { extractAiConversationMemoryChanges } from "./ai-conversation-memory-extraction.server";
-import { enrichMissingAiConversationMemoryEmbeddings, isAiConversationLongTermMemoryEnabled } from "./ai-conversation-memory.server";
+import {
+ enrichMissingAiConversationMemoryEmbeddings,
+ isAiConversationLongTermMemoryEnabled,
+} from "./ai-conversation-memory.server";
 import type { AiConversationMemoryCandidate } from "./ai-conversation-memory.schemas";
 import { buildAiConversationSummaryUpdate } from "./ai-conversation-summary.server";
+
+const RELATIONSHIP_INCREMENT_PER_REMEMBERED_TURN = 0.006;
 
 function toMemoryChangeJson(candidate: AiConversationMemoryCandidate): JsonObject {
  return {
@@ -31,10 +36,6 @@ function toMemoryChangeJson(candidate: AiConversationMemoryCandidate): JsonObjec
   confidence: candidate.confidence,
   scope: candidate.scope,
  };
-}
-
-function relationshipIncrement(appliedMemoryChanges: number) {
- return Math.min(0.018, 0.004 + Math.min(appliedMemoryChanges, 4) * 0.0035);
 }
 
 export async function processDueAiConversationPostTurnJobs({
@@ -72,7 +73,6 @@ export async function processDueAiConversationPostTurnJobs({
     userPreference: evidence.userMemoryEnabled,
    });
 
-   let appliedMemoryChanges = 0;
    if (job.memory_applied_at === null) {
     if (memoryEnabled) {
      const activeMemories = await loadActiveAiConversationMemories({
@@ -95,7 +95,7 @@ export async function processDueAiConversationPostTurnJobs({
       throw new Error(extraction.error || "AI memory extraction failed");
      }
 
-     appliedMemoryChanges = await applyAiConversationMemoryChanges({
+     await applyAiConversationMemoryChanges({
       userId,
       jobId: job.id,
       userMessageId: evidence.userMessage.id,
@@ -125,7 +125,7 @@ export async function processDueAiConversationPostTurnJobs({
     await evolveAiConversationRelationshipForJob({
      userId,
      jobId: job.id,
-     increment: memoryEnabled ? relationshipIncrement(appliedMemoryChanges) : 0,
+     increment: memoryEnabled ? RELATIONSHIP_INCREMENT_PER_REMEMBERED_TURN : 0,
     });
    }
 
