@@ -185,7 +185,8 @@ create table public.ai_memories (
   constraint ai_memories_superseded_by_fk
     foreign key (superseded_by_id, user_id)
     references public.ai_memories(id, user_id)
-    on delete set null (superseded_by_id),
+    on delete set null (superseded_by_id)
+    deferrable initially deferred,
   constraint ai_memories_superseded_state_check check (
     (status = 'superseded' and superseded_by_id is not null)
     or
@@ -329,7 +330,7 @@ begin
       using errcode = '22023';
   end if;
 
-  if p_role not in ('user', 'assistant') then
+  if p_role is null or p_role not in ('user', 'assistant') then
     raise exception 'Unsupported AI message role'
       using errcode = '22023';
   end if;
