@@ -2,6 +2,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
+import type {
+ DailyReadingGenerationStage,
+ DailyReadingSourceCandidate,
+} from "./daily-reading.schemas";
+
 const { generateAiConversationReply } = vi.hoisted(() => ({
  generateAiConversationReply: vi.fn(),
 }));
@@ -26,7 +31,7 @@ const credential: UserApiKeyCredential = {
  apiKey: "test-key",
 };
 
-const source = {
+const source: DailyReadingSourceCandidate = {
  titleZh: "博物馆推出传统文化暑期新展览",
  publisher: "中国新闻网",
  url: "https://www.chinanews.com.cn/cul/2026/08-18/123.shtml",
@@ -48,6 +53,8 @@ const sentenceD =
  "工作人员表示，博物馆希望参观者不仅获得知识，也能够主动提问、查找资料和与同伴交流，因此一次普通参观可以逐渐变成包含观察、阅读、讨论和总结的学习过程。";
 const sentenceE =
  "未来馆方会根据学生和教师的反馈调整讲解内容，并继续与学校合作开发适合不同年龄学习者的公共教育活动，使博物馆里的文化资源能够更自然地进入日常学习。";
+const expansion =
+ "这些安排把展厅里的信息变成可以观察、比较、讨论和总结的学习材料，也让学生能够根据已经看到的证据继续提出更具体的问题。";
 
 const validCore = {
  titleZh: "从博物馆展览开始主动学习",
@@ -58,7 +65,7 @@ const validCore = {
  level: "HSK5",
  estimatedMinutes: 8,
  paragraphs: [sentenceA, sentenceB, sentenceC, sentenceD, sentenceE].map((zh, index) => ({
-  zh,
+  zh: `${zh}${expansion}`,
   vi: `Bản dịch tiếng Việt sát nghĩa của đoạn ${index + 1}, giữ nguyên quan hệ thông tin trong câu tiếng Trung.`,
   roleVi: index === 0 ? "mở vấn đề" : index === 4 ? "kết luận" : "thân bài",
  })),
@@ -83,9 +90,9 @@ const validLearning = {
   categoryVi: "từ/cụm từ",
  })),
  grammarPoints: [
-  { patternZh: "不仅……也……", explanationVi: "Nối hai ý tăng tiến.", evidenceSentenceZh: `${sentenceD}。` },
-  { patternZh: "为了……", explanationVi: "Nêu mục đích.", evidenceSentenceZh: `${sentenceB}。` },
-  { patternZh: "根据……", explanationVi: "Nêu căn cứ.", evidenceSentenceZh: `${sentenceE}。` },
+  { patternZh: "不仅……也……", explanationVi: "Nối hai ý tăng tiến.", evidenceSentenceZh: sentenceD },
+  { patternZh: "为了……", explanationVi: "Nêu mục đích.", evidenceSentenceZh: sentenceB },
+  { patternZh: "根据……", explanationVi: "Nêu căn cứ.", evidenceSentenceZh: sentenceE },
  ],
  questions: [
   {
