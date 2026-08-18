@@ -8,6 +8,9 @@ import type { JsonObject } from "@/types/json";
 
 import type { AiConversationContextState } from "./ai-conversation-context.server";
 import type {
+ AiConversationHistoryItem,
+ AiConversationMemoryPolicy,
+ AiConversationMemoryPolicyState,
  AiConversationPersistedMessage,
  AiConversationSession,
  AiConversationSettings,
@@ -30,6 +33,7 @@ const conversationModeSchema = z.enum([
 const correctionStyleSchema = z.enum(["light", "balanced", "strict"]);
 const replyModeSchema = z.enum(["adaptive", "chinese", "bilingual"]);
 const learnerLevelSchema = z.enum(["beginner", "intermediate", "advanced"]);
+const memoryPolicySchema = z.enum(["inherit", "enabled", "disabled"]);
 
 const conversationRowSchema = z.object({
  id: z.uuid(),
@@ -38,7 +42,13 @@ const conversationRowSchema = z.object({
  mode: conversationModeSchema,
  correction_style: correctionStyleSchema,
  reply_mode: replyModeSchema,
- memory_policy: z.enum(["inherit", "enabled", "disabled"]),
+ memory_policy: memoryPolicySchema,
+});
+
+const conversationHistoryRowSchema = conversationRowSchema.extend({
+ last_message_at: z.iso.datetime({ offset: true }).nullable(),
+ created_at: z.iso.datetime({ offset: true }),
+ updated_at: z.iso.datetime({ offset: true }),
 });
 
 const conversationContextRowSchema = conversationRowSchema.extend({
@@ -89,6 +99,7 @@ const preferenceContextRowSchema = z.object({
  default_correction_style: correctionStyleSchema,
  default_reply_mode: replyModeSchema,
  learner_level: learnerLevelSchema,
+ memory_enabled: z.boolean(),
 });
 
 const messageRpcResultSchema = z.union([
@@ -111,6 +122,7 @@ const DEFAULT_CONVERSATION_PREFERENCES: z.output<typeof preferenceContextRowSche
  default_correction_style: "balanced",
  default_reply_mode: "adaptive",
  learner_level: "intermediate",
+ memory_enabled: true,
 };
 
 export class AiConversationPersistenceNotReadyError extends Error {
@@ -222,6 +234,15 @@ async function requestPostgrest<T>({
  return schema.parse(payload);
 }
 
+function resolveMemoryEnabled(
+ policy: z.output<typeof memoryPolicySchema>,
+ accountMemoryEnabled: boolean,
+) {
+ if (policy === "disabled") return false;
+ if (policy === "enabled") return true;
+ return accountMemoryEnabled;
+}
+
 function toPersistedMessage(row: z.output<typeof messageRowSchema>): AiConversationPersistedMessage {
  return {
   id: row.id,
@@ -241,10 +262,24 @@ function toCharacterPresentation(row: z.output<typeof characterContextRowSchema>
  };
 }
 
+function toHistoryItem(row: z.output<typeof conversationHistoryRowSchema>): AiConversationHistoryItem {
+ return {
+  id: row.id,
+  characterId: row.character_id,
+  title: row.title,
+  mode: row.mode,
+  memoryPolicy: row.memory_policy,
+  lastMessageAt: row.last_message_at,
+  createdAt: row.created_at,
+  updatedAt: row.updated_at,
+ };
+}
+
 function toSession(
  conversation: z.output<typeof conversationRowSchema> | null,
  character: z.output<typeof characterContextRowSchema> | null,
- learnerLevel: z.output<typeof learnerLevelSchema>,
+ relationship: z.output<typeof relationshipContextRowSchema> | null,
+ preferences: z.output<typeof preferenceContextRowSchema>,
  messages: z.output<typeof messageRowSchema>[],
 ): AiConversationSession {
  return {
@@ -260,7 +295,16 @@ function toSession(
      }
    : null,
   character: character ? toCharacterPresentation(character) : null,
-  learnerLevel,
+  relationship: relationship
+   ? {
+      nickname: relationship.nickname,
+      familiarityScore: relationship.familiarity_score,
+     }
+   : null,
+  learnerLevel: preferences.learner_level,
+  memoryEnabled: conversation
+   ? resolveMemoryEnabled(conversation.memory_policy, preferences.memory_enabled)
+   : preferences.memory_enabled,
   messages: messages.map(toPersistedMessage),
  };
 }
@@ -280,12 +324,28 @@ async function findLatestConversation(userId: string) {
  return rows[0] ?? null;
 }
 
+async function findOwnedConversation(userId: string, conversationId: string) {
+ const rows = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(conversationRowSchema),
+  params: {
+   select: "id,character_id,title,mode,correction_style,reply_mode,memory_policy",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversationId}`,
+   archived_at: "is.null",
+   limit: "1",
+  },
+ });
+ return rows[0] ?? null;
+}
+
 async function loadConversationPreferences(userId: string) {
  const rows = await requestPostgrest({
   resource: "ai_conversation_preferences",
   schema: z.array(preferenceContextRowSchema),
   params: {
-   select: "default_mode,default_correction_style,default_reply_mode,learner_level",
+   select:
+    "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
    user_id: `eq.${userId}`,
    limit: "1",
   },
@@ -331,6 +391,20 @@ async function loadCharacter(userId: string, characterId: string) {
   );
  }
  return character;
+}
+
+async function loadRelationship(userId: string, characterId: string) {
+ const rows = await requestPostgrest({
+  resource: "ai_relationship_states",
+  schema: z.array(relationshipContextRowSchema),
+  params: {
+   select: "nickname,familiarity_score,revision",
+   user_id: `eq.${userId}`,
+   character_id: `eq.${characterId}`,
+   limit: "1",
+  },
+ });
+ return rows[0] ?? null;
 }
 
 async function createDefaultCharacter(userId: string) {
@@ -399,12 +473,13 @@ async function loadSessionForConversation({
  conversation: z.output<typeof conversationRowSchema>;
  preferences?: z.output<typeof preferenceContextRowSchema>;
 }) {
- const [messages, character, resolvedPreferences] = await Promise.all([
+ const [messages, character, relationship, resolvedPreferences] = await Promise.all([
   loadMessages(conversation.id, userId),
   loadCharacter(userId, conversation.character_id),
+  loadRelationship(userId, conversation.character_id),
   preferences ? Promise.resolve(preferences) : loadConversationPreferences(userId),
  ]);
- return toSession(conversation, character, resolvedPreferences.learner_level, messages);
+ return toSession(conversation, character, relationship, resolvedPreferences, messages);
 }
 
 export async function loadLatestAiConversationSession(userId: string): Promise<AiConversationSession> {
@@ -412,8 +487,29 @@ export async function loadLatestAiConversationSession(userId: string): Promise<A
   findLatestConversation(userId),
   loadConversationPreferences(userId),
  ]);
- if (!conversation) return toSession(null, null, preferences.learner_level, []);
+ if (!conversation) return toSession(null, null, null, preferences, []);
 
+ return loadSessionForConversation({ userId, conversation, preferences });
+}
+
+export async function loadAiConversationSession({
+ userId,
+ conversationId,
+}: {
+ userId: string;
+ conversationId: string;
+}): Promise<AiConversationSession> {
+ const [conversation, preferences] = await Promise.all([
+  findOwnedConversation(userId, conversationId),
+  loadConversationPreferences(userId),
+ ]);
+ if (!conversation) {
+  throw new AiConversationPersistenceRequestError(
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+   "AI conversation not found",
+  );
+ }
  return loadSessionForConversation({ userId, conversation, preferences });
 }
 
@@ -429,6 +525,32 @@ export async function ensureAiConversationSession(userId: string): Promise<AiCon
  const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
  const conversation = await createConversation(userId, characterId, preferences);
  return loadSessionForConversation({ userId, conversation, preferences });
+}
+
+export async function createAiConversationSession(userId: string): Promise<AiConversationSession> {
+ const preferences = await loadConversationPreferences(userId);
+ const characterId = (await findDefaultCharacterId(userId)) ?? (await createDefaultCharacter(userId));
+ const conversation = await createConversation(userId, characterId, preferences);
+ return loadSessionForConversation({ userId, conversation, preferences });
+}
+
+export async function listAiConversationHistory(
+ userId: string,
+ limit = 30,
+): Promise<AiConversationHistoryItem[]> {
+ const rows = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(conversationHistoryRowSchema),
+  params: {
+   select:
+    "id,character_id,title,mode,correction_style,reply_mode,memory_policy,last_message_at,created_at,updated_at",
+   user_id: `eq.${userId}`,
+   archived_at: "is.null",
+   order: "last_message_at.desc.nullslast,created_at.desc",
+   limit: String(Math.min(Math.max(limit, 1), 50)),
+  },
+ });
+ return rows.map(toHistoryItem);
 }
 
 export async function updateAiConversationSettings({
@@ -472,7 +594,8 @@ export async function updateAiConversationSettings({
   schema: z.array(preferenceContextRowSchema).min(1),
   method: "POST",
   params: {
-   select: "default_mode,default_correction_style,default_reply_mode,learner_level",
+   select:
+    "default_mode,default_correction_style,default_reply_mode,learner_level,memory_enabled",
    on_conflict: "user_id",
   },
   body: {
@@ -495,6 +618,81 @@ export async function updateAiConversationSettings({
   replyMode: conversation.reply_mode,
   learnerLevel: preference.learner_level,
  };
+}
+
+export async function updateAiConversationMemoryPolicy({
+ userId,
+ conversationId,
+ memoryPolicy,
+}: {
+ userId: string;
+ conversationId: string;
+ memoryPolicy: AiConversationMemoryPolicy;
+}): Promise<AiConversationMemoryPolicyState> {
+ const conversations = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(conversationRowSchema),
+  method: "PATCH",
+  params: {
+   select: "id,character_id,title,mode,correction_style,reply_mode,memory_policy",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversationId}`,
+   archived_at: "is.null",
+  },
+  body: {
+   memory_policy: memoryPolicy,
+   updated_at: new Date().toISOString(),
+  },
+  prefer: "return=representation",
+ });
+ const conversation = conversations[0];
+ if (!conversation) {
+  throw new AiConversationPersistenceRequestError(
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+   "AI conversation not found",
+  );
+ }
+ const preferences = await loadConversationPreferences(userId);
+ return {
+  conversationId: conversation.id,
+  memoryPolicy: conversation.memory_policy,
+  memoryEnabled: resolveMemoryEnabled(conversation.memory_policy, preferences.memory_enabled),
+ };
+}
+
+export async function archiveAiConversation({
+ userId,
+ conversationId,
+}: {
+ userId: string;
+ conversationId: string;
+}): Promise<{ conversationId: string; archived: true }> {
+ const rows = await requestPostgrest({
+  resource: "ai_conversations",
+  schema: z.array(z.object({ id: z.uuid() })),
+  method: "PATCH",
+  params: {
+   select: "id",
+   user_id: `eq.${userId}`,
+   id: `eq.${conversationId}`,
+   archived_at: "is.null",
+  },
+  body: {
+   archived_at: new Date().toISOString(),
+   updated_at: new Date().toISOString(),
+  },
+  prefer: "return=representation",
+ });
+ const row = rows[0];
+ if (!row) {
+  throw new AiConversationPersistenceRequestError(
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+   "AI conversation not found",
+  );
+ }
+ return { conversationId: row.id, archived: true };
 }
 
 export async function loadAiConversationContextState({
@@ -525,21 +723,11 @@ export async function loadAiConversationContextState({
   );
  }
 
- const [character, relationships, preferences] = await Promise.all([
+ const [character, relationship, preferences] = await Promise.all([
   loadCharacter(userId, conversation.character_id),
-  requestPostgrest({
-   resource: "ai_relationship_states",
-   schema: z.array(relationshipContextRowSchema),
-   params: {
-    select: "nickname,familiarity_score,revision",
-    user_id: `eq.${userId}`,
-    character_id: `eq.${conversation.character_id}`,
-    limit: "1",
-   },
-  }),
+  loadRelationship(userId, conversation.character_id),
   loadConversationPreferences(userId),
  ]);
- const relationship = relationships[0] ?? null;
 
  return {
   conversation: {
