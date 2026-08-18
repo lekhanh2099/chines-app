@@ -5,17 +5,16 @@ import { SettingsPageContent } from "@/features/settings/SettingsPageContent";
 export default async function SettingsPage({ searchParams }: PageProps<"/[locale]/settings">) {
  const params = await searchParams;
  const rawSection = params.section;
+ const rawPanel = params.panel;
  const sectionValue = Array.isArray(rawSection) ? rawSection[0] : rawSection;
+ const aiPanelValue = Array.isArray(rawPanel) ? rawPanel[0] : rawPanel;
 
  return (
   <SettingsPageContent
    sectionValue={sectionValue}
-   readingSettings={
-    <div className="grid gap-4">
-     <HanziHomeReadingSettingsSection />
-     <DailyReadingSettingsPanel />
-    </div>
-   }
+   aiPanelValue={aiPanelValue}
+   readingSettings={<HanziHomeReadingSettingsSection />}
+   dailyReadingSettings={<DailyReadingSettingsPanel />}
   />
  );
 }
