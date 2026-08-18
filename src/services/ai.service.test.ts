@@ -1,8 +1,9 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import type { UserApiKeyCredential } from "./user-api-keys.service";
-import { analyzeHanziBasicDetailed, generateAiConversationReply } from "./ai.service";
 import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
+
+import { analyzeHanziBasicDetailed, generateAiConversationReply } from "./ai.service";
+import type { UserApiKeyCredential } from "./user-api-keys.service";
 
 const groqCredential: UserApiKeyCredential = {
  id: "groq-key",
@@ -140,6 +141,10 @@ describe("Groq lookup routing", () => {
   expect(result.data?.meaning_summary).toBe("học tập");
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(fetchMock.mock.calls[0]?.[0]).toContain(DEFAULT_GEMINI_QUICK_MODEL);
+  const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+  expect(requestBody.systemInstruction.parts[0].text).toContain("lexicography engine");
+  expect(requestBody.contents[0].role).toBe("user");
+  expect(requestBody.contents[0].parts[0].text).not.toContain("lexicography engine");
  });
 
  it("requires a managed key for conversation and sends text mode", async () => {
@@ -173,5 +178,53 @@ describe("Groq lookup routing", () => {
   expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body))).not.toHaveProperty(
    "response_format",
   );
+ });
+
+ it("sends trusted persisted context as a real system message for OpenAI-compatible BYOK", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   new Response(
+    JSON.stringify({ choices: [{ message: { content: "最近怎么样？" } }] }),
+    { status: 200 },
+   ),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+  const trustedContext = "[PRODUCT POLICY — HIGHEST PRIORITY]\nCharacter: 小林";
+
+  const result = await generateAiConversationReply([{ role: "user", content: "你好" }], {
+   userApiKeys: [groqCredential],
+   systemContext: trustedContext,
+  });
+
+  expect(result.data).toBe("最近怎么样？");
+  const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+  expect(requestBody.messages[0]).toEqual({ role: "system", content: trustedContext });
+  expect(requestBody.messages[1].role).toBe("user");
+  expect(requestBody.messages[1].content).toContain("Learner: 你好");
+  expect(requestBody.messages[1].content).not.toContain("PRODUCT POLICY");
+ });
+
+ it("sends trusted persisted context through Gemini systemInstruction for Gemini BYOK", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   new Response(
+    JSON.stringify({
+     candidates: [{ content: { parts: [{ text: "最近怎么样？" }] } }],
+    }),
+    { status: 200 },
+   ),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+  const trustedContext = "[PRODUCT POLICY — HIGHEST PRIORITY]\nCharacter: 小林";
+
+  const result = await generateAiConversationReply([{ role: "user", content: "你好" }], {
+   userApiKeys: [geminiCredential],
+   systemContext: trustedContext,
+  });
+
+  expect(result.data).toBe("最近怎么样？");
+  const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+  expect(requestBody.systemInstruction.parts[0].text).toBe(trustedContext);
+  expect(requestBody.contents[0].role).toBe("user");
+  expect(requestBody.contents[0].parts[0].text).toContain("Learner: 你好");
+  expect(requestBody.contents[0].parts[0].text).not.toContain("PRODUCT POLICY");
  });
 });
