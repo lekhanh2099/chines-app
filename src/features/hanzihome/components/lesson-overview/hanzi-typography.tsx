@@ -21,6 +21,7 @@ const StaticHanziTextSizeSchema = z.enum([
 const StudyTextElementSchema = z.enum([
  "span",
  "p",
+ "h1",
  "h2",
  "h3",
  "h4",
