@@ -134,6 +134,7 @@ describe("/api/ai/conversation", () => {
   expect(messages[0]).toMatchObject({ role: "user" });
   expect(messages[0].content).toContain(DEFAULT_AI_CONVERSATION_PROFILE.displayName);
   expect(messages[0].content).toContain("Chủ đề người học quan tâm");
+  expect(messages[0].content).toContain("Không hiển thị chain-of-thought");
   expect(messages[1]).toEqual({ role: "user", content: "你好" });
   expect(options).toEqual(expect.objectContaining({ userApiKeys: credentials }));
   expect(await response.json()).toEqual({
@@ -142,6 +143,36 @@ describe("/api/ai/conversation", () => {
    model: "openai/gpt-oss-20b",
    apiKeyId: "11111111-1111-4111-8111-111111111111",
    usage: null,
+  });
+ });
+
+ it("removes provider thinking before returning the learner-facing reply", async () => {
+  const credentials = [
+   {
+    id: "11111111-1111-4111-8111-111111111111",
+    provider: "groq",
+    defaultModel: "qwen/qwen3.6-27b",
+    label: "Groq Free",
+   },
+  ];
+  getActiveUserApiKeyCredentials.mockResolvedValue(credentials);
+  generateAiConversationReply.mockResolvedValue({
+   data: "<think>internal reasoning must stay hidden</think>\n\n你好！最近过得怎么样？",
+   error: null,
+  });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify(requestBody([{ role: "user", content: "你好" }])),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  expect(await response.json()).toMatchObject({
+   message: "你好！最近过得怎么样？",
+   provider: "Groq",
+   model: "qwen/qwen3.6-27b",
   });
  });
 
