@@ -3,6 +3,7 @@ import "server-only";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 
+import { getDefaultApiKeyModel } from "@/lib/api-key-models";
 import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import { generateAiConversationReply } from "@/services/ai.service";
@@ -106,7 +107,11 @@ async function requestStructured<T>({
   if (personal.data) {
    const parsed = parseStructured(personal.data, schema);
    if (parsed !== null) {
-    return { data: parsed, provider: selected.provider, model: selected.defaultModel };
+    return {
+     data: parsed,
+     provider: selected.provider,
+     model: selected.defaultModel ?? getDefaultApiKeyModel(selected.provider),
+    };
    }
   }
  }
