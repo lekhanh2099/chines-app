@@ -461,8 +461,8 @@ function ReaderDocumentContent({
       </section>
      );
      return (
-      <div key={section.id}>
-       {sectionIndex > 0 ? <Separator className="mb-5" /> : null}
+      <div key={section.id} className="grid gap-5">
+       {sectionIndex > 0 ? <Separator /> : null}
        {renderSection ? renderSection({ section, content }) : content}
       </div>
      );
