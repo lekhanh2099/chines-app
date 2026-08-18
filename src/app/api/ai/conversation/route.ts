@@ -17,9 +17,12 @@ import {
  loadAiConversationContextState,
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
+ updateAiConversationSettings,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
 import {
  aiConversationSessionSchema,
+ aiConversationSettingsSchema,
+ aiConversationSettingsUpdateSchema,
  aiConversationTurnRequestSchema,
  aiConversationTurnResponseSchema,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
@@ -55,6 +58,10 @@ const healthRequestSchema = z.strictObject({
 
 const sessionRequestSchema = z.strictObject({ action: z.literal("session") });
 const ensureSessionRequestSchema = z.strictObject({ action: z.literal("ensure-session") });
+const updateSettingsRequestSchema = aiConversationSettingsUpdateSchema.extend({
+ action: z.literal("update-settings"),
+ conversationId: z.uuid(),
+});
 const persistedTurnRequestSchema = aiConversationTurnRequestSchema.extend({
  action: z.literal("message"),
  conversationId: z.uuid(),
@@ -134,6 +141,13 @@ function persistenceBoundaryErrorResponse(error: unknown) {
 
  if (
   error instanceof AiConversationPersistenceRequestError &&
+  error.code === "AI_CONVERSATION_NOT_FOUND"
+ ) {
+  return apiError("Không tìm thấy hội thoại AI của tài khoản hiện tại.", 404, "AI_CONVERSATION_NOT_FOUND");
+ }
+
+ if (
+  error instanceof AiConversationPersistenceRequestError &&
   (error.status === 401 || error.status === 403 || error.code === "42501")
  ) {
   return apiError(
@@ -200,6 +214,31 @@ export async function POST(request: Request) {
    if (persistenceResponse) return persistenceResponse;
    logger.error("[AI Conversation] persisted session create failed", error);
    return apiError("Không thể khởi tạo hội thoại AI.", 500, "AI_CONVERSATION_CREATE_FAILED");
+  }
+ }
+
+ const updateSettingsRequest = updateSettingsRequestSchema.safeParse(body);
+ if (updateSettingsRequest.success) {
+  const { conversationId, action: _action, ...settings } = updateSettingsRequest.data;
+  try {
+   const persistedSettings = await updateAiConversationSettings({
+    userId: auth.context.user.id,
+    conversationId,
+    settings,
+   });
+   return privateNoStoreJson(aiConversationSettingsSchema.parse(persistedSettings));
+  } catch (error) {
+   const persistenceResponse = persistenceBoundaryErrorResponse(error);
+   if (persistenceResponse) return persistenceResponse;
+   if (error instanceof z.ZodError) {
+    return apiError(
+     "AI conversation settings persistence trả về dữ liệu không đúng contract.",
+     502,
+     "AI_PERSISTENCE_INVALID_RESPONSE",
+    );
+   }
+   logger.error("[AI Conversation] persisted settings update failed", error);
+   return apiError("Không thể lưu thiết lập hội thoại AI.", 500, "AI_SETTINGS_UPDATE_FAILED");
   }
  }
 
