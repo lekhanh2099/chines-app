@@ -1,10 +1,11 @@
 {
  "title": "Hội thoại AI",
- "description": "Luyện tiếng Trung với nhân vật và thiết lập hội thoại được lưu theo tài khoản. Lịch sử hội thoại được giữ lại để bạn tiếp tục sau khi tải lại.",
+ "description": "Tiếp tục trò chuyện với nhân vật của bạn. Lịch sử, chế độ hội thoại và ngữ cảnh được lưu theo tài khoản.",
  "actions": {
   "setup": "Thiết lập hội thoại",
   "apiKeys": "Quản lý API key",
   "clear": "Xóa phiên",
+  "more": "Thêm tùy chọn hội thoại",
   "send": "Gửi",
   "sending": "Đang gửi…",
   "saving": "Đang lưu…",
@@ -42,6 +43,34 @@
  "character": {
   "defaultName": "小林"
  },
+ "relationship": {
+  "new": "Mới quen",
+  "familiar": "Quen nhau",
+  "friends": "Bạn bè",
+  "close": "Thân thiết"
+ },
+ "memory": {
+  "useLongTerm": "Dùng bộ nhớ dài hạn",
+  "offShort": "Không dùng bộ nhớ",
+  "updateError": "Không thể cập nhật bộ nhớ hội thoại."
+ },
+ "history": {
+  "title": "Lịch sử hội thoại",
+  "open": "Mở lịch sử hội thoại",
+  "newConversation": "Cuộc trò chuyện mới",
+  "creating": "Đang tạo hội thoại…",
+  "loading": "Đang tải lịch sử…",
+  "emptyTitle": "Chưa có hội thoại",
+  "emptyDescription": "Tạo một cuộc trò chuyện mới để bắt đầu với nhân vật hiện tại.",
+  "listAria": "Danh sách hội thoại",
+  "untitled": "Cuộc trò chuyện",
+  "actionsAria": "Tùy chọn cho {title}",
+  "archive": "Lưu trữ hội thoại",
+  "archiveTitle": "Lưu trữ hội thoại này?",
+  "archiveDescription": "“{title}” sẽ được ẩn khỏi lịch sử đang hoạt động. Nội dung không bị xóa vĩnh viễn.",
+  "archiveConfirm": "Lưu trữ",
+  "archiving": "Đang lưu trữ…"
+ },
  "greeting": "你好，我是{name}。Mình đang ở chế độ “{mode}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
  "fallbackInterest": "Hội thoại tiếng Trung",
  "runtime": {
@@ -53,6 +82,10 @@
   "current": "Đang dùng: {provider} · {model}",
   "loadError": "Không tải được danh sách key cá nhân. Chế độ tự động vẫn có thể dùng Gemini hệ thống.",
   "modelFallback": "model mặc định",
+  "compactChecking": "Đang kiểm tra AI",
+  "compactReady": "AI sẵn sàng · {provider}",
+  "compactUnavailable": "AI chưa sẵn sàng",
+  "menuAria": "Chọn và kiểm tra AI runtime",
   "healthChecking": "Đang kiểm tra AI…",
   "healthReady": "Sẵn sàng · {provider} · {model}",
   "recheck": "Kiểm tra lại",
@@ -68,7 +101,8 @@
  "message": {
   "label": "Tin nhắn",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter để gửi · Hội thoại và thiết lập hiện tại được lưu theo tài khoản.",
+  "hint": "Ctrl/Cmd + Enter để gửi · Hội thoại hiện tại được lưu theo tài khoản.",
+  "loadingConversation": "Đang tải cuộc trò chuyện…",
   "replying": "{name} đang trả lời…",
   "sendError": "Không thể gửi hội thoại."
  },
