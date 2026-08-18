@@ -1,6 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import type { AiConversationContextState } from "@/features/hanzihome/ai-conversation/ai-conversation-context.server";
 import type { AiConversationPersistedMessage } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
 import {
  DEFAULT_AI_CONVERSATION_PROFILE,
@@ -89,7 +90,7 @@ const assistantMessage: AiConversationPersistedMessage = {
  createdAt: "2026-08-18T03:00:01+00:00",
 };
 const conversationId = "33333333-3333-4333-8333-333333333333";
-const contextState = {
+const contextState: AiConversationContextState = {
  conversation: {
   id: conversationId,
   characterId: "66666666-6666-4666-8666-666666666666",
@@ -112,7 +113,7 @@ const contextState = {
   identityNotes: "",
  },
  relationship: null,
-} as const;
+};
 
 describe("/api/ai/conversation", () => {
  beforeEach(() => {
