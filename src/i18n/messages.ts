@@ -19,6 +19,7 @@ async function loadViMessages() {
   humanities,
   humanitiesPractice,
   aiConversation,
+  aiConversationSettings,
   aiUsage,
   apiKeySetup,
  ] = await Promise.all([
@@ -39,6 +40,7 @@ async function loadViMessages() {
   import("../../messages/vi/humanities.json"),
   import("../../messages/vi/humanities-practice.json"),
   import("../../messages/vi/ai-conversation.json"),
+  import("../../messages/vi/ai-conversation-settings.json"),
   import("../../messages/vi/ai-usage.json"),
   import("../../messages/vi/api-key-setup.json"),
  ]);
@@ -57,6 +59,7 @@ async function loadViMessages() {
   Humanities: humanities.default,
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
+  AiConversationSettings: aiConversationSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
  };
@@ -83,6 +86,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   humanities,
   humanitiesPractice,
   aiConversation,
+  aiConversationSettings,
   aiUsage,
   apiKeySetup,
  ] = await Promise.all([
@@ -103,6 +107,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/humanities.json"),
   import("../../messages/en/humanities-practice.json"),
   import("../../messages/en/ai-conversation.json"),
+  import("../../messages/en/ai-conversation-settings.json"),
   import("../../messages/en/ai-usage.json"),
   import("../../messages/en/api-key-setup.json"),
  ]);
@@ -121,6 +126,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   Humanities: humanities.default,
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
+  AiConversationSettings: aiConversationSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
  };
@@ -145,6 +151,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   humanities,
   humanitiesPractice,
   aiConversation,
+  aiConversationSettings,
   aiUsage,
   apiKeySetup,
  ] = await Promise.all([
@@ -165,6 +172,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/humanities.json"),
   import("../../messages/zh-CN/humanities-practice.json"),
   import("../../messages/zh-CN/ai-conversation.json"),
+  import("../../messages/zh-CN/ai-conversation-settings.json"),
   import("../../messages/zh-CN/ai-usage.json"),
   import("../../messages/zh-CN/api-key-setup.json"),
  ]);
@@ -183,6 +191,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   Humanities: humanities.default,
   HumanitiesPractice: humanitiesPractice.default,
   AiConversation: aiConversation.default,
+  AiConversationSettings: aiConversationSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
  };
