@@ -31,33 +31,85 @@ import type {
  DailyReadingTopic,
 } from "./daily-reading.schemas";
 
-const generatedTabs = ["reader", "questions", "vocabulary", "grammar", "source"] as const;
-type GeneratedTab = (typeof generatedTabs)[number];
+type GeneratedTab = "reader" | "questions" | "vocabulary" | "grammar" | "source";
+const generatedTabs: readonly GeneratedTab[] = [
+ "reader",
+ "questions",
+ "vocabulary",
+ "grammar",
+ "source",
+];
 
-const stageTranslationKey = {
- discovering: "generated.stage.discovering",
- extracting: "generated.stage.extracting",
- drafting: "generated.stage.drafting",
- repairing_core: "generated.stage.repairingCore",
- enriching: "generated.stage.enriching",
- repairing_learning: "generated.stage.repairingLearning",
- validating: "generated.stage.validating",
- finalizing: "generated.stage.finalizing",
- saving: "generated.stage.saving",
- completed: "generated.stage.completed",
-} as const satisfies Record<DailyReadingGenerationStage, string>;
+type StageTranslationKey =
+ | "generated.stage.discovering"
+ | "generated.stage.extracting"
+ | "generated.stage.drafting"
+ | "generated.stage.repairingCore"
+ | "generated.stage.enriching"
+ | "generated.stage.repairingLearning"
+ | "generated.stage.validating"
+ | "generated.stage.finalizing"
+ | "generated.stage.saving"
+ | "generated.stage.completed";
 
-const topicTranslationKey = {
- culture: "generated.topic.culture",
- education: "generated.topic.education",
- history: "generated.topic.history",
- language: "generated.topic.language",
- science: "generated.topic.science",
- society: "generated.topic.society",
- travel: "generated.topic.travel",
- environment: "generated.topic.environment",
- health: "generated.topic.health",
-} as const satisfies Record<DailyReadingTopic, string>;
+function getStageTranslationKey(stage: DailyReadingGenerationStage): StageTranslationKey {
+ switch (stage) {
+  case "discovering":
+   return "generated.stage.discovering";
+  case "extracting":
+   return "generated.stage.extracting";
+  case "drafting":
+   return "generated.stage.drafting";
+  case "repairing_core":
+   return "generated.stage.repairingCore";
+  case "enriching":
+   return "generated.stage.enriching";
+  case "repairing_learning":
+   return "generated.stage.repairingLearning";
+  case "validating":
+   return "generated.stage.validating";
+  case "finalizing":
+   return "generated.stage.finalizing";
+  case "saving":
+   return "generated.stage.saving";
+  case "completed":
+   return "generated.stage.completed";
+ }
+}
+
+type TopicTranslationKey =
+ | "generated.topic.culture"
+ | "generated.topic.education"
+ | "generated.topic.history"
+ | "generated.topic.language"
+ | "generated.topic.science"
+ | "generated.topic.society"
+ | "generated.topic.travel"
+ | "generated.topic.environment"
+ | "generated.topic.health";
+
+function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
+ switch (topic) {
+  case "culture":
+   return "generated.topic.culture";
+  case "education":
+   return "generated.topic.education";
+  case "history":
+   return "generated.topic.history";
+  case "language":
+   return "generated.topic.language";
+  case "science":
+   return "generated.topic.science";
+  case "society":
+   return "generated.topic.society";
+  case "travel":
+   return "generated.topic.travel";
+  case "environment":
+   return "generated.topic.environment";
+  case "health":
+   return "generated.topic.health";
+ }
+}
 
 export function GeneratedDailyReadingLibrary() {
  const t = useTranslations("DailyReading");
@@ -118,7 +170,7 @@ export function GeneratedDailyReadingLibrary() {
      <Spinner />
      <div className="grid min-w-0 gap-1">
       <Typography variant="label" weight="bold">
-       {t(stageTranslationKey[stage])}
+       {t(getStageTranslationKey(stage))}
       </Typography>
       <Typography variant="bodySmall" tone="muted">
        {t("generated.progressHint")}
@@ -179,7 +231,7 @@ export function GeneratedDailyReadingLibrary() {
           <Badge variant="warning" size="sm">
            {reading.level}
           </Badge>
-          <Badge size="sm">{t(topicTranslationKey[reading.topic])}</Badge>
+          <Badge size="sm">{t(getTopicTranslationKey(reading.topic))}</Badge>
          </div>
          <div className="grid min-w-0 gap-1">
           <Typography variant="caption" tone="muted" weight="bold">
@@ -318,7 +370,7 @@ export function GeneratedDailyReadingView({
        : t("generated.kind.manual")}
      </Badge>
      <Badge variant="warning">{reading.level}</Badge>
-     <Badge>{t(topicTranslationKey[reading.topic])}</Badge>
+     <Badge>{t(getTopicTranslationKey(reading.topic))}</Badge>
      <Badge>{t("sample.minutes", { count: reading.estimatedMinutes })}</Badge>
     </div>
     <HanziText as="h1" size="card" weight="black">
