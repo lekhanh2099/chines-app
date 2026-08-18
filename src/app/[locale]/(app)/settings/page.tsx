@@ -1,4 +1,5 @@
 import { HanziHomeReadingSettingsSection } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
+import { DailyReadingSettingsPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingSettingsPanel";
 import { SettingsPageContent } from "@/features/settings/SettingsPageContent";
 
 export default async function SettingsPage({ searchParams }: PageProps<"/[locale]/settings">) {
@@ -9,7 +10,12 @@ export default async function SettingsPage({ searchParams }: PageProps<"/[locale
  return (
   <SettingsPageContent
    sectionValue={sectionValue}
-   readingSettings={<HanziHomeReadingSettingsSection />}
+   readingSettings={
+    <div className="grid gap-4">
+     <HanziHomeReadingSettingsSection />
+     <DailyReadingSettingsPanel />
+    </div>
+   }
   />
  );
 }
