@@ -156,7 +156,7 @@ These tests are committed but have not been executed by the implementation agent
 Suggested local verification before integration testing:
 
 ```bash
-npm run source:standards
+npm run source:check
 npm run typecheck
 npm run test:run -- src/app/api/ai/conversation/route.test.ts src/features/hanzihome/ai-conversation/ai-conversation-api.test.ts src/features/hanzihome/ai-conversation/ai-conversation-session.schemas.test.ts
 npm run lint
