@@ -39,8 +39,14 @@ import {
  StudyInstructionText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
-import { ProgressiveStudyText, getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ ProgressiveStudyText,
+ getActiveCharacterIndex,
+} from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  analyzeContextualPronunciation,
@@ -60,7 +66,7 @@ import {
 } from "../runtime/ReaderRuntimeProvider";
 import { ReaderTools } from "./ReaderTools";
 
-const readerRateOptions = [0.75, 0.9, 1, 1.1, 1.25] as const;
+const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
 
 export type ReaderSurfaceRenderSegment = (input: {
  segment: ReaderSegment;
@@ -121,6 +127,8 @@ function ReaderSurfaceContent({
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const error = useReaderRuntimeSelector((state) => state.error);
+ const learning = useLearningState();
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
 
  const setSegmentElement = useCallback((segmentId: string, element: HTMLElement | null) => {
   if (element) segmentElementsRef.current.set(segmentId, element);
@@ -210,6 +218,7 @@ function ReaderSurfaceContent({
   <div
    className="grid min-w-0 gap-3 outline-none"
    tabIndex={0}
+   role="region"
    onKeyDown={handleKeyDown}
    aria-label="Trình đọc tiếng Trung"
   >
@@ -235,6 +244,7 @@ function ReaderSurfaceContent({
      <ReaderDocumentContent
       document={document}
       lessonId={lessonId}
+      displayMode={displayMode}
       renderSegment={renderSegment}
       renderSection={renderSection}
       setSegmentElement={setSegmentElement}
@@ -381,12 +391,14 @@ function ReaderCommandBar({
 function ReaderDocumentContent({
  document,
  lessonId,
+ displayMode,
  renderSegment,
  renderSection,
  setSegmentElement,
 }: {
  document: ReaderDocumentModel;
  lessonId?: string;
+ displayMode: LessonDisplayMode;
  renderSegment?: ReaderSurfaceRenderSegment;
  renderSection?: ReaderSurfaceRenderSection;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
@@ -438,6 +450,7 @@ function ReaderDocumentContent({
            segment={segment}
            index={index}
            lessonId={lessonId}
+           displayMode={displayMode}
            renderSegment={renderSegment}
            setSegmentElement={setSegmentElement}
            showSeparator={localIndex > 0}
@@ -463,6 +476,7 @@ function ReaderDocumentContent({
         segment={segment}
         index={indexById.get(segment.id) ?? localIndex}
         lessonId={lessonId}
+        displayMode={displayMode}
         renderSegment={renderSegment}
         setSegmentElement={setSegmentElement}
         showSeparator={document.sections.length > 0 || localIndex > 0}
@@ -479,6 +493,7 @@ function ReaderSegmentRow({
  segment,
  index,
  lessonId,
+ displayMode,
  renderSegment,
  setSegmentElement,
  showSeparator,
@@ -486,20 +501,14 @@ function ReaderSegmentRow({
  segment: ReaderSegment;
  index: number;
  lessonId?: string;
+ displayMode: LessonDisplayMode;
  renderSegment?: ReaderSurfaceRenderSegment;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
  showSeparator: boolean;
 }) {
  const active = useReaderRuntimeSelector((state) => state.activeSegmentId === segment.id);
- const actions = useReaderRuntimeActions();
  const { openInspector } = useVocabInspector();
- const content = (
-  <ReaderSegmentText
-   segment={segment}
-   active={active}
-   onActivate={() => actions.selectIndex(index, "command")}
-  />
- );
+ const content = <ReaderSegmentText segment={segment} active={active} displayMode={displayMode} />;
  const rendered = renderSegment ? renderSegment({ segment, index, content }) : content;
 
  const captureSelection = (element: HTMLElement) => {
@@ -530,14 +539,12 @@ function ReaderSegmentRow({
 function ReaderSegmentText({
  segment,
  active,
- onActivate,
+ displayMode,
 }: {
  segment: ReaderSegment;
  active: boolean;
- onActivate: () => void;
+ displayMode: LessonDisplayMode;
 }) {
- const learning = useLearningState();
- const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const playbackProgress = useReaderRuntimeSelector((state) =>
   state.playbackSegmentId === segment.id && state.playbackStatus !== "idle" ? state.progress : -1,
  );
@@ -546,14 +553,10 @@ function ReaderSegmentText({
   const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
   return analyzeContextualPronunciation({ text: segment.zh, sourcePinyin });
  }, [segment.pinyin, segment.zh]);
+ const characterCount = Array.from(segment.zh).length;
  const activeCharacterIndex =
   playbackProgress >= 0
-   ? getActiveCharacterIndex(
-      Array.from(segment.zh).length,
-      0,
-      Array.from(segment.zh).length,
-      playbackProgress,
-     )
+   ? getActiveCharacterIndex(characterCount, 0, characterCount, playbackProgress)
    : -1;
  const contextualPinyin = useMemo(
   () => (analysis ? formatContextualSpokenPinyin(analysis) : segment.pinyin),
@@ -561,7 +564,7 @@ function ReaderSegmentText({
  );
 
  return (
-  <article className="grid min-w-0 gap-2" onClick={onActivate}>
+  <article className="grid min-w-0 gap-2">
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     <StudyInstructionText
      variant="overline"
