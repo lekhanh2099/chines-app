@@ -19,7 +19,7 @@ export const aiConversationPersistedMessageSchema = z.strictObject({
  seq: z.number().int().positive(),
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
- createdAt: z.iso.datetime(),
+ createdAt: z.iso.datetime({ offset: true }),
 });
 
 export const aiConversationThreadSchema = z.strictObject({
