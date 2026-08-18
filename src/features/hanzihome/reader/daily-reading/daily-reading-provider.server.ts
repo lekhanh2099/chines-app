@@ -211,17 +211,23 @@ async function requestDeepSeek(
  }
 }
 
-async function requestGemini(
- credential: UserApiKeyCredential,
- prompt: string,
- phase: DailyReadingProviderPhase,
- signal?: AbortSignal,
-): Promise<DailyReadingProviderResult> {
- const model = credential.defaultModel ?? getDefaultApiKeyModel("gemini");
+async function requestGeminiWithKey({
+ apiKey,
+ model,
+ prompt,
+ phase,
+ signal,
+}: {
+ apiKey: string;
+ model: string;
+ prompt: string;
+ phase: DailyReadingProviderPhase;
+ signal?: AbortSignal;
+}): Promise<DailyReadingProviderResult> {
  try {
   throwIfAborted(signal);
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${credential.apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${apiKey}`,
    {
     method: "POST",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
@@ -265,6 +271,21 @@ async function requestGemini(
  }
 }
 
+async function requestGemini(
+ credential: UserApiKeyCredential,
+ prompt: string,
+ phase: DailyReadingProviderPhase,
+ signal?: AbortSignal,
+) {
+ return requestGeminiWithKey({
+  apiKey: credential.apiKey,
+  model: credential.defaultModel ?? getDefaultApiKeyModel("gemini"),
+  prompt,
+  phase,
+  signal,
+ });
+}
+
 export async function requestDailyReadingProvider({
  credential,
  prompt,
@@ -302,23 +323,5 @@ export async function requestDailyReadingSystemGemini({
  if (!apiKey) {
   return { content: null, error: "AI hệ thống chưa được cấu hình GEMINI_API_KEY.", model };
  }
- return requestGemini(
-  {
-   id: "system-gemini",
-   userId: "system",
-   provider: "gemini",
-   label: "System Gemini",
-   maskedKey: "system",
-   isActive: true,
-   priority: 0,
-   defaultModel: model,
-   lastValidatedAt: null,
-   createdAt: new Date(0).toISOString(),
-   updatedAt: new Date(0).toISOString(),
-   apiKey,
-  },
-  prompt,
-  phase,
-  signal,
- );
+ return requestGeminiWithKey({ apiKey, model, prompt, phase, signal });
 }
