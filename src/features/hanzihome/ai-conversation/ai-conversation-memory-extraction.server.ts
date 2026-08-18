@@ -16,18 +16,38 @@ import { generateStructuredAiConversationData } from "./ai-conversation-structur
 const explicitForgetResolutionSchema = z.strictObject({
  memoryIds: z.array(z.uuid()).max(10),
 });
-const MEMORY_DIGEST_LIMIT = 16;
-const MEMORY_DIGEST_CONTENT_LIMIT = 220;
+const EXTRACTION_MEMORY_DIGEST_LIMIT = 8;
+const EXTRACTION_MEMORY_CONTENT_LIMIT = 180;
+const FORGET_MEMORY_DIGEST_LIMIT = 10;
+const FORGET_MEMORY_CONTENT_LIMIT = 160;
+const EXTRACTION_EVIDENCE_LIMIT = 1300;
+const FORGET_REQUEST_LIMIT = 1200;
 
-function renderMemoryDigest(memories: AiConversationStoredMemory[]) {
+function clipEvidence(value: string, limit: number) {
+ const normalized = value.normalize("NFC").trim();
+ if (normalized.length <= limit) return normalized;
+ const headSize = Math.ceil(limit * 0.6);
+ const tailSize = Math.floor(limit * 0.4);
+ return `${normalized.slice(0, headSize)}\n[…truncated…]\n${normalized.slice(-tailSize)}`;
+}
+
+function renderMemoryDigest({
+ memories,
+ limit,
+ contentLimit,
+}: {
+ memories: AiConversationStoredMemory[];
+ limit: number;
+ contentLimit: number;
+}) {
  if (memories.length === 0) return "[]";
  return JSON.stringify(
-  memories.slice(0, MEMORY_DIGEST_LIMIT).map((memory) => ({
+  memories.slice(0, limit).map((memory) => ({
    id: memory.id,
    scope: memory.characterId ? "character" : "global",
    kind: memory.kind,
    memoryKey: memory.memoryKey,
-   content: memory.content.slice(0, MEMORY_DIGEST_CONTENT_LIMIT),
+   content: clipEvidence(memory.content, contentLimit),
   })),
  );
 }
@@ -85,9 +105,13 @@ export async function extractAiConversationMemoryChanges({
   `Current character id: ${characterId}`,
   `Current character name: ${characterName}`,
   `Conversation mode: ${mode}`,
-  `Existing active memories: ${renderMemoryDigest(activeMemories)}`,
-  `Learner message: ${JSON.stringify(userMessage)}`,
-  `Assistant reply: ${JSON.stringify(assistantMessage)}`,
+  `Existing active memories: ${renderMemoryDigest({
+   memories: activeMemories,
+   limit: EXTRACTION_MEMORY_DIGEST_LIMIT,
+   contentLimit: EXTRACTION_MEMORY_CONTENT_LIMIT,
+  })}`,
+  `Learner message: ${JSON.stringify(clipEvidence(userMessage, EXTRACTION_EVIDENCE_LIMIT))}`,
+  `Assistant reply: ${JSON.stringify(clipEvidence(assistantMessage, EXTRACTION_EVIDENCE_LIMIT))}`,
   "Return: {\"changes\":[{\"action\":...,\"kind\":...|null,\"targetMemoryId\":...|null,\"memoryKey\":...|null,\"content\":...|null,\"importance\":0..1,\"confidence\":0..1,\"scope\":\"global\"|\"character\"}]}",
  ].join("\n\n");
 
@@ -128,13 +152,18 @@ export async function resolveExplicitAiConversationForget({
   return { deleted: 0, resolvedIds };
  }
 
+ const visibleMemories = memories.slice(0, FORGET_MEMORY_DIGEST_LIMIT);
  const result = await generateStructuredAiConversationData({
   supabase,
   userId,
   systemPrompt: EXPLICIT_FORGET_SYSTEM_PROMPT,
   prompt: [
-   `Forget request: ${JSON.stringify(userMessage)}`,
-   `Active memories: ${renderMemoryDigest(memories)}`,
+   `Forget request: ${JSON.stringify(clipEvidence(userMessage, FORGET_REQUEST_LIMIT))}`,
+   `Active memories: ${renderMemoryDigest({
+    memories: visibleMemories,
+    limit: FORGET_MEMORY_DIGEST_LIMIT,
+    contentLimit: FORGET_MEMORY_CONTENT_LIMIT,
+   })}`,
   ].join("\n\n"),
   schema: explicitForgetResolutionSchema,
   signal,
@@ -145,7 +174,7 @@ export async function resolveExplicitAiConversationForget({
   return { deleted: 0, resolvedIds };
  }
 
- const allowedIds = new Set(memories.map((memory) => memory.id));
+ const allowedIds = new Set(visibleMemories.map((memory) => memory.id));
  const resolvedIds = result.data.memoryIds.filter((id) => allowedIds.has(id));
  const deleted = await forgetAiConversationMemories({
   userId,
