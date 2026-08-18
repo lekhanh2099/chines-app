@@ -49,10 +49,20 @@ vi.mock("./ai-conversation-memory-persistence.server", () => ({
  loadAiConversationPostTurnEvidence,
 }));
 vi.mock("./ai-conversation-memory-extraction.server", () => ({ extractAiConversationMemoryChanges }));
-vi.mock("./ai-conversation-memory.server", async (importOriginal) => {
- const original = await importOriginal<typeof import("./ai-conversation-memory.server")>();
- return { ...original, enrichMissingAiConversationMemoryEmbeddings };
-});
+vi.mock("./ai-conversation-memory.server", () => ({
+ enrichMissingAiConversationMemoryEmbeddings,
+ isAiConversationLongTermMemoryEnabled: ({
+  conversationPolicy,
+  userPreference,
+ }: {
+  conversationPolicy: "inherit" | "enabled" | "disabled";
+  userPreference: boolean;
+ }) => {
+  if (conversationPolicy === "disabled") return false;
+  if (conversationPolicy === "enabled") return true;
+  return userPreference;
+ },
+}));
 vi.mock("./ai-conversation-summary.server", () => ({ buildAiConversationSummaryUpdate }));
 
 import { processDueAiConversationPostTurnJobs } from "./ai-conversation-post-turn.server";
