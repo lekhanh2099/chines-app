@@ -60,6 +60,11 @@ export const aiConversationSettingsSchema = aiConversationSettingsUpdateSchema.e
  characterId: z.uuid(),
 });
 
+export const aiConversationPostTurnProcessResponseSchema = z.strictObject({
+ processed: z.number().int().nonnegative(),
+ ready: z.boolean(),
+});
+
 export const aiConversationTurnRequestSchema = z.strictObject({
  clientMessageId: z.uuid(),
  content: z.string().trim().min(1).max(6000),
@@ -83,5 +88,8 @@ export type AiConversationPersistedMessage = z.output<
 export type AiConversationSession = z.output<typeof aiConversationSessionSchema>;
 export type AiConversationSettings = z.output<typeof aiConversationSettingsSchema>;
 export type AiConversationSettingsUpdate = z.output<typeof aiConversationSettingsUpdateSchema>;
+export type AiConversationPostTurnProcessResponse = z.output<
+ typeof aiConversationPostTurnProcessResponseSchema
+>;
 export type AiConversationTurnRequest = z.output<typeof aiConversationTurnRequestSchema>;
 export type AiConversationTurnResponse = z.output<typeof aiConversationTurnResponseSchema>;
