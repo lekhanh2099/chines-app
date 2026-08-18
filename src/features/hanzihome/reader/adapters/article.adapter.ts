@@ -33,7 +33,7 @@ export function articleToReaderDocument(input: ReaderArticleInput): ReaderDocume
  const segments: readonly ReaderSegment[] = input.paragraphs
   .slice()
   .sort((left, right) => left.order - right.order)
-  .map((paragraph) => ({
+  .map<ReaderSegment>((paragraph) => ({
    id: paragraph.id,
    kind: "paragraph",
    zh: paragraph.zh.trim(),
