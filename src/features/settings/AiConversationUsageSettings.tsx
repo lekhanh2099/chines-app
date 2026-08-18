@@ -41,7 +41,6 @@ export function AiConversationUsageSettings() {
   timeStyle: "short",
  });
  const hasTokenData = usage.inputTokens > 0 || usage.outputTokens > 0 || usage.totalTokens > 0;
- const formatTokens = (value: number) => (hasTokenData ? numberFormatter.format(value) : "—");
  const lastUsedLabel = usage.lastUsedAt
   ? dateFormatter.format(new Date(usage.lastUsedAt))
   : t("never");
@@ -62,19 +61,18 @@ export function AiConversationUsageSettings() {
     </div>
    </div>
 
-   <div className="grid grid-cols-2 gap-3 border-y border-border-default py-4 md:grid-cols-4">
+   <div className="grid gap-3 border-y border-border-default py-4 sm:grid-cols-2">
     <UsageStat label={t("requests")} value={numberFormatter.format(usage.requests)} />
-    <UsageStat label={t("inputTokens")} value={formatTokens(usage.inputTokens)} />
-    <UsageStat label={t("outputTokens")} value={formatTokens(usage.outputTokens)} />
-    <UsageStat label={t("totalTokens")} value={formatTokens(usage.totalTokens)} />
+    <UsageStat label={t("lastUsed")} value={lastUsedLabel} />
    </div>
 
-   <div className="grid gap-1">
-    <Typography variant="caption" tone="muted">
-     {t("lastUsed")}
-    </Typography>
-    <Typography weight="semibold">{lastUsedLabel}</Typography>
-   </div>
+   {hasTokenData ? (
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+     <UsageStat label={t("inputTokens")} value={numberFormatter.format(usage.inputTokens)} />
+     <UsageStat label={t("outputTokens")} value={numberFormatter.format(usage.outputTokens)} />
+     <UsageStat label={t("totalTokens")} value={numberFormatter.format(usage.totalTokens)} />
+    </div>
+   ) : null}
 
    {runtimeEntries.length === 0 ? (
     <Typography as="p" variant="bodySmall" tone="muted">
@@ -103,10 +101,14 @@ export function AiConversationUsageSettings() {
          </Typography>
         </div>
         <Typography variant="bodySmall" tone="secondary">
-         {t("runtimeUsage", {
-          requests: numberFormatter.format(runtimeUsage.requests),
-          tokens: runtimeHasTokenData ? numberFormatter.format(runtimeUsage.totalTokens) : "—",
-         })}
+         {runtimeHasTokenData
+          ? t("runtimeUsage", {
+             requests: numberFormatter.format(runtimeUsage.requests),
+             tokens: numberFormatter.format(runtimeUsage.totalTokens),
+            })
+          : t("runtimeRequests", {
+             requests: numberFormatter.format(runtimeUsage.requests),
+            })}
         </Typography>
        </div>
       );
