@@ -11,6 +11,7 @@ import {
  type AiConversationMemoryExtraction,
  type AiConversationStoredMemory,
 } from "./ai-conversation-memory.schemas";
+import { rankAiConversationMemoriesLexically } from "./ai-conversation-memory.server";
 import { generateStructuredAiConversationData } from "./ai-conversation-structured.server";
 
 const explicitForgetResolutionSchema = z.strictObject({
@@ -29,6 +30,26 @@ function clipEvidence(value: string, limit: number) {
  const headSize = Math.ceil(limit * 0.6);
  const tailSize = Math.floor(limit * 0.4);
  return `${normalized.slice(0, headSize)}\n[…truncated…]\n${normalized.slice(-tailSize)}`;
+}
+
+function prioritizeMemories({
+ query,
+ memories,
+ limit,
+}: {
+ query: string;
+ memories: AiConversationStoredMemory[];
+ limit: number;
+}) {
+ const prioritized: AiConversationStoredMemory[] = [];
+ const seen = new Set<string>();
+ for (const memory of [...rankAiConversationMemoriesLexically(query, memories), ...memories]) {
+  if (seen.has(memory.id)) continue;
+  seen.add(memory.id);
+  prioritized.push(memory);
+  if (prioritized.length >= limit) break;
+ }
+ return prioritized;
 }
 
 function renderMemoryDigest({
@@ -101,12 +122,17 @@ export async function extractAiConversationMemoryChanges({
  activeMemories: AiConversationStoredMemory[];
  signal?: AbortSignal;
 }): Promise<{ data: AiConversationMemoryExtraction | null; error: string | null }> {
+ const relevantMemories = prioritizeMemories({
+  query: userMessage,
+  memories: activeMemories,
+  limit: EXTRACTION_MEMORY_DIGEST_LIMIT,
+ });
  const prompt = [
   `Current character id: ${characterId}`,
   `Current character name: ${characterName}`,
   `Conversation mode: ${mode}`,
   `Existing active memories: ${renderMemoryDigest({
-   memories: activeMemories,
+   memories: relevantMemories,
    limit: EXTRACTION_MEMORY_DIGEST_LIMIT,
    contentLimit: EXTRACTION_MEMORY_CONTENT_LIMIT,
   })}`,
@@ -152,7 +178,11 @@ export async function resolveExplicitAiConversationForget({
   return { deleted: 0, resolvedIds };
  }
 
- const visibleMemories = memories.slice(0, FORGET_MEMORY_DIGEST_LIMIT);
+ const visibleMemories = prioritizeMemories({
+  query: userMessage,
+  memories,
+  limit: FORGET_MEMORY_DIGEST_LIMIT,
+ });
  const result = await generateStructuredAiConversationData({
   supabase,
   userId,
