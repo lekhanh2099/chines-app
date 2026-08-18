@@ -2,8 +2,17 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import { RefreshCcw, Send, Settings2 } from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import {
+ Archive,
+ History,
+ MessageSquarePlus,
+ MoreHorizontal,
+ Send,
+ Settings2,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
+import { z } from "zod";
 
 import { useAppForm } from "@/components/form";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -19,31 +28,38 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
+ DropdownMenu,
+ DropdownMenuCheckboxItem,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
 import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
-import { Link } from "@/i18n/navigation";
 import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
 import {
+ archiveAiConversation,
+ createAiConversation,
  ensureAiConversationSession,
+ fetchAiConversationHistory,
  fetchAiConversationRuntimeHealth,
+ fetchAiConversationSession,
  sendPersistedAiConversationMessage,
+ updateAiConversationMemoryPolicy,
  updateAiConversationSettings,
 } from "./ai-conversation-api";
+import { AiConversationHistorySheet } from "./AiConversationHistorySheet";
 import {
  AiConversationMessageBubble,
  AiConversationTypingBubble,
 } from "./AiConversationMessageBubble";
+import { deriveAiConversationRelationshipBand } from "./ai-conversation-relationship";
 import {
  aiConversationModeSchema,
  aiConversationSettingsUpdateSchema,
@@ -57,17 +73,37 @@ import {
  aiConversationReplyModeSchema,
  type AiConversationMessage,
 } from "./ai-conversation.schemas";
+import {
+ AiConversationRuntimeMenu,
+ AUTO_RUNTIME_KEY_ID,
+} from "./AiConversationRuntimeMenu";
 
-const AUTO_RUNTIME_KEY_ID = "auto";
 const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
-const SESSION_QUERY_KEY = ["hanzihome", "ai-conversation", "session"];
+const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"] as const;
+const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"] as const;
+
 type ManagedApiKey = ApiKeysResponse["keys"][number];
 type RetryTurn = { clientMessageId: string; content: string };
+type ArchiveTarget = { id: string; title: string };
+
+function conversationSessionQueryKey(conversationId: string | null) {
+ return [...SESSION_QUERY_ROOT, conversationId ?? "latest"] as const;
+}
 
 export function AiConversationWorkspace() {
  const t = useTranslations("AiConversation");
  const queryClient = useQueryClient();
+ const router = useRouter();
+ const pathname = usePathname();
+ const searchParams = useSearchParams();
+ const searchParamsString = searchParams.toString();
+ const rawConversationId = searchParams.get("conversation");
+ const parsedConversationId = z.uuid().safeParse(rawConversationId);
+ const conversationIdFromUrl = parsedConversationId.success ? parsedConversationId.data : null;
+
  const [isSetupOpen, setIsSetupOpen] = useState(false);
+ const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+ const [archiveTarget, setArchiveTarget] = useState<ArchiveTarget | null>(null);
  const [draft, setDraft] = useState("");
  const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
@@ -76,11 +112,30 @@ export function AiConversationWorkspace() {
  const requestRef = useRef<AbortController | null>(null);
  const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
+
+ const navigateToConversation = (conversationId: string) => {
+  const nextParams = new URLSearchParams(searchParamsString);
+  nextParams.set("conversation", conversationId);
+  router.replace(`${pathname}?${nextParams.toString()}`, { scroll: false });
+ };
+
  const sessionQuery = useQuery({
-  queryKey: SESSION_QUERY_KEY,
-  queryFn: ({ signal }) => ensureAiConversationSession({ signal }),
+  queryKey: conversationSessionQueryKey(conversationIdFromUrl),
+  queryFn: ({ signal }) =>
+   conversationIdFromUrl
+    ? fetchAiConversationSession({ conversationId: conversationIdFromUrl, signal })
+    : ensureAiConversationSession({ signal }),
   retry: false,
  });
+
+ const historyQuery = useQuery({
+  queryKey: HISTORY_QUERY_KEY,
+  queryFn: ({ signal }) => fetchAiConversationHistory({ signal }),
+  enabled: isHistoryOpen,
+  staleTime: 15_000,
+  retry: false,
+ });
+
  const runtimeHealthQuery = useQuery({
   queryKey: ["hanzihome", "ai-conversation", "runtime-health", runtimeKeyId],
   queryFn: ({ signal }) =>
@@ -91,6 +146,7 @@ export function AiConversationWorkspace() {
   enabled: !isRuntimeLoading,
   retry: false,
  });
+
  const settingsMutation = useMutation({
   retry: false,
   mutationFn: async (settings: AiConversationSettingsUpdate) => {
@@ -98,34 +154,36 @@ export function AiConversationWorkspace() {
     ? sessionQuery.data
     : await ensureAiConversationSession();
    const conversation = session.conversation;
-   if (!conversation) {
-    throw new Error(t("setup.saveError"));
-   }
+   if (!conversation) throw new Error(t("setup.saveError"));
    return updateAiConversationSettings(conversation.id, settings);
   },
   onSuccess: (settings) => {
-   queryClient.setQueryData<AiConversationSession>(SESSION_QUERY_KEY, (current) => {
-    if (!current?.conversation || current.conversation.id !== settings.conversationId) {
-     return current;
-    }
-    return {
-     ...current,
-     learnerLevel: settings.learnerLevel,
-     conversation: {
-      ...current.conversation,
-      mode: settings.mode,
-      correctionStyle: settings.correctionStyle,
-      replyMode: settings.replyMode,
-     },
-    };
-   });
+   queryClient.setQueryData<AiConversationSession>(
+    conversationSessionQueryKey(settings.conversationId),
+    (current) => {
+     if (!current?.conversation || current.conversation.id !== settings.conversationId) {
+      return current;
+     }
+     return {
+      ...current,
+      learnerLevel: settings.learnerLevel,
+      conversation: {
+       ...current.conversation,
+       mode: settings.mode,
+       correctionStyle: settings.correctionStyle,
+       replyMode: settings.replyMode,
+      },
+     };
+    },
+   );
    setIsSetupOpen(false);
-   void queryClient.invalidateQueries({ queryKey: SESSION_QUERY_KEY });
+   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
   },
   onError: () => {
    void sessionQuery.refetch();
   },
  });
+
  const sendMutation = useMutation({
   retry: false,
   mutationFn: async ({
@@ -141,9 +199,7 @@ export function AiConversationWorkspace() {
     ? sessionQuery.data
     : await ensureAiConversationSession({ signal: controller.signal });
    const conversation = session.conversation;
-   if (!conversation) {
-    throw new Error(t("message.sendError"));
-   }
+   if (!conversation) throw new Error(t("message.sendError"));
 
    const turn = await sendPersistedAiConversationMessage(
     conversation.id,
@@ -162,15 +218,16 @@ export function AiConversationWorkspace() {
     (message) => message.id !== turn.userMessage.id && message.id !== turn.assistantMessage.id,
    );
    const nextSession: AiConversationSession = {
-    conversation: session.conversation,
-    character: session.character,
-    learnerLevel: session.learnerLevel,
+    ...session,
     messages: [...retainedMessages, turn.userMessage, turn.assistantMessage].sort(
      (left, right) => left.seq - right.seq,
     ),
    };
-   queryClient.setQueryData(SESSION_QUERY_KEY, nextSession);
-   void queryClient.invalidateQueries({ queryKey: SESSION_QUERY_KEY });
+   queryClient.setQueryData(conversationSessionQueryKey(turn.conversationId), nextSession);
+   void queryClient.invalidateQueries({
+    queryKey: conversationSessionQueryKey(turn.conversationId),
+   });
+   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
    recordAiUsageEvent({
     apiKeyId: turn.apiKeyId,
     provider: turn.provider,
@@ -190,11 +247,82 @@ export function AiConversationWorkspace() {
    }
   },
   onSettled: (_data, _error, variables) => {
-   if (requestRef.current === variables.controller) {
-    requestRef.current = null;
-   }
+   if (requestRef.current === variables.controller) requestRef.current = null;
   },
  });
+
+ const createConversationMutation = useMutation({
+  retry: false,
+  mutationFn: () => createAiConversation(),
+  onSuccess: (session) => {
+   const conversation = session.conversation;
+   if (!conversation) return;
+   queryClient.setQueryData(conversationSessionQueryKey(conversation.id), session);
+   retryTurnRef.current = null;
+   setDraft("");
+   sendMutation.reset();
+   setIsHistoryOpen(false);
+   navigateToConversation(conversation.id);
+   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
+  },
+ });
+
+ const memoryPolicyMutation = useMutation({
+  retry: false,
+  mutationFn: async (useMemory: boolean) => {
+   const conversation = sessionQuery.data?.conversation;
+   if (!conversation) throw new Error(t("memory.updateError"));
+   return updateAiConversationMemoryPolicy(
+    conversation.id,
+    useMemory ? "inherit" : "disabled",
+   );
+  },
+  onSuccess: (state) => {
+   queryClient.setQueryData<AiConversationSession>(
+    conversationSessionQueryKey(state.conversationId),
+    (current) => {
+     if (!current?.conversation) return current;
+     return {
+      ...current,
+      memoryEnabled: state.memoryEnabled,
+      conversation: {
+       ...current.conversation,
+       memoryPolicy: state.memoryPolicy,
+      },
+     };
+    },
+   );
+   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
+  },
+  onError: () => {
+   void sessionQuery.refetch();
+  },
+ });
+
+ const archiveConversationMutation = useMutation({
+  retry: false,
+  mutationFn: async ({ id, isCurrent }: { id: string; isCurrent: boolean }) => {
+   await archiveAiConversation(id);
+   const nextSession = isCurrent ? await ensureAiConversationSession() : null;
+   return { archivedId: id, nextSession };
+  },
+  onSuccess: ({ archivedId, nextSession }) => {
+   queryClient.removeQueries({ queryKey: conversationSessionQueryKey(archivedId), exact: true });
+   if (nextSession?.conversation) {
+    queryClient.setQueryData(
+     conversationSessionQueryKey(nextSession.conversation.id),
+     nextSession,
+    );
+    retryTurnRef.current = null;
+    setDraft("");
+    sendMutation.reset();
+    navigateToConversation(nextSession.conversation.id);
+   }
+   setArchiveTarget(null);
+   void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
+  },
+ });
+
  const runtimeHealth = runtimeHealthQuery.data ?? null;
  const isHealthChecking = runtimeHealthQuery.isFetching;
  const isSending = sendMutation.isPending;
@@ -214,6 +342,15 @@ export function AiConversationWorkspace() {
   intermediate: t("levels.intermediate"),
   advanced: t("levels.advanced"),
  };
+ const relationshipBand = deriveAiConversationRelationshipBand(
+  session?.relationship?.familiarityScore ?? null,
+ );
+ const relationshipLabels = {
+  new: t("relationship.new"),
+  familiar: t("relationship.familiar"),
+  friends: t("relationship.friends"),
+  close: t("relationship.close"),
+ } satisfies Record<typeof relationshipBand, string>;
  const assistantName = character?.displayName ?? t("character.defaultName");
  const activeMode = conversation?.mode ?? aiConversationModeSchema.enum.natural;
  const greeting: AiConversationMessage = {
@@ -244,11 +381,13 @@ export function AiConversationWorkspace() {
    : null;
  const profileAvatar = assistantName.trim().slice(0, 1) || "AI";
  const characterSummary = character
-  ? [character.city, ...character.interests].filter(Boolean).join(" · ")
+  ? [character.city, ...character.interests.slice(0, 2)].filter(Boolean).join(" · ")
   : t("fallbackInterest");
  const sessionError = sessionQuery.error instanceof Error ? sessionQuery.error.message : null;
  const sendError = sendMutation.error instanceof Error ? sendMutation.error.message : null;
- const visibleError = sendError || sessionError;
+ const memoryError =
+  memoryPolicyMutation.error instanceof Error ? memoryPolicyMutation.error.message : null;
+ const visibleError = sendError || memoryError || sessionError;
  const currentSettings: AiConversationSettingsUpdate | null = conversation
   ? {
      mode: conversation.mode,
@@ -257,8 +396,26 @@ export function AiConversationWorkspace() {
      learnerLevel,
     }
   : null;
+ const historyError =
+  createConversationMutation.error instanceof Error
+   ? createConversationMutation.error.message
+   : historyQuery.error instanceof Error
+     ? historyQuery.error.message
+     : null;
+ const currentTitle = conversation?.title.trim() || t("history.untitled");
+ const isNavigationLocked = isSending || archiveConversationMutation.isPending;
 
  useEffect(() => () => requestRef.current?.abort(), []);
+
+ useEffect(() => {
+  const resolvedConversationId = sessionQuery.data?.conversation?.id;
+  if (!resolvedConversationId || resolvedConversationId === conversationIdFromUrl) return;
+  queryClient.setQueryData(
+   conversationSessionQueryKey(resolvedConversationId),
+   sessionQuery.data,
+  );
+  navigateToConversation(resolvedConversationId);
+ }, [conversationIdFromUrl, queryClient, sessionQuery.data]);
 
  useEffect(() => {
   let cancelled = false;
@@ -293,7 +450,7 @@ export function AiConversationWorkspace() {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
- }, [isSending, persistedMessages.length]);
+ }, [conversation?.id, isSending, persistedMessages.length]);
 
  const selectRuntimeKey = (value: string) => {
   const nextValue =
@@ -317,6 +474,18 @@ export function AiConversationWorkspace() {
   }
  };
 
+ const selectConversation = (nextConversationId: string) => {
+  if (isNavigationLocked || nextConversationId === conversation?.id) {
+   setIsHistoryOpen(false);
+   return;
+  }
+  retryTurnRef.current = null;
+  setDraft("");
+  sendMutation.reset();
+  setIsHistoryOpen(false);
+  navigateToConversation(nextConversationId);
+ };
+
  const send = () => {
   const content = draft.normalize("NFC").trim();
   if (!content || isSending || !runtimeHealth?.ready || sessionQuery.isFetching) return;
@@ -329,36 +498,9 @@ export function AiConversationWorkspace() {
   requestRef.current = controller;
   retryTurnRef.current = null;
   setDraft("");
-  sendMutation.mutate({
-   content,
-   clientMessageId,
-   controller,
-  });
+  sendMutation.mutate({ content, clientMessageId, controller });
  };
 
- const runtimeNotice = runtimeLoadError
-  ? t("runtime.loadError")
-  : runtimeKeys.length === 0 && !isRuntimeLoading
-    ? t("runtime.empty")
-    : null;
- const healthMessage = isHealthChecking
-  ? t("runtime.healthChecking")
-  : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
-    ? t("runtime.healthReady", {
-       provider: runtimeHealth.provider,
-       model: runtimeHealth.model,
-      })
-    : runtimeHealth?.code === "missing-system-key"
-      ? t("runtime.health.missingSystemKey")
-      : runtimeHealth?.code === "invalid-key"
-        ? t("runtime.health.invalidKey")
-        : runtimeHealth?.code === "quota-exhausted"
-          ? t("runtime.health.quotaExhausted")
-          : runtimeHealth?.code === "key-unavailable"
-            ? t("runtime.health.keyUnavailable")
-            : runtimeHealth?.code === "provider-unavailable"
-              ? t("runtime.health.providerUnavailable")
-              : t("runtime.health.networkError");
  const canSend =
   Boolean(runtimeHealth?.ready) &&
   !isHealthChecking &&
@@ -367,175 +509,233 @@ export function AiConversationWorkspace() {
   !sessionQuery.isError;
 
  return (
-  <div className="grid min-w-0 gap-5">
-   <div className="flex min-w-0 flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-    <div className="grid min-w-0 gap-1">
-     <Typography as="h1" variant="pageTitle" weight="black">
-      {t("title")}
-     </Typography>
-     <Typography as="p" variant="body" tone="muted">
-      {t("description")}
-     </Typography>
+  <Card variant="section" padding="none" className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden">
+   <div className="flex min-w-0 shrink-0 flex-col gap-3 px-3 py-3 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
+    <div className="flex min-w-0 items-center gap-3">
+     <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
+      <AvatarFallback>{profileAvatar}</AvatarFallback>
+     </Avatar>
+     <div className="grid min-w-0 gap-1">
+      <Typography as="span" variant="caption" tone="muted">
+       {t("title")} · {levelLabels[learnerLevel]}
+      </Typography>
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <Typography as="h1" variant="cardTitle" weight="black">
+        {assistantName}
+       </Typography>
+       <Badge variant="accent" casing="natural">
+        {relationshipLabels[relationshipBand]}
+       </Badge>
+       <Badge variant="default" casing="natural">
+        {modeLabels[activeMode]}
+       </Badge>
+       {session && !session.memoryEnabled ? (
+        <Badge variant="warning" casing="natural">
+         {t("memory.offShort")}
+        </Badge>
+       ) : null}
+      </div>
+      <Typography variant="caption" tone="muted" clamp="one">
+       {characterSummary}
+      </Typography>
+     </div>
     </div>
-    <div className="flex flex-wrap gap-2">
+
+    <div className="flex min-w-0 flex-wrap items-center gap-1">
      <Button
       type="button"
-      variant="outline"
-      onClick={() => {
-       settingsMutation.reset();
-       setIsSetupOpen(true);
-      }}
-      disabled={!currentSettings || sessionQuery.isFetching}
+      variant="ghost"
+      size="icon"
+      aria-label={t("history.newConversation")}
+      onClick={() => createConversationMutation.mutate()}
+      disabled={isNavigationLocked || createConversationMutation.isPending}
      >
-      <Settings2 data-icon="inline-start" />
-      {t("actions.setup")}
+      <MessageSquarePlus />
      </Button>
-     <Button type="button" variant="ghost" asChild>
-      <Link href="/settings?section=ai">{t("actions.apiKeys")}</Link>
+     <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      aria-label={t("history.open")}
+      onClick={() => setIsHistoryOpen(true)}
+      disabled={isNavigationLocked}
+     >
+      <History />
      </Button>
+     <AiConversationRuntimeMenu
+      runtimeKeys={runtimeKeys}
+      runtimeKeyId={runtimeKeyId}
+      runtimeHealth={runtimeHealth}
+      isRuntimeLoading={isRuntimeLoading}
+      isHealthChecking={isHealthChecking}
+      runtimeLoadError={runtimeLoadError}
+      onSelectRuntime={selectRuntimeKey}
+      onRecheck={() => void runtimeHealthQuery.refetch()}
+     />
+     <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+       <Button
+        type="button"
+        variant="ghost"
+        size="icon"
+        aria-label={t("actions.more")}
+        disabled={!conversation || isNavigationLocked}
+       >
+        <MoreHorizontal />
+       </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" width="md">
+       <DropdownMenuItem
+        onSelect={() => {
+         settingsMutation.reset();
+         setIsSetupOpen(true);
+        }}
+        disabled={!currentSettings}
+       >
+        <Settings2 />
+        {t("actions.setup")}
+       </DropdownMenuItem>
+       <DropdownMenuCheckboxItem
+        checked={conversation?.memoryPolicy !== "disabled"}
+        onCheckedChange={(checked) => memoryPolicyMutation.mutate(checked === true)}
+        disabled={memoryPolicyMutation.isPending}
+       >
+        {t("memory.useLongTerm")}
+       </DropdownMenuCheckboxItem>
+       <DropdownMenuSeparator />
+       <DropdownMenuItem
+        onSelect={() => {
+         if (conversation) setArchiveTarget({ id: conversation.id, title: currentTitle });
+        }}
+       >
+        <Archive />
+        {t("history.archive")}
+       </DropdownMenuItem>
+      </DropdownMenuContent>
+     </DropdownMenu>
     </div>
    </div>
 
-   <Card variant="section" padding="none" className="min-w-0 overflow-hidden">
-    <div className="flex flex-col gap-3 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4">
-     <div className="flex min-w-0 items-center gap-3">
-      <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
-       <AvatarFallback>{profileAvatar}</AvatarFallback>
-      </Avatar>
-      <div className="grid min-w-0 gap-1">
-       <div className="flex flex-wrap items-center gap-2">
-        <Typography as="h2" variant="cardTitle" weight="bold">
-         {assistantName}
-        </Typography>
-        <Badge variant="accent" casing="natural">
-         {modeLabels[activeMode]}
-        </Badge>
-        <Badge variant="default" casing="natural">
-         {levelLabels[learnerLevel]}
-        </Badge>
-       </div>
-       <Typography variant="caption" tone="muted" clamp="one">
-        {characterSummary}
-       </Typography>
-      </div>
-     </div>
-    </div>
-
-    <div className="grid gap-2 border-t border-border-default px-3 py-3 sm:px-4 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
-     <div className="grid gap-1.5">
-      <Label htmlFor="ai-conversation-runtime" variant="label" weight="semibold">
-       {t("runtime.label")}
-      </Label>
-      <Select value={runtimeKeyId} onValueChange={selectRuntimeKey} disabled={isRuntimeLoading}>
-       <SelectTrigger id="ai-conversation-runtime" width="full">
-        <SelectValue placeholder={t("runtime.loading")} />
-       </SelectTrigger>
-       <SelectContent align="start">
-        <SelectItem value={AUTO_RUNTIME_KEY_ID}>{t("runtime.auto")}</SelectItem>
-        {runtimeKeys.map((key) => (
-         <SelectItem key={key.id} value={key.id}>
-          {`${key.providerLabel} · ${key.label} · ${key.defaultModel || t("runtime.modelFallback")}`}
-         </SelectItem>
-        ))}
-       </SelectContent>
-      </Select>
-     </div>
-     <div className="flex min-w-0 flex-wrap items-center gap-2">
-      <Badge variant={runtimeHealth?.ready ? "success" : isHealthChecking ? "default" : "warning"}>
-       {healthMessage}
-      </Badge>
-      <Button
-       type="button"
-       variant="ghost"
-       size="icon-toolbar"
-       aria-label={t("runtime.recheck")}
-       onClick={() => void runtimeHealthQuery.refetch()}
-       disabled={isHealthChecking || isRuntimeLoading}
-      >
-       <RefreshCcw />
-      </Button>
-     </div>
-     {runtimeNotice ? (
-      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
-       {runtimeNotice}
-      </Typography>
-     ) : null}
-    </div>
-
-    <div
-     ref={messageViewportRef}
-     className="flex min-h-96 max-h-[62dvh] flex-col gap-2 overflow-y-auto bg-surface-muted px-3 py-4 sm:px-4"
-     role="log"
-     aria-live="polite"
-     aria-relevant="additions text"
-    >
-     {renderedMessages.map(({ key, message }) => (
-      <AiConversationMessageBubble key={key} message={message} assistantName={assistantName} />
-     ))}
-     {pendingMessage ? (
-      <AiConversationMessageBubble
-       key={pendingMessage.key}
-       message={pendingMessage.message}
-       assistantName={assistantName}
-      />
-     ) : null}
-     {isSending ? (
-      <AiConversationTypingBubble
-       assistantName={assistantName}
-       label={t("message.replying", { name: assistantName })}
-      />
-     ) : null}
-    </div>
-
-    {visibleError ? (
-     <div className="border-t border-border-default px-3 py-2 sm:px-4">
-      <Typography variant="bodySmall" tone="danger">
-       {visibleError}
-      </Typography>
-     </div>
-    ) : null}
-
-    <form
-     className="grid gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
-     onSubmit={(event) => {
-      event.preventDefault();
-      send();
-     }}
-    >
-     <Label htmlFor="ai-conversation-message" className="sr-only">
-      {t("message.label")}
-     </Label>
-     <div className="flex items-end gap-2">
-      <Textarea
-       id="ai-conversation-message"
-       value={draft}
-       onChange={(event) => updateDraft(event.target.value)}
-       onKeyDown={(event) => {
-        if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
-         event.preventDefault();
-         send();
-        }
-       }}
-       rows={1}
-       maxLength={6000}
-       disabled={isSending || sessionQuery.isError}
-       placeholder={t("message.placeholder")}
-       className="min-h-11 max-h-40 flex-1"
-      />
-      <Button
-       type="submit"
-       size="icon-round"
-       disabled={!draft.trim() || !canSend}
-       aria-label={isSending ? t("actions.sending") : t("actions.send")}
-      >
-       <Send />
-      </Button>
-     </div>
-     <Typography variant="caption" tone="muted">
-      {t("message.hint")}
+   <div
+    ref={messageViewportRef}
+    className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-bg-subtle px-3 py-4 sm:px-5"
+    role="log"
+    aria-live="polite"
+    aria-relevant="additions text"
+   >
+    {sessionQuery.isPending ? (
+     <Typography as="p" variant="bodySmall" tone="muted">
+      {t("message.loadingConversation")}
      </Typography>
-    </form>
-   </Card>
+    ) : null}
+    {renderedMessages.map(({ key, message }) => (
+     <AiConversationMessageBubble key={key} message={message} assistantName={assistantName} />
+    ))}
+    {pendingMessage ? (
+     <AiConversationMessageBubble
+      key={pendingMessage.key}
+      message={pendingMessage.message}
+      assistantName={assistantName}
+     />
+    ) : null}
+    {isSending ? (
+     <AiConversationTypingBubble
+      assistantName={assistantName}
+      label={t("message.replying", { name: assistantName })}
+     />
+    ) : null}
+   </div>
+
+   {visibleError ? (
+    <div className="shrink-0 border-t border-border-default px-3 py-2 sm:px-4" role="alert">
+     <Typography variant="bodySmall" tone="danger">
+      {visibleError}
+     </Typography>
+    </div>
+   ) : null}
+
+   <form
+    className="grid shrink-0 gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
+    onSubmit={(event) => {
+     event.preventDefault();
+     send();
+    }}
+   >
+    <Label htmlFor="ai-conversation-message" className="sr-only">
+     {t("message.label")}
+    </Label>
+    <div className="flex items-end gap-2">
+     <Textarea
+      id="ai-conversation-message"
+      value={draft}
+      onChange={(event) => updateDraft(event.target.value)}
+      onKeyDown={(event) => {
+       if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+        event.preventDefault();
+        send();
+       }
+      }}
+      rows={1}
+      maxLength={6000}
+      disabled={isSending || sessionQuery.isError}
+      placeholder={t("message.placeholder")}
+      className="min-h-11 max-h-40 flex-1"
+     />
+     <Button
+      type="submit"
+      size="icon-round"
+      disabled={!draft.trim() || !canSend}
+      aria-label={isSending ? t("actions.sending") : t("actions.send")}
+     >
+      <Send />
+     </Button>
+    </div>
+    <Typography variant="caption" tone="muted">
+     {t("message.hint")}
+    </Typography>
+   </form>
+
+   <AiConversationHistorySheet
+    open={isHistoryOpen}
+    currentConversationId={conversation?.id ?? null}
+    items={historyQuery.data ?? []}
+    isLoading={historyQuery.isPending && isHistoryOpen}
+    error={historyError}
+    disabled={isNavigationLocked}
+    isCreating={createConversationMutation.isPending}
+    archivingConversationId={archiveConversationMutation.variables?.id ?? null}
+    onOpenChange={setIsHistoryOpen}
+    onCreate={() => createConversationMutation.mutate()}
+    onSelect={selectConversation}
+    onRequestArchive={(item) => {
+     setIsHistoryOpen(false);
+     setArchiveTarget({ id: item.id, title: item.title.trim() || t("history.untitled") });
+    }}
+   />
+
+   {archiveTarget ? (
+    <ArchiveConversationDialog
+     target={archiveTarget}
+     isArchiving={archiveConversationMutation.isPending}
+     error={
+      archiveConversationMutation.error instanceof Error
+       ? archiveConversationMutation.error.message
+       : null
+     }
+     onOpenChange={(open) => {
+      if (!open && !archiveConversationMutation.isPending) {
+       archiveConversationMutation.reset();
+       setArchiveTarget(null);
+      }
+     }}
+     onConfirm={() =>
+      archiveConversationMutation.mutate({
+       id: archiveTarget.id,
+       isCurrent: archiveTarget.id === conversation?.id,
+      })
+     }
+    />
+   ) : null}
 
    {isSetupOpen && currentSettings ? (
     <ConversationSettingsDialog
@@ -551,7 +751,48 @@ export function AiConversationWorkspace() {
      onSave={(settings) => settingsMutation.mutate(settings)}
     />
    ) : null}
-  </div>
+  </Card>
+ );
+}
+
+function ArchiveConversationDialog({
+ target,
+ isArchiving,
+ error,
+ onOpenChange,
+ onConfirm,
+}: {
+ target: ArchiveTarget;
+ isArchiving: boolean;
+ error: string | null;
+ onOpenChange: (open: boolean) => void;
+ onConfirm: () => void;
+}) {
+ const t = useTranslations("AiConversation");
+ return (
+  <Dialog open onOpenChange={onOpenChange}>
+   <DialogContent size="sm">
+    <DialogHeader>
+     <DialogTitle>{t("history.archiveTitle")}</DialogTitle>
+     <DialogDescription>{t("history.archiveDescription", { title: target.title })}</DialogDescription>
+    </DialogHeader>
+    {error ? (
+     <DialogBody>
+      <Typography as="p" variant="bodySmall" tone="danger" role="alert">
+       {error}
+      </Typography>
+     </DialogBody>
+    ) : null}
+    <DialogFooter>
+     <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isArchiving}>
+      {t("actions.cancel")}
+     </Button>
+     <Button type="button" variant="warning" onClick={onConfirm} disabled={isArchiving}>
+      {isArchiving ? t("history.archiving") : t("history.archiveConfirm")}
+     </Button>
+    </DialogFooter>
+   </DialogContent>
+  </Dialog>
  );
 }
 
