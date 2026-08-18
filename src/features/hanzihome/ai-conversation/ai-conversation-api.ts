@@ -17,8 +17,7 @@ import {
  type AiConversationRuntimeHealth,
 } from "./ai-conversation.schemas";
 
-const legacyEndpoint = "/api/ai/conversation";
-const conversationsEndpoint = "/api/ai/conversations";
+const endpoint = "/api/ai/conversation";
 
 function readApiError(body: JsonFieldValue, fallback: string) {
  const error =
@@ -26,60 +25,61 @@ function readApiError(body: JsonFieldValue, fallback: string) {
  return typeof error === "string" ? error : fallback;
 }
 
+async function postConversationAction(body: Readonly<Record<string, JsonFieldValue>>, signal?: AbortSignal) {
+ const response = await fetch(endpoint, {
+  method: "POST",
+  headers: { "Content-Type": "application/json", Accept: "application/json" },
+  body: JSON.stringify(body),
+  signal,
+ });
+ const payload: JsonFieldValue = await response.json().catch(() => null);
+ return { response, payload };
+}
+
 export async function fetchAiConversationRuntimeHealth(options?: {
  apiKeyId?: string;
  signal?: AbortSignal;
 }): Promise<AiConversationRuntimeHealth> {
- const response = await fetch(legacyEndpoint, {
-  method: "POST",
-  headers: { "Content-Type": "application/json", Accept: "application/json" },
-  body: JSON.stringify({
+ const { response, payload } = await postConversationAction(
+  {
    action: "health",
    ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
-  }),
-  signal: options?.signal,
- });
- const body: JsonFieldValue = await response.json().catch(() => null);
+  },
+  options?.signal,
+ );
 
  if (!response.ok) {
   throw new Error("Không thể kiểm tra AI runtime.");
  }
 
- return aiConversationRuntimeHealthSchema.parse(body);
+ return aiConversationRuntimeHealthSchema.parse(payload);
 }
 
 export async function fetchAiConversationSession(options?: {
  signal?: AbortSignal;
 }): Promise<AiConversationSession> {
- const response = await fetch(conversationsEndpoint, {
-  method: "GET",
-  headers: { Accept: "application/json" },
-  signal: options?.signal,
- });
- const body: JsonFieldValue = await response.json().catch(() => null);
+ const { response, payload } = await postConversationAction({ action: "session" }, options?.signal);
 
  if (!response.ok) {
-  throw new Error(readApiError(body, "Không thể tải lịch sử hội thoại AI."));
+  throw new Error(readApiError(payload, "Không thể tải lịch sử hội thoại AI."));
  }
 
- return aiConversationSessionSchema.parse(body);
+ return aiConversationSessionSchema.parse(payload);
 }
 
 export async function ensureAiConversationSession(options?: {
  signal?: AbortSignal;
 }): Promise<AiConversationSession> {
- const response = await fetch(conversationsEndpoint, {
-  method: "POST",
-  headers: { Accept: "application/json" },
-  signal: options?.signal,
- });
- const body: JsonFieldValue = await response.json().catch(() => null);
+ const { response, payload } = await postConversationAction(
+  { action: "ensure-session" },
+  options?.signal,
+ );
 
  if (!response.ok) {
-  throw new Error(readApiError(body, "Không thể khởi tạo hội thoại AI."));
+  throw new Error(readApiError(payload, "Không thể khởi tạo hội thoại AI."));
  }
 
- return aiConversationSessionSchema.parse(body);
+ return aiConversationSessionSchema.parse(payload);
 }
 
 export async function sendPersistedAiConversationMessage(
@@ -93,26 +93,24 @@ export async function sendPersistedAiConversationMessage(
  options?: { signal?: AbortSignal },
 ): Promise<AiConversationTurnResponse> {
  const payload = aiConversationTurnRequestSchema.parse(input);
- const response = await fetch(
-  `${conversationsEndpoint}/${encodeURIComponent(conversationId)}/messages`,
+ const { response, payload: responseBody } = await postConversationAction(
   {
-   method: "POST",
-   headers: { "Content-Type": "application/json", Accept: "application/json" },
-   body: JSON.stringify(payload),
-   signal: options?.signal,
+   action: "message",
+   conversationId,
+   ...payload,
   },
+  options?.signal,
  );
- const body: JsonFieldValue = await response.json().catch(() => null);
 
  if (!response.ok) {
-  throw new Error(readApiError(body, "AI conversation không hoàn tất."));
+  throw new Error(readApiError(responseBody, "AI conversation không hoàn tất."));
  }
 
- return aiConversationTurnResponseSchema.parse(body);
+ return aiConversationTurnResponseSchema.parse(responseBody);
 }
 
 /**
- * Compatibility endpoint retained until the persisted workspace cutover has been verified.
+ * Compatibility request retained until persisted conversation migration has been verified.
  * New conversation UI must use sendPersistedAiConversationMessage instead.
  */
 export async function sendAiConversationMessage(
@@ -125,17 +123,11 @@ export async function sendAiConversationMessage(
   profile,
   ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
  });
- const response = await fetch(legacyEndpoint, {
-  method: "POST",
-  headers: { "Content-Type": "application/json", Accept: "application/json" },
-  body: JSON.stringify(payload),
-  signal: options?.signal,
- });
- const body: JsonFieldValue = await response.json().catch(() => null);
+ const { response, payload: responseBody } = await postConversationAction(payload, options?.signal);
 
  if (!response.ok) {
-  throw new Error(readApiError(body, "AI conversation không hoàn tất."));
+  throw new Error(readApiError(responseBody, "AI conversation không hoàn tất."));
  }
 
- return aiConversationResponseSchema.parse(body);
+ return aiConversationResponseSchema.parse(responseBody);
 }
