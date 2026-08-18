@@ -2,16 +2,15 @@
 
 import { useMemo, useState } from "react";
 import {
- BarChart3,
+ ArrowUp,
  Check,
  ClipboardPaste,
  Cpu,
  ExternalLink,
  Eye,
  EyeOff,
- Gift,
  KeyRound,
- Loader2,
+ MoreHorizontal,
  Pause,
  Play,
  Plus,
@@ -35,6 +34,13 @@ import {
  DialogTitle,
  DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -64,20 +70,12 @@ import {
  type ApiKeyProvider,
 } from "@/lib/api-key-providers";
 
-const EMPTY_SUMMARY = {
- total: 0,
- active: 0,
- groq: 0,
- deepseek: 0,
- gemini: 0,
- openai: 0,
-};
-
 type ProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
 type MoveDirection = "up" | "down";
 
 export default function ApiKeyManagerSection() {
  const t = useTranslations("Settings");
+ const lookupT = useTranslations("AiLookupSettings");
  const setupT = useTranslations("ApiKeySetup");
  const common = useTranslations("Common");
  const locale = useLocale();
@@ -103,20 +101,9 @@ export default function ApiKeyManagerSection() {
  } = useManagedApiKeys();
  const keys = query.data?.keys ?? [];
  const selectedKeyId = keys.find((key) => key.isActive)?.id ?? null;
- const summary = query.data?.summary ?? EMPTY_SUMMARY;
  const schemaReady = query.data?.schemaReady ?? true;
  const isLoading = query.isPending;
  const isSubmitting = addMutation.isPending;
- const freeProviders = API_KEY_PROVIDER_OPTIONS.filter(
-  (option) => option.accessTier === "free-tier",
- );
- const freeTierKeyCount = keys.filter((key) =>
-  freeProviders.some((providerOption) => providerOption.value === key.provider),
- ).length;
- const latestValidatedAt = keys
-  .map((key) => key.lastValidatedAt)
-  .filter((value): value is string => Boolean(value))
-  .toSorted((left, right) => right.localeCompare(left))[0];
 
  const effectiveProvider =
   discovery?.provider ?? (providerSelection === AUTO_API_KEY_PROVIDER ? null : providerSelection);
@@ -271,8 +258,8 @@ export default function ApiKeyManagerSection() {
  }
 
  return (
-  <Card variant="section" padding="lg" className="grid gap-5">
-   <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+  <Card variant="section" padding="lg" className="grid gap-4">
+   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
     <div className="flex max-w-3xl items-start gap-3">
      <IconTile tone="accent" size="sm">
       <Cpu aria-hidden="true" />
@@ -281,7 +268,7 @@ export default function ApiKeyManagerSection() {
       <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
        {t("apiKeys.title")}
       </Typography>
-      <Typography as="p" tone="secondary" leading="standard">
+      <Typography as="p" variant="bodySmall" tone="secondary" leading="standard">
        {t("apiKeys.description")}
       </Typography>
      </div>
@@ -553,62 +540,6 @@ export default function ApiKeyManagerSection() {
     </Dialog>
    </div>
 
-   <div className="grid gap-3 border-y border-border-default py-4">
-    <div className="flex items-start gap-3">
-     <IconTile tone="success" size="sm">
-      <Gift aria-hidden="true" />
-     </IconTile>
-     <div className="grid min-w-0 gap-1">
-      <Typography weight="bold">{t("apiKeys.freeGuideTitle")}</Typography>
-      <Typography as="p" variant="bodySmall" tone="secondary">
-       {t("apiKeys.freeGuideDescription")}
-      </Typography>
-     </div>
-    </div>
-    <div className="grid gap-2 sm:grid-cols-2">
-     {freeProviders.map((providerOption) => (
-      <div
-       key={providerOption.value}
-       className="flex min-w-0 items-center justify-between gap-3 rounded-lg border border-border-default bg-bg-primary p-3"
-      >
-       <div className="grid min-w-0 gap-1">
-        <div className="flex flex-wrap items-center gap-2">
-         <Typography weight="semibold">{providerOption.label}</Typography>
-         <Badge variant="success" size="sm" casing="natural">
-          {t("apiKeys.freeTierAvailable")}
-         </Badge>
-        </div>
-        <Typography variant="caption" tone="muted" clamp="two">
-         {t(getApiKeyProviderDescriptionKey(providerOption.value))}
-        </Typography>
-       </div>
-       <Button type="button" variant="outline" size="sm" asChild>
-        <a href={providerOption.docsUrl} target="_blank" rel="noreferrer">
-         {t("apiKeys.getKey")}
-         <ExternalLink data-icon="inline-end" />
-        </a>
-       </Button>
-      </div>
-     ))}
-    </div>
-   </div>
-
-   <div className="grid gap-3">
-    <div className="flex items-center gap-2">
-     <BarChart3 className="size-4 text-text-muted" aria-hidden="true" />
-     <Typography weight="semibold">{t("apiKeys.statsTitle")}</Typography>
-    </div>
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-     <KeyStat label={t("apiKeys.statsConfigured")} value={String(summary.total)} />
-     <KeyStat label={t("apiKeys.statsActive")} value={String(summary.active)} />
-     <KeyStat label={t("apiKeys.statsFreeTier")} value={String(freeTierKeyCount)} />
-     <KeyStat label={t("apiKeys.statsLastVerified")} value={formatDate(latestValidatedAt)} />
-    </div>
-    <Typography as="p" variant="caption" tone="muted">
-     {t("apiKeys.statsScope")}
-    </Typography>
-   </div>
-
    {!schemaReady ? (
     <Card variant="subtle" padding="sm">
      <Typography as="p" variant="bodySmall" tone="warning">
@@ -631,7 +562,7 @@ export default function ApiKeyManagerSection() {
     </div>
    ) : isLoading ? (
     <div className="flex items-center gap-3 py-4 text-text-secondary">
-     <Loader2 className="size-4 animate-spin" aria-hidden="true" />
+     <Spinner />
      <Typography variant="bodySmall">{t("apiKeys.loading")}</Typography>
     </div>
    ) : keys.length === 0 ? (
@@ -658,109 +589,103 @@ export default function ApiKeyManagerSection() {
       const storedModelOptions = getApiKeyModelOptions(key.provider);
 
       return (
-       <article key={key.id} className="grid gap-4 py-4">
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,22rem)_auto] lg:items-center">
-         <div className="grid min-w-0 gap-2">
-          <div className="flex flex-wrap items-center gap-2">
-           <Badge
-            variant={providerOption?.accessTier === "free-tier" ? "success" : "default"}
-            size="sm"
-           >
-            {key.providerLabel}
-           </Badge>
-           <Badge
-            variant={key.id === selectedKeyId ? "info" : key.isActive ? "success" : "default"}
-            size="sm"
-           >
-            {key.isActive ? <Check aria-hidden="true" /> : <Pause aria-hidden="true" />}
-            {key.id === selectedKeyId
-             ? t("apiKeys.statusSelected")
-             : key.isActive
-               ? t("apiKeys.statusActive")
-               : t("apiKeys.statusPaused")}
-           </Badge>
-          </div>
-          <div className="grid min-w-0 gap-1">
-           <Typography as="h3" variant="cardTitle" tone="default" weight="bold" clamp="one">
-            {key.label}
-           </Typography>
-           <Typography as="p" variant="code" tone="secondary" clamp="one">
-            {key.maskedKey}
-           </Typography>
-           <Typography variant="caption" tone="muted">
-            {t("apiKeys.verifiedAt", { date: formatDate(key.lastValidatedAt) })}
-           </Typography>
-          </div>
-         </div>
-
-         <div className="grid min-w-0 gap-1.5">
-          <Typography variant="caption" tone="muted" weight="semibold">
-           {t("apiKeys.modelUsed")}
+       <article
+        key={key.id}
+        className="grid min-w-0 gap-3 py-3 md:grid-cols-[minmax(0,1fr)_minmax(14rem,20rem)_auto] md:items-center"
+       >
+        <div className="grid min-w-0 gap-1.5">
+         <div className="flex min-w-0 flex-wrap items-center gap-2">
+          <Typography as="h3" variant="cardTitle" tone="default" weight="bold" clamp="one">
+           {key.label}
           </Typography>
-          <Select
-           value={key.defaultModel || getDefaultApiKeyModel(key.provider)}
-           onValueChange={(value) => void handleModelChange(key.id, value)}
-           disabled={isBusy || !schemaReady}
+          <Badge variant="default" size="sm" casing="natural">
+           {key.providerLabel}
+          </Badge>
+          <Badge
+           variant={key.id === selectedKeyId ? "info" : key.isActive ? "success" : "default"}
+           size="sm"
+           casing="natural"
           >
-           <SelectTrigger width="full" aria-label={t("apiKeys.modelAria", { label: key.label })}>
-            <SelectValue />
-           </SelectTrigger>
-           <SelectContent align="start">
-            {key.defaultModel &&
-            !storedModelOptions.some((option) => option.value === key.defaultModel) ? (
-             <SelectItem value={key.defaultModel}>
-              {key.defaultModel} ({t("ai.savedSuffix")})
-             </SelectItem>
-            ) : null}
-            {storedModelOptions.map((option) => (
-             <SelectItem key={option.value} value={option.value}>
-              {option.label}
-             </SelectItem>
-            ))}
-           </SelectContent>
-          </Select>
-          <Typography as="span" variant="caption" tone="muted" leading="compact">
-           {t(getApiKeyModelDescriptionKey(key.provider, key.defaultModel))}
-          </Typography>
-         </div>
-
-         <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-          {index > 0 ? (
-           <Button
-            variant="outline"
-            size="sm"
-            onClick={() => void handleMoveKey(key.id, "up")}
-            disabled={isBusy || !schemaReady}
-           >
-            {t("apiKeys.moveUp")}
-           </Button>
+           {key.isActive ? <Check aria-hidden="true" /> : <Pause aria-hidden="true" />}
+           {key.id === selectedKeyId
+            ? t("apiKeys.statusSelected")
+            : key.isActive
+              ? t("apiKeys.statusActive")
+              : t("apiKeys.statusPaused")}
+          </Badge>
+          {providerOption?.accessTier === "free-tier" ? (
+           <Badge variant="success" size="sm" casing="natural">
+            {t("apiKeys.freeTierAvailable")}
+           </Badge>
           ) : null}
-          <Button
-           variant="outline"
-           size="sm"
-           onClick={() => void handleToggleKey(key)}
-           disabled={isBusy || !schemaReady}
-          >
-           {isBusy ? (
-            <Spinner data-icon="inline-start" />
-           ) : key.isActive ? (
-            <Pause data-icon="inline-start" />
-           ) : (
-            <Play data-icon="inline-start" />
-           )}
-           {key.isActive ? t("apiKeys.pause") : t("apiKeys.resume")}
-          </Button>
-          <Button
-           variant="destructive"
-           size="sm"
-           onClick={() => setDeleteKeyId(key.id)}
-           disabled={isBusy || !schemaReady}
-          >
-           <Trash2 data-icon="inline-start" />
-           {t("apiKeys.delete")}
-          </Button>
+         </div>
+         <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+          <Typography as="span" variant="code" tone="secondary" clamp="one">
+           {key.maskedKey}
+          </Typography>
+          <Typography variant="caption" tone="muted">
+           {t("apiKeys.verifiedAt", { date: formatDate(key.lastValidatedAt) })}
+          </Typography>
          </div>
         </div>
+
+        <div className="grid min-w-0 gap-1">
+         <Select
+          value={key.defaultModel || getDefaultApiKeyModel(key.provider)}
+          onValueChange={(value) => void handleModelChange(key.id, value)}
+          disabled={isBusy || !schemaReady}
+         >
+          <SelectTrigger width="full" aria-label={t("apiKeys.modelAria", { label: key.label })}>
+           <SelectValue />
+          </SelectTrigger>
+          <SelectContent align="start">
+           {key.defaultModel &&
+           !storedModelOptions.some((option) => option.value === key.defaultModel) ? (
+            <SelectItem value={key.defaultModel}>
+             {key.defaultModel} ({t("ai.savedSuffix")})
+            </SelectItem>
+           ) : null}
+           {storedModelOptions.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+             {option.label}
+            </SelectItem>
+           ))}
+          </SelectContent>
+         </Select>
+         <Typography as="span" variant="caption" tone="muted" leading="compact" clamp="one">
+          {t(getApiKeyModelDescriptionKey(key.provider, key.defaultModel))}
+         </Typography>
+        </div>
+
+        <DropdownMenu>
+         <DropdownMenuTrigger asChild>
+          <Button
+           variant="ghost"
+           size="icon-toolbar"
+           aria-label={lookupT("modelProvider.keyActions", { label: key.label })}
+           disabled={isBusy || !schemaReady}
+          >
+           {isBusy ? <Spinner /> : <MoreHorizontal />}
+          </Button>
+         </DropdownMenuTrigger>
+         <DropdownMenuContent align="end" width="sm">
+          {index > 0 ? (
+           <DropdownMenuItem onSelect={() => void handleMoveKey(key.id, "up")}>
+            <ArrowUp />
+            {t("apiKeys.moveUp")}
+           </DropdownMenuItem>
+          ) : null}
+          <DropdownMenuItem onSelect={() => void handleToggleKey(key)}>
+           {key.isActive ? <Pause /> : <Play />}
+           {key.isActive ? t("apiKeys.pause") : t("apiKeys.resume")}
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem tone="destructive" onSelect={() => setDeleteKeyId(key.id)}>
+           <Trash2 />
+           {t("apiKeys.delete")}
+          </DropdownMenuItem>
+         </DropdownMenuContent>
+        </DropdownMenu>
        </article>
       );
      })}
@@ -797,18 +722,5 @@ export default function ApiKeyManagerSection() {
     </DialogContent>
    </Dialog>
   </Card>
- );
-}
-
-function KeyStat({ label, value }: { label: string; value: string }) {
- return (
-  <div className="grid min-w-0 gap-1">
-   <Typography variant="caption" tone="muted">
-    {label}
-   </Typography>
-   <Typography weight="bold" clamp="one">
-    {value}
-   </Typography>
-  </div>
  );
 }
