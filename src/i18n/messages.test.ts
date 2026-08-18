@@ -91,4 +91,30 @@ describe("i18n message contracts", () => {
   expect(settings.memory.updated).toContain("{date}");
   expect(settings.memory.actionsAria).toContain("{content}");
  });
+
+ it.each(appLocales)("%s keeps model/provider, advanced and usage copy contracts", async (locale) => {
+  const messages = await loadAppMessages(locale);
+
+  expect(messages.AiLookupSettings.modelProvider).toEqual(
+   expect.objectContaining({
+    title: expect.any(String),
+    description: expect.any(String),
+    dirty: expect.any(String),
+    synced: expect.any(String),
+    reset: expect.any(String),
+    save: expect.any(String),
+    keyActions: expect.stringContaining("{label}"),
+   }),
+  );
+  expect(messages.AiLookupSettings.advanced).toEqual(
+   expect.objectContaining({
+    title: expect.any(String),
+    description: expect.any(String),
+    open: expect.any(String),
+    close: expect.any(String),
+   }),
+  );
+  expect(messages.AiUsage.runtimeUsage).toContain("{tokens}");
+  expect(messages.AiUsage.runtimeRequests).toContain("{requests}");
+ });
 });
