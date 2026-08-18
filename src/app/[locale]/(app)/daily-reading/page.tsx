@@ -1,4 +1,5 @@
 import { DailyReadingWorkspace } from "@/features/hanzihome/reader/DailyReadingWorkspace";
+import { GeneratedDailyReadingArea } from "@/features/hanzihome/reader/daily-reading/GeneratedDailyReadingArea";
 import {
  getReaderDocument,
  listReaderDocuments,
@@ -18,7 +19,8 @@ export default async function DailyReadingPage({
   initialResource === null ? null : getStaticStudioLessonDetail(initialResource.document.lesson_id);
 
  return (
-  <div className="hanzihome-static-page min-w-0 p-3 sm:p-5 lg:p-6">
+  <div className="hanzihome-static-page grid min-w-0 gap-6 p-3 sm:p-5 lg:p-6">
+   <GeneratedDailyReadingArea />
    <DailyReadingWorkspace
     initialDocuments={initialDocuments}
     initialResource={initialResource}
