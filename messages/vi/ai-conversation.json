@@ -1,0 +1,82 @@
+{
+ "title": "Hội thoại AI",
+ "description": "Luyện tiếng Trung với nhân vật, cách sửa lỗi và AI runtime do bạn chọn. Hồ sơ nhân vật được lưu trên thiết bị; nội dung hội thoại chỉ tồn tại trong phiên hiện tại.",
+ "actions": {
+  "setup": "Thiết lập nhân vật",
+  "apiKeys": "Quản lý API key",
+  "clear": "Xóa phiên",
+  "send": "Gửi",
+  "sending": "Đang gửi…",
+  "defaults": "Mặc định",
+  "cancel": "Hủy",
+  "save": "Lưu thiết lập"
+ },
+ "personas": {
+  "tutor": "Giáo viên",
+  "friend": "Bạn Trung Quốc",
+  "hskExaminer": "Giám khảo HSKK",
+  "grammarCoach": "Coach ngữ pháp"
+ },
+ "levels": {
+  "beginner": "Sơ cấp",
+  "intermediate": "Trung cấp",
+  "advanced": "Cao cấp"
+ },
+ "corrections": {
+  "light": "Nhẹ — chỉ sửa lỗi quan trọng",
+  "balanced": "Cân bằng — sửa sau khi trả lời",
+  "strict": "Kỹ — bắt lỗi rõ và giải thích"
+ },
+ "replyModes": {
+  "adaptive": "Tự thích nghi",
+  "chinese": "Ưu tiên tiếng Trung",
+  "bilingual": "Trung + Việt hỗ trợ"
+ },
+ "greeting": "你好，我是{name}。Mình đang ở chế độ “{role}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
+ "fallbackInterest": "Hội thoại tiếng Trung",
+ "runtime": {
+  "label": "AI sử dụng",
+  "auto": "Tự động — ưu tiên key cá nhân",
+  "loading": "Đang tải API key…",
+  "empty": "Không có key cá nhân đang bật — chế độ tự động sẽ dùng Gemini hệ thống.",
+  "description": "Chế độ tự động dùng key cá nhân có ưu tiên cao nhất; nếu không có key cá nhân, app dùng Gemini hệ thống. Khi chọn key cụ thể, request chỉ dùng đúng key đó.",
+  "current": "Đang dùng: {provider} · {model}",
+  "loadError": "Không tải được danh sách key cá nhân. Chế độ tự động vẫn có thể dùng Gemini hệ thống.",
+  "modelFallback": "model mặc định",
+  "healthChecking": "Đang kiểm tra AI…",
+  "healthReady": "Sẵn sàng · {provider} · {model}",
+  "recheck": "Kiểm tra lại",
+  "health": {
+   "missingSystemKey": "Gemini hệ thống chưa được cấu hình. Thêm key cá nhân hoặc cấu hình GEMINI_API_KEY trên server.",
+   "invalidKey": "API key không còn hợp lệ hoặc provider đang từ chối key này.",
+   "quotaExhausted": "API key hợp lệ nhưng hiện đã hết quota hoặc đang bị rate limit.",
+   "keyUnavailable": "API key đã chọn không còn khả dụng cho tài khoản hiện tại.",
+   "providerUnavailable": "Provider đang không khả dụng. Hãy kiểm tra lại sau.",
+   "networkError": "Không kiểm tra được AI runtime do lỗi kết nối."
+  }
+ },
+ "message": {
+  "label": "Tin nhắn",
+  "placeholder": "例如：今天下班以后我想练习聊日常生活。",
+  "hint": "Ctrl/Cmd + Enter để gửi · AI giữ tối đa 20 tin gần nhất + hồ sơ ghi nhớ ổn định.",
+  "replying": "{name} đang trả lời…",
+  "sendError": "Không thể gửi hội thoại."
+ },
+ "setup": {
+  "title": "Thiết lập nhân vật hội thoại",
+  "description": "Chọn vai trò, mức sửa lỗi và những điều AI cần nhớ. Hồ sơ này chỉ lưu trên trình duyệt của thiết bị hiện tại.",
+  "persona": "Vai trò",
+  "displayName": "Tên nhân vật",
+  "displayNamePlaceholder": "Ví dụ: 小林",
+  "learnerLevel": "Trình độ của bạn",
+  "correctionStyle": "Cách sửa lỗi",
+  "replyMode": "Ngôn ngữ trả lời",
+  "interests": "Chủ đề muốn nói",
+  "interestsPlaceholder": "Ví dụ: cuộc sống ở Trung Quốc, phim, công việc, đi ăn, du lịch…",
+  "characterNotes": "Tính cách / cách nói",
+  "characterNotesPlaceholder": "Ví dụ: nói như bạn cùng tuổi, thỉnh thoảng dùng khẩu ngữ phổ biến nhưng không lạm dụng slang.",
+  "memoryNotes": "Điều cần nhớ lâu dài",
+  "memoryNotesDescription": "Phần này được gửi lại ở mỗi lượt nên vẫn giữ được các thông tin cốt lõi khi đoạn chat dài.",
+  "memoryNotesPlaceholder": "Ví dụ: Tôi học khoảng HSK4, yếu trật tự từ và dịch Việt → Trung; ưu tiên 普通话 tại Trung Quốc đại lục."
+ }
+}

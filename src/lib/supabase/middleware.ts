@@ -45,6 +45,7 @@ export async function updateSession(request: NextRequest, initialResponse?: Next
   logicalPathname === "/humanities" ||
   logicalPathname.startsWith("/humanities/") ||
   logicalPathname === "/personal-learning" ||
+  logicalPathname.startsWith("/personal-learning/") ||
   logicalPathname === "/translation" ||
   logicalPathname === "/tts";
 

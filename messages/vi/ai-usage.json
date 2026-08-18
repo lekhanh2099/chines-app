@@ -1,0 +1,15 @@
+{
+ "title": "Mức sử dụng Hội thoại AI",
+ "description": "Theo dõi lượt gọi AI của phần Hội thoại tại một chỗ trong Cài đặt, thay vì chiếm không gian trong phiên chat.",
+ "requests": "Lượt AI thành công",
+ "inputTokens": "Input tokens",
+ "outputTokens": "Output tokens",
+ "totalTokens": "Tổng tokens",
+ "lastUsed": "Dùng gần nhất",
+ "never": "Chưa có",
+ "empty": "Chưa có lượt Hội thoại AI thành công trên trình duyệt này.",
+ "systemRuntime": "Gemini hệ thống",
+ "runtimeUsage": "{requests} lượt · {tokens} tokens",
+ "scope": "Usage chỉ được lưu trên trình duyệt này và hiện ghi nhận các lượt Hội thoại AI thành công. Không ước tính chi phí hoặc quota vì giá và free tier do provider quyết định.",
+ "scopeWithoutTokens": "Usage chỉ được lưu trên trình duyệt này. Provider hiện chưa trả dữ liệu token chuẩn hóa cho các lượt Hội thoại AI này, nên token được hiển thị là — thay vì đoán số liệu."
+}

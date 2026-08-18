@@ -1,0 +1,16 @@
+{
+ "autoProvider": "自动识别 Provider",
+ "autoProviderHint": "推荐。应用会根据密钥识别 Provider，并只显示该密钥当前真正可用且与现有 AI 流程兼容的模型。",
+ "checking": "正在验证密钥并加载模型…",
+ "ready": "密钥有效 · {provider} · 找到 {count} 个兼容模型",
+ "recommended": "推荐",
+ "modelHint": "应用会根据 Provider 当前返回的模型列表，只保留与现有 AI 流程兼容的模型。",
+ "modelWaiting": "请先粘贴 API 密钥。应用会自动验证并加载可用模型。",
+ "modelEmpty": "暂时没有可用的兼容模型。",
+ "recheck": "重新检查",
+ "checkError": "无法验证密钥或加载模型。",
+ "saveError": "无法保存 API 密钥。",
+ "manualProvider": "手动选择 Provider",
+ "providerDetected": "已识别：{provider}",
+ "pasteAndCheck": "粘贴密钥后自动加载模型"
+}

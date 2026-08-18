@@ -50,16 +50,6 @@ export const GEMINI_TEXT_MODEL_OPTIONS = [
   description: "Alias latest cho nhánh Pro",
  },
  {
-  value: "models/gemini-2.0-flash",
-  label: "Gemini 2.0 Flash",
-  description: "Model cũ hơn, giữ để tương thích cài đặt đã lưu",
- },
- {
-  value: "models/gemini-2.0-flash-lite",
-  label: "Gemini 2.0 Flash-Lite",
-  description: "Bản lite của 2.0 Flash",
- },
- {
   value: "models/gemma-3-4b-it",
   label: "Gemma 3 4B",
   description: "Model text nhỏ, có thể dùng thử khi Gemini rate limit",

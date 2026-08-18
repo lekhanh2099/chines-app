@@ -357,6 +357,18 @@ export async function createUserApiKey(
  const resolvedLabel =
   input.label?.trim() || `${getApiKeyProviderLabel(input.provider)} Key ${existing.length + 1}`;
 
+ let encryptedKey: string;
+ try {
+  encryptedKey = encryptApiKey(input.apiKey);
+ } catch (encryptionError) {
+  logger.error("[ApiKeys] encryption configuration error:", encryptionError);
+  return {
+   key: null,
+   error:
+    "Kho lưu API key an toàn chưa được cấu hình trên server. Hãy cấu hình BYOK_ENCRYPTION_SECRET hoặc Supabase server secret rồi thử lại.",
+  };
+ }
+
  const { data, error } = await supabase
   .from("user_api_keys")
   .insert({
@@ -364,7 +376,7 @@ export async function createUserApiKey(
    provider: input.provider,
    label: resolvedLabel,
    masked_key: getMaskedApiKey(input.apiKey),
-   encrypted_key: encryptApiKey(input.apiKey),
+   encrypted_key: encryptedKey,
    is_active: true,
    priority: input.provider === "groq" ? 0 : existing.length + 1,
    default_model: input.defaultModel || null,
@@ -372,7 +384,7 @@ export async function createUserApiKey(
    updated_at: new Date().toISOString(),
   })
   .select(
-   "id, user_id, provider, label, masked_key, is_active, priority, default_model, last_validated_at, created_at, updated_at",
+   "id, user_id, provider, label, masked_key, encrypted_key, is_active, priority, default_model, last_validated_at, created_at, updated_at",
   )
   .single();
 
@@ -422,7 +434,7 @@ export async function updateUserApiKey(
   .eq("id", keyId)
   .eq("user_id", userId)
   .select(
-   "id, user_id, provider, label, masked_key, is_active, priority, default_model, last_validated_at, created_at, updated_at",
+   "id, user_id, provider, label, masked_key, encrypted_key, is_active, priority, default_model, last_validated_at, created_at, updated_at",
   )
   .single();
 

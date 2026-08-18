@@ -1,0 +1,82 @@
+{
+ "title": "AI 会话",
+ "description": "按你选择的人设、纠错方式和 AI 运行配置练习中文。人物档案保存在当前设备；会话内容只保留在当前会话中。",
+ "actions": {
+  "setup": "设置人物",
+  "apiKeys": "管理 API 密钥",
+  "clear": "清空会话",
+  "send": "发送",
+  "sending": "发送中…",
+  "defaults": "恢复默认",
+  "cancel": "取消",
+  "save": "保存设置"
+ },
+ "personas": {
+  "tutor": "中文老师",
+  "friend": "中国朋友",
+  "hskExaminer": "HSKK 考官",
+  "grammarCoach": "语法教练"
+ },
+ "levels": {
+  "beginner": "初级",
+  "intermediate": "中级",
+  "advanced": "高级"
+ },
+ "corrections": {
+  "light": "轻度——只改重要错误",
+  "balanced": "平衡——回答后再纠错",
+  "strict": "严格——明确指出并解释错误"
+ },
+ "replyModes": {
+  "adaptive": "自动适应",
+  "chinese": "优先中文",
+  "bilingual": "中文 + 越南语辅助"
+ },
+ "greeting": "你好，我是{name}。现在是“{role}”模式。你可以直接用中文开始，也可以先告诉我今天想练什么。",
+ "fallbackInterest": "中文会话",
+ "runtime": {
+  "label": "使用的 AI",
+  "auto": "自动——优先个人密钥",
+  "loading": "正在加载 API 密钥…",
+  "empty": "没有已启用的个人密钥——自动模式将使用系统 Gemini。",
+  "description": "自动模式优先使用优先级最高的个人密钥；如果没有个人密钥，则使用系统 Gemini。选择具体密钥后，请求只会使用该密钥。",
+  "current": "当前运行环境：{provider} · {model}",
+  "loadError": "无法加载个人 API 密钥列表。自动模式仍可使用系统 Gemini。",
+  "modelFallback": "provider 默认模型",
+  "healthChecking": "正在检查 AI…",
+  "healthReady": "可用 · {provider} · {model}",
+  "recheck": "重新检查",
+  "health": {
+   "missingSystemKey": "系统 Gemini 尚未配置。请添加个人密钥，或在服务器配置 GEMINI_API_KEY。",
+   "invalidKey": "API 密钥已失效，或 provider 正在拒绝该密钥。",
+   "quotaExhausted": "API 密钥有效，但当前额度已用完或正在被限流。",
+   "keyUnavailable": "所选 API 密钥已不再属于当前账户或已停用。",
+   "providerUnavailable": "Provider 当前不可用，请稍后重试。",
+   "networkError": "由于网络错误，无法检查 AI 运行环境。"
+  }
+ },
+ "message": {
+  "label": "消息",
+  "placeholder": "例如：今天下班以后我想练习聊日常生活。",
+  "hint": "Ctrl/Cmd + Enter 发送 · AI 最多保留最近 20 条消息，并附带稳定的人物记忆档案。",
+  "replying": "{name} 正在回复…",
+  "sendError": "无法发送会话。"
+ },
+ "setup": {
+  "title": "设置会话人物",
+  "description": "选择角色、纠错强度以及 AI 需要长期记住的信息。该档案只保存在当前设备的浏览器中。",
+  "persona": "角色",
+  "displayName": "人物名称",
+  "displayNamePlaceholder": "例如：小林",
+  "learnerLevel": "你的水平",
+  "correctionStyle": "纠错方式",
+  "replyMode": "回复语言",
+  "interests": "想聊的话题",
+  "interestsPlaceholder": "例如：中国生活、电影、工作、吃饭、旅行……",
+  "characterNotes": "性格 / 说话方式",
+  "characterNotesPlaceholder": "例如：像同龄朋友一样自然交流，偶尔使用常见口语，但不要滥用网络俚语。",
+  "memoryNotes": "长期记忆",
+  "memoryNotesDescription": "这一部分会在每轮重新发送，因此长对话中也能保留核心学习背景。",
+  "memoryNotesPlaceholder": "例如：我大约 HSK4，比较弱的是语序和越南语 → 中文翻译；优先使用中国大陆普通话。"
+ }
+}

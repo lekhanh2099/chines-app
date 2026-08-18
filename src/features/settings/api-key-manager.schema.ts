@@ -35,6 +35,14 @@ export const apiKeysResponseSchema = z.object({
  summary: apiKeysSummarySchema,
 });
 
+export const discoverApiKeyResponseSchema = z.object({
+ valid: z.literal(true),
+ provider: apiKeyProviderSchema,
+ providerLabel: z.string(),
+ models: z.array(z.string()).min(1),
+ recommendedModel: z.string(),
+});
+
 export const addApiKeyResponseSchema = z.object({
  success: z.literal(true),
  key: managedApiKeySchema,
@@ -54,4 +62,6 @@ export const moveApiKeyResponseSchema = z.object({
 export const deleteApiKeyResponseSchema = z.object({
  success: z.literal(true),
 });
+
 export type ApiKeysResponse = z.output<typeof apiKeysResponseSchema>;
+export type DiscoverApiKeyResponse = z.output<typeof discoverApiKeyResponseSchema>;

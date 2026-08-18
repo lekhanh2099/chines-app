@@ -1,0 +1,82 @@
+{
+ "title": "AI Conversation",
+ "description": "Practice Chinese with the character, correction style, and AI runtime you choose. The character profile is saved on this device; conversation content remains in the current session only.",
+ "actions": {
+  "setup": "Set up character",
+  "apiKeys": "Manage API keys",
+  "clear": "Clear session",
+  "send": "Send",
+  "sending": "Sending…",
+  "defaults": "Defaults",
+  "cancel": "Cancel",
+  "save": "Save setup"
+ },
+ "personas": {
+  "tutor": "Teacher",
+  "friend": "Chinese friend",
+  "hskExaminer": "HSKK examiner",
+  "grammarCoach": "Grammar coach"
+ },
+ "levels": {
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advanced": "Advanced"
+ },
+ "corrections": {
+  "light": "Light — only important errors",
+  "balanced": "Balanced — correct after replying",
+  "strict": "Strict — flag and explain errors"
+ },
+ "replyModes": {
+  "adaptive": "Adaptive",
+  "chinese": "Prefer Chinese",
+  "bilingual": "Chinese + Vietnamese support"
+ },
+ "greeting": "你好，我是{name}。I am in “{role}” mode. Start in Chinese or tell me your goal for this practice session.",
+ "fallbackInterest": "Chinese conversation",
+ "runtime": {
+  "label": "AI runtime",
+  "auto": "Automatic — prefer personal key",
+  "loading": "Loading API keys…",
+  "empty": "No enabled personal key — automatic mode will use the system Gemini runtime.",
+  "description": "Automatic mode uses the highest-priority enabled personal key; if none exists, the app uses the system Gemini runtime. Choosing a specific key always uses only that key.",
+  "current": "Current runtime: {provider} · {model}",
+  "loadError": "Could not load personal API keys. Automatic mode can still use the system Gemini runtime.",
+  "modelFallback": "provider default",
+  "healthChecking": "Checking AI…",
+  "healthReady": "Ready · {provider} · {model}",
+  "recheck": "Check again",
+  "health": {
+   "missingSystemKey": "System Gemini is not configured. Add a personal key or configure GEMINI_API_KEY on the server.",
+   "invalidKey": "The API key is no longer valid or the provider is rejecting it.",
+   "quotaExhausted": "The API key is valid but its quota is exhausted or it is currently rate limited.",
+   "keyUnavailable": "The selected API key is no longer available for the current account.",
+   "providerUnavailable": "The provider is currently unavailable. Try again later.",
+   "networkError": "Could not check the AI runtime because of a network error."
+  }
+ },
+ "message": {
+  "label": "Message",
+  "placeholder": "例如：今天下班以后我想练习聊日常生活。",
+  "hint": "Ctrl/Cmd + Enter to send · AI keeps up to 20 recent messages plus the stable memory profile.",
+  "replying": "{name} is replying…",
+  "sendError": "Could not send the conversation."
+ },
+ "setup": {
+  "title": "Conversation character setup",
+  "description": "Choose the role, correction intensity, and details AI should remember. This profile is stored only in the browser on this device.",
+  "persona": "Role",
+  "displayName": "Character name",
+  "displayNamePlaceholder": "Example: 小林",
+  "learnerLevel": "Your level",
+  "correctionStyle": "Correction style",
+  "replyMode": "Reply language",
+  "interests": "Topics to discuss",
+  "interestsPlaceholder": "Example: life in China, films, work, eating out, travel…",
+  "characterNotes": "Personality / speaking style",
+  "characterNotesPlaceholder": "Example: speak like a peer and occasionally use common colloquial expressions without overusing slang.",
+  "memoryNotes": "Long-term memory notes",
+  "memoryNotesDescription": "This is sent again on every turn so core learner context survives long conversations.",
+  "memoryNotesPlaceholder": "Example: I am around HSK4, struggle with word order and Vietnamese → Chinese translation, and prefer Mainland Mandarin usage."
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "autoProvider": "Tự nhận diện provider",
+ "autoProviderHint": "Khuyên dùng. App nhận diện provider từ key và chỉ hiện các model mà key này thật sự dùng được.",
+ "checking": "Đang kiểm tra key và tải model…",
+ "ready": "Key hợp lệ · {provider} · tìm thấy {count} model tương thích",
+ "recommended": "Khuyên dùng",
+ "modelHint": "App đã lọc theo model đang có trên provider và tương thích với luồng AI hiện tại.",
+ "modelWaiting": "Dán API key trước. App sẽ tự kiểm tra và tải danh sách model.",
+ "modelEmpty": "Chưa có model khả dụng.",
+ "recheck": "Kiểm tra lại",
+ "checkError": "Không kiểm tra được key/model.",
+ "saveError": "Không thể lưu API key.",
+ "manualProvider": "Chọn provider thủ công",
+ "providerDetected": "Đã nhận diện: {provider}",
+ "pasteAndCheck": "Dán key để tự tải model"
+}

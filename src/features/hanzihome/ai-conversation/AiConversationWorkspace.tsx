@@ -1,34 +1,177 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Send, Trash2 } from "lucide-react";
+import { RefreshCcw, RotateCcw, Send, Settings2, Trash2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
+import { useAppForm } from "@/components/form";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
+import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
+import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
+import { Link } from "@/i18n/navigation";
+import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
-import { sendAiConversationMessage } from "./ai-conversation-api";
-import type { AiConversationMessage } from "./ai-conversation.schemas";
+import { fetchAiConversationRuntimeHealth, sendAiConversationMessage } from "./ai-conversation-api";
+import {
+ AiConversationMessageBubble,
+ AiConversationTypingBubble,
+} from "./AiConversationMessageBubble";
+import { sanitizeAiConversationReply } from "./ai-conversation-output";
+import {
+ saveAiConversationProfile,
+ useAiConversationProfile,
+} from "./ai-conversation-profile.client";
+import {
+ aiConversationCorrectionStyleSchema,
+ aiConversationLearnerLevelSchema,
+ aiConversationPersonaSchema,
+ aiConversationProfileSchema,
+ aiConversationReplyModeSchema,
+ DEFAULT_AI_CONVERSATION_PROFILE,
+ type AiConversationMessage,
+ type AiConversationProfile,
+} from "./ai-conversation.schemas";
 
-const initialMessage: AiConversationMessage = {
- role: "assistant",
- content: "你好! Mình có thể luyện hội thoại, giải thích pinyin, ngữ pháp hoặc dịch câu cùng bạn.",
-};
+const AUTO_RUNTIME_KEY_ID = "auto";
+const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
+type ManagedApiKey = ApiKeysResponse["keys"][number];
 
 export function AiConversationWorkspace() {
- const [messages, setMessages] = useState<AiConversationMessage[]>([initialMessage]);
+ const t = useTranslations("AiConversation");
+ const profile = useAiConversationProfile();
+ const [isSetupOpen, setIsSetupOpen] = useState(false);
+ const [messages, setMessages] = useState<AiConversationMessage[]>([]);
  const [draft, setDraft] = useState("");
  const [isSending, setIsSending] = useState(false);
  const [error, setError] = useState<string | null>(null);
+ const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
+ const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
+ const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
+ const [runtimeLoadError, setRuntimeLoadError] = useState(false);
  const requestRef = useRef<AbortController | null>(null);
+ const messageViewportRef = useRef<HTMLDivElement | null>(null);
+ const runtimeHealthQuery = useQuery({
+  queryKey: ["hanzihome", "ai-conversation", "runtime-health", runtimeKeyId],
+  queryFn: ({ signal }) =>
+   fetchAiConversationRuntimeHealth({
+    ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+    signal,
+   }),
+  enabled: !isRuntimeLoading,
+  retry: false,
+ });
+ const runtimeHealth = runtimeHealthQuery.data ?? null;
+ const isHealthChecking = runtimeHealthQuery.isFetching;
+ const personaLabels: Record<AiConversationProfile["persona"], string> = {
+  tutor: t("personas.tutor"),
+  friend: t("personas.friend"),
+  "hsk-examiner": t("personas.hskExaminer"),
+  "grammar-coach": t("personas.grammarCoach"),
+ };
+ const levelLabels: Record<AiConversationProfile["learnerLevel"], string> = {
+  beginner: t("levels.beginner"),
+  intermediate: t("levels.intermediate"),
+  advanced: t("levels.advanced"),
+ };
+ const greeting: AiConversationMessage = {
+  role: "assistant",
+  content: t("greeting", {
+   name: profile.displayName,
+   role: personaLabels[profile.persona],
+  }),
+ };
+ const displayMessages = [greeting, ...messages];
+ const profileAvatar = profile.displayName.trim().slice(0, 1) || "AI";
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
+ useEffect(() => {
+  let cancelled = false;
+  const loadRuntimeKeys = async () => {
+   setIsRuntimeLoading(true);
+   setRuntimeLoadError(false);
+   try {
+    const response = await fetchManagedApiKeys();
+    if (cancelled) return;
+    const activeKeys = response.keys.filter((key) => key.isActive);
+    setRuntimeKeys(activeKeys);
+    const savedKeyId = window.localStorage.getItem(RUNTIME_KEY_STORAGE_KEY);
+    setRuntimeKeyId(
+     savedKeyId && activeKeys.some((key) => key.id === savedKeyId)
+      ? savedKeyId
+      : AUTO_RUNTIME_KEY_ID,
+    );
+   } catch {
+    if (!cancelled) setRuntimeLoadError(true);
+   } finally {
+    if (!cancelled) setIsRuntimeLoading(false);
+   }
+  };
+
+  void loadRuntimeKeys();
+  return () => {
+   cancelled = true;
+  };
+ }, []);
+
+ useEffect(() => {
+  const viewport = messageViewportRef.current;
+  if (!viewport) return;
+  viewport.scrollTop = viewport.scrollHeight;
+ }, [isSending, messages]);
+
+ const clearSession = () => {
+  requestRef.current?.abort();
+  setMessages([]);
+  setDraft("");
+  setError(null);
+ };
+
+ const saveProfile = (nextProfile: AiConversationProfile) => {
+  saveAiConversationProfile(nextProfile);
+  setIsSetupOpen(false);
+ };
+
+ const selectRuntimeKey = (value: string) => {
+  const nextValue =
+   value === AUTO_RUNTIME_KEY_ID || runtimeKeys.some((key) => key.id === value)
+    ? value
+    : AUTO_RUNTIME_KEY_ID;
+  setRuntimeKeyId(nextValue);
+  setError(null);
+  if (nextValue === AUTO_RUNTIME_KEY_ID) {
+   window.localStorage.removeItem(RUNTIME_KEY_STORAGE_KEY);
+  } else {
+   window.localStorage.setItem(RUNTIME_KEY_STORAGE_KEY, nextValue);
+  }
+ };
+
  const send = async () => {
   const content = draft.normalize("NFC").trim();
-  if (!content || isSending) return;
+  if (!content || isSending || !runtimeHealth?.ready) return;
 
   const userMessage: AiConversationMessage = { role: "user", content };
   const nextMessages = [...messages, userMessage];
@@ -41,11 +184,25 @@ export function AiConversationWorkspace() {
   requestRef.current = controller;
 
   try {
-   const reply = await sendAiConversationMessage(nextMessages, controller.signal);
-   setMessages((current) => [...current, { role: "assistant", content: reply }]);
+   const response = await sendAiConversationMessage(nextMessages.slice(-24), profile, {
+    ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+    signal: controller.signal,
+   });
+   const assistantContent = sanitizeAiConversationReply(response.message);
+   if (!assistantContent) {
+    throw new Error(t("message.sendError"));
+   }
+   setMessages((current) => [...current, { role: "assistant", content: assistantContent }]);
+   recordAiUsageEvent({
+    apiKeyId: response.apiKeyId,
+    provider: response.provider,
+    model: response.model,
+    usage: response.usage,
+   });
   } catch (caught) {
    if (controller.signal.aborted) return;
-   setError(caught instanceof Error ? caught.message : "Không thể gửi hội thoại.");
+   setError(caught instanceof Error ? caught.message : t("message.sendError"));
+   void runtimeHealthQuery.refetch();
   } finally {
    if (requestRef.current === controller) {
     requestRef.current = null;
@@ -54,89 +211,166 @@ export function AiConversationWorkspace() {
   }
  };
 
+ const runtimeNotice = runtimeLoadError
+  ? t("runtime.loadError")
+  : runtimeKeys.length === 0 && !isRuntimeLoading
+    ? t("runtime.empty")
+    : null;
+ const healthMessage = isHealthChecking
+  ? t("runtime.healthChecking")
+  : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
+    ? t("runtime.healthReady", {
+       provider: runtimeHealth.provider,
+       model: runtimeHealth.model,
+      })
+    : runtimeHealth?.code === "missing-system-key"
+      ? t("runtime.health.missingSystemKey")
+      : runtimeHealth?.code === "invalid-key"
+        ? t("runtime.health.invalidKey")
+        : runtimeHealth?.code === "quota-exhausted"
+          ? t("runtime.health.quotaExhausted")
+          : runtimeHealth?.code === "key-unavailable"
+            ? t("runtime.health.keyUnavailable")
+            : runtimeHealth?.code === "provider-unavailable"
+              ? t("runtime.health.providerUnavailable")
+              : t("runtime.health.networkError");
+ const canSend = Boolean(runtimeHealth?.ready) && !isHealthChecking && !isSending;
+
  return (
   <div className="grid min-w-0 gap-5">
-   <div className="grid gap-1">
-    <Typography as="h1" variant="pageTitle" weight="black">
-     AI Conversation
-    </Typography>
-    <Typography as="p" variant="body" tone="muted">
-     Luyện tiếng Trung với API key của chính bạn; hội thoại chỉ tồn tại trong phiên hiện tại.
-    </Typography>
+   <div className="flex min-w-0 flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+    <div className="grid min-w-0 gap-1">
+     <Typography as="h1" variant="pageTitle" weight="black">
+      {t("title")}
+     </Typography>
+     <Typography as="p" variant="body" tone="muted">
+      {t("description")}
+     </Typography>
+    </div>
+    <div className="flex flex-wrap gap-2">
+     <Button type="button" variant="outline" onClick={() => setIsSetupOpen(true)}>
+      <Settings2 data-icon="inline-start" />
+      {t("actions.setup")}
+     </Button>
+     <Button type="button" variant="ghost" asChild>
+      <Link href="/settings?section=ai">{t("actions.apiKeys")}</Link>
+     </Button>
+    </div>
    </div>
 
-   <Card variant="section" padding="md" className="grid min-w-0 gap-4">
-    <div className="flex flex-wrap items-center justify-between gap-2">
-     <Typography as="h2" variant="sectionTitle" weight="bold">
-      Tutor
-     </Typography>
-     <div className="flex flex-wrap gap-2">
+   <Card variant="section" padding="none" className="min-w-0 overflow-hidden">
+    <div className="flex flex-col gap-3 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4">
+     <div className="flex min-w-0 items-center gap-3">
+      <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
+       <AvatarFallback>{profileAvatar}</AvatarFallback>
+      </Avatar>
+      <div className="grid min-w-0 gap-1">
+       <div className="flex flex-wrap items-center gap-2">
+        <Typography as="h2" variant="cardTitle" weight="bold">
+         {profile.displayName}
+        </Typography>
+        <Badge variant="accent" casing="natural">
+         {personaLabels[profile.persona]}
+        </Badge>
+        <Badge variant="default" casing="natural">
+         {levelLabels[profile.learnerLevel]}
+        </Badge>
+       </div>
+       <Typography variant="caption" tone="muted" clamp="one">
+        {profile.interests || t("fallbackInterest")}
+       </Typography>
+      </div>
+     </div>
+     <Button type="button" variant="ghost" size="sm" onClick={clearSession}>
+      <Trash2 data-icon="inline-start" />
+      {t("actions.clear")}
+     </Button>
+    </div>
+
+    <div className="grid gap-2 border-t border-border-default px-3 py-3 sm:px-4 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
+     <div className="grid gap-1.5">
+      <Label htmlFor="ai-conversation-runtime" variant="label" weight="semibold">
+       {t("runtime.label")}
+      </Label>
+      <Select value={runtimeKeyId} onValueChange={selectRuntimeKey} disabled={isRuntimeLoading}>
+       <SelectTrigger id="ai-conversation-runtime" width="full">
+        <SelectValue placeholder={t("runtime.loading")} />
+       </SelectTrigger>
+       <SelectContent align="start">
+        <SelectItem value={AUTO_RUNTIME_KEY_ID}>{t("runtime.auto")}</SelectItem>
+        {runtimeKeys.map((key) => (
+         <SelectItem key={key.id} value={key.id}>
+          {`${key.providerLabel} · ${key.label} · ${key.defaultModel || t("runtime.modelFallback")}`}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </div>
+     <div className="flex min-w-0 flex-wrap items-center gap-2">
+      <Badge variant={runtimeHealth?.ready ? "success" : isHealthChecking ? "default" : "warning"}>
+       {healthMessage}
+      </Badge>
       <Button
        type="button"
        variant="ghost"
-       size="sm"
-       onClick={() => {
-        requestRef.current?.abort();
-        setMessages([initialMessage]);
-        setDraft("");
-        setError(null);
-       }}
+       size="icon-toolbar"
+       aria-label={t("runtime.recheck")}
+       onClick={() => void runtimeHealthQuery.refetch()}
+       disabled={isHealthChecking || isRuntimeLoading}
       >
-       <Trash2 data-icon="inline-start" />
-       Xóa phiên
-      </Button>
-      <Button type="button" variant="outline" size="sm" asChild>
-       <Link href="/settings?section=ai">Quản lý API key</Link>
+       <RefreshCcw />
       </Button>
      </div>
-    </div>
-
-    <div className="grid max-h-[min(55dvh,38rem)] min-h-56 gap-3 overflow-y-auto rounded-lg border border-border-default bg-bg-subtle p-3">
-     {messages.map((message, index) => (
-      <div
-       key={`${message.role}-${index}`}
-       className={message.role === "user" ? "flex justify-end" : "flex justify-start"}
-      >
-       <div
-        className={
-         message.role === "user"
-          ? "max-w-[min(90%,42rem)] rounded-xl bg-primary px-3 py-2 text-primary-foreground"
-          : "max-w-[min(90%,42rem)] rounded-xl border border-border-default bg-bg-card px-3 py-2"
-        }
-       >
-        <Typography as="p" variant="bodySmall" className="whitespace-pre-wrap">
-         {message.content}
-        </Typography>
-       </div>
-      </div>
-     ))}
-     {isSending ? (
-      <Typography variant="caption" tone="muted">
-       Tutor đang trả lời…
+     {runtimeNotice ? (
+      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
+       {runtimeNotice}
       </Typography>
      ) : null}
     </div>
 
+    <div
+     ref={messageViewportRef}
+     className="flex min-h-96 max-h-[62dvh] flex-col gap-2 overflow-y-auto bg-surface-muted px-3 py-4 sm:px-4"
+     role="log"
+     aria-live="polite"
+     aria-relevant="additions text"
+    >
+     {displayMessages.map((message, index) => (
+      <AiConversationMessageBubble
+       key={`${message.role}-${index}`}
+       message={message}
+       assistantName={profile.displayName}
+      />
+     ))}
+     {isSending ? (
+      <AiConversationTypingBubble
+       assistantName={profile.displayName}
+       label={t("message.replying", { name: profile.displayName })}
+      />
+     ) : null}
+    </div>
+
     {error ? (
-     <Card variant="subtle" padding="sm">
+     <div className="border-t border-border-default px-3 py-2 sm:px-4">
       <Typography variant="bodySmall" tone="danger">
        {error}
       </Typography>
-     </Card>
+     </div>
     ) : null}
 
     <form
-     className="grid gap-2"
+     className="grid gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
      onSubmit={(event) => {
       event.preventDefault();
       void send();
      }}
     >
-     <label className="grid gap-2">
-      <Typography as="span" variant="label" weight="bold">
-       Tin nhắn
-      </Typography>
+     <Label htmlFor="ai-conversation-message" className="sr-only">
+      {t("message.label")}
+     </Label>
+     <div className="flex items-end gap-2">
       <Textarea
+       id="ai-conversation-message"
        value={draft}
        onChange={(event) => setDraft(event.target.value)}
        onKeyDown={(event) => {
@@ -145,23 +379,173 @@ export function AiConversationWorkspace() {
          void send();
         }
        }}
+       rows={1}
        maxLength={6000}
        disabled={isSending}
-       placeholder="例如：Giải thích sự khác nhau giữa 觉得 và 感觉"
-       className="min-h-24"
+       placeholder={t("message.placeholder")}
+       className="min-h-11 max-h-40 flex-1"
       />
-     </label>
-     <div className="flex flex-wrap items-center justify-between gap-2">
-      <Typography variant="caption" tone="muted">
-       Ctrl/Cmd + Enter để gửi
-      </Typography>
-      <Button type="submit" disabled={!draft.trim() || isSending}>
-       <Send data-icon="inline-start" />
-       {isSending ? "Đang gửi…" : "Gửi"}
+      <Button
+       type="submit"
+       size="icon-round"
+       disabled={!draft.trim() || !canSend}
+       aria-label={isSending ? t("actions.sending") : t("actions.send")}
+      >
+       <Send />
       </Button>
      </div>
+     <Typography variant="caption" tone="muted">
+      {t("message.hint")}
+     </Typography>
     </form>
    </Card>
+
+   {isSetupOpen ? (
+    <PersonaSetupDialog
+     initialProfile={profile}
+     onOpenChange={setIsSetupOpen}
+     onSave={saveProfile}
+    />
+   ) : null}
   </div>
+ );
+}
+
+function PersonaSetupDialog({
+ initialProfile,
+ onOpenChange,
+ onSave,
+}: {
+ initialProfile: AiConversationProfile;
+ onOpenChange: (open: boolean) => void;
+ onSave: (profile: AiConversationProfile) => void;
+}) {
+ const t = useTranslations("AiConversation");
+ const personaOptions = [
+  { value: aiConversationPersonaSchema.enum.tutor, label: t("personas.tutor") },
+  { value: aiConversationPersonaSchema.enum.friend, label: t("personas.friend") },
+  { value: aiConversationPersonaSchema.enum["hsk-examiner"], label: t("personas.hskExaminer") },
+  { value: aiConversationPersonaSchema.enum["grammar-coach"], label: t("personas.grammarCoach") },
+ ];
+ const levelOptions = [
+  { value: aiConversationLearnerLevelSchema.enum.beginner, label: t("levels.beginner") },
+  { value: aiConversationLearnerLevelSchema.enum.intermediate, label: t("levels.intermediate") },
+  { value: aiConversationLearnerLevelSchema.enum.advanced, label: t("levels.advanced") },
+ ];
+ const correctionOptions = [
+  { value: aiConversationCorrectionStyleSchema.enum.light, label: t("corrections.light") },
+  { value: aiConversationCorrectionStyleSchema.enum.balanced, label: t("corrections.balanced") },
+  { value: aiConversationCorrectionStyleSchema.enum.strict, label: t("corrections.strict") },
+ ];
+ const replyModeOptions = [
+  { value: aiConversationReplyModeSchema.enum.adaptive, label: t("replyModes.adaptive") },
+  { value: aiConversationReplyModeSchema.enum.chinese, label: t("replyModes.chinese") },
+  { value: aiConversationReplyModeSchema.enum.bilingual, label: t("replyModes.bilingual") },
+ ];
+ const form = useAppForm({
+  defaultValues: initialProfile,
+  validators: { onSubmit: aiConversationProfileSchema },
+  onSubmit: ({ value }) => {
+   onSave(value);
+  },
+ });
+
+ return (
+  <Dialog open onOpenChange={onOpenChange}>
+   <DialogContent size="lg">
+    <DialogHeader>
+     <DialogTitle>{t("setup.title")}</DialogTitle>
+     <DialogDescription>{t("setup.description")}</DialogDescription>
+    </DialogHeader>
+    <form
+     onSubmit={(event) => {
+      event.preventDefault();
+      void form.handleSubmit();
+     }}
+    >
+     <DialogBody className="grid gap-5 md:grid-cols-2">
+      <form.AppField name="persona">
+       {(field) => <field.Select label={t("setup.persona")} options={personaOptions} required />}
+      </form.AppField>
+      <form.AppField name="displayName">
+       {(field) => (
+        <field.TextField
+         label={t("setup.displayName")}
+         required
+         maxLength={40}
+         placeholder={t("setup.displayNamePlaceholder")}
+        />
+       )}
+      </form.AppField>
+      <form.AppField name="learnerLevel">
+       {(field) => <field.Select label={t("setup.learnerLevel")} options={levelOptions} required />}
+      </form.AppField>
+      <form.AppField name="correctionStyle">
+       {(field) => (
+        <field.Select label={t("setup.correctionStyle")} options={correctionOptions} required />
+       )}
+      </form.AppField>
+      <div className="md:col-span-2">
+       <form.AppField name="replyMode">
+        {(field) => (
+         <field.Select label={t("setup.replyMode")} options={replyModeOptions} required />
+        )}
+       </form.AppField>
+      </div>
+      <div className="md:col-span-2">
+       <form.AppField name="interests">
+        {(field) => (
+         <field.Textarea
+          label={t("setup.interests")}
+          maxLength={300}
+          rows={3}
+          placeholder={t("setup.interestsPlaceholder")}
+         />
+        )}
+       </form.AppField>
+      </div>
+      <div className="md:col-span-2">
+       <form.AppField name="characterNotes">
+        {(field) => (
+         <field.Textarea
+          label={t("setup.characterNotes")}
+          maxLength={600}
+          rows={3}
+          placeholder={t("setup.characterNotesPlaceholder")}
+         />
+        )}
+       </form.AppField>
+      </div>
+      <div className="md:col-span-2">
+       <form.AppField name="memoryNotes">
+        {(field) => (
+         <field.Textarea
+          label={t("setup.memoryNotes")}
+          description={t("setup.memoryNotesDescription")}
+          maxLength={1200}
+          rows={4}
+          placeholder={t("setup.memoryNotesPlaceholder")}
+         />
+        )}
+       </form.AppField>
+      </div>
+     </DialogBody>
+     <DialogFooter>
+      <Button
+       type="button"
+       variant="ghost"
+       onClick={() => form.reset(DEFAULT_AI_CONVERSATION_PROFILE)}
+      >
+       <RotateCcw data-icon="inline-start" />
+       {t("actions.defaults")}
+      </Button>
+      <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+       {t("actions.cancel")}
+      </Button>
+      <Button type="submit">{t("actions.save")}</Button>
+     </DialogFooter>
+    </form>
+   </DialogContent>
+  </Dialog>
  );
 }

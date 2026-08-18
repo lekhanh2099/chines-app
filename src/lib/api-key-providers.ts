@@ -4,6 +4,7 @@ export const AUTO_API_KEY_PROVIDER = "auto";
 
 export const ApiKeyProviderSchema = z.enum(["groq", "deepseek", "gemini", "openai"]);
 export type ApiKeyProvider = z.infer<typeof ApiKeyProviderSchema>;
+export type ApiKeyAccessTier = "free-tier" | "paid";
 
 export const API_KEY_PROVIDER_OPTIONS: {
  value: ApiKeyProvider;
@@ -11,6 +12,8 @@ export const API_KEY_PROVIDER_OPTIONS: {
  description: string;
  placeholder: string;
  docsUrl: string;
+ limitsUrl: string;
+ accessTier: ApiKeyAccessTier;
  runtimeSupported: boolean;
 }[] = [
  {
@@ -19,14 +22,8 @@ export const API_KEY_PROVIDER_OPTIONS: {
   description: "Phân tích chi tiết từ và câu tốc độ cao bằng Groq BYOK.",
   placeholder: "gsk_...",
   docsUrl: "https://console.groq.com/keys",
-  runtimeSupported: true,
- },
- {
-  value: "deepseek",
-  label: "DeepSeek",
-  description: "Dùng model DeepSeek đã chọn cho lookup và phân tích.",
-  placeholder: "sk-xxxxxxxxxxxxxxxx",
-  docsUrl: "https://platform.deepseek.com/api_keys",
+  limitsUrl: "https://console.groq.com/docs/rate-limits",
+  accessTier: "free-tier",
   runtimeSupported: true,
  },
  {
@@ -35,6 +32,18 @@ export const API_KEY_PROVIDER_OPTIONS: {
   description: "Dùng cho Google AI Studio / Gemini API.",
   placeholder: "AIza...",
   docsUrl: "https://aistudio.google.com/app/apikey",
+  limitsUrl: "https://ai.google.dev/gemini-api/docs/rate-limits",
+  accessTier: "free-tier",
+  runtimeSupported: true,
+ },
+ {
+  value: "deepseek",
+  label: "DeepSeek",
+  description: "Dùng model DeepSeek đã chọn cho lookup và phân tích.",
+  placeholder: "sk-xxxxxxxxxxxxxxxx",
+  docsUrl: "https://platform.deepseek.com/api_keys",
+  limitsUrl: "https://api-docs.deepseek.com/quick_start/pricing",
+  accessTier: "paid",
   runtimeSupported: true,
  },
  {
@@ -43,6 +52,8 @@ export const API_KEY_PROVIDER_OPTIONS: {
   description: "Dùng model OpenAI đã chọn cho lookup và phân tích.",
   placeholder: "sk-... hoặc sk-proj-...",
   docsUrl: "https://platform.openai.com/api-keys",
+  limitsUrl: "https://openai.com/api/pricing",
+  accessTier: "paid",
   runtimeSupported: true,
  },
 ];
@@ -55,6 +66,10 @@ export function getApiKeyProviderLabel(
 
 export function getApiKeyProviderDocsUrl(provider: ApiKeyProvider): string {
  return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.docsUrl || "#";
+}
+
+export function getApiKeyProviderLimitsUrl(provider: ApiKeyProvider): string {
+ return API_KEY_PROVIDER_OPTIONS.find((option) => option.value === provider)?.limitsUrl || "#";
 }
 
 export function getMaskedApiKey(apiKey: string): string {

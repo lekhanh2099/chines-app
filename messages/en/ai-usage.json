@@ -1,0 +1,15 @@
+{
+ "title": "AI Conversation usage",
+ "description": "Keep AI call usage for Conversation in Settings instead of consuming space inside the chat session.",
+ "requests": "Successful AI calls",
+ "inputTokens": "Input tokens",
+ "outputTokens": "Output tokens",
+ "totalTokens": "Total tokens",
+ "lastUsed": "Last used",
+ "never": "Not yet",
+ "empty": "No successful AI Conversation calls have been recorded in this browser yet.",
+ "systemRuntime": "System Gemini",
+ "runtimeUsage": "{requests} calls · {tokens} tokens",
+ "scope": "Usage is stored only in this browser and currently records successful AI Conversation calls. Cost and quota are not estimated because pricing and free tiers are controlled by each provider.",
+ "scopeWithoutTokens": "Usage is stored only in this browser. The provider has not returned normalized token telemetry for these AI Conversation calls, so token fields show — instead of fabricated numbers."
+}
