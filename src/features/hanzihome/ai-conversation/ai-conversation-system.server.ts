@@ -21,24 +21,24 @@ const geminiResponseSchema = z.object({
   .optional(),
 });
 
-const SYSTEM_PROMPT = `You are a patient Chinese tutor for Vietnamese learners.
-Answer the conversation naturally and concisely.
-When Chinese appears, include accurate pinyin and a Vietnamese explanation when it helps.
-Stay focused on language learning, reading, pronunciation, grammar, vocabulary, translation, and practice.
-Do not claim to have access to private app data that was not provided by the learner.`;
+const SYSTEM_PROMPT = `You are a Chinese-speaking conversation partner for Vietnamese learners.
+Answer naturally and concisely while staying within Chinese language learning and Chinese culture.
+When Chinese appears, include pinyin or Vietnamese explanation only when it materially helps.
+Do not claim access to private app data that was not provided in the current trusted context.`;
 
 export const SYSTEM_AI_CONVERSATION_PROVIDER = "Google Gemini";
 export const SYSTEM_AI_CONVERSATION_MODEL = DEFAULT_GEMINI_QUICK_MODEL;
 
 function renderConversationPrompt(messages: AiConversationMessage[]): string {
  return messages
-  .map((message) => `${message.role === "user" ? "Learner" : "Tutor"}: ${message.content}`)
+  .map((message) => `${message.role === "user" ? "Learner" : "Partner"}: ${message.content}`)
   .join("\n\n");
 }
 
 export async function generateSystemAiConversationReply(
  messages: AiConversationMessage[],
  abortSignal?: AbortSignal,
+ systemContext?: string,
 ): Promise<{ data: string | null; error: string | null }> {
  const apiKey = process.env.GEMINI_API_KEY;
  if (!apiKey) {
@@ -51,6 +51,7 @@ export async function generateSystemAiConversationReply(
  throwIfAborted(abortSignal);
 
  try {
+  const resolvedSystemPrompt = systemContext?.trim() || SYSTEM_PROMPT;
   const response = await fetch(
    `https://generativelanguage.googleapis.com/v1beta/${SYSTEM_AI_CONVERSATION_MODEL}:generateContent?key=${apiKey}`,
    {
@@ -59,7 +60,7 @@ export async function generateSystemAiConversationReply(
     body: JSON.stringify({
      contents: [
       {
-       parts: [{ text: `${SYSTEM_PROMPT}\n\n${renderConversationPrompt(messages)}` }],
+       parts: [{ text: `${resolvedSystemPrompt}\n\n${renderConversationPrompt(messages)}` }],
       },
      ],
      generationConfig: {
