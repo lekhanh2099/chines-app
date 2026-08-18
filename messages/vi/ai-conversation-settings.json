@@ -1,0 +1,105 @@
+{
+ "title": "Hội thoại & bộ nhớ",
+ "description": "Chọn cách AI trò chuyện mặc định, kiểm soát bộ nhớ dài hạn và xem những gì AI đang nhớ về bạn.",
+ "loading": "Đang tải thiết lập hội thoại AI…",
+ "loadError": "Không thể tải thiết lập hội thoại AI.",
+ "overview": {
+  "title": "Tổng quan",
+  "character": "Nhân vật hiện tại",
+  "noCharacter": "Chưa có nhân vật",
+  "relationship": "Quan hệ",
+  "memory": "Bộ nhớ dài hạn",
+  "memoryOn": "Đang bật",
+  "memoryOff": "Đang tắt",
+  "relationshipBands": {
+   "new": "Mới quen",
+   "familiar": "Quen nhau",
+   "friends": "Bạn bè",
+   "close": "Thân thiết"
+  }
+ },
+ "conversation": {
+  "title": "Hội thoại",
+  "description": "Các lựa chọn này là mặc định cho cuộc trò chuyện mới. Cuộc trò chuyện đang mở vẫn giữ thiết lập riêng của nó.",
+  "defaultMode": "Chế độ mặc định",
+  "defaultModeDescription": "Cách nhân vật bắt đầu và duy trì cuộc trò chuyện mới.",
+  "learnerLevel": "Trình độ của bạn",
+  "learnerLevelDescription": "Điều chỉnh độ khó từ vựng, cấu trúc và mức hỗ trợ.",
+  "correctionStyle": "Cách sửa lỗi mặc định",
+  "correctionStyleDescription": "Quyết định mức độ AI ngắt dòng hội thoại để sửa lỗi.",
+  "replyMode": "Ngôn ngữ trả lời mặc định",
+  "replyModeDescription": "Ưu tiên tiếng Trung hay thêm hỗ trợ tiếng Việt khi cần.",
+  "saved": "Đã lưu thiết lập hội thoại mặc định.",
+  "saveError": "Không thể lưu thiết lập hội thoại mặc định."
+ },
+ "memory": {
+  "title": "Bộ nhớ & quan hệ",
+  "description": "Bộ nhớ dài hạn giúp nhân vật tiếp tục quan hệ qua nhiều cuộc trò chuyện. Bạn luôn có thể xem, sửa hoặc yêu cầu AI quên.",
+  "enabledLabel": "Dùng bộ nhớ dài hạn",
+  "enabledDescription": "Khi tắt, cuộc trò chuyện mới không đọc hoặc ghi bộ nhớ dài hạn. Lịch sử chat vẫn được lưu riêng.",
+  "relationshipWith": "Quan hệ với {name}",
+  "relationshipDescription": "Mức hiện tại: {relationship}. AI chỉ dùng mức quan hệ này để điều chỉnh độ thân mật, không hiển thị điểm kỹ thuật.",
+  "manage": "Xem AI đang nhớ gì",
+  "managerTitle": "AI đang nhớ gì",
+  "managerDescription": "Chỉ hiển thị bộ nhớ đang hoạt động của tài khoản. Thông tin kỹ thuật như confidence, vector hay memory key được ẩn.",
+  "filtersAria": "Lọc bộ nhớ AI",
+  "filters": {
+   "all": "Tất cả",
+   "global": "Chung",
+   "character": "Với {name}",
+   "openLoops": "Đang chờ"
+  },
+  "loading": "Đang tải bộ nhớ AI…",
+  "loadError": "Không thể tải bộ nhớ AI.",
+  "emptyTitle": "Không có bộ nhớ phù hợp",
+  "emptyDescription": "AI chưa lưu thông tin nào trong bộ lọc này, hoặc các thông tin trước đó đã được quên / hoàn tất.",
+  "kinds": {
+   "fact": "Thông tin",
+   "preference": "Sở thích",
+   "habit": "Thói quen",
+   "goal": "Mục tiêu",
+   "episode": "Kỷ niệm",
+   "openLoop": "Đang chờ",
+   "insideJoke": "Chuyện riêng"
+  },
+  "scopeGlobal": "Dùng với mọi nhân vật",
+  "scopeCharacter": "Chỉ với {name}",
+  "updated": "Cập nhật {date}",
+  "actionsAria": "Tùy chọn cho bộ nhớ: {content}",
+  "edit": "Sửa",
+  "resolve": "Đã xong",
+  "forget": "Quên",
+  "editTitle": "Sửa bộ nhớ",
+  "editDescription": "Sửa nội dung AI nên ghi nhớ. Vector ngữ nghĩa cũ sẽ bị vô hiệu hóa và được tạo lại sau.",
+  "contentLabel": "Nội dung cần nhớ",
+  "saveEdit": "Lưu bộ nhớ",
+  "editSaved": "Đã cập nhật bộ nhớ.",
+  "resolved": "Đã đánh dấu việc này là xong.",
+  "forgotten": "AI đã quên thông tin này.",
+  "forgetTitle": "Yêu cầu AI quên thông tin này?",
+  "forgetDescription": "Bộ nhớ này sẽ bị xóa khỏi bộ nhớ dài hạn và không còn được dùng cho các cuộc trò chuyện sau.",
+  "forgetConfirm": "Quên thông tin này",
+  "actionError": "Không thể cập nhật bộ nhớ AI."
+ },
+ "modes": {
+  "natural": "Trò chuyện tự nhiên",
+  "speakingPractice": "Luyện nói",
+  "grammarCoach": "Coach ngữ pháp",
+  "hskkPractice": "Luyện HSKK"
+ },
+ "levels": {
+  "beginner": "Sơ cấp",
+  "intermediate": "Trung cấp",
+  "advanced": "Cao cấp"
+ },
+ "corrections": {
+  "light": "Nhẹ — chỉ sửa lỗi quan trọng",
+  "balanced": "Cân bằng — sửa sau khi trả lời",
+  "strict": "Kỹ — bắt lỗi rõ và giải thích"
+ },
+ "replyModes": {
+  "adaptive": "Tự thích nghi",
+  "chinese": "Ưu tiên tiếng Trung",
+  "bilingual": "Trung + Việt hỗ trợ"
+ }
+}
