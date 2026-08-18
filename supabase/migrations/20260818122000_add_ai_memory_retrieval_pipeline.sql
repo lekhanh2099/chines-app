@@ -61,16 +61,16 @@ as $$
     m.confidence,
     m.reinforcement_count,
     m.updated_at,
-    1 - (m.embedding <=> p_query_embedding::extensions.vector) as similarity
+    1 - (m.embedding OPERATOR(extensions.<=>) p_query_embedding::extensions.vector) as similarity
   from public.ai_memories m
   where m.user_id = p_user_id
     and m.status = 'active'
     and (m.character_id is null or m.character_id = p_character_id)
     and (m.valid_until is null or m.valid_until > now())
     and m.embedding is not null
-    and 1 - (m.embedding <=> p_query_embedding::extensions.vector) >= p_min_similarity
+    and 1 - (m.embedding OPERATOR(extensions.<=>) p_query_embedding::extensions.vector) >= p_min_similarity
   order by
-    m.embedding <=> p_query_embedding::extensions.vector,
+    m.embedding OPERATOR(extensions.<=>) p_query_embedding::extensions.vector,
     m.importance desc,
     m.updated_at desc
   limit least(greatest(p_match_count, 1), 50);
