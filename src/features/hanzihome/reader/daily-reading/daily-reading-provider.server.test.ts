@@ -22,6 +22,7 @@ const baseCredential: UserApiKeyCredential = {
 };
 
 afterEach(() => {
+ vi.useRealTimers();
  vi.unstubAllGlobals();
 });
 
@@ -53,6 +54,7 @@ describe("Daily Reading provider transport", () => {
    reasoning_format: "hidden",
    response_format: { type: "json_object" },
   });
+  expect(body.max_completion_tokens).toBe(3600);
   expect(body.messages).toHaveLength(1);
   expect(body.messages[0].role).toBe("user");
   expect(body.messages[0].content).toContain("Return one valid JSON object only");
@@ -82,7 +84,39 @@ describe("Daily Reading provider transport", () => {
    reasoning_format: "hidden",
    response_format: { type: "json_object" },
   });
-  expect(body.max_completion_tokens).toBe(7000);
+  expect(body.max_completion_tokens).toBe(4800);
+ });
+
+ it("waits for Groq retry-after and retries the same structured request", async () => {
+  vi.useFakeTimers();
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValueOnce(
+    new Response(JSON.stringify({ error: { message: "Please try again in 600ms." } }), {
+     status: 429,
+     headers: { "retry-after": "0.6" },
+    }),
+   )
+   .mockResolvedValueOnce(
+    new Response(
+     JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({ titleZh: "重试成功" }) } }],
+     }),
+     { status: 200 },
+    ),
+   );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const resultPromise = requestDailyReadingProvider({
+   credential: baseCredential,
+   prompt: "Return JSON after rate limiting.",
+   phase: "core",
+  });
+  await vi.advanceTimersByTimeAsync(1_000);
+  const result = await resultPromise;
+
+  expect(result.content).toContain("重试成功");
+  expect(fetchMock).toHaveBeenCalledTimes(2);
  });
 
  it("keeps the provider HTTP detail so the failed stage is diagnosable", async () => {
