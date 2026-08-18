@@ -16,16 +16,18 @@ import { generateStructuredAiConversationData } from "./ai-conversation-structur
 const explicitForgetResolutionSchema = z.strictObject({
  memoryIds: z.array(z.uuid()).max(10),
 });
+const MEMORY_DIGEST_LIMIT = 16;
+const MEMORY_DIGEST_CONTENT_LIMIT = 220;
 
 function renderMemoryDigest(memories: AiConversationStoredMemory[]) {
  if (memories.length === 0) return "[]";
  return JSON.stringify(
-  memories.map((memory) => ({
+  memories.slice(0, MEMORY_DIGEST_LIMIT).map((memory) => ({
    id: memory.id,
    scope: memory.characterId ? "character" : "global",
    kind: memory.kind,
    memoryKey: memory.memoryKey,
-   content: memory.content,
+   content: memory.content.slice(0, MEMORY_DIGEST_CONTENT_LIMIT),
   })),
  );
 }
@@ -120,8 +122,11 @@ export async function resolveExplicitAiConversationForget({
  userMessage: string;
  signal?: AbortSignal;
 }) {
- const memories = await loadActiveAiConversationMemories({ userId, characterId, limit: 80 });
- if (memories.length === 0) return { deleted: 0, resolvedIds: [] as string[] };
+ const memories = await loadActiveAiConversationMemories({ userId, characterId, limit: 40 });
+ if (memories.length === 0) {
+  const resolvedIds: string[] = [];
+  return { deleted: 0, resolvedIds };
+ }
 
  const result = await generateStructuredAiConversationData({
   supabase,
@@ -136,7 +141,8 @@ export async function resolveExplicitAiConversationForget({
  });
 
  if (!result.data || result.data.memoryIds.length === 0) {
-  return { deleted: 0, resolvedIds: [] as string[] };
+  const resolvedIds: string[] = [];
+  return { deleted: 0, resolvedIds };
  }
 
  const allowedIds = new Set(memories.map((memory) => memory.id));
