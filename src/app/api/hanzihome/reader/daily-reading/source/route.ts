@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
+import type { JsonFieldValue } from "@/types/json";
 import {
  dailyReadingErrorResponseSchema,
  dailyReadingSourcePreviewRequestSchema,
@@ -27,7 +28,7 @@ export async function POST(request: Request) {
  if (!auth.authenticated) {
   return errorResponse("unauthorized", "Cần đăng nhập trước khi kiểm tra nguồn Daily Reading.", 401);
  }
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = dailyReadingSourcePreviewRequestSchema.safeParse(body);
  if (!parsed.success) {
   return errorResponse("invalid-request", "Yêu cầu kiểm tra nguồn không hợp lệ.", 400);
