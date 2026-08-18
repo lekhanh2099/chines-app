@@ -6,6 +6,7 @@ import {
  checkPersonalConversationRuntime,
  checkSystemConversationRuntime,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
+import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
@@ -78,6 +79,7 @@ function buildProfileContext(profile: AiConversationProfile): string {
   profile.interests ? `Chủ đề người học quan tâm: ${profile.interests}` : "",
   profile.characterNotes ? `Phong cách nhân vật: ${profile.characterNotes}` : "",
   profile.memoryNotes ? `Thông tin cần nhớ ổn định về người học: ${profile.memoryNotes}` : "",
+  "Chỉ trả nội dung dành cho người học. Không hiển thị chain-of-thought, hidden reasoning, phân tích nội bộ hoặc thẻ <think>.",
   "Không nhận làm code, giải bài toán, viết nội dung hoặc tác vụ không liên quan đến tiếng Trung/văn hóa Trung Quốc; chuyển hướng ngắn gọn về mục tiêu học.",
  ]
   .filter(Boolean)
@@ -154,9 +156,18 @@ export async function POST(request: Request) {
    return apiError(result.error || "AI provider không trả về nội dung.", 503, "AI_UNAVAILABLE");
   }
 
+  const message = sanitizeAiConversationReply(result.data);
+  if (!message) {
+   return apiError(
+    "AI provider không trả về nội dung an toàn để hiển thị.",
+    502,
+    "INVALID_PROVIDER_RESPONSE",
+   );
+  }
+
   return privateNoStoreJson(
    aiConversationResponseSchema.parse({
-    message: result.data,
+    message,
     provider: selectedKey
      ? getApiKeyProviderLabel(selectedKey.provider)
      : SYSTEM_AI_CONVERSATION_PROVIDER,
