@@ -51,6 +51,7 @@ import {
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 
+import { AiConversationSettingsSection } from "./AiConversationSettingsSection";
 import { AiConversationUsageSettings } from "./AiConversationUsageSettings";
 import { AppearanceSettingsSection } from "./AppearanceSettingsSection";
 import { getApiKeyModelDescriptionKey } from "./model-description-keys";
@@ -274,6 +275,8 @@ export function SettingsPageContent({ sectionValue, readingSettings }: SettingsP
      </TabsContent>
 
      <TabsContent active={section === SettingsSectionSchema.enum.ai} className="grid gap-5 pt-4">
+      <AiConversationSettingsSection />
+
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
        <div className="grid min-w-0 max-w-3xl gap-2">
         <Badge variant="accent" size="md">
