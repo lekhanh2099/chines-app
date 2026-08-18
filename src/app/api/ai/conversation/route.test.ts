@@ -113,6 +113,7 @@ const contextState: AiConversationContextState = {
   identityNotes: "",
  },
  relationship: null,
+ learnerLevel: "intermediate",
 };
 
 describe("/api/ai/conversation", () => {
@@ -151,7 +152,7 @@ describe("/api/ai/conversation", () => {
   expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
  });
 
- it("persists one user turn, loads trusted character context, then persists the reply", async () => {
+ it("persists one user turn, loads trusted server context, then persists the reply", async () => {
   appendAiConversationMessage
    .mockResolvedValueOnce(userMessage)
    .mockResolvedValueOnce(assistantMessage);
@@ -173,7 +174,6 @@ describe("/api/ai/conversation", () => {
      conversationId,
      clientMessageId: "55555555-5555-4555-8555-555555555555",
      content: userMessage.content,
-     profile: DEFAULT_AI_CONVERSATION_PROFILE,
     }),
    }),
   );
@@ -202,7 +202,6 @@ describe("/api/ai/conversation", () => {
     userId: "user-1",
     recentMessages: [userMessage],
     contextState,
-    learnerLevel: DEFAULT_AI_CONVERSATION_PROFILE.learnerLevel,
    }),
   );
   expect(appendAiConversationMessage).toHaveBeenNthCalledWith(
@@ -226,6 +225,25 @@ describe("/api/ai/conversation", () => {
   });
  });
 
+ it("rejects legacy profile fields on the persisted turn action", async () => {
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "message",
+     conversationId,
+     clientMessageId: "55555555-5555-4555-8555-555555555555",
+     content: userMessage.content,
+     profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(400);
+  expect(appendAiConversationMessage).not.toHaveBeenCalled();
+  expect(loadAiConversationContextState).not.toHaveBeenCalled();
+ });
+
  it("returns an already persisted assistant reply without rebuilding context or calling provider", async () => {
   appendAiConversationMessage.mockResolvedValue(userMessage);
   findAssistantReplyForUserMessage.mockResolvedValue({
@@ -243,7 +261,6 @@ describe("/api/ai/conversation", () => {
      conversationId,
      clientMessageId: "55555555-5555-4555-8555-555555555555",
      content: userMessage.content,
-     profile: DEFAULT_AI_CONVERSATION_PROFILE,
     }),
    }),
   );
