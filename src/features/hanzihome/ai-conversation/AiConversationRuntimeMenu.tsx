@@ -47,25 +47,27 @@ export function AiConversationRuntimeMenu({
  onRecheck,
 }: AiConversationRuntimeMenuProps) {
  const t = useTranslations("AiConversation");
- const healthMessage = isHealthChecking
-  ? t("runtime.healthChecking")
-  : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
-    ? t("runtime.healthReady", {
-       provider: runtimeHealth.provider,
-       model: runtimeHealth.model,
-      })
-    : runtimeHealth?.code === "missing-system-key"
-      ? t("runtime.health.missingSystemKey")
-      : runtimeHealth?.code === "invalid-key"
-        ? t("runtime.health.invalidKey")
-        : runtimeHealth?.code === "quota-exhausted"
-          ? t("runtime.health.quotaExhausted")
-          : runtimeHealth?.code === "key-unavailable"
-            ? t("runtime.health.keyUnavailable")
-            : runtimeHealth?.code === "provider-unavailable"
-              ? t("runtime.health.providerUnavailable")
-              : t("runtime.health.networkError");
- const triggerLabel = isHealthChecking
+ const healthMessage = isRuntimeLoading
+  ? t("runtime.loading")
+  : isHealthChecking
+    ? t("runtime.healthChecking")
+    : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
+      ? t("runtime.healthReady", {
+         provider: runtimeHealth.provider,
+         model: runtimeHealth.model,
+        })
+      : runtimeHealth?.code === "missing-system-key"
+        ? t("runtime.health.missingSystemKey")
+        : runtimeHealth?.code === "invalid-key"
+          ? t("runtime.health.invalidKey")
+          : runtimeHealth?.code === "quota-exhausted"
+            ? t("runtime.health.quotaExhausted")
+            : runtimeHealth?.code === "key-unavailable"
+              ? t("runtime.health.keyUnavailable")
+              : runtimeHealth?.code === "provider-unavailable"
+                ? t("runtime.health.providerUnavailable")
+                : t("runtime.health.networkError");
+ const triggerLabel = isRuntimeLoading || isHealthChecking
   ? t("runtime.compactChecking")
   : runtimeHealth?.ready && runtimeHealth.provider
     ? t("runtime.compactReady", { provider: runtimeHealth.provider })
