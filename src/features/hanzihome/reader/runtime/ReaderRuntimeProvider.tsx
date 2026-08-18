@@ -104,6 +104,19 @@ function ReaderTtsBridge({
  commandsRef: { current: ReaderRuntimeCommands };
 }) {
  const tts = useSharedMandarinTts();
+ const {
+  error,
+  isLoading,
+  isPaused,
+  isSpeaking,
+  pause: pauseTts,
+  progress,
+  rate,
+  resume: resumeTts,
+  setRate: setTtsRate,
+  speakSequence,
+  stop: stopTts,
+ } = tts;
  const runRef = useRef(0);
  const ownsPlaybackRef = useRef(false);
  const continuousRef = useRef(false);
@@ -143,10 +156,10 @@ function ReaderTtsBridge({
     playbackSegmentId: segment.id,
     playbackStatus: "loading",
     progress: 0,
-    rate: tts.rate,
+    rate,
     error: null,
    });
-   tts.speakSequence([speechText], () => {
+   speakSequence([speechText], () => {
     if (runRef.current !== runId) return;
     const current = store.state;
     if (current.loopCurrent) {
@@ -161,7 +174,7 @@ function ReaderTtsBridge({
     finishPlayback();
    });
   },
-  [document.segments, finishPlayback, store, tts],
+  [document.segments, finishPlayback, rate, speakSequence, store],
  );
 
  useEffect(() => {
@@ -173,20 +186,20 @@ function ReaderTtsBridge({
    if (document.segments.length === 0) return;
    runRef.current += 1;
    const runId = runRef.current;
-   if (ownsPlaybackRef.current) tts.stop();
+   if (ownsPlaybackRef.current) stopTts();
    ownsPlaybackRef.current = true;
    continuousRef.current = continuous;
    playAt(Math.min(Math.max(index, 0), document.segments.length - 1), runId, continuous);
   },
-  [document.segments.length, playAt, tts],
+  [document.segments.length, playAt, stopTts],
  );
 
  const stop = useCallback(() => {
   runRef.current += 1;
   continuousRef.current = false;
-  if (ownsPlaybackRef.current) tts.stop();
+  if (ownsPlaybackRef.current) stopTts();
   finishPlayback();
- }, [finishPlayback, tts]);
+ }, [finishPlayback, stopTts]);
 
  const selectIndex = useCallback(
   (index: number) => {
@@ -195,14 +208,14 @@ function ReaderTtsBridge({
    if (shouldContinue) {
     runRef.current += 1;
     const runId = runRef.current;
-    tts.stop();
+    stopTts();
     ownsPlaybackRef.current = true;
     playAt(nextIndex, runId, continuousRef.current);
     return;
    }
    store.actions.selectIndex(nextIndex, "command");
   },
-  [document.segments.length, playAt, store, tts],
+  [document.segments.length, playAt, stopTts, store],
  );
 
  const previous = useCallback(() => selectIndex(store.state.activeIndex - 1), [selectIndex, store]);
@@ -213,53 +226,64 @@ function ReaderTtsBridge({
    playCurrent: () => startAt(store.state.activeIndex, false),
    playAll: () => startAt(0, true),
    pause: () => {
-    if (ownsPlaybackRef.current) tts.pause();
+    if (ownsPlaybackRef.current) pauseTts();
    },
    resume: () => {
-    if (ownsPlaybackRef.current) tts.resume();
+    if (ownsPlaybackRef.current) resumeTts();
    },
    stop,
    restartCurrent: () => startAt(store.state.activeIndex, continuousRef.current),
    previous,
    next,
    selectIndex,
-   setRate: (rate) => {
-    tts.setRate(rate);
+   setRate: (nextRate) => {
+    setTtsRate(nextRate);
     store.actions.syncPlayback({
      playbackSegmentId: store.state.playbackSegmentId,
      playbackStatus: store.state.playbackStatus,
      progress: store.state.progress,
-     rate,
+     rate: nextRate,
      error: store.state.error,
     });
    },
   };
- }, [commandsRef, next, previous, selectIndex, startAt, stop, store, tts]);
+ }, [
+  commandsRef,
+  next,
+  pauseTts,
+  previous,
+  resumeTts,
+  selectIndex,
+  setTtsRate,
+  startAt,
+  stop,
+  store,
+ ]);
 
  useEffect(() => {
   if (!ownsPlaybackRef.current) return;
-  const playbackStatus = tts.isLoading
+  const playbackStatus = isLoading
    ? "loading"
-   : tts.isPaused
+   : isPaused
      ? "paused"
-     : tts.isSpeaking
+     : isSpeaking
        ? "playing"
        : "idle";
   store.actions.syncPlayback({
    playbackSegmentId: store.state.playbackSegmentId,
    playbackStatus,
-   progress: tts.progress,
-   rate: tts.rate,
-   error: tts.error,
+   progress,
+   rate,
+   error,
   });
- }, [tts.error, tts.isLoading, tts.isPaused, tts.isSpeaking, tts.progress, tts.rate, store]);
+ }, [error, isLoading, isPaused, isSpeaking, progress, rate, store]);
 
  useEffect(
   () => () => {
    runRef.current += 1;
-   if (ownsPlaybackRef.current) tts.stop();
+   if (ownsPlaybackRef.current) stopTts();
   },
-  [tts],
+  [stopTts],
  );
 
  return null;
