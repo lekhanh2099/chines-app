@@ -16,7 +16,6 @@ describe("sanitizeAiConversationReply", () => {
  });
 
  it("leaves ordinary assistant replies unchanged", () => {
-  expect(sanitizeAiConversationReply("你好，我们继续练习吧。"))
-   .toBe("你好，我们继续练习吧。");
+  expect(sanitizeAiConversationReply("你好，我们继续练习吧。")).toBe("你好，我们继续练习吧。");
  });
 });
