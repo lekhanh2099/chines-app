@@ -8,6 +8,7 @@ import {
  dailyReadingGenerateResponseSchema,
  dailyReadingGenerateStreamEventSchema,
  type DailyReadingErrorCode,
+ type DailyReadingGenerationStage,
  type DailyReadingGenerateStreamEvent,
 } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 import { generateValidatedDailyReading } from "@/features/hanzihome/reader/daily-reading/daily-reading-generation.server";
@@ -75,10 +76,7 @@ function createGenerationStream({
      active = false;
     }
    };
-   const emitProgress = (stage: z.output<typeof dailyReadingGenerateStreamEventSchema>["type"] extends never ? never : never) => stage;
-   const progress = (
-    stage: Parameters<NonNullable<Parameters<typeof generateValidatedDailyReading>[0]["onProgress"]>>[0],
-   ) => {
+   const progress = (stage: DailyReadingGenerationStage) => {
     const event = dailyReadingGenerateStreamEventSchema.parse({ type: "progress", stage });
     currentProgress = event;
     enqueue(event);
@@ -92,7 +90,6 @@ function createGenerationStream({
     );
    };
 
-   void emitProgress;
    heartbeat = setInterval(() => {
     if (currentProgress !== null) enqueue(currentProgress);
    }, 10_000);
