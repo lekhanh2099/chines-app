@@ -1,6 +1,7 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import type { AiConversationPersistedMessage } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
 import {
  DEFAULT_AI_CONVERSATION_PROFILE,
  type AiConversationMessage,
@@ -70,17 +71,17 @@ const requestBody = (messages: AiConversationMessage[], apiKeyId?: string) => ({
  ...(apiKeyId ? { apiKeyId } : {}),
 });
 
-const userMessage = {
+const userMessage: AiConversationPersistedMessage = {
  id: "11111111-1111-4111-8111-111111111111",
  seq: 1,
- role: "user" as const,
+ role: "user",
  content: "你好",
  createdAt: "2026-08-18T03:00:00+00:00",
 };
-const assistantMessage = {
+const assistantMessage: AiConversationPersistedMessage = {
  id: "22222222-2222-4222-8222-222222222222",
  seq: 2,
- role: "assistant" as const,
+ role: "assistant",
  content: "你好，今天过得怎么样？",
  createdAt: "2026-08-18T03:00:01+00:00",
 };
