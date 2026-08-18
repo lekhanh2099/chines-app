@@ -9,7 +9,9 @@ import {
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 
 const {
+ PersistenceConfigurationError,
  PersistenceNotReadyError,
+ PersistenceRequestError,
  appendAiConversationMessage,
  ensureAiConversationSession,
  findAssistantReplyForUserMessage,
@@ -22,9 +24,22 @@ const {
  loadRecentAiConversationMessages,
  requireAuthenticatedRoute,
 } = vi.hoisted(() => {
+ class PersistenceConfigurationError extends Error {}
  class PersistenceNotReadyError extends Error {}
+ class PersistenceRequestError extends Error {
+  readonly status: number;
+  readonly code: string | null;
+
+  constructor(status: number, code: string | null) {
+   super("persistence request failed");
+   this.status = status;
+   this.code = code;
+  }
+ }
  return {
+  PersistenceConfigurationError,
   PersistenceNotReadyError,
+  PersistenceRequestError,
   appendAiConversationMessage: vi.fn(),
   ensureAiConversationSession: vi.fn(),
   findAssistantReplyForUserMessage: vi.fn(),
@@ -48,7 +63,9 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-system.server", ()
  SYSTEM_AI_CONVERSATION_MODEL: "models/gemini-3.1-flash-lite",
 }));
 vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server", () => ({
+ AiConversationPersistenceConfigurationError: PersistenceConfigurationError,
  AiConversationPersistenceNotReadyError: PersistenceNotReadyError,
+ AiConversationPersistenceRequestError: PersistenceRequestError,
  appendAiConversationMessage,
  ensureAiConversationSession,
  findAssistantReplyForUserMessage,
@@ -150,6 +167,48 @@ describe("/api/ai/conversation", () => {
   expect(loadLatestAiConversationSession).toHaveBeenCalledWith("user-1");
   expect(await response.json()).toEqual({ conversation: null, messages: [] });
   expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+ });
+
+ it("reports an unapplied persistence migration instead of a generic load failure", async () => {
+  loadLatestAiConversationSession.mockRejectedValue(new PersistenceNotReadyError());
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({ action: "session" }),
+   }),
+  );
+
+  expect(response.status).toBe(503);
+  expect(await response.json()).toMatchObject({ code: "AI_PERSISTENCE_NOT_READY" });
+ });
+
+ it("reports a missing persistence server secret separately", async () => {
+  loadLatestAiConversationSession.mockRejectedValue(new PersistenceConfigurationError());
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({ action: "session" }),
+   }),
+  );
+
+  expect(response.status).toBe(503);
+  expect(await response.json()).toMatchObject({ code: "AI_PERSISTENCE_CONFIG_MISSING" });
+ });
+
+ it("reports persistence credential access failures separately", async () => {
+  loadLatestAiConversationSession.mockRejectedValue(new PersistenceRequestError(403, "42501"));
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({ action: "session" }),
+   }),
+  );
+
+  expect(response.status).toBe(503);
+  expect(await response.json()).toMatchObject({ code: "AI_PERSISTENCE_ACCESS_FAILED" });
  });
 
  it("persists one user turn, loads trusted server context, then persists the reply", async () => {
