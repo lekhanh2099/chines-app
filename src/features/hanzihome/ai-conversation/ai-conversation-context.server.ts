@@ -5,6 +5,9 @@ import type {
  AiConversationPersistedMessage,
 } from "./ai-conversation-session.schemas";
 import type { AiConversationRecalledMemory } from "./ai-conversation-memory.schemas";
+import { deriveAiConversationRelationshipBand } from "./ai-conversation-relationship";
+
+export { deriveAiConversationRelationshipBand as deriveRelationshipBand } from "./ai-conversation-relationship";
 
 export type AiConversationLearnerLevel = "beginner" | "intermediate" | "advanced";
 
@@ -84,15 +87,8 @@ const learnerLevelInstructions: Record<AiConversationLearnerLevel, string> = {
   "Use natural, nuanced Mandarin and richer phrasing; avoid unnecessary simplification.",
 };
 
-export function deriveRelationshipBand(score: number | null): "new" | "familiar" | "friends" | "close" {
- if (score === null || score < 0.2) return "new";
- if (score < 0.5) return "familiar";
- if (score < 0.8) return "friends";
- return "close";
-}
-
 function relationshipInstruction(score: number | null) {
- const band = deriveRelationshipBand(score);
+ const band = deriveAiConversationRelationshipBand(score);
  if (band === "new") return "The relationship is new. Be friendly but not overly intimate or presumptuous.";
  if (band === "familiar") return "The two already know each other. You may reference established conversational continuity naturally.";
  if (band === "friends") return "The two are friends. The tone may be relaxed and personally continuous without becoming clingy.";
@@ -155,7 +151,7 @@ export function buildAiConversationProviderContext({
   }),
   serializeDataBlock("RELATIONSHIP_DATA", {
    nickname: relationship?.nickname ?? "",
-   relationshipBand: deriveRelationshipBand(relationship?.familiarityScore ?? null),
+   relationshipBand: deriveAiConversationRelationshipBand(relationship?.familiarityScore ?? null),
    revision: relationship?.revision ?? 0,
   }),
   serializeMemoryData(memories),
