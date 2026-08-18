@@ -3,6 +3,7 @@ import "server-only";
 import { z } from "zod";
 
 import { getDefaultApiKeyModel } from "@/lib/api-key-models";
+import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
@@ -285,4 +286,39 @@ export async function requestDailyReadingProvider({
   case "gemini":
    return requestGemini(credential, prompt, phase, signal);
  }
+}
+
+export async function requestDailyReadingSystemGemini({
+ prompt,
+ phase,
+ signal,
+}: {
+ prompt: string;
+ phase: DailyReadingProviderPhase;
+ signal?: AbortSignal;
+}): Promise<DailyReadingProviderResult> {
+ const apiKey = process.env.GEMINI_API_KEY;
+ const model = DEFAULT_GEMINI_QUICK_MODEL;
+ if (!apiKey) {
+  return { content: null, error: "AI hệ thống chưa được cấu hình GEMINI_API_KEY.", model };
+ }
+ return requestGemini(
+  {
+   id: "system-gemini",
+   userId: "system",
+   provider: "gemini",
+   label: "System Gemini",
+   maskedKey: "system",
+   isActive: true,
+   priority: 0,
+   defaultModel: model,
+   lastValidatedAt: null,
+   createdAt: new Date(0).toISOString(),
+   updatedAt: new Date(0).toISOString(),
+   apiKey,
+  },
+  prompt,
+  phase,
+  signal,
+ );
 }
