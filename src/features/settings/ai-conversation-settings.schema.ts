@@ -1,9 +1,7 @@
 import { z } from "zod";
 
 import { aiConversationMemoryKindSchema } from "@/features/hanzihome/ai-conversation/ai-conversation-memory.schemas";
-import {
- aiConversationModeSchema,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
+import { aiConversationModeSchema } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
 import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
@@ -53,6 +51,16 @@ export const aiConversationMemoryEditSchema = z.strictObject({
 
 export const aiConversationMemoryResolveSchema = z.strictObject({ memoryId: z.uuid() });
 export const aiConversationMemoryForgetSchema = z.strictObject({ memoryId: z.uuid() });
+
+export const aiConversationMemoryResolvedResponseSchema = z.strictObject({
+ memoryId: z.uuid(),
+ resolved: z.literal(true),
+});
+
+export const aiConversationMemoryForgottenResponseSchema = z.strictObject({
+ memoryId: z.uuid(),
+ forgotten: z.literal(true),
+});
 
 export type AiConversationAccountPreferences = z.output<
  typeof aiConversationAccountPreferencesSchema
