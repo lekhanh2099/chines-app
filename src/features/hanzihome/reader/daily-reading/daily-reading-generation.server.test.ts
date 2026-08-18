@@ -31,6 +31,16 @@ const credential: UserApiKeyCredential = {
  apiKey: "test-key",
 };
 
+const backupCredential: UserApiKeyCredential = {
+ ...credential,
+ id: "00000000-0000-4000-8000-000000000003",
+ provider: "gemini",
+ label: "Backup Gemini",
+ priority: 1,
+ defaultModel: "gemini-2.5-flash",
+ apiKey: "backup-test-key",
+};
+
 const source: DailyReadingSourceCandidate = {
  titleZh: "博物馆推出传统文化暑期新展览",
  publisher: "中国新闻网",
@@ -204,5 +214,42 @@ describe("validated Daily Reading generation", () => {
   expect(reading.releaseKind).toBe("scheduled");
   expect(progress).toContain("repairing_core");
   expect(generateAiConversationReply).toHaveBeenCalledTimes(3);
+ });
+
+ it("tries the next active BYOK credential before falling back to system Gemini", async () => {
+  generateAiConversationReply
+   .mockResolvedValueOnce({ data: null, error: "primary provider unavailable" })
+   .mockResolvedValueOnce(personalResult(validCore))
+   .mockResolvedValueOnce({ data: null, error: "primary provider unavailable" })
+   .mockResolvedValueOnce(personalResult(validLearning));
+
+  const reading = await generateValidatedDailyReading({
+   source,
+   preferredLevel: "HSK5",
+   mode: "manual",
+   credentials: [credential, backupCredential],
+  });
+
+  expect(reading.generatedByProvider).toBe("gemini");
+  expect(reading.generatedByModel).toBe("gemini-2.5-flash");
+  expect(generateAiConversationReply).toHaveBeenCalledTimes(4);
+  expect(generateAiConversationReply.mock.calls[0]?.[1].userApiKeys[0]?.id).toBe(credential.id);
+  expect(generateAiConversationReply.mock.calls[1]?.[1].userApiKeys[0]?.id).toBe(backupCredential.id);
+ });
+
+ it("normalizes a legacy null default model before calling a personal provider", async () => {
+  const legacyCredential: UserApiKeyCredential = { ...credential, defaultModel: null };
+  generateAiConversationReply
+   .mockResolvedValueOnce(personalResult(validCore))
+   .mockResolvedValueOnce(personalResult(validLearning));
+
+  await generateValidatedDailyReading({
+   source,
+   preferredLevel: "HSK5",
+   mode: "manual",
+   credentials: [legacyCredential],
+  });
+
+  expect(generateAiConversationReply.mock.calls[0]?.[1].userApiKeys[0]?.defaultModel).toBe("gpt-5-mini");
  });
 });
