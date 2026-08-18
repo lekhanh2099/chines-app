@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
  aiConversationSessionSchema,
+ aiConversationSettingsUpdateSchema,
  aiConversationTurnRequestSchema,
 } from "./ai-conversation-session.schemas";
 
@@ -17,6 +18,13 @@ describe("AI conversation persisted session schemas", () => {
     replyMode: "adaptive",
     memoryPolicy: "inherit",
    },
+   character: {
+    id: "22222222-2222-4222-8222-222222222222",
+    displayName: "小林",
+    city: "上海",
+    interests: ["电影"],
+   },
+   learnerLevel: "intermediate",
    messages: [
     {
      id: "33333333-3333-4333-8333-333333333333",
@@ -29,6 +37,36 @@ describe("AI conversation persisted session schemas", () => {
   });
 
   expect(parsed.messages[0]?.createdAt).toBe("2026-08-18T03:00:00+00:00");
+  expect(parsed.character?.displayName).toBe("小林");
+  expect(parsed.learnerLevel).toBe("intermediate");
+ });
+
+ it("validates persisted conversation behavior settings", () => {
+  const parsed = aiConversationSettingsUpdateSchema.parse({
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+
+  expect(parsed).toEqual({
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+ });
+
+ it("rejects legacy persona fields in persisted settings", () => {
+  const parsed = aiConversationSettingsUpdateSchema.safeParse({
+   mode: "natural",
+   correctionStyle: "balanced",
+   replyMode: "adaptive",
+   learnerLevel: "intermediate",
+   persona: "friend",
+  });
+
+  expect(parsed.success).toBe(false);
  });
 
  it("requires a stable client message id for persisted turns", () => {
