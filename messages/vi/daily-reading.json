@@ -104,6 +104,12 @@
  "settings": {
   "title": "Bài đọc mới mỗi ngày",
   "description": "Tự động tìm một bài báo tiếng Trung thật và tạo 学习版 lúc 10:00. Nếu app đóng lúc đó, tác vụ sẽ chạy bù ở lần mở app đầu tiên sau 10:00.",
+  "tabs": {
+   "overview": "Tổng quan",
+   "pipeline": "Tiến trình",
+   "history": "Lịch sử",
+   "aria": "Các phần cài đặt Daily Reading"
+  },
   "auto": {
    "title": "Tạo bài tự động",
    "description": "Mỗi ngày tối đa một bài tự động. Lỗi tạm thời được thử lại có kiểm soát và nhiều tab không tạo trùng.",
@@ -127,11 +133,14 @@
   "actions": {
    "testSource": "Kiểm tra nguồn thật",
    "generateNow": "Tìm và tạo bài ngay",
-   "clear": "Xóa bài đã tạo"
+   "clear": "Xóa bài đã tạo",
+   "viewPipeline": "Xem tiến trình",
+   "openAiSettings": "Mở cài đặt AI"
   },
   "pipeline": {
    "title": "Kiểm tra và tạo bài",
    "description": "Tiến trình hiện tại của lần tạo gần nhất. Các bước kiểm tra giữ bài học bám đúng nguồn và đúng schema.",
+   "failedAt": "Lần gần nhất dừng ở bước: {stage}",
    "schedule": "Đến giờ phát hành",
    "scheduleDescription": "Chờ mốc 10:00 hoặc chạy thủ công.",
    "source": "Tìm bài nguồn",
@@ -147,7 +156,7 @@
   },
   "history": {
    "title": "Lịch sử tác vụ",
-   "description": "Sáu lần chạy gần nhất trên thiết bị này.",
+   "description": "Sáu lần chạy gần nhất trên thiết bị này. Mỗi dòng cho biết chính xác bước đang chạy hoặc nơi đã thất bại.",
    "empty": "Chưa có lần tạo bài nào.",
    "succeeded": "Hoàn tất",
    "pending": "Đang chạy",
@@ -165,6 +174,7 @@
    "sourceFailed": "Không thể kiểm tra nguồn bài báo.",
    "created": "Đã tạo: {title}",
    "generationFailed": "Không thể tạo Daily Reading.",
+   "generationFailedAtStage": "Tạo bài thất bại ở {stage}: {detail}",
    "cleared": "Đã xóa thư viện Daily Reading đã tạo trên thiết bị này."
   }
  }
