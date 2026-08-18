@@ -50,7 +50,7 @@ const DEFAULT_CHARACTER = {
  speaking_style: "以自然普通话交流；只有在学习者需要时才简短纠错或解释。",
  interests: ["日常生活", "电影", "文化", "城市生活", "语言交流"],
  identity_notes: "这是产品默认角色身份。用户本地保存的旧 memoryNotes 不会自动上传。",
-} as const;
+};
 
 export class AiConversationPersistenceNotReadyError extends Error {
  constructor() {
@@ -79,6 +79,17 @@ function buildRestUrl(resource: string, params?: Readonly<Record<string, string>
  return url;
 }
 
+function buildServiceHeaders(secret: string, body: boolean, prefer?: string) {
+ const isModernSecret = secret.startsWith("sb_secret_");
+ return {
+  Accept: "application/json",
+  apikey: secret,
+  ...(!isModernSecret ? { Authorization: `Bearer ${secret}` } : {}),
+  ...(body ? { "Content-Type": "application/json" } : {}),
+  ...(prefer ? { Prefer: prefer } : {}),
+ };
+}
+
 async function requestPostgrest<T>({
  resource,
  schema,
@@ -97,13 +108,7 @@ async function requestPostgrest<T>({
  const secret = getSupabaseServerSecret();
  const response = await fetch(buildRestUrl(resource, params), {
   method,
-  headers: {
-   Accept: "application/json",
-   apikey: secret,
-   Authorization: `Bearer ${secret}`,
-   ...(body ? { "Content-Type": "application/json" } : {}),
-   ...(prefer ? { Prefer: prefer } : {}),
-  },
+  headers: buildServiceHeaders(secret, Boolean(body), prefer),
   ...(body ? { body: JSON.stringify(body) } : {}),
   cache: "no-store",
  });
