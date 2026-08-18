@@ -133,7 +133,7 @@ export function AiConversationHistorySheet({
           type="button"
           variant="ghost"
           size="icon"
-          aria-label={t("history.archiveAria", { title })}
+          aria-label={`${t("history.archive")}: ${title}`}
           disabled={disabled || archivingConversationId === item.id}
           onClick={() => onRequestArchive(item)}
          >
