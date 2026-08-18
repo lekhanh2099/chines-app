@@ -77,7 +77,7 @@ export function AiConversationRuntimeMenu({
     <Button
      type="button"
      variant="ghost"
-     size="toolbar"
+     size="compact"
      align="start"
      className="min-w-0 max-w-full"
      aria-label={t("runtime.menuAria")}
