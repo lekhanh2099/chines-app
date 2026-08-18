@@ -2,9 +2,13 @@ import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 import {
  aiConversationSessionSchema,
+ aiConversationSettingsSchema,
+ aiConversationSettingsUpdateSchema,
  aiConversationTurnRequestSchema,
  aiConversationTurnResponseSchema,
  type AiConversationSession,
+ type AiConversationSettings,
+ type AiConversationSettingsUpdate,
  type AiConversationTurnResponse,
 } from "./ai-conversation-session.schemas";
 import {
@@ -82,14 +86,34 @@ export async function ensureAiConversationSession(options?: {
  return aiConversationSessionSchema.parse(payload);
 }
 
+export async function updateAiConversationSettings(
+ conversationId: string,
+ input: AiConversationSettingsUpdate,
+ options?: { signal?: AbortSignal },
+): Promise<AiConversationSettings> {
+ const settings = aiConversationSettingsUpdateSchema.parse(input);
+ const { response, payload } = await postConversationAction(
+  {
+   action: "update-settings",
+   conversationId,
+   ...settings,
+  },
+  options?.signal,
+ );
+
+ if (!response.ok) {
+  throw new Error(readApiError(payload, "Không thể lưu thiết lập hội thoại AI."));
+ }
+
+ return aiConversationSettingsSchema.parse(payload);
+}
+
 export async function sendPersistedAiConversationMessage(
  conversationId: string,
  input: {
   clientMessageId: string;
   content: string;
   apiKeyId?: string;
-  /** Temporary caller compatibility only. Persisted transport intentionally ignores this field. */
-  profile?: AiConversationProfile;
  },
  options?: { signal?: AbortSignal },
 ): Promise<AiConversationTurnResponse> {
