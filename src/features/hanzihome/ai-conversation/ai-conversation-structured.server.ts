@@ -8,6 +8,8 @@ import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service
 
 import { generateSystemAiConversationReply } from "./ai-conversation-system.server";
 
+const MAX_STRUCTURED_PROMPT_CHARS = 6000;
+
 function parseStructuredContent<T>(raw: string, schema: z.ZodType<T>): T | null {
  try {
   let cleaned = raw.trim();
@@ -37,27 +39,48 @@ export async function generateStructuredAiConversationData<T>({
  schema: z.ZodType<T>;
  signal?: AbortSignal;
 }): Promise<{ data: T | null; error: string | null }> {
+ const normalizedPrompt = prompt.normalize("NFC").trim();
+ if (!normalizedPrompt || normalizedPrompt.length > MAX_STRUCTURED_PROMPT_CHARS) {
+  return { data: null, error: "AI structured request exceeded the bounded prompt contract." };
+ }
+
  const credentials = await getActiveUserApiKeyCredentials(supabase, userId);
  const selectedCredential = credentials[0];
- const result = selectedCredential
-  ? await generateAiConversationReply(
-     [{ role: "user", content: prompt }],
-     {
-      userApiKeys: [selectedCredential],
-      abortSignal: signal,
-      systemContext: systemPrompt,
-     },
-    )
-  : await generateSystemAiConversationReply(
-     [{ role: "user", content: prompt }],
-     signal,
-     systemPrompt,
-    );
+ const providerErrors: string[] = [];
 
- if (!result.data) return { data: null, error: result.error || "AI structured request failed." };
+ if (selectedCredential) {
+  const personalResult = await generateAiConversationReply(
+   [{ role: "user", content: normalizedPrompt }],
+   {
+    userApiKeys: [selectedCredential],
+    abortSignal: signal,
+    systemContext: systemPrompt,
+   },
+  );
+  if (personalResult.data) {
+   const parsed = parseStructuredContent(personalResult.data, schema);
+   if (parsed) return { data: parsed, error: null };
+   providerErrors.push(`${selectedCredential.label} returned structured data outside the schema.`);
+  } else if (personalResult.error) {
+   providerErrors.push(personalResult.error);
+  }
+ }
 
- const parsed = parseStructuredContent(result.data, schema);
- return parsed
-  ? { data: parsed, error: null }
-  : { data: null, error: "AI structured response did not match the required schema." };
+ const systemResult = await generateSystemAiConversationReply(
+  [{ role: "user", content: normalizedPrompt }],
+  signal,
+  systemPrompt,
+ );
+ if (systemResult.data) {
+  const parsed = parseStructuredContent(systemResult.data, schema);
+  if (parsed) return { data: parsed, error: null };
+  providerErrors.push("System Gemini returned structured data outside the schema.");
+ } else if (systemResult.error) {
+  providerErrors.push(systemResult.error);
+ }
+
+ return {
+  data: null,
+  error: providerErrors.join(" ") || "AI structured request failed.",
+ };
 }
