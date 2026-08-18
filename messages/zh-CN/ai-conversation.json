@@ -1,12 +1,13 @@
 {
  "title": "AI 会话",
- "description": "按你选择的人设、纠错方式和 AI 运行配置练习中文。人物档案保存在当前设备；会话内容只保留在当前会话中。",
+ "description": "和持续存在的人物练习中文，会话设置按账户保存。刷新页面后仍可继续之前的对话。",
  "actions": {
-  "setup": "设置人物",
+  "setup": "会话设置",
   "apiKeys": "管理 API 密钥",
   "clear": "清空会话",
   "send": "发送",
   "sending": "发送中…",
+  "saving": "保存中…",
   "defaults": "恢复默认",
   "cancel": "取消",
   "save": "保存设置"
@@ -16,6 +17,12 @@
   "friend": "中国朋友",
   "hskExaminer": "HSKK 考官",
   "grammarCoach": "语法教练"
+ },
+ "modes": {
+  "natural": "自然聊天",
+  "speakingPractice": "口语练习",
+  "grammarCoach": "语法教练",
+  "hskkPractice": "HSKK 练习"
  },
  "levels": {
   "beginner": "初级",
@@ -32,7 +39,10 @@
   "chinese": "优先中文",
   "bilingual": "中文 + 越南语辅助"
  },
- "greeting": "你好，我是{name}。现在是“{role}”模式。你可以直接用中文开始，也可以先告诉我今天想练什么。",
+ "character": {
+  "defaultName": "小林"
+ },
+ "greeting": "你好，我是{name}。现在是“{mode}”模式。你可以直接用中文开始，也可以先告诉我今天想练什么。",
  "fallbackInterest": "中文会话",
  "runtime": {
   "label": "使用的 AI",
@@ -58,13 +68,15 @@
  "message": {
   "label": "消息",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter 发送 · AI 最多保留最近 20 条消息，并附带稳定的人物记忆档案。",
+  "hint": "Ctrl/Cmd + Enter 发送 · 当前会话和交互设置会保存到你的账户。",
   "replying": "{name} 正在回复…",
   "sendError": "无法发送会话。"
  },
  "setup": {
-  "title": "设置会话人物",
-  "description": "选择角色、纠错强度以及 AI 需要长期记住的信息。该档案只保存在当前设备的浏览器中。",
+  "title": "会话设置",
+  "description": "设置当前会话的聊天模式、纠错强度和回复方式。你的学习水平按账户保存，并用于后续对话。",
+  "mode": "会话模式",
+  "saveError": "无法保存会话设置。",
   "persona": "角色",
   "displayName": "人物名称",
   "displayNamePlaceholder": "例如：小林",
