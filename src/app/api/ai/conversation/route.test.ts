@@ -23,6 +23,7 @@ const {
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
  requireAuthenticatedRoute,
+ updateAiConversationSettings,
 } = vi.hoisted(() => {
  class PersistenceConfigurationError extends Error {}
  class PersistenceNotReadyError extends Error {}
@@ -51,6 +52,7 @@ const {
   loadLatestAiConversationSession: vi.fn(),
   loadRecentAiConversationMessages: vi.fn(),
   requireAuthenticatedRoute: vi.fn(),
+  updateAiConversationSettings: vi.fn(),
  };
 });
 
@@ -72,6 +74,7 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server
  loadAiConversationContextState,
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
+ updateAiConversationSettings,
 }));
 vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-turn.server", () => ({
  generatePersistedAiConversationTurn,
@@ -107,10 +110,11 @@ const assistantMessage: AiConversationPersistedMessage = {
  createdAt: "2026-08-18T03:00:01+00:00",
 };
 const conversationId = "33333333-3333-4333-8333-333333333333";
+const characterId = "66666666-6666-4666-8666-666666666666";
 const contextState: AiConversationContextState = {
  conversation: {
   id: conversationId,
-  characterId: "66666666-6666-4666-8666-666666666666",
+  characterId,
   mode: "natural",
   correctionStyle: "balanced",
   replyMode: "adaptive",
@@ -119,7 +123,7 @@ const contextState: AiConversationContextState = {
   summaryUntilSeq: 0,
  },
  character: {
-  id: "66666666-6666-4666-8666-666666666666",
+  id: characterId,
   displayName: "小林",
   city: "上海",
   age: null,
@@ -146,6 +150,7 @@ describe("/api/ai/conversation", () => {
   loadLatestAiConversationSession.mockReset();
   loadRecentAiConversationMessages.mockReset();
   requireAuthenticatedRoute.mockReset();
+  updateAiConversationSettings.mockReset();
   loadAiConversationContextState.mockResolvedValue(contextState);
   requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
@@ -154,7 +159,12 @@ describe("/api/ai/conversation", () => {
  });
 
  it("loads the backend-owned persisted session", async () => {
-  loadLatestAiConversationSession.mockResolvedValue({ conversation: null, messages: [] });
+  loadLatestAiConversationSession.mockResolvedValue({
+   conversation: null,
+   character: null,
+   learnerLevel: "intermediate",
+   messages: [],
+  });
 
   const response = await POST(
    new Request("https://app.example/api/ai/conversation", {
@@ -165,7 +175,12 @@ describe("/api/ai/conversation", () => {
 
   expect(response.status).toBe(200);
   expect(loadLatestAiConversationSession).toHaveBeenCalledWith("user-1");
-  expect(await response.json()).toEqual({ conversation: null, messages: [] });
+  expect(await response.json()).toEqual({
+   conversation: null,
+   character: null,
+   learnerLevel: "intermediate",
+   messages: [],
+  });
   expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
  });
 
@@ -209,6 +224,96 @@ describe("/api/ai/conversation", () => {
 
   expect(response.status).toBe(503);
   expect(await response.json()).toMatchObject({ code: "AI_PERSISTENCE_ACCESS_FAILED" });
+ });
+
+ it("persists behavior settings through the authenticated user owner", async () => {
+  updateAiConversationSettings.mockResolvedValue({
+   conversationId,
+   characterId,
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "update-settings",
+     conversationId,
+     mode: "grammar-coach",
+     correctionStyle: "strict",
+     replyMode: "chinese",
+     learnerLevel: "advanced",
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(200);
+  expect(updateAiConversationSettings).toHaveBeenCalledWith({
+   userId: "user-1",
+   conversationId,
+   settings: {
+    mode: "grammar-coach",
+    correctionStyle: "strict",
+    replyMode: "chinese",
+    learnerLevel: "advanced",
+   },
+  });
+  expect(await response.json()).toEqual({
+   conversationId,
+   characterId,
+   mode: "grammar-coach",
+   correctionStyle: "strict",
+   replyMode: "chinese",
+   learnerLevel: "advanced",
+  });
+  expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+  expect(generatePersistedAiConversationTurn).not.toHaveBeenCalled();
+ });
+
+ it("maps an unowned conversation settings mutation to not found", async () => {
+  updateAiConversationSettings.mockRejectedValue(
+   new PersistenceRequestError(404, "AI_CONVERSATION_NOT_FOUND"),
+  );
+
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "update-settings",
+     conversationId,
+     mode: "natural",
+     correctionStyle: "balanced",
+     replyMode: "adaptive",
+     learnerLevel: "intermediate",
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(404);
+  expect(await response.json()).toMatchObject({ code: "AI_CONVERSATION_NOT_FOUND" });
+ });
+
+ it("rejects legacy profile fields on persisted settings", async () => {
+  const response = await POST(
+   new Request("https://app.example/api/ai/conversation", {
+    method: "POST",
+    body: JSON.stringify({
+     action: "update-settings",
+     conversationId,
+     mode: "natural",
+     correctionStyle: "balanced",
+     replyMode: "adaptive",
+     learnerLevel: "intermediate",
+     profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    }),
+   }),
+  );
+
+  expect(response.status).toBe(400);
+  expect(updateAiConversationSettings).not.toHaveBeenCalled();
  });
 
  it("persists one user turn, loads trusted server context, then persists the reply", async () => {
