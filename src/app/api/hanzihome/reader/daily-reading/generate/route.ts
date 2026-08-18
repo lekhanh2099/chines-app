@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
+import type { JsonFieldValue } from "@/types/json";
 import {
  dailyReadingErrorResponseSchema,
  dailyReadingGenerateRequestSchema,
@@ -159,7 +160,7 @@ export async function POST(request: Request) {
  if (!auth.authenticated) {
   return errorResponse("unauthorized", "Cần đăng nhập trước khi tạo Daily Reading.", 401);
  }
- const body: unknown = await request.json().catch(() => null);
+ const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = dailyReadingGenerateRequestSchema.safeParse(body);
  if (!parsed.success) {
   return errorResponse("invalid-request", "Yêu cầu tạo Daily Reading không hợp lệ.", 400);
