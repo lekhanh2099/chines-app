@@ -92,13 +92,17 @@ export function AiConversationHistorySheet({
       description={t("history.emptyDescription")}
      />
     ) : (
-     <div className="grid gap-1" aria-label={t("history.listAria")}>
+     <div className="grid gap-1" role="list" aria-label={t("history.listAria")}>
       {items.map((item) => {
        const isCurrent = item.id === currentConversationId;
        const activityAt = item.lastMessageAt ?? item.createdAt;
        const title = item.title.trim() || t("history.untitled");
        return (
-        <div key={item.id} className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-1">
+        <div
+         key={item.id}
+         role="listitem"
+         className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-1"
+        >
          <Button
           type="button"
           variant={isCurrent ? "active" : "navigation"}
@@ -136,7 +140,7 @@ export function AiConversationHistorySheet({
            <Button
             type="button"
             variant="ghost"
-            size="icon-toolbar"
+            size="icon"
             aria-label={t("history.actionsAria", { title })}
             disabled={disabled || archivingConversationId === item.id}
            >
