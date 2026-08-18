@@ -98,7 +98,14 @@ export class AiConversationPersistenceNotReadyError extends Error {
  }
 }
 
-class AiConversationPersistenceRequestError extends Error {
+export class AiConversationPersistenceConfigurationError extends Error {
+ constructor() {
+  super("AI conversation persistence server secret is not configured");
+  this.name = "AiConversationPersistenceConfigurationError";
+ }
+}
+
+export class AiConversationPersistenceRequestError extends Error {
  readonly status: number;
  readonly code: string | null;
 
@@ -129,6 +136,28 @@ function buildServiceHeaders(secret: string, body: boolean, prefer?: string) {
  };
 }
 
+function getPersistenceServerSecret() {
+ try {
+  return getSupabaseServerSecret();
+ } catch {
+  throw new AiConversationPersistenceConfigurationError();
+ }
+}
+
+function isMissingPersistenceSchema(code: string | null, message: string) {
+ if (code === "42P01" || code === "PGRST202" || code === "PGRST205") return true;
+
+ const normalizedMessage = message.toLowerCase();
+ return (
+  normalizedMessage.includes("could not find the table 'public.ai_") ||
+  normalizedMessage.includes('could not find the table "public.ai_') ||
+  (normalizedMessage.includes('relation "public.ai_') &&
+   normalizedMessage.includes("does not exist")) ||
+  normalizedMessage.includes("could not find the function public.ai_append_message") ||
+  normalizedMessage.includes("could not find the function ai_append_message")
+ );
+}
+
 async function requestPostgrest<T>({
  resource,
  schema,
@@ -144,7 +173,7 @@ async function requestPostgrest<T>({
  body?: JsonObject;
  prefer?: string;
 }): Promise<T> {
- const secret = getSupabaseServerSecret();
+ const secret = getPersistenceServerSecret();
  const response = await fetch(buildRestUrl(resource, params), {
   method,
   headers: buildServiceHeaders(secret, Boolean(body), prefer),
@@ -156,17 +185,16 @@ async function requestPostgrest<T>({
  if (!response.ok) {
   const parsedError = postgrestErrorSchema.safeParse(payload);
   const code = parsedError.success ? parsedError.data.code ?? null : null;
-  if (code === "42P01" || code === "PGRST202" || code === "PGRST205") {
+  const message =
+   parsedError.success && parsedError.data.message
+    ? parsedError.data.message
+    : "AI conversation persistence request failed";
+
+  if (isMissingPersistenceSchema(code, message)) {
    throw new AiConversationPersistenceNotReadyError();
   }
 
-  throw new AiConversationPersistenceRequestError(
-   response.status,
-   code,
-   parsedError.success && parsedError.data.message
-    ? parsedError.data.message
-    : "AI conversation persistence request failed",
-  );
+  throw new AiConversationPersistenceRequestError(response.status, code, message);
  }
 
  return schema.parse(payload);
@@ -327,7 +355,11 @@ export async function loadAiConversationContextState({
  });
  const conversation = conversations[0];
  if (!conversation) {
-  throw new AiConversationPersistenceRequestError(404, "AI_CONVERSATION_NOT_FOUND", "AI conversation not found");
+  throw new AiConversationPersistenceRequestError(
+   404,
+   "AI_CONVERSATION_NOT_FOUND",
+   "AI conversation not found",
+  );
  }
 
  const [characters, relationships, preferences] = await Promise.all([
@@ -365,7 +397,11 @@ export async function loadAiConversationContextState({
  ]);
  const character = characters[0];
  if (!character) {
-  throw new AiConversationPersistenceRequestError(409, "AI_CHARACTER_NOT_FOUND", "AI character not found");
+  throw new AiConversationPersistenceRequestError(
+   409,
+   "AI_CHARACTER_NOT_FOUND",
+   "AI character not found",
+  );
  }
  const relationship = relationships[0] ?? null;
  const learnerLevel = preferences[0]?.learner_level ?? "intermediate";
