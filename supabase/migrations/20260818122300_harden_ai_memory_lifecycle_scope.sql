@@ -1,9 +1,15 @@
 begin;
 
-revoke execute on function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb)
-from service_role;
+revoke all on function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb)
+from public, anon, authenticated, service_role;
 
-create or replace function public.ai_apply_memory_changes_scoped(
+alter function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb)
+rename to ai_apply_memory_changes_unscoped;
+
+revoke all on function public.ai_apply_memory_changes_unscoped(uuid, uuid, uuid, jsonb)
+from public, anon, authenticated, service_role;
+
+create function public.ai_apply_memory_changes(
   p_user_id uuid,
   p_job_id uuid,
   p_user_message_id uuid,
@@ -57,7 +63,7 @@ begin
     end if;
   end loop;
 
-  return public.ai_apply_memory_changes(
+  return public.ai_apply_memory_changes_unscoped(
     p_user_id,
     p_job_id,
     p_user_message_id,
@@ -66,12 +72,14 @@ begin
 end;
 $$;
 
-revoke all on function public.ai_apply_memory_changes_scoped(uuid, uuid, uuid, jsonb)
+revoke all on function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb)
 from public, anon, authenticated;
-grant execute on function public.ai_apply_memory_changes_scoped(uuid, uuid, uuid, jsonb)
+grant execute on function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb)
 to service_role;
 
-comment on function public.ai_apply_memory_changes_scoped(uuid, uuid, uuid, jsonb) is
-  'Server-only wrapper that rejects cross-character lifecycle target ids before applying the transactional memory change set.';
+comment on function public.ai_apply_memory_changes(uuid, uuid, uuid, jsonb) is
+  'Server-only scoped wrapper that rejects cross-character lifecycle target ids before applying the transactional memory change set.';
+comment on function public.ai_apply_memory_changes_unscoped(uuid, uuid, uuid, jsonb) is
+  'Internal lifecycle implementation. Direct execution is revoked; callers must use the scoped ai_apply_memory_changes wrapper.';
 
 commit;
