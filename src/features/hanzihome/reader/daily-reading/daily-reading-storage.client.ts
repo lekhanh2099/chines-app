@@ -1,5 +1,7 @@
 "use client";
 
+import { decodeJson, encodeJson } from "@/lib/schema/storage";
+
 import {
  dailyReadingLedgerSchema,
  dailyReadingRunSchema,
@@ -12,25 +14,53 @@ import {
 } from "./daily-reading.schemas";
 
 const ledgerStorageKey = "chines-app:daily-reading:v1";
+const recoveryStorageKey = "chines-app:daily-reading:recovery:v1";
 const settingsStorageKey = "chines-app:daily-reading-settings:v1";
 const changeEvent = "chines-app:daily-reading-change";
 const settingsChangeEvent = "chines-app:daily-reading-settings-change";
 
+export type DailyReadingRepositorySnapshot = {
+ items: readonly DailyReading[];
+ runs: readonly DailyReadingRun[];
+};
+
 const emptyLedger = dailyReadingLedgerSchema.parse({ schemaVersion: "1.0.0", items: [], runs: [] });
-const serverSnapshot = { items: [] as readonly DailyReading[], runs: [] as readonly DailyReadingRun[] };
+const serverSnapshot: DailyReadingRepositorySnapshot = { items: [], runs: [] };
 let revision = 0;
 let cachedRevision = -1;
-let cachedSnapshot = serverSnapshot;
+let cachedSnapshot: DailyReadingRepositorySnapshot = serverSnapshot;
 let settingsRevision = 0;
 let cachedSettingsRevision = -1;
 let cachedSettings = defaultDailyReadingSettings;
 
-function parseJson(raw: string): unknown {
- try {
-  return JSON.parse(raw) as unknown;
- } catch {
-  return null;
+export type DailyReadingStorageErrorCode =
+ | "storage-unavailable"
+ | "storage-quota"
+ | "storage-corrupt";
+
+export class DailyReadingStorageError extends Error {
+ constructor(
+  readonly code: DailyReadingStorageErrorCode,
+  message: string,
+ ) {
+  super(message);
+  this.name = "DailyReadingStorageError";
  }
+}
+
+function preserveCorruptValue(raw: string) {
+ try {
+  window.localStorage.setItem(
+   recoveryStorageKey,
+   JSON.stringify({ capturedAt: new Date().toISOString(), raw: raw.slice(0, 200_000) }),
+  );
+ } catch {
+  // Recovery is best-effort; the canonical archive still resets safely.
+ }
+}
+
+function decodeLedger(raw: string) {
+ return decodeJson(raw, dailyReadingLedgerSchema);
 }
 
 function readLedger() {
@@ -38,19 +68,100 @@ function readLedger() {
  try {
   const raw = window.localStorage.getItem(ledgerStorageKey);
   if (raw === null) return emptyLedger;
-  const parsed = dailyReadingLedgerSchema.safeParse(parseJson(raw));
-  return parsed.success ? parsed.data : emptyLedger;
+  const parsed = decodeLedger(raw);
+  if (parsed !== null) return parsed;
+  preserveCorruptValue(raw);
+  window.localStorage.removeItem(ledgerStorageKey);
+  return emptyLedger;
  } catch {
   return emptyLedger;
  }
 }
 
+function isQuotaError(error: Error) {
+ return (
+  error.name === "QuotaExceededError" ||
+  error.name === "NS_ERROR_DOM_QUOTA_REACHED" ||
+  /quota|storage full/iu.test(error.message)
+ );
+}
+
+function compactLedger(
+ ledger: typeof emptyLedger,
+ itemLimit: number,
+ runLimit: number,
+): typeof emptyLedger {
+ return dailyReadingLedgerSchema.parse({
+  schemaVersion: "1.0.0",
+  items: [...ledger.items]
+   .sort((left, right) => right.createdAt.localeCompare(left.createdAt))
+   .slice(0, itemLimit),
+  runs: [...ledger.runs]
+   .sort((left, right) => right.attemptedAt.localeCompare(left.attemptedAt))
+   .slice(0, runLimit),
+ });
+}
+
+function writeEncodedLedger(encoded: string) {
+ window.localStorage.setItem(ledgerStorageKey, encoded);
+ const persisted = window.localStorage.getItem(ledgerStorageKey);
+ if (persisted === null || persisted !== encoded || decodeLedger(persisted) === null) {
+  throw new DailyReadingStorageError(
+   "storage-corrupt",
+   "Không thể xác minh thư viện Daily Reading vừa lưu.",
+  );
+ }
+}
+
 function persistLedger(value: typeof emptyLedger) {
  const parsed = dailyReadingLedgerSchema.parse(value);
- window.localStorage.setItem(ledgerStorageKey, JSON.stringify(parsed));
- revision += 1;
- window.dispatchEvent(new Event(changeEvent));
- return parsed;
+ if (typeof window === "undefined") return parsed;
+ const candidates = [
+  parsed,
+  compactLedger(parsed, 100, 300),
+  compactLedger(parsed, 80, 220),
+  compactLedger(parsed, 50, 120),
+  compactLedger(parsed, 25, 60),
+ ];
+ let lastQuotaError: Error | null = null;
+ for (const candidate of candidates) {
+  const encoded = encodeJson(candidate, dailyReadingLedgerSchema);
+  if (encoded === null) {
+   throw new DailyReadingStorageError(
+    "storage-corrupt",
+    "Không thể mã hóa thư viện Daily Reading.",
+   );
+  }
+  try {
+   writeEncodedLedger(encoded);
+   revision += 1;
+   window.dispatchEvent(new Event(changeEvent));
+   return candidate;
+  } catch (error) {
+   const resolved = error instanceof Error ? error : new Error("Local storage failed.");
+   if (!isQuotaError(resolved)) {
+    if (resolved instanceof DailyReadingStorageError) throw resolved;
+    throw new DailyReadingStorageError("storage-unavailable", resolved.message);
+   }
+   lastQuotaError = resolved;
+  }
+ }
+ throw new DailyReadingStorageError(
+  "storage-quota",
+  lastQuotaError?.message ?? "Bộ nhớ trình duyệt dành cho Daily Reading đã đầy.",
+ );
+}
+
+function readingFingerprint(reading: DailyReading) {
+ const input = [reading.source.url, reading.titleZh, ...reading.paragraphs.map((paragraph) => paragraph.zh)]
+  .join("|")
+  .replace(/\s+/gu, "");
+ let hash = 2_166_136_261;
+ for (const character of input) {
+  hash ^= character.codePointAt(0) ?? 0;
+  hash = Math.imul(hash, 16_777_619);
+ }
+ return (hash >>> 0).toString(16).padStart(8, "0");
 }
 
 export function getDailyReadingServerSnapshot() {
@@ -86,15 +197,28 @@ export function subscribeDailyReading(listener: () => void) {
 
 export function saveGeneratedDailyReading(reading: DailyReading) {
  const parsed = dailyReadingSchema.parse(reading);
+ const fingerprint = readingFingerprint(parsed);
  const ledger = readLedger();
- const items = [
-  parsed,
-  ...ledger.items.filter(
-   (item) => item.id !== parsed.id && item.source.url !== parsed.source.url,
-  ),
- ].slice(0, 100);
- persistLedger({ ...ledger, items });
- return parsed;
+ const next = persistLedger({
+  ...ledger,
+  items: [
+   parsed,
+   ...ledger.items.filter(
+    (item) =>
+     item.id !== parsed.id &&
+     item.source.url !== parsed.source.url &&
+     readingFingerprint(item) !== fingerprint,
+   ),
+  ].slice(0, 120),
+ });
+ const saved = next.items.find((item) => item.id === parsed.id);
+ if (saved === undefined) {
+  throw new DailyReadingStorageError(
+   "storage-quota",
+   "Bài Daily Reading vừa tạo không còn chỗ để lưu sau khi thu gọn thư viện.",
+  );
+ }
+ return saved;
 }
 
 export function saveDailyReadingRun(run: DailyReadingRun) {
@@ -102,7 +226,7 @@ export function saveDailyReadingRun(run: DailyReadingRun) {
  const ledger = readLedger();
  persistLedger({
   ...ledger,
-  runs: [parsed, ...ledger.runs.filter((item) => item.id !== parsed.id)].slice(0, 300),
+  runs: [parsed, ...ledger.runs.filter((item) => item.id !== parsed.id)].slice(0, 400),
  });
  return parsed;
 }
@@ -130,7 +254,7 @@ export function hasScheduledReadingForDate(date: string) {
  );
 }
 
-function runBlocksDate(run: DailyReadingRun, date: string, now: Date) {
+export function scheduledRunBlocksDate(run: DailyReadingRun, date: string, now: Date) {
  if (run.date !== date || run.kind !== "scheduled") return false;
  if (run.status === "succeeded") return true;
  if (run.errorCode === "interrupted" || run.errorCode === "offline") return false;
@@ -145,7 +269,7 @@ export function hasScheduledAttemptForDate(date: string, now = new Date()) {
   (run) => run.status === "failed" && run.errorCode !== "interrupted" && run.errorCode !== "offline",
  );
  if (hardFailures.length >= 3) return true;
- return runs.some((run) => runBlocksDate(run, date, now));
+ return runs.some((run) => scheduledRunBlocksDate(run, date, now));
 }
 
 export function removeGeneratedDailyReadings() {
@@ -158,8 +282,7 @@ export function readDailyReadingSettings(): DailyReadingSettings {
  try {
   const raw = window.localStorage.getItem(settingsStorageKey);
   if (raw === null) return defaultDailyReadingSettings;
-  const parsed = dailyReadingSettingsSchema.safeParse(parseJson(raw));
-  return parsed.success ? parsed.data : defaultDailyReadingSettings;
+  return decodeJson(raw, dailyReadingSettingsSchema) ?? defaultDailyReadingSettings;
  } catch {
   return defaultDailyReadingSettings;
  }
@@ -179,7 +302,15 @@ export function getDailyReadingSettingsSnapshot() {
 
 export function writeDailyReadingSettings(settings: DailyReadingSettings) {
  const parsed = dailyReadingSettingsSchema.parse(settings);
- window.localStorage.setItem(settingsStorageKey, JSON.stringify(parsed));
+ if (typeof window === "undefined") return parsed;
+ const encoded = encodeJson(parsed, dailyReadingSettingsSchema);
+ if (encoded === null) {
+  throw new DailyReadingStorageError(
+   "storage-corrupt",
+   "Không thể mã hóa cài đặt Daily Reading.",
+  );
+ }
+ window.localStorage.setItem(settingsStorageKey, encoded);
  cachedSettings = parsed;
  settingsRevision += 1;
  cachedSettingsRevision = settingsRevision;
