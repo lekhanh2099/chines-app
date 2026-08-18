@@ -104,6 +104,12 @@
  "settings": {
   "title": "每天生成一篇新阅读",
   "description": "每天 10:00 自动寻找真实中文新闻并生成学习版。如果当时应用未打开，则会在 10:00 后第一次打开应用时补跑。",
+  "tabs": {
+   "overview": "总览",
+   "pipeline": "进度",
+   "history": "历史",
+   "aria": "Daily Reading 设置分区"
+  },
   "auto": {
    "title": "自动生成",
    "description": "每天最多生成一篇自动阅读。临时失败会有限重试，多标签页不会重复生成。",
@@ -127,11 +133,14 @@
   "actions": {
    "testSource": "检查真实来源",
    "generateNow": "立即查找并生成",
-   "clear": "删除已生成阅读"
+   "clear": "删除已生成阅读",
+   "viewPipeline": "查看进度",
+   "openAiSettings": "打开 AI 设置"
   },
   "pipeline": {
    "title": "来源检查与生成",
    "description": "显示最近一次任务的当前进度。校验步骤确保学习版有来源依据并符合数据结构。",
+   "failedAt": "最近一次任务停在：{stage}",
    "schedule": "到达发布时间",
    "scheduleDescription": "等待 10:00，或手动执行。",
    "source": "寻找来源",
@@ -147,7 +156,7 @@
   },
   "history": {
    "title": "任务历史",
-   "description": "当前设备最近六次运行。",
+   "description": "当前设备最近六次运行。每一项都会显示实际运行或失败的具体阶段。",
    "empty": "还没有生成任务。",
    "succeeded": "已完成",
    "pending": "运行中",
@@ -165,6 +174,7 @@
    "sourceFailed": "无法检查新闻来源。",
    "created": "已生成：{title}",
    "generationFailed": "无法生成 Daily Reading。",
+   "generationFailedAtStage": "生成在 {stage} 阶段失败：{detail}",
    "cleared": "已删除当前设备上的生成阅读。"
   }
  }
