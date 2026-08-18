@@ -10,6 +10,7 @@
  "empty": "No successful AI Conversation calls have been recorded in this browser yet.",
  "systemRuntime": "System Gemini",
  "runtimeUsage": "{requests} calls · {tokens} tokens",
+ "runtimeRequests": "{requests} calls",
  "scope": "Usage is stored only in this browser and currently records successful AI Conversation calls. Cost and quota are not estimated because pricing and free tiers are controlled by each provider.",
- "scopeWithoutTokens": "Usage is stored only in this browser. The provider has not returned normalized token telemetry for these AI Conversation calls, so token fields show — instead of fabricated numbers."
+ "scopeWithoutTokens": "Usage is stored only in this browser. The provider has not returned normalized token telemetry, so the page shows only measurements that actually exist instead of estimating them."
 }
