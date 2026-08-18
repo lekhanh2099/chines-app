@@ -64,7 +64,7 @@ describe("AI conversation client transport", () => {
   );
  });
 
- it("sends only the new turn command instead of a client-owned transcript", async () => {
+ it("sends only the new turn command instead of transcript or local profile", async () => {
   const userMessage = persistedMessage({
    id: "44444444-4444-4444-8444-444444444444",
    seq: 1,
@@ -101,7 +101,6 @@ describe("AI conversation client transport", () => {
    conversationId,
    clientMessageId,
    content: "你好",
-   profile: DEFAULT_AI_CONVERSATION_PROFILE,
   });
   expect(fetchMock).toHaveBeenCalledWith(
    "/api/ai/conversation",
@@ -111,5 +110,7 @@ describe("AI conversation client transport", () => {
    }),
   );
   expect(expectedBody).not.toContain('"messages"');
+  expect(expectedBody).not.toContain('"profile"');
+  expect(expectedBody).not.toContain(DEFAULT_AI_CONVERSATION_PROFILE.displayName);
  });
 });
