@@ -64,6 +64,7 @@ const AUTO_RUNTIME_KEY_ID = "auto";
 const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
 const SESSION_QUERY_KEY = ["hanzihome", "ai-conversation", "session"];
 type ManagedApiKey = ApiKeysResponse["keys"][number];
+type RetryTurn = { clientMessageId: string; content: string };
 
 export function AiConversationWorkspace() {
  const t = useTranslations("AiConversation");
@@ -76,6 +77,7 @@ export function AiConversationWorkspace() {
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
  const requestRef = useRef<AbortController | null>(null);
+ const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
  const sessionQuery = useQuery({
   queryKey: SESSION_QUERY_KEY,
@@ -124,6 +126,7 @@ export function AiConversationWorkspace() {
    return { session, turn };
   },
   onSuccess: ({ session, turn }) => {
+   retryTurnRef.current = null;
    const retainedMessages = session.messages.filter(
     (message) => message.id !== turn.userMessage.id && message.id !== turn.assistantMessage.id,
    );
@@ -134,6 +137,7 @@ export function AiConversationWorkspace() {
     ),
    };
    queryClient.setQueryData(SESSION_QUERY_KEY, nextSession);
+   void queryClient.invalidateQueries({ queryKey: SESSION_QUERY_KEY });
    recordAiUsageEvent({
     apiKeyId: turn.apiKeyId,
     provider: turn.provider,
@@ -143,6 +147,10 @@ export function AiConversationWorkspace() {
   },
   onError: (_error, variables) => {
    if (!variables.controller.signal.aborted) {
+    retryTurnRef.current = {
+     clientMessageId: variables.clientMessageId,
+     content: variables.content,
+    };
     setDraft((current) => current || variables.content);
     void sessionQuery.refetch();
     void runtimeHealthQuery.refetch();
@@ -254,17 +262,29 @@ export function AiConversationWorkspace() {
   }
  };
 
+ const updateDraft = (value: string) => {
+  setDraft(value);
+  const retryTurn = retryTurnRef.current;
+  if (retryTurn && value.normalize("NFC").trim() !== retryTurn.content) {
+   retryTurnRef.current = null;
+  }
+ };
+
  const send = () => {
   const content = draft.normalize("NFC").trim();
   if (!content || isSending || !runtimeHealth?.ready || sessionQuery.isFetching) return;
 
   requestRef.current?.abort();
   const controller = new AbortController();
+  const retryTurn = retryTurnRef.current;
+  const clientMessageId =
+   retryTurn?.content === content ? retryTurn.clientMessageId : crypto.randomUUID();
   requestRef.current = controller;
+  retryTurnRef.current = null;
   setDraft("");
   sendMutation.mutate({
    content,
-   clientMessageId: crypto.randomUUID(),
+   clientMessageId,
    controller,
   });
  };
@@ -438,7 +458,7 @@ export function AiConversationWorkspace() {
       <Textarea
        id="ai-conversation-message"
        value={draft}
-       onChange={(event) => setDraft(event.target.value)}
+       onChange={(event) => updateDraft(event.target.value)}
        onKeyDown={(event) => {
         if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
          event.preventDefault();
