@@ -117,4 +117,27 @@ describe("i18n message contracts", () => {
   expect(messages.AiUsage.runtimeUsage).toContain("{tokens}");
   expect(messages.AiUsage.runtimeRequests).toContain("{requests}");
  });
+
+ it.each(appLocales)("%s keeps Daily Reading settings navigation and failure copy", async (locale) => {
+  const messages = await loadAppMessages(locale);
+  const settings = messages.DailyReading.settings;
+
+  expect(settings.tabs).toEqual(
+   expect.objectContaining({
+    overview: expect.any(String),
+    pipeline: expect.any(String),
+    history: expect.any(String),
+    aria: expect.any(String),
+   }),
+  );
+  expect(settings.actions).toEqual(
+   expect.objectContaining({
+    viewPipeline: expect.any(String),
+    openAiSettings: expect.any(String),
+   }),
+  );
+  expect(settings.pipeline.failedAt).toContain("{stage}");
+  expect(settings.toast.generationFailedAtStage).toContain("{stage}");
+  expect(settings.toast.generationFailedAtStage).toContain("{detail}");
+ });
 });
