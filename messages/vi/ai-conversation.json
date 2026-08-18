@@ -1,12 +1,13 @@
 {
  "title": "Hội thoại AI",
- "description": "Luyện tiếng Trung với nhân vật, cách sửa lỗi và AI runtime do bạn chọn. Hồ sơ nhân vật được lưu trên thiết bị; nội dung hội thoại chỉ tồn tại trong phiên hiện tại.",
+ "description": "Luyện tiếng Trung với nhân vật và thiết lập hội thoại được lưu theo tài khoản. Lịch sử hội thoại được giữ lại để bạn tiếp tục sau khi tải lại.",
  "actions": {
-  "setup": "Thiết lập nhân vật",
+  "setup": "Thiết lập hội thoại",
   "apiKeys": "Quản lý API key",
   "clear": "Xóa phiên",
   "send": "Gửi",
   "sending": "Đang gửi…",
+  "saving": "Đang lưu…",
   "defaults": "Mặc định",
   "cancel": "Hủy",
   "save": "Lưu thiết lập"
@@ -16,6 +17,12 @@
   "friend": "Bạn Trung Quốc",
   "hskExaminer": "Giám khảo HSKK",
   "grammarCoach": "Coach ngữ pháp"
+ },
+ "modes": {
+  "natural": "Trò chuyện tự nhiên",
+  "speakingPractice": "Luyện nói",
+  "grammarCoach": "Coach ngữ pháp",
+  "hskkPractice": "Luyện HSKK"
  },
  "levels": {
   "beginner": "Sơ cấp",
@@ -32,7 +39,10 @@
   "chinese": "Ưu tiên tiếng Trung",
   "bilingual": "Trung + Việt hỗ trợ"
  },
- "greeting": "你好，我是{name}。Mình đang ở chế độ “{role}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
+ "character": {
+  "defaultName": "小林"
+ },
+ "greeting": "你好，我是{name}。Mình đang ở chế độ “{mode}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
  "fallbackInterest": "Hội thoại tiếng Trung",
  "runtime": {
   "label": "AI sử dụng",
@@ -58,13 +68,15 @@
  "message": {
   "label": "Tin nhắn",
   "placeholder": "例如：今天下班以后我想练习聊日常生活。",
-  "hint": "Ctrl/Cmd + Enter để gửi · AI giữ tối đa 20 tin gần nhất + hồ sơ ghi nhớ ổn định.",
+  "hint": "Ctrl/Cmd + Enter để gửi · Hội thoại và thiết lập hiện tại được lưu theo tài khoản.",
   "replying": "{name} đang trả lời…",
   "sendError": "Không thể gửi hội thoại."
  },
  "setup": {
-  "title": "Thiết lập nhân vật hội thoại",
-  "description": "Chọn vai trò, mức sửa lỗi và những điều AI cần nhớ. Hồ sơ này chỉ lưu trên trình duyệt của thiết bị hiện tại.",
+  "title": "Thiết lập hội thoại",
+  "description": "Chọn chế độ trò chuyện, mức sửa lỗi và cách trả lời cho hội thoại hiện tại. Trình độ của bạn được lưu theo tài khoản và dùng cho các lượt tiếp theo.",
+  "mode": "Chế độ hội thoại",
+  "saveError": "Không thể lưu thiết lập hội thoại.",
   "persona": "Vai trò",
   "displayName": "Tên nhân vật",
   "displayNamePlaceholder": "Ví dụ: 小林",
