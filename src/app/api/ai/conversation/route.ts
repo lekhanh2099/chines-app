@@ -12,6 +12,7 @@ import {
  appendAiConversationMessage,
  ensureAiConversationSession,
  findAssistantReplyForUserMessage,
+ loadAiConversationContextState,
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
@@ -206,16 +207,20 @@ export async function POST(request: Request) {
     );
    }
 
-   const recentMessages = await loadRecentAiConversationMessages({
-    userId,
-    conversationId: payload.conversationId,
-    limit: 19,
-   });
+   const [contextState, recentMessages] = await Promise.all([
+    loadAiConversationContextState({ userId, conversationId: payload.conversationId }),
+    loadRecentAiConversationMessages({
+     userId,
+     conversationId: payload.conversationId,
+     limit: 19,
+    }),
+   ]);
    const generated = await generatePersistedAiConversationTurn({
     supabase: auth.context.supabase,
     userId,
     recentMessages,
-    profile: payload.profile,
+    contextState,
+    learnerLevel: payload.profile.learnerLevel,
     ...(payload.apiKeyId ? { apiKeyId: payload.apiKeyId } : {}),
     signal: request.signal,
    });
