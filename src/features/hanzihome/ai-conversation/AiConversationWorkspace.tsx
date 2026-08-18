@@ -2,19 +2,11 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import {
- Bot,
- RefreshCcw,
- RotateCcw,
- Send,
- Settings2,
- Sparkles,
- Trash2,
- UserRound,
-} from "lucide-react";
+import { RefreshCcw, RotateCcw, Send, Settings2, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useAppForm } from "@/components/form";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -27,7 +19,6 @@ import {
  DialogHeader,
  DialogTitle,
 } from "@/components/ui/dialog";
-import { IconTile } from "@/components/ui/icon-tile";
 import { Label } from "@/components/ui/label";
 import {
  Select,
@@ -44,6 +35,11 @@ import { Link } from "@/i18n/navigation";
 import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
 import { fetchAiConversationRuntimeHealth, sendAiConversationMessage } from "./ai-conversation-api";
+import {
+ AiConversationMessageBubble,
+ AiConversationTypingBubble,
+} from "./AiConversationMessageBubble";
+import { sanitizeAiConversationReply } from "./ai-conversation-output";
 import {
  saveAiConversationProfile,
  useAiConversationProfile,
@@ -71,7 +67,6 @@ export function AiConversationWorkspace() {
  const [draft, setDraft] = useState("");
  const [isSending, setIsSending] = useState(false);
  const [error, setError] = useState<string | null>(null);
- const [lastRuntime, setLastRuntime] = useState<{ provider: string; model: string } | null>(null);
  const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
@@ -109,6 +104,7 @@ export function AiConversationWorkspace() {
   }),
  };
  const displayMessages = [greeting, ...messages];
+ const profileAvatar = profile.displayName.trim().slice(0, 1) || "AI";
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -152,7 +148,6 @@ export function AiConversationWorkspace() {
   setMessages([]);
   setDraft("");
   setError(null);
-  setLastRuntime(null);
  };
 
  const saveProfile = (nextProfile: AiConversationProfile) => {
@@ -193,8 +188,11 @@ export function AiConversationWorkspace() {
     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
     signal: controller.signal,
    });
-   setMessages((current) => [...current, { role: "assistant", content: response.message }]);
-   setLastRuntime({ provider: response.provider, model: response.model });
+   const assistantContent = sanitizeAiConversationReply(response.message);
+   if (!assistantContent) {
+    throw new Error(t("message.sendError"));
+   }
+   setMessages((current) => [...current, { role: "assistant", content: assistantContent }]);
    recordAiUsageEvent({
     apiKeyId: response.apiKeyId,
     provider: response.provider,
@@ -213,13 +211,11 @@ export function AiConversationWorkspace() {
   }
  };
 
- const runtimeDescription = runtimeLoadError
+ const runtimeNotice = runtimeLoadError
   ? t("runtime.loadError")
-  : lastRuntime
-    ? t("runtime.current", { provider: lastRuntime.provider, model: lastRuntime.model })
-    : runtimeKeys.length === 0 && !isRuntimeLoading
-      ? t("runtime.empty")
-      : t("runtime.description");
+  : runtimeKeys.length === 0 && !isRuntimeLoading
+    ? t("runtime.empty")
+    : null;
  const healthMessage = isHealthChecking
   ? t("runtime.healthChecking")
   : runtimeHealth?.ready && runtimeHealth.provider && runtimeHealth.model
@@ -262,15 +258,15 @@ export function AiConversationWorkspace() {
     </div>
    </div>
 
-   <Card variant="section" padding="md" className="grid min-w-0 gap-4">
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+   <Card variant="section" padding="none" className="min-w-0 overflow-hidden">
+    <div className="flex flex-col gap-3 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4">
      <div className="flex min-w-0 items-center gap-3">
-      <IconTile tone="accent" size="md">
-       {profile.persona === "friend" ? <UserRound /> : <Bot />}
-      </IconTile>
+      <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
+       <AvatarFallback>{profileAvatar}</AvatarFallback>
+      </Avatar>
       <div className="grid min-w-0 gap-1">
        <div className="flex flex-wrap items-center gap-2">
-        <Typography as="h2" variant="sectionTitle" weight="bold">
+        <Typography as="h2" variant="cardTitle" weight="bold">
          {profile.displayName}
         </Typography>
         <Badge variant="accent" casing="natural">
@@ -291,7 +287,7 @@ export function AiConversationWorkspace() {
      </Button>
     </div>
 
-    <div className="grid gap-3 border-y border-border-default py-3 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
+    <div className="grid gap-2 border-t border-border-default px-3 py-3 sm:px-4 lg:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] lg:items-end">
      <div className="grid gap-1.5">
       <Label htmlFor="ai-conversation-runtime" variant="label" weight="semibold">
        {t("runtime.label")}
@@ -310,71 +306,60 @@ export function AiConversationWorkspace() {
        </SelectContent>
       </Select>
      </div>
-     <div className="grid gap-1.5">
-      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
-       {runtimeDescription}
-      </Typography>
-      <div className="flex flex-wrap items-center gap-2">
-       <Badge variant={runtimeHealth?.ready ? "success" : isHealthChecking ? "default" : "warning"}>
-        {healthMessage}
-       </Badge>
-       <Button
-        type="button"
-        variant="ghost"
-        size="sm"
-        onClick={() => void runtimeHealthQuery.refetch()}
-        disabled={isHealthChecking || isRuntimeLoading}
-       >
-        <RefreshCcw data-icon="inline-start" />
-        {t("runtime.recheck")}
-       </Button>
-      </div>
+     <div className="flex min-w-0 flex-wrap items-center gap-2">
+      <Badge variant={runtimeHealth?.ready ? "success" : isHealthChecking ? "default" : "warning"}>
+       {healthMessage}
+      </Badge>
+      <Button
+       type="button"
+       variant="ghost"
+       size="icon-toolbar"
+       aria-label={t("runtime.recheck")}
+       onClick={() => void runtimeHealthQuery.refetch()}
+       disabled={isHealthChecking || isRuntimeLoading}
+      >
+       <RefreshCcw />
+      </Button>
      </div>
+     {runtimeNotice ? (
+      <Typography as="p" variant="caption" tone={runtimeLoadError ? "warning" : "muted"}>
+       {runtimeNotice}
+      </Typography>
+     ) : null}
     </div>
 
     <div
      ref={messageViewportRef}
-     className="grid min-h-80 max-h-[60dvh] content-start gap-3 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4"
+     className="flex min-h-96 max-h-[62dvh] flex-col gap-2 overflow-y-auto bg-surface-muted px-3 py-4 sm:px-4"
+     role="log"
      aria-live="polite"
+     aria-relevant="additions text"
     >
      {displayMessages.map((message, index) => (
-      <div
+      <AiConversationMessageBubble
        key={`${message.role}-${index}`}
-       className={message.role === "user" ? "flex justify-end" : "flex justify-start"}
-      >
-       <div
-        className={
-         message.role === "user"
-          ? "max-w-[min(92%,46rem)] rounded-xl bg-primary px-3 py-2 text-primary-foreground"
-          : "max-w-[min(92%,46rem)] rounded-xl border border-border-default bg-bg-card px-3 py-2"
-        }
-       >
-        <Typography as="p" variant="bodySmall" wrapping="preWrap">
-         {message.content}
-        </Typography>
-       </div>
-      </div>
+       message={message}
+       assistantName={profile.displayName}
+      />
      ))}
      {isSending ? (
-      <div className="flex items-center gap-2 text-text-muted">
-       <Sparkles className="size-4 animate-pulse" aria-hidden="true" />
-       <Typography variant="caption" tone="muted">
-        {t("message.replying", { name: profile.displayName })}
-       </Typography>
-      </div>
+      <AiConversationTypingBubble
+       assistantName={profile.displayName}
+       label={t("message.replying", { name: profile.displayName })}
+      />
      ) : null}
     </div>
 
     {error ? (
-     <Card variant="subtle" padding="sm">
+     <div className="border-t border-border-default px-3 py-2 sm:px-4">
       <Typography variant="bodySmall" tone="danger">
        {error}
       </Typography>
-     </Card>
+     </div>
     ) : null}
 
     <form
-     className="grid gap-2"
+     className="grid gap-2 border-t border-border-default bg-surface px-3 py-3 sm:px-4"
      onSubmit={(event) => {
       event.preventDefault();
       void send();
@@ -383,30 +368,35 @@ export function AiConversationWorkspace() {
      <Label htmlFor="ai-conversation-message" className="sr-only">
       {t("message.label")}
      </Label>
-     <Textarea
-      id="ai-conversation-message"
-      value={draft}
-      onChange={(event) => setDraft(event.target.value)}
-      onKeyDown={(event) => {
-       if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
-        event.preventDefault();
-        void send();
-       }
-      }}
-      maxLength={6000}
-      disabled={isSending}
-      placeholder={t("message.placeholder")}
-      className="min-h-24"
-     />
-     <div className="flex flex-wrap items-center justify-between gap-2">
-      <Typography variant="caption" tone="muted">
-       {t("message.hint")}
-      </Typography>
-      <Button type="submit" disabled={!draft.trim() || !canSend}>
-       <Send data-icon="inline-start" />
-       {isSending ? t("actions.sending") : t("actions.send")}
+     <div className="flex items-end gap-2">
+      <Textarea
+       id="ai-conversation-message"
+       value={draft}
+       onChange={(event) => setDraft(event.target.value)}
+       onKeyDown={(event) => {
+        if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+         event.preventDefault();
+         void send();
+        }
+       }}
+       rows={1}
+       maxLength={6000}
+       disabled={isSending}
+       placeholder={t("message.placeholder")}
+       className="min-h-11 max-h-40 flex-1"
+      />
+      <Button
+       type="submit"
+       size="icon-round"
+       disabled={!draft.trim() || !canSend}
+       aria-label={isSending ? t("actions.sending") : t("actions.send")}
+      >
+       <Send />
       </Button>
      </div>
+     <Typography variant="caption" tone="muted">
+      {t("message.hint")}
+     </Typography>
     </form>
    </Card>
 
