@@ -4,7 +4,6 @@ import {
  aiConversationSessionSchema,
  aiConversationTurnRequestSchema,
 } from "./ai-conversation-session.schemas";
-import { DEFAULT_AI_CONVERSATION_PROFILE } from "./ai-conversation.schemas";
 
 describe("AI conversation persisted session schemas", () => {
  it("accepts Postgres timestamptz values with offsets", () => {
@@ -35,7 +34,6 @@ describe("AI conversation persisted session schemas", () => {
  it("requires a stable client message id for persisted turns", () => {
   const parsed = aiConversationTurnRequestSchema.safeParse({
    content: "你好",
-   profile: DEFAULT_AI_CONVERSATION_PROFILE,
   });
 
   expect(parsed.success).toBe(false);
@@ -45,7 +43,16 @@ describe("AI conversation persisted session schemas", () => {
   const parsed = aiConversationTurnRequestSchema.safeParse({
    clientMessageId: "44444444-4444-4444-8444-444444444444",
    content: "   ",
-   profile: DEFAULT_AI_CONVERSATION_PROFILE,
+  });
+
+  expect(parsed.success).toBe(false);
+ });
+
+ it("rejects legacy local profile data on persisted turn commands", () => {
+  const parsed = aiConversationTurnRequestSchema.safeParse({
+   clientMessageId: "44444444-4444-4444-8444-444444444444",
+   content: "你好",
+   profile: { displayName: "Injected identity" },
   });
 
   expect(parsed.success).toBe(false);
