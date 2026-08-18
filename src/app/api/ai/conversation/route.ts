@@ -220,7 +220,6 @@ export async function POST(request: Request) {
     userId,
     recentMessages,
     contextState,
-    learnerLevel: payload.profile.learnerLevel,
     ...(payload.apiKeyId ? { apiKeyId: payload.apiKeyId } : {}),
     signal: request.signal,
    });
