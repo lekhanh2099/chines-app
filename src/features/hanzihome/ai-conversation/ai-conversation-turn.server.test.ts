@@ -53,7 +53,8 @@ vi.mock("./ai-conversation-memory.server", () => ({
   if (conversationPolicy === "enabled") return true;
   return userPreference;
  },
- isExplicitAiConversationForgetIntent: (content: string) => /(?:忘掉|别记|đừng nhớ|quên đi)/iu.test(content),
+ isExplicitAiConversationForgetIntent: (content: string) =>
+  /(?:忘掉|别记|đừng nhớ|quên đi)/iu.test(content),
  retrieveRelevantAiConversationMemories,
 }));
 
@@ -178,7 +179,11 @@ describe("persisted AI conversation turn", () => {
   const refreshedContext: AiConversationContextState = {
    ...contextState,
    relationship: { nickname: "", familiarityScore: 0.25, revision: 1 },
-   conversation: { ...contextState.conversation, summary: "已经聊过运动。", summaryUntilSeq: 2 },
+   conversation: {
+    ...contextState.conversation,
+    summary: "已经聊过运动。",
+    summaryUntilSeq: 2,
+   },
   };
   processDueAiConversationPostTurnJobs.mockResolvedValue({ processed: 1, ready: true });
   loadAiConversationContextState.mockResolvedValue(refreshedContext);
@@ -201,7 +206,7 @@ describe("persisted AI conversation turn", () => {
   expect(systemContext).toContain("已经聊过运动。");
  });
 
- it("does not recall long-term memory when the conversation memory policy is disabled", async () => {
+ it("does not read or inject long-term memory when the conversation memory policy is disabled", async () => {
   const noMemoryState: AiConversationContextState = {
    ...contextState,
    conversation: { ...contextState.conversation, memoryPolicy: "disabled" },
@@ -216,9 +221,7 @@ describe("persisted AI conversation turn", () => {
    contextState: noMemoryState,
   });
 
-  expect(retrieveRelevantAiConversationMemories).toHaveBeenCalledWith(
-   expect.objectContaining({ enabled: false }),
-  );
+  expect(retrieveRelevantAiConversationMemories).not.toHaveBeenCalled();
   const [, , systemContext] = generateSystemAiConversationReply.mock.calls[0];
   expect(systemContext).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
  });
@@ -247,8 +250,8 @@ describe("persisted AI conversation turn", () => {
     userMessage: forgetMessages[0]?.content,
    }),
   );
-  expect(retrieveRelevantAiConversationMemories).toHaveBeenCalledWith(
-   expect.objectContaining({ suppressForForget: true }),
-  );
+  expect(retrieveRelevantAiConversationMemories).not.toHaveBeenCalled();
+  const [, , systemContext] = generateSystemAiConversationReply.mock.calls[0];
+  expect(systemContext).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
  });
 });
