@@ -43,5 +43,129 @@
   "title": "Nguồn và ghi chú biên soạn",
   "fallbackNotice": "Nội dung đã được rà soát trước khi đưa vào thư viện.",
   "fallbackSource": "Nguồn Hanzi Studio"
+ },
+ "generated": {
+  "description": "Tìm bài báo tiếng Trung thật, trích xuất nội dung nguồn rồi biên soạn thành 学习版 có từ vựng, ngữ pháp và câu hỏi. Bài được lưu cục bộ trên thiết bị này.",
+  "generateNow": "Tìm và tạo bài ngay",
+  "progressHint": "Có thể mất vài phút vì hệ thống phải tìm nguồn, biên soạn, kiểm tra và lưu bài.",
+  "notFound": "Không tìm thấy bài Daily Reading đã lưu trên thiết bị này.",
+  "library": {
+   "eyebrow": "Thư viện local",
+   "title": "Bài được tạo từ nguồn thật",
+   "description": "Mỗi bài là 学习版 được AI biên soạn từ một nguồn báo chí đã trích xuất và kiểm tra domain.",
+   "autoOn": "Auto 10:00 đang bật",
+   "autoOff": "Chỉ tạo thủ công",
+   "emptyTitle": "Chưa có bài AI nào trên thiết bị này.",
+   "emptyDescription": "Tạo bài đầu tiên ngay hoặc để chế độ tự động tạo bài {level} sau 10:00."
+  },
+  "toast": {
+   "created": "Đã tạo bài: {title}",
+   "failed": "Không thể tạo Daily Reading."
+  },
+  "kind": {
+   "scheduled": "Tự động",
+   "manual": "Thủ công"
+  },
+  "stage": {
+   "discovering": "Đang tìm nguồn mới",
+   "extracting": "Đang trích xuất bài nguồn",
+   "drafting": "Đang soạn bài đọc",
+   "repairingCore": "Đang sửa bản bài đọc",
+   "enriching": "Đang tạo từ vựng, ngữ pháp và câu hỏi",
+   "repairingLearning": "Đang sửa phần bài học",
+   "validating": "Đang kiểm tra nội dung",
+   "finalizing": "Đang hoàn thiện bài",
+   "saving": "Đang lưu bài",
+   "completed": "Đã hoàn tất"
+  },
+  "topic": {
+   "culture": "Văn hóa",
+   "education": "Giáo dục",
+   "history": "Lịch sử",
+   "language": "Ngôn ngữ",
+   "science": "Khoa học",
+   "society": "Đời sống",
+   "travel": "Du lịch",
+   "environment": "Môi trường",
+   "health": "Sức khỏe"
+  },
+  "questions": {
+   "showAnswer": "Xem đáp án",
+   "hideAnswer": "Ẩn đáp án"
+  },
+  "vocabulary": {
+   "inContext": "Trong bài: {meaning}"
+  },
+  "source": {
+   "open": "Mở bài nguồn",
+   "generatedBy": "AI: {provider} · {model}"
+  }
+ },
+ "settings": {
+  "title": "Bài đọc mới mỗi ngày",
+  "description": "Tự động tìm một bài báo tiếng Trung thật và tạo 学习版 lúc 10:00. Nếu app đóng lúc đó, tác vụ sẽ chạy bù ở lần mở app đầu tiên sau 10:00.",
+  "auto": {
+   "title": "Tạo bài tự động",
+   "description": "Mỗi ngày tối đa một bài tự động. Lỗi tạm thời được thử lại có kiểm soát và nhiều tab không tạo trùng.",
+   "on": "Tự động đang bật",
+   "off": "Tự động đang tắt",
+   "aria": "Bật hoặc tắt tạo Daily Reading tự động"
+  },
+  "level": {
+   "label": "Trình độ mặc định"
+  },
+  "summary": {
+   "scheduleLabel": "Lịch phát hành",
+   "scheduleValue": "Mỗi ngày lúc 10:00",
+   "libraryLabel": "Thư viện local",
+   "libraryValue": "{count} bài đã lưu",
+   "todayLabel": "Hôm nay",
+   "todayReady": "Đã có bài tự động",
+   "todayDue": "Đang chờ tạo",
+   "todayWaiting": "Chưa tới giờ"
+  },
+  "actions": {
+   "testSource": "Kiểm tra nguồn thật",
+   "generateNow": "Tìm và tạo bài ngay",
+   "clear": "Xóa bài đã tạo"
+  },
+  "pipeline": {
+   "title": "Kiểm tra và tạo bài",
+   "description": "Tiến trình hiện tại của lần tạo gần nhất. Các bước kiểm tra giữ bài học bám đúng nguồn và đúng schema.",
+   "schedule": "Đến giờ phát hành",
+   "scheduleDescription": "Chờ mốc 10:00 hoặc chạy thủ công.",
+   "source": "Tìm bài nguồn",
+   "sourceDescription": "Tìm và trích xuất một bài mới từ nguồn được phép.",
+   "reading": "Soạn bài đọc",
+   "readingDescription": "Viết bản 学习版 mới, bám dữ kiện của bài nguồn.",
+   "learning": "Tạo bài học",
+   "learningDescription": "Tạo từ vựng, ngữ pháp, câu hỏi và bằng chứng.",
+   "validate": "Kiểm tra",
+   "validateDescription": "Rà schema, độ dài, nội dung trùng và bằng chứng.",
+   "save": "Lưu bài",
+   "saveDescription": "Lưu bản đạt chuẩn vào thiết bị này."
+  },
+  "history": {
+   "title": "Lịch sử tác vụ",
+   "description": "Sáu lần chạy gần nhất trên thiết bị này.",
+   "empty": "Chưa có lần tạo bài nào.",
+   "succeeded": "Hoàn tất",
+   "pending": "Đang chạy",
+   "failed": "Thất bại"
+  },
+  "clearDialog": {
+   "title": "Xóa các bài Daily Reading đã tạo?",
+   "description": "Thao tác này xóa thư viện bài được tạo tự động hoặc thủ công trên trình duyệt hiện tại.",
+   "body": "Sẽ xóa {count} bài đã lưu. Lịch sử tác vụ vẫn được giữ để chẩn đoán.",
+   "cancel": "Hủy",
+   "confirm": "Xóa bài đã tạo"
+  },
+  "toast": {
+   "sourceReady": "Nguồn hoạt động: {publisher} · {title}",
+   "sourceFailed": "Không thể kiểm tra nguồn bài báo.",
+   "created": "Đã tạo: {title}",
+   "generationFailed": "Không thể tạo Daily Reading.",
+   "cleared": "Đã xóa thư viện Daily Reading đã tạo trên thiết bị này."
+  }
  }
 }
