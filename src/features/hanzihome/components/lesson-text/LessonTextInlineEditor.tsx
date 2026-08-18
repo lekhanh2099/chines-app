@@ -17,10 +17,7 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { useHanziHomeLessonSections } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
-import {
- EditableNodeWrapper,
- type EditableNodePath,
-} from "@/features/hanzihome/editing";
+import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
@@ -113,7 +110,14 @@ export function LessonTextInlineEditor({
     sections: visibleTextSections,
     sectionPathFor,
    }),
-  [lesson.id, lesson.title, lesson.titlePinyin, lesson.titleZh, sectionPathFor, visibleTextSections],
+  [
+   lesson.id,
+   lesson.title,
+   lesson.titlePinyin,
+   lesson.titleZh,
+   sectionPathFor,
+   visibleTextSections,
+  ],
  );
 
  const wrapBinding = (binding: LessonReaderEditBinding | undefined, content: ReactNode) => {

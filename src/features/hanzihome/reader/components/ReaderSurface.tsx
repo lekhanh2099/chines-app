@@ -1,14 +1,6 @@
 "use client";
 
-import {
- ChevronLeft,
- ChevronRight,
- List,
- Pause,
- Play,
- RotateCcw,
- Square,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, List, Pause, Play, RotateCcw, Square } from "lucide-react";
 import {
  useCallback,
  useEffect,

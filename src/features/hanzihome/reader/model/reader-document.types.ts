@@ -5,12 +5,7 @@ export type ReaderSourceKind =
  | "plain-text"
  | "conversation";
 
-export type ReaderSegmentKind =
- | "paragraph"
- | "sentence"
- | "dialogue-turn"
- | "quote"
- | "heading";
+export type ReaderSegmentKind = "paragraph" | "sentence" | "dialogue-turn" | "quote" | "heading";
 
 export type ReaderContentCapability =
  | "pinyin"

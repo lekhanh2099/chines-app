@@ -1,4 +1,7 @@
-import type { EditableNodePath, EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
+import type {
+ EditableNodePath,
+ EditableNodeRequest,
+} from "@/features/hanzihome/editing/store/types";
 import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { deriveSegmentContentCapabilities } from "../model/reader-capabilities";
 import type {
@@ -103,9 +106,7 @@ export function lessonTextToReaderDocument({
      });
     }
    } else if (block.paragraphs.length > 0) {
-    const orderedParagraphs = [...block.paragraphs].sort(
-     (left, right) => left.order - right.order,
-    );
+    const orderedParagraphs = [...block.paragraphs].sort((left, right) => left.order - right.order);
     for (const paragraph of orderedParagraphs) {
      const zh = paragraph.zh.trim();
      if (!zh) continue;

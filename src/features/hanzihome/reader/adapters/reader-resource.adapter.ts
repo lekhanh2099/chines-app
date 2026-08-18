@@ -42,7 +42,11 @@ function metadataForResource(resource: ReaderDocumentResource): readonly ReaderM
   metadata.push({ id: "vocabulary", label: "Từ vựng", value: String(resource.vocabulary.length) });
  }
  if (resource.exerciseItems.length > 0) {
-  metadata.push({ id: "exercises", label: "Bài tập", value: String(resource.exerciseItems.length) });
+  metadata.push({
+   id: "exercises",
+   label: "Bài tập",
+   value: String(resource.exerciseItems.length),
+  });
  }
  return metadata;
 }
