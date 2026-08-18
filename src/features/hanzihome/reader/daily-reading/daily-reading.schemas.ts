@@ -19,16 +19,32 @@ export const dailyReadingGenerationStageSchema = z.enum([
  "discovering",
  "extracting",
  "drafting",
+ "repairing_core",
  "enriching",
+ "repairing_learning",
  "validating",
+ "finalizing",
  "saving",
  "completed",
+]);
+export const dailyReadingErrorCodeSchema = z.enum([
+ "invalid-request",
+ "source-unavailable",
+ "source-extraction-failed",
+ "provider-rejected",
+ "invalid-provider-response",
+ "timeout",
+ "offline",
+ "storage-failed",
+ "generation-busy",
+ "unauthorized",
 ]);
 
 export const dailyReadingParagraphSchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  zh: nonEmptyTextSchema.max(1600),
+ pinyin: z.string().max(4000),
  vi: nonEmptyTextSchema.max(3000),
  roleVi: z.string().max(240),
 });
@@ -37,6 +53,7 @@ export const dailyReadingVocabularySchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  hanzi: nonEmptyTextSchema.max(24),
+ pinyin: z.string().max(160),
  meaningVi: nonEmptyTextSchema.max(320),
  meaningInContextVi: nonEmptyTextSchema.max(480),
  categoryVi: nonEmptyTextSchema.max(120),
@@ -74,6 +91,7 @@ export const dailyReadingSchema = z.strictObject({
  createdAt: z.iso.datetime({ offset: true }),
  releaseKind: dailyReadingGenerationKindSchema,
  titleZh: nonEmptyTextSchema.max(240),
+ titlePinyin: z.string().max(800),
  titleVi: nonEmptyTextSchema.max(320),
  whyWorthReadingVi: nonEmptyTextSchema.max(2000),
  adaptationNoticeVi: nonEmptyTextSchema.max(800),
@@ -89,6 +107,7 @@ export const dailyReadingSchema = z.strictObject({
  source: dailyReadingSourceSchema,
  generatedByProvider: nonEmptyTextSchema.max(80),
  generatedByModel: nonEmptyTextSchema.max(160),
+ pinyinReviewStatus: z.literal("auto-generated"),
 });
 
 export const dailyReadingRunSchema = z.strictObject({
@@ -152,9 +171,23 @@ export const dailyReadingGenerateRequestSchema = dailyReadingSourcePreviewReques
 });
 export const dailyReadingGenerateResponseSchema = z.strictObject({ reading: dailyReadingSchema });
 export const dailyReadingErrorResponseSchema = z.strictObject({
- code: z.string().min(1).max(120),
+ code: dailyReadingErrorCodeSchema,
  detail: z.string().min(1).max(1000),
 });
+export const dailyReadingGenerateStreamEventSchema = z.discriminatedUnion("type", [
+ z.strictObject({
+  type: z.literal("progress"),
+  stage: dailyReadingGenerationStageSchema,
+ }),
+ z.strictObject({
+  type: z.literal("result"),
+  payload: dailyReadingGenerateResponseSchema,
+ }),
+ z.strictObject({
+  type: z.literal("error"),
+  payload: dailyReadingErrorResponseSchema,
+ }),
+]);
 
 export const dailyReadingCoreDraftSchema = z.strictObject({
  titleZh: nonEmptyTextSchema.max(240),
@@ -221,6 +254,8 @@ export type DailyReadingLevel = z.output<typeof dailyReadingLevelSchema>;
 export type DailyReadingTopic = z.output<typeof dailyReadingTopicSchema>;
 export type DailyReadingGenerationKind = z.output<typeof dailyReadingGenerationKindSchema>;
 export type DailyReadingGenerationStage = z.output<typeof dailyReadingGenerationStageSchema>;
+export type DailyReadingErrorCode = z.output<typeof dailyReadingErrorCodeSchema>;
+export type DailyReadingGenerateStreamEvent = z.output<typeof dailyReadingGenerateStreamEventSchema>;
 export type DailyReadingSourceCandidate = z.output<typeof dailyReadingSourceCandidateSchema>;
 export type DailyReadingSourcePreviewResponse = z.output<typeof dailyReadingSourcePreviewResponseSchema>;
 export type DailyReadingCoreDraft = z.output<typeof dailyReadingCoreDraftSchema>;
