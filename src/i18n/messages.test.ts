@@ -38,6 +38,29 @@ describe("i18n message contracts", () => {
     hskkPractice: expect.any(String),
    }),
   );
+  expect(aiConversation.relationship).toEqual(
+   expect.objectContaining({
+    new: expect.any(String),
+    familiar: expect.any(String),
+    friends: expect.any(String),
+    close: expect.any(String),
+   }),
+  );
+  expect(aiConversation.history).toEqual(
+   expect.objectContaining({
+    open: expect.any(String),
+    newConversation: expect.any(String),
+    archive: expect.any(String),
+    archiveDescription: expect.stringContaining("{title}"),
+   }),
+  );
+  expect(aiConversation.memory).toEqual(
+   expect.objectContaining({
+    useLongTerm: expect.any(String),
+    offShort: expect.any(String),
+   }),
+  );
+  expect(aiConversation.runtime.compactReady).toContain("{provider}");
   expect(aiConversation.greeting).toContain("{name}");
   expect(aiConversation.greeting).toContain("{mode}");
   expect(aiConversation.greeting).not.toContain("{role}");
