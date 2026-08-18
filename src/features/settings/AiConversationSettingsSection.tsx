@@ -8,10 +8,9 @@ import {
  MoreHorizontal,
  Pencil,
  Trash2,
- UserRound,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import { toast } from "sonner";
 
 import { EmptyState } from "@/components/patterns/empty-state";
@@ -96,20 +95,21 @@ export function AiConversationSettingsSection() {
 
  const preferencesMutation = useMutation({
   retry: false,
-  mutationFn: updateAiConversationAccountPreferences,
+  mutationFn: (preferences: AiConversationAccountPreferences) =>
+   updateAiConversationAccountPreferences(preferences),
   onSuccess: (preferences) => {
    queryClient.setQueryData<AiConversationSettingsOverview>(OVERVIEW_QUERY_KEY, (current) =>
     current ? { ...current, preferences } : current,
    );
    toast.success(t("conversation.saved"));
   },
-  onError: (error, _variables, context) => {
-   if (context) {
-    queryClient.setQueryData(OVERVIEW_QUERY_KEY, context);
+  onError: (error, _variables, previous) => {
+   if (previous) {
+    queryClient.setQueryData<AiConversationSettingsOverview>(OVERVIEW_QUERY_KEY, previous);
    }
    toast.error(error instanceof Error ? error.message : t("conversation.saveError"));
   },
-  onMutate: async (preferences) => {
+  onMutate: async (preferences: AiConversationAccountPreferences) => {
    await queryClient.cancelQueries({ queryKey: OVERVIEW_QUERY_KEY });
    const previous = queryClient.getQueryData<AiConversationSettingsOverview>(OVERVIEW_QUERY_KEY);
    if (previous) {
@@ -227,7 +227,9 @@ export function AiConversationSettingsSection() {
          label: t("modes.hskkPractice"),
         },
        ]}
-       onValueChange={(value) => savePreferences({ defaultMode: aiConversationModeSchema.parse(value) })}
+       onValueChange={(value) =>
+        savePreferences({ defaultMode: aiConversationModeSchema.parse(value) })
+       }
       />
       <PreferenceSelect
        id="ai-learner-level"
@@ -357,7 +359,7 @@ function SectionHeading({
  title,
  description,
 }: {
- icon: React.ReactNode;
+ icon: ReactNode;
  title: string;
  description: string;
 }) {
@@ -394,16 +396,17 @@ function OverviewFact({
    <Typography variant="caption" tone="muted">
     {label}
    </Typography>
-   <div className="flex min-w-0 flex-wrap items-center gap-2">
-    <Typography weight="semibold" clamp="one">
-     {value}
-    </Typography>
-    {status ? (
+   {status ? (
+    <div>
      <Badge variant={status} size="sm" casing="natural">
       {value}
      </Badge>
-    ) : null}
-   </div>
+    </div>
+   ) : (
+    <Typography weight="semibold" clamp="one">
+     {value}
+    </Typography>
+   )}
    {detail ? (
     <Typography variant="caption" tone="muted" clamp="one">
      {detail}
@@ -486,7 +489,8 @@ function MemoryManagerDialog({
 
  const editMutation = useMutation({
   retry: false,
-  mutationFn: editAiConversationManagedMemory,
+  mutationFn: (input: { memoryId: string; content: string }) =>
+   editAiConversationManagedMemory(input),
   onSuccess: (updatedMemory) => {
    queryClient.setQueryData<AiConversationManagedMemory[]>(MEMORIES_QUERY_KEY, (current) =>
     (current ?? []).map((memory) => (memory.id === updatedMemory.id ? updatedMemory : memory)),
@@ -501,7 +505,7 @@ function MemoryManagerDialog({
 
  const resolveMutation = useMutation({
   retry: false,
-  mutationFn: resolveAiConversationManagedOpenLoop,
+  mutationFn: (memoryId: string) => resolveAiConversationManagedOpenLoop(memoryId),
   onSuccess: (result) => {
    queryClient.setQueryData<AiConversationManagedMemory[]>(MEMORIES_QUERY_KEY, (current) =>
     (current ?? []).filter((memory) => memory.id !== result.memoryId),
@@ -515,7 +519,7 @@ function MemoryManagerDialog({
 
  const forgetMutation = useMutation({
   retry: false,
-  mutationFn: forgetAiConversationManagedMemory,
+  mutationFn: (memoryId: string) => forgetAiConversationManagedMemory(memoryId),
   onSuccess: (result) => {
    queryClient.setQueryData<AiConversationManagedMemory[]>(MEMORIES_QUERY_KEY, (current) =>
     (current ?? []).filter((memory) => memory.id !== result.memoryId),
@@ -532,7 +536,9 @@ function MemoryManagerDialog({
  const memories = memoriesQuery.data ?? [];
  const filteredMemories = memories.filter((memory) => {
   if (filter === "global") return memory.characterId === null;
-  if (filter === "character") return Boolean(currentCharacterId && memory.characterId === currentCharacterId);
+  if (filter === "character") {
+   return Boolean(currentCharacterId && memory.characterId === currentCharacterId);
+  }
   if (filter === "open-loops") return memory.kind === "open_loop";
   return true;
  });
@@ -586,7 +592,11 @@ function MemoryManagerDialog({
        }
        disabled={!action.draft.trim() || editMutation.isPending}
       >
-       {editMutation.isPending ? <Spinner data-icon="inline-start" /> : <Pencil data-icon="inline-start" />}
+       {editMutation.isPending ? (
+        <Spinner data-icon="inline-start" />
+       ) : (
+        <Pencil data-icon="inline-start" />
+       )}
        {t("memory.saveEdit")}
       </Button>
      </DialogFooter>
@@ -617,7 +627,11 @@ function MemoryManagerDialog({
        onClick={() => forgetMutation.mutate(action.memory.id)}
        disabled={forgetMutation.isPending}
       >
-       {forgetMutation.isPending ? <Spinner data-icon="inline-start" /> : <Trash2 data-icon="inline-start" />}
+       {forgetMutation.isPending ? (
+        <Spinner data-icon="inline-start" />
+       ) : (
+        <Trash2 data-icon="inline-start" />
+       )}
        {t("memory.forgetConfirm")}
       </Button>
      </DialogFooter>
@@ -688,7 +702,11 @@ function MemoryManagerDialog({
             <Badge variant="default" size="sm" casing="natural">
              {kindLabels[memory.kind]}
             </Badge>
-            <Badge variant={memory.characterId === null ? "info" : "accent"} size="sm" casing="natural">
+            <Badge
+             variant={memory.characterId === null ? "info" : "accent"}
+             size="sm"
+             casing="natural"
+            >
              {memory.characterId === null
               ? t("memory.scopeGlobal")
               : t("memory.scopeCharacter", {
@@ -726,7 +744,10 @@ function MemoryManagerDialog({
              </DropdownMenuItem>
             ) : null}
             <DropdownMenuSeparator />
-            <DropdownMenuItem tone="destructive" onSelect={() => setAction({ type: "forget", memory })}>
+            <DropdownMenuItem
+             tone="destructive"
+             onSelect={() => setAction({ type: "forget", memory })}
+            >
              <Trash2 />
              {t("memory.forget")}
             </DropdownMenuItem>
