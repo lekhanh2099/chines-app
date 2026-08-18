@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
  Archive,
@@ -113,11 +113,14 @@ export function AiConversationWorkspace() {
  const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
 
- const navigateToConversation = (conversationId: string) => {
-  const nextParams = new URLSearchParams(searchParamsString);
-  nextParams.set("conversation", conversationId);
-  router.replace(`${pathname}?${nextParams.toString()}`, { scroll: false });
- };
+ const navigateToConversation = useCallback(
+  (conversationId: string) => {
+   const nextParams = new URLSearchParams(searchParamsString);
+   nextParams.set("conversation", conversationId);
+   router.replace(`${pathname}?${nextParams.toString()}`, { scroll: false });
+  },
+  [pathname, router, searchParamsString],
+ );
 
  const sessionQuery = useQuery({
   queryKey: conversationSessionQueryKey(conversationIdFromUrl),
@@ -403,7 +406,11 @@ export function AiConversationWorkspace() {
      ? historyQuery.error.message
      : null;
  const currentTitle = conversation?.title.trim() || t("history.untitled");
- const isNavigationLocked = isSending || archiveConversationMutation.isPending;
+ const isNavigationLocked =
+  isSending ||
+  createConversationMutation.isPending ||
+  archiveConversationMutation.isPending ||
+  sessionQuery.isFetching;
 
  useEffect(() => () => requestRef.current?.abort(), []);
 
@@ -415,7 +422,7 @@ export function AiConversationWorkspace() {
    sessionQuery.data,
   );
   navigateToConversation(resolvedConversationId);
- }, [conversationIdFromUrl, queryClient, sessionQuery.data]);
+ }, [conversationIdFromUrl, navigateToConversation, queryClient, sessionQuery.data]);
 
  useEffect(() => {
   let cancelled = false;
@@ -548,7 +555,7 @@ export function AiConversationWorkspace() {
       size="icon"
       aria-label={t("history.newConversation")}
       onClick={() => createConversationMutation.mutate()}
-      disabled={isNavigationLocked || createConversationMutation.isPending}
+      disabled={isNavigationLocked}
      >
       <MessageSquarePlus />
      </Button>
@@ -683,7 +690,7 @@ export function AiConversationWorkspace() {
      />
      <Button
       type="submit"
-      size="icon-round"
+      size="icon"
       disabled={!draft.trim() || !canSend}
       aria-label={isSending ? t("actions.sending") : t("actions.send")}
      >
