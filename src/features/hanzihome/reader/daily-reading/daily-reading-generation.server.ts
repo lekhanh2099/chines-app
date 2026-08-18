@@ -116,7 +116,7 @@ async function requestStructured<T>({
     return {
      data: parsed,
      provider: runtimeCredential.provider,
-     model: runtimeCredential.defaultModel,
+     model: runtimeCredential.defaultModel ?? getDefaultApiKeyModel(runtimeCredential.provider),
     };
    }
    providerErrors.push(`${runtimeCredential.label}: nội dung trả về không đúng schema Daily Reading.`);
