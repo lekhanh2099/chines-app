@@ -43,14 +43,26 @@ const gdeltResponseSchema = z.looseObject({
 });
 
 type SourceFetchFailure = "timeout" | "http" | "content-type" | "too-large" | "unreadable";
+type ExtractionFailure = SourceFetchFailure | "parse" | "domain";
 type DiscoveryAttempt = { metadata: DailyReadingSourceMetadata[]; note: string; ok: boolean };
+type TextFetchResult =
+ | {
+    failure: null;
+    contentType: string;
+    finalUrl: string;
+    text: string;
+   }
+ | { failure: SourceFetchFailure };
+type ExtractionResult =
+ | { source: DailyReadingSourceCandidate; failure: null }
+ | { source: null; failure: ExtractionFailure };
 
 export type DailyReadingSourceDiscoveryReport = {
  discoveryEndpoints: number;
  discoveryResponses: number;
  metadataCandidates: number;
  attemptedExtractions: number;
- extractionFailures: Readonly<Record<SourceFetchFailure | "parse" | "domain", number>>;
+ extractionFailures: Readonly<Record<ExtractionFailure, number>>;
  notes: readonly string[];
 };
 
@@ -83,7 +95,7 @@ async function readLimitedText(response: Response) {
  return text + decoder.decode();
 }
 
-async function fetchText(url: string, timeout: number, accept: string) {
+async function fetchText(url: string, timeout: number, accept: string): Promise<TextFetchResult> {
  try {
   const response = await fetch(url, {
    cache: "no-store",
@@ -94,9 +106,9 @@ async function fetchText(url: string, timeout: number, accept: string) {
    redirect: "follow",
    signal: AbortSignal.timeout(timeout),
   });
-  if (!response.ok) return { failure: "http" as const };
+  if (!response.ok) return { failure: "http" };
   const text = await readLimitedText(response);
-  if (text === null) return { failure: "too-large" as const };
+  if (text === null) return { failure: "too-large" };
   return {
    failure: null,
    contentType: response.headers.get("content-type") ?? "",
@@ -106,7 +118,7 @@ async function fetchText(url: string, timeout: number, accept: string) {
  } catch (error) {
   const timeoutFailure =
    error instanceof Error && (error.name === "TimeoutError" || /timeout|aborted/iu.test(error.message));
-  return { failure: timeoutFailure ? ("timeout" as const) : ("unreadable" as const) };
+  return { failure: timeoutFailure ? "timeout" : "unreadable" };
  }
 }
 
@@ -160,6 +172,15 @@ function parseGdeltDate(value: string) {
  return Number.isNaN(date.getTime()) ? null : date.toISOString();
 }
 
+function parseGdeltPayload(text: string) {
+ try {
+  const result = gdeltResponseSchema.safeParse(JSON.parse(text));
+  return result.success ? result.data : null;
+ } catch {
+  return null;
+ }
+}
+
 async function discoverGdelt(recentTopics: readonly DailyReadingTopic[]): Promise<DiscoveryAttempt> {
  const endpoint = new URL("https://api.gdeltproject.org/api/v2/doc/doc");
  endpoint.searchParams.set(
@@ -173,9 +194,9 @@ async function discoverGdelt(recentTopics: readonly DailyReadingTopic[]): Promis
  endpoint.searchParams.set("timespan", "7d");
  const fetched = await fetchText(endpoint.toString(), gdeltTimeoutMilliseconds, "application/json");
  if (fetched.failure !== null) return { metadata: [], note: `gdelt:${fetched.failure}`, ok: false };
- const payload = gdeltResponseSchema.safeParse(JSON.parse(fetched.text));
- if (!payload.success) return { metadata: [], note: "gdelt:invalid-json", ok: false };
- const metadata = payload.data.articles.flatMap((article): DailyReadingSourceMetadata[] => {
+ const payload = parseGdeltPayload(fetched.text);
+ if (payload === null) return { metadata: [], note: "gdelt:invalid-json", ok: false };
+ const metadata = payload.articles.flatMap((article): DailyReadingSourceMetadata[] => {
   const titleZh = article.title.replace(/\s+/gu, " ").trim();
   if (!isEligibleDailyReadingTitle(titleZh)) return [];
   const url = canonicalDailyReadingUrl(article.url);
@@ -200,10 +221,12 @@ async function discoverGdelt(recentTopics: readonly DailyReadingTopic[]): Promis
 }
 
 function deduplicateMetadata(candidates: readonly DailyReadingSourceMetadata[], excludedUrls: readonly string[]) {
- const excluded = new Set(excludedUrls.flatMap((url) => {
-  const canonical = canonicalDailyReadingUrl(url);
-  return canonical === null ? [] : [canonical];
- }));
+ const excluded = new Set(
+  excludedUrls.flatMap((url) => {
+   const canonical = canonicalDailyReadingUrl(url);
+   return canonical === null ? [] : [canonical];
+  }),
+ );
  const byUrl = new Map<string, DailyReadingSourceMetadata>();
  for (const candidate of candidates) {
   if (excluded.has(candidate.url)) continue;
@@ -213,8 +236,31 @@ function deduplicateMetadata(candidates: readonly DailyReadingSourceMetadata[], 
  return [...byUrl.values()].sort((left, right) => right.score - left.score).slice(0, maximumExtractionCandidates);
 }
 
-function emptyFailureCounts(): Record<SourceFetchFailure | "parse" | "domain", number> {
+function emptyFailureCounts(): Record<ExtractionFailure, number> {
  return { timeout: 0, http: 0, "content-type": 0, "too-large": 0, unreadable: 0, parse: 0, domain: 0 };
+}
+
+async function extractCandidate(metadata: DailyReadingSourceMetadata): Promise<ExtractionResult> {
+ const fetched = await fetchText(metadata.url, articleTimeoutMilliseconds, "text/html,application/xhtml+xml");
+ if (fetched.failure !== null) return { source: null, failure: fetched.failure };
+ if (!fetched.contentType.includes("text/html")) return { source: null, failure: "content-type" };
+ const finalUrl = canonicalDailyReadingUrl(fetched.finalUrl || metadata.url);
+ if (finalUrl === null || !isAllowedDailyReadingDomain(new URL(finalUrl).hostname)) {
+  return { source: null, failure: "domain" };
+ }
+ const document = extractDailyReadingSourceDocument(fetched.text);
+ if (document === null) return { source: null, failure: "parse" };
+ return {
+  source: dailyReadingSourceCandidateSchema.parse({
+   titleZh: metadata.titleZh,
+   publisher: metadata.publisher,
+   url: finalUrl,
+   publishedAt: document.pagePublishedAt || metadata.publishedAt,
+   topic: metadata.topic,
+   extractedTextZh: document.extractedTextZh,
+  }),
+  failure: null,
+ };
 }
 
 export async function discoverDailyReadingSource(
@@ -231,28 +277,7 @@ export async function discoverDailyReadingSource(
  onProgress?.("extracting");
  for (let index = 0; index < candidates.length; index += extractionBatchSize) {
   const batch = candidates.slice(index, index + extractionBatchSize);
-  const results = await Promise.all(
-   batch.map(async (metadata) => {
-    const fetched = await fetchText(metadata.url, articleTimeoutMilliseconds, "text/html,application/xhtml+xml");
-    if (fetched.failure !== null) return { source: null, failure: fetched.failure };
-    if (!fetched.contentType.includes("text/html")) return { source: null, failure: "content-type" as const };
-    const finalUrl = canonicalDailyReadingUrl(fetched.finalUrl || metadata.url);
-    if (finalUrl === null || !isAllowedDailyReadingDomain(new URL(finalUrl).hostname)) {
-     return { source: null, failure: "domain" as const };
-    }
-    const document = extractDailyReadingSourceDocument(fetched.text);
-    if (document === null) return { source: null, failure: "parse" as const };
-    const source = dailyReadingSourceCandidateSchema.parse({
-     titleZh: metadata.titleZh,
-     publisher: metadata.publisher,
-     url: finalUrl,
-     publishedAt: document.pagePublishedAt || metadata.publishedAt,
-     topic: metadata.topic,
-     extractedTextZh: document.extractedTextZh,
-    });
-    return { source, failure: null };
-   }),
-  );
+  const results = await Promise.all(batch.map(extractCandidate));
   attemptedExtractions += results.length;
   for (const result of results) {
    if (result.failure !== null) failures[result.failure] += 1;
