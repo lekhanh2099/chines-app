@@ -35,6 +35,16 @@ const messageRowSchema = z.object({
  created_at: z.iso.datetime(),
 });
 
+const assistantRuntimeMetadataSchema = z.strictObject({
+ provider: z.string().trim().min(1),
+ model: z.string().trim().min(1),
+ apiKeyId: z.uuid().nullable(),
+});
+
+const assistantReplyRowSchema = messageRowSchema.extend({
+ metadata: assistantRuntimeMetadataSchema,
+});
+
 const characterRowSchema = z.object({ id: z.uuid() });
 
 const messageRpcResultSchema = z.union([
@@ -273,6 +283,7 @@ export async function appendAiConversationMessage({
  content,
  clientMessageId,
  replyToMessageId,
+ metadata,
 }: {
  userId: string;
  conversationId: string;
@@ -280,6 +291,7 @@ export async function appendAiConversationMessage({
  content: string;
  clientMessageId?: string;
  replyToMessageId?: string;
+ metadata?: Readonly<Record<string, string | null>>;
 }): Promise<AiConversationPersistedMessage> {
  const row = await requestPostgrest({
   resource: "rpc/ai_append_message",
@@ -292,7 +304,7 @@ export async function appendAiConversationMessage({
    p_content: content,
    p_client_message_id: clientMessageId ?? null,
    p_reply_to_message_id: replyToMessageId ?? null,
-   p_metadata: {},
+   p_metadata: metadata ?? {},
   },
  });
  return toPersistedMessage(row);
@@ -306,12 +318,17 @@ export async function findAssistantReplyForUserMessage({
  userId: string;
  conversationId: string;
  userMessageId: string;
-}): Promise<AiConversationPersistedMessage | null> {
+}): Promise<{
+ message: AiConversationPersistedMessage;
+ provider: string;
+ model: string;
+ apiKeyId: string | null;
+} | null> {
  const rows = await requestPostgrest({
   resource: "ai_messages",
-  schema: z.array(messageRowSchema),
+  schema: z.array(assistantReplyRowSchema),
   params: {
-   select: "id,seq,role,content,created_at",
+   select: "id,seq,role,content,created_at,metadata",
    user_id: `eq.${userId}`,
    conversation_id: `eq.${conversationId}`,
    role: "eq.assistant",
@@ -319,7 +336,14 @@ export async function findAssistantReplyForUserMessage({
    limit: "1",
   },
  });
- return rows[0] ? toPersistedMessage(rows[0]) : null;
+ const row = rows[0];
+ if (!row) return null;
+ return {
+  message: toPersistedMessage(row),
+  provider: row.metadata.provider,
+  model: row.metadata.model,
+  apiKeyId: row.metadata.apiKeyId,
+ };
 }
 
 export async function loadRecentAiConversationMessages({
