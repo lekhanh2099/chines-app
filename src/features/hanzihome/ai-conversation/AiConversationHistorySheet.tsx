@@ -1,17 +1,11 @@
 "use client";
 
-import { Archive, MessageCircle, MessageSquarePlus, MoreHorizontal } from "lucide-react";
+import { Archive, MessageCircle, MessageSquarePlus } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
- DropdownMenu,
- DropdownMenuContent,
- DropdownMenuItem,
- DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 
@@ -135,25 +129,16 @@ export function AiConversationHistorySheet({
           </span>
          </Button>
 
-         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-           <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            aria-label={t("history.actionsAria", { title })}
-            disabled={disabled || archivingConversationId === item.id}
-           >
-            <MoreHorizontal />
-           </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" width="sm">
-           <DropdownMenuItem onSelect={() => onRequestArchive(item)}>
-            <Archive />
-            {t("history.archive")}
-           </DropdownMenuItem>
-          </DropdownMenuContent>
-         </DropdownMenu>
+         <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          aria-label={t("history.archiveAria", { title })}
+          disabled={disabled || archivingConversationId === item.id}
+          onClick={() => onRequestArchive(item)}
+         >
+          <Archive />
+         </Button>
         </div>
        );
       })}
