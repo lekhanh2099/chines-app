@@ -26,6 +26,21 @@ describe("i18n message contracts", () => {
   expect(collectLeafKeys(translatedMessages).sort()).toEqual(collectLeafKeys(baseMessages).sort());
  });
 
+ it.each(appLocales)("%s keeps the AI settings navigation contract", async (locale) => {
+  const messages = await loadAppMessages(locale);
+
+  expect(messages.AiSettings.tabs).toEqual(
+   expect.objectContaining({
+    conversation: expect.any(String),
+    dailyReading: expect.any(String),
+    providers: expect.any(String),
+    usage: expect.any(String),
+    advanced: expect.any(String),
+    aria: expect.any(String),
+   }),
+  );
+ });
+
  it.each(appLocales)("%s keeps the AI conversation workspace message contract", async (locale) => {
   const messages = await loadAppMessages(locale);
   const aiConversation = messages.AiConversation;
