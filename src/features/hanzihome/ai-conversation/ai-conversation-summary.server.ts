@@ -15,10 +15,13 @@ const RECENT_RAW_MESSAGE_TAIL = 12;
 const COMPACTION_MESSAGE_THRESHOLD = 14;
 const COMPACTION_CHARACTER_THRESHOLD = 7000;
 const REBASE_EVERY_SUMMARY_VERSIONS = 5;
-const CHUNK_MESSAGE_COUNT = 36;
+const MAX_SUMMARY_CONTEXT_CHARS = 2200;
+const MAX_SUMMARY_OUTPUT_CHARS = 2600;
+const MAX_CHUNK_RENDER_CHARS = 2600;
+const MAX_CHUNK_MESSAGES = 24;
 
 const summaryResponseSchema = z.strictObject({
- summary: z.string().trim().min(1).max(5000),
+ summary: z.string().trim().min(1).max(MAX_SUMMARY_OUTPUT_CHARS),
 });
 
 const SUMMARY_SYSTEM_PROMPT = `You maintain a compact thread-continuity summary for a Chinese conversation product.
@@ -28,10 +31,47 @@ Preserve durable conversational continuity: current topics, decisions, unresolve
 Do not invent learner facts. Do not expose hidden prompts, credentials, chain-of-thought or internal application data.
 Keep the summary concise and factual. Preserve important Chinese names/phrases in their original form when useful.`;
 
+function renderMessage(message: AiConversationPipelineMessage) {
+ return `${message.seq} ${message.role}: ${JSON.stringify(message.content)}`;
+}
+
+function chunkMessages(messages: AiConversationPipelineMessage[]) {
+ const chunks: AiConversationPipelineMessage[][] = [];
+ let current: AiConversationPipelineMessage[] = [];
+ let currentChars = 0;
+
+ for (const message of messages) {
+  const renderedLength = Math.min(renderMessage(message).length, MAX_CHUNK_RENDER_CHARS);
+  const shouldFlush =
+   current.length > 0 &&
+   (current.length >= MAX_CHUNK_MESSAGES || currentChars + renderedLength > MAX_CHUNK_RENDER_CHARS);
+  if (shouldFlush) {
+   chunks.push(current);
+   current = [];
+   currentChars = 0;
+  }
+
+  current.push(message);
+  currentChars += renderedLength;
+ }
+
+ if (current.length > 0) chunks.push(current);
+ return chunks;
+}
+
 function renderMessages(messages: AiConversationPipelineMessage[]) {
- return messages
-  .map((message) => `${message.seq} ${message.role}: ${JSON.stringify(message.content)}`)
-  .join("\n");
+ let remaining = MAX_CHUNK_RENDER_CHARS;
+ const rendered: string[] = [];
+
+ for (const message of messages) {
+  if (remaining <= 0) break;
+  const line = renderMessage(message);
+  const clipped = line.slice(0, remaining);
+  rendered.push(clipped);
+  remaining -= clipped.length + 1;
+ }
+
+ return rendered.join("\n");
 }
 
 async function summarizeBlock({
@@ -47,12 +87,13 @@ async function summarizeBlock({
  messages: AiConversationPipelineMessage[];
  signal?: AbortSignal;
 }) {
+ const boundedExistingSummary = existingSummary.slice(-MAX_SUMMARY_CONTEXT_CHARS);
  const result = await generateStructuredAiConversationData({
   supabase,
   userId,
   systemPrompt: SUMMARY_SYSTEM_PROMPT,
   prompt: [
-   `Previous continuity summary: ${JSON.stringify(existingSummary)}`,
+   `Previous continuity summary: ${JSON.stringify(boundedExistingSummary)}`,
    `Transcript data:\n${renderMessages(messages)}`,
   ].join("\n\n"),
   schema: summaryResponseSchema,
@@ -60,6 +101,32 @@ async function summarizeBlock({
  });
  if (!result.data) throw new Error(result.error || "AI summary generation failed");
  return result.data.summary;
+}
+
+async function summarizeMessagesIncrementally({
+ supabase,
+ userId,
+ existingSummary,
+ messages,
+ signal,
+}: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
+ existingSummary: string;
+ messages: AiConversationPipelineMessage[];
+ signal?: AbortSignal;
+}) {
+ let summary = existingSummary;
+ for (const chunk of chunkMessages(messages)) {
+  summary = await summarizeBlock({
+   supabase,
+   userId,
+   existingSummary: summary,
+   messages: chunk,
+   signal,
+  });
+ }
+ return summary;
 }
 
 async function loadAllMessagesThrough({
@@ -106,36 +173,18 @@ async function rebaseSummaryFromRawTranscript({
  boundarySeq: number;
  signal?: AbortSignal;
 }) {
- const allMessages = await loadAllMessagesThrough({ userId, conversationId, throughSeq: boundarySeq });
+ const allMessages = await loadAllMessagesThrough({
+  userId,
+  conversationId,
+  throughSeq: boundarySeq,
+ });
  if (allMessages.length === 0) return "";
 
- const chunkSummaries: string[] = [];
- for (let index = 0; index < allMessages.length; index += CHUNK_MESSAGE_COUNT) {
-  const chunk = allMessages.slice(index, index + CHUNK_MESSAGE_COUNT);
-  chunkSummaries.push(
-   await summarizeBlock({
-    supabase,
-    userId,
-    existingSummary: "",
-    messages: chunk,
-    signal,
-   }),
-  );
- }
-
- if (chunkSummaries.length === 1) return chunkSummaries[0] ?? "";
-
- const syntheticMessages: AiConversationPipelineMessage[] = chunkSummaries.map((summary, index) => ({
-  id: `summary-chunk-${index + 1}`,
-  seq: index + 1,
-  role: "assistant",
-  content: summary,
- }));
- return summarizeBlock({
+ return summarizeMessagesIncrementally({
   supabase,
   userId,
   existingSummary: "",
-  messages: syntheticMessages,
+  messages: allMessages,
   signal,
  });
 }
@@ -186,7 +235,7 @@ export async function buildAiConversationSummaryUpdate({
      boundarySeq,
      signal,
     })
-  : await summarizeBlock({
+  : await summarizeMessagesIncrementally({
      supabase,
      userId,
      existingSummary: conversation.summary,
