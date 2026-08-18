@@ -16,6 +16,7 @@ const {
  generatePersistedAiConversationTurn,
  generateSystemAiConversationReply,
  getActiveUserApiKeyCredentials,
+ loadAiConversationContextState,
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
  requireAuthenticatedRoute,
@@ -30,6 +31,7 @@ const {
   generatePersistedAiConversationTurn: vi.fn(),
   generateSystemAiConversationReply: vi.fn(),
   getActiveUserApiKeyCredentials: vi.fn(),
+  loadAiConversationContextState: vi.fn(),
   loadLatestAiConversationSession: vi.fn(),
   loadRecentAiConversationMessages: vi.fn(),
   requireAuthenticatedRoute: vi.fn(),
@@ -49,6 +51,7 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-persistence.server
  appendAiConversationMessage,
  ensureAiConversationSession,
  findAssistantReplyForUserMessage,
+ loadAiConversationContextState,
  loadLatestAiConversationSession,
  loadRecentAiConversationMessages,
 }));
@@ -86,6 +89,30 @@ const assistantMessage: AiConversationPersistedMessage = {
  createdAt: "2026-08-18T03:00:01+00:00",
 };
 const conversationId = "33333333-3333-4333-8333-333333333333";
+const contextState = {
+ conversation: {
+  id: conversationId,
+  characterId: "66666666-6666-4666-8666-666666666666",
+  mode: "natural",
+  correctionStyle: "balanced",
+  replyMode: "adaptive",
+  memoryPolicy: "inherit",
+  summary: "",
+  summaryUntilSeq: 0,
+ },
+ character: {
+  id: "66666666-6666-4666-8666-666666666666",
+  displayName: "小林",
+  city: "上海",
+  age: null,
+  background: "在上海生活和工作。",
+  personality: "自然、耐心。",
+  speakingStyle: "自然普通话。",
+  interests: ["电影"],
+  identityNotes: "",
+ },
+ relationship: null,
+} as const;
 
 describe("/api/ai/conversation", () => {
  beforeEach(() => {
@@ -96,9 +123,11 @@ describe("/api/ai/conversation", () => {
   generatePersistedAiConversationTurn.mockReset();
   generateSystemAiConversationReply.mockReset();
   getActiveUserApiKeyCredentials.mockReset();
+  loadAiConversationContextState.mockReset();
   loadLatestAiConversationSession.mockReset();
   loadRecentAiConversationMessages.mockReset();
   requireAuthenticatedRoute.mockReset();
+  loadAiConversationContextState.mockResolvedValue(contextState);
   requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
    context: { supabase: {}, user: { id: "user-1" } },
@@ -121,7 +150,7 @@ describe("/api/ai/conversation", () => {
   expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
  });
 
- it("persists one user turn, rebuilds context from backend messages, then persists the reply", async () => {
+ it("persists one user turn, loads trusted character context, then persists the reply", async () => {
   appendAiConversationMessage
    .mockResolvedValueOnce(userMessage)
    .mockResolvedValueOnce(assistantMessage);
@@ -158,6 +187,10 @@ describe("/api/ai/conversation", () => {
     clientMessageId: "55555555-5555-4555-8555-555555555555",
    }),
   );
+  expect(loadAiConversationContextState).toHaveBeenCalledWith({
+   userId: "user-1",
+   conversationId,
+  });
   expect(loadRecentAiConversationMessages).toHaveBeenCalledWith({
    userId: "user-1",
    conversationId,
@@ -167,7 +200,8 @@ describe("/api/ai/conversation", () => {
    expect.objectContaining({
     userId: "user-1",
     recentMessages: [userMessage],
-    profile: DEFAULT_AI_CONVERSATION_PROFILE,
+    contextState,
+    learnerLevel: DEFAULT_AI_CONVERSATION_PROFILE.learnerLevel,
    }),
   );
   expect(appendAiConversationMessage).toHaveBeenNthCalledWith(
@@ -191,7 +225,7 @@ describe("/api/ai/conversation", () => {
   });
  });
 
- it("returns an already persisted assistant reply without calling the provider again", async () => {
+ it("returns an already persisted assistant reply without rebuilding context or calling provider", async () => {
   appendAiConversationMessage.mockResolvedValue(userMessage);
   findAssistantReplyForUserMessage.mockResolvedValue({
    message: assistantMessage,
@@ -219,6 +253,7 @@ describe("/api/ai/conversation", () => {
    conversationId,
    userMessageId: userMessage.id,
   });
+  expect(loadAiConversationContextState).not.toHaveBeenCalled();
   expect(loadRecentAiConversationMessages).not.toHaveBeenCalled();
   expect(generatePersistedAiConversationTurn).not.toHaveBeenCalled();
   expect(appendAiConversationMessage).toHaveBeenCalledTimes(1);
