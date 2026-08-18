@@ -10,6 +10,7 @@
  "empty": "当前浏览器还没有记录到成功的 AI 会话调用。",
  "systemRuntime": "系统 Gemini",
  "runtimeUsage": "{requests} 次 · {tokens} tokens",
+ "runtimeRequests": "{requests} 次",
  "scope": "Usage 只保存在当前浏览器中，目前仅记录成功的 AI 会话调用。不会估算费用或配额，因为价格和免费额度由各 provider 决定。",
- "scopeWithoutTokens": "Usage 只保存在当前浏览器中。Provider 目前没有为这些 AI 会话调用返回标准化 token 数据，因此 token 显示为 —，不会猜测数值。"
+ "scopeWithoutTokens": "Usage 只保存在当前浏览器中。Provider 目前没有返回标准化 token 数据，因此页面只显示真实存在的统计，不会估算数值。"
 }
