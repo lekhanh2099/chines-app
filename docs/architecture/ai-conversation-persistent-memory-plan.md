@@ -3,6 +3,8 @@
 Status: active implementation guardrail
 Branch: `feat/persistent-social-memory-ai-redesign`
 Baseline: `main` at `86f41ccb500953114f6410934f0d513f28b52e64`
+Current checkpoint: Phase 1 design complete; schema mutation not started
+Detailed Phase 1 contract: `docs/architecture/ai-conversation-data-contract.md`
 
 This document is the implementation boundary for the persistent social-memory and AI Conversation redesign. It exists to prevent opportunistic refactors and to make each delivery independently reviewable.
 
@@ -81,7 +83,6 @@ Relationship state may contain only compact state required to render or derive t
 
 - nickname;
 - familiarity score;
-- interaction style;
 - revision/version.
 
 Inside jokes, promises, shared events, unfinished topics and plans are memories, not relationship-state fields.
@@ -123,6 +124,8 @@ FORGET
 
 An explicit request such as `别记这个`, `忘掉这个` or equivalent user intent has higher authority than extractor inference.
 
+`FORGET` removes the long-term memory row rather than retaining supposedly forgotten content under a `forgotten` status.
+
 ### 3.7 Summary coverage is explicit
 
 A conversation summary must always carry:
@@ -141,64 +144,81 @@ V1 uses exact vector retrieval as the baseline. Do not add HNSW/IVFFlat until me
 
 Chinese/Vietnamese lexical retrieval must be benchmarked separately; do not assume default PostgreSQL FTS is sufficient for Chinese.
 
+### 3.9 Transcript and memory provenance are different owners
+
+A memory may be created by one message and reinforced or resolved by later messages. Therefore provenance is many-to-many.
+
+Do not use one mutable `source_message_id` as the complete lineage contract. Memory evidence belongs to a dedicated relation.
+
 ## 4. Intended persistent model
 
-The exact SQL is deliberately deferred to the schema phase. The conceptual owners are:
+Phase 1 fixes the core persistence owners as:
 
 ```text
 ai_characters
 ai_conversation_preferences
 ai_conversations
 ai_messages
-ai_memories
 ai_relationship_states
+ai_memories
+ai_memory_evidence
 ai_post_turn_jobs
 ```
+
+The exact proposed fields, constraints, indexes and security boundary are documented in `docs/architecture/ai-conversation-data-contract.md`.
 
 Expected semantics:
 
 ### `ai_characters`
 
-Stable character identity owned by the authenticated user or a future system-template contract.
+Stable user-owned character identity. V1 has no shared/system-template ownership mode.
 
 ### `ai_conversation_preferences`
 
-User-level conversation behavior such as learner level, correction style, reply-language preference and memory enablement. Do not mix stable character identity into this record.
+User-level defaults such as learner level, default conversation mode, correction style, reply-language preference and memory enablement. Do not mix stable character identity into this record.
 
 ### `ai_conversations`
 
-Owns thread title, character reference, summary checkpoint, memory mode and archive state.
+Owns thread title, character reference, current conversation behavior, summary checkpoint, memory policy and archive state.
 
 ### `ai_messages`
 
-Owns stable `seq`, role, content and `client_message_id` idempotency.
+Owns stable `seq`, role, content, `client_message_id` user-turn idempotency and assistant `reply_to_message_id` idempotency.
+
+### `ai_relationship_states`
+
+Owns compact user-character relationship state. `closeness` is derived from `familiarity_score`, not independently writable.
 
 ### `ai_memories`
 
 Owns long-term facts, preferences, habits, goals, episodes, open loops, inside jokes and similar continuity data.
 
-Important fields expected to be considered during schema design:
+Core persistence fields include:
 
 ```text
 character_id nullable
 kind
 memory_key nullable
 content
-embedding
 importance
 confidence
 status
-source_message_id
-superseded_by
+reinforcement_count
+last_reinforced_at
+superseded_by_id
 last_recalled_at
 valid_until
 created_at
 updated_at
 ```
 
-### `ai_relationship_states`
+Embedding columns are deliberately deferred to the later retrieval migration so persistence does not invent an embedding provider/model/dimension.
 
-Owns the compact user-character relationship state. `closeness` is derived from `familiarity_score`, not independently writable.
+### `ai_memory_evidence`
+
+Owns many-to-many provenance between long-term memories and persisted messages, including create/reinforce/supersede/resolve evidence.
+
+This is required for correct provenance UI and for conversation deletion semantics when a memory has support from more than one conversation.
 
 ### `ai_post_turn_jobs`
 
@@ -259,7 +279,8 @@ Required product behavior eventually includes:
 - new conversation;
 - archive/delete conversation;
 - stable character while switching conversation mode;
-- temporary conversation mode that neither reads nor writes long-term memory;
+- a no-memory mode that neither reads nor writes long-term memory;
+- true temporary/no-history semantics only after retention/expiry is explicitly designed;
 - visible but non-intrusive relationship label;
 - explicit memory provenance/control where destructive actions need it;
 - deletion UX that explains whether learned memories are also forgotten.
@@ -292,7 +313,7 @@ Memory & relationship
 - memory on/off
 - manage remembered information
 - relationship overview
-- privacy / temporary conversation explanation
+- privacy / no-memory / future temporary conversation explanation
 
 Models & providers
 - system model behavior
@@ -315,6 +336,8 @@ Only one phase may be actively implemented at a time. After each phase, report t
 
 ### Phase 0 — Implementation guardrail
 
+Status: complete.
+
 Scope:
 
 - add this plan only;
@@ -329,23 +352,37 @@ Exit criteria:
 
 ### Phase 1 — Domain contracts and migration design
 
+Status: design checkpoint complete; migration mutation pending explicit confirmation.
+
 Scope:
 
 - inspect existing migration and generated-type conventions;
 - design exact table/index/RLS/ownership contracts;
-- design vector/lexical retrieval columns and extension requirements;
-- add migration file and generated application contracts only after explicit confirmation for DB/schema work;
+- split core persistence from retrieval-extension migration;
 - no conversation UI redesign yet.
 
-Must resolve before mutation:
+Resolved by the Phase 1 design:
 
-- exact target environment;
-- RLS ownership;
-- character ownership/template policy;
-- vector dimension/provider used for embeddings;
-- lexical-search approach for Chinese/Vietnamese;
-- rollback or forward-fix strategy;
-- existing-row and lock risk.
+```text
+character ownership       = user-owned only
+browser table access       = none; strict BFF
+relationship owner        = familiarity_score only
+memory scope              = character_id nullability
+memory provenance         = ai_memory_evidence relation
+message ordering          = atomic server-only sequence RPC
+user-turn idempotency     = client_message_id
+assistant idempotency     = reply_to_message_id
+embedding dimension       = deferred from core persistence
+lexical engine            = deferred to measured retrieval phase
+ANN index                 = not part of baseline
+local profile auto-import = prohibited
+```
+
+Still required before mutation:
+
+- exact first apply target;
+- permission to add the core persistence migration;
+- rollback mode for that target.
 
 Stop condition: schema/RLS/extension mutation requires explicit user confirmation under repository policy.
 
@@ -357,6 +394,7 @@ Scope:
 - message persistence;
 - stable sequence allocation;
 - client-message idempotency;
+- assistant-reply idempotency;
 - backend-owned turn endpoint;
 - load/new/archive/delete conversation APIs required by this phase;
 - compatibility path for the current UI if required.
@@ -370,6 +408,7 @@ Exit proof:
 - reload keeps transcript;
 - retrying the same `clientMessageId` does not duplicate the user turn;
 - one user cannot read/write another user's conversation;
+- one user turn cannot acquire duplicate persisted assistant replies;
 - provider calls reconstruct recent transcript from backend data.
 
 ### Phase 3 — Character, relationship and context builder
@@ -396,13 +435,15 @@ Exit proof:
 
 Scope:
 
+- retrieval capability migration after embedding/lexical decisions;
 - exact vector retrieval baseline;
 - lexical candidate retrieval selected from measured Chinese/Vietnamese behavior;
 - reranking/merging;
 - memory lifecycle operations;
 - durable post-turn jobs/retry/idempotency;
 - summary compaction + periodic rebase;
-- temporary-chat read/write bypass.
+- no-memory read/write bypass;
+- true temporary/no-history behavior only if retention/cleanup is explicitly implemented.
 
 Exit proof:
 
@@ -411,7 +452,7 @@ Exit proof:
 - changed fact supersedes old fact;
 - resolved open loop no longer remains active;
 - explicit forget prevents later recall;
-- temporary conversation neither reads nor writes long-term memory.
+- no-memory conversation neither reads nor writes long-term memory.
 
 ### Phase 5 — Conversation workspace redesign
 
@@ -421,7 +462,7 @@ Scope:
 - persisted history/new conversation controls;
 - compact runtime status;
 - character + relationship presentation;
-- temporary-conversation control;
+- no-memory/temporary control matching the actually implemented retention contract;
 - delete/archive UX;
 - responsive/touch/keyboard states.
 
