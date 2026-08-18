@@ -1,9 +1,6 @@
 import { z } from "zod";
 
-import {
- aiConversationProfileSchema,
- aiConversationUsageSchema,
-} from "./ai-conversation.schemas";
+import { aiConversationUsageSchema } from "./ai-conversation.schemas";
 
 export const aiConversationModeSchema = z.enum([
  "natural",
@@ -40,7 +37,6 @@ export const aiConversationSessionSchema = z.strictObject({
 export const aiConversationTurnRequestSchema = z.strictObject({
  clientMessageId: z.uuid(),
  content: z.string().trim().min(1).max(6000),
- profile: aiConversationProfileSchema,
  apiKeyId: z.uuid().optional(),
 });
 
