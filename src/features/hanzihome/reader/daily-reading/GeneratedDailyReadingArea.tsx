@@ -12,16 +12,15 @@ export function GeneratedDailyReadingArea() {
  const searchParams = useSearchParams();
  const selectedId = searchParams.get("generated");
 
- const updateSelection = (id: string | null) => {
+ const clearSelection = () => {
   const next = new URLSearchParams(searchParams.toString());
-  if (id === null) next.delete("generated");
-  else next.set("generated", id);
+  next.delete("generated");
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  };
 
  return selectedId === null ? (
-  <GeneratedDailyReadingLibrary onOpen={(id) => updateSelection(id)} />
+  <GeneratedDailyReadingLibrary />
  ) : (
-  <GeneratedDailyReadingView id={selectedId} onBack={() => updateSelection(null)} />
+  <GeneratedDailyReadingView id={selectedId} onBack={clearSelection} />
  );
 }
