@@ -44,7 +44,7 @@ export const dailyReadingParagraphSchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  zh: nonEmptyTextSchema.max(1600),
- pinyin: z.string().max(4000),
+ pinyin: z.string().max(4000).default(""),
  vi: nonEmptyTextSchema.max(3000),
  roleVi: z.string().max(240),
 });
@@ -53,7 +53,7 @@ export const dailyReadingVocabularySchema = z.strictObject({
  id: nonEmptyTextSchema,
  order: z.number().int().positive(),
  hanzi: nonEmptyTextSchema.max(24),
- pinyin: z.string().max(160),
+ pinyin: z.string().max(160).default(""),
  meaningVi: nonEmptyTextSchema.max(320),
  meaningInContextVi: nonEmptyTextSchema.max(480),
  categoryVi: nonEmptyTextSchema.max(120),
@@ -91,7 +91,7 @@ export const dailyReadingSchema = z.strictObject({
  createdAt: z.iso.datetime({ offset: true }),
  releaseKind: dailyReadingGenerationKindSchema,
  titleZh: nonEmptyTextSchema.max(240),
- titlePinyin: z.string().max(800),
+ titlePinyin: z.string().max(800).default(""),
  titleVi: nonEmptyTextSchema.max(320),
  whyWorthReadingVi: nonEmptyTextSchema.max(2000),
  adaptationNoticeVi: nonEmptyTextSchema.max(800),
@@ -107,7 +107,7 @@ export const dailyReadingSchema = z.strictObject({
  source: dailyReadingSourceSchema,
  generatedByProvider: nonEmptyTextSchema.max(80),
  generatedByModel: nonEmptyTextSchema.max(160),
- pinyinReviewStatus: z.literal("auto-generated"),
+ pinyinReviewStatus: z.literal("auto-generated").default("auto-generated"),
 });
 
 export const dailyReadingRunSchema = z.strictObject({
