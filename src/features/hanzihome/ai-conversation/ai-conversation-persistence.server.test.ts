@@ -45,6 +45,16 @@ const preferenceRow = {
  memory_enabled: true,
 };
 
+function missingTableResponse(includeCode: boolean) {
+ return Response.json(
+  {
+   ...(includeCode ? { code: "PGRST205" } : {}),
+   message: "Could not find the table 'public.ai_conversations' in the schema cache",
+  },
+  { status: 404 },
+ );
+}
+
 describe("AI conversation persistence prerequisites", () => {
  beforeEach(() => {
   getSupabaseServerSecret.mockReset();
@@ -55,15 +65,7 @@ describe("AI conversation persistence prerequisites", () => {
  it("classifies a missing AI table as persistence not ready", async () => {
   vi.stubGlobal(
    "fetch",
-   vi.fn().mockResolvedValue(
-    Response.json(
-     {
-      code: "PGRST205",
-      message: "Could not find the table 'public.ai_conversations' in the schema cache",
-     },
-     { status: 404 },
-    ),
-   ),
+   vi.fn().mockImplementation(() => Promise.resolve(missingTableResponse(true))),
   );
 
   await expect(loadLatestAiConversationSession("user-1")).rejects.toBeInstanceOf(
@@ -74,14 +76,7 @@ describe("AI conversation persistence prerequisites", () => {
  it("also recognizes missing-table responses when PostgREST omits the expected code", async () => {
   vi.stubGlobal(
    "fetch",
-   vi.fn().mockResolvedValue(
-    Response.json(
-     {
-      message: "Could not find the table 'public.ai_conversations' in the schema cache",
-     },
-     { status: 404 },
-    ),
-   ),
+   vi.fn().mockImplementation(() => Promise.resolve(missingTableResponse(false))),
   );
 
   await expect(loadLatestAiConversationSession("user-1")).rejects.toBeInstanceOf(
