@@ -8,7 +8,6 @@ import {
  DropdownMenu,
  DropdownMenuContent,
  DropdownMenuItem,
- DropdownMenuLabel,
  DropdownMenuRadioGroup,
  DropdownMenuRadioItem,
  DropdownMenuSeparator,
@@ -92,8 +91,21 @@ export function AiConversationRuntimeMenu({
     </Button>
    </DropdownMenuTrigger>
    <DropdownMenuContent align="end" width="lg">
-    <DropdownMenuLabel>{healthMessage}</DropdownMenuLabel>
-    {runtimeLoadError ? <DropdownMenuLabel>{t("runtime.loadError")}</DropdownMenuLabel> : null}
+    <div className="grid gap-1 px-2.5 py-2">
+     <Typography
+      as="p"
+      variant="caption"
+      tone={runtimeHealth?.ready ? "successStrong" : "secondary"}
+      wrapping="breakWords"
+     >
+      {healthMessage}
+     </Typography>
+     {runtimeLoadError ? (
+      <Typography as="p" variant="caption" tone="danger" wrapping="breakWords">
+       {t("runtime.loadError")}
+      </Typography>
+     ) : null}
+    </div>
     <DropdownMenuSeparator />
     <DropdownMenuRadioGroup value={runtimeKeyId} onValueChange={onSelectRuntime}>
      <DropdownMenuRadioItem value={AUTO_RUNTIME_KEY_ID} disabled={isRuntimeLoading}>
@@ -107,7 +119,11 @@ export function AiConversationRuntimeMenu({
      ))}
     </DropdownMenuRadioGroup>
     {runtimeKeys.length === 0 && !isRuntimeLoading ? (
-     <DropdownMenuLabel>{t("runtime.empty")}</DropdownMenuLabel>
+     <div className="px-2.5 py-2">
+      <Typography as="p" variant="caption" tone="muted" wrapping="breakWords">
+       {t("runtime.empty")}
+      </Typography>
+     </div>
     ) : null}
     <DropdownMenuSeparator />
     <DropdownMenuItem onSelect={onRecheck} disabled={isHealthChecking || isRuntimeLoading}>
