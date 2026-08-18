@@ -29,7 +29,7 @@ export function conversationToReaderDocument(input: ConversationReaderInput): Re
  const segments: readonly ReaderSegment[] = input.turns
   .slice()
   .sort((left, right) => left.order - right.order)
-  .map((turn) => ({
+  .map<ReaderSegment>((turn) => ({
    id: turn.id,
    kind: "dialogue-turn",
    zh: turn.zh.trim(),
