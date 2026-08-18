@@ -81,6 +81,7 @@ import {
 const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
 const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"] as const;
 const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"] as const;
+const SESSION_STALE_TIME_MS = 30_000;
 
 type ManagedApiKey = ApiKeysResponse["keys"][number];
 type RetryTurn = { clientMessageId: string; content: string };
@@ -128,6 +129,8 @@ export function AiConversationWorkspace() {
    conversationIdFromUrl
     ? fetchAiConversationSession({ conversationId: conversationIdFromUrl, signal })
     : ensureAiConversationSession({ signal }),
+  staleTime: SESSION_STALE_TIME_MS,
+  refetchOnWindowFocus: false,
   retry: false,
  });
 
@@ -227,9 +230,6 @@ export function AiConversationWorkspace() {
     ),
    };
    queryClient.setQueryData(conversationSessionQueryKey(turn.conversationId), nextSession);
-   void queryClient.invalidateQueries({
-    queryKey: conversationSessionQueryKey(turn.conversationId),
-   });
    void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
    recordAiUsageEvent({
     apiKeyId: turn.apiKeyId,
@@ -516,7 +516,11 @@ export function AiConversationWorkspace() {
   !sessionQuery.isError;
 
  return (
-  <Card variant="section" padding="none" className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden">
+  <Card
+   variant="section"
+   padding="none"
+   className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
+  >
    <div className="flex min-w-0 shrink-0 flex-col gap-3 px-3 py-3 sm:px-4 lg:flex-row lg:items-center lg:justify-between">
     <div className="flex min-w-0 items-center gap-3">
      <Avatar size="md" shape="rounded" tone="accent" aria-hidden="true">
@@ -791,7 +795,12 @@ function ArchiveConversationDialog({
      </DialogBody>
     ) : null}
     <DialogFooter>
-     <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isArchiving}>
+     <Button
+      type="button"
+      variant="outline"
+      onClick={() => onOpenChange(false)}
+      disabled={isArchiving}
+     >
       {t("actions.cancel")}
      </Button>
      <Button type="button" variant="warning" onClick={onConfirm} disabled={isArchiving}>
@@ -894,7 +903,12 @@ function ConversationSettingsDialog({
       ) : null}
      </DialogBody>
      <DialogFooter>
-      <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isSaving}>
+      <Button
+       type="button"
+       variant="outline"
+       onClick={() => onOpenChange(false)}
+       disabled={isSaving}
+      >
        {t("actions.cancel")}
       </Button>
       <Button type="submit" disabled={isSaving}>
