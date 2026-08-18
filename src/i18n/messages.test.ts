@@ -65,4 +65,30 @@ describe("i18n message contracts", () => {
   expect(aiConversation.greeting).toContain("{mode}");
   expect(aiConversation.greeting).not.toContain("{role}");
  });
+
+ it.each(appLocales)("%s keeps the AI settings and memory manager message contract", async (locale) => {
+  const messages = await loadAppMessages(locale);
+  const settings = messages.AiConversationSettings;
+
+  expect(settings.overview.relationshipBands).toEqual(
+   expect.objectContaining({
+    new: expect.any(String),
+    familiar: expect.any(String),
+    friends: expect.any(String),
+    close: expect.any(String),
+   }),
+  );
+  expect(settings.memory.filters).toEqual(
+   expect.objectContaining({
+    all: expect.any(String),
+    global: expect.any(String),
+    character: expect.stringContaining("{name}"),
+    openLoops: expect.any(String),
+   }),
+  );
+  expect(settings.memory.relationshipWith).toContain("{name}");
+  expect(settings.memory.scopeCharacter).toContain("{name}");
+  expect(settings.memory.updated).toContain("{date}");
+  expect(settings.memory.actionsAria).toContain("{content}");
+ });
 });
