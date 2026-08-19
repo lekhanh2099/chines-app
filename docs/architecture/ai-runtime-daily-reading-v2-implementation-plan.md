@@ -141,11 +141,27 @@ Status: Scope 6A establishes the strict BYOK runtime owner and safe readiness co
 - [ ] Render and verify Dialog focus return, Tab trapping, Select collision, clipboard/discovery loading, failure and success states at desktop/tablet/mobile before final UI completion.
 
 ### Scope 7 — Daily Reading enrichment modules
-- [ ] Translation runs after durable article save and persists independently.
-- [ ] Vocabulary, grammar and questions validate/persist independently.
-- [ ] Partial success is preserved; retry only the failed module.
-- [ ] Missing key sets enrichment to blocked while article stays ready.
-- [ ] AI prompts use immutable captured article evidence and never rewrite Chinese source.
+
+Status: V2 enrichment is now an independent post-capture path. It accepts an already-persisted V2 article, resolves only the shared user BYOK runtime, and writes one module state at a time. Capture/scheduler success remains independent; UI status, user-triggered retry controls and auto-enrichment orchestration remain Scope 8.
+
+- [x] Add an authenticated V2 enrichment route that resolves `daily-reading-translation` / `daily-reading-learning` through the shared strict-BYOK runtime only.
+- [x] Keep the V2 enrichment provider user-key-only for Groq, OpenAI, DeepSeek and Gemini; never read `GEMINI_API_KEY`, `DEEPSEEK_API_KEY` or another provider env fallback.
+- [x] Translate the immutable captured article after durable save, preserving every source paragraph ID/order and using bounded chunks rather than head/tail evidence truncation.
+- [x] Keep Daily Reading V2 prompts and persisted enrichment free of generated pinyin; AI is explicitly forbidden from rewriting the captured Chinese source.
+- [x] Validate vocabulary against exact terms present in the captured article, reject duplicate/invented terms, and assign stable module-local item IDs on the server.
+- [x] Validate grammar evidence against complete sentences from the immutable captured article before accepting the module.
+- [x] Validate question evidence paragraph IDs and source phrases against the captured article, and require main-idea/detail/inference/summary coverage.
+- [x] Give each module its own schema/content repair attempt instead of returning one all-or-nothing translation/vocab/grammar/questions envelope.
+- [x] Add module-specific V2 storage mutation and enrichment-run persistence so one module can become ready/failed/blocked without resetting source content or sibling modules.
+- [x] Treat run history as diagnostics only: article/module persistence remains authoritative if telemetry cannot be written.
+- [x] Add interruption recovery so a pending/running enrichment can become retryable `failed` while the captured article remains readable.
+- [x] Map missing key to `blocked` and propagate that block to remaining learning modules without making redundant provider calls.
+- [x] Map invalid key, exhausted quota and provider-unavailable responses to module-local blocked states; network/invalid-response/cancelled remain module-local failures.
+- [x] Add client entry points for retrying one module independently and for sequentially requesting the full learning-support set without coupling it to capture.
+- [x] Add deterministic route/provider/service/client/storage tests for authorization, missing/vault states, raw-key non-exposure, no system-env fallback, full translation evidence coverage, source-bound validation, partial success and interruption safety.
+- [x] Keep automated tests at mocked provider/storage boundaries; no test writes production DB/provider state.
+- [ ] Execute targeted type/test/source-standard checks when an executable checkout is available.
+- [ ] Wire module status, retry/Add-Key controls and optional auto-enrichment orchestration into the rendered Daily Reading UX in Scope 8.
 
 ### Scope 8 — Daily Reading Settings and status UX
 - [ ] Redesign settings into basic collection controls plus advanced source/criteria controls.
