@@ -30,6 +30,23 @@ function document(overrides: Partial<ParsedDailyReadingSourceDocument> = {}): Pa
  };
 }
 
+function documentFromParagraphs(
+ sourceParagraphs: readonly string[],
+ overrides: Partial<ParsedDailyReadingSourceDocument> = {},
+): ParsedDailyReadingSourceDocument {
+ const extractedTextZh = sourceParagraphs.join("\n");
+ const hanCharacters = extractedTextZh.match(/[\u3400-\u9fff]/gu)?.length ?? 0;
+ const textCharacters = extractedTextZh.replace(/\s+/gu, "").length;
+ return document({
+  extractedTextZh,
+  paragraphsZh: sourceParagraphs,
+  hanCharacters,
+  textCharacters,
+  chineseDensity: textCharacters === 0 ? 0 : hanCharacters / textCharacters,
+  ...overrides,
+ });
+}
+
 describe("Daily Reading source quality", () => {
  it("accepts a coherent recent Chinese article and scores semantic extraction", () => {
   const result = assessDailyReadingSourceQuality({
@@ -45,6 +62,69 @@ describe("Daily Reading source quality", () => {
   expect(result.rejection).toBeNull();
   expect(result.titleBodyCoverage).toBeGreaterThan(0.5);
   expect(result.score).toBeGreaterThan(50);
+ });
+
+ it("accepts real short news paragraphs when they are sentence-like and Chinese-dense", () => {
+  const shortParagraphs = [
+   "社区图书馆延长夜间开放时间，方便上班族下班后继续阅读。",
+   "馆内新增自习座位和照明设备，也调整了晚间值班安排。",
+   "不少年轻读者表示，下班以后终于有稳定的公共阅读空间。",
+   "图书馆还准备了主题书架，集中推荐城市文化和生活类图书。",
+   "工作人员每天记录座位使用情况，并根据需求调整开放区域。",
+   "部分社区志愿者也参与服务，为第一次到馆的读者提供指引。",
+   "周末晚间会安排小型分享活动，让读者交流最近阅读的作品。",
+   "馆方表示会继续收集意见，观察夜间服务是否真正满足需求。",
+   "学校和社区也计划合作，把部分阅读活动延伸到公共文化空间。",
+   "一些家长认为延长开放时间，也方便学生完成课后阅读任务。",
+   "图书馆提醒读者提前查看活动安排，避免热门时段没有座位。",
+   "后续还会根据季节变化调整时间，并持续评估夜间开放效果。",
+  ] as const;
+  const result = assessDailyReadingSourceQuality({
+   document: documentFromParagraphs(shortParagraphs, {
+    pageTitleZh: "社区图书馆延长夜间开放时间",
+   }),
+   metadataTitleZh: "社区图书馆延长夜间开放时间",
+   metadataPublishedAt: "2026-08-19T02:00:00.000Z",
+   preferredLength: "any",
+   maximumFreshnessDays: 3,
+   now: new Date("2026-08-19T05:00:00.000Z"),
+  });
+
+  expect(result.hanCharacters).toBeGreaterThanOrEqual(240);
+  expect(result.coherentParagraphRatio).toBeGreaterThan(0.9);
+  expect(result.accepted).toBe(true);
+  expect(result.rejection).toBeNull();
+ });
+
+ it("still rejects heavily fragmented Chinese blocks without sentence structure", () => {
+  const fragments = [
+   "城市文化公共服务最新活动安排详细介绍内容一二三四五六",
+   "社区阅读空间开放通知相关说明信息内容一二三四五六七",
+   "夜间服务时间调整公告更多相关信息内容一二三四五六七",
+   "公共图书馆活动栏目推荐专题内容信息一二三四五六七八",
+   "文化空间便民服务页面介绍相关内容一二三四五六七八九",
+   "读者活动报名入口以及相关提示信息一二三四五六七八九",
+   "社区文化活动最新列表相关说明内容一二三四五六七八九",
+   "公共服务项目页面栏目说明信息内容一二三四五六七八九",
+   "城市阅读专题页面推荐内容相关信息一二三四五六七八九",
+   "夜间阅读活动页面说明栏目内容一二三四五六七八九十",
+   "公共文化服务专题导航相关内容信息一二三四五六七八九",
+   "社区图书馆服务项目列表相关内容一二三四五六七八九十",
+  ] as const;
+  const result = assessDailyReadingSourceQuality({
+   document: documentFromParagraphs(fragments, {
+    pageTitleZh: "城市文化公共服务最新活动安排",
+   }),
+   metadataTitleZh: "城市文化公共服务最新活动安排",
+   metadataPublishedAt: "2026-08-19T02:00:00.000Z",
+   preferredLength: "any",
+   maximumFreshnessDays: 3,
+   now: new Date("2026-08-19T05:00:00.000Z"),
+  });
+
+  expect(result.hanCharacters).toBeGreaterThanOrEqual(240);
+  expect(result.coherentParagraphRatio).toBeLessThan(0.35);
+  expect(result.rejection).toBe("incoherent-paragraphs");
  });
 
  it("rejects truncated, stale and unrelated extracted content at the quality boundary", () => {
