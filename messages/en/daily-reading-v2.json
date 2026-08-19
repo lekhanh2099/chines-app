@@ -100,6 +100,7 @@
   "runtimeReady": "Using {provider} · {model}",
   "runtimeMissing": "No AI API key yet. You can still read the complete source article.",
   "runtimeStorageUnavailable": "Server-side API key storage is not ready; the source article remains fully readable.",
+  "runtimeCheckFailed": "AI status could not be checked right now. The source article remains readable; try the status check again.",
   "modules": {
    "translation": {
     "title": "Vietnamese translation",
