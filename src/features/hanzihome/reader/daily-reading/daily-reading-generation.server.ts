@@ -9,7 +9,6 @@ import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
 import {
  requestDailyReadingProvider,
- requestDailyReadingSystemGemini,
  type DailyReadingProviderPhase,
 } from "./daily-reading-provider.server";
 import {
@@ -69,6 +68,9 @@ async function requestStructured<T>({
  if (boundedPrompt.length === 0 || boundedPrompt.length > dailyReadingPromptMaximumCharacters) {
   throw new Error("Daily Reading prompt vượt giới hạn an toàn.");
  }
+ if (credentials.length === 0) {
+  throw new Error("Daily Reading học tập cần API key cá nhân đang hoạt động.");
+ }
 
  const providerErrors: string[] = [];
  for (const credential of credentials) {
@@ -116,24 +118,8 @@ async function requestStructured<T>({
   }
  }
 
- const system = await requestDailyReadingSystemGemini({ prompt: boundedPrompt, phase, signal });
- if (system.content) {
-  const parsed = parseStructured(system.content, schema);
-  if (parsed !== null) {
-   return { data: parsed, provider: "Google Gemini", model: system.model };
-  }
-  providerErrors.push("Gemini hệ thống: nội dung JSON không khớp schema Daily Reading.");
- } else if (system.error) {
-  providerErrors.push(system.error);
- }
-
- if (credentials.length === 0 && !process.env.GEMINI_API_KEY) {
-  throw new Error(
-   "Không có AI provider khả dụng: chưa có API key cá nhân đang hoạt động và server chưa cấu hình GEMINI_API_KEY.",
-  );
- }
  throw new Error(
-  `Không có AI provider nào tạo được dữ liệu Daily Reading hợp lệ. ${providerErrors.join(" ")}`.trim(),
+  `Không có API key cá nhân nào tạo được dữ liệu Daily Reading hợp lệ. ${providerErrors.join(" ")}`.trim(),
  );
 }
 
