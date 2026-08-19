@@ -2,26 +2,25 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
  createReaderAutosaveController,
- emptyReaderSessionState,
  hasPendingReaderStateChange,
- moveReaderParagraph,
- readerFeatureStateFromSession,
- resolveReaderPlaybackEnd,
- readerSessionStateSchema,
- setReaderAnswer,
- toggleReaderAutoAdvance,
- toggleReaderLoop,
+ readerFeatureStateEqual,
  type ReaderAutosaveSave,
  type ReaderFeatureState,
 } from "./reader-session";
 
-const initialFeatureState = readerFeatureStateFromSession(emptyReaderSessionState);
+const initialFeatureState: ReaderFeatureState = {
+ showPinyin: false,
+ showMeaning: false,
+ completed: false,
+ summaryText: "",
+ answers: {},
+};
 
 function withFeatureChange(change: Partial<ReaderFeatureState>): ReaderFeatureState {
  return { ...initialFeatureState, ...change };
 }
 
-describe("HanziHome reader session", () => {
+describe("HanziHome reader persistence session", () => {
  afterEach(() => vi.useRealTimers());
 
  it("only reports state changes that have not been persisted", () => {
@@ -30,35 +29,16 @@ describe("HanziHome reader session", () => {
   expect(hasPendingReaderStateChange(1, 2)).toBe(false);
  });
 
- it("keeps paragraph navigation bounded", () => {
-  expect(moveReaderParagraph(emptyReaderSessionState, -1, 3).activeParagraphIndex).toBe(0);
-  expect(moveReaderParagraph(emptyReaderSessionState, 10, 3).activeParagraphIndex).toBe(2);
-  expect(moveReaderParagraph(emptyReaderSessionState, 10, 0).activeParagraphIndex).toBe(0);
- });
-
- it("makes loop and auto-advance mutually exclusive", () => {
-  const auto = toggleReaderAutoAdvance(emptyReaderSessionState);
-  expect(auto.autoAdvance).toBe(true);
-  expect(auto.loopCurrent).toBe(false);
-  const loop = toggleReaderLoop(auto);
-  expect(loop.loopCurrent).toBe(true);
-  expect(loop.autoAdvance).toBe(false);
- });
-
- it("advances or completes deterministically at playback end", () => {
-  const auto = toggleReaderAutoAdvance(emptyReaderSessionState);
-  expect(resolveReaderPlaybackEnd(auto, 3).activeParagraphIndex).toBe(1);
-  const last = moveReaderParagraph(auto, 2, 3);
-  expect(resolveReaderPlaybackEnd(last, 3).completed).toBe(true);
-  expect(resolveReaderPlaybackEnd(toggleReaderLoop(last), 3)).toEqual(toggleReaderLoop(last));
- });
-
- it("keeps answers in the reader-owned session state", () => {
-  const next = setReaderAnswer(emptyReaderSessionState, "question-1", "回答");
-  expect(next.answers).toEqual({
-   "question-1": { answer: "回答", score: null, completed: false, responseMs: null },
-  });
-  expect(readerSessionStateSchema.parse(next)).toEqual(next);
+ it("compares persisted feature state without runtime playback fields", () => {
+  expect(readerFeatureStateEqual(initialFeatureState, { ...initialFeatureState })).toBe(true);
+  expect(
+   readerFeatureStateEqual(initialFeatureState, {
+    ...initialFeatureState,
+    answers: {
+     question: { answer: "回答", score: 1, completed: true, responseMs: 1200 },
+    },
+   }),
+  ).toBe(false);
  });
 
  it("debounces changes and flushes the latest state with the returned revision", async () => {
@@ -136,7 +116,7 @@ describe("HanziHome reader session", () => {
   controller.dispose();
  });
 
- it("does not send a request when only non-persisted state is scheduled", () => {
+ it("does not send a request when the scheduled state matches persistence", () => {
   vi.useFakeTimers();
   const save = vi.fn<ReaderAutosaveSave>(() => Promise.resolve(null));
   const controller = createReaderAutosaveController({
