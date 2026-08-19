@@ -14,13 +14,29 @@ function longestPotentialTagPrefix(value: string, prefixes: readonly string[]) {
  return 0;
 }
 
-function findThinkTag(value: string, fromIndex = 0) {
+function isThinkTagBoundary(value: string | undefined) {
+ return value === undefined || value === ">" || /\s/u.test(value);
+}
+
+function findValidPrefix(value: string, prefix: string, fromIndex: number) {
  const lower = value.toLowerCase();
- const opening = lower.indexOf(openingThinkPrefix, fromIndex);
- const closing = lower.indexOf(closingThinkPrefix, fromIndex);
- if (opening < 0) return closing;
- if (closing < 0) return opening;
- return Math.min(opening, closing);
+ let index = lower.indexOf(prefix, fromIndex);
+ while (index >= 0) {
+  if (isThinkTagBoundary(lower[index + prefix.length])) return index;
+  index = lower.indexOf(prefix, index + 1);
+ }
+ return -1;
+}
+
+function findThinkTag(value: string) {
+ const opening = findValidPrefix(value, openingThinkPrefix, 0);
+ const closing = findValidPrefix(value, closingThinkPrefix, 0);
+ if (opening < 0 && closing < 0) return null;
+ if (opening < 0) return { index: closing, opening: false };
+ if (closing < 0) return { index: opening, opening: true };
+ return opening <= closing
+  ? { index: opening, opening: true }
+  : { index: closing, opening: false };
 }
 
 export function createAiConversationVisibleStreamFilter() {
@@ -33,7 +49,7 @@ export function createAiConversationVisibleStreamFilter() {
 
   while (pending.length > 0) {
    if (hidden) {
-    const closingIndex = pending.toLowerCase().indexOf(closingThinkPrefix);
+    const closingIndex = findValidPrefix(pending, closingThinkPrefix, 0);
     if (closingIndex < 0) {
      const keep = longestPotentialTagPrefix(pending, [closingThinkPrefix]);
      pending = keep > 0 ? pending.slice(-keep) : "";
@@ -48,8 +64,8 @@ export function createAiConversationVisibleStreamFilter() {
     continue;
    }
 
-   const tagIndex = findThinkTag(pending);
-   if (tagIndex < 0) {
+   const tag = findThinkTag(pending);
+   if (tag === null) {
     const keep = longestPotentialTagPrefix(pending, [openingThinkPrefix, closingThinkPrefix]);
     if (keep > 0) {
      visible += pending.slice(0, -keep);
@@ -61,13 +77,12 @@ export function createAiConversationVisibleStreamFilter() {
     break;
    }
 
-   visible += pending.slice(0, tagIndex);
-   pending = pending.slice(tagIndex);
+   visible += pending.slice(0, tag.index);
+   pending = pending.slice(tag.index);
    const close = pending.indexOf(">");
    if (close < 0) break;
-   const tag = pending.slice(0, close + 1).toLowerCase();
    pending = pending.slice(close + 1);
-   if (tag.startsWith(openingThinkPrefix)) hidden = true;
+   if (tag.opening) hidden = true;
   }
 
   return visible;
