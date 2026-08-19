@@ -33,6 +33,7 @@ import { appShellStore } from "@/stores/app-shell-store";
 import { sidebarStore } from "@/stores/sidebar-store";
 
 type NavigationGroup = (typeof navigationGroups)[number];
+type ManualGroupDisclosure = { routeKey: string; groupId: string } | null;
 
 function matchesHref(
  pathname: string,
@@ -180,13 +181,17 @@ export function Sidebar() {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
+ const routeKey = `${pathname}?${searchParams.toString()}`;
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
  const activeGroupId = navigationGroups.find((group) =>
   groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
- const [expandedGroupId, setExpandedGroupId] = useState<string | null>(null);
- const openGroupId = expandedGroupId ?? activeGroupId ?? navigationGroups[0].id;
+ const [manualGroupDisclosure, setManualGroupDisclosure] =
+  useState<ManualGroupDisclosure>(null);
+ const manuallyExpandedGroupId =
+  manualGroupDisclosure?.routeKey === routeKey ? manualGroupDisclosure.groupId : null;
+ const openGroupId = manuallyExpandedGroupId ?? activeGroupId ?? navigationGroups[0].id;
 
  useEffect(() => {
   hydrateSidebar();
@@ -259,9 +264,10 @@ export function Sidebar() {
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
           onClick={() => {
-           setExpandedGroupId((current) =>
-            current === group.id ? (activeGroupId ?? null) : group.id,
-           );
+           setManualGroupDisclosure((current) => {
+            const currentGroupId = current?.routeKey === routeKey ? current.groupId : null;
+            return currentGroupId === group.id ? null : { routeKey, groupId: group.id };
+           });
           }}
          >
           <span className="flex min-w-0 flex-1 items-center gap-3">
@@ -297,7 +303,7 @@ export function Sidebar() {
               itemId={itemId}
               active={isActive(pathname, searchParams, itemId)}
               collapsed={false}
-              onNavigate={() => setExpandedGroupId(null)}
+              onNavigate={() => setManualGroupDisclosure(null)}
              />
             ))}
            </div>
