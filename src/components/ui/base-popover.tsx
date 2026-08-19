@@ -20,6 +20,8 @@ const BasePopoverVariantSchema = z.enum([
 ]);
 const BasePopoverTriggerWidthSchema = z.enum(["auto", "full"]);
 
+// Popup layout is variant-owned on purpose. Feature code must not replace the
+// primitive className, otherwise background/border/shadow contracts are lost.
 type BasePopoverPopupProps = Omit<React.ComponentProps<typeof Popover.Popup>, "className"> & {
  variant?: z.infer<typeof BasePopoverVariantSchema>;
 };
