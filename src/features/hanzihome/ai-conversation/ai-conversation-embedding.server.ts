@@ -2,7 +2,9 @@ import "server-only";
 
 import { z } from "zod";
 
+import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
+import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
 
 export const AI_CONVERSATION_MEMORY_EMBEDDING_MODEL = "gemini-embedding-001";
 export const AI_CONVERSATION_MEMORY_EMBEDDING_VERSION = 1;
@@ -20,28 +22,44 @@ type MemoryEmbeddingTask = "RETRIEVAL_DOCUMENT" | "RETRIEVAL_QUERY";
 
 export type AiConversationMemoryEmbeddingResult =
  | { available: true; values: number[] }
- | { available: false; reason: "missing-key" | "provider-error" | "invalid-response" };
+ | {
+    available: false;
+    reason: "missing-key" | "runtime-unavailable" | "provider-error" | "invalid-response";
+   };
 
 export async function generateAiConversationMemoryEmbedding({
+ supabase,
+ userId,
  text,
  task,
  signal,
 }: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
  text: string;
  task: MemoryEmbeddingTask;
  signal?: AbortSignal;
 }): Promise<AiConversationMemoryEmbeddingResult> {
- const apiKey = process.env.GEMINI_API_KEY;
- if (!apiKey) return { available: false, reason: "missing-key" };
-
  const normalizedText = text.normalize("NFC").trim();
  if (!normalizedText) return { available: false, reason: "invalid-response" };
+
+ const resolution = await resolveUserAiRuntime({
+  supabase,
+  userId,
+  capability: "semantic-memory",
+ });
+ if (!resolution.ok) {
+  return {
+   available: false,
+   reason: resolution.status === "missing-key" ? "missing-key" : "runtime-unavailable",
+  };
+ }
 
  throwIfAborted(signal);
 
  try {
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent?key=${apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent?key=${resolution.runtime.apiKey}`,
    {
     method: "POST",
     headers: { "Content-Type": "application/json" },
