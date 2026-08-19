@@ -1,7 +1,6 @@
 import type {
  ReaderContentCapability,
  ReaderDocumentModel,
- ReaderMetadataItem,
  ReaderSegment,
 } from "../model/reader-document.types";
 import type {
@@ -112,11 +111,6 @@ export function buildDailyReadingReaderDocument(reading: DailyReadingV2): Reader
    ...(translated?.roleVi ? { role: translated.roleVi } : {}),
   };
  });
- const metadata: ReaderMetadataItem[] = [
-  { id: "publisher", label: "Nguồn", value: reading.source.publisher },
-  { id: "captured-at", label: "Đã lưu", value: reading.capturedAt },
-  { id: "minutes", label: "Thời lượng", value: String(reading.estimatedMinutes) },
- ];
  const capabilities: ReaderContentCapability[] = translation === null ? [] : ["translation"];
 
  return {
@@ -132,7 +126,7 @@ export function buildDailyReadingReaderDocument(reading: DailyReadingV2): Reader
   ...(translation?.titleVi ? { titleVi: translation.titleVi } : {}),
   sections: [],
   segments,
-  metadata,
+  metadata: [],
   capabilities,
  };
 }
