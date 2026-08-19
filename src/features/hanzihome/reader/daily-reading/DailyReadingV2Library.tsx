@@ -1,14 +1,6 @@
 "use client";
 
-import {
- ArrowLeft,
- ChevronRight,
- FileText,
- History,
- Search,
- Settings,
- Sparkles,
-} from "lucide-react";
+import { ArrowLeft, FileText, History, Search, Settings } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { type ComponentProps, useMemo, useState } from "react";
@@ -361,11 +353,10 @@ export function DailyReadingV2Library() {
               </Typography>
              </div>
             </div>
-            <div className="flex min-w-0 items-center gap-2 lg:justify-end">
+            <div className="flex min-w-0 items-center lg:justify-end">
              <Badge variant={learningStatusVariant(reading)} size="sm" casing="natural">
               {learningLabel}
              </Badge>
-             <ChevronRight aria-hidden />
             </div>
            </div>
           </Link>
@@ -556,12 +547,9 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
        minutes: reading.estimatedMinutes,
       })}
      </Typography>
-     <div className="flex min-w-0 flex-wrap items-center gap-2">
-      <Sparkles aria-hidden />
-      <Typography variant="caption" tone="muted">
-       {t("v2.library.learningReady", { ready: learning.ready, total: learning.total })}
-      </Typography>
-     </div>
+     <Typography variant="caption" tone="muted">
+      {t("v2.library.learningReady", { ready: learning.ready, total: learning.total })}
+     </Typography>
     </div>
    </header>
 
@@ -663,16 +651,13 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
 
     <TabsContent value="source" className="pt-4">
      <Card variant="subtle" padding="md" className="grid gap-3">
-      <div className="flex items-start gap-3">
-       <FileText aria-hidden />
-       <div className="grid min-w-0 gap-1">
-        <HanziText as="h3" size="medium" weight="black">
-         {reading.source.titleZh}
-        </HanziText>
-        <Typography variant="bodySmall" tone="muted">
-         {reading.source.publisher} · {dateFormatter.format(new Date(reading.source.publishedAt))}
-        </Typography>
-       </div>
+      <div className="grid min-w-0 gap-1">
+       <HanziText as="h3" size="medium" weight="black">
+        {reading.source.titleZh}
+       </HanziText>
+       <Typography variant="bodySmall" tone="muted">
+        {reading.source.publisher} · {dateFormatter.format(new Date(reading.source.publishedAt))}
+       </Typography>
       </div>
       {reading.provenance === "legacy-adapted" && translation?.adaptationNoticeVi ? (
        <Typography variant="bodySmall" tone="secondary">
