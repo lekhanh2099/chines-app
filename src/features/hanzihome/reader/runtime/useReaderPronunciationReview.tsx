@@ -122,6 +122,13 @@ export function useReaderPronunciationReview({
    })
    .catch((error: Error) => setSaveError(error.message));
  }, [invalidate, override, setSaveError]);
+ const openFullInspector = useCallback(
+  (text: string, rect: DOMRect) => {
+   setTarget(null);
+   openInspector(text, { anchorRect: rect });
+  },
+  [openInspector],
+ );
 
  const popover = target ? (
   <ReaderPronunciationReviewPopover
@@ -132,7 +139,7 @@ export function useReaderPronunciationReview({
    onClose={() => setTarget(null)}
    onSave={save}
    onReset={override ? reset : undefined}
-   onOpenInspector={(text, rect) => openInspector(text, { anchorRect: rect })}
+   onOpenInspector={openFullInspector}
   />
  ) : null;
 
