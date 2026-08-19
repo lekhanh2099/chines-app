@@ -2,7 +2,7 @@
 
 import { ArrowRight, RefreshCcw } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useMemo } from "react";
+import { type ComponentProps, useMemo } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -48,20 +48,22 @@ function statusKey(status: ActivityStatus): StatusTranslationKey {
  }
 }
 
-function statusVariant(status: ActivityStatus) {
+function statusVariant(status: ActivityStatus): ComponentProps<typeof Badge>["variant"] {
  switch (status) {
   case "succeeded":
-   return "success" as const;
+   return "success";
   case "pending":
-   return "info" as const;
+   return "info";
   case "failed":
-   return "danger" as const;
+   return "danger";
   case "blocked":
-   return "warning" as const;
+   return "warning";
  }
 }
 
-function captureStageKey(stage: Extract<DailyReadingActivityEntry, { kind: "capture" }>["stage"]): CaptureStageTranslationKey {
+function captureStageKey(
+ stage: Extract<DailyReadingActivityEntry, { kind: "capture" }>["stage"],
+): CaptureStageTranslationKey {
  switch (stage) {
   case "discovering":
    return "v2.activity.stage.discovering";
@@ -76,7 +78,9 @@ function captureStageKey(stage: Extract<DailyReadingActivityEntry, { kind: "capt
  }
 }
 
-function moduleKey(module: Extract<DailyReadingActivityEntry, { kind: "enrichment" }>["module"]): ModuleTranslationKey {
+function moduleKey(
+ module: Extract<DailyReadingActivityEntry, { kind: "enrichment" }>["module"],
+): ModuleTranslationKey {
  switch (module) {
   case "translation":
    return "v2.enrichment.modules.translation.title";
@@ -151,7 +155,9 @@ export function DailyReadingV2ActivityLog({
           </Typography>
          </div>
          <Typography variant="bodySmall" weight="semibold">
-          {entry.kind === "capture" ? t("v2.activity.captureTitle") : t("v2.activity.enrichmentTitle")}
+          {entry.kind === "capture"
+           ? t("v2.activity.captureTitle")
+           : t("v2.activity.enrichmentTitle")}
          </Typography>
          {hasArticle ? (
           <HanziText as="p" size="medium" weight="bold" clamp="two">
