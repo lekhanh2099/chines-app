@@ -10,6 +10,7 @@ import {
 import {
  dailyReadingV2CaptureResponseSchema,
  type DailyReadingV2,
+ type DailyReadingV2CaptureResponse,
  type DailyReadingV2CaptureStage,
 } from "./daily-reading-v2.schemas";
 import { vietnamDailyReadingDateKey } from "./daily-reading.scheduler";
@@ -61,6 +62,75 @@ function captureHistoryInput() {
  }));
 }
 
+async function requestCapture(
+ kind: DailyReadingGenerationKind,
+ signal: AbortSignal,
+): Promise<DailyReadingV2CaptureResponse> {
+ const response = await fetch("/api/hanzihome/reader/daily-reading/capture", {
+  method: "POST",
+  headers: {
+   "Content-Type": "application/json",
+   Accept: "application/json",
+  },
+  credentials: "include",
+  cache: "no-store",
+  signal,
+  body: JSON.stringify({
+   mode: kind,
+   settings: getDailyReadingV2SettingsSnapshot(),
+   history: captureHistoryInput(),
+  }),
+ });
+ if (!response.ok) throw await decodeFailure(response);
+ const parsed = dailyReadingV2CaptureResponseSchema.safeParse(await response.json());
+ if (!parsed.success) {
+  throw new DailyReadingV2ClientError(
+   "source-extraction-failed",
+   "Server trả bài nguồn Daily Reading không đúng contract.",
+  );
+ }
+ return parsed.data;
+}
+
+function normalizeCaptureClientError(error: unknown, timeoutMessage: string) {
+ if (error instanceof DailyReadingV2ClientError) return error;
+ if (error instanceof DOMException && error.name === "AbortError") {
+  return new DailyReadingV2ClientError("timeout", timeoutMessage);
+ }
+ return new DailyReadingV2ClientError(
+  "source-extraction-failed",
+  error instanceof Error ? error.message : "Không thể tìm bài Daily Reading.",
+ );
+}
+
+export async function previewDailyReadingV2Source(): Promise<DailyReadingV2CaptureResponse> {
+ if (navigator.onLine === false) {
+  throw new DailyReadingV2ClientError("offline", "Thiết bị đang offline.");
+ }
+
+ try {
+  return await withDailyReadingGenerationLock(async () => {
+   const controller = new AbortController();
+   const timeout = window.setTimeout(() => controller.abort(), 120_000);
+   try {
+    return await requestCapture("manual", controller.signal);
+   } catch (error) {
+    throw normalizeCaptureClientError(
+     error,
+     "Kiểm tra nguồn Daily Reading quá 120 giây và đã được hủy.",
+    );
+   } finally {
+    window.clearTimeout(timeout);
+   }
+  });
+ } catch (error) {
+  if (error instanceof DailyReadingGenerationBusyError) {
+   throw new DailyReadingV2ClientError("generation-busy", error.message);
+  }
+  throw error;
+ }
+}
+
 export async function captureDailyReadingNow(
  kind: DailyReadingGenerationKind,
  options: { onProgress?(stage: DailyReadingV2CaptureStage): void } = {},
@@ -104,33 +174,11 @@ export async function captureDailyReadingNow(
 
    try {
     options.onProgress?.("discovering");
-    const response = await fetch("/api/hanzihome/reader/daily-reading/capture", {
-     method: "POST",
-     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-     },
-     credentials: "include",
-     cache: "no-store",
-     signal: controller.signal,
-     body: JSON.stringify({
-      mode: kind,
-      settings: getDailyReadingV2SettingsSnapshot(),
-      history: captureHistoryInput(),
-     }),
-    });
-    if (!response.ok) throw await decodeFailure(response);
-    const parsed = dailyReadingV2CaptureResponseSchema.safeParse(await response.json());
-    if (!parsed.success) {
-     throw new DailyReadingV2ClientError(
-      "source-extraction-failed",
-      "Server trả bài nguồn Daily Reading không đúng contract.",
-     );
-    }
+    const result = await requestCapture(kind, controller.signal);
 
     stage = "saving";
     options.onProgress?.("saving");
-    const saved = saveDailyReadingV2Article(parsed.data.reading);
+    const saved = saveDailyReadingV2Article(result.reading);
 
     stage = "completed";
     options.onProgress?.("completed");
@@ -141,15 +189,10 @@ export async function captureDailyReadingNow(
     }
     return saved;
    } catch (error) {
-    const resolved =
-     error instanceof DailyReadingV2ClientError
-      ? error
-      : error instanceof DOMException && error.name === "AbortError"
-        ? new DailyReadingV2ClientError("timeout", "Tìm bài Daily Reading quá 120 giây và đã được hủy.")
-        : new DailyReadingV2ClientError(
-           "source-extraction-failed",
-           error instanceof Error ? error.message : "Không thể tìm bài Daily Reading.",
-          );
+    const resolved = normalizeCaptureClientError(
+     error,
+     "Tìm bài Daily Reading quá 120 giây và đã được hủy.",
+    );
     try {
      persistRun(
       "failed",
