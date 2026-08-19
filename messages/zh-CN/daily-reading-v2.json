@@ -8,11 +8,64 @@
   "description": "先保存中文来源文章。翻译、词汇、语法和问题是独立的 AI 学习辅助，可以之后再补充。",
   "autoOn": "自动寻找文章已开启",
   "autoOff": "仅手动寻找文章",
-  "learningReady": "已完成 {ready}/{total} 个学习模块"
+  "learningReady": "已完成 {ready}/{total} 个学习模块",
+  "tabs": {
+   "articles": "已找到的文章",
+   "activity": "活动记录",
+   "aria": "Daily Reading 资料库与活动记录"
+  },
+  "status": {
+   "todayLabel": "今天",
+   "todayRunning": "正在寻找文章",
+   "todayReady": "今天的文章已就绪",
+   "manualOnly": "仅手动寻找",
+   "todayDue": "已到时间，等待执行任务",
+   "todayWaiting": "还未到寻找时间",
+   "scheduleLabel": "自动计划",
+   "scheduleEnabled": "每天 {time}",
+   "scheduleDisabled": "已关闭",
+   "libraryLabel": "资料库"
+  },
+  "article": {
+   "sourceReady": "来源文章已就绪",
+   "learningComplete": "AI 已完成",
+   "learningRunning": "AI 正在生成",
+   "learningAttention": "AI 需要处理",
+   "learningPending": "AI {ready}/{total}"
+  }
+ },
+ "activity": {
+  "title": "活动历史",
+  "description": "当前设备上真实的文章寻找和 AI 学习辅助运行记录，最新记录在最上方。",
+  "emptyTitle": "还没有活动记录",
+  "emptyDescription": "Daily Reading 寻找文章或生成学习辅助后，状态和时间会显示在这里。",
+  "captureTitle": "寻找来源文章",
+  "enrichmentTitle": "AI 学习辅助",
+  "captureDetail": "{mode} · {stage}",
+  "enrichmentDetail": "{module}",
+  "openArticle": "打开文章",
+  "retryCapture": "重新寻找",
+  "status": {
+   "pending": "运行中",
+   "succeeded": "已完成",
+   "failed": "失败",
+   "blocked": "已阻止"
+  },
+  "stage": {
+   "discovering": "寻找来源",
+   "extracting": "提取文章",
+   "ranking": "评估文章",
+   "saving": "保存文章",
+   "completed": "已保存"
+  }
+ },
+ "detail": {
+  "supportTab": "AI 辅助",
+  "capturedMeta": "保存于 {time} · {publisher} · {minutes} 分钟"
  },
  "settings": {
   "title": "Daily Reading",
-  "description": "HanziHome 会先寻找并保存来源文章；AI 只在之后补充释义和学习内容。没有 API key 也不会影响寻找或阅读文章。",
+  "description": "配置 HanziHome 如何寻找来源文章以及是否补充 AI 学习辅助。状态、资料库和任务历史统一放在 Daily Reading 页面。",
   "capture": {
    "title": "来源文章",
    "description": "选择 HanziHome 何时、按什么条件寻找文章。文章一旦保存就视为成功，即使 AI 学习辅助尚未完成。",
@@ -31,7 +84,7 @@
    "testingSource": "正在检查来源",
    "findNow": "寻找新文章",
    "findingNow": "正在寻找文章",
-   "sourceIndependent": "检查来源和寻找文章都不使用 AI API key。"
+   "sourceIndependent": "来源检查只验证发现与提取能力，不使用 AI API key。"
   },
   "sourcePreview": {
    "title": "最近一次来源检查",
@@ -126,7 +179,7 @@
    "failed": "需要重试",
    "missingKey": "需要 API key",
    "invalidKey": "Key 无效",
-   "quota": "额度已用完",
+   "quota": "额度 / 频率限制",
    "providerUnavailable": "Provider 暂不可用"
   },
   "actions": {
