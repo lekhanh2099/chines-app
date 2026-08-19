@@ -328,10 +328,16 @@ export async function enrichDailyReadingV2LearningSupport(articleId: string) {
  for (let index = 0; index < modules.length; index += 1) {
   const module = modules[index];
   if (module === undefined) continue;
+  const existingState = current.enrichment[module];
+  if (existingState.status === "ready" || existingState.status === "running") continue;
+
   current = await enrichDailyReadingV2Module(articleId, module);
   const state = current.enrichment[module];
   if (state.status !== "blocked") continue;
+
   for (const remaining of modules.slice(index + 1)) {
+   const remainingState = current.enrichment[remaining];
+   if (remainingState.status === "ready" || remainingState.status === "running") continue;
    current = updateDailyReadingV2Enrichment(
     articleId,
     blockedStateUpdate(remaining, state.reason),
