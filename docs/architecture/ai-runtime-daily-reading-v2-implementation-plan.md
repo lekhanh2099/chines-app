@@ -4,7 +4,7 @@
 
 ## Goal
 
-Make Daily Reading an article-acquisition system with optional AI enrichment, and make all user-facing AI use encrypted per-user BYOK credentials from the backend. Daily Reading must remain readable after source capture even if AI enrichment fails or no AI key exists. Conversation should later use HTTP streaming, not WebSocket.
+Make Daily Reading an article-acquisition system with optional AI enrichment, and make all user-facing AI use encrypted per-user BYOK credentials from the backend. Daily Reading must remain readable after source capture even if AI enrichment fails or no AI key exists. Conversation uses HTTP streaming rather than WebSocket.
 
 ## Non-goals
 
@@ -175,11 +175,23 @@ Status: V2 source-first settings/status UX is implemented. Source preview/captur
 
 ### Scope 9 — Conversation HTTP streaming
 
-- [ ] Preserve user-message persistence and idempotency before streaming.
-- [ ] Stream sanitized assistant deltas over HTTP/NDJSON.
-- [ ] Add Stop via AbortController; cancelled partial assistant output is UI-only and not persisted.
-- [ ] Preserve retry using the same client message ID without duplication.
-- [ ] Incrementally suppress provider reasoning/`<think>` across chunk boundaries and final-sanitize before persistence.
+Status: persisted conversation turns now have an additive HTTP/NDJSON streaming path backed only by the shared personal BYOK runtime. The legacy JSON route remains available as a compatibility surface until cleanup. Source implementation and deterministic regression coverage are present; executable type/test/UI verification remains pending.
+
+- [x] Preserve user-message persistence and `clientMessageId` idempotency before provider streaming.
+- [x] Add a dedicated authenticated `/api/ai/conversation/stream` NDJSON route without breaking the legacy JSON route/action.
+- [x] Resolve persisted user-facing turns through shared `conversation` BYOK capability only; no system-provider fallback in the persisted turn path.
+- [x] Stream Groq/OpenAI/DeepSeek/Gemini provider responses over SSE internally and emit normalized `start` / `delta` / `heartbeat` / `final` / `error` NDJSON events to the browser.
+- [x] Ignore provider reasoning fields and incrementally suppress `<think>` content across split chunk boundaries before any delta reaches the UI.
+- [x] Final-sanitize the complete server-side reply before assistant persistence and emit `final` only after that persisted assistant exists.
+- [x] Add Stop through AbortController; cancelled partial assistant output stays presentation-only and is not persisted.
+- [x] Preserve retry with the same `clientMessageId`; an already-persisted assistant reply is replayed without a second provider call.
+- [x] Render streamed assistant text in the existing typing bubble and expose a compact Stop action while the stream is active.
+- [x] Keep transient stream presentation in a scoped TanStack Store rather than persisted/browser storage.
+- [x] Make Auto runtime personal-BYOK-only, keep history readable without a key, gate new sends through runtime health, and expose reusable Add API Key recovery in the runtime menu.
+- [x] Update vi/en/zh-CN runtime/Stop copy parity.
+- [x] Add deterministic filter/provider/client/route/turn tests for split reasoning tags, SSE parsing, personal-key use, idempotent replay and cancelled persistence safety.
+- [ ] Execute targeted type/test/i18n/source-standard checks when an executable checkout is available.
+- [ ] Render/verify phone, iPad and desktop states for streaming, Stop, retry, missing-key/Add-Key and provider failures.
 
 ### Scope 10 — Conversation memory/runtime migration
 
