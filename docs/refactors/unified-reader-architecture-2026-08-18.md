@@ -46,6 +46,7 @@ Adapters normalize source metadata into `ReaderDocumentModel`; the generic surfa
 - active segment/index
 - position source
 - playback status/progress
+- playback start character offset
 - continuous TTS
 - playback rate
 - loop current segment
@@ -54,6 +55,8 @@ Adapters normalize source metadata into `ReaderDocumentModel`; the generic surfa
 - completion callback
 
 High-frequency playback progress is stored in the scoped Reader runtime store. Consumers subscribe with selectors so playback ticks do not re-render unrelated Reader modules.
+
+Clicking a Hanzi starts playback from that character inside the current segment. Character-start playback does not silently auto-advance into the next segment; the full `Nghe bài` command remains the continuous-reading action.
 
 The old Reader session playback/navigation fields are superseded. `reader-session.ts` now exists only for persistence/autosave helpers and feature-state utilities.
 
@@ -76,21 +79,30 @@ Source modules may wrap sections/segments through render hooks but must preserve
 
 Contextual pinyin is a proposal, not an unquestioned answer.
 
-Every contextual Hanzi glyph remains inspectable. The pronunciation review surface shows:
+The click contract is deliberately split:
+
+- Hanzi click/keyboard activation starts reading from that Hanzi.
+- Pinyin click/keyboard activation opens pronunciation review for that glyph/phrase.
+- Do not overload Hanzi click with pronunciation review; that breaks the reading interaction.
+- The review affordance belongs visually to Pinyin, not to the Hanzi glyph.
+
+The pronunciation review surface shows:
 
 - the reviewed word/phrase
 - current contextual reading
-- confidence state
-- Vietnamese meaning when available, with an explicit fallback when unavailable
+- evidence-oriented status instead of pretending heuristic scores are calibrated probabilities
+- Vietnamese meaning when available
 - alternatives per Hanzi
-- a manual confirmation action when the source has persistence ownership
+- a confirmation/apply action when the current source supports it
 - a full-analysis handoff to the vocabulary inspector
 
-Polyphonic output without a manual override intentionally receives lower confidence. A saved sentence-instance override becomes the displayed lexical and spoken reading for that instance.
+A saved sentence-instance override becomes the displayed lexical and spoken reading for that instance.
 
-Reader-owned/Daily/Personal resources persist pronunciation through the existing pronunciation override API. Generic lesson/plain/article/conversation surfaces may inspect pronunciation and open full analysis without pretending that a confirmation was persisted.
+Reader-owned/Daily/Personal resources persist pronunciation through the existing pronunciation override API. Generic lesson/plain/article/conversation surfaces can apply a session-local pronunciation override for immediate study, but the UI must state that this is session-only and must not imply durable confirmation.
 
-Pronunciation analysis must remain paragraph-local: overrides are grouped by paragraph, dictionary inputs use stable signatures and unchanged paragraph analysis is reused so confirming one pronunciation does not recompute the whole document.
+Generic session overrides live in a scoped TanStack store. Each `ReaderSegmentText` subscribes only to its own segment override array, so applying one pronunciation updates only that text segment rather than invalidating/re-rendering the whole document.
+
+Persistent Reader pronunciation analysis must remain paragraph-local: overrides are grouped by paragraph, dictionary inputs use stable signatures and unchanged paragraph analysis is reused so confirming one pronunciation does not recompute the whole document.
 
 ### Pronunciation popover UI contract
 
@@ -160,6 +172,8 @@ Do not move high-frequency TTS state back into React context values consumed by 
 
 Do not recompute contextual pronunciation for every paragraph when one override changes. Keep analysis cached by paragraph content/source-pinyin/dictionary/override signature.
 
+Do not store generic session pronunciation overrides in `ReaderSurface` React state. Keep them in the scoped pronunciation store so one segment subscription changes independently.
+
 Do not let passive scroll tracking overwrite the active segment during TTS playback.
 
 Do not put source-specific database rows into generic Reader rendering components.
@@ -172,6 +186,7 @@ Avoid restoring large all-in-one Reader files. Responsibilities are intentionall
 
 - model/adapters
 - runtime store/provider
+- pronunciation session store
 - command bar/tools
 - document content
 - outline
@@ -192,11 +207,12 @@ At minimum verify:
 2. HSK exposes sticky study tabs plus a sticky Reader toolbar without overlap.
 3. Daily Reading exposes sticky Daily tabs plus the same Reader toolbar without overlap.
 4. Long Reader documents scroll continuously and outline navigation targets the correct nested scroll container.
-5. Clicking any contextual pinyin/Hanzi opens pronunciation review; polyphonic content is not presented as automatically confirmed.
-6. Saving a pronunciation override updates the displayed reading after refresh/invalidation.
-7. Generic lesson/plain/article/conversation pronunciation review does not expose a fake persistence action.
-8. Opening full analysis replaces rather than stacks over pronunciation review.
-9. Pronunciation review keeps its elevated background/border/shadow and remains viewport-bounded on narrow screens.
-10. Playback progress highlights the active character without visibly re-rendering unrelated rows.
-11. Loop/auto-advance remain mutually exclusive and passive scroll does not steal playback position.
-12. Reader settings persist through the shared learning-settings path.
+5. Clicking Hanzi starts reading from that Hanzi; clicking only its Pinyin opens pronunciation review.
+6. Applying one generic/session pronunciation change updates only that segment and does not cause unrelated document rows to re-render.
+7. Saving a persistent Reader pronunciation override updates the displayed reading after refresh/invalidation while reusing unchanged paragraph analysis.
+8. Generic lesson/plain/article/conversation pronunciation review clearly labels session-only changes instead of pretending they were persisted.
+9. Opening full analysis replaces rather than stacks over pronunciation review.
+10. Pronunciation review keeps its elevated background/border/shadow and remains viewport-bounded on narrow screens.
+11. Playback progress starts highlighting at the clicked Hanzi offset and does not visibly re-render unrelated rows.
+12. Loop/auto-advance remain mutually exclusive and passive scroll does not steal playback position.
+13. Reader settings persist through the shared learning-settings path.
