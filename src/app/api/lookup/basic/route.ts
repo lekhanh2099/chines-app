@@ -10,9 +10,8 @@ import {
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
+import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getBasicVocabData,
  getDictionaryEntryByHeadword,
@@ -56,6 +55,18 @@ function hasUsableBasicMeaning(
  vocabData: ReturnType<typeof getBasicVocabData>,
 ): vocabData is VocabData {
  return !!vocabData?.meaning.trim();
+}
+
+function runtimeError(status: "missing-key" | "storage-unavailable") {
+ return status === "missing-key"
+  ? NextResponse.json(
+     { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
+     { status: 409 },
+    )
+  : NextResponse.json(
+     { error: "Kho API key an toàn phía server chưa sẵn sàng." },
+     { status: 503 },
+    );
 }
 
 export async function POST(request: NextRequest) {
@@ -185,14 +196,19 @@ export async function POST(request: NextRequest) {
 
   throwIfAborted(request.signal);
 
-  throwIfAborted(request.signal);
-
   const aiStartedAt = performance.now();
+  aiStatus = "runtime";
+  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+  if (!runtime.ok) {
+   source = "ai_runtime_unavailable";
+   aiStatus = runtime.status;
+   return finalize(runtimeError(runtime.status));
+  }
+
+  throwIfAborted(request.signal);
   aiStatus = "running";
-  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
   const basicLookup = await analyzeHanziBasicDetailed(lookupText, {
-   geminiModel: DEFAULT_GEMINI_QUICK_MODEL,
-   userApiKeys,
+   userApiKeys: [runtime.credential],
    allowGroq: true,
    abortSignal: request.signal,
   });
