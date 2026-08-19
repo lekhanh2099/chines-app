@@ -293,6 +293,7 @@ function ReaderSurfaceViewContent({
     <ReaderPronunciationReviewPopover
      target={pronunciationPreview}
      confirmed={pronunciationPreviewConfirmed}
+     saveScope="session"
      onClose={() => setPronunciationPreview(null)}
      onSave={saveLocalPronunciation}
      onReset={pronunciationPreviewConfirmed ? resetLocalPronunciation : undefined}
