@@ -27,13 +27,12 @@ describe("navigation configuration", () => {
   );
  });
 
- it("uses canonical Reader and HSK destinations while retaining legacy active aliases", () => {
+ it("uses canonical Reader and HSK destinations while retaining the legacy HSK path", () => {
   expect(navigationItems.reader.href).toBe("/reader");
   expect(navigationItems.readerCourse.href).toBe("/reader/course");
   expect(navigationItems.readerPractice.href).toBe("/reader/practice");
   expect(navigationItems.readerMock.href).toBe("/reader/mock");
   expect(navigationItems.hskReading.href).toBe("/hsk");
   expect(navigationItems.hskReading.aliases).toContain("/reader/hsk");
-  expect(navigationItems.hskReading.aliases).toContain("/reader?collection=hsk");
  });
 });

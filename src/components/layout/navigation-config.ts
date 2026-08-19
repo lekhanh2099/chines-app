@@ -48,32 +48,28 @@ export const navigationItems = {
   messageKey: "navigation.items.readerCourse",
   icon: BookOpenText,
   href: "/reader/course",
-  aliases: ["/reader?collection=core"],
  },
  dailyReading: {
   messageKey: "navigation.items.dailyReading",
   icon: Newspaper,
   href: "/daily-reading",
-  aliases: ["/reader?collection=daily"],
  },
  readerPractice: {
   messageKey: "navigation.items.readerPractice",
   icon: RefreshCcw,
   href: "/reader/practice",
-  aliases: ["/reader?collection=reinforcement"],
  },
  readerMock: {
   messageKey: "navigation.items.readerMock",
   icon: Target,
   href: "/reader/mock",
-  aliases: ["/reader?collection=mock"],
  },
  hskReading: {
   messageKey: "navigation.items.hskReading",
   icon: BookMarked,
   href: "/hsk",
   match: "prefix",
-  aliases: ["/reader/hsk", "/reader?collection=hsk"],
+  aliases: ["/reader/hsk"],
  },
  grammar: { messageKey: "navigation.items.grammar", icon: ListTree, href: "/grammar" },
  humanities: {
