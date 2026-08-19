@@ -3,11 +3,16 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
+import { aiRuntimeDailyReadingV2InventoryFile } from "./api-inventory/ai-runtime-daily-reading-v2.mjs";
 import { dailyReadingInventoryFile } from "./api-inventory/daily-reading.mjs";
 
 const API_ROOT = "src/app/api";
 const PUBLIC_REGISTRY_FILE = "src/features/developer-api/api-registry.ts";
-const INVENTORY_FILES = [PUBLIC_REGISTRY_FILE, dailyReadingInventoryFile];
+const INVENTORY_FILES = [
+ PUBLIC_REGISTRY_FILE,
+ dailyReadingInventoryFile,
+ aiRuntimeDailyReadingV2InventoryFile,
+];
 const HTTP_METHODS = new Set(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 const REQUIRED_DIRECT_FLOWS = new Set([
  "direct:notes-library",
@@ -19,6 +24,8 @@ const REQUIRED_DIRECT_FLOWS = new Set([
 ]);
 
 function listRouteFiles(directory) {
+ if (!fs.existsSync(directory)) return [];
+
  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
   const entryPath = path.join(directory, entry.name);
   if (entry.isDirectory()) return listRouteFiles(entryPath);
