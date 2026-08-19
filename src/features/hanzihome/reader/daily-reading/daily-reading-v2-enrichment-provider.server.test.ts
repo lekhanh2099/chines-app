@@ -40,6 +40,24 @@ const groqRuntime: ResolvedUserAiRuntime = {
  ],
 };
 
+function rateLimitedResponse() {
+ return new Response('{"error":"rate limit internal detail"}', {
+  status: 429,
+  headers: {
+   "Content-Type": "application/json",
+   "retry-after": "0",
+   "x-ratelimit-reset-tokens": "0",
+  },
+ });
+}
+
+function successfulResponse() {
+ return new Response(
+  JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }] }),
+  { status: 200, headers: { "Content-Type": "application/json" } },
+ );
+}
+
 describe("Daily Reading V2 enrichment provider", () => {
  beforeEach(() => {
   process.env.GEMINI_API_KEY = "system-gemini-key-that-must-not-be-used";
@@ -48,6 +66,7 @@ describe("Daily Reading V2 enrichment provider", () => {
 
  afterEach(() => {
   delete process.env.GEMINI_API_KEY;
+  vi.useRealTimers();
   vi.unstubAllGlobals();
  });
 
@@ -76,12 +95,7 @@ describe("Daily Reading V2 enrichment provider", () => {
 
  it("sends the resolved user key in the Groq authorization header", async () => {
   const fetchMock = vi.mocked(fetch);
-  fetchMock.mockResolvedValue(
-   new Response(
-    JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }] }),
-    { status: 200, headers: { "Content-Type": "application/json" } },
-   ),
-  );
+  fetchMock.mockResolvedValue(successfulResponse());
 
   await requestDailyReadingV2EnrichmentProvider({
    runtime: groqRuntime,
@@ -93,26 +107,43 @@ describe("Daily Reading V2 enrichment provider", () => {
   expect(init?.headers).toMatchObject({ Authorization: "Bearer user-groq-key" });
  });
 
- it("classifies provider quota responses without exposing the provider body", async () => {
+ it("retries a transient Groq 429 before surfacing a provider failure", async () => {
+  vi.useFakeTimers();
   const fetchMock = vi.mocked(fetch);
-  fetchMock.mockResolvedValue(
-   new Response('{"error":"rate limit internal detail"}', {
-    status: 429,
-    headers: { "Content-Type": "application/json" },
-   }),
-  );
+  fetchMock.mockResolvedValueOnce(rateLimitedResponse()).mockResolvedValueOnce(successfulResponse());
 
-  const result = await requestDailyReadingV2EnrichmentProvider({
+  const pending = requestDailyReadingV2EnrichmentProvider({
    runtime: groqRuntime,
    prompt: "Create vocabulary support.",
    module: "vocabulary",
   });
+  await vi.runAllTimersAsync();
+  const result = await pending;
+
+  expect(result).toMatchObject({ ok: true });
+  expect(fetchMock).toHaveBeenCalledTimes(2);
+ });
+
+ it("reports repeated Groq 429 responses as a temporary provider limit without exposing the body", async () => {
+  vi.useFakeTimers();
+  const fetchMock = vi.mocked(fetch);
+  fetchMock.mockImplementation(async () => rateLimitedResponse());
+
+  const pending = requestDailyReadingV2EnrichmentProvider({
+   runtime: groqRuntime,
+   prompt: "Create vocabulary support.",
+   module: "vocabulary",
+  });
+  await vi.runAllTimersAsync();
+  const result = await pending;
 
   expect(result).toMatchObject({
    ok: false,
-   errorCode: "quota-exhausted",
-   errorDetail: "Groq đang hết quota hoặc bị giới hạn tần suất.",
+   errorCode: "provider-unavailable",
   });
+  expect(result.ok ? "" : result.errorDetail).toContain("HTTP 429");
+  expect(result.ok ? "" : result.errorDetail).toContain("rate limit");
   expect(JSON.stringify(result)).not.toContain("internal detail");
+  expect(fetchMock).toHaveBeenCalledTimes(3);
  });
 });
