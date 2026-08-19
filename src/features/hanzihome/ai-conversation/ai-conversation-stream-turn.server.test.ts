@@ -4,6 +4,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
+import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
+import type { PreparedPersistedAiConversationTurn } from "./ai-conversation-turn.server";
+
 const {
  appendAiConversationMessage,
  findAssistantReplyForUserMessage,
@@ -42,17 +45,17 @@ const supabase = createClient<Database>("https://example.supabase.co", "test-key
  auth: { autoRefreshToken: false, persistSession: false },
 });
 const conversationId = "11111111-1111-4111-8111-111111111111";
-const userMessage = {
+const userMessage: AiConversationPersistedMessage = {
  id: "22222222-2222-4222-8222-222222222222",
  seq: 1,
- role: "user" as const,
+ role: "user",
  content: "你好",
  createdAt: "2026-08-19T08:00:00+00:00",
 };
-const assistantMessage = {
+const assistantMessage: AiConversationPersistedMessage = {
  id: "33333333-3333-4333-8333-333333333333",
  seq: 2,
- role: "assistant" as const,
+ role: "assistant",
  content: "你好，今天怎么样？",
  createdAt: "2026-08-19T08:00:01+00:00",
 };
@@ -65,14 +68,22 @@ const runtime: ResolvedUserAiRuntime = {
  model: "openai/gpt-oss-20b",
  priority: 0,
  apiKey: "gsk-test",
- capabilities: ["conversation", "daily-reading-translation", "daily-reading-learning", "lookup", "structured-memory"],
+ capabilities: [
+  "conversation",
+  "daily-reading-translation",
+  "daily-reading-learning",
+  "lookup",
+  "structured-memory",
+ ],
 };
 
-function successfulPreparation() {
+type SuccessfulPreparation = Extract<PreparedPersistedAiConversationTurn, { ok: true }>;
+
+function successfulPreparation(): SuccessfulPreparation {
  return {
-  ok: true as const,
+  ok: true,
   runtime,
-  conversationMessages: [{ role: "user" as const, content: "你好" }],
+  conversationMessages: [{ role: "user", content: "你好" }],
   systemPrompt: "Stay natural.",
  };
 }
