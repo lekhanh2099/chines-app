@@ -105,10 +105,10 @@ export function ReaderPronunciationReviewPopover({
      positionMethod="fixed"
     >
      <BasePopoverPopup
-      variant="lookup"
+      variant="lookupWide"
       data-no-inspector
-      className="w-[min(34rem,calc(100vw-1.5rem))]"
-      onMouseDown={(event) => event.preventDefault()}
+      initialFocus={false}
+      finalFocus={false}
      >
       <div className="grid gap-4 p-4">
        <div className="grid gap-1">
