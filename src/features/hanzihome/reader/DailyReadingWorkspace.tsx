@@ -393,11 +393,17 @@ export function DailyReadingWorkspace({
       value={activeTab}
       items={dailyTabs.map((tab) => ({ key: tab.id, label: tab.label }))}
       onValueChange={(tab) => setQuery({ document: resource.document.id, tab })}
+      listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
       aria-label={t("tabs.aria")}
      >
       <TabsContent value={activeTab} className="pt-4 sm:pt-5">
        {activeTab === "reader" ? (
-        <ReaderDocumentStudy key={resource.document.id} resource={resource} stateOwner="daily" />
+        <ReaderDocumentStudy
+         key={resource.document.id}
+         resource={resource}
+         stateOwner="daily"
+         stickyParentTabs
+        />
        ) : null}
        {activeTab === "questions" ? (
         <ReaderExercisePanel
