@@ -13,6 +13,7 @@ export type ReaderRuntimeState = {
  focusMode: boolean;
  playbackSegmentId: string | null;
  playbackStatus: ReaderPlaybackStatus;
+ playbackStartOffset: number;
  progress: number;
  rate: number;
  error: string | null;
@@ -21,7 +22,9 @@ export type ReaderRuntimeState = {
 type ReaderPlaybackSnapshot = Pick<
  ReaderRuntimeState,
  "playbackSegmentId" | "playbackStatus" | "progress" | "rate" | "error"
->;
+> & {
+ playbackStartOffset?: number;
+};
 
 type ReaderRuntimeActions = {
  replaceSegments: (segmentIds: readonly string[]) => void;
@@ -57,6 +60,7 @@ export function createReaderRuntimeStore(initialSegmentIds: readonly string[], i
   focusMode: false,
   playbackSegmentId: null,
   playbackStatus: "idle",
+  playbackStartOffset: 0,
   progress: 0,
   rate: initialRate,
   error: null,
@@ -68,16 +72,18 @@ export function createReaderRuntimeStore(initialSegmentIds: readonly string[], i
     const normalizedIds = [...nextIds];
     if (sameStringList(state.segmentIds, normalizedIds)) return state;
     const activeIndex = boundedIndex(state.activeIndex, normalizedIds.length);
+    const playbackSegmentId =
+     state.playbackSegmentId && normalizedIds.includes(state.playbackSegmentId)
+      ? state.playbackSegmentId
+      : null;
     return {
      ...state,
      segmentIds: normalizedIds,
      activeIndex,
      activeSegmentId: normalizedIds[activeIndex] ?? null,
      positionSource: "initial",
-     playbackSegmentId:
-      state.playbackSegmentId && normalizedIds.includes(state.playbackSegmentId)
-       ? state.playbackSegmentId
-       : null,
+     playbackSegmentId,
+     playbackStartOffset: playbackSegmentId === null ? 0 : state.playbackStartOffset,
     };
    }),
   selectIndex: (index, source = "command") =>
@@ -144,21 +150,27 @@ export function createReaderRuntimeStore(initialSegmentIds: readonly string[], i
   syncPlayback: (snapshot) =>
    setState((state) => {
     const progress = Math.min(1, Math.max(0, snapshot.progress));
+    const playbackStartOffset = Math.max(
+     0,
+     Math.trunc(snapshot.playbackStartOffset ?? state.playbackStartOffset),
+    );
     if (
      state.playbackSegmentId === snapshot.playbackSegmentId &&
      state.playbackStatus === snapshot.playbackStatus &&
+     state.playbackStartOffset === playbackStartOffset &&
      state.progress === progress &&
      state.rate === snapshot.rate &&
      state.error === snapshot.error
     ) {
      return state;
     }
-    return { ...state, ...snapshot, progress };
+    return { ...state, ...snapshot, playbackStartOffset, progress };
    }),
   resetPlayback: () =>
    setState((state) =>
     state.playbackStatus === "idle" &&
     state.playbackSegmentId === null &&
+    state.playbackStartOffset === 0 &&
     state.progress === 0 &&
     state.error === null
      ? state
@@ -166,6 +178,7 @@ export function createReaderRuntimeStore(initialSegmentIds: readonly string[], i
         ...state,
         playbackSegmentId: null,
         playbackStatus: "idle",
+        playbackStartOffset: 0,
         progress: 0,
         error: null,
        },
