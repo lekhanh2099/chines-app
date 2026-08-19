@@ -100,6 +100,7 @@
   "runtimeReady": "Đang dùng {provider} · {model}",
   "runtimeMissing": "Chưa có API key AI. Bạn vẫn có thể đọc toàn bộ bài nguồn.",
   "runtimeStorageUnavailable": "Kho API key phía server chưa sẵn sàng; bài nguồn vẫn đọc được bình thường.",
+  "runtimeCheckFailed": "Chưa kiểm tra được trạng thái AI lúc này. Bài nguồn vẫn đọc được; hãy thử kiểm tra lại.",
   "modules": {
    "translation": {
     "title": "Bản dịch tiếng Việt",
