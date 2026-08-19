@@ -11,7 +11,10 @@ import {
  type ReactNode,
 } from "react";
 
-import { getAppScrollContainer, scrollAppContentToElement } from "@/components/layout/app-scroll";
+import {
+ getScrollContainerForTarget,
+ scrollAppContentToElement,
+} from "@/components/layout/app-scroll";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -60,6 +63,17 @@ import { ReaderTools } from "./ReaderTools";
 
 const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
 
+type ReaderPronunciationAnalysis = ReturnType<typeof analyzeContextualPronunciation>;
+
+export type ReaderSurfaceSelection = {
+ segment: ReaderSegment;
+ index: number;
+ text: string;
+ start: number | null;
+ end: number | null;
+ rect: DOMRect;
+};
+
 export type ReaderSurfaceRenderSegment = (input: {
  segment: ReaderSegment;
  index: number;
@@ -71,45 +85,33 @@ export type ReaderSurfaceRenderSection = (input: {
  content: ReactNode;
 }) => ReactNode;
 
-export function ReaderSurface({
- document,
- lessonId,
- renderSegment,
- renderSection,
- onOpenShadowing,
-}: {
+export type ReaderSurfaceProps = {
  document: ReaderDocumentModel;
  lessonId?: string;
  renderSegment?: ReaderSurfaceRenderSegment;
  renderSection?: ReaderSurfaceRenderSection;
+ analysisBySegmentId?: ReadonlyMap<string, ReaderPronunciationAnalysis>;
+ onSelection?: (selection: ReaderSurfaceSelection) => void;
  onOpenShadowing?: () => void;
-}) {
+};
+
+export function ReaderSurface(props: ReaderSurfaceProps) {
  return (
-  <ReaderRuntimeProvider document={document}>
-   <ReaderSurfaceContent
-    document={document}
-    lessonId={lessonId}
-    renderSegment={renderSegment}
-    renderSection={renderSection}
-    onOpenShadowing={onOpenShadowing}
-   />
+  <ReaderRuntimeProvider document={props.document}>
+   <ReaderSurfaceView {...props} />
   </ReaderRuntimeProvider>
  );
 }
 
-function ReaderSurfaceContent({
+export function ReaderSurfaceView({
  document,
  lessonId,
  renderSegment,
  renderSection,
+ analysisBySegmentId,
+ onSelection,
  onOpenShadowing,
-}: {
- document: ReaderDocumentModel;
- lessonId?: string;
- renderSegment?: ReaderSurfaceRenderSegment;
- renderSection?: ReaderSurfaceRenderSection;
- onOpenShadowing?: () => void;
-}) {
+}: ReaderSurfaceProps) {
  const [outlineOpen, setOutlineOpen] = useState(false);
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
  const commands = useReaderRuntimeCommands();
@@ -138,7 +140,9 @@ function ReaderSurfaceContent({
  }, [activeIndex, document.segments, positionSource]);
 
  useEffect(() => {
-  const container = getAppScrollContainer();
+  const firstSegment = document.segments[0];
+  const firstElement = firstSegment ? (segmentElementsRef.current.get(firstSegment.id) ?? null) : null;
+  const container = getScrollContainerForTarget(firstElement);
   if (!container || document.segments.length === 0) return;
   let animationFrame = 0;
   const updatePosition = () => {
@@ -239,6 +243,8 @@ function ReaderSurfaceContent({
       displayMode={displayMode}
       renderSegment={renderSegment}
       renderSection={renderSection}
+      analysisBySegmentId={analysisBySegmentId}
+      onSelection={onSelection}
       setSegmentElement={setSegmentElement}
      />
     </div>
@@ -386,13 +392,11 @@ function ReaderDocumentContent({
  displayMode,
  renderSegment,
  renderSection,
+ analysisBySegmentId,
+ onSelection,
  setSegmentElement,
-}: {
- document: ReaderDocumentModel;
- lessonId?: string;
+}: ReaderSurfaceProps & {
  displayMode: LessonDisplayMode;
- renderSegment?: ReaderSurfaceRenderSegment;
- renderSection?: ReaderSurfaceRenderSection;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
 }) {
  const segmentById = useMemo(
@@ -434,21 +438,20 @@ function ReaderDocumentContent({
         </Typography>
        </div>
        <div className="grid min-w-0 gap-5">
-        {segments.map((segment, localIndex) => {
-         const index = indexById.get(segment.id) ?? localIndex;
-         return (
-          <ReaderSegmentRow
-           key={segment.id}
-           segment={segment}
-           index={index}
-           lessonId={lessonId}
-           displayMode={displayMode}
-           renderSegment={renderSegment}
-           setSegmentElement={setSegmentElement}
-           showSeparator={localIndex > 0}
-          />
-         );
-        })}
+        {segments.map((segment, localIndex) => (
+         <ReaderSegmentRow
+          key={segment.id}
+          segment={segment}
+          index={indexById.get(segment.id) ?? localIndex}
+          lessonId={lessonId}
+          displayMode={displayMode}
+          renderSegment={renderSegment}
+          analysis={analysisBySegmentId?.get(segment.id)}
+          onSelection={onSelection}
+          setSegmentElement={setSegmentElement}
+          showSeparator={localIndex > 0}
+         />
+        ))}
        </div>
       </section>
      );
@@ -470,6 +473,8 @@ function ReaderDocumentContent({
         lessonId={lessonId}
         displayMode={displayMode}
         renderSegment={renderSegment}
+        analysis={analysisBySegmentId?.get(segment.id)}
+        onSelection={onSelection}
         setSegmentElement={setSegmentElement}
         showSeparator={document.sections.length > 0 || localIndex > 0}
        />
@@ -487,6 +492,8 @@ function ReaderSegmentRow({
  lessonId,
  displayMode,
  renderSegment,
+ analysis,
+ onSelection,
  setSegmentElement,
  showSeparator,
 }: {
@@ -495,22 +502,60 @@ function ReaderSegmentRow({
  lessonId?: string;
  displayMode: LessonDisplayMode;
  renderSegment?: ReaderSurfaceRenderSegment;
+ analysis?: ReaderPronunciationAnalysis;
+ onSelection?: (selection: ReaderSurfaceSelection) => void;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
  showSeparator: boolean;
 }) {
  const active = useReaderRuntimeSelector((state) => state.activeSegmentId === segment.id);
  const { openInspector } = useVocabInspector();
- const content = <ReaderSegmentText segment={segment} active={active} displayMode={displayMode} />;
+ const content = (
+  <ReaderSegmentText segment={segment} active={active} displayMode={displayMode} analysis={analysis} />
+ );
  const rendered = renderSegment ? renderSegment({ segment, index, content }) : content;
 
  const captureSelection = (element: HTMLElement) => {
   const selection = window.getSelection();
   if (!selection || selection.isCollapsed || selection.rangeCount === 0) return;
-  const text = selection.toString().trim();
-  if (!text) return;
+  const selectedText = selection.toString().trim();
+  if (!selectedText) return;
   const range = selection.getRangeAt(0);
-  if (!element.contains(range.commonAncestorContainer)) return;
-  void openInspector(text, { lessonId, anchorRect: range.getBoundingClientRect() });
+  const hanziContainer = element.querySelector<HTMLElement>("[data-reader-hanzi-content]");
+  if (!hanziContainer || !hanziContainer.contains(range.commonAncestorContainer)) return;
+
+  const beforeStart = document.createRange();
+  beforeStart.selectNodeContents(hanziContainer);
+  beforeStart.setEnd(range.startContainer, range.startOffset);
+  const beforeEnd = document.createRange();
+  beforeEnd.selectNodeContents(hanziContainer);
+  beforeEnd.setEnd(range.endContainer, range.endOffset);
+  let start = Math.min(beforeStart.toString().length, beforeEnd.toString().length);
+  let end = Math.max(beforeStart.toString().length, beforeEnd.toString().length);
+  if (segment.zh.slice(start, end).trim() !== selectedText) {
+   const first = segment.zh.indexOf(selectedText);
+   const second = first < 0 ? -1 : segment.zh.indexOf(selectedText, first + selectedText.length);
+   if (first >= 0 && second < 0) {
+    start = first;
+    end = first + selectedText.length;
+   } else {
+    start = -1;
+    end = -1;
+   }
+  }
+
+  const rect = range.getBoundingClientRect();
+  if (onSelection) {
+   onSelection({
+    segment,
+    index,
+    text: selectedText,
+    start: start >= 0 ? start : null,
+    end: end >= 0 ? end : null,
+    rect,
+   });
+   return;
+  }
+  void openInspector(selectedText, { lessonId, anchorRect: rect });
  };
 
  return (
@@ -532,27 +577,30 @@ function ReaderSegmentText({
  segment,
  active,
  displayMode,
+ analysis: providedAnalysis,
 }: {
  segment: ReaderSegment;
  active: boolean;
  displayMode: LessonDisplayMode;
+ analysis?: ReaderPronunciationAnalysis;
 }) {
  const playbackProgress = useReaderRuntimeSelector((state) =>
   state.playbackSegmentId === segment.id && state.playbackStatus !== "idle" ? state.progress : -1,
  );
- const analysis = useMemo(() => {
+ const computedAnalysis = useMemo(() => {
+  if (providedAnalysis) return providedAnalysis;
   if (segment.zh.length > 2_000) return null;
   const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
   return analyzeContextualPronunciation({ text: segment.zh, sourcePinyin });
- }, [segment.pinyin, segment.zh]);
+ }, [providedAnalysis, segment.pinyin, segment.zh]);
  const characterCount = Array.from(segment.zh).length;
  const activeCharacterIndex =
   playbackProgress >= 0
    ? getActiveCharacterIndex(characterCount, 0, characterCount, playbackProgress)
    : -1;
  const contextualPinyin = useMemo(
-  () => (analysis ? formatContextualSpokenPinyin(analysis) : segment.pinyin),
-  [analysis, segment.pinyin],
+  () => (computedAnalysis ? formatContextualSpokenPinyin(computedAnalysis) : segment.pinyin),
+  [computedAnalysis, segment.pinyin],
  );
 
  return (
@@ -574,52 +622,54 @@ function ReaderSegmentText({
     ) : null}
    </div>
 
-   {displayMode.revealMode === "tap" ? (
-    <ProgressiveStudyText
-     zh={segment.zh}
-     pinyin={contextualPinyin}
-     vi={segment.vi}
-     displayMode={displayMode}
-    />
-   ) : analysis ? (
-    <div className="grid min-w-0 gap-1.5">
-     <ContextualReaderText
-      analysis={analysis}
+   <div data-reader-hanzi-content={segment.id}>
+    {displayMode.revealMode === "tap" ? (
+     <ProgressiveStudyText
+      zh={segment.zh}
+      pinyin={contextualPinyin}
+      vi={segment.vi}
       displayMode={displayMode}
-      activeCharacterIndex={activeCharacterIndex}
-      showPinyin={displayMode.showPinyin}
-      pinyinPresentation="ruby"
-      sourcePinyin={segment.pinyin}
      />
-     {segment.vi && displayMode.showMeaning ? (
-      <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
-       {segment.vi}
-      </TranslationText>
-     ) : null}
-    </div>
-   ) : (
-    <div className="grid min-w-0 gap-1.5">
-     <ReaderHanziText
-      displayMode={displayMode}
-      tone="default"
-      leading="learner"
-      wrapping="preWrap"
-      className="min-w-0"
-     >
-      {segment.zh}
-     </ReaderHanziText>
-     {segment.pinyin && displayMode.showPinyin ? (
-      <PinyinText tone="accent" weight="semibold" leading="relaxed" wrapping="preWrap">
-       {segment.pinyin}
-      </PinyinText>
-     ) : null}
-     {segment.vi && displayMode.showMeaning ? (
-      <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
-       {segment.vi}
-      </TranslationText>
-     ) : null}
-    </div>
-   )}
+    ) : computedAnalysis ? (
+     <div className="grid min-w-0 gap-1.5">
+      <ContextualReaderText
+       analysis={computedAnalysis}
+       displayMode={displayMode}
+       activeCharacterIndex={activeCharacterIndex}
+       showPinyin={displayMode.showPinyin}
+       pinyinPresentation="ruby"
+       sourcePinyin={segment.pinyin}
+      />
+      {segment.vi && displayMode.showMeaning ? (
+       <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
+        {segment.vi}
+       </TranslationText>
+      ) : null}
+     </div>
+    ) : (
+     <div className="grid min-w-0 gap-1.5">
+      <ReaderHanziText
+       displayMode={displayMode}
+       tone="default"
+       leading="learner"
+       wrapping="preWrap"
+       className="min-w-0"
+      >
+       {segment.zh}
+      </ReaderHanziText>
+      {segment.pinyin && displayMode.showPinyin ? (
+       <PinyinText tone="accent" weight="semibold" leading="relaxed" wrapping="preWrap">
+        {segment.pinyin}
+       </PinyinText>
+      ) : null}
+      {segment.vi && displayMode.showMeaning ? (
+       <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
+        {segment.vi}
+       </TranslationText>
+      ) : null}
+     </div>
+    )}
+   </div>
   </article>
  );
 }
@@ -658,9 +708,7 @@ function ReaderOutlineContent({
       ? document.sections.map((section, index) => {
          const firstSegmentId = section.segmentIds[0];
          const targetIndex = firstSegmentId ? indexById.get(firstSegmentId) : undefined;
-         const selected = Boolean(
-          activeSegment?.sectionId && activeSegment.sectionId === section.id,
-         );
+         const selected = Boolean(activeSegment?.sectionId && activeSegment.sectionId === section.id);
          return targetIndex === undefined ? null : (
           <Button
            key={section.id}
