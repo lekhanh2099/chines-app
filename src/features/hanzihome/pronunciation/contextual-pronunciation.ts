@@ -81,6 +81,12 @@ export type ContextualPronunciationAnalysis = {
  sourcePinyinStatus: "not-provided" | "aligned" | "rejected";
 };
 
+function preferredDisplayedPinyin(glyph: ContextualPronunciationGlyph): string | null {
+ return glyph.evidence.includes("manual-override")
+  ? (glyph.lexicalPinyin ?? glyph.spokenPinyin)
+  : (glyph.spokenPinyin ?? glyph.lexicalPinyin);
+}
+
 export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAnalysis): string {
  const glyphByStart = new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph]));
  const graphemes = [
@@ -92,7 +98,7 @@ export function formatContextualSpokenPinyin(analysis: ContextualPronunciationAn
  for (const grapheme of graphemes) {
   const glyph = glyphByStart.get(grapheme.index);
   if (glyph !== undefined) {
-   const reading = glyph.spokenPinyin ?? glyph.lexicalPinyin;
+   const reading = preferredDisplayedPinyin(glyph);
    if (reading !== null) {
     if (previousWasHanzi) output += " ";
     output += reading;
@@ -115,7 +121,7 @@ export function formatContextualPinyinRange(
 ): string {
  return analysis.glyphs
   .filter((glyph) => glyph.start >= start && glyph.end <= end)
-  .map((glyph) => glyph.spokenPinyin ?? glyph.lexicalPinyin)
+  .map(preferredDisplayedPinyin)
   .filter((reading): reading is string => reading !== null)
   .join(" ");
 }
@@ -382,10 +388,21 @@ export function analyzeContextualPronunciation(
   const sourceLexicalKey =
    item.segment === "一" || item.segment === "不" ? lexicalKey : (sourceKey ?? lexicalKey);
   const selectedLexicalKey = overrideKey ?? sourceLexicalKey;
-  const selectedSpokenKey = spokenKey;
+  const selectedSpokenKey = overrideKey ?? spokenKey;
   const selectedAlternatives = [
    ...new Set([selectedLexicalKey, ...keys].filter((key): key is string => key !== null)),
   ];
+  const isPolyphonic = selectedAlternatives.length > 1;
+  const confidence =
+   overrideKey !== null
+    ? 1
+    : isPolyphonic
+      ? 0.55
+      : request.sourcePinyin !== null && sourceAligned
+        ? 0.85
+        : readingsAligned
+          ? 0.8
+          : 0;
   glyphs.push({
    text: item.segment,
    start: item.index,
@@ -394,9 +411,9 @@ export function analyzeContextualPronunciation(
    spokenPinyin: displayPinyin(selectedSpokenKey),
    lexicalReadingKey: selectedLexicalKey,
    spokenReadingKey: selectedSpokenKey,
-   isPolyphonic: selectedAlternatives.length > 1,
+   isPolyphonic,
    alternatives: selectedAlternatives,
-   confidence: overrideKey === null ? (readingsAligned && sourceAligned ? 0.94 : 0) : 1,
+   confidence,
    evidence:
     overrideKey === null
      ? request.sourcePinyin !== null && sourceAligned
