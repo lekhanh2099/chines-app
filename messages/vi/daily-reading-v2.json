@@ -64,6 +64,31 @@
   "supportTab": "Hỗ trợ AI",
   "capturedMeta": "Đã lưu {time} · {publisher} · {minutes} phút"
  },
+ "management": {
+  "title": "Bài đã lưu",
+  "description": "{count} bài đang được lưu trên thiết bị này. Quản lý nội dung bài tại đây; lịch sử tác vụ được giữ riêng để chẩn đoán.",
+  "open": "Quản lý bài",
+  "dialogTitle": "Quản lý bài Daily Reading",
+  "dialogDescription": "Xem và xóa các bài đã lưu trên thiết bị này. Xóa bài không xóa lịch sử tìm bài hoặc lịch sử AI.",
+  "emptyTitle": "Chưa có bài đã lưu",
+  "emptyDescription": "Khi tìm được bài mới, bài sẽ xuất hiện tại đây.",
+  "learningState": "Hỗ trợ AI: {ready}/{total} phần sẵn sàng",
+  "deleteArticle": "Xóa bài",
+  "deleteAll": "Xóa tất cả bài",
+  "close": "Đóng",
+  "confirmArticleTitle": "Xóa bài này?",
+  "confirmArticleDescription": "Bài “{title}” sẽ bị xóa khỏi thư viện trên thiết bị này.",
+  "confirmAllTitle": "Xóa tất cả bài Daily Reading?",
+  "confirmAllDescription": "Sẽ xóa {count} bài đã lưu trên thiết bị này.",
+  "historyPreserved": "Lịch sử tác vụ vẫn được giữ để xem thời gian, trạng thái và lỗi đã xảy ra.",
+  "cancel": "Hủy",
+  "confirmDelete": "Xác nhận xóa",
+  "toast": {
+   "articleDeleted": "Đã xóa bài khỏi thư viện.",
+   "allDeleted": "Đã xóa {count} bài khỏi thư viện.",
+   "deleteFailed": "Không thể xóa bài Daily Reading trên thiết bị này."
+  }
+ },
  "settings": {
   "title": "Daily Reading",
   "description": "Cấu hình cách HanziHome tìm bài nguồn và phần hỗ trợ AI. Trạng thái, thư viện và lịch sử tác vụ nằm ở màn hình Daily Reading.",
@@ -180,8 +205,8 @@
    "failed": "Cần thử lại",
    "missingKey": "Cần API key",
    "invalidKey": "Key không hợp lệ",
-   "quota": "Quota / giới hạn",
-   "providerUnavailable": "Provider tạm lỗi"
+   "quota": "Giới hạn API",
+   "providerUnavailable": "Provider tạm giới hạn"
   },
   "actions": {
    "create": "Tạo phần này",
