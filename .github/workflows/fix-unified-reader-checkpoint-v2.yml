@@ -1,0 +1,210 @@
+name: Fix unified reader checkpoint v2
+
+on:
+  push:
+    branches:
+      - refactor/unified-reader-2026-08-18
+
+permissions:
+  contents: write
+
+jobs:
+  fix-and-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: refactor/unified-reader-2026-08-18
+      - name: Apply fixes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file = Path(path)
+              text = file.read_text()
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected one match in {path}, found {count}: {old[:90]!r}")
+              file.write_text(text.replace(old, new, 1))
+
+          runtime = "src/features/hanzihome/reader/runtime/ReaderRuntimeProvider.tsx"
+          replace_once(runtime,
+              "export type ReaderRuntimeCommands = {\n playCurrent: () => void;\n playAll: () => void;",
+              "export type ReaderRuntimeCommands = {\n playCurrent: () => void;\n playFromCurrent: () => void;\n playAll: () => void;")
+          replace_once(runtime,
+              "const noRuntimeCommands: ReaderRuntimeCommands = {\n playCurrent: () => undefined,\n playAll: () => undefined,",
+              "const noRuntimeCommands: ReaderRuntimeCommands = {\n playCurrent: () => undefined,\n playFromCurrent: () => undefined,\n playAll: () => undefined,")
+          replace_once(runtime,
+              "   playCurrent: () => commandsRef.current.playCurrent(),\n   playAll: () => commandsRef.current.playAll(),",
+              "   playCurrent: () => commandsRef.current.playCurrent(),\n   playFromCurrent: () => commandsRef.current.playFromCurrent(),\n   playAll: () => commandsRef.current.playAll(),")
+          replace_once(runtime,
+              "  commandsRef.current = {\n   playCurrent: () => startAt(store.state.activeIndex, false),\n   playAll: () => startAt(0, true),",
+              "  commandsRef.current = {\n   playCurrent: () => startAt(store.state.activeIndex, false),\n   playFromCurrent: () => startAt(store.state.activeIndex, true),\n   playAll: () => startAt(0, true),")
+
+          surface = "src/features/hanzihome/reader/components/ReaderSurface.tsx"
+          replace_once(surface,
+              'import { getAppScrollContainer, scrollAppContentToElement } from "@/components/layout/app-scroll";',
+              'import { getAppScrollContainer, resolveAppScrollTargetTop } from "@/components/layout/app-scroll";')
+          replace_once(surface,
+              "const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];\n",
+              '''const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
+
+function getReaderScrollContainer(element: HTMLElement | null): HTMLElement | null {
+ if (element && typeof window !== "undefined") {
+  let current = element.parentElement;
+  while (current) {
+   const overflowY = window.getComputedStyle(current).overflowY;
+   if ((overflowY === "auto" || overflowY === "scroll") && current.scrollHeight > current.clientHeight) {
+    return current;
+   }
+   current = current.parentElement;
+  }
+ }
+ return getAppScrollContainer();
+}
+
+function scrollReaderElementTo(element: HTMLElement | null, block: "start" | "center") {
+ if (!element) return;
+ const container = getReaderScrollContainer(element);
+ if (!container) {
+  element.scrollIntoView({ behavior: "smooth", block, inline: "nearest" });
+  return;
+ }
+ const containerRect = container.getBoundingClientRect();
+ const targetRect = element.getBoundingClientRect();
+ const top = resolveAppScrollTargetTop({
+  block,
+  containerClientHeight: container.clientHeight,
+  containerScrollTop: container.scrollTop,
+  containerRect: { top: containerRect.top, bottom: containerRect.bottom, height: containerRect.height },
+  targetRect: { top: targetRect.top, bottom: targetRect.bottom, height: targetRect.height },
+ });
+ container.scrollTo({ behavior: "smooth", left: 0, top });
+}
+''')
+          replace_once(surface,
+              '''  scrollAppContentToElement(segmentElementsRef.current.get(segment.id) ?? null, {
+   behavior: "smooth",
+   block: "center",
+  });''',
+              '  scrollReaderElementTo(segmentElementsRef.current.get(segment.id) ?? null, "center");')
+          replace_once(surface,
+              ''' useEffect(() => {
+  const container = getAppScrollContainer();
+  if (!container || document.segments.length === 0) return;''',
+              ''' useEffect(() => {
+  const firstSegment = document.segments[0];
+  const container = getReaderScrollContainer(
+   firstSegment ? (segmentElementsRef.current.get(firstSegment.id) ?? null) : null,
+  );
+  if (!container || document.segments.length === 0) return;''')
+          replace_once(surface,
+              ''' }, [actions, document.segments]);
+
+ const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {''',
+              ''' }, [actions, document.segments]);
+
+ const navigateToIndex = useCallback(
+  (index: number) => {
+   const segment = document.segments[index];
+   if (!segment) return;
+   commands.selectIndex(index);
+   const element = segmentElementsRef.current.get(segment.id) ?? null;
+   requestAnimationFrame(() => scrollReaderElementTo(element, "start"));
+  },
+  [commands, document.segments],
+ );
+
+ const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {''')
+          text = Path(surface).read_text()
+          if text.count("else commands.playCurrent();") != 2:
+              raise SystemExit("Expected exactly two primary playCurrent fallbacks")
+          Path(surface).write_text(text.replace("else commands.playCurrent();", "else commands.playFromCurrent();"))
+          replace_once(surface,
+              '<ReaderOutline document={document} />',
+              '<ReaderOutline document={document} onNavigateToIndex={navigateToIndex} />')
+          replace_once(surface,
+              '<ReaderOutlineContent document={document} onNavigate={() => setOutlineOpen(false)} />',
+              '''<ReaderOutlineContent
+      document={document}
+      onNavigateToIndex={navigateToIndex}
+      onNavigate={() => setOutlineOpen(false)}
+     />''')
+          replace_once(surface,
+              '''function ReaderOutline({ document }: { document: ReaderDocumentModel }) {
+ return (
+  <Card variant="section" padding="md" className="sticky top-3">
+   <ReaderOutlineContent document={document} />''',
+              '''function ReaderOutline({
+ document,
+ onNavigateToIndex,
+}: {
+ document: ReaderDocumentModel;
+ onNavigateToIndex: (index: number) => void;
+}) {
+ return (
+  <Card variant="section" padding="md" className="sticky top-3">
+   <ReaderOutlineContent document={document} onNavigateToIndex={onNavigateToIndex} />''')
+          replace_once(surface,
+              '''function ReaderOutlineContent({
+ document,
+ onNavigate,
+}: {
+ document: ReaderDocumentModel;
+ onNavigate?: () => void;
+}) {
+ const commands = useReaderRuntimeCommands();''',
+              '''function ReaderOutlineContent({
+ document,
+ onNavigateToIndex,
+ onNavigate,
+}: {
+ document: ReaderDocumentModel;
+ onNavigateToIndex: (index: number) => void;
+ onNavigate?: () => void;
+}) {''')
+          replace_once(surface,
+              '''           onClick={() => {
+            commands.selectIndex(targetIndex);
+            onNavigate?.();
+           }}''',
+              '''           onClick={() => {
+            onNavigateToIndex(targetIndex);
+            onNavigate?.();
+           }}''')
+          replace_once(surface,
+              '''          onClick={() => {
+           commands.selectIndex(index);
+           onNavigate?.();
+          }}''',
+              '''          onClick={() => {
+           onNavigateToIndex(index);
+           onNavigate?.();
+          }}''')
+          PY
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --global npm@11.6.1
+      - run: npm ci
+        env:
+          HUSKY: 0
+      - name: Format
+        run: npx oxfmt --write src/features/hanzihome/reader/components/ReaderSurface.tsx src/features/hanzihome/reader/runtime/ReaderRuntimeProvider.tsx
+      - name: Verify focused reader changes
+        run: |
+          npm run lint
+          npm run typecheck
+          npm run test:run -- src/features/hanzihome/reader
+          npm run format:check
+      - name: Commit verified fixes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/features/hanzihome/reader/components/ReaderSurface.tsx src/features/hanzihome/reader/runtime/ReaderRuntimeProvider.tsx
+          git commit -m "fix(reader): scroll outline and continue playback"
+          git push origin HEAD:refactor/unified-reader-2026-08-18
