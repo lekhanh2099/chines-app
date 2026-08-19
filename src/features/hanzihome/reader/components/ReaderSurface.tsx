@@ -16,6 +16,7 @@ import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import type { PronunciationOverride } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
 import {
@@ -37,7 +38,10 @@ import {
  type ReaderSurfaceSelection,
 } from "./ReaderDocumentContent";
 import { ReaderOutline, ReaderOutlineContent } from "./ReaderOutline";
-import { ReaderPronunciationReviewPopover } from "./ReaderPronunciationReviewPopover";
+import {
+ ReaderPronunciationReviewPopover,
+ type ReaderPronunciationSaveInput,
+} from "./ReaderPronunciationReviewPopover";
 
 export type {
  ReaderPronunciationAnalysis,
@@ -81,6 +85,8 @@ export function ReaderSurfaceView({
  const [outlineOpen, setOutlineOpen] = useState(false);
  const [pronunciationPreview, setPronunciationPreview] =
   useState<ReaderSurfacePronunciationTarget | null>(null);
+ const [localPronunciationOverridesBySegmentId, setLocalPronunciationOverridesBySegmentId] =
+  useState<ReadonlyMap<string, readonly PronunciationOverride[]>>(() => new Map());
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
@@ -90,6 +96,11 @@ export function ReaderSurfaceView({
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const error = useReaderRuntimeSelector((state) => state.error);
+
+ useEffect(() => {
+  setPronunciationPreview(null);
+  setLocalPronunciationOverridesBySegmentId(new Map());
+ }, [document.id]);
 
  const setSegmentElement = useCallback((segmentId: string, element: HTMLElement | null) => {
   if (element) segmentElementsRef.current.set(segmentId, element);
@@ -105,10 +116,70 @@ export function ReaderSurfaceView({
  const openPreviewInspector = useCallback(
   (text: string, rect: DOMRect) => {
    setPronunciationPreview(null);
-   openInspector(text, { lessonId, anchorRect: rect });
+   void openInspector(text, { lessonId, anchorRect: rect });
   },
   [lessonId, openInspector],
  );
+ const localOverrideForPreview = pronunciationPreview
+  ? localPronunciationOverridesBySegmentId
+     .get(pronunciationPreview.segment.id)
+     ?.find(
+      (override) =>
+       override.scope === "sentence-instance" &&
+       override.start !== null &&
+       override.end !== null &&
+       override.start <= pronunciationPreview.glyph.start &&
+       override.end >= pronunciationPreview.glyph.end,
+     )
+  : undefined;
+ const saveLocalPronunciation = useCallback(
+  (input: ReaderPronunciationSaveInput) => {
+   if (!pronunciationPreview) return;
+   const segmentId = pronunciationPreview.segment.id;
+   const nextOverride: PronunciationOverride = {
+    id: `local:${segmentId}:${input.start}:${input.end}`,
+    text: input.text,
+    readings: [...input.readings],
+    scope: "sentence-instance",
+    sentenceText: pronunciationPreview.segment.zh,
+    start: input.start,
+    end: input.end,
+    updatedAt: new Date().toISOString(),
+   };
+   setLocalPronunciationOverridesBySegmentId((current) => {
+    const currentSegmentOverrides = current.get(segmentId) ?? [];
+    const nextSegmentOverrides = [
+     ...currentSegmentOverrides.filter(
+      (override) =>
+       override.scope !== "sentence-instance" ||
+       override.start !== input.start ||
+       override.end !== input.end,
+     ),
+     nextOverride,
+    ];
+    const next = new Map(current);
+    next.set(segmentId, nextSegmentOverrides);
+    return next;
+   });
+   setPronunciationPreview(null);
+  },
+  [pronunciationPreview],
+ );
+ const resetLocalPronunciation = useCallback(() => {
+  if (!pronunciationPreview || !localOverrideForPreview) return;
+  const segmentId = pronunciationPreview.segment.id;
+  setLocalPronunciationOverridesBySegmentId((current) => {
+   const currentSegmentOverrides = current.get(segmentId) ?? [];
+   const nextSegmentOverrides = currentSegmentOverrides.filter(
+    (override) => override.id !== localOverrideForPreview.id,
+   );
+   const next = new Map(current);
+   if (nextSegmentOverrides.length > 0) next.set(segmentId, nextSegmentOverrides);
+   else next.delete(segmentId);
+   return next;
+  });
+  setPronunciationPreview(null);
+ }, [localOverrideForPreview, pronunciationPreview]);
 
  useEffect(() => {
   if (positionSource !== "command" && positionSource !== "playback") return;
@@ -225,6 +296,7 @@ export function ReaderSurfaceView({
       renderSegment={renderSegment}
       renderSection={renderSection}
       analysisBySegmentId={analysisBySegmentId}
+      localPronunciationOverridesBySegmentId={localPronunciationOverridesBySegmentId}
       onSelection={onSelection}
       onPronunciationInspect={inspectPronunciation}
       setSegmentElement={setSegmentElement}
@@ -247,7 +319,10 @@ export function ReaderSurfaceView({
    {!onPronunciationInspect && pronunciationPreview ? (
     <ReaderPronunciationReviewPopover
      target={pronunciationPreview}
+     confirmed={Boolean(localOverrideForPreview)}
      onClose={() => setPronunciationPreview(null)}
+     onSave={saveLocalPronunciation}
+     onReset={localOverrideForPreview ? resetLocalPronunciation : undefined}
      onOpenInspector={openPreviewInspector}
     />
    ) : null}
