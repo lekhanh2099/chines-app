@@ -64,6 +64,31 @@
   "supportTab": "AI 辅助",
   "capturedMeta": "保存于 {time} · {publisher} · {minutes} 分钟"
  },
+ "management": {
+  "title": "已保存文章",
+  "description": "当前设备保存了 {count} 篇文章。可在这里管理文章内容；任务历史会单独保留用于诊断。",
+  "open": "管理文章",
+  "dialogTitle": "管理 Daily Reading 文章",
+  "dialogDescription": "查看或删除当前设备上的已保存文章。删除文章不会删除寻找文章或 AI 活动历史。",
+  "emptyTitle": "还没有已保存文章",
+  "emptyDescription": "找到新文章后会显示在这里。",
+  "learningState": "AI 辅助：已完成 {ready}/{total} 个模块",
+  "deleteArticle": "删除文章",
+  "deleteAll": "删除全部文章",
+  "close": "关闭",
+  "confirmArticleTitle": "删除这篇文章？",
+  "confirmArticleDescription": "文章“{title}”将从当前设备的资料库中删除。",
+  "confirmAllTitle": "删除全部 Daily Reading 文章？",
+  "confirmAllDescription": "将从当前设备删除 {count} 篇已保存文章。",
+  "historyPreserved": "任务历史会继续保留，以便查看时间、状态和之前发生的错误。",
+  "cancel": "取消",
+  "confirmDelete": "确认删除",
+  "toast": {
+   "articleDeleted": "文章已从资料库删除。",
+   "allDeleted": "已从资料库删除 {count} 篇文章。",
+   "deleteFailed": "无法删除当前设备上的 Daily Reading 文章。"
+  }
+ },
  "settings": {
   "title": "Daily Reading",
   "description": "配置 HanziHome 如何寻找来源文章以及是否补充 AI 学习辅助。状态、资料库和任务历史统一放在 Daily Reading 页面。",
@@ -180,8 +205,8 @@
    "failed": "需要重试",
    "missingKey": "需要 API key",
    "invalidKey": "Key 无效",
-   "quota": "额度 / 频率限制",
-   "providerUnavailable": "Provider 暂不可用"
+   "quota": "API 限制",
+   "providerUnavailable": "Provider 暂时受限"
   },
   "actions": {
    "create": "生成此模块",
