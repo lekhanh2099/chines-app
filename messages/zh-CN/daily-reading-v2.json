@@ -18,6 +18,7 @@
    "todayLabel": "今天",
    "todayRunning": "正在寻找文章",
    "todayReady": "今天的文章已就绪",
+   "todayFailed": "今天最近一次寻找失败",
    "manualOnly": "仅手动寻找",
    "todayDue": "已到时间，等待执行任务",
    "todayWaiting": "还未到寻找时间",
