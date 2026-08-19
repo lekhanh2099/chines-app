@@ -1,16 +1,12 @@
 import "server-only";
 
 import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
-import {
- generateSystemAiConversationReply,
- SYSTEM_AI_CONVERSATION_MODEL,
- SYSTEM_AI_CONVERSATION_PROVIDER,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-system.server";
-import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { logger } from "@/lib/logger";
-import { generateAiConversationReply } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
+import {
+ resolveUserAiRuntime,
+ type ResolvedUserAiRuntime,
+} from "@/services/ai-runtime.service";
 
 import {
  buildAiConversationProviderContext,
@@ -26,6 +22,10 @@ import {
 import { loadAiConversationContextState } from "./ai-conversation-persistence.server";
 import { processDueAiConversationPostTurnJobs } from "./ai-conversation-post-turn.server";
 import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
+import {
+ AiConversationProviderStreamError,
+ streamAiConversationProviderReply,
+} from "./ai-conversation-stream-provider.server";
 import type { AiConversationMessage } from "./ai-conversation.schemas";
 
 export type PersistedTurnGenerationResult =
@@ -34,7 +34,21 @@ export type PersistedTurnGenerationResult =
     message: string;
     provider: string;
     model: string;
-    apiKeyId: string | null;
+    apiKeyId: string;
+   }
+ | {
+    ok: false;
+    status: number;
+    code: string;
+    message: string;
+   };
+
+export type PreparedPersistedAiConversationTurn =
+ | {
+    ok: true;
+    runtime: ResolvedUserAiRuntime;
+    conversationMessages: AiConversationMessage[];
+    systemPrompt: string;
    }
  | {
     ok: false;
@@ -51,7 +65,31 @@ function latestLearnerMessage(messages: AiConversationPersistedMessage[]) {
  return null;
 }
 
-export async function generatePersistedAiConversationTurn({
+function runtimeResolutionFailure(input: {
+ status: "missing-key" | "storage-unavailable";
+ reason: string;
+}): PreparedPersistedAiConversationTurn {
+ if (input.status === "missing-key") {
+  return {
+   ok: false,
+   status: 409,
+   code: input.reason === "selected-key-unavailable" ? "AI_API_KEY_UNAVAILABLE" : "AI_API_KEY_REQUIRED",
+   message:
+    input.reason === "selected-key-unavailable"
+     ? "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động."
+     : "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI.",
+  };
+ }
+
+ return {
+  ok: false,
+  status: 503,
+  code: "AI_RUNTIME_STORAGE_UNAVAILABLE",
+  message: "Kho API key an toàn phía server chưa sẵn sàng. Hãy kiểm tra lại cấu hình AI.",
+ };
+}
+
+export async function preparePersistedAiConversationTurn({
  supabase,
  userId,
  recentMessages,
@@ -65,18 +103,14 @@ export async function generatePersistedAiConversationTurn({
  contextState: AiConversationContextState;
  apiKeyId?: string;
  signal?: AbortSignal;
-}): Promise<PersistedTurnGenerationResult> {
- const userApiKeys = await getActiveUserApiKeyCredentials(supabase, userId);
- const selectedKey = apiKeyId ? userApiKeys.find((key) => key.id === apiKeyId) : userApiKeys[0];
-
- if (apiKeyId && !selectedKey) {
-  return {
-   ok: false,
-   status: 409,
-   code: "AI_API_KEY_UNAVAILABLE",
-   message: "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động.",
-  };
- }
+}): Promise<PreparedPersistedAiConversationTurn> {
+ const runtimeResolution = await resolveUserAiRuntime({
+  supabase,
+  userId,
+  capability: "conversation",
+  ...(apiKeyId ? { apiKeyId } : {}),
+ });
+ if (!runtimeResolution.ok) return runtimeResolutionFailure(runtimeResolution);
 
  const postTurnResult = await processDueAiConversationPostTurnJobs({
   supabase,
@@ -142,28 +176,53 @@ export async function generatePersistedAiConversationTurn({
   content: message.content,
  }));
 
- const result = selectedKey
-  ? await generateAiConversationReply(conversationMessages, {
-     userApiKeys: [selectedKey],
-     abortSignal: signal,
-     systemContext: providerContext.systemPrompt,
-    })
-  : await generateSystemAiConversationReply(
-     conversationMessages,
-     signal,
-     providerContext.systemPrompt,
-    );
+ return {
+  ok: true,
+  runtime: runtimeResolution.runtime,
+  conversationMessages,
+  systemPrompt: providerContext.systemPrompt,
+ };
+}
 
- if (!result.data) {
+export async function generatePersistedAiConversationTurn(input: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
+ recentMessages: AiConversationPersistedMessage[];
+ contextState: AiConversationContextState;
+ apiKeyId?: string;
+ signal?: AbortSignal;
+}): Promise<PersistedTurnGenerationResult> {
+ const prepared = await preparePersistedAiConversationTurn(input);
+ if (!prepared.ok) return prepared;
+
+ let raw = "";
+ try {
+  for await (const delta of streamAiConversationProviderReply({
+   runtime: prepared.runtime,
+   messages: prepared.conversationMessages,
+   systemPrompt: prepared.systemPrompt,
+   signal: input.signal,
+  })) {
+   raw += delta;
+  }
+ } catch (error) {
+  if (error instanceof AiConversationProviderStreamError) {
+   return {
+    ok: false,
+    status: error.status,
+    code: `AI_${error.code.replaceAll("-", "_").toUpperCase()}`,
+    message: error.message,
+   };
+  }
   return {
    ok: false,
    status: 503,
    code: "AI_UNAVAILABLE",
-   message: result.error || "AI provider không trả về nội dung.",
+   message: "AI provider không hoàn tất lượt trả lời.",
   };
  }
 
- const message = sanitizeAiConversationReply(result.data);
+ const message = sanitizeAiConversationReply(raw);
  if (!message) {
   return {
    ok: false,
@@ -176,10 +235,8 @@ export async function generatePersistedAiConversationTurn({
  return {
   ok: true,
   message,
-  provider: selectedKey
-   ? getApiKeyProviderLabel(selectedKey.provider)
-   : SYSTEM_AI_CONVERSATION_PROVIDER,
-  model: selectedKey?.defaultModel || SYSTEM_AI_CONVERSATION_MODEL,
-  apiKeyId: selectedKey?.id || null,
+  provider: prepared.runtime.providerLabel,
+  model: prepared.runtime.model,
+  apiKeyId: prepared.runtime.keyId,
  };
 }
