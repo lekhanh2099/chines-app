@@ -1,5 +1,7 @@
 import "server-only";
 
+import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
+
 import {
  AI_CONVERSATION_MEMORY_EMBEDDING_MODEL,
  AI_CONVERSATION_MEMORY_EMBEDDING_VERSION,
@@ -159,6 +161,7 @@ export function isAiConversationLongTermMemoryEnabled({
 }
 
 export async function retrieveRelevantAiConversationMemories({
+ supabase,
  userId,
  characterId,
  query,
@@ -166,6 +169,7 @@ export async function retrieveRelevantAiConversationMemories({
  suppressForForget,
  signal,
 }: {
+ supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
  characterId: string;
  query: string;
@@ -181,6 +185,8 @@ export async function retrieveRelevantAiConversationMemories({
  const lexical = rankAiConversationMemoriesLexically(query, active);
  let semantic: AiConversationRecalledMemory[] = [];
  const embedding = await generateAiConversationMemoryEmbedding({
+  supabase,
+  userId,
   text: query,
   task: "RETRIEVAL_QUERY",
   signal,
@@ -206,10 +212,12 @@ export async function retrieveRelevantAiConversationMemories({
 }
 
 export async function enrichMissingAiConversationMemoryEmbeddings({
+ supabase,
  userId,
  characterId,
  signal,
 }: {
+ supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
  characterId: string;
  signal?: AbortSignal;
@@ -224,6 +232,8 @@ export async function enrichMissingAiConversationMemoryEmbeddings({
 
   for (const memory of memories) {
    const embedding = await generateAiConversationMemoryEmbedding({
+    supabase,
+    userId,
     text: memory.content,
     task: "RETRIEVAL_DOCUMENT",
     signal,
