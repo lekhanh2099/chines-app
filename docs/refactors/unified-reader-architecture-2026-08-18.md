@@ -167,6 +167,8 @@ Article, plain-text and conversation fixtures prove future paste/chat integratio
 - segment rows are memoized and subscribe to segment-scoped playback/active state;
 - pronunciation analysis is cached per paragraph signature so one override does not recompute unrelated paragraphs.
 
+From the user-confirmed reader checkpoint `d3c6fc326fb754e9dabb573697714ec549bb991f` through this completed migration/pinyin/performance cleanup, the source diff is `+2544 / -2726`, net `-182 LOC`. This includes the new pinyin verification UI, tests, sticky Daily/HSK chrome and performance split, not only deletion.
+
 Rendered product verification and the final repository check remain external verification gates before merge; they are not treated as completed merely because source cleanup is complete.
 
 ## Performance rules
