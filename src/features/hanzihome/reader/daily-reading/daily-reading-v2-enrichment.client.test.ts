@@ -52,6 +52,25 @@ const article: DailyReadingV2 = {
  },
 };
 
+const readyTranslation: Extract<
+ DailyReadingV2["enrichment"]["translation"],
+ { status: "ready" }
+> = {
+ status: "ready",
+ updatedAt: "2026-08-19T06:30:00.000Z",
+ generatedBy: { provider: "Groq", model: "openai/gpt-oss-20b" },
+ data: {
+  titleVi: "Triển lãm văn hóa truyền thống tại bảo tàng thành phố",
+  whyWorthReadingVi: "Bài đọc nói về bảo tàng và học tập văn hóa công cộng.",
+  adaptationNoticeVi: "Bản dịch hỗ trợ học tập.",
+  paragraphs: article.article.paragraphs.map((paragraph) => ({
+   paragraphId: paragraph.id,
+   vi: `Nghĩa ${paragraph.id}`,
+   roleVi: "Nội dung",
+  })),
+ },
+};
+
 describe("Daily Reading V2 enrichment client", () => {
  beforeEach(() => {
   values.clear();
@@ -101,6 +120,37 @@ describe("Daily Reading V2 enrichment client", () => {
   expect(updated.enrichment.questions).toMatchObject({ status: "blocked", reason: "missing-ai-key" });
  });
 
+ it("skips ready modules and never overwrites them when a later module becomes blocked", async () => {
+  saveDailyReadingV2Article({
+   ...article,
+   enrichment: { ...article.enrichment, translation: readyTranslation },
+  });
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json(
+    {
+     ok: false,
+     status: "blocked",
+     module: "vocabulary",
+     reason: "missing-ai-key",
+     errorCode: "missing-ai-key",
+     errorDetail: "Chưa có API key AI đang hoạt động cho phần hỗ trợ học tập.",
+    },
+    { status: 409 },
+   ),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const updated = await enrichDailyReadingV2LearningSupport(article.id);
+  const requestBody = String(fetchMock.mock.calls[0]?.[1]?.body ?? "");
+
+  expect(fetchMock).toHaveBeenCalledTimes(1);
+  expect(requestBody).toContain('"module":"vocabulary"');
+  expect(updated.enrichment.translation).toEqual(readyTranslation);
+  expect(updated.enrichment.vocabulary).toMatchObject({ status: "blocked", reason: "missing-ai-key" });
+  expect(updated.enrichment.grammar).toMatchObject({ status: "blocked", reason: "missing-ai-key" });
+  expect(updated.enrichment.questions).toMatchObject({ status: "blocked", reason: "missing-ai-key" });
+ });
+
  it("persists a successful module without resetting another module or sending sibling state", async () => {
   const before = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
   expect(before?.enrichment.translation.status).toBe("idle");
@@ -108,17 +158,8 @@ describe("Daily Reading V2 enrichment client", () => {
    Response.json({
     ok: true,
     module: "translation",
-    data: {
-     titleVi: "Triển lãm văn hóa truyền thống tại bảo tàng thành phố",
-     whyWorthReadingVi: "Bài đọc nói về bảo tàng và học tập văn hóa công cộng.",
-     adaptationNoticeVi: "Bản dịch hỗ trợ học tập.",
-     paragraphs: article.article.paragraphs.map((paragraph) => ({
-      paragraphId: paragraph.id,
-      vi: `Nghĩa ${paragraph.id}`,
-      roleVi: "Nội dung",
-     })),
-    },
-    generatedBy: { provider: "Groq", model: "openai/gpt-oss-20b" },
+    data: readyTranslation.data,
+    generatedBy: readyTranslation.generatedBy,
    }),
   );
   vi.stubGlobal("fetch", fetchMock);
