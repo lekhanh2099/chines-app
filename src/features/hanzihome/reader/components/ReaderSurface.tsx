@@ -15,6 +15,7 @@ import {
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
+import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
 import {
@@ -83,6 +84,7 @@ export function ReaderSurfaceView({
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
+ const { openInspector } = useVocabInspector();
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const positionSource = useReaderRuntimeSelector((state) => state.positionSource);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
@@ -239,6 +241,7 @@ export function ReaderSurfaceView({
     <ReaderPronunciationReviewPopover
      target={pronunciationPreview}
      onClose={() => setPronunciationPreview(null)}
+     onOpenInspector={(text, rect) => openInspector(text, { lessonId, anchorRect: rect })}
     />
    ) : null}
   </div>
