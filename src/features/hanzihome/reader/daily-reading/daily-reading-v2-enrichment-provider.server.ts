@@ -2,8 +2,8 @@ import "server-only";
 
 import { z } from "zod";
 
-import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import type { AiRuntimeOperationErrorCode } from "@/lib/ai-runtime-contract";
+import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import {
  classifyAiRuntimeOperationFailure,
  type ResolvedUserAiRuntime,
@@ -68,10 +68,7 @@ function outputLimit(module: DailyReadingV2ProviderModule) {
  }
 }
 
-function safeProviderFailure(
- provider: string,
- code: AiRuntimeOperationErrorCode,
-): string {
+function safeProviderFailure(provider: string, code: AiRuntimeOperationErrorCode): string {
  switch (code) {
   case "invalid-key":
    return `${provider} từ chối API key đang chọn.`;
@@ -118,6 +115,15 @@ async function responseFailure(
   model: runtime.model,
   status: response.status,
   message: detail.slice(0, 1_000),
+ });
+}
+
+function caughtFailure(runtime: ResolvedUserAiRuntime, error: unknown) {
+ return providerFailure({
+  provider: runtime.providerLabel,
+  model: runtime.model,
+  message: error instanceof Error ? error.message : "provider request failed",
+  ...(error instanceof Error ? { errorName: error.name } : {}),
  });
 }
 
@@ -187,12 +193,7 @@ async function requestOpenAiCompatible(
   }
   return { ok: true, content, model: runtime.model };
  } catch (error) {
-  return providerFailure({
-   provider: runtime.providerLabel,
-   model: runtime.model,
-   message: error instanceof Error ? error.message : "provider request failed",
-   errorName: error instanceof Error ? error.name : undefined,
-  });
+  return caughtFailure(runtime, error);
  }
 }
 
@@ -241,12 +242,7 @@ async function requestGemini(
   }
   return { ok: true, content, model: runtime.model };
  } catch (error) {
-  return providerFailure({
-   provider: runtime.providerLabel,
-   model: runtime.model,
-   message: error instanceof Error ? error.message : "provider request failed",
-   errorName: error instanceof Error ? error.name : undefined,
-  });
+  return caughtFailure(runtime, error);
  }
 }
 
