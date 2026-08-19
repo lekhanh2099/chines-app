@@ -100,6 +100,8 @@ export function AiConversationWorkspace() {
  const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
  const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
  const [runtimeLoadError, setRuntimeLoadError] = useState(false);
+ const [streamContent, setStreamContent] = useState("");
+ const [streamStop, setStreamStop] = useState<(() => void) | null>(null);
  const requestRef = useRef<AbortController | null>(null);
  const retryTurnRef = useRef<RetryTurn | null>(null);
  const messageViewportRef = useRef<HTMLDivElement | null>(null);
@@ -204,7 +206,12 @@ export function AiConversationWorkspace() {
      content,
      ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
     },
-    { signal: controller.signal },
+    {
+     signal: controller.signal,
+     onDelta: (text) => setStreamContent((current) => `${current}${text}`),
+     onStreamReady: (stop) => setStreamStop(() => stop),
+     onStreamEnd: () => setStreamStop(null),
+    },
    );
    return { session, turn };
   },
@@ -241,6 +248,8 @@ export function AiConversationWorkspace() {
   },
   onSettled: (_data, _error, variables) => {
    if (requestRef.current === variables.controller) requestRef.current = null;
+   setStreamContent("");
+   setStreamStop(null);
   },
  });
 
@@ -438,7 +447,7 @@ export function AiConversationWorkspace() {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
- }, [conversation?.id, isSending, persistedMessages.length]);
+ }, [conversation?.id, isSending, persistedMessages.length, streamContent]);
 
  const selectRuntimeKey = (value: string) => {
   const nextValue =
@@ -486,6 +495,8 @@ export function AiConversationWorkspace() {
   requestRef.current = controller;
   retryTurnRef.current = null;
   setDraft("");
+  setStreamContent("");
+  setStreamStop(null);
   sendMutation.mutate({ content, clientMessageId, controller });
  };
 
@@ -634,6 +645,8 @@ export function AiConversationWorkspace() {
      <AiConversationTypingBubble
       assistantName={assistantName}
       label={t("message.replying", { name: assistantName })}
+      streamContent={streamContent}
+      onStop={streamStop}
      />
     ) : null}
    </div>
