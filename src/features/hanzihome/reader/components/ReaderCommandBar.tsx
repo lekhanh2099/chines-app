@@ -12,7 +12,6 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
-import { cn } from "@/lib/utils";
 
 import {
  useReaderRuntimeCommands,
@@ -67,11 +66,7 @@ export function ReaderCommandBar({
   playbackStatus === "playing" ? Pause : playbackStatus === "loading" ? Square : Play;
 
  return (
-  <Card
-   variant="section"
-   padding="sm"
-   className={cn(stickyClassName[stickyOffset], "bg-bg-subtle/95 backdrop-blur")}
-  >
+  <Card variant="section" padding="sm" className={stickyClassName[stickyOffset]}>
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     <Typography variant="caption" tone="muted" weight="black" className="mr-auto">
      Đoạn {activeIndex + 1} / {segmentCount}

@@ -19,19 +19,13 @@ import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTts
 import { formatContextualPinyinRange } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfaceSelection } from "../components/ReaderSurface";
-import {
- createReaderAnnotation,
- deleteReaderAnnotation,
-} from "../reader-annotation-api";
+import { createReaderAnnotation, deleteReaderAnnotation } from "../reader-annotation-api";
 import type { ReaderDocumentResource } from "../reader-content-api";
 import {
  useReaderRuntimeActions,
  useReaderRuntimeCommands,
 } from "../runtime/ReaderRuntimeProvider";
-import type {
- ReaderProgressOwner,
- ReaderPronunciationAnalysis,
-} from "./useReaderStudyState";
+import type { ReaderProgressOwner, ReaderPronunciationAnalysis } from "./useReaderStudyState";
 
 type SelectionMode = "quick" | "note";
 
@@ -180,7 +174,11 @@ export function useReaderSelectionActions({
      collisionPadding={8}
      positionMethod="fixed"
     >
-     <BasePopoverPopup variant="lookup" data-no-inspector onMouseDown={(event) => event.preventDefault()}>
+     <BasePopoverPopup
+      variant="lookup"
+      data-no-inspector
+      onMouseDown={(event) => event.preventDefault()}
+     >
       <div className="grid gap-3 p-3">
        <div className="flex items-start justify-between gap-2">
         <div className="grid min-w-0 gap-0.5">
@@ -191,7 +189,13 @@ export function useReaderSelectionActions({
           {selectedPinyin || "Chưa xác định pinyin"}
          </PinyinText>
         </div>
-        <Button type="button" size="icon-sm" variant="ghost" aria-label="Đóng thanh công cụ" onClick={clear}>
+        <Button
+         type="button"
+         size="icon-sm"
+         variant="ghost"
+         aria-label="Đóng thanh công cụ"
+         onClick={clear}
+        >
          <X aria-hidden="true" />
         </Button>
        </div>
@@ -213,7 +217,12 @@ export function useReaderSelectionActions({
            <Languages data-icon="inline-start" />
            Tra từ
           </Button>
-          <Button type="button" size="sm" variant="ghost" onClick={() => saveAnnotation("highlight")}>
+          <Button
+           type="button"
+           size="sm"
+           variant="ghost"
+           onClick={() => saveAnnotation("highlight")}
+          >
            <Highlighter data-icon="inline-start" />
            Đánh dấu
           </Button>
@@ -236,7 +245,12 @@ export function useReaderSelectionActions({
           <Button type="button" size="sm" variant="ghost" onClick={() => setMode("quick")}>
            Huỷ
           </Button>
-          <Button type="button" size="sm" disabled={!noteDraft.trim()} onClick={() => saveAnnotation("note")}>
+          <Button
+           type="button"
+           size="sm"
+           disabled={!noteDraft.trim()}
+           onClick={() => saveAnnotation("note")}
+          >
            Lưu ghi chú
           </Button>
          </div>

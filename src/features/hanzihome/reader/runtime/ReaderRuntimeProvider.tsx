@@ -143,15 +143,16 @@ function ReaderTtsBridge({
   },
   [onPlaybackComplete, store],
  );
- const playAtRef = useRef<
-  (
-   index: number,
-   runId: number,
-   continuous: boolean,
-   allowAutoAdvance: boolean,
-   startOffset: number,
-  ) => void
- >(noop);
+ const playAtRef =
+  useRef<
+   (
+    index: number,
+    runId: number,
+    continuous: boolean,
+    allowAutoAdvance: boolean,
+    startOffset: number,
+   ) => void
+  >(noop);
  const playAt = useCallback(
   (
    index: number,
@@ -294,19 +295,24 @@ function ReaderTtsBridge({
     });
    },
   };
- }, [commandsRef, next, pauseTts, previous, resumeTts, selectIndex, setTtsRate, startAt, stop, store]);
+ }, [
+  commandsRef,
+  next,
+  pauseTts,
+  previous,
+  resumeTts,
+  selectIndex,
+  setTtsRate,
+  startAt,
+  stop,
+  store,
+ ]);
 
  useEffect(() => {
   if (!ownsPlaybackRef.current) return;
   store.actions.syncPlayback({
    playbackSegmentId: store.state.playbackSegmentId,
-   playbackStatus: isLoading
-    ? "loading"
-    : isPaused
-      ? "paused"
-      : isSpeaking
-        ? "playing"
-        : "idle",
+   playbackStatus: isLoading ? "loading" : isPaused ? "paused" : isSpeaking ? "playing" : "idle",
    progress,
    rate,
    error,

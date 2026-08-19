@@ -49,10 +49,7 @@ import {
 } from "./runtime/ReaderRuntimeProvider";
 import { useReaderPronunciationReview } from "./runtime/useReaderPronunciationReview";
 import { useReaderSelectionActions } from "./runtime/useReaderSelectionActions";
-import {
- useReaderStudyState,
- type ReaderProgressOwner,
-} from "./runtime/useReaderStudyState";
+import { useReaderStudyState, type ReaderProgressOwner } from "./runtime/useReaderStudyState";
 import { ShadowingPracticePanel } from "./ShadowingPracticePanel";
 
 type ReaderWorkspaceTab =
@@ -222,7 +219,9 @@ function ReaderDocumentStudyContent({
  const readerUnitNumber = resource.document.unit_id?.replace(/^U/u, "") ?? "";
  const readerLessonLabel =
   metadataString(resource, "reading_label_vi") ??
-  (resource.document.reading_number === null ? "Bài đọc" : `Bài ${resource.document.reading_number}`);
+  (resource.document.reading_number === null
+   ? "Bài đọc"
+   : `Bài ${resource.document.reading_number}`);
  const toolbarStickyOffset = workspaceTabsEnabled || stickyParentTabs ? "tabs" : "page";
 
  const checkTranslation = () => {
@@ -345,7 +344,8 @@ function ReaderDocumentStudyContent({
    {study.error ? (
     <Card variant="subtle" padding="sm">
      <Typography variant="caption" tone="warning">
-      Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được khôi phục.
+      Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được
+      khôi phục.
      </Typography>
     </Card>
    ) : null}

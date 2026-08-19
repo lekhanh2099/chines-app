@@ -27,6 +27,7 @@ const requestSchema = z.strictObject({
     updatedAt: z.string(),
    }),
   )
+  .readonly()
   .default([]),
 });
 
@@ -216,7 +217,7 @@ function sourcePinyinForms(key: string): string[] {
 }
 
 function overrideReadingForGlyph(
- overrides: PronunciationOverride[],
+ overrides: readonly PronunciationOverride[],
  grapheme: { segment: string; index: number },
  sentenceText: string,
 ): { key: string } | null {

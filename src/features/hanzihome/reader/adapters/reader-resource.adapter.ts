@@ -22,7 +22,9 @@ function metadataText(resource: ReaderDocumentResource, key: string): string | u
 
 function metadataTextList(resource: ReaderDocumentResource, key: string): readonly string[] {
  const value = resource.document.source_metadata[key];
- return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+ return Array.isArray(value)
+  ? value.filter((item): item is string => typeof item === "string")
+  : [];
 }
 
 function hasAnalysis(resource: ReaderDocumentResource): boolean {
@@ -59,7 +61,7 @@ function metadataForResource(resource: ReaderDocumentResource): readonly ReaderM
   ["essential_question_vi", "Câu hỏi trọng tâm"],
   ["key_idea_vi", "Ý chính"],
   ["adaptation_notice_vi", "Ghi chú nguồn"],
- ] as const;
+ ];
  for (const [id, label] of sourceFields) {
   const value = metadataText(resource, id);
   if (value) metadata.push({ id, label, value });
@@ -79,7 +81,11 @@ function metadataForResource(resource: ReaderDocumentResource): readonly ReaderM
   metadata.push({ id: "vocabulary", label: "Từ vựng", value: String(resource.vocabulary.length) });
  }
  if (resource.exerciseItems.length > 0) {
-  metadata.push({ id: "exercises", label: "Bài tập", value: String(resource.exerciseItems.length) });
+  metadata.push({
+   id: "exercises",
+   label: "Bài tập",
+   value: String(resource.exerciseItems.length),
+  });
  }
  return metadata;
 }

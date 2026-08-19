@@ -72,7 +72,9 @@ function createReaderPronunciationSessionStore() {
 }
 
 type ReaderPronunciationSessionStore = ReturnType<typeof createReaderPronunciationSessionStore>;
-const ReaderPronunciationSessionContext = createContext<ReaderPronunciationSessionStore | null>(null);
+const ReaderPronunciationSessionContext = createContext<ReaderPronunciationSessionStore | null>(
+ null,
+);
 
 export function ReaderPronunciationSessionProvider({ children }: { children: ReactNode }) {
  const [store] = useState(createReaderPronunciationSessionStore);
@@ -85,7 +87,8 @@ export function ReaderPronunciationSessionProvider({ children }: { children: Rea
 
 function useReaderPronunciationSessionStore() {
  const store = useContext(ReaderPronunciationSessionContext);
- if (!store) throw new Error("Reader pronunciation hooks require ReaderPronunciationSessionProvider");
+ if (!store)
+  throw new Error("Reader pronunciation hooks require ReaderPronunciationSessionProvider");
  return store;
 }
 

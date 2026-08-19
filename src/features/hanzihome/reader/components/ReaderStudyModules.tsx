@@ -18,7 +18,8 @@ export function ReaderOverview({ resource }: { resource: ReaderDocumentResource 
      {resource.document.genre_vi || "Bài đọc"}
     </Typography>
     <Typography variant="bodySmall" tone="muted">
-     {resource.document.analysis.mainIdeaVi || "Đọc để nắm nội dung chính và cách triển khai của văn bản."}
+     {resource.document.analysis.mainIdeaVi ||
+      "Đọc để nắm nội dung chính và cách triển khai của văn bản."}
     </Typography>
    </Card>
    <Card variant="subtle" padding="lg" className="grid content-start gap-3">
@@ -56,7 +57,10 @@ export function ReaderDictation({ resource }: { resource: ReaderDocumentResource
    </Typography>
    <div className="flex flex-wrap gap-2">
     <Button type="button" asChild>
-     <Link href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`} prefetch={false}>
+     <Link
+      href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`}
+      prefetch={false}
+     >
       Mở chép chính tả →
      </Link>
     </Button>
@@ -190,7 +194,12 @@ export function ReaderNotes({
        </Typography>
       ) : null}
      </div>
-     <Button type="button" size="sm" variant="ghost" onClick={() => onRemove(annotation.id, annotation.revision)}>
+     <Button
+      type="button"
+      size="sm"
+      variant="ghost"
+      onClick={() => onRemove(annotation.id, annotation.revision)}
+     >
       Xoá
      </Button>
     </div>

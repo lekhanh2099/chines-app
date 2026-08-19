@@ -1,12 +1,6 @@
 "use client";
 
-import {
- useCallback,
- useEffect,
- useRef,
- useState,
- type KeyboardEvent,
-} from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import {
  getScrollContainerForTarget,
@@ -28,10 +22,7 @@ import {
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "../runtime/ReaderRuntimeProvider";
-import {
- ReaderCommandBar,
- type ReaderToolbarStickyOffset,
-} from "./ReaderCommandBar";
+import { ReaderCommandBar, type ReaderToolbarStickyOffset } from "./ReaderCommandBar";
 import {
  ReaderDocumentContent,
  type ReaderPronunciationAnalysis,
@@ -167,7 +158,9 @@ function ReaderSurfaceViewContent({
 
  useEffect(() => {
   const firstSegment = document.segments[0];
-  const firstElement = firstSegment ? (segmentElementsRef.current.get(firstSegment.id) ?? null) : null;
+  const firstElement = firstSegment
+   ? (segmentElementsRef.current.get(firstSegment.id) ?? null)
+   : null;
   const container = getScrollContainerForTarget(firstElement);
   if (!container || document.segments.length === 0) return;
   let animationFrame = 0;

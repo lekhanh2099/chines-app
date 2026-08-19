@@ -16,10 +16,7 @@ import {
  saveReaderPronunciationOverride,
 } from "../reader-pronunciation-api";
 import { useReaderRuntimeActions } from "./ReaderRuntimeProvider";
-import type {
- ReaderProgressOwner,
- ReaderPronunciationOverride,
-} from "./useReaderStudyState";
+import type { ReaderProgressOwner, ReaderPronunciationOverride } from "./useReaderStudyState";
 
 export function useReaderPronunciationReview({
  resource,
@@ -40,18 +37,14 @@ export function useReaderPronunciationReview({
   if (!target) return null;
   const token = target.analysis.tokens.find(
    (item) =>
-    item.type === "hanzi" &&
-    item.start <= target.glyph.start &&
-    item.end >= target.glyph.end,
+    item.type === "hanzi" && item.start <= target.glyph.start && item.end >= target.glyph.end,
   );
   return {
    start: token?.start ?? target.glyph.start,
    end: token?.end ?? target.glyph.end,
    text:
-    target.segment.zh.slice(
-     token?.start ?? target.glyph.start,
-     token?.end ?? target.glyph.end,
-    ) || target.glyph.text,
+    target.segment.zh.slice(token?.start ?? target.glyph.start, token?.end ?? target.glyph.end) ||
+    target.glyph.text,
   };
  }, [target]);
  const override =

@@ -51,7 +51,9 @@ export function ReaderOutlineContent({
       ? document.sections.map((section, index) => {
          const firstSegmentId = section.segmentIds[0];
          const targetIndex = firstSegmentId ? indexById.get(firstSegmentId) : undefined;
-         const selected = Boolean(activeSegment?.sectionId && activeSegment.sectionId === section.id);
+         const selected = Boolean(
+          activeSegment?.sectionId && activeSegment.sectionId === section.id,
+         );
          return targetIndex === undefined ? null : (
           <Button
            key={section.id}

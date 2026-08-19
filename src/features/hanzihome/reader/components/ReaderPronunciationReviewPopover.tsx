@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import {
  BasePopover as Popover,
@@ -35,15 +35,11 @@ type ReviewRange = {
 function resolveReviewRange(target: ReaderSurfacePronunciationTarget): ReviewRange {
  const token = target.analysis.tokens.find(
   (item) =>
-   item.type === "hanzi" &&
-   item.start <= target.glyph.start &&
-   item.end >= target.glyph.end,
+   item.type === "hanzi" && item.start <= target.glyph.start && item.end >= target.glyph.end,
  );
  const start = token?.start ?? target.glyph.start;
  const end = token?.end ?? target.glyph.end;
- const glyphs = target.analysis.glyphs.filter(
-  (glyph) => glyph.start >= start && glyph.end <= end,
- );
+ const glyphs = target.analysis.glyphs.filter((glyph) => glyph.start >= start && glyph.end <= end);
  return {
   text: target.segment.zh.slice(start, end) || target.glyph.text,
   start,
@@ -74,6 +70,11 @@ function initialReadings(review: ReviewRange) {
  );
 }
 
+type ReviewReadingsState = {
+ key: string;
+ values: Record<string, string>;
+};
+
 export function ReaderPronunciationReviewPopover({
  target,
  confirmed = false,
@@ -94,8 +95,12 @@ export function ReaderPronunciationReviewPopover({
  onOpenInspector?: (text: string, rect: DOMRect) => void;
 }) {
  const review = useMemo(() => resolveReviewRange(target), [target]);
- const [readings, setReadings] = useState<Record<string, string>>(() => initialReadings(review));
- useEffect(() => setReadings(initialReadings(review)), [review]);
+ const reviewKey = `${target.segment.id}:${review.start}:${review.end}`;
+ const [readingsState, setReadingsState] = useState<ReviewReadingsState>(() => ({
+  key: reviewKey,
+  values: initialReadings(review),
+ }));
+ const readings = readingsState.key === reviewKey ? readingsState.values : initialReadings(review);
  const status = reviewStatus(review, confirmed, saveScope);
  const anchor = useCallback(
   () => ({ getBoundingClientRect: () => target.rect, contextElement: document.body }),
@@ -140,11 +145,13 @@ export function ReaderPronunciationReviewPopover({
          </Badge>
         </div>
         <Typography variant="caption" tone="muted" leading="relaxed">
-         Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.
+         Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác
+         nhận cách đọc phù hợp câu này.
         </Typography>
         {saveScope === "session" && onSave ? (
          <Typography variant="caption" tone="muted" leading="relaxed">
-          Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã xác nhận lâu dài.
+          Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã
+          xác nhận lâu dài.
          </Typography>
         ) : null}
        </div>
@@ -165,8 +172,8 @@ export function ReaderPronunciationReviewPopover({
         {review.glyphs.map((glyph) => {
          const choices = [
           ...new Set(
-           [glyph.lexicalReadingKey, ...glyph.alternatives].filter(
-            (value): value is string => Boolean(value),
+           [glyph.lexicalReadingKey, ...glyph.alternatives].filter((value): value is string =>
+            Boolean(value),
            ),
           ),
          ];
@@ -174,7 +181,7 @@ export function ReaderPronunciationReviewPopover({
          return (
           <Card key={`${glyph.start}:${glyph.end}`} variant="subtle" padding="sm">
            <div className="flex min-w-0 flex-wrap items-center gap-2">
-            <Typography as="span" variant="sectionTitle" lang="zh-CN" className="mr-1">
+            <Typography as="span" variant="sectionTitle" lang="zh-CN">
              {glyph.text}
             </Typography>
             {choices.length > 0 ? (
@@ -186,9 +193,12 @@ export function ReaderPronunciationReviewPopover({
                variant={selected === readingKey ? "active" : "outline"}
                aria-pressed={selected === readingKey}
                onClick={() =>
-                setReadings((current) => ({
-                 ...current,
-                 [String(glyph.start)]: readingKey,
+                setReadingsState((current) => ({
+                 key: reviewKey,
+                 values: {
+                  ...(current.key === reviewKey ? current.values : initialReadings(review)),
+                  [String(glyph.start)]: readingKey,
+                 },
                 }))
                }
               >

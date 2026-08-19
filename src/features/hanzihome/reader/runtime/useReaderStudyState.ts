@@ -38,11 +38,6 @@ export type ReaderPronunciationOverride = Awaited<
 >[number];
 export type ReaderPronunciationAnalysis = ReturnType<typeof analyzeContextualPronunciation>;
 
-type PronunciationAnalysisCacheEntry = {
- signature: string;
- analysis: ReaderPronunciationAnalysis;
-};
-
 const DEFAULT_FEATURE_STATE: ReaderFeatureState = {
  showPinyin: true,
  showMeaning: false,
@@ -56,25 +51,15 @@ function metadataString(resource: ReaderDocumentResource, key: string) {
  return typeof value === "string" ? value : null;
 }
 
-function pronunciationOverrideSignature(overrides: readonly ReaderPronunciationOverride[]) {
- return overrides
-  .map((override) =>
-   [
-    override.id,
-    override.text,
-    override.readings.join(","),
-    override.scope,
-    override.sentence_text ?? "",
-    override.start_offset ?? "",
-    override.end_offset ?? "",
-    override.updated_at,
-   ].join(":"),
-  )
-  .join("|");
-}
-
-export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner: ReaderProgressOwner) {
- const [localState, setLocalState] = useState<ReaderFeatureState | null>(null);
+export function useReaderStudyState(
+ resource: ReaderDocumentResource,
+ stateOwner: ReaderProgressOwner,
+) {
+ const stateIdentity = `${stateOwner}:${resource.document.id}`;
+ const [localState, setLocalState] = useState<{
+  identity: string;
+  value: ReaderFeatureState | null;
+ }>(() => ({ identity: stateIdentity, value: null }));
  const [saveError, setSaveError] = useState("");
  const revisionRef = useRef(0);
  const saveQueueRef = useRef(Promise.resolve());
@@ -83,7 +68,6 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
  const persistedSnapshotRef = useRef<ReaderFeatureState | null>(null);
  const latestScheduledRef = useRef<{ snapshot: ReaderFeatureState; version: number } | null>(null);
  const autosaveRef = useRef<ReaderAutosaveController | null>(null);
- const pronunciationAnalysisCacheRef = useRef(new Map<string, PronunciationAnalysisCacheEntry>());
  const supabase = useMemo(() => createClient(), []);
  const sessionQuery = useQuery({
   queryKey: ["hanzihome", "reader-session-user"],
@@ -91,8 +75,10 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
   staleTime: 60_000,
  });
  const hasSession = sessionQuery.data !== null && sessionQuery.data !== undefined;
- const dailyPublishedDate = stateOwner === "daily" ? metadataString(resource, "published_date") : null;
- const personalNodeId = stateOwner === "personal" ? metadataString(resource, "knowledge_node_id") : null;
+ const dailyPublishedDate =
+  stateOwner === "daily" ? metadataString(resource, "published_date") : null;
+ const personalNodeId =
+  stateOwner === "personal" ? metadataString(resource, "knowledge_node_id") : null;
  const readerStateQuery = useQuery({
   queryKey: hanzihomeQueryKeys.readerState(resource.document.id),
   queryFn: () => fetchReaderState(resource.document.id),
@@ -151,20 +137,26 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
       }
     : null;
   }
-  const rowState = stateOwner === "daily" ? dailyStateQuery.data?.state : personalStateQuery.data?.state;
+  const rowState =
+   stateOwner === "daily" ? dailyStateQuery.data?.state : personalStateQuery.data?.state;
   const parsed = readerFeatureStateSchema.safeParse(rowState);
   return parsed.success ? parsed.data : null;
  }, [dailyStateQuery.data, personalStateQuery.data, readerStateQuery.data, stateOwner]);
- const featureState = localState ?? remoteState ?? DEFAULT_FEATURE_STATE;
+ const activeLocalState = localState.identity === stateIdentity ? localState.value : null;
+ const featureState = activeLocalState ?? remoteState ?? DEFAULT_FEATURE_STATE;
  const setFeatureState = useCallback(
   (updater: SetStateAction<ReaderFeatureState>) => {
    changeVersionRef.current += 1;
    setLocalState((current) => {
-    const base = current ?? remoteState ?? DEFAULT_FEATURE_STATE;
-    return typeof updater === "function" ? updater(base) : updater;
+    const currentValue = current.identity === stateIdentity ? current.value : null;
+    const base = currentValue ?? remoteState ?? DEFAULT_FEATURE_STATE;
+    return {
+     identity: stateIdentity,
+     value: typeof updater === "function" ? updater(base) : updater,
+    };
    });
   },
-  [remoteState],
+  [remoteState, stateIdentity],
  );
  const pending =
   sessionQuery.isPending ||
@@ -212,15 +204,16 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
   }
   setSaveError("");
  }, []);
- const onAutosaveError = useCallback((autosaveError: Error) => setSaveError(autosaveError.message), []);
+ const onAutosaveError = useCallback(
+  (autosaveError: Error) => setSaveError(autosaveError.message),
+  [],
+ );
 
  useEffect(() => {
   changeVersionRef.current = 0;
   persistedVersionRef.current = 0;
   persistedSnapshotRef.current = null;
   latestScheduledRef.current = null;
-  pronunciationAnalysisCacheRef.current.clear();
-  setLocalState(null);
  }, [resource.document.id, stateOwner]);
  useEffect(() => {
   if (stateOwner !== "reader") return;
@@ -228,7 +221,10 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
    delayMs: 500,
    initialRevision: 0,
    save: (snapshot, expectedRevision, signal) =>
-    saveReaderProgress({ documentId: resource.document.id, ...snapshot, expectedRevision }, { signal }),
+    saveReaderProgress(
+     { documentId: resource.document.id, ...snapshot, expectedRevision },
+     { signal },
+    ),
    recoverConflict,
    isConflict: (autosaveError) => autosaveError instanceof ReaderProgressConflictError,
    onSaved: onAutosaveSaved,
@@ -266,7 +262,10 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
   }
   latestScheduledRef.current = { snapshot: featureState, version };
   controller.schedule(featureState);
-  if (persistedSnapshotRef.current && readerFeatureStateEqual(featureState, persistedSnapshotRef.current)) {
+  if (
+   persistedSnapshotRef.current &&
+   readerFeatureStateEqual(featureState, persistedSnapshotRef.current)
+  ) {
    persistedVersionRef.current = Math.max(persistedVersionRef.current, version);
   }
  }, [error, featureState, hasSession, pending, stateOwner]);
@@ -275,36 +274,47 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
   const version = changeVersionRef.current;
   if (!hasPendingReaderStateChange(version, persistedVersionRef.current)) return;
   const snapshot = readerFeatureStateSchema.parse(featureState);
-  saveQueueRef.current = saveQueueRef.current.catch(() => undefined).then(async () => {
-   if (version !== changeVersionRef.current) return;
-   try {
-    const saved =
-     stateOwner === "daily" && dailyPublishedDate !== null
-      ? await saveDailyReadingState({
-         publishedDate: dailyPublishedDate,
-         state: snapshot,
-         expectedRevision: revisionRef.current,
-        })
-      : stateOwner === "personal" && personalNodeId !== null
-        ? await savePersonalLearningState({
-           nodeId: personalNodeId,
-           state: snapshot,
-           expectedRevision: revisionRef.current,
-          })
-        : null;
-    revisionRef.current = saved?.revision ?? revisionRef.current;
-    persistedVersionRef.current = Math.max(persistedVersionRef.current, version);
-    setSaveError("");
-   } catch (saveStateError) {
-    setSaveError(saveStateError instanceof Error ? saveStateError.message : "Không lưu được tiến độ Reader.");
-   }
-  });
+  saveQueueRef.current = saveQueueRef.current
+   .catch(() => undefined)
+   .then(async () => {
+    if (version !== changeVersionRef.current) return;
+    try {
+     const saved =
+      stateOwner === "daily" && dailyPublishedDate !== null
+       ? await saveDailyReadingState({
+          publishedDate: dailyPublishedDate,
+          state: snapshot,
+          expectedRevision: revisionRef.current,
+         })
+       : stateOwner === "personal" && personalNodeId !== null
+         ? await savePersonalLearningState({
+            nodeId: personalNodeId,
+            state: snapshot,
+            expectedRevision: revisionRef.current,
+           })
+         : null;
+     revisionRef.current = saved?.revision ?? revisionRef.current;
+     persistedVersionRef.current = Math.max(persistedVersionRef.current, version);
+     setSaveError("");
+    } catch (saveStateError) {
+     setSaveError(
+      saveStateError instanceof Error ? saveStateError.message : "Không lưu được tiến độ Reader.",
+     );
+    }
+   });
  }, [dailyPublishedDate, error, featureState, hasSession, pending, personalNodeId, stateOwner]);
 
  const annotations: readonly ReaderAnnotation[] =
-  stateOwner === "reader" ? (readerStateQuery.data?.annotations ?? []) : (annotationsQuery.data ?? []);
- const pronunciationOverrides: readonly ReaderPronunciationOverride[] =
-  stateOwner === "reader" ? (readerStateQuery.data?.overrides ?? []) : (pronunciationQuery.data ?? []);
+  stateOwner === "reader"
+   ? (readerStateQuery.data?.annotations ?? [])
+   : (annotationsQuery.data ?? []);
+ const pronunciationOverrides = useMemo<readonly ReaderPronunciationOverride[]>(
+  () =>
+   stateOwner === "reader"
+    ? (readerStateQuery.data?.overrides ?? [])
+    : (pronunciationQuery.data ?? []),
+  [pronunciationQuery.data, readerStateQuery.data, stateOwner],
+ );
  const pronunciationDictionary = useMemo(
   () =>
    resource.vocabulary.map((item, index) => ({
@@ -314,13 +324,6 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
     priority: resource.vocabulary.length - index,
    })),
   [resource.vocabulary],
- );
- const dictionarySignature = useMemo(
-  () =>
-   pronunciationDictionary
-    .map((item) => [item.id, item.text, item.pinyin, item.priority].join(":"))
-    .join("|"),
-  [pronunciationDictionary],
  );
  const overridesByParagraph = useMemo(() => {
   const grouped = new Map<string, ReaderPronunciationOverride[]>();
@@ -333,44 +336,31 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
  }, [pronunciationOverrides]);
  const analysisBySegmentId = useMemo<ReadonlyMap<string, ReaderPronunciationAnalysis>>(() => {
   const next = new Map<string, ReaderPronunciationAnalysis>();
-  const nextCache = new Map<string, PronunciationAnalysisCacheEntry>();
 
   for (const paragraph of resource.paragraphs) {
    const paragraphOverrides = overridesByParagraph.get(paragraph.id) ?? [];
-   const signature = [
-    paragraph.zh,
-    paragraph.pinyin,
-    dictionarySignature,
-    pronunciationOverrideSignature(paragraphOverrides),
-   ].join("\u0000");
-   const cached = pronunciationAnalysisCacheRef.current.get(paragraph.id);
-   const analysis =
-    cached?.signature === signature
-     ? cached.analysis
-     : analyzeContextualPronunciation(
-        {
-         text: paragraph.zh,
-         sourcePinyin: paragraph.pinyin || null,
-         overrides: paragraphOverrides.map((override) => ({
-          id: override.id,
-          text: override.text,
-          readings: override.readings,
-          scope: override.scope,
-          sentenceText: override.sentence_text,
-          start: override.start_offset,
-          end: override.end_offset,
-          updatedAt: override.updated_at,
-         })),
-        },
-        pronunciationDictionary,
-       );
+   const analysis = analyzeContextualPronunciation(
+    {
+     text: paragraph.zh,
+     sourcePinyin: paragraph.pinyin || null,
+     overrides: paragraphOverrides.map((override) => ({
+      id: override.id,
+      text: override.text,
+      readings: override.readings,
+      scope: override.scope,
+      sentenceText: override.sentence_text,
+      start: override.start_offset,
+      end: override.end_offset,
+      updatedAt: override.updated_at,
+     })),
+    },
+    pronunciationDictionary,
+   );
    next.set(paragraph.id, analysis);
-   nextCache.set(paragraph.id, { signature, analysis });
   }
 
-  pronunciationAnalysisCacheRef.current = nextCache;
   return next;
- }, [dictionarySignature, overridesByParagraph, pronunciationDictionary, resource.paragraphs]);
+ }, [overridesByParagraph, pronunciationDictionary, resource.paragraphs]);
  const documentModel = useMemo(() => readerResourceToDocument(resource), [resource]);
  const markCompleted = useCallback(() => {
   if (featureState.completed) return;
@@ -378,7 +368,10 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
  }, [featureState.completed, setFeatureState]);
  const saveExerciseAnswer = useCallback(
   (itemId: string, answer: ReaderAnswerState) => {
-   setFeatureState((current) => ({ ...current, answers: { ...current.answers, [itemId]: answer } }));
+   setFeatureState((current) => ({
+    ...current,
+    answers: { ...current.answers, [itemId]: answer },
+   }));
    if (stateOwner !== "personal") return;
    void savePracticeAttempt({
     surface: "personal-learning",
