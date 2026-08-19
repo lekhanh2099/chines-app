@@ -3,9 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
+import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
  incrementDictionaryLookupCount,
@@ -29,6 +29,18 @@ const lookupSchema = z.object({
  sentencePromptTemplate: z.string().trim().min(1).max(8000).optional(),
 });
 
+function runtimeError(status: "missing-key" | "storage-unavailable") {
+ return status === "missing-key"
+  ? NextResponse.json(
+     { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
+     { status: 409 },
+    )
+  : NextResponse.json(
+     { error: "Kho API key an toàn phía server chưa sẵn sàng." },
+     { status: 503 },
+    );
+}
+
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
  const {
@@ -47,14 +59,15 @@ export async function POST(request: NextRequest) {
  }
 
  if (parsed.data.type === "sentence") {
-  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
-  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
+  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+  if (!runtime.ok) return runtimeError(runtime.status);
 
+  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
    promptTemplate:
     parsed.data.sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
-   userApiKeys,
+   userApiKeys: [runtime.credential],
    allowGroq: true,
   });
 
@@ -119,13 +132,39 @@ export async function POST(request: NextRequest) {
   });
  }
 
- const promptSettings = await getUserAiPromptSettings(supabase, user.id);
- const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
+ const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+ if (!runtime.ok) {
+  const fallbackMeaning = isGenericEnglishFallbackAnalysis(cachedAnalysis)
+   ? ""
+   : getPrimaryMeaning(cachedAnalysis, cachedWord?.meaning || "");
 
+  if (cachedWord && fallbackMeaning) {
+   return NextResponse.json({
+    cached: true,
+    data: {
+     id: cachedWord.id,
+     dictionary_id: undefined,
+     hanzi: cachedWord.hanzi,
+     pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
+     sino_vietnamese:
+      cachedWord.sino_vietnamese ||
+      cachedAnalysis.sino_vietnamese ||
+      cachedAnalysis.han_viet ||
+      null,
+     meaning: fallbackMeaning,
+     analysis: cachedAnalysis,
+    },
+   });
+  }
+
+  return runtimeError(runtime.status);
+ }
+
+ const promptSettings = await getUserAiPromptSettings(supabase, user.id);
  const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
   promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
-  userApiKeys,
+  userApiKeys: [runtime.credential],
   allowGroq: true,
  });
 
