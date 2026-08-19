@@ -8,6 +8,8 @@ import {
  getDailyReadingV2Snapshot,
  hasScheduledCapturedArticleForDate,
  markDailyReadingV2EnrichmentRunInterrupted,
+ removeAllDailyReadingV2Articles,
+ removeDailyReadingV2Article,
  saveDailyReadingV2Article,
  saveDailyReadingV2EnrichmentRun,
  scheduledCaptureRunBlocksDate,
@@ -100,6 +102,50 @@ describe("Daily Reading V2 storage", () => {
   expect(hasScheduledCapturedArticleForDate("2026-08-19")).toBe(true);
   expect(values.has("chines-app:daily-reading:v2")).toBe(true);
   expect(JSON.stringify(saved)).not.toMatch(/pinyin/iu);
+ });
+
+ it("deletes article data without deleting diagnostic run history", () => {
+  saveDailyReadingV2Article(article);
+  saveDailyReadingV2EnrichmentRun({
+   id: "enrichment-delete-proof",
+   articleId: article.id,
+   module: "translation",
+   status: "failed",
+   attemptedAt: "2026-08-19T07:00:00.000Z",
+   completedAt: "2026-08-19T07:00:01.000Z",
+   errorCode: "provider-unavailable",
+   errorDetail: "Groq temporarily unavailable.",
+  });
+
+  expect(removeDailyReadingV2Article(article.id)).toBe(true);
+  const snapshot = getDailyReadingV2Snapshot();
+  expect(snapshot.items).toHaveLength(0);
+  expect(snapshot.enrichmentRuns.map((item) => item.id)).toContain("enrichment-delete-proof");
+  expect(removeDailyReadingV2Article(article.id)).toBe(false);
+ });
+
+ it("clears all saved articles while keeping the ledger available for diagnostics", () => {
+  saveDailyReadingV2Article(article);
+  const second: DailyReadingV2 = {
+   ...article,
+   id: "daily-v2:2026-08-20:8765dcba",
+   publishedDate: "2026-08-20",
+   capturedAt: "2026-08-20T06:00:00.000Z",
+   source: {
+    ...article.source,
+    url: "https://www.chinanews.com.cn/cul/2026/08-20/456.shtml",
+    capturedAt: "2026-08-20T06:00:00.000Z",
+   },
+   article: {
+    ...article.article,
+    fingerprint: "8765dcba",
+   },
+  };
+  saveDailyReadingV2Article(second);
+
+  expect(removeAllDailyReadingV2Articles()).toBe(2);
+  expect(getDailyReadingV2Snapshot().items).toHaveLength(0);
+  expect(values.has("chines-app:daily-reading:v2")).toBe(true);
  });
 
  it("updates only the requested enrichment module and preserves the captured source", () => {
