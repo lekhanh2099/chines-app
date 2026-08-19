@@ -101,7 +101,7 @@ describe("Daily Reading V2 enrichment client", () => {
   expect(updated.enrichment.questions).toMatchObject({ status: "blocked", reason: "missing-ai-key" });
  });
 
- it("persists a successful module without resetting another module", async () => {
+ it("persists a successful module without resetting another module or sending sibling state", async () => {
   const before = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
   expect(before?.enrichment.translation.status).toBe("idle");
   const fetchMock = vi.fn().mockResolvedValue(
@@ -124,10 +124,15 @@ describe("Daily Reading V2 enrichment client", () => {
   vi.stubGlobal("fetch", fetchMock);
 
   const updated = await enrichDailyReadingV2Module(article.id, "translation");
+  const requestBody = String(fetchMock.mock.calls[0]?.[1]?.body ?? "");
 
   expect(updated.enrichment.translation.status).toBe("ready");
   expect(updated.enrichment.grammar.status).toBe("idle");
   expect(updated.article).toEqual(article.article);
   expect(JSON.stringify(updated.enrichment.translation)).not.toMatch(/pinyin/iu);
+  expect(requestBody).toContain('"article"');
+  expect(requestBody).toContain('"classification"');
+  expect(requestBody).not.toContain('"enrichment"');
+  expect(requestBody).not.toContain('"publishedDate"');
  });
 });
