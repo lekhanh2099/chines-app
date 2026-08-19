@@ -1,89 +1,50 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, List, Pause, Play, RotateCcw, Square } from "lucide-react";
 import {
  useCallback,
  useEffect,
- useMemo,
  useRef,
  useState,
  type KeyboardEvent,
- type ReactNode,
 } from "react";
 
 import {
  getScrollContainerForTarget,
  scrollAppContentToElement,
 } from "@/components/layout/app-scroll";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
-import {
- PinyinText,
- ReaderHanziText,
- StudyInstructionText,
- TranslationText,
-} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "@/features/hanzihome/components/lesson-overview/types";
-import {
- ProgressiveStudyText,
- getActiveCharacterIndex,
-} from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
-import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import {
- analyzeContextualPronunciation,
- formatContextualSpokenPinyin,
-} from "@/features/hanzihome/pronunciation/contextual-pronunciation";
-import { ContextualReaderText } from "../ContextualReaderText";
-import type {
- ReaderDocumentModel,
- ReaderSection,
- ReaderSegment,
-} from "../model/reader-document.types";
+
+import type { ReaderDocumentModel } from "../model/reader-document.types";
 import {
  ReaderRuntimeProvider,
  useReaderRuntimeActions,
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "../runtime/ReaderRuntimeProvider";
-import { ReaderTools } from "./ReaderTools";
+import {
+ ReaderCommandBar,
+ type ReaderToolbarStickyOffset,
+} from "./ReaderCommandBar";
+import {
+ ReaderDocumentContent,
+ type ReaderPronunciationAnalysis,
+ type ReaderSurfacePronunciationTarget,
+ type ReaderSurfaceRenderSection,
+ type ReaderSurfaceRenderSegment,
+ type ReaderSurfaceSelection,
+} from "./ReaderDocumentContent";
+import { ReaderOutline, ReaderOutlineContent } from "./ReaderOutline";
+import { ReaderPronunciationReviewPopover } from "./ReaderPronunciationReviewPopover";
 
-const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
-
-type ReaderPronunciationAnalysis = ReturnType<typeof analyzeContextualPronunciation>;
-
-export type ReaderSurfaceSelection = {
- segment: ReaderSegment;
- index: number;
- text: string;
- start: number | null;
- end: number | null;
- rect: DOMRect;
+export type {
+ ReaderPronunciationAnalysis,
+ ReaderSurfacePronunciationTarget,
+ ReaderSurfaceRenderSection,
+ ReaderSurfaceRenderSegment,
+ ReaderSurfaceSelection,
 };
-
-export type ReaderSurfaceRenderSegment = (input: {
- segment: ReaderSegment;
- index: number;
- content: ReactNode;
-}) => ReactNode;
-
-export type ReaderSurfaceRenderSection = (input: {
- section: ReaderSection;
- content: ReactNode;
-}) => ReactNode;
 
 export type ReaderSurfaceProps = {
  document: ReaderDocumentModel;
@@ -92,7 +53,9 @@ export type ReaderSurfaceProps = {
  renderSection?: ReaderSurfaceRenderSection;
  analysisBySegmentId?: ReadonlyMap<string, ReaderPronunciationAnalysis>;
  onSelection?: (selection: ReaderSurfaceSelection) => void;
+ onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  onOpenShadowing?: () => void;
+ toolbarStickyOffset?: ReaderToolbarStickyOffset;
 };
 
 export function ReaderSurface(props: ReaderSurfaceProps) {
@@ -110,9 +73,13 @@ export function ReaderSurfaceView({
  renderSection,
  analysisBySegmentId,
  onSelection,
+ onPronunciationInspect,
  onOpenShadowing,
+ toolbarStickyOffset = "page",
 }: ReaderSurfaceProps) {
  const [outlineOpen, setOutlineOpen] = useState(false);
+ const [pronunciationPreview, setPronunciationPreview] =
+  useState<ReaderSurfacePronunciationTarget | null>(null);
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
@@ -121,13 +88,18 @@ export function ReaderSurfaceView({
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const error = useReaderRuntimeSelector((state) => state.error);
- const learning = useLearningState();
- const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
 
  const setSegmentElement = useCallback((segmentId: string, element: HTMLElement | null) => {
   if (element) segmentElementsRef.current.set(segmentId, element);
   else segmentElementsRef.current.delete(segmentId);
  }, []);
+ const inspectPronunciation = useCallback(
+  (target: ReaderSurfacePronunciationTarget) => {
+   if (onPronunciationInspect) onPronunciationInspect(target);
+   else setPronunciationPreview(target);
+  },
+  [onPronunciationInspect],
+ );
 
  useEffect(() => {
   if (positionSource !== "command" && positionSource !== "playback") return;
@@ -222,6 +194,7 @@ export function ReaderSurfaceView({
     segmentCount={document.segments.length}
     onOpenOutline={() => setOutlineOpen(true)}
     onOpenShadowing={onOpenShadowing}
+    stickyOffset={toolbarStickyOffset}
    />
    {error ? (
     <Typography as="p" variant="caption" tone="danger" role="alert">
@@ -240,11 +213,11 @@ export function ReaderSurfaceView({
      <ReaderDocumentContent
       document={document}
       lessonId={lessonId}
-      displayMode={displayMode}
       renderSegment={renderSegment}
       renderSection={renderSection}
       analysisBySegmentId={analysisBySegmentId}
       onSelection={onSelection}
+      onPronunciationInspect={inspectPronunciation}
       setSegmentElement={setSegmentElement}
      />
     </div>
@@ -261,513 +234,12 @@ export function ReaderSurfaceView({
      <ReaderOutlineContent document={document} onNavigate={() => setOutlineOpen(false)} />
     </SheetBody>
    </Sheet>
-  </div>
- );
-}
 
-function ReaderCommandBar({
- segmentCount,
- onOpenOutline,
- onOpenShadowing,
-}: {
- segmentCount: number;
- onOpenOutline: () => void;
- onOpenShadowing?: () => void;
-}) {
- const commands = useReaderRuntimeCommands();
- const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
- const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
- const rate = useReaderRuntimeSelector((state) => state.rate);
- const isFirst = activeIndex <= 0;
- const isLast = activeIndex >= segmentCount - 1;
- const isIdle = playbackStatus === "idle";
-
- const togglePlayback = () => {
-  if (playbackStatus === "playing") commands.pause();
-  else if (playbackStatus === "paused") commands.resume();
-  else if (playbackStatus === "loading") commands.stop();
-  else commands.playCurrent();
- };
- const playbackLabel =
-  playbackStatus === "playing"
-   ? "Tạm dừng"
-   : playbackStatus === "paused"
-     ? "Tiếp tục"
-     : playbackStatus === "loading"
-       ? "Dừng"
-       : "Nghe bài";
- const PlaybackIcon =
-  playbackStatus === "playing" ? Pause : playbackStatus === "loading" ? Square : Play;
-
- return (
-  <Card variant="section" padding="sm">
-   <div className="flex min-w-0 flex-wrap items-center gap-2">
-    <Typography variant="caption" tone="muted" weight="black" className="mr-auto">
-     Đoạn {activeIndex + 1} / {segmentCount}
-    </Typography>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     disabled={isFirst}
-     aria-label="Đoạn trước"
-     onClick={commands.previous}
-    >
-     <ChevronLeft />
-    </Button>
-    <Button
-     type="button"
-     variant={isIdle ? "default" : "active"}
-     size="toolbar"
-     aria-label={playbackLabel}
-     onClick={togglePlayback}
-    >
-     <PlaybackIcon data-icon="inline-start" />
-     {playbackLabel}
-    </Button>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     aria-label="Nghe lại đoạn"
-     title="Nghe lại đoạn"
-     onClick={commands.restartCurrent}
-    >
-     <RotateCcw />
-    </Button>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     disabled={isIdle}
-     aria-label="Dừng đọc"
-     title="Dừng đọc"
-     onClick={commands.stop}
-    >
-     <Square />
-    </Button>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     disabled={isLast}
-     aria-label="Đoạn sau"
-     onClick={commands.next}
-    >
-     <ChevronRight />
-    </Button>
-    <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
-     <SelectTrigger size="sm" aria-label="Tốc độ đọc">
-      <SelectValue />
-     </SelectTrigger>
-     <SelectContent align="end">
-      {readerRateOptions.map((option) => (
-       <SelectItem key={option} value={String(option)}>
-        {option.toFixed(2)}x
-       </SelectItem>
-      ))}
-     </SelectContent>
-    </Select>
-    <div className="2xl:hidden">
-     <Button
-      type="button"
-      variant="outline"
-      size="icon-toolbar"
-      aria-label="Mở mục lục đoạn"
-      title="Mục lục đoạn"
-      onClick={onOpenOutline}
-     >
-      <List />
-     </Button>
-    </div>
-    <ReaderTools onOpenShadowing={onOpenShadowing} />
-   </div>
-  </Card>
- );
-}
-
-function ReaderDocumentContent({
- document,
- lessonId,
- displayMode,
- renderSegment,
- renderSection,
- analysisBySegmentId,
- onSelection,
- setSegmentElement,
-}: ReaderSurfaceProps & {
- displayMode: LessonDisplayMode;
- setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
-}) {
- const segmentById = useMemo(
-  () => new Map(document.segments.map((segment) => [segment.id, segment])),
-  [document.segments],
- );
- const indexById = useMemo(
-  () => new Map(document.segments.map((segment, index) => [segment.id, index])),
-  [document.segments],
- );
- const sectionSegmentIds = useMemo(
-  () => new Set(document.sections.flatMap((section) => [...section.segmentIds])),
-  [document.sections],
- );
- const unsectioned = document.segments.filter((segment) => !sectionSegmentIds.has(segment.id));
-
- return (
-  <Card variant="section" padding="lg">
-   <div className="grid min-w-0 gap-5">
-    {document.sections.map((section, sectionIndex) => {
-     const segments = section.segmentIds
-      .map((segmentId) => segmentById.get(segmentId))
-      .filter((segment): segment is ReaderSegment => segment !== undefined);
-     if (segments.length === 0) return null;
-     const content = (
-      <section className="grid min-w-0 gap-4">
-       <div className="grid gap-1">
-        <StudyInstructionText
-         variant="overline"
-         tone="muted"
-         weight="black"
-         tracking="wide"
-         transform="uppercase"
-        >
-         Phần {sectionIndex + 1}
-        </StudyInstructionText>
-        <Typography as="h3" variant="cardTitle" weight="black">
-         {section.title}
-        </Typography>
-       </div>
-       <div className="grid min-w-0 gap-5">
-        {segments.map((segment, localIndex) => (
-         <ReaderSegmentRow
-          key={segment.id}
-          segment={segment}
-          index={indexById.get(segment.id) ?? localIndex}
-          lessonId={lessonId}
-          displayMode={displayMode}
-          renderSegment={renderSegment}
-          analysis={analysisBySegmentId?.get(segment.id)}
-          onSelection={onSelection}
-          setSegmentElement={setSegmentElement}
-          showSeparator={localIndex > 0}
-         />
-        ))}
-       </div>
-      </section>
-     );
-     return (
-      <div key={section.id} className="grid gap-5">
-       {sectionIndex > 0 ? <Separator /> : null}
-       {renderSection ? renderSection({ section, content }) : content}
-      </div>
-     );
-    })}
-
-    {unsectioned.length > 0 ? (
-     <div className="grid min-w-0 gap-5">
-      {unsectioned.map((segment, localIndex) => (
-       <ReaderSegmentRow
-        key={segment.id}
-        segment={segment}
-        index={indexById.get(segment.id) ?? localIndex}
-        lessonId={lessonId}
-        displayMode={displayMode}
-        renderSegment={renderSegment}
-        analysis={analysisBySegmentId?.get(segment.id)}
-        onSelection={onSelection}
-        setSegmentElement={setSegmentElement}
-        showSeparator={document.sections.length > 0 || localIndex > 0}
-       />
-      ))}
-     </div>
-    ) : null}
-   </div>
-  </Card>
- );
-}
-
-function ReaderSegmentRow({
- segment,
- index,
- lessonId,
- displayMode,
- renderSegment,
- analysis,
- onSelection,
- setSegmentElement,
- showSeparator,
-}: {
- segment: ReaderSegment;
- index: number;
- lessonId?: string;
- displayMode: LessonDisplayMode;
- renderSegment?: ReaderSurfaceRenderSegment;
- analysis?: ReaderPronunciationAnalysis;
- onSelection?: (selection: ReaderSurfaceSelection) => void;
- setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
- showSeparator: boolean;
-}) {
- const active = useReaderRuntimeSelector((state) => state.activeSegmentId === segment.id);
- const { openInspector } = useVocabInspector();
- const content = (
-  <ReaderSegmentText segment={segment} active={active} displayMode={displayMode} analysis={analysis} />
- );
- const rendered = renderSegment ? renderSegment({ segment, index, content }) : content;
-
- const captureSelection = (element: HTMLElement) => {
-  const selection = window.getSelection();
-  if (!selection || selection.isCollapsed || selection.rangeCount === 0) return;
-  const selectedText = selection.toString().trim();
-  if (!selectedText) return;
-  const range = selection.getRangeAt(0);
-  const hanziContainer = element.querySelector<HTMLElement>("[data-reader-hanzi-content]");
-  if (!hanziContainer || !hanziContainer.contains(range.commonAncestorContainer)) return;
-
-  const beforeStart = document.createRange();
-  beforeStart.selectNodeContents(hanziContainer);
-  beforeStart.setEnd(range.startContainer, range.startOffset);
-  const beforeEnd = document.createRange();
-  beforeEnd.selectNodeContents(hanziContainer);
-  beforeEnd.setEnd(range.endContainer, range.endOffset);
-  let start = Math.min(beforeStart.toString().length, beforeEnd.toString().length);
-  let end = Math.max(beforeStart.toString().length, beforeEnd.toString().length);
-  if (segment.zh.slice(start, end).trim() !== selectedText) {
-   const first = segment.zh.indexOf(selectedText);
-   const second = first < 0 ? -1 : segment.zh.indexOf(selectedText, first + selectedText.length);
-   if (first >= 0 && second < 0) {
-    start = first;
-    end = first + selectedText.length;
-   } else {
-    start = -1;
-    end = -1;
-   }
-  }
-
-  const rect = range.getBoundingClientRect();
-  if (onSelection) {
-   onSelection({
-    segment,
-    index,
-    text: selectedText,
-    start: start >= 0 ? start : null,
-    end: end >= 0 ? end : null,
-    rect,
-   });
-   return;
-  }
-  void openInspector(selectedText, { lessonId, anchorRect: rect });
- };
-
- return (
-  <div
-   ref={(element) => setSegmentElement(segment.id, element)}
-   data-reader-segment-id={segment.id}
-   data-no-inspector="true"
-   className="grid min-w-0 gap-5"
-   onMouseUp={(event) => captureSelection(event.currentTarget)}
-   onTouchEnd={(event) => captureSelection(event.currentTarget)}
-  >
-   {showSeparator ? <Separator /> : null}
-   {rendered}
-  </div>
- );
-}
-
-function ReaderSegmentText({
- segment,
- active,
- displayMode,
- analysis: providedAnalysis,
-}: {
- segment: ReaderSegment;
- active: boolean;
- displayMode: LessonDisplayMode;
- analysis?: ReaderPronunciationAnalysis;
-}) {
- const playbackProgress = useReaderRuntimeSelector((state) =>
-  state.playbackSegmentId === segment.id && state.playbackStatus !== "idle" ? state.progress : -1,
- );
- const computedAnalysis = useMemo(() => {
-  if (providedAnalysis) return providedAnalysis;
-  if (segment.zh.length > 2_000) return null;
-  const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
-  return analyzeContextualPronunciation({ text: segment.zh, sourcePinyin });
- }, [providedAnalysis, segment.pinyin, segment.zh]);
- const characterCount = Array.from(segment.zh).length;
- const activeCharacterIndex =
-  playbackProgress >= 0
-   ? getActiveCharacterIndex(characterCount, 0, characterCount, playbackProgress)
-   : -1;
- const contextualPinyin = useMemo(
-  () => (computedAnalysis ? formatContextualSpokenPinyin(computedAnalysis) : segment.pinyin),
-  [computedAnalysis, segment.pinyin],
- );
-
- return (
-  <article className="grid min-w-0 gap-2">
-   <div className="flex min-w-0 flex-wrap items-center gap-2">
-    <StudyInstructionText
-     variant="overline"
-     tone={active ? "accent" : "muted"}
-     weight="black"
-     tracking="wide"
-     transform="uppercase"
-    >
-     {segment.kind === "dialogue-turn" ? `Lượt ${segment.speaker?.label ?? "thoại"}` : "Đoạn đọc"}
-    </StudyInstructionText>
-    {segment.role ? (
-     <StudyInstructionText variant="caption" tone="muted" weight="semibold">
-      {segment.role}
-     </StudyInstructionText>
-    ) : null}
-   </div>
-
-   <div data-reader-hanzi-content={segment.id}>
-    {displayMode.revealMode === "tap" ? (
-     <ProgressiveStudyText
-      zh={segment.zh}
-      pinyin={contextualPinyin}
-      vi={segment.vi}
-      displayMode={displayMode}
-     />
-    ) : computedAnalysis ? (
-     <div className="grid min-w-0 gap-1.5">
-      <ContextualReaderText
-       analysis={computedAnalysis}
-       displayMode={displayMode}
-       activeCharacterIndex={activeCharacterIndex}
-       showPinyin={displayMode.showPinyin}
-       pinyinPresentation="ruby"
-       sourcePinyin={segment.pinyin}
-      />
-      {segment.vi && displayMode.showMeaning ? (
-       <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
-        {segment.vi}
-       </TranslationText>
-      ) : null}
-     </div>
-    ) : (
-     <div className="grid min-w-0 gap-1.5">
-      <ReaderHanziText
-       displayMode={displayMode}
-       tone="default"
-       leading="learner"
-       wrapping="preWrap"
-       className="min-w-0"
-      >
-       {segment.zh}
-      </ReaderHanziText>
-      {segment.pinyin && displayMode.showPinyin ? (
-       <PinyinText tone="accent" weight="semibold" leading="relaxed" wrapping="preWrap">
-        {segment.pinyin}
-       </PinyinText>
-      ) : null}
-      {segment.vi && displayMode.showMeaning ? (
-       <TranslationText tone="muted" weight="medium" leading="relaxed" wrapping="preWrap">
-        {segment.vi}
-       </TranslationText>
-      ) : null}
-     </div>
-    )}
-   </div>
-  </article>
- );
-}
-
-function ReaderOutline({ document }: { document: ReaderDocumentModel }) {
- return (
-  <Card variant="section" padding="md" className="sticky top-3">
-   <ReaderOutlineContent document={document} />
-  </Card>
- );
-}
-
-function ReaderOutlineContent({
- document,
- onNavigate,
-}: {
- document: ReaderDocumentModel;
- onNavigate?: () => void;
-}) {
- const commands = useReaderRuntimeCommands();
- const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
- const activeSegment = document.segments[activeIndex];
- const indexById = useMemo(
-  () => new Map(document.segments.map((segment, index) => [segment.id, index])),
-  [document.segments],
- );
-
- return (
-  <div className="grid gap-4">
-   <div className="grid gap-2">
-    <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-     Mục lục đoạn
-    </Typography>
-    <nav aria-label="Mục lục bài đọc" className="grid gap-1">
-     {document.sections.length > 0
-      ? document.sections.map((section, index) => {
-         const firstSegmentId = section.segmentIds[0];
-         const targetIndex = firstSegmentId ? indexById.get(firstSegmentId) : undefined;
-         const selected = Boolean(activeSegment?.sectionId && activeSegment.sectionId === section.id);
-         return targetIndex === undefined ? null : (
-          <Button
-           key={section.id}
-           type="button"
-           variant={selected ? "active" : "ghost"}
-           size="menu"
-           align="start"
-           className="w-full"
-           onClick={() => {
-            commands.selectIndex(targetIndex);
-            onNavigate?.();
-           }}
-          >
-           <span className="tabular-nums">{index + 1}</span>
-           <span className="min-w-0 truncate">{section.title}</span>
-          </Button>
-         );
-        })
-      : document.segments.map((segment, index) => (
-         <Button
-          key={segment.id}
-          type="button"
-          variant={activeIndex === index ? "active" : "ghost"}
-          size="menu"
-          align="start"
-          className="w-full"
-          onClick={() => {
-           commands.selectIndex(index);
-           onNavigate?.();
-          }}
-         >
-          <span className="tabular-nums">{index + 1}</span>
-          <span>Đoạn {index + 1}</span>
-         </Button>
-        ))}
-    </nav>
-   </div>
-
-   {document.metadata.length > 0 ? (
-    <>
-     <Separator />
-     <div className="grid gap-3">
-      <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-       Thông tin bài
-      </Typography>
-      <dl className="grid gap-3">
-       {document.metadata.map((item) => (
-        <div key={item.id} className="grid gap-0.5">
-         <Typography as="dt" variant="caption" tone="muted">
-          {item.label}
-         </Typography>
-         <Typography as="dd" variant="bodySmall" tone="default">
-          {item.value}
-         </Typography>
-        </div>
-       ))}
-      </dl>
-     </div>
-    </>
+   {!onPronunciationInspect && pronunciationPreview ? (
+    <ReaderPronunciationReviewPopover
+     target={pronunciationPreview}
+     onClose={() => setPronunciationPreview(null)}
+    />
    ) : null}
   </div>
  );
