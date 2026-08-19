@@ -167,7 +167,7 @@ Article, plain-text and conversation fixtures prove future paste/chat integratio
 - segment rows are memoized and subscribe to segment-scoped playback/active state;
 - pronunciation analysis is cached per paragraph signature so one override does not recompute unrelated paragraphs.
 
-From the user-confirmed reader checkpoint `d3c6fc326fb754e9dabb573697714ec549bb991f` through the migration/pinyin/performance cleanup, the source diff is net-negative while adding the missing verification UI and tests. Use the final branch comparison when reporting exact LOC because this document itself is part of that diff.
+The completed source pass remains net-negative from the user-confirmed checkpoint even after adding pinyin review, sticky chrome, tests and the performance split. Exact LOC is reported from the final Git comparison rather than duplicated in this document.
 
 Rendered product verification and the final repository check remain external verification gates before merge; they are not treated as completed merely because source cleanup is complete.
 
