@@ -72,4 +72,29 @@ describe("unified reader runtime store", () => {
    positionSource: store.state.positionSource,
   }).toEqual(positionBeforeProgress);
  });
+
+ it("preserves a character playback offset across progress ticks and clears it on stop", () => {
+  const store = createReaderRuntimeStore(["a"]);
+  store.actions.syncPlayback({
+   playbackSegmentId: "a",
+   playbackStatus: "playing",
+   playbackStartOffset: 4,
+   progress: 0.1,
+   rate: 1,
+   error: null,
+  });
+  store.actions.syncPlayback({
+   playbackSegmentId: "a",
+   playbackStatus: "playing",
+   progress: 0.6,
+   rate: 1,
+   error: null,
+  });
+
+  expect(store.state.playbackStartOffset).toBe(4);
+  expect(store.state.progress).toBe(0.6);
+
+  store.actions.resetPlayback();
+  expect(store.state.playbackStartOffset).toBe(0);
+ });
 });
