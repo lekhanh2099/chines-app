@@ -44,6 +44,19 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain('aria-label="Đọc từ chữ 个"');
  });
 
+ it("makes contextual pinyin explicitly inspectable instead of presenting it as unquestioned output", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "重庆", sourcePinyin: null })}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    onGlyphInspect={() => undefined}
+   />,
+  );
+  expect(markup).toContain('aria-label="Kiểm tra cách đọc chữ 重"');
+  expect(markup).toContain('aria-label="Kiểm tra cách đọc chữ 庆"');
+  expect(markup).toContain("decoration-dotted");
+ });
+
  it("preserves reviewed source phrase pinyin when alignment is valid", () => {
   const markup = renderReaderText(
    <ContextualReaderText
