@@ -54,7 +54,8 @@ function isScrollable(element: HTMLElement): boolean {
  );
 }
 
-function getScrollContainerForTarget(target: HTMLElement): HTMLElement | null {
+export function getScrollContainerForTarget(target: HTMLElement | null): HTMLElement | null {
+ if (target === null) return null;
  const appContainer = getAppScrollContainer();
  let current = target.parentElement;
 
@@ -76,13 +77,19 @@ export function scrollAppContentToElement(
  options: { behavior?: ScrollBehavior; block?: AppScrollBlock } = {},
 ): void {
  if (target === null) return;
+ const behavior = options.behavior ?? "smooth";
+ const block = options.block ?? "nearest";
  const container = getScrollContainerForTarget(target);
- if (container === null) return;
+
+ if (container === null) {
+  target.scrollIntoView({ behavior, block, inline: "nearest" });
+  return;
+ }
 
  const containerRect = container.getBoundingClientRect();
  const targetRect = target.getBoundingClientRect();
  const top = resolveAppScrollTargetTop({
-  block: options.block ?? "nearest",
+  block,
   containerClientHeight: container.clientHeight,
   containerScrollTop: container.scrollTop,
   containerRect: {
@@ -97,5 +104,5 @@ export function scrollAppContentToElement(
   },
  });
 
- container.scrollTo({ behavior: options.behavior ?? "smooth", left: 0, top });
+ container.scrollTo({ behavior, left: 0, top });
 }
