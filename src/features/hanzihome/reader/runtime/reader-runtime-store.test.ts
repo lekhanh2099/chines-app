@@ -52,6 +52,11 @@ describe("unified reader runtime store", () => {
    rate: 1,
    error: null,
   });
+  const positionBeforeProgress = {
+   activeIndex: store.state.activeIndex,
+   activeSegmentId: store.state.activeSegmentId,
+   positionSource: store.state.positionSource,
+  };
   store.actions.syncPlayback({
    playbackSegmentId: "a",
    playbackStatus: "playing",
@@ -60,8 +65,11 @@ describe("unified reader runtime store", () => {
    error: null,
   });
 
-  expect(store.state.activeIndex).toBe(0);
   expect(store.state.progress).toBe(0.75);
-  expect(store.state.playbackSegmentId).toBe("a");
+  expect({
+   activeIndex: store.state.activeIndex,
+   activeSegmentId: store.state.activeSegmentId,
+   positionSource: store.state.positionSource,
+  }).toEqual(positionBeforeProgress);
  });
 });
