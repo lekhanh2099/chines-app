@@ -169,7 +169,7 @@
   "errors": {
    "tooShort": "The draft did not pass the quality checks. Automatic repair was attempted but did not finish.",
    "schema": "The AI returned a draft with an invalid structure or field value. Automatic repair was attempted but did not finish.",
-   "provider": "No AI provider completed the reading. Check the Groq API key/model; GEMINI_API_KEY is only a fallback.",
+   "provider": "No personal AI provider completed the reading. Check the active API key and selected model in AI settings.",
    "showTechnical": "Show technical details"
   },
   "clearDialog": {
