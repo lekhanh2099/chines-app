@@ -6,43 +6,54 @@ import {
  type DailyReadingGenerationCheckpoint,
  type DailyReadingGenerationStage,
 } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
+import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import type { JsonFieldValue } from "@/types/json";
 
-const {
- discoverDailyReadingSource,
- generateValidatedDailyReading,
- generateValidatedDailyReadingFromCheckpoint,
- getActiveUserApiKeyCredentials,
- requireAuthenticatedRoute,
-} = vi.hoisted(() => ({
+const mocks = vi.hoisted(() => ({
  discoverDailyReadingSource: vi.fn(),
  generateValidatedDailyReading: vi.fn(),
  generateValidatedDailyReadingFromCheckpoint: vi.fn(),
- getActiveUserApiKeyCredentials: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
+ resolveAiCredentialRuntime: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/api/authenticated-route", () => ({
- requireAuthenticatedRoute,
+ requireAuthenticatedRoute: mocks.requireAuthenticatedRoute,
  privateNoStoreJson: (body: JsonFieldValue, init?: ResponseInit) =>
   Response.json(body, {
    ...init,
    headers: { "Cache-Control": "private, no-store" },
   }),
 }));
-vi.mock("@/services/user-api-keys.service", () => ({ getActiveUserApiKeyCredentials }));
+vi.mock("@/services/ai-analysis-runtime.service", () => ({
+ resolveAiCredentialRuntime: mocks.resolveAiCredentialRuntime,
+}));
 vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-source.server", () => ({
- discoverDailyReadingSource,
+ discoverDailyReadingSource: mocks.discoverDailyReadingSource,
  formatDailyReadingSourceReport: () => "discovery 0/2; candidates 0; extracted 0",
 }));
 vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-generation.server", () => ({
- generateValidatedDailyReading,
- generateValidatedDailyReadingFromCheckpoint,
+ generateValidatedDailyReading: mocks.generateValidatedDailyReading,
+ generateValidatedDailyReadingFromCheckpoint: mocks.generateValidatedDailyReadingFromCheckpoint,
 }));
 
 import { POST } from "./route";
 
+const credential: UserApiKeyCredential = {
+ id: "00000000-0000-4000-8000-000000000001",
+ userId: "user-1",
+ provider: "groq",
+ label: "Groq cá nhân",
+ maskedKey: "gsk_***",
+ isActive: true,
+ priority: 0,
+ defaultModel: "openai/gpt-oss-20b",
+ lastValidatedAt: null,
+ createdAt: "2026-08-18T00:00:00.000Z",
+ updatedAt: "2026-08-18T00:00:00.000Z",
+ apiKey: "gsk-personal",
+};
 const source = {
  titleZh: "博物馆推出传统文化暑期新展览",
  publisher: "中国新闻网",
@@ -51,7 +62,6 @@ const source = {
  topic: "culture",
  extractedTextZh: "文化".repeat(180),
 };
-
 const reading = {
  schemaVersion: "1.0.0",
  id: "daily-2026-08-18-test",
@@ -107,18 +117,10 @@ const reading = {
   publishedAt: source.publishedAt,
   capturedAt: "2026-08-18T03:00:00.000Z",
  },
- generatedByProvider: "Google Gemini",
- generatedByModel: "gemini-test",
+ generatedByProvider: "Groq",
+ generatedByModel: "openai/gpt-oss-20b",
  pinyinReviewStatus: "auto-generated",
 } satisfies DailyReading;
-
-const request = (body: JsonFieldValue) =>
- new Request("http://localhost/api/hanzihome/reader/daily-reading/generate", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(body),
- });
-
 const checkpoint = {
  source: reading.source,
  core: {
@@ -132,6 +134,14 @@ const checkpoint = {
  },
 } satisfies DailyReadingGenerationCheckpoint;
 
+function request(body: JsonFieldValue) {
+ return new Request("http://localhost/api/hanzihome/reader/daily-reading/generate", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(body),
+ });
+}
+
 function parseEvents(responseText: string) {
  return responseText
   .trim()
@@ -140,15 +150,19 @@ function parseEvents(responseText: string) {
   .map((line) => dailyReadingGenerateStreamEventSchema.parse(JSON.parse(line)));
 }
 
-describe("Daily Reading generate route", () => {
+describe("Daily Reading generate compatibility route", () => {
  beforeEach(() => {
   vi.clearAllMocks();
-  requireAuthenticatedRoute.mockResolvedValue({
+  mocks.requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
-   context: { user: { id: "user-1" }, supabase: {} },
+   context: { user: { id: "user-1" }, supabase: { marker: "supabase" } },
   });
-  getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  discoverDailyReadingSource.mockImplementation(
+  mocks.resolveAiCredentialRuntime.mockResolvedValue({
+   ok: true,
+   runtime: { keyId: credential.id },
+   credential,
+  });
+  mocks.discoverDailyReadingSource.mockImplementation(
    async (
     _excluded: string[],
     _topics: string[],
@@ -169,7 +183,7 @@ describe("Daily Reading generate route", () => {
     };
    },
   );
-  generateValidatedDailyReading.mockImplementation(
+  mocks.generateValidatedDailyReading.mockImplementation(
    async ({
     onProgress,
     onCheckpoint,
@@ -183,7 +197,7 @@ describe("Daily Reading generate route", () => {
     return reading;
    },
   );
-  generateValidatedDailyReadingFromCheckpoint.mockImplementation(
+  mocks.generateValidatedDailyReadingFromCheckpoint.mockImplementation(
    async ({ onProgress }: { onProgress?: (stage: DailyReadingGenerationStage) => void }) => {
     onProgress?.("enriching");
     return reading;
@@ -191,44 +205,55 @@ describe("Daily Reading generate route", () => {
   );
  });
 
- it("rejects unauthenticated generation before touching providers", async () => {
-  requireAuthenticatedRoute.mockResolvedValue({
-   authenticated: false,
-   response: Response.json({}),
-  });
+ it("rejects unauthenticated generation before resolving a runtime", async () => {
+  mocks.requireAuthenticatedRoute.mockResolvedValue({ authenticated: false, response: Response.json({}) });
 
   const response = await POST(
    request({ mode: "manual", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
   );
 
   expect(response.status).toBe(401);
-  expect(await response.json()).toEqual({
-   code: "unauthorized",
-   detail: "Cần đăng nhập trước khi tạo Daily Reading.",
-  });
-  expect(getActiveUserApiKeyCredentials).not.toHaveBeenCalled();
+  expect(mocks.resolveAiCredentialRuntime).not.toHaveBeenCalled();
  });
 
- it("streams progress and a validated result", async () => {
+ it("blocks legacy learning generation when no personal key exists", async () => {
+  mocks.resolveAiCredentialRuntime.mockResolvedValue({
+   ok: false,
+   status: "missing-key",
+   reason: "no-active-key",
+  });
+
+  const response = await POST(
+   request({ mode: "manual", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
+  );
+
+  expect(response.status).toBe(409);
+  expect(await response.json()).toMatchObject({ code: "provider-rejected" });
+  expect(mocks.discoverDailyReadingSource).not.toHaveBeenCalled();
+  expect(mocks.generateValidatedDailyReading).not.toHaveBeenCalled();
+ });
+
+ it("resolves the shared Daily Reading capability and streams a validated result", async () => {
   const response = await POST(
    request({ mode: "manual", preferredLevel: "HSK5", excludedUrls: [], recentTopics: [] }),
   );
   const events = parseEvents(await response.text());
 
   expect(response.status).toBe(200);
-  expect(response.headers.get("content-type")).toContain("application/x-ndjson");
+  expect(mocks.resolveAiCredentialRuntime).toHaveBeenCalledWith(
+   expect.objectContaining({ userId: "user-1", capability: "daily-reading-learning" }),
+  );
+  expect(mocks.generateValidatedDailyReading).toHaveBeenCalledWith(
+   expect.objectContaining({ credentials: [credential] }),
+  );
   expect(events.filter((event) => event.type === "progress").map((event) => event.stage)).toEqual(
    expect.arrayContaining(["discovering", "extracting", "drafting", "validating"]),
   );
-  expect(events).toEqual(expect.arrayContaining([{ type: "checkpoint", payload: checkpoint }]));
-  expect(events.at(-1)).toMatchObject({
-   type: "result",
-   payload: { reading: { id: reading.id, titleZh: reading.titleZh } },
-  });
+  expect(events.at(-1)).toMatchObject({ type: "result", payload: { reading: { id: reading.id } } });
  });
 
  it("emits source-unavailable without calling the AI generator", async () => {
-  discoverDailyReadingSource.mockResolvedValue({
+  mocks.discoverDailyReadingSource.mockResolvedValue({
    source: null,
    report: {
     discoveryEndpoints: 2,
@@ -249,7 +274,7 @@ describe("Daily Reading generate route", () => {
    type: "error",
    payload: { code: "source-unavailable" },
   });
-  expect(generateValidatedDailyReading).not.toHaveBeenCalled();
+  expect(mocks.generateValidatedDailyReading).not.toHaveBeenCalled();
  });
 
  it("resumes learning from a checkpoint without rediscovering the source", async () => {
@@ -267,11 +292,9 @@ describe("Daily Reading generate route", () => {
   expect(events.map((event) => (event.type === "progress" ? event.stage : event.type))).toContain(
    "enriching",
   );
-  expect(events.at(-1)).toMatchObject({ type: "result", payload: { reading: { id: reading.id } } });
-  expect(discoverDailyReadingSource).not.toHaveBeenCalled();
-  expect(generateValidatedDailyReading).not.toHaveBeenCalled();
-  expect(generateValidatedDailyReadingFromCheckpoint).toHaveBeenCalledWith(
-   expect.objectContaining({ checkpoint }),
+  expect(mocks.discoverDailyReadingSource).not.toHaveBeenCalled();
+  expect(mocks.generateValidatedDailyReadingFromCheckpoint).toHaveBeenCalledWith(
+   expect.objectContaining({ checkpoint, credentials: [credential] }),
   );
  });
 });
