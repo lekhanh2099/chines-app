@@ -73,7 +73,8 @@ function runtimeResolutionFailure(input: {
   return {
    ok: false,
    status: 409,
-   code: input.reason === "selected-key-unavailable" ? "AI_API_KEY_UNAVAILABLE" : "AI_API_KEY_REQUIRED",
+   code:
+    input.reason === "selected-key-unavailable" ? "AI_API_KEY_UNAVAILABLE" : "AI_API_KEY_REQUIRED",
    message:
     input.reason === "selected-key-unavailable"
      ? "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động."
@@ -158,6 +159,7 @@ export async function preparePersistedAiConversationTurn({
  const recalledMemories =
   learnerMessage && memoryEnabled && !explicitForget
    ? await retrieveRelevantAiConversationMemories({
+      supabase,
       userId,
       characterId: resolvedContextState.character.id,
       query: learnerMessage.content,
