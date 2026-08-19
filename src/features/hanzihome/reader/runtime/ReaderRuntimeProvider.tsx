@@ -223,7 +223,7 @@ function ReaderTtsBridge({
 
  useEffect(() => {
   commandsRef.current = {
-   playCurrent: () => startAt(store.state.activeIndex, false),
+   playCurrent: () => startAt(store.state.activeIndex, true),
    playAll: () => startAt(0, true),
    pause: () => {
     if (ownsPlaybackRef.current) pauseTts();
