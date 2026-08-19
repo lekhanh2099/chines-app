@@ -15,6 +15,7 @@ import {
  DialogFooter,
  DialogHeader,
  DialogTitle,
+ DialogTrigger,
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
@@ -89,87 +90,84 @@ export function DailyReadingV2ManagementPanel() {
       {t("v2.management.description", { count: library.items.length })}
      </Typography>
     </div>
-    <Button
-     type="button"
-     variant="outline"
-     size="toolbar"
-     onClick={() => setManagerOpen(true)}
-    >
-     <LibraryBig data-icon="inline-start" />
-     {t("v2.management.open")}
-    </Button>
-   </div>
 
-   <Dialog open={managerOpen} onOpenChange={setManagerOpen}>
-    <DialogContent size="lg">
-     <DialogHeader>
-      <DialogTitle>{t("v2.management.dialogTitle")}</DialogTitle>
-      <DialogDescription>{t("v2.management.dialogDescription")}</DialogDescription>
-     </DialogHeader>
-     <DialogBody>
-      {library.items.length === 0 ? (
-       <div className="grid gap-1 py-4">
-        <Typography weight="bold">{t("v2.management.emptyTitle")}</Typography>
-        <Typography variant="bodySmall" tone="muted">
-         {t("v2.management.emptyDescription")}
-        </Typography>
-       </div>
-      ) : (
-       <div className="grid min-w-0">
-        {library.items.map((reading, index) => {
-         const learning = getDailyReadingLearningSummary(reading);
-         return (
-          <div key={reading.id} className="grid min-w-0 gap-3 py-3">
-           {index > 0 ? <Separator /> : null}
-           <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-            <div className="grid min-w-0 gap-1">
-             <HanziText as="p" size="medium" weight="bold" clamp="two">
-              {reading.article.titleZh}
-             </HanziText>
-             <Typography variant="caption" tone="muted">
-              {dateFormatter.format(new Date(reading.capturedAt))} · {reading.source.publisher}
-             </Typography>
-             <Typography variant="caption" tone="muted">
-              {t("v2.management.learningState", {
-               ready: learning.ready,
-               total: learning.total,
-              })}
-             </Typography>
-            </div>
-            <Button
-             type="button"
-             variant="destructive"
-             size="compact"
-             onClick={() => setDeleteTarget({ kind: "article", article: reading })}
-            >
-             <Trash2 data-icon="inline-start" />
-             {t("v2.management.deleteArticle")}
-            </Button>
-           </div>
-          </div>
-         );
-        })}
-       </div>
-      )}
-     </DialogBody>
-     <DialogFooter>
-      {library.items.length > 0 ? (
-       <Button
-        type="button"
-        variant="destructive"
-        size="toolbar"
-        onClick={() => setDeleteTarget({ kind: "all" })}
-       >
-        <Trash2 data-icon="inline-start" />
-        {t("v2.management.deleteAll")}
-       </Button>
-      ) : null}
-      <Button type="button" variant="outline" size="toolbar" onClick={() => setManagerOpen(false)}>
-       {t("v2.management.close")}
+    <Dialog open={managerOpen} onOpenChange={setManagerOpen}>
+     <DialogTrigger asChild>
+      <Button type="button" variant="outline" size="toolbar">
+       <LibraryBig data-icon="inline-start" />
+       {t("v2.management.open")}
       </Button>
-     </DialogFooter>
-    </DialogContent>
-   </Dialog>
+     </DialogTrigger>
+     <DialogContent size="lg">
+      <DialogHeader>
+       <DialogTitle>{t("v2.management.dialogTitle")}</DialogTitle>
+       <DialogDescription>{t("v2.management.dialogDescription")}</DialogDescription>
+      </DialogHeader>
+      <DialogBody>
+       {library.items.length === 0 ? (
+        <div className="grid gap-1 py-4">
+         <Typography weight="bold">{t("v2.management.emptyTitle")}</Typography>
+         <Typography variant="bodySmall" tone="muted">
+          {t("v2.management.emptyDescription")}
+         </Typography>
+        </div>
+       ) : (
+        <div className="grid min-w-0">
+         {library.items.map((reading, index) => {
+          const learning = getDailyReadingLearningSummary(reading);
+          return (
+           <div key={reading.id} className="grid min-w-0 gap-3 py-3">
+            {index > 0 ? <Separator /> : null}
+            <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+             <div className="grid min-w-0 gap-1">
+              <HanziText as="p" size="medium" weight="bold" clamp="two">
+               {reading.article.titleZh}
+              </HanziText>
+              <Typography variant="caption" tone="muted">
+               {dateFormatter.format(new Date(reading.capturedAt))} · {reading.source.publisher}
+              </Typography>
+              <Typography variant="caption" tone="muted">
+               {t("v2.management.learningState", {
+                ready: learning.ready,
+                total: learning.total,
+               })}
+              </Typography>
+             </div>
+             <Button
+              type="button"
+              variant="destructive"
+              size="compact"
+              onClick={() => setDeleteTarget({ kind: "article", article: reading })}
+             >
+              <Trash2 data-icon="inline-start" />
+              {t("v2.management.deleteArticle")}
+             </Button>
+            </div>
+           </div>
+          );
+         })}
+        </div>
+       )}
+      </DialogBody>
+      <DialogFooter>
+       {library.items.length > 0 ? (
+        <Button
+         type="button"
+         variant="destructive"
+         size="toolbar"
+         onClick={() => setDeleteTarget({ kind: "all" })}
+        >
+         <Trash2 data-icon="inline-start" />
+         {t("v2.management.deleteAll")}
+        </Button>
+       ) : null}
+       <Button type="button" variant="outline" size="toolbar" onClick={() => setManagerOpen(false)}>
+        {t("v2.management.close")}
+       </Button>
+      </DialogFooter>
+     </DialogContent>
+    </Dialog>
+   </div>
 
    <Dialog open={deleteTarget !== null} onOpenChange={(open) => !open && setDeleteTarget(null)}>
     <DialogContent size="sm">
