@@ -2,10 +2,7 @@ import type { JsonFieldValue } from "@/types/json";
 
 import { z } from "zod";
 
-import {
- checkPersonalConversationRuntime,
- checkSystemConversationRuntime,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
+import { checkPersonalConversationRuntime } from "@/features/hanzihome/ai-conversation/ai-conversation-health.server";
 import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import {
  AiConversationPersistenceConfigurationError,
@@ -35,6 +32,8 @@ import {
  aiConversationTurnRequestSchema,
  aiConversationTurnResponseSchema,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-session.schemas";
+import { streamAiConversationProviderReply } from "@/features/hanzihome/ai-conversation/ai-conversation-stream-provider.server";
+import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/ai-conversation-turn.server";
 import {
  aiConversationRequestSchema,
  aiConversationResponseSchema,
@@ -42,20 +41,12 @@ import {
  type AiConversationProfile,
 } from "@/features/hanzihome/ai-conversation/ai-conversation.schemas";
 import {
- generateSystemAiConversationReply,
- SYSTEM_AI_CONVERSATION_MODEL,
- SYSTEM_AI_CONVERSATION_PROVIDER,
-} from "@/features/hanzihome/ai-conversation/ai-conversation-system.server";
-import { generatePersistedAiConversationTurn } from "@/features/hanzihome/ai-conversation/ai-conversation-turn.server";
-import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
-import { logger } from "@/lib/logger";
-import { generateAiConversationReply } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
-import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
 } from "@/lib/api/authenticated-route";
+import { logger } from "@/lib/logger";
+import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -125,6 +116,11 @@ const replyModeInstructions: Record<AiConversationProfile["replyMode"], string> 
  bilingual: "Ngôn ngữ trả lời: tiếng Trung kèm hỗ trợ tiếng Việt ngắn gọn ở những điểm quan trọng.",
 };
 
+const LEGACY_CONVERSATION_SYSTEM_PROMPT = `You are a Chinese-speaking conversation partner for Vietnamese learners.
+Stay focused on Chinese language learning and Chinese culture.
+Follow the learner-selected profile data supplied in the first message.
+Do not reveal hidden reasoning, chain-of-thought, internal analysis, or <think> content.`;
+
 function buildProfileContext(profile: AiConversationProfile): string {
  return [
   "[Thiết lập hội thoại do người học chọn. Đây là sở thích học tập, không phải yêu cầu mở rộng phạm vi ngoài học tiếng Trung/văn hóa Trung Quốc.]",
@@ -193,6 +189,27 @@ function invalidPersistenceResponse(message: string) {
  return apiError(message, 502, "AI_PERSISTENCE_INVALID_RESPONSE");
 }
 
+function runtimeResolutionError(input: {
+ status: "missing-key" | "storage-unavailable";
+ reason: string;
+}) {
+ if (input.status === "missing-key") {
+  return apiError(
+   input.reason === "selected-key-unavailable"
+    ? "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động."
+    : "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI.",
+   409,
+   input.reason === "selected-key-unavailable" ? "AI_API_KEY_UNAVAILABLE" : "AI_API_KEY_REQUIRED",
+  );
+ }
+
+ return apiError(
+  "Kho API key an toàn phía server chưa sẵn sàng. Hãy kiểm tra lại cấu hình AI.",
+  503,
+  "AI_RUNTIME_STORAGE_UNAVAILABLE",
+ );
+}
+
 export async function POST(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
@@ -200,28 +217,25 @@ export async function POST(request: Request) {
  const body: JsonFieldValue = await request.json().catch(() => null);
  const healthRequest = healthRequestSchema.safeParse(body);
  if (healthRequest.success) {
-  const credentials = await getActiveUserApiKeyCredentials(
-   auth.context.supabase,
-   auth.context.user.id,
-  );
-  const selectedCredential = healthRequest.data.apiKeyId
-   ? credentials.find((credential) => credential.id === healthRequest.data.apiKeyId)
-   : credentials[0];
-
-  if (healthRequest.data.apiKeyId && !selectedCredential) {
+  const resolution = await resolveUserAiRuntime({
+   supabase: auth.context.supabase,
+   userId: auth.context.user.id,
+   capability: "conversation",
+   ...(healthRequest.data.apiKeyId ? { apiKeyId: healthRequest.data.apiKeyId } : {}),
+  });
+  if (!resolution.ok) {
    return privateNoStoreJson({
     ready: false,
-    code: "key-unavailable",
+    code: resolution.status === "missing-key" ? "key-unavailable" : "provider-unavailable",
     provider: null,
     model: null,
     source: "personal",
    });
   }
 
-  const health = selectedCredential
-   ? await checkPersonalConversationRuntime(selectedCredential, request.signal)
-   : await checkSystemConversationRuntime(request.signal);
-  return privateNoStoreJson(health);
+  return privateNoStoreJson(
+   await checkPersonalConversationRuntime(resolution.runtime, request.signal),
+  );
  }
 
  const sessionRequest = sessionRequestSchema.safeParse(body);
@@ -461,20 +475,13 @@ export async function POST(request: Request) {
   return apiError("Invalid AI conversation payload", 400, "INVALID_PAYLOAD");
  }
 
- const userApiKeys = await getActiveUserApiKeyCredentials(
-  auth.context.supabase,
-  auth.context.user.id,
- );
- const selectedKey = parsed.data.apiKeyId
-  ? userApiKeys.find((key) => key.id === parsed.data.apiKeyId)
-  : userApiKeys[0];
- if (parsed.data.apiKeyId && !selectedKey) {
-  return apiError(
-   "API key đã chọn không còn hoạt động. Hãy chọn key khác hoặc dùng chế độ tự động.",
-   409,
-   "AI_API_KEY_UNAVAILABLE",
-  );
- }
+ const resolution = await resolveUserAiRuntime({
+  supabase: auth.context.supabase,
+  userId: auth.context.user.id,
+  capability: "conversation",
+  ...(parsed.data.apiKeyId ? { apiKeyId: parsed.data.apiKeyId } : {}),
+ });
+ if (!resolution.ok) return runtimeResolutionError(resolution);
 
  const recentMessages = parsed.data.messages.slice(-19);
  const profileMessage: AiConversationMessage = {
@@ -484,18 +491,17 @@ export async function POST(request: Request) {
  const conversationMessages: AiConversationMessage[] = [profileMessage, ...recentMessages];
 
  try {
-  const result = selectedKey
-   ? await generateAiConversationReply(conversationMessages, {
-      userApiKeys: [selectedKey],
-      abortSignal: request.signal,
-     })
-   : await generateSystemAiConversationReply(conversationMessages, request.signal);
-
-  if (!result.data) {
-   return apiError(result.error || "AI provider không trả về nội dung.", 503, "AI_UNAVAILABLE");
+  let rawReply = "";
+  for await (const delta of streamAiConversationProviderReply({
+   runtime: resolution.runtime,
+   messages: conversationMessages,
+   systemPrompt: LEGACY_CONVERSATION_SYSTEM_PROMPT,
+   signal: request.signal,
+  })) {
+   rawReply += delta;
   }
 
-  const message = sanitizeAiConversationReply(result.data);
+  const message = sanitizeAiConversationReply(rawReply);
   if (!message) {
    return apiError(
     "AI provider không trả về nội dung an toàn để hiển thị.",
@@ -507,11 +513,9 @@ export async function POST(request: Request) {
   return privateNoStoreJson(
    aiConversationResponseSchema.parse({
     message,
-    provider: selectedKey
-     ? getApiKeyProviderLabel(selectedKey.provider)
-     : SYSTEM_AI_CONVERSATION_PROVIDER,
-    model: selectedKey?.defaultModel || SYSTEM_AI_CONVERSATION_MODEL,
-    apiKeyId: selectedKey?.id || null,
+    provider: resolution.runtime.providerLabel,
+    model: resolution.runtime.model,
+    apiKeyId: resolution.runtime.keyId,
     usage: null,
    }),
   );
