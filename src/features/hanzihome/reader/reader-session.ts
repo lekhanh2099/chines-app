@@ -1,7 +1,9 @@
+import { z } from "zod";
+
 import type { ReaderProgressRow } from "./reader-state.schemas";
 import { readerFeatureStateSchema } from "./reader-state.schemas";
 
-export type ReaderFeatureState = ReturnType<typeof readerFeatureStateSchema.parse>;
+export type ReaderFeatureState = z.output<typeof readerFeatureStateSchema>;
 
 /** @deprecated Use ReaderFeatureState. Runtime playback/navigation now lives in ReaderRuntimeProvider. */
 export type ReaderSessionState = ReaderFeatureState;
