@@ -1,112 +1,151 @@
-# Daily Reading Generation — implementation handoff
+# Daily Reading V2 — implementation handoff
 
-Status: source implementation complete on `feat/persistent-social-memory-ai-redesign`; local verification still required before merge.
+Status: source implementation complete; executable and viewport verification still required before release.
+
+Shared AI credential/runtime authority: `docs/architecture/ai-runtime-byok.md`.
 
 ## Product contract
 
-Daily Reading is intentionally local-first.
+Daily Reading V2 is a local-first article acquisition feature. Its critical path is:
 
-- Release clock: 10:00 in `Asia/Ho_Chi_Minh`.
-- If the authenticated app is open and visible at/after 10:00, the scheduler may create that day's scheduled reading.
-- If the app was closed at 10:00, the first visible app session after 10:00 performs the catch-up attempt.
-- Turning automatic generation off prevents scheduled runs but does not disable `Kiểm tra nguồn thật` or `Tìm và tạo bài ngay`.
-- This is not a server cron. The product must not claim that generation runs while every browser/app session is closed.
+```text
+discover -> extract -> validate/rerank -> persist source article -> readable
+```
 
-## Source discovery
+AI enrichment is optional and starts only after the source article is durably stored.
 
-`src/features/hanzihome/reader/daily-reading/daily-reading-source.server.ts`
+The product must preserve this invariant:
 
-The server searches reviewed Chinese-news sources using official RSS/listing endpoints plus a bounded GDELT discovery fallback. The source policy:
+```text
+article acquisition success != AI enrichment success
+```
 
-- canonicalizes HTTPS URLs and strips tracking parameters;
-- allows only reviewed publisher domains;
-- prefers recent articles and topic diversity;
-- rejects excluded/high-risk news themes for the learner-reading product;
-- fetches bounded HTML with timeouts and a 2 MB limit;
-- requires at least three usable paragraphs and 240 Han characters before a page can become source evidence.
+A missing API key, quota error, invalid AI response or failed grammar/question module must never hide or invalidate an already captured article.
 
-The source-test endpoint returns only bounded metadata/report fields. Extracted publisher article text is never returned to the browser or persisted in the local Daily Reading archive.
+## Release clock and scheduler
 
-## Generation pipeline
+The scheduler remains browser-session-owned rather than server cron.
 
-`POST /api/hanzihome/reader/daily-reading/generate` is authenticated and streams NDJSON progress events:
+- Default capture time is 10:00 in `Asia/Ho_Chi_Minh`; V2 settings can change the local capture time.
+- When an authenticated visible app session reaches/passes the configured time, the scheduler may capture the day's source.
+- If the app was closed, the next visible session performs catch-up.
+- A persisted scheduled V2 article counts as that day's success even when later enrichment fails.
+- Multiple tabs coordinate through the existing Daily Reading lock to avoid duplicate capture.
 
-1. `discovering`
-2. `extracting`
-3. `drafting` / `repairing_core`
-4. `checkpoint` after the reading core is valid
-5. `enriching` / `repairing_learning`
-6. `validating`
-7. `finalizing`
-8. browser-owned `saving`
-9. browser-owned `completed`
+The application must not claim that Daily Reading runs while every browser/app session is closed.
 
-The server generates the reading in two structured stages:
+## Collection settings and policy
 
-- reading core: title, learning value, level/topic, 4–8 paragraphs;
-- learning apparatus: vocabulary, grammar evidence, questions, source phrases, verification note.
+User settings may influence:
 
-The reading core is checkpointed before learning enrichment starts. Learning enrichment retries from that locked core when a provider or validation attempt fails, and a later request can resume from the checkpoint without rediscovering or regenerating the source reading. Deterministic validation checks include source-copy protection, vocabulary presence in the locked reading, grammar evidence matching a sentence in the locked reading, required question-type coverage, and evidence paragraph bounds. Content is not rejected merely for missing an arbitrary character-count target.
+- capture time;
+- target HSK level;
+- source freshness window;
+- topics;
+- reviewed sources;
+- preferred article length;
+- topic diversity and recent-article avoidance;
+- no-match behavior (`skip-day` vs bounded freshness expansion);
+- whether AI learning support starts automatically after capture.
 
-The active personal API key is tried first. If no usable personal structured result is produced, the configured system Gemini runtime is used. Provider choice does not weaken the same Zod/content validation boundary.
+Internal safety/quality bounds remain application-owned. User settings never expand the reviewed publisher allowlist or bypass content-quality checks.
 
-Pinyin for generated titles, paragraphs and vocabulary is produced by the existing `pinyin-pro` dependency. It is stored with `pinyinReviewStatus: "auto-generated"`; UI copy explicitly warns that pronunciation should be checked before speaking practice.
+## Source acquisition
 
-## Local persistence and retry
+`src/features/hanzihome/reader/daily-reading/daily-reading-source.server.ts` owns discovery orchestration.
 
-The browser stores a versioned Daily Reading ledger and settings in localStorage.
+Discovery uses reviewed official RSS/listing sources plus bounded GDELT discovery. Metadata ranking is not the final selection authority. The collector extracts multiple candidates and reranks the validated content.
 
-- Up to 120 readings and 400 run records are accepted by schema.
-- Writes are verified after storage.
-- Quota pressure progressively compacts the archive rather than silently failing the current write.
-- Corrupt ledger content is preserved in a bounded recovery key before reset.
-- A failed generation keeps source metadata and the validated reading core in a separate checkpoint; raw publisher article text is never persisted.
-- Readings deduplicate by ID, source URL and content fingerprint.
-- Clearing generated readings requires a destructive confirmation dialog and intentionally keeps run history for diagnostics.
+Extraction priority is:
 
-Scheduled retry behavior:
+```text
+JSON-LD articleBody
+-> itemprop=articleBody
+-> semantic <article>
+-> reviewed/known content containers
+-> <main>
+-> generic paragraph fallback
+```
 
-- succeeded scheduled run: blocks another scheduled reading for that date;
-- fresh pending run: blocks for 15 minutes;
-- hard failure: backs off for 30 minutes;
-- interrupted/offline failure: can retry immediately, resuming from the checkpoint when one exists;
-- three hard failures for the date stop further automatic attempts.
+The parser preserves cleaned paragraph boundaries. Quality validation evaluates extraction confidence, Chinese density, paragraph coherence, title/body consistency, freshness, preferred length, truncation and date evidence.
 
-## Cross-tab coordination
+If an early candidate batch fails quality checks, collection continues through bounded later batches rather than treating the first eight failures as proof that no article exists.
 
-Generation is single-flight across tabs:
+## Article-first persistence
 
-1. `navigator.locks` when available;
-2. IndexedDB transactional lease fallback;
-3. localStorage lease as the final browser fallback.
+New captures use the V2 ledger and `source-captured` provenance.
 
-The lease has a bounded lifetime and heartbeat so a crashed tab does not block the feature permanently.
+The browser:
 
-## UI integration
+1. receives a validated source-capture response;
+2. writes the immutable Chinese article to V2 storage;
+3. verifies the stored value;
+4. only then records capture success/run telemetry;
+5. optionally starts AI enrichment.
 
-`/daily-reading` now uses the generated local library as its default landing surface. Generated-reading selection is URL-owned through `?generated=<id>`, so refresh/back navigation preserves the selected local article.
+Telemetry failure after article persistence cannot roll the article back.
 
-Existing static Reader content remains available for the existing `?document=<id>` deep-link path; it is not loaded on the generated-library landing path.
+Deduplication uses article ID, canonical source URL and content fingerprint.
 
-`/settings?section=reading` includes:
+V1 local data is migrated additively when V2 is absent. V1 storage remains untouched for rollback/recovery during the migration period, and migrated content is labeled `legacy-adapted` rather than `source-captured`.
 
-- automatic generation switch;
-- HSK 4/5/6 default level;
-- real-source test;
-- manual generate-now action;
-- current pipeline status;
-- six most recent run records;
-- confirmed local-library clear action.
+## Pinyin contract
 
-The global authenticated app layout mounts `DailyReadingSchedulerAgent`, so catch-up is not tied to keeping the Daily Reading page open.
+Daily Reading V2 persists no pinyin fields.
+
+Title/paragraph/vocabulary pinyin is derived at render time through the existing contextual-pronunciation engine and current reader display settings. This avoids treating automatically generated readings as pronunciation source of truth.
+
+Legacy V1 data may still contain historical pinyin and `pinyinReviewStatus`; migration intentionally does not copy those fields into V2.
+
+## AI enrichment
+
+Enrichment modules are independent:
+
+```text
+translation
+vocabulary
+grammar
+questions
+```
+
+Each module owns its own `idle | running | ready | failed | blocked` state and can be retried independently. A later failure must not reset already-ready sibling modules.
+
+All V2 enrichment uses the shared personal-BYOK runtime described in `docs/architecture/ai-runtime-byok.md`. There is no application-wide Gemini/DeepSeek provider-key fallback.
+
+Translation preserves source paragraph IDs/order. Vocabulary must occur in source text. Grammar evidence must match source sentences. Question evidence must point to valid paragraph IDs/source phrases and satisfy the required question-type coverage.
+
+The captured Chinese article is immutable; enrichment must not rewrite it.
+
+## Reader and settings UX
+
+The primary UI separates two concepts:
+
+```text
+Bài nguồn / Source article
+AI hỗ trợ học / AI learning support
+```
+
+Source test and article capture do not require an AI key. A missing key only blocks enrichment and presents the reusable Add API Key recovery interaction.
+
+The reader remains usable when every enrichment module is idle/blocked/failed. Ready enrichment tabs appear as their data becomes available.
+
+Advanced source criteria use progressive disclosure so capture time/target level/source status remain the primary settings.
+
+## Legacy compatibility
+
+The legacy `/api/hanzihome/reader/daily-reading/generate` route and V1 generated-learning structures may remain temporarily for old data/consumer compatibility. They are no longer the primary V2 path and are personal-BYOK-only. System provider fallback is disabled.
+
+Do not remove V1 read/migration support until release verification proves existing browser data remains recoverable.
 
 ## Database boundary
 
-This implementation adds no database migration, RLS change, Supabase table, extension or hosted-data write. Daily Reading article/settings/run persistence remains browser-local by design.
+Daily Reading V2 adds no Supabase schema/RLS migration and no hosted Daily Reading article persistence. Article/settings/run state remains browser-local by design.
 
-## Local verification
+## Focused verification
 
-Run the focused checks first:
+Run the feature tests and repository gates in an executable checkout. At minimum include the V2 schema/migration/settings/policy/source/capture/storage/scheduler/enrichment tests plus route tests for source capture/enrichment and i18n.
+
+Then run:
 
 ```bash
 npm run source:check
@@ -114,43 +153,11 @@ npm run route:check
 npm run ui:check
 npm run api:check
 npm run typecheck
-
-npm run test:run -- \
-  src/features/hanzihome/reader/daily-reading/daily-reading.scheduler.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading.schemas.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading-lock.client.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading-source-policy.server.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading-source-parsers.server.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading-storage.client.test.ts \
-  src/features/hanzihome/reader/daily-reading/daily-reading-generation.server.test.ts \
-  src/app/api/hanzihome/reader/daily-reading/source/route.test.ts \
-  src/app/api/hanzihome/reader/daily-reading/generate/route.test.ts \
-  src/i18n/messages.test.ts
-
-npm run lint
+npm run test:run
 npm run format:check
-```
-
-Before merge/release run:
-
-```bash
 npm run check
 ```
 
-## Manual acceptance
+Manual browser acceptance must cover mobile ~390×844, iPad portrait ~820×1180 and desktop 1440×900 in light/dark; source test/capture without a key; auto capture/catch-up; multi-tab single flight; pinyin toggle; partial enrichment/retry; missing-key/Add-Key; reload persistence; offline/interruption and no overflow/focus regressions.
 
-Verify at minimum:
-
-- automatic switch off prevents a due scheduled run;
-- source test finds a real source but creates/saves no reading;
-- manual generation displays stage progress and produces a locally persisted reading;
-- a failure after the reading core is valid offers a resume path that starts at learning enrichment;
-- generated article survives refresh and URL back/forward navigation;
-- source tab exposes the original source URL and the learning-edition notice;
-- generated title/paragraph/vocabulary pinyin is present and marked auto-generated;
-- two tabs cannot generate concurrently;
-- offline/interrupted runs become retryable while hard failures back off;
-- clearing the library requires confirmation and keeps run history;
-- desktop 1440×900, iPad portrait ~820×1180, mobile ~390×844 and dark mode have no overflow or overlay issues.
-
-No automated or viewport gate is claimed as passing until it is executed in a real dependency/browser environment.
+No executable or viewport gate is considered passed until it is actually run in a dependency/browser environment.
