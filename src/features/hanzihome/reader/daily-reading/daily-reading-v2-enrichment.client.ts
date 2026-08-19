@@ -2,6 +2,7 @@
 
 import {
  dailyReadingV2EnrichmentResponseSchema,
+ type DailyReadingV2EnrichmentArticle,
  type DailyReadingV2EnrichmentResponse,
 } from "./daily-reading-v2-enrichment.schemas";
 import type {
@@ -120,6 +121,15 @@ function currentArticle(articleId: string) {
  return getDailyReadingV2Snapshot().items.find((item) => item.id === articleId) ?? null;
 }
 
+function enrichmentEvidence(reading: DailyReadingV2): DailyReadingV2EnrichmentArticle {
+ return {
+  id: reading.id,
+  source: reading.source,
+  article: reading.article,
+  classification: reading.classification,
+ };
+}
+
 async function decodeResponse(response: Response) {
  const payload = await response.json().catch(() => null);
  const parsed = dailyReadingV2EnrichmentResponseSchema.safeParse(payload);
@@ -182,7 +192,7 @@ export async function enrichDailyReadingV2Module(
    }
 
    const controller = new AbortController();
-   const timeout = window.setTimeout(() => controller.abort(), 120_000);
+   const timeout = window.setTimeout(() => controller.abort(), 170_000);
    const interrupt = () => {
     controller.abort();
     try {
@@ -200,7 +210,7 @@ export async function enrichDailyReadingV2Module(
      credentials: "include",
      cache: "no-store",
      signal: controller.signal,
-     body: JSON.stringify({ module, reading: fresh }),
+     body: JSON.stringify({ module, reading: enrichmentEvidence(fresh) }),
     });
     const result = await decodeResponse(response);
     if (result.module !== module) {
