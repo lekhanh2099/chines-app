@@ -63,11 +63,21 @@ Status: additive collection-policy contracts are implemented. They are not wired
 - [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 3 — Source acquisition hardening
-- [ ] Separate discovery metadata score from extracted-content quality score.
-- [ ] Extract and validate multiple top candidates before final selection.
-- [ ] Prefer source-specific/structured/semantic article bodies before generic `<p>` fallback.
-- [ ] Validate Chinese density, paragraph coherence, truncation/contamination, duplicate content, date/title/body consistency and source policy.
-- [ ] Preserve official source provenance and exact captured Chinese paragraphs.
+
+Status: source selection is hardened behind the existing V1-compatible discovery entrypoint, with a policy-aware V2 entrypoint ready for later wiring. Full captured paragraphs are preserved in the selected-source result while the V1 `extractedTextZh` projection remains bounded for compatibility.
+
+- [x] Separate discovery metadata score from extracted-content quality score.
+- [x] Extract all top candidates in bounded batches before final selection instead of returning the first extractable article.
+- [x] Add post-extraction scoring/reranking using semantic extraction confidence, Chinese density, paragraph coherence, title/body consistency, freshness and preferred length.
+- [x] Prefer JSON-LD `articleBody`, `itemprop=articleBody`, semantic `<article>`, known content containers and `<main>` before generic page-wide `<p>` fallback.
+- [x] Preserve cleaned Chinese paragraph boundaries, extraction method, page title/date evidence and full captured text up to an app-owned safety ceiling.
+- [x] Reject truncated, stale/future, low-density, incoherent, title/body-mismatched and materially date-mismatched candidates.
+- [x] Make source/topic/freshness/repeat filters policy-aware and honor `expand-window` only when configured.
+- [x] Limit official discovery requests to selected source registries where direct endpoints exist; GDELT discovery uses the selected topic set and resolved freshness horizon.
+- [x] Add deterministic parser/quality/ranking regression tests.
+- [x] Preserve the existing `discoverDailyReadingSource(...)` caller contract as a compatibility wrapper; no route/UI/persistence contract is switched to V2 yet.
+- [ ] Add verified source-specific selectors only when live HTML fixtures prove a stable publisher contract; do not invent brittle selectors from memory.
+- [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 4 — Article-first persistence
 - [ ] Persist selected article before any AI request.

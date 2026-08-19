@@ -14,10 +14,27 @@ const boilerplatePattern =
  /(责任编辑|版权所有|未经授权|来源：|编辑：|扫一扫|客户端|点击进入|更多精彩|举报电话|文明上网|评论服务协议|小字体|大字体|分享到)/u;
 const articleStopPattern = /(更多精彩内容|推荐阅读|发表评论|新闻精选|换一批|相关阅读)/u;
 const datePathPattern = /\/(\d{4})\/(\d{2})-(\d{2})\//u;
+const maximumExtractedCharacters = 40_000;
+const maximumParagraphs = 80;
+
+export type DailyReadingExtractionMethod =
+ | "json-ld"
+ | "article-body"
+ | "article"
+ | "main"
+ | "content-container"
+ | "paragraph-fallback";
 
 export type ParsedDailyReadingSourceDocument = {
  extractedTextZh: string;
+ paragraphsZh: readonly string[];
  pagePublishedAt: string;
+ pageTitleZh: string;
+ extractionMethod: DailyReadingExtractionMethod;
+ hanCharacters: number;
+ textCharacters: number;
+ chineseDensity: number;
+ truncated: boolean;
 };
 
 function decodeEntities(value: string) {
@@ -163,21 +180,131 @@ function pagePublishedAt(html: string): string {
  return "";
 }
 
+function pageTitle(html: string) {
+ const metadataTitle =
+  /<meta\b[^>]*(?:property|name)=["'](?:og:title|twitter:title)["'][^>]*content=["']([^"']+)["']/iu.exec(
+   html,
+  )?.[1] ?? "";
+ const heading = /<h1\b[^>]*>([\s\S]*?)<\/h1>/iu.exec(html)?.[1] ?? "";
+ return textFromFragment(metadataTitle || heading).replace(/\s+/gu, " ").trim();
+}
+
+function decodeJsonStringLiteral(value: string) {
+ try {
+  const parsed: unknown = JSON.parse(`"${value}"`);
+  return typeof parsed === "string" ? parsed : "";
+ } catch {
+  return "";
+ }
+}
+
+function jsonLdArticleBodies(html: string) {
+ return Array.from(
+  html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/giu),
+ ).flatMap((scriptMatch) => {
+  const script = scriptMatch[1] ?? "";
+  return Array.from(
+   script.matchAll(/["']articleBody["']\s*:\s*"((?:\\.|[^"\\])*)"/giu),
+  ).flatMap((bodyMatch) => {
+   const decoded = decodeJsonStringLiteral(bodyMatch[1] ?? "").trim();
+   return decoded.length === 0 ? [] : [decoded];
+  });
+ });
+}
+
+function sanitizeArticleFragment(fragment: string) {
+ return fragment
+  .replace(/<(script|style|svg|noscript|form|nav|footer|aside|figure)[^>]*>[\s\S]*?<\/\1>/giu, " ")
+  .replace(/<!--([\s\S]*?)-->/gu, " ");
+}
+
+function collectParagraphs(fragment: string, plainText: boolean) {
+ const cleaned = sanitizeArticleFragment(fragment);
+ const rawParagraphs = plainText
+  ? cleaned.split(/\n{1,}/gu)
+  : Array.from(cleaned.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/giu)).map(
+     (match) => match[1] ?? "",
+    );
+ const normalized = rawParagraphs
+  .map((paragraph) => textFromFragment(paragraph).replace(/\s+/gu, " ").trim())
+  .filter((text) => (text.match(hanPattern)?.length ?? 0) >= 18 && !boilerplatePattern.test(text));
+ const paragraphs: string[] = [];
+ let textCharacters = 0;
+ let truncated = false;
+ for (const paragraph of normalized) {
+  if (articleStopPattern.test(paragraph)) break;
+  if (paragraphs.includes(paragraph)) continue;
+  const nextCharacters = textCharacters + paragraph.length + (paragraphs.length === 0 ? 0 : 1);
+  if (paragraphs.length >= maximumParagraphs || nextCharacters > maximumExtractedCharacters) {
+   truncated = true;
+   break;
+  }
+  paragraphs.push(paragraph);
+  textCharacters = nextCharacters;
+ }
+ return { paragraphs, truncated };
+}
+
+function buildDocumentCandidate(
+ fragment: string,
+ method: DailyReadingExtractionMethod,
+ plainText: boolean,
+ html: string,
+): ParsedDailyReadingSourceDocument | null {
+ const collected = collectParagraphs(fragment, plainText);
+ if (collected.paragraphs.length < 3) return null;
+ const extractedTextZh = collected.paragraphs.join("\n").trim();
+ const hanCharacters = extractedTextZh.match(hanPattern)?.length ?? 0;
+ if (hanCharacters < 240) return null;
+ const nonSpaceCharacters = extractedTextZh.replace(/\s+/gu, "").length;
+ return {
+  extractedTextZh,
+  paragraphsZh: collected.paragraphs,
+  pagePublishedAt: pagePublishedAt(html),
+  pageTitleZh: pageTitle(html),
+  extractionMethod: method,
+  hanCharacters,
+  textCharacters: nonSpaceCharacters,
+  chineseDensity: nonSpaceCharacters === 0 ? 0 : hanCharacters / nonSpaceCharacters,
+  truncated: collected.truncated,
+ };
+}
+
+function semanticFragments(html: string) {
+ const fragments: { method: DailyReadingExtractionMethod; fragment: string }[] = [];
+ for (const body of jsonLdArticleBodies(html)) {
+  fragments.push({ method: "json-ld", fragment: body });
+ }
+ for (const match of html.matchAll(
+  /<(div|section)\b[^>]*itemprop=["']articleBody["'][^>]*>([\s\S]*?)<\/\1>/giu,
+ )) {
+  fragments.push({ method: "article-body", fragment: match[2] ?? "" });
+ }
+ for (const match of html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/giu)) {
+  fragments.push({ method: "article", fragment: match[1] ?? "" });
+ }
+ for (const match of html.matchAll(
+  /<(div|section)\b[^>]*(?:id|class)=["'][^"']*(?:article[-_ ]?content|main[-_ ]?content|detail[-_ ]?content|text[-_ ]?content)[^"']*["'][^>]*>([\s\S]*?)<\/\1>/giu,
+ )) {
+  fragments.push({ method: "content-container", fragment: match[2] ?? "" });
+ }
+ for (const match of html.matchAll(/<main\b[^>]*>([\s\S]*?)<\/main>/giu)) {
+  fragments.push({ method: "main", fragment: match[1] ?? "" });
+ }
+ return fragments;
+}
+
 export function extractDailyReadingSourceDocument(
  html: string,
 ): ParsedDailyReadingSourceDocument | null {
- const cleaned = html
-  .replace(/<(script|style|svg|noscript|form|nav|footer)[^>]*>[\s\S]*?<\/\1>/giu, " ")
-  .replace(/<!--([\s\S]*?)-->/gu, " ");
- const paragraphs = Array.from(cleaned.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/giu))
-  .map((match) => textFromFragment(match[1] ?? ""))
-  .filter((text) => (text.match(hanPattern)?.length ?? 0) >= 18 && !boilerplatePattern.test(text));
- const unique: string[] = [];
- for (const paragraph of paragraphs) {
-  if (articleStopPattern.test(paragraph)) break;
-  if (!unique.includes(paragraph)) unique.push(paragraph);
+ for (const candidate of semanticFragments(html)) {
+  const document = buildDocumentCandidate(
+   candidate.fragment,
+   candidate.method,
+   candidate.method === "json-ld",
+   html,
+  );
+  if (document !== null) return document;
  }
- const extractedTextZh = unique.join("\n").slice(0, 15_500).trim();
- if ((extractedTextZh.match(hanPattern)?.length ?? 0) < 240 || unique.length < 3) return null;
- return { extractedTextZh, pagePublishedAt: pagePublishedAt(html) };
+ return buildDocumentCandidate(html, "paragraph-fallback", false, html);
 }

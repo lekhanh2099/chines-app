@@ -46,29 +46,66 @@ describe("Daily Reading source parsers", () => {
   expect(items[0]?.publishedAt).toBe("2026-08-18T04:00:00.000Z");
  });
 
- it("extracts article paragraphs while dropping boilerplate and stopping before recommendations", () => {
+ it("prefers a semantic article body and preserves paragraph boundaries", () => {
+  const outsideNoise =
+   "页面顶部还有一段很长的中文导航说明，它满足普通段落的长度条件，但不属于文章正文，所以语义容器抽取时不应该把它带进最终结果。";
   const paragraphA =
-   "近日城市博物馆推出暑期传统文化展览，展览通过文物、图片和互动装置介绍古代生活，让年轻观众能够从具体细节理解历史背景和传统手艺的发展。策展团队还把不同时期的日常用品放在同一空间中，引导观众比较材料、用途和审美变化，并通过简短说明解释这些变化与社会生活之间的联系。";
+   "近日城市博物馆推出暑期传统文化展览，展览通过文物、图片和互动装置介绍古代生活，让年轻观众能够从具体细节理解历史背景和传统手艺的发展。";
   const paragraphB =
-   "馆方还安排了面向学生的讲解和体验活动，参与者可以观察展品的制作方法，比较不同地区的文化特点，并在阅读资料后完成自己的观察记录。活动设计没有要求学生记住大量年代，而是鼓励他们从一个器物、一张图片或一段文字出发，提出问题，再利用展厅里的信息寻找可能的答案。";
+   "馆方还安排了面向学生的讲解和体验活动，参与者可以观察展品的制作方法，比较不同地区的文化特点，并在阅读资料后完成自己的观察记录。";
   const paragraphC =
-   "工作人员表示，希望这次活动不仅让参观者获得知识，也鼓励大家主动提问、查找资料和讨论文化保护，让一次参观变成更完整的学习过程。博物馆之后还计划根据观众反馈调整讲解内容，并继续与学校合作开发适合不同年龄学习者的公共教育活动。";
+   "工作人员表示，希望这次活动不仅让参观者获得知识，也鼓励大家主动提问、查找资料和讨论文化保护，让一次参观变成更完整的学习过程。";
+  const paragraphD =
+   "博物馆之后还计划根据观众反馈调整讲解内容，并继续与学校和社区合作开发适合不同年龄学习者的公共教育活动，让展览资源在参观结束之后仍然能够进入课堂和日常学习。";
   const html = `
-    <html><head><meta property="article:published_time" content="2026-08-18T10:30:00+08:00"></head>
+    <html><head>
+      <meta property="article:published_time" content="2026-08-18T10:30:00+08:00">
+      <meta property="og:title" content="城市博物馆推出暑期传统文化展览">
+    </head>
     <body>
-      <p>${paragraphA}</p>
-      <p>${paragraphB}</p>
-      <p>${paragraphC}</p>
-      <p>推荐阅读：更多精彩内容请点击这里继续浏览相关报道和客户端专题。</p>
-      <p>这一段位于推荐阅读之后，不应该进入正文抽取结果，即使这里还有很多中文字符用于干扰测试。</p>
+      <p>${outsideNoise}</p>
+      <article>
+        <p>${paragraphA}</p>
+        <p>${paragraphB}</p>
+        <p>${paragraphC}</p>
+        <p>${paragraphD}</p>
+        <p>推荐阅读：更多精彩内容请点击这里继续浏览相关报道和客户端专题。</p>
+      </article>
+      <p>这一段位于正文之后，也不应该进入语义文章正文。</p>
     </body></html>`;
 
   const result = extractDailyReadingSourceDocument(html);
 
   expect(result).not.toBeNull();
-  expect(result?.extractedTextZh).toContain(paragraphA);
-  expect(result?.extractedTextZh).toContain(paragraphC);
-  expect(result?.extractedTextZh).not.toContain("这一段位于推荐阅读之后");
+  expect(result?.extractionMethod).toBe("article");
+  expect(result?.paragraphsZh).toEqual([paragraphA, paragraphB, paragraphC, paragraphD]);
+  expect(result?.extractedTextZh).not.toContain(outsideNoise);
+  expect(result?.pageTitleZh).toBe("城市博物馆推出暑期传统文化展览");
   expect(result?.pagePublishedAt).toBe("2026-08-18T02:30:00.000Z");
+ });
+
+ it("uses structured articleBody before generic page paragraphs when it carries real paragraphs", () => {
+  const paragraphA =
+   "城市公共图书馆今年增加了夜间阅读空间，希望为下班后的年轻人提供更安静、更稳定的学习环境，也让公共文化服务覆盖更多日常生活场景。";
+  const paragraphB =
+   "不少读者表示，晚上开放之后，他们不需要赶在下班前借书，还可以参加小型分享会、主题阅读活动以及面向普通读者的知识讲座。";
+  const paragraphC =
+   "图书馆方面计划继续观察使用情况，根据读者反馈调整开放时间和活动安排，并和社区合作探索更多适合不同年龄人群的公共阅读服务。";
+  const paragraphD =
+   "为了避免夜间开放只解决场地问题，工作人员还会记录读者最常使用的资源类型，并尝试增加适合晚间参加的阅读活动，让延长开放时间真正转化为更完整的公共文化服务。";
+  const articleBody = `${paragraphA}\n${paragraphB}\n${paragraphC}\n${paragraphD}`;
+  const structured = JSON.stringify({ "@type": "NewsArticle", articleBody });
+  const html = `
+    <html><head><script type="application/ld+json">${structured}</script></head>
+    <body>
+      <p>页面模板中的中文介绍很长很长，但它不是新闻正文，只用于测试结构化正文应该比通用段落更优先。</p>
+      <p>另一个模板段落也有足够多的中文字符，用来证明抽取器不会因为普通段落先出现就错误选择页面噪声内容。</p>
+      <p>最后一个模板段落继续补足长度，使通用抽取理论上也能成功，但结果仍然应该来自结构化的 articleBody 字段。</p>
+    </body></html>`;
+
+  const result = extractDailyReadingSourceDocument(html);
+
+  expect(result?.extractionMethod).toBe("json-ld");
+  expect(result?.paragraphsZh).toEqual([paragraphA, paragraphB, paragraphC, paragraphD]);
  });
 });
