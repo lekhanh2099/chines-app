@@ -14,9 +14,22 @@ import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
-import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ HanziText,
+ PinyinText,
+} from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+} from "@/features/hanzihome/components/lesson-overview/types";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import {
+ analyzeContextualPronunciation,
+ formatContextualSpokenPinyin,
+ type ContextualPronunciationAnalysis,
+} from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
+import { ContextualReaderText } from "../ContextualReaderText";
 import { DailyReadingLearningSupportPanel } from "./DailyReadingLearningSupportPanel";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 import {
@@ -30,6 +43,7 @@ import type { DailyReadingV2 } from "./daily-reading-v2.schemas";
 type V2Tab = "reader" | "translation" | "questions" | "vocabulary" | "grammar" | "source";
 
 const fallbackTabs: readonly V2Tab[] = ["reader", "source"];
+const contextualPronunciationMaximumCharacters = 2_000;
 
 type TopicTranslationKey =
  | "generated.topic.culture"
@@ -77,6 +91,15 @@ function availableTabs(reading: DailyReadingV2): readonly V2Tab[] {
 
 function readyLearningModuleCount(reading: DailyReadingV2) {
  return Object.values(reading.enrichment).filter((state) => state.status === "ready").length;
+}
+
+function analyzeDailyReadingText(text: string): ContextualPronunciationAnalysis | null {
+ if (text.length === 0 || text.length > contextualPronunciationMaximumCharacters) return null;
+ try {
+  return analyzeContextualPronunciation({ text });
+ } catch {
+  return null;
+ }
 }
 
 export function DailyReadingV2Library() {
@@ -142,7 +165,11 @@ export function DailyReadingV2Library() {
      <Typography variant="bodySmall" tone="muted">
       {t("v2.settings.capture.libraryCount", { count: library.items.length })}
      </Typography>
-     <Badge variant={settings.autoCaptureEnabled ? "success" : "default"} size="sm">
+     <Badge
+      variant={settings.autoCaptureEnabled ? "success" : "default"}
+      size="sm"
+      casing="natural"
+     >
       {settings.autoCaptureEnabled ? t("v2.library.autoOn") : t("v2.library.autoOff")}
      </Badge>
     </div>
@@ -258,14 +285,17 @@ function Questions({ reading }: { reading: DailyReadingV2 }) {
        {isRevealed ? t("generated.questions.hideAnswer") : t("generated.questions.showAnswer")}
       </Button>
       {isRevealed ? (
-       <Card variant="subtle" padding="md" className="grid gap-1">
-        <HanziText as="p" size="medium">
-         {question.answerZh}
-        </HanziText>
-        <Typography variant="bodySmall" tone="secondary">
-         {question.answerVi}
-        </Typography>
-       </Card>
+       <>
+        <Separator />
+        <div className="grid gap-1">
+         <HanziText as="p" size="medium">
+          {question.answerZh}
+         </HanziText>
+         <Typography variant="bodySmall" tone="secondary">
+          {question.answerVi}
+         </Typography>
+        </div>
+       </>
       ) : null}
      </Card>
     );
@@ -277,6 +307,8 @@ function Questions({ reading }: { reading: DailyReadingV2 }) {
 export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void }) {
  const t = useTranslations("DailyReading");
  const library = useDailyReadingV2Library();
+ const learning = useLearningState();
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const reading = library.items.find((item) => item.id === id) ?? null;
  const [tab, setTab] = useState<V2Tab>("reader");
  const tabs = reading === null ? fallbackTabs : availableTabs(reading);
@@ -285,9 +317,24 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
   reading?.enrichment.translation.status === "ready"
    ? reading.enrichment.translation.data
    : null;
+ const paragraphs = reading?.article.paragraphs ?? [];
  const translationByParagraphId = useMemo(
   () => new Map(translation?.paragraphs.map((paragraph) => [paragraph.paragraphId, paragraph]) ?? []),
   [translation],
+ );
+ const pronunciationByParagraphId = useMemo(
+  () =>
+   new Map(
+    paragraphs.flatMap((paragraph) => {
+     const analysis = analyzeDailyReadingText(paragraph.zh);
+     return analysis === null ? [] : [[paragraph.id, analysis]];
+    }),
+   ),
+  [paragraphs],
+ );
+ const titlePronunciation = useMemo(
+  () => (reading === null ? null : analyzeDailyReadingText(reading.article.titleZh)),
+  [reading],
  );
 
  if (reading === null) {
@@ -308,7 +355,7 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
     {t("document.back")}
    </Button>
 
-   <div className="grid gap-3 border-b border-border-default pb-4">
+   <div className="grid gap-3">
     <div className="flex flex-wrap gap-2">
      <Badge variant={reading.releaseKind === "scheduled" ? "success" : "info"}>
       {reading.releaseKind === "scheduled"
@@ -324,6 +371,11 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
     <HanziText as="h1" size="card" weight="black">
      {reading.article.titleZh}
     </HanziText>
+    {displayMode.showPinyin && titlePronunciation !== null ? (
+     <PinyinText as="p" variant="bodySmall" tone="accent">
+      {formatContextualSpokenPinyin(titlePronunciation)}
+     </PinyinText>
+    ) : null}
     {translation !== null ? (
      <>
       <Typography variant="bodySmall" tone="secondary">
@@ -338,6 +390,7 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
     ) : null}
    </div>
 
+   <Separator />
    <DailyReadingLearningSupportPanel reading={reading} />
 
    <Tabs value={effectiveTab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
@@ -346,6 +399,7 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
       <div className="grid gap-4">
        {reading.article.paragraphs.map((paragraph) => {
         const translated = translationByParagraphId.get(paragraph.id);
+        const pronunciation = pronunciationByParagraphId.get(paragraph.id);
         return (
          <Card key={paragraph.id} variant="section" padding="md" className="grid gap-2">
           {translated?.roleVi ? (
@@ -353,9 +407,13 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
             {translated.roleVi}
            </Typography>
           ) : null}
-          <HanziText as="p" size="large" leading="relaxed" wrapping="breakWords">
-           {paragraph.zh}
-          </HanziText>
+          {pronunciation !== undefined ? (
+           <ContextualReaderText analysis={pronunciation} displayMode={displayMode} />
+          ) : (
+           <HanziText as="p" size="large" leading="relaxed" wrapping="breakWords">
+            {paragraph.zh}
+           </HanziText>
+          )}
           {translated !== undefined ? (
            <>
             <Separator />
@@ -374,12 +432,17 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
       <div className="grid gap-4">
        {reading.article.paragraphs.map((paragraph) => {
         const translated = translationByParagraphId.get(paragraph.id);
+        const pronunciation = pronunciationByParagraphId.get(paragraph.id);
         if (translated === undefined) return null;
         return (
          <Card key={paragraph.id} variant="section" padding="md" className="grid gap-2">
-          <HanziText as="p" size="medium" leading="relaxed" wrapping="breakWords">
-           {paragraph.zh}
-          </HanziText>
+          {pronunciation !== undefined ? (
+           <ContextualReaderText analysis={pronunciation} displayMode={displayMode} />
+          ) : (
+           <HanziText as="p" size="medium" leading="relaxed" wrapping="breakWords">
+            {paragraph.zh}
+           </HanziText>
+          )}
           <Separator />
           <Typography as="p" tone="secondary" leading="relaxed">
            {translated.vi}
@@ -394,22 +457,30 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
 
      {effectiveTab === "vocabulary" && reading.enrichment.vocabulary.status === "ready" ? (
       <div className="grid gap-3 sm:grid-cols-2">
-       {reading.enrichment.vocabulary.data.items.map((item) => (
-        <Card key={item.id} variant="section" padding="md" className="grid gap-1">
-         <div className="flex flex-wrap items-center gap-2">
-          <HanziText as="h3" size="medium" weight="black">
-           {item.hanzi}
-          </HanziText>
-          <Badge size="sm">{item.categoryVi}</Badge>
-         </div>
-         <Typography variant="bodySmall" weight="semibold">
-          {item.meaningVi}
-         </Typography>
-         <Typography variant="bodySmall" tone="muted">
-          {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
-         </Typography>
-        </Card>
-       ))}
+       {reading.enrichment.vocabulary.data.items.map((item) => {
+        const pronunciation = analyzeDailyReadingText(item.hanzi);
+        return (
+         <Card key={item.id} variant="section" padding="md" className="grid gap-1">
+          <div className="flex flex-wrap items-center gap-2">
+           <HanziText as="h3" size="medium" weight="black">
+            {item.hanzi}
+           </HanziText>
+           <Badge size="sm">{item.categoryVi}</Badge>
+          </div>
+          {displayMode.showPinyin && pronunciation !== null ? (
+           <PinyinText as="p" variant="caption" tone="accent">
+            {formatContextualSpokenPinyin(pronunciation)}
+           </PinyinText>
+          ) : null}
+          <Typography variant="bodySmall" weight="semibold">
+           {item.meaningVi}
+          </Typography>
+          <Typography variant="bodySmall" tone="muted">
+           {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
+          </Typography>
+         </Card>
+        );
+       })}
       </div>
      ) : null}
 
