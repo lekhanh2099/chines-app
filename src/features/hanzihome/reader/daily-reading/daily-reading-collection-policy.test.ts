@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { resolveDailyReadingCollectionPolicy } from "./daily-reading-collection-policy";
+import {
+ resolveDailyReadingCollectionPolicy,
+ type DailyReadingCollectionHistoryItem,
+} from "./daily-reading-collection-policy";
 import { defaultDailyReadingV2Settings } from "./daily-reading-v2.settings";
 import { dailyReadingV2SettingsSchema } from "./daily-reading-v2.schemas";
 
-const history = [
+const history: readonly DailyReadingCollectionHistoryItem[] = [
  {
   topic: "culture",
   sourceUrl: "https://www.chinanews.com.cn/cul/2026/08-19/a.shtml",
