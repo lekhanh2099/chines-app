@@ -24,14 +24,14 @@ const streamStore = createStore<
  AiConversationClientStreamState,
  AiConversationClientStreamActions
 >(idleState, ({ setState }) => ({
- begin: (stop) => setState({ active: true, content: "", stop }),
+ begin: (stop) => setState(() => ({ active: true, content: "", stop })),
  append: (text) =>
   setState((state) =>
    !state.active || text.length === 0
     ? state
     : { ...state, content: `${state.content}${text}` },
   ),
- end: () => setState(idleState),
+ end: () => setState(() => idleState),
 }));
 
 export function beginAiConversationClientStream(stop: () => void) {
