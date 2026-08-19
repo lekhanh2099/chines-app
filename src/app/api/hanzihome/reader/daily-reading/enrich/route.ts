@@ -1,9 +1,9 @@
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
+import type { AiRuntimeCapability } from "@/lib/ai-runtime-contract";
 import {
  resolveUserAiRuntime,
  type UserAiRuntimeResolution,
 } from "@/services/ai-runtime.service";
-import type { AiRuntimeCapability } from "@/lib/ai-runtime-contract";
 import type { JsonFieldValue } from "@/types/json";
 
 import {
@@ -12,7 +12,9 @@ import {
  type DailyReadingV2EnrichmentResponse,
 } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.schemas";
 import { generateDailyReadingV2Enrichment } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.server";
-import type { DailyReadingV2EnrichmentModule } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.schemas";
+import type {
+ DailyReadingV2EnrichmentModule,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.schemas";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -51,10 +53,10 @@ function runtimeFailureResponse(
 
 function blockedReasonForProviderFailure(
  errorCode: Extract<DailyReadingV2EnrichmentResponse, { ok: false }>["errorCode"],
-) {
- if (errorCode === "invalid-key") return "invalid-ai-key" as const;
- if (errorCode === "quota-exhausted") return "quota-exhausted" as const;
- if (errorCode === "provider-unavailable") return "provider-unavailable" as const;
+): "invalid-ai-key" | "quota-exhausted" | "provider-unavailable" | null {
+ if (errorCode === "invalid-key") return "invalid-ai-key";
+ if (errorCode === "quota-exhausted") return "quota-exhausted";
+ if (errorCode === "provider-unavailable") return "provider-unavailable";
  return null;
 }
 
@@ -71,7 +73,12 @@ function providerFailureResponse(
   const status = result.errorCode === "quota-exhausted" ? 429 : 409;
   return privateNoStoreJson(dailyReadingV2EnrichmentResponseSchema.parse(body), { status });
  }
- const status = result.errorCode === "network-error" ? 503 : result.errorCode === "cancelled" ? 408 : 502;
+ const status =
+  result.errorCode === "network-error"
+   ? 503
+   : result.errorCode === "cancelled"
+     ? 408
+     : 502;
  return privateNoStoreJson(dailyReadingV2EnrichmentResponseSchema.parse(result), { status });
 }
 
