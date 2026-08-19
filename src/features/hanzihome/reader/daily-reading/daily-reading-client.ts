@@ -36,6 +36,12 @@ import {
  DailyReadingGenerationBusyError,
  withDailyReadingGenerationLock,
 } from "./daily-reading-lock.client";
+import { migrateDailyReadingV1ItemToV2 } from "./daily-reading-v2.migration";
+import {
+ getDailyReadingV2SettingsSnapshot,
+ saveDailyReadingV2Article,
+ writeDailyReadingV2Settings,
+} from "./daily-reading-v2-storage.client";
 
 export class DailyReadingClientError extends Error {
  constructor(
@@ -259,6 +265,11 @@ export async function generateDailyReadingNow(
      : dailyReadingGenerateResponseSchema.parse(await response.json()).reading;
     progress("saving");
     const saved = saveGeneratedDailyReading(reading);
+    try {
+     saveDailyReadingV2Article(migrateDailyReadingV1ItemToV2(saved));
+    } catch {
+     // V1 remains authoritative for this legacy generation if the V2 mirror cannot be written.
+    }
     clearDailyReadingCheckpoint(runId);
     stage = "completed";
     persistRun("succeeded", new Date().toISOString(), "", "", saved.id);
@@ -315,8 +326,20 @@ export function useDailyReadingSettings() {
   getDailyReadingSettingsServerSnapshot,
  );
  const update = useCallback(
-  (patch: Partial<Pick<typeof settings, "autoGenerateEnabled" | "preferredLevel">>) =>
-   writeDailyReadingSettings({ ...settings, ...patch }),
+  (patch: Partial<Pick<typeof settings, "autoGenerateEnabled" | "preferredLevel">>) => {
+   const saved = writeDailyReadingSettings({ ...settings, ...patch });
+   try {
+    const currentV2 = getDailyReadingV2SettingsSnapshot();
+    writeDailyReadingV2Settings({
+     ...currentV2,
+     autoCaptureEnabled: saved.autoGenerateEnabled,
+     targetLevel: saved.preferredLevel,
+    });
+   } catch {
+    // Keep the existing V1 settings flow usable while the V2 settings UI is not wired yet.
+   }
+   return saved;
+  },
   [settings],
  );
  return { settings, update };
