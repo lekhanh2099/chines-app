@@ -10,12 +10,12 @@ The Hanzi Studio reading workspace remains the visual/interaction reference. Exi
 
 ## Current contract gap
 
-There are currently two reader implementations with overlapping responsibility:
+The original implementation had two reader engines with overlapping responsibility:
 
-- `ReaderDocumentStudy` owns the Reader DB document experience and already contains playback, pinyin, translation, selection, study tools, outline and study modules.
-- `LessonTextInlineEditor` separately owns lesson reading playback, loop, auto-advance, focus and keyboard behavior while lesson text rendering uses a different visual composition.
+- `ReaderDocumentStudy` owned the Reader DB document experience and contained playback, pinyin, translation, selection, study tools, outline and study modules.
+- `LessonTextInlineEditor` separately owned lesson reading playback, loop, auto-advance, focus and keyboard behavior while lesson text rendering used a different visual composition.
 
-This duplication makes UI/function behavior drift and prevents future sources such as temporary text or conversation content from entering the reader without pretending to be a persisted Reader DB document.
+The refactor removes that split. Reader DB resources and textbook text now normalize into the same internal document model and use the same runtime/surface; source-specific editing and persistence remain outside the generic reader.
 
 ## Target dependency flow
 
@@ -110,7 +110,7 @@ The command bar exposes high-frequency playback actions. Loop, auto-advance, sha
 
 ## Pinyin review contract
 
-Contextual pinyin remains clickable/keyboard-reachable wherever the canonical Reader surface renders analyzed Hanzi. The compact review surface shows the resolved phrase/glyph, current pinyin, confidence, optional contextual meaning and per-character reading alternatives. A manual confirmation is authoritative for that sentence instance and must update the displayed reading after persistence.
+Contextual pinyin remains clickable/keyboard-reachable wherever the canonical Reader surface renders analyzed Hanzi. The compact review surface shows the resolved phrase/glyph, current pinyin, confidence, contextual meaning and per-character reading alternatives. A manual confirmation is authoritative for that sentence instance and must update the displayed reading after persistence.
 
 For ephemeral/plain/lesson sources without a pronunciation persistence port, the same surface remains inspectable and links to full analysis, but does not pretend a local choice has been persisted.
 
@@ -127,62 +127,47 @@ Core reading is always available when at least one Chinese segment exists. Optio
 
 Interaction capabilities such as TTS, annotations and editing belong to runtime integrations, not content data.
 
-## Migration order
+## Migration order and status
 
-### Phase 0 — contract document
+### Phase 0 — contract document — complete
 
-This file. Keep the refactor scoped and record invariants before mutation.
+This file keeps the refactor scoped and records invariants before and after mutation.
 
-### Phase A — internal model and source adapters
+### Phase A — internal model and source adapters — complete
 
-Add the universal document model and deterministic adapters for:
+The universal document model has deterministic adapters for current `ReaderDocumentResource`, textbook text, plain Chinese text, article-like paragraph input and conversation turns, with adapter tests.
 
-- current `ReaderDocumentResource`;
-- plain Chinese text;
-- article-like paragraph input;
-- conversation turns.
+### Phase B — extract reader runtime ownership — complete
 
-Add unit tests proving ordering, optional content and capabilities.
+Playback, active position and runtime controls are owned by the scoped Reader runtime. Persisted Reader feature state, annotations and pronunciation overrides live in dedicated hooks rather than the reading component.
 
-### Phase B — extract reader runtime ownership
+### Phase C — canonical `ReaderSurface` — complete
 
-Split playback, active position, selection and persistence orchestration out of `ReaderDocumentStudy` while preserving its current behavior.
+The continuous document surface now owns one command bar, responsive tools, outline, learner typography, focus, selection and contextual pronunciation interactions.
 
-### Phase C — canonical `ReaderSurface`
+### Phase D — migrate current Reader consumers — complete
 
-Implement the continuous-document reading layout using the current Hanzi Studio workspace as the visual baseline:
+HSK, Daily Reading, core/reinforcement/mock/personal/humanities Reader sources use `ReaderDocumentResource -> ReaderDocumentModel -> ReaderSurface`. HSK/Reader-owned workspaces retain capability-driven study tabs; Daily keeps its own outer study tabs.
 
-- all segments mounted;
-- one command bar;
-- one responsive tools surface;
-- active-position outline;
-- existing learner typography;
-- shared reading preferences;
-- focus mode;
-- selection actions.
+### Phase E — migrate textbook lesson reading — complete
 
-### Phase D — migrate current Reader consumers
+Textbook Bài khóa text sections use the same Reader surface/runtime while lesson editing paths remain lesson-owned.
 
-HSK, Daily Reading, core/reinforcement/mock/personal/humanities Reader sources use the same surface through `ReaderDocumentResource -> ReaderDocumentModel`.
+### Phase F — generic-source proof — complete
 
-### Phase E — migrate textbook lesson reading
+Article, plain-text and conversation fixtures prove future paste/chat integrations require only an adapter/composition and do not need a fake Reader DB record.
 
-Add a lesson adapter and replace the lesson-local reading runtime with the shared reader runtime/surface. Keep lesson editing and lesson section ownership in the lesson feature.
+### Phase G — cleanup — complete in source
 
-### Phase F — generic-source proof
+- duplicate lesson playback/keyboard code removed;
+- duplicate Reader monolith playback/selection/study rendering removed;
+- superseded Reader session navigation/playback state removed;
+- `ReaderSurface` split into command bar, document content, outline and pinyin-review components;
+- selection and pronunciation-review mutations have separate owners;
+- segment rows are memoized and subscribe to segment-scoped playback/active state;
+- pronunciation analysis is cached per paragraph signature so one override does not recompute unrelated paragraphs.
 
-Keep deterministic fixtures for article, plain text and conversation input so future paste/chat integrations require an adapter/composition only, not another reader implementation.
-
-### Phase G — cleanup
-
-Only after all consumers migrate:
-
-- remove duplicate lesson playback/keyboard code;
-- remove duplicate reader preference state;
-- remove obsolete reading renderer/CSS;
-- remove the superseded Reader session playback/navigation state after the scoped runtime owns it;
-- split the Reader surface into command bar, document content, outline and interaction modules so high-frequency state does not invalidate the whole document;
-- keep compatibility wrappers only where they still provide a stable public composition.
+Rendered product verification and the final repository check remain external verification gates before merge; they are not treated as completed merely because source cleanup is complete.
 
 ## Performance rules
 
@@ -233,7 +218,7 @@ Do not claim a rendered/UI state as verified when it was only source-inspected.
 
 ## Completion criteria
 
-The refactor is complete only when:
+The source refactor is complete when:
 
 1. equivalent Chinese segments render through the same reader typography/surface regardless of source;
 2. font/size/pinyin/translation preferences have one owner;
