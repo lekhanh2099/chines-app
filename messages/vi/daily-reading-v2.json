@@ -8,11 +8,64 @@
   "description": "Bài nguồn tiếng Trung được lưu trước. Dịch, từ vựng, ngữ pháp và câu hỏi là phần hỗ trợ AI riêng, có thể tạo sau.",
   "autoOn": "Tự tìm bài đang bật",
   "autoOff": "Chỉ tìm bài thủ công",
-  "learningReady": "{ready}/{total} phần hỗ trợ đã có"
+  "learningReady": "{ready}/{total} phần hỗ trợ đã có",
+  "tabs": {
+   "articles": "Bài đã tìm",
+   "activity": "Hoạt động",
+   "aria": "Thư viện và lịch sử Daily Reading"
+  },
+  "status": {
+   "todayLabel": "Hôm nay",
+   "todayRunning": "Đang tìm bài",
+   "todayReady": "Bài hôm nay đã sẵn sàng",
+   "manualOnly": "Chỉ tìm thủ công",
+   "todayDue": "Đã tới giờ, đang chờ tác vụ",
+   "todayWaiting": "Chưa tới giờ tìm bài",
+   "scheduleLabel": "Lịch tự động",
+   "scheduleEnabled": "Mỗi ngày lúc {time}",
+   "scheduleDisabled": "Đang tắt",
+   "libraryLabel": "Thư viện"
+  },
+  "article": {
+   "sourceReady": "Bài nguồn sẵn sàng",
+   "learningComplete": "AI đã đủ",
+   "learningRunning": "AI đang tạo",
+   "learningAttention": "AI cần xử lý",
+   "learningPending": "AI {ready}/{total}"
+  }
+ },
+ "activity": {
+  "title": "Lịch sử hoạt động",
+  "description": "Nhật ký thật của các lần tìm bài và tạo hỗ trợ AI trên thiết bị này, mới nhất ở trên.",
+  "emptyTitle": "Chưa có hoạt động nào",
+  "emptyDescription": "Khi Daily Reading tìm bài hoặc tạo hỗ trợ học, trạng thái và thời gian sẽ xuất hiện tại đây.",
+  "captureTitle": "Tìm bài nguồn",
+  "enrichmentTitle": "AI hỗ trợ học",
+  "captureDetail": "{mode} · {stage}",
+  "enrichmentDetail": "{module}",
+  "openArticle": "Mở bài",
+  "retryCapture": "Tìm lại",
+  "status": {
+   "pending": "Đang chạy",
+   "succeeded": "Hoàn tất",
+   "failed": "Thất bại",
+   "blocked": "Bị chặn"
+  },
+  "stage": {
+   "discovering": "Tìm nguồn",
+   "extracting": "Trích xuất bài",
+   "ranking": "Đánh giá bài",
+   "saving": "Lưu bài",
+   "completed": "Đã lưu"
+  }
+ },
+ "detail": {
+  "supportTab": "Hỗ trợ AI",
+  "capturedMeta": "Đã lưu {time} · {publisher} · {minutes} phút"
  },
  "settings": {
   "title": "Daily Reading",
-  "description": "HanziHome tìm và lưu bài nguồn trước; AI chỉ bổ sung nghĩa và nội dung học tập sau đó. Thiếu API key không làm mất khả năng tìm hoặc đọc bài.",
+  "description": "Cấu hình cách HanziHome tìm bài nguồn và phần hỗ trợ AI. Trạng thái, thư viện và lịch sử tác vụ nằm ở màn hình Daily Reading.",
   "capture": {
    "title": "Bài nguồn",
    "description": "Chọn khi nào và loại bài nào HanziHome sẽ tìm. Một bài đã lưu được xem là hoàn tất ngay cả khi chưa có phần AI.",
@@ -31,7 +84,7 @@
    "testingSource": "Đang kiểm tra",
    "findNow": "Tìm bài mới",
    "findingNow": "Đang tìm bài",
-   "sourceIndependent": "Kiểm tra nguồn và tìm bài không dùng API key AI."
+   "sourceIndependent": "Kiểm tra nguồn chỉ kiểm tra khả năng tìm và trích xuất; không dùng API key AI."
   },
   "sourcePreview": {
    "title": "Nguồn vừa kiểm tra",
@@ -126,7 +179,7 @@
    "failed": "Cần thử lại",
    "missingKey": "Cần API key",
    "invalidKey": "Key không hợp lệ",
-   "quota": "Hết quota",
+   "quota": "Quota / giới hạn",
    "providerUnavailable": "Provider tạm lỗi"
   },
   "actions": {
