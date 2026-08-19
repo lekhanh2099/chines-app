@@ -153,7 +153,8 @@ async function* readSseData(response: Response, signal?: AbortSignal) {
    throwIfAborted(signal);
    const result = await reader.read();
    if (result.done) break;
-   buffer += decoder.decode(result.value, { stream: true }).replace(/\r\n/gu, "\n");
+   buffer += decoder.decode(result.value, { stream: true });
+   buffer = buffer.replace(/\r\n/gu, "\n");
 
    let boundary = buffer.indexOf("\n\n");
    while (boundary >= 0) {
@@ -169,6 +170,7 @@ async function* readSseData(response: Response, signal?: AbortSignal) {
   }
 
   buffer += decoder.decode();
+  buffer = buffer.replace(/\r\n/gu, "\n");
   for (const line of buffer.split("\n")) {
    if (!line.startsWith("data:")) continue;
    const data = line.slice(5).trimStart();
