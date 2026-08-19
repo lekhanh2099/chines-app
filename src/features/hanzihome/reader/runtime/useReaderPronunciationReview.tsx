@@ -102,6 +102,7 @@ export function useReaderPronunciationReview({
    })
     .then(() => {
      setSaveError("");
+     setTarget(null);
      return invalidate();
     })
     .catch((error: Error) => setSaveError(error.message));
@@ -116,6 +117,7 @@ export function useReaderPronunciationReview({
   })
    .then(() => {
     setSaveError("");
+    setTarget(null);
     return invalidate();
    })
    .catch((error: Error) => setSaveError(error.message));
