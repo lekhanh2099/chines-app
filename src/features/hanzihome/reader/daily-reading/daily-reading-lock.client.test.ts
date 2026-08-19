@@ -1,28 +1,43 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
  canAcquireDailyReadingLease,
- type DailyReadingLockRecord,
+ withDailyReadingGenerationLock,
 } from "./daily-reading-lock.client";
 
-const currentLease: DailyReadingLockRecord = {
+const currentLease = {
  name: "chines-app:daily-reading-generation",
- ownerId: "tab-a",
+ ownerId: "owner-a",
  expiresAt: 2_000,
 };
 
-describe("Daily Reading cross-tab lease", () => {
- it("allows a free lease or the current owner", () => {
-  expect(canAcquireDailyReadingLease(null, "tab-b", 1_000)).toBe(true);
-  expect(canAcquireDailyReadingLease(currentLease, "tab-a", 1_000)).toBe(true);
+describe("Daily Reading generation lock", () => {
+ afterEach(() => {
+  vi.unstubAllGlobals();
  });
 
- it("blocks another owner while the lease is fresh", () => {
-  expect(canAcquireDailyReadingLease(currentLease, "tab-b", 1_999)).toBe(false);
+ it("allows the same owner or an expired lease but blocks another active owner", () => {
+  expect(canAcquireDailyReadingLease(null, "owner-b", 1_000)).toBe(true);
+  expect(canAcquireDailyReadingLease(currentLease, "owner-a", 1_000)).toBe(true);
+  expect(canAcquireDailyReadingLease(currentLease, "owner-b", 1_000)).toBe(false);
+  expect(canAcquireDailyReadingLease(currentLease, "owner-b", 2_000)).toBe(true);
  });
 
- it("allows takeover after the lease expires", () => {
-  expect(canAcquireDailyReadingLease(currentLease, "tab-b", 2_000)).toBe(true);
-  expect(canAcquireDailyReadingLease(currentLease, "tab-b", 2_500)).toBe(true);
+ it("does not rerun a task failure through fallback lock backends", async () => {
+  const task = vi.fn(async () => {
+   throw new Error("source failed");
+  });
+  vi.stubGlobal("navigator", {
+   locks: {
+    request: async (
+     _name: string,
+     _options: LockOptions,
+     callback: (lock: Lock) => Promise<never>,
+    ) => callback({ name: "chines-app:daily-reading-generation", mode: "exclusive" }),
+   },
+  });
+
+  await expect(withDailyReadingGenerationLock(task)).rejects.toThrow("source failed");
+  expect(task).toHaveBeenCalledTimes(1);
  });
 });
