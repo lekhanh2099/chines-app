@@ -22,7 +22,7 @@ function metadataText(resource: ReaderDocumentResource, key: string): string | u
 
 function metadataTextList(resource: ReaderDocumentResource, key: string): readonly string[] {
  const value = resource.document.source_metadata[key];
- return Array.isArray(value) && value.every((item) => typeof item === "string") ? value : [];
+ return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
 }
 
 function hasAnalysis(resource: ReaderDocumentResource): boolean {
