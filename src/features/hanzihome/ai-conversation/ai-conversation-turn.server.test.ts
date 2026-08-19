@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
 import type { AiConversationContextState } from "./ai-conversation-context.server";
@@ -8,32 +9,28 @@ import type { AiConversationRecalledMemory } from "./ai-conversation-memory.sche
 import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
 
 const {
- generateAiConversationReply,
- generateSystemAiConversationReply,
- getActiveUserApiKeyCredentials,
  loadAiConversationContextState,
  loadAiConversationMemoryEnabledPreference,
  processDueAiConversationPostTurnJobs,
  resolveExplicitAiConversationForget,
+ resolveUserAiRuntime,
  retrieveRelevantAiConversationMemories,
+ streamAiConversationProviderReply,
 } = vi.hoisted(() => ({
- generateAiConversationReply: vi.fn(),
- generateSystemAiConversationReply: vi.fn(),
- getActiveUserApiKeyCredentials: vi.fn(),
  loadAiConversationContextState: vi.fn(),
  loadAiConversationMemoryEnabledPreference: vi.fn(),
  processDueAiConversationPostTurnJobs: vi.fn(),
  resolveExplicitAiConversationForget: vi.fn(),
+ resolveUserAiRuntime: vi.fn(),
  retrieveRelevantAiConversationMemories: vi.fn(),
+ streamAiConversationProviderReply: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/services/ai.service", () => ({ generateAiConversationReply }));
-vi.mock("@/services/user-api-keys.service", () => ({ getActiveUserApiKeyCredentials }));
-vi.mock("./ai-conversation-system.server", () => ({
- generateSystemAiConversationReply,
- SYSTEM_AI_CONVERSATION_PROVIDER: "Google Gemini",
- SYSTEM_AI_CONVERSATION_MODEL: "models/gemini-3.1-flash-lite",
+vi.mock("@/services/ai-runtime.service", () => ({ resolveUserAiRuntime }));
+vi.mock("./ai-conversation-stream-provider.server", () => ({
+ AiConversationProviderStreamError: class AiConversationProviderStreamError extends Error {},
+ streamAiConversationProviderReply,
 }));
 vi.mock("./ai-conversation-persistence.server", () => ({ loadAiConversationContextState }));
 vi.mock("./ai-conversation-memory-persistence.server", () => ({
@@ -60,7 +57,10 @@ vi.mock("./ai-conversation-memory.server", () => ({
  retrieveRelevantAiConversationMemories,
 }));
 
-import { generatePersistedAiConversationTurn } from "./ai-conversation-turn.server";
+import {
+ generatePersistedAiConversationTurn,
+ preparePersistedAiConversationTurn,
+} from "./ai-conversation-turn.server";
 
 const supabase = createClient<Database>("https://example.supabase.co", "test-key", {
  auth: { autoRefreshToken: false, persistSession: false },
@@ -115,43 +115,42 @@ const recalledMemory: AiConversationRecalledMemory = {
  similarity: 0.84,
 };
 
-const groqKey = {
- id: "44444444-4444-4444-8444-444444444444",
- userId: "user-1",
+const groqRuntime: ResolvedUserAiRuntime = {
+ keyId: "44444444-4444-4444-8444-444444444444",
  provider: "groq",
+ providerLabel: "Groq",
  label: "Groq",
  maskedKey: "gsk_***",
- isActive: true,
+ model: "openai/gpt-oss-20b",
  priority: 0,
- defaultModel: "openai/gpt-oss-20b",
- lastValidatedAt: null,
- createdAt: "2026-08-18T00:00:00.000Z",
- updatedAt: "2026-08-18T00:00:00.000Z",
  apiKey: "gsk-test",
+ capabilities: ["conversation", "daily-reading-translation", "daily-reading-learning", "lookup", "structured-memory"],
 };
+
+async function* streamText(text: string) {
+ yield text;
+}
 
 describe("persisted AI conversation turn", () => {
  beforeEach(() => {
-  generateAiConversationReply.mockReset();
-  generateSystemAiConversationReply.mockReset();
-  getActiveUserApiKeyCredentials.mockReset();
   loadAiConversationContextState.mockReset();
   loadAiConversationMemoryEnabledPreference.mockReset();
   processDueAiConversationPostTurnJobs.mockReset();
   resolveExplicitAiConversationForget.mockReset();
+  resolveUserAiRuntime.mockReset();
   retrieveRelevantAiConversationMemories.mockReset();
+  streamAiConversationProviderReply.mockReset();
 
+  resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime: groqRuntime });
   processDueAiConversationPostTurnJobs.mockResolvedValue({ processed: 0, ready: true });
   loadAiConversationContextState.mockResolvedValue(contextState);
   loadAiConversationMemoryEnabledPreference.mockResolvedValue(true);
   retrieveRelevantAiConversationMemories.mockResolvedValue([recalledMemory]);
   resolveExplicitAiConversationForget.mockResolvedValue({ deleted: 0, resolvedIds: [] });
+  streamAiConversationProviderReply.mockImplementation(() => streamText("当然，你喜欢打羽毛球。"));
  });
 
- it("injects relevant long-term memory under system data authority for BYOK", async () => {
-  getActiveUserApiKeyCredentials.mockResolvedValue([groqKey]);
-  generateAiConversationReply.mockResolvedValue({ data: "当然，你喜欢打羽毛球。", error: null });
-
+ it("injects relevant long-term memory into a strict personal BYOK turn", async () => {
   const result = await generatePersistedAiConversationTurn({
    supabase,
    userId: "user-1",
@@ -159,7 +158,15 @@ describe("persisted AI conversation turn", () => {
    contextState,
   });
 
-  expect(result).toMatchObject({ ok: true, provider: "Groq", model: "openai/gpt-oss-20b" });
+  expect(result).toMatchObject({
+   ok: true,
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+   apiKeyId: groqRuntime.keyId,
+  });
+  expect(resolveUserAiRuntime).toHaveBeenCalledWith(
+   expect.objectContaining({ userId: "user-1", capability: "conversation" }),
+  );
   expect(retrieveRelevantAiConversationMemories).toHaveBeenCalledWith(
    expect.objectContaining({
     userId: "user-1",
@@ -169,12 +176,32 @@ describe("persisted AI conversation turn", () => {
     suppressForForget: false,
    }),
   );
-  const [messages, options] = generateAiConversationReply.mock.calls[0];
-  expect(messages).toEqual([{ role: "user", content: recentMessages[0]?.content }]);
-  expect(options.systemContext).toContain("<MEMORY_DATA>");
-  expect(options.systemContext).toContain("Người học thích chơi cầu lông");
-  expect(options.systemContext).toContain('"displayName":"小林"');
-  expect(generateSystemAiConversationReply).not.toHaveBeenCalled();
+  const providerInput = streamAiConversationProviderReply.mock.calls[0]?.[0];
+  expect(providerInput.runtime).toEqual(groqRuntime);
+  expect(providerInput.messages).toEqual([{ role: "user", content: recentMessages[0]?.content }]);
+  expect(providerInput.systemPrompt).toContain("<MEMORY_DATA>");
+  expect(providerInput.systemPrompt).toContain("Người học thích chơi cầu lông");
+  expect(providerInput.systemPrompt).toContain('"displayName":"小林"');
+ });
+
+ it("blocks the turn before memory/provider work when no personal key is available", async () => {
+  resolveUserAiRuntime.mockResolvedValue({
+   ok: false,
+   status: "missing-key",
+   reason: "no-active-key",
+  });
+
+  const result = await preparePersistedAiConversationTurn({
+   supabase,
+   userId: "user-1",
+   recentMessages,
+   contextState,
+  });
+
+  expect(result).toMatchObject({ ok: false, code: "AI_API_KEY_REQUIRED", status: 409 });
+  expect(processDueAiConversationPostTurnJobs).not.toHaveBeenCalled();
+  expect(retrieveRelevantAiConversationMemories).not.toHaveBeenCalled();
+  expect(streamAiConversationProviderReply).not.toHaveBeenCalled();
  });
 
  it("reloads relationship and summary context after processing a due durable job", async () => {
@@ -189,8 +216,6 @@ describe("persisted AI conversation turn", () => {
   };
   processDueAiConversationPostTurnJobs.mockResolvedValue({ processed: 1, ready: true });
   loadAiConversationContextState.mockResolvedValue(refreshedContext);
-  getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  generateSystemAiConversationReply.mockResolvedValue({ data: "记得。", error: null });
 
   await generatePersistedAiConversationTurn({
    supabase,
@@ -203,21 +228,16 @@ describe("persisted AI conversation turn", () => {
    userId: "user-1",
    conversationId: contextState.conversation.id,
   });
-  const [, , systemContext] = generateSystemAiConversationReply.mock.calls[0];
-  expect(systemContext).toContain('"relationshipBand":"familiar"');
-  expect(systemContext).toContain("已经聊过运动。");
+  const providerInput = streamAiConversationProviderReply.mock.calls[0]?.[0];
+  expect(providerInput.systemPrompt).toContain('"relationshipBand":"familiar"');
+  expect(providerInput.systemPrompt).toContain("已经聊过运动。");
  });
 
- it("does not read or inject long-term memory when the conversation memory policy is disabled", async () => {
+ it("does not read or inject long-term memory when the conversation policy is disabled", async () => {
   const noMemoryState: AiConversationContextState = {
    ...contextState,
    conversation: { ...contextState.conversation, memoryPolicy: "disabled" },
   };
-  getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  generateSystemAiConversationReply.mockResolvedValue({
-   data: "我们聊聊现在的话题吧。",
-   error: null,
-  });
 
   await generatePersistedAiConversationTurn({
    supabase,
@@ -227,22 +247,17 @@ describe("persisted AI conversation turn", () => {
   });
 
   expect(retrieveRelevantAiConversationMemories).not.toHaveBeenCalled();
-  const [, , systemContext] = generateSystemAiConversationReply.mock.calls[0];
-  expect(systemContext).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
+  const providerInput = streamAiConversationProviderReply.mock.calls[0]?.[0];
+  expect(providerInput.systemPrompt).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
  });
 
- it("suppresses recall on an explicit forget turn and resolves stored targets before the reply", async () => {
+ it("suppresses recall on an explicit forget turn and resolves targets before reply generation", async () => {
   const forgetMessages: AiConversationPersistedMessage[] = [
    {
     ...recentMessages[0],
     content: "忘掉我喜欢打羽毛球这件事。",
    },
   ];
-  getActiveUserApiKeyCredentials.mockResolvedValue([]);
-  generateSystemAiConversationReply.mockResolvedValue({
-   data: "好，我们不再用这个信息。",
-   error: null,
-  });
 
   await generatePersistedAiConversationTurn({
    supabase,
@@ -259,7 +274,7 @@ describe("persisted AI conversation turn", () => {
    }),
   );
   expect(retrieveRelevantAiConversationMemories).not.toHaveBeenCalled();
-  const [, , systemContext] = generateSystemAiConversationReply.mock.calls[0];
-  expect(systemContext).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
+  const providerInput = streamAiConversationProviderReply.mock.calls[0]?.[0];
+  expect(providerInput.systemPrompt).toContain("<MEMORY_DATA>\n[]\n</MEMORY_DATA>");
  });
 });
