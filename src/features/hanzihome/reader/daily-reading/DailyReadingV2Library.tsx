@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, FileText, Settings, Sparkles } from "lucide-react";
+import { ChevronRight, FileText, Search, Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -17,18 +17,17 @@ import { Typography } from "@/components/ui/typography";
 import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
-import {
- generateDailyReadingNow,
- useDailyReadingLibrary,
-} from "./daily-reading-client";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 import {
+ captureDailyReadingNow,
  useDailyReadingV2Library,
  useDailyReadingV2Settings,
 } from "./daily-reading-v2-client";
 import type { DailyReadingV2 } from "./daily-reading-v2.schemas";
 
 type V2Tab = "reader" | "translation" | "questions" | "vocabulary" | "grammar" | "source";
+
+const fallbackTabs: readonly V2Tab[] = ["reader", "source"];
 
 type TopicTranslationKey =
  | "generated.topic.culture"
@@ -80,13 +79,8 @@ export function DailyReadingV2Library() {
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const library = useDailyReadingV2Library();
- const legacy = useDailyReadingLibrary();
  const { settings } = useDailyReadingV2Settings();
- const [generating, setGenerating] = useState(false);
- const generationActionLabel =
-  legacy.checkpoint !== null && t.has("generated.resume")
-   ? t("generated.resume")
-   : t("generated.generateNow");
+ const [capturing, setCapturing] = useState(false);
 
  const readingHref = (id: string) => {
   const next = new URLSearchParams(searchParams.toString());
@@ -94,16 +88,16 @@ export function DailyReadingV2Library() {
   return `${pathname}?${next.toString()}`;
  };
 
- async function generateLegacyLearningEdition() {
-  setGenerating(true);
+ async function captureArticle() {
+  setCapturing(true);
   try {
-   const reading = await generateDailyReadingNow("manual", settings.targetLevel);
-   toast.success(t("generated.toast.created", { title: reading.titleZh }));
+   const reading = await captureDailyReadingNow("manual");
+   toast.success(t("generated.toast.created", { title: reading.article.titleZh }));
    router.push(readingHref(reading.id), { scroll: false });
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("generated.toast.failed"));
   } finally {
-   setGenerating(false);
+   setCapturing(false);
   }
  }
 
@@ -124,11 +118,11 @@ export function DailyReadingV2Library() {
       <Button
        type="button"
        size="toolbar"
-       onClick={() => void generateLegacyLearningEdition()}
-       disabled={generating}
+       onClick={() => void captureArticle()}
+       disabled={capturing}
       >
-       {generating ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
-       {generationActionLabel}
+       {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
+       {t("generated.generateNow")}
       </Button>
      </>
     }
@@ -282,7 +276,7 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
  const library = useDailyReadingV2Library();
  const reading = library.items.find((item) => item.id === id) ?? null;
  const [tab, setTab] = useState<V2Tab>("reader");
- const tabs = reading === null ? (["reader", "source"] as const) : availableTabs(reading);
+ const tabs = reading === null ? fallbackTabs : availableTabs(reading);
  const tabItems = tabs.map((key) => ({ key, label: t(`tabs.${key}`) }));
  const translation =
   reading?.enrichment.translation.status === "ready"
