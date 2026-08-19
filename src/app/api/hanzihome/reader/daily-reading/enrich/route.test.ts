@@ -197,14 +197,14 @@ describe("Daily Reading V2 enrichment route", () => {
   expect(serialized).not.toContain("apiKey");
  });
 
- it("maps quota failures to a retryable blocked module", async () => {
+ it("maps exhausted account quota to a retryable blocked module", async () => {
   mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
   mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
    ok: false,
    status: "failed",
    module: "questions",
    errorCode: "quota-exhausted",
-   errorDetail: "Groq đang hết quota hoặc bị giới hạn tần suất.",
+   errorDetail: "Groq báo quota tài khoản không còn đủ cho yêu cầu này.",
   });
 
   const response = await POST(request({ module: "questions", reading: evidence }));
@@ -217,5 +217,28 @@ describe("Daily Reading V2 enrichment route", () => {
    module: "questions",
    reason: "quota-exhausted",
   });
+ });
+
+ it("maps a temporary provider limit to service unavailable instead of account quota", async () => {
+  mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
+   ok: false,
+   status: "failed",
+   module: "translation",
+   errorCode: "provider-unavailable",
+   errorDetail: "Groq đang giới hạn tần suất hoặc token (HTTP 429).",
+  });
+
+  const response = await POST(request({ module: "translation", reading: evidence }));
+  const body = await response.json();
+
+  expect(response.status).toBe(503);
+  expect(body).toMatchObject({
+   ok: false,
+   status: "blocked",
+   module: "translation",
+   reason: "provider-unavailable",
+  });
+  expect(JSON.stringify(body)).not.toContain("user-secret-key");
  });
 });
