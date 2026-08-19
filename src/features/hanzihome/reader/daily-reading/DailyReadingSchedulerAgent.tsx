@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { captureDailyReadingNow, useDailyReadingV2Settings } from "./daily-reading-v2-client";
+import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
 import {
  resolveDailyReadingReleaseState,
  shouldAutoCaptureDailyReading,
@@ -38,8 +39,14 @@ export function DailyReadingSchedulerAgent() {
    hasBlockingAttempt: hasScheduledCaptureAttemptForDate(release.dateKey),
   });
   if (!shouldCapture) return;
-  void captureDailyReadingNow("scheduled").catch(() => undefined);
- }, [settings.autoCaptureEnabled, settings.captureTime, tick]);
+
+  void captureDailyReadingNow("scheduled")
+   .then((reading) => {
+    if (!settings.autoEnrichmentEnabled) return;
+    return enrichDailyReadingV2LearningSupport(reading.id);
+   })
+   .catch(() => undefined);
+ }, [settings.autoCaptureEnabled, settings.autoEnrichmentEnabled, settings.captureTime, tick]);
 
  return null;
 }
