@@ -9,19 +9,14 @@ import {
  BasePopoverPopup,
  BasePopoverPositioner,
 } from "@/components/ui/base-popover";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
-import {
- formatContextualPinyinRange,
- formatContextualReading,
-} from "@/features/hanzihome/pronunciation/contextual-pronunciation";
+import { formatContextualPinyinRange } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfaceSelection } from "../components/ReaderSurface";
 import {
@@ -30,17 +25,12 @@ import {
 } from "../reader-annotation-api";
 import type { ReaderDocumentResource } from "../reader-content-api";
 import {
- deleteReaderPronunciationOverride,
- saveReaderPronunciationOverride,
-} from "../reader-pronunciation-api";
-import {
  useReaderRuntimeActions,
  useReaderRuntimeCommands,
 } from "../runtime/ReaderRuntimeProvider";
 import type {
  ReaderProgressOwner,
  ReaderPronunciationAnalysis,
- ReaderPronunciationOverride,
 } from "./useReaderStudyState";
 
 type SelectionMode = "quick" | "note";
@@ -48,13 +38,11 @@ type SelectionMode = "quick" | "note";
 export function useReaderSelectionActions({
  resource,
  stateOwner,
- pronunciationOverrides,
  analysisBySegmentId,
  setSaveError,
 }: {
  resource: ReaderDocumentResource;
  stateOwner: ReaderProgressOwner;
- pronunciationOverrides: readonly ReaderPronunciationOverride[];
  analysisBySegmentId: ReadonlyMap<string, ReaderPronunciationAnalysis>;
  setSaveError: (error: string) => void;
 }) {
@@ -74,22 +62,6 @@ export function useReaderSelectionActions({
   selection && analysis && selection.start !== null && selection.end !== null
    ? formatContextualPinyinRange(analysis, selection.start, selection.end)
    : "";
- const glyph =
-  selection && analysis && selection.start !== null && selection.end !== null
-   ? (analysis.glyphs.find(
-      (item) => item.start === selection.start && item.end === selection.end,
-     ) ?? null)
-   : null;
- const override =
-  selection && glyph && selection.start !== null && selection.end !== null
-   ? pronunciationOverrides.find(
-      (item) =>
-       item.paragraph_id === selection.segment.id &&
-       item.scope === "sentence-instance" &&
-       item.start_offset === selection.start &&
-       item.end_offset === selection.end,
-     )
-   : undefined;
 
  const clear = useCallback(() => {
   setSelection(null);
@@ -112,13 +84,6 @@ export function useReaderSelectionActions({
     stateOwner === "reader"
      ? hanzihomeQueryKeys.readerState(resource.document.id)
      : hanzihomeQueryKeys.readerAnnotations(resource.document.id),
-  });
- const invalidatePronunciation = () =>
-  queryClient.invalidateQueries({
-   queryKey:
-    stateOwner === "reader"
-     ? hanzihomeQueryKeys.readerState(resource.document.id)
-     : hanzihomeQueryKeys.readerPronunciationOverrides(resource.document.id),
   });
  const saveAnnotation = (annotationType: "highlight" | "note") => {
   if (!selection || selection.start === null || selection.end === null) return;
@@ -196,35 +161,6 @@ export function useReaderSelectionActions({
    .catch((reviewError: Error) => setSaveError(reviewError.message));
   clear();
  };
- const savePronunciation = (readingKey: string) => {
-  if (!selection || !glyph || selection.start === null || selection.end === null) return;
-  void saveReaderPronunciationOverride({
-   id: override?.id ?? crypto.randomUUID(),
-   documentId: resource.document.id,
-   paragraphId: selection.segment.id,
-   text: glyph.text,
-   readings: [readingKey],
-   scope: "sentence-instance",
-   sentenceText: selection.segment.zh,
-   startOffset: selection.start,
-   endOffset: selection.end,
-   expectedRevision: override?.revision ?? 0,
-  })
-   .then(() => {
-    setSaveError("");
-    return invalidatePronunciation();
-   })
-   .catch((pronunciationError: Error) => setSaveError(pronunciationError.message));
- };
- const removePronunciation = () => {
-  if (!override) return;
-  void deleteReaderPronunciationOverride({ id: override.id, expectedRevision: override.revision })
-   .then(() => {
-    setSaveError("");
-    return invalidatePronunciation();
-   })
-   .catch((pronunciationError: Error) => setSaveError(pronunciationError.message));
- };
  const anchor = useCallback(
   () =>
    selection
@@ -289,36 +225,6 @@ export function useReaderSelectionActions({
         </>
        ) : (
         <>
-         {glyph ? (
-          <Card variant="subtle" padding="sm" className="grid gap-2">
-           <div className="flex flex-wrap items-center justify-between gap-2">
-            <Typography variant="caption" tone="muted" weight="black">
-             Cách đọc theo ngữ cảnh
-            </Typography>
-            <Badge variant={glyph.evidence.includes("manual-override") ? "success" : "purple"}>
-             {glyph.evidence.join(" · ")}
-            </Badge>
-           </div>
-           <div className="flex flex-wrap gap-2" aria-label="Chọn cách đọc pinyin">
-            {glyph.alternatives.map((readingKey) => (
-             <Button
-              key={readingKey}
-              type="button"
-              size="sm"
-              variant={glyph.lexicalReadingKey === readingKey ? "active" : "outline"}
-              onClick={() => savePronunciation(readingKey)}
-             >
-              {formatContextualReading(readingKey)}
-             </Button>
-            ))}
-           </div>
-           {override ? (
-            <Button type="button" size="sm" variant="ghost" onClick={removePronunciation}>
-             Bỏ cách đọc tuỳ chỉnh
-            </Button>
-           ) : null}
-          </Card>
-         ) : null}
          <Textarea
           value={noteDraft}
           onChange={(event) => setNoteDraft(event.target.value)}
