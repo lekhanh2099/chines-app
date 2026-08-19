@@ -9,10 +9,10 @@ import {
  dailyReadingV2QuestionsDataSchema,
  dailyReadingV2TranslationDataSchema,
  dailyReadingV2VocabularyDataSchema,
- type DailyReadingV2,
  type DailyReadingV2EnrichmentModule,
 } from "./daily-reading-v2.schemas";
 import type {
+ DailyReadingV2EnrichmentArticle,
  DailyReadingV2EnrichmentResponse,
  DailyReadingV2GeneratedBy,
 } from "./daily-reading-v2-enrichment.schemas";
@@ -109,11 +109,11 @@ function parseJson(raw: string): unknown {
  return JSON.parse(cleaned);
 }
 
-function targetLevelLabel(reading: DailyReadingV2) {
+function targetLevelLabel(reading: DailyReadingV2EnrichmentArticle) {
  return reading.classification.targetLevel ?? reading.classification.estimatedLevel ?? "unspecified";
 }
 
-function articleEvidence(reading: DailyReadingV2) {
+function articleEvidence(reading: DailyReadingV2EnrichmentArticle) {
  return reading.article.paragraphs
   .map((paragraph) => `[${paragraph.id}] ${paragraph.zh}`)
   .join("\n");
@@ -185,9 +185,9 @@ async function requestStructured<T>(input: {
  };
 }
 
-function translationChunks(reading: DailyReadingV2) {
- const groups: DailyReadingV2["article"]["paragraphs"][number][][] = [];
- let current: DailyReadingV2["article"]["paragraphs"][number][] = [];
+function translationChunks(reading: DailyReadingV2EnrichmentArticle) {
+ const groups: DailyReadingV2EnrichmentArticle["article"]["paragraphs"][number][][] = [];
+ let current: DailyReadingV2EnrichmentArticle["article"]["paragraphs"][number][] = [];
  let currentCharacters = 0;
 
  for (const paragraph of reading.article.paragraphs) {
@@ -208,7 +208,7 @@ function translationChunks(reading: DailyReadingV2) {
 }
 
 function validateTranslationChunk(
- expectedParagraphs: DailyReadingV2["article"]["paragraphs"],
+ expectedParagraphs: DailyReadingV2EnrichmentArticle["article"]["paragraphs"],
  draft: TranslationDraft,
 ) {
  if (draft.paragraphs.length !== expectedParagraphs.length) {
@@ -223,7 +223,7 @@ function validateTranslationChunk(
 }
 
 async function generateTranslation(
- reading: DailyReadingV2,
+ reading: DailyReadingV2EnrichmentArticle,
  runtime: ResolvedUserAiRuntime,
  signal?: AbortSignal,
 ): Promise<DailyReadingV2EnrichmentResponse> {
@@ -283,7 +283,7 @@ async function generateTranslation(
  };
 }
 
-function validateVocabulary(reading: DailyReadingV2, draft: VocabularyDraft) {
+function validateVocabulary(reading: DailyReadingV2EnrichmentArticle, draft: VocabularyDraft) {
  const fullText = reading.article.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  const seen = new Set<string>();
  for (const item of draft.items) {
@@ -306,13 +306,13 @@ function normalizeSentence(value: string) {
  return value.replace(/\s+/gu, "").replace(/[“”‘’"'，。！？、；：,.!?;:（）()《》]/gu, "");
 }
 
-function articleSentences(reading: DailyReadingV2) {
+function articleSentences(reading: DailyReadingV2EnrichmentArticle) {
  return reading.article.paragraphs.flatMap(
   (paragraph) => paragraph.zh.match(/[^。！？!?]+[。！？!?]/gu) ?? [paragraph.zh],
  );
 }
 
-function validateGrammar(reading: DailyReadingV2, draft: GrammarDraft) {
+function validateGrammar(reading: DailyReadingV2EnrichmentArticle, draft: GrammarDraft) {
  const sentences = articleSentences(reading).map(normalizeSentence);
  for (const item of draft.items) {
   if (!sentences.includes(normalizeSentence(item.evidenceSentenceZh))) {
@@ -324,7 +324,7 @@ function validateGrammar(reading: DailyReadingV2, draft: GrammarDraft) {
  });
 }
 
-function validateQuestions(reading: DailyReadingV2, draft: QuestionsDraft) {
+function validateQuestions(reading: DailyReadingV2EnrichmentArticle, draft: QuestionsDraft) {
  const paragraphIds = new Set(reading.article.paragraphs.map((paragraph) => paragraph.id));
  const fullText = reading.article.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  for (const item of draft.items) {
@@ -352,7 +352,7 @@ function validateQuestions(reading: DailyReadingV2, draft: QuestionsDraft) {
 }
 
 function learningPrompt(
- reading: DailyReadingV2,
+ reading: DailyReadingV2EnrichmentArticle,
  module: Exclude<DailyReadingV2EnrichmentModule, "translation">,
 ) {
  const common = [
@@ -390,7 +390,7 @@ function learningPrompt(
 }
 
 async function generateLearningModule(
- reading: DailyReadingV2,
+ reading: DailyReadingV2EnrichmentArticle,
  runtime: ResolvedUserAiRuntime,
  module: Exclude<DailyReadingV2EnrichmentModule, "translation">,
  signal?: AbortSignal,
@@ -439,7 +439,7 @@ function generatedBy(runtime: ResolvedUserAiRuntime): DailyReadingV2GeneratedBy 
 }
 
 export function generateDailyReadingV2Enrichment(input: {
- reading: DailyReadingV2;
+ reading: DailyReadingV2EnrichmentArticle;
  runtime: ResolvedUserAiRuntime;
  module: DailyReadingV2EnrichmentModule;
  signal?: AbortSignal;
