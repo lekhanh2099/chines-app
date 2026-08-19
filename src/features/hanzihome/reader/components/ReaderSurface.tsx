@@ -102,6 +102,13 @@ export function ReaderSurfaceView({
   },
   [onPronunciationInspect],
  );
+ const openPreviewInspector = useCallback(
+  (text: string, rect: DOMRect) => {
+   setPronunciationPreview(null);
+   openInspector(text, { lessonId, anchorRect: rect });
+  },
+  [lessonId, openInspector],
+ );
 
  useEffect(() => {
   if (positionSource !== "command" && positionSource !== "playback") return;
@@ -241,7 +248,7 @@ export function ReaderSurfaceView({
     <ReaderPronunciationReviewPopover
      target={pronunciationPreview}
      onClose={() => setPronunciationPreview(null)}
-     onOpenInspector={(text, rect) => openInspector(text, { lessonId, anchorRect: rect })}
+     onOpenInspector={openPreviewInspector}
     />
    ) : null}
   </div>
