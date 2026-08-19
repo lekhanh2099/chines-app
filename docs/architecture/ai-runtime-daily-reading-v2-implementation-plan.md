@@ -112,7 +112,7 @@ Status: scheduled Daily Reading now owns source capture rather than all-or-nothi
 
 ### Scope 6 — Shared backend BYOK AI runtime
 
-Status: Scope 6A establishes the strict BYOK runtime owner and safe readiness contract additively. It does not yet migrate legacy AI consumers, so old consumer-specific system-provider fallbacks remain residual work tracked in Scopes 7, 9, 10, 11 and 12. Scope 6B keeps the reusable Add API Key interaction separate so the backend contract can be reviewed before UI consumers are switched.
+Status: Scope 6A establishes the strict BYOK runtime owner and safe readiness contract additively. Scope 6B extracts the existing add-key task into one reusable Settings-owned interaction and makes the API Key Manager consume it. Legacy AI consumers still have old consumer-specific system-provider fallbacks; those remain explicitly tracked in Scopes 7, 9, 10, 11 and 12 rather than being hidden behind this runtime work.
 
 #### Scope 6A — Runtime resolver and readiness
 
@@ -129,10 +129,16 @@ Status: Scope 6A establishes the strict BYOK runtime owner and safe readiness co
 
 #### Scope 6B — Reusable Add API Key interaction
 
-- [ ] Extract the existing verify/discover/model/save dialog into one reusable Settings-owned component without creating a second control dialect.
-- [ ] Keep the API Key Manager as a consumer of the reusable dialog before Daily Reading/Conversation reuse it.
-- [ ] Surface storage-unavailable separately from normal missing-key copy.
-- [ ] Verify dialog keyboard/focus/Select/loading/error/success behavior in rendered UI when an executable browser environment is available.
+- [x] Extract the existing paste/discover/provider/model/verify/save task into one reusable `AddApiKeyDialog` owned by Settings and composed only from canonical UI primitives.
+- [x] Give the reusable dialog unique field IDs and keep provider discovery/live-model validation identical to the existing manager flow.
+- [x] Keep plaintext provider credentials only in transient dialog state until POST; successful save continues through the encrypted backend key route.
+- [x] Make the API Key Manager consume `AddApiKeyDialog` while preserving key list/model/toggle/order/delete behavior.
+- [x] Read shared AI runtime readiness in the dialog and distinguish secure-storage failures from a normal `missing-key` state.
+- [x] Hard-block add/discovery when key schema/vault storage is unavailable while allowing `credential-unreadable` to remain a visible recovery warning so a replacement key can still be added.
+- [x] Add storage-unavailable copy with vi/en/zh-CN message parity.
+- [x] Reuse the Scope 6A query invalidation so a successful add immediately invalidates both managed-key and AI-runtime readiness state.
+- [ ] Execute targeted type/i18n/UI checks when an executable checkout is available.
+- [ ] Render and verify Dialog focus return, Tab trapping, Select collision, clipboard/discovery loading, failure and success states at desktop/tablet/mobile before final UI completion.
 
 ### Scope 7 — Daily Reading enrichment modules
 - [ ] Translation runs after durable article save and persists independently.

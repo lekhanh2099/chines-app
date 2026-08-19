@@ -12,5 +12,7 @@
  "saveError": "Không thể lưu API key.",
  "manualProvider": "Chọn provider thủ công",
  "providerDetected": "Đã nhận diện: {provider}",
- "pasteAndCheck": "Dán key để tự tải model"
+ "pasteAndCheck": "Dán key để tự tải model",
+ "storageUnavailableTitle": "Kho API key an toàn chưa sẵn sàng",
+ "storageUnavailableDescription": "Cấu hình lưu khóa phía server chưa sẵn sàng hoặc không đọc được khóa đã mã hóa. Đây không phải trạng thái chưa thêm key; hãy sửa cấu hình lưu khóa trước khi thử lại."
 }

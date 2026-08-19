@@ -12,5 +12,7 @@
  "saveError": "无法保存 API 密钥。",
  "manualProvider": "手动选择 Provider",
  "providerDetected": "已识别：{provider}",
- "pasteAndCheck": "粘贴密钥后自动加载模型"
+ "pasteAndCheck": "粘贴密钥后自动加载模型",
+ "storageUnavailableTitle": "安全 API 密钥存储尚未就绪",
+ "storageUnavailableDescription": "服务器端密钥存储尚未就绪，或无法读取已加密的密钥。这不是普通的“尚未添加密钥”状态；请先修复安全密钥存储配置再重试。"
 }

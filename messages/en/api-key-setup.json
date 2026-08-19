@@ -12,5 +12,7 @@
  "saveError": "Could not save the API key.",
  "manualProvider": "Choose provider manually",
  "providerDetected": "Detected: {provider}",
- "pasteAndCheck": "Paste a key to load models automatically"
+ "pasteAndCheck": "Paste a key to load models automatically",
+ "storageUnavailableTitle": "Secure API key storage is not ready",
+ "storageUnavailableDescription": "The server-side key store is not ready or cannot read an encrypted key. This is not a normal missing-key state; fix secure key storage before retrying."
 }
