@@ -291,14 +291,15 @@ export function classifyAiRuntimeOperationFailure(input: {
  if (input.status === 401 || input.status === 403) return "invalid-key";
  if (
   input.status === 402 ||
-  input.status === 429 ||
-  message.includes("quota") ||
-  message.includes("rate limit") ||
   message.includes("insufficient balance") ||
   message.includes("insufficient_quota")
  ) {
   return "quota-exhausted";
  }
+ if (input.status === 429 || message.includes("rate limit") || message.includes("too many requests")) {
+  return "provider-unavailable";
+ }
+ if (message.includes("quota")) return "quota-exhausted";
  if (
   errorName === "timeouterror" ||
   message.includes("timeout") ||
