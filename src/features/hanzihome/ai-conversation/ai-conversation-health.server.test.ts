@@ -19,6 +19,7 @@ const groqRuntime: ResolvedUserAiRuntime = {
 };
 
 afterEach(() => {
+ delete process.env.GEMINI_API_KEY;
  vi.unstubAllGlobals();
 });
 
@@ -57,6 +58,5 @@ describe("AI conversation runtime health", () => {
   const init = fetchMock.mock.calls[0]?.[1];
   expect(init?.headers).toMatchObject({ Authorization: "Bearer gsk_test" });
   expect(JSON.stringify(fetchMock.mock.calls)).not.toContain("system-key-that-must-not-be-used");
-  delete process.env.GEMINI_API_KEY;
  });
 });
