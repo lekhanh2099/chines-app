@@ -4,6 +4,7 @@ import {
  archiveAiConversation,
  createAiConversation,
  fetchAiConversationHistory,
+ fetchAiConversationRuntimeHealth,
  fetchAiConversationSession,
  sendPersistedAiConversationMessage,
  updateAiConversationMemoryPolicy,
@@ -13,6 +14,7 @@ import {
 const conversationId = "11111111-1111-4111-8111-111111111111";
 const characterId = "22222222-2222-4222-8222-222222222222";
 const clientMessageId = "33333333-3333-4333-8333-333333333333";
+const apiKeyId = "66666666-6666-4666-8666-666666666666";
 
 const sessionResponse = {
  conversation: {
@@ -54,6 +56,13 @@ function persistedMessage({
   content,
   createdAt: `2026-08-18T03:00:0${seq}+00:00`,
  };
+}
+
+function ndjsonResponse(events: readonly object[]) {
+ return new Response(events.map((event) => JSON.stringify(event)).join("\n") + "\n", {
+  status: 200,
+  headers: { "Content-Type": "application/x-ndjson" },
+ });
 }
 
 describe("AI conversation client transport", () => {
@@ -194,7 +203,7 @@ describe("AI conversation client transport", () => {
   expect(expectedBody).not.toContain('"persona"');
  });
 
- it("sends only the new turn command instead of transcript or local profile", async () => {
+ it("streams only the new persisted turn command and returns the final saved turn", async () => {
   const userMessage = persistedMessage({
    id: "44444444-4444-4444-8444-444444444444",
    seq: 1,
@@ -207,38 +216,75 @@ describe("AI conversation client transport", () => {
    role: "assistant",
    content: "你好，今天怎么样？",
   });
+  const turn = {
+   conversationId,
+   userMessage,
+   assistantMessage,
+   provider: "Groq",
+   model: "openai/gpt-oss-20b",
+   apiKeyId,
+   usage: null,
+  };
   const fetchMock = vi.fn().mockResolvedValue(
-   Response.json({
-    conversationId,
-    userMessage,
-    assistantMessage,
-    provider: "Groq",
-    model: "openai/gpt-oss-20b",
-    apiKeyId: null,
-    usage: null,
-   }),
+   ndjsonResponse([
+    { type: "start", conversationId, userMessage },
+    { type: "delta", text: "你好，" },
+    { type: "heartbeat" },
+    { type: "delta", text: "今天怎么样？" },
+    { type: "final", turn },
+   ]),
   );
   vi.stubGlobal("fetch", fetchMock);
 
-  await sendPersistedAiConversationMessage(conversationId, {
+  const result = await sendPersistedAiConversationMessage(conversationId, {
    clientMessageId,
    content: "你好",
   });
 
-  const expectedBody = JSON.stringify({
-   action: "message",
-   conversationId,
-   clientMessageId,
-   content: "你好",
-  });
+  const expectedBody = JSON.stringify({ conversationId, clientMessageId, content: "你好" });
+  expect(result).toEqual(turn);
   expect(fetchMock).toHaveBeenCalledWith(
-   "/api/ai/conversation",
+   "/api/ai/conversation/stream",
    expect.objectContaining({
     method: "POST",
     body: expectedBody,
+    headers: expect.objectContaining({ Accept: "application/x-ndjson" }),
    }),
   );
   expect(expectedBody).not.toContain('"messages"');
   expect(expectedBody).not.toContain('"profile"');
+  expect(expectedBody).not.toContain('"action"');
+ });
+
+ it("treats automatic runtime as personal-BYOK-only when no active key exists", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({
+    status: "missing-key",
+    reason: "no-active-key",
+    activeKeyCount: 0,
+    usableKeyCount: 0,
+    selectedKey: null,
+    capabilities: [],
+   }),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const health = await fetchAiConversationRuntimeHealth();
+
+  expect(health).toEqual({
+   ready: false,
+   code: "key-unavailable",
+   provider: null,
+   model: null,
+   source: "personal",
+  });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/ai/runtime",
+   expect.objectContaining({ method: "GET" }),
+  );
+  expect(fetchMock).not.toHaveBeenCalledWith(
+   "/api/ai/conversation",
+   expect.objectContaining({ body: expect.stringContaining('"action":"health"') }),
+  );
  });
 });
