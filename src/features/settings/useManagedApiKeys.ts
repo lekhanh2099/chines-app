@@ -2,6 +2,8 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
+import { aiRuntimeQueryKey } from "@/features/ai-runtime/ai-runtime.client";
+
 import {
  addManagedApiKey,
  deleteManagedApiKey,
@@ -21,7 +23,13 @@ export function useManagedApiKeys() {
   queryFn: fetchManagedApiKeys,
  });
 
- const refresh = () => queryClient.invalidateQueries({ queryKey: apiKeyManagerQueryKey });
+ const refreshRuntime = () => queryClient.invalidateQueries({ queryKey: aiRuntimeQueryKey });
+ const refresh = async () => {
+  await Promise.all([
+   queryClient.invalidateQueries({ queryKey: apiKeyManagerQueryKey }),
+   refreshRuntime(),
+  ]);
+ };
  const addMutation = useMutation({
   mutationFn: (input: {
    apiKey: string;
@@ -39,6 +47,7 @@ export function useManagedApiKeys() {
      ? { ...current, keys: current.keys.map((item) => (item.id === key.id ? key : item)) }
      : current,
    );
+   return refreshRuntime();
   },
  });
  const toggleMutation = useMutation({
@@ -55,6 +64,7 @@ export function useManagedApiKeys() {
      },
     };
    });
+   return refreshRuntime();
   },
  });
  const moveMutation = useMutation({
@@ -63,6 +73,7 @@ export function useManagedApiKeys() {
    queryClient.setQueryData<ApiKeysResponse>(apiKeyManagerQueryKey, (current) =>
     current ? { ...current, keys } : current,
    );
+   return refreshRuntime();
   },
  });
  const deleteMutation = useMutation({

@@ -111,11 +111,28 @@ Status: scheduled Daily Reading now owns source capture rather than all-or-nothi
 - [ ] Execute targeted type/test checks and multi-tab browser verification when an executable checkout is available.
 
 ### Scope 6 — Shared backend BYOK AI runtime
-- [ ] Add one server-side runtime resolver for active user credentials/capabilities.
-- [ ] Add a safe client readiness endpoint returning metadata/status only.
-- [ ] Extract reusable Add API Key flow from Settings.
-- [ ] Distinguish user missing/invalid/quota/provider errors from server vault misconfiguration.
-- [ ] Do not use local/env provider keys as fallback.
+
+Status: Scope 6A establishes the strict BYOK runtime owner and safe readiness contract additively. It does not yet migrate legacy AI consumers, so old consumer-specific system-provider fallbacks remain residual work tracked in Scopes 7, 9, 10, 11 and 12. Scope 6B keeps the reusable Add API Key interaction separate so the backend contract can be reviewed before UI consumers are switched.
+
+#### Scope 6A — Runtime resolver and readiness
+
+- [x] Add one server-only runtime resolver that selects active encrypted user credentials by priority and capability.
+- [x] Keep decrypted provider secrets inside the server runtime result only; safe metadata contains masked key/provider/model/capabilities and never `apiKey`.
+- [x] Add capability ownership for conversation, Daily Reading translation/learning, lookup, structured memory and Gemini-compatible semantic memory.
+- [x] Distinguish `missing-key` from server `schema-unavailable`, `vault-unavailable` and `credential-unreadable` states.
+- [x] Add shared operational error taxonomy for invalid key, quota/rate-limit, provider unavailable, network, invalid response and cancellation.
+- [x] Add authenticated `GET /api/ai/runtime` readiness endpoint returning private/no-store safe metadata only.
+- [x] Add a TanStack Query readiness owner and invalidate it when managed keys are added, deleted, toggled, reordered or have their model changed.
+- [x] Ensure the new runtime resolver never reads provider API keys from localStorage or `GEMINI_API_KEY` / `DEEPSEEK_API_KEY`; env access is limited to BYOK/server encryption infrastructure.
+- [x] Add deterministic resolver and route-boundary tests proving missing-key/vault separation, capability selection and no raw key in the readiness response.
+- [ ] Execute targeted type/test checks when an executable checkout is available.
+
+#### Scope 6B — Reusable Add API Key interaction
+
+- [ ] Extract the existing verify/discover/model/save dialog into one reusable Settings-owned component without creating a second control dialect.
+- [ ] Keep the API Key Manager as a consumer of the reusable dialog before Daily Reading/Conversation reuse it.
+- [ ] Surface storage-unavailable separately from normal missing-key copy.
+- [ ] Verify dialog keyboard/focus/Select/loading/error/success behavior in rendered UI when an executable browser environment is available.
 
 ### Scope 7 — Daily Reading enrichment modules
 - [ ] Translation runs after durable article save and persists independently.
