@@ -79,112 +79,136 @@ export function ReaderExercisePanel({
      {t("description")}
     </Typography>
    </div>
+
    {resource.exerciseGroups.map((group) => {
-    const items = resource.exerciseItems.filter((item) => item.exercise_group_id === group.id);
+    const items = resource.exerciseItems.filter((item) => item.group_id === group.id);
     return (
-     <Card key={group.id} variant="section" padding="md" className="grid gap-3">
-      <div className="flex flex-wrap items-center gap-2">
-       <Badge variant="info" casing="natural">
-        {exerciseGroupLabel[group.exercise_type]}
-       </Badge>
-       {group.title_zh ? (
-        <Typography as="h4" variant="cardTitle" lang="zh-CN" weight="black">
-         {group.title_zh}
+     <Card key={group.id} variant="section" padding="none" className="overflow-hidden">
+      <div className="grid gap-1 px-4 py-3 sm:px-5">
+       <div className="flex flex-wrap items-center gap-2">
+        <Badge variant="accent" casing="natural">
+         {exerciseGroupLabel[group.exercise_type]}
+        </Badge>
+        <Typography as="h4" variant="cardTitle" weight="black">
+         {group.title_zh || group.title_vi || t("fallbackTitle")}
+        </Typography>
+       </div>
+       {group.title_vi && group.title_vi !== group.title_zh ? (
+        <Typography variant="bodySmall" tone="muted">
+         {group.title_vi}
         </Typography>
        ) : null}
       </div>
-      {group.title_vi ? (
-       <Typography variant="bodySmall" tone="muted">
-        {group.title_vi}
-       </Typography>
-      ) : null}
-      {items.length > 0 ? <Separator /> : null}
-      <div className="grid gap-4">
+      <Separator />
+
+      <div>
        {items.map((item, index) => {
         const saved = answers[item.id];
         const draft = drafts[item.id] ?? saved?.answer ?? "";
-        const options = item.item_type === "multiple_choice" ? item.payload.options : [];
+        const isAuto = item.payload.scoring === "auto";
         return (
-         <div key={item.id} className="grid gap-2">
-          <Typography variant="bodySmall" weight="bold">
-           {index + 1}. {item.payload.promptVi || item.payload.promptZh || item.item_type}
-          </Typography>
-          {item.payload.promptZh && item.payload.promptVi ? (
-           <Typography variant="bodySmall" lang="zh-CN">
-            {item.payload.promptZh}
-           </Typography>
-          ) : null}
-          {item.item_type === "true_false" ? (
-           <div className="flex flex-wrap gap-2">
-            {["true", "false"].map((option) => (
+         <div key={item.id}>
+          <article className="grid gap-4 px-4 py-4 sm:px-5 sm:py-5">
+           <header className="grid gap-1">
+            <div className="flex flex-wrap items-start justify-between gap-2">
+             <Typography as="p" variant="body" weight="bold">
+              {index + 1}. {item.payload.promptZh || item.payload.promptVi}
+             </Typography>
+             {saved?.completed ? (
+              <Badge
+               variant={saved.score === 1 ? "success" : saved.score === 0 ? "danger" : "warning"}
+               casing="natural"
+              >
+               {saved.score === 1
+                ? t("status.correct")
+                : saved.score === 0
+                  ? t("status.incorrect")
+                  : t("status.answered")}
+              </Badge>
+             ) : null}
+            </div>
+            {item.payload.promptVi && item.payload.promptVi !== item.payload.promptZh ? (
+             <Typography as="p" variant="bodySmall" tone="muted">
+              {item.payload.promptVi}
+             </Typography>
+            ) : null}
+           </header>
+
+           {item.item_type === "multiple_choice" ? (
+            <div className="grid gap-2">
+             {item.payload.options.map((option) => (
+              <Button
+               key={option.key}
+               type="button"
+               size="menu"
+               align="start"
+               variant={saved?.answer === option.key ? "active" : "outline"}
+               aria-pressed={saved?.answer === option.key}
+               onClick={() => submitAnswer(item, option.key)}
+              >
+               <span>
+                <strong>{option.key}.</strong> {option.textZh}
+                {option.textVi ? ` · ${option.textVi}` : ""}
+               </span>
+              </Button>
+             ))}
+            </div>
+           ) : item.item_type === "true_false" ? (
+            <div className="flex flex-wrap gap-2">
+             {["True", "False"].map((value) => (
+              <Button
+               key={value}
+               type="button"
+               size="sm"
+               variant={saved?.answer === value ? "active" : "outline"}
+               aria-pressed={saved?.answer === value}
+               onClick={() => submitAnswer(item, value)}
+              >
+               {value === "True" ? t("true") : t("false")}
+              </Button>
+             ))}
+            </div>
+           ) : item.item_type === "note" || item.item_type === "answer_review" ? (
+            <Typography variant="bodySmall" tone="muted">
+             {item.payload.explanationVi || item.payload.answerVi || t("reviewNote")}
+            </Typography>
+           ) : (
+            <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+             {item.item_type === "discussion" ? (
+              <Textarea
+               value={draft}
+               onChange={(event) => setDraft(item.id, event.target.value)}
+               placeholder={t("discussionPlaceholder")}
+               rows={3}
+              />
+             ) : (
+              <Input
+               value={draft}
+               onChange={(event) => setDraft(item.id, event.target.value)}
+               placeholder={
+                item.item_type === "fill_blank" ? t("fillBlankPlaceholder") : t("answerPlaceholder")
+               }
+              />
+             )}
              <Button
-              key={option}
               type="button"
               size="sm"
-              variant={saved?.answer === option ? "active" : "outline"}
-              onClick={() => submitAnswer(item, option)}
+              disabled={!draft.trim()}
+              onClick={() => submitAnswer(item, draft)}
              >
-              {option === "true" ? "Đúng" : "Sai"}
+              {isAuto ? t("check") : t("saveAnswer")}
              </Button>
-            ))}
-           </div>
-          ) : null}
-          {item.item_type === "multiple_choice" ? (
-           <div className="grid gap-2">
-            {options.map((option) => (
-             <Button
-              key={option}
-              type="button"
-              variant={saved?.answer === option ? "active" : "outline"}
-              align="start"
-              onClick={() => submitAnswer(item, option)}
-             >
-              {option}
-             </Button>
-            ))}
-           </div>
-          ) : null}
-          {item.item_type === "fill_blank" ? (
-           <div className="flex min-w-0 flex-wrap gap-2">
-            <Input
-             value={draft}
-             onChange={(event) => setDraft(item.id, event.target.value)}
-             aria-label={`Trả lời câu ${index + 1}`}
-             className="min-w-56 flex-1"
-            />
-            <Button type="button" size="sm" disabled={!draft.trim()} onClick={() => submitAnswer(item, draft)}>
-             Kiểm tra
-            </Button>
-           </div>
-          ) : null}
-          {item.item_type === "short_answer" || item.item_type === "discussion" ? (
-           <div className="grid gap-2">
-            <Textarea
-             value={draft}
-             onChange={(event) => setDraft(item.id, event.target.value)}
-             aria-label={`Trả lời câu ${index + 1}`}
-             rows={3}
-            />
-            <Button
-             type="button"
-             size="sm"
-             className="justify-self-start"
-             disabled={!draft.trim()}
-             onClick={() => submitAnswer(item, draft)}
-            >
-             Lưu câu trả lời
-            </Button>
-           </div>
-          ) : null}
-          {saved?.completed ? (
-           <Typography variant="caption" tone={saved.score === 0 ? "danger" : "success"}>
-            {saved.score === null
-             ? "Đã lưu câu trả lời."
-             : saved.score === 1
-               ? "Đúng."
-               : "Chưa đúng, thử lại nhé."}
-           </Typography>
-          ) : null}
+            </div>
+           )}
+
+           {saved?.completed && saved.score !== 1 && item.payload.answerVi ? (
+            <Typography variant="caption" tone="muted">
+             {t("referenceAnswer")}{" "}
+             {item.payload.answerVi || item.payload.answerZh || item.payload.answer}
+            </Typography>
+           ) : null}
+          </article>
+          {index < items.length - 1 ? <Separator /> : null}
          </div>
         );
        })}
