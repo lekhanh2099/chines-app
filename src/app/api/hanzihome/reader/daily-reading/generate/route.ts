@@ -1,7 +1,8 @@
 import { z } from "zod";
 
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
+import { resolveAiCredentialRuntime } from "@/services/ai-analysis-runtime.service";
+import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import type { JsonFieldValue } from "@/types/json";
 import {
  dailyReadingErrorResponseSchema,
@@ -58,7 +59,7 @@ function createGenerationStream({
 }: {
  request: Request;
  input: z.output<typeof dailyReadingGenerateRequestSchema>;
- credentials: Awaited<ReturnType<typeof getActiveUserApiKeyCredentials>>;
+ credentials: UserApiKeyCredential[];
 }) {
  const encoder = new TextEncoder();
  let active = true;
@@ -196,11 +197,25 @@ export async function POST(request: Request) {
   return errorResponse("invalid-request", "Yêu cầu tạo Daily Reading không hợp lệ.", 400);
  }
  try {
-  const credentials = await getActiveUserApiKeyCredentials(
-   auth.context.supabase,
-   auth.context.user.id,
-  );
-  return createGenerationStream({ request, input: parsed.data, credentials });
+  const runtime = await resolveAiCredentialRuntime({
+   supabase: auth.context.supabase,
+   userId: auth.context.user.id,
+   capability: "daily-reading-learning",
+  });
+  if (!runtime.ok) {
+   return errorResponse(
+    "provider-rejected",
+    runtime.status === "missing-key"
+     ? "Daily Reading học tập cần API key cá nhân đang hoạt động. Bài nguồn V2 vẫn có thể được tìm và đọc mà không cần AI."
+     : "Kho API key an toàn phía server chưa sẵn sàng.",
+    runtime.status === "missing-key" ? 409 : 503,
+   );
+  }
+  return createGenerationStream({
+   request,
+   input: parsed.data,
+   credentials: [runtime.credential],
+  });
  } catch (error) {
   const detail =
    error instanceof z.ZodError
