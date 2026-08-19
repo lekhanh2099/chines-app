@@ -47,6 +47,7 @@ import {
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "./runtime/ReaderRuntimeProvider";
+import { useReaderPronunciationReview } from "./runtime/useReaderPronunciationReview";
 import { useReaderSelectionActions } from "./runtime/useReaderSelectionActions";
 import {
  useReaderStudyState,
@@ -92,12 +93,14 @@ export function ReaderDocumentStudy({
  backHref = "/reader",
  backLabel = "Danh sách Reader",
  navigationDocuments = [],
+ stickyParentTabs = false,
 }: {
  resource: ReaderDocumentResource;
  stateOwner?: ReaderProgressOwner;
  backHref?: string;
  backLabel?: string;
  navigationDocuments?: ReadonlyArray<ReaderDocumentRow>;
+ stickyParentTabs?: boolean;
 }) {
  const study = useReaderStudyState(resource, stateOwner);
  return (
@@ -108,6 +111,7 @@ export function ReaderDocumentStudy({
     backHref={backHref}
     backLabel={backLabel}
     navigationDocuments={navigationDocuments}
+    stickyParentTabs={stickyParentTabs}
     study={study}
    />
   </ReaderRuntimeProvider>
@@ -120,6 +124,7 @@ function ReaderDocumentStudyContent({
  backHref,
  backLabel,
  navigationDocuments,
+ stickyParentTabs,
  study,
 }: {
  resource: ReaderDocumentResource;
@@ -127,6 +132,7 @@ function ReaderDocumentStudyContent({
  backHref: string;
  backLabel: string;
  navigationDocuments: ReadonlyArray<ReaderDocumentRow>;
+ stickyParentTabs: boolean;
  study: ReturnType<typeof useReaderStudyState>;
 }) {
  const commands = useReaderRuntimeCommands();
@@ -152,8 +158,13 @@ function ReaderDocumentStudyContent({
  const selection = useReaderSelectionActions({
   resource,
   stateOwner,
-  pronunciationOverrides: study.pronunciationOverrides,
   analysisBySegmentId: study.analysisBySegmentId,
+  setSaveError: study.setSaveError,
+ });
+ const pronunciation = useReaderPronunciationReview({
+  resource,
+  stateOwner,
+  pronunciationOverrides: study.pronunciationOverrides,
   setSaveError: study.setSaveError,
  });
  const translationSegments = useMemo(
@@ -212,6 +223,7 @@ function ReaderDocumentStudyContent({
  const readerLessonLabel =
   metadataString(resource, "reading_label_vi") ??
   (resource.document.reading_number === null ? "Bài đọc" : `Bài ${resource.document.reading_number}`);
+ const toolbarStickyOffset = workspaceTabsEnabled || stickyParentTabs ? "tabs" : "page";
 
  const checkTranslation = () => {
   if (!translationSegment || !translationKey || !translationDraft.trim()) return;
@@ -264,7 +276,9 @@ function ReaderDocumentStudyContent({
     document={study.documentModel}
     analysisBySegmentId={study.analysisBySegmentId}
     onSelection={selection.handleSelection}
+    onPronunciationInspect={pronunciation.handleInspect}
     onOpenShadowing={() => setShadowingOpen((current) => !current)}
+    toolbarStickyOffset={toolbarStickyOffset}
    />
    {shadowingOpen && activeParagraph ? (
     <ShadowingPracticePanel
@@ -284,6 +298,7 @@ function ReaderDocumentStudyContent({
    <div className="mx-auto grid min-w-0 max-w-5xl gap-3">
     {readerSurface}
     {selection.popover}
+    {pronunciation.popover}
    </div>
   );
  }
@@ -340,6 +355,7 @@ function ReaderDocumentStudyContent({
      value={activeWorkspaceTab}
      items={availableTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
      onValueChange={setWorkspaceTab}
+     listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
      aria-label="Các phần của bài Reader"
     >
      <TabsContent value={activeWorkspaceTab} className="pt-4 sm:pt-5">
@@ -392,6 +408,7 @@ function ReaderDocumentStudyContent({
     readerSurface
    )}
    {selection.popover}
+   {pronunciation.popover}
    {study.saveError ? (
     <Typography as="p" variant="caption" tone="danger">
      {study.saveError}
