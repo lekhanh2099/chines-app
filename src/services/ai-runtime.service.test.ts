@@ -131,11 +131,15 @@ describe("shared AI runtime resolver", () => {
   });
  });
 
- it("classifies operational provider failures without conflating them with vault readiness", () => {
+ it("distinguishes transient provider rate limits from exhausted account quota", () => {
   expect(classifyAiRuntimeOperationFailure({ status: 401 })).toBe("invalid-key");
   expect(classifyAiRuntimeOperationFailure({ status: 429, message: "rate limit" })).toBe(
-   "quota-exhausted",
+   "provider-unavailable",
   );
+  expect(
+   classifyAiRuntimeOperationFailure({ status: 429, message: "insufficient_quota" }),
+  ).toBe("quota-exhausted");
+  expect(classifyAiRuntimeOperationFailure({ status: 402 })).toBe("quota-exhausted");
   expect(classifyAiRuntimeOperationFailure({ errorName: "TimeoutError" })).toBe("network-error");
   expect(classifyAiRuntimeOperationFailure({ message: "JSON schema mismatch" })).toBe(
    "invalid-response",
