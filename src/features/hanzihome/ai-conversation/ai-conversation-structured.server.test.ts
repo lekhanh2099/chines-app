@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 
+import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
 const { resolveUserAiRuntime, streamAiConversationProviderReply } = vi.hoisted(() => ({
@@ -22,16 +23,16 @@ const supabase = createClient<Database>("https://example.supabase.co", "test-key
  auth: { autoRefreshToken: false, persistSession: false },
 });
 const schema = z.strictObject({ value: z.string() });
-const runtime = {
+const runtime: ResolvedUserAiRuntime = {
  keyId: "11111111-1111-4111-8111-111111111111",
- provider: "groq" as const,
+ provider: "groq",
  providerLabel: "Groq",
  label: "Groq",
  maskedKey: "gsk_***",
  model: "qwen/qwen3.6-27b",
  priority: 0,
  apiKey: "gsk-test",
- capabilities: ["structured-memory" as const],
+ capabilities: ["structured-memory"],
 };
 
 async function* providerReply(value: string) {
