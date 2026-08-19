@@ -80,17 +80,35 @@ Status: source selection is hardened behind the existing V1-compatible discovery
 - [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 4 — Article-first persistence
-- [ ] Persist selected article before any AI request.
-- [ ] Emit/represent `article-ready` independently from enrichment.
-- [ ] Make Daily Reading library/reader render V2 article when enrichments are idle/blocked/failed.
-- [ ] Keep V1 data readable through migration/compatibility.
-- [ ] Verify reload after capture preserves the article.
+
+Status: the V2 capture path is now the primary Daily Reading library/manual-acquisition path and is independent from AI. V1 storage and the legacy generated-reader path remain intact as rollback/compatibility owners until later cleanup; old V1 items are migrated or mirrored into the V2 library as `legacy-adapted`.
+
+- [x] Add an authenticated source-capture route that performs collection only and never resolves an AI provider/key.
+- [x] Build a `source-captured` V2 article from the selected source while preserving exact cleaned Chinese paragraph order and source provenance.
+- [x] Persist the V2 article before capture success telemetry; a telemetry failure after save cannot roll the article back.
+- [x] Use a dedicated versioned V2 ledger/settings storage key with parse/write/read-back verification and quota compaction.
+- [x] Read V2 first and safely migrate valid V1 data when V2 is absent; keep the V1 storage keys untouched for rollback/recovery.
+- [x] Deduplicate V2 writes by article id, source URL, and article fingerprint.
+- [x] Treat presence in the V2 item ledger as `article-ready`; enrichment state is independent and starts `idle` for a source capture.
+- [x] Make the primary Daily Reading library/reader render a V2 article with only Reader + Source available when enrichments are idle/blocked/failed.
+- [x] Keep V1 readings readable through migration/legacy fallback and mirror successful legacy generation into V2 best-effort.
+- [x] Keep persisted V2 source-captured content free of pinyin fields.
+- [x] Add deterministic capture-builder, route-boundary and V2 persistence tests without provider/production DB writes.
+- [ ] Execute targeted type/test checks and an actual reload/render flow when an executable checkout is available.
 
 ### Scope 5 — Scheduler capture semantics
-- [ ] Scheduler triggers capture, not all-or-nothing generation.
-- [ ] A captured scheduled article completes the day even if enrichment fails.
-- [ ] Respect configurable local release time with catch-up on focus/app open.
-- [ ] Prevent duplicate daily captures after successful persistence.
+
+Status: scheduled Daily Reading now owns source capture rather than all-or-nothing AI generation. Configurable capture-time data is active in the scheduler contract, while the full settings UI for editing it remains Scope 8.
+
+- [x] Switch the scheduler agent from `generateDailyReadingNow` to source-only `captureDailyReadingNow`.
+- [x] Count a persisted scheduled V2 article as the day's successful completion independent of enrichment state.
+- [x] Respect V2 `captureTime` in `Asia/Ho_Chi_Minh` while preserving 10:00 as the migrated/default value.
+- [x] Preserve catch-up behavior on initial mount, focus and `visibilitychange` after the configured time.
+- [x] Prevent duplicate daily capture after article persistence even if success-run telemetry fails.
+- [x] Keep bounded retry/backoff semantics for capture runs and allow immediate recovery from interrupted/offline failures.
+- [x] Reuse the cross-tab Daily Reading lock for capture and fix lock fallback so a task failure is never rerun through a second lock backend.
+- [x] Add scheduler/lock/capture-run decision tests.
+- [ ] Execute targeted type/test checks and multi-tab browser verification when an executable checkout is available.
 
 ### Scope 6 — Shared backend BYOK AI runtime
 - [ ] Add one server-side runtime resolver for active user credentials/capabilities.
