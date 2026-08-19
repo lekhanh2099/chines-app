@@ -40,8 +40,9 @@ const maximumHtmlBytes = 2_000_000;
 const officialTimeoutMilliseconds = 6_000;
 const articleTimeoutMilliseconds = 7_000;
 const gdeltTimeoutMilliseconds = 7_000;
-const maximumExtractionCandidatesPerWindow = 8;
+const maximumExtractionCandidatesPerWindow = 24;
 const extractionBatchSize = 4;
+const minimumSuccessfulCandidatesBeforeStop = 3;
 const legacyEvidenceCharacterLimit = 15_500;
 
 const allTopics: readonly DailyReadingTopic[] = [
@@ -483,6 +484,7 @@ async function extractAndRankCandidates(input: {
    if (result.qualityRejection !== null) input.qualityRejections[result.qualityRejection] += 1;
    if (result.selection !== null) selections.push(result.selection);
   }
+  if (selections.length >= minimumSuccessfulCandidatesBeforeStop) break;
  }
 
  selections.sort((left, right) => {
