@@ -1,11 +1,17 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { DailyReadingV2, DailyReadingV2CaptureRun } from "./daily-reading-v2.schemas";
+import type {
+ DailyReadingV2,
+ DailyReadingV2CaptureRun,
+} from "./daily-reading-v2.schemas";
 import {
  getDailyReadingV2Snapshot,
  hasScheduledCapturedArticleForDate,
+ markDailyReadingV2EnrichmentRunInterrupted,
  saveDailyReadingV2Article,
+ saveDailyReadingV2EnrichmentRun,
  scheduledCaptureRunBlocksDate,
+ updateDailyReadingV2Enrichment,
 } from "./daily-reading-v2-storage.client";
 
 const values = new Map<string, string>();
@@ -94,6 +100,79 @@ describe("Daily Reading V2 storage", () => {
   expect(hasScheduledCapturedArticleForDate("2026-08-19")).toBe(true);
   expect(values.has("chines-app:daily-reading:v2")).toBe(true);
   expect(JSON.stringify(saved)).not.toMatch(/pinyin/iu);
+ });
+
+ it("updates only the requested enrichment module and preserves the captured source", () => {
+  saveDailyReadingV2Article(article);
+  updateDailyReadingV2Enrichment(article.id, {
+   module: "translation",
+   state: {
+    status: "ready",
+    updatedAt: "2026-08-19T07:00:00.000Z",
+    generatedBy: { provider: "Groq", model: "openai/gpt-oss-20b" },
+    data: {
+     titleVi: "Triển lãm văn hóa truyền thống tại bảo tàng thành phố",
+     whyWorthReadingVi: "Bài đọc về hoạt động văn hóa công cộng.",
+     adaptationNoticeVi: "Bản dịch hỗ trợ học tập.",
+     paragraphs: article.article.paragraphs.map((paragraph) => ({
+      paragraphId: paragraph.id,
+      vi: `Nghĩa ${paragraph.id}`,
+      roleVi: "Nội dung",
+     })),
+    },
+   },
+  });
+  updateDailyReadingV2Enrichment(article.id, {
+   module: "grammar",
+   state: {
+    status: "failed",
+    errorCode: "invalid-response",
+    updatedAt: "2026-08-19T07:01:00.000Z",
+   },
+  });
+
+  const saved = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
+  expect(saved?.article).toEqual(article.article);
+  expect(saved?.source).toEqual(article.source);
+  expect(saved?.enrichment.translation.status).toBe("ready");
+  expect(saved?.enrichment.grammar).toMatchObject({
+   status: "failed",
+   errorCode: "invalid-response",
+  });
+  expect(saved?.enrichment.vocabulary.status).toBe("idle");
+  expect(saved?.enrichment.questions.status).toBe("idle");
+ });
+
+ it("marks only an interrupted running module as failed and keeps the article readable", () => {
+  saveDailyReadingV2Article(article);
+  updateDailyReadingV2Enrichment(article.id, {
+   module: "vocabulary",
+   state: { status: "running", startedAt: "2026-08-19T07:00:00.000Z" },
+  });
+  saveDailyReadingV2EnrichmentRun({
+   id: "enrichment-1",
+   articleId: article.id,
+   module: "vocabulary",
+   status: "pending",
+   attemptedAt: "2026-08-19T07:00:00.000Z",
+   completedAt: "",
+   errorCode: "",
+   errorDetail: "",
+  });
+
+  markDailyReadingV2EnrichmentRunInterrupted("enrichment-1");
+
+  const snapshot = getDailyReadingV2Snapshot();
+  const saved = snapshot.items.find((item) => item.id === article.id);
+  expect(saved?.article.paragraphs).toEqual(article.article.paragraphs);
+  expect(saved?.enrichment.vocabulary).toMatchObject({
+   status: "failed",
+   errorCode: "cancelled",
+  });
+  expect(snapshot.enrichmentRuns.find((item) => item.id === "enrichment-1")).toMatchObject({
+   status: "failed",
+   errorCode: "cancelled",
+  });
  });
 
  it("blocks fresh/succeeded capture attempts but allows immediate interrupted recovery", () => {
