@@ -24,11 +24,11 @@ const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
 
 export type ReaderToolbarStickyOffset = "none" | "page" | "tabs";
 
-function stickyClassName(offset: ReaderToolbarStickyOffset) {
- if (offset === "page") return "sticky top-0 z-20";
- if (offset === "tabs") return "sticky top-12 z-20";
- return "";
-}
+const stickyClassName: Record<ReaderToolbarStickyOffset, string> = {
+ none: "",
+ page: "sticky top-0 z-20",
+ tabs: "sticky top-12 z-20",
+};
 
 export function ReaderCommandBar({
  segmentCount,
@@ -70,7 +70,7 @@ export function ReaderCommandBar({
   <Card
    variant="section"
    padding="sm"
-   className={cn(stickyClassName(stickyOffset), "bg-bg-subtle/95 backdrop-blur")}
+   className={cn(stickyClassName[stickyOffset], "bg-bg-subtle/95 backdrop-blur")}
   >
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     <Typography variant="caption" tone="muted" weight="black" className="mr-auto">
