@@ -28,11 +28,6 @@ import {
  type AiConversationResponse,
  type AiConversationRuntimeHealth,
 } from "./ai-conversation.schemas";
-import {
- appendAiConversationClientStreamDelta,
- beginAiConversationClientStream,
- endAiConversationClientStream,
-} from "./ai-conversation-stream.client";
 import { streamPersistedAiConversationMessage } from "./ai-conversation-stream-api";
 
 const endpoint = "/api/ai/conversation";
@@ -206,7 +201,12 @@ export async function sendPersistedAiConversationMessage(
   content: string;
   apiKeyId?: string;
  },
- options?: { signal?: AbortSignal },
+ options?: {
+  signal?: AbortSignal;
+  onDelta?: (text: string) => void;
+  onStreamReady?: (stop: () => void) => void;
+  onStreamEnd?: () => void;
+ },
 ): Promise<AiConversationTurnResponse> {
  const payload = aiConversationTurnRequestSchema.parse({
   clientMessageId: input.clientMessageId,
@@ -218,15 +218,15 @@ export async function sendPersistedAiConversationMessage(
  if (options?.signal?.aborted) controller.abort();
  else options?.signal?.addEventListener("abort", forwardAbort, { once: true });
 
- beginAiConversationClientStream(() => controller.abort());
+ options?.onStreamReady?.(() => controller.abort());
  try {
   return await streamPersistedAiConversationMessage(conversationId, payload, {
    signal: controller.signal,
-   onDelta: appendAiConversationClientStreamDelta,
+   onDelta: options?.onDelta,
   });
  } finally {
   options?.signal?.removeEventListener("abort", forwardAbort);
-  endAiConversationClientStream();
+  options?.onStreamEnd?.();
  }
 }
 
