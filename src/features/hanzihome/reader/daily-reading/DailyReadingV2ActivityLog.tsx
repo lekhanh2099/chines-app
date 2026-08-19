@@ -142,9 +142,9 @@ export function DailyReadingV2ActivityLog({
          })
        : t("v2.activity.enrichmentDetail", { module: t(moduleKey(entry.module)) });
      return (
-      <div key={entry.id} className="grid min-w-0 gap-3 px-3 py-3 sm:px-4 sm:py-4">
+      <div key={entry.id} className="grid min-w-0">
        {index > 0 ? <Separator /> : null}
-       <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+       <div className="flex min-w-0 flex-col gap-3 px-3 py-3 sm:flex-row sm:items-start sm:justify-between sm:px-4 sm:py-4">
         <div className="grid min-w-0 gap-1.5">
          <div className="flex min-w-0 flex-wrap items-center gap-2">
           <Badge variant={statusVariant(entry.status)} size="sm" casing="natural">
