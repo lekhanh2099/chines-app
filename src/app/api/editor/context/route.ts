@@ -3,9 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/server";
 import { extractChinese } from "@/lib/chinese-utils";
+import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
  getUserVocabProgressRecord,
@@ -47,6 +47,18 @@ type NullableText = z.infer<z.ZodNullable<z.ZodString>>;
 function resolveMode(selection: string): SmartSelectionMode {
  const normalized = extractChinese(selection) || selection;
  return normalized.length <= 2 ? "word" : "sentence";
+}
+
+function runtimeError(status: "missing-key" | "storage-unavailable") {
+ return status === "missing-key"
+  ? NextResponse.json(
+     { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
+     { status: 409 },
+    )
+  : NextResponse.json(
+     { error: "Kho API key an toàn phía server chưa sẵn sàng." },
+     { status: 503 },
+    );
 }
 
 async function getProgressState(
@@ -128,9 +140,6 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "Invalid selection" }, { status: 400 });
  }
 
- const promptSettings = await getUserAiPromptSettings(supabase, user.id);
- const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
-
  const resolvedMode = mode || resolveMode(rawSelection);
  const normalizedChinese = extractChinese(rawSelection);
 
@@ -183,10 +192,13 @@ export async function POST(request: NextRequest) {
    !hasDetailedVocabAnalysis(existingAnalysis);
 
   if (needsEnrichment && normalizedChinese) {
+   const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+   if (!runtime.ok) return runtimeError(runtime.status);
+   const promptSettings = await getUserAiPromptSettings(supabase, user.id);
    const aiLookup = await analyzeHanziDetailed(lookupText, {
     geminiModel: geminiModel || promptSettings?.geminiModel,
     promptTemplate: wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
-    userApiKeys,
+    userApiKeys: [runtime.credential],
     allowGroq: true,
    });
 
@@ -202,44 +214,41 @@ export async function POST(request: NextRequest) {
    }
 
    const aiResult = aiLookup.data;
-   if (aiResult) {
-    const meaning = getPrimaryMeaning(aiResult, existingMeaning);
+   const meaning = getPrimaryMeaning(aiResult, existingMeaning);
 
-    const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-     headword: lookupText,
-     pinyin: aiResult.pinyin || vocab.pinyin,
-     sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-     meaning,
-     ai_analysis: aiResult,
-    });
+   const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+    headword: lookupText,
+    pinyin: aiResult.pinyin || vocab.pinyin,
+    sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+    meaning,
+    ai_analysis: aiResult,
+   });
 
-    const upsertResult = dictionaryEntry
-     ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
-     : await upsertVocab(supabase, {
-        hanzi: lookupText,
-        pinyin: aiResult.pinyin || vocab.pinyin,
-        sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-        meaning,
-        ai_analysis: aiResult,
-       });
+   const upsertResult = dictionaryEntry
+    ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
+    : await upsertVocab(supabase, {
+       hanzi: lookupText,
+       pinyin: aiResult.pinyin || vocab.pinyin,
+       sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+       meaning,
+       ai_analysis: aiResult,
+      });
 
-    vocab = {
-     id: upsertResult?.id || existing?.id,
-     dictionary_id: dictionaryEntry?.id || vocab.dictionary_id,
-     hanzi: lookupText,
-     pinyin: aiResult.pinyin || vocab.pinyin,
-     sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-     meaning,
-     ai_analysis: aiResult,
-    };
-   }
+   vocab = {
+    id: upsertResult?.id || existing?.id,
+    dictionary_id: dictionaryEntry?.id || vocab.dictionary_id,
+    hanzi: lookupText,
+    pinyin: aiResult.pinyin || vocab.pinyin,
+    sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+    meaning,
+    ai_analysis: aiResult,
+   };
   }
 
   const analysis = vocab.ai_analysis || {};
   const definitions = getNormalizedDefinitions(analysis, vocab.meaning);
   const progress = await getProgressState(user.id, vocab.id, vocab.dictionary_id, supabase);
 
-  // Extract deep analysis fields (etymology may be string or object)
   const etymologyRaw = analysis.etymology;
   const etymologyText =
    typeof etymologyRaw === "string" ? etymologyRaw : etymologyRaw?.explanation || "";
@@ -277,10 +286,13 @@ export async function POST(request: NextRequest) {
  let pinyin = existing?.pinyin || getPinyin(sentenceText);
 
  if (!translation && grammarPoints.length === 0) {
+  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+  if (!runtime.ok) return runtimeError(runtime.status);
+  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
   const sentenceLookup = await analyzeSentenceDetailed(sentenceText, {
    geminiModel: geminiModel || promptSettings?.geminiModel,
    promptTemplate: sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
-   userApiKeys,
+   userApiKeys: [runtime.credential],
    allowGroq: true,
   });
   if (!sentenceLookup.data) {
