@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 
+import { useAiConversationClientStream } from "./ai-conversation-stream.client";
 import type { AiConversationMessage } from "./ai-conversation.schemas";
 
 type AiConversationMessageBubbleProps = {
@@ -51,15 +52,12 @@ export function AiConversationMessageBubble({
 export function AiConversationTypingBubble({
  assistantName,
  label,
- streamContent,
- onStop,
 }: {
  assistantName: string;
  label: string;
- streamContent: string;
- onStop: (() => void) | null;
 }) {
  const t = useTranslations("AiConversation");
+ const stream = useAiConversationClientStream();
 
  return (
   <div className="flex w-full items-end gap-2 pr-3 sm:pr-24" data-message-role="assistant">
@@ -67,9 +65,9 @@ export function AiConversationTypingBubble({
     <AvatarFallback>{getAvatarFallback(assistantName)}</AvatarFallback>
    </Avatar>
    <div className="grid min-w-0 max-w-[92%] gap-2 rounded-xl rounded-bl-sm border border-border-default bg-surface px-3 py-2 sm:max-w-[78%]">
-    {streamContent.length > 0 ? (
+    {stream.content.length > 0 ? (
      <Typography as="p" variant="bodySmall" wrapping="preWrap">
-      {streamContent}
+      {stream.content}
      </Typography>
     ) : (
      <div className="flex min-h-6 items-center">
@@ -79,13 +77,13 @@ export function AiConversationTypingBubble({
       </Typography>
      </div>
     )}
-    {onStop ? (
+    {stream.active && stream.stop ? (
      <Button
       type="button"
       variant="outline"
       size="compact"
       className="justify-self-start"
-      onClick={onStop}
+      onClick={stream.stop}
      >
       <Square data-icon="inline-start" />
       {t("actions.stop")}
