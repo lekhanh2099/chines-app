@@ -133,14 +133,14 @@ export function ReaderPronunciationReviewPopover({
         </Typography>
        </div>
 
-       {meaning ? (
-        <div className="grid gap-1">
-         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-          Nghĩa trong ngữ cảnh
-         </Typography>
-         <Typography variant="bodySmall">{meaning}</Typography>
-        </div>
-       ) : null}
+       <div className="grid gap-1">
+        <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
+         Nghĩa trong ngữ cảnh
+        </Typography>
+        <Typography variant="bodySmall">
+         {meaning || "Chưa có nghĩa tiếng Việt đã xác định cho cụm này."}
+        </Typography>
+       </div>
 
        <div className="grid gap-2">
         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
