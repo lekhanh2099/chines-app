@@ -1,4 +1,7 @@
+import { createClient } from "@supabase/supabase-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+
+import type { Database } from "@/types/supabase.generated";
 
 const mocks = vi.hoisted(() => ({
  getActiveUserApiKeyCredentials: vi.fn(),
@@ -15,6 +18,9 @@ vi.mock("@/services/user-api-keys.service", () => ({
 
 import { resolveAiCredentialRuntime } from "./ai-analysis-runtime.service";
 
+const supabase = createClient<Database>("https://example.supabase.co", "test-key", {
+ auth: { autoRefreshToken: false, persistSession: false },
+});
 const selectedCredential = {
  id: "11111111-1111-4111-8111-111111111111",
  userId: "user-1",
@@ -53,7 +59,6 @@ describe("AI credential runtime compatibility bridge", () => {
  });
 
  it("keeps shared runtime capability selection authoritative", async () => {
-  const supabase = { marker: "supabase" };
   const result = await resolveAiCredentialRuntime({
    supabase,
    userId: "user-1",
@@ -80,7 +85,7 @@ describe("AI credential runtime compatibility bridge", () => {
   });
 
   const result = await resolveAiCredentialRuntime({
-   supabase: { marker: "supabase" },
+   supabase,
    userId: "user-1",
    capability: "lookup",
   });
@@ -93,7 +98,7 @@ describe("AI credential runtime compatibility bridge", () => {
   mocks.getActiveUserApiKeyCredentials.mockResolvedValue([]);
 
   const result = await resolveAiCredentialRuntime({
-   supabase: { marker: "supabase" },
+   supabase,
    userId: "user-1",
    capability: "lookup",
   });
