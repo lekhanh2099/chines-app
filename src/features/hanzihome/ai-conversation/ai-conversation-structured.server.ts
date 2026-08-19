@@ -3,10 +3,12 @@ import "server-only";
 import { z } from "zod";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
-import { generateAiConversationReply } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
+import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
 
-import { generateSystemAiConversationReply } from "./ai-conversation-system.server";
+import {
+ AiConversationProviderStreamError,
+ streamAiConversationProviderReply,
+} from "./ai-conversation-stream-provider.server";
 
 const MAX_STRUCTURED_PROMPT_CHARS = 6000;
 
@@ -22,6 +24,18 @@ function parseStructuredContent<T>(raw: string, schema: z.ZodType<T>): T | null 
  } catch {
   return null;
  }
+}
+
+function runtimeResolutionError(input: {
+ status: "missing-key" | "storage-unavailable";
+ reason: string;
+}) {
+ if (input.status === "missing-key") {
+  return input.reason === "capability-unavailable"
+   ? "No active personal API key supports structured memory tasks."
+   : "No active personal API key is available for structured memory tasks.";
+ }
+ return "The secure personal API-key runtime is unavailable for structured memory tasks.";
 }
 
 export async function generateStructuredAiConversationData<T>({
@@ -44,43 +58,43 @@ export async function generateStructuredAiConversationData<T>({
   return { data: null, error: "AI structured request exceeded the bounded prompt contract." };
  }
 
- const credentials = await getActiveUserApiKeyCredentials(supabase, userId);
- const selectedCredential = credentials[0];
- const providerErrors: string[] = [];
+ const resolution = await resolveUserAiRuntime({
+  supabase,
+  userId,
+  capability: "structured-memory",
+ });
+ if (!resolution.ok) {
+  return {
+   data: null,
+   error: runtimeResolutionError(resolution),
+  };
+ }
 
- if (selectedCredential) {
-  const personalResult = await generateAiConversationReply(
-   [{ role: "user", content: normalizedPrompt }],
-   {
-    userApiKeys: [selectedCredential],
-    abortSignal: signal,
-    systemContext: systemPrompt,
-   },
-  );
-  if (personalResult.data) {
-   const parsed = parseStructuredContent(personalResult.data, schema);
-   if (parsed) return { data: parsed, error: null };
-   providerErrors.push(`${selectedCredential.label} returned structured data outside the schema.`);
-  } else if (personalResult.error) {
-   providerErrors.push(personalResult.error);
+ let raw = "";
+ try {
+  for await (const delta of streamAiConversationProviderReply({
+   runtime: resolution.runtime,
+   messages: [{ role: "user", content: normalizedPrompt }],
+   systemPrompt,
+   signal,
+  })) {
+   raw += delta;
   }
+ } catch (error) {
+  return {
+   data: null,
+   error:
+    error instanceof AiConversationProviderStreamError
+     ? error.message
+     : "AI structured request failed before a valid response was available.",
+  };
  }
 
- const systemResult = await generateSystemAiConversationReply(
-  [{ role: "user", content: normalizedPrompt }],
-  signal,
-  systemPrompt,
- );
- if (systemResult.data) {
-  const parsed = parseStructuredContent(systemResult.data, schema);
-  if (parsed) return { data: parsed, error: null };
-  providerErrors.push("System Gemini returned structured data outside the schema.");
- } else if (systemResult.error) {
-  providerErrors.push(systemResult.error);
- }
-
- return {
-  data: null,
-  error: providerErrors.join(" ") || "AI structured request failed.",
- };
+ const parsed = parseStructuredContent(raw, schema);
+ return parsed
+  ? { data: parsed, error: null }
+  : {
+     data: null,
+     error: `${resolution.runtime.providerLabel} returned structured data outside the schema.`,
+    };
 }
