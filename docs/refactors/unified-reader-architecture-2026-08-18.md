@@ -214,7 +214,7 @@ npm run source:check
 npm run check
 ```
 
-Do not claim a rendered/UI state as verified when it was only source-inspected.
+Do not claim a rendered/UI state as verified when it was only source-inspected. Per the current branch workflow, these checks are intentionally left to the local/product verification pass rather than adding a temporary GitHub Actions workflow.
 
 ## Completion criteria
 
