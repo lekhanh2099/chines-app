@@ -10,13 +10,19 @@ import {
  loadAiConversationContextState,
  loadRecentAiConversationMessages,
 } from "./ai-conversation-persistence.server";
-import { aiConversationTurnResponseSchema } from "./ai-conversation-session.schemas";
+import {
+ aiConversationTurnResponseSchema,
+ type AiConversationTurnResponse,
+} from "./ai-conversation-session.schemas";
 import { createAiConversationVisibleStreamFilter } from "./ai-conversation-stream-filter";
 import {
  AiConversationProviderStreamError,
  streamAiConversationProviderReply,
 } from "./ai-conversation-stream-provider.server";
-import { aiConversationStreamEventSchema } from "./ai-conversation-stream.schemas";
+import {
+ aiConversationStreamEventSchema,
+ type AiConversationStreamEvent,
+} from "./ai-conversation-stream.schemas";
 import { preparePersistedAiConversationTurn } from "./ai-conversation-turn.server";
 
 const encoder = new TextEncoder();
@@ -27,7 +33,7 @@ export type AiConversationStreamTurnResult =
  | { ok: true; response: Response }
  | { ok: false; status: number; code: string; message: string };
 
-function encodeEvent(event: Parameters<typeof aiConversationStreamEventSchema.parse>[0]) {
+function encodeEvent(event: AiConversationStreamEvent) {
  return encoder.encode(`${JSON.stringify(aiConversationStreamEventSchema.parse(event))}\n`);
 }
 
@@ -39,7 +45,7 @@ function streamHeaders() {
  };
 }
 
-function completedTurnResponse(turn: ReturnType<typeof aiConversationTurnResponseSchema.parse>) {
+function completedTurnResponse(turn: AiConversationTurnResponse) {
  const stream = new ReadableStream<Uint8Array>({
   start(controller) {
    controller.enqueue(
@@ -121,7 +127,7 @@ export async function createPersistedAiConversationTurnStream(input: {
  const stream = new ReadableStream<Uint8Array>({
   async start(controller) {
    let closed = false;
-   const safeEnqueue = (event: Parameters<typeof aiConversationStreamEventSchema.parse>[0]) => {
+   const safeEnqueue = (event: AiConversationStreamEvent) => {
     if (closed || providerController.signal.aborted) return;
     try {
      controller.enqueue(encodeEvent(event));
@@ -185,6 +191,13 @@ export async function createPersistedAiConversationTurnStream(input: {
     const message = sanitizeAiConversationReply(rawReply);
     if (message.length === 0 || message.length > maximumAssistantCharacters) {
      throw new AiConversationProviderStreamError(prepared.runtime.providerLabel, "invalid-response");
+    }
+
+    // A Stop can race with the final provider chunk. Recheck immediately before
+    // persistence so a cancelled partial reply remains presentation-only.
+    if (providerController.signal.aborted) {
+     close();
+     return;
     }
 
     const assistantMessage = await appendAiConversationMessage({
