@@ -104,6 +104,7 @@ export async function processDueAiConversationPostTurnJobs({
 
      try {
       await enrichMissingAiConversationMemoryEmbeddings({
+       supabase,
        userId,
        characterId: evidence.conversation.character_id,
        signal,
