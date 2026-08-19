@@ -1,11 +1,17 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { createStore, useSelector } from "@tanstack/react-store";
 
 type AiConversationClientStreamState = {
  active: boolean;
  content: string;
  stop: (() => void) | null;
+};
+
+type AiConversationClientStreamActions = {
+ begin: (stop: () => void) => void;
+ append: (text: string) => void;
+ end: () => void;
 };
 
 const idleState: AiConversationClientStreamState = {
@@ -14,37 +20,32 @@ const idleState: AiConversationClientStreamState = {
  stop: null,
 };
 
-let state = idleState;
-const listeners = new Set<() => void>();
-
-function emit(next: AiConversationClientStreamState) {
- state = next;
- for (const listener of listeners) listener();
-}
-
-function subscribe(listener: () => void) {
- listeners.add(listener);
- return () => listeners.delete(listener);
-}
-
-function getSnapshot() {
- return state;
-}
+const streamStore = createStore<
+ AiConversationClientStreamState,
+ AiConversationClientStreamActions
+>(idleState, ({ setState }) => ({
+ begin: (stop) => setState({ active: true, content: "", stop }),
+ append: (text) =>
+  setState((state) =>
+   !state.active || text.length === 0
+    ? state
+    : { ...state, content: `${state.content}${text}` },
+  ),
+ end: () => setState(idleState),
+}));
 
 export function beginAiConversationClientStream(stop: () => void) {
- emit({ active: true, content: "", stop });
+ streamStore.actions.begin(stop);
 }
 
 export function appendAiConversationClientStreamDelta(text: string) {
- if (!state.active || text.length === 0) return;
- emit({ ...state, content: `${state.content}${text}` });
+ streamStore.actions.append(text);
 }
 
 export function endAiConversationClientStream() {
- if (state === idleState) return;
- emit(idleState);
+ streamStore.actions.end();
 }
 
 export function useAiConversationClientStream() {
- return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
+ return useSelector(streamStore, (state) => state);
 }
