@@ -39,26 +39,28 @@ type ReaderRuntimeContextValue = {
 };
 
 const ReaderRuntimeContext = createContext<ReaderRuntimeContextValue | null>(null);
-
+const noop = () => undefined;
 const noRuntimeCommands: ReaderRuntimeCommands = {
- playCurrent: () => undefined,
- playAll: () => undefined,
- pause: () => undefined,
- resume: () => undefined,
- stop: () => undefined,
- restartCurrent: () => undefined,
- previous: () => undefined,
- next: () => undefined,
- selectIndex: () => undefined,
- setRate: () => undefined,
+ playCurrent: noop,
+ playAll: noop,
+ pause: noop,
+ resume: noop,
+ stop: noop,
+ restartCurrent: noop,
+ previous: noop,
+ next: noop,
+ selectIndex: noop,
+ setRate: noop,
 };
 
 export function ReaderRuntimeProvider({
  document,
  children,
+ onPlaybackComplete,
 }: {
  document: ReaderDocumentModel;
  children: ReactNode;
+ onPlaybackComplete?: () => void;
 }) {
  const [store] = useState(() =>
   createReaderRuntimeStore(document.segments.map((segment) => segment.id)),
@@ -83,12 +85,16 @@ export function ReaderRuntimeProvider({
  useEffect(() => {
   store.actions.replaceSegments(document.segments.map((segment) => segment.id));
  }, [document.segments, store]);
-
  const context = useMemo(() => ({ store, commands }), [commands, store]);
 
  return (
   <ReaderRuntimeContext.Provider value={context}>
-   <ReaderTtsBridge document={document} store={store} commandsRef={commandsRef} />
+   <ReaderTtsBridge
+    document={document}
+    store={store}
+    commandsRef={commandsRef}
+    onPlaybackComplete={onPlaybackComplete}
+   />
    {children}
   </ReaderRuntimeContext.Provider>
  );
@@ -98,10 +104,12 @@ function ReaderTtsBridge({
  document,
  store,
  commandsRef,
+ onPlaybackComplete,
 }: {
  document: ReaderDocumentModel;
  store: ReaderRuntimeStore;
  commandsRef: { current: ReaderRuntimeCommands };
+ onPlaybackComplete?: () => void;
 }) {
  const tts = useSharedMandarinTts();
  const {
@@ -120,22 +128,22 @@ function ReaderTtsBridge({
  const runRef = useRef(0);
  const ownsPlaybackRef = useRef(false);
  const continuousRef = useRef(false);
-
- const finishPlayback = useCallback(() => {
-  ownsPlaybackRef.current = false;
-  continuousRef.current = false;
-  store.actions.resetPlayback();
- }, [store]);
-
- const playAtRef = useRef<(index: number, runId: number, continuous: boolean) => void>(
-  () => undefined,
+ const finishPlayback = useCallback(
+  (completed = false) => {
+   ownsPlaybackRef.current = false;
+   continuousRef.current = false;
+   store.actions.resetPlayback();
+   if (completed) onPlaybackComplete?.();
+  },
+  [onPlaybackComplete, store],
  );
+ const playAtRef = useRef<(index: number, runId: number, continuous: boolean) => void>(noop);
  const playAt = useCallback(
   (index: number, runId: number, continuous: boolean) => {
    if (runRef.current !== runId) return;
    const segment = document.segments[index];
    if (!segment) {
-    finishPlayback();
+    finishPlayback(true);
     return;
    }
    const speechText = (segment.speechText ?? segment.zh).trim();
@@ -144,7 +152,7 @@ function ReaderTtsBridge({
     if (continuous && nextIndex < document.segments.length) {
      playAtRef.current(nextIndex, runId, continuous);
     } else {
-     finishPlayback();
+     finishPlayback(index >= document.segments.length - 1);
     }
     return;
    }
@@ -161,22 +169,20 @@ function ReaderTtsBridge({
    });
    speakSequence([speechText], () => {
     if (runRef.current !== runId) return;
-    const current = store.state;
-    if (current.loopCurrent) {
+    if (store.state.loopCurrent) {
      playAtRef.current(index, runId, continuous);
      return;
     }
     const nextIndex = index + 1;
-    if ((continuous || current.autoAdvance) && nextIndex < document.segments.length) {
+    if ((continuous || store.state.autoAdvance) && nextIndex < document.segments.length) {
      playAtRef.current(nextIndex, runId, continuous);
      return;
     }
-    finishPlayback();
+    finishPlayback(index >= document.segments.length - 1);
    });
   },
   [document.segments, finishPlayback, rate, speakSequence, store],
  );
-
  useEffect(() => {
   playAtRef.current = playAt;
  }, [playAt]);
@@ -193,19 +199,15 @@ function ReaderTtsBridge({
   },
   [document.segments.length, playAt, stopTts],
  );
-
  const stop = useCallback(() => {
   runRef.current += 1;
-  continuousRef.current = false;
   if (ownsPlaybackRef.current) stopTts();
-  finishPlayback();
+  finishPlayback(false);
  }, [finishPlayback, stopTts]);
-
  const selectIndex = useCallback(
   (index: number) => {
    const nextIndex = Math.min(Math.max(index, 0), Math.max(0, document.segments.length - 1));
-   const shouldContinue = ownsPlaybackRef.current && store.state.playbackStatus !== "idle";
-   if (shouldContinue) {
+   if (ownsPlaybackRef.current && store.state.playbackStatus !== "idle") {
     runRef.current += 1;
     const runId = runRef.current;
     stopTts();
@@ -217,7 +219,6 @@ function ReaderTtsBridge({
   },
   [document.segments.length, playAt, stopTts, store],
  );
-
  const previous = useCallback(() => selectIndex(store.state.activeIndex - 1), [selectIndex, store]);
  const next = useCallback(() => selectIndex(store.state.activeIndex + 1), [selectIndex, store]);
 
@@ -236,48 +237,35 @@ function ReaderTtsBridge({
    previous,
    next,
    selectIndex,
-   setRate: (nextRate) => {
-    setTtsRate(nextRate);
+   setRate: (rate) => {
+    setTtsRate(rate);
     store.actions.syncPlayback({
      playbackSegmentId: store.state.playbackSegmentId,
      playbackStatus: store.state.playbackStatus,
      progress: store.state.progress,
-     rate: nextRate,
+     rate,
      error: store.state.error,
     });
    },
   };
- }, [
-  commandsRef,
-  next,
-  pauseTts,
-  previous,
-  resumeTts,
-  selectIndex,
-  setTtsRate,
-  startAt,
-  stop,
-  store,
- ]);
+ }, [commandsRef, next, pauseTts, previous, resumeTts, selectIndex, setTtsRate, startAt, stop, store]);
 
  useEffect(() => {
   if (!ownsPlaybackRef.current) return;
-  const playbackStatus = isLoading
-   ? "loading"
-   : isPaused
-     ? "paused"
-     : isSpeaking
-       ? "playing"
-       : "idle";
   store.actions.syncPlayback({
    playbackSegmentId: store.state.playbackSegmentId,
-   playbackStatus,
+   playbackStatus: isLoading
+    ? "loading"
+    : isPaused
+      ? "paused"
+      : isSpeaking
+        ? "playing"
+        : "idle",
    progress,
    rate,
    error,
   });
  }, [error, isLoading, isPaused, isSpeaking, progress, rate, store]);
-
  useEffect(
   () => () => {
    runRef.current += 1;
@@ -285,7 +273,6 @@ function ReaderTtsBridge({
   },
   [stopTts],
  );
-
  return null;
 }
 
@@ -300,8 +287,7 @@ export function useReaderRuntimeCommands(): ReaderRuntimeCommands {
 }
 
 export function useReaderRuntimeSelector<T>(selector: (state: ReaderRuntimeState) => T): T {
- const { store } = useReaderRuntimeContext();
- return useSelector(store, selector);
+ return useSelector(useReaderRuntimeContext().store, selector);
 }
 
 export function useReaderRuntimeActions() {
