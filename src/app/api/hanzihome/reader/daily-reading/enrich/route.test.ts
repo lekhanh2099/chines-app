@@ -56,6 +56,13 @@ const reading: DailyReadingV2 = {
  },
 };
 
+const evidence = {
+ id: reading.id,
+ source: reading.source,
+ article: reading.article,
+ classification: reading.classification,
+};
+
 const runtime = {
  keyId: "11111111-1111-4111-8111-111111111111",
  provider: "groq",
@@ -96,7 +103,7 @@ describe("Daily Reading V2 enrichment route", () => {
  it("rejects unauthenticated requests before resolving a provider", async () => {
   mocks.requireAuthenticatedRoute.mockResolvedValue({ authenticated: false });
 
-  const response = await POST(request({ module: "translation", reading }));
+  const response = await POST(request({ module: "translation", reading: evidence }));
 
   expect(response.status).toBe(401);
   expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
@@ -110,6 +117,13 @@ describe("Daily Reading V2 enrichment route", () => {
   expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
  });
 
+ it("rejects overbroad V2 payloads that include enrichment state", async () => {
+  const response = await POST(request({ module: "grammar", reading }));
+
+  expect(response.status).toBe(400);
+  expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
+ });
+
  it("blocks enrichment without a user key while leaving acquisition outside this route", async () => {
   mocks.resolveUserAiRuntime.mockResolvedValue({
    ok: false,
@@ -117,7 +131,7 @@ describe("Daily Reading V2 enrichment route", () => {
    reason: "no-active-key",
   });
 
-  const response = await POST(request({ module: "translation", reading }));
+  const response = await POST(request({ module: "translation", reading: evidence }));
   const body = await response.json();
 
   expect(response.status).toBe(409);
@@ -137,7 +151,7 @@ describe("Daily Reading V2 enrichment route", () => {
    reason: "vault-unavailable",
   });
 
-  const response = await POST(request({ module: "grammar", reading }));
+  const response = await POST(request({ module: "grammar", reading: evidence }));
   const body = await response.json();
 
   expect(response.status).toBe(503);
@@ -167,7 +181,7 @@ describe("Daily Reading V2 enrichment route", () => {
    generatedBy: { provider: "Groq", model: "openai/gpt-oss-20b" },
   });
 
-  const response = await POST(request({ module: "translation", reading }));
+  const response = await POST(request({ module: "translation", reading: evidence }));
   const body = await response.json();
   const serialized = JSON.stringify(body);
 
@@ -175,6 +189,9 @@ describe("Daily Reading V2 enrichment route", () => {
   expect(body).toMatchObject({ ok: true, module: "translation" });
   expect(mocks.resolveUserAiRuntime).toHaveBeenCalledWith(
    expect.objectContaining({ capability: "daily-reading-translation", userId: "user-1" }),
+  );
+  expect(mocks.generateDailyReadingV2Enrichment).toHaveBeenCalledWith(
+   expect.objectContaining({ reading: evidence, module: "translation" }),
   );
   expect(serialized).not.toContain("user-secret-key");
   expect(serialized).not.toContain("apiKey");
@@ -190,7 +207,7 @@ describe("Daily Reading V2 enrichment route", () => {
    errorDetail: "Groq đang hết quota hoặc bị giới hạn tần suất.",
   });
 
-  const response = await POST(request({ module: "questions", reading }));
+  const response = await POST(request({ module: "questions", reading: evidence }));
   const body = await response.json();
 
   expect(response.status).toBe(429);
