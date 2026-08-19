@@ -25,6 +25,7 @@ import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,
  type ContextualPronunciationGlyph,
+ type PronunciationOverride,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import { ContextualReaderText } from "../ContextualReaderText";
@@ -33,7 +34,10 @@ import type {
  ReaderSection,
  ReaderSegment,
 } from "../model/reader-document.types";
-import { useReaderRuntimeSelector } from "../runtime/ReaderRuntimeProvider";
+import {
+ useReaderRuntimeCommands,
+ useReaderRuntimeSelector,
+} from "../runtime/ReaderRuntimeProvider";
 
 export type ReaderPronunciationAnalysis = ReturnType<typeof analyzeContextualPronunciation>;
 
@@ -71,6 +75,7 @@ type ReaderDocumentContentProps = {
  renderSegment?: ReaderSurfaceRenderSegment;
  renderSection?: ReaderSurfaceRenderSection;
  analysisBySegmentId?: ReadonlyMap<string, ReaderPronunciationAnalysis>;
+ localPronunciationOverridesBySegmentId?: ReadonlyMap<string, readonly PronunciationOverride[]>;
  onSelection?: (selection: ReaderSurfaceSelection) => void;
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
@@ -82,6 +87,7 @@ export const ReaderDocumentContent = memo(function ReaderDocumentContent({
  renderSegment,
  renderSection,
  analysisBySegmentId,
+ localPronunciationOverridesBySegmentId,
  onSelection,
  onPronunciationInspect,
  setSegmentElement,
@@ -139,6 +145,7 @@ export const ReaderDocumentContent = memo(function ReaderDocumentContent({
           displayMode={displayMode}
           renderSegment={renderSegment}
           analysis={analysisBySegmentId?.get(segment.id)}
+          localPronunciationOverrides={localPronunciationOverridesBySegmentId?.get(segment.id)}
           onSelection={onSelection}
           onPronunciationInspect={onPronunciationInspect}
           setSegmentElement={setSegmentElement}
@@ -167,6 +174,7 @@ export const ReaderDocumentContent = memo(function ReaderDocumentContent({
         displayMode={displayMode}
         renderSegment={renderSegment}
         analysis={analysisBySegmentId?.get(segment.id)}
+        localPronunciationOverrides={localPronunciationOverridesBySegmentId?.get(segment.id)}
         onSelection={onSelection}
         onPronunciationInspect={onPronunciationInspect}
         setSegmentElement={setSegmentElement}
@@ -187,6 +195,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
  displayMode,
  renderSegment,
  analysis,
+ localPronunciationOverrides,
  onSelection,
  onPronunciationInspect,
  setSegmentElement,
@@ -198,6 +207,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
  displayMode: LessonDisplayMode;
  renderSegment?: ReaderSurfaceRenderSegment;
  analysis?: ReaderPronunciationAnalysis;
+ localPronunciationOverrides?: readonly PronunciationOverride[];
  onSelection?: (selection: ReaderSurfaceSelection) => void;
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
@@ -212,6 +222,7 @@ const ReaderSegmentRow = memo(function ReaderSegmentRow({
    active={active}
    displayMode={displayMode}
    analysis={analysis}
+   localPronunciationOverrides={localPronunciationOverrides}
    onPronunciationInspect={onPronunciationInspect}
   />
  );
@@ -282,6 +293,7 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
  active,
  displayMode,
  analysis: providedAnalysis,
+ localPronunciationOverrides,
  onPronunciationInspect,
 }: {
  segment: ReaderSegment;
@@ -289,21 +301,38 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
  active: boolean;
  displayMode: LessonDisplayMode;
  analysis?: ReaderPronunciationAnalysis;
+ localPronunciationOverrides?: readonly PronunciationOverride[];
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
 }) {
+ const commands = useReaderRuntimeCommands();
  const playbackProgress = useReaderRuntimeSelector((state) =>
   state.playbackSegmentId === segment.id && state.playbackStatus !== "idle" ? state.progress : -1,
  );
+ const playbackStartOffset = useReaderRuntimeSelector((state) =>
+  state.playbackSegmentId === segment.id && state.playbackStatus !== "idle"
+   ? state.playbackStartOffset
+   : 0,
+ );
  const computedAnalysis = useMemo(() => {
-  if (providedAnalysis) return providedAnalysis;
+  if (providedAnalysis && !localPronunciationOverrides?.length) return providedAnalysis;
   if (segment.zh.length > 2_000) return null;
   const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
-  return analyzeContextualPronunciation({ text: segment.zh, sourcePinyin });
- }, [providedAnalysis, segment.pinyin, segment.zh]);
+  return analyzeContextualPronunciation({
+   text: segment.zh,
+   sourcePinyin,
+   overrides: localPronunciationOverrides ?? [],
+  });
+ }, [localPronunciationOverrides, providedAnalysis, segment.pinyin, segment.zh]);
  const characterCount = Array.from(segment.zh).length;
+ const activeCharacterCount = Math.max(0, characterCount - playbackStartOffset);
  const activeCharacterIndex =
   playbackProgress >= 0
-   ? getActiveCharacterIndex(characterCount, 0, characterCount, playbackProgress)
+   ? getActiveCharacterIndex(
+      characterCount,
+      playbackStartOffset,
+      activeCharacterCount,
+      playbackProgress,
+     )
    : -1;
  const contextualPinyin = useMemo(
   () => (computedAnalysis ? formatContextualSpokenPinyin(computedAnalysis) : segment.pinyin),
@@ -346,6 +375,7 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
        showPinyin={displayMode.showPinyin}
        pinyinPresentation="ruby"
        sourcePinyin={segment.pinyin}
+       onGlyphClick={(start) => commands.playFromCharacter(index, start)}
        onGlyphInspect={
         onPronunciationInspect
          ? (glyph, rect) =>
