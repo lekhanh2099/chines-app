@@ -36,12 +36,17 @@ Make Daily Reading an article-acquisition system with optional AI enrichment, an
 - [ ] Keep permanent architecture docs synchronized as contracts become final.
 
 ### Scope 1 — Additive Daily Reading V2 foundation
-- [ ] Add V2 article/enrichment/settings/run schemas without breaking V1 consumers.
-- [ ] Define provenance: `source-captured` vs `legacy-adapted`.
-- [ ] Remove pinyin from the V2 persisted contract.
-- [ ] Add pure V1 -> V2 migration helpers.
-- [ ] Add deterministic migration/schema tests.
-- [ ] No UI, scheduler or route behavior change in this scope.
+
+Status: implementation landed additively; execution verification is still pending because the current agent runtime cannot clone/install the repository. No production behavior has been switched to V2 yet.
+
+- [x] Add V2 article/enrichment/capture-run/enrichment-run schemas without breaking V1 consumers.
+- [x] Define provenance: `source-captured` vs `legacy-adapted`.
+- [x] Remove pinyin from the V2 persisted contract.
+- [x] Add pure V1 -> V2 item/ledger migration helpers.
+- [x] Add deterministic migration/schema tests, including explicit no-pinyin persistence coverage.
+- [x] Preserve V1 run history separately instead of relabeling it as V2 capture history.
+- [x] No UI, scheduler, storage key or route behavior change in this scope.
+- [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 2 — Collection preferences and resolved policy
 - [ ] Add user-facing collection settings: schedule time, freshness window, topics, source selection, length preference, diversity/repeat behavior, fallback behavior, target level, auto enrichment.
