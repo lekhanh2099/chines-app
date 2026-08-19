@@ -18,6 +18,7 @@
    "todayLabel": "Hôm nay",
    "todayRunning": "Đang tìm bài",
    "todayReady": "Bài hôm nay đã sẵn sàng",
+   "todayFailed": "Lần tìm hôm nay thất bại",
    "manualOnly": "Chỉ tìm thủ công",
    "todayDue": "Đã tới giờ, đang chờ tác vụ",
    "todayWaiting": "Chưa tới giờ tìm bài",
