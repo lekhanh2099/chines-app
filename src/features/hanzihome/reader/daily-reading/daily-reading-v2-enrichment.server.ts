@@ -22,6 +22,7 @@ import {
 } from "./daily-reading-v2-enrichment-provider.server";
 
 const translationChunkMaximumCharacters = 6_000;
+const translationChunkMaximumParagraphs = 20;
 const maximumPromptCharacters = 48_000;
 const maximumRepairAttempts = 2;
 
@@ -192,7 +193,8 @@ function translationChunks(reading: DailyReadingV2) {
  for (const paragraph of reading.article.paragraphs) {
   if (
    current.length > 0 &&
-   currentCharacters + paragraph.zh.length > translationChunkMaximumCharacters
+   (current.length >= translationChunkMaximumParagraphs ||
+    currentCharacters + paragraph.zh.length > translationChunkMaximumCharacters)
   ) {
    groups.push(current);
    current = [];
@@ -349,7 +351,10 @@ function validateQuestions(reading: DailyReadingV2, draft: QuestionsDraft) {
  });
 }
 
-function learningPrompt(reading: DailyReadingV2, module: Exclude<DailyReadingV2EnrichmentModule, "translation">) {
+function learningPrompt(
+ reading: DailyReadingV2,
+ module: Exclude<DailyReadingV2EnrichmentModule, "translation">,
+) {
  const common = [
   `Target learner level: ${targetLevelLabel(reading)}.`,
   "Use only the ORIGINAL Chinese article below as evidence.",
