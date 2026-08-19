@@ -5,7 +5,7 @@ import { readerFeatureStateSchema } from "./reader-state.schemas";
 
 export type ReaderFeatureState = z.output<typeof readerFeatureStateSchema>;
 
-/** @deprecated Use ReaderFeatureState. Runtime playback/navigation now lives in ReaderRuntimeProvider. */
+// Compatibility for DailyReadingWorkspace; playback/navigation no longer belong to this type.
 export type ReaderSessionState = ReaderFeatureState;
 
 type ReaderAutosaveResult = Pick<ReaderProgressRow, "revision"> | null;
