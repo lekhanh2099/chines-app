@@ -145,25 +145,28 @@ export async function fetchHanziHomeAggregateItems({
  return payload.items;
 }
 
-export async function fetchHanziHomeLearningState(): Promise<UserLearningState> {
+export async function fetchHanziHomeLearningState(): Promise<
+ z.output<typeof learningStateApiResponseSchema>
+> {
  const payload = await fetchJson("/api/learning-state", learningStateApiResponseSchema);
 
- return payload.state;
+ return payload;
 }
 
 export async function saveHanziHomeLearningState(
  state: UserLearningState,
-): Promise<UserLearningState> {
+ expectedUpdatedAt: string | null,
+): Promise<z.output<typeof learningStateApiResponseSchema>> {
  const response = await fetch("/api/learning-state", {
   method: "PUT",
   headers: {
    Accept: "application/json",
    "Content-Type": "application/json",
   },
-  body: JSON.stringify(state),
+  body: JSON.stringify({ state, expectedUpdatedAt }),
  });
 
  const payload = await parseJsonResponse(response, learningStateApiResponseSchema);
 
- return payload.state;
+ return payload;
 }

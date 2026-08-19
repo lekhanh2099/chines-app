@@ -25,6 +25,7 @@ async function loadViMessages() {
   aiLookupSettings,
   aiUsage,
   apiKeySetup,
+  learningLoop,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -49,6 +50,7 @@ async function loadViMessages() {
   import("../../messages/vi/ai-lookup-settings.json"),
   import("../../messages/vi/ai-usage.json"),
   import("../../messages/vi/api-key-setup.json"),
+  import("../../messages/vi/learning-loop.json"),
  ]);
 
  return {
@@ -70,6 +72,7 @@ async function loadViMessages() {
   AiLookupSettings: aiLookupSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
+  LearningLoop: learningLoop.default,
  };
 }
 
@@ -100,6 +103,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   aiLookupSettings,
   aiUsage,
   apiKeySetup,
+  learningLoop,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -124,6 +128,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/ai-lookup-settings.json"),
   import("../../messages/en/ai-usage.json"),
   import("../../messages/en/api-key-setup.json"),
+  import("../../messages/en/learning-loop.json"),
  ]);
 
  return {
@@ -145,6 +150,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   AiLookupSettings: aiLookupSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
+  LearningLoop: learningLoop.default,
  };
 }
 
@@ -173,6 +179,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   aiLookupSettings,
   aiUsage,
   apiKeySetup,
+  learningLoop,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -197,6 +204,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/ai-lookup-settings.json"),
   import("../../messages/zh-CN/ai-usage.json"),
   import("../../messages/zh-CN/api-key-setup.json"),
+  import("../../messages/zh-CN/learning-loop.json"),
  ]);
 
  return {
@@ -218,6 +226,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   AiLookupSettings: aiLookupSettings.default,
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
+  LearningLoop: learningLoop.default,
  };
 }
 

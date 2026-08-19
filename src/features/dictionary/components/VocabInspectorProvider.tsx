@@ -10,8 +10,9 @@ import {
  BasePopoverPositioner,
 } from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
-import { VocabDetailDrawer } from "@/components/vocabulary/VocabDetailDrawer";
+import { VocabDetailDrawer } from "@/features/dictionary/components/VocabDetailDrawer";
 import { containsChinese } from "@/lib/chinese-utils";
+import { useInspectorLookup } from "@/features/dictionary/hooks/useInspectorLookup";
 import { logger } from "@/lib/logger";
 import { createClient } from "@/lib/supabase/client";
 import { getClientSessionUser } from "@/lib/supabase/client-session";
@@ -101,7 +102,7 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
     const rect = selection.getRangeAt(0).getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) return;
 
-    void openInspector(text, { anchorRect: rect });
+    openInspector(text, { anchorRect: rect });
    }, 10);
   };
 
@@ -150,9 +151,10 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
 }
 
 function InspectorCard({ onClose }: InspectorCardProps) {
- const vocabData = useSelector(inspectorStore, (state) => state.vocabData);
- const isLoading = useSelector(inspectorStore, (state) => state.isLoading);
  const selectedText = useSelector(inspectorStore, (state) => state.selectedText);
+ const lessonId = useSelector(inspectorStore, (state) => state.lessonId);
+ const isOpen = useSelector(inspectorStore, (state) => state.isOpen);
+ const { vocabData, isLoading } = useInspectorLookup(selectedText, lessonId, isOpen);
  const supabaseRef = useRef(createClient());
  const supabase = supabaseRef.current;
 

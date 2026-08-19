@@ -2,13 +2,11 @@ import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
- appendLearningEvent,
  listLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
  requireAuthenticatedRoute,
 } = vi.hoisted(() => ({
- appendLearningEvent: vi.fn(),
  listLearningLoopItems: vi.fn(),
  rateLearningLoopItem: vi.fn(),
  saveLearningLoopItem: vi.fn(),
@@ -17,7 +15,6 @@ const {
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/features/hanzihome/reader/reader-state-repository", () => ({
- appendLearningEvent,
  listLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
@@ -34,7 +31,6 @@ import { GET, POST } from "./route";
 
 describe("/api/hanzihome/learning-loop", () => {
  beforeEach(() => {
-  appendLearningEvent.mockReset();
   listLearningLoopItems.mockReset();
   rateLearningLoopItem.mockReset();
   saveLearningLoopItem.mockReset();
@@ -80,6 +76,5 @@ describe("/api/hanzihome/learning-loop", () => {
   expect(response.status).toBe(400);
   expect(rateLearningLoopItem).not.toHaveBeenCalled();
   expect(saveLearningLoopItem).not.toHaveBeenCalled();
-  expect(appendLearningEvent).not.toHaveBeenCalled();
  });
 });

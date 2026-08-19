@@ -1,0 +1,32 @@
+{
+ "title": "Review queue",
+ "description": "Due items from practice mistakes, shadowing, vocabulary, and bookmarks. This is a review schedule, not course progress.",
+ "loading": "Loading the review queue…",
+ "loadError": "Could not load the review queue.",
+ "emptyTitle": "Nothing is due today",
+ "emptyDescription": "Practice mistakes and items you add will appear here when they are due.",
+ "checkAgain": "Check again",
+ "dueCount": "{count} due",
+ "correctStreak": "Correct streak: {count}",
+ "listen": "Listen",
+ "stop": "Stop",
+ "referenceMeaning": "Reference meaning",
+ "ratingHint": "Rate your recall to schedule the next review.",
+ "ratings": {
+  "again": "Review again",
+  "hard": "Hard",
+  "good": "Remembered"
+ },
+ "kinds": {
+  "dictation_mistake": "Dictation mistake",
+  "vocabulary": "Vocabulary",
+  "reading_bookmark": "Reader bookmark",
+  "shadowing": "Shadowing",
+  "minimal_contrast": "Sound contrast",
+  "error_correction": "Error correction",
+  "sentence_transformation": "Sentence transformation",
+  "guided_production": "Guided production",
+  "timed_production": "Timed response",
+  "delayed_transfer": "Delayed transfer"
+ }
+}

@@ -3,47 +3,32 @@
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { RotateCcw, Volume2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Typography } from "@/components/ui/typography";
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 import { fetchLearningLoopItems, rateLearningLoopItem } from "./learning-loop-api";
-import type { LearningLoopItem } from "./learning-loop.schemas";
-
-const kindLabels: Record<LearningLoopItem["kind"], string> = {
- dictation_mistake: "Dictation",
- vocabulary: "Từ vựng",
- reading_bookmark: "Reader",
- shadowing: "Shadowing",
- minimal_contrast: "Minimal contrast",
- error_correction: "Sửa lỗi",
- sentence_transformation: "Biến đổi câu",
- guided_production: "Tạo câu",
- timed_production: "Phản xạ",
- delayed_transfer: "Transfer",
-};
 
 export function LearningLoopWorkspace() {
+ const t = useTranslations("LearningLoop");
  const tts = useSharedMandarinTts();
  const queryClient = useQueryClient();
- const [answer, setAnswer] = useState("");
  const [error, setError] = useState<string | null>(null);
  const query = useQuery({
-  queryKey: [...hanzihomeQueryKeys.root, "learning-loop"],
+  queryKey: hanzihomeQueryKeys.learningLoop,
   queryFn: fetchLearningLoopItems,
   staleTime: 0,
  });
  const rateMutation = useMutation({
   mutationFn: rateLearningLoopItem,
   onSuccess: async () => {
-   setAnswer("");
    setError(null);
-   await queryClient.invalidateQueries({ queryKey: [...hanzihomeQueryKeys.root, "learning-loop"] });
+   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.learningLoop });
   },
   onError: (caught: Error) => setError(caught.message),
  });
@@ -53,17 +38,26 @@ export function LearningLoopWorkspace() {
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Đang tải Learning Loop…
+     {t("loading")}
     </Typography>
    </Card>
   );
  }
  if (query.isError) {
   return (
-   <Card variant="subtle" padding="lg">
+   <Card variant="subtle" padding="lg" className="grid gap-3">
     <Typography variant="bodySmall" tone="danger">
-     {query.error.message}
+     {t("loadError")}
     </Typography>
+    <Button
+     type="button"
+     variant="outline"
+     className="justify-self-start"
+     onClick={() => void query.refetch()}
+    >
+     <RotateCcw data-icon="inline-start" />
+     {t("checkAgain")}
+    </Button>
    </Card>
   );
  }
@@ -71,14 +65,22 @@ export function LearningLoopWorkspace() {
   return (
    <Card variant="section" padding="lg" className="grid gap-2">
     <Typography as="h1" variant="pageTitle" weight="black">
-     Learning Loop
+     {t("title")}
     </Typography>
     <Typography variant="body" tone="muted">
-     Chưa có item đến hạn. Các lỗi và bookmark mới sẽ xuất hiện ở đây.
+     {t("emptyTitle")}
     </Typography>
-    <Button type="button" variant="outline" onClick={() => void query.refetch()}>
+    <Typography variant="bodySmall" tone="muted">
+     {t("emptyDescription")}
+    </Typography>
+    <Button
+     type="button"
+     variant="outline"
+     className="justify-self-start"
+     onClick={() => void query.refetch()}
+    >
      <RotateCcw data-icon="inline-start" />
-     Kiểm tra lại
+     {t("checkAgain")}
     </Button>
    </Card>
   );
@@ -88,16 +90,19 @@ export function LearningLoopWorkspace() {
   <div className="grid min-w-0 gap-5">
    <div className="grid gap-1">
     <Typography as="h1" variant="pageTitle" weight="black">
-     Learning Loop
+     {t("title")}
     </Typography>
     <Typography as="p" variant="body" tone="muted">
-     Review lỗi, shadowing và từ vựng theo lịch học của HanziHome.
+     {t("description")}
     </Typography>
    </div>
    <Card variant="section" padding="lg" className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
-      <Badge variant="purple">{kindLabels[item.kind] ?? item.kind}</Badge>
+      <div className="flex flex-wrap items-center gap-2">
+       <Badge variant="purple">{t(`kinds.${item.kind}`)}</Badge>
+       <Badge variant="default">{t("dueCount", { count: query.data.length })}</Badge>
+      </div>
       <Typography as="h2" variant="sectionTitle" weight="black" lang="zh-CN">
        {item.prompt_zh}
       </Typography>
@@ -106,7 +111,7 @@ export function LearningLoopWorkspace() {
       </Typography>
      </div>
      <Typography variant="caption" tone="muted">
-      Chuỗi đúng: {item.correct_streak}
+      {t("correctStreak", { count: item.correct_streak })}
      </Typography>
     </div>
     {item.pinyin ? (
@@ -122,7 +127,7 @@ export function LearningLoopWorkspace() {
       onClick={() => tts.speakSequence([item.prompt_zh])}
      >
       <Volume2 data-icon="inline-start" />
-      Nghe
+      {t("listen")}
      </Button>
      <Button
       type="button"
@@ -130,24 +135,20 @@ export function LearningLoopWorkspace() {
       disabled={!tts.isSpeaking && !tts.isLoading}
       onClick={tts.stop}
      >
-      Dừng
+      {t("stop")}
      </Button>
     </div>
-    <label className="grid gap-2">
-     <Typography as="span" variant="label" weight="bold">
-      Câu trả lời của bạn
-     </Typography>
-     <Input
-      value={answer}
-      onChange={(event) => setAnswer(event.target.value)}
-      placeholder="Nhập câu trả lời hoặc ghi nhớ…"
-     />
-    </label>
     {item.meaning_vi ? (
-     <Typography variant="caption" tone="muted">
-      Nghĩa tham chiếu: {item.meaning_vi}
-     </Typography>
+     <div className="grid gap-1 rounded-lg border border-border-default bg-bg-subtle px-3 py-2">
+      <Typography variant="caption" tone="muted" weight="bold">
+       {t("referenceMeaning")}
+      </Typography>
+      <Typography variant="bodySmall">{item.meaning_vi}</Typography>
+     </div>
     ) : null}
+    <Typography variant="caption" tone="muted">
+     {t("ratingHint")}
+    </Typography>
     <div className="flex flex-wrap gap-2">
      <Button
       type="button"
@@ -157,7 +158,7 @@ export function LearningLoopWorkspace() {
        rateMutation.mutate({ itemId: item.id, rating: "again", expectedRevision: item.revision })
       }
      >
-      Lại
+      {t("ratings.again")}
      </Button>
      <Button
       type="button"
@@ -167,7 +168,7 @@ export function LearningLoopWorkspace() {
        rateMutation.mutate({ itemId: item.id, rating: "hard", expectedRevision: item.revision })
       }
      >
-      Khó
+      {t("ratings.hard")}
      </Button>
      <Button
       type="button"
@@ -176,7 +177,7 @@ export function LearningLoopWorkspace() {
        rateMutation.mutate({ itemId: item.id, rating: "good", expectedRevision: item.revision })
       }
      >
-      Tốt
+      {t("ratings.good")}
      </Button>
     </div>
     {error ? (

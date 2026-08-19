@@ -23,10 +23,7 @@ const readerStateResponseSchema = z.strictObject({
 
 const progressPayloadSchema = z.strictObject({
  documentId: z.string().min(1),
- showPinyin: z.boolean(),
- showMeaning: z.boolean(),
  completed: z.boolean(),
- summaryText: z.string(),
  answers: readerAnswersSchema,
  expectedRevision: z.number().int().nonnegative(),
 });

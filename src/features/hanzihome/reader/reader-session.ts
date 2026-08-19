@@ -37,13 +37,7 @@ export function readerFeatureStateEqual(
  left: ReaderFeatureState,
  right: ReaderFeatureState,
 ): boolean {
- if (
-  left.showPinyin !== right.showPinyin ||
-  left.showMeaning !== right.showMeaning ||
-  left.completed !== right.completed ||
-  left.summaryText !== right.summaryText
- )
-  return false;
+ if (left.completed !== right.completed) return false;
 
  const leftAnswerIds = Object.keys(left.answers);
  const rightAnswerIds = Object.keys(right.answers);

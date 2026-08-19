@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
 import { fetchReaderDataQualityReport } from "./reader-data-quality-api";
 
@@ -30,7 +31,7 @@ const countKeys: ReadonlyArray<CountKey> = [
 export function ReaderDataQualityWorkspace() {
  const t = useTranslations("ReaderDataQuality");
  const query = useQuery({
-  queryKey: ["hanzihome", "reader", "data-quality"],
+  queryKey: hanzihomeQueryKeys.readerDataQuality,
   queryFn: fetchReaderDataQualityReport,
   staleTime: 0,
  });

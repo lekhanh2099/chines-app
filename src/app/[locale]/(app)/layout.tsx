@@ -4,6 +4,7 @@ import { MobileBottomNavigation, Sidebar } from "@/components/layout/Sidebar";
 import { DailyReadingSchedulerAgent } from "@/features/hanzihome/reader/daily-reading/DailyReadingSchedulerAgent";
 import { HanziHomeGlobalSearchBridge } from "@/features/hanzihome/search/HanziHomeGlobalSearchBridge";
 import { HanziTypographyPreferenceBridge } from "@/features/hanzihome/typography/HanziTypographyPreferenceBridge";
+import { LearningStateSyncAgent } from "@/features/hanzihome/hooks/useLearningState";
 import { connection } from "next/server";
 
 export default async function AppLayout({
@@ -15,6 +16,7 @@ export default async function AppLayout({
 
  return (
   <div className="app-shell flex h-dvh w-full min-w-0 items-stretch overflow-hidden bg-background text-foreground">
+   <LearningStateSyncAgent />
    <HanziTypographyPreferenceBridge />
    <DailyReadingSchedulerAgent />
    <Sidebar />

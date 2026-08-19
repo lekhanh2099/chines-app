@@ -5,7 +5,7 @@ import { memo, useMemo, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import {
  PinyinText,
  ReaderHanziText,

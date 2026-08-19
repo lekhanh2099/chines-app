@@ -5,13 +5,10 @@ import { JsonObjectSchema } from "@/types/json";
 import { readerAnswersSchema } from "./reader.schemas";
 import { learningLoopItemKindSchema } from "../learning-loop/learning-loop.schemas";
 
-export const readerProgressRowSchema = z.strictObject({
+export const readerProgressRowSchema = z.object({
  user_id: z.uuid(),
  document_id: z.string().min(1),
- show_pinyin: z.boolean(),
- show_meaning: z.boolean(),
  completed: z.boolean(),
- summary_text: z.string(),
  answers: readerAnswersSchema,
  revision: z.number().int().nonnegative(),
  created_at: z.iso.datetime({ offset: true }),
@@ -36,11 +33,8 @@ export const dailyReadingStateRowSchema = z.strictObject({
  updated_at: z.iso.datetime({ offset: true }),
 });
 
-export const readerFeatureStateSchema = z.strictObject({
- showPinyin: z.boolean(),
- showMeaning: z.boolean(),
+export const readerFeatureStateSchema = z.object({
  completed: z.boolean(),
- summaryText: z.string(),
  answers: readerAnswersSchema,
 });
 
@@ -89,20 +83,8 @@ export const learningLoopItemRowSchema = z.strictObject({
  updated_at: z.iso.datetime({ offset: true }),
 });
 
-export const learningEventRowSchema = z.strictObject({
- id: z.uuid(),
- user_id: z.uuid(),
- kind: z.enum(["encountered", "inspected", "review-added"]),
- source_id: z.string().min(1),
- source_href: z.string().min(1),
- term: z.string().min(1).max(48),
- context_text: z.string().max(500),
- created_at: z.iso.datetime({ offset: true }),
-});
-
 export type ReaderProgressRow = z.output<typeof readerProgressRowSchema>;
 export type PersonalLearningStateRow = z.output<typeof personalLearningStateRowSchema>;
 export type DailyReadingStateRow = z.output<typeof dailyReadingStateRowSchema>;
 export type PracticeAttemptRow = z.output<typeof practiceAttemptRowSchema>;
 export type LearningLoopItemRow = z.output<typeof learningLoopItemRowSchema>;
-export type LearningEventRow = z.output<typeof learningEventRowSchema>;

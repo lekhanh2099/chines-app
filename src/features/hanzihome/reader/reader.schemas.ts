@@ -471,19 +471,6 @@ export function parseReaderExerciseItemRow(value: z.input<typeof readerExerciseI
  return parsedReaderExerciseItemRowSchema.parse(value);
 }
 
-export const readerProgressRowSchema = z.strictObject({
- user_id: z.uuid(),
- document_id: z.string().min(1),
- show_pinyin: z.boolean(),
- show_meaning: z.boolean(),
- completed: z.boolean(),
- summary_text: z.string(),
- answers: readerAnswersSchema,
- revision: z.number().int().nonnegative(),
- created_at: z.iso.datetime({ offset: true }),
- updated_at: z.iso.datetime({ offset: true }),
-});
-
 export const readerAnnotationRowSchema = z
  .strictObject({
   id: z.uuid(),
@@ -587,6 +574,5 @@ export type ReaderPdfAsset = {
  printedPage: number;
  imageSrc: string;
 };
-export type ReaderProgressRow = z.output<typeof readerProgressRowSchema>;
 export type ReaderAnnotationRow = z.output<typeof readerAnnotationRowSchema>;
 export type ReaderPronunciationOverrideRow = z.output<typeof readerPronunciationOverrideRowSchema>;

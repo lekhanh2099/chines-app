@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { inspectUnsafeTypeConstructs } from "./check-source-standards.mjs";
+import {
+ inspectArchitectureBoundaries,
+ inspectUnsafeTypeConstructs,
+} from "./check-source-standards.mjs";
 
 const assertionFile = "src/example.ts";
 const assertionKey = `${assertionFile}::as::payload::string`;
@@ -85,5 +88,53 @@ describe("source standards unsafe-type guard", () => {
     assertionExceptionBudget: new Map(),
    }),
   ).toEqual([]);
+ });
+});
+
+describe("source architecture ownership guard", () => {
+ it("rejects shared components that import feature implementations", () => {
+  expect(
+   inspectArchitectureBoundaries({
+    sources: [
+     {
+      file: "src/components/example.tsx",
+      source: 'import { Example } from "@/features/example/Example";',
+     },
+    ],
+   }),
+  ).toEqual([expect.stringContaining("shared component layer")]);
+ });
+
+ it("rejects HanziHome query keys outside their owner", () => {
+  expect(
+   inspectArchitectureBoundaries({
+    sources: [
+     {
+      file: "src/features/hanzihome/example.ts",
+      source: 'useQuery({ queryKey: ["hanzihome", "example"] });',
+     },
+    ],
+   }),
+  ).toEqual([expect.stringContaining("outside query-keys.ts")]);
+ });
+
+ it("rejects display preference mirrors in feature and Reader state", () => {
+  expect(
+   inspectArchitectureBoundaries({
+    sources: [
+     {
+      file: "src/features/hanzihome/context/hanzihomeFeatureStore.ts",
+      source: "const lessonTextDisplayMode = true;",
+     },
+     {
+      file: "src/features/hanzihome/reader/reader-state.schemas.ts",
+      source: "const schema = { showPinyin: true };",
+     },
+    ],
+   }),
+  ).toEqual([
+   expect.stringContaining("mirrors the learning-state"),
+   expect.stringContaining("persists display preferences"),
+  ]);
  });
 });

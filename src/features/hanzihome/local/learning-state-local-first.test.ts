@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
+import type { UserLearningState } from "@/features/hanzihome/types";
 import type { PendingLearningStateMutation } from "./learning-state-local-store";
 
 const store = vi.hoisted(() => ({
@@ -9,6 +10,7 @@ const store = vi.hoisted(() => ({
  list: vi.fn(),
  markFailed: vi.fn(),
  markSyncing: vi.fn(),
+ replace: vi.fn(),
  readLocal: vi.fn(),
  readPending: vi.fn(),
  writeLocal: vi.fn(),
@@ -17,6 +19,11 @@ const store = vi.hoisted(() => ({
 const api = vi.hoisted(() => ({
  fetch: vi.fn(),
  save: vi.fn(),
+ ApiError: class extends Error {
+  constructor(readonly status: number) {
+   super("request failed");
+  }
+ },
 }));
 
 vi.mock("./learning-state-local-store", () => ({
@@ -25,6 +32,7 @@ vi.mock("./learning-state-local-store", () => ({
  listPendingLearningStateMutations: store.list,
  markLearningStateMutationFailed: store.markFailed,
  markLearningStateMutationSyncing: store.markSyncing,
+ replacePendingLearningStateMutation: store.replace,
  readLocalLearningState: store.readLocal,
  readPendingLearningStateMutation: store.readPending,
  writeLocalLearningState: store.writeLocal,
@@ -33,9 +41,11 @@ vi.mock("./learning-state-local-store", () => ({
 vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => ({
  fetchHanziHomeLearningState: api.fetch,
  saveHanziHomeLearningState: api.save,
+ HanziHomeApiError: api.ApiError,
 }));
 
 import {
+ mergeLearningStateAfterConflict,
  refreshLearningStateFromRemoteIfClean,
  syncPendingLearningStateMutations,
 } from "./learning-state-local-first";
@@ -45,6 +55,8 @@ const pendingMutation: PendingLearningStateMutation = {
  type: "learning_state.replace",
  status: "pending",
  payload: emptyLearningState,
+ baseState: emptyLearningState,
+ expectedUpdatedAt: null,
  createdAt: "2026-07-14T00:00:00.000Z",
  updatedAt: "2026-07-14T00:00:01.000Z",
  attemptCount: 0,
@@ -65,8 +77,17 @@ describe("learning-state local-first sync", () => {
   api.save.mockReset();
   store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValue([]);
   store.markSyncing.mockResolvedValue(pendingMutation);
+  store.replace.mockImplementation(({ mutation, baseState, state, expectedUpdatedAt }) =>
+   Promise.resolve({
+    ...mutation,
+    payload: state,
+    baseState,
+    expectedUpdatedAt,
+    updatedAt: "2026-07-14T00:00:01.500Z",
+   }),
+  );
   store.readPending.mockResolvedValue(pendingMutation);
-  api.save.mockResolvedValue(emptyLearningState);
+  api.save.mockResolvedValue({ state: emptyLearningState, updatedAt: "2026-07-14T00:00:02.000Z" });
  });
 
  afterEach(() => {
@@ -85,7 +106,7 @@ describe("learning-state local-first sync", () => {
 
  it("deduplicates concurrent clean-state refreshes", async () => {
   store.readPending.mockResolvedValue(null);
-  api.fetch.mockResolvedValue(emptyLearningState);
+  api.fetch.mockResolvedValue({ state: emptyLearningState, updatedAt: null });
 
   const [first, second] = await Promise.all([
    refreshLearningStateFromRemoteIfClean(),
@@ -115,9 +136,11 @@ describe("learning-state local-first sync", () => {
  it("clears the queue only after the matching mutation is saved", async () => {
   const result = await syncPendingLearningStateMutations();
 
-  expect(api.save).toHaveBeenCalledWith(emptyLearningState);
+  expect(api.save).toHaveBeenCalledWith(emptyLearningState, null);
   expect(store.writeLocal).toHaveBeenCalledWith({
    state: emptyLearningState,
+   lastSyncedState: emptyLearningState,
+   remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
    lastSyncedAt: expect.any(String),
   });
   expect(store.clear).toHaveBeenCalledOnce();
@@ -157,5 +180,67 @@ describe("learning-state local-first sync", () => {
    pendingCount: 1,
    error: "network down",
   });
+ });
+
+ it("rebases local changes over a newer remote state after a conflict", async () => {
+  const localState: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, lastCourseId: "local-course" },
+  };
+  const remoteState: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, density: "compact" },
+  };
+  const localMutation = { ...pendingMutation, payload: localState };
+  const rebasedMutation = {
+   ...localMutation,
+   payload: {
+    ...remoteState,
+    settings: { ...remoteState.settings, lastCourseId: "local-course" },
+   },
+   baseState: remoteState,
+   expectedUpdatedAt: "2026-07-14T00:00:02.000Z",
+   updatedAt: "2026-07-14T00:00:01.500Z",
+  };
+  store.list.mockReset();
+  store.list.mockResolvedValueOnce([localMutation]).mockResolvedValue([]);
+  store.markSyncing.mockResolvedValue(localMutation);
+  store.replace.mockResolvedValue(rebasedMutation);
+  store.readPending.mockResolvedValue(rebasedMutation);
+  api.save.mockRejectedValueOnce(new api.ApiError(409)).mockResolvedValueOnce({
+   state: rebasedMutation.payload,
+   updatedAt: "2026-07-14T00:00:03.000Z",
+  });
+  api.fetch.mockResolvedValue({
+   state: remoteState,
+   updatedAt: "2026-07-14T00:00:02.000Z",
+  });
+
+  const result = await syncPendingLearningStateMutations();
+
+  expect(store.replace).toHaveBeenCalledWith({
+   mutation: localMutation,
+   baseState: remoteState,
+   state: rebasedMutation.payload,
+   expectedUpdatedAt: "2026-07-14T00:00:02.000Z",
+  });
+  expect(api.save).toHaveBeenLastCalledWith(rebasedMutation.payload, "2026-07-14T00:00:02.000Z");
+  expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
+ });
+
+ it("keeps unrelated remote fields while applying local field changes", () => {
+  const local: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, lastLessonId: "local-lesson" },
+  };
+  const remote: UserLearningState = {
+   ...emptyLearningState,
+   settings: { ...emptyLearningState.settings, density: "compact" },
+  };
+
+  const merged = mergeLearningStateAfterConflict({ base: emptyLearningState, local, remote });
+
+  expect(merged.settings.lastLessonId).toBe("local-lesson");
+  expect(merged.settings.density).toBe("compact");
  });
 });

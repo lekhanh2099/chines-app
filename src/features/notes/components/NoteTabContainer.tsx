@@ -13,7 +13,7 @@ import {
  AppHeaderBreadcrumbLink,
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/app-header-breadcrumb";
-import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
+import { NoteEditorPanel } from "@/features/notes/components/NoteEditorPanel";
 import { NoteEditorSkeleton } from "@/components/notes/NoteEditorSkeleton";
 import { NoteTabBar } from "@/components/notes/NoteTabBar";
 import {

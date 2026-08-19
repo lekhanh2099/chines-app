@@ -34,6 +34,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
 import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { recordAiUsageEvent } from "@/lib/ai-usage.client";
 
 import {
@@ -135,7 +136,7 @@ export function AiConversationWorkspace() {
  });
 
  const runtimeHealthQuery = useQuery({
-  queryKey: ["hanzihome", "ai-conversation", "runtime-health", runtimeKeyId],
+  queryKey: hanzihomeQueryKeys.aiConversationRuntimeHealth(runtimeKeyId),
   queryFn: ({ signal }) =>
    fetchAiConversationRuntimeHealth({
     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),

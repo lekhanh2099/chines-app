@@ -98,12 +98,12 @@ function ReaderResumePanel() {
  const t = useTranslations("Reader.home.resume");
  const supabase = useMemo(() => createClient(), []);
  const sessionQuery = useQuery({
-  queryKey: ["hanzihome", "reader-home-session-user"],
+  queryKey: hanzihomeQueryKeys.readerSessionUser,
   queryFn: () => getClientSessionUser(supabase),
   staleTime: 60_000,
  });
  const learningLoopQuery = useQuery({
-  queryKey: [...hanzihomeQueryKeys.root, "learning-loop"],
+  queryKey: hanzihomeQueryKeys.learningLoop,
   queryFn: fetchLearningLoopItems,
   enabled: sessionQuery.data !== null && sessionQuery.data !== undefined,
   staleTime: 30_000,

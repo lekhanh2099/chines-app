@@ -236,4 +236,7 @@ export const lessonVocabularyApiResponseSchema = z.object({
 export const aggregateApiResponseSchema = z.object({
  items: z.array(z.union([aggregateVocabItemSchema, aggregateGrammarItemSchema])),
 });
-export const learningStateApiResponseSchema = z.object({ state: userLearningStateSchema });
+export const learningStateApiResponseSchema = z.strictObject({
+ state: userLearningStateSchema,
+ updatedAt: z.string().nullable(),
+});

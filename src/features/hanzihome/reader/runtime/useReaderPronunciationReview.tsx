@@ -3,7 +3,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useCallback, useMemo, useState } from "react";
 
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfacePronunciationTarget } from "../components/ReaderSurface";
 import {

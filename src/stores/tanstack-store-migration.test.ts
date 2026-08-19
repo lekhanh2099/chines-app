@@ -55,9 +55,7 @@ describe("TanStack Store migration", () => {
    isOpen: false,
    anchorRect: null,
    selectedText: "",
-   vocabData: null,
-   isLoading: false,
-   recentLookups: [],
+   lessonId: "",
   }));
  });
 
@@ -172,70 +170,20 @@ describe("TanStack Store migration", () => {
   ).toBe(true);
  });
 
- it("ignores malformed inspector lookup storage instead of exposing raw JSON", () => {
-  localStorage.setItem("recent-lookups", JSON.stringify([{ hanzi: "你好" }]));
-
-  inspectorStore.actions.loadRecentLookups();
-
-  expect(inspectorStore.get().recentLookups).toEqual([]);
- });
-
- it("keeps inspector request state observable and cancellable", async () => {
-  vi.stubGlobal(
-   "fetch",
-   vi.fn(
-    (_input: Parameters<typeof fetch>[0], init?: RequestInit) =>
-     new Promise<Response>((_resolve, reject) => {
-      init?.signal?.addEventListener("abort", () => {
-       reject(new DOMException("Aborted", "AbortError"));
-      });
-     }),
-   ),
-  );
-
-  const pendingLookup = inspectorStore.actions.openInspector("你好");
+ it("keeps inspector state limited to the active selection", () => {
+  inspectorStore.actions.openInspector("你好", { lessonId: "lesson-1" });
   expect(inspectorStore.get()).toMatchObject({
    isOpen: true,
    selectedText: "你好",
-   isLoading: true,
+   lessonId: "lesson-1",
   });
 
   inspectorStore.actions.closeInspector();
-  expect(inspectorStore.get()).toMatchObject({
+  expect(inspectorStore.get()).toEqual({
    isOpen: false,
+   anchorRect: null,
    selectedText: "",
-   isLoading: false,
+   lessonId: "",
   });
-
-  await pendingLookup;
- });
-
- it("reuses a fresh inspector cache entry and refetches a stale one", async () => {
-  const now = vi.spyOn(Date, "now").mockReturnValue(1_000);
-  const fetchMock = vi.fn(() =>
-   Promise.resolve(
-    new Response(
-     JSON.stringify({
-      data: {
-       hanzi: "您好",
-       pinyin: "nín hǎo",
-       meaning: "xin chào",
-      },
-     }),
-     { status: 200 },
-    ),
-   ),
-  );
-  vi.stubGlobal("fetch", fetchMock);
-
-  await inspectorStore.actions.openInspector("您好", { lessonId: "lesson-cache" });
-  inspectorStore.actions.closeInspector();
-  await inspectorStore.actions.openInspector("您好", { lessonId: "lesson-cache" });
-  expect(fetchMock).toHaveBeenCalledTimes(1);
-
-  now.mockReturnValue(301_001);
-  inspectorStore.actions.closeInspector();
-  await inspectorStore.actions.openInspector("您好", { lessonId: "lesson-cache" });
-  expect(fetchMock).toHaveBeenCalledTimes(2);
  });
 });

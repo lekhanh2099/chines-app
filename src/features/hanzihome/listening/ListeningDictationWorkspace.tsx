@@ -22,7 +22,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
-import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { buildDictationDiff } from "../practice/dictation-comparison";
 import { createDictationAttempt, type DictationAttempt } from "../practice/dictation-session";
 import { savePracticeAttempt } from "../practice/practice-attempt-api";
@@ -245,7 +245,8 @@ export function DictationCards({
 
 export function ListeningDictationWorkspace() {
  const runtime = useHanziHomeRuntime();
- const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
+ const displayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const tts = useSharedMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
  const [selectedSectionId, setSelectedSectionId] =

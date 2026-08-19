@@ -1,10 +1,10 @@
 ---
 name: hanzihome-content-editing
 description: Implement, debug, review, or design HanziHome lesson content loading, rendering, editing, forms, Supabase persistence, query invalidation, import normalization, vocab, grammar, exercises, reading, radicals, notes, stable child IDs, or field/node-level saves. Use for any non-trivial change under src/features/hanzihome that touches study data or edit behavior.
-compatibility: chines-app HanziHome; Supabase; TanStack Query; TanStack Form; Zod
 metadata:
   author: chines-app
-  version: "2.0"
+  version: "2.1"
+  compatibility: chines-app HanziHome; Supabase; TanStack Query; TanStack Form; Zod
 ---
 
 # HanziHome Content Editing
@@ -88,6 +88,33 @@ different lesson. Before adding or importing an item, reuse the existing
 lesson-scoped canonical row or report a conflict; do not create a second source
 or weaken the unique key.
 
+### Learning-state ownership invariant
+
+Inventory every existing owner before adding a field named `state`,
+`progress`, `mastery`, `review` or `settings`:
+
+```text
+course mastery       → user_learning_state.progress
+saved vocab + SRS    → user_vocab_progress
+due practice queue   → hanzihome_learning_loop_items
+attempt evidence     → hanzihome_practice_attempts
+display preference   → user_learning_state.settings
+Reader progress      → completion + exercise answers only
+```
+
+These records have different identities and product meanings. Do not mirror or
+silently synchronize them. Derive UI labels and summaries from the owning
+record.
+
+Mount online/focus learning-state synchronization once at the app boundary.
+Consumer hooks read the shared query/store and enqueue writes; they MUST NOT
+install their own retry listeners. Persisted learning-state writes require an
+expected remote version and deterministic conflict rebase tests.
+
+All HanziHome query keys belong in
+`src/features/hanzihome/query-keys.ts`. Shared `src/components/**` modules MUST
+NOT import feature implementations.
+
 ## 4. Persistence
 
 Normal edit:
@@ -154,6 +181,10 @@ Verify:
 - representative real lesson data;
 - Study Mode remains intact;
 - unsupported shapes are reported.
+- course mastery, saved-vocab SRS and practice queue remain distinct;
+- Reader progress does not persist lesson display preferences;
+- only one learning-state sync agent owns browser retry listeners;
+- conflicting learning-state writes preserve unrelated remote changes.
 
 ## 7. Handoff
 

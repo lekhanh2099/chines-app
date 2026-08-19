@@ -9,7 +9,7 @@ import "../surface-system.css";
 import "../responsive-system.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { AppToaster } from "@/components/layout/AppToaster";
-import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
+import { VocabInspectorProvider } from "@/features/dictionary/components/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";

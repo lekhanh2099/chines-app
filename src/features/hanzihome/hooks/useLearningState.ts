@@ -1,7 +1,8 @@
 "use client";
 
 import type { JsonFieldValue } from "@/types/json";
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { createStore, useSelector } from "@tanstack/react-store";
+import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type { LearningStatus, ReviewResult, UserLearningState } from "@/features/hanzihome/types";
@@ -18,8 +19,22 @@ import {
  nextProgress,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
-const learningStateQueryKey = ["hanzihome", "learning-state"];
+type LearningStateSyncUiState = {
+ status: LearningStateSyncStatus;
+ pendingCount: number;
+ lastError: string | null;
+ isOnline: boolean;
+};
+
+const learningStateSyncStore = createStore<LearningStateSyncUiState>({
+ status: "synced",
+ pendingCount: 0,
+ lastError: null,
+ isOnline: true,
+});
+let learningStateWriteChain = Promise.resolve();
 
 function getBrowserOnlineState() {
  return typeof window === "undefined" ? true : navigator.onLine;
@@ -41,140 +56,127 @@ function subscribeToBrowserOnlineState(onStoreChange: () => void) {
  };
 }
 
-export function useLearningState({ enabled = true }: { enabled?: boolean } = {}) {
+function updateSyncUiState(result: LearningStateSyncResult) {
+ learningStateSyncStore.setState((state) => ({
+  ...state,
+  status: result.status,
+  pendingCount: result.pendingCount,
+  lastError: result.error ?? null,
+ }));
+}
+
+async function syncLearningState(queryClient: ReturnType<typeof useQueryClient>) {
+ learningStateSyncStore.setState((state) => ({ ...state, status: "syncing" }));
+ const result = await syncPendingLearningStateMutations();
+ updateSyncUiState(result);
+ if (result.state) {
+  queryClient.setQueryData(hanzihomeQueryKeys.learningState, normalizeLearningState(result.state));
+ }
+ if (result.status === "synced") {
+  try {
+   const remoteState = await refreshLearningStateFromRemoteIfClean();
+   if (remoteState) {
+    queryClient.setQueryData(hanzihomeQueryKeys.learningState, normalizeLearningState(remoteState));
+   }
+  } catch {
+   // Remote refresh is opportunistic. Pending local writes remain observable in the sync store.
+  }
+ }
+ return result;
+}
+
+export function LearningStateSyncAgent() {
  const queryClient = useQueryClient();
- const writeChainRef = useRef<Promise<void>>(Promise.resolve());
- const syncInFlightRef = useRef<Promise<LearningStateSyncResult>>(null);
- const [syncStatus, setSyncStatus] = useState<LearningStateSyncStatus>("synced");
- const [pendingSyncCount, setPendingSyncCount] = useState(0);
- const [lastSyncError, setLastSyncError] = useState<string | null>(null);
  const isOnline = useSyncExternalStore(
   subscribeToBrowserOnlineState,
   getBrowserOnlineState,
   getServerOnlineState,
  );
  const query = useQuery({
-  queryKey: learningStateQueryKey,
+  queryKey: hanzihomeQueryKeys.learningState,
   queryFn: loadLearningStateLocalFirst,
-  enabled,
  });
 
- const applySyncResult = useCallback(
-  (result: LearningStateSyncResult) => {
-   setSyncStatus(result.status);
-   setPendingSyncCount(result.pendingCount);
-   setLastSyncError(result.error ?? null);
+ useEffect(() => {
+  learningStateSyncStore.setState((state) => ({ ...state, isOnline }));
+  if (isOnline && query.isSuccess) void syncLearningState(queryClient);
+ }, [isOnline, query.isSuccess, queryClient]);
 
-   if (result.state) {
-    queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(result.state));
-   }
-  },
-  [queryClient],
- );
+ useEffect(() => {
+  if (!query.isSuccess) return;
+  const handleFocus = () => {
+   void syncLearningState(queryClient);
+  };
 
- const refreshRemoteIfClean = useCallback(async () => {
-  try {
-   const remoteState = await refreshLearningStateFromRemoteIfClean();
-   if (remoteState) {
-    queryClient.setQueryData(learningStateQueryKey, normalizeLearningState(remoteState));
-   }
-  } catch {
-   // Remote refresh is opportunistic. Pending local writes are handled by the sync queue.
-  }
- }, [queryClient]);
+  window.addEventListener("focus", handleFocus);
 
- const syncPendingMutations = useCallback(async () => {
-  if (syncInFlightRef.current) return syncInFlightRef.current;
+  return () => {
+   window.removeEventListener("focus", handleFocus);
+  };
+ }, [query.isSuccess, queryClient]);
 
-  setSyncStatus("syncing");
-  syncInFlightRef.current = syncPendingLearningStateMutations()
-   .then((result) => {
-    applySyncResult(result);
-    return result;
-   })
-   .finally(() => {
-    syncInFlightRef.current = null;
-   });
+ return null;
+}
 
-  return syncInFlightRef.current;
- }, [applySyncResult]);
-
- const syncThenRefresh = useCallback(async () => {
-  const result = await syncPendingMutations();
-  if (result.status === "synced") {
-   await refreshRemoteIfClean();
-  }
-  return result;
- }, [refreshRemoteIfClean, syncPendingMutations]);
-
+export function useLearningState() {
+ const queryClient = useQueryClient();
+ const syncUiState = useSelector(learningStateSyncStore, (value) => value);
+ const query = useQuery({
+  queryKey: hanzihomeQueryKeys.learningState,
+  queryFn: loadLearningStateLocalFirst,
+ });
  const state = useMemo(
   () => normalizeLearningState(query.data ?? emptyLearningState),
   [query.data],
  );
-
+ const retrySync = useCallback(() => syncLearningState(queryClient), [queryClient]);
  const updateState = useCallback(
   (recipe: (state: UserLearningState) => UserLearningState) => {
    const current = normalizeLearningState(
-    queryClient.getQueryData<UserLearningState>(learningStateQueryKey) ??
+    queryClient.getQueryData<UserLearningState>(hanzihomeQueryKeys.learningState) ??
      query.data ??
      emptyLearningState,
    );
    const nextState = normalizeLearningState(recipe(current));
 
-   queryClient.setQueryData(learningStateQueryKey, nextState);
-   setSyncStatus("pending");
-   setPendingSyncCount(1);
-   setLastSyncError(null);
-
-   writeChainRef.current = writeChainRef.current
+   queryClient.setQueryData(hanzihomeQueryKeys.learningState, nextState);
+   learningStateSyncStore.setState((value) => ({
+    ...value,
+    status: "pending",
+    pendingCount: 1,
+    lastError: null,
+   }));
+   learningStateWriteChain = learningStateWriteChain
     .catch(() => undefined)
-    .then(() => saveLearningStateLocalFirst(nextState));
+    .then(() => saveLearningStateLocalFirst(current, nextState));
 
-   void writeChainRef.current
-    .then(() => syncPendingMutations())
+   void learningStateWriteChain
+    .then(() => syncLearningState(queryClient))
     .catch((error: JsonFieldValue) => {
      const message =
       error instanceof Error ? error.message : "Could not save learning state locally.";
-     setSyncStatus("error");
-     setPendingSyncCount(1);
-     setLastSyncError(message);
+     learningStateSyncStore.setState((value) => ({
+      ...value,
+      status: "error",
+      pendingCount: 1,
+      lastError: message,
+     }));
     });
   },
-  [query.data, queryClient, syncPendingMutations],
+  [query.data, queryClient],
  );
-
- useEffect(() => {
-  if (!enabled || !query.isSuccess) return;
-
-  void syncThenRefresh();
-
-  const handleOnline = () => {
-   void syncThenRefresh();
-  };
-  const handleFocus = () => {
-   void syncThenRefresh();
-  };
-
-  window.addEventListener("online", handleOnline);
-  window.addEventListener("focus", handleFocus);
-
-  return () => {
-   window.removeEventListener("online", handleOnline);
-   window.removeEventListener("focus", handleFocus);
-  };
- }, [enabled, query.isSuccess, syncThenRefresh]);
 
  return useMemo(
   () => ({
    state,
    isLoading: query.isLoading,
-   isSaving: syncStatus === "syncing",
-   isError: query.isError || syncStatus === "error",
-   isOnline,
-   syncStatus,
-   pendingSyncCount,
-   lastSyncError,
-   retrySync: syncThenRefresh,
+   isSaving: syncUiState.status === "syncing",
+   isError: query.isError || syncUiState.status === "error",
+   isOnline: syncUiState.isOnline,
+   syncStatus: syncUiState.status,
+   pendingSyncCount: syncUiState.pendingCount,
+   lastSyncError: syncUiState.lastError,
+   retrySync,
 
    updateSettings: (settings: Partial<UserLearningState["settings"]>) =>
     updateState((current) => ({
@@ -225,16 +227,6 @@ export function useLearningState({ enabled = true }: { enabled?: boolean } = {})
      ],
     })),
   }),
-  [
-   isOnline,
-   lastSyncError,
-   pendingSyncCount,
-   query.isError,
-   query.isLoading,
-   state,
-   syncStatus,
-   syncThenRefresh,
-   updateState,
-  ],
+  [query.isError, query.isLoading, retrySync, state, syncUiState, updateState],
  );
 }

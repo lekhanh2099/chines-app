@@ -16,7 +16,7 @@ import { Bookmark, Highlighter, Languages, StickyNote, Trash2 } from "lucide-rea
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import {
  BasePopover as Popover,
  BasePopoverPopup,

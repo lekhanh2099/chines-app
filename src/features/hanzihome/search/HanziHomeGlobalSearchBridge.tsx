@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { GlobalSearchDialog } from "@/features/hanzihome/search/GlobalSearchDialog";

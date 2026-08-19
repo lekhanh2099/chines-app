@@ -9,10 +9,7 @@ import {
 } from "./reader-session";
 
 const initialFeatureState: ReaderFeatureState = {
- showPinyin: false,
- showMeaning: false,
  completed: false,
- summaryText: "",
  answers: {},
 };
 
@@ -43,8 +40,10 @@ describe("HanziHome reader persistence session", () => {
 
  it("debounces changes and flushes the latest state with the returned revision", async () => {
   vi.useFakeTimers();
-  const firstState = withFeatureChange({ showPinyin: true });
-  const latestState = withFeatureChange({ showPinyin: true, showMeaning: true });
+  const firstState = withFeatureChange({ completed: true });
+  const latestState = withFeatureChange({
+   answers: { first: { answer: "一", score: 1, completed: true, responseMs: 300 } },
+  });
   let releaseFirst = (_result: { revision: number }): void => undefined;
   let saveCount = 0;
   const saveCalls: Array<{ state: ReaderFeatureState; expectedRevision: number }> = [];
@@ -77,7 +76,11 @@ describe("HanziHome reader persistence session", () => {
   await Promise.resolve();
   expect(saveCalls).toEqual([{ state: latestState, expectedRevision: 2 }]);
 
-  controller.schedule(withFeatureChange({ showPinyin: false, showMeaning: true }));
+  controller.schedule(
+   withFeatureChange({
+    answers: { second: { answer: "二", score: 1, completed: true, responseMs: 400 } },
+   }),
+  );
   expect(saveCalls).toHaveLength(1);
   controller.setPersistedSnapshot(initialFeatureState);
   releaseFirst({ revision: 3 });
@@ -85,7 +88,9 @@ describe("HanziHome reader persistence session", () => {
 
   expect(saveCalls).toHaveLength(2);
   expect(saveCalls[1]).toEqual({
-   state: withFeatureChange({ showPinyin: false, showMeaning: true }),
+   state: withFeatureChange({
+    answers: { second: { answer: "二", score: 1, completed: true, responseMs: 400 } },
+   }),
    expectedRevision: 3,
   });
   controller.dispose();
@@ -147,7 +152,7 @@ describe("HanziHome reader persistence session", () => {
    onSaved: () => undefined,
    onError: () => undefined,
   });
-  controller.schedule(withFeatureChange({ showPinyin: true }));
+  controller.schedule(withFeatureChange({ completed: true }));
   controller.dispose();
   vi.advanceTimersByTime(500);
   expect(save).not.toHaveBeenCalled();
@@ -169,7 +174,7 @@ describe("HanziHome reader persistence session", () => {
    onSaved: () => undefined,
    onError: () => undefined,
   });
-  controller.schedule(withFeatureChange({ showPinyin: true }));
+  controller.schedule(withFeatureChange({ completed: true }));
   vi.advanceTimersByTime(500);
   await Promise.resolve();
   controller.dispose();

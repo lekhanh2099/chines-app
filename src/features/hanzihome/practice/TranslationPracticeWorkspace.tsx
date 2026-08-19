@@ -13,7 +13,7 @@ import {
  PinyinText,
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 
 import {
@@ -32,7 +32,8 @@ import { savePracticeAttempt } from "./practice-attempt-api";
 
 export function TranslationPracticeWorkspace() {
  const runtime = useHanziHomeRuntime();
- const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
+ const displayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const segments = useMemo(
   () => orderedTranslationSegments(translationSegmentsFromLesson(runtime.lesson.sourceLesson)),
   [runtime.lesson.sourceLesson],

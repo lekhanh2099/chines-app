@@ -2,7 +2,6 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import {
- appendLearningEvent,
  listLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
@@ -27,15 +26,6 @@ const rateSchema = z.strictObject({
  rating: z.enum(["again", "hard", "good"]),
  expectedRevision: z.number().int().nonnegative(),
 });
-const eventSchema = z.strictObject({
- action: z.literal("event"),
- kind: z.enum(["encountered", "inspected", "review-added"]),
- sourceId: z.string().min(1),
- sourceHref: z.string().min(1),
- term: z.string().min(1).max(48),
- contextText: z.string().max(500),
-});
-
 export async function GET() {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
@@ -51,25 +41,20 @@ export async function POST(request: Request) {
  if (!auth.authenticated) return auth.response;
 
  const body: JsonFieldValue = await request.json().catch(() => null);
- const parsed = z
-  .discriminatedUnion("action", [createSchema, rateSchema, eventSchema])
-  .safeParse(body);
+ const parsed = z.discriminatedUnion("action", [createSchema, rateSchema]).safeParse(body);
  if (!parsed.success) return apiError("Invalid learning loop payload", 400, "INVALID_PAYLOAD");
 
  try {
   if (parsed.data.action === "save") {
    return privateNoStoreJson({ item: await saveLearningLoopItem({ item: parsed.data.item }) });
   }
-  if (parsed.data.action === "rate") {
-   return privateNoStoreJson({
-    item: await rateLearningLoopItem({
-     itemId: parsed.data.itemId,
-     rating: parsed.data.rating,
-     expectedRevision: parsed.data.expectedRevision,
-    }),
-   });
-  }
-  return privateNoStoreJson({ event: await appendLearningEvent(parsed.data) });
+  return privateNoStoreJson({
+   item: await rateLearningLoopItem({
+    itemId: parsed.data.itemId,
+    rating: parsed.data.rating,
+    expectedRevision: parsed.data.expectedRevision,
+   }),
+  });
  } catch {
   return apiError("Could not update learning loop", 409, "LEARNING_LOOP_CONFLICT");
  }

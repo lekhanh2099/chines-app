@@ -24,6 +24,7 @@ import { useHanziHomeListeningLesson } from "@/features/hanzihome/listening/useH
 import { useListeningHotkeys } from "@/features/hanzihome/listening/useListeningHotkeys";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 import { upsertLearningLoopItem } from "@/features/hanzihome/learning-loop/learning-loop-api";
+import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import type { DictationAttempt } from "@/features/hanzihome/practice/dictation-session";
 import { StudioDictationPracticePanel } from "@/features/hanzihome/practice/StudioDictationPracticePanel";
 import { StudioDictationReferencePanel } from "@/features/hanzihome/practice/StudioDictationReferencePanel";
@@ -115,7 +116,7 @@ export function StudioDictationWorkspace({
   void loadVoices();
  }, [loadVoices]);
  const ttsLibraryQuery = useQuery({
-  queryKey: ["hanzihome", "tts", "library"],
+  queryKey: hanzihomeQueryKeys.ttsLibrary,
   queryFn: async () => {
    const response = await fetch("/api/hanzihome/tts/library", { cache: "no-store" });
    const payload = await response.json().catch(() => null);

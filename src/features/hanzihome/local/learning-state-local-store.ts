@@ -20,6 +20,8 @@ const LEARNING_STATE_PENDING_MUTATION_ID = "learning_state:current";
 const LearningStateLocalRecordSchema = z.object({
  id: z.literal(LEARNING_STATE_RECORD_ID),
  state: userLearningStateSchema,
+ lastSyncedState: userLearningStateSchema.optional(),
+ remoteUpdatedAt: z.string().nullable().optional(),
  updatedAt: z.string(),
  lastSyncedAt: z.string().optional(),
  lastSyncError: z.string().optional(),
@@ -34,6 +36,8 @@ const PendingLearningStateMutationSchema = z.object({
  type: z.literal("learning_state.replace"),
  status: PendingMutationStatusSchema,
  payload: userLearningStateSchema,
+ baseState: userLearningStateSchema.optional(),
+ expectedUpdatedAt: z.string().nullable().optional(),
  createdAt: z.string(),
  updatedAt: z.string(),
  attemptCount: z.number(),
@@ -66,14 +70,21 @@ export async function writeLocalLearningState({
  state,
  lastSyncedAt,
  lastSyncError,
+ lastSyncedState,
+ remoteUpdatedAt,
 }: {
  state: UserLearningState;
  lastSyncedAt?: string;
  lastSyncError?: string;
+ lastSyncedState?: UserLearningState;
+ remoteUpdatedAt?: string | null;
 }): Promise<LearningStateLocalRecord> {
  const record: LearningStateLocalRecord = {
   id: LEARNING_STATE_RECORD_ID,
   state: normalizeLearningState(state),
+  lastSyncedState:
+   lastSyncedState === undefined ? undefined : normalizeLearningState(lastSyncedState),
+  remoteUpdatedAt,
   updatedAt: new Date().toISOString(),
   lastSyncedAt,
   lastSyncError,
@@ -84,7 +95,9 @@ export async function writeLocalLearningState({
 }
 
 export async function enqueueLearningStateSync(
+ baseState: UserLearningState,
  state: UserLearningState,
+ expectedUpdatedAt: string | null,
 ): Promise<PendingLearningStateMutation> {
  const now = new Date().toISOString();
  const existing = await readPendingLearningStateMutation();
@@ -93,6 +106,8 @@ export async function enqueueLearningStateSync(
   type: "learning_state.replace",
   status: "pending",
   payload: normalizeLearningState(state),
+  baseState: existing?.baseState ?? normalizeLearningState(baseState),
+  expectedUpdatedAt: existing?.expectedUpdatedAt ?? expectedUpdatedAt,
   createdAt: existing?.createdAt ?? now,
   updatedAt: now,
   attemptCount: existing?.attemptCount ?? 0,
@@ -101,6 +116,31 @@ export async function enqueueLearningStateSync(
 
  await putInStore(HANZIHOME_LOCAL_STORES.pendingMutations, mutation);
  return mutation;
+}
+
+export async function replacePendingLearningStateMutation({
+ mutation,
+ baseState,
+ state,
+ expectedUpdatedAt,
+}: {
+ mutation: PendingLearningStateMutation;
+ baseState: UserLearningState;
+ state: UserLearningState;
+ expectedUpdatedAt: string | null;
+}): Promise<PendingLearningStateMutation> {
+ const next: PendingLearningStateMutation = {
+  ...mutation,
+  status: "pending",
+  payload: normalizeLearningState(state),
+  baseState: normalizeLearningState(baseState),
+  expectedUpdatedAt,
+  updatedAt: new Date().toISOString(),
+  lastError: undefined,
+ };
+
+ await putInStore(HANZIHOME_LOCAL_STORES.pendingMutations, next);
+ return next;
 }
 
 export async function readPendingLearningStateMutation(): Promise<
@@ -155,6 +195,8 @@ export async function markLearningStateMutationFailed({
  await putInStore(HANZIHOME_LOCAL_STORES.pendingMutations, next);
  await writeLocalLearningState({
   state: mutation.payload,
+  lastSyncedState: mutation.baseState,
+  remoteUpdatedAt: mutation.expectedUpdatedAt,
   lastSyncError: error,
  });
  return next;

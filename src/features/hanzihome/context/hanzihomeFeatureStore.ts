@@ -5,10 +5,6 @@ import { createStore } from "@tanstack/react-store";
 import type { EditableNodeRequest } from "@/features/hanzihome/editing/store/types";
 import type { LearningStatus } from "@/features/hanzihome/types";
 import type { DraggedModule, LessonViewMode, PaneId, PaneLayout } from "./types";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "@/features/hanzihome/components/lesson-overview/types";
 import { readWorkspacePreferences } from "./workspaceLayout";
 
 export type HanziHomeFeatureState = {
@@ -28,14 +24,12 @@ export type HanziHomeFeatureState = {
  lessonTextSelectedSectionId: string;
  lessonTextSidebarOpen: boolean;
  lessonTextSettingsOpen: boolean;
- lessonTextDisplayMode: LessonDisplayMode;
 };
 
 type HanziHomeFeatureInitialSelections = Partial<{
  vocabSelectedWordId: HanziHomeFeatureState["vocabSelectedWordId"];
  grammarSelectedPointId: HanziHomeFeatureState["grammarSelectedPointId"];
  lessonTextSelectedSectionId: HanziHomeFeatureState["lessonTextSelectedSectionId"];
- lessonTextDisplayMode: HanziHomeFeatureState["lessonTextDisplayMode"];
 }>;
 
 export function createHanziHomeFeatureStore(
@@ -61,7 +55,6 @@ export function createHanziHomeFeatureStore(
    initialSelections.lessonTextSelectedSectionId ?? "__all_lesson_sections__",
   lessonTextSidebarOpen: true,
   lessonTextSettingsOpen: false,
-  lessonTextDisplayMode: initialSelections.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE,
  };
 
  return createStore(initialState);

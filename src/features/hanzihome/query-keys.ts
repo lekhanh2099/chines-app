@@ -4,6 +4,7 @@ type LessonResourceKind = "overview" | "sections" | "vocabulary" | "grammar";
 
 export const hanzihomeQueryKeys = {
  root: ["hanzihome"],
+ learningState: ["hanzihome", "learning-state"],
  catalogRoot: ["hanzihome", "catalog"],
  catalog: (includeLessons: boolean, includeRadicals = false) => [
   "hanzihome",
@@ -28,9 +29,10 @@ export const hanzihomeQueryKeys = {
  readerDocuments: (kind?: string) => ["hanzihome", "reader", "documents", kind ?? "all"],
  readerDocument: (documentId: string) => ["hanzihome", "reader", "document", documentId],
  readerState: (documentId: string) => ["hanzihome", "reader", "state", documentId],
- readerProgress: (documentId: string) => ["hanzihome", "reader", "progress", documentId],
+ readerSessionUser: ["hanzihome", "reader", "session-user"],
  readerDailyState: (publishedDate: string) => ["hanzihome", "reader", "daily-state", publishedDate],
  readerPersonalState: (nodeId: string) => ["hanzihome", "reader", "personal-state", nodeId],
+ readerDataQuality: ["hanzihome", "reader", "data-quality"],
  readerAnnotations: (documentId: string) => ["hanzihome", "reader", "annotations", documentId],
  readerPronunciationOverrides: (documentId: string) => [
   "hanzihome",
@@ -51,6 +53,14 @@ export const hanzihomeQueryKeys = {
   surface,
   contentId,
  ],
+ learningLoop: ["hanzihome", "learning-loop"],
+ aiConversationRuntimeHealth: (runtimeKeyId: string) => [
+  "hanzihome",
+  "ai-conversation",
+  "runtime-health",
+  runtimeKeyId,
+ ],
+ ttsLibrary: ["hanzihome", "tts", "library"],
  canEdit: ["hanzihome", "can-edit"],
  searchIndexRoot: ["hanzihome", "search-index"],
  searchIndex: ["hanzihome", "search-index", "v2"],

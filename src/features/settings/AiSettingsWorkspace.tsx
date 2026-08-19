@@ -15,7 +15,7 @@ import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
+import ApiKeyManagerSection from "@/features/settings/ApiKeyManagerSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

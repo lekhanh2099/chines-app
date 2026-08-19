@@ -9,7 +9,7 @@ import {
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
-import { useVocabInspector } from "@/components/vocabulary/useVocabInspector";
+import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
 import {

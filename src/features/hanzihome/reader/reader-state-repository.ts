@@ -7,13 +7,11 @@ import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 
 import {
  dailyReadingStateRowSchema,
- learningEventRowSchema,
  learningLoopItemRowSchema,
  personalLearningStateRowSchema,
  practiceAttemptRowSchema,
  readerProgressRowSchema,
  type DailyReadingStateRow,
- type LearningEventRow,
  type LearningLoopItemRow,
  type PersonalLearningStateRow,
  type PracticeAttemptRow,
@@ -103,10 +101,7 @@ export async function getReaderProgress(
 export async function saveReaderProgress(
  input: {
   documentId: string;
-  showPinyin: boolean;
-  showMeaning: boolean;
   completed: boolean;
-  summaryText: string;
   answers: JsonObject;
   expectedRevision: number;
  },
@@ -116,10 +111,11 @@ export async function saveReaderProgress(
  const { client } = await contextClient(context);
  const { data, error } = await client.rpc("hanzihome_upsert_reader_progress", {
   p_document_id: input.documentId,
-  p_show_pinyin: input.showPinyin,
-  p_show_meaning: input.showMeaning,
+  // Legacy RPC columns remain neutral until every deployed client has moved to global reading preferences.
+  p_show_pinyin: true,
+  p_show_meaning: false,
   p_completed: input.completed,
-  p_summary_text: input.summaryText,
+  p_summary_text: "",
   p_answers: input.answers,
   p_expected_revision: input.expectedRevision,
  });
@@ -525,28 +521,4 @@ export async function rateLearningLoopItem(input: {
  });
  if (error) throw new Error(error.message);
  return learningLoopItemRowSchema.parse(data);
-}
-
-export async function appendLearningEvent(input: {
- kind: "encountered" | "inspected" | "review-added";
- sourceId: string;
- sourceHref: string;
- term: string;
- contextText: string;
-}): Promise<LearningEventRow> {
- const { client, user } = await authenticatedClient();
- const { data, error } = await client
-  .from("hanzihome_learning_events")
-  .insert({
-   user_id: user.id,
-   kind: input.kind,
-   source_id: input.sourceId,
-   source_href: input.sourceHref,
-   term: input.term,
-   context_text: input.contextText,
-  })
-  .select("*")
-  .single();
- if (error) throw new Error(error.message);
- return learningEventRowSchema.parse(data);
 }

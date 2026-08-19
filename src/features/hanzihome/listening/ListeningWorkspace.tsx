@@ -17,7 +17,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
-import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 
 import { ListeningExerciseItems } from "./ListeningExerciseItems";
 import { MandarinTtsControls } from "./MandarinTtsControls";
@@ -30,7 +30,8 @@ import { z } from "zod";
 
 export function ListeningWorkspace() {
  const runtime = useHanziHomeRuntime();
- const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
+ const displayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const tts = useSharedMandarinTts();
  const query = useHanziHomeListeningLesson(runtime.lesson.id);
  const [selectedSectionId, setSelectedSectionId] =

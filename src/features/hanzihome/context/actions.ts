@@ -77,11 +77,6 @@ export function createHanziHomeFeatureActions(store: HanziHomeFeatureStore) {
    store.setState((state) => ({ ...state, lessonTextSidebarOpen })),
   setLessonTextSettingsOpen: (lessonTextSettingsOpen: boolean) =>
    store.setState((state) => ({ ...state, lessonTextSettingsOpen })),
-  setLessonTextDisplayMode: (updates: Partial<HanziHomeFeatureState["lessonTextDisplayMode"]>) =>
-   store.setState((state) => ({
-    ...state,
-    lessonTextDisplayMode: { ...state.lessonTextDisplayMode, ...updates },
-   })),
  };
 }
 

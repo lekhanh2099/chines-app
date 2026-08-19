@@ -1,0 +1,32 @@
+{
+ "title": "复习队列",
+ "description": "按计划复习练习错误、跟读、词汇和书签。这里是复习安排，不是课程进度。",
+ "loading": "正在加载复习队列…",
+ "loadError": "无法加载复习队列。",
+ "emptyTitle": "今天没有到期项目",
+ "emptyDescription": "练习错误和你主动添加的内容会在到期时显示在这里。",
+ "checkAgain": "重新检查",
+ "dueCount": "{count} 项到期",
+ "correctStreak": "连续答对：{count}",
+ "listen": "收听",
+ "stop": "停止",
+ "referenceMeaning": "参考释义",
+ "ratingHint": "根据记忆程度评分，以安排下一次复习。",
+ "ratings": {
+  "again": "再次复习",
+  "hard": "困难",
+  "good": "已记住"
+ },
+ "kinds": {
+  "dictation_mistake": "听写错误",
+  "vocabulary": "词汇",
+  "reading_bookmark": "阅读书签",
+  "shadowing": "跟读",
+  "minimal_contrast": "语音辨析",
+  "error_correction": "纠错",
+  "sentence_transformation": "句型转换",
+  "guided_production": "引导表达",
+  "timed_production": "限时反应",
+  "delayed_transfer": "延迟迁移"
+ }
+}

@@ -6,8 +6,8 @@ import {
  readerAssetRowSchema,
  readerExerciseItemRowSchema,
  readerParagraphRowSchema,
- readerProgressRowSchema,
 } from "./reader.schemas";
+import { readerProgressRowSchema } from "./reader-state.schemas";
 
 describe("HanziHome Reader row contracts", () => {
  it("rejects unordered or empty paragraph rows at the repository boundary", () => {
@@ -102,6 +102,9 @@ describe("HanziHome Reader row contracts", () => {
   });
   expect(row.success).toBe(true);
   if (!row.success) throw new Error("Expected a valid Reader progress row.");
+  expect(row.data).not.toHaveProperty("show_pinyin");
+  expect(row.data).not.toHaveProperty("show_meaning");
+  expect(row.data).not.toHaveProperty("summary_text");
   expect(
    readerProgressRowSchema.safeParse({
     ...row.data,

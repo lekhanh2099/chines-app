@@ -18,7 +18,13 @@ type LearningStateRow = {
  progress: JsonFieldValue;
  bookmarks: JsonFieldValue;
  review_history: JsonFieldValue;
+ updated_at: string | null;
 };
+
+const updatePayloadSchema = z.strictObject({
+ state: userLearningStateSchema,
+ expectedUpdatedAt: z.string().nullable(),
+});
 
 function jsonError(message: string, status: number, code?: string) {
  return NextResponse.json({ error: message, code }, { status });
@@ -41,6 +47,13 @@ function rowToLearningState(row: LearningStateRow | null): UserLearningState {
  return normalizeLearningState(parsed.success ? parsed.data : emptyLearningState);
 }
 
+function learningStateResponse(row: LearningStateRow | null) {
+ return {
+  state: rowToLearningState(row),
+  updatedAt: row?.updated_at ?? null,
+ };
+}
+
 export async function GET() {
  const supabase = await createClient();
  const {
@@ -53,14 +66,14 @@ export async function GET() {
 
  const { data, error } = await supabase
   .from("user_learning_state")
-  .select("settings, progress, bookmarks, review_history")
+  .select("settings, progress, bookmarks, review_history, updated_at")
   .eq("user_id", user.id)
   .maybeSingle();
 
  if (error) {
   if (isMissingLearningStateTable(error.code)) {
    return NextResponse.json(
-    { state: normalizeLearningState(emptyLearningState), source: "missing-table" },
+    { ...learningStateResponse(null), source: "missing-table" },
     { headers: { "Cache-Control": "no-store" } },
    );
   }
@@ -68,10 +81,9 @@ export async function GET() {
   return jsonError("Could not load learning state", 500, error.code);
  }
 
- return NextResponse.json(
-  { state: rowToLearningState(data) },
-  { headers: { "Cache-Control": "no-store" } },
- );
+ return NextResponse.json(learningStateResponse(data), {
+  headers: { "Cache-Control": "no-store" },
+ });
 }
 
 export async function PUT(request: Request) {
@@ -85,7 +97,7 @@ export async function PUT(request: Request) {
  }
 
  const body: JsonFieldValue = await request.json().catch(() => null);
- const parsed = userLearningStateSchema.safeParse(body);
+ const parsed = updatePayloadSchema.safeParse(body);
 
  if (!parsed.success) {
   return NextResponse.json(
@@ -97,30 +109,89 @@ export async function PUT(request: Request) {
   );
  }
 
- const state = normalizeLearningState(parsed.data);
- const { data, error } = await supabase
+ const state = normalizeLearningState(parsed.data.state);
+ const { data: current, error: currentError } = await supabase
   .from("user_learning_state")
-  .upsert(
-   {
-    user_id: user.id,
-    settings: state.settings,
-    progress: state.progress,
-    bookmarks: state.bookmarks,
-    review_history: state.reviewHistory,
-    updated_at: new Date().toISOString(),
-   },
-   { onConflict: "user_id" },
-  )
-  .select("settings, progress, bookmarks, review_history")
+  .select("settings, progress, bookmarks, review_history, updated_at")
+  .eq("user_id", user.id)
   .maybeSingle();
+
+ if (currentError) {
+  if (isMissingLearningStateTable(currentError.code)) {
+   return jsonError("Learning state table is not ready", 503, currentError.code);
+  }
+  return jsonError("Could not inspect learning state", 500, currentError.code);
+ }
+
+ if ((current?.updated_at ?? null) !== parsed.data.expectedUpdatedAt) {
+  return NextResponse.json(
+   {
+    error: "Learning state changed since it was loaded",
+    code: "LEARNING_STATE_CONFLICT",
+    ...learningStateResponse(current),
+   },
+   { status: 409 },
+  );
+ }
+
+ const updatedAt = new Date().toISOString();
+ const write = {
+  user_id: user.id,
+  settings: state.settings,
+  progress: state.progress,
+  bookmarks: state.bookmarks,
+  review_history: state.reviewHistory,
+  updated_at: updatedAt,
+ };
+ const writeResult =
+  current === null
+   ? await supabase
+      .from("user_learning_state")
+      .insert(write)
+      .select("settings, progress, bookmarks, review_history, updated_at")
+      .maybeSingle()
+   : parsed.data.expectedUpdatedAt === null
+     ? await supabase
+        .from("user_learning_state")
+        .update(write)
+        .eq("user_id", user.id)
+        .is("updated_at", null)
+        .select("settings, progress, bookmarks, review_history, updated_at")
+        .maybeSingle()
+     : await supabase
+        .from("user_learning_state")
+        .update(write)
+        .eq("user_id", user.id)
+        .eq("updated_at", parsed.data.expectedUpdatedAt)
+        .select("settings, progress, bookmarks, review_history, updated_at")
+        .maybeSingle();
+ const { data, error } = writeResult;
 
  if (error) {
   if (isMissingLearningStateTable(error.code)) {
    return jsonError("Learning state table is not ready", 503, error.code);
   }
 
-  return jsonError("Could not save learning state", 500, error.code);
+  if (error.code !== "23505") {
+   return jsonError("Could not save learning state", 500, error.code);
+  }
  }
 
- return NextResponse.json({ state: rowToLearningState(data) });
+ if (data === null) {
+  const { data: latest } = await supabase
+   .from("user_learning_state")
+   .select("settings, progress, bookmarks, review_history, updated_at")
+   .eq("user_id", user.id)
+   .maybeSingle();
+  return NextResponse.json(
+   {
+    error: "Learning state changed since it was loaded",
+    code: "LEARNING_STATE_CONFLICT",
+    ...learningStateResponse(latest),
+   },
+   { status: 409 },
+  );
+ }
+
+ return NextResponse.json(learningStateResponse(data));
 }

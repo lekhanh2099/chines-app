@@ -157,6 +157,40 @@ export function inspectUnsafeTypeConstructs({
  return failures;
 }
 
+export function inspectArchitectureBoundaries({ sources }) {
+ const failures = [];
+
+ for (const { file, source } of sources) {
+  if (file.startsWith("src/components/") && /from\s+["']@\/features\//.test(source)) {
+   failures.push(`${file} imports feature implementation code from the shared component layer`);
+  }
+
+  if (
+   file.startsWith("src/features/hanzihome/") &&
+   file !== "src/features/hanzihome/query-keys.ts" &&
+   /queryKey:\s*\[\s*["']hanzihome["']/.test(source)
+  ) {
+   failures.push(`${file} declares a HanziHome query key outside query-keys.ts`);
+  }
+
+  if (
+   file === "src/features/hanzihome/context/hanzihomeFeatureStore.ts" &&
+   source.includes("lessonTextDisplayMode")
+  ) {
+   failures.push(`${file} mirrors the learning-state lesson display preference`);
+  }
+
+  if (
+   file === "src/features/hanzihome/reader/reader-state.schemas.ts" &&
+   /\b(?:showPinyin|showMeaning|summaryText)\s*:/.test(source)
+  ) {
+   failures.push(`${file} persists display preferences in Reader progress`);
+  }
+ }
+
+ return failures;
+}
+
 function isTestFile(file) {
  return /\.(?:spec|test)\.[cm]?[jt]sx?$/.test(file);
 }
@@ -351,6 +385,7 @@ export function runSourceCheck() {
  }
 
  failures.push(...inspectUnsafeTypeConstructs({ sources }));
+ failures.push(...inspectArchitectureBoundaries({ sources }));
 
  for (const file of findUnreachableSourceFiles(sourceFiles)) {
   failures.push(

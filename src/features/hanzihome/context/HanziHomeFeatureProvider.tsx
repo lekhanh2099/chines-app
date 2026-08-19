@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, type ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 
 import { useHanziHomeSearchNavigationIntent } from "@/features/hanzihome/search/searchNavigationStore";
 import type {
@@ -15,20 +15,6 @@ import { HanziHomeFeatureStoreProvider } from "./hanzihomeFeatureContext";
 import { createHanziHomeFeatureActions } from "./actions";
 import { createHanziHomeFeatureServices } from "./services";
 import type { LearningSyncUiState, ReviewItem, StudyModule } from "./types";
-
-function displayModeEquals(
- left: UserLearningState["settings"]["lessonTextDisplayMode"],
- right: UserLearningState["settings"]["lessonTextDisplayMode"],
-) {
- return (
-  left?.showPinyin === right?.showPinyin &&
-  left?.showMeaning === right?.showMeaning &&
-  left?.showAnswers === right?.showAnswers &&
-  left?.hanziFont === right?.hanziFont &&
-  left?.hanziSize === right?.hanziSize &&
-  left?.revealMode === right?.revealMode
- );
-}
 
 export function HanziHomeFeatureProvider({
  lesson,
@@ -73,19 +59,6 @@ export function HanziHomeFeatureProvider({
    }),
   [matchingIntent?.module, matchingIntent?.targetId],
  );
- useEffect(() => {
-  const persistedDisplayMode = learningState.settings.lessonTextDisplayMode;
-  if (!persistedDisplayMode) return;
-
-  store.setState((state) => {
-   if (displayModeEquals(state.lessonTextDisplayMode, persistedDisplayMode)) return state;
-
-   return {
-    ...state,
-    lessonTextDisplayMode: persistedDisplayMode,
-   };
-  });
- }, [learningState.settings.lessonTextDisplayMode, store]);
  const actions = useMemo(() => createHanziHomeFeatureActions(store), [store]);
  const services = useMemo(() => createHanziHomeFeatureServices(lesson), [lesson]);
  const runtime = useMemo(

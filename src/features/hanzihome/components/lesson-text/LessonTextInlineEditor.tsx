@@ -22,6 +22,7 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  lessonTextToReaderDocument,
  type LessonReaderEditBinding,
@@ -59,7 +60,8 @@ export function LessonTextInlineEditor({
  const { lesson } = runtime;
  const actions = useHanziHomeFeatureActions();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
- const displayMode = useHanziHomeFeatureSelector((state) => state.lessonTextDisplayMode);
+ const displayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
  const sourceSections = useMemo(() => {
   const sections =

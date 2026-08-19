@@ -51,6 +51,24 @@ Import, seed, migration or editing work MUST NOT recreate vocabulary items in a
 lesson-section payload, maintain two independently editable vocab copies, or
 weaken the active lesson/word/pinyin uniqueness invariant.
 
+Learning records have separate product meanings and MUST NOT be mirrored or
+silently synchronized:
+
+- `user_learning_state.progress` owns course mastery for lesson-scoped vocab
+  and grammar nodes;
+- `user_vocab_progress` owns the learner's saved dictionary collection and its
+  SRS status, keyed by canonical vocabulary identity;
+- `hanzihome_learning_loop_items` owns the due practice queue and scheduling
+  state; it is not a second mastery record;
+- `hanzihome_practice_attempts` is immutable attempt evidence, not current
+  progress state.
+
+Lesson text display preference is owned by `user_learning_state.settings`.
+Reader progress owns only completion and exercise answers. Feature stores MUST
+NOT mirror either persisted owner. One app-level learning-state sync agent owns
+online/focus retry orchestration; consumer hooks only read state and enqueue
+mutations.
+
 Import or bulk-edit work MUST validate the complete input, reconcile counts and
 stable identities, and produce a preview/diff before persistence. A mismatch
 MUST remain untouched and be reported; preview is not authorization to write.

@@ -1,0 +1,32 @@
+{
+ "title": "Hàng ôn tập",
+ "description": "Các mục đến hạn từ lỗi luyện tập, shadowing, từ vựng và bookmark. Đây là lịch ôn, không phải tiến độ bài học.",
+ "loading": "Đang tải hàng ôn tập…",
+ "loadError": "Không tải được hàng ôn tập.",
+ "emptyTitle": "Hôm nay chưa có mục đến hạn",
+ "emptyDescription": "Lỗi luyện tập và nội dung bạn chủ động thêm sẽ xuất hiện tại đây theo lịch ôn.",
+ "checkAgain": "Kiểm tra lại",
+ "dueCount": "{count} mục đến hạn",
+ "correctStreak": "Chuỗi đúng: {count}",
+ "listen": "Nghe",
+ "stop": "Dừng",
+ "referenceMeaning": "Nghĩa tham chiếu",
+ "ratingHint": "Đánh giá mức độ nhớ để xếp lịch lần ôn tiếp theo.",
+ "ratings": {
+  "again": "Ôn lại",
+  "hard": "Khó",
+  "good": "Đã nhớ"
+ },
+ "kinds": {
+  "dictation_mistake": "Lỗi chính tả",
+  "vocabulary": "Từ vựng",
+  "reading_bookmark": "Bookmark Reader",
+  "shadowing": "Shadowing",
+  "minimal_contrast": "Phân biệt âm",
+  "error_correction": "Sửa lỗi",
+  "sentence_transformation": "Biến đổi câu",
+  "guided_production": "Tạo câu",
+  "timed_production": "Phản xạ",
+  "delayed_transfer": "Ôn chuyển giao"
+ }
+}
