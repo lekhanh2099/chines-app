@@ -339,6 +339,28 @@ export function saveDailyReadingV2Article(reading: DailyReadingV2) {
  return saved;
 }
 
+export function removeDailyReadingV2Article(articleId: string) {
+ const ledger = readLedger();
+ const exists = ledger.items.some((item) => item.id === articleId);
+ if (!exists) return false;
+ persistLedger({
+  ...ledger,
+  items: ledger.items.filter((item) => item.id !== articleId),
+ });
+ return true;
+}
+
+export function removeAllDailyReadingV2Articles() {
+ const ledger = readLedger();
+ if (ledger.items.length === 0) return 0;
+ const removedCount = ledger.items.length;
+ persistLedger({
+  ...ledger,
+  items: [],
+ });
+ return removedCount;
+}
+
 export function saveDailyReadingV2CaptureRun(run: DailyReadingV2CaptureRun) {
  const parsed = dailyReadingV2CaptureRunSchema.parse(run);
  const ledger = readLedger();
