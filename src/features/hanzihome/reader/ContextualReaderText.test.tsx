@@ -29,7 +29,7 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain("gè");
  });
 
- it("keeps paragraph-mode glyph actions keyboard reachable", () => {
+ it("keeps paragraph-mode glyph playback keyboard reachable", () => {
   const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "一个", sourcePinyin: "yī gè" })}
@@ -44,16 +44,19 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain('aria-label="Đọc từ chữ 个"');
  });
 
- it("makes contextual pinyin explicitly inspectable instead of presenting it as unquestioned output", () => {
+ it("keeps Hanzi playback separate from pinyin review", () => {
   const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "重庆", sourcePinyin: null })}
     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    onGlyphClick={() => undefined}
     onGlyphInspect={() => undefined}
    />,
   );
-  expect(markup).toContain('aria-label="Kiểm tra cách đọc chữ 重"');
-  expect(markup).toContain('aria-label="Kiểm tra cách đọc chữ 庆"');
+  expect(markup).toContain('aria-label="Đọc từ chữ 重"');
+  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 重"');
+  expect(markup).toContain('aria-label="Đọc từ chữ 庆"');
+  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 庆"');
   expect(markup).toContain("decoration-dotted");
  });
 
@@ -68,6 +71,35 @@ describe("ContextualReaderText", () => {
   );
   expect(markup).toContain("Zhèjiāng");
   expect(markup).not.toContain("zhè jiāng");
+ });
+
+ it("renders a manual pinyin override instead of the original aligned source line", () => {
+  const analysis = analyzeContextualPronunciation({
+   text: "好",
+   sourcePinyin: "hǎo",
+   overrides: [
+    {
+     id: "override-1",
+     text: "好",
+     readings: ["hao4"],
+     scope: "sentence-instance",
+     sentenceText: "好",
+     start: 0,
+     end: 1,
+     updatedAt: "2026-08-19T00:00:00.000Z",
+    },
+   ],
+  });
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analysis}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    pinyinPresentation="paragraph"
+    sourcePinyin="hǎo"
+   />,
+  );
+  expect(markup).toContain("hào");
+  expect(markup).not.toContain(">hǎo<");
  });
 
  it("marks the active glyph while the reader is speaking", () => {
