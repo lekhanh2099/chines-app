@@ -10,9 +10,9 @@ import {
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
+import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
  getPrimaryMeaning,
@@ -50,6 +50,18 @@ function buildLookupResponse(vocabData: VocabData, cached: boolean) {
    analysis: vocabData.ai_analysis || {},
   },
  });
+}
+
+function runtimeError(status: "missing-key" | "storage-unavailable") {
+ return status === "missing-key"
+  ? NextResponse.json(
+     { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
+     { status: 409 },
+    )
+  : NextResponse.json(
+     { error: "Kho API key an toàn phía server chưa sẵn sàng." },
+     { status: 503 },
+    );
 }
 
 export async function POST(request: NextRequest) {
@@ -156,13 +168,21 @@ export async function POST(request: NextRequest) {
   throwIfAborted(request.signal);
 
   const authStartedAt = performance.now();
-  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
-  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
-  userApiKeyCount = userApiKeys.length;
+  const [promptSettings, runtime] = await Promise.all([
+   getUserAiPromptSettings(supabase, user.id),
+   resolveAiAnalysisRuntime({ supabase, userId: user.id }),
+  ]);
   metrics.push({
    name: "auth",
    durationMs: performance.now() - authStartedAt,
   });
+
+  if (!runtime.ok) {
+   source = "ai_runtime_unavailable";
+   aiStatus = runtime.status;
+   return finalize(runtimeError(runtime.status));
+  }
+  userApiKeyCount = 1;
 
   throwIfAborted(request.signal);
 
@@ -171,7 +191,7 @@ export async function POST(request: NextRequest) {
   const aiLookup = await analyzeHanziDetailed(lookupText, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
    promptTemplate: parsed.data.wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
-   userApiKeys,
+   userApiKeys: [runtime.credential],
    abortSignal: request.signal,
    allowGroq: true,
   });
