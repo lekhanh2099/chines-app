@@ -3,7 +3,6 @@ import "server-only";
 import { z } from "zod";
 
 import { getDefaultApiKeyModel } from "@/lib/api-key-models";
-import { DEFAULT_GEMINI_QUICK_MODEL } from "@/lib/gemini-models";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 
@@ -434,19 +433,21 @@ export async function requestDailyReadingProvider({
  }
 }
 
+/**
+ * Compatibility export retained while V1 generation remains readable. System
+ * provider fallback is intentionally disabled: active generation routes must
+ * resolve and pass a personal BYOK credential before entering this adapter.
+ */
 export async function requestDailyReadingSystemGemini({
- prompt,
  phase,
- signal,
 }: {
  prompt: string;
  phase: DailyReadingProviderPhase;
  signal?: AbortSignal;
 }): Promise<DailyReadingProviderResult> {
- const apiKey = process.env.GEMINI_API_KEY;
- const model = DEFAULT_GEMINI_QUICK_MODEL;
- if (!apiKey) {
-  return { content: null, error: "AI hệ thống chưa được cấu hình GEMINI_API_KEY.", model };
- }
- return requestGeminiWithKey({ apiKey, model, prompt, phase, signal });
+ return {
+  content: null,
+  error: "System provider fallback is disabled; a personal API key is required.",
+  model: `disabled-system-${phase}`,
+ };
 }
