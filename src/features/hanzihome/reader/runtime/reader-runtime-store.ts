@@ -53,7 +53,7 @@ export function createReaderRuntimeStore(initialSegmentIds: readonly string[], i
   activeSegmentId: segmentIds[0] ?? null,
   positionSource: "initial",
   loopCurrent: false,
-  autoAdvance: false,
+  autoAdvance: true,
   focusMode: false,
   playbackSegmentId: null,
   playbackStatus: "idle",
