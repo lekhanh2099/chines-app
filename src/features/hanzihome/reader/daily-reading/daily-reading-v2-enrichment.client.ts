@@ -74,19 +74,29 @@ function readyUpdate(
  }
 }
 
+function blockedStateUpdate(
+ module: DailyReadingV2EnrichmentModule,
+ reason: Extract<
+  DailyReadingV2["enrichment"]["translation"],
+  { status: "blocked" }
+ >["reason"],
+): DailyReadingV2EnrichmentStateUpdate {
+ switch (module) {
+  case "translation":
+   return { module, state: { status: "blocked", reason } };
+  case "vocabulary":
+   return { module, state: { status: "blocked", reason } };
+  case "grammar":
+   return { module, state: { status: "blocked", reason } };
+  case "questions":
+   return { module, state: { status: "blocked", reason } };
+ }
+}
+
 function blockedUpdate(
  result: Extract<DailyReadingV2EnrichmentResponse, { ok: false; status: "blocked" }>,
-): DailyReadingV2EnrichmentStateUpdate {
- switch (result.module) {
-  case "translation":
-   return { module: result.module, state: { status: "blocked", reason: result.reason } };
-  case "vocabulary":
-   return { module: result.module, state: { status: "blocked", reason: result.reason } };
-  case "grammar":
-   return { module: result.module, state: { status: "blocked", reason: result.reason } };
-  case "questions":
-   return { module: result.module, state: { status: "blocked", reason: result.reason } };
- }
+) {
+ return blockedStateUpdate(result.module, result.reason);
 }
 
 function failedUpdate(
@@ -305,10 +315,19 @@ export async function enrichDailyReadingV2LearningSupport(articleId: string) {
   "grammar",
   "questions",
  ];
- for (const module of modules) {
+ for (let index = 0; index < modules.length; index += 1) {
+  const module = modules[index];
+  if (module === undefined) continue;
   current = await enrichDailyReadingV2Module(articleId, module);
   const state = current.enrichment[module];
-  if (state.status === "blocked") break;
+  if (state.status !== "blocked") continue;
+  for (const remaining of modules.slice(index + 1)) {
+   current = updateDailyReadingV2Enrichment(
+    articleId,
+    blockedStateUpdate(remaining, state.reason),
+   );
+  }
+  break;
  }
  return current;
 }
