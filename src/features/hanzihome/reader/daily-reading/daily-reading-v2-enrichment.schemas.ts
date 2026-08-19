@@ -19,7 +19,7 @@ export const dailyReadingV2GeneratedBySchema = z.strictObject({
 
 export const dailyReadingV2EnrichmentErrorCodeSchema = z.union([
  aiRuntimeOperationErrorCodeSchema,
- z.enum(["missing-ai-key", "storage-unavailable", "module-validation-failed"]),
+ z.enum(["missing-ai-key", "storage-unavailable"]),
 ]);
 
 export const dailyReadingV2EnrichmentArticleSchema = z.strictObject({
