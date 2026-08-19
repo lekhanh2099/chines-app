@@ -1,29 +1,47 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
-import { Typography } from "@/components/ui/typography";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
 import { ChevronRight, Menu } from "lucide-react";
+
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import {
  mobileNavigationItemIds,
  mobileUtilityItemIds,
  navigationGroups,
  navigationItems,
+ type NavigationItemConfig,
  type NavigationItemId,
 } from "@/components/layout/navigation-config";
 import { PanelToggleButton } from "@/components/layout/panel-toggle-button";
+import { Button } from "@/components/ui/button";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuItem,
+ DropdownMenuLabel,
+ DropdownMenuSeparator,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
+import { Typography } from "@/components/ui/typography";
 import { Link, usePathname } from "@/i18n/navigation";
-import { sidebarStore } from "@/stores/sidebar-store";
-import { appShellStore } from "@/stores/app-shell-store";
 import { cn } from "@/lib/utils";
+import { appShellStore } from "@/stores/app-shell-store";
+import { sidebarStore } from "@/stores/sidebar-store";
 
-function isActive(pathname: string, searchParams: URLSearchParams, href: string) {
+type NavigationGroup = (typeof navigationGroups)[number];
+
+function matchesHref(
+ pathname: string,
+ searchParams: URLSearchParams,
+ href: string,
+ match: NavigationItemConfig["match"],
+) {
  const [base, rawQuery] = href.split("?");
+ if (base === undefined) return false;
 
  if (base === "/") return pathname === "/";
 
@@ -39,7 +57,26 @@ function isActive(pathname: string, searchParams: URLSearchParams, href: string)
   return pathname === "/hanzihome" && searchParams.get("module") !== "radicals";
  }
 
- return pathname === base || pathname.startsWith(`${base}/`);
+ return match === "prefix"
+  ? pathname === base || pathname.startsWith(`${base}/`)
+  : pathname === base;
+}
+
+function isActive(pathname: string, searchParams: URLSearchParams, itemId: NavigationItemId) {
+ const item: NavigationItemConfig = navigationItems[itemId];
+ return [item.href, ...(item.aliases ?? [])].some((href) =>
+  matchesHref(pathname, searchParams, href, item.match ?? "exact"),
+ );
+}
+
+function groupHasActiveRoute(
+ group: NavigationGroup,
+ pathname: string,
+ searchParams: URLSearchParams,
+) {
+ return group.sections.some((section) =>
+  section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
+ );
 }
 
 function NavRow({
@@ -81,6 +118,63 @@ function NavRow({
  );
 }
 
+function CollapsedGroupMenu({
+ group,
+ pathname,
+ searchParams,
+}: {
+ group: NavigationGroup;
+ pathname: string;
+ searchParams: URLSearchParams;
+}) {
+ const t = useTranslations("Shell");
+ const GroupIcon = group.icon;
+ const groupLabel = t(group.messageKey);
+ const active = groupHasActiveRoute(group, pathname, searchParams);
+
+ return (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button
+     type="button"
+     variant={active ? "active" : "navigation"}
+     size="menu"
+     align="center"
+     className="w-10"
+     aria-label={groupLabel}
+     title={groupLabel}
+    >
+     <GroupIcon data-icon="inline-start" />
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent side="right" align="start" width="md">
+    <DropdownMenuLabel>{groupLabel}</DropdownMenuLabel>
+    {group.sections.map((section, sectionIndex) => (
+     <Fragment key={section.id}>
+      {sectionIndex > 0 ? <DropdownMenuSeparator /> : null}
+      <DropdownMenuLabel>{t(section.messageKey)}</DropdownMenuLabel>
+      {section.itemIds.map((itemId) => {
+       const item = navigationItems[itemId];
+       const Icon = item.icon;
+       const itemActive = isActive(pathname, searchParams, itemId);
+       return (
+        <DropdownMenuItem key={itemId} tone={itemActive ? "accent" : "default"} asChild>
+         <Link href={item.href} prefetch={false} aria-current={itemActive ? "page" : undefined}>
+          <Icon aria-hidden="true" />
+          <Typography as="span" clamp="one" className="min-w-0 flex-1">
+           {t(item.messageKey)}
+          </Typography>
+         </Link>
+        </DropdownMenuItem>
+       );
+      })}
+     </Fragment>
+    ))}
+   </DropdownMenuContent>
+  </DropdownMenu>
+ );
+}
+
 export function Sidebar() {
  const t = useTranslations("Shell");
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
@@ -89,9 +183,10 @@ export function Sidebar() {
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
  const activeGroupId = navigationGroups.find((group) =>
-  group.itemIds.some((itemId) => isActive(pathname, searchParams, navigationItems[itemId].href)),
+  groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
- const [manuallyExpandedGroupIds, setManuallyExpandedGroupIds] = useState<string[]>([]);
+ const [expandedGroupId, setExpandedGroupId] = useState<string | null>(null);
+ const openGroupId = expandedGroupId ?? activeGroupId ?? navigationGroups[0].id;
 
  useEffect(() => {
   hydrateSidebar();
@@ -136,25 +231,20 @@ export function Sidebar() {
     )}
    >
     {isCollapsed ? (
-     navigationGroups.map((group, index) => (
-      <div
-       key={group.id}
-       className={cn("grid gap-1", index > 0 && "border-t border-border-default pt-2")}
-      >
-       {group.itemIds.map((itemId) => (
-        <NavRow
-         key={itemId}
-         itemId={itemId}
-         active={isActive(pathname, searchParams, navigationItems[itemId].href)}
-         collapsed
-        />
-       ))}
-      </div>
-     ))
+     <div className="grid content-start gap-1.5">
+      {navigationGroups.map((group) => (
+       <CollapsedGroupMenu
+        key={group.id}
+        group={group}
+        pathname={pathname}
+        searchParams={searchParams}
+       />
+      ))}
+     </div>
     ) : (
      <div className="grid content-start gap-1.5">
       {navigationGroups.map((group) => {
-       const groupOpen = group.id === activeGroupId || manuallyExpandedGroupIds.includes(group.id);
+       const groupOpen = group.id === openGroupId;
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
 
@@ -162,19 +252,15 @@ export function Sidebar() {
         <section key={group.id} className="grid gap-1" aria-label={groupLabel}>
          <Button
           type="button"
-          variant="navigation"
+          variant={group.id === activeGroupId ? "active" : "navigation"}
           size="menu"
           align="between"
           className="w-full min-w-0"
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
           onClick={() => {
-           if (group.id === activeGroupId) return;
-
-           setManuallyExpandedGroupIds((current) =>
-            current.includes(group.id)
-             ? current.filter((groupId) => groupId !== group.id)
-             : [...current, group.id],
+           setExpandedGroupId((current) =>
+            current === group.id ? (activeGroupId ?? null) : group.id,
            );
           }}
          >
@@ -184,21 +270,37 @@ export function Sidebar() {
             {groupLabel}
            </Typography>
           </span>
-          <ChevronRight className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")} />
+          <ChevronRight
+           data-icon="inline-end"
+           className={cn("shrink-0 transition-transform", groupOpen && "rotate-90")}
+          />
          </Button>
 
          <div
           id={`sidebar-group-${group.id}`}
           hidden={!groupOpen}
-          className="grid gap-1 border-l border-border-default pb-1 pl-2"
+          className="grid gap-2 border-l border-border-default pb-1 pl-2"
          >
-          {group.itemIds.map((itemId) => (
-           <NavRow
-            key={itemId}
-            itemId={itemId}
-            active={isActive(pathname, searchParams, navigationItems[itemId].href)}
-            collapsed={false}
-           />
+          {group.sections.map((section) => (
+           <div key={section.id} className="grid gap-1">
+            <Typography
+             variant="overline"
+             tone="muted"
+             weight="black"
+             className="px-2.5 pt-1"
+            >
+             {t(section.messageKey)}
+            </Typography>
+            {section.itemIds.map((itemId) => (
+             <NavRow
+              key={itemId}
+              itemId={itemId}
+              active={isActive(pathname, searchParams, itemId)}
+              collapsed={false}
+              onNavigate={() => setExpandedGroupId(null)}
+             />
+            ))}
+           </div>
           ))}
          </div>
         </section>
@@ -218,7 +320,7 @@ export function MobileBottomNavigation() {
  const searchParams = useSearchParams();
  const [moreOpen, setMoreOpen] = useState(false);
  const primaryRouteActive = mobileNavigationItemIds.some((itemId) =>
-  isActive(pathname, searchParams, navigationItems[itemId].href),
+  isActive(pathname, searchParams, itemId),
  );
  const moreActive = !primaryRouteActive;
 
@@ -234,7 +336,7 @@ export function MobileBottomNavigation() {
      {mobileNavigationItemIds.map((itemId) => {
       const item = navigationItems[itemId];
       const Icon = item.icon;
-      const active = isActive(pathname, searchParams, item.href);
+      const active = isActive(pathname, searchParams, itemId);
       const label = t(item.messageKey);
 
       return (
@@ -279,32 +381,42 @@ export function MobileBottomNavigation() {
        {navigationGroups.map((group) => (
         <section
          key={group.id}
-         className="grid content-start gap-1.5"
+         className="grid content-start gap-2"
          aria-label={t(group.messageKey)}
         >
          <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
           {t(group.messageKey)}
          </Typography>
-         {group.itemIds.map((itemId) => (
-          <NavRow
-           key={itemId}
-           itemId={itemId}
-           active={isActive(pathname, searchParams, navigationItems[itemId].href)}
-           collapsed={false}
-           onNavigate={() => setMoreOpen(false)}
-          />
+         {group.sections.map((section) => (
+          <div key={section.id} className="grid gap-1">
+           <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
+            {t(section.messageKey)}
+           </Typography>
+           {section.itemIds.map((itemId) => (
+            <NavRow
+             key={itemId}
+             itemId={itemId}
+             active={isActive(pathname, searchParams, itemId)}
+             collapsed={false}
+             onNavigate={() => setMoreOpen(false)}
+            />
+           ))}
+          </div>
          ))}
         </section>
        ))}
-       <section className="grid content-start gap-1.5" aria-label={t("navigation.groups.system")}>
+       <section
+        className="grid content-start gap-1.5"
+        aria-label={t(navigationItems.settings.messageKey)}
+       >
         <Typography variant="overline" tone="muted" weight="black" className="px-2.5">
-         {t("navigation.groups.system")}
+         {t(navigationItems.settings.messageKey)}
         </Typography>
         {mobileUtilityItemIds.map((itemId) => (
          <NavRow
           key={itemId}
           itemId={itemId}
-          active={isActive(pathname, searchParams, navigationItems[itemId].href)}
+          active={isActive(pathname, searchParams, itemId)}
           collapsed={false}
           onNavigate={() => setMoreOpen(false)}
          />
