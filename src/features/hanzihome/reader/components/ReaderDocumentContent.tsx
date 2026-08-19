@@ -324,12 +324,13 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
   });
  }, [localPronunciationOverrides, providedAnalysis, segment.pinyin, segment.zh]);
  const characterCount = Array.from(segment.zh).length;
- const activeCharacterCount = Math.max(0, characterCount - playbackStartOffset);
+ const playbackStartCharacterIndex = Array.from(segment.zh.slice(0, playbackStartOffset)).length;
+ const activeCharacterCount = Math.max(0, characterCount - playbackStartCharacterIndex);
  const activeCharacterIndex =
   playbackProgress >= 0
    ? getActiveCharacterIndex(
       characterCount,
-      playbackStartOffset,
+      playbackStartCharacterIndex,
       activeCharacterCount,
       playbackProgress,
      )
