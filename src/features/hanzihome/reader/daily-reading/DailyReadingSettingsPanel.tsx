@@ -7,7 +7,6 @@ import {
  RefreshCcw,
  Search,
  Settings,
- Sparkles,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -69,6 +68,12 @@ type TopicTranslationKey =
  | "generated.topic.environment"
  | "generated.topic.health";
 
+type FreshnessTranslationKey =
+ | "v2.settings.advanced.freshness1"
+ | "v2.settings.advanced.freshness3"
+ | "v2.settings.advanced.freshness7"
+ | "v2.settings.advanced.freshness14";
+
 function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
  switch (topic) {
   case "culture":
@@ -89,6 +94,21 @@ function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
    return "generated.topic.environment";
   case "health":
    return "generated.topic.health";
+ }
+}
+
+function getFreshnessTranslationKey(
+ days: DailyReadingV2Settings["freshnessDays"],
+): FreshnessTranslationKey {
+ switch (days) {
+  case 1:
+   return "v2.settings.advanced.freshness1";
+  case 3:
+   return "v2.settings.advanced.freshness3";
+  case 7:
+   return "v2.settings.advanced.freshness7";
+  case 14:
+   return "v2.settings.advanced.freshness14";
  }
 }
 
@@ -191,9 +211,11 @@ export function DailyReadingSettingsPanel() {
 
  const todayStatus = scheduledToday
   ? t("v2.settings.capture.todayReady")
-  : release.isDue
-    ? t("v2.settings.capture.todayDue")
-    : t("v2.settings.capture.todayWaiting");
+  : !settings.autoCaptureEnabled
+    ? t("v2.library.autoOff")
+    : release.isDue
+      ? t("v2.settings.capture.todayDue")
+      : t("v2.settings.capture.todayWaiting");
 
  return (
   <Card variant="section" padding="lg" className="grid min-w-0 gap-5">
@@ -262,7 +284,9 @@ export function DailyReadingSettingsPanel() {
        </Label>
        <Select
         value={settings.targetLevel}
-        onValueChange={(value) => saveSettings({ targetLevel: dailyReadingV2SettingsSchema.shape.targetLevel.parse(value) })}
+        onValueChange={(value) =>
+         saveSettings({ targetLevel: dailyReadingV2SettingsSchema.shape.targetLevel.parse(value) })
+        }
        >
         <SelectTrigger id="daily-reading-v2-level" width="full">
          <SelectValue />
@@ -280,7 +304,7 @@ export function DailyReadingSettingsPanel() {
      </div>
     </div>
 
-    <div className="grid gap-3 border-y border-border-default py-3 sm:grid-cols-3">
+    <div className="grid gap-3 sm:grid-cols-3">
      <div className="grid gap-1">
       <Typography variant="caption" tone="muted" weight="bold">
        {t("v2.settings.capture.todayLabel")}
@@ -299,7 +323,9 @@ export function DailyReadingSettingsPanel() {
       <Typography variant="caption" tone="muted" weight="bold">
        {t("v2.settings.advanced.freshnessLabel")}
       </Typography>
-      <Typography weight="semibold">{t(`v2.settings.advanced.freshness${settings.freshnessDays}`)}</Typography>
+      <Typography weight="semibold">
+       {t(getFreshnessTranslationKey(settings.freshnessDays))}
+      </Typography>
      </div>
     </div>
 
@@ -311,7 +337,11 @@ export function DailyReadingSettingsPanel() {
       onClick={() => void handleTestSource()}
       disabled={testingSource || capturing}
      >
-      {testingSource ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
+      {testingSource ? (
+       <Spinner data-icon="inline-start" />
+      ) : (
+       <RefreshCcw data-icon="inline-start" />
+      )}
       {testingSource
        ? t("v2.settings.capture.testingSource")
        : t("v2.settings.capture.testSource")}
@@ -322,7 +352,7 @@ export function DailyReadingSettingsPanel() {
       onClick={() => void handleCapture()}
       disabled={testingSource || capturing}
      >
-      {capturing ? <Spinner data-icon="inline-start" /> : <Sparkles data-icon="inline-start" />}
+      {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
       {capturing ? t("v2.settings.capture.findingNow") : t("v2.settings.capture.findNow")}
      </Button>
      <Typography as="p" variant="caption" tone="muted">
@@ -335,7 +365,9 @@ export function DailyReadingSettingsPanel() {
       <div className="flex flex-wrap items-center justify-between gap-2">
        <Typography weight="bold">{t("v2.settings.sourcePreview.title")}</Typography>
        <Badge variant="success" size="sm">
-        {sourcePreview.reading.source.publisher}
+        <HanziText as="span" size="inherit">
+         {sourcePreview.reading.source.publisher}
+        </HanziText>
        </Badge>
       </div>
       <HanziText as="p" size="medium" weight="bold">
@@ -355,10 +387,14 @@ export function DailyReadingSettingsPanel() {
         </Typography>
        ) : null}
        <Typography variant="caption" tone="muted">
-        {t("v2.settings.sourcePreview.candidates", { count: sourcePreview.report.policyCandidates })}
+        {t("v2.settings.sourcePreview.candidates", {
+         count: sourcePreview.report.policyCandidates,
+        })}
        </Typography>
        <Typography variant="caption" tone="muted">
-        {t("v2.settings.sourcePreview.extractions", { count: sourcePreview.report.attemptedExtractions })}
+        {t("v2.settings.sourcePreview.extractions", {
+         count: sourcePreview.report.attemptedExtractions,
+        })}
        </Typography>
       </div>
       <Typography variant="caption" tone="muted">
@@ -396,7 +432,7 @@ export function DailyReadingSettingsPanel() {
      />
     </div>
 
-    <div className="flex flex-col gap-3 border-y border-border-default py-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
      <div className="grid min-w-0 gap-1">
       {runtime.isPending ? (
        <Typography variant="bodySmall" tone="muted">
@@ -445,7 +481,11 @@ export function DailyReadingSettingsPanel() {
         onClick={() => void runtime.refetch()}
         disabled={runtime.isFetching}
        >
-        {runtime.isFetching ? <Spinner data-icon="inline-start" /> : <RefreshCcw data-icon="inline-start" />}
+        {runtime.isFetching ? (
+         <Spinner data-icon="inline-start" />
+        ) : (
+         <RefreshCcw data-icon="inline-start" />
+        )}
         {t("v2.enrichment.actions.checkRuntimeAgain")}
        </Button>
       ) : runtime.data?.status === "missing-key" ? (
@@ -500,7 +540,11 @@ export function DailyReadingSettingsPanel() {
       aria-controls="daily-reading-v2-advanced-content"
       onClick={() => setAdvancedOpen((value) => !value)}
      >
-      {advancedOpen ? <ChevronUp data-icon="inline-start" /> : <ChevronDown data-icon="inline-start" />}
+      {advancedOpen ? (
+       <ChevronUp data-icon="inline-start" />
+      ) : (
+       <ChevronDown data-icon="inline-start" />
+      )}
       {advancedOpen ? t("v2.settings.advanced.hide") : t("v2.settings.advanced.show")}
      </Button>
     </div>
@@ -514,7 +558,9 @@ export function DailyReadingSettingsPanel() {
         </Label>
         <Select
          value={String(settings.freshnessDays)}
-         onValueChange={(value) => saveSettings({ freshnessDays: dailyReadingV2FreshnessDaysSchema.parse(Number(value)) })}
+         onValueChange={(value) =>
+          saveSettings({ freshnessDays: dailyReadingV2FreshnessDaysSchema.parse(Number(value)) })
+         }
         >
          <SelectTrigger id="daily-reading-v2-freshness" width="full">
           <SelectValue />
@@ -537,7 +583,9 @@ export function DailyReadingSettingsPanel() {
         </Label>
         <Select
          value={settings.preferredLength}
-         onValueChange={(value) => saveSettings({ preferredLength: dailyReadingV2LengthPreferenceSchema.parse(value) })}
+         onValueChange={(value) =>
+          saveSettings({ preferredLength: dailyReadingV2LengthPreferenceSchema.parse(value) })
+         }
         >
          <SelectTrigger id="daily-reading-v2-length" width="full">
           <SelectValue />
@@ -557,14 +605,18 @@ export function DailyReadingSettingsPanel() {
         </Label>
         <Select
          value={settings.noMatchBehavior}
-         onValueChange={(value) => saveSettings({ noMatchBehavior: dailyReadingV2NoMatchBehaviorSchema.parse(value) })}
+         onValueChange={(value) =>
+          saveSettings({ noMatchBehavior: dailyReadingV2NoMatchBehaviorSchema.parse(value) })
+         }
         >
          <SelectTrigger id="daily-reading-v2-no-match" width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
           <SelectItem value="skip-day">{t("v2.settings.advanced.skipDay")}</SelectItem>
-          <SelectItem value="expand-window">{t("v2.settings.advanced.expandWindow")}</SelectItem>
+          <SelectItem value="expand-window">
+           {t("v2.settings.advanced.expandWindow")}
+          </SelectItem>
          </SelectContent>
         </Select>
        </div>
@@ -627,7 +679,7 @@ export function DailyReadingSettingsPanel() {
             checked={selected}
             onCheckedChange={(checked) => toggleSource(source.id, checked === true)}
            />
-           <Label htmlFor={id} variant="label" weight="semibold" className="min-w-0 cursor-pointer">
+           <Label htmlFor={id} variant="label" weight="semibold" className="min-w-0">
             <HanziText as="span" size="inherit">
              {source.publisherLabelZh}
             </HanziText>
