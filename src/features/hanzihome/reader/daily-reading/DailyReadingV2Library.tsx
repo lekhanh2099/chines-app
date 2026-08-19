@@ -137,19 +137,11 @@ export function DailyReadingV2Library() {
     }
    />
 
-   <section className="grid gap-3" aria-labelledby="daily-reading-v2-library-heading">
-    <div className="flex flex-wrap items-end justify-between gap-3">
-     <div className="grid gap-1">
-      <Typography variant="overline" tone="accent" weight="black">
-       {t("generated.library.eyebrow")}
-      </Typography>
-      <Typography as="h2" variant="sectionTitle" id="daily-reading-v2-library-heading" weight="black">
-       {t("generated.library.title")}
-      </Typography>
-      <Typography variant="bodySmall" tone="muted">
-       {t("v2.library.description")}
-      </Typography>
-     </div>
+   <section className="grid gap-3">
+    <div className="flex flex-wrap items-center justify-between gap-3">
+     <Typography variant="bodySmall" tone="muted">
+      {t("v2.settings.capture.libraryCount", { count: library.items.length })}
+     </Typography>
      <Badge variant={settings.autoCaptureEnabled ? "success" : "default"} size="sm">
       {settings.autoCaptureEnabled ? t("v2.library.autoOn") : t("v2.library.autoOff")}
      </Badge>
@@ -159,7 +151,7 @@ export function DailyReadingV2Library() {
      <Card variant="subtle" padding="md" className="grid gap-2">
       <Typography weight="semibold">{t("empty.title")}</Typography>
       <Typography variant="bodySmall" tone="muted">
-       {t("empty.description")}
+       {t("v2.library.description")}
       </Typography>
      </Card>
     ) : (
