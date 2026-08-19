@@ -18,9 +18,7 @@ import {
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
-} from "@/features/hanzihome/components/lesson-overview/types";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  analyzeContextualPronunciation,
@@ -318,20 +316,23 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
    ? reading.enrichment.translation.data
    : null;
  const paragraphs = reading?.article.paragraphs ?? [];
- const translationByParagraphId = useMemo(
-  () => new Map(translation?.paragraphs.map((paragraph) => [paragraph.paragraphId, paragraph]) ?? []),
-  [translation],
- );
- const pronunciationByParagraphId = useMemo(
-  () =>
-   new Map(
-    paragraphs.flatMap((paragraph) => {
-     const analysis = analyzeDailyReadingText(paragraph.zh);
-     return analysis === null ? [] : [[paragraph.id, analysis]];
-    }),
-   ),
-  [paragraphs],
- );
+ const translationByParagraphId = useMemo(() => {
+  const map = new Map<
+   string,
+   Extract<DailyReadingV2["enrichment"]["translation"], { status: "ready" }>["data"]["paragraphs"][number]
+  >();
+  if (translation === null) return map;
+  for (const paragraph of translation.paragraphs) map.set(paragraph.paragraphId, paragraph);
+  return map;
+ }, [translation]);
+ const pronunciationByParagraphId = useMemo(() => {
+  const map = new Map<string, ContextualPronunciationAnalysis>();
+  for (const paragraph of paragraphs) {
+   const analysis = analyzeDailyReadingText(paragraph.zh);
+   if (analysis !== null) map.set(paragraph.id, analysis);
+  }
+  return map;
+ }, [paragraphs]);
  const titlePronunciation = useMemo(
   () => (reading === null ? null : analyzeDailyReadingText(reading.article.titleZh)),
   [reading],
