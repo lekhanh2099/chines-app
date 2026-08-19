@@ -45,6 +45,28 @@ export function getAppScrollContainer(): HTMLElement | null {
  return document.querySelector<HTMLElement>("[data-app-scroll-viewport]");
 }
 
+function isScrollable(element: HTMLElement): boolean {
+ if (typeof window === "undefined") return false;
+ const overflowY = window.getComputedStyle(element).overflowY;
+ return (
+  (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") &&
+  element.scrollHeight > element.clientHeight
+ );
+}
+
+function getScrollContainerForTarget(target: HTMLElement): HTMLElement | null {
+ const appContainer = getAppScrollContainer();
+ let current = target.parentElement;
+
+ while (current && current !== appContainer) {
+  if (isScrollable(current)) return current;
+  current = current.parentElement;
+ }
+
+ if (appContainer?.contains(target)) return appContainer;
+ return null;
+}
+
 export function scrollAppContentToTop(behavior: ScrollBehavior = "auto"): void {
  getAppScrollContainer()?.scrollTo({ behavior, left: 0, top: 0 });
 }
@@ -53,8 +75,9 @@ export function scrollAppContentToElement(
  target: HTMLElement | null,
  options: { behavior?: ScrollBehavior; block?: AppScrollBlock } = {},
 ): void {
- const container = getAppScrollContainer();
- if (container === null || target === null || !container.contains(target)) return;
+ if (target === null) return;
+ const container = getScrollContainerForTarget(target);
+ if (container === null) return;
 
  const containerRect = container.getBoundingClientRect();
  const targetRect = target.getBoundingClientRect();
