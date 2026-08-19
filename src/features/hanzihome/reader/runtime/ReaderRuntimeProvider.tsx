@@ -23,6 +23,7 @@ import {
 export type ReaderRuntimeCommands = {
  playCurrent: () => void;
  playAll: () => void;
+ playFromCharacter: (index: number, startOffset: number) => void;
  pause: () => void;
  resume: () => void;
  stop: () => void;
@@ -43,6 +44,7 @@ const noop = () => undefined;
 const noRuntimeCommands: ReaderRuntimeCommands = {
  playCurrent: noop,
  playAll: noop,
+ playFromCharacter: noop,
  pause: noop,
  resume: noop,
  stop: noop,
@@ -70,6 +72,8 @@ export function ReaderRuntimeProvider({
   () => ({
    playCurrent: () => commandsRef.current.playCurrent(),
    playAll: () => commandsRef.current.playAll(),
+   playFromCharacter: (index, startOffset) =>
+    commandsRef.current.playFromCharacter(index, startOffset),
    pause: () => commandsRef.current.pause(),
    resume: () => commandsRef.current.resume(),
    stop: () => commandsRef.current.stop(),
@@ -128,29 +132,52 @@ function ReaderTtsBridge({
  const runRef = useRef(0);
  const ownsPlaybackRef = useRef(false);
  const continuousRef = useRef(false);
+ const allowAutoAdvanceRef = useRef(true);
  const finishPlayback = useCallback(
   (completed = false) => {
    ownsPlaybackRef.current = false;
    continuousRef.current = false;
+   allowAutoAdvanceRef.current = true;
    store.actions.resetPlayback();
    if (completed) onPlaybackComplete?.();
   },
   [onPlaybackComplete, store],
  );
- const playAtRef = useRef<(index: number, runId: number, continuous: boolean) => void>(noop);
+ const playAtRef = useRef<
+  (
+   index: number,
+   runId: number,
+   continuous: boolean,
+   allowAutoAdvance: boolean,
+   startOffset: number,
+  ) => void
+ >(noop);
  const playAt = useCallback(
-  (index: number, runId: number, continuous: boolean) => {
+  (
+   index: number,
+   runId: number,
+   continuous: boolean,
+   allowAutoAdvance: boolean,
+   startOffset = 0,
+  ) => {
    if (runRef.current !== runId) return;
    const segment = document.segments[index];
    if (!segment) {
     finishPlayback(true);
     return;
    }
-   const speechText = (segment.speechText ?? segment.zh).trim();
+   const boundedOffset = Math.min(Math.max(Math.trunc(startOffset), 0), segment.zh.length);
+   const speechText =
+    boundedOffset > 0
+     ? segment.zh.slice(boundedOffset).trim()
+     : (segment.speechText ?? segment.zh).trim();
    if (!speechText) {
     const nextIndex = index + 1;
-    if (continuous && nextIndex < document.segments.length) {
-     playAtRef.current(nextIndex, runId, continuous);
+    if (
+     (continuous || (allowAutoAdvance && store.state.autoAdvance)) &&
+     nextIndex < document.segments.length
+    ) {
+     playAtRef.current(nextIndex, runId, continuous, allowAutoAdvance, 0);
     } else {
      finishPlayback(index >= document.segments.length - 1);
     }
@@ -159,10 +186,12 @@ function ReaderTtsBridge({
 
    ownsPlaybackRef.current = true;
    continuousRef.current = continuous;
+   allowAutoAdvanceRef.current = allowAutoAdvance;
    store.actions.selectIndex(index, "playback");
    store.actions.syncPlayback({
     playbackSegmentId: segment.id,
     playbackStatus: "loading",
+    playbackStartOffset: boundedOffset,
     progress: 0,
     rate,
     error: null,
@@ -170,12 +199,15 @@ function ReaderTtsBridge({
    speakSequence([speechText], () => {
     if (runRef.current !== runId) return;
     if (store.state.loopCurrent) {
-     playAtRef.current(index, runId, continuous);
+     playAtRef.current(index, runId, continuous, allowAutoAdvance, boundedOffset);
      return;
     }
     const nextIndex = index + 1;
-    if ((continuous || store.state.autoAdvance) && nextIndex < document.segments.length) {
-     playAtRef.current(nextIndex, runId, continuous);
+    if (
+     (continuous || (allowAutoAdvance && store.state.autoAdvance)) &&
+     nextIndex < document.segments.length
+    ) {
+     playAtRef.current(nextIndex, runId, continuous, allowAutoAdvance, 0);
      return;
     }
     finishPlayback(index >= document.segments.length - 1);
@@ -188,14 +220,21 @@ function ReaderTtsBridge({
  }, [playAt]);
 
  const startAt = useCallback(
-  (index: number, continuous: boolean) => {
+  (index: number, continuous: boolean, allowAutoAdvance = true, startOffset = 0) => {
    if (document.segments.length === 0) return;
    runRef.current += 1;
    const runId = runRef.current;
    if (ownsPlaybackRef.current) stopTts();
    ownsPlaybackRef.current = true;
    continuousRef.current = continuous;
-   playAt(Math.min(Math.max(index, 0), document.segments.length - 1), runId, continuous);
+   allowAutoAdvanceRef.current = allowAutoAdvance;
+   playAt(
+    Math.min(Math.max(index, 0), document.segments.length - 1),
+    runId,
+    continuous,
+    allowAutoAdvance,
+    startOffset,
+   );
   },
   [document.segments.length, playAt, stopTts],
  );
@@ -212,7 +251,7 @@ function ReaderTtsBridge({
     const runId = runRef.current;
     stopTts();
     ownsPlaybackRef.current = true;
-    playAt(nextIndex, runId, continuousRef.current);
+    playAt(nextIndex, runId, continuousRef.current, allowAutoAdvanceRef.current, 0);
     return;
    }
    store.actions.selectIndex(nextIndex, "command");
@@ -224,8 +263,9 @@ function ReaderTtsBridge({
 
  useEffect(() => {
   commandsRef.current = {
-   playCurrent: () => startAt(store.state.activeIndex, true),
-   playAll: () => startAt(0, true),
+   playCurrent: () => startAt(store.state.activeIndex, true, true, 0),
+   playAll: () => startAt(0, true, true, 0),
+   playFromCharacter: (index, startOffset) => startAt(index, false, false, startOffset),
    pause: () => {
     if (ownsPlaybackRef.current) pauseTts();
    },
@@ -233,17 +273,23 @@ function ReaderTtsBridge({
     if (ownsPlaybackRef.current) resumeTts();
    },
    stop,
-   restartCurrent: () => startAt(store.state.activeIndex, continuousRef.current),
+   restartCurrent: () =>
+    startAt(
+     store.state.activeIndex,
+     continuousRef.current,
+     allowAutoAdvanceRef.current,
+     store.state.playbackStartOffset,
+    ),
    previous,
    next,
    selectIndex,
-   setRate: (rate) => {
-    setTtsRate(rate);
+   setRate: (nextRate) => {
+    setTtsRate(nextRate);
     store.actions.syncPlayback({
      playbackSegmentId: store.state.playbackSegmentId,
      playbackStatus: store.state.playbackStatus,
      progress: store.state.progress,
-     rate,
+     rate: nextRate,
      error: store.state.error,
     });
    },
