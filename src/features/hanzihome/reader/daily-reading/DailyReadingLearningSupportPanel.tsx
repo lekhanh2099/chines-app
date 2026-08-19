@@ -256,7 +256,11 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      onClick={() => void runtime.refetch()}
      disabled={runtime.isFetching}
     >
-     {runtime.isFetching ? <Spinner data-icon="inline-start" /> : <RefreshCcw data-icon="inline-start" />}
+     {runtime.isFetching ? (
+      <Spinner data-icon="inline-start" />
+     ) : (
+      <RefreshCcw data-icon="inline-start" />
+     )}
      {t("v2.enrichment.actions.checkRuntimeAgain")}
     </Button>
    );
@@ -289,9 +293,9 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
  }
 
  return (
-  <Card variant="subtle" padding="md" className="grid min-w-0 gap-3" aria-live="polite">
+  <Card variant="subtle" padding="md" className="grid min-w-0 gap-3">
    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-    <div className="grid min-w-0 gap-1">
+    <div className="grid min-w-0 gap-1" aria-live="polite">
      <div className="flex flex-wrap items-center gap-2">
       <Typography as="h2" variant="cardTitle" weight="bold">
        {t("v2.enrichment.title")}
@@ -325,14 +329,14 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
 
    <Separator />
 
-   <div className="grid gap-x-5 sm:grid-cols-2">
+   <div className="grid gap-x-5 gap-y-2 sm:grid-cols-2">
     {moduleConfigs.map((config) => {
      const state = reading.enrichment[config.module];
      const Icon = config.icon;
      return (
       <div
        key={config.module}
-       className="flex min-w-0 flex-col gap-2 border-b border-border-default py-3 sm:flex-row sm:items-center sm:justify-between"
+       className="flex min-w-0 flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between"
       >
        <div className="flex min-w-0 items-center gap-2">
         <Icon aria-hidden />
