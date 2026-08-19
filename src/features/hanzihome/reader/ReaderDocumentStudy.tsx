@@ -195,7 +195,7 @@ function ReaderDocumentStudyContent({
    ? scoreTranslationAttempt(translationSegment, translationDirection, translationDraft)
    : null;
  const isHskDocument = resource.document.kind === "hsk";
- const workspaceTabsEnabled = stateOwner !== "daily" && !isHskDocument;
+ const workspaceTabsEnabled = stateOwner !== "daily";
  const availableTabs = useMemo(
   () =>
    workspaceTabsEnabled
