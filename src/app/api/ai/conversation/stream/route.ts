@@ -11,8 +11,10 @@ import { apiError, requireAuthenticatedRoute } from "@/lib/api/authenticated-rou
 import { logger } from "@/lib/logger";
 import type { JsonFieldValue } from "@/types/json";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+export const maxDuration = 180;
 
 const streamTurnRequestSchema = aiConversationTurnRequestSchema.extend({
  conversationId: z.uuid(),
