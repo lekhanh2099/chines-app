@@ -51,6 +51,9 @@ export function ContextualReaderText({
   () => [...readerGraphemeSegmenter.segment(analysis.normalizedText)],
   [analysis.normalizedText],
  );
+ const hasManualOverride = analysis.glyphs.some((glyph) =>
+  glyph.evidence.includes("manual-override"),
+ );
 
  const renderGrapheme = (grapheme: Intl.SegmentData, index: number) => {
   const glyph = glyphByStart.get(grapheme.index);
@@ -65,81 +68,109 @@ export function ContextualReaderText({
     </span>
    );
   }
+
   const active = index === activeCharacterIndex;
-  const interactive = Boolean(onGlyphInspect || onGlyphClick);
-  const activateGlyph = (element: HTMLElement) => {
-   if (onGlyphInspect) {
-    onGlyphInspect(glyph, element.getBoundingClientRect());
-    return;
-   }
-   onGlyphClick?.(glyph.start, glyph.end);
+  const hanziInteractive = Boolean(onGlyphClick);
+  const pinyinInteractive = Boolean(onGlyphInspect);
+  const activateHanzi = () => onGlyphClick?.(glyph.start, glyph.end);
+  const activatePinyin = (element: HTMLElement) =>
+   onGlyphInspect?.(glyph, element.getBoundingClientRect());
+  const handleHanziKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+   if (event.key !== "Enter" && event.key !== " ") return;
+   event.preventDefault();
+   activateHanzi();
   };
-  const handleGlyphKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-   if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    activateGlyph(event.currentTarget);
-   }
+  const handlePinyinKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+   if (event.key !== "Enter" && event.key !== " ") return;
+   event.preventDefault();
+   activatePinyin(event.currentTarget);
   };
-  const actionLabel = onGlyphInspect
-   ? `Kiểm tra cách đọc chữ ${grapheme.segment}`
-   : onGlyphClick
-     ? t("playFromCharacter", { character: grapheme.segment })
-     : undefined;
-  const interactiveClassName = interactive
+  const hanziClassName = hanziInteractive
+   ? cn("cursor-pointer rounded-sm", focusRingClassName)
+   : undefined;
+  const pinyinClassName = pinyinInteractive
    ? cn(
       "cursor-pointer rounded-sm underline decoration-dotted underline-offset-[0.22em]",
       focusRingClassName,
      )
+   : undefined;
+  const hanziActionLabel = hanziInteractive
+   ? t("playFromCharacter", { character: grapheme.segment })
+   : undefined;
+  const pinyinActionLabel = pinyinInteractive
+   ? `Kiểm tra pinyin chữ ${grapheme.segment}`
    : undefined;
 
   if (pinyinPresentation === "paragraph") {
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
-     className={cn(interactiveClassName, active && "reading-progress-highlight")}
-     onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
-     onKeyDown={interactive ? handleGlyphKeyDown : undefined}
-     role={interactive ? "button" : undefined}
-     tabIndex={interactive ? 0 : undefined}
-     aria-label={actionLabel}
+     className={cn(hanziClassName, active && "reading-progress-highlight")}
+     onClick={hanziInteractive ? activateHanzi : undefined}
+     onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
+     role={hanziInteractive ? "button" : undefined}
+     tabIndex={hanziInteractive ? 0 : undefined}
+     aria-label={hanziActionLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
     </span>
    );
   }
+
   if (!showPinyin || glyph.spokenPinyin === null) {
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
-     className={cn(interactiveClassName, active && "reading-progress-highlight")}
-     onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
-     onKeyDown={interactive ? handleGlyphKeyDown : undefined}
-     role={interactive ? "button" : undefined}
-     tabIndex={interactive ? 0 : undefined}
-     aria-label={actionLabel}
+     className={cn(hanziClassName, active && "reading-progress-highlight")}
+     onClick={hanziInteractive ? activateHanzi : undefined}
+     onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
+     role={hanziInteractive ? "button" : undefined}
+     tabIndex={hanziInteractive ? 0 : undefined}
+     aria-label={hanziActionLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
     </span>
    );
   }
+
   const alternatives = glyph.alternatives.length > 1 ? glyph.alternatives.join(", ") : undefined;
   return (
    <ruby
     key={`${grapheme.index}:${grapheme.segment}`}
-    className={cn(interactiveClassName, active && "reading-progress-highlight")}
-    onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
-    onKeyDown={interactive ? handleGlyphKeyDown : undefined}
-    role={interactive ? "button" : undefined}
-    tabIndex={interactive ? 0 : undefined}
-    aria-label={actionLabel}
-    title={alternatives}
+    className={cn(active && "reading-progress-highlight")}
     aria-current={active ? "true" : undefined}
    >
-    <span>{grapheme.segment}</span>
+    <span
+     className={hanziClassName}
+     onClick={hanziInteractive ? activateHanzi : undefined}
+     onKeyDown={hanziInteractive ? handleHanziKeyDown : undefined}
+     role={hanziInteractive ? "button" : undefined}
+     tabIndex={hanziInteractive ? 0 : undefined}
+     aria-label={hanziActionLabel}
+    >
+     {grapheme.segment}
+    </span>
     <rt className="font-pinyin text-[0.45em] font-semibold text-accent-text">
-     {glyph.spokenPinyin}
+     {pinyinInteractive ? (
+      <span
+       className={pinyinClassName}
+       onClick={(event) => {
+        event.stopPropagation();
+        activatePinyin(event.currentTarget);
+       }}
+       onKeyDown={handlePinyinKeyDown}
+       role="button"
+       tabIndex={0}
+       aria-label={pinyinActionLabel}
+       title={alternatives}
+      >
+       {glyph.spokenPinyin}
+      </span>
+     ) : (
+      glyph.spokenPinyin
+     )}
     </rt>
    </ruby>
   );
@@ -158,7 +189,7 @@ export function ContextualReaderText({
    </ReaderHanziText>
    {pinyinPresentation === "paragraph" && showPinyin ? (
     <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
-     {analysis.sourcePinyinStatus === "aligned" && sourcePinyin
+     {analysis.sourcePinyinStatus === "aligned" && sourcePinyin && !hasManualOverride
       ? sourcePinyin
       : formatContextualSpokenPinyin(analysis)}
     </PinyinText>
