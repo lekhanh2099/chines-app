@@ -67,7 +67,9 @@ const reading: DailyReadingV2 = {
 };
 
 function paragraphIdsFromPrompt(prompt: string) {
- return [...prompt.matchAll(/\[(short-p\d+)\]/gu)].map((match) => match[1]).filter(Boolean);
+ return [...prompt.matchAll(/\[(short-p\d+)\]/gu)]
+  .map((match) => match[1])
+  .filter((value): value is string => value !== undefined);
 }
 
 describe("Daily Reading V2 translation chunk bounds", () => {
