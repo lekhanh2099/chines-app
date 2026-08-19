@@ -17,12 +17,14 @@ import { Typography } from "@/components/ui/typography";
 import { HanziText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
+import { DailyReadingLearningSupportPanel } from "./DailyReadingLearningSupportPanel";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 import {
  captureDailyReadingNow,
  useDailyReadingV2Library,
  useDailyReadingV2Settings,
 } from "./daily-reading-v2-client";
+import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
 import type { DailyReadingV2 } from "./daily-reading-v2.schemas";
 
 type V2Tab = "reader" | "translation" | "questions" | "vocabulary" | "grammar" | "source";
@@ -73,6 +75,10 @@ function availableTabs(reading: DailyReadingV2): readonly V2Tab[] {
  return tabs;
 }
 
+function readyLearningModuleCount(reading: DailyReadingV2) {
+ return Object.values(reading.enrichment).filter((state) => state.status === "ready").length;
+}
+
 export function DailyReadingV2Library() {
  const t = useTranslations("DailyReading");
  const router = useRouter();
@@ -92,10 +98,13 @@ export function DailyReadingV2Library() {
   setCapturing(true);
   try {
    const reading = await captureDailyReadingNow("manual");
-   toast.success(t("generated.toast.created", { title: reading.article.titleZh }));
+   toast.success(t("v2.settings.toast.articleReady", { title: reading.article.titleZh }));
    router.push(readingHref(reading.id), { scroll: false });
+   if (settings.autoEnrichmentEnabled) {
+    void enrichDailyReadingV2LearningSupport(reading.id).catch(() => undefined);
+   }
   } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("generated.toast.failed"));
+   toast.error(error instanceof Error ? error.message : t("v2.settings.toast.captureFailed"));
   } finally {
    setCapturing(false);
   }
@@ -106,13 +115,13 @@ export function DailyReadingV2Library() {
    <PageHeader
     eyebrow={t("header.eyebrow")}
     title={t("header.title")}
-    description={t("header.description")}
+    description={t("v2.library.description")}
     actions={
      <>
       <Button type="button" variant="outline" size="toolbar" asChild>
-       <Link href="/settings?section=reading" prefetch={false}>
+       <Link href="/settings?section=ai&panel=daily-reading" prefetch={false}>
         <Settings data-icon="inline-start" />
-        {t("header.settings")}
+        {t("v2.actions.openSettings")}
        </Link>
       </Button>
       <Button
@@ -122,7 +131,7 @@ export function DailyReadingV2Library() {
        disabled={capturing}
       >
        {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
-       {t("generated.generateNow")}
+       {capturing ? t("v2.actions.findingArticle") : t("v2.actions.findNewArticle")}
       </Button>
      </>
     }
@@ -138,13 +147,11 @@ export function DailyReadingV2Library() {
        {t("generated.library.title")}
       </Typography>
       <Typography variant="bodySmall" tone="muted">
-       {t("header.description")}
+       {t("v2.library.description")}
       </Typography>
      </div>
      <Badge variant={settings.autoCaptureEnabled ? "success" : "default"} size="sm">
-      {settings.autoCaptureEnabled
-       ? t("generated.library.autoOn")
-       : t("generated.library.autoOff")}
+      {settings.autoCaptureEnabled ? t("v2.library.autoOn") : t("v2.library.autoOff")}
      </Badge>
     </div>
 
@@ -162,6 +169,7 @@ export function DailyReadingV2Library() {
         reading.enrichment.translation.status === "ready"
          ? reading.enrichment.translation.data
          : null;
+       const readyModules = readyLearningModuleCount(reading);
        return (
         <Card
          key={reading.id}
@@ -197,6 +205,9 @@ export function DailyReadingV2Library() {
              {translation.titleVi}
             </Typography>
            ) : null}
+           <Typography variant="caption" tone="muted">
+            {t("v2.library.learningReady", { ready: readyModules, total: 4 })}
+           </Typography>
           </div>
           <div className="flex items-center gap-1">
            <Typography as="span" variant="bodySmall" tone="accent" weight="bold">
@@ -334,6 +345,8 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
      </>
     ) : null}
    </div>
+
+   <DailyReadingLearningSupportPanel reading={reading} />
 
    <Tabs value={effectiveTab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
     <TabsContent value={effectiveTab} className="pt-4">
