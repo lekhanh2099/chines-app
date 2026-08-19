@@ -24,6 +24,13 @@ export class DailyReadingGenerationBusyError extends Error {
  }
 }
 
+class DailyReadingLockBackendError extends Error {
+ constructor(message: string) {
+  super(message);
+  this.name = "DailyReadingLockBackendError";
+ }
+}
+
 export function canAcquireDailyReadingLease(
  current: DailyReadingLockRecord | null,
  ownerId: string,
@@ -103,13 +110,22 @@ function updateIndexedDbLease(
 }
 
 async function withIndexedDbLease<Result>(task: () => Promise<Result>): Promise<Result> {
- const database = await openCoordinationDatabase();
+ let database: IDBDatabase;
  const ownerId = crypto.randomUUID();
- const acquired = await acquireIndexedDbLease(database, ownerId);
- if (!acquired) {
-  database.close();
-  throw new DailyReadingGenerationBusyError();
+ try {
+  database = await openCoordinationDatabase();
+  const acquired = await acquireIndexedDbLease(database, ownerId);
+  if (!acquired) {
+   database.close();
+   throw new DailyReadingGenerationBusyError();
+  }
+ } catch (error) {
+  if (error instanceof DailyReadingGenerationBusyError) throw error;
+  throw new DailyReadingLockBackendError(
+   error instanceof Error ? error.message : "IndexedDB lock unavailable.",
+  );
  }
+
  const heartbeat = window.setInterval(() => {
   void updateIndexedDbLease(database, ownerId, false).catch(() => undefined);
  }, heartbeatMilliseconds);
@@ -159,15 +175,23 @@ async function withLocalStorageLease<Result>(task: () => Promise<Result>): Promi
 }
 
 async function withNavigatorLock<Result>(task: () => Promise<Result>): Promise<Result> {
- const result = await navigator.locks.request(
-  lockName,
-  { ifAvailable: true, mode: "exclusive" },
-  async (lock) => {
-   if (lock === null) throw new DailyReadingGenerationBusyError();
-   return task();
-  },
- );
- return result;
+ let taskStarted = false;
+ try {
+  return await navigator.locks.request(
+   lockName,
+   { ifAvailable: true, mode: "exclusive" },
+   async (lock) => {
+    if (lock === null) throw new DailyReadingGenerationBusyError();
+    taskStarted = true;
+    return task();
+   },
+  );
+ } catch (error) {
+  if (error instanceof DailyReadingGenerationBusyError || taskStarted) throw error;
+  throw new DailyReadingLockBackendError(
+   error instanceof Error ? error.message : "Navigator lock unavailable.",
+  );
+ }
 }
 
 export async function withDailyReadingGenerationLock<Result>(task: () => Promise<Result>) {
@@ -175,14 +199,14 @@ export async function withDailyReadingGenerationLock<Result>(task: () => Promise
   try {
    return await withNavigatorLock(task);
   } catch (error) {
-   if (error instanceof DailyReadingGenerationBusyError) throw error;
+   if (!(error instanceof DailyReadingLockBackendError)) throw error;
   }
  }
  if (typeof window !== "undefined" && window.indexedDB !== undefined) {
   try {
    return await withIndexedDbLease(task);
   } catch (error) {
-   if (error instanceof DailyReadingGenerationBusyError) throw error;
+   if (!(error instanceof DailyReadingLockBackendError)) throw error;
   }
  }
  if (typeof window !== "undefined") return withLocalStorageLease(task);
