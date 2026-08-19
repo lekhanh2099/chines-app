@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { aiRuntimeReadinessResponseSchema } from "@/features/ai-runtime/ai-runtime.schema";
+import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),

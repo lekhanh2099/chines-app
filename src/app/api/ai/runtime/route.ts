@@ -1,4 +1,4 @@
-import { aiRuntimeReadinessResponseSchema } from "@/features/ai-runtime/ai-runtime.schema";
+import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
 import { getUserAiRuntimeReadiness } from "@/services/ai-runtime.service";
 

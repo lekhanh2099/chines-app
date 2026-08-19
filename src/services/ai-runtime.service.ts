@@ -3,7 +3,6 @@ import "server-only";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { getDefaultApiKeyModel } from "@/lib/api-key-models";
 import { getApiKeyProviderLabel, type ApiKeyProvider } from "@/lib/api-key-providers";
-import { isByokEncryptionConfigured } from "@/lib/encryption";
 import {
  aiRuntimeReadinessResponseSchema,
  type AiRuntimeCapability,
@@ -11,7 +10,8 @@ import {
  type AiRuntimeReadinessReason,
  type AiRuntimeReadinessResponse,
  type AiRuntimeSafeKey,
-} from "@/features/ai-runtime/ai-runtime.schema";
+} from "@/lib/ai-runtime-contract";
+import { isByokEncryptionConfigured } from "@/lib/encryption";
 import {
  getActiveUserApiKeyCredentials,
  getUserApiKeysSchemaStatus,
