@@ -1,9 +1,17 @@
 "use client";
 
-import { ChevronRight, FileText, Search, Settings } from "lucide-react";
-import { useTranslations } from "next-intl";
+import {
+ ArrowLeft,
+ ChevronRight,
+ FileText,
+ History,
+ Search,
+ Settings,
+ Sparkles,
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { type ComponentProps, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
@@ -18,17 +26,15 @@ import {
  HanziText,
  PinyinText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
-import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,
- type ContextualPronunciationAnalysis,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
-import { ContextualReaderText } from "../ContextualReaderText";
+import { ReaderSurface } from "../components/ReaderSurface";
 import { DailyReadingLearningSupportPanel } from "./DailyReadingLearningSupportPanel";
+import { DailyReadingV2ActivityLog } from "./DailyReadingV2ActivityLog";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 import {
  captureDailyReadingNow,
@@ -37,10 +43,24 @@ import {
 } from "./daily-reading-v2-client";
 import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
 import type { DailyReadingV2 } from "./daily-reading-v2.schemas";
+import {
+ buildDailyReadingActivityEntries,
+ buildDailyReadingReaderDocument,
+ getDailyReadingLearningSummary,
+} from "./daily-reading-v2-view-model";
+import { resolveDailyReadingReleaseState } from "./daily-reading.scheduler";
 
-type V2Tab = "reader" | "translation" | "questions" | "vocabulary" | "grammar" | "source";
+type LibraryView = "articles" | "activity";
+type V2Tab =
+ | "reader"
+ | "support"
+ | "translation"
+ | "questions"
+ | "vocabulary"
+ | "grammar"
+ | "source";
 
-const fallbackTabs: readonly V2Tab[] = ["reader", "source"];
+const fallbackTabs: readonly V2Tab[] = ["reader", "support", "source"];
 const contextualPronunciationMaximumCharacters = 2_000;
 
 type TopicTranslationKey =
@@ -78,20 +98,35 @@ function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
 }
 
 function availableTabs(reading: DailyReadingV2): readonly V2Tab[] {
- const tabs: V2Tab[] = ["reader"];
+ const tabs: V2Tab[] = ["reader", "support"];
  if (reading.enrichment.translation.status === "ready") tabs.push("translation");
- if (reading.enrichment.questions.status === "ready") tabs.push("questions");
  if (reading.enrichment.vocabulary.status === "ready") tabs.push("vocabulary");
  if (reading.enrichment.grammar.status === "ready") tabs.push("grammar");
+ if (reading.enrichment.questions.status === "ready") tabs.push("questions");
  tabs.push("source");
  return tabs;
 }
 
-function readyLearningModuleCount(reading: DailyReadingV2) {
- return Object.values(reading.enrichment).filter((state) => state.status === "ready").length;
+function tabLabelKey(tab: V2Tab) {
+ switch (tab) {
+  case "reader":
+   return "tabs.reader";
+  case "support":
+   return "v2.detail.supportTab";
+  case "translation":
+   return "tabs.translation";
+  case "questions":
+   return "tabs.questions";
+  case "vocabulary":
+   return "tabs.vocabulary";
+  case "grammar":
+   return "tabs.grammar";
+  case "source":
+   return "tabs.source";
+ }
 }
 
-function analyzeDailyReadingText(text: string): ContextualPronunciationAnalysis | null {
+function analyzeDailyReadingText(text: string) {
  if (text.length === 0 || text.length > contextualPronunciationMaximumCharacters) return null;
  try {
   return analyzeContextualPronunciation({ text });
@@ -100,20 +135,72 @@ function analyzeDailyReadingText(text: string): ContextualPronunciationAnalysis 
  }
 }
 
+function learningStatusVariant(
+ reading: DailyReadingV2,
+): ComponentProps<typeof Badge>["variant"] {
+ const summary = getDailyReadingLearningSummary(reading);
+ if (summary.complete) return "success";
+ if (summary.running) return "info";
+ if (summary.attention) return "warning";
+ return "default";
+}
+
 export function DailyReadingV2Library() {
  const t = useTranslations("DailyReading");
+ const locale = useLocale();
  const router = useRouter();
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const library = useDailyReadingV2Library();
  const { settings } = useDailyReadingV2Settings();
  const [capturing, setCapturing] = useState(false);
+ const view: LibraryView = searchParams.get("view") === "activity" ? "activity" : "articles";
+ const release = resolveDailyReadingReleaseState(new Date(), settings.captureTime);
+ const scheduledToday = library.items.some(
+  (item) => item.releaseKind === "scheduled" && item.publishedDate === release.dateKey,
+ );
+ const latestCaptureRun = library.captureRuns[0] ?? null;
+ const activityEntries = useMemo(
+  () =>
+   buildDailyReadingActivityEntries({
+    items: library.items,
+    captureRuns: library.captureRuns,
+    enrichmentRuns: library.enrichmentRuns,
+   }),
+  [library.captureRuns, library.enrichmentRuns, library.items],
+ );
+ const dateFormatter = useMemo(
+  () =>
+   new Intl.DateTimeFormat(locale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+   }),
+  [locale],
+ );
+ const captureTime = `${String(settings.captureTime.hour).padStart(2, "0")}:${String(settings.captureTime.minute).padStart(2, "0")}`;
+ const todayStatus =
+  latestCaptureRun?.status === "pending" && latestCaptureRun.date === release.dateKey
+   ? t("v2.library.status.todayRunning")
+   : scheduledToday
+     ? t("v2.library.status.todayReady")
+     : !settings.autoCaptureEnabled
+       ? t("v2.library.status.manualOnly")
+       : release.isDue
+         ? t("v2.library.status.todayDue")
+         : t("v2.library.status.todayWaiting");
 
- const readingHref = (id: string) => {
+ function readingHref(id: string) {
   const next = new URLSearchParams(searchParams.toString());
   next.set("generated", id);
   return `${pathname}?${next.toString()}`;
- };
+ }
+
+ function setView(nextView: LibraryView) {
+  const next = new URLSearchParams(searchParams.toString());
+  if (nextView === "articles") next.delete("view");
+  else next.set("view", nextView);
+  router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
+ }
 
  async function captureArticle() {
   setCapturing(true);
@@ -132,7 +219,7 @@ export function DailyReadingV2Library() {
  }
 
  return (
-  <div className="grid min-w-0 gap-6">
+  <div className="grid min-w-0 gap-5 sm:gap-6">
    <PageHeader
     eyebrow={t("header.eyebrow")}
     title={t("header.title")}
@@ -158,87 +245,143 @@ export function DailyReadingV2Library() {
     }
    />
 
-   <section className="grid gap-3">
-    <div className="flex flex-wrap items-center justify-between gap-3">
-     <Typography variant="bodySmall" tone="muted">
+   <Card variant="subtle" padding="md" className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+    <div className="grid min-w-0 gap-1">
+     <Typography variant="caption" tone="muted" weight="bold">
+      {t("v2.library.status.todayLabel")}
+     </Typography>
+     <Typography weight="semibold">{todayStatus}</Typography>
+    </div>
+    <div className="grid min-w-0 gap-1">
+     <Typography variant="caption" tone="muted" weight="bold">
+      {t("v2.library.status.scheduleLabel")}
+     </Typography>
+     <Typography weight="semibold">
+      {settings.autoCaptureEnabled
+       ? t("v2.library.status.scheduleEnabled", { time: captureTime })
+       : t("v2.library.status.scheduleDisabled")}
+     </Typography>
+    </div>
+    <div className="grid min-w-0 gap-1">
+     <Typography variant="caption" tone="muted" weight="bold">
+      {t("v2.library.status.libraryLabel")}
+     </Typography>
+     <Typography weight="semibold">
       {t("v2.settings.capture.libraryCount", { count: library.items.length })}
      </Typography>
-     <Badge
-      variant={settings.autoCaptureEnabled ? "success" : "default"}
-      size="sm"
-      casing="natural"
-     >
-      {settings.autoCaptureEnabled ? t("v2.library.autoOn") : t("v2.library.autoOff")}
-     </Badge>
     </div>
+   </Card>
 
-    {library.items.length === 0 ? (
-     <Card variant="subtle" padding="md" className="grid gap-2">
-      <Typography weight="semibold">{t("empty.title")}</Typography>
-      <Typography variant="bodySmall" tone="muted">
-       {t("v2.library.description")}
-      </Typography>
-     </Card>
-    ) : (
-     <div className="grid gap-3 xl:grid-cols-2">
-      {library.items.slice(0, 12).map((reading) => {
-       const translation =
-        reading.enrichment.translation.status === "ready"
-         ? reading.enrichment.translation.data
-         : null;
-       const readyModules = readyLearningModuleCount(reading);
-       return (
-        <Card
-         key={reading.id}
-         asChild
-         variant="interactive"
-         padding="md"
-         className="group grid min-w-0 gap-3"
-        >
-         <Link href={readingHref(reading.id)} prefetch={false}>
-          <div className="flex flex-wrap gap-2">
-           <Badge variant={reading.releaseKind === "scheduled" ? "success" : "info"} size="sm">
-            {reading.releaseKind === "scheduled"
-             ? t("generated.kind.scheduled")
-             : t("generated.kind.manual")}
-           </Badge>
-           {reading.classification.targetLevel !== null ? (
-            <Badge variant="warning" size="sm">
-             {reading.classification.targetLevel}
-            </Badge>
-           ) : null}
-           <Badge size="sm">{t(getTopicTranslationKey(reading.classification.topic))}</Badge>
-          </div>
-          <div className="grid min-w-0 gap-1">
-           <Typography variant="caption" tone="muted" weight="bold">
-            {reading.publishedDate} · {t("sample.minutes", { count: reading.estimatedMinutes })} ·{" "}
-            {reading.source.publisher}
-           </Typography>
-           <HanziText as="h3" size="card" clamp="two">
-            {reading.article.titleZh}
-           </HanziText>
-           {translation !== null ? (
-            <Typography variant="bodySmall" tone="secondary" clamp="two">
-             {translation.titleVi}
-            </Typography>
-           ) : null}
-           <Typography variant="caption" tone="muted">
-            {t("v2.library.learningReady", { ready: readyModules, total: 4 })}
-           </Typography>
-          </div>
-          <div className="flex items-center gap-1">
-           <Typography as="span" variant="bodySmall" tone="accent" weight="bold">
-            {t("sample.read")}
-           </Typography>
-           <ChevronRight aria-hidden />
-          </div>
-         </Link>
-        </Card>
-       );
-      })}
+   <Tabs
+    value={view}
+    items={[
+     { key: "articles", label: t("v2.library.tabs.articles"), icon: FileText },
+     { key: "activity", label: t("v2.library.tabs.activity"), icon: History },
+    ]}
+    onValueChange={setView}
+    aria-label={t("v2.library.tabs.aria")}
+   >
+    <TabsContent value="articles" className="pt-4">
+     {library.items.length === 0 ? (
+      <Card variant="subtle" padding="lg" className="grid gap-2">
+       <Typography weight="bold">{t("empty.title")}</Typography>
+       <Typography variant="bodySmall" tone="muted">
+        {t("v2.library.description")}
+       </Typography>
+      </Card>
+     ) : (
+      <div className="grid gap-3">
+       {library.items.slice(0, 30).map((reading) => {
+        const translation =
+         reading.enrichment.translation.status === "ready"
+          ? reading.enrichment.translation.data
+          : null;
+        const learning = getDailyReadingLearningSummary(reading);
+        const learningLabel = learning.complete
+         ? t("v2.library.article.learningComplete")
+         : learning.running
+           ? t("v2.library.article.learningRunning")
+           : learning.attention
+             ? t("v2.library.article.learningAttention")
+             : t("v2.library.article.learningPending", {
+                ready: learning.ready,
+                total: learning.total,
+               });
+        return (
+         <Card
+          key={reading.id}
+          asChild
+          variant="interactive"
+          padding="md"
+          className="group min-w-0"
+         >
+          <Link href={readingHref(reading.id)} prefetch={false}>
+           <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+            <div className="grid min-w-0 gap-1.5">
+             <Typography variant="caption" tone="muted" weight="medium">
+              {dateFormatter.format(new Date(reading.capturedAt))} · {reading.source.publisher} ·{" "}
+              {reading.releaseKind === "scheduled"
+               ? t("generated.kind.scheduled")
+               : t("generated.kind.manual")}
+             </Typography>
+             <HanziText as="h3" size="card" clamp="two" weight="bold">
+              {reading.article.titleZh}
+             </HanziText>
+             {translation !== null ? (
+              <Typography variant="bodySmall" tone="secondary" clamp="two">
+               {translation.titleVi}
+              </Typography>
+             ) : null}
+             <div className="flex min-w-0 flex-wrap items-center gap-2">
+              {reading.classification.targetLevel !== null ? (
+               <Badge variant="warning" size="sm" casing="natural">
+                {reading.classification.targetLevel}
+               </Badge>
+              ) : null}
+              <Badge size="sm" casing="natural">
+               {t(getTopicTranslationKey(reading.classification.topic))}
+              </Badge>
+              <Typography variant="caption" tone="muted">
+               {t("sample.minutes", { count: reading.estimatedMinutes })}
+              </Typography>
+             </div>
+            </div>
+            <div className="flex min-w-0 flex-wrap items-center gap-2 lg:justify-end">
+             <Badge variant="success" size="sm" casing="natural">
+              {t("v2.library.article.sourceReady")}
+             </Badge>
+             <Badge variant={learningStatusVariant(reading)} size="sm" casing="natural">
+              {learningLabel}
+             </Badge>
+             <ChevronRight aria-hidden />
+            </div>
+           </div>
+          </Link>
+         </Card>
+        );
+       })}
+      </div>
+     )}
+    </TabsContent>
+    <TabsContent value="activity" className="pt-4">
+     <div className="grid gap-3">
+      <div className="grid gap-1">
+       <Typography as="h2" variant="sectionTitle" weight="bold">
+        {t("v2.activity.title")}
+       </Typography>
+       <Typography variant="bodySmall" tone="muted">
+        {t("v2.activity.description")}
+       </Typography>
+      </div>
+      <DailyReadingV2ActivityLog
+       entries={activityEntries}
+       articleHref={readingHref}
+       retrying={capturing}
+       onRetryCapture={() => void captureArticle()}
+      />
      </div>
-    )}
-   </section>
+    </TabsContent>
+   </Tabs>
   </div>
  );
 }
@@ -280,7 +423,9 @@ function Questions({ reading }: { reading: DailyReadingV2 }) {
         })
        }
       >
-       {isRevealed ? t("generated.questions.hideAnswer") : t("generated.questions.showAnswer")}
+       {isRevealed
+        ? t("generated.questions.hideAnswer")
+        : t("generated.questions.showAnswer")}
       </Button>
       {isRevealed ? (
        <>
@@ -304,45 +449,45 @@ function Questions({ reading }: { reading: DailyReadingV2 }) {
 
 export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void }) {
  const t = useTranslations("DailyReading");
+ const locale = useLocale();
  const library = useDailyReadingV2Library();
- const learning = useLearningState();
- const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const reading = library.items.find((item) => item.id === id) ?? null;
  const [tab, setTab] = useState<V2Tab>("reader");
  const tabs = reading === null ? fallbackTabs : availableTabs(reading);
- const tabItems = tabs.map((key) => ({ key, label: t(`tabs.${key}`) }));
+ const tabItems = tabs.map((key) => ({ key, label: t(tabLabelKey(key)) }));
  const translation =
   reading?.enrichment.translation.status === "ready"
    ? reading.enrichment.translation.data
    : null;
- const paragraphs = reading?.article.paragraphs ?? [];
- const translationByParagraphId = useMemo(() => {
-  const map = new Map<
-   string,
-   Extract<DailyReadingV2["enrichment"]["translation"], { status: "ready" }>["data"]["paragraphs"][number]
-  >();
-  if (translation === null) return map;
-  for (const paragraph of translation.paragraphs) map.set(paragraph.paragraphId, paragraph);
-  return map;
- }, [translation]);
- const pronunciationByParagraphId = useMemo(() => {
-  const map = new Map<string, ContextualPronunciationAnalysis>();
-  for (const paragraph of paragraphs) {
-   const analysis = analyzeDailyReadingText(paragraph.zh);
-   if (analysis !== null) map.set(paragraph.id, analysis);
-  }
-  return map;
- }, [paragraphs]);
+ const readerDocument = useMemo(
+  () => (reading === null ? null : buildDailyReadingReaderDocument(reading)),
+  [reading],
+ );
  const titlePronunciation = useMemo(
   () => (reading === null ? null : analyzeDailyReadingText(reading.article.titleZh)),
   [reading],
  );
+ const dateFormatter = useMemo(
+  () =>
+   new Intl.DateTimeFormat(locale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+   }),
+  [locale],
+ );
 
- if (reading === null) {
+ if (reading === null || readerDocument === null) {
   return (
    <Card variant="subtle" padding="lg" className="grid gap-3">
     <Typography tone="danger">{t("generated.notFound")}</Typography>
-    <Button type="button" variant="outline" size="toolbar" className="justify-self-start" onClick={onBack}>
+    <Button
+     type="button"
+     variant="outline"
+     size="toolbar"
+     className="justify-self-start"
+     onClick={onBack}
+    >
+     <ArrowLeft data-icon="inline-start" />
      {t("document.back")}
     </Button>
    </Card>
@@ -350,100 +495,91 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
  }
 
  const effectiveTab = tabs.includes(tab) ? tab : "reader";
+ const learning = getDailyReadingLearningSummary(reading);
  return (
   <div className="grid min-w-0 gap-4">
-   <Button type="button" variant="ghost" size="toolbar" className="justify-self-start" onClick={onBack}>
+   <Button
+    type="button"
+    variant="ghost"
+    size="toolbar"
+    className="justify-self-start"
+    onClick={onBack}
+   >
+    <ArrowLeft data-icon="inline-start" />
     {t("document.back")}
    </Button>
 
-   <div className="grid gap-3">
-    <div className="flex flex-wrap gap-2">
-     <Badge variant={reading.releaseKind === "scheduled" ? "success" : "info"}>
-      {reading.releaseKind === "scheduled"
-       ? t("generated.kind.scheduled")
-       : t("generated.kind.manual")}
+   <header className="grid min-w-0 gap-3 border-b border-border-default pb-4 sm:pb-5">
+    <div className="flex min-w-0 flex-wrap items-center gap-2">
+     <Badge variant="success" size="sm" casing="natural">
+      {t("v2.library.article.sourceReady")}
      </Badge>
      {reading.classification.targetLevel !== null ? (
-      <Badge variant="warning">{reading.classification.targetLevel}</Badge>
+      <Badge variant="warning" size="sm" casing="natural">
+       {reading.classification.targetLevel}
+      </Badge>
      ) : null}
-     <Badge>{t(getTopicTranslationKey(reading.classification.topic))}</Badge>
-     <Badge>{t("sample.minutes", { count: reading.estimatedMinutes })}</Badge>
+     <Badge size="sm" casing="natural">
+      {t(getTopicTranslationKey(reading.classification.topic))}
+     </Badge>
     </div>
-    <HanziText as="h1" size="card" weight="black">
-     {reading.article.titleZh}
-    </HanziText>
-    {displayMode.showPinyin && titlePronunciation !== null ? (
-     <PinyinText as="p" variant="bodySmall" tone="accent">
-      {formatContextualSpokenPinyin(titlePronunciation)}
-     </PinyinText>
-    ) : null}
-    {translation !== null ? (
-     <>
+    <div className="grid min-w-0 gap-1.5">
+     <HanziText as="h1" size="card" weight="black">
+      {reading.article.titleZh}
+     </HanziText>
+     {titlePronunciation !== null ? (
+      <PinyinText as="p" variant="bodySmall" tone="accent">
+       {formatContextualSpokenPinyin(titlePronunciation)}
+      </PinyinText>
+     ) : null}
+     {translation !== null ? (
       <Typography variant="bodySmall" tone="secondary">
        {translation.titleVi}
       </Typography>
-      {translation.whyWorthReadingVi ? (
-       <Typography variant="bodySmall" tone="muted">
-        {translation.whyWorthReadingVi}
-       </Typography>
-      ) : null}
-     </>
-    ) : null}
-   </div>
-
-   <Separator />
-   <DailyReadingLearningSupportPanel reading={reading} />
-
-   <Tabs value={effectiveTab} items={tabItems} onValueChange={setTab} aria-label={t("tabs.aria")}>
-    <TabsContent value={effectiveTab} className="pt-4">
-     {effectiveTab === "reader" ? (
-      <div className="grid gap-4">
-       {reading.article.paragraphs.map((paragraph) => {
-        const translated = translationByParagraphId.get(paragraph.id);
-        const pronunciation = pronunciationByParagraphId.get(paragraph.id);
-        return (
-         <Card key={paragraph.id} variant="section" padding="md" className="grid gap-2">
-          {translated?.roleVi ? (
-           <Typography variant="caption" tone="muted" weight="bold">
-            {translated.roleVi}
-           </Typography>
-          ) : null}
-          {pronunciation !== undefined ? (
-           <ContextualReaderText analysis={pronunciation} displayMode={displayMode} />
-          ) : (
-           <HanziText as="p" size="large" leading="relaxed" wrapping="breakWords">
-            {paragraph.zh}
-           </HanziText>
-          )}
-          {translated !== undefined ? (
-           <>
-            <Separator />
-            <Typography as="p" tone="secondary" leading="relaxed">
-             {translated.vi}
-            </Typography>
-           </>
-          ) : null}
-         </Card>
-        );
-       })}
-      </div>
      ) : null}
+     <Typography variant="caption" tone="muted">
+      {t("v2.detail.capturedMeta", {
+       time: dateFormatter.format(new Date(reading.capturedAt)),
+       publisher: reading.source.publisher,
+       minutes: reading.estimatedMinutes,
+      })}
+     </Typography>
+     <div className="flex min-w-0 flex-wrap items-center gap-2">
+      <Sparkles aria-hidden />
+      <Typography variant="caption" tone="muted">
+       {t("v2.library.learningReady", { ready: learning.ready, total: learning.total })}
+      </Typography>
+     </div>
+    </div>
+   </header>
 
-     {effectiveTab === "translation" && translation !== null ? (
+   <Tabs
+    value={effectiveTab}
+    items={tabItems}
+    onValueChange={setTab}
+    aria-label={t("tabs.aria")}
+   >
+    <TabsContent value="reader" className="pt-4">
+     <ReaderSurface document={readerDocument} toolbarStickyOffset="tabs" />
+    </TabsContent>
+
+    <TabsContent value="support" className="pt-4">
+     <DailyReadingLearningSupportPanel reading={reading} />
+    </TabsContent>
+
+    <TabsContent value="translation" className="pt-4">
+     {translation !== null ? (
       <div className="grid gap-4">
        {reading.article.paragraphs.map((paragraph) => {
-        const translated = translationByParagraphId.get(paragraph.id);
-        const pronunciation = pronunciationByParagraphId.get(paragraph.id);
+        const translated = translation.paragraphs.find(
+         (candidate) => candidate.paragraphId === paragraph.id,
+        );
         if (translated === undefined) return null;
         return (
          <Card key={paragraph.id} variant="section" padding="md" className="grid gap-2">
-          {pronunciation !== undefined ? (
-           <ContextualReaderText analysis={pronunciation} displayMode={displayMode} />
-          ) : (
-           <HanziText as="p" size="medium" leading="relaxed" wrapping="breakWords">
-            {paragraph.zh}
-           </HanziText>
-          )}
+          <HanziText as="p" size="medium" leading="relaxed" wrapping="breakWords">
+           {paragraph.zh}
+          </HanziText>
           <Separator />
           <Typography as="p" tone="secondary" leading="relaxed">
            {translated.vi}
@@ -453,39 +589,37 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
        })}
       </div>
      ) : null}
+    </TabsContent>
 
-     {effectiveTab === "questions" ? <Questions reading={reading} /> : null}
+    <TabsContent value="questions" className="pt-4">
+     <Questions reading={reading} />
+    </TabsContent>
 
-     {effectiveTab === "vocabulary" && reading.enrichment.vocabulary.status === "ready" ? (
+    <TabsContent value="vocabulary" className="pt-4">
+     {reading.enrichment.vocabulary.status === "ready" ? (
       <div className="grid gap-3 sm:grid-cols-2">
-       {reading.enrichment.vocabulary.data.items.map((item) => {
-        const pronunciation = analyzeDailyReadingText(item.hanzi);
-        return (
-         <Card key={item.id} variant="section" padding="md" className="grid gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <HanziText as="h3" size="medium" weight="black">
-            {item.hanzi}
-           </HanziText>
-           <Badge size="sm">{item.categoryVi}</Badge>
-          </div>
-          {displayMode.showPinyin && pronunciation !== null ? (
-           <PinyinText as="p" variant="caption" tone="accent">
-            {formatContextualSpokenPinyin(pronunciation)}
-           </PinyinText>
-          ) : null}
-          <Typography variant="bodySmall" weight="semibold">
-           {item.meaningVi}
-          </Typography>
-          <Typography variant="bodySmall" tone="muted">
-           {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
-          </Typography>
-         </Card>
-        );
-       })}
+       {reading.enrichment.vocabulary.data.items.map((item) => (
+        <Card key={item.id} variant="section" padding="md" className="grid gap-1">
+         <div className="flex flex-wrap items-center gap-2">
+          <HanziText as="h3" size="medium" weight="black">
+           {item.hanzi}
+          </HanziText>
+          <Badge size="sm">{item.categoryVi}</Badge>
+         </div>
+         <Typography variant="bodySmall" weight="semibold">
+          {item.meaningVi}
+         </Typography>
+         <Typography variant="bodySmall" tone="muted">
+          {t("generated.vocabulary.inContext", { meaning: item.meaningInContextVi })}
+         </Typography>
+        </Card>
+       ))}
       </div>
      ) : null}
+    </TabsContent>
 
-     {effectiveTab === "grammar" && reading.enrichment.grammar.status === "ready" ? (
+    <TabsContent value="grammar" className="pt-4">
+     {reading.enrichment.grammar.status === "ready" ? (
       <div className="grid gap-3">
        {reading.enrichment.grammar.data.items.map((grammar, index) => (
         <Card key={grammar.id} variant="section" padding="md" className="grid gap-2">
@@ -505,36 +639,36 @@ export function DailyReadingV2View({ id, onBack }: { id: string; onBack(): void 
        ))}
       </div>
      ) : null}
+    </TabsContent>
 
-     {effectiveTab === "source" ? (
-      <Card variant="subtle" padding="md" className="grid gap-3">
-       <div className="flex items-start gap-3">
-        <FileText aria-hidden />
-        <div className="grid min-w-0 gap-1">
-         <HanziText as="h3" size="medium" weight="black">
-          {reading.source.titleZh}
-         </HanziText>
-         <Typography variant="bodySmall" tone="muted">
-          {reading.source.publisher} · {new Date(reading.source.publishedAt).toLocaleString()}
-         </Typography>
-        </div>
-       </div>
-       {reading.provenance === "legacy-adapted" && translation?.adaptationNoticeVi ? (
-        <Typography variant="bodySmall" tone="secondary">
-         {translation.adaptationNoticeVi}
-        </Typography>
-       ) : (
+    <TabsContent value="source" className="pt-4">
+     <Card variant="subtle" padding="md" className="grid gap-3">
+      <div className="flex items-start gap-3">
+       <FileText aria-hidden />
+       <div className="grid min-w-0 gap-1">
+        <HanziText as="h3" size="medium" weight="black">
+         {reading.source.titleZh}
+        </HanziText>
         <Typography variant="bodySmall" tone="muted">
-         {t("source.fallbackNotice")}
+         {reading.source.publisher} · {dateFormatter.format(new Date(reading.source.publishedAt))}
         </Typography>
-       )}
-       <Button type="button" variant="outline" size="toolbar" asChild className="justify-self-start">
-        <a href={reading.source.url} target="_blank" rel="noreferrer">
-         {t("generated.source.open")}
-        </a>
-       </Button>
-      </Card>
-     ) : null}
+       </div>
+      </div>
+      {reading.provenance === "legacy-adapted" && translation?.adaptationNoticeVi ? (
+       <Typography variant="bodySmall" tone="secondary">
+        {translation.adaptationNoticeVi}
+       </Typography>
+      ) : (
+       <Typography variant="bodySmall" tone="muted">
+        {t("source.fallbackNotice")}
+       </Typography>
+      )}
+      <Button type="button" variant="outline" size="toolbar" asChild className="justify-self-start">
+       <a href={reading.source.url} target="_blank" rel="noreferrer">
+        {t("generated.source.open")}
+       </a>
+      </Button>
+     </Card>
     </TabsContent>
    </Tabs>
   </div>
