@@ -1,4 +1,7 @@
+import { createClient } from "@supabase/supabase-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+
+import type { Database } from "@/types/supabase.generated";
 
 import type { AiConversationStoredMemory } from "./ai-conversation-memory.schemas";
 
@@ -38,6 +41,9 @@ import {
  retrieveRelevantAiConversationMemories,
 } from "./ai-conversation-memory.server";
 
+const supabase = createClient<Database>("https://example.supabase.co", "test-key", {
+ auth: { autoRefreshToken: false, persistSession: false },
+});
 const badmintonMemory: AiConversationStoredMemory = {
  id: "11111111-1111-4111-8111-111111111111",
  characterId: null,
@@ -62,6 +68,7 @@ const coffeeMemory: AiConversationStoredMemory = {
 };
 
 const baseInput = {
+ supabase,
  userId: "user-1",
  characterId: "33333333-3333-4333-8333-333333333333",
  query: "你还记得我喜欢打什么球吗？我以前说过羽毛球。",
@@ -115,6 +122,9 @@ describe("AI conversation long-term memory retrieval", () => {
 
   expect(result[0]?.id).toBe(badmintonMemory.id);
   expect(result.some((memory) => memory.id === badmintonMemory.id)).toBe(true);
+  expect(generateAiConversationMemoryEmbedding).toHaveBeenCalledWith(
+   expect.objectContaining({ supabase, userId: "user-1", task: "RETRIEVAL_QUERY" }),
+  );
   expect(matchAiConversationMemoriesExact).not.toHaveBeenCalled();
  });
 
@@ -144,11 +154,15 @@ describe("AI conversation long-term memory retrieval", () => {
   setAiConversationMemoryEmbedding.mockResolvedValue(true);
 
   const result = await enrichMissingAiConversationMemoryEmbeddings({
+   supabase,
    userId: "user-1",
    characterId: baseInput.characterId,
   });
 
   expect(result).toBe(1);
+  expect(generateAiConversationMemoryEmbedding).toHaveBeenCalledWith(
+   expect.objectContaining({ supabase, userId: "user-1", task: "RETRIEVAL_DOCUMENT" }),
+  );
   expect(setAiConversationMemoryEmbedding).toHaveBeenCalledWith(
    expect.objectContaining({
     memoryId: badmintonMemory.id,
