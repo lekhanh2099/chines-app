@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
 const { resolveUserAiRuntime } = vi.hoisted(() => ({
@@ -19,7 +20,7 @@ import {
 const supabase = createClient<Database>("https://example.supabase.co", "test-key", {
  auth: { autoRefreshToken: false, persistSession: false },
 });
-const runtime = {
+const runtime: ResolvedUserAiRuntime = {
  keyId: "11111111-1111-4111-8111-111111111111",
  provider: "gemini",
  providerLabel: "Google Gemini",
@@ -35,6 +36,10 @@ describe("AI conversation memory embedding adapter", () => {
  beforeEach(() => {
   resolveUserAiRuntime.mockReset();
   resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+ });
+
+ afterEach(() => {
+  delete process.env.GEMINI_API_KEY;
   vi.unstubAllGlobals();
  });
 
@@ -115,6 +120,5 @@ describe("AI conversation memory embedding adapter", () => {
   const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
   expect(url).toContain("personal-gemini-key");
   expect(url).not.toContain("system-key-that-must-not-be-used");
-  delete process.env.GEMINI_API_KEY;
  });
 });
