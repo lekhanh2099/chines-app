@@ -244,6 +244,33 @@ export const dailyReadingV2SettingsSchema = z.strictObject({
  autoEnrichmentEnabled: z.boolean(),
 });
 
+export const dailyReadingV2CaptureHistoryItemSchema = z.strictObject({
+ topic: dailyReadingTopicSchema,
+ sourceUrl: z.url(),
+ capturedAt: z.iso.datetime({ offset: true }),
+});
+
+export const dailyReadingV2CaptureRequestSchema = z.strictObject({
+ mode: dailyReadingGenerationKindSchema,
+ settings: dailyReadingV2SettingsSchema,
+ history: z.array(dailyReadingV2CaptureHistoryItemSchema).max(120),
+});
+
+export const dailyReadingV2CaptureReportSchema = z.strictObject({
+ discoveryEndpoints: z.number().int().nonnegative(),
+ discoveryResponses: z.number().int().nonnegative(),
+ metadataCandidates: z.number().int().nonnegative(),
+ policyCandidates: z.number().int().nonnegative(),
+ attemptedExtractions: z.number().int().nonnegative(),
+ selectedFinalScore: z.number().nonnegative().nullable(),
+ usedFreshnessDays: z.number().int().min(1).max(14).nullable(),
+});
+
+export const dailyReadingV2CaptureResponseSchema = z.strictObject({
+ reading: dailyReadingV2Schema,
+ report: dailyReadingV2CaptureReportSchema,
+});
+
 export const dailyReadingV2LedgerSchema = z.strictObject({
  schemaVersion: z.literal("2.0.0"),
  items: z.array(dailyReadingV2Schema).max(120),
@@ -254,6 +281,7 @@ export const dailyReadingV2LedgerSchema = z.strictObject({
 
 export type DailyReadingV2 = z.output<typeof dailyReadingV2Schema>;
 export type DailyReadingV2CaptureRun = z.output<typeof dailyReadingV2CaptureRunSchema>;
+export type DailyReadingV2CaptureStage = z.output<typeof dailyReadingV2CaptureStageSchema>;
 export type DailyReadingV2EnrichmentRun = z.output<typeof dailyReadingV2EnrichmentRunSchema>;
 export type DailyReadingV2Ledger = z.output<typeof dailyReadingV2LedgerSchema>;
 export type DailyReadingV2EnrichmentModule = z.output<
@@ -267,3 +295,5 @@ export type DailyReadingV2NoMatchBehavior = z.output<
  typeof dailyReadingV2NoMatchBehaviorSchema
 >;
 export type DailyReadingV2Settings = z.output<typeof dailyReadingV2SettingsSchema>;
+export type DailyReadingV2CaptureRequest = z.output<typeof dailyReadingV2CaptureRequestSchema>;
+export type DailyReadingV2CaptureResponse = z.output<typeof dailyReadingV2CaptureResponseSchema>;
