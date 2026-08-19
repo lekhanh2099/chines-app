@@ -100,6 +100,7 @@
   "runtimeReady": "正在使用 {provider} · {model}",
   "runtimeMissing": "还没有 AI API key。仍可阅读完整来源文章。",
   "runtimeStorageUnavailable": "服务端 API key 存储尚未就绪；来源文章仍可正常阅读。",
+  "runtimeCheckFailed": "当前无法检查 AI 状态。来源文章仍可阅读，请稍后重新检查。",
   "modules": {
    "translation": {
     "title": "越南语翻译",
