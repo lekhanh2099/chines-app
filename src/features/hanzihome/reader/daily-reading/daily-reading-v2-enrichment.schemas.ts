@@ -22,9 +22,16 @@ export const dailyReadingV2EnrichmentErrorCodeSchema = z.union([
  z.enum(["missing-ai-key", "storage-unavailable", "module-validation-failed"]),
 ]);
 
+export const dailyReadingV2EnrichmentArticleSchema = z.strictObject({
+ id: dailyReadingV2Schema.shape.id,
+ source: dailyReadingV2Schema.shape.source,
+ article: dailyReadingV2Schema.shape.article,
+ classification: dailyReadingV2Schema.shape.classification,
+});
+
 export const dailyReadingV2EnrichmentRequestSchema = z.strictObject({
  module: dailyReadingV2EnrichmentModuleSchema,
- reading: dailyReadingV2Schema,
+ reading: dailyReadingV2EnrichmentArticleSchema,
 });
 
 const translationSuccessSchema = z.strictObject({
@@ -81,6 +88,9 @@ export const dailyReadingV2EnrichmentResponseSchema = z.union([
  failedSchema,
 ]);
 
+export type DailyReadingV2EnrichmentArticle = z.output<
+ typeof dailyReadingV2EnrichmentArticleSchema
+>;
 export type DailyReadingV2EnrichmentRequest = z.output<
  typeof dailyReadingV2EnrichmentRequestSchema
 >;
