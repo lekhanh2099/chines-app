@@ -1,13 +1,6 @@
 "use client";
 
-import {
- ChevronDown,
- ChevronUp,
- KeyRound,
- RefreshCcw,
- Search,
- Settings,
-} from "lucide-react";
+import { ChevronDown, ChevronUp, KeyRound, RefreshCcw, Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -41,12 +34,9 @@ import {
 } from "./daily-reading-source-catalog";
 import { dailyReadingTopicSchema, type DailyReadingTopic } from "./daily-reading.schemas";
 import {
- captureDailyReadingNow,
  previewDailyReadingV2Source,
- useDailyReadingV2Library,
  useDailyReadingV2Settings,
 } from "./daily-reading-v2-client";
-import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
 import {
  dailyReadingV2FreshnessDaysSchema,
  dailyReadingV2LengthPreferenceSchema,
@@ -55,7 +45,6 @@ import {
  type DailyReadingV2CaptureResponse,
  type DailyReadingV2Settings,
 } from "./daily-reading-v2.schemas";
-import { resolveDailyReadingReleaseState } from "./daily-reading.scheduler";
 
 type TopicTranslationKey =
  | "generated.topic.culture"
@@ -67,12 +56,6 @@ type TopicTranslationKey =
  | "generated.topic.travel"
  | "generated.topic.environment"
  | "generated.topic.health";
-
-type FreshnessTranslationKey =
- | "v2.settings.advanced.freshness1"
- | "v2.settings.advanced.freshness3"
- | "v2.settings.advanced.freshness7"
- | "v2.settings.advanced.freshness14";
 
 function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
  switch (topic) {
@@ -97,21 +80,6 @@ function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
  }
 }
 
-function getFreshnessTranslationKey(
- days: DailyReadingV2Settings["freshnessDays"],
-): FreshnessTranslationKey {
- switch (days) {
-  case 1:
-   return "v2.settings.advanced.freshness1";
-  case 3:
-   return "v2.settings.advanced.freshness3";
-  case 7:
-   return "v2.settings.advanced.freshness7";
-  case 14:
-   return "v2.settings.advanced.freshness14";
- }
-}
-
 function formatCaptureTime(settings: DailyReadingV2Settings) {
  return `${String(settings.captureTime.hour).padStart(2, "0")}:${String(settings.captureTime.minute).padStart(2, "0")}`;
 }
@@ -119,16 +87,10 @@ function formatCaptureTime(settings: DailyReadingV2Settings) {
 export function DailyReadingSettingsPanel() {
  const t = useTranslations("DailyReading");
  const runtime = useAiRuntimeReadiness();
- const library = useDailyReadingV2Library();
  const { settings, update } = useDailyReadingV2Settings();
  const [advancedOpen, setAdvancedOpen] = useState(false);
  const [testingSource, setTestingSource] = useState(false);
- const [capturing, setCapturing] = useState(false);
  const [sourcePreview, setSourcePreview] = useState<DailyReadingV2CaptureResponse | null>(null);
- const release = resolveDailyReadingReleaseState(new Date(), settings.captureTime);
- const scheduledToday = library.items.some(
-  (item) => item.releaseKind === "scheduled" && item.publishedDate === release.dateKey,
- );
 
  function saveSettings(patch: Partial<DailyReadingV2Settings>) {
   try {
@@ -194,29 +156,6 @@ export function DailyReadingSettingsPanel() {
   }
  }
 
- async function handleCapture() {
-  setCapturing(true);
-  try {
-   const reading = await captureDailyReadingNow("manual");
-   toast.success(t("v2.settings.toast.articleReady", { title: reading.article.titleZh }));
-   if (settings.autoEnrichmentEnabled) {
-    void enrichDailyReadingV2LearningSupport(reading.id).catch(() => undefined);
-   }
-  } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("v2.settings.toast.captureFailed"));
-  } finally {
-   setCapturing(false);
-  }
- }
-
- const todayStatus = scheduledToday
-  ? t("v2.settings.capture.todayReady")
-  : !settings.autoCaptureEnabled
-    ? t("v2.library.autoOff")
-    : release.isDue
-      ? t("v2.settings.capture.todayDue")
-      : t("v2.settings.capture.todayWaiting");
-
  return (
   <Card variant="section" padding="lg" className="grid min-w-0 gap-5">
    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -245,97 +184,62 @@ export function DailyReadingSettingsPanel() {
      </Typography>
     </div>
 
-    <div className="grid gap-4 xl:grid-cols-2">
-     <div className="flex min-w-0 items-start justify-between gap-4">
-      <div className="grid min-w-0 gap-1">
-       <Label htmlFor="daily-reading-v2-auto-capture" variant="label" weight="bold">
-        {t("v2.settings.capture.autoTitle")}
-       </Label>
-       <Typography as="p" variant="bodySmall" tone="muted">
-        {t("v2.settings.capture.autoDescription")}
-       </Typography>
-      </div>
-      <Switch
-       id="daily-reading-v2-auto-capture"
-       checked={settings.autoCaptureEnabled}
-       onCheckedChange={(checked) => saveSettings({ autoCaptureEnabled: checked })}
+    <SettingsToggleRow
+     id="daily-reading-v2-auto-capture"
+     label={t("v2.settings.capture.autoTitle")}
+     description={t("v2.settings.capture.autoDescription")}
+     checked={settings.autoCaptureEnabled}
+     onCheckedChange={(checked) => saveSettings({ autoCaptureEnabled: checked })}
+    />
+
+    <div className="grid gap-4 sm:grid-cols-2">
+     <div className="grid gap-2">
+      <Label htmlFor="daily-reading-v2-time" variant="label" weight="semibold">
+       {t("v2.settings.capture.timeLabel")}
+      </Label>
+      <Input
+       id="daily-reading-v2-time"
+       type="time"
+       value={formatCaptureTime(settings)}
+       onChange={(event) => updateCaptureTime(event.target.value)}
       />
+      <Typography as="p" variant="caption" tone="muted">
+       {t("v2.settings.capture.timeDescription")}
+      </Typography>
      </div>
 
-     <div className="grid gap-2 sm:grid-cols-2">
-      <div className="grid gap-2">
-       <Label htmlFor="daily-reading-v2-time" variant="label" weight="semibold">
-        {t("v2.settings.capture.timeLabel")}
-       </Label>
-       <Input
-        id="daily-reading-v2-time"
-        type="time"
-        value={formatCaptureTime(settings)}
-        onChange={(event) => updateCaptureTime(event.target.value)}
-       />
-       <Typography as="p" variant="caption" tone="muted">
-        {t("v2.settings.capture.timeDescription")}
-       </Typography>
-      </div>
-
-      <div className="grid gap-2">
-       <Label htmlFor="daily-reading-v2-level" variant="label" weight="semibold">
-        {t("v2.settings.capture.levelLabel")}
-       </Label>
-       <Select
-        value={settings.targetLevel}
-        onValueChange={(value) =>
-         saveSettings({ targetLevel: dailyReadingV2SettingsSchema.shape.targetLevel.parse(value) })
-        }
-       >
-        <SelectTrigger id="daily-reading-v2-level" width="full">
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         <SelectItem value="HSK4">HSK 4</SelectItem>
-         <SelectItem value="HSK5">HSK 5</SelectItem>
-         <SelectItem value="HSK6">HSK 6</SelectItem>
-        </SelectContent>
-       </Select>
-       <Typography as="p" variant="caption" tone="muted">
-        {t("v2.settings.capture.levelDescription")}
-       </Typography>
-      </div>
-     </div>
-    </div>
-
-    <div className="grid gap-3 sm:grid-cols-3">
-     <div className="grid gap-1">
-      <Typography variant="caption" tone="muted" weight="bold">
-       {t("v2.settings.capture.todayLabel")}
-      </Typography>
-      <Typography weight="semibold">{todayStatus}</Typography>
-     </div>
-     <div className="grid gap-1">
-      <Typography variant="caption" tone="muted" weight="bold">
-       {t("settings.summary.libraryLabel")}
-      </Typography>
-      <Typography weight="semibold">
-       {t("v2.settings.capture.libraryCount", { count: library.items.length })}
-      </Typography>
-     </div>
-     <div className="grid gap-1">
-      <Typography variant="caption" tone="muted" weight="bold">
-       {t("v2.settings.advanced.freshnessLabel")}
-      </Typography>
-      <Typography weight="semibold">
-       {t(getFreshnessTranslationKey(settings.freshnessDays))}
+     <div className="grid gap-2">
+      <Label htmlFor="daily-reading-v2-level" variant="label" weight="semibold">
+       {t("v2.settings.capture.levelLabel")}
+      </Label>
+      <Select
+       value={settings.targetLevel}
+       onValueChange={(value) =>
+        saveSettings({ targetLevel: dailyReadingV2SettingsSchema.shape.targetLevel.parse(value) })
+       }
+      >
+       <SelectTrigger id="daily-reading-v2-level" width="full">
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent align="start">
+        <SelectItem value="HSK4">HSK 4</SelectItem>
+        <SelectItem value="HSK5">HSK 5</SelectItem>
+        <SelectItem value="HSK6">HSK 6</SelectItem>
+       </SelectContent>
+      </Select>
+      <Typography as="p" variant="caption" tone="muted">
+       {t("v2.settings.capture.levelDescription")}
       </Typography>
      </div>
     </div>
 
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
      <Button
       type="button"
       variant="outline"
       size="toolbar"
       onClick={() => void handleTestSource()}
-      disabled={testingSource || capturing}
+      disabled={testingSource}
      >
       {testingSource ? (
        <Spinner data-icon="inline-start" />
@@ -345,15 +249,6 @@ export function DailyReadingSettingsPanel() {
       {testingSource
        ? t("v2.settings.capture.testingSource")
        : t("v2.settings.capture.testSource")}
-     </Button>
-     <Button
-      type="button"
-      size="toolbar"
-      onClick={() => void handleCapture()}
-      disabled={testingSource || capturing}
-     >
-      {capturing ? <Spinner data-icon="inline-start" /> : <Search data-icon="inline-start" />}
-      {capturing ? t("v2.settings.capture.findingNow") : t("v2.settings.capture.findNow")}
      </Button>
      <Typography as="p" variant="caption" tone="muted">
       {t("v2.settings.capture.sourceIndependent")}
@@ -416,21 +311,13 @@ export function DailyReadingSettingsPanel() {
      </Typography>
     </div>
 
-    <div className="flex min-w-0 items-start justify-between gap-4">
-     <div className="grid min-w-0 gap-1">
-      <Label htmlFor="daily-reading-v2-auto-enrichment" variant="label" weight="bold">
-       {t("v2.settings.ai.autoTitle")}
-      </Label>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {t("v2.settings.ai.autoDescription")}
-      </Typography>
-     </div>
-     <Switch
-      id="daily-reading-v2-auto-enrichment"
-      checked={settings.autoEnrichmentEnabled}
-      onCheckedChange={(checked) => saveSettings({ autoEnrichmentEnabled: checked })}
-     />
-    </div>
+    <SettingsToggleRow
+     id="daily-reading-v2-auto-enrichment"
+     label={t("v2.settings.ai.autoTitle")}
+     description={t("v2.settings.ai.autoDescription")}
+     checked={settings.autoEnrichmentEnabled}
+     onCheckedChange={(checked) => saveSettings({ autoEnrichmentEnabled: checked })}
+    />
 
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
      <div className="grid min-w-0 gap-1">
