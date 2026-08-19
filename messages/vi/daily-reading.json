@@ -169,7 +169,7 @@
   "errors": {
    "tooShort": "Bản nháp chưa đạt kiểm tra chất lượng. Hệ thống đã thử sửa tự động nhưng chưa hoàn tất.",
    "schema": "AI trả về bản nháp chưa đúng cấu trúc hoặc trường dữ liệu. Hệ thống đã thử sửa tự động nhưng chưa hoàn tất.",
-   "provider": "Chưa có AI provider nào hoàn tất bài. Hãy kiểm tra API key/model Groq; GEMINI_API_KEY chỉ là phương án dự phòng.",
+   "provider": "Chưa có AI provider cá nhân nào hoàn tất bài. Hãy kiểm tra API key đang hoạt động và model đã chọn trong Cài đặt AI.",
    "showTechnical": "Xem chi tiết kỹ thuật"
   },
   "clearDialog": {
