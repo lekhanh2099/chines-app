@@ -18,6 +18,7 @@
    "todayLabel": "Today",
    "todayRunning": "Finding an article",
    "todayReady": "Today's article is ready",
+   "todayFailed": "Today's latest capture failed",
    "manualOnly": "Manual capture only",
    "todayDue": "Capture time passed; waiting for the task",
    "todayWaiting": "Not yet time to capture",
