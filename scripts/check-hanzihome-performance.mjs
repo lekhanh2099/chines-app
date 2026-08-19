@@ -1,0 +1,91 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+
+const targets = ["src/features/hanzihome", "src/app/api/hanzihome"];
+
+function walk(dir, files = []) {
+ if (!fs.existsSync(dir)) return files;
+
+ for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  const full = path.join(dir, entry.name);
+
+  if (entry.isDirectory()) {
+   walk(full, files);
+   continue;
+  }
+
+  if (/\.(ts|tsx)$/.test(entry.name)) files.push(full);
+ }
+
+ return files;
+}
+
+function rel(file) {
+ return path.relative(root, file);
+}
+
+function read(file) {
+ return fs.readFileSync(file, "utf8");
+}
+
+const files = targets.flatMap((target) => walk(path.join(root, target)));
+let failed = false;
+
+function fail(message) {
+ failed = true;
+ console.log(`❌ ${message}`);
+}
+
+function pass(message) {
+ console.log(`✅ ${message}`);
+}
+
+console.log("🔎 Checking HanziHome performance boundaries...\n");
+
+for (const file of files) {
+ const filePath = rel(file);
+ const content = read(file);
+
+ if (filePath.endsWith("HanziHomeWorkspace.tsx") && content.includes("includeLessons: true")) {
+  fail(`${filePath} must not call catalog includeLessons=true`);
+ }
+
+ if (filePath.endsWith("HanziHomeLibraryHome.tsx") && !content.includes("includeLessons: true")) {
+  fail(`${filePath} must load its lightweight lesson summaries in the catalog request`);
+ }
+
+ if (
+  (filePath.endsWith("CourseCard.tsx") || filePath.endsWith("RecentLearningCard.tsx")) &&
+  content.includes("useHanziHomeCourseLessons")
+ ) {
+  fail(`${filePath} must consume library lesson summaries instead of fetching a course again`);
+ }
+
+ if (
+  filePath.endsWith("supabase-hanzihome-content-repository.ts") &&
+  !content.includes("includeLessons ? getLessonSummaryRows() : Promise.resolve([])")
+ ) {
+  fail(`${filePath} must not query lesson summaries for stats-only catalog requests`);
+ }
+
+ if (filePath.endsWith("useHanziHomeCatalogData.ts") && content.includes("staleTime: 0")) {
+  fail(`${filePath} catalog query staleTime is 0`);
+ }
+
+ if (content.includes("/api/hanzihome/data")) {
+  fail(`${filePath} still references legacy /api/hanzihome/data`);
+ }
+}
+
+if (!failed) {
+ pass("No obvious HanziHome performance boundary violations.");
+}
+
+if (failed) {
+ console.log("\n❌ Performance boundary check failed.");
+ process.exit(1);
+}
+
+console.log("\n✅ Performance boundary check passed.");

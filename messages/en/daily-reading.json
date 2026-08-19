@@ -1,0 +1,191 @@
+{
+ "header": {
+  "eyebrow": "Today’s reading",
+  "title": "Daily Chinese reading",
+  "description": "A library of reviewed daily readings stored in HanziHome.",
+  "settings": "Reading settings",
+  "openSample": "Open sample"
+ },
+ "empty": {
+  "title": "No collected readings yet",
+  "description": "HanziHome currently shows only readings that have been packaged and reviewed."
+ },
+ "sample": {
+  "eyebrow": "Offline sample",
+  "title": "Try Reader with a sample, not a collected article",
+  "badge": "Sample",
+  "topicCulture": "Culture",
+  "topicFallback": "Sample",
+  "levelFallback": "Daily",
+  "dateFallback": "Sample",
+  "minutes": "{count} min",
+  "read": "Read"
+ },
+ "tabs": {
+  "reader": "Reading",
+  "questions": "Questions",
+  "vocabulary": "Vocabulary",
+  "grammar": "Grammar",
+  "translation": "Translation",
+  "source": "Source",
+  "aria": "Daily reading sections"
+ },
+ "document": {
+  "notFound": "This daily reading was not found in the available data.",
+  "back": "← Daily reading list",
+  "minutes": "{count} min"
+ },
+ "grammar": {
+  "empty": "This reading has no dedicated grammar items yet.",
+  "evidence": "Example sentence from the reading"
+ },
+ "source": {
+  "title": "Source and editorial notes",
+  "fallbackNotice": "This content was reviewed before being added to the library.",
+  "fallbackSource": "Hanzi Studio source"
+ },
+ "generated": {
+  "description": "Find a real Chinese news article, extract the source, then build a 学习版 with vocabulary, grammar, and questions. Generated readings are stored locally on this device.",
+  "generateNow": "Find and create now",
+  "resume": "Continue unfinished reading",
+  "progressHint": "This can take a few minutes because the source, reading, learning material, validation, and local save all run in sequence.",
+  "notFound": "This locally saved Daily Reading could not be found.",
+  "library": {
+   "eyebrow": "Local library",
+   "title": "Readings built from real sources",
+   "description": "Each reading is a 学习版 produced from a news source whose domain and extracted content were checked first.",
+   "autoOn": "Auto 10:00 on",
+   "autoOff": "Manual only",
+   "emptyTitle": "No AI-generated readings on this device yet.",
+   "emptyDescription": "Create the first one now, or leave auto-generation enabled for a {level} reading after 10:00."
+  },
+  "toast": {
+   "created": "Created: {title}",
+   "failed": "Daily Reading could not be created."
+  },
+  "kind": {
+   "scheduled": "Automatic",
+   "manual": "Manual"
+  },
+  "stage": {
+   "discovering": "Finding a new source",
+   "extracting": "Extracting source article",
+   "drafting": "Drafting the reading",
+   "repairingCore": "Repairing the reading draft",
+   "enriching": "Building vocabulary, grammar, and questions",
+   "repairingLearning": "Repairing learning material",
+   "validating": "Validating content",
+   "finalizing": "Finalizing reading",
+   "saving": "Saving reading",
+   "completed": "Completed"
+  },
+  "topic": {
+   "culture": "Culture",
+   "education": "Education",
+   "history": "History",
+   "language": "Language",
+   "science": "Science",
+   "society": "Life & society",
+   "travel": "Travel",
+   "environment": "Environment",
+   "health": "Health"
+  },
+  "questions": {
+   "showAnswer": "Show answer",
+   "hideAnswer": "Hide answer"
+  },
+  "vocabulary": {
+   "inContext": "In context: {meaning}"
+  },
+  "source": {
+   "open": "Open source article",
+   "generatedBy": "AI: {provider} · {model}"
+  }
+ },
+ "settings": {
+  "title": "New reading every day",
+  "description": "Automatically find a real Chinese news article and create a 学习版 at 10:00. If the app is closed then, the first app open after 10:00 performs the catch-up run.",
+  "tabs": {
+   "overview": "Overview",
+   "pipeline": "Progress",
+   "history": "History",
+   "aria": "Daily Reading settings sections"
+  },
+  "auto": {
+   "title": "Automatic generation",
+   "description": "At most one scheduled reading is created per day. Temporary failures retry with limits, and multiple tabs do not create duplicates.",
+   "on": "Automatic generation on",
+   "off": "Automatic generation off",
+   "aria": "Enable or disable automatic Daily Reading generation"
+  },
+  "level": {
+   "label": "Default level"
+  },
+  "summary": {
+   "scheduleLabel": "Release schedule",
+   "scheduleValue": "Every day at 10:00",
+   "libraryLabel": "Local library",
+   "libraryValue": "{count} saved readings",
+   "todayLabel": "Today",
+   "todayReady": "Scheduled reading ready",
+   "todayDue": "Waiting to generate",
+   "todayWaiting": "Not due yet"
+  },
+  "actions": {
+   "testSource": "Test real source",
+   "generateNow": "Find and create now",
+   "resume": "Continue unfinished reading",
+   "retry": "Try again",
+   "clear": "Delete generated readings",
+   "viewPipeline": "View progress",
+   "openAiSettings": "Open AI settings"
+  },
+  "pipeline": {
+   "title": "Source check and generation",
+   "description": "Current progress for the latest run. Validation steps keep the learning edition source-bound and schema-valid.",
+   "failedAt": "Latest run stopped at: {stage}",
+   "schedule": "Release time",
+   "scheduleDescription": "Wait for 10:00 or run manually.",
+   "source": "Find source",
+   "sourceDescription": "Find and extract a new article from an allowed source.",
+   "reading": "Draft reading",
+   "readingDescription": "Write a new 学习版 grounded in source facts.",
+   "learning": "Build lesson",
+   "learningDescription": "Create vocabulary, grammar, questions, and evidence.",
+   "validate": "Validate",
+   "validateDescription": "Check schema, source grounding, duplication, and evidence.",
+   "save": "Save",
+   "saveDescription": "Store the validated reading on this device."
+  },
+  "history": {
+   "title": "Run history",
+   "description": "The six most recent runs on this device. Each row shows the exact running or failed stage.",
+   "empty": "No generation runs yet.",
+   "succeeded": "Completed",
+   "pending": "Running",
+   "failed": "Failed",
+   "latest": "Latest run"
+  },
+  "errors": {
+   "tooShort": "The draft did not pass the quality checks. Automatic repair was attempted but did not finish.",
+   "schema": "The AI returned a draft with an invalid structure or field value. Automatic repair was attempted but did not finish.",
+   "provider": "No personal AI provider completed the reading. Check the active API key and selected model in AI settings.",
+   "showTechnical": "Show technical details"
+  },
+  "clearDialog": {
+   "title": "Delete generated Daily Readings?",
+   "description": "This removes automatically and manually generated readings from the current browser.",
+   "body": "{count} saved readings will be deleted. Run history is kept for diagnostics.",
+   "cancel": "Cancel",
+   "confirm": "Delete generated readings"
+  },
+  "toast": {
+   "sourceReady": "Source works: {publisher} · {title}",
+   "sourceFailed": "The news source could not be tested.",
+   "created": "Created: {title}",
+   "generationFailed": "Daily Reading could not be created.",
+   "generationFailedAtStage": "Generation failed at {stage}: {detail}",
+   "cleared": "Generated Daily Readings were removed from this device."
+  }
+ }
+}

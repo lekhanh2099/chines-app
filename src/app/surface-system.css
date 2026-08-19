@@ -1,0 +1,72 @@
+/* Hanzi Studio Editorial Study Workspace surface contract. */
+[data-theme][data-palette] {
+ --surface-canvas: var(--theme-background);
+ --surface-base: var(--theme-surface);
+ --surface-subtle: var(--theme-surface-muted);
+ --surface-raised: var(--theme-surface-raised);
+ --surface-hover: var(--theme-surface-hover);
+ --surface-selected: var(--theme-primary-soft);
+ --surface-selected-border: var(--theme-primary);
+
+ --bg-primary: var(--surface-canvas);
+ --bg-card: var(--surface-base);
+ --bg-card-hover: var(--surface-hover);
+ --bg-elevated: var(--surface-raised);
+ --bg-subtle: var(--surface-subtle);
+ --theme-card-background: var(--surface-base);
+
+ --study-surface: var(--surface-base);
+ --study-surface-muted: var(--surface-subtle);
+ --study-chip-bg: var(--surface-subtle);
+ --study-chip-accent-bg: var(--surface-selected);
+ --study-accent-border: var(--surface-selected-border);
+ --exercise-card-bg: var(--surface-base);
+ --exercise-question-bg: var(--surface-subtle);
+ --exercise-answer-bg: var(--surface-base);
+ --exercise-answer-hover-bg: var(--surface-hover);
+ --exercise-answer-border: var(--surface-selected-border);
+}
+
+.study-content-surface {
+ background: var(--surface-base);
+}
+
+.app-active-item {
+ border-color: var(--surface-selected-border);
+ background: var(--surface-selected);
+ color: var(--theme-primary);
+}
+
+[data-theme-transitioning] * {
+ transition-duration: 0ms !important;
+}
+
+[data-theme-transitioning] body,
+[data-theme-transitioning] .nova-page,
+[data-theme-transitioning] .nova-shell-header,
+[data-theme-transitioning] .nova-shell-sidebar,
+[data-theme-transitioning] [data-card],
+[data-theme-transitioning] .hanzihome-liquid-toolbar,
+[data-theme-transitioning] .hanzihome-liquid-panel,
+[data-theme-transitioning] .hanzihome-liquid-header,
+[data-theme-transitioning] .study-content-surface,
+[data-theme-transitioning] .app-active-item {
+ transition-property: background-color, border-color, color;
+ transition-duration: 140ms !important;
+ transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+ [data-theme-transitioning] body,
+ [data-theme-transitioning] .nova-page,
+ [data-theme-transitioning] .nova-shell-header,
+ [data-theme-transitioning] .nova-shell-sidebar,
+ [data-theme-transitioning] [data-card],
+ [data-theme-transitioning] .hanzihome-liquid-toolbar,
+ [data-theme-transitioning] .hanzihome-liquid-panel,
+ [data-theme-transitioning] .hanzihome-liquid-header,
+ [data-theme-transitioning] .study-content-surface,
+ [data-theme-transitioning] .app-active-item {
+  transition-duration: 0ms !important;
+ }
+}

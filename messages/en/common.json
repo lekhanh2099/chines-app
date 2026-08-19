@@ -1,0 +1,17 @@
+{
+ "actions": {
+  "save": "Save",
+  "cancel": "Cancel",
+  "retry": "Retry",
+  "settings": "Settings",
+  "signOut": "Sign out",
+  "listen": "Listen",
+  "stop": "Stop"
+ },
+ "language": "Language",
+ "locales": {
+  "vi": "Vietnamese",
+  "en": "English",
+  "zh-CN": "Simplified Chinese"
+ }
+}

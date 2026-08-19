@@ -1,0 +1,170 @@
+{
+ "title": "Ghi chú",
+ "description": "Lưu bài đọc, ghi chú theo bài học và ý tưởng cá nhân trong một thư viện.",
+ "count": "{count} ghi chú",
+ "library": "Thư viện ghi chú",
+ "openLibrary": "Mở thư viện",
+ "searchLabel": "Tìm ghi chú",
+ "searchPlaceholder": "Tìm tiêu đề, nguồn, folder, tag...",
+ "filters": {
+  "title": "Bộ lọc",
+  "allCategories": "Mọi danh mục",
+  "allSources": "Mọi nguồn",
+  "categories": {
+   "general": "Chung",
+   "grammar": "Ngữ pháp",
+   "vocabulary": "Từ vựng",
+   "culture": "Văn hóa"
+  }
+ },
+ "loadError": {
+  "title": "Không tải được thư viện ghi chú",
+  "description": "Danh sách ghi chú, folder hoặc dữ liệu bài học hiện không khả dụng."
+ },
+ "views": {
+  "library": "Thư viện",
+  "recent": "Gần đây",
+  "inbox": "Đọc sau",
+  "reading": "Đang đọc",
+  "completed": "Đã đọc",
+  "lesson": "Theo bài học",
+  "quick": "Ghi chú nhanh",
+  "unfiled": "Chưa phân loại"
+ },
+ "folders": {
+  "title": "Folder",
+  "create": "Tạo folder",
+  "empty": "Chưa có folder.",
+  "deleteTitle": "Xóa folder",
+  "renameTitle": "Đổi tên folder",
+  "createTitle": "Tạo folder",
+  "deleteDescription": "Ghi chú sẽ về Chưa phân loại; folder con sẽ được đưa lên cấp gốc.",
+  "description": "Folder hỗ trợ tối đa hai tầng.",
+  "name": "Tên folder",
+  "color": "Màu",
+  "colors": {
+   "purple": "Tím",
+   "blue": "Xanh dương",
+   "green": "Xanh lá",
+   "orange": "Cam",
+   "rose": "Hồng",
+   "slate": "Xám"
+  },
+  "options": "Tùy chọn folder {name}",
+  "addChild": "Thêm folder con",
+  "rename": "Đổi tên",
+  "moveUp": "Đưa lên",
+  "moveDown": "Đưa xuống",
+  "delete": "Xóa folder",
+  "saveError": "Không thể lưu folder.",
+  "deleteError": "Không thể xóa folder.",
+  "sortError": "Không thể sắp xếp folder."
+ },
+ "create": {
+  "triggerAria": "Tạo ghi chú hoặc bài đọc",
+  "trigger": "Tạo",
+  "note": "Ghi chú thường",
+  "noteDescription": "Ý tưởng và ghi chú tự do.",
+  "reading": "Bài đọc",
+  "readingDescription": "Tạo ghi chú đọc và thêm nội dung sau.",
+  "noteTitle": "Tạo ghi chú",
+  "readingTitle": "Tạo bài đọc",
+  "noteDialogDescription": "Tạo một ghi chú tự do trong thư viện.",
+  "readingDialogDescription": "Tạo một bài đọc rỗng rồi thêm nội dung trong Split View.",
+  "title": "Tiêu đề",
+  "titleRequired": "Nhập tiêu đề.",
+  "noteTitlePlaceholder": "Tiêu đề ghi chú",
+  "readingTitlePlaceholder": "Tiêu đề bài đọc",
+  "folder": "Folder",
+  "status": "Trạng thái",
+  "category": "Danh mục",
+  "tags": "Tag",
+  "tagsPlaceholder": "HSK3, ôn thi",
+  "createOpen": "Tạo và mở",
+  "focusBlocked": "Focus mode đang bật. Không thể tạo ghi chú mới.",
+  "error": "Không thể tạo ghi chú."
+ },
+ "import": {
+  "label": "Import ghi chú",
+  "button": "Import",
+  "focusBlocked": "Focus mode đang bật. Không thể import thành ghi chú mới.",
+  "success": "Đã import ghi chú.",
+  "error": "File import không đúng định dạng ghi chú."
+ },
+ "quick": {
+  "label": "Tạo ghi chú nhanh",
+  "button": "Ghi chú nhanh",
+  "defaultTitle": "Ghi chú nhanh — {date}",
+  "focusBlocked": "Focus mode đang bật. Không thể tạo ghi chú mới.",
+  "error": "Không thể tạo ghi chú nhanh"
+ },
+ "starter": {
+  "defaultTitle": "Ghi chú đầu tiên của tôi",
+  "title": "Tạo không gian ghi chú",
+  "description": "Tạo ghi chú đầu tiên để lưu bài khóa, ngữ pháp, từ vựng hoặc ghi chú tự do.",
+  "action": "Tạo ghi chú đầu tiên"
+ },
+ "list": {
+  "emptyTitle": "Chưa có ghi chú phù hợp",
+  "emptyDescription": "Thử đổi bộ lọc, import file note hoặc tạo ghi chú mới."
+ },
+ "readingStatus": {
+  "none": "Không áp dụng",
+  "inbox": "Đọc sau",
+  "reading": "Đang đọc",
+  "completed": "Đã đọc"
+ },
+ "row": {
+  "options": "Tùy chọn {title}",
+  "editMetadata": "Chỉnh thông tin",
+  "moveFolder": "Chuyển folder",
+  "readingStatus": "Trạng thái đọc",
+  "clearReadingStatus": "Bỏ trạng thái đọc",
+  "delete": "Xóa ghi chú",
+  "deleteTitle": "Xóa ghi chú?",
+  "deleteDescription": "“{title}” sẽ bị xóa khỏi danh sách ghi chú của bạn.",
+  "deleting": "Đang xóa...",
+  "updatedError": "Không thể cập nhật ghi chú.",
+  "deleted": "Đã xóa ghi chú.",
+  "deleteError": "Không thể xóa ghi chú."
+ },
+ "metadata": {
+  "trigger": "Thông tin và đổi tên ghi chú",
+  "title": "Thông tin ghi chú",
+  "description": "Đổi tiêu đề, folder, trạng thái đọc và nguồn mà không sửa nội dung note.",
+  "titleLabel": "Tiêu đề",
+  "titlePlaceholder": "Tiêu đề ghi chú",
+  "titleRequired": "Nhập tiêu đề ghi chú.",
+  "folder": "Folder",
+  "readingStatus": "Trạng thái đọc",
+  "sourceUrl": "URL nguồn",
+  "sourceLabel": "Tên nguồn",
+  "sourceAuthor": "Tác giả",
+  "publishedAt": "Ngày xuất bản",
+  "success": "Đã cập nhật thông tin thư viện.",
+  "error": "Không thể cập nhật thông tin."
+ },
+ "context": {
+  "relations": {
+   "main": "Bài học",
+   "lesson_text": "Bài khóa",
+   "vocab": "Từ vựng",
+   "grammar": "Ngữ pháp",
+   "annotation": "Đánh dấu"
+  },
+  "categories": {
+   "grammar": "Ngữ pháp",
+   "vocabulary": "Từ vựng",
+   "culture": "Văn hóa",
+   "general": "Chung"
+  },
+  "lessonNote": "Ghi chú bài học",
+  "quickNote": "Ghi chú nhanh",
+  "normalNote": "Ghi chú thường",
+  "noLesson": "Không gắn với bài học",
+  "quickBadge": "Quick note",
+  "untitled": "Ghi chú chưa đặt tên",
+  "lessonNumber": "Bài {number}",
+  "bookLesson": "{book} · Bài {number}"
+ }
+}

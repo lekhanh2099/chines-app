@@ -1,0 +1,151 @@
+"use client";
+
+import { useEffect, useId, useRef } from "react";
+import { PenLine, Play, RotateCcw } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
+type HanziWriterModule = (typeof import("hanzi-writer"))["default"];
+type HanziWriterInstance = ReturnType<HanziWriterModule["create"]>;
+type HanziCharacterData = Awaited<ReturnType<HanziWriterModule["loadCharacterData"]>>;
+
+type HanziStrokeWriterProps = {
+ character: string;
+ size?: number;
+ autoPlay?: boolean;
+ onRelay?: () => void;
+ showActions?: boolean;
+ className?: string;
+};
+
+const characterDataCache = new Map<string, Promise<HanziCharacterData>>();
+
+function loadCharacterData(HanziWriter: HanziWriterModule, character: string) {
+ const cached = characterDataCache.get(character);
+
+ if (cached) return cached;
+
+ const next = HanziWriter.loadCharacterData(character);
+ characterDataCache.set(character, next);
+
+ return next;
+}
+
+export function HanziStrokeWriter({
+ character,
+ size = 180,
+ autoPlay = false,
+ showActions = true,
+ className = "",
+ onRelay,
+}: HanziStrokeWriterProps) {
+ const reactId = useId();
+ const targetId = `hanzi-writer-${reactId.replace(/[^a-zA-Z0-9_-]/g, "")}`;
+ const writerRef = useRef<HanziWriterInstance>(null);
+
+ useEffect(() => {
+  let mounted = true;
+
+  async function setupWriter() {
+   const target = document.getElementById(targetId);
+   if (!target) return;
+
+   target.innerHTML = "";
+
+   const hanziWriterModule = await import("hanzi-writer");
+   if (!mounted) return;
+
+   const HanziWriter = hanziWriterModule.default;
+   const charData = await loadCharacterData(HanziWriter, character);
+   if (!mounted) return;
+
+   const writer = HanziWriter.create(targetId, character, {
+    width: size,
+    height: size,
+    padding: 10,
+    showOutline: true,
+    showCharacter: true,
+    strokeAnimationSpeed: 1,
+    strokeHighlightSpeed: 1,
+    delayBetweenStrokes: 90,
+    delayBetweenLoops: 700,
+    strokeColor: "#d44616",
+    radicalColor: "#2563eb",
+    outlineColor: "#e5e7eb",
+    highlightColor: "#ef4444",
+    drawingColor: "#ef4444",
+    showHintAfterMisses: 1,
+    highlightOnComplete: true,
+    charDataLoader: () => charData,
+   });
+
+   writerRef.current = writer;
+
+   if (autoPlay) {
+    window.setTimeout(() => {
+     void writer.animateCharacter();
+    }, 150);
+   }
+  }
+
+  setupWriter();
+
+  return () => {
+   mounted = false;
+   const target = document.getElementById(targetId);
+   if (target) target.innerHTML = "";
+   writerRef.current = null;
+  };
+ }, [autoPlay, character, size, targetId]);
+
+ return (
+  <div
+   className={["inline-grid gap-3", className].join(" ")}
+   onClick={(event) => event.stopPropagation()}
+   onMouseDown={(event) => event.stopPropagation()}
+   onTouchStart={(event) => event.stopPropagation()}
+  >
+   <div className="rounded-lg border border-border-default bg-bg-primary relative inline-grid">
+    <div
+     id={targetId}
+     style={{ width: size, height: size }}
+     aria-label={`Nét viết chữ ${character}`}
+    />
+    <Button
+     type="button"
+     onClick={onRelay}
+     variant="ghost"
+     size="icon-round"
+     className="absolute top-0 right-0 grid w-8"
+     aria-label="Phát lại nét viết"
+    >
+     <RotateCcw className="h-4 w-4" />
+    </Button>
+   </div>
+
+   {showActions && (
+    <div className="grid grid-cols-2 gap-2">
+     <Button type="button" variant="outline" onClick={() => writerRef.current?.animateCharacter()}>
+      <Play className="h-4 w-4" />
+      Nét viết
+     </Button>
+
+     <Button type="button" variant="outline" onClick={() => writerRef.current?.quiz()}>
+      <PenLine className="h-4 w-4" />
+      Tập viết
+     </Button>
+    </div>
+   )}
+
+   {!showActions && (
+    <Button
+     type="button"
+     variant="ghost"
+     className="hidden"
+     data-hanzi-quiz-trigger
+     onClick={() => writerRef.current?.quiz()}
+    />
+   )}
+  </div>
+ );
+}

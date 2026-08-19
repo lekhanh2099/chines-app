@@ -1,0 +1,105 @@
+{
+ "title": "对话与记忆",
+ "description": "设置新对话的默认方式，控制长期记忆，并查看 AI 当前记住了哪些与你有关的信息。",
+ "loading": "正在加载 AI 对话设置…",
+ "loadError": "无法加载 AI 对话设置。",
+ "overview": {
+  "title": "概览",
+  "character": "当前角色",
+  "noCharacter": "暂无角色",
+  "relationship": "关系",
+  "memory": "长期记忆",
+  "memoryOn": "已开启",
+  "memoryOff": "已关闭",
+  "relationshipBands": {
+   "new": "刚认识",
+   "familiar": "比较熟悉",
+   "friends": "朋友",
+   "close": "很亲近"
+  }
+ },
+ "conversation": {
+  "title": "对话",
+  "description": "这些选项会作为新对话的默认设置。当前已打开的对话仍保留自己的独立设置。",
+  "defaultMode": "默认模式",
+  "defaultModeDescription": "决定角色如何开始并延续新的对话。",
+  "learnerLevel": "你的水平",
+  "learnerLevelDescription": "用于调整词汇、句式难度和辅助程度。",
+  "correctionStyle": "默认纠错方式",
+  "correctionStyleDescription": "决定纠错在多大程度上打断正常对话节奏。",
+  "replyMode": "默认回复语言",
+  "replyModeDescription": "优先使用中文，或在需要时补充简短越南语说明。",
+  "saved": "默认对话设置已保存。",
+  "saveError": "无法保存默认对话设置。"
+ },
+ "memory": {
+  "title": "记忆与关系",
+  "description": "长期记忆让角色能跨多次对话保持连续性。你可以随时查看、修改，或要求 AI 忘记某条信息。",
+  "enabledLabel": "使用长期记忆",
+  "enabledDescription": "关闭后，新对话不会读取或写入长期记忆；聊天记录仍会单独保存。",
+  "relationshipWith": "与{name}的关系",
+  "relationshipDescription": "当前程度：{relationship}。AI 只用它来调整熟悉感，不向用户展示技术评分。",
+  "manage": "查看 AI 记住了什么",
+  "managerTitle": "AI 记住了什么",
+  "managerDescription": "这里只显示当前账号仍处于活动状态的记忆。confidence、向量、memory key 等技术字段不会展示。",
+  "filtersAria": "筛选 AI 记忆",
+  "filters": {
+   "all": "全部",
+   "global": "通用",
+   "character": "与{name}",
+   "openLoops": "待办事项"
+  },
+  "loading": "正在加载 AI 记忆…",
+  "loadError": "无法加载 AI 记忆。",
+  "emptyTitle": "没有符合条件的记忆",
+  "emptyDescription": "AI 暂时没有保存这类信息，或者之前的信息已经被忘记或完成。",
+  "kinds": {
+   "fact": "信息",
+   "preference": "偏好",
+   "habit": "习惯",
+   "goal": "目标",
+   "episode": "共同经历",
+   "openLoop": "待办事项",
+   "insideJoke": "共同梗"
+  },
+  "scopeGlobal": "用于所有角色",
+  "scopeCharacter": "仅用于{name}",
+  "updated": "更新于{date}",
+  "actionsAria": "记忆选项：{content}",
+  "edit": "修改",
+  "resolve": "已完成",
+  "forget": "忘记",
+  "editTitle": "修改记忆",
+  "editDescription": "修改 AI 应该记住的内容。旧的语义向量会失效，并在之后重新生成。",
+  "contentLabel": "需要记住的内容",
+  "saveEdit": "保存记忆",
+  "editSaved": "记忆已更新。",
+  "resolved": "已将这件事标记为完成。",
+  "forgotten": "AI 已忘记这条信息。",
+  "forgetTitle": "让 AI 忘记这条信息？",
+  "forgetDescription": "这条记忆会从长期记忆中删除，之后的对话将不再使用它。",
+  "forgetConfirm": "忘记这条信息",
+  "actionError": "无法更新 AI 记忆。"
+ },
+ "modes": {
+  "natural": "自然聊天",
+  "speakingPractice": "口语练习",
+  "grammarCoach": "语法教练",
+  "hskkPractice": "HSKK 练习"
+ },
+ "levels": {
+  "beginner": "初级",
+  "intermediate": "中级",
+  "advanced": "高级"
+ },
+ "corrections": {
+  "light": "轻度——只纠正重要错误",
+  "balanced": "平衡——回复后再纠错",
+  "strict": "严格——明确指出并解释错误"
+ },
+ "replyModes": {
+  "adaptive": "自动适应",
+  "chinese": "优先中文",
+  "bilingual": "中文 + 越南语辅助"
+ }
+}

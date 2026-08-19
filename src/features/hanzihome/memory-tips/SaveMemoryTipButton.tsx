@@ -1,0 +1,53 @@
+"use client";
+
+import { Lightbulb } from "lucide-react";
+import { toast } from "sonner";
+
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
+import { isDuplicateMemoryTipError, MemoryTipsApiError } from "./memory-tip-api";
+import type { CreateMemoryTipPayload } from "./memory-tip.schema";
+import { useCreateMemoryTipMutation } from "./useMemoryTips";
+import { z } from "zod";
+
+const SaveMemoryTipButtonVariantSchema = z.enum(["outline", "ghost"]);
+
+type SaveMemoryTipButtonProps = {
+ payload: CreateMemoryTipPayload;
+ variant?: z.infer<typeof SaveMemoryTipButtonVariantSchema>;
+};
+
+export function SaveMemoryTipButton({
+ payload,
+ variant = SaveMemoryTipButtonVariantSchema.enum.outline,
+}: SaveMemoryTipButtonProps) {
+ const createMutation = useCreateMemoryTipMutation();
+
+ return (
+  <Button
+   type="button"
+   variant={variant}
+   disabled={createMutation.isPending}
+   onClick={async () => {
+    try {
+     await createMutation.mutateAsync(payload);
+     toast.success("Đã lưu nhắc nhanh");
+    } catch (error) {
+     if (isDuplicateMemoryTipError(error)) {
+      toast.info("Tip này đã được lưu rồi.");
+      return;
+     }
+
+     toast.error(error instanceof MemoryTipsApiError ? error.message : "Không thể lưu nhắc nhanh");
+    }
+   }}
+  >
+   {createMutation.isPending ? (
+    <Spinner data-icon="inline-start" />
+   ) : (
+    <Lightbulb data-icon="inline-start" />
+   )}
+   Lưu nhắc nhanh
+  </Button>
+ );
+}

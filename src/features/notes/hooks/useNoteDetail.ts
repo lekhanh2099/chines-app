@@ -1,0 +1,176 @@
+"use client";
+
+import type { JsonFieldValue } from "@/types/json";
+import type { JsonObject } from "@/types/json";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRef, useCallback } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
+import {
+ getNoteById,
+ updateNoteContent,
+ updateNoteTitle,
+ updateNoteCategory,
+ deleteNote,
+ updateReadingContent,
+ updateSplitViewEnabled,
+} from "@/services/notes.service";
+import type { NoteCategory } from "@/types/database";
+import { noteQueryKeys } from "@/features/notes/query-keys";
+
+type ReadingContent = Parameters<typeof updateReadingContent>[2];
+
+/**
+ * Hook: Fetch and manage a single note (editor page).
+ */
+export function useNoteDetail(noteId: string) {
+ const supabaseRef = useRef(createClient());
+ const supabase = supabaseRef.current;
+ const queryClient = useQueryClient();
+
+ // ── Main query ──
+ const query = useQuery({
+  queryKey: noteQueryKeys.detail(noteId),
+  queryFn: async () => {
+   const user = await getClientSessionUser(supabase);
+   if (!user) return null;
+   return getNoteById(supabase, noteId, user.id);
+  },
+  enabled: !!noteId && noteId !== "new",
+ });
+
+ // ── Mutation: save content (auto-save) ──
+ const saveContentMutation = useMutation({
+  mutationFn: async (content: JsonObject) => {
+   const success = await updateNoteContent(supabase, noteId, content);
+   if (!success) throw new Error("Failed to save content");
+   return content;
+  },
+  onSuccess: (content) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     content,
+    };
+   });
+  },
+ });
+
+ // ── Mutation: update title ──
+ const updateTitleMutation = useMutation({
+  mutationFn: async (title: string) => {
+   const success = await updateNoteTitle(supabase, noteId, title);
+   if (!success) throw new Error("Failed to update title");
+   return title;
+  },
+  onSuccess: (title) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+    if (!old || typeof old !== "object") return old;
+    return { ...old, title };
+   });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+  },
+ });
+
+ // ── Mutation: update category ──
+ const updateCategoryMutation = useMutation({
+  mutationFn: async (category: NoteCategory) => {
+   const success = await updateNoteCategory(supabase, noteId, category);
+   if (!success) throw new Error("Failed to update category");
+   return category;
+  },
+  onSuccess: (category) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+    if (!old || typeof old !== "object") return old;
+    return { ...old, category };
+   });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+  },
+ });
+
+ // ── Mutation: delete note ──
+ const deleteMutation = useMutation({
+  mutationFn: async () => {
+   const success = await deleteNote(supabase, noteId);
+   if (!success) throw new Error("Failed to delete note");
+  },
+  onSuccess: () => {
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+  },
+ });
+
+ // ── Mutation: save reading content (split view left pane) ──
+ const saveReadingContentMutation = useMutation({
+  mutationFn: async (readingContent: ReadingContent) => {
+   const success = await updateReadingContent(supabase, noteId, readingContent);
+   if (!success) throw new Error("Failed to save reading content");
+   return readingContent;
+  },
+  onSuccess: (readingContent) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     reading_content: readingContent,
+    };
+   });
+  },
+ });
+
+ // ── Mutation: toggle split view ──
+ const updateSplitViewMutation = useMutation({
+  mutationFn: async (enabled: boolean) => {
+   const success = await updateSplitViewEnabled(supabase, noteId, enabled);
+   if (!success) throw new Error("Failed to update split view state");
+   return enabled;
+  },
+  onMutate: (enabled) => {
+   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     split_view_enabled: enabled,
+    };
+   });
+  },
+ });
+
+ // Helper for debounced save
+ const saveContent = useCallback(
+  (content: JsonObject) => {
+   saveContentMutation.mutate(content);
+  },
+  [saveContentMutation],
+ );
+
+ const saveReadingContent = useCallback(
+  (readingContent: ReadingContent) => {
+   saveReadingContentMutation.mutate(readingContent);
+  },
+  [saveReadingContentMutation],
+ );
+
+ return {
+  note: query.data ?? null,
+  isLoading: query.isLoading,
+
+  saveContent,
+  isSaving: saveContentMutation.isPending,
+  saveStatus: saveContentMutation.status,
+
+  saveReadingContent,
+  isReadingSaving: saveReadingContentMutation.isPending,
+
+  updateSplitView: (enabled: boolean) => updateSplitViewMutation.mutate(enabled),
+
+  updateTitle: (title: string) => updateTitleMutation.mutate(title),
+  updateCategory: (cat: NoteCategory) => updateCategoryMutation.mutate(cat),
+
+  deleteNote: () => deleteMutation.mutateAsync(),
+  isDeleting: deleteMutation.isPending,
+ };
+}

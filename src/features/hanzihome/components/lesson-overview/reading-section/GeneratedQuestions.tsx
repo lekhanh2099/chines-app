@@ -1,0 +1,57 @@
+import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import type { JsonValue } from "@/types/json";
+import { ExerciseQuestionCard } from "../CommonCards";
+import { asRecord, stringValue } from "../utils";
+import type { LessonDisplayMode } from "../types";
+
+export function GeneratedQuestions({
+ itemId,
+ values,
+ showAnswers = false,
+ displayMode,
+}: {
+ itemId: string;
+ values: JsonValue[];
+ showAnswers?: boolean;
+ displayMode: LessonDisplayMode;
+}) {
+ if (values.length === 0) return null;
+
+ return (
+  <div className="grid gap-2">
+   <StudyInstructionText
+    variant="overline"
+    tone="muted"
+    weight="black"
+    tracking="wide"
+    transform="uppercase"
+   >
+    Câu hỏi đọc hiểu
+   </StudyInstructionText>
+   {values.map((questionValue, index) => {
+    const question = asRecord(questionValue);
+    const title =
+     stringValue(question, "question") ||
+     stringValue(question, "prompt") ||
+     stringValue(question, "zh") ||
+     "Câu hỏi";
+    const answer =
+     stringValue(question, "answer") ||
+     stringValue(question, "answer_zh") ||
+     stringValue(question, "sample_answer");
+
+    return (
+     <ExerciseQuestionCard
+      key={stringValue(question, "id") || `${itemId}-generated-question-${index}`}
+      index={index + 1}
+      title={title}
+      answer={answer}
+      showAnswer={showAnswers}
+      note={stringValue(question, "explanation_vi") || stringValue(question, "note_vi")}
+      displayMode={displayMode}
+     />
+    );
+   })}
+  </div>
+ );
+}

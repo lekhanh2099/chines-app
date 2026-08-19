@@ -1,0 +1,129 @@
+{
+ "srs": {
+  "eyebrow": "SRS từ vựng",
+  "title": "Kho ôn tập từ đã lưu",
+  "description": "Tìm lại những từ đã lưu từ từ điển hoặc inspector và mở thẳng vào mục cần ôn.",
+  "showing": "{count} từ đang hiển thị",
+  "allVocab": "Tổng hợp từ",
+  "searchAria": "Tìm trong kho ôn tập từ vựng",
+  "searchPlaceholder": "Tìm Hán tự, pinyin, Hán Việt, nghĩa...",
+  "search": "Tìm",
+  "missingSchema": "Chưa thấy bảng SRS từ vựng trong database hiện tại. Cần migration cho `user_vocab_progress` trước khi route này có dữ liệu.",
+  "emptySearchTitle": "Không tìm thấy từ phù hợp",
+  "emptySearchDescription": "Thử một từ khóa khác hoặc xóa nội dung tìm kiếm.",
+  "emptyTitle": "Chưa có từ trong SRS",
+  "emptyDescription": "Mở một từ ở từ điển rồi bấm “Lưu vào SRS” để thêm vào kho ôn.",
+  "savedWordsAria": "Từ đã lưu",
+  "missingPinyin": "Chưa có pinyin",
+  "missingMeaning": "Chưa có nghĩa phù hợp",
+  "levels": { "new": "Mới", "reviewing": "Đang ôn", "good": "Tốt", "mastered": "Thuần thục" }
+ },
+ "word": {
+  "notFoundTitle": "Không tìm thấy từ vựng",
+  "notFoundDescription": "Từ này chưa có trong dữ liệu hiện tại.",
+  "backHome": "Quay về HanziHome",
+  "home": "HanziHome",
+  "supplementTitle": "Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import",
+  "supplement": "Bổ sung phần thiếu",
+  "confusion": "Dễ nhầm",
+  "speak": "Đọc từ",
+  "stopSpeak": "Dừng phát âm",
+  "saved": "Đã lưu",
+  "saveSrs": "Lưu vào SRS",
+  "docsTitle": "Bản học theo file docs",
+  "docsDescription": "Giữ đúng 7 phần để học sâu, ôn ví dụ và tránh nhầm.",
+  "sections": {
+   "hanViet": "Hán Việt & Liên hệ Tiếng Việt",
+   "hanVietLabel": "Âm Hán Việt:",
+   "meaningLabel": "Nghĩa:",
+   "decomposition": "Chiết tự",
+   "comparisons": "So sánh từ gần nghĩa",
+   "collocations": "Cụm từ cố định",
+   "examples": "Ví dụ",
+   "culture": "Trung Việt / văn hóa",
+   "usage": "Lưu ý"
+  },
+  "missing": {
+   "detailMeaning": "Chưa có nghĩa chi tiết.",
+   "decomposition": "Chưa có chiết tự.",
+   "culture": "Chưa có ghi chú văn hóa.",
+   "usage": "Chưa có lưu ý riêng.",
+   "section": "Chưa có dữ liệu cho phần này.",
+   "meaning": "Chưa có dữ liệu nghĩa để hiển thị.",
+   "related": "Chưa có dữ liệu từ liên quan.",
+   "wordMeaning": "Chưa có nghĩa."
+  },
+  "meaningSection": {
+   "title": "Định nghĩa và ví dụ",
+   "description": "Học nghĩa trước, nhìn ví dụ ngay bên dưới từng nghĩa.",
+   "count": "{count} nghĩa",
+   "extraExamples": "Ví dụ mở rộng"
+  },
+  "related": {
+   "title": "Liên hệ từ vựng",
+   "description": "Mở rộng vốn từ qua từ ghép, đồng nghĩa và trái nghĩa cơ bản.",
+   "count": "{count} mục",
+   "compounds": "Từ ghép thông dụng",
+   "compoundsEmpty": "Chưa có từ ghép liên quan.",
+   "synonyms": "Đồng nghĩa",
+   "synonymsEmpty": "Chưa có từ đồng nghĩa cơ bản.",
+   "antonyms": "Trái nghĩa",
+   "antonymsEmpty": "Chưa có từ trái nghĩa cơ bản."
+  },
+  "insights": {
+   "title": "Gợi nhớ và lưu ý",
+   "description": "Tập trung vào mẹo nhớ, lỗi dễ nhầm và logic sử dụng.",
+   "decomposition": "Chiết tự",
+   "comparisons": "So sánh từ gần nghĩa",
+   "collocations": "Cụm từ cố định",
+   "culture": "Trung Việt",
+   "usage": "Lưu ý",
+   "usageNotes": "Ghi chú dùng từ",
+   "coreLogic": "Tư duy cốt lõi"
+  },
+  "personalNote": {
+   "title": "Ghi chú cá nhân",
+   "description": "Lưu cách nhớ, ngữ cảnh dùng hoặc điểm dễ nhầm của riêng bạn.",
+   "save": "Lưu note",
+   "placeholder": "Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
+  },
+  "ai": {
+   "loading": "Đang phân tích dữ liệu chuyên sâu...",
+   "emptyTitle": "Chưa có phân tích chuyên sâu cho mục này.",
+   "emptyDescription": "Gọi AI để bổ sung nghĩa, ví dụ và các ghi chú học tập.",
+   "request": "Phân tích bằng AI"
+  }
+ },
+ "sentence": {
+  "backHome": "HanziHome",
+  "title": "Dịch câu",
+  "description": "Ưu tiên hiểu toàn câu trước, sau đó bóc tách từng Hán tự khi cần.",
+  "pinyin": "Pinyin",
+  "translation": "Bản dịch",
+  "translating": "Đang dịch câu",
+  "missingTranslation": "Chưa có bản dịch cho câu này.",
+  "characters": "Tra từng Hán tự",
+  "charactersDescription": "Mỗi ký tự dẫn tới một trang tra cứu riêng."
+ },
+ "sidebar": {
+  "loading": "Đang tải cấu tạo chữ",
+  "writing": "Tập viết chữ",
+  "writingDescription": "Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng.",
+  "inspect": "Tra riêng",
+  "selectCharacter": "Chọn chữ để phân tích",
+  "mnemonic": "Mẹo nhớ",
+  "origin": "Nguồn gốc",
+  "structureAria": "Sơ đồ cấu tạo",
+  "structure": "Sơ đồ cấu tạo",
+  "result": "kết quả",
+  "missingStructure": "Chưa có dữ liệu cấu tạo chi tiết.",
+  "componentsAria": "Thành phần",
+  "components": "Thành phần",
+  "secondaryComponent": "Thành phần phụ"
+ },
+ "writer": {
+  "correct": "Viết đúng rồi!",
+  "strokes": "Nét viết",
+  "practice": "Tập viết"
+ }
+}

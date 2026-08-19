@@ -1,0 +1,947 @@
+{
+ "因为": {
+  "why": "Nó đặt vế A làm nguyên nhân trực tiếp dẫn tới B. Trục nghĩa là “do đã có A nên B xảy ra”.",
+  "pos": "Thường đặt đầu vế nguyên nhân: 因为 A，所以 B. Trong khẩu ngữ có thể chỉ dùng 因为 hoặc chỉ dùng 所以 nếu ngữ cảnh rõ.",
+  "decision": "Hỏi: vế sau có phải kết quả của vế trước không? Nếu có, dùng 因为/所以; nếu vế trước là mục tiêu thì chuyển sang 为了.",
+  "mistake": "Không dùng 因为 để dịch “để làm gì”. “Để thi qua” là 为了通过考试, không phải 因为通过考试.",
+  "src": ["allset", "condition"]
+ },
+ "由于": {
+  "why": "Nhấn nguyên nhân khách quan, có sắc thái thông báo/báo cáo hơn 因为.",
+  "pos": "Thường đứng đầu câu/vế: 由于 A，B / 由于 A，因此 B.",
+  "decision": "Nếu nguyên nhân là thời tiết, giao thông, điều kiện, tình hình khách quan và văn phong trang trọng, 由于 tự nhiên hơn.",
+  "mistake": "Nói chuyện thường ngày dùng 因为 tự nhiên hơn; 由于 nghe hơi cứng nếu đặt vào hội thoại đời sống.",
+  "src": ["allset", "wordorder"]
+ },
+ "为了": {
+  "why": "Không nói nguyên nhân đã gây ra kết quả, mà nói mục đích người nói muốn đạt.",
+  "pos": "为了 + mục tiêu đặt trước hành động chính: 为了 A，S + V.",
+  "decision": "Nếu có thể dịch “nhằm/để đạt A”, chọn 为了. Nếu A là lý do đã tồn tại, chọn 因为/由于.",
+  "mistake": "为了下雨 sai về logic nếu muốn nói “vì trời mưa”; mưa không phải mục tiêu.",
+  "src": ["allset", "wordorder"]
+ },
+ "所以": {
+  "why": "Đánh dấu vế B là kết quả/kết luận sau nguyên nhân A.",
+  "pos": "A，所以 B. Không đặt 所以 trước nguyên nhân.",
+  "decision": "Dùng khi muốn nói “cho nên” trung tính, nói viết đều ổn.",
+  "mistake": "Không nhầm với 于是: 所以 thiên kết quả logic; 于是 thiên “thế là làm tiếp” trong câu chuyện.",
+  "src": ["allset", "condition"]
+ },
+ "因此": {
+  "why": "Là “do đó/vì vậy” kiểu kết luận lập luận, văn viết hơn 所以.",
+  "pos": "A，因此 B. Thường ở đầu vế kết quả.",
+  "decision": "Khi viết đoạn giải thích, báo cáo, bài luận, 因此 sắc hơn 所以.",
+  "mistake": "Trong hội thoại đơn giản, 因此 có thể bị cứng, không tự nhiên bằng 所以.",
+  "src": ["allset", "wordorder"]
+ },
+ "于是": {
+  "why": "Nối tình huống A với hành động/phản ứng B. Nó có cảm giác kể chuyện: “thế là…”.",
+  "pos": "A，于是 B. B thường là hành động tiếp theo của người/nhân vật.",
+  "decision": "Nếu sau chỗ trống là hành động tiếp theo do tình huống trước thúc đẩy, chọn 于是; nếu là kết luận lý luận, chọn 因此/所以.",
+  "mistake": "不要把 于是 dùng như 然后 thuần thời gian. 于是 có lực nguyên nhân nhẹ.",
+  "src": ["allset", "condition"]
+ },
+ "然后": {
+  "why": "Chỉ thứ tự thời gian, không tự mang nghĩa nguyên nhân.",
+  "pos": "A，然后 B. Dùng trong quy trình, lịch trình, kể bước.",
+  "decision": "Nếu chỉ muốn nói “sau đó”, không có sắc thái “vì vậy”, chọn 然后.",
+  "mistake": "他没带护照，于是回酒店拿 tự nhiên hơn 然后 nếu muốn nói do không mang hộ chiếu nên quay về lấy.",
+  "src": ["allset", "wordorder"]
+ },
+ "接着": {
+  "why": "Nhấn hành động tiếp liền mạch, sát hơn 然后.",
+  "pos": "A，接着 B. Hay dùng trong quy trình/giảng bài/kể việc nối tiếp.",
+  "decision": "Nếu B diễn ra ngay tiếp sau A trong cùng mạch, 接着 tốt hơn 后来.",
+  "mistake": "Không dùng 接着 cho biến chuyển xa về sau trong quá khứ; trường hợp đó dùng 后来.",
+  "src": ["allset", "wordorder"]
+ },
+ "后来": {
+  "why": "Nói biến chuyển “về sau” trong quá khứ, thường có so sánh trước-sau.",
+  "pos": "以前/开始 A，后来 B.",
+  "decision": "Nếu câu có nền quá khứ và B là chuyển biến về sau, dùng 后来.",
+  "mistake": "Ăn xong rồi đi học là 然后, không phải 后来.",
+  "src": ["allset", "wordorder"]
+ },
+ "如果": {
+  "why": "Giả thiết trung tính: nếu điều kiện A xảy ra thì B.",
+  "pos": "如果 A，就 B. 就 ở vế sau thường đánh dấu kết quả theo điều kiện.",
+  "decision": "Khi chỉ là giả định bình thường, không nhấn “chỉ cần” hay “chỉ có”, dùng 如果.",
+  "mistake": "Đừng dùng 如果 nếu câu nhấn điều kiện duy nhất: “chỉ có A mới B” là 只有 A，才 B.",
+  "src": ["allset", "condition"]
+ },
+ "要是": {
+  "why": "Cùng trục với 如果 nhưng khẩu ngữ hơn, mềm như “nếu mà”.",
+  "pos": "要是 A，就 B.",
+  "decision": "Nói chuyện, đề nghị, tình huống đời sống: 要是 tự nhiên.",
+  "mistake": "Văn viết trang trọng nên dùng 如果/假如 hơn.",
+  "src": ["allset", "condition"]
+ },
+ "假如": {
+  "why": "Giả thiết rõ, hơi văn/giả định hơn 如果.",
+  "pos": "假如 A，就 B.",
+  "decision": "Khi viết hoặc đặt giả định có tính suy luận, 假如 hợp hơn 要是.",
+  "mistake": "Không cần dùng 假如 cho tình huống đời thường quá đơn giản.",
+  "src": ["allset", "condition"]
+ },
+ "只要": {
+  "why": "Điều kiện đủ: chỉ cần A là B có thể xảy ra. Trọng tâm là A đủ để mở kết quả.",
+  "pos": "只要 A，就 B.",
+  "decision": "Nếu A không phải điều kiện duy nhất, chỉ là “đủ rồi”, dùng 只要.",
+  "mistake": "只要 nhiều luyện tập，就会进步 = chỉ cần luyện là tiến bộ; khác 只有多练习，才会进步 = chỉ có luyện nhiều thì mới tiến bộ.",
+  "src": ["allset", "condition"]
+ },
+ "只有": {
+  "why": "Điều kiện cần/duy nhất: không có A thì B không xảy ra. Vì vậy hay đi với 才.",
+  "pos": "只有 A，才 B.",
+  "decision": "Nếu câu có cảm giác “chỉ có cách này mới được”, chọn 只有……才…….",
+  "mistake": "Thiếu 才 làm câu mất trục logic trong mẫu cơ bản.",
+  "src": ["allset", "condition"]
+ },
+ "即使": {
+  "why": "Nhượng bộ giả thiết: dù A xảy ra thì B vẫn giữ nguyên.",
+  "pos": "即使 A，也 B.",
+  "decision": "Nếu A chưa chắc xảy ra hoặc là tình huống giả định cực đoan, dùng 即使/哪怕.",
+  "mistake": "Nếu A là sự thật đã biết, dùng 虽然/尽管 tự nhiên hơn.",
+  "src": ["allset", "contrast"]
+ },
+ "哪怕": {
+  "why": "Nhượng bộ mạnh, thường nhấn quyết tâm hoặc cực hạn rất nhỏ.",
+  "pos": "哪怕 A，也 B.",
+  "decision": "Khi muốn nói “dù chỉ…, vẫn…”, 哪怕 mạnh hơn 即使.",
+  "mistake": "Không dùng nếu chỉ cần giả thiết trung tính; nó có màu cảm xúc rõ.",
+  "src": ["allset", "contrast"]
+ },
+ "虽然": {
+  "why": "Thừa nhận A là sự thật, rồi đưa B trái kỳ vọng.",
+  "pos": "虽然 A，但是/可是 B. Trong tiếng Trung hai vế thường cùng xuất hiện.",
+  "decision": "Nếu vế A là sự thật đã xảy ra/đã biết, chọn 虽然; nếu là giả thiết, chọn 即使.",
+  "mistake": "虽然明天下雨 nếu ngày mai chưa chắc mưa thì không chuẩn bằng 即使明天下雨.",
+  "src": ["allset", "contrast"]
+ },
+ "尽管": {
+  "why": "Giống 虽然 nhưng trang trọng hơn, nhấn “dù sự thật A tồn tại”.",
+  "pos": "尽管 A，还是/也/但是 B.",
+  "decision": "Dùng khi viết hoặc muốn giọng chín hơn 虽然.",
+  "mistake": "Không nhầm với 尽管 = cứ việc trong nghĩa khác; ở đây là nhượng bộ.",
+  "src": ["allset", "contrast"]
+ },
+ "但是": {
+  "why": "Chuyển hướng rõ và trung tính nhất trong nhóm “nhưng”.",
+  "pos": "A，但是 B. Đứng đầu vế sau.",
+  "decision": "Khi không chắc sắc thái, 但是 là đáp án an toàn cho tương phản thông thường.",
+  "mistake": "Nếu cần “trái dự đoán” mạnh, 却 đúng hơn; nếu muốn chuyển nhẹ, 不过 mềm hơn.",
+  "src": ["contrast", "allset"]
+ },
+ "可是": {
+  "why": "Cũng là “nhưng” nhưng khẩu ngữ/cảm xúc hơn 但是.",
+  "pos": "A，可是 B. Đứng đầu vế sau.",
+  "decision": "Dùng trong hội thoại, phàn nàn nhẹ, phản ứng cá nhân.",
+  "mistake": "Bài luận trang trọng dùng 但是/然而 tốt hơn.",
+  "src": ["contrast", "allset"]
+ },
+ "不过": {
+  "why": "Làm chuyển ý nhẹ: công nhận A, rồi thêm một hạn chế B.",
+  "pos": "A，不过 B. Thường đứng đầu vế sau.",
+  "decision": "Nếu vế trước vẫn được chấp nhận, chỉ thêm “chỉ có điều…”, dùng 不过.",
+  "mistake": "Không dùng 不过 khi muốn tạo cú “vậy mà” trái dự đoán mạnh; dùng 却.",
+  "src": ["contrast", "allset"]
+ },
+ "只是": {
+  "why": "Nói hạn chế/nguyên nhân phụ, không phủ định toàn bộ ý trước.",
+  "pos": "A，只是 B. Hay đi với 不是不……只是…….",
+  "decision": "Nếu muốn giải thích “không phải không muốn, chỉ là…”, chọn 只是.",
+  "mistake": "只是 không phải mọi trường hợp “nhưng”; nó thiên “chỉ là/only that”.",
+  "src": ["contrast", "wordorder"]
+ },
+ "却": {
+  "why": "Phó từ chuyển ý đặt trước vị ngữ, nhấn trái kỳ vọng.",
+  "pos": "A，S 却 B. Không đứng tách đầu vế như 但是.",
+  "decision": "Nếu có mâu thuẫn với dự đoán: hứa mà không đến, đơn giản mà khó, nhỏ mà đắt, chọn 却.",
+  "mistake": "*却他没有来 sai vị trí cơ bản; đúng: 他却没有来 / 他答应了我，却没有来.",
+  "src": ["contrast", "wordorder"]
+ },
+ "然而": {
+  "why": "Tương đương “however” trong văn viết, dùng cho lập luận trang trọng.",
+  "pos": "A，然而 B. Đứng đầu vế sau.",
+  "decision": "Bài luận, báo cáo, nhận xét nghiêm túc dùng 然而.",
+  "mistake": "Trong nói thường dễ cứng, dùng 但是/不过 tự nhiên hơn.",
+  "src": ["contrast", "allset"]
+ },
+ "而": {
+  "why": "Nối hai vế để đối chiếu lý tính, không nhất thiết phủ định cảm xúc.",
+  "pos": "A，而 B. Hai vế thường song song về cấu trúc.",
+  "decision": "Nếu câu là A thế này, còn B thế kia, dùng 而.",
+  "mistake": "Không dùng 而 để nối danh từ đơn giản như “tôi và bạn”; dùng 和/跟.",
+  "src": ["contrast", "wordorder"]
+ },
+ "而且": {
+  "why": "Bổ sung cùng hướng, vế sau thường tăng thêm lực hoặc thông tin tốt/xấu hơn.",
+  "pos": "A，而且 B / 不但 A，而且 B.",
+  "decision": "Nếu B cùng chiều với A và làm ý mạnh thêm, dùng 而且.",
+  "mistake": "Nếu B trái hướng A thì chuyển sang 但是/不过.",
+  "src": ["allset", "wordorder"]
+ },
+ "并且": {
+  "why": "Bổ sung song song, văn hơn 而且, hay trong văn bản hoặc mô tả hai hành động.",
+  "pos": "A，并且 B.",
+  "decision": "Khi hai hành động/tính chất cùng xảy ra hoặc cùng hướng trong văn viết, dùng 并且.",
+  "mistake": "Nói đời thường thường 而且 tự nhiên hơn.",
+  "src": ["allset", "wordorder"]
+ },
+ "并": {
+  "why": "Trong văn viết có thể nối hành động; trong 并不/并没有 thì nhấn phủ định “không hề/không phải”.",
+  "pos": "V1，并 V2 / 并不 + Adj / 并没有 + V.",
+  "decision": "Nếu sau 并 là 不/没有, hiểu là tăng lực phủ định chứ không phải “và”.",
+  "mistake": "这件事并不难 = việc này không hề khó; không dịch là “và không khó”.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "不但……而且……": {
+  "why": "Cấu trúc tăng tiến hai tầng: A đã đúng, B còn cao hơn/thêm hơn.",
+  "pos": "Cùng chủ ngữ: S + 不但 A，而且 B. Khác chủ ngữ: 不但 S1 A，而且 S2 也 B.",
+  "decision": "Nếu đề kiểm tra vị trí chủ ngữ, nhìn xem hai vế cùng hay khác chủ ngữ.",
+  "mistake": "*他不但会汉语，而且他妹妹也会 nếu muốn khác chủ ngữ thì 不但 nên đứng trước 他.",
+  "src": ["allset", "wordorder"]
+ },
+ "或者": {
+  "why": "Nêu lựa chọn trong câu trần thuật: có thể A hoặc B.",
+  "pos": "A 或者 B / 可以 A 或者 B.",
+  "decision": "Nếu câu không hỏi người nghe chọn mà chỉ liệt kê phương án, dùng 或者.",
+  "mistake": "Câu hỏi “A hay B?” cơ bản dùng 还是.",
+  "src": ["choice", "allset"]
+ },
+ "或是": {
+  "why": "Biến thể gần 或者, hơi văn/nhẹ hơn.",
+  "pos": "A 或是 B.",
+  "decision": "Dùng khi muốn văn phong mềm hơn 或者.",
+  "mistake": "Không phổ biến bằng 或者 trong bài cơ bản.",
+  "src": ["choice", "allset"]
+ },
+ "还是": {
+  "why": "Đặt giữa hai lựa chọn trong câu hỏi để người nghe chọn.",
+  "pos": "A 还是 B？",
+  "decision": "Nếu câu kết thúc bằng dấu hỏi và yêu cầu chọn một trong hai, ưu tiên 还是.",
+  "mistake": "你喝茶或者咖啡？ không chuẩn bằng 你喝茶还是咖啡？",
+  "src": ["choice", "allset"]
+ },
+ "要不": {
+  "why": "Đề xuất đổi phương án, khẩu ngữ như “hay là… đi”.",
+  "pos": "要不 + câu đề nghị / A，要不 B.",
+  "decision": "Khi gợi ý phương án thay thế, dùng 要不.",
+  "mistake": "Không dùng trong văn bản quy định/trang trọng.",
+  "src": ["choice", "wordorder"]
+ },
+ "不然": {
+  "why": "Nói hậu quả nếu không làm A, khẩu ngữ.",
+  "pos": "A，不然 B.",
+  "decision": "Nhắc nhở/cảnh báo đời thường: 快点儿，不然会迟到.",
+  "mistake": "Văn bản quy định dùng 否则 tự nhiên hơn.",
+  "src": ["choice", "wordorder"]
+ },
+ "否则": {
+  "why": "Nói “nếu không thì” trong văn bản/trang trọng, hậu quả thường rõ.",
+  "pos": "A，否则 B.",
+  "decision": "Quy định, thông báo, hướng dẫn thi: dùng 否则.",
+  "mistake": "Hội thoại thân mật nghe cứng hơn 不然.",
+  "src": ["choice", "wordorder"]
+ },
+ "和": {
+  "why": "Nối danh từ/cụm danh từ ngang hàng, phổ thông nhất.",
+  "pos": "N1 和 N2. Không dùng để nối hai mệnh đề dài theo kiểu “và rồi”.",
+  "decision": "Nếu hai bên là danh từ cùng cấp, dùng 和.",
+  "mistake": "我吃饭和去上课 không tự nhiên; dùng 然后/再 để nối hành động.",
+  "src": ["wordorder"]
+ },
+ "跟": {
+  "why": "Vừa nối “và”, vừa làm giới từ “với”, khẩu ngữ hơn 和.",
+  "pos": "跟 + người + V / N1 跟 N2.",
+  "decision": "Có nghĩa “làm gì với ai” thì 跟 rất tự nhiên: 跟老师商量.",
+  "mistake": "Đừng dịch máy thành “và giáo viên bàn bạc”; phải là “bàn với giáo viên”.",
+  "src": ["wordorder"]
+ },
+ "同": {
+  "why": "Nghĩa gần 跟/和 nhưng văn hơn, giáo trình hay gặp.",
+  "pos": "同 + N / N1 同 N2.",
+  "decision": "Dùng trong văn viết nhẹ hoặc câu giáo trình.",
+  "mistake": "Nói thường nên ưu tiên 跟/和.",
+  "src": ["wordorder"]
+ },
+ "与": {
+  "why": "Nối danh từ trong văn viết/trang trọng, hay gặp trong tiêu đề.",
+  "pos": "N1 与 N2.",
+  "decision": "Dùng cho bài viết, chủ đề học thuật: 语言与文化.",
+  "mistake": "Hội thoại đời thường dùng 和 tự nhiên hơn.",
+  "src": ["wordorder"]
+ },
+ "很": {
+  "why": "Trong câu tính từ tiếng Trung, 很 nhiều khi làm câu tự nhiên, không phải lúc nào cũng “rất” mạnh.",
+  "pos": "S + 很 + Adj.",
+  "decision": "Nếu chỉ miêu tả tính chất cơ bản, 很 là mức nền an toàn.",
+  "mistake": "Đừng dịch lúc nào cũng thành “rất” nếu ngữ cảnh chỉ là câu miêu tả thường.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "非常": {
+  "why": "Tăng mức độ cao hơn 很, nói/viết đều dùng được.",
+  "pos": "非常 + Adj / V tâm lý.",
+  "decision": "Khi muốn nhấn “rất/rất là” thật sự, dùng 非常.",
+  "mistake": "Không nhẹ như 比较.",
+  "src": ["adverbs"]
+ },
+ "十分": {
+  "why": "Mức độ cao, văn hơn 非常 một chút.",
+  "pos": "十分 + Adj.",
+  "decision": "Bài viết, phát biểu: 十分自然 hơn nói đời thường.",
+  "mistake": "Nói thường nhiều khi 非常/特别 tự nhiên hơn.",
+  "src": ["adverbs"]
+ },
+ "特别": {
+  "why": "Có hai lớp: “đặc biệt” và “rất”. Khi làm phó từ, nhấn mức độ nổi bật.",
+  "pos": "特别 + Adj / V tâm lý.",
+  "decision": "Dùng khi mức độ nổi bật so với bình thường.",
+  "mistake": "Phân biệt 特别的 + N = đặc biệt; 特别 + Adj = rất/đặc biệt.",
+  "src": ["adverbs"]
+ },
+ "太": {
+  "why": "Mức độ vượt chuẩn, thường kèm cảm xúc khen/chê.",
+  "pos": "太 + Adj + 了.",
+  "decision": "Nếu câu có cảm thán “quá”, dùng 太……了.",
+  "mistake": "Không dùng 太 như 很 trung tính khi không có cảm xúc/vượt mức.",
+  "src": ["adverbs"]
+ },
+ "极": {
+  "why": "Mức độ cực cao, văn/nhấn mạnh. Dạng Adj + 极了 rất thường gặp.",
+  "pos": "极 + Adj / Adj + 极了.",
+  "decision": "Dùng khi muốn cường điệu mạnh hơn 非常.",
+  "mistake": "Không dùng tràn lan trong hội thoại bình thường.",
+  "src": ["adverbs"]
+ },
+ "比较": {
+  "why": "Làm mức độ mềm hơn, “khá/tương đối”, tránh khẳng định tuyệt đối.",
+  "pos": "比较 + Adj.",
+  "decision": "Khi nhận xét lịch sự hoặc chưa muốn nói quá mạnh, dùng 比较.",
+  "mistake": "比较难 không bằng 非常难; độ mạnh thấp hơn.",
+  "src": ["adverbs"]
+ },
+ "稍微": {
+  "why": "Mức độ nhỏ, thường dùng khi điều chỉnh/góp ý nhẹ.",
+  "pos": "稍微 + Adj/V.",
+  "decision": "Muốn nói “hơi/một chút” và giữ giọng mềm, dùng 稍微.",
+  "mistake": "Không dùng cho mức độ cực mạnh.",
+  "src": ["adverbs"]
+ },
+ "更": {
+  "why": "So sánh tăng thêm trên một nền đã có: hơn nữa/càng hơn.",
+  "pos": "更 + Adj/V tâm lý.",
+  "decision": "Nếu có so sánh trước-sau hoặc A hơn B, dùng 更.",
+  "mistake": "更 không phải “nhất”; “nhất” là 最.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "最": {
+  "why": "Mức cao nhất trong một phạm vi.",
+  "pos": "最 + Adj/V tâm lý.",
+  "decision": "Khi có nhóm/phạm vi để chọn ra cái nhất, dùng 最.",
+  "mistake": "Không dùng 最 nếu chỉ nói một mức tăng so với trước; dùng 更.",
+  "src": ["adverbs"]
+ },
+ "刚": {
+  "why": "Hành động vừa xảy ra rất gần thời điểm nói.",
+  "pos": "刚 + V.",
+  "decision": "Nếu muốn “vừa mới”, dùng 刚/刚刚.",
+  "mistake": "刚到了 và 已经到了 khác: 刚 nhấn mới xảy ra; 已经 nhấn trạng thái đã đạt.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "刚刚": {
+  "why": "Khẩu ngữ/nhấn rõ hơn 刚, nghĩa “mới vừa”.",
+  "pos": "刚刚 + V.",
+  "decision": "Nói đời thường dùng rất tự nhiên.",
+  "mistake": "Không thay 曾经; 曾经 là “đã từng” trong quá khứ xa hơn.",
+  "src": ["adverbs"]
+ },
+ "已经": {
+  "why": "Nhấn sự việc đã đạt kết quả/trạng thái tại thời điểm nói.",
+  "pos": "已经 + V/Adj + 了.",
+  "decision": "Nếu trọng tâm là “đã rồi”, dùng 已经.",
+  "mistake": "已经去过 không bằng 曾经去过 nếu muốn nhấn trải nghiệm đã từng.",
+  "src": ["adverbs"]
+ },
+ "曾经": {
+  "why": "Kinh nghiệm/quá khứ đã từng, hiện tại không nhất thiết còn.",
+  "pos": "曾经 + V + 过.",
+  "decision": "Kể trải nghiệm hoặc một giai đoạn cũ: dùng 曾经.",
+  "mistake": "Không dùng 曾经 để báo “tôi đến rồi”; dùng 已经到了.",
+  "src": ["adverbs"]
+ },
+ "经常": {
+  "why": "Tần suất cao, trung tính, dùng cho thói quen lặp lại.",
+  "pos": "经常 + V.",
+  "decision": "Nói “thường xuyên làm gì” chọn 经常.",
+  "mistake": "Không mạnh bằng 总是; không khái quát quy luật như 往往.",
+  "src": ["adverbs"]
+ },
+ "常常": {
+  "why": "Tần suất cao như 经常 nhưng mềm/đời hơn, hay dùng trong kể chuyện.",
+  "pos": "常常 + V.",
+  "decision": "Khi muốn giọng nhẹ, hồi tưởng, đời thường, dùng 常常.",
+  "mistake": "Trong văn phân tích quy luật, 往往 có thể hợp hơn.",
+  "src": ["adverbs"]
+ },
+ "总是": {
+  "why": "Tần suất gần như luôn luôn, thường có sắc thái phàn nàn hoặc nhấn mạnh.",
+  "pos": "总是 + V/Adj.",
+  "decision": "Nếu người nói thấy việc đó cứ lặp đi lặp lại, dùng 总是.",
+  "mistake": "总是迟到 mạnh hơn 经常迟到.",
+  "src": ["adverbs"]
+ },
+ "往往": {
+  "why": "Nói xu hướng/quy luật thường xảy ra trong điều kiện nào đó.",
+  "pos": "A 的时候，往往 B.",
+  "decision": "Khi câu có tính khái quát/quan sát quy luật, dùng 往往.",
+  "mistake": "Không dùng 往往 cho một ý muốn cá nhân đơn giản.",
+  "src": ["adverbs"]
+ },
+ "有时": {
+  "why": "Tần suất không đều: có lúc/thỉnh thoảng.",
+  "pos": "有时 + V/Adj.",
+  "decision": "Nếu chỉ vài lần không ổn định, dùng 有时.",
+  "mistake": "Không mạnh bằng 经常.",
+  "src": ["adverbs"]
+ },
+ "从来": {
+  "why": "Nhấn phạm vi từ trước tới nay, thường đi với phủ định.",
+  "pos": "从来不/没 + V.",
+  "decision": "Muốn nói “chưa bao giờ/không bao giờ”, dùng 从来没/不.",
+  "mistake": "从来 thường cần phủ định sau nó trong mẫu cơ bản.",
+  "src": ["adverbs"]
+ },
+ "一直": {
+  "why": "Trạng thái/hành động kéo dài liên tục, không phải lặp lại nhiều lần.",
+  "pos": "一直 + V/Adj / 一直在 + V.",
+  "decision": "Nếu từ trước đến nay vẫn kéo dài, dùng 一直.",
+  "mistake": "经常 là lặp tần suất; 一直 là kéo dài liên tục.",
+  "src": ["adverbs"]
+ },
+ "还": {
+  "why": "Nghĩa lõi là “vẫn/còn/thêm”, tùy vị trí và ngữ cảnh.",
+  "pos": "还 + V/Adj / 还在 + V.",
+  "decision": "Nếu trạng thái chưa kết thúc hoặc có thêm một việc nữa, dùng 还.",
+  "mistake": "还 không phải 也; 也 là “cũng” theo đối tượng/tình huống giống trước.",
+  "src": ["adverbs"]
+ },
+ "还在": {
+  "why": "Nhấn hành động vẫn đang tiếp diễn tại thời điểm nói.",
+  "pos": "还在 + V.",
+  "decision": "Nếu “vẫn đang làm”, dùng 还在.",
+  "mistake": "不要把 还在 và 还是 nhầm: 还是 có thể là “vẫn là/hay là”.",
+  "src": ["adverbs"]
+ },
+ "马上": {
+  "why": "Rất nhanh/ngay lập tức trong khẩu ngữ.",
+  "pos": "马上 + V.",
+  "decision": "Hội thoại: 我马上来/马上回 rất tự nhiên.",
+  "mistake": "Trang trọng/mệnh lệnh chính thức có thể dùng 立刻.",
+  "src": ["adverbs"]
+ },
+ "立刻": {
+  "why": "Lập tức, dứt khoát hơn, trang trọng hơn 马上.",
+  "pos": "立刻 + V.",
+  "decision": "Mệnh lệnh, phản ứng nhanh, văn bản: dùng 立刻.",
+  "mistake": "Không thân mật bằng 马上.",
+  "src": ["adverbs"]
+ },
+ "顿时": {
+  "why": "Thay đổi xảy ra ngay khoảnh khắc đó, thường trong văn kể.",
+  "pos": "顿时 + Adj/V.",
+  "decision": "Dùng khi bầu không khí, cảm xúc, tình trạng đổi đột ngột.",
+  "mistake": "Không dùng như “tôi đi ngay” đời thường; dùng 马上/立刻.",
+  "src": ["adverbs"]
+ },
+ "渐渐": {
+  "why": "Biến đổi từ từ, tự nhiên, mềm.",
+  "pos": "渐渐 + V/Adj + 了.",
+  "decision": "Kể quá trình thay đổi tự nhiên, dùng 渐渐.",
+  "mistake": "逐渐 văn/phân tích hơn.",
+  "src": ["adverbs"]
+ },
+ "逐渐": {
+  "why": "Dần dần từng bước, văn hơn 渐渐.",
+  "pos": "逐渐 + V/Adj.",
+  "decision": "Bài viết, phân tích xu hướng: dùng 逐渐.",
+  "mistake": "Nói đời thường dùng 渐渐 tự nhiên hơn.",
+  "src": ["adverbs"]
+ },
+ "终于": {
+  "why": "Kết quả xuất hiện sau chờ đợi/nỗ lực, có cảm xúc nhẹ nhõm.",
+  "pos": "终于 + V/Adj + 了.",
+  "decision": "Nếu có quá trình trước đó rồi mới đạt, dùng 终于.",
+  "mistake": "最后 chỉ thứ tự cuối cùng; 终于 có cảm xúc/độ chờ.",
+  "src": ["adverbs"]
+ },
+ "总算": {
+  "why": "Cuối cùng cũng, thường có cảm giác thở phào sau khó khăn.",
+  "pos": "总算 + V + 了.",
+  "decision": "Nếu muốn nói “may quá/cuối cùng cũng xong”, dùng 总算.",
+  "mistake": "Mạnh màu đời/cảm xúc hơn 终于.",
+  "src": ["adverbs"]
+ },
+ "到底": {
+  "why": "Ép làm rõ “rốt cuộc”, hoặc nhấn kết quả sau truy tìm.",
+  "pos": "到底 + câu hỏi / 到底 + V.",
+  "decision": "Câu hỏi truy cùng: 你到底去不去？",
+  "mistake": "Không thay 终于 trong mọi câu “cuối cùng”.",
+  "src": ["adverbs"]
+ },
+ "不": {
+  "why": "Phủ định ý chí, thói quen, hiện tại/tương lai, tính chất.",
+  "pos": "不 + V/Adj.",
+  "decision": "Không muốn/không phải/không thường: dùng 不.",
+  "mistake": "Hành động đã không xảy ra/chưa xảy ra thường dùng 没.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "没": {
+  "why": "Phủ định sự việc đã xảy ra hoặc phủ định sở hữu.",
+  "pos": "没 + V / 没有 + N.",
+  "decision": "Chưa làm/đã không làm/không có: dùng 没/没有.",
+  "mistake": "Sau 没 không dùng 了 hoàn thành trong mẫu cơ bản: 我没去, không phải 我没去了.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "别": {
+  "why": "Mệnh lệnh phủ định: bảo ai đừng làm.",
+  "pos": "别 + V.",
+  "decision": "Khuyên/cấm trực tiếp: dùng 别.",
+  "mistake": "Không dùng 别 để kể “tôi không làm”.",
+  "src": ["adverbs"]
+ },
+ "又": {
+  "why": "Lặp lại việc đã xảy ra hoặc trạng thái lại xuất hiện.",
+  "pos": "又 + V/Adj + 了.",
+  "decision": "Nếu “lại rồi”, dùng 又.",
+  "mistake": "Việc chưa xảy ra trong tương lai dùng 再.",
+  "src": ["adverbs"]
+ },
+ "再": {
+  "why": "Làm tiếp/làm lại trong tương lai hoặc sau một mốc.",
+  "pos": "再 + V.",
+  "decision": "Nếu “sẽ lại/để sau làm”, dùng 再.",
+  "mistake": "他昨天再来了 sai nếu nghĩa “hôm qua lại đến”; dùng 又来了.",
+  "src": ["adverbs"]
+ },
+ "就": {
+  "why": "Góc nhìn người nói: sớm, nhanh, dễ, ít, liền. Không có một nghĩa Việt cố định.",
+  "pos": "就 + V/Adj/数量.",
+  "decision": "Nếu người nói thấy sớm hơn dự kiến hoặc kết quả xảy ra nhanh, dùng 就.",
+  "mistake": "七点就到 = 7h đã đến, sớm; 七点才到 = 7h mới đến, muộn.",
+  "src": ["adverbs", "allset"]
+ },
+ "才": {
+  "why": "Góc nhìn người nói: muộn, chậm, khó đạt, ít hơn mong đợi.",
+  "pos": "才 + V/数量.",
+  "decision": "Nếu thấy trễ/chỉ mới đạt sau khó khăn, dùng 才.",
+  "mistake": "才 thường không đi với 了 khi nhấn thời điểm muộn: 七点才到.",
+  "src": ["adverbs", "allset"]
+ },
+ "只": {
+  "why": "Giới hạn phạm vi/số lượng khách quan hơn 就.",
+  "pos": "只 + V/数量/N phạm vi.",
+  "decision": "Nếu chỉ muốn nói “chỉ có từng đó”, dùng 只.",
+  "mistake": "只 nhấn giới hạn; 就 có thể thêm sắc thái người nói thấy ít/nhanh/dễ.",
+  "src": ["adverbs"]
+ },
+ "也": {
+  "why": "Bổ sung đối tượng/tình huống giống trước: A như vậy, B cũng vậy.",
+  "pos": "S + 也 + V/Adj.",
+  "decision": "Nếu có một người/việc khác cùng trạng thái, dùng 也.",
+  "mistake": "也 không bao trùm toàn bộ như 都.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "都": {
+  "why": "Bao trùm toàn bộ phạm vi đã nêu.",
+  "pos": "S + 都 + V/Adj. 都 đứng sau chủ ngữ/phạm vi.",
+  "decision": "Nếu câu có “tất cả/mỗi… đều…”, dùng 都.",
+  "mistake": "Không đặt 都 trước chủ ngữ theo kiểu tiếng Việt: *都我们去 sai; đúng 我们都去.",
+  "src": ["adverbs", "wordorder"]
+ },
+ "简直": {
+  "why": "Cường điệu cảm xúc “đúng là/gần như là”, dùng khi phản ứng mạnh.",
+  "pos": "简直 + Adj/像/是.",
+  "decision": "Khen/chê mạnh, bất ngờ: dùng 简直.",
+  "mistake": "Không dùng cho nhận xét trung tính.",
+  "src": ["adverbs"]
+ },
+ "根本": {
+  "why": "Nhấn phủ định tận gốc hoặc bản chất sâu.",
+  "pos": "根本不/没 + V/Adj.",
+  "decision": "Muốn nói “hoàn toàn không”, dùng 根本不/没.",
+  "mistake": "根本常 đi với phủ định; không phải chỉ là “căn bản” trong mọi câu.",
+  "src": ["adverbs"]
+ },
+ "其实": {
+  "why": "Sửa lại nhận thức của người nghe: thực ra không như tưởng.",
+  "pos": "其实 + câu.",
+  "decision": "Khi muốn lật/đính chính một hiểu lầm, dùng 其实.",
+  "mistake": "Không giống 真/真的 chỉ nhấn “thật sự”.",
+  "src": ["adverbs"]
+ },
+ "当然": {
+  "why": "Khẳng định điều hiển nhiên/đương nhiên.",
+  "pos": "当然 + câu.",
+  "decision": "Dùng khi đáp lời chắc chắn hoặc nói điều hiển nhiên.",
+  "mistake": "Có thể nghe áp đặt nếu người nghe không xem nó là hiển nhiên.",
+  "src": ["adverbs"]
+ },
+ "一定": {
+  "why": "Mức chắc chắn cao hoặc dặn dò “nhất định phải”.",
+  "pos": "一定 + V/Adj.",
+  "decision": "Dự đoán chắc hoặc cam kết/dặn dò mạnh: dùng 一定.",
+  "mistake": "Không yếu như 也许/大概.",
+  "src": ["adverbs"]
+ },
+ "千万": {
+  "why": "Dặn dò/cảnh báo rất mạnh, thường đi với 别/不要.",
+  "pos": "千万别/千万不要 + V.",
+  "decision": "Khi muốn “tuyệt đối đừng”, dùng 千万别.",
+  "mistake": "Không dùng cho dự đoán bình thường kiểu “chắc anh ấy đến”.",
+  "src": ["adverbs"]
+ },
+ "大概": {
+  "why": "Phỏng đoán hoặc ước lượng gần đúng.",
+  "pos": "大概 + câu / 大概 + số lượng.",
+  "decision": "Nếu không chắc 100%, dùng 大概.",
+  "mistake": "Ước lượng số lượng/thời gian trang trọng hơn có thể dùng 大约.",
+  "src": ["adverbs"]
+ },
+ "大约": {
+  "why": "Thiên về ước lượng số lượng/thời gian, văn hơn 大概.",
+  "pos": "大约 + số lượng/thời gian.",
+  "decision": "Khi có con số: 大约三十分钟.",
+  "mistake": "Ít dùng để đoán cả mệnh đề như 也许/大概.",
+  "src": ["adverbs"]
+ },
+ "也许": {
+  "why": "Phỏng đoán mềm, độ chắc thấp.",
+  "pos": "也许 + câu.",
+  "decision": "Nếu chỉ là khả năng, chưa chắc, dùng 也许.",
+  "mistake": "Không mạnh như 一定.",
+  "src": ["adverbs"]
+ },
+ "果然": {
+  "why": "Kết quả đúng như dự đoán trước đó.",
+  "pos": "果然 + câu.",
+  "decision": "Nếu trước đó đã đoán và kết quả khớp, dùng 果然.",
+  "mistake": "Không dùng cho bất ngờ trái dự đoán; dùng 竟然/居然.",
+  "src": ["adverbs"]
+ },
+ "竟然": {
+  "why": "Bất ngờ trái dự đoán, giọng trung tính hơn 居然 một chút.",
+  "pos": "竟然 + câu.",
+  "decision": "Khi không ngờ sự việc xảy ra, dùng 竟然.",
+  "mistake": "Không dùng nếu kết quả đúng như đoán; dùng 果然.",
+  "src": ["adverbs"]
+ },
+ "居然": {
+  "why": "Không ngờ/vậy mà, cảm xúc mạnh hơn 竟然, có thể trách nhẹ.",
+  "pos": "居然 + câu.",
+  "decision": "Dùng khi người nói ngạc nhiên rõ hoặc không hài lòng.",
+  "mistake": "Không dùng cho kết quả bình thường.",
+  "src": ["adverbs"]
+ },
+ "只好": {
+  "why": "Đành phải vì không có lựa chọn tốt hơn.",
+  "pos": "只好 + V.",
+  "decision": "Nếu tình thế ép nhưng giọng đời, bất đắc dĩ, dùng 只好.",
+  "mistake": "Không mạnh/khách quan bằng 不得不.",
+  "src": ["adverbs"]
+ },
+ "不得不": {
+  "why": "Buộc phải, lực bắt buộc mạnh và khách quan hơn 只好.",
+  "pos": "不得不 + V.",
+  "decision": "Nếu không làm không được vì quy định/tình thế, dùng 不得不.",
+  "mistake": "Đừng dịch máy thành “không được không”; nghĩa là “không thể không”.",
+  "src": ["adverbs"]
+ },
+ "尽量": {
+  "why": "Làm hết mức trong khả năng, không bảo đảm tuyệt đối.",
+  "pos": "尽量 + V.",
+  "decision": "Hứa/lời khuyên mềm: 我尽量早点儿来.",
+  "mistake": "尽量 không bằng 一定; vẫn có khả năng không đạt.",
+  "src": ["adverbs"]
+ },
+ "特地": {
+  "why": "Cố ý dành thời gian/công sức riêng để làm việc gì.",
+  "pos": "特地 + V.",
+  "decision": "Khi muốn nói “đặc biệt đến/làm để…”, dùng 特地.",
+  "mistake": "Không nhầm với 特别 + Adj chỉ mức độ.",
+  "src": ["adverbs"]
+ },
+ "这": {
+  "why": "Chỉ gần người nói hoặc cái đang được đưa vào tiêu điểm.",
+  "pos": "这 + lượng từ + N / 这个.",
+  "decision": "Nếu danh từ đếm được đứng sau, nhớ lượng từ.",
+  "mistake": "这书 khẩu ngữ có thể nghe được nhưng bài thi cơ bản nên dùng 这本书.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "那": {
+  "why": "Chỉ xa người nói hoặc thông tin đã nhắc/đã biết trong ngữ cảnh.",
+  "pos": "那 + lượng từ + N / 那个.",
+  "decision": "Nếu muốn nói “người đó/cái đó” đã xác định, dùng 那.",
+  "mistake": "那 không chỉ xa vật lý; cũng có thể là xa trong mạch hội thoại.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "这些": {
+  "why": "Số nhiều gần/ngay trong tiêu điểm, 些 đã làm chức năng lượng số nhiều.",
+  "pos": "这些 + N.",
+  "decision": "Nhiều thứ này: dùng 这些 + danh từ.",
+  "mistake": "Không thêm lượng từ sau 些: 这些书 đúng, *这些本书 sai.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "那些": {
+  "why": "Số nhiều xa/đã nhắc trước.",
+  "pos": "那些 + N.",
+  "decision": "Nhiều thứ kia/đó: dùng 那些.",
+  "mistake": "Không nói *那些个学生 trong bài thi cơ bản; dùng 那些学生.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "这里": {
+  "why": "Nơi gần người nói, trung tính nói/viết.",
+  "pos": "在这里/到这里/从这里.",
+  "decision": "Bài viết và nói chuẩn đều dùng được.",
+  "mistake": "Không cần lạm dụng 在 nếu động từ đã chỉ hướng tới nơi: 来这里.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "那里": {
+  "why": "Nơi xa hoặc nơi đã nhắc, trung tính hơn 那儿.",
+  "pos": "在那里/到那里/从那里.",
+  "decision": "Nếu viết hoặc nói lịch sự, 那里 an toàn.",
+  "mistake": "那里 có thể chỉ nơi trong mạch, không nhất thiết đang xa trước mắt.",
+  "src": ["pronouns"]
+ },
+ "这儿": {
+  "why": "Biến thể khẩu ngữ của 这里, phổ biến miền Bắc.",
+  "pos": "在这儿/来这儿.",
+  "decision": "Nói chuyện đời thường, tự nhiên.",
+  "mistake": "Bài viết trang trọng nên dùng 这里.",
+  "src": ["pronouns"]
+ },
+ "那儿": {
+  "why": "Biến thể khẩu ngữ của 那里.",
+  "pos": "在那儿/去那儿.",
+  "decision": "Hội thoại đời thường.",
+  "mistake": "Văn bản trang trọng ưu tiên 那里.",
+  "src": ["pronouns"]
+ },
+ "这么": {
+  "why": "Chỉ mức độ/cách thức gần hoặc đang cảm nhận, hay đứng trước tính từ.",
+  "pos": "这么 + Adj / 这么 + V.",
+  "decision": "Nếu muốn “sao… thế này/như thế này” về mức độ, dùng 这么.",
+  "mistake": "这么做 có thể được, nhưng nếu nhấn cách làm cụ thể thì 这样做 rõ hơn.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "那么": {
+  "why": "Chỉ mức độ/cách thức xa hoặc dựa theo lời/tình huống đã nói; cũng mở kết luận “vậy thì”.",
+  "pos": "那么 + Adj / 那么 + câu.",
+  "decision": "Nếu tiếp từ điều kiện trước: 那么，我们开始吧.",
+  "mistake": "Đừng chỉ dịch là “như vậy” mà quên chức năng chuyển đoạn.",
+  "src": ["pronouns"]
+ },
+ "这样": {
+  "why": "Chỉ kiểu/cách làm/tình trạng cụ thể “như thế này”.",
+  "pos": "这样 + V / 这样做.",
+  "decision": "Nếu hỏi hoặc chỉ cách làm, dùng 这样/那样.",
+  "mistake": "这么难 là mức độ; 这样做 là cách làm.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "那样": {
+  "why": "Chỉ cách làm/tình trạng “như thế kia/như vậy” đã nói hoặc xa hơn.",
+  "pos": "那样 + V / 那样做.",
+  "decision": "Dùng để nhắc lại một cách làm/tình trạng đã có trong ngữ cảnh.",
+  "mistake": "Không chỉ xa vật lý; có thể xa trong mạch nói.",
+  "src": ["pronouns"]
+ },
+ "怎么样": {
+  "why": "Hỏi tình trạng, đánh giá hoặc kết quả ra sao.",
+  "pos": "N 怎么样？ / V 得怎么样？",
+  "decision": "Nếu muốn hỏi “ra sao rồi/đánh giá thế nào”, dùng 怎么样.",
+  "mistake": "Hỏi cách viết chữ là 怎么写, không phải 怎么样写.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "谁": {
+  "why": "Hỏi người, nhưng giữ đúng vị trí trong câu tiếng Trung, không đảo lên đầu theo tiếng Việt/Anh.",
+  "pos": "谁 + V / V + 谁.",
+  "decision": "Cần hỏi thành phần nào thì đặt 谁 ở vị trí thành phần đó.",
+  "mistake": "你找谁？= bạn tìm ai; không đảo thành *谁你找.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "什么": {
+  "why": "Hỏi vật/việc/nội dung hoặc loại danh từ.",
+  "pos": "V + 什么 / 什么 + N.",
+  "decision": "Nếu hỏi “gì/cái gì/loại gì”, dùng 什么.",
+  "mistake": "什么书 = sách gì; 哪本书 = quyển nào trong phạm vi.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "哪": {
+  "why": "Hỏi lựa chọn trong phạm vi, thường cần lượng từ.",
+  "pos": "哪 + lượng từ + N.",
+  "decision": "Nếu người nghe phải chọn một trong các cái đã/đang có, dùng 哪.",
+  "mistake": "哪儿 là nơi chốn; 哪本 là cái nào.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "哪儿": {
+  "why": "Hỏi nơi chốn, khẩu ngữ hơn 哪里.",
+  "pos": "去哪儿/在哪儿.",
+  "decision": "Hỏi đi đâu/ở đâu trong hội thoại, dùng 哪儿.",
+  "mistake": "Không dùng 哪儿 để hỏi “cái nào”.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "哪里": {
+  "why": "Hỏi nơi chốn trung tính/trang trọng hơn 哪儿; cũng dùng đáp khiêm tốn.",
+  "pos": "去哪里/在哪里.",
+  "decision": "Bài viết hoặc nói lịch sự, dùng 哪里.",
+  "mistake": "哪里哪里 là cách đáp khiêm tốn “đâu có đâu”, không phải hỏi nơi chốn.",
+  "src": ["pronouns"]
+ },
+ "怎么": {
+  "why": "Hỏi cách làm; đôi khi hỏi lý do với sắc thái ngạc nhiên/trách nhẹ.",
+  "pos": "怎么 + V.",
+  "decision": "Nếu hỏi thao tác/phương pháp, dùng 怎么.",
+  "mistake": "你怎么不来？ có thể là “sao bạn không đến?” mang cảm xúc; 为什么 trung tính/trực tiếp hơn.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "怎样": {
+  "why": "Hỏi cách thức/trạng thái, văn hơn 怎么.",
+  "pos": "怎样 + V / N 怎样.",
+  "decision": "Bài viết, câu hỏi trang trọng, hướng dẫn: dùng 怎样.",
+  "mistake": "Hội thoại thường dùng 怎么/怎么样 nhiều hơn.",
+  "src": ["pronouns"]
+ },
+ "为什么": {
+  "why": "Hỏi nguyên nhân/lý do trực tiếp.",
+  "pos": "为什么 + câu.",
+  "decision": "Khi cần lý do rõ, dùng 为什么.",
+  "mistake": "怎么 có thể hỏi “sao lại” nhưng sắc thái đời/cảm xúc hơn.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "几": {
+  "why": "Hỏi số lượng nhỏ, người hỏi thường đoán không nhiều.",
+  "pos": "几 + lượng từ + N.",
+  "decision": "Mấy người, mấy quyển, mấy tuổi trẻ em: dùng 几.",
+  "mistake": "Nhớ lượng từ: 几个人, không phải 几人 trong bài cơ bản.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "多少": {
+  "why": "Hỏi số lượng không biết lớn nhỏ; có thể đi trực tiếp với danh từ.",
+  "pos": "多少 + N / 多少钱.",
+  "decision": "Nếu số lượng có thể lớn hoặc không rõ phạm vi, dùng 多少.",
+  "mistake": "多少 thường không bắt buộc lượng từ như 几.",
+  "src": ["pronouns"]
+ },
+ "多": {
+  "why": "Khi đi trước tính từ, hỏi mức độ: xa bao nhiêu, lâu bao lâu, cao bao nhiêu.",
+  "pos": "多 + Adj.",
+  "decision": "多远/多久/多高/多大 là cụm cố định quan trọng.",
+  "mistake": "Không dùng 多 + N để hỏi số lượng thường; dùng 多少 + N.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "每": {
+  "why": "Nhìn từng đơn vị trong phạm vi, thường kết hợp 都 để bao trùm kết quả.",
+  "pos": "每 + lượng từ + N + 都 + V/Adj.",
+  "decision": "Nếu nghĩa là mỗi cá thể đều như vậy, dùng 每……都…….",
+  "mistake": "每学生 sai trong bài cơ bản; cần 每个学生.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "各": {
+  "why": "Chỉ các bên/các nhóm/từng đơn vị trong tập hợp, văn hơn 每.",
+  "pos": "各 + N.",
+  "decision": "各国/各班/各位 là các cụm rất thường gặp.",
+  "mistake": "Không phải mọi “mỗi” đều dùng 各; 每个人 tự nhiên hơn 各个人 trong nhiều ngữ cảnh.",
+  "src": ["pronouns"]
+ },
+ "所有": {
+  "why": "Toàn bộ trong một phạm vi xác định.",
+  "pos": "所有(的) + N + 都.",
+  "decision": "Nếu phạm vi đã rõ: 所有的问题都…, dùng 所有.",
+  "mistake": "所有 thường chỉ tập hợp cụ thể hơn 一切.",
+  "src": ["pronouns"]
+ },
+ "一切": {
+  "why": "Bao quát mọi sự việc/tình hình, sắc thái khái quát/văn hơn.",
+  "pos": "一切 + N / 一切都…",
+  "decision": "Dùng với khó khăn, vấn đề, sự việc, tình hình chung.",
+  "mistake": "“Tất cả học sinh” thường là 所有学生/所有的学生, không phải 一切学生.",
+  "src": ["pronouns"]
+ },
+ "大家": {
+  "why": "Chỉ mọi người trong nhóm liên quan tới cuộc nói chuyện.",
+  "pos": "大家 + 都/一起 + V.",
+  "decision": "Khi đối tượng là người trong lớp/nhóm, dùng 大家.",
+  "mistake": "Không dùng 大家 cho vật/sự việc.",
+  "src": ["pronouns"]
+ },
+ "某": {
+  "why": "Một người/vật/thời điểm nào đó không nêu rõ, văn hơn.",
+  "pos": "某 + N.",
+  "decision": "Khi cố ý giấu hoặc không rõ danh tính, dùng 某.",
+  "mistake": "某 không phải “bất kỳ”; bất kỳ là 任何.",
+  "src": ["pronouns"]
+ },
+ "任何": {
+  "why": "Mở toàn bộ phạm vi lựa chọn: bất kỳ.",
+  "pos": "任何 + N + 都/也 / 没有任何 + N.",
+  "decision": "Phủ định hoặc nhấn phạm vi không giới hạn: dùng 任何.",
+  "mistake": "任何 thường cần cấu trúc đi kèm để hoàn chỉnh lực bao quát.",
+  "src": ["pronouns", "allset"]
+ },
+ "谁都 / 谁也": {
+  "why": "Từ hỏi + 都/也 mất chức năng hỏi, chuyển thành toàn chỉ/bất kỳ.",
+  "pos": "谁 + 都/也 + V.",
+  "decision": "Nếu nghĩa là “ai cũng/không ai”, dùng 谁都/谁也.",
+  "mistake": "谁都知道 là câu khẳng định “ai cũng biết”, không phải câu hỏi.",
+  "src": ["pronouns", "allset"]
+ },
+ "什么都 / 什么也": {
+  "why": "Bao quát mọi vật/việc; với phủ định thành “không… gì cả”.",
+  "pos": "什么 + 都/也 + V.",
+  "decision": "Cái gì cũng / không gì: dùng 什么都/什么也.",
+  "mistake": "我什么也没买 = tôi không mua gì cả; không phải “tôi mua cái gì?”.",
+  "src": ["pronouns", "allset"]
+ },
+ "哪儿都 / 哪儿也": {
+  "why": "Bao quát mọi nơi; với phủ định thành “không đâu”.",
+  "pos": "哪儿 + 都/也 + V.",
+  "decision": "Ở đâu cũng / không đi đâu: dùng 哪儿都/哪儿也.",
+  "mistake": "Không còn là câu hỏi nơi chốn thật.",
+  "src": ["pronouns", "allset"]
+ },
+ "怎么都 / 怎么也": {
+  "why": "Bất kỳ cách nào cũng cho cùng kết quả; thường dùng với phủ định để nhấn bất lực.",
+  "pos": "怎么 + 都/也 + V.",
+  "decision": "“Làm/nghĩ/nghe thế nào cũng không…” dùng 怎么也 + 不/没.",
+  "mistake": "我怎么也想不起来 = nghĩ kiểu gì cũng không nhớ ra; không phải hỏi “nghĩ sao?”.",
+  "src": ["pronouns", "allset"]
+ },
+ "谁……谁……": {
+  "why": "Từ hỏi lặp như biến số: ai ở vế 1 thì chính người đó ở vế 2.",
+  "pos": "谁 V1，谁 就 V2.",
+  "decision": "Nếu nghĩa “ai… thì người đó…”, dùng mẫu lặp.",
+  "mistake": "Không phải câu hỏi thật.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "什么……什么……": {
+  "why": "Giữ cùng vật/nội dung trong hai vế.",
+  "pos": "V 什么，就 V 什么.",
+  "decision": "“Bạn mua gì tôi mua cái đó” dùng 什么…什么….",
+  "mistake": "Không dịch thành hai câu hỏi “mua gì?”.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "哪儿……哪儿……": {
+  "why": "Giữ cùng địa điểm trong hai vế.",
+  "pos": "去哪儿，就去哪儿.",
+  "decision": "“Đi đâu thì đi đó” dùng 哪儿…哪儿….",
+  "mistake": "Không còn hỏi nơi chốn thật.",
+  "src": ["pronouns", "wordorder"]
+ },
+ "怎么……怎么……": {
+  "why": "Giữ cùng cách thức trong hai vế.",
+  "pos": "怎么 V，就怎么 V.",
+  "decision": "“Nói sao làm vậy” dùng 怎么…怎么….",
+  "mistake": "Không phải câu hỏi cách làm thật.",
+  "src": ["pronouns", "wordorder"]
+ }
+}

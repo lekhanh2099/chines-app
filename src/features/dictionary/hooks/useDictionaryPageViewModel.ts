@@ -1,0 +1,245 @@
+"use client";
+
+import { useCallback, useState } from "react";
+import { useParams } from "next/navigation";
+import { toast } from "sonner";
+import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
+import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
+import { useTTS } from "@/hooks/useTTS";
+import {
+ getNormalizedAntonyms,
+ getNormalizedDefinitions,
+ getNormalizedRelatedCompounds,
+ getNormalizedRadicals,
+ getNormalizedSynonyms,
+} from "@/services/vocab.service";
+import type {
+ DictionaryPageViewModel,
+ DictionaryWordReadyViewModel,
+ MeaningItem,
+} from "@/features/dictionary/types";
+import {
+ getExampleKey,
+ getUniqueChineseCharacters,
+ isSentenceLikeQuery,
+ normalizeExample,
+} from "@/features/dictionary/utils";
+
+export function useDictionaryPageViewModel(): DictionaryPageViewModel {
+ const { speak } = useTTS();
+ const params = useParams<{ hanzi: string }>();
+ const rawText = decodeURIComponent(params.hanzi || "");
+ const chineseCharacters = getUniqueChineseCharacters(rawText);
+ const isSentenceView = isSentenceLikeQuery(rawText);
+
+ const {
+  vocabData,
+  srsLevel,
+  isSaved,
+  isLoading,
+  triggerAi,
+  isAiLoading,
+  saveToSrs,
+  isSaving,
+  personalNote: savedPersonalNote,
+  personalNoteMode,
+ } = useVocabDetail(rawText, { enabled: !isSentenceView });
+
+ const sentenceQuery = useSmartSelectionInsights(rawText, rawText, {
+  enabled: isSentenceView,
+  mode: "sentence",
+ });
+
+ const [activeCharacter, setActiveCharacter] = useState<string | null>(null);
+
+ const requestAiAnalysis = useCallback(() => {
+  triggerAi(undefined, {
+   onSuccess: () => toast.success("Đã phân tích xong!"),
+   onError: () => toast.error("Không thể phân tích từ này. Thử lại sau."),
+  });
+ }, [triggerAi]);
+
+ if (isSentenceView) {
+  return {
+   mode: "sentence",
+   text: rawText,
+   characters: chineseCharacters,
+   isLoading: sentenceQuery.isLoading,
+   translation: sentenceQuery.data?.translation || sentenceQuery.data?.entry.meaning || "",
+   pinyin: sentenceQuery.data?.entry.pinyin || "",
+   error: sentenceQuery.error instanceof Error ? sentenceQuery.error.message : null,
+  };
+ }
+
+ if (isLoading) {
+  return { mode: "word", state: "loading" };
+ }
+
+ if (!vocabData) {
+  return { mode: "word", state: "not-found" };
+ }
+
+ const ai = vocabData.ai_analysis;
+ const etymologyText =
+  typeof ai?.etymology === "object"
+   ? ai.etymology.origin || ai.etymology.explanation
+   : ai?.etymology;
+ const definitions = getNormalizedDefinitions(ai, vocabData.meaning || "");
+ const radicals = getNormalizedRadicals(ai);
+ const meaningSummary = ai?.meaning_summary || definitions[0]?.meaning || vocabData.meaning || "";
+ const examples = (
+  ai?.examples ??
+  definitions
+   .flatMap((definition) => definition.examples || [])
+   .filter((example) => example.cn || example.vi)
+ ).map((example) => normalizeExample(example));
+ const relatedCompounds = getNormalizedRelatedCompounds(ai).slice(0, 8);
+ const synonyms = getNormalizedSynonyms(ai).slice(0, 8);
+ const antonyms = getNormalizedAntonyms(ai).slice(0, 8);
+ const selectedCharacter =
+  activeCharacter && chineseCharacters.includes(activeCharacter)
+   ? activeCharacter
+   : chineseCharacters[0] || vocabData.hanzi;
+ const normalizedMeanings = definitions
+  .map((definition) => ({
+   meaning: definition.meaning || definition.text || "",
+   pos: definition.pos || ai?.word_type || undefined,
+   examples: (definition.examples || [])
+    .filter((example) => example.cn || example.vi)
+    .map((example) => normalizeExample(example)),
+  }))
+  .filter((definition) => definition.meaning || definition.examples.length > 0);
+
+ const meaningItems: MeaningItem[] = normalizedMeanings.length
+  ? normalizedMeanings
+  : meaningSummary || vocabData.meaning
+    ? [
+       {
+        meaning: meaningSummary || vocabData.meaning || "",
+        pos: ai?.word_type || undefined,
+        examples: [],
+       },
+      ]
+    : [];
+
+ const usedExampleKeys = new Set(
+  normalizedMeanings.flatMap((definition) =>
+   definition.examples.map((example) => getExampleKey(example)),
+  ),
+ );
+ const extraExamples = examples.filter((example) => !usedExampleKeys.has(getExampleKey(example)));
+ const hasLearningInsights = Boolean(
+  ai?.mnemonic_story ||
+  ai?.usage_logic?.length ||
+  ai?.decomposition ||
+  ai?.comparisons?.length ||
+  ai?.collocations?.length ||
+  ai?.cultural_note ||
+  ai?.usage_note ||
+  ai?.notes ||
+  ai?.vn_trap ||
+  ai?.common_mistakes ||
+  ai?.confusion,
+ );
+ const hasContent = Boolean(
+  meaningItems.length ||
+  meaningSummary ||
+  examples.length ||
+  radicals.length ||
+  ai?.components?.length ||
+  ai?.decomposition ||
+  etymologyText ||
+  ai?.mnemonic_story ||
+  ai?.usage_logic?.length ||
+  ai?.comparisons?.length ||
+  ai?.collocations?.length ||
+  relatedCompounds.length ||
+  synonyms.length ||
+  antonyms.length ||
+  ai?.cultural_note ||
+  ai?.usage_note ||
+  ai?.notes ||
+  ai?.hsk_level ||
+  ai?.tocfl_level ||
+  ai?.vn_trap ||
+  ai?.common_mistakes,
+ );
+ const canRenderDashboard = hasContent || chineseCharacters.length > 0;
+ const srsStatusLabel =
+  srsLevel === null
+   ? "Chưa vào SRS"
+   : srsLevel === 0
+     ? "Mới"
+     : srsLevel <= 2
+       ? "Ôn tập"
+       : srsLevel <= 4
+         ? "Tốt"
+         : "Thuần thục";
+
+ const handleSpeak = () => {
+  void speak(vocabData.hanzi);
+ };
+
+ const handleSave = () => {
+  if (isSaving) return;
+
+  saveToSrs(
+   { vocabData },
+   {
+    onSuccess: () => toast.success(`Đã lưu \"${vocabData.hanzi}\" vào SRS!`),
+    onError: () => toast.error("Không thể lưu từ vựng"),
+   },
+  );
+ };
+
+ const handleSavePersonalNote = (note: string) => {
+  if (isSaving) return;
+
+  saveToSrs(
+   {
+    vocabData,
+    options: {
+     personalNote: note,
+     personalNoteMode: personalNoteMode || "normal",
+    },
+   },
+   {
+    onSuccess: () => toast.success("Đã lưu ghi chú cá nhân"),
+    onError: (error) =>
+     toast.error(error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân"),
+   },
+  );
+ };
+
+ const viewModel: DictionaryWordReadyViewModel = {
+  mode: "word",
+  state: "ready",
+  rawText,
+  chineseCharacters,
+  selectedCharacter,
+  setActiveCharacter,
+  vocabData,
+  ai,
+  meaningSummary,
+  meaningItems,
+  extraExamples,
+  relatedCompounds,
+  synonyms,
+  antonyms,
+  hasLearningInsights,
+  canRenderDashboard,
+  isAiLoading,
+  isSaved,
+  isSaving,
+  srsLevel,
+  srsStatusLabel,
+  savedPersonalNote,
+  personalNoteMode,
+  requestAiAnalysis,
+  handleSpeak,
+  handleSave,
+  handleSavePersonalNote,
+ };
+
+ return viewModel;
+}

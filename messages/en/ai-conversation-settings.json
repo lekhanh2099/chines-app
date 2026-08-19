@@ -1,0 +1,105 @@
+{
+ "title": "Conversation & memory",
+ "description": "Choose default conversation behavior, control long-term memory, and review what the AI currently remembers about you.",
+ "loading": "Loading AI conversation settings…",
+ "loadError": "Could not load AI conversation settings.",
+ "overview": {
+  "title": "Overview",
+  "character": "Current character",
+  "noCharacter": "No character yet",
+  "relationship": "Relationship",
+  "memory": "Long-term memory",
+  "memoryOn": "On",
+  "memoryOff": "Off",
+  "relationshipBands": {
+   "new": "New connection",
+   "familiar": "Familiar",
+   "friends": "Friends",
+   "close": "Close"
+  }
+ },
+ "conversation": {
+  "title": "Conversation",
+  "description": "These choices become the defaults for new conversations. An open conversation keeps its own per-thread settings.",
+  "defaultMode": "Default mode",
+  "defaultModeDescription": "How the character starts and continues a new conversation.",
+  "learnerLevel": "Your level",
+  "learnerLevelDescription": "Adjusts vocabulary, structures, and the amount of support.",
+  "correctionStyle": "Default correction style",
+  "correctionStyleDescription": "Controls how much correction interrupts the conversation flow.",
+  "replyMode": "Default reply language",
+  "replyModeDescription": "Prefer Chinese or add concise Vietnamese support when needed.",
+  "saved": "Default conversation settings saved.",
+  "saveError": "Could not save default conversation settings."
+ },
+ "memory": {
+  "title": "Memory & relationship",
+  "description": "Long-term memory lets the character carry continuity across conversations. You can always review, edit, or ask the AI to forget something.",
+  "enabledLabel": "Use long-term memory",
+  "enabledDescription": "When off, new conversations do not read or write long-term memory. Chat history remains stored separately.",
+  "relationshipWith": "Relationship with {name}",
+  "relationshipDescription": "Current level: {relationship}. The AI uses this only to tune familiarity; technical scores stay hidden.",
+  "manage": "See what AI remembers",
+  "managerTitle": "What AI remembers",
+  "managerDescription": "Only active memories owned by your account are shown. Technical fields such as confidence, vectors, and memory keys stay hidden.",
+  "filtersAria": "Filter AI memories",
+  "filters": {
+   "all": "All",
+   "global": "Global",
+   "character": "With {name}",
+   "openLoops": "Open loops"
+  },
+  "loading": "Loading AI memories…",
+  "loadError": "Could not load AI memories.",
+  "emptyTitle": "No matching memories",
+  "emptyDescription": "The AI has not stored anything in this filter, or previous items were forgotten or completed.",
+  "kinds": {
+   "fact": "Fact",
+   "preference": "Preference",
+   "habit": "Habit",
+   "goal": "Goal",
+   "episode": "Shared event",
+   "openLoop": "Open loop",
+   "insideJoke": "Inside joke"
+  },
+  "scopeGlobal": "Use with every character",
+  "scopeCharacter": "Only with {name}",
+  "updated": "Updated {date}",
+  "actionsAria": "Options for memory: {content}",
+  "edit": "Edit",
+  "resolve": "Mark done",
+  "forget": "Forget",
+  "editTitle": "Edit memory",
+  "editDescription": "Change what the AI should remember. The previous semantic vector is invalidated and will be rebuilt later.",
+  "contentLabel": "Memory content",
+  "saveEdit": "Save memory",
+  "editSaved": "Memory updated.",
+  "resolved": "Marked this open loop as done.",
+  "forgotten": "The AI forgot this information.",
+  "forgetTitle": "Ask AI to forget this information?",
+  "forgetDescription": "This memory will be removed from long-term memory and will no longer be used in future conversations.",
+  "forgetConfirm": "Forget this information",
+  "actionError": "Could not update AI memory."
+ },
+ "modes": {
+  "natural": "Natural conversation",
+  "speakingPractice": "Speaking practice",
+  "grammarCoach": "Grammar coach",
+  "hskkPractice": "HSKK practice"
+ },
+ "levels": {
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advanced": "Advanced"
+ },
+ "corrections": {
+  "light": "Light — only important errors",
+  "balanced": "Balanced — correct after replying",
+  "strict": "Strict — flag and explain errors"
+ },
+ "replyModes": {
+  "adaptive": "Adaptive",
+  "chinese": "Prefer Chinese",
+  "bilingual": "Chinese + Vietnamese support"
+ }
+}

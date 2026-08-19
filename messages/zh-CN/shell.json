@@ -1,0 +1,104 @@
+{
+ "navigation": {
+  "aria": {
+   "main": "主导航",
+   "quick": "快捷导航",
+   "all": "全部区域"
+  },
+  "groups": {
+   "learning": "学习",
+   "reading": "阅读",
+   "hsk": "HSK",
+   "practice": "练习",
+   "knowledge": "知识",
+   "system": "系统"
+  },
+  "sections": {
+   "learningMain": "核心学习",
+   "learningPersonal": "个人学习",
+   "readingLibrary": "阅读库",
+   "readingPractice": "阅读训练",
+   "hskReading": "阅读",
+   "practiceListeningSpeaking": "听说",
+   "practiceWritingTranslation": "写作与翻译",
+   "practiceReview": "复习",
+   "knowledgeLanguage": "语言",
+   "knowledgeHanzi": "汉字",
+   "systemData": "数据",
+   "systemTools": "工具"
+  },
+  "items": {
+   "home": "首页",
+   "lessons": "课程",
+   "reader": "阅读总览",
+   "readerCourse": "教材阅读",
+   "dailyReading": "今日阅读",
+   "readerPractice": "巩固阅读",
+   "readerMock": "陌生文本 / 模拟阅读",
+   "hskReading": "HSK 阅读",
+   "grammar": "语法",
+   "humanities": "文史",
+   "personalLearning": "个性学习",
+   "notebook": "学习手册",
+   "dictation": "听写",
+   "translationStudio": "翻译",
+   "tts": "语音",
+   "dictionary": "词汇 SRS",
+   "memoryTips": "快速复习",
+   "inspector": "汉字分析",
+   "conversation": "AI 对话",
+   "learningLoop": "学习闭环",
+   "dataQuality": "数据质量",
+   "vocab": "词汇",
+   "radicals": "部首",
+   "notes": "笔记",
+   "htmlArtifacts": "HTML 文件",
+   "apiDocs": "API 与集成",
+   "settings": "设置"
+  },
+  "sidebarLabel": "导航侧栏",
+  "more": "更多",
+  "openAll": "打开全部导航",
+  "sheetTitle": "导航"
+ },
+ "header": {
+  "search": "搜索整个 HanziHome",
+  "openSearch": "打开 HanziHome 搜索",
+  "quickSettings": "快捷设置",
+  "darkTheme": "深色界面",
+  "pageLookup": "在本页查词",
+  "focusMode": "专注模式",
+  "focusModeShort": "专注",
+  "focusModeActive": "专注模式已开启",
+  "focusModeWarning": "专注模式已开启。你将留在当前课程中，只能切换当前栏目或已打开的笔记标签。",
+  "openAllSettings": "打开全部设置"
+ },
+ "breadcrumbs": {
+  "study": "学习",
+  "reader": "学习阅读",
+  "notebook": "学习手册",
+  "dictionary": "词汇 SRS",
+  "settings": "设置",
+  "radicals": "部首",
+  "hanzihome": "HanziHome",
+  "vocab": "词汇总览",
+  "vocabReview": "词汇复习",
+  "grammar": "语法总览",
+  "memoryTips": "快速复习",
+  "htmlArtifacts": "HTML 文件",
+  "apiDocs": "API 与集成",
+  "notes": "笔记",
+  "sharedNote": "分享"
+ },
+ "profile": {
+  "open": "打开个人资料",
+  "title": "个人资料",
+  "missingEmail": "暂无邮箱",
+  "defaultName": "你",
+  "logoutFailed": "退出登录失败",
+  "logoutSuccess": "已退出登录"
+ },
+ "localeSwitcher": {
+  "label": "切换界面语言"
+ }
+}

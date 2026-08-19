@@ -1,0 +1,130 @@
+{
+ "title": "Hội thoại AI",
+ "description": "Tiếp tục trò chuyện với nhân vật của bạn. Lịch sử, chế độ hội thoại và ngữ cảnh được lưu theo tài khoản.",
+ "actions": {
+  "setup": "Thiết lập hội thoại",
+  "apiKeys": "Quản lý API key",
+  "clear": "Xóa phiên",
+  "more": "Thêm tùy chọn hội thoại",
+  "send": "Gửi",
+  "sending": "Đang gửi…",
+  "stop": "Dừng trả lời",
+  "saving": "Đang lưu…",
+  "defaults": "Mặc định",
+  "cancel": "Hủy",
+  "save": "Lưu thiết lập"
+ },
+ "personas": {
+  "tutor": "Giáo viên",
+  "friend": "Bạn Trung Quốc",
+  "hskExaminer": "Giám khảo HSKK",
+  "grammarCoach": "Coach ngữ pháp"
+ },
+ "modes": {
+  "natural": "Trò chuyện tự nhiên",
+  "speakingPractice": "Luyện nói",
+  "grammarCoach": "Coach ngữ pháp",
+  "hskkPractice": "Luyện HSKK"
+ },
+ "levels": {
+  "beginner": "Sơ cấp",
+  "intermediate": "Trung cấp",
+  "advanced": "Cao cấp"
+ },
+ "corrections": {
+  "light": "Nhẹ — chỉ sửa lỗi quan trọng",
+  "balanced": "Cân bằng — sửa sau khi trả lời",
+  "strict": "Kỹ — bắt lỗi rõ và giải thích"
+ },
+ "replyModes": {
+  "adaptive": "Tự thích nghi",
+  "chinese": "Ưu tiên tiếng Trung",
+  "bilingual": "Trung + Việt hỗ trợ"
+ },
+ "character": {
+  "defaultName": "小林"
+ },
+ "relationship": {
+  "new": "Mới quen",
+  "familiar": "Quen nhau",
+  "friends": "Bạn bè",
+  "close": "Thân thiết"
+ },
+ "memory": {
+  "useLongTerm": "Dùng bộ nhớ dài hạn",
+  "offShort": "Không dùng bộ nhớ",
+  "updateError": "Không thể cập nhật bộ nhớ hội thoại."
+ },
+ "history": {
+  "title": "Lịch sử hội thoại",
+  "open": "Mở lịch sử hội thoại",
+  "newConversation": "Cuộc trò chuyện mới",
+  "creating": "Đang tạo hội thoại…",
+  "loading": "Đang tải lịch sử…",
+  "emptyTitle": "Chưa có hội thoại",
+  "emptyDescription": "Tạo một cuộc trò chuyện mới để bắt đầu với nhân vật hiện tại.",
+  "listAria": "Danh sách hội thoại",
+  "untitled": "Cuộc trò chuyện",
+  "actionsAria": "Tùy chọn cho {title}",
+  "archive": "Lưu trữ hội thoại",
+  "archiveTitle": "Lưu trữ hội thoại này?",
+  "archiveDescription": "“{title}” sẽ được ẩn khỏi lịch sử đang hoạt động. Nội dung không bị xóa vĩnh viễn.",
+  "archiveConfirm": "Lưu trữ",
+  "archiving": "Đang lưu trữ…"
+ },
+ "greeting": "你好，我是{name}。Mình đang ở chế độ “{mode}”. Cứ bắt đầu bằng tiếng Trung hoặc nói mục tiêu buổi luyện hôm nay nhé。",
+ "fallbackInterest": "Hội thoại tiếng Trung",
+ "runtime": {
+  "label": "AI sử dụng",
+  "auto": "Tự động — key cá nhân ưu tiên cao nhất",
+  "loading": "Đang tải API key…",
+  "empty": "Chưa có API key cá nhân đang hoạt động. Lịch sử vẫn đọc được nhưng cần thêm key để gửi tin nhắn mới.",
+  "description": "Chế độ tự động chỉ dùng key cá nhân đang hoạt động có ưu tiên cao nhất. Khi chọn key cụ thể, request chỉ dùng đúng key đó.",
+  "current": "Đang dùng: {provider} · {model}",
+  "loadError": "Không tải được danh sách key cá nhân. Hãy kiểm tra lại trước khi gửi tin nhắn mới.",
+  "addKey": "Thêm API key",
+  "modelFallback": "model mặc định",
+  "compactChecking": "Đang kiểm tra AI",
+  "compactReady": "AI sẵn sàng · {provider}",
+  "compactUnavailable": "AI chưa sẵn sàng",
+  "menuAria": "Chọn và kiểm tra AI runtime",
+  "healthChecking": "Đang kiểm tra AI…",
+  "healthReady": "Sẵn sàng · {provider} · {model}",
+  "recheck": "Kiểm tra lại",
+  "health": {
+   "missingSystemKey": "Chưa có API key AI cá nhân đang hoạt động.",
+   "invalidKey": "API key không còn hợp lệ hoặc provider đang từ chối key này.",
+   "quotaExhausted": "API key hợp lệ nhưng hiện đã hết quota hoặc đang bị rate limit.",
+   "keyUnavailable": "Chưa có API key dùng được cho hội thoại. Hãy thêm key mới hoặc chọn key khác.",
+   "providerUnavailable": "Provider hoặc kho API key hiện chưa khả dụng. Hãy kiểm tra lại sau.",
+   "networkError": "Không kiểm tra được AI runtime do lỗi kết nối."
+  }
+ },
+ "message": {
+  "label": "Tin nhắn",
+  "placeholder": "例如：今天下班以后我想练习聊日常生活。",
+  "hint": "Ctrl/Cmd + Enter để gửi · Hội thoại hiện tại được lưu theo tài khoản.",
+  "loadingConversation": "Đang tải cuộc trò chuyện…",
+  "replying": "{name} đang trả lời…",
+  "sendError": "Không thể gửi hội thoại."
+ },
+ "setup": {
+  "title": "Thiết lập hội thoại",
+  "description": "Chọn chế độ trò chuyện, mức sửa lỗi và cách trả lời cho hội thoại hiện tại. Trình độ của bạn được lưu theo tài khoản và dùng cho các lượt tiếp theo.",
+  "mode": "Chế độ hội thoại",
+  "saveError": "Không thể lưu thiết lập hội thoại.",
+  "persona": "Vai trò",
+  "displayName": "Tên nhân vật",
+  "displayNamePlaceholder": "Ví dụ: 小林",
+  "learnerLevel": "Trình độ của bạn",
+  "correctionStyle": "Cách sửa lỗi",
+  "replyMode": "Ngôn ngữ trả lời",
+  "interests": "Chủ đề muốn nói",
+  "interestsPlaceholder": "Ví dụ: cuộc sống ở Trung Quốc, phim, công việc, đi ăn, du lịch…",
+  "characterNotes": "Tính cách / cách nói",
+  "characterNotesPlaceholder": "Ví dụ: nói như bạn cùng tuổi, thỉnh thoảng dùng khẩu ngữ phổ biến nhưng không lạm dụng slang.",
+  "memoryNotes": "Điều cần nhớ lâu dài",
+  "memoryNotesDescription": "Phần này được gửi lại ở mỗi lượt nên vẫn giữ được các thông tin cốt lõi khi đoạn chat dài.",
+  "memoryNotesPlaceholder": "Ví dụ: Tôi học khoảng HSK4, yếu trật tự từ và dịch Việt → Trung; ưu tiên 普通话 tại Trung Quốc đại lục."
+ }
+}

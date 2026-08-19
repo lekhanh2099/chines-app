@@ -1,0 +1,90 @@
+{
+ "shell": {
+  "eyebrow": "Humanities · curriculum",
+  "title": "Humanities & Translation",
+  "description": "Choose a track for close reading, argument practice, or translation inside the same HanziHome workspace.",
+  "navAria": "Humanities and Translation navigation",
+  "nav": {
+   "program": "Curriculum",
+   "poetry": "Poetry & literature",
+   "history": "History & thought",
+   "translation": "Translation",
+   "interpreting": "Interpreting"
+  },
+  "summary": "{count} Humanities lessons",
+  "summaryDetail": "10 poetry · 5 history · 20 translation · 10 interpreting"
+ },
+ "track": {
+  "eyebrow": "Close reading · Argument · Translation",
+  "titles": {
+   "poetry": "Poetry & literature",
+   "history": "History & thought"
+  },
+  "descriptions": {
+   "poetry": "Read each work layer by layer: original text, language, poetics, interpretation, and practice.",
+   "history": "Read source texts, connect claims to evidence, and distinguish verifiable information from interpretation."
+  },
+  "tabs": {
+   "poetry": {
+    "text": "Text",
+    "language": "Language",
+    "poetics": "Poetics",
+    "interpretation": "Interpretation",
+    "practice": "Practice"
+   },
+   "history": {
+    "text": "Source",
+    "language": "Timeline",
+    "poetics": "Claims",
+    "interpretation": "Perspectives",
+    "practice": "Practice"
+   }
+  },
+  "sourceTitle": "Reading source",
+  "glossaryEmpty": "This reading has no additional glossary entries.",
+  "textTitlePoetry": "Original text",
+  "textTitleHistory": "Source text",
+  "paragraphCount": "{count, plural, one {# paragraph} other {# paragraphs}}",
+  "paragraph": "Paragraph {order}",
+  "annotationEmpty": "There are no annotations for this section yet.",
+  "poetics": {
+   "form": "Form",
+   "imagery": "Imagery and function",
+   "parallelism": "Parallelism and rhythm"
+  },
+  "history": {
+   "actors": "Actors",
+   "perspectives": "Perspectives"
+  },
+  "practice": {
+   "revealed": "Reference response shown",
+   "reveal": "Show reference response",
+   "answerFallback": "No sample response is available yet."
+  },
+  "detail": {
+   "back": "← {track} list",
+   "moduleLesson": "Module {module} · Lesson {lesson}/{total}",
+   "tabsAria": "{track} sections",
+   "listenLabel": "Listen to the text",
+   "listen": "Listen"
+  },
+  "guide": {
+   "beginner": "Beginner-friendly path",
+   "poetryWhy": "Poetry practice helps you read compressed sentences, notice omitted subjects and older meanings, track imagery, and compare translations that preserve meaning but differ in rhythm and nuance.",
+   "historyWhy": "History and thought practice trains you to separate what a text actually says from later interpretation, while checking evidence and the limits of inference.",
+   "poetryStart": "Start with four-line poems and read one layer at a time; advanced prosody is not required at the beginning.",
+   "historyStart": "Start with short passages and parables; learn to ask questions before moving into complex chronology.",
+   "startHere": "Start here",
+   "poetryMethod": "Separate the original text, line-by-line meaning, imagery, and translation before guessing the author’s intended message.",
+   "historyMethod": "Start with three labels: verifiable information, interpretation, and claims that remain debated."
+  },
+  "library": {
+   "poetry": "Poetry library",
+   "history": "Reading library",
+   "description": "Follow the curriculum order; each lesson opens its own workspace.",
+   "count": "{count, plural, one {# lesson in this track} other {# lessons in this track}}",
+   "moduleLesson": "Module {module} · Lesson {lesson}/{total}",
+   "open": "Open lesson"
+  }
+ }
+}

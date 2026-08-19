@@ -1,0 +1,104 @@
+{
+ "tracks": {
+  "translation": {
+   "title": "Biên dịch",
+   "description": "Không gian thực hành dịch viết hai chiều, lưu từng lần sửa và kiểm tra theo đơn vị ý thay vì so khớp một đáp án mẫu."
+  },
+  "interpreting": {
+   "title": "Phiên dịch",
+   "description": "Không gian thực hành phiên dịch nối tiếp và dịch nhìn, ghi lại cách truyền đạt ý thay vì chỉ so khớp từng từ."
+  }
+ },
+ "empty": "Chưa có bài Translation/Interpreting đã import.",
+ "eyebrow": "Đọc sâu · Lập luận · Chuyển ngữ",
+ "nav": {
+  "aria": "Điều hướng Văn sử & Dịch thuật",
+  "humanities": "Văn sử & Dịch",
+  "reader": "Reader",
+  "chooseTrack": "Chọn lộ trình dịch thuật",
+  "lessonList": "Danh sách bài",
+  "previous": "Bài trước",
+  "next": "Bài sau"
+ },
+ "guide": {
+  "beginner": "Có lộ trình cho người mới",
+  "count": "{count} bài trong học phần",
+  "chooseFoundation": "Chọn một bài nền bên dưới để mở khu luyện tập. Bài đầu dùng câu ngắn và khung phân tích; bản tham khảo chỉ mở sau khi bạn tự làm.",
+  "startHere": "Bắt đầu từ đây",
+  "levelsTitle": "Ba mức thực hành",
+  "levelsDescription": "Đi từ quan sát có hướng dẫn đến tự dịch và tự sửa.",
+  "foundationTitle": "Các bài nền phải học trước",
+  "foundationDescription": "Mỗi bài nền trả lời một câu hỏi cốt lõi trước khi mở phần luyện tập.",
+  "understood": "Dấu hiệu đã hiểu: có thể giải thích lựa chọn và tự kiểm tra trước khi mở bản tham khảo.",
+  "knowledge": "Kiến thức nền",
+  "skills": "Kỹ năng phải luyện",
+  "workflow": "Quy trình chuẩn",
+  "mistakes": "Sai lầm người mới thường gặp",
+  "library": "Thư viện bài luyện",
+  "libraryDescription": "Chọn bài theo đúng thứ tự học phần; mỗi bài mở khu luyện riêng.",
+  "moduleLesson": "Mô-đun {module} · Bài {lesson}/{total}",
+  "defaultGenre": "Bài luyện dịch"
+ },
+ "detail": {
+  "missingContent": "Chưa có nội dung bài học đã import.",
+  "back": "← Danh sách bài {track}",
+  "moduleLesson": "Mô-đun {module} · Bài {lesson}/{total}",
+  "beginner": "Có lộ trình cho người mới",
+  "order": "Làm bài này theo thứ tự",
+  "newbieGuide": "Hướng dẫn cho người mới",
+  "translationPrinciple": "Biên dịch là giải quyết một bài toán truyền đạt",
+  "interpretingPrinciple": "Phiên dịch là giữ đủ thông điệp dưới áp lực thời gian",
+  "translationPrincipleDescription": "Trước khi viết câu tiếng Việt, cần xác định người nói muốn truyền đạt điều gì, cho ai và trong hoàn cảnh nào. Không dịch bằng cách thay từng chữ Trung bằng từng chữ Việt.",
+  "interpretingPrincipleDescription": "Trước khi nói, cần nắm người, hành động, số liệu và quan hệ logic. Không cố nhớ từng chữ rồi bỏ mất thông điệp chính.",
+  "requiredUnits": "Bài này có {count} đơn vị ý cần giữ",
+  "referenceNotice": "Bản tham khảo chỉ mở sau lần làm đầu. Một cách diễn đạt khác vẫn đúng khi giữ đủ nghĩa, quan hệ logic, thuật ngữ và sắc thái cần thiết.",
+  "history": "Lịch sử đoạn này: {count} lần",
+  "review": "review"
+ },
+ "source": {
+  "title": "Văn bản nguồn",
+  "directionZhVi": "Trung → Việt",
+  "directionViZh": "Việt → Trung",
+  "segment": "Đoạn {order}/{total} · {source}",
+  "glossary": "Thuật ngữ cần giữ",
+  "noGlossary": "Bài này không có thuật ngữ bắt buộc bổ sung.",
+  "zhViButton": "中文 → Tiếng Việt",
+  "viZhButton": "Tiếng Việt → 中文"
+ },
+ "answer": {
+  "title": "Bản dịch của bạn",
+  "unsaved": "Chưa lưu thay đổi mới",
+  "saveRevision": "Lưu lần sửa",
+  "interpreting": "Interpreting",
+  "preparing": "Chuẩn bị {seconds}s",
+  "ready": "Sẵn sàng",
+  "notesPlaceholder": "Ghi chú ý chính trong lúc chuẩn bị…",
+  "notesAria": "Ghi chú interpreting",
+  "stopRecording": "Dừng ghi ({seconds}s)",
+  "requestingPermission": "Đang xin quyền…",
+  "startRecording": "Bắt đầu ghi",
+  "transcriptPlaceholder": "Ghi lại transcript bạn vừa nói (không bắt buộc)…",
+  "transcriptAria": "Transcript interpreting",
+  "selfMark": "Tự đánh dấu ý đã truyền đạt",
+  "marks": {
+   "kept": "Đủ",
+   "partial": "Một phần",
+   "missed": "Thiếu",
+   "unsure": "Chưa chắc"
+  },
+  "recordingError": "Không thể ghi âm trên thiết bị này hoặc microphone chưa được cấp quyền.",
+  "translationPlaceholder": "Dịch tại đây. Giữ đủ người, hành động, số liệu, phủ định và quan hệ logic…",
+  "translationAria": "Câu trả lời Humanities",
+  "check": "Kiểm tra",
+  "previousSegment": "Đoạn trước",
+  "nextSegment": "Đoạn sau",
+  "playSource": "Phát nguồn",
+  "evaluationNotice": "Hệ thống chỉ chấm phần có bằng chứng rõ. Độ tự nhiên, sắc thái và văn phong phải để ở trạng thái chưa kết luận nếu chưa có người đánh giá phù hợp.",
+  "backTranslationTitle": "Dịch ngược để kiểm tra mất nghĩa",
+  "backTranslationDescription": "Dịch bản của bạn trở lại ngôn ngữ nguồn; khác biệt giúp phát hiện thông tin bị rơi hoặc bị thêm.",
+  "backTranslationPlaceholder": "Nhập bản dịch ngược…",
+  "backTranslationAria": "Bản dịch ngược",
+  "score": "Điểm: {score}/100",
+  "reference": "Đáp án tham chiếu:"
+ }
+}

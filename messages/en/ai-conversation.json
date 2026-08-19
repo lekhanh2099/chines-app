@@ -1,0 +1,130 @@
+{
+ "title": "AI Conversation",
+ "description": "Continue talking with your character. Conversation history, behavior, and context are saved to your account.",
+ "actions": {
+  "setup": "Conversation setup",
+  "apiKeys": "Manage API keys",
+  "clear": "Clear session",
+  "more": "More conversation options",
+  "send": "Send",
+  "sending": "Sending…",
+  "stop": "Stop reply",
+  "saving": "Saving…",
+  "defaults": "Defaults",
+  "cancel": "Cancel",
+  "save": "Save setup"
+ },
+ "personas": {
+  "tutor": "Teacher",
+  "friend": "Chinese friend",
+  "hskExaminer": "HSKK examiner",
+  "grammarCoach": "Grammar coach"
+ },
+ "modes": {
+  "natural": "Natural conversation",
+  "speakingPractice": "Speaking practice",
+  "grammarCoach": "Grammar coach",
+  "hskkPractice": "HSKK practice"
+ },
+ "levels": {
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advanced": "Advanced"
+ },
+ "corrections": {
+  "light": "Light — only important errors",
+  "balanced": "Balanced — correct after replying",
+  "strict": "Strict — flag and explain errors"
+ },
+ "replyModes": {
+  "adaptive": "Adaptive",
+  "chinese": "Prefer Chinese",
+  "bilingual": "Chinese + Vietnamese support"
+ },
+ "character": {
+  "defaultName": "小林"
+ },
+ "relationship": {
+  "new": "New connection",
+  "familiar": "Familiar",
+  "friends": "Friends",
+  "close": "Close"
+ },
+ "memory": {
+  "useLongTerm": "Use long-term memory",
+  "offShort": "Memory off",
+  "updateError": "Could not update conversation memory."
+ },
+ "history": {
+  "title": "Conversation history",
+  "open": "Open conversation history",
+  "newConversation": "New conversation",
+  "creating": "Creating conversation…",
+  "loading": "Loading history…",
+  "emptyTitle": "No conversations yet",
+  "emptyDescription": "Create a new conversation to start talking with the current character.",
+  "listAria": "Conversation list",
+  "untitled": "Conversation",
+  "actionsAria": "Options for {title}",
+  "archive": "Archive conversation",
+  "archiveTitle": "Archive this conversation?",
+  "archiveDescription": "“{title}” will be hidden from active history. Its content is not permanently deleted.",
+  "archiveConfirm": "Archive",
+  "archiving": "Archiving…"
+ },
+ "greeting": "你好，我是{name}。I am in “{mode}” mode. Start in Chinese or tell me your goal for this practice session.",
+ "fallbackInterest": "Chinese conversation",
+ "runtime": {
+  "label": "AI runtime",
+  "auto": "Automatic — highest-priority personal key",
+  "loading": "Loading API keys…",
+  "empty": "No active personal API key. History remains readable, but you need to add a key before sending a new message.",
+  "description": "Automatic mode uses only the highest-priority active personal key. Choosing a specific key sends the request only through that key.",
+  "current": "Current runtime: {provider} · {model}",
+  "loadError": "Could not load personal API keys. Check the runtime again before sending a new message.",
+  "addKey": "Add API key",
+  "modelFallback": "provider default",
+  "compactChecking": "Checking AI",
+  "compactReady": "AI ready · {provider}",
+  "compactUnavailable": "AI unavailable",
+  "menuAria": "Choose and check AI runtime",
+  "healthChecking": "Checking AI…",
+  "healthReady": "Ready · {provider} · {model}",
+  "recheck": "Check again",
+  "health": {
+   "missingSystemKey": "No active personal AI API key is available.",
+   "invalidKey": "The API key is no longer valid or the provider is rejecting it.",
+   "quotaExhausted": "The API key is valid but its quota is exhausted or it is currently rate limited.",
+   "keyUnavailable": "No usable API key is available for conversation. Add a new key or choose another one.",
+   "providerUnavailable": "The provider or secure API-key storage is currently unavailable. Try again later.",
+   "networkError": "Could not check the AI runtime because of a network error."
+  }
+ },
+ "message": {
+  "label": "Message",
+  "placeholder": "例如：今天下班以后我想练习聊日常生活。",
+  "hint": "Ctrl/Cmd + Enter to send · The current conversation is saved to your account.",
+  "loadingConversation": "Loading conversation…",
+  "replying": "{name} is replying…",
+  "sendError": "Could not send the conversation."
+ },
+ "setup": {
+  "title": "Conversation setup",
+  "description": "Choose the conversation mode, correction intensity, and reply behavior for this conversation. Your learner level is stored on your account and used for subsequent turns.",
+  "mode": "Conversation mode",
+  "saveError": "Could not save conversation settings.",
+  "persona": "Role",
+  "displayName": "Character name",
+  "displayNamePlaceholder": "Example: 小林",
+  "learnerLevel": "Your level",
+  "correctionStyle": "Correction style",
+  "replyMode": "Reply language",
+  "interests": "Topics to discuss",
+  "interestsPlaceholder": "Example: life in China, films, work, eating out, travel…",
+  "characterNotes": "Personality / speaking style",
+  "characterNotesPlaceholder": "Example: speak like a peer and occasionally use common colloquial expressions without overusing slang.",
+  "memoryNotes": "Long-term memory notes",
+  "memoryNotesDescription": "This is sent again on every turn so core learner context survives long conversations.",
+  "memoryNotesPlaceholder": "Example: I am around HSK4, struggle with word order and Vietnamese → Chinese translation, and prefer Mainland Mandarin usage."
+ }
+}

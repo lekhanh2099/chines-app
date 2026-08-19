@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>HanziHome app icon</title>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="48" x2="440" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="0.52" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7548F6"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150 110) rotate(48) scale(330)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#shine)"/>
+  <g transform="translate(96 96) scale(13.3333)" stroke="#FFFFFF" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 8 6 6"/>
+    <path d="m4 14 6-6 2-3"/>
+    <path d="M2 5h12"/>
+    <path d="M7 2h1"/>
+    <path d="m22 22-5-10-5 10"/>
+    <path d="M14 18h6"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+{
+ "openTabs": "Open notes",
+ "options": "Options for tab {title}",
+ "moveLeft": "Move left",
+ "moveRight": "Move right",
+ "closeCurrent": "Close current tab",
+ "closeOthers": "Close other tabs",
+ "closeAll": "Close all tabs",
+ "focusBlocksNew": "Focus mode is blocking new notes",
+ "openMore": "Open another note",
+ "focusSelectBlocked": "Focus mode is on. You can only select note tabs that are already open.",
+ "focusOpenBlocked": "Focus mode is on. You cannot open another note.",
+ "empty": "Select a note to get started",
+ "untitled": "Untitled note",
+ "navigation": "Notes navigation",
+ "back": "Notes",
+ "focusBlocksLeave": "Focus mode is blocking navigation away from the current note",
+ "quickSelect": "Quick note selection",
+ "selectPlaceholder": "Select note"
+}

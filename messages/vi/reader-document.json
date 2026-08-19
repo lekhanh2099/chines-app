@@ -1,0 +1,16 @@
+{
+ "header": {
+  "navigationAria": "Điều hướng bài đọc",
+  "study": "Học",
+  "hskSection": "Đọc HSK",
+  "lessonSection": "Bài học",
+  "chooseReading": "Chọn bài đọc khác",
+  "coreNavigationLabel": "Chủ đề {unit} · Bài đọc {reading} — {title}",
+  "hskNavigationLabel": "{volume}{lesson}{reading} — {title}",
+  "lessonPart": " · Bài {lesson}",
+  "readingPart": " · Bài đọc {reading}"
+ },
+ "text": {
+  "playFromCharacter": "Đọc từ chữ {character}"
+ }
+}
