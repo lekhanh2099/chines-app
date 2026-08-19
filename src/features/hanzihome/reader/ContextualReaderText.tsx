@@ -1,17 +1,20 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, type KeyboardEvent } from "react";
 import { useTranslations } from "next-intl";
 
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import {
  PinyinText,
  ReaderHanziText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { focusRingClassName } from "@/components/ui/focus-ring";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { cn } from "@/lib/utils";
 
-import type { ContextualPronunciationAnalysis } from "../pronunciation/contextual-pronunciation";
+import type {
+ ContextualPronunciationAnalysis,
+ ContextualPronunciationGlyph,
+} from "../pronunciation/contextual-pronunciation";
 import { formatContextualSpokenPinyin } from "../pronunciation/contextual-pronunciation";
 
 const readerGraphemeSegmenter = new Intl.Segmenter("zh-CN", { granularity: "grapheme" });
@@ -25,6 +28,7 @@ type ContextualReaderTextProps = {
  pinyinPresentation?: "ruby" | "paragraph";
  sourcePinyin?: string;
  onGlyphClick?: (start: number, end: number) => void;
+ onGlyphInspect?: (glyph: ContextualPronunciationGlyph, rect: DOMRect) => void;
 };
 
 export function ContextualReaderText({
@@ -36,6 +40,7 @@ export function ContextualReaderText({
  pinyinPresentation = "ruby",
  sourcePinyin,
  onGlyphClick,
+ onGlyphInspect,
 }: ContextualReaderTextProps) {
  const t = useTranslations("Reader.document.text");
  const glyphByStart = useMemo(
@@ -61,29 +66,42 @@ export function ContextualReaderText({
    );
   }
   const active = index === activeCharacterIndex;
-  const activateGlyph = () => onGlyphClick?.(glyph.start, glyph.end);
-  const handleGlyphKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+  const interactive = Boolean(onGlyphInspect || onGlyphClick);
+  const activateGlyph = (element: HTMLElement) => {
+   if (onGlyphInspect) {
+    onGlyphInspect(glyph, element.getBoundingClientRect());
+    return;
+   }
+   onGlyphClick?.(glyph.start, glyph.end);
+  };
+  const handleGlyphKeyDown = (event: KeyboardEvent<HTMLElement>) => {
    if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
-    activateGlyph();
+    activateGlyph(event.currentTarget);
    }
   };
-  const playLabel = onGlyphClick
-   ? t("playFromCharacter", { character: grapheme.segment })
+  const actionLabel = onGlyphInspect
+   ? `Kiểm tra cách đọc chữ ${grapheme.segment}`
+   : onGlyphClick
+     ? t("playFromCharacter", { character: grapheme.segment })
+     : undefined;
+  const interactiveClassName = interactive
+   ? cn(
+      "cursor-pointer rounded-sm underline decoration-dotted underline-offset-[0.22em]",
+      focusRingClassName,
+     )
    : undefined;
+
   if (pinyinPresentation === "paragraph") {
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
-     className={cn(
-      onGlyphClick && cn("cursor-pointer rounded-sm", focusRingClassName),
-      active && "reading-progress-highlight",
-     )}
-     onClick={onGlyphClick ? activateGlyph : undefined}
-     onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
-     role={onGlyphClick ? "button" : undefined}
-     tabIndex={onGlyphClick ? 0 : undefined}
-     aria-label={playLabel}
+     className={cn(interactiveClassName, active && "reading-progress-highlight")}
+     onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
+     onKeyDown={interactive ? handleGlyphKeyDown : undefined}
+     role={interactive ? "button" : undefined}
+     tabIndex={interactive ? 0 : undefined}
+     aria-label={actionLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
@@ -94,15 +112,12 @@ export function ContextualReaderText({
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
-     className={cn(
-      onGlyphClick && cn("cursor-pointer rounded-sm", focusRingClassName),
-      active && "reading-progress-highlight",
-     )}
-     onClick={onGlyphClick ? activateGlyph : undefined}
-     onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
-     role={onGlyphClick ? "button" : undefined}
-     tabIndex={onGlyphClick ? 0 : undefined}
-     aria-label={playLabel}
+     className={cn(interactiveClassName, active && "reading-progress-highlight")}
+     onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
+     onKeyDown={interactive ? handleGlyphKeyDown : undefined}
+     role={interactive ? "button" : undefined}
+     tabIndex={interactive ? 0 : undefined}
+     aria-label={actionLabel}
      aria-current={active ? "true" : undefined}
     >
      {grapheme.segment}
@@ -113,15 +128,12 @@ export function ContextualReaderText({
   return (
    <ruby
     key={`${grapheme.index}:${grapheme.segment}`}
-    className={cn(
-     onGlyphClick && cn("cursor-pointer rounded-sm", focusRingClassName),
-     active && "reading-progress-highlight",
-    )}
-    onClick={onGlyphClick ? activateGlyph : undefined}
-    onKeyDown={onGlyphClick ? handleGlyphKeyDown : undefined}
-    role={onGlyphClick ? "button" : undefined}
-    tabIndex={onGlyphClick ? 0 : undefined}
-    aria-label={playLabel}
+    className={cn(interactiveClassName, active && "reading-progress-highlight")}
+    onClick={interactive ? (event) => activateGlyph(event.currentTarget) : undefined}
+    onKeyDown={interactive ? handleGlyphKeyDown : undefined}
+    role={interactive ? "button" : undefined}
+    tabIndex={interactive ? 0 : undefined}
+    aria-label={actionLabel}
     title={alternatives}
     aria-current={active ? "true" : undefined}
    >
