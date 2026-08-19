@@ -1,0 +1,150 @@
+{
+ "actions": {
+  "findNewArticle": "寻找新文章",
+  "findingArticle": "正在寻找文章",
+  "openSettings": "Daily Reading 设置"
+ },
+ "library": {
+  "description": "先保存中文来源文章。翻译、词汇、语法和问题是独立的 AI 学习辅助，可以之后再补充。",
+  "autoOn": "自动寻找文章已开启",
+  "autoOff": "仅手动寻找文章",
+  "learningReady": "已完成 {ready}/{total} 个学习模块"
+ },
+ "settings": {
+  "title": "Daily Reading",
+  "description": "HanziHome 会先寻找并保存来源文章；AI 只在之后补充释义和学习内容。没有 API key 也不会影响寻找或阅读文章。",
+  "capture": {
+   "title": "来源文章",
+   "description": "选择 HanziHome 何时、按什么条件寻找文章。文章一旦保存就视为成功，即使 AI 学习辅助尚未完成。",
+   "autoTitle": "每天自动寻找一篇文章",
+   "autoDescription": "到达设定时间后应用会寻找新文章；如果当时应用未打开，则会在下次打开时补跑。",
+   "timeLabel": "寻找文章时间",
+   "timeDescription": "使用越南时区（Asia/Ho_Chi_Minh）。",
+   "levelLabel": "目标学习等级",
+   "levelDescription": "只用于指导学习辅助，不会改写中文来源文章。",
+   "todayLabel": "今天",
+   "todayReady": "自动文章已就绪",
+   "todayDue": "已到时间，等待寻找文章",
+   "todayWaiting": "还未到时间",
+   "libraryCount": "当前设备已保存 {count} 篇文章",
+   "testSource": "检查来源",
+   "testingSource": "正在检查来源",
+   "findNow": "寻找新文章",
+   "findingNow": "正在寻找文章",
+   "sourceIndependent": "检查来源和寻找文章都不使用 AI API key。"
+  },
+  "sourcePreview": {
+   "title": "最近一次来源检查",
+   "notPersisted": "这只是来源检查结果，文章尚未加入资料库。",
+   "report": "{publisher} · {paragraphs} 段 · 约 {minutes} 分钟",
+   "window": "使用的新鲜度窗口：{days} 天",
+   "candidates": "{count} 个候选通过筛选",
+   "extractions": "已尝试提取 {count} 篇文章"
+  },
+  "ai": {
+   "title": "AI 学习辅助",
+   "description": "来源文章保存后，AI 再生成越南语翻译、词汇、语法和阅读问题。",
+   "autoTitle": "找到文章后自动补充学习辅助",
+   "autoDescription": "有可用 API key 时，应用会在保存文章后生成缺失的学习模块。AI 失败不会让来源文章失败。",
+   "ready": "已就绪：{provider} · {model}",
+   "missing": "还没有 AI API key。仍可正常寻找和阅读来源文章。",
+   "storageUnavailable": "服务端安全 API key 存储尚未就绪。来源文章不受影响。",
+   "credentialUnreadable": "已保存的 key 当前无法读取。可以添加替代 key，不会影响来源文章。",
+   "articleIndependent": "来源文章和 AI 是两个独立状态：先完成文章保存，学习辅助可以之后补充或重试。",
+   "addKey": "添加 API key",
+   "addReplacementKey": "添加替代 key",
+   "manageKeys": "管理 API key"
+  },
+  "advanced": {
+   "title": "高级来源与筛选条件",
+   "description": "只有在需要更严格控制来源、新鲜度、篇幅或主题多样性时才需要调整。",
+   "show": "展开高级条件",
+   "hide": "收起高级条件",
+   "freshnessLabel": "优先新鲜度",
+   "freshnessDescription": "优先只考虑这个时间范围内发布的文章。",
+   "freshness1": "1 天内",
+   "freshness3": "3 天内",
+   "freshness7": "7 天内",
+   "freshness14": "14 天内",
+   "lengthLabel": "文章长度",
+   "lengthAny": "不限长度",
+   "lengthShort": "短",
+   "lengthMedium": "中等",
+   "lengthLong": "长",
+   "noMatchLabel": "没有匹配文章时",
+   "skipDay": "跳过，不降低条件",
+   "expandWindow": "将新鲜度扩大到最多 14 天",
+   "diversityTitle": "优先主题多样性",
+   "diversityDescription": "降低重复最近阅读主题的概率。",
+   "avoidRecentTitle": "避免已读文章",
+   "avoidRecentDescription": "下次搜索时排除本地资料库中已有的 URL。",
+   "topicsTitle": "允许的主题",
+   "topicsDescription": "至少选择一个主题。系统仍会继续应用内容安全筛选。",
+   "sourcesTitle": "允许的来源",
+   "sourcesDescription": "只搜索已经审核并加入 allowlist 的媒体来源。",
+   "atLeastOneTopic": "至少保留一个主题。",
+   "atLeastOneSource": "至少保留一个来源。"
+  },
+  "toast": {
+   "sourceReady": "来源可用：{publisher} · {title}",
+   "sourceFailed": "无法按当前条件检查来源。",
+   "articleReady": "已保存来源文章：{title}",
+   "captureFailed": "无法找到新的来源文章。",
+   "settingFailed": "无法在当前设备保存 Daily Reading 设置。"
+  }
+ },
+ "enrichment": {
+  "title": "AI 学习辅助",
+  "description": "上方中文始终是已保存的来源文章。下面的模块只补充释义和练习，不会改写来源。",
+  "summary": "已完成 {ready}/{total} 个模块",
+  "runtimeReady": "正在使用 {provider} · {model}",
+  "runtimeMissing": "还没有 AI API key。仍可阅读完整来源文章。",
+  "runtimeStorageUnavailable": "服务端 API key 存储尚未就绪；来源文章仍可正常阅读。",
+  "modules": {
+   "translation": {
+    "title": "越南语翻译",
+    "description": "逐段贴近原文翻译，并保留原 paragraph ID。"
+   },
+   "vocabulary": {
+    "title": "文中词汇",
+    "description": "只接受确实出现在来源文章中的词语和短语。"
+   },
+   "grammar": {
+    "title": "有原文证据的语法",
+    "description": "每个语法点都必须附上来源文章中的完整句子。"
+   },
+   "questions": {
+    "title": "阅读理解问题",
+    "description": "问题和答案都必须对应具体的来源段落。"
+   }
+  },
+  "status": {
+   "idle": "尚未生成",
+   "running": "正在生成",
+   "ready": "已就绪",
+   "failed": "需要重试",
+   "missingKey": "需要 API key",
+   "invalidKey": "Key 无效",
+   "quota": "额度已用完",
+   "providerUnavailable": "Provider 暂不可用"
+  },
+  "actions": {
+   "create": "生成此模块",
+   "retry": "重试",
+   "createAll": "生成学习辅助",
+   "completeMissing": "生成缺失模块",
+   "addKey": "添加 API key",
+   "addKeyAndCreate": "添加 key 并生成辅助",
+   "addReplacementKey": "添加替代 key",
+   "manageKeys": "管理 API key",
+   "checkingRuntime": "正在检查 AI",
+   "checkRuntimeAgain": "重新检查 AI"
+  },
+  "toast": {
+   "moduleReady": "已生成：{module}",
+   "moduleReadyFallback": "学习辅助模块已生成。",
+   "allReady": "所有学习辅助模块均已就绪。",
+   "failed": "无法生成学习辅助。"
+  }
+ }
+}
