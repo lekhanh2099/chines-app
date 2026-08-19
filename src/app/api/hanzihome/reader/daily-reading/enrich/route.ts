@@ -70,7 +70,12 @@ function providerFailureResponse(
    status: "blocked",
    reason,
   };
-  const status = result.errorCode === "quota-exhausted" ? 429 : 409;
+  const status =
+   result.errorCode === "quota-exhausted"
+    ? 429
+    : result.errorCode === "provider-unavailable"
+      ? 503
+      : 409;
   return privateNoStoreJson(dailyReadingV2EnrichmentResponseSchema.parse(body), { status });
  }
  const status =
