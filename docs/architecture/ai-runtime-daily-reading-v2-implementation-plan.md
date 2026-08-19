@@ -49,10 +49,18 @@ Status: implementation landed additively; execution verification is still pendin
 - [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 2 — Collection preferences and resolved policy
-- [ ] Add user-facing collection settings: schedule time, freshness window, topics, source selection, length preference, diversity/repeat behavior, fallback behavior, target level, auto enrichment.
-- [ ] Keep internal safety/timeout/candidate limits app-owned.
-- [ ] Add settings migration/defaults and policy resolver tests.
-- [ ] Do not expose crawler implementation knobs.
+
+Status: additive collection-policy contracts are implemented. They are not wired into V1 storage, scheduler, collector requests or UI yet, so current production behavior remains unchanged.
+
+- [x] Add V2 collection settings for local capture time, freshness, topics, sources, length preference, diversity/repeat behavior, no-match fallback, target level and auto enrichment.
+- [x] Preserve current V1 defaults during migration: 10:00 local release, 14-day source ceiling, all reviewed sources/topics, no length restriction, diversity/repeat protection enabled and enrichment enabled.
+- [x] Add a reviewed source catalog that centralizes source IDs/domains/publisher labels without broadening the existing allowlist.
+- [x] Add pure V1 settings -> V2 settings migration.
+- [x] Add a pure resolved-policy owner that combines user preferences with app-owned safety bounds.
+- [x] Keep internal history limits and maximum fallback freshness app-owned rather than exposing crawler knobs.
+- [x] Add deterministic settings/policy tests and keep the existing source-policy behavior compatible with the centralized catalog.
+- [x] No UI, scheduler, storage-key or collector request behavior change in this scope.
+- [ ] Execute targeted type/test checks when an executable checkout/CI run is available.
 
 ### Scope 3 — Source acquisition hardening
 - [ ] Separate discovery metadata score from extracted-content quality score.

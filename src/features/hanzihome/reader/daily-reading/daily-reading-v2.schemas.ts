@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { dailyReadingSourceIdSchema } from "./daily-reading-source-catalog";
 import {
  dailyReadingGenerationKindSchema,
  dailyReadingLevelSchema,
@@ -10,6 +11,10 @@ import {
 
 const nonEmptyTextSchema = z.string().trim().min(1);
 const nullableLevelSchema = dailyReadingLevelSchema.nullable();
+
+function hasUniqueStrings(values: readonly string[]) {
+ return new Set(values).size === values.length;
+}
 
 export const dailyReadingV2ProvenanceSchema = z.enum(["source-captured", "legacy-adapted"]);
 export const dailyReadingV2EnrichmentModuleSchema = z.enum([
@@ -24,6 +29,14 @@ export const dailyReadingV2EnrichmentBlockReasonSchema = z.enum([
  "quota-exhausted",
  "provider-unavailable",
 ]);
+export const dailyReadingV2FreshnessDaysSchema = z.union([
+ z.literal(1),
+ z.literal(3),
+ z.literal(7),
+ z.literal(14),
+]);
+export const dailyReadingV2LengthPreferenceSchema = z.enum(["any", "short", "medium", "long"]);
+export const dailyReadingV2NoMatchBehaviorSchema = z.enum(["skip-day", "expand-window"]);
 
 const dailyReadingV2AiAttributionSchema = z
  .strictObject({
@@ -31,6 +44,16 @@ const dailyReadingV2AiAttributionSchema = z
   model: nonEmptyTextSchema.max(160),
  })
  .nullable();
+
+const dailyReadingV2TopicSelectionSchema = z
+ .array(dailyReadingTopicSchema)
+ .min(1)
+ .refine(hasUniqueStrings, { message: "Daily Reading topics must be unique." });
+
+const dailyReadingV2SourceSelectionSchema = z
+ .array(dailyReadingSourceIdSchema)
+ .min(1)
+ .refine(hasUniqueStrings, { message: "Daily Reading sources must be unique." });
 
 function createEnrichmentStateSchema<DataSchema extends z.ZodType>(dataSchema: DataSchema) {
  return z.discriminatedUnion("status", [
@@ -203,6 +226,24 @@ export const dailyReadingV2EnrichmentRunSchema = z.strictObject({
  errorDetail: z.string().max(1_000),
 });
 
+export const dailyReadingV2SettingsSchema = z.strictObject({
+ schemaVersion: z.literal("2.0.0"),
+ autoCaptureEnabled: z.boolean(),
+ captureTime: z.strictObject({
+  hour: z.number().int().min(0).max(23),
+  minute: z.number().int().min(0).max(59),
+ }),
+ freshnessDays: dailyReadingV2FreshnessDaysSchema,
+ selectedTopics: dailyReadingV2TopicSelectionSchema,
+ selectedSources: dailyReadingV2SourceSelectionSchema,
+ preferredLength: dailyReadingV2LengthPreferenceSchema,
+ preferTopicDiversity: z.boolean(),
+ avoidRecentlyRead: z.boolean(),
+ noMatchBehavior: dailyReadingV2NoMatchBehaviorSchema,
+ targetLevel: dailyReadingLevelSchema,
+ autoEnrichmentEnabled: z.boolean(),
+});
+
 export const dailyReadingV2LedgerSchema = z.strictObject({
  schemaVersion: z.literal("2.0.0"),
  items: z.array(dailyReadingV2Schema).max(120),
@@ -218,3 +259,11 @@ export type DailyReadingV2Ledger = z.output<typeof dailyReadingV2LedgerSchema>;
 export type DailyReadingV2EnrichmentModule = z.output<
  typeof dailyReadingV2EnrichmentModuleSchema
 >;
+export type DailyReadingV2FreshnessDays = z.output<typeof dailyReadingV2FreshnessDaysSchema>;
+export type DailyReadingV2LengthPreference = z.output<
+ typeof dailyReadingV2LengthPreferenceSchema
+>;
+export type DailyReadingV2NoMatchBehavior = z.output<
+ typeof dailyReadingV2NoMatchBehaviorSchema
+>;
+export type DailyReadingV2Settings = z.output<typeof dailyReadingV2SettingsSchema>;

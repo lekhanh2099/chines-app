@@ -1,3 +1,7 @@
+import {
+ findDailyReadingSourceByHostname,
+ type DailyReadingSourceId,
+} from "./daily-reading-source-catalog";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 
 export type DailyReadingDiscoveryKind = "official-rss" | "official-listing" | "gdelt";
@@ -12,7 +16,7 @@ export type DailyReadingSourceMetadata = {
 };
 
 type SourceRegistryEntry = {
- id: string;
+ id: DailyReadingSourceId;
  rssUrls: readonly string[];
  listingUrls: readonly string[];
 };
@@ -44,20 +48,6 @@ export const dailyReadingSourceRegistry: readonly SourceRegistryEntry[] = [
  },
 ];
 
-const publisherLabels: Readonly<Record<string, string>> = {
- "people.com.cn": "人民网",
- "xinhuanet.com": "新华网",
- "news.cn": "新华网",
- "chinanews.com.cn": "中国新闻网",
- "china.com.cn": "中国网",
- "cctv.com": "央视网",
- "gmw.cn": "光明网",
- "ce.cn": "中国经济网",
- "youth.cn": "中国青年网",
- "cnr.cn": "央广网",
- "gov.cn": "中国政府网",
-};
-const allowedDomains = Object.keys(publisherLabels);
 const excludedTitlePattern =
  /(会议|领导|选举|战争|伤亡|死亡|事故|地震|暴雨|台风|疫情|彩票开奖|股票|证券|通报|被查|遇难|坠毁|洪水|军事|关税|特朗普|袭击|爆炸)/u;
 const preferredTitlePattern =
@@ -74,16 +64,12 @@ const topicRules: readonly { pattern: RegExp; topic: DailyReadingTopic }[] = [
 ];
 
 export function isAllowedDailyReadingDomain(hostname: string) {
- const normalized = hostname.toLowerCase();
- return allowedDomains.some((domain) => normalized === domain || normalized.endsWith(`.${domain}`));
+ return findDailyReadingSourceByHostname(hostname) !== null;
 }
 
 export function publisherForDailyReadingDomain(hostname: string) {
  const normalized = hostname.toLowerCase();
- const matched = allowedDomains.find(
-  (domain) => normalized === domain || normalized.endsWith(`.${domain}`),
- );
- return matched === undefined ? normalized : (publisherLabels[matched] ?? matched);
+ return findDailyReadingSourceByHostname(normalized)?.publisherLabelZh ?? normalized;
 }
 
 export function resolveDailyReadingTopic(title: string): DailyReadingTopic {
