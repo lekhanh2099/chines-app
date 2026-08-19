@@ -1,6 +1,9 @@
 import "server-only";
 
-import { resolveDailyReadingCollectionPolicy } from "./daily-reading-collection-policy";
+import {
+ resolveDailyReadingCollectionPolicy,
+ type DailyReadingCollectionHistoryItem,
+} from "./daily-reading-collection-policy";
 import {
  discoverDailyReadingSourceWithPolicy,
  type DailyReadingSelectedSource,
@@ -15,7 +18,6 @@ import {
  type DailyReadingV2CaptureStage,
  type DailyReadingV2Settings,
 } from "./daily-reading-v2.schemas";
-import type { DailyReadingCollectionHistoryItem } from "./daily-reading-collection-policy";
 
 const hanPattern = /[\u3400-\u9fff]/gu;
 const estimatedReadingSpeedHanPerMinute = 300;
