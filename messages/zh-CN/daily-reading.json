@@ -169,7 +169,7 @@
   "errors": {
    "tooShort": "草稿未通过质量检查。系统已经尝试自动修正，但仍未完成。",
    "schema": "AI 返回的草稿结构或字段值不符合要求。系统已经尝试自动修正，但仍未完成。",
-   "provider": "没有 AI provider 完成这篇阅读。请检查 Groq API key/model；GEMINI_API_KEY 仅作为备用方案。",
+   "provider": "没有个人 AI provider 完成这篇阅读。请在 AI 设置中检查当前 API 密钥和所选模型。",
    "showTechnical": "查看技术细节"
   },
   "clearDialog": {
