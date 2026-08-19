@@ -66,8 +66,8 @@ const runtime: ResolvedUserAiRuntime = {
  ],
 };
 
-function providerJson(value: object) {
- return { ok: true, content: JSON.stringify(value), model: runtime.model } as const;
+function providerJson(value: object): { ok: true; content: string; model: string } {
+ return { ok: true, content: JSON.stringify(value), model: runtime.model };
 }
 
 describe("Daily Reading V2 enrichment generation", () => {
@@ -107,6 +107,55 @@ describe("Daily Reading V2 enrichment generation", () => {
   expect(prompt).toContain("[source-p2]");
   expect(prompt).toContain("[source-p3]");
   expect(prompt).toContain("Do not generate pinyin");
+ });
+
+ it("chunks long translations without dropping source paragraphs", async () => {
+  const longReading: DailyReadingV2 = {
+   ...reading,
+   article: {
+    ...reading.article,
+    hanCharacterCount: 10_500,
+    fingerprint: "89abcdef",
+    paragraphs: [
+     { id: "long-p1", order: 1, zh: "文".repeat(3_500) },
+     { id: "long-p2", order: 2, zh: "化".repeat(3_500) },
+     { id: "long-p3", order: 3, zh: "学".repeat(3_500) },
+    ],
+   },
+  };
+  mocks.requestProvider.mockImplementation((input: { prompt: string }) => {
+   const paragraphId = input.prompt.includes("[long-p1]")
+    ? "long-p1"
+    : input.prompt.includes("[long-p2]")
+      ? "long-p2"
+      : "long-p3";
+   return Promise.resolve(
+    providerJson({
+     titleVi: "Bài dài",
+     whyWorthReadingVi: "Kiểm tra coverage đầy đủ.",
+     paragraphs: [{ paragraphId, vi: `Dịch ${paragraphId}`, roleVi: "Nội dung" }],
+    }),
+   );
+  });
+
+  const result = await generateDailyReadingV2Enrichment({
+   reading: longReading,
+   runtime,
+   module: "translation",
+  });
+
+  expect(result).toMatchObject({ ok: true, module: "translation" });
+  if (!result.ok || result.module !== "translation") throw new Error("Expected translation success.");
+  expect(result.data.paragraphs.map((paragraph) => paragraph.paragraphId)).toEqual([
+   "long-p1",
+   "long-p2",
+   "long-p3",
+  ]);
+  expect(mocks.requestProvider).toHaveBeenCalledTimes(3);
+  const prompts = mocks.requestProvider.mock.calls.map((call) => call[0]?.prompt ?? "").join("\n");
+  expect(prompts).toContain("[long-p1]");
+  expect(prompts).toContain("[long-p2]");
+  expect(prompts).toContain("[long-p3]");
  });
 
  it("repairs vocabulary once when the provider invents a word outside the article", async () => {
@@ -156,9 +205,9 @@ describe("Daily Reading V2 enrichment generation", () => {
  it("rejects grammar examples that are not complete sentences from the source", async () => {
   const invalidGrammar = {
    items: [
-    { patternZh: "利用……", explanationVi: "Giải thích 1", evidenceSentenceZh: "Một câu không có trong bài。" },
-    { patternZh: "帮助……", explanationVi: "Giải thích 2", evidenceSentenceZh: "Câu sai thứ hai。" },
-    { patternZh: "希望……", explanationVi: "Giải thích 3", evidenceSentenceZh: "Câu sai thứ ba。" },
+    { patternZh: "利用……", explanationVi: "Giải thích 1", evidenceSentenceZh: "一个不在原文里的句子。" },
+    { patternZh: "帮助……", explanationVi: "Giải thích 2", evidenceSentenceZh: "第二个错误句子。" },
+    { patternZh: "希望……", explanationVi: "Giải thích 3", evidenceSentenceZh: "第三个错误句子。" },
    ],
   };
   mocks.requestProvider.mockResolvedValue(providerJson(invalidGrammar));
