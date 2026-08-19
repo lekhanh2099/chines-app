@@ -64,6 +64,31 @@
   "supportTab": "AI support",
   "capturedMeta": "Saved {time} · {publisher} · {minutes} min"
  },
+ "management": {
+  "title": "Saved articles",
+  "description": "{count} articles are stored on this device. Manage article content here; task history is kept separately for diagnostics.",
+  "open": "Manage articles",
+  "dialogTitle": "Manage Daily Reading articles",
+  "dialogDescription": "Review or delete articles stored on this device. Deleting an article does not delete capture or AI activity history.",
+  "emptyTitle": "No saved articles",
+  "emptyDescription": "Newly captured articles will appear here.",
+  "learningState": "AI support: {ready}/{total} modules ready",
+  "deleteArticle": "Delete article",
+  "deleteAll": "Delete all articles",
+  "close": "Close",
+  "confirmArticleTitle": "Delete this article?",
+  "confirmArticleDescription": "“{title}” will be removed from this device's library.",
+  "confirmAllTitle": "Delete all Daily Reading articles?",
+  "confirmAllDescription": "This removes {count} saved articles from this device.",
+  "historyPreserved": "Task history remains available so you can review timestamps, statuses, and previous errors.",
+  "cancel": "Cancel",
+  "confirmDelete": "Confirm delete",
+  "toast": {
+   "articleDeleted": "Article removed from the library.",
+   "allDeleted": "Removed {count} articles from the library.",
+   "deleteFailed": "Could not delete Daily Reading articles on this device."
+  }
+ },
  "settings": {
   "title": "Daily Reading",
   "description": "Configure how HanziHome captures source articles and adds optional AI support. Status, library, and task history live in the Daily Reading workspace.",
@@ -180,8 +205,8 @@
    "failed": "Retry needed",
    "missingKey": "API key needed",
    "invalidKey": "Invalid key",
-   "quota": "Quota / rate limit",
-   "providerUnavailable": "Provider unavailable"
+   "quota": "API limit",
+   "providerUnavailable": "Provider temporarily limited"
   },
   "actions": {
    "create": "Create this module",
