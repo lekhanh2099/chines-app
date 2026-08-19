@@ -133,7 +133,7 @@ Status: source implementation complete; executable/UI checks pending.
 
 ### Scope 7 — Daily Reading enrichment modules
 
-Status: source implementation complete; executable checks pending.
+Status: source implementation complete; executable checks pending. Manual verification exposed Groq 429 classification ambiguity; source handling has been hardened and needs rerender/retest.
 
 - [x] Authenticated V2 enrichment route resolves only shared user capabilities.
 - [x] Groq/OpenAI/DeepSeek/Gemini enrichment is personal-key-only.
@@ -143,13 +143,16 @@ Status: source implementation complete; executable checks pending.
 - [x] Modules repair, persist, fail/block and retry independently.
 - [x] Ready sibling modules survive later failures.
 - [x] Missing/invalid/quota/provider states are module-local blocked states; network/invalid-response/cancelled are module-local failures.
-- [x] Deterministic route/provider/service/client/storage/chunking tests added.
+- [x] Groq HTTP 429/rate-limit failures are no longer classified as exhausted account quota by default.
+- [x] V2 Groq enrichment performs bounded, abort-aware retries using `retry-after`/rate-limit reset hints before surfacing a temporary provider limit.
+- [x] Provider error bodies stay server-side; learner-facing diagnostics remain bounded and non-secret.
+- [x] Deterministic route/provider/service/client/storage/chunking tests added, including transient/repeated Groq 429 regressions.
 - [x] Reader/settings expose module-local status/retry/Add-Key/manage-key actions.
 - [ ] Execute targeted type/test/source-standard checks.
 
 ### Scope 8 — Daily Reading Settings and status UX
 
-Status: source implementation complete and real source discovery has been manually exercised; full viewport/accessibility verification pending.
+Status: source implementation complete and real source discovery has been manually exercised. First browser verification exposed stale i18n rendering and unowned raw icons; source fixes are landed and require another render pass.
 
 - [x] Settings clearly separate source capture from optional AI learning support.
 - [x] Primary settings expose auto capture, capture time and target level.
@@ -160,9 +163,14 @@ Status: source implementation complete and real source discovery has been manual
 - [x] AI readiness/recovery is independent from source status.
 - [x] Ready article remains visible regardless of enrichment state.
 - [x] Runtime pinyin follows Reader display settings without V2 persistence.
-- [x] vi/en/zh-CN V2 messages and partial-enrichment/source-preview regressions added.
+- [x] Daily Reading workspace uses canonical `PageHeader`, `Tabs`, one-column article rows and the existing `ReaderSurface` rather than a parallel reader dialect.
+- [x] Real capture/enrichment run history is exposed as an Activity tab instead of fake status cards.
+- [x] Raw standalone feature icons that escaped primitive sizing were removed from article/detail/source rows.
+- [x] Settings now exposes V2 saved-article management with per-article/delete-all confirmation while preserving diagnostic run history.
+- [x] vi/en/zh-CN V2 messages include library/activity/management/status copy and partial-enrichment/source-preview regressions.
+- [ ] Re-render after a clean dev-server/message reload and confirm no `DailyReading.v2.*` missing-message text remains.
 - [ ] Execute targeted type/test/i18n/source-standard checks.
-- [ ] Verify 390x844, 820x1180 and 1440x900 light/dark plus keyboard/touch/error states.
+- [ ] Verify 390x844, 820x1180 and 1440x900 light/dark plus keyboard/touch/error/destructive states.
 
 ### Scope 9 — Conversation HTTP streaming
 
@@ -227,12 +235,16 @@ Status: active user-facing runtime source migration complete; dormant legacy ada
 
 ### Scope 13 — Regression and UI verification
 
-Status: source-level audit and deterministic test coverage are prepared; this agent runtime cannot execute the repository/browser, so these gates remain intentionally open.
+Status: first manual Daily Reading verification is actively feeding source fixes back into the branch; full executable/browser gate remains open.
 
+- [x] Real source capture was manually exercised and the source-quality false-negative regression was fixed.
+- [x] First Daily Reading UI pass identified raw missing-message text and oversized raw feature icons; source/i18n ownership fixes are landed.
+- [x] First AI-support pass identified Groq 429 being conflated with account quota; classification and V2 bounded retry are hardened.
+- [ ] Re-pull/restart the local dev server and reverify the Daily Reading list, detail, Activity log and Settings article manager.
 - [ ] Run focused unit/integration suites for Daily Reading, AI runtime, lookup/editor and Conversation.
 - [ ] Run `npm run source:check`, `route:check`, `ui:check`, `api:check`, `typecheck`, `test:run`, `format:check` and final `npm run check`.
 - [ ] Render Daily Reading/Settings/Conversation at 390x844, 820x1180 and 1440x900 in light/dark.
-- [ ] Verify keyboard/focus/dialog/select/loading/offline/missing-key/partial-enrichment/streaming/error states.
+- [ ] Verify keyboard/focus/dialog/select/loading/offline/missing-key/partial-enrichment/streaming/error/destructive states.
 - [ ] Verify no raw provider key crosses to browser/storage/log-facing payloads.
 - [ ] Verify stored V2 Daily Reading contains no pinyin fields.
 - [ ] Verify multi-tab capture single-flight and reload/migration recovery.
