@@ -38,6 +38,11 @@ export type ReaderPronunciationOverride = Awaited<
 >[number];
 export type ReaderPronunciationAnalysis = ReturnType<typeof analyzeContextualPronunciation>;
 
+type PronunciationAnalysisCacheEntry = {
+ signature: string;
+ analysis: ReaderPronunciationAnalysis;
+};
+
 const DEFAULT_FEATURE_STATE: ReaderFeatureState = {
  showPinyin: true,
  showMeaning: false,
@@ -51,6 +56,23 @@ function metadataString(resource: ReaderDocumentResource, key: string) {
  return typeof value === "string" ? value : null;
 }
 
+function pronunciationOverrideSignature(overrides: readonly ReaderPronunciationOverride[]) {
+ return overrides
+  .map((override) =>
+   [
+    override.id,
+    override.text,
+    override.readings.join(","),
+    override.scope,
+    override.sentence_text ?? "",
+    override.start_offset ?? "",
+    override.end_offset ?? "",
+    override.updated_at,
+   ].join(":"),
+  )
+  .join("|");
+}
+
 export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner: ReaderProgressOwner) {
  const [localState, setLocalState] = useState<ReaderFeatureState | null>(null);
  const [saveError, setSaveError] = useState("");
@@ -61,6 +83,7 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
  const persistedSnapshotRef = useRef<ReaderFeatureState | null>(null);
  const latestScheduledRef = useRef<{ snapshot: ReaderFeatureState; version: number } | null>(null);
  const autosaveRef = useRef<ReaderAutosaveController | null>(null);
+ const pronunciationAnalysisCacheRef = useRef(new Map<string, PronunciationAnalysisCacheEntry>());
  const supabase = useMemo(() => createClient(), []);
  const sessionQuery = useQuery({
   queryKey: ["hanzihome", "reader-session-user"],
@@ -196,6 +219,7 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
   persistedVersionRef.current = 0;
   persistedSnapshotRef.current = null;
   latestScheduledRef.current = null;
+  pronunciationAnalysisCacheRef.current.clear();
   setLocalState(null);
  }, [resource.document.id, stateOwner]);
  useEffect(() => {
@@ -291,34 +315,62 @@ export function useReaderStudyState(resource: ReaderDocumentResource, stateOwner
    })),
   [resource.vocabulary],
  );
- const analysisBySegmentId = useMemo<ReadonlyMap<string, ReaderPronunciationAnalysis>>(
+ const dictionarySignature = useMemo(
   () =>
-   new Map(
-    resource.paragraphs.map((paragraph) => [
-     paragraph.id,
-     analyzeContextualPronunciation(
-      {
-       text: paragraph.zh,
-       sourcePinyin: paragraph.pinyin || null,
-       overrides: pronunciationOverrides
-        .filter((override) => override.paragraph_id === paragraph.id)
-        .map((override) => ({
-         id: override.id,
-         text: override.text,
-         readings: override.readings,
-         scope: override.scope,
-         sentenceText: override.sentence_text,
-         start: override.start_offset,
-         end: override.end_offset,
-         updatedAt: override.updated_at,
-        })),
-      },
-      pronunciationDictionary,
-     ),
-    ]),
-   ),
-  [pronunciationDictionary, pronunciationOverrides, resource.paragraphs],
+   pronunciationDictionary
+    .map((item) => [item.id, item.text, item.pinyin, item.priority].join(":"))
+    .join("|"),
+  [pronunciationDictionary],
  );
+ const overridesByParagraph = useMemo(() => {
+  const grouped = new Map<string, ReaderPronunciationOverride[]>();
+  for (const override of pronunciationOverrides) {
+   const current = grouped.get(override.paragraph_id);
+   if (current) current.push(override);
+   else grouped.set(override.paragraph_id, [override]);
+  }
+  return grouped;
+ }, [pronunciationOverrides]);
+ const analysisBySegmentId = useMemo<ReadonlyMap<string, ReaderPronunciationAnalysis>>(() => {
+  const next = new Map<string, ReaderPronunciationAnalysis>();
+  const nextCache = new Map<string, PronunciationAnalysisCacheEntry>();
+
+  for (const paragraph of resource.paragraphs) {
+   const paragraphOverrides = overridesByParagraph.get(paragraph.id) ?? [];
+   const signature = [
+    paragraph.zh,
+    paragraph.pinyin,
+    dictionarySignature,
+    pronunciationOverrideSignature(paragraphOverrides),
+   ].join("\u0000");
+   const cached = pronunciationAnalysisCacheRef.current.get(paragraph.id);
+   const analysis =
+    cached?.signature === signature
+     ? cached.analysis
+     : analyzeContextualPronunciation(
+        {
+         text: paragraph.zh,
+         sourcePinyin: paragraph.pinyin || null,
+         overrides: paragraphOverrides.map((override) => ({
+          id: override.id,
+          text: override.text,
+          readings: override.readings,
+          scope: override.scope,
+          sentenceText: override.sentence_text,
+          start: override.start_offset,
+          end: override.end_offset,
+          updatedAt: override.updated_at,
+         })),
+        },
+        pronunciationDictionary,
+       );
+   next.set(paragraph.id, analysis);
+   nextCache.set(paragraph.id, { signature, analysis });
+  }
+
+  pronunciationAnalysisCacheRef.current = nextCache;
+  return next;
+ }, [dictionarySignature, overridesByParagraph, pronunciationDictionary, resource.paragraphs]);
  const documentModel = useMemo(() => readerResourceToDocument(resource), [resource]);
  const markCompleted = useCallback(() => {
   if (featureState.completed) return;
