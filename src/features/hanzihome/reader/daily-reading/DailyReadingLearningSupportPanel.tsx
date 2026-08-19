@@ -54,38 +54,13 @@ type ModuleConfig = {
   | "v2.enrichment.modules.vocabulary.title"
   | "v2.enrichment.modules.grammar.title"
   | "v2.enrichment.modules.questions.title";
- descriptionKey:
-  | "v2.enrichment.modules.translation.description"
-  | "v2.enrichment.modules.vocabulary.description"
-  | "v2.enrichment.modules.grammar.description"
-  | "v2.enrichment.modules.questions.description";
 };
 
 const moduleConfigs: readonly ModuleConfig[] = [
- {
-  module: "translation",
-  icon: Languages,
-  titleKey: "v2.enrichment.modules.translation.title",
-  descriptionKey: "v2.enrichment.modules.translation.description",
- },
- {
-  module: "vocabulary",
-  icon: LibraryBig,
-  titleKey: "v2.enrichment.modules.vocabulary.title",
-  descriptionKey: "v2.enrichment.modules.vocabulary.description",
- },
- {
-  module: "grammar",
-  icon: BookOpen,
-  titleKey: "v2.enrichment.modules.grammar.title",
-  descriptionKey: "v2.enrichment.modules.grammar.description",
- },
- {
-  module: "questions",
-  icon: CircleHelp,
-  titleKey: "v2.enrichment.modules.questions.title",
-  descriptionKey: "v2.enrichment.modules.questions.description",
- },
+ { module: "translation", icon: Languages, titleKey: "v2.enrichment.modules.translation.title" },
+ { module: "vocabulary", icon: LibraryBig, titleKey: "v2.enrichment.modules.vocabulary.title" },
+ { module: "grammar", icon: BookOpen, titleKey: "v2.enrichment.modules.grammar.title" },
+ { module: "questions", icon: CircleHelp, titleKey: "v2.enrichment.modules.questions.title" },
 ];
 
 function configForModule(module: DailyReadingV2EnrichmentModule) {
@@ -138,10 +113,6 @@ function needsKeyManagement(state: EnrichmentState) {
  );
 }
 
-function isMissingKeyState(state: EnrichmentState) {
- return state.status === "blocked" && state.reason === "missing-ai-key";
-}
-
 export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReadingV2 }) {
  const t = useTranslations("DailyReading");
  const runtime = useAiRuntimeReadiness();
@@ -158,6 +129,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
  const runtimeCanRecoverByAddingKey =
   runtime.data?.status === "storage-unavailable" &&
   runtime.data.reason === "credential-unreadable";
+ const runtimeReady = runtime.data?.status === "ready";
 
  async function runModule(module: DailyReadingV2EnrichmentModule) {
   setPendingAction(module);
@@ -185,9 +157,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    const completed = moduleConfigs.filter(
     ({ module }) => updated.enrichment[module].status === "ready",
    ).length;
-   if (completed === moduleConfigs.length) {
-    toast.success(t("v2.enrichment.toast.allReady"));
-   }
+   if (completed === moduleConfigs.length) toast.success(t("v2.enrichment.toast.allReady"));
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
   } finally {
@@ -195,7 +165,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   }
  }
 
- function renderAddKeyAction(label: string, onSaved?: () => void) {
+ function addKeyAction(label: string, onSaved?: () => void) {
   return (
    <AddApiKeyDialog
     onSaved={onSaved}
@@ -209,38 +179,8 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   );
  }
 
- function moduleAction(module: DailyReadingV2EnrichmentModule, state: EnrichmentState) {
-  if (state.status === "ready" || state.status === "running") return null;
+ function retryModuleButton(module: DailyReadingV2EnrichmentModule, state: EnrichmentState) {
   const isPending = pendingAction === module || pendingAction === "all";
-
-  if (runtime.isPending) {
-   return (
-    <Button type="button" variant="outline" size="compact" disabled>
-     <Spinner data-icon="inline-start" />
-     {t("v2.enrichment.actions.checkingRuntime")}
-    </Button>
-   );
-  }
-
-  if (runtimeMissingKey || isMissingKeyState(state)) {
-   return renderAddKeyAction(t("v2.enrichment.actions.addKey"), () => void runModule(module));
-  }
-
-  if (needsKeyManagement(state) || (runtimeStorageUnavailable && !runtimeCanRecoverByAddingKey)) {
-   return (
-    <Button type="button" variant="outline" size="compact" asChild>
-     <Link href="/settings?section=ai&panel=providers" prefetch={false}>
-      <Settings data-icon="inline-start" />
-      {t("v2.enrichment.actions.manageKeys")}
-     </Link>
-    </Button>
-   );
-  }
-
-  if (runtimeCanRecoverByAddingKey) {
-   return renderAddKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runModule(module));
-  }
-
   return (
    <Button
     type="button"
@@ -261,6 +201,40 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      : t("v2.enrichment.actions.retry")}
    </Button>
   );
+ }
+
+ function manageKeysButton() {
+  return (
+   <Button type="button" variant="outline" size="compact" asChild>
+    <Link href="/settings?section=ai&panel=providers" prefetch={false}>
+     <Settings data-icon="inline-start" />
+     {t("v2.enrichment.actions.manageKeys")}
+    </Link>
+   </Button>
+  );
+ }
+
+ function moduleAction(module: DailyReadingV2EnrichmentModule, state: EnrichmentState) {
+  if (state.status === "ready" || state.status === "running") return null;
+  if (runtime.isPending || runtime.isError) return null;
+
+  if (runtimeMissingKey) {
+   return addKeyAction(t("v2.enrichment.actions.addKey"), () => void runModule(module));
+  }
+  if (runtimeCanRecoverByAddingKey) {
+   return addKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runModule(module));
+  }
+  if (runtimeStorageUnavailable) return manageKeysButton();
+
+  if (runtimeReady && needsKeyManagement(state)) {
+   return (
+    <>
+     {retryModuleButton(module, state)}
+     {manageKeysButton()}
+    </>
+   );
+  }
+  return retryModuleButton(module, state);
  }
 
  function primaryAction() {
@@ -288,21 +262,12 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    );
   }
   if (runtimeMissingKey) {
-   return renderAddKeyAction(t("v2.enrichment.actions.addKeyAndCreate"), () => void runAll());
-  }
-  if (runtimeStorageUnavailable && !runtimeCanRecoverByAddingKey) {
-   return (
-    <Button type="button" variant="outline" size="compact" asChild>
-     <Link href="/settings?section=ai&panel=providers" prefetch={false}>
-      <Settings data-icon="inline-start" />
-      {t("v2.enrichment.actions.manageKeys")}
-     </Link>
-    </Button>
-   );
+   return addKeyAction(t("v2.enrichment.actions.addKeyAndCreate"), () => void runAll());
   }
   if (runtimeCanRecoverByAddingKey) {
-   return renderAddKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runAll());
+   return addKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runAll());
   }
+  if (runtimeStorageUnavailable) return manageKeysButton();
 
   return (
    <Button
@@ -324,7 +289,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
  }
 
  return (
-  <Card variant="subtle" padding="md" className="grid min-w-0 gap-4" aria-live="polite">
+  <Card variant="subtle" padding="md" className="grid min-w-0 gap-3" aria-live="polite">
    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
     <div className="grid min-w-0 gap-1">
      <div className="flex flex-wrap items-center gap-2">
@@ -360,31 +325,24 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
 
    <Separator />
 
-   <div className="grid">
-    {moduleConfigs.map((config, index) => {
+   <div className="grid gap-x-5 sm:grid-cols-2">
+    {moduleConfigs.map((config) => {
      const state = reading.enrichment[config.module];
      const Icon = config.icon;
      return (
-      <div key={config.module} className="grid gap-3">
-       {index > 0 ? <Separator /> : null}
-       <div className="flex min-w-0 flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex min-w-0 items-start gap-3">
-         <Icon aria-hidden />
-         <div className="grid min-w-0 gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <Typography weight="bold">{t(config.titleKey)}</Typography>
-           <Badge variant={statusBadgeVariant(state)} size="sm">
-            {t(statusKey(state))}
-           </Badge>
-          </div>
-          <Typography variant="bodySmall" tone="muted">
-           {t(config.descriptionKey)}
-          </Typography>
-         </div>
-        </div>
-        <div className="flex shrink-0 flex-wrap items-center gap-2">
-         {moduleAction(config.module, state)}
-        </div>
+      <div
+       key={config.module}
+       className="flex min-w-0 flex-col gap-2 border-b border-border-default py-3 sm:flex-row sm:items-center sm:justify-between"
+      >
+       <div className="flex min-w-0 items-center gap-2">
+        <Icon aria-hidden />
+        <Typography weight="bold">{t(config.titleKey)}</Typography>
+        <Badge variant={statusBadgeVariant(state)} size="sm">
+         {t(statusKey(state))}
+        </Badge>
+       </div>
+       <div className="flex shrink-0 flex-wrap items-center gap-2">
+        {moduleAction(config.module, state)}
        </div>
       </div>
      );
