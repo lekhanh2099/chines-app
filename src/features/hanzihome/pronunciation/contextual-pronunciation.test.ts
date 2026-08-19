@@ -35,7 +35,7 @@ describe("HanziHome contextual pronunciation", () => {
   expect(concatenated.sourcePinyinStatus).toBe("aligned");
  });
 
- it("applies a sentence-scoped manual override without changing dictionary ownership", () => {
+ it("lets an explicit manual confirmation override the displayed pronunciation", () => {
   const result = analyzeContextualPronunciation({
    text: "行",
    overrides: [
@@ -52,7 +52,10 @@ describe("HanziHome contextual pronunciation", () => {
    ],
   });
   expect(result.glyphs[0]?.lexicalReadingKey).toBe("xing2");
+  expect(result.glyphs[0]?.spokenReadingKey).toBe("xing2");
+  expect(result.glyphs[0]?.confidence).toBe(1);
   expect(result.glyphs[0]?.evidence).toEqual(["manual-override"]);
+  expect(formatContextualSpokenPinyin(result)).toBe("xíng");
  });
 
  it("applies phrase overrides one Hanzi at a time", () => {
@@ -72,7 +75,14 @@ describe("HanziHome contextual pronunciation", () => {
    ],
   });
   expect(result.glyphs.map((glyph) => glyph.lexicalReadingKey)).toEqual(["yin2", "yin2"]);
+  expect(result.glyphs.map((glyph) => glyph.spokenReadingKey)).toEqual(["yin2", "yin2"]);
   expect(result.glyphs.every((glyph) => glyph.evidence[0] === "manual-override")).toBe(true);
+ });
+
+ it("does not present unresolved polyphonic output as certain", () => {
+  const result = analyzeContextualPronunciation({ text: "行" });
+  expect(result.glyphs[0]?.isPolyphonic).toBe(true);
+  expect(result.glyphs[0]?.confidence).toBe(0.55);
  });
 
  it("preserves the curated polyphonic and tone-sandhi corpus readings", () => {
