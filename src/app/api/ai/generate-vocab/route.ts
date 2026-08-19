@@ -1,8 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
+import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
-import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
  getPrimaryMeaning,
@@ -22,10 +22,20 @@ const generateVocabRequestSchema = z.object({
  hanzi: z.string().min(1).max(10),
 });
 
+function runtimeError(status: "missing-key" | "storage-unavailable") {
+ return status === "missing-key"
+  ? NextResponse.json(
+     { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
+     { status: 409 },
+    )
+  : NextResponse.json(
+     { error: "Kho API key an toàn phía server chưa sẵn sàng." },
+     { status: 503 },
+    );
+}
+
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
-
- // Auth check
  const {
   data: { user },
  } = await supabase.auth.getUser();
@@ -53,7 +63,6 @@ export async function POST(request: NextRequest) {
   }
  }
 
- // Check if we already have AI data in DB via service
  const existing = await getVocabByHanzi(supabase, lookupText);
  const existingAi = getVocabularyAnalysis(existing);
 
@@ -61,13 +70,14 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ data: existingAi, cached: true });
  }
 
- // Call AI service
+ const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+ if (!runtime.ok) return runtimeError(runtime.status);
+
  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
- const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
  const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: promptSettings.geminiModel,
   promptTemplate: promptSettings.wordLookupPrompt,
-  userApiKeys,
+  userApiKeys: [runtime.credential],
   allowGroq: true,
  });
 
