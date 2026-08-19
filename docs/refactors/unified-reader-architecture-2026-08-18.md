@@ -1,237 +1,202 @@
 # Unified Reader Architecture — 2026-08-18
 
-Branch: `refactor/unified-reader-2026-08-18`
+## Status
 
-## Goal
+Implementation source is complete for the unified Reader migration and the follow-up pronunciation/performance pass. The branch still requires final local `npm run check` plus rendered desktop/iPad/mobile verification before merge.
 
-Consolidate every Chinese reading experience into one source-agnostic reader system. Textbook lessons, Reader DB documents, HSK passages, Daily Reading, articles, user-authored text and conversation excerpts must share the same reading runtime and reading surface instead of reproducing playback, typography, selection, preferences and responsive behavior per feature.
+## Product invariant
 
-The Hanzi Studio reading workspace remains the visual/interaction reference. Existing `chines-app` primitives, state ownership, data contracts, scroll ownership and responsive rules remain authoritative.
+HanziHome has one Chinese reading experience. Textbook Bài khóa, Reader resources, HSK, Daily Reading, personal learning and future article/conversation/plain-text sources must compose the same Reader surface instead of re-implementing typography, playback, outline, pronunciation, selection or reading preferences.
 
-## Current contract gap
+Source-specific code may adapt data and add domain actions, but must not create a second reading engine.
 
-The original implementation had two reader engines with overlapping responsibility:
-
-- `ReaderDocumentStudy` owned the Reader DB document experience and contained playback, pinyin, translation, selection, study tools, outline and study modules.
-- `LessonTextInlineEditor` separately owned lesson reading playback, loop, auto-advance, focus and keyboard behavior while lesson text rendering used a different visual composition.
-
-The refactor removes that split. Reader DB resources and textbook text now normalize into the same internal document model and use the same runtime/surface; source-specific editing and persistence remain outside the generic reader.
-
-## Target dependency flow
+## Canonical flow
 
 ```text
 source data
   -> source adapter
   -> ReaderDocumentModel
-  -> reader runtime
+  -> ReaderRuntimeProvider
   -> ReaderSurface
-  -> optional study modules
+       -> ReaderCommandBar
+       -> ReaderDocumentContent
+       -> ReaderOutline
+       -> Reader pronunciation review
+       -> source-owned render hooks where required
 ```
 
-`ReaderSurface` must not know whether a document came from Supabase Reader tables, a lesson schema, an article, clipboard text or chat. Source-specific editing/persistence stays outside the reader model.
+`ReaderDocumentModel` is deliberately smaller than Reader resource persistence. It contains only the content and capabilities needed to render/read a document. Reader resource rows, textbook sections and future external content remain owned by their source modules.
 
-## Architecture invariants
+## Source adapters
 
-1. `ReaderDocumentModel` is an internal TypeScript view model, not a database schema.
-2. Zod stays at actual runtime trust boundaries; the reader view model does not add a second validation layer for already-normalized internal data.
-3. Source adapters normalize ordering and optional content once.
-4. Content capabilities are derived from available content, not hard-coded tabs.
-5. Playback/position/selection/preferences each have one authoritative owner.
-6. The document is rendered continuously; active segment is a position/playback state, not the only segment mounted.
-7. Reader typography uses the existing learner typography owners.
-8. Reading preferences are shared across all reading sources through the existing HanziHome learning-settings owner rather than source-local preference state.
-9. Desktop may use contextual menus; phone and iPad touch use one modal Sheet for reader tools.
-10. `AppScrollViewport` remains the route-level scroll owner.
-11. Lesson editing remains lesson-owned and is exposed to the reader as an optional extension, never embedded in the universal document model.
-12. No database, RLS, auth or public API migration is required for this refactor.
-13. Generated/contextual pinyin is evidence, not truth: polyphonic output must expose review affordances, confidence and alternatives; persisted Reader sources may store sentence-instance confirmation overrides.
-14. Saving one pronunciation override must not recompute unrelated paragraphs; pronunciation analysis is cached per segment and Reader rows subscribe only to their own active/playback state.
-15. Study tabs and the Reader command bar remain visible while scrolling long reading content; nested surfaces use explicit sticky offsets rather than duplicating toolbars.
+The unified engine currently has adapters for:
 
-## Universal document model
+- Reader resources
+- textbook lesson text
+- article-like content
+- plain text
+- conversations/dialogue turns
 
-The model represents reading semantics only:
+Adapters normalize source metadata into `ReaderDocumentModel`; the generic surface must not branch on source-specific database fields.
 
-```text
-ReaderDocumentModel
-  id
-  language
-  source
-  title / titlePinyin / titleVi
-  sections[]
-  segments[]
-  metadata[]
-  capabilities[]
+## Runtime ownership
 
-ReaderSegment
-  id
-  kind
-  sectionId?
-  zh
-  pinyin?
-  vi?
-  role?
-  speaker?
-  speechText?
-```
+`ReaderRuntimeProvider` owns ephemeral reading state:
 
-A stable selection anchor is expressed separately as:
+- active segment/index
+- position source
+- playback status/progress
+- continuous TTS
+- playback rate
+- loop current segment
+- auto advance
+- focus mode
+- completion callback
 
-```text
-documentId + segmentId + startOffset + endOffset
-```
+High-frequency playback progress is stored in the scoped Reader runtime store. Consumers subscribe with selectors so playback ticks do not re-render unrelated Reader modules.
 
-This works for textbook blocks, articles and dialogue turns without leaking source-specific paths into reader UI.
+The old Reader session playback/navigation fields are superseded. `reader-session.ts` now exists only for persistence/autosave helpers and feature-state utilities.
 
-## Reader surface anatomy
+## Reader content ownership
 
-Wide desktop:
+`ReaderDocumentContent` renders the canonical continuous reading body and keeps segment rows memoized. Each row subscribes only to the runtime state it needs.
 
-```text
-Reader command bar
-  -> previous / playback / next / speed / study tools
+The generic content layer owns:
 
-Reading document                         Context rail
-  -> all segments remain mounted         -> outline/current position
-  -> active segment is emphasized        -> useful source metadata
-  -> pinyin/translation follow prefs
-```
+- learner Hanzi/Pinyin/translation typography
+- continuous segment layout
+- active-segment indication
+- pronunciation click targets
+- text selection capture
+- playback character highlighting
 
-Phone/iPad:
+Source modules may wrap sections/segments through render hooks but must preserve the canonical text content and interaction contract.
 
-```text
-Reading document
-compact command bar
-reader tools -> one bottom Sheet
-outline -> Sheet when needed
-```
+## Pronunciation contract
 
-The command bar exposes high-frequency playback actions. Loop, auto-advance, shadowing, focus, pinyin, translation and layout controls use progressive disclosure under Reader Tools.
+Contextual pinyin is a proposal, not an unquestioned answer.
 
-## Pinyin review contract
+Every contextual Hanzi glyph remains inspectable. The pronunciation review surface shows:
 
-Contextual pinyin remains clickable/keyboard-reachable wherever the canonical Reader surface renders analyzed Hanzi. The compact review surface shows the resolved phrase/glyph, current pinyin, confidence, contextual meaning and per-character reading alternatives. A manual confirmation is authoritative for that sentence instance and must update the displayed reading after persistence.
+- the reviewed word/phrase
+- current contextual reading
+- confidence state
+- Vietnamese meaning when available, with an explicit fallback when unavailable
+- alternatives per Hanzi
+- a manual confirmation action when the source has persistence ownership
+- a full-analysis handoff to the vocabulary inspector
 
-For ephemeral/plain/lesson sources without a pronunciation persistence port, the same surface remains inspectable and links to full analysis, but does not pretend a local choice has been persisted.
+Polyphonic output without a manual override intentionally receives lower confidence. A saved sentence-instance override becomes the displayed lexical and spoken reading for that instance.
 
-## Capability model
+Reader-owned/Daily/Personal resources persist pronunciation through the existing pronunciation override API. Generic lesson/plain/article/conversation surfaces may inspect pronunciation and open full analysis without pretending that a confirmation was persisted.
 
-Core reading is always available when at least one Chinese segment exists. Optional study modules appear only when the normalized document supports them:
+Pronunciation analysis must remain paragraph-local: overrides are grouped by paragraph, dictionary inputs use stable signatures and unchanged paragraph analysis is reused so confirming one pronunciation does not recompute the whole document.
 
-- pinyin
-- translation
-- vocabulary
-- exercises
-- analysis
-- summary
+### Pronunciation popover UI contract
 
-Interaction capabilities such as TTS, annotations and editing belong to runtime integrations, not content data.
+`BasePopoverPopup` intentionally does not accept ad-hoc `className` overrides. Feature surfaces must use a named popup variant so the primitive keeps ownership of background, border, shadow, viewport bounds and scrolling behavior.
 
-## Migration order and status
+The pronunciation review uses the shared `lookupWide` variant. Do not reintroduce a feature-level width `className`: because popup props are spread after primitive styling, an accidental runtime `className` would replace the canonical popup surface and can make the review panel appear transparent even if TypeScript also reports the prop as invalid.
 
-### Phase 0 — contract document — complete
+Opening full analysis must close the pronunciation review first; do not stack both floating surfaces over the reading text.
 
-This file keeps the refactor scoped and records invariants before and after mutation.
+## Reader tools
 
-### Phase A — internal model and source adapters — complete
+The shared command bar/Reader Tools own:
 
-The universal document model has deterministic adapters for current `ReaderDocumentResource`, textbook text, plain Chinese text, article-like paragraph input and conversation turns, with adapter tests.
+- previous/current/next playback
+- read all
+- stop/replay
+- playback speed
+- loop segment
+- auto advance
+- shadowing entry
+- focus mode
+- Pinyin visibility/presentation
+- Vietnamese meaning visibility
+- font
+- text size
+- line spacing
+- content width
+- outline entry on responsive layouts
 
-### Phase B — extract reader runtime ownership — complete
+Reading display preferences remain backed by HanziHome learning settings instead of a Reader-only preference store.
 
-Playback, active position and runtime controls are owned by the scoped Reader runtime. Persisted Reader feature state, annotations and pronunciation overrides live in dedicated hooks rather than the reading component.
+## Sticky navigation invariant
 
-### Phase C — canonical `ReaderSurface` — complete
+Long reading surfaces must preserve navigation while the user scrolls.
 
-The continuous document surface now owns one command bar, responsive tools, outline, learner typography, focus, selection and contextual pronunciation interactions.
+- Reader-owned/HSK workspace study tabs are sticky.
+- Daily Reading keeps its own outer study tabs sticky.
+- The shared Reader command bar is sticky below the owning tab strip using the appropriate nested offset.
+- A source with no parent study tabs uses the page-level command-bar offset.
 
-### Phase D — migrate current Reader consumers — complete
+Do not add independent sticky implementations inside individual Reader sources.
 
-HSK, Daily Reading, core/reinforcement/mock/personal/humanities Reader sources use `ReaderDocumentResource -> ReaderDocumentModel -> ReaderSurface`. HSK/Reader-owned workspaces retain capability-driven study tabs; Daily keeps its own outer study tabs.
+## Textbook Bài khóa
 
-### Phase E — migrate textbook lesson reading — complete
+Textbook Bài khóa now adapts lesson text into `ReaderDocumentModel` and renders through the shared Reader surface.
 
-Textbook Bài khóa text sections use the same Reader surface/runtime while lesson editing paths remain lesson-owned.
+Lesson ownership remains outside the Reader engine:
 
-### Phase F — generic-source proof — complete
+- editable section cards
+- lesson node paths
+- edit controls
+- lesson-specific sidebar/section navigation
 
-Article, plain-text and conversation fixtures prove future paste/chat integrations require only an adapter/composition and do not need a fake Reader DB record.
+This preserves the lesson authoring contract while eliminating the former duplicate lesson reader implementation.
 
-### Phase G — cleanup — complete in source
+## Reader resource workspace
 
-- duplicate lesson playback/keyboard code removed;
-- duplicate Reader monolith playback/selection/study rendering removed;
-- superseded Reader session navigation/playback state removed;
-- `ReaderSurface` split into command bar, document content, outline and pinyin-review components;
-- selection and pronunciation-review mutations have separate owners;
-- segment rows are memoized and subscribe to segment-scoped playback/active state;
-- pronunciation analysis is cached per paragraph signature so one override does not recompute unrelated paragraphs.
+`ReaderDocumentStudy` is now orchestration rather than the former monolith. Persistence/state, selection actions, pronunciation review and study modules are separate modules.
 
-The completed source pass remains net-negative from the user-confirmed checkpoint even after adding pinyin review, sticky chrome, tests and the performance split. Exact LOC is reported from the final Git comparison rather than duplicated in this document.
+Reader resource workspaces may expose capability-driven study tabs such as overview, exercises, vocabulary, translation, dictation, analysis, summary and notes. These are workspace modules around the shared reading surface, not separate reading implementations.
 
-Rendered product verification and the final repository check remain external verification gates before merge; they are not treated as completed merely because source cleanup is complete.
+HSK keeps the Reader study tabs. Daily Reading keeps its product-specific outer tabs and composes only the common Reader surface inside its reading tab.
 
-## Performance rules
+## Performance invariants
 
-- High-frequency TTS progress must not force the whole long document and outline to re-render.
-- Pronunciation analysis is segment-cached; one changed override re-analyzes that segment while unchanged segment analysis objects remain referentially stable.
-- Reader document/segment/outline components subscribe to the smallest scoped TanStack Store state needed for their render.
-- Pronunciation dictionary and overrides are grouped/signatured once per document update rather than re-filtered inside every segment render.
-- Do not virtualize normal reading documents preemptively because selection, browser find, annotations and accessibility benefit from stable DOM text.
-- Profile before introducing virtualization for genuinely huge conversation histories.
+Do not move high-frequency TTS state back into React context values consumed by the whole Reader tree.
 
-## Verification
+Do not recompute contextual pronunciation for every paragraph when one override changes. Keep analysis cached by paragraph content/source-pinyin/dictionary/override signature.
 
-Use the repository UI verification contract.
+Do not let passive scroll tracking overwrite the active segment during TTS playback.
 
-Minimum viewports:
+Do not put source-specific database rows into generic Reader rendering components.
 
-- 390 x 844 phone;
-- 820 x 1180 iPad portrait;
-- 1440 x 900 desktop.
+Prefer narrow runtime selectors, memoized segment rows and stable callbacks over broad provider-state subscriptions.
 
-Relevant states:
+## Maintainability invariants
 
-- default;
-- playing / paused;
-- focus mode;
-- pinyin off/on;
-- translation off/on;
-- reader tools open;
-- pronunciation review open / confirmed / reset;
-- text selection;
-- long paragraph and long document;
-- sticky tabs + toolbar during long scroll;
-- loading / empty / error where owned by the wrapper;
-- light/dark where theme-sensitive.
+Avoid restoring large all-in-one Reader files. Responsibilities are intentionally split across:
 
-Repository checks for the completed multi-surface refactor:
+- model/adapters
+- runtime store/provider
+- command bar/tools
+- document content
+- outline
+- pronunciation review
+- selection/pronunciation hooks
+- persistence/study state
+- study modules
 
-```bash
-npm run typecheck
-npm run lint
-npm run test:run
-npm run ui:check
-npm run source:check
-npm run check
-```
+A component exceeding its responsibility boundary should be split by behavior, not merely by line count.
 
-Do not claim a rendered/UI state as verified when it was only source-inspected. Per the current branch workflow, these checks are intentionally left to the local/product verification pass rather than adding a temporary GitHub Actions workflow.
+## Verification gate
 
-## Completion criteria
+Before merge, run the repository-required checks and render the critical Reader flows at desktop, iPad/tablet and mobile widths.
 
-The source refactor is complete when:
+At minimum verify:
 
-1. equivalent Chinese segments render through the same reader typography/surface regardless of source;
-2. font/size/pinyin/translation preferences have one owner;
-3. playback/loop/auto-advance have one implementation;
-4. selection/lookup/notes use one reader interaction path;
-5. contextual pinyin exposes confidence/alternatives and manual confirmation updates the rendered reading for persisted Reader sources;
-6. reader UI does not depend on Reader DB row shapes;
-7. source adapters do not depend on reader UI;
-8. temporary plain text or conversation can render without creating a fake Reader DB record;
-9. optional modules disappear when their content does not exist;
-10. HSK/Reader-owned study tabs and Daily outer tabs retain canonical sticky behavior with one shared Reader toolbar;
-11. phone/iPad reader tools follow the modal Sheet contract;
-12. long documents do not re-run all pronunciation analysis or re-render all segment rows for one playback/override update;
-13. no database/auth/RLS migration was introduced solely to unify reading UI.
+1. Bài khóa uses the same typography/tools/playback behavior as Reader content while edit wrappers still work.
+2. HSK exposes sticky study tabs plus a sticky Reader toolbar without overlap.
+3. Daily Reading exposes sticky Daily tabs plus the same Reader toolbar without overlap.
+4. Long Reader documents scroll continuously and outline navigation targets the correct nested scroll container.
+5. Clicking any contextual pinyin/Hanzi opens pronunciation review; polyphonic content is not presented as automatically confirmed.
+6. Saving a pronunciation override updates the displayed reading after refresh/invalidation.
+7. Generic lesson/plain/article/conversation pronunciation review does not expose a fake persistence action.
+8. Opening full analysis replaces rather than stacks over pronunciation review.
+9. Pronunciation review keeps its elevated background/border/shadow and remains viewport-bounded on narrow screens.
+10. Playback progress highlights the active character without visibly re-rendering unrelated rows.
+11. Loop/auto-advance remain mutually exclusive and passive scroll does not steal playback position.
+12. Reader settings persist through the shared learning-settings path.
