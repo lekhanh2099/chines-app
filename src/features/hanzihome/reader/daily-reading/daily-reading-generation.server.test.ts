@@ -9,16 +9,12 @@ import type {
  DailyReadingSourceCandidate,
 } from "./daily-reading.schemas";
 
-const { requestDailyReadingProvider, requestDailyReadingSystemGemini } = vi.hoisted(() => ({
+const { requestDailyReadingProvider } = vi.hoisted(() => ({
  requestDailyReadingProvider: vi.fn(),
- requestDailyReadingSystemGemini: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("./daily-reading-provider.server", () => ({
- requestDailyReadingProvider,
- requestDailyReadingSystemGemini,
-}));
+vi.mock("./daily-reading-provider.server", () => ({ requestDailyReadingProvider }));
 
 import {
  generateValidatedDailyReading,
@@ -170,18 +166,13 @@ describe("validated Daily Reading generation", () => {
   vi.useFakeTimers();
   vi.setSystemTime(new Date("2026-08-18T04:00:00.000Z"));
   vi.clearAllMocks();
-  requestDailyReadingSystemGemini.mockResolvedValue({
-   content: null,
-   error: "system Gemini unavailable in test",
-   model: "models/gemini-3.1-flash-lite",
-  });
  });
 
  afterEach(() => {
   vi.useRealTimers();
  });
 
- it("builds pinyin and source-grounded learning data from two validated AI stages", async () => {
+ it("builds pinyin and source-grounded learning data from two validated personal AI stages", async () => {
   requestDailyReadingProvider
    .mockResolvedValueOnce(providerResult(validCore))
    .mockResolvedValueOnce(providerResult(validLearning));
@@ -210,7 +201,6 @@ describe("validated Daily Reading generation", () => {
   expect(checkpoints[0]?.core.titleZh).toBe(validCore.titleZh);
   expect(checkpoints[0]?.source).not.toHaveProperty("extractedTextZh");
   expect(requestDailyReadingProvider).toHaveBeenCalledTimes(2);
-  expect(requestDailyReadingSystemGemini).not.toHaveBeenCalled();
  });
 
  it("resumes learning from the locked core without the raw source text", async () => {
@@ -316,7 +306,7 @@ describe("validated Daily Reading generation", () => {
   expect(requestDailyReadingProvider).toHaveBeenCalledTimes(3);
  });
 
- it("tries the next active BYOK credential before falling back to system Gemini", async () => {
+ it("tries the next supplied personal credential without a system provider fallback", async () => {
   requestDailyReadingProvider
    .mockResolvedValueOnce({
     content: null,
@@ -343,28 +333,35 @@ describe("validated Daily Reading generation", () => {
   expect(requestDailyReadingProvider).toHaveBeenCalledTimes(4);
   expect(requestDailyReadingProvider.mock.calls[0]?.[0].credential.id).toBe(credential.id);
   expect(requestDailyReadingProvider.mock.calls[1]?.[0].credential.id).toBe(backupCredential.id);
-  expect(requestDailyReadingSystemGemini).not.toHaveBeenCalled();
  });
 
- it("falls back to system Gemini only after all personal providers fail", async () => {
+ it("fails after personal providers fail instead of switching to a system key", async () => {
   requestDailyReadingProvider.mockResolvedValue({
    content: null,
    error: "personal provider unavailable",
    model: "gpt-4.1-mini",
   });
-  requestDailyReadingSystemGemini
-   .mockResolvedValueOnce(providerResult(validCore, "models/gemini-3.1-flash-lite"))
-   .mockResolvedValueOnce(providerResult(validLearning, "models/gemini-3.1-flash-lite"));
 
-  const reading = await generateValidatedDailyReading({
-   source,
-   preferredLevel: "HSK5",
-   mode: "manual",
-   credentials: [credential],
-  });
+  await expect(
+   generateValidatedDailyReading({
+    source,
+    preferredLevel: "HSK5",
+    mode: "manual",
+    credentials: [credential],
+   }),
+  ).rejects.toThrow("API key cá nhân");
+  expect(requestDailyReadingProvider).toHaveBeenCalled();
+ });
 
-  expect(reading.generatedByProvider).toBe("Google Gemini");
-  expect(reading.generatedByModel).toBe("models/gemini-3.1-flash-lite");
-  expect(requestDailyReadingSystemGemini).toHaveBeenCalledTimes(2);
+ it("requires a personal credential before making a provider request", async () => {
+  await expect(
+   generateValidatedDailyReading({
+    source,
+    preferredLevel: "HSK5",
+    mode: "manual",
+    credentials: [],
+   }),
+  ).rejects.toThrow("API key cá nhân");
+  expect(requestDailyReadingProvider).not.toHaveBeenCalled();
  });
 });
