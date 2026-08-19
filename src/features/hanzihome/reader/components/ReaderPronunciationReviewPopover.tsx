@@ -112,7 +112,7 @@ export function ReaderPronunciationReviewPopover({
      >
       <div className="grid gap-4 p-4">
        <div className="grid gap-1">
-        <div className="flex min-w-0 items-start justify-between gap-3">
+        <div className="flex min-w-0 flex-wrap items-start justify-between gap-2 sm:flex-nowrap sm:gap-3">
          <div className="grid min-w-0 gap-0.5">
           <Typography as="strong" variant="sectionTitle" lang="zh-CN" clamp="one">
            {review.text}
@@ -190,7 +190,7 @@ export function ReaderPronunciationReviewPopover({
         })}
        </div>
 
-       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border-default pt-3">
+       <div className="grid gap-2 border-t border-border-default pt-3 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
         <div className="flex flex-wrap gap-2">
          {onOpenInspector ? (
           <Button
@@ -208,7 +208,7 @@ export function ReaderPronunciationReviewPopover({
           </Button>
          ) : null}
         </div>
-        <div className="flex gap-2">
+        <div className="flex justify-end gap-2">
          <Button type="button" size="sm" variant="ghost" onClick={onClose}>
           Đóng
          </Button>
