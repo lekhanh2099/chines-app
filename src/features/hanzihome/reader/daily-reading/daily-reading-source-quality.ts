@@ -5,6 +5,7 @@ import type {
 import type { DailyReadingV2LengthPreference } from "./daily-reading-v2.schemas";
 
 const hanPattern = /[\u3400-\u9fff]/gu;
+const sentencePunctuationPattern = /[，。！？；：]/u;
 
 export type DailyReadingSourceQualityRejection =
  | "too-short"
@@ -42,11 +43,21 @@ function characterCoverage(reference: string, candidate: string) {
  return matched / characters.length;
 }
 
+function paragraphLooksCoherent(paragraph: string) {
+ const hanCharacters = paragraph.match(hanPattern)?.length ?? 0;
+ if (hanCharacters < 18) return false;
+ const nonSpaceCharacters = paragraph.replace(/\s+/gu, "").length;
+ const chineseDensity = nonSpaceCharacters === 0 ? 0 : hanCharacters / nonSpaceCharacters;
+ if (chineseDensity < 0.5) return false;
+
+ // Real Chinese news sites often split copy into short <p> blocks. Treat a short
+ // sentence-like paragraph as coherent instead of requiring one fixed Han count.
+ return hanCharacters >= 24 || sentencePunctuationPattern.test(paragraph);
+}
+
 function coherentParagraphRatio(paragraphs: readonly string[]) {
  if (paragraphs.length === 0) return 0;
- const coherent = paragraphs.filter(
-  (paragraph) => (paragraph.match(hanPattern)?.length ?? 0) >= 28,
- ).length;
+ const coherent = paragraphs.filter(paragraphLooksCoherent).length;
  return coherent / paragraphs.length;
 }
 
@@ -116,7 +127,7 @@ export function assessDailyReadingSourceQuality(input: {
  if (input.document.hanCharacters < 240) rejection = "too-short";
  else if (paragraphCount < 3) rejection = "too-few-paragraphs";
  else if (input.document.chineseDensity < 0.45) rejection = "low-chinese-density";
- else if (coherence < 0.6) rejection = "incoherent-paragraphs";
+ else if (coherence < 0.35) rejection = "incoherent-paragraphs";
  else if (input.document.truncated) rejection = "truncated";
  else if (titleBodyCoverage < 0.2 && pageTitleSimilarity < 0.35)
   rejection = "title-body-mismatch";
