@@ -50,16 +50,10 @@ function resolveReviewRange(target: ReaderSurfacePronunciationTarget): ReviewRan
  };
 }
 
-function confidencePercent(
- target: ReaderSurfacePronunciationTarget,
- review: ReviewRange,
- confirmed: boolean,
-) {
+function confidencePercent(review: ReviewRange, confirmed: boolean) {
  if (confirmed) return 100;
- if (review.glyphs.some((glyph) => glyph.isPolyphonic)) return 55;
- if (target.analysis.sourcePinyinStatus === "aligned") return 85;
  const lowest = Math.min(...review.glyphs.map((glyph) => glyph.confidence));
- return Math.max(0, Math.min(80, Math.round(lowest * 100)));
+ return Math.max(0, Math.min(100, Math.round(lowest * 100)));
 }
 
 function initialReadings(review: ReviewRange) {
@@ -91,7 +85,7 @@ export function ReaderPronunciationReviewPopover({
  const review = useMemo(() => resolveReviewRange(target), [target]);
  const [readings, setReadings] = useState<Record<string, string>>(() => initialReadings(review));
  useEffect(() => setReadings(initialReadings(review)), [review]);
- const confidence = confidencePercent(target, review, confirmed);
+ const confidence = confidencePercent(review, confirmed);
  const anchor = useCallback(
   () => ({ getBoundingClientRect: () => target.rect, contextElement: document.body }),
   [target.rect],
@@ -131,7 +125,7 @@ export function ReaderPronunciationReviewPopover({
           </PinyinText>
          </div>
          <Badge variant={confirmed ? "success" : "warning"} casing="natural">
-          {confirmed ? "Đã xác nhận" : `Độ tin cậy ${confidence}%`}
+          {confirmed ? "Đã xác nhận" : `Độ chắc chắn ${confidence}%`}
          </Badge>
         </div>
         <Typography variant="caption" tone="muted" leading="relaxed">
