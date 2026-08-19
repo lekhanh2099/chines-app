@@ -12,7 +12,7 @@ import {
  type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { type ComponentProps, useState } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
@@ -36,6 +36,15 @@ import type {
 
 type EnrichmentState = DailyReadingV2["enrichment"][DailyReadingV2EnrichmentModule];
 type PendingAction = DailyReadingV2EnrichmentModule | "all" | null;
+type EnrichmentStatusKey =
+ | "v2.enrichment.status.idle"
+ | "v2.enrichment.status.running"
+ | "v2.enrichment.status.ready"
+ | "v2.enrichment.status.failed"
+ | "v2.enrichment.status.missingKey"
+ | "v2.enrichment.status.invalidKey"
+ | "v2.enrichment.status.quota"
+ | "v2.enrichment.status.providerUnavailable";
 
 type ModuleConfig = {
  module: DailyReadingV2EnrichmentModule;
@@ -79,41 +88,45 @@ const moduleConfigs: readonly ModuleConfig[] = [
  },
 ];
 
-function statusBadgeVariant(state: EnrichmentState) {
+function configForModule(module: DailyReadingV2EnrichmentModule) {
+ return moduleConfigs.find((config) => config.module === module);
+}
+
+function statusBadgeVariant(state: EnrichmentState): ComponentProps<typeof Badge>["variant"] {
  switch (state.status) {
   case "ready":
-   return "success" as const;
+   return "success";
   case "running":
-   return "info" as const;
+   return "info";
   case "blocked":
-   return "warning" as const;
+   return "warning";
   case "failed":
-   return "danger" as const;
+   return "danger";
   case "idle":
-   return "default" as const;
+   return "default";
  }
 }
 
-function statusKey(state: EnrichmentState) {
+function statusKey(state: EnrichmentState): EnrichmentStatusKey {
  switch (state.status) {
   case "idle":
-   return "v2.enrichment.status.idle" as const;
+   return "v2.enrichment.status.idle";
   case "running":
-   return "v2.enrichment.status.running" as const;
+   return "v2.enrichment.status.running";
   case "ready":
-   return "v2.enrichment.status.ready" as const;
+   return "v2.enrichment.status.ready";
   case "failed":
-   return "v2.enrichment.status.failed" as const;
+   return "v2.enrichment.status.failed";
   case "blocked":
    switch (state.reason) {
     case "missing-ai-key":
-     return "v2.enrichment.status.missingKey" as const;
+     return "v2.enrichment.status.missingKey";
     case "invalid-ai-key":
-     return "v2.enrichment.status.invalidKey" as const;
+     return "v2.enrichment.status.invalidKey";
     case "quota-exhausted":
-     return "v2.enrichment.status.quota" as const;
+     return "v2.enrichment.status.quota";
     case "provider-unavailable":
-     return "v2.enrichment.status.providerUnavailable" as const;
+     return "v2.enrichment.status.providerUnavailable";
    }
  }
 }
@@ -151,7 +164,12 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   try {
    const updated = await enrichDailyReadingV2Module(reading.id, module);
    if (updated.enrichment[module].status === "ready") {
-    toast.success(t("v2.enrichment.toast.moduleReady", { module: t(`v2.enrichment.modules.${module}.title`) }));
+    const config = configForModule(module);
+    toast.success(
+     config === undefined
+      ? t("v2.enrichment.toast.moduleReadyFallback")
+      : t("v2.enrichment.toast.moduleReady", { module: t(config.titleKey) }),
+    );
    }
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
