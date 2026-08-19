@@ -15,6 +15,16 @@ function optionalText(value: string): string | undefined {
  return normalized.length > 0 ? normalized : undefined;
 }
 
+function metadataText(resource: ReaderDocumentResource, key: string): string | undefined {
+ const value = resource.document.source_metadata[key];
+ return typeof value === "string" ? optionalText(value) : undefined;
+}
+
+function metadataTextList(resource: ReaderDocumentResource, key: string): readonly string[] {
+ const value = resource.document.source_metadata[key];
+ return Array.isArray(value) && value.every((item) => typeof item === "string") ? value : [];
+}
+
 function hasAnalysis(resource: ReaderDocumentResource): boolean {
  const analysis = resource.document.analysis;
  return (
@@ -35,6 +45,33 @@ function metadataForResource(resource: ReaderDocumentResource): readonly ReaderM
  const metadata: ReaderMetadataItem[] = [];
  const genre = optionalText(resource.document.genre_vi);
  if (genre) metadata.push({ id: "genre", label: "Thể loại", value: genre });
+ if (resource.document.unit_id) {
+  metadata.push({
+   id: "unit",
+   label: "Đơn nguyên",
+   value: resource.document.unit_id.replace(/^U/u, ""),
+  });
+ }
+ const sourceFields = [
+  ["level", "Trình độ"],
+  ["topic", "Chủ đề"],
+  ["published_date", "Ngày"],
+  ["essential_question_vi", "Câu hỏi trọng tâm"],
+  ["key_idea_vi", "Ý chính"],
+  ["adaptation_notice_vi", "Ghi chú nguồn"],
+ ] as const;
+ for (const [id, label] of sourceFields) {
+  const value = metadataText(resource, id);
+  if (value) metadata.push({ id, label, value });
+ }
+ const mastery = metadataTextList(resource, "mastery_checklist_vi");
+ if (mastery.length > 0) {
+  metadata.push({ id: "mastery", label: "Mục tiêu làm chủ", value: mastery.join(" · ") });
+ }
+ const sourceIds = metadataTextList(resource, "source_ids");
+ if (sourceIds.length > 0) {
+  metadata.push({ id: "sources", label: "Nguồn", value: sourceIds.join(", ") });
+ }
  if (resource.paragraphs.length > 0) {
   metadata.push({ id: "segments", label: "Số đoạn", value: String(resource.paragraphs.length) });
  }
@@ -42,11 +79,7 @@ function metadataForResource(resource: ReaderDocumentResource): readonly ReaderM
   metadata.push({ id: "vocabulary", label: "Từ vựng", value: String(resource.vocabulary.length) });
  }
  if (resource.exerciseItems.length > 0) {
-  metadata.push({
-   id: "exercises",
-   label: "Bài tập",
-   value: String(resource.exerciseItems.length),
-  });
+  metadata.push({ id: "exercises", label: "Bài tập", value: String(resource.exerciseItems.length) });
  }
  return metadata;
 }
