@@ -23,6 +23,8 @@ export type ReaderPronunciationSaveInput = {
  end: number;
 };
 
+type ReaderPronunciationSaveScope = "persistent" | "session";
+
 type ReviewRange = {
  text: string;
  start: number;
@@ -50,10 +52,17 @@ function resolveReviewRange(target: ReaderSurfacePronunciationTarget): ReviewRan
  };
 }
 
-function confidencePercent(review: ReviewRange, confirmed: boolean) {
- if (confirmed) return 100;
- const lowest = Math.min(...review.glyphs.map((glyph) => glyph.confidence));
- return Math.max(0, Math.min(100, Math.round(lowest * 100)));
+function reviewStatus(
+ review: ReviewRange,
+ confirmed: boolean,
+ saveScope: ReaderPronunciationSaveScope,
+) {
+ if (confirmed) return saveScope === "session" ? "Đã áp dụng trong phiên" : "Đã xác nhận";
+ if (review.glyphs.some((glyph) => glyph.isPolyphonic)) return "Cần kiểm tra · đa âm";
+ if (review.glyphs.every((glyph) => glyph.evidence.includes("source-pinyin"))) {
+  return "Theo pinyin nguồn";
+ }
+ return "Theo ngữ cảnh";
 }
 
 function initialReadings(review: ReviewRange) {
@@ -69,6 +78,7 @@ export function ReaderPronunciationReviewPopover({
  target,
  confirmed = false,
  meaning,
+ saveScope = "persistent",
  onClose,
  onSave,
  onReset,
@@ -77,6 +87,7 @@ export function ReaderPronunciationReviewPopover({
  target: ReaderSurfacePronunciationTarget;
  confirmed?: boolean;
  meaning?: string;
+ saveScope?: ReaderPronunciationSaveScope;
  onClose: () => void;
  onSave?: (input: ReaderPronunciationSaveInput) => void;
  onReset?: () => void;
@@ -85,7 +96,7 @@ export function ReaderPronunciationReviewPopover({
  const review = useMemo(() => resolveReviewRange(target), [target]);
  const [readings, setReadings] = useState<Record<string, string>>(() => initialReadings(review));
  useEffect(() => setReadings(initialReadings(review)), [review]);
- const confidence = confidencePercent(review, confirmed);
+ const status = reviewStatus(review, confirmed, saveScope);
  const anchor = useCallback(
   () => ({ getBoundingClientRect: () => target.rect, contextElement: document.body }),
   [target.rect],
@@ -125,22 +136,27 @@ export function ReaderPronunciationReviewPopover({
           </PinyinText>
          </div>
          <Badge variant={confirmed ? "success" : "warning"} casing="natural">
-          {confirmed ? "Đã xác nhận" : `Độ chắc chắn ${confidence}%`}
+          {status}
          </Badge>
         </div>
         <Typography variant="caption" tone="muted" leading="relaxed">
          Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.
         </Typography>
+        {saveScope === "session" && onSave ? (
+         <Typography variant="caption" tone="muted" leading="relaxed">
+          Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã xác nhận lâu dài.
+         </Typography>
+        ) : null}
        </div>
 
-       <div className="grid gap-1">
-        <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-         Nghĩa trong ngữ cảnh
-        </Typography>
-        <Typography variant="bodySmall">
-         {meaning || "Chưa có nghĩa tiếng Việt đã xác định cho cụm này."}
-        </Typography>
-       </div>
+       {meaning ? (
+        <div className="grid gap-1">
+         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
+          Nghĩa trong ngữ cảnh
+         </Typography>
+         <Typography variant="bodySmall">{meaning}</Typography>
+        </div>
+       ) : null}
 
        <div className="grid gap-2">
         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
@@ -204,7 +220,7 @@ export function ReaderPronunciationReviewPopover({
          ) : null}
          {confirmed && onReset ? (
           <Button type="button" size="sm" variant="ghost" onClick={onReset}>
-           Bỏ xác nhận
+           {saveScope === "session" ? "Bỏ áp dụng" : "Bỏ xác nhận"}
           </Button>
          ) : null}
         </div>
@@ -226,7 +242,7 @@ export function ReaderPronunciationReviewPopover({
             })
            }
           >
-           Xác nhận cách đọc
+           {saveScope === "session" ? "Áp dụng trong phiên" : "Xác nhận cách đọc"}
           </Button>
          ) : null}
         </div>
