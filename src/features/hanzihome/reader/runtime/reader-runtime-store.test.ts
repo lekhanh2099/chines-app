@@ -14,15 +14,18 @@ describe("unified reader runtime store", () => {
   expect(store.state.activeSegmentId).toBe("b");
  });
 
- it("keeps loop and auto-advance mutually exclusive", () => {
+ it("auto-advances by default and keeps loop mutually exclusive", () => {
   const store = createReaderRuntimeStore(["a", "b"]);
-  store.actions.toggleAutoAdvance();
   expect(store.state.autoAdvance).toBe(true);
   expect(store.state.loopCurrent).toBe(false);
 
   store.actions.toggleLoop();
   expect(store.state.loopCurrent).toBe(true);
   expect(store.state.autoAdvance).toBe(false);
+
+  store.actions.toggleAutoAdvance();
+  expect(store.state.autoAdvance).toBe(true);
+  expect(store.state.loopCurrent).toBe(false);
  });
 
  it("does not let passive scroll tracking steal the position during playback", () => {
