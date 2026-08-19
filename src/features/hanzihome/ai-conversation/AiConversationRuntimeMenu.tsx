@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, ChevronDown, RefreshCcw, Settings2 } from "lucide-react";
+import { Bot, ChevronDown, KeyRound, RefreshCcw, Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Typography } from "@/components/ui/typography";
 import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
+import { AddApiKeyDialog } from "@/features/settings/AddApiKeyDialog";
 import { Link } from "@/i18n/navigation";
 
 import type { AiConversationRuntimeHealth } from "./ai-conversation.schemas";
@@ -55,23 +56,22 @@ export function AiConversationRuntimeMenu({
          provider: runtimeHealth.provider,
          model: runtimeHealth.model,
         })
-      : runtimeHealth?.code === "missing-system-key"
-        ? t("runtime.health.missingSystemKey")
-        : runtimeHealth?.code === "invalid-key"
-          ? t("runtime.health.invalidKey")
-          : runtimeHealth?.code === "quota-exhausted"
-            ? t("runtime.health.quotaExhausted")
-            : runtimeHealth?.code === "key-unavailable"
-              ? t("runtime.health.keyUnavailable")
-              : runtimeHealth?.code === "provider-unavailable"
-                ? t("runtime.health.providerUnavailable")
-                : t("runtime.health.networkError");
+      : runtimeHealth?.code === "invalid-key"
+        ? t("runtime.health.invalidKey")
+        : runtimeHealth?.code === "quota-exhausted"
+          ? t("runtime.health.quotaExhausted")
+          : runtimeHealth?.code === "key-unavailable" || runtimeHealth?.code === "missing-system-key"
+            ? t("runtime.health.keyUnavailable")
+            : runtimeHealth?.code === "provider-unavailable"
+              ? t("runtime.health.providerUnavailable")
+              : t("runtime.health.networkError");
  const triggerLabel =
   isRuntimeLoading || isHealthChecking
    ? t("runtime.compactChecking")
    : runtimeHealth?.ready && runtimeHealth.provider
      ? t("runtime.compactReady", { provider: runtimeHealth.provider })
      : t("runtime.compactUnavailable");
+ const needsKey = runtimeKeys.length === 0 && !runtimeHealth?.ready && !isRuntimeLoading;
 
  return (
   <DropdownMenu>
@@ -119,11 +119,20 @@ export function AiConversationRuntimeMenu({
       </DropdownMenuRadioItem>
      ))}
     </DropdownMenuRadioGroup>
-    {runtimeKeys.length === 0 && !isRuntimeLoading ? (
-     <div className="px-2.5 py-2">
+    {needsKey ? (
+     <div className="grid gap-2 px-2.5 py-2">
       <Typography as="p" variant="caption" tone="muted" wrapping="breakWords">
        {t("runtime.empty")}
       </Typography>
+      <AddApiKeyDialog
+       onSaved={onRecheck}
+       trigger={
+        <Button type="button" size="compact" className="justify-self-start">
+         <KeyRound data-icon="inline-start" />
+         {t("runtime.addKey")}
+        </Button>
+       }
+      />
      </div>
     ) : null}
     <DropdownMenuSeparator />
