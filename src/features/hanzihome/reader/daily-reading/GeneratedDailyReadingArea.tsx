@@ -8,7 +8,7 @@ import {
  DailyReadingV2Library,
  DailyReadingV2View,
 } from "./DailyReadingV2Library";
-import { GeneratedDailyReadingLibrary, GeneratedDailyReadingView } from "./GeneratedDailyReading";
+import { GeneratedDailyReadingView } from "./GeneratedDailyReading";
 import { useDailyReadingLibrary } from "./daily-reading-client";
 import { useDailyReadingV2Library } from "./daily-reading-v2-client";
 
@@ -26,9 +26,7 @@ export function GeneratedDailyReadingArea() {
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  };
 
- if (selectedId === null) {
-  return v2Library.items.length > 0 ? <DailyReadingV2Library /> : <GeneratedDailyReadingLibrary />;
- }
+ if (selectedId === null) return <DailyReadingV2Library />;
 
  if (v2Library.items.some((item) => item.id === selectedId)) {
   return <DailyReadingV2View id={selectedId} onBack={clearSelection} />;
