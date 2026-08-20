@@ -45,6 +45,7 @@ vi.mock("@/features/hanzihome/repositories/hanzihome-content-api-client", () => 
 }));
 
 import {
+ loadLearningStateLocalFirst,
  mergeLearningStateAfterConflict,
  refreshLearningStateFromRemoteIfClean,
  syncPendingLearningStateMutations,
@@ -106,6 +107,24 @@ describe("learning-state local-first sync", () => {
 
   expect(api.fetch).toHaveBeenCalledOnce();
   expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
+ });
+
+ it("does not refresh again immediately after remote local-first bootstrap", async () => {
+  store.readLocal.mockResolvedValue(null);
+  store.readPending.mockResolvedValue(null);
+  api.fetch.mockResolvedValue({ state: emptyLearningState, updatedAt: null });
+
+  await expect(loadLearningStateLocalFirst(ownerUserId)).resolves.toEqual(emptyLearningState);
+  await expect(refreshLearningStateFromRemoteIfClean(ownerUserId)).resolves.toBeNull();
+
+  expect(api.fetch).toHaveBeenCalledOnce();
+  expect(store.writeLocal).toHaveBeenCalledWith({
+   ownerUserId,
+   state: emptyLearningState,
+   lastSyncedState: emptyLearningState,
+   remoteUpdatedAt: null,
+   lastSyncedAt: expect.any(String),
+  });
  });
 
  it("deduplicates concurrent clean-state refreshes per owner", async () => {

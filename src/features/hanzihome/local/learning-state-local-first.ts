@@ -85,6 +85,7 @@ export async function loadLearningStateLocalFirst(ownerUserId: string): Promise<
    remoteUpdatedAt: remote.updatedAt,
    lastSyncedAt: new Date().toISOString(),
   });
+  runtimeFor(ownerUserId).lastRemoteRefreshAt = Date.now();
   return remoteState;
  } catch (error) {
   if (!isBrowserOnline()) return normalizeLearningState(emptyLearningState);

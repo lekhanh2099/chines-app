@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +15,7 @@ import type {
  HanziHomeModule,
 } from "@/features/hanzihome/types";
 import { resolveRecentLearning } from "./recent-learning";
+import { Link } from "@/i18n/navigation";
 
 const moduleLabels: Record<HanziHomeModule, string> = {
  overview: "Tổng quan",

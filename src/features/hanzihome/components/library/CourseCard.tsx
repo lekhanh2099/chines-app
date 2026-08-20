@@ -1,8 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, BookMarked } from "lucide-react";
 
@@ -26,6 +24,7 @@ import type {
  HanziHomeLesson,
 } from "@/features/hanzihome/types";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
+import { Link, useRouter } from "@/i18n/navigation";
 
 import { BookCrudActions } from "./BookCrudActions";
 import { LessonCrudActions } from "./LessonCrudActions";

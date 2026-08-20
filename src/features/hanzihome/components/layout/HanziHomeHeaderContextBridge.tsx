@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useSelector } from "@tanstack/react-store";
 
 import {
@@ -23,6 +23,7 @@ import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { getLessonRouteValue } from "@/features/hanzihome/utils/lesson-route";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
+import { useRouter } from "@/i18n/navigation";
 
 const HEADER_OWNER_ID = "hanzihome-lesson";
 

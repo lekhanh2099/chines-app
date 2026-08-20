@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 import { Typography } from "@/components/ui/typography";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
@@ -26,6 +26,7 @@ import {
 import { parseHanziHomeModule, resolveLessonModule } from "@/features/hanzihome/workspace-modules";
 import type { HanziHomeModule, LearningStatus, ReviewResult } from "@/features/hanzihome/types";
 import type { ReviewItem } from "@/features/hanzihome/context/types";
+import { useRouter } from "@/i18n/navigation";
 
 export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeModule }) {
  const router = useRouter();
