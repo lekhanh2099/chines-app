@@ -12,6 +12,7 @@ import {
  readerProgressRowSchema,
 } from "./reader-state.schemas";
 
+const expectedAuthenticatedOwnerHeader = "X-HanziHome-Owner-Id";
 const progressResponseSchema = z.strictObject({
  progress: readerProgressRowSchema.nullable(),
 });
@@ -48,10 +49,17 @@ type ReaderProgressSaveOptions = {
  signal?: AbortSignal;
 };
 
-export async function fetchReaderState(documentId: string): Promise<ReaderStateBootstrap | null> {
+function ownerHeaders(ownerUserId: string) {
+ return { [expectedAuthenticatedOwnerHeader]: ownerUserId };
+}
+
+export async function fetchReaderState(
+ documentId: string,
+ ownerUserId: string,
+): Promise<ReaderStateBootstrap | null> {
  const response = await fetch(
   `/api/hanzihome/reader/state?documentId=${encodeURIComponent(documentId)}`,
-  { cache: "no-store" },
+  { cache: "no-store", headers: ownerHeaders(ownerUserId) },
  );
  const payload = await response.json().catch(() => null);
  if (response.status === 401) return null;
@@ -61,12 +69,13 @@ export async function fetchReaderState(documentId: string): Promise<ReaderStateB
 
 export async function saveReaderProgress(
  input: ReaderProgressPayload,
+ ownerUserId: string,
  options?: ReaderProgressSaveOptions,
 ) {
  const payload = progressPayloadSchema.parse(input);
  const response = await fetch("/api/hanzihome/reader/progress", {
   method: "PUT",
-  headers: { "Content-Type": "application/json" },
+  headers: { "Content-Type": "application/json", ...ownerHeaders(ownerUserId) },
   body: JSON.stringify(payload),
   signal: options?.signal,
  });
@@ -77,10 +86,10 @@ export async function saveReaderProgress(
  return progressResponseSchema.parse(value).progress;
 }
 
-export async function fetchPersonalLearningState(nodeId: string) {
+export async function fetchPersonalLearningState(nodeId: string, ownerUserId: string) {
  const response = await fetch(
   `/api/hanzihome/reader/personal-state?nodeId=${encodeURIComponent(nodeId)}`,
-  { cache: "no-store" },
+  { cache: "no-store", headers: ownerHeaders(ownerUserId) },
  );
  const payload = await response.json().catch(() => null);
  if (response.status === 401) return null;
@@ -88,14 +97,17 @@ export async function fetchPersonalLearningState(nodeId: string) {
  return personalStateResponseSchema.parse(payload).state;
 }
 
-export async function savePersonalLearningState(input: {
- nodeId: string;
- state: z.output<typeof readerFeatureStateSchema>;
- expectedRevision: number;
-}) {
+export async function savePersonalLearningState(
+ input: {
+  nodeId: string;
+  state: z.output<typeof readerFeatureStateSchema>;
+  expectedRevision: number;
+ },
+ ownerUserId: string,
+) {
  const response = await fetch("/api/hanzihome/reader/personal-state", {
   method: "PUT",
-  headers: { "Content-Type": "application/json" },
+  headers: { "Content-Type": "application/json", ...ownerHeaders(ownerUserId) },
   body: JSON.stringify(input),
  });
  const payload = await response.json().catch(() => null);
@@ -104,10 +116,10 @@ export async function savePersonalLearningState(input: {
  return personalStateResponseSchema.parse(payload).state;
 }
 
-export async function fetchDailyReadingState(publishedDate: string) {
+export async function fetchDailyReadingState(publishedDate: string, ownerUserId: string) {
  const response = await fetch(
   `/api/hanzihome/reader/daily-state?publishedDate=${encodeURIComponent(publishedDate)}`,
-  { cache: "no-store" },
+  { cache: "no-store", headers: ownerHeaders(ownerUserId) },
  );
  const payload = await response.json().catch(() => null);
  if (response.status === 401) return null;
@@ -115,14 +127,17 @@ export async function fetchDailyReadingState(publishedDate: string) {
  return dailyStateResponseSchema.parse(payload).state;
 }
 
-export async function saveDailyReadingState(input: {
- publishedDate: string;
- state: z.output<typeof readerFeatureStateSchema>;
- expectedRevision: number;
-}) {
+export async function saveDailyReadingState(
+ input: {
+  publishedDate: string;
+  state: z.output<typeof readerFeatureStateSchema>;
+  expectedRevision: number;
+ },
+ ownerUserId: string,
+) {
  const response = await fetch("/api/hanzihome/reader/daily-state", {
   method: "PUT",
-  headers: { "Content-Type": "application/json" },
+  headers: { "Content-Type": "application/json", ...ownerHeaders(ownerUserId) },
   body: JSON.stringify(input),
  });
  const payload = await response.json().catch(() => null);

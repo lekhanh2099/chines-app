@@ -608,63 +608,6 @@ export type Database = {
           },
         ]
       }
-      hanzihome_import_chunks: {
-        Row: {
-          created_at: string
-          import_key: string
-          part: number
-          payload: string
-          total_parts: number
-        }
-        Insert: {
-          created_at?: string
-          import_key: string
-          part: number
-          payload: string
-          total_parts: number
-        }
-        Update: {
-          created_at?: string
-          import_key?: string
-          part?: number
-          payload?: string
-          total_parts?: number
-        }
-        Relationships: []
-      }
-      hanzihome_learning_events: {
-        Row: {
-          context_text: string
-          created_at: string
-          id: string
-          kind: string
-          source_href: string
-          source_id: string
-          term: string
-          user_id: string
-        }
-        Insert: {
-          context_text?: string
-          created_at?: string
-          id?: string
-          kind: string
-          source_href: string
-          source_id: string
-          term: string
-          user_id: string
-        }
-        Update: {
-          context_text?: string
-          created_at?: string
-          id?: string
-          kind?: string
-          source_href?: string
-          source_id?: string
-          term?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
       hanzihome_learning_loop_items: {
         Row: {
           correct_streak: number
@@ -939,50 +882,6 @@ export type Database = {
           },
         ]
       }
-      hanzihome_listening_attempts: {
-        Row: {
-          answer: Json | null
-          created_at: string
-          id: string
-          is_correct: boolean | null
-          item_id: string
-          listened_count: number
-          response_ms: number | null
-          score: number | null
-          user_id: string
-        }
-        Insert: {
-          answer?: Json | null
-          created_at?: string
-          id?: string
-          is_correct?: boolean | null
-          item_id: string
-          listened_count?: number
-          response_ms?: number | null
-          score?: number | null
-          user_id: string
-        }
-        Update: {
-          answer?: Json | null
-          created_at?: string
-          id?: string
-          is_correct?: boolean | null
-          item_id?: string
-          listened_count?: number
-          response_ms?: number | null
-          score?: number | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_listening_attempts_item_id_fkey"
-            columns: ["item_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_listening_items"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       hanzihome_listening_audio: {
         Row: {
           audio_role: string
@@ -1070,65 +969,6 @@ export type Database = {
             columns: ["section_id"]
             isOneToOne: false
             referencedRelation: "hanzihome_lesson_sections"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_listening_item_progress: {
-        Row: {
-          attempt_count: number
-          bookmarked: boolean
-          correct_count: number
-          created_at: string
-          item_id: string
-          last_answer: Json | null
-          last_attempt_at: string | null
-          last_is_correct: boolean | null
-          last_position_ms: number
-          mastery_score: number
-          personal_note: string | null
-          status: string
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          attempt_count?: number
-          bookmarked?: boolean
-          correct_count?: number
-          created_at?: string
-          item_id: string
-          last_answer?: Json | null
-          last_attempt_at?: string | null
-          last_is_correct?: boolean | null
-          last_position_ms?: number
-          mastery_score?: number
-          personal_note?: string | null
-          status?: string
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          attempt_count?: number
-          bookmarked?: boolean
-          correct_count?: number
-          created_at?: string
-          item_id?: string
-          last_answer?: Json | null
-          last_attempt_at?: string | null
-          last_is_correct?: boolean | null
-          last_position_ms?: number
-          mastery_score?: number
-          personal_note?: string | null
-          status?: string
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_listening_item_progress_item_id_fkey"
-            columns: ["item_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_listening_items"
             referencedColumns: ["id"]
           },
         ]
@@ -1539,9 +1379,6 @@ export type Database = {
           created_at: string
           document_id: string
           revision: number
-          show_meaning: boolean
-          show_pinyin: boolean
-          summary_text: string
           updated_at: string
           user_id: string
         }
@@ -1551,9 +1388,6 @@ export type Database = {
           created_at?: string
           document_id: string
           revision?: number
-          show_meaning?: boolean
-          show_pinyin?: boolean
-          summary_text?: string
           updated_at?: string
           user_id: string
         }
@@ -1563,9 +1397,6 @@ export type Database = {
           created_at?: string
           document_id?: string
           revision?: number
-          show_meaning?: boolean
-          show_pinyin?: boolean
-          summary_text?: string
           updated_at?: string
           user_id?: string
         }
@@ -1618,337 +1449,6 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
-      }
-      hanzihome_reading_assets: {
-        Row: {
-          asset_type: string
-          created_at: string
-          document_id: string | null
-          external_url: string | null
-          id: string
-          metadata: Json
-          mime_type: string | null
-          redistribution_allowed: boolean
-          rights_status: string
-          sha256: string
-          source: string
-          source_path: string
-          storage_bucket: string | null
-          storage_path: string | null
-          updated_at: string
-        }
-        Insert: {
-          asset_type: string
-          created_at?: string
-          document_id?: string | null
-          external_url?: string | null
-          id: string
-          metadata?: Json
-          mime_type?: string | null
-          redistribution_allowed?: boolean
-          rights_status: string
-          sha256: string
-          source?: string
-          source_path: string
-          storage_bucket?: string | null
-          storage_path?: string | null
-          updated_at?: string
-        }
-        Update: {
-          asset_type?: string
-          created_at?: string
-          document_id?: string | null
-          external_url?: string | null
-          id?: string
-          metadata?: Json
-          mime_type?: string | null
-          redistribution_allowed?: boolean
-          rights_status?: string
-          sha256?: string
-          source?: string
-          source_path?: string
-          storage_bucket?: string | null
-          storage_path?: string | null
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_assets_document_id_fkey"
-            columns: ["document_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_reading_documents"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_reading_documents: {
-        Row: {
-          analysis: Json
-          created_at: string
-          deleted_at: string | null
-          genre_vi: string
-          id: string
-          imported_at: string | null
-          kind: string
-          lesson_id: string
-          objectives_vi: string[]
-          owner_id: string | null
-          publication_status: string
-          reading_number: number | null
-          schema_version: string
-          slug: string
-          source: string
-          source_metadata: Json
-          summary: Json
-          title_pinyin: string
-          title_vi: string
-          title_zh: string
-          unit_id: string | null
-          updated_at: string
-        }
-        Insert: {
-          analysis?: Json
-          created_at?: string
-          deleted_at?: string | null
-          genre_vi?: string
-          id: string
-          imported_at?: string | null
-          kind: string
-          lesson_id: string
-          objectives_vi?: string[]
-          owner_id?: string | null
-          publication_status?: string
-          reading_number?: number | null
-          schema_version?: string
-          slug: string
-          source?: string
-          source_metadata?: Json
-          summary?: Json
-          title_pinyin?: string
-          title_vi?: string
-          title_zh: string
-          unit_id?: string | null
-          updated_at?: string
-        }
-        Update: {
-          analysis?: Json
-          created_at?: string
-          deleted_at?: string | null
-          genre_vi?: string
-          id?: string
-          imported_at?: string | null
-          kind?: string
-          lesson_id?: string
-          objectives_vi?: string[]
-          owner_id?: string | null
-          publication_status?: string
-          reading_number?: number | null
-          schema_version?: string
-          slug?: string
-          source?: string
-          source_metadata?: Json
-          summary?: Json
-          title_pinyin?: string
-          title_vi?: string
-          title_zh?: string
-          unit_id?: string | null
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_documents_lesson_id_fkey"
-            columns: ["lesson_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_lessons"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_reading_exercise_groups: {
-        Row: {
-          created_at: string
-          document_id: string
-          exercise_order: number
-          exercise_type: string
-          id: string
-          source: string
-          title_vi: string
-          title_zh: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          document_id: string
-          exercise_order: number
-          exercise_type: string
-          id: string
-          source?: string
-          title_vi?: string
-          title_zh?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          document_id?: string
-          exercise_order?: number
-          exercise_type?: string
-          id?: string
-          source?: string
-          title_vi?: string
-          title_zh?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_exercise_groups_document_id_fkey"
-            columns: ["document_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_reading_documents"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_reading_exercise_items: {
-        Row: {
-          created_at: string
-          group_id: string
-          id: string
-          item_order: number
-          item_type: string
-          payload: Json
-          source: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          group_id: string
-          id: string
-          item_order: number
-          item_type: string
-          payload: Json
-          source?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          group_id?: string
-          id?: string
-          item_order?: number
-          item_type?: string
-          payload?: Json
-          source?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_exercise_items_group_id_fkey"
-            columns: ["group_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_reading_exercise_groups"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_reading_paragraphs: {
-        Row: {
-          created_at: string
-          document_id: string
-          id: string
-          paragraph_order: number
-          pinyin: string
-          role_vi: string
-          source: string
-          source_version: number
-          updated_at: string
-          vi: string
-          zh: string
-        }
-        Insert: {
-          created_at?: string
-          document_id: string
-          id: string
-          paragraph_order: number
-          pinyin?: string
-          role_vi?: string
-          source?: string
-          source_version?: number
-          updated_at?: string
-          vi?: string
-          zh: string
-        }
-        Update: {
-          created_at?: string
-          document_id?: string
-          id?: string
-          paragraph_order?: number
-          pinyin?: string
-          role_vi?: string
-          source?: string
-          source_version?: number
-          updated_at?: string
-          vi?: string
-          zh?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_paragraphs_document_id_fkey"
-            columns: ["document_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_reading_documents"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      hanzihome_reading_vocab_links: {
-        Row: {
-          created_at: string
-          document_id: string
-          id: string
-          item_order: number
-          meaning_in_context_vi: string
-          source: string
-          source_ref: string
-          updated_at: string
-          vocab_item_id: string
-        }
-        Insert: {
-          created_at?: string
-          document_id: string
-          id: string
-          item_order: number
-          meaning_in_context_vi?: string
-          source?: string
-          source_ref?: string
-          updated_at?: string
-          vocab_item_id: string
-        }
-        Update: {
-          created_at?: string
-          document_id?: string
-          id?: string
-          item_order?: number
-          meaning_in_context_vi?: string
-          source?: string
-          source_ref?: string
-          updated_at?: string
-          vocab_item_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "hanzihome_reading_vocab_links_document_id_fkey"
-            columns: ["document_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_reading_documents"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "hanzihome_reading_vocab_links_vocab_item_id_fkey"
-            columns: ["vocab_item_id"]
-            isOneToOne: false
-            referencedRelation: "hanzihome_vocab_items"
-            referencedColumns: ["id"]
-          },
-        ]
       }
       hanzihome_tts_clips: {
         Row: {
@@ -2786,6 +2286,29 @@ export type Database = {
         }
         Returns: string
       }
+      hanzihome_create_lesson_text_annotation_as_server: {
+        Args: {
+          p_end_offset: number
+          p_lesson_id: string
+          p_node_id: string
+          p_node_type: string
+          p_note_text?: string
+          p_prefix_text?: string
+          p_selected_text: string
+          p_start_offset: number
+          p_suffix_text?: string
+          p_user_id: string
+        }
+        Returns: string
+      }
+      hanzihome_delete_lesson_text_annotation_as_server: {
+        Args: { p_annotation_id: string; p_user_id: string }
+        Returns: boolean
+      }
+      hanzihome_update_lesson_text_annotation_note_as_server: {
+        Args: { p_annotation_id: string; p_note_text: string; p_user_id: string }
+        Returns: string
+      }
       delete_lesson_text_annotation: {
         Args: { p_annotation_id: string }
         Returns: boolean
@@ -2984,6 +2507,11 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      hanzihome_rate_learning_loop_item_as_server: {
+        Args: { p_expected_revision: number; p_item_id: string; p_rating: string; p_user_id: string }
+        Returns: Database["public"]["Tables"]["hanzihome_learning_loop_items"]["Row"]
+        SetofOptions: { from: "*"; to: "hanzihome_learning_loop_items"; isOneToOne: true; isSetofReturn: false }
+      }
       hanzihome_refresh_external_seed_package: {
         Args: { p_seed: Json }
         Returns: Json
@@ -3046,6 +2574,24 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      hanzihome_update_reader_annotation_as_server: {
+        Args: {
+          p_annotation_id: string
+          p_asset_id: string
+          p_color: string
+          p_end_offset: number
+          p_expected_revision: number
+          p_note_text: string
+          p_page_number: number
+          p_paragraph_id: string
+          p_payload: Json
+          p_selected_text: string
+          p_start_offset: number
+          p_user_id: string
+        }
+        Returns: Database["public"]["Tables"]["hanzihome_reader_annotations"]["Row"]
+        SetofOptions: { from: "*"; to: "hanzihome_reader_annotations"; isOneToOne: true; isSetofReturn: false }
+      }
       hanzihome_upsert_daily_reading_state: {
         Args: {
           p_expected_revision: number
@@ -3066,6 +2612,11 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      hanzihome_upsert_daily_reading_state_as_server: {
+        Args: { p_expected_revision: number; p_published_date: string; p_state: Json; p_user_id: string }
+        Returns: Database["public"]["Tables"]["hanzihome_daily_reading_state"]["Row"]
+        SetofOptions: { from: "*"; to: "hanzihome_daily_reading_state"; isOneToOne: true; isSetofReturn: false }
       }
       hanzihome_upsert_pdf_annotation: {
         Args: {
@@ -3108,6 +2659,11 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      hanzihome_upsert_personal_learning_state_as_server: {
+        Args: { p_expected_revision: number; p_node_id: string; p_state: Json; p_user_id: string }
+        Returns: Database["public"]["Tables"]["hanzihome_personal_learning_state"]["Row"]
+        SetofOptions: { from: "*"; to: "hanzihome_personal_learning_state"; isOneToOne: true; isSetofReturn: false }
+      }
       hanzihome_upsert_reader_progress: {
         Args: {
           p_answers: Json
@@ -3124,9 +2680,6 @@ export type Database = {
           created_at: string
           document_id: string
           revision: number
-          show_meaning: boolean
-          show_pinyin: boolean
-          summary_text: string
           updated_at: string
           user_id: string
         }
@@ -3171,6 +2724,31 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      hanzihome_upsert_reader_pronunciation_override_as_server: {
+        Args: {
+          p_document_id: string
+          p_end_offset: number
+          p_expected_revision: number
+          p_override_id: string
+          p_paragraph_id: string
+          p_readings: string[]
+          p_scope: string
+          p_sentence_text: string
+          p_start_offset: number
+          p_text: string
+          p_user_id: string
+        }
+        Returns: Database["public"]["Tables"]["hanzihome_reader_pronunciation_overrides"]["Row"]
+        SetofOptions: { from: "*"; to: "hanzihome_reader_pronunciation_overrides"; isOneToOne: true; isSetofReturn: false }
+      }
+      hanzihome_delete_reader_annotation_as_server: {
+        Args: { p_annotation_id: string; p_expected_revision: number; p_user_id: string }
+        Returns: boolean
+      }
+      hanzihome_delete_reader_pronunciation_override_as_server: {
+        Args: { p_expected_revision: number; p_override_id: string; p_user_id: string }
+        Returns: boolean
       }
       hanzihome_vocab_child_candidates: {
         Args: {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import {
  BasePopover as Popover,
@@ -52,13 +53,14 @@ function reviewStatus(
  review: ReviewRange,
  confirmed: boolean,
  saveScope: ReaderPronunciationSaveScope,
+ t: ReturnType<typeof useTranslations>,
 ) {
- if (confirmed) return saveScope === "session" ? "Đã áp dụng trong phiên" : "Đã xác nhận";
- if (review.glyphs.some((glyph) => glyph.isPolyphonic)) return "Cần kiểm tra · đa âm";
+ if (confirmed) return saveScope === "session" ? t("appliedSession") : t("confirmed");
+ if (review.glyphs.some((glyph) => glyph.isPolyphonic)) return t("needsReview");
  if (review.glyphs.every((glyph) => glyph.evidence.includes("source-pinyin"))) {
-  return "Theo pinyin nguồn";
+  return t("source");
  }
- return "Theo ngữ cảnh";
+ return t("context");
 }
 
 function initialReadings(review: ReviewRange) {
@@ -94,6 +96,7 @@ export function ReaderPronunciationReviewPopover({
  onReset?: () => void;
  onOpenInspector?: (text: string, rect: DOMRect) => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.pronunciation");
  const review = useMemo(() => resolveReviewRange(target), [target]);
  const reviewKey = `${target.segment.id}:${review.start}:${review.end}`;
  const [readingsState, setReadingsState] = useState<ReviewReadingsState>(() => ({
@@ -101,7 +104,7 @@ export function ReaderPronunciationReviewPopover({
   values: initialReadings(review),
  }));
  const readings = readingsState.key === reviewKey ? readingsState.values : initialReadings(review);
- const status = reviewStatus(review, confirmed, saveScope);
+ const status = reviewStatus(review, confirmed, saveScope, t);
  const anchor = useCallback(
   () => ({ getBoundingClientRect: () => target.rect, contextElement: document.body }),
   [target.rect],
@@ -137,7 +140,7 @@ export function ReaderPronunciationReviewPopover({
            {review.glyphs
             .map((glyph) => glyph.lexicalPinyin ?? glyph.spokenPinyin)
             .filter((value): value is string => Boolean(value))
-            .join(" ") || "Chưa xác định pinyin"}
+            .join(" ") || t("missing")}
           </PinyinText>
          </div>
          <Badge variant={confirmed ? "success" : "warning"} casing="natural">
@@ -145,13 +148,11 @@ export function ReaderPronunciationReviewPopover({
          </Badge>
         </div>
         <Typography variant="caption" tone="muted" leading="relaxed">
-         Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác
-         nhận cách đọc phù hợp câu này.
+         {t("description")}
         </Typography>
         {saveScope === "session" && onSave ? (
          <Typography variant="caption" tone="muted" leading="relaxed">
-          Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã
-          xác nhận lâu dài.
+          {t("sessionDescription")}
          </Typography>
         ) : null}
        </div>
@@ -159,7 +160,7 @@ export function ReaderPronunciationReviewPopover({
        {meaning ? (
         <div className="grid gap-1">
          <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-          Nghĩa trong ngữ cảnh
+          {t("meaning")}
          </Typography>
          <Typography variant="bodySmall">{meaning}</Typography>
         </div>
@@ -167,7 +168,7 @@ export function ReaderPronunciationReviewPopover({
 
        <div className="grid gap-2">
         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-         Chọn âm cho từng chữ
+         {t("choose")}
         </Typography>
         {review.glyphs.map((glyph) => {
          const choices = [
@@ -207,7 +208,7 @@ export function ReaderPronunciationReviewPopover({
              ))
             ) : (
              <Typography variant="bodySmall" tone="muted">
-              Chưa có cách đọc khả dụng.
+              {t("noReading")}
              </Typography>
             )}
            </div>
@@ -225,18 +226,18 @@ export function ReaderPronunciationReviewPopover({
            variant="ghost"
            onClick={() => onOpenInspector(review.text, target.rect)}
           >
-           Mở phân tích đầy đủ
+           {t("openInspector")}
           </Button>
          ) : null}
          {confirmed && onReset ? (
           <Button type="button" size="sm" variant="ghost" onClick={onReset}>
-           {saveScope === "session" ? "Bỏ áp dụng" : "Bỏ xác nhận"}
+           {saveScope === "session" ? t("resetSession") : t("resetPersistent")}
           </Button>
          ) : null}
         </div>
         <div className="flex justify-end gap-2">
          <Button type="button" size="sm" variant="ghost" onClick={onClose}>
-          Đóng
+          {t("close")}
          </Button>
          {onSave ? (
           <Button
@@ -252,7 +253,7 @@ export function ReaderPronunciationReviewPopover({
             })
            }
           >
-           {saveScope === "session" ? "Áp dụng trong phiên" : "Xác nhận cách đọc"}
+           {saveScope === "session" ? t("applySession") : t("confirm")}
           </Button>
          ) : null}
         </div>

@@ -1,20 +1,24 @@
 revoke all privileges on all tables in schema public from anon;
 revoke all privileges on all sequences in schema public from anon;
 
-revoke execute on function public.get_hanzihome_aggregate_vocab(text, text, text, text, integer)
-from public, anon;
-grant execute on function public.get_hanzihome_aggregate_vocab(text, text, text, text, integer)
-to authenticated;
+do $$
+begin
+  if to_regprocedure('public.get_hanzihome_aggregate_vocab(text,text,text,text,integer)') is not null then
+    execute 'revoke execute on function public.get_hanzihome_aggregate_vocab(text, text, text, text, integer) from public, anon';
+    execute 'grant execute on function public.get_hanzihome_aggregate_vocab(text, text, text, text, integer) to authenticated';
+  end if;
 
-revoke execute on function public.get_hanzihome_aggregate_grammar(text, text, text, text, integer)
-from public, anon;
-grant execute on function public.get_hanzihome_aggregate_grammar(text, text, text, text, integer)
-to authenticated;
+  if to_regprocedure('public.get_hanzihome_aggregate_grammar(text,text,text,text,integer)') is not null then
+    execute 'revoke execute on function public.get_hanzihome_aggregate_grammar(text, text, text, text, integer) from public, anon';
+    execute 'grant execute on function public.get_hanzihome_aggregate_grammar(text, text, text, text, integer) to authenticated';
+  end if;
 
-revoke execute on function public.is_hanzihome_content_editor()
-from public, anon;
-grant execute on function public.is_hanzihome_content_editor()
-to authenticated;
+  if to_regprocedure('public.is_hanzihome_content_editor()') is not null then
+    execute 'revoke execute on function public.is_hanzihome_content_editor() from public, anon';
+    execute 'grant execute on function public.is_hanzihome_content_editor() to authenticated';
+  end if;
+end
+$$;
 
 do $$
 declare

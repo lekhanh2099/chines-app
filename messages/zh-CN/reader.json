@@ -120,5 +120,45 @@
   "reinforcementBack": "巩固练习列表",
   "coreBack": "教材阅读列表",
   "backToList": "{title}列表"
+ },
+ "study": {
+  "completion": {
+   "done": "已完成",
+   "pending": "未完成",
+   "markDone": "标记为已完成"
+  }
+ },
+ "pdf": {
+  "heading": "中文资料",
+  "description": "预览已通过校验；需要跳转页面时可打开原始 PDF。",
+  "badge": "Reader PDF",
+  "back": "返回",
+  "noAssets": "暂无已导入的 PDF 资料。",
+  "guide": "学习指南",
+  "pagePicker": "选择 PDF 页面",
+  "previewPages": "{count} 个预览页面",
+  "pageLabel": "印刷页 {printed} · PDF {pdf}",
+  "zoomOut": "缩小 PDF",
+  "fitWidth": "适合宽度",
+  "zoomIn": "放大 PDF",
+  "fitPage": "适合页面",
+  "openOriginal": "打开原始 PDF",
+  "fullscreen": "全屏",
+  "annotationError": "无法加载 PDF 笔记；新的笔画会保留在本次学习中。",
+  "pan": "移动 PDF",
+  "pen": "画笔",
+  "highlighter": "荧光笔",
+  "eraser": "橡皮擦",
+  "undo": "撤销",
+  "redo": "重做",
+  "clear": "清除笔画",
+  "touch": "允许触控书写",
+  "penColor": "笔的颜色",
+  "customColor": "自定义颜色",
+  "strokeWidth": "笔画粗细 {width}",
+  "eraserSize": "橡皮大小 {size}",
+  "annotationLayer": "PDF 笔记图层",
+  "previewError": "无法加载预览页面",
+  "originalPdf": "打开原始 PDF"
  }
 }

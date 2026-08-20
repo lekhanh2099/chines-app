@@ -14,7 +14,7 @@ const {
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-state-repository", () => ({
+vi.mock("@/features/hanzihome/reader/reader-pronunciation-override-repository.server", () => ({
  deleteReaderPronunciationOverride,
  listReaderPronunciationOverrides,
  saveReaderPronunciationOverride,

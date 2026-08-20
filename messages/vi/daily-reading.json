@@ -35,6 +35,9 @@
   "back": "← Danh sách bài hằng ngày",
   "minutes": "{count} phút"
  },
+ "attempts": {
+  "anonymousLocalOnly": "Bạn chưa đăng nhập. Đáp án trong phiên này vẫn dùng được để luyện tập nhưng lịch sử làm bài sẽ không được lưu lên tài khoản."
+ },
  "grammar": {
   "empty": "Bài này chưa có mục ngữ pháp riêng.",
   "evidence": "Câu dẫn chứng nằm trong bài đọc"

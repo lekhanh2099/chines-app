@@ -35,6 +35,9 @@
   "back": "← 每日阅读列表",
   "minutes": "{count} 分钟"
  },
+ "attempts": {
+  "anonymousLocalOnly": "你尚未登录。本次学习中的答案仍可用于练习，但练习历史不会保存到账号。"
+ },
  "grammar": {
   "empty": "这篇阅读还没有单独的语法项目。",
   "evidence": "阅读原文中的例句"

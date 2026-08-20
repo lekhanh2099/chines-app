@@ -14,6 +14,7 @@ import { IconTile } from "@/components/ui/icon-tile";
 import { PageHeader } from "@/components/ui/page-header";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import {
  HanziText,
  PinyinText,
@@ -67,7 +68,13 @@ function metadataNumber(resource: ReaderDocumentResource, key: string) {
  return typeof value === "number" ? value : null;
 }
 
-function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource }) {
+function DailyTranslationPanel({
+ resource,
+ canPersistAttempts,
+}: {
+ resource: ReaderDocumentResource;
+ canPersistAttempts: boolean;
+}) {
  const segments = useMemo(
   () =>
    resource.paragraphs
@@ -111,6 +118,8 @@ function DailyTranslationPanel({ resource }: { resource: ReaderDocumentResource 
    next.add(`${segment.id}:${direction}`);
    return next;
   });
+  if (!canPersistAttempts) return;
+
   const referenceText = direction === "zh-vi" ? segment.vi : segment.zh;
   void savePracticeAttempt({
    surface: "translation",
@@ -181,6 +190,7 @@ export function DailyReadingWorkspace({
  initialLesson: HanziHomeLesson | null;
 }) {
  const t = useTranslations("DailyReading");
+ const { userId, isResolved } = useClientSession();
  const router = useRouter();
  const pathname = usePathname();
  const searchParams = useSearchParams();
@@ -190,7 +200,11 @@ export function DailyReadingWorkspace({
  const latest = initialDocuments[0];
  const resource = requestedDocumentId.length > 0 ? initialResource : null;
  const grammarItems = initialLesson?.grammar ?? [];
+ const canPersistAttempts = isResolved && userId !== null;
+ const showLocalOnlyNotice =
+  isResolved && userId === null && (activeTab === "questions" || activeTab === "translation");
  const [questionAnswers, setQuestionAnswers] = useState<ReaderSessionState["answers"]>({});
+ const [attemptSaveError, setAttemptSaveError] = useState("");
  const dailyTabs: ReadonlyArray<{ id: DailyTab; label: string }> = [
   { id: "reader", label: t("tabs.reader") },
   { id: "questions", label: t("tabs.questions") },
@@ -396,7 +410,19 @@ export function DailyReadingWorkspace({
       listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
       aria-label={t("tabs.aria")}
      >
-      <TabsContent value={activeTab} className="pt-4 sm:pt-5">
+      <TabsContent value={activeTab} className="grid gap-3 pt-4 sm:pt-5">
+       {showLocalOnlyNotice ? (
+        <Card variant="subtle" padding="sm">
+         <Typography variant="caption" tone="muted">
+          {t("attempts.anonymousLocalOnly")}
+         </Typography>
+        </Card>
+       ) : null}
+       {attemptSaveError ? (
+        <Typography as="p" variant="caption" tone="danger">
+         {attemptSaveError}
+        </Typography>
+       ) : null}
        {activeTab === "reader" ? (
         <ReaderDocumentStudy
          key={resource.document.id}
@@ -411,6 +437,8 @@ export function DailyReadingWorkspace({
          answers={questionAnswers}
          onAnswer={(itemId, answer) => {
           setQuestionAnswers((current) => ({ ...current, [itemId]: answer }));
+          setAttemptSaveError("");
+          if (!canPersistAttempts) return;
           void savePracticeAttempt({
            surface: "reader",
            contentId: `daily:${itemId}`,
@@ -418,7 +446,7 @@ export function DailyReadingWorkspace({
            answer: { answer: answer.answer, completed: answer.completed },
            scorePercent: answer.score === null ? null : Math.round(answer.score * 100),
            responseMs: answer.responseMs,
-          });
+          }).catch((saveError: Error) => setAttemptSaveError(saveError.message));
          }}
         />
        ) : null}
@@ -426,7 +454,9 @@ export function DailyReadingWorkspace({
         <ReaderVocabularyPanel vocabulary={resource.vocabulary} />
        ) : null}
        {activeTab === "grammar" ? <DailyReadingGrammarPanel grammarItems={grammarItems} /> : null}
-       {activeTab === "translation" ? <DailyTranslationPanel resource={resource} /> : null}
+       {activeTab === "translation" ? (
+        <DailyTranslationPanel resource={resource} canPersistAttempts={canPersistAttempts} />
+       ) : null}
        {activeTab === "source" ? (
         <Card variant="subtle" padding="md" className="grid gap-2">
          <Typography as="h3" variant="sectionTitle" weight="black">

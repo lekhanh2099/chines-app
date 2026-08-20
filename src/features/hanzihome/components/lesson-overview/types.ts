@@ -4,18 +4,12 @@ import type {
  HanziReaderSize,
  LessonTextDisplaySettings,
 } from "@/features/hanzihome/types";
+import { defaultLessonTextDisplaySettings } from "@/features/hanzihome/utils/learning-state";
 
 export type LessonDisplayMode = LessonTextDisplaySettings;
 export type { HanziReaderFont, HanziReaderSize };
 
-export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
- showPinyin: true,
- showMeaning: false,
- showAnswers: false,
- hanziFont: "kaiti",
- hanziSize: "3xl",
- revealMode: "always",
-};
+export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = defaultLessonTextDisplaySettings;
 
 export type BookSection = {
  id: string;

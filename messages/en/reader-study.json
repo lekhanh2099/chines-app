@@ -1,4 +1,137 @@
 {
+ "chrome": {
+  "tabs": {
+   "overview": "Overview",
+   "reader": "Read",
+   "exercises": "Exercises",
+   "vocabulary": "Vocabulary",
+   "translation": "Translation",
+   "dictation": "Dictation",
+   "analysis": "Structure",
+   "summary": "Summary",
+   "notes": "Notes"
+  },
+  "backToReader": "Reader library",
+  "defaultReading": "Reading",
+  "unit": "Unit {unit}",
+  "progressLoading": "Loading Reader progress; the static content is still ready to read.",
+  "progressUnavailable": "Reader progress could not be loaded. You can still read; new changes will be saved when the connection is restored.",
+  "tabsAria": "Reader sections",
+  "commands": {
+   "segment": "Segment {current} / {total}",
+   "pause": "Pause",
+   "resume": "Resume",
+   "stop": "Stop",
+   "listen": "Listen",
+   "previous": "Previous segment",
+   "restart": "Replay segment",
+   "stopReading": "Stop reading",
+   "next": "Next segment",
+   "rate": "Reading speed",
+   "openOutline": "Open segment outline",
+   "outline": "Segment outline"
+  },
+  "surface": {
+   "empty": "This content has no Chinese segments to read yet.",
+   "aria": "Chinese reader",
+   "outlineTitle": "Reading outline"
+  },
+  "tools": {
+   "title": "Study tools",
+   "shortTitle": "Tools",
+   "listening": "Listening practice",
+   "playAll": "Read all",
+   "loop": "Loop segment",
+   "autoAdvance": "Auto-advance",
+   "display": "Display",
+   "focus": "Focus",
+   "shadowing": "Shadowing"
+  },
+  "outline": {
+   "segments": "Segment outline",
+   "aria": "Reading outline",
+   "segment": "Segment {number}",
+   "metadata": "Reading details"
+  },
+  "segment": {
+   "dialogue": "Turn {speaker}",
+   "dialogueFallback": "dialogue",
+   "reading": "Reading segment"
+  },
+  "overview": {
+   "whatIsThis": "What is this reading?",
+   "defaultDescription": "Read to grasp the main idea and how the text is structured.",
+   "objectives": "Learning objectives",
+   "defaultObjectives": "Understand the content, identify key vocabulary, and express the main idea."
+  },
+  "dictation": {
+   "badge": "Listening dictation",
+   "title": "Listen and transcribe the reading",
+   "description": "Open the Dictation workspace with the full current Reader content.",
+   "open": "Open dictation →",
+   "openTts": "Open text-to-speech"
+  },
+  "analysis": {
+   "title": "Reading analysis",
+   "empty": "No analysis description is available yet.",
+   "contextualPinyin": "Contextual pinyin",
+   "segment": "Segment {number}",
+   "sourceAligned": "Source pinyin aligned",
+   "sourceRejected": "Source pinyin rejected",
+   "generated": "Contextual pinyin generated",
+   "unresolved": "Unresolved: {items}"
+  },
+  "summary": {
+   "title": "Summary",
+   "empty": "This reading has no reviewed summary yet."
+  },
+  "notes": {
+   "empty": "The current segment has no notes or highlights.",
+   "title": "Notes for this segment",
+   "selectedFallback": "Highlighted segment",
+   "delete": "Delete"
+  },
+  "pronunciation": {
+   "appliedSession": "Applied in this session",
+   "confirmed": "Confirmed",
+   "needsReview": "Review needed · polyphonic",
+   "source": "Using source pinyin",
+   "context": "Using context",
+   "missing": "Pinyin is not available",
+   "description": "Pinyin is a contextual suggestion and must not be assumed correct. For polyphonic characters, confirm the reading that fits this sentence.",
+   "sessionDescription": "This change applies only to the current reading session and is not stored as a long-term confirmed value.",
+   "meaning": "Meaning in context",
+   "choose": "Choose a reading for each character",
+   "noReading": "No reading is available.",
+   "openInspector": "Open full analysis",
+   "resetSession": "Remove session change",
+   "resetPersistent": "Remove confirmation",
+   "close": "Close",
+   "applySession": "Apply in this session",
+   "confirm": "Confirm reading"
+  },
+  "selection": {
+   "missingPinyin": "Pinyin is not available",
+   "closeAria": "Close tools",
+   "missingMeaning": "No exact offline meaning is available for this phrase.",
+   "actionsAria": "Selected segment actions",
+   "lookup": "Look up",
+   "highlight": "Highlight",
+   "note": "Note",
+   "notePlaceholder": "Add a note for the selected segment…",
+   "noteAria": "Note for selected segment",
+   "cancel": "Cancel",
+   "saveNote": "Save note",
+   "listen": "Listen",
+   "review": "Review",
+   "understand": "Understand"
+  }
+ },
+ "completion": {
+  "done": "Completed",
+  "pending": "Not completed",
+  "markDone": "Mark as completed"
+ },
  "exercise": {
   "groupLabels": {
    "notes": "Notes",

@@ -1,4 +1,137 @@
 {
+ "chrome": {
+  "tabs": {
+   "overview": "Tổng quan",
+   "reader": "Đọc bài",
+   "exercises": "Bài tập",
+   "vocabulary": "Từ vựng",
+   "translation": "Luyện dịch",
+   "dictation": "Chép chính tả",
+   "analysis": "Mạch bài",
+   "summary": "Tóm tắt",
+   "notes": "Ghi chú"
+  },
+  "backToReader": "Danh sách Reader",
+  "defaultReading": "Bài đọc",
+  "unit": "Đơn nguyên {unit}",
+  "progressLoading": "Đang tải tiến độ Reader; nội dung tĩnh vẫn sẵn sàng để đọc.",
+  "progressUnavailable": "Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được khôi phục.",
+  "tabsAria": "Các phần của bài Reader",
+  "commands": {
+   "segment": "Đoạn {current} / {total}",
+   "pause": "Tạm dừng",
+   "resume": "Tiếp tục",
+   "stop": "Dừng",
+   "listen": "Nghe bài",
+   "previous": "Đoạn trước",
+   "restart": "Nghe lại đoạn",
+   "stopReading": "Dừng đọc",
+   "next": "Đoạn sau",
+   "rate": "Tốc độ đọc",
+   "openOutline": "Mở mục lục đoạn",
+   "outline": "Mục lục đoạn"
+  },
+  "surface": {
+   "empty": "Nội dung này chưa có đoạn tiếng Trung để đọc.",
+   "aria": "Trình đọc tiếng Trung",
+   "outlineTitle": "Mục lục bài đọc"
+  },
+  "tools": {
+   "title": "Công cụ học",
+   "shortTitle": "Công cụ",
+   "listening": "Luyện nghe",
+   "playAll": "Đọc cả bài",
+   "loop": "Lặp đoạn",
+   "autoAdvance": "Tự chuyển",
+   "display": "Hiển thị",
+   "focus": "Tập trung",
+   "shadowing": "Shadowing"
+  },
+  "outline": {
+   "segments": "Mục lục đoạn",
+   "aria": "Mục lục bài đọc",
+   "segment": "Đoạn {number}",
+   "metadata": "Thông tin bài"
+  },
+  "segment": {
+   "dialogue": "Lượt {speaker}",
+   "dialogueFallback": "thoại",
+   "reading": "Đoạn đọc"
+  },
+  "overview": {
+   "whatIsThis": "Bài này là gì?",
+   "defaultDescription": "Đọc để nắm nội dung chính và cách triển khai của văn bản.",
+   "objectives": "Mục tiêu bài học",
+   "defaultObjectives": "Đọc hiểu nội dung, nhận diện từ vựng trọng tâm và diễn đạt lại ý chính."
+  },
+  "dictation": {
+   "badge": "Luyện nghe chép",
+   "title": "Nghe và chép lại bài đọc",
+   "description": "Mở workspace Dictation với toàn bộ nội dung Reader hiện tại.",
+   "open": "Mở chép chính tả →",
+   "openTts": "Mở tạo giọng đọc"
+  },
+  "analysis": {
+   "title": "Phân tích bài đọc",
+   "empty": "Chưa có mô tả phân tích chính.",
+   "contextualPinyin": "Pinyin theo ngữ cảnh",
+   "segment": "Đoạn {number}",
+   "sourceAligned": "Pinyin nguồn đã căn",
+   "sourceRejected": "Pinyin nguồn bị từ chối",
+   "generated": "Pinyin sinh theo ngữ cảnh",
+   "unresolved": "Chưa nhận diện: {items}"
+  },
+  "summary": {
+   "title": "Tóm tắt",
+   "empty": "Bài này chưa có summary được review."
+  },
+  "notes": {
+   "empty": "Đoạn hiện tại chưa có ghi chú hoặc đánh dấu.",
+   "title": "Ghi chú của đoạn này",
+   "selectedFallback": "Đoạn đánh dấu",
+   "delete": "Xoá"
+  },
+  "pronunciation": {
+   "appliedSession": "Đã áp dụng trong phiên",
+   "confirmed": "Đã xác nhận",
+   "needsReview": "Cần kiểm tra · đa âm",
+   "source": "Theo pinyin nguồn",
+   "context": "Theo ngữ cảnh",
+   "missing": "Chưa xác định pinyin",
+   "description": "Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.",
+   "sessionDescription": "Thay đổi ở nguồn này chỉ áp dụng trong phiên đọc hiện tại và không được ghi là dữ liệu đã xác nhận lâu dài.",
+   "meaning": "Nghĩa trong ngữ cảnh",
+   "choose": "Chọn âm cho từng chữ",
+   "noReading": "Chưa có cách đọc khả dụng.",
+   "openInspector": "Mở phân tích đầy đủ",
+   "resetSession": "Bỏ áp dụng",
+   "resetPersistent": "Bỏ xác nhận",
+   "close": "Đóng",
+   "applySession": "Áp dụng trong phiên",
+   "confirm": "Xác nhận cách đọc"
+  },
+  "selection": {
+   "missingPinyin": "Chưa xác định pinyin",
+   "closeAria": "Đóng thanh công cụ",
+   "missingMeaning": "Chưa có nghĩa offline chính xác cho cụm này.",
+   "actionsAria": "Thao tác đoạn chọn",
+   "lookup": "Tra từ",
+   "highlight": "Đánh dấu",
+   "note": "Ghi chú",
+   "notePlaceholder": "Ghi chú cho đoạn chọn…",
+   "noteAria": "Ghi chú cho đoạn chọn",
+   "cancel": "Huỷ",
+   "saveNote": "Lưu ghi chú",
+   "listen": "Nghe",
+   "review": "Ôn lại",
+   "understand": "Hiểu sâu"
+  }
+ },
+ "completion": {
+  "done": "Đã hoàn thành",
+  "pending": "Chưa hoàn thành",
+  "markDone": "Đánh dấu đã học xong"
+ },
  "exercise": {
   "groupLabels": {
    "notes": "Ghi chú",

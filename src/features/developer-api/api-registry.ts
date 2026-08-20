@@ -1801,6 +1801,24 @@ export const currentApiInventory = [
   internalReason: null,
  }),
  inventoryEntry({
+  currentPath: "/api/hanzihome/lesson-annotations/[annotationId]",
+  methods: ["DELETE", "PATCH"],
+  source: "route",
+  group: "HanziHome học",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason: "Lesson annotations are owned by the authenticated HanziHome learner.",
+ }),
+ inventoryEntry({
+  currentPath: "/api/hanzihome/lesson-annotations",
+  methods: ["GET", "POST"],
+  source: "route",
+  group: "HanziHome học",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason: "Lesson annotations are owned by the authenticated HanziHome learner.",
+ }),
+ inventoryEntry({
   currentPath: "/api/hanzihome/reader/daily-state",
   methods: ["GET", "PUT"],
   source: "route",
@@ -1925,6 +1943,16 @@ export const currentApiInventory = [
   exposure: "public-v1",
   v1Path: "/api/v1/hanzihome/search-index",
   internalReason: null,
+ }),
+ inventoryEntry({
+  currentPath: "/api/home/learning-overview",
+  methods: ["GET"],
+  source: "route",
+  group: "Học tập",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Home projects authenticated learner state without creating another progress owner.",
  }),
  inventoryEntry({
   currentPath: "/api/learning-state",

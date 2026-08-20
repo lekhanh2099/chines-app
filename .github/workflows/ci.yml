@@ -2,7 +2,7 @@ name: CI
 
 on:
  push:
-  branches: [main]
+  branches: [main, refactor/hanzihome-integrity-remediation]
  pull_request:
  workflow_dispatch:
 
@@ -33,3 +33,77 @@ jobs:
      env:
       NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
       NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+
+ e2e:
+  runs-on: ubuntu-latest
+  timeout-minutes: 35
+  env:
+   HUSKY: 0
+   E2E_BASE_URL: http://127.0.0.1:3001
+   E2E_USER_A_EMAIL: hanzihome-e2e-a@example.test
+   E2E_USER_B_EMAIL: hanzihome-e2e-b@example.test
+   E2E_FIXTURE_PASSWORD: HanziHome-E2E!2026
+  steps:
+   - uses: actions/checkout@v5
+
+   - uses: actions/setup-node@v5
+     with:
+      node-version: 22
+      cache: npm
+
+   - run: npm install --global npm@11.6.1
+   - run: npm ci
+   - run: npx playwright install --with-deps chromium
+   - name: Apply local migrations without production-only backfill
+     shell: bash
+     run: |
+      local_backfill_migrations=(
+       "supabase/migrations/20260714061112_migrate_admin_data_to_google_user.sql"
+       "supabase/migrations/20260714061720_retire_legacy_admin_user.sql"
+       "supabase/migrations/20260718113000_finalize_hanzihome_boya_nine_volume_cutover.sql"
+       "supabase/migrations/20260721140327_remove_boya_second_edition_intermediate_deep_vocab_sections.sql"
+       "supabase/migrations/20260722115000_drop_legacy_hanzihome_backup_schema.sql"
+      )
+      local_backfill_backups=()
+      restore_backfill_migrations() {
+       for index in "${!local_backfill_migrations[@]}"; do
+        mv "${local_backfill_backups[$index]}" "${local_backfill_migrations[$index]}"
+       done
+      }
+      trap restore_backfill_migrations EXIT
+      for local_backfill_migration in "${local_backfill_migrations[@]}"; do
+       local_backfill_backup="$RUNNER_TEMP/$(basename "$local_backfill_migration")"
+       local_backfill_backups+=("$local_backfill_backup")
+       mv "$local_backfill_migration" "$local_backfill_backup"
+      done
+      npx supabase start
+      npx supabase db reset
+   - name: Export local Supabase environment
+     shell: bash
+     run: |
+      eval "$(npx supabase status -o env)"
+      {
+       echo "NEXT_PUBLIC_SUPABASE_URL=$API_URL"
+       echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$ANON_KEY"
+       echo "SUPABASE_SECRET_KEY=$SERVICE_ROLE_KEY"
+      } >> "$GITHUB_ENV"
+   - name: Verify local Supabase REST readiness
+     shell: bash
+     run: |
+      for attempt in {1..30}; do
+       response_code="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+        -H "apikey: $NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY" \
+        "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/" || true)"
+       if [ "$response_code" = "200" ]; then
+        echo "Local Supabase REST is ready on attempt $attempt."
+        exit 0
+       fi
+       echo "Waiting for local Supabase REST (attempt $attempt, HTTP $response_code)."
+       sleep 2
+      done
+      echo "Local Supabase REST did not become ready." >&2
+      exit 1
+   - run: npm run e2e:seed
+   - run: npm run test:e2e
+   - if: always()
+     run: npx supabase stop

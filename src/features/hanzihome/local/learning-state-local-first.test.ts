@@ -50,8 +50,10 @@ import {
  syncPendingLearningStateMutations,
 } from "./learning-state-local-first";
 
+const ownerUserId = "user-a";
 const pendingMutation: PendingLearningStateMutation = {
- id: "learning_state:current",
+ id: `learning_state:${ownerUserId}:pending`,
+ ownerUserId,
  type: "learning_state.replace",
  status: "pending",
  payload: emptyLearningState,
@@ -76,7 +78,7 @@ describe("learning-state local-first sync", () => {
   api.fetch.mockReset();
   api.save.mockReset();
   store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValue([]);
-  store.markSyncing.mockResolvedValue(pendingMutation);
+  store.markSyncing.mockImplementation((mutation) => Promise.resolve(mutation));
   store.replace.mockImplementation(({ mutation, baseState, state, expectedUpdatedAt }) =>
    Promise.resolve({
     ...mutation,
@@ -87,6 +89,7 @@ describe("learning-state local-first sync", () => {
    }),
   );
   store.readPending.mockResolvedValue(pendingMutation);
+  store.clear.mockResolvedValue(true);
   api.save.mockResolvedValue({ state: emptyLearningState, updatedAt: "2026-07-14T00:00:02.000Z" });
  });
 
@@ -98,31 +101,33 @@ describe("learning-state local-first sync", () => {
   store.readPending.mockResolvedValue(null);
   api.fetch.mockRejectedValue(new Error("Unauthorized"));
 
-  await expect(refreshLearningStateFromRemoteIfClean()).rejects.toThrow("Unauthorized");
-  expect(await refreshLearningStateFromRemoteIfClean()).toBeNull();
+  await expect(refreshLearningStateFromRemoteIfClean(ownerUserId)).rejects.toThrow("Unauthorized");
+  expect(await refreshLearningStateFromRemoteIfClean(ownerUserId)).toBeNull();
 
   expect(api.fetch).toHaveBeenCalledOnce();
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
  });
 
- it("deduplicates concurrent clean-state refreshes", async () => {
+ it("deduplicates concurrent clean-state refreshes per owner", async () => {
   store.readPending.mockResolvedValue(null);
   api.fetch.mockResolvedValue({ state: emptyLearningState, updatedAt: null });
 
   const [first, second] = await Promise.all([
-   refreshLearningStateFromRemoteIfClean(),
-   refreshLearningStateFromRemoteIfClean(),
+   refreshLearningStateFromRemoteIfClean(ownerUserId),
+   refreshLearningStateFromRemoteIfClean(ownerUserId),
   ]);
-  const cooldownResult = await refreshLearningStateFromRemoteIfClean();
+  const cooldownResult = await refreshLearningStateFromRemoteIfClean(ownerUserId);
 
   expect(api.fetch).toHaveBeenCalledOnce();
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
   expect(first).toEqual(emptyLearningState);
   expect(second).toEqual(emptyLearningState);
   expect(cooldownResult).toBeNull();
  });
 
- it("deduplicates concurrent pending-state syncs across mounted consumers", async () => {
-  const first = syncPendingLearningStateMutations();
-  const second = syncPendingLearningStateMutations();
+ it("deduplicates concurrent pending-state syncs for the same owner", async () => {
+  const first = syncPendingLearningStateMutations(ownerUserId);
+  const second = syncPendingLearningStateMutations(ownerUserId);
 
   await expect(Promise.all([first, second])).resolves.toEqual([
    expect.objectContaining({ status: "synced", syncedCount: 1, pendingCount: 0 }),
@@ -133,34 +138,48 @@ describe("learning-state local-first sync", () => {
   expect(store.clear).toHaveBeenCalledOnce();
  });
 
- it("clears the queue only after the matching mutation is saved", async () => {
-  const result = await syncPendingLearningStateMutations();
+ it("clears the queue atomically only after the matching owner mutation is saved", async () => {
+  const result = await syncPendingLearningStateMutations(ownerUserId);
 
-  expect(api.save).toHaveBeenCalledWith(emptyLearningState, null);
+  expect(api.save).toHaveBeenCalledWith(emptyLearningState, null, ownerUserId);
   expect(store.writeLocal).toHaveBeenCalledWith({
+   ownerUserId,
    state: emptyLearningState,
    lastSyncedState: emptyLearningState,
    remoteUpdatedAt: "2026-07-14T00:00:02.000Z",
    lastSyncedAt: expect.any(String),
   });
-  expect(store.clear).toHaveBeenCalledOnce();
+  expect(store.clear).toHaveBeenCalledWith(ownerUserId, pendingMutation.updatedAt);
   expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 
- it("does not clear a newer mutation that arrived while a request was in flight", async () => {
-  store.readPending.mockResolvedValue({
+ it("drains a newer mutation that replaced the in-flight generation without another browser event", async () => {
+  const newerMutation: PendingLearningStateMutation = {
    ...pendingMutation,
+   payload: {
+    ...emptyLearningState,
+    settings: { ...emptyLearningState.settings, lastLessonId: "lesson-2" },
+   },
    updatedAt: "2026-07-14T00:00:02.000Z",
-  });
+  };
+
   store.list.mockReset();
   store.list
    .mockResolvedValueOnce([pendingMutation])
-   .mockResolvedValueOnce([{ ...pendingMutation, updatedAt: "2026-07-14T00:00:02.000Z" }]);
+   .mockResolvedValueOnce([newerMutation])
+   .mockResolvedValueOnce([newerMutation])
+   .mockResolvedValueOnce([]);
+  store.readPending.mockReset();
+  store.readPending.mockResolvedValueOnce(newerMutation).mockResolvedValueOnce(newerMutation);
 
-  const result = await syncPendingLearningStateMutations();
+  const result = await syncPendingLearningStateMutations(ownerUserId);
 
-  expect(store.clear).not.toHaveBeenCalled();
-  expect(result).toMatchObject({ status: "pending", syncedCount: 0, pendingCount: 1 });
+  expect(api.save).toHaveBeenCalledTimes(2);
+  expect(api.save).toHaveBeenNthCalledWith(1, emptyLearningState, null, ownerUserId);
+  expect(api.save).toHaveBeenNthCalledWith(2, newerMutation.payload, null, ownerUserId);
+  expect(store.clear).toHaveBeenCalledOnce();
+  expect(store.clear).toHaveBeenCalledWith(ownerUserId, newerMutation.updatedAt);
+  expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 
  it("marks the matching mutation failed and preserves it for retry", async () => {
@@ -168,7 +187,7 @@ describe("learning-state local-first sync", () => {
   store.list.mockReset();
   store.list.mockResolvedValueOnce([pendingMutation]).mockResolvedValueOnce([pendingMutation]);
 
-  const result = await syncPendingLearningStateMutations();
+  const result = await syncPendingLearningStateMutations(ownerUserId);
 
   expect(store.markFailed).toHaveBeenCalledWith({
    mutation: pendingMutation,
@@ -216,7 +235,7 @@ describe("learning-state local-first sync", () => {
    updatedAt: "2026-07-14T00:00:02.000Z",
   });
 
-  const result = await syncPendingLearningStateMutations();
+  const result = await syncPendingLearningStateMutations(ownerUserId);
 
   expect(store.replace).toHaveBeenCalledWith({
    mutation: localMutation,
@@ -224,7 +243,12 @@ describe("learning-state local-first sync", () => {
    state: rebasedMutation.payload,
    expectedUpdatedAt: "2026-07-14T00:00:02.000Z",
   });
-  expect(api.save).toHaveBeenLastCalledWith(rebasedMutation.payload, "2026-07-14T00:00:02.000Z");
+  expect(api.fetch).toHaveBeenCalledWith(ownerUserId);
+  expect(api.save).toHaveBeenLastCalledWith(
+   rebasedMutation.payload,
+   "2026-07-14T00:00:02.000Z",
+   ownerUserId,
+  );
   expect(result).toMatchObject({ status: "synced", syncedCount: 1, pendingCount: 0 });
  });
 

@@ -35,6 +35,9 @@
   "back": "← Daily reading list",
   "minutes": "{count} min"
  },
+ "attempts": {
+  "anonymousLocalOnly": "You are not signed in. Answers still work for this study session, but practice history will not be saved to an account."
+ },
  "grammar": {
   "empty": "This reading has no dedicated grammar items yet.",
   "evidence": "Example sentence from the reading"

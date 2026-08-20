@@ -1,39 +1,33 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
+import { z } from "zod";
 
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import { getNoteByLessonNoteLink, type LessonNoteRelationType } from "@/services/notes.service";
-import { z } from "zod";
 
 export function useLessonLinkedNote(
  lessonId: z.input<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
  relationType: LessonNoteRelationType = "main",
  fallbackLessonIds: string[] = [],
 ) {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId, isResolved } = useClientSession();
 
  const lessonIds = [lessonId, ...fallbackLessonIds]
   .flatMap((value) => (value ? [value] : []))
   .filter((value, index, source) => source.indexOf(value) === index);
 
  return useQuery({
-  queryKey: noteQueryKeys.lessonLinked(lessonIds, relationType),
-  enabled: lessonIds.length > 0,
+  queryKey: noteQueryKeys.lessonLinked(userId, lessonIds, relationType),
+  enabled: isResolved && Boolean(userId) && lessonIds.length > 0,
   queryFn: async () => {
-   if (lessonIds.length === 0) return null;
-
-   const user = await getClientSessionUser(supabase);
-   if (!user) return null;
+   if (!userId || lessonIds.length === 0) return null;
 
    for (const currentLessonId of lessonIds) {
     const note = await getNoteByLessonNoteLink(
      supabase,
-     user.id,
+     userId,
      currentLessonId,
      "hanzihome_lesson",
      relationType,

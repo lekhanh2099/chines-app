@@ -12,6 +12,8 @@ import { publicSupabaseEnv } from "@/lib/env/public";
 import { createClient } from "@/lib/supabase/server";
 import type { Database } from "@/types/supabase.generated";
 
+export const expectedAuthenticatedOwnerHeader = "X-HanziHome-Owner-Id";
+
 export type AuthenticatedRouteContext = {
  supabase: SupabaseClient<Database>;
  user: User;
@@ -25,6 +27,20 @@ type AuthenticatedRouteResult = AuthenticatedRouteResultMap[keyof AuthenticatedR
 
 export function apiError(message: string, status: number, code?: string) {
  return privateNoStoreJson({ error: message, ...(code ? { code } : {}) }, { status });
+}
+
+export function verifyExpectedAuthenticatedOwner(
+ request: Request,
+ context: AuthenticatedRouteContext,
+): NextResponse | null {
+ const expectedOwner = request.headers.get(expectedAuthenticatedOwnerHeader);
+ if (expectedOwner === context.user.id) return null;
+
+ return apiError(
+  "Request owner no longer matches the authenticated session",
+  412,
+  "AUTH_OWNER_MISMATCH",
+ );
 }
 
 export async function requireAuthenticatedRoute(): Promise<AuthenticatedRouteResult> {

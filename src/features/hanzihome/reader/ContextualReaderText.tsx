@@ -98,7 +98,7 @@ export function ContextualReaderText({
    ? t("playFromCharacter", { character: grapheme.segment })
    : undefined;
   const pinyinActionLabel = pinyinInteractive
-   ? `Kiểm tra pinyin chữ ${grapheme.segment}`
+   ? t("inspectPinyin", { character: grapheme.segment })
    : undefined;
 
   if (pinyinPresentation === "paragraph") {

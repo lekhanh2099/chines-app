@@ -23,7 +23,13 @@ export function FieldItem({
  return (
   <div className="grid gap-2">
    {label ? (
-    <Label variant="label" tone="secondary" weight="semibold" className="gap-1">
+    <Label
+     variant="label"
+     tone="secondary"
+     weight="semibold"
+     className="gap-1"
+     htmlFor={field?.name}
+    >
      {label}
      {required ? (
       <Typography as="span" tone="danger">

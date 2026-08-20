@@ -1,11 +1,9 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { noteQueryKeys } from "@/features/notes/query-keys";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
 import {
  createNoteFolder,
  deleteNoteFolder,
@@ -25,46 +23,48 @@ type UpdateNoteLibraryMutationInput = Parameters<typeof updateNoteLibraryMetadat
 };
 
 export function useNoteFolders() {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId, isResolved } = useClientSession();
 
  return useQuery({
-  queryKey: noteQueryKeys.folders,
+  queryKey: noteQueryKeys.folders(userId),
+  enabled: isResolved && Boolean(userId),
   queryFn: async () => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) return [];
-   return getNoteFolders(supabase, user.id);
+   if (!userId) return [];
+   return getNoteFolders(supabase, userId);
   },
  });
 }
 
 export function useNoteFolderMutations() {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId } = useClientSession();
  const queryClient = useQueryClient();
- const refresh = () => queryClient.invalidateQueries({ queryKey: noteQueryKeys.folders });
+ const refresh = () => queryClient.invalidateQueries({ queryKey: noteQueryKeys.folders(userId) });
 
  const createMutation = useMutation({
   mutationFn: async (input: CreateNoteFolderMutationInput) => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) throw new Error("Not authenticated");
-   return createNoteFolder(supabase, user.id, input);
+   if (!userId) throw new Error("Not authenticated");
+   return createNoteFolder(supabase, userId, input);
   },
   onSuccess: refresh,
  });
 
  const updateMutation = useMutation({
-  mutationFn: (input: UpdateNoteFolderMutationInput) =>
-   updateNoteFolder(supabase, input.folderId, input.changes),
+  mutationFn: async (input: UpdateNoteFolderMutationInput) => {
+   if (!userId) throw new Error("Not authenticated");
+   return updateNoteFolder(supabase, input.folderId, input.changes);
+  },
   onSuccess: refresh,
  });
 
  const deleteMutation = useMutation({
-  mutationFn: (folderId: string) => deleteNoteFolder(supabase, folderId),
+  mutationFn: async (folderId: string) => {
+   if (!userId) throw new Error("Not authenticated");
+   return deleteNoteFolder(supabase, folderId);
+  },
   onSuccess: async () => {
    await Promise.all([
-    queryClient.invalidateQueries({ queryKey: noteQueryKeys.folders }),
-    queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot }),
+    queryClient.invalidateQueries({ queryKey: noteQueryKeys.folders(userId) }),
+    queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) }),
    ]);
   },
  });
@@ -73,17 +73,18 @@ export function useNoteFolderMutations() {
 }
 
 export function useUpdateNoteLibraryMetadata() {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId } = useClientSession();
  const queryClient = useQueryClient();
 
  return useMutation({
-  mutationFn: (input: UpdateNoteLibraryMutationInput) =>
-   updateNoteLibraryMetadata(supabase, input.noteId, input),
+  mutationFn: async (input: UpdateNoteLibraryMutationInput) => {
+   if (!userId) throw new Error("Not authenticated");
+   return updateNoteLibraryMetadata(supabase, input.noteId, input);
+  },
   onSuccess: async (_, input) => {
    await Promise.all([
-    queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot }),
-    queryClient.invalidateQueries({ queryKey: noteQueryKeys.detail(input.noteId) }),
+    queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) }),
+    queryClient.invalidateQueries({ queryKey: noteQueryKeys.detail(userId, input.noteId) }),
    ]);
   },
  });

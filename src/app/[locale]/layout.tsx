@@ -16,8 +16,8 @@ import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsP
 import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
- title: "KMS — Chinese Learning Portal",
- description: "Knowledge Management System for learning Chinese",
+ title: "HanziHome — Chinese Learning Workspace",
+ description: "A focused workspace for learning Chinese with HanziHome.",
  icons: {
   icon: "/favicon.svg",
   shortcut: "/favicon.svg",

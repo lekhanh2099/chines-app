@@ -1,13 +1,19 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { JsonFieldValue } from "@/types/json";
 
-const { getUser, requireSessionOrBearerAuthenticatedRoute } = vi.hoisted(() => ({
- getUser: vi.fn(),
- requireSessionOrBearerAuthenticatedRoute: vi.fn(),
-}));
+const { getUser, hasHanziHomeContentCapability, requireSessionOrBearerAuthenticatedRoute } =
+ vi.hoisted(() => ({
+  getUser: vi.fn(),
+  hasHanziHomeContentCapability: vi.fn(),
+  requireSessionOrBearerAuthenticatedRoute: vi.fn(),
+ }));
 
+vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser } })),
+}));
+vi.mock("@/features/hanzihome/server/content-capability", () => ({
+ hasHanziHomeContentCapability,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
  apiError: (message: string, status: number, code?: string) =>
@@ -25,6 +31,8 @@ import { GET, POST } from "./route";
 describe("/api/hanzihome/html-artifacts", () => {
  beforeEach(() => {
   getUser.mockReset();
+  hasHanziHomeContentCapability.mockReset();
+  hasHanziHomeContentCapability.mockResolvedValue(true);
   requireSessionOrBearerAuthenticatedRoute.mockReset();
  });
 

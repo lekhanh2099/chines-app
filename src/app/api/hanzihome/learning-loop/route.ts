@@ -2,10 +2,10 @@ import type { JsonFieldValue } from "@/types/json";
 import { z } from "zod";
 
 import {
- listLearningLoopItems,
+ listDueLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
-} from "@/features/hanzihome/reader/reader-state-repository";
+} from "@/features/hanzihome/reader/learning-loop-repository";
 import {
  apiError,
  privateNoStoreJson,
@@ -30,7 +30,7 @@ export async function GET() {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
  try {
-  return privateNoStoreJson({ items: await listLearningLoopItems() });
+  return privateNoStoreJson({ items: await listDueLearningLoopItems(auth.context) });
  } catch {
   return apiError("Could not load learning loop", 503, "LEARNING_LOOP_UNAVAILABLE");
  }
@@ -46,14 +46,19 @@ export async function POST(request: Request) {
 
  try {
   if (parsed.data.action === "save") {
-   return privateNoStoreJson({ item: await saveLearningLoopItem({ item: parsed.data.item }) });
+   return privateNoStoreJson({
+    item: await saveLearningLoopItem({ item: parsed.data.item }, auth.context),
+   });
   }
   return privateNoStoreJson({
-   item: await rateLearningLoopItem({
-    itemId: parsed.data.itemId,
-    rating: parsed.data.rating,
-    expectedRevision: parsed.data.expectedRevision,
-   }),
+   item: await rateLearningLoopItem(
+    {
+     itemId: parsed.data.itemId,
+     rating: parsed.data.rating,
+     expectedRevision: parsed.data.expectedRevision,
+    },
+    auth.context,
+   ),
   });
  } catch {
   return apiError("Could not update learning loop", 409, "LEARNING_LOOP_CONFLICT");

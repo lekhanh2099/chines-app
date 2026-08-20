@@ -1,7 +1,7 @@
 "use client";
 
 import { Typography } from "@/components/ui/typography";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "@tanstack/react-store";
 import { usePathname } from "next/navigation";
 import {
@@ -9,14 +9,13 @@ import {
  BasePopoverPopup,
  BasePopoverPositioner,
 } from "@/components/ui/base-popover";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { Button } from "@/components/ui/button";
 import { VocabDetailDrawer } from "@/features/dictionary/components/VocabDetailDrawer";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useInspectorLookup } from "@/features/dictionary/hooks/useInspectorLookup";
 import { logger } from "@/lib/logger";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
-import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
+import { getPrimaryMeaning } from "@/services/vocab.service";
 import { vocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { inspectorStore } from "@/stores/inspector-store";
 import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
@@ -151,12 +150,11 @@ export function VocabInspectorProvider({ children }: { children: React.ReactNode
 }
 
 function InspectorCard({ onClose }: InspectorCardProps) {
+ const { userId } = useClientSession();
  const selectedText = useSelector(inspectorStore, (state) => state.selectedText);
  const lessonId = useSelector(inspectorStore, (state) => state.lessonId);
  const isOpen = useSelector(inspectorStore, (state) => state.isOpen);
  const { vocabData, isLoading } = useInspectorLookup(selectedText, lessonId, isOpen);
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
 
  const [isSaving, setIsSaving] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
@@ -164,16 +162,20 @@ function InspectorCard({ onClose }: InspectorCardProps) {
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSaveToVocab = async () => {
-  if (!vocabData || isSaving) return;
+  if (!vocabData || isSaving || !userId) return;
 
   setIsSaving(true);
 
   try {
-   const user = await getClientSessionUser(supabase);
-   if (!user) return;
-
-   const result = await saveVocabToSrs(supabase, user.id, vocabData);
-   if (!result) {
+   const response = await fetch("/api/dictionary/srs", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": userId,
+    },
+    body: JSON.stringify({ hanzi: vocabData.hanzi }),
+   });
+   if (!response.ok) {
     throw new Error("Save failed");
    }
 
@@ -283,7 +285,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
         size="sm"
         onMouseDown={preserveSelection}
         onClick={handleSaveToVocab}
-        disabled={!vocabData || isSaving || isSaved}
+        disabled={!vocabData || isSaving || isSaved || !userId}
        >
         {isSaving ? (
          <Loader2 className="h-4 w-4 animate-spin" />

@@ -24,6 +24,8 @@ import type {
 
 type Nullable<T> = T | null;
 
+const learningStateOwnerHeader = "X-HanziHome-Owner-Id";
+
 export class HanziHomeApiError extends Error {
  constructor(
   message: string,
@@ -145,28 +147,33 @@ export async function fetchHanziHomeAggregateItems({
  return payload.items;
 }
 
-export async function fetchHanziHomeLearningState(): Promise<
- z.output<typeof learningStateApiResponseSchema>
-> {
- const payload = await fetchJson("/api/learning-state", learningStateApiResponseSchema);
-
- return payload;
+export async function fetchHanziHomeLearningState(
+ ownerUserId: string,
+): Promise<z.output<typeof learningStateApiResponseSchema>> {
+ const response = await fetch("/api/learning-state", {
+  cache: "no-store",
+  headers: {
+   Accept: "application/json",
+   [learningStateOwnerHeader]: ownerUserId,
+  },
+ });
+ return parseJsonResponse(response, learningStateApiResponseSchema);
 }
 
 export async function saveHanziHomeLearningState(
  state: UserLearningState,
  expectedUpdatedAt: string | null,
+ ownerUserId: string,
 ): Promise<z.output<typeof learningStateApiResponseSchema>> {
  const response = await fetch("/api/learning-state", {
   method: "PUT",
   headers: {
    Accept: "application/json",
    "Content-Type": "application/json",
+   [learningStateOwnerHeader]: ownerUserId,
   },
   body: JSON.stringify({ state, expectedUpdatedAt }),
  });
 
- const payload = await parseJsonResponse(response, learningStateApiResponseSchema);
-
- return payload;
+ return parseJsonResponse(response, learningStateApiResponseSchema);
 }

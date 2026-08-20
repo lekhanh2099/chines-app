@@ -29,11 +29,16 @@ export async function rateLearningLoopItem(input: {
  rating: "again" | "hard" | "good";
  expectedRevision: number;
 }): Promise<LearningLoopItemRow> {
- const response = await fetch("/api/hanzihome/learning-loop", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ action: "rate", ...input }),
- });
+ let response: Response;
+ try {
+  response = await fetch("/api/hanzihome/learning-loop", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ action: "rate", ...input }),
+  });
+ } catch {
+  throw new Error("Không cập nhật được Learning Loop.");
+ }
  const body: JsonFieldValue = await response.json().catch(() => null);
  if (!response.ok) throw new Error("Không cập nhật được Learning Loop.");
  return itemResponseSchema.parse(body).item;

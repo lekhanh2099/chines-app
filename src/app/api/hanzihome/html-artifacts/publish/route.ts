@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { createHtmlArtifactPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { apiError, privateNoStoreJson } from "@/lib/api/authenticated-route";
 import { publicSupabaseEnv } from "@/lib/env/public";
 import { getSupabaseServerSecret } from "@/lib/env/server";
@@ -243,6 +244,9 @@ export async function GET() {
  if (!user) {
   return jsonError("Unauthorized", 401);
  }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
+ }
 
  return privateNoStoreJson({
   sessionUserId: user.id,
@@ -259,6 +263,11 @@ export async function POST(request: Request) {
 
  if ("response" in authResult) {
   return authResult.response;
+ }
+ if (
+  !(await hasHanziHomeContentCapability(authResult.context.supabase, authResult.context.ownerId))
+ ) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
  const authContext = authResult.context;
 

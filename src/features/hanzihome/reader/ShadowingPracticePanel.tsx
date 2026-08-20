@@ -14,6 +14,7 @@ import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTts
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
 
 import type { ReaderDocumentResource } from "./reader-content-api";
+import { buildReaderSourceHref } from "./reader-source-target";
 import { useShadowingRecorder } from "./useShadowingRecorder";
 
 type ShadowingAttempt = {
@@ -155,7 +156,9 @@ export function ShadowingPracticePanel({
      ? t("errors.unsupported")
      : recorder.error === "recording-failed"
        ? t("errors.recordingFailed")
-       : null;
+       : !recorder.isSupported
+         ? t("errors.unsupported")
+         : null;
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
@@ -231,7 +234,11 @@ export function ShadowingPracticePanel({
        stable_key: `shadowing:${paragraph.id}`,
        kind: "shadowing",
        source_id: paragraph.id,
-       source_href: `/reader?paragraph=${encodeURIComponent(paragraph.id)}`,
+       source_href: buildReaderSourceHref({
+        source: "shadowing",
+        documentId: paragraph.document_id,
+        paragraphId: paragraph.id,
+       }),
        title_zh: "Shadowing",
        title_vi: "Ôn nói theo mẫu",
        prompt_zh: paragraph.zh,

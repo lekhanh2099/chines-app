@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,23 +9,24 @@ import type { ReaderDocumentResource } from "../reader-content-api";
 import type { ReaderAnnotation, ReaderPronunciationAnalysis } from "../runtime/useReaderStudyState";
 
 export function ReaderOverview({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Reader.study.chrome.overview");
+ const chromeT = useTranslations("Reader.study.chrome");
  return (
   <div className="grid gap-4 lg:grid-cols-2">
    <Card variant="subtle" padding="lg" className="grid content-start gap-3">
     <Typography as="h2" variant="cardTitle" weight="black">
-     Bài này là gì?
+     {t("whatIsThis")}
     </Typography>
     <Typography variant="bodySmall" weight="black">
-     {resource.document.genre_vi || "Bài đọc"}
+     {resource.document.genre_vi || chromeT("defaultReading")}
     </Typography>
     <Typography variant="bodySmall" tone="muted">
-     {resource.document.analysis.mainIdeaVi ||
-      "Đọc để nắm nội dung chính và cách triển khai của văn bản."}
+     {resource.document.analysis.mainIdeaVi || t("defaultDescription")}
     </Typography>
    </Card>
    <Card variant="subtle" padding="lg" className="grid content-start gap-3">
     <Typography as="h2" variant="cardTitle" weight="black">
-     Mục tiêu bài học
+     {t("objectives")}
     </Typography>
     {resource.document.objectives_vi.length > 0 ? (
      <ul className="grid gap-2 pl-5 text-sm text-foreground-muted">
@@ -34,7 +36,7 @@ export function ReaderOverview({ resource }: { resource: ReaderDocumentResource 
      </ul>
     ) : (
      <Typography variant="bodySmall" tone="muted">
-      Đọc hiểu nội dung, nhận diện từ vựng trọng tâm và diễn đạt lại ý chính.
+      {t("defaultObjectives")}
      </Typography>
     )}
    </Card>
@@ -43,17 +45,18 @@ export function ReaderOverview({ resource }: { resource: ReaderDocumentResource 
 }
 
 export function ReaderDictation({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Reader.study.chrome.dictation");
  const fullText = resource.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  return (
   <Card variant="section" padding="md" className="grid gap-3">
    <Badge variant="purple" className="justify-self-start">
-    Luyện nghe chép
+    {t("badge")}
    </Badge>
    <Typography as="h3" variant="sectionTitle" weight="black">
-    Nghe và chép lại bài đọc
+    {t("title")}
    </Typography>
    <Typography variant="bodySmall" tone="muted">
-    Mở workspace Dictation với toàn bộ nội dung Reader hiện tại.
+    {t("description")}
    </Typography>
    <div className="flex flex-wrap gap-2">
     <Button type="button" asChild>
@@ -61,12 +64,12 @@ export function ReaderDictation({ resource }: { resource: ReaderDocumentResource
       href={`/dictation?documentId=${encodeURIComponent(resource.document.id)}`}
       prefetch={false}
      >
-      Mở chép chính tả →
+      {t("open")}
      </Link>
     </Button>
     <Button type="button" variant="outline" asChild>
      <Link href={`/tts?text=${encodeURIComponent(fullText)}`} prefetch={false}>
-      Mở tạo giọng đọc
+      {t("openTts")}
      </Link>
     </Button>
    </div>
@@ -81,13 +84,14 @@ export function ReaderAnalysis({
  resource: ReaderDocumentResource;
  analysisBySegmentId: ReadonlyMap<string, ReaderPronunciationAnalysis>;
 }) {
+ const t = useTranslations("Reader.study.chrome.analysis");
  return (
   <Card variant="section" padding="md" className="grid gap-3">
    <Typography as="h3" variant="sectionTitle" weight="black">
-    Phân tích bài đọc
+    {t("title")}
    </Typography>
    <Typography variant="bodySmall" tone="muted">
-    {resource.document.analysis.mainIdeaVi || "Chưa có mô tả phân tích chính."}
+    {resource.document.analysis.mainIdeaVi || t("empty")}
    </Typography>
    {resource.document.analysis.paragraphStructureVi.length > 0 ? (
     <ul className="grid gap-1 pl-5 text-sm text-foreground-muted">
@@ -103,7 +107,7 @@ export function ReaderAnalysis({
    ) : null}
    <div className="grid gap-2 border-t border-border-default pt-3">
     <Typography as="strong" variant="caption" tone="accent">
-     Pinyin theo ngữ cảnh
+     {t("contextualPinyin")}
     </Typography>
     {resource.paragraphs.map((paragraph, index) => {
      const analysis = analysisBySegmentId.get(paragraph.id);
@@ -111,18 +115,18 @@ export function ReaderAnalysis({
      return (
       <div key={paragraph.id} className="flex flex-wrap items-center gap-2">
        <Typography as="span" variant="caption" tone="muted">
-        Đoạn {index + 1}
+        {t("segment", { number: index + 1 })}
        </Typography>
        <Badge variant={analysis.sourcePinyinStatus === "rejected" ? "warning" : "purple"}>
         {analysis.sourcePinyinStatus === "aligned"
-         ? "Pinyin nguồn đã căn"
+         ? t("sourceAligned")
          : analysis.sourcePinyinStatus === "rejected"
-           ? "Pinyin nguồn bị từ chối"
-           : "Pinyin sinh theo ngữ cảnh"}
+           ? t("sourceRejected")
+           : t("generated")}
        </Badge>
        {analysis.unresolved.length > 0 ? (
         <Typography as="span" variant="caption" tone="danger">
-         Chưa nhận diện: {analysis.unresolved.map((item) => item.text).join(" ")}
+         {t("unresolved", { items: analysis.unresolved.map((item) => item.text).join(" ") })}
         </Typography>
        ) : null}
       </div>
@@ -134,11 +138,12 @@ export function ReaderAnalysis({
 }
 
 export function ReaderSummary({ resource }: { resource: ReaderDocumentResource }) {
+ const t = useTranslations("Reader.study.chrome.summary");
  const summary = resource.document.summary;
  return (
   <Card variant="section" padding="md" className="grid gap-3">
    <Typography as="h3" variant="sectionTitle" weight="black">
-    Tóm tắt
+    {t("title")}
    </Typography>
    {summary.modelZh ? (
     <Typography variant="body" lang="zh-CN" wrapping="preWrap">
@@ -154,7 +159,7 @@ export function ReaderSummary({ resource }: { resource: ReaderDocumentResource }
    ) : null}
    {!summary.modelZh && summary.rubricVi.length === 0 ? (
     <Typography variant="bodySmall" tone="muted">
-     Bài này chưa có summary được review.
+     {t("empty")}
     </Typography>
    ) : null}
   </Card>
@@ -168,11 +173,12 @@ export function ReaderNotes({
  annotations: readonly ReaderAnnotation[];
  onRemove: (id: string, revision: number) => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.notes");
  if (annotations.length === 0) {
   return (
    <Card variant="subtle" padding="md">
     <Typography variant="bodySmall" tone="muted">
-     Đoạn hiện tại chưa có ghi chú hoặc đánh dấu.
+     {t("empty")}
     </Typography>
    </Card>
   );
@@ -180,13 +186,13 @@ export function ReaderNotes({
  return (
   <Card variant="subtle" padding="md" className="grid gap-2">
    <Typography as="h2" variant="cardTitle" weight="black">
-    Ghi chú của đoạn này
+    {t("title")}
    </Typography>
    {annotations.map((annotation) => (
     <div key={annotation.id} className="flex min-w-0 items-start justify-between gap-2">
      <div className="grid min-w-0 gap-1">
       <Typography as="p" variant="bodySmall" lang="zh-CN">
-       {annotation.selected_text || "Đoạn đánh dấu"}
+       {annotation.selected_text || t("selectedFallback")}
       </Typography>
       {annotation.note_text ? (
        <Typography as="p" variant="caption" tone="muted">
@@ -200,7 +206,7 @@ export function ReaderNotes({
       variant="ghost"
       onClick={() => onRemove(annotation.id, annotation.revision)}
      >
-      Xoá
+      {t("delete")}
      </Button>
     </div>
    ))}

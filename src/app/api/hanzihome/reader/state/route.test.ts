@@ -1,17 +1,19 @@
 import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { getReaderStateBootstrap, requireAuthenticatedRoute } = vi.hoisted(() => ({
+const { getReaderStateBootstrap, requireAuthenticatedRoute, verifyOwner } = vi.hoisted(() => ({
  getReaderStateBootstrap: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
+ verifyOwner: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-state-repository", () => ({
+vi.mock("@/features/hanzihome/reader/reader-state-bootstrap-repository.server", () => ({
  getReaderStateBootstrap,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner: verifyOwner,
  apiError: (message: string, status: number, code?: string) =>
   Response.json({ error: message, ...(code ? { code } : {}) }, { status }),
  privateNoStoreJson: (body: JsonFieldValue) =>
@@ -21,10 +23,27 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 import { GET } from "./route";
 
 describe("/api/hanzihome/reader/state", () => {
+ const context = { user: { id: "user-1" } };
+
  beforeEach(() => {
   getReaderStateBootstrap.mockReset();
   requireAuthenticatedRoute.mockReset();
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+  verifyOwner.mockReset();
+  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context });
+  verifyOwner.mockReturnValue(null);
+ });
+
+ it("rejects an owner mismatch before bootstrapping Reader state", async () => {
+  verifyOwner.mockReturnValue(
+   Response.json({ error: "owner mismatch", code: "AUTH_OWNER_MISMATCH" }, { status: 412 }),
+  );
+
+  const response = await GET(
+   new Request("https://app.example/api/hanzihome/reader/state?documentId=reader-1"),
+  );
+
+  expect(response.status).toBe(412);
+  expect(getReaderStateBootstrap).not.toHaveBeenCalled();
  });
 
  it("returns the merged state with one repository call", async () => {
@@ -36,7 +55,7 @@ describe("/api/hanzihome/reader/state", () => {
   );
 
   expect(response.status).toBe(200);
-  expect(getReaderStateBootstrap).toHaveBeenCalledWith("reader-1", {});
+  expect(getReaderStateBootstrap).toHaveBeenCalledWith("reader-1", context);
   await expect(response.json()).resolves.toEqual(state);
  });
 

@@ -1,10 +1,11 @@
 "use client";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useRef, useCallback } from "react";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { useCallback } from "react";
 import { pinyin as getPinyin } from "pinyin-pro";
+import { z } from "zod";
+
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { extractChinese } from "@/lib/chinese-utils";
 import { dictionaryQueryKeys } from "@/features/dictionary/query-keys";
 import {
@@ -13,38 +14,37 @@ import {
  getNormalizedDefinitions,
  getNormalizedRelatedCompounds,
  hasInspectorDeepDiveData,
- upsertVocab,
- saveVocabToSrs,
 } from "@/services/vocab.service";
 import { GenerateVocabResponseSchema } from "@/types/database";
 import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 
-// Dedup concurrent AI generation requests for the same hanzi.
-// Multiple hook instances may fire triggerAi() in the same render cycle;
-// this ensures only ONE network request is made per hanzi at a time.
 const pendingAiGenerations = new Map<string, Promise<AiAnalysis>>();
+const saveSrsResponseSchema = z.object({
+ vocabId: z.string().min(1),
+ dictionaryId: z.string().nullable(),
+ contextSchemaAvailable: z.boolean(),
+ noteSchemaAvailable: z.boolean(),
+});
 
 /**
  * Hook: Fetch vocab detail + progress for the dictionary page.
  * Also provides save and AI generation mutations.
  */
 export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
  const chineseText = extractChinese(hanzi) || hanzi;
  const enabled = options?.enabled ?? true;
+ const detailKey = dictionaryQueryKeys.vocabDetail(userId, chineseText);
 
  // ── Main query: vocab data + SRS progress ──
  const query = useQuery({
-  queryKey: dictionaryQueryKeys.vocabDetail(chineseText),
-  enabled,
+  queryKey: detailKey,
+  enabled: enabled && isResolved,
   queryFn: async () => {
    const pinyinText = getPinyin(chineseText);
 
-   const user = await getClientSessionUser(supabase);
-
-   if (!user) {
+   if (!userId) {
     const vocab: VocabData = {
      hanzi: chineseText,
      pinyin: pinyinText,
@@ -62,9 +62,8 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
     };
    }
 
-   const result = await getVocabWithProgress(supabase, chineseText, user.id);
+   const result = await getVocabWithProgress(supabase, chineseText, userId);
 
-   // Ensure pinyin fallback from pinyin-pro
    if (!result.vocab.pinyin) {
     result.vocab.pinyin = pinyinText;
    }
@@ -76,8 +75,9 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
  // ── Mutation: trigger AI analysis ──
  const aiMutation = useMutation({
   mutationFn: async () => {
-   // Reuse in-flight request for the same hanzi
-   const existing = pendingAiGenerations.get(chineseText);
+   if (!userId) throw new Error("Not authenticated");
+   const generationKey = `${userId}:${chineseText}`;
+   const existing = pendingAiGenerations.get(generationKey);
    if (existing) return existing;
 
    const promise = (async () => {
@@ -90,37 +90,33 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
     return GenerateVocabResponseSchema.parse(await res.json()).data;
    })();
 
-   pendingAiGenerations.set(chineseText, promise);
+   pendingAiGenerations.set(generationKey, promise);
    try {
     return await promise;
    } finally {
-    pendingAiGenerations.delete(chineseText);
+    pendingAiGenerations.delete(generationKey);
    }
   },
   onSuccess: (aiData) => {
-   // Update the cached query data optimistically
-   queryClient.setQueryData(
-    dictionaryQueryKeys.vocabDetail(chineseText),
-    (old: typeof query.data) => {
-     if (!old) return old;
-     return {
-      ...old,
-      vocab: {
-       ...old.vocab,
-       pinyin: aiData.pinyin || old.vocab.pinyin,
-       meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
-       ai_analysis: {
-        ...old.vocab.ai_analysis,
-        ...aiData,
-       },
+   queryClient.setQueryData(detailKey, (old: typeof query.data) => {
+    if (!old) return old;
+    return {
+     ...old,
+     vocab: {
+      ...old.vocab,
+      pinyin: aiData.pinyin || old.vocab.pinyin,
+      meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
+      ai_analysis: {
+       ...old.vocab.ai_analysis,
+       ...aiData,
       },
-     };
-    },
-   );
+     },
+    };
+   });
   },
  });
 
- // ── Mutation: save to SRS ──
+ // ── Mutation: save to SRS through the authenticated server boundary ──
  const saveMutation = useMutation({
   mutationFn: async (payload: {
    vocabData: VocabData;
@@ -131,11 +127,25 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
     personalNoteMode?: PersonalNoteMode;
    };
   }) => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) throw new Error("Not authenticated");
+   if (!userId) throw new Error("Not authenticated");
 
-   const result = await saveVocabToSrs(supabase, user.id, payload.vocabData, payload.options);
-   if (!result) throw new Error("Save failed");
+   const response = await fetch("/api/dictionary/srs", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+     "X-HanziHome-Owner-Id": userId,
+    },
+    body: JSON.stringify({
+     hanzi: payload.vocabData.hanzi,
+     contextSentence: payload.options?.contextSentence,
+     contextTranslation: payload.options?.contextTranslation,
+     personalNote: payload.options?.personalNote,
+     personalNoteMode: payload.options?.personalNoteMode,
+    }),
+   });
+
+   if (!response.ok) throw new Error("Save failed");
+   const result = saveSrsResponseSchema.parse(await response.json());
 
    if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
     throw new Error(
@@ -148,39 +158,22 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   onSuccess: (_result, variables) => {
    const payload = variables;
 
-   queryClient.setQueryData(
-    dictionaryQueryKeys.vocabDetail(chineseText),
-    (old: typeof query.data) => {
-     if (!old) return old;
+   queryClient.setQueryData(detailKey, (old: typeof query.data) => {
+    if (!old) return old;
 
-     return {
-      ...old,
-      isSaved: true,
-      personalNote: payload.options?.personalNote ?? old.personalNote,
-      personalNoteMode: payload.options?.personalNoteMode ?? old.personalNoteMode,
-     };
-    },
-   );
+    return {
+     ...old,
+     isSaved: true,
+     personalNote: payload.options?.personalNote ?? old.personalNote,
+     personalNoteMode: payload.options?.personalNoteMode ?? old.personalNoteMode,
+    };
+   });
 
-   // Refetch to update isSaved status
-   queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabDetail(chineseText) });
-   queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabListRoot });
+   queryClient.invalidateQueries({ queryKey: detailKey });
+   queryClient.invalidateQueries({ queryKey: dictionaryQueryKeys.vocabListRoot(userId) });
   },
  });
 
- // ── Mutation: upsert vocab with AI data (used by API route callback) ──
- const upsertMutation = useMutation({
-  mutationFn: async (data: {
-   hanzi: string;
-   pinyin?: string;
-   meaning?: string;
-   ai_analysis?: AiAnalysis;
-  }) => {
-   return upsertVocab(supabase, data);
-  },
- });
-
- // Helper: check if AI data exists
  const hasAiData = useCallback(() => {
   const ai = query.data?.vocab?.ai_analysis;
   if (!ai) return false;
@@ -204,7 +197,6 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
  }, [query.data]);
 
  return {
-  // Query
   vocabData: query.data?.vocab ?? null,
   srsLevel: query.data?.srsLevel ?? null,
   isSaved: query.data?.isSaved ?? null,
@@ -212,18 +204,14 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   personalNoteMode: query.data?.personalNoteMode ?? "important",
   isLoading: query.isLoading,
 
-  // AI
   triggerAi: aiMutation.mutate,
   isAiLoading: aiMutation.isPending,
 
-  // Save
   saveToSrs: saveMutation.mutate,
   isSaving: saveMutation.isPending,
   saveMutation,
 
-  // Utils
   hasAiData,
   hasDeepAiData,
-  upsertMutation,
  };
 }

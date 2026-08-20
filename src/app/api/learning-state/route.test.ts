@@ -17,7 +17,29 @@ vi.mock("@/lib/supabase/server", () => ({
 
 import { GET, PUT } from "./route";
 
-function createReadQuery(updatedAt: string) {
+function learningStateRequest(
+ method: "GET" | "PUT",
+ options?: { ownerUserId?: string; body?: object },
+) {
+ return new Request("https://app.example/api/learning-state", {
+  method,
+  headers: {
+   "X-HanziHome-Owner-Id": options?.ownerUserId ?? "user-1",
+   ...(options?.body ? { "Content-Type": "application/json" } : {}),
+  },
+  body: options?.body ? JSON.stringify(options.body) : undefined,
+ });
+}
+
+function createReadQuery(
+ updatedAt: string,
+ overrides?: Partial<{
+  settings: unknown;
+  progress: unknown;
+  bookmarks: unknown;
+  review_history: unknown;
+ }>,
+) {
  const query = {
   select: vi.fn(),
   eq: vi.fn(),
@@ -27,10 +49,10 @@ function createReadQuery(updatedAt: string) {
  query.eq.mockReturnValue(query);
  query.maybeSingle.mockResolvedValue({
   data: {
-   settings: emptyLearningState.settings,
-   progress: emptyLearningState.progress,
-   bookmarks: emptyLearningState.bookmarks,
-   review_history: emptyLearningState.reviewHistory,
+   settings: overrides?.settings ?? emptyLearningState.settings,
+   progress: overrides?.progress ?? emptyLearningState.progress,
+   bookmarks: overrides?.bookmarks ?? emptyLearningState.bookmarks,
+   review_history: overrides?.review_history ?? emptyLearningState.reviewHistory,
    updated_at: updatedAt,
   },
   error: null,
@@ -47,17 +69,24 @@ describe("/api/learning-state", () => {
  it("rejects unauthenticated reads", async () => {
   supabase.getUser.mockResolvedValue({ data: { user: null } });
 
-  const response = await GET();
+  const response = await GET(learningStateRequest("GET"));
 
   expect(response.status).toBe(401);
   expect(supabase.from).not.toHaveBeenCalled();
  });
 
+ it("rejects a request whose expected owner no longer matches the session", async () => {
+  const response = await GET(learningStateRequest("GET", { ownerUserId: "user-a" }));
+
+  expect(response.status).toBe(412);
+  await expect(response.json()).resolves.toMatchObject({ code: "AUTH_OWNER_MISMATCH" });
+  expect(supabase.from).not.toHaveBeenCalled();
+ });
+
  it("rejects writes without an expected remote version", async () => {
   const response = await PUT(
-   new Request("https://app.example/api/learning-state", {
-    method: "PUT",
-    body: JSON.stringify({ state: emptyLearningState }),
+   learningStateRequest("PUT", {
+    body: { state: emptyLearningState },
    }),
   );
 
@@ -69,7 +98,7 @@ describe("/api/learning-state", () => {
   const query = createReadQuery("2026-08-19T00:00:00.000Z");
   supabase.from.mockReturnValue(query);
 
-  const response = await GET();
+  const response = await GET(learningStateRequest("GET"));
 
   expect(response.status).toBe(200);
   await expect(response.json()).resolves.toEqual({
@@ -78,17 +107,28 @@ describe("/api/learning-state", () => {
   });
  });
 
+ it("fails closed when the authoritative row is incompatible", async () => {
+  const query = createReadQuery("2026-08-19T00:00:00.000Z", {
+   review_history: { legacy: "not-an-array" },
+  });
+  supabase.from.mockReturnValue(query);
+
+  const response = await GET(learningStateRequest("GET"));
+
+  expect(response.status).toBe(500);
+  await expect(response.json()).resolves.toMatchObject({ code: "LEARNING_STATE_INVALID" });
+ });
+
  it("rejects a stale write with the latest state", async () => {
   const query = createReadQuery("2026-08-19T00:00:01.000Z");
   supabase.from.mockReturnValue(query);
 
   const response = await PUT(
-   new Request("https://app.example/api/learning-state", {
-    method: "PUT",
-    body: JSON.stringify({
+   learningStateRequest("PUT", {
+    body: {
      state: emptyLearningState,
      expectedUpdatedAt: "2026-08-19T00:00:00.000Z",
-    }),
+    },
    }),
   );
 

@@ -28,6 +28,7 @@ export function CalendarField({
    helperText={helperText}
   >
    <Input
+    id={field.name}
     type="date"
     name={field.name}
     value={field.state.value || ""}

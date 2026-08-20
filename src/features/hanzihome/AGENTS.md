@@ -24,7 +24,9 @@ Study Mode, Debug/Audit Mode and Edit Mode MUST remain separate.
 - Edit Mode overlays the current study render tree; it MUST NOT replace Study
   Mode.
 
-Supabase normalized tables are the runtime content source.
+Supabase normalized tables are the runtime content source, except for the
+reviewed static Reader/practice corpus. That immutable package is the explicit
+runtime source for Reader content; Supabase owns only its user state.
 
 External static seed artifacts are migration/bootstrap/audit inputs. The app
 MUST NOT:

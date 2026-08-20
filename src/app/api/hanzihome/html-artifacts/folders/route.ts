@@ -7,6 +7,7 @@ import {
  mapHtmlArtifactFolderRows,
 } from "@/features/hanzihome/html-artifacts/html-artifact.mapper";
 import { createHtmlArtifactFolderPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -31,6 +32,9 @@ export async function GET() {
 
  if (!user) {
   return jsonError("Unauthorized", 401);
+ }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
 
  const { data, error } = await supabase
@@ -62,6 +66,9 @@ export async function POST(request: Request) {
 
  if (!user) {
   return jsonError("Unauthorized", 401);
+ }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
 
  const body: JsonFieldValue = await request.json().catch(() => null);

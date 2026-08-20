@@ -28,7 +28,7 @@ function getSupabaseFallbackEncryptionKey(): Buffer | null {
  return createHash("sha256").update(`${FALLBACK_KEY_CONTEXT}\0${secret}`, "utf8").digest();
 }
 
-function getEncryptionKeys(): Buffer[] {
+function getDecryptionKeys(): Buffer[] {
  const dedicated = getDedicatedEncryptionKey();
  const fallback = getSupabaseFallbackEncryptionKey();
  const keys = [dedicated, fallback].filter((key): key is Buffer => key !== null);
@@ -40,6 +40,14 @@ function getEncryptionKeys(): Buffer[] {
  }
 
  return keys;
+}
+
+function getDedicatedEncryptionKeyForNewValue(): Buffer {
+ const key = getDedicatedEncryptionKey();
+ if (key === null) {
+  throw new Error("BYOK_ENCRYPTION_SECRET is required to encrypt a new API key.");
+ }
+ return key;
 }
 
 function decryptWithKey(encoded: string, key: Buffer): string {
@@ -60,7 +68,7 @@ function decryptWithKey(encoded: string, key: Buffer): string {
 
 export function isByokEncryptionConfigured(): boolean {
  try {
-  return getEncryptionKeys().length > 0;
+  return getDedicatedEncryptionKey() !== null;
  } catch {
   return false;
  }
@@ -71,7 +79,7 @@ export function isByokEncryptionConfigured(): boolean {
  *   iv(12 bytes) + authTag(16 bytes) + ciphertext
  */
 export function encryptApiKey(plaintext: string): string {
- const key = getEncryptionKeys()[0];
+ const key = getDedicatedEncryptionKeyForNewValue();
  const iv = randomBytes(IV_LENGTH);
  const cipher = createCipheriv(ALGORITHM, key, iv);
 
@@ -88,7 +96,7 @@ export function encryptApiKey(plaintext: string): string {
  * too so keys encrypted before that configuration change remain readable.
  */
 export function decryptApiKey(encoded: string): string {
- const keys = getEncryptionKeys();
+ const keys = getDecryptionKeys();
  let lastError: Error | null = null;
 
  for (const key of keys) {

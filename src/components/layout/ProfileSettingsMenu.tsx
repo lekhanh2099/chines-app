@@ -4,9 +4,11 @@ import type { JsonFieldValue } from "@/types/json";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import type { User } from "@supabase/supabase-js";
+import { useQueryClient } from "@tanstack/react-query";
 import { LogOut, Mail, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -16,7 +18,7 @@ import {
 } from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
-import { useRouter } from "@/i18n/navigation";
+import { defaultAppLocale, isAppLocale, localizePathname } from "@/i18n/config";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 type ProfileSettingsMenuProps = {
@@ -54,10 +56,11 @@ function getProfile(
 }
 
 export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsMenuProps) {
- const router = useRouter();
  const locale = useLocale();
  const tCommon = useTranslations("Common");
  const tShell = useTranslations("Shell");
+ const queryClient = useQueryClient();
+ const { supabase } = useClientSession();
  const [open, setOpen] = useState(false);
  const profile = getProfile(user, {
   missingEmail: tShell("profile.missingEmail"),
@@ -68,8 +71,6 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
  const showAvatar = Boolean(profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl);
 
  const handleLogout = async () => {
-  const { createClient } = await import("@/lib/supabase/client");
-  const supabase = createClient();
   const { error } = await supabase.auth.signOut();
 
   if (error) {
@@ -77,10 +78,12 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
    return;
   }
 
+  await queryClient.cancelQueries();
+  queryClient.clear();
   setOpen(false);
   toast.success(tShell("profile.logoutSuccess"));
-  router.replace("/login");
-  router.refresh();
+  const loginPath = localizePathname("/login", isAppLocale(locale) ? locale : defaultAppLocale);
+  window.location.replace(loginPath);
  };
 
  return (

@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -32,6 +33,7 @@ export function ReaderOutlineContent({
  document: ReaderDocumentModel;
  onNavigate?: () => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.outline");
  const commands = useReaderRuntimeCommands();
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const activeSegment = document.segments[activeIndex];
@@ -44,9 +46,9 @@ export function ReaderOutlineContent({
   <div className="grid gap-4">
    <div className="grid gap-2">
     <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-     Mục lục đoạn
+     {t("segments")}
     </Typography>
-    <nav aria-label="Mục lục bài đọc" className="grid gap-1">
+    <nav aria-label={t("aria")} className="grid gap-1">
      {document.sections.length > 0
       ? document.sections.map((section, index) => {
          const firstSegmentId = section.segmentIds[0];
@@ -86,7 +88,7 @@ export function ReaderOutlineContent({
           }}
          >
           <span className="tabular-nums">{index + 1}</span>
-          <span>Đoạn {index + 1}</span>
+          <span>{t("segment", { number: index + 1 })}</span>
          </Button>
         ))}
     </nav>
@@ -97,7 +99,7 @@ export function ReaderOutlineContent({
      <Separator />
      <div className="grid gap-3">
       <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-       Thông tin bài
+       {t("metadata")}
       </Typography>
       <dl className="grid gap-3">
        {document.metadata.map((item) => (

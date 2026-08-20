@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { RotateCcw, Volume2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,28 +18,46 @@ import { fetchLearningLoopItems, rateLearningLoopItem } from "./learning-loop-ap
 export function LearningLoopWorkspace() {
  const t = useTranslations("LearningLoop");
  const tts = useSharedMandarinTts();
+ const { userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
  const [error, setError] = useState<string | null>(null);
+ const learningLoopKey = hanzihomeQueryKeys.learningLoopForUser(userId);
  const query = useQuery({
-  queryKey: hanzihomeQueryKeys.learningLoop,
+  queryKey: learningLoopKey,
   queryFn: fetchLearningLoopItems,
+  enabled: isResolved && Boolean(userId),
   staleTime: 0,
  });
  const rateMutation = useMutation({
-  mutationFn: rateLearningLoopItem,
+  networkMode: "always",
+  mutationFn: async (input: Parameters<typeof rateLearningLoopItem>[0]) => {
+   if (typeof navigator !== "undefined" && !navigator.onLine) {
+    throw new Error("Không cập nhật được Learning Loop.");
+   }
+   return rateLearningLoopItem(input);
+  },
   onSuccess: async () => {
    setError(null);
-   await queryClient.invalidateQueries({ queryKey: hanzihomeQueryKeys.learningLoop });
+   await queryClient.invalidateQueries({ queryKey: learningLoopKey });
   },
   onError: (caught: Error) => setError(caught.message),
  });
  const item = useMemo(() => query.data?.[0] ?? null, [query.data]);
 
- if (query.isPending) {
+ if (!isResolved || query.isPending) {
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
      {t("loading")}
+    </Typography>
+   </Card>
+  );
+ }
+ if (!userId) {
+  return (
+   <Card variant="section" padding="lg">
+    <Typography variant="bodySmall" tone="muted">
+     {t("emptyDescription")}
     </Typography>
    </Card>
   );

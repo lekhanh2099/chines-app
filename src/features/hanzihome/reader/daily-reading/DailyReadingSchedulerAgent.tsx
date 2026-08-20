@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
+
 import { captureDailyReadingNow, useDailyReadingV2Settings } from "./daily-reading-v2-client";
 import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
 import {
@@ -14,6 +16,7 @@ import {
 } from "./daily-reading-v2-storage.client";
 
 export function DailyReadingSchedulerAgent() {
+ const { user, isResolved } = useClientSession();
  const { settings } = useDailyReadingV2Settings();
  const [tick, setTick] = useState(0);
 
@@ -30,6 +33,8 @@ export function DailyReadingSchedulerAgent() {
  }, []);
 
  useEffect(() => {
+  if (!isResolved || !user) return;
+
   const release = resolveDailyReadingReleaseState(new Date(), settings.captureTime);
   const shouldCapture = shouldAutoCaptureDailyReading({
    autoCaptureEnabled: settings.autoCaptureEnabled,
@@ -46,7 +51,14 @@ export function DailyReadingSchedulerAgent() {
     return enrichDailyReadingV2LearningSupport(reading.id);
    })
    .catch(() => undefined);
- }, [settings.autoCaptureEnabled, settings.autoEnrichmentEnabled, settings.captureTime, tick]);
+ }, [
+  isResolved,
+  settings.autoCaptureEnabled,
+  settings.autoEnrichmentEnabled,
+  settings.captureTime,
+  tick,
+  user,
+ ]);
 
  return null;
 }

@@ -11,6 +11,7 @@
   "readingPart": " · Reading {reading}"
  },
  "text": {
-  "playFromCharacter": "Play from character {character}"
+  "playFromCharacter": "Play from character {character}",
+  "inspectPinyin": "Check pinyin for {character}"
  }
 }

@@ -21,9 +21,6 @@ import {
  hasInspectorDeepDiveData,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
- syncDictionaryEntryToLegacyVocab,
- upsertDictionaryEntry,
- upsertVocab,
 } from "@/services/vocab.service";
 import type { VocabData } from "@/types/database";
 
@@ -213,42 +210,14 @@ export async function POST(request: NextRequest) {
   }
 
   throwIfAborted(request.signal);
+  source = "ai_deep_transient";
 
-  const persistStartedAt = performance.now();
-  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-   headword: lookupText,
-   pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
-   sinoVietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet,
-   meaning: getPrimaryMeaning(aiLookup.data, ""),
-   ai_analysis: aiLookup.data,
-  });
-
-  const legacyVocabId: { value?: string } = {};
-
-  if (dictionaryEntry) {
-   const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-   legacyVocabId.value = mirrored?.id;
-  } else {
-   const mirrored = await upsertVocab(supabase, {
-    hanzi: lookupText,
-    pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
-    sinoVietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet,
-    meaning: getPrimaryMeaning(aiLookup.data, ""),
-    ai_analysis: aiLookup.data,
-   });
-   legacyVocabId.value = mirrored?.id;
-  }
-  metrics.push({
-   name: "persist",
-   durationMs: performance.now() - persistStartedAt,
-  });
-  source = "ai_deep";
-
+  // This route accepts learner-owned prompt/model settings, so its AI output is
+  // request-local. Only the fixed basic canonicalization path may mutate shared
+  // dictionary rows.
   return finalize(
    buildLookupResponse(
     {
-     id: legacyVocabId.value,
-     dictionary_id: dictionaryEntry?.id,
      hanzi: lookupText,
      pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
      sino_vietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || undefined,

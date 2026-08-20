@@ -3,13 +3,14 @@ import { z } from "zod";
 
 import {
  getReaderProgress,
- saveReaderProgress,
-} from "@/features/hanzihome/reader/reader-state-repository";
+ saveReaderProgressOwnedState,
+} from "@/features/hanzihome/reader/reader-progress-repository.server";
 import { readerAnswersSchema } from "@/features/hanzihome/reader/reader.schemas";
 import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -26,6 +27,8 @@ const payloadSchema = z.strictObject({
 export async function GET(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
 
  const parsed = querySchema.safeParse({
   documentId: new URL(request.url).searchParams.get("documentId"),
@@ -44,6 +47,8 @@ export async function GET(request: Request) {
 export async function PUT(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
 
  const body: JsonFieldValue = await request.json().catch(() => null);
  const parsed = payloadSchema.safeParse(body);
@@ -51,7 +56,7 @@ export async function PUT(request: Request) {
 
  try {
   return privateNoStoreJson({
-   progress: await saveReaderProgress(parsed.data, auth.context),
+   progress: await saveReaderProgressOwnedState(parsed.data, auth.context),
   });
  } catch {
   return apiError("Could not save reader progress", 409, "READER_PROGRESS_CONFLICT");

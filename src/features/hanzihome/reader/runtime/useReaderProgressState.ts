@@ -3,9 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useCallback, useEffect, useMemo, useRef, useState, type SetStateAction } from "react";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { hanzihomeQueryKeys } from "../../query-keys";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
-import { createClient } from "@/lib/supabase/client";
 import type { ReaderDocumentResource } from "../reader-content-api";
 import {
  fetchDailyReadingState,
@@ -41,12 +40,17 @@ export function useReaderProgressState(
  resource: ReaderDocumentResource,
  stateOwner: ReaderProgressOwner,
 ) {
- const stateIdentity = `${stateOwner}:${resource.document.id}`;
+ const { userId, isResolved } = useClientSession();
+ const ownerScope = userId ?? "guest";
+ const stateIdentity = `${ownerScope}:${stateOwner}:${resource.document.id}`;
  const [localState, setLocalState] = useState<{
   identity: string;
   value: ReaderFeatureState | null;
  }>(() => ({ identity: stateIdentity, value: null }));
- const [saveError, setSaveError] = useState("");
+ const [saveErrorState, setSaveErrorState] = useState<{ identity: string; value: string }>(() => ({
+  identity: stateIdentity,
+  value: "",
+ }));
  const revisionRef = useRef(0);
  const saveQueueRef = useRef(Promise.resolve());
  const changeVersionRef = useRef(0);
@@ -54,37 +58,31 @@ export function useReaderProgressState(
  const persistedSnapshotRef = useRef<ReaderFeatureState | null>(null);
  const latestScheduledRef = useRef<{ snapshot: ReaderFeatureState; version: number } | null>(null);
  const autosaveRef = useRef<ReaderAutosaveController | null>(null);
- const supabase = useMemo(() => createClient(), []);
- const sessionQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerSessionUser,
-  queryFn: () => getClientSessionUser(supabase),
-  staleTime: 60_000,
- });
- const hasSession = sessionQuery.data !== null && sessionQuery.data !== undefined;
+ const hasSession = userId !== null;
  const dailyPublishedDate =
   stateOwner === "daily" ? metadataString(resource, "published_date") : null;
  const personalNodeId =
   stateOwner === "personal" ? metadataString(resource, "knowledge_node_id") : null;
  const readerStateQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerState(resource.document.id),
-  queryFn: () => fetchReaderState(resource.document.id),
-  enabled: hasSession && stateOwner === "reader",
+  queryKey: hanzihomeQueryKeys.readerState(userId, resource.document.id),
+  queryFn: () => fetchReaderState(resource.document.id, userId ?? ""),
+  enabled: isResolved && hasSession && stateOwner === "reader",
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,
  });
  const dailyStateQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerDailyState(dailyPublishedDate ?? ""),
-  queryFn: () => fetchDailyReadingState(dailyPublishedDate ?? ""),
-  enabled: hasSession && stateOwner === "daily" && dailyPublishedDate !== null,
+  queryKey: hanzihomeQueryKeys.readerDailyState(userId, dailyPublishedDate ?? ""),
+  queryFn: () => fetchDailyReadingState(dailyPublishedDate ?? "", userId ?? ""),
+  enabled: isResolved && hasSession && stateOwner === "daily" && dailyPublishedDate !== null,
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,
  });
  const personalStateQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerPersonalState(personalNodeId ?? ""),
-  queryFn: () => fetchPersonalLearningState(personalNodeId ?? ""),
-  enabled: hasSession && stateOwner === "personal" && personalNodeId !== null,
+  queryKey: hanzihomeQueryKeys.readerPersonalState(userId, personalNodeId ?? ""),
+  queryFn: () => fetchPersonalLearningState(personalNodeId ?? "", userId ?? ""),
+  enabled: isResolved && hasSession && stateOwner === "personal" && personalNodeId !== null,
   staleTime: 60_000,
   retry: false,
   refetchOnWindowFocus: false,
@@ -111,6 +109,11 @@ export function useReaderProgressState(
  }, [dailyStateQuery.data, personalStateQuery.data, readerStateQuery.data, stateOwner]);
  const activeLocalState = localState.identity === stateIdentity ? localState.value : null;
  const featureState = activeLocalState ?? remoteState ?? DEFAULT_FEATURE_STATE;
+ const saveError = saveErrorState.identity === stateIdentity ? saveErrorState.value : "";
+ const setSaveError = useCallback(
+  (value: string) => setSaveErrorState({ identity: stateIdentity, value }),
+  [stateIdentity],
+ );
  const setFeatureState = useCallback(
   (updater: SetStateAction<ReaderFeatureState>) => {
    changeVersionRef.current += 1;
@@ -126,7 +129,7 @@ export function useReaderProgressState(
   [remoteState, stateIdentity],
  );
  const pending =
-  sessionQuery.isPending ||
+  !isResolved ||
   (hasSession &&
    (stateOwner === "reader"
     ? readerStateQuery.isPending
@@ -159,18 +162,21 @@ export function useReaderProgressState(
   const refreshed = await readerRefetchRef.current();
   return refreshed.data?.progress?.revision ?? null;
  }, []);
- const onAutosaveSaved = useCallback((snapshot: ReaderFeatureState) => {
-  const latest = latestScheduledRef.current;
-  if (latest !== null && readerFeatureStateEqual(latest.snapshot, snapshot)) {
-   persistedVersionRef.current = Math.max(persistedVersionRef.current, latest.version);
-   persistedSnapshotRef.current = snapshot;
-   latestScheduledRef.current = null;
-  }
-  setSaveError("");
- }, []);
+ const onAutosaveSaved = useCallback(
+  (snapshot: ReaderFeatureState) => {
+   const latest = latestScheduledRef.current;
+   if (latest !== null && readerFeatureStateEqual(latest.snapshot, snapshot)) {
+    persistedVersionRef.current = Math.max(persistedVersionRef.current, latest.version);
+    persistedSnapshotRef.current = snapshot;
+    latestScheduledRef.current = null;
+   }
+   setSaveError("");
+  },
+  [setSaveError],
+ );
  const onAutosaveError = useCallback(
   (autosaveError: Error) => setSaveError(autosaveError.message),
-  [],
+  [setSaveError],
  );
 
  useEffect(() => {
@@ -178,15 +184,18 @@ export function useReaderProgressState(
   persistedVersionRef.current = 0;
   persistedSnapshotRef.current = null;
   latestScheduledRef.current = null;
- }, [resource.document.id, stateOwner]);
+  revisionRef.current = 0;
+ }, [stateIdentity]);
  useEffect(() => {
-  if (stateOwner !== "reader") return;
+  if (stateOwner !== "reader" || !userId) return;
+  const ownerUserId = userId;
   const controller = createReaderAutosaveController({
    delayMs: 500,
    initialRevision: 0,
    save: (snapshot, expectedRevision, signal) =>
     saveReaderProgress(
      { documentId: resource.document.id, ...snapshot, expectedRevision },
+     ownerUserId,
      { signal },
     ),
    recoverConflict,
@@ -199,7 +208,7 @@ export function useReaderProgressState(
    controller.dispose();
    if (autosaveRef.current === controller) autosaveRef.current = null;
   };
- }, [onAutosaveError, onAutosaveSaved, recoverConflict, resource.document.id, stateOwner]);
+ }, [onAutosaveError, onAutosaveSaved, recoverConflict, resource.document.id, stateOwner, userId]);
  useEffect(() => {
   if (!pending) revisionRef.current = remoteRevision;
  }, [pending, remoteRevision]);
@@ -234,7 +243,8 @@ export function useReaderProgressState(
   }
  }, [error, featureState, hasSession, pending, stateOwner]);
  useEffect(() => {
-  if (stateOwner === "reader" || !hasSession || pending || error) return;
+  if (stateOwner === "reader" || !userId || pending || error) return;
+  const ownerUserId = userId;
   const version = changeVersionRef.current;
   if (!hasPendingReaderStateChange(version, persistedVersionRef.current)) return;
   const snapshot = readerFeatureStateSchema.parse(featureState);
@@ -245,17 +255,23 @@ export function useReaderProgressState(
     try {
      const saved =
       stateOwner === "daily" && dailyPublishedDate !== null
-       ? await saveDailyReadingState({
-          publishedDate: dailyPublishedDate,
-          state: snapshot,
-          expectedRevision: revisionRef.current,
-         })
+       ? await saveDailyReadingState(
+          {
+           publishedDate: dailyPublishedDate,
+           state: snapshot,
+           expectedRevision: revisionRef.current,
+          },
+          ownerUserId,
+         )
        : stateOwner === "personal" && personalNodeId !== null
-         ? await savePersonalLearningState({
-            nodeId: personalNodeId,
-            state: snapshot,
-            expectedRevision: revisionRef.current,
-           })
+         ? await savePersonalLearningState(
+            {
+             nodeId: personalNodeId,
+             state: snapshot,
+             expectedRevision: revisionRef.current,
+            },
+            ownerUserId,
+           )
          : null;
      revisionRef.current = saved?.revision ?? revisionRef.current;
      persistedVersionRef.current = Math.max(persistedVersionRef.current, version);
@@ -266,12 +282,22 @@ export function useReaderProgressState(
      );
     }
    });
- }, [dailyPublishedDate, error, featureState, hasSession, pending, personalNodeId, stateOwner]);
+ }, [
+  dailyPublishedDate,
+  error,
+  featureState,
+  pending,
+  personalNodeId,
+  setSaveError,
+  stateOwner,
+  userId,
+ ]);
 
  return {
   featureState,
   setFeatureState,
   hasSession,
+  ownerUserId: userId,
   readerState: readerStateQuery.data,
   pending,
   error,

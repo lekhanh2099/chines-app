@@ -1,11 +1,10 @@
 "use client";
 
-import type { JsonFieldValue } from "@/types/json";
-import type { JsonObject } from "@/types/json";
+import type { JsonFieldValue, JsonObject } from "@/types/json";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useRef, useCallback } from "react";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { useCallback } from "react";
+
+import { useClientSession } from "@/components/providers/QueryProvider";
 import {
  getNoteById,
  updateNoteContent,
@@ -24,30 +23,35 @@ type ReadingContent = Parameters<typeof updateReadingContent>[2];
  * Hook: Fetch and manage a single note (editor page).
  */
 export function useNoteDetail(noteId: string) {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId, isResolved } = useClientSession();
  const queryClient = useQueryClient();
+ const detailKey = noteQueryKeys.detail(userId, noteId);
+
+ const requireUser = () => {
+  if (!userId) throw new Error("Not authenticated");
+  return userId;
+ };
 
  // ── Main query ──
  const query = useQuery({
-  queryKey: noteQueryKeys.detail(noteId),
+  queryKey: detailKey,
   queryFn: async () => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) return null;
-   return getNoteById(supabase, noteId, user.id);
+   if (!userId) return null;
+   return getNoteById(supabase, noteId, userId);
   },
-  enabled: !!noteId && noteId !== "new",
+  enabled: isResolved && Boolean(userId) && !!noteId && noteId !== "new",
  });
 
  // ── Mutation: save content (auto-save) ──
  const saveContentMutation = useMutation({
   mutationFn: async (content: JsonObject) => {
+   requireUser();
    const success = await updateNoteContent(supabase, noteId, content);
    if (!success) throw new Error("Failed to save content");
    return content;
   },
   onSuccess: (content) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+   queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -61,55 +65,60 @@ export function useNoteDetail(noteId: string) {
  // ── Mutation: update title ──
  const updateTitleMutation = useMutation({
   mutationFn: async (title: string) => {
+   requireUser();
    const success = await updateNoteTitle(supabase, noteId, title);
    if (!success) throw new Error("Failed to update title");
    return title;
   },
   onSuccess: (title) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+   queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, title };
    });
-   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) });
   },
  });
 
  // ── Mutation: update category ──
  const updateCategoryMutation = useMutation({
   mutationFn: async (category: NoteCategory) => {
+   requireUser();
    const success = await updateNoteCategory(supabase, noteId, category);
    if (!success) throw new Error("Failed to update category");
    return category;
   },
   onSuccess: (category) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+   queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
     return { ...old, category };
    });
-   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) });
   },
  });
 
  // ── Mutation: delete note ──
  const deleteMutation = useMutation({
   mutationFn: async () => {
+   requireUser();
    const success = await deleteNote(supabase, noteId);
    if (!success) throw new Error("Failed to delete note");
   },
   onSuccess: () => {
-   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+   queryClient.removeQueries({ queryKey: detailKey });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) });
   },
  });
 
  // ── Mutation: save reading content (split view left pane) ──
  const saveReadingContentMutation = useMutation({
   mutationFn: async (readingContent: ReadingContent) => {
+   requireUser();
    const success = await updateReadingContent(supabase, noteId, readingContent);
    if (!success) throw new Error("Failed to save reading content");
    return readingContent;
   },
   onSuccess: (readingContent) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+   queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -123,12 +132,13 @@ export function useNoteDetail(noteId: string) {
  // ── Mutation: toggle split view ──
  const updateSplitViewMutation = useMutation({
   mutationFn: async (enabled: boolean) => {
+   requireUser();
    const success = await updateSplitViewEnabled(supabase, noteId, enabled);
    if (!success) throw new Error("Failed to update split view state");
    return enabled;
   },
   onMutate: (enabled) => {
-   queryClient.setQueryData(noteQueryKeys.detail(noteId), (old: JsonFieldValue) => {
+   queryClient.setQueryData(detailKey, (old: JsonFieldValue) => {
     if (!old || typeof old !== "object") return old;
 
     return {
@@ -139,7 +149,6 @@ export function useNoteDetail(noteId: string) {
   },
  });
 
- // Helper for debounced save
  const saveContent = useCallback(
   (content: JsonObject) => {
    saveContentMutation.mutate(content);

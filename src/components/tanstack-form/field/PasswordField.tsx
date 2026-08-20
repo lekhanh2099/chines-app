@@ -33,6 +33,7 @@ export function PasswordField({
   >
    <div className="relative">
     <Input
+     id={field.name}
      type={showPassword ? "text" : "password"}
      name={field.name}
      value={field.state.value || ""}

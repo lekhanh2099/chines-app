@@ -11,9 +11,11 @@ import {
  Type,
  type LucideIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography } from "@/components/ui/typography";
@@ -63,22 +65,6 @@ type ReaderWorkspaceTab =
  | "summary"
  | "notes";
 
-const readerWorkspaceTabs: ReadonlyArray<{
- id: ReaderWorkspaceTab;
- label: string;
- icon: LucideIcon;
-}> = [
- { id: "overview", label: "Tổng quan", icon: Info },
- { id: "reader", label: "Đọc bài", icon: BookOpenText },
- { id: "exercises", label: "Bài tập", icon: Check },
- { id: "vocabulary", label: "Từ vựng", icon: Type },
- { id: "translation", label: "Luyện dịch", icon: Languages },
- { id: "dictation", label: "Chép chính tả", icon: Keyboard },
- { id: "analysis", label: "Mạch bài", icon: List },
- { id: "summary", label: "Tóm tắt", icon: List },
- { id: "notes", label: "Ghi chú", icon: NotebookPen },
-];
-
 function metadataString(resource: ReaderDocumentResource, key: string) {
  const value = resource.document.source_metadata[key];
  return typeof value === "string" ? value : null;
@@ -88,7 +74,7 @@ export function ReaderDocumentStudy({
  resource,
  stateOwner = "reader",
  backHref = "/reader",
- backLabel = "Danh sách Reader",
+ backLabel,
  navigationDocuments = [],
  stickyParentTabs = false,
 }: {
@@ -101,7 +87,7 @@ export function ReaderDocumentStudy({
 }) {
  const study = useReaderStudyState(resource, stateOwner);
  return (
-  <ReaderRuntimeProvider document={study.documentModel} onPlaybackComplete={study.markCompleted}>
+  <ReaderRuntimeProvider document={study.documentModel}>
    <ReaderDocumentStudyContent
     resource={resource}
     stateOwner={stateOwner}
@@ -127,11 +113,28 @@ function ReaderDocumentStudyContent({
  resource: ReaderDocumentResource;
  stateOwner: ReaderProgressOwner;
  backHref: string;
- backLabel: string;
+ backLabel: string | undefined;
  navigationDocuments: ReadonlyArray<ReaderDocumentRow>;
  stickyParentTabs: boolean;
  study: ReturnType<typeof useReaderStudyState>;
 }) {
+ const t = useTranslations("Reader.study");
+ const readerWorkspaceTabs = useMemo<
+  ReadonlyArray<{ id: ReaderWorkspaceTab; label: string; icon: LucideIcon }>
+ >(
+  () => [
+   { id: "overview", label: t("chrome.tabs.overview"), icon: Info },
+   { id: "reader", label: t("chrome.tabs.reader"), icon: BookOpenText },
+   { id: "exercises", label: t("chrome.tabs.exercises"), icon: Check },
+   { id: "vocabulary", label: t("chrome.tabs.vocabulary"), icon: Type },
+   { id: "translation", label: t("chrome.tabs.translation"), icon: Languages },
+   { id: "dictation", label: t("chrome.tabs.dictation"), icon: Keyboard },
+   { id: "analysis", label: t("chrome.tabs.analysis"), icon: List },
+   { id: "summary", label: t("chrome.tabs.summary"), icon: List },
+   { id: "notes", label: t("chrome.tabs.notes"), icon: NotebookPen },
+  ],
+  [t],
+ );
  const commands = useReaderRuntimeCommands();
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
@@ -206,6 +209,7 @@ function ReaderDocumentStudyContent({
       })
     : [],
   [
+   readerWorkspaceTabs,
    resource.exerciseItems.length,
    resource.vocabulary.length,
    study.documentModel.capabilities,
@@ -220,7 +224,7 @@ function ReaderDocumentStudyContent({
  const readerLessonLabel =
   metadataString(resource, "reading_label_vi") ??
   (resource.document.reading_number === null
-   ? "Bài đọc"
+   ? t("chrome.defaultReading")
    : `Bài ${resource.document.reading_number}`);
  const toolbarStickyOffset = workspaceTabsEnabled || stickyParentTabs ? "tabs" : "page";
 
@@ -291,11 +295,25 @@ function ReaderDocumentStudyContent({
    ) : null}
   </>
  );
+ const completionControl = (
+  <div className="flex flex-wrap items-center gap-2">
+   <Badge variant={study.featureState.completed ? "success" : "default"} casing="natural">
+    {study.featureState.completed ? t("completion.done") : t("completion.pending")}
+   </Badge>
+   {!study.featureState.completed ? (
+    <Button type="button" size="toolbar" variant="outline" onClick={study.markCompleted}>
+     <Check />
+     {t("completion.markDone")}
+    </Button>
+   ) : null}
+  </div>
+ );
 
  if (focusMode) {
   return (
    <div className="mx-auto grid min-w-0 max-w-5xl gap-3">
     {readerSurface}
+    {completionControl}
     {selection.popover}
     {pronunciation.popover}
    </div>
@@ -306,7 +324,7 @@ function ReaderDocumentStudyContent({
   <div className="grid min-w-0 gap-3">
    <ReaderHeaderContextBridge
     backHref={backHref}
-    backLabel={backLabel}
+    backLabel={backLabel ?? t("chrome.backToReader")}
     navigationDocuments={navigationDocuments}
     selectedDocument={resource.document}
    />
@@ -318,7 +336,7 @@ function ReaderDocumentStudyContent({
       </Badge>
       {readerUnitNumber ? (
        <Badge variant="accent" casing="natural">
-        Đơn nguyên {readerUnitNumber}
+        {t("chrome.unit", { unit: readerUnitNumber })}
        </Badge>
       ) : null}
      </div>
@@ -332,23 +350,23 @@ function ReaderDocumentStudyContent({
        </PinyinText>
       ) : null}
       {resource.document.title_pinyin ? " · " : ""}
-      {resource.document.title_vi || resource.document.genre_vi || "Bài đọc"}
+      {resource.document.title_vi || resource.document.genre_vi || t("chrome.defaultReading")}
      </Typography>
     </div>
    ) : null}
    {study.pending ? (
     <Typography variant="caption" tone="muted">
-     Đang tải tiến độ Reader; nội dung tĩnh vẫn sẵn sàng để đọc.
+     {t("chrome.progressLoading")}
     </Typography>
    ) : null}
    {study.error ? (
     <Card variant="subtle" padding="sm">
      <Typography variant="caption" tone="warning">
-      Không tải được tiến độ Reader. Bạn vẫn có thể đọc; thay đổi mới sẽ được lưu khi kết nối được
-      khôi phục.
+      {t("chrome.progressUnavailable")}
      </Typography>
     </Card>
    ) : null}
+   {completionControl}
 
    {workspaceTabsEnabled ? (
     <Tabs
@@ -356,7 +374,7 @@ function ReaderDocumentStudyContent({
      items={availableTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
      onValueChange={setWorkspaceTab}
      listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
-     aria-label="Các phần của bài Reader"
+     aria-label={t("chrome.tabsAria")}
     >
      <TabsContent value={activeWorkspaceTab} className="pt-4 sm:pt-5">
       {activeWorkspaceTab === "reader" ? readerSurface : null}

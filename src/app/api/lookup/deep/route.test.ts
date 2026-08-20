@@ -11,6 +11,7 @@ const mocks = vi.hoisted(() => ({
  resolveAiAnalysisRuntime: vi.fn(),
 }));
 
+vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser: mocks.getUser } })),
 }));
@@ -23,7 +24,8 @@ vi.mock("@/services/ai-prompt-settings.service", () => ({
 vi.mock("@/services/ai.service", () => ({ analyzeHanziDetailed: mocks.analyzeHanziDetailed }));
 vi.mock("@/services/vocab.service", () => ({
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
- getPrimaryMeaning: (_analysis: object, fallback: string) => fallback,
+ getPrimaryMeaning: (_analysis: { meaning_summary?: string }, fallback: string) =>
+  _analysis.meaning_summary || fallback,
  getVocabularyAnalysis: (value: { ai_analysis?: object } | null) => value?.ai_analysis ?? {},
  getVocabByHanzi: mocks.getVocabByHanzi,
  hasInspectorDeepDiveData: mocks.hasInspectorDeepDiveData,
@@ -41,33 +43,20 @@ vi.mock("@/services/vocab.service", () => ({
   ai_analysis: entry.ai_analysis ?? {},
  }),
  normalizeDictionaryHeadword: (value: string) => value.trim(),
- syncDictionaryEntryToLegacyVocab: vi.fn(),
- upsertDictionaryEntry: vi.fn(),
- upsertVocab: vi.fn(),
 }));
 
 import { POST } from "./route";
 
-function request(text: string) {
+function request(text: string, wordPromptTemplate?: string) {
  return new NextRequest("https://app.example/api/lookup/deep", {
   method: "POST",
-  body: JSON.stringify({ text }),
+  body: JSON.stringify({ text, ...(wordPromptTemplate ? { wordPromptTemplate } : {}) }),
  });
 }
 
 describe("POST /api/lookup/deep", () => {
  beforeEach(() => {
-  for (const mock of [
-   mocks.analyzeHanziDetailed,
-   mocks.getDictionaryEntryByHeadword,
-   mocks.getUser,
-   mocks.getUserAiPromptSettings,
-   mocks.getVocabByHanzi,
-   mocks.hasInspectorDeepDiveData,
-   mocks.resolveAiAnalysisRuntime,
-  ]) {
-   mock.mockReset();
-  }
+  for (const mock of Object.values(mocks)) mock.mockReset();
   mocks.getUser.mockResolvedValue({ data: { user: { id: "user-1" } } });
   mocks.getDictionaryEntryByHeadword.mockResolvedValue(null);
   mocks.getVocabByHanzi.mockResolvedValue(null);
@@ -109,5 +98,48 @@ describe("POST /api/lookup/deep", () => {
 
   expect(response.status).toBe(409);
   expect(mocks.analyzeHanziDetailed).not.toHaveBeenCalled();
+ });
+
+ it("keeps learner-custom deep analysis transient instead of mutating shared dictionary", async () => {
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({
+   ok: true,
+   credential: {
+    provider: "gemini",
+    apiKey: "redacted",
+    label: "test",
+    defaultModel: "gemini-2.5-flash",
+   },
+  });
+  mocks.analyzeHanziDetailed.mockResolvedValue({
+   data: {
+    hanzi: "尽量",
+    pinyin: "jǐn liàng",
+    sino_vietnamese: "tận lượng",
+    meaning_summary: "cố gắng hết mức",
+    etymology: { type: "test", origin: "", mnemonic: "", explanation: "" },
+    related_compounds: [],
+    synonyms: [],
+    antonyms: [],
+    hsk_level: "5",
+    tocfl_level: "B2",
+    notes: "",
+   },
+   error: null,
+  });
+
+  const response = await POST(request("尽量", "learner custom prompt"));
+  const body = await response.json();
+
+  expect(response.status).toBe(200);
+  expect(mocks.analyzeHanziDetailed).toHaveBeenCalledWith(
+   "尽量",
+   expect.objectContaining({ promptTemplate: "learner custom prompt" }),
+  );
+  expect(body).toMatchObject({
+   cached: false,
+   data: { hanzi: "尽量", meaning: "cố gắng hết mức" },
+  });
+  expect(body.data).not.toHaveProperty("id");
+  expect(body.data).not.toHaveProperty("dictionary_id");
  });
 });

@@ -8,10 +8,11 @@ import { ChevronRight, Menu } from "lucide-react";
 
 import { AppLogoMark } from "@/components/layout/AppLogoMark";
 import {
+ filterNavigationGroupsForContentCapability,
  mobileNavigationItemIds,
  mobileUtilityItemIds,
- navigationGroups,
  navigationItems,
+ type NavigationGroupConfig,
  type NavigationItemConfig,
  type NavigationItemId,
 } from "@/components/layout/navigation-config";
@@ -32,7 +33,7 @@ import { cn } from "@/lib/utils";
 import { appShellStore } from "@/stores/app-shell-store";
 import { sidebarStore } from "@/stores/sidebar-store";
 
-type NavigationGroup = (typeof navigationGroups)[number];
+type NavigationGroup = NavigationGroupConfig;
 type ManualGroupDisclosure = { routeKey: string; groupId: string } | null;
 
 function matchesHref(
@@ -176,21 +177,22 @@ function CollapsedGroupMenu({
  );
 }
 
-export function Sidebar() {
+export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const t = useTranslations("Shell");
+ const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
  const routeKey = `${pathname}?${searchParams.toString()}`;
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
- const activeGroupId = navigationGroups.find((group) =>
+ const activeGroupId = visibleNavigationGroups.find((group) =>
   groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
  const [manualGroupDisclosure, setManualGroupDisclosure] = useState<ManualGroupDisclosure>(null);
  const manuallyExpandedGroupId =
   manualGroupDisclosure?.routeKey === routeKey ? manualGroupDisclosure.groupId : null;
- const openGroupId = manuallyExpandedGroupId ?? activeGroupId ?? navigationGroups[0].id;
+ const openGroupId = manuallyExpandedGroupId ?? activeGroupId ?? visibleNavigationGroups[0]?.id;
 
  useEffect(() => {
   hydrateSidebar();
@@ -236,7 +238,7 @@ export function Sidebar() {
    >
     {isCollapsed ? (
      <div className="grid content-start gap-1.5">
-      {navigationGroups.map((group) => (
+      {visibleNavigationGroups.map((group) => (
        <CollapsedGroupMenu
         key={group.id}
         group={group}
@@ -247,7 +249,7 @@ export function Sidebar() {
      </div>
     ) : (
      <div className="grid content-start gap-1.5">
-      {navigationGroups.map((group) => {
+      {visibleNavigationGroups.map((group) => {
        const groupOpen = group.id === openGroupId;
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
@@ -313,8 +315,9 @@ export function Sidebar() {
  );
 }
 
-export function MobileBottomNavigation() {
+export function MobileBottomNavigation({ canManageContent }: { canManageContent: boolean }) {
  const t = useTranslations("Shell");
+ const visibleNavigationGroups = filterNavigationGroupsForContentCapability(canManageContent);
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
@@ -378,7 +381,7 @@ export function MobileBottomNavigation() {
     <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
      <nav aria-label={t("navigation.aria.all")}>
       <div className="grid gap-5 sm:grid-cols-2">
-       {navigationGroups.map((group) => (
+       {visibleNavigationGroups.map((group) => (
         <section
          key={group.id}
          className="grid content-start gap-2"

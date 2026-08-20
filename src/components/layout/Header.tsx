@@ -1,12 +1,13 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect } from "react";
 import { Languages, LockKeyhole, Moon, Search, Settings, Sun } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
 import { useSelector } from "@tanstack/react-store";
 import { toast } from "sonner";
 
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,8 +27,6 @@ import { dictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { globalSearchStore } from "@/stores/global-search-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
 import {
  AppHeaderBreadcrumb,
  AppHeaderBreadcrumbItem,
@@ -66,6 +65,7 @@ type SimpleHeaderBreadcrumb = {
 
 export function Header() {
  const t = useTranslations("Shell");
+ const { user } = useClientSession();
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { theme, toggleTheme } = useTheme();
  const pathname = usePathname();
@@ -77,18 +77,12 @@ export function Header() {
  const focusModeEnabled = useSelector(focusModeStore, (state) => state.enabled);
  const { setEnabled: setFocusModeEnabled } = focusModeStore.actions;
  const headerToolbarContent = useSelector(headerToolbarStore, (state) => state.content);
- const supabase = useMemo(() => createClient(), []);
- const [user, setUser] = useState<User | null>(null);
  const simpleBreadcrumb = getSimpleHeaderBreadcrumb(pathname);
  const hasRouteToolbar = Boolean(headerToolbarContent || simpleBreadcrumb);
 
  useEffect(() => {
   hydrateLookupSettings();
  }, [hydrateLookupSettings]);
-
- useEffect(() => {
-  void getClientSessionUser(supabase).then(setUser);
- }, [supabase]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {

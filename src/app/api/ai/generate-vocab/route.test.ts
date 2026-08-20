@@ -11,6 +11,7 @@ const mocks = vi.hoisted(() => ({
  resolveAiAnalysisRuntime: vi.fn(),
 }));
 
+vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser: mocks.getUser } })),
 }));
@@ -23,7 +24,6 @@ vi.mock("@/services/ai-prompt-settings.service", () => ({
 vi.mock("@/services/ai.service", () => ({ analyzeHanziDetailed: mocks.analyzeHanziDetailed }));
 vi.mock("@/services/vocab.service", () => ({
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
- getPrimaryMeaning: (_analysis: object, fallback: string) => fallback,
  getVocabByHanzi: mocks.getVocabByHanzi,
  hasInspectorDeepDiveData: mocks.hasInspectorDeepDiveData,
  getVocabularyAnalysis: (value: { ai_analysis?: object } | null) => value?.ai_analysis ?? {},
@@ -40,9 +40,6 @@ vi.mock("@/services/vocab.service", () => ({
   ai_analysis: entry.ai_analysis ?? {},
  }),
  normalizeDictionaryHeadword: (value: string) => value.trim(),
- syncDictionaryEntryToLegacyVocab: vi.fn(),
- upsertDictionaryEntry: vi.fn(),
- upsertVocab: vi.fn(),
 }));
 
 import { POST } from "./route";
@@ -71,17 +68,7 @@ const credential = {
 
 describe("POST /api/ai/generate-vocab", () => {
  beforeEach(() => {
-  for (const mock of [
-   mocks.analyzeHanziDetailed,
-   mocks.getDictionaryEntryByHeadword,
-   mocks.getUser,
-   mocks.getUserAiPromptSettings,
-   mocks.getVocabByHanzi,
-   mocks.hasInspectorDeepDiveData,
-   mocks.resolveAiAnalysisRuntime,
-  ]) {
-   mock.mockReset();
-  }
+  for (const mock of Object.values(mocks)) mock.mockReset();
   mocks.getUser.mockResolvedValue({ data: { user: { id: "user-1" } } });
   mocks.getDictionaryEntryByHeadword.mockResolvedValue(null);
   mocks.getVocabByHanzi.mockResolvedValue(null);
@@ -137,5 +124,25 @@ describe("POST /api/ai/generate-vocab", () => {
    "生僻词",
    expect.objectContaining({ userApiKeys: [credential], allowGroq: true }),
   );
+ });
+
+ it("returns learner-configured deep analysis without promoting it to canonical storage", async () => {
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({
+   ok: true,
+   runtime: { keyId: credential.id },
+   credential,
+  });
+  const analysis = {
+   hanzi: "学习",
+   pinyin: "xué xí",
+   sino_vietnamese: "học tập",
+   meaning_summary: "học; học tập",
+  };
+  mocks.analyzeHanziDetailed.mockResolvedValue({ data: analysis, error: null });
+
+  const response = await POST(request("学习"));
+
+  expect(response.status).toBe(200);
+  await expect(response.json()).resolves.toEqual({ data: analysis, cached: false });
  });
 });

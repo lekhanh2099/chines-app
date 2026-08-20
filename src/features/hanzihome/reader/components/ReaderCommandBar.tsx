@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, List, Pause, Play, RotateCcw, Square } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -40,6 +41,7 @@ export function ReaderCommandBar({
  onOpenShadowing?: () => void;
  stickyOffset?: ReaderToolbarStickyOffset;
 }) {
+ const t = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderRuntimeCommands();
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
@@ -56,12 +58,12 @@ export function ReaderCommandBar({
  };
  const playbackLabel =
   playbackStatus === "playing"
-   ? "Tạm dừng"
+   ? t("pause")
    : playbackStatus === "paused"
-     ? "Tiếp tục"
+     ? t("resume")
      : playbackStatus === "loading"
-       ? "Dừng"
-       : "Nghe bài";
+       ? t("stop")
+       : t("listen");
  const PlaybackIcon =
   playbackStatus === "playing" ? Pause : playbackStatus === "loading" ? Square : Play;
 
@@ -69,14 +71,14 @@ export function ReaderCommandBar({
   <Card variant="section" padding="sm" className={stickyClassName[stickyOffset]}>
    <div className="flex min-w-0 flex-wrap items-center gap-2">
     <Typography variant="caption" tone="muted" weight="black" className="mr-auto">
-     Đoạn {activeIndex + 1} / {segmentCount}
+     {t("segment", { current: activeIndex + 1, total: segmentCount })}
     </Typography>
     <Button
      type="button"
      variant="ghost"
      size="icon-toolbar"
      disabled={isFirst}
-     aria-label="Đoạn trước"
+     aria-label={t("previous")}
      onClick={commands.previous}
     >
      <ChevronLeft />
@@ -95,8 +97,8 @@ export function ReaderCommandBar({
      type="button"
      variant="ghost"
      size="icon-toolbar"
-     aria-label="Nghe lại đoạn"
-     title="Nghe lại đoạn"
+     aria-label={t("restart")}
+     title={t("restart")}
      onClick={commands.restartCurrent}
     >
      <RotateCcw />
@@ -106,8 +108,8 @@ export function ReaderCommandBar({
      variant="ghost"
      size="icon-toolbar"
      disabled={isIdle}
-     aria-label="Dừng đọc"
-     title="Dừng đọc"
+     aria-label={t("stopReading")}
+     title={t("stopReading")}
      onClick={commands.stop}
     >
      <Square />
@@ -117,13 +119,13 @@ export function ReaderCommandBar({
      variant="ghost"
      size="icon-toolbar"
      disabled={isLast}
-     aria-label="Đoạn sau"
+     aria-label={t("next")}
      onClick={commands.next}
     >
      <ChevronRight />
     </Button>
     <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
-     <SelectTrigger size="sm" aria-label="Tốc độ đọc">
+     <SelectTrigger size="sm" aria-label={t("rate")}>
       <SelectValue />
      </SelectTrigger>
      <SelectContent align="end">
@@ -139,8 +141,8 @@ export function ReaderCommandBar({
       type="button"
       variant="outline"
       size="icon-toolbar"
-      aria-label="Mở mục lục đoạn"
-      title="Mục lục đoạn"
+      aria-label={t("openOutline")}
+      title={t("outline")}
       onClick={onOpenOutline}
      >
       <List />

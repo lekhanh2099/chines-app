@@ -3,14 +3,26 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
  analyzeHanziBasicDetailed: vi.fn(),
+ createServiceRoleSupabaseClient: vi.fn(),
  getDictionaryEntryByHeadword: vi.fn(),
  getUser: vi.fn(),
  getVocabByHanzi: vi.fn(),
  resolveAiAnalysisRuntime: vi.fn(),
+ syncDictionaryEntryToLegacyCacheAsServer: vi.fn(),
+ upsertDictionaryEntry: vi.fn(),
+ upsertLegacyVocabularyCacheAsServer: vi.fn(),
 }));
 
+vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser: mocks.getUser } })),
+}));
+vi.mock("@/lib/supabase/service-role.server", () => ({
+ createServiceRoleSupabaseClient: mocks.createServiceRoleSupabaseClient,
+}));
+vi.mock("@/features/dictionary/server/dictionary-persistence.server", () => ({
+ syncDictionaryEntryToLegacyCacheAsServer: mocks.syncDictionaryEntryToLegacyCacheAsServer,
+ upsertLegacyVocabularyCacheAsServer: mocks.upsertLegacyVocabularyCacheAsServer,
 }));
 vi.mock("@/services/ai-analysis-runtime.service", () => ({
  resolveAiAnalysisRuntime: mocks.resolveAiAnalysisRuntime,
@@ -21,7 +33,8 @@ vi.mock("@/services/ai.service", () => ({
 vi.mock("@/services/vocab.service", () => ({
  getBasicVocabData: (value: object) => value,
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
- getPrimaryMeaning: (_analysis: object, fallback: string) => fallback,
+ getPrimaryMeaning: (_analysis: { meaning_summary?: string }, fallback: string) =>
+  _analysis.meaning_summary || fallback,
  getVocabularyAnalysis: () => ({}),
  getVocabByHanzi: mocks.getVocabByHanzi,
  mapDictionaryEntryToVocabData: (entry: { id: string; headword: string }) => ({
@@ -34,9 +47,7 @@ vi.mock("@/services/vocab.service", () => ({
   ai_analysis: {},
  }),
  normalizeDictionaryHeadword: (value: string) => value.trim(),
- syncDictionaryEntryToLegacyVocab: vi.fn(),
- upsertDictionaryEntry: vi.fn(),
- upsertVocab: vi.fn(),
+ upsertDictionaryEntry: mocks.upsertDictionaryEntry,
 }));
 
 import { POST } from "./route";
@@ -49,19 +60,20 @@ function request(body: object) {
 }
 
 describe("POST /api/lookup/basic", () => {
+ const authority = { scope: "service-role" };
+ const credential = {
+  provider: "gemini",
+  apiKey: "redacted",
+  label: "test",
+  defaultModel: "gemini-2.5-flash",
+ };
+
  beforeEach(() => {
-  for (const mock of [
-   mocks.analyzeHanziBasicDetailed,
-   mocks.getDictionaryEntryByHeadword,
-   mocks.getUser,
-   mocks.getVocabByHanzi,
-   mocks.resolveAiAnalysisRuntime,
-  ]) {
-   mock.mockReset();
-  }
+  for (const mock of Object.values(mocks)) mock.mockReset();
   mocks.getUser.mockResolvedValue({ data: { user: { id: "user-1" } } });
   mocks.getDictionaryEntryByHeadword.mockResolvedValue(null);
   mocks.getVocabByHanzi.mockResolvedValue(null);
+  mocks.createServiceRoleSupabaseClient.mockReturnValue(authority);
  });
 
  it("rejects unauthenticated lookups before parsing or querying content", async () => {
@@ -72,6 +84,7 @@ describe("POST /api/lookup/basic", () => {
   expect(response.status).toBe(401);
   await expect(response.json()).resolves.toEqual({ error: "Unauthorized" });
   expect(mocks.resolveAiAnalysisRuntime).not.toHaveBeenCalled();
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
  });
 
  it("rejects invalid lookup payloads at the route boundary", async () => {
@@ -80,6 +93,7 @@ describe("POST /api/lookup/basic", () => {
   expect(response.status).toBe(400);
   await expect(response.json()).resolves.toEqual({ error: "Invalid basic lookup payload" });
   expect(mocks.resolveAiAnalysisRuntime).not.toHaveBeenCalled();
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
  });
 
  it("serves a usable dictionary meaning without requiring any provider key", async () => {
@@ -99,6 +113,7 @@ describe("POST /api/lookup/basic", () => {
   });
   expect(mocks.resolveAiAnalysisRuntime).not.toHaveBeenCalled();
   expect(mocks.analyzeHanziBasicDetailed).not.toHaveBeenCalled();
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
  });
 
  it("returns a missing-key state when AI fallback is actually required", async () => {
@@ -112,5 +127,75 @@ describe("POST /api/lookup/basic", () => {
 
   expect(response.status).toBe(409);
   expect(mocks.analyzeHanziBasicDetailed).not.toHaveBeenCalled();
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
+ });
+
+ it("persists fixed basic word enrichment only through server authority", async () => {
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential });
+  mocks.analyzeHanziBasicDetailed.mockResolvedValue({
+   data: {
+    hanzi: "学习",
+    pinyin: "xué xí",
+    sino_vietnamese: "học tập",
+    meaning_summary: "học; học tập",
+   },
+   error: null,
+  });
+  const canonical = {
+   id: "dictionary-1",
+   headword: "学习",
+   pinyin: "xué xí",
+   sino_vietnamese: "học tập",
+   data: {},
+   lookup_key: "学习",
+   lookup_count: 0,
+   created_at: "2026-08-20T00:00:00.000Z",
+  };
+  mocks.upsertDictionaryEntry.mockResolvedValue(canonical);
+  mocks.syncDictionaryEntryToLegacyCacheAsServer.mockResolvedValue({ id: "vocab-1" });
+
+  const response = await POST(request({ text: "学习" }));
+
+  expect(response.status).toBe(200);
+  expect(mocks.createServiceRoleSupabaseClient).toHaveBeenCalledOnce();
+  expect(mocks.upsertDictionaryEntry).toHaveBeenCalledWith(authority, {
+   headword: "学习",
+   pinyin: "xué xí",
+   sinoVietnamese: "học tập",
+   meaning: "học; học tập",
+   ai_analysis: expect.objectContaining({ meaning_summary: "học; học tập" }),
+  });
+  expect(mocks.syncDictionaryEntryToLegacyCacheAsServer).toHaveBeenCalledWith(authority, canonical);
+  expect(await response.json()).toMatchObject({
+   cached: false,
+   data: { id: "vocab-1", dictionary_id: "dictionary-1", hanzi: "学习" },
+  });
+ });
+
+ it("keeps long selections transient instead of creating shared dictionary rows", async () => {
+  const longSelection =
+   "这是一个用于阅读理解的很长中文句子它不应该作为共享词典词头被保存下来超过三十二个汉字";
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential });
+  mocks.analyzeHanziBasicDetailed.mockResolvedValue({
+   data: {
+    hanzi: longSelection,
+    pinyin: "",
+    meaning_summary: "một câu dài dùng để đọc hiểu",
+   },
+   error: null,
+  });
+
+  const response = await POST(request({ text: longSelection }));
+  const body = await response.json();
+
+  expect(response.status).toBe(200);
+  expect(body).toMatchObject({
+   cached: false,
+   source: "ai_basic_transient",
+   data: { hanzi: longSelection, meaning: "một câu dài dùng để đọc hiểu" },
+  });
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
+  expect(mocks.upsertDictionaryEntry).not.toHaveBeenCalled();
+  expect(mocks.upsertLegacyVocabularyCacheAsServer).not.toHaveBeenCalled();
  });
 });

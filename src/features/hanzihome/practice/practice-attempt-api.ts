@@ -7,6 +7,7 @@ import {
 } from "@/features/hanzihome/reader/reader-state.schemas";
 
 const practiceAttemptPayloadSchema = z.strictObject({
+ attemptId: z.uuid().optional(),
  surface: practiceAttemptSurfaceSchema,
  contentId: z.string().min(1),
  direction: z.string().min(1).nullable(),
@@ -17,6 +18,9 @@ const practiceAttemptPayloadSchema = z.strictObject({
 const practiceAttemptResponseSchema = z.strictObject({ attempt: practiceAttemptRowSchema });
 const practiceAttemptsResponseSchema = z.strictObject({
  attempts: z.array(practiceAttemptRowSchema),
+});
+const practiceAttemptCountResponseSchema = z.strictObject({
+ count: z.number().int().nonnegative(),
 });
 
 export type PracticeAttemptPayload = z.output<typeof practiceAttemptPayloadSchema>;
@@ -50,4 +54,37 @@ export async function fetchPracticeAttempts(input: {
  const value = await response.json().catch(() => null);
  if (!response.ok) throw new Error("Không tải được lịch sử luyện tập.");
  return practiceAttemptsResponseSchema.parse(value).attempts;
+}
+
+export async function fetchRecentPracticeAttempts(input: {
+ surface: z.output<typeof practiceAttemptSurfaceSchema>;
+ limit?: number;
+}) {
+ const limit = Math.max(1, Math.min(input.limit ?? 50, 100));
+ const response = await fetch(
+  `/api/hanzihome/practice/attempts?surface=${encodeURIComponent(input.surface)}&limit=${limit}`,
+  { cache: "no-store" },
+ );
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không tải được lịch sử luyện tập gần đây.");
+ return practiceAttemptsResponseSchema.parse(value).attempts;
+}
+
+export async function fetchPracticeAttemptCount(input: {
+ surface: z.output<typeof practiceAttemptSurfaceSchema>;
+ since: string;
+ until: string;
+}) {
+ const params = new URLSearchParams({
+  mode: "count",
+  surface: input.surface,
+  since: input.since,
+  until: input.until,
+ });
+ const response = await fetch(`/api/hanzihome/practice/attempts?${params.toString()}`, {
+  cache: "no-store",
+ });
+ const value = await response.json().catch(() => null);
+ if (!response.ok) throw new Error("Không đếm được lịch sử luyện tập.");
+ return practiceAttemptCountResponseSchema.parse(value).count;
 }

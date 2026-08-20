@@ -2,20 +2,20 @@ import type { JsonFieldValue } from "@/types/json";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
- listLearningLoopItems,
+ listDueLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
  requireAuthenticatedRoute,
 } = vi.hoisted(() => ({
- listLearningLoopItems: vi.fn(),
+ listDueLearningLoopItems: vi.fn(),
  rateLearningLoopItem: vi.fn(),
  saveLearningLoopItem: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/features/hanzihome/reader/reader-state-repository", () => ({
- listLearningLoopItems,
+vi.mock("@/features/hanzihome/reader/learning-loop-repository", () => ({
+ listDueLearningLoopItems,
  rateLearningLoopItem,
  saveLearningLoopItem,
 }));
@@ -30,20 +30,23 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 import { GET, POST } from "./route";
 
 describe("/api/hanzihome/learning-loop", () => {
+ const authContext = { user: { id: "user-1" }, supabase: {} };
+
  beforeEach(() => {
-  listLearningLoopItems.mockReset();
+  listDueLearningLoopItems.mockReset();
   rateLearningLoopItem.mockReset();
   saveLearningLoopItem.mockReset();
-  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: {} });
+  requireAuthenticatedRoute.mockResolvedValue({ authenticated: true, context: authContext });
  });
 
- it("lists only through the authenticated repository", async () => {
-  listLearningLoopItems.mockResolvedValue([]);
+ it("lists only the authenticated due queue", async () => {
+  listDueLearningLoopItems.mockResolvedValue([]);
 
   const response = await GET();
 
   expect(response.status).toBe(200);
-  expect(listLearningLoopItems).toHaveBeenCalledOnce();
+  expect(listDueLearningLoopItems).toHaveBeenCalledOnce();
+  expect(listDueLearningLoopItems).toHaveBeenCalledWith(authContext);
   await expect(response.json()).resolves.toEqual({ items: [] });
  });
 
@@ -58,11 +61,10 @@ describe("/api/hanzihome/learning-loop", () => {
   );
 
   expect(response.status).toBe(200);
-  expect(rateLearningLoopItem).toHaveBeenCalledWith({
-   itemId: "item-1",
-   rating: "good",
-   expectedRevision: 1,
-  });
+  expect(rateLearningLoopItem).toHaveBeenCalledWith(
+   { itemId: "item-1", rating: "good", expectedRevision: 1 },
+   authContext,
+  );
  });
 
  it("rejects unknown actions without mutating state", async () => {

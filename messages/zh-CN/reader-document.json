@@ -11,6 +11,7 @@
   "readingPart": " · 阅读 {reading}"
  },
  "text": {
-  "playFromCharacter": "从“{character}”开始朗读"
+  "playFromCharacter": "从“{character}”开始朗读",
+  "inspectPinyin": "检查“{character}”的拼音"
  }
 }

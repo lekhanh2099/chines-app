@@ -10,6 +10,7 @@ export default defineConfig({
  test: {
   environment: "node",
   globals: true,
+  exclude: ["node_modules/**", ".next/**", "coverage/**", "dist/**", "e2e/**"],
   coverage: {
    provider: "v8",
    reporter: ["text", "html"],

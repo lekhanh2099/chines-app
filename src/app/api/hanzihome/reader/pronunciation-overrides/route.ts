@@ -5,7 +5,7 @@ import {
  deleteReaderPronunciationOverride,
  listReaderPronunciationOverrides,
  saveReaderPronunciationOverride,
-} from "@/features/hanzihome/reader/reader-state-repository";
+} from "@/features/hanzihome/reader/reader-pronunciation-override-repository.server";
 import {
  apiError,
  privateNoStoreJson,

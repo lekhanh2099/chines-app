@@ -1,4 +1,137 @@
 {
+ "chrome": {
+  "tabs": {
+   "overview": "概览",
+   "reader": "阅读",
+   "exercises": "练习",
+   "vocabulary": "词汇",
+   "translation": "翻译练习",
+   "dictation": "听写",
+   "analysis": "结构",
+   "summary": "总结",
+   "notes": "笔记"
+  },
+  "backToReader": "Reader 目录",
+  "defaultReading": "阅读",
+  "unit": "单元 {unit}",
+  "progressLoading": "正在加载 Reader 进度；静态内容仍可阅读。",
+  "progressUnavailable": "无法加载 Reader 进度。你仍可阅读；连接恢复后会保存新的更改。",
+  "tabsAria": "Reader 分区",
+  "commands": {
+   "segment": "第 {current} / {total} 段",
+   "pause": "暂停",
+   "resume": "继续",
+   "stop": "停止",
+   "listen": "听读",
+   "previous": "上一段",
+   "restart": "重听本段",
+   "stopReading": "停止朗读",
+   "next": "下一段",
+   "rate": "朗读速度",
+   "openOutline": "打开段落目录",
+   "outline": "段落目录"
+  },
+  "surface": {
+   "empty": "此内容暂时没有可阅读的中文段落。",
+   "aria": "中文阅读器",
+   "outlineTitle": "阅读目录"
+  },
+  "tools": {
+   "title": "学习工具",
+   "shortTitle": "工具",
+   "listening": "听力练习",
+   "playAll": "朗读全文",
+   "loop": "循环本段",
+   "autoAdvance": "自动前进",
+   "display": "显示",
+   "focus": "专注",
+   "shadowing": "跟读"
+  },
+  "outline": {
+   "segments": "段落目录",
+   "aria": "阅读目录",
+   "segment": "第 {number} 段",
+   "metadata": "阅读信息"
+  },
+  "segment": {
+   "dialogue": "第 {speaker} 轮",
+   "dialogueFallback": "对话",
+   "reading": "阅读段落"
+  },
+  "overview": {
+   "whatIsThis": "这篇阅读是什么？",
+   "defaultDescription": "通过阅读把握文章主旨和展开方式。",
+   "objectives": "学习目标",
+   "defaultObjectives": "理解内容，识别重点词汇，并表达中心思想。"
+  },
+  "dictation": {
+   "badge": "听写练习",
+   "title": "听读并抄写文章",
+   "description": "使用当前 Reader 全文打开听写工作区。",
+   "open": "打开听写 →",
+   "openTts": "打开语音生成"
+  },
+  "analysis": {
+   "title": "阅读分析",
+   "empty": "暂时没有分析说明。",
+   "contextualPinyin": "语境拼音",
+   "segment": "第 {number} 段",
+   "sourceAligned": "已对齐原始拼音",
+   "sourceRejected": "已拒绝原始拼音",
+   "generated": "已生成语境拼音",
+   "unresolved": "未识别：{items}"
+  },
+  "summary": {
+   "title": "总结",
+   "empty": "这篇阅读暂时没有已审核的总结。"
+  },
+  "notes": {
+   "empty": "当前段落没有笔记或标记。",
+   "title": "本段笔记",
+   "selectedFallback": "标记的段落",
+   "delete": "删除"
+  },
+  "pronunciation": {
+   "appliedSession": "已应用于本次学习",
+   "confirmed": "已确认",
+   "needsReview": "需要检查 · 多音字",
+   "source": "采用原始拼音",
+   "context": "采用语境判断",
+   "missing": "暂无拼音",
+   "description": "拼音是基于语境的建议，不能默认正确。对于多音字，请确认适合当前句子的读音。",
+   "sessionDescription": "此更改仅应用于当前阅读会话，不会保存为长期确认的数据。",
+   "meaning": "语境中的含义",
+   "choose": "为每个字选择读音",
+   "noReading": "没有可用读音。",
+   "openInspector": "打开完整分析",
+   "resetSession": "取消本次应用",
+   "resetPersistent": "取消确认",
+   "close": "关闭",
+   "applySession": "应用于本次学习",
+   "confirm": "确认读音"
+  },
+  "selection": {
+   "missingPinyin": "暂无拼音",
+   "closeAria": "关闭工具栏",
+   "missingMeaning": "此词组暂时没有准确的离线释义。",
+   "actionsAria": "已选段落操作",
+   "lookup": "查词",
+   "highlight": "标记",
+   "note": "笔记",
+   "notePlaceholder": "为所选段落添加笔记…",
+   "noteAria": "所选段落的笔记",
+   "cancel": "取消",
+   "saveNote": "保存笔记",
+   "listen": "听",
+   "review": "复习",
+   "understand": "深入理解"
+  }
+ },
+ "completion": {
+  "done": "已完成",
+  "pending": "未完成",
+  "markDone": "标记为已完成"
+ },
  "exercise": {
   "groupLabels": {
    "notes": "笔记",

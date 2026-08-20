@@ -1,0 +1,1 @@
+-- Auth fixtures are created by scripts/e2e/seed-fixtures.mjs after `supabase db reset`.

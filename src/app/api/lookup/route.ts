@@ -8,7 +8,6 @@ import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.ser
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import {
  getDictionaryEntryByHeadword,
- incrementDictionaryLookupCount,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
  getPrimaryMeaning,
@@ -16,9 +15,6 @@ import {
  getVocabularyAnalysis,
  hasDetailedVocabAnalysis,
  isGenericEnglishFallbackAnalysis,
- syncDictionaryEntryToLegacyVocab,
- upsertDictionaryEntry,
- upsertVocab,
 } from "@/services/vocab.service";
 
 const lookupSchema = z.object({
@@ -86,11 +82,6 @@ export async function POST(request: NextRequest) {
  const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
 
  if (cachedDictionary) {
-  void incrementDictionaryLookupCount(supabase, {
-   id: cachedDictionary.id,
-   lookup_count: cachedDictionary.lookup_count,
-  });
-
   const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);
 
   return NextResponse.json({
@@ -199,42 +190,18 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const aiResult = aiLookup.data;
-
- const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-  headword: lookupText,
-  pinyin: aiResult.pinyin || getPinyin(lookupText),
-  sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-  meaning: getPrimaryMeaning(aiResult, ""),
-  ai_analysis: aiResult,
- });
-
- const legacyVocabId: { value?: string } = {};
-
- if (dictionaryEntry) {
-  const mirrored = await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-  legacyVocabId.value = mirrored?.id;
- } else {
-  const mirrored = await upsertVocab(supabase, {
-   hanzi: lookupText,
-   pinyin: aiResult.pinyin || getPinyin(lookupText),
-   sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-   meaning: getPrimaryMeaning(aiResult, ""),
-   ai_analysis: aiResult,
-  });
-  legacyVocabId.value = mirrored?.id;
- }
-
+ // This legacy route accepts caller/user-owned prompt settings. Its generated
+ // analysis is therefore request-local and cannot mutate shared dictionary data.
  return NextResponse.json({
   cached: false,
   data: {
-   id: legacyVocabId.value,
-   dictionary_id: dictionaryEntry?.id,
+   id: undefined,
+   dictionary_id: undefined,
    hanzi: lookupText,
-   pinyin: aiResult.pinyin || getPinyin(lookupText),
-   sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet || null,
-   meaning: getPrimaryMeaning(aiResult, ""),
-   analysis: aiResult,
+   pinyin: aiLookup.data.pinyin || getPinyin(lookupText),
+   sino_vietnamese: aiLookup.data.sino_vietnamese || aiLookup.data.han_viet || null,
+   meaning: getPrimaryMeaning(aiLookup.data, ""),
+   analysis: aiLookup.data,
   },
  });
 }

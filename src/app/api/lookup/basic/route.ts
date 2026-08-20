@@ -1,7 +1,11 @@
 import type { JsonFieldValue } from "@/types/json";
-import { after, NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
+import {
+ syncDictionaryEntryToLegacyCacheAsServer,
+ upsertLegacyVocabularyCacheAsServer,
+} from "@/features/dictionary/server/dictionary-persistence.server";
 import {
  applyServerTimingHeaders,
  isAbortError,
@@ -9,6 +13,7 @@ import {
  type ServerTimingMetric,
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
+import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 import { logger } from "@/lib/logger";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
@@ -20,9 +25,7 @@ import {
  getVocabByHanzi,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
- syncDictionaryEntryToLegacyVocab,
  upsertDictionaryEntry,
- upsertVocab,
 } from "@/services/vocab.service";
 import type { VocabData } from "@/types/database";
 
@@ -30,6 +33,7 @@ const basicLookupSchema = z.object({
  text: z.string().trim().min(1).max(120),
  lessonId: z.string().trim().min(1).max(200).optional(),
 });
+const maxCanonicalHeadwordLength = 32;
 
 function roundMs(value: number): number {
  return Math.round(value * 100) / 100;
@@ -118,6 +122,7 @@ export async function POST(request: NextRequest) {
   }
 
   lookupText = normalizeDictionaryHeadword(parsed.data.text);
+  const canPersistCanonical = lookupText.length <= maxCanonicalHeadwordLength;
 
   const cacheStartedAt = performance.now();
   if (parsed.data.lessonId) {
@@ -256,31 +261,37 @@ export async function POST(request: NextRequest) {
 
   throwIfAborted(request.signal);
 
-  after(async () => {
-   const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-    headword: lookupText,
-    pinyin: basicVocab.pinyin,
-    sinoVietnamese: basicVocab.sino_vietnamese,
-    meaning: basicVocab.meaning,
-    ai_analysis: basicVocab.ai_analysis,
-   });
+  // Long selections are Reader/selection content, not canonical dictionary
+  // headwords. They can receive a transient basic explanation but cannot create
+  // shared dictionary/cache rows.
+  if (!canPersistCanonical) {
+   source = "ai_basic_transient";
+   return finalize(buildLookupResponse(basicVocab, false, source));
+  }
 
-   if (dictionaryEntry) {
-    await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry);
-    return;
-   }
-
-   await upsertVocab(supabase, {
-    hanzi: basicVocab.hanzi,
-    pinyin: basicVocab.pinyin,
-    sinoVietnamese: basicVocab.sino_vietnamese,
-    meaning: basicVocab.meaning,
-    ai_analysis: basicVocab.ai_analysis,
-   });
+  // Shared dictionary/cache rows are server-owned and only the fixed basic
+  // lexicography prompt is eligible for canonicalization.
+  const canonicalSupabase = createServiceRoleSupabaseClient();
+  const dictionaryEntry = await upsertDictionaryEntry(canonicalSupabase, {
+   headword: lookupText,
+   pinyin: basicVocab.pinyin,
+   sinoVietnamese: basicVocab.sino_vietnamese,
+   meaning: basicVocab.meaning,
+   ai_analysis: basicVocab.ai_analysis,
   });
 
+  const legacyVocab = dictionaryEntry
+   ? await syncDictionaryEntryToLegacyCacheAsServer(canonicalSupabase, dictionaryEntry)
+   : await upsertLegacyVocabularyCacheAsServer(canonicalSupabase, basicVocab);
+
+  const persistedBasicVocab: VocabData = {
+   ...basicVocab,
+   id: legacyVocab?.id,
+   dictionary_id: dictionaryEntry?.id,
+  };
+
   source = "ai_basic";
-  return finalize(buildLookupResponse(basicVocab, false, source));
+  return finalize(buildLookupResponse(persistedBasicVocab, false, source));
  } catch (error) {
   if (isAbortError(error) || request.signal.aborted) {
    source = "aborted";

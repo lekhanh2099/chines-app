@@ -1,9 +1,8 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
+
+import { useClientSession } from "@/components/providers/QueryProvider";
 import {
  deleteNote as deleteNoteRecord,
  getUserNotes,
@@ -17,37 +16,36 @@ import type { NoteCategory } from "@/types/database";
  * Optional `category` filter for grammar/vocab-specific pages.
  */
 export function useNotesList(category?: NoteCategory) {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId, isResolved } = useClientSession();
 
  return useQuery({
-  queryKey: noteQueryKeys.list(category),
+  queryKey: noteQueryKeys.list(userId, category),
+  enabled: isResolved && Boolean(userId),
   queryFn: async () => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) return [];
+   if (!userId) return [];
 
    if (category) {
-    return getNotesByCategory(supabase, user.id, category);
+    return getNotesByCategory(supabase, userId, category);
    }
-   return getUserNotes(supabase, user.id);
+   return getUserNotes(supabase, userId);
   },
  });
 }
 
 export function useDeleteNoteFromList() {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId } = useClientSession();
  const queryClient = useQueryClient();
 
  return useMutation({
   mutationFn: async (noteId: string) => {
+   if (!userId) throw new Error("Not authenticated");
    const success = await deleteNoteRecord(supabase, noteId);
    if (!success) throw new Error("Không thể xóa ghi chú.");
    return noteId;
   },
   onSuccess: (noteId) => {
-   queryClient.removeQueries({ queryKey: noteQueryKeys.detail(noteId) });
-   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+   queryClient.removeQueries({ queryKey: noteQueryKeys.detail(userId, noteId) });
+   queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) });
   },
  });
 }

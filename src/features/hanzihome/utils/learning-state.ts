@@ -1,6 +1,7 @@
 import type {
  LearningProgressItem,
  LearningStatus,
+ LessonTextDisplaySettings,
  UserLearningState,
 } from "@/features/hanzihome/types";
 import { userLearningStateSchema } from "@/features/hanzihome/schemas/learning-state.schema";
@@ -9,6 +10,15 @@ import { z } from "zod";
 type PartialLearningState = z.infer<
  z.ZodOptional<z.ZodNullable<ReturnType<typeof userLearningStateSchema.partial>>>
 >;
+
+export const defaultLessonTextDisplaySettings: LessonTextDisplaySettings = {
+ showPinyin: true,
+ showMeaning: false,
+ showAnswers: false,
+ hanziFont: "kaiti",
+ hanziSize: "3xl",
+ revealMode: "always",
+};
 
 export const emptyLearningState: UserLearningState = {
  settings: {},

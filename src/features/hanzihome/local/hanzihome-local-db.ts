@@ -97,6 +97,34 @@ export async function putInStore(storeName: string, value: JsonFieldValue): Prom
  });
 }
 
+export async function replaceInStoreIf<T>(
+ storeName: string,
+ key: IDBValidKey,
+ schema: z.ZodType<T>,
+ matches: (value: T) => boolean,
+ replace: (value: T) => T,
+): Promise<T | null> {
+ const db = await openHanziHomeLocalDb();
+
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(storeName, "readwrite");
+  const store = tx.objectStore(storeName);
+  const request = store.get(key);
+  let replacement: T | null = null;
+
+  request.onsuccess = () => {
+   const parsed = schema.safeParse(request.result);
+   if (!parsed.success || !matches(parsed.data)) return;
+   replacement = replace(parsed.data);
+   store.put(replacement);
+  };
+  request.onerror = () => reject(request.error);
+  tx.oncomplete = () => resolve(replacement);
+  tx.onerror = () => reject(tx.error);
+  tx.onabort = () => reject(tx.error);
+ });
+}
+
 export async function deleteFromStore(storeName: string, key: IDBValidKey): Promise<void> {
  const db = await openHanziHomeLocalDb();
 
@@ -106,6 +134,33 @@ export async function deleteFromStore(storeName: string, key: IDBValidKey): Prom
   tx.onerror = () => reject(tx.error);
   tx.onabort = () => reject(tx.error);
   tx.objectStore(storeName).delete(key);
+ });
+}
+
+export async function deleteFromStoreIf<T>(
+ storeName: string,
+ key: IDBValidKey,
+ schema: z.ZodType<T>,
+ matches: (value: T) => boolean,
+): Promise<boolean> {
+ const db = await openHanziHomeLocalDb();
+
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(storeName, "readwrite");
+  const store = tx.objectStore(storeName);
+  const request = store.get(key);
+  let deleted = false;
+
+  request.onsuccess = () => {
+   const parsed = schema.safeParse(request.result);
+   if (!parsed.success || !matches(parsed.data)) return;
+   deleted = true;
+   store.delete(key);
+  };
+  request.onerror = () => reject(request.error);
+  tx.oncomplete = () => resolve(deleted);
+  tx.onerror = () => reject(tx.error);
+  tx.onabort = () => reject(tx.error);
  });
 }
 
@@ -120,6 +175,29 @@ export async function getAllFromStore<T>(storeName: string, schema: z.ZodType<T>
   request.onsuccess = () => {
    const parsed = schema.array().safeParse(request.result);
    resolve(parsed.success ? parsed.data : []);
+  };
+  request.onerror = () => reject(request.error);
+ });
+}
+
+export async function getAllFromStoreMatching<T>(
+ storeName: string,
+ schema: z.ZodType<T>,
+): Promise<T[]> {
+ const db = await openHanziHomeLocalDb();
+
+ return new Promise((resolve, reject) => {
+  const tx = db.transaction(storeName, "readonly");
+  const store = tx.objectStore(storeName);
+  const request = store.getAll();
+
+  request.onsuccess = () => {
+   const values: T[] = [];
+   for (const value of request.result) {
+    const parsed = schema.safeParse(value);
+    if (parsed.success) values.push(parsed.data);
+   }
+   resolve(values);
   };
   request.onerror = () => reject(request.error);
  });

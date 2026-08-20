@@ -9,7 +9,6 @@ import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.ser
 import {
  getDictionaryEntryByHeadword,
  getUserVocabProgressRecord,
- incrementDictionaryLookupCount,
  getPrimaryMeaning,
  getNormalizedDefinitions,
  getNormalizedRadicals,
@@ -19,9 +18,6 @@ import {
  isGenericEnglishFallbackAnalysis,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
- syncDictionaryEntryToLegacyVocab,
- upsertDictionaryEntry,
- upsertVocab,
 } from "@/services/vocab.service";
 import type {
  PersonalNoteMode,
@@ -143,14 +139,6 @@ export async function POST(request: NextRequest) {
  if (resolvedMode === "word") {
   const lookupText = normalizeDictionaryHeadword(normalizedChinese || rawSelection);
   const cachedDictionary = await getDictionaryEntryByHeadword(supabase, lookupText);
-
-  if (cachedDictionary) {
-   void incrementDictionaryLookupCount(supabase, {
-    id: cachedDictionary.id,
-    lookup_count: cachedDictionary.lookup_count,
-   });
-  }
-
   const existing = cachedDictionary ? null : await getVocabByHanzi(supabase, lookupText);
   const cachedDictionaryVocab = cachedDictionary
    ? mapDictionaryEntryToVocabData(cachedDictionary)
@@ -211,33 +199,11 @@ export async function POST(request: NextRequest) {
    }
 
    const aiResult = aiLookup.data;
-   const meaning = getPrimaryMeaning(aiResult, existingMeaning);
-
-   const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-    headword: lookupText,
-    pinyin: aiResult.pinyin || vocab.pinyin,
-    sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-    meaning,
-    ai_analysis: aiResult,
-   });
-
-   const upsertResult = dictionaryEntry
-    ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
-    : await upsertVocab(supabase, {
-       hanzi: lookupText,
-       pinyin: aiResult.pinyin || vocab.pinyin,
-       sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-       meaning,
-       ai_analysis: aiResult,
-      });
-
    vocab = {
-    id: upsertResult?.id || existing?.id,
-    dictionary_id: dictionaryEntry?.id || vocab.dictionary_id,
-    hanzi: lookupText,
+    ...vocab,
     pinyin: aiResult.pinyin || vocab.pinyin,
     sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-    meaning,
+    meaning: getPrimaryMeaning(aiResult, existingMeaning),
     ai_analysis: aiResult,
    };
   }

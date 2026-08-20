@@ -1,7 +1,6 @@
 import type { FieldItemProps } from "./FieldItem";
 import { FieldItem } from "./FieldItem";
 import { useFieldContext } from "../hooks/form-context";
-import { useId } from "react";
 import { Textarea } from "@/components/ui/textarea";
 
 type ControlledTextareaProps = {
@@ -18,7 +17,6 @@ export function TextareaField({
  ...rest
 }: Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, keyof ControlledTextareaProps> &
  FieldItemProps) {
- const id = useId();
  const field = useFieldContext<string>();
 
  return (
@@ -30,7 +28,7 @@ export function TextareaField({
    helperText={helperText}
   >
    <Textarea
-    id={id}
+    id={field.name}
     name={field.name}
     value={field.state.value}
     aria-invalid={!field.state.meta.isValid}

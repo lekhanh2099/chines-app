@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useMemo, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -295,6 +296,7 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
  analysis?: ReaderPronunciationAnalysis;
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.segment");
  const commands = useReaderRuntimeCommands();
  const localPronunciationOverrides = useReaderPronunciationSessionOverrides(segment.id);
  const playbackProgress = useReaderRuntimeSelector((state) =>
@@ -342,7 +344,9 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
      tracking="wide"
      transform="uppercase"
     >
-     {segment.kind === "dialogue-turn" ? `Lượt ${segment.speaker?.label ?? "thoại"}` : "Đoạn đọc"}
+     {segment.kind === "dialogue-turn"
+      ? t("dialogue", { speaker: segment.speaker?.label ?? t("dialogueFallback") })
+      : t("reading")}
     </StudyInstructionText>
     {segment.role ? (
      <StudyInstructionText variant="caption" tone="muted" weight="semibold">

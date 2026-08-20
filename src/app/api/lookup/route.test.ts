@@ -8,10 +8,10 @@ const mocks = vi.hoisted(() => ({
  getUser: vi.fn(),
  getUserAiPromptSettings: vi.fn(),
  getVocabByHanzi: vi.fn(),
- incrementDictionaryLookupCount: vi.fn(),
  resolveAiAnalysisRuntime: vi.fn(),
 }));
 
+vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser: mocks.getUser } })),
 }));
@@ -27,7 +27,6 @@ vi.mock("@/services/ai.service", () => ({
 }));
 vi.mock("@/services/vocab.service", () => ({
  getDictionaryEntryByHeadword: mocks.getDictionaryEntryByHeadword,
- incrementDictionaryLookupCount: mocks.incrementDictionaryLookupCount,
  mapDictionaryEntryToVocabData: (entry: { id: string; headword: string }) => ({
   id: undefined,
   dictionary_id: entry.id,
@@ -38,14 +37,12 @@ vi.mock("@/services/vocab.service", () => ({
   ai_analysis: {},
  }),
  normalizeDictionaryHeadword: (value: string) => value.trim(),
- getPrimaryMeaning: (_analysis: object, fallback: string) => fallback,
+ getPrimaryMeaning: (_analysis: { meaning_summary?: string }, fallback: string) =>
+  _analysis.meaning_summary || fallback,
  getVocabByHanzi: mocks.getVocabByHanzi,
  getVocabularyAnalysis: () => ({}),
  hasDetailedVocabAnalysis: () => false,
  isGenericEnglishFallbackAnalysis: () => false,
- syncDictionaryEntryToLegacyVocab: vi.fn(),
- upsertDictionaryEntry: vi.fn(),
- upsertVocab: vi.fn(),
 }));
 
 import { POST } from "./route";
@@ -59,18 +56,7 @@ function request(body: object) {
 
 describe("POST /api/lookup", () => {
  beforeEach(() => {
-  for (const mock of [
-   mocks.analyzeHanziDetailed,
-   mocks.analyzeSentenceDetailed,
-   mocks.getDictionaryEntryByHeadword,
-   mocks.getUser,
-   mocks.getUserAiPromptSettings,
-   mocks.getVocabByHanzi,
-   mocks.incrementDictionaryLookupCount,
-   mocks.resolveAiAnalysisRuntime,
-  ]) {
-   mock.mockReset();
-  }
+  for (const mock of Object.values(mocks)) mock.mockReset();
   mocks.getUser.mockResolvedValue({ data: { user: { id: "user-1" } } });
   mocks.getDictionaryEntryByHeadword.mockResolvedValue(null);
   mocks.getVocabByHanzi.mockResolvedValue(null);
@@ -129,5 +115,43 @@ describe("POST /api/lookup", () => {
 
   expect(response.status).toBe(409);
   expect(mocks.analyzeSentenceDetailed).not.toHaveBeenCalled();
+ });
+
+ it("keeps learner-owned word enrichment transient", async () => {
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({
+   ok: true,
+   credential: {
+    provider: "gemini",
+    apiKey: "redacted",
+    label: "test",
+    defaultModel: "gemini-2.5-flash",
+   },
+  });
+  mocks.analyzeHanziDetailed.mockResolvedValue({
+   data: {
+    hanzi: "学习",
+    pinyin: "xué xí",
+    sino_vietnamese: "học tập",
+    meaning_summary: "học; học tập",
+   },
+   error: null,
+  });
+
+  const response = await POST(
+   request({ text: "学习", type: "word", wordPromptTemplate: "learner custom prompt" }),
+  );
+  const body = await response.json();
+
+  expect(response.status).toBe(200);
+  expect(mocks.analyzeHanziDetailed).toHaveBeenCalledWith(
+   "学习",
+   expect.objectContaining({ promptTemplate: "learner custom prompt" }),
+  );
+  expect(body).toMatchObject({
+   cached: false,
+   data: { hanzi: "学习", pinyin: "xué xí", meaning: "học; học tập" },
+  });
+  expect(body.data).not.toHaveProperty("id");
+  expect(body.data).not.toHaveProperty("dictionary_id");
  });
 });

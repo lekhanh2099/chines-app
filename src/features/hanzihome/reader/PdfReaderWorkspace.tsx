@@ -24,6 +24,7 @@ import {
  type TouchEvent,
  type WheelEvent,
 } from "react";
+import { useTranslations } from "next-intl";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Badge } from "@/components/ui/badge";
@@ -104,11 +105,11 @@ type PdfReaderWorkspaceProps = {
 
 export function PdfReaderWorkspace({
  initialAssetId,
- heading = "Tài liệu Hán ngữ",
- description = "Trang preview đã được kiểm checksum; mở PDF gốc khi cần chuyển tới trang bất kỳ.",
- badgeLabel = "Reader PDF",
+ heading,
+ description,
+ badgeLabel,
  backHref,
- backLabel = "Quay lại",
+ backLabel,
  metadata,
  notice,
  studyTasks = [],
@@ -116,6 +117,11 @@ export function PdfReaderWorkspace({
  initialAssets,
  showAssetPicker = true,
 }: PdfReaderWorkspaceProps) {
+ const t = useTranslations("Reader.pdf");
+ const resolvedHeading = heading ?? t("heading");
+ const resolvedDescription = description ?? t("description");
+ const resolvedBadgeLabel = badgeLabel ?? t("badge");
+ const resolvedBackLabel = backLabel ?? t("back");
  const assets = initialAssets;
  const [selectedAssetId, setSelectedAssetId] = useState(initialAssetId ?? assets[0]?.id ?? "");
  const selectedAsset = useMemo(
@@ -127,7 +133,7 @@ export function PdfReaderWorkspace({
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Chưa có tài liệu PDF được import.
+     {t("noAssets")}
     </Typography>
    </Card>
   );
@@ -146,17 +152,17 @@ export function PdfReaderWorkspace({
         asChild
         className="justify-self-start justify-self-start"
        >
-        <a href={backHref}>{backLabel}</a>
+        <a href={backHref}>{resolvedBackLabel}</a>
        </Button>
       ) : null}
       <Badge variant="purple" className="justify-self-start">
-       {badgeLabel}
+       {resolvedBadgeLabel}
       </Badge>
       <Typography as="h1" variant="sectionTitle" weight="black">
-       {heading}
+       {resolvedHeading}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       {metadata ?? description}
+       {metadata ?? resolvedDescription}
       </Typography>
      </div>
      <div className="flex max-w-full flex-wrap items-start justify-end gap-2">
@@ -166,7 +172,7 @@ export function PdfReaderWorkspace({
          render={
           <Button type="button" variant="outline" size="sm">
            <Info data-icon="inline-start" />
-           Hướng dẫn luyện
+           {t("guide")}
           </Button>
          }
         />
@@ -197,14 +203,14 @@ export function PdfReaderWorkspace({
         ))}
        </div>
       ) : notice ? null : (
-       <Badge>{assets.length} trang preview</Badge>
+       <Badge>{t("previewPages", { count: assets.length })}</Badge>
       )}
      </div>
     </div>
     {showAssetPicker ? (
      <div
       className="flex max-w-full gap-2 overflow-x-auto pb-1 scrollbar-soft"
-      aria-label="Chọn trang PDF"
+      aria-label={t("pagePicker")}
      >
       {assets.map((asset) => (
        <Button
@@ -227,6 +233,7 @@ export function PdfReaderWorkspace({
 }
 
 function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
+ const t = useTranslations("Reader.pdf");
  const viewerRef = useRef<HTMLElement>(null);
  const pageRef = useRef<HTMLDivElement>(null);
  const activeStrokeRef = useRef("");
@@ -285,12 +292,12 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
      setSaveError("");
     } catch (error) {
      pendingSaveRef.current = null;
-     setSaveError(error instanceof Error ? error.message : "Không lưu được ghi chú PDF.");
+     setSaveError(error instanceof Error ? error.message : t("annotationError"));
     }
    }
    savingRef.current = false;
   })();
- }, [annotationQuery.isSuccess, asset.pdfPage, assetId, localStrokes, queryClient]);
+ }, [annotationQuery.isSuccess, asset.pdfPage, assetId, localStrokes, queryClient, t]);
 
  useEffect(() => {
   const syncFullscreen = () => setIsFullscreen(document.fullscreenElement === viewerRef.current);
@@ -423,7 +430,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       {asset.title}
      </Typography>
      <Typography as="p" variant="caption" tone="muted">
-      Trang in {asset.printedPage} · PDF {asset.pdfPage}
+      {t("pageLabel", { printed: asset.printedPage, pdf: asset.pdfPage })}
      </Typography>
     </div>
     <div className="flex min-w-0 flex-wrap items-center gap-1">
@@ -431,7 +438,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       type="button"
       variant="ghost"
       size="icon-toolbar"
-      aria-label="Thu nhỏ PDF"
+      aria-label={t("zoomOut")}
       disabled={!fitToContainer && zoom <= PDF_MIN_ZOOM}
       onClick={() => {
        setFitToContainer(false);
@@ -441,13 +448,13 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       <ZoomOut />
      </Button>
      <output className="min-w-14 text-center text-xs font-bold" aria-live="polite">
-      {fitToContainer ? "Vừa khung" : `${Math.round(zoom)}%`}
+      {fitToContainer ? t("fitWidth") : `${Math.round(zoom)}%`}
      </output>
      <Button
       type="button"
       variant="ghost"
       size="icon-toolbar"
-      aria-label="Phóng to PDF"
+      aria-label={t("zoomIn")}
       disabled={!fitToContainer && zoom >= PDF_MAX_ZOOM}
       onClick={() => {
        setFitToContainer(false);
@@ -462,9 +469,15 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       size="sm"
       onClick={() => setFitToContainer((current) => !current)}
      >
-      Vừa trang
+      {t("fitPage")}
      </Button>
-     <Button type="button" variant="ghost" size="icon-toolbar" aria-label="Mở PDF gốc" asChild>
+     <Button
+      type="button"
+      variant="ghost"
+      size="icon-toolbar"
+      aria-label={t("openOriginal")}
+      asChild
+     >
       <a href={pdfHref(asset)} target="_blank" rel="noreferrer">
        <ExternalLink />
       </a>
@@ -473,7 +486,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       type="button"
       variant="ghost"
       size="icon-toolbar"
-      aria-label="Toàn màn hình"
+      aria-label={t("fullscreen")}
       onClick={() => void toggleFullscreen()}
      >
       <Expand />
@@ -483,7 +496,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
 
    {annotationQuery.isError ? (
     <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
-     Không tải được ghi chú PDF; nét mới sẽ được giữ trong phiên này.
+     {t("annotationError")}
     </Typography>
    ) : saveError ? (
     <Typography as="p" variant="caption" tone="danger" className="px-3 pt-2 sm:px-4">
@@ -511,7 +524,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant={drawingTool === null ? "active" : "ghost"}
-       aria-label="Di chuyển PDF"
+       aria-label={t("pan")}
        onClick={() => setDrawingTool(null)}
       >
        <Hand />
@@ -520,7 +533,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant={drawingTool === "pen" ? "active" : "ghost"}
-       aria-label="Bút vẽ"
+       aria-label={t("pen")}
        onClick={() => setDrawingTool("pen")}
       >
        <Pen />
@@ -529,7 +542,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant={drawingTool === "highlighter" ? "active" : "ghost"}
-       aria-label="Bút highlight"
+       aria-label={t("highlighter")}
        onClick={() => setDrawingTool("highlighter")}
       >
        <Highlighter />
@@ -538,7 +551,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant={drawingTool === "eraser" ? "active" : "ghost"}
-       aria-label="Tẩy"
+       aria-label={t("eraser")}
        onClick={() => setDrawingTool("eraser")}
       >
        <Eraser />
@@ -548,7 +561,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant="ghost"
-       aria-label="Hoàn tác"
+       aria-label={t("undo")}
        disabled={past.length === 0}
        onClick={undo}
       >
@@ -558,7 +571,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant="ghost"
-       aria-label="Làm lại"
+       aria-label={t("redo")}
        disabled={future.length === 0}
        onClick={redo}
       >
@@ -568,7 +581,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant="ghost"
-       aria-label="Xóa nét vẽ"
+       aria-label={t("clear")}
        disabled={strokes.length === 0}
        onClick={clear}
       >
@@ -578,7 +591,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        type="button"
        size="icon-toolbar"
        variant={touchInk ? "active" : "ghost"}
-       aria-label="Cho phép viết bằng cảm ứng"
+       aria-label={t("touch")}
        aria-pressed={touchInk}
        onClick={() => setTouchInk((current) => !current)}
       >
@@ -592,7 +605,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       padding="sm"
       className="sticky top-16 z-20 flex max-w-full flex-wrap items-center justify-center gap-2 self-center"
      >
-      <div className="flex items-center gap-1" aria-label="Màu bút">
+      <div className="flex items-center gap-1" aria-label={t("penColor")}>
        {PEN_COLORS.map((preset) => (
         <Button
          key={preset}
@@ -610,18 +623,18 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
        <Input
         type="color"
         value={color}
-        aria-label="Màu tùy chỉnh"
+        aria-label={t("customColor")}
         onChange={(event) => setColor(event.target.value)}
        />
       </div>
       <label className="flex min-w-44 items-center gap-2 text-xs font-bold">
-       <span>Độ dày {width}</span>
+       <span>{t("strokeWidth", { width })}</span>
        <Input
         type="range"
         min={1}
         max={12}
         value={width}
-        aria-label="Độ dày nét bút"
+        aria-label={t("strokeWidth", { width })}
         onChange={(event) => setWidth(Number(event.target.value))}
        />
       </label>
@@ -635,13 +648,13 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       className="sticky top-16 z-20 flex max-w-xs items-center gap-2 self-center"
      >
       <label>
-       <span>Cỡ tẩy {eraserSize}</span>
+       <span>{t("eraserSize", { size: eraserSize })}</span>
        <Input
         type="range"
         min={12}
         max={56}
         value={eraserSize}
-        aria-label="Cỡ tẩy"
+        aria-label={t("eraserSize", { size: eraserSize })}
         onChange={(event) => setEraserSize(Number(event.target.value))}
        />
       </label>
@@ -660,12 +673,12 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
       {imageFailed ? (
        <div className="grid min-h-[60dvh] place-content-center gap-3 p-8 text-center">
         <Typography variant="bodySmall" tone="muted">
-         Không tải được trang preview.
+         {t("previewError")}
         </Typography>
         <Button type="button" variant="outline" asChild>
          <a href={pdfHref(asset)} target="_blank" rel="noreferrer">
           <Download data-icon="inline-start" />
-          Mở PDF gốc
+          {t("originalPdf")}
          </a>
         </Button>
        </div>
@@ -680,7 +693,7 @@ function PdfPageViewer({ asset }: { asset: ReaderPdfAsset }) {
          onError={() => setImageFailed(true)}
         />
         <svg
-         aria-label="Lớp ghi chú PDF"
+         aria-label={t("annotationLayer")}
          className={cn(
           "pointer-events-none absolute inset-0 size-full",
           drawingTool !== null && "pointer-events-auto cursor-crosshair",

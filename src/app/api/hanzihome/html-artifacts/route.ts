@@ -7,6 +7,7 @@ import {
  mapHtmlArtifactSummaryRows,
 } from "@/features/hanzihome/html-artifacts/html-artifact.mapper";
 import { createHtmlArtifactPayloadSchema } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import {
  apiError,
  privateNoStoreJson,
@@ -44,6 +45,9 @@ export async function GET(request: Request) {
  const auth = await requireSessionOrBearerAuthenticatedRoute(request);
  if (!auth.authenticated) return auth.response;
  const { supabase, user } = auth.context;
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
+ }
 
  const url = new URL(request.url);
  const limit = parseLimit(url.searchParams.get("limit"));
@@ -93,8 +97,9 @@ export async function POST(request: Request) {
   data: { user },
  } = await supabase.auth.getUser();
 
- if (!user) {
-  return jsonError("Unauthorized", 401);
+ if (!user) return jsonError("Unauthorized", 401);
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
 
  const body: JsonFieldValue = await request.json().catch(() => null);

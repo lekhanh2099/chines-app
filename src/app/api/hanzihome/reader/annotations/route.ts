@@ -4,7 +4,7 @@ import { z } from "zod";
 import {
  createReaderAnnotation,
  listReaderAnnotations,
-} from "@/features/hanzihome/reader/reader-state-repository";
+} from "@/features/hanzihome/reader/reader-annotation-repository.server";
 import { JsonObjectSchema } from "@/types/json";
 import {
  apiError,

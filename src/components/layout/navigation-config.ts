@@ -175,12 +175,24 @@ export const navigationItems = {
 
 export type NavigationItemId = keyof typeof navigationItems;
 
+export const contentCapabilityNavigationItemIds: readonly NavigationItemId[] = [
+ "dataQuality",
+ "htmlArtifacts",
+ "apiDocs",
+] satisfies readonly NavigationItemId[];
+
+export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
+ "readerCourse",
+ "readerPractice",
+ "readerMock",
+] satisfies readonly NavigationItemId[];
+
 type NavigationSectionConfig = {
  id: string;
  messageKey: NavigationSectionMessageKey;
  itemIds: readonly NavigationItemId[];
 };
-type NavigationGroupConfig = {
+export type NavigationGroupConfig = {
  id: string;
  messageKey: NavigationGroupMessageKey;
  icon: typeof Home;
@@ -213,12 +225,7 @@ export const navigationGroups = [
    {
     id: "reading-library",
     messageKey: "navigation.sections.readingLibrary",
-    itemIds: ["reader", "readerCourse", "dailyReading"],
-   },
-   {
-    id: "reading-practice",
-    messageKey: "navigation.sections.readingPractice",
-    itemIds: ["readerPractice", "readerMock"],
+    itemIds: ["reader", "dailyReading"],
    },
   ],
  },
@@ -291,6 +298,28 @@ export const navigationGroups = [
   ],
  },
 ] satisfies readonly NavigationGroupConfig[];
+
+function requiresContentCapability(itemId: NavigationItemId) {
+ return contentCapabilityNavigationItemIds.includes(itemId);
+}
+
+export function filterNavigationGroupsForContentCapability(
+ canManageContent: boolean,
+): readonly NavigationGroupConfig[] {
+ return navigationGroups
+  .map((group) => ({
+   ...group,
+   sections: group.sections
+    .map((section) => ({
+     ...section,
+     itemIds: section.itemIds.filter(
+      (itemId) => canManageContent || !requiresContentCapability(itemId),
+     ),
+    }))
+    .filter((section) => section.itemIds.length > 0),
+  }))
+  .filter((group) => group.sections.length > 0);
+}
 
 export const mobileNavigationItemIds = [
  "home",

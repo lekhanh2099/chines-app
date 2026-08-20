@@ -120,5 +120,45 @@
   "reinforcementBack": "Danh sách củng cố",
   "coreBack": "Danh sách giáo trình",
   "backToList": "Danh sách {title}"
+ },
+ "study": {
+  "completion": {
+   "done": "Đã hoàn thành",
+   "pending": "Chưa hoàn thành",
+   "markDone": "Đánh dấu đã học xong"
+  }
+ },
+ "pdf": {
+  "heading": "Tài liệu Hán ngữ",
+  "description": "Trang preview đã được kiểm checksum; mở PDF gốc khi cần chuyển tới trang bất kỳ.",
+  "badge": "Reader PDF",
+  "back": "Quay lại",
+  "noAssets": "Chưa có tài liệu PDF được import.",
+  "guide": "Hướng dẫn luyện",
+  "pagePicker": "Chọn trang PDF",
+  "previewPages": "{count} trang preview",
+  "pageLabel": "Trang in {printed} · PDF {pdf}",
+  "zoomOut": "Thu nhỏ PDF",
+  "fitWidth": "Vừa khung",
+  "zoomIn": "Phóng to PDF",
+  "fitPage": "Vừa trang",
+  "openOriginal": "Mở PDF gốc",
+  "fullscreen": "Toàn màn hình",
+  "annotationError": "Không tải được ghi chú PDF; nét mới sẽ được giữ trong phiên này.",
+  "pan": "Di chuyển PDF",
+  "pen": "Bút vẽ",
+  "highlighter": "Bút highlight",
+  "eraser": "Tẩy",
+  "undo": "Hoàn tác",
+  "redo": "Làm lại",
+  "clear": "Xóa nét vẽ",
+  "touch": "Cho phép viết bằng cảm ứng",
+  "penColor": "Màu bút",
+  "customColor": "Màu tùy chỉnh",
+  "strokeWidth": "Độ dày {width}",
+  "eraserSize": "Cỡ tẩy {size}",
+  "annotationLayer": "Lớp ghi chú PDF",
+  "previewError": "Không tải được trang preview",
+  "originalPdf": "Mở PDF gốc"
  }
 }

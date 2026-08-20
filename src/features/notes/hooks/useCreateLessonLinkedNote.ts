@@ -1,10 +1,8 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
 
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { noteQueryKeys } from "@/features/notes/query-keys";
 import {
  createNote,
@@ -19,16 +17,14 @@ type CreateLessonLinkedNoteInput = CreateNoteInput & {
 };
 
 export function useCreateLessonLinkedNote() {
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const { supabase, userId } = useClientSession();
  const queryClient = useQueryClient();
 
  return useMutation({
   mutationFn: async (input: CreateLessonLinkedNoteInput) => {
-   const user = await getClientSessionUser(supabase);
-   if (!user) throw new Error("Not authenticated");
+   if (!userId) throw new Error("Not authenticated");
 
-   const note = await createNote(supabase, user.id, {
+   const note = await createNote(supabase, userId, {
     title: input.title,
     tags: input.tags,
     category: input.category,
@@ -40,7 +36,7 @@ export function useCreateLessonLinkedNote() {
    const relationType = input.relationType ?? "main";
 
    const linked = await linkNoteToLessonTarget(supabase, {
-    userId: user.id,
+    userId,
     noteId: note.id,
     targetKey: input.lessonId,
     targetType: "hanzihome_lesson",
@@ -52,9 +48,9 @@ export function useCreateLessonLinkedNote() {
    return note;
   },
   onSuccess: async () => {
-   await queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot });
+   await queryClient.invalidateQueries({ queryKey: noteQueryKeys.listRoot(userId) });
    await queryClient.invalidateQueries({
-    queryKey: noteQueryKeys.lessonLinkedRoot,
+    queryKey: noteQueryKeys.lessonLinkedRoot(userId),
    });
   },
  });

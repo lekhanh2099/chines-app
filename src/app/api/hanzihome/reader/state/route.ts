@@ -1,10 +1,11 @@
 import { z } from "zod";
 
-import { getReaderStateBootstrap } from "@/features/hanzihome/reader/reader-state-repository";
+import { getReaderStateBootstrap } from "@/features/hanzihome/reader/reader-state-bootstrap-repository.server";
 import {
  apiError,
  privateNoStoreJson,
  requireAuthenticatedRoute,
+ verifyExpectedAuthenticatedOwner,
 } from "@/lib/api/authenticated-route";
 
 export const dynamic = "force-dynamic";
@@ -15,6 +16,8 @@ const querySchema = z.strictObject({ documentId: z.string().min(1) });
 export async function GET(request: Request) {
  const auth = await requireAuthenticatedRoute();
  if (!auth.authenticated) return auth.response;
+ const ownerError = verifyExpectedAuthenticatedOwner(request, auth.context);
+ if (ownerError) return ownerError;
 
  const parsed = querySchema.safeParse({
   documentId: new URL(request.url).searchParams.get("documentId"),

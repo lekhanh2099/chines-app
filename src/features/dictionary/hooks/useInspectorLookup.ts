@@ -1,21 +1,16 @@
 "use client";
 
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 
-import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { createClient } from "@/lib/supabase/client";
-import { logger } from "@/lib/logger";
 import {
- classifyVocabType,
  getBasicVocabData,
  getVocabByHanzi,
  getVocabularyAnalysis,
- trackVocabLookup,
 } from "@/services/vocab.service";
-import { aiAnalysisSchema, type VocabWithProgress } from "@/types/database";
+import { aiAnalysisSchema } from "@/types/database";
 import { dictionaryQueryKeys } from "../query-keys";
 
 const basicLookupResponseSchema = z.object({
@@ -61,6 +56,8 @@ async function fetchInspectorVocab(selectedText: string, lessonId: string, signa
    return getBasicVocabData({ ...vocab, pinyin: vocab.pinyin || pinyin });
   }
 
+  // Read-only fallback. Inspector lookup must never create/update canonical
+  // dictionary rows or user SRS state as a side effect of selecting text.
   const supabase = createClient();
   const existing = await getVocabByHanzi(supabase, selectedText);
   if (existing) {
@@ -86,51 +83,12 @@ async function fetchInspectorVocab(selectedText: string, lessonId: string, signa
 }
 
 export function useInspectorLookup(selectedText: string, lessonId: string, enabled: boolean) {
- const queryClient = useQueryClient();
- const trackedLookupRef = useRef("");
  const query = useQuery({
   queryKey: dictionaryQueryKeys.inspector(selectedText, lessonId),
   queryFn: ({ signal }) => fetchInspectorVocab(selectedText, lessonId, signal),
   enabled: enabled && Boolean(selectedText),
   staleTime: 5 * 60 * 1000,
  });
-
- useEffect(() => {
-  const vocab = query.data;
-  const lookupKey = `${lessonId}:${selectedText}`;
-  if (!vocab || trackedLookupRef.current === lookupKey) return;
-  trackedLookupRef.current = lookupKey;
-
-  const trackLookup = async () => {
-   if (!vocab.hanzi || (!vocab.pinyin && !vocab.meaning && !vocab.sino_vietnamese)) return;
-   try {
-    const supabase = createClient();
-    const user = await getClientSessionUser(supabase);
-    if (!user) return;
-    const tracked = await trackVocabLookup(supabase, user.id, vocab);
-    if (!tracked?.vocabId) return;
-    const item: VocabWithProgress = {
-     id: tracked.vocabId,
-     hanzi: vocab.hanzi,
-     pinyin: vocab.pinyin,
-     meaning: vocab.meaning,
-     ai_analysis: vocab.ai_analysis ?? {},
-     proficiency_level: 0,
-     is_favorited: false,
-     status: "new",
-     type: classifyVocabType(vocab.hanzi, vocab.pinyin),
-    };
-    queryClient.setQueryData<VocabWithProgress[]>(dictionaryQueryKeys.vocabListRoot, (current) => [
-     item,
-     ...(current ?? []).filter((candidate) => candidate.id !== item.id),
-    ]);
-   } catch (error) {
-    logger.error("[VocabInspector] track lookup failed:", error);
-   }
-  };
-
-  void trackLookup();
- }, [lessonId, query.data, queryClient, selectedText]);
 
  return { vocabData: query.data ?? null, isLoading: query.isPending };
 }

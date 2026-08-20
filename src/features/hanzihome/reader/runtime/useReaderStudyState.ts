@@ -25,10 +25,18 @@ export function useReaderStudyState(
  stateOwner: ReaderProgressOwner,
 ) {
  const progress = useReaderProgressState(resource, stateOwner);
- const { featureState, setFeatureState, hasSession, pending, error, saveError, setSaveError } =
-  progress;
+ const {
+  featureState,
+  setFeatureState,
+  hasSession,
+  ownerUserId,
+  pending,
+  error,
+  saveError,
+  setSaveError,
+ } = progress;
  const annotationsQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerAnnotations(resource.document.id),
+  queryKey: hanzihomeQueryKeys.readerAnnotations(ownerUserId, resource.document.id),
   queryFn: () => fetchReaderAnnotations(resource.document.id),
   enabled: hasSession && stateOwner !== "reader",
   staleTime: 60_000,
@@ -36,7 +44,7 @@ export function useReaderStudyState(
   refetchOnWindowFocus: false,
  });
  const pronunciationQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerPronunciationOverrides(resource.document.id),
+  queryKey: hanzihomeQueryKeys.readerPronunciationOverrides(ownerUserId, resource.document.id),
   queryFn: () => fetchReaderPronunciationOverrides(resource.document.id),
   enabled: hasSession && stateOwner !== "reader",
   staleTime: 60_000,

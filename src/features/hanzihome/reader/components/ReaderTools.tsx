@@ -2,6 +2,7 @@
 
 import { Focus, ListEnd, Play, Repeat2, Settings2 } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +28,7 @@ import {
 } from "../runtime/ReaderRuntimeProvider";
 
 export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void }) {
+ const t = useTranslations("Reader.study.chrome.tools");
  const [sheetOpen, setSheetOpen] = useState(false);
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
@@ -46,14 +48,14 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
      <DropdownMenuTrigger asChild>
       <Button type="button" variant="outline" size="toolbar">
        <Settings2 data-icon="inline-start" />
-       Công cụ học
+       {t("title")}
       </Button>
      </DropdownMenuTrigger>
      <DropdownMenuContent align="end" width="lg">
-      <DropdownMenuLabel>Luyện nghe</DropdownMenuLabel>
+      <DropdownMenuLabel>{t("listening")}</DropdownMenuLabel>
       <DropdownMenuItem onSelect={() => commands.playAll()}>
        <Play />
-       Đọc cả bài
+       {t("playAll")}
       </DropdownMenuItem>
       <DropdownMenuCheckboxItem
        checked={loopCurrent}
@@ -61,7 +63,7 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
        onCheckedChange={() => actions.toggleLoop()}
       >
        <Repeat2 />
-       Lặp đoạn
+       {t("loop")}
       </DropdownMenuCheckboxItem>
       <DropdownMenuCheckboxItem
        checked={autoAdvance}
@@ -69,20 +71,20 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
        onCheckedChange={() => actions.toggleAutoAdvance()}
       >
        <ListEnd />
-       Tự chuyển
+       {t("autoAdvance")}
       </DropdownMenuCheckboxItem>
       {onOpenShadowing ? (
-       <DropdownMenuItem onSelect={onOpenShadowing}>Shadowing</DropdownMenuItem>
+       <DropdownMenuItem onSelect={onOpenShadowing}>{t("shadowing")}</DropdownMenuItem>
       ) : null}
       <DropdownMenuSeparator />
-      <DropdownMenuLabel>Hiển thị</DropdownMenuLabel>
+      <DropdownMenuLabel>{t("display")}</DropdownMenuLabel>
       <DropdownMenuCheckboxItem
        checked={focusMode}
        onSelect={(event) => event.preventDefault()}
        onCheckedChange={() => actions.toggleFocus()}
       >
        <Focus />
-       Tập trung
+       {t("focus")}
       </DropdownMenuCheckboxItem>
       <DropdownMenuSeparator />
       <HanziHomeReadingQuickSettingsMenu />
@@ -100,23 +102,23 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
      onClick={() => setSheetOpen(true)}
     >
      <Settings2 data-icon="inline-start" />
-     <span className="hidden sm:inline">Công cụ học</span>
-     <span className="sm:hidden">Công cụ</span>
+     <span className="hidden sm:inline">{t("title")}</span>
+     <span className="sm:hidden">{t("shortTitle")}</span>
     </Button>
    </div>
 
    <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
-    <SheetHeader title="Công cụ học" onClose={() => setSheetOpen(false)} />
+    <SheetHeader title={t("title")} onClose={() => setSheetOpen(false)} />
     <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
      <div className="grid gap-5">
       <section className="grid gap-3">
        <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-        Luyện nghe
+        {t("listening")}
        </Typography>
        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
          <Play data-icon="inline-start" />
-         Đọc cả bài
+         {t("playAll")}
         </Button>
         <Button
          type="button"
@@ -126,7 +128,7 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
          onClick={() => actions.toggleLoop()}
         >
          <Repeat2 data-icon="inline-start" />
-         Lặp đoạn
+         {t("loop")}
         </Button>
         <Button
          type="button"
@@ -136,11 +138,11 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
          onClick={() => actions.toggleAutoAdvance()}
         >
          <ListEnd data-icon="inline-start" />
-         Tự chuyển
+         {t("autoAdvance")}
         </Button>
         {onOpenShadowing ? (
          <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
-          Shadowing
+          {t("shadowing")}
          </Button>
         ) : null}
         <Button
@@ -151,7 +153,7 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
          onClick={() => actions.toggleFocus()}
         >
          <Focus data-icon="inline-start" />
-         Tập trung
+         {t("focus")}
         </Button>
        </div>
       </section>

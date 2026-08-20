@@ -120,5 +120,45 @@
   "reinforcementBack": "Reinforcement list",
   "coreBack": "Course reading list",
   "backToList": "{title} list"
+ },
+ "study": {
+  "completion": {
+   "done": "Completed",
+   "pending": "Not completed",
+   "markDone": "Mark as completed"
+  }
+ },
+ "pdf": {
+  "heading": "Chinese document",
+  "description": "The preview checksum is verified; open the original PDF when you need to jump to a page.",
+  "badge": "Reader PDF",
+  "back": "Back",
+  "noAssets": "No PDF documents have been imported.",
+  "guide": "Study guidance",
+  "pagePicker": "Choose PDF page",
+  "previewPages": "{count, plural, one {# preview page} other {# preview pages}}",
+  "pageLabel": "Printed page {printed} · PDF {pdf}",
+  "zoomOut": "Zoom out PDF",
+  "fitWidth": "Fit width",
+  "zoomIn": "Zoom in PDF",
+  "fitPage": "Fit page",
+  "openOriginal": "Open original PDF",
+  "fullscreen": "Fullscreen",
+  "annotationError": "PDF notes could not be loaded; new strokes will stay in this session.",
+  "pan": "Pan PDF",
+  "pen": "Pen",
+  "highlighter": "Highlighter",
+  "eraser": "Eraser",
+  "undo": "Undo",
+  "redo": "Redo",
+  "clear": "Clear strokes",
+  "touch": "Allow touch drawing",
+  "penColor": "Pen color",
+  "customColor": "Custom color",
+  "strokeWidth": "Stroke width {width}",
+  "eraserSize": "Eraser size {size}",
+  "annotationLayer": "PDF annotation layer",
+  "previewError": "The preview page could not be loaded",
+  "originalPdf": "Open original PDF"
  }
 }

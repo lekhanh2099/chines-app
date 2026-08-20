@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import Link from "next/link";
-import { Bookmark, CheckCircle2, History, Repeat2 } from "lucide-react";
+import { Bookmark, CheckCircle2, FileText, History, Repeat2, Workflow } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -55,6 +55,19 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
       label="Đã đánh dấu"
       tone="neutral"
      />
+     <PulseStat icon={<Repeat2 />} value={pulse.srsDueCount} label="SRS đến hạn" tone="warning" />
+     <PulseStat
+      icon={<Workflow />}
+      value={pulse.learningLoopDueCount}
+      label="Learning Loop đến hạn"
+      tone="accent"
+     />
+     <PulseStat
+      icon={<FileText />}
+      value={`${pulse.readerCompletedCount}/${pulse.readerDocumentCount}`}
+      label="Reader đã hoàn thành"
+      tone="info"
+     />
     </div>
 
     <Typography as="p" variant="caption" tone="muted">
@@ -62,6 +75,11 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
       ? `${pulse.trackedCount} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.`
       : "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật."}
     </Typography>
+    {pulse.overviewUnavailable ? (
+     <Typography as="p" variant="caption" tone="danger">
+      Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị.
+     </Typography>
+    ) : null}
    </Card>
   </section>
  );
@@ -74,7 +92,7 @@ function PulseStat({
  tone,
 }: {
  icon: ReactNode;
- value: number;
+ value: number | string;
  label: string;
  tone: NonNullable<ComponentProps<typeof IconTile>["tone"]>;
 }) {

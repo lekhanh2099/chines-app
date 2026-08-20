@@ -3,6 +3,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { BookmarkPlus, Highlighter, Info, Languages, StickyNote, Volume2, X } from "lucide-react";
 import { useCallback, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import {
  BasePopover as Popover,
@@ -21,6 +22,7 @@ import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfaceSelection } from "../components/ReaderSurface";
 import { createReaderAnnotation, deleteReaderAnnotation } from "../reader-annotation-api";
 import type { ReaderDocumentResource } from "../reader-content-api";
+import { buildReaderSourceHref } from "../reader-source-target";
 import {
  useReaderRuntimeActions,
  useReaderRuntimeCommands,
@@ -40,6 +42,7 @@ export function useReaderSelectionActions({
  analysisBySegmentId: ReadonlyMap<string, ReaderPronunciationAnalysis>;
  setSaveError: (error: string) => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.selection");
  const queryClient = useQueryClient();
  const tts = useSharedMandarinTts();
  const { openInspector } = useVocabInspector();
@@ -79,6 +82,18 @@ export function useReaderSelectionActions({
      ? hanzihomeQueryKeys.readerState(resource.document.id)
      : hanzihomeQueryKeys.readerAnnotations(resource.document.id),
   });
+ const sourceHref = (
+  current: ReaderSurfaceSelection,
+  source: "reader-selection" | "reader-highlight",
+ ) =>
+  buildReaderSourceHref({
+   source,
+   documentId: resource.document.id,
+   paragraphId: current.segment.id,
+   ...(current.start !== null && current.end !== null
+    ? { startOffset: current.start, endOffset: current.end }
+    : {}),
+  });
  const saveAnnotation = (annotationType: "highlight" | "note") => {
   if (!selection || selection.start === null || selection.end === null) return;
   void createReaderAnnotation({
@@ -102,7 +117,7 @@ export function useReaderSelectionActions({
       stable_key: `reader-bookmark:${resource.document.id}:${selection.segment.id}:${selection.start}`,
       kind: "reading_bookmark",
       source_id: resource.document.id,
-      source_href: `/reader?document=${encodeURIComponent(resource.document.id)}`,
+      source_href: sourceHref(selection, "reader-highlight"),
       title_zh: resource.document.title_zh,
       title_vi: resource.document.title_vi,
       prompt_zh: selection.text,
@@ -136,7 +151,7 @@ export function useReaderSelectionActions({
    stable_key: `reader-selection:${resource.document.id}:${selection.segment.id}:${selection.start}`,
    kind: vocabulary === undefined ? "reading_bookmark" : "vocabulary",
    source_id: resource.document.id,
-   source_href: `/reader?document=${encodeURIComponent(resource.document.id)}`,
+   source_href: sourceHref(selection, "reader-selection"),
    title_zh: resource.document.title_zh,
    title_vi: resource.document.title_vi,
    prompt_zh: selection.text,
@@ -186,14 +201,14 @@ export function useReaderSelectionActions({
           {selection.text}
          </Typography>
          <PinyinText variant="caption" tone="muted">
-          {selectedPinyin || "Chưa xác định pinyin"}
+          {selectedPinyin || t("missingPinyin")}
          </PinyinText>
         </div>
         <Button
          type="button"
          size="icon-sm"
          variant="ghost"
-         aria-label="Đóng thanh công cụ"
+         aria-label={t("closeAria")}
          onClick={clear}
         >
          <X aria-hidden="true" />
@@ -202,9 +217,9 @@ export function useReaderSelectionActions({
        {mode === "quick" ? (
         <>
          <Typography variant="bodySmall" tone="muted">
-          {vocabulary?.meaning || "Chưa có nghĩa offline chính xác cho cụm này."}
+          {vocabulary?.meaning || t("missingMeaning")}
          </Typography>
-         <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label="Thao tác đoạn chọn">
+         <div className="grid grid-cols-3 gap-1" role="toolbar" aria-label={t("actionsAria")}>
           <Button
            type="button"
            size="sm"
@@ -215,7 +230,7 @@ export function useReaderSelectionActions({
            }}
           >
            <Languages data-icon="inline-start" />
-           Tra từ
+           {t("lookup")}
           </Button>
           <Button
            type="button"
@@ -224,11 +239,11 @@ export function useReaderSelectionActions({
            onClick={() => saveAnnotation("highlight")}
           >
            <Highlighter data-icon="inline-start" />
-           Đánh dấu
+           {t("highlight")}
           </Button>
           <Button type="button" size="sm" variant="ghost" onClick={() => setMode("note")}>
            <StickyNote data-icon="inline-start" />
-           Ghi chú
+           {t("note")}
           </Button>
          </div>
         </>
@@ -237,13 +252,13 @@ export function useReaderSelectionActions({
          <Textarea
           value={noteDraft}
           onChange={(event) => setNoteDraft(event.target.value)}
-          placeholder="Ghi chú cho đoạn chọn…"
-          aria-label="Ghi chú cho đoạn chọn"
+          placeholder={t("notePlaceholder")}
+          aria-label={t("noteAria")}
           rows={2}
          />
          <div className="flex justify-end gap-2">
           <Button type="button" size="sm" variant="ghost" onClick={() => setMode("quick")}>
-           Huỷ
+           {t("cancel")}
           </Button>
           <Button
            type="button"
@@ -251,7 +266,7 @@ export function useReaderSelectionActions({
            disabled={!noteDraft.trim()}
            onClick={() => saveAnnotation("note")}
           >
-           Lưu ghi chú
+           {t("saveNote")}
           </Button>
          </div>
         </>
@@ -267,11 +282,11 @@ export function useReaderSelectionActions({
          }}
         >
          <Volume2 data-icon="inline-start" />
-         Nghe
+         {t("listen")}
         </Button>
         <Button type="button" size="sm" variant="ghost" onClick={addToReview}>
          <BookmarkPlus data-icon="inline-start" />
-         Ôn lại
+         {t("review")}
         </Button>
         <Button
          type="button"
@@ -283,7 +298,7 @@ export function useReaderSelectionActions({
          }}
         >
          <Info data-icon="inline-start" />
-         Hiểu sâu
+         {t("understand")}
         </Button>
        </div>
       </div>

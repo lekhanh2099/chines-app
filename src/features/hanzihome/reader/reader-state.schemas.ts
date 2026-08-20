@@ -45,6 +45,7 @@ export const practiceAttemptSurfaceSchema = z.enum([
  "listening",
  "personal-learning",
  "shadowing",
+ "review",
 ]);
 
 export const practiceAttemptRowSchema = z.strictObject({
@@ -86,5 +87,6 @@ export const learningLoopItemRowSchema = z.strictObject({
 export type ReaderProgressRow = z.output<typeof readerProgressRowSchema>;
 export type PersonalLearningStateRow = z.output<typeof personalLearningStateRowSchema>;
 export type DailyReadingStateRow = z.output<typeof dailyReadingStateRowSchema>;
+export type PracticeAttemptSurface = z.output<typeof practiceAttemptSurfaceSchema>;
 export type PracticeAttemptRow = z.output<typeof practiceAttemptRowSchema>;
 export type LearningLoopItemRow = z.output<typeof learningLoopItemRowSchema>;

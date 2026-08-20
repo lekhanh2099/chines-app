@@ -24,6 +24,8 @@
   "typecheck": "next typegen && tsc --noEmit",
   "test": "vitest",
   "test:run": "vitest run",
+  "test:e2e": "playwright test",
+  "e2e:seed": "node scripts/e2e/seed-fixtures.mjs",
   "test:coverage": "vitest run --coverage",
   "source:check": "node scripts/check-source-standards.mjs",
   "route:check": "node scripts/check-route-integrity.mjs",
@@ -79,6 +81,7 @@
   "zod": "^4.4.3"
  },
  "devDependencies": {
+  "@playwright/test": "^1.62.1",
   "@tailwindcss/postcss": "^4",
   "@types/node": "^25.9.2",
   "@types/react": "^19.2.17",

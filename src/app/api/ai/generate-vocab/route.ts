@@ -1,19 +1,14 @@
 import { createClient } from "@/lib/supabase/server";
-import { logger } from "@/lib/logger";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import {
  getDictionaryEntryByHeadword,
- getPrimaryMeaning,
  getVocabByHanzi,
  hasInspectorDeepDiveData,
  getVocabularyAnalysis,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
- syncDictionaryEntryToLegacyVocab,
- upsertDictionaryEntry,
- upsertVocab,
 } from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
@@ -89,29 +84,7 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const aiResult = aiLookup.data;
-
- const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-  headword: aiResult.hanzi || lookupText,
-  pinyin: aiResult.pinyin,
-  sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-  meaning: getPrimaryMeaning(aiResult, ""),
-  ai_analysis: aiResult,
- });
-
- const upsertResult = dictionaryEntry
-  ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
-  : await upsertVocab(supabase, {
-     hanzi: aiResult.hanzi || lookupText,
-     pinyin: aiResult.pinyin,
-     sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
-     meaning: getPrimaryMeaning(aiResult, ""),
-     ai_analysis: aiResult,
-    });
-
- if (!upsertResult) {
-  logger.error("[generate-vocab] DB upsert failed");
- }
-
- return NextResponse.json({ data: aiResult, cached: false });
+ // Deep analysis can use learner-owned prompt/model settings. It is returned to
+ // that request only and must not overwrite the shared canonical dictionary.
+ return NextResponse.json({ data: aiLookup.data, cached: false });
 }

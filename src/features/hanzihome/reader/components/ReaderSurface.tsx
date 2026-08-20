@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
 import {
  getScrollContainerForTarget,
@@ -12,6 +14,7 @@ import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
+import { parseReaderSourceTarget, type ReaderSourceTarget } from "../reader-source-target";
 import {
  ReaderPronunciationSessionProvider,
  useReaderPronunciationSessionActions,
@@ -55,7 +58,47 @@ export type ReaderSurfaceProps = {
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  onOpenShadowing?: () => void;
  toolbarStickyOffset?: ReaderToolbarStickyOffset;
+ initialFocus?: ReaderSourceTarget | null;
 };
+
+type TextPoint = { node: Text; offset: number };
+
+function textPointAt(root: HTMLElement, targetOffset: number): TextPoint | null {
+ const walker = window.document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+ let traversed = 0;
+ let node = walker.nextNode();
+ let lastText: Text | null = null;
+
+ while (node) {
+  if (node instanceof Text) {
+   lastText = node;
+   const length = node.data.length;
+   if (targetOffset <= traversed + length) {
+    return { node, offset: Math.max(0, targetOffset - traversed) };
+   }
+   traversed += length;
+  }
+  node = walker.nextNode();
+ }
+
+ return lastText && targetOffset === traversed
+  ? { node: lastText, offset: lastText.data.length }
+  : null;
+}
+
+function selectSourceRange(root: HTMLElement, startOffset: number, endOffset: number) {
+ if (endOffset <= startOffset) return;
+ const start = textPointAt(root, startOffset);
+ const end = textPointAt(root, endOffset);
+ if (!start || !end) return;
+ const range = window.document.createRange();
+ range.setStart(start.node, start.offset);
+ range.setEnd(end.node, end.offset);
+ const selection = window.getSelection();
+ if (!selection) return;
+ selection.removeAllRanges();
+ selection.addRange(range);
+}
 
 export function ReaderSurface(props: ReaderSurfaceProps) {
  return (
@@ -83,11 +126,21 @@ function ReaderSurfaceViewContent({
  onPronunciationInspect,
  onOpenShadowing,
  toolbarStickyOffset = "page",
+ initialFocus,
 }: ReaderSurfaceProps) {
+ const t = useTranslations("Reader.study.chrome.surface");
+ const searchParams = useSearchParams();
+ const searchParamsString = searchParams.toString();
+ const routeFocus = useMemo(
+  () => parseReaderSourceTarget(new URLSearchParams(searchParamsString)),
+  [searchParamsString],
+ );
+ const resolvedInitialFocus = initialFocus ?? routeFocus;
  const [outlineOpen, setOutlineOpen] = useState(false);
  const [pronunciationPreview, setPronunciationPreview] =
   useState<ReaderSurfacePronunciationTarget | null>(null);
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
+ const appliedInitialFocusRef = useRef<string | null>(null);
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
@@ -145,6 +198,50 @@ function ReaderSurfaceViewContent({
  }, [pronunciationPreview, pronunciationSessionActions]);
  const pronunciationPreviewConfirmed =
   pronunciationPreview?.glyph.evidence.includes("manual-override") ?? false;
+
+ useEffect(() => {
+  if (
+   !resolvedInitialFocus ||
+   resolvedInitialFocus.documentId !== document.id ||
+   resolvedInitialFocus.paragraphId === undefined
+  ) {
+   return;
+  }
+  const key = [
+   resolvedInitialFocus.source,
+   resolvedInitialFocus.documentId,
+   resolvedInitialFocus.paragraphId,
+   resolvedInitialFocus.startOffset ?? "",
+   resolvedInitialFocus.endOffset ?? "",
+  ].join(":");
+  if (appliedInitialFocusRef.current === key) return;
+  const index = document.segments.findIndex(
+   (segment) => segment.id === resolvedInitialFocus.paragraphId,
+  );
+  if (index < 0) return;
+  const element = segmentElementsRef.current.get(resolvedInitialFocus.paragraphId);
+  if (!element) return;
+
+  appliedInitialFocusRef.current = key;
+  commands.selectIndex(index);
+  if (
+   resolvedInitialFocus.startOffset === undefined ||
+   resolvedInitialFocus.endOffset === undefined
+  ) {
+   return;
+  }
+
+  const frame = requestAnimationFrame(() => {
+   const hanziContainer = element.querySelector<HTMLElement>("[data-reader-hanzi-content]");
+   if (!hanziContainer) return;
+   selectSourceRange(
+    hanziContainer,
+    resolvedInitialFocus.startOffset ?? 0,
+    resolvedInitialFocus.endOffset ?? 0,
+   );
+  });
+  return () => cancelAnimationFrame(frame);
+ }, [commands, document.id, document.segments, resolvedInitialFocus]);
 
  useEffect(() => {
   if (positionSource !== "command" && positionSource !== "playback") return;
@@ -223,7 +320,7 @@ function ReaderSurfaceViewContent({
   return (
    <Card variant="subtle" padding="lg">
     <Typography variant="bodySmall" tone="muted">
-     Nội dung này chưa có đoạn tiếng Trung để đọc.
+     {t("empty")}
     </Typography>
    </Card>
   );
@@ -235,7 +332,7 @@ function ReaderSurfaceViewContent({
    tabIndex={0}
    role="region"
    onKeyDown={handleKeyDown}
-   aria-label="Trình đọc tiếng Trung"
+   aria-label={t("aria")}
   >
    <ReaderCommandBar
     segmentCount={document.segments.length}
@@ -276,7 +373,7 @@ function ReaderSurfaceViewContent({
    </div>
 
    <Sheet open={outlineOpen} onOpenChange={setOutlineOpen} side="right" className="sm:max-w-md">
-    <SheetHeader title="Mục lục bài đọc" onClose={() => setOutlineOpen(false)} />
+    <SheetHeader title={t("outlineTitle")} onClose={() => setOutlineOpen(false)} />
     <SheetBody>
      <ReaderOutlineContent document={document} onNavigate={() => setOutlineOpen(false)} />
     </SheetBody>

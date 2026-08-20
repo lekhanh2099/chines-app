@@ -7,6 +7,7 @@ import {
  updateHtmlArtifactPayloadSchema,
  type UpdateHtmlArtifactPayload,
 } from "@/features/hanzihome/html-artifacts/html-artifact.schema";
+import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { createClient } from "@/lib/supabase/server";
 import type { TablesUpdate } from "@/types/supabase.generated";
 
@@ -49,6 +50,9 @@ export async function GET(_request: Request, context: RouteContext) {
  if (!user) {
   return jsonError("Unauthorized", 401);
  }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
+ }
 
  const { data, error } = await supabase
   .from("hanzihome_html_artifacts")
@@ -81,6 +85,9 @@ export async function PATCH(request: Request, context: RouteContext) {
 
  if (!user) {
   return jsonError("Unauthorized", 401);
+ }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
 
  const body: JsonFieldValue = await request.json().catch(() => null);
@@ -128,6 +135,9 @@ export async function DELETE(_request: Request, context: RouteContext) {
 
  if (!user) {
   return jsonError("Unauthorized", 401);
+ }
+ if (!(await hasHanziHomeContentCapability(supabase, user.id))) {
+  return jsonError("Forbidden", 403, "HANZIHOME_CONTENT_ROLE_REQUIRED");
  }
 
  const { error } = await supabase

@@ -1,26 +1,24 @@
 "use client";
 
-import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 
-import { createClient } from "@/lib/supabase/client";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
-
 export function useHanziHomeCanEdit() {
- const supabase = useMemo(() => createClient(), []);
+ const { supabase, userId, isResolved } = useClientSession();
 
  return (
   useQuery({
-   queryKey: hanzihomeQueryKeys.canEdit,
+   queryKey: hanzihomeQueryKeys.canEditForUser(userId),
+   enabled: isResolved && Boolean(userId),
    queryFn: async () => {
-    const user = await getClientSessionUser(supabase);
-    if (!user) return false;
+    if (!userId) return false;
 
     const { data, error } = await supabase
      .from("hanzihome_content_roles")
      .select("role")
-     .eq("user_id", user.id)
+     .eq("user_id", userId)
      .maybeSingle();
 
     if (error) throw error;

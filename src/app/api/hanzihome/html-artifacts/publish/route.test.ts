@@ -1,6 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const getUser = vi.fn();
+const { getUser, hasHanziHomeContentCapability } = vi.hoisted(() => ({
+ getUser: vi.fn(),
+ hasHanziHomeContentCapability: vi.fn(),
+}));
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/env/public", () => ({
@@ -15,12 +18,17 @@ vi.mock("@/lib/env/server", () => ({
 vi.mock("@/lib/supabase/server", () => ({
  createClient: vi.fn(async () => ({ auth: { getUser } })),
 }));
+vi.mock("@/features/hanzihome/server/content-capability", () => ({
+ hasHanziHomeContentCapability,
+}));
 
 import { GET, POST } from "./route";
 
 describe("/api/hanzihome/html-artifacts/publish", () => {
  beforeEach(() => {
   getUser.mockReset();
+  hasHanziHomeContentCapability.mockReset();
+  hasHanziHomeContentCapability.mockResolvedValue(true);
  });
 
  it("returns authenticated connection status without exposing a secret", async () => {

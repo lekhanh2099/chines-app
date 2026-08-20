@@ -6,13 +6,14 @@ import {
  fetchHanziHomeLearningState,
  saveHanziHomeLearningState,
 } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
-import type { LearningProgressItem, UserLearningState } from "@/features/hanzihome/types";
+import type { UserLearningState } from "@/features/hanzihome/types";
 import { z } from "zod";
 import {
  emptyLearningState,
  normalizeLearningState,
 } from "@/features/hanzihome/utils/learning-state";
 
+import { mergeLearningStateAfterConflict } from "./learning-state-conflict-merge";
 import {
  clearPendingLearningStateMutation,
  enqueueLearningStateSync,
@@ -26,11 +27,12 @@ import {
  type PendingLearningStateMutation,
 } from "./learning-state-local-store";
 
+export { mergeLearningStateAfterConflict };
+
 export const LearningStateSyncStatusSchema = z.enum(["synced", "pending", "syncing", "error"]);
 export type LearningStateSyncStatus = z.infer<typeof LearningStateSyncStatusSchema>;
-type Nullable<T> = z.infer<z.ZodNullable<z.ZodType<T>>>;
-type Optional<T> = z.infer<z.ZodOptional<z.ZodType<T>>>;
-type OptionalProgressItem = Optional<LearningProgressItem>;
+type Nullable<T> = T | null;
+type Optional<T> = T | undefined;
 
 export type LearningStateSyncResult = {
  status: LearningStateSyncStatus;
@@ -40,10 +42,26 @@ export type LearningStateSyncResult = {
  error?: string;
 };
 
+type OwnerRuntime = {
+ remoteRefreshInFlight: Nullable<Promise<Nullable<UserLearningState>>>;
+ remoteSyncInFlight: Nullable<Promise<LearningStateSyncResult>>;
+ lastRemoteRefreshAt: number;
+};
+
 const remoteRefreshCooldownMs = 15_000;
-let remoteRefreshInFlight: Nullable<Promise<Nullable<UserLearningState>>> = null;
-let remoteSyncInFlight: Nullable<Promise<LearningStateSyncResult>> = null;
-let lastRemoteRefreshAt = 0;
+const ownerRuntime = new Map<string, OwnerRuntime>();
+
+function runtimeFor(ownerUserId: string) {
+ const existing = ownerRuntime.get(ownerUserId);
+ if (existing) return existing;
+ const created: OwnerRuntime = {
+  remoteRefreshInFlight: null,
+  remoteSyncInFlight: null,
+  lastRemoteRefreshAt: 0,
+ };
+ ownerRuntime.set(ownerUserId, created);
+ return created;
+}
 
 function isBrowserOnline() {
  return typeof navigator === "undefined" || navigator.onLine;
@@ -53,59 +71,66 @@ function errorMessage(error: ErrorInput) {
  return parseErrorLike(error).message || "Unknown learning-state sync error";
 }
 
-export async function loadLearningStateLocalFirst(): Promise<UserLearningState> {
- const local = await readLocalLearningState().catch(() => null);
+export async function loadLearningStateLocalFirst(ownerUserId: string): Promise<UserLearningState> {
+ const local = await readLocalLearningState(ownerUserId).catch(() => null);
  if (local) return normalizeLearningState(local.state);
 
  try {
-  const remote = await fetchHanziHomeLearningState();
+  const remote = await fetchHanziHomeLearningState(ownerUserId);
   const remoteState = normalizeLearningState(remote.state);
   await writeLocalLearningState({
+   ownerUserId,
    state: remoteState,
    lastSyncedState: remoteState,
    remoteUpdatedAt: remote.updatedAt,
    lastSyncedAt: new Date().toISOString(),
   });
   return remoteState;
- } catch {
-  return normalizeLearningState(emptyLearningState);
+ } catch (error) {
+  if (!isBrowserOnline()) return normalizeLearningState(emptyLearningState);
+  throw error;
  }
 }
 
 export async function saveLearningStateLocalFirst(
+ ownerUserId: string,
  baseState: UserLearningState,
  state: UserLearningState,
 ): Promise<void> {
  const normalized = normalizeLearningState(state);
- const local = await readLocalLearningState().catch(() => null);
+ const local = await readLocalLearningState(ownerUserId).catch(() => null);
 
  await writeLocalLearningState({
+  ownerUserId,
   state: normalized,
   lastSyncedState: local?.lastSyncedState,
   remoteUpdatedAt: local?.remoteUpdatedAt,
  });
  await enqueueLearningStateSync(
+  ownerUserId,
   normalizeLearningState(local?.lastSyncedState ?? baseState),
   normalized,
   local?.remoteUpdatedAt ?? null,
  );
 }
 
-export async function refreshLearningStateFromRemoteIfClean(): Promise<
- Nullable<UserLearningState>
-> {
+export async function refreshLearningStateFromRemoteIfClean(
+ ownerUserId: string,
+): Promise<Nullable<UserLearningState>> {
  if (!isBrowserOnline()) return null;
- if (remoteRefreshInFlight) return remoteRefreshInFlight;
- if (Date.now() - lastRemoteRefreshAt < remoteRefreshCooldownMs) return null;
+ const runtime = runtimeFor(ownerUserId);
+ if (runtime.remoteRefreshInFlight) return runtime.remoteRefreshInFlight;
+ if (Date.now() - runtime.lastRemoteRefreshAt < remoteRefreshCooldownMs) return null;
 
- remoteRefreshInFlight = (async () => {
-  const pending = await readPendingLearningStateMutation();
+ const inFlight = (async () => {
+  const pending = await readPendingLearningStateMutation(ownerUserId);
   if (pending) return null;
 
   try {
-   const remote = await fetchHanziHomeLearningState();
+   const remote = await fetchHanziHomeLearningState(ownerUserId);
    const remoteState = normalizeLearningState(remote.state);
    await writeLocalLearningState({
+    ownerUserId,
     state: remoteState,
     lastSyncedState: remoteState,
     remoteUpdatedAt: remote.updatedAt,
@@ -113,149 +138,71 @@ export async function refreshLearningStateFromRemoteIfClean(): Promise<
    });
    return remoteState;
   } finally {
-   // Failed/unauthenticated attempts must also respect the cooldown. Without
-   // this, every focus event retries the same request immediately.
-   lastRemoteRefreshAt = Date.now();
+   runtime.lastRemoteRefreshAt = Date.now();
   }
  })().finally(() => {
-  remoteRefreshInFlight = null;
+  runtime.remoteRefreshInFlight = null;
  });
 
- return remoteRefreshInFlight;
-}
-
-function progressItemsEqual(left: OptionalProgressItem, right: OptionalProgressItem) {
- return (
-  left?.level === right?.level &&
-  left?.status === right?.status &&
-  left?.lastReviewedAt === right?.lastReviewedAt
- );
-}
-
-function stringListsEqual(left: string[], right: string[]) {
- return left.length === right.length && left.every((value, index) => value === right[index]);
-}
-
-function reviewKey(item: UserLearningState["reviewHistory"][number]) {
- return `${item.type}:${item.id}:${item.result}:${item.answeredAt}`;
-}
-
-export function mergeLearningStateAfterConflict({
- base,
- local,
- remote,
-}: {
- base: UserLearningState;
- local: UserLearningState;
- remote: UserLearningState;
-}): UserLearningState {
- const settings = { ...remote.settings };
- if (local.settings.lastCourseId !== base.settings.lastCourseId) {
-  settings.lastCourseId = local.settings.lastCourseId;
- }
- if (local.settings.lastLessonId !== base.settings.lastLessonId) {
-  settings.lastLessonId = local.settings.lastLessonId;
- }
- if (local.settings.lastModule !== base.settings.lastModule) {
-  settings.lastModule = local.settings.lastModule;
- }
- if (local.settings.density !== base.settings.density) {
-  settings.density = local.settings.density;
- }
- if (local.settings.vocabDetailTab !== base.settings.vocabDetailTab) {
-  settings.vocabDetailTab = local.settings.vocabDetailTab;
- }
- const localDisplay = local.settings.lessonTextDisplayMode;
- const baseDisplay = base.settings.lessonTextDisplayMode;
- if (
-  localDisplay?.showPinyin !== baseDisplay?.showPinyin ||
-  localDisplay?.showMeaning !== baseDisplay?.showMeaning ||
-  localDisplay?.showAnswers !== baseDisplay?.showAnswers ||
-  localDisplay?.hanziFont !== baseDisplay?.hanziFont ||
-  localDisplay?.hanziSize !== baseDisplay?.hanziSize ||
-  localDisplay?.revealMode !== baseDisplay?.revealMode
- ) {
-  settings.lessonTextDisplayMode = localDisplay;
- }
-
- const localVocab = local.progress.vocab ?? {};
- const baseVocab = base.progress.vocab ?? {};
- const vocab = { ...(remote.progress.vocab ?? {}) };
- for (const id of new Set([...Object.keys(baseVocab), ...Object.keys(localVocab)])) {
-  if (!progressItemsEqual(localVocab[id], baseVocab[id])) {
-   const localItem = localVocab[id];
-   if (localItem === undefined) delete vocab[id];
-   else vocab[id] = localItem;
-  }
- }
- const localGrammar = local.progress.grammar ?? {};
- const baseGrammar = base.progress.grammar ?? {};
- const grammar = { ...(remote.progress.grammar ?? {}) };
- for (const id of new Set([...Object.keys(baseGrammar), ...Object.keys(localGrammar)])) {
-  if (!progressItemsEqual(localGrammar[id], baseGrammar[id])) {
-   const localItem = localGrammar[id];
-   if (localItem === undefined) delete grammar[id];
-   else grammar[id] = localItem;
-  }
- }
-
- const bookmarks = { ...remote.bookmarks };
- const localLessons = local.bookmarks.lessons ?? [];
- const localVocabBookmarks = local.bookmarks.vocab ?? [];
- const localGrammarBookmarks = local.bookmarks.grammar ?? [];
- const localRadicals = local.bookmarks.radicals ?? [];
- if (!stringListsEqual(localLessons, base.bookmarks.lessons ?? [])) {
-  bookmarks.lessons = localLessons;
- }
- if (!stringListsEqual(localVocabBookmarks, base.bookmarks.vocab ?? [])) {
-  bookmarks.vocab = localVocabBookmarks;
- }
- if (!stringListsEqual(localGrammarBookmarks, base.bookmarks.grammar ?? [])) {
-  bookmarks.grammar = localGrammarBookmarks;
- }
- if (!stringListsEqual(localRadicals, base.bookmarks.radicals ?? [])) {
-  bookmarks.radicals = localRadicals;
- }
-
- const baseReviewKeys = new Set(base.reviewHistory.map(reviewKey));
- const remoteReviewKeys = new Set(remote.reviewHistory.map(reviewKey));
- const reviewHistory = [...remote.reviewHistory];
- for (const item of local.reviewHistory) {
-  const key = reviewKey(item);
-  if (!baseReviewKeys.has(key) && !remoteReviewKeys.has(key)) {
-   reviewHistory.push(item);
-   remoteReviewKeys.add(key);
-  }
- }
-
- return normalizeLearningState({
-  settings,
-  progress: { vocab, grammar },
-  bookmarks,
-  reviewHistory,
- });
+ runtime.remoteRefreshInFlight = inFlight;
+ return inFlight;
 }
 
 function shouldApplySyncResult(
  current: Nullable<PendingLearningStateMutation>,
  syncing: PendingLearningStateMutation,
 ) {
- return Boolean(current && current.updatedAt === syncing.updatedAt);
+ return Boolean(
+  current &&
+  current.ownerUserId === syncing.ownerUserId &&
+  current.id === syncing.id &&
+  current.updatedAt === syncing.updatedAt,
+ );
 }
 
-export async function syncPendingLearningStateMutations(): Promise<LearningStateSyncResult> {
- if (remoteSyncInFlight) return remoteSyncInFlight;
+export async function syncPendingLearningStateMutations(
+ ownerUserId: string,
+): Promise<LearningStateSyncResult> {
+ const runtime = runtimeFor(ownerUserId);
+ if (runtime.remoteSyncInFlight) return runtime.remoteSyncInFlight;
 
- remoteSyncInFlight = syncPendingLearningStateMutationsOnce().finally(() => {
-  remoteSyncInFlight = null;
+ const inFlight = drainPendingLearningStateMutations(ownerUserId).finally(() => {
+  runtime.remoteSyncInFlight = null;
  });
-
- return remoteSyncInFlight;
+ runtime.remoteSyncInFlight = inFlight;
+ return inFlight;
 }
 
-async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyncResult> {
+async function drainPendingLearningStateMutations(
+ ownerUserId: string,
+): Promise<LearningStateSyncResult> {
+ let syncedCount = 0;
+ let latestState: Optional<UserLearningState>;
+
+ while (true) {
+  const result = await syncPendingLearningStateMutationsOnce(ownerUserId);
+  syncedCount += result.syncedCount;
+  latestState = result.state ?? latestState;
+
+  if (result.status === "error" || result.pendingCount === 0 || !isBrowserOnline()) {
+   return {
+    ...result,
+    syncedCount,
+    state: latestState,
+   };
+  }
+
+  // A pending generation that survives a successful pass means a newer local
+  // write arrived while the previous request was in flight. Drain it now rather
+  // than waiting for focus/online/a later mutation to trigger another sync.
+ }
+}
+
+async function syncPendingLearningStateMutationsOnce(
+ ownerUserId: string,
+): Promise<LearningStateSyncResult> {
  if (!isBrowserOnline()) {
-  const pending = await listPendingLearningStateMutations().catch(() => []);
+  const pending = await listPendingLearningStateMutations(ownerUserId).catch(() => []);
   return {
    status: pending.length ? "pending" : "synced",
    syncedCount: 0,
@@ -263,7 +210,7 @@ async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyn
   };
  }
 
- const pending = await listPendingLearningStateMutations();
+ const pending = await listPendingLearningStateMutations(ownerUserId);
  if (pending.length === 0) {
   return { status: "synced", syncedCount: 0, pendingCount: 0 };
  }
@@ -272,7 +219,11 @@ async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyn
  let latestState: Optional<UserLearningState>;
 
  for (const mutation of pending) {
+  if (mutation.ownerUserId !== ownerUserId) continue;
   const syncingMutation = await markLearningStateMutationSyncing(mutation);
+  // A newer local generation won the IndexedDB compare-and-replace between the
+  // list read and this transition. Never overwrite it with the stale generation.
+  if (!syncingMutation) continue;
   let activeMutation = syncingMutation;
 
   try {
@@ -281,50 +232,60 @@ async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyn
     saved = await saveHanziHomeLearningState(
      activeMutation.payload,
      activeMutation.expectedUpdatedAt ?? null,
+     ownerUserId,
     );
    } catch (error) {
     if (!(error instanceof HanziHomeApiError) || error.status !== 409) throw error;
-    const remote = await fetchHanziHomeLearningState();
+    const remote = await fetchHanziHomeLearningState(ownerUserId);
     const remoteState = normalizeLearningState(remote.state);
     const mergedState = mergeLearningStateAfterConflict({
      base: normalizeLearningState(activeMutation.baseState ?? emptyLearningState),
      local: activeMutation.payload,
      remote: remoteState,
     });
-    activeMutation = await replacePendingLearningStateMutation({
+    const rebasedMutation = await replacePendingLearningStateMutation({
      mutation: activeMutation,
      baseState: remoteState,
      state: mergedState,
      expectedUpdatedAt: remote.updatedAt,
     });
-    saved = await saveHanziHomeLearningState(mergedState, remote.updatedAt);
+    // A newer local edit appeared while the conflict was being fetched/merged.
+    // Leave that newer generation untouched; the outer drain loop will send it.
+    if (!rebasedMutation) continue;
+    activeMutation = rebasedMutation;
+    saved = await saveHanziHomeLearningState(mergedState, remote.updatedAt, ownerUserId);
    }
    const savedState = normalizeLearningState(saved.state);
-   const currentMutation = await readPendingLearningStateMutation();
+   const currentMutation = await readPendingLearningStateMutation(ownerUserId);
 
    if (shouldApplySyncResult(currentMutation, activeMutation)) {
-    await writeLocalLearningState({
-     state: savedState,
-     lastSyncedState: savedState,
-     remoteUpdatedAt: saved.updatedAt,
-     lastSyncedAt: new Date().toISOString(),
-    });
-    await clearPendingLearningStateMutation();
-    latestState = savedState;
-    syncedCount++;
+    const cleared = await clearPendingLearningStateMutation(ownerUserId, activeMutation.updatedAt);
+    if (cleared) {
+     await writeLocalLearningState({
+      ownerUserId,
+      state: savedState,
+      lastSyncedState: savedState,
+      remoteUpdatedAt: saved.updatedAt,
+      lastSyncedAt: new Date().toISOString(),
+     });
+     latestState = savedState;
+     syncedCount++;
+    }
    }
   } catch (error) {
-   const currentMutation = await readPendingLearningStateMutation();
+   const currentMutation = await readPendingLearningStateMutation(ownerUserId);
    const message = errorMessage(error);
 
    if (shouldApplySyncResult(currentMutation, activeMutation)) {
+    // Failure marking is itself compare-and-replace, so a newer generation that
+    // appears after the read above cannot be overwritten by the stale failure.
     await markLearningStateMutationFailed({
      mutation: activeMutation,
      error: message,
     });
    }
 
-   const remaining = await listPendingLearningStateMutations().catch(() => []);
+   const remaining = await listPendingLearningStateMutations(ownerUserId).catch(() => []);
    return {
     status: "error",
     syncedCount,
@@ -335,7 +296,7 @@ async function syncPendingLearningStateMutationsOnce(): Promise<LearningStateSyn
   }
  }
 
- const remaining = await listPendingLearningStateMutations();
+ const remaining = await listPendingLearningStateMutations(ownerUserId);
  return {
   status: remaining.length ? "pending" : "synced",
   syncedCount,

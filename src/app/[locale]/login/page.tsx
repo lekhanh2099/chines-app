@@ -1,10 +1,10 @@
 "use client";
 
 import { Typography } from "@/components/ui/typography";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { createClient } from "@/lib/supabase/client";
 import { z } from "zod";
+import { useClientSession } from "@/components/providers/QueryProvider";
 import { useAppForm } from "@/components/tanstack-form/hooks/form";
 import { TextField } from "@/components/tanstack-form/field/TextField";
 import { PasswordField } from "@/components/tanstack-form/field/PasswordField";
@@ -18,7 +18,6 @@ import {
  localizePathname,
  stripLocaleFromPathname,
 } from "@/i18n/config";
-import { useRouter } from "@/i18n/navigation";
 import { buildOAuthCallbackUrl } from "@/lib/auth/oauth-callback-url";
 import { getSafeNextPath } from "@/lib/auth/safe-next-path";
 import { toast } from "sonner";
@@ -51,7 +50,7 @@ function GoogleIcon() {
 }
 
 export default function LoginPage() {
- const router = useRouter();
+ const { supabase, user, isResolved } = useClientSession();
  const requestedLocale = useLocale();
  const locale = isAppLocale(requestedLocale) ? requestedLocale : defaultAppLocale;
  const t = useTranslations("Auth");
@@ -96,6 +95,16 @@ export default function LoginPage() {
   confirmPassword: "",
  };
 
+ function getLogicalNextPathFromUrl() {
+  const next = new URL(window.location.href).searchParams.get("next");
+  return stripLocaleFromPathname(getSafeNextPath(next));
+ }
+
+ const getLocalizedNextPathFromUrl = useCallback(
+  () => localizePathname(getLogicalNextPathFromUrl(), locale),
+  [locale],
+ );
+
  useEffect(() => {
   const url = new URL(window.location.href);
   if (!url.searchParams.has("authError")) return;
@@ -108,30 +117,11 @@ export default function LoginPage() {
  }, [t]);
 
  useEffect(() => {
-  const supabase = createClient();
-  let active = true;
-
-  void supabase.auth.getUser().then(({ data }) => {
-   if (active && data.user) router.replace(getLogicalNextPathFromUrl());
-  });
-
-  return () => {
-   active = false;
-  };
- }, [router]);
-
- function getLogicalNextPathFromUrl() {
-  const next = new URL(window.location.href).searchParams.get("next");
-  return stripLocaleFromPathname(getSafeNextPath(next));
- }
-
- function getLocalizedNextPathFromUrl() {
-  return localizePathname(getLogicalNextPathFromUrl(), locale);
- }
+  if (isResolved && user) window.location.replace(getLocalizedNextPathFromUrl());
+ }, [getLocalizedNextPathFromUrl, isResolved, user]);
 
  async function signInWithGoogle() {
   setOauthLoading(true);
-  const supabase = createClient();
   const callbackUrl = buildOAuthCallbackUrl({
    currentOrigin: window.location.origin,
    configuredAppUrl: process.env.NEXT_PUBLIC_APP_URL,
@@ -157,8 +147,6 @@ export default function LoginPage() {
   defaultValues,
   validators: { onChange: activeSchema, onSubmit: activeSchema },
   onSubmit: async ({ value }) => {
-   const supabase = createClient();
-
    if (isLogin) {
     const { error } = await supabase.auth.signInWithPassword({
      email: value.email,
@@ -173,8 +161,6 @@ export default function LoginPage() {
     }
 
     toast.success(t("toast.loginSuccess"));
-    router.replace(getLogicalNextPathFromUrl());
-    router.refresh();
    } else {
     const confirmUrl = new URL("/auth/confirm", window.location.origin);
     confirmUrl.searchParams.set("next", localizePathname("/", locale));

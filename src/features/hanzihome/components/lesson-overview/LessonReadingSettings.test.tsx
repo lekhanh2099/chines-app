@@ -26,6 +26,7 @@ const { mockLearningState } = vi.hoisted(() => ({
   updateGrammarProgress: () => undefined,
   toggleBookmark: () => undefined,
   appendReviewHistory: () => undefined,
+  recordReview: () => undefined,
  } satisfies ReturnType<typeof useLearningState>,
 }));
 
