@@ -259,7 +259,10 @@ function ReaderDocumentStudyContent({
  const updateTranslationDraft = (value: string) => {
   if (!translationKey) return;
   if (value.trim() && translationStartedAt[translationKey] === undefined) {
-   setTranslationStartedAt((current) => ({ ...current, [translationKey]: Date.now() }));
+   setTranslationStartedAt((current) => ({
+    ...current,
+    [translationKey]: Date.now(),
+   }));
   }
   setTranslationDrafts((current) => ({ ...current, [translationKey]: value }));
   setTranslationChecked((current) => ({ ...current, [translationKey]: false }));
@@ -328,6 +331,30 @@ function ReaderDocumentStudyContent({
     navigationDocuments={navigationDocuments}
     selectedDocument={resource.document}
    />
+   <div className="grid min-w-0 gap-2 border-b border-border-default pb-4 sm:pb-5">
+    <div className="flex flex-wrap gap-2">
+     <Badge variant="success" casing="natural">
+      {readerLessonLabel}
+     </Badge>
+     {readerUnitNumber ? (
+      <Badge variant="accent" casing="natural">
+       {t("chrome.unit", { unit: readerUnitNumber })}
+      </Badge>
+     ) : null}
+    </div>
+    <Typography as="h1" variant="sectionTitle" weight="black" clamp="two">
+     {resource.document.title_zh}
+    </Typography>
+    <Typography as="p" variant="bodySmall" tone="muted">
+     {resource.document.title_pinyin ? (
+      <PinyinText as="span" variant="caption" tone="accent">
+       {resource.document.title_pinyin}
+      </PinyinText>
+     ) : null}
+     {resource.document.title_pinyin ? " · " : ""}
+     {resource.document.title_vi || resource.document.genre_vi || t("chrome.defaultReading")}
+    </Typography>
+   </div>
    {stateOwner === "reader" && !isHskDocument ? (
     <div className="grid min-w-0 gap-2 border-b border-border-default pb-4 sm:pb-5">
      <div className="flex flex-wrap gap-2">
@@ -371,7 +398,11 @@ function ReaderDocumentStudyContent({
    {workspaceTabsEnabled ? (
     <Tabs
      value={activeWorkspaceTab}
-     items={availableTabs.map((tab) => ({ key: tab.id, label: tab.label, icon: tab.icon }))}
+     items={availableTabs.map((tab) => ({
+      key: tab.id,
+      label: tab.label,
+      icon: tab.icon,
+     }))}
      onValueChange={setWorkspaceTab}
      listClassName="sticky top-0 z-30 border border-border-default bg-bg-subtle/95 backdrop-blur"
      aria-label={t("chrome.tabsAria")}

@@ -347,7 +347,7 @@ export function AddApiKeyDialog({ trigger, onSaved }: AddApiKeyDialogProps) {
        </div>
       </Card>
      ) : discovery ? (
-      <Card variant="subtle" padding="sm" className="grid gap-2">
+      <Card variant="subtle" padding="sm" className="grid">
        <div className="flex flex-wrap items-center gap-2">
         <Badge variant="success" casing="natural">
          <ShieldCheck />

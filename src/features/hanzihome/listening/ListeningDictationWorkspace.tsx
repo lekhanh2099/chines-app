@@ -319,7 +319,7 @@ export function ListeningDictationWorkspace() {
 
  if (query.isError || !bundle || !selectedSection) {
   return (
-   <Card variant="default" padding="lg" className="grid min-h-64 place-content-center gap-2">
+   <Card variant="default" padding="lg" className="grid min-h-64 place-content-center">
     <div className="grid gap-1 text-center">
      <StudyInstructionText tone="default" weight="black">
       Không tải được bài nghe chép
@@ -428,7 +428,7 @@ export function ListeningDictationWorkspace() {
      </StudyInstructionText>
     ) : null}
 
-    <Card variant="section" padding="md" className="grid gap-1.5">
+    <Card variant="section" padding="md" className="grid">
      <div className="flex items-start gap-2">
       <Headphones className="size-5 shrink-0 translate-y-0.5 text-primary" />
       <div className="grid min-w-0 gap-1">

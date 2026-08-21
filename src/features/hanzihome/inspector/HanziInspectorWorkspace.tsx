@@ -119,7 +119,7 @@ export function HanziInspectorWorkspace() {
     </Typography>
    </div>
 
-   <Card variant="section" padding="md" className="grid gap-4">
+   <Card variant="section" padding="md" className="grid">
     <form className="grid gap-4" onSubmit={inspect}>
      <label className="grid gap-2">
       <Typography as="span" variant="label" weight="bold">

@@ -97,7 +97,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  }, [selectedPoint, vocabItems]);
 
  const renderGrammarSidebar = () => (
-  <div className="grid min-w-0 max-w-full content-start gap-3 overflow-hidden">
+  <div className="grid min-w-0 max-w-full content-start overflow-hidden">
    <GrammarPointList
     points={grammarPoints}
     selectedPointId={

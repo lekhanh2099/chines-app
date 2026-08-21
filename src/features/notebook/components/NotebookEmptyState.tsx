@@ -8,7 +8,7 @@ export function NotebookEmptyState() {
   <Card
    variant="section"
    padding="lg"
-   className="grid min-h-72 content-center justify-items-center gap-4 text-center"
+   className="grid min-h-72 content-center justify-items-center text-center"
   >
    <EmptyState
     size="spacious"

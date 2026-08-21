@@ -285,7 +285,7 @@ export function TtsStudioWorkspace() {
 
  return (
   <div className="grid min-w-0 gap-3">
-   <Card variant="section" padding="md" className="grid gap-3">
+   <Card variant="section" padding="md" className="grid">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
       <Typography as="h1" variant="pageTitle" weight="black">

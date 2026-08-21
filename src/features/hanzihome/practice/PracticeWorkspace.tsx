@@ -22,7 +22,7 @@ export function PracticeWorkspace({
  const workspaceTab = ttsStudioOpen ? "tts" : translationOpen ? "translation" : "exercises";
 
  return (
-  <div className="grid min-w-0 gap-3">
+  <div className="grid min-w-0">
    <Tabs
     value={workspaceTab}
     items={[

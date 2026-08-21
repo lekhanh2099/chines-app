@@ -311,168 +311,161 @@ export function ReaderWorkspace({
 
    {surface === "text" ? (
     <div className="grid min-w-0 gap-3">
-     <div className="grid min-w-0 gap-5">
-      <div className="grid min-w-0 gap-3">
-       {!showCollectionCatalog ? (
-        <>
-         {coreReaderOption ? (
-          <Card
-           variant="section"
-           padding="lg"
-           className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
-          >
-           <div className="grid min-w-0 gap-2">
-            <div className="flex flex-wrap items-center gap-2">
-             <Badge variant={coreReaderOption.badgeVariant} casing="natural">
-              {coreReaderOption.badge}
-             </Badge>
-             <Typography variant="caption" tone="muted">
-              {t("primary.startPoint")}
-             </Typography>
-            </div>
-            <div className="grid min-w-0 gap-1">
-             <Typography as="h2" variant="sectionTitle" weight="black">
-              {coreReaderOption.title}
-             </Typography>
-             <Typography as="p" variant="bodySmall" tone="secondary">
-              {coreReaderOption.description}
-             </Typography>
-            </div>
-           </div>
-           <Button type="button" variant="default" asChild>
-            <Link href={coreReaderOption.href} prefetch={false}>
-             <BookOpen data-icon="inline-start" />
-             {t("primary.openCourse")}
-            </Link>
-           </Button>
-          </Card>
-         ) : null}
-
-         <Card variant="section" padding="md" className="grid gap-2">
-          <div className="grid gap-1">
-           <Typography as="h2" variant="cardTitle" weight="black">
-            {t("otherCollections.title")}
-           </Typography>
-           <Typography as="p" variant="bodySmall" tone="muted">
-            {t("otherCollections.description")}
+     {!showCollectionCatalog ? (
+      <>
+       {coreReaderOption ? (
+        <Card
+         variant="section"
+         padding="lg"
+         className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+        >
+         <div className="grid min-w-0 gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+           <Badge variant={coreReaderOption.badgeVariant} casing="natural">
+            {coreReaderOption.badge}
+           </Badge>
+           <Typography variant="caption" tone="muted">
+            {t("primary.startPoint")}
            </Typography>
           </div>
-          <div className="grid gap-1">
-           {secondaryReaderOptions.map((option) => (
-            <ReaderSourceRow key={option.href} option={option} />
-           ))}
+          <div className="grid min-w-0 gap-1">
+           <Typography as="h2" variant="sectionTitle" weight="black">
+            {coreReaderOption.title}
+           </Typography>
+           <Typography as="p" variant="bodySmall" tone="secondary">
+            {coreReaderOption.description}
+           </Typography>
           </div>
-         </Card>
-        </>
+         </div>
+         <Button type="button" variant="default" asChild>
+          <Link href={coreReaderOption.href} prefetch={false}>
+           <BookOpen data-icon="inline-start" />
+           {t("primary.openCourse")}
+          </Link>
+         </Button>
+        </Card>
        ) : null}
 
-       {showCollectionCatalog ? (
-        <div className="grid min-w-0 gap-4" aria-label={t("catalog.aria")}>
-         <div className="flex min-w-0 flex-wrap items-center gap-2">
+       <Card variant="section" padding="md" className="grid gap-2">
+        <div className="grid gap-1">
+         <Typography as="h2" variant="cardTitle" weight="black">
+          {t("otherCollections.title")}
+         </Typography>
+         <Typography as="p" variant="bodySmall" tone="muted">
+          {t("otherCollections.description")}
+         </Typography>
+        </div>
+        <div className="grid gap-1">
+         {secondaryReaderOptions.map((option) => (
+          <ReaderSourceRow key={option.href} option={option} />
+         ))}
+        </div>
+       </Card>
+      </>
+     ) : null}
+
+     {showCollectionCatalog ? (
+      <div className="grid min-w-0 gap-4" aria-label={t("catalog.aria")}>
+       <div className="flex min-w-0 flex-wrap items-center gap-2">
+        <Button
+         type="button"
+         size="sm"
+         variant="ghost"
+         onClick={() => {
+          const next = new URLSearchParams(searchParams.toString());
+          next.delete("collection");
+          next.delete("document");
+          router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, {
+           scroll: false,
+          });
+         }}
+        >
+         {t("catalog.back")}
+        </Button>
+        <div className="flex min-w-0 flex-wrap gap-2" aria-label={t("catalog.collectionsAria")}>
+         {readerCollectionOptions.map((option) => (
           <Button
+           key={option.kind}
            type="button"
            size="sm"
-           variant="ghost"
+           variant={readerKind === option.kind ? "active" : "outline"}
            onClick={() => {
             const next = new URLSearchParams(searchParams.toString());
-            next.delete("collection");
+            next.set("collection", option.kind);
             next.delete("document");
             router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, {
              scroll: false,
             });
            }}
           >
-           {t("catalog.back")}
+           {option.label}
           </Button>
-          <div className="flex min-w-0 flex-wrap gap-2" aria-label={t("catalog.collectionsAria")}>
-           {readerCollectionOptions.map((option) => (
-            <Button
-             key={option.kind}
-             type="button"
-             size="sm"
-             variant={readerKind === option.kind ? "active" : "outline"}
-             onClick={() => {
-              const next = new URLSearchParams(searchParams.toString());
-              next.set("collection", option.kind);
-              next.delete("document");
-              router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, {
-               scroll: false,
-              });
-             }}
-            >
-             {option.label}
-            </Button>
-           ))}
-          </div>
-         </div>
-         {requestedDocumentId.length === 0 ? (
-          documents.length === 0 ? (
-           <Typography variant="caption" tone="muted">
-            {t("catalog.emptyStatic")}
-           </Typography>
-          ) : (
-           groupedDocuments.map((group) => (
-            <Card key={group.id} variant="subtle" padding="md" className="grid gap-3">
-             <div className="flex flex-wrap items-start justify-between gap-2 border-b border-border pb-3">
-              <div className="grid gap-1">
-               <Typography as="h3" variant="cardTitle" weight="black">
-                {group.id === "other"
-                 ? t("catalog.otherDocuments")
-                 : t("catalog.unit", { id: group.id })}
-               </Typography>
-               <Typography as="p" variant="caption" tone="muted">
-                {t("catalog.chooseDocument")}
-               </Typography>
-              </div>
-              <Typography variant="caption" tone="muted">
-               {t("catalog.documentCount", { count: group.documents.length })}
-              </Typography>
-             </div>
-             <div className="grid min-w-0 gap-2 sm:grid-cols-2 xl:grid-cols-3">
-              {group.documents.map((document) => (
-               <Button
-                key={document.id}
-                type="button"
-                size="lg"
-                variant={selectedDocumentId === document.id ? "active" : "surfaceCard"}
-                align="start"
-                wrap="normal"
-                layout="grid"
-                onClick={() => {
-                 const next = new URLSearchParams(searchParams.toString());
-                 next.set("document", document.id);
-                 router.push(`${pathname}?${next.toString()}`, { scroll: false });
-                }}
-               >
-                <Typography
-                 as="span"
-                 variant="bodySmall"
-                 weight="bold"
-                 className="w-full text-left"
-                >
-                 {document.title_zh}
-                </Typography>
-                <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-                 {document.title_vi || document.genre_vi || document.kind.toUpperCase()}
-                </Typography>
-                <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
-                 {t("catalog.metadata", {
-                  paragraphs: metadataCount(document, "paragraphs") ?? 0,
-                  vocabulary: metadataCount(document, "vocabulary") ?? 0,
-                  exercises: metadataCount(document, "exercises") ?? 0,
-                 })}
-                </Typography>
-               </Button>
-              ))}
-             </div>
-            </Card>
-           ))
-          )
-         ) : null}
+         ))}
         </div>
+       </div>
+       {requestedDocumentId.length === 0 ? (
+        documents.length === 0 ? (
+         <Typography variant="caption" tone="muted">
+          {t("catalog.emptyStatic")}
+         </Typography>
+        ) : (
+         groupedDocuments.map((group) => (
+          <Card key={group.id} variant="subtle" padding="md" className="grid gap-3">
+           <div className="flex flex-wrap items-start justify-between gap-2 border-b border-border pb-3">
+            <div className="grid gap-1">
+             <Typography as="h3" variant="cardTitle" weight="black">
+              {group.id === "other"
+               ? t("catalog.otherDocuments")
+               : t("catalog.unit", { id: group.id })}
+             </Typography>
+             <Typography as="p" variant="caption" tone="muted">
+              {t("catalog.chooseDocument")}
+             </Typography>
+            </div>
+            <Typography variant="caption" tone="muted">
+             {t("catalog.documentCount", { count: group.documents.length })}
+            </Typography>
+           </div>
+           <div className="grid min-w-0 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+            {group.documents.map((document) => (
+             <Button
+              key={document.id}
+              type="button"
+              size="lg"
+              variant={selectedDocumentId === document.id ? "active" : "surfaceCard"}
+              align="start"
+              wrap="normal"
+              layout="grid"
+              onClick={() => {
+               const next = new URLSearchParams(searchParams.toString());
+               next.set("document", document.id);
+               router.push(`${pathname}?${next.toString()}`, {
+                scroll: false,
+               });
+              }}
+             >
+              <Typography as="span" variant="bodySmall" weight="bold" className="w-full text-left">
+               {document.title_zh}
+              </Typography>
+              <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
+               {document.title_vi || document.genre_vi || document.kind.toUpperCase()}
+              </Typography>
+              <Typography as="span" variant="caption" tone="muted" className="w-full text-left">
+               {t("catalog.metadata", {
+                paragraphs: metadataCount(document, "paragraphs") ?? 0,
+                vocabulary: metadataCount(document, "vocabulary") ?? 0,
+                exercises: metadataCount(document, "exercises") ?? 0,
+               })}
+              </Typography>
+             </Button>
+            ))}
+           </div>
+          </Card>
+         ))
+        )
        ) : null}
       </div>
-     </div>
+     ) : null}
 
      {showCollectionCatalog && requestedDocumentId.length > 0 && resource === null ? (
       <Card variant="subtle" padding="lg">

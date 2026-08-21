@@ -288,7 +288,7 @@ export function AiConversationMemoryManagerDialog({
      ) : (
       <div className="grid gap-3">
        {filteredMemories.map((memory) => (
-        <Card key={memory.id} variant="subtle" padding="sm" className="grid gap-3">
+        <Card key={memory.id} variant="subtle" padding="sm" className="grid">
          <div className="flex min-w-0 items-start justify-between gap-3">
           <div className="grid min-w-0 gap-2">
            <Typography as="p" variant="bodySmall" leading="standard" wrapping="preWrap">

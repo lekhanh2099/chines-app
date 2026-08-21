@@ -174,7 +174,11 @@ export function LearningLoopWorkspace() {
       variant="destructive"
       disabled={rateMutation.isPending}
       onClick={() =>
-       rateMutation.mutate({ itemId: item.id, rating: "again", expectedRevision: item.revision })
+       rateMutation.mutate({
+        itemId: item.id,
+        rating: "again",
+        expectedRevision: item.revision,
+       })
       }
      >
       {t("ratings.again")}
@@ -184,7 +188,11 @@ export function LearningLoopWorkspace() {
       variant="outline"
       disabled={rateMutation.isPending}
       onClick={() =>
-       rateMutation.mutate({ itemId: item.id, rating: "hard", expectedRevision: item.revision })
+       rateMutation.mutate({
+        itemId: item.id,
+        rating: "hard",
+        expectedRevision: item.revision,
+       })
       }
      >
       {t("ratings.hard")}
@@ -193,7 +201,11 @@ export function LearningLoopWorkspace() {
       type="button"
       disabled={rateMutation.isPending}
       onClick={() =>
-       rateMutation.mutate({ itemId: item.id, rating: "good", expectedRevision: item.revision })
+       rateMutation.mutate({
+        itemId: item.id,
+        rating: "good",
+        expectedRevision: item.revision,
+       })
       }
      >
       {t("ratings.good")}

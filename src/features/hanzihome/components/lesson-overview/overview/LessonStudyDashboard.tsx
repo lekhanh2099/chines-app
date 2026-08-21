@@ -44,7 +44,7 @@ export function LessonStudyDashboard({
 }) {
  const heading = getLessonHeading(lesson);
  const header = (
-  <Card padding="lg" className="grid content-start gap-3">
+  <Card padding="lg" className="grid content-start">
    <div className="flex flex-wrap items-start justify-between gap-3">
     <div className="min-w-0">
      <StudyInstructionText

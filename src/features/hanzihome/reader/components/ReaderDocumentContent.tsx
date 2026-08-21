@@ -345,7 +345,9 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
      transform="uppercase"
     >
      {segment.kind === "dialogue-turn"
-      ? t("dialogue", { speaker: segment.speaker?.label ?? t("dialogueFallback") })
+      ? t("dialogue", {
+         speaker: segment.speaker?.label ?? t("dialogueFallback"),
+        })
       : t("reading")}
     </StudyInstructionText>
     {segment.role ? (

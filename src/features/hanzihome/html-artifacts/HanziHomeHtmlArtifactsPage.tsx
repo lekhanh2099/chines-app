@@ -1040,7 +1040,7 @@ function DirectoryPane({
      Thư mục mới
     </Button>
    </div>
-   <div className="grid shrink-0 gap-2 border-b border-border-default bg-bg-card p-3">
+   <div className="grid shrink-0 border-b border-border-default bg-bg-card p-3">
     <div className="relative">
      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
      <Input
