@@ -34,7 +34,6 @@ import { appShellStore } from "@/stores/app-shell-store";
 import { sidebarStore } from "@/stores/sidebar-store";
 
 type NavigationGroup = NavigationGroupConfig;
-type ManualGroupDisclosure = { routeKey: string; groupId: string } | null;
 
 function matchesHref(
  pathname: string,
@@ -183,16 +182,14 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const isContentFullscreen = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const pathname = usePathname();
  const searchParams = useSearchParams();
- const routeKey = `${pathname}?${searchParams.toString()}`;
  const isCollapsed = useSelector(sidebarStore, (state) => state.isCollapsed);
  const { toggle: toggleSidebar, hydrate: hydrateSidebar } = sidebarStore.actions;
  const activeGroupId = visibleNavigationGroups.find((group) =>
   groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
- const [manualGroupDisclosure, setManualGroupDisclosure] = useState<ManualGroupDisclosure>(null);
- const manuallyExpandedGroupId =
-  manualGroupDisclosure?.routeKey === routeKey ? manualGroupDisclosure.groupId : null;
- const openGroupId = manuallyExpandedGroupId ?? activeGroupId ?? visibleNavigationGroups[0]?.id;
+ const [expandedGroupIds, setExpandedGroupIds] = useState<ReadonlySet<string>>(
+  () => new Set(activeGroupId ? [activeGroupId] : []),
+ );
 
  useEffect(() => {
   hydrateSidebar();
@@ -250,7 +247,7 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
     ) : (
      <div className="grid content-start gap-1.5">
       {visibleNavigationGroups.map((group) => {
-       const groupOpen = group.id === openGroupId;
+       const groupOpen = group.id === activeGroupId || expandedGroupIds.has(group.id);
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
 
@@ -265,9 +262,16 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
           onClick={() => {
-           setManualGroupDisclosure((current) => {
-            const currentGroupId = current?.routeKey === routeKey ? current.groupId : null;
-            return currentGroupId === group.id ? null : { routeKey, groupId: group.id };
+           if (group.id === activeGroupId) return;
+
+           setExpandedGroupIds((current) => {
+            const next = new Set(current);
+            if (next.has(group.id)) {
+             next.delete(group.id);
+            } else {
+             next.add(group.id);
+            }
+            return next;
            });
           }}
          >
@@ -299,7 +303,6 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
               itemId={itemId}
               active={isActive(pathname, searchParams, itemId)}
               collapsed={false}
-              onNavigate={() => setManualGroupDisclosure(null)}
              />
             ))}
            </div>
