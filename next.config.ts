@@ -24,12 +24,10 @@ const nextConfig: NextConfig = {
    "src/**/*.tsx": {
     condition: "development",
     loaders: [uiSourceTraceLoader],
-    as: "*.tsx",
    },
    "src/**/*.jsx": {
     condition: "development",
     loaders: [uiSourceTraceLoader],
-    as: "*.jsx",
    },
   },
  },
