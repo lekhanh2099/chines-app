@@ -76,11 +76,13 @@ describe("ui-source-trace-loader", () => {
   expect(output).toContain(`<Button data-ui-source="${sourcePath}:3:3"\n   type="button"`);
  });
 
- it("returns JavaScript-compatible JSX for a TSX Turbopack loader rule", () => {
+ it("emits JavaScript for TSX while preserving extensionless import specifiers", () => {
   const source = [
+   '"use client";',
+   'import { helper } from "./helper";',
    'type Props = { label: string };',
    'export function ReaderDemo({ label }: Props) {',
-   ' return <div>{label}</div>;',
+   ' return <div>{helper(label)}</div>;',
    '}',
   ].join("\n");
   let cacheableCalled = false;
@@ -96,9 +98,24 @@ describe("ui-source-trace-loader", () => {
   );
 
   expect(cacheableCalled).toBe(true);
+  expect(output).toContain('"use client"');
+  expect(output).toContain('from "./helper"');
   expect(output).not.toContain("type Props");
   expect(output).not.toContain(": Props");
-  expect(output).toContain(`data-ui-source="${sourcePath}:3:9"`);
-  expect(output).toContain("<div");
+  expect(output).not.toContain("<div");
+  expect(output).toContain(`"data-ui-source": "${sourcePath}:5:9"`);
+  expect(output).toContain("react/jsx-runtime");
+ });
+
+ it("emits plain JavaScript for JSX sources too", () => {
+  const jsxContext = {
+   resourcePath: "/workspace/src/components/Demo.jsx",
+   rootContext: "/workspace",
+  };
+  const output = uiSourceTraceLoader.call(jsxContext, "export const Demo = () => <span>ok</span>;");
+
+  expect(output).not.toContain("<span");
+  expect(output).toContain('"data-ui-source": "src/components/Demo.jsx:1:26"');
+  expect(output).toContain("react/jsx-runtime");
  });
 });

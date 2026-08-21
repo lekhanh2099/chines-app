@@ -189,6 +189,7 @@ export function LessonTextInlineEditor({
    <ReaderSurface
     document={lessonReader.document}
     lessonId={lesson.id}
+    compact={compact}
     renderSegment={renderReaderSegment}
     renderSection={renderReaderSection}
    />

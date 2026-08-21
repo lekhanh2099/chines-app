@@ -59,6 +59,7 @@ export type ReaderSurfaceProps = {
  onOpenShadowing?: () => void;
  toolbarStickyOffset?: ReaderToolbarStickyOffset;
  initialFocus?: ReaderSourceTarget | null;
+ compact?: boolean;
 };
 
 type TextPoint = { node: Text; offset: number };
@@ -127,6 +128,7 @@ function ReaderSurfaceViewContent({
  onOpenShadowing,
  toolbarStickyOffset = "page",
  initialFocus,
+ compact = false,
 }: ReaderSurfaceProps) {
  const t = useTranslations("Reader.study.chrome.surface");
  const searchParams = useSearchParams();
@@ -339,6 +341,12 @@ function ReaderSurfaceViewContent({
     onOpenOutline={() => setOutlineOpen(true)}
     onOpenShadowing={onOpenShadowing}
     stickyOffset={toolbarStickyOffset}
+    compact={compact}
+    outlineMenu={
+     compact
+      ? (onNavigate) => <ReaderOutlineContent document={document} onNavigate={onNavigate} />
+      : undefined
+    }
    />
    {error ? (
     <Typography as="p" variant="caption" tone="danger" role="alert">
@@ -350,7 +358,9 @@ function ReaderSurfaceViewContent({
     className={
      focusMode
       ? "grid min-w-0"
-      : "grid min-w-0 items-start gap-4 2xl:grid-cols-[minmax(0,1fr)_18rem]"
+      : compact
+        ? "grid min-w-0"
+        : "grid min-w-0 items-start gap-4 2xl:grid-cols-[minmax(0,1fr)_18rem]"
     }
    >
     <div className={focusMode ? "mx-auto w-full max-w-5xl" : "min-w-0"}>
@@ -365,7 +375,7 @@ function ReaderSurfaceViewContent({
       setSegmentElement={setSegmentElement}
      />
     </div>
-    {!focusMode ? (
+    {!focusMode && !compact ? (
      <div className="hidden min-w-0 2xl:block">
       <ReaderOutline document={document} />
      </div>
