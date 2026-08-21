@@ -1,7 +1,6 @@
 import { Typography } from "@/components/ui/typography";
 import { formatDistanceToNow } from "date-fns";
 import { vi } from "date-fns/locale";
-import Link from "next/link";
 import { Clock3, FileText } from "lucide-react";
 
 import { EmptyState } from "@/components/patterns/empty-state";
@@ -10,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { HomeArrowIcon, HomeSectionHeader } from "@/features/home/components/HomePrimitives";
 import type { NoteListItem } from "@/services/notes.service";
+import { Link } from "@/i18n/navigation";
 
 export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
  return (
@@ -21,7 +21,9 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
      description="Tiếp tục các note đang dùng gần đây."
      action={
       <Button variant="link" size="inline" asChild>
-       <Link href="/notes">Xem tất cả</Link>
+       <Link href="/notes" prefetch={false}>
+        Xem tất cả
+       </Link>
       </Button>
      }
     />
@@ -32,6 +34,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
        <Link
         key={note.id}
         href={`/notes/${note.id}`}
+        prefetch={false}
         className="group flex items-center gap-3 py-3 first:pt-0 last:pb-0"
        >
         <IconTile size="sm" tone="neutral">
@@ -70,7 +73,9 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
       description="Tạo một ghi chú khi cần giữ lại nội dung đang học."
       actions={
        <Button asChild size="compact">
-        <Link href="/notes?action=new">Tạo ghi chú</Link>
+        <Link href="/notes?action=new" prefetch={false}>
+         Tạo ghi chú
+        </Link>
        </Button>
       }
      />

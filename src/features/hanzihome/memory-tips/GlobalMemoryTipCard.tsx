@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import Link from "next/link";
 import { Lightbulb, Pencil, Pin, PinOff, Plus, RefreshCw, Settings } from "lucide-react";
 import { toast } from "sonner";
 
@@ -13,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";

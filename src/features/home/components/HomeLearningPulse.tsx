@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import Link from "next/link";
 import { Bookmark, CheckCircle2, FileText, History, Repeat2, Workflow } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
 import type { HomeDashboardModel } from "@/features/home/types";
+import { Link } from "@/i18n/navigation";
 
 export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learningPulse"] }) {
  return (
