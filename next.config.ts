@@ -21,13 +21,17 @@ const nextConfig: NextConfig = {
  turbopack: {
   root: process.cwd(),
   rules: {
-   "src/**/*.tsx": {
-    condition: "development",
+   "*": {
+    condition: {
+     all: [
+      "development",
+      { not: "foreign" },
+      { path: /^src\// },
+      { path: /\.(?:tsx|jsx)$/ },
+     ],
+    },
     loaders: [uiSourceTraceLoader],
-   },
-   "src/**/*.jsx": {
-    condition: "development",
-    loaders: [uiSourceTraceLoader],
+    as: "*.jsx",
    },
   },
  },
