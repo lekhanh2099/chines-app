@@ -1,9 +1,20 @@
 import { Typography } from "@/components/ui/typography";
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
 type PageHeaderDensity = "default" | "compact";
+type PageHeaderProps = Omit<
+ ComponentPropsWithoutRef<"header">,
+ "children" | "title"
+> & {
+ title: string;
+ description?: string;
+ actions?: ReactNode;
+ eyebrow?: ReactNode;
+ meta?: ReactNode;
+ density?: PageHeaderDensity;
+};
 
 export function PageHeader({
  title,
@@ -13,15 +24,8 @@ export function PageHeader({
  meta,
  density = "default",
  className,
-}: {
- title: string;
- description?: string;
- actions?: ReactNode;
- eyebrow?: ReactNode;
- meta?: ReactNode;
- density?: PageHeaderDensity;
- className?: string;
-}) {
+ ...headerProps
+}: PageHeaderProps) {
  const compact = density === "compact";
 
  return (
@@ -31,6 +35,7 @@ export function PageHeader({
     compact ? "gap-3" : "gap-4",
     className,
    )}
+   {...headerProps}
   >
    <div className={cn("grid min-w-0 max-w-3xl flex-[1_1_18rem]", compact ? "gap-2" : "gap-3")}>
     <div className={cn("grid", compact ? "gap-1" : "gap-1.5")}>

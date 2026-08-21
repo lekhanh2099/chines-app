@@ -1,9 +1,14 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 import { appLocales } from "./src/i18n/config";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+const uiSourceTraceLoader = path.resolve(
+ process.cwd(),
+ "scripts/dev/ui-source-trace-loader.cjs",
+);
 
 const legacyHanziHomeRedirects = [
  ["/hanzihome/vocab/review", "/vocab/review"],
@@ -18,6 +23,18 @@ const nextConfig: NextConfig = {
  allowedDevOrigins: ["127.0.0.1"],
  turbopack: {
   root: process.cwd(),
+  rules: {
+   "src/**/*.tsx": {
+    condition: "development",
+    loaders: [uiSourceTraceLoader],
+    as: "*.tsx",
+   },
+   "src/**/*.jsx": {
+    condition: "development",
+    loaders: [uiSourceTraceLoader],
+    as: "*.jsx",
+   },
+  },
  },
  experimental: {
   useTypeScriptCli: false,
