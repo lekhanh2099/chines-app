@@ -23,6 +23,21 @@ project-relative-file:line:column
 The coordinate points to the original JSX opening element before the debug
 attribute is injected.
 
+Turbopack webpack-loader compatibility requires the loader result to be
+JavaScript-compatible code. The trace loader therefore performs two steps:
+
+```text
+original TSX/JSX
+-> inject data-ui-source into the original JSX coordinates
+-> strip TypeScript syntax while preserving JSX
+-> Turbopack continues the normal JSX/Next compilation pipeline
+```
+
+`next.config.ts` registers one development-only non-foreign `src/**` rule for
+`.tsx` and `.jsx` inputs and declares its result as `*.jsx`. Do not change the
+rule back to a TSX output contract: Turbopack custom loaders are documented as
+supporting loaders that return JavaScript code.
+
 This attribute is development instrumentation only. It is not product data,
 not a test selector, not an analytics identifier, and not a persisted contract.
 Production builds use the existing Webpack build path and do not execute this
