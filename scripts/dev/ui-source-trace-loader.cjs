@@ -85,16 +85,37 @@ function transformUiSource(source, { resourcePath, rootContext }) {
  return output;
 }
 
+function emitJavaScriptCompatibleJsx(source, resourcePath) {
+ if (path.extname(resourcePath) === ".jsx") return source;
+
+ return ts.transpileModule(source, {
+  fileName: resourcePath,
+  compilerOptions: {
+   target: ts.ScriptTarget.ESNext,
+   module: ts.ModuleKind.ESNext,
+   jsx: ts.JsxEmit.Preserve,
+   isolatedModules: true,
+   sourceMap: false,
+   inlineSourceMap: false,
+  },
+  reportDiagnostics: false,
+ }).outputText;
+}
+
 function uiSourceTraceLoader(source) {
  if (typeof this.cacheable === "function") this.cacheable();
  if (typeof this.resourcePath !== "string" || this.resourcePath.length === 0) {
   return source;
  }
- return transformUiSource(String(source), {
+
+ const transformedSource = transformUiSource(String(source), {
   resourcePath: this.resourcePath,
   rootContext: this.rootContext,
  });
+
+ return emitJavaScriptCompatibleJsx(transformedSource, this.resourcePath);
 }
 
 uiSourceTraceLoader.transformUiSource = transformUiSource;
+uiSourceTraceLoader.emitJavaScriptCompatibleJsx = emitJavaScriptCompatibleJsx;
 module.exports = uiSourceTraceLoader;
