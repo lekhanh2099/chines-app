@@ -85,16 +85,16 @@ function transformUiSource(source, { resourcePath, rootContext }) {
  return output;
 }
 
-function emitJavaScriptCompatibleJsx(source, resourcePath) {
- if (path.extname(resourcePath) === ".jsx") return source;
-
+function emitJavaScript(source, resourcePath) {
  return ts.transpileModule(source, {
   fileName: resourcePath,
   compilerOptions: {
    target: ts.ScriptTarget.ESNext,
    module: ts.ModuleKind.ESNext,
-   jsx: ts.JsxEmit.Preserve,
+   moduleResolution: ts.ModuleResolutionKind.Bundler,
+   jsx: ts.JsxEmit.ReactJSX,
    isolatedModules: true,
+   verbatimModuleSyntax: true,
    sourceMap: false,
    inlineSourceMap: false,
   },
@@ -113,9 +113,9 @@ function uiSourceTraceLoader(source) {
   rootContext: this.rootContext,
  });
 
- return emitJavaScriptCompatibleJsx(transformedSource, this.resourcePath);
+ return emitJavaScript(transformedSource, this.resourcePath);
 }
 
 uiSourceTraceLoader.transformUiSource = transformUiSource;
-uiSourceTraceLoader.emitJavaScriptCompatibleJsx = emitJavaScriptCompatibleJsx;
+uiSourceTraceLoader.emitJavaScript = emitJavaScript;
 module.exports = uiSourceTraceLoader;
