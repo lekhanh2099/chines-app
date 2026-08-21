@@ -78,7 +78,9 @@ function transformUiSource(source, { resourcePath, rootContext }) {
 
  let output = source;
  for (const insertion of insertions.sort((left, right) => right.position - left.position)) {
-  output = `${output.slice(0, insertion.position)}${insertion.text}${output.slice(insertion.position)}`;
+  const before = output.slice(0, insertion.position);
+  const after = output.slice(insertion.position);
+  output = `${before}${insertion.text}${after}`;
  }
  return output;
 }

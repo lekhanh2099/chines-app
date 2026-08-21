@@ -4,10 +4,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type PageHeaderDensity = "default" | "compact";
-type PageHeaderProps = Omit<
- ComponentPropsWithoutRef<"header">,
- "children" | "title"
-> & {
+type PageHeaderProps = Omit<ComponentPropsWithoutRef<"header">, "children" | "title"> & {
  title: string;
  description?: string;
  actions?: ReactNode;

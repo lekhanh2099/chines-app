@@ -4,8 +4,9 @@ import uiSourceTraceLoader from "./ui-source-trace-loader.cjs";
 
 const { transformUiSource } = uiSourceTraceLoader;
 
+const sourcePath = "src/features/hanzihome/reader/ReaderDemo.tsx";
 const context = {
- resourcePath: "/workspace/src/features/hanzihome/reader/ReaderDemo.tsx",
+ resourcePath: `/workspace/${sourcePath}`,
  rootContext: "/workspace",
 };
 
@@ -23,11 +24,9 @@ describe("ui-source-trace-loader", () => {
 
   const output = transformUiSource(source, context);
 
+  expect(output).toContain(`<div data-ui-source="${sourcePath}:3:3">`);
   expect(output).toContain(
-   '<div data-ui-source="src/features/hanzihome/reader/ReaderDemo.tsx:3:3">',
-  );
-  expect(output).toContain(
-   '<Typography data-ui-source="src/features/hanzihome/reader/ReaderDemo.tsx:4:4">阅读</Typography>',
+   `<Typography data-ui-source="${sourcePath}:4:4">阅读</Typography>`,
   );
  });
 
@@ -48,9 +47,7 @@ describe("ui-source-trace-loader", () => {
 
   expect(output).not.toContain("<React.StrictMode data-ui-source=");
   expect(output).not.toContain("<Context.Provider data-ui-source=");
-  expect(output).toContain(
-   '<Button data-ui-source="src/features/hanzihome/reader/ReaderDemo.tsx:5:5" />',
-  );
+  expect(output).toContain(`<Button data-ui-source="${sourcePath}:5:5" />`);
  });
 
  it("preserves an explicitly supplied source marker without duplicating it", () => {
@@ -76,8 +73,6 @@ describe("ui-source-trace-loader", () => {
 
   const output = transformUiSource(source, context);
 
-  expect(output).toContain(
-   '<Button data-ui-source="src/features/hanzihome/reader/ReaderDemo.tsx:3:3"\n   type="button"',
-  );
+  expect(output).toContain(`<Button data-ui-source="${sourcePath}:3:3"\n   type="button"`);
  });
 });

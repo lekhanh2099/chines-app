@@ -5,10 +5,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 import { appLocales } from "./src/i18n/config";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
-const uiSourceTraceLoader = path.resolve(
- process.cwd(),
- "scripts/dev/ui-source-trace-loader.cjs",
-);
+const uiSourceTraceLoader = path.resolve(process.cwd(), "scripts/dev/ui-source-trace-loader.cjs");
 
 const legacyHanziHomeRedirects = [
  ["/hanzihome/vocab/review", "/vocab/review"],
