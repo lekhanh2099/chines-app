@@ -1,5 +1,10 @@
 # HanziHome Integrity Remediation — Execution Checkpoints
 
+> **Historical migration note (2026-08-21):** The individual migration IDs and
+> paths recorded below are historical evidence. They are superseded by
+> `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`;
+> do not rerun or repair the individual migrations.
+
 Branch: `refactor/hanzihome-integrity-remediation`  
 Master plan: `docs/refactor/hanzihome-integrity-remediation-plan.md`  
 Base `main`: `864037d31376bbff3854e8198695be6259a969e4`  

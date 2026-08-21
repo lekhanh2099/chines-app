@@ -1,5 +1,10 @@
 # HanziHome Phase 1 — Closeout Runbook
 
+> **Historical migration note (2026-08-21):** This is a record of the original
+> Phase 1 procedure, not a current apply runbook. Its individual migration
+> files are superseded by
+> `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`.
+
 Branch: `refactor/hanzihome-integrity-remediation`  
 Target DB: Supabase `chines-app` / `pdrzkirlhbkmfpbcsujp`  
 Date: 2026-08-20

@@ -1,6 +1,10 @@
 # HanziHome Phase 0 — Dictionary Authorization Lock Runbook
 
-Status: prepared, **not applied**  
+> **Historical migration note (2026-08-21):** The standalone migration named
+> below is no longer executable. Its final authorization state is included in
+> `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`.
+
+Status: historical record; superseded by the canonical baseline
 Branch: `refactor/hanzihome-integrity-remediation`  
 Target inspected: Supabase `chines-app` / `pdrzkirlhbkmfpbcsujp`  
 Migration: `supabase/migrations/20260819235500_lock_shared_dictionary_writes_to_server.sql`

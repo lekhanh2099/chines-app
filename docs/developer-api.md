@@ -224,9 +224,10 @@ old key return `401`, including for mutation bridges and TTS quota checks.
 
 ## Deployment status
 
-The contract above is paired with the `integration_api_keys` migration and
-typed server boundary. It must be applied and type-generated in a non-live
-Supabase test target before it is enabled on the production project. The API
-inventory in the app lists every current internal route and direct client data
-flow, including the intentionally internal provider-key and static-publish
-routes.
+This is a future API contract, not an active production surface. Its historical
+`integration_api_keys` migration was never applied and is deliberately not part
+of the canonical production baseline. Do not point another app at `/api/v1`.
+
+If this API is resumed, create a new migration and server boundary from the
+current baseline, apply them first to a non-live Supabase target, regenerate
+types, and pass endpoint-contract tests before enabling production traffic.

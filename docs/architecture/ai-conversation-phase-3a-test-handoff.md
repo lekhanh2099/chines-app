@@ -3,7 +3,7 @@
 Status: implementation checkpoint ready for user-run code/integration verification
 Branch: `feat/persistent-social-memory-ai-redesign`
 Database mutation by implementation agent: none
-Migration prerequisite for persisted integration testing: `supabase/migrations/20260818095100_create_ai_conversation_persistence.sql`
+Migration prerequisite for persisted integration testing: `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`
 
 ## Scope completed
 

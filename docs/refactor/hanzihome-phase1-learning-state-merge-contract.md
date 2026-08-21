@@ -1,5 +1,9 @@
 # HanziHome Phase 1 — Learning-state merge contract
 
+> **Historical migration note (2026-08-21):** The individual migration ID
+> recorded below is historical evidence. The live state is represented by
+> `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`.
+
 Branch: `refactor/hanzihome-integrity-remediation`  
 Master plan: `docs/refactor/hanzihome-integrity-remediation-plan.md`  
 Date: 2026-08-20

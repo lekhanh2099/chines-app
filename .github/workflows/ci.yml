@@ -57,28 +57,9 @@ jobs:
    - run: npm install --global npm@11.6.1
    - run: npm ci
    - run: npx playwright install --with-deps chromium
-   - name: Apply local migrations without production-only backfill
+   - name: Apply canonical local schema baseline
      shell: bash
      run: |
-      local_backfill_migrations=(
-       "supabase/migrations/20260714061112_migrate_admin_data_to_google_user.sql"
-       "supabase/migrations/20260714061720_retire_legacy_admin_user.sql"
-       "supabase/migrations/20260718113000_finalize_hanzihome_boya_nine_volume_cutover.sql"
-       "supabase/migrations/20260721140327_remove_boya_second_edition_intermediate_deep_vocab_sections.sql"
-       "supabase/migrations/20260722115000_drop_legacy_hanzihome_backup_schema.sql"
-      )
-      local_backfill_backups=()
-      restore_backfill_migrations() {
-       for index in "${!local_backfill_migrations[@]}"; do
-        mv "${local_backfill_backups[$index]}" "${local_backfill_migrations[$index]}"
-       done
-      }
-      trap restore_backfill_migrations EXIT
-      for local_backfill_migration in "${local_backfill_migrations[@]}"; do
-       local_backfill_backup="$RUNNER_TEMP/$(basename "$local_backfill_migration")"
-       local_backfill_backups+=("$local_backfill_backup")
-       mv "$local_backfill_migration" "$local_backfill_backup"
-      done
       npx supabase start
       npx supabase db reset
    - name: Export local Supabase environment

@@ -2,7 +2,7 @@
 
 Status: ready for user-run integration test; database migration is not applied by the implementation agent.
 Branch: `feat/persistent-social-memory-ai-redesign`
-Migration prerequisite: `supabase/migrations/20260818095100_create_ai_conversation_persistence.sql`
+Migration prerequisite: `supabase/migrations/20260820163000_hanzihome_remote_schema_baseline.sql`
 Current-contract note: Phase 3A has since removed the legacy local `profile` from the persisted message transport. The persistence/idempotency behavior in this handoff remains valid; use the updated request shape below.
 
 ## Scope completed in this checkpoint

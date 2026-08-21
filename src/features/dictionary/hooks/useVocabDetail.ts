@@ -148,9 +148,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
    const result = saveSrsResponseSchema.parse(await response.json());
 
    if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
-    throw new Error(
-     "Database chua co cot personal_note. Chay migration 20260307000004_user_vocab_personal_note.sql truoc.",
-    );
+    throw new Error("Database chua co cot personal_note. Hay dong bo schema truoc.");
    }
 
    return result;

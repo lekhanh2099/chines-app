@@ -33,30 +33,23 @@ The processor is intentionally opportunistic in Phase 4. The durable row is crea
 
 ## Database source changes
 
-Apply these files in timestamp order only after reviewing them:
+Apply this forward migration only after the canonical baseline is present in
+the target's migration history:
 
 ```text
-20260818122000_add_ai_memory_retrieval_pipeline.sql
-20260818122100_enqueue_ai_post_turn_jobs.sql
-20260818122200_add_ai_explicit_forget_rpc.sql
-20260818122300_harden_ai_memory_lifecycle_scope.sql
+20260821110000_apply_pending_ai_memory_runtime.sql
 ```
 
-The first migration:
+The canonical baseline includes the original persistence and retrieval schema.
+The forward migration:
 
-- enables `vector` in the `extensions` schema;
-- adds nullable `vector(768)` + embedding metadata to `ai_memories`;
-- adds per-stage durable-job checkpoints;
-- adds exact cosine retrieval;
-- adds job claim/retry/finish RPCs;
-- adds transactional memory lifecycle, relationship and summary RPCs;
-- adds no ANN index and performs no memory backfill.
-
-The second migration creates one post-turn job for each future assistant-message insert. It does not backfill historical assistant messages.
-
-The third migration provides the synchronous explicit-forget deletion RPC, limited to global/current-character active memories.
-
-The fourth migration renames the internal lifecycle implementation and restores the public server-only RPC name through a scope-checking wrapper. A model-proposed target id from another character is rejected before lifecycle mutation.
+- creates one post-turn job for each future assistant-message insert without
+  backfilling historical assistant messages;
+- provides the synchronous explicit-forget deletion RPC, limited to
+  global/current-character active memories;
+- renames the internal lifecycle implementation and restores the public
+  server-only RPC name through a scope-checking wrapper. A model-proposed
+  target id from another character is rejected before lifecycle mutation.
 
 ## Runtime changes
 
@@ -155,30 +148,22 @@ The implementation agent could not execute the repository dependency tree in its
 
 The repository/remote migration histories were already observed to be divergent. Do not use `db push --include-all` for this checkpoint.
 
-Use the same explicit SQL Editor process used for the core persistence migration. For each Phase 4 file, in timestamp order:
+After the production schema has been backed up and preflighted, repair the
+linked migration history from a baseline-only worktree, then restore the
+forward migration and apply it from the normal checkout:
 
 ```bash
-cat supabase/migrations/<FILE>.sql | pbcopy
+# baseline-only worktree: contains 20260820163000 only
+npx supabase migration repair --status applied --linked --yes
+
+# normal checkout: contains the baseline plus 20260821110000
+npx supabase migration up --linked
+npx supabase migration list --linked
 ```
 
-Paste into Supabase SQL Editor, verify the first line is `begin;` and last line is `commit;`, then run it.
-
-After all four SQL files succeed, mark only these four versions applied in migration history:
-
-```bash
-npx supabase migration repair 20260818122000 --status applied
-npx supabase migration repair 20260818122100 --status applied
-npx supabase migration repair 20260818122200 --status applied
-npx supabase migration repair 20260818122300 --status applied
-```
-
-Then confirm:
-
-```bash
-npx supabase migration list
-```
-
-Do not repair unrelated historical versions as part of this feature.
+The repair step updates only migration-history records; it does not execute the
+baseline against populated production data. The subsequent `migration up`
+executes only `20260821110000_apply_pending_ai_memory_runtime.sql`.
 
 ## Small manual integration test
 

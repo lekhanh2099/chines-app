@@ -14,6 +14,447 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_characters: {
+        Row: {
+          age: number | null
+          archived_at: string | null
+          background: string
+          city: string
+          created_at: string
+          display_name: string
+          id: string
+          identity_notes: string
+          interests: string[]
+          personality: string
+          speaking_style: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          age?: number | null
+          archived_at?: string | null
+          background?: string
+          city?: string
+          created_at?: string
+          display_name: string
+          id?: string
+          identity_notes?: string
+          interests?: string[]
+          personality?: string
+          speaking_style?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          age?: number | null
+          archived_at?: string | null
+          background?: string
+          city?: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          identity_notes?: string
+          interests?: string[]
+          personality?: string
+          speaking_style?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      ai_conversation_preferences: {
+        Row: {
+          created_at: string
+          default_character_id: string | null
+          default_correction_style: string
+          default_mode: string
+          default_reply_mode: string
+          learner_level: string
+          memory_enabled: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          default_character_id?: string | null
+          default_correction_style?: string
+          default_mode?: string
+          default_reply_mode?: string
+          learner_level?: string
+          memory_enabled?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          default_character_id?: string | null
+          default_correction_style?: string
+          default_mode?: string
+          default_reply_mode?: string
+          learner_level?: string
+          memory_enabled?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_conversation_preferences_default_character_fk"
+            columns: ["default_character_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_characters"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
+      ai_conversations: {
+        Row: {
+          archived_at: string | null
+          character_id: string
+          correction_style: string
+          created_at: string
+          id: string
+          last_message_at: string | null
+          last_message_seq: number
+          memory_policy: string
+          mode: string
+          reply_mode: string
+          summary: string
+          summary_until_seq: number
+          summary_version: number
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          archived_at?: string | null
+          character_id: string
+          correction_style: string
+          created_at?: string
+          id?: string
+          last_message_at?: string | null
+          last_message_seq?: number
+          memory_policy?: string
+          mode: string
+          reply_mode: string
+          summary?: string
+          summary_until_seq?: number
+          summary_version?: number
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          archived_at?: string | null
+          character_id?: string
+          correction_style?: string
+          created_at?: string
+          id?: string
+          last_message_at?: string | null
+          last_message_seq?: number
+          memory_policy?: string
+          mode?: string
+          reply_mode?: string
+          summary?: string
+          summary_until_seq?: number
+          summary_version?: number
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_conversations_character_fk"
+            columns: ["character_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_characters"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
+      ai_memories: {
+        Row: {
+          character_id: string | null
+          confidence: number
+          content: string
+          created_at: string
+          embedding: string | null
+          embedding_model: string | null
+          embedding_version: number | null
+          id: string
+          importance: number
+          kind: string
+          last_recalled_at: string | null
+          last_reinforced_at: string
+          memory_key: string | null
+          reinforcement_count: number
+          status: string
+          superseded_by_id: string | null
+          updated_at: string
+          user_id: string
+          valid_until: string | null
+        }
+        Insert: {
+          character_id?: string | null
+          confidence: number
+          content: string
+          created_at?: string
+          embedding?: string | null
+          embedding_model?: string | null
+          embedding_version?: number | null
+          id?: string
+          importance: number
+          kind: string
+          last_recalled_at?: string | null
+          last_reinforced_at?: string
+          memory_key?: string | null
+          reinforcement_count?: number
+          status?: string
+          superseded_by_id?: string | null
+          updated_at?: string
+          user_id: string
+          valid_until?: string | null
+        }
+        Update: {
+          character_id?: string | null
+          confidence?: number
+          content?: string
+          created_at?: string
+          embedding?: string | null
+          embedding_model?: string | null
+          embedding_version?: number | null
+          id?: string
+          importance?: number
+          kind?: string
+          last_recalled_at?: string | null
+          last_reinforced_at?: string
+          memory_key?: string | null
+          reinforcement_count?: number
+          status?: string
+          superseded_by_id?: string | null
+          updated_at?: string
+          user_id?: string
+          valid_until?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_memories_character_fk"
+            columns: ["character_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_characters"
+            referencedColumns: ["id", "user_id"]
+          },
+          {
+            foreignKeyName: "ai_memories_superseded_by_fk"
+            columns: ["superseded_by_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_memories"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
+      ai_memory_evidence: {
+        Row: {
+          action: string
+          created_at: string
+          memory_id: string
+          message_id: string
+          user_id: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          memory_id: string
+          message_id: string
+          user_id: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          memory_id?: string
+          message_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_memory_evidence_memory_fk"
+            columns: ["memory_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_memories"
+            referencedColumns: ["id", "user_id"]
+          },
+          {
+            foreignKeyName: "ai_memory_evidence_message_fk"
+            columns: ["message_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_messages"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
+      ai_messages: {
+        Row: {
+          client_message_id: string | null
+          content: string
+          conversation_id: string
+          created_at: string
+          id: string
+          metadata: Json
+          reply_to_message_id: string | null
+          role: string
+          seq: number
+          user_id: string
+        }
+        Insert: {
+          client_message_id?: string | null
+          content: string
+          conversation_id: string
+          created_at?: string
+          id?: string
+          metadata?: Json
+          reply_to_message_id?: string | null
+          role: string
+          seq: number
+          user_id: string
+        }
+        Update: {
+          client_message_id?: string | null
+          content?: string
+          conversation_id?: string
+          created_at?: string
+          id?: string
+          metadata?: Json
+          reply_to_message_id?: string | null
+          role?: string
+          seq?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_messages_conversation_fk"
+            columns: ["conversation_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_conversations"
+            referencedColumns: ["id", "user_id"]
+          },
+          {
+            foreignKeyName: "ai_messages_reply_to_fk"
+            columns: ["reply_to_message_id", "conversation_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_messages"
+            referencedColumns: ["id", "conversation_id", "user_id"]
+          },
+        ]
+      }
+      ai_post_turn_jobs: {
+        Row: {
+          assistant_message_id: string
+          attempt_count: number
+          available_at: string
+          completed_at: string | null
+          conversation_id: string
+          created_at: string
+          id: string
+          kind: string
+          last_error: string | null
+          locked_at: string | null
+          memory_applied_at: string | null
+          relationship_applied_at: string | null
+          status: string
+          summary_applied_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          assistant_message_id: string
+          attempt_count?: number
+          available_at?: string
+          completed_at?: string | null
+          conversation_id: string
+          created_at?: string
+          id?: string
+          kind?: string
+          last_error?: string | null
+          locked_at?: string | null
+          memory_applied_at?: string | null
+          relationship_applied_at?: string | null
+          status?: string
+          summary_applied_at?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          assistant_message_id?: string
+          attempt_count?: number
+          available_at?: string
+          completed_at?: string | null
+          conversation_id?: string
+          created_at?: string
+          id?: string
+          kind?: string
+          last_error?: string | null
+          locked_at?: string | null
+          memory_applied_at?: string | null
+          relationship_applied_at?: string | null
+          status?: string
+          summary_applied_at?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_post_turn_jobs_assistant_message_fk"
+            columns: ["assistant_message_id", "conversation_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_messages"
+            referencedColumns: ["id", "conversation_id", "user_id"]
+          },
+          {
+            foreignKeyName: "ai_post_turn_jobs_conversation_fk"
+            columns: ["conversation_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_conversations"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
+      ai_relationship_states: {
+        Row: {
+          character_id: string
+          created_at: string
+          familiarity_score: number
+          nickname: string
+          revision: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          character_id: string
+          created_at?: string
+          familiarity_score?: number
+          nickname?: string
+          revision?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          character_id?: string
+          created_at?: string
+          familiarity_score?: number
+          nickname?: string
+          revision?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_relationship_states_character_fk"
+            columns: ["character_id", "user_id"]
+            isOneToOne: false
+            referencedRelation: "ai_characters"
+            referencedColumns: ["id", "user_id"]
+          },
+        ]
+      }
       dictionary_core: {
         Row: {
           created_at: string
@@ -2271,6 +2712,146 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      ai_append_message: {
+        Args: {
+          p_client_message_id?: string
+          p_content: string
+          p_conversation_id: string
+          p_metadata?: Json
+          p_reply_to_message_id?: string
+          p_role: string
+          p_user_id: string
+        }
+        Returns: {
+          client_message_id: string | null
+          content: string
+          conversation_id: string
+          created_at: string
+          id: string
+          metadata: Json
+          reply_to_message_id: string | null
+          role: string
+          seq: number
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "ai_messages"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      ai_apply_memory_changes: {
+        Args: {
+          p_changes: Json
+          p_job_id: string
+          p_user_id: string
+          p_user_message_id: string
+        }
+        Returns: number
+      }
+      ai_apply_memory_changes_unscoped: {
+        Args: {
+          p_changes: Json
+          p_job_id: string
+          p_user_id: string
+          p_user_message_id: string
+        }
+        Returns: number
+      }
+      ai_apply_summary_for_job: {
+        Args: {
+          p_expected_summary_version?: number
+          p_job_id: string
+          p_summary?: string
+          p_summary_until_seq?: number
+          p_user_id: string
+        }
+        Returns: boolean
+      }
+      ai_claim_post_turn_jobs: {
+        Args: {
+          p_conversation_id?: string
+          p_limit?: number
+          p_user_id: string
+        }
+        Returns: {
+          assistant_message_id: string
+          attempt_count: number
+          available_at: string
+          completed_at: string | null
+          conversation_id: string
+          created_at: string
+          id: string
+          kind: string
+          last_error: string | null
+          locked_at: string | null
+          memory_applied_at: string | null
+          relationship_applied_at: string | null
+          status: string
+          summary_applied_at: string | null
+          updated_at: string
+          user_id: string
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "ai_post_turn_jobs"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
+      ai_evolve_relationship_for_job: {
+        Args: { p_increment: number; p_job_id: string; p_user_id: string }
+        Returns: boolean
+      }
+      ai_finish_post_turn_job: {
+        Args: {
+          p_error?: string
+          p_job_id: string
+          p_succeeded: boolean
+          p_user_id: string
+        }
+        Returns: boolean
+      }
+      ai_forget_memories: {
+        Args: {
+          p_conversation_id: string
+          p_memory_ids: Json
+          p_user_id: string
+        }
+        Returns: number
+      }
+      ai_match_memories: {
+        Args: {
+          p_character_id: string
+          p_match_count?: number
+          p_min_similarity?: number
+          p_query_embedding: string
+          p_user_id: string
+        }
+        Returns: {
+          character_id: string
+          confidence: number
+          content: string
+          id: string
+          importance: number
+          kind: string
+          memory_key: string
+          reinforcement_count: number
+          similarity: number
+          updated_at: string
+        }[]
+      }
+      ai_set_memory_embedding: {
+        Args: {
+          p_embedding: string
+          p_embedding_model: string
+          p_embedding_version: number
+          p_memory_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       can_edit_hanzihome_content: { Args: never; Returns: boolean }
       create_lesson_text_annotation: {
         Args: {
@@ -2284,29 +2865,6 @@ export type Database = {
           p_start_offset: number
           p_suffix_text?: string
         }
-        Returns: string
-      }
-      hanzihome_create_lesson_text_annotation_as_server: {
-        Args: {
-          p_end_offset: number
-          p_lesson_id: string
-          p_node_id: string
-          p_node_type: string
-          p_note_text?: string
-          p_prefix_text?: string
-          p_selected_text: string
-          p_start_offset: number
-          p_suffix_text?: string
-          p_user_id: string
-        }
-        Returns: string
-      }
-      hanzihome_delete_lesson_text_annotation_as_server: {
-        Args: { p_annotation_id: string; p_user_id: string }
-        Returns: boolean
-      }
-      hanzihome_update_lesson_text_annotation_note_as_server: {
-        Args: { p_annotation_id: string; p_note_text: string; p_user_id: string }
         Returns: string
       }
       delete_lesson_text_annotation: {
@@ -2377,12 +2935,47 @@ export type Database = {
         Args: { p_patches: Json }
         Returns: Json
       }
+      hanzihome_create_lesson_text_annotation_as_server: {
+        Args: {
+          p_end_offset: number
+          p_lesson_id: string
+          p_node_id: string
+          p_node_type: string
+          p_note_text?: string
+          p_prefix_text?: string
+          p_selected_text: string
+          p_start_offset: number
+          p_suffix_text?: string
+          p_user_id: string
+        }
+        Returns: string
+      }
+      hanzihome_delete_lesson_text_annotation_as_server: {
+        Args: { p_annotation_id: string; p_user_id: string }
+        Returns: boolean
+      }
       hanzihome_delete_reader_annotation: {
         Args: { p_annotation_id: string; p_expected_revision: number }
         Returns: boolean
       }
+      hanzihome_delete_reader_annotation_as_server: {
+        Args: {
+          p_annotation_id: string
+          p_expected_revision: number
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       hanzihome_delete_reader_pronunciation_override: {
         Args: { p_expected_revision: number; p_override_id: string }
+        Returns: boolean
+      }
+      hanzihome_delete_reader_pronunciation_override_as_server: {
+        Args: {
+          p_expected_revision: number
+          p_override_id: string
+          p_user_id: string
+        }
         Returns: boolean
       }
       hanzihome_import_external_seed_package: {
@@ -2508,13 +3101,53 @@ export type Database = {
         }
       }
       hanzihome_rate_learning_loop_item_as_server: {
-        Args: { p_expected_revision: number; p_item_id: string; p_rating: string; p_user_id: string }
-        Returns: Database["public"]["Tables"]["hanzihome_learning_loop_items"]["Row"]
-        SetofOptions: { from: "*"; to: "hanzihome_learning_loop_items"; isOneToOne: true; isSetofReturn: false }
+        Args: {
+          p_expected_revision: number
+          p_item_id: string
+          p_rating: string
+          p_user_id: string
+        }
+        Returns: {
+          correct_streak: number
+          created_at: string
+          due_at: string
+          error_key: string
+          id: string
+          interval_days: number
+          kind: string
+          lapse_count: number
+          meaning_vi: string
+          pinyin: string
+          prompt_zh: string
+          revision: number
+          source_href: string
+          source_id: string
+          stable_key: string
+          state: string
+          title_vi: string
+          title_zh: string
+          updated_at: string
+          user_answer: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "hanzihome_learning_loop_items"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       hanzihome_refresh_external_seed_package: {
         Args: { p_seed: Json }
         Returns: Json
+      }
+      hanzihome_update_lesson_text_annotation_note_as_server: {
+        Args: {
+          p_annotation_id: string
+          p_note_text: string
+          p_user_id: string
+        }
+        Returns: string
       }
       hanzihome_update_listening_item_as_user: {
         Args: {
@@ -2589,8 +3222,31 @@ export type Database = {
           p_start_offset: number
           p_user_id: string
         }
-        Returns: Database["public"]["Tables"]["hanzihome_reader_annotations"]["Row"]
-        SetofOptions: { from: "*"; to: "hanzihome_reader_annotations"; isOneToOne: true; isSetofReturn: false }
+        Returns: {
+          annotation_type: string
+          asset_id: string | null
+          color: string
+          created_at: string
+          deleted_at: string | null
+          document_id: string
+          end_offset: number | null
+          id: string
+          note_text: string
+          page_number: number | null
+          paragraph_id: string | null
+          payload: Json
+          revision: number
+          selected_text: string
+          start_offset: number | null
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "hanzihome_reader_annotations"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       hanzihome_upsert_daily_reading_state: {
         Args: {
@@ -2614,9 +3270,26 @@ export type Database = {
         }
       }
       hanzihome_upsert_daily_reading_state_as_server: {
-        Args: { p_expected_revision: number; p_published_date: string; p_state: Json; p_user_id: string }
-        Returns: Database["public"]["Tables"]["hanzihome_daily_reading_state"]["Row"]
-        SetofOptions: { from: "*"; to: "hanzihome_daily_reading_state"; isOneToOne: true; isSetofReturn: false }
+        Args: {
+          p_expected_revision: number
+          p_published_date: string
+          p_state: Json
+          p_user_id: string
+        }
+        Returns: {
+          created_at: string
+          published_date: string
+          revision: number
+          state: Json
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "hanzihome_daily_reading_state"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       hanzihome_upsert_pdf_annotation: {
         Args: {
@@ -2660,9 +3333,26 @@ export type Database = {
         }
       }
       hanzihome_upsert_personal_learning_state_as_server: {
-        Args: { p_expected_revision: number; p_node_id: string; p_state: Json; p_user_id: string }
-        Returns: Database["public"]["Tables"]["hanzihome_personal_learning_state"]["Row"]
-        SetofOptions: { from: "*"; to: "hanzihome_personal_learning_state"; isOneToOne: true; isSetofReturn: false }
+        Args: {
+          p_expected_revision: number
+          p_node_id: string
+          p_state: Json
+          p_user_id: string
+        }
+        Returns: {
+          created_at: string
+          node_id: string
+          revision: number
+          state: Json
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "hanzihome_personal_learning_state"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       hanzihome_upsert_reader_progress: {
         Args: {
@@ -2739,16 +3429,27 @@ export type Database = {
           p_text: string
           p_user_id: string
         }
-        Returns: Database["public"]["Tables"]["hanzihome_reader_pronunciation_overrides"]["Row"]
-        SetofOptions: { from: "*"; to: "hanzihome_reader_pronunciation_overrides"; isOneToOne: true; isSetofReturn: false }
-      }
-      hanzihome_delete_reader_annotation_as_server: {
-        Args: { p_annotation_id: string; p_expected_revision: number; p_user_id: string }
-        Returns: boolean
-      }
-      hanzihome_delete_reader_pronunciation_override_as_server: {
-        Args: { p_expected_revision: number; p_override_id: string; p_user_id: string }
-        Returns: boolean
+        Returns: {
+          created_at: string
+          document_id: string
+          end_offset: number | null
+          id: string
+          paragraph_id: string
+          readings: string[]
+          revision: number
+          scope: string
+          sentence_text: string | null
+          start_offset: number | null
+          text: string
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "hanzihome_reader_pronunciation_overrides"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       hanzihome_vocab_child_candidates: {
         Args: {
