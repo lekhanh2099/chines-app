@@ -75,4 +75,30 @@ describe("ui-source-trace-loader", () => {
 
   expect(output).toContain(`<Button data-ui-source="${sourcePath}:3:3"\n   type="button"`);
  });
+
+ it("returns JavaScript-compatible JSX for a TSX Turbopack loader rule", () => {
+  const source = [
+   'type Props = { label: string };',
+   'export function ReaderDemo({ label }: Props) {',
+   ' return <div>{label}</div>;',
+   '}',
+  ].join("\n");
+  let cacheableCalled = false;
+
+  const output = uiSourceTraceLoader.call(
+   {
+    ...context,
+    cacheable() {
+     cacheableCalled = true;
+    },
+   },
+   source,
+  );
+
+  expect(cacheableCalled).toBe(true);
+  expect(output).not.toContain("type Props");
+  expect(output).not.toContain(": Props");
+  expect(output).toContain(`data-ui-source="${sourcePath}:3:9"`);
+  expect(output).toContain("<div");
+ });
 });
