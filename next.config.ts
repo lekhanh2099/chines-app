@@ -31,7 +31,6 @@ const nextConfig: NextConfig = {
      ],
     },
     loaders: [uiSourceTraceLoader],
-    as: "*.jsx",
    },
   },
  },
