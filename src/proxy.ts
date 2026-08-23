@@ -10,6 +10,8 @@ function isInfrastructurePath(pathname: string) {
  return (
   pathname === "/api" ||
   pathname.startsWith("/api/") ||
+  pathname === "/data" ||
+  pathname.startsWith("/data/") ||
   pathname === "/auth/callback" ||
   pathname === "/auth/confirm"
  );
