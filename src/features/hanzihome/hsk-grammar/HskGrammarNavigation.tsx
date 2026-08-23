@@ -16,11 +16,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
 
-import {
- HSK_GRAMMAR_LEVEL_META,
- HSK_GRAMMAR_LEVELS,
- isHskGrammarLevel,
-} from "./hsk-grammar.constants";
+import { HSK_GRAMMAR_LEVELS, isHskGrammarLevel } from "./hsk-grammar.constants";
 import type { HskGrammarItem, HskGrammarLevel } from "./hsk-grammar.schemas";
 
 function GrammarPointLabel({ item }: { item: HskGrammarItem }) {
@@ -66,7 +62,7 @@ export function HskGrammarNavigation({
        <SelectContent align="start">
         {HSK_GRAMMAR_LEVELS.map((candidate) => (
          <SelectItem key={candidate} value={candidate}>
-          {candidate} · {t("page.count", { count: HSK_GRAMMAR_LEVEL_META[candidate].itemCount })}
+          {candidate}
          </SelectItem>
         ))}
        </SelectContent>
@@ -77,7 +73,7 @@ export function HskGrammarNavigation({
       <Typography variant="overline" tone="muted" weight="black">
        {t("navigation.point")}
       </Typography>
-      <Select value={selectedItemId ?? undefined} onValueChange={onItemChange}>
+      <Select value={selectedItemId ?? undefined} onValueChange={onItemChange} disabled={items.length === 0}>
        <SelectTrigger width="full">
         <SelectValue placeholder={t("navigation.point")} />
        </SelectTrigger>
@@ -100,6 +96,7 @@ export function HskGrammarNavigation({
       value={query}
       onChange={(event) => onQueryChange(event.target.value)}
       placeholder={t("search.placeholder")}
+      disabled={items.length === 0}
      />
     </Label>
    </Card>
@@ -117,7 +114,7 @@ export function HskGrammarNavigation({
       {level}
      </Typography>
      <Typography variant="caption" tone="muted">
-      {t("page.count", { count: HSK_GRAMMAR_LEVEL_META[level].itemCount })}
+      {t("page.count", { count: items.length })}
      </Typography>
     </div>
 
@@ -146,6 +143,7 @@ export function HskGrammarNavigation({
       value={query}
       onChange={(event) => onQueryChange(event.target.value)}
       placeholder={t("search.placeholder")}
+      disabled={items.length === 0}
      />
     </Label>
 
@@ -179,7 +177,7 @@ export function HskGrammarNavigation({
       })
      ) : (
       <Typography variant="bodySmall" tone="muted">
-       {t("navigation.noResults")}
+       {t("states.empty")}
       </Typography>
      )}
     </div>
