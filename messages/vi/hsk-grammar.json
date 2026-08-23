@@ -1,9 +1,10 @@
 {
  "page": {
-  "eyebrow": "Kho ngữ pháp đã biên tập",
+  "eyebrow": "Bản mẫu giao diện",
   "title": "Ngữ pháp HSK",
-  "description": "Tra cứu và học sâu toàn bộ điểm ngữ pháp HSK1–HSK6, giữ rõ nguồn, ví dụ biên tập và trạng thái kiểm chứng.",
-  "count": "{count} mục"
+  "description": "Xem trước bố cục học ngữ pháp HSK. Hiện chỉ dùng một mục HSK4 thật để kiểm tra renderer; dữ liệu HSK1–HSK6 sẽ được nhập sau mà không đổi UI.",
+  "count": "{count} mục",
+  "demoMeta": "Dữ liệu mẫu · {count} mục"
  },
  "search": {
   "label": "Tìm trong cấp độ",
@@ -44,10 +45,11 @@
   "reviewed": "Đã rà biên tập"
  },
  "states": {
-  "loading": "Đang tải dữ liệu ngữ pháp...",
-  "loadErrorTitle": "Không tải được ngữ pháp HSK",
-  "loadErrorDescription": "Dữ liệu cấp độ này chưa tải hoặc không vượt qua kiểm tra schema.",
-  "empty": "Cấp độ này chưa có dữ liệu."
+  "loading": "Đang chuẩn bị giao diện ngữ pháp...",
+  "loadErrorTitle": "Không tải được dữ liệu mẫu",
+  "loadErrorDescription": "Dữ liệu mẫu không vượt qua kiểm tra schema.",
+  "empty": "Cấp độ này chưa có dữ liệu mẫu.",
+  "emptyDescription": "Khi nhập JSON thật, cấp độ này sẽ dùng ngay cùng bố cục và renderer hiện tại."
  },
  "actions": {
   "previous": "Mục trước",
