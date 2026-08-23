@@ -70,8 +70,13 @@ export const navigationItems = {
   messageKey: "navigation.items.hskReading",
   icon: BookMarked,
   href: "/hsk",
-  match: "prefix",
+  match: "exact",
   aliases: ["/reader/hsk"],
+ },
+ hskGrammar: {
+  messageKey: "navigation.items.hskGrammar",
+  icon: ListTree,
+  href: "/hsk/grammar",
  },
  grammar: { messageKey: "navigation.items.grammar", icon: ListTree, href: "/grammar" },
  humanities: {
@@ -152,6 +157,7 @@ export const navigationItems = {
  readerPractice: NavigationItemConfig;
  readerMock: NavigationItemConfig;
  hskReading: NavigationItemConfig;
+ hskGrammar: NavigationItemConfig;
  grammar: NavigationItemConfig;
  humanities: NavigationItemConfig;
  personalLearning: NavigationItemConfig;
@@ -237,7 +243,7 @@ export const navigationGroups = [
    {
     id: "hsk-reading",
     messageKey: "navigation.sections.hskReading",
-    itemIds: ["hskReading"],
+    itemIds: ["hskReading", "hskGrammar"],
    },
   ],
  },
