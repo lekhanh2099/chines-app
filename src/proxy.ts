@@ -10,8 +10,6 @@ function isInfrastructurePath(pathname: string) {
  return (
   pathname === "/api" ||
   pathname.startsWith("/api/") ||
-  pathname === "/data" ||
-  pathname.startsWith("/data/") ||
   pathname === "/auth/callback" ||
   pathname === "/auth/confirm"
  );
@@ -27,6 +25,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
  matcher: [
-  "/((?!_next/static|_next/image|_vercel/|fonts/|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|woff|woff2|ttf|otf|ttc)$).*)",
+  "/((?!_next/static|_next/image|_vercel/|fonts/|data/|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|woff|woff2|ttf|otf|ttc)$).*)",
  ],
 };
