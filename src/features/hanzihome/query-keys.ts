@@ -32,7 +32,6 @@ export const hanzihomeQueryKeys = {
   `aggregate-${kind}`,
   filters,
  ],
- hskGrammar: (level: string) => ["hanzihome", "hsk", "grammar", level],
  listeningLesson: (lessonId: string) => ["hanzihome", "listening", "lesson", lessonId],
  readerDocuments: (kind?: string) => ["hanzihome", "reader", "documents", kind ?? "all"],
  readerDocument: (documentId: string) => ["hanzihome", "reader", "document", documentId],
