@@ -92,7 +92,7 @@ export const hanzihomeQueryKeys = {
   runtimeKeyId,
  ],
  ttsLibrary: ["hanzihome", "tts", "library"],
- ttsLibraryForUser: (userId: string) => ["hanzihome", "tts", "library", userId],
+ ttsLibraryForUser: (userId: UserScope) => ["hanzihome", "tts", "library", userId],
  canEdit: ["hanzihome", "can-edit"],
  canEditForUser: (userId: UserScope) => ["hanzihome", "can-edit", userId],
  searchIndexRoot: ["hanzihome", "search-index"],
