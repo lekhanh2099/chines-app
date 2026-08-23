@@ -15,7 +15,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 
 import { HskGrammarDetail } from "./HskGrammarDetail";
 import { HskGrammarNavigation } from "./HskGrammarNavigation";
-import { fetchHskGrammarDataset } from "./hsk-grammar-api";
+import { loadHskGrammarDataset } from "./hsk-grammar-api";
 import {
  isHskGrammarLevel,
  normalizeHskGrammarSearch,
@@ -46,13 +46,13 @@ export function HskGrammarLibrary() {
  const router = useRouter();
  const searchParams = useSearchParams();
  const levelParam = searchParams.get("level");
- const level: HskGrammarLevel = isHskGrammarLevel(levelParam) ? levelParam : "HSK1";
+ const level: HskGrammarLevel = isHskGrammarLevel(levelParam) ? levelParam : "HSK4";
  const pointParam = searchParams.get("point");
  const [filterQuery, setFilterQuery] = useState("");
 
  const query = useQuery({
   queryKey: hanzihomeQueryKeys.hskGrammar(level),
-  queryFn: () => fetchHskGrammarDataset(level),
+  queryFn: () => loadHskGrammarDataset(level),
   staleTime: Infinity,
  });
 
@@ -102,7 +102,7 @@ export function HskGrammarLibrary() {
     description={t("page.description")}
     meta={
      <Typography variant="caption" tone="muted" weight="bold">
-      {t("page.count", { count: query.data?.item_count ?? 0 })}
+      {t("page.demoMeta", { count: query.data?.item_count ?? 0 })}
      </Typography>
     }
    />
@@ -124,7 +124,18 @@ export function HskGrammarLibrary() {
    ) : null}
 
    {query.data && query.data.items.length === 0 ? (
-    <EmptyState title={t("states.empty")} />
+    <div className="grid min-w-0 gap-4 xl:grid-cols-[18rem_minmax(0,1fr)] xl:items-start">
+     <HskGrammarNavigation
+      level={level}
+      items={[]}
+      selectedItemId={null}
+      query={filterQuery}
+      onQueryChange={setFilterQuery}
+      onLevelChange={changeLevel}
+      onItemChange={() => undefined}
+     />
+     <EmptyState title={t("states.empty")} description={t("states.emptyDescription")} />
+    </div>
    ) : null}
 
    {query.data && query.data.items.length > 0 ? (
