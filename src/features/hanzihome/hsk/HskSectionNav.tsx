@@ -21,7 +21,7 @@ export function HskSectionNav() {
     </Button>
     <Button asChild variant={grammarActive ? "active" : "navigation"} wrap="normal">
      <Link href="/hsk/grammar" prefetch={false} aria-current={grammarActive ? "page" : undefined}>
-      {t("navigation.items.grammar")}
+      {t("navigation.items.hskGrammar")}
      </Link>
     </Button>
    </nav>
