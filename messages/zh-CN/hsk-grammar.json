@@ -1,9 +1,10 @@
 {
  "page": {
-  "eyebrow": "已校订语法库",
+  "eyebrow": "界面预览",
   "title": "HSK 语法",
-  "description": "学习 HSK1–HSK6 全部语法点，并保留来源、编辑示例与校订状态。",
-  "count": "{count} 项"
+  "description": "预览 HSK 语法学习界面。目前只用一个真实的 HSK4 条目验证渲染；之后可直接导入 HSK1–HSK6 JSON，无需重做界面。",
+  "count": "{count} 项",
+  "demoMeta": "示例数据 · {count} 项"
  },
  "search": {
   "label": "搜索当前级别",
@@ -44,10 +45,11 @@
   "reviewed": "已编辑校订"
  },
  "states": {
-  "loading": "正在加载语法数据……",
-  "loadErrorTitle": "无法加载 HSK 语法",
-  "loadErrorDescription": "当前级别未能加载，或未通过数据结构校验。",
-  "empty": "当前级别暂无数据。"
+  "loading": "正在准备语法界面……",
+  "loadErrorTitle": "无法加载示例数据",
+  "loadErrorDescription": "示例数据未通过结构校验。",
+  "empty": "当前级别暂无示例数据。",
+  "emptyDescription": "导入真实 JSON 后，该级别会直接使用当前同一套布局和渲染器。"
  },
  "actions": {
   "previous": "上一项",
