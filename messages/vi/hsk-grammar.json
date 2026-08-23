@@ -1,0 +1,56 @@
+{
+ "page": {
+  "eyebrow": "Kho ngữ pháp đã biên tập",
+  "title": "Ngữ pháp HSK",
+  "description": "Tra cứu và học sâu toàn bộ điểm ngữ pháp HSK1–HSK6, giữ rõ nguồn, ví dụ biên tập và trạng thái kiểm chứng.",
+  "count": "{count} mục"
+ },
+ "search": {
+  "label": "Tìm trong cấp độ",
+  "placeholder": "Tiêu đề, cấu trúc, từ khóa..."
+ },
+ "navigation": {
+  "level": "Cấp độ HSK",
+  "point": "Điểm ngữ pháp",
+  "noResults": "Không có mục nào khớp bộ lọc này."
+ },
+ "sections": {
+  "core": "Bản chất & cách dùng",
+  "structures": "Cấu trúc",
+  "usage": "Lưu ý sử dụng",
+  "constraints": "Ranh giới cần nhớ",
+  "contrasts": "So sánh nhanh",
+  "errors": "Lỗi thường gặp",
+  "examples": "Ví dụ",
+  "source": "Nguồn & kiểm chứng"
+ },
+ "examples": {
+  "source": "Nguồn",
+  "basic": "Cơ bản",
+  "natural": "Tự nhiên",
+  "advanced": "Nâng cao",
+  "contrast": "Đối chiếu",
+  "listen": "Nghe câu",
+  "copy": "Sao chép câu",
+  "editorial": "Biên tập",
+  "normalized": "Đã chuẩn hóa nguồn",
+  "corrected": "Nguồn đã hiệu chỉnh"
+ },
+ "source": {
+  "primary": "Nguồn chính",
+  "grammarNo": "Grammar No.",
+  "pdfPage": "Trang PDF",
+  "verification": "Trạng thái",
+  "reviewed": "Đã rà biên tập"
+ },
+ "states": {
+  "loading": "Đang tải dữ liệu ngữ pháp...",
+  "loadErrorTitle": "Không tải được ngữ pháp HSK",
+  "loadErrorDescription": "Dữ liệu cấp độ này chưa tải hoặc không vượt qua kiểm tra schema.",
+  "empty": "Cấp độ này chưa có dữ liệu."
+ },
+ "actions": {
+  "previous": "Mục trước",
+  "next": "Mục tiếp"
+ }
+}
