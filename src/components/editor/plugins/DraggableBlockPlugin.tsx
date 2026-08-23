@@ -33,8 +33,6 @@ import {
 } from "@lexical/list";
 import { INSERT_TABLE_COMMAND } from "@lexical/table";
 import {
- ArrowDown,
- ArrowUp,
  GripVertical,
  Plus,
  AlignLeft,
@@ -252,23 +250,6 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
  );
 
  // Drag start: resolve the hovered block to a Lexical node key
- const moveHoveredBlock = useCallback(
-  (direction: "up" | "down") => {
-   const blockElement = hoveredBlockRef.current;
-   if (!blockElement) return;
-
-   editor.update(() => {
-    const node = $getNearestNodeFromDOMNode(blockElement);
-    if (!node) return;
-    const sibling = direction === "up" ? node.getPreviousSibling() : node.getNextSibling();
-    if (!sibling) return;
-    if (direction === "up") sibling.insertBefore(node);
-    else sibling.insertAfter(node);
-   });
-  },
-  [editor],
- );
-
  const handleDragStart = useCallback(
   (e: React.DragEvent) => {
    const block = hoveredBlockRef.current;
@@ -398,6 +379,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
        type="button"
        variant="ghost"
        size="icon-toolbar"
+       className="draggable-block-add"
        aria-label="Chèn khối"
        title="Chèn khối"
        onMouseDown={(event) => event.preventDefault()}
@@ -421,28 +403,7 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
      type="button"
      variant="ghost"
      size="icon-toolbar"
-     aria-label="Di chuyển khối lên"
-     title="Di chuyển khối lên"
-     onMouseDown={(event) => event.preventDefault()}
-     onClick={() => moveHoveredBlock("up")}
-    >
-     <ArrowUp />
-    </Button>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
-     aria-label="Di chuyển khối xuống"
-     title="Di chuyển khối xuống"
-     onMouseDown={(event) => event.preventDefault()}
-     onClick={() => moveHoveredBlock("down")}
-    >
-     <ArrowDown />
-    </Button>
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon-toolbar"
+     className="draggable-block-handle"
      draggable
      onDragStart={handleDragStart}
      aria-label="Kéo để sắp xếp khối"

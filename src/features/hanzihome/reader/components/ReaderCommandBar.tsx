@@ -2,7 +2,13 @@
 
 import { ChevronLeft, ChevronRight, List, Pause, Play, RotateCcw, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { type ReactNode, useState } from "react";
 
+import {
+ BasePopover as Popover,
+ BasePopoverPopup,
+ BasePopoverPositioner,
+} from "@/components/ui/base-popover";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -13,6 +19,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import {
  useReaderRuntimeCommands,
@@ -35,14 +42,20 @@ export function ReaderCommandBar({
  onOpenOutline,
  onOpenShadowing,
  stickyOffset = "page",
+ compact = false,
+ outlineMenu,
 }: {
  segmentCount: number;
  onOpenOutline: () => void;
  onOpenShadowing?: () => void;
  stickyOffset?: ReaderToolbarStickyOffset;
+ compact?: boolean;
+ outlineMenu?: (onNavigate: () => void) => ReactNode;
 }) {
  const t = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderRuntimeCommands();
+ const isCoarsePointer = useCoarsePointer();
+ const [outlineMenuOpen, setOutlineMenuOpen] = useState(false);
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const rate = useReaderRuntimeSelector((state) => state.rate);
@@ -66,6 +79,7 @@ export function ReaderCommandBar({
        : t("listen");
  const PlaybackIcon =
   playbackStatus === "playing" ? Pause : playbackStatus === "loading" ? Square : Play;
+ const useOutlineDropdown = compact && !isCoarsePointer && outlineMenu !== undefined;
 
  return (
   <Card variant="section" padding="sm" className={stickyClassName[stickyOffset]}>
@@ -136,18 +150,49 @@ export function ReaderCommandBar({
       ))}
      </SelectContent>
     </Select>
-    <div className="2xl:hidden">
-     <Button
-      type="button"
-      variant="outline"
-      size="icon-toolbar"
-      aria-label={t("openOutline")}
-      title={t("outline")}
-      onClick={onOpenOutline}
-     >
-      <List />
-     </Button>
-    </div>
+    {useOutlineDropdown ? (
+     <Popover.Root open={outlineMenuOpen} onOpenChange={setOutlineMenuOpen} modal={false}>
+      <Popover.Trigger
+       render={
+        <Button
+         type="button"
+         variant="outline"
+         size="icon-toolbar"
+         aria-label={t("openOutline")}
+         title={t("outline")}
+        />
+       }
+      >
+       <List />
+      </Popover.Trigger>
+      <Popover.Portal>
+       <BasePopoverPositioner
+        side="bottom"
+        align="end"
+        sideOffset={8}
+        collisionPadding={8}
+        positionMethod="fixed"
+       >
+        <BasePopoverPopup initialFocus={false} finalFocus={false} variant="moduleMenu">
+         {outlineMenu(() => setOutlineMenuOpen(false))}
+        </BasePopoverPopup>
+       </BasePopoverPositioner>
+      </Popover.Portal>
+     </Popover.Root>
+    ) : (
+     <div className={compact ? undefined : "2xl:hidden"}>
+      <Button
+       type="button"
+       variant="outline"
+       size="icon-toolbar"
+       aria-label={t("openOutline")}
+       title={t("outline")}
+       onClick={onOpenOutline}
+      >
+       <List />
+      </Button>
+     </div>
+    )}
     <ReaderTools onOpenShadowing={onOpenShadowing} />
    </div>
   </Card>

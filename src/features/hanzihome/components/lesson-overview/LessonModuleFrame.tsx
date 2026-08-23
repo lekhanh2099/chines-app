@@ -13,7 +13,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { SegmentedControl } from "@/components/ui/segmented-control";
+import {
+ Select,
+ SelectContent,
+ SelectGroup,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import {
@@ -103,14 +110,28 @@ export function LessonModuleFrame({
    <div className="flex flex-wrap items-center justify-between gap-2">
     <div className={cn("flex min-w-0 items-center gap-2", compact && "flex-1")}>
      {compact && mobileNavigation ? (
-      <SegmentedControl
-       value={mobileNavigation.value}
-       items={mobileNavigation.items.map((item) => ({
-        key: item.value,
-        label: item.label,
-       }))}
-       onChange={mobileNavigation.onChange}
-      />
+      <Select value={mobileNavigation.value} onValueChange={mobileNavigation.onChange}>
+       <SelectTrigger
+        aria-label={`Chọn ${mobileNavigation.label.toLowerCase()}`}
+        size="sm"
+        width="full"
+       >
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent
+        align="start"
+        collisionPadding={8}
+        className="max-h-80 min-w-[var(--radix-select-trigger-width)]"
+       >
+        <SelectGroup>
+         {mobileNavigation.items.map((item) => (
+          <SelectItem key={item.value} value={item.value}>
+           {item.label}
+          </SelectItem>
+         ))}
+        </SelectGroup>
+       </SelectContent>
+      </Select>
      ) : (
       <Button
        type="button"
