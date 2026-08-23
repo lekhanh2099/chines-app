@@ -1,8 +1,8 @@
-# HSK grammar library — route integration plan
+# HSK grammar library — UI-first integration plan
 
-## Goal
+## Current scope
 
-Integrate the reviewed HSK1–HSK6 grammar corpus into the existing HSK product surface without replacing the existing course-grammar library.
+Build and verify the final `/hsk/grammar` learning UI before attaching the full HSK1–HSK6 corpus. The existing `/grammar` course/lesson aggregate remains unchanged.
 
 ## Route ownership
 
@@ -13,13 +13,11 @@ Integrate the reviewed HSK1–HSK6 grammar corpus into the existing HSK product 
 /grammar         -> existing course/lesson grammar aggregate
 ```
 
-`/hsk/grammar` is the canonical route for the HSK grammar corpus. The generic `/grammar` route remains owned by `HanziHomeAggregateLibrary kind="grammar"`.
-
-The shared `/hsk` layout owns only contextual navigation between HSK Reading and HSK Grammar. Reading and grammar retain separate feature/data owners.
+The shared `/hsk` layout owns only contextual navigation between HSK Reading and HSK Grammar.
 
 ## UI contract
 
-HSK Grammar uses existing canonical components only: `PageHeader`, `Card`, `Button`, `Input`, `Select`, `Tabs`, `Badge`, `Separator`, `Typography`, and HanziHome learner typography.
+HSK Grammar reuses canonical project components: `PageHeader`, `Card`, `Button`, `Input`, `Select`, `Tabs`, `Badge`, `Separator`, `Typography`, and HanziHome learner typography.
 
 Desktop uses a narrow level/item rail plus a primary detail document. Tablet/mobile uses level and point `Select` controls instead of squeezing the rail.
 
@@ -35,19 +33,17 @@ identity + focus
 -> source / verification
 ```
 
-## State ownership
+## Demo data
 
-- selected HSK level -> URL `level`
-- selected grammar point -> URL `point`
-- keyword filter -> local transient state
-- static corpus load/cache -> TanStack Query
-- corpus validation -> Zod boundary
+The UI currently embeds exactly one real reviewed item from the user's HSK4 corpus (`hsk4-g001`) only to exercise every important renderer state. Other HSK levels intentionally show an empty state.
 
-No DB schema, RLS, persisted learner-state, or GitHub Actions change belongs to this feature.
+The demo is not a replacement corpus and must not be expanded by inventing learning content.
 
-## Corpus contract
+There is no public `/data` transport, gzip/base64 chunking, browser decompression, or locale-proxy exception.
 
-The source contract is `hsk_grammar_v1.0.0` and must remain unchanged across HSK1–HSK6.
+## Future corpus import
+
+The authoritative future corpus remains the user's six raw JSON files using schema `hsk_grammar_v1.0.0`.
 
 Expected inventory:
 
@@ -61,17 +57,32 @@ HSK6  55
 Total 577
 ```
 
-Every loaded dataset must pass schema validation and match its registered level/item count before rendering.
+When the corpus is attached, only the owner behind `loadHskGrammarDataset(level)` should change. Route, URL state, navigation, detail renderer, example tabs, typography, and responsive layout stay unchanged.
 
-## Verification
+Acceptable future sources include:
 
-Required before calling the full corpus integration complete:
+1. reviewed static JSON co-located with the HSK grammar feature; or
+2. an explicit import flow that validates user-selected JSON before putting it into the same typed dataset contract.
 
-1. All six runtime assets are present and decode successfully.
-2. Counts equal 40/97/141/161/83/55.
-3. `/hsk`, `/hsk/[slug]`, and `/hsk/grammar` keep the correct contextual nav state.
-4. `/grammar` remains unchanged.
-5. Desktop, iPad portrait, and mobile render without horizontal overflow.
-6. HSK6 lexical-discrimination entries render safely when `structures` is empty.
-7. Keyboard operation works for Tabs, Selects, previous/next controls, and route navigation.
-8. Run targeted checks, then `npm run check` for completion.
+Do not reintroduce encoded transport artifacts merely to move static JSON through the app.
+
+## State ownership
+
+- selected HSK level -> URL `level`
+- selected grammar point -> URL `point`
+- keyword filter -> local transient state
+- dataset cache -> TanStack Query
+- corpus validation -> Zod at the data boundary when external JSON is attached
+
+No DB schema, RLS, persisted learner state, or GitHub Actions change belongs to this feature.
+
+## Verification for UI-demo completion
+
+1. `/hsk/grammar` opens on HSK4 and renders `hsk4-g001`.
+2. Core, structure, common-error, example-tier, source, and verification sections render.
+3. HSK1/2/3/5/6 switch to a deliberate empty state rather than a blank screen or network error.
+4. No request is made to `/data/hsk-grammar/**`.
+5. `/hsk` and `/grammar` preserve their existing owners.
+6. Desktop, iPad portrait, and phone stay usable without horizontal overflow.
+7. Keyboard operation works for Tabs, Selects and route navigation.
+8. Run targeted checks locally before considering the UI demo complete.
