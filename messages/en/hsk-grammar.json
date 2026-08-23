@@ -1,0 +1,56 @@
+{
+ "page": {
+  "eyebrow": "Reviewed grammar library",
+  "title": "HSK Grammar",
+  "description": "Study the complete HSK1–HSK6 grammar collection with source provenance, editorial examples, and review status kept visible.",
+  "count": "{count} items"
+ },
+ "search": {
+  "label": "Search this level",
+  "placeholder": "Title, structure, keyword..."
+ },
+ "navigation": {
+  "level": "HSK level",
+  "point": "Grammar point",
+  "noResults": "No grammar point matches these filters."
+ },
+ "sections": {
+  "core": "Core meaning & usage",
+  "structures": "Structures",
+  "usage": "Usage notes",
+  "constraints": "Boundaries to remember",
+  "contrasts": "Quick comparison",
+  "errors": "Common errors",
+  "examples": "Examples",
+  "source": "Source & verification"
+ },
+ "examples": {
+  "source": "Source",
+  "basic": "Basic",
+  "natural": "Natural",
+  "advanced": "Advanced",
+  "contrast": "Contrast",
+  "listen": "Listen",
+  "copy": "Copy sentence",
+  "editorial": "Editorial",
+  "normalized": "Normalized source",
+  "corrected": "Corrected source"
+ },
+ "source": {
+  "primary": "Primary source",
+  "grammarNo": "Grammar No.",
+  "pdfPage": "PDF page",
+  "verification": "Status",
+  "reviewed": "Editorially reviewed"
+ },
+ "states": {
+  "loading": "Loading grammar data...",
+  "loadErrorTitle": "Could not load HSK grammar",
+  "loadErrorDescription": "This level did not load or did not pass schema validation.",
+  "empty": "This level has no data yet."
+ },
+ "actions": {
+  "previous": "Previous",
+  "next": "Next"
+ }
+}
