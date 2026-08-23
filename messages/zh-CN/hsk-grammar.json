@@ -1,0 +1,56 @@
+{
+ "page": {
+  "eyebrow": "已校订语法库",
+  "title": "HSK 语法",
+  "description": "学习 HSK1–HSK6 全部语法点，并保留来源、编辑示例与校订状态。",
+  "count": "{count} 项"
+ },
+ "search": {
+  "label": "搜索当前级别",
+  "placeholder": "标题、结构、关键词……"
+ },
+ "navigation": {
+  "level": "HSK 级别",
+  "point": "语法点",
+  "noResults": "没有符合当前筛选条件的语法点。"
+ },
+ "sections": {
+  "core": "核心意义与用法",
+  "structures": "结构",
+  "usage": "使用说明",
+  "constraints": "需要注意的边界",
+  "contrasts": "快速对比",
+  "errors": "常见错误",
+  "examples": "例句",
+  "source": "来源与校订"
+ },
+ "examples": {
+  "source": "来源",
+  "basic": "基础",
+  "natural": "自然用法",
+  "advanced": "进阶",
+  "contrast": "对比",
+  "listen": "听例句",
+  "copy": "复制例句",
+  "editorial": "编辑补充",
+  "normalized": "来源已规范化",
+  "corrected": "来源已校正"
+ },
+ "source": {
+  "primary": "主要来源",
+  "grammarNo": "语法编号",
+  "pdfPage": "PDF 页",
+  "verification": "状态",
+  "reviewed": "已编辑校订"
+ },
+ "states": {
+  "loading": "正在加载语法数据……",
+  "loadErrorTitle": "无法加载 HSK 语法",
+  "loadErrorDescription": "当前级别未能加载，或未通过数据结构校验。",
+  "empty": "当前级别暂无数据。"
+ },
+ "actions": {
+  "previous": "上一项",
+  "next": "下一项"
+ }
+}
