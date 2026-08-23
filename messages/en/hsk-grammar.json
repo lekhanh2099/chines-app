@@ -1,9 +1,10 @@
 {
  "page": {
-  "eyebrow": "Reviewed grammar library",
+  "eyebrow": "UI preview",
   "title": "HSK Grammar",
-  "description": "Study the complete HSK1–HSK6 grammar collection with source provenance, editorial examples, and review status kept visible.",
-  "count": "{count} items"
+  "description": "Preview the HSK grammar study layout. It currently uses one real HSK4 item to exercise the renderer; HSK1–HSK6 JSON can be imported later without changing the UI.",
+  "count": "{count} items",
+  "demoMeta": "Demo data · {count} items"
  },
  "search": {
   "label": "Search this level",
@@ -44,10 +45,11 @@
   "reviewed": "Editorially reviewed"
  },
  "states": {
-  "loading": "Loading grammar data...",
-  "loadErrorTitle": "Could not load HSK grammar",
-  "loadErrorDescription": "This level did not load or did not pass schema validation.",
-  "empty": "This level has no data yet."
+  "loading": "Preparing the grammar preview...",
+  "loadErrorTitle": "Could not load demo data",
+  "loadErrorDescription": "The demo dataset did not pass schema validation.",
+  "empty": "This level has no demo data yet.",
+  "emptyDescription": "Once the real JSON is imported, this level will use the same layout and renderer."
  },
  "actions": {
   "previous": "Previous",
