@@ -100,7 +100,9 @@ export function ContextualReaderText({
    ? t("playFromCharacter", { character: grapheme.segment })
    : undefined;
   const pinyinActionLabel = pinyinInteractive
-   ? t("inspectPinyin", { character: grapheme.segment })
+   ? needsPronunciationReview
+    ? t("inspectUnconfirmedPinyin", { character: grapheme.segment })
+    : t("inspectPinyin", { character: grapheme.segment })
    : undefined;
 
   if (pinyinPresentation === "paragraph") {
@@ -157,7 +159,10 @@ export function ContextualReaderText({
     <rt className="font-pinyin text-[0.45em] font-semibold text-accent-text">
      {pinyinInteractive ? (
       <span
-       className={cn(pinyinClassName, needsPronunciationReview && "text-warning")}
+       className={cn(
+        pinyinClassName,
+        needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+       )}
        onClick={(event) => {
         event.stopPropagation();
         activatePinyin(event.currentTarget);

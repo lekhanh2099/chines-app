@@ -12,6 +12,7 @@
  },
  "text": {
   "playFromCharacter": "Play from character {character}",
-  "inspectPinyin": "Check pinyin for {character}"
+  "inspectPinyin": "Check pinyin for {character}",
+  "inspectUnconfirmedPinyin": "Pinyin for {character} needs review"
  }
 }

@@ -44,7 +44,7 @@ describe("ContextualReaderText", () => {
   expect(markup).toContain('aria-label="Đọc từ chữ 个"');
  });
 
- it("colors unconfirmed polyphonic pinyin without a visual marker", () => {
+ it("marks unconfirmed polyphonic pinyin beyond color and announces the review state", () => {
   const markup = renderReaderText(
    <ContextualReaderText
     analysis={analyzeContextualPronunciation({ text: "重庆", sourcePinyin: null })}
@@ -54,12 +54,11 @@ describe("ContextualReaderText", () => {
    />,
   );
   expect(markup).toContain('aria-label="Đọc từ chữ 重"');
-  expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 重"');
+  expect(markup).toContain('aria-label="Pinyin chữ 重 cần kiểm tra"');
   expect(markup).toContain('aria-label="Đọc từ chữ 庆"');
   expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 庆"');
   expect(markup).toContain("text-warning");
-  expect(markup).not.toContain("lucide-circle-alert");
-  expect(markup).not.toContain("decoration-dotted");
+  expect(markup).toContain("decoration-dotted");
  });
 
  it("does not mark source-aligned polyphonic pinyin for review", () => {
@@ -72,6 +71,7 @@ describe("ContextualReaderText", () => {
   );
   expect(markup).toContain('aria-label="Kiểm tra pinyin chữ 重"');
   expect(markup).not.toContain("text-warning");
+  expect(markup).not.toContain("decoration-dotted");
  });
 
  it("preserves reviewed source phrase pinyin when alignment is valid", () => {

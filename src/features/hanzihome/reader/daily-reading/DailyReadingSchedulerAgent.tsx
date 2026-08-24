@@ -21,6 +21,8 @@ export function DailyReadingSchedulerAgent() {
  const [tick, setTick] = useState(0);
 
  useEffect(() => {
+  if (!isResolved || !user || !settings.autoCaptureEnabled) return;
+
   const update = () => setTick((value) => value + 1);
   const timer = window.setInterval(update, 30_000);
   window.addEventListener("focus", update);
@@ -30,7 +32,7 @@ export function DailyReadingSchedulerAgent() {
    window.removeEventListener("focus", update);
    document.removeEventListener("visibilitychange", update);
   };
- }, []);
+ }, [isResolved, settings.autoCaptureEnabled, user]);
 
  useEffect(() => {
   if (!isResolved || !user) return;

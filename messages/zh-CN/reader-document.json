@@ -12,6 +12,7 @@
  },
  "text": {
   "playFromCharacter": "从“{character}”开始朗读",
-  "inspectPinyin": "检查“{character}”的拼音"
+  "inspectPinyin": "检查“{character}”的拼音",
+  "inspectUnconfirmedPinyin": "“{character}”的拼音需要确认"
  }
 }

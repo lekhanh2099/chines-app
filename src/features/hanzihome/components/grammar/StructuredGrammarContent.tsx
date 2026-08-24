@@ -79,7 +79,7 @@ export function StructuredGrammarContent({
    )}
 
    {point.structuresView.length > 0 && (
-    <section className="grid gap-3 rounded-xl border border-info/30 bg-info-subtle/45 p-4">
+    <section className="grid gap-3 border-t border-border-default pt-4">
      <div className="flex items-center gap-2">
       <StudyInstructionText
        as="span"
@@ -103,17 +103,19 @@ export function StructuredGrammarContent({
        </Typography>
       </div>
      </div>
-     {point.structuresView.map((structure, index) => (
-      <HanziAwareText
-       key={`${point.id}-structure-${index}`}
-       text={cleanGrammarDisplayLine(structure)}
-       variant="code"
-       tone="info"
-       weight="black"
-       leading="relaxed"
-       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3"
-      />
-     ))}
+     <div className="grid gap-2">
+      {point.structuresView.map((structure, index) => (
+       <HanziAwareText
+        key={`${point.id}-structure-${index}`}
+        text={cleanGrammarDisplayLine(structure)}
+        variant="code"
+        tone="info"
+        weight="black"
+        leading="relaxed"
+        className="rounded-lg bg-info-subtle/45 px-3 py-2"
+       />
+      ))}
+     </div>
     </section>
    )}
 

@@ -8,8 +8,6 @@
 - [UI primitive policy ADR](adr/0003-ui-primitive-policy.md)
 - [Lesson resource boundaries ADR](adr/0004-lesson-resource-boundaries.md)
 - [Contribution and verification workflow](../CONTRIBUTING.md)
-- [Supabase readiness snapshot](audits/supabase-readiness-2026-07-14.md)
-- [Frontend cleanup audit](audits/frontend-cleanup-2026-07-16.md)
 - [Frontend user-flow coverage](testing/frontend-flow-coverage.md)
 - [Repository skill inventory and audit scorecard](agent/skill-inventory.md)
 - [Developer API v1 guide](developer-api.md)
