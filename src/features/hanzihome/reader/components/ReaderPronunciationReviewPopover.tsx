@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/base-popover";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import { PinyinText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { formatContextualReading } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
@@ -56,9 +55,22 @@ function reviewStatus(
  t: ReturnType<typeof useTranslations>,
 ) {
  if (confirmed) return saveScope === "session" ? t("appliedSession") : t("confirmed");
- if (review.glyphs.some((glyph) => glyph.isPolyphonic)) return t("needsReview");
  if (review.glyphs.every((glyph) => glyph.evidence.includes("source-pinyin"))) {
   return t("source");
+ }
+ if (review.glyphs.every((glyph) => glyph.evidence.includes("dictionary-exact"))) {
+  return t("dictionary");
+ }
+ if (
+  review.glyphs.some(
+   (glyph) =>
+    glyph.isPolyphonic &&
+    !glyph.evidence.includes("manual-override") &&
+    !glyph.evidence.includes("source-pinyin") &&
+    !glyph.evidence.includes("dictionary-exact"),
+  )
+ ) {
+  return t("needsReview");
  }
  return t("context");
 }
@@ -85,7 +97,6 @@ export function ReaderPronunciationReviewPopover({
  onClose,
  onSave,
  onReset,
- onOpenInspector,
 }: {
  target: ReaderSurfacePronunciationTarget;
  confirmed?: boolean;
@@ -94,7 +105,6 @@ export function ReaderPronunciationReviewPopover({
  onClose: () => void;
  onSave?: (input: ReaderPronunciationSaveInput) => void;
  onReset?: () => void;
- onOpenInspector?: (text: string, rect: DOMRect) => void;
 }) {
  const t = useTranslations("Reader.study.chrome.pronunciation");
  const review = useMemo(() => resolveReviewRange(target), [target]);
@@ -123,51 +133,33 @@ export function ReaderPronunciationReviewPopover({
      collisionPadding={12}
      positionMethod="fixed"
     >
-     <BasePopoverPopup
-      variant="lookupWide"
-      data-no-inspector
-      initialFocus={false}
-      finalFocus={false}
-     >
-      <div className="grid gap-4 p-4">
-       <div className="grid gap-1">
-        <div className="flex min-w-0 flex-wrap items-start justify-between gap-2 sm:flex-nowrap sm:gap-3">
-         <div className="grid min-w-0 gap-0.5">
-          <Typography as="strong" variant="sectionTitle" lang="zh-CN" clamp="one">
-           {review.text}
-          </Typography>
-          <PinyinText variant="bodySmall" tone="muted">
-           {review.glyphs
-            .map((glyph) => glyph.lexicalPinyin ?? glyph.spokenPinyin)
-            .filter((value): value is string => Boolean(value))
-            .join(" ") || t("missing")}
-          </PinyinText>
-         </div>
-         <Badge variant={confirmed ? "success" : "warning"} casing="natural">
-          {status}
-         </Badge>
-        </div>
-        <Typography variant="caption" tone="muted" leading="relaxed">
-         {t("description")}
-        </Typography>
-        {saveScope === "session" && onSave ? (
-         <Typography variant="caption" tone="muted" leading="relaxed">
-          {t("sessionDescription")}
+     <BasePopoverPopup variant="lookup" data-no-inspector initialFocus={false} finalFocus={false}>
+      <div className="grid gap-3 p-3">
+       <div className="flex min-w-0 items-start justify-between gap-2">
+        <div className="grid min-w-0 gap-0.5">
+         <Typography as="strong" variant="sectionTitle" lang="zh-CN" clamp="one">
+          {review.text}
          </Typography>
-        ) : null}
+         <PinyinText variant="bodySmall" tone="muted">
+          {review.glyphs
+           .map((glyph) => glyph.lexicalPinyin ?? glyph.spokenPinyin)
+           .filter((value): value is string => Boolean(value))
+           .join(" ") || t("missing")}
+         </PinyinText>
+        </div>
+        <Badge variant={confirmed ? "success" : "warning"} casing="natural">
+         {status}
+        </Badge>
        </div>
 
        {meaning ? (
-        <div className="grid gap-1">
-         <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
-          {t("meaning")}
-         </Typography>
-         <Typography variant="bodySmall">{meaning}</Typography>
-        </div>
+        <Typography variant="bodySmall" tone="muted">
+         {meaning}
+        </Typography>
        ) : null}
 
-       <div className="grid gap-2">
-        <Typography variant="overline" tone="muted" weight="black" transform="uppercase">
+       <div className="grid gap-1.5">
+        <Typography variant="caption" tone="muted" weight="semibold">
          {t("choose")}
         </Typography>
         {review.glyphs.map((glyph) => {
@@ -180,13 +172,16 @@ export function ReaderPronunciationReviewPopover({
          ];
          const selected = readings[String(glyph.start)];
          return (
-          <Card key={`${glyph.start}:${glyph.end}`} variant="subtle" padding="sm">
-           <div className="flex min-w-0 flex-wrap items-center gap-2">
-            <Typography as="span" variant="sectionTitle" lang="zh-CN">
-             {glyph.text}
-            </Typography>
-            {choices.length > 0 ? (
-             choices.map((readingKey) => (
+          <div
+           key={`${glyph.start}:${glyph.end}`}
+           className="flex min-w-0 flex-wrap items-center gap-2"
+          >
+           <Typography as="span" variant="sectionTitle" lang="zh-CN">
+            {glyph.text}
+           </Typography>
+           {choices.length > 0 ? (
+            <div className="flex min-w-0 flex-wrap gap-1.5" role="group" aria-label={glyph.text}>
+             {choices.map((readingKey) => (
               <Button
                key={readingKey}
                type="button"
@@ -205,37 +200,25 @@ export function ReaderPronunciationReviewPopover({
               >
                {formatContextualReading(readingKey)}
               </Button>
-             ))
-            ) : (
-             <Typography variant="bodySmall" tone="muted">
-              {t("noReading")}
-             </Typography>
-            )}
-           </div>
-          </Card>
+             ))}
+            </div>
+           ) : (
+            <Typography variant="bodySmall" tone="muted">
+             {t("noReading")}
+            </Typography>
+           )}
+          </div>
          );
         })}
        </div>
 
-       <div className="grid gap-2 border-t border-border-default pt-3 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
-        <div className="flex flex-wrap gap-2">
-         {onOpenInspector ? (
-          <Button
-           type="button"
-           size="sm"
-           variant="ghost"
-           onClick={() => onOpenInspector(review.text, target.rect)}
-          >
-           {t("openInspector")}
-          </Button>
-         ) : null}
-         {confirmed && onReset ? (
-          <Button type="button" size="sm" variant="ghost" onClick={onReset}>
-           {saveScope === "session" ? t("resetSession") : t("resetPersistent")}
-          </Button>
-         ) : null}
-        </div>
-        <div className="flex justify-end gap-2">
+       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border-default pt-2.5">
+        {confirmed && onReset ? (
+         <Button type="button" size="sm" variant="ghost" onClick={onReset}>
+          {saveScope === "session" ? t("resetSession") : t("resetPersistent")}
+         </Button>
+        ) : null}
+        <div className="flex gap-2">
          <Button type="button" size="sm" variant="ghost" onClick={onClose}>
           {t("close")}
          </Button>

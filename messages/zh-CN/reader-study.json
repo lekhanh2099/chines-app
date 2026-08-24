@@ -96,6 +96,7 @@
    "confirmed": "已确认",
    "needsReview": "需要检查 · 多音字",
    "source": "采用原始拼音",
+   "dictionary": "采用课文词汇",
    "context": "采用语境判断",
    "missing": "暂无拼音",
    "description": "拼音是基于语境的建议，不能默认正确。对于多音字，请确认适合当前句子的读音。",

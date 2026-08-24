@@ -4,7 +4,7 @@ import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.type
 import { ReadingTextItemSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { calculateChineseAccuracy, calculateTranslationSimilarity } from "./text-comparison";
 
-const translationReadingTextSchema = ReadingTextItemSchema.pick({
+const lessonPracticeReadingTextSchema = ReadingTextItemSchema.pick({
  id: true,
  paragraphs: true,
  text: true,
@@ -104,49 +104,119 @@ export function orderedTranslationSegments(
  );
 }
 
-export function translationSegmentsFromLesson(sourceLesson: HanyuLesson | undefined) {
+type LessonPracticeSegment = {
+ id: string;
+ order: number;
+ zh: string;
+ pinyin: string;
+ vi: string;
+};
+
+function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined) {
  if (!sourceLesson) return [];
 
- const segments: TranslationSegment[] = [];
+ const segments: LessonPracticeSegment[] = [];
  let order = 1;
 
- for (const section of sourceLesson.lesson.sections) {
+ const appendSegment = ({
+  id,
+  zh,
+  pinyin,
+  vi,
+ }: {
+  id: string;
+  zh: string;
+  pinyin: string;
+  vi: string;
+ }) => {
+  if (!zh.trim()) return;
+  segments.push({ id, order, zh, pinyin, vi });
+  order += 1;
+ };
+
+ for (const section of sourceLesson.lesson.sections.toSorted(
+  (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+ )) {
+  if (section.type === "text") {
+   for (const block of section.blocks.toSorted(
+    (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+   )) {
+    if (block.type === "text_narrative") {
+     const paragraphs = block.paragraphs.toSorted(
+      (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+     );
+     const lines = paragraphs.length > 0 ? paragraphs : block.lines;
+     for (const line of lines) {
+      appendSegment({
+       id: `${section.id}:${block.id}:${line.id}`,
+       zh: line.zh,
+       pinyin: line.pinyin,
+       vi: line.vi,
+      });
+     }
+     continue;
+    }
+
+    const scenes = block.scenes.toSorted(
+     (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+    );
+    const lines = scenes.length > 0 ? scenes.flatMap((scene) => scene.lines) : block.lines;
+    for (const line of lines) {
+     appendSegment({
+      id: `${section.id}:${block.id}:${line.id}`,
+      zh: line.zh,
+      pinyin: line.pinyin,
+      vi: line.vi,
+     });
+    }
+   }
+   continue;
+  }
+
   if (section.type !== "reading") continue;
 
-  const readingItems = [...section.items].sort(
+  const readingItems = section.items.toSorted(
    (left, right) => left.order - right.order || left.id.localeCompare(right.id),
   );
   for (const item of readingItems) {
    if (item.type !== "reading_text") continue;
-   const readingText = translationReadingTextSchema.parse(item);
+   const readingText = lessonPracticeReadingTextSchema.parse(item);
 
-   const paragraphs = [...readingText.paragraphs].sort(
+   const paragraphs = readingText.paragraphs.toSorted(
     (left, right) => left.order - right.order || left.id.localeCompare(right.id),
    );
    for (const paragraph of paragraphs) {
-    if (!paragraph.zh.trim() || !paragraph.vi.trim()) continue;
-    segments.push({
-     id: `${item.id}:${paragraph.id}`,
-     order,
+    appendSegment({
+     id: `${section.id}:${item.id}:${paragraph.id}`,
      zh: paragraph.zh,
      pinyin: paragraph.pinyin,
      vi: paragraph.vi,
     });
-    order += 1;
    }
 
-   if (paragraphs.length === 0 && readingText.text.trim() && readingText.vi.trim()) {
-    segments.push({
-     id: item.id,
-     order,
+   if (paragraphs.length === 0) {
+    appendSegment({
+     id: `${section.id}:${readingText.id}`,
      zh: readingText.text,
      pinyin: readingText.pinyin,
      vi: readingText.vi,
     });
-    order += 1;
    }
   }
  }
 
- return orderedTranslationSegments(segments);
+ return segments;
+}
+
+export function translationSegmentsFromLesson(sourceLesson: HanyuLesson | undefined) {
+ return lessonPracticeSegmentsFromLesson(sourceLesson)
+  .filter((segment) => segment.vi.trim())
+  .map((segment) => translationSegmentSchema.parse(segment));
+}
+
+export function ttsStudioTextFromLesson(sourceLesson: HanyuLesson | undefined): string {
+ return lessonPracticeSegmentsFromLesson(sourceLesson)
+  .map((segment) => segment.zh.trim())
+  .filter(Boolean)
+  .join("\n");
 }

@@ -376,7 +376,11 @@ export function ReaderCollectionWorkspace({
               <ReaderCatalogCard
                key={document.id}
                document={document}
-               href={`${collectionPath}/${readerRouteSlug(document)}`}
+               href={
+                kind === "humanities"
+                 ? `${collectionPath}?document=${encodeURIComponent(document.id)}`
+                 : `${collectionPath}/${readerRouteSlug(document)}`
+               }
                label={
                 kind === "reinforcement"
                  ? t("reinforcementLabel")

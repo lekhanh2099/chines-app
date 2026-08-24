@@ -26,6 +26,7 @@ import {
  analyzeContextualPronunciation,
  formatContextualSpokenPinyin,
  type ContextualPronunciationGlyph,
+ type PronunciationDictionaryEntry,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 
 import { ContextualReaderText } from "../ContextualReaderText";
@@ -307,16 +308,37 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
    ? state.playbackStartOffset
    : 0,
  );
+ const pronunciationDictionary = useMemo<PronunciationDictionaryEntry[]>(
+  () =>
+   providedAnalysis?.tokens
+    .filter((token) => token.source === "dictionary-exact")
+    .map((token, index) => ({
+     id: token.id,
+     text: token.text,
+     pinyin: token.pinyin,
+     priority: providedAnalysis.tokens.length - index,
+    })) ?? [],
+  [providedAnalysis],
+ );
  const computedAnalysis = useMemo(() => {
   if (providedAnalysis && localPronunciationOverrides.length === 0) return providedAnalysis;
   if (segment.zh.length > 2_000) return null;
   const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
-  return analyzeContextualPronunciation({
-   text: segment.zh,
-   sourcePinyin,
-   overrides: localPronunciationOverrides,
-  });
- }, [localPronunciationOverrides, providedAnalysis, segment.pinyin, segment.zh]);
+  return analyzeContextualPronunciation(
+   {
+    text: segment.zh,
+    sourcePinyin,
+    overrides: localPronunciationOverrides,
+   },
+   pronunciationDictionary,
+  );
+ }, [
+  localPronunciationOverrides,
+  pronunciationDictionary,
+  providedAnalysis,
+  segment.pinyin,
+  segment.zh,
+ ]);
  const characterCount = Array.from(segment.zh).length;
  const playbackStartCharacterIndex = Array.from(segment.zh.slice(0, playbackStartOffset)).length;
  const activeCharacterCount = Math.max(0, characterCount - playbackStartCharacterIndex);

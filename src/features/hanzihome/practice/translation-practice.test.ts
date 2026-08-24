@@ -14,6 +14,7 @@ import {
  translationSourceText,
  translationSegmentSchema,
  translationSegmentsFromLesson,
+ ttsStudioTextFromLesson,
 } from "./translation-practice";
 
 const segment = translationSegmentSchema.parse({
@@ -63,16 +64,46 @@ describe("HanziHome translation practice", () => {
   );
  });
 
- it("builds stable segments from reading paragraphs and root passages", () => {
+ it("builds stable segments from lesson text and supplementary reading", () => {
   const sourceLesson = HanyuLessonSchema.parse({
    lesson: {
     id: "lesson-1",
     title: { zh: "测试" },
     sections: [
      {
+      id: "text-1",
+      type: "text",
+      order: 1,
+      title: "Bài khóa",
+      blocks: [
+       {
+        id: "text-block-1",
+        type: "text_narrative",
+        order: 1,
+        title: "Đoạn văn",
+        paragraphs: [
+         {
+          id: "text-p-2",
+          order: 2,
+          zh: "Bài khóa hai",
+          pinyin: "bài khóa èr",
+          vi: "Bài khóa hai",
+         },
+         {
+          id: "text-p-1",
+          order: 1,
+          zh: "Bài khóa một",
+          pinyin: "bài khóa yī",
+          vi: "Bài khóa một",
+         },
+        ],
+       },
+      ],
+     },
+     {
       id: "reading-1",
       type: "reading",
-      order: 1,
+      order: 2,
       title: "阅读",
       items: [
        {
@@ -101,9 +132,38 @@ describe("HanziHome translation practice", () => {
   });
 
   expect(translationSegmentsFromLesson(sourceLesson)).toEqual([
-   { id: "reading-text-1:p-1", order: 1, zh: "第一句", pinyin: "dì yī jù", vi: "Câu một" },
-   { id: "reading-text-1:p-2", order: 2, zh: "第二句", pinyin: "dì èr jù", vi: "Câu hai" },
-   { id: "reading-text-2", order: 3, zh: "你好", pinyin: "nǐ hǎo", vi: "Xin chào" },
+   {
+    id: "text-1:text-block-1:text-p-1",
+    order: 1,
+    zh: "Bài khóa một",
+    pinyin: "bài khóa yī",
+    vi: "Bài khóa một",
+   },
+   {
+    id: "text-1:text-block-1:text-p-2",
+    order: 2,
+    zh: "Bài khóa hai",
+    pinyin: "bài khóa èr",
+    vi: "Bài khóa hai",
+   },
+   {
+    id: "reading-1:reading-text-1:p-1",
+    order: 3,
+    zh: "第一句",
+    pinyin: "dì yī jù",
+    vi: "Câu một",
+   },
+   {
+    id: "reading-1:reading-text-1:p-2",
+    order: 4,
+    zh: "第二句",
+    pinyin: "dì èr jù",
+    vi: "Câu hai",
+   },
+   { id: "reading-1:reading-text-2", order: 5, zh: "你好", pinyin: "nǐ hǎo", vi: "Xin chào" },
   ]);
+  expect(ttsStudioTextFromLesson(sourceLesson)).toBe(
+   "Bài khóa một\nBài khóa hai\n第一句\n第二句\n你好",
+  );
  });
 });

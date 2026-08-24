@@ -29,6 +29,8 @@ import {
  Loader2,
  Maximize2,
  Minimize2,
+ PanelRightClose,
+ PanelRightOpen,
  Pencil,
  PlugZap,
  Plus,
@@ -53,7 +55,12 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { focusWithinRingClassName } from "@/components/ui/focus-ring";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import {
+ ResizableHandle,
+ ResizablePanel,
+ ResizablePanelGroup,
+ usePanelRef,
+} from "@/components/ui/resizable";
 import {
  Select,
  SelectContent,
@@ -164,6 +171,7 @@ const desktopLayout = {
  "html-artifacts-preview": 72,
  "html-artifacts-inspector": 28,
 };
+const htmlArtifactsInspectorCollapsedSize = "3.25rem";
 const runtimeStateSaveDelayMs = 2000;
 const htmlEditorExtensions = [html({ autoCloseTags: true, matchClosingTags: true })];
 type ArtifactSaveOptions = {
@@ -232,6 +240,7 @@ export function HanziHomeHtmlArtifactsPage() {
  const [searchQuery, setSearchQuery] = useState("");
  const [mobilePane, setMobilePane] = useState<MobilePane>("preview");
  const [inspectorTab, setInspectorTab] = useState<InspectorTab>(InspectorTabSchema.enum.files);
+ const [isInspectorMinimized, setIsInspectorMinimized] = useState(false);
  const [previewMode, setPreviewMode] = useState<PreviewMode>(PreviewModeSchema.enum.iframe);
  const isPreviewFocused = useSelector(appShellStore, (state) => state.isContentFullscreen);
  const { setContentFullscreen } = appShellStore.actions;
@@ -262,6 +271,7 @@ export function HanziHomeHtmlArtifactsPage() {
  const updateFolderMutation = useUpdateHtmlArtifactFolderMutation();
  const deleteFolderMutation = useDeleteHtmlArtifactFolderMutation();
  const updateRuntimeStateMutation = useUpdateHtmlArtifactRuntimeStateMutation();
+ const inspectorPanelRef = usePanelRef();
  const runtimeStateSaveTimerRef = useRef<z.infer<z.ZodNullable<z.ZodNumber>>>(null);
  const latestRuntimeStateSaveRef = useRef<
   Nullable<{
@@ -297,6 +307,20 @@ export function HanziHomeHtmlArtifactsPage() {
   createFolderMutation.isPending ||
   updateFolderMutation.isPending ||
   deleteFolderMutation.isPending;
+
+ const syncInspectorMinimized = () => {
+  const isCollapsed = inspectorPanelRef.current?.isCollapsed();
+  if (isCollapsed === undefined) return;
+  setIsInspectorMinimized((current) => (current === isCollapsed ? current : isCollapsed));
+ };
+ const minimizeInspector = () => {
+  inspectorPanelRef.current?.collapse();
+  syncInspectorMinimized();
+ };
+ const expandInspector = () => {
+  inspectorPanelRef.current?.expand();
+  syncInspectorMinimized();
+ };
 
  const selectedSummary = useMemo(
   () => artifacts.find((artifact) => artifact.id === effectiveSelectedId) ?? null,
@@ -605,6 +629,8 @@ export function HanziHomeHtmlArtifactsPage() {
   onRuntimeStateChange: queueRuntimeStateSave,
   onSubmit: saveArtifact,
   onToggleFocus: () => setContentFullscreen(!isPreviewFocused),
+  onMinimizeInspector:
+   isDesktopShell && !isPreviewFocused && !isInspectorMinimized ? minimizeInspector : undefined,
  };
 
  return (
@@ -725,6 +751,10 @@ export function HanziHomeHtmlArtifactsPage() {
       defaultSize={`${desktopLayout["html-artifacts-inspector"]}%`}
       minSize="24%"
       maxSize="42%"
+      collapsible
+      collapsedSize={htmlArtifactsInspectorCollapsedSize}
+      panelRef={inspectorPanelRef}
+      onResize={syncInspectorMinimized}
       className="min-h-0 min-w-0 overflow-hidden"
      >
       <RightInspectorPane
@@ -739,6 +769,7 @@ export function HanziHomeHtmlArtifactsPage() {
        folders={folders}
        isDeleting={isDeleting}
        isFolderMutating={isFolderMutating}
+       isMinimized={isInspectorMinimized}
        isLoading={artifactsQuery.isLoading}
        isSaving={isSaving}
        searchQuery={searchQuery}
@@ -758,6 +789,7 @@ export function HanziHomeHtmlArtifactsPage() {
        onSelectFolder={setActiveFolderId}
        onReorderFolder={moveFolderByDirection}
        onOpenPublishDialog={() => setIsPublishDialogOpen(true)}
+       onExpand={expandInspector}
        onCopyArtifactLink={(artifactId) => void copyArtifactLink(artifactId)}
        onDeleteArtifact={requestDeleteArtifactSummary}
        onEditArtifact={editArtifactDetails}
@@ -810,6 +842,7 @@ function RightInspectorPane({
  folders,
  isDeleting,
  isFolderMutating,
+ isMinimized,
  isLoading,
  isSaving,
  searchQuery,
@@ -829,6 +862,7 @@ function RightInspectorPane({
  onSelectFolder,
  onReorderFolder,
  onOpenPublishDialog,
+ onExpand,
  onDraftChange,
  onSubmit,
  onTabChange,
@@ -844,6 +878,7 @@ function RightInspectorPane({
  folders: HtmlArtifactFolder[];
  isDeleting: boolean;
  isFolderMutating: boolean;
+ isMinimized: boolean;
  isLoading: boolean;
  isSaving: boolean;
  searchQuery: string;
@@ -863,42 +898,57 @@ function RightInspectorPane({
  onSelectFolder: (folderId: FolderFilter) => void;
  onReorderFolder: (folderId: string, direction: z.infer<typeof MoveDirectionSchema>) => void;
  onOpenPublishDialog: () => void;
+ onExpand: () => void;
  onDraftChange: (formState: ArtifactFormState) => void;
  onSubmit: ArtifactSubmitHandler;
  onTabChange: (tab: InspectorTab) => void;
 }) {
+ if (isMinimized) {
+  return (
+   <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l border-border-default bg-bg-card">
+    <div className="flex h-full items-center justify-center px-1.5 py-2">
+     <Button
+      type="button"
+      variant="surfaceCard"
+      size="icon-sm"
+      aria-label="Mở rộng thanh tệp"
+      title="Mở rộng thanh tệp"
+      onClick={onExpand}
+     >
+      <PanelRightOpen className="size-4" />
+     </Button>
+    </div>
+   </aside>
+  );
+ }
+
  return (
   <aside className="flex h-full min-h-0 flex-col overflow-hidden border-l border-border-default bg-bg-card">
    <div className="flex h-14 shrink-0 items-center border-b border-border-default bg-bg-card px-3">
-    <div className="grid w-full grid-cols-2 gap-1">
-     <Button
-      type="button"
-      variant={activeTab === "files" ? "active" : "ghost"}
-      size="toolbar"
-      className="min-w-0"
-      aria-pressed={activeTab === "files"}
-      onClick={() => onTabChange("files")}
-     >
-      <Folder data-icon="inline-start" />
-      <StudyInstructionText as="span" clamp="one">
-       Tệp
-      </StudyInstructionText>
-      <StudyInstructionText tone="muted" variant="caption" scale="relativeSmall">
-       {filteredArtifacts.length}
-      </StudyInstructionText>
-     </Button>
-     <Button
-      type="button"
-      variant="ghost"
-      size="toolbar"
-      className="min-w-0"
-      onClick={onOpenPublishDialog}
-     >
-      <PlugZap data-icon="inline-start" />
-      <StudyInstructionText as="span" clamp="one">
+    <div className="flex w-full items-center justify-between gap-2">
+     <div className="flex min-w-0 items-center gap-2">
+      <Folder className="size-4 shrink-0 text-text-muted" aria-hidden="true" />
+      <Typography as="h2" variant="cardTitle" tone="default" weight="black" clamp="one">
+       {activeTab === "files" ? "Tệp" : "Chỉnh tệp"}
+      </Typography>
+      {activeTab === "files" ? (
+       <Typography as="span" variant="caption" tone="muted" weight="medium">
+        {filteredArtifacts.length}
+       </Typography>
+      ) : null}
+     </div>
+     <div className="flex shrink-0 items-center gap-1">
+      {activeTab === "edit" ? (
+       <Button type="button" variant="ghost" size="toolbar" onClick={() => onTabChange("files")}>
+        <Folder data-icon="inline-start" />
+        Danh sách
+       </Button>
+      ) : null}
+      <Button type="button" variant="outline" size="toolbar" onClick={onOpenPublishDialog}>
+       <PlugZap data-icon="inline-start" />
        Kết nối
-      </StudyInstructionText>
-     </Button>
+      </Button>
+     </div>
     </div>
    </div>
    <div className="min-h-0 flex-1 overflow-hidden bg-bg-subtle">
@@ -1367,6 +1417,7 @@ function PreviewPane({
  onModeChange,
  onRuntimeStateChange,
  onSubmit,
+ onMinimizeInspector,
  onToggleFocus,
 }: {
  defaultFolderId: Nullable<string>;
@@ -1385,6 +1436,7 @@ function PreviewPane({
  onModeChange: (mode: PreviewMode) => void;
  onRuntimeStateChange: (artifactId: string, state: HtmlArtifactRuntimeState) => void;
  onSubmit: ArtifactSubmitHandler;
+ onMinimizeInspector?: () => void;
  onToggleFocus: () => void;
 }) {
  const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -1428,6 +1480,18 @@ function PreviewPane({
       {isFocused ? <Minimize2 /> : <Maximize2 />}
       {isFocused ? "Thu nhỏ" : "Phóng to"}
      </Button>
+     {onMinimizeInspector ? (
+      <Button
+       type="button"
+       variant="surfaceCard"
+       size="icon-toolbar"
+       aria-label="Thu gọn thanh tệp"
+       title="Thu gọn thanh tệp"
+       onClick={onMinimizeInspector}
+      >
+       <PanelRightClose />
+      </Button>
+     ) : null}
     </div>
    </div>
    <div

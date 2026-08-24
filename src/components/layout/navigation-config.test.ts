@@ -35,6 +35,11 @@ describe("navigation configuration", () => {
   ).toBe(true);
  });
 
+ it("places HTML files with the primary learning destinations", () => {
+  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("htmlArtifacts");
+  expect(navigationGroups[5]?.sections[1]?.itemIds).not.toContain("htmlArtifacts");
+ });
+
  it("uses canonical Reader and HSK destinations while retaining the legacy HSK path", () => {
   expect(navigationItems.reader.href).toBe("/reader");
   expect(navigationItems.readerCourse.href).toBe("/reader/course");

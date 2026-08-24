@@ -90,15 +90,16 @@ export function StudioDictationWorkspace({
  const searchParams = useSearchParams();
  const requestedDocumentId = searchParams.get("documentId") ?? "";
  const requestedReaderDocumentId = searchParams.get("readerDocumentId") ?? "";
+ const requestedClipId = searchParams.get("clipId") ?? "";
  const [selectedLessonIdState, setSelectedLessonId] = useState("");
  const [selectedBookIdState, setSelectedBookId] = useState("");
  const [selectedVolumeIdState, setSelectedVolumeId] = useState("");
  const [selectedSectionId, setSelectedSectionId] = useState("");
  const [selectedReaderDocumentIdState, setSelectedReaderDocumentId] = useState("");
  const [sourceType, setSourceType] = useState<DictationSource>(
-  requestedDocumentId.length > 0 ? "reader" : "lesson",
+  requestedDocumentId.length > 0 ? "reader" : requestedClipId.length > 0 ? "library" : "lesson",
  );
- const [selectedClipId, setSelectedClipId] = useState("");
+ const [selectedClipId, setSelectedClipId] = useState(requestedClipId);
  const [customText, setCustomText] = useState("");
  const [playbackMode, setPlaybackMode] = useState<"sentence" | "paragraph" | "passage">("sentence");
  const [modeConfirmed, setModeConfirmed] = useState(false);

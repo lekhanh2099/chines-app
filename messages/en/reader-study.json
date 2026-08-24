@@ -96,6 +96,7 @@
    "confirmed": "Confirmed",
    "needsReview": "Review needed · polyphonic",
    "source": "Using source pinyin",
+   "dictionary": "Using lesson vocabulary",
    "context": "Using context",
    "missing": "Pinyin is not available",
    "description": "Pinyin is a contextual suggestion and must not be assumed correct. For polyphonic characters, confirm the reading that fits this sentence.",

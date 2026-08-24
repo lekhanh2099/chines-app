@@ -214,7 +214,7 @@ export const navigationGroups = [
    {
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
-    itemIds: ["home", "lessons", "humanities"],
+    itemIds: ["home", "lessons", "humanities", "htmlArtifacts"],
    },
    {
     id: "learning-personal",
@@ -299,7 +299,7 @@ export const navigationGroups = [
    {
     id: "system-tools",
     messageKey: "navigation.sections.systemTools",
-    itemIds: ["htmlArtifacts", "apiDocs"],
+    itemIds: ["apiDocs"],
    },
   ],
  },

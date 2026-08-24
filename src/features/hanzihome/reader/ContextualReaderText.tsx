@@ -89,11 +89,13 @@ export function ContextualReaderText({
    ? cn("cursor-pointer rounded-sm", focusRingClassName)
    : undefined;
   const pinyinClassName = pinyinInteractive
-   ? cn(
-      "cursor-pointer rounded-sm underline decoration-dotted underline-offset-[0.22em]",
-      focusRingClassName,
-     )
+   ? cn("cursor-pointer rounded-sm", focusRingClassName)
    : undefined;
+  const needsPronunciationReview =
+   glyph.isPolyphonic &&
+   !glyph.evidence.includes("manual-override") &&
+   !glyph.evidence.includes("source-pinyin") &&
+   !glyph.evidence.includes("dictionary-exact");
   const hanziActionLabel = hanziInteractive
    ? t("playFromCharacter", { character: grapheme.segment })
    : undefined;
@@ -155,7 +157,7 @@ export function ContextualReaderText({
     <rt className="font-pinyin text-[0.45em] font-semibold text-accent-text">
      {pinyinInteractive ? (
       <span
-       className={pinyinClassName}
+       className={cn(pinyinClassName, needsPronunciationReview && "text-warning")}
        onClick={(event) => {
         event.stopPropagation();
         activatePinyin(event.currentTarget);

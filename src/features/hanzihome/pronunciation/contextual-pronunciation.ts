@@ -314,6 +314,48 @@ function alignSourceKeys(
  return solve(0, 0);
 }
 
+function dictionaryReadingsByGlyphStart(
+ text: string,
+ graphemes: Intl.SegmentData[],
+ lexicalValues: string[],
+ spokenValues: string[],
+ alternatives: string[][],
+ dictionary: PronunciationDictionaryEntry[],
+): ReadonlyMap<number, string> {
+ const hanziIndexByStart = new Map<number, number>();
+ let hanziIndex = 0;
+ for (const grapheme of graphemes) {
+  if (classify(grapheme.segment) !== "hanzi") continue;
+  hanziIndexByStart.set(grapheme.index, hanziIndex);
+  hanziIndex += 1;
+ }
+
+ const readingsByStart = new Map<number, string>();
+ for (const grapheme of graphemes) {
+  const entry = dictionaryToken(text, grapheme.index, dictionary);
+  if (entry === null) continue;
+  const phraseGraphemes = [
+   ...new Intl.Segmenter("zh-CN", { granularity: "grapheme" }).segment(entry.text),
+  ].filter((item) => classify(item.segment) === "hanzi");
+  const firstHanziIndex = hanziIndexByStart.get(grapheme.index);
+  if (firstHanziIndex === undefined || phraseGraphemes.length === 0) continue;
+  const matchedReadings = alignSourceKeys(
+   entry.pinyin,
+   lexicalValues.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
+   spokenValues.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
+   alternatives.slice(firstHanziIndex, firstHanziIndex + phraseGraphemes.length),
+  );
+  if (matchedReadings === null || matchedReadings.length !== phraseGraphemes.length) continue;
+
+  for (const [index, phraseGrapheme] of phraseGraphemes.entries()) {
+   const start = grapheme.index + phraseGrapheme.index;
+   if (!readingsByStart.has(start)) readingsByStart.set(start, matchedReadings[index]);
+  }
+ }
+
+ return readingsByStart;
+}
+
 export function analyzeContextualPronunciation(
  input: ContextualPronunciationRequest,
  dictionary: PronunciationDictionaryEntry[] = [],
@@ -374,6 +416,16 @@ export function analyzeContextualPronunciation(
    ? null
    : alignSourceKeys(request.sourcePinyin, lexicalValues, spokenValues, alternatives);
  const sourceAligned = request.sourcePinyin === null || sourceAlignment !== null;
+ const dictionaryReadings = readingsAligned
+  ? dictionaryReadingsByGlyphStart(
+     normalizedText,
+     graphemes,
+     lexicalValues,
+     spokenValues,
+     alternatives,
+     dictionary,
+    )
+  : new Map<number, string>();
  const glyphs: ContextualPronunciationGlyph[] = [];
  let hanziIndex = 0;
  for (const item of graphemes) {
@@ -386,10 +438,16 @@ export function analyzeContextualPronunciation(
   const overrideKey = overrideMatch?.key ?? null;
   const sourceKey =
    sourceAligned && sourceAlignment !== null ? (sourceAlignment[hanziIndex] ?? null) : null;
+  const dictionaryKey = dictionaryReadings.get(item.index) ?? null;
   const sourceLexicalKey =
-   item.segment === "一" || item.segment === "不" ? lexicalKey : (sourceKey ?? lexicalKey);
-  const selectedLexicalKey = overrideKey ?? sourceLexicalKey;
-  const selectedSpokenKey = overrideKey ?? spokenKey;
+   sourceKey === null
+    ? null
+    : item.segment === "一" || item.segment === "不"
+      ? lexicalKey
+      : sourceKey;
+  const selectedLexicalKey = overrideKey ?? sourceLexicalKey ?? dictionaryKey ?? lexicalKey;
+  const selectedSpokenKey =
+   overrideKey ?? (selectedLexicalKey === lexicalKey ? spokenKey : selectedLexicalKey);
   const selectedAlternatives = [
    ...new Set([selectedLexicalKey, ...keys].filter((key): key is string => key !== null)),
   ];
@@ -397,10 +455,10 @@ export function analyzeContextualPronunciation(
   const confidence =
    overrideKey !== null
     ? 1
-    : isPolyphonic
-      ? 0.55
-      : request.sourcePinyin !== null && sourceAligned
-        ? 0.85
+    : sourceLexicalKey !== null || dictionaryKey !== null
+      ? 0.95
+      : isPolyphonic
+        ? 0.55
         : readingsAligned
           ? 0.8
           : 0;
@@ -417,11 +475,13 @@ export function analyzeContextualPronunciation(
    confidence,
    evidence:
     overrideKey === null
-     ? request.sourcePinyin !== null && sourceAligned
+     ? sourceLexicalKey !== null
       ? ["source-pinyin"]
-      : readingsAligned
-        ? ["context-library"]
-        : ["fallback"]
+      : dictionaryKey !== null
+        ? ["dictionary-exact"]
+        : readingsAligned
+          ? ["context-library"]
+          : ["fallback"]
      : ["manual-override"],
   });
   hanziIndex += 1;

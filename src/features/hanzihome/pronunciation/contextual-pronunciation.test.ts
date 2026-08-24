@@ -85,6 +85,32 @@ describe("HanziHome contextual pronunciation", () => {
   expect(result.glyphs[0]?.confidence).toBe(0.55);
  });
 
+ it("uses an aligned lesson-vocabulary phrase before the contextual fallback", () => {
+  const result = analyzeContextualPronunciation({ text: "银行行长。", sourcePinyin: null }, [
+   { id: "bank", text: "银行", pinyin: "yín háng", priority: 2 },
+   { id: "manager", text: "行长", pinyin: "háng zhǎng", priority: 1 },
+  ]);
+  expect(result.glyphs.map((glyph) => glyph.lexicalReadingKey)).toEqual([
+   "yin2",
+   "hang2",
+   "hang2",
+   "zhang3",
+  ]);
+  expect(result.glyphs.slice(2, 4).map((glyph) => glyph.evidence)).toEqual([
+   ["dictionary-exact"],
+   ["dictionary-exact"],
+  ]);
+
+  const sourceWins = analyzeContextualPronunciation({ text: "行长", sourcePinyin: "xíng cháng" }, [
+   { id: "manager", text: "行长", pinyin: "háng zhǎng", priority: 1 },
+  ]);
+  expect(sourceWins.glyphs.map((glyph) => glyph.lexicalReadingKey)).toEqual(["xing2", "chang2"]);
+  expect(sourceWins.glyphs.map((glyph) => glyph.evidence)).toEqual([
+   ["source-pinyin"],
+   ["source-pinyin"],
+  ]);
+ });
+
  it("preserves the curated polyphonic and tone-sandhi corpus readings", () => {
   const result = analyzeContextualPronunciation({
    text: "银行行长还没有还钱。",

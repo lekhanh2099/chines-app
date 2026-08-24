@@ -16,6 +16,7 @@ const ResizablePanelGroup = ({
 );
 
 const ResizablePanel = ResizablePrimitive.Panel;
+const usePanelRef = ResizablePrimitive.usePanelRef;
 
 const ResizableHandle = ({
  withHandle = true,
@@ -39,4 +40,4 @@ const ResizableHandle = ({
  </ResizablePrimitive.Separator>
 );
 
-export { ResizableHandle, ResizablePanel, ResizablePanelGroup };
+export { ResizableHandle, ResizablePanel, ResizablePanelGroup, usePanelRef };

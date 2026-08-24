@@ -37,11 +37,12 @@ const ttsRatePresets = [
 const ttsSampleText =
  "学习语言不能只怕出错。越怕开口说，就越没有机会进步。\n每天听一点、说一点，慢慢地就会越来越自然。";
 
-export function TtsStudioWorkspace() {
+export function TtsStudioWorkspace({ sourceText = "" }: { sourceText?: string }) {
  const tts = useSharedMandarinTts();
  const searchParams = useSearchParams();
+ const requestedText = searchParams.get("text") ?? "";
  const { generateAudio, pause, resume, speakSequence, stop } = tts;
- const [text, setText] = useState(() => searchParams.get("text") ?? ttsSampleText);
+ const [text, setText] = useState(() => requestedText || sourceText || ttsSampleText);
  const [workspaceTab, setWorkspaceTab] = useState<"compose" | "library">("compose");
  const [title, setTitle] = useState("");
  const [mode, setMode] = useState<TtsSegmentMode>("sentence");
@@ -292,8 +293,9 @@ export function TtsStudioWorkspace() {
        Soạn nội dung, nghe thử, rồi xuất MP3
       </Typography>
       <Typography as="p" variant="body" tone="muted">
-       Một luồng chính. Thư viện audio được tách riêng để màn hình soạn không biến thành bảng điều
-       khiển.
+       {sourceText
+        ? "Nội dung được nạp từ Bài khóa và Bài đọc thêm của bài hiện tại; bạn có thể chỉnh trước khi nghe."
+        : "Một luồng chính. Thư viện audio được tách riêng để màn hình soạn không biến thành bảng điều khiển."}
       </Typography>
      </div>
     </div>

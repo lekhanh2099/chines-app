@@ -3,7 +3,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useCallback, useMemo, useState } from "react";
 
-import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import type { ReaderSurfacePronunciationTarget } from "../components/ReaderSurface";
 import {
@@ -31,7 +30,6 @@ export function useReaderPronunciationReview({
 }) {
  const queryClient = useQueryClient();
  const runtimeActions = useReaderRuntimeActions();
- const { openInspector } = useVocabInspector();
  const [target, setTarget] = useState<ReaderSurfacePronunciationTarget | null>(null);
  const reviewRange = useMemo(() => {
   if (!target) return null;
@@ -115,14 +113,6 @@ export function useReaderPronunciationReview({
    })
    .catch((error: Error) => setSaveError(error.message));
  }, [invalidate, override, setSaveError]);
- const openFullInspector = useCallback(
-  (text: string, rect: DOMRect) => {
-   setTarget(null);
-   openInspector(text, { anchorRect: rect });
-  },
-  [openInspector],
- );
-
  const popover = target ? (
   <ReaderPronunciationReviewPopover
    key={`${target.segment.id}:${reviewRange?.start ?? target.glyph.start}:${override?.revision ?? 0}`}
@@ -132,7 +122,6 @@ export function useReaderPronunciationReview({
    onClose={() => setTarget(null)}
    onSave={save}
    onReset={override ? reset : undefined}
-   onOpenInspector={openFullInspector}
   />
  ) : null;
 

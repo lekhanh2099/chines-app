@@ -11,7 +11,6 @@ import {
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
-import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
@@ -148,7 +147,6 @@ function ReaderSurfaceViewContent({
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
- const { openInspector } = useVocabInspector();
  const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
  const positionSource = useReaderRuntimeSelector((state) => state.positionSource);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
@@ -165,13 +163,6 @@ function ReaderSurfaceViewContent({
    else setPronunciationPreview(target);
   },
   [onPronunciationInspect],
- );
- const openPreviewInspector = useCallback(
-  (text: string, rect: DOMRect) => {
-   setPronunciationPreview(null);
-   void openInspector(text, { lessonId, anchorRect: rect });
-  },
-  [lessonId, openInspector],
  );
  const saveLocalPronunciation = useCallback(
   (input: ReaderPronunciationSaveInput) => {
@@ -399,7 +390,6 @@ function ReaderSurfaceViewContent({
      onClose={() => setPronunciationPreview(null)}
      onSave={saveLocalPronunciation}
      onReset={pronunciationPreviewConfirmed ? resetLocalPronunciation : undefined}
-     onOpenInspector={openPreviewInspector}
     />
    ) : null}
   </div>

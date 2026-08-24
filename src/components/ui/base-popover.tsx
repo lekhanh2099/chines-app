@@ -32,7 +32,7 @@ const popupVariants: Record<NonNullable<BasePopoverPopupProps["variant"]>, strin
  actions:
   "flex max-w-[calc(100vw-1rem)] items-center gap-1 rounded-xl border border-border-default bg-bg-elevated p-1 shadow-theme-lg",
  lookup:
-  "w-80 max-w-[calc(100vw-1rem)] overflow-hidden rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg",
+  "max-h-[min(36rem,calc(100dvh-1.5rem))] w-80 max-w-[calc(100vw-1rem)] overflow-x-hidden overflow-y-auto rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg scrollbar-soft",
  lookupWide:
   "max-h-[min(36rem,calc(100dvh-1.5rem))] w-[min(34rem,calc(100vw-1.5rem))] overflow-x-hidden overflow-y-auto rounded-xl border border-border-default bg-bg-elevated shadow-theme-lg scrollbar-soft",
  menu:

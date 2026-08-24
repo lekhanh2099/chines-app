@@ -96,6 +96,7 @@
    "confirmed": "Đã xác nhận",
    "needsReview": "Cần kiểm tra · đa âm",
    "source": "Theo pinyin nguồn",
+   "dictionary": "Theo từ vựng bài",
    "context": "Theo ngữ cảnh",
    "missing": "Chưa xác định pinyin",
    "description": "Pinyin là đề xuất theo ngữ cảnh, không được mặc định xem là đúng. Với chữ đa âm, hãy xác nhận cách đọc phù hợp câu này.",
