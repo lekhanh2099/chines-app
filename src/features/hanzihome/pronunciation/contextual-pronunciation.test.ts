@@ -33,6 +33,18 @@ describe("HanziHome contextual pronunciation", () => {
    sourcePinyin: "Zhèjiāng shěng",
   });
   expect(concatenated.sourcePinyinStatus).toBe("aligned");
+
+  const erhua = analyzeContextualPronunciation({
+   text: "哪儿，这儿。",
+   sourcePinyin: "nǎ'er, zhèr.",
+  });
+  expect(erhua.sourcePinyinStatus).toBe("aligned");
+  expect(erhua.glyphs.map((glyph) => glyph.lexicalReadingKey)).toEqual([
+   "na3",
+   "er2",
+   "zhe4",
+   "er2",
+  ]);
  });
 
  it("lets an explicit manual confirmation override the displayed pronunciation", () => {

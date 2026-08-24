@@ -19,24 +19,24 @@ const DEFAULT_RATE = 1;
 const MAX_TTS_TEXT_LENGTH = 10_000;
 
 function splitSpeechSegments(segments: readonly string[]) {
- return segments.flatMap((segment) => {
-  const normalizedSegment = segment.trim();
-  if (!normalizedSegment) return [];
+ const normalizedText = segments
+  .map((segment) => segment.trim())
+  .filter(Boolean)
+  .join("\n");
+ if (!normalizedText) return [];
+ if (normalizedText.length <= MAX_TTS_TEXT_LENGTH) return [normalizedText];
 
-  if (normalizedSegment.length <= MAX_TTS_TEXT_LENGTH) return [normalizedSegment];
-
-  const chunks: string[] = [];
-  let chunk = "";
-  for (const character of Array.from(normalizedSegment)) {
-   if (chunk && chunk.length + character.length > MAX_TTS_TEXT_LENGTH) {
-    chunks.push(chunk);
-    chunk = "";
-   }
-   chunk += character;
+ const chunks: string[] = [];
+ let chunk = "";
+ for (const character of Array.from(normalizedText)) {
+  if (chunk && chunk.length + character.length > MAX_TTS_TEXT_LENGTH) {
+   chunks.push(chunk);
+   chunk = "";
   }
-  if (chunk) chunks.push(chunk);
-  return chunks;
- });
+  chunk += character;
+ }
+ if (chunk) chunks.push(chunk);
+ return chunks;
 }
 
 type TTSState = z.infer<

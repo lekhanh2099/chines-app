@@ -202,8 +202,16 @@ function normalizeSourcePinyin(value: string): string {
   "ǜ",
   "ü",
  ]);
+ const normalized = value
+  .normalize("NFC")
+  .toLocaleLowerCase()
+  .replaceAll("u:", "v")
+  .replace(
+   /([a-zvāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]{2,}[0-5]?)r(?=$|[\s\p{Punctuation}\p{Symbol}])/gu,
+   "$1er",
+  );
  let compact = "";
- for (const character of value.normalize("NFC").toLocaleLowerCase().replaceAll("u:", "v")) {
+ for (const character of normalized) {
   if (toneMarks.has(character) || /[a-zv0-5]/u.test(character)) compact += character;
  }
  return compact.replaceAll("ü", "v");
@@ -213,6 +221,7 @@ function sourcePinyinForms(key: string): string[] {
  const display = displayPinyin(key);
  const forms = [key, display === null ? null : normalizeSourcePinyin(display)];
  if (key.endsWith("5")) forms.push(key.slice(0, -1));
+ if (key === "er2") forms.push("er");
  return [...new Set(forms)].filter((value): value is string => value !== null);
 }
 

@@ -168,20 +168,17 @@ function ReaderTtsBridge({
     return;
    }
    const boundedOffset = Math.min(Math.max(Math.trunc(startOffset), 0), segment.zh.length);
-   const speechText =
-    boundedOffset > 0
-     ? segment.zh.slice(boundedOffset).trim()
-     : (segment.speechText ?? segment.zh).trim();
-   if (!speechText) {
-    const nextIndex = index + 1;
-    if (
-     (continuous || (allowAutoAdvance && store.state.autoAdvance)) &&
-     nextIndex < document.segments.length
-    ) {
-     playAtRef.current(nextIndex, runId, continuous, allowAutoAdvance, 0);
-    } else {
-     finishPlayback(index >= document.segments.length - 1);
-    }
+   const playWholeDocument =
+    !store.state.loopCurrent && (continuous || (allowAutoAdvance && store.state.autoAdvance));
+   const speechTexts = (playWholeDocument ? document.segments.slice(index) : [segment])
+    .map((item, itemIndex) =>
+     itemIndex === 0 && boundedOffset > 0
+      ? item.zh.slice(boundedOffset).trim()
+      : (item.speechText ?? item.zh).trim(),
+    )
+    .filter(Boolean);
+   if (speechTexts.length === 0) {
+    finishPlayback(playWholeDocument || index >= document.segments.length - 1);
     return;
    }
 
@@ -190,17 +187,21 @@ function ReaderTtsBridge({
    allowAutoAdvanceRef.current = allowAutoAdvance;
    store.actions.selectIndex(index, "playback");
    store.actions.syncPlayback({
-    playbackSegmentId: segment.id,
+    playbackSegmentId: playWholeDocument ? null : segment.id,
     playbackStatus: "loading",
-    playbackStartOffset: boundedOffset,
+    playbackStartOffset: playWholeDocument ? 0 : boundedOffset,
     progress: 0,
     rate,
     error: null,
    });
-   speakSequence([speechText], () => {
+   speakSequence(speechTexts, () => {
     if (runRef.current !== runId) return;
     if (store.state.loopCurrent) {
      playAtRef.current(index, runId, continuous, allowAutoAdvance, boundedOffset);
+     return;
+    }
+    if (playWholeDocument) {
+     finishPlayback(true);
      return;
     }
     const nextIndex = index + 1;
