@@ -82,6 +82,7 @@ function DailyTranslationPanel({
     .map((paragraph, index) => ({
      id: paragraph.id,
      order: index + 1,
+     sourceLabel: "Bài đọc hôm nay",
      zh: paragraph.zh,
      pinyin: paragraph.pinyin,
      vi: paragraph.vi,

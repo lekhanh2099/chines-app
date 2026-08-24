@@ -137,6 +137,20 @@ export function TranslationPracticeWorkspace() {
      aria-label="Hướng dịch"
     />
 
+    <div className="flex flex-wrap items-center justify-between gap-2" aria-live="polite">
+     <div className="grid gap-0.5">
+      <Typography as="p" variant="overline" tone="muted" weight="black">
+       ĐANG LÀM
+      </Typography>
+      <Typography as="p" variant="bodySmall" weight="black">
+       {segment.sourceLabel}
+      </Typography>
+     </div>
+     <Badge casing="natural">
+      Đoạn {segment.order}/{segments.length}
+     </Badge>
+    </div>
+
     <div className="grid grid-cols-5 gap-2 sm:grid-cols-8" aria-label="Đoạn dịch">
      {segments.map((candidate, index) => (
       <Button
@@ -151,6 +165,8 @@ export function TranslationPracticeWorkspace() {
            : "outline"
        }
        aria-current={index === activeIndex ? "step" : undefined}
+       aria-label={`Chọn ${candidate.sourceLabel}, đoạn ${candidate.order}`}
+       title={candidate.sourceLabel}
        onClick={() => move(index)}
       >
        {candidate.order}

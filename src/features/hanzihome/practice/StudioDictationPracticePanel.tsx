@@ -34,6 +34,7 @@ export function StudioDictationPracticePanel({
  rate,
  scriptMode,
  selectedVoiceName,
+ showSettings = true,
  voices,
  onAttempt,
  onAutoAdvanceChange,
@@ -59,6 +60,7 @@ export function StudioDictationPracticePanel({
  rate: number;
  scriptMode: StudioDictationScriptMode;
  selectedVoiceName: string;
+ showSettings?: boolean;
  voices: TTSVoice[];
  onAttempt: (attempt: DictationAttempt) => void;
  onAutoAdvanceChange: (next: boolean) => void;
@@ -78,7 +80,7 @@ export function StudioDictationPracticePanel({
  const text = entryText(entry);
 
  return (
-  <Card variant="section" padding="md" className="grid gap-4">
+  <Card variant="section" padding="md" className="grid content-start self-start gap-4">
    <header className="flex flex-col items-start justify-between gap-3 border-b border-border-default pb-3 sm:flex-row sm:items-center">
     <div className="grid gap-1">
      <Typography as="h3" variant="cardTitle" weight="black">
@@ -92,26 +94,30 @@ export function StudioDictationPracticePanel({
      <Badge casing="natural">
       {checkedCount}/{entries.length} đã chấm
      </Badge>
-     <ListeningShortcutLegend />
-     <StudioDictationSettingsMenu
-      autoAdvance={autoAdvance}
-      loopCurrent={loopCurrent}
-      rate={rate}
-      scriptMode={scriptMode}
-      selectedVoiceName={selectedVoiceName}
-      voices={voices}
-      onAutoAdvanceChange={onAutoAdvanceChange}
-      onLoopCurrentChange={onLoopCurrentChange}
-      onRateChange={onRateChange}
-      onScriptModeChange={onScriptModeChange}
-      onVoiceChange={onVoiceChange}
-     />
+     {showSettings ? (
+      <>
+       <ListeningShortcutLegend />
+       <StudioDictationSettingsMenu
+        autoAdvance={autoAdvance}
+        loopCurrent={loopCurrent}
+        rate={rate}
+        scriptMode={scriptMode}
+        selectedVoiceName={selectedVoiceName}
+        voices={voices}
+        onAutoAdvanceChange={onAutoAdvanceChange}
+        onLoopCurrentChange={onLoopCurrentChange}
+        onRateChange={onRateChange}
+        onScriptModeChange={onScriptModeChange}
+        onVoiceChange={onVoiceChange}
+       />
+      </>
+     ) : null}
     </div>
    </header>
 
    {entries.length > 1 ? (
     <div
-     className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10"
+     className="grid grid-cols-5 items-start gap-2 sm:grid-cols-8 md:grid-cols-10"
      aria-label="Chọn phần nghe"
     >
      {entries.map((candidate, index) => (

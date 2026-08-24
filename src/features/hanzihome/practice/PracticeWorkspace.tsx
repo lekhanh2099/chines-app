@@ -6,8 +6,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 
-import { TtsStudioWorkspace } from "@/features/hanzihome/tts/TtsStudioWorkspace";
-import { ttsStudioTextFromLesson } from "./translation-practice";
+import { LessonDictationWorkspace } from "./LessonDictationWorkspace";
 import { TranslationPracticeWorkspace } from "./TranslationPracticeWorkspace";
 
 export function PracticeWorkspace({
@@ -21,9 +20,8 @@ export function PracticeWorkspace({
 }) {
  const runtime = useHanziHomeRuntime();
  const [translationOpen, setTranslationOpen] = useState(false);
- const [ttsStudioOpen, setTtsStudioOpen] = useState(false);
- const ttsSourceText = ttsStudioTextFromLesson(runtime.lesson.sourceLesson);
- const workspaceTab = ttsStudioOpen ? "tts" : translationOpen ? "translation" : "exercises";
+ const [dictationOpen, setDictationOpen] = useState(false);
+ const workspaceTab = dictationOpen ? "dictation" : translationOpen ? "translation" : "exercises";
 
  return (
   <div className="grid min-w-0">
@@ -32,17 +30,17 @@ export function PracticeWorkspace({
     items={[
      { key: "exercises", label: "Bài tập" },
      { key: "translation", label: "Translation" },
-     { key: "tts", label: "TTS Studio" },
+     { key: "dictation", label: "Nghe chép" },
     ]}
     onValueChange={(value) => {
      setTranslationOpen(value === "translation");
-     setTtsStudioOpen(value === "tts");
+     setDictationOpen(value === "dictation");
     }}
     aria-label="Phòng luyện tập"
    >
     <TabsContent value={workspaceTab} className="pt-3">
-     {ttsStudioOpen ? (
-      <TtsStudioWorkspace key={ttsSourceText} sourceText={ttsSourceText} />
+     {dictationOpen ? (
+      <LessonDictationWorkspace sourceLesson={runtime.lesson.sourceLesson} />
      ) : translationOpen ? (
       <TranslationPracticeWorkspace />
      ) : (

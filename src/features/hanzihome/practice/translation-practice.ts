@@ -1,5 +1,12 @@
 import { z } from "zod";
 
+import {
+ arrayValue,
+ asRecord,
+ stringValue,
+} from "@/features/hanzihome/components/lesson-overview/utils";
+import { fillQuestionBlank } from "@/features/hanzihome/components/lesson-overview/exercise-section/exercise-utils";
+import { buildExerciseQuestionViewModel } from "@/features/hanzihome/components/lesson-overview/exercise-section/question-view-model";
 import type { HanyuLesson } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { ReadingTextItemSchema } from "@/features/hanzihome/schemas/hanyu-lesson.schema";
 import { calculateChineseAccuracy, calculateTranslationSimilarity } from "./text-comparison";
@@ -18,6 +25,7 @@ export type TranslationDirection = z.output<typeof translationDirectionSchema>;
 export const translationSegmentSchema = z.strictObject({
  id: z.string().min(1),
  order: z.number().int().positive(),
+ sourceLabel: z.string().min(1),
  zh: z.string().min(1),
  pinyin: z.string(),
  vi: z.string().min(1),
@@ -107,6 +115,8 @@ export function orderedTranslationSegments(
 type LessonPracticeSegment = {
  id: string;
  order: number;
+ sourceKey: string;
+ sourceLabel: string;
  zh: string;
  pinyin: string;
  vi: string;
@@ -120,17 +130,21 @@ function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined)
 
  const appendSegment = ({
   id,
+  sourceKey,
+  sourceLabel,
   zh,
   pinyin,
   vi,
  }: {
   id: string;
+  sourceKey: string;
+  sourceLabel: string;
   zh: string;
   pinyin: string;
   vi: string;
  }) => {
   if (!zh.trim()) return;
-  segments.push({ id, order, zh, pinyin, vi });
+  segments.push({ id, order, sourceKey, sourceLabel, zh, pinyin, vi });
   order += 1;
  };
 
@@ -149,6 +163,8 @@ function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined)
      for (const line of lines) {
       appendSegment({
        id: `${section.id}:${block.id}:${line.id}`,
+       sourceKey: section.id,
+       sourceLabel: "Bài khóa",
        zh: line.zh,
        pinyin: line.pinyin,
        vi: line.vi,
@@ -164,6 +180,8 @@ function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined)
     for (const line of lines) {
      appendSegment({
       id: `${section.id}:${block.id}:${line.id}`,
+      sourceKey: section.id,
+      sourceLabel: "Bài khóa",
       zh: line.zh,
       pinyin: line.pinyin,
       vi: line.vi,
@@ -173,34 +191,177 @@ function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined)
    continue;
   }
 
-  if (section.type !== "reading") continue;
-
-  const readingItems = section.items.toSorted(
-   (left, right) => left.order - right.order || left.id.localeCompare(right.id),
-  );
-  for (const item of readingItems) {
-   if (item.type !== "reading_text") continue;
-   const readingText = lessonPracticeReadingTextSchema.parse(item);
-
-   const paragraphs = readingText.paragraphs.toSorted(
+  if (section.type === "reading") {
+   const readingItems = section.items.toSorted(
     (left, right) => left.order - right.order || left.id.localeCompare(right.id),
    );
-   for (const paragraph of paragraphs) {
+   for (const item of readingItems) {
+    if (item.type !== "reading_text") continue;
+    const readingText = lessonPracticeReadingTextSchema.parse(item);
+    const sourceLabel = `Bài đọc thêm · ${readingText.title}`;
+
+    const paragraphs = readingText.paragraphs.toSorted(
+     (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+    );
+    for (const paragraph of paragraphs) {
+     appendSegment({
+      id: `${section.id}:${item.id}:${paragraph.id}`,
+      sourceKey: `${section.id}:${item.id}`,
+      sourceLabel,
+      zh: paragraph.zh,
+      pinyin: paragraph.pinyin,
+      vi: paragraph.vi,
+     });
+    }
+
+    if (paragraphs.length === 0) {
+     appendSegment({
+      id: `${section.id}:${readingText.id}`,
+      sourceKey: `${section.id}:${item.id}`,
+      sourceLabel,
+      zh: readingText.text,
+      pinyin: readingText.pinyin,
+      vi: readingText.vi,
+     });
+    }
+   }
+   continue;
+  }
+
+  if (section.type !== "exercises") continue;
+
+  for (const exercise of section.items.toSorted(
+   (left, right) => left.order - right.order || left.id.localeCompare(right.id),
+  )) {
+   const exerciseRecord = asRecord(exercise);
+   const sourceLabel = `Bài tập ${exercise.order} · ${exercise.title}`;
+   const answerKey = arrayValue(exerciseRecord, "answer_key");
+   const questions = arrayValue(exerciseRecord, "questions");
+
+   for (const [index, question] of questions.entries()) {
+    const model = buildExerciseQuestionViewModel({
+     exerciseType: exercise.type,
+     value: question,
+     index,
+     answerOverride: answerKey[index],
+    });
+    const selectedChoice = model.choices
+     .map(asRecord)
+     .find((choice) => stringValue(choice, "id") === model.answer);
+    const selectedChoiceText = selectedChoice ? stringValue(selectedChoice, "text") : "";
+    const resolvedAnswer =
+     fillQuestionBlank(model.title, model.answer) || selectedChoiceText || model.answer;
+
     appendSegment({
-     id: `${section.id}:${item.id}:${paragraph.id}`,
-     zh: paragraph.zh,
-     pinyin: paragraph.pinyin,
-     vi: paragraph.vi,
+     id: `${section.id}:${exercise.id}:${model.id || index + 1}`,
+     sourceKey: `${section.id}:${exercise.id}`,
+     sourceLabel,
+     zh: resolvedAnswer,
+     pinyin: "",
+     vi: model.meaning,
     });
    }
 
-   if (paragraphs.length === 0) {
+   const model = asRecord(exerciseRecord.model);
+   const modelAnswer = stringValue(model, "answer");
+   if (modelAnswer) {
     appendSegment({
-     id: `${section.id}:${readingText.id}`,
-     zh: readingText.text,
-     pinyin: readingText.pinyin,
-     vi: readingText.vi,
+     id: `${section.id}:${exercise.id}:model`,
+     sourceKey: `${section.id}:${exercise.id}`,
+     sourceLabel,
+     zh: modelAnswer,
+     pinyin: "",
+     vi: "",
     });
+   }
+
+   for (const [index, item] of arrayValue(exerciseRecord, "items").entries()) {
+    const itemRecord = asRecord(item);
+    for (const [lineIndex, line] of arrayValue(itemRecord, "expected_dialogue").entries()) {
+     if (typeof line !== "string") continue;
+     appendSegment({
+      id: `${section.id}:${exercise.id}:item-${index + 1}:line-${lineIndex + 1}`,
+      sourceKey: `${section.id}:${exercise.id}`,
+      sourceLabel,
+      zh: line,
+      pinyin: "",
+      vi: "",
+     });
+    }
+   }
+
+   for (const [index, part] of arrayValue(exerciseRecord, "parts").entries()) {
+    const partRecord = asRecord(part);
+    for (const [lineIndex, item] of arrayValue(partRecord, "items").entries()) {
+     const itemRecord = asRecord(item);
+     const text =
+      stringValue(itemRecord, "text") ||
+      [stringValue(itemRecord, "left"), stringValue(itemRecord, "right")]
+       .filter(Boolean)
+       .join("，");
+     if (!text) continue;
+     appendSegment({
+      id: `${section.id}:${exercise.id}:part-${index + 1}:item-${lineIndex + 1}`,
+      sourceKey: `${section.id}:${exercise.id}`,
+      sourceLabel,
+      zh: text,
+      pinyin: stringValue(itemRecord, "pinyin"),
+      vi: "",
+     });
+    }
+   }
+
+   for (const [index, dialogue] of arrayValue(exerciseRecord, "dialogues").entries()) {
+    const dialogueRecord = asRecord(dialogue);
+    const answersByBlankId = new Map(
+     arrayValue(dialogueRecord, "sample_answers").map((answer) => {
+      const answerRecord = asRecord(answer);
+      return [stringValue(answerRecord, "blank_id"), stringValue(answerRecord, "answer")];
+     }),
+    );
+    for (const [lineIndex, line] of arrayValue(dialogueRecord, "lines").entries()) {
+     const lineRecord = asRecord(line);
+     const answer = answersByBlankId.get(stringValue(lineRecord, "blank_id")) ?? "";
+     const text = fillQuestionBlank(stringValue(lineRecord, "text"), answer) || answer;
+     if (!text) continue;
+     appendSegment({
+      id: `${section.id}:${exercise.id}:dialogue-${index + 1}:line-${lineIndex + 1}`,
+      sourceKey: `${section.id}:${exercise.id}`,
+      sourceLabel,
+      zh: text,
+      pinyin: "",
+      vi: "",
+     });
+    }
+   }
+
+   for (const [index, line] of arrayValue(exerciseRecord, "dialogue").entries()) {
+    const lineRecord = asRecord(line);
+    const text = stringValue(lineRecord, "text");
+    if (!text) continue;
+    appendSegment({
+     id: `${section.id}:${exercise.id}:communication-${index + 1}`,
+     sourceKey: `${section.id}:${exercise.id}`,
+     sourceLabel,
+     zh: text,
+     pinyin: "",
+     vi: "",
+    });
+   }
+
+   for (const [index, task] of arrayValue(exerciseRecord, "practice_tasks").entries()) {
+    const taskRecord = asRecord(task);
+    for (const [answerIndex, answer] of arrayValue(taskRecord, "sample_answer").entries()) {
+     if (typeof answer !== "string") continue;
+     appendSegment({
+      id: `${section.id}:${exercise.id}:task-${index + 1}:answer-${answerIndex + 1}`,
+      sourceKey: `${section.id}:${exercise.id}`,
+      sourceLabel,
+      zh: answer,
+      pinyin: "",
+      vi: "",
+     });
+    }
    }
   }
  }
@@ -211,12 +372,35 @@ function lessonPracticeSegmentsFromLesson(sourceLesson: HanyuLesson | undefined)
 export function translationSegmentsFromLesson(sourceLesson: HanyuLesson | undefined) {
  return lessonPracticeSegmentsFromLesson(sourceLesson)
   .filter((segment) => segment.vi.trim())
-  .map((segment) => translationSegmentSchema.parse(segment));
+  .map(({ id, order, sourceLabel, zh, pinyin, vi }) =>
+   translationSegmentSchema.parse({ id, order, sourceLabel, zh, pinyin, vi }),
+  );
 }
 
-export function ttsStudioTextFromLesson(sourceLesson: HanyuLesson | undefined): string {
- return lessonPracticeSegmentsFromLesson(sourceLesson)
-  .map((segment) => segment.zh.trim())
-  .filter(Boolean)
-  .join("\n");
+export function dictationSourcesFromLesson(sourceLesson: HanyuLesson | undefined) {
+ const sources = new Map<
+  string,
+  {
+   id: string;
+   label: string;
+   entries: Array<{ id: string; zh: string; pinyin: string; vi: string }>;
+  }
+ >();
+
+ for (const segment of lessonPracticeSegmentsFromLesson(sourceLesson)) {
+  const source = sources.get(segment.sourceKey) ?? {
+   id: segment.sourceKey,
+   label: segment.sourceLabel,
+   entries: [],
+  };
+  source.entries.push({
+   id: segment.id,
+   zh: segment.zh,
+   pinyin: segment.pinyin,
+   vi: segment.vi,
+  });
+  sources.set(source.id, source);
+ }
+
+ return [...sources.values()];
 }

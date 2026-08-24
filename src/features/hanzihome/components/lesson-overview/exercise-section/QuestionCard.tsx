@@ -3,24 +3,8 @@ import { ExerciseQuestionCard, hasRenderableValue } from "../CommonCards";
 import type { LessonDisplayMode } from "../types";
 import { QuestionChoiceList } from "./QuestionChoiceList";
 import { QuestionDataBlock } from "./QuestionDataBlock";
+import { fillQuestionBlank } from "./exercise-utils";
 import { buildExerciseQuestionViewModel } from "./question-view-model";
-
-const BLANK_RUN_PATTERN = /[_＿]{2,}|-{3,}|—{2,}|…{2,}|\.\.\.+/;
-const PUNCTUATION_PATTERN = /[。！？!?.,，；;]/;
-const TRAILING_PUNCTUATION_PATTERN = /[。！？!?.,，；;]+$/;
-
-function fillQuestionBlank(title: string, answer: string) {
- if (!title || !answer || !BLANK_RUN_PATTERN.test(title)) return "";
-
- return title.replace(BLANK_RUN_PATTERN, (blank, offset: number, source: string) => {
-  const nextCharacter = source[offset + blank.length] ?? "";
-  const inlineAnswer = PUNCTUATION_PATTERN.test(nextCharacter)
-   ? answer.replace(TRAILING_PUNCTUATION_PATTERN, "")
-   : answer;
-
-  return inlineAnswer;
- });
-}
 
 export function QuestionCard({
  itemId,

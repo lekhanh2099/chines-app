@@ -68,7 +68,7 @@ export function StudioDictationReferencePanel({
      </Typography>
     </div>
     <Typography variant="bodySmall" tone="muted" leading="relaxed">
-     Mở chữ Hán, pinyin hoặc nghĩa tiếng Việt của toàn bài đang học.
+     Mở chữ Hán, pinyin hoặc nghĩa tiếng Việt của nội dung đã chọn.
     </Typography>
    </div>
 

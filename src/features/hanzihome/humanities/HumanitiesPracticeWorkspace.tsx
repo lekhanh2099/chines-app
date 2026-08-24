@@ -130,6 +130,7 @@ export function HumanitiesPracticeWorkspace({
    resource?.paragraphs.map((paragraph) => ({
     id: paragraph.id,
     order: paragraph.paragraph_order,
+    sourceLabel: "Bài đọc Humanities",
     zh: paragraph.zh,
     pinyin: paragraph.pinyin,
     vi: paragraph.vi,

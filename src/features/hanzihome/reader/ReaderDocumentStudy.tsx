@@ -174,6 +174,7 @@ function ReaderDocumentStudyContent({
     .map((paragraph, index) => ({
      id: paragraph.id,
      order: index + 1,
+     sourceLabel: "Bài đọc",
      zh: paragraph.zh,
      pinyin: paragraph.pinyin,
      vi: paragraph.vi,

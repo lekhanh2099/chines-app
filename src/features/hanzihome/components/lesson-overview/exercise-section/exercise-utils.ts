@@ -57,6 +57,23 @@ export function formatAnswer(value: JsonFieldValue): string {
  return answerToString(value);
 }
 
+const BLANK_RUN_PATTERN = /[_＿]{2,}|-{3,}|—{2,}|…{2,}|\.\.\.+/;
+const PUNCTUATION_PATTERN = /[。！？!?.,，；;]/;
+const TRAILING_PUNCTUATION_PATTERN = /[。！？!?.,，；;]+$/;
+
+export function fillQuestionBlank(title: string, answer: string): string {
+ if (!title || !answer || !BLANK_RUN_PATTERN.test(title)) return "";
+
+ return title.replace(BLANK_RUN_PATTERN, (blank, offset: number, source: string) => {
+  const nextCharacter = source[offset + blank.length] ?? "";
+  const inlineAnswer = PUNCTUATION_PATTERN.test(nextCharacter)
+   ? answer.replace(TRAILING_PUNCTUATION_PATTERN, "")
+   : answer;
+
+  return inlineAnswer;
+ });
+}
+
 export function firstArraySource(
  record: JsonObject,
  keys: string[],
