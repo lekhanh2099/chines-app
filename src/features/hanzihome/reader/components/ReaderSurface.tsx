@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import { useVocabInspector } from "@/features/dictionary/hooks/useVocabInspector";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
 import { parseReaderSourceTarget, type ReaderSourceTarget } from "../reader-source-target";
@@ -131,6 +132,7 @@ function ReaderSurfaceViewContent({
  compact = false,
 }: ReaderSurfaceProps) {
  const t = useTranslations("Reader.study.chrome.surface");
+ const isCoarsePointer = useCoarsePointer();
  const searchParams = useSearchParams();
  const searchParamsString = searchParams.toString();
  const routeFocus = useMemo(
@@ -342,11 +344,9 @@ function ReaderSurfaceViewContent({
     onOpenShadowing={onOpenShadowing}
     stickyOffset={toolbarStickyOffset}
     compact={compact}
-    outlineMenu={
-     compact
-      ? (onNavigate) => <ReaderOutlineContent document={document} onNavigate={onNavigate} />
-      : undefined
-    }
+    outlineMenu={(onNavigate) => (
+     <ReaderOutlineContent document={document} onNavigate={onNavigate} />
+    )}
    />
    {error ? (
     <Typography as="p" variant="caption" tone="danger" role="alert">
@@ -382,12 +382,14 @@ function ReaderSurfaceViewContent({
     ) : null}
    </div>
 
-   <Sheet open={outlineOpen} onOpenChange={setOutlineOpen} side="right" className="sm:max-w-md">
-    <SheetHeader title={t("outlineTitle")} onClose={() => setOutlineOpen(false)} />
-    <SheetBody>
-     <ReaderOutlineContent document={document} onNavigate={() => setOutlineOpen(false)} />
-    </SheetBody>
-   </Sheet>
+   {isCoarsePointer ? (
+    <Sheet open={outlineOpen} onOpenChange={setOutlineOpen} side="right" className="sm:max-w-md">
+     <SheetHeader title={t("outlineTitle")} onClose={() => setOutlineOpen(false)} />
+     <SheetBody>
+      <ReaderOutlineContent document={document} onNavigate={() => setOutlineOpen(false)} />
+     </SheetBody>
+    </Sheet>
+   ) : null}
 
    {!onPronunciationInspect && pronunciationPreview ? (
     <ReaderPronunciationReviewPopover

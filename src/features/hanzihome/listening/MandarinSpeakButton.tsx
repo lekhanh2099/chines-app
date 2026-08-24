@@ -3,6 +3,7 @@
 import { Square, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import { cn } from "@/lib/utils";
 
 import { useSharedMandarinTts } from "./MandarinTtsProvider";
@@ -31,6 +32,7 @@ export function MandarinSpeakButton({
  onFinish?: () => void;
 }) {
  const tts = useSharedMandarinTts();
+ const isCoarsePointer = useCoarsePointer();
  const normalizedText = text.trim();
  const normalizedSegments = (segments ?? [normalizedText])
   .map((segment) => segment.trim())
@@ -45,7 +47,7 @@ export function MandarinSpeakButton({
   <Button
    type="button"
    variant={active ? "active" : actionLabel ? "outline" : "ghost"}
-   size={actionLabel ? "toolbar" : touchTarget ? "icon" : "icon-xs"}
+   size={actionLabel ? "toolbar" : touchTarget || isCoarsePointer ? "icon" : "icon-xs"}
    className={cn("shrink-0", className)}
    disabled={disabled || (!active && unavailable)}
    title={

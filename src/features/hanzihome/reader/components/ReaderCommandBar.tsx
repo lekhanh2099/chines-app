@@ -62,6 +62,8 @@ export function ReaderCommandBar({
  const isFirst = activeIndex <= 0;
  const isLast = activeIndex >= segmentCount - 1;
  const isIdle = playbackStatus === "idle";
+ const commandSize = isCoarsePointer ? "touch" : "toolbar";
+ const iconCommandSize = isCoarsePointer ? "icon" : "icon-toolbar";
 
  const togglePlayback = () => {
   if (playbackStatus === "playing") commands.pause();
@@ -79,7 +81,7 @@ export function ReaderCommandBar({
        : t("listen");
  const PlaybackIcon =
   playbackStatus === "playing" ? Pause : playbackStatus === "loading" ? Square : Play;
- const useOutlineDropdown = compact && !isCoarsePointer && outlineMenu !== undefined;
+ const useOutlineDropdown = !isCoarsePointer && outlineMenu !== undefined;
 
  return (
   <Card variant="section" padding="sm" className={stickyClassName[stickyOffset]}>
@@ -90,7 +92,7 @@ export function ReaderCommandBar({
     <Button
      type="button"
      variant="ghost"
-     size="icon-toolbar"
+     size={iconCommandSize}
      disabled={isFirst}
      aria-label={t("previous")}
      onClick={commands.previous}
@@ -100,7 +102,7 @@ export function ReaderCommandBar({
     <Button
      type="button"
      variant={isIdle ? "default" : "active"}
-     size="toolbar"
+     size={commandSize}
      aria-label={playbackLabel}
      onClick={togglePlayback}
     >
@@ -110,7 +112,7 @@ export function ReaderCommandBar({
     <Button
      type="button"
      variant="ghost"
-     size="icon-toolbar"
+     size={iconCommandSize}
      aria-label={t("restart")}
      title={t("restart")}
      onClick={commands.restartCurrent}
@@ -120,7 +122,7 @@ export function ReaderCommandBar({
     <Button
      type="button"
      variant="ghost"
-     size="icon-toolbar"
+     size={iconCommandSize}
      disabled={isIdle}
      aria-label={t("stopReading")}
      title={t("stopReading")}
@@ -131,7 +133,7 @@ export function ReaderCommandBar({
     <Button
      type="button"
      variant="ghost"
-     size="icon-toolbar"
+     size={iconCommandSize}
      disabled={isLast}
      aria-label={t("next")}
      onClick={commands.next}
@@ -157,9 +159,10 @@ export function ReaderCommandBar({
         <Button
          type="button"
          variant="outline"
-         size="icon-toolbar"
+         size={iconCommandSize}
          aria-label={t("openOutline")}
          title={t("outline")}
+         className={compact ? undefined : "2xl:hidden"}
         />
        }
       >
@@ -184,7 +187,7 @@ export function ReaderCommandBar({
       <Button
        type="button"
        variant="outline"
-       size="icon-toolbar"
+       size={iconCommandSize}
        aria-label={t("openOutline")}
        title={t("outline")}
        onClick={onOpenOutline}
