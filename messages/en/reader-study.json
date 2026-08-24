@@ -45,7 +45,9 @@
    "autoAdvance": "Auto-advance",
    "display": "Display",
    "focus": "Focus",
-   "shadowing": "Shadowing"
+   "shadowing": "Shadowing",
+   "autoPinyin": "Auto-detect pinyin",
+   "autoPinyinDescription": "Turn off to use the lesson's source pinyin; turn on for contextual analysis by the app."
   },
   "outline": {
    "segments": "Segment outline",

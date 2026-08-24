@@ -30,6 +30,7 @@ describe("mergeLearningStateAfterConflict", () => {
     lessonTextDisplayMode: {
      ...defaultLessonTextDisplaySettings,
      showPinyin: false,
+     autoDetectPinyin: true,
     },
    },
   });
@@ -47,6 +48,7 @@ describe("mergeLearningStateAfterConflict", () => {
   expect(merged.settings.lessonTextDisplayMode).toEqual({
    ...defaultLessonTextDisplaySettings,
    showPinyin: false,
+   autoDetectPinyin: true,
    hanziSize: "xl",
   });
  });

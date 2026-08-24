@@ -4,7 +4,7 @@ description: Implement, debug, refactor, review, or clean up React and Next.js c
 compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "2.2"
+  version: "2.3"
 ---
 
 # Frontend Feature Workflow
@@ -190,10 +190,15 @@ the root cause. It is not necessarily the fewest changed lines.
   layer.
 - Application navigation uses locale-free logical hrefs through
   `@/i18n/navigation`; do not hand-build locale prefixes in feature code.
-- User-facing interface copy uses semantic message keys owned by `Common`,
-  `Shell` or the relevant feature namespace. Reuse an existing key only when
-  the product meaning and interaction role are identical; do not key messages
-  by source-language sentences.
+- Every new or changed user-facing interface string uses a semantic message key
+  owned by `Common`, `Shell` or the relevant feature namespace. This includes
+  visible labels, descriptions, placeholders, empty/error/status text,
+  tooltips, titles and accessible names such as `aria-label`. Do not leave raw
+  interface copy in JSX or component props.
+- Search the owning namespace before adding a key. Reuse a key only when the
+  product meaning and interaction role are identical; do not key messages by
+  source-language sentences. Add or change the key in `vi`, `en` and `zh-CN`
+  atomically.
 - Course/lesson content remains owned by HanziHome data/view models and MUST NOT
   be copied into UI locale catalogs merely for translation plumbing.
 - When a feature surface becomes complex because transport/domain/UI logic are
@@ -221,6 +226,17 @@ npm run typecheck
 npm run lint
 npm run test:run
 ```
+
+When interface messages change, the targeted verification MUST include:
+
+```bash
+npm run test:run -- src/i18n/messages.test.ts
+```
+
+Before handoff, inspect the changed lines for new raw interface strings. Font
+samples, technical identifiers, test fixtures and course/lesson content data
+are not interface copy; a user-facing label is not exempt merely because it is
+short or appears only in `aria-label`.
 
 Run `npm run check` once for the full path, app-code completion or release
 preparation.

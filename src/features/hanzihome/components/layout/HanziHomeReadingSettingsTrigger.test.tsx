@@ -1,7 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 
+import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
 const { mockLearningState } = vi.hoisted(() => ({
@@ -59,7 +61,15 @@ import { HanziHomeReadingSettingsTrigger } from "./HanziHomeReadingSettingsTrigg
 
 describe("HanziHomeReadingSettingsTrigger", () => {
  it("uses one sheet control surface through tablet layouts and keeps the wide desktop menu separate", () => {
-  const markup = renderToStaticMarkup(<HanziHomeReadingSettingsTrigger />);
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider
+    locale="vi"
+    messages={{ Reader: { study: readerStudyMessages } }}
+    timeZone="Asia/Ho_Chi_Minh"
+   >
+    <HanziHomeReadingSettingsTrigger />
+   </NextIntlClientProvider>,
+  );
 
   expect(markup).toContain("xl:hidden");
   expect(markup).toContain('aria-haspopup="dialog"');
@@ -68,6 +78,9 @@ describe("HanziHomeReadingSettingsTrigger", () => {
   expect(markup).toContain("Cỡ chữ");
   expect(markup).toContain("Cách mở nội dung");
   expect(markup).toContain("Hiển thị");
+  expect(markup).toContain("Tự nhận diện pinyin");
+  expect(markup).toContain("Tắt để dùng pinyin có sẵn trong bài");
+  expect(markup).not.toContain("Reader.study.chrome.tools.autoPinyin");
   expect(markup).toContain("Mở cài đặt đọc đầy đủ");
   expect(markup).toContain("hidden xl:block");
   expect(markup).toContain("Desktop reader menu");

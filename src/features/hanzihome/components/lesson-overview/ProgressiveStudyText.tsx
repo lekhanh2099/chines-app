@@ -80,7 +80,7 @@ export function ProgressiveStudyText({
   () => formatContextualSpokenPinyin(contextualPronunciation),
   [contextualPronunciation],
  );
- const displayPinyin = pinyin ?? contextualPinyin;
+ const displayPinyin = displayMode.autoDetectPinyin ? contextualPinyin : pinyin;
  const tapMode = displayMode.revealMode === "tap" && !readingMode;
  const characters = Array.from(zh);
  const revealOptions = { hasPinyin: !!displayPinyin, hasMeaning: !!vi };

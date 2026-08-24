@@ -7,6 +7,7 @@ function learningStateWithFont(hanziFont: string) {
   settings: {
    lessonTextDisplayMode: {
     showPinyin: true,
+    autoDetectPinyin: false,
     showMeaning: false,
     showAnswers: false,
     hanziFont,
@@ -31,6 +32,26 @@ describe("learning-state reader font compatibility", () => {
   });
 
   expect(parsed.settings.lastModule).toBe("practice");
+ });
+
+ it("defaults legacy pinyin settings to the curated source", () => {
+  const parsed = userLearningStateSchema.parse({
+   settings: {
+    lessonTextDisplayMode: {
+     showPinyin: true,
+     showMeaning: false,
+     showAnswers: false,
+     hanziFont: "system",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+   },
+   progress: {},
+   bookmarks: {},
+   reviewHistory: [],
+  });
+
+  expect(parsed.settings.lessonTextDisplayMode?.autoDetectPinyin).toBe(false);
  });
 
  it.each(["kai", "mengshen"])("migrates legacy %s to system", (hanziFont) => {

@@ -52,6 +52,7 @@ export const userLearningStateSchema = z.object({
    lessonTextDisplayMode: z
     .object({
      showPinyin: z.boolean(),
+     autoDetectPinyin: z.boolean().optional().default(false),
      showMeaning: z.boolean(),
      showAnswers: z.boolean(),
      hanziFont: hanziReaderFontSchema,

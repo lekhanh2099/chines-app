@@ -5,6 +5,8 @@ import { useCallback, useMemo } from "react";
 
 import { analyzeContextualPronunciation } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { savePracticeAttempt } from "@/features/hanzihome/practice/practice-attempt-api";
+import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { hanzihomeQueryKeys } from "../../query-keys";
 import { readerResourceToDocument } from "../adapters/reader-resource.adapter";
 import { fetchReaderAnnotations } from "../reader-annotation-api";
@@ -25,6 +27,8 @@ export function useReaderStudyState(
  stateOwner: ReaderProgressOwner,
 ) {
  const progress = useReaderProgressState(resource, stateOwner);
+ const learning = useLearningState();
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
  const {
   featureState,
   setFeatureState,
@@ -86,10 +90,13 @@ export function useReaderStudyState(
 
   for (const paragraph of resource.paragraphs) {
    const paragraphOverrides = overridesByParagraph.get(paragraph.id) ?? [];
+   if (!displayMode.autoDetectPinyin && !paragraph.pinyin && paragraphOverrides.length === 0) {
+    continue;
+   }
    const analysis = analyzeContextualPronunciation(
     {
      text: paragraph.zh,
-     sourcePinyin: paragraph.pinyin || null,
+     sourcePinyin: displayMode.autoDetectPinyin ? null : paragraph.pinyin || null,
      overrides: paragraphOverrides.map((override) => ({
       id: override.id,
       text: override.text,
@@ -107,7 +114,12 @@ export function useReaderStudyState(
   }
 
   return next;
- }, [overridesByParagraph, pronunciationDictionary, resource.paragraphs]);
+ }, [
+  displayMode.autoDetectPinyin,
+  overridesByParagraph,
+  pronunciationDictionary,
+  resource.paragraphs,
+ ]);
  const documentModel = useMemo(() => readerResourceToDocument(resource), [resource]);
  const markCompleted = useCallback(() => {
   if (featureState.completed) return;

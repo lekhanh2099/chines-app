@@ -27,6 +27,11 @@ function mergeLessonTextDisplayMode(
 
  return {
   showPinyin: mergeScalarField(baseValue.showPinyin, localValue.showPinyin, remoteValue.showPinyin),
+  autoDetectPinyin: mergeScalarField(
+   baseValue.autoDetectPinyin,
+   localValue.autoDetectPinyin,
+   remoteValue.autoDetectPinyin,
+  ),
   showMeaning: mergeScalarField(
    baseValue.showMeaning,
    localValue.showMeaning,

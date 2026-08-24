@@ -65,6 +65,7 @@ describe("progressive study text", () => {
     vi: "Lúc rời khỏi nhà",
     displayMode: {
      showPinyin: true,
+     autoDetectPinyin: false,
      showMeaning: true,
      showAnswers: false,
      hanziFont: "songti",
@@ -87,6 +88,7 @@ describe("progressive study text", () => {
     zh: "一个人。",
     displayMode: {
      showPinyin: true,
+     autoDetectPinyin: true,
      showMeaning: false,
      showAnswers: false,
      hanziFont: "songti",
@@ -99,6 +101,25 @@ describe("progressive study text", () => {
   expect(markup).toContain("yí gè rén。");
  });
 
+ it("does not invent pinyin when source mode has no stored pinyin", () => {
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "一个人。",
+    displayMode: {
+     showPinyin: true,
+     autoDetectPinyin: false,
+     showMeaning: false,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+   }),
+  );
+
+  expect(markup).not.toContain("yí gè rén。");
+ });
+
  it("renders each Hanzi character as a reading action when playback is available", () => {
   const markup = renderToStaticMarkup(
    createElement(ProgressiveStudyText, {
@@ -107,6 +128,7 @@ describe("progressive study text", () => {
     vi: "Lúc rời khỏi nhà",
     displayMode: {
      showPinyin: true,
+     autoDetectPinyin: false,
      showMeaning: true,
      showAnswers: false,
      hanziFont: "songti",
@@ -136,6 +158,7 @@ describe("progressive study text", () => {
     zh: "离家的时候",
     displayMode: {
      showPinyin: true,
+     autoDetectPinyin: false,
      showMeaning: true,
      showAnswers: false,
      hanziFont: "songti",

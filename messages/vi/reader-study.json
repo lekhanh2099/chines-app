@@ -45,7 +45,9 @@
    "autoAdvance": "Tự chuyển",
    "display": "Hiển thị",
    "focus": "Tập trung",
-   "shadowing": "Shadowing"
+   "shadowing": "Shadowing",
+   "autoPinyin": "Tự nhận diện pinyin",
+   "autoPinyinDescription": "Tắt để dùng pinyin có sẵn trong bài; bật để ứng dụng phân tích theo ngữ cảnh."
   },
   "outline": {
    "segments": "Mục lục đoạn",

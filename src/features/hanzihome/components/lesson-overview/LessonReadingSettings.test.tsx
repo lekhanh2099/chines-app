@@ -1,7 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
+import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 
+import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { DropdownMenu, DropdownMenuContent } from "@/components/ui/dropdown-menu";
 
@@ -60,9 +62,21 @@ import { LessonReadingSettings } from "./LessonReadingSettings";
 import { getHanziFontFamily, getHanziTypographyStyle } from "./hanzi-typography";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
 
+function renderReadingSettings(element: ReactNode) {
+ return renderToStaticMarkup(
+  <NextIntlClientProvider
+   locale="vi"
+   messages={{ Reader: { study: readerStudyMessages } }}
+   timeZone="Asia/Ho_Chi_Minh"
+  >
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
+
 describe("LessonReadingSettings", () => {
  it("offers the supported reader fonts and selects Khải thư by default", () => {
-  const html = renderToStaticMarkup(
+  const html = renderReadingSettings(
    <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
   );
 
@@ -104,7 +118,7 @@ describe("LessonReadingSettings", () => {
  });
 
  it("renders the complete reader controls with a live preview", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReadingSettings(
    <LessonReadingSettings displayMode={DEFAULT_LESSON_DISPLAY_MODE} onChange={vi.fn()} />,
   );
 
@@ -117,7 +131,7 @@ describe("LessonReadingSettings", () => {
  });
 
  it("renders desktop quick reader categories as nested submenus", () => {
-  const markup = renderToStaticMarkup(
+  const markup = renderReadingSettings(
    <DropdownMenu open>
     <DropdownMenuContent>
      <HanziHomeReadingQuickSettingsMenu />
@@ -130,5 +144,23 @@ describe("LessonReadingSettings", () => {
   expect(markup).toContain("Cách mở nội dung");
   expect(markup).toContain("Hiển thị lớp học");
   expect(markup).toContain("ZCOOL XiaoWei");
+ });
+
+ it("keeps pinyin visibility and automatic detection independent", () => {
+  const markup = renderReadingSettings(
+   <LessonReadingSettings
+    displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, showPinyin: false }}
+    onChange={vi.fn()}
+   />,
+  );
+  const automaticPinyinControl = markup.match(
+   /<button[^>]*aria-label="Tự nhận diện pinyin"[^>]*>/,
+  )?.[0];
+
+  expect(automaticPinyinControl).toBeDefined();
+  expect(automaticPinyinControl).not.toContain(' disabled=""');
+  expect(markup).toContain("Tự nhận diện pinyin");
+  expect(markup).toContain("Tắt để dùng pinyin có sẵn trong bài");
+  expect(markup).not.toContain("Reader.study.chrome.tools.autoPinyin");
  });
 });

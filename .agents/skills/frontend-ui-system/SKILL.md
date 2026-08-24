@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.14"
+  version: "3.15"
 ---
 
 # Frontend UI System
@@ -126,6 +126,14 @@ Shared primitives own:
 - internal icon sizing.
 
 Feature code owns labels, data, callbacks, business conditions, parent layout, responsive placement and external spacing.
+
+Labels are localized interface contracts, not feature-local styling details.
+Every new or changed visible label, description, placeholder, status/error
+message, tooltip, title and accessible name MUST use the semantic `next-intl`
+key from the owning namespace and MUST update `vi`, `en` and `zh-CN` together.
+Do not treat short controls or `aria-label` values as exceptions. HanziHome
+course/lesson text remains content data and does not move into UI catalogs.
+Follow `docs/architecture/i18n.md` for namespace and navigation ownership.
 
 Call-site `className` is layout-only. Do not repair primitive visuals from feature code.
 
@@ -371,6 +379,11 @@ A visual claim requires rendering. Use the smallest tier that can falsify it:
 - Fast: affected state/viewport.
 - Subsystem: affected desktop/iPad/mobile plus relevant keyboard/state variants.
 - Full: shared primitive or multi-surface changes plus repository gate.
+
+For changed interface copy, inspect the diff for raw JSX/prop strings and run
+`npm run test:run -- src/i18n/messages.test.ts`. Font samples, technical
+identifiers, test fixtures and course/lesson content data are not interface
+copy.
 
 For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas, base/subtle/raised surface separation, hover/selected coherence, neutral semantic-state independence, selected/focus/primary text emphasis and contrast separately.
 

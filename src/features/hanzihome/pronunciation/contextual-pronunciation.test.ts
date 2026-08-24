@@ -144,7 +144,10 @@ describe("HanziHome contextual pronunciation", () => {
 
   const classifier = analyzeContextualPronunciation({ text: "一个", sourcePinyin: "yī gè" });
   expect(classifier.glyphs[0]?.lexicalReadingKey).toBe("yi1");
-  expect(classifier.glyphs[0]?.spokenReadingKey).toBe("yi2");
+  expect(classifier.glyphs[0]?.spokenReadingKey).toBe("yi1");
+
+  const autoDetected = analyzeContextualPronunciation({ text: "一个" });
+  expect(autoDetected.glyphs[0]?.spokenReadingKey).toBe("yi2");
  });
 
  it("formats contextual spoken pinyin without losing punctuation", () => {

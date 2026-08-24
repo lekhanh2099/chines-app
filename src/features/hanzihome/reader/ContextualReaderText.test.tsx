@@ -25,7 +25,7 @@ describe("ContextualReaderText", () => {
    />,
   );
   expect(markup).toContain("一");
-  expect(markup).toContain("yí");
+  expect(markup).toContain("yī");
   expect(markup).toContain("gè");
  });
 
@@ -85,6 +85,36 @@ describe("ContextualReaderText", () => {
   );
   expect(markup).toContain("Zhèjiāng");
   expect(markup).not.toContain("zhè jiāng");
+ });
+
+ it("keeps rejected source pinyin visible instead of silently replacing it", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "中国", sourcePinyin: "hǎo" })}
+    displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+    sourcePinyin="hǎo"
+   />,
+  );
+
+  expect(markup).toContain("hǎo");
+  expect(markup).not.toContain("zhōng");
+  expect(markup).not.toContain("<ruby");
+ });
+
+ it("uses contextual ruby pinyin only when auto detection is enabled", () => {
+  const markup = renderReaderText(
+   <ContextualReaderText
+    analysis={analyzeContextualPronunciation({ text: "中国" })}
+    displayMode={{ ...DEFAULT_LESSON_DISPLAY_MODE, autoDetectPinyin: true }}
+    sourcePinyin="hǎo"
+    onGlyphInspect={() => undefined}
+   />,
+  );
+
+  expect(markup).toContain("zhōng");
+  expect(markup).toContain("guó");
+  expect(markup).not.toContain(">hǎo<");
+  expect(markup).toContain("<ruby");
  });
 
  it("renders a manual pinyin override instead of the original aligned source line", () => {

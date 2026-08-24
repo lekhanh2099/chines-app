@@ -448,15 +448,12 @@ export function analyzeContextualPronunciation(
   const sourceKey =
    sourceAligned && sourceAlignment !== null ? (sourceAlignment[hanziIndex] ?? null) : null;
   const dictionaryKey = dictionaryReadings.get(item.index) ?? null;
-  const sourceLexicalKey =
-   sourceKey === null
-    ? null
-    : item.segment === "一" || item.segment === "不"
-      ? lexicalKey
-      : sourceKey;
+  const sourceLexicalKey = sourceKey;
   const selectedLexicalKey = overrideKey ?? sourceLexicalKey ?? dictionaryKey ?? lexicalKey;
   const selectedSpokenKey =
-   overrideKey ?? (selectedLexicalKey === lexicalKey ? spokenKey : selectedLexicalKey);
+   overrideKey ??
+   sourceLexicalKey ??
+   (selectedLexicalKey === lexicalKey ? spokenKey : selectedLexicalKey);
   const selectedAlternatives = [
    ...new Set([selectedLexicalKey, ...keys].filter((key): key is string => key !== null)),
   ];

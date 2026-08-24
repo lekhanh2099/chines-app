@@ -321,13 +321,19 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
   [providedAnalysis],
  );
  const computedAnalysis = useMemo(() => {
-  if (providedAnalysis && localPronunciationOverrides.length === 0) return providedAnalysis;
   if (segment.zh.length > 2_000) return null;
   const sourcePinyin = segment.pinyin && segment.pinyin.length <= 8_000 ? segment.pinyin : null;
+  if (providedAnalysis && localPronunciationOverrides.length === 0) return providedAnalysis;
+  if (
+   !displayMode.autoDetectPinyin &&
+   sourcePinyin === null &&
+   localPronunciationOverrides.length === 0
+  )
+   return null;
   return analyzeContextualPronunciation(
    {
     text: segment.zh,
-    sourcePinyin,
+    sourcePinyin: displayMode.autoDetectPinyin ? null : sourcePinyin,
     overrides: localPronunciationOverrides,
    },
    pronunciationDictionary,
@@ -336,6 +342,7 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
   localPronunciationOverrides,
   pronunciationDictionary,
   providedAnalysis,
+  displayMode.autoDetectPinyin,
   segment.pinyin,
   segment.zh,
  ]);
@@ -351,10 +358,15 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
       playbackProgress,
      )
    : -1;
- const contextualPinyin = useMemo(
-  () => (computedAnalysis ? formatContextualSpokenPinyin(computedAnalysis) : segment.pinyin),
-  [computedAnalysis, segment.pinyin],
- );
+ const contextualPinyin = useMemo(() => {
+  if (!computedAnalysis) return segment.pinyin;
+  const hasManualOverride = computedAnalysis.glyphs.some((glyph) =>
+   glyph.evidence.includes("manual-override"),
+  );
+  return displayMode.autoDetectPinyin || hasManualOverride
+   ? formatContextualSpokenPinyin(computedAnalysis)
+   : segment.pinyin;
+ }, [computedAnalysis, displayMode.autoDetectPinyin, segment.pinyin]);
 
  return (
   <article className="grid min-w-0 gap-2">

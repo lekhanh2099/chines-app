@@ -54,6 +54,13 @@ export function ContextualReaderText({
  const hasManualOverride = analysis.glyphs.some((glyph) =>
   glyph.evidence.includes("manual-override"),
  );
+ const sourcePinyinAvailable = Boolean(sourcePinyin?.trim());
+ const resolvedPinyinPresentation =
+  !displayMode.autoDetectPinyin &&
+  sourcePinyinAvailable &&
+  analysis.sourcePinyinStatus !== "aligned"
+   ? "paragraph"
+   : pinyinPresentation;
 
  const renderGrapheme = (grapheme: Intl.SegmentData, index: number) => {
   const glyph = glyphByStart.get(grapheme.index);
@@ -105,7 +112,7 @@ export function ContextualReaderText({
     : t("inspectPinyin", { character: grapheme.segment })
    : undefined;
 
-  if (pinyinPresentation === "paragraph") {
+  if (resolvedPinyinPresentation === "paragraph") {
    return (
     <span
      key={`${grapheme.index}:${grapheme.segment}`}
@@ -194,9 +201,9 @@ export function ContextualReaderText({
    >
     {graphemes.map(renderGrapheme)}
    </ReaderHanziText>
-   {pinyinPresentation === "paragraph" && showPinyin ? (
+   {resolvedPinyinPresentation === "paragraph" && showPinyin ? (
     <PinyinText variant="bodySmall" tone="muted" wrapping="preWrap">
-     {analysis.sourcePinyinStatus === "aligned" && sourcePinyin && !hasManualOverride
+     {!displayMode.autoDetectPinyin && sourcePinyin && !hasManualOverride
       ? sourcePinyin
       : formatContextualSpokenPinyin(analysis)}
     </PinyinText>

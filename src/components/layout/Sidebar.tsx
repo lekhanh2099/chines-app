@@ -62,6 +62,12 @@ function matchesHref(
   return pathname === "/hsk" || (pathname.startsWith("/hsk/") && pathname !== "/hsk/grammar");
  }
 
+ if (base === "/reader") {
+  return (
+   pathname === "/reader" || pathname === "/reader/course" || pathname.startsWith("/reader/course/")
+  );
+ }
+
  return match === "prefix"
   ? pathname === base || pathname.startsWith(`${base}/`)
   : pathname === base;

@@ -13,6 +13,7 @@ type PartialLearningState = z.infer<
 
 export const defaultLessonTextDisplaySettings: LessonTextDisplaySettings = {
  showPinyin: true,
+ autoDetectPinyin: false,
  showMeaning: false,
  showAnswers: false,
  hanziFont: "kaiti",

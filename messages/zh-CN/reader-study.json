@@ -45,7 +45,9 @@
    "autoAdvance": "自动前进",
    "display": "显示",
    "focus": "专注",
-   "shadowing": "跟读"
+   "shadowing": "跟读",
+   "autoPinyin": "自动识别拼音",
+   "autoPinyinDescription": "关闭时使用课程自带拼音；开启后由应用按语境分析。"
   },
   "outline": {
    "segments": "段落目录",

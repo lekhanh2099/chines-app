@@ -73,7 +73,7 @@ export function Tabs<T extends string>({
 
  return (
   <TabsContext.Provider value={{ baseId, value, itemKeys }}>
-   <div className={className}>
+   <div className={cn("min-w-0", className)}>
     {flatItems.length > 0 ? (
      <div
       role="tablist"

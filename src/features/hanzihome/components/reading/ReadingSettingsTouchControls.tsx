@@ -1,6 +1,7 @@
 "use client";
 
 import { Eye, Type, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { SegmentedControl } from "@/components/ui/segmented-control";
@@ -26,6 +27,8 @@ export function ReadingSettingsTouchControls({
  displayMode: LessonDisplayMode;
  onChange: (updates: Partial<LessonDisplayMode>) => void;
 }) {
+ const t = useTranslations("Reader.study.chrome.tools");
+
  return (
   <div className="grid gap-5">
    <section className="grid gap-3">
@@ -108,6 +111,21 @@ export function ReadingSettingsTouchControls({
        </div>
       );
      })}
+     <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
+      <div className="grid min-w-0 gap-0.5">
+       <Typography as="p" variant="label" tone="default" weight="bold">
+        {t("autoPinyin")}
+       </Typography>
+       <Typography as="p" variant="caption" tone="muted">
+        {t("autoPinyinDescription")}
+       </Typography>
+      </div>
+      <Switch
+       checked={displayMode.autoDetectPinyin}
+       onCheckedChange={(checked) => onChange({ autoDetectPinyin: checked })}
+       aria-label={t("autoPinyin")}
+      />
+     </div>
     </div>
    </section>
   </div>

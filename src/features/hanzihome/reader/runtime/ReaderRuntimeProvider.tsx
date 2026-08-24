@@ -39,6 +39,14 @@ type ReaderRuntimeContextValue = {
  commands: ReaderRuntimeCommands;
 };
 
+type ReaderSequencePlaybackItem = {
+ segmentId: string;
+ segmentIndex: number;
+ sourceStartOffset: number;
+ textStart: number;
+ textEnd: number;
+};
+
 const ReaderRuntimeContext = createContext<ReaderRuntimeContextValue | null>(null);
 const noop = () => undefined;
 const noRuntimeCommands: ReaderRuntimeCommands = {
@@ -126,6 +134,8 @@ function ReaderTtsBridge({
   rate,
   resume: resumeTts,
   setRate: setTtsRate,
+  speakingRequestText,
+  speakingText,
   speakSequence,
   stop: stopTts,
  } = tts;
@@ -133,11 +143,13 @@ function ReaderTtsBridge({
  const ownsPlaybackRef = useRef(false);
  const continuousRef = useRef(false);
  const allowAutoAdvanceRef = useRef(true);
+ const playbackPlanRef = useRef<ReaderSequencePlaybackItem[]>([]);
  const finishPlayback = useCallback(
   (completed = false) => {
    ownsPlaybackRef.current = false;
    continuousRef.current = false;
    allowAutoAdvanceRef.current = true;
+   playbackPlanRef.current = [];
    store.actions.resetPlayback();
    if (completed) onPlaybackComplete?.();
   },
@@ -170,50 +182,78 @@ function ReaderTtsBridge({
    const boundedOffset = Math.min(Math.max(Math.trunc(startOffset), 0), segment.zh.length);
    const playWholeDocument =
     !store.state.loopCurrent && (continuous || (allowAutoAdvance && store.state.autoAdvance));
-   const speechTexts = (playWholeDocument ? document.segments.slice(index) : [segment])
-    .map((item, itemIndex) =>
-     itemIndex === 0 && boundedOffset > 0
-      ? item.zh.slice(boundedOffset).trim()
-      : (item.speechText ?? item.zh).trim(),
-    )
-    .filter(Boolean);
-   if (speechTexts.length === 0) {
+   const speechItems = (playWholeDocument ? document.segments.slice(index) : [segment]).flatMap(
+    (item, itemIndex) => {
+     const text =
+      itemIndex === 0 && boundedOffset > 0
+       ? item.zh.slice(boundedOffset).trim()
+       : (item.speechText ?? item.zh).trim();
+     return text
+      ? [
+         {
+          segmentId: item.id,
+          segmentIndex: index + itemIndex,
+          sourceStartOffset: itemIndex === 0 ? boundedOffset : 0,
+          text,
+         },
+        ]
+      : [];
+    },
+   );
+   if (speechItems.length === 0) {
     finishPlayback(playWholeDocument || index >= document.segments.length - 1);
     return;
    }
+
+   let textOffset = 0;
+   playbackPlanRef.current = speechItems.map((item, itemIndex) => {
+    const textStart = textOffset;
+    const textEnd = textStart + item.text.length;
+    textOffset = textEnd + (itemIndex < speechItems.length - 1 ? 1 : 0);
+    return {
+     segmentId: item.segmentId,
+     segmentIndex: item.segmentIndex,
+     sourceStartOffset: item.sourceStartOffset,
+     textStart,
+     textEnd,
+    };
+   });
 
    ownsPlaybackRef.current = true;
    continuousRef.current = continuous;
    allowAutoAdvanceRef.current = allowAutoAdvance;
    store.actions.selectIndex(index, "playback");
    store.actions.syncPlayback({
-    playbackSegmentId: playWholeDocument ? null : segment.id,
+    playbackSegmentId: segment.id,
     playbackStatus: "loading",
-    playbackStartOffset: playWholeDocument ? 0 : boundedOffset,
+    playbackStartOffset: boundedOffset,
     progress: 0,
     rate,
     error: null,
    });
-   speakSequence(speechTexts, () => {
-    if (runRef.current !== runId) return;
-    if (store.state.loopCurrent) {
-     playAtRef.current(index, runId, continuous, allowAutoAdvance, boundedOffset);
-     return;
-    }
-    if (playWholeDocument) {
-     finishPlayback(true);
-     return;
-    }
-    const nextIndex = index + 1;
-    if (
-     (continuous || (allowAutoAdvance && store.state.autoAdvance)) &&
-     nextIndex < document.segments.length
-    ) {
-     playAtRef.current(nextIndex, runId, continuous, allowAutoAdvance, 0);
-     return;
-    }
-    finishPlayback(index >= document.segments.length - 1);
-   });
+   speakSequence(
+    speechItems.map((item) => item.text),
+    () => {
+     if (runRef.current !== runId) return;
+     if (store.state.loopCurrent) {
+      playAtRef.current(index, runId, continuous, allowAutoAdvance, boundedOffset);
+      return;
+     }
+     if (playWholeDocument) {
+      finishPlayback(true);
+      return;
+     }
+     const nextIndex = index + 1;
+     if (
+      (continuous || (allowAutoAdvance && store.state.autoAdvance)) &&
+      nextIndex < document.segments.length
+     ) {
+      playAtRef.current(nextIndex, runId, continuous, allowAutoAdvance, 0);
+      return;
+     }
+     finishPlayback(index >= document.segments.length - 1);
+    },
+   );
   },
   [document.segments, finishPlayback, rate, speakSequence, store],
  );
@@ -311,14 +351,41 @@ function ReaderTtsBridge({
 
  useEffect(() => {
   if (!ownsPlaybackRef.current) return;
+  const chunkStart =
+   speakingRequestText && speakingText ? Math.max(0, speakingRequestText.indexOf(speakingText)) : 0;
+  const absoluteProgress = chunkStart + (speakingText ? speakingText.length * progress : 0);
+  const playbackItem =
+   playbackPlanRef.current.find((item) => absoluteProgress <= item.textEnd) ??
+   playbackPlanRef.current.at(-1) ??
+   null;
+  if (!playbackItem) return;
+  const localProgress = Math.min(
+   1,
+   Math.max(
+    0,
+    (absoluteProgress - playbackItem.textStart) / (playbackItem.textEnd - playbackItem.textStart),
+   ),
+  );
+  store.actions.selectIndex(playbackItem.segmentIndex, "playback");
   store.actions.syncPlayback({
-   playbackSegmentId: store.state.playbackSegmentId,
+   playbackSegmentId: playbackItem.segmentId,
    playbackStatus: isLoading ? "loading" : isPaused ? "paused" : isSpeaking ? "playing" : "idle",
-   progress,
+   playbackStartOffset: playbackItem.sourceStartOffset,
+   progress: localProgress,
    rate,
    error,
   });
- }, [error, isLoading, isPaused, isSpeaking, progress, rate, store]);
+ }, [
+  error,
+  isLoading,
+  isPaused,
+  isSpeaking,
+  progress,
+  rate,
+  speakingRequestText,
+  speakingText,
+  store,
+ ]);
  useEffect(
   () => () => {
    runRef.current += 1;

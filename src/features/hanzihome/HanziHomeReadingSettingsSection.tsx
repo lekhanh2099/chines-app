@@ -1,6 +1,7 @@
 "use client";
 
 import { Eye, RefreshCcw, Type } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -104,6 +105,7 @@ export function HanziHomeReadingSettingsSection() {
 }
 
 export function HanziHomeReadingQuickSettingsMenu() {
+ const t = useTranslations("Reader.study.chrome.tools");
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
 
@@ -238,6 +240,14 @@ export function HanziHomeReadingQuickSettingsMenu() {
          {option.label}
         </DropdownMenuCheckboxItem>
        ))}
+       <DropdownMenuSeparator />
+       <DropdownMenuCheckboxItem
+        checked={displayMode.autoDetectPinyin}
+        onSelect={(event) => event.preventDefault()}
+        onCheckedChange={(checked) => updateDisplayMode({ autoDetectPinyin: checked })}
+       >
+        {t("autoPinyin")}
+       </DropdownMenuCheckboxItem>
       </DropdownMenuSubContent>
      </DropdownMenuSub>
     </>

@@ -2,6 +2,7 @@
 
 import { type ReactNode } from "react";
 import { Eye, Type, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -80,6 +81,8 @@ export function LessonReadingSettings({
  onChange,
  className,
 }: LessonReadingSettingsProps) {
+ const t = useTranslations("Reader.study.chrome.tools");
+
  return (
   <div
    className={cn(
@@ -177,6 +180,21 @@ export function LessonReadingSettings({
         </div>
        );
       })}
+      <div className="flex min-h-14 items-center justify-between gap-4 py-2.5">
+       <div className="grid min-w-0 gap-0.5">
+        <Typography as="p" variant="label" tone="default" weight="bold">
+         {t("autoPinyin")}
+        </Typography>
+        <Typography as="p" variant="caption" tone="muted">
+         {t("autoPinyinDescription")}
+        </Typography>
+       </div>
+       <Switch
+        checked={displayMode.autoDetectPinyin}
+        onCheckedChange={(checked) => onChange({ autoDetectPinyin: checked })}
+        aria-label={t("autoPinyin")}
+       />
+      </div>
      </div>
     </SettingsGroup>
    </Card>
