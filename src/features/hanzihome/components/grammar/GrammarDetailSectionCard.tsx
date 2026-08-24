@@ -1,6 +1,5 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
  HanziAwareText,
@@ -19,7 +18,7 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
  const bodyLines = section.lines.filter((line) => !isImportantGrammarLine(line));
 
  return (
-  <Card variant="section" padding="md" className="grid gap-3">
+  <section className="grid gap-3 py-1">
    <HanziAwareText
     as="h4"
     text={cleanGrammarDisplayLine(section.title)}
@@ -69,6 +68,6 @@ export function GrammarDetailSectionCard({ section }: { section: GrammarDetailSe
      />
     </>
    ) : null}
-  </Card>
+  </section>
  );
 }

@@ -42,6 +42,7 @@ describe("navigation configuration", () => {
   expect(navigationItems.readerMock.href).toBe("/reader/mock");
   expect(navigationItems.hskReading.href).toBe("/hsk");
   expect(navigationItems.hskReading.aliases).toContain("/reader/hsk");
+  expect(navigationItems.hskGrammar.href).toBe("/hsk/grammar");
  });
 
  it("hides engineering destinations without the HanziHome content capability", () => {

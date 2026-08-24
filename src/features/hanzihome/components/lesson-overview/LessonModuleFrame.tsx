@@ -96,10 +96,12 @@ export function LessonModuleFrame({
 }: LessonModuleFrameProps) {
  const [sidebarSheetOpen, setSidebarSheetOpen] = useState(false);
  const previousSelectionKey = useRef(sidebarSelectionKey);
+ const contentViewportRef = useRef<HTMLDivElement>(null);
 
  useEffect(() => {
   if (previousSelectionKey.current !== sidebarSelectionKey && sidebarSelectionKey !== undefined) {
    setSidebarSheetOpen(false);
+   contentViewportRef.current?.scrollTo({ top: 0 });
   }
 
   previousSelectionKey.current = sidebarSelectionKey;
@@ -249,7 +251,12 @@ export function LessonModuleFrame({
       </aside>
      ) : null}
 
-     <div className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">{children}</div>
+     <div
+      ref={contentViewportRef}
+      className="relative min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft"
+     >
+      {children}
+     </div>
     </div>
 
     {!compact ? (

@@ -10,6 +10,7 @@ import { Lightbulb, Sigma } from "lucide-react";
 import { EditableNodeWrapper, type EditableNodePath } from "@/features/hanzihome/editing";
 import type { GrammarViewModel } from "@/features/hanzihome/types";
 import { CreateNormalizedChildDialog } from "@/features/hanzihome/editing/components/CreateNormalizedChildDialog";
+import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { GrammarDetailSectionCard } from "./GrammarDetailSectionCard";
 import { cleanGrammarDisplayLine, isDuplicateCoreSection } from "./grammar-display";
 
@@ -49,7 +50,7 @@ export function StructuredGrammarContent({
     </div>
    ) : null}
    {point.core && (
-    <section className="grid gap-3 rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
+    <section className="grid gap-3 rounded-xl border border-primary/20 bg-primary/8 p-4">
      <div className="flex items-center gap-2">
       <StudyInstructionText
        as="span"
@@ -110,7 +111,7 @@ export function StructuredGrammarContent({
        tone="info"
        weight="black"
        leading="relaxed"
-       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 shadow-theme-sm"
+       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3"
       />
      ))}
     </section>
@@ -155,16 +156,20 @@ export function StructuredGrammarContent({
      {examples.map((example, index) => {
       const content = (
        <div className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4">
-        <HanziText
-         as="p"
-         size="inherit"
-         variant="sectionTitle"
-         tone="default"
-         weight="black"
-         leading="relaxed"
-        >
-         {example.zh}
-        </HanziText>
+        <div className="flex min-w-0 items-start gap-2">
+         <HanziText
+          as="p"
+          size="inherit"
+          variant="sectionTitle"
+          tone="default"
+          weight="black"
+          leading="relaxed"
+          className="min-w-0 flex-1"
+         >
+          {example.zh}
+         </HanziText>
+         <MandarinSpeakButton text={example.zh} touchTarget />
+        </div>
         {example.pinyin && (
          <StudyInstructionText variant="caption" tone="info" weight="semibold" leading="relaxed">
           {example.pinyin}

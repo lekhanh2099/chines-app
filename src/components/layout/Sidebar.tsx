@@ -58,6 +58,10 @@ function matchesHref(
   return pathname === "/hanzihome" && searchParams.get("module") !== "radicals";
  }
 
+ if (base === "/hsk") {
+  return pathname === "/hsk" || (pathname.startsWith("/hsk/") && pathname !== "/hsk/grammar");
+ }
+
  return match === "prefix"
   ? pathname === base || pathname.startsWith(`${base}/`)
   : pathname === base;

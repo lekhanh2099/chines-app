@@ -15,6 +15,8 @@ import type {
  AggregateVocabItem,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import type {
+ HanziHomeCatalogCourse,
+ HanziHomeCourseBook,
  GrammarViewModel,
  HanziHomeLesson,
  HanziHomeVocabItem,
@@ -568,6 +570,63 @@ export function listStaticStudioCourseLessons(courseId: string): HanziHomeLesson
   .filter((lesson) => lesson.course_id === courseId)
   .toSorted((left, right) => left.lesson_order - right.lesson_order)
   .map(lessonToSummary);
+}
+
+export function getStaticStudioCourseCatalog(courseId: string): {
+ course: HanziHomeCatalogCourse;
+ books: HanziHomeCourseBook[];
+ lessons: HanziHomeLesson[];
+} | null {
+ const staticCourse = staticStudioSeed.canonical.courses.find((course) => course.id === courseId);
+ if (!staticCourse) return null;
+
+ const books = staticStudioSeed.canonical.books
+  .filter((book) => book.course_id === courseId)
+  .toSorted((left, right) => left.book_order - right.book_order)
+  .map((book): HanziHomeCourseBook => ({
+   id: book.id,
+   courseId: book.course_id,
+   title: book.title,
+   shortTitle: book.short_title ?? undefined,
+   order: book.book_order,
+   updatedAt: book.imported_at,
+  }));
+ const lessons = listStaticStudioCourseLessons(courseId).map((lesson) => ({
+  ...lesson,
+  vocabCount: staticStudioSeed.canonical.vocabItems.filter((item) => item.lesson_id === lesson.id)
+   .length,
+  grammarCount: staticStudioSeed.canonical.grammarPoints.filter(
+   (point) => point.lesson_id === lesson.id,
+  ).length,
+ }));
+ const grammarCount = staticStudioSeed.canonical.grammarPoints.filter(
+  (point) => point.course_id === courseId,
+ ).length;
+ const vocabCount = staticStudioSeed.canonical.vocabItems.filter(
+  (item) => item.course_id === courseId,
+ ).length;
+
+ return {
+  course: {
+   id: staticCourse.id,
+   slug: staticCourse.slug,
+   title: staticCourse.title,
+   subtitle: staticCourse.subtitle,
+   type: staticCourse.type,
+   order: staticCourse.course_order,
+   updatedAt: staticCourse.imported_at,
+   stats: {
+    bookCount: books.length,
+    lessonCount: lessons.length,
+    vocabCount,
+    grammarCount,
+   },
+   lastLessonId: lessons.at(-1)?.id,
+   fallbackLessonId: lessons[0]?.id,
+  },
+  books,
+  lessons,
+ };
 }
 
 export function getStaticStudioListeningLessonBundle(

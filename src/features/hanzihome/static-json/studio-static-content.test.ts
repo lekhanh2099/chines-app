@@ -4,6 +4,7 @@ vi.mock("server-only", () => ({}));
 
 import {
  getStaticStudioAggregateItems,
+ getStaticStudioCourseCatalog,
  getStaticStudioLessonDetail,
  getStaticStudioListeningLessonBundle,
  listStaticStudioCourseLessons,
@@ -75,5 +76,25 @@ describe("bundled Studio static content", () => {
    courseId: "hanzihome-studio-grammar",
    title: 'PHỦ ĐỊNH CỦA "有" VỚI "没"',
   });
+ });
+
+ it("exposes the bundled HSK grammar course for the course catalog", () => {
+  const catalog = getStaticStudioCourseCatalog("hanzihome-studio-grammar");
+
+  expect(catalog).toMatchObject({
+   course: {
+    id: "hanzihome-studio-grammar",
+    stats: { bookCount: 6, lessonCount: 6, vocabCount: 0, grammarCount: 577 },
+   },
+  });
+  expect(catalog?.books.map((book) => book.title)).toEqual([
+   "HSK1",
+   "HSK2",
+   "HSK3",
+   "HSK4",
+   "HSK5",
+   "HSK6",
+  ]);
+  expect(catalog?.lessons.map((lesson) => lesson.grammarCount)).toEqual([40, 97, 141, 161, 83, 55]);
  });
 });

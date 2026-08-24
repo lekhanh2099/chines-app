@@ -38,7 +38,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  const selectedPointId = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSelectedPointId,
  );
- const editMode = useHanziHomeEditMode();
+ const editMode = useHanziHomeEditMode() && !lesson.id.startsWith("hanzihome-studio-");
  const isGrammarSidebarOpen = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSidebarOpen,
  );
@@ -117,15 +117,29 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : selectedPoint && selectedPointPath ? (
-  <EditableNodeWrapper
-   lessonId={lesson.id}
-   entityType="grammar_point"
-   entityId={selectedPoint.id}
-   path={selectedPointPath}
-   value={selectedPoint}
-   label={selectedPoint.cleanTitle}
-   editLabel="Sửa ngữ pháp"
-  >
+  editMode ? (
+   <EditableNodeWrapper
+    lessonId={lesson.id}
+    entityType="grammar_point"
+    entityId={selectedPoint.id}
+    path={selectedPointPath}
+    value={selectedPoint}
+    label={selectedPoint.cleanTitle}
+    editLabel="Sửa ngữ pháp"
+   >
+    <GrammarPointReader
+     point={selectedPoint}
+     pointPath={selectedPointPath}
+     status={progress[selectedPoint.id]?.status || "new"}
+     bookmarked={bookmarks.includes(selectedPoint.id)}
+     relatedVocab={relatedVocab}
+     lessonId={lesson.id}
+     editMode={editMode}
+     onBookmark={() => runtime.bookmarkGrammar(selectedPoint.id)}
+     onMarkStatus={(status) => runtime.markGrammar(selectedPoint.id, status)}
+    />
+   </EditableNodeWrapper>
+  ) : (
    <GrammarPointReader
     point={selectedPoint}
     pointPath={selectedPointPath}
@@ -137,7 +151,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
     onBookmark={() => runtime.bookmarkGrammar(selectedPoint.id)}
     onMarkStatus={(status) => runtime.markGrammar(selectedPoint.id, status)}
    />
-  </EditableNodeWrapper>
+  )
  ) : (
   <GrammarPointReader
    point={selectedPoint}

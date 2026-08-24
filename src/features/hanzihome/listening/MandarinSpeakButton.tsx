@@ -11,6 +11,7 @@ export function MandarinSpeakButton({
  text,
  className,
  actionLabel,
+ touchTarget = false,
  segments,
  activeOverride,
  disabled = false,
@@ -21,6 +22,7 @@ export function MandarinSpeakButton({
  text: string;
  className?: string;
  actionLabel?: string;
+ touchTarget?: boolean;
  segments?: readonly string[];
  activeOverride?: boolean;
  disabled?: boolean;
@@ -43,7 +45,7 @@ export function MandarinSpeakButton({
   <Button
    type="button"
    variant={active ? "active" : actionLabel ? "outline" : "ghost"}
-   size={actionLabel ? "toolbar" : "icon-xs"}
+   size={actionLabel ? "toolbar" : touchTarget ? "icon" : "icon-xs"}
    className={cn("shrink-0", className)}
    disabled={disabled || (!active && unavailable)}
    title={
