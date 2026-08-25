@@ -233,6 +233,14 @@ When interface messages change, the targeted verification MUST include:
 npm run test:run -- src/i18n/messages.test.ts
 ```
 
+Message-file parity, typecheck and a successful build are necessary but are not
+proof that the requested copy is visible. Render the affected consumer with the
+real `loadAppMessages(locale)` path for `vi`, `en` and `zh-CN`, then assert the
+expected visible label, placeholder, status text or accessible name. The
+rendered output MUST NOT contain an unresolved namespace or message key. If a
+running dev server still serves old messages after a locale JSON change, restart
+it and repeat the rendered check before claiming completion.
+
 Before handoff, inspect the changed lines for new raw interface strings. Font
 samples, technical identifiers, test fixtures and course/lesson content data
 are not interface copy; a user-facing label is not exempt merely because it is

@@ -1,7 +1,17 @@
 {
  "title": "Settings",
  "description": "Customize the interface, reading experience, and AI lookup without mixing learning preferences with account settings.",
- "tabs": { "app": "App", "reading": "Reading", "ai": "AI & API" },
+ "tabs": { "app": "App", "reading": "Reading", "ai": "AI & API", "management": "Administration" },
+ "management": {
+  "title": "Data and integrations",
+  "description": "Content administration tools live here and are visible only to editors or administrators.",
+  "dataQualityDescription": "Review published Reader data, content totals, and warnings that need attention.",
+  "apiDescription": "Review API contracts, integration scopes, and service-call examples using integration keys.",
+  "open": "Open"
+ },
+ "voiceStudio": {
+  "description": "Compose text, preview speech, manage saved audio, and export MP3 in a dedicated workspace."
+ },
  "learningBehavior": {
   "title": "Learning behavior",
   "description": "App-wide learning preferences live here; reading-specific options stay in the Reading section.",

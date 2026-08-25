@@ -24,11 +24,9 @@ describe("navigation configuration", () => {
  it("keeps the approved top-level information architecture", () => {
   expect(navigationGroups.map((group) => group.id)).toEqual([
    "learning",
-   "reading",
-   "hsk",
    "practice",
    "knowledge",
-   "system",
+   "personal",
   ]);
   expect(
    navigationGroups.every((group) => group.sections.every((section) => section.itemIds.length > 0)),
@@ -37,7 +35,38 @@ describe("navigation configuration", () => {
 
  it("places HTML files with the primary learning destinations", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("htmlArtifacts");
-  expect(navigationGroups[5]?.sections[1]?.itemIds).not.toContain("htmlArtifacts");
+  expect(navigationGroups[3]?.sections.flatMap((section) => section.itemIds)).not.toContain(
+   "htmlArtifacts",
+  );
+ });
+
+ it("keeps high-priority notes with the primary learning destinations", () => {
+  expect(navigationGroups[0]?.sections[0]?.itemIds).toEqual([
+   "home",
+   "lessons",
+   "notes",
+   "humanities",
+   "htmlArtifacts",
+  ]);
+ });
+
+ it("keeps reading and HSK destinations inside the learning journey", () => {
+  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["reader", "dailyReading"]);
+  expect(navigationGroups[0]?.sections[2]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
+ });
+
+ it("keeps personal destinations together without a separate system group", () => {
+  expect(navigationGroups[3]?.sections[0]?.itemIds).toEqual(["personalLearning", "notebook"]);
+  expect(navigationGroups[3]?.sections).toHaveLength(1);
+  expect(navigationGroups.some((group) => group.id === "system")).toBe(false);
+ });
+
+ it("keeps Settings-owned destinations out of global navigation", () => {
+  expect(Object.hasOwn(navigationItems, "dataQuality")).toBe(false);
+  expect(Object.hasOwn(navigationItems, "apiDocs")).toBe(false);
+  expect(Object.hasOwn(navigationItems, "tts")).toBe(false);
+  expect(navigationGroups[1]?.sections[0]?.itemIds).toEqual(["dictation", "conversation"]);
+  expect(navigationItems.settings.aliases).toEqual(["/tts", "/data-quality", "/api-docs"]);
  });
 
  it("uses canonical Reader and HSK destinations while retaining the legacy HSK path", () => {
@@ -55,9 +84,7 @@ describe("navigation configuration", () => {
    group.sections.flatMap((section) => section.itemIds),
   );
 
-  expect(visibleItemIds).not.toContain("dataQuality");
   expect(visibleItemIds).not.toContain("htmlArtifacts");
-  expect(visibleItemIds).not.toContain("apiDocs");
  });
 
  it("keeps engineering destinations available to content editors", () => {
@@ -65,8 +92,6 @@ describe("navigation configuration", () => {
    group.sections.flatMap((section) => section.itemIds),
   );
 
-  expect(visibleItemIds).toContain("dataQuality");
   expect(visibleItemIds).toContain("htmlArtifacts");
-  expect(visibleItemIds).toContain("apiDocs");
  });
 });

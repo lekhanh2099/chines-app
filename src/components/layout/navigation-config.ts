@@ -17,13 +17,10 @@ import {
  Newspaper,
  NotebookPen,
  NotebookTabs,
- PlugZap,
  RefreshCcw,
  SearchCheck,
  Settings,
- ShieldCheck,
  Target,
- Volume2,
  Workflow,
 } from "lucide-react";
 import type { AppMessages } from "@/i18n/messages";
@@ -104,7 +101,6 @@ export const navigationItems = {
   icon: Languages,
   href: "/translation",
  },
- tts: { messageKey: "navigation.items.tts", icon: Volume2, href: "/tts" },
  dictionary: {
   messageKey: "navigation.items.dictionary",
   icon: RefreshCcw,
@@ -132,21 +128,16 @@ export const navigationItems = {
   icon: SearchCheck,
   href: "/inspector",
  },
- dataQuality: {
-  messageKey: "navigation.items.dataQuality",
-  icon: ShieldCheck,
-  href: "/data-quality",
- },
  htmlArtifacts: {
   messageKey: "navigation.items.htmlArtifacts",
   icon: FileCode2,
   href: "/html-artifacts",
  },
- apiDocs: { messageKey: "navigation.items.apiDocs", icon: PlugZap, href: "/api-docs" },
  settings: {
   messageKey: "navigation.items.settings",
   icon: Settings,
   href: "/settings?section=app",
+  aliases: ["/tts", "/data-quality", "/api-docs"],
  },
 } satisfies {
  home: NavigationItemConfig;
@@ -165,7 +156,6 @@ export const navigationItems = {
  notes: NavigationItemConfig;
  dictation: NavigationItemConfig;
  translationStudio: NavigationItemConfig;
- tts: NavigationItemConfig;
  dictionary: NavigationItemConfig;
  memoryTips: NavigationItemConfig;
  conversation: NavigationItemConfig;
@@ -173,18 +163,14 @@ export const navigationItems = {
  vocab: NavigationItemConfig;
  radicals: NavigationItemConfig;
  inspector: NavigationItemConfig;
- dataQuality: NavigationItemConfig;
  htmlArtifacts: NavigationItemConfig;
- apiDocs: NavigationItemConfig;
  settings: NavigationItemConfig;
 };
 
 export type NavigationItemId = keyof typeof navigationItems;
 
 export const contentCapabilityNavigationItemIds: readonly NavigationItemId[] = [
- "dataQuality",
  "htmlArtifacts",
- "apiDocs",
 ] satisfies readonly NavigationItemId[];
 
 export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
@@ -214,32 +200,13 @@ export const navigationGroups = [
    {
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
-    itemIds: ["home", "lessons", "humanities", "htmlArtifacts"],
+    itemIds: ["home", "lessons", "notes", "humanities", "htmlArtifacts"],
    },
-   {
-    id: "learning-personal",
-    messageKey: "navigation.sections.learningPersonal",
-    itemIds: ["personalLearning", "notebook", "notes"],
-   },
-  ],
- },
- {
-  id: "reading",
-  messageKey: "navigation.groups.reading",
-  icon: BookOpenText,
-  sections: [
    {
     id: "reading-library",
     messageKey: "navigation.sections.readingLibrary",
     itemIds: ["reader", "dailyReading"],
    },
-  ],
- },
- {
-  id: "hsk",
-  messageKey: "navigation.groups.hsk",
-  icon: BookMarked,
-  sections: [
    {
     id: "hsk-reading",
     messageKey: "navigation.sections.hskReading",
@@ -255,7 +222,7 @@ export const navigationGroups = [
    {
     id: "practice-listening-speaking",
     messageKey: "navigation.sections.practiceListeningSpeaking",
-    itemIds: ["tts", "dictation", "conversation"],
+    itemIds: ["dictation", "conversation"],
    },
    {
     id: "practice-writing-translation",
@@ -287,19 +254,14 @@ export const navigationGroups = [
   ],
  },
  {
-  id: "system",
-  messageKey: "navigation.groups.system",
-  icon: Settings,
+  id: "personal",
+  messageKey: "navigation.groups.personal",
+  icon: Brain,
   sections: [
    {
-    id: "system-data",
-    messageKey: "navigation.sections.systemData",
-    itemIds: ["dataQuality"],
-   },
-   {
-    id: "system-tools",
-    messageKey: "navigation.sections.systemTools",
-    itemIds: ["apiDocs"],
+    id: "personal-workspace",
+    messageKey: "navigation.sections.personalWorkspace",
+    itemIds: ["personalLearning", "notebook"],
    },
   ],
  },

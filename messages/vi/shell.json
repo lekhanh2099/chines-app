@@ -10,15 +10,17 @@
    "reading": "Đọc",
    "hsk": "HSK",
    "practice": "Luyện",
-   "knowledge": "Kiến thức",
-   "system": "Hệ thống"
+   "knowledge": "Năng lực",
+   "system": "Hệ thống",
+   "personal": "Cá nhân"
   },
   "sections": {
    "learningMain": "Học chính",
    "learningPersonal": "Cá nhân",
+   "personalWorkspace": "Không gian học",
    "readingLibrary": "Thư viện",
    "readingPractice": "Luyện đọc",
-   "hskReading": "Đọc",
+   "hskReading": "HSK",
    "practiceListeningSpeaking": "Nghe & nói",
    "practiceWritingTranslation": "Viết & dịch",
    "practiceReview": "Ôn luyện",

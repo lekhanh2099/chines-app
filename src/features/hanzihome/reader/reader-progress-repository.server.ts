@@ -27,6 +27,21 @@ export async function getReaderProgress(
  return data === null ? null : readerProgressRowSchema.parse(data);
 }
 
+export async function getLatestIncompleteReaderProgress(
+ context: AuthenticatedRouteContext,
+): Promise<ReaderProgressRow | null> {
+ const { data, error } = await createServiceRoleSupabaseClient()
+  .from("hanzihome_reader_progress")
+  .select("*")
+  .eq("user_id", context.user.id)
+  .eq("completed", false)
+  .order("updated_at", { ascending: false })
+  .limit(1)
+  .maybeSingle();
+ if (error) throw new Error(error.message);
+ return data === null ? null : readerProgressRowSchema.parse(data);
+}
+
 export async function saveReaderProgressOwnedState(
  input: {
   documentId: string;

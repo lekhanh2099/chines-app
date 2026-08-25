@@ -10,15 +10,17 @@
    "reading": "阅读",
    "hsk": "HSK",
    "practice": "练习",
-   "knowledge": "知识",
-   "system": "系统"
+   "knowledge": "能力",
+   "system": "系统",
+   "personal": "个人"
   },
   "sections": {
    "learningMain": "核心学习",
    "learningPersonal": "个人学习",
+   "personalWorkspace": "学习空间",
    "readingLibrary": "阅读库",
    "readingPractice": "阅读训练",
-   "hskReading": "阅读",
+   "hskReading": "HSK",
    "practiceListeningSpeaking": "听说",
    "practiceWritingTranslation": "写作与翻译",
    "practiceReview": "复习",

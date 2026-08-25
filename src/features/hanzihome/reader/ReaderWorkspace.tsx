@@ -1,16 +1,7 @@
 "use client";
 
-import { useMemo, useState, type ComponentProps } from "react";
-import { useQuery } from "@tanstack/react-query";
-import {
- BookOpen,
- Check,
- ChevronRight,
- FileText,
- Play,
- RotateCcw,
- type LucideIcon,
-} from "lucide-react";
+import { useMemo, type ComponentProps } from "react";
+import { BookOpen, Check, ChevronRight, FileText, Play, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
@@ -21,11 +12,7 @@ import { IconTile } from "@/components/ui/icon-tile";
 import { PageHeader } from "@/components/ui/page-header";
 import { Typography } from "@/components/ui/typography";
 import { HanziAwareText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
-import { fetchLearningLoopItems } from "@/features/hanzihome/learning-loop/learning-loop-api";
-import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { getClientSessionUser } from "@/lib/supabase/client-session";
-import { createClient } from "@/lib/supabase/client";
 import { JsonObjectSchema } from "@/types/json";
 
 import type { ReaderDocumentResource } from "./reader-content-api";
@@ -94,31 +81,18 @@ function ReaderSourceRow({ option }: { option: ReaderCollectionOption }) {
  );
 }
 
-function ReaderResumePanel() {
+function ReaderResumePanel({
+ document,
+ href,
+ unavailable,
+}: {
+ document: ReaderDocumentRow | null;
+ href: string;
+ unavailable: boolean;
+}) {
  const t = useTranslations("Reader.home.resume");
- const supabase = useMemo(() => createClient(), []);
- const sessionQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.readerSessionUser,
-  queryFn: () => getClientSessionUser(supabase),
-  staleTime: 60_000,
- });
- const learningLoopQuery = useQuery({
-  queryKey: hanzihomeQueryKeys.learningLoop,
-  queryFn: fetchLearningLoopItems,
-  enabled: sessionQuery.data !== null && sessionQuery.data !== undefined,
-  staleTime: 30_000,
- });
- const [now] = useState(() => Date.now());
 
- if (sessionQuery.isPending || !sessionQuery.data) return null;
- if (learningLoopQuery.isPending) {
-  return (
-   <Card variant="subtle" padding="lg" aria-label={t("loadingAria")}>
-    <div className="h-20 animate-pulse rounded-lg bg-bg-card" />
-   </Card>
-  );
- }
- if (learningLoopQuery.isError) {
+ if (unavailable) {
   return (
    <Card variant="subtle" padding="md" role="alert">
     <Typography variant="bodySmall" tone="warning">
@@ -127,11 +101,7 @@ function ReaderResumePanel() {
    </Card>
   );
  }
-
- const items = learningLoopQuery.data;
- const dueCount = items.filter((item) => new Date(item.due_at).getTime() <= now).length;
- const resumeItem = items.find((item) => item.kind === "reading_bookmark") ?? items[0] ?? null;
- if (resumeItem === null && dueCount === 0) return null;
+ if (document === null || href.length === 0) return null;
 
  return (
   <Card
@@ -144,48 +114,20 @@ function ReaderResumePanel() {
      <Badge variant="warning" casing="natural">
       {t("badge")}
      </Badge>
-     {dueCount > 0 ? (
-      <Badge variant="warning" casing="natural">
-       {t("dueCount", { count: dueCount })}
-      </Badge>
-     ) : null}
     </div>
-    {resumeItem ? (
-     <div className="grid min-w-0 gap-1">
-      <HanziAwareText as="h2" text={resumeItem.title_zh} variant="sectionTitle" weight="black" />
-      <Typography as="p" variant="bodySmall" tone="secondary" clamp="one">
-       {[
-        resumeItem.title_vi,
-        resumeItem.kind === "reading_bookmark" ? t("readingKind") : t("reviewKind"),
-       ]
-        .filter(Boolean)
-        .join(" · ")}
-      </Typography>
-     </div>
-    ) : (
-     <Typography as="h2" variant="sectionTitle" weight="black">
-      {t("ready")}
+    <div className="grid min-w-0 gap-1">
+     <HanziAwareText as="h2" text={document.title_zh} variant="sectionTitle" weight="black" />
+     <Typography as="p" variant="bodySmall" tone="secondary" clamp="one">
+      {[document.title_vi, t("readingKind")].filter(Boolean).join(" · ")}
      </Typography>
-    )}
+    </div>
    </div>
-   <div className="flex flex-wrap gap-2">
-    {resumeItem ? (
-     <Button type="button" variant="default" asChild>
-      <Link href={resumeItem.source_href} prefetch={false}>
-       <Play data-icon="inline-start" />
-       {t("continue")}
-      </Link>
-     </Button>
-    ) : null}
-    {dueCount > 0 ? (
-     <Button type="button" variant="outline" asChild>
-      <Link href="/learning-loop" prefetch={false}>
-       <RotateCcw data-icon="inline-start" />
-       {t("reviewNow")}
-      </Link>
-     </Button>
-    ) : null}
-   </div>
+   <Button type="button" variant="default" asChild>
+    <Link href={href} prefetch={false}>
+     <Play data-icon="inline-start" />
+     {t("continue")}
+    </Link>
+   </Button>
   </Card>
  );
 }
@@ -194,10 +136,16 @@ export function ReaderWorkspace({
  initialDocuments,
  initialResource,
  initialPdfAssets,
+ initialResumeDocument,
+ initialResumeHref,
+ initialResumeUnavailable,
 }: {
  initialDocuments: ReadonlyArray<ReaderDocumentRow>;
  initialResource: ReaderDocumentResource | null;
  initialPdfAssets: ReadonlyArray<ReaderPdfAsset>;
+ initialResumeDocument: ReaderDocumentRow | null;
+ initialResumeHref: string;
+ initialResumeUnavailable: boolean;
 }) {
  const t = useTranslations("Reader.home");
  const router = useRouter();
@@ -238,7 +186,7 @@ export function ReaderWorkspace({
    badge: t("options.hsk.badge"),
    badgeVariant: "success",
    description: t("options.hsk.description"),
-   href: "/reader/hsk",
+   href: "/hsk",
    icon: BookOpen,
    label: t("options.hsk.title"),
    title: t("options.hsk.title"),
@@ -305,7 +253,11 @@ export function ReaderWorkspace({
        className="min-w-0 flex-1"
       />
      </div>
-     <ReaderResumePanel />
+     <ReaderResumePanel
+      document={initialResumeDocument}
+      href={initialResumeHref}
+      unavailable={initialResumeUnavailable}
+     />
     </>
    ) : null}
 

@@ -10,15 +10,17 @@
    "reading": "Reading",
    "hsk": "HSK",
    "practice": "Practice",
-   "knowledge": "Knowledge",
-   "system": "System"
+   "knowledge": "Capabilities",
+   "system": "System",
+   "personal": "Personal"
   },
   "sections": {
    "learningMain": "Core study",
    "learningPersonal": "Personal",
+   "personalWorkspace": "Study workspace",
    "readingLibrary": "Library",
    "readingPractice": "Reading practice",
-   "hskReading": "Reading",
+   "hskReading": "HSK",
    "practiceListeningSpeaking": "Listening & speaking",
    "practiceWritingTranslation": "Writing & translation",
    "practiceReview": "Review",

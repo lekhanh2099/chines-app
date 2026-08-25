@@ -1,7 +1,17 @@
 {
  "title": "Cài đặt",
  "description": "Tùy chỉnh giao diện, trải nghiệm đọc và tra cứu AI mà không làm lẫn các cài đặt học với hồ sơ tài khoản.",
- "tabs": { "app": "Ứng dụng", "reading": "Đọc", "ai": "AI & API" },
+ "tabs": { "app": "Ứng dụng", "reading": "Đọc", "ai": "AI & API", "management": "Quản trị" },
+ "management": {
+  "title": "Dữ liệu và tích hợp",
+  "description": "Các công cụ quản trị nội dung được gom tại đây và chỉ hiển thị cho biên tập viên hoặc quản trị viên.",
+  "dataQualityDescription": "Kiểm tra dữ liệu Reader đã xuất bản, thống kê nội dung và các cảnh báo cần xử lý.",
+  "apiDescription": "Xem contract API, scope tích hợp và ví dụ gọi dịch vụ bằng integration key.",
+  "open": "Mở"
+ },
+ "voiceStudio": {
+  "description": "Soạn nội dung, nghe thử, quản lý audio đã lưu và xuất MP3 trong workspace riêng."
+ },
  "learningBehavior": {
   "title": "Hành vi học tập",
   "description": "Các lựa chọn có tác động toàn ứng dụng được gom ở đây; cài đặt đọc chuyên biệt nằm trong mục Đọc.",

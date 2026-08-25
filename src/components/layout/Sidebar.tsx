@@ -64,7 +64,13 @@ function matchesHref(
 
  if (base === "/reader") {
   return (
-   pathname === "/reader" || pathname === "/reader/course" || pathname.startsWith("/reader/course/")
+   pathname === "/reader" ||
+   pathname === "/reader/course" ||
+   pathname.startsWith("/reader/course/") ||
+   pathname === "/reader/practice" ||
+   pathname.startsWith("/reader/practice/") ||
+   pathname === "/reader/mock" ||
+   pathname.startsWith("/reader/mock/")
   );
  }
 

@@ -1,7 +1,17 @@
 {
  "title": "设置",
  "description": "分别管理界面、阅读体验和 AI 查询设置，避免与账户资料混在一起。",
- "tabs": { "app": "应用", "reading": "阅读", "ai": "AI 与 API" },
+ "tabs": { "app": "应用", "reading": "阅读", "ai": "AI 与 API", "management": "管理" },
+ "management": {
+  "title": "数据与集成",
+  "description": "内容管理工具集中在这里，仅对编辑和管理员显示。",
+  "dataQualityDescription": "检查已发布的 Reader 数据、内容统计以及需要处理的警告。",
+  "apiDescription": "查看 API 契约、集成权限范围和使用集成密钥的服务调用示例。",
+  "open": "打开"
+ },
+ "voiceStudio": {
+  "description": "在独立工作区中编辑文本、试听语音、管理已保存的音频并导出 MP3。"
+ },
  "learningBehavior": {
   "title": "学习行为",
   "description": "影响整个应用的学习选项集中在这里；阅读专属设置保留在“阅读”部分。",
