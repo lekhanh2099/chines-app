@@ -1,72 +1,51 @@
-import { Typography } from "@/components/ui/typography";
+import { ChevronDown } from "lucide-react";
 import { NOTEBOOK_DEEP_DIVE_SOURCE_LABELS } from "@/features/notebook/data/notebookDeepDiveData";
 import type { NotebookDeepDive } from "@/features/notebook/types";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-
-const DEEP_DIVE_SECTIONS: {
- key: keyof Omit<NotebookDeepDive, "src">;
- label: string;
- warning: boolean;
-}[] = [
- { key: "why", label: "Nghĩa lõi / sắc thái", warning: false },
- { key: "pos", label: "Vị trí / cấu trúc", warning: false },
- { key: "decision", label: "Tiêu chí chọn", warning: false },
- { key: "mistake", label: "Bẫy dễ sai", warning: true },
-];
+import { focusRingClassName } from "@/components/ui/focus-ring";
+import { Typography } from "@/components/ui/typography";
+import { useTranslations } from "next-intl";
 
 export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
+ const t = useTranslations("Notebook");
+ const sections: {
+  key: keyof Omit<NotebookDeepDive, "src">;
+  label: string;
+  warning: boolean;
+ }[] = [
+  { key: "why", label: t("deepDive.why"), warning: false },
+  { key: "pos", label: t("deepDive.position"), warning: false },
+  { key: "decision", label: t("deepDive.decision"), warning: false },
+  { key: "mistake", label: t("deepDive.mistake"), warning: true },
+ ];
+
  return (
-  <details className="group overflow-hidden rounded-xl border border-purple/30 bg-bg-card open:pb-3">
-   <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-base font-black text-purple-text marker:content-none [&::-webkit-details-marker]:hidden">
-    <span>Phân tích sắc thái · vị trí · lỗi sai</span>
-    <Typography
-     aria-hidden="true"
-     variant="sectionTitle"
-     tone="purple"
-     leading="none"
-     className="grid size-7 shrink-0 place-items-center rounded-full bg-purple-subtle group-open:hidden"
-    >
-     +
+  <details className="group grid gap-3">
+   <summary
+    className={`flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-2 py-2 marker:content-none [&::-webkit-details-marker]:hidden ${focusRingClassName}`}
+   >
+    <Typography as="span" variant="label" tone="default" weight="black">
+     {t("deepDive.summary")}
     </Typography>
-    <Typography
+    <ChevronDown
      aria-hidden="true"
-     variant="sectionTitle"
-     tone="purple"
-     leading="none"
-     className="hidden size-7 shrink-0 place-items-center rounded-full bg-purple-subtle group-open:grid"
-    >
-     −
-    </Typography>
+     className="size-4 shrink-0 text-text-muted transition-transform group-open:rotate-180"
+    />
    </summary>
 
-   <div className="grid gap-2.5 px-3">
-    <Typography
-     as="p"
-     variant="bodySmall"
-     tone="success"
-     leading="compact"
-     className="rounded-xl border border-success/30 bg-success-subtle px-3 py-2.5"
-    >
-     Đọc theo 4 trục: <strong>nghĩa lõi → vị trí câu → tiêu chí chọn → bẫy dễ sai</strong>. Mục này
-     không học bằng một bản dịch tiếng Việt duy nhất.
+   <div className="grid gap-4 px-2 pb-1">
+    <Typography as="p" variant="bodySmall" tone="secondary" weight="semibold" leading="standard">
+     {t.rich("deepDive.instruction", {
+      strong: (chunks) => <strong>{chunks}</strong>,
+     })}
     </Typography>
-    <div className="h-2 overflow-hidden rounded-full bg-bg-subtle" aria-hidden="true">
-     <div className="h-full w-[92%] rounded-full bg-accent" />
-    </div>
-    <div className="grid gap-2.5 sm:grid-cols-2">
-     {DEEP_DIVE_SECTIONS.map((section) => (
-      <div
-       key={section.key}
-       className={cn(
-        "grid gap-1.5 rounded-xl border p-3",
-        section.warning ? "border-warning/30 bg-warning-subtle" : "border-purple/20 bg-bg-primary",
-       )}
-      >
+    <div className="grid gap-4 sm:grid-cols-2">
+     {sections.map((section) => (
+      <section key={section.key} className="grid gap-1.5">
        <Typography
         as="p"
         variant="overline"
-        tone={section.warning ? "warning" : "purple"}
+        tone={section.warning ? "warning" : "muted"}
         tracking="subtle"
        >
         {section.label}
@@ -74,7 +53,7 @@ export function NotebookDeepDive({ deepDive }: { deepDive: NotebookDeepDive }) {
        <Typography as="p" variant="bodySmall" tone="secondary" weight="medium" leading="compact">
         {deepDive[section.key]}
        </Typography>
-      </div>
+      </section>
      ))}
     </div>
     <div className="flex flex-wrap gap-1.5">

@@ -1,0 +1,73 @@
+{
+ "page": {
+  "title": "Learning home",
+  "description": "Continue your current lesson, review what needs attention, and return to recently used content.",
+  "overviewAria": "Learning overview",
+  "loading": "Loading learning home"
+ },
+ "continueLearning": {
+  "title": "Continue learning",
+  "description": "Return to the exact lesson and content you were following.",
+  "recentLesson": "Recently studied",
+  "startHanziHome": "Start HanziHome",
+  "lesson": "Lesson {number}: {title}",
+  "unavailable": "No lesson is available yet."
+ },
+ "modules": {
+  "overview": "Overview",
+  "lessonText": "Lesson text",
+  "practice": "Practice",
+  "listening": "Listening",
+  "dictation": "Dictation",
+  "script": "Script",
+  "notes": "Notes",
+  "vocab": "Vocabulary",
+  "grammar": "Grammar",
+  "radicals": "Radicals",
+  "review": "Review"
+ },
+ "pulse": {
+  "title": "Learning pulse",
+  "description": "Signals that need attention in your current progress.",
+  "openSrs": "Open SRS",
+  "reviewCount": "Learning / difficult",
+  "knownCount": "Known",
+  "reviewedTodayCount": "Reviewed today",
+  "bookmarkedCount": "Bookmarked",
+  "srsDueCount": "SRS due",
+  "learningLoopDueCount": "Learning Loop due",
+  "readerCompletedCount": "Reader completed",
+  "tracked": "{count} items have a learning status. The first group contains items being learned or marked difficult; it is not the SRS due schedule.",
+  "empty": "There is no progress to summarize yet. Start learning or mark a status and the dashboard will update automatically.",
+  "unavailable": "The SRS, Learning Loop, and Reader overview could not be loaded. Current learning progress is still shown."
+ },
+ "activity": {
+  "title": "Recent activity",
+  "description": "Items you recently reviewed and their recorded results.",
+  "results": {
+   "known": "Known",
+   "hard": "Difficult",
+   "again": "Review again"
+  },
+  "kinds": {
+   "vocab": "Vocabulary",
+   "grammar": "Grammar",
+   "radical": "Radical"
+  },
+  "fallbackLabels": {
+   "vocab": "Reviewed vocabulary",
+   "grammar": "Reviewed grammar point",
+   "radical": "Reviewed radical"
+  },
+  "empty": "No recent reviews yet. Activity will appear here after you grade a flashcard."
+ },
+ "notes": {
+  "title": "Recently updated notes",
+  "description": "Continue the notes you used recently.",
+  "viewAll": "View all",
+  "untitled": "Untitled note",
+  "emptyTitle": "No recent notes",
+  "emptyDescription": "Create a note when you want to keep something from your studies.",
+  "create": "Create note"
+ }
+}

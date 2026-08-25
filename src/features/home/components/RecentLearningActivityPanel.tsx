@@ -1,7 +1,6 @@
 import type { ComponentProps } from "react";
-import { formatDistanceToNow } from "date-fns";
-import { vi } from "date-fns/locale";
 import { History } from "lucide-react";
+import { useFormatter, useNow, useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -9,12 +8,6 @@ import { IconTile } from "@/components/ui/icon-tile";
 import { Typography } from "@/components/ui/typography";
 import { HomeSectionHeader } from "@/features/home/components/HomePrimitives";
 import type { HomeDashboardModel } from "@/features/home/types";
-
-const resultLabels = {
- known: "Đã biết",
- hard: "Còn khó",
- again: "Ôn lại",
-} satisfies Record<HomeDashboardModel["recentActivity"][number]["result"], string>;
 
 const resultVariants = {
  known: "success",
@@ -30,13 +23,22 @@ export function RecentLearningActivityPanel({
 }: {
  items: HomeDashboardModel["recentActivity"];
 }) {
+ const format = useFormatter();
+ const now = useNow({ updateInterval: 60_000 });
+ const t = useTranslations("Home");
+ const resultLabels = {
+  known: t("activity.results.known"),
+  hard: t("activity.results.hard"),
+  again: t("activity.results.again"),
+ } satisfies Record<HomeDashboardModel["recentActivity"][number]["result"], string>;
+
  return (
   <section aria-labelledby="recent-learning-activity-title">
    <Card variant="section" padding="lg" className="grid gap-4">
     <HomeSectionHeader
      id="recent-learning-activity-title"
-     title="Hoạt động gần đây"
-     description="Những mục bạn vừa ôn và kết quả đã ghi nhận."
+     title={t("activity.title")}
+     description={t("activity.description")}
     />
 
     {items.length > 0 ? (
@@ -52,8 +54,7 @@ export function RecentLearningActivityPanel({
            {item.label}
           </Typography>
           <Typography as="p" variant="caption" tone="muted">
-           {item.kindLabel} ·{" "}
-           {formatDistanceToNow(new Date(item.answeredAt), { addSuffix: true, locale: vi })}
+           {item.kindLabel} · {format.relativeTime(new Date(item.answeredAt), { now })}
           </Typography>
          </div>
          <Badge
@@ -72,7 +73,7 @@ export function RecentLearningActivityPanel({
      </div>
     ) : (
      <Typography as="p" variant="bodySmall" tone="muted">
-      Chưa có lượt ôn gần đây. Khi bạn đánh giá flashcard, hoạt động sẽ xuất hiện ở đây.
+      {t("activity.empty")}
      </Typography>
     )}
    </Card>

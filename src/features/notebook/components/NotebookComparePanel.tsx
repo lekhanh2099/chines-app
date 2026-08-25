@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
 import { Separator } from "@/components/ui/separator";
 import type { NotebookComparisonItem, NotebookItem } from "@/features/notebook/types";
+import { useTranslations } from "next-intl";
 
 export function NotebookComparePanel({
  comparisons,
@@ -14,6 +15,7 @@ export function NotebookComparePanel({
  comparisons: NotebookComparisonItem[];
  items: NotebookItem[];
 }) {
+ const t = useTranslations("Notebook");
  const itemByTerm = new Map(items.map((item) => [item.term, item]));
 
  return (
@@ -42,7 +44,7 @@ export function NotebookComparePanel({
       {comparedItems.length > 0 ? (
        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {comparedItems.map((item) => (
-         <Card key={item.id} variant="subtle" padding="md" className="grid gap-2">
+         <section key={item.id} className="grid gap-2">
           <div className="flex items-baseline gap-2">
            <LearnerHanziText as="strong" size="display" tone="default">
             {item.term}
@@ -60,7 +62,7 @@ export function NotebookComparePanel({
           <Typography as="p" variant="code" tone="accent" weight="bold">
            {item.pattern}
           </Typography>
-         </Card>
+         </section>
         ))}
        </div>
       ) : null}
@@ -68,7 +70,7 @@ export function NotebookComparePanel({
       <Separator />
 
       <div className="grid gap-4 lg:grid-cols-2">
-       <section className="grid gap-2" aria-label="Quy tắc nhớ">
+       <section className="grid gap-2" aria-label={t("compare.memoryRule")}>
         <Typography
          as="p"
          variant="overline"
@@ -77,13 +79,13 @@ export function NotebookComparePanel({
          tracking="overline"
          transform="uppercase"
         >
-         Quy tắc nhớ
+         {t("compare.memoryRule")}
         </Typography>
         <Typography as="p" variant="bodySmall" tone="default" weight="semibold" leading="standard">
          {comparison.rule}
         </Typography>
        </section>
-       <section className="grid gap-2" aria-label="Bẫy thường gặp">
+       <section className="grid gap-2" aria-label={t("compare.commonTrap")}>
         <Typography
          as="p"
          variant="overline"
@@ -94,7 +96,7 @@ export function NotebookComparePanel({
          className="flex items-center gap-1.5"
         >
          <CircleAlert className="size-4" />
-         Bẫy thường gặp
+         {t("compare.commonTrap")}
         </Typography>
         <Typography as="p" variant="bodySmall" tone="default" weight="semibold" leading="standard">
          {comparison.danger}

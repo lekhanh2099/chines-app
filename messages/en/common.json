@@ -9,6 +9,10 @@
   "stop": "Stop"
  },
  "language": "Language",
+ "passwordVisibility": {
+  "show": "Show password",
+  "hide": "Hide password"
+ },
  "locales": {
   "vi": "Vietnamese",
   "en": "English",

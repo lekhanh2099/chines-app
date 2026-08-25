@@ -261,7 +261,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
 
  return (
   <PageContainer>
-   <main className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-5">
     <PageHeader
      eyebrow={t("eyebrow")}
      title={t("title")}
@@ -378,7 +378,7 @@ export async function DictionarySrsPage({ searchParams }: DictionarySrsPageProps
       ))}
      </section>
     ) : null}
-   </main>
+   </div>
   </PageContainer>
  );
 }

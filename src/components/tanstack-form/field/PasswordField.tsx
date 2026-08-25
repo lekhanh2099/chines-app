@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { IconButton } from "@/components/ui/icon-button";
 import { Input } from "@/components/ui/input";
+import { useTranslations } from "next-intl";
 
 type ControlledPasswordProps = {
  value?: never;
@@ -21,7 +22,9 @@ export function PasswordField({
 }: Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof ControlledPasswordProps> &
  Omit<FieldItemProps, "field">) {
  const field = useFieldContext<string>();
+ const t = useTranslations("Common.passwordVisibility");
  const [showPassword, setShowPassword] = useState(false);
+ const visibilityLabel = showPassword ? t("hide") : t("show");
 
  return (
   <FieldItem
@@ -47,8 +50,8 @@ export function PasswordField({
     <IconButton
      variant="ghost"
      size="lg"
-     aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
-     title={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+     aria-label={visibilityLabel}
+     title={visibilityLabel}
      onClick={() => setShowPassword((current) => !current)}
      className="absolute right-1 top-1/2 -translate-y-1/2"
     >

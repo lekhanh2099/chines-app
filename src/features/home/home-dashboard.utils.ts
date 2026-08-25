@@ -1,18 +1,9 @@
-import { reviewAttemptAnswerSchema } from "@/features/hanzihome/practice/review-attempt";
+import {
+ reviewAttemptAnswerSchema,
+ type ReviewAttemptAnswer,
+} from "@/features/hanzihome/practice/review-attempt";
 import type { PracticeAttemptRow } from "@/features/hanzihome/reader/reader-state.schemas";
 import type { HomeRecentActivityItem } from "@/features/home/types";
-
-const fallbackLabelByType = {
- vocab: "Từ vựng đã ôn",
- grammar: "Điểm ngữ pháp đã ôn",
- radical: "Bộ thủ đã ôn",
-};
-
-const kindLabelByType = {
- vocab: "Từ vựng",
- grammar: "Ngữ pháp",
- radical: "Bộ thủ",
-};
 
 export type HomeReviewEvidence = {
  key: string;
@@ -24,6 +15,10 @@ export type HomeReviewEvidence = {
 
 export function projectHomeReviewEvidence(
  attempts: readonly PracticeAttemptRow[],
+ labels: {
+  fallback: Record<ReviewAttemptAnswer["itemType"], string>;
+  kind: Record<ReviewAttemptAnswer["itemType"], string>;
+ },
 ): HomeReviewEvidence[] {
  const evidence: HomeReviewEvidence[] = [];
 
@@ -34,8 +29,8 @@ export function projectHomeReviewEvidence(
   const answer = parsed.data;
   evidence.push({
    key: attempt.id,
-   label: answer.label?.trim() || fallbackLabelByType[answer.itemType],
-   kindLabel: kindLabelByType[answer.itemType],
+   label: answer.label?.trim() || labels.fallback[answer.itemType],
+   kindLabel: labels.kind[answer.itemType],
    result: answer.result,
    answeredAt: attempt.created_at,
   });
@@ -46,6 +41,10 @@ export function projectHomeReviewEvidence(
 
 export function buildHomeRecentActivity(
  attempts: readonly PracticeAttemptRow[],
+ labels: {
+  fallback: Record<ReviewAttemptAnswer["itemType"], string>;
+  kind: Record<ReviewAttemptAnswer["itemType"], string>;
+ },
 ): HomeRecentActivityItem[] {
- return projectHomeReviewEvidence(attempts).slice(0, 4);
+ return projectHomeReviewEvidence(attempts, labels).slice(0, 4);
 }

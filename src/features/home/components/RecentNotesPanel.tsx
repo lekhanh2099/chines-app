@@ -1,7 +1,6 @@
 import { Typography } from "@/components/ui/typography";
-import { formatDistanceToNow } from "date-fns";
-import { vi } from "date-fns/locale";
 import { Clock3, FileText } from "lucide-react";
+import { useFormatter, useNow, useTranslations } from "next-intl";
 
 import { EmptyState } from "@/components/patterns/empty-state";
 import { Button } from "@/components/ui/button";
@@ -12,17 +11,21 @@ import type { NoteListItem } from "@/services/notes.service";
 import { Link } from "@/i18n/navigation";
 
 export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
+ const format = useFormatter();
+ const now = useNow({ updateInterval: 60_000 });
+ const t = useTranslations("Home");
+
  return (
   <section aria-labelledby="recent-notes-title">
    <Card variant="section" padding="lg" className="grid gap-4">
     <HomeSectionHeader
      id="recent-notes-title"
-     title="Ghi chú mới cập nhật"
-     description="Tiếp tục các note đang dùng gần đây."
+     title={t("notes.title")}
+     description={t("notes.description")}
      action={
       <Button variant="link" size="inline" asChild>
        <Link href="/notes" prefetch={false}>
-        Xem tất cả
+        {t("notes.viewAll")}
        </Link>
       </Button>
      }
@@ -49,7 +52,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
           stateTone="groupAccent"
           className="block"
          >
-          {note.title || "Ghi chú chưa đặt tên"}
+          {note.title || t("notes.untitled")}
          </Typography>
          <Typography
           variant="caption"
@@ -58,7 +61,7 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
           className="flex items-center gap-1"
          >
           <Clock3 className="size-3" />
-          {formatDistanceToNow(new Date(note.updated_at), { addSuffix: true, locale: vi })}
+          {format.relativeTime(new Date(note.updated_at), { now })}
          </Typography>
         </span>
 
@@ -69,12 +72,12 @@ export function RecentNotesPanel({ notes }: { notes: NoteListItem[] }) {
     ) : (
      <EmptyState
       size="compact"
-      title="Chưa có ghi chú gần đây"
-      description="Tạo một ghi chú khi cần giữ lại nội dung đang học."
+      title={t("notes.emptyTitle")}
+      description={t("notes.emptyDescription")}
       actions={
        <Button asChild size="compact">
         <Link href="/notes?action=new" prefetch={false}>
-         Tạo ghi chú
+         {t("notes.create")}
         </Link>
        </Button>
       }

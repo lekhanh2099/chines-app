@@ -1,0 +1,47 @@
+{
+ "summary": "{terms} items · {groups} groups · {comparisons} pairs",
+ "toolbar": {
+  "views": {
+   "cards": "Study cards",
+   "cardsCompact": "Cards",
+   "compare": "Compare",
+   "matrix": "Overview",
+   "matrixCompact": "Table"
+  },
+  "all": "All",
+  "viewAria": "Notebook view",
+  "searchLabel": "Search the notebook",
+  "searchPlaceholder": "Search: 只要, zhiyao, only if, contrary to expectations...",
+  "searchPlaceholderCompact": "Search: 只要, zhiyao, only if...",
+  "filters": "Filters"
+ },
+ "empty": {
+  "title": "No matching items",
+  "description": "Try another keyword or choose a different function group."
+ },
+ "matrix": {
+  "term": "Term",
+  "essence": "Core meaning",
+  "pattern": "Pattern",
+  "use": "Use when",
+  "avoid": "Avoid"
+ },
+ "guide": {
+  "title": "How to identify items in {section}",
+  "description": "Identify the function and position first, then compare the Vietnamese meaning.",
+  "step": "Step {number}",
+  "quickLookup": "Quick lookup by sentence intent",
+  "open": "Open",
+  "close": "Close"
+ },
+ "term": { "essence": "Core meaning", "pattern": "Pattern", "use": "Use when", "avoid": "Avoid" },
+ "compare": { "memoryRule": "Memory rule", "commonTrap": "Common trap" },
+ "deepDive": {
+  "summary": "Nuance · position · error analysis",
+  "instruction": "Read along four axes: <strong>core meaning → sentence position → selection criteria → common traps</strong>. Do not learn this item through a single Vietnamese translation.",
+  "why": "Core meaning / nuance",
+  "position": "Position / structure",
+  "decision": "Selection criteria",
+  "mistake": "Common trap"
+ }
+}

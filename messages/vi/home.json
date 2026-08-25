@@ -1,0 +1,73 @@
+{
+ "page": {
+  "title": "Trang học",
+  "description": "Tiếp tục bài đang học, xem phần cần ôn và quay lại những nội dung vừa dùng.",
+  "overviewAria": "Tổng quan học tập",
+  "loading": "Đang tải trang học"
+ },
+ "continueLearning": {
+  "title": "Học tiếp",
+  "description": "Quay lại đúng bài và nội dung bạn đang theo dõi.",
+  "recentLesson": "Bài vừa học",
+  "startHanziHome": "Bắt đầu HanziHome",
+  "lesson": "Bài {number}: {title}",
+  "unavailable": "Chưa có bài học khả dụng."
+ },
+ "modules": {
+  "overview": "Tổng quan",
+  "lessonText": "Bài khóa",
+  "practice": "Bài tập",
+  "listening": "Luyện nghe",
+  "dictation": "Nghe chép",
+  "script": "Script",
+  "notes": "Ghi chú",
+  "vocab": "Từ vựng",
+  "grammar": "Ngữ pháp",
+  "radicals": "Bộ thủ",
+  "review": "Ôn tập"
+ },
+ "pulse": {
+  "title": "Nhịp học",
+  "description": "Những tín hiệu cần chú ý từ tiến độ hiện tại.",
+  "openSrs": "Mở SRS",
+  "reviewCount": "Đang học / còn khó",
+  "knownCount": "Đã biết",
+  "reviewedTodayCount": "Đã ôn hôm nay",
+  "bookmarkedCount": "Đã đánh dấu",
+  "srsDueCount": "SRS đến hạn",
+  "learningLoopDueCount": "Learning Loop đến hạn",
+  "readerCompletedCount": "Reader đã hoàn thành",
+  "tracked": "{count} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.",
+  "empty": "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật.",
+  "unavailable": "Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị."
+ },
+ "activity": {
+  "title": "Hoạt động gần đây",
+  "description": "Những mục bạn vừa ôn và kết quả đã ghi nhận.",
+  "results": {
+   "known": "Đã biết",
+   "hard": "Còn khó",
+   "again": "Ôn lại"
+  },
+  "kinds": {
+   "vocab": "Từ vựng",
+   "grammar": "Ngữ pháp",
+   "radical": "Bộ thủ"
+  },
+  "fallbackLabels": {
+   "vocab": "Từ vựng đã ôn",
+   "grammar": "Điểm ngữ pháp đã ôn",
+   "radical": "Bộ thủ đã ôn"
+  },
+  "empty": "Chưa có lượt ôn gần đây. Khi bạn đánh giá flashcard, hoạt động sẽ xuất hiện ở đây."
+ },
+ "notes": {
+  "title": "Ghi chú mới cập nhật",
+  "description": "Tiếp tục các note đang dùng gần đây.",
+  "viewAll": "Xem tất cả",
+  "untitled": "Ghi chú chưa đặt tên",
+  "emptyTitle": "Chưa có ghi chú gần đây",
+  "emptyDescription": "Tạo một ghi chú khi cần giữ lại nội dung đang học.",
+  "create": "Tạo ghi chú"
+ }
+}

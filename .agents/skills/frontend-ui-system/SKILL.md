@@ -4,7 +4,7 @@ description: Design, implement, refactor, audit, or review UI and UX in chines-a
 compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
-  version: "3.15"
+  version: "3.16"
 ---
 
 # Frontend UI System
@@ -71,6 +71,33 @@ Business/data invariants:
 ```
 
 Do not preserve old JSX merely because it already exists. Do not change flow merely because another layout looks cleaner.
+
+For a broad visual redesign, also state one short design read before proposing
+changes:
+
+```text
+Surface and mode: targeted evolution | approved overhaul
+Primary learner and session context:
+Existing brand language and assets:
+Reference signals and local anti-references:
+Visual scope the user actually authorized:
+```
+
+Start from `PRODUCT.md`, the current rendered surface and existing brand assets.
+Do not infer permission for a new visual language from a request to polish one
+surface.
+
+Before changing an existing surface, record the contracts that must survive:
+
+- route structure, information architecture and navigation labels;
+- localized copy meaning and established product voice;
+- keyboard, focus, touch and contrast behavior that already works;
+- analytics event names, element identifiers and form field names/order;
+- public-page metadata, structured data and share/SEO contracts when present;
+- authoritative state, data and business invariants.
+
+Do not change these silently. A visual redesign does not imply copy, analytics,
+SEO, route, form or state-contract permission.
 
 ## 3. State ownership
 
@@ -329,6 +356,11 @@ Verify:
 
 Do not add ARIA to compensate for the wrong interaction model.
 
+Motion must communicate hierarchy, feedback, state change or spatial continuity.
+Do not add motion only to make a surface feel more premium. Preserve a static or
+instant reduced-motion path and keep animation outside authoritative product
+state.
+
 ## 15. Visual and theme system
 
 Preserve semantic tokens and shared surface grammar. Do not add feature-local hard-coded colors, arbitrary gradients/shadows, overlay z-index, duplicate active palettes or legacy glass recipes.
@@ -384,6 +416,12 @@ For changed interface copy, inspect the diff for raw JSX/prop strings and run
 `npm run test:run -- src/i18n/messages.test.ts`. Font samples, technical
 identifiers, test fixtures and course/lesson content data are not interface
 copy.
+
+Re-read every changed visible string in `vi`, `en` and `zh-CN` in its intended
+surface. Keep the meaning specific and consistent with the owning feature; do
+not invent metrics, testimonials, user activity, status or precision to make a
+screen look complete. Explicitly labelled test fixtures and sample content stay
+inside their existing test/demo boundary.
 
 For theme work, render at least Settings and one content-heavy learning surface in both light and dark mode, and switch through every palette. Verify canvas, base/subtle/raised surface separation, hover/selected coherence, neutral semantic-state independence, selected/focus/primary text emphasis and contrast separately.
 

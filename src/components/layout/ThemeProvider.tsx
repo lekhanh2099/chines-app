@@ -1,8 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
+import { createContext, useContext, useLayoutEffect, useState, useSyncExternalStore } from "react";
 
 import {
+ DEFAULT_THEME_MODE,
+ DEFAULT_THEME_PALETTE,
+ THEME_MODE_STORAGE_KEY,
+ THEME_PALETTE_STORAGE_KEY,
  ThemeModeSchema,
  ThemePaletteSchema,
  type Theme,
@@ -24,23 +28,18 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-const MODE_STORAGE_KEY = "chines-app-theme";
-const PALETTE_STORAGE_KEY = "chines-app-theme-palette";
-const DEFAULT_MODE = ThemeModeSchema.enum.system;
-const DEFAULT_PALETTE = ThemePaletteSchema.enum.editorial;
-
 function getInitialMode(): ThemeMode {
- if (typeof window === "undefined") return DEFAULT_MODE;
+ if (typeof window === "undefined") return DEFAULT_THEME_MODE;
 
- const stored = ThemeModeSchema.safeParse(localStorage.getItem(MODE_STORAGE_KEY));
- return stored.success ? stored.data : DEFAULT_MODE;
+ const stored = ThemeModeSchema.safeParse(localStorage.getItem(THEME_MODE_STORAGE_KEY));
+ return stored.success ? stored.data : DEFAULT_THEME_MODE;
 }
 
 function getInitialPalette(): ThemePalette {
- if (typeof window === "undefined") return DEFAULT_PALETTE;
+ if (typeof window === "undefined") return DEFAULT_THEME_PALETTE;
 
- const stored = ThemePaletteSchema.safeParse(localStorage.getItem(PALETTE_STORAGE_KEY));
- return stored.success ? stored.data : DEFAULT_PALETTE;
+ const stored = ThemePaletteSchema.safeParse(localStorage.getItem(THEME_PALETTE_STORAGE_KEY));
+ return stored.success ? stored.data : DEFAULT_THEME_PALETTE;
 }
 
 function subscribeSystemTheme(onStoreChange: () => void) {
@@ -70,15 +69,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
  );
  const theme: Theme = mode === ThemeModeSchema.enum.system ? systemTheme : mode;
 
- useEffect(() => {
+ useLayoutEffect(() => {
   const root = document.documentElement;
   root.setAttribute("data-theme", theme);
   root.setAttribute("data-theme-mode", mode);
   root.setAttribute("data-palette", palette);
   root.classList.toggle("dark", theme === "dark");
   root.setAttribute("data-theme-transitioning", "");
-  localStorage.setItem(MODE_STORAGE_KEY, mode);
-  localStorage.setItem(PALETTE_STORAGE_KEY, palette);
+  localStorage.setItem(THEME_MODE_STORAGE_KEY, mode);
+  localStorage.setItem(THEME_PALETTE_STORAGE_KEY, palette);
 
   const timer = window.setTimeout(() => {
    root.removeAttribute("data-theme-transitioning");

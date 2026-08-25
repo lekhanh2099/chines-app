@@ -8,8 +8,10 @@ import { Separator } from "@/components/ui/separator";
 import { NotebookDeepDive } from "@/features/notebook/components/NotebookDeepDive";
 import { getNotebookDeepDive } from "@/features/notebook/data/notebookDeepDiveData";
 import type { NotebookItem } from "@/features/notebook/types";
+import { useTranslations } from "next-intl";
 
 export function NotebookTermCard({ item }: { item: NotebookItem }) {
+ const t = useTranslations("Notebook");
  const deepDive = getNotebookDeepDive(item);
 
  return (
@@ -37,7 +39,7 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
     </div>
    </div>
 
-   <section className="grid gap-2" aria-label="Bản chất">
+   <section className="grid gap-2" aria-label={t("term.essence")}>
     <Typography
      as="div"
      variant="overline"
@@ -48,14 +50,14 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
      className="flex items-center gap-2"
     >
      <Sparkles className="size-4" />
-     Bản chất
+     {t("term.essence")}
     </Typography>
     <Typography as="p" tone="default" weight="semibold" leading="standard">
      {item.essence}
     </Typography>
    </section>
 
-   <section className="grid gap-2" aria-label="Công thức">
+   <section className="grid gap-2" aria-label={t("term.pattern")}>
     <Typography
      as="p"
      variant="overline"
@@ -64,17 +66,22 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
      tracking="loose"
      transform="uppercase"
     >
-     Công thức
+     {t("term.pattern")}
     </Typography>
-    <Card variant="subtle" padding="md">
-     <Typography as="p" lang="zh-CN" variant="code" tone="accent" weight="bold">
-      {item.pattern}
-     </Typography>
-    </Card>
+    <Typography
+     as="p"
+     lang="zh-CN"
+     variant="code"
+     tone="accent"
+     weight="bold"
+     wrapping="breakWords"
+    >
+     {item.pattern}
+    </Typography>
    </section>
 
    <div className="grid gap-4 sm:grid-cols-2">
-    <section className="grid gap-2" aria-label="Dùng khi">
+    <section className="grid gap-2" aria-label={t("term.use")}>
      <Typography
       as="p"
       variant="overline"
@@ -83,13 +90,13 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
       tracking="overline"
       transform="uppercase"
      >
-      Dùng khi
+      {t("term.use")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="secondary" weight="medium" leading="standard">
       {item.use}
      </Typography>
     </section>
-    <section className="grid gap-2" aria-label="Tránh">
+    <section className="grid gap-2" aria-label={t("term.avoid")}>
      <Typography
       as="p"
       variant="overline"
@@ -100,7 +107,7 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
       className="flex items-center gap-1.5"
      >
       <CircleAlert className="size-4" />
-      Tránh
+      {t("term.avoid")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="secondary" weight="medium" leading="standard">
       {item.avoid}
@@ -108,6 +115,7 @@ export function NotebookTermCard({ item }: { item: NotebookItem }) {
     </section>
    </div>
 
+   <Separator />
    <NotebookDeepDive deepDive={deepDive} />
 
    <Separator />

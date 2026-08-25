@@ -1,0 +1,47 @@
+{
+ "summary": "{terms} mục · {groups} nhóm · {comparisons} cặp",
+ "toolbar": {
+  "views": {
+   "cards": "Thẻ học",
+   "cardsCompact": "Thẻ",
+   "compare": "So sánh",
+   "matrix": "Tổng hợp",
+   "matrixCompact": "Bảng"
+  },
+  "all": "Tất cả",
+  "viewAria": "Kiểu hiển thị sổ tay",
+  "searchLabel": "Tìm trong sổ tay",
+  "searchPlaceholder": "Tìm: 只要, zhiyao, chỉ cần, trái dự đoán...",
+  "searchPlaceholderCompact": "Tìm: 只要, zhiyao, chỉ cần...",
+  "filters": "Bộ lọc"
+ },
+ "empty": {
+  "title": "Không tìm thấy mục phù hợp",
+  "description": "Thử đổi từ khóa hoặc chọn một nhóm chức năng khác."
+ },
+ "matrix": {
+  "term": "Từ",
+  "essence": "Bản chất",
+  "pattern": "Công thức",
+  "use": "Dùng khi",
+  "avoid": "Tránh"
+ },
+ "guide": {
+  "title": "Cách nhận diện trong {section}",
+  "description": "Xác định chức năng và vị trí trước, sau đó mới đối chiếu nghĩa tiếng Việt.",
+  "step": "Bước {number}",
+  "quickLookup": "Tra nhanh theo ý định câu",
+  "open": "Mở",
+  "close": "Đóng"
+ },
+ "term": { "essence": "Bản chất", "pattern": "Công thức", "use": "Dùng khi", "avoid": "Tránh" },
+ "compare": { "memoryRule": "Quy tắc nhớ", "commonTrap": "Bẫy thường gặp" },
+ "deepDive": {
+  "summary": "Phân tích sắc thái · vị trí · lỗi sai",
+  "instruction": "Đọc theo 4 trục: <strong>nghĩa lõi → vị trí câu → tiêu chí chọn → bẫy dễ sai</strong>. Mục này không học bằng một bản dịch tiếng Việt duy nhất.",
+  "why": "Nghĩa lõi / sắc thái",
+  "position": "Vị trí / cấu trúc",
+  "decision": "Tiêu chí chọn",
+  "mistake": "Bẫy dễ sai"
+ }
+}

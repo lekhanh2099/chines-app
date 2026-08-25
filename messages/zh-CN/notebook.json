@@ -1,0 +1,44 @@
+{
+ "summary": "{terms} 项 · {groups} 组 · {comparisons} 对",
+ "toolbar": {
+  "views": {
+   "cards": "学习卡片",
+   "cardsCompact": "卡片",
+   "compare": "对比",
+   "matrix": "汇总",
+   "matrixCompact": "表格"
+  },
+  "all": "全部",
+  "viewAria": "笔记本显示方式",
+  "searchLabel": "搜索笔记本",
+  "searchPlaceholder": "搜索：只要、zhǐyào、只需、出乎意料……",
+  "searchPlaceholderCompact": "搜索：只要、zhǐyào、只需……",
+  "filters": "筛选"
+ },
+ "empty": { "title": "没有匹配的项目", "description": "请更换关键词或选择其他功能分组。" },
+ "matrix": {
+  "term": "词语",
+  "essence": "核心含义",
+  "pattern": "结构",
+  "use": "适用情况",
+  "avoid": "避免"
+ },
+ "guide": {
+  "title": "如何识别{section}中的用法",
+  "description": "先确定功能和位置，再对照越南语含义。",
+  "step": "第 {number} 步",
+  "quickLookup": "按句子意图快速查找",
+  "open": "展开",
+  "close": "收起"
+ },
+ "term": { "essence": "核心含义", "pattern": "结构", "use": "适用情况", "avoid": "避免" },
+ "compare": { "memoryRule": "记忆规则", "commonTrap": "常见陷阱" },
+ "deepDive": {
+  "summary": "语义色彩 · 位置 · 错误分析",
+  "instruction": "请从四个维度理解：<strong>核心含义 → 句中位置 → 选择标准 → 常见陷阱</strong>。不要只用一个越南语译法来记忆。",
+  "why": "核心含义 / 语义色彩",
+  "position": "位置 / 结构",
+  "decision": "选择标准",
+  "mistake": "常见陷阱"
+ }
+}

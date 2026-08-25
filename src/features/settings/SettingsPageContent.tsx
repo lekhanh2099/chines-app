@@ -78,7 +78,7 @@ export function SettingsPageContent({
 
  return (
   <PageContainer>
-   <main className="grid w-full min-w-0 gap-5">
+   <div className="grid w-full min-w-0 gap-5">
     <PageHeader title={t("title")} description={t("description")} />
 
     <Tabs<z.infer<typeof SettingsSectionSchema>>
@@ -243,7 +243,7 @@ export function SettingsPageContent({
       </TabsContent>
      ) : null}
     </Tabs>
-   </main>
+   </div>
   </PageContainer>
  );
 }

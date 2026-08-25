@@ -4,11 +4,15 @@ import { Bookmark, CheckCircle2, FileText, History, Repeat2, Workflow } from "lu
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
+import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learningPulse"] }) {
+ const t = useTranslations("Home");
+
  return (
   <section aria-labelledby="home-learning-pulse-title">
    <Card variant="section" padding="lg" className="grid gap-5">
@@ -21,63 +25,76 @@ export function HomeLearningPulse({ pulse }: { pulse: HomeDashboardModel["learni
        tone="default"
        weight="black"
       >
-       Nhịp học
+       {t("pulse.title")}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       Những tín hiệu cần chú ý từ tiến độ hiện tại.
+       {t("pulse.description")}
       </Typography>
      </div>
      <Button variant="outline" size="toolbar" asChild>
       <Link href="/dictionary" prefetch={false}>
        <Repeat2 data-icon="inline-start" />
-       Mở SRS
+       {t("pulse.openSrs")}
       </Link>
      </Button>
     </div>
 
-    <div className="grid grid-cols-2 gap-5">
+    <div className="grid divide-y divide-border-default/70">
      <PulseStat
       icon={<Repeat2 />}
       value={pulse.reviewCount}
-      label="Đang học / còn khó"
+      label={t("pulse.reviewCount")}
       tone="warning"
      />
-     <PulseStat icon={<CheckCircle2 />} value={pulse.knownCount} label="Đã biết" tone="info" />
+     <PulseStat
+      icon={<Repeat2 />}
+      value={pulse.srsDueCount}
+      label={t("pulse.srsDueCount")}
+      tone="warning"
+     />
+     <PulseStat
+      icon={<Workflow />}
+      value={pulse.learningLoopDueCount}
+      label={t("pulse.learningLoopDueCount")}
+      tone="accent"
+     />
+    </div>
+
+    <Separator />
+
+    <div className="grid gap-x-5 gap-y-1 sm:grid-cols-2">
+     <PulseStat
+      icon={<CheckCircle2 />}
+      value={pulse.knownCount}
+      label={t("pulse.knownCount")}
+      tone="info"
+     />
      <PulseStat
       icon={<History />}
       value={pulse.reviewedTodayCount}
-      label="Đã ôn hôm nay"
+      label={t("pulse.reviewedTodayCount")}
       tone="accent"
      />
      <PulseStat
       icon={<Bookmark />}
       value={pulse.bookmarkedCount}
-      label="Đã đánh dấu"
+      label={t("pulse.bookmarkedCount")}
       tone="neutral"
-     />
-     <PulseStat icon={<Repeat2 />} value={pulse.srsDueCount} label="SRS đến hạn" tone="warning" />
-     <PulseStat
-      icon={<Workflow />}
-      value={pulse.learningLoopDueCount}
-      label="Learning Loop đến hạn"
-      tone="accent"
      />
      <PulseStat
       icon={<FileText />}
       value={`${pulse.readerCompletedCount}/${pulse.readerDocumentCount}`}
-      label="Reader đã hoàn thành"
+      label={t("pulse.readerCompletedCount")}
       tone="info"
      />
     </div>
 
     <Typography as="p" variant="caption" tone="muted">
-     {pulse.trackedCount > 0
-      ? `${pulse.trackedCount} mục đã có trạng thái học. Nhóm đầu gồm các mục đang học hoặc đang đánh dấu khó; đây không phải lịch đến hạn SRS.`
-      : "Chưa có tiến độ để tổng hợp. Bắt đầu học hoặc đánh dấu trạng thái để dashboard tự cập nhật."}
+     {pulse.trackedCount > 0 ? t("pulse.tracked", { count: pulse.trackedCount }) : t("pulse.empty")}
     </Typography>
     {pulse.overviewUnavailable ? (
      <Typography as="p" variant="caption" tone="danger">
-      Không tải được phần tổng quan SRS, Learning Loop và Reader. Tiến độ học hiện tại vẫn hiển thị.
+      {t("pulse.unavailable")}
      </Typography>
     ) : null}
    </Card>
@@ -97,18 +114,16 @@ function PulseStat({
  tone: NonNullable<ComponentProps<typeof IconTile>["tone"]>;
 }) {
  return (
-  <div className="flex min-w-0 items-start gap-3">
+  <div className="flex min-w-0 items-center gap-3 py-2 first:pt-0 last:pb-0">
    <IconTile size="sm" tone={tone}>
     {icon}
    </IconTile>
-   <div className="grid min-w-0 gap-0.5">
-    <Typography as="p" variant="sectionTitle" tone="default" weight="black">
-     {value}
-    </Typography>
-    <Typography as="p" variant="caption" tone="muted">
-     {label}
-    </Typography>
-   </div>
+   <Typography as="p" variant="caption" tone="muted" className="min-w-0 flex-1">
+    {label}
+   </Typography>
+   <Typography as="p" variant="label" tone="default" weight="black" className="shrink-0">
+    {value}
+   </Typography>
   </div>
  );
 }

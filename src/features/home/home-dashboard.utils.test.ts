@@ -3,6 +3,19 @@ import { describe, expect, it } from "vitest";
 import type { PracticeAttemptRow } from "@/features/hanzihome/reader/reader-state.schemas";
 import { buildHomeRecentActivity, projectHomeReviewEvidence } from "./home-dashboard.utils";
 
+const labels = {
+ fallback: {
+  vocab: "Từ vựng đã ôn",
+  grammar: "Điểm ngữ pháp đã ôn",
+  radical: "Bộ thủ đã ôn",
+ },
+ kind: {
+  vocab: "Từ vựng",
+  grammar: "Ngữ pháp",
+  radical: "Bộ thủ",
+ },
+};
+
 function reviewAttempt(input: {
  id: string;
  itemType: "vocab" | "grammar" | "radical";
@@ -50,7 +63,7 @@ describe("buildHomeRecentActivity", () => {
    }),
   ];
 
-  expect(buildHomeRecentActivity(attempts).map((item) => item.label)).toEqual([
+  expect(buildHomeRecentActivity(attempts, labels).map((item) => item.label)).toEqual([
    "只有……才……",
    "坚持",
   ]);
@@ -81,7 +94,7 @@ describe("buildHomeRecentActivity", () => {
    }),
   ];
 
-  expect(buildHomeRecentActivity(attempts).map((item) => item.label)).toEqual([
+  expect(buildHomeRecentActivity(attempts, labels).map((item) => item.label)).toEqual([
    "Bộ thủ đã ôn",
    "Điểm ngữ pháp đã ôn",
    "Từ vựng đã ôn",
@@ -100,7 +113,7 @@ describe("buildHomeRecentActivity", () => {
    }),
   );
 
-  expect(buildHomeRecentActivity(attempts).map((item) => item.label)).toEqual([
+  expect(buildHomeRecentActivity(attempts, labels).map((item) => item.label)).toEqual([
    "Từ 0",
    "Từ 1",
    "Từ 2",
@@ -119,6 +132,6 @@ describe("buildHomeRecentActivity", () => {
   const nonReview: PracticeAttemptRow = { ...valid, surface: "translation" };
   const malformed: PracticeAttemptRow = { ...valid, id: "bad", answer: { kind: "review" } };
 
-  expect(projectHomeReviewEvidence([nonReview, malformed, valid])).toHaveLength(1);
+  expect(projectHomeReviewEvidence([nonReview, malformed, valid], labels)).toHaveLength(1);
  });
 });

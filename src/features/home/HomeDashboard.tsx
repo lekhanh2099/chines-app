@@ -9,8 +9,10 @@ import { HomeLearningPulse } from "@/features/home/components/HomeLearningPulse"
 import { RecentLearningActivityPanel } from "@/features/home/components/RecentLearningActivityPanel";
 import { RecentNotesPanel } from "@/features/home/components/RecentNotesPanel";
 import { useHomeDashboard } from "@/features/home/hooks/useHomeDashboard";
+import { useTranslations } from "next-intl";
 
 export function HomeDashboard() {
+ const t = useTranslations("Home");
  const dashboard = useHomeDashboard();
 
  if (dashboard.isLoading) return <HomeDashboardSkeleton />;
@@ -18,10 +20,7 @@ export function HomeDashboard() {
  return (
   <PageContainer>
    <div className="grid w-full min-w-0 gap-4 sm:gap-5">
-    <PageHeader
-     title="Trang học"
-     description="Tiếp tục bài đang học, xem phần cần ôn và quay lại những nội dung vừa dùng."
-    />
+    <PageHeader title={t("page.title")} description={t("page.description")} />
 
     <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.75fr)] xl:items-start">
      <div className="grid min-w-0 gap-4 sm:gap-5">
@@ -32,7 +31,7 @@ export function HomeDashboard() {
 
      <aside
       className="grid min-w-0 gap-4 sm:gap-5 xl:sticky xl:top-4"
-      aria-label="Tổng quan học tập"
+      aria-label={t("page.overviewAria")}
      >
       <HomeLearningPulse pulse={dashboard.learningPulse} />
       <GlobalMemoryTipCard contentOnly showEmptyState className="w-full" />

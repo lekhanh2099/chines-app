@@ -78,7 +78,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     <DictionaryHeroSection viewModel={viewModel} />
 
     <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] 2xl:grid-cols-[minmax(0,1fr)_460px]">
-     <main className="flex min-w-0 flex-col gap-5">
+     <div className="flex min-w-0 flex-col gap-5">
       <DictionaryDocStructureSection viewModel={viewModel} />
       {viewModel.ai?.vn_trap || viewModel.ai?.common_mistakes || viewModel.ai?.confusion ? (
        <Card variant="subtle" padding="md">
@@ -91,7 +91,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
        </Card>
       ) : null}
       <DictionaryPersonalNoteSection viewModel={viewModel} />
-     </main>
+     </div>
 
      <aside className="flex min-w-0 flex-col gap-5 lg:sticky lg:top-5 lg:self-start">
       <DictionaryCharacterSidebar

@@ -9,6 +9,10 @@
   "stop": "Dừng"
  },
  "language": "Ngôn ngữ",
+ "passwordVisibility": {
+  "show": "Hiện mật khẩu",
+  "hide": "Ẩn mật khẩu"
+ },
  "locales": {
   "vi": "Tiếng Việt",
   "en": "English",

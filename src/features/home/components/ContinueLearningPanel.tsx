@@ -7,22 +7,11 @@ import { Typography } from "@/components/ui/typography";
 import { HomeArrowIcon } from "@/features/home/components/HomePrimitives";
 import type { HomeDashboardModel } from "@/features/home/types";
 import { Link } from "@/i18n/navigation";
-
-const moduleLabels = {
- overview: "Tổng quan",
- lessonText: "Bài khóa",
- practice: "Bài tập",
- listening: "Luyện nghe",
- dictation: "Nghe chép",
- script: "Script",
- notes: "Ghi chú",
- vocab: "Từ vựng",
- grammar: "Ngữ pháp",
- radicals: "Bộ thủ",
- review: "Ôn tập",
-};
+import { useTranslations } from "next-intl";
 
 export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["lesson"] }) {
+ const t = useTranslations("Home");
+
  return (
   <section aria-labelledby="continue-learning-title">
    {lesson ? (
@@ -39,7 +28,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          tracking="tight"
          className="block"
         >
-         Học tiếp
+         {t("continueLearning.title")}
         </Typography>
         <Typography
          as="span"
@@ -49,7 +38,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          leading="compact"
          className="block"
         >
-         Quay lại đúng bài và nội dung bạn đang theo dõi.
+         {t("continueLearning.description")}
         </Typography>
        </span>
        <HomeArrowIcon />
@@ -69,7 +58,9 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          transform="uppercase"
          className="block"
         >
-         {lesson.isRecent ? "Bài vừa học" : "Bắt đầu HanziHome"}
+         {lesson.isRecent
+          ? t("continueLearning.recentLesson")
+          : t("continueLearning.startHanziHome")}
         </Typography>
         <Typography
          variant="sectionTitle"
@@ -78,7 +69,10 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          clamp="one"
          className="block"
         >
-         Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+         {t("continueLearning.lesson", {
+          number: lesson.lessonNumber,
+          title: lesson.titleZh || lesson.title,
+         })}
         </Typography>
         <Typography
          variant="bodySmall"
@@ -87,7 +81,7 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
          clamp="one"
          className="block"
         >
-         {lesson.courseTitle} · {moduleLabels[lesson.module]}
+         {lesson.courseTitle} · {t(`modules.${lesson.module}`)}
         </Typography>
        </span>
       </span>
@@ -102,10 +96,10 @@ export function ContinueLearningPanel({ lesson }: { lesson: HomeDashboardModel["
       tone="default"
       weight="black"
      >
-      Học tiếp
+      {t("continueLearning.title")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted">
-      Chưa có bài học khả dụng.
+      {t("continueLearning.unavailable")}
      </Typography>
     </Card>
    )}

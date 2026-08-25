@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { PageContainer } from "@/components/layout/page-container";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +19,7 @@ import type { NotebookSectionId, NotebookViewMode } from "@/features/notebook/ty
 import { filterNotebookItems } from "@/features/notebook/utils/filterNotebookItems";
 
 export function NotebookPage() {
+ const t = useTranslations("Notebook");
  const [sectionId, setSectionId] = useState<NotebookSectionId>("conjunctions");
  const [groupId, setGroupId] = useState("all");
  const [query, setQuery] = useState("");
@@ -77,7 +79,11 @@ export function NotebookPage() {
        </Typography>
       </div>
       <Badge variant="purple" size="md">
-       {section.terms.length} mục · {section.groups.length} nhóm · {section.compares.length} cặp
+       {t("summary", {
+        terms: section.terms.length,
+        groups: section.groups.length,
+        comparisons: section.compares.length,
+       })}
       </Badge>
      </div>
      <NotebookSectionGuide section={section} />

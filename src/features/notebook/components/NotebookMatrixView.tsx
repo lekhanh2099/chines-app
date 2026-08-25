@@ -2,19 +2,22 @@ import { Typography } from "@/components/ui/typography";
 import { LearnerHanziText } from "@/components/patterns/learner-text";
 import { Card } from "@/components/ui/card";
 import type { NotebookItem } from "@/features/notebook/types";
+import { useTranslations } from "next-intl";
 
 export function NotebookMatrixView({ items }: { items: NotebookItem[] }) {
+ const t = useTranslations("Notebook");
+
  return (
   <Card variant="section" padding="none" className="overflow-hidden">
    <div className="overflow-x-auto">
     <table className="w-full min-w-[52rem] border-collapse text-left">
      <thead className="bg-bg-subtle/80">
       <tr className="text-xs font-black uppercase tracking-[0.14em] text-text-muted">
-       <th className="px-5 py-4">Từ</th>
-       <th className="px-5 py-4">Bản chất</th>
-       <th className="px-5 py-4">Công thức</th>
-       <th className="px-5 py-4">Dùng khi</th>
-       <th className="px-5 py-4">Tránh</th>
+       <th className="px-5 py-4">{t("matrix.term")}</th>
+       <th className="px-5 py-4">{t("matrix.essence")}</th>
+       <th className="px-5 py-4">{t("matrix.pattern")}</th>
+       <th className="px-5 py-4">{t("matrix.use")}</th>
+       <th className="px-5 py-4">{t("matrix.avoid")}</th>
       </tr>
      </thead>
      <tbody>

@@ -26,6 +26,8 @@ async function loadViMessages() {
   aiUsage,
   apiKeySetup,
   learningLoop,
+  home,
+  notebook,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -51,6 +53,8 @@ async function loadViMessages() {
   import("../../messages/vi/ai-usage.json"),
   import("../../messages/vi/api-key-setup.json"),
   import("../../messages/vi/learning-loop.json"),
+  import("../../messages/vi/home.json"),
+  import("../../messages/vi/notebook.json"),
  ]);
 
  return {
@@ -73,6 +77,8 @@ async function loadViMessages() {
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
   LearningLoop: learningLoop.default,
+  Home: home.default,
+  Notebook: notebook.default,
  };
 }
 
@@ -104,6 +110,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   aiUsage,
   apiKeySetup,
   learningLoop,
+  home,
+  notebook,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -129,6 +137,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/ai-usage.json"),
   import("../../messages/en/api-key-setup.json"),
   import("../../messages/en/learning-loop.json"),
+  import("../../messages/en/home.json"),
+  import("../../messages/en/notebook.json"),
  ]);
 
  return {
@@ -151,6 +161,8 @@ async function loadEnMessages(): Promise<AppMessages> {
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
   LearningLoop: learningLoop.default,
+  Home: home.default,
+  Notebook: notebook.default,
  };
 }
 
@@ -180,6 +192,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   aiUsage,
   apiKeySetup,
   learningLoop,
+  home,
+  notebook,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -205,6 +219,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/ai-usage.json"),
   import("../../messages/zh-CN/api-key-setup.json"),
   import("../../messages/zh-CN/learning-loop.json"),
+  import("../../messages/zh-CN/home.json"),
+  import("../../messages/zh-CN/notebook.json"),
  ]);
 
  return {
@@ -227,6 +243,8 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   AiUsage: aiUsage.default,
   ApiKeySetup: apiKeySetup.default,
   LearningLoop: learningLoop.default,
+  Home: home.default,
+  Notebook: notebook.default,
  };
 }
 

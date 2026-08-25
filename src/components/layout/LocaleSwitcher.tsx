@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import type { ComponentProps } from "react";
 
 import {
  Select,
@@ -13,7 +14,11 @@ import {
 import { appLocales, defaultAppLocale, isAppLocale, type AppLocale } from "@/i18n/config";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-export function LocaleSwitcher() {
+export function LocaleSwitcher({
+ size = "default",
+}: {
+ size?: ComponentProps<typeof SelectTrigger>["size"];
+}) {
  const locale = useLocale();
  const tCommon = useTranslations("Common");
  const tShell = useTranslations("Shell");
@@ -34,7 +39,7 @@ export function LocaleSwitcher() {
     if (isAppLocale(value)) changeLocale(value);
    }}
   >
-   <SelectTrigger width="full" size="sm" aria-label={tShell("localeSwitcher.label")}>
+   <SelectTrigger width="full" size={size} aria-label={tShell("localeSwitcher.label")}>
     <SelectValue />
    </SelectTrigger>
    <SelectContent position="popper" align="start">

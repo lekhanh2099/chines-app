@@ -2,7 +2,7 @@ import { PageContainer } from "@/components/layout/page-container";
 
 export function DictionarySrsSkeleton() {
  return (
-  <main className="hanzihome-static-page" aria-busy="true" aria-live="polite">
+  <div className="hanzihome-static-page" aria-busy="true" aria-live="polite">
    <div className="grid min-w-0 animate-pulse gap-4">
     <div className="h-36 rounded-xl border border-border-default bg-bg-card" />
     <div className="h-20 rounded-xl border border-border-default bg-bg-card" />
@@ -26,7 +26,7 @@ export function DictionarySrsSkeleton() {
     </div>
    </div>
    <span className="sr-only">Đang tải kho SRS từ vựng</span>
-  </main>
+  </div>
  );
 }
 

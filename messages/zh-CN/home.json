@@ -1,0 +1,73 @@
+{
+ "page": {
+  "title": "学习主页",
+  "description": "继续当前课程、查看需要复习的内容，并返回最近使用过的学习资料。",
+  "overviewAria": "学习概览",
+  "loading": "正在加载学习主页"
+ },
+ "continueLearning": {
+  "title": "继续学习",
+  "description": "返回你上次学习的课程和具体内容。",
+  "recentLesson": "最近学习",
+  "startHanziHome": "开始使用 HanziHome",
+  "lesson": "第 {number} 课：{title}",
+  "unavailable": "目前没有可用课程。"
+ },
+ "modules": {
+  "overview": "概览",
+  "lessonText": "课文",
+  "practice": "练习",
+  "listening": "听力练习",
+  "dictation": "听写",
+  "script": "原文",
+  "notes": "笔记",
+  "vocab": "词汇",
+  "grammar": "语法",
+  "radicals": "部首",
+  "review": "复习"
+ },
+ "pulse": {
+  "title": "学习动态",
+  "description": "当前进度中需要关注的信号。",
+  "openSrs": "打开 SRS",
+  "reviewCount": "学习中 / 较难",
+  "knownCount": "已掌握",
+  "reviewedTodayCount": "今日已复习",
+  "bookmarkedCount": "已收藏",
+  "srsDueCount": "SRS 待复习",
+  "learningLoopDueCount": "Learning Loop 待完成",
+  "readerCompletedCount": "Reader 已完成",
+  "tracked": "已有 {count} 个项目记录了学习状态。第一组包含正在学习或标记为较难的项目，并不代表 SRS 到期计划。",
+  "empty": "目前没有可汇总的进度。开始学习或标记状态后，主页会自动更新。",
+  "unavailable": "无法加载 SRS、Learning Loop 和 Reader 概览，但当前学习进度仍会显示。"
+ },
+ "activity": {
+  "title": "最近活动",
+  "description": "你最近复习的项目及记录结果。",
+  "results": {
+   "known": "已掌握",
+   "hard": "较难",
+   "again": "再次复习"
+  },
+  "kinds": {
+   "vocab": "词汇",
+   "grammar": "语法",
+   "radical": "部首"
+  },
+  "fallbackLabels": {
+   "vocab": "已复习词汇",
+   "grammar": "已复习语法点",
+   "radical": "已复习部首"
+  },
+  "empty": "还没有最近的复习记录。完成闪卡评分后，活动会显示在这里。"
+ },
+ "notes": {
+  "title": "最近更新的笔记",
+  "description": "继续查看最近使用的笔记。",
+  "viewAll": "查看全部",
+  "untitled": "未命名笔记",
+  "emptyTitle": "没有最近笔记",
+  "emptyDescription": "需要保存学习内容时，可以创建一条笔记。",
+  "create": "创建笔记"
+ }
+}

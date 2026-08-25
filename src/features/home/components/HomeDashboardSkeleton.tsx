@@ -1,13 +1,17 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 export function HomeDashboardSkeleton() {
+ const t = useTranslations("Home");
+
  return (
   <PageContainer>
    <div
     className="grid w-full min-w-0 gap-4 sm:gap-5"
     aria-busy="true"
-    aria-label="Đang tải trang học"
+    aria-label={t("page.loading")}
    >
     <div className="grid min-w-0 animate-pulse gap-3">
      <div className="h-8 w-48 rounded-lg bg-bg-subtle sm:h-9" />
@@ -44,14 +48,22 @@ export function HomeDashboardSkeleton() {
         </div>
         <div className="h-9 w-20 rounded-lg bg-bg-subtle" />
        </div>
-       <div className="grid grid-cols-2 gap-5">
-        {Array.from({ length: 4 }, (_, index) => (
-         <div key={index} className="flex gap-3">
+       <div className="grid divide-y divide-border-default/70">
+        {Array.from({ length: 3 }, (_, index) => (
+         <div key={index} className="flex items-center gap-3 py-2 first:pt-0 last:pb-0">
           <div className="size-8 rounded-lg bg-bg-subtle" />
-          <div className="grid gap-1">
-           <div className="h-5 w-8 rounded-md bg-bg-subtle" />
-           <div className="h-3 w-24 rounded-full bg-bg-subtle" />
-          </div>
+          <div className="h-3 w-24 rounded-full bg-bg-subtle" />
+          <div className="ml-auto h-4 w-8 rounded-md bg-bg-subtle" />
+         </div>
+        ))}
+       </div>
+       <Separator />
+       <div className="grid gap-x-5 gap-y-1 sm:grid-cols-2">
+        {Array.from({ length: 4 }, (_, index) => (
+         <div key={index} className="flex items-center gap-3 py-2 first:pt-0 last:pb-0">
+          <div className="size-8 rounded-lg bg-bg-subtle" />
+          <div className="h-3 w-24 rounded-full bg-bg-subtle" />
+          <div className="ml-auto h-4 w-8 rounded-md bg-bg-subtle" />
          </div>
         ))}
        </div>

@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { startOfToday } from "date-fns";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 import { useHanziHomeCatalogQuery } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
@@ -18,6 +19,7 @@ import { buildHomeRecentActivity } from "@/features/home/home-dashboard.utils";
 import type { HomeDashboardModel } from "@/features/home/types";
 
 export function useHomeDashboard(): HomeDashboardModel {
+ const t = useTranslations("Home");
  const { userId, isResolved } = useClientSession();
  const catalogQuery = useHanziHomeCatalogQuery({ includeLessons: true });
  const catalog = catalogQuery.data;
@@ -76,7 +78,18 @@ export function useHomeDashboard(): HomeDashboardModel {
    (total, items) => total + (items?.length ?? 0),
    0,
   );
-  const recentActivity = buildHomeRecentActivity(attempts);
+  const recentActivity = buildHomeRecentActivity(attempts, {
+   fallback: {
+    vocab: t("activity.fallbackLabels.vocab"),
+    grammar: t("activity.fallbackLabels.grammar"),
+    radical: t("activity.fallbackLabels.radical"),
+   },
+   kind: {
+    vocab: t("activity.kinds.vocab"),
+    grammar: t("activity.kinds.grammar"),
+    radical: t("activity.kinds.radical"),
+   },
+  });
 
   return {
    lesson:
@@ -130,5 +143,6 @@ export function useHomeDashboard(): HomeDashboardModel {
   reviewTodayCountQuery.data,
   reviewTodayCountQuery.isPending,
   userId,
+  t,
  ]);
 }

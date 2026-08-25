@@ -187,13 +187,13 @@ export default function LoginPage() {
  });
 
  return (
-  <main className="flex min-h-dvh flex-col justify-center gap-8 bg-bg-primary px-4 py-[max(3rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
+  <main className="flex min-h-dvh flex-col justify-center gap-4 bg-bg-primary px-4 py-[max(1.5rem,env(safe-area-inset-top))] sm:px-6 lg:px-8">
    <div className="grid justify-items-center gap-3 sm:mx-auto sm:w-full sm:max-w-md">
     <div className="app-brand-gradient grid size-12 place-items-center rounded-xl shadow-theme-sm">
      <BookOpen className="size-6" aria-hidden="true" />
     </div>
     <Typography
-     as="h2"
+     as="h1"
      variant="sectionTitle"
      tone="default"
      weight="bold"
@@ -209,7 +209,7 @@ export default function LoginPage() {
    </div>
 
    <div className="sm:mx-auto sm:w-full sm:max-w-md">
-    <div className="grid gap-6 border border-border-default bg-bg-card px-4 py-8 sm:rounded-xl sm:px-10">
+    <div className="grid gap-5 border border-border-default bg-bg-card px-4 py-6 sm:rounded-xl sm:px-8">
      <Button
       type="button"
       variant="outline"
@@ -228,7 +228,7 @@ export default function LoginPage() {
      </div>
 
      <form
-      className="flex flex-col gap-6"
+      className="flex flex-col gap-5"
       onSubmit={(e) => {
        e.preventDefault();
        e.stopPropagation();
@@ -293,7 +293,7 @@ export default function LoginPage() {
        )}
       </form.Subscribe>
 
-      <div className="flex flex-col gap-2 border-t border-border-default pt-6 text-center text-text-muted">
+      <div className="flex flex-col gap-2 border-t border-border-default pt-5 text-center text-text-muted">
        <Typography as="p">
         {isLogin ? t("switchMode.needAccount") : t("switchMode.haveAccount")}{" "}
         <Button

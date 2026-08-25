@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
  ChevronDown,
  ChevronUp,
@@ -51,13 +52,29 @@ export function NotebookToolbar({
  onQueryChange: (query: string) => void;
  onViewModeChange: (mode: NotebookViewMode) => void;
 }) {
+ const t = useTranslations("Notebook");
  const toolbarRef = useRef<HTMLDivElement>(null);
  const [isCompact, setIsCompact] = useState(false);
  const [filtersOpen, setFiltersOpen] = useState(false);
  const views = [
-  { key: "cards", label: "Thẻ học", compactLabel: "Thẻ", icon: Grid2X2 },
-  { key: "compare", label: "So sánh", compactLabel: "So sánh", icon: GitCompareArrows },
-  { key: "matrix", label: "Tổng hợp", compactLabel: "Bảng", icon: TableProperties },
+  {
+   key: "cards",
+   label: t("toolbar.views.cards"),
+   compactLabel: t("toolbar.views.cardsCompact"),
+   icon: Grid2X2,
+  },
+  {
+   key: "compare",
+   label: t("toolbar.views.compare"),
+   compactLabel: t("toolbar.views.compare"),
+   icon: GitCompareArrows,
+  },
+  {
+   key: "matrix",
+   label: t("toolbar.views.matrix"),
+   compactLabel: t("toolbar.views.matrixCompact"),
+   icon: TableProperties,
+  },
  ] satisfies Array<{
   key: NotebookViewMode;
   label: string;
@@ -66,7 +83,7 @@ export function NotebookToolbar({
  }>;
  const activeSectionLabel = data[sectionId].label;
  const activeGroupLabel =
-  groupId === "all" ? "Tất cả" : groups.find((group) => group.id === groupId)?.name;
+  groupId === "all" ? t("toolbar.all") : groups.find((group) => group.id === groupId)?.name;
 
  useEffect(() => {
   const toolbar = toolbarRef.current;
@@ -120,7 +137,7 @@ export function NotebookToolbar({
     onClick={() => onGroupChange("all")}
     className="shrink-0"
    >
-    Tất cả
+    {t("toolbar.all")}
    </Button>
    {groups.map((group) => (
     <Button
@@ -144,7 +161,7 @@ export function NotebookToolbar({
    items={views}
    onChange={onViewModeChange}
    density={isCompact ? "toolbar" : "touch"}
-   aria-label="Kiểu hiển thị sổ tay"
+   aria-label={t("toolbar.viewAria")}
   />
  );
 
@@ -159,11 +176,11 @@ export function NotebookToolbar({
     <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center">
      <Label variant="label" className="relative block min-w-0 flex-1">
       <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
-      <span className="sr-only">Tìm trong sổ tay</span>
+      <span className="sr-only">{t("toolbar.searchLabel")}</span>
       <Input
        value={query}
        onChange={(event) => onQueryChange(event.target.value)}
-       placeholder="Tìm: 只要, zhiyao, chỉ cần..."
+       placeholder={t("toolbar.searchPlaceholderCompact")}
        density="compact"
        adornment="start"
        className="w-full"
@@ -183,7 +200,7 @@ export function NotebookToolbar({
        {activeSectionLabel}
        {activeGroupLabel ? ` · ${activeGroupLabel}` : ""}
       </span>
-      <span className="sm:hidden">Bộ lọc</span>
+      <span className="sm:hidden">{t("toolbar.filters")}</span>
       {filtersOpen ? <ChevronUp /> : <ChevronDown />}
      </Button>
     </div>
@@ -216,11 +233,11 @@ export function NotebookToolbar({
    <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
     <Label variant="label" className="relative block min-w-0 flex-1">
      <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-text-muted" />
-     <span className="sr-only">Tìm trong sổ tay</span>
+     <span className="sr-only">{t("toolbar.searchLabel")}</span>
      <Input
       value={query}
       onChange={(event) => onQueryChange(event.target.value)}
-      placeholder="Tìm: 只要, zhiyao, chỉ cần, trái dự đoán..."
+      placeholder={t("toolbar.searchPlaceholder")}
       adornment="start"
       className="w-full"
      />

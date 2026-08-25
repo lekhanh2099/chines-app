@@ -9,6 +9,10 @@
   "stop": "停止"
  },
  "language": "语言",
+ "passwordVisibility": {
+  "show": "显示密码",
+  "hide": "隐藏密码"
+ },
  "locales": {
   "vi": "越南语",
   "en": "英语",

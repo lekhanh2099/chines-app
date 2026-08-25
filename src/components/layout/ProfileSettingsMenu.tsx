@@ -156,7 +156,7 @@ export function ProfileSettingsMenu({ user, focusModeEnabled }: ProfileSettingsM
        <Typography variant="caption" tone="muted" weight="bold" className="px-1">
         {tCommon("language")}
        </Typography>
-       <LocaleSwitcher />
+       <LocaleSwitcher size="sm" />
       </div>
 
       <div className="p-2">
