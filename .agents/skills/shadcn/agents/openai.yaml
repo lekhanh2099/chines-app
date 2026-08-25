@@ -1,0 +1,9 @@
+interface:
+  display_name: "shadcn/ui"
+  short_description: "Manage shadcn/ui components and registries"
+  icon_small: "./assets/shadcn-small.png"
+  icon_large: "./assets/shadcn.png"
+  default_prompt: "Use $shadcn to inspect and update this project's shadcn/ui components."
+
+policy:
+  allow_implicit_invocation: false

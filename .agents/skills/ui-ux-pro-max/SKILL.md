@@ -1,9 +1,9 @@
 ---
 name: ui-ux-pro-max
 description: Secondary UI/UX audit intelligence for chines-app, adapted from nextlevelbuilder/ui-ux-pro-max-skill. Use for broad UI audits, accessibility, touch interaction, responsive layout, typography/color, forms, navigation, motion and runtime UX quality after loading the local frontend-ui-system contract.
-compatibility: chines-app; Next.js App Router; React; Tailwind CSS 4; local shadcn-style primitives
 metadata:
   author: chines-app
+  compatibility: chines-app; Next.js App Router; React; Tailwind CSS 4; local shadcn-style primitives
   upstream: nextlevelbuilder/ui-ux-pro-max-skill
   upstream_path: .claude/skills/ui-ux-pro-max/SKILL.md
   upstream_ref: a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5

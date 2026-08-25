@@ -1,5 +1,9 @@
 # UI System & UX Architecture Refactor — 2026-08-11
 
+> **HISTORICAL IMPLEMENTATION RECORD.** Commands and pass/fail results below
+> describe this branch at the time. Use `package.json`, `AGENTS.md`, and current
+> repository contracts for the current checkout and quality gates.
+
 Branch: `refactor/ui-system-ux-architecture`
 
 Base: latest `main` at refactor start.

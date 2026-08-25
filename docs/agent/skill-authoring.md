@@ -16,6 +16,11 @@ Local repository truth overrides conflicting vendor recommendations.
 
 ## Canonical structure
 
+Place repository skills at `.agents/skills/<skill-name>/SKILL.md`. Optional
+Codex UI metadata belongs at `.agents/skills/<skill-name>/agents/openai.yaml`.
+Use `policy.allow_implicit_invocation: false` when a skill must only run after
+explicit invocation.
+
 Every repository skill defines:
 
 - exact triggers and exclusions;

@@ -1,11 +1,14 @@
 # Repository skill inventory and audit scorecard
 
-Updated: 2026-08-17
+Updated: 2026-08-25
 
 This is the current-checkout inventory for repository skills. The canonical
 policy kernel remains [`AGENTS.md`](../../AGENTS.md); this document records
 routing, domain ownership and evidence expectations without making app commits
 depend on a separate agent-document gate.
+
+Repository skills live under `.agents/skills/<skill-name>/`. Each skill owns a
+`SKILL.md` file and may provide Codex UI metadata in `agents/openai.yaml`.
 
 ## Authority and routing
 
@@ -19,16 +22,16 @@ user request
 
 ## Skill inventory
 
-| Skill                                                                                       | Owner and trigger surface                                         | Local contract / precedent                                           | Evidence model                                                          |
-| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [`frontend-feature-workflow`](../../.agents/skills/frontend-feature-workflow/SKILL.md)      | React/Next routes, state, forms, queries, APIs, refactors         | `AGENTS.md`, installed Next docs, feature owners, TanStack contracts | Fast/subsystem/full; targeted proof before full gate                    |
-| [`frontend-ui-system`](../../.agents/skills/frontend-ui-system/SKILL.md)                    | Components, responsive UI, accessibility, visual consistency      | UI contracts, local primitives, viewport evidence                    | Fast/subsystem/full visual verification                                 |
-| [`ui-ux-pro-max`](../../.agents/skills/ui-ux-pro-max/SKILL.md)                              | Broad UI/UX audits and secondary research heuristics              | `frontend-ui-system`, product/UI contracts, pinned upstream adapter  | Source + rendered audit evidence; local contracts win on conflict       |
-| [`hanzihome-content-editing`](../../.agents/skills/hanzihome-content-editing/SKILL.md)      | Lesson content, renderers, editing, import, vocab and persistence | Supabase rows, Zod schemas, stable child IDs                         | Read/write, preview/diff and sibling-isolation evidence                 |
-| [`hanzihome-test-review`](../../.codex/skills/hanzihome-test-review/SKILL.md)               | Regression, renderer/API/state/edit/migration tests               | Coverage matrix, real payload shapes, lowest reproducing boundary    | Protected invariant and false-confidence reporting                      |
-| [`hanzihome-supabase-migration`](../../.codex/skills/hanzihome-supabase-migration/SKILL.md) | Migrations, RLS, RPCs, generated types and drift                  | Migration history, generated types, repository queries               | Target, drift, lock, rollback/forward-fix and live-environment evidence |
-| [`shadcn`](../../.agents/skills/shadcn/SKILL.md)                                            | Registry/component installation or upstream component work        | Local component inventory/source overrides generic registry guidance | CLI diff, consumer sweep and UI evidence                                |
-| [`migrate-radix-to-base`](../../.agents/skills/migrate-radix-to-base/SKILL.md)              | Radix-to-Base investigation or approved migration                 | Installed types, shadcn golden pairs, consumer props                 | Confirmation, behavior delta and manual interaction evidence            |
+| Skill                                                                                        | Owner and trigger surface                                         | Local contract / precedent                                           | Evidence model                                                          |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [`frontend-feature-workflow`](../../.agents/skills/frontend-feature-workflow/SKILL.md)       | React/Next routes, state, forms, queries, APIs, refactors         | `AGENTS.md`, installed Next docs, feature owners, TanStack contracts | Fast/subsystem/full; targeted proof before full gate                    |
+| [`frontend-ui-system`](../../.agents/skills/frontend-ui-system/SKILL.md)                     | Components, responsive UI, accessibility, visual consistency      | UI contracts, local primitives, viewport evidence                    | Fast/subsystem/full visual verification                                 |
+| [`ui-ux-pro-max`](../../.agents/skills/ui-ux-pro-max/SKILL.md)                               | Broad UI/UX audits and secondary research heuristics              | `frontend-ui-system`, product/UI contracts, pinned upstream adapter  | Source + rendered audit evidence; local contracts win on conflict       |
+| [`hanzihome-content-editing`](../../.agents/skills/hanzihome-content-editing/SKILL.md)       | Lesson content, renderers, editing, import, vocab and persistence | Supabase rows, Zod schemas, stable child IDs                         | Read/write, preview/diff and sibling-isolation evidence                 |
+| [`hanzihome-test-review`](../../.agents/skills/hanzihome-test-review/SKILL.md)               | Regression, renderer/API/state/edit/migration tests               | Coverage matrix, real payload shapes, lowest reproducing boundary    | Protected invariant and false-confidence reporting                      |
+| [`hanzihome-supabase-migration`](../../.agents/skills/hanzihome-supabase-migration/SKILL.md) | Migrations, RLS, RPCs, generated types and drift                  | Migration history, generated types, repository queries               | Target, drift, lock, rollback/forward-fix and live-environment evidence |
+| [`shadcn`](../../.agents/skills/shadcn/SKILL.md)                                             | Registry/component installation or upstream component work        | Local component inventory/source overrides generic registry guidance | CLI diff, consumer sweep and UI evidence                                |
+| [`migrate-radix-to-base`](../../.agents/skills/migrate-radix-to-base/SKILL.md)               | Radix-to-Base investigation or approved migration                 | Installed types, shadcn golden pairs, consumer props                 | Confirmation, behavior delta and manual interaction evidence            |
 
 ## Shared engineering contract
 

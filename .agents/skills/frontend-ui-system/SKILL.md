@@ -1,9 +1,9 @@
 ---
 name: frontend-ui-system
 description: Design, implement, refactor, audit, or review UI and UX in chines-app. Use for information architecture, user flow, component reuse, design system, controls, settings, navigation, responsive layout, iPad/mobile, accessibility, typography, tokens, states, theme/color ownership, or visual consistency.
-compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
 metadata:
   author: chines-app
+  compatibility: chines-app local shadcn-style components; Tailwind CSS 4; Radix and Base UI wrappers; TanStack Query/Form/Store
   version: "3.16"
 ---
 

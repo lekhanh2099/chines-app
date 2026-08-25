@@ -1,9 +1,9 @@
 ---
 name: frontend-feature-workflow
 description: Implement, debug, refactor, review, or clean up React and Next.js code in the chines-app repository. Use for feature, page, route, component, hook, state ownership, TanStack Query, TanStack Form, TanStack Store, Zod, API, TypeScript, architecture, performance, source cleanup, or any non-trivial change under src/.
-compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
 metadata:
   author: chines-app
+  compatibility: chines-app; npm; Node.js 22+; Next.js App Router; React; TypeScript; TanStack Query/Form/Store
   version: "2.3"
 ---
 

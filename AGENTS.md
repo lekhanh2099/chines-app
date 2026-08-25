@@ -34,8 +34,8 @@ Before a non-trivial task:
    - UI/UX/design-system/responsive/accessibility: `.agents/skills/frontend-ui-system/SKILL.md`;
    - broad UI/UX audit/research heuristics: read `.agents/skills/frontend-ui-system/SKILL.md` first, then `.agents/skills/ui-ux-pro-max/SKILL.md`; local UI contracts remain authoritative;
    - HanziHome content/data/editing: `.agents/skills/hanzihome-content-editing/SKILL.md`;
-   - regression/test review: `.codex/skills/hanzihome-test-review/SKILL.md`;
-   - Supabase migrations/RLS/generated types: `.codex/skills/hanzihome-supabase-migration/SKILL.md`;
+   - regression/test review: `.agents/skills/hanzihome-test-review/SKILL.md`;
+   - Supabase migrations/RLS/generated types: `.agents/skills/hanzihome-supabase-migration/SKILL.md`;
    - shadcn component work: `.agents/skills/shadcn/SKILL.md`;
    - Radix/Base investigation: `.agents/skills/migrate-radix-to-base/SKILL.md`.
 4. For UI work also read `docs/ui/component-contracts.md` and `docs/ui/ui-verification.md`.

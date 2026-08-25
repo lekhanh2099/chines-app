@@ -2,6 +2,11 @@
 
 > TEMPORARY EXECUTION NOTE: delete this file only after every source scope is complete, executable verification has passed, viewport/manual verification is complete, and the durable contracts have been folded into permanent architecture docs. Do not leave this checklist as stale product documentation.
 
+> **CURRENT CHECKOUT NOTE (2026-08-25):** the full repository gate passes on
+> `main`; manual viewport, multi-tab, and authenticated runtime acceptance items
+> below remain open. Earlier unchecked executable items are retained as phase
+> history, not current gate status.
+
 ## Goal
 
 Make Daily Reading an article-acquisition system with optional AI enrichment, and make every user-facing AI generation path use encrypted per-user BYOK credentials from the backend. Daily Reading must remain readable after source capture even if AI enrichment fails or no AI key exists. Conversation uses HTTP streaming rather than WebSocket.
