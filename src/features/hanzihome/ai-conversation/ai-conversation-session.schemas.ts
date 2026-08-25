@@ -123,8 +123,4 @@ export type AiConversationMemoryPolicyState = z.output<
  typeof aiConversationMemoryPolicyStateSchema
 >;
 export type AiConversationArchiveResponse = z.output<typeof aiConversationArchiveResponseSchema>;
-export type AiConversationPostTurnProcessResponse = z.output<
- typeof aiConversationPostTurnProcessResponseSchema
->;
-export type AiConversationTurnRequest = z.output<typeof aiConversationTurnRequestSchema>;
 export type AiConversationTurnResponse = z.output<typeof aiConversationTurnResponseSchema>;

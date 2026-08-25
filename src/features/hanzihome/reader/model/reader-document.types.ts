@@ -63,10 +63,3 @@ export type ReaderDocumentModel = {
  metadata: readonly ReaderMetadataItem[];
  capabilities: readonly ReaderContentCapability[];
 };
-
-export type ReaderSelectionAnchor = {
- documentId: string;
- segmentId: string;
- startOffset: number;
- endOffset: number;
-};

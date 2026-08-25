@@ -17,8 +17,6 @@ export const IntegrationScopeSchema = z.enum([
  "ai-settings:write",
  "tts:generate",
 ]);
-export type IntegrationScope = z.infer<typeof IntegrationScopeSchema>;
-
 const HttpMethodSchema = z.enum(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 const ApiInventorySourceSchema = z.enum(["route", "client-flow"]);
 const ApiExposureSchema = z.enum(["public-v1", "internal-only"]);

@@ -164,22 +164,6 @@ export async function deleteFromStoreIf<T>(
  });
 }
 
-export async function getAllFromStore<T>(storeName: string, schema: z.ZodType<T>): Promise<T[]> {
- const db = await openHanziHomeLocalDb();
-
- return new Promise((resolve, reject) => {
-  const tx = db.transaction(storeName, "readonly");
-  const store = tx.objectStore(storeName);
-  const request = store.getAll();
-
-  request.onsuccess = () => {
-   const parsed = schema.array().safeParse(request.result);
-   resolve(parsed.success ? parsed.data : []);
-  };
-  request.onerror = () => reject(request.error);
- });
-}
-
 export async function getAllFromStoreMatching<T>(
  storeName: string,
  schema: z.ZodType<T>,

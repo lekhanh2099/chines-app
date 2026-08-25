@@ -68,10 +68,6 @@ export function getScrollContainerForTarget(target: HTMLElement | null): HTMLEle
  return null;
 }
 
-export function scrollAppContentToTop(behavior: ScrollBehavior = "auto"): void {
- getAppScrollContainer()?.scrollTo({ behavior, left: 0, top: 0 });
-}
-
 export function scrollAppContentToElement(
  target: HTMLElement | null,
  options: { behavior?: ScrollBehavior; block?: AppScrollBlock } = {},

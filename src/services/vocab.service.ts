@@ -8,7 +8,7 @@
 
 import { JsonObjectSchema } from "@/types/json";
 import type { JsonFieldValue, JsonObject } from "@/types/json";
-import type { Tables, TablesInsert } from "@/types/supabase.generated";
+import type { Tables } from "@/types/supabase.generated";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { logger } from "@/lib/logger";
@@ -19,7 +19,6 @@ import {
  DbVocabularySchema,
  PersonalNoteModeSchema,
  VocabDataSchema,
- VocabTypeSchema,
 } from "@/types/database";
 import type {
  DbDictionaryCore,
@@ -38,10 +37,6 @@ import type { Database } from "@/types/supabase.generated";
 
 type AppSupabaseClient = SupabaseClient<Database>;
 
-type DictionaryLookupCount = {
- id: DbDictionaryCore["id"];
- lookup_count: DbDictionaryCore["lookup_count"];
-};
 type VocabularyAnalysisSource = z.infer<
  z.ZodNullable<
   z.ZodObject<{
@@ -62,21 +57,6 @@ type UserVocabProgressRecord = {
  personal_note_mode: z.infer<z.ZodNullable<typeof PersonalNoteModeSchema>>;
 };
 
-type VocabIdentity = z.infer<z.ZodObject<{ id: z.ZodString }>>;
-
-type SaveVocabResult = z.infer<
- z.ZodObject<{
-  vocabId: z.ZodString;
-  dictionaryId: z.ZodOptional<z.ZodString>;
-  contextSchemaAvailable: z.ZodBoolean;
-  noteSchemaAvailable: z.ZodBoolean;
- }>
->;
-
-type TrackVocabResult = {
- vocabId: SaveVocabResult["vocabId"];
- dictionaryId?: SaveVocabResult["dictionaryId"];
-};
 type VocabWithProgressResult = z.infer<
  z.ZodObject<{
   vocab: typeof VocabDataSchema;
@@ -125,33 +105,10 @@ function isMissingDictionaryCacheSchemaError(error: SupabaseErrorInput): boolean
  );
 }
 
-function isRlsPolicyError(error: SupabaseErrorInput): boolean {
- const { code, message: rawMessage } = parseSupabaseError(error);
- const message = rawMessage.toLowerCase();
-
- return code === "42501" || message.includes("row-level security policy");
-}
-
-function errorMentionsColumn(error: SupabaseErrorInput, columnName: string): boolean {
- const message = parseSupabaseError(error).message.toLowerCase();
-
- return message.includes(columnName.toLowerCase());
-}
-
 export function normalizeDictionaryHeadword(text: string): string {
  const trimmed = text.trim();
  const chineseOnly = extractChinese(trimmed);
  return (chineseOnly || trimmed).trim();
-}
-
-/** Classify a vocab entry as word or sentence based on hanzi length and pinyin spaces */
-export function classifyVocabType(
- hanzi: string,
- pinyin?: z.infer<z.ZodNullable<z.ZodString>>,
-): z.infer<typeof VocabTypeSchema> {
- if (hanzi.length > 4) return "sentence";
- if (pinyin && pinyin.split(" ").length > 3) return "sentence";
- return "word";
 }
 
 function normalizeRelatedCompounds(source: AiAnalysis): AiAnalysis["related_compounds"] {
@@ -381,20 +338,6 @@ export async function getDictionaryEntryByHeadword(
  return parsed.data;
 }
 
-export async function incrementDictionaryLookupCount(
- supabase: AppSupabaseClient,
- entry: DictionaryLookupCount,
-): Promise<void> {
- const { error } = await supabase
-  .from("dictionary_core")
-  .update({ lookup_count: (entry.lookup_count || 0) + 1 })
-  .eq("id", entry.id);
-
- if (error && !isMissingDictionaryCacheSchemaError(error)) {
-  logger.error("[VocabService] dictionary_core count update error:", error);
- }
-}
-
 export async function upsertDictionaryEntry(
  supabase: AppSupabaseClient,
  input: {
@@ -534,29 +477,6 @@ export function mapDictionaryEntryToVocabData(entry: DbDictionaryCore): VocabDat
   meaning: getPrimaryMeaning(analysis, ""),
   ai_analysis: analysis,
  };
-}
-
-export async function saveUserDictionaryRelationship(
- supabase: AppSupabaseClient,
- userId: string,
- dictionaryId: string,
-): Promise<boolean> {
- const { error } = await supabase.from("user_vocabularies").upsert(
-  {
-   user_id: userId,
-   dictionary_id: dictionaryId,
-  },
-  { onConflict: "user_id,dictionary_id", ignoreDuplicates: true },
- );
-
- if (error) {
-  if (!isMissingDictionaryCacheSchemaError(error) && !isRlsPolicyError(error)) {
-   logger.error("[VocabService] user_vocabularies upsert error:", error);
-  }
-  return false;
- }
-
- return true;
 }
 
 export function getVocabularyAnalysis(vocab?: VocabularyAnalysisSource): AiAnalysis {
@@ -1057,279 +977,5 @@ export async function getVocabWithProgress(
   isSaved: !!progress,
   personalNote: progress?.personal_note || "",
   personalNoteMode: progress?.personal_note_mode || "important",
- };
-}
-
-/* ══════════════════════════════════════════
-   Write Operations
-   ══════════════════════════════════════════ */
-
-/** Upsert vocabulary record (e.g., from inspector save or AI result) */
-export async function upsertVocab(
- supabase: AppSupabaseClient,
- data: {
-  hanzi: string;
-  pinyin?: string;
-  sinoVietnamese?: string;
-  meaning?: string;
-  ai_analysis?: AiAnalysis;
- },
-): Promise<z.infer<z.ZodNullable<z.ZodType<VocabIdentity>>>> {
- const normalizedAnalysis = normalizeAnalysis(data.ai_analysis, data.sinoVietnamese);
- const resolvedMeaning = getPrimaryMeaning(normalizedAnalysis, data.meaning || "");
- const resolvedSinoVietnamese =
-  data.sinoVietnamese || normalizedAnalysis.sino_vietnamese || normalizedAnalysis.han_viet || "";
-
- const { data: vocabularyId, error } = await supabase.rpc("upsert_legacy_vocabulary_cache", {
-  p_hanzi: data.hanzi,
-  p_pinyin: data.pinyin || undefined,
-  p_sino_vietnamese: resolvedSinoVietnamese || undefined,
-  p_meaning: resolvedMeaning || undefined,
-  p_analysis: normalizedAnalysis,
- });
-
- if (error) {
-  logger.error("[VocabService] upsert error:", error);
-  return null;
- }
-
- return vocabularyId ? { id: vocabularyId } : null;
-}
-
-export async function syncDictionaryEntryToLegacyVocab(
- supabase: AppSupabaseClient,
- entry: DbDictionaryCore,
-): Promise<z.infer<z.ZodNullable<z.ZodType<VocabIdentity>>>> {
- const vocabData = mapDictionaryEntryToVocabData(entry);
-
- return upsertVocab(supabase, {
-  hanzi: vocabData.hanzi,
-  pinyin: vocabData.pinyin,
-  sinoVietnamese: vocabData.sino_vietnamese,
-  meaning: vocabData.meaning,
-  ai_analysis: vocabData.ai_analysis,
- });
-}
-
-/** Save/bookmark a vocabulary for a user (adds to SRS) */
-export async function saveVocabToSrs(
- supabase: AppSupabaseClient,
- userId: string,
- vocabData: VocabData,
- options?: {
-  contextSentence?: string;
-  contextTranslation?: string;
-  personalNote?: string;
-  personalNoteMode?: z.infer<typeof PersonalNoteModeSchema>;
-  dictionaryMergeMode?: z.infer<typeof DictionaryMergeModeSchema>;
- },
-): Promise<z.infer<z.ZodNullable<z.ZodType<SaveVocabResult>>>> {
- const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-  headword: vocabData.hanzi,
-  pinyin: vocabData.pinyin,
-  sinoVietnamese: vocabData.sino_vietnamese,
-  meaning: vocabData.meaning || "",
-  ai_analysis: vocabData.ai_analysis,
-  mergeMode: options?.dictionaryMergeMode,
- });
-
- if (dictionaryEntry) {
-  vocabData.dictionary_id = dictionaryEntry.id;
- }
-
- const vocab = dictionaryEntry
-  ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
-  : await upsertVocab(supabase, {
-     hanzi: vocabData.hanzi,
-     pinyin: vocabData.pinyin,
-     sinoVietnamese: vocabData.sino_vietnamese,
-     meaning: vocabData.meaning || "",
-     ai_analysis: vocabData.ai_analysis,
-    });
-
- if (!vocab) return null;
-
- if (dictionaryEntry) {
-  await saveUserDictionaryRelationship(supabase, userId, dictionaryEntry.id);
- }
-
- // Upsert user progress
- let contextSchemaAvailable = true;
- let noteSchemaAvailable = true;
- let { error } = await supabase.from("user_vocab_progress").upsert(
-  {
-   user_id: userId,
-   vocab_id: vocab.id,
-   dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
-   is_favorited: true,
-   context_sentence: options?.contextSentence ?? null,
-   context_translation: options?.contextTranslation ?? null,
-   personal_note: options?.personalNote?.trim() || null,
-   personal_note_mode: options?.personalNoteMode ?? null,
-  },
-  { onConflict: "user_id,vocab_id" },
- );
-
- if (error && isMissingColumnError(error)) {
-  contextSchemaAvailable =
-   !errorMentionsColumn(error, "context_sentence") &&
-   !errorMentionsColumn(error, "context_translation");
-  noteSchemaAvailable =
-   !errorMentionsColumn(error, "personal_note") &&
-   !errorMentionsColumn(error, "personal_note_mode");
-
-  const allowContextFields = contextSchemaAvailable;
-  const allowNoteFields = noteSchemaAvailable;
-
-  logger.warn(
-   "[VocabService] Falling back to legacy user_vocab_progress schema; migration may be missing.",
-  );
-
-  const fallbackPayload: TablesInsert<"user_vocab_progress"> = {
-   user_id: userId,
-   vocab_id: vocab.id,
-   dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
-   is_favorited: true,
-  };
-
-  if (allowContextFields) {
-   fallbackPayload.context_sentence = options?.contextSentence ?? null;
-   fallbackPayload.context_translation = options?.contextTranslation ?? null;
-  }
-
-  if (allowNoteFields) {
-   fallbackPayload.personal_note = options?.personalNote?.trim() || null;
-   fallbackPayload.personal_note_mode = options?.personalNoteMode ?? null;
-  }
-
-  const contextFallbackResult = await supabase
-   .from("user_vocab_progress")
-   .upsert(fallbackPayload, { onConflict: "user_id,vocab_id" });
-
-  if (!contextFallbackResult.error) {
-   error = null;
-  } else if (isMissingColumnError(contextFallbackResult.error)) {
-   contextSchemaAvailable =
-    contextSchemaAvailable &&
-    !errorMentionsColumn(contextFallbackResult.error, "context_sentence") &&
-    !errorMentionsColumn(contextFallbackResult.error, "context_translation");
-   noteSchemaAvailable =
-    noteSchemaAvailable &&
-    !errorMentionsColumn(contextFallbackResult.error, "personal_note") &&
-    !errorMentionsColumn(contextFallbackResult.error, "personal_note_mode");
-
-   const noteFallbackResult = await supabase.from("user_vocab_progress").upsert(
-    {
-     user_id: userId,
-     vocab_id: vocab.id,
-     is_favorited: true,
-    },
-    { onConflict: "user_id,vocab_id" },
-   );
-
-   if (!noteFallbackResult.error) {
-    error = null;
-   } else if (isMissingColumnError(noteFallbackResult.error)) {
-    const legacyResult = await supabase.from("user_vocab_progress").upsert(
-     {
-      user_id: userId,
-      vocab_id: vocab.id,
-      is_favorited: true,
-     },
-     { onConflict: "user_id,vocab_id" },
-    );
-
-    error = legacyResult.error;
-   } else {
-    error = noteFallbackResult.error;
-   }
-  } else {
-   noteSchemaAvailable = false;
-   error = contextFallbackResult.error;
-  }
- }
-
- if (error) {
-  logger.error("[VocabService] save to SRS error:", error);
-  return null;
- }
-
- return {
-  vocabId: vocab.id,
-  dictionaryId: dictionaryEntry?.id || vocabData.dictionary_id,
-  contextSchemaAvailable,
-  noteSchemaAvailable,
- };
-}
-
-/** Track a looked-up vocabulary in the user's personal list without forcing favorite/SRS state. */
-export async function trackVocabLookup(
- supabase: AppSupabaseClient,
- userId: string,
- vocabData: VocabData,
-): Promise<z.infer<z.ZodNullable<z.ZodType<TrackVocabResult>>>> {
- const dictionaryEntry = await upsertDictionaryEntry(supabase, {
-  headword: vocabData.hanzi,
-  pinyin: vocabData.pinyin,
-  sinoVietnamese: vocabData.sino_vietnamese,
-  meaning: vocabData.meaning || "",
-  ai_analysis: vocabData.ai_analysis,
- });
-
- if (dictionaryEntry) {
-  vocabData.dictionary_id = dictionaryEntry.id;
- }
-
- const vocab = dictionaryEntry
-  ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
-  : await upsertVocab(supabase, {
-     hanzi: vocabData.hanzi,
-     pinyin: vocabData.pinyin,
-     sinoVietnamese: vocabData.sino_vietnamese,
-     meaning: vocabData.meaning || "",
-     ai_analysis: vocabData.ai_analysis,
-    });
-
- if (!vocab) return null;
-
- if (dictionaryEntry) {
-  await saveUserDictionaryRelationship(supabase, userId, dictionaryEntry.id);
- }
-
- let { error } = await supabase.from("user_vocab_progress").upsert(
-  {
-   user_id: userId,
-   vocab_id: vocab.id,
-   dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
-   is_favorited: false,
-  },
-  { onConflict: "user_id,vocab_id", ignoreDuplicates: true },
- );
-
- if (error && isMissingColumnError(error)) {
-  logger.warn(
-   "[VocabService] Falling back to legacy lookup tracking schema; migration may be missing.",
-  );
-
-  const legacyResult = await supabase.from("user_vocab_progress").upsert(
-   {
-    user_id: userId,
-    vocab_id: vocab.id,
-    is_favorited: false,
-   },
-   { onConflict: "user_id,vocab_id", ignoreDuplicates: true },
-  );
-
-  error = legacyResult.error;
- }
-
- if (error) {
-  logger.error("[VocabService] track lookup error:", error);
-  return null;
- }
-
- return {
-  vocabId: vocab.id,
-  dictionaryId: dictionaryEntry?.id || vocabData.dictionary_id,
  };
 }

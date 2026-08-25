@@ -1220,5 +1220,3 @@ export const supabaseHanziHomeContentRepository = {
  getAggregateItems,
  getSearchData,
 };
-
-export type HanzihomeContentRepository = typeof supabaseHanziHomeContentRepository;

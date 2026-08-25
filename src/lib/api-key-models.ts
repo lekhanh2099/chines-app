@@ -1,6 +1,5 @@
 import type { ApiKeyProvider } from "@/lib/api-key-providers";
 import { GEMINI_DETAIL_MODEL_OPTIONS } from "@/lib/gemini-models";
-import { z } from "zod";
 
 export type ApiKeyModelOption = {
  value: string;
@@ -73,14 +72,4 @@ export function getDefaultApiKeyModel(provider: ApiKeyProvider): string {
 
 export function isApiKeyModelSupported(provider: ApiKeyProvider, model: string): boolean {
  return API_KEY_MODEL_OPTIONS[provider].some((option) => option.value === model);
-}
-
-export function getApiKeyModelDescription(
- provider: ApiKeyProvider,
- model?: z.infer<z.ZodOptional<z.ZodNullable<z.ZodString>>>,
-): string {
- return (
-  API_KEY_MODEL_OPTIONS[provider].find((option) => option.value === model)?.description ||
-  "Model đã lưu từ phiên bản trước. Chọn model mới để cập nhật."
- );
 }

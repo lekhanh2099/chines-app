@@ -49,7 +49,6 @@ export const ttsClipDraftSchema = z
 
 export type TtsFolderRow = z.output<typeof ttsFolderRowSchema>;
 export type TtsClipRow = z.output<typeof ttsClipRowSchema>;
-export type TtsClipDraft = z.output<typeof ttsClipDraftSchema>;
 
 export const ttsLibraryResponseSchema = z.strictObject({
  folders: z.array(ttsFolderRowSchema),

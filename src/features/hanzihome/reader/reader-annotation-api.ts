@@ -38,7 +38,6 @@ const createAnnotationResponseSchema = z.strictObject({ annotation: readerAnnota
 const listAnnotationResponseSchema = z.strictObject({
  annotations: z.array(readerAnnotationRowSchema),
 });
-const updateAnnotationResponseSchema = z.strictObject({ annotation: readerAnnotationRowSchema });
 
 export type ReaderAnnotationInput = z.output<typeof annotationFieldsSchema>;
 
@@ -63,29 +62,6 @@ export async function createReaderAnnotation(input: ReaderAnnotationInput) {
  const value = await response.json().catch(() => null);
  if (!response.ok) throw new Error("Không lưu được ghi chú Reader.");
  return createAnnotationResponseSchema.parse(value).annotation;
-}
-
-export async function updateReaderAnnotation(
- annotationId: string,
- input: Omit<ReaderAnnotationInput, "documentId"> & { expectedRevision: number },
-) {
- const payload = z
-  .strictObject({
-   ...annotationFieldsSchema.omit({ documentId: true }).shape,
-   expectedRevision: z.number().int().nonnegative(),
-  })
-  .parse(input);
- const response = await fetch(
-  `/api/hanzihome/reader/annotations/${encodeURIComponent(annotationId)}`,
-  {
-   method: "PATCH",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify(payload),
-  },
- );
- const value = await response.json().catch(() => null);
- if (!response.ok) throw new Error("Không cập nhật được ghi chú Reader.");
- return updateAnnotationResponseSchema.parse(value).annotation;
 }
 
 export async function deleteReaderAnnotation(annotationId: string, expectedRevision: number) {

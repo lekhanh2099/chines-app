@@ -32,7 +32,6 @@ export const NoteCategorySchema = z.enum(["grammar", "vocabulary", "culture", "g
 export const NoteStatusSchema = z.enum(["draft", "reviewed", "mastered"]);
 export const ReadingStatusSchema = z.enum(["inbox", "reading", "completed"]);
 export const PersonalNoteModeSchema = z.enum(["normal", "important"]);
-export const VocabTypeSchema = z.enum(["word", "sentence"]);
 
 export const DbNoteSchema = z.object({
  id: z.string(),
@@ -258,34 +257,6 @@ export type AiAnalysis = z.infer<typeof aiAnalysisSchema>;
 export type DictionaryCoreData = z.infer<typeof DictionaryCoreDataSchema>;
 export type DbDictionaryCore = z.infer<typeof DbDictionaryCoreSchema>;
 export type SentenceInsightResponse = z.infer<typeof sentenceInsightSchema>;
-
-/** Vocabulary enriched with user progress */
-export const VocabLearningStatusSchema = z.enum(["new", "learning", "mastered"]);
-
-export const VocabSourceSchema = z.object({
- courseKey: z.string().optional(),
- lessonKey: z.string(),
- lessonNumber: z.number().nullable(),
- lessonTitle: z.string().optional(),
- rowNumber: z.number().nullable().optional(),
- category: z.string().optional(),
- sourceFile: z.string().optional(),
-});
-
-export const VocabWithProgressSchema = z.object({
- id: z.string(),
- hanzi: z.string(),
- pinyin: z.string(),
- sino_vietnamese: z.string().optional(),
- meaning: z.string(),
- ai_analysis: aiAnalysisSchema,
- source: VocabSourceSchema.optional(),
- proficiency_level: z.number(),
- is_favorited: z.boolean(),
- status: VocabLearningStatusSchema,
- type: VocabTypeSchema,
-});
-export type VocabWithProgress = z.infer<typeof VocabWithProgressSchema>;
 
 /** Vocab data used by inspector & dictionary */
 export const VocabDataSchema = z.object({

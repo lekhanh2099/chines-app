@@ -78,6 +78,5 @@ export const aiConversationRuntimeHealthSchema = z.strictObject({
 
 export type AiConversationMessage = z.output<typeof aiConversationMessageSchema>;
 export type AiConversationProfile = z.output<typeof aiConversationProfileSchema>;
-export type AiConversationUsage = z.output<typeof aiConversationUsageSchema>;
 export type AiConversationResponse = z.output<typeof aiConversationResponseSchema>;
 export type AiConversationRuntimeHealth = z.output<typeof aiConversationRuntimeHealthSchema>;

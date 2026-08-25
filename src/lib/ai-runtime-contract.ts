@@ -82,7 +82,6 @@ export const aiRuntimeReadinessResponseSchema = z.discriminatedUnion("status", [
 ]);
 
 export type AiRuntimeCapability = z.output<typeof aiRuntimeCapabilitySchema>;
-export type AiRuntimeReadinessStatus = z.output<typeof aiRuntimeReadinessStatusSchema>;
 export type AiRuntimeReadinessReason = z.output<typeof aiRuntimeReadinessReasonSchema>;
 export type AiRuntimeOperationErrorCode = z.output<typeof aiRuntimeOperationErrorCodeSchema>;
 export type AiRuntimeSafeKey = z.output<typeof aiRuntimeSafeKeySchema>;

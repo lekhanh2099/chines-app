@@ -86,9 +86,6 @@ export const aiConversationRecalledMemorySchema = aiConversationStoredMemorySche
  similarity: z.number().min(-1).max(1).nullable(),
 });
 
-export type AiConversationMemoryKind = z.output<typeof aiConversationMemoryKindSchema>;
-export type AiConversationMemoryAction = z.output<typeof aiConversationMemoryActionSchema>;
-export type AiConversationMemoryScope = z.output<typeof aiConversationMemoryScopeSchema>;
 export type AiConversationMemoryCandidate = z.output<typeof aiConversationMemoryCandidateSchema>;
 export type AiConversationMemoryExtraction = z.output<typeof aiConversationMemoryExtractionSchema>;
 export type AiConversationStoredMemory = z.output<typeof aiConversationStoredMemorySchema>;

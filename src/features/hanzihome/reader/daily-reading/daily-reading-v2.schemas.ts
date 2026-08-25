@@ -289,5 +289,4 @@ export type DailyReadingV2FreshnessDays = z.output<typeof dailyReadingV2Freshnes
 export type DailyReadingV2LengthPreference = z.output<typeof dailyReadingV2LengthPreferenceSchema>;
 export type DailyReadingV2NoMatchBehavior = z.output<typeof dailyReadingV2NoMatchBehaviorSchema>;
 export type DailyReadingV2Settings = z.output<typeof dailyReadingV2SettingsSchema>;
-export type DailyReadingV2CaptureRequest = z.output<typeof dailyReadingV2CaptureRequestSchema>;
 export type DailyReadingV2CaptureResponse = z.output<typeof dailyReadingV2CaptureResponseSchema>;

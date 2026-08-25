@@ -91,9 +91,6 @@ export const dailyReadingV2EnrichmentResponseSchema = z.union([
 export type DailyReadingV2EnrichmentArticle = z.output<
  typeof dailyReadingV2EnrichmentArticleSchema
 >;
-export type DailyReadingV2EnrichmentRequest = z.output<
- typeof dailyReadingV2EnrichmentRequestSchema
->;
 export type DailyReadingV2EnrichmentResponse = z.output<
  typeof dailyReadingV2EnrichmentResponseSchema
 >;

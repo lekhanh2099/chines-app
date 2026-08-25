@@ -278,9 +278,6 @@ export type DailyReadingGenerateStreamEvent = z.output<
  typeof dailyReadingGenerateStreamEventSchema
 >;
 export type DailyReadingSourceCandidate = z.output<typeof dailyReadingSourceCandidateSchema>;
-export type DailyReadingSourcePreviewResponse = z.output<
- typeof dailyReadingSourcePreviewResponseSchema
->;
 export type DailyReadingCoreDraft = z.output<typeof dailyReadingCoreDraftSchema>;
 export type DailyReadingLearningDraft = z.output<typeof dailyReadingLearningDraftSchema>;
 export type DailyReadingGenerationCheckpoint = z.output<
