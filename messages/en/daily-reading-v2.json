@@ -125,6 +125,17 @@
    "description": "AI creates Vietnamese translation, vocabulary, grammar, and questions after the source article has already been saved.",
    "autoTitle": "Automatically add learning support after capture",
    "autoDescription": "When a usable API key exists, the app creates missing learning modules after saving the article. AI failure never makes the source article fail.",
+   "translationTitle": "Translation",
+   "translationDescription": "Create a Vietnamese translation of the source article.",
+   "vocabularyTitle": "Vocabulary",
+   "vocabularyDescription": "Select the exact configured number of learning items.",
+   "grammarTitle": "Grammar",
+   "grammarDescription": "Select the exact configured number of evidenced grammar points.",
+   "questionsTitle": "Questions",
+   "questionsDescription": "Create the exact configured number of comprehension questions.",
+   "vocabularyCount": "Vocabulary count",
+   "grammarCount": "Grammar point count",
+   "questionsCount": "Question count",
    "ready": "Ready: {provider} · {model}",
    "missing": "No AI API key yet. Source articles can still be found and read normally.",
    "storageUnavailable": "Secure server-side API key storage is not ready. Source article capture is unaffected.",
@@ -206,7 +217,8 @@
    "missingKey": "API key needed",
    "invalidKey": "Invalid key",
    "quota": "API limit",
-   "providerUnavailable": "Provider temporarily limited"
+   "providerUnavailable": "Provider temporarily limited",
+   "taskDisabled": "AI task disabled"
   },
   "actions": {
    "create": "Create this module",

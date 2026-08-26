@@ -6,11 +6,13 @@ import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { JsonValueSchema } from "@/types/json";
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
 import { useSharedMandarinTts } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import {
  analyzeContextualPronunciation,
@@ -23,6 +25,8 @@ import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/les
 const lookupResponseSchema = z.strictObject({
  cached: z.boolean(),
  source: z.string().min(1),
+ provenance: z.string().min(1),
+ runtimeReceipt: aiRuntimeReceiptSchema.optional(),
  data: z.strictObject({
   id: z.string().optional(),
   dictionary_id: z.string().optional(),
@@ -192,9 +196,21 @@ export function HanziInspectorWorkspace() {
          {lookup.data.pinyin || t("result.missingPinyin")}
         </Typography>
        </div>
-       <Typography variant="caption" tone="muted">
-        {lookup.source}
-       </Typography>
+       <div className="flex flex-wrap justify-end gap-1.5">
+        <Badge variant="default" size="sm" casing="natural">
+         {lookup.provenance}
+        </Badge>
+        {lookup.runtimeReceipt ? (
+         <>
+          <Badge variant="info" size="sm" casing="natural">
+           {lookup.runtimeReceipt.provider}
+          </Badge>
+          <Badge variant="default" size="sm" casing="natural">
+           {lookup.runtimeReceipt.model}
+          </Badge>
+         </>
+        ) : null}
+       </div>
       </div>
       <div className="grid gap-1">
        <Typography variant="label" weight="bold">

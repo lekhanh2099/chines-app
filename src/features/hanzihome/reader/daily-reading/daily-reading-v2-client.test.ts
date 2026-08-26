@@ -99,7 +99,7 @@ describe("Daily Reading V2 source preview", () => {
   const body = typeof requestInit?.body === "string" ? JSON.parse(requestInit.body) : null;
   expect(body).toMatchObject({
    mode: "manual",
-   settings: { schemaVersion: "2.0.0", targetLevel: "HSK5" },
+   settings: { schemaVersion: "2.1.0", targetLevel: "HSK5" },
    history: [],
   });
   expect(JSON.stringify(body)).not.toMatch(/apiKey|GEMINI_API_KEY|DEEPSEEK_API_KEY/u);

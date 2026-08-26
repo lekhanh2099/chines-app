@@ -4,7 +4,11 @@ import { z } from "zod";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
-import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
+import {
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+} from "@/services/ai-runtime.service";
 
 export const AI_CONVERSATION_MEMORY_EMBEDDING_MODEL = "gemini-embedding-001";
 export const AI_CONVERSATION_MEMORY_EMBEDDING_VERSION = 1;
@@ -43,12 +47,18 @@ export async function generateAiConversationMemoryEmbedding({
  const normalizedText = text.normalize("NFC").trim();
  if (!normalizedText) return { available: false, reason: "invalid-response" };
 
- const resolution = await resolveUserAiRuntime({
+ const startedAt = performance.now();
+ const resolution = await resolveUserAiTaskRuntime({
   supabase,
   userId,
-  capability: "semantic-memory",
+  taskId: "conversation.semantic-memory",
  });
  if (!resolution.ok) {
+  await recordUserAiTaskBlockedActivity({
+   userId,
+   taskId: "conversation.semantic-memory",
+   errorCode: resolution.reason,
+  });
   return {
    available: false,
    reason: resolution.status === "missing-key" ? "missing-key" : "runtime-unavailable",
@@ -59,10 +69,13 @@ export async function generateAiConversationMemoryEmbedding({
 
  try {
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent?key=${resolution.runtime.apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent`,
    {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+     "Content-Type": "application/json",
+     "x-goog-api-key": resolution.runtime.apiKey,
+    },
     body: JSON.stringify({
      model: `models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}`,
      content: { parts: [{ text: normalizedText }] },
@@ -76,14 +89,55 @@ export async function generateAiConversationMemoryEmbedding({
    },
   );
 
-  if (!response.ok) return { available: false, reason: "provider-error" };
+  if (!response.ok) {
+   await recordUserAiRuntimeActivity({
+    userId,
+    runtime: resolution.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
+   return { available: false, reason: "provider-error" };
+  }
 
   const parsed = embeddingResponseSchema.safeParse(await response.json());
-  if (!parsed.success) return { available: false, reason: "invalid-response" };
+  if (!parsed.success) {
+   await recordUserAiRuntimeActivity({
+    userId,
+    runtime: resolution.runtime,
+    status: "failure",
+    errorCode: "invalid-response",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
+   return { available: false, reason: "invalid-response" };
+  }
+
+  await recordUserAiRuntimeActivity({
+   userId,
+   runtime: resolution.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
 
   return { available: true, values: parsed.data.embedding.values };
  } catch (error) {
-  if (signal?.aborted) throw error;
+  if (signal?.aborted) {
+   await recordUserAiRuntimeActivity({
+    userId,
+    runtime: resolution.runtime,
+    status: "cancelled",
+    errorCode: "cancelled",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
+   throw error;
+  }
+  await recordUserAiRuntimeActivity({
+   userId,
+   runtime: resolution.runtime,
+   status: "failure",
+   errorCode: "network-error",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
   return { available: false, reason: "provider-error" };
  }
 }

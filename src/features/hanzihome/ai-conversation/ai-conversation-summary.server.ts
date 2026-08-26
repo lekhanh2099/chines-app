@@ -91,6 +91,7 @@ async function summarizeBlock({
  const result = await generateStructuredAiConversationData({
   supabase,
   userId,
+  taskId: "conversation.summary",
   systemPrompt: SUMMARY_SYSTEM_PROMPT,
   prompt: [
    `Previous continuity summary: ${JSON.stringify(boundedExistingSummary)}`,

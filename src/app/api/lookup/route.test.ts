@@ -120,6 +120,19 @@ describe("POST /api/lookup", () => {
  it("keeps learner-owned word enrichment transient", async () => {
   mocks.resolveAiAnalysisRuntime.mockResolvedValue({
    ok: true,
+   runtime: {
+    taskId: "lookup.deep",
+    resolutionSource: "auto",
+    keyId: "11111111-1111-4111-8111-111111111111",
+    provider: "gemini",
+    providerLabel: "Google Gemini",
+    label: "test",
+    maskedKey: "AIza***",
+    model: "gemini-2.5-flash",
+    priority: 0,
+    apiKey: "redacted",
+    capabilities: ["lookup"],
+   },
    credential: {
     provider: "gemini",
     apiKey: "redacted",

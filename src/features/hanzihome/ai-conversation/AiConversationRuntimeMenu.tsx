@@ -18,6 +18,7 @@ import { Typography } from "@/components/ui/typography";
 import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
 import { AddApiKeyDialog } from "@/features/settings/AddApiKeyDialog";
 import { Link } from "@/i18n/navigation";
+import { getApiKeyModelOptions } from "@/lib/api-key-models";
 
 import type { AiConversationRuntimeHealth } from "./ai-conversation.schemas";
 
@@ -28,22 +29,26 @@ type ManagedApiKey = ApiKeysResponse["keys"][number];
 type AiConversationRuntimeMenuProps = {
  runtimeKeys: ManagedApiKey[];
  runtimeKeyId: string;
+ runtimeModel: string | null;
  runtimeHealth: AiConversationRuntimeHealth | null;
  isRuntimeLoading: boolean;
  isHealthChecking: boolean;
  runtimeLoadError: boolean;
  onSelectRuntime: (value: string) => void;
+ onSelectModel: (value: string) => void;
  onRecheck: () => void;
 };
 
 export function AiConversationRuntimeMenu({
  runtimeKeys,
  runtimeKeyId,
+ runtimeModel,
  runtimeHealth,
  isRuntimeLoading,
  isHealthChecking,
  runtimeLoadError,
  onSelectRuntime,
+ onSelectModel,
  onRecheck,
 }: AiConversationRuntimeMenuProps) {
  const t = useTranslations("AiConversation");
@@ -73,6 +78,14 @@ export function AiConversationRuntimeMenu({
      ? t("runtime.compactReady", { provider: runtimeHealth.provider })
      : t("runtime.compactUnavailable");
  const needsKey = runtimeKeys.length === 0 && !runtimeHealth?.ready && !isRuntimeLoading;
+ const selectedKey = runtimeKeys.find((key) => key.id === runtimeKeyId);
+ const selectedModelOptions = selectedKey
+  ? getApiKeyModelOptions(selectedKey.provider).map((option) => option.value)
+  : [];
+ const modelOptions =
+  selectedKey?.defaultModel && !selectedModelOptions.includes(selectedKey.defaultModel)
+   ? [selectedKey.defaultModel, ...selectedModelOptions]
+   : selectedModelOptions;
 
  return (
   <DropdownMenu>
@@ -120,6 +133,23 @@ export function AiConversationRuntimeMenu({
       </DropdownMenuRadioItem>
      ))}
     </DropdownMenuRadioGroup>
+    {selectedKey ? (
+     <>
+      <DropdownMenuSeparator />
+      <div className="px-2.5 py-1">
+       <Typography as="p" variant="caption" tone="muted">
+        {t("runtime.modelOverride")}
+       </Typography>
+      </div>
+      <DropdownMenuRadioGroup value={runtimeModel ?? ""} onValueChange={onSelectModel}>
+       {modelOptions.map((model) => (
+        <DropdownMenuRadioItem key={model} value={model}>
+         <span className="truncate">{model}</span>
+        </DropdownMenuRadioItem>
+       ))}
+      </DropdownMenuRadioGroup>
+     </>
+    ) : null}
     {needsKey ? (
      <div className="grid gap-2 px-2.5 py-2">
       <Typography as="p" variant="caption" tone="muted" wrapping="breakWords">

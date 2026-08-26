@@ -203,6 +203,7 @@ describe("POST /api/dictionary/srs", () => {
   expect(mocks.resolveAiAnalysisRuntime).toHaveBeenCalledWith({
    supabase: authContext.supabase,
    userId: "user-1",
+   taskId: "lookup.quick",
   });
   expect(mocks.analyzeHanziBasicDetailed).toHaveBeenCalledWith("学习", {
    userApiKeys: [expect.objectContaining({ provider: "gemini" })],

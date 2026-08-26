@@ -25,6 +25,9 @@ export const aiRuntimeReadinessReasonSchema = z.enum([
  "credential-unreadable",
  "selected-key-unavailable",
  "capability-unavailable",
+ "task-disabled",
+ "assigned-key-unavailable",
+ "assigned-model-unavailable",
 ]);
 
 export const aiRuntimeOperationErrorCodeSchema = z.enum([

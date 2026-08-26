@@ -1,8 +1,11 @@
 import "server-only";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
-import type { AiRuntimeCapability } from "@/lib/ai-runtime-contract";
-import { resolveUserAiRuntime, type ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
+import type { AiTaskId, AiTaskResolutionSource } from "@/lib/ai-task-contract";
+import {
+ resolveUserAiTaskRuntime,
+ type ResolvedUserAiRuntime,
+} from "@/services/ai-runtime.service";
 import {
  getActiveUserApiKeyCredentials,
  type UserApiKeyCredential,
@@ -11,12 +14,15 @@ import {
 export type ResolvedAiCredentialRuntime =
  | {
     ok: true;
-    runtime: ResolvedUserAiRuntime;
+    runtime: ResolvedUserAiRuntime & {
+     taskId: AiTaskId;
+     resolutionSource: AiTaskResolutionSource;
+    };
     credential: UserApiKeyCredential;
    }
  | {
     ok: false;
-    status: "missing-key" | "storage-unavailable";
+    status: "missing-key" | "storage-unavailable" | "task-disabled";
     reason: string;
    };
 
@@ -28,14 +34,12 @@ export type ResolvedAiCredentialRuntime =
 export async function resolveAiCredentialRuntime(input: {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
- capability: AiRuntimeCapability;
- apiKeyId?: string;
+ taskId: AiTaskId;
 }): Promise<ResolvedAiCredentialRuntime> {
- const resolution = await resolveUserAiRuntime({
+ const resolution = await resolveUserAiTaskRuntime({
   supabase: input.supabase,
   userId: input.userId,
-  capability: input.capability,
-  ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
+  taskId: input.taskId,
  });
  if (!resolution.ok) return resolution;
 
@@ -52,13 +56,14 @@ export async function resolveAiCredentialRuntime(input: {
  return {
   ok: true,
   runtime: resolution.runtime,
-  credential,
+  credential: { ...credential, defaultModel: resolution.runtime.model },
  };
 }
 
 export function resolveAiAnalysisRuntime(input: {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
+ taskId: Extract<AiTaskId, "lookup.quick" | "lookup.deep">;
 }) {
- return resolveAiCredentialRuntime({ ...input, capability: "lookup" });
+ return resolveAiCredentialRuntime(input);
 }

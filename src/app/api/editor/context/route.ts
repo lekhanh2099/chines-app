@@ -27,6 +27,12 @@ import type {
 } from "@/types/database";
 import { SmartSelectionModeSchema } from "@/types/database";
 import { GeminiModelIdSchema } from "@/lib/gemini-models";
+import type { AiRuntimeReceipt } from "@/lib/ai-task-contract";
+import {
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { z } from "zod";
 
 const MAX_SELECTION_LENGTH = 120;
@@ -45,7 +51,10 @@ function resolveMode(selection: string): SmartSelectionMode {
  return normalized.length <= 2 ? "word" : "sentence";
 }
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return NextResponse.json({ error: "Tác vụ tra cứu sâu đang tắt." }, { status: 409 });
+ }
  return status === "missing-key"
   ? NextResponse.json(
      { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
@@ -175,10 +184,23 @@ export async function POST(request: NextRequest) {
    !vocab.pinyin ||
    !existingMeaning ||
    !hasDetailedVocabAnalysis(existingAnalysis);
+  let runtimeReceipt: AiRuntimeReceipt | undefined;
 
   if (needsEnrichment && normalizedChinese) {
-   const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
-   if (!runtime.ok) return runtimeError(runtime.status);
+   const startedAt = performance.now();
+   const runtime = await resolveAiAnalysisRuntime({
+    supabase,
+    userId: user.id,
+    taskId: "lookup.deep",
+   });
+   if (!runtime.ok) {
+    await recordUserAiTaskBlockedActivity({
+     userId: user.id,
+     taskId: "lookup.deep",
+     errorCode: runtime.reason,
+    });
+    return runtimeError(runtime.status);
+   }
    const promptSettings = await getUserAiPromptSettings(supabase, user.id);
    const aiLookup = await analyzeHanziDetailed(lookupText, {
     geminiModel: geminiModel || promptSettings?.geminiModel,
@@ -188,6 +210,13 @@ export async function POST(request: NextRequest) {
    });
 
    if (!aiLookup.data) {
+    await recordUserAiRuntimeActivity({
+     userId: user.id,
+     runtime: runtime.runtime,
+     status: "failure",
+     errorCode: "provider-unavailable",
+     latencyMs: Math.round(performance.now() - startedAt),
+    });
     return NextResponse.json(
      {
       error:
@@ -199,6 +228,13 @@ export async function POST(request: NextRequest) {
    }
 
    const aiResult = aiLookup.data;
+   await recordUserAiRuntimeActivity({
+    userId: user.id,
+    runtime: runtime.runtime,
+    status: "success",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
+   runtimeReceipt = getAiRuntimeReceipt(runtime.runtime);
    vocab = {
     ...vocab,
     pinyin: aiResult.pinyin || vocab.pinyin,
@@ -233,6 +269,7 @@ export async function POST(request: NextRequest) {
    found: !!(vocab.id || definitions.length || vocab.meaning || vocab.pinyin),
    personal_note: progress.personalNote,
    personal_note_mode: progress.personalNoteMode,
+   ...(runtimeReceipt ? { runtimeReceipt } : {}),
   };
 
   return NextResponse.json(result);
@@ -249,8 +286,20 @@ export async function POST(request: NextRequest) {
  let pinyin = existing?.pinyin || getPinyin(sentenceText);
 
  if (!translation && grammarPoints.length === 0) {
-  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
-  if (!runtime.ok) return runtimeError(runtime.status);
+  const startedAt = performance.now();
+  const runtime = await resolveAiAnalysisRuntime({
+   supabase,
+   userId: user.id,
+   taskId: "lookup.deep",
+  });
+  if (!runtime.ok) {
+   await recordUserAiTaskBlockedActivity({
+    userId: user.id,
+    taskId: "lookup.deep",
+    errorCode: runtime.reason,
+   });
+   return runtimeError(runtime.status);
+  }
   const promptSettings = await getUserAiPromptSettings(supabase, user.id);
   const sentenceLookup = await analyzeSentenceDetailed(sentenceText, {
    geminiModel: geminiModel || promptSettings?.geminiModel,
@@ -259,6 +308,13 @@ export async function POST(request: NextRequest) {
    allowGroq: true,
   });
   if (!sentenceLookup.data) {
+   await recordUserAiRuntimeActivity({
+    userId: user.id,
+    runtime: runtime.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
    return NextResponse.json(
     {
      error:
@@ -270,9 +326,49 @@ export async function POST(request: NextRequest) {
   }
 
   const sentenceInsight = sentenceLookup.data;
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
   translation = sentenceInsight.translation || "";
   grammarPoints = sentenceInsight.grammar_points || [];
   pinyin = sentenceInsight.pinyin || pinyin;
+  const runtimeReceipt = getAiRuntimeReceipt(runtime.runtime);
+  const entry: VocabData = {
+   id: existing?.id,
+   hanzi: sentenceText,
+   pinyin,
+   meaning: existing?.meaning || translation,
+   ai_analysis: {
+    ...existingAnalysis,
+    ...(translation ? { sentence_translation: translation } : {}),
+    ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
+   },
+  };
+  const progress = await getProgressState(user.id, entry.id, entry.dictionary_id, supabase);
+  const result: SmartSelectionResult = {
+   mode: "sentence",
+   selection: sentenceText,
+   context_sentence: contextSentence?.trim() || sentenceText,
+   entry,
+   radicals: [],
+   components: [],
+   definitions: [],
+   meaning_summary: existing?.meaning || translation || "",
+   etymology: "",
+   mnemonic_story: "",
+   translation,
+   grammar_points: grammarPoints,
+   isSaved: progress.isSaved,
+   found: !!(existing || translation || grammarPoints.length),
+   personal_note: progress.personalNote,
+   personal_note_mode: progress.personalNoteMode,
+   runtimeReceipt,
+  };
+
+  return NextResponse.json(result);
  }
 
  const entry: VocabData = {

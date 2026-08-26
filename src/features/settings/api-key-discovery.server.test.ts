@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-import { discoverApiKeyModels } from "./api-key-discovery.server";
+import { discoverApiKeyModels, probeApiKeyModel } from "./api-key-discovery.server";
 
 afterEach(() => {
  vi.unstubAllGlobals();
@@ -71,6 +71,42 @@ describe("API key model discovery", () => {
     models: ["models/gemini-3.5-flash", "models/gemini-2.5-pro"],
     recommendedModel: "models/gemini-3.5-flash",
    },
+  });
+ });
+
+ it("probes real generation with the selected Gemini model before persistence", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({
+    candidates: [{ content: { parts: [{ text: '{"ok":true}' }] } }],
+   }),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  await expect(
+   probeApiKeyModel("AIza-valid", "gemini", "models/gemini-3.5-flash"),
+  ).resolves.toEqual({ ok: true });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent",
+   expect.objectContaining({
+    method: "POST",
+    headers: expect.objectContaining({ "x-goog-api-key": "AIza-valid" }),
+   }),
+  );
+ });
+
+ it("rejects a selected model when the generation probe fails", async () => {
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("quota", { status: 429 })));
+
+  await expect(probeApiKeyModel("gsk_valid_test", "groq", "openai/gpt-oss-20b")).resolves.toEqual({
+   ok: false,
+  });
+ });
+
+ it("rejects an empty successful generation response", async () => {
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({ choices: [] })));
+
+  await expect(probeApiKeyModel("sk-valid", "deepseek", "deepseek-v4-flash")).resolves.toEqual({
+   ok: false,
   });
  });
 });

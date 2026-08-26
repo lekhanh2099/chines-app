@@ -33,9 +33,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { fetchManagedApiKeys } from "@/features/settings/api-key-manager.client";
-import type { ApiKeysResponse } from "@/features/settings/api-key-manager.schema";
 import { hanzihomeQueryKeys } from "@/features/hanzihome/query-keys";
-import { recordAiUsageEvent } from "@/lib/ai-usage.client";
+import { getApiKeyModelOptions } from "@/lib/api-key-models";
+import { aiTaskSessionOverrideSchema } from "@/lib/ai-task-contract";
 
 import {
  archiveAiConversation,
@@ -69,17 +69,35 @@ import {
 } from "./ai-conversation.schemas";
 import { AiConversationRuntimeMenu, AUTO_RUNTIME_KEY_ID } from "./AiConversationRuntimeMenu";
 
-const RUNTIME_KEY_STORAGE_KEY = "hanzihome.ai-conversation.runtime-key.v1";
+const RUNTIME_OVERRIDE_STORAGE_PREFIX = "hanzihome.ai-conversation.runtime-override.v2";
 const SESSION_QUERY_ROOT = ["hanzihome", "ai-conversation", "session"];
 const HISTORY_QUERY_KEY = ["hanzihome", "ai-conversation", "history"];
 const SESSION_STALE_TIME_MS = 30_000;
 
-type ManagedApiKey = ApiKeysResponse["keys"][number];
 type RetryTurn = { clientMessageId: string; content: string };
 type ArchiveTarget = { id: string; title: string };
+type RuntimeSelection = {
+ conversationId: string | null;
+ keyId: string;
+ model: string | null;
+};
 
 function conversationSessionQueryKey(conversationId: string | null) {
  return [...SESSION_QUERY_ROOT, conversationId ?? "latest"];
+}
+
+function runtimeOverrideStorageKey(conversationId: string) {
+ return `${RUNTIME_OVERRIDE_STORAGE_PREFIX}:${conversationId}`;
+}
+
+function readRuntimeOverride(value: string | null) {
+ if (!value) return null;
+ try {
+  const parsed = aiTaskSessionOverrideSchema.safeParse(JSON.parse(value));
+  return parsed.success ? parsed.data : null;
+ } catch {
+  return null;
+ }
 }
 
 export function AiConversationWorkspace() {
@@ -97,10 +115,11 @@ export function AiConversationWorkspace() {
  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
  const [archiveTarget, setArchiveTarget] = useState<ArchiveTarget | null>(null);
  const [draft, setDraft] = useState("");
- const [runtimeKeys, setRuntimeKeys] = useState<ManagedApiKey[]>([]);
- const [runtimeKeyId, setRuntimeKeyId] = useState(AUTO_RUNTIME_KEY_ID);
- const [isRuntimeLoading, setIsRuntimeLoading] = useState(true);
- const [runtimeLoadError, setRuntimeLoadError] = useState(false);
+ const [runtimeSelection, setRuntimeSelection] = useState<RuntimeSelection>({
+  conversationId: null,
+  keyId: AUTO_RUNTIME_KEY_ID,
+  model: null,
+ });
  const [streamContent, setStreamContent] = useState("");
  const [streamStop, setStreamStop] = useState<(() => void) | null>(null);
  const requestRef = useRef<AbortController | null>(null);
@@ -134,6 +153,43 @@ export function AiConversationWorkspace() {
   staleTime: 15_000,
   retry: false,
  });
+
+ const runtimeKeysQuery = useQuery({
+  queryKey: ["settings", "api-keys"],
+  queryFn: fetchManagedApiKeys,
+  retry: false,
+ });
+ const runtimeKeys = runtimeKeysQuery.data?.keys.filter((key) => key.isActive) ?? [];
+ const activeConversationId = sessionQuery.data?.conversation?.id ?? null;
+ const storedRuntimeOverride =
+  activeConversationId && typeof window !== "undefined"
+   ? readRuntimeOverride(
+      window.sessionStorage.getItem(runtimeOverrideStorageKey(activeConversationId)),
+     )
+   : null;
+ const requestedRuntimeOverride =
+  runtimeSelection.conversationId === activeConversationId
+   ? { keyId: runtimeSelection.keyId, model: runtimeSelection.model }
+   : storedRuntimeOverride;
+ const requestedRuntimeKey = runtimeKeys.find((key) => key.id === requestedRuntimeOverride?.keyId);
+ const requestedRuntimeModelSupported = Boolean(
+  requestedRuntimeKey &&
+  requestedRuntimeOverride?.model &&
+  (requestedRuntimeKey.defaultModel === requestedRuntimeOverride.model ||
+   getApiKeyModelOptions(requestedRuntimeKey.provider).some(
+    (option) => option.value === requestedRuntimeOverride.model,
+   )),
+ );
+ const runtimeKeyId =
+  requestedRuntimeKey && requestedRuntimeModelSupported
+   ? requestedRuntimeKey.id
+   : AUTO_RUNTIME_KEY_ID;
+ const runtimeModel =
+  requestedRuntimeKey && requestedRuntimeModelSupported
+   ? (requestedRuntimeOverride?.model ?? null)
+   : null;
+ const isRuntimeLoading = runtimeKeysQuery.isPending;
+ const runtimeLoadError = runtimeKeysQuery.isError;
 
  const runtimeHealthQuery = useQuery({
   queryKey: hanzihomeQueryKeys.aiConversationRuntimeHealth(runtimeKeyId),
@@ -206,6 +262,7 @@ export function AiConversationWorkspace() {
      clientMessageId,
      content,
      ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID ? { apiKeyId: runtimeKeyId } : {}),
+     ...(runtimeKeyId !== AUTO_RUNTIME_KEY_ID && runtimeModel ? { model: runtimeModel } : {}),
     },
     {
      signal: controller.signal,
@@ -229,12 +286,6 @@ export function AiConversationWorkspace() {
    };
    queryClient.setQueryData(conversationSessionQueryKey(turn.conversationId), nextSession);
    void queryClient.invalidateQueries({ queryKey: HISTORY_QUERY_KEY });
-   recordAiUsageEvent({
-    apiKeyId: turn.apiKeyId,
-    provider: turn.provider,
-    model: turn.model,
-    usage: turn.usage,
-   });
   },
   onError: (_error, variables) => {
    if (!variables.controller.signal.aborted) {
@@ -363,7 +414,11 @@ export function AiConversationWorkspace() {
    : persistedMessages.length > 0
      ? persistedMessages.map((message) => ({
         key: message.id,
-        message: { role: message.role, content: message.content } satisfies AiConversationMessage,
+        message: {
+         role: message.role,
+         content: message.content,
+         ...(message.runtimeReceipt ? { runtimeReceipt: message.runtimeReceipt } : {}),
+        },
        }))
      : [{ key: "greeting", message: greeting }];
  const pendingMessage =
@@ -416,35 +471,6 @@ export function AiConversationWorkspace() {
  }, [conversationIdFromUrl, navigateToConversation, queryClient, sessionQuery.data]);
 
  useEffect(() => {
-  let cancelled = false;
-  const loadRuntimeKeys = async () => {
-   setIsRuntimeLoading(true);
-   setRuntimeLoadError(false);
-   try {
-    const response = await fetchManagedApiKeys();
-    if (cancelled) return;
-    const activeKeys = response.keys.filter((key) => key.isActive);
-    setRuntimeKeys(activeKeys);
-    const savedKeyId = window.localStorage.getItem(RUNTIME_KEY_STORAGE_KEY);
-    setRuntimeKeyId(
-     savedKeyId && activeKeys.some((key) => key.id === savedKeyId)
-      ? savedKeyId
-      : AUTO_RUNTIME_KEY_ID,
-    );
-   } catch {
-    if (!cancelled) setRuntimeLoadError(true);
-   } finally {
-    if (!cancelled) setIsRuntimeLoading(false);
-   }
-  };
-
-  void loadRuntimeKeys();
-  return () => {
-   cancelled = true;
-  };
- }, []);
-
- useEffect(() => {
   const viewport = messageViewportRef.current;
   if (!viewport) return;
   viewport.scrollTop = viewport.scrollHeight;
@@ -455,13 +481,34 @@ export function AiConversationWorkspace() {
    value === AUTO_RUNTIME_KEY_ID || runtimeKeys.some((key) => key.id === value)
     ? value
     : AUTO_RUNTIME_KEY_ID;
-  setRuntimeKeyId(nextValue);
+  const selectedKey = runtimeKeys.find((key) => key.id === nextValue);
+  const nextModel = selectedKey?.defaultModel ?? null;
+  const conversationId = sessionQuery.data?.conversation?.id ?? null;
+  setRuntimeSelection({ conversationId, keyId: nextValue, model: nextModel });
   sendMutation.reset();
-  if (nextValue === AUTO_RUNTIME_KEY_ID) {
-   window.localStorage.removeItem(RUNTIME_KEY_STORAGE_KEY);
-  } else {
-   window.localStorage.setItem(RUNTIME_KEY_STORAGE_KEY, nextValue);
+  if (!conversationId) return;
+  const storageKey = runtimeOverrideStorageKey(conversationId);
+  if (nextValue === AUTO_RUNTIME_KEY_ID || !nextModel) {
+   window.sessionStorage.removeItem(storageKey);
+   return;
   }
+  window.sessionStorage.setItem(storageKey, JSON.stringify({ keyId: nextValue, model: nextModel }));
+ };
+
+ const selectRuntimeModel = (model: string) => {
+  const selectedKey = runtimeKeys.find((key) => key.id === runtimeKeyId);
+  if (!selectedKey) return;
+  const supported =
+   selectedKey.defaultModel === model ||
+   getApiKeyModelOptions(selectedKey.provider).some((option) => option.value === model);
+  if (!supported) return;
+  const conversationId = sessionQuery.data?.conversation?.id ?? null;
+  setRuntimeSelection({ conversationId, keyId: selectedKey.id, model });
+  if (!conversationId) return;
+  window.sessionStorage.setItem(
+   runtimeOverrideStorageKey(conversationId),
+   JSON.stringify({ keyId: selectedKey.id, model }),
+  );
  };
 
  const updateDraft = (value: string) => {
@@ -569,11 +616,13 @@ export function AiConversationWorkspace() {
      <AiConversationRuntimeMenu
       runtimeKeys={runtimeKeys}
       runtimeKeyId={runtimeKeyId}
+      runtimeModel={runtimeModel}
       runtimeHealth={runtimeHealth}
       isRuntimeLoading={isRuntimeLoading}
       isHealthChecking={isHealthChecking}
       runtimeLoadError={runtimeLoadError}
       onSelectRuntime={selectRuntimeKey}
+      onSelectModel={selectRuntimeModel}
       onRecheck={() => void runtimeHealthQuery.refetch()}
      />
      <DropdownMenu>

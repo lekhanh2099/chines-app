@@ -217,7 +217,7 @@ Status: source implementation complete for known user-facing consumers; executab
 - [x] Vocabulary generation resolves shared `lookup` capability.
 - [x] Editor word/sentence enrichment resolves shared `lookup` capability.
 - [x] Cached dictionary/lesson/legacy usable data returns without requiring an AI key.
-- [x] Legacy Daily Reading generation is gated by shared personal `daily-reading-learning` capability.
+- [x] The unused legacy Daily Reading generation route and provider path were removed after consumer tracing.
 - [x] Legacy conversation compatibility generation is gated by shared personal `conversation` capability.
 - [x] Compatibility bridge may recover only the exact credential selected by `ai-runtime.service`; it does not own fallback order.
 - [x] Route/bridge regressions were added or updated for cache-first and missing-key boundaries.
@@ -229,8 +229,8 @@ Status: active user-facing runtime source migration complete; dormant legacy ada
 
 - [x] Active conversation generation/health no longer uses a system provider key.
 - [x] Obsolete `ai-conversation-system.server.ts` runtime owner was removed after consumer proof.
-- [x] Active Daily Reading V1/V2 generation no longer falls back to system Gemini.
-- [x] Daily Reading legacy provider compatibility fallback is fail-closed rather than reading provider env.
+- [x] Active Daily Reading enrichment no longer falls back to system Gemini.
+- [x] The unused Daily Reading legacy provider compatibility path was removed.
 - [x] Semantic embeddings no longer read system Gemini env.
 - [x] Known lookup/editor/vocab user-facing callers resolve shared personal runtime before legacy structured adapters.
 - [x] `.env.example` no longer documents `GEMINI_API_KEY` or `DEEPSEEK_API_KEY` provider fallbacks.

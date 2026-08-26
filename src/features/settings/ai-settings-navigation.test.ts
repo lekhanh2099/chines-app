@@ -4,6 +4,7 @@ import { resolveAiSettingsPanel } from "./ai-settings-navigation";
 
 describe("resolveAiSettingsPanel", () => {
  it("keeps supported AI settings panels addressable", () => {
+  expect(resolveAiSettingsPanel("tasks")).toBe("tasks");
   expect(resolveAiSettingsPanel("conversation")).toBe("conversation");
   expect(resolveAiSettingsPanel("daily-reading")).toBe("daily-reading");
   expect(resolveAiSettingsPanel("providers")).toBe("providers");
@@ -11,8 +12,8 @@ describe("resolveAiSettingsPanel", () => {
   expect(resolveAiSettingsPanel("advanced")).toBe("advanced");
  });
 
- it("uses conversation for missing or invalid panel values", () => {
-  expect(resolveAiSettingsPanel(undefined)).toBe("conversation");
-  expect(resolveAiSettingsPanel("reader")).toBe("conversation");
+ it("uses task routing for missing or invalid panel values", () => {
+  expect(resolveAiSettingsPanel(undefined)).toBe("tasks");
+  expect(resolveAiSettingsPanel("reader")).toBe("tasks");
  });
 });

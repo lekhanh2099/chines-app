@@ -91,8 +91,10 @@ describe("Daily Reading V2 enrichment provider", () => {
 
   expect(result).toMatchObject({ ok: true, model: geminiRuntime.model });
   const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
-  expect(url).toContain("user-gemini-key");
+  const init = fetchMock.mock.calls[0]?.[1];
+  expect(url).not.toContain("user-gemini-key");
   expect(url).not.toContain("system-gemini-key-that-must-not-be-used");
+  expect(new Headers(init?.headers).get("x-goog-api-key")).toBe("user-gemini-key");
  });
 
  it("sends the resolved user key in the Groq authorization header", async () => {

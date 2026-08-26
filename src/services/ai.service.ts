@@ -261,10 +261,13 @@ async function callGeminiRaw(
   throwIfAborted(abortSignal);
 
   const res = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${resolvedApiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent`,
    {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+     "Content-Type": "application/json",
+     "x-goog-api-key": resolvedApiKey,
+    },
     body: JSON.stringify({
      systemInstruction: {
       parts: [{ text: systemPrompt }],
@@ -287,7 +290,7 @@ async function callGeminiRaw(
 
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
-   logger.error(`[AI:Gemini] HTTP ${res.status}:`, errBody);
+   logger.error(`[AI:Gemini] HTTP ${res.status}`);
 
    if (isUserKey) {
     return {

@@ -11,6 +11,11 @@ import {
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import {
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import {
@@ -34,9 +39,15 @@ function roundMs(value: number): number {
  return Math.round(value * 100) / 100;
 }
 
-function buildLookupResponse(vocabData: VocabData, cached: boolean) {
+function buildLookupResponse(
+ vocabData: VocabData,
+ cached: boolean,
+ runtimeReceipt?: ReturnType<typeof getAiRuntimeReceipt>,
+) {
  return NextResponse.json({
   cached,
+  provenance: cached ? "dictionary" : "ai-transient",
+  ...(runtimeReceipt ? { runtimeReceipt } : {}),
   data: {
    id: vocabData.id,
    dictionary_id: vocabData.dictionary_id,
@@ -49,7 +60,10 @@ function buildLookupResponse(vocabData: VocabData, cached: boolean) {
  });
 }
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return NextResponse.json({ error: "Tác vụ tra cứu sâu đang tắt." }, { status: 409 });
+ }
  return status === "missing-key"
   ? NextResponse.json(
      { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
@@ -164,7 +178,7 @@ export async function POST(request: NextRequest) {
   const authStartedAt = performance.now();
   const [promptSettings, runtime] = await Promise.all([
    getUserAiPromptSettings(supabase, user.id),
-   resolveAiAnalysisRuntime({ supabase, userId: user.id }),
+   resolveAiAnalysisRuntime({ supabase, userId: user.id, taskId: "lookup.deep" }),
   ]);
   metrics.push({
    name: "auth",
@@ -172,6 +186,11 @@ export async function POST(request: NextRequest) {
   });
 
   if (!runtime.ok) {
+   await recordUserAiTaskBlockedActivity({
+    userId: user.id,
+    taskId: "lookup.deep",
+    errorCode: runtime.reason,
+   });
    source = "ai_runtime_unavailable";
    aiStatus = runtime.status;
    return finalize(runtimeError(runtime.status));
@@ -196,6 +215,13 @@ export async function POST(request: NextRequest) {
   aiStatus = aiLookup.data ? "ok" : "failed";
 
   if (!aiLookup.data) {
+   await recordUserAiRuntimeActivity({
+    userId: user.id,
+    runtime: runtime.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - aiStartedAt),
+   });
    source = "ai_deep_error";
    return finalize(
     NextResponse.json(
@@ -211,10 +237,15 @@ export async function POST(request: NextRequest) {
 
   throwIfAborted(request.signal);
   source = "ai_deep_transient";
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - aiStartedAt),
+  });
 
-  // This route accepts learner-owned prompt/model settings, so its AI output is
-  // request-local. Only the fixed basic canonicalization path may mutate shared
-  // dictionary rows.
+  // Learner-owned prompt/model output remains request-local until an explicit
+  // personal save action chooses to persist it.
   return finalize(
    buildLookupResponse(
     {
@@ -225,6 +256,7 @@ export async function POST(request: NextRequest) {
      ai_analysis: aiLookup.data,
     },
     false,
+    getAiRuntimeReceipt(runtime.runtime),
    ),
   );
  } catch (error) {

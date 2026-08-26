@@ -38,6 +38,14 @@ describe("conversation stream callback lifecycle", () => {
    provider: "Groq",
    model: "openai/gpt-oss-20b",
    apiKeyId: "55555555-5555-4555-8555-555555555555",
+   runtimeReceipt: {
+    taskId: "conversation.reply",
+    provider: "groq",
+    model: "openai/gpt-oss-20b",
+    keyId: "55555555-5555-4555-8555-555555555555",
+    keyLabel: "Groq chính",
+    resolutionSource: "auto",
+   },
    usage: null,
   };
   vi.stubGlobal(

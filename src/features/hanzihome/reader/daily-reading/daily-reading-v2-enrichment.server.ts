@@ -285,7 +285,14 @@ async function generateTranslation(
  };
 }
 
-function validateVocabulary(reading: DailyReadingV2EnrichmentArticle, draft: VocabularyDraft) {
+function validateVocabulary(
+ reading: DailyReadingV2EnrichmentArticle,
+ draft: VocabularyDraft,
+ targetCount: number,
+) {
+ if (draft.items.length !== targetCount) {
+  throw new Error(`Số từ vựng phải đúng ${targetCount}.`);
+ }
  const fullText = reading.article.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  const seen = new Set<string>();
  for (const item of draft.items) {
@@ -314,7 +321,14 @@ function articleSentences(reading: DailyReadingV2EnrichmentArticle) {
  );
 }
 
-function validateGrammar(reading: DailyReadingV2EnrichmentArticle, draft: GrammarDraft) {
+function validateGrammar(
+ reading: DailyReadingV2EnrichmentArticle,
+ draft: GrammarDraft,
+ targetCount: number,
+) {
+ if (draft.items.length !== targetCount) {
+  throw new Error(`Số điểm ngữ pháp phải đúng ${targetCount}.`);
+ }
  const sentences = articleSentences(reading).map(normalizeSentence);
  for (const item of draft.items) {
   if (!sentences.includes(normalizeSentence(item.evidenceSentenceZh))) {
@@ -326,7 +340,14 @@ function validateGrammar(reading: DailyReadingV2EnrichmentArticle, draft: Gramma
  });
 }
 
-function validateQuestions(reading: DailyReadingV2EnrichmentArticle, draft: QuestionsDraft) {
+function validateQuestions(
+ reading: DailyReadingV2EnrichmentArticle,
+ draft: QuestionsDraft,
+ targetCount: number,
+) {
+ if (draft.items.length !== targetCount) {
+  throw new Error(`Số câu hỏi phải đúng ${targetCount}.`);
+ }
  const paragraphIds = new Set(reading.article.paragraphs.map((paragraph) => paragraph.id));
  const fullText = reading.article.paragraphs.map((paragraph) => paragraph.zh).join("\n");
  for (const item of draft.items) {
@@ -356,6 +377,7 @@ function validateQuestions(reading: DailyReadingV2EnrichmentArticle, draft: Ques
 function learningPrompt(
  reading: DailyReadingV2EnrichmentArticle,
  module: Exclude<DailyReadingV2EnrichmentModule, "translation">,
+ targetCount: number,
 ) {
  const common = [
   `Target learner level: ${targetLevelLabel(reading)}.`,
@@ -368,7 +390,7 @@ function learningPrompt(
  ];
  if (module === "vocabulary") {
   return [
-   "Select 10-14 useful words/phrases that occur verbatim in the article.",
+   `Select exactly ${targetCount} useful words/phrases that occur verbatim in the article.`,
    "Return JSON: items[{hanzi,meaningVi,meaningInContextVi,categoryVi}].",
    "Explain the meaning in this exact article context; do not invent words not present in the text.",
    ...common,
@@ -376,14 +398,14 @@ function learningPrompt(
  }
  if (module === "grammar") {
   return [
-   "Select 3-5 useful grammar patterns genuinely evidenced by complete sentences in the article.",
+   `Select exactly ${targetCount} useful grammar patterns genuinely evidenced by complete sentences in the article.`,
    "Return JSON: items[{patternZh,explanationVi,evidenceSentenceZh}].",
    "evidenceSentenceZh must be one complete sentence copied exactly from the article.",
    ...common,
   ].join("\n");
  }
  return [
-  "Create 5-6 reading-comprehension questions grounded only in the article.",
+  `Create exactly ${targetCount} reading-comprehension questions grounded only in the article.`,
   "Return JSON: items[{type,promptZh,promptVi,answerZh,answerVi,evidenceParagraphIds}], sourcePhrasesZh, verificationSummaryVi.",
   "Include main_idea, at least two detail questions, inference, and summary.",
   "Every evidenceParagraphIds value must be one of the supplied paragraph IDs. sourcePhrasesZh must be short exact phrases from the article.",
@@ -395,16 +417,17 @@ async function generateLearningModule(
  reading: DailyReadingV2EnrichmentArticle,
  runtime: ResolvedUserAiRuntime,
  module: Exclude<DailyReadingV2EnrichmentModule, "translation">,
+ targetCount: number,
  signal?: AbortSignal,
 ): Promise<DailyReadingV2EnrichmentResponse> {
  if (module === "vocabulary") {
   const result = await requestStructured({
    runtime,
    module,
-   prompt: learningPrompt(reading, module),
+   prompt: learningPrompt(reading, module, targetCount),
    schema: vocabularyDraftSchema,
    signal,
-   validate: (draft) => validateVocabulary(reading, draft),
+   validate: (draft) => validateVocabulary(reading, draft, targetCount),
   });
   return result.ok
    ? { ok: true, module, data: result.data, generatedBy: generatedBy(runtime) }
@@ -414,10 +437,10 @@ async function generateLearningModule(
   const result = await requestStructured({
    runtime,
    module,
-   prompt: learningPrompt(reading, module),
+   prompt: learningPrompt(reading, module, targetCount),
    schema: grammarDraftSchema,
    signal,
-   validate: (draft) => validateGrammar(reading, draft),
+   validate: (draft) => validateGrammar(reading, draft, targetCount),
   });
   return result.ok
    ? { ok: true, module, data: result.data, generatedBy: generatedBy(runtime) }
@@ -426,10 +449,10 @@ async function generateLearningModule(
  const result = await requestStructured({
   runtime,
   module,
-  prompt: learningPrompt(reading, module),
+  prompt: learningPrompt(reading, module, targetCount),
   schema: questionsDraftSchema,
   signal,
-  validate: (draft) => validateQuestions(reading, draft),
+  validate: (draft) => validateQuestions(reading, draft, targetCount),
  });
  return result.ok
   ? { ok: true, module, data: result.data, generatedBy: generatedBy(runtime) }
@@ -437,17 +460,41 @@ async function generateLearningModule(
 }
 
 function generatedBy(runtime: ResolvedUserAiRuntime): DailyReadingV2GeneratedBy {
- return { provider: runtime.providerLabel, model: runtime.model };
+ return {
+  provider: runtime.providerLabel,
+  model: runtime.model,
+  ...(runtime.taskId && runtime.resolutionSource
+   ? {
+      receipt: {
+       taskId: runtime.taskId,
+       provider: runtime.provider,
+       model: runtime.model,
+       keyId: runtime.keyId,
+       keyLabel: runtime.label,
+       resolutionSource: runtime.resolutionSource,
+      },
+     }
+   : {}),
+ };
 }
 
 export function generateDailyReadingV2Enrichment(input: {
  reading: DailyReadingV2EnrichmentArticle;
  runtime: ResolvedUserAiRuntime;
  module: DailyReadingV2EnrichmentModule;
+ targetCount?: number | null;
  signal?: AbortSignal;
 }) {
  if (input.module === "translation") {
   return generateTranslation(input.reading, input.runtime, input.signal);
  }
- return generateLearningModule(input.reading, input.runtime, input.module, input.signal);
+ const targetCount =
+  input.targetCount ?? (input.module === "vocabulary" ? 12 : input.module === "grammar" ? 4 : 6);
+ return generateLearningModule(
+  input.reading,
+  input.runtime,
+  input.module,
+  targetCount,
+  input.signal,
+ );
 }

@@ -2,6 +2,7 @@ import "server-only";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { logger } from "@/lib/logger";
+import { recordUserAiRuntimeActivity } from "@/services/ai-runtime.service";
 
 import { sanitizeAiConversationReply } from "./ai-conversation-output";
 import {
@@ -73,6 +74,7 @@ export async function createPersistedAiConversationTurnStream(input: {
  clientMessageId: string;
  content: string;
  apiKeyId?: string;
+ model?: string;
  requestSignal: AbortSignal;
 }): Promise<AiConversationStreamTurnResult> {
  const userMessage = await appendAiConversationMessage({
@@ -96,6 +98,7 @@ export async function createPersistedAiConversationTurnStream(input: {
    provider: existingReply.provider,
    model: existingReply.model,
    apiKeyId: existingReply.apiKeyId,
+   runtimeReceipt: existingReply.runtimeReceipt,
    usage: null,
   });
   return { ok: true, response: completedTurnResponse(turn) };
@@ -115,11 +118,13 @@ export async function createPersistedAiConversationTurnStream(input: {
   recentMessages,
   contextState,
   ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
+  ...(input.model ? { model: input.model } : {}),
   signal: input.requestSignal,
  });
  if (!prepared.ok) return prepared;
 
  const providerController = new AbortController();
+ const startedAt = performance.now();
  const abortProvider = () => providerController.abort();
  if (input.requestSignal.aborted) providerController.abort();
  else input.requestSignal.addEventListener("abort", abortProvider, { once: true });
@@ -178,6 +183,15 @@ export async function createPersistedAiConversationTurnStream(input: {
     }
 
     if (providerController.signal.aborted) {
+     await recordUserAiRuntimeActivity({
+      userId: input.userId,
+      runtime: prepared.runtime,
+      status: "cancelled",
+      errorCode: "cancelled",
+      latencyMs: Math.round(performance.now() - startedAt),
+      resourceType: "conversation",
+      resourceId: input.conversationId,
+     });
      close();
      return;
     }
@@ -205,6 +219,15 @@ export async function createPersistedAiConversationTurnStream(input: {
     // A Stop can race with the final provider chunk. Recheck immediately before
     // persistence so a cancelled partial reply remains presentation-only.
     if (providerController.signal.aborted) {
+     await recordUserAiRuntimeActivity({
+      userId: input.userId,
+      runtime: prepared.runtime,
+      status: "cancelled",
+      errorCode: "cancelled",
+      latencyMs: Math.round(performance.now() - startedAt),
+      resourceType: "conversation",
+      resourceId: input.conversationId,
+     });
      close();
      return;
     }
@@ -219,6 +242,9 @@ export async function createPersistedAiConversationTurnStream(input: {
       provider: prepared.runtime.providerLabel,
       model: prepared.runtime.model,
       apiKeyId: prepared.runtime.keyId,
+      taskId: prepared.runtime.taskId,
+      keyLabel: prepared.runtime.label,
+      resolutionSource: prepared.runtime.resolutionSource,
      },
     });
     const turn = aiConversationTurnResponseSchema.parse({
@@ -228,19 +254,62 @@ export async function createPersistedAiConversationTurnStream(input: {
      provider: prepared.runtime.providerLabel,
      model: prepared.runtime.model,
      apiKeyId: prepared.runtime.keyId,
+     runtimeReceipt: {
+      taskId: prepared.runtime.taskId,
+      provider: prepared.runtime.provider,
+      model: prepared.runtime.model,
+      keyId: prepared.runtime.keyId,
+      keyLabel: prepared.runtime.label,
+      resolutionSource: prepared.runtime.resolutionSource,
+     },
      usage: null,
     });
     safeEnqueue({ type: "final", turn });
+    await recordUserAiRuntimeActivity({
+     userId: input.userId,
+     runtime: prepared.runtime,
+     status: "success",
+     latencyMs: Math.round(performance.now() - startedAt),
+     resourceType: "conversation",
+     resourceId: input.conversationId,
+    });
     close();
    } catch (error) {
     if (providerController.signal.aborted) {
+     await recordUserAiRuntimeActivity({
+      userId: input.userId,
+      runtime: prepared.runtime,
+      status: "cancelled",
+      errorCode: "cancelled",
+      latencyMs: Math.round(performance.now() - startedAt),
+      resourceType: "conversation",
+      resourceId: input.conversationId,
+     });
      close();
      return;
     }
 
     if (error instanceof AiConversationProviderStreamError) {
+     await recordUserAiRuntimeActivity({
+      userId: input.userId,
+      runtime: prepared.runtime,
+      status: error.code === "cancelled" ? "cancelled" : "failure",
+      errorCode: error.code,
+      latencyMs: Math.round(performance.now() - startedAt),
+      resourceType: "conversation",
+      resourceId: input.conversationId,
+     });
      safeEnqueue({ type: "error", code: streamErrorCode(error), message: error.message });
     } else {
+     await recordUserAiRuntimeActivity({
+      userId: input.userId,
+      runtime: prepared.runtime,
+      status: "failure",
+      errorCode: "provider-unavailable",
+      latencyMs: Math.round(performance.now() - startedAt),
+      resourceType: "conversation",
+      resourceId: input.conversationId,
+     });
      logger.error("[AI Conversation] streamed assistant persistence failed", error);
      safeEnqueue({
       type: "error",

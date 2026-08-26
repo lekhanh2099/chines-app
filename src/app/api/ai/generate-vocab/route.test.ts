@@ -65,6 +65,19 @@ const credential = {
  updatedAt: "2026-08-19T00:00:00.000Z",
  apiKey: "gsk-personal",
 };
+const runtime = {
+ taskId: "lookup.deep",
+ resolutionSource: "auto",
+ keyId: credential.id,
+ provider: credential.provider,
+ providerLabel: "Groq",
+ label: credential.label,
+ maskedKey: credential.maskedKey,
+ model: credential.defaultModel,
+ priority: credential.priority,
+ apiKey: credential.apiKey,
+ capabilities: ["lookup"],
+};
 
 describe("POST /api/ai/generate-vocab", () => {
  beforeEach(() => {
@@ -112,7 +125,7 @@ describe("POST /api/ai/generate-vocab", () => {
  it("passes exactly the credential selected by shared runtime authority", async () => {
   mocks.resolveAiAnalysisRuntime.mockResolvedValue({
    ok: true,
-   runtime: { keyId: credential.id },
+   runtime,
    credential,
   });
   mocks.analyzeHanziDetailed.mockResolvedValue({ data: null, error: "provider unavailable" });
@@ -129,7 +142,7 @@ describe("POST /api/ai/generate-vocab", () => {
  it("returns learner-configured deep analysis without promoting it to canonical storage", async () => {
   mocks.resolveAiAnalysisRuntime.mockResolvedValue({
    ok: true,
-   runtime: { keyId: credential.id },
+   runtime,
    credential,
   });
   const analysis = {
@@ -143,6 +156,16 @@ describe("POST /api/ai/generate-vocab", () => {
   const response = await POST(request("学习"));
 
   expect(response.status).toBe(200);
-  await expect(response.json()).resolves.toEqual({ data: analysis, cached: false });
+  await expect(response.json()).resolves.toMatchObject({
+   data: analysis,
+   cached: false,
+   provenance: "ai-transient",
+   runtimeReceipt: {
+    taskId: "lookup.deep",
+    provider: "groq",
+    model: credential.defaultModel,
+    keyId: credential.id,
+   },
+  });
  });
 });

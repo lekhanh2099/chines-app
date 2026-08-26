@@ -220,7 +220,11 @@ describe("Groq lookup routing", () => {
   });
 
   expect(result.data).toBe("最近怎么样？");
-  const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+  const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
+  const init = fetchMock.mock.calls[0]?.[1];
+  expect(url).not.toContain(geminiCredential.apiKey);
+  expect(new Headers(init?.headers).get("x-goog-api-key")).toBe(geminiCredential.apiKey);
+  const requestBody = JSON.parse(String(init?.body));
   expect(requestBody.systemInstruction.parts[0].text).toBe(trustedContext);
   expect(requestBody.contents[0].role).toBe("user");
   expect(requestBody.contents[0].parts[0].text).toContain("Learner: 你好");

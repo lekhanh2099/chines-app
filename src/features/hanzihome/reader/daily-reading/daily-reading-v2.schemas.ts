@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
+
 import { dailyReadingSourceIdSchema } from "./daily-reading-source-catalog";
 import {
  dailyReadingGenerationKindSchema,
@@ -28,6 +30,7 @@ export const dailyReadingV2EnrichmentBlockReasonSchema = z.enum([
  "invalid-ai-key",
  "quota-exhausted",
  "provider-unavailable",
+ "task-disabled",
 ]);
 export const dailyReadingV2FreshnessDaysSchema = z.union([
  z.literal(1),
@@ -42,6 +45,7 @@ const dailyReadingV2AiAttributionSchema = z
  .strictObject({
   provider: nonEmptyTextSchema.max(80),
   model: nonEmptyTextSchema.max(160),
+  receipt: aiRuntimeReceiptSchema.optional(),
  })
  .nullable();
 
@@ -226,8 +230,7 @@ export const dailyReadingV2EnrichmentRunSchema = z.strictObject({
  errorDetail: z.string().max(1_000),
 });
 
-export const dailyReadingV2SettingsSchema = z.strictObject({
- schemaVersion: z.literal("2.0.0"),
+const dailyReadingV2SettingsBaseSchema = z.strictObject({
  autoCaptureEnabled: z.boolean(),
  captureTime: z.strictObject({
   hour: z.number().int().min(0).max(23),
@@ -242,6 +245,21 @@ export const dailyReadingV2SettingsSchema = z.strictObject({
  noMatchBehavior: dailyReadingV2NoMatchBehaviorSchema,
  targetLevel: dailyReadingLevelSchema,
  autoEnrichmentEnabled: z.boolean(),
+});
+
+export const dailyReadingV2LegacySettingsSchema = dailyReadingV2SettingsBaseSchema.extend({
+ schemaVersion: z.literal("2.0.0"),
+});
+
+export const dailyReadingV2SettingsSchema = dailyReadingV2SettingsBaseSchema.extend({
+ schemaVersion: z.literal("2.1.0"),
+ translationEnabled: z.boolean(),
+ vocabularyEnabled: z.boolean(),
+ grammarEnabled: z.boolean(),
+ questionsEnabled: z.boolean(),
+ vocabularyCount: z.number().int().min(1).max(24),
+ grammarCount: z.number().int().min(1).max(10),
+ questionsCount: z.number().int().min(5).max(12),
 });
 
 export const dailyReadingV2CaptureHistoryItemSchema = z.strictObject({
@@ -289,4 +307,5 @@ export type DailyReadingV2FreshnessDays = z.output<typeof dailyReadingV2Freshnes
 export type DailyReadingV2LengthPreference = z.output<typeof dailyReadingV2LengthPreferenceSchema>;
 export type DailyReadingV2NoMatchBehavior = z.output<typeof dailyReadingV2NoMatchBehaviorSchema>;
 export type DailyReadingV2Settings = z.output<typeof dailyReadingV2SettingsSchema>;
+export type DailyReadingV2LegacySettings = z.output<typeof dailyReadingV2LegacySettingsSchema>;
 export type DailyReadingV2CaptureResponse = z.output<typeof dailyReadingV2CaptureResponseSchema>;

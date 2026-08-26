@@ -3,19 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 import {
- syncDictionaryEntryToLegacyCacheAsServer,
- upsertLegacyVocabularyCacheAsServer,
-} from "@/features/dictionary/server/dictionary-persistence.server";
-import {
  applyServerTimingHeaders,
  isAbortError,
  throwIfAborted,
  type ServerTimingMetric,
 } from "@/lib/request-utils";
 import { createClient } from "@/lib/supabase/server";
-import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 import { logger } from "@/lib/logger";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import {
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
 import {
  getBasicVocabData,
@@ -25,7 +25,6 @@ import {
  getVocabByHanzi,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
- upsertDictionaryEntry,
 } from "@/services/vocab.service";
 import type { VocabData } from "@/types/database";
 
@@ -33,16 +32,22 @@ const basicLookupSchema = z.object({
  text: z.string().trim().min(1).max(120),
  lessonId: z.string().trim().min(1).max(200).optional(),
 });
-const maxCanonicalHeadwordLength = 32;
 
 function roundMs(value: number): number {
  return Math.round(value * 100) / 100;
 }
 
-function buildLookupResponse(vocabData: VocabData, cached: boolean, source: string) {
+function buildLookupResponse(
+ vocabData: VocabData,
+ cached: boolean,
+ source: string,
+ runtimeReceipt?: ReturnType<typeof getAiRuntimeReceipt>,
+) {
  return NextResponse.json({
   cached,
   source,
+  provenance: cached ? "dictionary" : "ai-transient",
+  ...(runtimeReceipt ? { runtimeReceipt } : {}),
   data: {
    id: vocabData.id,
    dictionary_id: vocabData.dictionary_id,
@@ -61,7 +66,10 @@ function hasUsableBasicMeaning(
  return !!vocabData?.meaning.trim();
 }
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return NextResponse.json({ error: "Tác vụ tra nhanh đang tắt." }, { status: 409 });
+ }
  return status === "missing-key"
   ? NextResponse.json(
      { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
@@ -122,7 +130,6 @@ export async function POST(request: NextRequest) {
   }
 
   lookupText = normalizeDictionaryHeadword(parsed.data.text);
-  const canPersistCanonical = lookupText.length <= maxCanonicalHeadwordLength;
 
   const cacheStartedAt = performance.now();
   if (parsed.data.lessonId) {
@@ -200,8 +207,17 @@ export async function POST(request: NextRequest) {
 
   const aiStartedAt = performance.now();
   aiStatus = "runtime";
-  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+  const runtime = await resolveAiAnalysisRuntime({
+   supabase,
+   userId: user.id,
+   taskId: "lookup.quick",
+  });
   if (!runtime.ok) {
+   await recordUserAiTaskBlockedActivity({
+    userId: user.id,
+    taskId: "lookup.quick",
+    errorCode: runtime.reason,
+   });
    source = "ai_runtime_unavailable";
    aiStatus = runtime.status;
    return finalize(runtimeError(runtime.status));
@@ -221,6 +237,13 @@ export async function POST(request: NextRequest) {
   aiStatus = basicLookup.data ? "ok" : "failed";
 
   if (!basicLookup.data) {
+   await recordUserAiRuntimeActivity({
+    userId: user.id,
+    runtime: runtime.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - aiStartedAt),
+   });
    if (cachedWord) {
     const fallbackVocab = getBasicVocabData({
      id: cachedWord.id,
@@ -261,37 +284,16 @@ export async function POST(request: NextRequest) {
 
   throwIfAborted(request.signal);
 
-  // Long selections are Reader/selection content, not canonical dictionary
-  // headwords. They can receive a transient basic explanation but cannot create
-  // shared dictionary/cache rows.
-  if (!canPersistCanonical) {
-   source = "ai_basic_transient";
-   return finalize(buildLookupResponse(basicVocab, false, source));
-  }
-
-  // Shared dictionary/cache rows are server-owned and only the fixed basic
-  // lexicography prompt is eligible for canonicalization.
-  const canonicalSupabase = createServiceRoleSupabaseClient();
-  const dictionaryEntry = await upsertDictionaryEntry(canonicalSupabase, {
-   headword: lookupText,
-   pinyin: basicVocab.pinyin,
-   sinoVietnamese: basicVocab.sino_vietnamese,
-   meaning: basicVocab.meaning,
-   ai_analysis: basicVocab.ai_analysis,
+  source = "ai_basic_transient";
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - aiStartedAt),
   });
-
-  const legacyVocab = dictionaryEntry
-   ? await syncDictionaryEntryToLegacyCacheAsServer(canonicalSupabase, dictionaryEntry)
-   : await upsertLegacyVocabularyCacheAsServer(canonicalSupabase, basicVocab);
-
-  const persistedBasicVocab: VocabData = {
-   ...basicVocab,
-   id: legacyVocab?.id,
-   dictionary_id: dictionaryEntry?.id,
-  };
-
-  source = "ai_basic";
-  return finalize(buildLookupResponse(persistedBasicVocab, false, source));
+  return finalize(
+   buildLookupResponse(basicVocab, false, source, getAiRuntimeReceipt(runtime.runtime)),
+  );
  } catch (error) {
   if (isAbortError(error) || request.signal.aborted) {
    source = "aborted";

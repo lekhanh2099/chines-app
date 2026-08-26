@@ -5,13 +5,24 @@ import { z } from "zod";
 import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
-const { resolveUserAiRuntime, streamAiConversationProviderReply } = vi.hoisted(() => ({
- resolveUserAiRuntime: vi.fn(),
+const {
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+ streamAiConversationProviderReply,
+} = vi.hoisted(() => ({
+ recordUserAiRuntimeActivity: vi.fn(),
+ recordUserAiTaskBlockedActivity: vi.fn(),
+ resolveUserAiTaskRuntime: vi.fn(),
  streamAiConversationProviderReply: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/services/ai-runtime.service", () => ({ resolveUserAiRuntime }));
+vi.mock("@/services/ai-runtime.service", () => ({
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+}));
 vi.mock("./ai-conversation-stream-provider.server", () => ({
  AiConversationProviderStreamError: class AiConversationProviderStreamError extends Error {},
  streamAiConversationProviderReply,
@@ -24,6 +35,8 @@ const supabase = createClient<Database>("https://example.supabase.co", "test-key
 });
 const schema = z.strictObject({ value: z.string() });
 const runtime: ResolvedUserAiRuntime = {
+ taskId: "conversation.memory-extraction",
+ resolutionSource: "auto",
  keyId: "11111111-1111-4111-8111-111111111111",
  provider: "groq",
  providerLabel: "Groq",
@@ -41,9 +54,11 @@ async function* providerReply(value: string) {
 
 describe("AI conversation structured adapter", () => {
  beforeEach(() => {
-  resolveUserAiRuntime.mockReset();
+  recordUserAiRuntimeActivity.mockReset();
+  recordUserAiTaskBlockedActivity.mockReset();
+  resolveUserAiTaskRuntime.mockReset();
   streamAiConversationProviderReply.mockReset();
-  resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
  });
 
  it("resolves only the shared structured-memory personal runtime", async () => {
@@ -52,16 +67,17 @@ describe("AI conversation structured adapter", () => {
   const result = await generateStructuredAiConversationData({
    supabase,
    userId: "user-1",
+   taskId: "conversation.memory-extraction",
    systemPrompt: "Return JSON",
    prompt: "small prompt",
    schema,
   });
 
   expect(result).toEqual({ data: { value: "personal" }, error: null });
-  expect(resolveUserAiRuntime).toHaveBeenCalledWith({
+  expect(resolveUserAiTaskRuntime).toHaveBeenCalledWith({
    supabase,
    userId: "user-1",
-   capability: "structured-memory",
+   taskId: "conversation.memory-extraction",
   });
   expect(streamAiConversationProviderReply).toHaveBeenCalledWith(
    expect.objectContaining({ runtime, systemPrompt: "Return JSON" }),
@@ -69,7 +85,7 @@ describe("AI conversation structured adapter", () => {
  });
 
  it("does not fall back to a system provider when no personal runtime exists", async () => {
-  resolveUserAiRuntime.mockResolvedValue({
+  resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "no-active-key",
@@ -78,6 +94,7 @@ describe("AI conversation structured adapter", () => {
   const result = await generateStructuredAiConversationData({
    supabase,
    userId: "user-1",
+   taskId: "conversation.memory-extraction",
    systemPrompt: "Return JSON",
    prompt: "small prompt",
    schema,
@@ -94,6 +111,7 @@ describe("AI conversation structured adapter", () => {
   const result = await generateStructuredAiConversationData({
    supabase,
    userId: "user-1",
+   taskId: "conversation.memory-extraction",
    systemPrompt: "Return JSON",
    prompt: "small prompt",
    schema,
@@ -108,6 +126,7 @@ describe("AI conversation structured adapter", () => {
   const result = await generateStructuredAiConversationData({
    supabase,
    userId: "user-1",
+   taskId: "conversation.memory-extraction",
    systemPrompt: "Return JSON",
    prompt: "x".repeat(6001),
    schema,
@@ -115,7 +134,7 @@ describe("AI conversation structured adapter", () => {
 
   expect(result.data).toBeNull();
   expect(result.error).toContain("bounded prompt contract");
-  expect(resolveUserAiRuntime).not.toHaveBeenCalled();
+  expect(resolveUserAiTaskRuntime).not.toHaveBeenCalled();
   expect(streamAiConversationProviderReply).not.toHaveBeenCalled();
  });
 });

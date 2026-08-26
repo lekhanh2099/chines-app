@@ -125,6 +125,17 @@
    "description": "AI tạo bản dịch tiếng Việt, từ vựng, ngữ pháp và câu hỏi sau khi bài nguồn đã được lưu.",
    "autoTitle": "Tự tạo hỗ trợ học sau khi tìm được bài",
    "autoDescription": "Nếu có API key dùng được, app sẽ tạo các phần còn thiếu sau khi lưu bài. Lỗi AI không làm bài nguồn thất bại.",
+   "translationTitle": "Dịch bài",
+   "translationDescription": "Tạo bản dịch tiếng Việt cho bài nguồn.",
+   "vocabularyTitle": "Từ vựng",
+   "vocabularyDescription": "Chọn đúng số từ học từ bài nguồn.",
+   "grammarTitle": "Ngữ pháp",
+   "grammarDescription": "Chọn đúng số điểm ngữ pháp có bằng chứng trong bài.",
+   "questionsTitle": "Câu hỏi",
+   "questionsDescription": "Tạo đúng số câu hỏi đọc hiểu.",
+   "vocabularyCount": "Số từ vựng",
+   "grammarCount": "Số điểm ngữ pháp",
+   "questionsCount": "Số câu hỏi",
    "ready": "Sẵn sàng: {provider} · {model}",
    "missing": "Chưa có API key AI. Bài nguồn vẫn được tìm và đọc bình thường.",
    "storageUnavailable": "Kho API key an toàn phía server chưa sẵn sàng. Bài nguồn không bị ảnh hưởng.",
@@ -206,7 +217,8 @@
    "missingKey": "Cần API key",
    "invalidKey": "Key không hợp lệ",
    "quota": "Giới hạn API",
-   "providerUnavailable": "Provider tạm giới hạn"
+   "providerUnavailable": "Provider tạm giới hạn",
+   "taskDisabled": "Tác vụ AI đang tắt"
   },
   "actions": {
    "create": "Tạo phần này",

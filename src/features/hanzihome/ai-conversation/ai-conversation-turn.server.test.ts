@@ -9,25 +9,36 @@ import type { AiConversationRecalledMemory } from "./ai-conversation-memory.sche
 import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
 
 const {
+ getAiRuntimeReceipt,
  loadAiConversationContextState,
  loadAiConversationMemoryEnabledPreference,
  processDueAiConversationPostTurnJobs,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
  resolveExplicitAiConversationForget,
- resolveUserAiRuntime,
+ resolveUserAiTaskRuntime,
  retrieveRelevantAiConversationMemories,
  streamAiConversationProviderReply,
 } = vi.hoisted(() => ({
+ getAiRuntimeReceipt: vi.fn(),
  loadAiConversationContextState: vi.fn(),
  loadAiConversationMemoryEnabledPreference: vi.fn(),
  processDueAiConversationPostTurnJobs: vi.fn(),
+ recordUserAiRuntimeActivity: vi.fn(),
+ recordUserAiTaskBlockedActivity: vi.fn(),
  resolveExplicitAiConversationForget: vi.fn(),
- resolveUserAiRuntime: vi.fn(),
+ resolveUserAiTaskRuntime: vi.fn(),
  retrieveRelevantAiConversationMemories: vi.fn(),
  streamAiConversationProviderReply: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/services/ai-runtime.service", () => ({ resolveUserAiRuntime }));
+vi.mock("@/services/ai-runtime.service", () => ({
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+}));
 vi.mock("./ai-conversation-stream-provider.server", () => ({
  AiConversationProviderStreamError: class AiConversationProviderStreamError extends Error {},
  streamAiConversationProviderReply,
@@ -116,6 +127,8 @@ const recalledMemory: AiConversationRecalledMemory = {
 };
 
 const groqRuntime: ResolvedUserAiRuntime = {
+ taskId: "conversation.reply",
+ resolutionSource: "auto",
  keyId: "44444444-4444-4444-8444-444444444444",
  provider: "groq",
  providerLabel: "Groq",
@@ -139,15 +152,26 @@ async function* streamText(text: string) {
 
 describe("persisted AI conversation turn", () => {
  beforeEach(() => {
+  getAiRuntimeReceipt.mockReset();
   loadAiConversationContextState.mockReset();
   loadAiConversationMemoryEnabledPreference.mockReset();
   processDueAiConversationPostTurnJobs.mockReset();
+  recordUserAiRuntimeActivity.mockReset();
+  recordUserAiTaskBlockedActivity.mockReset();
   resolveExplicitAiConversationForget.mockReset();
-  resolveUserAiRuntime.mockReset();
+  resolveUserAiTaskRuntime.mockReset();
   retrieveRelevantAiConversationMemories.mockReset();
   streamAiConversationProviderReply.mockReset();
 
-  resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime: groqRuntime });
+  resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime: groqRuntime });
+  getAiRuntimeReceipt.mockReturnValue({
+   taskId: "conversation.reply",
+   provider: "groq",
+   model: groqRuntime.model,
+   keyId: groqRuntime.keyId,
+   keyLabel: groqRuntime.label,
+   resolutionSource: "auto",
+  });
   processDueAiConversationPostTurnJobs.mockResolvedValue({ processed: 0, ready: true });
   loadAiConversationContextState.mockResolvedValue(contextState);
   loadAiConversationMemoryEnabledPreference.mockResolvedValue(true);
@@ -170,8 +194,8 @@ describe("persisted AI conversation turn", () => {
    model: "openai/gpt-oss-20b",
    apiKeyId: groqRuntime.keyId,
   });
-  expect(resolveUserAiRuntime).toHaveBeenCalledWith(
-   expect.objectContaining({ userId: "user-1", capability: "conversation" }),
+  expect(resolveUserAiTaskRuntime).toHaveBeenCalledWith(
+   expect.objectContaining({ userId: "user-1", taskId: "conversation.reply" }),
   );
   expect(retrieveRelevantAiConversationMemories).toHaveBeenCalledWith(
    expect.objectContaining({
@@ -191,7 +215,7 @@ describe("persisted AI conversation turn", () => {
  });
 
  it("blocks the turn before memory/provider work when no personal key is available", async () => {
-  resolveUserAiRuntime.mockResolvedValue({
+  resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "no-active-key",

@@ -188,6 +188,8 @@ describe("Daily Reading V2 enrichment generation", () => {
    "日常生活",
    "学校",
    "社区",
+   "历史时期",
+   "公共文化",
   ];
   mocks.requestProvider
    .mockResolvedValueOnce(providerJson({ items: invalidItems }))

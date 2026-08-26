@@ -76,6 +76,7 @@ export async function POST(request: Request) {
    clientMessageId: parsed.data.clientMessageId,
    content: parsed.data.content,
    ...(parsed.data.apiKeyId ? { apiKeyId: parsed.data.apiKeyId } : {}),
+   ...(parsed.data.model ? { model: parsed.data.model } : {}),
    requestSignal: request.signal,
   });
   return result.ok ? result.response : apiError(result.message, result.status, result.code);

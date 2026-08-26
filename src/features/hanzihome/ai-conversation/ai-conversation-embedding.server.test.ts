@@ -4,12 +4,19 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
-const { resolveUserAiRuntime } = vi.hoisted(() => ({
- resolveUserAiRuntime: vi.fn(),
-}));
+const { recordUserAiRuntimeActivity, recordUserAiTaskBlockedActivity, resolveUserAiTaskRuntime } =
+ vi.hoisted(() => ({
+  recordUserAiRuntimeActivity: vi.fn(),
+  recordUserAiTaskBlockedActivity: vi.fn(),
+  resolveUserAiTaskRuntime: vi.fn(),
+ }));
 
 vi.mock("server-only", () => ({}));
-vi.mock("@/services/ai-runtime.service", () => ({ resolveUserAiRuntime }));
+vi.mock("@/services/ai-runtime.service", () => ({
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+}));
 
 import {
  AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS,
@@ -21,6 +28,8 @@ const supabase = createClient<Database>("https://example.supabase.co", "test-key
  auth: { autoRefreshToken: false, persistSession: false },
 });
 const runtime: ResolvedUserAiRuntime = {
+ taskId: "conversation.semantic-memory",
+ resolutionSource: "auto",
  keyId: "11111111-1111-4111-8111-111111111111",
  provider: "gemini",
  providerLabel: "Google Gemini",
@@ -34,8 +43,10 @@ const runtime: ResolvedUserAiRuntime = {
 
 describe("AI conversation memory embedding adapter", () => {
  beforeEach(() => {
-  resolveUserAiRuntime.mockReset();
-  resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  recordUserAiRuntimeActivity.mockReset();
+  recordUserAiTaskBlockedActivity.mockReset();
+  resolveUserAiTaskRuntime.mockReset();
+  resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
  });
 
  afterEach(() => {
@@ -59,15 +70,16 @@ describe("AI conversation memory embedding adapter", () => {
   });
 
   expect(result).toMatchObject({ available: true });
-  expect(resolveUserAiRuntime).toHaveBeenCalledWith({
+  expect(resolveUserAiTaskRuntime).toHaveBeenCalledWith({
    supabase,
    userId: "user-1",
-   capability: "semantic-memory",
+   taskId: "conversation.semantic-memory",
   });
   const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
   const init = fetchMock.mock.calls[0]?.[1];
   expect(url).toContain(`models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent`);
-  expect(url).toContain("personal-gemini-key");
+  expect(url).not.toContain("personal-gemini-key");
+  expect(new Headers(init?.headers).get("x-goog-api-key")).toBe("personal-gemini-key");
   const body = JSON.parse(String(init?.body ?? "{}"));
   expect(body).toMatchObject({
    model: `models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}`,
@@ -80,7 +92,7 @@ describe("AI conversation memory embedding adapter", () => {
  });
 
  it("falls back cleanly when no compatible personal embedding runtime exists", async () => {
-  resolveUserAiRuntime.mockResolvedValue({
+  resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "capability-unavailable",
@@ -118,7 +130,9 @@ describe("AI conversation memory embedding adapter", () => {
   });
 
   const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
-  expect(url).toContain("personal-gemini-key");
+  const init = fetchMock.mock.calls[0]?.[1];
+  expect(url).not.toContain("personal-gemini-key");
   expect(url).not.toContain("system-key-that-must-not-be-used");
+  expect(new Headers(init?.headers).get("x-goog-api-key")).toBe("personal-gemini-key");
  });
 });

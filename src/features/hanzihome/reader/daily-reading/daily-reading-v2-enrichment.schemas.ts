@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { aiRuntimeOperationErrorCodeSchema } from "@/lib/ai-runtime-contract";
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
 
 import {
  dailyReadingV2EnrichmentBlockReasonSchema,
@@ -15,11 +16,12 @@ import {
 export const dailyReadingV2GeneratedBySchema = z.strictObject({
  provider: z.string().trim().min(1).max(80),
  model: z.string().trim().min(1).max(160),
+ receipt: aiRuntimeReceiptSchema.optional(),
 });
 
 export const dailyReadingV2EnrichmentErrorCodeSchema = z.union([
  aiRuntimeOperationErrorCodeSchema,
- z.enum(["missing-ai-key", "storage-unavailable"]),
+ z.enum(["missing-ai-key", "storage-unavailable", "task-disabled"]),
 ]);
 
 export const dailyReadingV2EnrichmentArticleSchema = z.strictObject({
@@ -29,10 +31,28 @@ export const dailyReadingV2EnrichmentArticleSchema = z.strictObject({
  classification: dailyReadingV2Schema.shape.classification,
 });
 
-export const dailyReadingV2EnrichmentRequestSchema = z.strictObject({
- module: dailyReadingV2EnrichmentModuleSchema,
- reading: dailyReadingV2EnrichmentArticleSchema,
-});
+export const dailyReadingV2EnrichmentRequestSchema = z.discriminatedUnion("module", [
+ z.strictObject({
+  module: z.literal("translation"),
+  reading: dailyReadingV2EnrichmentArticleSchema,
+  targetCount: z.null(),
+ }),
+ z.strictObject({
+  module: z.literal("vocabulary"),
+  reading: dailyReadingV2EnrichmentArticleSchema,
+  targetCount: z.number().int().min(1).max(24),
+ }),
+ z.strictObject({
+  module: z.literal("grammar"),
+  reading: dailyReadingV2EnrichmentArticleSchema,
+  targetCount: z.number().int().min(1).max(10),
+ }),
+ z.strictObject({
+  module: z.literal("questions"),
+  reading: dailyReadingV2EnrichmentArticleSchema,
+  targetCount: z.number().int().min(5).max(12),
+ }),
+]);
 
 const translationSuccessSchema = z.strictObject({
  ok: z.literal(true),

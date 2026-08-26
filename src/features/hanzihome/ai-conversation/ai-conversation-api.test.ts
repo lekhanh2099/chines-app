@@ -223,6 +223,14 @@ describe("AI conversation client transport", () => {
    provider: "Groq",
    model: "openai/gpt-oss-20b",
    apiKeyId,
+   runtimeReceipt: {
+    taskId: "conversation.reply",
+    provider: "groq",
+    model: "openai/gpt-oss-20b",
+    keyId: apiKeyId,
+    keyLabel: "Groq chính",
+    resolutionSource: "auto",
+   },
    usage: null,
   };
   const fetchMock = vi

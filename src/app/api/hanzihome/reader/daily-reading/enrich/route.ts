@@ -1,6 +1,11 @@
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
-import type { AiRuntimeCapability } from "@/lib/ai-runtime-contract";
-import { resolveUserAiRuntime, type UserAiRuntimeResolution } from "@/services/ai-runtime.service";
+import type { AiTaskId } from "@/lib/ai-task-contract";
+import {
+ resolveUserAiTaskRuntime,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ type UserAiTaskRuntimeResolution,
+} from "@/services/ai-runtime.service";
 import type { JsonFieldValue } from "@/types/json";
 
 import {
@@ -16,14 +21,28 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 export const maxDuration = 180;
 
-function capabilityForModule(module: DailyReadingV2EnrichmentModule): AiRuntimeCapability {
- return module === "translation" ? "daily-reading-translation" : "daily-reading-learning";
+function taskForModule(module: DailyReadingV2EnrichmentModule): AiTaskId {
+ if (module === "translation") return "daily-reading.translation";
+ if (module === "vocabulary") return "daily-reading.vocabulary";
+ if (module === "grammar") return "daily-reading.grammar";
+ return "daily-reading.questions";
 }
 
 function runtimeFailureResponse(
  module: DailyReadingV2EnrichmentModule,
- resolution: Extract<UserAiRuntimeResolution, { ok: false }>,
+ resolution: Extract<UserAiTaskRuntimeResolution, { ok: false }>,
 ) {
+ if (resolution.status === "task-disabled") {
+  const body: DailyReadingV2EnrichmentResponse = {
+   ok: false,
+   status: "blocked",
+   module,
+   reason: "task-disabled",
+   errorCode: "task-disabled",
+   errorDetail: "Tác vụ AI này đang tắt trong Cài đặt → AI → Tác vụ AI.",
+  };
+  return privateNoStoreJson(dailyReadingV2EnrichmentResponseSchema.parse(body), { status: 409 });
+ }
  if (resolution.status === "missing-key") {
   const body: DailyReadingV2EnrichmentResponse = {
    ok: false,
@@ -91,18 +110,39 @@ export async function POST(request: Request) {
   );
  }
 
- const resolution = await resolveUserAiRuntime({
+ const taskId = taskForModule(parsed.data.module);
+ const startedAt = performance.now();
+ const resolution = await resolveUserAiTaskRuntime({
   supabase: auth.context.supabase,
   userId: auth.context.user.id,
-  capability: capabilityForModule(parsed.data.module),
+  taskId,
  });
- if (!resolution.ok) return runtimeFailureResponse(parsed.data.module, resolution);
+ if (!resolution.ok) {
+  await recordUserAiTaskBlockedActivity({
+   userId: auth.context.user.id,
+   taskId,
+   errorCode: resolution.reason,
+   resourceType: "daily-reading",
+   resourceId: parsed.data.reading.id,
+  });
+  return runtimeFailureResponse(parsed.data.module, resolution);
+ }
 
  const result = await generateDailyReadingV2Enrichment({
   reading: parsed.data.reading,
   runtime: resolution.runtime,
   module: parsed.data.module,
+  targetCount: parsed.data.targetCount,
   signal: request.signal,
+ });
+ await recordUserAiRuntimeActivity({
+  userId: auth.context.user.id,
+  runtime: resolution.runtime,
+  status: result.ok ? "success" : result.errorCode === "cancelled" ? "cancelled" : "failure",
+  ...(!result.ok ? { errorCode: result.errorCode } : {}),
+  latencyMs: Math.round(performance.now() - startedAt),
+  resourceType: "daily-reading",
+  resourceId: parsed.data.reading.id,
  });
  if (!result.ok) return providerFailureResponse(result);
  return privateNoStoreJson(dailyReadingV2EnrichmentResponseSchema.parse(result));

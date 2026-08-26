@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
+
 import {
  aiConversationCorrectionStyleSchema,
  aiConversationLearnerLevelSchema,
@@ -22,6 +24,7 @@ export const aiConversationPersistedMessageSchema = z.strictObject({
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
  createdAt: z.iso.datetime({ offset: true }),
+ runtimeReceipt: aiRuntimeReceiptSchema.optional(),
 });
 
 export const aiConversationThreadSchema = z.strictObject({
@@ -100,6 +103,7 @@ export const aiConversationTurnRequestSchema = z.strictObject({
  clientMessageId: z.uuid(),
  content: z.string().trim().min(1).max(6000),
  apiKeyId: z.uuid().optional(),
+ model: z.string().trim().min(1).max(200).optional(),
 });
 
 export const aiConversationTurnResponseSchema = z.strictObject({
@@ -109,6 +113,7 @@ export const aiConversationTurnResponseSchema = z.strictObject({
  provider: z.string().trim().min(1),
  model: z.string().trim().min(1),
  apiKeyId: z.uuid().nullable(),
+ runtimeReceipt: aiRuntimeReceiptSchema.nullable(),
  usage: aiConversationUsageSchema.nullable(),
 });
 

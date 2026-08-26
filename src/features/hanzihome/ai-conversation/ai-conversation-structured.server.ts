@@ -3,7 +3,12 @@ import "server-only";
 import { z } from "zod";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
-import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
+import type { AiTaskId } from "@/lib/ai-task-contract";
+import {
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime,
+} from "@/services/ai-runtime.service";
 
 import {
  AiConversationProviderStreamError,
@@ -27,9 +32,10 @@ function parseStructuredContent<T>(raw: string, schema: z.ZodType<T>): T | null 
 }
 
 function runtimeResolutionError(input: {
- status: "missing-key" | "storage-unavailable";
+ status: "missing-key" | "storage-unavailable" | "task-disabled";
  reason: string;
 }) {
+ if (input.status === "task-disabled") return "This structured-memory task is disabled.";
  if (input.status === "missing-key") {
   return input.reason === "capability-unavailable"
    ? "No active personal API key supports structured memory tasks."
@@ -41,6 +47,7 @@ function runtimeResolutionError(input: {
 export async function generateStructuredAiConversationData<T>({
  supabase,
  userId,
+ taskId,
  systemPrompt,
  prompt,
  schema,
@@ -48,6 +55,7 @@ export async function generateStructuredAiConversationData<T>({
 }: {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
+ taskId: Extract<AiTaskId, "conversation.summary" | "conversation.memory-extraction">;
  systemPrompt: string;
  prompt: string;
  schema: z.ZodType<T>;
@@ -58,12 +66,14 @@ export async function generateStructuredAiConversationData<T>({
   return { data: null, error: "AI structured request exceeded the bounded prompt contract." };
  }
 
- const resolution = await resolveUserAiRuntime({
+ const startedAt = performance.now();
+ const resolution = await resolveUserAiTaskRuntime({
   supabase,
   userId,
-  capability: "structured-memory",
+  taskId,
  });
  if (!resolution.ok) {
+  await recordUserAiTaskBlockedActivity({ userId, taskId, errorCode: resolution.reason });
   return {
    data: null,
    error: runtimeResolutionError(resolution),
@@ -81,6 +91,15 @@ export async function generateStructuredAiConversationData<T>({
    raw += delta;
   }
  } catch (error) {
+  const errorCode =
+   error instanceof AiConversationProviderStreamError ? error.code : "provider-unavailable";
+  await recordUserAiRuntimeActivity({
+   userId,
+   runtime: resolution.runtime,
+   status: errorCode === "cancelled" ? "cancelled" : "failure",
+   errorCode,
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
   return {
    data: null,
    error:
@@ -91,6 +110,13 @@ export async function generateStructuredAiConversationData<T>({
  }
 
  const parsed = parseStructuredContent(raw, schema);
+ await recordUserAiRuntimeActivity({
+  userId,
+  runtime: resolution.runtime,
+  status: parsed ? "success" : "failure",
+  ...(!parsed ? { errorCode: "invalid-response" } : {}),
+  latencyMs: Math.round(performance.now() - startedAt),
+ });
  return parsed
   ? { data: parsed, error: null }
   : {

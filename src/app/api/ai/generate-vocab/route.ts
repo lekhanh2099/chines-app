@@ -1,5 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import {
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import {
@@ -17,7 +22,10 @@ const generateVocabRequestSchema = z.object({
  hanzi: z.string().min(1).max(10),
 });
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return NextResponse.json({ error: "Tác vụ tra cứu sâu đang tắt." }, { status: 409 });
+ }
  return status === "missing-key"
   ? NextResponse.json(
      { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
@@ -62,8 +70,20 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ data: existingAi, cached: true });
  }
 
- const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
- if (!runtime.ok) return runtimeError(runtime.status);
+ const startedAt = performance.now();
+ const runtime = await resolveAiAnalysisRuntime({
+  supabase,
+  userId: user.id,
+  taskId: "lookup.deep",
+ });
+ if (!runtime.ok) {
+  await recordUserAiTaskBlockedActivity({
+   userId: user.id,
+   taskId: "lookup.deep",
+   errorCode: runtime.reason,
+  });
+  return runtimeError(runtime.status);
+ }
 
  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
  const aiLookup = await analyzeHanziDetailed(lookupText, {
@@ -74,6 +94,13 @@ export async function POST(request: NextRequest) {
  });
 
  if (!aiLookup.data) {
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "failure",
+   errorCode: "provider-unavailable",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
   return NextResponse.json(
    {
     error:
@@ -86,5 +113,16 @@ export async function POST(request: NextRequest) {
 
  // Deep analysis can use learner-owned prompt/model settings. It is returned to
  // that request only and must not overwrite the shared canonical dictionary.
- return NextResponse.json({ data: aiLookup.data, cached: false });
+ await recordUserAiRuntimeActivity({
+  userId: user.id,
+  runtime: runtime.runtime,
+  status: "success",
+  latencyMs: Math.round(performance.now() - startedAt),
+ });
+ return NextResponse.json({
+  data: aiLookup.data,
+  cached: false,
+  provenance: "ai-transient",
+  runtimeReceipt: getAiRuntimeReceipt(runtime.runtime),
+ });
 }

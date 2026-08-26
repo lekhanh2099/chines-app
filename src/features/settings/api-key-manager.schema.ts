@@ -16,6 +16,7 @@ export const managedApiKeySchema = z.object({
  lastValidatedAt: z.string().nullable(),
  createdAt: z.string(),
  updatedAt: z.string(),
+ assignedTaskIds: z.array(z.string()).default([]),
 });
 
 const apiKeysSummarySchema = z.object({

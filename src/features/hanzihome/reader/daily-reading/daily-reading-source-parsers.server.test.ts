@@ -108,4 +108,31 @@ describe("Daily Reading source parsers", () => {
   expect(result?.extractionMethod).toBe("json-ld");
   expect(result?.paragraphsZh).toEqual([paragraphA, paragraphB, paragraphC, paragraphD]);
  });
+
+ it("stops ChinaNews extraction at the end of the article body", () => {
+  const paragraphs = [
+   "景德镇举办文化遗产保护研讨会，来自多个领域的专家围绕陶瓷文化传承、城市发展和国际传播展开交流，并介绍最新保护成果。",
+   "与会学者表示，世界遗产保护需要长期稳定的管理体系，也需要通过教育、研究和公共文化活动让更多人理解遗产价值。",
+   "当地计划继续整理陶瓷工业遗存资料，推动博物馆、学校和社区共同参与，让保护成果更好地服务城市居民和来访者。",
+   "研讨会最后提出，应当用准确、易懂的语言介绍中国文化遗产，在尊重历史事实的基础上加强不同文明之间的交流互鉴。",
+   "专家还建议建立长期开放的资料平台，持续公布保护进展、研究成果和公众教育项目，帮助不同年龄的学习者理解陶瓷文化的历史脉络。",
+  ];
+  const related =
+   "从到此一游转向深度体验，暑期这些玩法受到游客欢迎并成为页面下方的相关新闻推荐标题";
+  const html = `<html><body>
+   <div class="content_maincontent_content">
+    <div class="left_zw">
+     ${paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+    </div>
+    <!--正文end-->
+    <div class="related"><p>${related}</p></div>
+   </div>
+  </body></html>`;
+
+  const result = extractDailyReadingSourceDocument(html);
+
+  expect(result?.extractionMethod).toBe("content-container");
+  expect(result?.paragraphsZh).toEqual(paragraphs);
+  expect(result?.extractedTextZh).not.toContain(related);
+ });
 });

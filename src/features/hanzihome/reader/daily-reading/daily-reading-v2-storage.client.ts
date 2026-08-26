@@ -12,6 +12,7 @@ import {
  dailyReadingV2CaptureRunSchema,
  dailyReadingV2EnrichmentRunSchema,
  dailyReadingV2LedgerSchema,
+ dailyReadingV2LegacySettingsSchema,
  dailyReadingV2Schema,
  dailyReadingV2SettingsSchema,
  type DailyReadingV2,
@@ -23,13 +24,15 @@ import {
 } from "./daily-reading-v2.schemas";
 import {
  defaultDailyReadingV2Settings,
+ migrateDailyReadingV2Settings,
  migrateDailyReadingV1SettingsToV2,
 } from "./daily-reading-v2.settings";
 
 const ledgerStorageKey = "chines-app:daily-reading:v2";
 const legacyLedgerStorageKey = "chines-app:daily-reading:v1";
 const recoveryStorageKey = "chines-app:daily-reading:recovery:v2";
-const settingsStorageKey = "chines-app:daily-reading-settings:v2";
+const settingsStorageKey = "chines-app:daily-reading-settings:v3";
+const previousSettingsStorageKey = "chines-app:daily-reading-settings:v2";
 const legacySettingsStorageKey = "chines-app:daily-reading-settings:v1";
 const changeEvent = "chines-app:daily-reading-v2-change";
 const settingsChangeEvent = "chines-app:daily-reading-v2-settings-change";
@@ -530,6 +533,18 @@ export function readDailyReadingV2Settings(): DailyReadingV2Settings {
   if (raw !== null) {
    const parsed = decodeJson(raw, dailyReadingV2SettingsSchema);
    if (parsed !== null) return parsed;
+  }
+  const previousRaw = window.localStorage.getItem(previousSettingsStorageKey);
+  if (previousRaw !== null) {
+   const previous = decodeJson(previousRaw, dailyReadingV2LegacySettingsSchema);
+   if (previous !== null) {
+    const migrated = migrateDailyReadingV2Settings(previous);
+    try {
+     return writeSettings(migrated, false);
+    } catch {
+     return migrated;
+    }
+   }
   }
   const legacy = readLegacySettings();
   const migrated =

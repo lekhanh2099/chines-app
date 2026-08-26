@@ -125,6 +125,17 @@
    "description": "来源文章保存后，AI 再生成越南语翻译、词汇、语法和阅读问题。",
    "autoTitle": "找到文章后自动补充学习辅助",
    "autoDescription": "有可用 API key 时，应用会在保存文章后生成缺失的学习模块。AI 失败不会让来源文章失败。",
+   "translationTitle": "翻译",
+   "translationDescription": "生成来源文章的越南语翻译。",
+   "vocabularyTitle": "词汇",
+   "vocabularyDescription": "按配置数量选择学习词汇。",
+   "grammarTitle": "语法",
+   "grammarDescription": "按配置数量选择有原文证据的语法点。",
+   "questionsTitle": "问题",
+   "questionsDescription": "按配置数量生成阅读理解问题。",
+   "vocabularyCount": "词汇数量",
+   "grammarCount": "语法点数量",
+   "questionsCount": "问题数量",
    "ready": "已就绪：{provider} · {model}",
    "missing": "还没有 AI API key。仍可正常寻找和阅读来源文章。",
    "storageUnavailable": "服务端安全 API key 存储尚未就绪。来源文章不受影响。",
@@ -206,7 +217,8 @@
    "missingKey": "需要 API key",
    "invalidKey": "Key 无效",
    "quota": "API 限制",
-   "providerUnavailable": "Provider 暂时受限"
+   "providerUnavailable": "Provider 暂时受限",
+   "taskDisabled": "AI 任务已关闭"
   },
   "actions": {
    "create": "生成此模块",

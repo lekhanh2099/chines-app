@@ -203,6 +203,18 @@ export default function ApiKeyManagerSection() {
            {t("apiKeys.verifiedAt", { date: formatDate(key.lastValidatedAt) })}
           </Typography>
          </div>
+         {key.assignedTaskIds.length > 0 ? (
+          <div className="flex flex-wrap items-center gap-1.5">
+           <Typography variant="caption" tone="muted">
+            {t("apiKeys.assignedTasks")}
+           </Typography>
+           {key.assignedTaskIds.map((taskId) => (
+            <Badge key={taskId} variant="info" size="sm" casing="natural">
+             {taskId}
+            </Badge>
+           ))}
+          </div>
+         ) : null}
         </div>
 
         <div className="grid min-w-0 gap-1">

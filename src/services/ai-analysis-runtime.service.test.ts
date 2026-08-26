@@ -5,12 +5,12 @@ import type { Database } from "@/types/supabase.generated";
 
 const mocks = vi.hoisted(() => ({
  getActiveUserApiKeyCredentials: vi.fn(),
- resolveUserAiRuntime: vi.fn(),
+ resolveUserAiTaskRuntime: vi.fn(),
 }));
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/services/ai-runtime.service", () => ({
- resolveUserAiRuntime: mocks.resolveUserAiRuntime,
+ resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
 vi.mock("@/services/user-api-keys.service", () => ({
  getActiveUserApiKeyCredentials: mocks.getActiveUserApiKeyCredentials,
@@ -45,13 +45,15 @@ const selectedRuntime = {
  priority: 0,
  apiKey: selectedCredential.apiKey,
  capabilities: ["lookup", "daily-reading-learning"],
+ taskId: "lookup.deep",
+ resolutionSource: "auto",
 };
 
 describe("AI credential runtime compatibility bridge", () => {
  beforeEach(() => {
-  mocks.resolveUserAiRuntime.mockReset();
+  mocks.resolveUserAiTaskRuntime.mockReset();
   mocks.getActiveUserApiKeyCredentials.mockReset();
-  mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime: selectedRuntime });
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime: selectedRuntime });
   mocks.getActiveUserApiKeyCredentials.mockResolvedValue([
    { ...selectedCredential, id: "22222222-2222-4222-8222-222222222222", priority: 1 },
    selectedCredential,
@@ -62,13 +64,13 @@ describe("AI credential runtime compatibility bridge", () => {
   const result = await resolveAiCredentialRuntime({
    supabase,
    userId: "user-1",
-   capability: "daily-reading-learning",
+   taskId: "lookup.deep",
   });
 
-  expect(mocks.resolveUserAiRuntime).toHaveBeenCalledWith({
+  expect(mocks.resolveUserAiTaskRuntime).toHaveBeenCalledWith({
    supabase,
    userId: "user-1",
-   capability: "daily-reading-learning",
+   taskId: "lookup.deep",
   });
   expect(result).toMatchObject({
    ok: true,
@@ -78,7 +80,7 @@ describe("AI credential runtime compatibility bridge", () => {
  });
 
  it("does not decrypt credentials when runtime selection is blocked", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "capability-unavailable",
@@ -87,7 +89,7 @@ describe("AI credential runtime compatibility bridge", () => {
   const result = await resolveAiCredentialRuntime({
    supabase,
    userId: "user-1",
-   capability: "lookup",
+   taskId: "lookup.deep",
   });
 
   expect(result).toMatchObject({ ok: false, status: "missing-key" });
@@ -100,7 +102,7 @@ describe("AI credential runtime compatibility bridge", () => {
   const result = await resolveAiCredentialRuntime({
    supabase,
    userId: "user-1",
-   capability: "lookup",
+   taskId: "lookup.deep",
   });
 
   expect(result).toEqual({

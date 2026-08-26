@@ -189,6 +189,68 @@ export function DailyReadingSettingsPanel() {
      onCheckedChange={(checked) => saveSettings({ autoCaptureEnabled: checked })}
     />
 
+    <div className="grid gap-3 md:grid-cols-2">
+     <SettingsToggleRow
+      id="daily-reading-v2-translation-enabled"
+      label={t("v2.settings.ai.translationTitle")}
+      description={t("v2.settings.ai.translationDescription")}
+      checked={settings.translationEnabled}
+      onCheckedChange={(checked) => saveSettings({ translationEnabled: checked })}
+     />
+     <SettingsToggleRow
+      id="daily-reading-v2-vocabulary-enabled"
+      label={t("v2.settings.ai.vocabularyTitle")}
+      description={t("v2.settings.ai.vocabularyDescription")}
+      checked={settings.vocabularyEnabled}
+      onCheckedChange={(checked) => saveSettings({ vocabularyEnabled: checked })}
+     />
+     <SettingsToggleRow
+      id="daily-reading-v2-grammar-enabled"
+      label={t("v2.settings.ai.grammarTitle")}
+      description={t("v2.settings.ai.grammarDescription")}
+      checked={settings.grammarEnabled}
+      onCheckedChange={(checked) => saveSettings({ grammarEnabled: checked })}
+     />
+     <SettingsToggleRow
+      id="daily-reading-v2-questions-enabled"
+      label={t("v2.settings.ai.questionsTitle")}
+      description={t("v2.settings.ai.questionsDescription")}
+      checked={settings.questionsEnabled}
+      onCheckedChange={(checked) => saveSettings({ questionsEnabled: checked })}
+     />
+    </div>
+
+    <div className="grid gap-3 sm:grid-cols-3">
+     {(
+      [
+       { key: "vocabularyCount", value: settings.vocabularyCount, min: 1, max: 24 },
+       { key: "grammarCount", value: settings.grammarCount, min: 1, max: 10 },
+       { key: "questionsCount", value: settings.questionsCount, min: 5, max: 12 },
+      ] satisfies Array<{
+       key: "vocabularyCount" | "grammarCount" | "questionsCount";
+       value: number;
+       min: number;
+       max: number;
+      }>
+     ).map((field) => (
+      <div key={field.key} className="grid gap-1.5">
+       <Label htmlFor={`daily-reading-v2-${field.key}`}>{t(`v2.settings.ai.${field.key}`)}</Label>
+       <Input
+        id={`daily-reading-v2-${field.key}`}
+        type="number"
+        min={field.min}
+        max={field.max}
+        value={field.value}
+        onChange={(event) => {
+         const value = event.currentTarget.valueAsNumber;
+         if (!Number.isInteger(value) || value < field.min || value > field.max) return;
+         saveSettings({ [field.key]: value });
+        }}
+       />
+      </div>
+     ))}
+    </div>
+
     <div className="grid gap-4 sm:grid-cols-2">
      <div className="grid gap-2">
       <Label htmlFor="daily-reading-v2-time" variant="label" weight="semibold">

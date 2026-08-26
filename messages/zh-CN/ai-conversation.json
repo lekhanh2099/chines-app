@@ -84,6 +84,7 @@
   "loadError": "无法加载个人 API 密钥列表。发送新消息前请重新检查 AI 运行环境。",
   "addKey": "添加 API 密钥",
   "modelFallback": "provider 默认模型",
+  "modelOverride": "此对话使用的模型",
   "compactChecking": "正在检查 AI",
   "compactReady": "AI 可用 · {provider}",
   "compactUnavailable": "AI 暂不可用",

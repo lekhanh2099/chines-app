@@ -200,6 +200,7 @@ export async function sendPersistedAiConversationMessage(
   clientMessageId: string;
   content: string;
   apiKeyId?: string;
+  model?: string;
  },
  options?: {
   signal?: AbortSignal;
@@ -212,6 +213,7 @@ export async function sendPersistedAiConversationMessage(
   clientMessageId: input.clientMessageId,
   content: input.content,
   ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
+  ...(input.model ? { model: input.model } : {}),
  });
  const controller = new AbortController();
  const forwardAbort = () => controller.abort();
@@ -237,12 +239,13 @@ export async function sendPersistedAiConversationMessage(
 export async function sendAiConversationMessage(
  messages: AiConversationMessage[],
  profile: AiConversationProfile,
- options?: { apiKeyId?: string; signal?: AbortSignal },
+ options?: { apiKeyId?: string; model?: string; signal?: AbortSignal },
 ): Promise<AiConversationResponse> {
  const payload = aiConversationRequestSchema.parse({
   messages,
   profile,
   ...(options?.apiKeyId ? { apiKeyId: options.apiKeyId } : {}),
+  ...(options?.model ? { model: options.model } : {}),
  });
  const { response, payload: responseBody } = await postConversationAction(payload, options?.signal);
  if (!response.ok) {

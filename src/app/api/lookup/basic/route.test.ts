@@ -67,6 +67,19 @@ describe("POST /api/lookup/basic", () => {
   label: "test",
   defaultModel: "gemini-2.5-flash",
  };
+ const runtime = {
+  taskId: "lookup.quick",
+  resolutionSource: "auto",
+  keyId: "11111111-1111-4111-8111-111111111111",
+  provider: "gemini",
+  providerLabel: "Google Gemini",
+  label: "test",
+  maskedKey: "AIza***",
+  model: "gemini-2.5-flash",
+  priority: 0,
+  apiKey: "redacted",
+  capabilities: ["lookup"],
+ };
 
  beforeEach(() => {
   for (const mock of Object.values(mocks)) mock.mockReset();
@@ -130,8 +143,8 @@ describe("POST /api/lookup/basic", () => {
   expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
  });
 
- it("persists fixed basic word enrichment only through server authority", async () => {
-  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential });
+ it("keeps fixed basic word enrichment transient until the user saves it", async () => {
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential, runtime });
   mocks.analyzeHanziBasicDetailed.mockResolvedValue({
    data: {
     hanzi: "学习",
@@ -141,41 +154,25 @@ describe("POST /api/lookup/basic", () => {
    },
    error: null,
   });
-  const canonical = {
-   id: "dictionary-1",
-   headword: "学习",
-   pinyin: "xué xí",
-   sino_vietnamese: "học tập",
-   data: {},
-   lookup_key: "学习",
-   lookup_count: 0,
-   created_at: "2026-08-20T00:00:00.000Z",
-  };
-  mocks.upsertDictionaryEntry.mockResolvedValue(canonical);
-  mocks.syncDictionaryEntryToLegacyCacheAsServer.mockResolvedValue({ id: "vocab-1" });
-
   const response = await POST(request({ text: "学习" }));
+  const body = await response.json();
 
   expect(response.status).toBe(200);
-  expect(mocks.createServiceRoleSupabaseClient).toHaveBeenCalledOnce();
-  expect(mocks.upsertDictionaryEntry).toHaveBeenCalledWith(authority, {
-   headword: "学习",
-   pinyin: "xué xí",
-   sinoVietnamese: "học tập",
-   meaning: "học; học tập",
-   ai_analysis: expect.objectContaining({ meaning_summary: "học; học tập" }),
-  });
-  expect(mocks.syncDictionaryEntryToLegacyCacheAsServer).toHaveBeenCalledWith(authority, canonical);
-  expect(await response.json()).toMatchObject({
+  expect(body).toMatchObject({
    cached: false,
-   data: { id: "vocab-1", dictionary_id: "dictionary-1", hanzi: "学习" },
+   source: "ai_basic_transient",
+   provenance: "ai-transient",
+   data: { hanzi: "学习", meaning: "học; học tập" },
   });
+  expect(mocks.createServiceRoleSupabaseClient).not.toHaveBeenCalled();
+  expect(mocks.upsertDictionaryEntry).not.toHaveBeenCalled();
+  expect(mocks.syncDictionaryEntryToLegacyCacheAsServer).not.toHaveBeenCalled();
  });
 
  it("keeps long selections transient instead of creating shared dictionary rows", async () => {
   const longSelection =
    "这是一个用于阅读理解的很长中文句子它不应该作为共享词典词头被保存下来超过三十二个汉字";
-  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential });
+  mocks.resolveAiAnalysisRuntime.mockResolvedValue({ ok: true, credential, runtime });
   mocks.analyzeHanziBasicDetailed.mockResolvedValue({
    data: {
     hanzi: longSelection,

@@ -4,6 +4,11 @@ import { pinyin as getPinyin } from "pinyin-pro";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import {
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { analyzeHanziDetailed, analyzeSentenceDetailed } from "@/services/ai.service";
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import {
@@ -25,7 +30,10 @@ const lookupSchema = z.object({
  sentencePromptTemplate: z.string().trim().min(1).max(8000).optional(),
 });
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return NextResponse.json({ error: "Tác vụ tra cứu sâu đang tắt." }, { status: 409 });
+ }
  return status === "missing-key"
   ? NextResponse.json(
      { error: "Chưa có API key AI đang hoạt động. Hãy thêm key trong Cài đặt → AI." },
@@ -52,8 +60,20 @@ export async function POST(request: NextRequest) {
  }
 
  if (parsed.data.type === "sentence") {
-  const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
-  if (!runtime.ok) return runtimeError(runtime.status);
+  const startedAt = performance.now();
+  const runtime = await resolveAiAnalysisRuntime({
+   supabase,
+   userId: user.id,
+   taskId: "lookup.deep",
+  });
+  if (!runtime.ok) {
+   await recordUserAiTaskBlockedActivity({
+    userId: user.id,
+    taskId: "lookup.deep",
+    errorCode: runtime.reason,
+   });
+   return runtimeError(runtime.status);
+  }
 
   const promptSettings = await getUserAiPromptSettings(supabase, user.id);
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
@@ -65,6 +85,13 @@ export async function POST(request: NextRequest) {
   });
 
   if (!sentenceLookup.data) {
+   await recordUserAiRuntimeActivity({
+    userId: user.id,
+    runtime: runtime.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
    return NextResponse.json(
     {
      error:
@@ -75,7 +102,18 @@ export async function POST(request: NextRequest) {
    );
   }
 
-  return NextResponse.json({ cached: false, data: sentenceLookup.data });
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
+  return NextResponse.json({
+   cached: false,
+   provenance: "ai-transient",
+   runtimeReceipt: getAiRuntimeReceipt(runtime.runtime),
+   data: sentenceLookup.data,
+  });
  }
 
  const lookupText = normalizeDictionaryHeadword(parsed.data.text);
@@ -120,7 +158,12 @@ export async function POST(request: NextRequest) {
   });
  }
 
- const runtime = await resolveAiAnalysisRuntime({ supabase, userId: user.id });
+ const startedAt = performance.now();
+ const runtime = await resolveAiAnalysisRuntime({
+  supabase,
+  userId: user.id,
+  taskId: "lookup.deep",
+ });
  if (!runtime.ok) {
   const fallbackMeaning = isGenericEnglishFallbackAnalysis(cachedAnalysis)
    ? ""
@@ -145,6 +188,11 @@ export async function POST(request: NextRequest) {
    });
   }
 
+  await recordUserAiTaskBlockedActivity({
+   userId: user.id,
+   taskId: "lookup.deep",
+   errorCode: runtime.reason,
+  });
   return runtimeError(runtime.status);
  }
 
@@ -157,6 +205,13 @@ export async function POST(request: NextRequest) {
  });
 
  if (!aiLookup.data) {
+  await recordUserAiRuntimeActivity({
+   userId: user.id,
+   runtime: runtime.runtime,
+   status: "failure",
+   errorCode: "provider-unavailable",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
   const fallbackMeaning = isGenericEnglishFallbackAnalysis(cachedAnalysis)
    ? ""
    : getPrimaryMeaning(cachedAnalysis, cachedWord?.meaning || "");
@@ -192,8 +247,16 @@ export async function POST(request: NextRequest) {
 
  // This legacy route accepts caller/user-owned prompt settings. Its generated
  // analysis is therefore request-local and cannot mutate shared dictionary data.
+ await recordUserAiRuntimeActivity({
+  userId: user.id,
+  runtime: runtime.runtime,
+  status: "success",
+  latencyMs: Math.round(performance.now() - startedAt),
+ });
  return NextResponse.json({
   cached: false,
+  provenance: "ai-transient",
+  runtimeReceipt: getAiRuntimeReceipt(runtime.runtime),
   data: {
    id: undefined,
    dictionary_id: undefined,

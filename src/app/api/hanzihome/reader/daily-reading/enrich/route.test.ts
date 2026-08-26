@@ -4,7 +4,9 @@ import type { DailyReadingV2 } from "@/features/hanzihome/reader/daily-reading/d
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
- resolveUserAiRuntime: vi.fn(),
+ recordUserAiRuntimeActivity: vi.fn(),
+ recordUserAiTaskBlockedActivity: vi.fn(),
+ resolveUserAiTaskRuntime: vi.fn(),
  generateDailyReadingV2Enrichment: vi.fn(),
 }));
 
@@ -13,7 +15,9 @@ vi.mock("@/lib/api/authenticated-route", () => ({
  privateNoStoreJson: (body: object, init?: ResponseInit) => Response.json(body, init),
 }));
 vi.mock("@/services/ai-runtime.service", () => ({
- resolveUserAiRuntime: mocks.resolveUserAiRuntime,
+ recordUserAiRuntimeActivity: mocks.recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
+ resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
 vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.server", () => ({
  generateDailyReadingV2Enrichment: mocks.generateDailyReadingV2Enrichment,
@@ -71,6 +75,8 @@ const evidence = {
 };
 
 const runtime = {
+ taskId: "daily-reading.translation",
+ resolutionSource: "auto",
  keyId: "11111111-1111-4111-8111-111111111111",
  provider: "groq",
  providerLabel: "Groq",
@@ -99,7 +105,9 @@ function request(body: object) {
 describe("Daily Reading V2 enrichment route", () => {
  beforeEach(() => {
   mocks.requireAuthenticatedRoute.mockReset();
-  mocks.resolveUserAiRuntime.mockReset();
+  mocks.recordUserAiRuntimeActivity.mockReset();
+  mocks.recordUserAiTaskBlockedActivity.mockReset();
+  mocks.resolveUserAiTaskRuntime.mockReset();
   mocks.generateDailyReadingV2Enrichment.mockReset();
   mocks.requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
@@ -113,7 +121,7 @@ describe("Daily Reading V2 enrichment route", () => {
   const response = await POST(request({ module: "translation", reading: evidence }));
 
   expect(response.status).toBe(401);
-  expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
+  expect(mocks.resolveUserAiTaskRuntime).not.toHaveBeenCalled();
   expect(mocks.generateDailyReadingV2Enrichment).not.toHaveBeenCalled();
  });
 
@@ -121,24 +129,26 @@ describe("Daily Reading V2 enrichment route", () => {
   const response = await POST(request({ module: "grammar", reading: { id: "bad" } }));
 
   expect(response.status).toBe(400);
-  expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
+  expect(mocks.resolveUserAiTaskRuntime).not.toHaveBeenCalled();
  });
 
  it("rejects overbroad V2 payloads that include enrichment state", async () => {
   const response = await POST(request({ module: "grammar", reading }));
 
   expect(response.status).toBe(400);
-  expect(mocks.resolveUserAiRuntime).not.toHaveBeenCalled();
+  expect(mocks.resolveUserAiTaskRuntime).not.toHaveBeenCalled();
  });
 
  it("blocks enrichment without a user key while leaving acquisition outside this route", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "no-active-key",
   });
 
-  const response = await POST(request({ module: "translation", reading: evidence }));
+  const response = await POST(
+   request({ module: "translation", reading: evidence, targetCount: null }),
+  );
   const body = await response.json();
 
   expect(response.status).toBe(409);
@@ -152,13 +162,13 @@ describe("Daily Reading V2 enrichment route", () => {
  });
 
  it("keeps vault failures distinct from missing-key", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "storage-unavailable",
    reason: "vault-unavailable",
   });
 
-  const response = await POST(request({ module: "grammar", reading: evidence }));
+  const response = await POST(request({ module: "grammar", reading: evidence, targetCount: 4 }));
   const body = await response.json();
 
   expect(response.status).toBe(503);
@@ -171,7 +181,7 @@ describe("Daily Reading V2 enrichment route", () => {
  });
 
  it("uses the shared BYOK runtime and returns safe module data without the raw key", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
   mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
    ok: true,
    module: "translation",
@@ -188,14 +198,16 @@ describe("Daily Reading V2 enrichment route", () => {
    generatedBy: { provider: "Groq", model: "openai/gpt-oss-20b" },
   });
 
-  const response = await POST(request({ module: "translation", reading: evidence }));
+  const response = await POST(
+   request({ module: "translation", reading: evidence, targetCount: null }),
+  );
   const body = await response.json();
   const serialized = JSON.stringify(body);
 
   expect(response.status).toBe(200);
   expect(body).toMatchObject({ ok: true, module: "translation" });
-  expect(mocks.resolveUserAiRuntime).toHaveBeenCalledWith(
-   expect.objectContaining({ capability: "daily-reading-translation", userId: "user-1" }),
+  expect(mocks.resolveUserAiTaskRuntime).toHaveBeenCalledWith(
+   expect.objectContaining({ taskId: "daily-reading.translation", userId: "user-1" }),
   );
   expect(mocks.generateDailyReadingV2Enrichment).toHaveBeenCalledWith(
    expect.objectContaining({ reading: evidence, module: "translation" }),
@@ -205,7 +217,7 @@ describe("Daily Reading V2 enrichment route", () => {
  });
 
  it("maps exhausted account quota to a retryable blocked module", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
   mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
    ok: false,
    status: "failed",
@@ -214,7 +226,7 @@ describe("Daily Reading V2 enrichment route", () => {
    errorDetail: "Groq báo quota tài khoản không còn đủ cho yêu cầu này.",
   });
 
-  const response = await POST(request({ module: "questions", reading: evidence }));
+  const response = await POST(request({ module: "questions", reading: evidence, targetCount: 6 }));
   const body = await response.json();
 
   expect(response.status).toBe(429);
@@ -227,7 +239,7 @@ describe("Daily Reading V2 enrichment route", () => {
  });
 
  it("maps a temporary provider limit to service unavailable instead of account quota", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
   mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
    ok: false,
    status: "failed",
@@ -236,7 +248,9 @@ describe("Daily Reading V2 enrichment route", () => {
    errorDetail: "Groq đang giới hạn tần suất hoặc token (HTTP 429).",
   });
 
-  const response = await POST(request({ module: "translation", reading: evidence }));
+  const response = await POST(
+   request({ module: "translation", reading: evidence, targetCount: null }),
+  );
   const body = await response.json();
 
   expect(response.status).toBe(503);

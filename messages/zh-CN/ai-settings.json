@@ -1,10 +1,120 @@
 {
  "tabs": {
+  "tasks": "AI 任务",
   "conversation": "对话与记忆",
   "dailyReading": "每日阅读",
-  "providers": "模型与 API",
-  "usage": "使用情况",
+  "providers": "API 密钥",
+  "usage": "活动",
   "advanced": "高级设置",
   "aria": "AI 设置分区"
+ },
+ "taskRouting": {
+  "title": "AI 任务分配",
+  "description": "每个任务可使用自动模式、指定密钥与模型，或单独关闭。指定模式失败后不会切换服务商。",
+  "loading": "正在加载 AI 任务…",
+  "loadError": "无法加载或保存 AI 任务。",
+  "saveError": "无法保存此任务分配。",
+  "retry": "重试",
+  "dataSent": "发送的数据",
+  "expectedOutput": "预期输出",
+  "storage": "保存位置",
+  "mode": "模式",
+  "key": "API 密钥",
+  "model": "模型",
+  "autoStatus": "按优先级选择首个兼容的启用密钥",
+  "disabledStatus": "不调用 AI",
+  "groups": { "main": "主要任务", "advanced": "高级任务" },
+  "modes": { "auto": "自动", "assigned": "指定", "disabled": "关闭" },
+  "tasks": {
+   "conversationReply": {
+    "title": "聊天回复",
+    "when": "在 AI 对话中发送消息时。",
+    "data": "角色、关系、摘要、最近消息和启用的记忆。",
+    "output": "已移除隐藏推理的一轮对话回复。",
+    "storage": "对话中的记录和 receipt。"
+   },
+   "lookupQuick": {
+    "title": "快速查询",
+    "when": "词典或缓存不足，或 SRS 需要补充基础释义时。",
+    "data": "所查词语，不发送整课内容。",
+    "output": "拼音、简短释义和基础词汇字段。",
+    "storage": "AI 结果为临时数据；仅在保存后进入个人数据。"
+   },
+   "lookupDeep": {
+    "title": "深度分析",
+    "when": "查看词句详情、编辑器上下文或生成词汇时。",
+    "data": "选中的词句、上下文及兼容的专家提示词。",
+    "output": "按当前界面 schema 验证的结构化分析。",
+    "storage": "请求内临时数据，需主动保存。"
+   },
+   "dailyReadingTranslation": {
+    "title": "每日阅读 · 翻译",
+    "when": "为来源文章启用翻译模块时。",
+    "data": "不可变的来源文章。",
+    "output": "结构化翻译。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingVocabulary": {
+    "title": "每日阅读 · 词汇",
+    "when": "启用词汇模块时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的词汇列表。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingGrammar": {
+    "title": "每日阅读 · 语法",
+    "when": "启用语法模块时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的语法点。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "dailyReadingQuestions": {
+    "title": "每日阅读 · 问题",
+    "when": "启用阅读理解问题时。",
+    "data": "来源文章。",
+    "output": "符合配置数量的理解问题。",
+    "storage": "本设备浏览器及 receipt。"
+   },
+   "conversationSummary": {
+    "title": "对话摘要",
+    "when": "对话上下文需要压缩时。",
+    "data": "摘要覆盖的对话消息。",
+    "output": "结构化摘要。",
+    "storage": "保存在对话中，可独立关闭。"
+   },
+   "conversationMemoryExtraction": {
+    "title": "记忆提取",
+    "when": "轮次后的记忆流程运行时。",
+    "data": "相关消息和现有记忆。",
+    "output": "结构化记忆变更。",
+    "storage": "策略检查后的账户长期记忆。"
+   },
+   "conversationSemanticMemory": {
+    "title": "语义记忆",
+    "when": "创建或搜索记忆 embedding 时。",
+    "data": "需要 embedding 的记忆文本或查询。",
+    "output": "向量；关闭时仍可使用词法回退。",
+    "storage": "服务端记忆 embedding，不新增 transcript。"
+   }
+  }
+ },
+ "activity": {
+  "title": "AI 活动",
+  "description": "仅保留 90 天元数据；不保存提示词、查询文本、对话、输出或原始服务商错误。",
+  "clear": "清除历史",
+  "taskFilter": "按任务筛选",
+  "providerFilter": "按服务商筛选",
+  "statusFilter": "按状态筛选",
+  "allTasks": "全部任务",
+  "allProviders": "全部服务商",
+  "allStatuses": "全部状态",
+  "statuses": { "success": "成功", "failure": "失败", "cancelled": "已取消", "blocked": "已阻止" },
+  "loadError": "无法加载 AI 活动。",
+  "retry": "重试",
+  "empty": "暂无符合条件的 AI 活动。",
+  "loading": "正在加载…",
+  "loadMore": "下一页",
+  "openConversation": "打开对话",
+  "noRuntime": "未选择 runtime"
  }
 }

@@ -29,6 +29,7 @@ const mocks = vi.hoisted(() => {
   PersistenceConfigurationError,
   PersistenceNotReadyError,
   PersistenceRequestError,
+  classifyAiRuntimeOperationFailure: vi.fn(),
   appendAiConversationMessage: vi.fn(),
   archiveAiConversation: vi.fn(),
   checkPersonalConversationRuntime: vi.fn(),
@@ -42,7 +43,10 @@ const mocks = vi.hoisted(() => {
   loadLatestAiConversationSession: vi.fn(),
   loadRecentAiConversationMessages: vi.fn(),
   requireAuthenticatedRoute: vi.fn(),
+  recordUserAiRuntimeActivity: vi.fn(),
+  recordUserAiTaskBlockedActivity: vi.fn(),
   resolveUserAiRuntime: vi.fn(),
+  resolveUserAiTaskRuntime: vi.fn(),
   streamAiConversationProviderReply: vi.fn(),
   updateAiConversationMemoryPolicy: vi.fn(),
   updateAiConversationSettings: vi.fn(),
@@ -77,7 +81,11 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-turn.server", () =
  generatePersistedAiConversationTurn: mocks.generatePersistedAiConversationTurn,
 }));
 vi.mock("@/services/ai-runtime.service", () => ({
+ classifyAiRuntimeOperationFailure: mocks.classifyAiRuntimeOperationFailure,
+ recordUserAiRuntimeActivity: mocks.recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiRuntime: mocks.resolveUserAiRuntime,
+ resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
 vi.mock("@/lib/api/authenticated-route", () => ({
  requireAuthenticatedRoute: mocks.requireAuthenticatedRoute,
@@ -92,6 +100,8 @@ import { POST } from "./route";
 const conversationId = "33333333-3333-4333-8333-333333333333";
 const characterId = "66666666-6666-4666-8666-666666666666";
 const runtime: ResolvedUserAiRuntime = {
+ taskId: "conversation.reply",
+ resolutionSource: "auto",
  keyId: "44444444-4444-4444-8444-444444444444",
  provider: "groq",
  providerLabel: "Groq",
@@ -176,7 +186,7 @@ function requestBody(messages: AiConversationMessage[], apiKeyId?: string) {
  return {
   messages,
   profile: DEFAULT_AI_CONVERSATION_PROFILE,
-  ...(apiKeyId ? { apiKeyId } : {}),
+  ...(apiKeyId ? { apiKeyId, model: runtime.model } : {}),
  };
 }
 
@@ -190,6 +200,7 @@ describe("/api/ai/conversation", () => {
    mocks.appendAiConversationMessage,
    mocks.archiveAiConversation,
    mocks.checkPersonalConversationRuntime,
+   mocks.classifyAiRuntimeOperationFailure,
    mocks.createAiConversationSession,
    mocks.ensureAiConversationSession,
    mocks.findAssistantReplyForUserMessage,
@@ -200,7 +211,10 @@ describe("/api/ai/conversation", () => {
    mocks.loadLatestAiConversationSession,
    mocks.loadRecentAiConversationMessages,
    mocks.requireAuthenticatedRoute,
+   mocks.recordUserAiRuntimeActivity,
+   mocks.recordUserAiTaskBlockedActivity,
    mocks.resolveUserAiRuntime,
+   mocks.resolveUserAiTaskRuntime,
    mocks.streamAiConversationProviderReply,
    mocks.updateAiConversationMemoryPolicy,
    mocks.updateAiConversationSettings,
@@ -212,6 +226,8 @@ describe("/api/ai/conversation", () => {
    context: { supabase: { marker: "supabase" }, user: { id: "user-1" } },
   });
   mocks.resolveUserAiRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
+  mocks.classifyAiRuntimeOperationFailure.mockReturnValue("provider-unavailable");
   mocks.loadAiConversationContextState.mockResolvedValue(contextState);
  });
 
@@ -284,6 +300,14 @@ describe("/api/ai/conversation", () => {
    provider: runtime.providerLabel,
    model: runtime.model,
    apiKeyId: runtime.keyId,
+   runtimeReceipt: {
+    taskId: "conversation.reply",
+    provider: runtime.provider,
+    model: runtime.model,
+    keyId: runtime.keyId,
+    keyLabel: runtime.label,
+    resolutionSource: "auto",
+   },
   });
 
   const response = await post({
@@ -310,6 +334,9 @@ describe("/api/ai/conversation", () => {
      provider: runtime.providerLabel,
      model: runtime.model,
      apiKeyId: runtime.keyId,
+     taskId: "conversation.reply",
+     keyLabel: runtime.label,
+     resolutionSource: "auto",
     },
    }),
   );
@@ -322,6 +349,7 @@ describe("/api/ai/conversation", () => {
    provider: runtime.providerLabel,
    model: runtime.model,
    apiKeyId: runtime.keyId,
+   runtimeReceipt: null,
   });
 
   const response = await post({
@@ -376,7 +404,7 @@ describe("/api/ai/conversation", () => {
  });
 
  it("blocks the legacy compatibility path instead of using a system provider", async () => {
-  mocks.resolveUserAiRuntime.mockResolvedValue({
+  mocks.resolveUserAiTaskRuntime.mockResolvedValue({
    ok: false,
    status: "missing-key",
    reason: "no-active-key",
@@ -418,8 +446,11 @@ describe("/api/ai/conversation", () => {
   const response = await post(requestBody([{ role: "user", content: "开始吧" }], selectedId));
 
   expect(response.status).toBe(200);
-  expect(mocks.resolveUserAiRuntime).toHaveBeenCalledWith(
-   expect.objectContaining({ capability: "conversation", apiKeyId: selectedId }),
+  expect(mocks.resolveUserAiTaskRuntime).toHaveBeenCalledWith(
+   expect.objectContaining({
+    taskId: "conversation.reply",
+    sessionOverride: { keyId: selectedId, model: runtime.model },
+   }),
   );
  });
 });

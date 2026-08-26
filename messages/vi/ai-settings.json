@@ -1,10 +1,125 @@
 {
  "tabs": {
+  "tasks": "Tác vụ AI",
   "conversation": "Hội thoại & bộ nhớ",
   "dailyReading": "Bài đọc mỗi ngày",
-  "providers": "Model & API",
-  "usage": "Mức sử dụng",
+  "providers": "API Keys",
+  "usage": "Hoạt động",
   "advanced": "Nâng cao",
   "aria": "Các phần cài đặt AI"
+ },
+ "taskRouting": {
+  "title": "Phân công tác vụ AI",
+  "description": "Chọn Auto, một key + model cụ thể, hoặc tắt riêng từng tác vụ. Assigned không tự đổi provider khi lỗi.",
+  "loading": "Đang tải tác vụ AI...",
+  "loadError": "Không tải hoặc lưu được tác vụ AI.",
+  "saveError": "Không lưu được phân công tác vụ này.",
+  "retry": "Thử lại",
+  "dataSent": "Dữ liệu gửi",
+  "expectedOutput": "Output mong đợi",
+  "storage": "Nơi lưu",
+  "mode": "Chế độ",
+  "key": "API key",
+  "model": "Model",
+  "autoStatus": "Theo key active ưu tiên đầu tiên",
+  "disabledStatus": "Không gọi AI",
+  "groups": { "main": "Tác vụ chính", "advanced": "Nâng cao" },
+  "modes": { "auto": "Auto", "assigned": "Assigned", "disabled": "Disabled" },
+  "tasks": {
+   "conversationReply": {
+    "title": "Trả lời Chat",
+    "when": "Khi gửi tin nhắn trong hội thoại AI.",
+    "data": "Persona, quan hệ, summary, tin nhắn gần đây và memory đang hoạt động.",
+    "output": "Một lượt trả lời hội thoại đã lọc phần suy luận ẩn.",
+    "storage": "Transcript và receipt trong conversation."
+   },
+   "lookupQuick": {
+    "title": "Tra nhanh",
+    "when": "Khi cache/từ điển chưa đủ nghĩa cơ bản hoặc SRS cần bổ sung.",
+    "data": "Từ/cụm từ cần tra; không gửi toàn bộ bài học.",
+    "output": "Pinyin, nghĩa ngắn và dữ liệu từ vựng cơ bản.",
+    "storage": "Kết quả AI transient; chỉ vào dữ liệu cá nhân khi Save."
+   },
+   "lookupDeep": {
+    "title": "Phân tích sâu",
+    "when": "Khi mở chi tiết từ/câu, editor context hoặc generate vocab.",
+    "data": "Từ/câu, ngữ cảnh được chọn và prompt expert tương thích nếu có.",
+    "output": "Phân tích có cấu trúc theo schema của từng màn hình.",
+    "storage": "Transient cho request; user chủ động Save vào dữ liệu cá nhân."
+   },
+   "dailyReadingTranslation": {
+    "title": "Daily Reading · Dịch bài",
+    "when": "Khi bật module dịch cho bài đã lấy từ nguồn.",
+    "data": "Nội dung bài nguồn bất biến.",
+    "output": "Bản dịch có cấu trúc.",
+    "storage": "Browser của thiết bị cùng receipt."
+   },
+   "dailyReadingVocabulary": {
+    "title": "Daily Reading · Từ vựng",
+    "when": "Khi bật module chọn từ vựng.",
+    "data": "Nội dung bài nguồn.",
+    "output": "Danh sách từ học theo số lượng cấu hình.",
+    "storage": "Browser của thiết bị cùng receipt."
+   },
+   "dailyReadingGrammar": {
+    "title": "Daily Reading · Ngữ pháp",
+    "when": "Khi bật module phân tích ngữ pháp.",
+    "data": "Nội dung bài nguồn.",
+    "output": "Các điểm ngữ pháp theo số lượng cấu hình.",
+    "storage": "Browser của thiết bị cùng receipt."
+   },
+   "dailyReadingQuestions": {
+    "title": "Daily Reading · Câu hỏi",
+    "when": "Khi bật module câu hỏi đọc hiểu.",
+    "data": "Nội dung bài nguồn.",
+    "output": "Câu hỏi đọc hiểu theo số lượng cấu hình.",
+    "storage": "Browser của thiết bị cùng receipt."
+   },
+   "conversationSummary": {
+    "title": "Tóm tắt hội thoại",
+    "when": "Sau các lượt chat khi cần nén context.",
+    "data": "Các tin nhắn trong thread cần tóm tắt.",
+    "output": "Summary có cấu trúc.",
+    "storage": "Trong conversation; có thể tắt độc lập."
+   },
+   "conversationMemoryExtraction": {
+    "title": "Trích xuất trí nhớ",
+    "when": "Sau lượt chat khi pipeline memory xử lý.",
+    "data": "Tin nhắn liên quan và memory hiện có.",
+    "output": "Các thay đổi memory có cấu trúc.",
+    "storage": "Long-term memory của tài khoản sau rule áp dụng."
+   },
+   "conversationSemanticMemory": {
+    "title": "Memory ngữ nghĩa",
+    "when": "Khi tạo/tìm embedding memory.",
+    "data": "Đoạn memory hoặc câu truy vấn cần embedding.",
+    "output": "Vector embedding; có lexical fallback khi tắt.",
+    "storage": "Embedding memory server-side, không phải transcript mới."
+   }
+  }
+ },
+ "activity": {
+  "title": "Hoạt động AI",
+  "description": "Metadata 90 ngày; không lưu prompt, nội dung tra, transcript, output hay raw provider error.",
+  "clear": "Xóa lịch sử",
+  "taskFilter": "Lọc theo tác vụ",
+  "providerFilter": "Lọc theo provider",
+  "statusFilter": "Lọc theo trạng thái",
+  "allTasks": "Mọi tác vụ",
+  "allProviders": "Mọi provider",
+  "allStatuses": "Mọi trạng thái",
+  "statuses": {
+   "success": "Thành công",
+   "failure": "Thất bại",
+   "cancelled": "Đã hủy",
+   "blocked": "Bị chặn"
+  },
+  "loadError": "Không tải được hoạt động AI.",
+  "retry": "Thử lại",
+  "empty": "Chưa có hoạt động AI phù hợp.",
+  "loading": "Đang tải...",
+  "loadMore": "Trang sau",
+  "openConversation": "Mở hội thoại",
+  "noRuntime": "Không có runtime được chọn"
  }
 }

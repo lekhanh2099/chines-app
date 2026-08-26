@@ -3,13 +3,12 @@
 import {
  Activity,
  KeyRound,
+ ListTodo,
  MessageCircle,
  Newspaper,
- RefreshCcw,
  Save,
  Settings2,
  SlidersHorizontal,
- Sparkles,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useState } from "react";
@@ -20,14 +19,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { IconTile } from "@/components/ui/icon-tile";
-import { Label } from "@/components/ui/label";
-import {
- Select,
- SelectContent,
- SelectItem,
- SelectTrigger,
- SelectValue,
-} from "@/components/ui/select";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
@@ -47,22 +38,16 @@ import {
  SENTENCE_PLACEHOLDER,
  WORD_PLACEHOLDER,
 } from "@/lib/ai-prompts";
-import {
- DEFAULT_GEMINI_MODEL,
- DEFAULT_GEMINI_QUICK_MODEL,
- GEMINI_DETAIL_MODEL_OPTIONS,
- GeminiModelIdSchema,
- getGeminiModelLabel,
-} from "@/lib/gemini-models";
+import { DEFAULT_GEMINI_MODEL } from "@/lib/gemini-models";
 
 import { AiConversationSettingsSection } from "./AiConversationSettingsSection";
-import { AiConversationUsageSettings } from "./AiConversationUsageSettings";
+import { AiActivitySettings } from "./AiActivitySettings";
+import { AiTaskSettingsSection } from "./AiTaskSettingsSection";
 import {
  AiSettingsPanelSchema,
  type AiSettingsPanel,
  resolveAiSettingsPanel,
 } from "./ai-settings-navigation";
-import { getApiKeyModelDescriptionKey } from "./model-description-keys";
 
 type AiSettingsWorkspaceProps = {
  panelValue?: string;
@@ -82,8 +67,6 @@ export function AiSettingsWorkspace({
   panel === AiSettingsPanelSchema.enum.providers || panel === AiSettingsPanelSchema.enum.advanced;
  const [wordLookupPrompt, setWordLookupPrompt] = useState(DEFAULT_WORD_LOOKUP_PROMPT);
  const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(DEFAULT_SENTENCE_LOOKUP_PROMPT);
- const [geminiModel, setGeminiModel] =
-  useState<ClientAiPromptSettings["geminiModel"]>(DEFAULT_GEMINI_MODEL);
  const [savedSettings, setSavedSettings] = useState<ClientAiPromptSettings | null>(null);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
@@ -116,7 +99,6 @@ export function AiSettingsWorkspace({
 
     setWordLookupPrompt(merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT);
     setSentenceLookupPrompt(merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT);
-    setGeminiModel(merged.geminiModel || DEFAULT_GEMINI_MODEL);
     setSavedSettings({
      wordLookupPrompt: merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT,
      sentenceLookupPrompt: merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
@@ -127,7 +109,6 @@ export function AiSettingsWorkspace({
     if (!isMounted) return;
     setWordLookupPrompt(localSettings.wordLookupPrompt);
     setSentenceLookupPrompt(localSettings.sentenceLookupPrompt);
-    setGeminiModel(localSettings.geminiModel);
     setSavedSettings({
      wordLookupPrompt: localSettings.wordLookupPrompt,
      sentenceLookupPrompt: localSettings.sentenceLookupPrompt,
@@ -165,26 +146,6 @@ export function AiSettingsWorkspace({
   }
  }
 
- async function handleSaveModel() {
-  if (!savedSettings) return;
-  setIsSaving(true);
-
-  try {
-   const persisted = await persistAiLookupSettings({
-    wordLookupPrompt: savedSettings.wordLookupPrompt,
-    sentenceLookupPrompt: savedSettings.sentenceLookupPrompt,
-    geminiModel,
-   });
-   setGeminiModel(persisted.settings.geminiModel);
-   setSavedSettings((current) =>
-    current ? { ...current, geminiModel: persisted.settings.geminiModel } : persisted.settings,
-   );
-   toast.success(persisted.remote ? t("ai.savedRemote") : t("ai.savedLocal"));
-  } finally {
-   setIsSaving(false);
-  }
- }
-
  async function handleSavePrompts() {
   if (!savedSettings) return;
   setIsSaving(true);
@@ -217,11 +178,12 @@ export function AiSettingsWorkspace({
  const hasUnsavedSentencePrompt =
   savedSettings !== null && sentenceLookupPrompt !== savedSettings.sentenceLookupPrompt;
  const hasUnsavedPromptChanges = hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
- const hasUnsavedModelChange = savedSettings !== null && geminiModel !== savedSettings.geminiModel;
- const selectedDetailModel = GEMINI_DETAIL_MODEL_OPTIONS.find(
-  (option) => option.value === geminiModel,
- );
  const tabItems: SegmentedControlItem<AiSettingsPanel>[] = [
+  {
+   key: AiSettingsPanelSchema.enum.tasks,
+   label: navigationT("tabs.tasks"),
+   icon: ListTodo,
+  },
   {
    key: AiSettingsPanelSchema.enum.conversation,
    label: navigationT("tabs.conversation"),
@@ -259,6 +221,10 @@ export function AiSettingsWorkspace({
     router.push(`/settings?section=ai&panel=${nextPanel}`, { scroll: false });
    }}
   >
+   <TabsContent value={AiSettingsPanelSchema.enum.tasks} className="pt-4">
+    <AiTaskSettingsSection />
+   </TabsContent>
+
    <TabsContent value={AiSettingsPanelSchema.enum.conversation} className="pt-4">
     <AiConversationSettingsSection />
    </TabsContent>
@@ -268,116 +234,11 @@ export function AiSettingsWorkspace({
    </TabsContent>
 
    <TabsContent value={AiSettingsPanelSchema.enum.providers} className="grid gap-5 pt-4">
-    <Card variant="section" padding="lg" className="grid gap-4">
-     <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-      <SectionHeading
-       icon={<Sparkles />}
-       title={lookupT("modelProvider.title")}
-       description={lookupT("modelProvider.description")}
-      />
-      <div className="flex flex-wrap items-center gap-2">
-       {hasLoaded ? (
-        <Badge variant={hasUnsavedModelChange ? "warning" : "success"} size="sm">
-         {hasUnsavedModelChange ? lookupT("modelProvider.dirty") : lookupT("modelProvider.synced")}
-        </Badge>
-       ) : null}
-       <Button
-        variant="outline"
-        size="toolbar"
-        onClick={() => setGeminiModel(DEFAULT_GEMINI_MODEL)}
-        disabled={isLoading || isSaving}
-       >
-        <RefreshCcw data-icon="inline-start" />
-        {lookupT("modelProvider.reset")}
-       </Button>
-       <Button
-        size="toolbar"
-        onClick={() => void handleSaveModel()}
-        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedModelChange}
-       >
-        {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-        {lookupT("modelProvider.save")}
-       </Button>
-      </div>
-     </div>
-
-     <Separator />
-
-     <div className="grid gap-2">
-      <div className="grid gap-1">
-       <Typography as="h3" variant="cardTitle" weight="bold">
-        {t("ai.detailTitle")}
-       </Typography>
-       <Typography as="p" variant="bodySmall" tone="muted">
-        {t("ai.detailDescription")}
-       </Typography>
-      </div>
-      <div className="grid max-w-xl gap-2">
-       <Label htmlFor="gemini-model" variant="label" tone="default" weight="semibold">
-        {t("ai.detailModelLabel")}
-       </Label>
-       <Select
-        value={geminiModel}
-        onValueChange={(value) => setGeminiModel(GeminiModelIdSchema.parse(value))}
-        disabled={isLoading || isSaving}
-       >
-        <SelectTrigger id="gemini-model" width="full" aria-label={t("ai.detailModelAria")}>
-         <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start">
-         {!selectedDetailModel ? (
-          <SelectItem value={geminiModel}>
-           {getGeminiModelLabel(geminiModel)} ({t("ai.savedSuffix")})
-          </SelectItem>
-         ) : null}
-         {GEMINI_DETAIL_MODEL_OPTIONS.map((option) => (
-          <SelectItem key={option.value} value={option.value}>
-           {option.label}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
-       <Typography as="p" variant="bodySmall" tone="muted" leading="compact">
-        {selectedDetailModel
-         ? t(getApiKeyModelDescriptionKey("gemini", selectedDetailModel.value))
-         : t("ai.legacyModel")}
-       </Typography>
-      </div>
-     </div>
-
-     <Separator />
-
-     <div className="grid gap-2">
-      <Typography as="h3" variant="cardTitle" weight="bold">
-       {t("ai.quickTitle")}
-      </Typography>
-      <Typography as="p" variant="bodySmall" tone="muted">
-       {t("ai.quickDescription")}
-      </Typography>
-      <div className="flex flex-wrap items-center gap-3">
-       <div className="grid gap-1">
-        <Typography as="p" tone="default" weight="semibold">
-         {getGeminiModelLabel(DEFAULT_GEMINI_QUICK_MODEL)}
-        </Typography>
-        <Typography as="p" variant="bodySmall" tone="muted">
-         {t("ai.quickModelDescription")}
-        </Typography>
-       </div>
-       <Badge variant="success" size="sm">
-        {t("ai.noPersonalKey")}
-       </Badge>
-       <Badge variant="info" size="sm">
-        {t("ai.freeTier")}
-       </Badge>
-      </div>
-     </div>
-    </Card>
-
     <ApiKeyManagerSection />
    </TabsContent>
 
    <TabsContent value={AiSettingsPanelSchema.enum.usage} className="pt-4">
-    <AiConversationUsageSettings />
+    <AiActivitySettings />
    </TabsContent>
 
    <TabsContent value={AiSettingsPanelSchema.enum.advanced} className="pt-4">

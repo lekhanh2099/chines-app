@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
+
 export const aiConversationMessageSchema = z.strictObject({
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
@@ -42,6 +44,7 @@ export const aiConversationRequestSchema = z.strictObject({
  messages: z.array(aiConversationMessageSchema).min(1).max(24),
  profile: aiConversationProfileSchema,
  apiKeyId: z.uuid().optional(),
+ model: z.string().trim().min(1).max(200).optional(),
 });
 
 export const aiConversationUsageSchema = z.strictObject({
@@ -55,6 +58,7 @@ export const aiConversationResponseSchema = z.strictObject({
  provider: z.string().trim().min(1),
  model: z.string().trim().min(1),
  apiKeyId: z.uuid().nullable(),
+ runtimeReceipt: aiRuntimeReceiptSchema,
  usage: aiConversationUsageSchema.nullable(),
 });
 

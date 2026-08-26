@@ -84,6 +84,7 @@
   "loadError": "Could not load personal API keys. Check the runtime again before sending a new message.",
   "addKey": "Add API key",
   "modelFallback": "provider default",
+  "modelOverride": "Model for this conversation",
   "compactChecking": "Checking AI",
   "compactReady": "AI ready · {provider}",
   "compactUnavailable": "AI unavailable",

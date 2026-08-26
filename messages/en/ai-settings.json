@@ -1,10 +1,125 @@
 {
  "tabs": {
+  "tasks": "AI Tasks",
   "conversation": "Conversation & memory",
   "dailyReading": "Daily Reading",
-  "providers": "Models & API",
-  "usage": "Usage",
+  "providers": "API Keys",
+  "usage": "Activity",
   "advanced": "Advanced",
   "aria": "AI settings sections"
+ },
+ "taskRouting": {
+  "title": "AI task assignments",
+  "description": "Use Auto, assign an exact key and model, or disable each task. Assigned tasks never switch provider after an error.",
+  "loading": "Loading AI tasks...",
+  "loadError": "Unable to load or save AI tasks.",
+  "saveError": "Unable to save this task assignment.",
+  "retry": "Retry",
+  "dataSent": "Data sent",
+  "expectedOutput": "Expected output",
+  "storage": "Storage",
+  "mode": "Mode",
+  "key": "API key",
+  "model": "Model",
+  "autoStatus": "First compatible active key by priority",
+  "disabledStatus": "AI calls disabled",
+  "groups": { "main": "Main tasks", "advanced": "Advanced" },
+  "modes": { "auto": "Auto", "assigned": "Assigned", "disabled": "Disabled" },
+  "tasks": {
+   "conversationReply": {
+    "title": "Chat reply",
+    "when": "When you send a message in AI Conversation.",
+    "data": "Persona, relationship, summary, recent messages, and active memories.",
+    "output": "One conversation reply with hidden reasoning removed.",
+    "storage": "Transcript and receipt in the conversation."
+   },
+   "lookupQuick": {
+    "title": "Quick lookup",
+    "when": "When dictionary/cache data is insufficient or SRS needs a basic meaning.",
+    "data": "The selected word or phrase, not the whole lesson.",
+    "output": "Pinyin, concise meaning, and basic vocabulary fields.",
+    "storage": "Transient AI result; personal data only after Save."
+   },
+   "lookupDeep": {
+    "title": "Deep analysis",
+    "when": "For detailed word/sentence analysis, editor context, or vocabulary generation.",
+    "data": "Selected word/sentence, selected context, and compatible expert prompt if set.",
+    "output": "Structured analysis validated for the requesting surface.",
+    "storage": "Request-local until you explicitly Save."
+   },
+   "dailyReadingTranslation": {
+    "title": "Daily Reading · Translation",
+    "when": "When the translation module is enabled for a sourced article.",
+    "data": "The immutable source article.",
+    "output": "Structured translation.",
+    "storage": "This device's browser with a receipt."
+   },
+   "dailyReadingVocabulary": {
+    "title": "Daily Reading · Vocabulary",
+    "when": "When the vocabulary module is enabled.",
+    "data": "The source article.",
+    "output": "A vocabulary list matching the configured count.",
+    "storage": "This device's browser with a receipt."
+   },
+   "dailyReadingGrammar": {
+    "title": "Daily Reading · Grammar",
+    "when": "When the grammar module is enabled.",
+    "data": "The source article.",
+    "output": "Grammar points matching the configured count.",
+    "storage": "This device's browser with a receipt."
+   },
+   "dailyReadingQuestions": {
+    "title": "Daily Reading · Questions",
+    "when": "When comprehension questions are enabled.",
+    "data": "The source article.",
+    "output": "Questions matching the configured count.",
+    "storage": "This device's browser with a receipt."
+   },
+   "conversationSummary": {
+    "title": "Conversation summary",
+    "when": "After turns when the thread context needs compaction.",
+    "data": "Thread messages covered by the summary.",
+    "output": "A structured summary.",
+    "storage": "In the conversation; independently disableable."
+   },
+   "conversationMemoryExtraction": {
+    "title": "Memory extraction",
+    "when": "When the post-turn memory pipeline runs.",
+    "data": "Relevant messages and existing memories.",
+    "output": "Structured memory changes.",
+    "storage": "Account long-term memory after policy checks."
+   },
+   "conversationSemanticMemory": {
+    "title": "Semantic memory",
+    "when": "When memory embeddings are created or searched.",
+    "data": "The memory text or retrieval query to embed.",
+    "output": "An embedding vector; lexical fallback remains available.",
+    "storage": "Server-side memory embedding, not a new transcript."
+   }
+  }
+ },
+ "activity": {
+  "title": "AI activity",
+  "description": "90-day metadata only; no prompts, lookup text, transcripts, outputs, or raw provider errors.",
+  "clear": "Clear history",
+  "taskFilter": "Filter by task",
+  "providerFilter": "Filter by provider",
+  "statusFilter": "Filter by status",
+  "allTasks": "All tasks",
+  "allProviders": "All providers",
+  "allStatuses": "All statuses",
+  "statuses": {
+   "success": "Success",
+   "failure": "Failure",
+   "cancelled": "Cancelled",
+   "blocked": "Blocked"
+  },
+  "loadError": "Unable to load AI activity.",
+  "retry": "Retry",
+  "empty": "No matching AI activity yet.",
+  "loading": "Loading...",
+  "loadMore": "Next page",
+  "openConversation": "Open conversation",
+  "noRuntime": "No runtime selected"
  }
 }

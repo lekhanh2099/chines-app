@@ -93,7 +93,7 @@ Daily Reading V2 stores no pinyin. Pronunciation is derived at render/runtime fr
 
 Daily Reading remains browser-local for article/settings/run persistence in this architecture. There is no Daily Reading database migration and no server cron. The authenticated app scheduler performs visible-session catch-up using the configured local capture time.
 
-The legacy `/api/hanzihome/reader/daily-reading/generate` compatibility path may remain temporarily, but any AI work on that path is personal-BYOK-only. It is not the primary V2 acquisition path.
+The unused legacy `/api/hanzihome/reader/daily-reading/generate` AI path has been removed. V1 browser data remains supported only as a read-only migration input for the current article-first flow.
 
 ## Conversation transport
 

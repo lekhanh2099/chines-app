@@ -232,10 +232,14 @@ async function requestGeminiStream(input: {
  try {
   throwIfAborted(input.signal);
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/${geminiModelPath(runtime.model)}:streamGenerateContent?alt=sse&key=${runtime.apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${geminiModelPath(runtime.model)}:streamGenerateContent?alt=sse`,
    {
     method: "POST",
-    headers: { Accept: "text/event-stream", "Content-Type": "application/json" },
+    headers: {
+     Accept: "text/event-stream",
+     "Content-Type": "application/json",
+     "x-goog-api-key": runtime.apiKey,
+    },
     body: JSON.stringify({
      systemInstruction: { parts: [{ text: input.systemPrompt }] },
      contents: input.messages.map((message) => ({

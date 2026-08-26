@@ -278,10 +278,14 @@ async function requestGemini(
  try {
   throwIfAborted(signal);
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/${runtime.model}:generateContent?key=${runtime.apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${runtime.model}:generateContent`,
    {
     method: "POST",
-    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    headers: {
+     Accept: "application/json",
+     "Content-Type": "application/json",
+     "x-goog-api-key": runtime.apiKey,
+    },
     body: JSON.stringify({
      systemInstruction: { parts: [{ text: systemInstruction }] },
      contents: [{ role: "user", parts: [{ text: prompt }] }],

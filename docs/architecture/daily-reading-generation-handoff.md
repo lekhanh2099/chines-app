@@ -133,7 +133,7 @@ Advanced source criteria use progressive disclosure so capture time/target level
 
 ## Legacy compatibility
 
-The legacy `/api/hanzihome/reader/daily-reading/generate` route and V1 generated-learning structures may remain temporarily for old data/consumer compatibility. They are no longer the primary V2 path and are personal-BYOK-only. System provider fallback is disabled.
+The unused legacy `/api/hanzihome/reader/daily-reading/generate` AI route has been removed. V1 generated-reading schemas remain read-only inputs for the browser-local V1 -> V2 migration so existing saved articles remain recoverable.
 
 Do not remove V1 read/migration support until release verification proves existing browser data remains recoverable.
 

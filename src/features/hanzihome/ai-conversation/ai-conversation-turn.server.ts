@@ -2,8 +2,15 @@ import "server-only";
 
 import { sanitizeAiConversationReply } from "@/features/hanzihome/ai-conversation/ai-conversation-output";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
+import type { AiRuntimeReceipt, AiTaskId, AiTaskResolutionSource } from "@/lib/ai-task-contract";
 import { logger } from "@/lib/logger";
-import { resolveUserAiRuntime, type ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
+import {
+ resolveUserAiTaskRuntime,
+ getAiRuntimeReceipt,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ type ResolvedUserAiRuntime,
+} from "@/services/ai-runtime.service";
 
 import {
  buildAiConversationProviderContext,
@@ -32,6 +39,7 @@ export type PersistedTurnGenerationResult =
     provider: string;
     model: string;
     apiKeyId: string;
+    runtimeReceipt: AiRuntimeReceipt;
    }
  | {
     ok: false;
@@ -43,7 +51,10 @@ export type PersistedTurnGenerationResult =
 export type PreparedPersistedAiConversationTurn =
  | {
     ok: true;
-    runtime: ResolvedUserAiRuntime;
+    runtime: ResolvedUserAiRuntime & {
+     taskId: AiTaskId;
+     resolutionSource: AiTaskResolutionSource;
+    };
     conversationMessages: AiConversationMessage[];
     systemPrompt: string;
    }
@@ -63,9 +74,17 @@ function latestLearnerMessage(messages: AiConversationPersistedMessage[]) {
 }
 
 function runtimeResolutionFailure(input: {
- status: "missing-key" | "storage-unavailable";
+ status: "missing-key" | "storage-unavailable" | "task-disabled";
  reason: string;
 }): PreparedPersistedAiConversationTurn {
+ if (input.status === "task-disabled") {
+  return {
+   ok: false,
+   status: 409,
+   code: "AI_TASK_DISABLED",
+   message: "Tác vụ trả lời hội thoại đang tắt trong Cài đặt → AI → Tác vụ AI.",
+  };
+ }
  if (input.status === "missing-key") {
   return {
    ok: false,
@@ -93,6 +112,7 @@ export async function preparePersistedAiConversationTurn({
  recentMessages,
  contextState,
  apiKeyId,
+ model,
  signal,
 }: {
  supabase: AuthenticatedRouteContext["supabase"];
@@ -100,15 +120,25 @@ export async function preparePersistedAiConversationTurn({
  recentMessages: AiConversationPersistedMessage[];
  contextState: AiConversationContextState;
  apiKeyId?: string;
+ model?: string;
  signal?: AbortSignal;
 }): Promise<PreparedPersistedAiConversationTurn> {
- const runtimeResolution = await resolveUserAiRuntime({
+ const runtimeResolution = await resolveUserAiTaskRuntime({
   supabase,
   userId,
-  capability: "conversation",
-  ...(apiKeyId ? { apiKeyId } : {}),
+  taskId: "conversation.reply",
+  ...(apiKeyId && model ? { sessionOverride: { keyId: apiKeyId, model } } : {}),
  });
- if (!runtimeResolution.ok) return runtimeResolutionFailure(runtimeResolution);
+ if (!runtimeResolution.ok) {
+  await recordUserAiTaskBlockedActivity({
+   userId,
+   taskId: "conversation.reply",
+   errorCode: runtimeResolution.reason,
+   resourceType: "conversation",
+   resourceId: contextState.conversation.id,
+  });
+  return runtimeResolutionFailure(runtimeResolution);
+ }
 
  const postTurnResult = await processDueAiConversationPostTurnJobs({
   supabase,
@@ -189,11 +219,13 @@ export async function generatePersistedAiConversationTurn(input: {
  recentMessages: AiConversationPersistedMessage[];
  contextState: AiConversationContextState;
  apiKeyId?: string;
+ model?: string;
  signal?: AbortSignal;
 }): Promise<PersistedTurnGenerationResult> {
  const prepared = await preparePersistedAiConversationTurn(input);
  if (!prepared.ok) return prepared;
 
+ const startedAt = performance.now();
  let raw = "";
  try {
   for await (const delta of streamAiConversationProviderReply({
@@ -206,6 +238,15 @@ export async function generatePersistedAiConversationTurn(input: {
   }
  } catch (error) {
   if (error instanceof AiConversationProviderStreamError) {
+   await recordUserAiRuntimeActivity({
+    userId: input.userId,
+    runtime: prepared.runtime,
+    status: error.code === "cancelled" ? "cancelled" : "failure",
+    errorCode: error.code,
+    latencyMs: Math.round(performance.now() - startedAt),
+    resourceType: "conversation",
+    resourceId: input.contextState.conversation.id,
+   });
    return {
     ok: false,
     status: error.status,
@@ -213,6 +254,15 @@ export async function generatePersistedAiConversationTurn(input: {
     message: error.message,
    };
   }
+  await recordUserAiRuntimeActivity({
+   userId: input.userId,
+   runtime: prepared.runtime,
+   status: "failure",
+   errorCode: "provider-unavailable",
+   latencyMs: Math.round(performance.now() - startedAt),
+   resourceType: "conversation",
+   resourceId: input.contextState.conversation.id,
+  });
   return {
    ok: false,
    status: 503,
@@ -223,6 +273,15 @@ export async function generatePersistedAiConversationTurn(input: {
 
  const message = sanitizeAiConversationReply(raw);
  if (!message) {
+  await recordUserAiRuntimeActivity({
+   userId: input.userId,
+   runtime: prepared.runtime,
+   status: "failure",
+   errorCode: "invalid-response",
+   latencyMs: Math.round(performance.now() - startedAt),
+   resourceType: "conversation",
+   resourceId: input.contextState.conversation.id,
+  });
   return {
    ok: false,
    status: 502,
@@ -231,11 +290,21 @@ export async function generatePersistedAiConversationTurn(input: {
   };
  }
 
+ await recordUserAiRuntimeActivity({
+  userId: input.userId,
+  runtime: prepared.runtime,
+  status: "success",
+  latencyMs: Math.round(performance.now() - startedAt),
+  resourceType: "conversation",
+  resourceId: input.contextState.conversation.id,
+ });
+
  return {
   ok: true,
   message,
   provider: prepared.runtime.providerLabel,
   model: prepared.runtime.model,
   apiKeyId: prepared.runtime.keyId,
+  runtimeReceipt: getAiRuntimeReceipt(prepared.runtime),
  };
 }

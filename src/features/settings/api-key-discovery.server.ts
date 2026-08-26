@@ -23,6 +23,26 @@ const geminiModelsSchema = z.object({
   )
   .optional(),
 });
+const openAiCompatibleGenerationSchema = z.object({
+ choices: z
+  .array(
+   z.object({
+    message: z.object({ content: z.string().min(1) }),
+   }),
+  )
+  .min(1),
+});
+const geminiGenerationSchema = z.object({
+ candidates: z
+  .array(
+   z.object({
+    content: z.object({
+     parts: z.array(z.object({ text: z.string().min(1) })).min(1),
+    }),
+   }),
+  )
+  .min(1),
+});
 
 export type ApiKeyProviderSelection = typeof AUTO_API_KEY_PROVIDER | ApiKeyProvider;
 
@@ -59,6 +79,65 @@ export async function discoverApiKeyModels(
    errors[0] ||
    "Không thể xác định provider hoặc tải model cho API key này. Hãy kiểm tra key rồi thử lại.",
  };
+}
+
+export async function probeApiKeyModel(
+ apiKey: string,
+ provider: ApiKeyProvider,
+ model: string,
+ abortSignal?: AbortSignal,
+): Promise<{ ok: boolean }> {
+ try {
+  const signal = createRequestSignal(DISCOVERY_TIMEOUT_MS, abortSignal);
+  const response =
+   provider === "gemini"
+    ? await fetch(`https://generativelanguage.googleapis.com/v1beta/${model}:generateContent`, {
+       method: "POST",
+       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
+       body: JSON.stringify({
+        contents: [{ parts: [{ text: 'Return exactly one JSON object: {"ok":true}' }] }],
+        generationConfig: {
+         maxOutputTokens: 64,
+         responseMimeType: "application/json",
+        },
+       }),
+       signal,
+      })
+    : await fetch(
+       provider === "groq"
+        ? "https://api.groq.com/openai/v1/chat/completions"
+        : provider === "deepseek"
+          ? "https://api.deepseek.com/chat/completions"
+          : "https://api.openai.com/v1/chat/completions",
+       {
+        method: "POST",
+        headers: {
+         Authorization: `Bearer ${apiKey}`,
+         "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+         model,
+         messages: [{ role: "user", content: 'Return exactly one JSON object: {"ok":true}' }],
+         ...(provider === "groq" || (provider === "openai" && model.startsWith("gpt-5"))
+          ? { max_completion_tokens: 64 }
+          : { max_tokens: 64 }),
+         response_format: { type: "json_object" },
+        }),
+        signal,
+       },
+      );
+  if (!response.ok) return { ok: false };
+  const payload = await response.json();
+  return {
+   ok:
+    provider === "gemini"
+     ? geminiGenerationSchema.safeParse(payload).success
+     : openAiCompatibleGenerationSchema.safeParse(payload).success,
+  };
+ } catch (error) {
+  if (abortSignal?.aborted) throw error;
+  return { ok: false };
+ }
 }
 
 function getProviderCandidates(apiKey: string): ApiKeyProvider[] {

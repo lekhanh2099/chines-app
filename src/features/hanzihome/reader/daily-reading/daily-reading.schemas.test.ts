@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { dailyReadingGenerateStreamEventSchema, dailyReadingSchema } from "./daily-reading.schemas";
+import { dailyReadingSchema } from "./daily-reading.schemas";
 
 const legacyReading = {
  schemaVersion: "1.0.0",
@@ -66,48 +66,5 @@ describe("Daily Reading schemas", () => {
   expect(parsed.paragraphs.every((paragraph) => paragraph.pinyin === "")).toBe(true);
   expect(parsed.vocabulary.every((item) => item.pinyin === "")).toBe(true);
   expect(parsed.pinyinReviewStatus).toBe("auto-generated");
- });
-
- it("accepts progress, result, and bounded error stream events", () => {
-  expect(
-   dailyReadingGenerateStreamEventSchema.parse({ type: "progress", stage: "repairing_learning" }),
-  ).toEqual({ type: "progress", stage: "repairing_learning" });
-  expect(
-   dailyReadingGenerateStreamEventSchema.parse({
-    type: "error",
-    payload: { code: "source-unavailable", detail: "No usable source." },
-   }),
-  ).toEqual({
-   type: "error",
-   payload: { code: "source-unavailable", detail: "No usable source." },
-  });
-  expect(
-   dailyReadingGenerateStreamEventSchema.safeParse({
-    type: "error",
-    payload: { code: "made-up", detail: "Nope" },
-   }).success,
-  ).toBe(false);
- });
-
- it("accepts a source-metadata and reading-core checkpoint without raw article text", () => {
-  const checkpoint = {
-   source: legacyReading.source,
-   core: {
-    titleZh: legacyReading.titleZh,
-    titleVi: legacyReading.titleVi,
-    whyWorthReadingVi: legacyReading.whyWorthReadingVi,
-    topic: legacyReading.topic,
-    level: legacyReading.level,
-    estimatedMinutes: legacyReading.estimatedMinutes,
-    paragraphs: legacyReading.paragraphs.map(({ zh, vi, roleVi }) => ({ zh, vi, roleVi })),
-   },
-  };
-
-  expect(
-   dailyReadingGenerateStreamEventSchema.parse({ type: "checkpoint", payload: checkpoint }),
-  ).toEqual({
-   type: "checkpoint",
-   payload: checkpoint,
-  });
  });
 });

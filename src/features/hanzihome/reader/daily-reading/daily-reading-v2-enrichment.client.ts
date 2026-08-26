@@ -8,6 +8,7 @@ import {
 import type { DailyReadingV2, DailyReadingV2EnrichmentModule } from "./daily-reading-v2.schemas";
 import {
  getDailyReadingV2Snapshot,
+ getDailyReadingV2SettingsSnapshot,
  markDailyReadingV2EnrichmentRunInterrupted,
  saveDailyReadingV2EnrichmentRun,
  updateDailyReadingV2Enrichment,
@@ -124,6 +125,22 @@ function enrichmentEvidence(reading: DailyReadingV2): DailyReadingV2EnrichmentAr
  };
 }
 
+function moduleTargetCount(module: DailyReadingV2EnrichmentModule) {
+ const settings = getDailyReadingV2SettingsSnapshot();
+ if (module === "translation") return null;
+ if (module === "vocabulary") return settings.vocabularyCount;
+ if (module === "grammar") return settings.grammarCount;
+ return settings.questionsCount;
+}
+
+function moduleEnabled(module: DailyReadingV2EnrichmentModule) {
+ const settings = getDailyReadingV2SettingsSnapshot();
+ if (module === "translation") return settings.translationEnabled;
+ if (module === "vocabulary") return settings.vocabularyEnabled;
+ if (module === "grammar") return settings.grammarEnabled;
+ return settings.questionsEnabled;
+}
+
 async function decodeResponse(response: Response) {
  const payload = await response.json().catch(() => null);
  const parsed = dailyReadingV2EnrichmentResponseSchema.safeParse(payload);
@@ -204,7 +221,11 @@ export async function enrichDailyReadingV2Module(
      credentials: "include",
      cache: "no-store",
      signal: controller.signal,
-     body: JSON.stringify({ module, reading: enrichmentEvidence(fresh) }),
+     body: JSON.stringify({
+      module,
+      reading: enrichmentEvidence(fresh),
+      targetCount: moduleTargetCount(module),
+     }),
     });
     const result = await decodeResponse(response);
     if (result.module !== module) {
@@ -319,12 +340,14 @@ export async function enrichDailyReadingV2LearningSupport(articleId: string) {
  for (let index = 0; index < modules.length; index += 1) {
   const enrichmentModule = modules[index];
   if (enrichmentModule === undefined) continue;
+  if (!moduleEnabled(enrichmentModule)) continue;
   const existingState = current.enrichment[enrichmentModule];
   if (existingState.status === "ready" || existingState.status === "running") continue;
 
   current = await enrichDailyReadingV2Module(articleId, enrichmentModule);
   const state = current.enrichment[enrichmentModule];
   if (state.status !== "blocked") continue;
+  if (state.reason === "task-disabled") continue;
 
   for (const remaining of modules.slice(index + 1)) {
    const remainingState = current.enrichment[remaining];

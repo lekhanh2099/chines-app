@@ -9,6 +9,7 @@ import { JsonObjectSchema, JsonValueSchema } from "@/types/json";
 import { z } from "zod";
 import type { Tables } from "@/types/supabase.generated";
 import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
+import { aiRuntimeReceiptSchema } from "@/lib/ai-task-contract";
 
 export type DbUserAiPromptSettings = Tables<"user_ai_prompt_settings">;
 
@@ -290,5 +291,6 @@ export const SmartSelectionResultSchema = z.object({
  found: z.boolean(),
  personal_note: z.string(),
  personal_note_mode: PersonalNoteModeSchema,
+ runtimeReceipt: aiRuntimeReceiptSchema.optional(),
 });
 export type SmartSelectionResult = z.infer<typeof SmartSelectionResultSchema>;

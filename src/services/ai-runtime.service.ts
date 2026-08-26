@@ -1,7 +1,7 @@
 import "server-only";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
-import { getDefaultApiKeyModel } from "@/lib/api-key-models";
+import { getDefaultApiKeyModel, isApiKeyModelSupported } from "@/lib/api-key-models";
 import { getApiKeyProviderLabel, type ApiKeyProvider } from "@/lib/api-key-providers";
 import {
  aiRuntimeReadinessResponseSchema,
@@ -11,6 +11,14 @@ import {
  type AiRuntimeReadinessResponse,
  type AiRuntimeSafeKey,
 } from "@/lib/ai-runtime-contract";
+import {
+ getAiTaskDefinition,
+ type AiRuntimeReceipt,
+ type AiTaskAssignment,
+ type AiTaskId,
+ type AiTaskResolutionSource,
+ type AiTaskSessionOverride,
+} from "@/lib/ai-task-contract";
 import { isByokEncryptionConfigured } from "@/lib/encryption";
 import {
  getActiveUserApiKeyCredentials,
@@ -19,6 +27,11 @@ import {
  type UserApiKey,
  type UserApiKeyCredential,
 } from "@/services/user-api-keys.service";
+import { getUserAiTaskAssignment } from "@/services/ai-task-routing.service";
+import {
+ recordUserAiActivityEvent,
+ type CreateAiActivityEvent,
+} from "@/services/ai-task-routing.service";
 
 const generationCapabilities: readonly AiRuntimeCapability[] = [
  "conversation",
@@ -40,6 +53,8 @@ export type AiRuntimeInventory = {
 };
 
 export type ResolvedUserAiRuntime = {
+ taskId?: AiTaskId;
+ resolutionSource?: AiTaskResolutionSource;
  keyId: string;
  provider: ApiKeyProvider;
  providerLabel: string;
@@ -62,13 +77,29 @@ export type UserAiRuntimeResolution =
     reason: AiRuntimeReadinessReason;
    };
 
-function capabilitiesForProvider(provider: ApiKeyProvider): readonly AiRuntimeCapability[] {
+export type UserAiTaskRuntimeResolution =
+ | {
+    ok: true;
+    runtime: ResolvedUserAiRuntime & {
+     taskId: AiTaskId;
+     resolutionSource: AiTaskResolutionSource;
+    };
+   }
+ | {
+    ok: false;
+    status: "missing-key" | "storage-unavailable" | "task-disabled";
+    reason: AiRuntimeReadinessReason;
+   };
+
+export function getAiRuntimeCapabilitiesForProvider(
+ provider: ApiKeyProvider,
+): readonly AiRuntimeCapability[] {
  if (provider === "gemini") return [...generationCapabilities, "semantic-memory"];
  return generationCapabilities;
 }
 
 function supportsCapability(provider: ApiKeyProvider, capability: AiRuntimeCapability) {
- return capabilitiesForProvider(provider).includes(capability);
+ return getAiRuntimeCapabilitiesForProvider(provider).includes(capability);
 }
 
 function resolvedModel(credential: UserApiKeyCredential) {
@@ -85,14 +116,35 @@ function safeKeyFromCredential(credential: UserApiKeyCredential): AiRuntimeSafeK
   model: resolvedModel(credential),
   priority: credential.priority,
   lastValidatedAt: credential.lastValidatedAt,
-  capabilities: [...capabilitiesForProvider(credential.provider)],
+  capabilities: [...getAiRuntimeCapabilitiesForProvider(credential.provider)],
  };
+}
+
+function runtimeFromCredential(input: {
+ credential: UserApiKeyCredential;
+ taskId?: AiTaskId;
+ resolutionSource?: AiTaskResolutionSource;
+ model?: string;
+}): ResolvedUserAiRuntime {
+ return {
+  ...safeKeyFromCredential(input.credential),
+  ...(input.taskId ? { taskId: input.taskId } : {}),
+  ...(input.resolutionSource ? { resolutionSource: input.resolutionSource } : {}),
+  model: input.model ?? resolvedModel(input.credential),
+  apiKey: input.credential.apiKey,
+ };
+}
+
+function supportsModel(credential: UserApiKeyCredential, model: string) {
+ return (
+  isApiKeyModelSupported(credential.provider, model) || credential.defaultModel?.trim() === model
+ );
 }
 
 function aggregateCapabilities(credentials: readonly UserApiKeyCredential[]) {
  const capabilities = new Set<AiRuntimeCapability>();
  for (const credential of credentials) {
-  for (const capability of capabilitiesForProvider(credential.provider)) {
+  for (const capability of getAiRuntimeCapabilitiesForProvider(credential.provider)) {
    capabilities.add(capability);
   }
  }
@@ -190,8 +242,9 @@ export function resolveAiRuntimeFromInventory(input: {
   return {
    ok: true,
    runtime: {
-    ...safeKeyFromCredential(credential),
-    apiKey: credential.apiKey,
+    ...runtimeFromCredential({
+     credential,
+    }),
    },
   };
  }
@@ -210,8 +263,82 @@ export function resolveAiRuntimeFromInventory(input: {
  return {
   ok: true,
   runtime: {
-   ...safeKeyFromCredential(credential),
-   apiKey: credential.apiKey,
+   ...runtimeFromCredential({
+    credential,
+   }),
+  },
+ };
+}
+
+export function resolveAiTaskRuntimeFromInventory(input: {
+ inventory: AiRuntimeInventory;
+ taskId: AiTaskId;
+ assignment?: AiTaskAssignment;
+ sessionOverride?: AiTaskSessionOverride;
+}): UserAiTaskRuntimeResolution {
+ const task = getAiTaskDefinition(input.taskId);
+ if (input.assignment && input.assignment.taskId !== input.taskId) {
+  throw new Error(`AI task assignment mismatch for ${input.taskId}`);
+ }
+
+ if (input.assignment?.mode === "disabled") {
+  return {
+   ok: false,
+   status: "task-disabled",
+   reason: "task-disabled",
+  };
+ }
+
+ const readiness = getAiRuntimeReadinessFromInventory(input.inventory);
+ if (readiness.status !== "ready") {
+  return {
+   ok: false,
+   status: readiness.status,
+   reason: readiness.reason,
+  };
+ }
+
+ const exactSelection =
+  input.sessionOverride ?? (input.assignment?.mode === "assigned" ? input.assignment : null);
+ if (exactSelection) {
+  const activeKey = input.inventory.activeKeys.find((key) => key.id === exactSelection.keyId);
+  const reason = input.sessionOverride ? "selected-key-unavailable" : "assigned-key-unavailable";
+  if (!activeKey) return { ok: false, status: "missing-key", reason };
+
+  const credential = input.inventory.credentials.find((key) => key.id === exactSelection.keyId);
+  if (!credential) {
+   return { ok: false, status: "storage-unavailable", reason: "credential-unreadable" };
+  }
+  if (!supportsCapability(credential.provider, task.capability)) {
+   return { ok: false, status: "missing-key", reason: "capability-unavailable" };
+  }
+  if (!supportsModel(credential, exactSelection.model)) {
+   return { ok: false, status: "missing-key", reason: "assigned-model-unavailable" };
+  }
+
+  return {
+   ok: true,
+   runtime: {
+    ...runtimeFromCredential({ credential, model: exactSelection.model }),
+    taskId: input.taskId,
+    resolutionSource: input.sessionOverride ? "session-override" : "assigned",
+   },
+  };
+ }
+
+ const credential = input.inventory.credentials.find((key) =>
+  supportsCapability(key.provider, task.capability),
+ );
+ if (!credential) {
+  return { ok: false, status: "missing-key", reason: "capability-unavailable" };
+ }
+
+ return {
+  ok: true,
+  runtime: {
+   ...runtimeFromCredential({ credential }),
+   taskId: input.taskId,
+   resolutionSource: "auto",
   },
  };
 }
@@ -275,6 +402,103 @@ export async function resolveUserAiRuntime(input: {
   capability: input.capability,
   ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
  });
+}
+
+export async function resolveUserAiTaskRuntime(input: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
+ taskId: AiTaskId;
+ sessionOverride?: AiTaskSessionOverride;
+}): Promise<UserAiTaskRuntimeResolution> {
+ const [inventory, assignment] = await Promise.all([
+  loadUserAiRuntimeInventory(input.supabase, input.userId),
+  getUserAiTaskAssignment(input.userId, input.taskId),
+ ]);
+ return resolveAiTaskRuntimeFromInventory({
+  inventory,
+  taskId: input.taskId,
+  ...(assignment ? { assignment } : {}),
+  ...(input.sessionOverride ? { sessionOverride: input.sessionOverride } : {}),
+ });
+}
+
+export function getAiRuntimeReceipt(
+ runtime: ResolvedUserAiRuntime & {
+  taskId: AiTaskId;
+  resolutionSource: AiTaskResolutionSource;
+ },
+): AiRuntimeReceipt {
+ return {
+  taskId: runtime.taskId,
+  provider: runtime.provider,
+  model: runtime.model,
+  keyId: runtime.keyId,
+  keyLabel: runtime.label,
+  resolutionSource: runtime.resolutionSource,
+ };
+}
+
+export async function recordUserAiRuntimeActivity(input: {
+ userId: string;
+ runtime: ResolvedUserAiRuntime & {
+  taskId: AiTaskId;
+  resolutionSource: AiTaskResolutionSource;
+ };
+ status: CreateAiActivityEvent["status"];
+ errorCode?: string;
+ latencyMs?: number;
+ inputTokens?: number;
+ outputTokens?: number;
+ resourceType?: string;
+ resourceId?: string;
+}) {
+ try {
+  await recordUserAiActivityEvent(input.userId, {
+   taskId: input.runtime.taskId,
+   provider: input.runtime.provider,
+   model: input.runtime.model,
+   keyId: input.runtime.keyId,
+   keyLabel: input.runtime.label,
+   resolutionSource: input.runtime.resolutionSource,
+   status: input.status,
+   errorCode: input.errorCode ?? null,
+   latencyMs: input.latencyMs ?? null,
+   inputTokens: input.inputTokens ?? null,
+   outputTokens: input.outputTokens ?? null,
+   resourceType: input.resourceType ?? null,
+   resourceId: input.resourceId ?? null,
+  });
+ } catch {
+  // Activity telemetry must never change the outcome of the AI task itself.
+ }
+}
+
+export async function recordUserAiTaskBlockedActivity(input: {
+ userId: string;
+ taskId: AiTaskId;
+ errorCode: string;
+ resourceType?: string;
+ resourceId?: string;
+}) {
+ try {
+  await recordUserAiActivityEvent(input.userId, {
+   taskId: input.taskId,
+   provider: null,
+   model: null,
+   keyId: null,
+   keyLabel: null,
+   resolutionSource: null,
+   status: "blocked",
+   errorCode: input.errorCode,
+   latencyMs: null,
+   inputTokens: null,
+   outputTokens: null,
+   resourceType: input.resourceType ?? null,
+   resourceId: input.resourceId ?? null,
+  });
+ } catch {
+  // Activity telemetry must never change the outcome of the AI task itself.
+ }
 }
 
 export function classifyAiRuntimeOperationFailure(input: {

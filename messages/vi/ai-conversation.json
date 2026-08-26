@@ -84,6 +84,7 @@
   "loadError": "Không tải được danh sách key cá nhân. Hãy kiểm tra lại trước khi gửi tin nhắn mới.",
   "addKey": "Thêm API key",
   "modelFallback": "model mặc định",
+  "modelOverride": "Model cho hội thoại này",
   "compactChecking": "Đang kiểm tra AI",
   "compactReady": "AI sẵn sàng · {provider}",
   "compactUnavailable": "AI chưa sẵn sàng",

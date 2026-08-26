@@ -272,6 +272,13 @@ function buildDocumentCandidate(
 
 function semanticFragments(html: string) {
  const fragments: { method: DailyReadingExtractionMethod; fragment: string }[] = [];
+ const chinaNewsBody =
+  /<div\b[^>]*class=["'][^"']*\bleft_zw\b[^"']*["'][^>]*>([\s\S]*?)<!--\s*正文end\s*-->/iu.exec(
+   html,
+  )?.[1];
+ if (chinaNewsBody) {
+  fragments.push({ method: "content-container", fragment: chinaNewsBody });
+ }
  for (const body of jsonLdArticleBodies(html)) {
   fragments.push({ method: "json-ld", fragment: body });
  }

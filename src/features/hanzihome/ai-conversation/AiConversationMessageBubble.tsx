@@ -5,12 +5,16 @@ import { useTranslations } from "next-intl";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
-
-import type { AiConversationMessage } from "./ai-conversation.schemas";
+import type { AiRuntimeReceipt } from "@/lib/ai-task-contract";
 
 type AiConversationMessageBubbleProps = {
- message: AiConversationMessage;
+ message: {
+  role: "user" | "assistant";
+  content: string;
+  runtimeReceipt?: AiRuntimeReceipt;
+ };
  assistantName: string;
 };
 
@@ -39,10 +43,23 @@ export function AiConversationMessageBubble({
    <Avatar size="xs" tone="accent" aria-hidden="true">
     <AvatarFallback>{getAvatarFallback(assistantName)}</AvatarFallback>
    </Avatar>
-   <div className="max-w-[86%] rounded-xl rounded-bl-sm border border-border-default bg-surface px-3.5 py-2.5 sm:max-w-[74%]">
+   <div className="grid max-w-[86%] gap-2 rounded-xl rounded-bl-sm border border-border-default bg-surface px-3.5 py-2.5 sm:max-w-[74%]">
     <Typography as="p" variant="bodySmall" wrapping="preWrap">
      {message.content}
     </Typography>
+    {message.runtimeReceipt ? (
+     <div className="flex flex-wrap gap-1.5">
+      <Badge variant="default" size="sm" casing="natural">
+       {message.runtimeReceipt.provider}
+      </Badge>
+      <Badge variant="default" size="sm" casing="natural">
+       {message.runtimeReceipt.model}
+      </Badge>
+      <Badge variant="default" size="sm" casing="natural">
+       {message.runtimeReceipt.keyLabel}
+      </Badge>
+     </div>
+    ) : null}
    </div>
   </div>
  );

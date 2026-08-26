@@ -5,9 +5,11 @@ import { z } from "zod";
 
 import {
  discoverApiKeyModels,
+ probeApiKeyModel,
  type ApiKeyProviderSelection,
 } from "@/features/settings/api-key-discovery.server";
 import { isApiKeyModelSupported } from "@/lib/api-key-models";
+import type { AiTaskAssignment } from "@/lib/ai-task-contract";
 import {
  AUTO_API_KEY_PROVIDER,
  ApiKeyProviderSchema,
@@ -23,6 +25,35 @@ import {
  moveUserApiKey,
  updateUserApiKey,
 } from "@/services/user-api-keys.service";
+import {
+ AiTaskStorageNotReadyError,
+ listAssignedTasksForKey,
+ listUserAiTaskAssignments,
+} from "@/services/ai-task-routing.service";
+
+async function assignedKeyConflict(userId: string, keyId: string) {
+ try {
+  const taskIds = await listAssignedTasksForKey(userId, keyId);
+  if (taskIds.length === 0) return null;
+  return NextResponse.json(
+   {
+    error:
+     "API key đang được gán cho tác vụ AI. Hãy chuyển các tác vụ sang Auto, Off hoặc key khác trước.",
+    code: "AI_KEY_ASSIGNED",
+    taskIds,
+   },
+   { status: 409 },
+  );
+ } catch (error) {
+  if (error instanceof AiTaskStorageNotReadyError) {
+   return NextResponse.json(
+    { error: "AI task assignment storage is not ready", code: "AI_TASK_SCHEMA_UNAVAILABLE" },
+    { status: 503 },
+   );
+  }
+  throw error;
+ }
+}
 
 const RequestedProviderSchema = z.union([z.literal(AUTO_API_KEY_PROVIDER), ApiKeyProviderSchema]);
 
@@ -78,6 +109,12 @@ export async function GET() {
 
  const schemaStatus = await getUserApiKeysSchemaStatus(supabase, user.id);
  const keys = schemaStatus.ready ? await listUserApiKeys(supabase, user.id) : [];
+ let assignments: AiTaskAssignment[] = [];
+ try {
+  assignments = await listUserAiTaskAssignments(user.id);
+ } catch (error) {
+  if (!(error instanceof AiTaskStorageNotReadyError)) throw error;
+ }
  const summary = {
   total: keys.length,
   active: keys.filter((key) => key.isActive).length,
@@ -94,6 +131,9 @@ export async function GET() {
   keys: keys.map((key) => ({
    ...key,
    providerLabel: getApiKeyProviderLabel(key.provider),
+   assignedTaskIds: assignments
+    .filter((assignment) => assignment.mode === "assigned" && assignment.keyId === key.id)
+    .map((assignment) => assignment.taskId),
   })),
   summary,
  });
@@ -154,6 +194,22 @@ export async function POST(request: NextRequest) {
 
  const selectedModel = parsed.data.model ?? discovery.value.recommendedModel;
  if (!discovery.value.models.includes(selectedModel)) {
+  return NextResponse.json(
+   {
+    error:
+     "Model đã chọn không còn khả dụng cho API key này. Hãy kiểm tra lại key để tải danh sách model mới.",
+   },
+   { status: 400 },
+  );
+ }
+
+ const probe = await probeApiKeyModel(
+  parsed.data.apiKey,
+  discovery.value.provider,
+  selectedModel,
+  request.signal,
+ );
+ if (!probe.ok) {
   return NextResponse.json(
    {
     error:
@@ -229,6 +285,11 @@ export async function PATCH(request: NextRequest) {
   });
  }
 
+ if (parsed.data.action === "toggle" && !parsed.data.isActive) {
+  const conflict = await assignedKeyConflict(user.id, parsed.data.keyId);
+  if (conflict) return conflict;
+ }
+
  if (parsed.data.action === "model") {
   const key = (await listUserApiKeys(supabase, user.id)).find(
    (candidate) => candidate.id === parsed.data.keyId,
@@ -284,6 +345,9 @@ export async function DELETE(request: NextRequest) {
  if (!parsed.success) {
   return NextResponse.json({ error: "Payload không hợp lệ" }, { status: 400 });
  }
+
+ const conflict = await assignedKeyConflict(user.id, parsed.data.keyId);
+ if (conflict) return conflict;
 
  const deleted = await deleteUserApiKey(supabase, user.id, parsed.data.keyId);
  if (!deleted) {

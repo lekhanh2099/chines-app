@@ -13,6 +13,7 @@ const {
  loadAiConversationContextState,
  loadRecentAiConversationMessages,
  preparePersistedAiConversationTurn,
+ recordUserAiRuntimeActivity,
  streamAiConversationProviderReply,
 } = vi.hoisted(() => ({
  appendAiConversationMessage: vi.fn(),
@@ -20,6 +21,7 @@ const {
  loadAiConversationContextState: vi.fn(),
  loadRecentAiConversationMessages: vi.fn(),
  preparePersistedAiConversationTurn: vi.fn(),
+ recordUserAiRuntimeActivity: vi.fn(),
  streamAiConversationProviderReply: vi.fn(),
 }));
 
@@ -31,6 +33,7 @@ vi.mock("./ai-conversation-persistence.server", () => ({
  loadRecentAiConversationMessages,
 }));
 vi.mock("./ai-conversation-turn.server", () => ({ preparePersistedAiConversationTurn }));
+vi.mock("@/services/ai-runtime.service", () => ({ recordUserAiRuntimeActivity }));
 vi.mock("./ai-conversation-stream-provider.server", () => ({
  AiConversationProviderStreamError: class AiConversationProviderStreamError extends Error {
   readonly code = "provider-unavailable";
@@ -82,7 +85,7 @@ type SuccessfulPreparation = Extract<PreparedPersistedAiConversationTurn, { ok: 
 function successfulPreparation(): SuccessfulPreparation {
  return {
   ok: true,
-  runtime,
+  runtime: { ...runtime, taskId: "conversation.reply", resolutionSource: "auto" },
   conversationMessages: [{ role: "user", content: "你好" }],
   systemPrompt: "Stay natural.",
  };
@@ -108,6 +111,7 @@ describe("persisted AI conversation turn stream", () => {
   loadAiConversationContextState.mockReset();
   loadRecentAiConversationMessages.mockReset();
   preparePersistedAiConversationTurn.mockReset();
+  recordUserAiRuntimeActivity.mockReset();
   streamAiConversationProviderReply.mockReset();
 
   appendAiConversationMessage
@@ -160,6 +164,7 @@ describe("persisted AI conversation turn stream", () => {
    provider: "Groq",
    model: runtime.model,
    apiKeyId: runtime.keyId,
+   runtimeReceipt: null,
   });
 
   const result = await createPersistedAiConversationTurnStream({

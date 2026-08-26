@@ -46,7 +46,13 @@ import {
  requireAuthenticatedRoute,
 } from "@/lib/api/authenticated-route";
 import { logger } from "@/lib/logger";
-import { resolveUserAiRuntime } from "@/services/ai-runtime.service";
+import {
+ classifyAiRuntimeOperationFailure,
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+ resolveUserAiRuntime,
+ resolveUserAiTaskRuntime,
+} from "@/services/ai-runtime.service";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -190,9 +196,16 @@ function invalidPersistenceResponse(message: string) {
 }
 
 function runtimeResolutionError(input: {
- status: "missing-key" | "storage-unavailable";
+ status: "missing-key" | "storage-unavailable" | "task-disabled";
  reason: string;
 }) {
+ if (input.status === "task-disabled") {
+  return apiError(
+   "Tác vụ trả lời hội thoại đang tắt trong Cài đặt → AI → Tác vụ AI.",
+   409,
+   "AI_TASK_DISABLED",
+  );
+ }
  if (input.status === "missing-key") {
   return apiError(
    input.reason === "selected-key-unavailable"
@@ -407,6 +420,7 @@ export async function POST(request: Request) {
       provider: existingReply.provider,
       model: existingReply.model,
       apiKeyId: existingReply.apiKeyId,
+      runtimeReceipt: existingReply.runtimeReceipt,
       usage: null,
      }),
     );
@@ -426,6 +440,7 @@ export async function POST(request: Request) {
     recentMessages,
     contextState,
     ...(payload.apiKeyId ? { apiKeyId: payload.apiKeyId } : {}),
+    ...(payload.model ? { model: payload.model } : {}),
     signal: request.signal,
    });
 
@@ -443,6 +458,9 @@ export async function POST(request: Request) {
      provider: generated.provider,
      model: generated.model,
      apiKeyId: generated.apiKeyId,
+     taskId: generated.runtimeReceipt.taskId,
+     keyLabel: generated.runtimeReceipt.keyLabel,
+     resolutionSource: generated.runtimeReceipt.resolutionSource,
     },
    });
 
@@ -454,6 +472,7 @@ export async function POST(request: Request) {
      provider: generated.provider,
      model: generated.model,
      apiKeyId: generated.apiKeyId,
+     runtimeReceipt: generated.runtimeReceipt,
      usage: null,
     }),
    );
@@ -475,13 +494,23 @@ export async function POST(request: Request) {
   return apiError("Invalid AI conversation payload", 400, "INVALID_PAYLOAD");
  }
 
- const resolution = await resolveUserAiRuntime({
+ const taskStartedAt = performance.now();
+ const resolution = await resolveUserAiTaskRuntime({
   supabase: auth.context.supabase,
   userId: auth.context.user.id,
-  capability: "conversation",
-  ...(parsed.data.apiKeyId ? { apiKeyId: parsed.data.apiKeyId } : {}),
+  taskId: "conversation.reply",
+  ...(parsed.data.apiKeyId && parsed.data.model
+   ? { sessionOverride: { keyId: parsed.data.apiKeyId, model: parsed.data.model } }
+   : {}),
  });
- if (!resolution.ok) return runtimeResolutionError(resolution);
+ if (!resolution.ok) {
+  await recordUserAiTaskBlockedActivity({
+   userId: auth.context.user.id,
+   taskId: "conversation.reply",
+   errorCode: resolution.reason,
+  });
+  return runtimeResolutionError(resolution);
+ }
 
  const recentMessages = parsed.data.messages.slice(-19);
  const profileMessage: AiConversationMessage = {
@@ -503,6 +532,13 @@ export async function POST(request: Request) {
 
   const message = sanitizeAiConversationReply(rawReply);
   if (!message) {
+   await recordUserAiRuntimeActivity({
+    userId: auth.context.user.id,
+    runtime: resolution.runtime,
+    status: "failure",
+    errorCode: "invalid-response",
+    latencyMs: Math.round(performance.now() - taskStartedAt),
+   });
    return apiError(
     "AI provider không trả về nội dung an toàn để hiển thị.",
     502,
@@ -510,16 +546,42 @@ export async function POST(request: Request) {
    );
   }
 
+  await recordUserAiRuntimeActivity({
+   userId: auth.context.user.id,
+   runtime: resolution.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - taskStartedAt),
+  });
+
   return privateNoStoreJson(
    aiConversationResponseSchema.parse({
     message,
     provider: resolution.runtime.providerLabel,
     model: resolution.runtime.model,
     apiKeyId: resolution.runtime.keyId,
+    runtimeReceipt: {
+     taskId: resolution.runtime.taskId,
+     provider: resolution.runtime.provider,
+     model: resolution.runtime.model,
+     keyId: resolution.runtime.keyId,
+     keyLabel: resolution.runtime.label,
+     resolutionSource: resolution.runtime.resolutionSource,
+    },
     usage: null,
    }),
   );
  } catch (error) {
+  const errorCode = classifyAiRuntimeOperationFailure({
+   message: error instanceof Error ? error.message : undefined,
+   errorName: error instanceof Error ? error.name : undefined,
+  });
+  await recordUserAiRuntimeActivity({
+   userId: auth.context.user.id,
+   runtime: resolution.runtime,
+   status: errorCode === "cancelled" ? "cancelled" : "failure",
+   errorCode,
+   latencyMs: Math.round(performance.now() - taskStartedAt),
+  });
   if (error instanceof z.ZodError) {
    return apiError(
     "AI provider trả về response không đúng contract.",

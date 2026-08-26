@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
@@ -8,8 +8,15 @@ import {
  classifyAiRuntimeOperationFailure,
  getAiRuntimeReadinessFromInventory,
  resolveAiRuntimeFromInventory,
+ resolveAiTaskRuntimeFromInventory,
  type AiRuntimeInventory,
 } from "./ai-runtime.service";
+import { recordUserAiActivityEvent } from "./ai-task-routing.service";
+
+afterEach(() => {
+ vi.unstubAllEnvs();
+ vi.unstubAllGlobals();
+});
 
 const groqKey: UserApiKey = {
  id: "11111111-1111-4111-8111-111111111111",
@@ -131,6 +138,100 @@ describe("shared AI runtime resolver", () => {
   });
  });
 
+ it("resolves Auto tasks by compatible key priority and its default model", () => {
+  const resolved = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "conversation.reply",
+  });
+
+  expect(resolved.ok && resolved.runtime).toMatchObject({
+   taskId: "conversation.reply",
+   resolutionSource: "auto",
+   keyId: groqKey.id,
+   model: groqKey.defaultModel,
+  });
+ });
+
+ it("uses the exact assigned key and model without falling back", () => {
+  const assigned = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "lookup.quick",
+   assignment: {
+    taskId: "lookup.quick",
+    mode: "assigned",
+    keyId: geminiKey.id,
+    model: "models/gemini-2.5-pro",
+   },
+  });
+  const paused = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory({ activeKeys: [groqKey], credentials: [groqCredential] }),
+   taskId: "lookup.quick",
+   assignment: {
+    taskId: "lookup.quick",
+    mode: "assigned",
+    keyId: geminiKey.id,
+    model: "models/gemini-2.5-flash",
+   },
+  });
+
+  expect(assigned.ok && assigned.runtime).toMatchObject({
+   resolutionSource: "assigned",
+   keyId: geminiKey.id,
+   model: "models/gemini-2.5-pro",
+  });
+  expect(paused).toEqual({
+   ok: false,
+   status: "missing-key",
+   reason: "assigned-key-unavailable",
+  });
+ });
+
+ it("blocks Disabled before considering a session override", () => {
+  const resolved = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "conversation.reply",
+   assignment: {
+    taskId: "conversation.reply",
+    mode: "disabled",
+    keyId: null,
+    model: null,
+   },
+   sessionOverride: {
+    keyId: geminiKey.id,
+    model: "models/gemini-2.5-flash",
+   },
+  });
+
+  expect(resolved).toEqual({
+   ok: false,
+   status: "task-disabled",
+   reason: "task-disabled",
+  });
+ });
+
+ it("gives a session override precedence over an Assigned routing choice", () => {
+  const resolved = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "conversation.reply",
+   assignment: {
+    taskId: "conversation.reply",
+    mode: "assigned",
+    keyId: groqKey.id,
+    model: "openai/gpt-oss-20b",
+   },
+   sessionOverride: {
+    keyId: geminiKey.id,
+    model: "models/gemini-2.5-flash",
+   },
+  });
+
+  expect(resolved.ok && resolved.runtime).toMatchObject({
+   resolutionSource: "session-override",
+   keyId: geminiKey.id,
+   model: "models/gemini-2.5-flash",
+  });
+ });
+
  it("distinguishes transient provider rate limits from exhausted account quota", () => {
   expect(classifyAiRuntimeOperationFailure({ status: 401 })).toBe("invalid-key");
   expect(classifyAiRuntimeOperationFailure({ status: 429, message: "rate limit" })).toBe(
@@ -146,5 +247,51 @@ describe("shared AI runtime resolver", () => {
   );
   expect(classifyAiRuntimeOperationFailure({ errorName: "AbortError" })).toBe("cancelled");
   expect(classifyAiRuntimeOperationFailure({ status: 503 })).toBe("provider-unavailable");
+ });
+
+ it("serializes the camel-case activity contract to the database row shape", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(Response.json([]));
+  vi.stubGlobal("fetch", fetchMock);
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://project.supabase.co");
+  vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service-role-key");
+
+  await recordUserAiActivityEvent("user-1", {
+   taskId: "daily-reading.translation",
+   provider: "gemini",
+   model: "models/gemini-3.5-flash",
+   keyId: geminiKey.id,
+   keyLabel: geminiKey.label,
+   resolutionSource: "auto",
+   status: "failure",
+   errorCode: "invalid-response",
+   latencyMs: 1200,
+   inputTokens: null,
+   outputTokens: null,
+   resourceType: "daily-reading",
+   resourceId: "daily-v2:2026-08-26:article",
+  });
+
+  expect(fetchMock).toHaveBeenCalledWith(
+   expect.objectContaining({ pathname: "/rest/v1/user_ai_activity_events" }),
+   expect.objectContaining({
+    method: "POST",
+    body: JSON.stringify({
+     user_id: "user-1",
+     task_id: "daily-reading.translation",
+     provider: "gemini",
+     model: "models/gemini-3.5-flash",
+     api_key_id: geminiKey.id,
+     key_label: geminiKey.label,
+     resolution_source: "auto",
+     status: "failure",
+     error_code: "invalid-response",
+     latency_ms: 1200,
+     input_tokens: null,
+     output_tokens: null,
+     resource_type: "daily-reading",
+     resource_id: "daily-v2:2026-08-26:article",
+    }),
+   }),
+  );
  });
 });

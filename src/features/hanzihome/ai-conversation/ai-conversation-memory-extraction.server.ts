@@ -144,6 +144,7 @@ export async function extractAiConversationMemoryChanges({
  return generateStructuredAiConversationData({
   supabase,
   userId,
+  taskId: "conversation.memory-extraction",
   systemPrompt: MEMORY_EXTRACTION_SYSTEM_PROMPT,
   prompt,
   schema: aiConversationMemoryExtractionSchema,
@@ -186,6 +187,7 @@ export async function resolveExplicitAiConversationForget({
  const result = await generateStructuredAiConversationData({
   supabase,
   userId,
+  taskId: "conversation.memory-extraction",
   systemPrompt: EXPLICIT_FORGET_SYSTEM_PROMPT,
   prompt: [
    `Forget request: ${JSON.stringify(clipEvidence(userMessage, FORGET_REQUEST_LIMIT))}`,

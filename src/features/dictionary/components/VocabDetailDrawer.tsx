@@ -147,6 +147,19 @@ export function VocabDetailDrawer() {
        {smartData.entry.pinyin}
       </PinyinText>
      ) : null}
+     {smartData?.runtimeReceipt ? (
+      <div className="flex flex-wrap gap-1.5">
+       <Badge variant="default" size="sm" casing="natural">
+        {smartData.runtimeReceipt.provider}
+       </Badge>
+       <Badge variant="default" size="sm" casing="natural">
+        {smartData.runtimeReceipt.model}
+       </Badge>
+       <Badge variant="default" size="sm" casing="natural">
+        {smartData.runtimeReceipt.keyLabel}
+       </Badge>
+      </div>
+     ) : null}
     </div>
    </div>
 

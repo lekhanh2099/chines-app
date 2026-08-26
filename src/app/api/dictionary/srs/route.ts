@@ -10,6 +10,10 @@ import {
 } from "@/lib/api/authenticated-route";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role.server";
 import { resolveAiAnalysisRuntime } from "@/services/ai-analysis-runtime.service";
+import {
+ recordUserAiRuntimeActivity,
+ recordUserAiTaskBlockedActivity,
+} from "@/services/ai-runtime.service";
 import { analyzeHanziBasicDetailed } from "@/services/ai.service";
 import {
  getDictionaryEntryByHeadword,
@@ -32,7 +36,10 @@ const saveDictionarySrsSchema = z.strictObject({
  personalNoteMode: PersonalNoteModeSchema.optional(),
 });
 
-function runtimeError(status: "missing-key" | "storage-unavailable") {
+function runtimeError(status: "missing-key" | "storage-unavailable" | "task-disabled") {
+ if (status === "task-disabled") {
+  return apiError("Tác vụ bổ sung nghĩa SRS đang tắt.", 409, "AI_TASK_DISABLED");
+ }
  return status === "missing-key"
   ? apiError(
      "No active AI API key is available to resolve this dictionary entry.",
@@ -77,23 +84,46 @@ export async function POST(request: Request) {
  // produced canonical content, resolve only the fixed basic lexicography prompt
  // here. Custom prompt output is never promoted into the shared dictionary.
  if (!dictionaryEntry) {
+  const startedAt = performance.now();
   const runtime = await resolveAiAnalysisRuntime({
    supabase: auth.context.supabase,
    userId: auth.context.user.id,
+   taskId: "lookup.quick",
   });
-  if (!runtime.ok) return runtimeError(runtime.status);
+  if (!runtime.ok) {
+   await recordUserAiTaskBlockedActivity({
+    userId: auth.context.user.id,
+    taskId: "lookup.quick",
+    errorCode: runtime.reason,
+   });
+   return runtimeError(runtime.status);
+  }
 
   const basicLookup = await analyzeHanziBasicDetailed(lookupKey, {
    userApiKeys: [runtime.credential],
    allowGroq: true,
   });
   if (!basicLookup.data) {
+   await recordUserAiRuntimeActivity({
+    userId: auth.context.user.id,
+    runtime: runtime.runtime,
+    status: "failure",
+    errorCode: "provider-unavailable",
+    latencyMs: Math.round(performance.now() - startedAt),
+   });
    return apiError(
     "Could not resolve a trusted basic dictionary entry.",
     503,
     "DICTIONARY_CANONICAL_RESOLUTION_FAILED",
    );
   }
+
+  await recordUserAiRuntimeActivity({
+   userId: auth.context.user.id,
+   runtime: runtime.runtime,
+   status: "success",
+   latencyMs: Math.round(performance.now() - startedAt),
+  });
 
   dictionaryEntry = await upsertDictionaryEntry(authority, {
    headword: lookupKey,

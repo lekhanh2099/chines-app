@@ -41,6 +41,7 @@ type EnrichmentStatusKey =
  | "v2.enrichment.status.missingKey"
  | "v2.enrichment.status.invalidKey"
  | "v2.enrichment.status.quota"
+ | "v2.enrichment.status.taskDisabled"
  | "v2.enrichment.status.providerUnavailable";
 
 type ModuleConfig = {
@@ -99,6 +100,8 @@ function statusKey(state: EnrichmentState): EnrichmentStatusKey {
      return "v2.enrichment.status.quota";
     case "provider-unavailable":
      return "v2.enrichment.status.providerUnavailable";
+    case "task-disabled":
+     return "v2.enrichment.status.taskDisabled";
    }
  }
 }
@@ -332,12 +335,20 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
        key={config.module}
        className="flex min-w-0 flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between"
       >
-       <div className="flex min-w-0 items-center gap-2">
-        <Icon aria-hidden />
-        <Typography weight="bold">{t(config.titleKey)}</Typography>
-        <Badge variant={statusBadgeVariant(state)} size="sm">
-         {t(statusKey(state))}
-        </Badge>
+       <div className="grid min-w-0 gap-1">
+        <div className="flex min-w-0 items-center gap-2">
+         <Icon aria-hidden />
+         <Typography weight="bold">{t(config.titleKey)}</Typography>
+         <Badge variant={statusBadgeVariant(state)} size="sm">
+          {t(statusKey(state))}
+         </Badge>
+        </div>
+        {state.status === "ready" && state.generatedBy?.receipt ? (
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {state.generatedBy.receipt.provider} · {state.generatedBy.receipt.model} ·{" "}
+          {state.generatedBy.receipt.keyLabel}
+         </Typography>
+        ) : null}
        </div>
        <div className="flex shrink-0 flex-wrap items-center gap-2">
         {moduleAction(config.module, state)}

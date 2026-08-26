@@ -961,6 +961,20 @@ function SmartLookupSummary({
      ) : null}
     </div>
 
+    {smartData.runtimeReceipt ? (
+     <div className="flex flex-wrap justify-center gap-1.5">
+      <Badge variant="default" size="sm" casing="natural">
+       {smartData.runtimeReceipt.provider}
+      </Badge>
+      <Badge variant="default" size="sm" casing="natural">
+       {smartData.runtimeReceipt.model}
+      </Badge>
+      <Badge variant="default" size="sm" casing="natural">
+       {smartData.runtimeReceipt.keyLabel}
+      </Badge>
+     </div>
+    ) : null}
+
     <Separator />
 
     <div className="grid gap-3 sm:grid-cols-3">
@@ -1013,6 +1027,20 @@ function SmartLookupSummary({
      </Typography>
     ) : null}
    </div>
+
+   {smartData.runtimeReceipt ? (
+    <div className="flex flex-wrap justify-center gap-1.5">
+     <Badge variant="default" size="sm" casing="natural">
+      {smartData.runtimeReceipt.provider}
+     </Badge>
+     <Badge variant="default" size="sm" casing="natural">
+      {smartData.runtimeReceipt.model}
+     </Badge>
+     <Badge variant="default" size="sm" casing="natural">
+      {smartData.runtimeReceipt.keyLabel}
+     </Badge>
+    </div>
+   ) : null}
 
    <Separator />
 

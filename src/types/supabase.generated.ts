@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.4"
+    PostgrestVersion: "14.17"
   }
   public: {
     Tables: {
@@ -2444,6 +2444,71 @@ export type Database = {
           },
         ]
       }
+      user_ai_activity_events: {
+        Row: {
+          api_key_id: string | null
+          created_at: string
+          error_code: string | null
+          id: string
+          input_tokens: number | null
+          key_label: string | null
+          latency_ms: number | null
+          model: string | null
+          output_tokens: number | null
+          provider: string | null
+          resolution_source: string | null
+          resource_id: string | null
+          resource_type: string | null
+          status: string
+          task_id: string
+          user_id: string
+        }
+        Insert: {
+          api_key_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          id?: string
+          input_tokens?: number | null
+          key_label?: string | null
+          latency_ms?: number | null
+          model?: string | null
+          output_tokens?: number | null
+          provider?: string | null
+          resolution_source?: string | null
+          resource_id?: string | null
+          resource_type?: string | null
+          status: string
+          task_id: string
+          user_id: string
+        }
+        Update: {
+          api_key_id?: string | null
+          created_at?: string
+          error_code?: string | null
+          id?: string
+          input_tokens?: number | null
+          key_label?: string | null
+          latency_ms?: number | null
+          model?: string | null
+          output_tokens?: number | null
+          provider?: string | null
+          resolution_source?: string | null
+          resource_id?: string | null
+          resource_type?: string | null
+          status?: string
+          task_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_ai_activity_events_user_api_key_fkey"
+            columns: ["user_id", "api_key_id"]
+            isOneToOne: false
+            referencedRelation: "user_api_keys"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
       user_ai_prompt_settings: {
         Row: {
           created_at: string
@@ -2482,6 +2547,44 @@ export type Database = {
             isOneToOne: true
             referencedRelation: "users"
             referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_ai_task_assignments: {
+        Row: {
+          api_key_id: string | null
+          created_at: string
+          mode: string
+          model: string | null
+          task_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          api_key_id?: string | null
+          created_at?: string
+          mode?: string
+          model?: string | null
+          task_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          api_key_id?: string | null
+          created_at?: string
+          mode?: string
+          model?: string | null
+          task_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_ai_task_assignments_user_api_key_fkey"
+            columns: ["user_id", "api_key_id"]
+            isOneToOne: false
+            referencedRelation: "user_api_keys"
+            referencedColumns: ["user_id", "id"]
           },
         ]
       }

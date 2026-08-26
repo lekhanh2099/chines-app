@@ -2,6 +2,9 @@ import "server-only";
 
 import { z } from "zod";
 
+import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
+import { aiTaskIdSchema, aiTaskResolutionSourceSchema } from "@/lib/ai-task-contract";
+
 import { publicSupabaseEnv } from "@/lib/env/public";
 import { getSupabaseServerSecret } from "@/lib/env/server";
 import type { JsonObject } from "@/types/json";
@@ -62,12 +65,25 @@ const messageRowSchema = z.object({
  role: z.enum(["user", "assistant"]),
  content: z.string().trim().min(1).max(6000),
  created_at: z.iso.datetime({ offset: true }),
+ metadata: z
+  .strictObject({
+   provider: ApiKeyProviderSchema.optional(),
+   model: z.string().trim().min(1).optional(),
+   apiKeyId: z.uuid().nullable().optional(),
+   taskId: aiTaskIdSchema.optional(),
+   keyLabel: z.string().trim().min(1).max(80).optional(),
+   resolutionSource: aiTaskResolutionSourceSchema.optional(),
+  })
+  .optional(),
 });
 
 const assistantRuntimeMetadataSchema = z.strictObject({
- provider: z.string().trim().min(1),
+ provider: ApiKeyProviderSchema,
  model: z.string().trim().min(1),
  apiKeyId: z.uuid().nullable(),
+ taskId: aiTaskIdSchema.optional(),
+ keyLabel: z.string().trim().min(1).max(80).optional(),
+ resolutionSource: aiTaskResolutionSourceSchema.optional(),
 });
 
 const assistantReplyRowSchema = messageRowSchema.extend({
@@ -252,6 +268,23 @@ function toPersistedMessage(
   role: row.role,
   content: row.content,
   createdAt: row.created_at,
+  ...(row.metadata?.provider &&
+  row.metadata.model &&
+  row.metadata.apiKeyId &&
+  row.metadata.taskId &&
+  row.metadata.keyLabel &&
+  row.metadata.resolutionSource
+   ? {
+      runtimeReceipt: {
+       taskId: row.metadata.taskId,
+       provider: row.metadata.provider,
+       model: row.metadata.model,
+       keyId: row.metadata.apiKeyId,
+       keyLabel: row.metadata.keyLabel,
+       resolutionSource: row.metadata.resolutionSource,
+      },
+     }
+   : {}),
  };
 }
 
@@ -457,7 +490,7 @@ async function loadMessages(conversationId: string, userId: string, limit = 200)
   resource: "ai_messages",
   schema: z.array(messageRowSchema),
   params: {
-   select: "id,seq,role,content,created_at",
+   select: "id,seq,role,content,created_at,metadata",
    user_id: `eq.${userId}`,
    conversation_id: `eq.${conversationId}`,
    order: "seq.desc",
@@ -815,6 +848,7 @@ export async function findAssistantReplyForUserMessage({
  provider: string;
  model: string;
  apiKeyId: string | null;
+ runtimeReceipt: AiConversationPersistedMessage["runtimeReceipt"] | null;
 } | null> {
  const rows = await requestPostgrest({
   resource: "ai_messages",
@@ -835,6 +869,20 @@ export async function findAssistantReplyForUserMessage({
   provider: row.metadata.provider,
   model: row.metadata.model,
   apiKeyId: row.metadata.apiKeyId,
+  runtimeReceipt:
+   row.metadata.apiKeyId &&
+   row.metadata.taskId &&
+   row.metadata.keyLabel &&
+   row.metadata.resolutionSource
+    ? {
+       taskId: row.metadata.taskId,
+       provider: row.metadata.provider,
+       model: row.metadata.model,
+       keyId: row.metadata.apiKeyId,
+       keyLabel: row.metadata.keyLabel,
+       resolutionSource: row.metadata.resolutionSource,
+      }
+    : null,
  };
 }
 
@@ -851,7 +899,7 @@ export async function loadRecentAiConversationMessages({
   resource: "ai_messages",
   schema: z.array(messageRowSchema),
   params: {
-   select: "id,seq,role,content,created_at",
+   select: "id,seq,role,content,created_at,metadata",
    user_id: `eq.${userId}`,
    conversation_id: `eq.${conversationId}`,
    order: "seq.desc",

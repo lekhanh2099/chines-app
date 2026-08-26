@@ -141,7 +141,9 @@ describe("AI conversation provider stream", () => {
 
   expect(text).toBe("当然可以。");
   const url = String(fetchMock.mock.calls[0]?.[0] ?? "");
-  expect(url).toContain("user-gemini-key");
+  const init = fetchMock.mock.calls[0]?.[1];
+  expect(url).not.toContain("user-gemini-key");
   expect(url).not.toContain("system-key-that-must-not-be-used");
+  expect(new Headers(init?.headers).get("x-goog-api-key")).toBe("user-gemini-key");
  });
 });
