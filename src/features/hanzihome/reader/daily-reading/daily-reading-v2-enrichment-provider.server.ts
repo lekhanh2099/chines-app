@@ -53,6 +53,7 @@ Do not generate pinyin. Return one valid JSON object only, without markdown or c
 
 const providerMaximumRetries = 3;
 const providerMaximumRetryDelayMs = 30_000;
+const providerRequestTimeoutMs = 30_000;
 
 function outputLimit(module: DailyReadingV2ProviderModule) {
  switch (module) {
@@ -211,7 +212,7 @@ async function requestOpenAiCompatible(
      response_format: { type: "json_object" },
     }),
     cache: "no-store",
-    signal: createRequestSignal(120_000, signal),
+    signal: createRequestSignal(providerRequestTimeoutMs, signal),
    });
 
    if (!response.ok) {
@@ -301,7 +302,7 @@ async function requestGemini(
       },
      }),
      cache: "no-store",
-     signal: createRequestSignal(120_000, signal),
+     signal: createRequestSignal(providerRequestTimeoutMs, signal),
     },
    );
    if (!response.ok) {
