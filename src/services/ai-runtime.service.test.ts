@@ -11,7 +11,7 @@ import {
  resolveAiTaskRuntimeFromInventory,
  type AiRuntimeInventory,
 } from "./ai-runtime.service";
-import { recordUserAiActivityEvent } from "./ai-task-routing.service";
+import { recordUserAiActivityEvent, upsertUserAiTaskAssignment } from "./ai-task-routing.service";
 
 afterEach(() => {
  vi.unstubAllEnvs();
@@ -292,6 +292,33 @@ describe("shared AI runtime resolver", () => {
      resource_id: "daily-v2:2026-08-26:article",
     }),
    }),
+  );
+ });
+
+ it("requests only the assignment fields accepted by the strict response contract", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json([
+    {
+     task_id: "daily-reading.translation",
+     mode: "assigned",
+     api_key_id: geminiKey.id,
+     model: geminiKey.defaultModel,
+    },
+   ]),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://project.supabase.co");
+  vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service-role-key");
+
+  await upsertUserAiTaskAssignment("user-1", {
+   taskId: "daily-reading.translation",
+   mode: "assigned",
+   keyId: geminiKey.id,
+   model: "models/gemini-2.5-flash",
+  });
+
+  expect(String(fetchMock.mock.calls[0]?.[0])).toBe(
+   "https://project.supabase.co/rest/v1/user_ai_task_assignments?on_conflict=user_id%2Ctask_id&select=task_id%2Cmode%2Capi_key_id%2Cmodel",
   );
  });
 });

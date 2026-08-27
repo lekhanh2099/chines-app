@@ -147,6 +147,7 @@ export async function getUserAiTaskAssignment(userId: string, taskId: AiTaskId) 
 export async function upsertUserAiTaskAssignment(userId: string, assignment: AiTaskAssignment) {
  const url = buildRestUrl("user_ai_task_assignments");
  url.searchParams.set("on_conflict", "user_id,task_id");
+ url.searchParams.set("select", "task_id,mode,api_key_id,model");
  const rows = await requestTaskStorage({
   url,
   schema: assignmentRowsSchema,
