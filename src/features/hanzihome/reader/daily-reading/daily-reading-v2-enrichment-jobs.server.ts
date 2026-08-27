@@ -24,6 +24,7 @@ const jobRowSchema = z.strictObject({
  id: z.uuid(),
  run_id: z.uuid(),
  workflow_run_id: z.string().nullable(),
+ user_id: z.uuid(),
  article_id: z.string(),
  article_fingerprint: z.string(),
  module: dailyReadingV2EnrichmentModuleSchema,
@@ -41,6 +42,8 @@ const jobRowSchema = z.strictObject({
  created_at: z.string(),
  started_at: z.string().nullable(),
  completed_at: z.string().nullable(),
+ heartbeat_at: z.string(),
+ expires_at: z.string(),
 });
 
 const jobRowsSchema = z.array(jobRowSchema);
