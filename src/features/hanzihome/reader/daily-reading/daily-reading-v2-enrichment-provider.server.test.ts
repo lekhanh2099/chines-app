@@ -174,4 +174,22 @@ describe("Daily Reading V2 enrichment provider", () => {
   expect(JSON.stringify(result)).not.toContain("internal detail");
   expect(fetchMock).toHaveBeenCalledTimes(4);
  });
+
+ it("retries provider timeouts instead of reporting them as user cancellation", async () => {
+  vi.useFakeTimers();
+  const fetchMock = vi.mocked(fetch);
+  fetchMock.mockRejectedValue(new DOMException("The operation timed out.", "AbortError"));
+
+  const pending = requestDailyReadingV2EnrichmentProvider({
+   runtime: groqRuntime,
+   prompt: "Create grammar support.",
+   module: "grammar",
+   schema: testResponseSchema,
+  });
+  await vi.runAllTimersAsync();
+  const result = await pending;
+
+  expect(result).toMatchObject({ ok: false, errorCode: "network-error" });
+  expect(fetchMock).toHaveBeenCalledTimes(4);
+ });
 });

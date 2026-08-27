@@ -151,12 +151,18 @@ function providerFailure(input: {
  };
 }
 
-function caughtFailure(runtime: ResolvedUserAiRuntime, error: unknown) {
+function caughtFailure(runtime: ResolvedUserAiRuntime, error: unknown, signal?: AbortSignal) {
+ const errorName =
+  error instanceof Error && error.name === "AbortError" && !signal?.aborted
+   ? "TimeoutError"
+   : error instanceof Error
+     ? error.name
+     : undefined;
  return providerFailure({
   provider: runtime.providerLabel,
   model: runtime.model,
   message: error instanceof Error ? error.message : "provider request failed",
-  ...(error instanceof Error ? { errorName: error.name } : {}),
+  ...(errorName ? { errorName } : {}),
  });
 }
 
@@ -241,7 +247,7 @@ async function requestOpenAiCompatible(
    }
    return { ok: true, content, model: runtime.model };
   } catch (error) {
-   const failure = caughtFailure(runtime, error);
+   const failure = caughtFailure(runtime, error, signal);
    if (
     failure.errorCode !== "cancelled" &&
     attempt < providerMaximumRetries &&
@@ -336,7 +342,7 @@ async function requestGemini(
    }
    return { ok: true, content, model: runtime.model };
   } catch (error) {
-   const failure = caughtFailure(runtime, error);
+   const failure = caughtFailure(runtime, error, signal);
    if (
     failure.errorCode !== "cancelled" &&
     attempt < providerMaximumRetries &&
