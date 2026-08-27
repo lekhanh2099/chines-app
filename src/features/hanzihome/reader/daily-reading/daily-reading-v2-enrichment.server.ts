@@ -91,8 +91,8 @@ const questionsDraftSchema = z.strictObject({
 });
 
 type TranslationDraft = z.output<typeof translationDraftSchema>;
-type TranslationParagraph = TranslationDraft["paragraphs"][number];
-type TranslationUnit = {
+export type TranslationParagraph = TranslationDraft["paragraphs"][number];
+export type TranslationUnit = {
  paragraphId: string;
  sourceParagraphId: string;
  zh: string;
@@ -103,7 +103,7 @@ type QuestionsDraft = z.output<typeof questionsDraftSchema>;
 
 type ProviderFailure = Extract<DailyReadingV2EnrichmentResponse, { ok: false }>;
 
-type StructuredResult<T> =
+export type StructuredResult<T> =
  | { ok: true; data: T }
  | {
     ok: false;
@@ -266,6 +266,14 @@ function translationChunks(units: readonly TranslationUnit[]) {
  return groups;
 }
 
+export function createDailyReadingV2TranslationPlan(reading: DailyReadingV2EnrichmentArticle) {
+ const units = translationUnits(reading);
+ return {
+  groups: translationChunks(units),
+  progressTotal: units.length + 1,
+ };
+}
+
 function validateTranslationChunk(
  expectedParagraphs: readonly TranslationUnit[],
  draft: TranslationDraft,
@@ -365,6 +373,82 @@ async function translateUnitsAdaptively(input: {
  };
 }
 
+export function generateDailyReadingV2TranslationMetadata(input: {
+ reading: DailyReadingV2EnrichmentArticle;
+ runtime: ResolvedUserAiRuntime;
+ signal?: AbortSignal;
+}) {
+ return requestStructured({
+  runtime: input.runtime,
+  module: "translation",
+  prompt: [
+   `Translate this Chinese article title into natural Vietnamese for a ${targetLevelLabel(input.reading)} learner and explain briefly why it is worth reading.`,
+   "Return JSON with titleVi and whyWorthReadingVi only.",
+   `Article title: ${input.reading.article.titleZh}`,
+   `Publisher: ${input.reading.source.publisher}`,
+  ].join("\n"),
+  schema: translationMetadataDraftSchema,
+  signal: input.signal,
+  validate: (draft) => draft,
+ });
+}
+
+export function generateDailyReadingV2TranslationGroup(input: {
+ reading: DailyReadingV2EnrichmentArticle;
+ runtime: ResolvedUserAiRuntime;
+ units: readonly TranslationUnit[];
+ chunkLabel: string;
+ signal?: AbortSignal;
+}) {
+ return translateUnitsAdaptively(input);
+}
+
+export function buildDailyReadingV2TranslationResponse(input: {
+ reading: DailyReadingV2EnrichmentArticle;
+ runtime: ResolvedUserAiRuntime;
+ metadata: z.output<typeof translationMetadataDraftSchema>;
+ translatedParagraphs: TranslationParagraph[];
+}): DailyReadingV2EnrichmentResponse {
+ const units = translationUnits(input.reading);
+ const rebuiltParagraphs = input.reading.article.paragraphs.map((sourceParagraph) => {
+  const matchingUnits = units.filter((unit) => unit.sourceParagraphId === sourceParagraph.id);
+  const matchingTranslations = matchingUnits.map((unit) => {
+   const translated = input.translatedParagraphs.find(
+    (paragraph) => paragraph.paragraphId === unit.paragraphId,
+   );
+   if (!translated) throw new Error(`Bản dịch thiếu segment của ${sourceParagraph.id}.`);
+   return translated;
+  });
+  return {
+   paragraphId: sourceParagraph.id,
+   vi: matchingTranslations.map((paragraph) => paragraph.vi).join(" "),
+   roleVi: matchingTranslations.map((paragraph) => paragraph.roleVi).find(Boolean) ?? "",
+  };
+ });
+ validateTranslationChunk(
+  input.reading.article.paragraphs.map((paragraph) => ({
+   paragraphId: paragraph.id,
+   sourceParagraphId: paragraph.id,
+   zh: paragraph.zh,
+  })),
+  { paragraphs: rebuiltParagraphs },
+ );
+
+ const data = dailyReadingV2TranslationDataSchema.parse({
+  titleVi: input.metadata.titleVi,
+  whyWorthReadingVi: input.metadata.whyWorthReadingVi,
+  adaptationNoticeVi:
+   "Bản dịch hỗ trợ học tập được tạo từ nguyên văn đã lưu; phần tiếng Trung nguồn không bị AI chỉnh sửa.",
+  paragraphs: rebuiltParagraphs,
+ });
+ return {
+  ok: true,
+  module: "translation",
+  data,
+  generatedBy: generatedBy(input.runtime),
+ };
+}
+
 async function generateTranslation(
  reading: DailyReadingV2EnrichmentArticle,
  runtime: ResolvedUserAiRuntime,
@@ -372,22 +456,8 @@ async function generateTranslation(
  onProgress?: (completed: number, total: number) => Promise<void>,
 ): Promise<DailyReadingV2EnrichmentResponse> {
  const translatedParagraphs: TranslationDraft["paragraphs"] = [];
- const units = translationUnits(reading);
- const groups = translationChunks(units);
- const progressTotal = units.length + 1;
- const metadata = await requestStructured({
-  runtime,
-  module: "translation",
-  prompt: [
-   `Translate this Chinese article title into natural Vietnamese for a ${targetLevelLabel(reading)} learner and explain briefly why it is worth reading.`,
-   "Return JSON with titleVi and whyWorthReadingVi only.",
-   `Article title: ${reading.article.titleZh}`,
-   `Publisher: ${reading.source.publisher}`,
-  ].join("\n"),
-  schema: translationMetadataDraftSchema,
-  signal,
-  validate: (draft) => draft,
- });
+ const plan = createDailyReadingV2TranslationPlan(reading);
+ const metadata = await generateDailyReadingV2TranslationMetadata({ reading, runtime, signal });
  if (!metadata.ok) {
   return {
    ok: false,
@@ -397,16 +467,16 @@ async function generateTranslation(
    errorDetail: metadata.errorDetail,
   };
  }
- await onProgress?.(1, progressTotal);
+ await onProgress?.(1, plan.progressTotal);
  let completedUnits = 0;
 
- for (let index = 0; index < groups.length; index += 1) {
-  const group = groups[index] ?? [];
-  const result = await translateUnitsAdaptively({
+ for (let index = 0; index < plan.groups.length; index += 1) {
+  const group = plan.groups[index] ?? [];
+  const result = await generateDailyReadingV2TranslationGroup({
    reading,
    runtime,
    units: group,
-   chunkLabel: `${index + 1}/${groups.length}`,
+   chunkLabel: `${index + 1}/${plan.groups.length}`,
    signal,
   });
   if (!result.ok) {
@@ -420,46 +490,14 @@ async function generateTranslation(
   }
   translatedParagraphs.push(...result.data);
   completedUnits += group.length;
-  await onProgress?.(completedUnits + 1, progressTotal);
+  await onProgress?.(completedUnits + 1, plan.progressTotal);
  }
-
- const rebuiltParagraphs = reading.article.paragraphs.map((sourceParagraph) => {
-  const matchingUnits = units.filter((unit) => unit.sourceParagraphId === sourceParagraph.id);
-  const matchingTranslations = matchingUnits.map((unit) => {
-   const translated = translatedParagraphs.find(
-    (paragraph) => paragraph.paragraphId === unit.paragraphId,
-   );
-   if (!translated) throw new Error(`Bản dịch thiếu segment của ${sourceParagraph.id}.`);
-   return translated;
-  });
-  return {
-   paragraphId: sourceParagraph.id,
-   vi: matchingTranslations.map((paragraph) => paragraph.vi).join(" "),
-   roleVi: matchingTranslations.map((paragraph) => paragraph.roleVi).find(Boolean) ?? "",
-  };
+ return buildDailyReadingV2TranslationResponse({
+  reading,
+  runtime,
+  metadata: metadata.data,
+  translatedParagraphs,
  });
- validateTranslationChunk(
-  reading.article.paragraphs.map((paragraph) => ({
-   paragraphId: paragraph.id,
-   sourceParagraphId: paragraph.id,
-   zh: paragraph.zh,
-  })),
-  { paragraphs: rebuiltParagraphs },
- );
-
- const data = dailyReadingV2TranslationDataSchema.parse({
-  titleVi: metadata.data.titleVi,
-  whyWorthReadingVi: metadata.data.whyWorthReadingVi,
-  adaptationNoticeVi:
-   "Bản dịch hỗ trợ học tập được tạo từ nguyên văn đã lưu; phần tiếng Trung nguồn không bị AI chỉnh sửa.",
-  paragraphs: rebuiltParagraphs,
- });
- return {
-  ok: true,
-  module: "translation",
-  data,
-  generatedBy: generatedBy(runtime),
- };
 }
 
 function validateVocabulary(
