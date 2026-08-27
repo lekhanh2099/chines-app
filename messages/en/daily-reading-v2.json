@@ -188,6 +188,10 @@
   "description": "The Chinese text above always remains the saved source article. These modules only add meanings and exercises; they never rewrite the source.",
   "summary": "{ready}/{total} modules ready",
   "runtimeReady": "Using {provider} · {model}",
+  "runtimePlanned": "Will use {provider} · {key} · {model}",
+  "runtimeRunning": "Using {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeFailed": "Tried {provider} · {key} · {model} — {code}",
+  "runtimeUnavailable": "No usable AI source — {reason}",
   "runtimeMissing": "No AI API key yet. You can still read the complete source article.",
   "runtimeStorageUnavailable": "Server-side API key storage is not ready; the source article remains fully readable.",
   "runtimeCheckFailed": "AI status could not be checked right now. The source article remains readable; try the status check again.",
@@ -229,6 +233,7 @@
    "addKeyAndCreate": "Add key and create support",
    "addReplacementKey": "Add replacement key",
    "manageKeys": "Manage API keys",
+   "configureTask": "Configure task",
    "checkingRuntime": "Checking AI",
    "checkRuntimeAgain": "Check AI again"
   },
@@ -236,6 +241,7 @@
    "moduleReady": "Created: {module}",
    "moduleReadyFallback": "Learning support module created.",
    "allReady": "All learning support modules are ready.",
+   "queued": "The AI job is queued. You can leave this page; the result will be imported when it finishes.",
    "failed": "Could not create learning support."
   }
  }

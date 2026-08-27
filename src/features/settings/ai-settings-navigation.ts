@@ -6,7 +6,6 @@ export const AiSettingsPanelSchema = z.enum([
  "daily-reading",
  "providers",
  "usage",
- "advanced",
 ]);
 
 const AiSettingsPanelParamSchema = z.string().optional();

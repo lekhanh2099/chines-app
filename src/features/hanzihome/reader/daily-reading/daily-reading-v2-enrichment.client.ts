@@ -1,15 +1,21 @@
 "use client";
 
 import {
- dailyReadingV2EnrichmentResponseSchema,
+ dailyReadingV2EnrichmentJobsQueryResponseSchema,
+ dailyReadingV2EnrichmentJobsResponseSchema,
  type DailyReadingV2EnrichmentArticle,
+ type DailyReadingV2EnrichmentJob,
+ type DailyReadingV2EnrichmentJobModuleRequest,
  type DailyReadingV2EnrichmentResponse,
 } from "./daily-reading-v2-enrichment.schemas";
-import type { DailyReadingV2, DailyReadingV2EnrichmentModule } from "./daily-reading-v2.schemas";
+import type {
+ DailyReadingV2,
+ DailyReadingV2EnrichmentModule,
+ DailyReadingV2EnrichmentRun,
+} from "./daily-reading-v2.schemas";
 import {
  getDailyReadingV2Snapshot,
  getDailyReadingV2SettingsSnapshot,
- markDailyReadingV2EnrichmentRunInterrupted,
  saveDailyReadingV2EnrichmentRun,
  updateDailyReadingV2Enrichment,
  type DailyReadingV2EnrichmentStateUpdate,
@@ -18,6 +24,8 @@ import {
  DailyReadingGenerationBusyError,
  withDailyReadingGenerationLock,
 } from "./daily-reading-lock.client";
+
+const enrichmentJobsEndpoint = "/api/hanzihome/reader/daily-reading/enrichment-jobs";
 
 export class DailyReadingV2EnrichmentClientError extends Error {
  constructor(
@@ -89,12 +97,6 @@ function blockedStateUpdate(
  }
 }
 
-function blockedUpdate(
- result: Extract<DailyReadingV2EnrichmentResponse, { ok: false; status: "blocked" }>,
-) {
- return blockedStateUpdate(result.module, result.reason);
-}
-
 function failedUpdate(
  module: DailyReadingV2EnrichmentModule,
  errorCode: string,
@@ -133,6 +135,21 @@ function moduleTargetCount(module: DailyReadingV2EnrichmentModule) {
  return settings.questionsCount;
 }
 
+function moduleRequest(
+ module: DailyReadingV2EnrichmentModule,
+): DailyReadingV2EnrichmentJobModuleRequest {
+ switch (module) {
+  case "translation":
+   return { module, targetCount: null };
+  case "vocabulary":
+   return { module, targetCount: moduleTargetCount(module) ?? 12 };
+  case "grammar":
+   return { module, targetCount: moduleTargetCount(module) ?? 4 };
+  case "questions":
+   return { module, targetCount: moduleTargetCount(module) ?? 6 };
+ }
+}
+
 function moduleEnabled(module: DailyReadingV2EnrichmentModule) {
  const settings = getDailyReadingV2SettingsSnapshot();
  if (module === "translation") return settings.translationEnabled;
@@ -141,180 +158,165 @@ function moduleEnabled(module: DailyReadingV2EnrichmentModule) {
  return settings.questionsEnabled;
 }
 
-async function decodeResponse(response: Response) {
+async function enqueueRequest(input: {
+ runId: string;
+ reading: DailyReadingV2;
+ modules: readonly DailyReadingV2EnrichmentJobModuleRequest[];
+}) {
+ const response = await fetch(enrichmentJobsEndpoint, {
+  method: "POST",
+  headers: { "Content-Type": "application/json", Accept: "application/json" },
+  credentials: "include",
+  cache: "no-store",
+  body: JSON.stringify({
+   runId: input.runId,
+   reading: enrichmentEvidence(input.reading),
+   modules: input.modules,
+  }),
+ });
  const payload = await response.json().catch(() => null);
- const parsed = dailyReadingV2EnrichmentResponseSchema.safeParse(payload);
- if (!parsed.success) {
+ const parsed = dailyReadingV2EnrichmentJobsResponseSchema.safeParse(payload);
+ if (!response.ok || !parsed.success) {
   throw new DailyReadingV2EnrichmentClientError(
-   response.status === 401 ? "unauthorized" : "invalid-response",
+   response.status === 401 ? "unauthorized" : "enqueue-failed",
    response.status === 401
     ? "Cần đăng nhập trước khi tạo hỗ trợ Daily Reading."
-    : "Server trả dữ liệu hỗ trợ Daily Reading không đúng contract.",
+    : "Không thể đưa hỗ trợ Daily Reading vào hàng đợi.",
   );
  }
  return parsed.data;
+}
+
+function localRunFromJob(job: DailyReadingV2EnrichmentJob): DailyReadingV2EnrichmentRun {
+ return {
+  id: job.id,
+  runId: job.runId,
+  articleId: job.articleId,
+  articleFingerprint: job.articleFingerprint,
+  module: job.module,
+  status:
+   job.status === "queued" || job.status === "running"
+    ? "pending"
+    : job.status === "succeeded"
+      ? "succeeded"
+      : job.status,
+  attemptedAt: job.createdAt,
+  completedAt: job.completedAt ?? "",
+  errorCode: job.errorCode ?? "",
+  errorDetail: "",
+  workflowRunId: job.workflowRunId ?? "",
+  progressCompleted: job.progress.completed,
+  progressTotal: job.progress.total,
+  receipt: job.receipt,
+ };
+}
+
+function saveProvisionalRuns(input: {
+ runId: string;
+ reading: DailyReadingV2;
+ modules: readonly DailyReadingV2EnrichmentJobModuleRequest[];
+ attemptedAt: string;
+}) {
+ for (const requestedModule of input.modules) {
+  saveDailyReadingV2EnrichmentRun({
+   id: `${input.runId}:${requestedModule.module}`,
+   runId: input.runId,
+   articleId: input.reading.id,
+   articleFingerprint: input.reading.article.fingerprint,
+   module: requestedModule.module,
+   status: "pending",
+   attemptedAt: input.attemptedAt,
+   completedAt: "",
+   errorCode: "",
+   errorDetail: "",
+   workflowRunId: "",
+   progressCompleted: 0,
+   progressTotal: 1,
+   receipt: null,
+  });
+ }
+}
+
+function applyJob(job: DailyReadingV2EnrichmentJob) {
+ saveDailyReadingV2EnrichmentRun(localRunFromJob(job));
+ const article = currentArticle(job.articleId);
+ if (!article || article.article.fingerprint !== job.articleFingerprint) return;
+ const updatedAt = job.completedAt ?? new Date().toISOString();
+ if (job.status === "queued" || job.status === "running") {
+  const state = article.enrichment[job.module];
+  if (state.status !== "running") {
+   updateDailyReadingV2Enrichment(
+    job.articleId,
+    runningUpdate(job.module, job.startedAt ?? job.createdAt),
+   );
+  }
+  return;
+ }
+ if (job.status === "succeeded" && job.result?.ok && job.result.module === job.module) {
+  updateDailyReadingV2Enrichment(job.articleId, readyUpdate(job.result, updatedAt));
+  return;
+ }
+ if (job.status === "blocked") {
+  if (job.errorCode === "task-disabled" || job.errorCode === "missing-ai-key") {
+   updateDailyReadingV2Enrichment(job.articleId, blockedStateUpdate(job.module, job.errorCode));
+   return;
+  }
+ }
+ updateDailyReadingV2Enrichment(
+  job.articleId,
+  failedUpdate(job.module, job.errorCode ?? "provider-unavailable", updatedAt),
+ );
+}
+
+async function enqueueModules(
+ articleId: string,
+ modules: readonly DailyReadingV2EnrichmentModule[],
+) {
+ const reading = currentArticle(articleId);
+ if (!reading) {
+  throw new DailyReadingV2EnrichmentClientError(
+   "article-not-found",
+   "Không tìm thấy bài Daily Reading cần tạo hỗ trợ học tập.",
+  );
+ }
+ const attemptedAt = new Date().toISOString();
+ const runId = crypto.randomUUID();
+ const requests = modules.map(moduleRequest);
+ for (const requestedModule of modules) {
+  updateDailyReadingV2Enrichment(articleId, runningUpdate(requestedModule, attemptedAt));
+ }
+ saveProvisionalRuns({ runId, reading, modules: requests, attemptedAt });
+
+ try {
+  const response = await enqueueRequest({ runId, reading, modules: requests });
+  for (const job of response.jobs) applyJob(job);
+ } catch (error) {
+  throw error instanceof DailyReadingV2EnrichmentClientError
+   ? error
+   : new DailyReadingV2EnrichmentClientError(
+      "network-error",
+      "Chưa xác nhận được job trên server. Ứng dụng sẽ tự kiểm tra lại.",
+     );
+ }
+ return currentArticle(articleId) ?? reading;
 }
 
 export async function enrichDailyReadingV2Module(
  articleId: string,
  module: DailyReadingV2EnrichmentModule,
 ): Promise<DailyReadingV2> {
- const source = currentArticle(articleId);
- if (source === null) {
-  throw new DailyReadingV2EnrichmentClientError(
-   "article-not-found",
-   "Không tìm thấy bài Daily Reading cần tạo hỗ trợ học tập.",
-  );
- }
  if (navigator.onLine === false) {
-  const updatedAt = new Date().toISOString();
+  const article = currentArticle(articleId);
+  if (!article) {
+   throw new DailyReadingV2EnrichmentClientError("article-not-found", "Không tìm thấy bài.");
+  }
   return updateDailyReadingV2Enrichment(
-   source.id,
-   failedUpdate(module, "network-error", updatedAt),
+   articleId,
+   failedUpdate(module, "network-error", new Date().toISOString()),
   );
  }
-
  try {
-  return await withDailyReadingGenerationLock(async () => {
-   const fresh = currentArticle(articleId);
-   if (fresh === null) {
-    throw new DailyReadingV2EnrichmentClientError(
-     "article-not-found",
-     "Bài Daily Reading đã không còn trong thư viện.",
-    );
-   }
-
-   const attemptedAt = new Date().toISOString();
-   const runId = `daily-enrichment:${module}:${articleId}:${crypto.randomUUID()}`;
-   updateDailyReadingV2Enrichment(articleId, runningUpdate(module, attemptedAt));
-   try {
-    saveDailyReadingV2EnrichmentRun({
-     id: runId,
-     articleId,
-     module,
-     status: "pending",
-     attemptedAt,
-     completedAt: "",
-     errorCode: "",
-     errorDetail: "",
-    });
-   } catch {
-    // Run history is diagnostics only. The module state remains the durable task owner.
-   }
-
-   const controller = new AbortController();
-   const timeout = window.setTimeout(() => controller.abort(), 170_000);
-   const interrupt = () => {
-    controller.abort();
-    try {
-     markDailyReadingV2EnrichmentRunInterrupted(runId);
-    } catch {
-     // Browser shutdown recovery is best-effort; the article itself remains durable.
-    }
-   };
-   window.addEventListener("pagehide", interrupt, { once: true });
-
-   try {
-    const response = await fetch("/api/hanzihome/reader/daily-reading/enrich", {
-     method: "POST",
-     headers: { "Content-Type": "application/json", Accept: "application/json" },
-     credentials: "include",
-     cache: "no-store",
-     signal: controller.signal,
-     body: JSON.stringify({
-      module,
-      reading: enrichmentEvidence(fresh),
-      targetCount: moduleTargetCount(module),
-     }),
-    });
-    const result = await decodeResponse(response);
-    if (result.module !== module) {
-     throw new DailyReadingV2EnrichmentClientError(
-      "invalid-response",
-      "Server trả kết quả cho sai module Daily Reading.",
-     );
-    }
-
-    const completedAt = new Date().toISOString();
-    if (result.ok) {
-     const updated = updateDailyReadingV2Enrichment(articleId, readyUpdate(result, completedAt));
-     try {
-      saveDailyReadingV2EnrichmentRun({
-       id: runId,
-       articleId,
-       module,
-       status: "succeeded",
-       attemptedAt,
-       completedAt,
-       errorCode: "",
-       errorDetail: "",
-      });
-     } catch {
-      // Ready module data is already durable; telemetry cannot roll it back.
-     }
-     return updated;
-    }
-
-    const updated =
-     result.status === "blocked"
-      ? updateDailyReadingV2Enrichment(articleId, blockedUpdate(result))
-      : updateDailyReadingV2Enrichment(
-         articleId,
-         failedUpdate(module, result.errorCode, completedAt),
-        );
-    try {
-     saveDailyReadingV2EnrichmentRun({
-      id: runId,
-      articleId,
-      module,
-      status: result.status,
-      attemptedAt,
-      completedAt,
-      errorCode: result.errorCode,
-      errorDetail: result.errorDetail,
-     });
-    } catch {
-     // Module state is authoritative even when history cannot be written.
-    }
-    return updated;
-   } catch (error) {
-    const completedAt = new Date().toISOString();
-    const resolved =
-     error instanceof DailyReadingV2EnrichmentClientError
-      ? error
-      : error instanceof DOMException && error.name === "AbortError"
-        ? new DailyReadingV2EnrichmentClientError(
-           "cancelled",
-           "Tác vụ hỗ trợ Daily Reading đã bị hủy hoặc hết thời gian chờ.",
-          )
-        : new DailyReadingV2EnrichmentClientError(
-           "network-error",
-           error instanceof Error ? error.message : "Không thể gọi AI provider.",
-          );
-    const updated = updateDailyReadingV2Enrichment(
-     articleId,
-     failedUpdate(module, resolved.code, completedAt),
-    );
-    try {
-     saveDailyReadingV2EnrichmentRun({
-      id: runId,
-      articleId,
-      module,
-      status: "failed",
-      attemptedAt,
-      completedAt,
-      errorCode: resolved.code,
-      errorDetail: resolved.message.slice(0, 600),
-     });
-    } catch {
-     // Keep the durable module failure even if run history cannot be persisted.
-    }
-    return updated;
-   } finally {
-    window.clearTimeout(timeout);
-    window.removeEventListener("pagehide", interrupt);
-   }
-  });
+  return await withDailyReadingGenerationLock(() => enqueueModules(articleId, [module]));
  } catch (error) {
   if (error instanceof DailyReadingGenerationBusyError) {
    throw new DailyReadingV2EnrichmentClientError("generation-busy", error.message);
@@ -324,37 +326,65 @@ export async function enrichDailyReadingV2Module(
 }
 
 export async function enrichDailyReadingV2LearningSupport(articleId: string) {
- let current = currentArticle(articleId);
- if (current === null) {
+ const article = currentArticle(articleId);
+ if (!article) {
   throw new DailyReadingV2EnrichmentClientError(
    "article-not-found",
    "Không tìm thấy bài Daily Reading cần tạo hỗ trợ học tập.",
   );
  }
- const modules: readonly DailyReadingV2EnrichmentModule[] = [
+ const orderedModules: readonly DailyReadingV2EnrichmentModule[] = [
   "translation",
   "vocabulary",
   "grammar",
   "questions",
  ];
- for (let index = 0; index < modules.length; index += 1) {
-  const enrichmentModule = modules[index];
-  if (enrichmentModule === undefined) continue;
-  if (!moduleEnabled(enrichmentModule)) continue;
-  const existingState = current.enrichment[enrichmentModule];
-  if (existingState.status === "ready" || existingState.status === "running") continue;
+ const modules = orderedModules.filter((module) => {
+  const state = article.enrichment[module];
+  return moduleEnabled(module) && state.status !== "ready" && state.status !== "running";
+ });
+ if (modules.length === 0) return article;
+ return withDailyReadingGenerationLock(() => enqueueModules(articleId, modules));
+}
 
-  current = await enrichDailyReadingV2Module(articleId, enrichmentModule);
-  const state = current.enrichment[enrichmentModule];
-  if (state.status !== "blocked") continue;
-  if (state.reason === "task-disabled") continue;
+export async function reconcilePendingDailyReadingV2EnrichmentJobs() {
+ const snapshot = getDailyReadingV2Snapshot();
+ const runIds = [
+  ...new Set(
+   snapshot.enrichmentRuns.filter((run) => run.status === "pending").map((run) => run.runId),
+  ),
+ ];
 
-  for (const remaining of modules.slice(index + 1)) {
-   const remainingState = current.enrichment[remaining];
-   if (remainingState.status === "ready" || remainingState.status === "running") continue;
-   current = updateDailyReadingV2Enrichment(articleId, blockedStateUpdate(remaining, state.reason));
+ for (const runId of runIds) {
+  const response = await fetch(`${enrichmentJobsEndpoint}?runId=${encodeURIComponent(runId)}`, {
+   method: "GET",
+   headers: { Accept: "application/json" },
+   credentials: "include",
+   cache: "no-store",
+  });
+  const payload = await response.json().catch(() => null);
+  const parsed = dailyReadingV2EnrichmentJobsQueryResponseSchema.safeParse(payload);
+  if (!response.ok || !parsed.success) continue;
+
+  if (parsed.data.jobs.length === 0) {
+   const pendingRuns = snapshot.enrichmentRuns.filter(
+    (run) => run.runId === runId && run.status === "pending",
+   );
+   const first = pendingRuns[0];
+   const article = first ? currentArticle(first.articleId) : null;
+   if (!first || !article || article.article.fingerprint !== first.articleFingerprint) continue;
+   try {
+    const retry = await enqueueRequest({
+     runId,
+     reading: article,
+     modules: pendingRuns.map((run) => moduleRequest(run.module)),
+    });
+    for (const job of retry.jobs) applyJob(job);
+   } catch {
+    // The scheduler will retry the same idempotent run on the next visible tick.
+   }
+   continue;
   }
-  break;
+  for (const job of parsed.data.jobs) applyJob(job);
  }
- return current;
 }

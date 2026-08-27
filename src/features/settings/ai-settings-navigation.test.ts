@@ -9,7 +9,7 @@ describe("resolveAiSettingsPanel", () => {
   expect(resolveAiSettingsPanel("daily-reading")).toBe("daily-reading");
   expect(resolveAiSettingsPanel("providers")).toBe("providers");
   expect(resolveAiSettingsPanel("usage")).toBe("usage");
-  expect(resolveAiSettingsPanel("advanced")).toBe("advanced");
+  expect(resolveAiSettingsPanel("advanced")).toBe("tasks");
  });
 
  it("uses task routing for missing or invalid panel values", () => {

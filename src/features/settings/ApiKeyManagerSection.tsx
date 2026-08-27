@@ -34,6 +34,7 @@ import {
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { AddApiKeyDialog } from "@/features/settings/AddApiKeyDialog";
+import { getAiTaskCopyKey } from "@/features/settings/AiTaskSettingsSection";
 import { getApiKeyModelDescriptionKey } from "@/features/settings/model-description-keys";
 import { useManagedApiKeys } from "@/features/settings/useManagedApiKeys";
 import { getApiKeyModelOptions, getDefaultApiKeyModel } from "@/lib/api-key-models";
@@ -44,6 +45,7 @@ type MoveDirection = "up" | "down";
 export default function ApiKeyManagerSection() {
  const t = useTranslations("Settings");
  const lookupT = useTranslations("AiLookupSettings");
+ const aiTaskT = useTranslations("AiSettings.taskRouting.tasks");
  const common = useTranslations("Common");
  const locale = useLocale();
  const [deleteKeyId, setDeleteKeyId] = useState<string | null>(null);
@@ -210,7 +212,7 @@ export default function ApiKeyManagerSection() {
            </Typography>
            {key.assignedTaskIds.map((taskId) => (
             <Badge key={taskId} variant="info" size="sm" casing="natural">
-             {taskId}
+             {aiTaskT(`${getAiTaskCopyKey(taskId)}.title`)}
             </Badge>
            ))}
           </div>

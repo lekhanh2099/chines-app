@@ -8,7 +8,6 @@ import {
  Newspaper,
  Save,
  Settings2,
- SlidersHorizontal,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useState } from "react";
@@ -18,9 +17,16 @@ import ApiKeyManagerSection from "@/features/settings/ApiKeyManagerSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { IconTile } from "@/components/ui/icon-tile";
+import {
+ Dialog,
+ DialogBody,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/dialog";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
@@ -63,14 +69,19 @@ export function AiSettingsWorkspace({
  const navigationT = useTranslations("AiSettings");
  const router = useRouter();
  const panel = resolveAiSettingsPanel(panelValue);
- const needsLookupSettings =
-  panel === AiSettingsPanelSchema.enum.providers || panel === AiSettingsPanelSchema.enum.advanced;
+ const [lookupPromptOpen, setLookupPromptOpen] = useState(panelValue === "advanced");
+ const needsLookupSettings = lookupPromptOpen;
  const [wordLookupPrompt, setWordLookupPrompt] = useState(DEFAULT_WORD_LOOKUP_PROMPT);
  const [sentenceLookupPrompt, setSentenceLookupPrompt] = useState(DEFAULT_SENTENCE_LOOKUP_PROMPT);
  const [savedSettings, setSavedSettings] = useState<ClientAiPromptSettings | null>(null);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
  const isLoading = needsLookupSettings && !hasLoaded;
+
+ useEffect(() => {
+  if (panelValue !== "advanced") return;
+  router.replace("/settings?section=ai&panel=tasks#lookup-deep", { scroll: false });
+ }, [panelValue, router]);
 
  useEffect(() => {
   if (!needsLookupSettings || hasLoaded) return;
@@ -204,11 +215,6 @@ export function AiSettingsWorkspace({
    label: navigationT("tabs.usage"),
    icon: Activity,
   },
-  {
-   key: AiSettingsPanelSchema.enum.advanced,
-   label: navigationT("tabs.advanced"),
-   icon: SlidersHorizontal,
-  },
  ];
 
  return (
@@ -222,7 +228,7 @@ export function AiSettingsWorkspace({
    }}
   >
    <TabsContent value={AiSettingsPanelSchema.enum.tasks} className="pt-4">
-    <AiTaskSettingsSection />
+    <AiTaskSettingsSection onCustomizeLookup={() => setLookupPromptOpen(true)} />
    </TabsContent>
 
    <TabsContent value={AiSettingsPanelSchema.enum.conversation} className="pt-4">
@@ -241,87 +247,62 @@ export function AiSettingsWorkspace({
     <AiActivitySettings />
    </TabsContent>
 
-   <TabsContent value={AiSettingsPanelSchema.enum.advanced} className="pt-4">
-    <Card variant="section" padding="lg" className="grid gap-4">
-     <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-      <SectionHeading
-       icon={<Settings2 />}
-       title={lookupT("advanced.title")}
-       description={lookupT("advanced.description")}
-      />
-      <div className="flex flex-wrap items-center gap-2">
-       {hasLoaded ? (
-        <Badge variant={hasUnsavedPromptChanges ? "warning" : "default"} size="sm">
-         {hasUnsavedPromptChanges ? t("prompts.dirty") : t("prompts.synced")}
-        </Badge>
-       ) : null}
-       <Button
-        size="toolbar"
-        onClick={() => void handleSavePrompts()}
-        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
-       >
-        {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
-        {t("prompts.save")}
-       </Button>
-      </div>
-     </div>
-
-     <Separator />
-
-     <div className="grid gap-6 xl:grid-cols-2">
-      <PromptPanel
-       title={t("prompts.wordTitle")}
-       description={t("prompts.wordDescription", { token: WORD_PLACEHOLDER })}
-       placeholderToken={WORD_PLACEHOLDER}
-       value={wordLookupPrompt}
-       onChange={setWordLookupPrompt}
-       defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
-       disabled={isLoading || isSaving}
-       isDirty={hasUnsavedWordPrompt}
-      />
-
-      <PromptPanel
-       title={t("prompts.sentenceTitle")}
-       description={t("prompts.sentenceDescription", { token: SENTENCE_PLACEHOLDER })}
-       placeholderToken={SENTENCE_PLACEHOLDER}
-       value={sentenceLookupPrompt}
-       onChange={setSentenceLookupPrompt}
-       defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
-       disabled={isLoading || isSaving}
-       isDirty={hasUnsavedSentencePrompt}
-      />
-     </div>
-    </Card>
-   </TabsContent>
+   <Dialog open={lookupPromptOpen} onOpenChange={setLookupPromptOpen}>
+    <DialogContent size="editor">
+     <DialogHeader>
+      <DialogTitle icon={<Settings2 />}>{lookupT("advanced.title")}</DialogTitle>
+      <DialogDescription>{lookupT("advanced.description")}</DialogDescription>
+     </DialogHeader>
+     <DialogBody>
+      <Typography variant="bodySmall" tone="secondary">
+       {navigationT("taskRouting.lookupPromptScope")}
+      </Typography>
+      <details className="rounded-lg border border-border-default bg-bg-subtle p-4">
+       <summary className="cursor-pointer font-bold">
+        {navigationT("taskRouting.technicalPrompt")}
+       </summary>
+       <div className="grid gap-6 pt-4 xl:grid-cols-2">
+        <PromptPanel
+         title={t("prompts.wordTitle")}
+         description={t("prompts.wordDescription", { token: WORD_PLACEHOLDER })}
+         placeholderToken={WORD_PLACEHOLDER}
+         value={wordLookupPrompt}
+         onChange={setWordLookupPrompt}
+         defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
+         disabled={isLoading || isSaving}
+         isDirty={hasUnsavedWordPrompt}
+        />
+        <PromptPanel
+         title={t("prompts.sentenceTitle")}
+         description={t("prompts.sentenceDescription", { token: SENTENCE_PLACEHOLDER })}
+         placeholderToken={SENTENCE_PLACEHOLDER}
+         value={sentenceLookupPrompt}
+         onChange={setSentenceLookupPrompt}
+         defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
+         disabled={isLoading || isSaving}
+         isDirty={hasUnsavedSentencePrompt}
+        />
+       </div>
+      </details>
+     </DialogBody>
+     <DialogFooter>
+      {hasLoaded ? (
+       <Badge variant={hasUnsavedPromptChanges ? "warning" : "default"} size="sm">
+        {hasUnsavedPromptChanges ? t("prompts.dirty") : t("prompts.synced")}
+       </Badge>
+      ) : null}
+      <Button
+       size="toolbar"
+       onClick={() => void handleSavePrompts()}
+       disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges}
+      >
+       {isSaving ? <Spinner data-icon="inline-start" /> : <Save data-icon="inline-start" />}
+       {t("prompts.save")}
+      </Button>
+     </DialogFooter>
+    </DialogContent>
+   </Dialog>
   </Tabs>
- );
-}
-
-function SectionHeading({
- title,
- description,
- icon,
-}: {
- title: string;
- description: string;
- icon?: ReactNode;
-}) {
- return (
-  <div className="flex min-w-0 max-w-3xl items-start gap-3">
-   {icon ? (
-    <IconTile tone="accent" size="sm">
-     {icon}
-    </IconTile>
-   ) : null}
-   <div className="grid min-w-0 gap-1">
-    <Typography as="h2" variant="sectionTitle" tone="default" weight="bold">
-     {title}
-    </Typography>
-    <Typography as="p" tone="secondary" leading="standard">
-     {description}
-    </Typography>
-   </div>
-  </div>
  );
 }
 

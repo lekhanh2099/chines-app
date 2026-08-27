@@ -5,12 +5,11 @@
   "dailyReading": "Bài đọc mỗi ngày",
   "providers": "API Keys",
   "usage": "Hoạt động",
-  "advanced": "Nâng cao",
   "aria": "Các phần cài đặt AI"
  },
  "taskRouting": {
   "title": "Phân công tác vụ AI",
-  "description": "Chọn Auto, một key + model cụ thể, hoặc tắt riêng từng tác vụ. Assigned không tự đổi provider khi lỗi.",
+  "description": "Chọn nguồn AI thực tế cho từng tác vụ. Key được chọn sẽ không tự đổi provider khi lỗi.",
   "loading": "Đang tải tác vụ AI...",
   "loadError": "Không tải hoặc lưu được tác vụ AI.",
   "saveError": "Không lưu được phân công tác vụ này.",
@@ -19,10 +18,34 @@
   "expectedOutput": "Output mong đợi",
   "storage": "Nơi lưu",
   "mode": "Chế độ",
+  "source": "Nguồn AI",
   "key": "API key",
   "model": "Model",
   "autoStatus": "Theo key active ưu tiên đầu tiên",
   "disabledStatus": "Không gọi AI",
+  "customizeLookup": "Tùy chỉnh kết quả tra cứu",
+  "lookupPromptScope": "Chỉ ảnh hưởng Phân tích sâu. Provider và model được chọn ở phần phân công phía trên.",
+  "technicalPrompt": "Prompt kỹ thuật",
+  "keyPaused": "đang tạm dừng",
+  "keyUnreadable": "cần thêm lại",
+  "keyUnreadableHelp": "Server không giải mã được key này. Hãy thêm lại key trong API Keys rồi phân công lại.",
+  "sources": {
+   "auto": "Tự động",
+   "autoWithRuntime": "Tự động — {provider} · {key} · {model}",
+   "disabled": "Tắt tác vụ"
+  },
+  "runtimeReasons": {
+   "ok": "Sẵn sàng",
+   "no-active-key": "Chưa có API key đang hoạt động",
+   "schema-unavailable": "Kho API key chưa sẵn sàng",
+   "vault-unavailable": "Kho mã hóa key chưa sẵn sàng",
+   "credential-unreadable": "Key đang lưu không thể giải mã; cần thêm lại",
+   "selected-key-unavailable": "Key đã chọn không còn khả dụng",
+   "capability-unavailable": "Không có key tương thích với tác vụ",
+   "task-disabled": "Tác vụ đang tắt",
+   "assigned-key-unavailable": "Key được phân công không còn hoạt động",
+   "assigned-model-unavailable": "Model được phân công không còn khả dụng"
+  },
   "groups": { "main": "Tác vụ chính", "advanced": "Nâng cao" },
   "modes": { "auto": "Auto", "assigned": "Assigned", "disabled": "Disabled" },
   "tasks": {

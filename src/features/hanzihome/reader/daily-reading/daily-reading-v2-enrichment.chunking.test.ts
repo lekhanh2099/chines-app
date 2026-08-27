@@ -79,12 +79,20 @@ describe("Daily Reading V2 translation chunk bounds", () => {
   mocks.requestProvider.mockReset();
   mocks.requestProvider.mockImplementation((input: { prompt: string }) => {
    const ids = paragraphIdsFromPrompt(input.prompt);
+   if (ids.length === 0) {
+    return Promise.resolve({
+     ok: true,
+     model: runtime.model,
+     content: JSON.stringify({
+      titleVi: "Hoạt động văn hóa đô thị",
+      whyWorthReadingVi: "Kiểm tra bài có nhiều đoạn ngắn.",
+     }),
+    });
+   }
    return Promise.resolve({
     ok: true,
     model: runtime.model,
     content: JSON.stringify({
-     titleVi: "Hoạt động văn hóa đô thị",
-     whyWorthReadingVi: "Kiểm tra bài có nhiều đoạn ngắn.",
      paragraphs: ids.map((paragraphId) => ({
       paragraphId,
       vi: `Nghĩa ${paragraphId}`,
@@ -109,9 +117,56 @@ describe("Daily Reading V2 translation chunk bounds", () => {
   expect(result.data.paragraphs.map((paragraph) => paragraph.paragraphId)).toEqual(
    paragraphs.map((paragraph) => paragraph.id),
   );
-  expect(mocks.requestProvider.mock.calls.length).toBe(3);
-  for (const call of mocks.requestProvider.mock.calls) {
-   expect(paragraphIdsFromPrompt(call[0]?.prompt ?? "").length).toBeLessThanOrEqual(20);
+  expect(mocks.requestProvider.mock.calls.length).toBe(16);
+  for (const call of mocks.requestProvider.mock.calls.slice(1)) {
+   expect(paragraphIdsFromPrompt(call[0]?.prompt ?? "").length).toBeLessThanOrEqual(3);
   }
+ });
+
+ it("splits only an invalid translation chunk and preserves source order", async () => {
+  let returnedTruncatedChunk = false;
+  mocks.requestProvider.mockImplementation((input: { prompt: string }) => {
+   const ids = paragraphIdsFromPrompt(input.prompt);
+   if (ids.length === 0) {
+    return Promise.resolve({
+     ok: true,
+     model: runtime.model,
+     content: JSON.stringify({
+      titleVi: "Hoạt động văn hóa đô thị",
+      whyWorthReadingVi: "Kiểm tra phục hồi JSON bị cắt.",
+     }),
+    });
+   }
+   if (!returnedTruncatedChunk && ids.length === 3) {
+    returnedTruncatedChunk = true;
+    return Promise.resolve({ ok: true, model: runtime.model, content: '{"paragraphs":[' });
+   }
+   return Promise.resolve({
+    ok: true,
+    model: runtime.model,
+    content: JSON.stringify({
+     paragraphs: ids.map((paragraphId) => ({
+      paragraphId,
+      vi: `Nghĩa ${paragraphId}`,
+      roleVi: "Nội dung",
+     })),
+    }),
+   });
+  });
+
+  const result = await generateDailyReadingV2Enrichment({
+   reading,
+   runtime,
+   module: "translation",
+  });
+
+  expect(result).toMatchObject({ ok: true, module: "translation" });
+  if (!result.ok || result.module !== "translation")
+   throw new Error("Expected translation success.");
+  expect(result.data.paragraphs.map((paragraph) => paragraph.paragraphId)).toEqual(
+   paragraphs.map((paragraph) => paragraph.id),
+  );
+  expect(returnedTruncatedChunk).toBe(true);
+  expect(mocks.requestProvider.mock.calls.length).toBe(18);
  });
 });

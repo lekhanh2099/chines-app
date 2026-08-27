@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { AI_TASK_REGISTRY } from "@/lib/ai-task-contract";
+
 import type { AppLocale } from "./config";
 import { loadAppMessages } from "./messages";
 
@@ -34,11 +36,21 @@ describe("i18n message contracts", () => {
     conversation: expect.any(String),
     dailyReading: expect.any(String),
     providers: expect.any(String),
+    tasks: expect.any(String),
     usage: expect.any(String),
-    advanced: expect.any(String),
     aria: expect.any(String),
    }),
   );
+ });
+
+ it.each(appLocales)("%s names every AI task in the registry", async (locale) => {
+  const messages = await loadAppMessages(locale);
+  const tasks = messages.AiSettings.taskRouting.tasks;
+
+  expect(Object.keys(tasks)).toHaveLength(AI_TASK_REGISTRY.length);
+  for (const task of Object.values(tasks)) {
+   expect(task.title.trim()).not.toBe("");
+  }
  });
 
  it.each(appLocales)("%s keeps the AI conversation workspace message contract", async (locale) => {

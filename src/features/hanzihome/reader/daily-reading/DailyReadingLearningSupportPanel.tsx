@@ -24,7 +24,9 @@ import { Typography } from "@/components/ui/typography";
 import { useAiRuntimeReadiness } from "@/features/ai-runtime/useAiRuntimeReadiness";
 import { AddApiKeyDialog } from "@/features/settings/AddApiKeyDialog";
 import { Link } from "@/i18n/navigation";
+import type { AiTaskId, AiTaskRuntimePreview } from "@/lib/ai-task-contract";
 
+import { useDailyReadingV2Library } from "./daily-reading-v2-client";
 import {
  enrichDailyReadingV2LearningSupport,
  enrichDailyReadingV2Module,
@@ -63,6 +65,13 @@ const moduleConfigs: readonly ModuleConfig[] = [
 
 function configForModule(module: DailyReadingV2EnrichmentModule) {
  return moduleConfigs.find((config) => config.module === module);
+}
+
+function taskIdForModule(module: DailyReadingV2EnrichmentModule): AiTaskId {
+ if (module === "translation") return "daily-reading.translation";
+ if (module === "vocabulary") return "daily-reading.vocabulary";
+ if (module === "grammar") return "daily-reading.grammar";
+ return "daily-reading.questions";
 }
 
 function statusBadgeVariant(state: EnrichmentState): ComponentProps<typeof Badge>["variant"] {
@@ -116,6 +125,7 @@ function needsKeyManagement(state: EnrichmentState) {
 export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReadingV2 }) {
  const t = useTranslations("DailyReading");
  const runtime = useAiRuntimeReadiness();
+ const library = useDailyReadingV2Library();
  const [pendingAction, setPendingAction] = useState<PendingAction>(null);
  const readyCount = moduleConfigs.filter(
   ({ module }) => reading.enrichment[module].status === "ready",
@@ -141,6 +151,8 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
       ? t("v2.enrichment.toast.moduleReadyFallback")
       : t("v2.enrichment.toast.moduleReady", { module: t(config.titleKey) }),
     );
+   } else if (updated.enrichment[module].status === "running") {
+    toast.success(t("v2.enrichment.toast.queued"));
    }
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
@@ -157,6 +169,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
     ({ module }) => updated.enrichment[module].status === "ready",
    ).length;
    if (completed === moduleConfigs.length) toast.success(t("v2.enrichment.toast.allReady"));
+   else toast.success(t("v2.enrichment.toast.queued"));
   } catch (error) {
    toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
   } finally {
@@ -211,9 +224,25 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   );
  }
 
- function moduleAction(module: DailyReadingV2EnrichmentModule, state: EnrichmentState) {
+ function configureTaskButton(module: DailyReadingV2EnrichmentModule) {
+  return (
+   <Button type="button" variant="outline" size="compact" asChild>
+    <Link href={`/settings?section=ai&panel=tasks#${taskIdForModule(module)}`} prefetch={false}>
+     <Settings data-icon="inline-start" />
+     {t("v2.enrichment.actions.configureTask")}
+    </Link>
+   </Button>
+  );
+ }
+
+ function moduleAction(
+  module: DailyReadingV2EnrichmentModule,
+  state: EnrichmentState,
+  taskRuntime: AiTaskRuntimePreview | undefined,
+ ) {
   if (state.status === "ready" || state.status === "running") return null;
   if (runtime.isPending || runtime.isError) return null;
+  if (taskRuntime?.status === "task-disabled") return configureTaskButton(module);
 
   if (runtimeMissingKey) {
    return addKeyAction(t("v2.enrichment.actions.addKey"), () => void runModule(module));
@@ -222,6 +251,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    return addKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runModule(module));
   }
   if (runtimeStorageUnavailable) return manageKeysButton();
+  if (taskRuntime && taskRuntime.status !== "ready") return manageKeysButton();
 
   if (runtimeReady && needsKeyManagement(state)) {
    return (
@@ -304,14 +334,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      <Typography as="p" variant="bodySmall" tone="muted">
       {t("v2.enrichment.description")}
      </Typography>
-     {runtime.data?.status === "ready" ? (
-      <Typography as="p" variant="caption" tone="muted" wrapping="breakWords">
-       {t("v2.enrichment.runtimeReady", {
-        provider: runtime.data.selectedKey.providerLabel,
-        model: runtime.data.selectedKey.model,
-       })}
-      </Typography>
-     ) : runtimeMissingKey ? (
+     {runtimeMissingKey ? (
       <Typography as="p" variant="caption" tone="warning">
        {t("v2.enrichment.runtimeMissing")}
       </Typography>
@@ -329,6 +352,15 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    <div className="grid gap-x-5 gap-y-2 sm:grid-cols-2">
     {moduleConfigs.map((config) => {
      const state = reading.enrichment[config.module];
+     const taskRuntime = runtime.data?.taskRuntimes.find(
+      (preview) => preview.taskId === taskIdForModule(config.module),
+     );
+     const latestRun = library.enrichmentRuns.find(
+      (run) =>
+       run.articleId === reading.id &&
+       run.articleFingerprint === reading.article.fingerprint &&
+       run.module === config.module,
+     );
      const Icon = config.icon;
      return (
       <div
@@ -348,10 +380,45 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
           {state.generatedBy.receipt.provider} · {state.generatedBy.receipt.model} ·{" "}
           {state.generatedBy.receipt.keyLabel}
          </Typography>
+        ) : state.status === "running" && latestRun?.receipt ? (
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {t("v2.enrichment.runtimeRunning", {
+           provider: latestRun.receipt.provider,
+           key: latestRun.receipt.keyLabel,
+           model: latestRun.receipt.model,
+           completed: latestRun.progressCompleted,
+           total: latestRun.progressTotal,
+          })}
+         </Typography>
+        ) : state.status === "failed" && latestRun?.receipt ? (
+         <Typography variant="caption" tone="warning" wrapping="breakWords">
+          {t("v2.enrichment.runtimeFailed", {
+           provider: latestRun.receipt.provider,
+           key: latestRun.receipt.keyLabel,
+           model: latestRun.receipt.model,
+           code: latestRun.errorCode || "provider-unavailable",
+          })}
+         </Typography>
+        ) : taskRuntime?.status === "ready" ? (
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {t("v2.enrichment.runtimePlanned", {
+           provider: taskRuntime.receipt.provider,
+           key: taskRuntime.receipt.keyLabel,
+           model: taskRuntime.receipt.model,
+          })}
+         </Typography>
+        ) : taskRuntime?.status === "task-disabled" ? (
+         <Typography variant="caption" tone="warning">
+          {t("v2.enrichment.status.taskDisabled")}
+         </Typography>
+        ) : taskRuntime ? (
+         <Typography variant="caption" tone="warning" wrapping="breakWords">
+          {t("v2.enrichment.runtimeUnavailable", { reason: taskRuntime.reason })}
+         </Typography>
         ) : null}
        </div>
        <div className="flex shrink-0 flex-wrap items-center gap-2">
-        {moduleAction(config.module, state)}
+        {moduleAction(config.module, state, taskRuntime)}
        </div>
       </div>
      );

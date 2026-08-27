@@ -30,22 +30,41 @@ import {
  listAssignedTasksForKey,
  listUserAiTaskAssignments,
 } from "@/services/ai-task-routing.service";
+import {
+ DailyReadingEnrichmentJobStorageError,
+ listActiveDailyReadingJobsForKey,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment-jobs.server";
 
 async function assignedKeyConflict(userId: string, keyId: string) {
  try {
-  const taskIds = await listAssignedTasksForKey(userId, keyId);
-  if (taskIds.length === 0) return null;
+  const [taskIds, activeJobs] = await Promise.all([
+   listAssignedTasksForKey(userId, keyId),
+   listActiveDailyReadingJobsForKey(userId, keyId),
+  ]);
+  if (taskIds.length === 0 && activeJobs.length === 0) return null;
   return NextResponse.json(
    {
     error:
-     "API key đang được gán cho tác vụ AI. Hãy chuyển các tác vụ sang Auto, Off hoặc key khác trước.",
-    code: "AI_KEY_ASSIGNED",
+     activeJobs.length > 0
+      ? "API key đang được job Bài đọc mỗi ngày sử dụng. Hãy chờ job hoàn tất; rời trang không làm job dừng lại."
+      : "API key đang được gán cho tác vụ AI. Hãy chuyển các tác vụ sang Auto, Off hoặc key khác trước.",
+    code: activeJobs.length > 0 ? "AI_KEY_ACTIVE_JOB" : "AI_KEY_ASSIGNED",
     taskIds,
+    jobs: activeJobs.map((job) => ({
+     runId: job.runId,
+     jobId: job.id,
+     taskId: job.taskId,
+     module: job.module,
+     status: job.status,
+    })),
    },
    { status: 409 },
   );
  } catch (error) {
-  if (error instanceof AiTaskStorageNotReadyError) {
+  if (
+   error instanceof AiTaskStorageNotReadyError ||
+   error instanceof DailyReadingEnrichmentJobStorageError
+  ) {
    return NextResponse.json(
     { error: "AI task assignment storage is not ready", code: "AI_TASK_SCHEMA_UNAVAILABLE" },
     { status: 503 },

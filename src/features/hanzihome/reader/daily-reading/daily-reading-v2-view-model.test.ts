@@ -121,13 +121,19 @@ describe("Daily Reading V2 presentation model", () => {
   });
   const enrichment = dailyReadingV2EnrichmentRunSchema.parse({
    id: "enrichment-1",
+   runId: "11111111-1111-4111-8111-111111111111",
    articleId: reading.id,
+   articleFingerprint: reading.article.fingerprint,
    module: "grammar",
    status: "blocked",
    attemptedAt: "2026-08-19T10:06:00+07:00",
    completedAt: "2026-08-19T10:06:01+07:00",
    errorCode: "quota-exhausted",
    errorDetail: "Groq đang hết quota hoặc bị giới hạn tần suất.",
+   workflowRunId: "workflow-run-1",
+   progressCompleted: 0,
+   progressTotal: 1,
+   receipt: null,
   });
 
   const entries = buildDailyReadingActivityEntries({

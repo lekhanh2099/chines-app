@@ -51,7 +51,7 @@ export const aiRuntimeSafeKeySchema = z.strictObject({
  capabilities: z.array(aiRuntimeCapabilitySchema),
 });
 
-const aiRuntimeReadyResponseSchema = z.strictObject({
+export const aiRuntimeReadyResponseSchema = z.strictObject({
  status: z.literal("ready"),
  reason: z.literal("ok"),
  activeKeyCount: z.number().int().positive(),
@@ -60,7 +60,7 @@ const aiRuntimeReadyResponseSchema = z.strictObject({
  capabilities: z.array(aiRuntimeCapabilitySchema).min(1),
 });
 
-const aiRuntimeMissingKeyResponseSchema = z.strictObject({
+export const aiRuntimeMissingKeyResponseSchema = z.strictObject({
  status: z.literal("missing-key"),
  reason: z.literal("no-active-key"),
  activeKeyCount: z.literal(0),
@@ -69,7 +69,7 @@ const aiRuntimeMissingKeyResponseSchema = z.strictObject({
  capabilities: z.array(aiRuntimeCapabilitySchema).max(0),
 });
 
-const aiRuntimeStorageUnavailableResponseSchema = z.strictObject({
+export const aiRuntimeStorageUnavailableResponseSchema = z.strictObject({
  status: z.literal("storage-unavailable"),
  reason: z.enum(["schema-unavailable", "vault-unavailable", "credential-unreadable"]),
  activeKeyCount: z.number().int().nonnegative(),

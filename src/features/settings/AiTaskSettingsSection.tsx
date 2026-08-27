@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { BrainCircuit, RefreshCcw } from "lucide-react";
+import { BrainCircuit, RefreshCcw, SlidersHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
@@ -16,12 +16,7 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
-import {
- aiTaskRoutingModeSchema,
- aiTaskGroupSchema,
- type AiTaskAssignment,
- type AiTaskId,
-} from "@/lib/ai-task-contract";
+import { aiTaskGroupSchema, type AiTaskAssignment, type AiTaskId } from "@/lib/ai-task-contract";
 
 const taskGroups = [aiTaskGroupSchema.enum.main, aiTaskGroupSchema.enum.advanced];
 const taskSettingsQueryKey = ["settings", "ai-tasks"];
@@ -32,7 +27,7 @@ import {
  type AiTaskSettingsResponse,
 } from "./ai-task-settings.schema";
 
-function taskCopyKey(taskId: AiTaskId) {
+export function getAiTaskCopyKey(taskId: AiTaskId) {
  if (taskId === "conversation.reply") return "conversationReply";
  if (taskId === "lookup.quick") return "lookupQuick";
  if (taskId === "lookup.deep") return "lookupDeep";
@@ -42,10 +37,11 @@ function taskCopyKey(taskId: AiTaskId) {
  if (taskId === "daily-reading.questions") return "dailyReadingQuestions";
  if (taskId === "conversation.summary") return "conversationSummary";
  if (taskId === "conversation.memory-extraction") return "conversationMemoryExtraction";
- return "conversationSemanticMemory";
+ if (taskId === "conversation.semantic-memory") return "conversationSemanticMemory";
+ throw new Error(`Missing AI task copy for ${taskId}`);
 }
 
-export function AiTaskSettingsSection() {
+export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup?: () => void }) {
  const t = useTranslations("AiSettings.taskRouting");
  const queryClient = useQueryClient();
  const taskSettingsQuery = useQuery({
@@ -66,7 +62,7 @@ export function AiTaskSettingsSection() {
     body: JSON.stringify(assignment),
    });
    if (!response.ok) throw new Error("save_failed");
-   return aiTaskUpdateResponseSchema.parse(await response.json()).assignment;
+   return aiTaskUpdateResponseSchema.parse(await response.json());
   },
   onSuccess: (saved) => {
    queryClient.setQueryData<AiTaskSettingsResponse>(taskSettingsQueryKey, (current) =>
@@ -74,7 +70,13 @@ export function AiTaskSettingsSection() {
      ? {
         ...current,
         tasks: current.tasks.map((task) =>
-         task.id === saved.taskId ? { ...task, assignment: saved } : task,
+         task.id === saved.assignment.taskId
+          ? {
+             ...task,
+             assignment: saved.assignment,
+             runtimePreview: saved.runtimePreview,
+            }
+          : task,
         ),
        }
      : current,
@@ -137,17 +139,22 @@ export function AiTaskSettingsSection() {
      {data.tasks
       .filter((task) => task.group === group)
       .map((task) => {
-       const copyKey = taskCopyKey(task.id);
-       const compatibleKeys = data.keys.filter(
-        (key) => key.isActive && key.capabilities.includes(task.capability),
-       );
+       const copyKey = getAiTaskCopyKey(task.id);
+       const compatibleKeys = data.keys.filter((key) => key.capabilities.includes(task.capability));
        const assigned = task.assignment.mode === "assigned" ? task.assignment : null;
-       const autoKey = task.assignment.mode === "auto" ? compatibleKeys[0] : null;
        const selectedKey = assigned
         ? compatibleKeys.find((key) => key.keyId === assigned.keyId)
         : null;
+       const sourceValue = assigned?.keyId ?? task.assignment.mode;
+       const previewReceipt = task.runtimePreview.receipt;
        return (
-        <Card key={task.id} variant="section" padding="lg" className="grid gap-4">
+        <Card
+         key={task.id}
+         id={task.id === "lookup.deep" ? "lookup-deep" : task.id}
+         variant="section"
+         padding="lg"
+         className="grid gap-4"
+        >
          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
           <div className="grid gap-1">
            <Typography as="h3" variant="cardTitle" weight="bold">
@@ -157,7 +164,15 @@ export function AiTaskSettingsSection() {
             {t(`tasks.${copyKey}.when`)}
            </Typography>
           </div>
-          {savingTaskId === task.id ? <Spinner /> : null}
+          <div className="flex flex-wrap items-center gap-2">
+           {task.id === "lookup.deep" && onCustomizeLookup ? (
+            <Button type="button" variant="outline" size="compact" onClick={onCustomizeLookup}>
+             <SlidersHorizontal data-icon="inline-start" />
+             {t("customizeLookup")}
+            </Button>
+           ) : null}
+           {savingTaskId === task.id ? <Spinner /> : null}
+          </div>
          </div>
          <div className="grid gap-2 text-sm md:grid-cols-3">
           <div>
@@ -179,54 +194,52 @@ export function AiTaskSettingsSection() {
            <Typography variant="bodySmall">{t(`tasks.${copyKey}.storage`)}</Typography>
           </div>
          </div>
-         <div className="grid gap-3 md:grid-cols-3">
+         <div className="grid gap-3 md:grid-cols-2">
           <Select
-           value={task.assignment.mode}
+           value={sourceValue}
            onValueChange={(value) => {
-            const mode = aiTaskRoutingModeSchema.parse(value);
-            if (mode === "assigned") {
-             const key = compatibleKeys[0];
-             const model = key?.defaultModel ?? key?.models[0]?.value;
-             if (key && model) save({ taskId: task.id, mode, keyId: key.keyId, model });
+            if (value === "auto" || value === "disabled") {
+             save({ taskId: task.id, mode: value, keyId: null, model: null });
              return;
             }
-            save({ taskId: task.id, mode, keyId: null, model: null });
+            const key = compatibleKeys.find((candidate) => candidate.keyId === value);
+            const model = key?.defaultModel ?? key?.models[0]?.value;
+            if (key?.availability === "ready" && model) {
+             save({ taskId: task.id, mode: "assigned", keyId: key.keyId, model });
+            }
            }}
           >
-           <SelectTrigger aria-label={t("mode")}>
+           <SelectTrigger aria-label={t("source")}>
             <SelectValue />
            </SelectTrigger>
            <SelectContent>
-            <SelectItem value="auto">{t("modes.auto")}</SelectItem>
-            <SelectItem value="assigned" disabled={compatibleKeys.length === 0}>
-             {t("modes.assigned")}
+            <SelectItem value="auto">
+             {previewReceipt && task.assignment.mode === "auto"
+              ? t("sources.autoWithRuntime", {
+                 provider: previewReceipt.provider,
+                 key: previewReceipt.keyLabel,
+                 model: previewReceipt.model,
+                })
+              : t("sources.auto")}
             </SelectItem>
-            <SelectItem value="disabled">{t("modes.disabled")}</SelectItem>
+            {compatibleKeys.map((key) => (
+             <SelectItem key={key.keyId} value={key.keyId} disabled={key.availability !== "ready"}>
+              {key.providerLabel} · {key.label}
+              {key.availability === "paused"
+               ? ` — ${t("keyPaused")}`
+               : key.availability === "credential-unreadable"
+                 ? ` — ${t("keyUnreadable")}`
+                 : ""}
+             </SelectItem>
+            ))}
+            <SelectItem value="disabled">{t("sources.disabled")}</SelectItem>
            </SelectContent>
           </Select>
           {assigned ? (
-           <>
-            <Select
-             value={assigned.keyId}
-             onValueChange={(keyId) => {
-              const key = compatibleKeys.find((candidate) => candidate.keyId === keyId);
-              const model = key?.defaultModel ?? key?.models[0]?.value;
-              if (key && model) save({ taskId: task.id, mode: "assigned", keyId, model });
-             }}
-            >
-             <SelectTrigger aria-label={t("key")}>
-              <SelectValue />
-             </SelectTrigger>
-             <SelectContent>
-              {compatibleKeys.map((key) => (
-               <SelectItem key={key.keyId} value={key.keyId}>
-                {key.providerLabel} · {key.label}
-               </SelectItem>
-              ))}
-             </SelectContent>
-            </Select>
+           <div className="grid gap-2">
             <Select
              value={assigned.model}
+             disabled={selectedKey?.availability !== "ready"}
              onValueChange={(model) =>
               save({
                taskId: task.id,
@@ -247,21 +260,29 @@ export function AiTaskSettingsSection() {
               ))}
              </SelectContent>
             </Select>
-           </>
+            {selectedKey?.availability === "credential-unreadable" ? (
+             <Typography variant="caption" tone="warning">
+              {t("keyUnreadableHelp")}
+             </Typography>
+            ) : null}
+           </div>
           ) : (
-           <div className="flex flex-wrap items-center gap-2 md:col-span-2">
+           <div className="flex flex-wrap items-center gap-2">
             <Badge
              variant={task.assignment.mode === "disabled" ? "warning" : "default"}
              casing="natural"
             >
              {task.assignment.mode === "disabled" ? t("disabledStatus") : t("autoStatus")}
             </Badge>
-            {autoKey ? (
+            {previewReceipt ? (
              <Typography variant="caption" tone="muted" wrapping="breakWords">
-              {autoKey.providerLabel} · {autoKey.label} ·{" "}
-              {autoKey.defaultModel ?? autoKey.models[0]?.label}
+              {previewReceipt.provider} · {previewReceipt.keyLabel} · {previewReceipt.model}
              </Typography>
-            ) : null}
+            ) : (
+             <Typography variant="caption" tone="warning">
+              {t(`runtimeReasons.${task.runtimePreview.reason}`)}
+             </Typography>
+            )}
            </div>
           )}
          </div>

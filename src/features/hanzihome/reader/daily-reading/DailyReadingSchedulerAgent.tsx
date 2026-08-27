@@ -5,7 +5,10 @@ import { useEffect, useState } from "react";
 import { useClientSession } from "@/components/providers/QueryProvider";
 
 import { captureDailyReadingNow, useDailyReadingV2Settings } from "./daily-reading-v2-client";
-import { enrichDailyReadingV2LearningSupport } from "./daily-reading-v2-enrichment.client";
+import {
+ enrichDailyReadingV2LearningSupport,
+ reconcilePendingDailyReadingV2EnrichmentJobs,
+} from "./daily-reading-v2-enrichment.client";
 import {
  resolveDailyReadingReleaseState,
  shouldAutoCaptureDailyReading,
@@ -21,7 +24,7 @@ export function DailyReadingSchedulerAgent() {
  const [tick, setTick] = useState(0);
 
  useEffect(() => {
-  if (!isResolved || !user || !settings.autoCaptureEnabled) return;
+  if (!isResolved || !user) return;
 
   const update = () => setTick((value) => value + 1);
   const timer = window.setInterval(update, 30_000);
@@ -32,7 +35,12 @@ export function DailyReadingSchedulerAgent() {
    window.removeEventListener("focus", update);
    document.removeEventListener("visibilitychange", update);
   };
- }, [isResolved, settings.autoCaptureEnabled, user]);
+ }, [isResolved, user]);
+
+ useEffect(() => {
+  if (!isResolved || !user || document.visibilityState === "hidden") return;
+  void reconcilePendingDailyReadingV2EnrichmentJobs().catch(() => undefined);
+ }, [isResolved, tick, user]);
 
  useEffect(() => {
   if (!isResolved || !user) return;

@@ -2055,6 +2055,16 @@ export const currentApiInventory = [
   internalReason: "Per-account AI activity metadata stays inside the signed-in app.",
  }),
  inventoryEntry({
+  currentPath: "/api/hanzihome/reader/daily-reading/enrichment-jobs",
+  methods: ["GET", "POST", "DELETE"],
+  source: "route",
+  group: "AI",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Durable Daily Reading enrichment jobs contain account-scoped AI runtime receipts and temporary generated module results.",
+ }),
+ inventoryEntry({
   currentPath: "/api/tts",
   methods: ["GET", "POST"],
   source: "route",

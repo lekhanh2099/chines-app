@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { DailyReadingV2 } from "./daily-reading-v2.schemas";
+import type { AiTaskId } from "@/lib/ai-task-contract";
+import type { DailyReadingV2EnrichmentModule } from "./daily-reading-v2.schemas";
 
 vi.mock("./daily-reading-lock.client", () => ({
  DailyReadingGenerationBusyError: class extends Error {},
@@ -10,6 +12,7 @@ vi.mock("./daily-reading-lock.client", () => ({
 import {
  enrichDailyReadingV2LearningSupport,
  enrichDailyReadingV2Module,
+ reconcilePendingDailyReadingV2EnrichmentJobs,
 } from "./daily-reading-v2-enrichment.client";
 import {
  getDailyReadingV2Snapshot,
@@ -17,6 +20,9 @@ import {
 } from "./daily-reading-v2-storage.client";
 
 const values = new Map<string, string>();
+const runId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
+const keyId = "11111111-1111-4111-8111-111111111111";
+const createdAt = "2026-08-19T06:20:00.000Z";
 
 const article: DailyReadingV2 = {
  schemaVersion: "2.0.0",
@@ -77,10 +83,31 @@ const readyTranslation: Extract<DailyReadingV2["enrichment"]["translation"], { s
   },
  };
 
+function blockedJob(id: string, module: DailyReadingV2EnrichmentModule, taskId: AiTaskId) {
+ return {
+  id,
+  runId,
+  workflowRunId: null,
+  articleId: article.id,
+  articleFingerprint: article.article.fingerprint,
+  module,
+  taskId,
+  status: "blocked",
+  receipt: null,
+  progress: { completed: 0, total: 1 },
+  result: null,
+  errorCode: "missing-ai-key",
+  createdAt,
+  startedAt: null,
+  completedAt: createdAt,
+ };
+}
+
 describe("Daily Reading V2 enrichment client", () => {
  beforeEach(() => {
   values.clear();
   vi.stubGlobal("navigator", { onLine: true });
+  vi.stubGlobal("crypto", { randomUUID: () => runId });
   vi.stubGlobal("window", {
    localStorage: {
     getItem: (key: string) => values.get(key) ?? null,
@@ -104,14 +131,19 @@ describe("Daily Reading V2 enrichment client", () => {
   const fetchMock = vi.fn().mockResolvedValue(
    Response.json(
     {
-     ok: false,
-     status: "blocked",
-     module: "translation",
-     reason: "missing-ai-key",
-     errorCode: "missing-ai-key",
-     errorDetail: "Chưa có API key AI đang hoạt động cho phần hỗ trợ học tập.",
+     runId,
+     jobs: [
+      blockedJob(
+       "10000000-0000-4000-8000-000000000001",
+       "translation",
+       "daily-reading.translation",
+      ),
+      blockedJob("10000000-0000-4000-8000-000000000002", "vocabulary", "daily-reading.vocabulary"),
+      blockedJob("10000000-0000-4000-8000-000000000003", "grammar", "daily-reading.grammar"),
+      blockedJob("10000000-0000-4000-8000-000000000004", "questions", "daily-reading.questions"),
+     ],
     },
-    { status: 409 },
+    { status: 202 },
    ),
   );
   vi.stubGlobal("fetch", fetchMock);
@@ -143,14 +175,14 @@ describe("Daily Reading V2 enrichment client", () => {
   const fetchMock = vi.fn().mockResolvedValue(
    Response.json(
     {
-     ok: false,
-     status: "blocked",
-     module: "vocabulary",
-     reason: "missing-ai-key",
-     errorCode: "missing-ai-key",
-     errorDetail: "Chưa có API key AI đang hoạt động cho phần hỗ trợ học tập.",
+     runId,
+     jobs: [
+      blockedJob("20000000-0000-4000-8000-000000000001", "vocabulary", "daily-reading.vocabulary"),
+      blockedJob("20000000-0000-4000-8000-000000000002", "grammar", "daily-reading.grammar"),
+      blockedJob("20000000-0000-4000-8000-000000000003", "questions", "daily-reading.questions"),
+     ],
     },
-    { status: 409 },
+    { status: 202 },
    ),
   );
   vi.stubGlobal("fetch", fetchMock);
@@ -176,12 +208,43 @@ describe("Daily Reading V2 enrichment client", () => {
   const before = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
   expect(before?.enrichment.translation.status).toBe("idle");
   const fetchMock = vi.fn().mockResolvedValue(
-   Response.json({
-    ok: true,
-    module: "translation",
-    data: readyTranslation.data,
-    generatedBy: readyTranslation.generatedBy,
-   }),
+   Response.json(
+    {
+     runId,
+     jobs: [
+      {
+       id: "30000000-0000-4000-8000-000000000001",
+       runId,
+       workflowRunId: "workflow-run-1",
+       articleId: article.id,
+       articleFingerprint: article.article.fingerprint,
+       module: "translation",
+       taskId: "daily-reading.translation",
+       status: "succeeded",
+       receipt: {
+        taskId: "daily-reading.translation",
+        provider: "groq",
+        model: "openai/gpt-oss-20b",
+        keyId,
+        keyLabel: "Groq chính",
+        resolutionSource: "assigned",
+       },
+       progress: { completed: 1, total: 1 },
+       result: {
+        ok: true,
+        module: "translation",
+        data: readyTranslation.data,
+        generatedBy: readyTranslation.generatedBy,
+       },
+       errorCode: null,
+       createdAt,
+       startedAt: createdAt,
+       completedAt: "2026-08-19T06:21:00.000Z",
+      },
+     ],
+    },
+    { status: 202 },
+   ),
   );
   vi.stubGlobal("fetch", fetchMock);
 
@@ -196,5 +259,77 @@ describe("Daily Reading V2 enrichment client", () => {
   expect(requestBody).toContain('"classification"');
   expect(requestBody).not.toContain('"enrichment"');
   expect(requestBody).not.toContain('"publishedDate"');
+ });
+
+ it("keeps an uncertain enqueue pending without binding work to page lifecycle", async () => {
+  const fetchMock = vi.fn().mockRejectedValue(new Error("connection closed"));
+  vi.stubGlobal("fetch", fetchMock);
+
+  await expect(enrichDailyReadingV2Module(article.id, "translation")).rejects.toMatchObject({
+   code: "network-error",
+  });
+
+  const snapshot = getDailyReadingV2Snapshot();
+  expect(snapshot.items[0]?.enrichment.translation.status).toBe("running");
+  expect(snapshot.enrichmentRuns[0]).toMatchObject({ runId, status: "pending" });
+  expect(fetchMock).toHaveBeenCalledWith(
+   "/api/hanzihome/reader/daily-reading/enrichment-jobs",
+   expect.not.objectContaining({ signal: expect.anything() }),
+  );
+  expect(window.addEventListener).not.toHaveBeenCalledWith("pagehide", expect.anything());
+ });
+
+ it("hydrates a completed server job into the matching local article", async () => {
+  const queuedJob = {
+   id: "40000000-0000-4000-8000-000000000001",
+   runId,
+   workflowRunId: "workflow-run-1",
+   articleId: article.id,
+   articleFingerprint: article.article.fingerprint,
+   module: "translation",
+   taskId: "daily-reading.translation",
+   status: "queued",
+   receipt: {
+    taskId: "daily-reading.translation",
+    provider: "groq",
+    model: "openai/gpt-oss-20b",
+    keyId,
+    keyLabel: "Groq chính",
+    resolutionSource: "assigned",
+   },
+   progress: { completed: 0, total: 1 },
+   result: null,
+   errorCode: null,
+   createdAt,
+   startedAt: null,
+   completedAt: null,
+  };
+  const completedJob = {
+   ...queuedJob,
+   status: "succeeded",
+   progress: { completed: 1, total: 1 },
+   result: {
+    ok: true,
+    module: "translation",
+    data: readyTranslation.data,
+    generatedBy: readyTranslation.generatedBy,
+   },
+   startedAt: createdAt,
+   completedAt: "2026-08-19T06:21:00.000Z",
+  };
+  const fetchMock = vi
+   .fn()
+   .mockResolvedValueOnce(Response.json({ runId, jobs: [queuedJob] }, { status: 202 }))
+   .mockResolvedValueOnce(Response.json({ runId, jobs: [completedJob] }));
+  vi.stubGlobal("fetch", fetchMock);
+
+  const queued = await enrichDailyReadingV2Module(article.id, "translation");
+  expect(queued.enrichment.translation.status).toBe("running");
+
+  await reconcilePendingDailyReadingV2EnrichmentJobs();
+
+  const hydrated = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
+  expect(hydrated?.enrichment.translation).toMatchObject({ status: "ready" });
+  expect(hydrated?.article).toEqual(article.article);
  });
 });

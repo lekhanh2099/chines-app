@@ -188,6 +188,10 @@
   "description": "上方中文始终是已保存的来源文章。下面的模块只补充释义和练习，不会改写来源。",
   "summary": "已完成 {ready}/{total} 个模块",
   "runtimeReady": "正在使用 {provider} · {model}",
+  "runtimePlanned": "将使用 {provider} · {key} · {model}",
+  "runtimeRunning": "正在使用 {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeFailed": "已尝试 {provider} · {key} · {model} — {code}",
+  "runtimeUnavailable": "没有可用的 AI 来源 — {reason}",
   "runtimeMissing": "还没有 AI API key。仍可阅读完整来源文章。",
   "runtimeStorageUnavailable": "服务端 API key 存储尚未就绪；来源文章仍可正常阅读。",
   "runtimeCheckFailed": "当前无法检查 AI 状态。来源文章仍可阅读，请稍后重新检查。",
@@ -229,6 +233,7 @@
    "addKeyAndCreate": "添加 key 并生成辅助",
    "addReplacementKey": "添加替代 key",
    "manageKeys": "管理 API key",
+   "configureTask": "配置任务",
    "checkingRuntime": "正在检查 AI",
    "checkRuntimeAgain": "重新检查 AI"
   },
@@ -236,6 +241,7 @@
    "moduleReady": "已生成：{module}",
    "moduleReadyFallback": "学习辅助模块已生成。",
    "allReady": "所有学习辅助模块均已就绪。",
+   "queued": "AI 任务已进入队列。你可以离开此页面，完成后结果会自动导入。",
    "failed": "无法生成学习辅助。"
   }
  }

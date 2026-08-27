@@ -12,11 +12,14 @@ import {
  type AiRuntimeSafeKey,
 } from "@/lib/ai-runtime-contract";
 import {
+ AI_TASK_REGISTRY,
+ aiTaskRuntimePreviewSchema,
  getAiTaskDefinition,
  type AiRuntimeReceipt,
  type AiTaskAssignment,
  type AiTaskId,
  type AiTaskResolutionSource,
+ type AiTaskRuntimePreview,
  type AiTaskSessionOverride,
 } from "@/lib/ai-task-contract";
 import { isByokEncryptionConfigured } from "@/lib/encryption";
@@ -27,7 +30,10 @@ import {
  type UserApiKey,
  type UserApiKeyCredential,
 } from "@/services/user-api-keys.service";
-import { getUserAiTaskAssignment } from "@/services/ai-task-routing.service";
+import {
+ getUserAiTaskAssignment,
+ listUserAiTaskAssignments,
+} from "@/services/ai-task-routing.service";
 import {
  recordUserAiActivityEvent,
  type CreateAiActivityEvent,
@@ -343,7 +349,7 @@ export function resolveAiTaskRuntimeFromInventory(input: {
  };
 }
 
-async function loadUserAiRuntimeInventory(
+export async function loadUserAiRuntimeInventory(
  supabase: AuthenticatedRouteContext["supabase"],
  userId: string,
 ): Promise<AiRuntimeInventory> {
@@ -380,6 +386,74 @@ async function loadUserAiRuntimeInventory(
   activeKeys,
   credentials,
  };
+}
+
+function taskRuntimePreviewFromResolution(
+ taskId: AiTaskId,
+ resolution: UserAiTaskRuntimeResolution,
+): AiTaskRuntimePreview {
+ if (!resolution.ok) {
+  return aiTaskRuntimePreviewSchema.parse({
+   taskId,
+   status: resolution.status,
+   reason: resolution.reason,
+   receipt: null,
+  });
+ }
+
+ return aiTaskRuntimePreviewSchema.parse({
+  taskId,
+  status: "ready",
+  reason: "ok",
+  receipt: getAiRuntimeReceipt(resolution.runtime),
+ });
+}
+
+export function getAiTaskRuntimePreviewsFromInventory(
+ inventory: AiRuntimeInventory,
+ assignments: readonly AiTaskAssignment[],
+) {
+ return AI_TASK_REGISTRY.map((task) => {
+  const assignment = assignments.find((candidate) => candidate.taskId === task.id);
+  return taskRuntimePreviewFromResolution(
+   task.id,
+   resolveAiTaskRuntimeFromInventory({
+    inventory,
+    taskId: task.id,
+    ...(assignment ? { assignment } : {}),
+   }),
+  );
+ });
+}
+
+export async function getUserAiRuntimeOverview(
+ supabase: AuthenticatedRouteContext["supabase"],
+ userId: string,
+) {
+ const [inventory, assignments] = await Promise.all([
+  loadUserAiRuntimeInventory(supabase, userId),
+  listUserAiTaskAssignments(userId),
+ ]);
+ return {
+  readiness: getAiRuntimeReadinessFromInventory(inventory),
+  taskRuntimes: getAiTaskRuntimePreviewsFromInventory(inventory, assignments),
+ };
+}
+
+export async function getUserAiTaskRuntimePreview(input: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
+ assignment: AiTaskAssignment;
+}) {
+ const inventory = await loadUserAiRuntimeInventory(input.supabase, input.userId);
+ return taskRuntimePreviewFromResolution(
+  input.assignment.taskId,
+  resolveAiTaskRuntimeFromInventory({
+   inventory,
+   taskId: input.assignment.taskId,
+   assignment: input.assignment,
+  }),
+ );
 }
 
 export async function getUserAiRuntimeReadiness(
@@ -420,6 +494,32 @@ export async function resolveUserAiTaskRuntime(input: {
   ...(assignment ? { assignment } : {}),
   ...(input.sessionOverride ? { sessionOverride: input.sessionOverride } : {}),
  });
+}
+
+export async function resolveUserAiRuntimeSnapshot(input: {
+ supabase: AuthenticatedRouteContext["supabase"];
+ userId: string;
+ receipt: AiRuntimeReceipt;
+}): Promise<UserAiTaskRuntimeResolution> {
+ const inventory = await loadUserAiRuntimeInventory(input.supabase, input.userId);
+ const resolution = resolveAiTaskRuntimeFromInventory({
+  inventory,
+  taskId: input.receipt.taskId,
+  assignment: {
+   taskId: input.receipt.taskId,
+   mode: "assigned",
+   keyId: input.receipt.keyId,
+   model: input.receipt.model,
+  },
+ });
+ if (!resolution.ok) return resolution;
+ return {
+  ok: true,
+  runtime: {
+   ...resolution.runtime,
+   resolutionSource: input.receipt.resolutionSource,
+  },
+ };
 }
 
 export function getAiRuntimeReceipt(
@@ -465,6 +565,35 @@ export async function recordUserAiRuntimeActivity(input: {
    latencyMs: input.latencyMs ?? null,
    inputTokens: input.inputTokens ?? null,
    outputTokens: input.outputTokens ?? null,
+   resourceType: input.resourceType ?? null,
+   resourceId: input.resourceId ?? null,
+  });
+ } catch {
+  // Activity telemetry must never change the outcome of the AI task itself.
+ }
+}
+
+export async function recordUserAiRuntimeReceiptActivity(input: {
+ userId: string;
+ receipt: AiRuntimeReceipt;
+ status: CreateAiActivityEvent["status"];
+ errorCode?: string;
+ resourceType?: string;
+ resourceId?: string;
+}) {
+ try {
+  await recordUserAiActivityEvent(input.userId, {
+   taskId: input.receipt.taskId,
+   provider: input.receipt.provider,
+   model: input.receipt.model,
+   keyId: input.receipt.keyId,
+   keyLabel: input.receipt.keyLabel,
+   resolutionSource: input.receipt.resolutionSource,
+   status: input.status,
+   errorCode: input.errorCode ?? null,
+   latencyMs: null,
+   inputTokens: null,
+   outputTokens: null,
    resourceType: input.resourceType ?? null,
    resourceId: input.resourceId ?? null,
   });

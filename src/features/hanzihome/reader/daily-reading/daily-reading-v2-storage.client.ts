@@ -7,17 +7,20 @@ import {
  dailyReadingSettingsSchema,
  type DailyReadingSettings,
 } from "./daily-reading.schemas";
-import { migrateDailyReadingV1LedgerToV2 } from "./daily-reading-v2.migration";
+import {
+ migrateDailyReadingV1LedgerToV2,
+ migrateDailyReadingV2Ledger,
+} from "./daily-reading-v2.migration";
 import {
  dailyReadingV2CaptureRunSchema,
  dailyReadingV2EnrichmentRunSchema,
  dailyReadingV2LedgerSchema,
+ dailyReadingV2LegacyLedgerSchema,
  dailyReadingV2LegacySettingsSchema,
  dailyReadingV2Schema,
  dailyReadingV2SettingsSchema,
  type DailyReadingV2,
  type DailyReadingV2CaptureRun,
- type DailyReadingV2EnrichmentModule,
  type DailyReadingV2EnrichmentRun,
  type DailyReadingV2Ledger,
  type DailyReadingV2Settings,
@@ -51,7 +54,7 @@ export type DailyReadingV2EnrichmentStateUpdate =
  | { module: "questions"; state: DailyReadingV2["enrichment"]["questions"] };
 
 const emptyLedger = dailyReadingV2LedgerSchema.parse({
- schemaVersion: "2.0.0",
+ schemaVersion: "2.1.0",
  items: [],
  captureRuns: [],
  enrichmentRuns: [],
@@ -105,7 +108,10 @@ function preserveCorruptValue(raw: string) {
 }
 
 function decodeLedger(raw: string) {
- return decodeJson(raw, dailyReadingV2LedgerSchema);
+ const current = decodeJson(raw, dailyReadingV2LedgerSchema);
+ if (current !== null) return current;
+ const legacy = decodeJson(raw, dailyReadingV2LegacyLedgerSchema);
+ return legacy === null ? null : migrateDailyReadingV2Ledger(legacy);
 }
 
 function compactLedger(
@@ -116,7 +122,7 @@ function compactLedger(
  legacyRunLimit: number,
 ): DailyReadingV2Ledger {
  return dailyReadingV2LedgerSchema.parse({
-  schemaVersion: "2.0.0",
+  schemaVersion: "2.1.0",
   items: [...ledger.items]
    .sort((left, right) => right.capturedAt.localeCompare(left.capturedAt))
    .slice(0, itemLimit),
@@ -239,43 +245,6 @@ function applyEnrichmentState(
  }
 }
 
-function markRunningEnrichmentFailed(
- reading: DailyReadingV2,
- module: DailyReadingV2EnrichmentModule,
- updatedAt: string,
-) {
- switch (module) {
-  case "translation":
-   return reading.enrichment.translation.status === "running"
-    ? applyEnrichmentState(reading, {
-       module,
-       state: { status: "failed", errorCode: "cancelled", updatedAt },
-      })
-    : reading;
-  case "vocabulary":
-   return reading.enrichment.vocabulary.status === "running"
-    ? applyEnrichmentState(reading, {
-       module,
-       state: { status: "failed", errorCode: "cancelled", updatedAt },
-      })
-    : reading;
-  case "grammar":
-   return reading.enrichment.grammar.status === "running"
-    ? applyEnrichmentState(reading, {
-       module,
-       state: { status: "failed", errorCode: "cancelled", updatedAt },
-      })
-    : reading;
-  case "questions":
-   return reading.enrichment.questions.status === "running"
-    ? applyEnrichmentState(reading, {
-       module,
-       state: { status: "failed", errorCode: "cancelled", updatedAt },
-      })
-    : reading;
- }
-}
-
 export function getDailyReadingV2ServerSnapshot() {
  return serverSnapshot;
 }
@@ -380,10 +349,12 @@ export function saveDailyReadingV2EnrichmentRun(run: DailyReadingV2EnrichmentRun
  const ledger = readLedger();
  persistLedger({
   ...ledger,
-  enrichmentRuns: [parsed, ...ledger.enrichmentRuns.filter((item) => item.id !== parsed.id)].slice(
-   0,
-   800,
-  ),
+  enrichmentRuns: [
+   parsed,
+   ...ledger.enrichmentRuns.filter(
+    (item) => item.runId !== parsed.runId || item.module !== parsed.module,
+   ),
+  ].slice(0, 800),
  });
  return parsed;
 }
@@ -403,35 +374,6 @@ export function updateDailyReadingV2Enrichment(
   items: ledger.items.map((item) => (item.id === articleId ? updated : item)),
  });
  return updated;
-}
-
-export function markDailyReadingV2EnrichmentRunInterrupted(runId: string) {
- const ledger = readLedger();
- const targetRun = ledger.enrichmentRuns.find(
-  (run) => run.id === runId && run.status === "pending",
- );
- if (targetRun === undefined) return;
- const now = new Date().toISOString();
- const interrupted = dailyReadingV2EnrichmentRunSchema.parse({
-  ...targetRun,
-  status: "failed",
-  completedAt: now,
-  errorCode: "cancelled",
-  errorDetail: "Trình duyệt đã ngắt tác vụ hỗ trợ học tập đang chạy.",
- });
- const targetArticle = ledger.items.find((item) => item.id === targetRun.articleId);
- const updatedArticle =
-  targetArticle === undefined
-   ? null
-   : markRunningEnrichmentFailed(targetArticle, targetRun.module, now);
- persistLedger({
-  ...ledger,
-  enrichmentRuns: ledger.enrichmentRuns.map((run) => (run.id === runId ? interrupted : run)),
-  items:
-   updatedArticle === null
-    ? ledger.items
-    : ledger.items.map((item) => (item.id === updatedArticle.id ? updatedArticle : item)),
- });
 }
 
 export function markDailyReadingV2CaptureRunInterrupted(runId: string) {

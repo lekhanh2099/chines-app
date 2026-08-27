@@ -4,7 +4,6 @@ import type { DailyReadingV2, DailyReadingV2CaptureRun } from "./daily-reading-v
 import {
  getDailyReadingV2Snapshot,
  hasScheduledCapturedArticleForDate,
- markDailyReadingV2EnrichmentRunInterrupted,
  removeAllDailyReadingV2Articles,
  removeDailyReadingV2Article,
  saveDailyReadingV2Article,
@@ -117,13 +116,19 @@ describe("Daily Reading V2 storage", () => {
   saveDailyReadingV2Article(article);
   saveDailyReadingV2EnrichmentRun({
    id: "enrichment-delete-proof",
+   runId: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
    articleId: article.id,
+   articleFingerprint: article.article.fingerprint,
    module: "translation",
    status: "failed",
    attemptedAt: "2026-08-19T07:00:00.000Z",
    completedAt: "2026-08-19T07:00:01.000Z",
    errorCode: "provider-unavailable",
    errorDetail: "Groq temporarily unavailable.",
+   workflowRunId: "workflow-delete-proof",
+   progressCompleted: 1,
+   progressTotal: 1,
+   receipt: null,
   });
 
   expect(removeDailyReadingV2Article(article.id)).toBe(true);
@@ -196,38 +201,6 @@ describe("Daily Reading V2 storage", () => {
   });
   expect(saved?.enrichment.vocabulary.status).toBe("idle");
   expect(saved?.enrichment.questions.status).toBe("idle");
- });
-
- it("marks only an interrupted running module as failed and keeps the article readable", () => {
-  saveDailyReadingV2Article(article);
-  updateDailyReadingV2Enrichment(article.id, {
-   module: "vocabulary",
-   state: { status: "running", startedAt: "2026-08-19T07:00:00.000Z" },
-  });
-  saveDailyReadingV2EnrichmentRun({
-   id: "enrichment-1",
-   articleId: article.id,
-   module: "vocabulary",
-   status: "pending",
-   attemptedAt: "2026-08-19T07:00:00.000Z",
-   completedAt: "",
-   errorCode: "",
-   errorDetail: "",
-  });
-
-  markDailyReadingV2EnrichmentRunInterrupted("enrichment-1");
-
-  const snapshot = getDailyReadingV2Snapshot();
-  const saved = snapshot.items.find((item) => item.id === article.id);
-  expect(saved?.article.paragraphs).toEqual(article.article.paragraphs);
-  expect(saved?.enrichment.vocabulary).toMatchObject({
-   status: "failed",
-   errorCode: "cancelled",
-  });
-  expect(snapshot.enrichmentRuns.find((item) => item.id === "enrichment-1")).toMatchObject({
-   status: "failed",
-   errorCode: "cancelled",
-  });
  });
 
  it("blocks fresh/succeeded capture attempts but allows immediate interrupted recovery", () => {

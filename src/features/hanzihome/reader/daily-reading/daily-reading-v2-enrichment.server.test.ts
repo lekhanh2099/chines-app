@@ -86,17 +86,22 @@ describe("Daily Reading V2 enrichment generation", () => {
  });
 
  it("translates the immutable paragraphs by exact paragraph id and never asks for pinyin", async () => {
-  mocks.requestProvider.mockResolvedValue(
-   providerJson({
-    titleVi: "Bảo tàng thành phố mở triển lãm văn hóa truyền thống",
-    whyWorthReadingVi: "Bài đọc cho thấy bảo tàng đang kết nối người trẻ với văn hóa công cộng.",
-    paragraphs: [
-     { paragraphId: "source-p1", vi: "Đoạn một.", roleVi: "Mở bài" },
-     { paragraphId: "source-p2", vi: "Đoạn hai.", roleVi: "Triển khai" },
-     { paragraphId: "source-p3", vi: "Đoạn ba.", roleVi: "Kết" },
-    ],
-   }),
-  );
+  mocks.requestProvider
+   .mockResolvedValueOnce(
+    providerJson({
+     titleVi: "Bảo tàng thành phố mở triển lãm văn hóa truyền thống",
+     whyWorthReadingVi: "Bài đọc cho thấy bảo tàng đang kết nối người trẻ với văn hóa công cộng.",
+    }),
+   )
+   .mockResolvedValueOnce(
+    providerJson({
+     paragraphs: [
+      { paragraphId: "source-p1", vi: "Đoạn một.", roleVi: "Mở bài" },
+      { paragraphId: "source-p2", vi: "Đoạn hai.", roleVi: "Triển khai" },
+      { paragraphId: "source-p3", vi: "Đoạn ba.", roleVi: "Kết" },
+     ],
+    }),
+   );
 
   const result = await generateDailyReadingV2Enrichment({
    reading,
@@ -113,7 +118,7 @@ describe("Daily Reading V2 enrichment generation", () => {
    "source-p3",
   ]);
   expect(result.data).not.toHaveProperty("pinyin");
-  const prompt = mocks.requestProvider.mock.calls[0]?.[0]?.prompt ?? "";
+  const prompt = mocks.requestProvider.mock.calls[1]?.[0]?.prompt ?? "";
   expect(prompt).toContain("[source-p1]");
   expect(prompt).toContain("[source-p2]");
   expect(prompt).toContain("[source-p3]");
@@ -135,16 +140,21 @@ describe("Daily Reading V2 enrichment generation", () => {
    },
   };
   mocks.requestProvider.mockImplementation((input: { prompt: string }) => {
-   const paragraphId = input.prompt.includes("[long-p1]")
-    ? "long-p1"
-    : input.prompt.includes("[long-p2]")
-      ? "long-p2"
-      : "long-p3";
+   const paragraphIds = [...input.prompt.matchAll(/^\[([^\]]+)\]/gmu)]
+    .map((match) => match[1])
+    .filter((value): value is string => value !== undefined);
+   if (paragraphIds.length === 0) {
+    return Promise.resolve(
+     providerJson({ titleVi: "Bài dài", whyWorthReadingVi: "Kiểm tra coverage đầy đủ." }),
+    );
+   }
    return Promise.resolve(
     providerJson({
-     titleVi: "Bài dài",
-     whyWorthReadingVi: "Kiểm tra coverage đầy đủ.",
-     paragraphs: [{ paragraphId, vi: `Dịch ${paragraphId}`, roleVi: "Nội dung" }],
+     paragraphs: paragraphIds.map((paragraphId) => ({
+      paragraphId,
+      vi: `Dịch ${paragraphId}`,
+      roleVi: "Nội dung",
+     })),
     }),
    );
   });
@@ -163,11 +173,11 @@ describe("Daily Reading V2 enrichment generation", () => {
    "long-p2",
    "long-p3",
   ]);
-  expect(mocks.requestProvider).toHaveBeenCalledTimes(3);
+  expect(mocks.requestProvider.mock.calls.length).toBeGreaterThan(3);
   const prompts = mocks.requestProvider.mock.calls.map((call) => call[0]?.prompt ?? "").join("\n");
-  expect(prompts).toContain("[long-p1]");
-  expect(prompts).toContain("[long-p2]");
-  expect(prompts).toContain("[long-p3]");
+  expect(prompts).toContain("[long-p1::segment-1]");
+  expect(prompts).toContain("[long-p2::segment-1]");
+  expect(prompts).toContain("[long-p3::segment-1]");
  });
 
  it("repairs vocabulary once when the provider invents a word outside the article", async () => {

@@ -1,6 +1,6 @@
-import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
 import { privateNoStoreJson, requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
-import { getUserAiRuntimeReadiness } from "@/services/ai-runtime.service";
+import { aiRuntimeWithTaskRuntimesResponseSchema } from "@/lib/ai-task-contract";
+import { getUserAiRuntimeOverview } from "@/services/ai-runtime.service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,8 +13,13 @@ export async function GET() {
  }
 
  try {
-  const readiness = await getUserAiRuntimeReadiness(auth.context.supabase, auth.context.user.id);
-  return privateNoStoreJson(aiRuntimeReadinessResponseSchema.parse(readiness));
+  const overview = await getUserAiRuntimeOverview(auth.context.supabase, auth.context.user.id);
+  return privateNoStoreJson(
+   aiRuntimeWithTaskRuntimesResponseSchema.parse({
+    ...overview.readiness,
+    taskRuntimes: overview.taskRuntimes,
+   }),
+  );
  } catch {
   return privateNoStoreJson(
    {

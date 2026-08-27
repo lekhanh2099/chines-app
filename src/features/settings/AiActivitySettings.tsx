@@ -27,11 +27,13 @@ import {
 } from "@/lib/ai-task-contract";
 
 import { aiActivityResponseSchema } from "./ai-task-settings.schema";
+import { getAiTaskCopyKey } from "./AiTaskSettingsSection";
 
 const ALL_FILTER = "all";
 
 export function AiActivitySettings() {
  const t = useTranslations("AiSettings.activity");
+ const taskT = useTranslations("AiSettings.taskRouting.tasks");
  const locale = useLocale();
  const [taskId, setTaskId] = useState(ALL_FILTER);
  const [provider, setProvider] = useState(ALL_FILTER);
@@ -109,7 +111,7 @@ export function AiActivitySettings() {
       <SelectItem value={ALL_FILTER}>{t("allTasks")}</SelectItem>
       {AI_TASK_REGISTRY.map((task) => (
        <SelectItem key={task.id} value={task.id}>
-        {task.id}
+        {taskT(`${getAiTaskCopyKey(task.id)}.title`)}
        </SelectItem>
       ))}
      </SelectContent>
@@ -178,7 +180,7 @@ export function AiActivitySettings() {
      >
       <div className="min-w-0">
        <Typography variant="bodySmall" weight="semibold">
-        {event.taskId}
+        {taskT(`${getAiTaskCopyKey(event.taskId)}.title`)}
        </Typography>
        <Typography variant="caption" tone="muted" wrapping="breakWords">
         {[event.provider, event.model, event.keyLabel].filter(Boolean).join(" · ") ||

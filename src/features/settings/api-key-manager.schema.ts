@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { API_KEY_PROVIDER_OPTIONS } from "@/lib/api-key-providers";
+import { aiTaskIdSchema } from "@/lib/ai-task-contract";
 
 const apiKeyProviderSchema = z.enum(API_KEY_PROVIDER_OPTIONS.map((option) => option.value));
 
@@ -16,7 +17,7 @@ export const managedApiKeySchema = z.object({
  lastValidatedAt: z.string().nullable(),
  createdAt: z.string(),
  updatedAt: z.string(),
- assignedTaskIds: z.array(z.string()).default([]),
+ assignedTaskIds: z.array(aiTaskIdSchema).default([]),
 });
 
 const apiKeysSummarySchema = z.object({

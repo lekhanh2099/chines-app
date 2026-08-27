@@ -1,13 +1,13 @@
 import type { JsonFieldValue } from "@/types/json";
 
 import {
- aiRuntimeReadinessResponseSchema,
- type AiRuntimeReadinessResponse,
-} from "@/lib/ai-runtime-contract";
+ aiRuntimeWithTaskRuntimesResponseSchema,
+ type AiRuntimeWithTaskRuntimesResponse,
+} from "@/lib/ai-task-contract";
 
 export const aiRuntimeQueryKey = ["ai-runtime", "readiness"];
 
-export async function fetchAiRuntimeReadiness(): Promise<AiRuntimeReadinessResponse> {
+export async function fetchAiRuntimeReadiness(): Promise<AiRuntimeWithTaskRuntimesResponse> {
  const response = await fetch("/api/ai/runtime", {
   method: "GET",
   credentials: "include",
@@ -23,7 +23,7 @@ export async function fetchAiRuntimeReadiness(): Promise<AiRuntimeReadinessRespo
   throw new Error(message);
  }
 
- const parsed = aiRuntimeReadinessResponseSchema.safeParse(payload);
+ const parsed = aiRuntimeWithTaskRuntimesResponseSchema.safeParse(payload);
  if (!parsed.success) throw new Error("Phản hồi AI runtime không đúng định dạng.");
  return parsed.data;
 }

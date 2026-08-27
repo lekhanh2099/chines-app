@@ -5,12 +5,11 @@
   "dailyReading": "Daily Reading",
   "providers": "API Keys",
   "usage": "Activity",
-  "advanced": "Advanced",
   "aria": "AI settings sections"
  },
  "taskRouting": {
   "title": "AI task assignments",
-  "description": "Use Auto, assign an exact key and model, or disable each task. Assigned tasks never switch provider after an error.",
+  "description": "Choose the actual AI source for each task. A selected key never switches provider after an error.",
   "loading": "Loading AI tasks...",
   "loadError": "Unable to load or save AI tasks.",
   "saveError": "Unable to save this task assignment.",
@@ -19,10 +18,34 @@
   "expectedOutput": "Expected output",
   "storage": "Storage",
   "mode": "Mode",
+  "source": "AI source",
   "key": "API key",
   "model": "Model",
   "autoStatus": "First compatible active key by priority",
   "disabledStatus": "AI calls disabled",
+  "customizeLookup": "Customize lookup results",
+  "lookupPromptScope": "Only affects Deep analysis. Choose its provider and model in the assignment above.",
+  "technicalPrompt": "Technical prompt",
+  "keyPaused": "paused",
+  "keyUnreadable": "re-add required",
+  "keyUnreadableHelp": "The server cannot decrypt this key. Re-add it under API Keys, then assign it again.",
+  "sources": {
+   "auto": "Automatic",
+   "autoWithRuntime": "Automatic — {provider} · {key} · {model}",
+   "disabled": "Turn off task"
+  },
+  "runtimeReasons": {
+   "ok": "Ready",
+   "no-active-key": "No active API key",
+   "schema-unavailable": "API key storage is not ready",
+   "vault-unavailable": "Encrypted key storage is not ready",
+   "credential-unreadable": "Stored key cannot be decrypted; re-add it",
+   "selected-key-unavailable": "Selected key is unavailable",
+   "capability-unavailable": "No compatible key for this task",
+   "task-disabled": "Task is turned off",
+   "assigned-key-unavailable": "Assigned key is no longer active",
+   "assigned-model-unavailable": "Assigned model is unavailable"
+  },
   "groups": { "main": "Main tasks", "advanced": "Advanced" },
   "modes": { "auto": "Auto", "assigned": "Assigned", "disabled": "Disabled" },
   "tasks": {

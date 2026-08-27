@@ -1,7 +1,13 @@
 import { z } from "zod";
 
 import { ApiKeyProviderSchema } from "@/lib/api-key-providers";
-import { aiRuntimeCapabilitySchema } from "@/lib/ai-runtime-contract";
+import {
+ aiRuntimeCapabilitySchema,
+ aiRuntimeMissingKeyResponseSchema,
+ aiRuntimeReadinessReasonSchema,
+ aiRuntimeReadyResponseSchema,
+ aiRuntimeStorageUnavailableResponseSchema,
+} from "@/lib/ai-runtime-contract";
 
 export const aiTaskIdSchema = z.enum([
  "conversation.reply",
@@ -96,6 +102,33 @@ export const aiRuntimeReceiptSchema = z.strictObject({
  resolutionSource: aiTaskResolutionSourceSchema,
 });
 
+const readyAiTaskRuntimePreviewSchema = z.strictObject({
+ taskId: aiTaskIdSchema,
+ status: z.literal("ready"),
+ reason: z.literal("ok"),
+ receipt: aiRuntimeReceiptSchema,
+});
+
+const unavailableAiTaskRuntimePreviewSchema = z.strictObject({
+ taskId: aiTaskIdSchema,
+ status: z.enum(["missing-key", "storage-unavailable", "task-disabled"]),
+ reason: aiRuntimeReadinessReasonSchema,
+ receipt: z.null(),
+});
+
+export const aiTaskRuntimePreviewSchema = z.union([
+ readyAiTaskRuntimePreviewSchema,
+ unavailableAiTaskRuntimePreviewSchema,
+]);
+
+const taskRuntimesSchema = z.array(aiTaskRuntimePreviewSchema);
+
+export const aiRuntimeWithTaskRuntimesResponseSchema = z.discriminatedUnion("status", [
+ aiRuntimeReadyResponseSchema.extend({ taskRuntimes: taskRuntimesSchema }),
+ aiRuntimeMissingKeyResponseSchema.extend({ taskRuntimes: taskRuntimesSchema }),
+ aiRuntimeStorageUnavailableResponseSchema.extend({ taskRuntimes: taskRuntimesSchema }),
+]);
+
 export const aiActivityStatusSchema = z.enum(["success", "failure", "cancelled", "blocked"]);
 
 export const aiActivityEventSchema = z.strictObject({
@@ -134,5 +167,9 @@ export type AiTaskDefinition = z.output<typeof aiTaskDefinitionSchema>;
 export type AiTaskAssignment = z.output<typeof aiTaskAssignmentSchema>;
 export type AiTaskSessionOverride = z.output<typeof aiTaskSessionOverrideSchema>;
 export type AiRuntimeReceipt = z.output<typeof aiRuntimeReceiptSchema>;
+export type AiTaskRuntimePreview = z.output<typeof aiTaskRuntimePreviewSchema>;
+export type AiRuntimeWithTaskRuntimesResponse = z.output<
+ typeof aiRuntimeWithTaskRuntimesResponseSchema
+>;
 export type AiActivityEvent = z.output<typeof aiActivityEventSchema>;
 export type AiActivityCursor = z.output<typeof aiActivityCursorSchema>;

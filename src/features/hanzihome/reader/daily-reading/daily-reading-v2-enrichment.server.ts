@@ -21,14 +21,18 @@ import {
  type DailyReadingV2ProviderModule,
 } from "./daily-reading-v2-enrichment-provider.server";
 
-const translationChunkMaximumCharacters = 6_000;
-const translationChunkMaximumParagraphs = 20;
+const translationChunkMaximumCharacters = 1_500;
+const translationChunkMaximumParagraphs = 3;
+const translationSegmentMaximumCharacters = 1_200;
 const maximumPromptCharacters = 48_000;
 const maximumRepairAttempts = 2;
 
-const translationDraftSchema = z.strictObject({
+const translationMetadataDraftSchema = z.strictObject({
  titleVi: z.string().trim().min(1).max(320),
  whyWorthReadingVi: z.string().max(2_000),
+});
+
+const translationDraftSchema = z.strictObject({
  paragraphs: z
   .array(
    z.strictObject({
@@ -87,6 +91,12 @@ const questionsDraftSchema = z.strictObject({
 });
 
 type TranslationDraft = z.output<typeof translationDraftSchema>;
+type TranslationParagraph = TranslationDraft["paragraphs"][number];
+type TranslationUnit = {
+ paragraphId: string;
+ sourceParagraphId: string;
+ zh: string;
+};
 type VocabularyDraft = z.output<typeof vocabularyDraftSchema>;
 type GrammarDraft = z.output<typeof grammarDraftSchema>;
 type QuestionsDraft = z.output<typeof questionsDraftSchema>;
@@ -140,9 +150,11 @@ async function requestStructured<T, Validated>(input: {
  schema: z.ZodType<T>;
  signal?: AbortSignal;
  validate(data: T): Validated;
+ maximumAttempts?: number;
 }): Promise<StructuredResult<Validated>> {
  let currentPrompt = boundedPrompt(input.prompt);
- for (let attempt = 0; attempt < maximumRepairAttempts; attempt += 1) {
+ const maximumAttempts = input.maximumAttempts ?? maximumRepairAttempts;
+ for (let attempt = 0; attempt < maximumAttempts; attempt += 1) {
   const response = await requestDailyReadingV2EnrichmentProvider({
    runtime: input.runtime,
    prompt: currentPrompt,
@@ -165,7 +177,7 @@ async function requestStructured<T, Validated>(input: {
    }
    return { ok: true, data: input.validate(parsed.data) };
   } catch (error) {
-   if (attempt === maximumRepairAttempts - 1) {
+   if (attempt === maximumAttempts - 1) {
     return {
      ok: false,
      errorCode: "invalid-response",
@@ -187,74 +199,210 @@ async function requestStructured<T, Validated>(input: {
  };
 }
 
-function translationChunks(reading: DailyReadingV2EnrichmentArticle) {
- const groups: DailyReadingV2EnrichmentArticle["article"]["paragraphs"][number][][] = [];
- let current: DailyReadingV2EnrichmentArticle["article"]["paragraphs"][number][] = [];
+function splitTextAtSentenceBoundaries(text: string, maximumCharacters: number) {
+ const sentences = text.match(/[^。！？!?]+[。！？!?]?/gu)?.filter(Boolean) ?? [text];
+ const segments: string[] = [];
+ let current = "";
+ for (const sentence of sentences) {
+  if (sentence.length > maximumCharacters) {
+   if (current) {
+    segments.push(current);
+    current = "";
+   }
+   for (let offset = 0; offset < sentence.length; offset += maximumCharacters) {
+    segments.push(sentence.slice(offset, offset + maximumCharacters));
+   }
+   continue;
+  }
+  if (current && current.length + sentence.length > maximumCharacters) {
+   segments.push(current);
+   current = sentence;
+  } else {
+   current += sentence;
+  }
+ }
+ if (current) segments.push(current);
+ return segments;
+}
+
+function translationUnits(reading: DailyReadingV2EnrichmentArticle): TranslationUnit[] {
+ return reading.article.paragraphs.flatMap((paragraph) => {
+  if (paragraph.zh.length <= translationSegmentMaximumCharacters) {
+   return [{ paragraphId: paragraph.id, sourceParagraphId: paragraph.id, zh: paragraph.zh }];
+  }
+  return splitTextAtSentenceBoundaries(paragraph.zh, translationSegmentMaximumCharacters).map(
+   (segment, index) => ({
+    paragraphId: `${paragraph.id}::segment-${index + 1}`,
+    sourceParagraphId: paragraph.id,
+    zh: segment,
+   }),
+  );
+ });
+}
+
+function translationChunks(units: readonly TranslationUnit[]) {
+ const groups: TranslationUnit[][] = [];
+ let current: TranslationUnit[] = [];
  let currentCharacters = 0;
 
- for (const paragraph of reading.article.paragraphs) {
+ for (const unit of units) {
   if (
    current.length > 0 &&
    (current.length >= translationChunkMaximumParagraphs ||
-    currentCharacters + paragraph.zh.length > translationChunkMaximumCharacters)
+    currentCharacters + unit.zh.length > translationChunkMaximumCharacters)
   ) {
    groups.push(current);
    current = [];
    currentCharacters = 0;
   }
-  current.push(paragraph);
-  currentCharacters += paragraph.zh.length;
+  current.push(unit);
+  currentCharacters += unit.zh.length;
  }
  if (current.length > 0) groups.push(current);
  return groups;
 }
 
 function validateTranslationChunk(
- expectedParagraphs: DailyReadingV2EnrichmentArticle["article"]["paragraphs"],
+ expectedParagraphs: readonly TranslationUnit[],
  draft: TranslationDraft,
 ) {
  if (draft.paragraphs.length !== expectedParagraphs.length) {
   throw new Error("Bản dịch không giữ đủ số đoạn nguồn.");
  }
  for (let index = 0; index < expectedParagraphs.length; index += 1) {
-  if (draft.paragraphs[index]?.paragraphId !== expectedParagraphs[index]?.id) {
+  if (draft.paragraphs[index]?.paragraphId !== expectedParagraphs[index]?.paragraphId) {
    throw new Error("Bản dịch đổi hoặc làm lệch paragraphId nguồn.");
   }
  }
  return draft;
 }
 
+function translationPrompt(input: {
+ reading: DailyReadingV2EnrichmentArticle;
+ units: readonly TranslationUnit[];
+ chunkLabel: string;
+}) {
+ return [
+  `Translate the following ORIGINAL Chinese article paragraphs into natural Vietnamese for a ${targetLevelLabel(input.reading)} learner.`,
+  "Do not simplify, rewrite, summarize, merge, split, or omit Chinese source content.",
+  "Do not generate pinyin.",
+  "Return JSON with paragraphs[{paragraphId,vi,roleVi}] only.",
+  "paragraphId values and order must exactly match the supplied chunk.",
+  `Article title: ${input.reading.article.titleZh}`,
+  `Publisher: ${input.reading.source.publisher}`,
+  `Chunk: ${input.chunkLabel}`,
+  "SOURCE PARAGRAPHS:",
+  ...input.units.map((unit) => `[${unit.paragraphId}] ${unit.zh}`),
+ ].join("\n");
+}
+
+async function translateUnitsAdaptively(input: {
+ reading: DailyReadingV2EnrichmentArticle;
+ runtime: ResolvedUserAiRuntime;
+ units: readonly TranslationUnit[];
+ chunkLabel: string;
+ signal?: AbortSignal;
+}): Promise<StructuredResult<TranslationParagraph[]>> {
+ const result = await requestStructured({
+  runtime: input.runtime,
+  module: "translation",
+  prompt: translationPrompt(input),
+  schema: translationDraftSchema,
+  signal: input.signal,
+  maximumAttempts: 1,
+  validate: (draft) => validateTranslationChunk(input.units, draft).paragraphs,
+ });
+ if (result.ok || result.errorCode !== "invalid-response") return result;
+
+ if (input.units.length > 1) {
+  const midpoint = Math.ceil(input.units.length / 2);
+  const left = await translateUnitsAdaptively({
+   ...input,
+   units: input.units.slice(0, midpoint),
+   chunkLabel: `${input.chunkLabel}.1`,
+  });
+  if (!left.ok) return left;
+  const right = await translateUnitsAdaptively({
+   ...input,
+   units: input.units.slice(midpoint),
+   chunkLabel: `${input.chunkLabel}.2`,
+  });
+  return right.ok ? { ok: true, data: [...left.data, ...right.data] } : right;
+ }
+
+ const unit = input.units[0];
+ if (!unit) return result;
+ const segments = splitTextAtSentenceBoundaries(
+  unit.zh,
+  Math.max(300, Math.floor(unit.zh.length / 2)),
+ );
+ if (segments.length < 2) return result;
+ const segmentUnits = segments.map((segment, index) => ({
+  paragraphId: `${unit.paragraphId}::repair-${index + 1}`,
+  sourceParagraphId: unit.sourceParagraphId,
+  zh: segment,
+ }));
+ const repaired = await translateUnitsAdaptively({
+  ...input,
+  units: segmentUnits,
+  chunkLabel: `${input.chunkLabel}.repair`,
+ });
+ if (!repaired.ok) return repaired;
+ return {
+  ok: true,
+  data: [
+   {
+    paragraphId: unit.paragraphId,
+    vi: repaired.data.map((paragraph) => paragraph.vi).join(" "),
+    roleVi: repaired.data.map((paragraph) => paragraph.roleVi).find(Boolean) ?? "",
+   },
+  ],
+ };
+}
+
 async function generateTranslation(
  reading: DailyReadingV2EnrichmentArticle,
  runtime: ResolvedUserAiRuntime,
  signal?: AbortSignal,
+ onProgress?: (completed: number, total: number) => Promise<void>,
 ): Promise<DailyReadingV2EnrichmentResponse> {
  const translatedParagraphs: TranslationDraft["paragraphs"] = [];
- let titleVi = "";
- let whyWorthReadingVi = "";
- const groups = translationChunks(reading);
+ const units = translationUnits(reading);
+ const groups = translationChunks(units);
+ const progressTotal = units.length + 1;
+ const metadata = await requestStructured({
+  runtime,
+  module: "translation",
+  prompt: [
+   `Translate this Chinese article title into natural Vietnamese for a ${targetLevelLabel(reading)} learner and explain briefly why it is worth reading.`,
+   "Return JSON with titleVi and whyWorthReadingVi only.",
+   `Article title: ${reading.article.titleZh}`,
+   `Publisher: ${reading.source.publisher}`,
+  ].join("\n"),
+  schema: translationMetadataDraftSchema,
+  signal,
+  validate: (draft) => draft,
+ });
+ if (!metadata.ok) {
+  return {
+   ok: false,
+   status: "failed",
+   module: "translation",
+   errorCode: metadata.errorCode,
+   errorDetail: metadata.errorDetail,
+  };
+ }
+ await onProgress?.(1, progressTotal);
+ let completedUnits = 0;
 
  for (let index = 0; index < groups.length; index += 1) {
   const group = groups[index] ?? [];
-  const prompt = [
-   `Translate the following ORIGINAL Chinese article paragraphs into natural Vietnamese for a ${targetLevelLabel(reading)} learner.`,
-   "Do not simplify, rewrite, summarize, merge, split, or omit Chinese source content.",
-   "Do not generate pinyin.",
-   "Return JSON with titleVi, whyWorthReadingVi, paragraphs[{paragraphId,vi,roleVi}].",
-   "paragraphId values and order must exactly match the supplied chunk.",
-   `Article title: ${reading.article.titleZh}`,
-   `Publisher: ${reading.source.publisher}`,
-   `Chunk: ${index + 1}/${groups.length}`,
-   "SOURCE PARAGRAPHS:",
-   ...group.map((paragraph) => `[${paragraph.id}] ${paragraph.zh}`),
-  ].join("\n");
-  const result = await requestStructured({
+  const result = await translateUnitsAdaptively({
+   reading,
    runtime,
-   module: "translation",
-   prompt,
-   schema: translationDraftSchema,
+   units: group,
+   chunkLabel: `${index + 1}/${groups.length}`,
    signal,
-   validate: (draft) => validateTranslationChunk(group, draft),
   });
   if (!result.ok) {
    return {
@@ -265,17 +413,41 @@ async function generateTranslation(
     errorDetail: result.errorDetail,
    };
   }
-  if (!titleVi) titleVi = result.data.titleVi;
-  if (!whyWorthReadingVi) whyWorthReadingVi = result.data.whyWorthReadingVi;
-  translatedParagraphs.push(...result.data.paragraphs);
+  translatedParagraphs.push(...result.data);
+  completedUnits += group.length;
+  await onProgress?.(completedUnits + 1, progressTotal);
  }
 
+ const rebuiltParagraphs = reading.article.paragraphs.map((sourceParagraph) => {
+  const matchingUnits = units.filter((unit) => unit.sourceParagraphId === sourceParagraph.id);
+  const matchingTranslations = matchingUnits.map((unit) => {
+   const translated = translatedParagraphs.find(
+    (paragraph) => paragraph.paragraphId === unit.paragraphId,
+   );
+   if (!translated) throw new Error(`Bản dịch thiếu segment của ${sourceParagraph.id}.`);
+   return translated;
+  });
+  return {
+   paragraphId: sourceParagraph.id,
+   vi: matchingTranslations.map((paragraph) => paragraph.vi).join(" "),
+   roleVi: matchingTranslations.map((paragraph) => paragraph.roleVi).find(Boolean) ?? "",
+  };
+ });
+ validateTranslationChunk(
+  reading.article.paragraphs.map((paragraph) => ({
+   paragraphId: paragraph.id,
+   sourceParagraphId: paragraph.id,
+   zh: paragraph.zh,
+  })),
+  { paragraphs: rebuiltParagraphs },
+ );
+
  const data = dailyReadingV2TranslationDataSchema.parse({
-  titleVi,
-  whyWorthReadingVi,
+  titleVi: metadata.data.titleVi,
+  whyWorthReadingVi: metadata.data.whyWorthReadingVi,
   adaptationNoticeVi:
    "Bản dịch hỗ trợ học tập được tạo từ nguyên văn đã lưu; phần tiếng Trung nguồn không bị AI chỉnh sửa.",
-  paragraphs: translatedParagraphs,
+  paragraphs: rebuiltParagraphs,
  });
  return {
   ok: true,
@@ -484,9 +656,10 @@ export function generateDailyReadingV2Enrichment(input: {
  module: DailyReadingV2EnrichmentModule;
  targetCount?: number | null;
  signal?: AbortSignal;
+ onProgress?: (completed: number, total: number) => Promise<void>;
 }) {
  if (input.module === "translation") {
-  return generateTranslation(input.reading, input.runtime, input.signal);
+  return generateTranslation(input.reading, input.runtime, input.signal, input.onProgress);
  }
  const targetCount =
   input.targetCount ?? (input.module === "vocabulary" ? 12 : input.module === "grammar" ? 4 : 6);

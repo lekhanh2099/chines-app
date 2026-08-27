@@ -188,6 +188,10 @@
   "description": "Bài tiếng Trung phía trên luôn là bản nguồn đã lưu. Các phần dưới đây chỉ bổ sung nghĩa và bài tập, không sửa bài nguồn.",
   "summary": "{ready}/{total} phần đã sẵn sàng",
   "runtimeReady": "Đang dùng {provider} · {model}",
+  "runtimePlanned": "Sẽ dùng {provider} · {key} · {model}",
+  "runtimeRunning": "Đang dùng {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeFailed": "Đã thử {provider} · {key} · {model} — {code}",
+  "runtimeUnavailable": "Chưa có nguồn AI dùng được — {reason}",
   "runtimeMissing": "Chưa có API key AI. Bạn vẫn có thể đọc toàn bộ bài nguồn.",
   "runtimeStorageUnavailable": "Kho API key phía server chưa sẵn sàng; bài nguồn vẫn đọc được bình thường.",
   "runtimeCheckFailed": "Chưa kiểm tra được trạng thái AI lúc này. Bài nguồn vẫn đọc được; hãy thử kiểm tra lại.",
@@ -229,6 +233,7 @@
    "addKeyAndCreate": "Thêm key và tạo hỗ trợ",
    "addReplacementKey": "Thêm key thay thế",
    "manageKeys": "Quản lý API key",
+   "configureTask": "Cấu hình tác vụ",
    "checkingRuntime": "Đang kiểm tra AI",
    "checkRuntimeAgain": "Kiểm tra AI lại"
   },
@@ -236,6 +241,7 @@
    "moduleReady": "Đã tạo xong: {module}",
    "moduleReadyFallback": "Đã tạo xong phần hỗ trợ học.",
    "allReady": "Đã tạo đủ các phần hỗ trợ học.",
+   "queued": "Job AI đã được đưa vào hàng đợi. Bạn có thể rời trang; kết quả sẽ được nhập khi hoàn tất.",
    "failed": "Không thể tạo phần hỗ trợ học."
   }
  }

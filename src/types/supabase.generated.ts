@@ -2633,6 +2633,92 @@ export type Database = {
         }
         Relationships: []
       }
+      user_daily_reading_enrichment_jobs: {
+        Row: {
+          api_key_id: string | null
+          article_fingerprint: string
+          article_id: string
+          completed_at: string | null
+          created_at: string
+          error_code: string | null
+          expires_at: string
+          heartbeat_at: string
+          id: string
+          key_label: string | null
+          model: string | null
+          module: string
+          progress_completed: number
+          progress_total: number
+          provider: string | null
+          resolution_source: string | null
+          result: Json | null
+          run_id: string
+          started_at: string | null
+          status: string
+          task_id: string
+          user_id: string
+          workflow_run_id: string | null
+        }
+        Insert: {
+          api_key_id?: string | null
+          article_fingerprint: string
+          article_id: string
+          completed_at?: string | null
+          created_at?: string
+          error_code?: string | null
+          expires_at?: string
+          heartbeat_at?: string
+          id?: string
+          key_label?: string | null
+          model?: string | null
+          module: string
+          progress_completed?: number
+          progress_total?: number
+          provider?: string | null
+          resolution_source?: string | null
+          result?: Json | null
+          run_id: string
+          started_at?: string | null
+          status?: string
+          task_id: string
+          user_id: string
+          workflow_run_id?: string | null
+        }
+        Update: {
+          api_key_id?: string | null
+          article_fingerprint?: string
+          article_id?: string
+          completed_at?: string | null
+          created_at?: string
+          error_code?: string | null
+          expires_at?: string
+          heartbeat_at?: string
+          id?: string
+          key_label?: string | null
+          model?: string | null
+          module?: string
+          progress_completed?: number
+          progress_total?: number
+          provider?: string | null
+          resolution_source?: string | null
+          result?: Json | null
+          run_id?: string
+          started_at?: string | null
+          status?: string
+          task_id?: string
+          user_id?: string
+          workflow_run_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_daily_reading_enrichment_jobs_user_api_key_fkey"
+            columns: ["user_id", "api_key_id"]
+            isOneToOne: false
+            referencedRelation: "user_api_keys"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
       user_learning_state: {
         Row: {
           bookmarks: Json

@@ -19,7 +19,12 @@ import {
  listUserAiTaskAssignments,
  upsertUserAiTaskAssignment,
 } from "@/services/ai-task-routing.service";
-import { getAiRuntimeCapabilitiesForProvider } from "@/services/ai-runtime.service";
+import {
+ getAiRuntimeCapabilitiesForProvider,
+ getAiTaskRuntimePreviewsFromInventory,
+ getUserAiTaskRuntimePreview,
+ loadUserAiRuntimeInventory,
+} from "@/services/ai-runtime.service";
 import { listUserApiKeys } from "@/services/user-api-keys.service";
 
 const updateTaskSchema = aiTaskAssignmentSchema;
@@ -29,21 +34,28 @@ export async function GET() {
  if (!auth.authenticated) return auth.response;
 
  try {
-  const [assignments, keys] = await Promise.all([
+  const [assignments, keys, inventory] = await Promise.all([
    listUserAiTaskAssignments(auth.context.user.id),
    listUserApiKeys(auth.context.supabase, auth.context.user.id),
+   loadUserAiRuntimeInventory(auth.context.supabase, auth.context.user.id),
   ]);
+  const runtimePreviews = getAiTaskRuntimePreviewsFromInventory(inventory, assignments);
 
   return privateNoStoreJson({
-   tasks: AI_TASK_REGISTRY.map((task) => ({
-    ...task,
-    assignment: assignments.find((assignment) => assignment.taskId === task.id) ?? {
-     taskId: task.id,
-     mode: "auto",
-     keyId: null,
-     model: null,
-    },
-   })),
+   tasks: AI_TASK_REGISTRY.map((task) => {
+    const runtimePreview = runtimePreviews.find((preview) => preview.taskId === task.id);
+    if (!runtimePreview) throw new Error(`Missing AI task runtime preview for ${task.id}`);
+    return {
+     ...task,
+     assignment: assignments.find((assignment) => assignment.taskId === task.id) ?? {
+      taskId: task.id,
+      mode: "auto",
+      keyId: null,
+      model: null,
+     },
+     runtimePreview,
+    };
+   }),
    keys: keys.map((key) => {
     const supportedModels = getApiKeyModelOptions(key.provider).map((model) => ({
      value: model.value,
@@ -60,6 +72,11 @@ export async function GET() {
      label: key.label,
      maskedKey: key.maskedKey,
      isActive: key.isActive,
+     availability: !key.isActive
+      ? "paused"
+      : inventory.credentials.some((credential) => credential.id === key.id)
+        ? "ready"
+        : "credential-unreadable",
      defaultModel: key.defaultModel,
      capabilities: [...getAiRuntimeCapabilitiesForProvider(key.provider)],
      models,
@@ -94,6 +111,14 @@ export async function PUT(request: Request) {
   );
   if (!key) return apiError("API key does not belong to this account", 404, "AI_KEY_NOT_FOUND");
   if (!key.isActive) return apiError("Assigned API key is paused", 409, "AI_KEY_PAUSED");
+  const inventory = await loadUserAiRuntimeInventory(auth.context.supabase, auth.context.user.id);
+  if (!inventory.credentials.some((credential) => credential.id === key.id)) {
+   return apiError(
+    "Assigned API key credential cannot be read",
+    409,
+    "AI_KEY_CREDENTIAL_UNREADABLE",
+   );
+  }
   if (!getAiRuntimeCapabilitiesForProvider(key.provider).includes(task.capability)) {
    return apiError("API key provider cannot run this task", 400, "AI_TASK_CAPABILITY_UNAVAILABLE");
   }
@@ -107,7 +132,12 @@ export async function PUT(request: Request) {
 
  try {
   const assignment = await upsertUserAiTaskAssignment(auth.context.user.id, parsed.data);
-  return privateNoStoreJson({ assignment });
+  const runtimePreview = await getUserAiTaskRuntimePreview({
+   supabase: auth.context.supabase,
+   userId: auth.context.user.id,
+   assignment,
+  });
+  return privateNoStoreJson({ assignment, runtimePreview });
  } catch (error) {
   if (error instanceof AiTaskStorageNotReadyError) {
    return apiError("AI task assignment storage is not ready", 503, "AI_TASK_SCHEMA_UNAVAILABLE");

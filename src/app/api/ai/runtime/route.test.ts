@@ -4,7 +4,7 @@ import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
- getUserAiRuntimeReadiness: vi.fn(),
+ getUserAiRuntimeOverview: vi.fn(),
 }));
 
 vi.mock("@/lib/api/authenticated-route", () => ({
@@ -13,7 +13,7 @@ vi.mock("@/lib/api/authenticated-route", () => ({
 }));
 
 vi.mock("@/services/ai-runtime.service", () => ({
- getUserAiRuntimeReadiness: mocks.getUserAiRuntimeReadiness,
+ getUserAiRuntimeOverview: mocks.getUserAiRuntimeOverview,
 }));
 
 import { GET } from "./route";
@@ -53,7 +53,7 @@ const ready = aiRuntimeReadinessResponseSchema.parse({
 describe("/api/ai/runtime", () => {
  beforeEach(() => {
   mocks.requireAuthenticatedRoute.mockReset();
-  mocks.getUserAiRuntimeReadiness.mockReset();
+  mocks.getUserAiRuntimeOverview.mockReset();
  });
 
  it("rejects unauthenticated status requests before touching user key storage", async () => {
@@ -62,7 +62,7 @@ describe("/api/ai/runtime", () => {
   const response = await GET();
 
   expect(response.status).toBe(401);
-  expect(mocks.getUserAiRuntimeReadiness).not.toHaveBeenCalled();
+  expect(mocks.getUserAiRuntimeOverview).not.toHaveBeenCalled();
  });
 
  it("returns safe runtime metadata without exposing decrypted credentials", async () => {
@@ -70,14 +70,14 @@ describe("/api/ai/runtime", () => {
    authenticated: true,
    context: { supabase: { marker: "supabase" }, user: { id: "user-1" } },
   });
-  mocks.getUserAiRuntimeReadiness.mockResolvedValue(ready);
+  mocks.getUserAiRuntimeOverview.mockResolvedValue({ readiness: ready, taskRuntimes: [] });
 
   const response = await GET();
   const body = await response.json();
   const serialized = JSON.stringify(body);
 
   expect(response.status).toBe(200);
-  expect(body).toEqual(ready);
+  expect(body).toEqual({ ...ready, taskRuntimes: [] });
   expect(serialized).not.toContain("apiKey");
   expect(serialized).not.toContain("runtime_secret");
  });
@@ -87,13 +87,16 @@ describe("/api/ai/runtime", () => {
    authenticated: true,
    context: { supabase: {}, user: { id: "user-1" } },
   });
-  mocks.getUserAiRuntimeReadiness.mockResolvedValue({
-   status: "missing-key",
-   reason: "no-active-key",
-   activeKeyCount: 0,
-   usableKeyCount: 0,
-   selectedKey: null,
-   capabilities: [],
+  mocks.getUserAiRuntimeOverview.mockResolvedValue({
+   readiness: {
+    status: "missing-key",
+    reason: "no-active-key",
+    activeKeyCount: 0,
+    usableKeyCount: 0,
+    selectedKey: null,
+    capabilities: [],
+   },
+   taskRuntimes: [],
   });
 
   const response = await GET();
@@ -108,13 +111,16 @@ describe("/api/ai/runtime", () => {
    authenticated: true,
    context: { supabase: {}, user: { id: "user-1" } },
   });
-  mocks.getUserAiRuntimeReadiness.mockResolvedValue({
-   status: "storage-unavailable",
-   reason: "vault-unavailable",
-   activeKeyCount: 0,
-   usableKeyCount: 0,
-   selectedKey: null,
-   capabilities: [],
+  mocks.getUserAiRuntimeOverview.mockResolvedValue({
+   readiness: {
+    status: "storage-unavailable",
+    reason: "vault-unavailable",
+    activeKeyCount: 0,
+    usableKeyCount: 0,
+    selectedKey: null,
+    capabilities: [],
+   },
+   taskRuntimes: [],
   });
 
   const response = await GET();

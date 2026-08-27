@@ -219,7 +219,7 @@ export const dailyReadingV2CaptureRunSchema = z.strictObject({
  articleId: z.string().max(160),
 });
 
-export const dailyReadingV2EnrichmentRunSchema = z.strictObject({
+export const dailyReadingV2LegacyEnrichmentRunSchema = z.strictObject({
  id: nonEmptyTextSchema.max(160),
  articleId: nonEmptyTextSchema.max(160),
  module: dailyReadingV2EnrichmentModuleSchema,
@@ -228,6 +228,15 @@ export const dailyReadingV2EnrichmentRunSchema = z.strictObject({
  completedAt: z.union([z.literal(""), z.iso.datetime({ offset: true })]),
  errorCode: z.string().max(120),
  errorDetail: z.string().max(1_000),
+});
+
+export const dailyReadingV2EnrichmentRunSchema = dailyReadingV2LegacyEnrichmentRunSchema.extend({
+ runId: z.uuid(),
+ articleFingerprint: z.string().regex(/^[0-9a-f]{8}$/u),
+ workflowRunId: z.string().max(200),
+ progressCompleted: z.number().int().nonnegative(),
+ progressTotal: z.number().int().positive(),
+ receipt: aiRuntimeReceiptSchema.nullable(),
 });
 
 const dailyReadingV2SettingsBaseSchema = z.strictObject({
@@ -289,8 +298,16 @@ export const dailyReadingV2CaptureResponseSchema = z.strictObject({
  report: dailyReadingV2CaptureReportSchema,
 });
 
-export const dailyReadingV2LedgerSchema = z.strictObject({
+export const dailyReadingV2LegacyLedgerSchema = z.strictObject({
  schemaVersion: z.literal("2.0.0"),
+ items: z.array(dailyReadingV2Schema).max(120),
+ captureRuns: z.array(dailyReadingV2CaptureRunSchema).max(400),
+ enrichmentRuns: z.array(dailyReadingV2LegacyEnrichmentRunSchema).max(800),
+ legacyRuns: z.array(dailyReadingRunSchema).max(400),
+});
+
+export const dailyReadingV2LedgerSchema = z.strictObject({
+ schemaVersion: z.literal("2.1.0"),
  items: z.array(dailyReadingV2Schema).max(120),
  captureRuns: z.array(dailyReadingV2CaptureRunSchema).max(400),
  enrichmentRuns: z.array(dailyReadingV2EnrichmentRunSchema).max(800),
@@ -302,6 +319,7 @@ export type DailyReadingV2CaptureRun = z.output<typeof dailyReadingV2CaptureRunS
 export type DailyReadingV2CaptureStage = z.output<typeof dailyReadingV2CaptureStageSchema>;
 export type DailyReadingV2EnrichmentRun = z.output<typeof dailyReadingV2EnrichmentRunSchema>;
 export type DailyReadingV2Ledger = z.output<typeof dailyReadingV2LedgerSchema>;
+export type DailyReadingV2LegacyLedger = z.output<typeof dailyReadingV2LegacyLedgerSchema>;
 export type DailyReadingV2EnrichmentModule = z.output<typeof dailyReadingV2EnrichmentModuleSchema>;
 export type DailyReadingV2FreshnessDays = z.output<typeof dailyReadingV2FreshnessDaysSchema>;
 export type DailyReadingV2LengthPreference = z.output<typeof dailyReadingV2LengthPreferenceSchema>;

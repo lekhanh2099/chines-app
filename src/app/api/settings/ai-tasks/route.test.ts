@@ -1,8 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
+ getAiTaskRuntimePreviewsFromInventory: vi.fn(),
+ getUserAiTaskRuntimePreview: vi.fn(),
  listUserAiTaskAssignments: vi.fn(),
  listUserApiKeys: vi.fn(),
+ loadUserAiRuntimeInventory: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
  upsertUserAiTaskAssignment: vi.fn(),
 }));
@@ -22,6 +25,15 @@ vi.mock("@/services/ai-task-routing.service", () => ({
 vi.mock("@/services/user-api-keys.service", () => ({
  listUserApiKeys: mocks.listUserApiKeys,
 }));
+vi.mock("@/services/ai-runtime.service", async (importOriginal) => {
+ const original = await importOriginal<typeof import("@/services/ai-runtime.service")>();
+ return {
+  ...original,
+  getAiTaskRuntimePreviewsFromInventory: mocks.getAiTaskRuntimePreviewsFromInventory,
+  getUserAiTaskRuntimePreview: mocks.getUserAiTaskRuntimePreview,
+  loadUserAiRuntimeInventory: mocks.loadUserAiRuntimeInventory,
+ };
+});
 
 import { GET, PUT } from "./route";
 
@@ -37,6 +49,15 @@ const key = {
  lastValidatedAt: "2026-08-26T00:00:00.000Z",
  createdAt: "2026-08-26T00:00:00.000Z",
  updatedAt: "2026-08-26T00:00:00.000Z",
+};
+
+const receipt = {
+ taskId: "conversation.reply",
+ provider: "groq",
+ model: "openai/gpt-oss-20b",
+ keyId: key.id,
+ keyLabel: key.label,
+ resolutionSource: "auto",
 };
 
 function put(body: object) {
@@ -57,6 +78,36 @@ describe("AI task settings route", () => {
   });
   mocks.listUserAiTaskAssignments.mockResolvedValue([]);
   mocks.listUserApiKeys.mockResolvedValue([key]);
+  mocks.loadUserAiRuntimeInventory.mockResolvedValue({
+   storageIssue: null,
+   activeKeys: [key],
+   credentials: [{ id: key.id }],
+  });
+  mocks.getAiTaskRuntimePreviewsFromInventory.mockImplementation((_inventory, _assignments) =>
+   [
+    "conversation.reply",
+    "lookup.quick",
+    "lookup.deep",
+    "daily-reading.translation",
+    "daily-reading.vocabulary",
+    "daily-reading.grammar",
+    "daily-reading.questions",
+    "conversation.summary",
+    "conversation.memory-extraction",
+    "conversation.semantic-memory",
+   ].map((taskId) => ({
+    taskId,
+    status: "ready",
+    reason: "ok",
+    receipt: { ...receipt, taskId },
+   })),
+  );
+  mocks.getUserAiTaskRuntimePreview.mockResolvedValue({
+   taskId: "conversation.reply",
+   status: "ready",
+   reason: "ok",
+   receipt: { ...receipt, resolutionSource: "assigned" },
+  });
  });
 
  it("requires authentication before exposing task or key metadata", async () => {
@@ -94,6 +145,7 @@ describe("AI task settings route", () => {
    provider: "groq",
    label: key.label,
    maskedKey: key.maskedKey,
+   availability: "ready",
   });
   expect(JSON.stringify(body)).not.toContain("apiKey");
   expect(JSON.stringify(body)).not.toContain("encryptedKey");
@@ -112,7 +164,15 @@ describe("AI task settings route", () => {
 
   expect(response.status).toBe(200);
   expect(mocks.upsertUserAiTaskAssignment).toHaveBeenCalledWith("user-1", assignment);
-  await expect(response.json()).resolves.toEqual({ assignment });
+  await expect(response.json()).resolves.toEqual({
+   assignment,
+   runtimePreview: {
+    taskId: "conversation.reply",
+    status: "ready",
+    reason: "ok",
+    receipt: { ...receipt, resolutionSource: "assigned" },
+   },
+  });
  });
 
  it("rejects a key outside the authenticated user's inventory", async () => {

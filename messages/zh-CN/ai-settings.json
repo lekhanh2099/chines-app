@@ -5,12 +5,11 @@
   "dailyReading": "每日阅读",
   "providers": "API 密钥",
   "usage": "活动",
-  "advanced": "高级设置",
   "aria": "AI 设置分区"
  },
  "taskRouting": {
   "title": "AI 任务分配",
-  "description": "每个任务可使用自动模式、指定密钥与模型，或单独关闭。指定模式失败后不会切换服务商。",
+  "description": "为每个任务选择实际使用的 AI 来源。指定密钥失败后不会切换服务商。",
   "loading": "正在加载 AI 任务…",
   "loadError": "无法加载或保存 AI 任务。",
   "saveError": "无法保存此任务分配。",
@@ -19,10 +18,34 @@
   "expectedOutput": "预期输出",
   "storage": "保存位置",
   "mode": "模式",
+  "source": "AI 来源",
   "key": "API 密钥",
   "model": "模型",
   "autoStatus": "按优先级选择首个兼容的启用密钥",
   "disabledStatus": "不调用 AI",
+  "customizeLookup": "自定义查询结果",
+  "lookupPromptScope": "仅影响深度分析。服务商和模型由上方任务分配决定。",
+  "technicalPrompt": "技术提示词",
+  "keyPaused": "已暂停",
+  "keyUnreadable": "需要重新添加",
+  "keyUnreadableHelp": "服务器无法解密此密钥。请在 API 密钥中重新添加，再次分配。",
+  "sources": {
+   "auto": "自动",
+   "autoWithRuntime": "自动 — {provider} · {key} · {model}",
+   "disabled": "关闭任务"
+  },
+  "runtimeReasons": {
+   "ok": "可用",
+   "no-active-key": "没有启用的 API 密钥",
+   "schema-unavailable": "API 密钥存储尚未就绪",
+   "vault-unavailable": "加密密钥库尚未就绪",
+   "credential-unreadable": "无法解密已存密钥，请重新添加",
+   "selected-key-unavailable": "所选密钥不可用",
+   "capability-unavailable": "没有兼容此任务的密钥",
+   "task-disabled": "任务已关闭",
+   "assigned-key-unavailable": "已分配密钥不再启用",
+   "assigned-model-unavailable": "已分配模型不可用"
+  },
   "groups": { "main": "主要任务", "advanced": "高级任务" },
   "modes": { "auto": "自动", "assigned": "指定", "disabled": "关闭" },
   "tasks": {

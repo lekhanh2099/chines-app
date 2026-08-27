@@ -150,6 +150,6 @@ describe("Daily Reading V2 enrichment provider", () => {
   expect(result.ok ? "" : result.errorDetail).toContain("HTTP 429");
   expect(result.ok ? "" : result.errorDetail).toContain("rate limit");
   expect(JSON.stringify(result)).not.toContain("internal detail");
-  expect(fetchMock).toHaveBeenCalledTimes(3);
+  expect(fetchMock).toHaveBeenCalledTimes(4);
  });
 });

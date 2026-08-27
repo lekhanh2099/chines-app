@@ -7,6 +7,7 @@ import {
  aiActivityEventSchema,
  aiTaskAssignmentSchema,
  aiTaskDefinitionSchema,
+ aiTaskRuntimePreviewSchema,
 } from "@/lib/ai-task-contract";
 
 const safeTaskKeySchema = z.strictObject({
@@ -16,6 +17,7 @@ const safeTaskKeySchema = z.strictObject({
  label: z.string().min(1),
  maskedKey: z.string().min(1),
  isActive: z.boolean(),
+ availability: z.enum(["ready", "paused", "credential-unreadable"]),
  defaultModel: z.string().nullable(),
  capabilities: z.array(aiRuntimeCapabilitySchema),
  models: z.array(z.strictObject({ value: z.string().min(1), label: z.string().min(1) })),
@@ -25,6 +27,7 @@ export const aiTaskSettingsResponseSchema = z.strictObject({
  tasks: z.array(
   aiTaskDefinitionSchema.extend({
    assignment: aiTaskAssignmentSchema,
+   runtimePreview: aiTaskRuntimePreviewSchema,
   }),
  ),
  keys: z.array(safeTaskKeySchema),
@@ -32,6 +35,7 @@ export const aiTaskSettingsResponseSchema = z.strictObject({
 
 export const aiTaskUpdateResponseSchema = z.strictObject({
  assignment: aiTaskAssignmentSchema,
+ runtimePreview: aiTaskRuntimePreviewSchema,
 });
 
 export const aiActivityResponseSchema = z.strictObject({

@@ -4,6 +4,7 @@ import {
  dailyReadingV2Schema,
  type DailyReadingV2,
  type DailyReadingV2Ledger,
+ type DailyReadingV2LegacyLedger,
 } from "./daily-reading-v2.schemas";
 
 const hanPattern = /\p{Script=Han}/gu;
@@ -141,10 +142,20 @@ export function migrateDailyReadingV1LedgerToV2(input: {
  runs: readonly DailyReadingRun[];
 }): DailyReadingV2Ledger {
  return dailyReadingV2LedgerSchema.parse({
-  schemaVersion: "2.0.0",
+  schemaVersion: "2.1.0",
   items: input.items.map(migrateDailyReadingV1ItemToV2),
   captureRuns: [],
   enrichmentRuns: [],
   legacyRuns: input.runs,
+ });
+}
+
+export function migrateDailyReadingV2Ledger(input: DailyReadingV2LegacyLedger) {
+ return dailyReadingV2LedgerSchema.parse({
+  schemaVersion: "2.1.0",
+  items: input.items,
+  captureRuns: input.captureRuns,
+  enrichmentRuns: [],
+  legacyRuns: input.legacyRuns,
  });
 }
