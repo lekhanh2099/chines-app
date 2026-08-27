@@ -152,16 +152,22 @@ function providerFailure(input: {
 }
 
 function caughtFailure(runtime: ResolvedUserAiRuntime, error: unknown, signal?: AbortSignal) {
- const errorName =
-  error instanceof Error && error.name === "AbortError" && !signal?.aborted
-   ? "TimeoutError"
-   : error instanceof Error
-     ? error.name
-     : undefined;
+ const isProviderTimeout =
+  error instanceof Error &&
+  (error.name === "TimeoutError" || (error.name === "AbortError" && !signal?.aborted));
+ const errorName = isProviderTimeout
+  ? "TimeoutError"
+  : error instanceof Error
+    ? error.name
+    : undefined;
  return providerFailure({
   provider: runtime.providerLabel,
   model: runtime.model,
-  message: error instanceof Error ? error.message : "provider request failed",
+  message: isProviderTimeout
+   ? "provider request timed out"
+   : error instanceof Error
+     ? error.message
+     : "provider request failed",
   ...(errorName ? { errorName } : {}),
  });
 }

@@ -178,7 +178,9 @@ describe("Daily Reading V2 enrichment provider", () => {
  it("retries provider timeouts instead of reporting them as user cancellation", async () => {
   vi.useFakeTimers();
   const fetchMock = vi.mocked(fetch);
-  fetchMock.mockRejectedValue(new DOMException("The operation timed out.", "AbortError"));
+  fetchMock.mockRejectedValue(
+   new DOMException("The operation was aborted due to timeout", "TimeoutError"),
+  );
 
   const pending = requestDailyReadingV2EnrichmentProvider({
    runtime: groqRuntime,
