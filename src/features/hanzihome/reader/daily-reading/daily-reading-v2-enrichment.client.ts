@@ -200,7 +200,7 @@ function localRunFromJob(job: DailyReadingV2EnrichmentJob): DailyReadingV2Enrich
     : job.status === "succeeded"
       ? "succeeded"
       : job.status,
-  attemptedAt: job.createdAt,
+  attemptedAt: job.startedAt ?? job.createdAt,
   completedAt: job.completedAt ?? "",
   errorCode: job.errorCode ?? "",
   errorDetail: "",

@@ -207,6 +207,8 @@ describe("Daily Reading V2 enrichment client", () => {
  it("persists a successful module without resetting another module or sending sibling state", async () => {
   const before = getDailyReadingV2Snapshot().items.find((item) => item.id === article.id);
   expect(before?.enrichment.translation.status).toBe("idle");
+  const startedAt = "2026-08-19T06:20:30.000Z";
+  const completedAt = "2026-08-19T06:21:00.000Z";
   const fetchMock = vi.fn().mockResolvedValue(
    Response.json(
     {
@@ -238,8 +240,8 @@ describe("Daily Reading V2 enrichment client", () => {
        },
        errorCode: null,
        createdAt,
-       startedAt: createdAt,
-       completedAt: "2026-08-19T06:21:00.000Z",
+       startedAt,
+       completedAt,
       },
      ],
     },
@@ -259,6 +261,10 @@ describe("Daily Reading V2 enrichment client", () => {
   expect(requestBody).toContain('"classification"');
   expect(requestBody).not.toContain('"enrichment"');
   expect(requestBody).not.toContain('"publishedDate"');
+  expect(getDailyReadingV2Snapshot().enrichmentRuns[0]).toMatchObject({
+   attemptedAt: startedAt,
+   completedAt,
+  });
  });
 
  it("keeps an uncertain enqueue pending without binding work to page lifecycle", async () => {

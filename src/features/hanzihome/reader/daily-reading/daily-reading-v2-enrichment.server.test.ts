@@ -224,6 +224,8 @@ describe("Daily Reading V2 enrichment generation", () => {
   expect(mocks.requestProvider).toHaveBeenCalledTimes(2);
   const repairPrompt = mocks.requestProvider.mock.calls[1]?.[0]?.prompt ?? "";
   expect(repairPrompt).toContain("SCHEMA/CONTENT REPAIR");
+  expect(repairPrompt).toContain("items");
+  expect(repairPrompt).toContain("12");
  });
 
  it("rejects grammar examples that are not complete sentences from the source", async () => {
@@ -298,6 +300,14 @@ describe("Daily Reading V2 enrichment generation", () => {
       answerZh: "博物馆通过展览和合作推动公共文化学习。",
       answerVi: "Bảo tàng thúc đẩy học văn hóa công cộng qua triển lãm và hợp tác.",
       evidenceParagraphIds: ["source-p1", "source-p3"],
+     },
+     {
+      type: "vocabulary",
+      promptZh: "专题展览是什么意思？",
+      promptVi: "专题展览 có nghĩa là gì?",
+      answerZh: "围绕一个特定主题举办的展览。",
+      answerVi: "Triển lãm được tổ chức quanh một chủ đề cụ thể.",
+      evidenceParagraphIds: ["source-p1"],
      },
     ],
     sourcePhrasesZh: ["传统文化"],

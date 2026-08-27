@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { z } from "zod";
 
 vi.mock("server-only", () => ({}));
 
@@ -41,6 +42,8 @@ const groqRuntime: ResolvedUserAiRuntime = {
   "structured-memory",
  ],
 };
+
+const testResponseSchema = z.strictObject({ ok: z.boolean() });
 
 function rateLimitedResponse() {
  return new Response('{"error":"rate limit internal detail"}', {
@@ -87,6 +90,17 @@ describe("Daily Reading V2 enrichment provider", () => {
    runtime: geminiRuntime,
    prompt: "Translate source.",
    module: "translation",
+   schema: z.strictObject({
+    paragraphs: z
+     .array(
+      z.strictObject({
+       paragraphId: z.string().trim().min(1).max(80),
+       vi: z.string().trim().min(1).max(5_000),
+       roleVi: z.string().max(500),
+      }),
+     )
+     .length(3),
+   }),
   });
 
   expect(result).toMatchObject({ ok: true, model: geminiRuntime.model });
@@ -95,6 +109,11 @@ describe("Daily Reading V2 enrichment provider", () => {
   expect(url).not.toContain("user-gemini-key");
   expect(url).not.toContain("system-gemini-key-that-must-not-be-used");
   expect(new Headers(init?.headers).get("x-goog-api-key")).toBe("user-gemini-key");
+  expect(init?.body).toEqual(expect.stringContaining('"responseJsonSchema"'));
+  expect(init?.body).toEqual(expect.stringContaining('"minItems":3'));
+  expect(init?.body).toEqual(expect.stringContaining('"maxItems":3'));
+  expect(init?.body).not.toEqual(expect.stringContaining('"minLength"'));
+  expect(init?.body).not.toEqual(expect.stringContaining('"maxLength"'));
  });
 
  it("sends the resolved user key in the Groq authorization header", async () => {
@@ -105,6 +124,7 @@ describe("Daily Reading V2 enrichment provider", () => {
    runtime: groqRuntime,
    prompt: "Create grammar support.",
    module: "grammar",
+   schema: testResponseSchema,
   });
 
   const init = fetchMock.mock.calls[0]?.[1];
@@ -122,6 +142,7 @@ describe("Daily Reading V2 enrichment provider", () => {
    runtime: groqRuntime,
    prompt: "Create vocabulary support.",
    module: "vocabulary",
+   schema: testResponseSchema,
   });
   await vi.runAllTimersAsync();
   const result = await pending;
@@ -139,6 +160,7 @@ describe("Daily Reading V2 enrichment provider", () => {
    runtime: groqRuntime,
    prompt: "Create vocabulary support.",
    module: "vocabulary",
+   schema: testResponseSchema,
   });
   await vi.runAllTimersAsync();
   const result = await pending;

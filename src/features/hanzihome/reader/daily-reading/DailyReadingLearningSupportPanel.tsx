@@ -11,8 +11,8 @@ import {
  Sparkles,
  type LucideIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { type ComponentProps, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { type ComponentProps, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
@@ -124,9 +124,18 @@ function needsKeyManagement(state: EnrichmentState) {
 
 export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReadingV2 }) {
  const t = useTranslations("DailyReading");
+ const locale = useLocale();
  const runtime = useAiRuntimeReadiness();
  const library = useDailyReadingV2Library();
  const [pendingAction, setPendingAction] = useState<PendingAction>(null);
+ const dateFormatter = useMemo(
+  () =>
+   new Intl.DateTimeFormat(locale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+   }),
+  [locale],
+ );
  const readyCount = moduleConfigs.filter(
   ({ module }) => reading.enrichment[module].status === "ready",
  ).length;
@@ -361,6 +370,10 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
        run.articleFingerprint === reading.article.fingerprint &&
        run.module === config.module,
      );
+     const isQueued =
+      state.status === "running" &&
+      latestRun?.status === "pending" &&
+      latestRun.workflowRunId.length === 0;
      const Icon = config.icon;
      return (
       <div
@@ -372,13 +385,22 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          <Icon aria-hidden />
          <Typography weight="bold">{t(config.titleKey)}</Typography>
          <Badge variant={statusBadgeVariant(state)} size="sm">
-          {t(statusKey(state))}
+          {isQueued ? t("v2.enrichment.status.queued") : t(statusKey(state))}
          </Badge>
         </div>
         {state.status === "ready" && state.generatedBy?.receipt ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
           {state.generatedBy.receipt.provider} · {state.generatedBy.receipt.model} ·{" "}
           {state.generatedBy.receipt.keyLabel}
+         </Typography>
+        ) : isQueued && latestRun?.receipt ? (
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {t("v2.enrichment.runtimeQueued", {
+           provider: latestRun.receipt.provider,
+           key: latestRun.receipt.keyLabel,
+           model: latestRun.receipt.model,
+           time: dateFormatter.format(new Date(latestRun.attemptedAt)),
+          })}
          </Typography>
         ) : state.status === "running" && latestRun?.receipt ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
@@ -414,6 +436,20 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
         ) : taskRuntime ? (
          <Typography variant="caption" tone="warning" wrapping="breakWords">
           {t("v2.enrichment.runtimeUnavailable", { reason: taskRuntime.reason })}
+         </Typography>
+        ) : null}
+        {!isQueued && latestRun?.completedAt ? (
+         <Typography variant="caption" tone="muted">
+          {t("v2.enrichment.runtimeTimeRange", {
+           start: dateFormatter.format(new Date(latestRun.attemptedAt)),
+           end: dateFormatter.format(new Date(latestRun.completedAt)),
+          })}
+         </Typography>
+        ) : !isQueued && state.status === "running" && latestRun ? (
+         <Typography variant="caption" tone="muted">
+          {t("v2.enrichment.runtimeStarted", {
+           time: dateFormatter.format(new Date(latestRun.attemptedAt)),
+          })}
          </Typography>
         ) : null}
        </div>

@@ -159,6 +159,7 @@ async function requestStructured<T, Validated>(input: {
    runtime: input.runtime,
    prompt: currentPrompt,
    module: input.module,
+   schema: input.schema,
    signal: input.signal,
   });
   if (!response.ok) {
@@ -173,7 +174,10 @@ async function requestStructured<T, Validated>(input: {
    const parsedJson = parseJson(response.content);
    const parsed = input.schema.safeParse(parsedJson);
    if (!parsed.success) {
-    throw new Error(`JSON không khớp schema ${input.module}.`);
+    const diagnostic = parsed.error.issues
+     .map((issue) => `${issue.path.join(".") || "root"}: ${issue.message}`)
+     .join("; ");
+    throw new Error(`JSON không khớp schema ${input.module}: ${diagnostic.slice(0, 500)}`);
    }
    return { ok: true, data: input.validate(parsed.data) };
   } catch (error) {
@@ -307,9 +311,10 @@ async function translateUnitsAdaptively(input: {
   runtime: input.runtime,
   module: "translation",
   prompt: translationPrompt(input),
-  schema: translationDraftSchema,
+  schema: translationDraftSchema.extend({
+   paragraphs: translationDraftSchema.shape.paragraphs.length(input.units.length),
+  }),
   signal: input.signal,
-  maximumAttempts: 1,
   validate: (draft) => validateTranslationChunk(input.units, draft).paragraphs,
  });
  if (result.ok || result.errorCode !== "invalid-response") return result;
@@ -597,7 +602,9 @@ async function generateLearningModule(
    runtime,
    module,
    prompt: learningPrompt(reading, module, targetCount),
-   schema: vocabularyDraftSchema,
+   schema: vocabularyDraftSchema.extend({
+    items: vocabularyDraftSchema.shape.items.length(targetCount),
+   }),
    signal,
    validate: (draft) => validateVocabulary(reading, draft, targetCount),
   });
@@ -610,7 +617,9 @@ async function generateLearningModule(
    runtime,
    module,
    prompt: learningPrompt(reading, module, targetCount),
-   schema: grammarDraftSchema,
+   schema: grammarDraftSchema.extend({
+    items: grammarDraftSchema.shape.items.length(targetCount),
+   }),
    signal,
    validate: (draft) => validateGrammar(reading, draft, targetCount),
   });
@@ -622,7 +631,9 @@ async function generateLearningModule(
   runtime,
   module,
   prompt: learningPrompt(reading, module, targetCount),
-  schema: questionsDraftSchema,
+  schema: questionsDraftSchema.extend({
+   items: questionsDraftSchema.shape.items.length(targetCount),
+  }),
   signal,
   validate: (draft) => validateQuestions(reading, draft, targetCount),
  });

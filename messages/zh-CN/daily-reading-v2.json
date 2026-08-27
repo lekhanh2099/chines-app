@@ -46,6 +46,8 @@
   "enrichmentDetail": "{module}",
   "openArticle": "打开文章",
   "retryCapture": "重新寻找",
+  "startedAt": "开始于 {time}",
+  "timeRange": "开始 {start} · 结束 {end}",
   "status": {
    "pending": "运行中",
    "succeeded": "已完成",
@@ -190,6 +192,9 @@
   "runtimeReady": "正在使用 {provider} · {model}",
   "runtimePlanned": "将使用 {provider} · {key} · {model}",
   "runtimeRunning": "正在使用 {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeQueued": "已于 {time} 排队，使用 {provider} · {key} · {model}",
+  "runtimeStarted": "开始于 {time}",
+  "runtimeTimeRange": "开始 {start} · 结束 {end}",
   "runtimeFailed": "已尝试 {provider} · {key} · {model} — {code}",
   "runtimeUnavailable": "没有可用的 AI 来源 — {reason}",
   "runtimeMissing": "还没有 AI API key。仍可阅读完整来源文章。",
@@ -215,6 +220,7 @@
   },
   "status": {
    "idle": "尚未生成",
+   "queued": "排队中",
    "running": "正在生成",
    "ready": "已就绪",
    "failed": "需要重试",

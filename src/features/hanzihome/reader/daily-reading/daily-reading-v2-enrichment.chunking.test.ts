@@ -124,7 +124,7 @@ describe("Daily Reading V2 translation chunk bounds", () => {
  });
 
  it("splits only an invalid translation chunk and preserves source order", async () => {
-  let returnedTruncatedChunk = false;
+  let truncatedResponses = 0;
   mocks.requestProvider.mockImplementation((input: { prompt: string }) => {
    const ids = paragraphIdsFromPrompt(input.prompt);
    if (ids.length === 0) {
@@ -137,8 +137,8 @@ describe("Daily Reading V2 translation chunk bounds", () => {
      }),
     });
    }
-   if (!returnedTruncatedChunk && ids.length === 3) {
-    returnedTruncatedChunk = true;
+   if (truncatedResponses < 2 && ids.length === 3) {
+    truncatedResponses += 1;
     return Promise.resolve({ ok: true, model: runtime.model, content: '{"paragraphs":[' });
    }
    return Promise.resolve({
@@ -166,7 +166,7 @@ describe("Daily Reading V2 translation chunk bounds", () => {
   expect(result.data.paragraphs.map((paragraph) => paragraph.paragraphId)).toEqual(
    paragraphs.map((paragraph) => paragraph.id),
   );
-  expect(returnedTruncatedChunk).toBe(true);
-  expect(mocks.requestProvider.mock.calls.length).toBe(18);
+  expect(truncatedResponses).toBe(2);
+  expect(mocks.requestProvider.mock.calls.length).toBe(19);
  });
 });

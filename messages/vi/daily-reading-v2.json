@@ -46,6 +46,8 @@
   "enrichmentDetail": "{module}",
   "openArticle": "Mở bài",
   "retryCapture": "Tìm lại",
+  "startedAt": "Bắt đầu {time}",
+  "timeRange": "Bắt đầu {start} · Kết thúc {end}",
   "status": {
    "pending": "Đang chạy",
    "succeeded": "Hoàn tất",
@@ -190,6 +192,9 @@
   "runtimeReady": "Đang dùng {provider} · {model}",
   "runtimePlanned": "Sẽ dùng {provider} · {key} · {model}",
   "runtimeRunning": "Đang dùng {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeQueued": "Đã xếp hàng lúc {time} cho {provider} · {key} · {model}",
+  "runtimeStarted": "Bắt đầu {time}",
+  "runtimeTimeRange": "Bắt đầu {start} · Kết thúc {end}",
   "runtimeFailed": "Đã thử {provider} · {key} · {model} — {code}",
   "runtimeUnavailable": "Chưa có nguồn AI dùng được — {reason}",
   "runtimeMissing": "Chưa có API key AI. Bạn vẫn có thể đọc toàn bộ bài nguồn.",
@@ -215,6 +220,7 @@
   },
   "status": {
    "idle": "Chưa tạo",
+   "queued": "Đang chờ",
    "running": "Đang tạo",
    "ready": "Sẵn sàng",
    "failed": "Cần thử lại",

@@ -265,8 +265,19 @@ async function requestGemini(
  runtime: ResolvedUserAiRuntime,
  prompt: string,
  module: DailyReadingV2ProviderModule,
+ schema: z.ZodType,
  signal?: AbortSignal,
 ): Promise<DailyReadingV2ProviderResult> {
+ const responseJsonSchema = z.toJSONSchema(schema, {
+  target: "draft-7",
+  override: ({ jsonSchema }) => {
+   delete jsonSchema.minLength;
+   delete jsonSchema.maxLength;
+   delete jsonSchema.pattern;
+  },
+ });
+ delete responseJsonSchema.$schema;
+
  for (let attempt = 0; attempt <= providerMaximumRetries; attempt += 1) {
   try {
    throwIfAborted(signal);
@@ -286,6 +297,7 @@ async function requestGemini(
        temperature: 0.2,
        maxOutputTokens: outputLimit(module),
        responseMimeType: "application/json",
+       responseJsonSchema,
       },
      }),
      cache: "no-store",
@@ -348,10 +360,11 @@ export function requestDailyReadingV2EnrichmentProvider(input: {
  runtime: ResolvedUserAiRuntime;
  prompt: string;
  module: DailyReadingV2ProviderModule;
+ schema: z.ZodType;
  signal?: AbortSignal;
 }) {
  if (input.runtime.provider === "gemini") {
-  return requestGemini(input.runtime, input.prompt, input.module, input.signal);
+  return requestGemini(input.runtime, input.prompt, input.module, input.schema, input.signal);
  }
  return requestOpenAiCompatible(input.runtime, input.prompt, input.module, input.signal);
 }

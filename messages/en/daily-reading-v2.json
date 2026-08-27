@@ -46,6 +46,8 @@
   "enrichmentDetail": "{module}",
   "openArticle": "Open article",
   "retryCapture": "Find again",
+  "startedAt": "Started {time}",
+  "timeRange": "Started {start} · Finished {end}",
   "status": {
    "pending": "Running",
    "succeeded": "Completed",
@@ -190,6 +192,9 @@
   "runtimeReady": "Using {provider} · {model}",
   "runtimePlanned": "Will use {provider} · {key} · {model}",
   "runtimeRunning": "Using {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeQueued": "Queued at {time} for {provider} · {key} · {model}",
+  "runtimeStarted": "Started {time}",
+  "runtimeTimeRange": "Started {start} · Finished {end}",
   "runtimeFailed": "Tried {provider} · {key} · {model} — {code}",
   "runtimeUnavailable": "No usable AI source — {reason}",
   "runtimeMissing": "No AI API key yet. You can still read the complete source article.",
@@ -215,6 +220,7 @@
   },
   "status": {
    "idle": "Not created",
+   "queued": "Queued",
    "running": "Creating",
    "ready": "Ready",
    "failed": "Retry needed",

@@ -151,7 +151,14 @@ export function DailyReadingV2ActivityLog({
            {t(statusKey(entry.status))}
           </Badge>
           <Typography variant="caption" tone="muted">
-           {dateFormatter.format(new Date(entry.attemptedAt))}
+           {entry.completedAt
+            ? t("v2.activity.timeRange", {
+               start: dateFormatter.format(new Date(entry.attemptedAt)),
+               end: dateFormatter.format(new Date(entry.completedAt)),
+              })
+            : t("v2.activity.startedAt", {
+               time: dateFormatter.format(new Date(entry.attemptedAt)),
+              })}
           </Typography>
          </div>
          <Typography variant="bodySmall" weight="semibold">
