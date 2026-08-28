@@ -157,6 +157,7 @@ describe("persisted AI conversation turn stream", () => {
     role: "assistant",
     content: "你好，今天怎么样？",
     replyToMessageId: userMessage.id,
+    metadata: expect.objectContaining({ provider: "groq" }),
    }),
   );
   expect(events.map((event) => event.type)).toEqual(["start", "delta", "delta", "final"]);

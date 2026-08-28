@@ -244,7 +244,7 @@ export async function createPersistedAiConversationTurnStream(input: {
      content: message,
      replyToMessageId: userMessage.id,
      metadata: {
-      provider: prepared.runtime.providerLabel,
+      provider: prepared.runtime.provider,
       model: prepared.runtime.model,
       apiKeyId: prepared.runtime.keyId,
       taskId: prepared.runtime.taskId,
