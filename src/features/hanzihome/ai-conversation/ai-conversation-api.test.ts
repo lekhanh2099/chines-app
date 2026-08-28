@@ -275,6 +275,14 @@ describe("AI conversation client transport", () => {
     usableKeyCount: 0,
     selectedKey: null,
     capabilities: [],
+    taskRuntimes: [
+     {
+      taskId: "conversation.reply",
+      status: "missing-key",
+      reason: "no-active-key",
+      receipt: null,
+     },
+    ],
    }),
   );
   vi.stubGlobal("fetch", fetchMock);
@@ -296,5 +304,54 @@ describe("AI conversation client transport", () => {
    "/api/ai/conversation",
    expect.objectContaining({ body: expect.stringContaining('"action":"health"') }),
   );
+ });
+
+ it("uses the conversation task runtime when automatic routing is ready", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json({
+    status: "ready",
+    reason: "ok",
+    activeKeyCount: 2,
+    usableKeyCount: 2,
+    selectedKey: {
+     keyId: "77777777-7777-4777-8777-777777777777",
+     provider: "deepseek",
+     providerLabel: "DeepSeek",
+     label: "DeepSeek lookup",
+     maskedKey: "sk-d****4773",
+     model: "deepseek-chat",
+     priority: 0,
+     lastValidatedAt: null,
+     capabilities: ["lookup"],
+    },
+    capabilities: ["conversation", "lookup"],
+    taskRuntimes: [
+     {
+      taskId: "conversation.reply",
+      status: "ready",
+      reason: "ok",
+      receipt: {
+       taskId: "conversation.reply",
+       provider: "gemini",
+       model: "models/gemini-3.5-flash",
+       keyId: apiKeyId,
+       keyLabel: "Gemini chat",
+       resolutionSource: "assigned",
+      },
+     },
+    ],
+   }),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+
+  const health = await fetchAiConversationRuntimeHealth();
+
+  expect(health).toEqual({
+   ready: true,
+   code: "ready",
+   provider: "Google Gemini",
+   model: "models/gemini-3.5-flash",
+   source: "personal",
+  });
  });
 });

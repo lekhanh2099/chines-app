@@ -1,4 +1,5 @@
-import { aiRuntimeReadinessResponseSchema } from "@/lib/ai-runtime-contract";
+import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
+import { aiRuntimeWithTaskRuntimesResponseSchema } from "@/lib/ai-task-contract";
 import type { JsonFieldValue, JsonObject } from "@/types/json";
 
 import {
@@ -64,19 +65,25 @@ export async function fetchAiConversationRuntimeHealth(options?: {
   });
   const payload: JsonFieldValue = await response.json().catch(() => null);
   if (!response.ok) throw new Error("Không thể kiểm tra AI runtime.");
-  const readiness = aiRuntimeReadinessResponseSchema.parse(payload);
-  if (readiness.status === "ready") {
+  const readiness = aiRuntimeWithTaskRuntimesResponseSchema.parse(payload);
+  const conversationRuntime = readiness.taskRuntimes.find(
+   (runtime) => runtime.taskId === "conversation.reply",
+  );
+  if (conversationRuntime?.status === "ready") {
    return aiConversationRuntimeHealthSchema.parse({
     ready: true,
     code: "ready",
-    provider: readiness.selectedKey.providerLabel,
-    model: readiness.selectedKey.model,
+    provider: getApiKeyProviderLabel(conversationRuntime.receipt.provider),
+    model: conversationRuntime.receipt.model,
     source: "personal",
    });
   }
   return aiConversationRuntimeHealthSchema.parse({
    ready: false,
-   code: readiness.status === "missing-key" ? "key-unavailable" : "provider-unavailable",
+   code:
+    conversationRuntime?.status === "missing-key" || readiness.status === "missing-key"
+     ? "key-unavailable"
+     : "provider-unavailable",
    provider: null,
    model: null,
    source: "personal",
