@@ -33,15 +33,15 @@ import {
  type DailyReadingSourceId,
 } from "./daily-reading-source-catalog";
 import { dailyReadingTopicSchema, type DailyReadingTopic } from "./daily-reading.schemas";
-import { previewDailyReadingV2Source, useDailyReadingV2Settings } from "./daily-reading-v2-client";
+import { previewDailyReadingSource, useDailyReadingSettings } from "./daily-reading.client";
 import {
- dailyReadingV2FreshnessDaysSchema,
- dailyReadingV2LengthPreferenceSchema,
- dailyReadingV2NoMatchBehaviorSchema,
- dailyReadingV2SettingsSchema,
- type DailyReadingV2CaptureResponse,
- type DailyReadingV2Settings,
-} from "./daily-reading-v2.schemas";
+ dailyReadingFreshnessDaysSchema,
+ dailyReadingLengthPreferenceSchema,
+ dailyReadingNoMatchBehaviorSchema,
+ dailyReadingSettingsSchema,
+ type DailyReadingCaptureResponse,
+ type DailyReadingSettings,
+} from "./daily-reading.schemas";
 
 type TopicTranslationKey =
  | "generated.topic.culture"
@@ -77,30 +77,30 @@ function getTopicTranslationKey(topic: DailyReadingTopic): TopicTranslationKey {
  }
 }
 
-function formatCaptureTime(settings: DailyReadingV2Settings) {
+function formatCaptureTime(settings: DailyReadingSettings) {
  return `${String(settings.captureTime.hour).padStart(2, "0")}:${String(settings.captureTime.minute).padStart(2, "0")}`;
 }
 
 export function DailyReadingSettingsPanel() {
  const t = useTranslations("DailyReading");
  const runtime = useAiRuntimeReadiness();
- const { settings, update } = useDailyReadingV2Settings();
+ const { settings, update } = useDailyReadingSettings();
  const [advancedOpen, setAdvancedOpen] = useState(false);
  const [testingSource, setTestingSource] = useState(false);
- const [sourcePreview, setSourcePreview] = useState<DailyReadingV2CaptureResponse | null>(null);
+ const [sourcePreview, setSourcePreview] = useState<DailyReadingCaptureResponse | null>(null);
 
- function saveSettings(patch: Partial<DailyReadingV2Settings>) {
+ function saveSettings(patch: Partial<DailyReadingSettings>) {
   try {
    update(patch);
   } catch {
-   toast.error(t("v2.settings.toast.settingFailed"));
+   toast.error(t("settings.toast.settingFailed"));
   }
  }
 
  function updateCaptureTime(value: string) {
   const match = /^(\d{2}):(\d{2})$/u.exec(value);
   if (match === null) return;
-  const parsed = dailyReadingV2SettingsSchema.shape.captureTime.safeParse({
+  const parsed = dailyReadingSettingsSchema.shape.captureTime.safeParse({
    hour: Number(match[1]),
    minute: Number(match[2]),
   });
@@ -110,7 +110,7 @@ export function DailyReadingSettingsPanel() {
  function toggleTopic(topic: DailyReadingTopic) {
   const selected = settings.selectedTopics.includes(topic);
   if (selected && settings.selectedTopics.length === 1) {
-   toast.info(t("v2.settings.advanced.atLeastOneTopic"));
+   toast.info(t("settings.advanced.atLeastOneTopic"));
    return;
   }
   saveSettings({
@@ -123,7 +123,7 @@ export function DailyReadingSettingsPanel() {
  function toggleSource(sourceId: DailyReadingSourceId, checked: boolean) {
   const selected = settings.selectedSources.includes(sourceId);
   if (!checked && selected && settings.selectedSources.length === 1) {
-   toast.info(t("v2.settings.advanced.atLeastOneSource"));
+   toast.info(t("settings.advanced.atLeastOneSource"));
    return;
   }
   saveSettings({
@@ -138,16 +138,16 @@ export function DailyReadingSettingsPanel() {
  async function handleTestSource() {
   setTestingSource(true);
   try {
-   const result = await previewDailyReadingV2Source();
+   const result = await previewDailyReadingSource();
    setSourcePreview(result);
    toast.success(
-    t("v2.settings.toast.sourceReady", {
+    t("settings.toast.sourceReady", {
      publisher: result.reading.source.publisher,
      title: result.reading.article.titleZh,
     }),
    );
   } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("v2.settings.toast.sourceFailed"));
+   toast.error(error instanceof Error ? error.message : t("settings.toast.sourceFailed"));
   } finally {
    setTestingSource(false);
   }
@@ -158,14 +158,14 @@ export function DailyReadingSettingsPanel() {
    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
     <div className="grid min-w-0 gap-1">
      <Typography as="h2" variant="sectionTitle" weight="bold">
-      {t("v2.settings.title")}
+      {t("settings.title")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted" className="max-w-3xl">
-      {t("v2.settings.description")}
+      {t("settings.description")}
      </Typography>
     </div>
     <Badge variant={settings.autoCaptureEnabled ? "success" : "default"} size="md">
-     {settings.autoCaptureEnabled ? t("v2.library.autoOn") : t("v2.library.autoOff")}
+     {settings.autoCaptureEnabled ? t("library.autoOn") : t("library.autoOff")}
     </Badge>
    </div>
 
@@ -174,47 +174,47 @@ export function DailyReadingSettingsPanel() {
    <section className="grid gap-4" aria-labelledby="daily-reading-source-settings">
     <div className="grid gap-1">
      <Typography as="h3" id="daily-reading-source-settings" variant="cardTitle" weight="bold">
-      {t("v2.settings.capture.title")}
+      {t("settings.capture.title")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted">
-      {t("v2.settings.capture.description")}
+      {t("settings.capture.description")}
      </Typography>
     </div>
 
     <SettingsToggleRow
-     id="daily-reading-v2-auto-capture"
-     label={t("v2.settings.capture.autoTitle")}
-     description={t("v2.settings.capture.autoDescription")}
+     id="daily-reading-auto-capture"
+     label={t("settings.capture.autoTitle")}
+     description={t("settings.capture.autoDescription")}
      checked={settings.autoCaptureEnabled}
      onCheckedChange={(checked) => saveSettings({ autoCaptureEnabled: checked })}
     />
 
     <div className="grid gap-3 md:grid-cols-2">
      <SettingsToggleRow
-      id="daily-reading-v2-translation-enabled"
-      label={t("v2.settings.ai.translationTitle")}
-      description={t("v2.settings.ai.translationDescription")}
+      id="daily-reading-translation-enabled"
+      label={t("settings.ai.translationTitle")}
+      description={t("settings.ai.translationDescription")}
       checked={settings.translationEnabled}
       onCheckedChange={(checked) => saveSettings({ translationEnabled: checked })}
      />
      <SettingsToggleRow
-      id="daily-reading-v2-vocabulary-enabled"
-      label={t("v2.settings.ai.vocabularyTitle")}
-      description={t("v2.settings.ai.vocabularyDescription")}
+      id="daily-reading-vocabulary-enabled"
+      label={t("settings.ai.vocabularyTitle")}
+      description={t("settings.ai.vocabularyDescription")}
       checked={settings.vocabularyEnabled}
       onCheckedChange={(checked) => saveSettings({ vocabularyEnabled: checked })}
      />
      <SettingsToggleRow
-      id="daily-reading-v2-grammar-enabled"
-      label={t("v2.settings.ai.grammarTitle")}
-      description={t("v2.settings.ai.grammarDescription")}
+      id="daily-reading-grammar-enabled"
+      label={t("settings.ai.grammarTitle")}
+      description={t("settings.ai.grammarDescription")}
       checked={settings.grammarEnabled}
       onCheckedChange={(checked) => saveSettings({ grammarEnabled: checked })}
      />
      <SettingsToggleRow
-      id="daily-reading-v2-questions-enabled"
-      label={t("v2.settings.ai.questionsTitle")}
-      description={t("v2.settings.ai.questionsDescription")}
+      id="daily-reading-questions-enabled"
+      label={t("settings.ai.questionsTitle")}
+      description={t("settings.ai.questionsDescription")}
       checked={settings.questionsEnabled}
       onCheckedChange={(checked) => saveSettings({ questionsEnabled: checked })}
      />
@@ -234,9 +234,9 @@ export function DailyReadingSettingsPanel() {
       }>
      ).map((field) => (
       <div key={field.key} className="grid gap-1.5">
-       <Label htmlFor={`daily-reading-v2-${field.key}`}>{t(`v2.settings.ai.${field.key}`)}</Label>
+       <Label htmlFor={`daily-reading-${field.key}`}>{t(`settings.ai.${field.key}`)}</Label>
        <Input
-        id={`daily-reading-v2-${field.key}`}
+        id={`daily-reading-${field.key}`}
         type="number"
         min={field.min}
         max={field.max}
@@ -253,31 +253,31 @@ export function DailyReadingSettingsPanel() {
 
     <div className="grid gap-4 sm:grid-cols-2">
      <div className="grid gap-2">
-      <Label htmlFor="daily-reading-v2-time" variant="label" weight="semibold">
-       {t("v2.settings.capture.timeLabel")}
+      <Label htmlFor="daily-reading-time" variant="label" weight="semibold">
+       {t("settings.capture.timeLabel")}
       </Label>
       <Input
-       id="daily-reading-v2-time"
+       id="daily-reading-time"
        type="time"
        value={formatCaptureTime(settings)}
        onChange={(event) => updateCaptureTime(event.target.value)}
       />
       <Typography as="p" variant="caption" tone="muted">
-       {t("v2.settings.capture.timeDescription")}
+       {t("settings.capture.timeDescription")}
       </Typography>
      </div>
 
      <div className="grid gap-2">
-      <Label htmlFor="daily-reading-v2-level" variant="label" weight="semibold">
-       {t("v2.settings.capture.levelLabel")}
+      <Label htmlFor="daily-reading-level" variant="label" weight="semibold">
+       {t("settings.capture.levelLabel")}
       </Label>
       <Select
        value={settings.targetLevel}
        onValueChange={(value) =>
-        saveSettings({ targetLevel: dailyReadingV2SettingsSchema.shape.targetLevel.parse(value) })
+        saveSettings({ targetLevel: dailyReadingSettingsSchema.shape.targetLevel.parse(value) })
        }
       >
-       <SelectTrigger id="daily-reading-v2-level" width="full">
+       <SelectTrigger id="daily-reading-level" width="full">
         <SelectValue />
        </SelectTrigger>
        <SelectContent align="start">
@@ -287,7 +287,7 @@ export function DailyReadingSettingsPanel() {
        </SelectContent>
       </Select>
       <Typography as="p" variant="caption" tone="muted">
-       {t("v2.settings.capture.levelDescription")}
+       {t("settings.capture.levelDescription")}
       </Typography>
      </div>
     </div>
@@ -305,17 +305,17 @@ export function DailyReadingSettingsPanel() {
       ) : (
        <RefreshCcw data-icon="inline-start" />
       )}
-      {testingSource ? t("v2.settings.capture.testingSource") : t("v2.settings.capture.testSource")}
+      {testingSource ? t("settings.capture.testingSource") : t("settings.capture.testSource")}
      </Button>
      <Typography as="p" variant="caption" tone="muted">
-      {t("v2.settings.capture.sourceIndependent")}
+      {t("settings.capture.sourceIndependent")}
      </Typography>
     </div>
 
     {sourcePreview !== null ? (
      <Card variant="subtle" padding="md" className="grid gap-2">
       <div className="flex flex-wrap items-center justify-between gap-2">
-       <Typography weight="bold">{t("v2.settings.sourcePreview.title")}</Typography>
+       <Typography weight="bold">{t("settings.sourcePreview.title")}</Typography>
        <Badge variant="success" size="sm">
         <HanziText as="span" size="inherit">
          {sourcePreview.reading.source.publisher}
@@ -326,7 +326,7 @@ export function DailyReadingSettingsPanel() {
        {sourcePreview.reading.article.titleZh}
       </HanziText>
       <Typography variant="bodySmall" tone="secondary">
-       {t("v2.settings.sourcePreview.report", {
+       {t("settings.sourcePreview.report", {
         publisher: sourcePreview.reading.source.publisher,
         paragraphs: sourcePreview.reading.article.paragraphs.length,
         minutes: sourcePreview.reading.estimatedMinutes,
@@ -335,22 +335,22 @@ export function DailyReadingSettingsPanel() {
       <div className="flex flex-wrap gap-3">
        {sourcePreview.report.usedFreshnessDays !== null ? (
         <Typography variant="caption" tone="muted">
-         {t("v2.settings.sourcePreview.window", { days: sourcePreview.report.usedFreshnessDays })}
+         {t("settings.sourcePreview.window", { days: sourcePreview.report.usedFreshnessDays })}
         </Typography>
        ) : null}
        <Typography variant="caption" tone="muted">
-        {t("v2.settings.sourcePreview.candidates", {
+        {t("settings.sourcePreview.candidates", {
          count: sourcePreview.report.policyCandidates,
         })}
        </Typography>
        <Typography variant="caption" tone="muted">
-        {t("v2.settings.sourcePreview.extractions", {
+        {t("settings.sourcePreview.extractions", {
          count: sourcePreview.report.attemptedExtractions,
         })}
        </Typography>
       </div>
       <Typography variant="caption" tone="muted">
-       {t("v2.settings.sourcePreview.notPersisted")}
+       {t("settings.sourcePreview.notPersisted")}
       </Typography>
      </Card>
     ) : null}
@@ -361,17 +361,17 @@ export function DailyReadingSettingsPanel() {
    <section className="grid gap-4" aria-labelledby="daily-reading-ai-settings">
     <div className="grid gap-1">
      <Typography as="h3" id="daily-reading-ai-settings" variant="cardTitle" weight="bold">
-      {t("v2.settings.ai.title")}
+      {t("settings.ai.title")}
      </Typography>
      <Typography as="p" variant="bodySmall" tone="muted">
-      {t("v2.settings.ai.description")}
+      {t("settings.ai.description")}
      </Typography>
     </div>
 
     <SettingsToggleRow
-     id="daily-reading-v2-auto-enrichment"
-     label={t("v2.settings.ai.autoTitle")}
-     description={t("v2.settings.ai.autoDescription")}
+     id="daily-reading-auto-enrichment"
+     label={t("settings.ai.autoTitle")}
+     description={t("settings.ai.autoDescription")}
      checked={settings.autoEnrichmentEnabled}
      onCheckedChange={(checked) => saveSettings({ autoEnrichmentEnabled: checked })}
     />
@@ -380,16 +380,16 @@ export function DailyReadingSettingsPanel() {
      <div className="grid min-w-0 gap-1">
       {runtime.isPending ? (
        <Typography variant="bodySmall" tone="muted">
-        {t("v2.enrichment.actions.checkingRuntime")}
+        {t("enrichment.actions.checkingRuntime")}
        </Typography>
       ) : runtime.isError ? (
        <Typography variant="bodySmall" tone="warning">
-        {t("v2.enrichment.runtimeStorageUnavailable")}
+        {t("enrichment.runtimeStorageUnavailable")}
        </Typography>
       ) : runtime.data?.status === "ready" ? (
        <>
         <Badge variant="success" size="sm" className="justify-self-start">
-         {t("v2.settings.ai.ready", {
+         {t("settings.ai.ready", {
           provider: runtime.data.selectedKey.providerLabel,
           model: runtime.data.selectedKey.model,
          })}
@@ -400,19 +400,19 @@ export function DailyReadingSettingsPanel() {
        </>
       ) : runtime.data?.status === "missing-key" ? (
        <Typography variant="bodySmall" tone="warning">
-        {t("v2.settings.ai.missing")}
+        {t("settings.ai.missing")}
        </Typography>
       ) : runtime.data?.reason === "credential-unreadable" ? (
        <Typography variant="bodySmall" tone="warning">
-        {t("v2.settings.ai.credentialUnreadable")}
+        {t("settings.ai.credentialUnreadable")}
        </Typography>
       ) : (
        <Typography variant="bodySmall" tone="warning">
-        {t("v2.settings.ai.storageUnavailable")}
+        {t("settings.ai.storageUnavailable")}
        </Typography>
       )}
       <Typography variant="caption" tone="muted">
-       {t("v2.settings.ai.articleIndependent")}
+       {t("settings.ai.articleIndependent")}
       </Typography>
      </div>
 
@@ -430,7 +430,7 @@ export function DailyReadingSettingsPanel() {
         ) : (
          <RefreshCcw data-icon="inline-start" />
         )}
-        {t("v2.enrichment.actions.checkRuntimeAgain")}
+        {t("enrichment.actions.checkRuntimeAgain")}
        </Button>
       ) : runtime.data?.status === "missing-key" ? (
        <AddApiKeyDialog
@@ -438,7 +438,7 @@ export function DailyReadingSettingsPanel() {
         trigger={
          <Button type="button" size="compact">
           <KeyRound data-icon="inline-start" />
-          {t("v2.settings.ai.addKey")}
+          {t("settings.ai.addKey")}
          </Button>
         }
        />
@@ -448,7 +448,7 @@ export function DailyReadingSettingsPanel() {
         trigger={
          <Button type="button" size="compact">
           <KeyRound data-icon="inline-start" />
-          {t("v2.settings.ai.addReplacementKey")}
+          {t("settings.ai.addReplacementKey")}
          </Button>
         }
        />
@@ -456,7 +456,7 @@ export function DailyReadingSettingsPanel() {
        <Button type="button" variant="outline" size="compact" asChild>
         <Link href="/settings?section=ai&panel=providers" prefetch={false}>
          <Settings data-icon="inline-start" />
-         {t("v2.settings.ai.manageKeys")}
+         {t("settings.ai.manageKeys")}
         </Link>
        </Button>
       ) : null}
@@ -470,10 +470,10 @@ export function DailyReadingSettingsPanel() {
     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
      <div className="grid min-w-0 gap-1">
       <Typography as="h3" id="daily-reading-advanced-settings" variant="cardTitle" weight="bold">
-       {t("v2.settings.advanced.title")}
+       {t("settings.advanced.title")}
       </Typography>
       <Typography as="p" variant="bodySmall" tone="muted">
-       {t("v2.settings.advanced.description")}
+       {t("settings.advanced.description")}
       </Typography>
      </div>
      <Button
@@ -481,7 +481,7 @@ export function DailyReadingSettingsPanel() {
       variant="outline"
       size="compact"
       aria-expanded={advancedOpen}
-      aria-controls="daily-reading-v2-advanced-content"
+      aria-controls="daily-reading-advanced-content"
       onClick={() => setAdvancedOpen((value) => !value)}
      >
       {advancedOpen ? (
@@ -489,76 +489,76 @@ export function DailyReadingSettingsPanel() {
       ) : (
        <ChevronDown data-icon="inline-start" />
       )}
-      {advancedOpen ? t("v2.settings.advanced.hide") : t("v2.settings.advanced.show")}
+      {advancedOpen ? t("settings.advanced.hide") : t("settings.advanced.show")}
      </Button>
     </div>
 
     {advancedOpen ? (
-     <div id="daily-reading-v2-advanced-content" className="grid gap-5">
+     <div id="daily-reading-advanced-content" className="grid gap-5">
       <div className="grid gap-4 xl:grid-cols-3">
        <div className="grid gap-2">
-        <Label htmlFor="daily-reading-v2-freshness" variant="label" weight="semibold">
-         {t("v2.settings.advanced.freshnessLabel")}
+        <Label htmlFor="daily-reading-freshness" variant="label" weight="semibold">
+         {t("settings.advanced.freshnessLabel")}
         </Label>
         <Select
          value={String(settings.freshnessDays)}
          onValueChange={(value) =>
-          saveSettings({ freshnessDays: dailyReadingV2FreshnessDaysSchema.parse(Number(value)) })
+          saveSettings({ freshnessDays: dailyReadingFreshnessDaysSchema.parse(Number(value)) })
          }
         >
-         <SelectTrigger id="daily-reading-v2-freshness" width="full">
+         <SelectTrigger id="daily-reading-freshness" width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
-          <SelectItem value="1">{t("v2.settings.advanced.freshness1")}</SelectItem>
-          <SelectItem value="3">{t("v2.settings.advanced.freshness3")}</SelectItem>
-          <SelectItem value="7">{t("v2.settings.advanced.freshness7")}</SelectItem>
-          <SelectItem value="14">{t("v2.settings.advanced.freshness14")}</SelectItem>
+          <SelectItem value="1">{t("settings.advanced.freshness1")}</SelectItem>
+          <SelectItem value="3">{t("settings.advanced.freshness3")}</SelectItem>
+          <SelectItem value="7">{t("settings.advanced.freshness7")}</SelectItem>
+          <SelectItem value="14">{t("settings.advanced.freshness14")}</SelectItem>
          </SelectContent>
         </Select>
         <Typography variant="caption" tone="muted">
-         {t("v2.settings.advanced.freshnessDescription")}
+         {t("settings.advanced.freshnessDescription")}
         </Typography>
        </div>
 
        <div className="grid gap-2">
-        <Label htmlFor="daily-reading-v2-length" variant="label" weight="semibold">
-         {t("v2.settings.advanced.lengthLabel")}
+        <Label htmlFor="daily-reading-length" variant="label" weight="semibold">
+         {t("settings.advanced.lengthLabel")}
         </Label>
         <Select
          value={settings.preferredLength}
          onValueChange={(value) =>
-          saveSettings({ preferredLength: dailyReadingV2LengthPreferenceSchema.parse(value) })
+          saveSettings({ preferredLength: dailyReadingLengthPreferenceSchema.parse(value) })
          }
         >
-         <SelectTrigger id="daily-reading-v2-length" width="full">
+         <SelectTrigger id="daily-reading-length" width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
-          <SelectItem value="any">{t("v2.settings.advanced.lengthAny")}</SelectItem>
-          <SelectItem value="short">{t("v2.settings.advanced.lengthShort")}</SelectItem>
-          <SelectItem value="medium">{t("v2.settings.advanced.lengthMedium")}</SelectItem>
-          <SelectItem value="long">{t("v2.settings.advanced.lengthLong")}</SelectItem>
+          <SelectItem value="any">{t("settings.advanced.lengthAny")}</SelectItem>
+          <SelectItem value="short">{t("settings.advanced.lengthShort")}</SelectItem>
+          <SelectItem value="medium">{t("settings.advanced.lengthMedium")}</SelectItem>
+          <SelectItem value="long">{t("settings.advanced.lengthLong")}</SelectItem>
          </SelectContent>
         </Select>
        </div>
 
        <div className="grid gap-2">
-        <Label htmlFor="daily-reading-v2-no-match" variant="label" weight="semibold">
-         {t("v2.settings.advanced.noMatchLabel")}
+        <Label htmlFor="daily-reading-no-match" variant="label" weight="semibold">
+         {t("settings.advanced.noMatchLabel")}
         </Label>
         <Select
          value={settings.noMatchBehavior}
          onValueChange={(value) =>
-          saveSettings({ noMatchBehavior: dailyReadingV2NoMatchBehaviorSchema.parse(value) })
+          saveSettings({ noMatchBehavior: dailyReadingNoMatchBehaviorSchema.parse(value) })
          }
         >
-         <SelectTrigger id="daily-reading-v2-no-match" width="full">
+         <SelectTrigger id="daily-reading-no-match" width="full">
           <SelectValue />
          </SelectTrigger>
          <SelectContent align="start">
-          <SelectItem value="skip-day">{t("v2.settings.advanced.skipDay")}</SelectItem>
-          <SelectItem value="expand-window">{t("v2.settings.advanced.expandWindow")}</SelectItem>
+          <SelectItem value="skip-day">{t("settings.advanced.skipDay")}</SelectItem>
+          <SelectItem value="expand-window">{t("settings.advanced.expandWindow")}</SelectItem>
          </SelectContent>
         </Select>
        </div>
@@ -566,17 +566,17 @@ export function DailyReadingSettingsPanel() {
 
       <div className="grid gap-1">
        <SettingsToggleRow
-        id="daily-reading-v2-topic-diversity"
-        label={t("v2.settings.advanced.diversityTitle")}
-        description={t("v2.settings.advanced.diversityDescription")}
+        id="daily-reading-topic-diversity"
+        label={t("settings.advanced.diversityTitle")}
+        description={t("settings.advanced.diversityDescription")}
         checked={settings.preferTopicDiversity}
         onCheckedChange={(checked) => saveSettings({ preferTopicDiversity: checked })}
        />
        <Separator />
        <SettingsToggleRow
-        id="daily-reading-v2-avoid-recent"
-        label={t("v2.settings.advanced.avoidRecentTitle")}
-        description={t("v2.settings.advanced.avoidRecentDescription")}
+        id="daily-reading-avoid-recent"
+        label={t("settings.advanced.avoidRecentTitle")}
+        description={t("settings.advanced.avoidRecentDescription")}
         checked={settings.avoidRecentlyRead}
         onCheckedChange={(checked) => saveSettings({ avoidRecentlyRead: checked })}
        />
@@ -584,9 +584,9 @@ export function DailyReadingSettingsPanel() {
 
       <div className="grid gap-2">
        <div className="grid gap-1">
-        <Typography weight="bold">{t("v2.settings.advanced.topicsTitle")}</Typography>
+        <Typography weight="bold">{t("settings.advanced.topicsTitle")}</Typography>
         <Typography variant="bodySmall" tone="muted">
-         {t("v2.settings.advanced.topicsDescription")}
+         {t("settings.advanced.topicsDescription")}
         </Typography>
        </div>
        <div className="flex flex-wrap gap-2">
@@ -605,9 +605,9 @@ export function DailyReadingSettingsPanel() {
 
       <div className="grid gap-2">
        <div className="grid gap-1">
-        <Typography weight="bold">{t("v2.settings.advanced.sourcesTitle")}</Typography>
+        <Typography weight="bold">{t("settings.advanced.sourcesTitle")}</Typography>
         <Typography variant="bodySmall" tone="muted">
-         {t("v2.settings.advanced.sourcesDescription")}
+         {t("settings.advanced.sourcesDescription")}
         </Typography>
        </div>
        <div className="grid gap-2 xl:grid-cols-2">

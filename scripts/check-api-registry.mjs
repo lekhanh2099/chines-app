@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
-import { aiRuntimeDailyReadingV2InventoryFile } from "./api-inventory/ai-runtime-daily-reading-v2.mjs";
+import { aiRuntimeDailyReadingInventoryFile } from "./api-inventory/ai-runtime-daily-reading.mjs";
 import { dailyReadingInventoryFile } from "./api-inventory/daily-reading.mjs";
 import { dictionaryInventoryFile } from "./api-inventory/dictionary.mjs";
 
@@ -13,7 +13,7 @@ const INVENTORY_FILES = [
  PUBLIC_REGISTRY_FILE,
  dailyReadingInventoryFile,
  dictionaryInventoryFile,
- aiRuntimeDailyReadingV2InventoryFile,
+ aiRuntimeDailyReadingInventoryFile,
 ];
 const HTTP_METHODS = new Set(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 const REQUIRED_DIRECT_FLOWS = new Set([

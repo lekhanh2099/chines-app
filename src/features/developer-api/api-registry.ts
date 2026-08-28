@@ -2046,6 +2046,15 @@ export const currentApiInventory = [
   internalReason: "Per-account AI task assignments stay inside the signed-in app.",
  }),
  inventoryEntry({
+  currentPath: "/api/settings/ai-tasks/check",
+  methods: ["POST"],
+  source: "route",
+  group: "AI",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason: "Account-scoped AI runtime probes use the selected private API key.",
+ }),
+ inventoryEntry({
   currentPath: "/api/settings/ai-activity",
   methods: ["GET", "DELETE"],
   source: "route",
@@ -2063,6 +2072,16 @@ export const currentApiInventory = [
   v1Path: null,
   internalReason:
    "Durable Daily Reading enrichment jobs contain account-scoped AI runtime receipts and temporary generated module results.",
+ }),
+ inventoryEntry({
+  currentPath: "/api/hanzihome/reader/daily-reading/enrichment-jobs/stream",
+  methods: ["GET"],
+  source: "route",
+  group: "AI",
+  exposure: "internal-only",
+  v1Path: null,
+  internalReason:
+   "Authenticated Daily Reading translation progress is streamed only to the account that owns the durable job.",
  }),
  inventoryEntry({
   currentPath: "/api/tts",

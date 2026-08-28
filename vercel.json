@@ -2,6 +2,11 @@
  "$schema": "https://openapi.vercel.sh/vercel.json",
  "ignoreCommand": "exit 1",
  "buildCommand": "npm run build",
+ "functions": {
+  "src/app/api/hanzihome/reader/daily-reading/enrichment-jobs/stream/route.ts": {
+   "supportsCancellation": true
+  }
+ },
  "git": {
   "deploymentEnabled": {
    "**": false,

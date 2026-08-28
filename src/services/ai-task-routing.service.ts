@@ -6,6 +6,7 @@ import { getSupabaseServerSecret } from "@/lib/env/server";
 import {
  aiActivityCursorSchema,
  aiActivityEventSchema,
+ aiActivitySummaryGroupSchema,
  aiActivityStatusSchema,
  aiTaskAssignmentSchema,
  aiTaskIdSchema,
@@ -44,6 +45,18 @@ const activityRowSchema = z.strictObject({
 
 const assignmentRowsSchema = z.array(assignmentRowSchema);
 const activityRowsSchema = z.array(activityRowSchema);
+const activitySummaryRowSchema = z.strictObject({
+ task_id: aiTaskIdSchema,
+ provider: ApiKeyProviderSchema,
+ model: z.string(),
+ attempts: z.number().int().nonnegative(),
+ successes: z.number().int().nonnegative(),
+ success_rate: z.number().nonnegative(),
+ average_latency_ms: z.number().int().nonnegative().nullable(),
+ input_tokens: z.number().int().nonnegative(),
+ output_tokens: z.number().int().nonnegative(),
+});
+const activitySummaryRowsSchema = z.array(activitySummaryRowSchema);
 const postgrestErrorSchema = z.object({ code: z.string().nullable().optional() });
 
 export const createAiActivityEventSchema = aiActivityEventSchema.omit({
@@ -236,6 +249,37 @@ export async function listUserAiActivityEvents(input: {
     ? aiActivityCursorSchema.parse({ createdAt: lastEvent.createdAt, id: lastEvent.id })
     : null,
  };
+}
+
+export async function listUserAiActivitySummary(input: {
+ userId: string;
+ taskId?: AiTaskId;
+ provider?: z.output<typeof ApiKeyProviderSchema>;
+}) {
+ const url = buildRestUrl("rpc/user_ai_activity_summary");
+ const rows = await requestTaskStorage({
+  url,
+  schema: activitySummaryRowsSchema,
+  method: "POST",
+  body: {
+   p_user_id: input.userId,
+   p_task_id: input.taskId ?? null,
+   p_provider: input.provider ?? null,
+  },
+ });
+ return rows.map((row) =>
+  aiActivitySummaryGroupSchema.parse({
+   taskId: row.task_id,
+   provider: row.provider,
+   model: row.model,
+   attempts: row.attempts,
+   successes: row.successes,
+   successRate: row.success_rate,
+   averageLatencyMs: row.average_latency_ms,
+   inputTokens: row.input_tokens,
+   outputTokens: row.output_tokens,
+  }),
+ );
 }
 
 export async function clearUserAiActivityEvents(userId: string) {

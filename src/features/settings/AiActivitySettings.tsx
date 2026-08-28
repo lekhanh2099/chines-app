@@ -72,6 +72,7 @@ export function AiActivitySettings() {
   },
  });
  const events = activityQuery.data?.events ?? [];
+ const summaryGroups = activityQuery.data?.summaryGroups ?? [];
  const nextCursor = activityQuery.data?.nextCursor ?? null;
  const isLoading = activityQuery.isPending || activityQuery.isFetching;
  const loadError = activityQuery.isError || clearMutation.isError;
@@ -172,6 +173,38 @@ export function AiActivitySettings() {
    {!isLoading && !loadError && events.length === 0 ? (
     <Typography tone="muted">{t("empty")}</Typography>
    ) : null}
+   {summaryGroups.length > 0 ? (
+    <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+     {summaryGroups.map((group) => (
+      <Card
+       key={`${group.taskId}:${group.provider}:${group.model}`}
+       variant="subtle"
+       padding="sm"
+       className="grid gap-1"
+      >
+       <Typography variant="bodySmall" weight="semibold">
+        {taskT(`${getAiTaskCopyKey(group.taskId)}.title`)}
+       </Typography>
+       <Typography variant="caption" tone="muted" wrapping="breakWords">
+        {group.provider} · {group.model}
+       </Typography>
+       <Typography variant="caption" tone="muted">
+        {t("summary", {
+         attempts: group.attempts,
+         successRate: Math.round(group.successRate),
+         inputTokens: group.inputTokens,
+         outputTokens: group.outputTokens,
+        })}
+       </Typography>
+       {group.averageLatencyMs !== null ? (
+        <Typography variant="caption" tone="muted">
+         {t("summaryLatency", { latency: group.averageLatencyMs })}
+        </Typography>
+       ) : null}
+      </Card>
+     ))}
+    </div>
+   ) : null}
    <div className="grid gap-2">
     {events.map((event) => (
      <div
@@ -186,6 +219,21 @@ export function AiActivitySettings() {
         {[event.provider, event.model, event.keyLabel].filter(Boolean).join(" · ") ||
          t("noRuntime")}
        </Typography>
+       {event.latencyMs !== null || event.inputTokens !== null || event.outputTokens !== null ? (
+        <Typography variant="caption" tone="muted">
+         {[
+          event.latencyMs === null ? null : t("metricsLatency", { latency: event.latencyMs }),
+          event.inputTokens === null && event.outputTokens === null
+           ? null
+           : t("metricsTokens", {
+              inputTokens: event.inputTokens ?? 0,
+              outputTokens: event.outputTokens ?? 0,
+             }),
+         ]
+          .filter(Boolean)
+          .join(" · ")}
+        </Typography>
+       ) : null}
       </div>
       <div className="flex flex-wrap items-center gap-2 md:justify-end">
        {event.resourceType === "conversation" && event.resourceId ? (

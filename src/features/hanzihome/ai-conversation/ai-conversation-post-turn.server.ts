@@ -3,6 +3,7 @@ import "server-only";
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
 import { logger } from "@/lib/logger";
 import type { JsonObject } from "@/types/json";
+import { resolveUserAiTaskRuntime } from "@/services/ai-runtime.service";
 
 import { loadAiConversationContextState } from "./ai-conversation-persistence.server";
 import {
@@ -14,6 +15,7 @@ import {
  finishAiConversationPostTurnJob,
  loadActiveAiConversationMemories,
  loadAiConversationPostTurnEvidence,
+ loadUnembeddedAiConversationMemories,
 } from "./ai-conversation-memory-persistence.server";
 import { extractAiConversationMemoryChanges } from "./ai-conversation-memory-extraction.server";
 import {
@@ -50,18 +52,19 @@ export async function processDueAiConversationPostTurnJobs({
  conversationId: string;
  signal?: AbortSignal;
  limit?: number;
-}): Promise<{ processed: number; ready: boolean }> {
+}): Promise<{ processed: number; ready: boolean; retryDelaySeconds: number }> {
  let jobs;
  try {
   jobs = await claimAiConversationPostTurnJobs({ userId, conversationId, limit });
  } catch (error) {
   if (error instanceof AiConversationMemoryPipelineNotReadyError) {
-   return { processed: 0, ready: false };
+   return { processed: 0, ready: false, retryDelaySeconds: 0 };
   }
   throw error;
  }
 
  let processed = 0;
+ let retryDelaySeconds = 0;
  for (const job of jobs) {
   try {
    const [evidence, contextState] = await Promise.all([
@@ -73,44 +76,50 @@ export async function processDueAiConversationPostTurnJobs({
     userPreference: evidence.userMemoryEnabled,
    });
 
+   let stageFailed = false;
    if (job.memory_applied_at === null) {
     if (memoryEnabled) {
-     const activeMemories = await loadActiveAiConversationMemories({
-      userId,
-      characterId: evidence.conversation.character_id,
-      limit: 80,
-     });
-     const extraction = await extractAiConversationMemoryChanges({
+     const memoryRuntime = await resolveUserAiTaskRuntime({
       supabase,
       userId,
-      characterId: evidence.conversation.character_id,
-      characterName: contextState.character.displayName,
-      mode: contextState.conversation.mode,
-      userMessage: evidence.userMessage.content,
-      assistantMessage: evidence.assistantMessage.content,
-      activeMemories,
-      signal,
+      taskId: "conversation.memory-extraction",
      });
-     if (!extraction.data) {
-      throw new Error(extraction.error || "AI memory extraction failed");
-     }
-
-     await applyAiConversationMemoryChanges({
-      userId,
-      jobId: job.id,
-      userMessageId: evidence.userMessage.id,
-      changes: extraction.data.changes.map(toMemoryChangeJson),
-     });
-
-     try {
-      await enrichMissingAiConversationMemoryEmbeddings({
-       supabase,
+     if (!memoryRuntime.ok && memoryRuntime.status === "task-disabled") {
+      await applyAiConversationMemoryChanges({
        userId,
-       characterId: evidence.conversation.character_id,
-       signal,
+       jobId: job.id,
+       userMessageId: evidence.userMessage.id,
+       changes: [],
       });
-     } catch (embeddingError) {
-      logger.warn("[AI Conversation] memory embedding enrichment deferred", embeddingError);
+     } else {
+      try {
+       const activeMemories = await loadActiveAiConversationMemories({
+        userId,
+        characterId: evidence.conversation.character_id,
+        limit: 80,
+       });
+       const extraction = await extractAiConversationMemoryChanges({
+        supabase,
+        userId,
+        characterId: evidence.conversation.character_id,
+        characterName: contextState.character.displayName,
+        mode: contextState.conversation.mode,
+        userMessage: evidence.userMessage.content,
+        assistantMessage: evidence.assistantMessage.content,
+        activeMemories,
+        signal,
+       });
+       if (!extraction.data) throw new Error("memory-extraction-failed");
+       await applyAiConversationMemoryChanges({
+        userId,
+        jobId: job.id,
+        userMessageId: evidence.userMessage.id,
+        changes: extraction.data.changes.map(toMemoryChangeJson),
+       });
+      } catch {
+       stageFailed = true;
+       logger.warn("[AI Conversation] memory extraction stage deferred");
+      }
      }
     } else {
      await applyAiConversationMemoryChanges({
@@ -123,49 +132,115 @@ export async function processDueAiConversationPostTurnJobs({
    }
 
    if (job.relationship_applied_at === null) {
-    await evolveAiConversationRelationshipForJob({
-     userId,
-     jobId: job.id,
-     increment: memoryEnabled ? RELATIONSHIP_INCREMENT_PER_REMEMBERED_TURN : 0,
-    });
+    try {
+     await evolveAiConversationRelationshipForJob({
+      userId,
+      jobId: job.id,
+      increment: memoryEnabled ? RELATIONSHIP_INCREMENT_PER_REMEMBERED_TURN : 0,
+     });
+    } catch {
+     stageFailed = true;
+     logger.warn("[AI Conversation] relationship stage deferred");
+    }
    }
 
    if (job.summary_applied_at === null) {
-    const summaryUpdate = await buildAiConversationSummaryUpdate({
+    const summaryRuntime = await resolveUserAiTaskRuntime({
      supabase,
      userId,
-     conversation: evidence.conversation,
-     signal,
+     taskId: "conversation.summary",
     });
-    await applyAiConversationSummaryForJob({
+    if (!summaryRuntime.ok && summaryRuntime.status === "task-disabled") {
+     await applyAiConversationSummaryForJob({
+      userId,
+      jobId: job.id,
+      summary: null,
+      summaryUntilSeq: null,
+      expectedSummaryVersion: null,
+     });
+    } else {
+     try {
+      const summaryUpdate = await buildAiConversationSummaryUpdate({
+       supabase,
+       userId,
+       conversation: evidence.conversation,
+       signal,
+      });
+      await applyAiConversationSummaryForJob({
+       userId,
+       jobId: job.id,
+       summary: summaryUpdate?.summary ?? null,
+       summaryUntilSeq: summaryUpdate?.summaryUntilSeq ?? null,
+       expectedSummaryVersion: summaryUpdate?.expectedSummaryVersion ?? null,
+      });
+     } catch {
+      stageFailed = true;
+      logger.warn("[AI Conversation] summary stage deferred");
+     }
+    }
+   }
+
+   if (memoryEnabled) {
+    const semanticRuntime = await resolveUserAiTaskRuntime({
+     supabase,
      userId,
-     jobId: job.id,
-     summary: summaryUpdate?.summary ?? null,
-     summaryUntilSeq: summaryUpdate?.summaryUntilSeq ?? null,
-     expectedSummaryVersion: summaryUpdate?.expectedSummaryVersion ?? null,
+     taskId: "conversation.semantic-memory",
     });
+    if (semanticRuntime.ok) {
+     try {
+      const pendingEmbeddings = await loadUnembeddedAiConversationMemories({
+       userId,
+       characterId: evidence.conversation.character_id,
+       limit: 3,
+      });
+      const enriched = await enrichMissingAiConversationMemoryEmbeddings({
+       supabase,
+       userId,
+       characterId: evidence.conversation.character_id,
+       signal,
+      });
+      if (pendingEmbeddings.length > 0 && enriched === 0) {
+       stageFailed = true;
+       logger.warn("[AI Conversation] semantic memory stage deferred");
+      }
+     } catch {
+      stageFailed = true;
+      logger.warn("[AI Conversation] semantic memory stage deferred");
+     }
+    } else if (semanticRuntime.status !== "task-disabled") {
+     stageFailed = true;
+     logger.warn("[AI Conversation] semantic memory runtime unavailable");
+    }
    }
 
    await finishAiConversationPostTurnJob({
     userId,
     jobId: job.id,
-    succeeded: true,
+    succeeded: !stageFailed,
+    ...(stageFailed ? { error: "post-turn-processing-failed" } : {}),
    });
-   processed += 1;
-  } catch (error) {
-   logger.warn("[AI Conversation] post-turn job failed and will retry", error);
+   if (stageFailed) {
+    retryDelaySeconds =
+     job.attempt_count >= 5 ? 0 : Math.min(3600, 30 * 2 ** Math.max(job.attempt_count - 1, 0));
+   } else {
+    processed += 1;
+   }
+  } catch {
+   logger.warn("[AI Conversation] post-turn job failed and will retry");
    try {
     await finishAiConversationPostTurnJob({
      userId,
      jobId: job.id,
      succeeded: false,
-     error: error instanceof Error ? error.message : "Unknown post-turn processing error",
+     error: "post-turn-processing-failed",
     });
-   } catch (finishError) {
-    logger.error("[AI Conversation] failed to persist post-turn retry state", finishError);
+    retryDelaySeconds =
+     job.attempt_count >= 5 ? 0 : Math.min(3600, 30 * 2 ** Math.max(job.attempt_count - 1, 0));
+   } catch {
+    logger.error("[AI Conversation] failed to persist post-turn retry state");
    }
   }
  }
 
- return { processed, ready: true };
+ return { processed, ready: true, retryDelaySeconds };
 }

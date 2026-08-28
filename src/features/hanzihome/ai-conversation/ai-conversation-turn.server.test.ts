@@ -234,7 +234,7 @@ describe("persisted AI conversation turn", () => {
   expect(streamAiConversationProviderReply).not.toHaveBeenCalled();
  });
 
- it("reloads relationship and summary context after processing a due durable job", async () => {
+ it("uses the latest committed context without waiting for post-turn AI", async () => {
   const refreshedContext: AiConversationContextState = {
    ...contextState,
    relationship: { nickname: "", familiarityScore: 0.25, revision: 1 },
@@ -244,7 +244,6 @@ describe("persisted AI conversation turn", () => {
     summaryUntilSeq: 2,
    },
   };
-  processDueAiConversationPostTurnJobs.mockResolvedValue({ processed: 1, ready: true });
   loadAiConversationContextState.mockResolvedValue(refreshedContext);
 
   await generatePersistedAiConversationTurn({
@@ -254,13 +253,11 @@ describe("persisted AI conversation turn", () => {
    contextState,
   });
 
-  expect(loadAiConversationContextState).toHaveBeenCalledWith({
-   userId: "user-1",
-   conversationId: contextState.conversation.id,
-  });
+  expect(processDueAiConversationPostTurnJobs).not.toHaveBeenCalled();
+  expect(loadAiConversationContextState).not.toHaveBeenCalled();
   const providerInput = streamAiConversationProviderReply.mock.calls[0]?.[0];
-  expect(providerInput.systemPrompt).toContain('"relationshipBand":"familiar"');
-  expect(providerInput.systemPrompt).toContain("已经聊过运动。");
+  expect(providerInput.systemPrompt).not.toContain('"relationshipBand":"familiar"');
+  expect(providerInput.systemPrompt).not.toContain("已经聊过运动。");
  });
 
  it("does not read or inject long-term memory when the conversation policy is disabled", async () => {

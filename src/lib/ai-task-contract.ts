@@ -22,6 +22,8 @@ export const aiTaskIdSchema = z.enum([
  "conversation.semantic-memory",
 ]);
 
+export const AI_SEMANTIC_MEMORY_MODEL = "gemini-embedding-001";
+
 export const aiTaskRoutingModeSchema = z.enum(["auto", "assigned", "disabled"]);
 export const aiTaskResolutionSourceSchema = z.enum(["auto", "assigned", "session-override"]);
 export const aiTaskGroupSchema = z.enum(["main", "advanced"]);
@@ -154,6 +156,18 @@ export const aiActivityCursorSchema = z.strictObject({
  id: z.uuid(),
 });
 
+export const aiActivitySummaryGroupSchema = z.strictObject({
+ taskId: aiTaskIdSchema,
+ provider: ApiKeyProviderSchema,
+ model: z.string().min(1).max(200),
+ attempts: z.number().int().nonnegative(),
+ successes: z.number().int().nonnegative(),
+ successRate: z.number().min(0).max(100),
+ averageLatencyMs: z.number().int().nonnegative().nullable(),
+ inputTokens: z.number().int().nonnegative(),
+ outputTokens: z.number().int().nonnegative(),
+});
+
 export function getAiTaskDefinition(taskId: AiTaskId): AiTaskDefinition {
  const definition = AI_TASK_REGISTRY.find((candidate) => candidate.id === taskId);
  if (!definition) throw new Error(`Unknown AI task: ${taskId}`);
@@ -173,3 +187,4 @@ export type AiRuntimeWithTaskRuntimesResponse = z.output<
 >;
 export type AiActivityEvent = z.output<typeof aiActivityEventSchema>;
 export type AiActivityCursor = z.output<typeof aiActivityCursorSchema>;
+export type AiActivitySummaryGroup = z.output<typeof aiActivitySummaryGroupSchema>;

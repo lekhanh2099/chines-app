@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
  clearUserAiActivityEvents: vi.fn(),
  listUserAiActivityEvents: vi.fn(),
+ listUserAiActivitySummary: vi.fn(),
  requireAuthenticatedRoute: vi.fn(),
 }));
 
@@ -17,6 +18,7 @@ vi.mock("@/services/ai-task-routing.service", () => ({
  AiTaskStorageNotReadyError: class AiTaskStorageNotReadyError extends Error {},
  clearUserAiActivityEvents: mocks.clearUserAiActivityEvents,
  listUserAiActivityEvents: mocks.listUserAiActivityEvents,
+ listUserAiActivitySummary: mocks.listUserAiActivitySummary,
 }));
 
 import { DELETE, GET } from "./route";
@@ -29,6 +31,7 @@ describe("AI activity settings route", () => {
    context: { user: { id: "user-1" } },
   });
   mocks.listUserAiActivityEvents.mockResolvedValue({ events: [], nextCursor: null });
+  mocks.listUserAiActivitySummary.mockResolvedValue([]);
   mocks.clearUserAiActivityEvents.mockResolvedValue(undefined);
  });
 
@@ -72,6 +75,11 @@ describe("AI activity settings route", () => {
     createdAt: "2026-08-26T00:00:00.000Z",
     id: "11111111-1111-4111-8111-111111111111",
    },
+  });
+  expect(mocks.listUserAiActivitySummary).toHaveBeenCalledWith({
+   userId: "user-1",
+   taskId: "lookup.quick",
+   provider: "gemini",
   });
  });
 

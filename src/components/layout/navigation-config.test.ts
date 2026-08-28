@@ -34,7 +34,7 @@ describe("navigation configuration", () => {
  });
 
  it("places HTML files with the primary learning destinations", () => {
-  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("htmlArtifacts");
+  expect(navigationGroups[0]?.sections[2]?.itemIds).toEqual(["humanities", "htmlArtifacts"]);
   expect(navigationGroups[3]?.sections.flatMap((section) => section.itemIds)).not.toContain(
    "htmlArtifacts",
   );
@@ -44,15 +44,16 @@ describe("navigation configuration", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toEqual([
    "home",
    "lessons",
+   "dailyReading",
+   "reader",
    "notes",
-   "humanities",
-   "htmlArtifacts",
   ]);
  });
 
  it("keeps reading and HSK destinations inside the learning journey", () => {
-  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["reader", "dailyReading"]);
-  expect(navigationGroups[0]?.sections[2]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
+  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("reader");
+  expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("dailyReading");
+  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
  });
 
  it("keeps personal destinations together without a separate system group", () => {
@@ -65,7 +66,11 @@ describe("navigation configuration", () => {
   expect(Object.hasOwn(navigationItems, "dataQuality")).toBe(false);
   expect(Object.hasOwn(navigationItems, "apiDocs")).toBe(false);
   expect(Object.hasOwn(navigationItems, "tts")).toBe(false);
-  expect(navigationGroups[1]?.sections[0]?.itemIds).toEqual(["dictation", "conversation"]);
+  expect(navigationGroups[1]?.sections[0]?.itemIds).toEqual([
+   "dictation",
+   "conversation",
+   "translationStudio",
+  ]);
   expect(navigationItems.settings.aliases).toEqual(["/tts", "/data-quality", "/api-docs"]);
  });
 

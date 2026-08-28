@@ -21,6 +21,7 @@ import {
  updateAiConversationMemoryPolicy,
  updateAiConversationSettings,
 } from "@/features/hanzihome/ai-conversation/ai-conversation-persistence.server";
+import { dispatchAiConversationPostTurnWorkflow } from "@/features/hanzihome/ai-conversation/ai-conversation-post-turn.workflow";
 import {
  aiConversationArchiveResponseSchema,
  aiConversationHistorySchema,
@@ -412,6 +413,10 @@ export async function POST(request: Request) {
    });
 
    if (existingReply) {
+    await dispatchAiConversationPostTurnWorkflow({
+     userId,
+     conversationId: payload.conversationId,
+    });
     return privateNoStoreJson(
      aiConversationTurnResponseSchema.parse({
       conversationId: payload.conversationId,
@@ -462,6 +467,10 @@ export async function POST(request: Request) {
      keyLabel: generated.runtimeReceipt.keyLabel,
      resolutionSource: generated.runtimeReceipt.resolutionSource,
     },
+   });
+   await dispatchAiConversationPostTurnWorkflow({
+    userId,
+    conversationId: payload.conversationId,
    });
 
    return privateNoStoreJson(

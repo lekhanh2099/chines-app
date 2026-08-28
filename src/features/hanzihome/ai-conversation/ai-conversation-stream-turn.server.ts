@@ -25,6 +25,7 @@ import {
  type AiConversationStreamEvent,
 } from "./ai-conversation-stream.schemas";
 import { preparePersistedAiConversationTurn } from "./ai-conversation-turn.server";
+import { dispatchAiConversationPostTurnWorkflow } from "./ai-conversation-post-turn.workflow";
 
 const encoder = new TextEncoder();
 const heartbeatMilliseconds = 10_000;
@@ -91,6 +92,10 @@ export async function createPersistedAiConversationTurnStream(input: {
   userMessageId: userMessage.id,
  });
  if (existingReply) {
+  await dispatchAiConversationPostTurnWorkflow({
+   userId: input.userId,
+   conversationId: input.conversationId,
+  });
   const turn = aiConversationTurnResponseSchema.parse({
    conversationId: input.conversationId,
    userMessage,
@@ -246,6 +251,10 @@ export async function createPersistedAiConversationTurnStream(input: {
       keyLabel: prepared.runtime.label,
       resolutionSource: prepared.runtime.resolutionSource,
      },
+    });
+    await dispatchAiConversationPostTurnWorkflow({
+     userId: input.userId,
+     conversationId: input.conversationId,
     });
     const turn = aiConversationTurnResponseSchema.parse({
      conversationId: input.conversationId,

@@ -6,6 +6,7 @@ import { getApiKeyModelOptions, isApiKeyModelSupported } from "@/lib/api-key-mod
 import { getApiKeyProviderLabel } from "@/lib/api-key-providers";
 import {
  AI_TASK_REGISTRY,
+ AI_SEMANTIC_MEMORY_MODEL,
  aiTaskAssignmentSchema,
  getAiTaskDefinition,
 } from "@/lib/ai-task-contract";
@@ -123,8 +124,10 @@ export async function PUT(request: Request) {
    return apiError("API key provider cannot run this task", 400, "AI_TASK_CAPABILITY_UNAVAILABLE");
   }
   if (
-   !isApiKeyModelSupported(key.provider, parsed.data.model) &&
-   key.defaultModel !== parsed.data.model
+   parsed.data.taskId === "conversation.semantic-memory"
+    ? parsed.data.model !== AI_SEMANTIC_MEMORY_MODEL
+    : !isApiKeyModelSupported(key.provider, parsed.data.model) &&
+      key.defaultModel !== parsed.data.model
   ) {
    return apiError("Model is not supported by this API key", 400, "AI_MODEL_UNAVAILABLE");
   }

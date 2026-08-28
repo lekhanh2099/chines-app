@@ -1,4 +1,4 @@
-# Daily Reading V2 — implementation handoff
+# Daily Reading — implementation handoff
 
 Status: source implementation complete; executable and viewport verification still required before release.
 
@@ -6,7 +6,7 @@ Shared AI credential/runtime authority: `docs/architecture/ai-runtime-byok.md`.
 
 ## Product contract
 
-Daily Reading V2 is a local-first article acquisition feature. Its critical path is:
+Daily Reading is a local-first article acquisition feature. Its critical path is:
 
 ```text
 discover -> extract -> validate/rerank -> persist source article -> readable
@@ -26,10 +26,10 @@ A missing API key, quota error, invalid AI response or failed grammar/question m
 
 The scheduler remains browser-session-owned rather than server cron.
 
-- Default capture time is 10:00 in `Asia/Ho_Chi_Minh`; V2 settings can change the local capture time.
+- Default capture time is 10:00 in `Asia/Ho_Chi_Minh`; Daily Reading settings can change the local capture time.
 - When an authenticated visible app session reaches/passes the configured time, the scheduler may capture the day's source.
 - If the app was closed, the next visible session performs catch-up.
-- A persisted scheduled V2 article counts as that day's success even when later enrichment fails.
+- A persisted scheduled article counts as that day's success even when later enrichment fails.
 - Multiple tabs coordinate through the existing Daily Reading lock to avoid duplicate capture.
 
 The application must not claim that Daily Reading runs while every browser/app session is closed.
@@ -73,12 +73,12 @@ If an early candidate batch fails quality checks, collection continues through b
 
 ## Article-first persistence
 
-New captures use the V2 ledger and `source-captured` provenance.
+New captures use the current ledger and `source-captured` provenance.
 
 The browser:
 
 1. receives a validated source-capture response;
-2. writes the immutable Chinese article to V2 storage;
+2. writes the immutable Chinese article to Daily Reading storage;
 3. verifies the stored value;
 4. only then records capture success/run telemetry;
 5. optionally starts AI enrichment.
@@ -87,15 +87,15 @@ Telemetry failure after article persistence cannot roll the article back.
 
 Deduplication uses article ID, canonical source URL and content fingerprint.
 
-V1 local data is migrated additively when V2 is absent. V1 storage remains untouched for rollback/recovery during the migration period, and migrated content is labeled `legacy-adapted` rather than `source-captured`.
+Legacy local data is migrated additively when current storage is absent. Legacy storage remains untouched for rollback/recovery during the migration period, and migrated content is labeled `legacy-adapted` rather than `source-captured`.
 
 ## Pinyin contract
 
-Daily Reading V2 persists no pinyin fields.
+Daily Reading persists no pinyin fields.
 
 Title/paragraph/vocabulary pinyin is derived at render time through the existing contextual-pronunciation engine and current reader display settings. This avoids treating automatically generated readings as pronunciation source of truth.
 
-Legacy V1 data may still contain historical pinyin and `pinyinReviewStatus`; migration intentionally does not copy those fields into V2.
+Legacy data may still contain historical pinyin and `pinyinReviewStatus`; migration intentionally does not copy those fields into the current article contract.
 
 ## AI enrichment
 
@@ -110,7 +110,7 @@ questions
 
 Each module owns its own `idle | running | ready | failed | blocked` state and can be retried independently. A later failure must not reset already-ready sibling modules.
 
-All V2 enrichment uses the shared personal-BYOK runtime described in `docs/architecture/ai-runtime-byok.md`. There is no application-wide Gemini/DeepSeek provider-key fallback.
+All Daily Reading enrichment uses the shared personal-BYOK runtime described in `docs/architecture/ai-runtime-byok.md`. There is no application-wide Gemini/DeepSeek provider-key fallback.
 
 Translation preserves source paragraph IDs/order. Vocabulary must occur in source text. Grammar evidence must match source sentences. Question evidence must point to valid paragraph IDs/source phrases and satisfy the required question-type coverage.
 
@@ -133,17 +133,17 @@ Advanced source criteria use progressive disclosure so capture time/target level
 
 ## Legacy compatibility
 
-The unused legacy `/api/hanzihome/reader/daily-reading/generate` AI route has been removed. V1 generated-reading schemas remain read-only inputs for the browser-local V1 -> V2 migration so existing saved articles remain recoverable.
+The unused legacy `/api/hanzihome/reader/daily-reading/generate` AI route has been removed. Legacy generated-reading schemas remain read-only inputs for browser-local migration so existing saved articles remain recoverable.
 
 Do not remove V1 read/migration support until release verification proves existing browser data remains recoverable.
 
 ## Database boundary
 
-Daily Reading V2 adds no Supabase schema/RLS migration and no hosted Daily Reading article persistence. Article/settings/run state remains browser-local by design.
+Daily Reading adds no Supabase schema/RLS migration and no hosted Daily Reading article persistence. Article/settings/run state remains browser-local by design.
 
 ## Focused verification
 
-Run the feature tests and repository gates in an executable checkout. At minimum include the V2 schema/migration/settings/policy/source/capture/storage/scheduler/enrichment tests plus route tests for source capture/enrichment and i18n.
+Run the feature tests and repository gates in an executable checkout. At minimum include the Daily Reading schema/migration/settings/policy/source/capture/storage/scheduler/enrichment tests plus route tests for source capture/enrichment and i18n.
 
 Then run:
 

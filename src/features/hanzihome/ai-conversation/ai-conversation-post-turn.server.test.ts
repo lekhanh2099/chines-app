@@ -16,8 +16,10 @@ const {
  extractAiConversationMemoryChanges,
  finishAiConversationPostTurnJob,
  loadActiveAiConversationMemories,
+ loadUnembeddedAiConversationMemories,
  loadAiConversationContextState,
  loadAiConversationPostTurnEvidence,
+ resolveUserAiTaskRuntime,
 } = vi.hoisted(() => {
  class PipelineNotReadyError extends Error {}
  return {
@@ -31,8 +33,10 @@ const {
   extractAiConversationMemoryChanges: vi.fn(),
   finishAiConversationPostTurnJob: vi.fn(),
   loadActiveAiConversationMemories: vi.fn(),
+  loadUnembeddedAiConversationMemories: vi.fn(),
   loadAiConversationContextState: vi.fn(),
   loadAiConversationPostTurnEvidence: vi.fn(),
+  resolveUserAiTaskRuntime: vi.fn(),
  };
 });
 
@@ -46,8 +50,10 @@ vi.mock("./ai-conversation-memory-persistence.server", () => ({
  evolveAiConversationRelationshipForJob,
  finishAiConversationPostTurnJob,
  loadActiveAiConversationMemories,
+ loadUnembeddedAiConversationMemories,
  loadAiConversationPostTurnEvidence,
 }));
+vi.mock("@/services/ai-runtime.service", () => ({ resolveUserAiTaskRuntime }));
 vi.mock("./ai-conversation-memory-extraction.server", () => ({
  extractAiConversationMemoryChanges,
 }));
@@ -148,13 +154,17 @@ describe("AI conversation durable post-turn processor", () => {
   extractAiConversationMemoryChanges.mockReset();
   finishAiConversationPostTurnJob.mockReset();
   loadActiveAiConversationMemories.mockReset();
+  loadUnembeddedAiConversationMemories.mockReset();
   loadAiConversationContextState.mockReset();
   loadAiConversationPostTurnEvidence.mockReset();
+  resolveUserAiTaskRuntime.mockReset();
 
   claimAiConversationPostTurnJobs.mockResolvedValue([job]);
   loadAiConversationPostTurnEvidence.mockResolvedValue(evidence);
   loadAiConversationContextState.mockResolvedValue(contextState);
   loadActiveAiConversationMemories.mockResolvedValue([]);
+  loadUnembeddedAiConversationMemories.mockResolvedValue([]);
+  resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime: {} });
   extractAiConversationMemoryChanges.mockResolvedValue({ data: { changes: [] }, error: null });
   applyAiConversationMemoryChanges.mockResolvedValue(0);
   enrichMissingAiConversationMemoryEmbeddings.mockResolvedValue(0);
@@ -171,7 +181,7 @@ describe("AI conversation durable post-turn processor", () => {
    conversationId: job.conversation_id,
   });
 
-  expect(result).toEqual({ processed: 1, ready: true });
+  expect(result).toEqual({ processed: 1, ready: true, retryDelaySeconds: 0 });
   expect(extractAiConversationMemoryChanges).toHaveBeenCalledWith(
    expect.objectContaining({
     userMessage: evidence.userMessage.content,
@@ -230,7 +240,7 @@ describe("AI conversation durable post-turn processor", () => {
     userId: job.user_id,
     conversationId: job.conversation_id,
    }),
-  ).resolves.toEqual({ processed: 0, ready: false });
+  ).resolves.toEqual({ processed: 0, ready: false, retryDelaySeconds: 0 });
   expect(loadAiConversationPostTurnEvidence).not.toHaveBeenCalled();
  });
 
@@ -244,12 +254,12 @@ describe("AI conversation durable post-turn processor", () => {
    conversationId: job.conversation_id,
   });
 
-  expect(result).toEqual({ processed: 0, ready: true });
+  expect(result).toEqual({ processed: 0, ready: true, retryDelaySeconds: 30 });
   expect(finishAiConversationPostTurnJob).toHaveBeenCalledWith({
    userId: job.user_id,
    jobId: job.id,
    succeeded: false,
-   error: "provider failed",
+   error: "post-turn-processing-failed",
   });
  });
 });

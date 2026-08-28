@@ -14,6 +14,10 @@
   "loadError": "Unable to load or save AI tasks.",
   "saveError": "Unable to save this task assignment.",
   "retry": "Retry",
+  "checkRuntime": "Check source",
+  "checkSucceeded": "Source working",
+  "checkFailed": "Source failed",
+  "checkRequestFailed": "Could not run the source check right now.",
   "dataSent": "Data sent",
   "expectedOutput": "Expected output",
   "storage": "Storage",
@@ -143,6 +147,10 @@
   "loading": "Loading...",
   "loadMore": "Next page",
   "openConversation": "Open conversation",
-  "noRuntime": "No runtime selected"
+  "noRuntime": "No runtime selected",
+  "metricsLatency": "{latency} ms",
+  "metricsTokens": "{inputTokens} input tokens · {outputTokens} output tokens",
+  "summary": "{attempts} attempts · {successRate}% success · {inputTokens}/{outputTokens} input/output tokens",
+  "summaryLatency": "{latency} ms average latency"
  }
 }

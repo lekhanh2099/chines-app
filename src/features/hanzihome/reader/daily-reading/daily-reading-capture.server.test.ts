@@ -2,9 +2,9 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-import { buildCapturedDailyReadingV2 } from "./daily-reading-capture.server";
+import { buildCapturedDailyReading } from "./daily-reading-capture.server";
 import type { DailyReadingSelectedSource } from "./daily-reading-source.server";
-import { defaultDailyReadingV2Settings } from "./daily-reading-v2.settings";
+import { defaultDailyReadingSettings } from "./daily-reading.settings";
 
 const paragraphs: readonly string[] = [
  "城市博物馆最近推出传统文化专题展览，展览以普通人的日常生活为线索，通过器物、照片和互动资料介绍不同历史时期的生活方式，也让年轻观众更容易理解文化变化背后的社会背景。",
@@ -43,11 +43,11 @@ const selection: DailyReadingSelectedSource = {
  },
 };
 
-describe("Daily Reading V2 article capture", () => {
+describe("Daily Reading article capture", () => {
  it("preserves the exact source paragraphs and leaves every enrichment idle", () => {
-  const reading = buildCapturedDailyReadingV2({
+  const reading = buildCapturedDailyReading({
    selection,
-   settings: defaultDailyReadingV2Settings,
+   settings: defaultDailyReadingSettings,
    mode: "scheduled",
    now: new Date("2026-08-19T06:00:00.000Z"),
   });
@@ -64,15 +64,15 @@ describe("Daily Reading V2 article capture", () => {
  });
 
  it("creates a stable article identity from date and source fingerprint", () => {
-  const first = buildCapturedDailyReadingV2({
+  const first = buildCapturedDailyReading({
    selection,
-   settings: defaultDailyReadingV2Settings,
+   settings: defaultDailyReadingSettings,
    mode: "manual",
    now: new Date("2026-08-19T06:00:00.000Z"),
   });
-  const second = buildCapturedDailyReadingV2({
+  const second = buildCapturedDailyReading({
    selection,
-   settings: defaultDailyReadingV2Settings,
+   settings: defaultDailyReadingSettings,
    mode: "manual",
    now: new Date("2026-08-19T08:00:00.000Z"),
   });

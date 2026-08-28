@@ -3,14 +3,17 @@ import "server-only";
 import { z } from "zod";
 
 import type { AuthenticatedRouteContext } from "@/lib/api/authenticated-route";
+import { AI_SEMANTIC_MEMORY_MODEL } from "@/lib/ai-task-contract";
 import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import {
  recordUserAiRuntimeActivity,
  recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime,
+ type ResolvedUserAiTaskRuntime,
+ type UserAiTaskRuntimeResolution,
 } from "@/services/ai-runtime.service";
 
-export const AI_CONVERSATION_MEMORY_EMBEDDING_MODEL = "gemini-embedding-001";
+export const AI_CONVERSATION_MEMORY_EMBEDDING_MODEL = AI_SEMANTIC_MEMORY_MODEL;
 export const AI_CONVERSATION_MEMORY_EMBEDDING_VERSION = 1;
 export const AI_CONVERSATION_MEMORY_EMBEDDING_DIMENSIONS = 768;
 
@@ -37,27 +40,34 @@ export async function generateAiConversationMemoryEmbedding({
  text,
  task,
  signal,
+ resourceType,
+ runtime,
 }: {
  supabase: AuthenticatedRouteContext["supabase"];
  userId: string;
  text: string;
  task: MemoryEmbeddingTask;
  signal?: AbortSignal;
+ resourceType?: string;
+ runtime?: ResolvedUserAiTaskRuntime;
 }): Promise<AiConversationMemoryEmbeddingResult> {
  const normalizedText = text.normalize("NFC").trim();
  if (!normalizedText) return { available: false, reason: "invalid-response" };
 
  const startedAt = performance.now();
- const resolution = await resolveUserAiTaskRuntime({
-  supabase,
-  userId,
-  taskId: "conversation.semantic-memory",
- });
+ const resolution: UserAiTaskRuntimeResolution = runtime
+  ? { ok: true, runtime }
+  : await resolveUserAiTaskRuntime({
+     supabase,
+     userId,
+     taskId: "conversation.semantic-memory",
+    });
  if (!resolution.ok) {
   await recordUserAiTaskBlockedActivity({
    userId,
    taskId: "conversation.semantic-memory",
    errorCode: resolution.reason,
+   ...(resourceType ? { resourceType } : {}),
   });
   return {
    available: false,
@@ -69,7 +79,7 @@ export async function generateAiConversationMemoryEmbedding({
 
  try {
   const response = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}:embedContent`,
+   `https://generativelanguage.googleapis.com/v1beta/models/${resolution.runtime.model}:embedContent`,
    {
     method: "POST",
     headers: {
@@ -77,7 +87,7 @@ export async function generateAiConversationMemoryEmbedding({
      "x-goog-api-key": resolution.runtime.apiKey,
     },
     body: JSON.stringify({
-     model: `models/${AI_CONVERSATION_MEMORY_EMBEDDING_MODEL}`,
+     model: `models/${resolution.runtime.model}`,
      content: { parts: [{ text: normalizedText }] },
      embedContentConfig: {
       taskType: task,
@@ -96,6 +106,7 @@ export async function generateAiConversationMemoryEmbedding({
     status: "failure",
     errorCode: "provider-unavailable",
     latencyMs: Math.round(performance.now() - startedAt),
+    ...(resourceType ? { resourceType } : {}),
    });
    return { available: false, reason: "provider-error" };
   }
@@ -108,6 +119,7 @@ export async function generateAiConversationMemoryEmbedding({
     status: "failure",
     errorCode: "invalid-response",
     latencyMs: Math.round(performance.now() - startedAt),
+    ...(resourceType ? { resourceType } : {}),
    });
    return { available: false, reason: "invalid-response" };
   }
@@ -117,6 +129,7 @@ export async function generateAiConversationMemoryEmbedding({
    runtime: resolution.runtime,
    status: "success",
    latencyMs: Math.round(performance.now() - startedAt),
+   ...(resourceType ? { resourceType } : {}),
   });
 
   return { available: true, values: parsed.data.embedding.values };
@@ -128,6 +141,7 @@ export async function generateAiConversationMemoryEmbedding({
     status: "cancelled",
     errorCode: "cancelled",
     latencyMs: Math.round(performance.now() - startedAt),
+    ...(resourceType ? { resourceType } : {}),
    });
    throw error;
   }
@@ -137,6 +151,7 @@ export async function generateAiConversationMemoryEmbedding({
    status: "failure",
    errorCode: "network-error",
    latencyMs: Math.round(performance.now() - startedAt),
+   ...(resourceType ? { resourceType } : {}),
   });
   return { available: false, reason: "provider-error" };
  }

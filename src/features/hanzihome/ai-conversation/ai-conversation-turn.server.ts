@@ -23,8 +23,6 @@ import {
  isExplicitAiConversationForgetIntent,
  retrieveRelevantAiConversationMemories,
 } from "./ai-conversation-memory.server";
-import { loadAiConversationContextState } from "./ai-conversation-persistence.server";
-import { processDueAiConversationPostTurnJobs } from "./ai-conversation-post-turn.server";
 import type { AiConversationPersistedMessage } from "./ai-conversation-session.schemas";
 import {
  AiConversationProviderStreamError,
@@ -140,24 +138,9 @@ export async function preparePersistedAiConversationTurn({
   return runtimeResolutionFailure(runtimeResolution);
  }
 
- const postTurnResult = await processDueAiConversationPostTurnJobs({
-  supabase,
-  userId,
-  conversationId: contextState.conversation.id,
-  signal,
-  limit: 1,
- });
- const resolvedContextState =
-  postTurnResult.processed > 0
-   ? await loadAiConversationContextState({
-      userId,
-      conversationId: contextState.conversation.id,
-     })
-   : contextState;
-
  const userMemoryPreference = await loadAiConversationMemoryEnabledPreference(userId);
  const memoryEnabled = isAiConversationLongTermMemoryEnabled({
-  conversationPolicy: resolvedContextState.conversation.memoryPolicy,
+  conversationPolicy: contextState.conversation.memoryPolicy,
   userPreference: userMemoryPreference,
  });
  const learnerMessage = latestLearnerMessage(recentMessages);
@@ -170,8 +153,8 @@ export async function preparePersistedAiConversationTurn({
    await resolveExplicitAiConversationForget({
     supabase,
     userId,
-    conversationId: resolvedContextState.conversation.id,
-    characterId: resolvedContextState.character.id,
+    conversationId: contextState.conversation.id,
+    characterId: contextState.character.id,
     userMessage: learnerMessage.content,
     signal,
    });
@@ -188,7 +171,7 @@ export async function preparePersistedAiConversationTurn({
    ? await retrieveRelevantAiConversationMemories({
       supabase,
       userId,
-      characterId: resolvedContextState.character.id,
+      characterId: contextState.character.id,
       query: learnerMessage.content,
       enabled: true,
       suppressForForget: false,
@@ -196,7 +179,7 @@ export async function preparePersistedAiConversationTurn({
      })
    : [];
  const providerContext = buildAiConversationProviderContext({
-  state: resolvedContextState,
+  state: contextState,
   recentMessages,
   memories: recalledMemories,
  });

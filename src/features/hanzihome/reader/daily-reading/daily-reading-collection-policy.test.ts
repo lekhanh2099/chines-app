@@ -4,8 +4,8 @@ import {
  resolveDailyReadingCollectionPolicy,
  type DailyReadingCollectionHistoryItem,
 } from "./daily-reading-collection-policy";
-import { defaultDailyReadingV2Settings } from "./daily-reading-v2.settings";
-import { dailyReadingV2SettingsSchema } from "./daily-reading-v2.schemas";
+import { defaultDailyReadingSettings } from "./daily-reading.settings";
+import { dailyReadingSettingsSchema } from "./daily-reading.schemas";
 
 const history: readonly DailyReadingCollectionHistoryItem[] = [
  {
@@ -27,8 +27,8 @@ const history: readonly DailyReadingCollectionHistoryItem[] = [
 
 describe("Daily Reading collection policy", () => {
  it("resolves user collection choices while keeping safety bounds app-owned", () => {
-  const settings = dailyReadingV2SettingsSchema.parse({
-   ...defaultDailyReadingV2Settings,
+  const settings = dailyReadingSettingsSchema.parse({
+   ...defaultDailyReadingSettings,
    captureTime: { hour: 7, minute: 30 },
    freshnessDays: 3,
    selectedTopics: ["culture", "language"],
@@ -62,8 +62,8 @@ describe("Daily Reading collection policy", () => {
  });
 
  it("does not silently widen freshness or apply history penalties when disabled", () => {
-  const settings = dailyReadingV2SettingsSchema.parse({
-   ...defaultDailyReadingV2Settings,
+  const settings = dailyReadingSettingsSchema.parse({
+   ...defaultDailyReadingSettings,
    freshnessDays: 7,
    preferTopicDiversity: false,
    avoidRecentlyRead: false,
@@ -77,8 +77,8 @@ describe("Daily Reading collection policy", () => {
  });
 
  it("keeps article acquisition and enrichment as separate preferences", () => {
-  const settings = dailyReadingV2SettingsSchema.parse({
-   ...defaultDailyReadingV2Settings,
+  const settings = dailyReadingSettingsSchema.parse({
+   ...defaultDailyReadingSettings,
    autoCaptureEnabled: true,
    autoEnrichmentEnabled: false,
   });

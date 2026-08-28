@@ -6,6 +6,7 @@ import ts from "typescript";
 const ROOTS = ["src", "scripts"];
 const SOURCE_EXTENSIONS = new Set([".js", ".jsx", ".mjs", ".mts", ".ts", ".tsx"]);
 const IGNORED_DIRECTORIES = new Set(["node_modules", ".next", "coverage"]);
+const GENERATED_SOURCE_DIRECTORIES = new Set(["src/app/.well-known/workflow/v1"]);
 const NEXT_APP_ENTRYPOINT_NAMES = new Set([
  "apple-icon",
  "default",
@@ -57,6 +58,7 @@ const TYPE_ASSERTION_EXCEPTION_BUDGET = new Map();
 
 function listSourceFiles(directory) {
  if (!fs.existsSync(directory)) return [];
+ if (GENERATED_SOURCE_DIRECTORIES.has(normalizePath(directory))) return [];
 
  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
   if (IGNORED_DIRECTORIES.has(entry.name)) return [];

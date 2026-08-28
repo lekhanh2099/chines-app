@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { DailyReadingV2 } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.schemas";
+import type { DailyReading } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
  recordUserAiRuntimeActivity: vi.fn(),
  recordUserAiTaskBlockedActivity: vi.fn(),
  resolveUserAiTaskRuntime: vi.fn(),
- generateDailyReadingV2Enrichment: vi.fn(),
+ generateDailyReadingEnrichment: vi.fn(),
 }));
 
 vi.mock("@/lib/api/authenticated-route", () => ({
@@ -19,15 +19,15 @@ vi.mock("@/services/ai-runtime.service", () => ({
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.server", () => ({
- generateDailyReadingV2Enrichment: mocks.generateDailyReadingV2Enrichment,
+vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.server", () => ({
+ generateDailyReadingEnrichment: mocks.generateDailyReadingEnrichment,
 }));
 
 import { POST } from "./route";
 
-const reading: DailyReadingV2 = {
+const reading: DailyReading = {
  schemaVersion: "2.0.0",
- id: "daily-v2:2026-08-19:1234abcd",
+ id: "daily:2026-08-19:1234abcd",
  publishedDate: "2026-08-19",
  capturedAt: "2026-08-19T06:00:00.000Z",
  releaseKind: "manual",
@@ -102,13 +102,13 @@ function request(body: object) {
  });
 }
 
-describe("Daily Reading V2 enrichment route", () => {
+describe("Daily Reading enrichment route", () => {
  beforeEach(() => {
   mocks.requireAuthenticatedRoute.mockReset();
   mocks.recordUserAiRuntimeActivity.mockReset();
   mocks.recordUserAiTaskBlockedActivity.mockReset();
   mocks.resolveUserAiTaskRuntime.mockReset();
-  mocks.generateDailyReadingV2Enrichment.mockReset();
+  mocks.generateDailyReadingEnrichment.mockReset();
   mocks.requireAuthenticatedRoute.mockResolvedValue({
    authenticated: true,
    context: { supabase: { marker: "supabase" }, user: { id: "user-1" } },
@@ -122,7 +122,7 @@ describe("Daily Reading V2 enrichment route", () => {
 
   expect(response.status).toBe(401);
   expect(mocks.resolveUserAiTaskRuntime).not.toHaveBeenCalled();
-  expect(mocks.generateDailyReadingV2Enrichment).not.toHaveBeenCalled();
+  expect(mocks.generateDailyReadingEnrichment).not.toHaveBeenCalled();
  });
 
  it("rejects invalid article payloads at the route boundary", async () => {
@@ -132,7 +132,7 @@ describe("Daily Reading V2 enrichment route", () => {
   expect(mocks.resolveUserAiTaskRuntime).not.toHaveBeenCalled();
  });
 
- it("rejects overbroad V2 payloads that include enrichment state", async () => {
+ it("rejects overbroad payloads that include enrichment state", async () => {
   const response = await POST(request({ module: "grammar", reading }));
 
   expect(response.status).toBe(400);
@@ -158,7 +158,7 @@ describe("Daily Reading V2 enrichment route", () => {
    module: "translation",
    reason: "missing-ai-key",
   });
-  expect(mocks.generateDailyReadingV2Enrichment).not.toHaveBeenCalled();
+  expect(mocks.generateDailyReadingEnrichment).not.toHaveBeenCalled();
  });
 
  it("keeps vault failures distinct from missing-key", async () => {
@@ -182,7 +182,7 @@ describe("Daily Reading V2 enrichment route", () => {
 
  it("uses the shared BYOK runtime and returns safe module data without the raw key", async () => {
   mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
-  mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
+  mocks.generateDailyReadingEnrichment.mockResolvedValue({
    ok: true,
    module: "translation",
    data: {
@@ -209,7 +209,7 @@ describe("Daily Reading V2 enrichment route", () => {
   expect(mocks.resolveUserAiTaskRuntime).toHaveBeenCalledWith(
    expect.objectContaining({ taskId: "daily-reading.translation", userId: "user-1" }),
   );
-  expect(mocks.generateDailyReadingV2Enrichment).toHaveBeenCalledWith(
+  expect(mocks.generateDailyReadingEnrichment).toHaveBeenCalledWith(
    expect.objectContaining({ reading: evidence, module: "translation" }),
   );
   expect(serialized).not.toContain("user-secret-key");
@@ -218,7 +218,7 @@ describe("Daily Reading V2 enrichment route", () => {
 
  it("maps exhausted account quota to a retryable blocked module", async () => {
   mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
-  mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
+  mocks.generateDailyReadingEnrichment.mockResolvedValue({
    ok: false,
    status: "failed",
    module: "questions",
@@ -240,7 +240,7 @@ describe("Daily Reading V2 enrichment route", () => {
 
  it("maps a temporary provider limit to service unavailable instead of account quota", async () => {
   mocks.resolveUserAiTaskRuntime.mockResolvedValue({ ok: true, runtime });
-  mocks.generateDailyReadingV2Enrichment.mockResolvedValue({
+  mocks.generateDailyReadingEnrichment.mockResolvedValue({
    ok: false,
    status: "failed",
    module: "translation",

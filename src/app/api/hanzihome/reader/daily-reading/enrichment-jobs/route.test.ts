@@ -6,6 +6,7 @@ const mocks = vi.hoisted(() => ({
  createDailyReadingEnrichmentJobs: vi.fn(),
  deleteDailyReadingEnrichmentJobs: vi.fn(),
  getAiRuntimeReceipt: vi.fn(),
+ findReusableDailyReadingEnrichmentJob: vi.fn(),
  listDailyReadingEnrichmentJobs: vi.fn(),
  recordUserAiRuntimeReceiptActivity: vi.fn(),
  recordUserAiTaskBlockedActivity: vi.fn(),
@@ -28,18 +29,16 @@ vi.mock("@/services/ai-runtime.service", () => ({
  recordUserAiTaskBlockedActivity: mocks.recordUserAiTaskBlockedActivity,
  resolveUserAiTaskRuntime: mocks.resolveUserAiTaskRuntime,
 }));
-vi.mock(
- "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment-jobs.server",
- () => ({
-  attachWorkflowRunToDailyReadingJobs: mocks.attachWorkflowRunToDailyReadingJobs,
-  completeDailyReadingEnrichmentJob: mocks.completeDailyReadingEnrichmentJob,
-  createDailyReadingEnrichmentJobs: mocks.createDailyReadingEnrichmentJobs,
-  DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
-  deleteDailyReadingEnrichmentJobs: mocks.deleteDailyReadingEnrichmentJobs,
-  listDailyReadingEnrichmentJobs: mocks.listDailyReadingEnrichmentJobs,
- }),
-);
-vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.workflow", () => ({
+vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+ attachWorkflowRunToDailyReadingJobs: mocks.attachWorkflowRunToDailyReadingJobs,
+ completeDailyReadingEnrichmentJob: mocks.completeDailyReadingEnrichmentJob,
+ createDailyReadingEnrichmentJobs: mocks.createDailyReadingEnrichmentJobs,
+ DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
+ deleteDailyReadingEnrichmentJobs: mocks.deleteDailyReadingEnrichmentJobs,
+ findReusableDailyReadingEnrichmentJob: mocks.findReusableDailyReadingEnrichmentJob,
+ listDailyReadingEnrichmentJobs: mocks.listDailyReadingEnrichmentJobs,
+}));
+vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.workflow", () => ({
  dailyReadingEnrichmentWorkflow: vi.fn(),
 }));
 
@@ -58,7 +57,7 @@ const receipt = {
  resolutionSource: "assigned",
 };
 const reading = {
- id: "daily-v2:2026-08-27:1234abcd",
+ id: "daily:2026-08-27:1234abcd",
  source: {
   titleZh: "城市文化活动",
   publisher: "中国新闻网",
@@ -87,6 +86,7 @@ const queuedJob = {
  module: "translation",
  taskId: "daily-reading.translation",
  status: "queued",
+ reused: false,
  receipt,
  progress: { completed: 0, total: 1 },
  result: null,
@@ -94,6 +94,37 @@ const queuedJob = {
  createdAt,
  startedAt: null,
  completedAt: null,
+};
+const reusedJob = {
+ ...queuedJob,
+ id: "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+ status: "succeeded",
+ reused: true,
+ progress: { completed: 1, total: 1 },
+ result: {
+  ok: true,
+  module: "translation",
+  data: {
+   titleVi: "Hoạt động văn hóa",
+   whyWorthReadingVi: "Đáng đọc.",
+   adaptationNoticeVi: "Bản dịch hỗ trợ học tập.",
+   paragraphs: reading.article.paragraphs.map((paragraph) => ({
+    paragraphId: paragraph.id,
+    vi: `Bản dịch ${paragraph.id}`,
+    roleVi: "",
+   })),
+  },
+  generatedBy: { provider: "Google Gemini", model: receipt.model },
+ },
+ completedAt: createdAt,
+};
+const vocabularyReceipt = { ...receipt, taskId: "daily-reading.vocabulary" };
+const queuedVocabularyJob = {
+ ...queuedJob,
+ id: "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+ module: "vocabulary",
+ taskId: "daily-reading.vocabulary",
+ receipt: vocabularyReceipt,
 };
 
 function post(body: object) {
@@ -117,6 +148,7 @@ describe("Daily Reading enrichment jobs route", () => {
   mocks.start.mockResolvedValue({ runId: "workflow-run-1" });
   mocks.attachWorkflowRunToDailyReadingJobs.mockResolvedValue(undefined);
   mocks.createDailyReadingEnrichmentJobs.mockResolvedValue([queuedJob]);
+  mocks.findReusableDailyReadingEnrichmentJob.mockResolvedValue(null);
  });
 
  it("enqueues a durable workflow with the resolved key and model snapshot", async () => {
@@ -129,6 +161,7 @@ describe("Daily Reading enrichment jobs route", () => {
    runId,
    reading,
    modules: [{ module: "translation", targetCount: null }],
+   regenerate: false,
   });
   const body = await response.json();
 
@@ -157,6 +190,7 @@ describe("Daily Reading enrichment jobs route", () => {
    runId,
    reading,
    modules: [{ module: "translation", targetCount: null }],
+   regenerate: false,
   });
 
   expect(response.status).toBe(202);
@@ -176,11 +210,101 @@ describe("Daily Reading enrichment jobs route", () => {
    runId,
    reading,
    modules: [{ module: "translation", targetCount: null }],
+   regenerate: false,
   });
 
   expect(response.status).toBe(202);
   expect(mocks.start).toHaveBeenCalledTimes(1);
   expect(mocks.completeDailyReadingEnrichmentJob).not.toHaveBeenCalled();
+ });
+
+ it("reuses a same-user result with the exact runtime signature without starting a provider job", async () => {
+  mocks.listDailyReadingEnrichmentJobs
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([reusedJob]);
+  mocks.findReusableDailyReadingEnrichmentJob.mockResolvedValue(reusedJob);
+  mocks.createDailyReadingEnrichmentJobs.mockResolvedValue([reusedJob]);
+
+  const response = await post({
+   runId,
+   reading,
+   modules: [{ module: "translation", targetCount: null }],
+   regenerate: false,
+  });
+
+  expect(response.status).toBe(200);
+  expect(mocks.findReusableDailyReadingEnrichmentJob).toHaveBeenCalledWith({
+   userId: "user-1",
+   requestSignature: expect.stringMatching(/^[a-f0-9]{64}$/u),
+  });
+  expect(mocks.createDailyReadingEnrichmentJobs).toHaveBeenCalledWith(
+   expect.objectContaining({
+    jobs: [
+     expect.objectContaining({
+      status: "succeeded",
+      reusedFromJobId: reusedJob.id,
+      result: expect.objectContaining({
+       generatedBy: expect.objectContaining({ receipt }),
+      }),
+     }),
+    ],
+   }),
+  );
+  expect(mocks.start).not.toHaveBeenCalled();
+ });
+
+ it("bypasses reuse when the user explicitly regenerates", async () => {
+  mocks.listDailyReadingEnrichmentJobs
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([{ ...queuedJob, workflowRunId: "workflow-run-1" }]);
+
+  const response = await post({
+   runId,
+   reading,
+   modules: [{ module: "translation", targetCount: null }],
+   regenerate: true,
+  });
+
+  expect(response.status).toBe(202);
+  expect(mocks.findReusableDailyReadingEnrichmentJob).not.toHaveBeenCalled();
+  expect(mocks.start).toHaveBeenCalledOnce();
+ });
+
+ it("starts workflow work only for queued modules in a mixed reused run", async () => {
+  mocks.listDailyReadingEnrichmentJobs
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([])
+   .mockResolvedValueOnce([reusedJob, { ...queuedVocabularyJob, workflowRunId: "workflow-run-1" }]);
+  mocks.getAiRuntimeReceipt.mockReturnValueOnce(receipt).mockReturnValueOnce(vocabularyReceipt);
+  mocks.findReusableDailyReadingEnrichmentJob
+   .mockResolvedValueOnce(reusedJob)
+   .mockResolvedValueOnce(null);
+  mocks.createDailyReadingEnrichmentJobs.mockResolvedValue([reusedJob, queuedVocabularyJob]);
+
+  const response = await post({
+   runId,
+   reading,
+   modules: [
+    { module: "translation", targetCount: null },
+    { module: "vocabulary", targetCount: 12 },
+   ],
+   regenerate: false,
+  });
+
+  expect(response.status).toBe(202);
+  expect(mocks.start).toHaveBeenCalledWith(expect.any(Function), [
+   expect.objectContaining({
+    jobs: [
+     expect.objectContaining({
+      jobId: queuedVocabularyJob.id,
+      module: "vocabulary",
+      receipt: vocabularyReceipt,
+     }),
+    ],
+   }),
+  ]);
  });
 
  it("does not treat DELETE as cancellation for an active run", async () => {

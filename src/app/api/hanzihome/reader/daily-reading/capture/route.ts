@@ -9,9 +9,9 @@ import {
 import { captureDailyReadingArticle } from "@/features/hanzihome/reader/daily-reading/daily-reading-capture.server";
 import { formatDailyReadingSourceReport } from "@/features/hanzihome/reader/daily-reading/daily-reading-source.server";
 import {
- dailyReadingV2CaptureRequestSchema,
- dailyReadingV2CaptureResponseSchema,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.schemas";
+ dailyReadingCaptureRequestSchema,
+ dailyReadingCaptureResponseSchema,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
   return errorResponse("unauthorized", "Cần đăng nhập trước khi tìm bài Daily Reading.", 401);
  }
  const body: JsonFieldValue = await request.json().catch(() => null);
- const parsed = dailyReadingV2CaptureRequestSchema.safeParse(body);
+ const parsed = dailyReadingCaptureRequestSchema.safeParse(body);
  if (!parsed.success) {
   return errorResponse("invalid-request", "Yêu cầu tìm bài Daily Reading không hợp lệ.", 400);
  }
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
    );
   }
   return privateNoStoreJson(
-   dailyReadingV2CaptureResponseSchema.parse({
+   dailyReadingCaptureResponseSchema.parse({
     reading: capture.reading,
     report: {
      discoveryEndpoints: capture.report.discoveryEndpoints,
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
  } catch (error) {
   const detail =
    error instanceof z.ZodError
-    ? "Bài nguồn không đúng contract Daily Reading V2."
+    ? "Bài nguồn không đúng contract Daily Reading."
     : error instanceof Error
       ? error.message
       : "Không thể lưu bài nguồn Daily Reading.";

@@ -7,11 +7,6 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instantiate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
-  __InternalSupabase: {
-    PostgrestVersion: "14.17"
-  }
   public: {
     Tables: {
       ai_characters: {
@@ -2650,8 +2645,10 @@ export type Database = {
           progress_completed: number
           progress_total: number
           provider: string | null
+          request_signature: string | null
           resolution_source: string | null
           result: Json | null
+          reused_from_job_id: string | null
           run_id: string
           started_at: string | null
           status: string
@@ -2675,8 +2672,10 @@ export type Database = {
           progress_completed?: number
           progress_total?: number
           provider?: string | null
+          request_signature?: string | null
           resolution_source?: string | null
           result?: Json | null
+          reused_from_job_id?: string | null
           run_id: string
           started_at?: string | null
           status?: string
@@ -2700,8 +2699,10 @@ export type Database = {
           progress_completed?: number
           progress_total?: number
           provider?: string | null
+          request_signature?: string | null
           resolution_source?: string | null
           result?: Json | null
+          reused_from_job_id?: string | null
           run_id?: string
           started_at?: string | null
           status?: string
@@ -2710,6 +2711,13 @@ export type Database = {
           workflow_run_id?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "user_daily_reading_enrichment_jobs_reused_from_job_id_fkey"
+            columns: ["user_id", "reused_from_job_id"]
+            isOneToOne: false
+            referencedRelation: "user_daily_reading_enrichment_jobs"
+            referencedColumns: ["user_id", "id"]
+          },
           {
             foreignKeyName: "user_daily_reading_enrichment_jobs_user_api_key_fkey"
             columns: ["user_id", "api_key_id"]
@@ -3679,6 +3687,20 @@ export type Database = {
           p_sino_vietnamese?: string
         }
         Returns: string
+      }
+      user_ai_activity_summary: {
+        Args: { p_provider?: string; p_task_id?: string; p_user_id: string }
+        Returns: {
+          attempts: number
+          average_latency_ms: number
+          input_tokens: number
+          model: string
+          output_tokens: number
+          provider: string
+          success_rate: number
+          successes: number
+          task_id: string
+        }[]
       }
     }
     Enums: {

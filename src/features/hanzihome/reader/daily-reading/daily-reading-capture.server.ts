@@ -11,13 +11,13 @@ import {
 } from "./daily-reading-source.server";
 import { vietnamDailyReadingDateKey } from "./daily-reading.scheduler";
 import type { DailyReadingGenerationKind } from "./daily-reading.schemas";
-import { createDailyReadingV2Fingerprint } from "./daily-reading-v2.migration";
+import { createDailyReadingFingerprint } from "./daily-reading.migration";
 import {
- dailyReadingV2Schema,
- type DailyReadingV2,
- type DailyReadingV2CaptureStage,
- type DailyReadingV2Settings,
-} from "./daily-reading-v2.schemas";
+ dailyReadingSchema,
+ type DailyReading,
+ type DailyReadingCaptureStage,
+ type DailyReadingSettings,
+} from "./daily-reading.schemas";
 
 const hanPattern = /[\u3400-\u9fff]/gu;
 const estimatedReadingSpeedHanPerMinute = 300;
@@ -33,26 +33,26 @@ function estimatedMinutesForHanCount(hanCharacters: number) {
  return Math.min(60, Math.max(1, Math.ceil(hanCharacters / estimatedReadingSpeedHanPerMinute)));
 }
 
-export function buildCapturedDailyReadingV2(input: {
+export function buildCapturedDailyReading(input: {
  selection: DailyReadingSelectedSource;
- settings: DailyReadingV2Settings;
+ settings: DailyReadingSettings;
  mode: DailyReadingGenerationKind;
  now?: Date;
-}): DailyReadingV2 {
+}): DailyReading {
  const now = input.now ?? new Date();
  const capturedAt = now.toISOString();
  const publishedDate = vietnamDailyReadingDateKey(now);
  const paragraphsZh = input.selection.paragraphsZh;
  const hanCharacterCount = countHanCharacters(paragraphsZh);
- const fingerprint = createDailyReadingV2Fingerprint({
+ const fingerprint = createDailyReadingFingerprint({
   sourceUrl: input.selection.source.url,
   titleZh: input.selection.source.titleZh,
   paragraphsZh,
  });
 
- return dailyReadingV2Schema.parse({
+ return dailyReadingSchema.parse({
   schemaVersion: "2.0.0",
-  id: `daily-v2:${publishedDate}:${fingerprint}`,
+  id: `daily:${publishedDate}:${fingerprint}`,
   publishedDate,
   capturedAt,
   releaseKind: input.mode,
@@ -91,11 +91,11 @@ export function buildCapturedDailyReadingV2(input: {
 
 export async function captureDailyReadingArticle(input: {
  mode: DailyReadingGenerationKind;
- settings: DailyReadingV2Settings;
+ settings: DailyReadingSettings;
  history: readonly DailyReadingCollectionHistoryItem[];
- onProgress?: (stage: DailyReadingV2CaptureStage) => void;
+ onProgress?: (stage: DailyReadingCaptureStage) => void;
 }): Promise<{
- reading: DailyReadingV2 | null;
+ reading: DailyReading | null;
  report: DailyReadingSourceDiscoveryReport;
 }> {
  const policy = resolveDailyReadingCollectionPolicy({
@@ -109,7 +109,7 @@ export async function captureDailyReadingArticle(input: {
  if (discovery.selection === null) return { reading: null, report: discovery.report };
 
  return {
-  reading: buildCapturedDailyReadingV2({
+  reading: buildCapturedDailyReading({
    selection: discovery.selection,
    settings: input.settings,
    mode: input.mode,

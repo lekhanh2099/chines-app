@@ -15,6 +15,7 @@ import {
  AiTaskStorageNotReadyError,
  clearUserAiActivityEvents,
  listUserAiActivityEvents,
+ listUserAiActivitySummary,
 } from "@/services/ai-task-routing.service";
 
 const activityQuerySchema = z.strictObject({
@@ -42,21 +43,27 @@ export async function GET(request: Request) {
  }
 
  try {
-  const result = await listUserAiActivityEvents({
+  const filters = {
    userId: auth.context.user.id,
    ...(parsed.data.taskId ? { taskId: parsed.data.taskId } : {}),
    ...(parsed.data.provider ? { provider: parsed.data.provider } : {}),
-   ...(parsed.data.status ? { status: parsed.data.status } : {}),
-   ...(parsed.data.cursorCreatedAt && parsed.data.cursorId
-    ? {
-       cursor: aiActivityCursorSchema.parse({
-        createdAt: parsed.data.cursorCreatedAt,
-        id: parsed.data.cursorId,
-       }),
-      }
-    : {}),
-  });
-  return privateNoStoreJson(result);
+  };
+  const [result, summaryGroups] = await Promise.all([
+   listUserAiActivityEvents({
+    ...filters,
+    ...(parsed.data.status ? { status: parsed.data.status } : {}),
+    ...(parsed.data.cursorCreatedAt && parsed.data.cursorId
+     ? {
+        cursor: aiActivityCursorSchema.parse({
+         createdAt: parsed.data.cursorCreatedAt,
+         id: parsed.data.cursorId,
+        }),
+       }
+     : {}),
+   }),
+   listUserAiActivitySummary(filters),
+  ]);
+  return privateNoStoreJson({ ...result, summaryGroups });
  } catch (error) {
   if (error instanceof AiTaskStorageNotReadyError) {
    return apiError("AI activity storage is not ready", 503, "AI_ACTIVITY_SCHEMA_UNAVAILABLE");

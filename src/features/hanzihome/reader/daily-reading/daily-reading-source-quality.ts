@@ -2,7 +2,7 @@ import type {
  DailyReadingExtractionMethod,
  ParsedDailyReadingSourceDocument,
 } from "./daily-reading-source-parsers.server";
-import type { DailyReadingV2LengthPreference } from "./daily-reading-v2.schemas";
+import type { DailyReadingLengthPreference } from "./daily-reading.schemas";
 
 const hanPattern = /[\u3400-\u9fff]/gu;
 const sentencePunctuationPattern = /[，。！？；：]/u;
@@ -78,7 +78,7 @@ function extractionMethodScore(method: DailyReadingExtractionMethod) {
  }
 }
 
-function preferredLengthScore(hanCharacters: number, preference: DailyReadingV2LengthPreference) {
+function preferredLengthScore(hanCharacters: number, preference: DailyReadingLengthPreference) {
  if (preference === "any") return 14;
  const target = preference === "short" ? 550 : preference === "medium" ? 1_100 : 2_200;
  const distanceRatio = Math.abs(hanCharacters - target) / target;
@@ -95,7 +95,7 @@ export function assessDailyReadingSourceQuality(input: {
  document: ParsedDailyReadingSourceDocument;
  metadataTitleZh: string;
  metadataPublishedAt: string;
- preferredLength: DailyReadingV2LengthPreference;
+ preferredLength: DailyReadingLengthPreference;
  maximumFreshnessDays: number;
  now?: Date;
 }): DailyReadingSourceQuality {

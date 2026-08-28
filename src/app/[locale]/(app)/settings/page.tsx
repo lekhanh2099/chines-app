@@ -1,6 +1,6 @@
 import { HanziHomeReadingSettingsSection } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { DailyReadingSettingsPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingSettingsPanel";
-import { DailyReadingV2ManagementPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingV2ManagementPanel";
+import { DailyReadingManagementPanel } from "@/features/hanzihome/reader/daily-reading/DailyReadingManagementPanel";
 import { hasHanziHomeContentCapability } from "@/features/hanzihome/server/content-capability";
 import { SettingsPageContent } from "@/features/settings/SettingsPageContent";
 import { requireAuthenticatedRoute } from "@/lib/api/authenticated-route";
@@ -25,7 +25,7 @@ export default async function SettingsPage({ searchParams }: PageProps<"/[locale
    dailyReadingSettings={
     <div className="grid gap-4">
      <DailyReadingSettingsPanel />
-     <DailyReadingV2ManagementPanel />
+     <DailyReadingManagementPanel />
     </div>
    }
   />

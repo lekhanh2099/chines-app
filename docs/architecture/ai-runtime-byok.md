@@ -71,9 +71,9 @@ Some older structured-analysis functions still accept a `UserApiKeyCredential` r
 
 The bridge does not own selection and must not introduce a second fallback order. New server features should consume `ResolvedUserAiRuntime` directly when practical.
 
-## Daily Reading V2
+## Daily Reading
 
-Daily Reading V2 is article acquisition first and AI enrichment second.
+Daily Reading is article acquisition first and AI enrichment second.
 
 ```text
 discover
@@ -89,7 +89,7 @@ A captured article is readable and counts as the day's successful capture before
 
 The captured Chinese article is immutable source evidence. AI may add Vietnamese translation and learning support but must not replace the source Chinese text.
 
-Daily Reading V2 stores no pinyin. Pronunciation is derived at render/runtime from the existing contextual-pronunciation system. Legacy V1 adapted readings may still contain their historical pinyin fields and are marked with legacy provenance during V1 -> V2 migration.
+Daily Reading stores no pinyin. Pronunciation is derived at render/runtime from the existing contextual-pronunciation system. Legacy adapted readings may still contain their historical pinyin fields and are marked with legacy provenance during migration.
 
 Daily Reading remains browser-local for article/settings/run persistence in this architecture. There is no Daily Reading database migration and no server cron. The authenticated app scheduler performs visible-session catch-up using the configured local capture time.
 
@@ -151,7 +151,7 @@ no raw provider key in browser responses/storage
 no user-facing provider env fallback
 cached/non-AI lookup still works without a key
 Daily Reading source capture works without a key
-Daily Reading V2 persisted JSON contains no pinyin
+Daily Reading persisted JSON contains no pinyin
 conversation history works without a key
 conversation generation streams with personal BYOK
 Stop does not persist a partial assistant

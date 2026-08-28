@@ -14,6 +14,10 @@
   "loadError": "无法加载或保存 AI 任务。",
   "saveError": "无法保存此任务分配。",
   "retry": "重试",
+  "checkRuntime": "检查来源",
+  "checkSucceeded": "来源可用",
+  "checkFailed": "来源不可用",
+  "checkRequestFailed": "目前无法执行来源检查。",
   "dataSent": "发送的数据",
   "expectedOutput": "预期输出",
   "storage": "保存位置",
@@ -138,6 +142,10 @@
   "loading": "正在加载…",
   "loadMore": "下一页",
   "openConversation": "打开对话",
-  "noRuntime": "未选择 runtime"
+  "noRuntime": "未选择 runtime",
+  "metricsLatency": "{latency} 毫秒",
+  "metricsTokens": "输入 {inputTokens} token · 输出 {outputTokens} token",
+  "summary": "{attempts} 次 · 成功率 {successRate}% · 输入/输出 {inputTokens}/{outputTokens} token",
+  "summaryLatency": "平均延迟 {latency} 毫秒"
  }
 }

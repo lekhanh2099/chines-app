@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-import { DailyReadingV2Library, DailyReadingV2View } from "./DailyReadingV2Library";
+import { DailyReadingLibrary, DailyReadingView } from "./DailyReadingLibrary";
 
 export function GeneratedDailyReadingArea() {
  const router = useRouter();
@@ -18,6 +18,6 @@ export function GeneratedDailyReadingArea() {
   router.push(`${pathname}${next.size > 0 ? `?${next.toString()}` : ""}`, { scroll: false });
  };
 
- if (selectedId === null) return <DailyReadingV2Library />;
- return <DailyReadingV2View id={selectedId} onBack={clearSelection} />;
+ if (selectedId === null) return <DailyReadingLibrary />;
+ return <DailyReadingView key={selectedId} id={selectedId} onBack={clearSelection} />;
 }

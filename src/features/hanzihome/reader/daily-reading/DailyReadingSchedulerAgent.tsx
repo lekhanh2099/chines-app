@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 import { useClientSession } from "@/components/providers/QueryProvider";
 
-import { captureDailyReadingNow, useDailyReadingV2Settings } from "./daily-reading-v2-client";
+import { captureDailyReadingNow, useDailyReadingSettings } from "./daily-reading.client";
 import {
- enrichDailyReadingV2LearningSupport,
- reconcilePendingDailyReadingV2EnrichmentJobs,
-} from "./daily-reading-v2-enrichment.client";
+ enrichDailyReadingLearningSupport,
+ reconcilePendingDailyReadingEnrichmentJobs,
+} from "./daily-reading-enrichment.client";
 import {
  resolveDailyReadingReleaseState,
  shouldAutoCaptureDailyReading,
@@ -16,11 +16,11 @@ import {
 import {
  hasScheduledCaptureAttemptForDate,
  hasScheduledCapturedArticleForDate,
-} from "./daily-reading-v2-storage.client";
+} from "./daily-reading-storage.client";
 
 export function DailyReadingSchedulerAgent() {
  const { user, isResolved } = useClientSession();
- const { settings } = useDailyReadingV2Settings();
+ const { settings } = useDailyReadingSettings();
  const [tick, setTick] = useState(0);
 
  useEffect(() => {
@@ -39,7 +39,7 @@ export function DailyReadingSchedulerAgent() {
 
  useEffect(() => {
   if (!isResolved || !user || document.visibilityState === "hidden") return;
-  void reconcilePendingDailyReadingV2EnrichmentJobs().catch(() => undefined);
+  void reconcilePendingDailyReadingEnrichmentJobs().catch(() => undefined);
  }, [isResolved, tick, user]);
 
  useEffect(() => {
@@ -58,7 +58,7 @@ export function DailyReadingSchedulerAgent() {
   void captureDailyReadingNow("scheduled")
    .then((reading) => {
     if (!settings.autoEnrichmentEnabled) return;
-    return enrichDailyReadingV2LearningSupport(reading.id);
+    return enrichDailyReadingLearningSupport(reading.id);
    })
    .catch(() => undefined);
  }, [

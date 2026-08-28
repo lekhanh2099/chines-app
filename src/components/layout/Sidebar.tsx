@@ -96,6 +96,18 @@ function groupHasActiveRoute(
  );
 }
 
+function activeSectionId(
+ group: NavigationGroup | undefined,
+ pathname: string,
+ searchParams: URLSearchParams,
+) {
+ return (
+  group?.sections.find((section) =>
+   section.itemIds.some((itemId) => isActive(pathname, searchParams, itemId)),
+  )?.id ?? ""
+ );
+}
+
 function NavRow({
  itemId,
  active,
@@ -169,7 +181,7 @@ function CollapsedGroupMenu({
     {group.sections.map((section, sectionIndex) => (
      <Fragment key={section.id}>
       {sectionIndex > 0 ? <DropdownMenuSeparator /> : null}
-      <DropdownMenuLabel>{t(section.messageKey)}</DropdownMenuLabel>
+      {section.collapsible ? <DropdownMenuLabel>{t(section.messageKey)}</DropdownMenuLabel> : null}
       {section.itemIds.map((itemId) => {
        const item = navigationItems[itemId];
        const Icon = item.icon;
@@ -203,9 +215,22 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
  const activeGroupId = visibleNavigationGroups.find((group) =>
   groupHasActiveRoute(group, pathname, searchParams),
  )?.id;
- const [expandedGroupIds, setExpandedGroupIds] = useState<ReadonlySet<string>>(
-  () => new Set(activeGroupId ? [activeGroupId] : []),
- );
+ const activeGroup = visibleNavigationGroups.find((group) => group.id === activeGroupId);
+ const routeSectionId = activeSectionId(activeGroup, pathname, searchParams);
+ const routeKey = `${pathname}?${searchParams.toString()}`;
+ const [navigationState, setNavigationState] = useState({
+  routeKey,
+  expandedGroupId: activeGroupId ?? "",
+  expandedSectionId: routeSectionId,
+ });
+ const currentNavigationState =
+  navigationState.routeKey === routeKey
+   ? navigationState
+   : {
+      routeKey,
+      expandedGroupId: activeGroupId ?? "",
+      expandedSectionId: routeSectionId,
+     };
 
  useEffect(() => {
   hydrateSidebar();
@@ -263,7 +288,7 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
     ) : (
      <div className="grid content-start gap-1.5">
       {visibleNavigationGroups.map((group) => {
-       const groupOpen = group.id === activeGroupId || expandedGroupIds.has(group.id);
+       const groupOpen = group.id === currentNavigationState.expandedGroupId;
        const GroupIcon = group.icon;
        const groupLabel = t(group.messageKey);
 
@@ -278,16 +303,18 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
           aria-expanded={groupOpen}
           aria-controls={`sidebar-group-${group.id}`}
           onClick={() => {
-           if (group.id === activeGroupId) return;
-
-           setExpandedGroupIds((current) => {
-            const next = new Set(current);
-            if (next.has(group.id)) {
-             next.delete(group.id);
-            } else {
-             next.add(group.id);
-            }
-            return next;
+           if (group.id === activeGroupId) {
+            setNavigationState({
+             ...currentNavigationState,
+             routeKey,
+             expandedGroupId: group.id,
+            });
+            return;
+           }
+           setNavigationState({
+            ...currentNavigationState,
+            routeKey,
+            expandedGroupId: currentNavigationState.expandedGroupId === group.id ? "" : group.id,
            });
           }}
          >
@@ -306,23 +333,67 @@ export function Sidebar({ canManageContent }: { canManageContent: boolean }) {
          <div
           id={`sidebar-group-${group.id}`}
           hidden={!groupOpen}
-          className="grid gap-2 border-l border-border-default pb-1 pl-2"
+          className="grid gap-1 border-l border-border-default pb-1 pl-2"
          >
-          {group.sections.map((section) => (
-           <div key={section.id} className="grid gap-1">
-            <Typography variant="overline" tone="muted" weight="black" className="px-2.5 pt-1">
-             {t(section.messageKey)}
-            </Typography>
-            {section.itemIds.map((itemId) => (
+          {group.sections.map((section) => {
+           const sectionActive = section.itemIds.some((itemId) =>
+            isActive(pathname, searchParams, itemId),
+           );
+           const sectionOpen = section.id === currentNavigationState.expandedSectionId;
+           if (!section.collapsible) {
+            return section.itemIds.map((itemId) => (
              <NavRow
               key={itemId}
               itemId={itemId}
               active={isActive(pathname, searchParams, itemId)}
               collapsed={false}
              />
-            ))}
-           </div>
-          ))}
+            ));
+           }
+           return (
+            <div key={section.id} className="grid gap-1">
+             <Button
+              type="button"
+              variant={sectionActive ? "active" : "navigation"}
+              size="menu"
+              align="between"
+              className="w-full min-w-0"
+              aria-expanded={sectionOpen}
+              aria-controls={`sidebar-section-${section.id}`}
+              onClick={() =>
+               setNavigationState({
+                ...currentNavigationState,
+                routeKey,
+                expandedSectionId:
+                 currentNavigationState.expandedSectionId === section.id ? "" : section.id,
+               })
+              }
+             >
+              <Typography as="span" clamp="one" className="min-w-0 flex-1 text-start">
+               {t(section.messageKey)}
+              </Typography>
+              <ChevronRight
+               data-icon="inline-end"
+               className={cn("shrink-0 transition-transform", sectionOpen && "rotate-90")}
+              />
+             </Button>
+             <div
+              id={`sidebar-section-${section.id}`}
+              hidden={!sectionOpen}
+              className="grid gap-1 border-l border-border-default pl-2"
+             >
+              {section.itemIds.map((itemId) => (
+               <NavRow
+                key={itemId}
+                itemId={itemId}
+                active={isActive(pathname, searchParams, itemId)}
+                collapsed={false}
+               />
+              ))}
+             </div>
+            </div>
+           );
+          })}
          </div>
         </section>
        );
@@ -411,9 +482,11 @@ export function MobileBottomNavigation({ canManageContent }: { canManageContent:
          </Typography>
          {group.sections.map((section) => (
           <div key={section.id} className="grid gap-1">
-           <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
-            {t(section.messageKey)}
-           </Typography>
+           {section.collapsible ? (
+            <Typography variant="caption" tone="muted" weight="bold" className="px-2.5 pt-1">
+             {t(section.messageKey)}
+            </Typography>
+           ) : null}
            {section.itemIds.map((itemId) => (
             <NavRow
              key={itemId}

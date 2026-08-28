@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { defaultDailyReadingV2Settings } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.settings";
+import { defaultDailyReadingSettings } from "@/features/hanzihome/reader/daily-reading/daily-reading.settings";
 
 const mocks = vi.hoisted(() => ({
  requireAuthenticatedRoute: vi.fn(),
@@ -32,7 +32,7 @@ const history = [
 
 const reading = {
  schemaVersion: "2.0.0",
- id: "daily-v2:2026-08-19:1234abcd",
+ id: "daily:2026-08-19:1234abcd",
  publishedDate: "2026-08-19",
  capturedAt: "2026-08-19T06:00:00.000Z",
  releaseKind: "scheduled",
@@ -131,7 +131,7 @@ describe("Daily Reading capture route", () => {
   });
 
   const response = await POST(
-   request({ mode: "scheduled", settings: defaultDailyReadingV2Settings, history }),
+   request({ mode: "scheduled", settings: defaultDailyReadingSettings, history }),
   );
 
   expect(response.status).toBe(503);
@@ -156,7 +156,7 @@ describe("Daily Reading capture route", () => {
   });
 
   const response = await POST(
-   request({ mode: "scheduled", settings: defaultDailyReadingV2Settings, history }),
+   request({ mode: "scheduled", settings: defaultDailyReadingSettings, history }),
   );
   const body = await response.json();
 

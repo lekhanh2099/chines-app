@@ -182,6 +182,7 @@ export const compatibilityNavigationItemIds: readonly NavigationItemId[] = [
 type NavigationSectionConfig = {
  id: string;
  messageKey: NavigationSectionMessageKey;
+ collapsible: boolean;
  itemIds: readonly NavigationItemId[];
 };
 export type NavigationGroupConfig = {
@@ -200,17 +201,20 @@ export const navigationGroups = [
    {
     id: "learning-main",
     messageKey: "navigation.sections.learningMain",
-    itemIds: ["home", "lessons", "notes", "humanities", "htmlArtifacts"],
-   },
-   {
-    id: "reading-library",
-    messageKey: "navigation.sections.readingLibrary",
-    itemIds: ["reader", "dailyReading"],
+    collapsible: false,
+    itemIds: ["home", "lessons", "dailyReading", "reader", "notes"],
    },
    {
     id: "hsk-reading",
     messageKey: "navigation.sections.hskReading",
+    collapsible: true,
     itemIds: ["hskReading", "hskGrammar"],
+   },
+   {
+    id: "learning-more",
+    messageKey: "navigation.sections.learningMore",
+    collapsible: true,
+    itemIds: ["humanities", "htmlArtifacts"],
    },
   ],
  },
@@ -220,18 +224,15 @@ export const navigationGroups = [
   icon: Target,
   sections: [
    {
-    id: "practice-listening-speaking",
+    id: "practice-main",
     messageKey: "navigation.sections.practiceListeningSpeaking",
-    itemIds: ["dictation", "conversation"],
-   },
-   {
-    id: "practice-writing-translation",
-    messageKey: "navigation.sections.practiceWritingTranslation",
-    itemIds: ["translationStudio"],
+    collapsible: false,
+    itemIds: ["dictation", "conversation", "translationStudio"],
    },
    {
     id: "practice-review",
     messageKey: "navigation.sections.practiceReview",
+    collapsible: true,
     itemIds: ["dictionary", "memoryTips", "learningLoop"],
    },
   ],
@@ -244,11 +245,13 @@ export const navigationGroups = [
    {
     id: "knowledge-language",
     messageKey: "navigation.sections.knowledgeLanguage",
+    collapsible: false,
     itemIds: ["grammar", "vocab"],
    },
    {
     id: "knowledge-hanzi",
     messageKey: "navigation.sections.knowledgeHanzi",
+    collapsible: true,
     itemIds: ["radicals", "inspector"],
    },
   ],
@@ -261,6 +264,7 @@ export const navigationGroups = [
    {
     id: "personal-workspace",
     messageKey: "navigation.sections.personalWorkspace",
+    collapsible: false,
     itemIds: ["personalLearning", "notebook"],
    },
   ],

@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from "vitest";
 import type { AppLocale } from "@/i18n/config";
 import { loadAppMessages } from "@/i18n/messages";
 
+import { filterNavigationGroupsForContentCapability, navigationItems } from "./navigation-config";
 import { Sidebar } from "./Sidebar";
 
 vi.mock("next/navigation", () => ({
@@ -21,8 +22,8 @@ const localeCases = [
  {
   locale: "vi",
   personalGroup: "Cá nhân",
-  personalSection: "Không gian học",
   knowledgeGroup: "Năng lực",
+  moreCluster: "Thêm",
   dataQuality: "Chất lượng dữ liệu",
   apiDocs: "API & tích hợp",
   tts: "Giọng đọc",
@@ -30,8 +31,8 @@ const localeCases = [
  {
   locale: "en",
   personalGroup: "Personal",
-  personalSection: "Study workspace",
   knowledgeGroup: "Capabilities",
+  moreCluster: "More",
   dataQuality: "Data quality",
   apiDocs: "API & integrations",
   tts: "Text to speech",
@@ -39,8 +40,8 @@ const localeCases = [
  {
   locale: "zh-CN",
   personalGroup: "个人",
-  personalSection: "学习空间",
   knowledgeGroup: "能力",
+  moreCluster: "更多",
   dataQuality: "数据质量",
   apiDocs: "API 与集成",
   tts: "语音",
@@ -48,8 +49,8 @@ const localeCases = [
 ] satisfies ReadonlyArray<{
  locale: AppLocale;
  personalGroup: string;
- personalSection: string;
  knowledgeGroup: string;
+ moreCluster: string;
  dataQuality: string;
  apiDocs: string;
  tts: string;
@@ -58,7 +59,7 @@ const localeCases = [
 describe("Sidebar translations", () => {
  it.each(localeCases)(
   "renders configured navigation labels for $locale instead of message keys",
-  async ({ locale, personalGroup, personalSection, knowledgeGroup, dataQuality, apiDocs, tts }) => {
+  async ({ locale, personalGroup, knowledgeGroup, moreCluster, dataQuality, apiDocs, tts }) => {
    const messages = await loadAppMessages(locale);
    const markup = renderToStaticMarkup(
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Ho_Chi_Minh">
@@ -67,12 +68,39 @@ describe("Sidebar translations", () => {
    );
 
    expect(markup).toContain(personalGroup);
-   expect(markup).toContain(personalSection);
    expect(markup).toContain(knowledgeGroup);
+   expect(markup).toContain(moreCluster);
    expect(markup).not.toContain(dataQuality);
    expect(markup).not.toContain(apiDocs);
    expect(markup).not.toContain(tts);
    expect(markup).not.toContain("Shell.navigation.");
+
+   const destinationIds = filterNavigationGroupsForContentCapability(true).flatMap((group) =>
+    group.sections.flatMap((section) => section.itemIds),
+   );
+   for (const itemId of destinationIds) {
+    const href = navigationItems[itemId].href;
+    expect(markup.split(`href="${href}"`)).toHaveLength(itemId === "home" ? 3 : 2);
+   }
   },
  );
+
+ it("keeps every learner route while hiding only the content-managed HTML route", async () => {
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <Sidebar canManageContent={false} />
+   </NextIntlClientProvider>,
+  );
+  const destinationIds = filterNavigationGroupsForContentCapability(false).flatMap((group) =>
+   group.sections.flatMap((section) => section.itemIds),
+  );
+
+  expect(destinationIds).not.toContain("htmlArtifacts");
+  expect(markup).not.toContain(messages.Shell.navigation.items.htmlArtifacts);
+  for (const itemId of destinationIds) {
+   const href = navigationItems[itemId].href;
+   expect(markup.split(`href="${href}"`)).toHaveLength(itemId === "home" ? 3 : 2);
+  }
+ });
 });

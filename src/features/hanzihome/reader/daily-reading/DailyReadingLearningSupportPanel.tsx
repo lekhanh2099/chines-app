@@ -26,48 +26,48 @@ import { AddApiKeyDialog } from "@/features/settings/AddApiKeyDialog";
 import { Link } from "@/i18n/navigation";
 import type { AiTaskId, AiTaskRuntimePreview } from "@/lib/ai-task-contract";
 
-import { useDailyReadingV2Library } from "./daily-reading-v2-client";
+import { useDailyReadingLibrary } from "./daily-reading.client";
 import {
- enrichDailyReadingV2LearningSupport,
- enrichDailyReadingV2Module,
-} from "./daily-reading-v2-enrichment.client";
-import type { DailyReadingV2, DailyReadingV2EnrichmentModule } from "./daily-reading-v2.schemas";
+ enrichDailyReadingLearningSupport,
+ enrichDailyReadingModule,
+} from "./daily-reading-enrichment.client";
+import type { DailyReading, DailyReadingEnrichmentModule } from "./daily-reading.schemas";
 
-type EnrichmentState = DailyReadingV2["enrichment"][DailyReadingV2EnrichmentModule];
-type PendingAction = DailyReadingV2EnrichmentModule | "all" | null;
+type EnrichmentState = DailyReading["enrichment"][DailyReadingEnrichmentModule];
+type PendingAction = DailyReadingEnrichmentModule | "all" | null;
 type EnrichmentStatusKey =
- | "v2.enrichment.status.idle"
- | "v2.enrichment.status.running"
- | "v2.enrichment.status.ready"
- | "v2.enrichment.status.failed"
- | "v2.enrichment.status.missingKey"
- | "v2.enrichment.status.invalidKey"
- | "v2.enrichment.status.quota"
- | "v2.enrichment.status.taskDisabled"
- | "v2.enrichment.status.providerUnavailable";
+ | "enrichment.status.idle"
+ | "enrichment.status.running"
+ | "enrichment.status.ready"
+ | "enrichment.status.failed"
+ | "enrichment.status.missingKey"
+ | "enrichment.status.invalidKey"
+ | "enrichment.status.quota"
+ | "enrichment.status.taskDisabled"
+ | "enrichment.status.providerUnavailable";
 
 type ModuleConfig = {
- module: DailyReadingV2EnrichmentModule;
+ module: DailyReadingEnrichmentModule;
  icon: LucideIcon;
  titleKey:
-  | "v2.enrichment.modules.translation.title"
-  | "v2.enrichment.modules.vocabulary.title"
-  | "v2.enrichment.modules.grammar.title"
-  | "v2.enrichment.modules.questions.title";
+  | "enrichment.modules.translation.title"
+  | "enrichment.modules.vocabulary.title"
+  | "enrichment.modules.grammar.title"
+  | "enrichment.modules.questions.title";
 };
 
 const moduleConfigs: readonly ModuleConfig[] = [
- { module: "translation", icon: Languages, titleKey: "v2.enrichment.modules.translation.title" },
- { module: "vocabulary", icon: LibraryBig, titleKey: "v2.enrichment.modules.vocabulary.title" },
- { module: "grammar", icon: BookOpen, titleKey: "v2.enrichment.modules.grammar.title" },
- { module: "questions", icon: CircleHelp, titleKey: "v2.enrichment.modules.questions.title" },
+ { module: "translation", icon: Languages, titleKey: "enrichment.modules.translation.title" },
+ { module: "vocabulary", icon: LibraryBig, titleKey: "enrichment.modules.vocabulary.title" },
+ { module: "grammar", icon: BookOpen, titleKey: "enrichment.modules.grammar.title" },
+ { module: "questions", icon: CircleHelp, titleKey: "enrichment.modules.questions.title" },
 ];
 
-function configForModule(module: DailyReadingV2EnrichmentModule) {
+function configForModule(module: DailyReadingEnrichmentModule) {
  return moduleConfigs.find((config) => config.module === module);
 }
 
-function taskIdForModule(module: DailyReadingV2EnrichmentModule): AiTaskId {
+function taskIdForModule(module: DailyReadingEnrichmentModule): AiTaskId {
  if (module === "translation") return "daily-reading.translation";
  if (module === "vocabulary") return "daily-reading.vocabulary";
  if (module === "grammar") return "daily-reading.grammar";
@@ -92,25 +92,25 @@ function statusBadgeVariant(state: EnrichmentState): ComponentProps<typeof Badge
 function statusKey(state: EnrichmentState): EnrichmentStatusKey {
  switch (state.status) {
   case "idle":
-   return "v2.enrichment.status.idle";
+   return "enrichment.status.idle";
   case "running":
-   return "v2.enrichment.status.running";
+   return "enrichment.status.running";
   case "ready":
-   return "v2.enrichment.status.ready";
+   return "enrichment.status.ready";
   case "failed":
-   return "v2.enrichment.status.failed";
+   return "enrichment.status.failed";
   case "blocked":
    switch (state.reason) {
     case "missing-ai-key":
-     return "v2.enrichment.status.missingKey";
+     return "enrichment.status.missingKey";
     case "invalid-ai-key":
-     return "v2.enrichment.status.invalidKey";
+     return "enrichment.status.invalidKey";
     case "quota-exhausted":
-     return "v2.enrichment.status.quota";
+     return "enrichment.status.quota";
     case "provider-unavailable":
-     return "v2.enrichment.status.providerUnavailable";
+     return "enrichment.status.providerUnavailable";
     case "task-disabled":
-     return "v2.enrichment.status.taskDisabled";
+     return "enrichment.status.taskDisabled";
    }
  }
 }
@@ -122,11 +122,11 @@ function needsKeyManagement(state: EnrichmentState) {
  );
 }
 
-export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReadingV2 }) {
+export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyReading }) {
  const t = useTranslations("DailyReading");
  const locale = useLocale();
  const runtime = useAiRuntimeReadiness();
- const library = useDailyReadingV2Library();
+ const library = useDailyReadingLibrary();
  const [pendingAction, setPendingAction] = useState<PendingAction>(null);
  const dateFormatter = useMemo(
   () =>
@@ -149,22 +149,22 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   runtime.data?.status === "storage-unavailable" && runtime.data.reason === "credential-unreadable";
  const runtimeReady = runtime.data?.status === "ready";
 
- async function runModule(module: DailyReadingV2EnrichmentModule) {
+ async function runModule(module: DailyReadingEnrichmentModule) {
   setPendingAction(module);
   try {
-   const updated = await enrichDailyReadingV2Module(reading.id, module);
+   const updated = await enrichDailyReadingModule(reading.id, module);
    if (updated.enrichment[module].status === "ready") {
     const config = configForModule(module);
     toast.success(
      config === undefined
-      ? t("v2.enrichment.toast.moduleReadyFallback")
-      : t("v2.enrichment.toast.moduleReady", { module: t(config.titleKey) }),
+      ? t("enrichment.toast.moduleReadyFallback")
+      : t("enrichment.toast.moduleReady", { module: t(config.titleKey) }),
     );
    } else if (updated.enrichment[module].status === "running") {
-    toast.success(t("v2.enrichment.toast.queued"));
+    toast.success(t("enrichment.toast.queued"));
    }
   } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
+   toast.error(error instanceof Error ? error.message : t("enrichment.toast.failed"));
   } finally {
    setPendingAction(null);
   }
@@ -173,14 +173,14 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
  async function runAll() {
   setPendingAction("all");
   try {
-   const updated = await enrichDailyReadingV2LearningSupport(reading.id);
+   const updated = await enrichDailyReadingLearningSupport(reading.id);
    const completed = moduleConfigs.filter(
     ({ module }) => updated.enrichment[module].status === "ready",
    ).length;
-   if (completed === moduleConfigs.length) toast.success(t("v2.enrichment.toast.allReady"));
-   else toast.success(t("v2.enrichment.toast.queued"));
+   if (completed === moduleConfigs.length) toast.success(t("enrichment.toast.allReady"));
+   else toast.success(t("enrichment.toast.queued"));
   } catch (error) {
-   toast.error(error instanceof Error ? error.message : t("v2.enrichment.toast.failed"));
+   toast.error(error instanceof Error ? error.message : t("enrichment.toast.failed"));
   } finally {
    setPendingAction(null);
   }
@@ -200,7 +200,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
   );
  }
 
- function retryModuleButton(module: DailyReadingV2EnrichmentModule, state: EnrichmentState) {
+ function retryModuleButton(module: DailyReadingEnrichmentModule, state: EnrichmentState) {
   const isPending = pendingAction === module || pendingAction === "all";
   return (
    <Button
@@ -217,7 +217,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
     ) : (
      <RefreshCcw data-icon="inline-start" />
     )}
-    {state.status === "idle" ? t("v2.enrichment.actions.create") : t("v2.enrichment.actions.retry")}
+    {state.status === "idle" ? t("enrichment.actions.create") : t("enrichment.actions.retry")}
    </Button>
   );
  }
@@ -227,37 +227,37 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    <Button type="button" variant="outline" size="compact" asChild>
     <Link href="/settings?section=ai&panel=providers" prefetch={false}>
      <Settings data-icon="inline-start" />
-     {t("v2.enrichment.actions.manageKeys")}
+     {t("enrichment.actions.manageKeys")}
     </Link>
    </Button>
   );
  }
 
- function configureTaskButton(module: DailyReadingV2EnrichmentModule) {
+ function configureTaskButton(module: DailyReadingEnrichmentModule) {
   return (
    <Button type="button" variant="outline" size="compact" asChild>
     <Link href={`/settings?section=ai&panel=tasks#${taskIdForModule(module)}`} prefetch={false}>
      <Settings data-icon="inline-start" />
-     {t("v2.enrichment.actions.configureTask")}
+     {t("enrichment.actions.configureTask")}
     </Link>
    </Button>
   );
  }
 
  function moduleAction(
-  module: DailyReadingV2EnrichmentModule,
+  module: DailyReadingEnrichmentModule,
   state: EnrichmentState,
   taskRuntime: AiTaskRuntimePreview | undefined,
  ) {
-  if (state.status === "ready" || state.status === "running") return null;
+  if (state.status === "running") return null;
   if (runtime.isPending || runtime.isError) return null;
   if (taskRuntime?.status === "task-disabled") return configureTaskButton(module);
 
   if (runtimeMissingKey) {
-   return addKeyAction(t("v2.enrichment.actions.addKey"), () => void runModule(module));
+   return addKeyAction(t("enrichment.actions.addKey"), () => void runModule(module));
   }
   if (runtimeCanRecoverByAddingKey) {
-   return addKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runModule(module));
+   return addKeyAction(t("enrichment.actions.addReplacementKey"), () => void runModule(module));
   }
   if (runtimeStorageUnavailable) return manageKeysButton();
   if (taskRuntime && taskRuntime.status !== "ready") return manageKeysButton();
@@ -279,7 +279,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
    return (
     <Button type="button" variant="outline" size="compact" disabled>
      <Spinner data-icon="inline-start" />
-     {t("v2.enrichment.actions.checkingRuntime")}
+     {t("enrichment.actions.checkingRuntime")}
     </Button>
    );
   }
@@ -297,15 +297,15 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      ) : (
       <RefreshCcw data-icon="inline-start" />
      )}
-     {t("v2.enrichment.actions.checkRuntimeAgain")}
+     {t("enrichment.actions.checkRuntimeAgain")}
     </Button>
    );
   }
   if (runtimeMissingKey) {
-   return addKeyAction(t("v2.enrichment.actions.addKeyAndCreate"), () => void runAll());
+   return addKeyAction(t("enrichment.actions.addKeyAndCreate"), () => void runAll());
   }
   if (runtimeCanRecoverByAddingKey) {
-   return addKeyAction(t("v2.enrichment.actions.addReplacementKey"), () => void runAll());
+   return addKeyAction(t("enrichment.actions.addReplacementKey"), () => void runAll());
   }
   if (runtimeStorageUnavailable) return manageKeysButton();
 
@@ -321,9 +321,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
     ) : (
      <Sparkles data-icon="inline-start" />
     )}
-    {readyCount === 0
-     ? t("v2.enrichment.actions.createAll")
-     : t("v2.enrichment.actions.completeMissing")}
+    {readyCount === 0 ? t("enrichment.actions.createAll") : t("enrichment.actions.completeMissing")}
    </Button>
   );
  }
@@ -334,22 +332,22 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
     <div className="grid min-w-0 gap-1" aria-live="polite">
      <div className="flex flex-wrap items-center gap-2">
       <Typography as="h2" variant="cardTitle" weight="bold">
-       {t("v2.enrichment.title")}
+       {t("enrichment.title")}
       </Typography>
       <Badge variant={allReady ? "success" : hasRunningModule ? "info" : "default"} size="sm">
-       {t("v2.enrichment.summary", { ready: readyCount, total: moduleConfigs.length })}
+       {t("enrichment.summary", { ready: readyCount, total: moduleConfigs.length })}
       </Badge>
      </div>
      <Typography as="p" variant="bodySmall" tone="muted">
-      {t("v2.enrichment.description")}
+      {t("enrichment.description")}
      </Typography>
      {runtimeMissingKey ? (
       <Typography as="p" variant="caption" tone="warning">
-       {t("v2.enrichment.runtimeMissing")}
+       {t("enrichment.runtimeMissing")}
       </Typography>
      ) : runtimeStorageUnavailable ? (
       <Typography as="p" variant="caption" tone="warning">
-       {t("v2.enrichment.runtimeStorageUnavailable")}
+       {t("enrichment.runtimeStorageUnavailable")}
       </Typography>
      ) : null}
     </div>
@@ -373,7 +371,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
      const isQueued =
       state.status === "running" &&
       latestRun?.status === "pending" &&
-      latestRun.workflowRunId.length === 0;
+      latestRun.startedAt.length === 0;
      const Icon = config.icon;
      return (
       <div
@@ -385,17 +383,25 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          <Icon aria-hidden />
          <Typography weight="bold">{t(config.titleKey)}</Typography>
          <Badge variant={statusBadgeVariant(state)} size="sm">
-          {isQueued ? t("v2.enrichment.status.queued") : t(statusKey(state))}
+          {isQueued ? t("enrichment.status.queued") : t(statusKey(state))}
          </Badge>
         </div>
-        {state.status === "ready" && state.generatedBy?.receipt ? (
+        {latestRun?.reused && latestRun.receipt ? (
+         <Typography variant="caption" tone="muted" wrapping="breakWords">
+          {t("enrichment.runtimeReused", {
+           provider: latestRun.receipt.provider,
+           key: latestRun.receipt.keyLabel,
+           model: latestRun.receipt.model,
+          })}
+         </Typography>
+        ) : state.status === "ready" && state.generatedBy?.receipt ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
           {state.generatedBy.receipt.provider} · {state.generatedBy.receipt.model} ·{" "}
           {state.generatedBy.receipt.keyLabel}
          </Typography>
         ) : isQueued && latestRun?.receipt ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("v2.enrichment.runtimeQueued", {
+          {t("enrichment.runtimeQueued", {
            provider: latestRun.receipt.provider,
            key: latestRun.receipt.keyLabel,
            model: latestRun.receipt.model,
@@ -404,7 +410,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          </Typography>
         ) : state.status === "running" && latestRun?.receipt ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("v2.enrichment.runtimeRunning", {
+          {t("enrichment.runtimeRunning", {
            provider: latestRun.receipt.provider,
            key: latestRun.receipt.keyLabel,
            model: latestRun.receipt.model,
@@ -414,7 +420,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          </Typography>
         ) : state.status === "failed" && latestRun?.receipt ? (
          <Typography variant="caption" tone="warning" wrapping="breakWords">
-          {t("v2.enrichment.runtimeFailed", {
+          {t("enrichment.runtimeFailed", {
            provider: latestRun.receipt.provider,
            key: latestRun.receipt.keyLabel,
            model: latestRun.receipt.model,
@@ -423,7 +429,7 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          </Typography>
         ) : taskRuntime?.status === "ready" ? (
          <Typography variant="caption" tone="muted" wrapping="breakWords">
-          {t("v2.enrichment.runtimePlanned", {
+          {t("enrichment.runtimePlanned", {
            provider: taskRuntime.receipt.provider,
            key: taskRuntime.receipt.keyLabel,
            model: taskRuntime.receipt.model,
@@ -431,24 +437,24 @@ export function DailyReadingLearningSupportPanel({ reading }: { reading: DailyRe
          </Typography>
         ) : taskRuntime?.status === "task-disabled" ? (
          <Typography variant="caption" tone="warning">
-          {t("v2.enrichment.status.taskDisabled")}
+          {t("enrichment.status.taskDisabled")}
          </Typography>
         ) : taskRuntime ? (
          <Typography variant="caption" tone="warning" wrapping="breakWords">
-          {t("v2.enrichment.runtimeUnavailable", { reason: taskRuntime.reason })}
+          {t("enrichment.runtimeUnavailable", { reason: taskRuntime.reason })}
          </Typography>
         ) : null}
         {!isQueued && latestRun?.completedAt ? (
          <Typography variant="caption" tone="muted">
-          {t("v2.enrichment.runtimeTimeRange", {
-           start: dateFormatter.format(new Date(latestRun.attemptedAt)),
+          {t("enrichment.runtimeTimeRange", {
+           start: dateFormatter.format(new Date(latestRun.startedAt || latestRun.attemptedAt)),
            end: dateFormatter.format(new Date(latestRun.completedAt)),
           })}
          </Typography>
         ) : !isQueued && state.status === "running" && latestRun ? (
          <Typography variant="caption" tone="muted">
-          {t("v2.enrichment.runtimeStarted", {
-           time: dateFormatter.format(new Date(latestRun.attemptedAt)),
+          {t("enrichment.runtimeStarted", {
+           time: dateFormatter.format(new Date(latestRun.startedAt || latestRun.attemptedAt)),
           })}
          </Typography>
         ) : null}

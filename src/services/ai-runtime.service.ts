@@ -13,6 +13,7 @@ import {
 } from "@/lib/ai-runtime-contract";
 import {
  AI_TASK_REGISTRY,
+ AI_SEMANTIC_MEMORY_MODEL,
  aiTaskRuntimePreviewSchema,
  getAiTaskDefinition,
  type AiRuntimeReceipt,
@@ -72,6 +73,11 @@ export type ResolvedUserAiRuntime = {
  capabilities: readonly AiRuntimeCapability[];
 };
 
+export type ResolvedUserAiTaskRuntime = ResolvedUserAiRuntime & {
+ taskId: AiTaskId;
+ resolutionSource: AiTaskResolutionSource;
+};
+
 export type UserAiRuntimeResolution =
  | {
     ok: true;
@@ -86,10 +92,7 @@ export type UserAiRuntimeResolution =
 export type UserAiTaskRuntimeResolution =
  | {
     ok: true;
-    runtime: ResolvedUserAiRuntime & {
-     taskId: AiTaskId;
-     resolutionSource: AiTaskResolutionSource;
-    };
+    runtime: ResolvedUserAiTaskRuntime;
    }
  | {
     ok: false;
@@ -145,6 +148,16 @@ function supportsModel(credential: UserApiKeyCredential, model: string) {
  return (
   isApiKeyModelSupported(credential.provider, model) || credential.defaultModel?.trim() === model
  );
+}
+
+function resolvedTaskModel(
+ taskId: AiTaskId,
+ credential: UserApiKeyCredential,
+ selectedModel?: string,
+) {
+ return taskId === "conversation.semantic-memory"
+  ? AI_SEMANTIC_MEMORY_MODEL
+  : (selectedModel ?? resolvedModel(credential));
 }
 
 function aggregateCapabilities(credentials: readonly UserApiKeyCredential[]) {
@@ -318,14 +331,21 @@ export function resolveAiTaskRuntimeFromInventory(input: {
   if (!supportsCapability(credential.provider, task.capability)) {
    return { ok: false, status: "missing-key", reason: "capability-unavailable" };
   }
-  if (!supportsModel(credential, exactSelection.model)) {
+  if (
+   input.taskId === "conversation.semantic-memory"
+    ? exactSelection.model !== AI_SEMANTIC_MEMORY_MODEL
+    : !supportsModel(credential, exactSelection.model)
+  ) {
    return { ok: false, status: "missing-key", reason: "assigned-model-unavailable" };
   }
 
   return {
    ok: true,
    runtime: {
-    ...runtimeFromCredential({ credential, model: exactSelection.model }),
+    ...runtimeFromCredential({
+     credential,
+     model: resolvedTaskModel(input.taskId, credential, exactSelection.model),
+    }),
     taskId: input.taskId,
     resolutionSource: input.sessionOverride ? "session-override" : "assigned",
    },
@@ -342,7 +362,7 @@ export function resolveAiTaskRuntimeFromInventory(input: {
  return {
   ok: true,
   runtime: {
-   ...runtimeFromCredential({ credential }),
+   ...runtimeFromCredential({ credential, model: resolvedTaskModel(input.taskId, credential) }),
    taskId: input.taskId,
    resolutionSource: "auto",
   },
@@ -522,12 +542,7 @@ export async function resolveUserAiRuntimeSnapshot(input: {
  };
 }
 
-export function getAiRuntimeReceipt(
- runtime: ResolvedUserAiRuntime & {
-  taskId: AiTaskId;
-  resolutionSource: AiTaskResolutionSource;
- },
-): AiRuntimeReceipt {
+export function getAiRuntimeReceipt(runtime: ResolvedUserAiTaskRuntime): AiRuntimeReceipt {
  return {
   taskId: runtime.taskId,
   provider: runtime.provider,
@@ -540,10 +555,7 @@ export function getAiRuntimeReceipt(
 
 export async function recordUserAiRuntimeActivity(input: {
  userId: string;
- runtime: ResolvedUserAiRuntime & {
-  taskId: AiTaskId;
-  resolutionSource: AiTaskResolutionSource;
- };
+ runtime: ResolvedUserAiTaskRuntime;
  status: CreateAiActivityEvent["status"];
  errorCode?: string;
  latencyMs?: number;
@@ -578,6 +590,9 @@ export async function recordUserAiRuntimeReceiptActivity(input: {
  receipt: AiRuntimeReceipt;
  status: CreateAiActivityEvent["status"];
  errorCode?: string;
+ latencyMs?: number;
+ inputTokens?: number;
+ outputTokens?: number;
  resourceType?: string;
  resourceId?: string;
 }) {
@@ -591,9 +606,9 @@ export async function recordUserAiRuntimeReceiptActivity(input: {
    resolutionSource: input.receipt.resolutionSource,
    status: input.status,
    errorCode: input.errorCode ?? null,
-   latencyMs: null,
-   inputTokens: null,
-   outputTokens: null,
+   latencyMs: input.latencyMs ?? null,
+   inputTokens: input.inputTokens ?? null,
+   outputTokens: input.outputTokens ?? null,
    resourceType: input.resourceType ?? null,
    resourceId: input.resourceId ?? null,
   });

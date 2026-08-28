@@ -5,11 +5,11 @@ import {
 import { DAILY_READING_TIME_ZONE } from "./daily-reading.scheduler";
 import type { DailyReadingTopic } from "./daily-reading.schemas";
 import type {
- DailyReadingV2FreshnessDays,
- DailyReadingV2LengthPreference,
- DailyReadingV2NoMatchBehavior,
- DailyReadingV2Settings,
-} from "./daily-reading-v2.schemas";
+ DailyReadingFreshnessDays,
+ DailyReadingLengthPreference,
+ DailyReadingNoMatchBehavior,
+ DailyReadingSettings,
+} from "./daily-reading.schemas";
 
 const maximumFreshnessDays = 14;
 const recentTopicHistoryLimit = 14;
@@ -29,15 +29,15 @@ export type ResolvedDailyReadingCollectionPolicy = {
   timeZone: string;
  };
  freshness: {
-  primaryDays: DailyReadingV2FreshnessDays;
+  primaryDays: DailyReadingFreshnessDays;
   fallbackDays: number | null;
-  noMatchBehavior: DailyReadingV2NoMatchBehavior;
+  noMatchBehavior: DailyReadingNoMatchBehavior;
  };
  selectedTopics: readonly DailyReadingTopic[];
  selectedSources: readonly DailyReadingSourceId[];
  allowedDomains: readonly string[];
- preferredLength: DailyReadingV2LengthPreference;
- targetLevel: DailyReadingV2Settings["targetLevel"];
+ preferredLength: DailyReadingLengthPreference;
+ targetLevel: DailyReadingSettings["targetLevel"];
  preferTopicDiversity: boolean;
  avoidRecentlyRead: boolean;
  recentTopics: readonly DailyReadingTopic[];
@@ -69,7 +69,7 @@ function resolveExcludedSourceUrls(history: readonly DailyReadingCollectionHisto
 }
 
 export function resolveDailyReadingCollectionPolicy(input: {
- settings: DailyReadingV2Settings;
+ settings: DailyReadingSettings;
  history: readonly DailyReadingCollectionHistoryItem[];
 }): ResolvedDailyReadingCollectionPolicy {
  const fallbackDays =

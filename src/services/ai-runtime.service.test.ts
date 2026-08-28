@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 
 import type { UserApiKey, UserApiKeyCredential } from "@/services/user-api-keys.service";
+import { AI_SEMANTIC_MEMORY_MODEL } from "@/lib/ai-task-contract";
 
 import {
  classifyAiRuntimeOperationFailure,
@@ -11,7 +12,11 @@ import {
  resolveAiTaskRuntimeFromInventory,
  type AiRuntimeInventory,
 } from "./ai-runtime.service";
-import { recordUserAiActivityEvent, upsertUserAiTaskAssignment } from "./ai-task-routing.service";
+import {
+ listUserAiActivitySummary,
+ recordUserAiActivityEvent,
+ upsertUserAiTaskAssignment,
+} from "./ai-task-routing.service";
 
 afterEach(() => {
  vi.unstubAllEnvs();
@@ -122,6 +127,33 @@ describe("shared AI runtime resolver", () => {
   expect(conversation.ok && conversation.runtime.keyId).toBe(groqKey.id);
   expect(semantic.ok && semantic.runtime.keyId).toBe(geminiKey.id);
   expect(semantic.ok && semantic.runtime.apiKey).toBe(geminiCredential.apiKey);
+ });
+
+ it("uses the embedding model for semantic-memory task previews and rejects a generative assignment", () => {
+  const automatic = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "conversation.semantic-memory",
+  });
+  const invalidAssigned = resolveAiTaskRuntimeFromInventory({
+   inventory: inventory(),
+   taskId: "conversation.semantic-memory",
+   assignment: {
+    taskId: "conversation.semantic-memory",
+    mode: "assigned",
+    keyId: geminiKey.id,
+    model: "models/gemini-2.5-flash",
+   },
+  });
+
+  expect(automatic.ok && automatic.runtime).toMatchObject({
+   keyId: geminiKey.id,
+   model: AI_SEMANTIC_MEMORY_MODEL,
+  });
+  expect(invalidAssigned).toEqual({
+   ok: false,
+   status: "missing-key",
+   reason: "assigned-model-unavailable",
+  });
  });
 
  it("does not silently substitute another key when an explicit key lacks the requested capability", () => {
@@ -268,7 +300,7 @@ describe("shared AI runtime resolver", () => {
    inputTokens: null,
    outputTokens: null,
    resourceType: "daily-reading",
-   resourceId: "daily-v2:2026-08-26:article",
+   resourceId: "daily:2026-08-26:article",
   });
 
   expect(fetchMock).toHaveBeenCalledWith(
@@ -289,7 +321,7 @@ describe("shared AI runtime resolver", () => {
      input_tokens: null,
      output_tokens: null,
      resource_type: "daily-reading",
-     resource_id: "daily-v2:2026-08-26:article",
+     resource_id: "daily:2026-08-26:article",
     }),
    }),
   );
@@ -319,6 +351,58 @@ describe("shared AI runtime resolver", () => {
 
   expect(String(fetchMock.mock.calls[0]?.[0])).toBe(
    "https://project.supabase.co/rest/v1/user_ai_task_assignments?on_conflict=user_id%2Ctask_id&select=task_id%2Cmode%2Capi_key_id%2Cmodel",
+  );
+ });
+
+ it("maps the user-scoped AI activity aggregation RPC without changing percentage units", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(
+   Response.json([
+    {
+     task_id: "daily-reading.translation",
+     provider: "gemini",
+     model: "models/gemini-3.5-flash",
+     attempts: 4,
+     successes: 3,
+     success_rate: 75,
+     average_latency_ms: 1500,
+     input_tokens: 1000,
+     output_tokens: 500,
+    },
+   ]),
+  );
+  vi.stubGlobal("fetch", fetchMock);
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://project.supabase.co");
+  vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service-role-key");
+
+  await expect(
+   listUserAiActivitySummary({
+    userId: "user-1",
+    taskId: "daily-reading.translation",
+    provider: "gemini",
+   }),
+  ).resolves.toEqual([
+   {
+    taskId: "daily-reading.translation",
+    provider: "gemini",
+    model: "models/gemini-3.5-flash",
+    attempts: 4,
+    successes: 3,
+    successRate: 75,
+    averageLatencyMs: 1500,
+    inputTokens: 1000,
+    outputTokens: 500,
+   },
+  ]);
+  expect(fetchMock).toHaveBeenCalledWith(
+   expect.objectContaining({ pathname: "/rest/v1/rpc/user_ai_activity_summary" }),
+   expect.objectContaining({
+    method: "POST",
+    body: JSON.stringify({
+     p_user_id: "user-1",
+     p_task_id: "daily-reading.translation",
+     p_provider: "gemini",
+    }),
+   }),
   );
  });
 });

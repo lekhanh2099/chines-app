@@ -3,6 +3,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { BrainCircuit, RefreshCcw, SlidersHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,14 +17,21 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
-import { aiTaskGroupSchema, type AiTaskAssignment, type AiTaskId } from "@/lib/ai-task-contract";
+import {
+ AI_SEMANTIC_MEMORY_MODEL,
+ aiTaskGroupSchema,
+ type AiTaskAssignment,
+ type AiTaskId,
+} from "@/lib/ai-task-contract";
 
 const taskGroups = [aiTaskGroupSchema.enum.main, aiTaskGroupSchema.enum.advanced];
 const taskSettingsQueryKey = ["settings", "ai-tasks"];
 
 import {
  aiTaskSettingsResponseSchema,
+ aiTaskRuntimeCheckResponseSchema,
  aiTaskUpdateResponseSchema,
+ type AiTaskRuntimeCheckResponse,
  type AiTaskSettingsResponse,
 } from "./ai-task-settings.schema";
 
@@ -44,6 +52,7 @@ export function getAiTaskCopyKey(taskId: AiTaskId) {
 export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup?: () => void }) {
  const t = useTranslations("AiSettings.taskRouting");
  const queryClient = useQueryClient();
+ const [runtimeChecks, setRuntimeChecks] = useState<AiTaskRuntimeCheckResponse[]>([]);
  const taskSettingsQuery = useQuery({
   queryKey: taskSettingsQueryKey,
   retry: false,
@@ -84,7 +93,25 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
   },
  });
  const data = taskSettingsQuery.data;
+ const checkMutation = useMutation({
+  retry: false,
+  mutationFn: async (taskId: AiTaskId) => {
+   const response = await fetch("/api/settings/ai-tasks/check", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ taskId }),
+   });
+   if (!response.ok) throw new Error("check_failed");
+   return aiTaskRuntimeCheckResponseSchema.parse(await response.json());
+  },
+  onSuccess: (result) =>
+   setRuntimeChecks((current) => [
+    result,
+    ...current.filter((candidate) => candidate.taskId !== result.taskId),
+   ]),
+ });
  const savingTaskId = saveMutation.isPending ? saveMutation.variables.taskId : null;
+ const checkingTaskId = checkMutation.isPending ? checkMutation.variables : null;
  const save = (assignment: AiTaskAssignment) => saveMutation.mutate(assignment);
 
  if (!data) {
@@ -145,8 +172,13 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
        const selectedKey = assigned
         ? compatibleKeys.find((key) => key.keyId === assigned.keyId)
         : null;
+       const selectedKeyModels =
+        task.id === "conversation.semantic-memory"
+         ? [{ value: AI_SEMANTIC_MEMORY_MODEL, label: "Gemini Embedding 001" }]
+         : (selectedKey?.models ?? []);
        const sourceValue = assigned?.keyId ?? task.assignment.mode;
        const previewReceipt = task.runtimePreview.receipt;
+       const runtimeCheck = runtimeChecks.find((candidate) => candidate.taskId === task.id);
        return (
         <Card
          key={task.id}
@@ -171,6 +203,20 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
              {t("customizeLookup")}
             </Button>
            ) : null}
+           <Button
+            type="button"
+            variant="outline"
+            size="compact"
+            onClick={() => checkMutation.mutate(task.id)}
+            disabled={checkingTaskId === task.id}
+           >
+            {checkingTaskId === task.id ? (
+             <Spinner data-icon="inline-start" />
+            ) : (
+             <RefreshCcw data-icon="inline-start" />
+            )}
+            {t("checkRuntime")}
+           </Button>
            {savingTaskId === task.id ? <Spinner /> : null}
           </div>
          </div>
@@ -203,7 +249,10 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
              return;
             }
             const key = compatibleKeys.find((candidate) => candidate.keyId === value);
-            const model = key?.defaultModel ?? key?.models[0]?.value;
+            const model =
+             task.id === "conversation.semantic-memory"
+              ? AI_SEMANTIC_MEMORY_MODEL
+              : (key?.defaultModel ?? key?.models[0]?.value);
             if (key?.availability === "ready" && model) {
              save({ taskId: task.id, mode: "assigned", keyId: key.keyId, model });
             }
@@ -253,7 +302,7 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
               <SelectValue />
              </SelectTrigger>
              <SelectContent>
-              {selectedKey?.models.map((model) => (
+              {selectedKeyModels.map((model) => (
                <SelectItem key={model.value} value={model.value}>
                 {model.label}
                </SelectItem>
@@ -286,6 +335,23 @@ export function AiTaskSettingsSection({ onCustomizeLookup }: { onCustomizeLookup
            </div>
           )}
          </div>
+         {runtimeCheck ? (
+          <div className="flex flex-wrap items-center gap-2" aria-live="polite">
+           <Badge variant={runtimeCheck.ok ? "success" : "warning"} casing="natural">
+            {runtimeCheck.ok ? t("checkSucceeded") : t("checkFailed")}
+           </Badge>
+           <Typography variant="caption" tone={runtimeCheck.ok ? "muted" : "warning"}>
+            {runtimeCheck.receipt
+             ? `${runtimeCheck.receipt.provider} · ${runtimeCheck.receipt.keyLabel} · ${runtimeCheck.receipt.model} · ${runtimeCheck.latencyMs} ms`
+             : `${runtimeCheck.errorCode ?? "provider-unavailable"} · ${runtimeCheck.latencyMs} ms`}
+           </Typography>
+          </div>
+         ) : null}
+         {checkMutation.isError && checkMutation.variables === task.id ? (
+          <Typography role="alert" variant="caption" tone="danger">
+           {t("checkRequestFailed")}
+          </Typography>
+         ) : null}
         </Card>
        );
       })}

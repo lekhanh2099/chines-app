@@ -1,5 +1,6 @@
 import type { JsonFieldValue } from "@/types/json";
 
+import { createHash } from "node:crypto";
 import { z } from "zod";
 import { start } from "workflow/api";
 
@@ -21,24 +22,27 @@ import {
  createDailyReadingEnrichmentJobs,
  DailyReadingEnrichmentJobStorageError,
  deleteDailyReadingEnrichmentJobs,
+ findReusableDailyReadingEnrichmentJob,
  listDailyReadingEnrichmentJobs,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment-jobs.server";
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server";
 import {
- dailyReadingV2EnrichmentJobRequestSchema,
- dailyReadingV2EnrichmentJobsResponseSchema,
- dailyReadingV2EnrichmentJobsQueryResponseSchema,
- type DailyReadingV2EnrichmentJobModuleRequest,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.schemas";
-import type { DailyReadingV2EnrichmentModule } from "@/features/hanzihome/reader/daily-reading/daily-reading-v2.schemas";
+ dailyReadingEnrichmentJobRequestSchema,
+ dailyReadingEnrichmentJobsResponseSchema,
+ dailyReadingEnrichmentJobsQueryResponseSchema,
+ type DailyReadingEnrichmentJobModuleRequest,
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.schemas";
+import type { DailyReadingEnrichmentModule } from "@/features/hanzihome/reader/daily-reading/daily-reading.schemas";
 import {
  dailyReadingEnrichmentWorkflow,
  type DailyReadingEnrichmentWorkflowInput,
-} from "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment.workflow";
+} from "@/features/hanzihome/reader/daily-reading/daily-reading-enrichment.workflow";
 import type { AiTaskId } from "@/lib/ai-task-contract";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+const DAILY_READING_ENRICHMENT_CONTRACT_VERSION = "daily-reading-2026-08-28";
 
 const querySchema = z
  .strictObject({
@@ -52,7 +56,7 @@ const querySchema = z
 
 const deleteSchema = z.strictObject({ runId: z.uuid() });
 
-function taskIdForModule(module: DailyReadingV2EnrichmentModule): AiTaskId {
+function taskIdForModule(module: DailyReadingEnrichmentModule): AiTaskId {
  switch (module) {
   case "translation":
    return "daily-reading.translation";
@@ -74,10 +78,32 @@ function blockedErrorCode(
 }
 
 function moduleRequestFor(
- modules: readonly DailyReadingV2EnrichmentJobModuleRequest[],
- module: DailyReadingV2EnrichmentModule,
+ modules: readonly DailyReadingEnrichmentJobModuleRequest[],
+ module: DailyReadingEnrichmentModule,
 ) {
  return modules.find((candidate) => candidate.module === module);
+}
+
+function requestSignature(input: {
+ articleFingerprint: string;
+ moduleRequest: DailyReadingEnrichmentJobModuleRequest;
+ taskId: AiTaskId;
+ receipt: ReturnType<typeof getAiRuntimeReceipt>;
+}) {
+ return createHash("sha256")
+  .update(
+   JSON.stringify([
+    input.articleFingerprint,
+    input.moduleRequest.module,
+    input.moduleRequest.targetCount,
+    DAILY_READING_ENRICHMENT_CONTRACT_VERSION,
+    input.taskId,
+    input.receipt.keyId,
+    input.receipt.provider,
+    input.receipt.model,
+   ]),
+  )
+  .digest("hex");
 }
 
 export async function POST(request: Request) {
@@ -85,7 +111,7 @@ export async function POST(request: Request) {
  if (!auth.authenticated) return auth.response;
 
  const payload: JsonFieldValue = await request.json().catch(() => null);
- const parsed = dailyReadingV2EnrichmentJobRequestSchema.safeParse(payload);
+ const parsed = dailyReadingEnrichmentJobRequestSchema.safeParse(payload);
  if (!parsed.success) {
   return privateNoStoreJson(
    { error: "Invalid Daily Reading enrichment job request", issues: z.flattenError(parsed.error) },
@@ -100,7 +126,7 @@ export async function POST(request: Request) {
   });
   if (existing.length > 0) {
    return privateNoStoreJson(
-    dailyReadingV2EnrichmentJobsResponseSchema.parse({
+    dailyReadingEnrichmentJobsResponseSchema.parse({
      runId: parsed.data.runId,
      jobs: existing,
     }),
@@ -140,21 +166,51 @@ export async function POST(request: Request) {
      userId: auth.context.user.id,
      taskId,
     });
-    return resolution.ok
+    if (!resolution.ok) {
+     return {
+      module: moduleRequest.module,
+      taskId,
+      receipt: null,
+      status: "blocked",
+      errorCode: blockedErrorCode(resolution),
+      requestSignature: null,
+      reusedFromJobId: null,
+      result: null,
+     };
+    }
+
+    const receipt = getAiRuntimeReceipt(resolution.runtime);
+    const signature = requestSignature({
+     articleFingerprint: parsed.data.reading.article.fingerprint,
+     moduleRequest,
+     taskId,
+     receipt,
+    });
+    const reusable = parsed.data.regenerate
+     ? null
+     : await findReusableDailyReadingEnrichmentJob({
+        userId: auth.context.user.id,
+        requestSignature: signature,
+       });
+    const reusableResult =
+     reusable?.module === moduleRequest.module && reusable.result?.ok ? reusable.result : null;
+    const result = reusableResult
      ? {
-        module: moduleRequest.module,
-        taskId,
-        receipt: getAiRuntimeReceipt(resolution.runtime),
-        status: "queued",
-        errorCode: null,
+        ...reusableResult,
+        generatedBy: { ...reusableResult.generatedBy, receipt },
        }
-     : {
-        module: moduleRequest.module,
-        taskId,
-        receipt: null,
-        status: "blocked",
-        errorCode: blockedErrorCode(resolution),
-       };
+     : null;
+    const reusedFromJobId = result && reusable ? reusable.id : null;
+    return {
+     module: moduleRequest.module,
+     taskId,
+     receipt,
+     status: result ? "succeeded" : "queued",
+     errorCode: null,
+     requestSignature: signature,
+     reusedFromJobId,
+     result,
+    };
    }),
   );
 
@@ -192,6 +248,7 @@ export async function POST(request: Request) {
     const workflowRun = await start(dailyReadingEnrichmentWorkflow, [
      {
       userId: auth.context.user.id,
+      runId: parsed.data.runId,
       reading: parsed.data.reading,
       jobs: workflowJobs,
      },
@@ -200,7 +257,7 @@ export async function POST(request: Request) {
    } catch {
     for (const job of created) {
      if (job.status === "queued") {
-      await completeDailyReadingEnrichmentJob({
+      const completed = await completeDailyReadingEnrichmentJob({
        userId: auth.context.user.id,
        jobId: job.id,
        response: {
@@ -211,7 +268,7 @@ export async function POST(request: Request) {
         errorDetail: "Không thể khởi động job AI bền vững lúc này.",
        },
       });
-      if (job.receipt) {
+      if (completed && job.receipt) {
        await recordUserAiRuntimeReceiptActivity({
         userId: auth.context.user.id,
         receipt: job.receipt,
@@ -245,8 +302,8 @@ export async function POST(request: Request) {
    runId: parsed.data.runId,
   });
   return privateNoStoreJson(
-   dailyReadingV2EnrichmentJobsResponseSchema.parse({ runId: parsed.data.runId, jobs }),
-   { status: 202 },
+   dailyReadingEnrichmentJobsResponseSchema.parse({ runId: parsed.data.runId, jobs }),
+   { status: jobs.some((job) => job.status === "queued" || job.status === "running") ? 202 : 200 },
   );
  } catch (error) {
   if (error instanceof DailyReadingEnrichmentJobStorageError) {
@@ -283,11 +340,11 @@ export async function GET(request: Request) {
   const runId = parsed.data.runId ?? newest?.runId;
   if (!runId) {
    return privateNoStoreJson(
-    dailyReadingV2EnrichmentJobsQueryResponseSchema.parse({ runId: null, jobs: [] }),
+    dailyReadingEnrichmentJobsQueryResponseSchema.parse({ runId: null, jobs: [] }),
    );
   }
   if (!parsed.data.runId) jobs = jobs.filter((job) => job.runId === runId);
-  return privateNoStoreJson(dailyReadingV2EnrichmentJobsQueryResponseSchema.parse({ runId, jobs }));
+  return privateNoStoreJson(dailyReadingEnrichmentJobsQueryResponseSchema.parse({ runId, jobs }));
  } catch (error) {
   if (error instanceof DailyReadingEnrichmentJobStorageError) {
    return apiError(

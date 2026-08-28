@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { ResolvedUserAiRuntime } from "@/services/ai-runtime.service";
+import type { ResolvedUserAiTaskRuntime } from "@/services/ai-runtime.service";
 import type { Database } from "@/types/supabase.generated";
 
 const { recordUserAiRuntimeActivity, recordUserAiTaskBlockedActivity, resolveUserAiTaskRuntime } =
@@ -27,7 +27,7 @@ import {
 const supabase = createClient<Database>("https://example.supabase.co", "test-key", {
  auth: { autoRefreshToken: false, persistSession: false },
 });
-const runtime: ResolvedUserAiRuntime = {
+const runtime: ResolvedUserAiTaskRuntime = {
  taskId: "conversation.semantic-memory",
  resolutionSource: "auto",
  keyId: "11111111-1111-4111-8111-111111111111",
@@ -35,7 +35,7 @@ const runtime: ResolvedUserAiRuntime = {
  providerLabel: "Google Gemini",
  label: "Gemini cá nhân",
  maskedKey: "AIza***",
- model: "models/gemini-2.5-flash",
+ model: AI_CONVERSATION_MEMORY_EMBEDDING_MODEL,
  priority: 0,
  apiKey: "personal-gemini-key",
  capabilities: ["semantic-memory"],

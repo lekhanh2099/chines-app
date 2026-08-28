@@ -46,6 +46,7 @@ describe("AiActivitySettings", () => {
   queryClient.setQueryData(["settings", "ai-activity", "all", "all", "all", null], {
    events: AI_TASK_REGISTRY.map((_, taskIndex) => activityEvent(taskIndex)),
    nextCursor: null,
+   summaryGroups: [],
   });
 
   const markup = renderToStaticMarkup(

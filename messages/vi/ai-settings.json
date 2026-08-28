@@ -14,6 +14,10 @@
   "loadError": "Không tải hoặc lưu được tác vụ AI.",
   "saveError": "Không lưu được phân công tác vụ này.",
   "retry": "Thử lại",
+  "checkRuntime": "Kiểm tra nguồn",
+  "checkSucceeded": "Nguồn hoạt động",
+  "checkFailed": "Nguồn không đạt",
+  "checkRequestFailed": "Không thể chạy kiểm tra nguồn lúc này.",
   "dataSent": "Dữ liệu gửi",
   "expectedOutput": "Output mong đợi",
   "storage": "Nơi lưu",
@@ -143,6 +147,10 @@
   "loading": "Đang tải...",
   "loadMore": "Trang sau",
   "openConversation": "Mở hội thoại",
-  "noRuntime": "Không có runtime được chọn"
+  "noRuntime": "Không có runtime được chọn",
+  "metricsLatency": "{latency} ms",
+  "metricsTokens": "{inputTokens} token vào · {outputTokens} token ra",
+  "summary": "{attempts} lần · {successRate}% thành công · {inputTokens}/{outputTokens} token vào/ra",
+  "summaryLatency": "Độ trễ trung bình {latency} ms"
  }
 }

@@ -38,13 +38,10 @@ vi.mock("@/services/user-api-keys.service", () => ({
  moveUserApiKey: mocks.moveUserApiKey,
  updateUserApiKey: mocks.updateUserApiKey,
 }));
-vi.mock(
- "@/features/hanzihome/reader/daily-reading/daily-reading-v2-enrichment-jobs.server",
- () => ({
-  DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
-  listActiveDailyReadingJobsForKey: mocks.listActiveDailyReadingJobsForKey,
- }),
-);
+vi.mock("@/features/hanzihome/reader/daily-reading/daily-reading-enrichment-jobs.server", () => ({
+ DailyReadingEnrichmentJobStorageError: class DailyReadingEnrichmentJobStorageError extends Error {},
+ listActiveDailyReadingJobsForKey: mocks.listActiveDailyReadingJobsForKey,
+}));
 
 import { DELETE, PATCH, POST } from "./route";
 

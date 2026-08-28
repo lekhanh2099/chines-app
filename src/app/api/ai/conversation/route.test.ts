@@ -34,6 +34,7 @@ const mocks = vi.hoisted(() => {
   archiveAiConversation: vi.fn(),
   checkPersonalConversationRuntime: vi.fn(),
   createAiConversationSession: vi.fn(),
+  dispatchAiConversationPostTurnWorkflow: vi.fn(),
   ensureAiConversationSession: vi.fn(),
   findAssistantReplyForUserMessage: vi.fn(),
   generatePersistedAiConversationTurn: vi.fn(),
@@ -79,6 +80,9 @@ vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-stream-provider.se
 }));
 vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-turn.server", () => ({
  generatePersistedAiConversationTurn: mocks.generatePersistedAiConversationTurn,
+}));
+vi.mock("@/features/hanzihome/ai-conversation/ai-conversation-post-turn.workflow", () => ({
+ dispatchAiConversationPostTurnWorkflow: mocks.dispatchAiConversationPostTurnWorkflow,
 }));
 vi.mock("@/services/ai-runtime.service", () => ({
  classifyAiRuntimeOperationFailure: mocks.classifyAiRuntimeOperationFailure,

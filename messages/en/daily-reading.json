@@ -106,8 +106,8 @@
   }
  },
  "settings": {
-  "title": "New reading every day",
-  "description": "Automatically find a real Chinese news article and create a 学习版 at 10:00. If the app is closed then, the first app open after 10:00 performs the catch-up run.",
+  "title": "Daily Reading",
+  "description": "Configure how HanziHome captures source articles and adds optional AI support. Status, library, and task history live in the Daily Reading workspace.",
   "tabs": {
    "overview": "Overview",
    "pipeline": "Progress",
@@ -183,12 +183,260 @@
    "confirm": "Delete generated readings"
   },
   "toast": {
-   "sourceReady": "Source works: {publisher} · {title}",
-   "sourceFailed": "The news source could not be tested.",
+   "sourceReady": "Source available: {publisher} · {title}",
+   "sourceFailed": "Could not test sources with the current criteria.",
    "created": "Created: {title}",
    "generationFailed": "Daily Reading could not be created.",
    "generationFailedAtStage": "Generation failed at {stage}: {detail}",
-   "cleared": "Generated Daily Readings were removed from this device."
+   "cleared": "Generated Daily Readings were removed from this device.",
+   "articleReady": "Source article saved: {title}",
+   "captureFailed": "Could not find a new source article.",
+   "settingFailed": "Could not save Daily Reading settings on this device."
+  },
+  "capture": {
+   "title": "Source article",
+   "description": "Choose when and what kind of article HanziHome should find. A saved article counts as complete even when AI support is not ready yet.",
+   "autoTitle": "Find one article automatically each day",
+   "autoDescription": "At the selected time the app finds a new article; if the app is closed, it catches up on the next open.",
+   "timeLabel": "Article capture time",
+   "timeDescription": "Uses Vietnam time (Asia/Ho_Chi_Minh).",
+   "levelLabel": "Target learning level",
+   "levelDescription": "Guides learning support only; it never rewrites the Chinese source article.",
+   "todayLabel": "Today",
+   "todayReady": "Automatic article is ready",
+   "todayDue": "Capture time has passed; waiting to find an article",
+   "todayWaiting": "Not due yet",
+   "libraryCount": "{count} articles saved on this device",
+   "testSource": "Test sources",
+   "testingSource": "Testing sources",
+   "findNow": "Find new article",
+   "findingNow": "Finding article",
+   "sourceIndependent": "Source testing only checks discovery and extraction; it does not use an AI API key."
+  },
+  "sourcePreview": {
+   "title": "Latest source test",
+   "notPersisted": "This is only a source test. The article has not been added to the library.",
+   "report": "{publisher} · {paragraphs} paragraphs · about {minutes} min",
+   "window": "Freshness window used: {days} days",
+   "candidates": "{count} candidates passed policy filters",
+   "extractions": "{count} articles were extraction-tested"
+  },
+  "ai": {
+   "title": "AI learning support",
+   "description": "AI creates Vietnamese translation, vocabulary, grammar, and questions after the source article has already been saved.",
+   "autoTitle": "Automatically add learning support after capture",
+   "autoDescription": "When a usable API key exists, the app creates missing learning modules after saving the article. AI failure never makes the source article fail.",
+   "translationTitle": "Translation",
+   "translationDescription": "Create a Vietnamese translation of the source article.",
+   "vocabularyTitle": "Vocabulary",
+   "vocabularyDescription": "Select the exact configured number of learning items.",
+   "grammarTitle": "Grammar",
+   "grammarDescription": "Select the exact configured number of evidenced grammar points.",
+   "questionsTitle": "Questions",
+   "questionsDescription": "Create the exact configured number of comprehension questions.",
+   "vocabularyCount": "Vocabulary count",
+   "grammarCount": "Grammar point count",
+   "questionsCount": "Question count",
+   "ready": "Ready: {provider} · {model}",
+   "missing": "No AI API key yet. Source articles can still be found and read normally.",
+   "storageUnavailable": "Secure server-side API key storage is not ready. Source article capture is unaffected.",
+   "credentialUnreadable": "A saved key cannot currently be read. You can add a replacement key without affecting source articles.",
+   "articleIndependent": "Source capture and AI are independent states: the article succeeds first, and learning support can be added or retried later.",
+   "addKey": "Add API key",
+   "addReplacementKey": "Add replacement key",
+   "manageKeys": "Manage API keys"
+  },
+  "advanced": {
+   "title": "Advanced sources and criteria",
+   "description": "Adjust these only when you want tighter control over sources, freshness, length, or topic diversity.",
+   "show": "Show advanced criteria",
+   "hide": "Hide advanced criteria",
+   "freshnessLabel": "Preferred freshness",
+   "freshnessDescription": "First consider only articles published within this window.",
+   "freshness1": "Within 1 day",
+   "freshness3": "Within 3 days",
+   "freshness7": "Within 7 days",
+   "freshness14": "Within 14 days",
+   "lengthLabel": "Article length",
+   "lengthAny": "Any length",
+   "lengthShort": "Short",
+   "lengthMedium": "Medium",
+   "lengthLong": "Long",
+   "noMatchLabel": "If no article matches",
+   "skipDay": "Skip rather than lower criteria",
+   "expandWindow": "Expand freshness up to 14 days",
+   "diversityTitle": "Prefer topic diversity",
+   "diversityDescription": "Reduce the chance of repeating topics read recently.",
+   "avoidRecentTitle": "Avoid previously read articles",
+   "avoidRecentDescription": "Exclude URLs already present in the local library from the next search.",
+   "topicsTitle": "Allowed topics",
+   "topicsDescription": "Select at least one topic. The app still applies its safety content policy.",
+   "sourcesTitle": "Allowed sources",
+   "sourcesDescription": "Search only the reviewed publisher allowlist.",
+   "atLeastOneTopic": "Keep at least one topic selected.",
+   "atLeastOneSource": "Keep at least one source selected."
+  }
+ },
+ "actions": {
+  "findNewArticle": "Find new article",
+  "findingArticle": "Finding article",
+  "openSettings": "Daily Reading settings"
+ },
+ "library": {
+  "description": "The Chinese source article is saved first. Translation, vocabulary, grammar, and questions are separate AI learning support that can be added later.",
+  "autoOn": "Automatic article capture on",
+  "autoOff": "Manual capture only",
+  "learningReady": "{ready}/{total} learning modules ready",
+  "tabs": {
+   "articles": "Saved articles",
+   "activity": "Activity",
+   "aria": "Daily Reading library and activity history"
+  },
+  "status": {
+   "todayLabel": "Today",
+   "todayRunning": "Finding an article",
+   "todayReady": "Today's article is ready",
+   "todayFailed": "Today's latest capture failed",
+   "manualOnly": "Manual capture only",
+   "todayDue": "Capture time passed; waiting for the task",
+   "todayWaiting": "Not yet time to capture",
+   "scheduleLabel": "Automatic schedule",
+   "scheduleEnabled": "Every day at {time}",
+   "scheduleDisabled": "Off",
+   "libraryLabel": "Library"
+  },
+  "article": {
+   "sourceReady": "Source ready",
+   "learningComplete": "AI complete",
+   "learningRunning": "AI running",
+   "learningAttention": "AI needs attention",
+   "learningPending": "AI {ready}/{total}"
+  }
+ },
+ "activity": {
+  "title": "Activity history",
+  "description": "The actual log of source captures and AI learning-support runs on this device, newest first.",
+  "emptyTitle": "No activity yet",
+  "emptyDescription": "When Daily Reading captures an article or creates learning support, its status and time will appear here.",
+  "captureTitle": "Source capture",
+  "enrichmentTitle": "AI learning support",
+  "captureDetail": "{mode} · {stage}",
+  "enrichmentDetail": "{module}",
+  "openArticle": "Open article",
+  "retryCapture": "Find again",
+  "startedAt": "Started {time}",
+  "timeRange": "Started {start} · Finished {end}",
+  "status": {
+   "pending": "Running",
+   "succeeded": "Completed",
+   "failed": "Failed",
+   "blocked": "Blocked"
+  },
+  "stage": {
+   "discovering": "Finding sources",
+   "extracting": "Extracting article",
+   "ranking": "Evaluating article",
+   "saving": "Saving article",
+   "completed": "Saved"
+  }
+ },
+ "detail": {
+  "supportTab": "AI support",
+  "capturedMeta": "Saved {time} · {publisher} · {minutes} min",
+  "translationRunning": "Translation in progress",
+  "temporaryTranslation": "Temporary translation — not saved",
+  "translationProgress": "Translated {completed}/{total} paragraphs"
+ },
+ "management": {
+  "title": "Saved articles",
+  "description": "{count} articles are stored on this device. Manage article content here; task history is kept separately for diagnostics.",
+  "open": "Manage articles",
+  "dialogTitle": "Manage Daily Reading articles",
+  "dialogDescription": "Review or delete articles stored on this device. Deleting an article does not delete capture or AI activity history.",
+  "emptyTitle": "No saved articles",
+  "emptyDescription": "Newly captured articles will appear here.",
+  "learningState": "AI support: {ready}/{total} modules ready",
+  "deleteArticle": "Delete article",
+  "deleteAll": "Delete all articles",
+  "close": "Close",
+  "confirmArticleTitle": "Delete this article?",
+  "confirmArticleDescription": "“{title}” will be removed from this device's library.",
+  "confirmAllTitle": "Delete all Daily Reading articles?",
+  "confirmAllDescription": "This removes {count} saved articles from this device.",
+  "historyPreserved": "Task history remains available so you can review timestamps, statuses, and previous errors.",
+  "cancel": "Cancel",
+  "confirmDelete": "Confirm delete",
+  "toast": {
+   "articleDeleted": "Article removed from the library.",
+   "allDeleted": "Removed {count} articles from the library.",
+   "deleteFailed": "Could not delete Daily Reading articles on this device."
+  }
+ },
+ "enrichment": {
+  "title": "AI learning support",
+  "description": "The Chinese text above always remains the saved source article. These modules only add meanings and exercises; they never rewrite the source.",
+  "summary": "{ready}/{total} modules ready",
+  "runtimeReady": "Using {provider} · {model}",
+  "runtimePlanned": "Will use {provider} · {key} · {model}",
+  "runtimeRunning": "Using {provider} · {key} · {model} — {completed}/{total}",
+  "runtimeQueued": "Queued at {time} for {provider} · {key} · {model}",
+  "runtimeReused": "Reused the result from {provider} · {key} · {model}; AI was not called again",
+  "runtimeStarted": "Started {time}",
+  "runtimeTimeRange": "Started {start} · Finished {end}",
+  "runtimeFailed": "Tried {provider} · {key} · {model} — {code}",
+  "runtimeUnavailable": "No usable AI source — {reason}",
+  "runtimeMissing": "No AI API key yet. You can still read the complete source article.",
+  "runtimeStorageUnavailable": "Server-side API key storage is not ready; the source article remains fully readable.",
+  "runtimeCheckFailed": "AI status could not be checked right now. The source article remains readable; try the status check again.",
+  "modules": {
+   "translation": {
+    "title": "Vietnamese translation",
+    "description": "Translate each saved paragraph closely while preserving paragraph IDs."
+   },
+   "vocabulary": {
+    "title": "Article vocabulary",
+    "description": "Only words and phrases that actually occur in the source article are accepted."
+   },
+   "grammar": {
+    "title": "Grammar with evidence",
+    "description": "Every grammar point must include a complete sentence from the source article."
+   },
+   "questions": {
+    "title": "Reading questions",
+    "description": "Questions and answers must point back to specific source paragraphs."
+   }
+  },
+  "status": {
+   "idle": "Not created",
+   "queued": "Queued",
+   "running": "Creating",
+   "ready": "Ready",
+   "failed": "Retry needed",
+   "missingKey": "API key needed",
+   "invalidKey": "Invalid key",
+   "quota": "API limit",
+   "providerUnavailable": "Provider temporarily limited",
+   "taskDisabled": "AI task disabled"
+  },
+  "actions": {
+   "create": "Create this module",
+   "retry": "Regenerate",
+   "createAll": "Create learning support",
+   "completeMissing": "Create missing modules",
+   "addKey": "Add API key",
+   "addKeyAndCreate": "Add key and create support",
+   "addReplacementKey": "Add replacement key",
+   "manageKeys": "Manage API keys",
+   "configureTask": "Configure task",
+   "checkingRuntime": "Checking AI",
+   "checkRuntimeAgain": "Check AI again"
+  },
+  "toast": {
+   "moduleReady": "Created: {module}",
+   "moduleReadyFallback": "Learning support module created.",
+   "allReady": "All learning support modules are ready.",
+   "queued": "The AI job is queued. You can leave this page; the result will be imported when it finishes.",
+   "failed": "Could not create learning support."
   }
  }
 }

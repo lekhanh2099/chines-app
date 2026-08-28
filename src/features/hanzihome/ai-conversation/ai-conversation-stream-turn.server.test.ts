@@ -9,6 +9,7 @@ import type { PreparedPersistedAiConversationTurn } from "./ai-conversation-turn
 
 const {
  appendAiConversationMessage,
+ dispatchAiConversationPostTurnWorkflow,
  findAssistantReplyForUserMessage,
  loadAiConversationContextState,
  loadRecentAiConversationMessages,
@@ -17,6 +18,7 @@ const {
  streamAiConversationProviderReply,
 } = vi.hoisted(() => ({
  appendAiConversationMessage: vi.fn(),
+ dispatchAiConversationPostTurnWorkflow: vi.fn(),
  findAssistantReplyForUserMessage: vi.fn(),
  loadAiConversationContextState: vi.fn(),
  loadRecentAiConversationMessages: vi.fn(),
@@ -33,6 +35,9 @@ vi.mock("./ai-conversation-persistence.server", () => ({
  loadRecentAiConversationMessages,
 }));
 vi.mock("./ai-conversation-turn.server", () => ({ preparePersistedAiConversationTurn }));
+vi.mock("./ai-conversation-post-turn.workflow", () => ({
+ dispatchAiConversationPostTurnWorkflow,
+}));
 vi.mock("@/services/ai-runtime.service", () => ({ recordUserAiRuntimeActivity }));
 vi.mock("./ai-conversation-stream-provider.server", () => ({
  AiConversationProviderStreamError: class AiConversationProviderStreamError extends Error {
@@ -107,6 +112,7 @@ function parseEvents(text: string) {
 describe("persisted AI conversation turn stream", () => {
  beforeEach(() => {
   appendAiConversationMessage.mockReset();
+  dispatchAiConversationPostTurnWorkflow.mockReset();
   findAssistantReplyForUserMessage.mockReset();
   loadAiConversationContextState.mockReset();
   loadRecentAiConversationMessages.mockReset();
