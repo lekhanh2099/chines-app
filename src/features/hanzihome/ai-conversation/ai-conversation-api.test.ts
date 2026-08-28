@@ -249,9 +249,17 @@ describe("AI conversation client transport", () => {
   const result = await sendPersistedAiConversationMessage(conversationId, {
    clientMessageId,
    content: "你好",
+   apiKeyId,
+   model: "openai/gpt-oss-20b",
   });
 
-  const expectedBody = JSON.stringify({ conversationId, clientMessageId, content: "你好" });
+  const expectedBody = JSON.stringify({
+   conversationId,
+   clientMessageId,
+   content: "你好",
+   apiKeyId,
+   model: "openai/gpt-oss-20b",
+  });
   expect(result).toEqual(turn);
   expect(fetchMock).toHaveBeenCalledWith(
    "/api/ai/conversation/stream",

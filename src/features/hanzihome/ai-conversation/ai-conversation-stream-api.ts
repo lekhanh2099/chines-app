@@ -31,6 +31,7 @@ export async function streamPersistedAiConversationMessage(
   clientMessageId: string;
   content: string;
   apiKeyId?: string;
+  model?: string;
  },
  options?: {
   signal?: AbortSignal;
@@ -42,6 +43,7 @@ export async function streamPersistedAiConversationMessage(
   clientMessageId: input.clientMessageId,
   content: input.content,
   ...(input.apiKeyId ? { apiKeyId: input.apiKeyId } : {}),
+  ...(input.model ? { model: input.model } : {}),
  });
  const response = await fetch(endpoint, {
   method: "POST",
