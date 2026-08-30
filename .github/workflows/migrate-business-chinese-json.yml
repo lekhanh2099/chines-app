@@ -14,10 +14,13 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Checkout feature branch
-     uses: actions/checkout@v4
-     with:
-      ref: feature/han-thuong-mai-study
-      fetch-depth: 0
+     env:
+      GH_TOKEN: ${{ github.token }}
+     run: |
+      git init .
+      git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+      git fetch --depth=1 origin feature/han-thuong-mai-study
+      git checkout -B feature/han-thuong-mai-study FETCH_HEAD
 
    - name: Generate direct JSON data
      run: node scripts/migrate-business-chinese-json.mjs
