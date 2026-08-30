@@ -1,36 +1,23 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
-import readerMessages from "../../../../../messages/vi/reader.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
-import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
-import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
-import type { StudyModule } from "@/features/hanzihome/context/types";
-import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
-import { attachLessonVocabularyResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import {
- getStaticStudioCourseCatalog,
- getStaticStudioLessonDetail,
-} from "@/features/hanzihome/static-json/studio-static-content";
-import { emptyLearningState } from "@/features/hanzihome/utils/learning-state";
+ getBusinessChineseCatalog,
+ getBusinessChineseLesson,
+} from "@/features/hanzihome/static-json/business-chinese-static-content";
 
 type SidebarItemProps = ComponentProps<typeof LessonModuleSidebarItem>;
 
 const routerPushMock = vi.hoisted(() => vi.fn());
 const sidebarItemMock = vi.hoisted(() => vi.fn<(props: SidebarItemProps) => void>());
 
-vi.mock("server-only", () => ({}));
-
 vi.mock("next/navigation", () => ({
  useSearchParams: () => new URLSearchParams(),
-}));
-
-vi.mock("@/components/providers/QueryProvider", () => ({
- useClientSession: () => ({ isResolved: true, userId: null }),
 }));
 
 vi.mock("@/i18n/navigation", () => ({
@@ -38,18 +25,7 @@ vi.mock("@/i18n/navigation", () => ({
 }));
 
 vi.mock("@/features/hanzihome/annotations/LessonAnnotationProvider", () => ({
- LessonAnnotationProvider: () => {
-  throw new Error("Read-only Business Chinese must not mount annotations.");
- },
-}));
-
-vi.mock("@/features/hanzihome/hooks/useHanziHomeLessonResources", () => ({
- useHanziHomeLessonSections: () => {
-  throw new Error("Read-only Business Chinese must not query lesson sections.");
- },
- useHanziHomeLessonVocabulary: () => {
-  throw new Error("Read-only Business Chinese must not query lesson vocabulary.");
- },
+ useLessonAnnotationContext: () => null,
 }));
 
 vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem", () => ({
@@ -61,111 +37,68 @@ vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem
 
 import { BusinessChineseStudyWorkspace } from "./BusinessChineseStudyWorkspace";
 
+function renderWorkspace(element: ReactNode) {
+ return renderToStaticMarkup(
+  <NextIntlClientProvider
+   locale="vi"
+   messages={{
+    BusinessChinese: businessChineseMessages,
+    Reader: { document: readerDocumentMessages },
+   }}
+   timeZone="Asia/Ho_Chi_Minh"
+  >
+   {element}
+  </NextIntlClientProvider>,
+ );
+}
+
 describe("BusinessChineseStudyWorkspace", () => {
- it("renders canonical content through the read-only lesson workspace", () => {
-  const catalog = getStaticStudioCourseCatalog("hanzihome-business-chinese");
-  const staticLesson = getStaticStudioLessonDetail("business-chinese-tm2-lesson-02");
-  if (!catalog || !staticLesson) throw new Error("Expected the Business Chinese static corpus.");
-  const lesson = attachLessonVocabularyResource(staticLesson, {
-   lessonId: staticLesson.id,
-   items: staticLesson.vocab,
-   total: staticLesson.vocab.length,
-  });
+ it("renders the ordered source document with tabs, ruby pinyin, and no connected content load", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 2);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 2.");
   const fetchSpy = vi.spyOn(globalThis, "fetch");
 
-  const markup = renderToStaticMarkup(
-   <NextIntlClientProvider
-    locale="vi"
-    messages={{
-     BusinessChinese: businessChineseMessages,
-     Reader: {
-      ...readerMessages,
-      study: readerStudyMessages,
-      document: readerDocumentMessages,
-     },
-    }}
-    timeZone="Asia/Ho_Chi_Minh"
-   >
-    <MandarinTtsProvider>
-     <BusinessChineseStudyWorkspace
-      books={catalog.books}
-      lessons={catalog.lessons}
-      lesson={lesson}
-     />
-    </MandarinTtsProvider>
-   </NextIntlClientProvider>,
-  );
-  const textbookSectionItem = sidebarItemMock.mock.calls.find(([props]) =>
-   props.title.includes("BÀI KHÓA CHÍNH"),
-  )?.[0];
+  const markup = renderWorkspace(<BusinessChineseStudyWorkspace books={books} lesson={lesson} />);
 
-  expect(markup).toContain('aria-label="Đọc từ chữ 思"');
-  expect(markup).toContain('aria-label="Đọc từ chữ 美"');
-  expect(markup).toContain("Mời ngài tham dự Hội nghị giới thiệu sản phẩm");
-  expect(markup).toContain("Đề mục");
-  expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("qǐng");
-  expect(textbookSectionItem).toBeDefined();
-  expect(textbookSectionItem?.selected).toBe(true);
+  expect(markup).toContain("Toàn bài");
+  expect(markup).toContain("Câu chủ đề");
+  expect(markup).toContain("Bài tập");
+  expect(markup).toContain("GIỚI THIỆU TỔNG QUAN");
+  expect(markup).toContain("BÀI KHÓA CHÍNH");
+  expect(markup).toContain("电话会议");
+  expect(markup).toContain("<ruby");
+  expect(markup).toContain('lang="zh-CN"');
+  expect(markup).toContain('lang="zh-Latn-pinyin"');
+  expect(markup).toContain('aria-label="Đọc tiếng Trung:');
   expect(markup).not.toContain("Vậy là tôi đã xuất");
   expect(fetchSpy).not.toHaveBeenCalled();
   fetchSpy.mockRestore();
  });
 
- it.each([
-  { module: "overview", expected: "GIỚI THIỆU TỔNG QUAN" },
-  { module: "lessonText", expected: "Mời ngài tham dự Hội nghị giới thiệu sản phẩm" },
-  { module: "notes", expected: "TỪ VỰNG TRỌNG TÂM" },
-  { module: "vocab", expected: "产品" },
-  { module: "grammar", expected: "NGỮ PHÁP TRỌNG TÂM" },
-  { module: "review", expected: "TÓM TẮT NỘI DUNG" },
-  { module: "practice", expected: "BÀI TẬP VẬN DỤNG" },
- ] satisfies ReadonlyArray<{ module: StudyModule; expected: string }>)(
-  "renders static JSON for the $module tab without connected data hooks",
-  ({ module, expected }) => {
-   const staticLesson = getStaticStudioLessonDetail("business-chinese-tm2-lesson-02");
-   if (!staticLesson) throw new Error("Expected the Business Chinese static corpus.");
-   const lesson = attachLessonVocabularyResource(staticLesson, {
-    lessonId: staticLesson.id,
-    items: staticLesson.vocab,
-    total: staticLesson.vocab.length,
-   });
-   const fetchSpy = vi.spyOn(globalThis, "fetch");
+ it("keeps inline exercise answers hidden while preserving pinyin and TTS for the prompt", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 2);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 2.");
+  const sourceSection = lesson.sections.find((section) =>
+   section.blocks.some((block) => block.text.startsWith("这个设计图 ______")),
+  );
+  const sourceBlock = sourceSection?.blocks.find((block) =>
+   block.text.startsWith("这个设计图 ______"),
+  );
+  if (!sourceSection || !sourceBlock) throw new Error("Expected the representative exercise.");
+  const focusedLesson = {
+   ...lesson,
+   sections: [{ ...sourceSection, blocks: [sourceBlock] }],
+  };
 
-   const markup = renderToStaticMarkup(
-    <NextIntlClientProvider
-     locale="vi"
-     messages={{
-      BusinessChinese: businessChineseMessages,
-      Reader: {
-       ...readerMessages,
-       study: readerStudyMessages,
-       document: readerDocumentMessages,
-      },
-     }}
-     timeZone="Asia/Ho_Chi_Minh"
-    >
-     <MandarinTtsProvider>
-      <ModuleSplitWorkspace
-       readOnly
-       lesson={lesson}
-       learningState={emptyLearningState}
-       activeModule={module}
-       onSelectModule={vi.fn()}
-       onUpdateLearningSettings={vi.fn()}
-       onBookmarkVocab={vi.fn()}
-       onMarkVocab={vi.fn()}
-       onBookmarkGrammar={vi.fn()}
-       onMarkGrammar={vi.fn()}
-       onAnswerReview={vi.fn()}
-      />
-     </MandarinTtsProvider>
-    </NextIntlClientProvider>,
-   );
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={books} lesson={focusedLesson} />,
+  );
 
-   expect(markup).toContain(expected);
-   expect(fetchSpy).not.toHaveBeenCalled();
-   fetchSpy.mockRestore();
-  },
- );
+  expect(markup).not.toContain("这个设计图画得很漂亮。");
+  expect(markup).toContain("Hiện đáp án");
+  expect(markup).toContain("<ruby");
+  expect(markup).toContain('aria-label="Đọc tiếng Trung: 这个设计图 很漂亮。"');
+ });
 });

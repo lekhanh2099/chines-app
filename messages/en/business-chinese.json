@@ -1,4 +1,27 @@
 {
  "bookSelectLabel": "Select a Business Chinese book",
- "lessonSelectLabel": "Select a Business Chinese lesson"
+ "lessonSelectLabel": "Select a Business Chinese lesson",
+ "bookLabel": "Book",
+ "sidebarLabel": "Book and lesson",
+ "tocLabel": "On this page",
+ "tabsLabel": "Business Chinese lesson content",
+ "lessonPosition": "Lesson {lesson}/10",
+ "lessonMeta": "{sections} content sections · {vocab} new words",
+ "sectionCount": "{count} sections",
+ "vocabCount": "{count} words",
+ "tabs": {
+  "all": "Full lesson",
+  "overview": "Overview",
+  "core": "Core sentences",
+  "text": "Lesson text",
+  "vocab": "Vocabulary",
+  "grammar": "Grammar",
+  "practice": "Exercises"
+ },
+ "actions": {
+  "showPinyin": "Show pinyin",
+  "hidePinyin": "Hide pinyin",
+  "showAnswer": "Show answer",
+  "hideAnswer": "Hide answer"
+ }
 }

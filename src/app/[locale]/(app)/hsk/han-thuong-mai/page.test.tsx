@@ -16,14 +16,12 @@ describe("BusinessChinesePage", () => {
    props: {
     lesson: {
      id: "business-chinese-tm2-lesson-01",
-     sourceLesson: {
-      lesson: {
-       sections: expect.arrayContaining([
-        expect.objectContaining({ type: "vocabulary", items: expect.any(Array) }),
-       ]),
-      },
-     },
+     number: 1,
+     sections: expect.arrayContaining([
+      expect.objectContaining({ title: "📌 GIỚI THIỆU TỔNG QUAN" }),
+     ]),
     },
+    books: expect.arrayContaining([expect.objectContaining({ key: "tm2" })]),
    },
   });
  });
@@ -35,7 +33,7 @@ describe("BusinessChinesePage", () => {
 
   expect(result).toMatchObject({
    props: {
-    lesson: { id: "business-chinese-tm3-lesson-10", lessonNumber: 10 },
+    lesson: { id: "business-chinese-tm3-lesson-10", number: 10 },
    },
   });
  });
@@ -47,7 +45,7 @@ describe("BusinessChinesePage", () => {
 
   expect(result).toMatchObject({
    props: {
-    lesson: { id: "business-chinese-tm2-lesson-01", lessonNumber: 1 },
+    lesson: { id: "business-chinese-tm2-lesson-01", number: 1 },
    },
   });
  });

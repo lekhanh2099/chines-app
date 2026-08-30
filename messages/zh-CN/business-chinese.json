@@ -1,4 +1,27 @@
 {
  "bookSelectLabel": "选择商务汉语教材",
- "lessonSelectLabel": "选择商务汉语课文"
+ "lessonSelectLabel": "选择商务汉语课文",
+ "bookLabel": "教材",
+ "sidebarLabel": "教材与课文",
+ "tocLabel": "本页内容",
+ "tabsLabel": "商务汉语课文内容",
+ "lessonPosition": "第 {lesson}/10 课",
+ "lessonMeta": "{sections} 个内容部分 · {vocab} 个生词",
+ "sectionCount": "{count} 个部分",
+ "vocabCount": "{count} 个词",
+ "tabs": {
+  "all": "完整课文",
+  "overview": "概览",
+  "core": "核心句",
+  "text": "课文",
+  "vocab": "词汇",
+  "grammar": "语法",
+  "practice": "练习"
+ },
+ "actions": {
+  "showPinyin": "显示拼音",
+  "hidePinyin": "隐藏拼音",
+  "showAnswer": "显示答案",
+  "hideAnswer": "隐藏答案"
+ }
 }
