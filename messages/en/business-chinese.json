@@ -1,0 +1,50 @@
+{
+ "lessonMeta": "{vocabulary} vocabulary items · {sections} source sections",
+ "controls": {
+  "pinyin": "Pinyin",
+  "meaning": "Meaning"
+ },
+ "tabs": {
+  "label": "Business Chinese lesson content",
+  "lesson": "Lesson",
+  "vocabulary": "Vocabulary",
+  "grammar": "Grammar",
+  "practice": "Practice"
+ },
+ "navigation": {
+  "books": "Course books",
+  "lessonList": "Lessons",
+  "lessonShort": "Lesson {number}",
+  "previous": "Previous lesson",
+  "next": "Next lesson"
+ },
+ "vocabulary": {
+  "title": "Vocabulary practice",
+  "modeLabel": "Vocabulary practice mode",
+  "modes": {
+   "list": "List",
+   "flashcard": "Flashcards",
+   "meaning": "Choose meaning",
+   "hanzi": "Type Hanzi"
+  },
+  "progress": "Known {known}/{total} words",
+  "reset": "Reset progress",
+  "empty": "This lesson has no vocabulary data to practise.",
+  "known": "Known",
+  "markKnown": "Mark as known",
+  "reveal": "Reveal meaning",
+  "chooseMeaning": "Choose the correct meaning",
+  "typeHanzi": "Type the Hanzi from the meaning and pinyin",
+  "hanziPlaceholder": "Type Hanzi",
+  "hanziInputLabel": "Hanzi answer",
+  "check": "Check",
+  "correct": "Correct.",
+  "incorrect": "Not yet. Answer: {answer}",
+  "hanziIncorrect": "Not yet. Correct Hanzi: {answer}",
+  "nextQuestion": "Next question"
+ },
+ "audio": {
+  "play": "Play Mandarin audio",
+  "failed": "Mandarin audio could not be played."
+ }
+}
