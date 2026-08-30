@@ -22,6 +22,9 @@
   "showPinyin": "Hiện pinyin",
   "hidePinyin": "Ẩn pinyin",
   "showAnswer": "Hiện đáp án",
-  "hideAnswer": "Ẩn đáp án"
+  "hideAnswer": "Ẩn đáp án",
+  "revealHanzi": "Hiện Hán tự",
+  "revealPinyin": "Hiện pinyin",
+  "revealMeaning": "Hiện nghĩa"
  }
 }

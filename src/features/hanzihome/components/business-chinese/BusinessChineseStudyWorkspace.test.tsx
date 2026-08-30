@@ -101,4 +101,59 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("<ruby");
   expect(markup).toContain('aria-label="Đọc tiếng Trung: 这个设计图 很漂亮。"');
  });
+
+ it("pairs the separate lesson translation with each Chinese turn and excludes the speaker from TTS", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 1);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 1.");
+  const mainSection = lesson.sections.find((section) => section.title.includes("BÀI KHÓA CHÍNH"));
+  const translationSection = lesson.sections.find((section) =>
+   section.title.includes("DỊCH BÀI KHÓA"),
+  );
+  if (!mainSection || !translationSection) {
+   throw new Error("Expected paired source and translation sections.");
+  }
+  const focusedLesson = {
+   ...lesson,
+   sections: [mainSection, translationSection],
+  };
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={books} lesson={focusedLesson} />,
+  );
+
+  expect(markup).toContain("赵经理");
+  expect(markup).toContain("Xin chào! Cho tôi hỏi có phải là Giám đốc Tôn không ạ?");
+  expect(markup).not.toContain("DỊCH BÀI KHÓA");
+  expect(markup).toContain('aria-label="Đọc tiếng Trung: 您好！请问是孙经理吗？"');
+  expect(markup).not.toContain('aria-label="Đọc tiếng Trung: 赵经理： 您好！请问是孙经理吗？"');
+  expect(markup).toContain(
+   'aria-label="Đọc tiếng Trung: 孙经理，我们公司的订单逐年增加，其中60%来自国外',
+  );
+  expect(markup).toContain('aria-label="Thiết lập đọc"');
+ });
+
+ it("renders inline lesson translations with the same speaker and TTS structure", () => {
+  const books = getBusinessChineseCatalog();
+  const lesson = getBusinessChineseLesson("tm2", 3);
+  if (!lesson) throw new Error("Expected Business Chinese lesson 3.");
+  const mainSection = lesson.sections.find((section) => section.title.includes("BÀI KHÓA CHÍNH"));
+  if (!mainSection) throw new Error("Expected the representative inline-translation section.");
+  const focusedLesson = { ...lesson, sections: [mainSection] };
+
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={books} lesson={focusedLesson} />,
+  );
+
+  expect(markup).toContain("杜森");
+  expect(markup).toContain(
+   "Xin chào, tôi là Đỗ Sâm của Công ty Moore Mỹ, đây là danh thiếp của tôi.",
+  );
+  expect(markup).toContain(
+   'aria-label="Đọc tiếng Trung: 您好，我是美国摩尔公司的杜森，这是我的名片。"',
+  );
+  expect(markup).not.toContain(
+   'aria-label="Đọc tiếng Trung: 杜森： 您好，我是美国摩尔公司的杜森，这是我的名片。"',
+  );
+ });
 });

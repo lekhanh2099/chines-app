@@ -22,6 +22,9 @@
   "showPinyin": "显示拼音",
   "hidePinyin": "隐藏拼音",
   "showAnswer": "显示答案",
-  "hideAnswer": "隐藏答案"
+  "hideAnswer": "隐藏答案",
+  "revealHanzi": "显示汉字",
+  "revealPinyin": "显示拼音",
+  "revealMeaning": "显示释义"
  }
 }

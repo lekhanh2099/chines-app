@@ -22,6 +22,9 @@
   "showPinyin": "Show pinyin",
   "hidePinyin": "Hide pinyin",
   "showAnswer": "Show answer",
-  "hideAnswer": "Hide answer"
+  "hideAnswer": "Hide answer",
+  "revealHanzi": "Show Hanzi",
+  "revealPinyin": "Show pinyin",
+  "revealMeaning": "Show meaning"
  }
 }

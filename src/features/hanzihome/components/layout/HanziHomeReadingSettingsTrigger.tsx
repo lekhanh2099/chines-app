@@ -16,6 +16,7 @@ import { Sheet, SheetBody, SheetFooter, SheetHeader } from "@/components/ui/shee
 import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
+import { HanziHomeReadOnlyReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadOnlyReadingSettingsTrigger";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
 import {
  DEFAULT_LESSON_DISPLAY_MODE,
@@ -32,7 +33,7 @@ export function HanziHomeReadingSettingsTrigger({
 } = {}) {
  if (displayMode && onDisplayModeChange) {
   return (
-   <ReadOnlyReadingSettingsTrigger
+   <HanziHomeReadOnlyReadingSettingsTrigger
     displayMode={displayMode}
     onDisplayModeChange={onDisplayModeChange}
    />
@@ -132,63 +133,6 @@ function ConnectedReadingSettingsTrigger() {
         Mở cài đặt đọc đầy đủ
        </Link>
       </DropdownMenuItem>
-     </DropdownMenuContent>
-    </DropdownMenu>
-   </div>
-  </>
- );
-}
-
-function ReadOnlyReadingSettingsTrigger({
- displayMode,
- onDisplayModeChange,
-}: {
- displayMode: LessonDisplayMode;
- onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
-}) {
- const [sheetOpen, setSheetOpen] = useState(false);
-
- return (
-  <>
-   <div className="xl:hidden">
-    <Button
-     type="button"
-     variant="outline"
-     size="icon-toolbar"
-     aria-label="Thiết lập đọc"
-     title="Thiết lập đọc"
-     aria-haspopup="dialog"
-     aria-expanded={sheetOpen}
-     onClick={() => setSheetOpen(true)}
-    >
-     <Settings2 />
-    </Button>
-   </div>
-
-   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
-    <SheetHeader title="Thiết lập đọc" onClose={() => setSheetOpen(false)} />
-    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-     <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-    </SheetBody>
-   </Sheet>
-
-   <div className="hidden xl:block">
-    <DropdownMenu>
-     <DropdownMenuTrigger asChild>
-      <Button
-       type="button"
-       variant="outline"
-       size="icon-toolbar"
-       aria-label="Thiết lập đọc"
-       title="Thiết lập đọc"
-      >
-       <Settings2 />
-      </Button>
-     </DropdownMenuTrigger>
-     <DropdownMenuContent align="end" width="lg">
-      <div className="p-3">
-       <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-      </div>
      </DropdownMenuContent>
     </DropdownMenu>
    </div>
