@@ -1,0 +1,50 @@
+{
+ "lessonMeta": "{vocabulary} từ vựng · {sections} phần nội dung",
+ "controls": {
+  "pinyin": "Pinyin",
+  "meaning": "Nghĩa"
+ },
+ "tabs": {
+  "label": "Nội dung bài Hán thương mại",
+  "lesson": "Bài học",
+  "vocabulary": "Từ vựng",
+  "grammar": "Ngữ pháp",
+  "practice": "Luyện tập"
+ },
+ "navigation": {
+  "books": "Giáo trình",
+  "lessonList": "Danh sách bài",
+  "lessonShort": "Bài {number}",
+  "previous": "Bài trước",
+  "next": "Bài sau"
+ },
+ "vocabulary": {
+  "title": "Luyện từ vựng",
+  "modeLabel": "Chế độ luyện từ vựng",
+  "modes": {
+   "list": "Danh sách",
+   "flashcard": "Flashcard",
+   "meaning": "Chọn nghĩa",
+   "hanzi": "Gõ Hán tự"
+  },
+  "progress": "Đã nhớ {known}/{total} từ",
+  "reset": "Xóa tiến độ",
+  "empty": "Bài này chưa có dữ liệu từ vựng để luyện.",
+  "known": "Đã nhớ",
+  "markKnown": "Đánh dấu đã nhớ",
+  "reveal": "Hiện nghĩa",
+  "chooseMeaning": "Chọn nghĩa đúng",
+  "typeHanzi": "Gõ Hán tự theo nghĩa và pinyin",
+  "hanziPlaceholder": "Nhập Hán tự",
+  "hanziInputLabel": "Nhập đáp án Hán tự",
+  "check": "Kiểm tra",
+  "correct": "Đúng.",
+  "incorrect": "Chưa đúng. Đáp án: {answer}",
+  "hanziIncorrect": "Chưa đúng. Hán tự đúng: {answer}",
+  "nextQuestion": "Câu tiếp"
+ },
+ "audio": {
+  "play": "Nghe tiếng Trung",
+  "failed": "Không phát được giọng đọc tiếng Trung."
+ }
+}
