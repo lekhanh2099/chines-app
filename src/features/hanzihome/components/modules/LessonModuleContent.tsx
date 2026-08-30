@@ -3,7 +3,10 @@
 import { GrammarWorkspace } from "@/features/hanzihome/components/grammar/GrammarWorkspace";
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/notes/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
-import { LessonTextInlineEditor } from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
+import {
+ LessonTextInlineEditor,
+ ReadOnlyLessonTextWorkspace,
+} from "@/features/hanzihome/components/lesson-text/LessonTextInlineEditor";
 import { PracticeWorkspace } from "@/features/hanzihome/practice/PracticeWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/review/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/vocab/VocabWorkspace";
@@ -24,7 +27,20 @@ export function LessonModuleContent({
  lessonTextSelectedSectionId: string;
  onSelectLessonTextSection: (sectionId: string) => void;
 }) {
- const { lesson } = useHanziHomeRuntime();
+ const runtime = useHanziHomeRuntime();
+ const { lesson } = runtime;
+
+ if (runtime.readOnly) {
+  return (
+   <ReadOnlyLessonTextWorkspace
+    module={module}
+    compact={compact}
+    selectedSectionId={lessonTextSelectedSectionId}
+    onSelectSection={onSelectLessonTextSection}
+   />
+  );
+ }
+
  let content;
  switch (module) {
   case "overview":

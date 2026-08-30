@@ -261,6 +261,7 @@ export function HanziHomeWorkspace({ forcedModule }: { forcedModule?: HanziHomeM
       lesson && (
        <ModuleSplitWorkspace
         key={`${lesson.id}:${matchingSearchIntent?.id ?? "default"}`}
+        readOnly={false}
         lesson={lesson}
         learningState={learning.state}
         learningSync={{

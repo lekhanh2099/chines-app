@@ -27,6 +27,7 @@ async function loadViMessages() {
   learningLoop,
   home,
   notebook,
+  businessChinese,
  ] = await Promise.all([
   import("../../messages/vi/common.json"),
   import("../../messages/vi/shell.json"),
@@ -53,6 +54,7 @@ async function loadViMessages() {
   import("../../messages/vi/learning-loop.json"),
   import("../../messages/vi/home.json"),
   import("../../messages/vi/notebook.json"),
+  import("../../messages/vi/business-chinese.json"),
  ]);
 
  return {
@@ -77,6 +79,7 @@ async function loadViMessages() {
   LearningLoop: learningLoop.default,
   Home: home.default,
   Notebook: notebook.default,
+  BusinessChinese: businessChinese.default,
  };
 }
 
@@ -109,6 +112,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   learningLoop,
   home,
   notebook,
+  businessChinese,
  ] = await Promise.all([
   import("../../messages/en/common.json"),
   import("../../messages/en/shell.json"),
@@ -135,6 +139,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   import("../../messages/en/learning-loop.json"),
   import("../../messages/en/home.json"),
   import("../../messages/en/notebook.json"),
+  import("../../messages/en/business-chinese.json"),
  ]);
 
  return {
@@ -159,6 +164,7 @@ async function loadEnMessages(): Promise<AppMessages> {
   LearningLoop: learningLoop.default,
   Home: home.default,
   Notebook: notebook.default,
+  BusinessChinese: businessChinese.default,
  };
 }
 
@@ -189,6 +195,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   learningLoop,
   home,
   notebook,
+  businessChinese,
  ] = await Promise.all([
   import("../../messages/zh-CN/common.json"),
   import("../../messages/zh-CN/shell.json"),
@@ -215,6 +222,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   import("../../messages/zh-CN/learning-loop.json"),
   import("../../messages/zh-CN/home.json"),
   import("../../messages/zh-CN/notebook.json"),
+  import("../../messages/zh-CN/business-chinese.json"),
  ]);
 
  return {
@@ -239,6 +247,7 @@ async function loadZhCnMessages(): Promise<AppMessages> {
   LearningLoop: learningLoop.default,
   Home: home.default,
   Notebook: notebook.default,
+  BusinessChinese: businessChinese.default,
  };
 }
 

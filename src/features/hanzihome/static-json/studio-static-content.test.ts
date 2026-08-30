@@ -2,6 +2,9 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
+import { attachLessonVocabularyResource } from "@/features/hanzihome/repositories/hanzihome-content-resources";
+
+import businessChineseSeed from "./business-chinese.json";
 import {
  getStaticStudioAggregateItems,
  getStaticStudioCourseCatalog,
@@ -96,5 +99,112 @@ describe("bundled Studio static content", () => {
    "HSK6",
   ]);
   expect(catalog?.lessons.map((lesson) => lesson.grammarCount)).toEqual([40, 97, 141, 161, 83, 55]);
+ });
+
+ it("exposes the complete Business Chinese static corpus", () => {
+  const catalog = getStaticStudioCourseCatalog("hanzihome-business-chinese");
+
+  expect(catalog).toMatchObject({
+   course: {
+    id: "hanzihome-business-chinese",
+    stats: { bookCount: 2, lessonCount: 20, vocabCount: 393, grammarCount: 0 },
+   },
+  });
+  expect(catalog?.books.map((book) => book.shortTitle)).toEqual(["Quyển 2", "Quyển 3"]);
+  expect(
+   catalog?.books.map(
+    (book) => catalog.lessons.filter((lesson) => lesson.bookId === book.id).length,
+   ),
+  ).toEqual([10, 10]);
+  expect(
+   catalog?.books.map((book) =>
+    catalog.lessons
+     .filter((lesson) => lesson.bookId === book.id)
+     .reduce((total, lesson) => total + (lesson.vocabCount ?? 0), 0),
+   ),
+  ).toEqual([167, 226]);
+  expect(catalog?.lessons[0]).toMatchObject({
+   id: "business-chinese-tm2-lesson-01",
+   titleZh: "订购真丝面料",
+  });
+  expect(
+   catalog?.lessons.find((lesson) => lesson.id === "business-chinese-tm3-lesson-01"),
+  ).toMatchObject({
+   id: "business-chinese-tm3-lesson-01",
+   titleZh: "开户汇款",
+  });
+ });
+
+ it("hydrates canonical Business Chinese vocabulary into empty source sections", () => {
+  const staticLesson = getStaticStudioLessonDetail("business-chinese-tm2-lesson-01");
+  if (!staticLesson) throw new Error("Expected Business Chinese lesson 1.");
+
+  const hydratedLesson = attachLessonVocabularyResource(staticLesson, {
+   lessonId: staticLesson.id,
+   items: staticLesson.vocab,
+   total: staticLesson.vocab.length,
+  });
+  const vocabularySection = hydratedLesson.sourceLesson?.lesson.sections.find(
+   (section) => section.type === "vocabulary",
+  );
+
+  expect(staticLesson.sourceLesson?.lesson.sections).toEqual(
+   expect.arrayContaining([expect.objectContaining({ type: "vocabulary", items: [] })]),
+  );
+  expect(vocabularySection).toMatchObject({ type: "vocabulary" });
+  expect(vocabularySection?.type === "vocabulary" ? vocabularySection.items : []).toHaveLength(21);
+ });
+
+ it("keeps Business Chinese lesson text and Vietnamese translations in their canonical fields", () => {
+  const lesson = getStaticStudioLessonDetail("business-chinese-tm2-lesson-02");
+  const textSection = lesson?.sourceLesson?.lesson.sections.find(
+   (section) => section.type === "text",
+  );
+  if (!textSection || textSection.type !== "text") {
+   throw new Error("Expected the representative Business Chinese text section.");
+  }
+  const block = textSection.blocks[0];
+  if (!block || block.type !== "text_narrative") {
+   throw new Error("Expected the representative Business Chinese narrative block.");
+  }
+  const paragraph = block.paragraphs.find((item) => item.zh.startsWith("郑秘书： 您好"));
+
+  expect(block.title_vi).toBe("Mời ngài tham dự Hội nghị giới thiệu sản phẩm");
+  expect(paragraph).toMatchObject({
+   zh: "郑秘书： 您好！请问您是陈经理吗？",
+   vi: "Trịnh thư ký: Xin chào! Cho tôi hỏi có phải là Giám đốc Trần không ạ?",
+  });
+  expect(paragraph?.zh).not.toContain("Trịnh thư ký");
+ });
+
+ it("keeps Business Chinese out of aggregate API resources", () => {
+  const items = getStaticStudioAggregateItems({
+   kind: "vocab",
+   filters: {
+    courseId: "hanzihome-business-chinese",
+    bookId: "",
+    lessonId: "",
+    q: "",
+   },
+  });
+
+  expect(items).toEqual([]);
+ });
+
+ it("omits generated chatter and the post-course progress appendix", () => {
+  const serialized = JSON.stringify(businessChineseSeed);
+
+  expect(serialized).not.toContain("Vậy là tôi đã xuất");
+  expect(serialized).not.toContain("BẢNG TIẾN ĐỘ");
+  expect(serialized).not.toContain("TỔNG KẾT TOÀN BỘ QUYỂN 3");
+  expect(serialized).not.toMatch(/"prompt":"[^"]*(?:→|=>)/);
+  expect(serialized).toContain("我们是否可以参观一下贵厂？");
+  expect(
+   businessChineseSeed.canonical.lessonSections.every(
+    (section) =>
+     section.payload.type !== "vocabulary" ||
+     (Array.isArray(section.payload.items) && section.payload.items.length === 0),
+   ),
+  ).toBe(true);
  });
 });

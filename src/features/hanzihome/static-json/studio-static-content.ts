@@ -24,6 +24,7 @@ import type {
 import { JsonObjectSchema } from "@/types/json";
 
 import studioSeed from "./studio-seed.json";
+import businessChineseSeed from "./business-chinese.json";
 import {
  listeningAnswerSchema,
  listeningExerciseTypeSchema,
@@ -204,7 +205,38 @@ const staticStudioSeedSchema = z.object({
  }),
 });
 
-const staticStudioSeed = staticStudioSeedSchema.parse(studioSeed);
+const staticStudioSeed = staticStudioSeedSchema.parse({
+ canonical: {
+  courses: [...studioSeed.canonical.courses, ...businessChineseSeed.canonical.courses],
+  books: [...studioSeed.canonical.books, ...businessChineseSeed.canonical.books],
+  lessons: [...studioSeed.canonical.lessons, ...businessChineseSeed.canonical.lessons],
+  lessonSections: [
+   ...studioSeed.canonical.lessonSections,
+   ...businessChineseSeed.canonical.lessonSections,
+  ],
+  vocabItems: [...studioSeed.canonical.vocabItems, ...businessChineseSeed.canonical.vocabItems],
+  vocabDetailSections: [
+   ...studioSeed.canonical.vocabDetailSections,
+   ...businessChineseSeed.canonical.vocabDetailSections,
+  ],
+  grammarPoints: [
+   ...studioSeed.canonical.grammarPoints,
+   ...businessChineseSeed.canonical.grammarPoints,
+  ],
+  grammarExamples: [
+   ...studioSeed.canonical.grammarExamples,
+   ...businessChineseSeed.canonical.grammarExamples,
+  ],
+  grammarDetailSections: [
+   ...studioSeed.canonical.grammarDetailSections,
+   ...businessChineseSeed.canonical.grammarDetailSections,
+  ],
+  listeningItems: [
+   ...studioSeed.canonical.listeningItems,
+   ...businessChineseSeed.canonical.listeningItems,
+  ],
+ },
+});
 
 const courseTitles = new Map(
  staticStudioSeed.canonical.courses.map((course) => [course.id, course.title]),
@@ -493,6 +525,7 @@ export function getStaticStudioAggregateItems({
   return staticStudioSeed.canonical.vocabItems
    .filter(
     (item) =>
+     item.course_id !== "hanzihome-business-chinese" &&
      (!filters.courseId || item.course_id === filters.courseId) &&
      (!filters.bookId || item.book_id === filters.bookId) &&
      (!filters.lessonId || item.lesson_id === filters.lessonId),

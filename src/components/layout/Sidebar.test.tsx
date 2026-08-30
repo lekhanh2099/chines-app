@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { AriaAttributes, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
 import { describe, expect, it, vi } from "vitest";
@@ -13,9 +13,23 @@ vi.mock("next/navigation", () => ({
  useSearchParams: () => new URLSearchParams(),
 }));
 
+let currentPathname = "/reader";
+
 vi.mock("@/i18n/navigation", () => ({
- Link: ({ children, href }: { children: ReactNode; href: string }) => <a href={href}>{children}</a>,
- usePathname: () => "/reader",
+ Link: ({
+  children,
+  href,
+  ...props
+ }: {
+  children: ReactNode;
+  href: string;
+  "aria-current"?: AriaAttributes["aria-current"];
+ }) => (
+  <a href={href} aria-current={props["aria-current"]}>
+   {children}
+  </a>
+ ),
+ usePathname: () => currentPathname,
 }));
 
 const localeCases = [
@@ -102,5 +116,21 @@ describe("Sidebar translations", () => {
    const href = navigationItems[itemId].href;
    expect(markup.split(`href="${href}"`)).toHaveLength(itemId === "home" ? 3 : 2);
   }
+ });
+
+ it("activates only Hán thương mại on its static HSK route", async () => {
+  currentPathname = "/hsk/han-thuong-mai";
+  const messages = await loadAppMessages("vi");
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider locale="vi" messages={messages} timeZone="Asia/Ho_Chi_Minh">
+    <Sidebar canManageContent={false} />
+   </NextIntlClientProvider>,
+  );
+  const activeLinks = markup.match(/<a[^>]*aria-current="page"[^>]*>/g) ?? [];
+
+  expect(activeLinks).toHaveLength(1);
+  expect(activeLinks[0]).toContain('href="/hsk/han-thuong-mai"');
+  expect(activeLinks[0]).not.toContain('href="/hsk"');
+  currentPathname = "/reader";
  });
 });

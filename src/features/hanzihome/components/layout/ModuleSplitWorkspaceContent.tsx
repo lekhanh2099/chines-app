@@ -1,11 +1,17 @@
 "use client";
 
-import { Columns2, CloudOff, RefreshCcw, WifiOff } from "lucide-react";
+import { Columns2, CloudOff, Lock, RefreshCcw, SlidersHorizontal, WifiOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import {
+ DropdownMenu,
+ DropdownMenuContent,
+ DropdownMenuLabel,
+ DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
  Select,
  SelectContent,
@@ -25,6 +31,10 @@ import { WorkspaceToolbar } from "@/features/hanzihome/components/layout/Workspa
 import { moduleMeta, tabsForLesson } from "@/features/hanzihome/components/layout/moduleMeta";
 import { LessonModuleContent } from "@/features/hanzihome/components/modules/LessonModuleContent";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/DebugRawDataPanel";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "@/features/hanzihome/components/lesson-overview/types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import {
@@ -97,7 +107,7 @@ export function ModuleSplitWorkspaceContent() {
  const [isMobileSplit, setIsMobileSplit] = useState(false);
  const [isHorizontalSplit, setIsHorizontalSplit] = useState(false);
  const isListeningLesson = runtime.lesson.tags?.includes("listening") ?? false;
- const effectiveSplitEnabled = splitEnabled && !isListeningLesson;
+ const effectiveSplitEnabled = splitEnabled && !isListeningLesson && !runtime.readOnly;
  const lessonTabs = tabsForLesson(runtime.lesson);
 
  useEffect(() => {
@@ -161,6 +171,45 @@ export function ModuleSplitWorkspaceContent() {
   actions.setSplitEnabled(true);
  };
 
+ const workspaceTools = runtime.readOnly ? (
+  <DropdownMenu>
+   <DropdownMenuTrigger asChild>
+    <Button type="button" variant="outline" size="toolbar" aria-label="Mở công cụ bài học">
+     <SlidersHorizontal />
+     <span className="hidden sm:inline">Công cụ</span>
+    </Button>
+   </DropdownMenuTrigger>
+   <DropdownMenuContent align="end" width="md">
+    <DropdownMenuLabel>Không gian học</DropdownMenuLabel>
+    <DropdownMenuItem disabled>
+     <Lock />
+     Nội dung chỉ đọc
+    </DropdownMenuItem>
+   </DropdownMenuContent>
+  </DropdownMenu>
+ ) : (
+  <HanziHomeDeveloperTools inline>
+   <DropdownMenuItem onSelect={enableSplit}>
+    <Columns2 />
+    Chia đôi màn hình
+   </DropdownMenuItem>
+  </HanziHomeDeveloperTools>
+ );
+ const readOnlyDisplayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ const readingSettingsTrigger = runtime.readOnly ? (
+  <HanziHomeReadingSettingsTrigger
+   displayMode={readOnlyDisplayMode}
+   onDisplayModeChange={(updates: Partial<LessonDisplayMode>) => {
+    runtime.updateLearningSettings({
+     lessonTextDisplayMode: { ...readOnlyDisplayMode, ...updates },
+    });
+   }}
+  />
+ ) : (
+  <HanziHomeReadingSettingsTrigger />
+ );
+
  const workspaceControls = effectiveSplitEnabled ? (
   <div className="flex w-full min-w-0 items-center justify-end gap-1.5 sm:gap-2">
    <LearningSyncStatus />
@@ -168,13 +217,17 @@ export function ModuleSplitWorkspaceContent() {
     id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
     className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
    />
-   <HanziHomeReadingSettingsTrigger />
-   <HanziHomeDeveloperTools inline>
-    <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
-     <Columns2 />
-     Đóng chia đôi màn hình
-    </DropdownMenuItem>
-   </HanziHomeDeveloperTools>
+   {readingSettingsTrigger}
+   {runtime.readOnly ? (
+    workspaceTools
+   ) : (
+    <HanziHomeDeveloperTools inline>
+     <DropdownMenuItem onSelect={() => actions.setSplitEnabled(false)}>
+      <Columns2 />
+      Đóng chia đôi màn hình
+     </DropdownMenuItem>
+    </HanziHomeDeveloperTools>
+   )}
   </div>
  ) : (
   <>
@@ -188,7 +241,7 @@ export function ModuleSplitWorkspaceContent() {
       }}
      >
       <SelectTrigger aria-label="Chọn nội dung học" size="sm" width="full">
-       <SelectValue />
+       <SelectValue>{moduleMeta[runtime.activeModule].label}</SelectValue>
       </SelectTrigger>
       <SelectContent
        side="bottom"
@@ -222,19 +275,17 @@ export function ModuleSplitWorkspaceContent() {
      id={HANZIHOME_COMMAND_BAR_MODULE_TARGET_ID}
      className="flex min-w-0 shrink-0 items-center justify-end gap-1.5"
     />
-    <HanziHomeReadingSettingsTrigger />
-    <HanziHomeDeveloperTools inline>
-     <DropdownMenuItem onSelect={enableSplit}>
-      <Columns2 />
-      Chia đôi màn hình
-     </DropdownMenuItem>
-    </HanziHomeDeveloperTools>
+    {readingSettingsTrigger}
+    {workspaceTools}
    </div>
   </>
  );
 
  const debugPanel =
-  developerToolsEnabled && viewMode === "debug" && runtime.activeModule !== "overview" ? (
+  !runtime.readOnly &&
+  developerToolsEnabled &&
+  viewMode === "debug" &&
+  runtime.activeModule !== "overview" ? (
    <div className="hidden xl:block">
     <DebugRawDataPanel
      title="Raw lesson JSON"

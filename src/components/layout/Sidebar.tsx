@@ -59,7 +59,12 @@ function matchesHref(
  }
 
  if (base === "/hsk") {
-  return pathname === "/hsk" || (pathname.startsWith("/hsk/") && pathname !== "/hsk/grammar");
+  return (
+   pathname === "/hsk" ||
+   (pathname.startsWith("/hsk/") &&
+    pathname !== "/hsk/grammar" &&
+    pathname !== "/hsk/han-thuong-mai")
+  );
  }
 
  if (base === "/reader") {

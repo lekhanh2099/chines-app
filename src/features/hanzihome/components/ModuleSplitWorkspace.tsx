@@ -15,6 +15,7 @@ import type {
 } from "@/features/hanzihome/types";
 
 type ModuleSplitWorkspaceProps = {
+ readOnly: boolean;
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
  learningSync?: LearningSyncUiState;

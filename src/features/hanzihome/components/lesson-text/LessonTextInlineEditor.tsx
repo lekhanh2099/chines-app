@@ -12,6 +12,7 @@ import {
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
 import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
+import { moduleMeta } from "@/features/hanzihome/components/layout/moduleMeta";
 import {
  sectionSubtitle,
  sectionTitle,
@@ -22,6 +23,7 @@ import type { Section } from "@/features/hanzihome/schemas/hanyu-lesson.types";
 import { useHanziHomeFeatureActions } from "@/features/hanzihome/context/actions";
 import { useHanziHomeRuntime } from "@/features/hanzihome/context/runtime";
 import { useHanziHomeFeatureSelector } from "@/features/hanzihome/context/selectors";
+import type { StudyModule } from "@/features/hanzihome/context/types";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import {
  lessonTextToReaderDocument,
@@ -56,13 +58,8 @@ export function LessonTextInlineEditor({
  selectedSectionId,
  onSelectSection,
 }: LessonTextInlineEditorProps) {
- const runtime = useHanziHomeRuntime();
- const { lesson } = runtime;
- const actions = useHanziHomeFeatureActions();
+ const { lesson } = useHanziHomeRuntime();
  const sectionResource = useHanziHomeLessonSections(lesson.id);
- const displayMode =
-  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
- const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
  const sourceSections = useMemo(() => {
   const sections =
    lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ??
@@ -72,6 +69,90 @@ export function LessonTextInlineEditor({
    practiceOnly ? practiceSectionTypes.has(section.type) : !practiceSectionTypes.has(section.type),
   );
  }, [lesson.sourceLesson, practiceOnly, sectionResource]);
+
+ return (
+  <LessonTextWorkspace
+   module={practiceOnly ? "practice" : "lessonText"}
+   compact={compact}
+   practiceOnly={practiceOnly}
+   selectedSectionId={selectedSectionId}
+   onSelectSection={onSelectSection}
+   sourceSections={sourceSections}
+   editable
+  />
+ );
+}
+
+export function ReadOnlyLessonTextWorkspace({
+ module,
+ compact = false,
+ selectedSectionId,
+ onSelectSection,
+}: LessonTextInlineEditorProps & { module: StudyModule }) {
+ const { lesson } = useHanziHomeRuntime();
+ const sourceSections = useMemo(() => {
+  const sections =
+   lesson.sourceLesson?.lesson.sections.slice().sort((a, b) => a.order - b.order) ?? [];
+  return sections.filter((section) => {
+   const title = `${section.title} ${section.title_vi}`.toLocaleUpperCase("vi");
+
+   switch (module) {
+    case "overview":
+     return section.order <= 2;
+    case "lessonText":
+     return section.type === "text";
+    case "notes":
+     return section.type === "notes";
+    case "vocab":
+     return section.type === "vocabulary";
+    case "grammar":
+     return section.type === "grammar" || title.includes("NGỮ PHÁP");
+    case "review":
+     return (
+      title.includes("TÓM TẮT") || title.includes("BÀI ĐỌC THÊM") || title.includes("THẢO LUẬN")
+     );
+    case "practice":
+     return practiceSectionTypes.has(section.type);
+    case "listening":
+    case "dictation":
+    case "script":
+     return false;
+   }
+  });
+ }, [lesson.sourceLesson, module]);
+
+ return (
+  <LessonTextWorkspace
+   module={module}
+   compact={compact}
+   practiceOnly={module === "practice"}
+   selectedSectionId={selectedSectionId}
+   onSelectSection={onSelectSection}
+   sourceSections={sourceSections}
+   editable={false}
+  />
+ );
+}
+
+function LessonTextWorkspace({
+ module,
+ compact,
+ practiceOnly,
+ selectedSectionId,
+ onSelectSection,
+ sourceSections,
+ editable,
+}: LessonTextInlineEditorProps & {
+ module: StudyModule;
+ sourceSections: readonly Section[];
+ editable: boolean;
+}) {
+ const runtime = useHanziHomeRuntime();
+ const { lesson } = runtime;
+ const actions = useHanziHomeFeatureActions();
+ const displayMode =
+  runtime.learningState.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ const isSectionNavOpen = useHanziHomeFeatureSelector((state) => state.lessonTextSidebarOpen);
  const readingItems = useMemo(
   () => sourceSections.flatMap((section) => (section.type === "reading" ? section.items : [])),
   [sourceSections],
@@ -122,17 +203,20 @@ export function LessonTextInlineEditor({
   ],
  );
 
- const wrapBinding = (binding: LessonReaderEditBinding | undefined, content: ReactNode) => {
-  if (!binding) return content;
-  return <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>;
- };
+ const wrapBinding = useCallback(
+  (binding: LessonReaderEditBinding | undefined, content: ReactNode) => {
+   if (!editable || !binding) return content;
+   return <EditableNodeWrapper {...binding}>{content}</EditableNodeWrapper>;
+  },
+  [editable],
+ );
  const renderReaderSegment = useCallback<ReaderSurfaceRenderSegment>(
   ({ segment, content }) => wrapBinding(lessonReader.segmentBindings.get(segment.id), content),
-  [lessonReader.segmentBindings],
+  [lessonReader.segmentBindings, wrapBinding],
  );
  const renderReaderSection = useCallback<ReaderSurfaceRenderSection>(
   ({ section, content }) => wrapBinding(lessonReader.sectionBindings.get(section.id), content),
-  [lessonReader.sectionBindings],
+  [lessonReader.sectionBindings, wrapBinding],
  );
 
  const sidebar = (
@@ -188,17 +272,18 @@ export function LessonTextInlineEditor({
   lessonReader.document.segments.length > 0 ? (
    <ReaderSurface
     document={lessonReader.document}
-    lessonId={lesson.id}
+    lessonId={editable ? lesson.id : undefined}
     compact={compact}
-    renderSegment={renderReaderSegment}
-    renderSection={renderReaderSection}
+    displayMode={editable ? undefined : displayMode}
+    renderSegment={editable ? renderReaderSegment : undefined}
+    renderSection={editable ? renderReaderSection : undefined}
    />
   ) : null;
  const firstTextSectionId = visibleTextSections[0]?.id;
 
  return (
   <LessonModuleFrame
-   title={practiceOnly ? "Bài tập và đọc hiểu" : "Bài khóa"}
+   title={moduleMeta[module].label}
    subtitle={
     showAllSections
      ? practiceOnly
@@ -240,9 +325,9 @@ export function LessonTextInlineEditor({
         ) : (
          <TextbookSectionCard
           key={section.id}
-          lessonId={lesson.id}
+          lessonId={editable ? lesson.id : undefined}
           section={section}
-          sectionPath={sectionPathFor(section)}
+          sectionPath={editable ? sectionPathFor(section) : undefined}
           displayMode={displayMode}
           readingItems={readingItems}
           readingSections={readingSections}
@@ -254,9 +339,9 @@ export function LessonTextInlineEditor({
        return (
         <TextbookSectionCard
          key={section.id}
-         lessonId={lesson.id}
+         lessonId={editable ? lesson.id : undefined}
          section={section}
-         sectionPath={sectionPathFor(section)}
+         sectionPath={editable ? sectionPathFor(section) : undefined}
          displayMode={displayMode}
          readingItems={readingItems}
          readingSections={readingSections}
@@ -269,9 +354,9 @@ export function LessonTextInlineEditor({
       renderTextReader()
      ) : selectedSection ? (
       <TextbookSectionCard
-       lessonId={lesson.id}
+       lessonId={editable ? lesson.id : undefined}
        section={selectedSection}
-       sectionPath={sectionPathFor(selectedSection)}
+       sectionPath={editable ? sectionPathFor(selectedSection) : undefined}
        displayMode={displayMode}
        readingItems={readingItems}
        readingSections={readingSections}

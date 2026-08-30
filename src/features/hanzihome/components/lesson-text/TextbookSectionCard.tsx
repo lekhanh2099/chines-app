@@ -22,9 +22,9 @@ export function TextbookSectionCard({
  interactiveReading,
  readingMode,
 }: {
- lessonId: string;
+ lessonId?: string;
  section: Section;
- sectionPath: EditableNodePath;
+ sectionPath?: EditableNodePath;
  displayMode: LessonDisplayMode;
  readingItems?: readonly ReadingItem[];
  readingSections?: readonly Section[];

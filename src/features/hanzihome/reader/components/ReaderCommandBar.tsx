@@ -19,6 +19,7 @@ import {
  SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
+import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import {
@@ -44,6 +45,8 @@ export function ReaderCommandBar({
  stickyOffset = "page",
  compact = false,
  outlineMenu,
+ displayMode,
+ onDisplayModeChange,
 }: {
  segmentCount: number;
  onOpenOutline: () => void;
@@ -51,6 +54,8 @@ export function ReaderCommandBar({
  stickyOffset?: ReaderToolbarStickyOffset;
  compact?: boolean;
  outlineMenu?: (onNavigate: () => void) => ReactNode;
+ displayMode?: LessonDisplayMode;
+ onDisplayModeChange?: (updates: Partial<LessonDisplayMode>) => void;
 }) {
  const t = useTranslations("Reader.study.chrome.commands");
  const commands = useReaderRuntimeCommands();
@@ -196,7 +201,11 @@ export function ReaderCommandBar({
       </Button>
      </div>
     )}
-    <ReaderTools onOpenShadowing={onOpenShadowing} />
+    <ReaderTools
+     onOpenShadowing={onOpenShadowing}
+     displayMode={displayMode}
+     onDisplayModeChange={onDisplayModeChange}
+    />
    </div>
   </Card>
  );

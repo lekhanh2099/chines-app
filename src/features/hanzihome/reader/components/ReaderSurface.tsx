@@ -11,6 +11,7 @@ import {
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
+import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 
 import type { ReaderDocumentModel } from "../model/reader-document.types";
@@ -60,6 +61,7 @@ export type ReaderSurfaceProps = {
  toolbarStickyOffset?: ReaderToolbarStickyOffset;
  initialFocus?: ReaderSourceTarget | null;
  compact?: boolean;
+ displayMode?: LessonDisplayMode;
 };
 
 type TextPoint = { node: Text; offset: number };
@@ -129,6 +131,7 @@ function ReaderSurfaceViewContent({
  toolbarStickyOffset = "page",
  initialFocus,
  compact = false,
+ displayMode: initialDisplayMode,
 }: ReaderSurfaceProps) {
  const t = useTranslations("Reader.study.chrome.surface");
  const isCoarsePointer = useCoarsePointer();
@@ -140,6 +143,7 @@ function ReaderSurfaceViewContent({
  );
  const resolvedInitialFocus = initialFocus ?? routeFocus;
  const [outlineOpen, setOutlineOpen] = useState(false);
+ const [displayMode, setDisplayMode] = useState(initialDisplayMode);
  const [pronunciationPreview, setPronunciationPreview] =
   useState<ReaderSurfacePronunciationTarget | null>(null);
  const segmentElementsRef = useRef(new Map<string, HTMLElement>());
@@ -152,6 +156,9 @@ function ReaderSurfaceViewContent({
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const error = useReaderRuntimeSelector((state) => state.error);
+ const updateDisplayMode = useCallback((updates: Partial<LessonDisplayMode>) => {
+  setDisplayMode((current) => (current ? { ...current, ...updates } : current));
+ }, []);
 
  const setSegmentElement = useCallback((segmentId: string, element: HTMLElement | null) => {
   if (element) segmentElementsRef.current.set(segmentId, element);
@@ -335,6 +342,8 @@ function ReaderSurfaceViewContent({
     onOpenShadowing={onOpenShadowing}
     stickyOffset={toolbarStickyOffset}
     compact={compact}
+    displayMode={displayMode}
+    onDisplayModeChange={displayMode ? updateDisplayMode : undefined}
     outlineMenu={(onNavigate) => (
      <ReaderOutlineContent document={document} onNavigate={onNavigate} />
     )}
@@ -358,6 +367,7 @@ function ReaderSurfaceViewContent({
      <ReaderDocumentContent
       document={document}
       lessonId={lessonId}
+      displayMode={displayMode}
       renderSegment={renderSegment}
       renderSection={renderSection}
       analysisBySegmentId={analysisBySegmentId}

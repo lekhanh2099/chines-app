@@ -75,6 +75,11 @@ export const navigationItems = {
   icon: ListTree,
   href: "/hsk/grammar",
  },
+ businessChinese: {
+  messageKey: "navigation.items.businessChinese",
+  icon: BookOpenText,
+  href: "/hsk/han-thuong-mai",
+ },
  grammar: { messageKey: "navigation.items.grammar", icon: ListTree, href: "/grammar" },
  humanities: {
   messageKey: "navigation.items.humanities",
@@ -149,6 +154,7 @@ export const navigationItems = {
  readerMock: NavigationItemConfig;
  hskReading: NavigationItemConfig;
  hskGrammar: NavigationItemConfig;
+ businessChinese: NavigationItemConfig;
  grammar: NavigationItemConfig;
  humanities: NavigationItemConfig;
  personalLearning: NavigationItemConfig;
@@ -208,7 +214,7 @@ export const navigationGroups = [
     id: "hsk-reading",
     messageKey: "navigation.sections.hskReading",
     collapsible: true,
-    itemIds: ["hskReading", "hskGrammar"],
+    itemIds: ["hskReading", "hskGrammar", "businessChinese"],
    },
    {
     id: "learning-more",

@@ -80,9 +80,25 @@ type ReaderDocumentContentProps = {
  onSelection?: (selection: ReaderSurfaceSelection) => void;
  onPronunciationInspect?: (target: ReaderSurfacePronunciationTarget) => void;
  setSegmentElement: (segmentId: string, element: HTMLElement | null) => void;
+ displayMode?: LessonDisplayMode;
 };
 
-export const ReaderDocumentContent = memo(function ReaderDocumentContent({
+export const ReaderDocumentContent = memo(function ReaderDocumentContent(
+ props: ReaderDocumentContentProps,
+) {
+ if (props.displayMode) {
+  return <ReaderDocumentContentView {...props} displayMode={props.displayMode} />;
+ }
+ return <ConnectedReaderDocumentContent {...props} />;
+});
+
+function ConnectedReaderDocumentContent(props: ReaderDocumentContentProps) {
+ const learning = useLearningState();
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ return <ReaderDocumentContentView {...props} displayMode={displayMode} />;
+}
+
+const ReaderDocumentContentView = memo(function ReaderDocumentContentView({
  document,
  lessonId,
  renderSegment,
@@ -91,9 +107,8 @@ export const ReaderDocumentContent = memo(function ReaderDocumentContent({
  onSelection,
  onPronunciationInspect,
  setSegmentElement,
-}: ReaderDocumentContentProps) {
- const learning = useLearningState();
- const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ displayMode,
+}: ReaderDocumentContentProps & { displayMode: LessonDisplayMode }) {
  const segmentById = useMemo(
   () => new Map(document.segments.map((segment) => [segment.id, segment])),
   [document.segments],

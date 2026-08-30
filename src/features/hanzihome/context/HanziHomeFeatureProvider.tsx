@@ -17,6 +17,7 @@ import { createHanziHomeFeatureServices } from "./services";
 import type { LearningSyncUiState, ReviewItem, StudyModule } from "./types";
 
 export function HanziHomeFeatureProvider({
+ readOnly,
  lesson,
  learningState,
  learningSync,
@@ -30,6 +31,7 @@ export function HanziHomeFeatureProvider({
  onAnswerReview,
  children,
 }: {
+ readOnly: boolean;
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
  learningSync?: LearningSyncUiState;
@@ -45,6 +47,9 @@ export function HanziHomeFeatureProvider({
 }) {
  const searchIntent = useHanziHomeSearchNavigationIntent();
  const matchingIntent = searchIntent?.lessonId === lesson.id ? searchIntent : null;
+ const readOnlyLessonTextSectionId =
+  lesson.sourceLesson?.lesson.sections.find((section) => section.type === "text")?.id ??
+  "__all_lesson_sections__";
  const store = useMemo(
   () =>
    createHanziHomeFeatureStore({
@@ -55,14 +60,17 @@ export function HanziHomeFeatureProvider({
     lessonTextSelectedSectionId:
      matchingIntent?.module === "lessonText"
       ? (matchingIntent.targetId ?? "__all_lesson_sections__")
-      : "__all_lesson_sections__",
+      : readOnly
+        ? readOnlyLessonTextSectionId
+        : "__all_lesson_sections__",
    }),
-  [matchingIntent?.module, matchingIntent?.targetId],
+  [matchingIntent?.module, matchingIntent?.targetId, readOnly, readOnlyLessonTextSectionId],
  );
  const actions = useMemo(() => createHanziHomeFeatureActions(store), [store]);
  const services = useMemo(() => createHanziHomeFeatureServices(lesson), [lesson]);
  const runtime = useMemo(
   () => ({
+   readOnly,
    originalLesson: lesson,
    lesson,
    learningState,
@@ -88,6 +96,7 @@ export function HanziHomeFeatureProvider({
    onMarkVocab,
    onSelectModule,
    onUpdateLearningSettings,
+   readOnly,
   ],
  );
  const value = useMemo(

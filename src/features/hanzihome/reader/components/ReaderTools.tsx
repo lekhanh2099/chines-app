@@ -19,7 +19,10 @@ import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  useReaderRuntimeActions,
@@ -27,7 +30,59 @@ import {
  useReaderRuntimeSelector,
 } from "../runtime/ReaderRuntimeProvider";
 
-export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void }) {
+type ReaderToolsProps = {
+ onOpenShadowing?: () => void;
+ displayMode?: LessonDisplayMode;
+ onDisplayModeChange?: (updates: Partial<LessonDisplayMode>) => void;
+};
+
+export function ReaderTools({
+ onOpenShadowing,
+ displayMode,
+ onDisplayModeChange,
+}: ReaderToolsProps) {
+ if (displayMode && onDisplayModeChange) {
+  return (
+   <ReaderToolsContent
+    onOpenShadowing={onOpenShadowing}
+    displayMode={displayMode}
+    onDisplayModeChange={onDisplayModeChange}
+    persistentSettings={false}
+   />
+  );
+ }
+
+ return <ConnectedReaderTools onOpenShadowing={onOpenShadowing} />;
+}
+
+function ConnectedReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void }) {
+ const learning = useLearningState();
+ const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
+ const updateDisplayMode = (updates: Partial<LessonDisplayMode>) => {
+  learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
+ };
+
+ return (
+  <ReaderToolsContent
+   onOpenShadowing={onOpenShadowing}
+   displayMode={displayMode}
+   onDisplayModeChange={updateDisplayMode}
+   persistentSettings
+  />
+ );
+}
+
+function ReaderToolsContent({
+ onOpenShadowing,
+ displayMode,
+ onDisplayModeChange,
+ persistentSettings,
+}: {
+ onOpenShadowing?: () => void;
+ displayMode: LessonDisplayMode;
+ onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
+ persistentSettings: boolean;
+}) {
  const t = useTranslations("Reader.study.chrome.tools");
  const [sheetOpen, setSheetOpen] = useState(false);
  const commands = useReaderRuntimeCommands();
@@ -35,11 +90,6 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
  const loopCurrent = useReaderRuntimeSelector((state) => state.loopCurrent);
  const autoAdvance = useReaderRuntimeSelector((state) => state.autoAdvance);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
- const learning = useLearningState();
- const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
- const updateDisplayMode = (updates: Partial<typeof displayMode>) => {
-  learning.updateSettings({ lessonTextDisplayMode: { ...displayMode, ...updates } });
- };
 
  return (
   <>
@@ -87,7 +137,7 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
        {t("focus")}
       </DropdownMenuCheckboxItem>
       <DropdownMenuSeparator />
-      <HanziHomeReadingQuickSettingsMenu />
+      {persistentSettings ? <HanziHomeReadingQuickSettingsMenu /> : null}
      </DropdownMenuContent>
     </DropdownMenu>
    </div>
@@ -159,7 +209,7 @@ export function ReaderTools({ onOpenShadowing }: { onOpenShadowing?: () => void 
       </section>
 
       <Separator />
-      <ReadingSettingsTouchControls displayMode={displayMode} onChange={updateDisplayMode} />
+      <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
      </div>
     </SheetBody>
    </Sheet>

@@ -53,7 +53,11 @@ describe("navigation configuration", () => {
  it("keeps reading and HSK destinations inside the learning journey", () => {
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("reader");
   expect(navigationGroups[0]?.sections[0]?.itemIds).toContain("dailyReading");
-  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual(["hskReading", "hskGrammar"]);
+  expect(navigationGroups[0]?.sections[1]?.itemIds).toEqual([
+   "hskReading",
+   "hskGrammar",
+   "businessChinese",
+  ]);
  });
 
  it("keeps personal destinations together without a separate system group", () => {
@@ -82,6 +86,7 @@ describe("navigation configuration", () => {
   expect(navigationItems.hskReading.href).toBe("/hsk");
   expect(navigationItems.hskReading.aliases).toContain("/reader/hsk");
   expect(navigationItems.hskGrammar.href).toBe("/hsk/grammar");
+  expect(navigationItems.businessChinese.href).toBe("/hsk/han-thuong-mai");
  });
 
  it("hides engineering destinations without the HanziHome content capability", () => {

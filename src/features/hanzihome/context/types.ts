@@ -40,6 +40,7 @@ export type LearningSyncUiState = {
 export type ReviewItem = Pick<UserLearningState["reviewHistory"][number], "type" | "id" | "label">;
 
 export type HanziHomeFeatureRuntime = {
+ readOnly: boolean;
  originalLesson: HanziHomeLesson;
  lesson: HanziHomeLesson;
  learningState: UserLearningState;

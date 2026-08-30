@@ -17,10 +17,32 @@ import { Spinner } from "@/components/ui/spinner";
 import { Typography } from "@/components/ui/typography";
 import { HanziHomeReadingQuickSettingsMenu } from "@/features/hanzihome/HanziHomeReadingSettingsSection";
 import { ReadingSettingsTouchControls } from "@/features/hanzihome/components/reading/ReadingSettingsTouchControls";
-import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
-export function HanziHomeReadingSettingsTrigger() {
+export function HanziHomeReadingSettingsTrigger({
+ displayMode,
+ onDisplayModeChange,
+}: {
+ displayMode?: LessonDisplayMode;
+ onDisplayModeChange?: (updates: Partial<LessonDisplayMode>) => void;
+} = {}) {
+ if (displayMode && onDisplayModeChange) {
+  return (
+   <ReadOnlyReadingSettingsTrigger
+    displayMode={displayMode}
+    onDisplayModeChange={onDisplayModeChange}
+   />
+  );
+ }
+
+ return <ConnectedReadingSettingsTrigger />;
+}
+
+function ConnectedReadingSettingsTrigger() {
  const [sheetOpen, setSheetOpen] = useState(false);
  const learning = useLearningState();
  const displayMode = learning.state.settings.lessonTextDisplayMode ?? DEFAULT_LESSON_DISPLAY_MODE;
@@ -110,6 +132,63 @@ export function HanziHomeReadingSettingsTrigger() {
         Mở cài đặt đọc đầy đủ
        </Link>
       </DropdownMenuItem>
+     </DropdownMenuContent>
+    </DropdownMenu>
+   </div>
+  </>
+ );
+}
+
+function ReadOnlyReadingSettingsTrigger({
+ displayMode,
+ onDisplayModeChange,
+}: {
+ displayMode: LessonDisplayMode;
+ onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
+}) {
+ const [sheetOpen, setSheetOpen] = useState(false);
+
+ return (
+  <>
+   <div className="xl:hidden">
+    <Button
+     type="button"
+     variant="outline"
+     size="icon-toolbar"
+     aria-label="Thiết lập đọc"
+     title="Thiết lập đọc"
+     aria-haspopup="dialog"
+     aria-expanded={sheetOpen}
+     onClick={() => setSheetOpen(true)}
+    >
+     <Settings2 />
+    </Button>
+   </div>
+
+   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
+    <SheetHeader title="Thiết lập đọc" onClose={() => setSheetOpen(false)} />
+    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
+     <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+    </SheetBody>
+   </Sheet>
+
+   <div className="hidden xl:block">
+    <DropdownMenu>
+     <DropdownMenuTrigger asChild>
+      <Button
+       type="button"
+       variant="outline"
+       size="icon-toolbar"
+       aria-label="Thiết lập đọc"
+       title="Thiết lập đọc"
+      >
+       <Settings2 />
+      </Button>
+     </DropdownMenuTrigger>
+     <DropdownMenuContent align="end" width="lg">
+      <div className="p-3">
+       <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
+      </div>
      </DropdownMenuContent>
     </DropdownMenu>
    </div>
