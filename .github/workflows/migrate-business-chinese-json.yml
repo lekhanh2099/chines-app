@@ -1,0 +1,37 @@
+name: Migrate Business Chinese JSON
+
+on:
+ push:
+  branches:
+   - feature/han-thuong-mai-study
+
+permissions:
+ contents: write
+
+jobs:
+ migrate:
+  if: github.actor != 'github-actions[bot]'
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout feature branch
+     uses: actions/checkout@v4
+     with:
+      ref: feature/han-thuong-mai-study
+      fetch-depth: 0
+
+   - name: Generate direct JSON data
+     run: node scripts/migrate-business-chinese-json.mjs
+
+   - name: Remove one-time migration helpers
+     run: |
+      rm scripts/migrate-business-chinese-json.mjs
+      rm .github/workflows/migrate-business-chinese-json.yml
+
+   - name: Commit JSON migration
+     run: |
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      git add -A
+      git diff --cached --check
+      git commit -m "fix(business-chinese): replace compressed chunks with json"
+      git push origin HEAD:feature/han-thuong-mai-study
