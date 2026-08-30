@@ -1,0 +1,50 @@
+{
+ "lessonMeta": "{vocabulary} 个生词 · {sections} 个原文部分",
+ "controls": {
+  "pinyin": "拼音",
+  "meaning": "释义"
+ },
+ "tabs": {
+  "label": "商务汉语课程内容",
+  "lesson": "课文",
+  "vocabulary": "生词",
+  "grammar": "语法",
+  "practice": "练习"
+ },
+ "navigation": {
+  "books": "教材",
+  "lessonList": "课次",
+  "lessonShort": "第 {number} 课",
+  "previous": "上一课",
+  "next": "下一课"
+ },
+ "vocabulary": {
+  "title": "生词练习",
+  "modeLabel": "生词练习模式",
+  "modes": {
+   "list": "列表",
+   "flashcard": "闪卡",
+   "meaning": "选释义",
+   "hanzi": "写汉字"
+  },
+  "progress": "已记住 {known}/{total} 个词",
+  "reset": "清除进度",
+  "empty": "本课暂无可练习的生词数据。",
+  "known": "已记住",
+  "markKnown": "标记为已记住",
+  "reveal": "显示释义",
+  "chooseMeaning": "选择正确释义",
+  "typeHanzi": "根据释义和拼音输入汉字",
+  "hanziPlaceholder": "输入汉字",
+  "hanziInputLabel": "汉字答案",
+  "check": "检查",
+  "correct": "正确。",
+  "incorrect": "还不对。答案：{answer}",
+  "hanziIncorrect": "还不对。正确汉字：{answer}",
+  "nextQuestion": "下一题"
+ },
+ "audio": {
+  "play": "播放普通话",
+  "failed": "无法播放普通话语音。"
+ }
+}
