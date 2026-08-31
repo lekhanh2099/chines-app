@@ -130,6 +130,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain(
    'aria-label="Đọc tiếng Trung: 孙经理，我们公司的订单逐年增加，其中60%来自国外',
   );
+  expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
+  expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
   expect(markup).toContain('aria-label="Thiết lập đọc"');
  });
 

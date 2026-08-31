@@ -1,6 +1,14 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useState } from "react";
+import {
+ Fragment,
+ useCallback,
+ useEffect,
+ useMemo,
+ useState,
+ type KeyboardEvent,
+ type MouseEvent,
+} from "react";
 import { useSelector } from "@tanstack/react-store";
 import { BookOpen, LibraryBig } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -15,6 +23,7 @@ import {
 import { scrollAppContentToElement } from "@/components/layout/app-scroll";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
 import {
  Select,
@@ -44,13 +53,26 @@ import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsP
 import {
  analyzeContextualPronunciation,
  type ContextualPronunciationAnalysis,
+ type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
+import type { ReaderSurfacePronunciationTarget } from "@/features/hanzihome/reader/components/ReaderDocumentContent";
+import {
+ ReaderPronunciationReviewPopover,
+ type ReaderPronunciationSaveInput,
+} from "@/features/hanzihome/reader/components/ReaderPronunciationReviewPopover";
+import type { ReaderSegment } from "@/features/hanzihome/reader/model/reader-document.types";
+import {
+ ReaderPronunciationSessionProvider,
+ useReaderPronunciationSessionActions,
+ useReaderPronunciationSessionOverrides,
+} from "@/features/hanzihome/reader/runtime/reader-pronunciation-session";
 import type {
  BusinessChineseBookSummary,
  BusinessChineseLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 import { useRouter as useLocalizedRouter } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import { focusModeStore } from "@/stores/focus-mode-store";
 import { headerToolbarStore } from "@/stores/header-toolbar-store";
 
@@ -224,6 +246,7 @@ function BusinessChineseHeaderContextBridge({
 }
 
 function BusinessChineseText({
+ pronunciationId,
  text,
  displayMode,
  sourcePinyin,
@@ -231,6 +254,7 @@ function BusinessChineseText({
  weight,
  compactHanzi = false,
 }: {
+ pronunciationId: string;
  text: string;
  displayMode: LessonDisplayMode;
  sourcePinyin?: string;
@@ -238,15 +262,29 @@ function BusinessChineseText({
  weight?: TypographyProps<"div">["weight"];
  compactHanzi?: boolean;
 }) {
+ const pronunciationSessionActions = useReaderPronunciationSessionActions();
+ const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
+ const [pronunciationPreview, setPronunciationPreview] =
+  useState<ReaderSurfacePronunciationTarget | null>(null);
+ const segment = useMemo<ReaderSegment>(
+  () => ({
+   id: pronunciationId,
+   kind: "sentence",
+   zh: text,
+   pinyin: sourcePinyin,
+  }),
+  [pronunciationId, sourcePinyin, text],
+ );
  const analysis = useMemo(
   () =>
    containsHanziText(text)
     ? analyzeContextualPronunciation({
        text,
        sourcePinyin: displayMode.autoDetectPinyin ? null : (sourcePinyin ?? null),
+       overrides: pronunciationOverrides,
       })
     : null,
-  [displayMode.autoDetectPinyin, sourcePinyin, text],
+  [displayMode.autoDetectPinyin, pronunciationOverrides, sourcePinyin, text],
  );
  const contextualDisplayMode: LessonDisplayMode = useMemo(
   () => (compactHanzi ? { ...displayMode, hanziSize: "md" } : displayMode),
@@ -254,6 +292,43 @@ function BusinessChineseText({
  );
  const canShowPinyin =
   displayMode.showPinyin && (displayMode.autoDetectPinyin || Boolean(sourcePinyin?.trim()));
+ const inspectPronunciation = useCallback(
+  (glyph: ContextualPronunciationGlyph, rect: DOMRect) => {
+   if (analysis === null) return;
+   setPronunciationPreview({
+    segment,
+    index: 0,
+    analysis,
+    glyph,
+    rect,
+   });
+  },
+  [analysis, segment],
+ );
+ const savePronunciation = useCallback(
+  (input: ReaderPronunciationSaveInput) => {
+   pronunciationSessionActions.upsert(pronunciationId, text, input);
+   setPronunciationPreview(null);
+  },
+  [pronunciationId, pronunciationSessionActions, text],
+ );
+ const resetPronunciation = useCallback(() => {
+  if (pronunciationPreview === null) return;
+  const token = pronunciationPreview.analysis.tokens.find(
+   (item) =>
+    item.type === "hanzi" &&
+    item.start <= pronunciationPreview.glyph.start &&
+    item.end >= pronunciationPreview.glyph.end,
+  );
+  pronunciationSessionActions.remove(
+   pronunciationId,
+   token?.start ?? pronunciationPreview.glyph.start,
+   token?.end ?? pronunciationPreview.glyph.end,
+  );
+  setPronunciationPreview(null);
+ }, [pronunciationId, pronunciationPreview, pronunciationSessionActions]);
+ const pronunciationConfirmed =
+  pronunciationPreview?.glyph.evidence.includes("manual-override") ?? false;
 
  if (analysis === null) {
   return (
@@ -263,26 +338,40 @@ function BusinessChineseText({
   );
  }
 
- if (isChineseOnlyText(text)) {
-  return (
-   <ContextualReaderText
-    analysis={analysis}
-    displayMode={contextualDisplayMode}
-    showPinyin={canShowPinyin}
-    pinyinPresentation="ruby"
-    sourcePinyin={sourcePinyin}
-   />
-  );
- }
-
- return (
+ const content = isChineseOnlyText(text) ? (
+  <ContextualReaderText
+   analysis={analysis}
+   displayMode={contextualDisplayMode}
+   showPinyin={canShowPinyin}
+   pinyinPresentation="ruby"
+   sourcePinyin={sourcePinyin}
+   onGlyphInspect={inspectPronunciation}
+  />
+ ) : (
   <BusinessChineseMixedText
    analysis={analysis}
    displayMode={displayMode}
    showPinyin={canShowPinyin}
    variant={variant}
    weight={weight}
+   onGlyphInspect={inspectPronunciation}
   />
+ );
+
+ return (
+  <>
+   {content}
+   {pronunciationPreview ? (
+    <ReaderPronunciationReviewPopover
+     target={pronunciationPreview}
+     confirmed={pronunciationConfirmed}
+     saveScope="session"
+     onClose={() => setPronunciationPreview(null)}
+     onSave={savePronunciation}
+     onReset={pronunciationConfirmed ? resetPronunciation : undefined}
+    />
+   ) : null}
+  </>
  );
 }
 
@@ -292,13 +381,16 @@ function BusinessChineseMixedText({
  showPinyin,
  variant,
  weight,
+ onGlyphInspect,
 }: {
  analysis: ContextualPronunciationAnalysis;
  displayMode: LessonDisplayMode;
  showPinyin: boolean;
  variant: TypographyProps<"div">["variant"];
  weight?: TypographyProps<"div">["weight"];
+ onGlyphInspect: (glyph: ContextualPronunciationGlyph, rect: DOMRect) => void;
 }) {
+ const t = useTranslations("Reader.document.text");
  const glyphByStart = useMemo(
   () => new Map(analysis.glyphs.map((glyph) => [glyph.start, glyph])),
   [analysis.glyphs],
@@ -315,6 +407,11 @@ function BusinessChineseMixedText({
     if (glyph === undefined) {
      return <span key={`${grapheme.index}:${grapheme.segment}`}>{grapheme.segment}</span>;
     }
+    const needsPronunciationReview =
+     glyph.isPolyphonic &&
+     !glyph.evidence.includes("manual-override") &&
+     !glyph.evidence.includes("source-pinyin") &&
+     !glyph.evidence.includes("dictionary-exact");
 
     if (!showPinyin || glyph.spokenPinyin === null) {
      return (
@@ -334,7 +431,34 @@ function BusinessChineseMixedText({
        {grapheme.segment}
       </ReaderHanziText>
       <rt>
-       <PinyinText as="span" tone="accent" weight="semibold" scale="cloze">
+       <PinyinText
+        as="span"
+        tone="accent"
+        weight="semibold"
+        scale="cloze"
+        className={cn(
+         "cursor-pointer rounded-sm",
+         focusRingClassName,
+         needsPronunciationReview && "text-warning underline decoration-dotted underline-offset-2",
+        )}
+        role="button"
+        tabIndex={0}
+        aria-label={
+         needsPronunciationReview
+          ? t("inspectUnconfirmedPinyin", { character: grapheme.segment })
+          : t("inspectPinyin", { character: grapheme.segment })
+        }
+        title={glyph.alternatives.length > 1 ? glyph.alternatives.join(", ") : undefined}
+        onClick={(event: MouseEvent<HTMLElement>) => {
+         event.stopPropagation();
+         onGlyphInspect(glyph, event.currentTarget.getBoundingClientRect());
+        }}
+        onKeyDown={(event: KeyboardEvent<HTMLElement>) => {
+         if (event.key !== "Enter" && event.key !== " ") return;
+         event.preventDefault();
+         onGlyphInspect(glyph, event.currentTarget.getBoundingClientRect());
+        }}
+       >
         {glyph.spokenPinyin}
        </PinyinText>
       </rt>
@@ -346,6 +470,7 @@ function BusinessChineseMixedText({
 }
 
 function SpeakableBusinessChineseText({
+ pronunciationId,
  text,
  displayMode,
  sourcePinyin,
@@ -353,6 +478,7 @@ function SpeakableBusinessChineseText({
  weight,
  compactHanzi,
 }: {
+ pronunciationId: string;
  text: string;
  displayMode: LessonDisplayMode;
  sourcePinyin?: string;
@@ -366,6 +492,7 @@ function SpeakableBusinessChineseText({
   <div className="flex min-w-0 items-start gap-2">
    <div className="min-w-0 flex-1">
     <BusinessChineseText
+     pronunciationId={pronunciationId}
      text={text}
      displayMode={displayMode}
      sourcePinyin={sourcePinyin}
@@ -412,6 +539,7 @@ function BusinessChineseTable({
         className="border-b border-border-default px-3 py-2 align-top"
        >
         <BusinessChineseText
+         pronunciationId={`${block.id}:header:${cellIndex}`}
          text={headers[cellIndex] ?? ""}
          displayMode={displayMode}
          variant="label"
@@ -435,6 +563,7 @@ function BusinessChineseTable({
           </PinyinText>
          ) : (
           <SpeakableBusinessChineseText
+           pronunciationId={`${block.id}:row:${rowIndex}:cell:${cellIndex}`}
            text={row[cellIndex] ?? ""}
            displayMode={displayMode}
            sourcePinyin={
@@ -473,7 +602,12 @@ function BusinessChineseExercise({
  return (
   <Card variant="subtle" padding="sm">
    <div className="grid min-w-0 gap-2">
-    <SpeakableBusinessChineseText text={prompt} displayMode={displayMode} compactHanzi />
+    <SpeakableBusinessChineseText
+     pronunciationId={`${block.id}:prompt`}
+     text={prompt}
+     displayMode={displayMode}
+     compactHanzi
+    />
     {!displayMode.showAnswers ? (
      <Button
       type="button"
@@ -488,7 +622,12 @@ function BusinessChineseExercise({
     ) : null}
     {answerVisible ? (
      <div className="border-t border-border-default pt-2">
-      <SpeakableBusinessChineseText text={answer} displayMode={displayMode} compactHanzi />
+      <SpeakableBusinessChineseText
+       pronunciationId={`${block.id}:answer`}
+       text={answer}
+       displayMode={displayMode}
+       compactHanzi
+      />
      </div>
     ) : null}
    </div>
@@ -497,6 +636,7 @@ function BusinessChineseExercise({
 }
 
 function BusinessChineseTextBlock({
+ pronunciationId,
  text,
  translation,
  displayMode,
@@ -504,6 +644,7 @@ function BusinessChineseTextBlock({
  variant,
  weight,
 }: {
+ pronunciationId: string;
  text: string;
  translation?: string;
  displayMode: LessonDisplayMode;
@@ -554,7 +695,11 @@ function BusinessChineseTextBlock({
          {translationTurn.content}
         </TranslationText>
        ) : (
-        <BusinessChineseText text={sourceTurn.content} displayMode={revealDisplayMode} />
+        <BusinessChineseText
+         pronunciationId={pronunciationId}
+         text={sourceTurn.content}
+         displayMode={revealDisplayMode}
+        />
        )}
       </div>
       {speechSegments.length > 0 ? (
@@ -574,6 +719,7 @@ function BusinessChineseTextBlock({
     </div>
    ) : (
     <SpeakableBusinessChineseText
+     pronunciationId={pronunciationId}
      text={sourceTurn.content}
      displayMode={displayMode}
      compactHanzi={compactHanzi}
@@ -603,6 +749,7 @@ function BusinessChineseSection({
   <section id={section.id} className="grid min-w-0 scroll-mt-3 gap-4">
    <header>
     <SpeakableBusinessChineseText
+     pronunciationId={`${section.id}:title`}
      text={stripLeadingEmoji(section.title)}
      displayMode={displayMode}
      variant="sectionTitle"
@@ -619,6 +766,7 @@ function BusinessChineseSection({
       return (
        <BusinessChineseTextBlock
         key={block.id}
+        pronunciationId={block.id}
         text={block.text}
         translation={translations.get(block.id)}
         displayMode={displayMode}
@@ -634,6 +782,7 @@ function BusinessChineseSection({
      return (
       <BusinessChineseTextBlock
        key={block.id}
+       pronunciationId={block.id}
        text={block.text}
        translation={translations.get(block.id)}
        displayMode={displayMode}
@@ -775,6 +924,22 @@ export function BusinessChineseStudyWorkspace({
  books: BusinessChineseBookSummary[];
  lesson: BusinessChineseLesson;
 }) {
+ return (
+  <MandarinTtsProvider>
+   <ReaderPronunciationSessionProvider key={lesson.id}>
+    <BusinessChineseStudyWorkspaceContent books={books} lesson={lesson} />
+   </ReaderPronunciationSessionProvider>
+  </MandarinTtsProvider>
+ );
+}
+
+function BusinessChineseStudyWorkspaceContent({
+ books,
+ lesson,
+}: {
+ books: BusinessChineseBookSummary[];
+ lesson: BusinessChineseLesson;
+}) {
  const t = useTranslations("BusinessChinese");
  const [activeView, setActiveView] = useState("all");
  const [displayMode, setDisplayMode] = useState(businessChineseDisplayMode);
@@ -837,7 +1002,7 @@ export function BusinessChineseStudyWorkspace({
  };
 
  return (
-  <MandarinTtsProvider>
+  <>
    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
@@ -871,6 +1036,7 @@ export function BusinessChineseStudyWorkspace({
             {lesson.bookLabel} · {t("lessonPosition", { lesson: lesson.number })}
            </Typography>
            <BusinessChineseText
+            pronunciationId={`${lesson.id}:title`}
             text={lessonTitle.source}
             displayMode={displayMode}
             variant="pageTitle"
@@ -921,6 +1087,6 @@ export function BusinessChineseStudyWorkspace({
      </Tabs>
     </div>
    </div>
-  </MandarinTtsProvider>
+  </>
  );
 }
