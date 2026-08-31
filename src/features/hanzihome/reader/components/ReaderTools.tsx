@@ -24,6 +24,7 @@ import {
  type LessonDisplayMode,
 } from "@/features/hanzihome/components/lesson-overview/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { useCoarsePointer } from "@/hooks/useCoarsePointer";
 import {
  useReaderRuntimeActions,
  useReaderRuntimeCommands,
@@ -85,6 +86,7 @@ function ReaderToolsContent({
 }) {
  const t = useTranslations("Reader.study.chrome.tools");
  const [sheetOpen, setSheetOpen] = useState(false);
+ const isCoarsePointer = useCoarsePointer();
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
  const loopCurrent = useReaderRuntimeSelector((state) => state.loopCurrent);
@@ -93,7 +95,7 @@ function ReaderToolsContent({
 
  return (
   <>
-   <div className="hidden xl:block">
+   {!isCoarsePointer ? (
     <DropdownMenu>
      <DropdownMenuTrigger asChild>
       <Button type="button" variant="outline" size="toolbar">
@@ -140,79 +142,79 @@ function ReaderToolsContent({
       {persistentSettings ? <HanziHomeReadingQuickSettingsMenu /> : null}
      </DropdownMenuContent>
     </DropdownMenu>
-   </div>
+   ) : (
+    <>
+     <Button
+      type="button"
+      variant="outline"
+      size="toolbar"
+      aria-haspopup="dialog"
+      aria-expanded={sheetOpen}
+      onClick={() => setSheetOpen(true)}
+     >
+      <Settings2 data-icon="inline-start" />
+      <span className="hidden sm:inline">{t("title")}</span>
+      <span className="sm:hidden">{t("shortTitle")}</span>
+     </Button>
 
-   <div className="xl:hidden">
-    <Button
-     type="button"
-     variant="outline"
-     size="toolbar"
-     aria-haspopup="dialog"
-     aria-expanded={sheetOpen}
-     onClick={() => setSheetOpen(true)}
-    >
-     <Settings2 data-icon="inline-start" />
-     <span className="hidden sm:inline">{t("title")}</span>
-     <span className="sm:hidden">{t("shortTitle")}</span>
-    </Button>
-   </div>
+     <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
+      <SheetHeader title={t("title")} onClose={() => setSheetOpen(false)} />
+      <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
+       <div className="grid gap-5">
+        <section className="grid gap-3">
+         <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
+          {t("listening")}
+         </Typography>
+         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
+           <Play data-icon="inline-start" />
+           {t("playAll")}
+          </Button>
+          <Button
+           type="button"
+           variant={loopCurrent ? "active" : "surfaceCard"}
+           size="touch"
+           aria-pressed={loopCurrent}
+           onClick={() => actions.toggleLoop()}
+          >
+           <Repeat2 data-icon="inline-start" />
+           {t("loop")}
+          </Button>
+          <Button
+           type="button"
+           variant={autoAdvance ? "active" : "surfaceCard"}
+           size="touch"
+           aria-pressed={autoAdvance}
+           onClick={() => actions.toggleAutoAdvance()}
+          >
+           <ListEnd data-icon="inline-start" />
+           {t("autoAdvance")}
+          </Button>
+          {onOpenShadowing ? (
+           <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
+            {t("shadowing")}
+           </Button>
+          ) : null}
+          <Button
+           type="button"
+           variant={focusMode ? "active" : "surfaceCard"}
+           size="touch"
+           aria-pressed={focusMode}
+           onClick={() => actions.toggleFocus()}
+          >
+           <Focus data-icon="inline-start" />
+           {t("focus")}
+          </Button>
+         </div>
+        </section>
 
-   <Sheet open={sheetOpen} onOpenChange={setSheetOpen} side="bottom" height="tall">
-    <SheetHeader title={t("title")} onClose={() => setSheetOpen(false)} />
-    <SheetBody className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
-     <div className="grid gap-5">
-      <section className="grid gap-3">
-       <Typography as="h3" variant="cardTitle" tone="muted" weight="black" transform="uppercase">
-        {t("listening")}
-       </Typography>
-       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-        <Button type="button" variant="surfaceCard" size="touch" onClick={commands.playAll}>
-         <Play data-icon="inline-start" />
-         {t("playAll")}
-        </Button>
-        <Button
-         type="button"
-         variant={loopCurrent ? "active" : "surfaceCard"}
-         size="touch"
-         aria-pressed={loopCurrent}
-         onClick={() => actions.toggleLoop()}
-        >
-         <Repeat2 data-icon="inline-start" />
-         {t("loop")}
-        </Button>
-        <Button
-         type="button"
-         variant={autoAdvance ? "active" : "surfaceCard"}
-         size="touch"
-         aria-pressed={autoAdvance}
-         onClick={() => actions.toggleAutoAdvance()}
-        >
-         <ListEnd data-icon="inline-start" />
-         {t("autoAdvance")}
-        </Button>
-        {onOpenShadowing ? (
-         <Button type="button" variant="surfaceCard" size="touch" onClick={onOpenShadowing}>
-          {t("shadowing")}
-         </Button>
-        ) : null}
-        <Button
-         type="button"
-         variant={focusMode ? "active" : "surfaceCard"}
-         size="touch"
-         aria-pressed={focusMode}
-         onClick={() => actions.toggleFocus()}
-        >
-         <Focus data-icon="inline-start" />
-         {t("focus")}
-        </Button>
+        <Separator />
+        <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
        </div>
-      </section>
-
-      <Separator />
-      <ReadingSettingsTouchControls displayMode={displayMode} onChange={onDisplayModeChange} />
-     </div>
-    </SheetBody>
-   </Sheet>
+      </SheetBody>
+     </Sheet>
+    </>
+   )}
   </>
  );
 }

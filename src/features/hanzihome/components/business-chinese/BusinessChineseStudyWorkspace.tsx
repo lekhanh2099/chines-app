@@ -1304,11 +1304,13 @@ function BusinessChineseStudyWorkspaceContent({
           </div>
          </Card>
 
-         <BusinessChineseReaderCommandBar
-          readerDocument={readerDocument}
-          displayMode={displayMode}
-          onDisplayModeChange={updateDisplayMode}
-         />
+         {activeView === "text" ? (
+          <BusinessChineseReaderCommandBar
+           readerDocument={readerDocument}
+           displayMode={displayMode}
+           onDisplayModeChange={updateDisplayMode}
+          />
+         ) : null}
 
          <div
           className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[minmax(0,1fr)_15rem]")}

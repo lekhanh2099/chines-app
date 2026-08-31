@@ -72,11 +72,9 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("GIỚI THIỆU TỔNG QUAN");
   expect(markup).toContain("BÀI KHÓA CHÍNH");
   expect(markup).toContain("电话会议");
-  expect(markup).toContain("Đoạn 1 /");
-  expect(markup).toContain("Nghe bài");
-  expect(markup).toContain("Công cụ học");
-  expect(markup).toContain("sticky top-0 z-20");
-  expect(markup).not.toContain("sticky top-12 z-20");
+  expect(markup).not.toContain("Đoạn 1 /");
+  expect(markup).not.toContain("Nghe bài");
+  expect(markup).not.toContain("Công cụ học");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
   expect(markup).toContain('lang="zh-Latn-pinyin"');
@@ -142,7 +140,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   );
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
   expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
-  expect(markup).toContain("Công cụ học");
+  expect(markup).not.toContain("Công cụ học");
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {
