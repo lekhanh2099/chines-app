@@ -1124,7 +1124,7 @@ function BusinessChineseReaderCommandBar({
    <ReaderCommandBar
     segmentCount={readerDocument.segments.length}
     onOpenOutline={() => setOutlineOpen(true)}
-    stickyOffset="tabs"
+    stickyOffset="page"
     displayMode={displayMode}
     onDisplayModeChange={onDisplayModeChange}
     outlineMenu={(onNavigate) => (

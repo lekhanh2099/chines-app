@@ -75,6 +75,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Đoạn 1 /");
   expect(markup).toContain("Nghe bài");
   expect(markup).toContain("Công cụ học");
+  expect(markup).toContain("sticky top-0 z-20");
+  expect(markup).not.toContain("sticky top-12 z-20");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
   expect(markup).toContain('lang="zh-Latn-pinyin"');
