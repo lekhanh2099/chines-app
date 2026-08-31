@@ -5,6 +5,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
+import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import {
  getBusinessChineseCatalog,
@@ -35,6 +36,10 @@ vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem
  },
 }));
 
+vi.mock("@/features/hanzihome/reader/components/ReaderTools", () => ({
+ ReaderTools: () => <button type="button">Công cụ học</button>,
+}));
+
 import { BusinessChineseStudyWorkspace } from "./BusinessChineseStudyWorkspace";
 
 function renderWorkspace(element: ReactNode) {
@@ -43,7 +48,7 @@ function renderWorkspace(element: ReactNode) {
    locale="vi"
    messages={{
     BusinessChinese: businessChineseMessages,
-    Reader: { document: readerDocumentMessages },
+    Reader: { document: readerDocumentMessages, study: readerStudyMessages },
    }}
    timeZone="Asia/Ho_Chi_Minh"
   >
@@ -67,6 +72,9 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("GIỚI THIỆU TỔNG QUAN");
   expect(markup).toContain("BÀI KHÓA CHÍNH");
   expect(markup).toContain("电话会议");
+  expect(markup).toContain("Đoạn 1 /");
+  expect(markup).toContain("Nghe bài");
+  expect(markup).toContain("Công cụ học");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
   expect(markup).toContain('lang="zh-Latn-pinyin"');
@@ -132,7 +140,7 @@ describe("BusinessChineseStudyWorkspace", () => {
   );
   expect(markup).toContain('aria-label="Pinyin chữ 行 cần kiểm tra"');
   expect(markup).toContain("text-warning underline decoration-dotted underline-offset-2");
-  expect(markup).toContain('aria-label="Thiết lập đọc"');
+  expect(markup).toContain("Công cụ học");
  });
 
  it("renders inline lesson translations with the same speaker and TTS structure", () => {

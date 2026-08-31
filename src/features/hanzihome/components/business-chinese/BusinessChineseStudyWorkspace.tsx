@@ -20,11 +20,15 @@ import {
  AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/app-header-breadcrumb";
-import { scrollAppContentToElement } from "@/components/layout/app-scroll";
+import {
+ getScrollContainerForTarget,
+ scrollAppContentToElement,
+} from "@/components/layout/app-scroll";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
 import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import {
  Select,
  SelectContent,
@@ -47,7 +51,7 @@ import {
  TranslationText,
 } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import type { LessonDisplayMode } from "@/features/hanzihome/components/lesson-overview/types";
-import { HanziHomeReadOnlyReadingSettingsTrigger } from "@/features/hanzihome/components/layout/HanziHomeReadOnlyReadingSettingsTrigger";
+import { getActiveCharacterIndex } from "@/features/hanzihome/components/lesson-overview/ProgressiveStudyText";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 import { MandarinTtsProvider } from "@/features/hanzihome/listening/MandarinTtsProvider";
 import {
@@ -56,17 +60,28 @@ import {
  type ContextualPronunciationGlyph,
 } from "@/features/hanzihome/pronunciation/contextual-pronunciation";
 import { ContextualReaderText } from "@/features/hanzihome/reader/ContextualReaderText";
+import { ReaderCommandBar } from "@/features/hanzihome/reader/components/ReaderCommandBar";
 import type { ReaderSurfacePronunciationTarget } from "@/features/hanzihome/reader/components/ReaderDocumentContent";
+import { ReaderOutlineContent } from "@/features/hanzihome/reader/components/ReaderOutline";
 import {
  ReaderPronunciationReviewPopover,
  type ReaderPronunciationSaveInput,
 } from "@/features/hanzihome/reader/components/ReaderPronunciationReviewPopover";
-import type { ReaderSegment } from "@/features/hanzihome/reader/model/reader-document.types";
+import type {
+ ReaderDocumentModel,
+ ReaderSegment,
+} from "@/features/hanzihome/reader/model/reader-document.types";
 import {
  ReaderPronunciationSessionProvider,
  useReaderPronunciationSessionActions,
  useReaderPronunciationSessionOverrides,
 } from "@/features/hanzihome/reader/runtime/reader-pronunciation-session";
+import {
+ ReaderRuntimeProvider,
+ useReaderRuntimeActions,
+ useReaderRuntimeCommands,
+ useReaderRuntimeSelector,
+} from "@/features/hanzihome/reader/runtime/ReaderRuntimeProvider";
 import type {
  BusinessChineseBookSummary,
  BusinessChineseLesson,
@@ -154,6 +169,99 @@ function getChineseSpeechSegments(value: string) {
 
 function isChineseOnlyText(value: string) {
  return value.replace(nonChineseTextPattern, "").trim().length === value.trim().length;
+}
+
+function buildBusinessChineseReaderDocument(
+ lesson: BusinessChineseLesson,
+ activeView: string,
+): ReaderDocumentModel {
+ const segments: ReaderSegment[] = [];
+ const sections: ReaderDocumentModel["sections"][number][] = [];
+
+ for (const section of lesson.sections) {
+  if (
+   section.title.includes("DỊCH BÀI KHÓA") ||
+   section.blocks.length === 0 ||
+   (activeView !== "all" && section.category !== activeView)
+  ) {
+   continue;
+  }
+
+  const segmentIds: string[] = [];
+  for (const block of section.blocks) {
+   if (block.type === "table") {
+    const headers = block.rows[0] ?? [];
+    const pinyinColumnIndex = headers.findIndex((header) => /pinyin/iu.test(header));
+    const hanziColumnIndex = headers.findIndex((header) =>
+     /tiếng trung|giản thể|hán tự|từ vựng/iu.test(header),
+    );
+    block.rows.slice(1).forEach((row, rowIndex) => {
+     row.forEach((cell, cellIndex) => {
+      if (cellIndex === pinyinColumnIndex) return;
+      const speechSegments = getChineseSpeechSegments(cell);
+      if (speechSegments.length === 0) return;
+      const id = `${block.id}:row:${rowIndex}:cell:${cellIndex}`;
+      const speechText = speechSegments.join(" ");
+      segmentIds.push(id);
+      segments.push({
+       id,
+       kind: "sentence",
+       sectionId: section.id,
+       zh: speechText,
+       pinyin:
+        cellIndex === hanziColumnIndex && pinyinColumnIndex >= 0
+         ? row[pinyinColumnIndex]
+         : undefined,
+       speechText,
+      });
+     });
+    });
+    continue;
+   }
+
+   const blockText =
+    section.category === "practice" && block.text.includes("→")
+     ? block.text.slice(0, block.text.indexOf("→")).trim()
+     : block.text;
+   const sourceText = splitDialogueTurn(splitTrailingTranslation(blockText).source).content;
+   const speechSegments = getChineseSpeechSegments(sourceText);
+   if (speechSegments.length === 0) continue;
+   const id =
+    section.category === "practice" && block.text.includes("→") ? `${block.id}:prompt` : block.id;
+   const speechText = speechSegments.join(" ");
+   segmentIds.push(id);
+   segments.push({
+    id,
+    kind: block.type === "subheading" ? "heading" : "sentence",
+    sectionId: section.id,
+    zh: speechText,
+    speechText,
+   });
+  }
+
+  if (segmentIds.length > 0) {
+   sections.push({
+    id: section.id,
+    title: stripLeadingEmoji(section.title),
+    segmentIds,
+   });
+  }
+ }
+
+ return {
+  id: `${lesson.id}:${activeView}`,
+  language: "zh-CN",
+  source: {
+   kind: "lesson",
+   sourceId: lesson.id,
+   label: lesson.title,
+  },
+  title: lesson.title,
+  sections,
+  segments,
+  metadata: [],
+  capabilities: ["pinyin", "translation"],
+ };
 }
 
 function BusinessChineseHeaderContextBridge({
@@ -264,6 +372,20 @@ function BusinessChineseText({
 }) {
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
  const pronunciationOverrides = useReaderPronunciationSessionOverrides(pronunciationId);
+ const readerCommands = useReaderRuntimeCommands();
+ const readerSegmentIndex = useReaderRuntimeSelector((state) =>
+  state.segmentIds.indexOf(pronunciationId),
+ );
+ const playbackProgress = useReaderRuntimeSelector((state) =>
+  state.playbackSegmentId === pronunciationId && state.playbackStatus !== "idle"
+   ? state.progress
+   : -1,
+ );
+ const playbackStartOffset = useReaderRuntimeSelector((state) =>
+  state.playbackSegmentId === pronunciationId && state.playbackStatus !== "idle"
+   ? state.playbackStartOffset
+   : 0,
+ );
  const [pronunciationPreview, setPronunciationPreview] =
   useState<ReaderSurfacePronunciationTarget | null>(null);
  const segment = useMemo<ReaderSegment>(
@@ -292,6 +414,16 @@ function BusinessChineseText({
  );
  const canShowPinyin =
   displayMode.showPinyin && (displayMode.autoDetectPinyin || Boolean(sourcePinyin?.trim()));
+ const playbackStartCharacterIndex = Array.from(text.slice(0, playbackStartOffset)).length;
+ const activeCharacterIndex =
+  playbackProgress >= 0
+   ? getActiveCharacterIndex(
+      Array.from(text).length,
+      playbackStartCharacterIndex,
+      Math.max(0, Array.from(text).length - playbackStartCharacterIndex),
+      playbackProgress,
+     )
+   : -1;
  const inspectPronunciation = useCallback(
   (glyph: ContextualPronunciationGlyph, rect: DOMRect) => {
    if (analysis === null) return;
@@ -345,6 +477,12 @@ function BusinessChineseText({
    showPinyin={canShowPinyin}
    pinyinPresentation="ruby"
    sourcePinyin={sourcePinyin}
+   activeCharacterIndex={activeCharacterIndex}
+   onGlyphClick={
+    readerSegmentIndex >= 0
+     ? (start) => readerCommands.playFromCharacter(readerSegmentIndex, start)
+     : undefined
+   }
    onGlyphInspect={inspectPronunciation}
   />
  ) : (
@@ -489,7 +627,7 @@ function SpeakableBusinessChineseText({
  const speechSegments = getChineseSpeechSegments(text);
 
  return (
-  <div className="flex min-w-0 items-start gap-2">
+  <div id={pronunciationId} className="flex min-w-0 scroll-mt-24 items-start gap-2">
    <div className="min-w-0 flex-1">
     <BusinessChineseText
      pronunciationId={pronunciationId}
@@ -674,7 +812,10 @@ function BusinessChineseTextBlock({
      : t("actions.revealMeaning");
 
  return (
-  <div className="grid min-w-0 gap-1.5">
+  <div
+   id={progressiveReveal ? pronunciationId : undefined}
+   className="grid min-w-0 scroll-mt-24 gap-1.5"
+  >
    {sourceTurn.speaker ? (
     <HanziAwareText
      as="span"
@@ -917,6 +1058,92 @@ function DesktopSectionNavigation({
  );
 }
 
+function BusinessChineseReaderCommandBar({
+ readerDocument,
+ displayMode,
+ onDisplayModeChange,
+}: {
+ readerDocument: ReaderDocumentModel;
+ displayMode: LessonDisplayMode;
+ onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
+}) {
+ const [outlineOpen, setOutlineOpen] = useState(false);
+ const actions = useReaderRuntimeActions();
+ const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
+ const positionSource = useReaderRuntimeSelector((state) => state.positionSource);
+
+ useEffect(() => {
+  if (positionSource !== "command" && positionSource !== "playback") return;
+  const segment = readerDocument.segments[activeIndex];
+  if (!segment) return;
+  scrollAppContentToElement(window.document.getElementById(segment.id), {
+   behavior: "smooth",
+   block: "center",
+  });
+ }, [activeIndex, positionSource, readerDocument.segments]);
+
+ useEffect(() => {
+  const firstSegment = readerDocument.segments[0];
+  const firstElement = firstSegment ? window.document.getElementById(firstSegment.id) : null;
+  const container = getScrollContainerForTarget(firstElement);
+  if (!container || readerDocument.segments.length === 0) return;
+  let animationFrame = 0;
+  const updatePosition = () => {
+   cancelAnimationFrame(animationFrame);
+   animationFrame = requestAnimationFrame(() => {
+    const containerRect = container.getBoundingClientRect();
+    const readingLine = containerRect.top + Math.min(160, containerRect.height * 0.25);
+    let closestId: string | null = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
+    for (const segment of readerDocument.segments) {
+     const element = window.document.getElementById(segment.id);
+     if (!element) continue;
+     const rect = element.getBoundingClientRect();
+     if (rect.bottom < containerRect.top || rect.top > containerRect.bottom) continue;
+     const distance = Math.abs(rect.top - readingLine);
+     if (distance < closestDistance) {
+      closestDistance = distance;
+      closestId = segment.id;
+     }
+    }
+    if (closestId) actions.selectSegment(closestId, "scroll");
+   });
+  };
+  container.addEventListener("scroll", updatePosition, { passive: true });
+  updatePosition();
+  return () => {
+   cancelAnimationFrame(animationFrame);
+   container.removeEventListener("scroll", updatePosition);
+  };
+ }, [actions, readerDocument.segments]);
+
+ if (readerDocument.segments.length === 0) return null;
+
+ return (
+  <>
+   <ReaderCommandBar
+    segmentCount={readerDocument.segments.length}
+    onOpenOutline={() => setOutlineOpen(true)}
+    stickyOffset="tabs"
+    displayMode={displayMode}
+    onDisplayModeChange={onDisplayModeChange}
+    outlineMenu={(onNavigate) => (
+     <ReaderOutlineContent document={readerDocument} onNavigate={onNavigate} />
+    )}
+   />
+   <Sheet open={outlineOpen} onOpenChange={setOutlineOpen} side="right" className="sm:max-w-md">
+    <SheetHeader
+     title={readerDocument.title ?? readerDocument.source.label ?? ""}
+     onClose={() => setOutlineOpen(false)}
+    />
+    <SheetBody>
+     <ReaderOutlineContent document={readerDocument} onNavigate={() => setOutlineOpen(false)} />
+    </SheetBody>
+   </Sheet>
+  </>
+ );
+}
+
 export function BusinessChineseStudyWorkspace({
  books,
  lesson,
@@ -924,10 +1151,24 @@ export function BusinessChineseStudyWorkspace({
  books: BusinessChineseBookSummary[];
  lesson: BusinessChineseLesson;
 }) {
+ const [activeView, setActiveView] = useState("all");
+ const readerDocument = useMemo(
+  () => buildBusinessChineseReaderDocument(lesson, activeView),
+  [activeView, lesson],
+ );
+
  return (
   <MandarinTtsProvider>
    <ReaderPronunciationSessionProvider key={lesson.id}>
-    <BusinessChineseStudyWorkspaceContent books={books} lesson={lesson} />
+    <ReaderRuntimeProvider key={readerDocument.id} document={readerDocument}>
+     <BusinessChineseStudyWorkspaceContent
+      books={books}
+      lesson={lesson}
+      activeView={activeView}
+      onActiveViewChange={setActiveView}
+      readerDocument={readerDocument}
+     />
+    </ReaderRuntimeProvider>
    </ReaderPronunciationSessionProvider>
   </MandarinTtsProvider>
  );
@@ -936,14 +1177,20 @@ export function BusinessChineseStudyWorkspace({
 function BusinessChineseStudyWorkspaceContent({
  books,
  lesson,
+ activeView,
+ onActiveViewChange,
+ readerDocument,
 }: {
  books: BusinessChineseBookSummary[];
  lesson: BusinessChineseLesson;
+ activeView: string;
+ onActiveViewChange: (value: string) => void;
+ readerDocument: ReaderDocumentModel;
 }) {
  const t = useTranslations("BusinessChinese");
- const [activeView, setActiveView] = useState("all");
  const [displayMode, setDisplayMode] = useState(businessChineseDisplayMode);
  const [sidebarOpen, setSidebarOpen] = useState(true);
+ const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const pairedTranslations = useMemo(() => {
   const translations = new Map<string, string>();
   const translationIndex = lesson.sections.findIndex((section) =>
@@ -986,14 +1233,9 @@ function BusinessChineseStudyWorkspaceContent({
  );
  const intro = lesson.intro.join(" ");
  const lessonTitle = splitTrailingTranslation(lessonDisplayTitle(lesson.title));
- const readingSettings = (
-  <HanziHomeReadOnlyReadingSettingsTrigger
-   displayMode={displayMode}
-   onDisplayModeChange={(updates: Partial<LessonDisplayMode>) => {
-    setDisplayMode((current) => ({ ...current, ...updates }));
-   }}
-  />
- );
+ const updateDisplayMode = (updates: Partial<LessonDisplayMode>) => {
+  setDisplayMode((current) => ({ ...current, ...updates }));
+ };
  const selectSection = (sectionId: string) => {
   scrollAppContentToElement(document.getElementById(sectionId), {
    behavior: "smooth",
@@ -1009,7 +1251,7 @@ function BusinessChineseStudyWorkspaceContent({
      <Tabs
       value={activeView}
       items={tabs}
-      onValueChange={setActiveView}
+      onValueChange={onActiveViewChange}
       aria-label={t("tabsLabel")}
       className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
       listClassName="hanzihome-liquid-toolbar flex-wrap overflow-x-visible md:flex-nowrap md:overflow-x-auto"
@@ -1022,12 +1264,13 @@ function BusinessChineseStudyWorkspaceContent({
         sidebarSummary={t("sectionCount", {
          count: visibleSections.length,
         })}
-        sidebarOpen={sidebarOpen}
-        onSidebarOpenChange={setSidebarOpen}
+        sidebarOpen={focusMode ? false : sidebarOpen}
+        onSidebarOpenChange={(open) => {
+         if (!focusMode) setSidebarOpen(open);
+        }}
         sidebar={<BusinessChineseSidebar books={books} lesson={lesson} />}
         sidebarRail={<LibraryBig />}
         sidebarSelectionKey={lesson.id}
-        actions={readingSettings}
        >
         <div className="grid min-w-0 gap-3 pb-4">
          <Card variant="section" padding="md">
@@ -1061,9 +1304,19 @@ function BusinessChineseStudyWorkspaceContent({
           </div>
          </Card>
 
-         <div className="grid min-w-0 gap-3 2xl:grid-cols-[minmax(0,1fr)_15rem]">
+         <BusinessChineseReaderCommandBar
+          readerDocument={readerDocument}
+          displayMode={displayMode}
+          onDisplayModeChange={updateDisplayMode}
+         />
+
+         <div
+          className={cn("grid min-w-0 gap-3", !focusMode && "2xl:grid-cols-[minmax(0,1fr)_15rem]")}
+         >
           <div className="grid min-w-0 gap-3">
-           <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
+           {!focusMode ? (
+            <MobileSectionNavigation sections={visibleSections} onSelect={selectSection} />
+           ) : null}
            <Card variant="section" padding="md" className="min-w-0">
             <div className="grid min-w-0 gap-6">
              {visibleSections.map((section, index) => (
@@ -1079,7 +1332,9 @@ function BusinessChineseStudyWorkspaceContent({
             </div>
            </Card>
           </div>
-          <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
+          {!focusMode ? (
+           <DesktopSectionNavigation sections={visibleSections} onSelect={selectSection} />
+          ) : null}
          </div>
         </div>
        </LessonModuleFrame>
