@@ -4,10 +4,6 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
-import {
- getScrollContainerForTarget,
- scrollAppContentToElement,
-} from "@/components/layout/app-scroll";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetBody, SheetHeader } from "@/components/ui/sheet";
 import { Typography } from "@/components/ui/typography";
@@ -26,6 +22,7 @@ import {
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "../runtime/ReaderRuntimeProvider";
+import { useReaderPositionSync } from "../runtime/useReaderPositionSync";
 import { ReaderCommandBar, type ReaderToolbarStickyOffset } from "./ReaderCommandBar";
 import {
  ReaderDocumentContent,
@@ -151,8 +148,6 @@ function ReaderSurfaceViewContent({
  const commands = useReaderRuntimeCommands();
  const actions = useReaderRuntimeActions();
  const pronunciationSessionActions = useReaderPronunciationSessionActions();
- const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
- const positionSource = useReaderRuntimeSelector((state) => state.positionSource);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const playbackStatus = useReaderRuntimeSelector((state) => state.playbackStatus);
  const error = useReaderRuntimeSelector((state) => state.error);
@@ -201,6 +196,12 @@ function ReaderSurfaceViewContent({
  const pronunciationPreviewConfirmed =
   pronunciationPreview?.glyph.evidence.includes("manual-override") ?? false;
 
+ const getSegmentElement = useCallback(
+  (segmentId: string) => segmentElementsRef.current.get(segmentId) ?? null,
+  [],
+ );
+ useReaderPositionSync({ document, getSegmentElement });
+
  useEffect(() => {
   if (
    !resolvedInitialFocus ||
@@ -244,53 +245,6 @@ function ReaderSurfaceViewContent({
   });
   return () => cancelAnimationFrame(frame);
  }, [commands, document.id, document.segments, resolvedInitialFocus]);
-
- useEffect(() => {
-  if (positionSource !== "command" && positionSource !== "playback") return;
-  const segment = document.segments[activeIndex];
-  if (!segment) return;
-  scrollAppContentToElement(segmentElementsRef.current.get(segment.id) ?? null, {
-   behavior: "smooth",
-   block: "center",
-  });
- }, [activeIndex, document.segments, positionSource]);
-
- useEffect(() => {
-  const firstSegment = document.segments[0];
-  const firstElement = firstSegment
-   ? (segmentElementsRef.current.get(firstSegment.id) ?? null)
-   : null;
-  const container = getScrollContainerForTarget(firstElement);
-  if (!container || document.segments.length === 0) return;
-  let animationFrame = 0;
-  const updatePosition = () => {
-   cancelAnimationFrame(animationFrame);
-   animationFrame = requestAnimationFrame(() => {
-    const containerRect = container.getBoundingClientRect();
-    const readingLine = containerRect.top + Math.min(160, containerRect.height * 0.25);
-    let closestId: string | null = null;
-    let closestDistance = Number.POSITIVE_INFINITY;
-    for (const segment of document.segments) {
-     const element = segmentElementsRef.current.get(segment.id);
-     if (!element) continue;
-     const rect = element.getBoundingClientRect();
-     if (rect.bottom < containerRect.top || rect.top > containerRect.bottom) continue;
-     const distance = Math.abs(rect.top - readingLine);
-     if (distance < closestDistance) {
-      closestDistance = distance;
-      closestId = segment.id;
-     }
-    }
-    if (closestId) actions.selectSegment(closestId, "scroll");
-   });
-  };
-  container.addEventListener("scroll", updatePosition, { passive: true });
-  updatePosition();
-  return () => {
-   cancelAnimationFrame(animationFrame);
-   container.removeEventListener("scroll", updatePosition);
-  };
- }, [actions, document.segments]);
 
  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
   const target = event.target;

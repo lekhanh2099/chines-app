@@ -79,7 +79,7 @@ describe("HanziHomeReadingSettingsTrigger", () => {
   expect(markup).toContain("Cách mở nội dung");
   expect(markup).toContain("Hiển thị");
   expect(markup).toContain("Tự nhận diện pinyin");
-  expect(markup).toContain("Tắt để dùng pinyin có sẵn trong bài");
+  expect(markup).toContain("Ưu tiên pinyin có sẵn nếu căn được");
   expect(markup).not.toContain("Reader.study.chrome.tools.autoPinyin");
   expect(markup).toContain("Mở cài đặt đọc đầy đủ");
   expect(markup).toContain("hidden xl:block");

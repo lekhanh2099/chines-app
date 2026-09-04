@@ -20,10 +20,7 @@ import {
  AppHeaderBreadcrumbPage,
  AppHeaderBreadcrumbSeparator,
 } from "@/components/layout/app-header-breadcrumb";
-import {
- getScrollContainerForTarget,
- scrollAppContentToElement,
-} from "@/components/layout/app-scroll";
+import { scrollAppContentToElement } from "@/components/layout/app-scroll";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { focusRingClassName } from "@/components/ui/focus-ring";
@@ -78,10 +75,10 @@ import {
 } from "@/features/hanzihome/reader/runtime/reader-pronunciation-session";
 import {
  ReaderRuntimeProvider,
- useReaderRuntimeActions,
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "@/features/hanzihome/reader/runtime/ReaderRuntimeProvider";
+import { useReaderPositionSync } from "@/features/hanzihome/reader/runtime/useReaderPositionSync";
 import type {
  BusinessChineseBookSummary,
  BusinessChineseLesson,
@@ -1068,54 +1065,11 @@ function BusinessChineseReaderCommandBar({
  onDisplayModeChange: (updates: Partial<LessonDisplayMode>) => void;
 }) {
  const [outlineOpen, setOutlineOpen] = useState(false);
- const actions = useReaderRuntimeActions();
- const activeIndex = useReaderRuntimeSelector((state) => state.activeIndex);
- const positionSource = useReaderRuntimeSelector((state) => state.positionSource);
-
- useEffect(() => {
-  if (positionSource !== "command" && positionSource !== "playback") return;
-  const segment = readerDocument.segments[activeIndex];
-  if (!segment) return;
-  scrollAppContentToElement(window.document.getElementById(segment.id), {
-   behavior: "smooth",
-   block: "center",
-  });
- }, [activeIndex, positionSource, readerDocument.segments]);
-
- useEffect(() => {
-  const firstSegment = readerDocument.segments[0];
-  const firstElement = firstSegment ? window.document.getElementById(firstSegment.id) : null;
-  const container = getScrollContainerForTarget(firstElement);
-  if (!container || readerDocument.segments.length === 0) return;
-  let animationFrame = 0;
-  const updatePosition = () => {
-   cancelAnimationFrame(animationFrame);
-   animationFrame = requestAnimationFrame(() => {
-    const containerRect = container.getBoundingClientRect();
-    const readingLine = containerRect.top + Math.min(160, containerRect.height * 0.25);
-    let closestId: string | null = null;
-    let closestDistance = Number.POSITIVE_INFINITY;
-    for (const segment of readerDocument.segments) {
-     const element = window.document.getElementById(segment.id);
-     if (!element) continue;
-     const rect = element.getBoundingClientRect();
-     if (rect.bottom < containerRect.top || rect.top > containerRect.bottom) continue;
-     const distance = Math.abs(rect.top - readingLine);
-     if (distance < closestDistance) {
-      closestDistance = distance;
-      closestId = segment.id;
-     }
-    }
-    if (closestId) actions.selectSegment(closestId, "scroll");
-   });
-  };
-  container.addEventListener("scroll", updatePosition, { passive: true });
-  updatePosition();
-  return () => {
-   cancelAnimationFrame(animationFrame);
-   container.removeEventListener("scroll", updatePosition);
-  };
- }, [actions, readerDocument.segments]);
+ const getSegmentElement = useCallback(
+  (segmentId: string) => window.document.getElementById(segmentId),
+  [],
+ );
+ useReaderPositionSync({ document: readerDocument, getSegmentElement });
 
  if (readerDocument.segments.length === 0) return null;
 

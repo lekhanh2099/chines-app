@@ -101,6 +101,27 @@ describe("progressive study text", () => {
   expect(markup).toContain("yí gè rén。");
  });
 
+ it("keeps aligned source pinyin when automatic analysis is enabled", () => {
+  const markup = renderToStaticMarkup(
+   createElement(ProgressiveStudyText, {
+    zh: "既然你的盾坚固得什么",
+    pinyin: "Jìrán nǐ de dùn jiāngù de shénme",
+    displayMode: {
+     showPinyin: true,
+     autoDetectPinyin: true,
+     showMeaning: false,
+     showAnswers: false,
+     hanziFont: "songti",
+     hanziSize: "lg",
+     revealMode: "always",
+    },
+   }),
+  );
+
+  expect(markup).toContain("de");
+  expect(markup).not.toContain("dé");
+ });
+
  it("does not invent pinyin when source mode has no stored pinyin", () => {
   const markup = renderToStaticMarkup(
    createElement(ProgressiveStudyText, {

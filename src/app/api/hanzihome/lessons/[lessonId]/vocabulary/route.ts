@@ -1,5 +1,8 @@
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
-import { getStaticStudioLessonDetail } from "@/features/hanzihome/static-json/studio-static-content";
+import {
+ getPublishedStudioLessonVocabulary,
+ isPublishedStudioContentId,
+} from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
  privateNoStoreJson,
@@ -14,16 +17,10 @@ type RouteContext = { params: Promise<{ lessonId: string }> };
 export async function GET(_request: Request, context: RouteContext) {
  try {
   const { lessonId } = await context.params;
-  if (lessonId.startsWith("hanzihome-studio-")) {
-   const lesson = getStaticStudioLessonDetail(lessonId);
-   if (!lesson) return apiError("Lesson not found", 404, "LESSON_NOT_FOUND");
-   return privateNoStoreJson({
-    resource: {
-     lessonId,
-     items: lesson.vocab,
-     total: lesson.vocab.length,
-    },
-   });
+  if (isPublishedStudioContentId(lessonId)) {
+   const resource = getPublishedStudioLessonVocabulary(lessonId);
+   if (!resource) return apiError("Lesson not found", 404, "LESSON_NOT_FOUND");
+   return privateNoStoreJson({ resource });
   }
 
   const auth = await requireAuthenticatedRoute();

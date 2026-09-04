@@ -3,6 +3,7 @@
 import { Typography } from "@/components/ui/typography";
 import { Card } from "@/components/ui/card";
 import type { JsonFieldValue, JsonValue } from "@/types/json";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { MandarinSpeakButton } from "@/features/hanzihome/listening/MandarinSpeakButton";
 
@@ -40,6 +41,7 @@ export function PassageCard({
  lessonId?: string;
  showTitle?: boolean;
 }) {
+ const t = useTranslations("Reader.study.chrome.tools");
  const [manualAnswerListOpen, setManualAnswerListOpen] = useState(false);
  const passageRecord = asRecord(passage);
  const rendering = asRecord(passageRecord.rendering);
@@ -118,6 +120,11 @@ export function PassageCard({
   completedPassageTextFromFields ||
   completedTextFromPassageLines(passageLines, answerMap, rendererId) ||
   (completedInlinePassageText !== inlinePassageSource ? completedInlinePassageText : "");
+ const playbackSegments = passageLines.length
+  ? passageLines
+     .map((line) => fillClozeBlanksWithAnswers(line.zh, answerMap, rendererId).trim())
+     .filter(Boolean)
+  : [completedPassageText || passageText || clozeText].filter(Boolean);
 
  const hasMainPayload =
   Boolean(passageTitle) ||
@@ -134,18 +141,27 @@ export function PassageCard({
 
  return (
   <Card variant="section" padding="md" className="grid gap-3">
-   {((showTitle && passageTitle) || instructionText) && (
-    <div className="grid gap-1">
-     {showTitle && passageTitle && (
-      <Typography as="h5" variant="cardTitle" tone="default" weight="black">
-       {passageTitle}
-      </Typography>
-     )}
-     {instructionText && (
-      <StudyInstructionText tone="muted" weight="semibold">
-       {instructionText}
-      </StudyInstructionText>
-     )}
+   {((showTitle && passageTitle) || instructionText || playbackSegments.length > 1) && (
+    <div className="flex min-w-0 flex-wrap items-start justify-between gap-2">
+     <div className="grid min-w-0 gap-1">
+      {showTitle && passageTitle && (
+       <Typography as="h5" variant="cardTitle" tone="default" weight="black">
+        {passageTitle}
+       </Typography>
+      )}
+      {instructionText && (
+       <StudyInstructionText tone="muted" weight="semibold">
+        {instructionText}
+       </StudyInstructionText>
+      )}
+     </div>
+     {playbackSegments.length > 1 ? (
+      <MandarinSpeakButton
+       text={playbackSegments.join("\n")}
+       segments={playbackSegments}
+       actionLabel={t("playAll")}
+      />
+     ) : null}
     </div>
    )}
 

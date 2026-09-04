@@ -1,5 +1,5 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
  ExerciseSchema,
@@ -13,6 +13,10 @@ import { ExerciseRenderIssues } from "./exercise-section/ExerciseRenderIssues";
 import { AdaptiveStudyText } from "./hanzi-typography";
 import { ReadingCard } from "./ReadingSection";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "./types";
+
+vi.mock("next-intl", () => ({
+ useTranslations: () => (key: string) => (key === "playAll" ? "Đọc cả bài" : key),
+}));
 
 describe("ExerciseCard", () => {
  it("uses the Chinese exercise title instead of page metadata mislabeled as Vietnamese", () => {
@@ -128,7 +132,10 @@ describe("ExerciseCard", () => {
    order: 1,
    title: "综合填空：拔苗助长",
    title_vi: "Bài đọc điền từ: Nhổ mầm giúp cây lớn",
-   paragraphs: [{ id: "paragraph-01", order: 1, zh: "有个性急的人。" }],
+   paragraphs: [
+    { id: "paragraph-01", order: 1, zh: "有个性急的人。" },
+    { id: "paragraph-02", order: 2, zh: "他每天给禾苗浇水。" },
+   ],
   });
   const item = ExerciseSchema.parse({
    id: "lesson-07-exercise-09",
@@ -152,6 +159,7 @@ describe("ExerciseCard", () => {
   );
 
   expect(html.split("Bài đọc điền từ: Nhổ mầm giúp cây lớn")).toHaveLength(2);
+  expect(html).toContain("Đọc cả bài");
  });
 
  it("reports a missing cloze marker when a linked reading passage is plain text", () => {

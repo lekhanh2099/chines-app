@@ -1,5 +1,8 @@
 import { hanzihomeContentRepository } from "@/features/hanzihome/repositories/hanzihome-content-repository";
-import { getStaticStudioLessonDetail } from "@/features/hanzihome/static-json/studio-static-content";
+import {
+ getPublishedStudioLessonDetail,
+ isPublishedStudioContentId,
+} from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
  privateNoStoreJson,
@@ -18,8 +21,8 @@ type RouteContext = {
 export async function GET(_request: Request, context: RouteContext) {
  try {
   const { lessonId } = await context.params;
-  if (lessonId.startsWith("hanzihome-studio-")) {
-   const lesson = getStaticStudioLessonDetail(lessonId);
+  if (isPublishedStudioContentId(lessonId)) {
+   const lesson = getPublishedStudioLessonDetail(lessonId);
    if (!lesson) return apiError("Lesson not found", 404, "LESSON_NOT_FOUND");
    return privateNoStoreJson({ lesson });
   }

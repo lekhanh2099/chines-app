@@ -160,7 +160,7 @@ describe("LessonReadingSettings", () => {
   expect(automaticPinyinControl).toBeDefined();
   expect(automaticPinyinControl).not.toContain(' disabled=""');
   expect(markup).toContain("Tự nhận diện pinyin");
-  expect(markup).toContain("Tắt để dùng pinyin có sẵn trong bài");
+  expect(markup).toContain("Ưu tiên pinyin có sẵn nếu căn được");
   expect(markup).not.toContain("Reader.study.chrome.tools.autoPinyin");
  });
 });

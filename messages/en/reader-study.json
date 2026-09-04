@@ -47,7 +47,7 @@
    "focus": "Focus",
    "shadowing": "Shadowing",
    "autoPinyin": "Auto-detect pinyin",
-   "autoPinyinDescription": "Turn off to use the lesson's source pinyin; turn on for contextual analysis by the app."
+   "autoPinyinDescription": "Use aligned source pinyin first; the app analyzes any remaining text in context."
   },
   "outline": {
    "segments": "Segment outline",

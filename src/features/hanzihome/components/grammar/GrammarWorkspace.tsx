@@ -21,6 +21,7 @@ import {
  LessonModuleFrame,
  LessonModuleSidebarRailItem,
 } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
+import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
 
 type GrammarWorkspaceProps = {
  compact?: boolean;
@@ -38,7 +39,7 @@ export function GrammarWorkspace({ compact = false }: GrammarWorkspaceProps) {
  const selectedPointId = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSelectedPointId,
  );
- const editMode = useHanziHomeEditMode() && !lesson.id.startsWith("hanzihome-studio-");
+ const editMode = useHanziHomeEditMode() && !isPublishedStudioContentId(lesson.id);
  const isGrammarSidebarOpen = useHanziHomeFeatureSelector(
   (featureState) => featureState.grammarSidebarOpen,
  );

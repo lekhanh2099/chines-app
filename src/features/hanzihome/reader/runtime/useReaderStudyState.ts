@@ -96,7 +96,7 @@ export function useReaderStudyState(
    const analysis = analyzeContextualPronunciation(
     {
      text: paragraph.zh,
-     sourcePinyin: displayMode.autoDetectPinyin ? null : paragraph.pinyin || null,
+     sourcePinyin: paragraph.pinyin || null,
      overrides: paragraphOverrides.map((override) => ({
       id: override.id,
       text: override.text,

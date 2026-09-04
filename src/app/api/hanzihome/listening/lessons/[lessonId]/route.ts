@@ -1,5 +1,8 @@
 import { fetchListeningLessonBundle } from "@/features/hanzihome/listening/listening.repository";
-import { getStaticStudioListeningLessonBundle } from "@/features/hanzihome/static-json/studio-static-content";
+import {
+ getPublishedStudioListeningLessonBundle,
+ isPublishedStudioDictationLessonId,
+} from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
  privateNoStoreJson,
@@ -16,8 +19,8 @@ type RouteContext = {
 export async function GET(_request: Request, context: RouteContext) {
  try {
   const { lessonId } = await context.params;
-  if (lessonId.startsWith("hanzihome-studio-dictation:")) {
-   const bundle = getStaticStudioListeningLessonBundle(lessonId);
+  if (isPublishedStudioDictationLessonId(lessonId)) {
+   const bundle = getPublishedStudioListeningLessonBundle(lessonId);
    if (!bundle) {
     return apiError("Listening lesson not found", 404, "LISTENING_LESSON_NOT_FOUND");
    }

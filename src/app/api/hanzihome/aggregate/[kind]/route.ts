@@ -3,7 +3,10 @@ import {
  AggregateKindSchema,
  type AggregateFilters,
 } from "@/features/hanzihome/repositories/hanzihome-content-resources";
-import { getStaticStudioAggregateItems } from "@/features/hanzihome/static-json/studio-static-content";
+import {
+ getPublishedStudioAggregateItems,
+ isPublishedStudioAggregateScope,
+} from "@/features/hanzihome/static-json/studio-published-content.server";
 import {
  apiError,
  privateNoStoreJson,
@@ -35,9 +38,8 @@ export async function GET(request: Request, context: RouteContext) {
    lessonId: url.searchParams.get("lessonId") ?? "",
    q: url.searchParams.get("q") ?? "",
   };
-  const scopedId = filters.courseId || filters.bookId || filters.lessonId;
-  const staticItems = getStaticStudioAggregateItems({ kind: kind.data, filters });
-  if (scopedId?.startsWith("hanzihome-studio-")) {
+  const staticItems = getPublishedStudioAggregateItems({ kind: kind.data, filters });
+  if (isPublishedStudioAggregateScope(filters)) {
    return privateNoStoreJson({ items: staticItems });
   }
 

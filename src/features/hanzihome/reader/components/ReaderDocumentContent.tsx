@@ -348,7 +348,7 @@ const ReaderSegmentText = memo(function ReaderSegmentText({
   return analyzeContextualPronunciation(
    {
     text: segment.zh,
-    sourcePinyin: displayMode.autoDetectPinyin ? null : sourcePinyin,
+    sourcePinyin,
     overrides: localPronunciationOverrides,
    },
    pronunciationDictionary,

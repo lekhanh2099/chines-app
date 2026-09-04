@@ -15,6 +15,7 @@ import type {
  LibraryCourseGroupKey,
 } from "@/features/hanzihome/components/library/library-course-groups";
 import type { HanziHomeCourseBook, HanziHomeLesson } from "@/features/hanzihome/types";
+import { isPublishedStudioContentId } from "@/features/hanzihome/static-json/studio-published-content-id";
 
 const groupIcons = {
  hanyu: LibraryBig,
@@ -86,7 +87,7 @@ export function CourseCollectionSection({
     <div className="grid gap-4" aria-labelledby={`${group.key}-collection-heading`}>
      {coursesWithBooks.map(
       ({ course, books: courseBooks, lessons: courseLessons }, courseIndex) => {
-       const canEditCourse = editMode && !course.id.startsWith("hanzihome-studio-");
+       const canEditCourse = editMode && !isPublishedStudioContentId(course.id);
 
        return (
         <section key={course.id} aria-labelledby={`${course.id}-heading`} className="grid gap-3">
