@@ -3,6 +3,13 @@
 import { StudyInstructionText } from "@/features/hanzihome/components/lesson-overview/hanzi-typography";
 import { Typography } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
 import type { ReviewDeckMode } from "@/features/hanzihome/hooks/useVocabReviewSession";
 import { deckModeOptions } from "./reviewDeckModes";
 
@@ -30,6 +37,7 @@ export function ReviewHeader({
      weight="black"
      tracking="extraLoose"
      transform="uppercase"
+     className="hidden sm:block"
     >
      Ôn tập
     </StudyInstructionText>
@@ -44,18 +52,41 @@ export function ReviewHeader({
    </div>
 
    {modes.length > 1 && (
-    <div className="flex flex-wrap gap-2">
-     {modes.map((item) => (
-      <Button
-       key={item.value}
-       type="button"
-       variant={mode === item.value ? "active" : "outline"}
-       onClick={() => onModeChange(item.value)}
+    <>
+     <div className="w-full sm:hidden">
+      <Select
+       value={mode}
+       onValueChange={(value) => {
+        const selectedMode = modes.find((item) => item.value === value);
+        if (selectedMode) onModeChange(selectedMode.value);
+       }}
       >
-       {item.label}
-      </Button>
-     ))}
-    </div>
+       <SelectTrigger width="full" size="sm" aria-label={title}>
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent>
+        {modes.map((item) => (
+         <SelectItem key={item.value} value={item.value}>
+          {item.label}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </div>
+     <div className="hidden flex-wrap gap-2 sm:flex">
+      {modes.map((item) => (
+       <Button
+        key={item.value}
+        type="button"
+        variant={mode === item.value ? "active" : "outline"}
+        aria-pressed={mode === item.value}
+        onClick={() => onModeChange(item.value)}
+       >
+        {item.label}
+       </Button>
+      ))}
+     </div>
+    </>
    )}
   </div>
  );

@@ -1173,13 +1173,27 @@ function BusinessChineseStudyWorkspaceContent({
    <BusinessChineseHeaderContextBridge books={books} lesson={lesson} />
    <div className="hanzihome-static-page hanzihome-workspace-page min-w-0">
     <div className="hanzihome-workspace-shell flex w-full max-w-full flex-col gap-2.5">
+     <div className="shrink-0 sm:hidden">
+      <Select value={activeView} onValueChange={onActiveViewChange}>
+       <SelectTrigger aria-label={t("tabsLabel")} width="full" size="sm">
+        <SelectValue />
+       </SelectTrigger>
+       <SelectContent>
+        {tabs.map((tab) => (
+         <SelectItem key={tab.key} value={tab.key}>
+          {tab.label}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </div>
      <Tabs
       value={activeView}
       items={tabs}
       onValueChange={onActiveViewChange}
       aria-label={t("tabsLabel")}
-      className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden"
-      listClassName="hanzihome-liquid-toolbar flex-wrap overflow-x-visible md:flex-nowrap md:overflow-x-auto"
+      className="grid h-full min-h-0 grid-rows-[minmax(0,1fr)] gap-2 overflow-hidden sm:grid-rows-[auto_minmax(0,1fr)]"
+      listClassName="hanzihome-liquid-toolbar hidden sm:flex"
      >
       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
        <LessonModuleFrame
@@ -1196,9 +1210,14 @@ function BusinessChineseStudyWorkspaceContent({
         sidebar={<BusinessChineseSidebar books={books} lesson={lesson} />}
         sidebarRail={<LibraryBig />}
         sidebarSelectionKey={lesson.id}
+        showMobileHeader={false}
        >
         <div className="grid min-w-0 gap-3 pb-4">
-         <Card variant="section" padding="md">
+         <Card
+          variant="section"
+          padding="md"
+          className={activeView === "text" ? "hidden sm:block" : undefined}
+         >
           <div className="grid min-w-0 gap-2">
            <Typography variant="overline" tone="muted">
             {lesson.bookLabel} · {t("lessonPosition", { lesson: lesson.number })}

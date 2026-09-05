@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextIntlClientProvider } from "next-intl";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
@@ -47,6 +47,11 @@ vi.mock("../runtime/ReaderRuntimeProvider", () => ({
 }));
 
 import { ReaderTools } from "./ReaderTools";
+import { ReaderCommandBar } from "./ReaderCommandBar";
+
+afterEach(() => {
+ pointerState.coarse = false;
+});
 
 function renderReaderTools() {
  return renderToStaticMarkup(
@@ -61,6 +66,27 @@ function renderReaderTools() {
 }
 
 describe("ReaderTools", () => {
+ it("keeps the full accessible segment label and mobile controls in the shared toolbar", () => {
+  const markup = renderToStaticMarkup(
+   <NextIntlClientProvider
+    locale="vi"
+    messages={{ Reader: { study: readerStudyMessages } }}
+    timeZone="Asia/Ho_Chi_Minh"
+   >
+    <ReaderCommandBar
+     segmentCount={14}
+     onOpenOutline={vi.fn()}
+     displayMode={DEFAULT_LESSON_DISPLAY_MODE}
+     onDisplayModeChange={vi.fn()}
+    />
+   </NextIntlClientProvider>,
+  );
+  expect(markup).toContain("sr-only sm:not-sr-only");
+  expect(markup).toContain("Đoạn 1 / 14");
+  expect(markup).toContain('aria-label="Nghe bài"');
+  expect(markup).toContain('aria-label="Công cụ học"');
+  expect(markup).toContain("hidden sm:inline-flex");
+ });
  it("uses the desktop dropdown for mouse and trackpad input regardless of viewport width", () => {
   pointerState.coarse = false;
 

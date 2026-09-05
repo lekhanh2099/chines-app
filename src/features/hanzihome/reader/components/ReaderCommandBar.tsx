@@ -26,9 +26,7 @@ import {
  useReaderRuntimeCommands,
  useReaderRuntimeSelector,
 } from "../runtime/ReaderRuntimeProvider";
-import { ReaderTools } from "./ReaderTools";
-
-const readerRateOptions: readonly number[] = [0.75, 0.9, 1, 1.1, 1.25];
+import { ReaderTools, readerRateOptions } from "./ReaderTools";
 
 export type ReaderToolbarStickyOffset = "none" | "page" | "tabs";
 
@@ -90,9 +88,14 @@ export function ReaderCommandBar({
 
  return (
   <Card variant="section" padding="sm" className={stickyClassName[stickyOffset]}>
-   <div className="flex min-w-0 flex-wrap items-center gap-2">
+   <div className="flex min-w-0 items-center gap-1 sm:flex-wrap sm:gap-2">
     <Typography variant="caption" tone="muted" weight="black" className="mr-auto">
-     {t("segment", { current: activeIndex + 1, total: segmentCount })}
+     <span className="sr-only sm:not-sr-only">
+      {t("segment", { current: activeIndex + 1, total: segmentCount })}
+     </span>
+     <span className="whitespace-nowrap sm:hidden" aria-hidden="true">
+      {activeIndex + 1} / {segmentCount}
+     </span>
     </Typography>
     <Button
      type="button"
@@ -112,7 +115,7 @@ export function ReaderCommandBar({
      onClick={togglePlayback}
     >
      <PlaybackIcon data-icon="inline-start" />
-     {playbackLabel}
+     <span className="hidden sm:inline">{playbackLabel}</span>
     </Button>
     <Button
      type="button"
@@ -121,6 +124,7 @@ export function ReaderCommandBar({
      aria-label={t("restart")}
      title={t("restart")}
      onClick={commands.restartCurrent}
+     className="hidden sm:inline-flex"
     >
      <RotateCcw />
     </Button>
@@ -132,6 +136,7 @@ export function ReaderCommandBar({
      aria-label={t("stopReading")}
      title={t("stopReading")}
      onClick={commands.stop}
+     className="hidden sm:inline-flex"
     >
      <Square />
     </Button>
@@ -145,18 +150,20 @@ export function ReaderCommandBar({
     >
      <ChevronRight />
     </Button>
-    <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
-     <SelectTrigger size="sm" aria-label={t("rate")}>
-      <SelectValue />
-     </SelectTrigger>
-     <SelectContent align="end">
-      {readerRateOptions.map((option) => (
-       <SelectItem key={option} value={String(option)}>
-        {option.toFixed(2)}x
-       </SelectItem>
-      ))}
-     </SelectContent>
-    </Select>
+    <div className="hidden sm:block">
+     <Select value={String(rate)} onValueChange={(value) => commands.setRate(Number(value))}>
+      <SelectTrigger size="sm" aria-label={t("rate")}>
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end">
+       {readerRateOptions.map((option) => (
+        <SelectItem key={option} value={String(option)}>
+         {option.toFixed(2)}x
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+    </div>
     {useOutlineDropdown ? (
      <Popover.Root open={outlineMenuOpen} onOpenChange={setOutlineMenuOpen} modal={false}>
       <Popover.Trigger

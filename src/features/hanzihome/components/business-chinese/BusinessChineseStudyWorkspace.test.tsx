@@ -60,7 +60,8 @@ vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem
  },
 }));
 
-vi.mock("@/features/hanzihome/reader/components/ReaderTools", () => ({
+vi.mock("@/features/hanzihome/reader/components/ReaderTools", async (importOriginal) => ({
+ ...(await importOriginal<typeof import("@/features/hanzihome/reader/components/ReaderTools")>()),
  ReaderTools: () => <button type="button">Công cụ học</button>,
 }));
 
@@ -99,6 +100,8 @@ describe("BusinessChineseStudyWorkspace", () => {
   expect(markup).toContain("Đoạn 1 /");
   expect(markup).toContain("Nghe bài");
   expect(markup).toContain("Công cụ học");
+  expect(markup.includes(`aria-label="${businessChineseMessages.tabsLabel}"`)).toBe(true);
+  expect(markup).not.toContain("lucide-panel-left-open");
   expect(markup).toContain("<ruby");
   expect(markup).toContain('lang="zh-CN"');
   expect(markup).toContain('lang="zh-Latn-pinyin"');

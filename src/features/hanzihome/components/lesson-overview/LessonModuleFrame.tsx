@@ -42,6 +42,7 @@ type LessonModuleFrameProps = {
  actions?: ReactNode;
  children: ReactNode;
  compact?: boolean;
+ showMobileHeader?: boolean;
  sidebarSelectionKey?: z.infer<z.ZodNullable<z.ZodString>>;
  mobileNavigation?: {
   label: string;
@@ -91,6 +92,7 @@ export function LessonModuleFrame({
  actions,
  children,
  compact = false,
+ showMobileHeader = true,
  sidebarSelectionKey,
  mobileNavigation,
 }: LessonModuleFrameProps) {
@@ -180,9 +182,10 @@ export function LessonModuleFrame({
      compact
       ? "grid gap-3"
       : "grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-1 overflow-hidden sm:gap-2 xl:gap-0",
+     !showMobileHeader && "grid-rows-[minmax(0,1fr)]",
     )}
    >
-    {compact ? (
+    {!showMobileHeader ? null : compact ? (
      <div className="sticky top-0 z-20">{mobileHeader}</div>
     ) : mobileNavigation ? null : (
      <div className="xl:hidden">{mobileHeader}</div>

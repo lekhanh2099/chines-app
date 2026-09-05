@@ -13,6 +13,7 @@ vi.mock("@/features/hanzihome/listening/MandarinSpeakButton", () => ({
 }));
 
 import { StudyReviewCard } from "./StudyReviewCard";
+import { ReviewHeader } from "./ReviewHeader";
 
 const source = hanziHomeVocabItemSchema.parse({
  id: "review-vocab-01",
@@ -50,6 +51,24 @@ const touchHandlers = {
 };
 
 describe("StudyReviewCard", () => {
+ it("renders a compact mobile deck selector and keeps the desktop filters", () => {
+  const html = renderToStaticMarkup(<ReviewHeader mode="grammar" onModeChange={vi.fn()} />);
+  expect(html).toContain('role="combobox"');
+  expect(html).toContain('aria-label="Ôn tập chủ động"');
+  expect(html).toContain("hidden flex-wrap gap-2 sm:flex");
+  expect(html).toContain('aria-pressed="true"');
+  expect(html).toContain("Ngữ pháp");
+ });
+ it("does not offer a mode selector when the review is restricted to one deck", () => {
+  const html = renderToStaticMarkup(
+   <ReviewHeader
+    mode="vocab"
+    modes={[{ value: "vocab", label: "Từ vựng" }]}
+    onModeChange={vi.fn()}
+   />,
+  );
+  expect(html).not.toContain('role="combobox"');
+ });
  it("keeps the reveal action and TTS button as sibling controls", () => {
   const html = renderToStaticMarkup(
    <StudyReviewCard
