@@ -10,7 +10,6 @@ import {
  type MouseEvent,
 } from "react";
 import { useSelector } from "@tanstack/react-store";
-import { BookOpen, LibraryBig } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import {
@@ -36,8 +35,6 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Typography, type TypographyProps } from "@/components/ui/typography";
-import { LessonModuleFrame } from "@/features/hanzihome/components/lesson-overview/LessonModuleFrame";
-import { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import {
  containsHanziText,
  HanziAwareText,
@@ -989,65 +986,6 @@ function BusinessChineseSection({
  );
 }
 
-function BusinessChineseSidebar({
- books,
- lesson,
-}: {
- books: TextbookBookSummary[];
- lesson: TextbookLesson;
-}) {
- const t = useTranslations("BusinessChinese");
- const router = useLocalizedRouter();
- const selectedBook = books.find((book) => book.key === lesson.bookKey);
-
- return (
-  <div className="grid min-w-0 gap-3">
-   <div className="grid gap-1.5">
-    <Typography variant="overline" tone="muted">
-     {t("bookLabel")}
-    </Typography>
-    <Select
-     value={lesson.bookKey}
-     onValueChange={(bookKey) => {
-      const book = books.find((item) => item.key === bookKey);
-      if (!book) return;
-      router.push(buildTextbookHref(book.key, 1), {
-       scroll: false,
-      });
-     }}
-    >
-     <SelectTrigger aria-label={t("bookSelectLabel")} width="full">
-      <SelectValue />
-     </SelectTrigger>
-     <SelectContent>
-      {books.map((book) => (
-       <SelectItem key={book.id} value={book.key}>
-        {book.label}
-       </SelectItem>
-      ))}
-     </SelectContent>
-    </Select>
-   </div>
-   <div className="grid gap-1">
-    {selectedBook?.lessons.map((item) => (
-     <LessonModuleSidebarItem
-      key={item.id}
-      selected={item.id === lesson.id}
-      title={`${item.number}. ${lessonDisplayTitle(item.title)}`}
-      marker={t("vocabCount", { count: item.vocabCount })}
-      icon={<BookOpen />}
-      onClick={() => {
-       router.push(buildTextbookHref(item.bookKey, item.number), {
-        scroll: false,
-       });
-      }}
-     />
-    ))}
-   </div>
-  </div>
- );
-}
-
 function MobileSectionNavigation({
  sections,
  onSelect,
@@ -1160,7 +1098,6 @@ function BusinessChineseStudyWorkspaceContent({
   () => buildBusinessChineseReaderDocument(lesson, "text"),
   [lesson],
  );
- const [sidebarOpen, setSidebarOpen] = useState(true);
  const focusMode = useReaderRuntimeSelector((state) => state.focusMode);
  const pairedTranslations = useMemo(() => {
   const translations = new Map<string, string>();
@@ -1242,22 +1179,7 @@ function BusinessChineseStudyWorkspaceContent({
       listClassName="hanzihome-liquid-toolbar hidden sm:flex"
      >
       <TabsContent value={activeView} className="min-h-0 overflow-hidden">
-       <LessonModuleFrame
-        title={lesson.title}
-        subtitle={intro || lesson.bookLabel}
-        sidebarLabel={t("sidebarLabel")}
-        sidebarSummary={t("sectionCount", {
-         count: visibleSections.length,
-        })}
-        sidebarOpen={focusMode ? false : sidebarOpen}
-        onSidebarOpenChange={(open) => {
-         if (!focusMode) setSidebarOpen(open);
-        }}
-        sidebar={<BusinessChineseSidebar books={books} lesson={lesson} />}
-        sidebarRail={<LibraryBig />}
-        sidebarSelectionKey={lesson.id}
-        showMobileHeader={false}
-       >
+       <div className="relative h-full min-h-0 min-w-0 overflow-y-auto pr-1 scrollbar-soft">
         <div className="grid min-w-0 gap-3 pb-4">
          <Card
           variant="section"
@@ -1363,7 +1285,7 @@ function BusinessChineseStudyWorkspaceContent({
           </div>
          ) : null}
         </div>
-       </LessonModuleFrame>
+       </div>
       </TabsContent>
      </Tabs>
     </div>

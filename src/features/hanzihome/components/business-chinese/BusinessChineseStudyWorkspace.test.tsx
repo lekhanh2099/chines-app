@@ -6,7 +6,6 @@ import { describe, expect, it, vi } from "vitest";
 import businessChineseMessages from "../../../../../messages/vi/business-chinese.json";
 import readerDocumentMessages from "../../../../../messages/vi/reader-document.json";
 import readerStudyMessages from "../../../../../messages/vi/reader-study.json";
-import type { LessonModuleSidebarItem } from "@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem";
 import { DEFAULT_LESSON_DISPLAY_MODE } from "@/features/hanzihome/components/lesson-overview/types";
 import type { ReaderDocumentModel } from "@/features/hanzihome/reader/model/reader-document.types";
 import {
@@ -16,10 +15,7 @@ import {
  getTextbookLesson,
 } from "@/features/hanzihome/static-json/business-chinese-static-content";
 
-type SidebarItemProps = ComponentProps<typeof LessonModuleSidebarItem>;
-
 const routerPushMock = vi.hoisted(() => vi.fn());
-const sidebarItemMock = vi.hoisted(() => vi.fn<(props: SidebarItemProps) => void>());
 const readerDocumentMock = vi.hoisted(() => vi.fn<(document: ReaderDocumentModel) => void>());
 
 vi.mock("@/features/hanzihome/reader/components/ReaderSurface", async (importOriginal) => {
@@ -55,13 +51,6 @@ vi.mock("@/features/hanzihome/annotations/LessonAnnotationProvider", () => ({
  useLessonAnnotationContext: () => null,
 }));
 
-vi.mock("@/features/hanzihome/components/lesson-overview/LessonModuleSidebarItem", () => ({
- LessonModuleSidebarItem: (props: SidebarItemProps) => {
-  sidebarItemMock(props);
-  return <button type="button">{props.title}</button>;
- },
-}));
-
 vi.mock("@/features/hanzihome/reader/components/ReaderTools", async (importOriginal) => ({
  ...(await importOriginal<typeof import("@/features/hanzihome/reader/components/ReaderTools")>()),
  ReaderTools: () => <button type="button">Công cụ học</button>,
@@ -85,6 +74,20 @@ function renderWorkspace(element: ReactNode) {
 }
 
 describe("BusinessChineseStudyWorkspace", () => {
+ it.each(getTextbookCatalog())("omits the duplicate book sidebar for $label", (book) => {
+  const lesson = getTextbookLesson(book.key, 1);
+  if (!lesson) throw new Error(`Expected first lesson of ${book.key}.`);
+  const markup = renderWorkspace(
+   <BusinessChineseStudyWorkspace books={getTextbookCatalog()} lesson={lesson} />,
+  );
+  expect(markup).not.toContain(businessChineseMessages.sidebarLabel);
+  expect(markup).not.toContain(businessChineseMessages.bookSelectLabel);
+  expect(markup).not.toContain("<aside");
+  expect(markup).not.toContain("xl:grid-cols-[3.25rem_minmax(0,1fr)]");
+  expect(markup).toContain("Trong trang");
+  expect(markup).toContain("Nghe bài");
+ });
+
  it.each(["nhip-cau", "doc-hieu"])(
   "keeps real %s source sections in order with one All-view reader per source text section",
   (bookKey) => {
